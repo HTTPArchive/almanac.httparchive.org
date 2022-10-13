@@ -99,18 +99,23 @@ For this year's chapter we were interested in investigating what, if any, academ
 
 To look for published research, we used academic search tools such as Google Scholar, ConnectedPapers and University-based citation databases. We not only looked for recent publications, but also older research that continues to be cited.
 
-The results of our search showed that there is not a lot of highly cited recent work conducted into generating, managing and building structured web data. However, research on the application of structured web data ([The Semantic Web](https://en.wikipedia.org/wiki/Semantic_Web)) like knowledge graphs, recommendation engines, information retrieval and explainable AI has been conducted in the past twelve months and continues to grow.
+The results of our search showed that there is not a lot of highly cited recent work conducted into generating, managing and building structured web data. However, research on the application of structured web data ([The Semantic Web](https://en.wikipedia.org/wiki/Semantic_Web)) like knowledge graphs, recommendation engines, information retrieval, chatbots and explainable AI has been conducted in the past twelve months and continues to grow.
 
 Web structured data shares a synergetic relationship with the field of machine learning by providing consistent data with appropriate Uniform Reference Indicator (URI) vocabulary which can be used to generate <a hreflang="en" href="https://developers.google.com/machine-learning/crash-course/framing/ml-terminology">machine readable labels</a>. Our searches and background reading have shown that structured data has considerably reduced the work and time input to generate high quality web data for training machine learning algorithms.
 
-On a practical level, we highlight two areas that structured data has improved:
+On a practical level, we highlight three areas that structured data has improved:
 
 - Knowledge graphs
+- Question Answering over Knowledge Graphs
 - Explainable AI
 
 ### Knowledge graphs
 
 Structured web data provides fixed vocabularies between entities and objects as a domain-specific language, which are generally stored in a RDF format. Knowledge graphs using RDF have proven to be great tools for querying relationships between entities. As an example, Wikidated 1.0 is an evolving knowledge graph which uses web structured data to store Wikipedia's revision history. Its <a hreflang="en" href="https://arxiv.org/abs/2112.05003">corresponding paper</a> talks through the process of aggregating revisions to a page as a set of additions and deletions of the RDF tuple. The authors have open sourced their method to convert wikipedia dumps into knowledge graphs. Applied research carried out by doordash engineering demonstrates that using [knowledge graphs can dramatically improve search performance] (https://doordash.engineering/2020/12/15/understanding-search-intent-with-better-recall/).
+
+### Question Answering over Knowledge Graphs
+
+Question answering systems enable end users to find answers to their questions. When built upon a knowledge graph, a question answering system makes it possible to access the rich and structured data stored in knowledge graphs. Query languages such as SPARQL are often used to query the information stored as RDF triples in knowledge graphs. However, writing SPARQL queries can be tedious and challenging for end-users. Therefore, natural language questions (NLQs) are an attractive solution that allows overcoming the numerous complexities of querying knowledge graphs. This work proposes a KG-based question answering system (KGQAS) that consists of two main phases: 1) an offline phase, and 2) a semantic parsing phase. While the offline phase aims to convert natural language questions into formal query patterns in a semi-automated way, the semantic parsing phase leverages machine learning to build a prediction model. The model is trained on the output of the first phase. It enables predicting the most appropriate query pattern for a given question. For evaluation, SalzburgerLand KG is used as a practical use case. It's a real-world knowledge graph that is built using the schema markup vocabulary and its primary focus is structured data automation that describes touristic entities of the region of Salzburg, Austria.
 
 ### Explainable AI
 
@@ -119,6 +124,7 @@ Explainable AI focuses on explaining decisions of an AI model. Most AI models ar
 _References:_
 
 - Knowledge graphs: <a hreflang="en" href="https://arxiv.org/abs/2112.05003">Wikidated 1.0: An Evolving Knowledge Graph Dataset of Wikidata's Revision History</a>
+- Question Answering Over Knowledge Graphs: <a hreflang="en" href="https://ieeexplore.ieee.org/abstract/document/9810255">Question Answering Over Knowledge Graphs: A Case Study in Tourism</a>
 - Explainable AI using structured data: <a hreflang="en" href="https://www.researchgate.net/profile/Matthias-Pfaff/publication/336578867_Semantic_Web_Technologies_for_Explainable_Machine_Learning_Models_A_Literature_Review/links/5daafb99a6fdccc99d91d120/Semantic-Web-Technologies-for-Explainable-Machine-Learning-Models-A-Literature-Review.pdf">Semantic Web Technologies for Explainable Machine Learning Models: A Literature Review</a>
 
 ## Open source use of Structured Data
@@ -134,8 +140,7 @@ _References:_
 - <a hreflang="en" href="https://en.wikipedia.org/wiki/DBpedia">DBpedia</a>
 - <a hreflang="en" href="https://en.wikipedia.org/wiki/Wikidata">WikiData</a>
 
-
-## Formats - a year in review
+## A year in review
 
 Structured data is underpinned by formats and standards that describe a meta-level schema into which publishers can fit and present data in a pre-defined manner. RDFa, OpenGraph, JSON-LD and other established formats have been used in the analysis for this chapter.
 
