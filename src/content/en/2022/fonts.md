@@ -571,7 +571,7 @@ A significant number of fonts have <a hreflang="en" href="https://fonts.google.c
   description="Column chart showing `kern` is used on 12.8% of desktop fonts and 12.4% of mobile fonts, `liga` on 10.0% and 10.1% respectively, `locl` on 9.6% and 9.7%, `frac` on 8.1% and 7.6%, `numr` on 6.8% and 5.8%, `dnom` on 6.7% and 5.8%, `pnum` on 5.1% and 4.7%, and finally `tnum` on 5.0% of desktop and 4.5% of mobile fonts..",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=1500912295&format=interactive",
   sheets_gid="83804141",
-  sql_file="font_opentype_feature_usage.sql"
+  sql_file="font_opentype_features_usage.sql"
   )
 }}
 
@@ -747,7 +747,7 @@ Our recommendation is to avoid `CFF2`-based variable fonts (for now, at least). 
   description="Column chart showing `wght` is used on 82% of desktop pages and 87% of mobile pages, `opsz` on 5% and 4% respectively, `wdth` on 5% and 4%, `slnt` on 3% and 2%, `ital` on 2% and 1%, and finally `GRAD` is used on 1% of desktop and mobile pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=2021084759&format=interactive",
   sheets_gid="1634075051",
-  sql_file="variable_font_axis_css.sql"
+  sql_file="variable_font_axes_css.sql"
   )
 }}
 
@@ -761,7 +761,7 @@ This somewhat surprised us, because there is no need to use the low-level `font-
   description="Bar chart showing a font-weight of `400` is used on 22% of desktop pages using variable fonts and 23% of mobile pages using variable fonts, `600` on 22% of both, `700` on 21% of desktop and 22% of mobile pages, `300` on 19% and 21% respectively, `500` on 4% and 3%, `800` on 2% of both pages, `550` on 2% of desktop and 1% of mobile pages, `900` on 1% of both, `200` on 1% of both, and finally `450` on 1% of both desktop and mobile pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=1275376550&format=interactive",
   sheets_gid="1634075051",
-  sql_file="variable_font_axis_css.sql",
+  sql_file="variable_font_axes_css.sql",
   width=600,
   height=401
   )
