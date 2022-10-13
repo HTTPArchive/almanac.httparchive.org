@@ -169,6 +169,7 @@ csrf
 csscriptdict
 cufon
 cufontext
+curation
 currentcolor
 cwebp
 cybai
@@ -670,6 +671,7 @@ reyrey
 rgba
 reposts
 repurposing
+revalidation
 rightsholder
 rlcdn
 rmarx
