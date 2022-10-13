@@ -74,7 +74,7 @@ The smallest of WebAssembly modules are likely being used for quite specific fun
   description="Bar chart showing distribution of uncompressed response sizes on desktop and mobile at percentiles 25, 50, 75, 90. Most notably, at 10 percentiles there is 23 KB, median at about 835 KB, and 90 percentiles at 4.87 MB on desktop and 3.24 MB on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRZqlPK0L45J7IoVgmLcuRut9-M2nhaDMhs8cHtCLZacS7pkIqvEhHfdcYNSoEotQp0-Rs_RRslZ8sT/pubchart?oid=736723663&format=interactive",
   sheets_gid="1169986524",
-  sql_file="sizes_and_savings.sql",
+  sql_file="module_sizes.sql",
   image="uncompressed_resp_sizes.png"
   )
 }}
