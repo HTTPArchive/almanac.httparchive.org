@@ -606,9 +606,9 @@ These are just a couple of examples of use cases for structured data in ecommerc
 
 ## Conclusion
 
-A lot has been outlined about how the technologies, ideas, and benefits of structured data affect the web, and by extension, our experience on the web. With the key concepts outlined, we have been able to look at the data in comparison to the Web Almanac 2021's chapter on structured data, in which we have seen a general increase in these widely-used structured data types, while there is a slight decrease in usage for some of the less prevalent structured data types.
+A lot has been outlined about how structured data affects the web and, by extension, our experience. This year we also focused on comparing how the adoption of structured data has changed over a year. We could see, for example, the general increase in some classes like LocalBusiness (particularly for Restaurants) or FAQ and the slight decrease in usage for some of the less relevant structured data types that come from `foaf` or the microdata syntax.
 
-In this chapter, there has been an outline of some of the benefits of using structured data in web pages. Although far from a comprehensive list, structured and linked data give many advantages to:
+Although far from being a comprehensive list, we can see structured (linked) data bringing several advantages to:
 
 - Ecommerce pages
 - Business pages
@@ -616,8 +616,10 @@ In this chapter, there has been an outline of some of the benefits of using stru
 - Social media sites
 - Users
 
-through SEO, increased discoverability, general data linking and rich results. These technologies, and their growing implementation within web pages, result in a more connected and accessible web.
+Through SEO, increased discoverability, general data linking, and rich results drive the adoption. Implementing semantic markup within web pages results in a more connected and accessible web.
 
-With more information and insight available than ever before, it is important to understand the capabilities and limitations of certain techniques or choices when trying to increase web page traffic. Adding fake reviews or misleading data in the hopes of successful SEO can and will be detected, resulting in fewer benefits from those mentioned above, as well as poorer discoverability and performance from search engines.
+With more information and insight available than ever, it is essential to understand the capabilities and limitations of specific techniques or choices when trying to increase web page traffic. Adding fake reviews or misleading data in the hopes of improving SEO will be detected, resulting in fewer benefits from those mentioned above and poorer discoverability and performance from search engines.
 
-Although this is the second year in which this chapter has featured in the Web Almanac, we are excited to see how these trends continue and change, along with the state of structured data on the web. We are looking to see increased widespread implementation of these technologies, with all of the benefits they bring.
+As already seen in the previous year, while SEO remains a crucial driver for adopting structured data, a growing landscape of use cases is emerging beyond search engines. Website owners are adding data in diverse scenarios to make their systems interoperable, train their content recommendation systems, and gain new insights from web pages.
+
+Although this is only the second year for this chapter in the Web Almanac, we are excited to see how these trends continue and change, along with the state of structured data on the web. With all of the benefits structured data brings, we expect an increasing implementation of these technologies.
