@@ -465,6 +465,43 @@ JSON-LD types continue to be mostly similar with a few notable increases over th
 
 These increases are enough to make JSON-LD types have the 2nd biggest positive change since 2021, going from appearing on 33.53% to 36.5% of mobile pages in our set and going from 34.1% to 36.86% on desktop pages.
 
+#### JSON-LD Relationships
+
+When evaluating JSON-LD, we can focus on the most recurring patterns of relationships among the different classes. More than with other syntaxes, JSON-LD expresses the value of graphs in structured data. An Article, for example, is frequently characterized by a linked `image` and the entity type `Person` to represent its _author_. Quite similarly, we would see that BlogPosting is also connected with image but as a frequent relationship with the Organization that serves as Publisher.
+
+Some types are purely syntactic like `BreadcrumbList` that is used exclusively to connect different items (`itemListElement`) of a site navigation’s system or a Question that is typically linked with its answer (`acceptedAnswer`). Other elements deal with meanings: a `LocalBusiness` typically is linked to an `address` and to the opening hours (`openingHoursSpecification`).
+
+With this analysis we want to share a birds-eye overview  of the most common types of relationships between entities and the subtle differences between let’s say `Article` and `BlogPosting`.
+
+Here below we can see the common links between the different types, based on how frequently they occur within all structure/relationship values. Some of these structures are typically part of larger relationship chains.
+
+{{ figure_markup(
+  image="structured-data-json-ld-entities-relationships.svg",
+  caption="JSON-LD entity relationship as a Sankey diagram.",
+  description='Sankey diagram showing a complex interweaving of relationships of the form: "From" -> "Relationship" -> "To". `WebPage` is the largest "From" item branching off to multiple "Relationship" types and "To" results (for example `WebPage` -> `PotentialAction` -> `SearchAction`). This is followed by `WebSite`, then `Organization`, `Product`, `BreadCrumblist`, `BlogPosting` and then a decreasingly used list of other items. Of the middle "Relationships" column `PotentialAction` is used most, followed by `ItemListElement`, `IsPartOf`, `Publisher`, `image` and then a similar long tail of ever-decreasing usage. The "To" column has `ImageObject` as the most used at the top, following by `Organization`, `SearchAction`, `ListItem`, `WebSite`, `WebPage` and then again a longer tail of every decreasing usage. The general sense created by the graph is a lot of different relationships with much cross-usage between the three columns.',
+  width=1200,
+  height=1200
+  )
+}}
+
+The analysis also provides an overview of the verticals behind these constructs: from news and media to e-commerce, from local businesses to events, and so on.
+
+Here below we can see the same data interactively with the source attribute on the left and the target class on the right.
+
+{{ figure_markup(
+  image="sankey.png",
+  caption="Sankey Chart.",
+  description='Sankey chart showing...',
+  chart_url="/en/2022/embeds/structured-data-sankey",
+  width=600,
+  height=1200,
+  sheets_gid="??",
+  sql_file="??.sql"
+  )
+}}
+
+The main limitation of this analysis is represented by the fact that we can evaluate relationship chains at the homepage level.
+
 ### `SameAs`
 
 {{ figure_markup(
@@ -538,45 +575,6 @@ Looking at the domain names of the SameAs entries, and how they change over time
 }}
 
 For JSON-LD contexts, schema.org is by far the largest contributor, with over 6000 times as many appearances for desktop pages and over 3500 times as many appearances for mobile pages than the second largest contributor, googleapis.com. With that said, googleapis.com's appearances more than doubled for both desktop and mobile pages, compared to schema.org's more modest increase to 108% of last year's numbers. In terms of top growers, contao.org and rich-snippets.io take the top spots with contao.org's desktop page increase of 819% and rich-snippets.io's mobile increase of 849%. Contao.org ranks 4th in total entries, while rich-snippets.io ranks at 8th.
-
-{{ figure_markup(
-  image="sankey.png",
-  caption="Sankey Chart.",
-  description='Sankey chart showing...',
-  chart_url="/en/2022/embeds/structured-data-sankey",
-  width=600,
-  height=1200,
-  sheets_gid="??",
-  sql_file="??.sql"
-  )
-}}
-
-{# TODO - add commentary #}
-
-{{ figure_markup(
-  image="structured-data-json-ld-entities-relationships.svg",
-  caption="JSON-LD entity relationship as a Sankey diagram.",
-  description='Sankey diagram showing a complex interweaving of relationships of the form: "From" -> "Relationship" -> "To". `WebPage` is the largest "From" item branching off to multiple "Relationship" types and "To" results (for example `WebPage` -> `PotentialAction` -> `SearchAction`). This is followed by `WebSite`, then `Organization`, `Product`, `BreadCrumblist`, `BlogPosting` and then a decreasingly used list of other items. Of the middle "Relationships" column `PotentialAction` is used most, followed by `ItemListElement`, `IsPartOf`, `Publisher`, `image` and then a similar long tail of ever-decreasing usage. The "To" column has `ImageObject` as the most used at the top, following by `Organization`, `SearchAction`, `ListItem`, `WebSite`, `WebPage` and then again a longer tail of every decreasing usage. The general sense created by the graph is a lot of different relationships with much cross-usage between the three columns.',
-  width=1200,
-  height=1200
-  )
-}}
-
-{# TODO - add commentary #}
-
-{{ figure_markup(
-  image="structured-data-relationships-sankey.png",
-  caption="Sankey Chart.",
-  description='Sankey chart showing...',
-  chart_url="/en/2022/embeds/structured-data-relationships-sankey",
-  width=600,
-  height=1200,
-  sheets_gid="??",
-  sql_file="??.sql"
-  )
-}}
-
-{# TODO - add commentary #}
 
 ## Use cases
 
