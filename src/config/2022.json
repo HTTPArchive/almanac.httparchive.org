@@ -140,14 +140,14 @@
         },
         {
           "part": "III",
-          "chapter_number": "20",
+          "chapter_number": "19",
           "title": "Jamstack",
           "slug": "jamstack",
           "hero_dir": "2020"
         },
         {
           "part": "III",
-          "chapter_number": "21",
+          "chapter_number": "20",
           "title": "Sustainability",
           "slug": "sustainability",
           "hero_dir": "2022"
@@ -160,21 +160,21 @@
       "chapters": [
         {
           "part": "IV",
-          "chapter_number": "22",
+          "chapter_number": "21",
           "title": "Page Weight",
           "slug": "page-weight"
         },
         {
           "part": "IV",
-          "chapter_number": "26",
-          "title": "HTTP",
-          "slug": "http"
+          "chapter_number": "22",
+          "title": "CDN",
+          "slug": "cdn"
         },
         {
           "part": "IV",
-          "chapter_number": "27",
-          "title": "CDN",
-          "slug": "cdn"
+          "chapter_number": "23",
+          "title": "HTTP",
+          "slug": "http"
         }
       ]
     }
