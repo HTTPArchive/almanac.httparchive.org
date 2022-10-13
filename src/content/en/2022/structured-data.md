@@ -502,7 +502,7 @@ Here below we can see the same data interactively with the source attribute on t
 
 The main limitation of this analysis is represented by the fact that we can evaluate relationship chains at the homepage level.
 
-### `SameAs`
+#### `SameAs`
 
 {{ figure_markup(
   image="sameas-usage-by-year-mobile.png",
@@ -532,7 +532,7 @@ As was the case in 2021, the most common values of the `sameAs` property are soc
 
 The rest of the list includes information sources such as wikipedia.org (at 0.13% on both mobile and desktop) and yelp.com (at 0.11% on mobile and 0.13% on desktop), both at an increase from the previous year.
 
-### Further year on year insight - relative changes
+#### Further JSON-LD year on year insight - relative changes
 
 {{ figure_markup(
   image="sameas-relative-change.png",
