@@ -130,7 +130,7 @@ The name `content` is once again the most popular ID name, followed by `footer`,
   )
 }}
 
-The use of `!important` has slightly increased for the top two percentiles this year. As `@layer` usage takes hold it will be interesting to see how this impacts the use of this property, typically used to deal with specificity issues.
+The use of `!important` has slightly increased for the top two percentiles this year. As `@layer` usage takes hold, it will be interesting to see how this impacts the use of this property, typically used to deal with specificity issues.
 
 {{ figure_markup(
     image="important-props.png",
