@@ -528,7 +528,7 @@ Here below we can see the same data interactively with the source attribute on t
 {{ figure_markup(
   image="sankey.png",
   caption="Sankey Chart.",
-  description='Sankey chart showing...',
+  description='Sankey chart showing the flows with source attribute on the left and the target class on the right. The top used flows are `itemListElement` to `ListItem`, `isPartOf` to `Website`, `potentialAction` to both `SearchAction` and `ReadAction`, and `image`, `logo`, and `primaryImageOfPage` to `ImageObject`, followed with a long list of lesser used relationships.',
   chart_url="/en/2022/embeds/structured-data-sankey",
   width=600,
   height=1200,
@@ -574,7 +574,7 @@ The rest of the list includes information sources such as wikipedia.org (at 0.13
 {{ figure_markup(
   image="sameas-relative-change.png",
   caption="`SameAs` relative change",
-  description="Bar chart showing...",
+  description="Bar chart showing `tiktok.com` changed by 600% by both desktop and mobile pages, `spotify.com` by 100.00% on desktop and 200.00% on mobile, `pinterest.fr` by 200.00% and 200.00% respectively, `t.me` by 133.33% and 133.33%, `flickr.com` by 150.00% and 133.33%, `wikipedia.org` by 118.18% and 118.18%, `instagram.com` by 106.93% and 112.46%, `tumblr.com` by 112.50% and 111.11%, `yelp.com` by 110.00% and 108.33%, `facebook.com` by 101.41% and 107.39%, `snapchat.com` by 100.00% and 100.00%, `vimeo.com` by 100.00% and 100.00%, `tripadvisor.com` by 100.00% and 100.00%, `trello.com` by 100.00% and 100.00%, `xing.com` by 100.00% and 100.00%, `pinterest.co.uk` by 133.33% and 100.00%, `behance.net`, `crunchbase.com`, `myspace.com`, `pinterest.ca`, and `pinterest.com.au` all changed by 200.00% on desktop and 100.00% on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr8oRb8NNs5MbpPpDi7QSsTUTPQL_vxQtQvmn52qGk97gpNhJIHa8VF0x5ZJtWXAFuEbDFZQB6TIuN/pubchart?oid=1046677446&format=interactive",
   sheets_gid="1452747230",
   sql_file="",
@@ -588,7 +588,7 @@ It is insightful to look at the `SameAs` entries and how they change over time. 
 {{ figure_markup(
   image="sameas-domain-average-relative-change.png",
   caption="`SameAs` domain average relative change",
-  description="Bar chart showing...",
+  description="Bar chart showing `fr` changed by 200% by both desktop and mobile pages, `site` by 200.00% on desktop and 100.00% on mobile, `de` by 200% and 100% respectively, `com` by 125% and 118%, `me` by 117% and 117%, `org` by 103% and 106%, `net` by 100% and 200%, `ca` by 100% and 200%, `co` by 100% and 117%, and finally `it`, `page`, and `es` by 100% on both desktop and mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr8oRb8NNs5MbpPpDi7QSsTUTPQL_vxQtQvmn52qGk97gpNhJIHa8VF0x5ZJtWXAFuEbDFZQB6TIuN/pubchart?oid=1247757269&format=interactive",
   sheets_gid="1452747230",
   sql_file="",
