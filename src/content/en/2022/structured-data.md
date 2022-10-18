@@ -1,8 +1,7 @@
 ---
 ##See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Structured Data
-##TODO - Review and update chapter description
-description: Structured Data chapter of the 2022 Web Almanac covering adoption and impact of schema.org, RDFa, Microdata and more.
+description: Structured Data chapter of the 2022 Web Almanac covering adoption yeat on year change of RDFa, Opne Graph, Twitter, JSON-LD, Microdata, Facebook, Dublin Core, Microformats and microformats2 structured data.
 authors: [cyberandy, DataBytzAI]
 reviewers: [SeoRobt, jonoalderson]
 analysts: [rviscomi]
@@ -11,13 +10,13 @@ translators: []
 cyberandy_bio: Andrea Volpini is the CEO of WordLift, and is currently focusing on the semantic web, SEO and artificial intelligence.
 DataBytzAI_bio: Allen is founder and CTO for 'The DataWorks', delivering AI-driven web-data solutions to top tier organisations worldwide. His core focus is designing innovative technology solutions at scale, and his primary background is in enterprise systems.
 results: https://docs.google.com/spreadsheets/d/1iRsyYq4TDMpsgeo_uLq-yqBisHviypeKVUMF1pM1fiM/
-featured_quote: TODO
-featured_stat_1: TODO
-featured_stat_label_1: TODO
-featured_stat_2: TODO
-featured_stat_label_2: TODO
-featured_stat_3: TODO
-featured_stat_label_3: TODO
+featured_quote: While SEO remains a crucial driver for adopting structured data, a growing landscape of use cases is emerging beyond search engines.
+featured_stat_1: 3%
+featured_stat_label_1: JSON-LD growth year over year
+featured_stat_2: 59%
+featured_stat_label_2: Pages using Open Graph structured data
+featured_stat_3: 40%
+featured_stat_label_3: Pages using Open Graph structured data
 ---
 
 ## Introduction
@@ -508,7 +507,7 @@ When evaluating JSON-LD, we can focus on the most recurring patterns of relation
 
 Some types are purely syntactic like `BreadcrumbList` that is used exclusively to connect different items (`itemListElement`) of a site navigation’s system or a `Question` that is typically linked with its answer (`acceptedAnswer`). Other elements deal with meanings: a `LocalBusiness` typically is linked to an `address` and to the opening hours (`openingHoursSpecification`).
 
-With this analysis we want to share a birds-eye overview  of the most common types of relationships between entities and the subtle differences between let’s say `Article` and `BlogPosting`.
+With this analysis we want to share a birds-eye overview of the most common types of relationships between entities and the subtle differences between let’s say `Article` and `BlogPosting`.
 
 Here below we can see the common links between the different types, based on how frequently they occur within all structure/relationship values. Some of these structures are typically part of larger relationship chains.
 
