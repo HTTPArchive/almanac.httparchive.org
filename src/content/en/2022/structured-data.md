@@ -8,7 +8,7 @@ analysts: [rviscomi]
 editors: [JasmineDW]
 translators: []
 cyberandy_bio: Andrea Volpini is the CEO of WordLift, and is currently focusing on the semantic web, SEO and artificial intelligence.
-DataBytzAI_bio: Allen is founder and CTO for 'The DataWorks', delivering AI-driven web-data solutions to top tier organisations worldwide. His core focus is designing innovative technology solutions at scale, and his primary background is in enterprise systems.
+DataBytzAI_bio: Allen is founder and CTO for 'The DataWorks', delivering AI-driven web-data solutions to top tier organizations worldwide. His core focus is designing innovative technology solutions at scale, and his primary background is in enterprise systems.
 results: https://docs.google.com/spreadsheets/d/1iRsyYq4TDMpsgeo_uLq-yqBisHviypeKVUMF1pM1fiM/
 featured_quote: While SEO remains a crucial driver for adopting structured data, a growing landscape of use cases is emerging beyond search engines.
 featured_stat_1: 3%
@@ -149,7 +149,7 @@ The implementation of structured data is widely beneficial in numerous areas, so
 
 ### Data linking
 
-Having structured and linked data, while using identifiers to designate places, events, people, concepts, etc, the data can be cited by other data sources and therefore make their metadata descriptions more accessible. This data is then more sharable and reusable.
+Having structured and linked data, while using identifiers to designate places, events, people, concepts, etc, the data can be cited by other data sources and therefore make their metadata descriptions more accessible. This data is then more shareable and reusable.
 
 With data linking, we collect information from different sources to create richer and more useful data. This is possible thanks to structured data, whose global, unique identifiers allow machines to read and understand the relationship between different types of data. This has the use of creating a more connected web of relationships.
 
