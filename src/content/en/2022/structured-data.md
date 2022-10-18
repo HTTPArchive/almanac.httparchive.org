@@ -411,7 +411,7 @@ Microformats have remained very similar in usage numbers since 2021, with `adr` 
   description="Bar chart showing `adr` was used on 0.56% of desktop and 0.47% of mobile pages, `geo` on 0.12% and 0.10% respectively, `hReview` on 0.04% and 0.05%, `hReview-aggregate` on 0.03% and 0.03%, `hListing` on 0.00% and 0.01%, `hProduct` on 0.01% and 0.01%, and finally `hCard` was used on 0.01% of desktop and 0.00% of mobile pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr8oRb8NNs5MbpPpDi7QSsTUTPQL_vxQtQvmn52qGk97gpNhJIHa8VF0x5ZJtWXAFuEbDFZQB6TIuN/pubchart?oid=1952037124&format=interactive",
   sheets_gid="1452747230",
-  sql_file=""
+  sql_file="classic_microformats_types.sql"
   )
 }}
 
@@ -423,7 +423,7 @@ Both mobile and desktop share a mix of increased and decreased usage between mic
   description="Bar chart showing `h-entry` was used on 0.08% of mobile websites in 2021 and 0.25% in 2022 `h-card` on 0.04% and 0.21% respectively, `h-feed` on 0.01% and 0.18%, `h-adr` on 0.02% and 0.02%, `h-event` on 0.00% and 0.00%, `h-product` on 0.00% and 0.00%, and finally `h-item` was used on 0.01% of mobile pages in 2021 and 0.00% in 2022.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr8oRb8NNs5MbpPpDi7QSsTUTPQL_vxQtQvmn52qGk97gpNhJIHa8VF0x5ZJtWXAFuEbDFZQB6TIuN/pubchart?oid=392054831&format=interactive",
   sheets_gid="1452747230",
-  sql_file="microformats2_type.sql"
+  sql_file="microformats2_types.sql"
   )
 }}
 
@@ -435,7 +435,7 @@ Meanwhile, microformats2 attributes have skyrocketed since 2021. The properties 
   description="Bar chart showing `h-entry` was used on 0.12% of desktop and 0.25% of mobile pages, `h-card` on 0.09% and 0.21% respectively, `h-feed` on 0.05% and 0.18%, `h-adr` on 0.02% and 0.02%, and `h-event`, `h-product` and `h-item` on 0.00% of both desktop and mobile pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr8oRb8NNs5MbpPpDi7QSsTUTPQL_vxQtQvmn52qGk97gpNhJIHa8VF0x5ZJtWXAFuEbDFZQB6TIuN/pubchart?oid=1709601989&format=interactive",
   sheets_gid="1452747230",
-  sql_file="microformats2_type.sql"
+  sql_file="microformats2_types.sql"
   )
 }}
 
@@ -576,7 +576,7 @@ The rest of the list includes information sources such as wikipedia.org (at 0.13
   description="Bar chart showing `tiktok.com` changed by 600% by both desktop and mobile pages, `spotify.com` by 100.00% on desktop and 200.00% on mobile, `pinterest.fr` by 200.00% and 200.00% respectively, `t.me` by 133.33% and 133.33%, `flickr.com` by 150.00% and 133.33%, `wikipedia.org` by 118.18% and 118.18%, `instagram.com` by 106.93% and 112.46%, `tumblr.com` by 112.50% and 111.11%, `yelp.com` by 110.00% and 108.33%, `facebook.com` by 101.41% and 107.39%, `snapchat.com` by 100.00% and 100.00%, `vimeo.com` by 100.00% and 100.00%, `tripadvisor.com` by 100.00% and 100.00%, `trello.com` by 100.00% and 100.00%, `xing.com` by 100.00% and 100.00%, `pinterest.co.uk` by 133.33% and 100.00%, `behance.net`, `crunchbase.com`, `myspace.com`, `pinterest.ca`, and `pinterest.com.au` all changed by 200.00% on desktop and 100.00% on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr8oRb8NNs5MbpPpDi7QSsTUTPQL_vxQtQvmn52qGk97gpNhJIHa8VF0x5ZJtWXAFuEbDFZQB6TIuN/pubchart?oid=1046677446&format=interactive",
   sheets_gid="1452747230",
-  sql_file="",
+  sql_file="jsonld_same_ases.sql",
   width=600,
   height=587
   )
@@ -590,7 +590,7 @@ It is insightful to look at the `SameAs` entries and how they change over time. 
   description="Bar chart showing `fr` changed by 200% by both desktop and mobile pages, `site` by 200.00% on desktop and 100.00% on mobile, `de` by 200% and 100% respectively, `com` by 125% and 118%, `me` by 117% and 117%, `org` by 103% and 106%, `net` by 100% and 200%, `ca` by 100% and 200%, `co` by 100% and 117%, and finally `it`, `page`, and `es` by 100% on both desktop and mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr8oRb8NNs5MbpPpDi7QSsTUTPQL_vxQtQvmn52qGk97gpNhJIHa8VF0x5ZJtWXAFuEbDFZQB6TIuN/pubchart?oid=1247757269&format=interactive",
   sheets_gid="1452747230",
-  sql_file="",
+  sql_file="jsonld_same_ases.sql",
   width=600,
   height=488
   )
@@ -604,7 +604,7 @@ Looking at the domain names of the `SameAs` entries, and how they change over ti
   description="Bar chart showing `contao.org` had a 819% increase on desktop and 701% on mobile, for `contao.org` it was 819% and 701% respectively, for `rich-snippets.io` 579% and 849%, for `inventorychanger.ru` 232% and 94%, for `itall.com` 232% and 94%, for `ftmo.com` 232% and 189%, for `drivealfaaromeo.com` 232% and 189%, for `congresopuebla.gob.mx` 232% and 189%, for `pompiers.brussels` 232% and 189%, for `urldefense.com` 232% and 252%, for `googleapis.com` 227% and 214%, and finally for `archive.org` there was a 174% increase on desktop and 157% on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr8oRb8NNs5MbpPpDi7QSsTUTPQL_vxQtQvmn52qGk97gpNhJIHa8VF0x5ZJtWXAFuEbDFZQB6TIuN/pubchart?oid=1092709727&format=interactive",
   sheets_gid="1452747230",
-  sql_file="",
+  sql_file="jsonld_contexts.sql",
   width=600,
   height=526
   )
