@@ -1280,7 +1280,7 @@
         "analysts",
         "editors",
         "leads",
-        "reviewers"
+        "authors"
       ],
       "avatar_url": "1120896",
       "github": "rviscomi",
@@ -1408,7 +1408,6 @@
       "name": "Sia Karamalegos",
       "teams": [
         "analysts",
-        "authors",
         "leads"
       ],
       "avatar_url": "4777393",
