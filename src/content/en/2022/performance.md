@@ -82,7 +82,7 @@ To better understand why mobile experiences have gotten so much better this year
 We say that a website has good LCP if at least 75 percent of all page views are faster than 2,500 ms. Of the three CWV metrics, LCP pass rates are the lowest, often making it the bottleneck to achieving good CWV assessments.
 
 {{ figure_markup(
-  image=good-lcp-by-device.png",
+  image="good-lcp-by-device.png",
   caption="The percent of websites having good LCP, segmented by device and year.",
   description="Bar chart showing the number of websites with good LCP increased from 53% in 2020 to 60% in 2021 to 63% in 2022. For sites visited on phones the increase was from 43% in 2020 to 45% in 2021 and then to 51% in 2022.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR-dJP3uphZoGE5A_luniNBFm5V2ww6irfOxANg0hrMid7gjgrtchsN_utOIDOvVZUjIwpmUBb27nHF/pubchart?oid=1542261080&format=interactive",
@@ -100,7 +100,7 @@ Why did LCP improve so much this year? To help answer that, let's explore a coup
 [Time to First Byte](https://web.dev/ttfb/) (TTFB) is the time from the start of the navigation to the first byte of data returned to the client. It's our first step in the web performance checklist, representing the backend component of LCP performance, particularly network connection speeds and server response times.
 
 {{ figure_markup(
-  image=good-ttfb-by-device.png",
+  image="good-ttfb-by-device.png",
   caption="The percent of websites having good TTFB, segmented by device and year.",
   description="Bar chart showing the number of websites with good TTFB increased from 47% in 2020 to 51% in 2021 to 52% in 2022. For sites visited on phones the it was fairly stable with 41% of sites achieveing good TTFB in 2020, 39% in 2021 and 40% in 2022.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR-dJP3uphZoGE5A_luniNBFm5V2ww6irfOxANg0hrMid7gjgrtchsN_utOIDOvVZUjIwpmUBb27nHF/pubchart?oid=628253519&format=interactive",
@@ -120,7 +120,7 @@ Another complication is that TTFB is still considered to be an experimental metr
 [First Contentful Paint](https://web.dev/fcp/) (FCP) is the time from the start of the request to the first meaningful content painted to the screen. In addition to TTFB, this metric can be affected by render-blocking content. The threshold for "good" FCP is 1,800 ms.
 
 {{ figure_markup(
-  image=good-fcp-by-device.png",
+  image="good-fcp-by-device.png",
   caption="The percent of websites having good FCP, segmented by device and year.",
   description="Bar chart showing the number of websites with good FCP increased from 53% in 2020 to 60% in 2021 to 64% in 2022. For sites visited on phones the it was 38% of sites achieving good FCP in 2020, and the same 2021, increasing to 49% in 2022.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR-dJP3uphZoGE5A_luniNBFm5V2ww6irfOxANg0hrMid7gjgrtchsN_utOIDOvVZUjIwpmUBb27nHF/pubchart?oid=831105883&format=interactive",
@@ -142,7 +142,7 @@ These performance improvements may not actually be due to changes to the website
 A page is considered to have render-blocking resources if resources hold up the initial paint (or render) of the page. This is particularly likely for critical scripts and styles that are loaded over the networkits critical scripts and styles are loaded over the network. Lighthouse includes an [audit](https://web.dev/render-blocking-resources/) that checks for these resources, which we've run on the home page of each website in CrUX. You can learn more about how we test these pages in our [Methodology](./methodology).
 
 {{ figure_markup(
-  image=pages-passing-render-blocking-resources-audit.png",
+  image="pages-passing-render-blocking-resources-audit.png",
   caption="The percent of pages that pass the render-blocking Lighthouse audit , segmented by device and year.",
   description='Bar chart showing 19% of mobile pages passed the "render-blocking resources" audit in 2021. In 2022 this increased slighly to 20%, and we also added the desktop equivalent which was 14%.',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR-dJP3uphZoGE5A_luniNBFm5V2ww6irfOxANg0hrMid7gjgrtchsN_utOIDOvVZUjIwpmUBb27nHF/pubchart?oid=1619115021&format=interactive",
@@ -179,7 +179,7 @@ Images are not loaded at high priority by default, but thanks to the new [Priori
 Prioritization techniques like `fetchpriority` apply primarily to LCP content that is an image. However, the LCP element can be anything like an image, a heading, or a paragraph of text.
 
 {{ figure_markup(
-  image=top-lcp-element-types.png",
+  image="top-lcp-element-types.png",
   caption="The percent of pages that have a given element as its LCP.",
   description="Bar chart showing `IMG` is the LCP element on 47% of desktop pages and 42% of mobile pages, `DIV` on 28% and 26% respectively, `P` on 6% and 9%, `H1` on 3% and 5%, `undetected` on 3% and 3%, `SECTION` on 3% and 3%, `H2` on 1% and 2%, `A` on 1% and 2%, `SPAN` on 1% and 1%, `H3` on 0% and 1%, `HEADER` on 1% and 1%, `LI` on 1% and 1%, `RS-SBG` on 1% and 1%, `TD` on 1% and 1%, `VIDEO` on 0% and 0%, and finally `H4` is the LCP element type on 0% of both desktop and mobile pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR-dJP3uphZoGE5A_luniNBFm5V2ww6irfOxANg0hrMid7gjgrtchsN_utOIDOvVZUjIwpmUBb27nHF/pubchart?oid=932136285&format=interactive",
@@ -195,7 +195,7 @@ It's clear that images are the most common type of LCP content, with the `img` e
 The second most popular LCP element type is `div`. This is a generic HTML container that could be used for text or styling background images. To help disambiguate how often these elements contain images or text, we can evaluate the `url` property of the [LCP API](https://developer.mozilla.org/en-US/docs/Web/API/LargestContentfulPaint).  According to the [specification](https://www.w3.org/TR/largest-contentful-paint/#dom-largestcontentfulpaint-url), when this property is set, the LCP content must be an image.
 
 {{ figure_markup(
-  image=top-lcp-content-types.png",
+  image="top-lcp-content-types.png",
   caption="The percent of pages that use each type of LCP content.",
   description="Bar chart showing an image is the LCP content type on 82% of desktop pages and 72% of mobile pages, it is text on 17% and 26% respectively, and an inline image on 2% of desktop and 1% of mobile pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR-dJP3uphZoGE5A_luniNBFm5V2ww6irfOxANg0hrMid7gjgrtchsN_utOIDOvVZUjIwpmUBb27nHF/pubchart?oid=1619115021&format=interactive",
@@ -255,7 +255,7 @@ These results show that the overwhelming majority of the web could benefit from 
 When an LCP resource is not statically discoverable, there must be some other, more indirect process by which it gets added to the page.
 
 {{ figure_markup(
-  image=top-lcp-initiators-among-pages-whose-lcp-is-not-statically-discoverable.png",
+  image="top-lcp-initiators-among-pages-whose-lcp-is-not-statically-discoverable.png",
   caption="The percent of pages whose LCP is not statically discoverable and initiated from a given resource.",
   description="Bar chart showing that `html` is the initiator on 29% of desktop and 28% of mobile pages, `css` on 11% and 9% respectively, `unknown` on 5% and 4%, and finally `other` si the initiator on 0% of both desktop and mobile pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR-dJP3uphZoGE5A_luniNBFm5V2ww6irfOxANg0hrMid7gjgrtchsN_utOIDOvVZUjIwpmUBb27nHF/pubchart?oid=1835555974&format=interactive",
@@ -342,7 +342,7 @@ Similarly, a disproportionately high percentage of pages that use custom lazy-lo
 A major factor in the time it takes to load the LCP resource is its size over the wire. Larger resources will naturally take longer to load. So for image-based LCP resources, how large are they?
 
 {{ figure_markup(
-  image=lcp-image-size-distribution.png",
+  image="lcp-image-size-distribution.png",
   caption="Distribution of the size of image-based LCP resources.",
   description="Bar chart showing that at the 10th percentile the LCP image size is 15 KB on desktop and 12 KB on mobile, at the 25th percentile it's 46 KB and 34 KB, 50th percentile it's 124 KB and 95 KB, at the 75th percentile it's 301 KB and 244 KB, and finally at the 90th percentile it's 666 KB on desktop and 565 KB on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR-dJP3uphZoGE5A_luniNBFm5V2ww6irfOxANg0hrMid7gjgrtchsN_utOIDOvVZUjIwpmUBb27nHF/pubchart?oid=1738717687&format=interactive",
@@ -367,7 +367,7 @@ Desktop pages tend to have larger LCP images across the distribution, with a med
 We also looked at the largest LCP image sizes and found a 68,607 KB image on desktop and 114,285 KB image on mobile. While it can be fun to look at how obscenely large these outliers are, let's keep in mind the unfortunate reality that these are active websites visited by real users. Data isn't always free, and performance problems like these start to become [accessibility](./accessibility) problems for users on metered mobile data plans. These are also [sustainability](./sustainability) problems considering how much energy is wasted loading blatantly oversized images like these.
 
 {{ figure_markup(
-  image=lcp-image-size-histogram.png",
+  image="lcp-image-size-histogram.png",
   caption="Histogram of image-based LCP sizes.",
   description="Bar chart showing the LCP image size is 0 - 100 KB for 1% of desktop and mobile pages, it's 100 - 200 KB for 43% of desktop and 51% of mobile pages, it's 200 - 300 KB for 20% and 19% respectively, it's 300 - 400 KB for 11% and 9%, it's 400 - 500 KB for 6% and 5%, it's 500 - 600 KB for 4% and 3%, it's 600 - 700 KB for 3% and 2%, it's 700 - 800 KB for 2% and 2%, it's 800 - 900 KB for 2% and 1%, it's 900 - 1000 KB for 1% and 1%, and finally it's over 1000 KB for 7% of desktop and 5% of mobile pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR-dJP3uphZoGE5A_luniNBFm5V2ww6irfOxANg0hrMid7gjgrtchsN_utOIDOvVZUjIwpmUBb27nHF/pubchart?oid=664106183&format=interactive",
@@ -385,7 +385,7 @@ How large an LCP image should _optimally_ be depends on many factors. But the fa
 Choice of LCP image format can have [significant effects](./media#bits-per-pixel-by-format) on its byte size and ultimately its loading performance. WebP and AVIF are two relatively newer formats that are found to be more efficient than traditional formats like JPG and PNG.
 
 {{ figure_markup(
-  image=lcp-image-formats.png",
+  image="lcp-image-formats.png",
   caption="The percent of pages that use a given format for their LCP images.",
   description="Bar chart showing `jpg` is the LCP image format for 67% of desktop and mobile pages using LCP images, `png` for 26% of both, `webp` for 4% of both, `gif` for 2% of both, `svg` for 1% of both, and `avif`, `ico`, `heic`, and `heif` all show as 0% for both.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR-dJP3uphZoGE5A_luniNBFm5V2ww6irfOxANg0hrMid7gjgrtchsN_utOIDOvVZUjIwpmUBb27nHF/pubchart?oid=98443529&format=interactive",
@@ -403,7 +403,7 @@ According to the [Media](./media#format-adoption) chapter, the JPG format makes 
 When the LCP content is an external image, as opposed to an inline image or text, the server from which it loads can have an impact on its performance. Loading LCP images from the same origin as the HTML document tends to be faster because the connection has already been established and is able to be reused. Alternatively, LCP images may be loaded cross-origin, which requires time to set up a new connection.
 
 {{ figure_markup(
-  image=cross-hosted-lcp-images.png",
+  image="cross-hosted-lcp-images.png",
   caption="Cross-hosted LCP images",
   description="Bar chart showing same host is used for the LCP image for 55% of desktop and 48% of mobile pages, cross host for 23% and 21% respectively, and other content is the LCP element for 21% of desktop and 31% of mobile pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR-dJP3uphZoGE5A_luniNBFm5V2ww6irfOxANg0hrMid7gjgrtchsN_utOIDOvVZUjIwpmUBb27nHF/pubchart?oid=65223493&format=interactive",
@@ -508,7 +508,7 @@ The six percentage point improvement to LCP this year can only happen when hundr
 [First Input Delay](https://web.dev/fid/) (FID) measures the time from the first user interaction like a click or tap to the time at which the browser begins processing the corresponding event handlers.
 
 {{ figure_markup(
-  image=good-fid-by-device.png",
+  image="good-fid-by-device.png",
   caption="Good FID by device",
   description="Bar chart showing 100% of websites had good FID in 2020, 2021, and 2022. For sites visited on phones this increased from 80% in 2020 to 90% in 2021 and then to 92% in 2022.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR-dJP3uphZoGE5A_luniNBFm5V2ww6irfOxANg0hrMid7gjgrtchsN_utOIDOvVZUjIwpmUBb27nHF/pubchart?oid=1546220733&format=interactive",
@@ -538,7 +538,7 @@ This is the first year that we have real-user data on INP, so let's break it dow
 A user's effective connection type (ECT) can be described in mobile terms like 4G or 3G according to their actual bandwidth and latency speeds. We can slice the data by this dimension to get a better idea of how network conditions correlate with websites' INP performance.
 
 {{ figure_markup(
-  image=inp-by-effective-connection-type.png",
+  image="inp-by-effective-connection-type.png",
   caption="INP by effective connection type",
   description="Stacked bar chart showing offline connections have 62% of good INP experiences, 28% have needs improvement INP experiences, and 9% have poor INP experiences. For slow-2G it's 26%, 49%, and 25% respectively, for 2G it's 29%, 47%, and 23%, for 3G it's 41%, 46%, and 13%, and finally for 4G it's 66%, 28%, and 6%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR-dJP3uphZoGE5A_luniNBFm5V2ww6irfOxANg0hrMid7gjgrtchsN_utOIDOvVZUjIwpmUBb27nHF/pubchart?oid=1646575014&format=interactive",
@@ -552,7 +552,7 @@ There's a strong correlation between ECT and INP, likely because a high portion 
 #### INP by rank
 
 {{ figure_markup(
-  image=inp-performance-by-rank.png",
+  image="inp-performance-by-rank.png",
   caption="INP performance by rank",
   description="Stacked bar chart showing the top 1,000 sites have 37% of good INP experiences, 48% have needs improvement INP experiences, and 16% have poor INP experiences. For the top 10,000 sites it's 33%, 47%, and 20% respectively, for the top 100,000 sites it's 42%, 44%, and 14%, for the top 1,000,000 sites it's 55%, 36%, and 9%, and finally for all sites it's 68% of good, 27% of needs improvement, and 5% of poor experiences.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR-dJP3uphZoGE5A_luniNBFm5V2ww6irfOxANg0hrMid7gjgrtchsN_utOIDOvVZUjIwpmUBb27nHF/pubchart?oid=1730743352&format=interactive",
@@ -566,7 +566,7 @@ One interesting note here is that good INP by rank is almost ascending, and good
 #### INP vs Long Tasks
 
 {{ figure_markup(
-  image=inp-vs-long-tasks-desktop.png",
+  image="inp-vs-long-tasks-desktop.png",
   caption="INP vs long tasks (desktop)",
   description="Scatter chart showing...",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR-dJP3uphZoGE5A_luniNBFm5V2ww6irfOxANg0hrMid7gjgrtchsN_utOIDOvVZUjIwpmUBb27nHF/pubchart?oid=872934514&format=interactive",
@@ -576,7 +576,7 @@ One interesting note here is that good INP by rank is almost ascending, and good
 }}
 
 {{ figure_markup(
-  image=inp-vs-long-tasks-mobile.png",
+  image="inp-vs-long-tasks-mobile.png",
   caption="INP vs long tasks (mobile)",
   description="Scatter chart showing...",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR-dJP3uphZoGE5A_luniNBFm5V2ww6irfOxANg0hrMid7gjgrtchsN_utOIDOvVZUjIwpmUBb27nHF/pubchart?oid=158378876&format=interactive",
@@ -614,7 +614,7 @@ A [corresponding lighthouse audit](https://web.dev/viewport/) exists, but this o
 [Cumulative Layout Shift](https://web.dev/cls/) (CLS) is a layout stability metric that represents the amount that content unexpectedly moves around on the screen. We say that a website has good CLS if at least 75 percent of all navigations across the site have a score of 0.1 or less.
 
 {{ figure_markup(
-  image=good-cls-by-device.png",
+  image="good-cls-by-device.png",
   caption="Good CLS by device",
   description="Bar chart showing the number of websites with good CLS increased from 54% in 2020 to 62% in 2021 to 65% in 2022. For sites visited on phones the it was 60% of sites achieving good CLS in 2020, 62% for 2021, increasing to 74% in 2022.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR-dJP3uphZoGE5A_luniNBFm5V2ww6irfOxANg0hrMid7gjgrtchsN_utOIDOvVZUjIwpmUBb27nHF/pubchart?oid=20373607&format=interactive",
