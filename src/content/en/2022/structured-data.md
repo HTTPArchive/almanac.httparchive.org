@@ -282,7 +282,7 @@ RDFa remains more prominent on desktop with `foaf:image` appearing on 1% of desk
 {{ figure_markup(
   image="dublin-core-usage-by-year-mobile.png",
   caption="Dublin Core usage by year (mobile)",
-  description="Bar chart showing `dc.title` was used on 0.71% of mobile pages in 2021 and 0.70% in 2022, `dc.language` on 0.50% and 0.49% respectively, `dc.description` on 0.46% and 0.44%, `dc.publisher` on 0.21% and 0.22%, `dc.creator` on 0.21% and 0.21%, `dc.subject` on 0.20% and 0.20%, `dc.source` on 0.22% and 0.19%, `dc.identifier` on 0.18% and 0.17%, `dc.relation` on 0.19% and 0.16%, `dcterms.title` on 0.13% and 0.15%, `dc.format` on 0.15% and 0.15%, `dc.type` on 0.14% and 0.14%, `dcterms.rightsholder` on 0.13% and 0.12%, and finally `dcterms.identifier` on 0.18% of mobile sites in 2021 and 0.11% in 2022.",
+  description="Bar chart showing `dc.title` was used on 0.71% of mobile pages in 2021 and 0.70% in 2022, `dc.language` on 0.50% and 0.49% respectively, `dc.description` on 0.46% and 0.44%, `dc.publisher` on 0.21% and 0.22%, `dc.creator` on 0.21% and 0.21%, `dc.subject` on 0.20% and 0.20%, `dc.source` on 0.22% and 0.19%, `dc.identifier` on 0.18% and 0.17%, `dc.relation` on 0.19% and 0.16%, `dcterms.title` on 0.13% and 0.15%, `dc.format` on 0.15% and 0.15%, `dc.type` on 0.14% and 0.14%, `dcterms.rightsholder` on 0.13% and 0.12%, and finally `dcterms.identifier` on 0.18% of mobile pages in 2021 and 0.11% in 2022.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr8oRb8NNs5MbpPpDi7QSsTUTPQL_vxQtQvmn52qGk97gpNhJIHa8VF0x5ZJtWXAFuEbDFZQB6TIuN/pubchart?oid=1093040433&format=interactive",
   sheets_gid="1452747230",
   sql_file="dublin_core_types.sql",
@@ -312,7 +312,7 @@ Other than that, Dublin Core types are similar between mobile and desktop pages,
 {{ figure_markup(
   image="open-graph-usage-by-year-mobile.png",
   caption="Open Graph usage by year (mobile)",
-  description="Bar chart showing `og:image` was used on 37% of mobile sites in 2021 and 39% in 2022, `og:image:width` on 13% and 14% respectively, `og:image:height` on 13% and 14%, `og:image:secure_url` on 6% and 6%, `og:image:type` on 2% and 5%, and finally `og:image:alt` on 2% of mobile sites in 2021 and 3% in 2022.",
+  description="Bar chart showing `og:image` was used on 37% of mobile pages in 2021 and 39% in 2022, `og:image:width` on 13% and 14% respectively, `og:image:height` on 13% and 14%, `og:image:secure_url` on 6% and 6%, `og:image:type` on 2% and 5%, and finally `og:image:alt` on 2% of mobile pages in 2021 and 3% in 2022.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr8oRb8NNs5MbpPpDi7QSsTUTPQL_vxQtQvmn52qGk97gpNhJIHa8VF0x5ZJtWXAFuEbDFZQB6TIuN/pubchart?oid=1953710107&format=interactive",
   sheets_gid="1452747230",
   sql_file="open_graph_types.sql"
@@ -338,7 +338,7 @@ We have seen an increase in use for each Open Graph type in the top 10 for both 
 {{ figure_markup(
   image="twitter-meta-tag-usage-by-year-mobile.png",
   caption="Twitter meta tag usage by year (mobile)",
-  description="Bar chart showing `twitter:card` was used on 35% of mobile websites in 2021 and 38% in 2022, `twitter:title` on 21% and 22% respectively, `twitter:description` on 19% and 20%, `twitter:image` on 11% and 12%, `twitter:site` on 11% and 11%, `twitter:label1` on 7% and 10%, `twitter:data1` on 7% and 10%, `twitter:creator` on 4% and 3%, `twitter:url` on 3% and 3%, `twitter:domain` on 2% and 2%, `twitter:image:src` on 1% and 1%, `twitter:text:title` on 1% and 1%, and finally `twitter:app:id:iphone` was used on 1% of mobile sites in 2021 and 0% in 2022.",
+  description="Bar chart showing `twitter:card` was used on 35% of mobile pages in 2021 and 38% in 2022, `twitter:title` on 21% and 22% respectively, `twitter:description` on 19% and 20%, `twitter:image` on 11% and 12%, `twitter:site` on 11% and 11%, `twitter:label1` on 7% and 10%, `twitter:data1` on 7% and 10%, `twitter:creator` on 4% and 3%, `twitter:url` on 3% and 3%, `twitter:domain` on 2% and 2%, `twitter:image:src` on 1% and 1%, `twitter:text:title` on 1% and 1%, and finally `twitter:app:id:iphone` was used on 1% of mobile pages in 2021 and 0% in 2022.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr8oRb8NNs5MbpPpDi7QSsTUTPQL_vxQtQvmn52qGk97gpNhJIHa8VF0x5ZJtWXAFuEbDFZQB6TIuN/pubchart?oid=1993854314&format=interactive",
   sheets_gid="1452747230",
   sql_file="twitter_types.sql",
@@ -368,7 +368,7 @@ Twitter meta tags such as `twitter:site` and `twitter:image` have a larger prese
 {{ figure_markup(
   image="facebook-meta-tag-usage-by-year-mobile.png",
   caption="Facebook meta tag usage by year (mobile)",
-  description="Bar chart showing `fb:app_id` was used on 6.1% of mobile websites in 2021 and 5.8% in 2022, `fb:admins` on 2.6% and 2.6% respectively, `fb:pages` on 0.9% and 0.8%, `fb:page_id` and `fb:profile_id` on 0.1% in both years, and `fb:use_automatic_ad_placement` and `fb:article_style` on 0.0% in both years.",
+  description="Bar chart showing `fb:app_id` was used on 6.1% of mobile pages in 2021 and 5.8% in 2022, `fb:admins` on 2.6% and 2.6% respectively, `fb:pages` on 0.9% and 0.8%, `fb:page_id` and `fb:profile_id` on 0.1% in both years, and `fb:use_automatic_ad_placement` and `fb:article_style` on 0.0% in both years.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr8oRb8NNs5MbpPpDi7QSsTUTPQL_vxQtQvmn52qGk97gpNhJIHa8VF0x5ZJtWXAFuEbDFZQB6TIuN/pubchart?oid=978227692&format=interactive",
   sheets_gid="1452747230",
   sql_file="facebook_types.sql"
@@ -394,7 +394,7 @@ This is true for desktop pages too, with the exception of `fb:pages` at a slight
 {{ figure_markup(
   image="microformats-usage-by-year-mobile.png",
   caption="Microformats usage by year (mobile)",
-  description="Bar chart showing `adr` was used on 0.50% of mobile websites in 2021 and 0.47% in 2022, `geo` on 0.10% and 0.10% respectively, `hReview` on 0.06% and 0.05%, `hReview-aggregate` on 0.05% and 0.03%, `hListing` and `hProduct` on 0.01% in both years, and finally `hCard` on 0.01% of mobile sites in 2021 and 0.00% in 2022.",
+  description="Bar chart showing `adr` was used on 0.50% of mobile pages in 2021 and 0.47% in 2022, `geo` on 0.10% and 0.10% respectively, `hReview` on 0.06% and 0.05%, `hReview-aggregate` on 0.05% and 0.03%, `hListing` and `hProduct` on 0.01% in both years, and finally `hCard` on 0.01% of mobile pages in 2021 and 0.00% in 2022.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr8oRb8NNs5MbpPpDi7QSsTUTPQL_vxQtQvmn52qGk97gpNhJIHa8VF0x5ZJtWXAFuEbDFZQB6TIuN/pubchart?oid=1161847910&format=interactive",
   sheets_gid="1452747230",
   sql_file="classic_microformats_types.sql",
@@ -420,7 +420,7 @@ Both mobile and desktop share a mix of increased and decreased usage between mic
 {{ figure_markup(
   image="microformats2-usage-by-year-mobile.png",
   caption="Microformats2 usage by year",
-  description="Bar chart showing `h-entry` was used on 0.08% of mobile websites in 2021 and 0.25% in 2022 `h-card` on 0.04% and 0.21% respectively, `h-feed` on 0.01% and 0.18%, `h-adr` on 0.02% and 0.02%, `h-event` on 0.00% and 0.00%, `h-product` on 0.00% and 0.00%, and finally `h-item` was used on 0.01% of mobile pages in 2021 and 0.00% in 2022.",
+  description="Bar chart showing `h-entry` was used on 0.08% of mobile pages in 2021 and 0.25% in 2022 `h-card` on 0.04% and 0.21% respectively, `h-feed` on 0.01% and 0.18%, `h-adr` on 0.02% and 0.02%, `h-event` on 0.00% and 0.00%, `h-product` on 0.00% and 0.00%, and finally `h-item` was used on 0.01% of mobile pages in 2021 and 0.00% in 2022.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr8oRb8NNs5MbpPpDi7QSsTUTPQL_vxQtQvmn52qGk97gpNhJIHa8VF0x5ZJtWXAFuEbDFZQB6TIuN/pubchart?oid=392054831&format=interactive",
   sheets_gid="1452747230",
   sql_file="microformats2_types.sql"
@@ -446,7 +446,7 @@ This growth is seen more drastically on mobile pages, though desktop pages do fo
 {{ figure_markup(
   image="microdata-usage-by-year-mobile.png",
   caption="Microdata usage by year (mobile)",
-  description="Bar chart showing `schema.org/webpage` was used on 7.4% of mobile websites in 2021 and 7.9% in 2022, `schema.org/sitenavigationelement` on 5.6% and 6.1% respectively, `schema.org/wpheader` on 4.9% and 5.3%, `schema.org/wpfooter` on 4.6% and 4.9%, `schema.org/organization` on 4.0% and 4.3%, `schema.org/blog` on 3.7% and 3.4%, `schema.org/creativework` on 2.1% and 2.5%, `schema.org/imageobject` on 1.8% and 1.9%, `schema.org/person` on 1.4% and 1.4%, `schema.org/website` on 1.3% and 1.4%, `schema.org/postaladdress` on 1.3% and 1.3%, `schema.org/blogposting` on 1.3% and 1.2%, `schema.org/wpsidebar` on 1.4% and 1.2%, `schema.org/imagegallery` on 1.1% and 1.1%, `schema.org/product` on 1.2% and 1.1%, `schema.org/offer` on 1.1% and 1.0%, `schema.org/listitem` on 1.0% and 1.0%, `schema.org/breadcrumblist` on 1.0% and 1.0%, and finally `schema.org/article` on 0.9% of mobile pages in 2021 and 0.8% of mobile pages in 2022.",
+  description="Bar chart showing `schema.org/webpage` was used on 7.4% of mobile pages in 2021 and 7.9% in 2022, `schema.org/sitenavigationelement` on 5.6% and 6.1% respectively, `schema.org/wpheader` on 4.9% and 5.3%, `schema.org/wpfooter` on 4.6% and 4.9%, `schema.org/organization` on 4.0% and 4.3%, `schema.org/blog` on 3.7% and 3.4%, `schema.org/creativework` on 2.1% and 2.5%, `schema.org/imageobject` on 1.8% and 1.9%, `schema.org/person` on 1.4% and 1.4%, `schema.org/website` on 1.3% and 1.4%, `schema.org/postaladdress` on 1.3% and 1.3%, `schema.org/blogposting` on 1.3% and 1.2%, `schema.org/wpsidebar` on 1.4% and 1.2%, `schema.org/imagegallery` on 1.1% and 1.1%, `schema.org/product` on 1.2% and 1.1%, `schema.org/offer` on 1.1% and 1.0%, `schema.org/listitem` on 1.0% and 1.0%, `schema.org/breadcrumblist` on 1.0% and 1.0%, and finally `schema.org/article` on 0.9% of mobile pages in 2021 and 0.8% of mobile pages in 2022.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr8oRb8NNs5MbpPpDi7QSsTUTPQL_vxQtQvmn52qGk97gpNhJIHa8VF0x5ZJtWXAFuEbDFZQB6TIuN/pubchart?oid=1393933149&format=interactive",
   sheets_gid="1452747230",
   sql_file="microdata_item_types.sql",
@@ -476,7 +476,7 @@ These increases are common for desktop as well, with slight decreases elsewhere 
 {{ figure_markup(
   image="json-ld-usage-by-year-mobile.png",
   caption="JSON-LD usage by year (mobile)",
-  description="Bar chart showing `WebSite` was used on 8.9% of mobile websites in 2021 and 8.8% in 2022, `Organization` on 6.0% and 6.2% respectively, `LocalBusiness` on 1.7% and 2.8%, `BreadcrumbList` on 1.5% and 1.6%, `WebPage` on 1.0% and 1.1%, `Product` on 0.6% and 0.7%, `ItemList` on 0.5% and 0.5%, `BlogPosting` on 0.5% and 0.4%, `Article` on 0.3% and 0.3%, `Restaurant` on 0.2% and 0.3%, `Person` on 0.3% and 0.3%, `AutoDealer` on 0.2% and 0.2%, `FAQPage` on 0.1% and 0.2%, `Corporation` on 0.2% and 0.2%, `Event` on 0.2% and 0.2%, `Store` on 0.2% and 0.2%, `VideoObject` on 0.2% and 0.1%, and finally `ApartmentComplex` on 0.1% on mobile pages in both 2021 and 2022.",
+  description="Bar chart showing `WebSite` was used on 8.9% of mobile pages in 2021 and 8.8% in 2022, `Organization` on 6.0% and 6.2% respectively, `LocalBusiness` on 1.7% and 2.8%, `BreadcrumbList` on 1.5% and 1.6%, `WebPage` on 1.0% and 1.1%, `Product` on 0.6% and 0.7%, `ItemList` on 0.5% and 0.5%, `BlogPosting` on 0.5% and 0.4%, `Article` on 0.3% and 0.3%, `Restaurant` on 0.2% and 0.3%, `Person` on 0.3% and 0.3%, `AutoDealer` on 0.2% and 0.2%, `FAQPage` on 0.1% and 0.2%, `Corporation` on 0.2% and 0.2%, `Event` on 0.2% and 0.2%, `Store` on 0.2% and 0.2%, `VideoObject` on 0.2% and 0.1%, and finally `ApartmentComplex` on 0.1% on mobile pages in both 2021 and 2022.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr8oRb8NNs5MbpPpDi7QSsTUTPQL_vxQtQvmn52qGk97gpNhJIHa8VF0x5ZJtWXAFuEbDFZQB6TIuN/pubchart?oid=1634241816&format=interactive",
   sheets_gid="1452747230",
   sql_file="jsonld_types.sql",
@@ -543,7 +543,7 @@ The main limitation of this analysis is represented by the fact that we can eval
 {{ figure_markup(
   image="sameas-usage-by-year-mobile.png",
   caption="`SameAs` usage by year (mobile)",
-  description="Bar chart showing `WebSite` was used on 4.3% of mobile websites in both 2021 and 2022, `instagram.com` on 2.7% and 2.9% respectively, `twitter.com` on 2.5% and 2.3%, `youtube.com` on 1.8% and 1.8%, `linkedin.com` on 1.0% and 1.0%, `pinterest.com` on 0.6% and 0.6%, `google.com` on 0.5% and 0.4%, `wikipedia.org` on 0.1% and 0.1%, `wikidata.org` on 0.1% and 0.1%, `yelp.com` on 0.1% and 0.1%, `tumblr.com` on 0.1% and 0.1%, `uptodown.io` on 0.1% and 0.1%, `vk.com` on 0.1% and 0.1%, and `t.me`, `soundcloud.com`, `pinterest.co.uk`, `tripadvisor.com`, `flickr.com`, and `vimeo.com` all were used on 0.0% of mobile pages in both 2021 and 2022.",
+  description="Bar chart showing `WebSite` was used on 4.3% of mobile pages in both 2021 and 2022, `instagram.com` on 2.7% and 2.9% respectively, `twitter.com` on 2.5% and 2.3%, `youtube.com` on 1.8% and 1.8%, `linkedin.com` on 1.0% and 1.0%, `pinterest.com` on 0.6% and 0.6%, `google.com` on 0.5% and 0.4%, `wikipedia.org` on 0.1% and 0.1%, `wikidata.org` on 0.1% and 0.1%, `yelp.com` on 0.1% and 0.1%, `tumblr.com` on 0.1% and 0.1%, `uptodown.io` on 0.1% and 0.1%, `vk.com` on 0.1% and 0.1%, and `t.me`, `soundcloud.com`, `pinterest.co.uk`, `tripadvisor.com`, `flickr.com`, and `vimeo.com` all were used on 0.0% of mobile pages in both 2021 and 2022.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr8oRb8NNs5MbpPpDi7QSsTUTPQL_vxQtQvmn52qGk97gpNhJIHa8VF0x5ZJtWXAFuEbDFZQB6TIuN/pubchart?oid=1443969983&format=interactive",
   sheets_gid="1452747230",
   sql_file="jsonld_same_ases.sql",
