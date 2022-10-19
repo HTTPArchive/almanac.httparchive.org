@@ -35,7 +35,7 @@ New generations are getting involved in social media and have earlier access to 
 
 ### Traffic from mobile versus desktop
 
-In keeping with the [Methodology](../methodology), the primary data source for this report is the HTTP Archive and the Chrome UX Report (CrUX). In cases where tablet data was included as a separate measurement from any data source, it was omitted, since it does not neatly fit in the primary mobile or desktop classifications and can add confusion and complexity when interpreting or contrasting mobile and desktop information that is more neatly segmented out. Refer to the <a hreflang="en" href="https://developer.chrome.com/docs/crux/methodology/#user-eligibility">CrUX documentation</a> for more information about eligible mobile platforms.
+In keeping with the [Methodology](./methodology), the primary data source for this report is the HTTP Archive and the Chrome UX Report (CrUX). In cases where tablet data was included as a separate measurement from any data source, it was omitted, since it does not neatly fit in the primary mobile or desktop classifications and can add confusion and complexity when interpreting or contrasting mobile and desktop information that is more neatly segmented out. Refer to the <a hreflang="en" href="https://developer.chrome.com/docs/crux/methodology/#user-eligibility">CrUX documentation</a> for more information about eligible mobile platforms.
 
 {{ figure_markup(
     image="pct-mobile-traffic-rank.png",
@@ -64,7 +64,7 @@ Being that mobile devices are so critical in people’s daily communication, it 
 {{ figure_markup(
     image="alt-protocols.png",
     caption="Adoption of alternative protocols used on mobile web pages.",
-    description="Bar chart showing adoption of mailto on 29.36% of pages, tel on 26.54%, whatapp on 0.61%, viber on 0.47%, sms on 0.27%, and skype on 0.27%.",
+    description="Bar chart showing adoption of mailto on 29.36% of pages, tel on 26.54%, whatsapp on 0.61%, viber on 0.47%, sms on 0.27%, and skype on 0.27%.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ2iu1w8TLfOTLCQ1O-d74ku9NirGCQJNeO789uKX1-M6N053ASsz2tXWPvU1twhScsa3rxWF7_7OBn/pubchart?oid=244499382&format=interactive",
     sheets_gid="1551447761",
     sql_file="popular_link_protocols.sql"
@@ -215,7 +215,7 @@ Pages that fail the audit generally have more than one failing link. The median 
 
 Mobile devices have become a big part of daily life for most people, and the expectation is that interaction with mobile web content should be quick and easy. How websites handle zooming and scaling can go a long way to improving interactions on mobile. There are different takes on this, and while most will agree that you need to set a proper initial scale in the viewport for mobile users (`&lt;meta name="viewport" content="width=device-width, initial-scale=1">`), there is not universal agreement about the second part of a viewport setting, which controls if you should or shouldn’t disable scaling and zooming (`…user-scalable=no" />` or perhaps `…user-scalable=yes" />`). Most authorities, <a hreflang="en" href="https://www.w3.org/WAI/standards-guidelines/act/rules/b4f0c3/proposed/">including the W3C</a>, suggest that restricting scaling and zooming can create a bad user experience and adversely impact accessibility, so it should be avoided. Settings for `minimum-scale` and `maximum-scale` can also be set, and these are often safer limits, if a developer believes that limits are needed.
 
-Zooming can be a good workaround for a user who is visually impared, or anyone who just doesn’t have their reading glasses handy when they need them. On the other hand, it can be hard to build sites that universally scale well on mobile. There are many different font size settings that would need to be accomodated, and getting it wrong can make the site much harder to interact with. This is why some designers prefer to prevent scaling and zooming, to ensure that the page renders in a highly predictable way that is not impacted by scaling and zooming. While this is true, disabling zooming and scaling impedes the usability of a mobile site, and thus, should be avoided for the sake of accessibility.
+Zooming can be a good workaround for a user who is visually impaired, or anyone who just doesn’t have their reading glasses handy when they need them. On the other hand, it can be hard to build sites that universally scale well on mobile. There are many different font size settings that would need to be accommodated, and getting it wrong can make the site much harder to interact with. This is why some designers prefer to prevent scaling and zooming, to ensure that the page renders in a highly predictable way that is not impacted by scaling and zooming. While this is true, disabling zooming and scaling impedes the usability of a mobile site, and thus, should be avoided for the sake of accessibility.
 
 {{ figure_markup(
     image="zoom-scale-rank.png",
@@ -231,7 +231,7 @@ Of the mobile websites in the top 1,000 rank, 40% of them had disabled zooming a
 
 As a whole, we know that accessibility concerns are not going to go away, and as time progresses, meeting accessibility standards will become a basic expectation—especially on mobile devices. As is often the case, the use cases for mobile interactivity are more broad-ranging compared to desktop, so users’ expectations are higher, even though the development constraints for web mobile content make it more difficult to actually achieve. Nevertheless, accessibility is becoming a critical component of good web design, and should be embraced to create a more inclusive mobile web. It is good to see that there is increasing adherence to basic accessibility guidelines, but there is still considerable room for improvement.
 
-For many years, Google has created a positive impact on the web by rewarding websites that meet certain basic requirements with better rankings. They have done it for load time, performance, security and mobile-friendliness, but not yet for accessibility. Google does write and support a lot of advancements for web accessibility in their official communications, but there is an opportunity to do more. While many accessibility updates do naturally have a positive impact on website rankings, it may be time for Google to explicitly incentivise some level of compliance to basic accessibility standards with better rankings—not just because they can enhance the semantic understanding of a website, but also because they simply make the web a better place for everyone.
+For many years, Google has created a positive impact on the web by rewarding websites that meet certain basic requirements with better rankings. They have done it for load time, performance, security and mobile-friendliness, but not yet for accessibility. Google does write and support a lot of advancements for web accessibility in their official communications, but there is an opportunity to do more. While many accessibility updates do naturally have a positive impact on website rankings, it may be time for Google to explicitly incentivize some level of compliance to basic accessibility standards with better rankings—not just because they can enhance the semantic understanding of a website, but also because they simply make the web a better place for everyone.
 
 
 ## Mobile performance
@@ -255,7 +255,7 @@ All three are aspects of how users perceive the performance of a page that can h
   )
 }}
 
-The figure above shows how the overall performance of the web has changed since Core Web Vitals first launched in 2020. You can see that overall, mobile websites are consistently improving year over year. In 2022, 39% of websites have good Core Web Vitals experiences on mobile devices.  See the [Performance](../performance) chapter for a deeper look at what may have caused such a significant change this year.
+The figure above shows how the overall performance of the web has changed since Core Web Vitals first launched in 2020. You can see that overall, mobile websites are consistently improving year over year. In 2022, 39% of websites have good Core Web Vitals experiences on mobile devices.  See the [Performance](./performance) chapter for a deeper look at what may have caused such a significant change this year.
 
 
 ### Loading performance metrics
@@ -296,7 +296,7 @@ As you can see above, there are only minor fluctuations in the percent of mobile
   )
 }}
 
-LCP performance is improving. In 2020, 43% of mobile sites had a LCP assessed as “good”. In 2021, this number improved to 45% of mobile sites. There was a significant jump in 2022 in which 51% of mobile sites had good LCP performance. The [Performance](../performance) chapter explores some possible explanations for why this may have happened.
+LCP performance is improving. In 2020, 43% of mobile sites had a LCP assessed as “good”. In 2021, this number improved to 45% of mobile sites. There was a significant jump in 2022 in which 51% of mobile sites had good LCP performance. The [Performance](./performance) chapter explores some possible explanations for why this may have happened.
 
 
 ### Images

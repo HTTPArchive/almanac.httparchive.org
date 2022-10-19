@@ -9,7 +9,7 @@ WITH geo_summary AS (
   FROM
     `chrome-ux-report.materialized.country_summary`
   WHERE
-    # We're intentionally using May 2022 CrUX data here.
+    # We're intentionally using April 2022 CrUX data here.
     # That's because there's a two month lag between CrUX and HA datasets.
     # Since we're only JOINing with the CrUX dataset to see which URLs
     # belong to different countries (as opposed to CWV field data)

@@ -681,7 +681,7 @@ As the world has dramatically changed over the last year, we have seen a huge gr
 
 This huge growth in video usage on the web indicates that as devices/networks improve, there is a desire to add immersive experiences such as video to sites.
 
-When it comes to interaction with video, it is interesting to see how long the videos are when posted on a webpage. We were able to query this value for 440k desktop videos, and 382k mobile videos, and broke down the duration into buckets of varying duration (in seconds):
+When it comes to interaction with video, it is interesting to see how long the videos are when posted on a web page. We were able to query this value for 440k desktop videos, and 382k mobile videos, and broke down the duration into buckets of varying duration (in seconds):
 
 {{ figure_markup(
   image="video-durations.png",

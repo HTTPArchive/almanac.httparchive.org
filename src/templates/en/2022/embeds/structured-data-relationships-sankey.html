@@ -1,0 +1,149 @@
+{% extends "base/embed.html" %}
+
+{% block title %}Structured Data : Sankey Chart | The Web Almanac by HTTP Archive{% endblock %}
+
+{% block description %}Sankey chart from 2022 Web Almanac Structure Data Chapter.{% endblock %}
+
+{% set metadata = {"authors":["cyberandy"]} %}
+
+{% block main %}
+<div id="sankey_multiple"></div>
+
+<script nonce="{{ csp_nonce() }}" src="https://www.gstatic.com/charts/loader.js"></script>
+<script nonce="{{ csp_nonce() }}">
+  google.charts.load('current', {'packages':['sankey']});
+  google.charts.setOnLoadCallback(drawChart);
+
+  function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+      ['WebSite',	'potentialAction',	1543449],
+      ['potentialAction',	'SearchAction',	1543449],
+      ['WebPage',	'isPartOf',1320936],
+      ['isPartOf',	'WebSite',	1320936],
+      ['breadcrumbList',	'itemListElement',	1315056],
+      ['itemListElement',	'ListItem',	1315056],
+      ['SearchAction',	'target',	1029179],
+      ['target',	'EntryPoint',	1029179],
+      ['WebPage',	'breadcrumb',	982534],
+      ['breadcrumb',	'breadcrumbList',	982534],
+      ['WebPage',	'potentialAction',	972790],
+      ['potentialAction',	'ReadAction',	972790],
+      ['Organization',	'logo', 893042],
+      ['logo',	'ImageObject',	893042],
+      ['WebSite',	'publisher',	726437],
+      ['publisher',	'Organization',	726437],
+      ['Product',	'offers',	646452],
+      ['offers',	'Offer',	646452],
+      ['WebPage',	'primaryImageOfPage', 615294],
+      ['primaryImageOfPage',	'ImageObject',	615294],
+      ['ItemList',	'itemListElement',	578176],
+      ['itemListElement',	'ListItem',	578176],
+      ['WebSite',	'potentialAction',	540041],
+      ['potentialAction',	'SearchAction',	540041],
+      ['Organization',	'image', 538105],
+      ['image',	'ImageObject',	538105],
+      ['Offer',	'seller',	503942],
+      ['seller',	'Organization',	503942],
+      ['WebPage',	'about',	458806],
+      ['about',	'Organization',	458806],
+      ['Product',	'mainEntityOfPage', 443900],
+      ['mainEntityOfPage',	'WebPage',	443900],
+      ['Product',	'weight',	436944],
+      ['weight',	'QuantitativeValue',	436944],
+      ['Offer',	'inventoryLevel',	355967],
+      ['inventoryLevel',	'QuantitativeValue',	355967],
+      ['item',	'WebPage',	299231],
+      ['CollectionPage',	'isPartOf', 265940],
+      ['isPartOf',	'WebSite',	265940],
+      ['BlogPosting',	'publisher',	232275],
+      ['publisher',	'Organization',	232275],
+      ['BlogPosting',	'author', 228598],
+      ['author',	'Person',	228598],
+      ['BlogPosting',	'image',	225407],
+      ['image',	'ImageObject',	225407],
+      ['breadcrumbList',	'itemListElement',	223815],
+      ['itemListElement',	'ListItem',	223815],
+      ['BlogPosting',	'mainEntityOfPage',	214476],
+      ['mainEntityOfPage',	'WebPage',	214476],
+      ['CollectionPage',	'breadcrumb', 201413],
+      ['breadcrumb',	'breadcrumbList',	201413],
+      ['Product',	'brand', 192815],
+      ['brand',	'Thing',	192815],
+      ['MenuSection',	'hasMenuItem',	188987],
+      ['hasMenuItem',	'MenuItem',	188987],
+      ['MobileApplication',	'inLanguage',	179639],
+      ['inLanguage',	'Language',	179639],
+      ['LocalBusiness',	'address',	169998],
+      ['address',	'PostalAddress',	169998],
+      ['Review',	'reviewRating',	163441],
+      ['reviewRating',	'Rating',	163441],
+      ['CollectionPage',	'potentialAction',	160877],
+      ['potentialAction',	'ReadAction',	160877],
+      ['MenuItem',	'offers',	160242],
+      ['offers',	'Offer',	160242],
+      ['Review',	'author',	152842],
+      ['author',	'Person',	152842],
+      ['Place',	'address',	152246],
+      ['address',	'PostalAddress',	152246],
+      ['Person',	'image',	137193],
+      ['image',	'ImageObject',	137193],
+      ['Organization',	'contactPoint', 119851],
+      ['contactPoint',	'ContactPoint',	119851],
+      ['Question',	'acceptedAnswer',	115475],
+      ['acceptedAnswer',	'Answer',	115475],
+      ['LocalBusiness',	'openingHoursSpecification',	114010],
+      ['openingHoursSpecification',	'OpeningHoursSpecification',	114010],
+      ['WebPage',	'author',	107327],
+      ['author',	'Person',	107327],
+      ['FAQPage',	'mainEntity',	102843],
+      ['mainEntity',	'Question',	102843],
+      ['Event',	'location',	101937],
+      ['location',	'Place',	101937],
+      ['Article',	'author',	101532],
+      ['author',	'Person',	101532],
+      ['Article',	'mainEntityOfPage',	99788],
+      ['mainEntityOfPage',	'WebPage',	99788],
+      ['CollectionPage',	'about',	98627],
+      ['about',	'Organization',	98627],
+      ['Article',	'isPartOf',	89962],
+      ['image',	'ImageObject',	77150],
+      ['WebSite',	'publisher',	73453],
+      ['publisher',	'Person',	73453],
+      ['Organization',	'address',	72173],
+      ['address',	'PostalAddress',	72173]
+    ]);
+
+    // Sets the colors.
+
+    var colors = ['#ffe599', '#9fc5e8', '#f6b26b', '#ea9999',
+              '#ffd966', '#6d9eeb', '#93c47d', '#e69138'];
+
+    // Sets chart options.
+    var options = {
+      width: 600,
+      height: 1500,
+      sankey: {
+        node: {
+          colors: colors,
+          label: {fontName: 'Arial',
+                  color: '#1a2b49'},
+        },
+        interactivity: true, // Allows you to select nodes.
+        labelPadding: 6,     // Horizontal distance between the label and the node.
+        nodePadding: 20,     // Vertical distance between nodes.
+        link: {
+          colors: colors
+        }
+      }
+    };
+
+    // Instantiates and draws our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+  }
+</script>
+{% endblock %}

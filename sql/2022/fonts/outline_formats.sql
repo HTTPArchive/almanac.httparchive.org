@@ -1,34 +1,30 @@
-SELECT
-  client,
-  format,
-  COUNT(DISTINCT page) AS pages_outline,
-  total_page,
-  COUNT(DISTINCT page) / total_page AS pct_outline
-FROM (
+WITH
+fonts AS (
   SELECT
     client,
-    page,
-    format,
-    payload
+    url,
+    JSON_EXTRACT(payload, '$._font_details.table_sizes') AS payload
   FROM
     `httparchive.almanac.requests`
   WHERE
     date = '2022-06-01' AND
-    type = 'font')
-JOIN (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    COUNT(0) AS total_page
-  FROM
-    `httparchive.pages.2022_06_01_*`
+    type = 'font'
   GROUP BY
-    _TABLE_SUFFIX)
-USING
-  (client),
-  UNNEST(REGEXP_EXTRACT_ALL(JSON_EXTRACT(payload, '$._font_details.table_sizes'), '(?i)(CFF |glyf|SVG|CFF2)')) AS format
+    client,
+    url,
+    payload
+)
+SELECT
+  client,
+  format,
+  COUNT(0) AS freq,
+  SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
+  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct_freq
+FROM
+  fonts,
+  UNNEST(REGEXP_EXTRACT_ALL(payload, '(?i)(CFF |glyf|SVG|CFF2)')) AS format
 GROUP BY
   client,
-  total_page,
   format
 ORDER BY
-  pages_outline DESC
+  pct_freq DESC

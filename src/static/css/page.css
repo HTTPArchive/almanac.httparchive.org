@@ -32,6 +32,10 @@
   margin: 0 -1rem;
 }
 
+.width-20 {
+  width: 20%;
+}
+
 .width-45 {
   width: 45%;
 }
@@ -636,11 +640,11 @@ td.numeric {
   text-align: right;
 }
 
-td .numeric-good {
+.numeric-good {
   color: #38761d;
 }
 
-td .numeric-bad {
+.numeric-bad {
   color: #b60000;
 }
 
