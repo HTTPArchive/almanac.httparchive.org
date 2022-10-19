@@ -327,7 +327,7 @@ WordPress was one of the pioneers of native lazy-loading adoption, and between v
 According to the [CMS](./cms) chapter, WordPress is used by 35% of pages. So it's surprising to see that 72% of pages that use native lazy-loading on their LCP image are using WordPress, especially given that a fix has been available since January 2022 in version 5.9. One theory that needs more investigation is that plugins may be circumventing the safeguards built into WordPress core by injecting LCP images onto the page with the lazy-loading behavior.
 
 {{ figure_markup(
-  content="72%",
+  content="54%",
   caption="The percent of mobile pages using custom lazy-loading on their LCP image that also use WordPress.",
   classes="big-number",
   sheets_gid="1585533536",
