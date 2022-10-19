@@ -222,7 +222,7 @@ Custom lazy-loading techniques like the example above are one way that images ar
 
 {{ figure_markup(
   content="39%",
-  caption=The percent of mobile pages on which the LCP element was not statically discoverable.",
+  caption="The percent of mobile pages on which the LCP element was not statically discoverable.",
   classes="big-number",
   sheets_gid="1465687616",
   sql_file="lcp_preload_discoverable.sql",
@@ -239,7 +239,7 @@ When the LCP image is not statically discoverable, [preloading](https://web.dev/
 
 {{ figure_markup(
   content="0.56%",
-  caption=The percent of mobile pages that preload their LCP images.",
+  caption="The percent of mobile pages that preload their LCP images.",
   classes="big-number",
   sheets_gid="1465687616",
   sql_file="lcp_preload_discoverable.sql",
