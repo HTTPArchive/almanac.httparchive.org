@@ -1,7 +1,7 @@
 ---
 ##See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Structured Data
-description: Structured Data chapter of the 2022 Web Almanac covering adoption year on year change of RDFa, Opne Graph, Twitter, JSON-LD, Microdata, Facebook, Dublin Core, Microformats and microformats2 structured data.
+description: Structured Data chapter of the 2022 Web Almanac covering adoption and year on year change of RDFa, Opne Graph, Twitter, JSON-LD, Microdata, Facebook, Dublin Core, Microformats and microformats2 structured data.
 authors: [cyberandy, DataBytzAI]
 reviewers: [SeoRobt, jonoalderson]
 analysts: [rviscomi]
