@@ -10,7 +10,7 @@ editors: [tunetheweb]
 translators: []
 results: https://docs.google.com/spreadsheets/d/1TPA_4xRTBB2fQZaBPZHVFvD0ikrR-4sNkfJfUEpjibs/
 mel-ada_bio: Mel Ada is a software engineer on the Web Performance team at Etsy. Her current involvement in the community includes co-organizing the NY Web Performance Meetup and occaisonally doing some speaking of her own.
-rviscomi_bio: Rick Viscomi is a DevRel engineer at Google, focusing on web performance. He is the co-author of [Using WebPageTest](https://usingwpt.com/), a book about web performance testing. He also co-maintains HTTP Archive and is the Editor-in-Chief of the Web Almanac.
+rviscomi_bio: Rick Viscomi is a DevRel engineer at Google, focusing on web performance. He is the co-author of <a hreflang="en" href="https://usingwpt.com/">Using WebPageTest</a>, a book about web performance testing. He also co-maintains HTTP Archive and is the Editor-in-Chief of the Web Almanac.
 featured_quote: TODO
 featured_stat_1: TODO
 featured_stat_label_1: TODO
@@ -23,19 +23,19 @@ unedited: true
 
 ##  Introduction
 
-Web performance is crucial to user experience and accessibility. We've all bounced from a site before due to slow load times, or worse, have not been able to access important information. Additionally, numerous [case studies](https://wpostats.com/) have demonstrated that an improvement in web performance results in an improvement in conversion and engagement for businesses.
+Web performance is crucial to user experience and accessibility. We've all bounced from a site before due to slow load times, or worse, have not been able to access important information. Additionally, numerous <a hreflang="en" href="https://wpostats.com/">case studies</a> have demonstrated that an improvement in web performance results in an improvement in conversion and engagement for businesses.
 
 However, the industry spotlight is quite elusive for web performance—why is this? This chapter focuses on Google's solution to the problem: Core Web Vitals (CWV), web performance metrics made a variable in search ranking during 2021. Since the search ranking influence was effective almost exactly one year ago, this year's data gives us insights on how the web is adjusting to the metrics and where room for opportunity might still exist.
 
 Although the spotlight of this chapter, it's important to note CWV are relatively new to the field and not the only way to measure web performance. There's no way to fit the entire history of the industry or all the different ways to evaluate performance in one chapter.  However before we jump in, it helps to briefly define what web performance even means and how it is measured.
 
-The term _performance_ tends to be thrown around a lot as this generic idea that we all agree is good, but it's often hard to pin down. This is a theme among beginners and experts alike. It seems we mostly agree that performance is about measuring if the user is having a good time on a site.  A little generic, but let's go with it for now. So how would we measure this? As [Sergey Chernyshev](https://twitter.com/sergeyche), creator of [UX Capture](https://github.com/ux-capture/ux-capture), says, "_The best way to measure performance is to be embedded into the user's brain to understand exactly what they're thinking as they use the site_".  We can't—and shouldn't in case that was unclear—do this, so what are our options?
+The term _performance_ tends to be thrown around a lot as this generic idea that we all agree is good, but it's often hard to pin down. This is a theme among beginners and experts alike. It seems we mostly agree that performance is about measuring if the user is having a good time on a site.  A little generic, but let's go with it for now. So how would we measure this? As [Sergey Chernyshev](https://twitter.com/sergeyche), creator of <a hreflang="en" href="https://github.com/ux-capture/ux-capture">UX Capture</a>, says, "_The best way to measure performance is to be embedded into the user's brain to understand exactly what they're thinking as they use the site_".  We can't—and shouldn't in case that was unclear—do this, so what are our options?
 
 Thankfully, there is a way to measure page load speed automatically! We know the browser is in charge of loading a page, and it goes through a checklist of steps each time. Depending on which step the browser is on, we can tell how far along the site is in the page load process. Conveniently, a [number of performance timeline APIs](https://developer.mozilla.org/en-US/docs/Web/API/Performance) are used to fire off timestamps when the browser gets to certain page load steps. One such API, the [User Timing API](https://developer.mozilla.org/en-US/docs/Web/API/User_Timing_API), even allows engineers to add custom timestamps for their specific needs. These timestamps become the metrics used across the industry to decipher how performant a page is.
 
 However, these metrics are only our best guess at how to gauge user experience. For example, just because the browser fired an event that an element has been painted onto the screen, does that always mean it was visible to the user at that time? Additionally, as the industry grew, more and more metrics showed up while some became deprecated. It can be complicated to know where to start and understand what performance metrics are telling us about our users, especially for folks newer to the field.
 
-Enter [CWV](https://web.dev/vitals/), three metrics to indicate overall performance health. Each metric covers an important area of user experience: loading, interactivity, and visual stability. The public [Chrome UX Report](https://developer.chrome.com/docs/crux/) (CrUX) dataset is Chrome's view of how millions of websites are performing on CWV. There's zero setup on the developer's part; Chrome automatically collects and publishes data from [eligible](https://developer.chrome.com/docs/crux/methodology/#eligibility) users and websites. Using CrUX data, we're able to get insights into the web's performance and even track historical data.
+Enter <a hreflang="en" href="https://web.dev/vitals/">CWV</a>, three metrics to indicate overall performance health. Each metric covers an important area of user experience: loading, interactivity, and visual stability. The public <a hreflang="en" href="https://developer.chrome.com/docs/crux/">Chrome UX Report</a> (CrUX) dataset is Chrome's view of how millions of websites are performing on CWV. There's zero setup on the developer's part; Chrome automatically collects and publishes data from <a hreflang="en" href="https://developer.chrome.com/docs/crux/methodology/#eligibility">eligible</a> users and websites. Using CrUX data, we're able to get insights into the web's performance and even track historical data.
 
 CWV offers a clearly defined approach to measuring how user's actually experience performance—a first for the industry. Are CWV the answer to helping the web become more performant? It's been a little over two years since launch, so this chapter examines where the web is currently with CWV and a look into the future.
 
@@ -77,7 +77,7 @@ To better understand why mobile experiences have gotten so much better this year
 
 ## Largest Contentful Paint (LCP)
 
-[Largest Contentful Paint](https://web.dev/lcp/) (LCP) is the time from the start of the navigation until the largest block of content is visible in the viewport. This metric represents how quickly users are able to see meaningful content.
+<a hreflang="en" href="https://web.dev/lcp/">Largest Contentful Paint</a> (LCP) is the time from the start of the navigation until the largest block of content is visible in the viewport. This metric represents how quickly users are able to see meaningful content.
 
 We say that a website has good LCP if at least 75 percent of all page views are faster than 2,500 ms. Of the three CWV metrics, LCP pass rates are the lowest, often making it the bottleneck to achieving good CWV assessments.
 
@@ -97,7 +97,7 @@ Why did LCP improve so much this year? To help answer that, let's explore a coup
 
 ### Time to First Byte (TTFB)
 
-[Time to First Byte](https://web.dev/ttfb/) (TTFB) is the time from the start of the navigation to the first byte of data returned to the client. It's our first step in the web performance checklist, representing the backend component of LCP performance, particularly network connection speeds and server response times.
+<a hreflang="en" href="https://web.dev/ttfb/">Time to First Byte</a> (TTFB) is the time from the start of the navigation to the first byte of data returned to the client. It's our first step in the web performance checklist, representing the backend component of LCP performance, particularly network connection speeds and server response times.
 
 {{ figure_markup(
   image="good-ttfb-by-device.png",
@@ -109,15 +109,15 @@ Why did LCP improve so much this year? To help answer that, let's explore a coup
   )
 }}
 
-As an aside, note that earlier this year Chrome [changed](https://developer.chrome.com/docs/crux/release-notes/#202204) the threshold for "good" TTFB from 500 ms to 800 ms. In the chart above, all historical data is using this new threshold for comparison purposes.
+As an aside, note that earlier this year Chrome <a hreflang="en" href="https://developer.chrome.com/docs/crux/release-notes/#202204">changed</a> the threshold for "good" TTFB from 500 ms to 800 ms. In the chart above, all historical data is using this new threshold for comparison purposes.
 
 With that in mind, the percentage of websites having good TTFB has not actually improved very much. In the past year, websites' desktop and mobile experiences have gotten one percentage point better, which is nice but doesn't account for the gains observed to LCP.
 
-Another complication is that TTFB is still considered to be an experimental metric. According to the CrUX documentation, it's technically still an [experimental](https://developer.chrome.com/docs/crux/methodology/#experimental-metrics) metric and so it _does not_ factor in more advanced navigation types like pre-rendered and back/forward navigations. This is somewhat of a blind spot, so if there were improvements in these areas, they wouldn't necessarily affect the TTFB results.
+Another complication is that TTFB is still considered to be an experimental metric. According to the CrUX documentation, it's technically still an <a hreflang="en" href="https://developer.chrome.com/docs/crux/methodology/#experimental-metrics">experimental</a> metric and so it _does not_ factor in more advanced navigation types like pre-rendered and back/forward navigations. This is somewhat of a blind spot, so if there were improvements in these areas, they wouldn't necessarily affect the TTFB results.
 
 ### First Contentful Paint (FCP)
 
-[First Contentful Paint](https://web.dev/fcp/) (FCP) is the time from the start of the request to the first meaningful content painted to the screen. In addition to TTFB, this metric can be affected by render-blocking content. The threshold for "good" FCP is 1,800 ms.
+<a hreflang="en" href="https://web.dev/fcp/">First Contentful Paint</a> (FCP) is the time from the start of the request to the first meaningful content painted to the screen. In addition to TTFB, this metric can be affected by render-blocking content. The threshold for "good" FCP is 1,800 ms.
 
 {{ figure_markup(
   image="good-fcp-by-device.png",
@@ -139,7 +139,7 @@ These performance improvements may not actually be due to changes to the website
 
 #### Render-blocking resources
 
-A page is considered to have render-blocking resources if resources hold up the initial paint (or render) of the page. This is particularly likely for critical scripts and styles that are loaded over the networkits critical scripts and styles are loaded over the network. Lighthouse includes an [audit](https://web.dev/render-blocking-resources/) that checks for these resources, which we've run on the home page of each website in CrUX. You can learn more about how we test these pages in our [Methodology](./methodology).
+A page is considered to have render-blocking resources if resources hold up the initial paint (or render) of the page. This is particularly likely for critical scripts and styles that are loaded over the networkits critical scripts and styles are loaded over the network. Lighthouse includes an <a hreflang="en" href="https://web.dev/render-blocking-resources/">audit</a> that checks for these resources, which we've run on the home page of each website in CrUX. You can learn more about how we test these pages in our [Methodology](./methodology).
 
 {{ figure_markup(
   image="pages-passing-render-blocking-resources-audit.png",
@@ -159,7 +159,7 @@ Surprisingly, there was no dramatic improvement in the percent of pages that hav
 
 There are two factors that affect how soon a LCP resource starts to download after the page itself is downloaded: discoverability and prioritization. We'll explore [LCP discoverability](#lcp-static-discoverability) later, but first let's look at how LCP images are prioritized.
 
-Images are not loaded at high priority by default, but thanks to the new [Priority Hints](https://web.dev/priority-hints/) API, developers can explicitly set their LCP images to load at high priority to take precedence over non-essential resources.
+Images are not loaded at high priority by default, but thanks to the new <a hreflang="en" href="https://web.dev/priority-hints/">Priority Hints</a> API, developers can explicitly set their LCP images to load at high priority to take precedence over non-essential resources.
 
 {{ figure_markup(
   content="0.03%",
@@ -192,7 +192,7 @@ Prioritization techniques like `fetchpriority` apply primarily to LCP content th
 
 It's clear that images are the most common type of LCP content, with the `img` element representing the LCP on 42% of mobile pages. Mobile pages are slightly more likely to have heading and paragraph elements be the LCP than desktop pages, while desktop pages are more likely to have image elements as the LCP. One possible explanation is the way that mobile layouts—especially in portrait orientation—make unresponsive images appear smaller, giving way to large blocks of text like headings and paragraphs to become the LCP elements.
 
-The second most popular LCP element type is `div`. This is a generic HTML container that could be used for text or styling background images. To help disambiguate how often these elements contain images or text, we can evaluate the `url` property of the [LCP API](https://developer.mozilla.org/en-US/docs/Web/API/LargestContentfulPaint).  According to the [specification](https://www.w3.org/TR/largest-contentful-paint/#dom-largestcontentfulpaint-url), when this property is set, the LCP content must be an image.
+The second most popular LCP element type is `div`. This is a generic HTML container that could be used for text or styling background images. To help disambiguate how often these elements contain images or text, we can evaluate the `url` property of the [LCP API](https://developer.mozilla.org/en-US/docs/Web/API/LargestContentfulPaint).  According to the <a hreflang="en" href="https://www.w3.org/TR/largest-contentful-paint/#dom-largestcontentfulpaint-url">specification</a>, when this property is set, the LCP content must be an image.
 
 {{ figure_markup(
   image="top-lcp-content-types.png",
@@ -235,7 +235,7 @@ This is the first year that we're looking at this metric, so we don't have histo
 
 #### LCP preloading
 
-When the LCP image is not statically discoverable, [preloading](https://web.dev/preload-critical-assets/) can be an effective way to minimize the load delay. Of course, it would be better if the resource was statically discoverable to begin with, but addressing that may require rearchitecting the way the page loads. Preloading is somewhat of a quick fix by comparison, as it can be implemented with a single HTTP header or `meta` tag.
+When the LCP image is not statically discoverable, <a hreflang="en" href="https://web.dev/preload-critical-assets/">preloading</a> can be an effective way to minimize the load delay. Of course, it would be better if the resource was statically discoverable to begin with, but addressing that may require rearchitecting the way the page loads. Preloading is somewhat of a quick fix by comparison, as it can be implemented with a single HTTP header or `meta` tag.
 
 {{ figure_markup(
   content="0.56%",
@@ -246,7 +246,7 @@ When the LCP image is not statically discoverable, [preloading](https://web.dev/
   )
 }}
 
-Only about 1 in 200 mobile pages preload their LCP images. This figure falls to about 1 in 400 (0.25%) when we only consider pages whose LCP images are not statically discoverable. Otherwise, preloading statically discoverable images can be overkill as the browser already knows about the image thanks to its [preload scanner](https://web.dev/preload-scanner/).
+Only about 1 in 200 mobile pages preload their LCP images. This figure falls to about 1 in 400 (0.25%) when we only consider pages whose LCP images are not statically discoverable. Otherwise, preloading statically discoverable images can be overkill as the browser already knows about the image thanks to its <a hreflang="en" href="https://web.dev/preload-scanner/">preload scanner</a>.
 
 These results show that the overwhelming majority of the web could benefit from making their LCP images more discoverable. Loading LCP images sooner, either by making them statically discoverable or preloading them, can go a long way to improving LCP performance.
 
@@ -296,9 +296,9 @@ One way that sites might polyfill the native lazy-loading behavior is to assign 
 
 Nearly as many pages are using this kind of custom lazy-loading behavior as native lazy-loading, at 8.8% of pages with `img`-based LCP.
 
-Beyond the adverse performance effects of lazy-loading LCP images, native image lazy-loaded is [supported](https://caniuse.com/loading-lazy-attr) by all major browsers, making custom solutions like these obsolete. Developers should seriously consider removing these polyfills from their code and switch to using native lazy-loading judiciously.
+Beyond the adverse performance effects of lazy-loading LCP images, native image lazy-loaded is <a hreflang="en" href="https://caniuse.com/loading-lazy-attr">supported</a> by all major browsers, making custom solutions like these obsolete. Developers should seriously consider removing these polyfills from their code and switch to using native lazy-loading judiciously.
 
-Another benefit to using native lazy-loading is that browsers like Chrome are [experimenting](https://bugs.chromium.org/p/chromium/issues/detail?id=996963) with using heuristics to ignore the attribute on probable LCP candidates. If that were to happen, the images would be eagerly loaded thanks to their static discoverability, which is defeated by custom solutions.
+Another benefit to using native lazy-loading is that browsers like Chrome are <a hreflang="en" href="https://bugs.chromium.org/p/chromium/issues/detail?id=996963">experimenting</a> with using heuristics to ignore the attribute on probable LCP candidates. If that were to happen, the images would be eagerly loaded thanks to their static discoverability, which is defeated by custom solutions.
 
 {{ figure_markup(
   content="18%",
@@ -495,17 +495,17 @@ Taking a step back, LCP performance improved significantly this year. While we d
 
 What we've seen so far is that render-blocking resources are still quite prevalent, very few sites are using advanced prioritization techniques, and more than a third of LCP images are not statically discoverable. If site owners aren't making improvements to these areas _en masse_, perhaps there are changes at the OS or browser level that are responsible for the movement we've seen this year. There are two possible explanations: improved caching in Chrome and improved performance on Android.
 
-The [back/forward cache](https://web.dev/bfcache/), or _bfcache_, is a browser feature that enables pages to be quickly restored from memory when a user navigates back or forward. By avoiding the network entirely, a bfcache restoration is nearly instantaneous for loading performance.
+The <a hreflang="en" href="https://web.dev/bfcache/">back/forward cache</a>, or _bfcache_, is a browser feature that enables pages to be quickly restored from memory when a user navigates back or forward. By avoiding the network entirely, a bfcache restoration is nearly instantaneous for loading performance.
 
-In late 2021, Chrome [improved](https://www.smashingmagazine.com/2022/05/performance-game-changer-back-forward-cache/) support for bfcache-eligible sites. This meant that users on these sites would start to experience instantaneous LCP performance. We would also expect to see a comparable improvement to TTFB, but this might be a side effect of the way TTFB is measured in CrUX. According to the CrUX documentation, it's technically still an [experimental](https://developer.chrome.com/docs/crux/methodology/#experimental-metrics) metric and so it _does not_ account for bfcache and other pre-rendered navigations.
+In late 2021, Chrome <a hreflang="en" href="https://www.smashingmagazine.com/2022/05/performance-game-changer-back-forward-cache/">improved</a> support for bfcache-eligible sites. This meant that users on these sites would start to experience instantaneous LCP performance. We would also expect to see a comparable improvement to TTFB, but this might be a side effect of the way TTFB is measured in CrUX. According to the CrUX documentation, it's technically still an <a hreflang="en" href="https://developer.chrome.com/docs/crux/methodology/#experimental-metrics">experimental</a> metric and so it _does not_ account for bfcache and other pre-rendered navigations.
 
-Another hypothesis is that LCP improved across the web due to optimizations to Android. According to a [Chromium blog post](https://blog.chromium.org/2022/03/a-new-speed-milestone-for-chrome.html#:~:text=Chrome%20continues%20to%20get%20faster%20on%20Android%20as%20well.%20Loading%20a%20page%20now%20takes%2015%25%20less%20time%2C%20thanks%20to%20prioritizing%20critical%20navigation%20moments%20on%20the%20browser%20user%20interface%20thread) in March 2022, loading performance on Android improved by 15%. The post doesn't go into too much detail, but it credits the improvement to "_prioritizing critical navigation moments on the browser user interface thread_." 15% is very significant, and it may also help explain why mobile performance outpaced desktop performance in 2022.
+Another hypothesis is that LCP improved across the web due to optimizations to Android. According to a <a hreflang="en" href="https://blog.chromium.org/2022/03/a-new-speed-milestone-for-chrome.html#:~:text=Chrome%20continues%20to%20get%20faster%20on%20Android%20as%20well.%20Loading%20a%20page%20now%20takes%2015%25%20less%20time%2C%20thanks%20to%20prioritizing%20critical%20navigation%20moments%20on%20the%20browser%20user%20interface%20thread">Chromium blog post</a> in March 2022, loading performance on Android improved by 15%. The post doesn't go into too much detail, but it credits the improvement to "_prioritizing critical navigation moments on the browser user interface thread_." 15% is very significant, and it may also help explain why mobile performance outpaced desktop performance in 2022.
 
 The six percentage point improvement to LCP this year can only happen when hundreds of thousands of websites' performance improves. Putting aside the tantalizing question of how that happened, let's take a moment to appreciate that user experiences on the web _are_ getting better. It's hard work, but improvements like these make the ecosystem healthier and we should all be proud.
 
 ## First Input Delay (FID)
 
-[First Input Delay](https://web.dev/fid/) (FID) measures the time from the first user interaction like a click or tap to the time at which the browser begins processing the corresponding event handlers.
+<a hreflang="en" href="https://web.dev/fid/">First Input Delay</a> (FID) measures the time from the first user interaction like a click or tap to the time at which the browser begins processing the corresponding event handlers.
 
 {{ figure_markup(
   image="good-fid-by-device.png",
@@ -519,15 +519,15 @@ The six percentage point improvement to LCP this year can only happen when hundr
 
 We say that a website has good FID if at least 75 percent of all navigations across the site are faster than 100 ms. Effectively all websites have "good" FID for desktop users, and this trend has held firm over the years. Mobile FID performance is also exceptionally fast, with 92% of websites having "good" FID, a slight improvement over last year.
 
-While it's great that so many websites have good FID experiences, developers need to be careful not to become too complacent. Google has been [experimenting](https://web.dev/better-responsiveness-metric/) with a new responsiveness metric that could end up replacing FID. This is especially important because sites tend to perform much worse on this metric than FID.
+While it's great that so many websites have good FID experiences, developers need to be careful not to become too complacent. Google has been <a hreflang="en" href="https://web.dev/better-responsiveness-metric/">experimenting</a> with a new responsiveness metric that could end up replacing FID. This is especially important because sites tend to perform much worse on this metric than FID.
 
 ### Interaction to Next Paint (INP)
 
-Interaction to Next Paint (INP) measures the amount of time it takes for the browser to complete the next paint in response to a user interaction. This metric came about after Google [requested feedback](https://web.dev/responsiveness/) on a new responsiveness metric in November 2021.
+Interaction to Next Paint (INP) measures the amount of time it takes for the browser to complete the next paint in response to a user interaction. This metric came about after Google <a hreflang="en" href="https://web.dev/responsiveness/">requested feedback</a> on a new responsiveness metric in November 2021.
 
 An interaction in this context refers to a group of events that make up one user operation. Depending on how many interactions a page has, the value of INP is between the 98th and 100th percentile of all interactions.
 
-In contrast, FID currently only looks at a page's first input, and measures the time from user input to when the event handler _starts _processing. Input means one single event instead of a collection of events to create a user interaction. This doesn't factor in the event handler itself, or how the UI needs to react.
+In contrast, FID currently only looks at a page's first input, and measures the time from user input to when the event handler _starts_ processing. Input means one single event instead of a collection of events to create a user interaction. This doesn't factor in the event handler itself, or how the UI needs to react.
 
 This is an example of how browser-based performance metrics are the best tool we have to understand user experience, but we should always ask if the metric is giving us a meaningful signal about what we are truly trying to measure. INP gives us a more holistic view of responsiveness. One might wonder if FID is actually more about optimizing load performance since it focused on the first input only, when it was really intending to measure interactivity performance. It's true that the upper percentile INP values could still be during page load when the main thread is blocked, but it's exciting to get a better picture of the user's entire page visit.
 
@@ -602,16 +602,16 @@ We also see the consequences of double tap to zoom for mobile: the mandatory 300
   )
 }}
 
-One lesser known contributor to first input delay on mobile is the double tap to zoom feature. After the first tap from a user, the browser waits an additional 300ms to listen for a second tap in order to perform a zoom action instead of processing an event handler. If there is no second tap, the event handler is processed and 300ms is wasted. The solution is to disable the feature all together, and like much of the web, implementation is dependent on browser. In [Chrome 91](https://chromium.googlesource.com/chromium/src/+/refs/heads/main/docs/speed/metrics_changelog/2021_05_fid.md)(05/2021), the requirements for automatically disabling double tap to zoom were relaxed to include cases where the meta viewport tag contains one of the following:
+One lesser known contributor to first input delay on mobile is the double tap to zoom feature. After the first tap from a user, the browser waits an additional 300ms to listen for a second tap in order to perform a zoom action instead of processing an event handler. If there is no second tap, the event handler is processed and 300ms is wasted. The solution is to disable the feature all together, and like much of the web, implementation is dependent on browser. In <a hreflang="en" href="https://chromium.googlesource.com/chromium/src/+/refs/heads/main/docs/speed/metrics_changelog/2021_05_fid.md">Chrome 91</a>(05/2021), the requirements for automatically disabling double tap to zoom were relaxed to include cases where the meta viewport tag contains one of the following:
 
--  _width=device-width_
--  _initial-scale>=1.0 _(explicitly or implicitly set)
+-  `width=device-width`
+-  `initial-scale>=1.0` (explicitly or implicitly set)
 
-A [corresponding lighthouse audit](https://web.dev/viewport/) exists, but this only checks for the presence of a _width_ or _initial-scale _attribute, it doesn't enforce the value of these attributes. We found that 28% of mobile pages failed the lighthouse audit, which indicates an untapped opportunity to improve FID. For more information on how to disable the feature, see _[300ms tap delay, gone away](https://developer.chrome.com/blog/300ms-tap-delay-gone-away/)._
+A <a hreflang="en" href="https://web.dev/viewport/">corresponding lighthouse audit</a> exists, but this only checks for the presence of a `width` or `initial-scale` attribute, it doesn't enforce the value of these attributes. We found that 28% of mobile pages failed the lighthouse audit, which indicates an untapped opportunity to improve FID. For more information on how to disable the feature, see <a hreflang="en" href="https://developer.chrome.com/blog/300ms-tap-delay-gone-away/">300ms tap delay, gone away</a>.
 
 ## Cumulative Layout Shift (CLS)
 
-[Cumulative Layout Shift](https://web.dev/cls/) (CLS) is a layout stability metric that represents the amount that content unexpectedly moves around on the screen. We say that a website has good CLS if at least 75 percent of all navigations across the site have a score of 0.1 or less.
+<a hreflang="en" href="https://web.dev/cls/">Cumulative Layout Shift</a> (CLS) is a layout stability metric that represents the amount that content unexpectedly moves around on the screen. We say that a website has good CLS if at least 75 percent of all navigations across the site have a score of 0.1 or less.
 
 {{ figure_markup(
   image="good-cls-by-device.png",
@@ -635,7 +635,7 @@ What might have caused such a steep improvement? Similar to the LCP story, bfcac
 
 If all else fails, the browser learns of these elements' dimensions as they load, at which point some amount of the page has likely been rendered. The browser then recalculates page layout with the element's newly discovered dimensions factored in, moving elements that have already rendered around on the screen. There's good news, though: we give these dimensions in advance to the browser by assigning an aspect ratio or width and height to the element.
 
-An open source in browser linter [RespImageLint](https://ausi.github.io/respimagelint/) can help you catch this for images and other performance concerns.
+An open source in browser linter <a hreflang="en" href="https://ausi.github.io/respimagelint/">RespImageLint</a> can help you catch this for images and other performance concerns.
 
 #### Web Font Swap - FOUT
 
@@ -650,16 +650,16 @@ Speed up custom font loading:
 Reduce font swap layout shift:
 
 -  Choose a fallback system font that is similar in size to your custom font
--  Style the fallback system font to be as close as possible in size to your custom font using CSS rules like [ascent-override](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/ascent-override) or [descent-override](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/descent-override)
+-  Style the fallback system font to be as close as possible in size to your custom font using CSS rules like [`ascent-override`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/ascent-override) or [`descent-override`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/descent-override)
 
 Avoid font swap layout shift:
 
 -  Don't use a custom font
--  Don't swap fonts: use _[font-display: optional](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display) _to instruct the browser to only use custom fonts on subsequent pages if any text has rendered in a system font.
+-  Don't swap fonts: use [`font-display: optional`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display) to instruct the browser to only use custom fonts on subsequent pages if any text has rendered in a system font.
 
 #### CSS Animations - Layout Inducing
 
-When implementing CSS animations, use the _transform _CSS rule to move elements around instead of _position_. The former (_transform_) moves elements outside of the document flow, so surrounding elements stay in place. The latter moves elements within the document flow which triggers layout.
+When implementing CSS animations, use the `transform` CSS rule to move elements around instead of `position`. The former (_transform_) moves elements outside of the document flow, so surrounding elements stay in place. The latter moves elements within the document flow which triggers layout.
 
 #### Banners
 
@@ -672,4 +672,4 @@ Banners like GDPR notices and mailing list invitations can cause layout shift wh
 
 As the industry continues to learn more about CWV, we're seeing steady improvement both in terms of implementation and the metric values themselves. The most visible performance optimization strides are at the browser and framework level where the impact can be felt across many sites at once. Teams like Aurora have set a precedent for collaborating with open source framework owners to introduce sweeping performance improvements. But let's look at the most elusive piece of the performance puzzle: individual site owners.
 
-Google's decision to make CWV part of search ranking catapulted performance to the top of many companies' roadmaps, and we're seeing that reflected in the metrics.  Yet in some cases, developers choose to hack the metrics for SEO's sake rather than actually improve performance. There are as many reasons for this as there are stars in the sky, but one that we cannot ignore is how overwhelming and daunting web performance can be. We've also seen that there are some knowledge gaps to close with common causes of slow performance. The solution? Continue to invest in making web performance accessible. In the years to come, let's emphasize getting web performance knowledge the ‘last mile' to the site owner.
+Google's decision to make CWV part of search ranking catapulted performance to the top of many companies' roadmaps, and we're seeing that reflected in the metrics.  Yet in some cases, developers choose to hack the metrics for SEO's sake rather than actually improve performance. There are as many reasons for this as there are stars in the sky, but one that we cannot ignore is how overwhelming and daunting web performance can be. We've also seen that there are some knowledge gaps to close with common causes of slow performance. The solution? Continue to invest in making web performance accessible. In the years to come, let's emphasize getting web performance knowledge the 'last mile' to the site owner.
