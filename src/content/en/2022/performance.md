@@ -21,7 +21,7 @@ featured_stat_label_3: TODO
 unedited: true
 ---
 
-##  Introduction
+## Introduction
 
 Web performance is crucial to user experience and accessibility. We've all bounced from a site before due to slow load times, or worse, have not been able to access important information. Additionally, numerous <a hreflang="en" href="https://wpostats.com/">case studies</a> have demonstrated that an improvement in web performance results in an improvement in conversion and engagement for businesses.
 
@@ -604,8 +604,8 @@ We also see the consequences of double tap to zoom for mobile: the mandatory 300
 
 One lesser known contributor to first input delay on mobile is the double tap to zoom feature. After the first tap from a user, the browser waits an additional 300ms to listen for a second tap in order to perform a zoom action instead of processing an event handler. If there is no second tap, the event handler is processed and 300ms is wasted. The solution is to disable the feature all together, and like much of the web, implementation is dependent on browser. In <a hreflang="en" href="https://chromium.googlesource.com/chromium/src/+/refs/heads/main/docs/speed/metrics_changelog/2021_05_fid.md">Chrome 91</a>(05/2021), the requirements for automatically disabling double tap to zoom were relaxed to include cases where the meta viewport tag contains one of the following:
 
--  `width=device-width`
--  `initial-scale>=1.0` (explicitly or implicitly set)
+- `width=device-width`
+- `initial-scale>=1.0` (explicitly or implicitly set)
 
 A <a hreflang="en" href="https://web.dev/viewport/">corresponding lighthouse audit</a> exists, but this only checks for the presence of a `width` or `initial-scale` attribute, it doesn't enforce the value of these attributes. We found that 28% of mobile pages failed the lighthouse audit, which indicates an untapped opportunity to improve FID. For more information on how to disable the feature, see <a hreflang="en" href="https://developer.chrome.com/blog/300ms-tap-delay-gone-away/">300ms tap delay, gone away</a>.
 
@@ -643,19 +643,19 @@ In the page load process, it can take some time for the browser to discover, req
 
 Speed up custom font loading:
 
--  Use preload or priority hints to load font files earlier. You'll want to test this to see what other resources are getting deprioritized so you can weigh the tradeoffs.
--  Use WOFF2 format, which offers the most optimized support for compression among all font file formats.
--  Review your font caching strategy. Usually, fonts don't change very often so they are a candidate for long term caching.
+- Use preload or priority hints to load font files earlier. You'll want to test this to see what other resources are getting deprioritized so you can weigh the tradeoffs.
+- Use WOFF2 format, which offers the most optimized support for compression among all font file formats.
+- Review your font caching strategy. Usually, fonts don't change very often so they are a candidate for long term caching.
 
 Reduce font swap layout shift:
 
--  Choose a fallback system font that is similar in size to your custom font
--  Style the fallback system font to be as close as possible in size to your custom font using CSS rules like [`ascent-override`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/ascent-override) or [`descent-override`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/descent-override)
+- Choose a fallback system font that is similar in size to your custom font
+- Style the fallback system font to be as close as possible in size to your custom font using CSS rules like [`ascent-override`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/ascent-override) or [`descent-override`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/descent-override)
 
 Avoid font swap layout shift:
 
--  Don't use a custom font
--  Don't swap fonts: use [`font-display: optional`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display) to instruct the browser to only use custom fonts on subsequent pages if any text has rendered in a system font.
+- Don't use a custom font
+- Don't swap fonts: use [`font-display: optional`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display) to instruct the browser to only use custom fonts on subsequent pages if any text has rendered in a system font.
 
 #### CSS Animations - Layout Inducing
 
@@ -665,8 +665,8 @@ When implementing CSS animations, use the `transform` CSS rule to move elements 
 
 Banners like GDPR notices and mailing list invitations can cause layout shift when:
 
--  They are inserted into the document flow after some part of the page has rendered, without reserved space. In this case, we want to use a placeholder element to reserve space before the banner loads.
--  They animate onto the page in a way that triggers layout. For the solution here, see the previous section.
+- They are inserted into the document flow after some part of the page has rendered, without reserved space. In this case, we want to use a placeholder element to reserve space before the banner loads.
+- They animate onto the page in a way that triggers layout. For the solution here, see the previous section.
 
 ## Conclusion
 
