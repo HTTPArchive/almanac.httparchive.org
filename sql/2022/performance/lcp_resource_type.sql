@@ -3,7 +3,7 @@ WITH lcp AS (
     _TABLE_SUFFIX AS client,
     url AS page,
     # Parse anchors out of LCP URLs.
-    REGEXP_EXTRACT(JSON_VALUE(payload, '$._performance.lcp_elem_stats.url'), r'([^#]*)') AS url,
+    REGEXP_EXTRACT(JSON_VALUE(payload, '$._performance.lcp_elem_stats.url'), r'([^#]*)') AS url
   FROM
     `httparchive.pages.2022_06_01_*`
 )

@@ -25,7 +25,7 @@ WITH lcp_stats AS (
   SELECT
     _TABLE_SUFFIX AS client,
     getLoadingAttr(JSON_EXTRACT(payload, '$._performance.lcp_elem_stats.attributes')) = 'lazy' AS native_lazy,
-    hasLazyHeuristics(JSON_EXTRACT(payload, '$._performance.lcp_elem_stats.attributes')) AS custom_lazy,
+    hasLazyHeuristics(JSON_EXTRACT(payload, '$._performance.lcp_elem_stats.attributes')) AS custom_lazy
   FROM
     `httparchive.pages.2022_06_01_*`
   WHERE
