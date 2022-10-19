@@ -151,6 +151,23 @@
     "hash": "22c039ee38c4300969fda514c940721e",
     "size": 32
   },
+  "/static/pdfs/web_almanac_2022_en.pdf": {
+    "date_published": "2022-10-19T00:00:00.000Z",
+    "date_modified": "2022-10-19T00:00:00.000Z",
+    "hash": "b41d6e12d73ada97f2145d00ffc40020",
+    "size": 17
+  },
+  "/static/pdfs/web_almanac_2022_en_cover_A5.pdf": {
+    "date_published": "2022-10-19T00:00:00.000Z",
+    "date_modified": "2022-10-19T00:00:00.000Z",
+    "hash": "dbc6ef4defb9ce75731d0496a62d329d"
+  },
+  "/static/pdfs/web_almanac_2022_en_print_A5.pdf": {
+    "date_published": "2022-10-19T00:00:00.000Z",
+    "date_modified": "2022-10-19T00:00:00.000Z",
+    "hash": "229ba24f4e731f13f1326ef6ca084d37",
+    "size": 16
+  },
   "en/2019/chapters/accessibility.html": {
     "date_published": "2019-11-11T00:00:00.000Z",
     "date_modified": "2022-03-02T00:00:00.000Z",
