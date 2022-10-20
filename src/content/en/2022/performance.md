@@ -4,7 +4,7 @@ title: Performance
 #TODO - Review and update chapter description
 description: Performance chapter of the 2022 Web Almanac covering Core Web Vitals, with deep dives into the Largest Contentful Paint, Cumulative Layout Shift, and First Input Delay metrics and their diagnostics.
 authors: [mel-ada, rviscomi]
-reviewers: [tunetheweb, 25prathamesh, estelle, konfirmed]
+reviewers: [tunetheweb, pmeenan, 25prathamesh, estelle, konfirmed]
 analysts: [rviscomi, 25prathamesh, siakaramalegos, konfirmed]
 editors: [tunetheweb]
 translators: []
