@@ -221,7 +221,7 @@ function renderWebmentions(webmentions) {
   renderReactions(webmentions, "replies", "in-reply-to");
   renderReactions(webmentions, "mentions", "mention-of");
 
-  // Set the first active tab (in case no ",likes" so it's hidden)
+  // Set the first active tab (in case no "likes" so that tab is hidden)
   setActiveTab();
 }
 
