@@ -195,7 +195,7 @@ function setActiveTab() {
 
   // The default is likes so we have "likes" then all good:
   const likesTab = document.querySelector('#likes-tab');
-  if (!likesTab.classList.contains('no-reactions')) {
+  if (!likesTab || !likesTab.classList.contains('no-reactions')) {
     return;
   }
 
