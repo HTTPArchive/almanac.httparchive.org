@@ -909,6 +909,10 @@ pre {
   pointer-events: none;
 }
 
+.no-reactions {
+  display:none;
+}
+
 .webmention-likes,
 .webmention-reposts {
   display: flex;

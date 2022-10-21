@@ -75,8 +75,12 @@ function renderReactions(webmentions, reactionType, wmProperty) {
     return;
   }
 
-  // Add the count to the reaction tab
+  // Add the count to the reaction tab and, if non-zero then unhide
   document.querySelector(`#${reactionType}-count`).textContent = reactions.length;
+  if (reactions.length > 0) {
+    document.querySelector(`#${reactionType}-tab`).classList.remove("no-reactions");
+    document.querySelector('#reactions').classList.remove("no-reactions");
+  }
   const reactionLabel = document.querySelector(`#${reactionType}-label`);
 
   if (reactions && reactions.length) {
@@ -187,6 +191,25 @@ function renderReactions(webmentions, reactionType, wmProperty) {
   document.querySelector(`#${reactionType}-panel`).appendChild(webmentionReactionsList);
 }
 
+function setActiveTab() {
+
+  // The default is likes so we have "likes" then all good:
+  const likesTab = document.querySelector('#likes-tab');
+  if (!likesTab.classList.contains('no-reactions')) {
+    return;
+  }
+
+  // If no likes, then try each in turn and find the first one with reactions
+  for (const tab of ["reposts-tab", "replies-tab", "mentions-tab"]) {
+    const tabElement = document.querySelector(`#${tab}`);
+    if (!tabElement.classList.contains('no-reactions')) {
+      changeTabs(tabElement);
+      return;
+    }
+  }
+
+}
+
 // Parses and renders mentions into likes, reposts, replies and mentions
 function renderWebmentions(webmentions) {
   if (!webmentions.length) {
@@ -197,6 +220,9 @@ function renderWebmentions(webmentions) {
   renderReactions(webmentions, "reposts", "repost-of");
   renderReactions(webmentions, "replies", "in-reply-to");
   renderReactions(webmentions, "mentions", "mention-of");
+
+  // Set the first active tab (in case no ",likes" so it's hidden)
+  setActiveTab();
 }
 
 // Process webmention promise
