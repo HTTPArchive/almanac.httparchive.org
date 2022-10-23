@@ -1,7 +1,5 @@
 ---
-#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Performance
-#TODO - Review and update chapter description
 description: Performance chapter of the 2022 Web Almanac covering Core Web Vitals, with deep dives into the Largest Contentful Paint, Cumulative Layout Shift, and First Input Delay metrics and their diagnostics.
 authors: [mel-ada, rviscomi]
 reviewers: [tunetheweb, pmeenan, 25prathamesh, estelle, konfirmed]
@@ -415,7 +413,7 @@ Lighthouse includes an <a hreflang="en" href="https://web.dev/uses-optimized-ima
 {{ figure_markup(
   image="lcp-image-optimization.png",
   caption="Histogram of byte savings for JPG-based LCP images.",
-  description="TODO",
+  description="Bar chart showing how many bytes can be saved by optimizing JPG images that are the LCP resource. 68% of mobile pages have 0 kilobytes of savings, 20% have up to 100 KB, 5% 200 KB, 2% 300 KB, 1% 400 KB, and 4% 500 KB or more. Desktop pages have a similar distribution.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR-dJP3uphZoGE5A_luniNBFm5V2ww6irfOxANg0hrMid7gjgrtchsN_utOIDOvVZUjIwpmUBb27nHF/pubchart?oid=894221089&format=interactive",
   sheets_gid="369396330",
   sql_file="lcp_wasted_bytes.sql"
@@ -550,20 +548,18 @@ What happened to improve mobile CLS by such a significant margin? One likely exp
 {{ figure_markup(
   image="monthly-cls-lcp.png",
   caption="Monthly timeseries of the percent of websites having good mobile LCP and CLS.",
-  description="TODO",
+  description="Line chart showing the monthly percent of websites that whose mobile LCP and CLS is rated good. More websites have good CLS than LCP. The CLS line trends upwards starting at 62% in June 2021, bumps up to 67% in September 2021, and another bump to 73% starting in January 2022. LCP is also increasing, but the trend starts in November 2021 at 47% and steadily rises to 54% in May 2022.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR-dJP3uphZoGE5A_luniNBFm5V2ww6irfOxANg0hrMid7gjgrtchsN_utOIDOvVZUjIwpmUBb27nHF/pubchart?oid=1531911610&format=interactive",
   sheets_gid="1879625698",
   sql_file="monthly_cls_lcp.sql"
   )
 }}
 
-This chart shows LCP and CLS performance over time at monthly granularity. Over a two month period starting in December 2021, after Chrome released the bfcache update, the percent of websites having good CLS started to climb much more quickly than before.
+This chart shows LCP and CLS performance over time at monthly granularity. Over a two month period starting in January 2022, after Chrome released the bfcache update, the percent of websites having good CLS started to climb much more quickly than before.
 
-But how did bfcache improve CLS so much, and why doesn't this explain the gains to LCP? Due to the way Chrome restores the page layout from memory, the layout is not affected by any of the initial layout shifts that typically occur during page load.
+But how did bfcache improve CLS so much? Due to the way Chrome instantly restores the page from memory, its layout is settled and unaffected by any of the initial instability that typically occurs during loading.
 
 One theory why LCP experiences didn't improve as dramatically is that back/forward navigations were already pretty fast thanks to standard HTTP caching. Remember, the threshold for "good" LCP is 2.5 seconds, which is pretty generous assuming any critical resources would already be in cache, and there are no bonus points for making "good" experiences even faster.
-
-To back this theory up, notice in the chart above that there wasn't a major boost in LCP performance in January 2022 like CLS. In fact, LCP appears to have already been on a consistent, upward trajectory months beforesince October 2021, prior to the bfcache release.
 
 ### CLS metadata and best practices
 
@@ -587,7 +583,7 @@ The most straightforward way to avoid layout shifts is to reserve space for cont
 {{ figure_markup(
   image="unsized-images.png",
   caption="Distribution of the number of unsized images per page.",
-  description="TODO",
+  description="Bar chart showing the 10, 25, 50, 75, and 90th percentile number of images per page. The values for mobile are 0, 0, 2, 11, and 26 unsized images per page, respectively. Desktop pages have between 1 and 3 more unsized images per page in the 50 to 90th percentiles.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR-dJP3uphZoGE5A_luniNBFm5V2ww6irfOxANg0hrMid7gjgrtchsN_utOIDOvVZUjIwpmUBb27nHF/pubchart?oid=449564630&format=interactive",
   sheets_gid="1160188541",
   sql_file="cls_unsized_images.sql"
@@ -601,7 +597,7 @@ Having any unsized images on the page can be a liability for CLS, but the most i
 {{ figure_markup(
   image="unsized-image-height.png",
   caption="Distribution of the heights of unsized images.",
-  description="TODO",
+  description="Bar chart showing the 10, 25, 50, 75, and 90th percentile height of unsized images. The values for mobile are 16, 40, 99, 184, and 267px tall, respectively. The values for desktop are much larger: 18, 42, 113, 237, and 410px.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR-dJP3uphZoGE5A_luniNBFm5V2ww6irfOxANg0hrMid7gjgrtchsN_utOIDOvVZUjIwpmUBb27nHF/pubchart?oid=1273679516&format=interactive",
   sheets_gid="309190465",
   sql_file="cls_unsized_image_height.sql"
@@ -641,7 +637,7 @@ Some <a hreflang="en" href="https://web.dev/non-composited-animations/">non-comp
 {{ figure_markup(
   image="animations.png",
   caption="Distribution of the number of non-composited animations per page.",
-  description="TODO",
+  description="Bar chart showing the 10, 25, 50, 75, and 90th percentiles of the number of non-composited animations per page. At the 75th percentile, pages have 2 non-composited animations, and at the 90th percentile they have 10 for mobile and 11 for desktop.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR-dJP3uphZoGE5A_luniNBFm5V2ww6irfOxANg0hrMid7gjgrtchsN_utOIDOvVZUjIwpmUBb27nHF/pubchart?oid=6443199&format=interactive",
   sheets_gid="603122500",
   sql_file="cls_animations.sql"
@@ -668,7 +664,7 @@ In the page load process, it can take some time for the browser to discover, req
 {{ figure_markup(
   image="font-display-usage.png",
   caption="Adoption of `font-display` values.",
-  description="TODO",
+  description="Bar chart showing the percent of pages that use the various `font-display` values. 29% of mobile pages use swap, 17% block, 8% auto, 2% fallback, and less than 1% use optional. The values for desktop are similar.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=1648924039&format=interactive",
   sheets_gid="https://docs.google.com/spreadsheets/d/1A1XwuGa1DkqNLaF-lSXz4ndxO9G6SfACHwUvvywHgbQ/edit#gid=1599822681&range=G11",
   sql_file="../fonts/font_display_usage.sql"
@@ -684,7 +680,7 @@ Rather than hiding the web fonts, another strategy to mitigate CLS is to load th
 {{ figure_markup(
   image="fonts-resource-hints.png",
   caption="Adoption of resource hints for font resources.",
-  description="TODO",
+  description="Bar chart showing the percent of pages that use each type of resource hint on web fonts. 32% of mobile pages use dns-prefetch, 20% preload, 16% preconnect, and 2% preload. The values for desktop are similar.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=1831399490&format=interactive",
   sheets_gid="https://docs.google.com/spreadsheets/d/1A1XwuGa1DkqNLaF-lSXz4ndxO9G6SfACHwUvvywHgbQ/edit#gid=592046045&range=F11",
   sql_file="../fonts/resource_hints_usage.sql"
@@ -702,7 +698,7 @@ The best way to tell if a given page is eligible for bfcache is to <a hreflang="
 {{ figure_markup(
   image="bfcache-unload.png",
   caption="Usage of `unload` by site rank.",
-  description="TODO",
+  description="Bar chart showing the percent of pages that are ineligble for bfcache due to setting unload handlers, grouped by site popularity rank. 36% of the top 1 thousand mobile pages set this handler, 33% of the top 10 thousand, 27% of the top 100 thousand, 21% of the top million, and 17% of all mobile pages. Desktop pages tend to use the unload handler slightly more often by a couple of percentage points across the ranks.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR-dJP3uphZoGE5A_luniNBFm5V2ww6irfOxANg0hrMid7gjgrtchsN_utOIDOvVZUjIwpmUBb27nHF/pubchart?oid=63175690&format=interactive",
   sheets_gid="996465265",
   sql_file="bfcache_unload.sql"
@@ -716,7 +712,7 @@ The <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/API/Wind
 {{ figure_markup(
   image="bfcache-nostore.png",
   caption="Usage of `Cache-Control: no-store` by site rank.",
-  description="TODO",
+  description="Bar chart showing the percent of pages that are ineligible for bfcache due to setting the `Cache-Control: no-store` header on the main document. 28% of the top 1 thousand mobile pages set this header, 27% of the top 10 thousand, 28% of the top 100 thousand, 27% of the top million, and 22% of all mobile pages. Desktop pages use this header slightly more often by up to 2 percentage points.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR-dJP3uphZoGE5A_luniNBFm5V2ww6irfOxANg0hrMid7gjgrtchsN_utOIDOvVZUjIwpmUBb27nHF/pubchart?oid=1655848232&format=interactive",
   sheets_gid="1063873438",
   sql_file="bfcache_cachecontrol_nostore.sql"
@@ -791,7 +787,7 @@ TBT is often used as a lab-based proxy for FID, due to the challenges of realist
 {{ figure_markup(
   image="tbt.png",
   caption="Distribution of lab-based TBT per page.",
-  description="TODO",
+  description="Bar chart showing the 10, 25, 50, 75, and 90th percentile of lab-based TBT per page. The values for mobile pages are 0.2, 0.6, 1.7, 3.6, and 6.4 seconds, respectively. The values for desktop pages are much faster, with fewer than 100ms in the top 50 percent, about 250ms in the 75th percentile, and 600ms in the 90th percentile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR-dJP3uphZoGE5A_luniNBFm5V2ww6irfOxANg0hrMid7gjgrtchsN_utOIDOvVZUjIwpmUBb27nHF/pubchart?oid=1459512477&format=interactive",
   sheets_gid="528722499",
   sql_file="fid_tbt.sql"
@@ -813,7 +809,7 @@ Note that, like the TBT analysis above, this section draws from lab-based data. 
 {{ figure_markup(
   image="long-tasks.png",
   caption="Distribution of lab-based long tasks per page.",
-  description="TODO",
+  description="Bar chart showing the 10, 25, 50, 75, and 90th percentiles of the sum of lab-based long tasks per page. The values for mobile are 0.8, 1.7, 3.3, 5.3, and 8.0 seconds of long tasks per page. The values for desktop are much faster at fewer than 100ms in the first 50%, followed by 700ms at the 75th percentile, and 1.4 seconds at the 90th percentile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR-dJP3uphZoGE5A_luniNBFm5V2ww6irfOxANg0hrMid7gjgrtchsN_utOIDOvVZUjIwpmUBb27nHF/pubchart?oid=1004723255&format=interactive",
   sheets_gid="1849899474",
   sql_file="fid_long_tasks.sql"
@@ -832,10 +828,12 @@ An _interaction_ in this context refers to the user experience of providing an i
 
 Unlike FID, INP is a measure of all interactions on the page, not just the first one. It also measures the entire time until the next frame is painted, unlike FID which only measures the time until the event handler only starts_ _processing. In these ways, INP is a much more representative metric of the holistic user experience on the page.
 
+A website has "good" INP if 75% of its INP experiences are faster than 200 ms. A website has "poor" INP if the 75th percentile is greater than or equal to 500 ms. Otherwise, it's INP is assessed as "needs improvement".
+
 {{ figure_markup(
   image="inp-device.png",
   caption="Distribution of INP performance by device.",
-  description="TODO",
+  description="Bar chart showing the percent of websites having good, needs improvement, or poor INP by device. 95% of desktop websites have good INP, 4% need improvement, and 1% are poor. 55% of mobile websites have good INP, 36% need improvement, and 8% are poor.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR-dJP3uphZoGE5A_luniNBFm5V2ww6irfOxANg0hrMid7gjgrtchsN_utOIDOvVZUjIwpmUBb27nHF/pubchart?oid=755106375&format=interactive",
   sheets_gid="555510064",
   sql_file="web_vitals_by_device.sql"
@@ -865,7 +863,7 @@ To see how unevenly distributed INP performance is across the web, it's useful t
 {{ figure_markup(
   image="js-bytes-rank.png",
   caption="Median amount of JavaScript loaded per page, by rank.",
-  description="TODO",
+  description="Bar chart showing the median kilobytes of JavaScript per page, grouped by device and site rank. The median top 1 thousand mobile page loads 604 KB of JavaScript, 680 in the top 10 thousand, 610 in the top 100 thousand, 583 in the top million, and 462 overall. The values for desktop follow the same trend and are larger by tens of kilobytes.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR-dJP3uphZoGE5A_luniNBFm5V2ww6irfOxANg0hrMid7gjgrtchsN_utOIDOvVZUjIwpmUBb27nHF/pubchart?oid=1725756250&format=interactive",
   sheets_gid="1423103831",
   sql_file="js_bytes_rank.sql"
@@ -885,7 +883,7 @@ This raises an interesting question: hypothetically, if INP were to be a CWV met
 {{ figure_markup(
   image="cwv-fid-inp-device.png",
   caption="Comparison of the percent of websites having good CWV with FID and INP, by device.",
-  description="TODO",
+  description="Bar chart showing the percent of websites that would be assessed as having good CWV, with either FID or INP as the responsiveness metric. 44% of desktop websites have good CWV with FID, compared to 43% with INP. 40% of mobile websites have good CWV with FID, compared to 31% with INP.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR-dJP3uphZoGE5A_luniNBFm5V2ww6irfOxANg0hrMid7gjgrtchsN_utOIDOvVZUjIwpmUBb27nHF/pubchart?oid=56387241&format=interactive",
   sheets_gid="805166525",
   sql_file="web_vitals_by_rank_and_device.sql"
@@ -898,8 +896,8 @@ However, the disparity is much more dramatic among websites' mobile experiences,
 
 {{ figure_markup(
   image="cwv-fid-inp-rank.png",
-  caption="Comparison of the percent of websites having good mobile CWV with FID and INP, by rank.",
-  description="TODO",
+  caption="Comparison of the percent of mobile websites having good mobile CWV with FID and INP, by rank.",
+  description="Bar char showing the percent of mobile websites assessed as having good CWV, with either FID or INP as the responsiveness metric. 52% of the 1 thousand most popular mobile websites would have good CWV with FID, compared to 20% with INP. 42% of the top 10 thousand with FID and 18% with INP. 38% of the top 100 thousand with FID and 20% with INP. 38% of the top million wiht FID and 25% with INP. 40% of all websites with FID and 31% with INP.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR-dJP3uphZoGE5A_luniNBFm5V2ww6irfOxANg0hrMid7gjgrtchsN_utOIDOvVZUjIwpmUBb27nHF/pubchart?oid=2082509168&format=interactive",
   sheets_gid="805166525",
   sql_file="web_vitals_by_rank_and_device.sql"
@@ -915,7 +913,7 @@ These results show that the most popular websites have the most work to do to ge
 {{ figure_markup(
   image="cwv-inp-tech.png",
   caption="Percent change of websites having good CWV from FID to INP, by technology.",
-  description="TODO",
+  description="Bar chart showing the percent of mobile websites that would start failing the CWV assessment switching from FID to INP, grouped by the CMS or JavaScript framework used. In decreasing order of the most popular technologies, the values are: WordPress 6%, React 11%, WooCommerce 3%, Shopify 6%, Vue.js 8%, RequireJS 10%, Wix 15%, Joomla 6%, Drupal 8%, 1C-Bitrix 39%, Squarespace 1%, AMP 10%, PrestaShop 7%, Emotion 10%, Angular 5%, Magento 6%, TYPO3 CMS 6%, Nuxt.js 9%, Duda 14%, Adobe Experience Manager 9%, Gatsby 14%, GoDaddy Website Builder 10%, and Pixnet 86%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR-dJP3uphZoGE5A_luniNBFm5V2ww6irfOxANg0hrMid7gjgrtchsN_utOIDOvVZUjIwpmUBb27nHF/pubchart?oid=457714899&format=interactive",
   height=632,
   sheets_gid="1104559069",
@@ -943,7 +941,7 @@ This section draws from Annie Sullivan's <a hreflang="en" href="https://colab.sa
   image="tbt-fid.png",
   alt="",
   caption='Scatterplot visualizing the correlation between FID and TBT. (<a hreflang="en" href="https://colab.sandbox.google.com/drive/12lJmAABgyVjaUbmWvrbzj9BkkTxw6ay2">Source</a>))',
-  description="TODO"
+  description="Scatterplot visualization showing the correlation of field-based FID and lab-based TBT per page. Most FID values are in the 0-50ms range with TBT values widely ranging from 0-10 seconds. There's a small cluster of FID values around 250ms with a TBT of around 0ms."
   )
 }}
 
@@ -958,7 +956,7 @@ The <a hreflang="en" href="https://en.wikipedia.org/wiki/Kendall_rank_correlatio
 {{ figure_markup(
   image="tbt-inp.png",
   caption='Scatterplot visualizing the correlation between INP and TBT. (<a hreflang="en" href="https://colab.sandbox.google.com/drive/12lJmAABgyVjaUbmWvrbzj9BkkTxw6ay2">Source</a>)',
-  description="TODO"
+  description="Scatterplot visualization showing the correlation of field-based INP and lab-based TBT per page. Most INP values are in the 0-750ms range with TBT values ranging from 0-5 seconds."
   )
 }}
 
@@ -971,7 +969,8 @@ The Kendall and Spearman coefficients of correlation for this distribution are 0
 >First, is INP correlated with TBT? Is it more correlated with TBT than FID? Yes and yes!
 >
 >But they are both correlated with TBT; is INP catching more problems with main thread blocking JavaScript? We can break down the percent of sites meeting the "good" threshold: yes it is!
-Source: Annie Sullivan on <a hreflang="en" href="https://twitter.com/anniesullie/status/1525161893450727425">Twitter</a>
+>
+>—Annie Sullivan on <a hreflang="en" href="https://twitter.com/anniesullie/status/1525161893450727425">Twitter</a>
 
 As Annie notes, both metrics are correlated with TBT, but she concludes that INP is more strongly correlated, making it a better responsiveness metric.
 
