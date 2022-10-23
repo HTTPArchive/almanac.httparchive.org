@@ -808,7 +808,7 @@ Despite the fact that these results come from synthetic testing, they're based o
 
 <a hreflang="en" href="https://web.dev/long-tasks-devtools/">Long tasks</a> are periods of script-induced CPU activity at least 50 ms long that prevent the main thread from responding to input. Any long task is liable to cause responsiveness issues if a user attempts to interact with the page at that time.
 
-Note that, like the TBT analysis above, this section draws from lab-based data. As a result, we're only able to measure long tasks during the page load observation window, which starts when the page is requested and ends after 60 seconds or 5 seconds of network inactivity, whichever comes first. A real user may experience long tasks throughout the entire lifetime of the page.
+Note that, like the TBT analysis above, this section draws from lab-based data. As a result, we're only able to measure long tasks during the page load observation window, which starts when the page is requested and ends after 60 seconds or 3 seconds of network inactivity, whichever comes first. A real user may experience long tasks throughout the entire lifetime of the page.
 
 {{ figure_markup(
   image="long-tasks.png",
