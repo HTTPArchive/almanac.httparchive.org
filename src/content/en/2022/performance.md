@@ -11,13 +11,13 @@ translators: []
 results: https://docs.google.com/spreadsheets/d/1TPA_4xRTBB2fQZaBPZHVFvD0ikrR-4sNkfJfUEpjibs/
 mel-ada_bio: Mel Ada is a software engineer on the Web Performance team at Etsy. Her current involvement in the community includes co-organizing the NY Web Performance Meetup and occaisonally doing some speaking of her own.
 rviscomi_bio: Rick Viscomi is a DevRel engineer at Google, focusing on web performance. He is the co-author of <a hreflang="en" href="https://usingwpt.com/">Using WebPageTest</a>, a book about web performance testing. He also co-maintains HTTP Archive and is the Editor-in-Chief of the Web Almanac.
-featured_quote: TODO
-featured_stat_1: TODO
-featured_stat_label_1: TODO
-featured_stat_2: TODO
-featured_stat_label_2: TODO
-featured_stat_3: TODO
-featured_stat_label_3: TODO
+featured_quote: These results show that sites absolutely do have responsiveness issues, despite the rosy picture painted by FID. Regardless of whether INP becomes a CWV metric, your users will thank you if you start optimizing it now.
+featured_stat_1: 39%
+featured_stat_label_1: Percent of LCP that is not statically discoverable
+featured_stat_2: 22%
+featured_stat_label_2: Percent of pages that are ineligble for bfache due to `no-store`
+featured_stat_3: 20%
+featured_stat_label_3: Percent of the top 1k websites that would have good CWV with INP
 unedited: true
 ---
 
