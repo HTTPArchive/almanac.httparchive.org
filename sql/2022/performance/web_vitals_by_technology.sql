@@ -1,6 +1,3 @@
-#standardSQL
-# Core WebVitals by rank and device
-
 CREATE TEMP FUNCTION IS_GOOD (good FLOAT64, needs_improvement FLOAT64, poor FLOAT64) RETURNS BOOL AS (
   SAFE_DIVIDE(good, (good + needs_improvement + poor)) >= 0.75
 );
@@ -18,13 +15,15 @@ CREATE TEMP FUNCTION IS_NON_ZERO (good FLOAT64, needs_improvement FLOAT64, poor 
   good + needs_improvement + poor > 0
 );
 
-WITH
-base AS (
+WITH base AS (
   SELECT
     date,
     origin,
-    device,
-    rank,
+    CONCAT(origin, '/') AS page,
+    CASE
+      WHEN device = 'phone' THEN 'mobile'
+      ELSE device
+    END AS client,
 
     fast_fid,
     avg_fid,
@@ -49,18 +48,30 @@ base AS (
     fast_ttfb,
     avg_ttfb,
     slow_ttfb
-
   FROM
     `chrome-ux-report.materialized.device_summary`
   WHERE
     device IN ('desktop', 'phone') AND
     date IN ('2022-06-01')
+),
+
+tech AS (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    category,
+    app AS technology,
+    url AS page
+  FROM
+    `httparchive.technologies.2022_06_01_*`
+  WHERE
+    category IN ('CMS', 'Ecommerce', 'JavaScript frameworks')
 )
 
 SELECT
   date,
-  device,
-  rank_grouping AS ranking,
+  client,
+  category,
+  technology,
 
   COUNT(DISTINCT origin) AS total_origins,
 
@@ -181,13 +192,17 @@ SELECT
         IS_NON_ZERO(fast_ttfb, avg_ttfb, slow_ttfb), origin, NULL))) AS pct_ttfb_poor
 
 FROM
-  base,
-  UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
-WHERE
-  rank <= rank_grouping
+  base
+JOIN
+  tech
+USING
+  (client, page)
 GROUP BY
   date,
-  device,
-  rank_grouping
+  client,
+  category,
+  technology
+HAVING
+  total_origins >= 1000
 ORDER BY
-  rank_grouping
+  total_origins DESC
