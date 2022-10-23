@@ -23,19 +23,19 @@ unedited: true
 
 ## Introduction
 
-Web performance is crucial to user experience and accessibility. We've all bounced from a site before due to slow load times, or worse, have not been able to access important information. Additionally, numerous [case studies](https://wpostats.com/) have demonstrated that an improvement in web performance results in an improvement in conversion and engagement for businesses.
+Web performance is crucial to user experience and accessibility. We've all bounced from a site before due to slow load times, or worse, have not been able to access important information. Additionally, numerous <a hreflang="en" href="https://wpostats.com/">case studies</a> have demonstrated that an improvement in web performance results in an improvement in conversion and engagement for businesses.
 
 However, the industry spotlight is quite elusive for web performance—why is this? This chapter focuses on Google's solution to the problem: Core Web Vitals (CWV), web performance metrics made a variable in search ranking during 2021. Since the search ranking influence was effective almost exactly one year ago, this year's data gives us insights on how the web is adjusting to the metrics and where room for opportunity might still exist.
 
 Although the spotlight of this chapter, it's important to note CWV are relatively new to the field and not the only way to measure web performance. There's no way to fit the entire history of the industry or all the different ways to evaluate performance in one chapter.  However before we jump in, it helps to briefly define what web performance even means and how it is measured.
 
-The term _performance_ tends to be thrown around a lot as this generic idea that we all agree is good, but it's often hard to pin down. This is a theme among beginners and experts alike. It seems we mostly agree that performance is about measuring if the user is having a good time on a site.  A little generic, but let's go with it for now. So how would we measure this? As [Sergey Chernyshev](https://twitter.com/sergeyche), creator of [UX Capture](https://github.com/ux-capture/ux-capture), says, "_The best way to measure performance is to be embedded into the user's brain to understand exactly what they're thinking as they use the site_".  We can't—and shouldn't in case that was unclear—do this, so what are our options?
+The term _performance_ tends to be thrown around a lot as this generic idea that we all agree is good, but it's often hard to pin down. This is a theme among beginners and experts alike. It seems we mostly agree that performance is about measuring if the user is having a good time on a site.  A little generic, but let's go with it for now. So how would we measure this? As <a hreflang="en" href="https://twitter.com/sergeyche">Sergey Chernyshev</a>, creator of <a hreflang="en" href="https://github.com/ux-capture/ux-capture">UX Capture</a>, says, "_The best way to measure performance is to be embedded into the user's brain to understand exactly what they're thinking as they use the site_".  We can't—and shouldn't in case that was unclear—do this, so what are our options?
 
-Thankfully, there is a way to measure page load speed automatically! We know the browser is in charge of loading a page, and it goes through a checklist of steps each time. Depending on which step the browser is on, we can tell how far along the site is in the page load process. Conveniently, a [number of performance timeline APIs](https://developer.mozilla.org/en-US/docs/Web/API/Performance) are used to fire off timestamps when the browser gets to certain page load steps. One such API, the [User Timing API](https://developer.mozilla.org/en-US/docs/Web/API/User_Timing_API), even allows engineers to add custom timestamps for their specific needs. These timestamps become the metrics used across the industry to decipher how performant a page is.
+Thankfully, there is a way to measure page load speed automatically! We know the browser is in charge of loading a page, and it goes through a checklist of steps each time. Depending on which step the browser is on, we can tell how far along the site is in the page load process. Conveniently, a <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/API/Performance">number of performance timeline APIs</a> are used to fire off timestamps when the browser gets to certain page load steps. One such API, the <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/API/User_Timing_API">User Timing API</a>, even allows engineers to add custom timestamps for their specific needs. These timestamps become the metrics used across the industry to decipher how performant a page is.
 
 However, these metrics are only our best guess at how to gauge user experience. For example, just because the browser fired an event that an element has been painted onto the screen, does that always mean it was visible to the user at that time? Additionally, as the industry grew, more and more metrics showed up while some became deprecated. It can be complicated to know where to start and understand what performance metrics are telling us about our users, especially for folks newer to the field.
 
-Enter [CWV](https://web.dev/vitals/), three metrics to indicate overall performance health. Each metric covers an important area of user experience: loading, interactivity, and visual stability. The public [Chrome UX Report](https://developer.chrome.com/docs/crux/) (CrUX) dataset is Chrome's view of how millions of websites are performing on CWV. There's zero setup on the developer's part; Chrome automatically collects and publishes data from [eligible](https://developer.chrome.com/docs/crux/methodology/#eligibility) users and websites. Using CrUX data, we're able to get insights into the web's performance and even track historical data.
+Enter <a hreflang="en" href="https://web.dev/vitals/">CWV</a>, three metrics to indicate overall performance health. Each metric covers an important area of user experience: loading, interactivity, and visual stability. The public <a hreflang="en" href="https://developer.chrome.com/docs/crux/">Chrome UX Report</a> (CrUX) dataset is Chrome's view of how millions of websites are performing on CWV. There's zero setup on the developer's part; Chrome automatically collects and publishes data from <a hreflang="en" href="https://developer.chrome.com/docs/crux/methodology/#eligibility">eligible</a> users and websites. Using CrUX data, we're able to get insights into the web's performance and even track historical data.
 
 CWV offers a clearly defined approach to measuring how user's actually experience performance—a first for the industry. Are CWV the answer to helping the web become more performant? It's been a little over two years since launch, so this chapter examines where the web is currently with CWV and a look into the future.
 
@@ -57,7 +57,7 @@ In 2021, 29% of websites were assessed as having good CWV for mobile users. This
 
 44% of websites have good CWV on desktop. While this is better than mobile, the rate of improvement for desktop experiences is not as rapid as mobile, so the gap is closing.
 
-There are a few possible explanations for why mobile experiences tend to be worse than desktop. While the portability of a pocket-sized computer is a great convenience, it may have adverse effects on the user experience. As described in the [Mobile Web](./mobile-web#mobile-performance) chapter, the smaller form factor has an impact on the amount of processing power that can be packed in, which is further constrained by the high cost to own more powerful phones. Devices with poorer processing capabilities take longer to perform the computations needed to render a web page.  The portability of these devices also means that they can be taken into areas with poor connectivity, which hinders websites' loading speeds. One final consideration is the way that developers decide how to build websites. Rather than creating a mobile-friendly version of the page, some websites may be serving desktop-sized images or unnecessary amounts of scripting functionality. All of these things put mobile users at a disadvantage compared to desktop users and may help to explain why their CWV performance is lower.
+There are a few possible explanations for why mobile experiences tend to be worse than desktop. While the portability of a pocket-sized computer is a great convenience, it may have adverse effects on the user experience. As described in the <a hreflang="en" href="./mobile-web#mobile-performance">Mobile Web</a> chapter, the smaller form factor has an impact on the amount of processing power that can be packed in, which is further constrained by the high cost to own more powerful phones. Devices with poorer processing capabilities take longer to perform the computations needed to render a web page.  The portability of these devices also means that they can be taken into areas with poor connectivity, which hinders websites' loading speeds. One final consideration is the way that developers decide how to build websites. Rather than creating a mobile-friendly version of the page, some websites may be serving desktop-sized images or unnecessary amounts of scripting functionality. All of these things put mobile users at a disadvantage compared to desktop users and may help to explain why their CWV performance is lower.
 
 Many more websites were assessed as having good CWV in 2022 relative to 2021. But how evenly distributed was that improvement across the web?
 
@@ -77,7 +77,7 @@ To better understand why mobile experiences have gotten so much better this year
 
 ## Largest Contentful Paint (LCP)
 
-[Largest Contentful Paint](https://web.dev/lcp/) (LCP) is the time from the start of the navigation until the largest block of content is visible in the viewport. This metric represents how quickly users are able to see meaningful content.
+<a hreflang="en" href="https://web.dev/lcp/">Largest Contentful Paint</a> (LCP) is the time from the start of the navigation until the largest block of content is visible in the viewport. This metric represents how quickly users are able to see meaningful content.
 
 We say that a website has good LCP if at least 75 percent of all page views are faster than 2,500 ms. Of the three CWV metrics, LCP pass rates are the lowest, often making it the bottleneck to achieving good CWV assessments.
 
@@ -97,7 +97,7 @@ Why did LCP improve so much this year? To help answer that, let's explore a coup
 
 ### Time to First Byte (TTFB)
 
-[Time to First Byte](https://web.dev/ttfb/) (TTFB) is the time from the start of the navigation to the first byte of data returned to the client. It's our first step in the web performance checklist, representing the backend component of LCP performance, particularly network connection speeds and server response times.
+<a hreflang="en" href="https://web.dev/ttfb/">Time to First Byte</a> (TTFB) is the time from the start of the navigation to the first byte of data returned to the client. It's our first step in the web performance checklist, representing the backend component of LCP performance, particularly network connection speeds and server response times.
 
 {{ figure_markup(
   image="good-ttfb-by-device.png",
@@ -109,15 +109,15 @@ Why did LCP improve so much this year? To help answer that, let's explore a coup
   )
 }}
 
-As an aside, note that earlier this year Chrome [changed](https://developer.chrome.com/docs/crux/release-notes/#202204) the threshold for "good" TTFB from 500 ms to 800 ms. In the chart above, all historical data is using this new threshold for comparison purposes.
+As an aside, note that earlier this year Chrome <a hreflang="en" href="https://developer.chrome.com/docs/crux/release-notes/#202204">changed</a> the threshold for "good" TTFB from 500 ms to 800 ms. In the chart above, all historical data is using this new threshold for comparison purposes.
 
 With that in mind, the percentage of websites having good TTFB has not actually improved very much. In the past year, websites' desktop and mobile experiences have gotten one percentage point better, which is nice but doesn't account for the gains observed to LCP. While this doesn't rule out improvements to the "needs improvement" and "poor" ends of the TTFB distribution, the "good" end is what matters most.
 
-Another complication is that TTFB is still considered to be an [experimental](https://developer.chrome.com/docs/crux/methodology/#experimental-metrics) metric in CrUX. According to the CrUX documentation, TTFB _does not_ factor in more advanced navigation types like pre-rendered and back/forward navigations. This is somewhat of a blind spot, so if there were improvements in these areas, they wouldn't necessarily affect the TTFB results.
+Another complication is that TTFB is still considered to be an <a hreflang="en" href="https://developer.chrome.com/docs/crux/methodology/#experimental-metrics">experimental</a> metric in CrUX. According to the CrUX documentation, TTFB _does not_ factor in more advanced navigation types like pre-rendered and back/forward navigations. This is somewhat of a blind spot, so if there were improvements in these areas, they wouldn't necessarily affect the TTFB results.
 
 ### First Contentful Paint (FCP)
 
-[First Contentful Paint](https://web.dev/fcp/) (FCP) is the time from the start of the request to the first meaningful content painted to the screen. In addition to TTFB, this metric can be affected by render-blocking content. The threshold for "good" FCP is 1,800 ms.
+<a hreflang="en" href="https://web.dev/fcp/">First Contentful Paint</a> (FCP) is the time from the start of the request to the first meaningful content painted to the screen. In addition to TTFB, this metric can be affected by render-blocking content. The threshold for "good" FCP is 1,800 ms.
 
 {{ figure_markup(
   image="good-fcp-by-device.png",
@@ -139,7 +139,7 @@ These performance improvements may not actually be due to changes to the website
 
 #### Render-blocking resources
 
-A page is considered to have render-blocking resources if resources hold up the initial paint (or render) of the page. This is particularly likely for critical scripts and styles that are loaded over the network. Lighthouse includes an [audit](https://web.dev/render-blocking-resources/) that checks for these resources, which we've run on the home page of each website in CrUX. You can learn more about how we test these pages in our [Methodology](./methodology).
+A page is considered to have render-blocking resources if resources hold up the initial paint (or render) of the page. This is particularly likely for critical scripts and styles that are loaded over the network. Lighthouse includes an <a hreflang="en" href="https://web.dev/render-blocking-resources/">audit</a> that checks for these resources, which we've run on the home page of each website in CrUX. You can learn more about how we test these pages in our <a hreflang="en" href="./methodology">Methodology</a>.
 
 {{ figure_markup(
   image="pages-passing-render-blocking-resources-audit.png",
@@ -173,7 +173,7 @@ The LCP element can be anything like an image, a heading, or a paragraph of text
 
 It's clear that images are the most common type of LCP content, with the `img` element representing the LCP on 42% of mobile pages. Mobile pages are slightly more likely to have heading and paragraph elements be the LCP than desktop pages, while desktop pages are more likely to have image elements as the LCP. One possible explanation is the way that mobile layouts—especially in portrait orientation—make images that are _not_ responsive appear smaller, giving way to large blocks of text like headings and paragraphs to become the LCP elements.
 
-The second most popular LCP element type is `div`. This is a generic HTML container that could be used for text or styling background images. To help disambiguate how often these elements contain images or text, we can evaluate the `url` property of the [LCP API](https://developer.mozilla.org/en-US/docs/Web/API/LargestContentfulPaint).  According to the [specification](https://www.w3.org/TR/largest-contentful-paint/#dom-largestcontentfulpaint-url), when this property is set, the LCP content must be an image.
+The second most popular LCP element type is `div`. This is a generic HTML container that could be used for text or styling background images. To help disambiguate how often these elements contain images or text, we can evaluate the `url` property of the <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/API/LargestContentfulPaint">LCP API</a>.  According to the <a hreflang="en" href="https://www.w3.org/TR/largest-contentful-paint/#dom-largestcontentfulpaint-url">specification</a>, when this property is set, the LCP content must be an image.
 
 {{ figure_markup(
   image="top-lcp-content-types.png",
@@ -191,9 +191,9 @@ We see that 72% of mobile pages and 82% of desktop pages have images as their LC
 
 #### LCP prioritization
 
-After the HTML document is loaded, there are two major factors that affect how quickly the LCP resource itself can be loaded: discoverability and prioritization. We'll explore [LCP discoverability](#lcp-static-discoverability) later, but first let's look at how LCP images are prioritized.
+After the HTML document is loaded, there are two major factors that affect how quickly the LCP resource itself can be loaded: discoverability and prioritization. We'll explore <a hreflang="en" href="#lcp-static-discoverability">LCP discoverability</a> later, but first let's look at how LCP images are prioritized.
 
-Images are not loaded at high priority by default, but thanks to the new [Priority Hints](https://web.dev/priority-hints/) API, developers can explicitly set their LCP images to load at high priority to take precedence over non-essential resources.
+Images are not loaded at high priority by default, but thanks to the new <a hreflang="en" href="https://web.dev/priority-hints/">Priority Hints</a> API, developers can explicitly set their LCP images to load at high priority to take precedence over non-essential resources.
 
 {{ figure_markup(
   content="0.03%",
@@ -206,11 +206,11 @@ Images are not loaded at high priority by default, but thanks to the new [Priori
 
 0.03% of pages use `fetchpriority=high` on their LCP elements. Counterproductively, a handful of pages actually _lower_ the priority over their LCP images: 77 pages on mobile and 104 on desktop.
 
-`fetchpriority` is still very new and not supported everywhere, but there's little to no reason why every developer shouldn't be using it. [Patrick Meenan](https://twitter.com/patmeenan), who helped develop the API, [describes it](https://twitter.com/patmeenan/status/1460276602479251457) as a "cheat code" given how easy it is to implement relative to the potential improvements.
+`fetchpriority` is still very new and not supported everywhere, but there's little to no reason why every developer shouldn't be using it. <a hreflang="en" href="https://twitter.com/patmeenan">Patrick Meenan</a>, who helped develop the API, <a hreflang="en" href="https://twitter.com/patmeenan/status/1460276602479251457">describes it</a> as a "cheat code" given how easy it is to implement relative to the potential improvements.
 
 #### LCP static discoverability
 
-Earlier we looked at [prioritization](#lcp-prioritization) as a way to improve LCP performance by outcompeting other concurrently loading resources. On the other hand, static discoverability helps to ensure that the LCP resource can be loaded as soon as possible.
+Earlier we looked at <a hreflang="en" href="#lcp-prioritization">prioritization</a> as a way to improve LCP performance by outcompeting other concurrently loading resources. On the other hand, static discoverability helps to ensure that the LCP resource can be loaded as soon as possible.
 
 An LCP image is considered to be _statically discoverable_ if its source URL can be parsed directly from the markup sent by the server. This definition includes sources defined within `picture` or `img` elements as well as sources that are explicitly preloaded.
 
@@ -237,7 +237,7 @@ This is the first year that we're looking at this metric, so we don't have histo
 
 #### LCP preloading
 
-When the LCP image is not statically discoverable, [preloading](https://web.dev/preload-critical-assets/) can be an effective way to minimize the load delay. Of course, it would be better if the resource was statically discoverable to begin with, but addressing that may require a complex rearchitecture of the way the page loads. Preloading is somewhat of a quick fix by comparison, as it can be implemented with a single HTTP header or `meta` tag.
+When the LCP image is not statically discoverable, <a hreflang="en" href="https://web.dev/preload-critical-assets/">preloading</a> can be an effective way to minimize the load delay. Of course, it would be better if the resource was statically discoverable to begin with, but addressing that may require a complex rearchitecture of the way the page loads. Preloading is somewhat of a quick fix by comparison, as it can be implemented with a single HTTP header or `meta` tag.
 
 {{ figure_markup(
   content="0.56%",
@@ -248,7 +248,7 @@ When the LCP image is not statically discoverable, [preloading](https://web.dev/
   )
 }}
 
-Only about 1 in 200 mobile pages preload their LCP images. This figure falls to about 1 in 400 (0.25%) when we only consider pages whose LCP images are not statically discoverable. Preloading statically discoverable images might be considered overkill, as the browser should already know about the image thanks to its [preload scanner](https://web.dev/preload-scanner/). On the other hand, it could be a useful fallback to prioritize LCP images, given the lack of [cross-browser support for `fetchpriority](https://caniuse.com/?search=fetchpriority)`.
+Only about 1 in 200 mobile pages preload their LCP images. This figure falls to about 1 in 400 (0.25%) when we only consider pages whose LCP images are not statically discoverable. Preloading statically discoverable images might be considered overkill, as the browser should already know about the image thanks to its <a hreflang="en" href="https://web.dev/preload-scanner/">preload scanner</a>. On the other hand, it could be a useful fallback to prioritize LCP images, given the lack of <a hreflang="en" href="https://caniuse.com/?search=fetchpriority">cross-browser support for `fetchpriority</a>`.
 
 These results show that the overwhelming majority of the web could benefit from making their LCP images more discoverable. Loading LCP images sooner, either by making them statically discoverable or preloading them, can go a long way to improving LCP performance. But as with all things related to performance, always experiment to understand what's best for your specific site.
 
@@ -310,9 +310,9 @@ One way that sites might polyfill the native lazy-loading behavior is to assign 
 
 Nearly as many pages are using this kind of custom lazy-loading behavior as native lazy-loading, at 8.8% of pages with `img`-based LCP.
 
-Beyond the adverse performance effects of lazy-loading LCP images, native image lazy-loaded is [supported](https://caniuse.com/loading-lazy-attr) by all major browsers, making custom solutions like these obsolete. In our opinion, developers should seriously consider removing these polyfills from their code and judiciously switching to use native lazy-loading.
+Beyond the adverse performance effects of lazy-loading LCP images, native image lazy-loaded is <a hreflang="en" href="https://caniuse.com/loading-lazy-attr">supported</a> by all major browsers, making custom solutions like these obsolete. In our opinion, developers should seriously consider removing these polyfills from their code and judiciously switching to use native lazy-loading.
 
-Another benefit to using native lazy-loading is that browsers like Chrome are [experimenting](https://bugs.chromium.org/p/chromium/issues/detail?id=996963) with using heuristics to ignore the attribute on probable LCP candidates. This is only possible with native lazy-loading, so custom solutions would not benefit from any improvements in this case.
+Another benefit to using native lazy-loading is that browsers like Chrome are <a hreflang="en" href="https://bugs.chromium.org/p/chromium/issues/detail?id=996963">experimenting</a> with using heuristics to ignore the attribute on probable LCP candidates. This is only possible with native lazy-loading, so custom solutions would not benefit from any improvements in this case.
 
 **18%**
 _The percent of mobile pages that use either native or custom lazy-loading on their LCP image._
@@ -344,7 +344,7 @@ _The percent of mobile pages using native lazy-loading on their LCP image that a
   )
 }}
 
-According to the [CMS](./cms) chapter, WordPress is used by 35% of pages. So it's surprising to see that 72% of pages that use native lazy-loading on their LCP image are using WordPress, given that a fix has been available since January 2022 in version 5.9. One theory that needs more investigation is that plugins may be circumventing the safeguards built into WordPress core by injecting LCP images onto the page with the lazy-loading behavior.
+According to the <a hreflang="en" href="./cms">CMS</a> chapter, WordPress is used by 35% of pages. So it's surprising to see that 72% of pages that use native lazy-loading on their LCP image are using WordPress, given that a fix has been available since January 2022 in version 5.9. One theory that needs more investigation is that plugins may be circumventing the safeguards built into WordPress core by injecting LCP images onto the page with the lazy-loading behavior.
 
 **54%**
 _The percent of mobile pages using custom lazy-loading on their LCP image that also use WordPress._
@@ -392,7 +392,7 @@ _The size of the largest LCP image._
   )
 }}
 
-We also looked at the largest LCP image sizes and found a 68,607 KB image on desktop and 114,285 KB image on mobile. While it can be fun to look at how obscenely large these outliers are, let's keep in mind the unfortunate reality that these are active websites visited by real users. Data isn't always free, and performance problems like these start to become [accessibility](./accessibility) problems for users on metered mobile data plans. These are also [sustainability](./sustainability) problems considering how much energy is wasted loading blatantly oversized images like these.
+We also looked at the largest LCP image sizes and found a 68,607 KB image on desktop and 114,285 KB image on mobile. While it can be fun to look at how obscenely large these outliers are, let's keep in mind the unfortunate reality that these are active websites visited by real users. Data isn't always free, and performance problems like these start to become <a hreflang="en" href="./accessibility">accessibility</a> problems for users on metered mobile data plans. These are also <a hreflang="en" href="./sustainability">sustainability</a> problems considering how much energy is wasted loading blatantly oversized images like these.
 
 _Histogram of image-based LCP sizes._
 
@@ -408,11 +408,11 @@ _Histogram of image-based LCP sizes._
 
 Looking at it a different way, the figure above shows the distribution as a histogram in 100 KB increments. This view makes it clearer to see how LCP image sizes fall predominantly in the sub-200 KB range. We also see that 5% of LCP images on mobile are greater than 1,000 KB in size.
 
-How large an LCP image should _optimally_ be depends on many factors. But the fact that 1 in 20 websites are serving megabyte-sized images to our [360px-wide](./methodology#webpagetest) mobile viewports clearly highlights the need for site owners to embrace [responsive images](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images). For more analysis on this topic, refer to the [Media](./media#srcset) and [Mobile Web](./mobile-web#responsive-images) chapters.
+How large an LCP image should _optimally_ be depends on many factors. But the fact that 1 in 20 websites are serving megabyte-sized images to our <a hreflang="en" href="./methodology#webpagetest">360px-wide</a> mobile viewports clearly highlights the need for site owners to embrace <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images">responsive images</a>. For more analysis on this topic, refer to the <a hreflang="en" href="./media#srcset">Media</a> and <a hreflang="en" href="./mobile-web#responsive-images">Mobile Web</a> chapters.
 
 #### LCP format
 
-Choice of LCP image format can have [significant effects](./media#bits-per-pixel-by-format) on its byte size and ultimately its loading performance. WebP and AVIF are two relatively newer formats that are found to be more efficient than traditional formats like JPG (or JPEG) and PNG.
+Choice of LCP image format can have <a hreflang="en" href="./media#bits-per-pixel-by-format">significant effects</a> on its byte size and ultimately its loading performance. WebP and AVIF are two relatively newer formats that are found to be more efficient than traditional formats like JPG (or JPEG) and PNG.
 
 _The percent of pages that use a given format for their LCP images._
 
@@ -426,7 +426,7 @@ _The percent of pages that use a given format for their LCP images._
   )
 }}
 
-According to the [Media](./media#format-adoption) chapter, the JPG format makes up about 40% of all images loaded on mobile pages. However, JPG makes up 67% of all LCP images on mobile, which is 2.5x more common than PNG at 26%. These results may hint at a tendency for pages to use photographic-quality images as their LCP resource rather than digital artwork, as photographs tend to compress better as JPG compared to PNG, but this is just speculation.
+According to the <a hreflang="en" href="./media#format-adoption">Media</a> chapter, the JPG format makes up about 40% of all images loaded on mobile pages. However, JPG makes up 67% of all LCP images on mobile, which is 2.5x more common than PNG at 26%. These results may hint at a tendency for pages to use photographic-quality images as their LCP resource rather than digital artwork, as photographs tend to compress better as JPG compared to PNG, but this is just speculation.
 
 4% of pages with image-based LCP use WebP. This is good news for image efficiency, however less than 1% are using AVIF. While AVIF may compress even better than WebP, it's not supported in all modern browsers, which explains its low adoption. On the other hand, WebP _is_ supported in all modern browsers, so its low adoption represents a major opportunity to optimize LCP images and their performance.
 
@@ -434,7 +434,7 @@ According to the [Media](./media#format-adoption) chapter, the JPG format makes 
 
 The previous section looked at the popularity of various image formats used by LCP resources. Another way that developers can make their LCP resources smaller and load more quickly is to utilize efficient compression settings. The JPG format can be lossily compressed to eke out unnecessary bytes without losing too much image quality. However, some JPG images may not be compressed enough.
 
-Lighthouse includes an [audit](https://web.dev/uses-optimized-images/) that will measure the byte savings from setting JPGs to compression level 85. If the image is more than 4 KB smaller as a result, the audit fails and it's considered an opportunity for optimization.
+Lighthouse includes an <a hreflang="en" href="https://web.dev/uses-optimized-images/">audit</a> that will measure the byte savings from setting JPGs to compression level 85. If the image is more than 4 KB smaller as a result, the audit fails and it's considered an opportunity for optimization.
 
 TODO: insert figure
 
@@ -456,7 +456,7 @@ However, LCP images may be loaded from other origins, like asset domains and ima
   )
 }}
 
-One in five mobile pages cross-host their LCP images. The time to set up the connection to these third-party hosts could add unnecessary delays to the LCP time. It's best practice to self-host LCP images on the same origin as the document, whenever possible. [Resource hints](../2021/resource-hints) could be used to preconnect to the LCP origin—or better yet, preload the image itself—but these techniques are not very widely adopted.
+One in five mobile pages cross-host their LCP images. The time to set up the connection to these third-party hosts could add unnecessary delays to the LCP time. It's best practice to self-host LCP images on the same origin as the document, whenever possible. <a hreflang="en" href="../2021/resource-hints">Resource hints</a> could be used to preconnect to the LCP origin—or better yet, preload the image itself—but these techniques are not very widely adopted.
 
 <table>
   <thead>
@@ -580,7 +580,7 @@ One in five mobile pages cross-host their LCP images. The time to set up the con
   </figcaption>
 </figure>
 
-CMSs make up the most common hosts of cross-origin LCP images, which isn't too surprising given their popularity. What's interesting is that Shopify's domain accounts for 11% of all cross-origin images, even though it's only used by about 3% of websites, according to last year's [Ecommerce](../2021/ecommerce) chapter. Other CMSs like Wix, Blogger, WordPress, and Squarespace also appear in the list.
+CMSs make up the most common hosts of cross-origin LCP images, which isn't too surprising given their popularity. What's interesting is that Shopify's domain accounts for 11% of all cross-origin images, even though it's only used by about 3% of websites, according to last year's <a hreflang="en" href="../2021/ecommerce">Ecommerce</a> chapter. Other CMSs like Wix, Blogger, WordPress, and Squarespace also appear in the list.
 
 It's promising that these CMSs are in control over where and how LCP images are served, but it could be a major effort to switch to a same-origin solution. Cross-origin preconnecting and preloading may be the next best things.
 
@@ -590,13 +590,13 @@ LCP performance has improved significantly this year, especially for mobile user
 
 What we've seen so far is that render-blocking resources are still quite prevalent, very few sites are using advanced prioritization techniques, and more than a third of LCP images are not statically discoverable. Without concrete data to suggest that site owners or large publishing platforms are concertedly optimizing these aspects of their LCP performance, other places to look are optimizations at the OS or browser level.
 
-According to a [Chromium blog post](https://blog.chromium.org/2022/03/a-new-speed-milestone-for-chrome.html#:~:text=Chrome%20continues%20to%20get%20faster%20on%20Android%20as%20well.%20Loading%20a%20page%20now%20takes%2015%25%20less%20time%2C%20thanks%20to%20prioritizing%20critical%20navigation%20moments%20on%20the%20browser%20user%20interface%20thread) in March 2022, loading performance on Android improved by 15%. The post doesn't go into too much detail, but it credits the improvement to "_prioritizing critical navigation moments on the browser user interface thread_." This may help explain why mobile performance outpaced desktop performance in 2022.
+According to a <a hreflang="en" href="https://blog.chromium.org/2022/03/a-new-speed-milestone-for-chrome.html#:~:text=Chrome%20continues%20to%20get%20faster%20on%20Android%20as%20well.%20Loading%20a%20page%20now%20takes%2015%25%20less%20time%2C%20thanks%20to%20prioritizing%20critical%20navigation%20moments%20on%20the%20browser%20user%20interface%20thread">Chromium blog post</a> in March 2022, loading performance on Android improved by 15%. The post doesn't go into too much detail, but it credits the improvement to "_prioritizing critical navigation moments on the browser user interface thread_." This may help explain why mobile performance outpaced desktop performance in 2022.
 
 The six percentage point improvement to LCP this year can only happen when hundreds of thousands of websites' performance improves. Putting aside the tantalizing question of how that happened, let's take a moment to appreciate that user experiences on the web _are_ getting better. It's hard work, but improvements like these make the ecosystem healthier and are worth celebrating.
 
 ## Cumulative Layout Shift (CLS)
 
-[Cumulative Layout Shift](https://web.dev/cls/) (CLS) is a layout stability metric that represents the amount that content unexpectedly moves around on the screen. We say that a website has good CLS if at least 75% of all navigations across the site have a score of 0.1 or less.
+<a hreflang="en" href="https://web.dev/cls/">Cumulative Layout Shift</a> (CLS) is a layout stability metric that represents the amount that content unexpectedly moves around on the screen. We say that a website has good CLS if at least 75% of all navigations across the site have a score of 0.1 or less.
 
 {{ figure_markup(
   image="good-cls-by-device.png",
@@ -612,7 +612,7 @@ This year, the percentage of websites with "good" CLS improved significantly on 
 
 While LCP is the bottleneck for most sites to be assessed as having good CWV overall, there's no doubt that the major improvements to mobile CLS this year have had a positive effect on the CWV pass rates.
 
-What happened to improve mobile CLS by such a significant margin? One likely explanation is Chrome's new and improved [back/forward cache](https://web.dev/bfcache/) (bfcache), which was released in version 96 in mid-November 2021. This change enabled eligible pages to be pristinely restored from memory during back and forward navigations, rather than having to "start over" by fetching resources from the HTTP cache—or worse, over the network—and reconstructing the page.
+What happened to improve mobile CLS by such a significant margin? One likely explanation is Chrome's new and improved <a hreflang="en" href="https://web.dev/bfcache/">back/forward cache</a> (bfcache), which was released in version 96 in mid-November 2021. This change enabled eligible pages to be pristinely restored from memory during back and forward navigations, rather than having to "start over" by fetching resources from the HTTP cache—or worse, over the network—and reconstructing the page.
 
 TODO: insert figure
 
@@ -637,7 +637,7 @@ The most straightforward way to avoid layout shifts is to reserve space for cont
   caption="The percent of mobile pages that fail to set explicit dimensions on at least one image.",
   classes="big-number",
   sheets_gid="1160188541",
-  sql_file="cls_unsized_images.sql,
+  sql_file="cls_unsized_images.sql
   )
 }}
 
@@ -651,7 +651,7 @@ Having any unsized images on the page can be a liability for CLS, but the most i
 
 TODO: insert figure
 
-The median unsized image on mobile has a height of 99px. Given that our [test devices](https://almanac.httparchive.org/en/2022/methodology#webpagetest) have a mobile viewport height of 512px, that's about 20% of the viewport area that would shift down, assuming full-width content. Depending on where that image is in the viewport when it loads, it could cause a [layout shift score](https://web.dev/cls/#layout-shift-score) of at most 0.2, which more than exceeds the 0.1 threshold for "good" CLS.
+The median unsized image on mobile has a height of 99px. Given that our <a hreflang="en" href="https://almanac.httparchive.org/en/2022/methodology#webpagetest">test devices</a> have a mobile viewport height of 512px, that's about 20% of the viewport area that would shift down, assuming full-width content. Depending on where that image is in the viewport when it loads, it could cause a <a hreflang="en" href="https://web.dev/cls/#layout-shift-score">layout shift score</a> of at most 0.2, which more than exceeds the 0.1 threshold for "good" CLS.
 
 Desktop pages tend to have larger unsized images. The median unsized image on desktop is 113px tall and the 90th percentile has a height of 410px.
 
@@ -668,7 +668,7 @@ In what we can only hope is either a measurement error or a seriously mistaken w
 
 #### Animations
 
-Some [non-composited](https://web.dev/non-composited-animations/) CSS animations can affect the layout of the page and contribute to CLS. The [best practice](https://web.dev/optimize-cls/#animations-%F0%9F%8F%83%E2%80%8D%E2%99%80%EF%B8%8F) is to use `transform` animations instead.
+Some <a hreflang="en" href="https://web.dev/non-composited-animations/">non-composited</a> CSS animations can affect the layout of the page and contribute to CLS. The <a hreflang="en" href="https://web.dev/optimize-cls/#animations-%F0%9F%8F%83%E2%80%8D%E2%99%80%EF%B8%8F">best practice</a> is to use `transform` animations instead.
 
 {{ figure_markup(
   content="38%",
@@ -702,7 +702,7 @@ In the page load process, it can take some time for the browser to discover, req
 
 TODO: insert figure
 
-One way to avoid font-induced layout shifts is to use [`font-display: optional](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display)`, which will never swap in a web font after the system text has already been shown. However, as noted by the [Fonts](./fonts#font-display) chapter, less than 1% of pages are taking advantage of this directive.
+One way to avoid font-induced layout shifts is to use <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display">`font-display: optional</a>`, which will never swap in a web font after the system text has already been shown. However, as noted by the <a hreflang="en" href="./fonts#font-display">Fonts</a> chapter, less than 1% of pages are taking advantage of this directive.
 
 Even though `optional` is good for CLS, there are UX tradeoffs. Site owners might be willing to have some layout instability or a noticeable flash of unstyled text (FOUT) if it means that their preferred font can be displayed to users.
 
@@ -710,23 +710,23 @@ Rather than hiding the web fonts, another strategy to mitigate CLS is to load th
 
 TODO: insert figure
 
-According to the [Fonts](./fonts#resource-hints) chapter, 20% of mobile pages are preloading their web fonts. One challenge with preloading the font is that the exact URL may not be known upfront, for example if using a service like Google Fonts. Preconnecting to the font host is the next best option for performance, but only 16% of pages are using that, which is half as many pages that use the less-performant option to prefetch the DNS.
+According to the <a hreflang="en" href="./fonts#resource-hints">Fonts</a> chapter, 20% of mobile pages are preloading their web fonts. One challenge with preloading the font is that the exact URL may not be known upfront, for example if using a service like Google Fonts. Preconnecting to the font host is the next best option for performance, but only 16% of pages are using that, which is half as many pages that use the less-performant option to prefetch the DNS.
 
 #### bfcache eligibility
 
 We've shown how impactful bfcache can be for CLS, so it's worth considering eligibility as a somewhat indirect best practice.
 
-The best way to tell if a given page is eligible for bfcache is to [test it in DevTools](https://web.dev/bfcache/#test-to-ensure-your-pages-are-cacheable). Unfortunately, there are over [100 eligibility criteria](https://docs.google.com/spreadsheets/d/1li0po_ETJAIybpaSX5rW_lUN62upQhY0tH4pR5UPt60/edit?usp=sharing), many of which are hard or impossible to measure in the lab. So rather than looking at bfcache eligibility as a whole, let's look at a few criteria that are more easily measurable to get a sense for the lower bound of eligibility.
+The best way to tell if a given page is eligible for bfcache is to <a hreflang="en" href="https://web.dev/bfcache/#test-to-ensure-your-pages-are-cacheable">test it in DevTools</a>. Unfortunately, there are over <a hreflang="en" href="https://docs.google.com/spreadsheets/d/1li0po_ETJAIybpaSX5rW_lUN62upQhY0tH4pR5UPt60/edit?usp=sharing">100 eligibility criteria</a>, many of which are hard or impossible to measure in the lab. So rather than looking at bfcache eligibility as a whole, let's look at a few criteria that are more easily measurable to get a sense for the lower bound of eligibility.
 
 TODO: insert figure
 
-The [`unload](https://developer.mozilla.org/en-US/docs/Web/API/Window/unload_event)` event is a discouraged way to do work when the page is in the process of going away (unloading). Besides there being [better ways](https://web.dev/bfcache/#never-use-the-unload-event) to do that, it's also one way to make your page ineligible for bfcache.
+The <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/API/Window/unload_event">`unload</a>` event is a discouraged way to do work when the page is in the process of going away (unloading). Besides there being <a hreflang="en" href="https://web.dev/bfcache/#never-use-the-unload-event">better ways</a> to do that, it's also one way to make your page ineligible for bfcache.
 
 17% of all mobile pages set this event handler, however the situation worsens the more popular the website is. In the top 1k, 36% of mobile pages are ineligible for bfcache for this reason.
 
 TODO: insert figure
 
-The [`Cache-Control: no-store](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control#no-store)` header tells user agents never to cache a given resource. When set on the main HTML document, this makes the entire page ineligible for bfcache.
+The <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control#no-store">`Cache-Control: no-store</a>` header tells user agents never to cache a given resource. When set on the main HTML document, this makes the entire page ineligible for bfcache.
 
 22% of all mobile pages set this header, and 28% of mobile pages in the top 1k. This and the `unload` criteria are not mutually exclusive, so combined we can only say that at least 22% of mobile pages are ineligible for bfcache.
 
@@ -742,7 +742,7 @@ There are other, more direct ways site owners can improve their CLS. Setting hei
 
 ## First Input Delay (FID)
 
-[First Input Delay](https://web.dev/fid/) (FID) measures the time from the first user interaction like a click or tap to the time at which the browser begins processing the corresponding event handlers.
+<a hreflang="en" href="https://web.dev/fid/">First Input Delay</a> (FID) measures the time from the first user interaction like a click or tap to the time at which the browser begins processing the corresponding event handlers.
 
 {{ figure_markup(
   image="good-fid-by-device.png",
@@ -756,7 +756,7 @@ There are other, more direct ways site owners can improve their CLS. Setting hei
 
 A website has "good" FID if at least 75 percent of all navigations across the site are faster than 100 ms. Effectively all websites have "good" FID for desktop users, and this trend has held firm over the years. Mobile FID performance is also exceptionally fast, with 92% of websites having "good" FID, a slight improvement over last year.
 
-While it's great that so many websites have good FID experiences, developers need to be careful not to become too complacent. Google has been [experimenting](https://web.dev/better-responsiveness-metric/) with a new responsiveness metric that could end up replacing FID, which is especially important because sites tend to perform much worse on [this metric](./#interaction-to-next-paint-inp) than FID.
+While it's great that so many websites have good FID experiences, developers need to be careful not to become too complacent. Google has been <a hreflang="en" href="https://web.dev/better-responsiveness-metric/">experimenting</a> with a new responsiveness metric that could end up replacing FID, which is especially important because sites tend to perform much worse on <a hreflang="en" href="./#interaction-to-next-paint-inp">this metric</a> than FID.
 
 ### FID metadata and best practices
 
@@ -764,7 +764,7 @@ Let's dig deeper into the ways that responsiveness can be improved across the we
 
 #### Disabling double-tap to zoom
 
-Some mobile browsers, including Chrome, wait at least 250 ms before handling tap inputs to make sure users aren't attempting to [double-tap to zoom](https://developer.chrome.com/blog/300ms-tap-delay-gone-away/). Given that the threshold for "good" FID is 100 ms, this behavior makes it impossible to pass the assessment.
+Some mobile browsers, including Chrome, wait at least 250 ms before handling tap inputs to make sure users aren't attempting to <a hreflang="en" href="https://developer.chrome.com/blog/300ms-tap-delay-gone-away/">double-tap to zoom</a>. Given that the threshold for "good" FID is 100 ms, this behavior makes it impossible to pass the assessment.
 
 ```html
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -787,7 +787,7 @@ This is one of the quickest, easiest, and least intrusive ways to meaningfully i
 
 #### Total Blocking Time (TBT)
 
-[Total Blocking Time](https://web.dev/tbt/) (TBT) is the time between the [First Contentful Paint](https://web.dev/fcp/) (FCP) and [Time to Interactive](https://web.dev/tti/) (TTI), representing the total amount of time that the main thread was blocked and unable to respond to user inputs.
+<a hreflang="en" href="https://web.dev/tbt/">Total Blocking Time</a> (TBT) is the time between the <a hreflang="en" href="https://web.dev/fcp/">First Contentful Paint</a> (FCP) and <a hreflang="en" href="https://web.dev/tti/">Time to Interactive</a> (TTI), representing the total amount of time that the main thread was blocked and unable to respond to user inputs.
 
 TBT is often used as a lab-based proxy for FID, due to the challenges of realistically simulating user interactions in synthetic tests.
 
@@ -795,13 +795,13 @@ TODO: insert figure
 
 Note that these results are sourced from the lab-based TBT performance of pages in the HTTP Archive dataset. This is an important distinction because for the most part we've been looking at real-user performance data from the CrUX dataset.
 
-With that in mind, we see that mobile pages have significantly worse TBT than desktop pages. This isn't surprising given that our [Lighthouse](./methodology#lighthouse) mobile environment is intentionally configured to run with a throttled CPU in a way that emulates a low-end mobile device. Nevertheless, the results show that the median mobile page has a TBT of 1.7 seconds, meaning that if this were a real-user experience, no taps within 1.7 seconds of FCP would be responsive. At the 90th percentile, a user would have to wait 6.3 seconds before the page became responsive.
+With that in mind, we see that mobile pages have significantly worse TBT than desktop pages. This isn't surprising given that our <a hreflang="en" href="./methodology#lighthouse">Lighthouse</a> mobile environment is intentionally configured to run with a throttled CPU in a way that emulates a low-end mobile device. Nevertheless, the results show that the median mobile page has a TBT of 1.7 seconds, meaning that if this were a real-user experience, no taps within 1.7 seconds of FCP would be responsive. At the 90th percentile, a user would have to wait 6.3 seconds before the page became responsive.
 
 Despite the fact that these results come from synthetic testing, they're based on the actual JavaScript served by real websites. If a real user on similar hardware tried to access one of these sites, their TBT might not be too different. That said, the key difference between TBT and FID is that the latter relies on the user actually interacting with the page, which they can do at any time before, during, or after the TBT window, all leading to vastly different FID values.
 
 #### Long tasks
 
-[Long tasks](https://web.dev/long-tasks-devtools/) are periods of script-induced CPU activity at least 50 ms long that prevent the main thread from responding to input. Any long task is liable to cause responsiveness issues if a user attempts to interact with the page at that time.
+<a hreflang="en" href="https://web.dev/long-tasks-devtools/">Long tasks</a> are periods of script-induced CPU activity at least 50 ms long that prevent the main thread from responding to input. Any long task is liable to cause responsiveness issues if a user attempts to interact with the page at that time.
 
 Note that, like the TBT analysis above, this section draws from lab-based data. As a result, we're only able to measure long tasks during the page load observation window, which starts when the page is requested and ends after 60 seconds or 5 seconds of network inactivity, whichever comes first. A real user may experience long tasks throughout the entire lifetime of the page.
 
@@ -813,9 +813,9 @@ It's also worth noting that these results are significantly higher than the dist
 
 ### Interaction to Next Paint (INP)
 
-[Interaction to Next Paint](https://web.dev/inp/) (INP) measures the amount of time it takes for the browser to complete the next paint in response to a user interaction. This metric was created after Google [requested feedback](https://web.dev/responsiveness/) on a proposal to improve how we measure responsiveness. Many readers may be hearing about this metric for the first time, so it's worth going into a bit more detail about how it works.
+<a hreflang="en" href="https://web.dev/inp/">Interaction to Next Paint</a> (INP) measures the amount of time it takes for the browser to complete the next paint in response to a user interaction. This metric was created after Google <a hreflang="en" href="https://web.dev/responsiveness/">requested feedback</a> on a proposal to improve how we measure responsiveness. Many readers may be hearing about this metric for the first time, so it's worth going into a bit more detail about how it works.
 
-An _interaction_ in this context refers to the user experience of providing an input to a web application and waiting for the next frame of visual feedback to be painted on the screen. The only inputs that are considered for INP are clicks, taps, and key presses. The INP value itself is taken from one of the worst interaction latencies on the page. Refer to the [INP documentation](https://web.dev/inp/#what-is-inp) for more info on how it's calculated.
+An _interaction_ in this context refers to the user experience of providing an input to a web application and waiting for the next frame of visual feedback to be painted on the screen. The only inputs that are considered for INP are clicks, taps, and key presses. The INP value itself is taken from one of the worst interaction latencies on the page. Refer to the <a hreflang="en" href="https://web.dev/inp/#what-is-inp">INP documentation</a> for more info on how it's calculated.
 
 Unlike FID, INP is a measure of all interactions on the page, not just the first one. It also measures the entire time until the next frame is painted, unlike FID which only measures the time until the event handler only starts_ _processing. In these ways, INP is a much more representative metric of the holistic user experience on the page.
 
@@ -823,7 +823,7 @@ TODO: insert figure
 
 55% of websites have "good" INP on mobile, 36% are rated "needs improvement", and 8% have "poor" INP. The desktop story of INP is more similar to FID in that 95% of websites are rated "good", 4% are rated "needs improvement", and 1% are "poor".
 
-The enormous disparity between desktop and mobile users' INP experiences is much wider than with FID. This illustrates the extent to which mobile devices are struggling to keep up with the overwhelming amount of work websites do, and all signs point to the increasing reliance on [JavaScript](https://httparchive.org/reports/state-of-javascript?start=earliest&end=latest&view=grid#bytesJs) as a major factor.
+The enormous disparity between desktop and mobile users' INP experiences is much wider than with FID. This illustrates the extent to which mobile devices are struggling to keep up with the overwhelming amount of work websites do, and all signs point to the increasing reliance on <a hreflang="en" href="https://httparchive.org/reports/state-of-javascript?start=earliest&end=latest&view=grid#bytesJs">JavaScript</a> as a major factor.
 
 #### INP by rank
 
@@ -847,7 +847,7 @@ When we look at the amount of JavaScript that the median mobile page loads for e
 
 #### INP as a hypothetical CWV metric
 
-INP is not an official CWV metric, but [Annie Sullivan](https://twitter.com/anniesullie), who is the Tech Lead for the CWV program at Google, has [commented](https://twitter.com/anniesullie/status/1535208365374185474) about its intended future:
+INP is not an official CWV metric, but <a hreflang="en" href="https://twitter.com/anniesullie">Annie Sullivan</a>, who is the Tech Lead for the CWV program at Google, has <a hreflang="en" href="https://twitter.com/anniesullie/status/1535208365374185474">commented</a> about its intended future:
 
 > INP is still experimental! Not a Core Web Vital yet, but we hope it can replace FID.
 
@@ -873,33 +873,33 @@ In this chart we're looking at the percent of a given technology's websites that
 
 Two things jump out in this chart: 1C-Bitrix and Pixnet, which are CMSs and would have an enormous proportion of their websites ceasing to pass the CWV assessment with INP. Pixnet stands to lose 86% of its websites, down from 98% to 13%! The passing rate for 1C-Bitrix would fall from 79% to 40%, a difference of 39%.
 
-11% of websites using the React framework would no longer pass CWV. Wix, which is now [the second most popular CMS](./cms#most-popular-cmss), uses React. 15% of its websites would not have "good" CWV. Proportionally though, there would still be more Wix websites passing CWV than React websites overall, at 24% and 19% respectively, but INP would narrow that gap.
+11% of websites using the React framework would no longer pass CWV. Wix, which is now <a hreflang="en" href="./cms#most-popular-cmss">the second most popular CMS</a>, uses React. 15% of its websites would not have "good" CWV. Proportionally though, there would still be more Wix websites passing CWV than React websites overall, at 24% and 19% respectively, but INP would narrow that gap.
 
 WordPress is the most popular technology in the list and 6% of its 2.3 million websites would no longer have "good" CWV. Its passing rate would fall from 30% to 24%.
 
-Squarespace would have the least amount of movement due to this hypothetical change, only losing 1% of its websites' "good" CWV. This suggests that Squarespace websites not only have a fast first interaction but also consistently fast interactions throughout the page experience. Indeed, the [CWV Technology Report](https://datastudio.google.com/s/sM9D7EUjxU8) shows Squarespace significantly outperforming other CMSs at INP, having over 80% of their websites passing the INP threshold.
+Squarespace would have the least amount of movement due to this hypothetical change, only losing 1% of its websites' "good" CWV. This suggests that Squarespace websites not only have a fast first interaction but also consistently fast interactions throughout the page experience. Indeed, the <a hreflang="en" href="https://datastudio.google.com/s/sM9D7EUjxU8">CWV Technology Report</a> shows Squarespace significantly outperforming other CMSs at INP, having over 80% of their websites passing the INP threshold.
 
 #### INP and TBT
 
-What actually makes INP a better responsiveness metric than FID? One way to answer that question is to look at the correlation between field-based INP and FID performance and lab-based TBT performance. TBT is a direct measure of how unresponsive a page _can_ be, but it can never be a CWV itself because it doesn't actually measure the [user-perceived experience](https://web.dev/user-centric-performance-metrics/).
+What actually makes INP a better responsiveness metric than FID? One way to answer that question is to look at the correlation between field-based INP and FID performance and lab-based TBT performance. TBT is a direct measure of how unresponsive a page _can_ be, but it can never be a CWV itself because it doesn't actually measure the <a hreflang="en" href="https://web.dev/user-centric-performance-metrics/">user-perceived experience</a>.
 
-This section draws from Annie Sullivan's [research](https://colab.sandbox.google.com/drive/12lJmAABgyVjaUbmWvrbzj9BkkTxw6ay2) using the May 2022 dataset.
+This section draws from Annie Sullivan's <a hreflang="en" href="https://colab.sandbox.google.com/drive/12lJmAABgyVjaUbmWvrbzj9BkkTxw6ay2">research</a> using the May 2022 dataset.
 
 TODO: insert figure
 
-_Scatterplot visualizing the correlation between FID and TBT. ([Source](https://colab.sandbox.google.com/drive/12lJmAABgyVjaUbmWvrbzj9BkkTxw6ay2))_
+_Scatterplot visualizing the correlation between FID and TBT. (<a hreflang="en" href="https://colab.sandbox.google.com/drive/12lJmAABgyVjaUbmWvrbzj9BkkTxw6ay2">Source</a>)_
 
 This chart shows the relationship between pages' FID and TBT responsiveness. The solid horizontal line at 100 ms represents the threshold for "good" FID, and most pages fall comfortably under this threshold.
 
 The most notable attribute of this chart is the dense area in the bottom left corner, which appears to be smeared out across the TBT axis. The length of this smear represents pages having high TBT and low FID, which illustrates the low degree of correlation between FID and TBT.
 
-There's also a patch of pages that have low TBT and a FID of about 250 ms. This area represents pages that have [tap delay](https://developer.chrome.com/blog/300ms-tap-delay-gone-away/) issues due to missing a `<meta name=viewport>` tag. These are outliers that can be safely ignored for this analysis's purposes.
+There's also a patch of pages that have low TBT and a FID of about 250 ms. This area represents pages that have <a hreflang="en" href="https://developer.chrome.com/blog/300ms-tap-delay-gone-away/">tap delay</a> issues due to missing a `<meta name=viewport>` tag. These are outliers that can be safely ignored for this analysis's purposes.
 
-The [Kendall](https://en.wikipedia.org/wiki/Kendall_rank_correlation_coefficient) and [Spearman](https://en.wikipedia.org/wiki/Spearman%27s_rank_correlation_coefficient) coefficients of correlation for this distribution are 0.29 and 0.40, respectively.
+The <a hreflang="en" href="https://en.wikipedia.org/wiki/Kendall_rank_correlation_coefficient">Kendall</a> and <a hreflang="en" href="https://en.wikipedia.org/wiki/Spearman%27s_rank_correlation_coefficient">Spearman</a> coefficients of correlation for this distribution are 0.29 and 0.40, respectively.
 
 TODO: insert figure
 
-_Scatterplot visualizing the correlation between INP and TBT. ([Source](https://colab.sandbox.google.com/drive/12lJmAABgyVjaUbmWvrbzj9BkkTxw6ay2))_
+_Scatterplot visualizing the correlation between INP and TBT. (<a hreflang="en" href="https://colab.sandbox.google.com/drive/12lJmAABgyVjaUbmWvrbzj9BkkTxw6ay2">Source</a>)_
 
 This is the same chart, but with INP instead of FID. The solid horizontal line here represents the 200 ms threshold for "good" INP. Compared to FID, there are many more pages above this line and not assessed as "good".
 
@@ -910,7 +910,7 @@ The Kendall and Spearman coefficients of correlation for this distribution are 0
 >First, is INP correlated with TBT? Is it more correlated with TBT than FID? Yes and yes!
 >
 >But they are both correlated with TBT; is INP catching more problems with main thread blocking JavaScript? We can break down the percent of sites meeting the "good" threshold: yes it is!
-Source: Annie Sullivan on [Twitter](https://twitter.com/anniesullie/status/1525161893450727425)
+Source: Annie Sullivan on <a hreflang="en" href="https://twitter.com/anniesullie/status/1525161893450727425">Twitter</a>
 
 As Annie notes, both metrics are correlated with TBT, but she concludes that INP is more strongly correlated, making it a better responsiveness metric.
 
@@ -918,7 +918,7 @@ As Annie notes, both metrics are correlated with TBT, but she concludes that INP
 
 These results show that sites absolutely do have responsiveness issues, despite the rosy picture painted by FID. Regardless of whether INP becomes a CWV metric, your users will thank you if you start optimizing it now.
 
-Nearly one in ten mobile sites are leaving free performance on the table by failing to disable double-tap to zoom. This is something all sites should be doing; it's only one line of HTML and it benefits both FID and INP. Run Lighthouse on your page and look for the [viewport](https://web.dev/viewport/) audit to be sure.
+Nearly one in ten mobile sites are leaving free performance on the table by failing to disable double-tap to zoom. This is something all sites should be doing; it's only one line of HTML and it benefits both FID and INP. Run Lighthouse on your page and look for the <a hreflang="en" href="https://web.dev/viewport/">viewport</a> audit to be sure.
 
 By taking a hypothetical look at INP as a CWV, we can see just how much work there is to be done just to get back to FID-like levels. The most popular mobile websites would be especially affected by such a change as a consequence of their (over)use of JavaScript. Some CMSs and JavaScript frameworks would be hit harder than others, and it'll take an ecosystem-wide effort to collectively rein in the amount of client-side work that they do.
 
