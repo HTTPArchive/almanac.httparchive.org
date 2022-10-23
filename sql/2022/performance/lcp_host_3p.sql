@@ -10,17 +10,19 @@ WITH lcp AS (
 
 SELECT
   client,
-  CASE
-    WHEN NET.HOST(url) = 'data' THEN 'other content'
-    WHEN NET.HOST(url) IS NULL THEN 'other content'
-    WHEN NET.HOST(page) = NET.HOST(url) THEN 'same host'
-    ELSE 'cross host'
-  END AS lcp_same_host,
+  NET.REG_DOMAIN(url) AS lcp_domain,
   COUNT(0) AS pages,
   SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
 FROM
   lcp
+WHERE
+  NET.HOST(page) != NET.HOST(url) AND
+  NET.HOST(url) != 'data'
 GROUP BY
   client,
-  lcp_same_host
+  lcp_domain
+ORDER BY
+  pct DESC
+LIMIT
+  25

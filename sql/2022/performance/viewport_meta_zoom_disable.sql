@@ -1,9 +1,6 @@
 SELECT
-  _TABLE_SUFFIX AS client,
+  COUNTIF(JSON_VALUE(report, '$.audits.viewport.score') = '0') AS viewport_failed,
   COUNT(0) AS total,
-  SUM(IF(JSON_EXTRACT(report, '$.audits.meta-viewport.score') = '0', 1, 0 )) AS viewport_zoom_failed,
-  SUM(IF(JSON_EXTRACT(report, '$.audits.meta-viewport.score') = '0', 1, 0 )) / COUNT(0) AS viewport_zoom_failed_per
+  COUNTIF(JSON_VALUE(report, '$.audits.viewport.score') = '0') / COUNT(0) AS pct_failed
 FROM
-  `httparchive.lighthouse.2022_06_01_*`
-GROUP BY
-  client
+  `httparchive.lighthouse.2022_06_01_mobile`
