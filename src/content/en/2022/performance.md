@@ -248,7 +248,7 @@ When the LCP image is not statically discoverable, <a hreflang="en" href="https:
   )
 }}
 
-Only about 1 in 200 mobile pages preload their LCP images. This figure falls to about 1 in 400 (0.25%) when we only consider pages whose LCP images are not statically discoverable. Preloading statically discoverable images might be considered overkill, as the browser should already know about the image thanks to its <a hreflang="en" href="https://web.dev/preload-scanner/">preload scanner</a>. On the other hand, it could be a useful fallback to prioritize LCP images, given the lack of <a hreflang="en" href="https://caniuse.com/?search=fetchpriority">cross-browser support for `fetchpriority</a>`.
+Only about 1 in 200 mobile pages preload their LCP images. This figure falls to about 1 in 400 (0.25%) when we only consider pages whose LCP images are not statically discoverable. Preloading statically discoverable images might be considered overkill, as the browser should already know about the image thanks to its <a hreflang="en" href="https://web.dev/preload-scanner/">preload scanner</a>. On the other hand, it could be a useful fallback to prioritize LCP images, given the lack of <a hreflang="en" href="https://caniuse.com/?search=fetchpriority">cross-browser support for `fetchpriority`</a>.
 
 These results show that the overwhelming majority of the web could benefit from making their LCP images more discoverable. Loading LCP images sooner, either by making them statically discoverable or preloading them, can go a long way to improving LCP performance. But as with all things related to performance, always experiment to understand what's best for your specific site.
 
@@ -278,9 +278,6 @@ Both script- and style-based discoverability issues are bad for performance, but
 
 Lazy-loading is an effective performance technique to delay when non-critical resources start loading, usually until they're in or near the viewport. With precious bandwidth and rendering power freed up, the browser can load critical content earlier in the page load. A problem arises when lazy-loading is applied to the LCP image itself, because that prevents the browser from loading it until much later.
 
-**9.8%**
-_The percent of mobile pages with `img`-based LCP that set `loading=lazy` on it._
-
 {{ figure_markup(
   content="9.8%",
   caption="The percent of mobile pages that set `loading=lazy` on their LCP image.",
@@ -293,9 +290,6 @@ _The percent of mobile pages with `img`-based LCP that set `loading=lazy` on it.
 Nearly 1 in 10 of pages with `img`-based LCP are using the native `loading=lazy` attribute. Technically, these images are statically discoverable, but the browser will need to wait to start loading them until it's laid out the page to know whether they will be in the viewport. LCP images are always in the viewport, by definition, so in reality none of these images should have been lazy-loaded. For pages whose LCP varies by viewport size, it's worth testing whether eagerly loading the LCP candidate results in better overall performance.
 
 Note that the percentages in this section are out of only those pages in which the `img` element is the LCP, not all pages. For reference, recall that this accounts for 42% of pages.
-
-**8.8%**
-_The percent of mobile pages that use custom lazy-loading on their LCP image._
 
 {{ figure_markup(
   content="8.8%",
@@ -314,9 +308,6 @@ Beyond the adverse performance effects of lazy-loading LCP images, native image 
 
 Another benefit to using native lazy-loading is that browsers like Chrome are <a hreflang="en" href="https://bugs.chromium.org/p/chromium/issues/detail?id=996963">experimenting</a> with using heuristics to ignore the attribute on probable LCP candidates. This is only possible with native lazy-loading, so custom solutions would not benefit from any improvements in this case.
 
-**18%**
-_The percent of mobile pages that use either native or custom lazy-loading on their LCP image._
-
 {{ figure_markup(
   content="18%",
   caption="The percent of mobile pages that use native or custom lazy-loading on their LCP image.",
@@ -332,9 +323,6 @@ Lazy-loading is a good thing when used correctly, but these stats strongly sugge
 
 WordPress was one of the pioneers of native lazy-loading adoption, and between versions 5.5 and 5.9, it didn't actually omit the attribute from LCP candidates. So it's worth exploring the extent to which WordPress is still contributing to this anti-pattern.
 
-**72%**
-_The percent of mobile pages using native lazy-loading on their LCP image that also use WordPress._
-
 {{ figure_markup(
   content="72%",
   caption="The percent of mobile pages using native lazy-loading on their LCP image that also use WordPress.",
@@ -346,11 +334,8 @@ _The percent of mobile pages using native lazy-loading on their LCP image that a
 
 According to the <a hreflang="en" href="./cms">CMS</a> chapter, WordPress is used by 35% of pages. So it's surprising to see that 72% of pages that use native lazy-loading on their LCP image are using WordPress, given that a fix has been available since January 2022 in version 5.9. One theory that needs more investigation is that plugins may be circumventing the safeguards built into WordPress core by injecting LCP images onto the page with the lazy-loading behavior.
 
-**54%**
-_The percent of mobile pages using custom lazy-loading on their LCP image that also use WordPress._
-
 {{ figure_markup(
-  content="72%",
+  content="54%",
   caption="The percent of mobile pages using custom lazy-loading on their LCP image that also use WordPress.",
   classes="big-number",
   sheets_gid="1585533536",
@@ -363,8 +348,6 @@ Similarly, a disproportionately high percentage of pages that use custom lazy-lo
 #### LCP size
 
 A major factor in the time it takes to load the LCP resource is its size over the wire. Larger resources will naturally take longer to load. So for image-based LCP resources, how large are they?
-
-_Distribution of the size of image-based LCP resources._
 
 {{ figure_markup(
   image="lcp-image-size-distribution.png",
@@ -380,9 +363,6 @@ The median LCP image on mobile is 95 KB. To be honest, we expected much worse!
 
 Desktop pages tend to have larger LCP images across the distribution, with a median size of 124 KB.
 
-**114,285 KB**
-_The size of the largest LCP image._
-
 {{ figure_markup(
   content="114,285 KB",
   caption="The size of the largest LCP image.",
@@ -393,8 +373,6 @@ _The size of the largest LCP image._
 }}
 
 We also looked at the largest LCP image sizes and found a 68,607 KB image on desktop and 114,285 KB image on mobile. While it can be fun to look at how obscenely large these outliers are, let's keep in mind the unfortunate reality that these are active websites visited by real users. Data isn't always free, and performance problems like these start to become <a hreflang="en" href="./accessibility">accessibility</a> problems for users on metered mobile data plans. These are also <a hreflang="en" href="./sustainability">sustainability</a> problems considering how much energy is wasted loading blatantly oversized images like these.
-
-_Histogram of image-based LCP sizes._
 
 {{ figure_markup(
   image="lcp-image-size-histogram.png",
@@ -413,8 +391,6 @@ How large an LCP image should _optimally_ be depends on many factors. But the fa
 #### LCP format
 
 Choice of LCP image format can have <a hreflang="en" href="./media#bits-per-pixel-by-format">significant effects</a> on its byte size and ultimately its loading performance. WebP and AVIF are two relatively newer formats that are found to be more efficient than traditional formats like JPG (or JPEG) and PNG.
-
-_The percent of pages that use a given format for their LCP images._
 
 {{ figure_markup(
   image="lcp-image-formats.png",
@@ -436,7 +412,15 @@ The previous section looked at the popularity of various image formats used by L
 
 Lighthouse includes an <a hreflang="en" href="https://web.dev/uses-optimized-images/">audit</a> that will measure the byte savings from setting JPGs to compression level 85. If the image is more than 4 KB smaller as a result, the audit fails and it's considered an opportunity for optimization.
 
-TODO: insert figure
+{{ figure_markup(
+  image="lcp-image-optimization.png",
+  caption="Histogram of byte savings for JPG-based LCP images.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR-dJP3uphZoGE5A_luniNBFm5V2ww6irfOxANg0hrMid7gjgrtchsN_utOIDOvVZUjIwpmUBb27nHF/pubchart?oid=894221089&format=interactive",
+  sheets_gid="369396330",
+  sql_file="lcp_wasted_bytes.sql"
+  )
+}}
 
 Of the pages whose LCP images are JPG-based and flagged by Lighthouse, 68% of them do not have opportunities to improve the LCP image via lossy compression alone. These results are somewhat surprising and suggest that the majority of "hero" JPG images use appropriate quality settings. That said, 20% of these pages could save as much as 100 KB and 4% can save 500 KB or more. Recall that the majority of LCP images are under 200 KB, so this is some serious savings!
 
@@ -457,57 +441,6 @@ However, LCP images may be loaded from other origins, like asset domains and ima
 }}
 
 One in five mobile pages cross-host their LCP images. The time to set up the connection to these third-party hosts could add unnecessary delays to the LCP time. It's best practice to self-host LCP images on the same origin as the document, whenever possible. <a hreflang="en" href="../2021/resource-hints">Resource hints</a> could be used to preconnect to the LCP origin—or better yet, preload the image itself—but these techniques are not very widely adopted.
-
-<table>
-  <thead>
-    <tr>
-      <th><em>Domain</em></th>
-      <th>Percent of pages with cross-origin LCP images</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="http://shopify.com">shopify.com</a></td>
-      <td>11%</td>
-    </tr>
-    <tr>
-      <td><a href="http://wixstatic.com">wixstatic.com</a></td>
-      <td>6%</td>
-    </tr>
-    <tr>
-      <td><a href="http://blogspot.com">blogspot.com</a></td>
-      <td>4%</td>
-    </tr>
-    <tr>
-      <td><a href="http://cloudfront.net">cloudfront.net</a></td>
-      <td>4%</td>
-    </tr>
-    <tr>
-      <td><a href="http://wp.com">wp.com</a></td>
-      <td>4%</td>
-    </tr>
-    <tr>
-      <td><a href="http://squarespace-cdn.com">squarespace-cdn.com</a></td>
-      <td>3%</td>
-    </tr>
-    <tr>
-      <td><a href="http://googleusercontent.com">googleusercontent.com</a></td>
-      <td>3%</td>
-    </tr>
-    <tr>
-      <td><a href="http://amazonaws.com">amazonaws.com</a></td>
-      <td>3%</td>
-    </tr>
-    <tr>
-      <td><a href="http://wordpress.com">wordpress.com</a></td>
-      <td>2%</td>
-    </tr>
-    <tr>
-      <td><a href="http://cdn-website.com">cdn-website.com</a></td>
-      <td>1%</td>
-    </tr>
-  </tbody>
-</table>
 
 <figure>
   <table>
@@ -614,7 +547,15 @@ While LCP is the bottleneck for most sites to be assessed as having good CWV ove
 
 What happened to improve mobile CLS by such a significant margin? One likely explanation is Chrome's new and improved <a hreflang="en" href="https://web.dev/bfcache/">back/forward cache</a> (bfcache), which was released in version 96 in mid-November 2021. This change enabled eligible pages to be pristinely restored from memory during back and forward navigations, rather than having to "start over" by fetching resources from the HTTP cache—or worse, over the network—and reconstructing the page.
 
-TODO: insert figure
+{{ figure_markup(
+  image="monthly-cls-lcp.png",
+  caption="Monthly timeseries of the percent of websites having good mobile LCP and CLS.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR-dJP3uphZoGE5A_luniNBFm5V2ww6irfOxANg0hrMid7gjgrtchsN_utOIDOvVZUjIwpmUBb27nHF/pubchart?oid=1531911610&format=interactive",
+  sheets_gid="1879625698",
+  sql_file="monthly_cls_lcp.sql"
+  )
+}}
 
 This chart shows LCP and CLS performance over time at monthly granularity. Over a two month period starting in December 2021, after Chrome released the bfcache update, the percent of websites having good CLS started to climb much more quickly than before.
 
@@ -643,13 +584,29 @@ The most straightforward way to avoid layout shifts is to reserve space for cont
 
 72% of mobile pages have unsized images. This stat alone shouldn't raise any alarms, because unsized images don't always result in user-perceived layout shifts, for example if they load outside of the viewport. Still, it's a sign that site owners may not be closely adhering to CLS best practices.
 
-TODO: insert figure
+{{ figure_markup(
+  image="unsized-images.png",
+  caption="Distribution of the number of unsized images per page.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR-dJP3uphZoGE5A_luniNBFm5V2ww6irfOxANg0hrMid7gjgrtchsN_utOIDOvVZUjIwpmUBb27nHF/pubchart?oid=449564630&format=interactive",
+  sheets_gid="1160188541",
+  sql_file="cls_unsized_images.sql"
+  )
+}}
 
 The median web page has 2 unsized images and 10% of mobile pages have at least 26 unsized images.
 
 Having any unsized images on the page can be a liability for CLS, but the most important factor is the size of the image. Large images contribute to bigger layout shifts, which make CLS worse.
 
-TODO: insert figure
+{{ figure_markup(
+  image="unsized-image-height.png",
+  caption="Distribution of the heights of unsized images.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR-dJP3uphZoGE5A_luniNBFm5V2ww6irfOxANg0hrMid7gjgrtchsN_utOIDOvVZUjIwpmUBb27nHF/pubchart?oid=1273679516&format=interactive",
+  sheets_gid="309190465",
+  sql_file="cls_unsized_image_height.sql"
+  )
+}}
 
 The median unsized image on mobile has a height of 99px. Given that our <a hreflang="en" href="https://almanac.httparchive.org/en/2022/methodology#webpagetest">test devices</a> have a mobile viewport height of 512px, that's about 20% of the viewport area that would shift down, assuming full-width content. Depending on where that image is in the viewport when it loads, it could cause a <a hreflang="en" href="https://web.dev/cls/#layout-shift-score">layout shift score</a> of at most 0.2, which more than exceeds the 0.1 threshold for "good" CLS.
 
@@ -658,7 +615,7 @@ Desktop pages tend to have larger unsized images. The median unsized image on de
 {{ figure_markup(
   content="4,048,234,137,947,990,000px",
   caption="The height of the largest unsized image.",
-  classes="big-number",
+  classes="really-big-number",
   sheets_gid="309190465",
   sql_file="cls_unsized_image_height.sql"
   )
@@ -681,7 +638,15 @@ Some <a hreflang="en" href="https://web.dev/non-composited-animations/">non-comp
 
 38% of mobile pages use these layout-altering CSS animations and risk making their CLS worse. Similar to the unused images issue, what matters most for CLS is the degree to which the animations affect the layout relative to the viewport.
 
-TODO: insert figure
+{{ figure_markup(
+  image="animations.png",
+  caption="Distribution of the number of non-composited animations per page.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR-dJP3uphZoGE5A_luniNBFm5V2ww6irfOxANg0hrMid7gjgrtchsN_utOIDOvVZUjIwpmUBb27nHF/pubchart?oid=6443199&format=interactive",
+  sheets_gid="603122500",
+  sql_file="cls_animations.sql"
+  )
+}}
 
 The distribution above shows that most pages don't use these types of animations, and the ones that do only use it sparingly. At the 75th percentile, pages use them twice.
 
@@ -700,15 +665,31 @@ In the page load process, it can take some time for the browser to discover, req
 
 82% of pages use web fonts, so this section is highly relevant to most site owners.
 
-TODO: insert figure
+{{ figure_markup(
+  image="font-display-usage.png",
+  caption="Adoption of `font-display` values.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=1648924039&format=interactive",
+  sheets_gid="https://docs.google.com/spreadsheets/d/1A1XwuGa1DkqNLaF-lSXz4ndxO9G6SfACHwUvvywHgbQ/edit#gid=1599822681&range=G11",
+  sql_file="../fonts/font_display_usage.sql"
+  )
+}}
 
-One way to avoid font-induced layout shifts is to use <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display">`font-display: optional</a>`, which will never swap in a web font after the system text has already been shown. However, as noted by the <a hreflang="en" href="./fonts#font-display">Fonts</a> chapter, less than 1% of pages are taking advantage of this directive.
+One way to avoid font-induced layout shifts is to use <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display">`font-display: optional`</a>, which will never swap in a web font after the system text has already been shown. However, as noted by the <a hreflang="en" href="./fonts#font-display">Fonts</a> chapter, less than 1% of pages are taking advantage of this directive.
 
 Even though `optional` is good for CLS, there are UX tradeoffs. Site owners might be willing to have some layout instability or a noticeable flash of unstyled text (FOUT) if it means that their preferred font can be displayed to users.
 
 Rather than hiding the web fonts, another strategy to mitigate CLS is to load them as quickly as possible. Doing so would, if all goes well, display the web font before the system text is rendered.
 
-TODO: insert figure
+{{ figure_markup(
+  image="fonts-resource-hints.png",
+  caption="Adoption of resource hints for font resources.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=1831399490&format=interactive",
+  sheets_gid="https://docs.google.com/spreadsheets/d/1A1XwuGa1DkqNLaF-lSXz4ndxO9G6SfACHwUvvywHgbQ/edit#gid=592046045&range=F11",
+  sql_file="../fonts/resource_hints_usage.sql"
+  )
+}}
 
 According to the <a hreflang="en" href="./fonts#resource-hints">Fonts</a> chapter, 20% of mobile pages are preloading their web fonts. One challenge with preloading the font is that the exact URL may not be known upfront, for example if using a service like Google Fonts. Preconnecting to the font host is the next best option for performance, but only 16% of pages are using that, which is half as many pages that use the less-performant option to prefetch the DNS.
 
@@ -718,15 +699,31 @@ We've shown how impactful bfcache can be for CLS, so it's worth considering elig
 
 The best way to tell if a given page is eligible for bfcache is to <a hreflang="en" href="https://web.dev/bfcache/#test-to-ensure-your-pages-are-cacheable">test it in DevTools</a>. Unfortunately, there are over <a hreflang="en" href="https://docs.google.com/spreadsheets/d/1li0po_ETJAIybpaSX5rW_lUN62upQhY0tH4pR5UPt60/edit?usp=sharing">100 eligibility criteria</a>, many of which are hard or impossible to measure in the lab. So rather than looking at bfcache eligibility as a whole, let's look at a few criteria that are more easily measurable to get a sense for the lower bound of eligibility.
 
-TODO: insert figure
+{{ figure_markup(
+  image="bfcache-unload.png",
+  caption="Usage of `unload` by site rank.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR-dJP3uphZoGE5A_luniNBFm5V2ww6irfOxANg0hrMid7gjgrtchsN_utOIDOvVZUjIwpmUBb27nHF/pubchart?oid=63175690&format=interactive",
+  sheets_gid="996465265",
+  sql_file="bfcache_unload.sql"
+  )
+}}
 
-The <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/API/Window/unload_event">`unload</a>` event is a discouraged way to do work when the page is in the process of going away (unloading). Besides there being <a hreflang="en" href="https://web.dev/bfcache/#never-use-the-unload-event">better ways</a> to do that, it's also one way to make your page ineligible for bfcache.
+The <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/API/Window/unload_event">`unload`</a> event is a discouraged way to do work when the page is in the process of going away (unloading). Besides there being <a hreflang="en" href="https://web.dev/bfcache/#never-use-the-unload-event">better ways</a> to do that, it's also one way to make your page ineligible for bfcache.
 
 17% of all mobile pages set this event handler, however the situation worsens the more popular the website is. In the top 1k, 36% of mobile pages are ineligible for bfcache for this reason.
 
-TODO: insert figure
+{{ figure_markup(
+  image="bfcache-nostore.png",
+  caption="Usage of `Cache-Control: no-store` by site rank.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR-dJP3uphZoGE5A_luniNBFm5V2ww6irfOxANg0hrMid7gjgrtchsN_utOIDOvVZUjIwpmUBb27nHF/pubchart?oid=1655848232&format=interactive",
+  sheets_gid="1063873438",
+  sql_file="bfcache_cachecontrol_nostore.sql"
+  )
+}}
 
-The <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control#no-store">`Cache-Control: no-store</a>` header tells user agents never to cache a given resource. When set on the main HTML document, this makes the entire page ineligible for bfcache.
+The <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control#no-store">`Cache-Control: no-store`</a> header tells user agents never to cache a given resource. When set on the main HTML document, this makes the entire page ineligible for bfcache.
 
 22% of all mobile pages set this header, and 28% of mobile pages in the top 1k. This and the `unload` criteria are not mutually exclusive, so combined we can only say that at least 22% of mobile pages are ineligible for bfcache.
 
@@ -791,7 +788,15 @@ This is one of the quickest, easiest, and least intrusive ways to meaningfully i
 
 TBT is often used as a lab-based proxy for FID, due to the challenges of realistically simulating user interactions in synthetic tests.
 
-TODO: insert figure
+{{ figure_markup(
+  image="tbt.png",
+  caption="Distribution of lab-based TBT per page.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR-dJP3uphZoGE5A_luniNBFm5V2ww6irfOxANg0hrMid7gjgrtchsN_utOIDOvVZUjIwpmUBb27nHF/pubchart?oid=1459512477&format=interactive",
+  sheets_gid="528722499",
+  sql_file="fid_tbt.sql"
+  )
+}}
 
 Note that these results are sourced from the lab-based TBT performance of pages in the HTTP Archive dataset. This is an important distinction because for the most part we've been looking at real-user performance data from the CrUX dataset.
 
@@ -805,7 +810,15 @@ Despite the fact that these results come from synthetic testing, they're based o
 
 Note that, like the TBT analysis above, this section draws from lab-based data. As a result, we're only able to measure long tasks during the page load observation window, which starts when the page is requested and ends after 60 seconds or 5 seconds of network inactivity, whichever comes first. A real user may experience long tasks throughout the entire lifetime of the page.
 
-TODO: insert figure
+{{ figure_markup(
+  image="long-tasks.png",
+  caption="Distribution of lab-based long tasks per page.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR-dJP3uphZoGE5A_luniNBFm5V2ww6irfOxANg0hrMid7gjgrtchsN_utOIDOvVZUjIwpmUBb27nHF/pubchart?oid=1004723255&format=interactive",
+  sheets_gid="1849899474",
+  sql_file="fid_long_tasks.sql"
+  )
+}}
 
 The median mobile web page has 3.3 seconds-worth of long tasks, compared to only 0.4 seconds for desktop pages. Again, this shows the outsized effects of CPU speed on responsiveness heuristics. At the 90th percentile, mobile pages have at least 8.0 seconds of long tasks.
 
@@ -819,7 +832,15 @@ An _interaction_ in this context refers to the user experience of providing an i
 
 Unlike FID, INP is a measure of all interactions on the page, not just the first one. It also measures the entire time until the next frame is painted, unlike FID which only measures the time until the event handler only starts_ _processing. In these ways, INP is a much more representative metric of the holistic user experience on the page.
 
-TODO: insert figure
+{{ figure_markup(
+  image="inp-device.png",
+  caption="Distribution of INP performance by device.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR-dJP3uphZoGE5A_luniNBFm5V2ww6irfOxANg0hrMid7gjgrtchsN_utOIDOvVZUjIwpmUBb27nHF/pubchart?oid=755106375&format=interactive",
+  sheets_gid="555510064",
+  sql_file="web_vitals_by_device.sql"
+  )
+}}
 
 55% of websites have "good" INP on mobile, 36% are rated "needs improvement", and 8% have "poor" INP. The desktop story of INP is more similar to FID in that 95% of websites are rated "good", 4% are rated "needs improvement", and 1% are "poor".
 
@@ -831,7 +852,7 @@ To see how unevenly distributed INP performance is across the web, it's useful t
 
 {{ figure_markup(
   image="inp-performance-by-rank.png",
-  caption="INP performance by rank",
+  caption="INP performance by rank.",
   description="Stacked bar chart showing INP performance on mobile devices segmented by rank. The top 1,000 sites have 27% of good INP experiences, 52% have needs improvement INP experiences, and 20% have poor INP experiences. For the top 10,000 sites it's 25%, 50%, and 24% respectively, for the top 100,000 sites it's 31%, 50%, and 18%, for the top 1,000,000 sites it's 42%, 46%, and 12%, and finally for all sites it's 55% of good, 27% of needs improvement, and 5% of poor experiences.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR-dJP3uphZoGE5A_luniNBFm5V2ww6irfOxANg0hrMid7gjgrtchsN_utOIDOvVZUjIwpmUBb27nHF/pubchart?oid=1730743352&format=interactive",
   sheets_gid="805166525",
@@ -841,7 +862,15 @@ To see how unevenly distributed INP performance is across the web, it's useful t
 
 27% of the top 1k most popular websites have good mobile INP. As the site popularity decreases, the percent having good mobile INP does something funny; it worsens at bit at the top 10k rank to 25%, then it improves to 31% at the top 100k, 41% at the top million, and it ultimately lands at 55% for all websites. Except for the top 1k, it seems that INP performance is inversely proportional to site popularity.
 
-TODO: insert figure
+{{ figure_markup(
+  image="js-bytes-rank.png",
+  caption="Median amount of JavaScript loaded per page, by rank.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR-dJP3uphZoGE5A_luniNBFm5V2ww6irfOxANg0hrMid7gjgrtchsN_utOIDOvVZUjIwpmUBb27nHF/pubchart?oid=1725756250&format=interactive",
+  sheets_gid="1423103831",
+  sql_file="js_bytes_rank.sql"
+  )
+}}
 
 When we look at the amount of JavaScript that the median mobile page loads for each of these ranks, it follows the same funny pattern! The median mobile page in the top 1k loads 604 KB of JavaScript, then it increases to 680 KB for the top 10k before dropping all the way down to 462 KB over all websites. These results don't prove that loading—and using—more JavaScript necessarily causes poor INP, but it definitely suggests a correlation exists.
 
@@ -853,13 +882,29 @@ INP is not an official CWV metric, but <a hreflang="en" href="https://twitter.co
 
 This raises an interesting question: hypothetically, if INP were to be a CWV metric today, how different would the pass rates be?
 
-TODO: insert figure
+{{ figure_markup(
+  image="cwv-fid-inp-device.png",
+  caption="Comparison of the percent of websites having good CWV with FID and INP, by device.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR-dJP3uphZoGE5A_luniNBFm5V2ww6irfOxANg0hrMid7gjgrtchsN_utOIDOvVZUjIwpmUBb27nHF/pubchart?oid=56387241&format=interactive",
+  sheets_gid="805166525",
+  sql_file="web_vitals_by_rank_and_device.sql"
+  )
+}}
 
 For desktop experiences, the situation wouldn't change much. 43% of websites would have good CWV with INP, compared to 44% with FID.
 
 However, the disparity is much more dramatic among websites' mobile experiences, which would fall to 31% having good CWV with INP, from 40% with FID.
 
-TODO: insert figure
+{{ figure_markup(
+  image="cwv-fid-inp-rank.png",
+  caption="Comparison of the percent of websites having good mobile CWV with FID and INP, by rank.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR-dJP3uphZoGE5A_luniNBFm5V2ww6irfOxANg0hrMid7gjgrtchsN_utOIDOvVZUjIwpmUBb27nHF/pubchart?oid=2082509168&format=interactive",
+  sheets_gid="805166525",
+  sql_file="web_vitals_by_rank_and_device.sql"
+  )
+}}
 
 The situation gets even starker when we look at mobile experiences by site rank. Rather than 52% of the top 1k websites having good CWV with FID, only 20% of them would have good CWV with INP, a decrease of 32 percentage points. So even though the most popular websites overperform with FID compared to all websites (52% versus 40%), they actually _underperform_ with INP (20% versus 31%).
 
@@ -867,7 +912,16 @@ The story is similar for the top 10k websites, which would decrease by 24 percen
 
 These results show that the most popular websites have the most work to do to get their INP into shape.
 
-TODO: insert figure
+{{ figure_markup(
+  image="cwv-inp-tech.png",
+  caption="Percent change of websites having good CWV from FID to INP, by technology.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR-dJP3uphZoGE5A_luniNBFm5V2ww6irfOxANg0hrMid7gjgrtchsN_utOIDOvVZUjIwpmUBb27nHF/pubchart?oid=457714899&format=interactive",
+  height=632,
+  sheets_gid="1104559069",
+  sql_file="web_vitals_by_technology.sql"
+  )
+}}
 
 In this chart we're looking at the percent of a given technology's websites that would no longer be considered as having "good" CWV should FID be replaced with INP.
 
@@ -885,9 +939,13 @@ What actually makes INP a better responsiveness metric than FID? One way to answ
 
 This section draws from Annie Sullivan's <a hreflang="en" href="https://colab.sandbox.google.com/drive/12lJmAABgyVjaUbmWvrbzj9BkkTxw6ay2">research</a> using the May 2022 dataset.
 
-TODO: insert figure
-
-_Scatterplot visualizing the correlation between FID and TBT. (<a hreflang="en" href="https://colab.sandbox.google.com/drive/12lJmAABgyVjaUbmWvrbzj9BkkTxw6ay2">Source</a>)_
+{{ figure_markup(
+  image="tbt-fid.png",
+  alt="",
+  caption='Scatterplot visualizing the correlation between FID and TBT. (<a hreflang="en" href="https://colab.sandbox.google.com/drive/12lJmAABgyVjaUbmWvrbzj9BkkTxw6ay2">Source</a>))',
+  description="TODO"
+  )
+}}
 
 This chart shows the relationship between pages' FID and TBT responsiveness. The solid horizontal line at 100 ms represents the threshold for "good" FID, and most pages fall comfortably under this threshold.
 
@@ -897,9 +955,12 @@ There's also a patch of pages that have low TBT and a FID of about 250 ms. This 
 
 The <a hreflang="en" href="https://en.wikipedia.org/wiki/Kendall_rank_correlation_coefficient">Kendall</a> and <a hreflang="en" href="https://en.wikipedia.org/wiki/Spearman%27s_rank_correlation_coefficient">Spearman</a> coefficients of correlation for this distribution are 0.29 and 0.40, respectively.
 
-TODO: insert figure
-
-_Scatterplot visualizing the correlation between INP and TBT. (<a hreflang="en" href="https://colab.sandbox.google.com/drive/12lJmAABgyVjaUbmWvrbzj9BkkTxw6ay2">Source</a>)_
+{{ figure_markup(
+  image="tbt-inp.png",
+  caption='Scatterplot visualizing the correlation between INP and TBT. (<a hreflang="en" href="https://colab.sandbox.google.com/drive/12lJmAABgyVjaUbmWvrbzj9BkkTxw6ay2">Source</a>)',
+  description="TODO"
+  )
+}}
 
 This is the same chart, but with INP instead of FID. The solid horizontal line here represents the 200 ms threshold for "good" INP. Compared to FID, there are many more pages above this line and not assessed as "good".
 
