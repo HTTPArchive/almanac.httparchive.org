@@ -200,7 +200,7 @@ Images are not loaded at high priority by default, but thanks to the new <a href
   caption="The percent of pages that use `fetchpriority=high` on their LCP element.",
   classes="big-number",
   sheets_gid="600760184",
-  sql_file="lcp_element_data_2.sql",
+  sql_file="lcp_element_data_2.sql"
   )
 }}
 
@@ -227,7 +227,7 @@ Custom lazy-loading techniques like the example above are one way that images ar
   caption="The percent of mobile pages on which the LCP element was not statically discoverable.",
   classes="big-number",
   sheets_gid="1465687616",
-  sql_file="lcp_preload_discoverable.sql",
+  sql_file="lcp_preload_discoverable.sql"
   )
 }}
 
@@ -244,7 +244,7 @@ When the LCP image is not statically discoverable, <a hreflang="en" href="https:
   caption="The percent of mobile pages that preload their LCP images.",
   classes="big-number",
   sheets_gid="1465687616",
-  sql_file="lcp_preload_discoverable.sql",
+  sql_file="lcp_preload_discoverable.sql"
   )
 }}
 
@@ -286,7 +286,7 @@ _The percent of mobile pages with `img`-based LCP that set `loading=lazy` on it.
   caption="The percent of mobile pages that set `loading=lazy` on their LCP image.",
   classes="big-number",
   sheets_gid="600760184",
-  sql_file="lcp_element_data_2.sql",
+  sql_file="lcp_element_data_2.sql"
   )
 }}
 
@@ -302,7 +302,7 @@ _The percent of mobile pages that use custom lazy-loading on their LCP image._
   caption="The percent of mobile pages that use custom lazy-loading on their LCP image.",
   classes="big-number",
   sheets_gid="1585533536",
-  sql_file="lcp_lazy.sql",
+  sql_file="lcp_lazy.sql"
   )
 }}
 
@@ -322,7 +322,7 @@ _The percent of mobile pages that use either native or custom lazy-loading on th
   caption="The percent of mobile pages that use native or custom lazy-loading on their LCP image.",
   classes="big-number",
   sheets_gid="1585533536",
-  sql_file="lcp_lazy.sql",
+  sql_file="lcp_lazy.sql"
   )
 }}
 
@@ -340,7 +340,7 @@ _The percent of mobile pages using native lazy-loading on their LCP image that a
   caption="The percent of mobile pages using native lazy-loading on their LCP image that also use WordPress.",
   classes="big-number",
   sheets_gid="1585533536",
-  sql_file="lcp_lazy_wordpress.sql",
+  sql_file="lcp_lazy_wordpress.sql"
   )
 }}
 
@@ -354,7 +354,7 @@ _The percent of mobile pages using custom lazy-loading on their LCP image that a
   caption="The percent of mobile pages using custom lazy-loading on their LCP image that also use WordPress.",
   classes="big-number",
   sheets_gid="1585533536",
-  sql_file="lcp_lazy_wordpress.sql",
+  sql_file="lcp_lazy_wordpress.sql"
   )
 }}
 
@@ -388,7 +388,7 @@ _The size of the largest LCP image._
   caption="The size of the largest LCP image.",
   classes="big-number",
   sheets_gid="916137359",
-  sql_file="lcp_bytes_distribution.sql",
+  sql_file="lcp_bytes_distribution.sql"
   )
 }}
 
@@ -575,7 +575,7 @@ One in five mobile pages cross-host their LCP images. The time to set up the con
     {{ figure_link(
       caption="Top 10 hosts as a percent of pages with cross-origin LCP images.",
       sheets_gid="1432074792",
-      sql_file="lcp_host_3p.sql",
+      sql_file="lcp_host_3p.sql"
     ) }}
   </figcaption>
 </figure>
@@ -637,7 +637,7 @@ The most straightforward way to avoid layout shifts is to reserve space for cont
   caption="The percent of mobile pages that fail to set explicit dimensions on at least one image.",
   classes="big-number",
   sheets_gid="1160188541",
-  sql_file="cls_unsized_images.sql
+  sql_file="cls_unsized_images.sql"
   )
 }}
 
@@ -660,7 +660,7 @@ Desktop pages tend to have larger unsized images. The median unsized image on de
   caption="The height of the largest unsized image.",
   classes="big-number",
   sheets_gid="309190465",
-  sql_file="cls_unsized_image_height.sql,
+  sql_file="cls_unsized_image_height.sql"
   )
 }}
 
@@ -675,7 +675,7 @@ Some <a hreflang="en" href="https://web.dev/non-composited-animations/">non-comp
   caption="The percent of mobile pages that have non-composited animations.",
   classes="big-number",
   sheets_gid="309190465",
-  sql_file="cls_unsized_image_height.sql,
+  sql_file="cls_unsized_image_height.sql"
   )
 }}
 
@@ -694,7 +694,7 @@ In the page load process, it can take some time for the browser to discover, req
   caption="The percent of mobile pages that use web fonts.",
   classes="big-number",
   sheets_gid="https://docs.google.com/spreadsheets/d/1A1XwuGa1DkqNLaF-lSXz4ndxO9G6SfACHwUvvywHgbQ/edit#gid=1517999851",
-  sql_file="../fonts/font_usage_over_time.sql,
+  sql_file="../fonts/font_usage_over_time.sql"
   )
 }}
 
@@ -779,7 +779,7 @@ This is one of the quickest, easiest, and least intrusive ways to meaningfully i
   caption="The percent of mobile pages that do not set a viewport `meta` tag.",
   classes="big-number",
   sheets_gid="1839727600",
-  sql_file="viewport_meta_zoom_disable.sql",
+  sql_file="viewport_meta_zoom_disable.sql"
   )
 }}
 
