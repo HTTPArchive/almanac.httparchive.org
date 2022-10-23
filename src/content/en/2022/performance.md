@@ -874,9 +874,7 @@ When we look at the amount of JavaScript that the median mobile page loads for e
 
 #### INP as a hypothetical CWV metric
 
-INP is not an official CWV metric, but <a hreflang="en" href="https://twitter.com/anniesullie">Annie Sullivan</a>, who is the Tech Lead for the CWV program at Google, has <a hreflang="en" href="https://twitter.com/anniesullie/status/1535208365374185474">commented</a> about its intended future:
-
-> INP is still experimental! Not a Core Web Vital yet, but we hope it can replace FID.
+INP is not an official CWV metric, but <a hreflang="en" href="https://twitter.com/anniesullie">Annie Sullivan</a>, who is the Tech Lead for the CWV program at Google, has <a hreflang="en" href="https://twitter.com/anniesullie/status/1535208365374185474">commented</a> about its intended future, saying "_INP is still experimental! Not a Core Web Vital yet, but we hope it can replace FID._"
 
 This raises an interesting question: hypothetically, if INP were to be a CWV metric today, how different would the pass rates be?
 
@@ -966,11 +964,13 @@ Pages in this chart are more densely packed in the bottom left corner, which sig
 
 The Kendall and Spearman coefficients of correlation for this distribution are 0.34 and 0.45, respectively.
 
->First, is INP correlated with TBT? Is it more correlated with TBT than FID? Yes and yes!
->
->But they are both correlated with TBT; is INP catching more problems with main thread blocking JavaScript? We can break down the percent of sites meeting the "good" threshold: yes it is!
->
->—Annie Sullivan on <a hreflang="en" href="https://twitter.com/anniesullie/status/1525161893450727425">Twitter</a>
+<figure>
+  <blockquote>
+  <p>First, is INP correlated with TBT? Is it more correlated with TBT than FID? Yes and yes!</p>
+  <p>But they are both correlated with TBT; is INP catching more problems with main thread blocking JavaScript? We can break down the percent of sites meeting the "good" threshold: yes it is!</p>
+  </blockquote>
+  <figcaption>—Annie Sullivan on <a hreflang="en" href="https://twitter.com/anniesullie/status/1525161893450727425">Twitter</a></figcaption>
+</figure>
 
 As Annie notes, both metrics are correlated with TBT, but she concludes that INP is more strongly correlated, making it a better responsiveness metric.
 
