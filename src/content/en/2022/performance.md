@@ -189,7 +189,7 @@ We see that 72% of mobile pages and 82% of desktop pages have images as their LC
 
 #### LCP prioritization
 
-After the HTML document is loaded, there are two major factors that affect how quickly the LCP resource itself can be loaded: discoverability and prioritization. We'll explore <a hreflang="en" href="#lcp-static-discoverability">LCP discoverability</a> later, but first let's look at how LCP images are prioritized.
+After the HTML document is loaded, there are two major factors that affect how quickly the LCP resource itself can be loaded: discoverability and prioritization. We'll explore [LCP discoverability](#lcp-static-discoverability) later, but first let's look at how LCP images are prioritized.
 
 Images are not loaded at high priority by default, but thanks to the new <a hreflang="en" href="https://web.dev/priority-hints/">Priority Hints</a> API, developers can explicitly set their LCP images to load at high priority to take precedence over non-essential resources.
 
@@ -208,7 +208,7 @@ Images are not loaded at high priority by default, but thanks to the new <a href
 
 #### LCP static discoverability
 
-Earlier we looked at <a hreflang="en" href="#lcp-prioritization">prioritization</a> as a way to improve LCP performance by outcompeting other concurrently loading resources. On the other hand, static discoverability helps to ensure that the LCP resource can be loaded as soon as possible.
+Earlier we looked at [prioritization](#lcp-prioritization) as a way to improve LCP performance by outcompeting other concurrently loading resources. On the other hand, static discoverability helps to ensure that the LCP resource can be loaded as soon as possible.
 
 An LCP image is considered to be _statically discoverable_ if its source URL can be parsed directly from the markup sent by the server. This definition includes sources defined within `picture` or `img` elements as well as sources that are explicitly preloaded.
 
