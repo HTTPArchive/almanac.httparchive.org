@@ -1,6 +1,6 @@
 ---
 ##See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
-title: Fonts
+title: Font
 description: Capitolo sui font del Web Almanac 2022 che tratta i seguenti argomenti&colon; da dove vengono serviti i font, i formati di font, le prestazioni di caricamento dei font, i font variabili e i font a colori.
 authors: [bramstein]
 reviewers: [alexnj, jmsole, RoelN, svgeesus]
