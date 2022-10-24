@@ -736,7 +736,7 @@ There are other, more direct ways site owners can improve their CLS. Setting `he
 
 ## First Input Delay (FID)
 
-<a hreflang="en" href="https://web.dev/fid/">First Input Delay</a> (FID) measures the time from the first user interaction like a click or tap to the time at which the browser begins processing the corresponding event handlers. A website has "good" FID if at least 75 percent of all navigations across the site are faster than 100 ms. 
+<a hreflang="en" href="https://web.dev/fid/">First Input Delay</a> (FID) measures the time from the first user interaction like a click or tap to the time at which the browser begins processing the corresponding event handlers. A website has "good" FID if at least 75 percent of all navigations across the site are faster than 100 ms.
 
 {{ figure_markup(
   image="good-fid-by-device.png",
