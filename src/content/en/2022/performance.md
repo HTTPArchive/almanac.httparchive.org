@@ -303,7 +303,7 @@ As we showed earlier, one way that sites might polyfill the native lazy-loading 
 
 Nearly as many pages are using this kind of custom lazy-loading behavior as native lazy-loading, at 8.8% of pages with `img`-based LCP.
 
-Beyond the adverse performance effects of lazy-loading LCP images, native image lazy-loaded is <a hreflang="en" href="https://caniuse.com/loading-lazy-attr">supported</a> by all major browsers, making custom solutions like these obsolete. In our opinion, developers should seriously consider removing these polyfills from their code and judiciously switching to use native lazy-loading.
+Beyond the adverse performance effects of lazy-loading LCP images, native image lazy-loaded is <a hreflang="en" href="https://caniuse.com/loading-lazy-attr">supported</a> by all major browsers, so custom solutions may be adding unnecessary overhead. In our opinion, while some custom solutions may provide more granular control over when images load, developers should remove these extraneous polyfills and defer to the user agent's native lazy-loading heuristics.
 
 Another benefit to using native lazy-loading is that browsers like Chrome are <a hreflang="en" href="https://bugs.chromium.org/p/chromium/issues/detail?id=996963">experimenting with using heuristics to ignore the attribute on probable LCP candidates</a>. This is only possible with native lazy-loading, so custom solutions would not benefit from any improvements in this case.
 
