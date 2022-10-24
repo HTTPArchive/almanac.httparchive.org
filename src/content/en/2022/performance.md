@@ -177,7 +177,7 @@ The second most popular LCP element type is `div`. This is a generic HTML contai
   image="top-lcp-content-types.png",
   caption="The percent of pages that use each type of LCP content.",
   description="Bar chart showing an image is the LCP content type on 82% of desktop pages and 72% of mobile pages, it is text on 17% and 26% respectively, and an inline image on 2% of desktop and 1% of mobile pages.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR-dJP3uphZoGE5A_luniNBFm5V2ww6irfOxANg0hrMid7gjgrtchsN_utOIDOvVZUjIwpmUBb27nHF/pubchart?oid=1619115021&format=interactive",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR-dJP3uphZoGE5A_luniNBFm5V2ww6irfOxANg0hrMid7gjgrtchsN_utOIDOvVZUjIwpmUBb27nHF/pubchart?oid=839846485&format=interactive",
   sheets_gid="872701281",
   sql_file="lcp_resource_type.sql"
   )
