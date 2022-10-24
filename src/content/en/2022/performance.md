@@ -203,7 +203,7 @@ Images are not loaded at high priority by default, but thanks to the new <a href
 
 0.03% of pages use `fetchpriority=high` on their LCP elements. Counterproductively, a handful of pages actually _lower_ the priority over their LCP images: 77 pages on mobile and 104 on desktop.
 
-`fetchpriority` is still very new and not supported everywhere, but there's little to no reason why every developer shouldn't be using it. [Patrick Meenan](https://twitter.com/patmeenan), who helped develop the API, [describes it](https://twitter.com/patmeenan/status/1460276602479251457) as a "cheat code" given how easy it is to implement relative to the potential improvements.
+`fetchpriority` is still very new and not supported everywhere, but there's little to no reason why it shouldn't be in every developer's toolbox. [Patrick Meenan](https://twitter.com/patmeenan), who helped develop the API, [describes it](https://twitter.com/patmeenan/status/1460276602479251457) as a "cheat code" given how easy it is to implement relative to the potential improvements.
 
 #### LCP static discoverability
 
