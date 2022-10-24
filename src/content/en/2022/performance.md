@@ -16,7 +16,6 @@ featured_stat_2: 22%
 featured_stat_label_2: Pages that are ineligble for bfache due to `no-store`
 featured_stat_3: 20%
 featured_stat_label_3: Top 1k websites that would have good CWV with INP
-unedited: true
 ---
 
 ## Introduction
@@ -51,7 +50,7 @@ CWV have been a part of Google Search ranking for a little over a year now, so w
   )
 }}
 
-In 2021, 29% of websites were assessed as having good CWV for mobile users. This was a significant step up from 2020, representing a 5 percentage point increase. However, the progress in 2022 was an even bigger leap forward, now with 39% of websites having good CWV on mobile, representing a further 10 point increase!
+In 2021, 29% of websites were assessed as having good CWV for mobile users. This was a significant step up from 2020, representing a 5 percentage point increase. However, the progress in 2022 was an even bigger leap forward, now with 39% of websites having good CWV on mobile—representing a further 10 point increase!
 
 44% of websites have good CWV on desktop. While this is better than mobile, the rate of improvement for desktop experiences is not as rapid as mobile, so the gap is closing.
 
@@ -75,7 +74,7 @@ To better understand why mobile experiences have gotten so much better this year
 
 ## Largest Contentful Paint (LCP)
 
-<a hreflang="en" href="https://web.dev/lcp/">Largest Contentful Paint</a> (LCP) is the time from the start of the navigation until the largest block of content is visible in the viewport. This metric represents how quickly users are able to see meaningful content.
+<a hreflang="en" href="https://web.dev/lcp/">Largest Contentful Paint</a> (LCP) is the time from the start of the navigation until the largest block of content is visible in the viewport. This metric represents how quickly users are able to see what is likely the most meaningful content.
 
 We say that a website has good LCP if at least 75 percent of all page views are faster than 2,500 ms. Of the three CWV metrics, LCP pass rates are the lowest, often making it the bottleneck to achieving good CWV assessments.
 
@@ -129,7 +128,7 @@ Another complication is that TTFB is still considered to be an <a hreflang="en" 
 
 FCP improved dramatically this year, with 49% of websites having good mobile experiences and 64% for desktop. This represents an 11 and 4 percentage point increase for mobile and desktop, respectively.
 
-In the absence of TTFB data to the contrary, this indicates that there were major improvements to frontend optimizations, like eliminating render-blocking resources or more advanced resource prioritization. However, as we'll see in the following sections, it seems like there may have been something else entirely to thank for the LCP improvements this year.
+In the absence of TTFB data to the contrary, this indicates that there were major improvements to frontend optimizations, like eliminating render-blocking resources or better resource prioritization. However, as we'll see in the following sections, it seems like there may have been something else entirely to thank for the LCP improvements this year.
 
 ### LCP metadata and best practices
 
@@ -155,7 +154,7 @@ Surprisingly, there was no dramatic improvement in the percent of pages that hav
 
 #### LCP content types
 
-The LCP element can be anything like an image, a heading, or a paragraph of text.
+The LCP element can be a number of different types of content, like an image, a heading, or a paragraph of text.
 
 {{ figure_markup(
   image="top-lcp-element-types.png",
@@ -183,7 +182,7 @@ The second most popular LCP element type is `div`. This is a generic HTML contai
   )
 }}
 
-We see that 72% of mobile pages and 82% of desktop pages have images as their LCP. For example, these images may be traditional `img` elements or CSS background images. 26% of mobile pages and 17% of desktop pages have text-based content as their LCP.
+We see that 72% of mobile pages and 82% of desktop pages have images as their LCP. For example, these images may be traditional `img` elements or CSS background images.This suggests that the vast majority of the `div` elements seen in the previous figure are images as well. 26% of mobile pages and 17% of desktop pages have text-based content as their LCP.
 
 1% of pages actually use inline images as their LCP content. This is almost always a bad idea for a number of reasons, mostly around caching and complexity.
 
@@ -208,7 +207,7 @@ Images are not loaded at high priority by default, but thanks to the new <a href
 
 #### LCP static discoverability
 
-Earlier we looked at [prioritization](#lcp-prioritization) as a way to improve LCP performance by outcompeting other concurrently loading resources. On the other hand, static discoverability helps to ensure that the LCP resource can be loaded as soon as possible.
+Ensuring an LCP image is discovered early is key to the browser loading it as soon as possible. Even the [prioritization](#lcp-prioritization) improvements that we discussed above, cannot help if the browser does not know it needs to load the resource until later.
 
 An LCP image is considered to be _statically discoverable_ if its source URL can be parsed directly from the markup sent by the server. This definition includes sources defined within `picture` or `img` elements as well as sources that are explicitly preloaded.
 
@@ -246,7 +245,9 @@ When the LCP image is not statically discoverable, <a hreflang="en" href="https:
   )
 }}
 
-Only about 1 in 200 mobile pages preload their LCP images. This figure falls to about 1 in 400 (0.25%) when we only consider pages whose LCP images are not statically discoverable. Preloading statically discoverable images might be considered overkill, as the browser should already know about the image thanks to its <a hreflang="en" href="https://web.dev/preload-scanner/">preload scanner</a>. On the other hand, it could be a useful fallback to prioritize LCP images, given the lack of <a hreflang="en" href="https://caniuse.com/?search=fetchpriority">cross-browser support for `fetchpriority`</a>.
+Only about 1 in 200 mobile pages preload their LCP images. This figure falls to about 1 in 400 (0.25%) when we only consider pages whose LCP images are not statically discoverable.
+
+Preloading statically discoverable images might be considered overkill, as the browser should already know about the image thanks to its <a hreflang="en" href="https://web.dev/preload-scanner/">preload scanner</a>. However, it can help load critical images earlier above other statically discoverable images that may be earlier in the HTML—for example header images or mega menu images. This is especially true for <a hreflang="en" href="https://caniuse.com/?search=fetchpriority">browsers that do not support `fetchpriority`</a>.
 
 These results show that the overwhelming majority of the web could benefit from making their LCP images more discoverable. Loading LCP images sooner, either by making them statically discoverable or preloading them, can go a long way to improving LCP performance. But as with all things related to performance, always experiment to understand what's best for your specific site.
 
@@ -278,37 +279,37 @@ Lazy-loading is an effective performance technique to delay when non-critical re
 
 {{ figure_markup(
   content="9.8%",
-  caption="The percent of mobile pages that set `loading=lazy` on their LCP image.",
+  caption="The percent of mobile pages having image-based LCP that set `loading=lazy` on it.",
   classes="big-number",
   sheets_gid="600760184",
   sql_file="lcp_element_data_2.sql"
   )
 }}
 
-Nearly 1 in 10 of pages with `img`-based LCP are using the native `loading=lazy` attribute. Technically, these images are statically discoverable, but the browser will need to wait to start loading them until it's laid out the page to know whether they will be in the viewport. LCP images are always in the viewport, by definition, so in reality none of these images should have been lazy-loaded. For pages whose LCP varies by viewport size, it's worth testing whether eagerly loading the LCP candidate results in better overall performance.
+Nearly 1 in 10 of pages with `img`-based LCP are using the native `loading=lazy` attribute. Technically, these images are statically discoverable, but the browser will need to wait to start loading them until it's laid out the page to know whether they will be in the viewport. LCP images are always in the viewport, by definition, so in reality none of these images should have been lazy-loaded. For pages whose LCP varies by viewport size or initial scroll position from deep-linked navigations, it's worth testing whether eagerly loading the LCP candidate results in better overall performance.
 
 Note that the percentages in this section are out of only those pages in which the `img` element is the LCP, not all pages. For reference, recall that this accounts for 42% of pages.
 
 {{ figure_markup(
   content="8.8%",
-  caption="The percent of mobile pages that use custom lazy-loading on their LCP image.",
+  caption="The percent of mobile pages having image-based LCP that use custom lazy-loading on it.",
   classes="big-number",
   sheets_gid="1585533536",
   sql_file="lcp_lazy.sql"
   )
 }}
 
-One way that sites might polyfill the native lazy-loading behavior is to assign the image source to a `data-src` attribute and include an identifier like `lazyload` in the class list. Then, a script will watch the positions of images with this class name relative to the viewport, and swap the `data-src` value for the native `src` value to trigger the image to start loading.
+As we showed earlier, one way that sites might polyfill the native lazy-loading behavior is to assign the image source to a `data-src` attribute and include an identifier like `lazyload` in the class list. Then, a script will watch the positions of images with this class name relative to the viewport, and swap the `data-src` value for the native `src` value to trigger the image to start loading.
 
 Nearly as many pages are using this kind of custom lazy-loading behavior as native lazy-loading, at 8.8% of pages with `img`-based LCP.
 
 Beyond the adverse performance effects of lazy-loading LCP images, native image lazy-loaded is <a hreflang="en" href="https://caniuse.com/loading-lazy-attr">supported</a> by all major browsers, making custom solutions like these obsolete. In our opinion, developers should seriously consider removing these polyfills from their code and judiciously switching to use native lazy-loading.
 
-Another benefit to using native lazy-loading is that browsers like Chrome are <a hreflang="en" href="https://bugs.chromium.org/p/chromium/issues/detail?id=996963">experimenting</a> with using heuristics to ignore the attribute on probable LCP candidates. This is only possible with native lazy-loading, so custom solutions would not benefit from any improvements in this case.
+Another benefit to using native lazy-loading is that browsers like Chrome are <a hreflang="en" href="https://bugs.chromium.org/p/chromium/issues/detail?id=996963">experimenting with using heuristics to ignore the attribute on probable LCP candidates</a>. This is only possible with native lazy-loading, so custom solutions would not benefit from any improvements in this case.
 
 {{ figure_markup(
   content="18%",
-  caption="The percent of mobile pages that use native or custom lazy-loading on their LCP image.",
+  caption="The percent of mobile pages having image-based LCP that use native or custom lazy-loading it.",
   classes="big-number",
   sheets_gid="1585533536",
   sql_file="lcp_lazy.sql"
@@ -319,7 +320,7 @@ Looking at pages that use either technique, 18% of pages with `img`-based LCP ar
 
 Lazy-loading is a good thing when used correctly, but these stats strongly suggest that there's a major opportunity to improve performance by removing this functionality from LCP images in particular.
 
-WordPress was one of the pioneers of native lazy-loading adoption, and between versions 5.5 and 5.9, it didn't actually omit the attribute from LCP candidates. So it's worth exploring the extent to which WordPress is still contributing to this anti-pattern.
+WordPress was one of the pioneers of native lazy-loading adoption, and between versions 5.5 and 5.9, it didn't actually omit the attribute from LCP candidates. So let's explore the extent to which WordPress is still contributing to this anti-pattern.
 
 {{ figure_markup(
   content="72%",
@@ -330,7 +331,7 @@ WordPress was one of the pioneers of native lazy-loading adoption, and between v
   )
 }}
 
-According to the [CMS](./cms) chapter, WordPress is used by 35% of pages. So it's surprising to see that 72% of pages that use native lazy-loading on their LCP image are using WordPress, given that a fix has been available since January 2022 in version 5.9. One theory that needs more investigation is that plugins may be circumventing the safeguards built into WordPress core by injecting LCP images onto the page with the lazy-loading behavior.
+According to the [CMS](./cms) chapter, [WordPress is used by 35% of pages](./cms#most-popular-cmss). So it's surprising to see that 72% of pages that use native lazy-loading on their LCP image are using WordPress, given that a fix has been available since January 2022 in version 5.9. One theory that needs more investigation is that plugins may be circumventing the safeguards built into WordPress core by injecting LCP images onto the page with the lazy-loading behavior.
 
 {{ figure_markup(
   content="54%",
@@ -567,7 +568,7 @@ Let's explore how much of the web is adhering to CLS best practices.
 
 #### Explicit dimensions
 
-The most straightforward way to avoid layout shifts is to reserve space for content by setting explicit height and width attributes.
+The most straightforward way to avoid layout shifts is to reserve space for content by setting dimensions, for example using `height` and `width` attributes on images.
 
 {{ figure_markup(
   content="72%",
@@ -578,7 +579,7 @@ The most straightforward way to avoid layout shifts is to reserve space for cont
   )
 }}
 
-72% of mobile pages have unsized images. This stat alone shouldn't raise any alarms, because unsized images don't always result in user-perceived layout shifts, for example if they load outside of the viewport. Still, it's a sign that site owners may not be closely adhering to CLS best practices.
+72% of mobile pages have unsized images. This stat alone doesn't give the full picture, because unsized images don't always result in user-perceived layout shifts, for example if they load outside of the viewport. Still, it's a sign that site owners may not be closely adhering to CLS best practices.
 
 {{ figure_markup(
   image="unsized-images.png",
@@ -592,7 +593,7 @@ The most straightforward way to avoid layout shifts is to reserve space for cont
 
 The median web page has 2 unsized images and 10% of mobile pages have at least 26 unsized images.
 
-Having any unsized images on the page can be a liability for CLS, but the most important factor is the size of the image. Large images contribute to bigger layout shifts, which make CLS worse.
+Having any unsized images on the page can be a liability for CLS, but perhaps a more important factor is the size of the image. Large images contribute to bigger layout shifts, which make CLS worse.
 
 {{ figure_markup(
   image="unsized-image-height.png",
@@ -698,7 +699,7 @@ The best way to tell if a given page is eligible for bfcache is to <a hreflang="
 {{ figure_markup(
   image="bfcache-unload.png",
   caption="Usage of `unload` by site rank.",
-  description="Bar chart showing the percent of pages that are ineligble for bfcache due to setting unload handlers, grouped by site popularity rank. 36% of the top 1 thousand mobile pages set this handler, 33% of the top 10 thousand, 27% of the top 100 thousand, 21% of the top million, and 17% of all mobile pages. Desktop pages tend to use the unload handler slightly more often by a couple of percentage points across the ranks.",
+  description="Bar chart showing the percent of pages that are ineligble for bfcache due to setting `unload` handlers, grouped by site popularity rank. 36% of the top 1 thousand mobile pages set this handler, 33% of the top 10 thousand, 27% of the top 100 thousand, 21% of the top million, and 17% of all mobile pages. Desktop pages tend to use the `unload` handler slightly more often by a couple of percentage points across the ranks.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR-dJP3uphZoGE5A_luniNBFm5V2ww6irfOxANg0hrMid7gjgrtchsN_utOIDOvVZUjIwpmUBb27nHF/pubchart?oid=63175690&format=interactive",
   sheets_gid="996465265",
   sql_file="bfcache_unload.sql"
@@ -731,11 +732,11 @@ CLS is the CWV metric that improved the most in 2022 and it appears to have had 
 
 The cause of this improvement seems to come down to Chrome's launch of bfcache, which is reflected in the January 2022 CrUX dataset. However, at least a fifth of sites are ineligible for this feature due to aggressive `no-store` caching policies or discouraged use of the `unload` event listener. Correcting these anti-patterns is CLS's "one weird trick" to improve performance.
 
-There are other, more direct ways site owners can improve their CLS. Setting height and width attributes on images is the most straightforward one. Optimizing how animations are styled and how fonts load are two other—admittedly more complex—approaches to consider.
+There are other, more direct ways site owners can improve their CLS. Setting `height` and `width` attributes on images is the most straightforward one. Optimizing how animations are styled and how fonts load are two other—admittedly more complex—approaches to consider.
 
 ## First Input Delay (FID)
 
-<a hreflang="en" href="https://web.dev/fid/">First Input Delay</a> (FID) measures the time from the first user interaction like a click or tap to the time at which the browser begins processing the corresponding event handlers.
+<a hreflang="en" href="https://web.dev/fid/">First Input Delay</a> (FID) measures the time from the first user interaction like a click or tap to the time at which the browser begins processing the corresponding event handlers. A website has "good" FID if at least 75 percent of all navigations across the site are faster than 100 ms. 
 
 {{ figure_markup(
   image="good-fid-by-device.png",
@@ -747,9 +748,9 @@ There are other, more direct ways site owners can improve their CLS. Setting hei
   )
 }}
 
-A website has "good" FID if at least 75 percent of all navigations across the site are faster than 100 ms. Effectively all websites have "good" FID for desktop users, and this trend has held firm over the years. Mobile FID performance is also exceptionally fast, with 92% of websites having "good" FID, a slight improvement over last year.
+Effectively all websites have "good" FID for desktop users, and this trend has held firm over the years. Mobile FID performance is also exceptionally fast, with 92% of websites having "good" FID, a slight improvement over last year.
 
-While it's great that so many websites have good FID experiences, developers need to be careful not to become too complacent. Google has been <a hreflang="en" href="https://web.dev/better-responsiveness-metric/">experimenting</a> with a new responsiveness metric that could end up replacing FID, which is especially important because sites tend to perform much worse on [this metric](./#interaction-to-next-paint-inp) than FID.
+While it's great that so many websites have good FID experiences, developers need to be careful not to become too complacent. Google has been <a hreflang="en" href="https://web.dev/better-responsiveness-metric/">experimenting with a new responsiveness metric</a> that could end up replacing FID, which is especially important because sites tend to perform much worse on [this new metric](./#interaction-to-next-paint-inp) than FID.
 
 ### FID metadata and best practices
 
@@ -826,7 +827,7 @@ It's also worth noting that these results are significantly higher than the dist
 
 An _interaction_ in this context refers to the user experience of providing an input to a web application and waiting for the next frame of visual feedback to be painted on the screen. The only inputs that are considered for INP are clicks, taps, and key presses. The INP value itself is taken from one of the worst interaction latencies on the page. Refer to the <a hreflang="en" href="https://web.dev/inp/#what-is-inp">INP documentation</a> for more info on how it's calculated.
 
-Unlike FID, INP is a measure of all interactions on the page, not just the first one. It also measures the entire time until the next frame is painted, unlike FID which only measures the time until the event handler only starts_ _processing. In these ways, INP is a much more representative metric of the holistic user experience on the page.
+Unlike FID, INP is a measure of all interactions on the page, not just the first one. It also measures the entire time until the next frame is painted, unlike FID which only measures the time until the event handler starts processing. In these ways, INP is a much more representative metric of the holistic user experience on the page.
 
 A website has "good" INP if 75% of its INP experiences are faster than 200 ms. A website has "poor" INP if the 75th percentile is greater than or equal to 500 ms. Otherwise, it's INP is assessed as "needs improvement".
 
@@ -938,7 +939,7 @@ This section draws from Annie Sullivan's <a hreflang="en" href="https://colab.sa
 {{ figure_markup(
   image="tbt-fid.png",
   alt="",
-  caption='Scatterplot visualizing the correlation between FID and TBT. (<a hreflang="en" href="https://colab.sandbox.google.com/drive/12lJmAABgyVjaUbmWvrbzj9BkkTxw6ay2">Source</a>))',
+  caption='Scatterplot visualizing the correlation between FID and TBT. (<a hreflang="en" href="https://colab.sandbox.google.com/drive/12lJmAABgyVjaUbmWvrbzj9BkkTxw6ay2">Source</a>)',
   description="Scatterplot visualization showing the correlation of field-based FID and lab-based TBT per page. Most FID values are in the 0-50ms range with TBT values widely ranging from 0-10 seconds. There's a small cluster of FID values around 250ms with a TBT of around 0ms."
   )
 }}
