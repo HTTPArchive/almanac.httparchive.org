@@ -1,347 +1,347 @@
 ---
 ##See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Fonts
-description: Fonts chapter of the 2022 Web Almanac covering where fonts are loaded from, font formats, font loading performance, variable fonts, and color fonts.
+description: Capitolo sui font del Web Almanac 2022 che tratta i seguenti argomenti&colon; da dove vengono serviti i font, i formati di font, le prestazioni di caricamento dei font, i font variabili e i font a colori.
 authors: [bramstein]
 reviewers: [alexnj, jmsole, RoelN, svgeesus]
 analysts: [bramstein, konfirmed]
 editors: [shantsis]
 translators: []
-bramstein_bio: Bram Stein is a developer and product manager. He cares a lot about typography and is happiest working at the intersection between design and technology. He is the author of the <a hreflang="en" href="https://abookapart.com/products/webfont-handbook">Webfont Handbook</a> by A Book Apart and the <a hreflang="en" href="https://fontfaceobserver.com">FontFace Observer</a> library. He also speaks about typography and web performance at conferences around the world.
+bramstein_bio: Bram Stein è uno sviluppatore e product manager. È molto appassionato di tipografia ed si trova a suo agio nel lavorare all'intersezione tra design e tecnologia. È autore del manuale <a hreflang="en" href="https://abookapart.com/products/webfont-handbook">Webfont Handbook</a> edito da A Book Apart e della libreria software <a hreflang="en" href="https://fontfaceobserver.com">FontFace Observer</a>. Inoltre parla di tipografia e performance web in conferenze in tutto il mondo.
 results: https://docs.google.com/spreadsheets/d/1A1XwuGa1DkqNLaF-lSXz4ndxO9G6SfACHwUvvywHgbQ/
-featured_quote: We think it is also time to proclaim&colon; "Use only WOFF2 and forget about everything else". This will simplify your CSS and workflow massively and WOFF2 is now supported everywhere.
+featured_quote: Pensiamo, infatti, che sia tempo di affermare con forzacolon; "Usiamo esclusivamente il formato WOFF2 e scordiamoci di tutti gli altri". Così semplifichiamo di molto i nostri CSS e il nostro metodo di lavoro ed inoltre WOFF2 è ora supportato ovunque.
 featured_stat_1: 29%
-featured_stat_label_1: Sites using `font-display&colon; swap`
+featured_stat_label_1: Siti che usano `font-display&colon; swap`
 featured_stat_2: 18%
-featured_stat_label_2: Sites using icon web fonts.
+featured_stat_label_2: Siti che usano i web font di icone (<i lang="en">icon web fonts</i>).
 featured_stat_3: 97%
-featured_stat_label_3: Variable fonts used that are served by Google
+featured_stat_label_3: Font variabili utilizzati che sono serviti da Google
 ---
 
-## Introduction
+## Introduzione
 
-We've come a long way since the early days of web fonts. We went from a handful of web-safe fonts to a typographic explosion of hundreds of thousands web fonts. The technology and ease of use is almost unrecognizable: from elaborate "bullet-proof" font loading strategies with several font formats to simply including a WOFF2 file.
+Molta strada è stata fatta dai primi tempi dell’introduzione dei web font. Si è passati da una manciata di font web safe all’esplosione di centinaia di migliaia di web font. La tecnologia e la facilità di utilizzo è pressoché irriconoscibile rispetto all’inizio: da elaborate strategie di caricamento dei font che prevedevano l’inclusione di svariati formati, strategie cosiddette “bullet-proof” [ovvero “a prova di proiettile”], si è arrivati all'inclusione dei soli file WOFF2.
 
 {{ figure_markup(
   image="webfont-usage.png",
-  caption="Webfont usage.",
-  description="Scatter chart showing the percentage of requests of web fonts over time from 2010 (0% usage) to 2022 (over 80%).",
+  caption="Utilizzo dei web font.",
+  description="Grafico a dispersione che mostra la percentuale di richieste di font web nel tempo dal 2010 (0% di utilizzo) al 2022 (oltre l'80%).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=1021821560&format=interactive",
   sheets_gid="1517999851",
   sql_file="font_usage_over_time.sql"
   )
 }}
 
-This progression in web fonts shows. Web font usage continues to grow. In the [2020 Fonts](../2020/fonts) chapter, 82% of all desktop sites used web fonts. In the two years since then, usage has increased to about 84%. The numbers are slightly lower for mobile, but represents a similar growth.
+Questa progressione dei web font lo dimostra. L’utilizzo dei web font è in continua crescita. Nel capitolo sui [Font del 2020](../2020/fonts), l’82% di tutti i siti desktop usava i web font. Nei due anni seguenti l’utilizzo è cresciuto per arrivare a circa l’84%. Le percentuali sono leggermente più basse per il mondo dei dispositivi mobili, ma indicano una crescita simile.
 
-While we've made tremendous progress we're not quite there yet. Large percentages of the world's population can't use web fonts because their writing systems are either too large or too complex to be delivered as a (small) web font. Fortunately, the <a hreflang="en" href="https://www.w3.org/Fonts/WG/">W3C Fonts Working Group</a> is working hard on the <a hreflang="en" href="https://www.w3.org/TR/IFT/">Incremental Font Transfer</a> web standard that will hopefully solve this.
+Tuttavia, sebbene abbiamo fatto notevoli progressi, ancora non ci siamo del tutto. Un’ampia fetta di popolazione mondiale non può usare i web font perché il proprio sistema di scrittura è o troppo corposo o troppo complesso per essere racchiuso in forma di web font (perlomeno di un web font leggero). Per fortuna, il <a hreflang="en" href="https://www.w3.org/Fonts/WG/">W3C Fonts Working Group</a> [Gruppo di lavoro sui font del W3C] sta lavorando assiduamente sul nuovo standard web chiamato <a hreflang="en" href="https://www.w3.org/TR/IFT/"><i lang="en">Incremental Font Transfer</i></a> [Trasferimento Incrementale dei Font], che ottimisticamente risolverà questo problema.
 
-There was no Fonts chapter in 2021, but we hope we can make up for that this year. We took a slightly different angle this year by taking a closer look at what is inside font files and how fonts are used in CSS. We of course also returned to the "classics" such as services, `font-display`, and resource hints usage. Finally, we wrap up the chapter with two special focus sections on _variable fonts_ and _color fonts_—because we think they are great.
+Nel 2021 non è stato scritto il capitolo sui Font, speriamo di porre rimedio quest'anno. Abbiamo analizzato i dati da un'angolazione leggermente diversa quest'anno, dando un'occhiata più da vicino a cosa c'è all'interno dei file dei font e a come vengono utilizzati i font nei CSS. Ovviamente siamo anche tornati ai "classici" come i servizi di hosting, la proprietà CSS `font-display` e l'utilizzo dei suggerimenti per le risorse. Infine, il capitolo si conclude con due approfondimenti speciali sui _font variabili_ e sui _font a colori_ – semplicemente perché pensiamo che siano grandiosi.
 
-## Performance
+## Prestazioni
 
 {{ figure_markup(
   image="popular-web-font-mime-types.png",
-  caption="Popular web font MIME types.",
-  description="Column chart showing `woff2` is used on 78% of the time on desktop and 75% on mobile, `woff` on 10% and 12% respectively, `octet-stream` on 6% and 7%, `ttf` on 3% and 4%, `sfnt` on 1% and 1%, `otf` on 0% and 0%, and finally `opentype` on 0% of desktop and 0% of mobile.",
+  caption="I più diffusi tipi MIME per i font.",
+  description="Istogramma che mostra che `woff2` viene utilizzato il 78% delle volte su desktop e il 75% su dispositivi mobili, `woff` rispettivamente il 10% e il 12%, `octet-stream` il 6% e 7%, `ttf` il 3 % e 4%, `sfnt` l'1% e 1%, `otf` lo 0% e 0% e infine `opentype` lo 0% nei desktop e 0% nei dispositivi mobili.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=1637212263&format=interactive",
   sheets_gid="510414604",
   sql_file="font_format_usage.sql"
   )
 }}
 
-Surprisingly, not a lot has changed in the types of fonts served. About 75% of all font files are served as <a hreflang="en" href="https://www.w3.org/TR/WOFF2/">WOFF2</a>, about 12% as WOFF and the remainder as either octet-stream or
-TrueType Font—and then a whole bunch of random MIME types. This is fairly similar to [the results in the 2020 Fonts chapter](../2020/fonts#formats-and-mime-types). Fortunately, SVG and EOT font usage has almost disappeared completely.
+A sorpresa non molto è cambiato nei tipi di file di font serviti dai server. Il 75% circa dei file di font sono serviti come <a hreflang="en" href="https://www.w3.org/TR/WOFF2/">WOFF2</a>, il 12% circa come WOFF e i restanti o come octet-stream o come font TrueType (TTF) – seguiti da un sacco di tipi MIME a caso. 
+Il che è piuttosto simile ai [risultati pubblicati nel capitolo Font del 2020](../2020/fonts#formats-and-mime-types). Fortunatamente è quasi scomparso del tutto l’uso dei formati di font SVG e EOT.
 
-As noted in 2019, 2020: WOFF2 offers the best compression and should be the preferred format. In fact, we think it is also time to proclaim:
+Come precisato già nel 2019 e 2020 il formato WOFF2 offre la migliore compressione e dovrebbe essere il formato preferito. Pensiamo, infatti, che sia tempo di affermare con forza:
 
-> Use only WOFF2 and forget about everything else.
+> Usiamo esclusivamente il formato WOFF2 e scordiamoci di tutti gli altri.
 
-This will simplify your CSS and workflow massively and also prevents any accidental double or incorrect font downloads. WOFF2 is now <a hreflang="en" href="https://caniuse.com/woff2">supported everywhere</a>. So, unless you need to support really ancient browsers, just use WOFF2. If you can't, consider not serving any web fonts to those older browsers at all. This will not be a problem if you have a robust fallback strategy in place. Visitors on older browsers will simply see your fallback fonts.
+Questo semplificherà di molto i nostri CSS e il nostro metodo di lavoro ed inoltre impedirà uno scaricamento di font che accidentalmente risulti doppio o scorretto. WOFF2 è ora <a hreflang="en" href="https://caniuse.com/woff2">supportato ovunque</a>. Dunque, a meno che non dobbiamo necessariamente supportare dei browser molto datati, usiamo semplicemente WOFF2. Se non possiamo, consideriamo l’opzione di non servire alcun web font ai vecchi browser. Fatto che non costituirà un problema se avremo adottato una robusta strategia di ripiego. I visitatori con i vecchi browser vedranno semplicemente i font di riserva (fallback font).
 
 ### Hosting
 
-Where do people get their fonts? Do they self host, or use a web font service? Both? Let's take a look at the numbers.
+Da dove prende i font la gente? Li ospitano sui propri server o utilizzano un servizio esterno di web font? Entrambe le cose? Diamo un’occhiata ai numeri.
 
 {{ figure_markup(
   image="hosting-type.png",
-  caption="Hosting type.",
-  description="Bar chart showing self hosted (non-exclusive) fonts are used on 67% of desktop pages and 67% of mobile pages, self hosted (exclusive) is used on on 18% and 20% respectively, services (non-exclusive) on 68% and 65%, and finally services (exclusive) on 19% of desktop and 18% of mobile pages.",
+  caption="Tipo di hosting.",
+  description="Il grafico a barre mostra che i font in self-hosting (non in esclusiva) sono utilizzati nel 67% delle pagine desktop e nel 67% delle pagine mobili, il self-hosting (in esclusiva) è utilizzato rispettivamente nel 18% e nel 20%, i servizi di font (non in esclusiva) nel 68 % e nel 65%, e infine i servizi di font (in esclusiva) nel 19% delle pagine desktop e nel 18% delle pagine mobili.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=1751970122&format=interactive",
   sheets_gid="1791297167",
   sql_file="font_usage_by_service.sql"
   )
 }}
 
-In general, it is a mixture: 67% self host and use a service. Only 19% only use self hosting exclusively. We expect this number to go up in the coming years for two reasons: there is no longer a performance benefit to using a hosted service after the introduction of <a hreflang="en" href="https://developers.google.com/web/updates/2020/10/http-cache-partitioning">cache partitioning</a>, and <a hreflang="en" href="https://www.theregister.com/2022/01/31/website_fine_google_fonts_gdpr/">European courts are slowly becoming highly skeptical of European-based companies using Google Fonts</a>.
+In generale, è un misto: nel 67% dei casi i font sono in self-hosting e contemporaneamente utilizzano un servizio. Solo il 19% utilizza esclusivamente il self hosting. Prevediamo che questo numero aumenterà nei prossimi anni per due motivi: non c'è più un vantaggio in termini di prestazioni nell'utilizzo di un servizio in hosting dopo l'introduzione del<a hreflang="en" href="https://developers.google.com/web/updates/2020/10/http-cache-partitioning">partizionamento della cache</a> e <a hreflang="en" href="https://www.theregister.com/2022/01/31/website_fine_google_fonts_gdpr/">i tribunali europei stanno lentamente diventando molto scettici nei confronti delle aziende con sede in Europa che utilizzano il servizio Google Fonts</a>.
 
-We can further split this data by service. Perhaps not surprisingly, <a hreflang="en" href="https://fonts.google.com/">Google Fonts</a> is the most popular web font service with nearly 65% of all web pages using it. Free is hard to beat indeed.
+Possiamo suddividere ulteriormente questi dati per servizio. Forse non sorprende che <a hreflang="en" href="https://fonts.google.com/">Google Fonts</a> sia il servizio di font web più popolare con quasi il 65% di tutte le pagine web che lo utilizzano. Ciò che gratuito è davvero difficile da battere.
 
 {{ figure_markup(
   image="webfont-usage-by-service.png",
-  caption="Webfont usage by service.",
-  description="Column chart showing Google Fonts was used on 59.4% of pages in 2019, 63.9% in 2020, 65.2% in 2021, and 64.5% in 2022, Font Awesome on 3.7%, 5.4%, 6.3%, and 6.9% respectively, Adobe Fonts on 3.4%, 3.6%, 3.9%, and 4.2%, Fonts.com on 0.4%, 0.3%, 0.3%, and 0.2%, and finally Cloud.Typography on 0.3% in 2019, 0.2% in 2020, 0.2% in 2021, and 0.2% in 2022.",
+  caption="Utilizzo dei web font per servizio.",
+  description="L'istogramma mostra che Google Fonts è stato utilizzato nel 59,4% delle pagine nel 2019, 63,9% nel 2020, 65,2% nel 2021 e 64,5% nel 2022, Font Awesome rispettivamente nel 3,7%, 5,4%, 6,3% e 6,9%, Adobe Fonts nel 3,4%, 3,6%, 3,9% e 4,2%, Fonts.com nello 0,4%, 0,3%, 0,3% e 0,2% e infine Cloud.Typography nello 0,3% nel 2019, 0,2% nel 2020, 0,2% in 2021 e 0,2% nel 2022.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=1049143598&format=interactive",
   sheets_gid="1791297167",
   sql_file="font_usage_by_service.sql"
   )
 }}
 
-The next runner-up is the <a hreflang="en" href="https://fontawesome.com/">Font Awesome</a> web service, which is used on nearly 7% of sites. That is an amazing achievement with only a single font family! In third place is the <a hreflang="en" href="https://fonts.adobe.com/">Adobe Fonts</a> web service, which is used on 4.2% of sites. Trailing far behind are the <a hreflang="en" href="https://www.fonts.com/">Fonts.com</a> and <a hreflang="en" href="https://www.typography.com/webfonts">Cloud.Typography</a> services, both present on 0.2% of sites.
+Il secondo classificato è il servizio web <a hreflang="en" href="https://fontawesome.com/">Font Awesome</a>, che è usato in circa il 7% dei siti. Questo è un risultato straordinario per una singola famiglia di caratteri! Al terzo posto c'è il servizio web <a hreflang="en" href="https://fonts.adobe.com/">Adobe Fonts</a>, utilizzato nel 4,2% dei siti. Seguono a distanza i servizi <a hreflang="en" href="https://www.fonts.com/">Fonts.com</a> e <a hreflang="en" href="https://www.typography.com/webfonts">Cloud.Typography</a>, entrambi presenti nello 0,2% dei siti.
 
-Looking back at previous years, we can see that Google Fonts usage declined for the first time this year! It's hard to say if this is due to the aforementioned cache partitioning, GDPR, or something else entirely. The decline is only slight, so it will be interesting to see if the trend continues next year.
+Guardando indietro agli anni precedenti, possiamo vedere che l'utilizzo di Google Fonts è diminuito per la prima volta quest'anno! È difficile dire se ciò sia dovuto al già citato partizionamento della cache, al GDPR o a qualcos'altro. Il calo è solo lieve, quindi sarà interessante vedere se il trend continuerà il prossimo anno.
 
-In contrast, both Font Awesome and the Adobe Fonts service grew significantly over the last few years. Font Awesome service usage grew 86% from 2019 to 2022, while Adobe Fonts usage grew by 24% in the same period.
+Al contrario, sia Font Awesome che il servizio Adobe Fonts sono cresciuti in modo significativo negli ultimi anni. L'utilizzo del servizio Font Awesome è cresciuto dell'86% dal 2019 al 2022, mentre l'utilizzo di Adobe Fonts è cresciuto del 24% nello stesso periodo.
 
-Note that the services data is measured differently compared to the 2020 and 2019 font chapters. Those chapters looked at the number of requests to a service, whereas the 2022 data looks at pages using the services. Thus the data in 2022 is more accurate as it isn't influenced by the number of fonts loaded on a site. For example, the drop in Google Fonts usage noted in the 2020 chapter was most likely caused by Google Fonts switching to _variable fonts_ and thereby significantly reducing the number of requests to their service.
+Va precisato che i dati sui servizi sono qui misurati in modo diverso rispetto a quanto fatto nei capitoli Font del 2020 e del 2019. Allora si era esaminato il numero di richieste ai servizi, mentre i dati del 2022 riportano il numero di pagine che utilizzano i servizi. Quindi i dati del 2022 sono più accurati in quanto non sono influenzati dal numero di font caricati su ciascun sito. Ad esempio, il calo dell'utilizzo di Google Fonts notato nel capitolo Font del 2020 è stato molto probabilmente causato dal passaggio di Google Fonts ai _font variabili_, con conseguente riduzione significativa del numero di richieste al loro servizio.
 
-### File sizes
+### Dimensioni dei file
 
-Compression is a great way to reduce the amount of data that needs to be downloaded, but it has its limits. To better understand what influences font file sizes, let's take a look at the median font sizes across all fonts.
+La compressione è un ottimo modo per ridurre la quantità di dati che devono essere scaricati, ma ha i suoi limiti. Per capire meglio cosa influenza le dimensioni dei file dei font, diamo un'occhiata alle dimensioni medie dei font fra tutti i font.
 
 {{ figure_markup(
   image="font-sizes.png",
-  caption="Font sizes.",
-  description="At the 10th percentile 10 KB of fonts are used on desktop and 8 KB on mobile, the 25th percentile it's 15 KB and 13 KB respectively, the 50th percentile it's 20 KB and 20 KB, the 75th percentile it's 44 KB and 43 KB, and finally at the 90th percentile it's 75 KB on both desktop and mobile.",
+  caption="Dimensioni (peso in KB) dei font.",
+  description="Al 10° percentile vengono utilizzati 10 KB di font su desktop e 8 KB su dispositivi mobili, il 25° percentile è rispettivamente di 15 KB e 13 KB, il 50° percentile è di 20 KB e 20 KB, il 75° percentile è di 44 KB e 43 KB e infine al 90° percentile è di 75 KB sia su desktop che su dispositivi mobili.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=2083466743&format=interactive",
   sheets_gid="1323521462",
   sql_file="font_size_quantiles.sql"
   )
 }}
 
-The median font size is about 20 kilobytes. That is pretty good. However, as we have seen earlier, font services account for nearly 70% of all font requests. Services like Google Fonts and Adobe Fonts have teams dedicated to optimizing the fonts as much as possible, so the median font sizes are likely heavily skewed by these services.
+La dimensione media dei font è di circa 20 kilobyte. Il che va piuttosto bene. Tuttavia, come abbiamo visto in precedenza, i servizi di font esterni rappresentano quasi il 70% di tutte le richieste di font da parte dei siti. Servizi come Google Fonts e Adobe Fonts hanno dei team dedicati alla massima ottimizzazione dei font, quindi è probabile che la dimensione media dei font sia fortemente distorta da questi servizi.
 
 {{ figure_markup(
   image="self-hosted-font-sizes.png",
-  caption="Self-hosted font sizes.",
-  description="Column chart showing the size of self-hosted font sizes at various percentiles. At the 10th percentile self-hosted fonts are 7 KB on desktop and 7 KB on mobile, at the 25th percentile they are 17 KB and 17 KB respectively, at the 50th percentile 37 KB on both, at the 75th percentile they are 75 KB on both and finally at the 90th percentile they are 96 KB on desktop and 91 KB on mobile.",
+  caption="Dimensioni (in KB) dei font pubblicati sui server dei siti (<i lang="en">self-hosted</i>).",
+  description="Istogramma che mostra le dimensioni dei font (<i lang="en">self-hosted</i> a vari percentili. Al 10° percentile i font (<i lang="en">self-hosted</i> pesano 7 KB su desktop e 7 KB sui dispositivi mobili, al 25° percentile pesano rispettivamente 17 KB e 17 KB, al 50° percentile pesano 37 KB su entrambi, al 75° percentile pesano 75 KB su entrambi e infine al 90° percentile pesano 96 KB su desktop e 91 KB sui dispositivi mobili.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=15369234&format=interactive",
   sheets_gid="1359064325",
   sql_file="font_size_quantiles_without_services.sql"
   )
 }}
 
-Looking at self-hosted font sizes paints a quite different picture. The median font size nearly doubles to about 40 kilobytes. What is going on here? If we revisit the chart of popular web font MIME types, and remove all requests coming from web font services we get some insight into what might be going on.
+Guardando alle dimensioni dei font <i lang="en">self-hosted</i> abbiamo un'immagine abbastanza diversa. La dimensione media del font quasi raddoppia a circa 40 kilobyte. Come mai? Se rivediamo il grafico dei tipi MIME dei web font più diffusi togliendo tutte le richieste provenienti dai servizi di font esterni, otteniamo alcuni indizi su quello che forse sta succedendo.
 
-A lot of websites using self-hosted fonts are still using WOFF instead of WOFF2. It's not clear if the fonts on these sites were never updated since WOFF2 was introduced, or if not enough developers know about WOFF2. Regardless, it's an easy optimization that could benefit a lot of sites.
+Molti siti web che richiamano i font in <i lang="en"> self-hosting</i> utilizzano ancora il formato WOFF anziché WOFF2. Non è chiaro se i font su questi siti non siano mai stati aggiornati da quando è stato introdotto WOFF2, o se solo pochi sviluppatori conoscano WOFF2 e i suoi vantaggi. Indipendentemente da ciò, WOFF2 è una facile ottimizzazione che potrebbe avvantaggiare molti siti.
 
 {{ figure_markup(
   image="popular-web-font-mimetypes-self-hosted.png",
-  caption="Popular web font MIME types (self-hosted).",
-  description="Column chart showing woff2 is 45% of desktop and 46% of mobile self-hosted fonts, woff is 26% and 26% respectively, octet-stream is 15% and 15%, and finally ttf is 6% of desktop and 6% mobile self-hosted fonts.",
+  caption="Tipi MIME di web font più diffusi (<i lang="en">self-hosted</i>).",
+  description="Istogramma che mostra che woff2 rappresenta il 45% su desktop e il 46% sui dispositivi mobili dei font in <i lang="en">self-hosting</i>, woff copre rispettivamente il 26% e il 26%, octet-stream è presente nel 15% e nel 15% e infine ttf riguarda il 6% su desktop e il 6% sui dispositivi mobili dei font in <i lang="en">self-hosting</i>.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=291490668&format=interactive",
   sheets_gid="259914355",
   sql_file="font_format_usage_without_services.sql"
   )
 }}
 
-However, the difference in median font size between services and self-hosted is too large to be explained by a lower usage of WOFF2. While WOFF2 offers excellent compression, compression alone does not explain the large difference in median font sizes. The web font services must be performing other types of optimizations that aren't being done (enough) for self hosted fonts. To find the answer, we'll need to take a look at the insides of a font.
+Sebbene WOFF2 offra un'eccellente compressione, la compressione da sola non spiega la grande differenza nella dimensione media dei caratteri. I servizi di web font esterni sembrano eseguire altri tipi di ottimizzazioni che non vengono eseguite (o non vengono eseguite abbastanza) per i font in <i lang="en">self-hosting</i>. Per averne la certezza, dovremmo poter guardare all'interno di ciascun font.
 
-### OpenType table sizes
+### Dimensioni (peso) delle tabelle dell’OpenType
 
-A typical font is essentially a <a hreflang="en" href="https://simoncozens.github.io/fonts-and-layout/opentype.html">tiny relational database</a> with each table storing data like glyph shapes, glyph relationships, and metadata. For example, there are tables to store the vector Bézier curves that make up glyphs—the characters in the font. There are also tables for relating glyphs to one another, that store things like kerning and ligature relationships (i.e. swap these two glyphs with this one when they are used together, like the famous _fi_ ligature).
+Un font è essenzialmente un <a hreflang="en" href="https://simoncozens.github.io/fonts-and-layout/opentype.html">minuscolo database relazionale</a> in cui ogni tabella memorizza dei dati come le forme dei glifi, le relazioni fra i glifi e dei metadati. Ad esempio, ci sono tabelle per memorizzare le curve di Bézier vettoriali che compongono i glifi, ovvero i singoli caratteri nel font. Ci sono anche tabelle, pensate per mettere in relazione i glifi tra loro, che memorizzano cose come le relazioni di crenatura (<i lang="en">kerning</i>) e legatura (<i lang="en">ligature</i>), (ad esempio istruzioni del tipo“ scambia questi due glifi con quest’altro quando vengono usati insieme”, come la famosa legatura _fi_).
 
-A reasonable way to measure how much of an impact a table has on overall file size is to multiply its median size by the number of fonts that include that table.
+Un modo pratico per misurare l'impatto di una tabella sulla dimensione complessiva del file è moltiplicare la sua dimensione mediana per il numero dei font che includono quella tabella.
 
 <figure>
   <table>
     <thead>
       <tr>
-        <th>OpenType table</th>
-        <th>Impact</th>
+        <th>Tabella OpenType</th>
+        <th>Impatto</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><code>glyf</code> (vector shapes)</code></td>
+        <td><code>glyf</code> (forme vettoriali)</code></td>
         <td class="numeric">79.6%</td>
       </tr>
       <tr>
-        <td><code>CFF</code> (vector shapes)</td>
+        <td><code>CFF</code> (forme vettoriali)</td>
         <td class="numeric">4.9%</td>
       </tr>
       <tr>
-        <td><code>GPOS</code> (positioning relationships)</td>
+        <td><code>GPOS</code> (relazioni di posizionamento)</td>
         <td class="numeric">4.7%</td>
       </tr>
       <tr>
-        <td><code>hmtx</code> (horizontal metrics)</td>
+        <td><code>hmtx</code> (metriche orizzontali)</td>
         <td class="numeric">2.5%</td>
       </tr>
       <tr>
-        <td><code>post</code> (metadata)</td>
+        <td><code>post</code> (metadati)</td>
         <td class="numeric">2.2%</td>
         </tr>
       <tr>
-        <td><code>name</code> (name metadata)</td>
+        <td><code>name</code> (metadati del nome)</td>
         <td class="numeric">1.4%</td>
       </tr>
       <tr>
-        <td><code>cmap</code> (maps character codes to glyphs)</td>
+        <td><code>cmap</code> (abbinamento codici dei caratteri - glifi)</td>
         <td class="numeric">1.3%</td>
       </tr>
       <tr>
-        <td><code>fpgm</code> (font program)</td>
+        <td><code>fpgm</code> (programma di creazione font)</td>
         <td class="numeric">0.9%</td>
       </tr>
       <tr>
-        <td><code>kern</code> (kerning data)</td>
+        <td><code>kern</code> (dati di crenatura)</td>
         <td class="numeric">0.6%</td>
       </tr>
     </tbody>
   </table>
   <figcaption>
     {{ figure_link(
-      caption="Impact (median file size × number of requests as percentage of total).",
+      caption="Impatto (dimensione mediana del file × il numero di richieste come percentuale del totale).",
       sheets_gid="1853636944",
       sql_file="font_size_quantiles_by_opentype_table.sql",
     ) }}
   </figcaption>
 </figure>
 
-The top ten highest impact tables starts with the `glyf`, `CFF`, `GPOS`, and `hmtx` tables. These contain the data for the Bézier curves that make up the outlines of all glyphs (`glyf` and `CFF`), OpenType positioning features (`GPOS`) and horizontal metrics (`hmtx`). This is great because these tables are directly related to the number of glyphs in the font. Reduce the number of glyphs in the font by removing glyphs you don't need and you will dramatically reduce its file size.
+La top ten delle tabelle di maggior impatto inizia con le tabelle `glyf`, `CFF`, `GPOS` e `hmtx`. Queste tabelle contengono i dati delle curve di Bézier che costituiscono i contorni di tutti i glifi (`glyf` e `CFF`), i dati di posizionamento OpenType (`GPOS`) e le metriche orizzontali (`hmtx`). Che queste tabelle siano ad alto impatto è un bene perché queste tabelle sono direttamente correlate al numero di glifi nel font. Se decidiamo di ridurre il numero di glifi nel font rimuovendo i glifi che non ci servono, allora ridurremo drasticamente le dimensioni del file.
 
-Figuring out <a hreflang="en" href="https://bramstein.com/writing/web-font-anti-patterns-subsetting.html">what you need and what you don't need</a> is the hard part though. You might accidentally remove glyphs, or break OpenType features that you need to render text correctly. Instead of subsetting manually using, for example, <a hreflang="en" href="https://fonttools.readthedocs.io/en/latest/subset/index.html">font tools</a>, you can use tools like <a hreflang="en" href="https://github.com/Munter/subfont">subfont</a> or <a hreflang="en" href="https://github.com/zachleat/glyphhanger">glyphhanger</a> to automatically create a "perfect" subset based on the content on your site. However, be mindful whether the license of your font permits such modifications.
+Capire <a hreflang="en" href="https://bramstein.com/writing/web-font-anti-patterns-subsetting.html">cosa ci serve e cosa non ci serve</a> è però la parte più difficile. Potremmo rimuovere accidentalmente i glifi o interrompere le funzionalità OpenType che ci servono per un corretto rendering del testo. Invece di fare un subsetting manuale utilizzando, ad esempio, <a hreflang="en" href="https://fonttools.readthedocs.io/en/latest/subset/index.html">font tools</a>, possiamo utilizzare strumenti come <a hreflang="en" href="https://github.com/Munter/subfont">subfont</a> o <a hreflang="en" href="https://github.com/zachleat/glyphhanger">glyphhanger</a> per creare automaticamente un sottoinsieme "perfetto" in base al contenuto del tuo sito. Tuttavia, occorre controllare se la licenza del font consente tali modifiche.
 
-It is interesting to note that the `name` and `post` tables are in the top 10. These two tables primarily contain metadata that is important for desktop fonts, but not necessary for web fonts. This is an indication a lot of web fonts contain metadata that can be stripped without consequences, such as name table entries, glyph names in the `post` table, non-Unicode `cmap` entries, etc. We would love to see a universal set of recommendations (or even a <a hreflang="en" href="https://pmt.sourceforge.io/pngcrush/">pngcrush</a>-like tool) that can be used by foundries and web developers to remove every last unnecessary byte from a web font.
+È interessante notare che le tabelle `name` e `post` sono tra le prime 10. Queste due tabelle contengono principalmente dei metadati importanti per i font installati sulle macchine (<i lang="en"> desktop fonts </i>), ma non necessari per i web font. Questo ci indica che molti web font contengono metadati che potrebbero essere rimossi senza conseguenze, come voci nella tabella `name` (nome), nomi dei glifi nella tabella `post`, voci non Unicode nella tabella `cmap`, ecc. Ci piacerebbe si arrivasse ad un insieme di raccomandazioni condivise (o addirittura ad uno strumento simile a <a hreflang="en" href="https://pmt.sourceforge.io/pngcrush/">pngcrush</a>) che possa essere utilizzato da fonderie e sviluppatori web per rimuovere da un font web fino all’ultimo byte non necessario.
 
-### Outline formats
+### Formati di outline
 
-You might have noticed the OpenType sizes table contains two entries for vector glyph outline data: `glyf` and `CFF`. There are actually four competing ways to store vector outlines in OpenType: TrueType (`glyf`), Compact Font Format (`CFF`), Compact Font Format 2 (`CFF2`), and Scalable Vector Graphics (`SVG`; not to be confused with the old SVG font format). There are also three image based formats—we will talk about two of them in the color fonts section.
+Potresti aver notato che la tabella precedente sulle dimensioni di OpenType contiene due voci per i dati di contorno vettoriale (<i lang="en">vector outline</i>) del glifo: `glyf` e `CFF`. In realtà esistono quattro modi alternativi per memorizzare i contorni vettoriali in OpenType: TrueType (`glyf`), Compact Font Format (`CFF`), Compact Font Format 2 (`CFF2`) e Scalable Vector Graphics (`SVG`; da non confondere con il vecchio formato di font SVG). Esistono anche tre formati basati su immagini - parleremo di due di questi nella sezione dei font a colori.
 
-The OpenType specification is what you could charitably call "a compromise". Several competing approaches to do mostly the same thing were added to the specification because there was no consensus. If you're interested in how this came to be, <a hreflang="en" href="https://www.pastemagazine.com/design/adobe/the-font-wars/">The Font Wars</a> by David Lemon is a great read. We'll see this pattern of competing approaches repeated again and again in the sections on variable and color fonts (though with different actors). At the end of the day, having multiple ways to store vector outlines mostly works, but it does place a heavy additional burden on type designers and implementations—not to mention increasing the attack surface area for exploits.
+La specifica OpenType è ciò che, ad esser buoni, potresti chiamare "un compromesso". Nella specifica, poiché non c'era consenso, sono stati inseriti diversi approcci in competizione fra loro per fare per lo più la stessa cosa. Se desideri capire come si è arrivati a questo, <a hreflang="en" href="https://www.pastemagazine.com/design/adobe/the-font-wars/">The Font Wars</a> di David Lemon è un'ottima lettura. Vedremo ripetutamente questo schema di approcci in competizione fra loro anche nelle sezioni sui font variabili e sui font a colori (sebbene con attori diversi). In fin dei conti, avere più modi per archiviare il contorno vettoriale funziona bene per lo più, ma comporta un pesante onere aggiuntivo per i type designer e per le implementazioni, per non parlare dell'aumento della superficie di attacco per gli exploit.
 
-Type designers can choose the outline format they prefer. Looking at the distribution of outline formats, it is pretty clear what type designers have chosen. The overwhelming majority (91%) of fonts use the `glyf` outline format, while 9% use the `CFF` outline format. There is some `SVG` color font usage as well, but less than 1% (not pictured).
+I type designers possono scegliere il formato di outline che preferiscono. Osservando la distribuzione dei formati è abbastanza chiaro quale sia stato preferito dai type designer. La stragrande maggioranza (91%) dei font utilizza il formato di outline `glyf`, mentre il 9% utilizza il formato `CFF`. Si registra anche il formato di outline `SVG` in uso nei font a colori, ma nelle misura di meno dell'1% (non mostrato nel grafico).
 
 {{ figure_markup(
   image="outline-formats.png",
-  caption="Outline formats.",
-  description="Pie chart showing TrueType (`glyf`) is 90.8% of mobile fonts, and `CFF` 9.2%.",
+  caption="Formati di contorno (<i lang="en">outline</i>).",
+  description="Il grafico a torta mostra che i font sui dispositivi mobili sono nel formato TrueType (`glyf`) nel 90,8% dei casi e sono nel formato `CFF` nel 9,2%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=934239411&format=interactive",
   sheets_gid="1181700309",
   sql_file="outline_formats.sql"
   )
 }}
 
-The OpenType specification lists <a hreflang="en" href="https://docs.microsoft.com/en-us/typography/opentype/otspec191alpha/glyphformatcomparison_delta">the differences between `glyf` and `CFF`</a>:
+La specifica OpenType elenca le <a hreflang="en" href="https://docs.microsoft.com/en-us/typography/opentype/otspec191alpha/glyphformatcomparison_delta">differenze tra `glyf` e `CFF`</a>:
 
-- The `glyf` format uses quadratic Bézier curves while `CFF` (and `CFF2`) uses cubic Bézier curves. This matters to some type designers, but not to users of the font.
-- The `glyf` format has more control over hinting—making small adjustments so that the glyph outlines snap to the correct pixels at smaller sizes—while `CFF` has most of its hinting built into the text rasterizer.
-- The `CFF` format claims to be a more efficient format, resulting in smaller font sizes.
+- Il formato `glyf` utilizza curve di Bézier quadratiche mentre `CFF` (e `CFF2`) utilizza curve di Bézier cubiche. Questo interessa ad alcuni type designer, ma non agli utilizzatori del font.
+- Il formato `glyf` ha un maggiore controllo nell’hinting, consente piccole regolazioni in modo che i contorni del glifo si allineino ai pixel corretti quando i font sono a piccole dimensioni, mentre `CFF` ha la maggior parte del suo processo di hinting incorporato nel rasterizzatore di testo.
+- Il formato `CFF` si vanta di essere un formato più efficiente, avendo dimensioni dei font più ridotte.
 
-The last claim is interesting. Is `CFF` smaller?
+L'ultima affermazione è interessante. `CFF` è più piccolo?
 
 {{ figure_markup(
   image="font-outline-sizes.png",
-  caption="Font outline sizes.",
-  description="Column chart showing font outline sizes at common percentiles. At the 10th percentile `CFF` is 1 KB and glyf 10 KB, at the 25th percentile it's 14 and 21 respectively, at the 50th percentile it's 29 and 49, at the 75th percentile it's 54 and 109, and finally at the 90th percentile `CFF` is 124 KB and glyf 136 KB.",
+  caption="Dimensioni del contorno dei caratteri (<i lang="en">font outlines</i>).",
+  description="Grafico a colonne che mostra le dimensioni del contorno dei caratteri a percentili comuni. Al 10° percentile `CFF` è 1 KB e `glyf` 10 KB, al 25° percentile è rispettivamente 14 e 21, al 50° percentile è 29 e 49, al 75° percentile è 54 e 109, e infine al 90° percentile `CFF` è 124 KB e `glyf` 136 KB.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=672500092&format=interactive",
   sheets_gid="1853636944",
   sql_file="font_size_quantiles_by_opentype_table.sql"
   )
 }}
 
-On average, `CFF` does indeed produce a smaller table size. However, the reality is more nuanced, as it doesn't take compression into account—the table sizes are recorded after the font has been uncompressed.
+In media, il formato `CFF` produce effettivamente una tabella di dimensioni più piccole (meno pesanti). Tuttavia, la realtà ha più sfumature, e infatti l'affermazione precedente sembra non tener conto della compressione: le dimensioni della tabelle sono qui annotate dopo che il font è stato decompresso.
 
-As can be seen in the <a hreflang="en" href="https://www.w3.org/TR/2016/NOTE-WOFF20ER-20160315/#brotli-adobe-cff">WOFF2 evaluation report</a>, the median `glyf` compression is at 66% while the median `CFF` compression is at 50% (from uncompressed to compressed using WOFF2).
+Come si può vedere nel <a hreflang="en" href="https://www.w3.org/TR/2016/NOTE-WOFF20ER-20160315/#brotli-adobe-cff">rapporto di valutazione WOFF2</a>, il fattore di compressione medio per `glyf` è del 66% mentre per `CFF` è al 50% (da non compresso a compresso usando WOFF2).
 
 {{ figure_markup(
   image="compressed-font-outline-sizes.png",
-  caption="Compressed font outline sizes.",
-  description="Column chart showing at the 25th percentile both `CFF` and glyf font sizes are 6 KB, at the 50th percentile they start to diverge with `CFF` 15 KB and glyf 17 KB, at the 75th percentile it's 32 and 39 KB respectively, and finally at the 90th percentile it's `CFF` is 86 KB and glyf is only 56 KB.",
+  caption="Dimensioni del contorno dei caratteri compressi (<i lang="en">compressed font outlines</i>).",
+  description="L'istogramma mostra che al 25° percentile la dimensione dei font sia per `CFF` che per `glyf` è di 6 KB, al 50° percentile iniziano a divergere con `CFF` a 15 KB e `glyf` a 17 KB, al 75° percentile sono rispettivamente di 32 e 39 KB, e infine al 90° percentile `CFF` è al 86 KB e `glyf` è solo al 56 KB.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=1880460638&format=interactive",
   sheets_gid="1853636944",
   sql_file="font_size_quantiles_by_opentype_table.sql"
   )
 }}
 
-Applying compression paints a very different picture. The median file size differences are negligible, and large fonts are much smaller when using `glyf` outlines!
+Se applichiamo la compressione vediamo una situazione molto diversa. Le differenze medie di dimensione dei file sono trascurabili e font grandi (con tanti glifi) sono molto più piccoli (pesano meno) quando hanno il formato di outline `glyf`!
 
-In other words, even if `CFF` starts out smaller, it compresses much less than `glyf`, so it all evens out in the end. In fact—for larger files—it appears using the `glyf` format produces smaller sizes.
+In altre parole, anche se `CFF` inizia con dimensioni inferiori, si comprime molto meno di `glyf`, quindi alla fine le differenze si appianano. In realtà, per file di font più grandi (con tanti glifi o altro), l'utilizzo del formato `glyf` produce file di dimensioni più piccole grazie alla compressione.
 
-### Resource hints
+### <i lang="en">Resource hints</i>
 
-Resource hints are special instructions to the browser to load or render a resource before it normally would. Browsers normally only load web fonts when they know a font is used on the page. In order to know that, it needs to have parsed both the HTML and CSS. However, if you, as a web developer, know that a font will be used, you can use resource hints to tell the browser to load fonts much earlier.
+I suggerimenti sul trattamento delle risorse (<i lang="en">resource hints</i>) sono istruzioni specifiche per il browser di caricare o eseguire il rendering di una risorsa prima di quando lo farebbe di solito. Normalmente i browser caricano i web font solo quando sanno che quel dato font viene utilizzato nella pagina. Per saperlo, devono aver analizzato sia l'HTML che il CSS. Tuttavia, se noi, come sviluppatori web, sappiamo che quel font verrà utilizzato, potremo adoperare i suggerimenti per le risorse per dire al browser di caricare i font in anticipo.
 
-There are several types of resource hints that are relevant to web fonts: `dns-prefetch`, `preconnect`, and `preload`—in order of the lowest to highest impact. Ideally you would like to preload your most important fonts, but depending on where they are hosted that may not always be possible.
+Esistono diversi tipi di suggerimenti per le risorse che hanno rilevanza per i web font: `dns-prefetch`, `preconnect` e `preload`, qui elencati nell’ordine dal più basso al più alto impatto. Idealmente vorremmo precaricare i nostri font più importanti, ma a seconda di dove sono ospitati, ciò potrebbe non essere sempre possibile.
 
 {{ figure_markup(
   image="fonts-resource-hints-usage.png",
-  caption="Fonts resource hints usage.",
-  description="Column chart showing `dns-prefetch` is used on fonts on 30% of desktop pages and 32% of mobile pages, `preload` on 21% and 20% respectively, `preconnect` on 16% and 16%, and finally `prefetch` is used on 2% of desktop and 2% of mobile pages.",
+  caption="Utilizzo dei suggerimenti per le risorse per i font.",
+  description="L'istogramma mostra che `dns-prefetch` viene utilizzato per i font nel 30% delle pagine desktop e nel 32% delle pagine su dispositivi mobili, `preload` rispettivamente nel 21% e 20%, `preconnect` nel 16% e 16% e infine `prefetch ` viene utilizzato nel 2% delle pagine desktop e nel 2% delle pagine mobili.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=1831399490&format=interactive",
   sheets_gid="592046045",
   sql_file="resource_hints_usage.sql"
   )
 }}
 
-There hasn't been any large change in the use of `dns-prefetch` hints since 2020, but there has been a fairly significant increase in the use of `preload` (from 17% in 2020 to 20% in 2022) and `preconnect` (from 8% in 2020 to 15% in 2022). This is great!
+Dal 2020 non c'è stato alcun grande cambiamento nell'uso dei suggerimenti `dns-prefetch`, ma c'è stato un aumento abbastanza significativo nell'uso di `preload` (dal 17% nel 2020 al 20% nel 2022) e `preconnect` (dall'8% nel 2020 al 15% nel 2022). È fantastico!
 
-As [mentioned in the 2020 chapter](../2020/fonts#resource-hints), `preload` and `preconnect` resource hints have the single largest impact on your font loading performance. In most cases it is as simple as adding a link element to your head. For example, if you use Google Fonts:
+Come già [accennato nel capitolo del 2020](../2020/fonts#resource-hints), i suggerimenti per le risorse `preload` (precaricamento) e `preconnect` (preconnessione) hanno singolarmente il maggiore impatto sulla prestazione di caricamento dei font (<i lang="en">font loading performance</i>). Nella maggior parte dei casi è semplice come aggiungere un tag link nella head del documento. Ad esempio, se utilizzi Google Fonts:
 
 ```html
 <link rel="preconnect" href="https://fonts.gstatic.com">
 ```
 
-If you self-host your fonts you can go even further and provide hints to the browser to preload your most important fonts—your primary text font for example. That way the browser can load it early and it will likely be available when text rendering starts.
+Se mettiamo i font in autopubblicazione (<i lang=”en”>self-hosting</i>) possiamo spingerci anche oltre e fornire suggerimenti al browser per precaricare (<i lang=”en”>preload</i>) i font più importanti, ad esempio il nostro font principale per il corpo del testo. In questo modo il browser può caricarlo in anticipo e sarà possibilmente disponibile nel momento d'inizio del rendering del testo.
 
 ### `font-display`
 
-For many years most browsers did not render text until web fonts had loaded. On slow connections, this would often result in several seconds of invisible text even though the text content had already loaded. This behavior is called _block_, because it blocks rendering of the text. Other browsers showed fallback fonts right away and swapped them when the web font loaded. When a fallback font is replaced by a web font, this is called _swap_.
+Per diversi anni la maggior parte dei browser non iniziava il rendering del testo fino a quando i web font non venivano caricati. Su connessioni lente, ciò comportava spesso diversi secondi di testo invisibile anche se il contenuto del testo era già stato caricato. Questo comportamento prende il nome di _block_ (blocco), perché blocca il rendering del testo. Altri browser mostravano immediatamente i font di riserva (<i lang="en">fallback font</i>) e li sostituivano (<i lang="en">swap</i>) non appena il web font risultava caricato. Quando un font di riserva viene sostituito da un web font, questo processo viene chiamato _swap_.
 
-To give web developers more control over font loading, the `font-display` descriptor was introduced to tell the browser how it should behave while web fonts are loading. It defines four different values of what to do while fonts are loading. These values are implemented using different combinations of _block_ and _swap_ behavior.
+Per offrire agli sviluppatori web un maggiore controllo sul caricamento dei font, è stato introdotto il descrittore `font-display` nato per indicare al browser come comportarsi durante il caricamento dei web font. Esso prevede quattro diversi valori per indicare al browser cosa fare durante il caricamento dei font. Questi valori vengono implementati utilizzando diverse combinazioni dei comportamenti di _block_ e di _swap_.
 
-- `swap`: block for a very short period and always swap.
-- `block`: block for a short period and always swap.
-- `fallback`: block for a very short period and swap within a short period.
-- `optional`: block for a very short period and no swap period.
+- `swap`: blocca per un brevissimo periodo e sostituisce sempre.
+- `block`: blocca per un breve periodo e sostituisce sempre.
+- `fallback`: blocco per un periodo molto breve e sostituisce entro un breve periodo.
+- `optional`: blocco per brevissimo periodo e nessun periodo di sostituzione.
 
-There is also `auto`, which leaves the decision up to the browser—all modern browsers use `block` as the default value.
+C'è anche `auto`, che lascia la decisione al browser - tutti i browser moderni usano `block` come valore predefinito.
 
 {{ figure_markup(
   image="usage-of-font-display.png",
-  caption="Usage of `font-display`.",
-  description="Column chart showing font display `swap` is used on 32% of desktop and 29% of mobile pages, `block` on 16% and 17% respectively, `auto` on 9% and 8%, `fallback` on 2% and 2%, and finally `optional` is on 0% of both desktop and mobile pages.",
+  caption="Uso di `font-display`.",
+  description="L'istogramma mostra che `font-display: swap` è utilizzato sul 32% delle pagine desktop e sul 29% delle pagine per dispositivi mobili, `block` è usato rispettivamente nel 16% e nel 17%, `auto` nel 9% e 8%, `fallback` nel 2% e 2% e infine `optional` è allo 0% sia delle pagine desktop che delle pagine per dispositivi mobili.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=1648924039&format=interactive",
   sheets_gid="1599822681",
   sql_file="font_display_usage.sql"
   )
 }}
 
-Use of `font-display: swap` has grown to an impressive 30% (from [11% in 2020](../2020/fonts#racing-to-first-paint)). A fair chunk of this increase can most likely be attributed to <a hreflang="en" href="https://www.youtube.com/watch?v=YJGCZCaIZkQ&t=1880s">Google Fonts making swap the recommended value in 2019</a>. It is also interesting to see the `block` value overtaking `auto` as the second most used value. We are not sure why developers are intentionally degrading the performance of their site, but it is an interesting, if not slightly worrying, development.
+L’utilizzo di `font-display: swap` è cresciuto fino ad un impressionante 30% ([dall'11% nel 2020](../2020/fonts#racing-to-first-paint)). Molto probabilmente una buona parte di questo aumento può essere attribuita a <a hreflang="en" href="https://www.youtube.com/watch?v=YJGCZCaIZkQ&t=1880s">Google Fonts che nel 2019 ha indicato swap come valore consigliato</a>. È anche interessante vedere al secondo posto fra i più utilizzati è ora il valore `block` al posto di `auto`. Non siamo sicuri del motivo per cui gli sviluppatori stiano intenzionalmente degradando le prestazioni del loro sito, ma si tratta di uno sviluppo interessante, anche se leggermente preoccupante.
 
-Our guess is that developers—or their customers—really dislike seeing a flash of fallback fonts. Using `font-display: block` is an easy "fix" for that problem. However, there is a better solution on the horizon. In the near future you can use CSS font metric overrides to tweak your fallback fonts to approximate the metrics of your web fonts. This will reduce the jarring reflow of text when a fallback font is swapped with a web font.
+La nostra ipotesi è che agli sviluppatori, o ai loro clienti, non piaccia vedere il <i lang="en">Flash of Fallback Fonts</i>. L’utilizzo di `font-display: block` è un modo semplice per “risolvere” il problema. Tuttavia, c'è una soluzione migliore all'orizzonte. Nel prossimo futuro si potranno utilizzare le proprietà CSS di sovrascrittura delle metriche dei font per modificare i font di fallback in modo da farle assomigliare a quelle dei web font scelti. Ciò ridurrà la fastidiosa ridistribuzione del testo quando, [dopo il caricamento], il font di fallback viene rimpiazzato dal web font.
 
-The CSS `ascent-override`, `descent-override`, `line-gap-override`, and `size-adjust` descriptors go into the `@font-face` rule and can be used to override the metrics in any font. You can use these descriptors with `local()` to [create a customized fallback](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/ascent-override#overriding_metrics_of_a_fallback_font) font that roughly matches your web font—hey, finally a good use for <a hreflang="en" href="https://bramstein.com/writing/web-font-anti-patterns-local-fonts.html">`local()`</a>.
+I descrittori CSS `ascent-override`, `descent-override`, `line-gap-override` e `size-adjust` della regola `@font-face` offrono la possibilità di sovrascrivere le metriche di qualsiasi tipo di font. Possiamo usare questi descrittori in abbinamento a `local()` per <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/ascent-override#overriding_metrics_of_a_fallback_font">creare un font di fallback personalizzato</a> che corrisponda più o meno al nostro web font — ehi, finalmente un buon uso per <a hreflang="en" href="https://bramstein.com/writing/web-font-anti-patterns-local-fonts.html">`local()`</a>.
 
 {{ figure_markup(
   image="css-font-metrics-override-usage.png",
-  caption="CSS font metrics override usage.",
-  description="Column chart showing `ascent-override` is used on 0.11% of desktop and 0.20% mobile pages, `descent-override` on 0.07% and 0.13% respectively, `line-gap-override` on 0.07% and 0.13%, and finally `size-adjust` on 0.05% of desktop and 0.13% of mobile pages.",
+  caption="Utilizzo della sovrascrittura (<i lang="en">override</i>) CSS delle metriche dei font.",
+  description="L'istogramma mostra che `ascent-override` viene utilizzato nello 0,11% delle pagine desktop e nello 0,20% di pagine per dispositivi mobili, `descent-override` rispettivamente sullo 0,07% e 0,13%, `line-gap-override` sullo 0,07% e 0,13% e infine `size-adjust` sullo 0,05% delle pagine desktop e sullo 0,13% delle pagine per dispositivi mobili.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=2058878625&format=interactive",
   sheets_gid="241586017",
   sql_file="font_metric_override_usage.sql"
   )
 }}
 
-These `@font-face` descriptors are very new, but are already seeing some use. To make them even more useful developers need two things:
+Questi descrittori di `@font-face` sono appena stati definiti, ma stanno già vedendo un certo utilizzo. Per renderli ancora più utili gli sviluppatori hanno bisogno di due cose:
 
-1. A set of consistent fallback fonts that are available in all browsers and on all platforms. They could even be variable fonts. Imagine the possibilities.
-2. Tools to automatically match fonts by tweaking its size and metrics. Doing this by hand is very time-consuming, so a tool is a must. This is not intended as a replacement for the web font, but merely as a temporary fallback while the web fonts are loading (or as a stand-in if the fonts don't load or the browser is very old).
+1. Uno stesso insieme di font di fallback disponibile in tutti i browser e su tutte le piattaforme. Si potrebbe anche trattare di font variabili. Immagina le possibilità che si aprono.
+2. Strumenti per abbinare automaticamente il font di fallback al web font modificandone le dimensioni e le metriche. Farlo a mano richiede molto tempo, quindi uno strumento è necessario. Con ciò non si intende rimpiazzare il web font, ma semplicemente configurare un font di fallback temporaneo che ne faccia le funzioni durante il caricamento dei web font (o ne diventi il sostituto solo se i font non vengono caricati o il browser è molto vecchio).
 
-We're slowly getting there with tools such as <a hreflang="en" href="https://meowni.ca/font-style-matcher/">Font Style Matcher</a> and <a hreflang="en" href="https://www.industrialempathy.com/perfect-ish-font-fallback/">Perfect-ish Font Fallback</a>, but unfortunately, fallback fonts are still very much platform dependent.
+Ci stiamo lentamente arrivando con strumenti come <a hreflang="en" href="https://meowni.ca/font-style-matcher/">Font Style Matcher</a> e <a hreflang="en" href="https://www.industrialempathy.com/perfect-ish-font-fallback/">Perfect-ish Font Fallback</a>, ma sfortunatamente i font di fallback dipendono ancora molto dalla piattaforma.
 
-## Font usage
+## Utilizzo dei font
 
-Performance is important, but it is also interesting to see how fonts are being used on the web. For example, what are the most popular fonts and foundries? Are people using OpenType features? Let's take a look at the data.
+Le prestazioni sono importanti, ma è anche interessante vedere come vengono utilizzati i caratteri sul web. Ad esempio, quali sono i font e le fonderie più popolari? Le persone utilizzano le funzionalità di OpenType? Diamo un'occhiata ai dati.
 
-### Families & foundries
+### Famiglie di font e fonderie
 
 <figure>
   <table>
     <thead>
       <tr>
-        <th>Family</th>
+        <th>Famiglia</th>
         <th>desktop</th>
         <th>mobile</th>
       </tr>
@@ -451,34 +451,34 @@ Performance is important, but it is also interesting to see how fonts are being 
   </table>
   <figcaption>
     {{ figure_link(
-      caption="Most used fonts.",
+      caption="I font più utilizzati.",
       sheets_gid="1543752771",
       sql_file="popular_font_families_by_vendor.sql",
     ) }}
   </figcaption>
 </figure>
 
-With Google Fonts' massive impact on web font serving, it is no surprise the most used font on the web is Roboto. Roboto was created by Google as a system font for its Android operating system. This also explains the huge discrepancy between Roboto's use on mobile compared to desktop sites. On Android, Google Fonts will use the system installed version instead of downloading it as a web font.
+Con l'enorme impatto di Google Fonts sulla fornitura di web font, non sorprende che il carattere più utilizzato sul web sia il Roboto. Roboto è stato creato da Google come font di sistema per il suo sistema operativo Android. Questo spiega anche l'enorme discrepanza tra l'utilizzo di Roboto sui dispositivi mobili rispetto ai siti desktop. Su Android, Google Fonts utilizzerà la versione installata dal sistema invece di scaricarla come web font.
 
-Font Awesome takes the number two spot, which is an impressive accomplishment for what is essentially a single font family. Font Awesome, combined with Icomoon, Glyphicons, eicons, and revicons make up nearly 18% of all web fonts used on websites! Icon fonts are problematic from an <a hreflang="en" href="https://fontawesome.com/docs/web/dig-deeper/accessibility">accessibility point of view</a>, so it is worrying to see this being so popular.
+Font Awesome occupa il secondo posto, il che è un risultato impressionante per quella che è essenzialmente una famiglia di caratteri con un unico font. Font Awesome, assieme a Icomoon, Glyphicons, eicons e revicons, costituisce quasi il 18% di tutti i web font utilizzati sui siti web! Gli icon font sono problematici dal <a hreflang="en" href="https://fontawesome.com/docs/web/dig-deeper/accessibility">punto di vista dell'accessibilità</a>, quindi è preoccupante riscontrarli così popolari.
 
 {{ figure_markup(
   content="18%",
-  caption="Sites using icon web fonts.",
+  caption="Siti che utilizzano gli icon font.",
   classes="big-number",
   sheets_gid="1543752771",
   sql_file="popular_font_families_by_vendor.sql",
 ) }}
 
-A special note should also be made of Proxima Nova at 1% usage. It is the only commercial, non-icon, font in the top 20. That's an amazing achievement by <a hreflang="en" href="https://www.marksimonson.com/">Mark Simonson Studio</a>.
+Una menzione speciale dovrebbe essere fatta anche sul carattere Proxima Nova all'1% di utilizzo. È l'unico font commerciale, non di icone, tra i primi 20. È un risultato straordinario per il <a hreflang="en" href="https://www.marksimonson.com/">Mark Simonson Studio</a>.
 
-Another interesting fact is that a large portion of the top families are open source. This can be credited to Google Fonts who have either commissioned these fonts or included existing open source fonts in their library.
+Un altro fatto interessante è che la gran parte delle famiglie più utilizzate è open source. Il merito può essere attribuito a Google Fonts che ha o commissionato questi font, oppure incluso nella propria libreria dei font open source esistenti.
 
 <figure>
   <table>
     <thead>
       <tr>
-        <td>Vendor</td>
+        <td>Distributore</td>
         <td>desktop</td>
         <td>mobile</td>
       </tr>
@@ -538,91 +538,91 @@ Another interesting fact is that a large portion of the top families are open so
   </table>
   <figcaption>
     {{ figure_link(
-      caption="Most popular font foundries.",
+      caption="Le fonderie più popolari.",
       sheets_gid="1543752771",
       sql_file="popular_font_families_by_vendor.sql",
     ) }}
   </figcaption>
 </figure>
 
-The list of most popular type foundries (or in some cases type designers) is equally fascinating. Besides large companies like Google, Adobe, Ascender (Monotype), it is good to see several smaller companies and even several individuals having such a large impact.
+L'elenco delle fonderie tipografiche più popolari (o in alcuni casi di progettisti di caratteri) è altrettanto affascinante. Oltre a grandi aziende come Google, Adobe, Ascender (Monotype), è bello vedere diverse aziende più piccole e persino diversi individui che hanno un impatto così grande.
 
-### OpenType features
+### Le funzionalità OpenType
 
-OpenType features are often referred to as a font's superpowers. And of course, the fonts with superpowers are often unrecognized. OpenType features are hard to discover and use. Fortunately, there are web tools, such as <a hreflang="en" href="https://wakamaifondue.com/">Wakamai Fondue</a>, that clearly show you which features there are, what they do, and how to use them.
+Le funzionalità OpenType sono spesso indicate come i superpoteri di un font. E, naturalmente, i font con superpoteri spesso non vengono riconosciuti. Le funzionalità di OpenType sono difficili da scoprire e utilizzare. Fortunatamente, ci sono strumenti web, come <a hreflang="en" href="https://wakamaifondue.com/">Wakamai Fondue</a>, che mostrano chiaramente quali funzionalità ci sono in un font, cosa fanno e come usarle.
 
 {{ figure_markup(
   content="44%",
-  caption="Fonts that include OpenType features.",
+  caption="Font dotati di funzionalità OpenType.",
   classes="big-number",
   sheets_gid="183792112",
   sql_file="font_opentype_support.sql",
 ) }}
 
-Some OpenType features are for stylistic purposes only, while others are required to render text correctly. You might often see these two mentioned as discretionary and required features. Almost 44% of all fonts have either discretionary or required OpenType features. So, there's a good chance the font you are using also has super powers!
+Alcune funzionalità OpenType nascono solo a scopo stilistico, mentre altre sono necessarie per la resa corretta del testo. Spesso queste due funzionalità vengono nominate come funzionalità discrezionali e funzionalità necessarie. Quasi il 44% di tutti i font ha funzionalità OpenType o discrezionali o necessarie. Quindi, ci sono buone probabilità che anche il font che stiamo usando abbia dei super poteri!
 
-Discretionary features can be used to, for example, replace two adjacent glyphs with a ligature to improve legibility. It's also common for OpenType features to offer alternative versions of glyphs, for example by adding swashes.
+Le funzionalità discrezionali possono essere impiegate, ad esempio, per sostituire due glifi adiacenti con una legatura per migliorare la leggibilità. È anche comune per le funzionalità OpenType offrire versioni alternative di glifi, ad esempio aggiungendo degli <i lang="en">swash</i> (gli svolazzi dei font calligrafici).
 
-A significant number of fonts have <a hreflang="en" href="https://fonts.google.com/knowledge/introducing_type/introducing_alternate_glyphs">discretionary OpenType features</a>. The most common discretionary feature is, not surprisingly, ligatures. This is followed by a whole range of features that modify numerals like fractions, proportional numerals, tabular numerals, lining numerals, and ordinals. Superscripts are also somewhat common.
+Un numero significativo di font ha <a hreflang="en" href="https://fonts.google.com/knowledge/introducing_type/introducing_alternate_glyphs">funzionalità OpenType discrezionali</a>. La caratteristica discrezionale più comune riguarda, non sorprenda, le legature. A seguire un'intera gamma di funzionalità che modificano i numeri come frazioni, numeri proporzionali, numeri tabulari, numeri in linea e ordinali. Anche gli apici sono abbastanza comuni.
 
 {{ figure_markup(
   image="opentype-features-support-in-fonts.png",
-  caption="OpenType features support in fonts.",
-  description="Column chart showing `kern` is used on 12.8% of desktop fonts and 12.4% of mobile fonts, `liga` on 10.0% and 10.1% respectively, `locl` on 9.6% and 9.7%, `frac` on 8.1% and 7.6%, `numr` on 6.8% and 5.8%, `dnom` on 6.7% and 5.8%, `pnum` on 5.1% and 4.7%, and finally `tnum` on 5.0% of desktop and 4.5% of mobile fonts..",
+  caption="Supporto delle funzionalità OpenType nei font.",
+  description="L'istogramma mostra che `kern` è utilizzato sul 12,8% dei font desktop e sul 12,4% dei font su dispositivi mobili, `liga` rispettivamente sul 10,0% e 10,1%, `locl` sul 9,6% e 9,7%, `frac` sull'8,1% e 7,6 %, `numr` sul 6,8% e 5,8%, `dnom` sul 6,7% e 5,8%, `pnum` sul 5,1% e 4,7% e infine `tnum` sul 5,0% dei font desktop e 4,5% dei font per dispositvi mobili.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=1500912295&format=interactive",
   sheets_gid="83804141",
-  sql_file="font_opentype_features_usage.sql"
+  sql_file="font_opentype_feature_usage.sql"
   )
 }}
 
-If we look at required OpenType features, there are two that stand out from everything else: _kerning_ and _localized forms_. Localized forms are used to specify alternate glyphs that are required or preferred by some languages. This implies that a good amount of fonts support multiple languages, which is a great sign of progress for internationalization.
+Se osserviamo le funzionalità OpenType necessarie, ce ne sono due che si distinguono da tutto il resto: crenatura (_kerning_) e forme localizzate (_localized forms_). Le forme localizzate vengono utilizzate per specificare glifi alternativi tipici o preferiti in alcune lingue. Ciò implica che una buona quantità di font supporta più lingue, il che è un grande segno di progresso per l'internazionalizzazione.
 
-Kerning is the process of slightly increasing or decreasing the space between any combination of two glyphs to make the space between them seem more even. Kerning is enabled by default on all browsers, so as long as the font supports kerning it will be enabled.
+La crenatura è il processo che aumenta o diminuisce leggermente lo spazio tra due glifi in qualsiasi combinazione al fine di far apparire più regolare lo spazio tra di loro. La crenatura è abilitata per impostazione predefinita su tutti i browser, quindi se il font supporta la crenatura, questa sarà abilitata.
 
 {{ figure_markup(
   content="34%",
-  caption="Fonts including kerning data.",
+  caption="Font che includono i dati di crenatura.",
   classes="big-number",
   sheets_gid="1953603748",
   sql_file="font_kerning.sql",
 ) }}
 
-Only 34% of all web fonts have kerning data stored as either an OpenType feature, or using the older `kern` table. Nearly all fonts need kerning to look correct, so we would have expected this number to be much higher than it is. One explanation is that when web fonts started taking off, browser support for kerning wasn't very good, so many early web fonts did not include kerning data to save on space. Nowadays, all browsers support kerning so there is no reason fonts should not have kerning data in them.
+Solo il 34% di tutti i web font ha dati di crenatura archiviati o come funzionalità OpenType o per mezzo della precedente tabella di crenatura `kern`. Quasi tutti i font necessitano di una crenatura per apparire corretti, quindi ci saremmo aspettati di trovare un valore molto più alto di quello che è. Una spiegazione è che quando i web font hanno iniziato ad essere utilizzati, il supporto del browser per la crenatura non era molto buono, quindi molti dei primi web font non includevano i dati di crenatura per risparmiare spazio. Al giorno d'oggi, tutti i browser supportano la crenatura, quindi non c'è motivo per cui i caratteri non debbano contenere i dati di crenatura.
 
 {{ figure_markup(
   image="openType-feature-usage-in-css.png",
-  caption="OpenType feature usage in CSS.",
-  description="Column chart showing `kern` is used on 3.6% of desktop pages and 3.2% of mobile pages, `liga` on 2.2% and 2.2% respectively, `palt` on 0.4% and 0.4%, `pnum` on 0.4% and 0.4%, `tnum` on 0.4% and 0.3%, `lnum` on 0.3% and 0.3%, and finally `calt` on 0.1% of desktop and 0.1% mobile pages.",
+  caption="OUtilizzo delle funzionalità OpenType in CSS.",
+  description="L'istogramma mostra che `kern` è utilizzato sul 3,6% delle pagine desktop e sul 3,2% delle pagine mobili, `liga` rispettivamente sul 2,2% e 2,2%, `palt` sullo 0,4% e 0,4%, `pnum` sullo 0,4% e 0,4 %, `tnum` sullo 0,4% e 0,3%, `lnum` sullo 0,3% e 0,3% e infine `calt` sullo 0,1% delle pagine desktop e 0,1% delle pagine mobili.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=1359153027&format=interactive",
   sheets_gid="1050025794",
   sql_file="font_feature_settings_tags_usage.sql"
   )
 }}
 
-What's even more interesting is that kerning is also the most common feature tag used in the `font-feature-settings` property. Nearly 3.2% of sites manually enable (or worse, disable) kerning. There is no need for that; it is enabled by default. In fact, there is no need to _ever_ change kerning settings through `font-feature-settings` or the higher level <a hreflang="en" href="https://drafts.csswg.org/css-fonts/#font-kerning-prop">`font-kerning property`</a>. Disabling kerning won't make your site faster, but your typesetting will be poorer for it.
+Cosa ancora più interessante è che la crenatura è anche il tag di funzionalità più comune utilizzato nella proprietà `font-feature-settings`. Quasi il 3,2% dei siti abilita (o peggio, disabilita) la crenatura manualmente. Non c’è alcun bisogno di farlo; è abilitata di default. In realtà, non è _mai_ necessario modificare le impostazioni di crenatura tramite `font-feature-settings` o tramite la proprietà di più alto livello <a hreflang="en" href="https://drafts.csswg.org/css-fonts/#font-kerning-prop">`font-kerning`</a>. Disabilitare la crenatura non renderà il nostro sito più veloce, ma la nostra composizione del testo sarà più sciatta per questo.
 
-The other most used features are roughly in line with what type designers actually include: ligatures and various numerals. It is interesting to see the `palt` (proportional alternates) feature in this list, as it is primarily used for CJK fonts (which themselves aren't common because they are usually too large to be used as web fonts, even with WOFF2 compression). Like kerning, the `calt` feature (contextual alternates) is enabled by default and should not be explicitly enabled or disabled. There are many other useful OpenType features such as stylistic sets, character variants, small caps, and swashes that have low usage, but have the potential to really enhance your typography. Our recommendation is to drop your fonts in <a hreflang="en" href="https://wakamaifondue.com/">Wakamai Fondue</a> and explore all the hidden superpowers.
+Le altre funzionalità più utilizzate sono più o meno in linea con ciò che i type designer di fatto includono: legature e vari tipi di numeri. È interessante notare in questa lista la funzionalità `palt` (alternative proporzionali), poiché principalmente viene utilizzata per i caratteri CJK (che a loro volta non sono comuni da trovare, perché di solito sono troppo grandi per essere utilizzati come web font, perfino con la compressione WOFF2). Come la crenatura, anche la funzionalità `calt` (alternative contestuali) è abilitata per impostazione predefinita e non dovrebbe essere abilitata o disabilitata in modo esplicito. Ci sono molte altre funzionalità OpenType utili come i set stilistici, le varianti di caratteri, il maiuscoletto e gli swash (svolazzi) che hanno un utilizzo ridotto, ma hanno il potenziale per migliorare tantissimo la tipografia. Il nostro consiglio è di trascinare sul sito <a hreflang="en" href="https://wakamaifondue.com/">Wakamai Fondue</a> i font con in quali si lavora per esplorarne tutti i superpoteri nascosti.
 
 {{ figure_markup(
   image="usage-of-font-feature-settings-vs-font-variant.png",
-  caption="Usage of font-feature-settings vs font-variant.",
-  description="Column chart showing `font-feature-settings` is used on 13.3% of desktop pages and 12.6% of mobiles pages, and `font-variant` is used on 3.9% of desktop pages and 3.5% of mobile pages.",
+  caption="Uso di font-feature-settings vs font-variant.",
+  description="L'istogramma mostra che `font-feature-settings` è utilizzato nel 13,3% delle pagine desktop e nel 12,6% delle pagine per dispositivi mobili e `font-variant` è utilizzato nel 3,9% delle pagine desktop e nel 3,5% delle pagine mobili.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=1087474243&format=interactive",
   sheets_gid="959516935",
   sql_file="font_feature_settings_vs_font_variant.sql"
   )
 }}
 
-Overall, usage of OpenType feature usage is quite low on the web. We were hoping most people are using the high-level `font-variant` properties to enable OpenType features, but their usage is even lower than `font-feature-settings`. The `font-feature-settings` property is used on 12.6% of sites, while the `font-variant` properties are used on only 3.5% of sites.
+Nel complesso, l'utilizzo delle funzionalità OpenType è piuttosto basso sul web. Avremmo sperato che la maggior parte delle persone utilizzasse le proprietà di alto livello `font-variant` per abilitare le funzionalità OpenType, ma il loro utilizzo è persino inferiore di `font-feature-settings`. La proprietà `font-feature-settings` viene utilizzata nel 12,6% dei siti, mentre le proprietà `font-variant` vengono utilizzate solo nel 3,5% dei siti.
 
-This is disappointing. Not only are people not using the OpenType features present in fonts, they are also primarily using the error-prone `font-feature-settings` property instead of the high-level `font-variant` property. You need to be extra careful with the `font-feature-settings` property, as it <a hreflang="en" href="https://pixelambacht.nl/2022/boiled-down-fixing-variable-font-inheritance/">will reset any OpenType feature you didn't explicitly list to its default value</a>.
+Questi dati sono deludenti. Non solo le persone non utilizzano le funzionalità OpenType presenti nei font, ma,come non bastasse, quando lo fanno, anziché la proprietà di alto livello `font-variant`, adoperano per lo più la proprietà `font-feature-settings`, fucina di errori. Con la proprietà `font-feature-settings` infatti occorre porre molta attenzione, poiché <a hreflang="en" href="https://pixelambacht.nl/2022/boiled-down-fixing-variable-font-inheritance/">riporta al suo valore predefinito (<i lang="en">reset</i>) qualsiasi funzionalità OpenType che non sia stata esplicitamente elencata</a>.
 
-All of the most commonly used `font-feature-settings` values have `font-variant` equivalents that are more readable, and do not unset other OpenType features as a side effect. While support for these high-level features wasn't that great in the past they are <a hreflang="en" href="https://caniuse.com/?search=font-variant">well supported</a> these days—except for the recently introduced `font-variant-alternates` property.
+Tutti i valori più comunemente utilizzati per la proprietà `font-feature-settings` hanno equivalenti `font-variant` che sono più leggibili e non annullano l'impostazione di altre funzionalità OpenType come effetto collaterale. Sebbene il supporto per queste funzionalità di alto livello non sia stato eccezionale in passato, oggi sono <a hreflang="en" href="https://caniuse.com/?search=font-variant">ben supportate</a>, ad eccezione della proprietà `font-variant-alternates` introdotta di recente.
 
 {{ figure_markup(
   image="usage-of-css-font-variant-values.png",
-  caption="Usage of CSS font-variant values.",
-  description="Bar chart showing `font-variant: small-caps` is used on 1.5% of desktop pages and 1.4% of mobile pages, `font-variant: tabular-nums` on 1.0% and 0.6% respectively, `font-variant-numeric: tabular-nums` on 0.8% and 0.7%, `font-variant-ligatures: discretionary-ligatures` on 0.4% and 0.3%, `font-variant-ligatures: no-common-ligatures` on 0.3% and 0.3%, `font-variant-caps: all-small-caps` on 0.2% and 0.2%, `font-variant-numeric: lining-nums` on 0.2% and 0.2%, and finally `font-variant-ligatures: common-ligatures` on 0.1% of desktop and mobile pages.",
+  caption="Utilizzo dei valori della proprietà CSS font-variant.",
+  description="Il grafico a barre mostra che `font-variant: small-caps` viene utilizzato sull'1,5% delle pagine desktop e sull'1,4% delle pagine mobili, `font-variant: tabular-nums` rispettivamente sull'1,0% e 0,6%, `font-variant-numeric : tabular-nums` sullo 0,8% e 0,7%, `font-variant-ligatures: discretionary-ligatures` sullo 0,4% e 0,3%, `font-variant-ligatures: no-common-ligatures` sullo 0,3% e 0,3%, `font-variant-caps: all-small-caps` sullo 0,2% e 0,2%, `font-variant-numeric: lining-nums` sullo 0,2% e 0,2% e infine `font-variant-ligatures: common-ligatures ` sullo 0,1% delle pagine desktop e mobili.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=682306512&format=interactive",
   sheets_gid="1231655846",
   sql_file="font_variant_values.sql",
@@ -631,18 +631,18 @@ All of the most commonly used `font-feature-settings` values have `font-variant`
   )
 }}
 
-The most used `font-variant` value is `small-caps` at 1.4% of pages. This is surprising, because small caps are only supported by 0.7% of fonts. That means that most people using `font-variant: small-caps` and `font-variant-caps` will get faux small caps that are generated by the browser instead of small caps created by the type designer! In the future, you can avoid faux small caps by using the <a hreflang="en" href="https://drafts.csswg.org/css-fonts-4/#font-synthesis-small-caps">font-synthesis-small-caps property</a>.
+Il valore più utilizzato per `font-variant` è `small-caps` nell'1,4% delle pagine. Il che sorprende, perché il maiuscoletto (<i lang="en">small caps</i>) è supportato solo dallo 0,7% dei font. Ciò significa che la maggior parte delle persone che usano `font-variant: small-caps` e `font-variant-caps` otterranno un finto maiuscoletto generato dal browser invece del maiuscoletto creato dal type designer! In futuro, potremo evitare il falso maiuscoletto usando la <a hreflang="en" href="https://drafts.csswg.org/css-fonts-4/#font-synthesis-small-caps">proprietà font-synthesis-small-caps</a>.
 
-The other values roughly match what is provided by the fonts themselves. Even though use of the `font-variant` properties is low, we expect—or rather hope—that these numbers will go up over time and use of `font-feature-settings` becomes relegated to use with custom or proprietary OpenType features.
+Gli altri valori corrispondono all'incirca a quanto fornito dagli stessi font. Anche se la frequenza d'uso delle proprietà `font-variant` è bassa, ci aspettiamo, o meglio speriamo, che questi numeri aumentino nel tempo e l'impiego di `font-feature-settings` venga relegato per gestire solo partricolari funzionalità OpenType personalizzate o proprietarie.
 
-### Writing system and languages
+### Sistema di scrittura e lingue
 
-To understand what kind of fonts are being made and used, we thought it would be interesting to look at what languages fonts support. For example, do people make a lot of German, Vietnamese, or Urdu fonts? Unfortunately, it is hard to answer this question because a lot of languages share the same writing system. That means they might share the same character set, but might have only been explicitly designed for one specific language. So instead of languages, we'll take a look at writing systems.
+Per capire che tipo di font vengono realizzati e utilizzati, abbiamo pensato che sarebbe stato interessante esaminare quali lingue sono supportate dai font. Ad esempio, si creano molti font tedeschi, vietnamiti o urdu? Sfortunatamente, è difficile rispondere a questa domanda perché molte lingue condividono lo stesso sistema di scrittura. Ciò significa che possono anche condividere lo stesso set di caratteri, ma con tutta probabilità sono stati progettati esplicitamente solo per una specifica lingua. Quindi, invece che alle lingue, daremo un'occhiata ai sistemi di scrittura.
 
 {{ figure_markup(
   image="writing-systems-supported-by-fonts.png",
-  caption="Writing systems supported by fonts.",
-  description="Bar chart showing Latin is used on 57.6% of desktop pages and 53.6% of mobile pages, Cyrillic on 6.1% and 6.2% respectively, Greek on 3.4% and 3.4%, Katakana on 0.9% and 1.0%, Hiragana on 0.9% and 0.9%, Hebrew on 0.5% and 0.5%, Arabic on 0.3% and 0.4%, Thai on 0.2% and 0.3%, Hangul on 0.5% and 0.3%, Devanagari on 0.2% and 0.3%, and finally Han is on 0.2% of desktop and mobile pages.",
+  caption="Sistemi di scrittura supportati dai font.",
+  description="Il grafico a barre mostra che il Latin (latino) è utilizzato sul 57,6% delle pagine desktop e sul 53,6% delle pagine mobili, il Cyrillic (cirillico)rispettivamente sul 6,1% e sul 6,2%, il Greek (greco) sul 3,4% e sul 3,4%, il Katakana (un tipo di scrittura giapponese) sullo 0,9% e sull'1,0%, l'Hiragana (un altro tipo di scrittura giapponese) sullo 0,9% e lo 0,9 %, Hebrew (l'ebraico) sullo 0,5% e 0,5%, Arabic (l'arabo) sullo 0,3% e 0,4%, Thai (il tailandese) sullo 0,2% e 0,3%, Hangul (alfabeto coreano) sullo 0,5% e 0,3%, il Devanagari (alfabeto indiano) sullo 0,2% e 0,3% e infine Han (cinese) è sullo 0,2% di pagine desktop e mobili.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=45355249&format=interactive",
   sheets_gid="841363278",
   sql_file="font_writing_scripts.sql",
@@ -651,20 +651,20 @@ To understand what kind of fonts are being made and used, we thought it would be
   )
 }}
 
-Not surprisingly, the Latin system is in the lead with a whopping 53.6% of all fonts supporting (a significant) subset of the [Latin writing system](https://en.wikipedia.org/wiki/List_of_languages_by_writing_system#Latin_script). This includes a lot of languages used in the western world, like English, French, and German. However, it also covers languages in Asia, such as Vietnamese and Tagalog. The number two and three spots are taken by Cyrillic and Greek. Again, this is not a surprise, they are commonly used and a reasonably small amount of work to add to a font due to their limited number of extra glyphs that need to be added. Katakana and Hiragana (Japanese) are at 1% and 0.9% respectively—a combined 1.9%. Note that about 10% of fonts failed to meet the minimum threshold of a writing system (not pictured). This includes fonts that, for example, only support a small number of characters or ones that are heavily subsetted.
+Non sorprende che il sistema latino sia in testa con un enorme 53,6% di tutti i font che supportano (un significativo) sottoinsieme del [sistema di scrittura latino](https://en.wikipedia.org/wiki/List_of_languages_by_writing_system#Latin_script). Il Latin include molte lingue utilizzate nel mondo occidentale, come inglese, francese e tedesco. In aggiunta, copre anche alcune lingue asiatiche, come il vietnamita e il tagalog. Il secondo e terzo posto dei sistemi di scrittura sono occupati da cirillico e greco. Di nuovo, ciò non sorprende, si tratta di alfabeti comunemente usati e che per giunta richiedono poco sforzo lavorativo per aggiungere un numero limitato di glifi extra. Katakana e Hiragana (giapponese) sono rispettivamente all'1% e allo 0,9%, combinato: un 1,9%. Si noti che circa il 10% dei font non ha raggiunto la soglia minima di un sistema di scrittura (non illustrato nel grafico). Questa percentuale include i font che, ad esempio, supportano solo un numero limitato di caratteri o font che hanno subito un forte subsetting.
 
-Sadly, other writing systems are much less prevalent. For example, Han (Chinese) is the <a hreflang="en" href="https://www.worldatlas.com/articles/the-world-s-most-popular-writing-scripts.html">2nd most used writing system in the world</a> (after Latin), but only supported by 0.2% of web fonts. Arabic is the third most used writing system, but again, only supported by 0.4% of web fonts. The reason that some of these <a hreflang="en" href="https://www.w3.org/TR/PFE-evaluation/#fail-large">writing systems are not used as web fonts</a> is that they are very large due to the sheer number of glyphs they have to support, and the difficulty in subsetting them correctly.
+Purtroppo, altri sistemi di scrittura sono molto meno diffusi. Ad esempio, Han (cinese) è il <a hreflang="en" href="https://www.worldatlas.com/articles/the-world-s-most-popular-writing-scripts.html">secondo sistema di scrittura più utilizzato al mondo</a> (dopo il latino), ma è supportato solo dallo 0,2% dei web font. L'arabo è il terzo sistema di scrittura più utilizzato, ma anche qui è supportato solo dallo 0,4% dei web font. Il motivo per cui alcuni di questi <a hreflang="en" href="https://www.w3.org/TR/PFE-evaluation/#fail-large">sistemi di scrittura non vengono utilizzati come web font</a> è che sono molto grandi a causa del numero di glifi che devono supportare e della difficoltà di fare un subsetting corretto.
 
-While services like Google Fonts and Adobe Fonts support these writing systems, they are using proprietary technologies that simply are not available for self-hosting. However, the W3C Fonts Working Group is working on a new standard called <a hreflang="en" href="https://www.w3.org/TR/IFT/">Incremental Font Transfer</a> that enables web developers to self-host large fonts. We hope to see other writing systems catch up with Latin once this technology becomes widely available.
+Sebbene servizi come Google Fonts e Adobe Fonts supportino questi sistemi di scrittura, utilizzano tecnologie proprietarie che semplicemente non sono disponibili per il self-hosting. Ad ogni modo, il W3C Fonts Working Group sta lavorando ad un nuovo standard chiamato <a hreflang="en" href="https://www.w3.org/TR/IFT/">Incremental Font Transfer</a> (trasferimento incremetale dei font) che consente agli sviluppatori web di pubblicare in self-hosting font di grandi dimensioni. Speriamo di vedere altri sistemi di scrittura gareggiare con il latino una volta che questa tecnologia sarà ampiamente disponibile.
 
-### Generic font families
+### Famiglie di font generiche
 
-We already touched on fallback fonts while talking about `font-display`. Sometimes you don't need web fonts at all though, for example in UI elements or form inputs. One of our favorite ways to avoid using web fonts is to use the new generic `system-ui` family name which maps to the font family used by the operating system. Did you know there are several other generic families? There is `ui-monospace`, `ui-sans-serif`, `ui-serif`, and `ui-rounded` as well, if you want to use an operating system font, but have slightly more specific needs.
+Abbiamo già accennato ai font di riserva (<i lang="en">fallback fonts</i>) parlando del descrittore `font-display`. Ci sono casi in cui non c’è affatto bisogno di web font, ad esempio potrebbere essere negli elementi dell'interfaccia utente o negli input dei moduli. Uno bel modo, mio preferito, per evitare l'uso dei web font è utilizzare il nuovo nome di famiglia generico `system-ui` che si riferisce alla famiglia di font utilizzata dal sistema operativo. Sapevate che ci sono molte altre famiglie generiche? Esistono `ui-monospace`, `ui-sans-serif`, `ui-serif` e anche `ui-rounded`, per chi desidera utilizzare un font del sistema operativo, ma ha esigenze un po’ più specifiche.
 
 {{ figure_markup(
   image="usage-of-css-generic-font-family-names.png",
-  caption="Usage of CSS generic font family names.",
-  description="Bar chart showing `sans-serif` is used on 89.1% of desktop pages and 89.3% of mobile pages, `monospace` on 65.8% and 64.7% respectively, `serif` on 54.0% and 55.0%, `cursive` on 3.7% and 3.9%, `system-ui` on 4.0% and 3.6%, `fantasy` on 0.5% and 0.5%, `ui-monospace` on 0.6% and 0.5%, and finally `ui-sans-serif` is used on 0.5% of desktop and 0.4% of mobiles pages.",
+  caption="Uso in CSS dei nomi generici per la famiglia di font.",
+  description="Il grafico a barre mostra che `sans-serif` è utilizzato nell'89,1% delle pagine desktop e nell'89,3% delle pagine mobili, `monospace` rispettivamente nel 65,8% e nel 64,7%, `serif` nel 54,0% e 55,0%, `cursive` nel 3,7% e 3,9%, `system-ui` nel 4,0% e 3,6%, `fantasy` nello 0,5% e 0,5%, `ui-monospace` nello 0,6% e 0,5%, e infine `ui-sans-serif` viene utilizzato nello 0,5% delle pagine desktop e 0,4% delle pagine mobili.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=1479159855&format=interactive",
   sheets_gid="467837585",
   sql_file="usage_of_system_families.sql",
@@ -673,179 +673,179 @@ We already touched on fallback fonts while talking about `font-display`. Sometim
   )
 }}
 
-While these are fairly new, they are already seeing significant use. The usual suspects, `sans-serif`, `monospace`, and `serif` obviously take the lead as they have been around since the first version of the CSS specification.
+Sebbene siano abbastanza nuovi, se ne sta già vedendo un uso significativo. I soliti sospetti, `sans-serif`, `monospace` e `serif` si trovano ovviamente al comando, poiché sono in circolazione dalla prima versione delle specifiche CSS.
 
-The most popular, and well-known, is `system-ui` at 3.6%, followed by `ui-monospace` at 0.5% and `ui-sans-serif` at 0.4%. It isn't clear what the 0.5% of requests for `fantasy` were hoping for, as that generic is so under-specified as to be effectively useless.
+Il più popolare e noto è `system-ui` al 3,6%, seguito da `ui-monospace` allo 0,5% e `ui-sans-serif` allo 0,4%. Non è chiaro cosa sperasse di ottenere lo 0,5% delle richieste con `fantasy`, poiché si tratta di un nome generico così poco preciso da essere di fatto inutile.
 
-We hope to see more use of these generic family names next year. They are great for UI elements, forms, or really anything where you want to evoke a native feel. As an added benefit, they are also great for performance as they are guaranteed to use a locally installed font.
+Speriamo il prossimo anno di vedere un uso maggiore di questi nomi generici di famiglie. Sono adattissimi agli elementi dell'interfaccia utente, ai moduli o a qualsiasi altra situazione per la quale si desideri richiamare un'atmosfera nativa del contesto. Come ulteriore vantaggio, sono anche ottimi per le prestazioni in quanto garantiscono l’uso di un font installato localmente.
 
-### Font smoothing
+### <i lang="en">Font smoothing</i> (smussamento dei contorni dei font)
 
 {{ figure_markup(
   image="usage-of-font-smoothing-properties.png",
-  caption="Usage of font smoothing properties.",
-  description="Bar chart showing `-webkit-font-smoothing: antialiased` is used on 74% of desktop and 73% of mobile pages, `-moz-osx-font-smoothing: grayscale` on 67% and 66%, `-webkit-font-smoothing: auto` on 13% and 12%, and finally `-webkit-font-smoothing: subpixel-antialiased` is used on 13% of desktop and 13% of mobile pages.",
+  caption="Uso delle proprietà di font smoothing.",
+  description="Il grafico a barre mostra che `-webkit-font-smoothing: antialiased` è utilizzato nel 74% delle pagine desktop e nel 73% delle pagine mobili, `-moz-osx-font-smoothing: grayscale` nel 67% e 66%, `-webkit- font-smoothing: auto` nel 13% e 12%, e infine `-webkit-font-smoothing: subpixel-antialiased` viene utilizzato nel 13% delle pagine desktop e nel 13% delle pagine mobili.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=534216530&format=interactive",
   sheets_gid="1970926839",
   sql_file="font_smoothing_usage.sql"
   )
 }}
 
-And now for a complete surprise—to us anyway: people really like to specify their MacOS-only [font smoothing preferences](https://developer.mozilla.org/en-US/docs/Web/CSS/font-smooth). For example, the `-webkit-font-smoothing: antialiased` value is used on 73.4% of all sites. This is surprising because it—and its siblings `-mox-osx-font-smoothing`, and `font-smoothing`—are not even official CSS properties. This might make them the most used unofficial CSS properties!
+E ora, una sorpresa assoluta, per noi almeno: sembra che alle persone piaccia davvero specificare solo per i sistemi MacOS le proprie [preferenze di font smoothing](https://developer.mozilla.org/en-US/docs/Web/CSS/font-smooth). Ad esempio, il valore `-webkit-font-smoothing: antialiased` viene utilizzato sul 73,4% di tutti i siti. La cosa è sorprendente perché questa prprietà - come le sorelle `-mox-osx-font-smoothing` e `font-smoothing` - non è nemmeno una proprietà CSS ufficiale. Queste proprietà CSS sono forse le proprietà non ufficiali più utilizzate!
 
-Our hunch this is a combination of CSS frameworks including these properties and a dislike of how fonts are rendered slightly bolder on macOS—variable font grades to the rescue! It would be interesting to return to these properties in the 2023 Fonts chapter. Perhaps it is also time to put these properties on a standards track? The demand is clearly there.
+La nostra impressione è che questo sia derivato da una combinazione di fattori: framework CSS che includono queste proprietà da una parte e un'antipatia per la resa dei font su MacOS (leggermente più in grassetto) dall’altra: l’asse grade dei font variabili ci venga in soccorso! Sarà interessante tornare su queste proprietà nel capitolo Font del 2023. E poi, forse, è il momento di iniziare a immettere queste proprietà negli standard, no? C'è una chiara domanda a riguardo.
 
-## Variable fonts
+## Font variabili
 
-_Variable fonts_ allow type designers to combine multiple styles of a family into a single font file. They do this by defining one or more design axes, such as weight (thin, regular, and bold) or width (condensed, normal, and expanded). Instead of storing each style as individual font files, a variable font interpolates them from a handful of "master" instances.
+I _font variabili_ consentono ai progettisti di caratteri di combinare più stili di una famiglia in un unico file di font. Lo fanno definendo uno o più assi di progettazione, come peso (sottile, regolare e grassetto) o larghezza (condensato, normale ed espanso). Invece di memorizzare gli stili come singoli file di font, un font variabile li interpola da una manciata di istanze "master".
 
-For example, even if the type designer did not explicitly create a semibold style, using a variable font with a weight axis, the text rendering engine will simply interpolate a semibold style for you (and any other weight you might need, assuming the variable font's weight axis supports that range). Not only do variable fonts increase typographic expressiveness, they also offer a major benefit for web developers in terms of file size savings when several font variations are used. Variable fonts will however be larger than a single variation.
+Ad esempio, anche se il type designer non ha creato esplicitamente uno stile semigrassetto, utilizzando un font variabile con un asse di spessore, il motore di rendering del testo interpolerà per noi in automatico uno stile semigrassetto (e qualsiasi altro peso di cui potremmo aver bisogno, a condizione che il l'asse del peso del font variabile supporti tale intervallo). I font variabili non solo aumentano l'espressività tipografica, ma offrono anche un grande vantaggio per gli sviluppatori web in termini di risparmio di dimensioni dei file quando vengono utilizzate diverse varianti del font. Ad ogni modo i font variabili sono più pesanti se comparati al peso di una singola variazione.
 
 {{ figure_markup(
   image="usage-of-variable-fonts.png",
-  caption="Usage of variable fonts.",
-  description="Column chart showing that in 2020 11% of pages on both desktop and mobile used variable fonts, in 2021 that grew to 13% of both, and in 2022 that shot up to 28% of desktop pages and 29% of mobile pages.",
+  caption="Uso dei font variabili.",
+  description="Grafico a colonne che mostra che nel 2020 l'11% delle pagine su desktop e dispositivi mobili utilizzava font variabili, nel 2021 è cresciuto fino al 13% di entrambi e nel 2022 ha raggiunto il 28% delle pagine desktop e il 29% delle pagine mobili.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=920070467&format=interactive",
   sheets_gid="1460535004",
   sql_file="variable_font_usage.sql"
   )
 }}
 
-Usage of variable fonts has nearly tripled since the last measurement in the Almanac's 2020 Fonts chapter! Nearly 29% of websites use variable fonts. Most of this growth seems to have happened in the last year, with an amazing 125% growth.
+L'utilizzo dei font variabili è quasi triplicato dall'ultima misurazione nel capitolo Font del Web Almanac 2020! Quasi il 29% dei siti web utilizza font variabili. La maggior parte di questa crescita sembra essere avvenuta nell'ultimo anno, con un'incredibile crescita del 125%.
 
 {{ figure_markup(
   content="97%",
-  caption="Variable fonts used that are served by Google Fonts.",
+  caption="Font variabili utilizzati serviti da Google Fonts.",
   classes="big-number",
   sheets_gid="325872648",
   sql_file="variable_font_googlefonts_vs_other.sql",
 ) }}
 
-This impressive growth in usage can be explained by splitting the request data by host. Google Fonts accounts for 97% of variable fonts served, while everyone else accounts for only 3%. Even with Google's massive influence on web font serving, this growth can only be explained by replacing popular existing static styles with variable versions, rather than the introduction of completely new variable fonts.
+Questa impressionante crescita dell'utilizzo può essere spiegata suddividendo i dati della richiesta per host. Google Fonts rappresenta il 97% dei font variabili serviti, mentre tutti gli altri rappresentano solo il 3%. Anche considerando l'enorme presenza di Google nel servizio di hosting dei web font, questa crescita può essere spiegata solo dalla sostituzione automatica dei font statici più diffusi con le rispettive versioni variabili, piuttosto che dall'introduzione di font variabili completamente nuovi.
 
-As a result, Google Fonts and their users are probably seeing huge benefits in performance. Variable fonts are usually smaller than using multiple static instances. For example, if a website uses more than two or three styles from the same family, a variable font is smaller in file size and only takes a single request. It doesn't take a lot: using regular, bold, and light weights are usually sufficient reasons to use a variable font. As an added benefit, with a variable font you can also tweak the axes to suit your needs—semi-demi-bold anyone?
+In conseguenza di ciò, Google Fonts e i suoi utenti hanno probabilmente enormi benefici in termini di prestazioni. Un font variabile è generalmente più leggero rispetto all'utilizzo di più istanze statiche. Ad esempio, se un sito web utilizza più di due o tre stili della stessa famiglia, un font variabile ha dimensioni del file inferiori e richiede una singola richiesta. Non ci vuole molto [per avere il beneficio]: l'uso di tre pesi (normale, bold e light) è generalmente una ragione sufficiente per passare ad un font variabile. Come ulteriore vantaggio, con un font variabile è possibile anche regolare gli assi in base alle proprie esigenze: qualcuno desidera un semi-demi-grassetto?
 
-Regardless of a single actor being responsible for the growth, it is an amazing achievement, and a good indicator of the usefulness of variable fonts to optimize your site's performance.
+Indipendentemente dal fatto che vi sia un singolo responsabile della crescita, si tratta di un risultato straordinario e un buon indice dell'utilità dei font variabili per ottimizzare le prestazioni dei nostri siti.
 
-Variable fonts also have two competing formats: the variable extensions of the `glyf` format and the Compact Font Format 2 (`CFF2`) format. The main differences between the `glyf` format and `CFF2` are the same as its `CFF` predecessor: different types of Bézier curves, more automated hinting, and a claim about smaller file sizes.
+I font variabili hanno anche due formati concorrenti: le estensioni variabili del formato `glyf` e il formato Compact Font Format 2 (`CFF2`). Le principali differenze del formato `glyf` con il formato `CFF2` sono le stesse che col suo predecessore `CFF`: tipologie di curve di Bézier differenti, hinting più automatizzato e una rivendicazione di dimensioni di file più piccole.
 
 {{ figure_markup(
   content="99.99%",
-  caption="Variable fonts using the `glyf` outline format.",
+  caption="Font variabili che usano il formato di outline `glyf`.",
   classes="big-number",
   sheets_gid="993301429",
   sql_file="types_of_variable_font.sql",
 ) }}
 
-So which format should you use? Fortunately, for developers, type designers, and browser vendors the situation is quite simple. Out of all variable fonts served, 99.99% use the variable `glyf` format. Even if you exclude Google Fonts and other font services from the calculation the number changes to a whopping 99.98%. Nobody is using `CFF2`.
+Quindi, quale formato si dovrebbe usare? Fortunatamente, per sviluppatori, type designer e fornitori di browser la situazione è abbastanza chiara. Di tutti i font variabili offerti, il 99,99% utilizza il formato variabile `glyf`. Anche se si escludono dal calcolo Google Fonts e altri servizi di font, il numero arriva alla considerevole cifra del 99,98%. Nessuno usa `CFF2`.
 
-Our recommendation is to avoid `CFF2`-based variable fonts (for now, at least). Browsers and operating systems only recently added support for `CFF2`, and some browsers still don't support it. The only tangible benefit of using `CFF2` over `glyf` based variable fonts is the supposed file size savings, but as we've seen in the performance section this claim is dubious at best.
+Il nostro consiglio è di evitare i font variabili basati su `CFF2` (almeno per ora). I browser e i sistemi operativi hanno aggiunto solo di recente il supporto per `CFF2` e alcuni browser ancora non lo supportano. L'unico vantaggio tangibile dell'utilizzo di font variabili basati su `CFF2` rispetto a quelli basati su `glyf` è il presunto risparmio di dimensioni del file, ma come abbiamo visto nella sezione delle prestazioni questa affermazione è nella migliore delle ipotesi dubbia.
 
 {{ figure_markup(
   image="usage-of-font-variation-settings-axes.png",
-  caption="Usage of font-variation-settings axes.",
-  description="Column chart showing `wght` is used on 82% of desktop pages and 87% of mobile pages, `opsz` on 5% and 4% respectively, `wdth` on 5% and 4%, `slnt` on 3% and 2%, `ital` on 2% and 1%, and finally `GRAD` is used on 1% of desktop and mobile pages.",
+  caption="Uso degli assi con la proprietà font-variation-settings.",
+  description="L'istogramma mostra che `wght` è utilizzato nel'82% delle pagine desktop e nel'87% delle pagine mobili, `opsz` rispettivamente nel 5% e nel 4%, `wdth` nel 5% e 4%, `slnt` nel 3% e 2 %, `ital` nel 2% e 1% e infine `GRAD` viene utilizzato nell'1% delle pagine desktop e mobili.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=2021084759&format=interactive",
   sheets_gid="1634075051",
-  sql_file="variable_font_axes_css.sql"
+  sql_file="variable_font_axis_css.sql"
   )
 }}
 
-So, how are people using variable fonts? Not surprisingly the weight axis is the most popular value used with the `font-variation-settings` property, followed by optical sizes, width, slant, italic, and grades.
+Quindi, le persone come stanno usando i font variabili? Non sorprende che sia l'asse del peso il valore più utilizzato con la proprietà `font-variation-settings`, seguito da dimensioni ottiche (opsz), larghezza (wdth), inclinazione (slnt), corsivo (ital) e gradi (GRAD).
 
-This somewhat surprised us, because there is no need to use the low-level `font-variation-settings` property to set a custom weight axis value. You can simply use the `font-weight` property with a custom value, for example, `font-weight: 550` for a weight between 500 and 600.
+Questo in qualche modo ci ha sorpreso, perché non è necessario utilizzare la proprietà di basso livello `font-variation-settings` per impostare un valore personalizzato per l'asse del peso. Si può semplicemente utilizzare la proprietà `font-weight` con un valore personalizzato, ad esempio `font-weight: 550` per uno spessore a metà tra 500 e 600.
 
 {{ figure_markup(
   image="popular-variable-font-weight-values.png",
-  caption="Popular variable font weight values.",
-  description="Bar chart showing a font-weight of `400` is used on 22% of desktop pages using variable fonts and 23% of mobile pages using variable fonts, `600` on 22% of both, `700` on 21% of desktop and 22% of mobile pages, `300` on 19% and 21% respectively, `500` on 4% and 3%, `800` on 2% of both pages, `550` on 2% of desktop and 1% of mobile pages, `900` on 1% of both, `200` on 1% of both, and finally `450` on 1% of both desktop and mobile pages.",
+  caption="Valori più diffusi per il peso dei font variabili.",
+  description="Il grafico a barre mostra che uno peso del font di `400` viene utilizzato nel 22% delle pagine desktop che utilizzano font variabili e nel 23% delle pagine mobili che utilizzano font variabili, `600` nel 22% di entrambi, `700` nel 21% di desktop e 22% delle pagine mobili, `300` rispettivamente nel 19% e 21%, `500` nel 4% e 3%, `800` nel 2% di entrambi i tipi di pagine, `550` nel 2% su desktop e 1% sulle pagine mobili, `900` nell'1% di entrambi, `200` nell'1% di entrambi e infine `450` nell'1% di entrambi i tipi di pagine: desktop e mobili.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=1275376550&format=interactive",
   sheets_gid="1634075051",
-  sql_file="variable_font_axes_css.sql",
+  sql_file="variable_font_axis_css.sql",
   width=600,
   height=401
   )
 }}
 
-Even more puzzling is that the most popular weight axis values are the "default" CSS weight values that have been around since the early days of CSS! Only 16% of the weight values are custom values along the weight range.
+Ancora più sconcertante è notare che i valori dell'asse del peso più popolari sono i valori di peso CSS "di default" che esistono sin dagli esordi dei CSS! Solo il 16% dei valori di peso sono valori personalizzati lungo la gamma dei pesi.
 
-The most popular "custom" weight value is `550` at only 1.5% of use, followed by `450` at 1% use. Similar results can be seen for the optical size, width, italic, and slant axes, which can be set using the high-level `font-optical-sizing`, `font-stretch`, and `font-style` properties. Using the higher level properties will make your CSS more readable and avoid accidentally disabling an axis—a common source of errors with the low-level property.
+Il peso "personalizzato" più popolare è `550` con solo l'1,5% di utilizzo, seguito da `450` con l'1% di utilizzo. Risultati simili possono essere osservati per gli assi della dimensione ottica, della larghezza, dell corsivo e dell'inclinazione, che possono essere impostati utilizzando le proprietà di alto livello `font-optical-sizing`, `font-stretch` e `font-style`. L'uso delle proprietà di alto livello rende il CSS più leggibile ed evita la disabilitazione accidentale di un asse, errore comune con la proprietà di basso livello.
 
-One of the highly promoted benefits of variable fonts is animating one or multiple axes. Despite the high usage of variable fonts, very few people are actually animating them through CSS transitions or keyframes. Out of the entire HTTP Archive dataset, only a couple hundred websites do any sort of animation involving variable fonts.
+Uno dei vantaggi maggiormente sbandierati dei font variabili è la possibilità di animazione di uno o più assi. Nonostante l'elevato utilizzo di font variabili, pochissime persone li stanno effettivamente animando tramite transizioni CSS o fotogrammi chiave. Dell'intero set di dati dell'HTTP Archive, solo un paio di centinaia di siti web eseguono un qualche tipo di animazione che coinvolge font variabili.
 
-To us, it appears that variable fonts are primarily used for their performance benefits, and less so for their ability to make typographic adjustments. While that's great, we do hope to see more people use variable fonts to their full typographic potential in the coming years.
+A noi sembra che i font variabili siano usati principalmente per un vantaggio in termini di prestazioni e meno per la loro capacità di apportare regolazioni tipografiche. Anche se le prestazioni sono un ottimo motivo, speriamo di vedere più persone utilizzare i font variabili al massimo del loro potenziale tipografico nei prossimi anni.
 
-## Color fonts
+## Font a colori (<i lang="en">Color fonts</i>)
 
-Color fonts are pretty much what you would expect: fonts with built in colors. Though the technology was originally created for emoji fonts, there are now more text color fonts than emoji fonts.
+I font a colori sono più o meno quello che ci si potrebbe aspettare: font con colori incorporati. Sebbene la tecnologia sia stata originariamente creata per i font emoji, ora ci sono più font di testo a colori rispetto ai font emoji.
 
 {{ figure_markup(
   image="color-font-usage.png",
-  caption="Color font usage.",
-  description="Column chart showing that in 2020 color fonts were used on 0.005% of desktop pages and 0.004% of mobile pages, 2021 on 0.013% and 0.015% respectively, 2022 on 0.015% of desktop and 0.018% of mobile pages..",
+  caption="Uso dei font a colori.",
+  description="Il grafico a colonne mostra che nel 2020 i font a colori sono stati utilizzati nello 0,005% delle pagine desktop e nello 0,004% delle pagine mobili, nel 2021 rispettivamente nello 0,013% e nello 0,015%, nel 2022 nello 0,015% delle pagine desktop e nello 0,018% delle pagine mobili.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=1366906842&format=interactive",
   sheets_gid="1630630917",
   sql_file="color_font_usage.sql"
   )
 }}
 
-Color fonts usage has grown quite a bit since the last Fonts chapter in 2020. Usage went from 0.004% of pages using color fonts in 2020 to about 0.018% in 2022. While those numbers are still very small, there is a clear growth in their usage.
+L'utilizzo dei caratteri a colori è cresciuto un po' dall'ultimo capitolo sui Font del 2020. L'utilizzo è passato dallo 0,004% delle pagine che utilizzavano font a colori nel 2020 a circa lo 0,018% nel 2022. Sebbene questi numeri siano ancora minimi, c'è una chiara crescita nell’utilizzo.
 
-However, compared to the growth in variable font usage, the limited uptake of color fonts is somewhat disappointing. While color fonts are a relatively new addition to the OpenType specification (2015), variable fonts are an even more recent addition (2016).
+Tuttavia, rispetto alla crescita nell'utilizzo dei font variabili, l'adozione limitata dei caratteri a colori è alquanto deludente. Se è vero che i font a colori sono un'aggiunta relativamente nuova alla specifica OpenType (2015), è vero anche che i font variabili sono un'aggiunta ancora più recente (2016).
 
-The primary factors that have severely hindered color font adoption (and might continue to do so) is the ongoing standards "battle" for _the one true color font format_, and the lack of support in browsers for the CSS that allows you to select and edit color font palettes—until recently.
+I fattori principali che hanno fortemente ostacolato l'adozione dei font a colori (e potrebbero continuare a farlo) sono da una parte l’infinita "battaglia" sullo standard per il _formato definitivo dei font a colori_, dall’altra la mancanza di supporto dei browser per il CSS che consente di selezionare e modificare le _font palettes_ (tavolozze colori dei font), almeno fino a poco tempo fa.
 
-There are currently four competing color font formats: two based on vector outlines (`SVG` and `COLR`) and two on images (`CBDT` and `sbix`). The `COLR` format re-uses the existing glyph outline and adds solid colors and layering to them. The most recent version, dubbed `COLRv1` introduced gradients, compositing and blending modes as well. Due to its re-use of existing glyph outlines, the `COLR` format also supports variable fonts, so you can have <a hreflang="en" href="https://www.typearture.com/variable-fonts/">animated color fonts</a>. The `SVG` format takes a different approach and essentially embeds an SVG image for each glyph in the font. Unfortunately, the `SVG` format does not support variable fonts, and is unlikely to do so in the future. Both `CBDT` and `sbix` embed images for each glyph and they only differ in the supported image formats.
+Attualmente ci sono quattro formati di font a colori concorrenti: due basati su contorni vettoriali (`SVG` e `COLR`) e due basati su immagini (`CBDT` e `sbix`). Il formato `COLR` riutilizza il contorno esistente del glifo  per aggiungere dei colori solidi e dei livelli. La versione più recente, soprannominata `COLRv1`, ha introdotto inoltre i gradienti e delle modalità di composizione e fusione dei livelli. Grazie al riutilizzo dei contorni esistenti dei glifi, il formato `COLR` supporta anche i font variabili, quindi si possono avere <a hreflang="en" href="https://www.typearture.com/variable-fonts/">font a colori animati</a>. Il formato `SVG` adotta un approccio diverso ed essenzialmente incorpora nel font un'immagine SVG per ciascun glifo. Sfortunatamente, il formato `SVG` non supporta i font variabili ed è improbabile che lo faccia in futuro. Sia `CBDT` che `sbix` incorporano immagini per ciascun glifo e differiscono fra loro solo per i formati di immagine supportati.
 
 {{ figure_markup(
   image="color-font-formats.png",
-  caption="Color font formats.",
-  description="Pie chart showing SVG is the color font used on 74.2% of the time on mobile, COLRv0 is 22.8%, CBDT 2.5%, sbix 0.2% and finally COLRv1 also 0.2%..",
+  caption="I formati dei font a colori.",
+  description="Il grafico a torta mostra che SVG è il font a colori utilizzato il 74,2% delle volte sui dispositivi mobili, COLRv0 il 22,8%, CBDT il 2,5%, sbix lo 0,2% e infine COLRv1 anche lui lo 0,2% delle volte.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=2109618513&format=interactive",
   sheets_gid="1976816146",
   sql_file="color_fonts.sql"
   )
 }}
 
-Taking a look at usage data paints an interesting picture: 79% of color font usage is using `SVG`, 19% uses `COLRv0`, and 2% uses `CBDT`.
+Dando uno sguardo ai dati di utilizzo vediamo un quadro interessante: il 79% degli impieghi dei font a colori usa il formato `SVG`, il 19% adopera `COLRv0` e il 2% utilizza `CBDT`.
 
-We can safely conclude that the image based formats are not popular, and for good reasons: the embedded images don't scale well, and their file sizes are not appropriate for web usage.
+Possiamo dunque sicuramente concludere che i formati basati su immagini non sono popolari, e per buoni motivi: le immagini incorporate non si ridimensionano bene e il peso dei file non è appropriato per l'utilizzo sul web.
 
-The split between the vector color font formats however is more nuanced. While `SVG` seems to have the upper hand at the moment, `COLR` still has significant usage. The `COLR` format has a lot going for it: it is supported by all browsers, it can be used in variable fonts, and it is easy to implement. For those reasons alone, we expect it to become the most popular format. A more cynical take is that it will become the most popular format because Google is <a hreflang="en" href="https://bugs.chromium.org/p/chromium/issues/detail?id=306078">refusing to implement `SVG` support in Chrome and Android</a>. Interestingly, <a hreflang="en" href="https://lists.webkit.org/pipermail/webkit-dev/2021-March/031765.html">Apple is refusing to implement `COLRv1`</a>, because a lot of `COLRv1` features are already supported by the `SVG` format. Unfortunately, web developers are caught in the middle of this "color fonts war". We hope this situation is soon resolved and we can all start using color fonts.
+Anche se la divisione tra i formati vettoriali dei font a colori è più sfumata. Mentre `SVG` sembra avere il sopravvento al momento, `COLR` ha comunque un utilizzo significativo. Il formato `COLR` ha molto da offrire: è supportato da tutti i browser, può essere utilizzato per i font variabili ed è facile da implementare. Se non altro per questi motivi, ci aspettiamo che diventi il formato più popolare. Una versione più cinica è che diventerà il formato più popolare perché Google si <a hreflang="en" href="https://bugs.chromium.org/p/chromium/issues/detail?id=306078">rifiuta di implementare il supporto `SVG` in Chrome e Android</a>. È interessante notare che <a hreflang="en" href="https://lists.webkit.org/pipermail/webkit-dev/2021-March/031765.html">Apple si rifiuta di implementare `COLRv1`</a>, perché molte funzionalità `COLRv1` sono già supportate dal formato `SVG`. Sfortunatamente, gli sviluppatori web sono immobilizzati nel mezzo di questa "guerra dei font a colori". Ci auguriamo che questa situazione si risolva presto per poter tutti iniziare ad utilizzare i font a colori.
 
-The CSS specification has been updated to support color fonts to allow <a hreflang="en" href="https://css-tricks.com/colrv1-and-css-font-palette-web-typography/">selection and customization of palettes</a>. Palettes are custom color schemes stored in the font by the type designer. The CSS `font-palette` property allows you to select a palette from the font and the `@font-palette-values` rule allows you to create new palettes or override existing ones. One of the more obvious use cases of this technology is to have light and dark mode palettes built right into the color font. There is a lot of unexplored potential there.
+La specifica CSS è stata aggiornata nel supporto ai font a colori in modo da consentire <a hreflang="en" href="https://css-tricks.com/colrv1-and-css-font-palette-web-typography/">la selezione e la personalizzazione delle tavolozze colori</a>. Le tavolozze colori (<i lang="en">color palettes</i>) sono schemi colore personalizzati memorizzati nel font dal type designer. La proprietà CSS `font-palette` consente di selezionare una tavolozza prevista dal font e la regola `@font-palette-values` permette di creare nuove tavolozze o sovrascrivere quelle esistenti. Uno dei casi d'uso più ovvi di questa tecnologia è avere le tavolozze delle modalità chiare e scure integrate direttamente nel font a colori. C'è un sacco di potenziale inesplorato da quelle parti.
 
 {{ figure_markup(
   image="bradley-initials.png",
-  caption='<a hreflang="en" href="https://tools.djr.com/misc/bradley-initials/">Bradley Initials</a> using COLR v1 and multiple palettes by <a hreflang="en" href="https://djr.com/">David Jonathan Ross</a>.',
-  description="A specimen of the font Bradley Initials by David Jonathan Ross showing six different color palettes.",
+  caption='<a hreflang="en" href="https://tools.djr.com/misc/bradley-initials/">Bradley Initials</a>, di <a hreflang="en" href="https://djr.com/">David Jonathan Ross</a>, utilizza COLR v1 e tavolozze multiple.',
+  description="Uno specimen del carattere Bradley Initials di David Jonathan Ross che mostra sei diverse tavolozze colore.",
   width=1911,
   height=1142
   )
 }}
 
-Unfortunately, usage of these CSS properties is currently nonexistent. This is likely because support for these properties was only recently added to browsers combined with the limited number of color fonts.
+Sfortunatamente, l'utilizzo di queste proprietà CSS è attualmente inesistente. Ciò è probabilmente dovuto al fatto che il supporto per queste proprietà è stato aggiunto solo di recente ai browser, in combinazione con il numero limitato di font a colori disponibili.
 
-One of the main drivers behind the development of color font technology was emoji. However, there are only a couple dozen web fonts that have color emoji. Most color fonts are for writing text, not emoji. There could be several explanations for this:
+Uno dei principali fattori alla base dello sviluppo della tecnologia dei font a colori sono stati gli emoji. Tuttavia, ci sono solo un paio di dozzine di web font che hanno emoji a colori. La maggior parte dei font a colori serve per scrivere testo, non emoji. Potrebbero esserci diverse spiegazioni per questo:
 
-- Every OS already includes their own color emoji font, so users don't feel the need to use anything else.
-- There are a large number of emoji and it takes a lot of effort—and money—to create fonts for them.
-- Emoji fonts are generally quite large and not as suitable as web fonts.
+- Ogni sistema operativo include già il proprio font emoji a colori, quindi gli utenti non sentono il bisogno di usarne altri.
+- Ci sono tantissimi emoji e ci vuole molto impegno, e denaro, per creare font con emoji.
+- I font con emoji sono generalmente abbastanza grandi e dunque non adatti come web font.
 
-Still, it would be nice to see some more diversity in emoji fonts. With the introduction of the COLR v1 format we're likely to see more emoji fonts in the future.
+Ad ogni modo, sarebbe bello vedere un po' più di diversità nei font di emoji. Con l'introduzione del formato COLR v1 è probabile che in futuro vedremo più font di emoji.
 
-Again, all of this is based on very low usage numbers, but there appear to be some developing trends. We're not quite ready to declare 2023 the year of color fonts, but it seems clear we'll see significant color font growth in the coming years, especially as the industry settles on a single recommended color font format and browser support for color fonts improves. Google Fonts has also just <a hreflang="en" href="https://material.io/blog/color-fonts-are-here">added the first batch of color fonts</a> to their library, which will surely have an impact.
+Lo ripeto: tutto ciò si basa su numeri di utilizzo molto bassi, ma sembrano esserci alcune tendenze in via di sviluppo. Non siamo ancora pronti per dichiarare il 2023 l'anno dei font a colori, ma sembra chiaro che vedremo una crescita significativa dei font a colori nei prossimi anni, soprattutto se l'industria si accorda su un unico formato di font a colori e se migliora il supporto del browser per i font a colori. Google Fonts ha anche appena aggiunto alla propria libreria <a hreflang="en" href="https://material.io/blog/color-fonts-are-here">il primo lotto di font a colori</a>, il che avrà sicuramente un impatto.
 
-## Conclusion
+## Conclusione
 
-Looking back over this chapter and the previous years it stands out to us how much of an impact web font services have had—and likely will continue to have. For example, Google Fonts alone is responsible for most of web font usage, most of the popular web fonts, and most of variable fonts usage. That's an impressive feat.
+Riguardando questo capitolo e i capitoli degli anni precedenti, risulta evidente l'impatto che i servizi di web font hanno avuto e probabilmente continueranno ad avere. Ad esempio, Google Fonts da solo ha causato la maggior parte di utilizzi dei web font, ha messo in campo la maggior parte dei web font più diffusi e servito la maggior parte dei font variabili. È un'impresa impressionante.
 
-While we strongly believe that self-hosting is the future for web fonts, it can not be denied that using a web font service makes a lot of sense for a lot of developers. They are easy to use, provide good out-of-the-box performance—though not the best—and for the most part you do not need to worry about font licensing. It is a good tradeoff.
+Anche se crediamo fermamente che il self-hosting sia il futuro per i web font, non si può negare che l'utilizzo di un servizio di web font abbia molto senso per molti sviluppatori. Sono facili da usare, offrono delle buone prestazioni pronte all'uso, anche se non le migliori, e sostanzialmente non occorre preoccuparsi delle licenze dei font. È un buon compromesso.
 
-On the other hand, self-hosting is now easier than ever, and will give you the best performance, more control, and no privacy headaches. If you plan to self-host, be sure to use WOFF2, resource hints, and `font-display`. Combined, they will have the biggest impact on the font loading performance of your site.
+D'altra parte, il self-hosting ora è più facile di quanto non lo sia mai stato e offre le migliori prestazioni, un maggior controllo e nessun problema di privacy. Se pensiamo di pubblicare i font in self-hosting, assicuriamoci di utilizzare WOFF2, i suggerimenti per le risorse e `font-display`. La combinazione di questi tre fattori avrà il maggiore impatto possibile sulle prestazioni del caricamento dei font del sito.
 
-Variable fonts have taken off in a spectacular fashion in the last couple of years—thanks Google! While most people seem to be using them for performance reasons, we believe this is a case where adoption will drive innovation. We can't wait to see what kind of fun and downright crazy typography we'll see in the coming years.
+I font variabili sono decollati in modo spettacolare negli ultimi due anni - grazie Google! Sebbene la maggior parte delle persone sembri utilizzarli per motivi di prestazioni, riteniamo che questo sia un caso in cui l'adozione guiderà l'innovazione. Non vediamo l'ora di vedere che tipo di tipografia divertente e sicuramente pazzesca emergerà nei prossimi anni.
 
-We're cautiously optimistic about color fonts as well. Usage is finally growing. The technology has been there for a while, but the disagreements over color font formats and the limited CSS support have hindered adoption. We hope these will be resolved soon and we'll start seeing some real growth.
+Siamo cautamente ottimisti anche sui font a colori. L'utilizzo è finalmente in aumento. La tecnologia esiste da un po', ma i disaccordi sui formati dei font a colori e il limitato supporto CSS ne hanno ostacolato l'adozione. Ci auguriamo che questi problemi vengano risolti presto e che inizieremo a vedere una vera crescita.
 
-It is clear that web font usage will continue to grow and evolve over time. We're curious to see what the future holds. Technologies like <a hreflang="en" href="https://www.w3.org/TR/IFT/">Incremental Font Transfer</a> will unlock web fonts for more writing systems, enabling billions of people to start using web fonts for the first time. That's exciting!
+È chiaro che l'utilizzo dei font web continuerà a crescere e ad evolvere nel tempo. Siamo curiosi di vedere cosa ci riserva il futuro. Tecnologie come <a hreflang="en" href="https://www.w3.org/TR/IFT/">Incremental Font Transfer</a> (trasferimento incrementale dei font) sbloccheranno i web font per un maggior numero di sistemi di scrittura, consentendo a miliardi di persone di iniziare a utilizzare i web font per la prima volta. Questo futuro è eccitante!
