@@ -969,7 +969,7 @@ The Kendall and Spearman coefficients of correlation for this distribution are 0
   <p>First, is INP correlated with TBT? Is it more correlated with TBT than FID? Yes and yes!</p>
   <p>But they are both correlated with TBT; is INP catching more problems with main thread blocking JavaScript? We can break down the percent of sites meeting the "good" threshold: yes it is!</p>
   </blockquote>
-  <figcaption>—Annie Sullivan on [Twitter](https://twitter.com/anniesullie/status/1525161893450727425)</figcaption>
+  <figcaption>—Annie Sullivan on <a href="https://twitter.com/anniesullie/status/1525161893450727425">Twitter</a></figcaption>
 </figure>
 
 As Annie notes, both metrics are correlated with TBT, but she concludes that INP is more strongly correlated, making it a better responsiveness metric.
