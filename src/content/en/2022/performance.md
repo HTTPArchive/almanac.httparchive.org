@@ -55,7 +55,7 @@ In 2021, 29% of websites were assessed as having good CWV for mobile users. This
 
 44% of websites have good CWV on desktop. While this is better than mobile, the rate of improvement for desktop experiences is not as rapid as mobile, so the gap is closing.
 
-There are a few possible explanations for why mobile experiences tend to be worse than desktop. While the portability of a pocket-sized computer is a great convenience, it may have adverse effects on the user experience. As described in the <a hreflang="en" href="./mobile-web#mobile-performance">Mobile Web</a> chapter, the smaller form factor has an impact on the amount of processing power that can be packed in, which is further constrained by the high cost to own more powerful phones. Devices with poorer processing capabilities take longer to perform the computations needed to render a web page.  The portability of these devices also means that they can be taken into areas with poor connectivity, which hinders websites' loading speeds. One final consideration is the way that developers decide how to build websites. Rather than creating a mobile-friendly version of the page, some websites may be serving desktop-sized images or unnecessary amounts of scripting functionality. All of these things put mobile users at a disadvantage compared to desktop users and may help to explain why their CWV performance is lower.
+There are a few possible explanations for why mobile experiences tend to be worse than desktop. While the portability of a pocket-sized computer is a great convenience, it may have adverse effects on the user experience. As described in the [Mobile Web](./mobile-web#mobile-performance) chapter, the smaller form factor has an impact on the amount of processing power that can be packed in, which is further constrained by the high cost to own more powerful phones. Devices with poorer processing capabilities take longer to perform the computations needed to render a web page.  The portability of these devices also means that they can be taken into areas with poor connectivity, which hinders websites' loading speeds. One final consideration is the way that developers decide how to build websites. Rather than creating a mobile-friendly version of the page, some websites may be serving desktop-sized images or unnecessary amounts of scripting functionality. All of these things put mobile users at a disadvantage compared to desktop users and may help to explain why their CWV performance is lower.
 
 Many more websites were assessed as having good CWV in 2022 relative to 2021. But how evenly distributed was that improvement across the web?
 
@@ -137,7 +137,7 @@ These performance improvements may not actually be due to changes to the website
 
 #### Render-blocking resources
 
-A page is considered to have render-blocking resources if resources hold up the initial paint (or render) of the page. This is particularly likely for critical scripts and styles that are loaded over the network. Lighthouse includes an <a hreflang="en" href="https://web.dev/render-blocking-resources/">audit</a> that checks for these resources, which we've run on the home page of each website in CrUX. You can learn more about how we test these pages in our <a hreflang="en" href="./methodology">Methodology</a>.
+A page is considered to have render-blocking resources if resources hold up the initial paint (or render) of the page. This is particularly likely for critical scripts and styles that are loaded over the network. Lighthouse includes an <a hreflang="en" href="https://web.dev/render-blocking-resources/">audit</a> that checks for these resources, which we've run on the home page of each website in CrUX. You can learn more about how we test these pages in our [Methodology](./methodology).
 
 {{ figure_markup(
   image="pages-passing-render-blocking-resources-audit.png",
@@ -330,7 +330,7 @@ WordPress was one of the pioneers of native lazy-loading adoption, and between v
   )
 }}
 
-According to the <a hreflang="en" href="./cms">CMS</a> chapter, WordPress is used by 35% of pages. So it's surprising to see that 72% of pages that use native lazy-loading on their LCP image are using WordPress, given that a fix has been available since January 2022 in version 5.9. One theory that needs more investigation is that plugins may be circumventing the safeguards built into WordPress core by injecting LCP images onto the page with the lazy-loading behavior.
+According to the [CMS](./cms) chapter, WordPress is used by 35% of pages. So it's surprising to see that 72% of pages that use native lazy-loading on their LCP image are using WordPress, given that a fix has been available since January 2022 in version 5.9. One theory that needs more investigation is that plugins may be circumventing the safeguards built into WordPress core by injecting LCP images onto the page with the lazy-loading behavior.
 
 {{ figure_markup(
   content="54%",
@@ -370,7 +370,7 @@ Desktop pages tend to have larger LCP images across the distribution, with a med
   )
 }}
 
-We also looked at the largest LCP image sizes and found a 68,607 KB image on desktop and 114,285 KB image on mobile. While it can be fun to look at how obscenely large these outliers are, let's keep in mind the unfortunate reality that these are active websites visited by real users. Data isn't always free, and performance problems like these start to become <a hreflang="en" href="./accessibility">accessibility</a> problems for users on metered mobile data plans. These are also <a hreflang="en" href="./sustainability">sustainability</a> problems considering how much energy is wasted loading blatantly oversized images like these.
+We also looked at the largest LCP image sizes and found a 68,607 KB image on desktop and 114,285 KB image on mobile. While it can be fun to look at how obscenely large these outliers are, let's keep in mind the unfortunate reality that these are active websites visited by real users. Data isn't always free, and performance problems like these start to become [accessibility](./accessibility) problems for users on metered mobile data plans. These are also [sustainability](./sustainability) problems considering how much energy is wasted loading blatantly oversized images like these.
 
 {{ figure_markup(
   image="lcp-image-size-histogram.png",
@@ -384,11 +384,11 @@ We also looked at the largest LCP image sizes and found a 68,607 KB image on des
 
 Looking at it a different way, the figure above shows the distribution as a histogram in 100 KB increments. This view makes it clearer to see how LCP image sizes fall predominantly in the sub-200 KB range. We also see that 5% of LCP images on mobile are greater than 1,000 KB in size.
 
-How large an LCP image should _optimally_ be depends on many factors. But the fact that 1 in 20 websites are serving megabyte-sized images to our <a hreflang="en" href="./methodology#webpagetest">360px-wide</a> mobile viewports clearly highlights the need for site owners to embrace [responsive images](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images). For more analysis on this topic, refer to the <a hreflang="en" href="./media#srcset">Media</a> and <a hreflang="en" href="./mobile-web#responsive-images">Mobile Web</a> chapters.
+How large an LCP image should _optimally_ be depends on many factors. But the fact that 1 in 20 websites are serving megabyte-sized images to our [360px-wide](./methodology#webpagetest) mobile viewports clearly highlights the need for site owners to embrace [responsive images](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images). For more analysis on this topic, refer to the [Media](./media#srcset) and [Mobile Web](./mobile-web#responsive-images) chapters.
 
 #### LCP format
 
-Choice of LCP image format can have <a hreflang="en" href="./media#bits-per-pixel-by-format">significant effects</a> on its byte size and ultimately its loading performance. WebP and AVIF are two relatively newer formats that are found to be more efficient than traditional formats like JPG (or JPEG) and PNG.
+Choice of LCP image format can have [significant effects](./media#bits-per-pixel-by-format) on its byte size and ultimately its loading performance. WebP and AVIF are two relatively newer formats that are found to be more efficient than traditional formats like JPG (or JPEG) and PNG.
 
 {{ figure_markup(
   image="lcp-image-formats.png",
@@ -400,7 +400,7 @@ Choice of LCP image format can have <a hreflang="en" href="./media#bits-per-pixe
   )
 }}
 
-According to the <a hreflang="en" href="./media#format-adoption">Media</a> chapter, the JPG format makes up about 40% of all images loaded on mobile pages. However, JPG makes up 67% of all LCP images on mobile, which is 2.5x more common than PNG at 26%. These results may hint at a tendency for pages to use photographic-quality images as their LCP resource rather than digital artwork, as photographs tend to compress better as JPG compared to PNG, but this is just speculation.
+According to the [Media](./media#format-adoption) chapter, the JPG format makes up about 40% of all images loaded on mobile pages. However, JPG makes up 67% of all LCP images on mobile, which is 2.5x more common than PNG at 26%. These results may hint at a tendency for pages to use photographic-quality images as their LCP resource rather than digital artwork, as photographs tend to compress better as JPG compared to PNG, but this is just speculation.
 
 4% of pages with image-based LCP use WebP. This is good news for image efficiency, however less than 1% are using AVIF. While AVIF may compress even better than WebP, it's not supported in all modern browsers, which explains its low adoption. On the other hand, WebP _is_ supported in all modern browsers, so its low adoption represents a major opportunity to optimize LCP images and their performance.
 
@@ -438,7 +438,7 @@ However, LCP images may be loaded from other origins, like asset domains and ima
   )
 }}
 
-One in five mobile pages cross-host their LCP images. The time to set up the connection to these third-party hosts could add unnecessary delays to the LCP time. It's best practice to self-host LCP images on the same origin as the document, whenever possible. <a hreflang="en" href="../2021/resource-hints">Resource hints</a> could be used to preconnect to the LCP origin—or better yet, preload the image itself—but these techniques are not very widely adopted.
+One in five mobile pages cross-host their LCP images. The time to set up the connection to these third-party hosts could add unnecessary delays to the LCP time. It's best practice to self-host LCP images on the same origin as the document, whenever possible. [Resource hints](../2021/resource-hints) could be used to preconnect to the LCP origin—or better yet, preload the image itself—but these techniques are not very widely adopted.
 
 <figure>
   <table>
@@ -511,7 +511,7 @@ One in five mobile pages cross-host their LCP images. The time to set up the con
   </figcaption>
 </figure>
 
-CMSs make up the most common hosts of cross-origin LCP images, which isn't too surprising given their popularity. What's interesting is that Shopify's domain accounts for 11% of all cross-origin images, even though it's only used by about 3% of websites, according to last year's <a hreflang="en" href="../2021/ecommerce">Ecommerce</a> chapter. Other CMSs like Wix, Blogger, WordPress, and Squarespace also appear in the list.
+CMSs make up the most common hosts of cross-origin LCP images, which isn't too surprising given their popularity. What's interesting is that Shopify's domain accounts for 11% of all cross-origin images, even though it's only used by about 3% of websites, according to last year's [Ecommerce](../2021/ecommerce) chapter. Other CMSs like Wix, Blogger, WordPress, and Squarespace also appear in the list.
 
 It's promising that these CMSs are in control over where and how LCP images are served, but it could be a major effort to switch to a same-origin solution. Cross-origin preconnecting and preloading may be the next best things.
 
@@ -671,7 +671,7 @@ In the page load process, it can take some time for the browser to discover, req
   )
 }}
 
-One way to avoid font-induced layout shifts is to use [`font-display: optional`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display), which will never swap in a web font after the system text has already been shown. However, as noted by the <a hreflang="en" href="./fonts#font-display">Fonts</a> chapter, less than 1% of pages are taking advantage of this directive.
+One way to avoid font-induced layout shifts is to use [`font-display: optional`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display), which will never swap in a web font after the system text has already been shown. However, as noted by the [Fonts](./fonts#font-display) chapter, less than 1% of pages are taking advantage of this directive.
 
 Even though `optional` is good for CLS, there are UX tradeoffs. Site owners might be willing to have some layout instability or a noticeable flash of unstyled text (FOUT) if it means that their preferred font can be displayed to users.
 
@@ -687,7 +687,7 @@ Rather than hiding the web fonts, another strategy to mitigate CLS is to load th
   )
 }}
 
-According to the <a hreflang="en" href="./fonts#resource-hints">Fonts</a> chapter, 20% of mobile pages are preloading their web fonts. One challenge with preloading the font is that the exact URL may not be known upfront, for example if using a service like Google Fonts. Preconnecting to the font host is the next best option for performance, but only 16% of pages are using that, which is half as many pages that use the less-performant option to prefetch the DNS.
+According to the [Fonts](./fonts#resource-hints) chapter, 20% of mobile pages are preloading their web fonts. One challenge with preloading the font is that the exact URL may not be known upfront, for example if using a service like Google Fonts. Preconnecting to the font host is the next best option for performance, but only 16% of pages are using that, which is half as many pages that use the less-performant option to prefetch the DNS.
 
 #### bfcache eligibility
 
@@ -749,7 +749,7 @@ There are other, more direct ways site owners can improve their CLS. Setting hei
 
 A website has "good" FID if at least 75 percent of all navigations across the site are faster than 100 ms. Effectively all websites have "good" FID for desktop users, and this trend has held firm over the years. Mobile FID performance is also exceptionally fast, with 92% of websites having "good" FID, a slight improvement over last year.
 
-While it's great that so many websites have good FID experiences, developers need to be careful not to become too complacent. Google has been <a hreflang="en" href="https://web.dev/better-responsiveness-metric/">experimenting</a> with a new responsiveness metric that could end up replacing FID, which is especially important because sites tend to perform much worse on <a hreflang="en" href="./#interaction-to-next-paint-inp">this metric</a> than FID.
+While it's great that so many websites have good FID experiences, developers need to be careful not to become too complacent. Google has been <a hreflang="en" href="https://web.dev/better-responsiveness-metric/">experimenting</a> with a new responsiveness metric that could end up replacing FID, which is especially important because sites tend to perform much worse on [this metric](./#interaction-to-next-paint-inp) than FID.
 
 ### FID metadata and best practices
 
@@ -796,7 +796,7 @@ TBT is often used as a lab-based proxy for FID, due to the challenges of realist
 
 Note that these results are sourced from the lab-based TBT performance of pages in the HTTP Archive dataset. This is an important distinction because for the most part we've been looking at real-user performance data from the CrUX dataset.
 
-With that in mind, we see that mobile pages have significantly worse TBT than desktop pages. This isn't surprising given that our <a hreflang="en" href="./methodology#lighthouse">Lighthouse</a> mobile environment is intentionally configured to run with a throttled CPU in a way that emulates a low-end mobile device. Nevertheless, the results show that the median mobile page has a TBT of 1.7 seconds, meaning that if this were a real-user experience, no taps within 1.7 seconds of FCP would be responsive. At the 90th percentile, a user would have to wait 6.3 seconds before the page became responsive.
+With that in mind, we see that mobile pages have significantly worse TBT than desktop pages. This isn't surprising given that our [Lighthouse](./methodology#lighthouse) mobile environment is intentionally configured to run with a throttled CPU in a way that emulates a low-end mobile device. Nevertheless, the results show that the median mobile page has a TBT of 1.7 seconds, meaning that if this were a real-user experience, no taps within 1.7 seconds of FCP would be responsive. At the 90th percentile, a user would have to wait 6.3 seconds before the page became responsive.
 
 Despite the fact that these results come from synthetic testing, they're based on the actual JavaScript served by real websites. If a real user on similar hardware tried to access one of these sites, their TBT might not be too different. That said, the key difference between TBT and FID is that the latter relies on the user actually interacting with the page, which they can do at any time before, during, or after the TBT window, all leading to vastly different FID values.
 
@@ -923,7 +923,7 @@ In this chart we're looking at the percent of a given technology's websites that
 
 Two things jump out in this chart: 1C-Bitrix and Pixnet, which are CMSs and would have an enormous proportion of their websites ceasing to pass the CWV assessment with INP. Pixnet stands to lose 86% of its websites, down from 98% to 13%! The passing rate for 1C-Bitrix would fall from 79% to 40%, a difference of 39%.
 
-11% of websites using the React framework would no longer pass CWV. Wix, which is now <a hreflang="en" href="./cms#most-popular-cmss">the second most popular CMS</a>, uses React. 15% of its websites would not have "good" CWV. Proportionally though, there would still be more Wix websites passing CWV than React websites overall, at 24% and 19% respectively, but INP would narrow that gap.
+11% of websites using the React framework would no longer pass CWV. Wix, which is now [the second most popular CMS](./cms#most-popular-cmss), uses React. 15% of its websites would not have "good" CWV. Proportionally though, there would still be more Wix websites passing CWV than React websites overall, at 24% and 19% respectively, but INP would narrow that gap.
 
 WordPress is the most popular technology in the list and 6% of its 2.3 million websites would no longer have "good" CWV. Its passing rate would fall from 30% to 24%.
 
