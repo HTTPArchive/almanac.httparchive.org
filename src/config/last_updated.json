@@ -154,18 +154,18 @@
   "/static/pdfs/web_almanac_2022_en.pdf": {
     "date_published": "2022-10-19T00:00:00.000Z",
     "date_modified": "2022-10-25T00:00:00.000Z",
-    "hash": "310912df2a17b626d3905b97eb9c2af1",
+    "hash": "cb86211d62ef141b1c57a1d9541ef756",
     "size": 32
   },
   "/static/pdfs/web_almanac_2022_en_cover_A5.pdf": {
     "date_published": "2022-10-19T00:00:00.000Z",
     "date_modified": "2022-10-25T00:00:00.000Z",
-    "hash": "1913b905c2f3c98e0f78a7572c360ed2"
+    "hash": "af6deadf4c5bba22dd23bfe0b67a9ebc"
   },
   "/static/pdfs/web_almanac_2022_en_print_A5.pdf": {
     "date_published": "2022-10-19T00:00:00.000Z",
     "date_modified": "2022-10-25T00:00:00.000Z",
-    "hash": "e4af9770a0e00ada3f65260838136639",
+    "hash": "451e6959c4aab9022d71603bb2c78d09",
     "size": 31
   },
   "en/2019/chapters/accessibility.html": {
@@ -686,7 +686,7 @@
   "en/2022/chapters/structured-data.html": {
     "date_published": "2022-10-25T00:00:00.000Z",
     "date_modified": "2022-10-25T00:00:00.000Z",
-    "hash": "9837f05e1117a6afcf407000f7109902"
+    "hash": "b64b8d23fd9cc88dc9ba3e6bcea09799"
   },
   "en/2022/chapters/sustainability.html": {
     "date_published": "2022-09-26T00:00:00.000Z",
