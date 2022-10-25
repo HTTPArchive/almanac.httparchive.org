@@ -674,6 +674,7 @@ ratatouille
 readible
 readonly
 realfavicongenerator
+rearchitecture
 rebeccapurple
 recaptcha
 recompress
