@@ -622,7 +622,7 @@ Tutti i valori più comunemente utilizzati per la proprietà `font-feature-setti
 {{ figure_markup(
   image="usage-of-css-font-variant-values.png",
   caption="Utilizzo dei valori della proprietà CSS font-variant.",
-  description="Il grafico a barre mostra che `font-variant: small-caps` viene utilizzato sull’1,5% delle pagine desktop e sull’1,4% delle pagine mobili, `font-variant: tabular-nums` rispettivamente sull’1,0% e 0,6%, `font-variant-numeric : tabular-nums` sullo 0,8% e 0,7%, `font-variant-ligatures: discretionary-ligatures` sullo 0,4% e 0,3%, `font-variant-ligatures: no-common-ligatures` sullo 0,3% e 0,3%, `font-variant-caps: all-small-caps` sullo 0,2% e 0,2%, `font-variant-numeric: lining-nums` sullo 0,2% e 0,2% e infine `font-variant-ligatures: common-ligatures ` sullo 0,1% delle pagine desktop e mobili.",
+  description="Il grafico a barre mostra che `font-variant: small-caps` viene utilizzato sull’1,5% delle pagine desktop e sull’1,4% delle pagine mobili, `font-variant: tabular-nums` rispettivamente sull’1,0% e 0,6%, `font-variant-numeric : tabular-nums` sullo 0,8% e 0,7%, `font-variant-ligatures: discretionary-ligatures` sullo 0,4% e 0,3%, `font-variant-ligatures: no-common-ligatures` sullo 0,3% e 0,3%, `font-variant-caps: all-small-caps` sullo 0,2% e 0,2%, `font-variant-numeric: lining-nums` sullo 0,2% e 0,2% e infine `font-variant-ligatures: common-ligatures` sullo 0,1% delle pagine desktop e mobili.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=682306512&format=interactive",
   sheets_gid="1231655846",
   sql_file="font_variant_values.sql",
