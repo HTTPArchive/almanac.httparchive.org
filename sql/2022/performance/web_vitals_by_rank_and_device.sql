@@ -74,6 +74,16 @@ SELECT
         IS_NON_ZERO(fast_lcp, avg_lcp, slow_lcp) AND
         IS_NON_ZERO(small_cls, medium_cls, large_cls), origin, NULL))) AS pct_cwv_good,
 
+  # Good CWV with optional INP (hypothetical!)
+  SAFE_DIVIDE(
+    COUNT(DISTINCT IF(
+        IS_GOOD(fast_inp, avg_inp, slow_inp) IS NOT FALSE AND
+        IS_GOOD(fast_lcp, avg_lcp, slow_lcp) AND
+        IS_GOOD(small_cls, medium_cls, large_cls), origin, NULL)),
+    COUNT(DISTINCT IF(
+        IS_NON_ZERO(fast_lcp, avg_lcp, slow_lcp) AND
+        IS_NON_ZERO(small_cls, medium_cls, large_cls), origin, NULL))) AS pct_cwv_inp_good,
+
   SAFE_DIVIDE(
     COUNT(DISTINCT IF(
         IS_GOOD(fast_lcp, avg_lcp, slow_lcp), origin, NULL)),

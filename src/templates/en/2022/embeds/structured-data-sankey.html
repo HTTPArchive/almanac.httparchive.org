@@ -1,0 +1,136 @@
+{% extends "base/embed.html" %}
+
+{% block title %}Structured Data : Sankey Chart | The Web Almanac by HTTP Archive{% endblock %}
+
+{% block description %}Sankey chart from 2022 Web Almanac Structure Data Chapter.{% endblock %}
+
+{% set metadata = {"authors":["cyberandy"]} %}
+
+{% block body %}
+<div id="sankey_basic"></div>
+
+<script nonce="{{ csp_nonce() }}" src="https://www.gstatic.com/charts/loader.js"></script>
+<script nonce="{{ csp_nonce() }}">
+  google.charts.load('current', {'packages':['sankey']});
+  google.charts.setOnLoadCallback(drawChart);
+
+  function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+      ['itemListElement',	'ListItem',	2153862],
+      ['potentialAction',	'SearchAction',	2111931],
+      ['isPartOf',	'WebSite',	1611856],
+      ['image',	'ImageObject',	1358125],
+      ['breadcrumb',	'BreadcrumbList',	1211986],
+      ['publisher',	'Organization',	1209225],
+      ['potentialAction',	'ReadAction',	1139849],
+      ['logo',	'ImageObject',	1132735],
+      ['target',	'EntryPoint',	1063790],
+      ['offers',	'Offer',	996856],
+      ['mainEntityOfPage',	'WebPage',	893661],
+      ['author',	'Person',	765984],
+      ['address',	'PostalAddress',	741875],
+      ['primaryImageOfPage',	'ImageObject',	625288],
+      ['about',	'Organization',	560684],
+      ['openingHoursSpecification',	'OpeningHoursSpecification',	515114],
+      ['seller',	'Organization',	509580],
+      ['weight',	'QuantitativeValue',	454596],
+      ['inventoryLevel',	'QuantitativeValue',	355967],
+      ['item',	'WebPage',	302333],
+      ['contactPoint',	'ContactPoint',	230747],
+      ['geo',	'GeoCoordinates',	219243],
+      ['location',	'Place',	211113],
+      ['hasMenuItem',	'MenuItem',	203653],
+      ['reviewRating',	'Rating',	199441],
+      ['brand',	'Thing',	194224],
+      ['inLanguage',	'Language',	192649],
+      ['review',	'Review',	171352],
+      ['acceptedAnswer',	'Answer',	123557],
+      ['mainEntity',	'Question',	122264],
+      ['isPartOf',	'WebPage',	110911],
+      ['aggregateRating',	'AggregateRating',	104664],
+      ['publisher	Person','Organization',	97082],
+      ['additionalProperty',	'PropertyValue',	73375],
+      ['brand',	'Brand',	62144],
+      ['worksFor',	'Organization',	49333],
+      ['about	Person', 'Organization',	49045],
+      ['organizer',	'Person',	46903],
+      ['screenshot',	'ImageObject',	46817],
+      ['item',	'Product',	46098],
+      ['makesOffer',	'Offer',	42893],
+      ['blogPost',	'BlogPosting',	40670],
+      ['offers',	'offer',	40544],
+      ['itemListElement',	'SiteNavigationElement',	39815],
+      ['sponsor',	'Person',	37504],
+      ['hasPart',	'SiteNavigationElement',	36255],
+      ['author',	'Organization',	32598],
+      ['offers',	'AggregateOffer',	31268],
+      ['department',	'Organization',	29914],
+      ['performers',	'MusicGroup',	29762],
+      ['height',	'QuantitativeValue',	29699],
+      ['width',	'QuantitativeValue',	29644],
+      ['publisher',	'Person',	29597],
+      ['hasMenuSection',	'MenuSection',	27553],
+      ['itemListElement',	'Offer',	27348],
+      ['associatedMedia',	'ImageObject',	26710],
+      ['organizer',	'Organization',	26140],
+      ['amenityFeature',	'LocationFeatureSpecification',	24688],
+      ['about',	'Person',	23609],
+      ['itemOffered',	'Service',	21051],
+      ['areaServed',	'City',	18304],
+      ['reviews',	'Review',	17701],
+      ['depth',	'QuantitativeValue',	16873],
+      ['performer',	'MusicGroup',	16569],
+      ['logo',	'imageObject',	16064],
+      ['addressCountry',	'Country',	15930],
+      ['potentialAction',	'ReserveAction',	13841],
+      ['itemReviewed',	'Restaurant',	13329],
+      ['department',	'AutoDealer',	13219],
+      ['comment',	'Comment',	13061],
+      ['itemReviewed',	'Organization',	12599],
+      ['result',	'Reservation',	12281],
+      ['performer',	'PerformingGroup',	11947],
+      ['memberOf',	'SportsOrganization',	11908],
+      ['photos',	'ImageObject',	11457],
+      ['location',	'PostalAddress',	11347],
+      ['potentialAction',	'SeekToAction',	10980],
+      ['parentOrganization',	'Organization',	10815],
+      ['performer',	'Person',	10711],
+      ['image',	'imageObject',	10187],
+      ['author',	'http://schema.org/Organization',	10163],
+      ['interactionStatistic',	'InteractionCounter',	10095],
+      ['areaServed',	'Place',	10088],
+      ['itemReviewed',	'LocalBusiness',	9340],
+      ['department',	'AutoRepair',	9297],
+      ['publisher',	'Organization',	9120],
+      ['item',	'WebSite',	8677],
+      ['item',	'SiteNavigationElement',	8247],
+      ['subOrganization',	'FoodEstablishment',	8178],
+      ['publisher',	'LocalBusiness',	7884],
+      ['hasPOS',	'Place',	7843],
+      ['publisher',	'organization',	7480],
+      ['homeTeam',	'SportsTeam',	7412],
+      ['awayTeam',	'SportsTeam',	7411],
+      ['itemReviewed',	'Thing',	7404],
+      ['founders',	'Person',	7098],
+      ['Events',	'Event',	6698],
+      ['department',	'AutoPartsStore',	6697],
+      ['subOrganization',	'EducationalOrganization',	6660],
+      ['mainEntity',	'MobileApplication',	6393]
+    ]);
+
+    // Sets chart options.
+    var options = {
+      width: 600,
+      height: 1200
+    };
+
+    // Instantiates and draws our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_basic'));
+    chart.draw(data, options);
+  }
+</script>
+{% endblock %}
