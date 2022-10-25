@@ -342,7 +342,7 @@ According to the [CMS](./cms) chapter, [WordPress is used by 35% of pages](./cms
   )
 }}
 
-Similarly, a disproportionately high percentage of pages that use custom lazy-loading are built with WordPress at 54%. This hints at a wider issue in the WordPress ecosystem about lazy-loading overuse. Rather than being a fixable bug localized to WordPress core, there may be hundreds or thousands of separate themes and plugins contributing to this antipattern.
+Similarly, a disproportionately high percentage of pages that use custom lazy-loading are built with WordPress at 54%. This hints at a wider issue in the WordPress ecosystem about lazy-loading overuse. Rather than being a fixable bug localized to WordPress core, there may be hundreds or thousands of separate themes and plugins contributing to this anti-pattern.
 
 #### LCP size
 
@@ -821,7 +821,7 @@ However, the disparity is much more dramatic among websites' mobile experiences,
 {{ figure_markup(
   image="cwv-fid-inp-rank.png",
   caption="Comparison of the percent of mobile websites having good mobile CWV with FID and INP, by rank.",
-  description="Bar char showing the percent of mobile websites assessed as having good CWV, with either FID or INP as the responsiveness metric. 52% of the 1 thousand most popular mobile websites would have good CWV with FID, compared to 20% with INP. 42% of the top 10 thousand with FID and 18% with INP. 38% of the top 100 thousand with FID and 20% with INP. 38% of the top million wiht FID and 25% with INP. 40% of all websites with FID and 31% with INP.",
+  description="Bar char showing the percent of mobile websites assessed as having good CWV, with either FID or INP as the responsiveness metric. 52% of the 1 thousand most popular mobile websites would have good CWV with FID, compared to 20% with INP. 42% of the top 10 thousand with FID and 18% with INP. 38% of the top 100 thousand with FID and 20% with INP. 38% of the top million with FID and 25% with INP. 40% of all websites with FID and 31% with INP.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR-dJP3uphZoGE5A_luniNBFm5V2ww6irfOxANg0hrMid7gjgrtchsN_utOIDOvVZUjIwpmUBb27nHF/pubchart?oid=2082509168&format=interactive",
   sheets_gid="805166525",
   sql_file="web_vitals_by_rank_and_device.sql"

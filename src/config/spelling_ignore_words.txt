@@ -75,6 +75,7 @@ beforeinstallprompt
 behance
 bendell
 benseymour
+bfcache
 bgsound
 bidirectionality
 bing
@@ -322,6 +323,8 @@ gzip
 gzipped
 hackathon
 hardcoded
+heic
+heif
 hemanth
 henrihelvetica
 hevc
@@ -364,6 +367,7 @@ incentivize
 indexability
 indexable
 indexifembedded
+ineligble
 inflight
 infobox
 inline
@@ -432,6 +436,7 @@ labelled
 labelling
 laggy
 lang
+latencies
 lazyload
 lazysizes
 ldevernay
@@ -460,6 +465,7 @@ locl
 lockdowns
 logicalphase
 lookzook
+lossily
 losslessly
 lossy
 lowat
@@ -480,6 +486,7 @@ mediumspringgreen
 meetup
 meetups
 meiert
+melificent
 mempf
 metadata
 metaverse
@@ -568,6 +575,7 @@ outlier
 outliers
 outpacing
 outsized
+overperform
 overreport
 oversized
 pagead
@@ -625,9 +633,10 @@ prefetches
 prefetching
 prefill
 preload
-preloads
+preloaded
 preloader
 preloading
+preloads
 prepending
 preprocess
 preprocessor
@@ -639,6 +648,7 @@ presentational
 princexml
 prioritization
 prioritizations
+pristinely
 proactively
 progid
 programmatically
@@ -651,6 +661,7 @@ qlog
 queryable
 quic
 quicly
+quintillion
 quora
 qvis
 rachelandrew
@@ -885,10 +896,12 @@ uncompressing
 uncrawlable
 undercount
 undercounting
+underperform
 underperforming
 underreport
 underserved
 underuse
+undiscoverable
 unfurlers
 unitless
 unlabelled
@@ -898,6 +911,8 @@ unpkg
 unprefixed
 unsecure
 unsecurely
+unsized
+unstyled
 untagged
 updatable
 uptick
