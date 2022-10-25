@@ -20,7 +20,7 @@ featured_stat_label_3: Top 1k websites that would have good CWV with INP
 
 ## Introduction
 
-Web performance is crucial to user experience and accessibility. We've all bounced from a site due to slow load times, or worse, have not been able to access important information. Additionally, numerous <a hreflang="en" href="https://wpostats.com/">case studies</a> have demonstrated that an improvement in web performance results in an improvement in conversion and engagement for businesses. Surprisingly, the industry spotlight is quite elusive for web performance—why is this? Some may say web performance is tough to define and even more challenging to measure.
+Web performance is crucial to user experience. We've all bounced from a site due to slow load times, or worse, have not been able to access important information. Additionally, numerous <a hreflang="en" href="https://wpostats.com/">case studies</a> have demonstrated that an improvement in web performance results in an improvement in conversion and engagement for businesses. Surprisingly, the industry spotlight is quite elusive for web performance—why is this? Some may say web performance is tough to define and even more challenging to measure.
 
 How do we measure something that is hard to define in the first place? As [Sergey Chernyshev](https://twitter.com/sergeyche), creator of <a hreflang="en" href="https://github.com/ux-capture/ux-capture">UX Capture</a>, says, "_The best way to measure performance is to be embedded into the user's brain to understand exactly what they're thinking as they use the site_".  We can't—and shouldn't in case that was unclear—do this, so what are our options?
 
@@ -31,14 +31,15 @@ It’s important to note that these metrics are only our best guess at how to ga
 This chapter focuses on Google's solution to the problem: <a hreflang="en" href="https://web.dev/vitals/">Core Web Vitals</a> (CWV), web performance metrics introduced in 2020 and made a variable in <a hreflang="en" href="https://developers.google.com/search/blog/2020/11/timing-for-page-experience">search ranking during 2021</a>. Each of the three metrics covers an important area of user experience: loading, interactivity, and visual stability. The public <a hreflang="en" href="https://developer.chrome.com/docs/crux/">Chrome UX Report</a> (CrUX) dataset is Chrome’s view of how millions of websites are performing on CWV. There's zero setup on the developer's part; Chrome automatically collects and publishes data from <a hreflang="en" href="https://developer.chrome.com/docs/crux/methodology/#eligibility">eligible</a> websites, for users who have opted in. Using CrUX data, we're able to get insights into the web's performance and even track historical data.
 
 
-Although the spotlight of this chapter, it’s important to note CWV are relatively new to the field and not the only way to measure web performance. We chose to focus on these metrics because the search ranking influence was effective almost exactly one year ago, and this year’s data gives us insights on how the web is adjusting to this major shift in the industry and where room for opportunity might still exist. CWV are intended to be a baseline to allow performance to be loosely comparable across sites, but it is up to the site owner to determine which metrics and strategies are best for their site. As much as we want to, there’s no way to fit the entire history of the industry or all the different ways to evaluate performance in one chapter.  
+Although the spotlight of this chapter, it’s important to note CWV are relatively new to the field and not the only way to measure web performance. We chose to focus on these metrics because the search ranking influence was effective almost exactly one year ago, and this year’s data gives us insights on how the web is adjusting to this major shift in the industry and where room for opportunity might still exist. CWV are intended to be a baseline to allow performance to be loosely comparable across sites, but it is up to the site owner to determine which metrics and strategies are best for their site. As much as we wish otherwise, there’s no way to fit the entire history of the industry or all the different ways to evaluate performance in one chapter.
 
-CWV suggests a clearly defined approach to measuring how user’s actually experience performance—a first for the industry. Are CWV the answer to helping the web become more performant? It’s been a little over two years since launch, so this chapter examines where the web is currently with CWV and a look into the future.
+CWV suggests a clearly defined approach to measuring how user’s actually experience performance—a first for the industry. Are CWV the answer to helping the web become more performant? This chapter examines where the web is currently with CWV and a look into the future.
 
+*Disclosure: An author of this report is a Google employee. Google invented CWV. This report and the underlying analysis were reviewed and approved by others not affiliated with Google.*
 
 ## Core Web Vitals
 
-CWV have been a part of Google Search ranking for a little over a year now, so we've had time to see how the program may have influenced user experiences on the web.
+Let's take a look at how CWV have fared over the last year since being added to Google Search ranking; we've now had time to see how the program may have influenced user experiences on the web.
 
 {{ figure_markup(
   image="good-core-web-vitals-by-device.png",
