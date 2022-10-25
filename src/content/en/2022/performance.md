@@ -13,7 +13,7 @@ featured_quote: These results show that sites absolutely do have responsiveness 
 featured_stat_1: 39%
 featured_stat_label_1: LCP images that are not statically discoverable
 featured_stat_2: 22%
-featured_stat_label_2: Pages that are ineligble for bfache due to `no-store`
+featured_stat_label_2: Pages that are ineligible for bfache due to `no-store`
 featured_stat_3: 20%
 featured_stat_label_3: Top 1k websites that would have good CWV with INP
 ---
@@ -624,7 +624,7 @@ The best way to tell if a given page is eligible for bfcache is to <a hreflang="
 {{ figure_markup(
   image="bfcache-unload.png",
   caption="Usage of `unload` by site rank.",
-  description="Bar chart showing the percent of pages that are ineligble for bfcache due to setting `unload` handlers, grouped by site popularity rank. 36% of the top 1 thousand mobile pages set this handler, 33% of the top 10 thousand, 27% of the top 100 thousand, 21% of the top million, and 17% of all mobile pages. Desktop pages tend to use the `unload` handler slightly more often by a couple of percentage points across the ranks.",
+  description="Bar chart showing the percent of pages that are ineligible for bfcache due to setting `unload` handlers, grouped by site popularity rank. 36% of the top 1 thousand mobile pages set this handler, 33% of the top 10 thousand, 27% of the top 100 thousand, 21% of the top million, and 17% of all mobile pages. Desktop pages tend to use the `unload` handler slightly more often by a couple of percentage points across the ranks.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR-dJP3uphZoGE5A_luniNBFm5V2ww6irfOxANg0hrMid7gjgrtchsN_utOIDOvVZUjIwpmUBb27nHF/pubchart?oid=63175690&format=interactive",
   sheets_gid="996465265",
   sql_file="bfcache_unload.sql"
