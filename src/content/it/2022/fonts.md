@@ -268,7 +268,7 @@ Esistono diversi tipi di suggerimenti per le risorse che hanno rilevanza per i w
 {{ figure_markup(
   image="fonts-resource-hints-usage.png",
   caption="Utilizzo dei suggerimenti per le risorse per i font.",
-  description="L’istogramma mostra che `dns-prefetch` viene utilizzato per i font nel 30% delle pagine desktop e nel 32% delle pagine su dispositivi mobili, `preload` rispettivamente nel 21% e 20%, `preconnect` nel 16% e 16% e infine `prefetch ` viene utilizzato nel 2% delle pagine desktop e nel 2% delle pagine mobili.",
+  description="L’istogramma mostra che `dns-prefetch` viene utilizzato per i font nel 30% delle pagine desktop e nel 32% delle pagine su dispositivi mobili, `preload` rispettivamente nel 21% e 20%, `preconnect` nel 16% e 16% e infine `prefetch` viene utilizzato nel 2% delle pagine desktop e nel 2% delle pagine mobili.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=1831399490&format=interactive",
   sheets_gid="592046045",
   sql_file="resource_hints_usage.sql"
