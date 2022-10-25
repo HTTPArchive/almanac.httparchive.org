@@ -73,7 +73,7 @@ Da dove prende i font la gente? Li ospitano sui propri server o utilizzano un se
   )
 }}
 
-In generale, è un misto: nel 67% dei casi i font sono in self-hosting e contemporaneamente utilizzano un servizio. Solo il 19% utilizza esclusivamente il self hosting. Prevediamo che questo numero aumenterà nei prossimi anni per due motivi: non c'è più un vantaggio in termini di prestazioni nell'utilizzo di un servizio in hosting dopo l'introduzione del<a hreflang="en" href="https://developers.google.com/web/updates/2020/10/http-cache-partitioning">partizionamento della cache</a> e <a hreflang="en" href="https://www.theregister.com/2022/01/31/website_fine_google_fonts_gdpr/">i tribunali europei stanno lentamente diventando molto scettici nei confronti delle aziende con sede in Europa che utilizzano il servizio Google Fonts</a>.
+In generale, è un misto: nel 67% dei casi i font sono in self-hosting e contemporaneamente utilizzano un servizio. Solo il 19% utilizza esclusivamente il self hosting. Prevediamo che questo numero aumenterà nei prossimi anni per due motivi: non c'è più un vantaggio in termini di prestazioni nell'utilizzo di un servizio in hosting dopo l'introduzione del <a hreflang="en" href="https://developers.google.com/web/updates/2020/10/http-cache-partitioning">partizionamento della cache</a> e <a hreflang="en" href="https://www.theregister.com/2022/01/31/website_fine_google_fonts_gdpr/">i tribunali europei stanno lentamente diventando molto scettici nei confronti delle aziende con sede in Europa che utilizzano il servizio Google Fonts</a>.
 
 Possiamo suddividere ulteriormente questi dati per servizio. Forse non sorprende che <a hreflang="en" href="https://fonts.google.com/">Google Fonts</a> sia il servizio di font web più popolare con quasi il 65% di tutte le pagine web che lo utilizzano. Ciò che gratuito è davvero difficile da battere.
 
@@ -87,7 +87,7 @@ Possiamo suddividere ulteriormente questi dati per servizio. Forse non sorprende
   )
 }}
 
-Il secondo classificato è il servizio web <a hreflang="en" href="https://fontawesome.com/">Font Awesome</a>, che è usato in circa il 7% dei siti. Questo è un risultato straordinario per una singola famiglia di caratteri! Al terzo posto c'è il servizio web <a hreflang="en" href="https://fonts.adobe.com/">Adobe Fonts</a>, utilizzato nel 4,2% dei siti. Seguono a distanza i servizi <a hreflang="en" href="https://www.fonts.com/">Fonts.com</a> e <a hreflang="en" href="https://www.typography.com/webfonts">Cloud.Typography</a>, entrambi presenti nello 0,2% dei siti.
+Il secondo classificato è il servizio web <a hreflang="en" href="https://fontawesome.com/">Font Awesome</a>, che è usato in circa il 7% dei siti. Questo è un risultato straordinario per una singola famiglia di caratteri! Al terzo posto c'è il servizio web <a href="https://fonts.adobe.com/">Adobe Fonts</a>, utilizzato nel 4,2% dei siti. Seguono a distanza i servizi <a hreflang="en" href="https://www.fonts.com/">Fonts.com</a> e <a hreflang="en" href="https://www.typography.com/webfonts">Cloud.Typography</a>, entrambi presenti nello 0,2% dei siti.
 
 Guardando indietro agli anni precedenti, possiamo vedere che l'utilizzo di Google Fonts è diminuito per la prima volta quest'anno! È difficile dire se ciò sia dovuto al già citato partizionamento della cache, al GDPR o a qualcos'altro. Il calo è solo lieve, quindi sarà interessante vedere se il trend continuerà il prossimo anno.
 
@@ -139,7 +139,7 @@ Sebbene WOFF2 offra un'eccellente compressione, la compressione da sola non spie
 
 ### Dimensioni (peso) delle tabelle dell'OpenType
 
-Un font è essenzialmente un <a hreflang="en" href="https://simoncozens.github.io/fonts-and-layout/opentype.html">minuscolo database relazionale</a> in cui ogni tabella memorizza dei dati come le forme dei glifi, le relazioni fra i glifi e dei metadati. Ad esempio, ci sono tabelle per memorizzare le curve di Bézier vettoriali che compongono i glifi, ovvero i singoli caratteri nel font. Ci sono anche tabelle, pensate per mettere in relazione i glifi tra loro, che memorizzano cose come le relazioni di crenatura (<i lang="en">kerning</i>) e legatura (<i lang="en">ligature</i>), (ad esempio istruzioni del tipo" scambia questi due glifi con quest'altro quando vengono usati insieme", come la famosa legatura _fi_).
+Un font è essenzialmente un <a hreflang="en" href="https://simoncozens.github.io/fonts-and-layout/opentype.html">minuscolo database relazionale</a> in cui ogni tabella memorizza dei dati come le forme dei glifi, le relazioni fra i glifi e dei metadati. Ad esempio, ci sono tabelle per memorizzare le curve di Bézier vettoriali che compongono i glifi, ovvero i singoli caratteri nel font. Ci sono anche tabelle, pensate per mettere in relazione i glifi tra loro, che memorizzano cose come le relazioni di crenatura (<i lang="en">kerning</i>) e legatura (<i lang="en">ligature</i>), (ad esempio istruzioni del tipo "scambia questi due glifi con quest'altro quando vengono usati insieme", come la famosa legatura _fi_).
 
 Un modo pratico per misurare l'impatto di una tabella sulla dimensione complessiva del file è moltiplicare la sua dimensione mediana per il numero dei font che includono quella tabella.
 
@@ -591,7 +591,7 @@ Solo il 34% di tutti i web font ha dati di crenatura archiviati o come funzional
 
 {{ figure_markup(
   image="openType-feature-usage-in-css.png",
-  caption="OUtilizzo delle funzionalità OpenType in CSS.",
+  caption="Utilizzo delle funzionalità OpenType in CSS.",
   description="L'istogramma mostra che `kern` è utilizzato sul 3,6% delle pagine desktop e sul 3,2% delle pagine mobili, `liga` rispettivamente sul 2,2% e 2,2%, `palt` sullo 0,4% e 0,4%, `pnum` sullo 0,4% e 0,4 %, `tnum` sullo 0,4% e 0,3%, `lnum` sullo 0,3% e 0,3% e infine `calt` sullo 0,1% delle pagine desktop e 0,1% delle pagine mobili.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=1359153027&format=interactive",
   sheets_gid="1050025794",
