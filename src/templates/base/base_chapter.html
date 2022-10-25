@@ -173,7 +173,7 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
         // Set up the date format - initially using the users default locale
         // This allows different locales in same language to be respected
         // (e.g. en-GB or en-US).
-        var options = { day: "numeric", month: "short", year: "numeric" };
+        var options = { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" };
         var dateFormat = new Intl.DateTimeFormat([], options)
         const usedOptions = dateFormat.resolvedOptions();
         if (!usedOptions.locale.startsWith("{{ lang }}")) {
@@ -195,37 +195,35 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
 {% endmacro %}
 
 {% macro render_webmentions() %}
-  <div id="reactions" class="no-reactions">
-    <h2>
-      <a href="#reactions" class="anchor-link">{{ self.reactions() }}</a>
-    </h2>
-    <div class="reactions" data-source="{{ self.source() }}">
-      <div class="reaction-tabs" role="tablist" aria-label="{{ self.reactions() }}">
-        <button id="likes-tab" role="tab" aria-selected="true" aria-controls="likes-panel" tabindex="0" class="no-reactions">
-          <span id="likes-count">0</span>
-          <span id="likes-label" data-singular="{{ self.like() }}" data-plural="{{ self.likes() }}" data-plural-alt="{{ self.likesAlt() }}">{{ self.likes() }}</span>
-        </button>
-        <button id="reposts-tab" role="tab" aria-selected="false" aria-controls="reposts-panel" tabindex="-1" class="no-reactions">
-          <span id="reposts-count">0</span>
-          <span id="reposts-label" data-singular="{{ self.repost() }}" data-plural="{{ self.reposts() }}" data-plural-alt="{{ self.repostsAlt() }}">{{ self.reposts() }}</span>
-        </button>
-        <button id="replies-tab" role="tab" aria-selected="false" aria-controls="replies-panel" tabindex="-1" class="no-reactions">
-          <span id="replies-count">0</span>
-          <span id="replies-label" data-singular="{{ self.reply() }}" data-plural="{{ self.replies() }}" data-plural-alt="{{ self.repliesAlt() }}">{{ self.replies() }}</span>
-        </button>
-        <button id="mentions-tab" role="tab" aria-selected="false" aria-controls="mentions-panel" tabindex="-1" class="no-reactions">
-          <span id="mentions-count">0</span>
-          <span id="mentions-label" data-singular="{{ self.mention() }}" data-plural="{{ self.mentions() }}" data-plural-alt="{{ self.mentionsAlt() }}">{{ self.mentions() }}</span>
-        </button>
-      </div>
-      <div id="likes-panel" role="tabpanel" tabindex="0" aria-labelledby="likes-tab">
-      </div>
-      <div id="reposts-panel" role="tabpanel" tabindex="0" aria-labelledby="reposts-tab" hidden>
-      </div>
-      <div id="replies-panel" role="tabpanel" tabindex="0" aria-labelledby="replies-tab" hidden>
-      </div>
-      <div id="mentions-panel" role="tabpanel" tabindex="0" aria-labelledby="mentions-tab" hidden>
-      </div>
+  <h2 id="reactions">
+    <a href="#reactions" class="anchor-link">{{ self.reactions() }}</a>
+  </h2>
+  <div class="reactions" data-source="{{ self.source() }}">
+    <div class="reaction-tabs" role="tablist" aria-label="{{ self.reactions() }}">
+      <button id="likes-tab" role="tab" aria-selected="true" aria-controls="likes-panel" tabindex="0">
+        <span id="likes-count">0</span>
+        <span id="likes-label" data-singular="{{ self.like() }}" data-plural="{{ self.likes() }}" data-plural-alt="{{ self.likesAlt() }}">{{ self.likes() }}</span>
+      </button>
+      <button id="reposts-tab" role="tab" aria-selected="false" aria-controls="reposts-panel" tabindex="-1">
+        <span id="reposts-count">0</span>
+        <span id="reposts-label" data-singular="{{ self.repost() }}" data-plural="{{ self.reposts() }}" data-plural-alt="{{ self.repostsAlt() }}">{{ self.reposts() }}</span>
+      </button>
+      <button id="replies-tab" role="tab" aria-selected="false" aria-controls="replies-panel" tabindex="-1">
+        <span id="replies-count">0</span>
+        <span id="replies-label" data-singular="{{ self.reply() }}" data-plural="{{ self.replies() }}" data-plural-alt="{{ self.repliesAlt() }}">{{ self.replies() }}</span>
+      </button>
+      <button id="mentions-tab" role="tab" aria-selected="false" aria-controls="mentions-panel" tabindex="-1">
+        <span id="mentions-count">0</span>
+        <span id="mentions-label" data-singular="{{ self.mention() }}" data-plural="{{ self.mentions() }}" data-plural-alt="{{ self.mentionsAlt() }}">{{ self.mentions() }}</span>
+      </button>
+    </div>
+    <div id="likes-panel" role="tabpanel" tabindex="0" aria-labelledby="likes-tab">
+    </div>
+    <div id="reposts-panel" role="tabpanel" tabindex="0" aria-labelledby="reposts-tab" hidden>
+    </div>
+    <div id="replies-panel" role="tabpanel" tabindex="0" aria-labelledby="replies-tab" hidden>
+    </div>
+    <div id="mentions-panel" role="tabpanel" tabindex="0" aria-labelledby="mentions-tab" hidden>
     </div>
   </div>
 {% endmacro %}
