@@ -50,7 +50,7 @@ Nel 2021 non è stato scritto il capitolo sui Font, speriamo di porre rimedio qu
   )
 }}
 
-A sorpresa non molto è cambiato nei tipi di file di font serviti dai server. Il 75% circa dei file di font sono serviti come <a hreflang="en" href="https://www.w3.org/TR/WOFF2/">WOFF2</a>, il 12% circa come WOFF e i restanti o come octet-stream o come font TrueType (TTF) – seguiti da un sacco di tipi MIME a caso. 
+A sorpresa non molto è cambiato nei tipi di file di font serviti dai server. Il 75% circa dei file di font sono serviti come <a hreflang="en" href="https://www.w3.org/TR/WOFF2/">WOFF2</a>, il 12% circa come WOFF e i restanti o come octet-stream o come font TrueType (TTF) – seguiti da un sacco di tipi MIME a caso.
 Il che è piuttosto simile ai [risultati pubblicati nel capitolo Font del 2020](../2020/fonts#formats-and-mime-types). Fortunatamente è quasi scomparso del tutto l’uso dei formati di font SVG e EOT.
 
 Come precisato già nel 2019 e 2020 il formato WOFF2 offre la migliore compressione e dovrebbe essere il formato preferito. Pensiamo, infatti, che sia tempo di affermare con forza:
