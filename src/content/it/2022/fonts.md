@@ -6,7 +6,7 @@ authors: [bramstein]
 reviewers: [alexnj, jmsole, RoelN, svgeesus]
 analysts: [bramstein, konfirmed]
 editors: [shantsis]
-translators: []
+translators: [webmatter-it]
 bramstein_bio: Bram Stein è uno sviluppatore e product manager. È molto appassionato di tipografia ed si trova a suo agio nel lavorare all’intersezione tra design e tecnologia. È autore del manuale <a hreflang="en" href="https://abookapart.com/products/webfont-handbook">Webfont Handbook</a> edito da A Book Apart e della libreria software <a hreflang="en" href="https://fontfaceobserver.com">FontFace Observer</a>. Inoltre parla di tipografia e performance web in conferenze in tutto il mondo.
 results: https://docs.google.com/spreadsheets/d/1A1XwuGa1DkqNLaF-lSXz4ndxO9G6SfACHwUvvywHgbQ/
 featured_quote: Pensiamo, infatti, che sia tempo di affermare con forzacolon; "Usiamo esclusivamente il formato WOFF2 e scordiamoci di tutti gli altri". Così semplifichiamo di molto i nostri CSS e il nostro metodo di lavoro ed inoltre WOFF2 è ora supportato ovunque.
@@ -113,8 +113,8 @@ La dimensione media dei font è di circa 20 kilobyte. Il che va piuttosto bene. 
 
 {{ figure_markup(
   image="self-hosted-font-sizes.png",
-  caption="Dimensioni (in KB) dei font pubblicati sui server dei siti (<i lang="en">self-hosted</i>).",
-  description="Istogramma che mostra le dimensioni dei font (<i lang="en">self-hosted</i> a vari percentili. Al 10° percentile i font (<i lang="en">self-hosted</i> pesano 7 KB su desktop e 7 KB sui dispositivi mobili, al 25° percentile pesano rispettivamente 17 KB e 17 KB, al 50° percentile pesano 37 KB su entrambi, al 75° percentile pesano 75 KB su entrambi e infine al 90° percentile pesano 96 KB su desktop e 91 KB sui dispositivi mobili.",
+  caption='Dimensioni (in KB) dei font pubblicati sui server dei siti (<i lang="en">self-hosted</i>).',
+  description='Istogramma che mostra le dimensioni dei font (<i lang="en">self-hosted</i> a vari percentili. Al 10° percentile i font (<i lang="en">self-hosted</i> pesano 7 KB su desktop e 7 KB sui dispositivi mobili, al 25° percentile pesano rispettivamente 17 KB e 17 KB, al 50° percentile pesano 37 KB su entrambi, al 75° percentile pesano 75 KB su entrambi e infine al 90° percentile pesano 96 KB su desktop e 91 KB sui dispositivi mobili.',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=15369234&format=interactive",
   sheets_gid="1359064325",
   sql_file="font_size_quantiles_without_services.sql"
@@ -127,8 +127,8 @@ Molti siti web che richiamano i font in <i lang="en"> self-hosting</i> utilizzan
 
 {{ figure_markup(
   image="popular-web-font-mimetypes-self-hosted.png",
-  caption="Tipi MIME di web font più diffusi (<i lang="en">self-hosted</i>).",
-  description="Istogramma che mostra che woff2 rappresenta il 45% su desktop e il 46% sui dispositivi mobili dei font in <i lang="en">self-hosting</i>, woff copre rispettivamente il 26% e il 26%, octet-stream è presente nel 15% e nel 15% e infine ttf riguarda il 6% su desktop e il 6% sui dispositivi mobili dei font in <i lang="en">self-hosting</i>.",
+  caption='Tipi MIME di web font più diffusi (<i lang="en">self-hosted</i>).',
+  description='Istogramma che mostra che woff2 rappresenta il 45% su desktop e il 46% sui dispositivi mobili dei font in <i lang="en">self-hosting</i>, woff copre rispettivamente il 26% e il 26%, octet-stream è presente nel 15% e nel 15% e infine ttf riguarda il 6% su desktop e il 6% sui dispositivi mobili dei font in <i lang="en">self-hosting</i>.',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=291490668&format=interactive",
   sheets_gid="259914355",
   sql_file="font_format_usage_without_services.sql"
@@ -215,8 +215,8 @@ I type designers possono scegliere il formato di outline che preferiscono. Osser
 
 {{ figure_markup(
   image="outline-formats.png",
-  caption="Formati di contorno (<i lang="en">outline</i>).",
-  description="Il grafico a torta mostra che i font sui dispositivi mobili sono nel formato TrueType (`glyf`) nel 90,8% dei casi e sono nel formato `CFF` nel 9,2%.",
+  caption='Formati di contorno (<i lang="en">outline</i>).',
+  description='Il grafico a torta mostra che i font sui dispositivi mobili sono nel formato TrueType (`glyf`) nel 90,8% dei casi e sono nel formato `CFF` nel 9,2%.',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=934239411&format=interactive",
   sheets_gid="1181700309",
   sql_file="outline_formats.sql"
@@ -233,7 +233,7 @@ L’ultima affermazione è interessante. `CFF` è più piccolo?
 
 {{ figure_markup(
   image="font-outline-sizes.png",
-  caption="Dimensioni del contorno dei caratteri (<i lang="en">font outlines</i>).",
+  caption='Dimensioni del contorno dei caratteri (<i lang="en">font outlines</i>).',
   description="Grafico a colonne che mostra le dimensioni del contorno dei caratteri a percentili comuni. Al 10° percentile `CFF` è 1 KB e `glyf` 10 KB, al 25° percentile è rispettivamente 14 e 21, al 50° percentile è 29 e 49, al 75° percentile è 54 e 109, e infine al 90° percentile `CFF` è 124 KB e `glyf` 136 KB.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=672500092&format=interactive",
   sheets_gid="1853636944",
@@ -247,7 +247,7 @@ Come si può vedere nel <a hreflang="en" href="https://www.w3.org/TR/2016/NOTE-W
 
 {{ figure_markup(
   image="compressed-font-outline-sizes.png",
-  caption="Dimensioni del contorno dei caratteri compressi (<i lang="en">compressed font outlines</i>).",
+  caption='Dimensioni del contorno dei caratteri compressi (<i lang="en">compressed font outlines</i>).',
   description="L’istogramma mostra che al 25° percentile la dimensione dei font sia per `CFF` che per `glyf` è di 6 KB, al 50° percentile iniziano a divergere con `CFF` a 15 KB e `glyf` a 17 KB, al 75° percentile sono rispettivamente di 32 e 39 KB, e infine al 90° percentile `CFF` è al 86 KB e `glyf` è solo al 56 KB.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=1880460638&format=interactive",
   sheets_gid="1853636944",
@@ -316,7 +316,7 @@ I descrittori CSS `ascent-override`, `descent-override`, `line-gap-override` e `
 
 {{ figure_markup(
   image="css-font-metrics-override-usage.png",
-  caption="Utilizzo della sovrascrittura (<i lang="en">override</i>) CSS delle metriche dei font.",
+  caption='Utilizzo della sovrascrittura (<i lang="en">override</i>) CSS delle metriche dei font.',
   description="L’istogramma mostra che `ascent-override` viene utilizzato nello 0,11% delle pagine desktop e nello 0,20% di pagine per dispositivi mobili, `descent-override` rispettivamente sullo 0,07% e 0,13%, `line-gap-override` sullo 0,07% e 0,13% e infine `size-adjust` sullo 0,05% delle pagine desktop e sullo 0,13% delle pagine per dispositivi mobili.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=2058878625&format=interactive",
   sheets_gid="241586017",
