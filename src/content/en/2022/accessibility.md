@@ -22,7 +22,7 @@ featured_stat_label_3: Sites using `:focus-visible`, compared to only 0.6% last 
 
 ## Introduction
 
-Half of all web searches are <a hreflang="en" href="https://review42.com/resources/voice-search-stats/">performed by voice</a>. 85% of Facebook videos are watched <a hreflang="en" href="https://idearocketanimation.com/18761-facebook-video-captions/">with closed captions on and sound off</a>. When you ask voice assistants like Siri, Alexa, and Cortana a question, they typically read their answer from a web page using screen reader technology that has been around <a hreflang="en" href="https://www.theverge.com/23203911/screen-readers-history-blind-henter-curran-teh-nvda">for as long as personal computers have existed</a>.
+27% of the global online population is <a hreflang="en" href="https://www.gwi.com/hubfs/Downloads/Voice-Search-report.pdf">using voice search on mobile</a>. 85% of Facebook videos are watched <a hreflang="en" href="https://idearocketanimation.com/18761-facebook-video-captions/">with closed captions on and sound off</a>. When you ask voice assistants like Siri, Alexa, and Cortana a question, they typically read their answer from a web page using screen reader technology that has been around <a hreflang="en" href="https://www.theverge.com/23203911/screen-readers-history-blind-henter-curran-teh-nvda">for as long as personal computers have existed</a>.
 
 When does a software feature cease being an "accessibility feature" and simply become a "feature" that we all use? Ask yourself that the next time you put your smartphone in silent/vibrate mode – especially if you're not a member of the Deaf/Hard of Hearing community.
 
