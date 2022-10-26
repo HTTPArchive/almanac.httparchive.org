@@ -16,7 +16,7 @@ featured_stat_label_1: JSON-LD growth year over year
 featured_stat_2: 59%
 featured_stat_label_2: Pages using Open Graph structured data
 featured_stat_3: 40%
-featured_stat_label_3: Pages using Open Graph structured data
+featured_stat_label_3: Pages using Twitter structured data
 ---
 
 ## Introduction
