@@ -32,6 +32,10 @@
   margin: 0 -1rem;
 }
 
+.width-20 {
+  width: 20%;
+}
+
 .width-45 {
   width: 45%;
 }
@@ -903,6 +907,10 @@ pre {
 
 .reaction-tabs > button > span {
   pointer-events: none;
+}
+
+.no-reactions {
+  display: none;
 }
 
 .webmention-likes,

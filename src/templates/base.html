@@ -44,6 +44,7 @@
   </head>
 
   <body class="year-{{ year }}">
+    {% block body %}
     <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" display="none">
       <!-- HTTPArchive -->
       <symbol id="ha-logo" viewBox="0 0 432 225">
@@ -92,6 +93,7 @@
     <link rel="preconnect" href="https://www.google-analytics.com">
     <script defer src="{{ get_versioned_filename('/static/js/web-vitals.js') }}" nonce="{{ csp_nonce() }}"></script>
     <script defer src="{{ get_versioned_filename('/static/js/send-web-vitals.js') }}" nonce="{{ csp_nonce() }}"></script>
+    {% endblock %}
     {% endblock %}
   </body>
 </html>

@@ -3,7 +3,7 @@
     {
       "is_live": true,
       "supported_languages": ["en","es","fr","hi","it","ja","nl","pt","ru","tr","uk","zh-CN","zh-TW"],
-      "ebook_languages": []
+      "ebook_languages": ["en"]
     }
   ],
   "outline": [
@@ -34,8 +34,7 @@
           "chapter_number": "4",
           "title": "Structured Data",
           "slug": "structured-data",
-          "hero_dir": "2021",
-          "todo": true
+          "hero_dir": "2021"
         },
         {
           "part": "I",
@@ -91,16 +90,14 @@
           "part": "II",
           "chapter_number": "12",
           "title": "Performance",
-          "slug": "performance",
-          "todo": true
+          "slug": "performance"
         },
         {
           "part": "II",
           "chapter_number": "13",
           "title": "Privacy",
           "slug": "privacy",
-          "hero_dir": "2020",
-          "todo": true
+          "hero_dir": "2020"
         },
         {
           "part": "II",
@@ -141,15 +138,14 @@
         },
         {
           "part": "III",
-          "chapter_number": "20",
+          "chapter_number": "19",
           "title": "Jamstack",
           "slug": "jamstack",
-          "hero_dir": "2020",
-          "todo": true
+          "hero_dir": "2020"
         },
         {
           "part": "III",
-          "chapter_number": "21",
+          "chapter_number": "20",
           "title": "Sustainability",
           "slug": "sustainability",
           "hero_dir": "2022"
@@ -162,13 +158,19 @@
       "chapters": [
         {
           "part": "IV",
-          "chapter_number": "22",
+          "chapter_number": "21",
           "title": "Page Weight",
           "slug": "page-weight"
         },
         {
           "part": "IV",
-          "chapter_number": "26",
+          "chapter_number": "22",
+          "title": "CDN",
+          "slug": "cdn"
+        },
+        {
+          "part": "IV",
+          "chapter_number": "23",
           "title": "HTTP",
           "slug": "http"
         }
@@ -250,7 +252,7 @@
       ],
       "avatar_url": "3109255",
       "github": "alexdenning",
-      "website": "getellipsis.com",
+      "website": "https://getellipsis.com/",
       "twitter": "AlexDenning"
     },
     "alexnj": {
@@ -271,8 +273,9 @@
       ],
       "avatar_url": "422745",
       "github": "DataBytzAI",
-      "website": "www.thedataworks.com",
-      "twitter": "DataBytzAI"
+      "website": "https://webdataworks.io/",
+      "twitter": "DataBytesAI",
+      "linkedin": "allenoneill"
     },
     "alonkochba": {
       "name": "Alon Kochba",
@@ -401,7 +404,7 @@
       ],
       "avatar_url": "17906",
       "github": "mrchrisadams",
-      "website": "chrisadams.me.uk"
+      "website": "https://chrisadams.me.uk"
     },
     "svgeesus": {
       "name": "Chris Lilley",
@@ -410,7 +413,7 @@
       ],
       "avatar_url": "2506926",
       "github": "svgeesus",
-      "website": "svgees.us",
+      "website": "https://svgees.us",
       "twitter": "svgeesus"
     },
     "christianliebel": {
@@ -573,26 +576,15 @@
       "avatar_url": "5749508",
       "github": "GJFR"
     },
-    "GregBrimble": {
-      "name": "Greg Brimble",
+    "webmatter-it": {
+      "name": "Giulia Laco",
       "teams": [
-        "analysts",
-        "reviewers"
+        "translators"
       ],
-      "avatar_url": "8484333",
-      "github": "GregBrimble",
-      "website": "https://gregbrimble.com/",
-      "twitter": "GregBrimble"
-    },
-    "Nutlope": {
-      "name": "Hassan El Mghari",
-      "teams": [
-        "reviewers"
-      ],
-      "avatar_url": "63742054",
-      "github": "Nutlope",
-      "website": "https://www.elmghari.com/",
-      "twitter": "nutlope"
+      "avatar_url": "6397771",
+      "website": "https://www.webmatter.it/",
+      "github": "webmatter-it",
+      "twitter": "webmatter_it"
     },
     "hemanth": {
       "name": "Hemanth HM",
@@ -736,7 +728,7 @@
       ],
       "avatar_url": "1424556",
       "github": "jmsole",
-      "website": "www.jmsole.cl",
+      "website": "https://www.jmsole.cl/",
       "twitter": "jmsoleb"
     },
     "jroakes": {
@@ -746,7 +738,6 @@
       ],
       "avatar_url": "10191545",
       "github": "jroakes",
-      "website": "codeseo.io",
       "twitter": "jroakes"
     },
     "Schweinepriester": {
@@ -867,7 +858,7 @@
       ],
       "avatar_url": "5370850",
       "github": "mel-ada",
-      "website": "https://www.linkedin.com/in/morelmelissa",
+      "linkedin": "mel-ada",
       "twitter": "mel_melificent"
     },
     "MichaelLewittes": {
@@ -893,17 +884,6 @@
       "teams": [
         "designers"
       ]
-    },
-    "miketaylr": {
-      "name": "Mike Taylor",
-      "teams": [
-        "editors",
-        "reviewers"
-      ],
-      "avatar_url": "67283",
-      "github": "miketaylr",
-      "website": "https://miketaylr.com",
-      "twitter": "miketaylr"
     },
     "mgechev": {
       "name": "Minko Gechev",
@@ -951,7 +931,7 @@
       ],
       "avatar_url": "26349046",
       "github": "NishuGoel",
-      "website": "unravelweb.dev",
+      "website": "https://unravelweb.dev/",
       "twitter": "TheNishuGoel"
     },
     "nrllh": {
@@ -961,7 +941,7 @@
       ],
       "avatar_url": "13475745",
       "github": "nrllh",
-      "website": "internet-sicherheit.de",
+      "website": "https://www.internet-sicherheit.de/team/demir-nurullah.html",
       "twitter": "nrllah"
     },
     "pankajparkar": {
@@ -973,6 +953,15 @@
       "github": "pankajparkar",
       "website": "https://pankajparkar.dev",
       "twitter": "pankajparkar"
+    },
+    "pmeenan": {
+      "name": "Patrick Meenan",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "444165",
+      "github": "pmeenan",
+      "twitter": "patmeenan"
     },
     "patrickstox": {
       "name": "Patrick Stox",
@@ -1011,7 +1000,7 @@
       ],
       "avatar_url": "10120153",
       "github": "25prathamesh",
-      "website": "https://www.linkedin.com/in/prathameshrasam"
+      "linkedin": "prathameshrasam"
     },
     "rachelandrew": {
       "name": "Rachel Andrew",
@@ -1029,7 +1018,7 @@
         "analysts",
         "editors",
         "leads",
-        "reviewers"
+        "authors"
       ],
       "avatar_url": "1120896",
       "github": "rviscomi",
@@ -1076,8 +1065,7 @@
     "SaptakS": {
       "name": "Saptak Sengupta",
       "teams": [
-        "authors",
-        "reviewers"
+        "authors"
       ],
       "avatar_url": "9530293",
       "github": "SaptakS",
@@ -1103,15 +1091,6 @@
       ],
       "avatar_url": "22671477",
       "github": "shantsis"
-    },
-    "spanicker": {
-      "name": "Shubhie Panicker",
-      "teams": [
-        "authors"
-      ],
-      "avatar_url": "4945616",
-      "github": "spanicker",
-      "twitter": "shubhie"
     },
     "siakaramalegos": {
       "name": "Sia Karamalegos",
@@ -1198,7 +1177,9 @@
         "authors"
       ],
       "avatar_url": "4355579",
-      "github": "tomvangoethem"
+      "github": "tomvangoethem",
+      "website": "https://tom.vg/",
+      "twitter": "tomvangoethem"
     },
     "TusharPol": {
       "name": "Tushar Pol",
@@ -1255,6 +1236,29 @@
       "website": "https://blog.yoav.ws",
       "github": "yoavweiss",
       "twitter": "yoavweiss"
+    },
+    "harendra":{
+      "name": "Haren Bhandari",
+      "teams":[
+        "analysts",
+        "authors"
+      ],
+      "github":"harendra"
+    },
+    "joeviggiano":{
+      "name": "Joe Viggiano",
+      "teams":[
+        "analysts",
+        "authors"
+      ],
+      "github":"joeviggiano"
+    },
+    "ytkoka":{
+      "name": "Yutaka Oka",
+      "teams":[
+        "reviewers"
+      ],
+      "github":"ytkoka"
     }
   }
 }

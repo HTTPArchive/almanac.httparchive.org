@@ -4,6 +4,10 @@ const puppeteer = require('puppeteer');
 const { find_markdown_files } = require('./shared');
 
 const take_single_screenshot = async (graphUrl, filename) => {
+
+  const sheets_chart = graphUrl.startsWith('https://docs.google.com/spreadsheets') ? true :  false;
+
+  const chartUrl = sheets_chart ? graphUrl : 'http://localhost:8080/' + graphUrl;
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
   await page.setViewport({
@@ -11,10 +15,10 @@ const take_single_screenshot = async (graphUrl, filename) => {
     "height": 800,
     "deviceScaleFactor": 2
   });
-  await page.goto(graphUrl, {
+  await page.goto(chartUrl, {
     waitUntil: 'networkidle2',
   });
-  const el = await page.$('#embed_chart');
+  const el = sheets_chart ? await page.$('#embed_chart') : await page.$('main');
   await el.screenshot({ path: filename });
   await browser.close();
 }
@@ -91,7 +95,11 @@ const generate_images = async (chapter_match) => {
       }
 
       // Test chart_url is a Google Sheets URL
-      if (!chart_url.startsWith('https://docs.google.com/spreadsheets') || !chart_url.endsWith("&format=interactive")) {
+      if (!(
+        (chart_url.startsWith('https://docs.google.com/spreadsheets') && chart_url.endsWith('&format=interactive'))
+        ||
+        (chart_url.startsWith('/') && chart_url.indexOf('/embeds/'))
+      )) {
         console.log(`  Skipping: ${image_file} as chart_url is not of the correct format`);
         continue;
       }

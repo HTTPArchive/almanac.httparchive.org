@@ -130,7 +130,7 @@ The name `content` is once again the most popular ID name, followed by `footer`,
   )
 }}
 
-The use of `!important` has slightly increased for the top two percentiles this year. As `@layer` usage takes hold it will be interesting to see how this impacts the use of this property, typically used to deal with specificity issues.
+The use of `!important` has slightly increased for the top two percentiles this year. As `@layer` usage takes hold, it will be interesting to see how this impacts the use of this property, typically used to deal with specificity issues.
 
 {{ figure_markup(
     image="important-props.png",
@@ -725,6 +725,7 @@ We have many options to choose from when doing layout on the web, and most sites
     caption="Layout methods by percent of pages.",
     description="Bar chart showing the layout methods used on the most pages. Block and absolute layouts are used on 92% of pages, followed by inline-block on 90%, floats on 89%, fixed on 84%, inline on 82%, CSS tables on 79%, flex on 77%, and box on 51% of pages.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1738709324&format=interactive",
+    height=756,
     sheets_gid="1793404870",
     sql_file="layout_properties.sql"
   )
@@ -950,7 +951,7 @@ Around 18% of pages were using a custom property `var(--overlay-mix-blend-mode)`
   )
 }}
 
-Of the percentage of pages that have set filters to apply graphical effects, 82% are using the `alpha()` value, which is non-standard and used for Internet Explorer 8 and below. We also see a high usage of the <a hreflang="en" href="https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms532997(v=vs.85">`Microsoft.gradient()`</a> filter.
+Of the percentage of pages that have set filters to apply graphical effects, 82% are using the `alpha()` value, which is non-standard and used for Internet Explorer 8 and below. We also see a high usage of the <a hreflang="en" href="https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms532997(v=vs.85)">`Microsoft.gradient()`</a> filter.
 
 Of the [standard values](https://developer.mozilla.org/en-US/docs/Web/CSS/filter), 31% of pages use `blur()`, making it the most popular value after `none`.
 

@@ -85,7 +85,7 @@ Another bit of focus was toward `flex-basis: content`, which is used to automati
 )
 }}
 
-Sticky positioning has been around for a while. In fact, it's worth noting that it is the [most popular feature query in used by a large margin](../2021/css#feature-queries), accounting for over 50% of feature queries. It had several interoperability issues; for example, the inability to stick headers in tables in Chrome. `position: sticky` is actively used in around 5% of desktop pages and 4% of mobile pages in 2022. We'll keep an eye on this metric for some time to come to see how addressing those interoperability issues affects adoption over time.
+Sticky positioning has been around for a while. In fact, it's worth noting that it is the [most popular feature query in used by a large margin](../2022/css#feature-queries), accounting for over 50% of feature queries. It had several interoperability issues; for example, the inability to stick headers in tables in Chrome. `position: sticky` is actively used in around 5% of desktop pages and 4% of mobile pages in 2022. We'll keep an eye on this metric for some time to come to see how addressing those interoperability issues affects adoption over time.
 
 
 ### CSS transforms

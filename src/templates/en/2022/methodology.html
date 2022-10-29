@@ -254,7 +254,7 @@
       </p>
 
       <p>
-        HTTP Archive runs the latest version of Lighthouse for all of its mobile web pages — desktop pages are not included because of limited resources. As of the June {{ year }} crawl, HTTP Archive used the <a hreflang="en" href="https://github.com/GoogleChrome/lighthouse/releases/tag/v9.6.2">9.6.2</a> versions of Lighthouse.
+        HTTP Archive runs the latest version of Lighthouse for all pages. This is the first year that Lighthouse testing is done for both mobile and desktop pages. As of the June {{ year }} crawl, HTTP Archive used the <a hreflang="en" href="https://github.com/GoogleChrome/lighthouse/releases/tag/v9.6.2">9.6.2</a> versions of Lighthouse.
       </p>
 
       <p>
@@ -265,24 +265,29 @@
         <thead>
           <tr>
             <th>Config</th>
-            <th>Value</th>
+            <th>Desktop</th>
+            <th>Mobile</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td>CPU slowdown</td>
+            <td><em>N/A</em></td>
             <td>1x/4x</td>
           </tr>
           <tr>
             <td>Download throughput</td>
             <td>1.6 Mbps</td>
+            <td>1.6 Mbps</td>
           </tr>
           <tr>
             <td>Upload throughput</td>
             <td>0.768 Mbps</td>
+            <td>0.768 Mbps</td>
           </tr>
           <tr>
             <td>RTT</td>
+            <td>150 ms</td>
             <td>150 ms</td>
           </tr>
         </tbody>
@@ -306,7 +311,7 @@
       </p>
 
       <p>
-        Wappalyzer powers many chapters that analyze the popularity of developer tools like WordPress, Bootstrap, and jQuery. For example, the <a href="{{ url_for('chapter', year=year, lang=lang, chapter='ecommerce') }}">Ecommerce</a> and <a href="{{ url_for('chapter', year=year, lang=lang, chapter='cms') }}">CMS</a> chapters rely heavily on the respective <a hreflang="en" href="https://www.wappalyzer.com/categories/ecommerce">Ecommerce</a> and <a hreflang="en" href="https://www.wappalyzer.com/categories/cms">CMS</a> categories of technologies detected by Wappalyzer.
+        Wappalyzer powers many chapters that analyze the popularity of developer tools like WordPress, Bootstrap, and jQuery. For example, the <a href="{{ url_for('chapter', year=year, lang=lang, chapter='cms') }}">CMS</a> chapter relies heavily on the respective <a hreflang="en" href="https://www.wappalyzer.com/categories/cms">CMS</a> category of technologies detected by Wappalyzer.
       </p>
 
       <p>
