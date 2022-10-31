@@ -24,6 +24,6 @@ JOIN (
   FROM
     `httparchive.summary_pages.2022_06_01_*`
   GROUP BY
-    client )
+    client)
 USING
   (client)

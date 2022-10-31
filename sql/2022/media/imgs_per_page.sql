@@ -14,7 +14,7 @@ try {
 WITH numImgs AS (
   SELECT
     _TABLE_SUFFIX AS client,
-    numberOfImages( JSON_QUERY( JSON_VALUE( payload, '$._responsive_images' ), '$.responsive-images' ) ) AS numberOfImages
+    numberOfImages(JSON_QUERY(JSON_VALUE(payload, '$._responsive_images'), '$.responsive-images')) AS numberOfImages
   FROM
     `httparchive.pages.2022_06_01_*`
 ),
