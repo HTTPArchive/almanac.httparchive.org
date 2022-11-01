@@ -359,7 +359,7 @@ SELECT
   SAFE_DIVIDE(COUNTIF(wpt_bodies_info.n_non_empty_h4 > 0), COUNT(0)) AS pct_has_non_empty_h4,
 
   # Same title and H1
-  SAFE_DIVIDE(COUNTIF(wpt_bodies_info.has_same_h1_title ), COUNT(0)) AS pct_has_same_h1_title,
+  SAFE_DIVIDE(COUNTIF(wpt_bodies_info.has_same_h1_title), COUNT(0)) AS pct_has_same_h1_title,
 
   # Meta Robots inclusion
   SAFE_DIVIDE(COUNTIF(wpt_bodies_info.robots_has_robots_meta_tag), COUNT(0)) AS pct_has_meta_robots,

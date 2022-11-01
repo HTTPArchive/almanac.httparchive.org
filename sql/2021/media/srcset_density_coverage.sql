@@ -43,7 +43,7 @@ WITH imgs AS (
     maxDensity
   FROM
     `httparchive.pages.2021_07_01_*`,
-    UNNEST(getSrcsetInfo(JSON_QUERY(JSON_VALUE(payload, '$._responsive_images' ), '$.responsive-images')))
+    UNNEST(getSrcsetInfo(JSON_QUERY(JSON_VALUE(payload, '$._responsive_images'), '$.responsive-images')))
   WHERE
     srcsetHasXDescriptors = TRUE OR srcsetHasWDescriptors = TRUE
 ),
@@ -52,10 +52,10 @@ counts AS (
   SELECT
     client,
     COUNT(0) AS number_of_imgs_with_srcset,
-    COUNTIF( minDensity <= 1 AND maxDensity >= 1.5 ) AS number_of_srcsets_covering_1x_to_1p5x,
-    COUNTIF( minDensity <= 1 AND maxDensity >= 2 ) AS number_of_srcsets_covering_1x_to_2x,
-    COUNTIF( minDensity <= 1 AND maxDensity >= 2.5 ) AS number_of_srcsets_covering_1x_to_2p5x,
-    COUNTIF( minDensity <= 1 AND maxDensity >= 3 ) AS number_of_srcsets_covering_1x_to_3x
+    COUNTIF(minDensity <= 1 AND maxDensity >= 1.5) AS number_of_srcsets_covering_1x_to_1p5x,
+    COUNTIF(minDensity <= 1 AND maxDensity >= 2) AS number_of_srcsets_covering_1x_to_2x,
+    COUNTIF(minDensity <= 1 AND maxDensity >= 2.5) AS number_of_srcsets_covering_1x_to_2p5x,
+    COUNTIF(minDensity <= 1 AND maxDensity >= 3) AS number_of_srcsets_covering_1x_to_3x
   FROM imgs
   GROUP BY client
 )

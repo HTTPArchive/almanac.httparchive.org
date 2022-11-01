@@ -122,8 +122,8 @@ WITH imgs AS (
     bitsPerPixel,
     isPixel,
     isDataURL,
-    ( approximateResourceWidth * approximateResourceHeight ) / 1000000 AS megapixels,
-    ( approximateResourceWidth / approximateResourceHeight ) AS aspectRatio,
+    (approximateResourceWidth * approximateResourceHeight) / 1000000 AS megapixels,
+    (approximateResourceWidth / approximateResourceHeight) AS aspectRatio,
     resourceFormat
   FROM
     `httparchive.pages.2021_07_01_*`,

@@ -16,6 +16,6 @@ FROM (
     FROM
       `httparchive.summary_pages.2020_08_01_*`
     GROUP BY
-      bin) )
+      bin))
 ORDER BY
   bin

@@ -128,12 +128,12 @@ WITH imgs AS (
     bitsPerPixel,
     isPixel,
     isDataURL,
-    ( approximateResourceWidth * approximateResourceHeight ) / 1000000 AS megapixels,
-    ( approximateResourceWidth / approximateResourceHeight ) AS aspectRatio,
+    (approximateResourceWidth * approximateResourceHeight) / 1000000 AS megapixels,
+    (approximateResourceWidth / approximateResourceHeight) AS aspectRatio,
     resourceFormat
   FROM
     `httparchive.pages.2022_06_01_*`,
-    UNNEST(getSrcsetInfo(JSON_QUERY(JSON_VALUE(payload, '$._responsive_images' ), '$.responsive-images')))
+    UNNEST(getSrcsetInfo(JSON_QUERY(JSON_VALUE(payload, '$._responsive_images'), '$.responsive-images')))
 ),
 
 percentiles AS (
