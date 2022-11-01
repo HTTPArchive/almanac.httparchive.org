@@ -27,8 +27,8 @@ if ( matched && matched[1] ) {
 SELECT
   _TABLE_SUFFIX AS client,
   COUNT(0) AS total_gifs,
-  COUNTIF( CAST( JSON_VALUE(payload, '$._image_details.animated') AS BOOL ) ) AS total_animated_gifs,
-  COUNTIF( CAST( JSON_VALUE(payload, '$._image_details.animated') AS BOOL ) ) / COUNT(0) AS pct_animated_gifs
+  COUNTIF(CAST(JSON_VALUE(payload, '$._image_details.animated') AS BOOL)) AS total_animated_gifs,
+  COUNTIF(CAST(JSON_VALUE(payload, '$._image_details.animated') AS BOOL)) / COUNT(0) AS pct_animated_gifs
 FROM
   `requests.2022_06_01_*`
 WHERE

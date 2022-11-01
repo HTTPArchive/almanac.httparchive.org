@@ -8,7 +8,7 @@ SELECT
     CASE
       WHEN (STRPOS(LOWER(policy), 'samesite=strict') > 1 OR
           STRPOS(LOWER(policy), 'samesite=lax') > 0 OR
-          STRPOS(LOWER(policy), 'samesite=none') > 1 )
+          STRPOS(LOWER(policy), 'samesite=none') > 1)
         THEN LENGTH(policy)
       WHEN STRPOS(policy, '=') > 1
         THEN STRPOS(LOWER(policy), '=') - 1

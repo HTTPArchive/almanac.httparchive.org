@@ -49,7 +49,7 @@ FROM (
     font_feature,
     COUNT(DISTINCT page) AS pages
   FROM
-    `httparchive.almanac.parsed_css` ,
+    `httparchive.almanac.parsed_css`,
     UNNEST(getFontFeatureTags(css)) AS font_feature
   WHERE
     date = '2022-07-01'

@@ -93,8 +93,8 @@ merged_policy AS (
   USING (client, page)
   WHERE
     (header_name IN ('feature-policy', 'permissions-policy') OR
-      tag_name IN ('feature-policy', 'permissions-policy'))
-    AND header_value IS NOT NULL AND
+      tag_name IN ('feature-policy', 'permissions-policy')) AND
+    header_value IS NOT NULL AND
     tag_value IS NOT NULL
 )
 
