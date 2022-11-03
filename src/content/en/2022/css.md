@@ -1173,7 +1173,7 @@ Looking at control flow statements we see a small increase in `@for` and `@each`
 {{ figure_markup(
     image="sass-nesting.png",
     caption="Use of explicit nesting in SCSS by percent of pages using SCSS.",
-    description="Bar chart showing the nesting selectors used on the most pages with SCSS. 88% of SCSS pages use nesting selectors. The most popular selector is `&:pseudo-class` on 85% of SCSS pages, followed by `&.class` 81%, `&::pseudo-element` 70%, bare `& `by itself 65%, `&[attr]` 59%, `& + (adjacent sibling)` 31%, `& descendent` 25%, `& > (child)` 24%, `& ~` and `&#id` 5%.",
+    description="Bar chart showing the nesting selectors used on the most pages with SCSS. 88% of SCSS pages use nesting selectors. The most popular selector is `&:pseudo-class` on 85% of SCSS pages, followed by `&.class` 81%, `&::pseudo-element` 70%, bare `&` by itself 65%, `&[attr]` 59%, `& + (adjacent sibling)` 31%, `& descendent` 25%, `& > (child)` 24%, `& ~` and `&#id` 5%.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1858217462&format=interactive",
     height="455",
     sheets_gid="1739922540",
