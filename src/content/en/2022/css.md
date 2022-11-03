@@ -266,7 +266,7 @@ Pixel lengths remain the most popular at 71%, the same percentage as in 2021. Th
       <tr>
         <th>Property</th>
         <th><code>px</code></th>
-        <th><code>&lt;number></code></th>
+        <th><code>&lt;number&gt;</code></th>
         <th><code>em</code></th>
         <th><code>%</code></th>
         <th><code>rem</code></th>
@@ -1099,7 +1099,7 @@ Logical or flow-relative properties such as `border-block-start` and values such
 {{ figure_markup(
     image="logical-props.png",
     caption="The distribution of logical properties used.",
-    description="Pie chart showing the relative distribution of logical property usage. The margin property is used 70.0% of the time, text-align 12.6%, padding 11.2%, border 4.5%, and inset 1.7%..",
+    description="Pie chart showing the relative distribution of logical property usage. The margin property is used 70.0% of the time, text-align 12.6%, padding 11.2%, border 4.5%, and inset 1.7%.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=597319721&format=interactive",
     sheets_gid="1478929671",
     sql_file="i18n_logical_properties.sql"
