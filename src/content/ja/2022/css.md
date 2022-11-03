@@ -1148,7 +1148,7 @@ Sassのようなプリプロセッサーは、開発者がCSSでできるよう�
 {{ figure_markup(
     image="sass-function-calls.png",
     caption="もっとも普及しているSass関数呼び出しの割合。",
-    description="もっとも多く使われているSass関数呼び出しを示した棒グラフ。Sass関数呼び出しのうち、if関数が19％を占め、以下、その他の関数17％、`darken` 14％、`map-get` 10％、`map-keys` 9％、パーセンテージ6％、`nth` 5％、`lighten`と`mix` 4％、`type-of`、α調整、単位、長さが3％と続きます。",
+    description="もっとも多く使われているSass関数呼び出しを示した棒グラフ。Sass関数呼び出しのうち、`if`関数が19％を占め、以下、その他の関数17％、`darken` 14％、`map-get` 10％、`map-keys` 9％、パーセンテージ6％、`nth` 5％、`lighten`と`mix` 4％、`type-of`、α調整、単位、長さが3％と続きます。",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1702171363&format=interactive",
     height="552",
     sheets_gid="1751596973",
