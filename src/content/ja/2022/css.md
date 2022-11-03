@@ -108,7 +108,7 @@ CSSのウェイトがもっとも大きいデスクトップ ページは62,631K
 {{ figure_markup(
     image="top-selector-ids.png",
     caption="ページ数の割合でもっとも普及しているID名です。",
-    description="もっとも多くのページで使用されているCSS IDを示す棒グラフ。モバイルとデスクトップの傾向は似ています。IDコンテンツは15%のページで使用され、次にフッターが12%、ヘッダー、fb-root、fb_dialog_loader_close、fb_dialog_ipad_overlay、fb_dialog_loader_spinnerが10%、レスポンスとコメントが9%、そして最後にメインが8%のページで使用されていることがわかります。",
+    description="もっとも多くのページで使用されているCSS IDを示す棒グラフ。モバイルとデスクトップの傾向は似ています。IDコンテンツは15%のページで使用され、次にフッターが12%、ヘッダー、`fb-root`、`fb_dialog_loader_close`、`fb_dialog_ipad_overlay`、`fb_dialog_loader_spinner`が10%、レスポンスとコメントが9%、そして最後にメインが8%のページで使用されていることがわかります。",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=224121847&format=interactive",
     height="497",
     sheets_gid="756835829",
@@ -123,7 +123,7 @@ ID名は`content`がもっとも普及しており、`footer`、`header`がそ�
 {{ figure_markup(
     image="important-adoption.png",
     caption="ページごとの `!important` プロパティの数の分布。",
-    description="1ページで使用される!importantの数の10、25、50、75、90パーセンタイルを示す棒グラフです。モバイルページでは、それぞれ0%、1%、2%、5%、9%となっています。デスクトップの値も同じです。",
+    description="1ページで使用される`!important`の数の10、25、50、75、90パーセンタイルを示す棒グラフです。モバイルページでは、それぞれ0%、1%、2%、5%、9%となっています。デスクトップの値も同じです。",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=316255168&format=interactive",
     sheets_gid="1802353995",
     sql_file="meta_important_adoption.sql"
@@ -135,7 +135,7 @@ ID名は`content`がもっとも普及しており、`footer`、`header`がそ�
 {{ figure_markup(
     image="important-props.png",
     caption="ページ数の割合で、`!important`が適用される上位のプロパティを示します。",
-    description="!importantで使用されるプロパティのうち、もっとも普及しているものを棒グラフで示した。モバイルページでは、displayが83%、color 77%、width 76%、height 74%、padding 72%、background、background-color、marginがそれぞれ70%、border 69%、そして最後にfont-sizeが64%という値になっています。",
+    description="`!important`で使用されるプロパティのうち、もっとも普及しているものを棒グラフで示した。モバイルページでは、`display`が83%、`color` 77%、`width` 76%、`height` 74%、`padding` 72%、`background`、`background-color`、`margin`がそれぞれ70%、`border` 69%、そして最後に`font-size`が64%という値になっています。",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1202340370&format=interactive",
     height="604",
     sheets_gid="377488072",
@@ -198,7 +198,7 @@ ID名は`content`がもっとも普及しており、`footer`、`header`がそ�
 {{ figure_markup(
     image="pseudo-classes.png",
     caption="もっとも普及している擬似クラスのページ数割合。",
-    description="もっとも多くのページで使用されている擬似クラスを棒グラフで表示。モバイルでは、hoverが91%、before 77%、focus 76%、after 75%、active 73%、first-child 63%、last-child 60%、not 59%、その後、visitedが48%、root 45%、nth-child 39%、link 34%、disabled 29%、checked 22%、最後に -ms-input-placeholderが19%となっていて人気が急激に低下することがわかります。",
+    description="もっとも多くのページで使用されている擬似クラスを棒グラフで表示。モバイルでは、`hover`が91%、`before` 77%、`focus` 76%、`after` 75%、`active` 73%、`first-child` 63%、`last-child` 60%、`not` 59%、その後、`visited`が48%、`root` 45%、`nth-child` 39%、`link` 34%、`disabled` 29%、`checked` 22%、最後に -ms-input-placeholderが19%となっていて人気が急激に低下することがわかります。",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=108638805&format=interactive",
     height="612",
     sheets_gid="370286500",
@@ -213,7 +213,7 @@ ID名は`content`がもっとも普及しており、`footer`、`header`がそ�
 {{ figure_markup(
     image="pseudo-elements.png",
     caption="もっとも普及している擬似要素のページ数比率。",
-    description="もっとも多くのページで使用された接頭辞なしの擬似要素を棒グラフで示したものです。モバイルでは、beforeが41%、after 38%、placeholder 11%、selection 9%、rootとfirst-letterが2%、marker 1%、そしてbackdrop、full-page-media、file-selector-buttonは1%未満しか登録していないことがわかります。",
+    description="もっとも多くのページで使用された接頭辞なしの擬似要素を棒グラフで示したものです。モバイルでは、`before`が41%、`after` 38%、`placeholder` 11%、`selection` 9%、`root`と`first-letter`が2%、`marker` 1%、そして`backdrop`、`full-page-media`、`file-selector-button`は1%未満しか登録していないことがわかります。",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1671689923&format=interactive",
     height="500",
     sheets_gid="425572900",
@@ -232,7 +232,7 @@ ID名は`content`がもっとも普及しており、`footer`、`header`がそ�
 {{ figure_markup(
     image="attribute-selectors.png",
     caption="もっとも普及している属性セレクター（ページ数の割合）です。",
-    description="もっとも多くのページで使用されている属性セレクターを示す棒グラフ。もっとも多いのはtypeで54%、次にclassで37%、disabled 24%、dir 17%、roleとtitle 11%、hidden,href 10%、 aria-disabled 9%、 style,src 8%、 controls,idで7%、 langとaria-hiddenで5%、そしてtabindex、name、data-type、aria-selectedで4%、最後にmultipleで3%が挙げられています。",
+    description="もっとも多くのページで使用されている属性セレクターを示す棒グラフ。もっとも多いのは`type`で54%、次に`class`で37%、`disabled` 24%、`dir` 17%、`role`と`title` 11%、`hidden`,`href` 10%、`aria-disabled` 9%、 style,src 8%、 `controls`,`id`で7%、 `lang`と`aria-hidden`で5%、そして`tabindex`、`name`、`data-type`、`aria-selected`で4%、最後に`multiple`で3%が挙げられています。",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1566442848&format=interactive",
     height="675",
     sheets_gid="1504728475",
@@ -251,7 +251,7 @@ CSSでは値や単位を指定する方法として、設定された長さや�
 {{ figure_markup(
     image="length-units.png",
     caption="もっとも普及している `<length>` 単位（ページ数の割合）。",
-    description="もっとも多くのページで使用されている長さの単位を示す棒グラフです。もっとも普及している長さの単位はピクセル（px）で、71%のページで使用されており、パーセント（%）が18%、em 8%、rem 2%と続いています。",
+    description="もっとも多くのページで使用されている長さの単位を示す棒グラフです。もっとも普及している長さの単位はピクセル（`px`）で、71%のページで使用されており、パーセント（`%`）が18%、`em` 8%、`rem` 2%と続いています。",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1742992649&format=interactive",
     sheets_gid="161285719",
     sql_file="units_frequency.sql"
@@ -397,7 +397,7 @@ CSSでは値や単位を指定する方法として、設定された長さや�
 {{ figure_markup(
     image="font-relative-length-units.png",
     caption="もっとも普及している相対的フォントの単位。",
-    description="モバイルページにおける相対的フォントの単位を示す円グラフ。emが79.9％、remが19.5％、chが0.5％となっている。",
+    description="モバイルページにおける相対的フォントの単位を示す円グラフ。`em`が79.9％、`rem`が19.5％、`ch`が0.5％となっている。",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1099832022&format=interactive",
     sheets_gid="161285719",
     sql_file="units_frequency.sql"
@@ -409,7 +409,7 @@ CSSでは値や単位を指定する方法として、設定された長さや�
 {{ figure_markup(
     image="zero-length-units.png",
     caption="長さ0の値で使用される単位（またはその欠如）。",
-    description="長さ0の値で使用される単位の相対的な普及率を示す円グラフ。もっとも普及しているのは86.6%のページで単位のない0、次に12.7%のページでpx、そして0.7%のページでその他の単位が使われています。",
+    description="長さ0の値で使用される単位の相対的な普及率を示す円グラフ。もっとも普及しているのは86.6%のページで単位のない0、次に12.7%のページで`px`、そして0.7%のページでその他の単位が使われています。",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=782579377&format=interactive",
     sheets_gid="242535636",
     sql_file="units_zero.sql"
@@ -423,7 +423,7 @@ CSSでは値や単位を指定する方法として、設定された長さや�
 {{ figure_markup(
     image="calc-props.png",
     caption="`calc()`関数を使ったもっとも普及しているプロパティです。",
-    description="もっとも多くのページで使用されているcalc()プロパティを示す棒グラフ。もっとも普及しているのはwidthで27%、次いでmax-widthとtopで14%、height 13%、left 10%、max-height 8%、rightとmin-left 6%、min-height 5%、margin-right 4%、padding-left,margin-top 3%、そしてpadding-bottom、minage、bottom、padding-right、flex-basisおよびtransformですべて2%となります。",
+    description="もっとも多くのページで使用されている`calc()`プロパティを示す棒グラフ。もっとも普及しているのは`width`で27%、次いで`max-width`と`top`で14%、`height` 13%、`left` 10%、`max-height` 8%、`right`と`min-left` 6%、`min-height` 5%、`margin-right` 4%、`padding-left`,`margin-top` 3%、そして`padding-bottom`、`minage`、`bottom`、`padding-right`、`flex-basis`および`transform`ですべて2%となります。",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=203539180&format=interactive",
     height="695",
     sheets_gid="2120544742",
@@ -436,7 +436,7 @@ CSSでは値や単位を指定する方法として、設定された長さや�
 {{ figure_markup(
     image="calc-units.png",
     caption="`calc()` 関数で使用されるもっとも普及している長さの単位です。",
-    description="もっとも多くのページで使用されているcalc()の単位を示す棒グラフ。パーセント (%) とピクセル (px) はともに42%のページで、ビューポート幅 (vw) とビューポート高さ (vh)とemはすべて8%のページで、remは6%のページで使用されています。",
+    description="もっとも多くのページで使用されているcalc()の単位を示す棒グラフ。パーセント (`%`) とピクセル (`px`) はともに42%のページで、ビューポート幅 (`vw`) とビューポート高さ (`vh`)と`em`はすべて8%のページで、`rem`は6%のページで使用されています。",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1749089658&format=interactive",
     sheets_gid="1431660156",
     sql_file="calc_units.sql"
@@ -448,7 +448,7 @@ CSSでは値や単位を指定する方法として、設定された長さや�
 {{ figure_markup(
     image="calc-operators.png",
     caption="`calc()` 関数で使用されるもっとも普及している演算子です。",
-    description="もっとも多くのページで使用されているcalc()演算子の棒グラフです。減算演算子（-）が42％、加算演算子（＋）が18％、除算演算子（/）が11％、乗算演算子（*）が10％となっています。",
+    description="もっとも多くのページで使用されているcalc()演算子の棒グラフです。減算演算子（`-`）が42％、加算演算子（`＋`）が18％、除算演算子（`/`）が11％、乗算演算子（`*`）が10％となっています。",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1571752832&format=interactive",
     sheets_gid="220199231",
     sql_file="calc_operators.sql"
@@ -460,7 +460,7 @@ CSSでは値や単位を指定する方法として、設定された長さや�
 {{ figure_markup(
     image="calc-unit-complexity.png",
     caption="`calc()` の値で使用されるユニークな単位の数。",
-    description="calc()1回あたりの単位数の分布を示す棒グラフ。79%のcalc()が2つのユニットを使用し、次いで20%が1つのユニットを使用しています。3つ以上のユニットを使用するものは1%のみです。",
+    description="`calc()`1回あたりの単位数の分布を示す棒グラフ。79%の`calc()`が2つのユニットを使用し、次いで20%が1つのユニットを使用しています。3つ以上のユニットを使用するものは1%のみです。",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=220014387&format=interactive",
     sheets_gid="87407358",
     sql_file="calc_complexity_units.sql"
@@ -474,7 +474,7 @@ CSSでは値や単位を指定する方法として、設定された長さや�
 {{ figure_markup(
     image="keywords.png",
     caption="グローバルキーワードの値の使用状況。",
-    description="もっとも多くのページで使用されているグローバルキーワードの棒グラフです。Inheritが87%、initial 64%、unset 51%、revert 4%で続いています。",
+    description="もっとも多くのページで使用されているグローバルキーワードの棒グラフです。`inherit`が87%、`initial` 64%、`unset` 51%、`revert` 4%で続いています。",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1675598127&format=interactive",
     sheets_gid="393924630",
     sql_file="keyword_totals.sql"
@@ -488,7 +488,7 @@ CSSでは値や単位を指定する方法として、設定された長さや�
 {{ figure_markup(
     image="custom-property-adoption.png",
     caption="過去4年間のカスタムプロパティの使用状況。",
-    description="2019年以降のモバイルページにおけるカスタムプロパティの使用率の年次推移を示す棒グラフです。2019年から2022年にかけて、カスタムプロパティの使用率は5％から19％、29％、そして2022年の現在では42％にまで上昇しています。var()関数は、2020年に27％、2021年に35％、そして2022年の現在は43％のページで使用されています。",
+    description="2019年以降のモバイルページにおけるカスタムプロパティの使用率の年次推移を示す棒グラフです。2019年から2022年にかけて、カスタムプロパティの使用率は5％から19％、29％、そして2022年の現在では42％にまで上昇しています。`var()`関数は、2020年に27％、2021年に35％、そして2022年の現在は43％のページで使用されています。",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=832908182&format=interactive",
     sheets_gid="786267748",
     sql_file="custom_property_adoption.sql"
@@ -528,7 +528,7 @@ CSSでは値や単位を指定する方法として、設定された長さや�
 {{ figure_markup(
     image="custom-property-props.png",
     caption="もっとも普及しているカスタムプロパティのプロパティをページ数の割合で表示します。",
-    description="もっとも多くのページで使用されているカスタムプロパティを含むプロパティを示す棒グラフ。colorプロパティは38%のページでカスタムプロパティが設定され、background-colorが34%、background 32%、border-color 30%、font-sizeとwidthが27%、padding-top 21%、justify-content 20%、border 19%、height 17%で続いています。",
+    description="もっとも多くのページで使用されているカスタムプロパティを含むプロパティを示す棒グラフ。`color`プロパティは38%のページでカスタムプロパティが設定され、`background-color`が34%、`background` 32%、`border-color` 30%、`font-size`と`width`が27%、`padding-top` 21%、`justify-content` 20%、`border` 19%、`height` 17%で続いています。",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1522542060&format=interactive",
     height="530",
     sheets_gid="1294760653",
@@ -543,7 +543,7 @@ CSSでは値や単位を指定する方法として、設定された長さや�
 {{ figure_markup(
     image="custom-property-functions.png",
     caption="もっとも普及しているカスタムプロパティ機能をページ数の割合で示したもの。",
-    description="もっとも多くのページで使用されているカスタムプロパティ関数の棒グラフです。もっとも普及しているのはcalcで30%のページで使われ、次いでlinear-gradient 11%、rgba 6%、rotate, translate, scaleXが5%、 translateX, scaleY, translateY, skewY, skewX, minは4%、rgb, rotateY, rotateXが3%のページで使用されていることがわかります。",
+    description="もっとも多くのページで使用されているカスタムプロパティ関数の棒グラフです。もっとも普及しているのは`calc`で30%のページで使われ、次いで`linear-gradient` 11%、`rgba` 6%、`rotate`, `translate`, `scaleX`が5%、 `translateX`, `scaleY`, `translateY`, `skewY`, `skewX`, `min`は4%、`rgb`, `rotateY`, `rotateX`が3%のページで使用されていることがわかります。",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=580147519&format=interactive",
     height="525",
     sheets_gid="580592610",
@@ -584,7 +584,7 @@ CSSでは値や単位を指定する方法として、設定された長さや�
 {{ figure_markup(
     image="color-formats.png",
     caption="もっとも普及しているカラーフォーマットの出現率。",
-    description="もっとも多くのページで使用されているカラーフォーマットを棒グラフで示したもの。6桁の#RRGGBB構文が49%のページ、3桁の#RGBが25%のページ、rgba関数が14%のページ、透明キーワードが8%のページ、名前付きカラーが2%、rgb関数は1%、残りのフォーマットは1%未満のページで使用されており、以下の通りであった。8桁の#RRGGBBAA、hsla関数、currentColorキーワード、4桁の#RGBA、システムカラーキーワード、hsl関数、カラー関数、hwb関数、lch関数、そして最後にlab関数が、人気順に並んでいます。",
+    description="もっとも多くのページで使用されているカラーフォーマットを棒グラフで示したもの。6桁の`#RRGGBB`構文が49%のページ、3桁の`#RGB`が25%のページ、`rgba`関数が14%のページ、透明キーワードが8%のページ、名前付きカラーが2%、`rgb`関数は1%、残りのフォーマットは1%未満のページで使用されており、以下の通りであった。8桁の`#RRGGBBAA`、`hsla`関数、`currentColor`キーワード、4桁の`#RGBA`、システムカラーキーワード、`hsl`関数、カラー関数、`hwb`関数、`lch`関数、そして最後に`lab`関数が、人気順に並んでいます。",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=523191620&format=interactive",
     height="652",
     sheets_gid="750894349",
@@ -599,7 +599,7 @@ CSSでは値や単位を指定する方法として、設定された長さや�
 {{ figure_markup(
     image="color-keywords.png",
     caption="登場回数がもっとも少ないネーミングカラー。",
-    description="もっとも少ないページ数で使用されたネームドカラーを示す棒グラフ。MediumSpringGreenは、わずか1,793のモバイルページで使用されています。そこからDarkSalmon、MediumOrchid、DarkOrchid、MediumSlateBlue、LavenderBlush、RosyBrown、Moccasin、SpringGreen、Thistleと徐々に採用が増え、2,205ページで使用されていることがわかります。",
+    description="もっとも少ないページ数で使用されたネームドカラーを示す棒グラフ。`MediumSpringGreen`は、わずか1,793のモバイルページで使用されています。そこから`DarkSalmon`、`MediumOrchid`、`DarkOrchid`、`MediumSlateBlue`、`LavenderBlush`、`RosyBrown`、`Moccasin`、`SpringGreen`、`Thistle`と徐々に採用が増え、2,205ページで使用されていることがわかります。",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=80217989&format=interactive",
     height="464",
     sheets_gid="2096495459",
@@ -626,7 +626,7 @@ CSSでは値や単位を指定する方法として、設定された長さや�
 {{ figure_markup(
     image="color-formats-alpha-distribution.png",
     caption="アルファ対応によるカラーフォーマットの分布。",
-    description="アルファをサポートするカラーフォーマットの相対的な使用率を示す棒グラフです。rgba関数が14％、transparentキーワードが8％で使用されています。その他のフォーマットは1%未満です。",
+    description="アルファをサポートするカラーフォーマットの相対的な使用率を示す棒グラフです。`rgba`関数が14％、`transparent`キーワードが8％で使用されています。その他のフォーマットは1%未満です。",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1242036465&format=interactive",
     sheets_gid="750894349",
     sql_file="color_formats.sql"
@@ -648,7 +648,7 @@ CSSでは値や単位を指定する方法として、設定された長さや�
 {{ figure_markup(
     image="gradient-functions.png",
     caption="もっとも普及しているグラデーション機能をページ数の割合で紹介。",
-    description="もっとも多くのページで使用されたグラデーション機能を示す棒グラフです。linear-gradientが76%のページで、次いで -webkit-linear-gradientが53%、-webkit-gradient 44%、-o-linear-gradient 43%、-moz-linear-gradient 38%、-ms-linear-gradient 23%、 radial-gradient 15%、-webkit-radial-gradient 6%、 repeat-linear-gradient 4%、最後に -moz-radial-gradientが2%のページで使用されました。",
+    description="もっとも多くのページで使用されたグラデーション機能を示す棒グラフです。`linear-gradient`が76%のページで、次いで `-webkit-linear-gradient`が53%、`-webkit-gradient` 44%、`-o-linear-gradient` 43%、`-moz-linear-gradient` 38%、`-ms-linear-gradient` 23%、 `radial-gradient` 15%、`-webkit-radial-gradient` 6%、 `repeat-linear-gradient` 4%、最後に `-moz-radial-gradient`が2%のページで使用されました。",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=824533060&format=interactive",
     height="486",
     sheets_gid="972045834",
@@ -785,7 +785,7 @@ CSSでは画像の読み込みはあまり発生しませんが、その画像�
 {{ figure_markup(
     image="box-sizing.png",
     caption="ページごとの `border-box` 宣言の数の分布。",
-    description="1ページあたりのbox-sizing: border-box宣言の数の10、25、50、75、90パーセンタイルを示した棒グラフです。数値は順に1ページあたり1、7、22、52、101個の宣言があります。",
+    description="1ページあたりの`box-sizing: border-box`宣言の数の10、25、50、75、90パーセンタイルを示した棒グラフです。数値は順に1ページあたり1、7、22、52、101個の宣言があります。",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1043112167&format=interactive",
     sheets_gid="859735058",
     sql_file="box_sizing.sql"
@@ -827,7 +827,7 @@ CSSでは画像の読み込みはあまり発生しませんが、その画像�
 {{ figure_markup(
     image="transition-props.png",
     caption="もっとも普及している `transition` プロパティを、ページ数の割合で表示します。",
-    description="もっとも多くのページで使用されているトランジションプロパティを棒グラフで表示しています。もっとも多くのページで使われているプロパティは53％で、以下、opacityが50％、transform 38％、none 25％、height 22％、color 21％、background-color 20％、background 17％、box-shadow 13％、left 12％、width、topと -webkit-transform 10%、border-colorとvisibility 8％と続いています。",
+    description="もっとも多くのページで使用されているトランジションプロパティを棒グラフで表示しています。もっとも多くのページで使われているプロパティは`all`53％で、以下、`opacity`が50％、`transform` 38％、`none` 25％、`height` 22％、`color` 21％、`background-color` 20％、`background` 17％、`box-shadow` 13％、`left` 12％、`width`、`top`と `-webkit-transform` 10%、`border-color`と`visibility` 8％と続いています。",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1745619326&format=interactive",
     height="533",
     sheets_gid="349042756",
@@ -888,7 +888,7 @@ CSSでは画像の読み込みはあまり発生しませんが、その画像�
 {{ figure_markup(
     image="transition-timing-functions.png",
     caption="タイミング機能の配布。",
-    description="タイミング機能の使用率の相対的な分布を示す円グラフ。easeが31.8%、linear 17.9%、ease-in-out 17.5%、cubic-bezier 16.4%、ease outは8.4%、ease-in 5.2%、stepsが2.8%の順で使用されました。",
+    description="タイミング機能の使用率の相対的な分布を示す円グラフ。`ease`が31.8%、`linear` 17.9%、`ease-in-out` 17.5%、`cubic-bezier` 16.4%、`ease-out`は8.4%、`ease-in` 5.2%、`steps`が2.8%の順で使用されました。",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=586595091&format=interactive",
     sheets_gid="1907298177",
     sql_file="transition_timing_functions.sql"
@@ -900,7 +900,7 @@ CSSでは画像の読み込みはあまり発生しませんが、その画像�
 {{ figure_markup(
     image="transition-animation-names.png",
     caption="アニメーション名で識別されるアニメーションの種類。",
-    description="もっとも多く使われているアニメーションの種類を示す棒グラフ。もっとも普及しているのはuncategorizedで13%、次いでrotate 13%、bounce 11%、slide 10%、fade 9%、wobble 5%、scale 4%、pulse 2%、visibility 2%となっています。",
+    description="もっとも多く使われているアニメーションの種類を示す棒グラフ。もっとも普及しているのはuncategorizedで13%、次いで`rotate` 13%、`bounce` 11%、`slide` 10%、`fade` 9%、`wobble` 5%、`scale` 4%、`pulse` 2%、`visibility` 2%となっています。",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=214267440&format=interactive",
     height="463",
     sheets_gid="1632805666",
@@ -928,7 +928,7 @@ CSSで使用されているいくつかの視覚効果について調べまし�
 {{ figure_markup(
     image="blend-mode-values.png",
     caption="ブレンドモードを設定するページでもっとも普及しているブレンドモード。",
-    description="もっとも多くのページで使用されているブレンドモードを示す棒グラフ。ブレンドモードプロパティを設定したページの42%で乗算値が使用され、次いで33%のページでoverlayとscreen、32%でdarken、31%でlighten、29%でsoft-light、28%でcolor、28%でcolor-burnとcolor-dodge、最後に21%でdifferenceとなっています。",
+    description="もっとも多くのページで使用されているブレンドモードを示す棒グラフ。ブレンドモードプロパティを設定したページの42%で乗算値が使用され、次いで33%のページで`overlay`と`screen`、32%で`darken`、31%で`lighten`、29%で`soft-light`、28%で`color`、28%で`color-burn`と`color-dodge`、最後に21%で`difference`となっています。",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=204649391&format=interactive",
     height="515",
     sheets_gid="648874350",
@@ -943,7 +943,7 @@ CSSで使用されているいくつかの視覚効果について調べまし�
 {{ figure_markup(
     image="filter-functions.png",
     caption="フィルターを設定するページでもっとも普及しているフィルター機能。",
-    description="フィルターを設定しているページでもっとも多く使われている関数を棒グラフにしたもの。アルファ関数が82％、フィルターなし（none）59％、progid:DXImageTransform.Microsoft.gradient 46％、blur 31％、drop-shadowとgrayscale 22％、brightness 20％、progid:DXImageTransform.Microsoft.BasicImageとinherit 10％、url、sepia、contrast、none !importantすべて8％となっています。",
+    description="フィルターを設定しているページでもっとも多く使われている関数を棒グラフにしたもの。アルファ関数が82％、フィルターなし（none）59％、`progid:DXImageTransform.Microsoft.gradient` 46％、`blur` 31％、`drop-shadow`と`grayscale` 22％、`brightness` 20％、`progid:DXImageTransform.Microsoft.BasicImage`と`inherit` 10％、`url`、`sepia`、`contrast`、`none` `!important`すべて8％となっています。",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1568163707&format=interactive",
     height="591",
     sheets_gid="1004790461",
@@ -958,7 +958,7 @@ CSSで使用されているいくつかの視覚効果について調べまし�
 {{ figure_markup(
     image="clip-path-functions.png",
     caption="`clip-path()`を設定したページで、人気のある `clip-path` 値です。",
-    description="clip-pathを設定しているもっとも多くのページで使用されているclip-pathの値を示す棒グラフです。もっとも普及している値はinsetで88%、次いでnone70%、polygon17%、var9%、circle7%、url3%、ellipse2%となっています。",
+    description="`clip-path`を設定しているもっとも多くのページで使用されている`clip-path`の値を示す棒グラフです。もっとも普及している値は`inset`で88%、次いで`none`70%、`polygon`17%、`var`9%、`circle`7%、`url`3%、`ellipse`2%となっています。",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=163739565&format=interactive",
     sheets_gid="1458239816",
     sql_file="effects_clip_path_functions.sql"
@@ -978,7 +978,7 @@ CSSで使用されているいくつかの視覚効果について調べまし�
 {{ figure_markup(
     image="media-query-features.png",
     caption="人気のメディアクエリ機能。",
-    description="もっとも多くのページで使用されているメディアクエリ機能を示す棒グラフ。もっとも普及しているのは83%のページでmax-width、次いでmin-width 79%、-webkit-min-device-pixel-ratio 35%、 prefers-reduced-motion 34%、 orientation 30%、 max-device-width 26%、 -ms-high-contrast 24%、 max-height 23%、 min-resolution 19% となっています。-webkit-transform-3dおよびtransform-3d 12%, min-device-pixel-ratioおよびmin-height 11%、min--moz-device-pixel-ratioは10%、forced-colors、min-device-widthとprefers-color-schemeが8%、-o-min-device-pixel-ratio 7%、hover 5%、pointer 2%です。",
+    description="もっとも多くのページで使用されているメディアクエリ機能を示す棒グラフ。もっとも普及しているのは83%のページで`max-width`、次いで`min-width` 79%、`-webkit-min-device-pixel-ratio` 35%、 `prefers-reduced-motion` 34%、 `orientation` 30%、 `max-device-width` 26%、 `-ms-high-contrast` 24%、 `max-height` 23%、 `min-resolution` 19% となっています。`-webkit-transform-3d`および`transform-3d` 12%, `min-device-pixel-ratio`および`min-height` 11%、`min--moz-device-pixel-ratio`は10%、`forced-colors`、`min-device-width`と`prefers-color-scheme`が8%、`-o-min-device-pixel-ratio` 7%、`hover` 5%、`pointer` 2%です。",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=2066259966&format=interactive",
     height="598",
     sheets_gid="2106336302",
@@ -991,7 +991,7 @@ CSSで使用されているいくつかの視覚効果について調べまし�
 {{ figure_markup(
     image="prefers-features.png",
     caption="ユーザー・プレファレンス機能の使用率（ページ数ベース）。",
-    description="prefersが付くメディアクエリ機能を示す棒グラフ。もっとも普及している値は34%のページでprefers-reduced-motion、次にprefers-color-scheme 8%、prefers-contrast 1%、prefers-reduced-transparency 1%未満となっています。",
+    description="`prefers`が付くメディアクエリ機能を示す棒グラフ。もっとも普及している値は34%のページで`prefers-reduced-motion`、次に`prefers-color-scheme` 8%、`prefers-contrast` 1%、`prefers-reduced-transparency` 1%未満となっています。",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=632942914&format=interactive",
     sheets_gid="2106336302",
     sql_file="media_query_features.sql"
@@ -1019,7 +1019,7 @@ CSSで使用されているいくつかの視覚効果について調べまし�
 {{ figure_markup(
     image="media-query-breakpoints.png",
     caption="もっとも普及しているブレイクポイントの分布。",
-    description="メディアクエリで使用されるもっとも普及しているブレイクポイントを示す棒グラフ。35%のページがmax-widthに480pxを、23%がmin-widthに使用しています。39%のページがmax-widthに600pxを、32%がmin-widthに600pxを使用しています。51%のページがmax-widthに767px、min-widthに8%を使用。38%のページがmax-widthに768px、min-widthに57pxを使用しています。12%のページがmax-widthに782pxを、min-widthに25%を使用しています。25%のページがmax-widthに800pxを、min-widthに7%を使用。29%のページがmax-widthに991pxを、min-widthに3%を使用しています。13%のページがmax-widthに992pxを、min-widthに39%を使用しています。26%のページがmax-widthに1024pxを、17%がmin-widthに1024pxを使用。19%のページがmax-widthに1200px、min-widthに42%を使用しています。",
+    description="メディアクエリで使用されるもっとも普及しているブレイクポイントを示す棒グラフ。35%のページが`max-width` に480pxを、23%が`min-width` に使用しています。39%のページが`max-width` に600pxを、32%が`min-width` に600pxを使用しています。51%のページが`max-width` に767px、`min-width` に8%を使用。38%のページが`max-width` に768px、`min-width` に57pxを使用しています。12%のページが`max-width` に782pxを、`min-width` に25%を使用しています。25%のページが`max-width` に800pxを、`min-width` に7%を使用。29%のページが`max-width` に991pxを、`min-width` に3%を使用しています。13%のページが`max-width` に992pxを、`min-width` に39%を使用しています。26%のページが`max-width` に1024pxを、17%が`min-width` に1024pxを使用。19%のページが`max-width` に1200px、`min-width` に42%を使用しています。",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1285928011&format=interactive",
     sheets_gid="1037504354",
     sql_file="media_query_values.sql"
@@ -1037,7 +1037,7 @@ CSSで使用されているいくつかの視覚効果について調べまし�
 {{ figure_markup(
     image="media-query-props.png",
     caption="メディアクエリーブロックでもっとも普及しているプロパティです。",
-    description="メディアクエリブロックの中でもっとも多くのページで使用されているプロパティを示す棒グラフ。ディスプレイと幅のプロパティは83%のページでメディアクエリに含まれており、heightとpaddingは78%、margin-left 77%、font-size 76%、marginとposition 75%、margin-right、left、top、margin-top、max-width 74%、rightとmargin-bottom 73%、padding-left 72%、text-align 71%、padding-right 70%、background 69%、float 67%と続いています。",
+    description="メディアクエリブロックの中でもっとも多くのページで使用されているプロパティを示す棒グラフ。ディスプレイと幅のプロパティは83%のページでメディアクエリに含まれており、`height`と`padding`は78%、`margin-left` 77%、`font-size` 76%、`margin`と`position` 75%、`margin-right`、`left`、`top`、`margin-top`、`max-width`  74%、`right`と`margin-bottom` 73%、`padding-left` 72%、`text-align` 71%、`padding-right` 70%、`background` 69%、`float` 67%と続いています。",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1670810448&format=interactive",
     height="714",
     sheets_gid="2050421561",
@@ -1058,7 +1058,7 @@ CSS機能の対応テストに使用されるフィーチャー・クエリー�
 {{ figure_markup(
     image="supports-features.png",
     caption="フィーチャークエリでテストされたもっとも普及している機能。",
-    description="機能クエリ（@supports）がもっとも多くテストされている機能を示す棒グラフ。sticky機能が36%、mask-image 20%、touch-callout 11%、ime-align5%、grid 5%、overflow-scrolling 5%、appearance 3%、カスタムプロパティ2%、object-fit 1%、最大関数1%と続いています。",
+    description="機能クエリ（`@supports`）がもっとも多くテストされている機能を示す棒グラフ。`sticky`機能が36%、`mask-image` 20%、`touch-callout` 11%、`ime-align`5%、`grid` 5%、`overflow-scrolling` 5%、`appearance` 3%、カスタムプロパティ2%、`object-fit` 1%、最大関数1%と続いています。",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=316208344&format=interactive",
     sheets_gid="542186816",
     sql_file="supports_criteria.sql"
@@ -1072,7 +1072,7 @@ CSS機能の対応テストに使用されるフィーチャー・クエリー�
 {{ figure_markup(
     image="supports-props.png",
     caption="フィーチャークエリーブロック内で使用されているプロパティ（ページ数の割合）。",
-    description="もっとも多くのページで見られる機能クエリブロック内に使用されているプロパティを示す棒グラフ。オブジェクトフィットプロパティは27%のページでフィーチャークエリーブロックに含まれ、以下、content 26%、background-attachment 25%、border-radius、mask-size、mask-image、mask-repeat、mask-position、mask-mode 24%、-webkit-mask-size、 -webkit-mask-repeatおよび -o-object-fit 23%、display 17%、width 15%、height 13%、flex 11%、justify-contentおよびalign-items 10%と続いています。",
+    description="もっとも多くのページで見られる機能クエリブロック内に使用されているプロパティを示す棒グラフ。オブジェクトフィットプロパティは27%のページでフィーチャークエリーブロックに含まれ、以下、`content` 26%、`background-attachment` 25%、`border-radius`、`mask-size`、`mask-image`、`mask-repeat`、`mask-position`、mask-mode 24%、`-webkit-mask-size`、 `-webkit-mask-repeat`および `-o-object-fit` 23%、`display` 17%、width 15%、`height` 13%、`flex` 11%、`justify-content`および`align-items` 10%と続いています。",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1247122547&format=interactive",
     height="783",
     sheets_gid="1467181186",
@@ -1099,7 +1099,7 @@ CSS機能の対応テストに使用されるフィーチャー・クエリー�
 {{ figure_markup(
     image="logical-props.png",
     caption="使用される論理プロパティの分布。",
-    description="論理プロパティの使用率の相対的な分布を示す円グラフ。marginプロパティが70.0%、text-align 12.6%、padding 11.2%、border 4.5%、inset 1.7%使用されていることがわかる。",
+    description="論理プロパティの使用率の相対的な分布を示す円グラフ。`margin`プロパティが70.0%、`text-align` 12.6%、`padding` 11.2%、`border` 4.5%、`inset` 1.7%使用されていることがわかる。",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=597319721&format=interactive",
     sheets_gid="1478929671",
     sql_file="i18n_logical_properties.sql"
@@ -1148,7 +1148,7 @@ Sassのようなプリプロセッサーは、開発者がCSSでできるよう�
 {{ figure_markup(
     image="sass-function-calls.png",
     caption="もっとも普及しているSass関数呼び出しの割合。",
-    description="もっとも多く使われているSass関数呼び出しを示した棒グラフ。Sass関数呼び出しのうち、if関数が19％を占め、以下、その他の関数17％、darken 14％、map-get 10％、map-keys 9％、パーセンテージ6％、nth 5％、lightenとmix 4％、type-of、α調整、単位、長さが3％と続きます。",
+    description="もっとも多く使われているSass関数呼び出しを示した棒グラフ。Sass関数呼び出しのうち、if関数が19％を占め、以下、その他の関数17％、`darken` 14％、`map-get` 10％、`map-keys` 9％、パーセンテージ6％、`nth` 5％、`lighten`と`mix` 4％、`type-of`、α調整、単位、長さが3％と続きます。",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1702171363&format=interactive",
     height="552",
     sheets_gid="1751596973",
@@ -1173,7 +1173,7 @@ Sassのようなプリプロセッサーは、開発者がCSSでできるよう�
 {{ figure_markup(
     image="sass-nesting.png",
     caption="SCSSにおける明示的なネストの使用率（SCSSを使用しているページの割合）。",
-    description="SCSSを使用したもっとも多くのページで使用されているネスティングセレクターを棒グラフで示したものです。88%のSCSSページでネスティングセレクターが使用されています。もっとも普及しているセレクターは85%のSCSSページで&:pseudo-class、次いで&.class 81%、&::擬似要素70%、そのまま & 単体65%、&[attr]59%、& +（隣接兄弟）31%、&子孫25%、& >（子）24%、& ~と &#id 5%の順になっています。",
+    description="SCSSを使用したもっとも多くのページで使用されているネスティングセレクターを棒グラフで示したものです。88%のSCSSページでネスティングセレクターが使用されています。もっとも普及しているセレクターは85%のSCSSページで`&:pseudo-class`、次いで`&.class` 81%、`&::`擬似要素70%、そのまま `&` 単体65%、`&[attr]`59%、`& +`（隣接兄弟）31%、`&子孫`25%、`& >`（子）24%、`& ~`と `&#id` 5%の順になっています。",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1858217462&format=interactive",
     height="455",
     sheets_gid="1739922540",
@@ -1199,7 +1199,7 @@ Sassのようなプリプロセッサーは、開発者がCSSでできるよう�
 {{ figure_markup(
     image="print-props.png",
     caption="印刷スタイルシートを持つページの印刷スタイルでもっとも多いプロパティ。",
-    description="印刷スタイルシートを持つもっとも多くのページで使用されている印刷プロパティを示す棒グラフ。displayプロパティは印刷スタイルシートを持つページの55%で使われ、margin 48%、color 47%、width 43%、background 42%、paddingとtext-decoration 39%、 font-size 37%、 text-align 36%、 content 34%がそれに続く。",
+    description="印刷スタイルシートを持つもっとも多くのページで使用されている印刷プロパティを示す棒グラフ。`display`プロパティは印刷スタイルシートを持つページの55%で使われ、`margin` 48%、`color` 47%、`width` 43%`、background` 42%、`padding`と`text-decoration` 39%、 `font-size` 37%、 `text-align` 36%、`content` 34%がそれに続く。",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1905758001&format=interactive",
     height="455",
     sheets_gid="962139614",
@@ -1214,7 +1214,7 @@ Sassのようなプリプロセッサーは、開発者がCSSでできるよう�
 {{ figure_markup(
     image="print-fragmentation-props.png",
     caption="印刷スタイルシートで使用されるフラグメンテーションプロパティ。",
-    description="印刷用スタイルシートを持つページでの断片化プロパティの使用状況を示す棒グラフ。page-break-insideプロパティは印刷スタイルシートを持つページの32%で使われ、page-break-after 30%、orphans 22%、page-break-before 19%、break-after 2%がそれに続いています。",
+    description="印刷用スタイルシートを持つページでの断片化プロパティの使用状況を示す棒グラフ。`page-break-inside`プロパティは印刷スタイルシートを持つページの32%で使われ、`page-break-after` 30%、`orphans` 22%、`page-break-before` 19%、`break-after` 2%がそれに続いています。",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=141331795&format=interactive",
     height="455",
     sheets_gid="962139614",
@@ -1307,7 +1307,7 @@ CSSでは、ショートハンドプロパティとは、1つの宣言で複数�
 {{ figure_markup(
     image="shorthand-first-props.png",
     caption="ショートハンドの次に来るもっとも普及しているロングハンドプロパティです。",
-    description="ロングハンドプロパティが、関連するショートハンドプロパティの後に来る場合の相対的な人気を示す棒グラフです。background-sizeプロパティがこのパターンの15%を占め、background-image 6%、font-size、margin-bottom、margin-top、border-bottom-colorが5%、 line-height、border-top-color、margin-leftは4%、 padding-leftで3%と続いています。",
+    description="ロングハンドプロパティが、関連するショートハンドプロパティの後に来る場合の相対的な人気を示す棒グラフです。`background-size`プロパティがこのパターンの15%を占め、`background-image` 6%、`font-size`、`margin-bottom`、`margin-top`、`border-bottom-color`が5%、`line-height`、`border-top-color`、`margin-left`は4%、 `padding-left`で3%と続いています。",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1722219756&format=interactive",
     height="445",
     sheets_gid="293529425",
@@ -1328,7 +1328,7 @@ CSSでは、ショートハンドプロパティとは、1つの宣言で複数�
 {{ figure_markup(
     image="unknown-props.png",
     caption="もっともよく見かける未知のプロパティ。",
-    description="無効でもっとも多くのページで見られるプロパティを示した棒グラフ。もっとも普及しているのは -archetypeで11%、次いでfont-smoothingとbehaviorで10%、tap-highlight-color 6%、moz-transition 5%、min-center 4%、box-flex 3%、webkit-transitionでは3%、残りはすべて1%未満のページで見つかり、url-encoded、border-collapse、webkit-border-radius、moz-border-radiusおよびenable-backgroundとなっています。",
+    description="無効でもっとも多くのページで見られるプロパティを示した棒グラフ。もっとも普及しているのは `-archetype`で11%、次いで`font-smoothing`と`behavior`で10%、`tap-highlight-color` 6%、`moz-transition` 5%、`min-center` 4%、`box-flex` 3%、`webkit-transition`では3%、残りはすべて1%未満のページで見つかり、`url-encoded`、`border-collapse`、`webkit-border-radius`、`moz-border-radius`および`enable-background`となっています。",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=932637515&format=interactive",
     height="514",
     sheets_gid="127761236",
