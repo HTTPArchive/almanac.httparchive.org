@@ -1,22 +1,106 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
-titre: Jamstack
-#TODO - Review and update chapter description
-description: Le chapitre Jamstack de l'Almanach du Web 2022 couvre l'adoption des technologies, des performances des sites construit avec Jamstack et du poids de diverses resources.
-auteurs: [seldo, whitep4nth3r]
-relecteurs: [GregBrimble, Nutlope]
-analystes: [seldo, GregBrimble]
-editeurs: []
-traducteurs: []
-resultats: https://docs.google.com/spreadsheets/d/1yfNaj25ToezMwQLKdYP6Qh7AUoX9zMdKMSRVC8JlZMY/
-citation en vedette: TODO
-statistique en vedette 1: TODO
-étiquette de statistique en vedette 1: TODO
-statistique en vedette 2: TODO
-étiquette de statistique en vedette 2: TODO
-statistique en vedette 3: TODO
-étiquette de statistique en vedette 3: TODO
-non édité: true
+title: Jamstack
+description: Le chapitre Jamstack de l'Almanac du Web 2022 couvre la quantification des sites Jamstack, la croissance de Jamstack, les frameworks de Jamstack et l'hébergement.
+authors: [seldo, whitep4nth3r]
+reviewers: [tunetheweb]
+analysts: [seldo, tunetheweb]
+editors: [DesignrKnight]
+translators: []
+seldo_bio: Laurie est développeur web depuis 1996, avec des pauses occasionnelles pour trouver des entreprises comme <a hreflang="en" href="https://www.crunchbase.com/organization/snowball-factory">awe.sm</a> (2010) et <a hreflang="en" href="https://npmjs.com/">npm</a> (2014). Il travaille actuellement  en tant que Évangéliste de données chez <a hreflang="en" href="https://netlify.com">Netlify</a>. Il adore créer des sites plus grand et meilleur. Il pense qu'un des meilleurs moyens de faire cela est d'encourager plus de personnes à faire du développement web, en leur enseignant les techniques existantes et en construisant les outils et les services qui rendent le développement web plus facile, afin qu'ils aient moins de choses à apprendre.
+whitep4nth3r_bio: Salma aide les développeurs à construire, à apprendre des choses et à aimer ce qu'ils font. Elle travaille chez Netlify en tant que Ingénieur en Expérience Développeur, stream des sessions de codage en direct, et adores aider les gens entrer dans le monde de la tech. Après une carrière en tant que professeur de musique et comédien, Salma s'est reconverti vers la technologie en 2014, se spécialisant dans le développement de front-end et le leadership technologique pour startups, agences et e-commerce international. <a hreflang="en" href="https://twitch.tv/whitep4nth3r">Suiver Salma sur Twitch</a> pour voir ce qu'elle contruit actuellement.
+results: https://docs.google.com/spreadsheets/d/1yfNaj25ToezMwQLKdYP6Qh7AUoX9zMdKMSRVC8JlZMY/
+featured_quote: Même si nous ne pouvons pas revandiquer savoir exactement quel pourcentage du web est Jamstack, nous pouvons dire qu'environ 3% du web est Jamstack-y, et que ce groupe a grandi fortement lors des 3 dernières années - un grand signe pour la communauté Jamstack.
+featured_stat_1: ~3%
+featured_stat_label_1: Sites Jamstack-y sur le web en 2022
+featured_stat_2: 106%
+featured_stat_label_2: Croissance des sites Jamstack-y depuis 2020
+featured_stat_3: 36%
+featured_stat_label_3: Sites Jekyll qui sont Jamstack-y
 ---
 
-## TODO
+## Introduction
+
+Un des plus gros problèmes en écrivant à propos de Jamstack, c'est définir qu'est-ce que la Jamstack est, exactement. Ici, nous avons trois différentes définitions (nous avons mis l'emphase sur certains mots):
+
+1. Des sites rapides et sécurisés et des applications délivrées en fichiers de pré-rendus et les servant directement depuis un RDC, supprimant la nécessité de gérer un exécuter des serveurs web.
+
+2. Jamstack est une **architecture** designée pour rendre le web **plus rapide**, plus sécurisé, et plus facile à mettre à l'échelle. Il est construit sur de nombreux outils et flux de travail que les développeurs adorent, et qui apporte un maximum de productivité.
+
+3. Jamstack est une **approche architecturale** qui **découple**  la couche d'expérience web de la donnée et de la logique utilisateur, améliorant la flexibilité, la capacité de mise à l'échelle, **la performance**, et la maintenabilité.
+
+Les trois définition précédentes viennent de <a hreflang="en" href="https://jamstack.org/">Jamstack.org</a>: respectivement en <a hreflang="en" href="https://web.archive.org/web/20200331214426/https://jamstack.org/">2020</a>, <a hreflang="en" href="https://web.archive.org/web/20210924115533/https://jamstack.org/what-is-jamstack/">2021</a>, et <a hreflang="en" href="https://web.archive.org/web/20220809174445/https://jamstack.org/">2022</a>. Il est difficile de penser à une souce qui fasse plus autorité pour la définition de Jamstack, il est donc juste de dire que la définition est une sorte de cible mouvante.
+
+Mais, comme les mots en gras le démontre, il est clair qu'il y a une certaine continuité: les sites devraient être rapides, ils devraient être pré-rendus, et ils devraient être utilisé avec une approche architectural qui découple "où on récupère vos données" de "comment vous rendez vos données". Même s'il est difficile de trouver une définition précise, les développeurs Jamstack savent ce que vous voulez dire quand vous dites "Jamstack": vous avez un site qui charge rapidement, rend beaucoup de son contenu utile en une fois, à la construction, et récupère des données supplémentaires (si nécessaire) via JavaScript.
+
+<p class="note">Avertissement: les deux auteurs de ce rapport étaient des employés Netlify. Netlify inventa le terme Jamstack et détient Jamstack.org. Ce rapport et l'analyse sous-jacente ont été relu et approuvé par d'autres personnes non affilié à Netlify.</p>
+
+## Quantifier la Jamstack: qu'est-ce qui compte?
+
+Mais le problème devient plus compliqué wuand vous essayé de créer l'amanach Web 2022. Quand nous avons à faire à des millions de sites web, "Je le saurais quand je le verrais" ne peut pas être votre définition. Comment quantifions nous la Jamstack? Comment pouvons nous l'identifier nous précisemment afin que nous puissons apprendre à ce sujet? Commençons par nous poser une série de questions.
+
+### Est-ce que tous les sites statique sont des sites Jamstack?
+
+Cela devrait être un "oui" évident: si la page est un simple HTLM qui est rendu en une seule fois, alors il semble certain que cela devrait être Jamstack. Mais qu'en est-il de toutes ces pages construites par des gens dans les années 90, avant que le JavaScript devienne populaire et que la plupart des sites étaient statiques? Sont-ils Jamstack? On dirait que non, tous les sites statiques ne sont pas des sites Jamstack. Donc nous avons essayé de comprendre pourquoi.
+
+Nous avons atteri sur l'aspect "RDC" de la définition précédente de Jamstack: il n'y a pas de fournisseur spécifique de RDC, mais une partie de la définition est précisement la partie sur le "pré-rendu", qui implique que: vous devez traiter quelque chose, et ensuite le mettre en cache. Donc un site Jamstack doit être mis en cache (peu importe que vous le mettiez en cache vous même, ou que vous utilisiez un RDC).
+
+Cela produit un autre cas particulier: beaucoup de sites sont mis en cache! Même des sites complètement dynamiques mettent souvent des éléments en cache for quelques minutes, afin d'éviter des pics de chargements, et, de nos jours, beaucoup de sites se servent de RDC, ce qui est intrinsèquement un cache, même si l'architecture du site ne repose sur aucun modèle Jamstack. Donc, quelle est la différence entre un site avec un cache normal, et un site Jamstack? La cacheability est une partie, mais que faut-il d'autre?
+
+### Est-ce qu'un site Jamstack doit utiliser du JavaScript?
+
+Nous avons décidé qu'un site Jamstack ne doit pas nécessairement utiliser du JavaScript. Beaucoup de sites Jamstack le font, bien sûr: le "J" de Jamstack a été utilisé pour représenter "JavaScript", après tout. Mais, même la plus vieille des définition de Jamstack disait explicitement que l'utilisation du JavaScript était optionnel – un site complètement statique sans Javascript est bien toujours Jamstack.
+
+### Est-ce que utiliser la Jamstack signifie utiliser un framework spécifique?
+
+Il y a définitivement plusieurs frameworks auxquels les gens pensent quand ils pensent à la Jamstack; à tel point que les versions 2020 et 2021 de l'Almanach du Web [défini la Jamstack exclusivement par les frameworks utilisés](../2021/jamstack), se concentrant sur les Générateurs de Site Statiques (GSS). Cela semble assez logique, mais nous avons pensé que cela représentait des problèmes.
+
+Premièrement, qu'en est-il des frameworks que l'on ne peut pas facilement détecté? Par exemple, <a hreflang="en" href="https://www.11ty.dev/">Eleventy</a>, un choix populaire et en pleine croissance dans la Jamstack, ne laisse aucune trace dans le HTML généré; il est invisible pour l'utilisateur final (par défaut, bien que l'on puisse ajouter un <a hreflang="en" href="https://www.11ty.dev/docs/data-eleventy-supplied/#eleventy-variable">tag de générateur</a> si l'on veut). Sans compter les frameworks qui, disons le poliment, se trompent.
+
+Deuxièmement: il y a beaucoup de frameworks! Il y en a une douzaine de gros et des milliers de petits. Même pour ceux que l'on peut trouvé, nous n'avons pas toujours un bon moyen de les détecter. De plus, nous sommes d'accord qu'il est définitivement possible de construire un site qui semble "Jamstack-y" sans utiliser de framework. Un HTML pur peut définitivement être Jamstack.
+
+Troisièmement: utiliser un framework qui est populaire avec des développeurs Jamstack ne garantit pas que le site que vous allez construire sera un site Jamstack. Si pour des raisons architecturales, le process de rendu est très lent, ou que chaque page est rendu dynamiquement, ce ne sera pas un site Jamstack même si vous utilisez le même framework que beaucoup de sites Jamstack. Tous les sites ne doivent pas être Jamstack, et c'est totalement acceptable.
+
+Nous avons donc décidé d'ignorer les frameworks en tant que partie de la définition cette fois, même si, vous verrez plus tard, les frameworks auxquels vous avez pu pensez se trouveront dans les résultats malgré tout.
+
+### Est-ce qu'un site Jamstack doit être performant?
+
+La seule fonctionnalité commnue aux trois définitions de la Jamstack était la _performance_. Mais "rapide" est une terme flou quand on parle de site web: si vous avez passé un peu de temps à lire l'Almanach du Web, vous saurait qu'il y a des douzaines de métriques que l'on peut utiliser afin de mesurer la performance d'un site, et qu'il y a beaucoup de bons arguments pour chacune d'entre elles.
+
+Nous avons donc beaucoup réfléchi au ressenti d'un site Jamstack. La première chose a été qu'un site Jamstack rend son contenu initial très rapidement. De tous les métriques que nous avons utilisé, nous avons décidé que l'une de celles qui capture le mieux cette idée est <a hreflang="en" href="https://web.dev/lcp/">Largest Contentful Paint</a>, ou LCP. C'est une mesure du temps qu'il faut pour rendre l'élement le plus gros de la page. On peut récupérer du contenu en plus avec des API, ou non, et toujours être Jamstack, mais on doit rendre quelque chose de substantiel rapidement.
+
+## Définir les métrique
+
+Si vous n'êtes pas intéresser par les tenants et les aboutissants de comment nous avons choisi une définition précise de la Jamstack que nous pouvons représenter comme des requêtes dans l'archive HTTP, vous pouvez passez les deux prochaines sections, en toute sécurité, et vous diriger vers [la croissance de la Jamstack](#la-croissance-de-la-jamstack). La compréhension de notre méthodologie n'est pas nécessaire afin que vous obteniez des informations exploitables.
+
+Nous savions que nous voulions mesurer: les sites qui chargent la plupart de leur contenu très rapidement, et qui peuvent être mis en cache. Après beaucoup d'expérimentation avec différentes méthodes de mesures, nous sommes parvenus à trouver quelques métriques spécifiques.
+
+**Largest Contentful Paint (LCP)**: nous avons la distribution de nous les temps LCP sur toutes les pages, récupérer la médiane de vrais données utilisateurs provenant du <a hreflang="en" href="https://developer.chrome.com/docs/crux/">Rapport Chrome UX</a>, et nous avons décidé que tous les site se trouvant égale ou sous la médiane, comptent comme "changeant la plupart de son contenu assez rapidement". Cela donnait 2.4 secondes sur les appareils potables, et 2.0 secondes sur les appareils de bureaux.
+
+**Cumulative Layout Shift (CLS)**: nous avons voulu éviter les sites qui chargent très vite un squelette mais qui prennent ensuite beaucoup plus de temps pour récupérer du vrai contenu. Le plus proche que nous avons pu obtenir est la métrique <a hreflang="en" href="https://web.dev/cls/">Cumulative Layout Shift</a>, une mesure qui nous dit combien de fois la structure page "saute" pendant le chargement. Même s'il y a des moyens de tricher sur la mesure CLS, nous pensons toujours que c'est une approximation raisonnable pour ce que nous essayons de mesurer. Nous aimons cette mesure parce que nous sentons que les sites qui "sautent" beaucoup sont aussi ceux qui semblent être le moins "Jamstack-y", un mot que nous allons finir par beaucoup utilisé. A nouveau, nous avons utilisé la médiane des données du rapport de Chrome UX.
+
+<p class="note">Les données du rapport Chrome UX arrondissent les données CLS à la valeur la plus proche, à 0.05 près, que qui est une honte, car la vrai médiane semble se trouvé autour de 0.02-0.03, donc, sur appareil portable, il arrondi à 0, et sur appareil de bureau, cela est arrondi à 0.05. Puisque 0 exclu un énorme nombre de pages, nous avons décidé d'utiliser 0.05 comme le meilleur seuil disponible, à la fois pour les appareils portables et ceux de bureaux.</a>
+
+**Mise en cache**: cela a été particulièrement difficile à quantifier, puisque la plupart des pages d'accueil, même sur les sites Jamstack, demandent des revalidation même si elles sont, en pratique, en cache depuis longtemps. nous sommes partis sur une combinaison d'entêtes HTTP intégrant `Age`, `Cache-Control`, et `Expires` que nous avons trouvé en commun dans les pages qui pouvait être en cache pendant longtemps.
+
+Nous avons d'abord pensé que nous avions besoin d'une autre mesure afin d'exclure les "petits" sites – sites qui chargent très rapidement car ce sont juste des pages "A venir bientôt" ou des pages "Hello world" que personne ne visiterait dans la vrai vie – mais les données de l'Archive HTTP est défini par leur <a hreflang="en" href="https://developer.chrome.com/docs/crux/methodology/#popularity-eligibility">popularité selon les visites des utilisateus de Chrome</a>, et très peu de ces sites sont assez souvent visités pour apparaître dans l'échantillon (même si example.com est dedans!).
+
+Une bonne question est: pourquoi ne pas utiliser les valeurs <a hreflang="en" href="https://web.dev/vitals/">Core Web Vitals</a> pour ces métriques? Pour LCP, nos valeurs étaient presque les même que CWV. Pour CLS, l'équipe CWV a explicitement <a hreflang="en" href="https://web.dev/defining-core-web-vitals-thresholds/#achievability-3">assoupli les exigences</a> (leur seuil est plus du double de la médiane) ce qui, nous pensions, n'étaient pas représentatif d'une expérience Jamstack. Nous avons donc décidé qu'il était plus équitable de choisir la médiane pour les deux. Et CWV n'a pas de métrique pour la "cacheabilité".
+
+## "Jamstack-y": un avertissement
+
+Nous voulons être clair: Il s'agit d'une définition très très flou de "Jamstack". En fait, nous avons commencé à utiliser le terme "Jamstack-y" en faisant ce travail.
+
+La plus grosse source d'erreur est fondamentale: la définition de la Jamstack est à propos d'_architecture_, mais l'architecture n'est pas quelque chose que nous pouvons déterminer en déroulant minutieusement le HTML généré, seulement de manière grossière. Il n'y a simplement pas de moyen de regarder un tas de HTML et dire si le front-end et le back-end sont découplé. Dons, nos mesure, même en étant le mieux que nous puission faire, sont une estimation grossière, et nous ne voulons pas mal la représenter.
+
+Cette méthodologie, à la fois, sous-évalue et sur-évalue le nombre de site Jamstack:
+
+* Si votre site est statique mais n'est pas découplé (par exemple, les sites <a hreflang="en" href="https://www.squarespace.com/">SquareSpace</a> et <a hreflang="en" href="https://www.wix.com/">Wix</a>  sont clairement fortement couplé à leur back-ends) mais sont très performant, nosu les avons donc compté à tort.
+* Si votre site Jamstack est découplé mais que vous mettez à jour votre contenu très fréquemment, votre strategie de mise en cache peut être différente de ce que nous avons recherché et nous ne vous avons pas compté.
+* Si votre site Jamstack affiche son rendu très lentement, même s'il est bien découplé, votre nombre LCP sera haut et nous ne vous aurons pas compté.
+* Inversement, si votre site dynamique non-Jamstack est très rapide, nous avons pu le prendre pour un site Jamstack par erreur.
+
+Malgré tout cela, nous pensons que l'estimation des sites "Jamstack-y" de cette année est une amélioration par rapport à la définition strictement focalisé sur lesGSS et donne une meilleure appréhension de où se trouvent réellement le web aujourd'hui, ce qui est, après tout, l'objectif de l'Almanach.
+
+## La croissance de la Jamstack
+
