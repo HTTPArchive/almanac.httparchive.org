@@ -563,17 +563,17 @@ Implementing Structured Data has come into increased focus as rich results on th
 
 {{ figure_markup(
   image="raw-vs-rendered-structured-data.png",
-  caption="Raw versus rendered canonical.",
-  description="A column chart showing canonical status changes based on raw versus rendered. HTTP canonical is used on 1.1% of desktop pages, Raw canonical on 55.9%, Rendered canonical on 56.5%, Rendered not raw canonical on 0.7%, Canonical mismatch on 0.3%, Rendering changed canonical on 0.9%. Mobile is very similar with 0.9%, 57.5%, 58.4%, 0.9%, 0.3%, 1.2% respectively.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSZxId5PPpTHp4835BI-rt4HqZVrhn1UiF0xcOrVUytVs6j262ZqFrY5e1FXZibAGDY6gWnZ0uG3WZC/pubchart?oid=2108798426&format=interactive",
+  caption="Raw versus rendered structured data.",
+  description="A column chart showing structured data changes based on raw versus rendered. 44% of desktop pages have raw structured data, increasing 2 percentage points to 46% for rendered structure data. 0% of has only rendered structured data, and on 5% of pages rendering changes structured data. for Mobile it's almost identical with 45%, 47%, 0% and 5% respectively.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSZxId5PPpTHp4835BI-rt4HqZVrhn1UiF0xcOrVUytVs6j262ZqFrY5e1FXZibAGDY6gWnZ0uG3WZC/pubchart?oid=486315827&format=interactive",
   sheets_gid="1564568239",
   sql_file="seo-stats.sql"
   )
 }}
 
-The implementation of structured data in the HTML of a page has continually increased. In 2021, 41.8% of desktop pages and 42.5% of mobile pages used structured data. In 2022, it’s risen to 44% of desktop pages and 45.1% of mobile pages that have structured data within their HTML.
+The implementation of structured data in the HTML of a page has continually increased. In 2021, 42% of desktop pages and 43% of mobile pages used structured data. In 2022, it’s risen to 44% of desktop pages and 45% of mobile pages that have structured data within their HTML.
 
-This reflects a 5.3% and 6% increase on desktop and mobile pages, respectively. Two possible explanations for greater adoption could be that a number of Content Management Systems have added automatic structured data markup to their pages, as well as the aforementioned prominence that structured data has played in Google SERPs.
+This reflects 2 percentage point increases on both desktop and mobile pages. Two possible explanations for greater adoption could be that a number of Content Management Systems have added automatic structured data markup to their pages, as well as the aforementioned prominence that structured data has played in Google SERPs.
 
 There has also been a great reduction in both mobile and desktop pages that have structured data added via JavaScript where it was not contained within the initial HTML response. In 2021, 1.7% of mobile pages and 1.4% of desktop pages had structured data added via JavaScript where it was not contained within the initial HTML response. It’s now just .15% on desktop and .13% on mobile.
 

@@ -2,27 +2,25 @@ WITH lcp AS (
   SELECT
     _TABLE_SUFFIX AS client,
     url AS page,
-    JSON_VALUE(payload, '$._performance.lcp_elem_stats.url') AS lcp_url
+    JSON_VALUE(payload, '$._performance.lcp_elem_stats.url') AS url
   FROM
     `httparchive.pages.2022_06_01_*`
-),
-
-hosts AS (
-  SELECT
-    client,
-    NET.HOST(page) = NET.HOST(lcp_url) AS lcp_same_host
-  FROM
-    lcp
-  WHERE
-    lcp_url IS NOT NULL
 )
+
 
 SELECT
   client,
-  COUNTIF(lcp_same_host) AS lcp_same_host,
-  COUNT(0) AS total,
-  COUNTIF(lcp_same_host) / COUNT(0) AS pct_lcp_same_host
+  CASE
+    WHEN NET.HOST(url) = 'data' THEN 'other content'
+    WHEN NET.HOST(url) IS NULL THEN 'other content'
+    WHEN NET.HOST(page) = NET.HOST(url) THEN 'same host'
+    ELSE 'cross host'
+  END AS lcp_same_host,
+  COUNT(0) AS pages,
+  SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
+  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
 FROM
-  hosts
+  lcp
 GROUP BY
-  client
+  client,
+  lcp_same_host

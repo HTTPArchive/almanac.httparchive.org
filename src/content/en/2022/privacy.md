@@ -259,7 +259,7 @@ When we look at the directives that are used in the Permissions Policy, we see a
 
 {{ figure_markup(
   caption="The percentage of desktop sites that sets a document-wide Referrer Policy.",
-  content="12%%",
+  content="12%",
   classes="big-number",
   sheets_gid="1186623225",
   sql_file="number_of_websites_with_referrerpolicy.sql"

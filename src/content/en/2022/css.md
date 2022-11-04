@@ -130,7 +130,7 @@ The name `content` is once again the most popular ID name, followed by `footer`,
   )
 }}
 
-The use of `!important` has slightly increased for the top two percentiles this year. As `@layer` usage takes hold it will be interesting to see how this impacts the use of this property, typically used to deal with specificity issues.
+The use of `!important` has slightly increased for the top two percentiles this year. As `@layer` usage takes hold, it will be interesting to see how this impacts the use of this property, typically used to deal with specificity issues.
 
 {{ figure_markup(
     image="important-props.png",
@@ -725,6 +725,7 @@ We have many options to choose from when doing layout on the web, and most sites
     caption="Layout methods by percent of pages.",
     description="Bar chart showing the layout methods used on the most pages. Block and absolute layouts are used on 92% of pages, followed by inline-block on 90%, floats on 89%, fixed on 84%, inline on 82%, CSS tables on 79%, flex on 77%, and box on 51% of pages.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1738709324&format=interactive",
+    height=756,
     sheets_gid="1793404870",
     sql_file="layout_properties.sql"
   )

@@ -462,7 +462,7 @@ Dynamic `import()` allows developers to effectively "split" off chunks of JavaSc
   )
 }}
 
-A staggeringly low 0.34% of all observed mobile pages currently use dynamic `import()`, while 0.41% of desktop pages use it. This is a missed opportunity to ship less code during startup. Perhaps dynamic `import()` is not seeing much use because it shifts the loading of JavaScript on-demand for features, rather than upfront.
+A staggeringly low 0.34% of all observed mobile pages currently use dynamic `import()`, while 0.41% of desktop pages use it. That said, it's common for some bundlers to transform the dynamic `import()` syntax into an ES5-compatible alternative. It's very likely that the feature is in wider use, just less so in production JavaScript files.
 
 It's tricky, but a balance can be struck, and it involves gauging the user's intent. One way of deferring loading of JavaScript without delaying interactions is to [preload](https://developer.mozilla.org/docs/Web/HTML/Link_types/preload) that JavaScript when the user signals intent to make an interaction. One example of this could be to defer loading JavaScript for the validation of a form, and preload that JavaScript once the user has focused a field in that form. That way, when the JavaScript is requested, it will already be in the browser cache.
 

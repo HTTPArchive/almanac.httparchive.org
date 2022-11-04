@@ -6,10 +6,10 @@ SELECT client,
   COUNTIF(chHTML AND chHeader) AS chBothCount,
   COUNTIF(chHTML OR chHeader) AS chEitherCount,
   COUNT(0) AS total,
-  ROUND(100 * COUNTIF( chHTML) / COUNT(0), 2) AS chHTMLPct,
-  ROUND(100 * COUNTIF( chHeader) / COUNT(0), 2) AS chHeaderPct,
-  ROUND(100 * COUNTIF( chHTML AND chHeader) / COUNT(0), 2) AS chBothPct,
-  ROUND(100 * COUNTIF( chHTML OR chHeader) / COUNT(0), 2) AS chEitherPct
+  ROUND(100 * COUNTIF(chHTML) / COUNT(0), 2) AS chHTMLPct,
+  ROUND(100 * COUNTIF(chHeader) / COUNT(0), 2) AS chHeaderPct,
+  ROUND(100 * COUNTIF(chHTML AND chHeader) / COUNT(0), 2) AS chBothPct,
+  ROUND(100 * COUNTIF(chHTML OR chHeader) / COUNT(0), 2) AS chEitherPct
 FROM
   (
     SELECT

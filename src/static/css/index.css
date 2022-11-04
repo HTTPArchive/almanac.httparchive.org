@@ -162,7 +162,8 @@ p {
 }
 
 .featured-chapter-content-data {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   width: 100%;
   justify-content: space-between;
   text-align: center;
@@ -564,7 +565,6 @@ p {
   /* Featured Chapter */
   .featured-chapter,
   .featured-chapter-content-data {
-    flex-direction: column;
     align-items: center;
   }
 
@@ -581,6 +581,10 @@ p {
 
   .featured-chapter-content {
     width: auto;
+  }
+
+  .featured-chapter-content-data {
+    grid-template-columns: 1fr;
   }
 
   .featured-chapter-content-data-item {

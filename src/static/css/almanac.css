@@ -735,7 +735,8 @@ hr {
   opacity: 0.2;
 }
 
-blockquote {
+blockquote,
+blockquote p {
   position: relative;
   font-style: italic;
   font-size: 19px;

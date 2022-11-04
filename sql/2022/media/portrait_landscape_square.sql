@@ -34,7 +34,7 @@ WITH imgs AS (
     isSquare
   FROM
     `httparchive.pages.2022_06_01_*`,
-    UNNEST(getAspectRatioInfo(JSON_QUERY(JSON_VALUE(payload, '$._responsive_images' ), '$.responsive-images')))
+    UNNEST(getAspectRatioInfo(JSON_QUERY(JSON_VALUE(payload, '$._responsive_images'), '$.responsive-images')))
   WHERE
     approximateResourceWidth > 1 AND
     approximateResourceHeight > 1
@@ -55,9 +55,9 @@ counts_per_client AS (
 
 SELECT
   client,
-  SAFE_DIVIDE( portraits, numberOfImagesPerClient ) AS percentPortrait,
-  SAFE_DIVIDE( landscapes, numberOfImagesPerClient ) AS percentLandscape,
-  SAFE_DIVIDE( squares, numberOfImagesPerClient ) AS percentSquare,
+  SAFE_DIVIDE(portraits, numberOfImagesPerClient) AS percentPortrait,
+  SAFE_DIVIDE(landscapes, numberOfImagesPerClient) AS percentLandscape,
+  SAFE_DIVIDE(squares, numberOfImagesPerClient) AS percentSquare,
   numberOfImagesPerClient
 FROM
   counts_per_client
