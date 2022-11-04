@@ -723,7 +723,7 @@ CSSでは画像の読み込みはあまり発生しませんが、その画像�
 {{ figure_markup(
     image="layout-props.png",
     caption="ページ数の割合によるレイアウト方法。",
-    description="もっとも多くのページで使用されているレイアウト方法を示した棒グラフです。ブロックとアブソリュートレイアウトが92%のページで使用され、次いでインラインブロックが90%、フロートは89%、フィックスでは84%、インラインが82%、CSSテーブルは79%、フレックスでは77%、ボックスが51%のページで使用されています。",
+    description="もっとも多くのページで使用されているレイアウト方法を示す棒グラフです。`block` と `absolute` レイアウトが92%のページで使用されており、次に `inline-block` が90%、 `floats` が89%、 `fixed` が84%、 `inline` が82%、CSSテーブルが79%、 `flex` が77%、そして `box` が51%のページで使用されていることがわかります。",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1738709324&format=interactive",
     height=756,
     sheets_gid="1793404870",
