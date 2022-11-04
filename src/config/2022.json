@@ -1258,7 +1258,14 @@
       "teams":[
         "reviewers"
       ],
-      "github":"ytkoka"
+      "github":"yokoka"
+    },
+    "luckybai": {
+        "name": "Zongchao Bai",
+        "teams": [
+          "translators"
+        ],
+        "github": "luckybai"
     }
   }
 }
