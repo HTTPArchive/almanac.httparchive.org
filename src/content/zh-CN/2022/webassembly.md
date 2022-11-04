@@ -39,11 +39,11 @@ WebAssembly 作为编译目标，以二进制模块分发。因此，我们在�
 - 虽然你可以使用 WebAssembly 创建各种基于 Web 的内容，但它的主要优势是在复杂业务线具有大型代码库的应用程序中使用，这些应用通常已有多年历史（例如 Google Earth、Photoshop、AutoCAD）。这些 Web “应用程序” 并不像网站那么多，同时由于 Almanac 的爬虫网络主要是基于一些不太使用 WebAssembly 的站点首页组成，所以它们也并不总是可以被统计到。
 - 正如我们将在后面章节中看到的那样，大部分 WebAssembly 的使用都是来自于数量相对较少的第三方库。因此，这些库中的任何一个发生微小的变化都会对我们找到的模块数量产生重大影响。
 
-我们发现在移动端浏览器中使用 WebAssembly 模块更少一些（-13%），但这并不是移动端浏览器 WebAssembly 功能的反映，移动端浏览器通常具有更好的支持。相反，更可能是因为[渐进式增强](https://developer.mozilla.org/en-US/docs/Glossary/Progressive_Enhancement)标准的实践。在这些场景中，越是高级功能需要 WebAssembly 反而不支持。
+我们发现在移动端浏览器中使用 WebAssembly 模块更少一些（-13%），但这并不是移动端浏览器 WebAssembly 功能的反映，移动端浏览器通常具有更好的支持。相反，更可能是因为[渐进式增强](https://developer.mozilla.org/zh-CN/docs/Glossary/Progressive_Enhancement)标准的实践。在这些场景中，越是高级功能需要 WebAssembly 反而不支持。
 
 {{ figure_markup(
   caption="Wasm 响应数量",
-  description="Bar chart showing numbers of total Wasm responses on desktop and mobile datasets as well as number of unique  files. Number of unique files is much lower—only 383 out of 3,204 total responses on desktop and 310 out of 2,777 on mobile.",
+  description="条形图显示了桌面端和移动端数据集上总的 Wasm 响应数以及去重文件数。去重文件的数量要低得多，在桌面端上 3204 个总响应中只有 383 个，在移动端上 2777 个响应中只有 310 个。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRZqlPK0L45J7IoVgmLcuRut9-M2nhaDMhs8cHtCLZacS7pkIqvEhHfdcYNSoEotQp0-Rs_RRslZ8sT/pubchart?oid=1842699031&format=interactive",
   sheets_gid="2142789475",
   sql_file="counts.sql",
@@ -57,7 +57,7 @@ Wasm 的请求中很大一部分是跨域的，这进一步说明了它们是被
 
 {{ figure_markup(
   caption="跨域 WebAssembly 的使用",
-  description="Bar chart showing 67.2% of WebAssembly usage on desktop, and 60.9% on mobile are cross-origin.",
+  description="条形图显示，在桌面端和移动端 WebAssembly 的使用中，跨域占比分别为 67.2% 和 60.9%。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRZqlPK0L45J7IoVgmLcuRut9-M2nhaDMhs8cHtCLZacS7pkIqvEhHfdcYNSoEotQp0-Rs_RRslZ8sT/pubchart?oid=2039142493&format=interactive",
   sheets_gid="491240617",
   sql_file="cross_domain.sql",
@@ -71,7 +71,7 @@ Wasm 的请求中很大一部分是跨域的，这进一步说明了它们是被
 
 {{ figure_markup(
   caption="未压缩的响应数据大小",
-  description="Bar chart showing distribution of uncompressed response sizes on desktop and mobile at percentiles 25, 50, 75, 90. Most notably, at 10 percentiles there is 23 KB, median at about 835 KB, and 90 percentiles at 4.87 MB on desktop and 3.24 MB on mobile.",
+  description="条形图显示了桌面端和移动端设备上百分比分别为 25%、50%、75%、90% 的未压缩响应包大小的分布。最值得注意的是，有 10% 的响应大小为23 KB，中位数约为 835 KB，90% 的桌面端为 4.87 MB，移动端设备为 3.24 MB。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRZqlPK0L45J7IoVgmLcuRut9-M2nhaDMhs8cHtCLZacS7pkIqvEhHfdcYNSoEotQp0-Rs_RRslZ8sT/pubchart?oid=736723663&format=interactive",
   sheets_gid="1169986524",
   sql_file="module_sizes.sql",
@@ -85,7 +85,7 @@ Wasm 的请求中很大一部分是跨域的，这进一步说明了它们是被
 
 {{ figure_markup(
   caption="流行的 WebAssembly 库",
-  description="Bar chart showing top 10 libraries in desktop and mobile datasets, merged into one graph. Each library is shown along with percentage of Wasm requests that could be attributed to it. The list is as follows: Amazon IVS (33.5% on desktop and 34.9% on mobile), Hyphenopoly (8.2% and 12.1%), Blazor (6.2% and 8.5%), ArcGIS (6.7% and 6.0%), CanvasKit (7.7% and 2.7%), Tableau (5.2% and 3.0%), Draco (3.2% and 3.1%), Xat (1.6% and 1.5%), and Hewlett Packard Enterprise (HPE) (1.6% and 0.8%).",
+  description="条形图显示了桌面端和移动端数据集中流行前 10 的库及其 Wasm 请求百分比。名单如下：Amazon IVS（桌面端占 33.5%，移动端占 34.9%）、Hyphenopoly（8.2% 和 12.1%）、Blazor（6.2% 和 8.5%）、ArcGIS（6.7% 和 6.0%）、CanvasKit（7.7% 和 2.7%）、Tableau（5.2% 和 3.0%）、Draco（3.2% 和 3.1%）、Xat（1.6% 和 1.5%）以及 Hewlett-Packard Enterprise（HPE）（1.6% 和 0.8%）。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRZqlPK0L45J7IoVgmLcuRut9-M2nhaDMhs8cHtCLZacS7pkIqvEhHfdcYNSoEotQp0-Rs_RRslZ8sT/pubchart?oid=1535512737&format=interactive",
   sheets_gid="721946887",
   sql_file="popular_by_name.sql",
@@ -95,13 +95,13 @@ Wasm 的请求中很大一部分是跨域的，这进一步说明了它们是被
 
 - <a hreflang="en" href="https://aws.amazon.com/ivs/">Amazon IVS (Amazon Interactive Video Service)</a> - 在这里 WebAssembly 可能被用作视频编解码器，独立于用户浏览器的编解码器实现的一致的视频解码功能。
 - <a hreflang="en" href="https://mnater.github.io/Hyphenopoly/">Hyphenopoly</a> - 这是一个 npm 模块，为 CSS 提供自动分词功能，核心算法通过 WebAssembly 模块提供，占用空间小，性能稳定。
-- <a hreflang="en" href="https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor">Blazor</a> - 微软 Blazor 是一个平台运行时和 UI 库，支持使用 .NET 平台和 C# 开发 Web 应用程序。
+- <a hreflang="en" href="https://dotnet.microsoft.com/zh-cn/apps/aspnet/web-apps/blazor">Blazor</a> - 微软 Blazor 是一个平台运行时和 UI 库，支持使用 .NET 平台和 C# 开发 Web 应用程序。
 - <a hreflang="en" href="https://developers.arcgis.com/javascript/latest/">ArcGIS</a> - 一整套用于构建交互式地图应用程序的工具。性能是 ArcGIS 团队的首要关注点，他们使用各种技术（如 WebGL）来实现这一点。具体来说，WebAssembly 用于快速实现客户端效果。
 - <a hreflang="en" href="https://skia.org/docs/user/modules/canvaskit/">CanvasKit</a> - 该库提供了比标准 Canvas2D API 更高级的功能，通过 Skia 实现的。Skia 是用 C++ 编写的图形库，它被编译为 WebAssembly，允许在浏览器中执行。
 - <a hreflang="en" href="https://www.tableau.com/">Tableau</a> - 一款流行的用于构建交互式可视化的工具。目前尚不清楚 WebAssembly 是否在其核心产品中使用，还是仅用于爬虫发现的特定仪表盘页面中。
 - <a hreflang="en" href="https://google.github.io/draco/">Draco</a> - 一个用于压缩和解压缩三维几何网格和点云的库。它是用 C++ 编写的，编译成 WebAssemby 在浏览器中使用。
 - <a hreflang="en" href="https://xat.com/">Xat</a> - 一款社交媒体网站。目前尚不清楚他们使用 WebAssembly 是为了什么。
-- <a hreflang="en" href="https://www.hpe.com/us/en/home.html">Hewlett Packard Enterprise</a> - 尚不清楚他们使用 WebAssembly 是为了什么。
+- <a hreflang="en" href="https://www.hpe.com/cn/zh/home.html">Hewlett Packard Enterprise</a> - 尚不清楚他们使用 WebAssembly 是为了什么。
 
 通过了解流行的 WebAssembly 库，我们可以看到它的使用是非常有针对性的，通常用于特定的数字处理任务或者利用大型成熟的 C++ 代码库，无需移植到 JavaScript 就能将其功能应用到 Web 上。
 
@@ -117,7 +117,7 @@ WebAssembly 是一种二进制格式，因此，许多源码相关的信息如�
 
 {{ figure_markup(
   caption="WebAssembly 语言的使用",
-  description="LikelyEmscripten (63.8% on desktop and 61.1% on mobile), Unknown (11.7% and 16.9%), Emscripten (13.3% and 11.8%), Rust (8.0% and 6.0%), Blazor (2.7% and 3.5%), and Go (0.6% and 0.7%).",
+  description="LikelyEmscripten（桌面端 63.8%、移动端 61.1%）、Unknown（11.7% 和 16.9%）、Emcripten（13.3% 和 11.8%）、Rust（8.0% 和 6.0%）、Blazor（2.7% 和 3.5%）以及 Go（0.6% 和 0.7%）。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRZqlPK0L45J7IoVgmLcuRut9-M2nhaDMhs8cHtCLZacS7pkIqvEhHfdcYNSoEotQp0-Rs_RRslZ8sT/pubchart?oid=1942715596&format=interactive",
   sheets_gid="915015663",
   sql_file="language_usage.sql",
@@ -137,7 +137,7 @@ WebAssembly 的初始版本被视为 MVP，与其它的 Web 标准一样，它�
 
 {{ figure_markup(
   caption="WebAssembly Post-MVP 功能使用",
-  description="Bar chart showing total module counts along with numbers of modules using various post-MVP extensions. Total numbers, as mentioned in the beginning of the article, are at 3,204 and 2,777 on desktop and mobile correspondingly. Sign extension ops stand out and were found in a large number of those—2,850 on desktop and 2,378 on mobile. The rest are so much lower that they barely register on the graph. Each of atomics, BigInt imports/exports, bulk memory, SIMD and mutable imports/exports proposals were found only in up to 38 modules on desktop and up to 28 modules on mobile. Proposals like multi-value, non-trapping float-to-int conversions, reference types and tail calls weren't found in any modules in either dataset.",
+  description="条形图显示了模块总数以及使用各种 post-MVP 扩展的模块数量。如本文开头所述，桌面端和移动端设备上的总数分别为 3204 和 2777。Sign extension 的使用非常多，在大量的应用程序中都可以找到 —— 桌面端上 2850 个，移动端上 2378 个。其余扩展的使用则非常低，在条形图上几乎看不到。Atomics、BigInt import/export、Bulk memory、SIMD 以及 Mutable import/export 在桌面端和移动端上多的分别能在 38 个和 28 个模块中找到。有些提案则在数据集中就没有发现，比如多值 multi-value、非陷阱浮点到整数转换、引用类型和尾部调用等。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRZqlPK0L45J7IoVgmLcuRut9-M2nhaDMhs8cHtCLZacS7pkIqvEhHfdcYNSoEotQp0-Rs_RRslZ8sT/pubchart?oid=1935172150&format=interactive",
   sheets_gid="1865524955",
   sql_file="proposals.sql",
