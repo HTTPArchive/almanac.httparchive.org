@@ -108,7 +108,7 @@ CSSのウェイトがもっとも大きいデスクトップ ページは62,631K
 {{ figure_markup(
     image="top-selector-ids.png",
     caption="ページ数の割合でもっとも普及しているID名です。",
-    description="もっとも多くのページで使用されているCSS IDを示す棒グラフ。モバイルとデスクトップの傾向は似ています。IDコンテンツは15%のページで使用され、次にフッターが12%、ヘッダー、`fb-root`、`fb_dialog_loader_close`、`fb_dialog_ipad_overlay`、`fb_dialog_loader_spinner`が10%、レスポンスとコメントが9%、そして最後にメインが8%のページで使用されていることがわかります。",
+    description="もっとも多くのページで使用されているCSS IDを示す棒グラフ。モバイルとデスクトップの傾向は似ています。ID `content`は15%のページで使用され、次に`footer`が12%、`header`、`fb-root`、`fb_dialog_loader_close`、`fb_dialog_ipad_overlay`、`fb_dialog_loader_spinner`が10%、`respond`と`comments`%、そして最後に`main`が8%のページで使用されていることがわかります。",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=224121847&format=interactive",
     height="497",
     sheets_gid="756835829",
