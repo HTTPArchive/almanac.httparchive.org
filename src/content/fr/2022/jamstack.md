@@ -306,3 +306,137 @@ Les GSS représentent aussi un plus gros pourcentage de tous les sites Jamstack 
 </figure>
 
 Pour tous les GSS, le pourcentage de sites qui peuvent être qualifiés comme Jamstack-y selon notre définition est inférieur au nombre total de site utilisant ce framework. Jekyll fait le mieux avec plus d'un tiers des sites Jekyll qui répondent aussi à nos critères. Next et Nuxt ont des pourcentages assez bas ce qui est attendu puisque même s'ils peuvent être utilisés comme GSS, ils sont aussi fréquemment utilisé pour faire des sites dynamiques et nous n'avons pas de moyen de déterminer dans quel mode ils sont configurés.
+
+## L'hébergement Jamstack-y
+
+Nous nous sommes aussi intéressé à où les gens hébergent leur site Jamstack-y. Y a-t-il un motif? Encore une fois, nous avons utilisé les données de Wappalyser afin d'identifier les technologies, cette fois en utilisant la catégorie Plateforme en tant que service(Paas).
+
+{{ figure_markup(
+  caption="Les PaaS utilisées par tous les sites.",
+  description="Graphique en barre montrant que Amazon Web Services est utilisé par 7.2% des sites sur les appareils de bureau et par 5.9% des sites sur les appareils portables, WP Engine respectivement par 1.7% et 1.1%, Azure par 1.1% et 0.9%, WordPress.com par 0.8% et 1.1%, SiteGround par 0.7% et 0.6%, Heroku par 0.4% et 0.3%, Kinsta par 0.4% et 0.3%, Flywheel par 0.3% et 0.2%, Aruba.it par 0.2% et 0.4%, et finalement Netlify est utilisé par 0.3% des sites sur les appareils de bureau et par 0.2% des sites sur les appareils portables.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSVe-RPqA23n5VYyvNGcmljPDWPhiBqlMFOQFp5vc4CKT_u5Zd6cldCKUVg56FoqRyaarvvMTs-uY4c/pubchart?oid=966567769&format=interactive",
+  sheets_gid="351874654",
+  sql_file="jamstack_paas.sql",
+  image="all-sites-paas.png",
+  width=600,
+  height=473
+  )
+}}
+
+Et voici les données correspondant aux sites Jamstack:
+
+{{ figure_markup(
+  caption="Les PaaS utilisées par les sites Jamstack.",
+  description="Graphique de bar montrant que Amazon Web Services est utilisé par 10.8% des sites Jamstack sur les appareils de bureau et par 9.4% des sites Jamstack sur les appareils portables, GitHub Pages respectivement par 4.6% et 2.0%, Netlify par 2.4% et 1.7%, Pantheon par 2.1% et 1.7%, Vercel par 1.6% et 1.1%, Acquia Cloud Platform par 1.4% et 1.2%, Cloudways par 0.7% et 0.9%, Azure par 0.7% et 0.7%, Platform.sh par 0.4% et 0.3%, et enfin Heroku par 0.3% des sites Jamstack sur les appareils de bureau et par 0.2% des sites Jamstack sur les appareils portables.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSVe-RPqA23n5VYyvNGcmljPDWPhiBqlMFOQFp5vc4CKT_u5Zd6cldCKUVg56FoqRyaarvvMTs-uY4c/pubchart?oid=437110555&format=interactive",
+  sheets_gid="351874654",
+  sql_file="jamstack_paas.sql",
+  image="jamstack-paas.png",
+  width=600,
+  height=473
+  )
+}}
+
+Le géant du web Amazon Web Services est, sans surprise, dominant sur les deux ensembles, mais il y a des différences significatives entre les préférences globales et ceux des développeurs Jamstack-y.
+
+WP Engine, Azure, et WordPress.com, extrèmement populaire sur le web, en général, perdent significativement en popularité dans l'ensemble Jamstack. GitHub pages, qiu est #11 sur le web en général, est #2 dans l'ensemble Jamstack. Pendant ce temps, Netlify et Vercel, chouchous des développeurs Jamstack, occupent les places #3 et #5, alors que au niveau global du web, Netlify est à la place #10 et Vercel est #14 (non affiché). Pantheon et Acqui Cloud Platform, qui ne sont pas dans le top 10 général, font un saut significatifs de la 11ème à la 4ème place et de la 12ème à la 6ème place respectivement.
+
+Le changement de populatrité relative de certains de ces hébergement par rapport au web en général est peut être surprenant étant donné qu'ils ne sont pas tous des noms familiers, donc nous avons pensé qu'il serait intéressant de regarder comment les préférences de plateformes ont changé entre 2021 et 2022 dans nos ensembles. En utilisant des données sur les appareils portables, voici comment le pourcentage des sites Jamstack utilisant diverses plateformes ont changé entre 2021 et 2022:
+
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>PaaS</th>
+        <th class="numeric">2021</th>
+        <th class="numeric">2022</th>
+        <th>Changement</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Amazon Web Services</td>
+        <td class="numeric">7.00%</td>
+        <td class="numeric">9.45%</td>
+        <td class="numeric">2.45%</td>
+      </tr>
+      <tr>
+        <td>GitHub Pages</td>
+        <td class="numeric">2.62%</td>
+        <td class="numeric">1.99%</td>
+        <td class="numeric">-0.63%</td>
+      </tr>
+      <tr>
+        <td>Pantheon</td>
+        <td class="numeric">1.97%</td>
+        <td class="numeric">1.70%</td>
+        <td class="numeric">-0.27%</td>
+      </tr>
+      <tr>
+        <td>Netlify</td>
+        <td class="numeric">1.68%</td>
+        <td class="numeric">1.72%</td>
+        <td class="numeric">0.04%</td>
+      </tr>
+      <tr>
+        <td>Acquia Cloud Platform</td>
+        <td class="numeric">1.37%</td>
+        <td class="numeric">1.18%</td>
+        <td class="numeric">-0.20%</td>
+      </tr>
+      <tr>
+        <td>Vercel</td>
+        <td class="numeric">0.50%</td>
+        <td class="numeric">1.10%</td>
+        <td class="numeric">0.60%</td>
+      </tr>
+      <tr>
+        <td>Cloudways</td>
+        <td></td>
+        <td class="numeric">0.91%</td>
+        <td class="numeric">N/A</td>
+      </tr>
+      <tr>
+        <td>Azure</td>
+        <td></td>
+        <td class="numeric">0.67%</td>
+        <td class="numeric">N/A</td>
+      </tr>
+      <tr>
+        <td>Platform.sh</td>
+        <td class="numeric">0.27%</td>
+        <td class="numeric">0.29%</td>
+        <td class="numeric">0.02%</td>
+      </tr>
+      <tr>
+        <td>Heroku</td>
+        <td class="numeric">0.28%</td>
+        <td class="numeric">0.22%</td>
+        <td class="numeric">-0.05%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>
+    {{ figure_link(
+      caption="GSS en tant que pourcentage de sites Jamstack (sur appareils de bureau).",
+      sheets_gid="1299424402",
+      sql_file="jamstack_ssgs.sql",
+    ) }}
+  </figcaption>
+</figure>
+
+GitHub Pages, Pantheon, Acquia Cloud Platform et Heroku apparaissent tous comme déclinant en popularité en tant que choix pour héberger un site Jamstack, alors que AWS, Netlify, Vercel, et Platform.sh deviennent de plus en plus populaire. A noter que Cloudways ou Azure ne sont pas dans les données Paas de 2021, nous ne pouvons donc pas les comparer. Nous pouvons supposer que AWS, Netlify et Vercel sont en train de grandir en popularité parce qu'ils ne sont pas seulement une offre d'hébergement mais aussi une suite d'outils pour les processus de travail des développeurs.
+
+Absent de toutes les lites de plateformes est le géant du web Cloudflare, qui est catégorisé par Wappalyzer en tant que CDN plutôt que PaaS. Bien que Cloudflare a une offre Paas qui est très Jamstack-y, appelé Cloudflare Pages, les données de Wappalyzer ne font pas de distinctions entre "hébergé par un CDN" et "héberge des éléments sur ce CDN", et donc nous n'avons pas pu l'inclure dans cette analyse. L'auteur croit que Cloudflare est une option très populaire d'hébergement de sites Jamstack, mais nous n'avons aucune donnée permettant de vérifier cela.
+
+## Conclusion
+
+La leçon la plus importante que nous avons retenu de l'analyse de cette année est que la Jamstack est difficile à mesurer seulement en regardant les données de l'Archive HTTP. Néanmoins, notre capacité à utiliser une approche de mesure qui était agnostique à la fois à propos de la plateforme et du framwork ainsi que notre capacité à trouver des dans les données résultantes, de fortes corrélation en rapport avec des plateformes et des frameworks Jamstack "connus" était un signe encourageant que nous avons fait des progrès dans notre manière d'identifier les sites Jamstack dans l'Archive. 
+
+Même si nous ne pouvons clamer savoir exactement quel pourcentage du web est Jamstack, nous pouvons dire qu'environ 3% du Web est Jamstack-y, et que ce groupe a fortement grandidurant les 3 dernière années - un grand signe pour la communauté Jamstack. 
+
+Nous avons aussi trouvé que certains frameworks et que certaines plateformes d'hébergements sont plus populaires dans les sites Jamstack que dans le reste du web. Cela peut venir du fait qu'ils sont meilleurs pour répondre à nos critères, ou cela peut aussi venir des développeurs Jamstack qui peuvent avoir une préférence pour ces outils en particulier.
+
+Bien sûr, si la communauté Jamstack préfère certaines plateformes et frameworks, cela devient une tendance auto-alimenté: il y aura plsu de documentation et de tutoriels sur comment obtenir des sites Jamstack utilisant ces outils, ce qui, à son tour, rendra plus simple la construction de site Jamstack utilisant ces outils. Donc, bien que nous pensions (et les données le démontrent) que vous pouvez atteindre des résultats Jamstack-y avec n'importe quelle technologies, nous espérons que vous trouverez ces données utiles pour identifier les outils et les plateformes qui peuvent vous permettre facilement d'avoir un site Jamstack.
+
+Nous pensons aussi que la dernière leçon intéressante de cette exercice de quandtification de "ce qui compte en tant que Jamstack" est que maintenant, en tant que développeur, vous avez une cible plus clair vers laquelle aller lorsque vous construisez un site Jamstack. Cela ne veut pas dire que vous devez choisir un framework puis ensuite l'oublier: l'important est le résultat. En analysant vos temps LCP et CLS, vous pouvez quantifier si vos efforts sont "Jamstack-y", ce qui est une chose utile si vous pouvez l'automatiser.
