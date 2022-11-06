@@ -200,3 +200,109 @@ Vous pouvez voir que React est le plus populaire dans la Jamstack et dans le web
   height=493
   )
 }}
+
+Une bonne question ici est: pourquoi Next.js et Nuxt.js sont considérés des frameworks web, mais Vue.js et React sont considérés comme des frameworks Javascript? Mais, en laissant ça de côté, nous voyons que le framework Microsoft's ASP.Net est extrèmement populaire à travers le web, ainsi que Ruby on Rails. A quoi est-ce que cela ressemble dans la Jamstack ?
+
+{{ figure_markup(
+  caption="Framework web utilisé par des sites Jamstack.",
+  description="Graphique de barre montrant que Microsoft ASP.NET est utilisé par 3.5% des sites Jamstack sur appareils de bureaux et par 3.1% des sites Jamstack sur appareil portable, Symfony par respectivement 2.1% et 1.8%, Next.js par 1.8% et 1.4%, Ruby on Rails par 0.7% et 0.8%, Nuxt.js par 0.6% et 0.4%, CodeIgniter par 0.4% et 0.4%, Django par 0.4% et 0.3%, Express par 0.4% et 0.3%, et enfin Laravel et Yii sont utilisé par 0.2% ) la fois pour les sites Jamstack sur appareils de bureaux et portable.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSVe-RPqA23n5VYyvNGcmljPDWPhiBqlMFOQFp5vc4CKT_u5Zd6cldCKUVg56FoqRyaarvvMTs-uY4c/pubchart?oid=1904684465&format=interactive",
+  sheets_gid="1751614355",
+  sql_file="jamstack_web_frameworks.sql",
+  image="jamstack-web-frameworks.png",
+  width=600,
+  height=493
+  )
+}}
+
+Comme vous pouvez le voir, même si le numéro un des framework web reste inchangé, ASP.Net est bien moins populaire dans la Jamstack, tout comme Ruby on Rails. En revanche, le favori de la Jamstack, Next.js, grimpe de la cinquième à la troisième place, et Nuxt.js passe de la septième place à la cinquième place. Une autre surprise est Symfony, qui n'est pas dans le top concernant tous les sites (il est 11ème) mais grimpe jusqu'à la seconde place dans l'ensemble Jamstack.
+
+Puisque Next.js et Nuxt.js sont deux des plus gros frameworks dans la communauté Jamstack, ce n'est pas une grosse surprise, mais il était encore appréciable de voir notre définition framework-agnostique correctement identifiée les sites "Jamstack-y".
+
+A première vue, il peut sembler surprenant que ASP.Net est encore #1 dans le groupe Jamstack-y, et encore plus étonnant de voir Symfony (basé sur PHP) arrivé #2. Mais il n'y a aucune raison vous empêchant de construire un site moderne et performant en utilisant ASP.NET ou PHP: Jamstack est une approche architectural, non une liste de technologies spécifiques, nous espérons donc que ceux travaillant avec ces technologies moins tendance seront encouragés par ces résultats.
+
+Qu'en est-il des GSS? Wappalyzer les a dans une catégorie séparée: voici les nombres pour les sites Jamstack-y et les sites en général (note: nous avons ajouté Nuxt.js et Next.js manuellement dans cette liste; Wappalyser ne les considère pas comme GSS mais ils peuvent tous les deux être utilisés de cette manière et nosu avons pensé qu'il serait utile de les considérer). Voici les données pour tous les sites:
+
+{{ figure_markup(
+  caption="GGS utilisés et détectables ppar tous les sites.",
+  description="Graphique de barre montrant que Next.js est utilisé par 0.74% des sites pour les appareils de bureau et 0.63% pour les sites sur les appareils portables, Nuxt.js respectivement par 0.45% et 0.40%, Gatsby par 0.22% et 0.21%, Hugo par 0.09% et 0.06%, Jekyll par 0.07% et 0.03%, Docusaurus par 0.02% et 0.01%, Hexo par 0.02% et 0.00%, Gridsome par 0.01% et 0.01%, et enfin SitePad et Astro sont utilisés à 0.00% à la fois par les sites pour appareils portables et portables.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSVe-RPqA23n5VYyvNGcmljPDWPhiBqlMFOQFp5vc4CKT_u5Zd6cldCKUVg56FoqRyaarvvMTs-uY4c/pubchart?oid=582270948&format=interactive",
+  sheets_gid="1299424402",
+  sql_file="jamstack_ssgs.sql",
+  image="all-sites-web-frameworks.png",
+  width=600,
+  height=496
+  )
+}}
+
+Et voilà les données pour les sites Jamstack:
+
+{{ figure_markup(
+  caption="GSS détectables et utilisés par les sites Jamstack.",
+  description="Graphique de barre montrant que Next.js est utilisé par 1.79% des sites Jamstack sur les appareils de bureau et par 1.40% des sites Jamstack sur les appareils portables, Gatsby respectivement par 1.19% et 0.81%, Hugo par 0.77% et 0.49%, Jekyll par 0.85% et 0.34%, Nuxt.js par 0.56% et 0.41%, Docusaurus par 0.19% et 0.09%, Hexo par 0.16% et 0.04%, Gridsome par 0.05% et 0.03%, Octopress par 0.02% et 0.01%, et enfin Astro est utilisé par 0.02% des sites Jamstack sur les appareils de bureau et par 0.01% des sites Jamstack sur les appareils portables.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSVe-RPqA23n5VYyvNGcmljPDWPhiBqlMFOQFp5vc4CKT_u5Zd6cldCKUVg56FoqRyaarvvMTs-uY4c/pubchart?oid=1349389169&format=interactive",
+  sheets_gid="1299424402",
+  sql_file="jamstack_ssgs.sql",
+  image="jamstack-web-frameworks.png",
+  width=600,
+  height=496
+  )
+}}
+
+Comme vous pouvez le voir, il s'agit à peu près de la même liste, presque dans le même order, même si Nuxt descends de quelques places. Cela fait sens intuitivement, puisque l'on s'attendrait à ce que les sites générés par des GSS peuvent être qualifié comme Jamstak-y, même s'ils ne sont clairement pas le seul moyen d'atteindre cet objectif architectural.
+
+Les GSS représentent aussi un plus gros pourcentage de tous les sites Jamstack que dans l'ensemble de tous les sites, indiquant qu'un GSS est un moyen assez efficace d'avoir un site Jamstack. Cependant, utiliser un GSS ne garantit pas que vous aurez un site Jamstack. Regarder le nombre total de certains de ces frameworks dans notre échantillon:
+
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>GSS</th>
+        <th>Tous les sites</th>
+        <th>Les sites Jamstack</th>
+        <th>Jamstack %</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Next.js</td>
+        <td class="numeric">39,928</td>
+        <td class="numeric">2,651</td>
+        <td class="numeric">7%</td>
+      </tr>
+      <tr>
+        <td>Nuxt.js</td>
+        <td class="numeric">24,600</td>
+        <td class="numeric">824</td>
+        <td class="numeric">3%</td>
+      </tr>
+      <tr>
+        <td>Gatsby</td>
+        <td class="numeric">12,014</td>
+        <td class="numeric">1,765</td>
+        <td class="numeric">15%</td>
+      </tr>
+      <tr>
+        <td>Hugo</td>
+        <td class="numeric">5,071</td>
+        <td class="numeric">1,135</td>
+        <td class="numeric">22%</td>
+      </tr>
+      <tr>
+        <td>Jekyll</td>
+        <td class="numeric">3,531</td>
+        <td class="numeric">1,259</td>
+        <td class="numeric">36%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>
+    {{ figure_link(
+      caption="GSS en tant que pourcentage des sites Jamstack sites (sur appareils de bureau).",
+      sheets_gid="1299424402",
+      sql_file="jamstack_ssgs.sql",
+    ) }}
+  </figcaption>
+</figure>
+
+Pour tous les GSS, le pourcentage de sites qui peuvent être qualifiés comme Jamstack-y selon notre définition est inférieur au nombre total de site utilisant ce framework. Jekyll fait le mieux avec plus d'un tiers des sites Jekyll qui répondent aussi à nos critères. Next et Nuxt ont des pourcentages assez bas ce qui est attendu puisque même s'ils peuvent être utilisés comme GSS, ils sont aussi fréquemment utilisé pour faire des sites dynamiques et nous n'avons pas de moyen de déterminer dans quel mode ils sont configurés.
