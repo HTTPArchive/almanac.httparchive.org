@@ -104,3 +104,99 @@ Malgré tout cela, nous pensons que l'estimation des sites "Jamstack-y" de cette
 
 ## La croissance de la Jamstack
 
+En appliquant notre nouveau critère, nous avons mesuré le pourcentage des site dans l'Archive HTTP qui peut être qualifié comme "Jamstack". Comme les mesures que nous utilisions en 2020 et 2021 sont très différentes, nous avons aussi re-mesuré ces échantillons en utilisant les définitions de 2022.
+
+{{ figure_markup(
+  caption="Sites Jamstack.",
+  description="Diagramme à barres montrant le pourcentage de sites Jamstack sur appareils de bureau et portable en 2020, 2021 et 2022. En 2020, il était de 1.7% pour les 2 types d'appareils, en 2021, il était de 2.2% et 2.1% respectivement pour chaque type d'appareil, et en 2022 il était de 2.7% sur les appareils de bureau et de 3.6% sur les appareils portable.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSVe-RPqA23n5VYyvNGcmljPDWPhiBqlMFOQFp5vc4CKT_u5Zd6cldCKUVg56FoqRyaarvvMTs-uY4c/pubchart?oid=2132409776&format=interactive",
+  sheets_gid="1131487846",
+  sql_file="jamstack_counts.sql",
+  image="jamstack-counts.png"
+  )
+}}
+
+Notre conclusion principale est que 3.6% des sites web mobiles en 2022 semblent "Jamstack-y" et que cette tendance a augmenté de plus de 100% depuis 2020. Sur appareil de bureau, 2.7% des sites sont Jamstack-y et ce nombre est aussi en augmentation, la différence entre les deux groupes étant conduite principalement par un nombre différent de sites atteignant le seuil CLS, qui varie beaucoup par appareil à cause des différences de mise en page. Vous pouvez encore voir ci-dessus les différentes mises en gardes en rapport avec la manière dont nous avons approximé ces résultats.
+
+Les chiffres historiques, avec cette nouvelle définition, sont [considérablement plus élevé que ceux mesuré l'année dernière](../2021/jamstack#adoption-of-ssgs) quand nous nous basions seulement sur l'adoption pure des technologies utilisées. Ce n'est peut être pas surprenant quand nous considérons les limites à détecter certaines technologies, couplé avec l'inclusion de technologies qui n'étaient précédemment pas considérés comment Jamstack.
+
+Quand nous, en tant qu'humain, avons échantillonné aléatoirement les sites dans l'ensemble que nous avons identifié, nous avons surtout été satifait de trouvé des sites qui, avec notre meilleur capacité d'analyse, semblait et ressemblait à ce que des sites Jamstack sont sensés être.
+
+Afin que vous puissiez juger par vous mêmes, et pour être totalement honnête, voici les 10 sites "Jamstack-y" de notre échantillon, sélectionné de manière complètement aléatoire, sans aucune retouche:
+
+- <a hreflang="en" href="https://www.cazador-del-sol.de/">www.cazador-del-sol.de</a>
+- <a hreflang="en" href="https://snpbooks.org/">snpbooks.org</a>
+- <a hreflang="en" href="https://eikounoayumi.jp/">eikounoayumi.jp</a>
+- <a hreflang="en" href="https://rochesteronline.precollegeprograms.org/">rochesteronline.precollegeprograms.org</a>
+- <a hreflang="en" href="https://surveyforcustomers.com/">surveyforcustomers.com</a>
+- <a hreflang="en" href="https://www.shopmate.eu/">www.shopmate.eu</a>
+- <a hreflang="en" href="https://docs.saleor.io/">docs.saleor.io</a>
+- <a hreflang="en" href="https://www.wildeyebrewing.ca/">www.wildeyebrewing.ca</a>
+- <a hreflang="en" href="https://360insurancegroup.com/">360insurancegroup.com</a>
+- <a hreflang="en" href="https://144onthehill.co.uk/">144onthehill.co.uk</a>
+
+Que ce soit exactement 3.6% (ou 2.7% sur appareil de bureaux) du web qui soit Jamstack - ce que, parce que la définition de la Jamstack repose sur des choix architecturaux que nous ne pouvons vérifier, nous ne pouvons pas affirmer - ce dont nous pouvons être sûr, c'est que la Jamstack grandi.Le pourcentage des site qui repondent à tous les critères, a continué de grandir, année après année. Le web devient de plus en pkus "Jamstack-y". 
+
+Bien sûr, puisque notre défintion est composé de deux métriques de performance et d'une métrique de mise en cache, une raison pour laquelle nous pourrions avoir tort viendrait du fait que le web soit devenu plus performant en général. Afin de vérifier cela, nous divisons les métriques (c'est des données concernant les appreils portables; les données concernant les appareils de bureaux n'était pas significativement différentes):
+
+{{ figure_markup(
+  caption="Changement dans les métriques Jamstack au cours du temps pour les appareils portables.",
+  description="Graphique en ligne montrant les changements des trois métriques Jamstack en 2020, 2021 et 2022. Après avoir été largement constant entre 2020 et 2021, le pourcentage de CLS a augmenter au cours de la dernière année (de 48% à 61%), comme l'a été le LCP dans une moindre mesure (de 44% à 50%). Le pourcentage de cacheabilité est resté constant, à 11%, au cours des trois années.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSVe-RPqA23n5VYyvNGcmljPDWPhiBqlMFOQFp5vc4CKT_u5Zd6cldCKUVg56FoqRyaarvvMTs-uY4c/pubchart?oid=806511079&format=interactive",
+  sheets_gid="1068922155",
+  sql_file="percentage_jamstack_criteria_per_year.sql",
+  image="changes-in-jamstack-counts-over-time.png"
+  )
+}}
+
+Comme vous pouvez le voir, il y a eu de légères améliorations dans nos métriques de 2020 à 2022. Cependant, même les plus petits nombres ici - le pourcentage des sites qui répondent à notre critère de mise en cache - est de 11-14% du web, en fonction de l'année et des appareils que nous regardons. Notre ensemble de sites Jamstack est l'intersection de ces deux ensembles; l'ensemble des sites qui répondent aux trois critères à la fois est beaucoup plus petits que chacun des ensembles individuels.
+
+Donc, nous avons vraiment regardé à chacun des sous-ensembles distincts des sutes, et l'ensemble grandi bien plus rapidement que la performance du web le fait dans son ensemble. Nous ne mesurons pas juste "combien de sites rapides il y a".
+
+## Les frameworks Jamstack-y
+
+Etant satisfait du fait que les sites Jamstack-y sont vraiment réels et identifiables, nous pouvons maintenant nous poser quelques questions à leur sujet. C'est  là où ça devient amusant: parce que notre définition de Jamstack-y n'inclut pas de framework, nous pouvons regarder tous ces sites et voir quels sont les frameworks qui apparaissent le plus souvent dans la Jamstack.
+
+Nous avons utilisé les identificateur de framwork fourni par Wappalyzer, ce qui signifie que (comme nous l'avons mentionné plus tôt) certains des frameworks "invisible" comme Eleventy ne peuvent pas être compté ou analysé.
+
+Wappalyzer a une distinction arbitraire entre les "frameworks web" et les "frameworks Javascript". Voici le top 10 des frameworks Javascript pour la totalité du web:
+
+{{ figure_markup(
+  caption="Frameworks JavaScript utilisés par tous les sites.",
+  description="Graphique en barre montrant que React est utilisé par 8.2% des sites Jamstack sur appareils de bureaux et par 8.1% des sites Jamstack sur appareil portable, GSAP l'est par 6.9% et 7.7% respectivement, Vue.js par 3.1% et 2.8%, RequireJS par 2.3% et 2.3%, styled-components par 1.9% et 1.8%, Handlebars par 1.8% et 1.5%, Backbone.js par 1.7% et 1.4%, AngularJS par 1.4% et 1.1%, Mustache par 1.1% et 1.3%, et enfin MooTools est utilisé par 0.9% des sites Jamstack sur appareils de bureaux et par 1.1% des sites Jamstack sur appareil portable.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSVe-RPqA23n5VYyvNGcmljPDWPhiBqlMFOQFp5vc4CKT_u5Zd6cldCKUVg56FoqRyaarvvMTs-uY4c/pubchart?oid=1813867996&format=interactive",
+  sheets_gid="496656547",
+  sql_file="jamstack_javascript_frameworks.sql",
+  image="all-sites-javascript-frameworks.png",
+  width=600,
+  height=489
+  )
+}}
+
+Et voici le top 10 des sites Jamstack:
+
+{{ figure_markup(
+  caption="Frameworks JavaScript utilisés par des sites Jamstack.",
+  description="Graphique en barre montrant que React est utilisé par 12.0% des sites Jamstack sur appareils de bureaux et par 12.5% des sites Jamstack sur appareil portable, GSAP par respectivement 6.4% et 7.3%, Stimulus par 6.0% et 5.6%, RequireJS par 3.4% et 4.5%, Vue.js par 2.3% et 1.9%, styled-components par 1.5% et 1.6%, Mustache par 0.7% et 1.8%, AMP par 1.0% et 1.5%, Emotion par 1.3% et 0.8%, et enfin Gatsby est utilisé par 1.2% des sites Jamstack sur appareils de bureaux et par 0.8% des sites Jamstack sur appareil portable.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSVe-RPqA23n5VYyvNGcmljPDWPhiBqlMFOQFp5vc4CKT_u5Zd6cldCKUVg56FoqRyaarvvMTs-uY4c/pubchart?oid=691994111&format=interactive",
+  sheets_gid="496656547",
+  sql_file="jamstack_javascript_frameworks.sql",
+  image="jamstack-javascript-frameworks.png",
+  width=600,
+  height=489
+  )
+}}
+
+Vous pouvez voir que React est le plus populaire dans la Jamstack et dans le web en général, ainsi que Gatsby. Maintenant regardons les "frameworks web", comme les définit arbitrairement Wappalyzer:
+
+{{ figure_markup(
+  caption="Frameworks web utilisé par tous les sites.",
+  description="Graphique en barre montrant que Microsoft ASP.NET est utilisé par 8.4% des sites sur appareils de bureaux et par 6.7% des sites sur appareil portable, Ruby on Rails par respectivement 1.4% et 1.1%, Laravel par 1.0% et 1.0%, Express par 0.8% et 0.7%, Next.js par 0.8% et 0.7%, CodeIgniter par 0.7% et 0.7%, Nuxt.js par 0.5% et 0.4%, Django par 0.3% et 0.3%, Helix Ultimate par 0.3% et 0.3%, et enfin Yii est utilisé par 0.3% des sites sur appareils de bureaux et par 0.2% des sites sur appareil portable.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSVe-RPqA23n5VYyvNGcmljPDWPhiBqlMFOQFp5vc4CKT_u5Zd6cldCKUVg56FoqRyaarvvMTs-uY4c/pubchart?oid=193748603&format=interactive",
+  sheets_gid="1751614355",
+  sql_file="jamstack_web_frameworks.sql",
+  image="all-sites-web-frameworks.png",
+  width=600,
+  height=493
+  )
+}}
