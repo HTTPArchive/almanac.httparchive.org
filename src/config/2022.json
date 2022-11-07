@@ -596,6 +596,14 @@
       "website": "http://h3manth.com",
       "twitter": "gnumanth"
     },
+    "harendra":{
+      "name": "Haren Bhandari",
+      "teams":[
+        "analysts",
+        "authors"
+      ],
+      "github":"harendra"
+    },
     "housseindjirdeh": {
       "name": "Houssein Djirdeh",
       "teams": [
@@ -659,6 +667,14 @@
       ],
       "avatar_url": "29200198",
       "github": "JasmineDW"
+    },
+    "joeviggiano":{
+      "name": "Joe Viggiano",
+      "teams":[
+        "analysts",
+        "authors"
+      ],
+      "github":"joeviggiano"
     },
     "j9t": {
       "name": "Jens Oliver Meiert",
@@ -1247,22 +1263,6 @@
       "website": "https://blog.yoav.ws",
       "github": "yoavweiss",
       "twitter": "yoavweiss"
-    },
-    "harendra":{
-      "name": "Haren Bhandari",
-      "teams":[
-        "analysts",
-        "authors"
-      ],
-      "github":"harendra"
-    },
-    "joeviggiano":{
-      "name": "Joe Viggiano",
-      "teams":[
-        "analysts",
-        "authors"
-      ],
-      "github":"joeviggiano"
     },
     "ytkoka":{
       "name": "Yutaka Oka",
