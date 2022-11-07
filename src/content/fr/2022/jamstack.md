@@ -6,7 +6,7 @@ authors: [seldo, whitep4nth3r]
 reviewers: [tunetheweb]
 analysts: [seldo, tunetheweb]
 editors: [DesignrKnight]
-translators: []
+translators: [Xav83]
 seldo_bio: Laurie est développeur web depuis 1996, avec des pauses occasionnelles pour trouver des entreprises comme <a hreflang="en" href="https://www.crunchbase.com/organization/snowball-factory">awe.sm</a> (2010) et <a hreflang="en" href="https://npmjs.com/">npm</a> (2014). Il travaille actuellement  en tant qu 'Évangéliste de données chez <a hreflang="en" href="https://netlify.com">Netlify</a>. Il adore créer des sites plus grands et meilleurs. Il pense qu'un des meilleurs moyens de faire cela est d'encourager plus de personnes à faire du développement web, en leur enseignant les techniques existantes et en construisant les outils et les services qui rendent le développement web plus facile, afin qu'ils aient moins de choses à apprendre.
 whitep4nth3r_bio: Salma aide les développeurs à construire, à apprendre des choses et à aimer ce qu'ils font. Elle travaille chez Netlify en tant qu'Ingénieur en Expérience Développeur, stream des sessions de codage en direct, et adores aider les gens entrer dans le monde de la tech. Après une carrière en tant que professeur de musique et comédien, Salma s'est reconvertie vers la technologie en 2014, se spécialisant dans le développement de front-end et le leadership technologique pour startups, agences et e-commerce international. <a hreflang="en" href="https://twitch.tv/whitep4nth3r">Suivez Salma sur Twitch</a> pour voir ce qu'elle construit actuellement.
 results: https://docs.google.com/spreadsheets/d/1yfNaj25ToezMwQLKdYP6Qh7AUoX9zMdKMSRVC8JlZMY/
