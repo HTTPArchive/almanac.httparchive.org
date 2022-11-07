@@ -107,13 +107,13 @@ Malgré tout cela, nous pensons que l'estimation des sites "Jamstack-y" de cette
 En appliquant notre nouveau critère, nous avons mesuré le pourcentage des sites dans l'Archive HTTP qui peut être qualifié comme "Jamstack". Comme les mesures que nous utilisions en 2020 et 2021 sont très différentes, nous avons aussi re-mesuré ces échantillons en utilisant les définitions de 2022.
 
 {{ figure_markup(
- caption="Sites Jamstack.",
- description="Diagramme à barres montrant le pourcentage de sites Jamstack sur appareils de bureau et portable en 2020, 2021 et 2022. En 2020, il était de 1.7% pour les 2 types d'appareils, en 2021, il était de 2.2% et 2.1% respectivement pour chaque type d'appareil, et en 2022 il était de 2.7% sur les appareils de bureau et de 3.6% sur les appareils portable.",
- chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSVe-RPqA23n5VYyvNGcmljPDWPhiBqlMFOQFp5vc4CKT_u5Zd6cldCKUVg56FoqRyaarvvMTs-uY4c/pubchart?oid=2132409776&format=interactive",
- sheets_gid="1131487846",
- sql_file="jamstack_counts.sql",
- image="jamstack-counts.png"
- )
+  caption="Sites Jamstack.",
+  description="Diagramme à barres montrant le pourcentage de sites Jamstack sur appareils de bureau et portable en 2020, 2021 et 2022. En 2020, il était de 1.7% pour les 2 types d'appareils, en 2021, il était de 2.2% et 2.1% respectivement pour chaque type d'appareil, et en 2022 il était de 2.7% sur les appareils de bureau et de 3.6% sur les appareils portable.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSVe-RPqA23n5VYyvNGcmljPDWPhiBqlMFOQFp5vc4CKT_u5Zd6cldCKUVg56FoqRyaarvvMTs-uY4c/pubchart?oid=2132409776&format=interactive",
+  sheets_gid="1131487846",
+  sql_file="jamstack_counts.sql",
+  image="jamstack-counts.png"
+  )
 }}
 
 Notre conclusion principale est que 3.6% des sites web mobiles en 2022 semblent "Jamstack-y" et que cette tendance a augmenté de plus de 100% depuis 2020. Sur appareil de bureau, 2.7% des sites sont Jamstack-y et ce nombre est aussi en augmentation, la différence entre les deux groupes étant conduite principalement par un nombre différent de sites atteignant le seuil CLS, qui varie beaucoup par appareil à cause des différences de mise en page. Vous pouvez encore voir ci-dessus les différentes mises en garde en rapport avec la manière dont nous avons approximé ces résultats.
@@ -140,13 +140,13 @@ Que ce soit exactement 3.6% (ou 2.7% sur appareil de bureaux) du web qui soit Ja
 Bien sûr, puisque notre définition est composée de deux métriques de performance et d'une métrique de mise en cache, une raison pour laquelle nous pourrions avoir tort viendrait du fait que le web soit devenu plus performant en général. Afin de vérifier cela, nous divisons les métriques (c'est des données concernant les appareils portables; les données concernant les appareils de bureaux n'était pas significativement différentes):
 
 {{ figure_markup(
- caption="Changement dans les métriques Jamstack au cours du temps pour les appareils portables.",
- description="Graphique en ligne montrant les changements des trois métriques Jamstack en 2020, 2021 et 2022. Après avoir été largement constant entre 2020 et 2021, le pourcentage de CLS a augmenté au cours de la dernière année (de 48% à 61%), comme l'a été le LCP dans une moindre mesure (de 44% à 50%). Le pourcentage de cacheabilité est resté constant, à 11%, au cours des trois années.",
- chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSVe-RPqA23n5VYyvNGcmljPDWPhiBqlMFOQFp5vc4CKT_u5Zd6cldCKUVg56FoqRyaarvvMTs-uY4c/pubchart?oid=806511079&format=interactive",
- sheets_gid="1068922155",
- sql_file="percentage_jamstack_criteria_per_year.sql",
- image="changes-in-jamstack-counts-over-time.png"
- )
+  caption="Changement dans les métriques Jamstack au cours du temps pour les appareils portables.",
+  description="Graphique en ligne montrant les changements des trois métriques Jamstack en 2020, 2021 et 2022. Après avoir été largement constant entre 2020 et 2021, le pourcentage de CLS a augmenté au cours de la dernière année (de 48% à 61%), comme l'a été le LCP dans une moindre mesure (de 44% à 50%). Le pourcentage de cacheabilité est resté constant, à 11%, au cours des trois années.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSVe-RPqA23n5VYyvNGcmljPDWPhiBqlMFOQFp5vc4CKT_u5Zd6cldCKUVg56FoqRyaarvvMTs-uY4c/pubchart?oid=806511079&format=interactive",
+  sheets_gid="1068922155",
+  sql_file="percentage_jamstack_criteria_per_year.sql",
+  image="changes-in-jamstack-counts-over-time.png"
+  )
 }}
 
 Comme vous pouvez le voir, il y a eu de légères améliorations dans nos métriques de 2020 à 2022. Cependant, même les plus petits nombres ici - le pourcentage des sites qui répondent à notre critère de mise en cache - est de 11-14% du web, en fonction de l'année et des appareils que nous regardons. Notre ensemble de sites Jamstack est l'intersection de ces deux ensembles; l'ensemble des sites qui répondent aux trois critères à la fois est beaucoup plus petits que chacun des ensembles individuels.
@@ -162,57 +162,57 @@ Nous avons utilisé les identifiants de framework fourni par Wappalyzer, ce qui 
 Wappalyzer a une distinction arbitraire entre les "frameworks web" et les "frameworks Javascript". Voici le top 10 des frameworks Javascript pour la totalité du web:
 
 {{ figure_markup(
- caption="Frameworks JavaScript utilisés par tous les sites.",
- description="Graphique en barre montrant que React est utilisé par 8.2% des sites Jamstack sur appareils de bureaux et par 8.1% des sites Jamstack sur appareil portable, GSAP l'est par 6.9% et 7.7% respectivement, Vue.js par 3.1% et 2.8%, RequireJS par 2.3% et 2.3%, styled-components par 1.9% et 1.8%, Handlebars par 1.8% et 1.5%, Backbone.js par 1.7% et 1.4%, AngularJS par 1.4% et 1.1%, Mustache par 1.1% et 1.3%, et enfin MooTools est utilisé par 0.9% des sites Jamstack sur appareils de bureaux et par 1.1% des sites Jamstack sur appareil portable.",
- chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSVe-RPqA23n5VYyvNGcmljPDWPhiBqlMFOQFp5vc4CKT_u5Zd6cldCKUVg56FoqRyaarvvMTs-uY4c/pubchart?oid=1813867996&format=interactive",
- sheets_gid="496656547",
- sql_file="jamstack_javascript_frameworks.sql",
- image="all-sites-javascript-frameworks.png",
- width=600,
- height=489
- )
+  caption="Frameworks JavaScript utilisés par tous les sites.",
+  description="Graphique en barre montrant que React est utilisé par 8.2% des sites Jamstack sur appareils de bureaux et par 8.1% des sites Jamstack sur appareil portable, GSAP l'est par 6.9% et 7.7% respectivement, Vue.js par 3.1% et 2.8%, RequireJS par 2.3% et 2.3%, styled-components par 1.9% et 1.8%, Handlebars par 1.8% et 1.5%, Backbone.js par 1.7% et 1.4%, AngularJS par 1.4% et 1.1%, Mustache par 1.1% et 1.3%, et enfin MooTools est utilisé par 0.9% des sites Jamstack sur appareils de bureaux et par 1.1% des sites Jamstack sur appareil portable.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSVe-RPqA23n5VYyvNGcmljPDWPhiBqlMFOQFp5vc4CKT_u5Zd6cldCKUVg56FoqRyaarvvMTs-uY4c/pubchart?oid=1813867996&format=interactive",
+  sheets_gid="496656547",
+  sql_file="jamstack_javascript_frameworks.sql",
+  image="all-sites-javascript-frameworks.png",
+  width=600,
+  height=489
+  )
 }}
 
 Et voici le top 10 des sites Jamstack:
 
 {{ figure_markup(
- caption="Frameworks JavaScript utilisés par des sites Jamstack.",
- description="Graphique en barre montrant que React est utilisé par 12.0% des sites Jamstack sur appareils de bureaux et par 12.5% des sites Jamstack sur appareil portable, GSAP par respectivement 6.4% et 7.3%, Stimulus par 6.0% et 5.6%, RequireJS par 3.4% et 4.5%, Vue.js par 2.3% et 1.9%, styled-components par 1.5% et 1.6%, Mustache par 0.7% et 1.8%, AMP par 1.0% et 1.5%, Emotion par 1.3% et 0.8%, et enfin Gatsby est utilisé par 1.2% des sites Jamstack sur appareils de bureaux et par 0.8% des sites Jamstack sur appareil portable.",
- chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSVe-RPqA23n5VYyvNGcmljPDWPhiBqlMFOQFp5vc4CKT_u5Zd6cldCKUVg56FoqRyaarvvMTs-uY4c/pubchart?oid=691994111&format=interactive",
- sheets_gid="496656547",
- sql_file="jamstack_javascript_frameworks.sql",
- image="jamstack-javascript-frameworks.png",
- width=600,
- height=489
- )
+  caption="Frameworks JavaScript utilisés par des sites Jamstack.",
+  description="Graphique en barre montrant que React est utilisé par 12.0% des sites Jamstack sur appareils de bureaux et par 12.5% des sites Jamstack sur appareil portable, GSAP par respectivement 6.4% et 7.3%, Stimulus par 6.0% et 5.6%, RequireJS par 3.4% et 4.5%, Vue.js par 2.3% et 1.9%, styled-components par 1.5% et 1.6%, Mustache par 0.7% et 1.8%, AMP par 1.0% et 1.5%, Emotion par 1.3% et 0.8%, et enfin Gatsby est utilisé par 1.2% des sites Jamstack sur appareils de bureaux et par 0.8% des sites Jamstack sur appareil portable.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSVe-RPqA23n5VYyvNGcmljPDWPhiBqlMFOQFp5vc4CKT_u5Zd6cldCKUVg56FoqRyaarvvMTs-uY4c/pubchart?oid=691994111&format=interactive",
+  sheets_gid="496656547",
+  sql_file="jamstack_javascript_frameworks.sql",
+  image="jamstack-javascript-frameworks.png",
+  width=600,
+  height=489
+  )
 }}
 
 Vous pouvez voir que React est le plus populaire dans la Jamstack et dans le web en général, ainsi que Gatsby. Maintenant regardons les "frameworks web", comme les définit arbitrairement Wappalyzer:
 
 {{ figure_markup(
- caption="Frameworks web utilisé par tous les sites.",
- description="Graphique en barre montrant que Microsoft ASP.NET est utilisé par 8.4% des sites sur appareils de bureaux et par 6.7% des sites sur appareil portable, Ruby on Rails par respectivement 1.4% et 1.1%, Laravel par 1.0% et 1.0%, Express par 0.8% et 0.7%, Next.js par 0.8% et 0.7%, CodeIgniter par 0.7% et 0.7%, Nuxt.js par 0.5% et 0.4%, Django par 0.3% et 0.3%, Helix Ultimate par 0.3% et 0.3%, et enfin Yii est utilisé par 0.3% des sites sur appareils de bureaux et par 0.2% des sites sur appareil portable.",
- chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSVe-RPqA23n5VYyvNGcmljPDWPhiBqlMFOQFp5vc4CKT_u5Zd6cldCKUVg56FoqRyaarvvMTs-uY4c/pubchart?oid=193748603&format=interactive",
- sheets_gid="1751614355",
- sql_file="jamstack_web_frameworks.sql",
- image="all-sites-web-frameworks.png",
- width=600,
- height=493
- )
+  caption="Frameworks web utilisé par tous les sites.",
+  description="Graphique en barre montrant que Microsoft ASP.NET est utilisé par 8.4% des sites sur appareils de bureaux et par 6.7% des sites sur appareil portable, Ruby on Rails par respectivement 1.4% et 1.1%, Laravel par 1.0% et 1.0%, Express par 0.8% et 0.7%, Next.js par 0.8% et 0.7%, CodeIgniter par 0.7% et 0.7%, Nuxt.js par 0.5% et 0.4%, Django par 0.3% et 0.3%, Helix Ultimate par 0.3% et 0.3%, et enfin Yii est utilisé par 0.3% des sites sur appareils de bureaux et par 0.2% des sites sur appareil portable.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSVe-RPqA23n5VYyvNGcmljPDWPhiBqlMFOQFp5vc4CKT_u5Zd6cldCKUVg56FoqRyaarvvMTs-uY4c/pubchart?oid=193748603&format=interactive",
+  sheets_gid="1751614355",
+  sql_file="jamstack_web_frameworks.sql",
+  image="all-sites-web-frameworks.png",
+  width=600,
+  height=493
+  )
 }}
 
 Une bonne question ici est: pourquoi Next.js et Nuxt.js sont considérés comme des frameworks web, mais Vue.js et React sont considérés comme des frameworks Javascript? Mais, en laissant ça de côté, nous voyons que le framework Microsoft's ASP.Net est extrêmement populaire à travers le web, ainsi que Ruby on Rails. A quoi est-ce que cela ressemble dans la Jamstack ?
 
 {{ figure_markup(
- caption="Framework web utilisé par des sites Jamstack.",
- description="Graphique de barre montrant que Microsoft ASP.NET est utilisé par 3.5% des sites Jamstack sur appareils de bureaux et par 3.1% des sites Jamstack sur appareil portable, Symfony par respectivement 2.1% et 1.8%, Next.js par 1.8% et 1.4%, Ruby on Rails par 0.7% et 0.8%, Nuxt.js par 0.6% et 0.4%, CodeIgniter par 0.4% et 0.4%, Django par 0.4% et 0.3%, Express par 0.4% et 0.3%, et enfin Laravel et Yii sont utilisé par 0.2% ) la fois pour les sites Jamstack sur appareils de bureaux et portable.",
- chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSVe-RPqA23n5VYyvNGcmljPDWPhiBqlMFOQFp5vc4CKT_u5Zd6cldCKUVg56FoqRyaarvvMTs-uY4c/pubchart?oid=1904684465&format=interactive",
- sheets_gid="1751614355",
- sql_file="jamstack_web_frameworks.sql",
- image="jamstack-web-frameworks.png",
- width=600,
- height=493
- )
+  caption="Framework web utilisé par des sites Jamstack.",
+  description="Graphique de barre montrant que Microsoft ASP.NET est utilisé par 3.5% des sites Jamstack sur appareils de bureaux et par 3.1% des sites Jamstack sur appareil portable, Symfony par respectivement 2.1% et 1.8%, Next.js par 1.8% et 1.4%, Ruby on Rails par 0.7% et 0.8%, Nuxt.js par 0.6% et 0.4%, CodeIgniter par 0.4% et 0.4%, Django par 0.4% et 0.3%, Express par 0.4% et 0.3%, et enfin Laravel et Yii sont utilisé par 0.2% ) la fois pour les sites Jamstack sur appareils de bureaux et portable.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSVe-RPqA23n5VYyvNGcmljPDWPhiBqlMFOQFp5vc4CKT_u5Zd6cldCKUVg56FoqRyaarvvMTs-uY4c/pubchart?oid=1904684465&format=interactive",
+  sheets_gid="1751614355",
+  sql_file="jamstack_web_frameworks.sql",
+  image="jamstack-web-frameworks.png",
+  width=600,
+  height=493
+  )
 }}
 
 Comme vous pouvez le voir, même si le numéro un des framework web reste inchangé, ASP.Net est bien moins populaire dans la Jamstack, tout comme Ruby on Rails. En revanche, le favori de la Jamstack, Next.js, grimpe de la cinquième à la troisième place, et Nuxt.js passe de la septième place à la cinquième place. Une autre surprise est Symfony, qui n'est pas dans le top concernant tous les sites (il est 11ème) mais grimpe jusqu'à la seconde place dans l'ensemble Jamstack.
@@ -224,29 +224,29 @@ A première vue, il peut sembler surprenant que ASP.Net est encore #1 dans le gr
 Qu'en est-il des GSS? Wappalyzer les a dans une catégorie séparée: voici les nombres pour les sites Jamstack-y et les sites en général (note: nous avons ajouté Nuxt.js et Next.js manuellement dans cette liste; Wappalyzer ne les considère pas comme GSS mais ils peuvent tous les deux être utilisés de cette manière et nous avons pensé qu'il serait utile de les considérer). Voici les données pour tous les sites:
 
 {{ figure_markup(
- caption="GGS utilisés et détectables par tous les sites.",
- description="Graphique de barre montrant que Next.js est utilisé par 0.74% des sites pour les appareils de bureau et 0.63% pour les sites sur les appareils portables, Nuxt.js respectivement par 0.45% et 0.40%, Gatsby par 0.22% et 0.21%, Hugo par 0.09% et 0.06%, Jekyll par 0.07% et 0.03%, Docusaurus par 0.02% et 0.01%, Hexo par 0.02% et 0.00%, Gridsome par 0.01% et 0.01%, et enfin SitePad et Astro sont utilisés à 0.00% à la fois par les sites pour appareils portables et portables.",
- chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSVe-RPqA23n5VYyvNGcmljPDWPhiBqlMFOQFp5vc4CKT_u5Zd6cldCKUVg56FoqRyaarvvMTs-uY4c/pubchart?oid=582270948&format=interactive",
- sheets_gid="1299424402",
- sql_file="jamstack_ssgs.sql",
- image="all-sites-web-frameworks.png",
- width=600,
- height=496
- )
+  caption="GGS utilisés et détectables par tous les sites.",
+  description="Graphique de barre montrant que Next.js est utilisé par 0.74% des sites pour les appareils de bureau et 0.63% pour les sites sur les appareils portables, Nuxt.js respectivement par 0.45% et 0.40%, Gatsby par 0.22% et 0.21%, Hugo par 0.09% et 0.06%, Jekyll par 0.07% et 0.03%, Docusaurus par 0.02% et 0.01%, Hexo par 0.02% et 0.00%, Gridsome par 0.01% et 0.01%, et enfin SitePad et Astro sont utilisés à 0.00% à la fois par les sites pour appareils portables et portables.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSVe-RPqA23n5VYyvNGcmljPDWPhiBqlMFOQFp5vc4CKT_u5Zd6cldCKUVg56FoqRyaarvvMTs-uY4c/pubchart?oid=582270948&format=interactive",
+  sheets_gid="1299424402",
+  sql_file="jamstack_ssgs.sql",
+  image="all-sites-web-frameworks.png",
+  width=600,
+  height=496
+  )
 }}
 
 Et voilà les données pour les sites Jamstack:
 
 {{ figure_markup(
- caption="GSS détectables et utilisés par les sites Jamstack.",
- description="Graphique de barre montrant que Next.js est utilisé par 1.79% des sites Jamstack sur les appareils de bureau et par 1.40% des sites Jamstack sur les appareils portables, Gatsby respectivement par 1.19% et 0.81%, Hugo par 0.77% et 0.49%, Jekyll par 0.85% et 0.34%, Nuxt.js par 0.56% et 0.41%, Docusaurus par 0.19% et 0.09%, Hexo par 0.16% et 0.04%, Gridsome par 0.05% et 0.03%, Octopress par 0.02% et 0.01%, et enfin Astro est utilisé par 0.02% des sites Jamstack sur les appareils de bureau et par 0.01% des sites Jamstack sur les appareils portables.",
- chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSVe-RPqA23n5VYyvNGcmljPDWPhiBqlMFOQFp5vc4CKT_u5Zd6cldCKUVg56FoqRyaarvvMTs-uY4c/pubchart?oid=1349389169&format=interactive",
- sheets_gid="1299424402",
- sql_file="jamstack_ssgs.sql",
- image="jamstack-web-frameworks.png",
- width=600,
- height=496
- )
+  caption="GSS détectables et utilisés par les sites Jamstack.",
+  description="Graphique de barre montrant que Next.js est utilisé par 1.79% des sites Jamstack sur les appareils de bureau et par 1.40% des sites Jamstack sur les appareils portables, Gatsby respectivement par 1.19% et 0.81%, Hugo par 0.77% et 0.49%, Jekyll par 0.85% et 0.34%, Nuxt.js par 0.56% et 0.41%, Docusaurus par 0.19% et 0.09%, Hexo par 0.16% et 0.04%, Gridsome par 0.05% et 0.03%, Octopress par 0.02% et 0.01%, et enfin Astro est utilisé par 0.02% des sites Jamstack sur les appareils de bureau et par 0.01% des sites Jamstack sur les appareils portables.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSVe-RPqA23n5VYyvNGcmljPDWPhiBqlMFOQFp5vc4CKT_u5Zd6cldCKUVg56FoqRyaarvvMTs-uY4c/pubchart?oid=1349389169&format=interactive",
+  sheets_gid="1299424402",
+  sql_file="jamstack_ssgs.sql",
+  image="jamstack-web-frameworks.png",
+  width=600,
+  height=496
+  )
 }}
 
 Comme vous pouvez le voir, il s'agit à peu près de la même liste, presque dans le même ordre, même si Nuxt descend de quelques places. Cela fait sens intuitivement, puisque l'on s'attendrait à ce que les sites générés par des GSS peuvent être qualifiés comme Jamstack-y, même s'ils ne sont clairement pas le seul moyen d'atteindre cet objectif architectural.
@@ -254,55 +254,55 @@ Comme vous pouvez le voir, il s'agit à peu près de la même liste, presque dan
 Les GSS représentent aussi un plus gros pourcentage de tous les sites Jamstack que dans l'ensemble de tous les sites, indiquant qu'un GSS est un moyen assez efficace d'avoir un site Jamstack. Cependant, utiliser un GSS ne garantit pas que vous aurez un site Jamstack. Regarder le nombre total de certains de ces frameworks dans notre échantillon:
 
 <figure>
- <table>
-   <thead>
-     <tr>
-       <th>GSS</th>
-       <th>Tous les sites</th>
-       <th>Les sites Jamstack</th>
-       <th>Jamstack %</th>
-     </tr>
-   </thead>
-   <tbody>
-     <tr>
-       <td>Next.js</td>
-       <td class="numeric">39,928</td>
-       <td class="numeric">2,651</td>
-       <td class="numeric">7%</td>
-     </tr>
-     <tr>
-       <td>Nuxt.js</td>
-       <td class="numeric">24,600</td>
-       <td class="numeric">824</td>
-       <td class="numeric">3%</td>
-     </tr>
-     <tr>
-       <td>Gatsby</td>
-       <td class="numeric">12,014</td>
-       <td class="numeric">1,765</td>
-       <td class="numeric">15%</td>
-     </tr>
-     <tr>
-       <td>Hugo</td>
-       <td class="numeric">5,071</td>
-       <td class="numeric">1,135</td>
-       <td class="numeric">22%</td>
-     </tr>
-     <tr>
-       <td>Jekyll</td>
-       <td class="numeric">3,531</td>
-       <td class="numeric">1,259</td>
-       <td class="numeric">36%</td>
-     </tr>
-   </tbody>
- </table>
- <figcaption>
-   {{ figure_link(
-     caption="GSS en tant que pourcentage des sites Jamstack sites (sur appareils de bureau).",
-     sheets_gid="1299424402",
-     sql_file="jamstack_ssgs.sql",
-   ) }}
- </figcaption>
+  <table>
+    <thead>
+      <tr>
+        <th>GSS</th>
+        <th>Tous les sites</th>
+        <th>Les sites Jamstack</th>
+        <th>Jamstack %</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Next.js</td>
+        <td class="numeric">39,928</td>
+        <td class="numeric">2,651</td>
+        <td class="numeric">7%</td>
+      </tr>
+      <tr>
+        <td>Nuxt.js</td>
+        <td class="numeric">24,600</td>
+        <td class="numeric">824</td>
+        <td class="numeric">3%</td>
+      </tr>
+      <tr>
+        <td>Gatsby</td>
+        <td class="numeric">12,014</td>
+        <td class="numeric">1,765</td>
+        <td class="numeric">15%</td>
+      </tr>
+      <tr>
+        <td>Hugo</td>
+        <td class="numeric">5,071</td>
+        <td class="numeric">1,135</td>
+        <td class="numeric">22%</td>
+      </tr>
+      <tr>
+        <td>Jekyll</td>
+        <td class="numeric">3,531</td>
+        <td class="numeric">1,259</td>
+        <td class="numeric">36%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>
+    {{ figure_link(
+      caption="GSS en tant que pourcentage des sites Jamstack sites (sur appareils de bureau).",
+      sheets_gid="1299424402",
+      sql_file="jamstack_ssgs.sql",
+    ) }}
+  </figcaption>
 </figure>
 
 Pour tous les GSS, le pourcentage de sites qui peuvent être qualifiés comme Jamstack-y selon notre définition est inférieur au nombre total de sites utilisant ce framework. Jekyll fait le mieux avec plus d'un tiers des sites Jekyll qui répondent aussi à nos critères. Next et Nuxt ont des pourcentages assez bas ce qui est attendu puisque même s'ils peuvent être utilisés comme GSS, ils sont aussi fréquemment utilisés pour faire des sites dynamiques et nous n'avons pas de moyen de déterminer dans quel mode ils sont configurés.
@@ -312,29 +312,29 @@ Pour tous les GSS, le pourcentage de sites qui peuvent être qualifiés comme Ja
 Nous nous sommes aussi intéressés à où les gens hébergent leur site Jamstack-y. Y a-t-il un motif? Encore une fois, nous avons utilisé les données de Wappalyzer afin d'identifier les technologies, cette fois en utilisant la catégorie Plateforme en tant que service(Paas).
 
 {{ figure_markup(
- caption="Les PaaS utilisées par tous les sites.",
- description="Graphique en barre montrant que Amazon Web Services est utilisé par 7.2% des sites sur les appareils de bureau et par 5.9% des sites sur les appareils portables, WP Engine respectivement par 1.7% et 1.1%, Azure par 1.1% et 0.9%, WordPress.com par 0.8% et 1.1%, SiteGround par 0.7% et 0.6%, Heroku par 0.4% et 0.3%, Kinsta par 0.4% et 0.3%, Flywheel par 0.3% et 0.2%, Aruba.it par 0.2% et 0.4%, et finalement Netlify est utilisé par 0.3% des sites sur les appareils de bureau et par 0.2% des sites sur les appareils portables.",
- chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSVe-RPqA23n5VYyvNGcmljPDWPhiBqlMFOQFp5vc4CKT_u5Zd6cldCKUVg56FoqRyaarvvMTs-uY4c/pubchart?oid=966567769&format=interactive",
- sheets_gid="351874654",
- sql_file="jamstack_paas.sql",
- image="all-sites-paas.png",
- width=600,
- height=473
- )
+  caption="Les PaaS utilisées par tous les sites.",
+  description="Graphique en barre montrant que Amazon Web Services est utilisé par 7.2% des sites sur les appareils de bureau et par 5.9% des sites sur les appareils portables, WP Engine respectivement par 1.7% et 1.1%, Azure par 1.1% et 0.9%, WordPress.com par 0.8% et 1.1%, SiteGround par 0.7% et 0.6%, Heroku par 0.4% et 0.3%, Kinsta par 0.4% et 0.3%, Flywheel par 0.3% et 0.2%, Aruba.it par 0.2% et 0.4%, et finalement Netlify est utilisé par 0.3% des sites sur les appareils de bureau et par 0.2% des sites sur les appareils portables.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSVe-RPqA23n5VYyvNGcmljPDWPhiBqlMFOQFp5vc4CKT_u5Zd6cldCKUVg56FoqRyaarvvMTs-uY4c/pubchart?oid=966567769&format=interactive",
+  sheets_gid="351874654",
+  sql_file="jamstack_paas.sql",
+  image="all-sites-paas.png",
+  width=600,
+  height=473
+  )
 }}
 
 Et voici les données correspondant aux sites Jamstack:
 
 {{ figure_markup(
- caption="Les PaaS utilisées par les sites Jamstack.",
- description="Graphique de bar montrant que Amazon Web Services est utilisé par 10.8% des sites Jamstack sur les appareils de bureau et par 9.4% des sites Jamstack sur les appareils portables, GitHub Pages respectivement par 4.6% et 2.0%, Netlify par 2.4% et 1.7%, Pantheon par 2.1% et 1.7%, Vercel par 1.6% et 1.1%, Acquia Cloud Platform par 1.4% et 1.2%, Cloudways par 0.7% et 0.9%, Azure par 0.7% et 0.7%, Platform.sh par 0.4% et 0.3%, et enfin Heroku par 0.3% des sites Jamstack sur les appareils de bureau et par 0.2% des sites Jamstack sur les appareils portables.",
- chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSVe-RPqA23n5VYyvNGcmljPDWPhiBqlMFOQFp5vc4CKT_u5Zd6cldCKUVg56FoqRyaarvvMTs-uY4c/pubchart?oid=437110555&format=interactive",
- sheets_gid="351874654",
- sql_file="jamstack_paas.sql",
- image="jamstack-paas.png",
- width=600,
- height=473
- )
+  caption="Les PaaS utilisées par les sites Jamstack.",
+  description="Graphique de bar montrant que Amazon Web Services est utilisé par 10.8% des sites Jamstack sur les appareils de bureau et par 9.4% des sites Jamstack sur les appareils portables, GitHub Pages respectivement par 4.6% et 2.0%, Netlify par 2.4% et 1.7%, Pantheon par 2.1% et 1.7%, Vercel par 1.6% et 1.1%, Acquia Cloud Platform par 1.4% et 1.2%, Cloudways par 0.7% et 0.9%, Azure par 0.7% et 0.7%, Platform.sh par 0.4% et 0.3%, et enfin Heroku par 0.3% des sites Jamstack sur les appareils de bureau et par 0.2% des sites Jamstack sur les appareils portables.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSVe-RPqA23n5VYyvNGcmljPDWPhiBqlMFOQFp5vc4CKT_u5Zd6cldCKUVg56FoqRyaarvvMTs-uY4c/pubchart?oid=437110555&format=interactive",
+  sheets_gid="351874654",
+  sql_file="jamstack_paas.sql",
+  image="jamstack-paas.png",
+  width=600,
+  height=473
+  )
 }}
 
 Le géant du web Amazon Web Services est, sans surprise, dominant sur les deux ensembles, mais il y a des différences significatives entre les préférences globales et ceux des développeurs Jamstack-y.
@@ -344,85 +344,85 @@ WP Engine, Azure, et WordPress.com, extrèmement populaire sur le web, en géné
 Le changement de popularité relative de certains de ces hébergements par rapport au web en général est peut être surprenant étant donné qu'ils ne sont pas tous des noms familiers, donc nous avons pensé qu'il serait intéressant de regarder comment les préférences de plateformes ont changé entre 2021 et 2022 dans nos ensembles. En utilisant des données sur les appareils portables, voici comment le pourcentage des sites Jamstack utilisant diverses plateformes ont changé entre 2021 et 2022:
 
 <figure>
- <table>
-   <thead>
-     <tr>
-       <th>PaaS</th>
-       <th class="numeric">2021</th>
-       <th class="numeric">2022</th>
-       <th>Changement</th>
-     </tr>
-   </thead>
-   <tbody>
-     <tr>
-       <td>Amazon Web Services</td>
-       <td class="numeric">7.00%</td>
-       <td class="numeric">9.45%</td>
-       <td class="numeric">2.45%</td>
-     </tr>
-     <tr>
-       <td>GitHub Pages</td>
-       <td class="numeric">2.62%</td>
-       <td class="numeric">1.99%</td>
-       <td class="numeric">-0.63%</td>
-     </tr>
-     <tr>
-       <td>Pantheon</td>
-       <td class="numeric">1.97%</td>
-       <td class="numeric">1.70%</td>
-       <td class="numeric">-0.27%</td>
-     </tr>
-     <tr>
-       <td>Netlify</td>
-       <td class="numeric">1.68%</td>
-       <td class="numeric">1.72%</td>
-       <td class="numeric">0.04%</td>
-     </tr>
-     <tr>
-       <td>Acquia Cloud Platform</td>
-       <td class="numeric">1.37%</td>
-       <td class="numeric">1.18%</td>
-       <td class="numeric">-0.20%</td>
-     </tr>
-     <tr>
-       <td>Vercel</td>
-       <td class="numeric">0.50%</td>
-       <td class="numeric">1.10%</td>
-       <td class="numeric">0.60%</td>
-     </tr>
-     <tr>
-       <td>Cloudways</td>
-       <td></td>
-       <td class="numeric">0.91%</td>
-       <td class="numeric">N/A</td>
-     </tr>
-     <tr>
-       <td>Azure</td>
-       <td></td>
-       <td class="numeric">0.67%</td>
-       <td class="numeric">N/A</td>
-     </tr>
-     <tr>
-       <td>Platform.sh</td>
-       <td class="numeric">0.27%</td>
-       <td class="numeric">0.29%</td>
-       <td class="numeric">0.02%</td>
-     </tr>
-     <tr>
-       <td>Heroku</td>
-       <td class="numeric">0.28%</td>
-       <td class="numeric">0.22%</td>
-       <td class="numeric">-0.05%</td>
-     </tr>
-   </tbody>
- </table>
- <figcaption>
-   {{ figure_link(
-     caption="GSS en tant que pourcentage de sites Jamstack (sur appareils de bureau).",
-     sheets_gid="1299424402",
-     sql_file="jamstack_ssgs.sql",
-   ) }}
- </figcaption>
+  <table>
+    <thead>
+      <tr>
+        <th>PaaS</th>
+        <th class="numeric">2021</th>
+        <th class="numeric">2022</th>
+        <th>Changement</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Amazon Web Services</td>
+        <td class="numeric">7.00%</td>
+        <td class="numeric">9.45%</td>
+        <td class="numeric">2.45%</td>
+      </tr>
+      <tr>
+        <td>GitHub Pages</td>
+        <td class="numeric">2.62%</td>
+        <td class="numeric">1.99%</td>
+        <td class="numeric">-0.63%</td>
+      </tr>
+      <tr>
+        <td>Pantheon</td>
+        <td class="numeric">1.97%</td>
+        <td class="numeric">1.70%</td>
+        <td class="numeric">-0.27%</td>
+      </tr>
+      <tr>
+        <td>Netlify</td>
+        <td class="numeric">1.68%</td>
+        <td class="numeric">1.72%</td>
+        <td class="numeric">0.04%</td>
+      </tr>
+      <tr>
+        <td>Acquia Cloud Platform</td>
+        <td class="numeric">1.37%</td>
+        <td class="numeric">1.18%</td>
+        <td class="numeric">-0.20%</td>
+      </tr>
+      <tr>
+        <td>Vercel</td>
+        <td class="numeric">0.50%</td>
+        <td class="numeric">1.10%</td>
+        <td class="numeric">0.60%</td>
+      </tr>
+      <tr>
+        <td>Cloudways</td>
+        <td></td>
+        <td class="numeric">0.91%</td>
+        <td class="numeric">N/A</td>
+      </tr>
+      <tr>
+        <td>Azure</td>
+        <td></td>
+        <td class="numeric">0.67%</td>
+        <td class="numeric">N/A</td>
+      </tr>
+      <tr>
+        <td>Platform.sh</td>
+        <td class="numeric">0.27%</td>
+        <td class="numeric">0.29%</td>
+        <td class="numeric">0.02%</td>
+      </tr>
+      <tr>
+        <td>Heroku</td>
+        <td class="numeric">0.28%</td>
+        <td class="numeric">0.22%</td>
+        <td class="numeric">-0.05%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>
+    {{ figure_link(
+      caption="GSS en tant que pourcentage de sites Jamstack (sur appareils de bureau).",
+      sheets_gid="1299424402",
+      sql_file="jamstack_ssgs.sql",
+    ) }}
+  </figcaption>
 </figure>
 
 GitHub Pages, Pantheon, Acquia Cloud Platform et Heroku apparaissent tous comme déclinant en popularité en tant que choix pour héberger un site Jamstack, alors que AWS, Netlify, Vercel, et Platform.sh deviennent de plus en plus populaire. A noter que Cloudways ou Azure ne sont pas dans les données Paas de 2021, nous ne pouvons donc pas les comparer. Nous pouvons supposer que AWS, Netlify et Vercel sont en train de grandir en popularité parce qu'ils ne sont pas seulement une offre d'hébergement mais aussi une suite d'outils pour les processus de travail des développeurs.
