@@ -31,7 +31,7 @@ FROM (
       SUM(item.execution_time) AS totalExecutionTime
     FROM
       `httparchive.lighthouse.2019_07_01_mobile`,
-      UNNEST(getExecutionTimes(report)) AS item ) t2
+      UNNEST(getExecutionTimes(report)) AS item) t2
 WHERE requestUrl != 'Other'
 GROUP BY
   requestUrl

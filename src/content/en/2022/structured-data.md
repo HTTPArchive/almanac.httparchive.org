@@ -16,7 +16,7 @@ featured_stat_label_1: JSON-LD growth year over year
 featured_stat_2: 59%
 featured_stat_label_2: Pages using Open Graph structured data
 featured_stat_3: 40%
-featured_stat_label_3: Pages using Open Graph structured data
+featured_stat_label_3: Pages using Twitter structured data
 ---
 
 ## Introduction
@@ -555,7 +555,7 @@ The main limitation of this analysis is represented by the fact that we can eval
 As was the case in 2021, the most common values of the `sameAs` property are social media platforms. These include facebook.com (at 4.32% on mobile and 4.94% on desktop), instagram.com (at 2.93% on mobile and 3.34% on desktop) and twitter.com (at 2.30% on mobile and 2.86% on desktop). The former two of which have seen a slight increase on mobile from 2021, with all 3 increasing on desktop.
 
 {{ figure_markup(
-  image="sameas-usage-by-year-mobile.png",
+  image="sameas-usage-by-device.png",
   caption="`SameAs` usage by device",
   description="Bar chart showing `facebook.com` was used on 4.9% of desktop and 4.3% of mobile pages, `instagram.com` on 3.3% and 2.9% respectively, `twitter.com` on 2.9% and 2.3%, `youtube.com` on 2.1% and 1.8%, `linkedin.com` on 1.4% and 1.0%, `pinterest.com` on 0.7% and 0.6%, `google.com` on 0.5% and 0.4%, `wikipedia.org` on 0.1% and 0.1%, `wikidata.org` on 0.1% and 0.1%, `yelp.com` on 0.1% and 0.1%, `tumblr.com` on 0.1% and 0.1%, `uptodown.io` on 0.1% and 0.1%, `vk.com` on 0.1% and 0.1%, and `t.me`, `soundcloud.com`, `pinterest.co.uk`, `tripadvisor.com`, `flickr.com`, and `vimeo.com` were all used on 0.0% of both desktop and mobile pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr8oRb8NNs5MbpPpDi7QSsTUTPQL_vxQtQvmn52qGk97gpNhJIHa8VF0x5ZJtWXAFuEbDFZQB6TIuN/pubchart?oid=30131405&format=interactive",

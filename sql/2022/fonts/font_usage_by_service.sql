@@ -41,7 +41,7 @@ counts AS (
     LOGICAL_OR(REGEXP_CONTAINS(url, r'fonts\.typonine\.com')) AS typonine,
     LOGICAL_OR(REGEXP_CONTAINS(url, r'kernest\.com')) AS kernest,
     LOGICAL_OR(REGEXP_CONTAINS(url, r'typefront\.com')) AS typefront,
-    LOGICAL_OR(( REGEXP_CONTAINS(mimeType, r'font|woff|eot') OR
+    LOGICAL_OR((REGEXP_CONTAINS(mimeType, r'font|woff|eot') OR
         (ext = 'woff' OR
           ext = 'woff2' OR
           ext = 'eot' OR

@@ -47,7 +47,7 @@ FROM (
     GROUP BY
       _TABLE_SUFFIX)
   USING
-    (_TABLE_SUFFIX) ),
+    (_TABLE_SUFFIX)),
   UNNEST(structured_schema_wpt_bodies_info.jsonld_and_microdata_types) AS type
 GROUP BY
   total,

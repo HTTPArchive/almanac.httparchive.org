@@ -31,7 +31,7 @@ FROM (
     font_display,
     COUNT(DISTINCT page) AS pages
   FROM
-    `httparchive.almanac.parsed_css` ,
+    `httparchive.almanac.parsed_css`,
     UNNEST(getFontDisplay(css)) AS font_display
   WHERE
     date = '2022-07-01'

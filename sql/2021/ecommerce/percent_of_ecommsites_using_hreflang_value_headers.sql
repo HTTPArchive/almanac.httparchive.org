@@ -5,8 +5,8 @@
 CREATE TEMP FUNCTION
 AS_PERCENT (freq FLOAT64,
   total FLOAT64)
-RETURNS FLOAT64 AS ( SAFE_DIVIDE(freq,
-  total) );
+RETURNS FLOAT64 AS (SAFE_DIVIDE(freq,
+  total));
 # returns all the data we need from _wpt_bodies
 CREATE TEMPORARY FUNCTION
 get_wpt_bodies_info(wpt_bodies_string STRING)
@@ -64,7 +64,7 @@ FROM (
     GROUP BY
       _TABLE_SUFFIX) # to get an accurate total of pages per device. also seems fast
   USING
-    (_TABLE_SUFFIX) ),
+    (_TABLE_SUFFIX)),
   UNNEST(wpt_bodies_info.hreflangs) AS hreflang
 GROUP BY
   total,

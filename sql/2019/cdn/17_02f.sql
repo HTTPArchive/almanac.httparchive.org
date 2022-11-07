@@ -3,9 +3,9 @@
 
 SELECT
   client,
-  COUNTIF(jscdnHits > 0 ) AS hasJSCDNHits,
+  COUNTIF(jscdnHits > 0) AS hasJSCDNHits,
   COUNT(0) AS hits,
-  ROUND(100 * COUNTIF(jscdnHits > 0 ) / COUNT(0), 2) AS pct
+  ROUND(100 * COUNTIF(jscdnHits > 0) / COUNT(0), 2) AS pct
 FROM
   (
     SELECT
