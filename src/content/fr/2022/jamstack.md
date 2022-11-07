@@ -440,7 +440,3 @@ Nous avons aussi trouvé que certains frameworks et que certaines plateformes d'
 Bien sûr, si la communauté Jamstack préfère certaines plateformes et frameworks, cela devient une tendance auto-alimenté: il y aura plus de documentation et de tutoriels sur comment obtenir des sites Jamstack utilisant ces outils, ce qui, à son tour, rendra plus simple la construction de site Jamstack utilisant ces outils. Donc, bien que nous pensions (et les données le démontrent) que vous pouvez atteindre des résultats Jamstack-y avec n'importe quelle technologies, nous espérons que vous trouverez ces données utiles pour identifier les outils et les plateformes qui peuvent vous permettre facilement d'avoir un site Jamstack.
 
 Nous pensons aussi que la dernière leçon intéressante de cet exercice de quantification de "ce qui compte en tant que Jamstack" est que maintenant, en tant que développeur, vous avez une cible plus claire vers laquelle aller lorsque vous construisez un site Jamstack. Cela ne veut pas dire que vous devez choisir un framework puis ensuite l'oublier: l'important est le résultat. En analysant vos temps LCP et CLS, vous pouvez quantifier si vos efforts sont "Jamstack-y", ce qui est une chose utile si vous pouvez l'automatiser.
-
-
-
-
