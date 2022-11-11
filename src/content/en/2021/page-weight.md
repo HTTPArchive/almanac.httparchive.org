@@ -60,7 +60,7 @@ When a user requests a web page via [HTTP](./http), all files needed by the page
 
 A negative effect of large page weight is due to [_latency_](https://developer.mozilla.org/en-US/docs/Web/Performance/Understanding_latency) and _bandwidth_ constraints. Latency measures the time it takes for the request to connect to the server storing the files and begin the process of transporting those files, while bandwidth measures the time it takes to download the resources. If a bunch of files are requested, no matter the technology, there is a limit on how much can be processed and transferred in any given period. I've audited WordPress sites that request as many as 170 files or more, which ensures terrible page loading performance starting with high latency periods.
 
-Many optimizations can improve transfer/loading time, such as compressing and combining certain file requests, using HTTP/2—or the newer HTTP/3—protocols, and using a modern browser's ability to [preconnect to and preload](./resource-hints) certain files to speed the the whole process process up, but ultimately page weight will still have an impact here. The [Performance chapter](./performance) covers a wide range of factors that effect page loading performance.
+Many optimizations can improve transfer/loading time, such as compressing and combining certain file requests, using HTTP/2—or the newer HTTP/3—protocols, and using a modern browser's ability to [preconnect to and preload](./resource-hints) certain files to speed the whole process process up, but ultimately page weight will still have an impact here. The [Performance chapter](./performance) covers a wide range of factors that effect page loading performance.
 
 ### Rendering
 
