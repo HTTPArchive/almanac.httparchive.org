@@ -454,7 +454,7 @@ On 6.1% of pages, you still find `center` elements (hi <a hreflang="en" href="ht
 {{ figure_markup(
   image="obsolete-elements-relative-use.png",
   caption="Obsolete elements relative use.",
-  description="Pie chart showing `center` is 43.0% of obsolete element usage on mobile, `font` is 38.2%, `marquee` is 7.0%, `nobr` 2.6%, `big` 2.6%, `frame` 1.5% and the the rest of the pie is make up of unlabelled other elements.",
+  description="Pie chart showing `center` is 43.0% of obsolete element usage on mobile, `font` is 38.2%, `marquee` is 7.0%, `nobr` 2.6%, `big` 2.6%, `frame` 1.5% and the rest of the pie is made up of unlabelled other elements.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRjXjOczLu9q3mcQ-UFLUOmZgefGNCPVYeEwo4cDxQTymgmD_1D5dbZ728Mz1SkEMZHxQgwcWmLjkgx/pubchart?oid=1875548366&format=interactive",
   sheets_gid="69619977",
   sql_file="obsolete_elements.sql",
