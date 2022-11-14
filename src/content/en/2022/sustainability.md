@@ -505,7 +505,7 @@ Almost one third of websites inline JavaScript. This is also something you see a
 
 #### CSS
 
-CSS could be a great lever for sustainability, especially if you want to limit the number of images on your website or create some animations as mentioned earlier in this chapter. You can find documentation on how to write efficient CSS—and should definitely look for this—but we'll stick to standard optimizations that should be implemented everywhere. If you want to learn more about all this, see the [CSS](./CSS) chapter.
+CSS could be a great lever for sustainability, especially if you want to limit the number of images on your website or create some animations as mentioned earlier in this chapter. You can find documentation on how to write efficient CSS—and should definitely look for this—but we'll stick to standard optimizations that should be implemented everywhere. If you want to learn more about all this, see the [CSS](./css) chapter.
 
 ##### Minification
 
@@ -524,7 +524,7 @@ Unminified CSS is absent from most of the websites and the potential gains appea
 
 ##### Including as few as possible directly in HTML
 
-As with JavaScript, inlining CSS could prove detrimental for the size of your HTML file and for the performance of your website. This is often found on websites built with CM and those relying on the <a hreflang="en" href="https://web.dev/extract-critical-CSS/">Critical CSS method</a>.
+As with JavaScript, inlining CSS could prove detrimental for the size of your HTML file and for the performance of your website. This is often found on websites built with CM and those relying on the <a hreflang="en" href="https://web.dev/extract-critical-css/">Critical CSS method</a>.
 
 {{ figure_markup(
   image="style-usage.png",
