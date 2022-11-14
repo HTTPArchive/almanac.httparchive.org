@@ -244,7 +244,7 @@ For more on this topic, see the [Fonts](./fonts) chapter. You can also find some
 Unused CSS is especially found when using CSS frameworks (Bootstrap and others). When doing so, you should keep in mind to remove unused CSS during your build phase. <a hreflang="en" href="https://developer.chrome.com/docs/devtools/coverage/">Chrome Dev Tools offer a Coverage tool to check on this</a>. Be careful: on many websites, all CSS and JavaScript are loaded on the first visit in order to cache them for further visits and exploration of the website. This is not necessarily a bad thing, but unused code is one of the drawbacks that you should keep in mind, especially because it might slow down further code processing.
 
 {{ figure_markup(
-  image="unused-CSS-bytes.png",
+  image="unused-css-bytes.png",
   caption="Unused CSS bytes",
   description="A column chart showing that on the 90th percentile there is 221 KB of unused CSS on desktop and 218 KB on mobile, on the 75th percentile it's 117 KB on desktop and 113 KB on mobile, on the 50th percentile 52 KB on desktop and 49 KB on mobile. On the 25th percentile we found 19 KB of unused CSS on desktop and 17 KB on mobile. Lastly, we saw 0 KB of unused CSS on the 10th percentile on either desktop and mobile",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=1850605337&format=interactive",
@@ -512,7 +512,7 @@ CSS could be a great lever for sustainability, especially if you want to limit t
 As with CSS, minifying JavaScript involves removing unnecessary characters for the browser, making your files lighter.
 
 {{ figure_markup(
-  image="unminified-CSS-savings.png",
+  image="unminified-css-savings.png",
   caption="Unminified CSS savings",
   description="A column chart showing that on the 90th percentile 15 KB of CSS could be saved on desktop and 14 KB on mobile if using CSS minifying. On the 75th percentile 5 KB of CSS could be saved on desktop and 4 KB on mobile. On the 50th, 25th and 10th percentile we see no KB savings, this is explained by the usage of CSS minifying already in place on those websites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=898637516&format=interactive",
