@@ -136,7 +136,7 @@ Now for an additional graph: emissions per percentile by type of content.
 {{ figure_markup(
   image="percent-of-total-emissions-by-type-mobile.png",
   caption="Percent of total emissions by percentile by type (mobile)",
-  description="A bar chart showing the percent of different content types on desktop in the total page carbon emissions by percentile. On the 90th percentile HTML content accounts for around 1.8% of the total carbon emissions, Javascript is responsible a bit less than 18.1% of total carbon emissions, CSS is around 3.4%, images accounts for around 72.3% and fonts represent 4.5% of the total carbon emissions. On the 75th percentile, HTML represents 1.8%, Javascript 23.4%, CSS around 3.8%, images around 65.7% and fonts around 5.2% of the total carbon emissions. On the 50th percentile, HTML represents 1.9%, Javascript 30%, CSS around 4.4%, images almost 57.4% and fonts around 6.3% of the total carbon emissions. On the 25th percentile, HTML represents 2.4%, Javascript 38.8%, CSS around 5.2%, images 48.3% and fonts around 5.3% of the total carbon emissions. On the 10th percentile, HTML represents 3.8%, Javascript 53.4%, CSS around 3.6%, images 39.2% and fonts 0% of the total carbon emissions.",
+  description="A bar chart showing the percent of different content types on desktop in the total page carbon emissions by percentile. On the 90th percentile HTML content accounts for around 1.8% of the total carbon emissions, JavaScript is responsible a bit less than 18.1% of total carbon emissions, CSS is around 3.4%, images accounts for around 72.3% and fonts represent 4.5% of the total carbon emissions. On the 75th percentile, HTML represents 1.8%, JavaScript 23.4%, CSS around 3.8%, images around 65.7% and fonts around 5.2% of the total carbon emissions. On the 50th percentile, HTML represents 1.9%, JavaScript 30%, CSS around 4.4%, images almost 57.4% and fonts around 6.3% of the total carbon emissions. On the 25th percentile, HTML represents 2.4%, JavaScript 38.8%, CSS around 5.2%, images 48.3% and fonts around 5.3% of the total carbon emissions. On the 10th percentile, HTML represents 3.8%, JavaScript 53.4%, CSS around 3.6%, images 39.2% and fonts 0% of the total carbon emissions.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=141071996&format=interactive",
   sheets_gid="1911144863",
   sql_file=""
@@ -166,7 +166,7 @@ So, which content type is to blame for this?
 {{ figure_markup(
   image="number-of-requests-by-percentile-by-type-mobile.png",
   caption="Number of requests by percentile by type on mobile",
-  description="A column chart showing that on mobile devices, on the 90th percentile we find 14 requests targeting Html content, 60 requests for javascript resources, almost 24 requests for Css, around 70 requests fetching images and 8 requests for fonts.. On the 75th percentile, there are 6 Html requests, 37 Javascript requests, 12 Css requests, 39 images requests and 5 Fonts requests. On the 50th percentile, we can see 2 Html requests, 20 javascript requests, 6 Css requests, 22 images and 3 fonts requests. On the 25th percentile, there are 1 Html, 9 javascript, 3 Css, 10 images and 1 font requests. On the 10h percentile, we find 1Html, 4 javascript, 1 Css, 6 images and 1 font requests.",
+  description="A column chart showing that on mobile devices, on the 90th percentile we find 14 requests targeting HTML content, 60 requests for javascript resources, almost 24 requests for CSS, around 70 requests fetching images and 8 requests for fonts.. On the 75th percentile, there are 6 HTML requests, 37 JavaScript requests, 12 CSS requests, 39 images requests and 5 Fonts requests. On the 50th percentile, we can see 2 HTML requests, 20 javascript requests, 6 CSS requests, 22 images and 3 fonts requests. On the 25th percentile, there are 1 HTML, 9 javascript, 3 CSS, 10 images and 1 font requests. On the 10h percentile, we find 1Html, 4 javascript, 1 CSS, 6 images and 1 font requests.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=768422178&format=interactive",
   sheets_gid="174962437",
   sql_file="requests_by_type.sql"
@@ -179,7 +179,7 @@ There are almost as many HTTP requests for mobile and desktop versions, which sh
 {{ figure_markup(
   image="number-of-bytes-by-percentile-by-type-mobile.png",
   caption="Number of bytes by percentile by type on mobile",
-  description="A column chart showing that on mobile devices, on the 90th percentile we find 135 KB of Html, around 1,367 KB of Javascript, 256 KB of Css, 5,475 KB of images and 338 KB of fonts. On the 75th percentile it goes down at 67 KB of Html, 857 KB of Javascript, 139 KB of Css, 2,402 KB of images and 191 KB of fonts. On the 50th percentile we found 30 KB of Html, 461 KB of Javascript, 68 KB of Css, 881 KB of images and 97 KB of fonts. On the 25th percentile there is 13 KB of Html, 209 KB of Javascript, 28 KB of Css, 260 KB of images and 29 KB of fonts. On the 10th percentile there is 6 KB of Html, 87 KB of Javascript, 6 KB of Css, 64 KB of images and 0 KB of fonts.",
+  description="A column chart showing that on mobile devices, on the 90th percentile we find 135 KB of HTML, around 1,367 KB of JavaScript, 256 KB of CSS, 5,475 KB of images and 338 KB of fonts. On the 75th percentile it goes down at 67 KB of HTML, 857 KB of JavaScript, 139 KB of CSS, 2,402 KB of images and 191 KB of fonts. On the 50th percentile we found 30 KB of HTML, 461 KB of JavaScript, 68 KB of CSS, 881 KB of images and 97 KB of fonts. On the 25th percentile there is 13 KB of HTML, 209 KB of JavaScript, 28 KB of CSS, 260 KB of images and 29 KB of fonts. On the 10th percentile there is 6 KB of HTML, 87 KB of JavaScript, 6 KB of CSS, 64 KB of images and 0 KB of fonts.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=683807493&format=interactive",
   sheets_gid="1911144863",
   sql_file="page_bytes_per_type.sql"
@@ -245,8 +245,8 @@ Unused CSS is especially found when using CSS frameworks (Bootstrap and others).
 
 {{ figure_markup(
   image="unused-css-bytes.png",
-  caption="Unused Css bytes",
-  description="A column chart showing that on the 90th percentile there is 221 KB of unused Css on desktop and 218 KB on mobile, on the 75th percentile it's 117 KB on desktop and 113 KB on mobile, on the 50th percentile 52 KB on desktop and 49 KB on mobile. On the 25th percentile we found 19 KB of unused Css on desktop and 17 KB on mobile. Lastly, we saw 0 KB of unused Css on the 10th percentile on either desktop and mobile",
+  caption="Unused CSS bytes",
+  description="A column chart showing that on the 90th percentile there is 221 KB of unused CSS on desktop and 218 KB on mobile, on the 75th percentile it's 117 KB on desktop and 113 KB on mobile, on the 50th percentile 52 KB on desktop and 49 KB on mobile. On the 25th percentile we found 19 KB of unused CSS on desktop and 17 KB on mobile. Lastly, we saw 0 KB of unused CSS on the 10th percentile on either desktop and mobile",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=1850605337&format=interactive",
   sheets_gid="1952093899",
   sql_file="unused_css_bytes.sql"
@@ -260,8 +260,8 @@ The amount of unused JavaScript can grow quickly when adding dependencies or usi
 
 {{ figure_markup(
   image="unused-javascript-bytes.png",
-  caption="Unused Javascript bytes",
-  description="A column chart showing that on the 90th percentile there is 645 KB of unused Javascript on desktop and 604 KB on mobile, on the 75th percentile it's 372 KB on desktop and 342 KB on mobile, on the 50th percentile 177 KB on desktop and 162 KB on mobile. On the 25th percentile we found 69 KB of unused Javascript on desktop and 62 KB on mobile. Lastly, we saw 0 KB of unused Javascript on the 10th percentile on either desktop and mobile",
+  caption="Unused JavaScript bytes",
+  description="A column chart showing that on the 90th percentile there is 645 KB of unused JavaScript on desktop and 604 KB on mobile, on the 75th percentile it's 372 KB on desktop and 342 KB on mobile, on the 50th percentile 177 KB on desktop and 162 KB on mobile. On the 25th percentile we found 69 KB of unused JavaScript on desktop and 62 KB on mobile. Lastly, we saw 0 KB of unused JavaScript on the 10th percentile on either desktop and mobile",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=625795710&format=interactive",
   sheets_gid="1918594785",
   sql_file="unused_js_bytes.sql"
@@ -479,8 +479,8 @@ Minifying JavaScript involves removing unnecessary characters for the browser, m
 
 {{ figure_markup(
   image="unminified-javascript-savings.png",
-  caption="Unminified Javascript savings",
-  description="A column chart showing that on the 90th percentile 40 KB of Javascript could be saved on desktop and 36 KB on mobile if using Js minifying. On the 75th percentile 10 KB of Javascript could be saved on desktop and 9 KB on mobile. On the 50th, 25th and 10th percentile we see no KB savings, this is explained by the usage of Javascript minifying already in place on those websites.",
+  caption="Unminified JavaScript savings",
+  description="A column chart showing that on the 90th percentile 40 KB of JavaScript could be saved on desktop and 36 KB on mobile if using Js minifying. On the 75th percentile 10 KB of JavaScript could be saved on desktop and 9 KB on mobile. On the 50th, 25th and 10th percentile we see no KB savings, this is explained by the usage of JavaScript minifying already in place on those websites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=457277769&format=interactive",
   sheets_gid="1952499146",
   sql_file="unminified_js_bytes.sql"
@@ -495,7 +495,7 @@ Inlining code is bad practice, even more for sustainability. Making your HTML he
 {{ figure_markup(
   image="script-usage.png",
   caption="Script usage",
-  description="A bar chart showing that on desktop 34% of javascript is inline and the other 66% is external. On mobile, 35% of Javascript is inline and 65% comes from external files.",
+  description="A bar chart showing that on desktop 34% of javascript is inline and the other 66% is external. On mobile, 35% of JavaScript is inline and 65% comes from external files.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=1900077125&format=interactive",
   sheets_gid="2126160877",
   sql_file="script_count.sql "
@@ -513,8 +513,8 @@ As with CSS, minifying JavaScript involves removing unnecessary characters for t
 
 {{ figure_markup(
   image="unminified-css-savings.png",
-  caption="Unminified Css savings",
-  description="A column chart showing that on the 90th percentile 15 KB of Css could be saved on desktop and 14 KB on mobile if using Css minifying. On the 75th percentile 5 KB of Css could be saved on desktop and 4 KB on mobile. On the 50th, 25th and 10th percentile we see no KB savings, this is explained by the usage of Css minifying already in place on those websites.",
+  caption="Unminified CSS savings",
+  description="A column chart showing that on the 90th percentile 15 KB of CSS could be saved on desktop and 14 KB on mobile if using CSS minifying. On the 75th percentile 5 KB of CSS could be saved on desktop and 4 KB on mobile. On the 50th, 25th and 10th percentile we see no KB savings, this is explained by the usage of CSS minifying already in place on those websites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=898637516&format=interactive",
   sheets_gid="1896195819",
   sql_file="unminified_css_bytes.sql"
@@ -529,7 +529,7 @@ As with JavaScript, inlining CSS could prove detrimental for the size of your HT
 {{ figure_markup(
   image="style-usage.png",
   caption="Style usage",
-  description="A bar chart showing that on both desktop and mobile, 25% of Css is inline and the other 75% comes from external stylesheets",
+  description="A bar chart showing that on both desktop and mobile, 25% of CSS is inline and the other 75% comes from external stylesheets",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=1184478802&format=interactive",
   sheets_gid="362809205",
   sql_file="stylesheet_count.sql"
