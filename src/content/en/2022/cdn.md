@@ -21,7 +21,7 @@ featured_stat_label_3: Domains using Brotli via CDNs
 
 ## Introduction
 
-This chapter provides insights regarding the current state of CDN usage. CDNs are playing an increasingly important role in delivering content to users around the globe—even for smaller sites by facilitating the delivery of static and third-party content such as Javascript libraries, Fonts and other content. Another key aspect of the CDNs that we will discuss in this chapter is the role CDNs play in adoption of new standards such as TLS and HTTP versions.
+This chapter provides insights regarding the current state of CDN usage. CDNs are playing an increasingly important role in delivering content to users around the globe—even for smaller sites by facilitating the delivery of static and third-party content such as JavaScript libraries, Fonts and other content. Another key aspect of the CDNs that we will discuss in this chapter is the role CDNs play in adoption of new standards such as TLS and HTTP versions.
 
 We think that CDNs will continue play a vital role in the future not just for content delivery but for content security as well. We recommend that users look at CDNs from both a performance and a security viewpoint.
 

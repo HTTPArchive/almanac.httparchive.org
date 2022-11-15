@@ -49,7 +49,7 @@ Cela produit un autre cas particulier: beaucoup de sites sont cachés! Même des
 
 ### Est-ce qu'un site Jamstack doit utiliser du JavaScript?
 
-Nous avons décidé qu'un site Jamstack ne doit pas nécessairement utiliser du JavaScript. Beaucoup de sites Jamstack le font, bien sûr: le "J" de Jamstack a été utilisé pour représenter "JavaScript", après tout. Mais, même la plus vieille des définition de Jamstack disait explicitement que l'utilisation du JavaScript était optionnel – un site complètement statique sans Javascript est bien toujours Jamstack.
+Nous avons décidé qu'un site Jamstack ne doit pas nécessairement utiliser du JavaScript. Beaucoup de sites Jamstack le font, bien sûr: le "J" de Jamstack a été utilisé pour représenter "JavaScript", après tout. Mais, même la plus vieille des définition de Jamstack disait explicitement que l'utilisation du JavaScript était optionnel – un site complètement statique sans JavaScript est bien toujours Jamstack.
 
 ### Est-ce qu'utiliser la Jamstack signifie utiliser un framework spécifique?
 
@@ -159,7 +159,7 @@ Donc, nous avons vraiment regardé à chacun des sous-ensembles distincts des si
 
 Nous avons utilisé les identifiants de framework fourni par Wappalyzer, ce qui signifie que (comme nous l'avons mentionné plus tôt) certains des frameworks "invisibles" comme Eleventy ne peuvent pas être comptés ou analysés.
 
-Wappalyzer a une distinction arbitraire entre les "frameworks web" et les "frameworks Javascript". Voici le top 10 des frameworks Javascript pour la totalité du web:
+Wappalyzer a une distinction arbitraire entre les "frameworks web" et les "frameworks JavaScript". Voici le top 10 des frameworks JavaScript pour la totalité du web:
 
 {{ figure_markup(
   caption="Frameworks JavaScript utilisés par tous les sites.",
@@ -201,7 +201,7 @@ Vous pouvez voir que React est le plus populaire dans la Jamstack et dans le web
   )
 }}
 
-Une bonne question ici est: pourquoi Next.js et Nuxt.js sont considérés comme des frameworks web, mais Vue.js et React sont considérés comme des frameworks Javascript? Mais, en laissant ça de côté, nous voyons que le framework Microsoft's ASP.Net est extrêmement populaire à travers le web, ainsi que Ruby on Rails. A quoi est-ce que cela ressemble dans la Jamstack ?
+Une bonne question ici est: pourquoi Next.js et Nuxt.js sont considérés comme des frameworks web, mais Vue.js et React sont considérés comme des frameworks JavaScript? Mais, en laissant ça de côté, nous voyons que le framework Microsoft's ASP.Net est extrêmement populaire à travers le web, ainsi que Ruby on Rails. A quoi est-ce que cela ressemble dans la Jamstack ?
 
 {{ figure_markup(
   caption="Framework web utilisé par des sites Jamstack.",
