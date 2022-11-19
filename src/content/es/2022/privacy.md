@@ -9,7 +9,7 @@ translators: [decrecementofeliz]
 tomvangoethem_bio: Tom Van Goethem se unió hace poco al equipo Chrome Privacy en Google. Antes de eso, Tom formaba parte del programa de doctorado del grupo DistriNet de la Unversidad de Lovaina, Bélgica. Los campos de su investigación incluyen un amplio espectro de temas en el campo de la seguridad y la privacidad, especialmente en los ataques "side-channel". Revelando amenazas y proponiendo cómo mitigarlas, Tom intenta hacer de la web un lugar mejor, poquito a poco.
 nrllh_bio: Nurullah Demir es un investigador de ciber-seguridad y estudiante de doctorado en el <a hreflang="en" href="https://www.internet-sicherheit.de/en/">Institute for Internet Security</a> y <a hreflang="en" href="https://intellisec.de">Intelligent System Security, KASTEL Security Research Labs</a>. Su investigación se centra en la seguridad y privacidad, así como en las analíticas web.
 results: https://docs.google.com/spreadsheets/d/1iJqj3g0VEjpmjzvtX6VLeRehE7LDQGcw6lOadxGxkjk/
-featured_quote: Aunque probablemente aún falten un par de años para llegar ahí, estamos viviendo una transformación hacia una web que da a los usuarios más control sobre lo que quieren compartir con los demás. Podemos ver esta convergencia en los dos lados del espectro; por un lado, iniciada por el sitio web, y por el otro, forzada por el navegador. 
+featured_quote: Aunque probablemente aún falten un par de años para llegar ahí, estamos viviendo una transformación hacia una web que da a los usuarios más control sobre lo que quieren compartir con los demás. Podemos ver esta convergencia en los dos lados del espectro; por un lado, iniciada por el sitio web, y por el otro, forzada por el navegador.
 featured_stat_1: 82%
 featured_stat_label_1: Sitios que incluyen por lo menos un rastreador de terceros.
 featured_stat_2: 11%
@@ -165,7 +165,7 @@ Aunque la prevalencia total de los rastreadores por CNAME puede parecer baja (0,
 
 ## Acceso a datos (sensibles) desde el navegador
 
-Los navegadores cuentan con un alto número de APIs que ofrecen a los desarrolladores mecanismos útiles para que puedan interactuar con diferentes componentes. Algunas de estas APIs también se pueden usar para extraer información de los sensores y otros periféricos conectados al dispositivo del usuario. Aunque la mayoría de las APIs ofrecen una cantidad limitada de información (como la orientación de la pantalla), otras ofrecen datos muy detallados (por ejemplo, el acelerómetro y el giroscopio) que pueden usarse para hacer fingerprinting de dispositivo, o incluso para deducir qué contraseña teclea un usuario basándose en los movimientos que hacen con su teléfono móvil. 
+Los navegadores cuentan con un alto número de APIs que ofrecen a los desarrolladores mecanismos útiles para que puedan interactuar con diferentes componentes. Algunas de estas APIs también se pueden usar para extraer información de los sensores y otros periféricos conectados al dispositivo del usuario. Aunque la mayoría de las APIs ofrecen una cantidad limitada de información (como la orientación de la pantalla), otras ofrecen datos muy detallados (por ejemplo, el acelerómetro y el giroscopio) que pueden usarse para hacer fingerprinting de dispositivo, o incluso para deducir qué contraseña teclea un usuario basándose en los movimientos que hacen con su teléfono móvil.
 
 ### Eventos de sensores
 
@@ -179,7 +179,7 @@ Los navegadores cuentan con un alto número de APIs que ofrecen a los desarrolla
   )
 }}
 
-Descubrimos que el evento de sensores más monitorizado por los sitios web es el `deviceOrientation`, que se dispara cuando el dispositivo cambia de la vista horizontal a la vertical o viceversa. Se usa en el 4,0% de los sitios de escritorio y en el 4,1% de los sitios para móviles. Seguramente la razón de este uso sea que los sitios web puedan actualizar los elementos del diseño cuando cambia la orientación del dispositivo. 
+Descubrimos que el evento de sensores más monitorizado por los sitios web es el `deviceOrientation`, que se dispara cuando el dispositivo cambia de la vista horizontal a la vertical o viceversa. Se usa en el 4,0% de los sitios de escritorio y en el 4,1% de los sitios para móviles. Seguramente la razón de este uso sea que los sitios web puedan actualizar los elementos del diseño cuando cambia la orientación del dispositivo.
 
 ### Dispositivos media
 
@@ -206,7 +206,7 @@ A través de la [API MediaDevices](https://developer.mozilla.org/en-US/docs/Web/
   )
 }}
 
-Buena parte del contenido que se nos sirve depende del lugar desde el que visitemos el sitio web. Para que los desarrolladores puedan determinar dónde está un usuario, pueden usar servicios de geolocalización de terceros. Estos determinarán la localización de un usuario basándose en su dirección IP. Aunque este tipo de geolocalización es más habitual en el bck-end, también detectamos algún uso en el front-end: el 0.115% de los sitios de escritorio y el 0.083% de los sitios para móviles se conectan con ipify para determinar la localización de la IP del usuario. 
+Buena parte del contenido que se nos sirve depende del lugar desde el que visitemos el sitio web. Para que los desarrolladores puedan determinar dónde está un usuario, pueden usar servicios de geolocalización de terceros. Estos determinarán la localización de un usuario basándose en su dirección IP. Aunque este tipo de geolocalización es más habitual en el bck-end, también detectamos algún uso en el front-end: el 0.115% de los sitios de escritorio y el 0.083% de los sitios para móviles se conectan con ipify para determinar la localización de la IP del usuario.
 
 
 {{ figure_markup(
@@ -238,7 +238,7 @@ Dado que los sitios web incluyen mucho contenido de terceros (scripts, plugins..
 
 Por defecto, cualquier script de terceros puede acceder a las mismas funcionalidades que el sitio en el que está insertado. Para limitar las características que se habilitarán, el sitio web puede hacer uso de la Política de Permisos <a hreflang="en" href="https://developer.chrome.com/en/docs/privacy-sandbox/permissions-policy/">Política de Permisos</a>. A través de un cabecero de respuesta HTTP el sitio web puede indicar qué funcionalidades quiere permitir. Por ejemplo, si la función `microphone` no está incluida en esta lista, ninguno de los scripts insertados en la página web puede usarla. Aunque esta política es bastante reciente, vemos una adopción del 2,71% de los sitios para escritorio y del 2,31% de los sitios en móvil.
 
-La Política de Permisos (en inglés, "Permissions Policy") sustituye a la [Feature Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Feature-Policy) (Política de Funcionalidades), que aún podemos encontrar en el 0,69% de los sitios de escritorio y en el 0,52% de los sitios móvil. 
+La Política de Permisos (en inglés, "Permissions Policy") sustituye a la [Feature Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Feature-Policy) (Política de Funcionalidades), que aún podemos encontrar en el 0,69% de los sitios de escritorio y en el 0,52% de los sitios móvil.
 Por defecto la mayoría de las características reguladas por la Política de Permisos están deshabilitadas en iframes de orígenes externos (cross-origin), pero pueden ser explícitamente habilitadas con el atributo `allow`. Vemos que el 15,18% de los sitios de escritorio y el 14,32% de los sitios móvil usan esta característica. Para un análisis más pormenorizado del uso del atributo `allow` en los iframes, por favor consulta el capítulo referido a la [Seguridad](./security#permissions-policy).
 
 {{ figure_markup(
@@ -304,7 +304,7 @@ Vemos que los sitios que emplean las Indicaciones de cliente sobre agentes de us
 
 Durante los últimos años, el usuario medio de la web se ha vuelto cada vez más consciente de su privacidad online. Por otro lado, las brechas y fugas de datos, que parecen ser <a hreflang="en" href="https://www.informationisbeautiful.net/visualizations/worlds-biggest-data-breaches-hacks/">cada vez más comunes y más graves</a>, afectan a casi todo el mundo. A esto se suma que el rastreo ubicuo de usuarios a través de cookies de terceros ya es muy conocido entre la población general. Como resultado, cada vez son más los usuarios que esperan que su navegador proteja su privacidad y les dé más control sobre el rastreo de comportamientos online. Los fabricantes de navegadores, los creadores de contenido online y las compañías de publicidad se han hecho eco de esta demanda para mejorar la privacidad y han propuesto la Privacy Sandbox, una iniciativa encabezada por Google Chrome.
 
-### Prueba de origen en Privacy Sandbox 
+### Prueba de origen en Privacy Sandbox
 
 En el momento de publicar el Web Almanac de este año, las funcionalidades de la Privacy Sandbox (en español, "Entorno de privacidad") aún no están disponbiles para el uso general. Sin embargo, los sitios y servicios web -como por ejemplo los anuncios, que suelen mostrarse en iframes- pueden participar en el testeo adelantado de las características de la Privacy Sandbox, usando la <a hreflang="en" href="https://developer.chrome.com/en/blog/privacy-sandbox-unified-origin-trial/">Prueba de origen</a> (en inglés, "Origin Trial"). Hay que tener en cuenta que esto sólo se aplica a los usuarios cuyo navegador soporta las característias de la Privacy Sandbox, y que éstas sólo están implementadas en Chrome y desactivadas por defecto en el momento de escribir este informe. La Prueba de origen les da a los servicios web acceso a tres APIs diferentes relacionadas con la Privacy Sandbox: <a href="https://developer.chrome.com/es/docs/privacy-sandbox/topics/">Topics</a>, <a href="https://developer.chrome.com/es/docs/privacy-sandbox/fledge/">FLEDGE</a> y <a href="https://developer.chrome.com/es/docs/privacy-sandbox/attribution-reporting/">Informes de atribuciones</a>.
 
@@ -395,13 +395,13 @@ Es interesante destacar que en más de 30.000 sitios web un servicio web aún es
 
 ## Cumplimiento de las regulaciones de privacidad
 
-El espacio de regulación de la privacidad continúa creciendo como la frontera más reciente de la legislación. Estas regulaciones requieren que las organizaciones sean más transparentes a la hora de procesar los datos de sus usuarios para protegerlos. Tras la aprobación de leyes de privacidad clave como el <a href="https://data.consilium.europa.eu/doc/document/ST-9565-2015-INIT/es/pdf">Reglamento General de Protección de Datos</a> y <a hreflang="en" href="https://www.iabeurope.eu/">Framework de Transaprencia y Consentimiento IAB (TCF) v2.0</a>, los proveedores de páginas web se pusieron manos a la obra para informar a sus usuarios sobre cómo se procesan sus datos durante la visita, recogiendo el consentimiento de estos usuarios para procesar sus datos también con fines no funcionales, como por ejemplo, analítica y anuncios. Por esta razón vemos en las webs cada vez más banners de cookies, el sistema más empleado por los sitios webs para notificar a sus usuarios o pedirles su consentimiento. 
+El espacio de regulación de la privacidad continúa creciendo como la frontera más reciente de la legislación. Estas regulaciones requieren que las organizaciones sean más transparentes a la hora de procesar los datos de sus usuarios para protegerlos. Tras la aprobación de leyes de privacidad clave como el <a href="https://data.consilium.europa.eu/doc/document/ST-9565-2015-INIT/es/pdf">Reglamento General de Protección de Datos</a> y <a hreflang="en" href="https://www.iabeurope.eu/">Framework de Transaprencia y Consentimiento IAB (TCF) v2.0</a>, los proveedores de páginas web se pusieron manos a la obra para informar a sus usuarios sobre cómo se procesan sus datos durante la visita, recogiendo el consentimiento de estos usuarios para procesar sus datos también con fines no funcionales, como por ejemplo, analítica y anuncios. Por esta razón vemos en las webs cada vez más banners de cookies, el sistema más empleado por los sitios webs para notificar a sus usuarios o pedirles su consentimiento.
 
 En la mayoría de los casos, los usuarios pueden interactura con estos banners y elegir qué datos pueden ser procesados. Sin embargo, gestionar esas tareas no es sencillo en nuestra moderna y sofisticada web, que cada vez se hace más compleja. Por ello, muchos operadores de sitios web delegan este trabajo en terceras partes, llamadas Plataformas de Gestión del Consentimiento (CMP, por sus siglas en inglés). Las CMP se aseguran de que las cookies se emplean correctamente en la web, según lo que dicta la ley. A continuación desgranamos el uso de CMP y de las notificaciones de políticas de privacidad.
 
 ### Plataformas de Gestión del Consentimiento (CMP)
 
-Como hemos visto, emplear una Plataforma de Gestión del Consentimiento debería garantizar que el sitio web, en particular el comportamiento de las cookies, funciona de acuerdo a la ley. 
+Como hemos visto, emplear una Plataforma de Gestión del Consentimiento debería garantizar que el sitio web, en particular el comportamiento de las cookies, funciona de acuerdo a la ley.
 
 Aquí debemos señalar que el uso de estos servicios de CMP no siempre garantiza que los sitios webs cumplan la ley, tal y como muestran varios siguientes estudios (por ejemplo <a hreflang="en" href="https://arxiv.org/abs/2104.06861">Santos et al.</a> y <a hreflang="en" href="https://ieeexplore.ieee.org/document/9229842">Fouad et al.</a>).
 
@@ -415,7 +415,7 @@ Aquí debemos señalar que el uso de estos servicios de CMP no siempre garantiza
   )
 }}
 
-Nuestro análisis muestra que el uso de CMP ha aumentando del 7% al 11% desde el año pasado. Un aumento de casi el 60%. Además, también vemos que este año el móvil está menos implicado que el escritorio, aunque la diferencia es mínima. 
+Nuestro análisis muestra que el uso de CMP ha aumentando del 7% al 11% desde el año pasado. Un aumento de casi el 60%. Además, también vemos que este año el móvil está menos implicado que el escritorio, aunque la diferencia es mínima.
 También vems que los proveedores CookieYes (18%), OneTrust (64%) y Cookiebot (56%) han aumentado su cuota de mercado desde el año pasado.
 
 ### Frameworks de consentimiento IAB
@@ -480,10 +480,10 @@ Vemos que "privacy" (29%), "policy" (24%) y "cookies" (8%) son las palabras más
 
 En este capítulo, exploramos diferentes aspectos relacionados con nuestra privacidad online. Está claro que durante el pasado año cambiaron bastantes cuestiones que afectan a nuestra privacidad, y podemos esperar que este progreso continúe en los próximos años. Resumiendo, creemos que están por llegar cosas interesantes. Por un lado, vimos evoluciones desafortunadas, que esperemos que algún día no sean más que el pasado de la web. Rastreo de terceros, basado fundamentalmente en las cookies de terceros, aún es ubicuo: el 82% de los sitios web contienen al menos un rastreador. Además de esto, hay un número considerable de sitios o servicios web que emplean técnicas evasivas para eludir las medidas anti-rastreo.
 
-Desde una perspectiva más positiva y pro-privacidad, vemos que hay menos sitios que tratan de acceder a información potencialmente sensible desde las APIs de nuestros navegadores. Confiemos en que este siga siendo el caso con las nuevas APIs de navegación que se están introduciendo. 
+Desde una perspectiva más positiva y pro-privacidad, vemos que hay menos sitios que tratan de acceder a información potencialmente sensible desde las APIs de nuestros navegadores. Confiemos en que este siga siendo el caso con las nuevas APIs de navegación que se están introduciendo.
 
 Generalmente, parece que los sitios web están empezando a hacerse eco de las demandas de los usuarios con respecto a su privacidad, una demanda que cada vez es más fuerte. Cada vez hay más sitios que empiezan a usar funcionalidades del navegador para restringir la información que se envía a terceros. Además, motivados mayormente por leyes de privacidad como el GDPR y el CCPA, hemos visto un claro aumento —casi un 60%— en el uso de Plataformas de Gestión del Consentimiento, dando a los usuarios más control sobre qué información quieren compartir.
 
 Finlamente, del lado de los navegadores, también vemos una fuerte evolución dirigida a ofrecer a los usuarios más control sobre su privacidad online. Junto con las funcionalidades que ya ofrecen varios navegadores especializados en privacidad, también está la iniciativa Privacy Sandbox que intenta seguir ofreciendo funcionalidades como publicidad dirigida, antifraude, atribución de compras, etc. sin el nefasto efecto secundario del rastreo a través de múltiples sitios. Aunque su desarrollo aún está en fase muy temprana, vemos que un número sustancial de sitios web ya están solicitando acceso a esta iniciativa a través de la Prueba de origen. Así, estas novedades se pueden testear de forma extensiva y tener más posibilidades de convertirse en una parte persistente de la web.
 
-Aunque aún tardaremos un par de años en llegar ahí, estamos evolucionando hacia una web que da a los usuarios más control sobre lo que quieren compartir con terceros. Vemos esta convergencia en ambos lados del espectro; por un lado iniciada por el sitio web y por el otro forzada por el navegador. Con la esperanza de un mañana más respetuoso para todos, debemos confiar en que en un futuro no muy lejano los datos que compartimos serán los datos que queremos compartir y en que las rutas que seguimos día a día cuando navegamos por la web ya no serán recogidas, compartidas y analizadas por los numerosos rastreadores que hoy en día encontramos. 
+Aunque aún tardaremos un par de años en llegar ahí, estamos evolucionando hacia una web que da a los usuarios más control sobre lo que quieren compartir con terceros. Vemos esta convergencia en ambos lados del espectro; por un lado iniciada por el sitio web y por el otro forzada por el navegador. Con la esperanza de un mañana más respetuoso para todos, debemos confiar en que en un futuro no muy lejano los datos que compartimos serán los datos que queremos compartir y en que las rutas que seguimos día a día cuando navegamos por la web ya no serán recogidas, compartidas y analizadas por los numerosos rastreadores que hoy en día encontramos.
