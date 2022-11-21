@@ -341,32 +341,32 @@ En el momento de publicar el Web Almanac de este año, las funcionalidades de la
       <tr>
         <td>https://googleadservices.com</td>
         <td class="numeric">2,50%</td>
-        <td class="numeric"d>2,29%</td>
+        <td class="numeric">2,29%</td>
       </tr>
       <tr>
         <td>https://s.pinimg.com</td>
         <td class="numeric">1,49%</td>
-        <td class="numeric"d>1,21%</td>
+        <td class="numeric">1,21%</td>
       </tr>
       <tr>
         <td>https://criteo.net</td>
         <td class="numeric">0,64%</td>
-        <td class="numeric"d>0,41%</td>
+        <td class="numeric">0,41%</td>
       </tr>
       <tr>
         <td>https://criteo.com</td>
         <td class="numeric">0,59%</td>
-        <td class="numeric"d>0,37%</td>
+        <td class="numeric">0,37%</td>
       </tr>
       <tr>
         <td>https://imasdk.googleapis.com</td>
         <td class="numeric">0,10%</td>
-        <td class="numeric"d>0,07%</td>
+        <td class="numeric">0,07%</td>
       </tr>
       <tr>
         <td>https://teads.tv</td>
         <td class="numeric">0,04%</td>
-        <td class="numeric"d>0,03%</td>
+        <td class="numeric">0,03%</td>
       </tr>
     </tbody>
   </table>
