@@ -367,7 +367,7 @@ CSP is most useful, when served on the HTML response itself and here we're seein
 {{ figure_markup(
   image="csp-directives-usage.png",
   caption="Most common directives used in CSP.",
-  description="Bar chart showing usage of most common CSP directives. `upgrade-insecure-requests` is the most common with 54% in desktop and 56% in mobile, followed by `frame-ancestors` which is 54% in desktop and 53% in mobile. `block-all-mixed-content` is 26% in desktop and 38% in mobile, `default-src` is 19% in desktop and 16% in mobile, `script-src` is 17% in desktop and 15% in mobile, `style-src` is 14% in desktop and 12% in mobile, `img-src` is 13% in desktop and 11% in mobile, `font-src` is 1% in desktop and 9% in desktop, `connect-src` is 10% in desktop and 8% in mobile, `frame-src` is 10% in desktop and 7% in mobile",
+  description="Bar chart showing usage of most common CSP directives. `upgrade-insecure-requests` is the most common with 54% in desktop and 56% in mobile, followed by `frame-ancestors` which is 54% in desktop and 53% in mobile. `block-all-mixed-content` is 26% in desktop and 38% in mobile, `default-src` is 19% in desktop and 16% in mobile, `script-src` is 17% in desktop and 15% in mobile, `style-src` is 14% in desktop and 12% in mobile, `img-src` is 13% in desktop and 11% in mobile, `font-src` is 11% in desktop and 9% in mobile, `connect-src` is 10% in desktop and 8% in mobile, `frame-src` is 10% in desktop and 7% in mobile",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPHK3G2Ir-ys_oTrrhugqxV0aOSj3y5d1lANQ54GdaQtIHrzXIjQQGEpIdT_mQvxTrMtpd0Hn30zhF/pubchart?oid=417279434&format=interactive",
   sheets_gid="1303493233",
   sql_file="csp_directives_usage.sql"
@@ -828,7 +828,7 @@ Cross Origin policies are one of the main mechanisms used to defend against micr
 {{ figure_markup(
   image="percentage-of-cross-origin-headers.png",
   caption="Percentage of Cross Origin headers.",
-  description="Bar chart showing the prevalence of cross origin headers. `Cross-Origin-Resource-Policy` is found in 0.86% of desktop websites and 1.46% of mobile websites. `Cross-Origin-Embedder-Policy` is found in 0.0.4% of desktop websites and 0.03% of mobile websites. `Cross-Origin-Opener-Policy` is found in 0.23% of desktop websites and 0.45% of mobile websites.",
+  description="Bar chart showing the prevalence of cross origin headers. `Cross-Origin-Resource-Policy` is found in 0.86% of desktop websites and 1.46% of mobile websites. `Cross-Origin-Embedder-Policy` is found in 0.04% of desktop websites and 0.03% of mobile websites. `Cross-Origin-Opener-Policy` is found in 0.23% of desktop websites and 0.45% of mobile websites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPHK3G2Ir-ys_oTrrhugqxV0aOSj3y5d1lANQ54GdaQtIHrzXIjQQGEpIdT_mQvxTrMtpd0Hn30zhF/pubchart?oid=976367634&format=interactive",
   sheets_gid="1799124531",
   sql_file="security_headers_prevalence.sql"
