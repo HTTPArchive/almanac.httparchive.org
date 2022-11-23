@@ -828,7 +828,7 @@ Cross Origin policies are one of the main mechanisms used to defend against micr
 {{ figure_markup(
   image="percentage-of-cross-origin-headers.png",
   caption="Percentage of Cross Origin headers.",
-  description="Bar chart showing the prevalence of cross origin headers. `Cross-Origin-Resource-Policy` is found in 0.86% of desktop websites and 1.46% of mobile websites. `Cross-Origin-Embedder-Policy` is found in 0.0.4% of desktop websites and 0.03% of mobile websites. `Cross-Origin-Opener-Policy` is found in 0.23% of desktop websites and 0.45% of mobile websites.",
+  description="Bar chart showing the prevalence of cross origin headers. `Cross-Origin-Resource-Policy` is found in 0.86% of desktop websites and 1.46% of mobile websites. `Cross-Origin-Embedder-Policy` is found in 0.04% of desktop websites and 0.03% of mobile websites. `Cross-Origin-Opener-Policy` is found in 0.23% of desktop websites and 0.45% of mobile websites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPHK3G2Ir-ys_oTrrhugqxV0aOSj3y5d1lANQ54GdaQtIHrzXIjQQGEpIdT_mQvxTrMtpd0Hn30zhF/pubchart?oid=976367634&format=interactive",
   sheets_gid="1799124531",
   sql_file="security_headers_prevalence.sql"
