@@ -187,7 +187,7 @@ HSTS 是使用 `Strict-Transport-Security` 请求头来设置的，它可以有�
 {{ figure_markup(
   image="hsts-directives-usage.png",
   caption="不同 HSTS 指令的使用情况",
-  description="不同 HSTS 指令使用情况百分比条形图。19% 的网站在移动和桌面端都使用了 `preload`，`includeSubdomain` 在 37% 的桌面网站和 34% 的移动网站中被使用，`Zero max-age'用于 6% 的桌面网站和 5% 的移动网站，94% 的桌面网站和 95% 的移动网站设置了有效的 `max-age`。"
+  description="不同 HSTS 指令使用情况百分比条形图。19% 的网站在移动和桌面端都使用了 `preload`，`includeSubdomain` 在 37% 的桌面网站和 34% 的移动网站中被使用，`Zero max-age'用于 6% 的桌面网站和 5% 的移动网站，94% 的桌面网站和 95% 的移动网站设置了有效的 `max-age`。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPHK3G2Ir-ys_oTrrhugqxV0aOSj3y5d1lANQ54GdaQtIHrzXIjQQGEpIdT_mQvxTrMtpd0Hn30zhF/pubchart?oid=683864207&format=interactive",
   sheets_gid="822440544",
   sql_file="hsts_attributes.sql"
