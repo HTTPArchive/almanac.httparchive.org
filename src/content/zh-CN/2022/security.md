@@ -1,17 +1,17 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
-title: Security
-description: Security chapter of the 2022 Web Almanac covering Transport Layer Security, content inclusion (CSP, Feature Policy, SRI), web defense mechanisms (tackling XSS, XS-Leaks), and drivers of security mechanism adoptions.
+title: 安全
+description: 2022年 Web 年鉴的安全章节，涵盖了传输层安全、内容包含（CSP、Feature Policy、SRI）、Web 防御机制（解决 XSS、XS-Leaks）以及安全机制采用的驱动因素。
 authors: [SaptakS, lirantal, clarkio]
 reviewers: [kushaldas, tunetheweb]
 analysts: [VictorLeP, vikvanderlinden, GJFR]
 editors: [tunetheweb]
 translators: []
-SaptakS_bio: Saptak S is a human rights centered web developer, focusing on usability, security, privacy and accessibility topics in web development. He is a contributor and maintainer of various different open source projects like <a hreflang="en" href="https://www.a11yproject.com">The A11Y Project</a>, <a hreflang="en" href="https://onionshare.org/">OnionShare</a> and <a hreflang="en" href="https://wagtail.org/">Wagtail</a>. You can find him blogging at <a hreflang="en" href="https://saptaks.blog">saptaks.blog</a>.
-lirantal_bio: Known for his open source and JavaScript security initiatives, <a hreflang="en" href="https://www.lirantal.com/">Liran Tal</a> is an award-winning software developer, security researcher, and open source champion in the JavaScript community. He's an internationally recognized <a hreflang="en" href="https://stars.github.com/profiles/lirantal/">GitHub Star</a>, acknowledged for his open source advocacy, and has received the OpenJS Foundation's <a hreflang="en" href="https://openjsf.org/announcement/2022/06/07/first-ever-javascriptlandia-awards-celebrate-community-leaders/">Pathfinder for Security</a> for his work on Node.js security. His contributions to developer security education include leading OWASP projects, building supply chain security tools, participation in CNCF and OpenSSF initiatives, and authoring books such as O'Reilly's Serverless Security. He leads the developer advocacy team at Snyk.io and is on a mission to empower developers with better application security skills.
-clarkio_bio: Brian is a web developer with in-depth experience in application security. He helps developers build secure web applications through his work as a Developer Advocate at Snyk.io. While he has experience working across full stack projects, his focus is on backend services, API's and developer tools. Brian loves to teach developers what he's learned from the successes and failures he's had throughout his career. You can find him doing just that on his <a hreflang="en" href="https://clarkio.live">weekly livestreams</a> or in one of his <a hreflang="en" href="https://www.pluralsight.com/authors/brian-clark">Pluralsight courses</a>.
+SaptakS_bio:  Saptak S 是一名以人权为中心的 Web 开发者，专注于 Web 开发中的可用性、安全性、隐私和无障碍性主题。他是各种不同开源项目的贡献者和维护者，如 <a hreflang="en" href="https://www.a11yproject.com">A11Y 项目</a>, <a hreflang="en" href="https://onionshare.org/">OnionShare</a> 和 <a hreflang="en" href="https://wagtail.org/">Wagtail</a>。你可以在 <a hreflang="en" href="https://saptaks.blog">saptaks.blog</a> 找到他的博客。
+lirantal_bio: <a hreflang="en" href="https://www.lirantal.com/">Liran Tal</a> 因其开源和 JavaScript 安全倡议而闻名，并在 Node.js 安全方面的工作获得了OpenJS 基金会的安全探路者奖项，是国际公认的 <a hreflang="en" href="https://stars.github.com/profiles/lirantal/">GitHub Star</a>，他是 JavaScript 社区获奖的软件开发人员、安全研究员和开源倡导者。他对开发者安全教育的贡献包括领导 OWASP 项目，建立供应链安全工具，参与 CNCF 和 OpenSSF 计划，并撰写了 O'Reilly 的 《Serverless Security》 等书籍，他领导着 Snyk.io 开发者宣传团队，并以赋予开发者更好的应用安全技能为使命。
+clarkio_bio: Brian 是一位在应用安全方面有深入经验的 Web 开发者，通过在 Snyk.io 担任开发者大使的工作，帮助开发者构建安全的 Web 应用。虽然他有全栈项目的工作经验，但他的重点是后端服务、API 和开发者工具。Brian 喜欢向开发人员传授他从整个职业生涯的成功和失败中学到的东西。你可以在他<a hreflang="en" href="https://clarkio.live">每周的直播</a>中或在他的 <a hreflang="en" href="https://www.pluralsight.com/authors/brian-clark">Pluralsight 课程</a>中找到他正在做的事情。
 results: https://docs.google.com/spreadsheets/d/1cwJ43NL2IN2PxJa5oiOoJCRkSh566XE_k9uHnGJdWeg/
-featured_quote: People's personal details and various aspects of life are becoming more and more digital everyday, making security and privacy extremely crucial. It is the responsibility of the websites to ensure that it's users are protected by adopting the security best practices.
+featured_quote: 人们的个人信息以及生活的各个方面每天都在变得越来越数字化，这使得安全和隐私变得极为重要，网站有责任采用最佳的安全实践来确保其用户隐私受到保护。
 featured_stat_1: +14%
 featured_stat_label_1: Increase in adoption for Content Security Policy
 featured_stat_2: 428
@@ -20,97 +20,97 @@ featured_stat_3: +85%
 featured_stat_label_3: Increase in adoption of Permissions Policy
 ---
 
-## Introduction
+## 介绍
 
-As people's personal details continue to become more digital, security and privacy are becoming extremely crucial across the internet. It's the website owner's responsibility that they can secure the data they are taking from the user. Hence, it is essential for them to adopt all the security best practices to ensure protection of the user against vulnerabilities that malwares can exploit to get sensitive information.
+随着人们的个人信息越来越数字化，安全和隐私在互联网上变得极其重要，网站所有者有责任确保他们从用户那里获取数据的安全性。因此，必须采用所有的安全最佳实践，以确保用户免受恶意软件利用漏洞获取敏感信息的影响。
 
-Like [previous years](../2021/security), we have analyzed the adoption and usage of security methods and best practices by the web community. We have analyzed metrics related to the bare essential security measures that every website should adopt such as [transport security](#transport-security) and [proper cookie management](#cookies). We have also discussed the data related to the adoption of different security headers and how they help in [content inclusion](#content-inclusion) and [preventing various malicious attacks](#attack-preventions).
+与[往年](../../en/2021/security)一样，我们分析了 Web 社区对安全方法和最佳实践的采用和使用情况。我们分析了与每个网站应该采取的最基本安全措施有关的指标，如[传输安全](#transport-security)和[适当的 cookie 管理](#cookies)。我们还讨论了与采用不同安全头（security headers）有关的数据，以及它们如何帮助 [content inclusion](#content-inclusion) 和[防止各种恶意攻击](#attack-preventions)。
 
-We looked at correlations for [adoption of security measures](#drivers-of-security-mechanism-adoption) with the location, technological stack and website popularity. We hope that such correlations encourage all technological stacks to aim for better security measures by default. We also discuss some [well-known URIs](#well-known-uris) that help towards vulnerability disclosure and other security related settings based on Web Application Security Working Group's standards and drafts.
+我们研究了[安全措施的采用](#drivers-of-security-mechanism-adoption)与地点、技术栈和网站受欢迎程度的相关性，我们希望通过这种相关性鼓励所有的技术栈在默认情况下采取更好的安全措施。我们还讨论了一些[知名的 URI](#well-known-uris)，它们有助于基于 Web 应用程序安全工作组的标准和草案进行漏洞披露和其他与安全相关的设置。
 
-## Transport security
+## 传输安全（Transport security）
 
-Transport Layer Security ensures secure communication of data and resources between the user and the websites. [HTTPS](https://developer.mozilla.org/en-US/docs/Glossary/https) uses <a hreflang="en" href="https://www.cloudflare.com/en-gb/learning/ssl/transport-layer-security-tls/">TLS</a> to encrypt all communication between the client and the server.
+传输层安全保证用户与网站之间的数据和资源的安全通信，[HTTPS](https://developer.mozilla.org/en-US/docs/Glossary/https) 使用 <a hreflang="en" href="https://www.cloudflare.com/en-gb/learning/ssl/transport-layer-security-tls/">TLS</a> 来加密客户端和服务器之间的所有通信。
 
 {{ figure_markup(
   content="94%",
-  caption="Requests that use HTTPS on desktop.",
+  caption="桌面端使用 HTTPS 的请求占比",
   classes="big-number",
   sheets_gid="1093490384",
   sql_file="https_request_over_time.sql",
 ) }}
 
-94% of total requests in desktop and 93% of total requests in mobile are made over HTTPS. All major browsers now have an <a hreflang="en" href="https://support.mozilla.org/en-US/kb/https-only-prefs">HTTPS-only mode</a> to show warning if a website uses HTTP instead of HTTPS.
+桌面端 94% 的请求和移动端 93% 的请求都是通过 HTTPS 发送的，所有主流浏览器现在都有一个 <a hreflang="en" href="https://support.mozilla.org/en-US/kb/https-only-prefs">HTTPS-only 模式</a>，如果一个网站使用 HTTP 而非 HTTPS，则会显示警告。
 
 {{ figure_markup(
   image="https-usage-by-site.png",
-  caption="HTTPS usage for sites.",
-  description="Bar chart showing 89% of desktop sites are using HTTPS, with the remaining 11% using HTTP, while 85% of mobile sites are using HTTPS and the remaining 15% using HTTP.",
+  caption="网站的 HTTPS 使用率",
+  description="柱状图显示 89% 的桌面端站点使用 HTTPS，剩下的 11% 使用 HTTP，而 85% 的移动端站点使用 HTTPS，剩下的 15% 使用 HTTP。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPHK3G2Ir-ys_oTrrhugqxV0aOSj3y5d1lANQ54GdaQtIHrzXIjQQGEpIdT_mQvxTrMtpd0Hn30zhF/pubchart?oid=1343950152&format=interactive",
   sheets_gid="1806760937",
   sql_file="home_page_https_usage.sql"
   )
 }}
 
-The percentage of homepages that are served over HTTPS continues to be lower compared to the total requests because a lot of the requests to a website are dominated by [third-party](./third-parties) services like fonts, CDN, etc. which have a higher HTTPS adoption. We do see a slight increase from last year in the percentage. 89.3% of homepages are now served over HTTPS on desktop compared to 84.3% last year. Similarly, in our mobile dataset, 85.5% of homepages are served over HTTPS compared to 81.2% last year.
+与总请求（接口）相比，通过 HTTPS 提供服务的主页比例仍然较低，因为很多对网站的请求都是由[第三方](../../en/2022/third-parties)服务主导的，如字体、CDN 等，这些服务 的 HTTPS 采用率较高。我们看到这个百分比确实比去年略有上升，现在 89.3% 的主页面在桌面端通过 HTTPS 提供服务，而去年这一比例为 84.3%。同样在我们的移动数据统计中 85.5% 的主页面通过 HTTPS 提供服务，而去年为81.2%。
 
-### Protocol versions
+### 协议版本
 
-It's important, not only to use HTTPS, but also to use an up-to-date TLS version. The <a hreflang="en" href="https://datatracker.ietf.org/doc/rfc8996/">TLS working group</a> has deprecated TLS v1.0 and v1.1 since they had multiple weaknesses. Since the last year's chapter, Firefox has <a hreflang="en" href="https://support.mozilla.org/en-US/kb/secure-connection-failed-firefox-did-not-connect#w_tls-version-unsupported">now updated it's UI</a> and the option to enable TLS 1.0 and 1.1 has been removed from the error page in Firefox version 97. Chrome has also <a hreflang="en" href="https://chromestatus.com/feature/5759116003770368">stopped allowing bypassing</a> the error page which is shown for TLS 1.0 and 1.1 since version 98.
+重要的是，不仅要使用 HTTPS，而且要使用最新的 TLS 版本，<a hreflang="en" href="https://datatracker.ietf.org/doc/rfc8996/">TLS 工作组</a>已经废弃了 TLS v1.0 和 v1.1，因为它们存在多个缺陷。自从去年的章节以来，Firefox <a hreflang="en" href="https://support.mozilla.org/en-US/kb/secure-connection-failed-firefox-did-not-connect#w_tls-version-unsupported">现在已经更新了它的用户界面</a>，在 Firefox 97 版的错误页面中，启用 TLS 1.0 和 1.1 的选项已经被删除。Chrome 也从 98 版本开始<a hreflang="en" href="https://chromestatus.com/feature/5759116003770368">不再允许绕过</a> TLS 1.0 和 1.1 所显示的错误页面。
 
-TLS v1.3 is the latest and was released in August 2018 by IETF. It's <a hreflang="en" href="https://www.cloudflare.com/en-in/learning/ssl/why-use-tls-1.3/">much faster and is more secure</a> than TLS v1.2. Many of the major vulnerabilities in TLS v1.2 had to do with older cryptographic algorithms which TLS v1.3 removes.
+IETF 于 2018 年 8 月发布的 TLS v1.3 是最新版本，相较于 TLS v1.2 版本它<a hreflang="en" href="https://www.cloudflare.com/en-in/learning/ssl/why-use-tls-1.3/">更快而且更安全</a>，TLS v1.2 中的许多主要漏洞都与旧加密算法有关，而 TLS v1.3 删除了这些算法。
 
 {{ figure_markup(
   image="tls-version-by-site.png",
-  caption="TLS versions usage for sites.",
-  description="Bar chart showing that on desktop 67% of sites use TLSv1.3, while 33% use TLSv1.2. On mobile the figures are 70% and 30% respectively.",
+  caption="网站的 TLS 版本使用分布",
+  description="柱状图显示桌面端 67% 的站点采用 TLSv1.3, 33% 的站点采用 TLSv1.2 版本。在移动端上，这一数字分别为 70% 和 30%。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPHK3G2Ir-ys_oTrrhugqxV0aOSj3y5d1lANQ54GdaQtIHrzXIjQQGEpIdT_mQvxTrMtpd0Hn30zhF/pubchart?oid=1390978067&format=interactive",
   sheets_gid="1385583211",
   sql_file="tls_versions_pages.sql"
   )
 }}
 
-In the above graph, we see that 70% of homepages in mobile and 67% of homepages in desktop are served over TLSv1.3 which is approximately 7% more than last year. So, we are seeing some constant shift from use of TLS v1.2 to TLS v1.3
+在上图中，我们看到 70% 的移动网页和 67% 的桌面网页是通过 TLSv1.3 提供的，这比去年增加了约 7%。因此，我们看到一些从使用 TLS v1.2 到 TLS v1.3 的持续转变。
 
-### Cipher suites
+### 密码套件（Cipher suites）
 
-A <a hreflang="en" href="https://learn.microsoft.com/en-au/windows/win32/secauthn/cipher-suites-in-schannel">cipher suite</a> is a set of cryptographic algorithms that the client and server must agree on before they can begin communicating securely using TLS.
+<a hreflang="en" href="https://learn.microsoft.com/en-au/windows/win32/secauthn/cipher-suites-in-schannel">密码套件</a>是一组加密算法，客户和服务器在开始使用 TLS 进行安全通信之前必须达成一致。
 
 {{ figure_markup(
   image="distribution-of-cipher-suites.png",
-  caption="Distribution of cipher suites.",
-  description="Stacked bar chart showing the cipher suites used by device, with `AES_128_GCM` being the most common and used by 79% of desktop and 79% of mobile sites, `AES_256_GCM` is used by 19% of desktop and 18% of mobile sites, `AES_256_CBC` used by 2% of desktop sites and 1% of mobile sites, CHACHA20_POLY1305 is used by 1% and 1% of sites respectively, `AES_128_CBC` is used by 0% and 0% respectively.",
+  caption="密码套件的分布",
+  description="堆叠柱状图显示了各设备使用的密码套件，`AES_128_GCM` 是最常见的，被 79% 的桌面端网站和 79% 的移动端网站使用，`AES_256_GCM` 被 19% 的桌面端网站和 18% 的移动端网站使用，`AES_256_CBC` 被 2% 的桌面端网站和 1% 的移动端网站使用，`CHACHA20_POLY1305` 分别被 1% 和 1% 的网站使用，`AES_128_CBC` 分别被 0% 和 0% 使用。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPHK3G2Ir-ys_oTrrhugqxV0aOSj3y5d1lANQ54GdaQtIHrzXIjQQGEpIdT_mQvxTrMtpd0Hn30zhF/pubchart?oid=1789949340&format=interactive",
   sheets_gid="711514835",
   sql_file="tls_cipher_suite.sql"
   )
 }}
 
-Modern [Galois/Counter Mode (GCM)](https://en.wikipedia.org/wiki/Galois/Counter_Mode) cipher modes are considered to be much more secure since they are not vulnerable to <a hreflang="en" href="https://blog.qualys.com/product-tech/2019/04/22/zombie-poodle-and-goldendoodle-vulnerabilities">padding attacks</a>. TLS v1.3 <a hreflang="en" href="https://datatracker.ietf.org/doc/html/rfc8446#page-133">only supports GCM and other modern block cipher modes</a> making it more secure. It also removes the trouble of <a hreflang="en" href="https://go.dev/blog/tls-cipher-suites">cipher suite ordering</a>. Another factor that determines the usage of a cipher suite is the key size for the encryption and decryption. We still see 128-bit key size being widely used. Hence, we don't see much difference from last year's graph with  `AES_128_GCM` continuing to be the most used cipher suite with 79% usage.
+现代 [Galois/Counter Mode (GCM)](https://en.wikipedia.org/wiki/Galois/Counter_Mode) 密码模式被认为是更安全的，因为它们不容易受到<a hreflang="en" href="https://blog.qualys.com/product-tech/2019/04/22/zombie-poodle-and-goldendoodle-vulnerabilities">填充攻击（padding attacks）</a>。TLS v1.3 <a hreflang="en" href="https://datatracker.ietf.org/doc/html/rfc8446#page-133">只支持 GCM 和其他现代分组密码模式</a>，使其更加安全，它还消除了<a hreflang="en" href="https://go.dev/blog/tls-cipher-suites">密码套件排序</a>的麻烦。决定密码套件使用情况的另一个因素是用于加密和解密的密钥大小，我们看到 128 位的密钥仍然被广泛使用，因此，我们看到与去年的图表对比没有什么不同，`AES_128_GCM` 仍然是使用最多的密码套件，使用率为 79%。
 
 {{ figure_markup(
   image="forward-secrecy-support.png",
-  caption="Forward secrecy usage.",
-  description="Bar chart showing forward secrecy being used by 97% requests in both mobile and desktop.",
+  caption="前向保密（Forward secrecy）的使用情况",
+  description="柱状图显示，97% 的移动端和桌面端请求都使用了前向保密。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPHK3G2Ir-ys_oTrrhugqxV0aOSj3y5d1lANQ54GdaQtIHrzXIjQQGEpIdT_mQvxTrMtpd0Hn30zhF/pubchart?oid=298331860&format=interactive",
   sheets_gid="1454804483",
   sql_file="tls_forward_secrecy.sql"
   )
 }}
 
-TLS v1.3 also makes [forward secrecy](https://en.wikipedia.org/wiki/Forward_secrecy) compulsory. We see 97% of requests in both mobile and desktop using forward secrecy.
+TLS v1.3还强制要求[前向保密](https://en.wikipedia.org/wiki/Forward_secrecy)，我们看到 97% 的移动和桌面端请求都使用了它。
 
-### Certificate Authority
+### 证书颁发机构（CA 认证）
 
-A <a hreflang="en" href="https://www.ssl.com/faqs/what-is-a-certificate-authority/">Certificate Authority</a> or CA is a company or organization that issues the TLS certificate to the websites that can be recognized by browsers and then establish a secure communication channel with the website.
+<a hreflang="en" href="https://www.ssl.com/faqs/what-is-a-certificate-authority/">认证机构</a>或 CA 是一个公司或组织，它向网站颁发可被浏览器识别的 TLS 证书，然后与网站建立一个安全的通信通道。
 
 <figure>
   <table>
     <thead>
       <tr>
-        <th>Issuer</th>
-        <th>Desktop</th>
-        <th>Mobile</th>
+        <th>发行机构</th>
+        <th>桌面端</th>
+        <th>移动端</th>
       </tr>
     </thead>
     <tbody>
@@ -161,101 +161,100 @@ A <a hreflang="en" href="https://www.ssl.com/faqs/what-is-a-certificate-authorit
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Top 10 certificate issuers for websites.", sheets_gid="1306037372", sql_file="tls_ca_issuers_pages.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="十大证书颁发机构", sheets_gid="1306037372", sql_file="tls_ca_issuers_pages.sql") }}</figcaption>
 </figure>
 
-<a hreflang="en" href="https://letsencrypt.org/">Let's Encrypt</a> (or R3) continues to lead the charts with 48% of websites in desktop and 52% of websites in mobile using certificates issued by them. Let's Encrypt being a non-profit organization has played an important role in the adoption of HTTPS and they continue to issue an <a hreflang="en" href="https://letsencrypt.org/stats/#daily-issuance">increasing number of certificates</a>. We would also like to take a moment to recognize one of its founders, <a hreflang="en" href="https://community.letsencrypt.org/t/peter-eckersley-may-his-memory-be-a-blessing/183854">Peter Eckersly</a>, who unfortunately passed away recently.
+<a hreflang="en" href="https://letsencrypt.org/">Let's Encrypt</a>（或 R3）继续领先，48% 的桌面端网站和 52% 的移动端网站使用他们颁发的证书，Let's Encrypt 作为一个非营利性组织在采用HTTPS 方面发挥了重要作用，他们继续发放<a hreflang="en" href="https://letsencrypt.org/stats/#daily-issuance">越来越多的证书</a>。我们还想花一点时间来纪念它的创始人之一 —— <a hreflang="en" href="https://community.letsencrypt.org/t/peter-eckersley-may-his-memory-be-a-blessing/183854">Peter Eckersly</a>，他最近不幸去世了。
 
-<a hreflang="en" href="https://developers.cloudflare.com/ssl/ssl-tls/certificate-authorities/">Cloudflare</a> continues to be in second position with its similarly free certificates for its customers. Cloudflare CDNs increase the usage of <a hreflang="en" href="https://www.digicert.com/faq/ecc.htm">Elliptic Curve Cryptography (ECC)</a> certificates which are smaller and more efficient than RSA certificates but are often difficult to deploy, due to the need to also continue to serve non-ECC certificates to older clients. We see as Let's Encrypt and Cloudflare's percentage continues to increase, the percentage for usage of other CAs are decreasing a little.
+<a hreflang="en" href="https://developers.cloudflare.com/ssl/ssl-tls/certificate-authorities/">Cloudflare</a> 以其为客户提供类似的免费证书而继续处于第二位，Cloudflare CDNs 增加了<a hreflang="en" href="https://www.digicert.com/faq/ecc.htm">椭圆曲线加密法（ECC）</a>证书的使用，该证书比 RSA 证书更小、更有效，但由于需要继续向老客户端提供非 ECC 证书，因此比较难部署。我们看到，随着 Let's Encrypt 和 Cloudflare 的比例不断增加，其他 CA 的使用比例正在一点点减少。
 
-### HTTP Strict Transport Security
+### HTTP 严格传输安全（HSTS）
 
-[HTTP Strict Transport Security (HSTS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security) is a response header that informs the browser to automatically convert all attempts to access a site using HTTP to HTTPS requests instead.
+[HTTP 严格传输安全（HSTS）](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security)是一个标头，它通知浏览器自动将所有使用 HTTP 访问网站的尝试转换为 HTTPS 请求。
 
 {{ figure_markup(
   content="25%",
-  caption="Mobile requests that have an HSTS header.",
+  caption="具有 HSTS 头的移动端请求",
   classes="big-number",
   sheets_gid="822440544",
   sql_file="hsts_attributes.sql",
 ) }}
 
-25% of the mobile responses and 28% of desktop responses have an HSTS header.
+25% 的移动端响应和 28% 的桌面相应携带 HSTS 头。
 
-HSTS is set using the `Strict-Transport-Security` header that can have three different directives: `max-age`, `includeSubDomains`, and `preload`. `max-age` helps denote the time, in seconds, that the browser should remember to access the site only using HTTPS. `max-age` is a compulsory directive for the header.
+HSTS 是使用 `Strict-Transport-Security` 请求头来设置的，它可以有三种不同的指令：`max-age`、`includeSubDomains` 和 `preload`。 `max-age` 表示浏览器应该记住只使用 HTTPS 访问网站的时间，以秒为单位，是该请求头的一个强制性指令。
 
 {{ figure_markup(
   image="hsts-directives-usage.png",
-  caption="Usage of different HSTS directives.",
-  description="Bar chart of percentage usage of different HSTS directives. `preload` is used in 19% of websites in both mobile and desktop. `includeSubdomain` is used in 37% of websites in desktop and 34% of websites in mobile. zero `max-age` is used in 6% of websites in desktop and 5% of websites in mobile. Valid `max-age` is used in 94% of websites in desktop and 95% of websites in mobile.",
+  caption="不同 HSTS 指令的使用情况",
+  description="不同 HSTS 指令使用情况百分比条形图。19% 的网站在移动和桌面端都使用了 `preload`，`includeSubdomain` 在 37% 的桌面网站和 34% 的移动网站中被使用，`Zero max-age'用于 6% 的桌面网站和 5% 的移动网站，94% 的桌面网站和 95% 的移动网站设置了有效的 `max-age`。"
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPHK3G2Ir-ys_oTrrhugqxV0aOSj3y5d1lANQ54GdaQtIHrzXIjQQGEpIdT_mQvxTrMtpd0Hn30zhF/pubchart?oid=683864207&format=interactive",
   sheets_gid="822440544",
   sql_file="hsts_attributes.sql"
 ) }}
 
-We see 94% of sites in desktop and 95% of sites in mobile have a non-zero, non-empty `max-age`.
+我们看到 94% 的桌面端站点和 95% 的移动端站点都设置了一个非零、非空的 `max-age`。
 
-34% of request responses for mobile, and 37% for desktop include `includeSubdomain` in the HSTS settings. The number of responses with the `preload` directive, which is [not part of the HSTS specification](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security#preloading_strict_transport_security) is lower. It needs a minimum `max-age` of 31,536,000 seconds (or 1 year) and also the `includeSubdomain` directive to be present.
+34% 的移动端请求响应，37%的桌面端请求响应在 HSTS 设置中包含了 `includeSubdomain`，而带有 `preload` 指令的响应数量较少，该指令[不属于 HSTS 标准中的一部分](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security#preloading_strict_transport_security)，它需要设置最小的 `max-age` 为 31,536,000 秒（或1年），且 `includeSubdomain` 指令也要同时存在。
 
 {{ figure_markup(
   image="hsts-max-age-values-in-days.png",
-  caption="HSTS `max-age` values for all requests (in days).",
-  description="Bar chart of percentiles of values in the `max-age` attribute, converted to days. In the 10th percentile desktop are 30 days and mobile are 73 days, in the 25th percentile both are 180 days, in the 50th percentile both are 365 days, the 75th percentile is the same at 365 days for both and the 90th percentile has 730 days for both.",
+  caption="所有请求的 HSTS `max-age` 值（以天为单位）",
+  description="`max-age` 属性中数值的百分比柱状图，转换为天数。在第 10 个百分点中，桌面端是 30 天，移动端是 73 天；在第 25 个百分点中，两者都是 180 天；在第 50 个百分点中，两者都是 365 天；第 75 个百分点中，两者都是 365 天；第 90 个百分点中，两者都是 730 天。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPHK3G2Ir-ys_oTrrhugqxV0aOSj3y5d1lANQ54GdaQtIHrzXIjQQGEpIdT_mQvxTrMtpd0Hn30zhF/pubchart?oid=154290094&format=interactive",
   sheets_gid="1179482269",
   sql_file="hsts_max_age_percentiles.sql"
 ) }}
 
-The median value for `max-age` attribute in HSTS headers over all requests is 365 days in both mobile and desktop. https://hstspreload.org/ recommends a `max-age` of 2 years once the HSTS header is set up properly and verified to not cause any issues.
+在所有请求中，HSTS 请求头中 `max-age` 属性的中间值是 365 天，在移动和桌面端上都是如此。https://hstspreload.org/ 认为一旦 HSTS 头被正确设置并被验证不会引起任何问题，建议设置 `max-age` 为 2 年。
 
 ## Cookies
 
-An [HTTP cookie](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies) is a set of data about the user that the server sends to the browser. A cookie can be used for things like session management, personalization, tracking and other stateful information related to the user over different requests.
+[HTTP cookie](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies) 是服务器发送给浏览器关于用户的一组数据，cookie 可用于会话管理、个性化、跟踪和其他与用户在不同请求中的状态信息。
 
-If a cookie is not set properly, it can be susceptible to many different forms of attacks such as <a hreflang="en" href="https://owasp.org/www-community/attacks/Session_hijacking_attack">session hijacking</a>, <a hreflang="en" href="https://owasp.org/www-community/attacks/csrf">Cross-Site Request Forgery (CSRF)</a>, <a hreflang="en" href="https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/11-Client_Side_Testing/13-Testing_for_Cross_Site_Script_Inclusion">Cross-Site Script Inclusion (XSSI)</a> and various other <a hreflang="en" href="https://xsleaks.dev/">Cross-Site Leak</a> vulnerabilities.
+如果 cookie 设置不当，可能容易遭受许多不同形式的攻击，例如<a hreflang="en" href="https://owasp.org/www-community/attacks/Session_hijacking_attack">会话劫持</a>、<a hreflang="en" href="https://owasp.org/www-community/attacks/csrf">跨站请求伪造（CSRF）</a>、<a hreflang="en" href="https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/11-Client_Side_Testing/13-Testing_for_Cross_Site_Script_Inclusion">跨站脚本包含（XSSI）</a>和其他各种<a hreflang="en" href="https://xsleaks.dev/">跨站泄漏</a>漏洞。
 
-### Cookie attributes
+### Cookie 属性
 
-To defend against the above mentioned threats, developers can use 3 different attributes in a cookie: `HttpOnly`, `Secure` and `SameSite`. The `Secure` attribute is similar to the `HSTS` header as it also ensures that the cookies are always sent over HTTPS, preventing <a hreflang="en" href="https://owasp.org/www-community/attacks/Manipulator-in-the-middle_attack">Manipulator in the Middle attacks</a>. `HttpOnly` ensures that a cookie is not accessible from any JavaScript code, preventing <a hreflang="en" href="https://owasp.org/www-community/attacks/xss/">Cross-Site Scripting</a> Attacks.
+为了防御上述威胁，开发人员可以在 cookie 中使用 3 个不同的属性：`HttpOnly`、`Secure` 和 `SameSite`。`Secure` 属性类似于 `HSTS` 标头，因为它也确保 cookie 必须通过 HTTPS 发送，防止<a hreflang="en" href="https://owasp.org/www-community/attacks/Manipulator-in-the-middle_attack">中间人攻击</a>。`HttpOnly` 确保 cookie 不能被任何 JavaScript 代码访问，防止<a hreflang="en" href="https://owasp.org/www-community/attacks/xss/">跨站脚本</a>攻击。
 
 {{ figure_markup(
   image="httponly-secure-samesite-cookie-usage.png",
-  caption="Cookie attributes (desktop).",
-  description="Bar chart of cookie attributes used on desktop sites divided by first and third-party cookies. For first-party `HttpOnly` is used by 36%, `Secure` by 37%, and `SameSite` by 45%, while for third-party `HttpOnly` is used by 21%, `Secure` by 90%, and `SameSite` by 88%.",
+  caption="Cookie 属性 (桌面端)",
+  description="桌面端网站上使用 cookie 属性条形图，按第一方和第三方 cookie 划分。第一方 cookie 使用 `HttpOnly` 的比例为 36%，`Secure` 的比例为 37%，`SameSite` 的比例为 45%，而第三方 cookie 使用`HttpOnly` 的比例为 21%，`Secure` 的比例为 90%，`SameSite` 的比例为 88%。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPHK3G2Ir-ys_oTrrhugqxV0aOSj3y5d1lANQ54GdaQtIHrzXIjQQGEpIdT_mQvxTrMtpd0Hn30zhF/pubchart?oid=528777115&format=interactive",
   sheets_gid="168091712",
   sql_file="cookie_attributes.sql"
 ) }}
 
-There are 2 different kinds of cookies: first-party and third-party. First-party cookies are usually set by the direct server that you are visiting. Third-party cookies are created by third-party services and are often used for tracking and ad-serving. 37% of the first-party cookies on the desktop have `Secure` and 36% of them have `HttpOnly`. However, in the third party cookies we see that 90% of cookies have `Secure` and 21% of cookies have `HttpOnly`. The percentage of `HttpOnly` is less in third party cookies, because they mostly do want to allow access to them by JavaScript code.
+存在 2 种不同的 cookies：第一方（first-party）和第三方（third-party）。第一方 cookie 通常由你正在访问的直接服务器设置，而第三方 cookie 是由第三方服务创建的，通常用于跟踪和广告服务。桌面端 37% 的第一方 cookie 设置了 `Secure` 字段，36% 设置了 `HttpOnly` 字段，然而，在第三方 cookie 中，我们看到 90% 的 cookie 设置了 `Secure`，21% 设置了 `HttpOnly`。在第三方 cookie 中，`HttpOnly` 的比例较小，因为他们大多数希望允许通过 JavaScript 代码访问它们（跟踪和广告服务）。
 
 {{ figure_markup(
   image="samesite-cookie-attributes.png",
-  caption="Same site cookie attributes.",
-  description="Bar chart of SameSite cookie attributes divided by first and third-party. For first-party `SameSite=lax` is used by 61%, `SameSite=strict` by 2%, and `SameSite=none` by 37%, while for third-party `SameSite=lax` is used by 1%, `SameSite=strict` by 1%, and `SameSite=none` by 98%.",
+  caption="同站（Same site） cookie 属性",
+  description="按第一方和第三方划分的 SameSite cookie 属性条形图。对于第一方来说，61% 的用户使用 `SameSite=lax`，2% 的用户使用 `SameSite=strict`，37% 的用户使用 `SameSite=none`，而对于第三方来说，1% 的用户使用 `SameSite=lax`，1% 的用户使用 `SameSite=strict`，98% 的用户使用 `SameSite=none`。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPHK3G2Ir-ys_oTrrhugqxV0aOSj3y5d1lANQ54GdaQtIHrzXIjQQGEpIdT_mQvxTrMtpd0Hn30zhF/pubchart?oid=1714102327&format=interactive",
   sheets_gid="168091712",
   sql_file="cookie_attributes.sql"
 ) }}
 
-The `SameSite` attribute can be used to prevent CSRF attacks by telling the browser whether to send the cookie to cross-site requests. `Strict` value allows the cookie to be sent only to the site where it originated while `Lax` value allows cookies to be sent to cross-site requests only if a user is navigating to the origin site by following a link. For `None` value, cookies are sent to both originating and cross-site requests. If `SameSite=None` is set, the cookie's `Secure` attribute must also be set (or the cookie will be blocked). We see that 61% of first-party cookies with the `SameSite` attribute have the value `Lax`. Most browsers default to `SameSite=Lax` if no `SameSite` attribute is present for the cookie hence we see that it continues to dominate the charts. In third party cookies, `SameSite=None` still continues to be super high with 98% cookies in desktop, because third-party cookies do want to be sent across cross-site requests.
+`SameSite` 属性可用于防止 CSRF 攻击，它告诉浏览器是否向跨站点请求发送 cookie。`Strict` 属性值只允许将 cookie 发送到它的来源网站，而 `Lax` 值只允许在用户通过链接导航到来源网站时将 cookie 发送到跨网站请求。对于 `None` 值，cookie 将被发送到源站点和跨站点的请求。如果 `SameSite=None` 被设置，cookie 的 `Secure` 属性也必须被设置（否则 cookie 将被阻止）。我们看到 61% 的第一方 cookie 的 `SameSite` 属性值设置为 `Lax`。如果 cookie 没有设置 `SameSite` 属性，大多数浏览器默认设置为 `SameSite=Lax`，因此我们看到它继续在图表中占主导地位。在第三方cookie中，`SameSite=None` 仍然是超高的，在桌面端上有 98% 的 cookie 设置了它，因为第三方 cookie 确实想在跨站请求中发送。
 
 ### Cookie age
 
-There are two different ways to set the time when a cookie is deleted: `Max-Age` and `Expires`. `Expires` uses a specific date (relative to the client) to determine when the cookie is deleted whereas `Max-Age` uses a duration in seconds.
+有两种不同的方式来设置 cookie 的过期时间：`Max-Age` 和 `Expires`。`Expires` 使用一个特定的日期（相对于客户端而言）来决定何时删除 cookie，而 `Max-Age` 使用一个以秒为单位的持续时间。
 
 {{ figure_markup(
   image="cookie-age-usage-by-site-in-desktop-in-days.png",
-  caption="Cookie age usage in days (desktop).",
-  description="Bar chart showing the use of cookie ages in days at various percentiles. At the 10th percentile, a `Max-Age` of 1, and an `Expires` of 10, the real max age is 7. At the 25th percentile a value of 90 days and 60 days for `Max-Age` and `Expires`, the real age is 60 days. At the 50th percentile a value of 365 days for `Max-Age`, `Expires` and the real age. At the 75th percentile a value of 365 days for `Max-Age`, `Expires` and the real age. At the 90th percentile a value of 730 days for `Max-Age`, `Expires` and the real age.",
+  caption="Cookie age 的使用，以天为单位（桌面端）",
+  description="柱状图显示了在不同百分位数上使用 cookie age 的情况。在第 10 个百分位数，`Max-Age` 为 1，`Expires` 为10，实际最大 age 为 7。在第 25 百分位，`Max-Age` 和`Expires` 的值分别为 90 天和 60 天，实际的 age 值是 60 天。在第 50 百分位，`Max-Age`、`Expires` 和真实 age 值为 365 天。在第 75 百分位，`Max-Age`、`Expires` 和真实 age 值为 365 天。在第 90 个百分位数中，`Max-Age`、`Expires` 和实际 age 值为 730 天。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPHK3G2Ir-ys_oTrrhugqxV0aOSj3y5d1lANQ54GdaQtIHrzXIjQQGEpIdT_mQvxTrMtpd0Hn30zhF/pubchart?oid=2015811517&format=interactive",
   sheets_gid="1811539513",
   sql_file="cookie_age_percentiles.sql"
   )
 }}
 
-Unlike last year, where we saw that the median for `Max-Age` was 365 days but the median for `Expires` was 180 days, this year it's around 365 days for both. Hence the median for real maximum age has gone up from 180 days to 365 days this year. Even though the `Max-Age` is 729 days and `Expires` is 730 days in the 90th percentile, Chrome has been planning to put a <a hreflang="en" href="https://chromestatus.com/feature/4887741241229312">cap of 400 days</a> for both `Max-Age` and `Expires`.
-
+与去年不同的是，去年 `Max-Age` 的中位数是 365 天，而 `Expires` 的中位数是 180 天，今年两者都设置在 365 天左右。因此，今年实际 `Max-Age` 的中位数已经从 180 天上升到 365 天，即使 90% 设置了 `Max-Age` 为 729 天，`Expires` 为 730 天。Chrome 浏览器一直计划将 `Max-Age` 和 `Expires` 的上限设定为 400 天。
 
 <figure>
   <table>
@@ -290,7 +289,7 @@ Unlike last year, where we saw that the median for `Max-Age` was 365 days but th
   </table>
   <figcaption>
     {{ figure_link(
-      caption="Most common cookie expiry values on desktop.",
+      caption="桌面端最常见的 cookie 过期值",
       sheets_gid="707972861",
       sql_file="cookie_max_age_expires_top_values.sql",
     ) }}
@@ -330,29 +329,29 @@ Unlike last year, where we saw that the median for `Max-Age` was 365 days but th
   </table>
   <figcaption>
     {{ figure_link(
-      caption="Most common cookie expiry values on mobile.",
+      caption="移动端最常见的 cookie 过期值",
       sheets_gid="707972861",
       sql_file="cookie_max_age_expires_top_values.sql",
     ) }}
   </figcaption>
 </figure>
 
-The most prevalent `Expires` has some interesting values. We see that the most used `Expires` value in Desktop is `January 1, 1970 00:00:00 GMT`. When cookies `Expires` value is set to a past date, they are deleted from the browser. January 1, 1970 00:00:00 GMT is the Unix epoch time and hence it's often commonly used to expire or delete a cookie.
+最普遍的 `Expires` 有一些有趣的值。我们看到，在桌面端使用最多的 `Expires` 值是 `January 1, 1970 00:00:00 GMT`，当 cookies 的 `Expires` 值被设置为过去的日期时，它们会被从浏览器中删除。1970 年 1 月 1 日 00:00:00 GMT 是 Unix 纪元时间，因此它经常被用于设置过期时间或删除一个 cookie。
 
-## Content inclusion
+## 内容包含（Content inclusion）
 
-A website's content often takes many shapes and requires resources such as CSS, JavaScript, or other media assets like fonts and images. These are frequently loaded from external service providers of the likes of remote storage services of cloud-native infrastructure, or from content delivery networks (CDNs) with the aim of reducing worldwide networking round-trips just to serve the content.
+一个网站内容通常有很多形式，需要 CSS、JavaScript 或其他媒体资源（如字体和图片）等资源，这些资源经常从外部服务提供商那里加载，如云原生基础设施的远程存储服务，或从内容交付网络（CDNs）加载，目的是为了减少全球范围内的网络往返延迟，以提供内容。
 
-However, ensuring that the content we include on the website hasn't been tampered with is of high stakes, and the impact of which can be devastating. Content inclusion is of even higher importance these days given the recent rise of awareness to supply chain security, and growing incidents of <a hreflang="en" href="https://www.imperva.com/learn/application-security/magecart/">Magecart attacks</a> that target website content systems to inject persistent malware through means of cross-site scripting (XSS) vulnerabilities and others.
+然而，确保我们在网站上的内容没有被篡改是非常关键的，其影响可能是毁灭性的，随着人们对供应链安全意识的提高，Content inclusion 变得更加重要，<a hreflang="en" href="https://www.imperva.com/learn/application-security/magecart/">Magecart</a> 攻击的事件越来越多，针对网站内容系统，该攻击针对网站内容系统，通过跨站脚本（XSS）漏洞和其它手段注入持久性恶意软件。
 
-### Content Security Policy
+### 内容安全策略（Content Security Policy，简称 CSP）
 
-One effective measure you can deploy to mitigate security risks around content inclusion is by employing a Content Security Policy (CSP). It is a security standard that adds a defense-in-depth layer in order to mitigate attacks such as code injection via cross-site scripting, or clickjacking, to name a few.
+你可以部署一套有效措施来降低围绕内容包含（Content inclusion）的安全风险，即采用内容安全策略（CSP），它是一种安全标准，添加了一个深度防御层，以减轻通过跨站脚本编写代码注入或点击劫持等攻击。
 
-It works by ensuring that a predefined trusted set of content rules is upheld and any attempts to bypass or include restricted content are rejected. For example, a content security policy that would allow JavaScript code to run in the browser only from the same origin it was served, and from that of Google Analytics would be defined as `script-src 'self' www.google-analytics.com;`. Any attempts of cross-site scripting injections that add inline JavaScript code such as `<a img=x onError=alert(1)>` would be rejected by the browser enforcing the set policy.
+它的工作原理是确保预先定义的受信任内容规则集得到维护，并拒绝任何绕过或包括受限制内容的尝试。例如，内容安全策略允许 JavaScript 代码仅在其提供的同源站点和 Google Analytics 的浏览器中运行，该策略将被定义为 `script-src 'self' www.google-analytics.com;`。任何跨站脚本注入的尝试，如 `<a img=x onError=alert(1)>`，都会被执行设定策略（CSP）的浏览器拒绝。
 
 {{ figure_markup(
-  caption="Relative increase in adoption for Content-Security-Policy header from 2021.",
+  caption="相比于 2021 年，内容安全策略标头的采用率相对增加",
   content="+14%",
   classes="big-number",
   sheets_gid="1799124531",
@@ -360,37 +359,37 @@ It works by ensuring that a predefined trusted set of content rules is upheld an
 )
 }}
 
-We're seeing a 14% relative increase in adoption for `Content-Security-Policy` header from 2021's data of 12.8% to 2022's data of 14.6% which demonstrates a growing trend of adoption across developers and the web security community. This is positive, though it's still a minority of sites using this more advanced feature.
+我们看到，从 2021 年 12.8% 的数据到 2022 年 14.6% 的数据，这表明在开发人员和 web 安全社区中采用 `Content-Security-Policy` 标头的趋势在不断增长，这是积极的，尽管使用这种更高级功能的网站仍然是少数。
 
-CSP is most useful, when served on the HTML response itself and here we're seeing consistent growing adoption in mobile requests serving a CSP header with 7.2% two years ago, 9.3% last year, and this year a total of 11.2% of mobile homepages.
+当 CSP 被用于 HTML 响应本身时，它是最有用的。在这里，我们看到使用 CSP 标头的移动端请求使用率持续增长，两年前为 7.2%，去年为 9.3%，今年为 11.2%。
 
 {{ figure_markup(
   image="csp-directives-usage.png",
-  caption="Most common directives used in CSP.",
-  description="Bar chart showing usage of most common CSP directives. `upgrade-insecure-requests` is the most common with 54% in desktop and 56% in mobile, followed by `frame-ancestors` which is 54% in desktop and 53% in mobile. `block-all-mixed-content` is 26% in desktop and 38% in mobile, `default-src` is 19% in desktop and 16% in mobile, `script-src` is 17% in desktop and 15% in mobile, `style-src` is 14% in desktop and 12% in mobile, `img-src` is 13% in desktop and 11% in mobile, `font-src` is 1% in desktop and 9% in desktop, `connect-src` is 10% in desktop and 8% in mobile, `frame-src` is 10% in desktop and 7% in mobile",
+  caption="CSP中最常用的指令",
+  description="条形图显示了最常见的 CSP 指令使用情况。`upgrade-insecure-requests` 是最常见的，在桌面端占 54%，在移动端占 56%；其次是 `frame-ancestors`，在桌面端占54%，在移动端占 53%；`block-all-mixed-content` 在桌面端占 26%，在移动端占 38%；`default-src` 在桌面端占 19%，在移动端占 16%；`script-src` 在桌面端占 17%，在移动端占 15%；`style-src` 在桌面端占 14%，在移动端占 12%；`img-src` 在桌面端占 13%，在移动端占 11%；`font-src` 在桌面端占 11%，在移动端占 9%，`connect-src` 在桌面端占 10%，在移动端占 8%，`frame-src` 在桌面端占 10%，在移动端占 7%。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPHK3G2Ir-ys_oTrrhugqxV0aOSj3y5d1lANQ54GdaQtIHrzXIjQQGEpIdT_mQvxTrMtpd0Hn30zhF/pubchart?oid=417279434&format=interactive",
   sheets_gid="1303493233",
   sql_file="csp_directives_usage.sql"
   )
 }}
 
-The top three CSP directives that we're seeing serving more than a quarter of the HTTP requests for both desktop and mobile are `upgrade-insecure-requests` at a 54%, `frame-ancestors` at 54%, and the `block-all-mixed-content` policy at 27%. Trailing policies are `default-src`, `script-src`, `style-src`, and `img-src` to name a few.
+我们看到，在桌面端和移动端的 HTTP 请求中，排在前三位的 CSP 指令是 `upgrade-insecure-requests`（占 54%）、`frame-ancestors`（占 54%）、`block-all-mixed-content`（占 27%）策略，排名靠后的策略有 `default-src`、`script-src`、`style-src` 和 `img-src` 等等。
 
-The `upgrade-insecure-requests` policy's high adoption rate could perhaps be attributed to the high adoption of TLS requests as a de-facto standard. However, despite `block-all-mixed-content` being considered deprecated as of this date, it's showing a high adoption rate. This perhaps speaks to the fast rate at which the CSP specification is advancing and users having a hard time keeping up to date.
+`upgrade-insecure-requests` 策略的高采用率也许归功于 TLS 请求作为业界标准（de-facto standard）的高采用率。然而，尽管 `block-all-mixed-content` 被认为已经过时，但它的采用率依旧很高，这也许说明了 CSP 规范的发展速度之快，用户很难跟上时代的步伐。
 
-More to do with mitigating cross-site scripting attacks is Google's security initiative for [Trusted Types](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/trusted-types), which requires native browser API support to employ a technique which helps prevent DOM-injection class of vulnerabilities. It is actively advocated by Google engineers yet is still in <a hreflang="en" href="https://w3c.github.io/trusted-types/dist/spec/">draft proposal mode</a> for the W3C. Nonetheless, we record its CSP related security headers `require-trusted-types-for` and `trusted-types` at 0.1% of requests which is not a lot, but perhaps speaks to a growing trend of adoption.
+在减少跨站脚本攻击方面，谷歌针对[Trusted Types](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/trusted-types)的安全倡议做得更多，它需要本地浏览器 API 支持，以帮助防止 DOM 注入类漏洞，它是由谷歌工程师积极倡导的，但仍处于 W3C 的<a hreflang="en" href="https://w3c.github.io/trusted-types/dist/spec/">建议草案阶段</a>，尽管如此，我们将其 CSP 相关的安全头 `require-trusted-types-for` 和 `trusted-types` 记录在 0.1% 的请求中，这并不多，但也许说明采用这种方法的趋势正在增长。
 
-To assess whether a CSP violation from the pre-defined set of rules is occurring, websites can set the `report-uri` directive that the browser will send JSON formatted data as an HTTP POST request. Although `report-uri` requests account for 4.3% of all desktop traffic with a CSP header, it is to date a deprecated directive and has been replaced with `report-to` which accounts for 1.8% of desktop requests.
+为了评估是否发生了违反预先定义规则集的 CSP 行为，网站可以设置 `report-uri` 指令，让浏览器将 JSON 格式数据作为 HTTP POST 请求发送。尽管 `report-uri` 请求占所有带有 CSP 标头桌面流量的 4.3%，但到目前为止，它已被废弃，被 `report-to` 取代，它占桌面请求的 1.8%。
 
-One of the biggest contributors to the challenge of implementing a tight content security policy is the existence of inline JavaScript code that's commonly set as event handlers or at other parts of the DOM. To allow teams a progressive adoption of the CSP security standard, a policy may set `unsafe-inline` or `unsafe-eval` as keyword values for its `script-src` directive. Doing so, fails to prevent some cross-site scripting attack vectors and is counter-productive to the preventative measure of a policy.
+实施严格的内容安全策略的最大挑战之一是内联 JavaScript 代码的存在，这些代码通常被设置为事件处理程序或在 DOM 的其他部分。为了允许团队逐步采用 CSP 安全标准，策略可以将 `unsafe-inline` 或 `unsafe-eval` 作为其 `script-src` 指令的关键值，这样做，不能防止一些跨站脚本攻击载体，并且对策略的预防措施产生反作用。
 
-Teams can utilize a more secure posture of inline JavaScript code by signing them with a nonce or a SHA256 hash. This would look like something along the lines of:
+团队可以通过使用 nonce 或 SHA256 哈希对内联 JavaScript 代码进行签名，从而使其更安全。看起来就像这样：
 
 ```
 Content-Security-Policy: script-src 'nonce-4891cc7b20c'
 ```
 
-And then referencing that in the HTML:
+然后在HTML中引用它：
 
 ```html
 <script nonce="nonce-4891cc7b20c">
@@ -400,40 +399,40 @@ And then referencing that in the HTML:
 
 {{ figure_markup(
   image="csp-script-src-attribute-usage.png",
-  caption="CSP `script-src` attribute usage.",
-  description="Column chart showing usage of nonce, `unsafe-inline` and `unsafe-eval` in CSP `script-src` directive. `nonce-` is used in 12% of websites in mobile with a CSP header and 14% of such websites in desktop. `unsafe-inline` is used 94% of such websites in mobile and 95% in desktop. `unsafe-eval` is used 80% of such websites in mobile and 78% in desktop.",
+  caption="CSP `script-src` 属性的使用情况",
+  description="柱状图显示了在 CSP `script-src` 指令中 nonce、`unsafe-inline` 和 `unsafe-eval` 的使用情况。`nonce-` 被用于 12% 带有 CSP 标头的移动网站和 14% 的桌面网站；`unsafe-inline` 在移动端有 94% 的网站使用，在桌面端有 95%；`unsafe-eval` 在这类网站中的使用，移动端占 80%，桌面端占 78%。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPHK3G2Ir-ys_oTrrhugqxV0aOSj3y5d1lANQ54GdaQtIHrzXIjQQGEpIdT_mQvxTrMtpd0Hn30zhF/pubchart?oid=310998764&format=interactive",
   sheets_gid="323360740",
   sql_file="csp_script_source_list_keywords.sql"
   )
 }}
 
-The statistics collected for all desktop HTTP requests show that `unsafe-inline` is present on  for 94%, and `unsafe-eval`on 80% of all `script-src` values. This demonstrates the real challenges in locking down a website's application code to avoid inline JavaScript code. Furthermore, Only 14% of all above described requests employ a `nonce-` directive which assists in securing the use of unsafe inline JavaScript code.
+对所有桌面端 HTTP 请求进行的统计显示，94% 的（页面）设置了 `unsafe-inline`，80% 的（页面） `script-src` 值设置为 `unsafe-eval`，这表明在锁定网站的应用代码以避免内联 JavaScript 代码方面存在真正的挑战。此外，只有 14% 的上述请求采用了 `nonce-` 指令，这有助于确保不安全的内联 JavaScript 代码的使用。
 
-Perhaps speaking to the high complexity of defining a content security policy is the statistics we observe for CSP header length.
+我们观察到 CSP 标头长度的统计数据也许说明了定义内容安全策略的高度复杂性。
 
 {{ figure_markup(
   image="csp-header-length.png",
-  caption="CSP header length.",
-  description="Column chart showing percentiles of the length of the CSP header in bytes. At 10th percentile both desktop and mobile are 22 bytes, at 25th percentile both are 25 bytes, at 50th percentile desktop is 64 bytes and mobile is 70 bytes, at 75th percentile both are 75 bytes and at 90th percentile desktop is 494 bytes and mobile is 334 bytes.",
+  caption="CSP 标头长度",
+  description="柱状图显示了以字节为单位的 CSP 标头长度百分比数据。在第 10 个百分点，桌面端和移动端都是 22 个字节，在第 25 个百分点，都是 25 个字节，在第 50 个百分点，桌面端是 64 个字节，移动端是 70 个字节，在第 75 个百分点都是 75 个字节，在第 90 个百分点，桌面端是 494 个字节，移动端是 334 个字节。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPHK3G2Ir-ys_oTrrhugqxV0aOSj3y5d1lANQ54GdaQtIHrzXIjQQGEpIdT_mQvxTrMtpd0Hn30zhF/pubchart?oid=311379301&format=interactive",
   sheets_gid="54898794",
   sql_file="csp_number_of_allowed_hosts.sql"
 ) }}
 
-At a median ranking, 50% of requests are only up to 70 bytes in size for desktop requests. This is a slight drop from last year's report which showed both desktop and mobile requests at 75 bytes in size. The 90th percentile of requests and above has grown from last year's 389 bytes for desktop requests, to 494 bytes this year. This demonstrates a slight progress towards more complex and complete security policies.
+在中位数的排名中，50% 的桌面端请求中大小只达到 70 个字节，这比去年的数据略有下降，去年的报告显示桌面端和移动端请求的大小都是 75 个字节。90% 以上的请求从去年的 389 个字节增长到了今年的 494 个字节，这表明朝着更加复杂和完整的安全策略方向取得了微小的进展。
 
-Observing the complete definitions for a content security policy, we can see that single directives still make up a large proportion of all requests. 19% of all desktop requests are set only to `upgrade-insecure-requests`. 8% of all desktop requests are set to `frame-ancestors 'self'` and 23% of all desktop requests are set to the value of `block-all-mixed-content; frame-ancestors 'none'; upgrade-insecure-requests;` which mixes together the top 3 most common CSP directives.
+观察内容安全策略的完整定义，我们可以看到单个指令仍然占所有请求的很大比例。19% 的桌面端请求被设置为 `upgrade-insecure-requests`，8% 的桌面端请求被设置为 `frame-ancestors 'self'`，23% 的桌面端请求被设置为 `block-all-mixed-content; frame-ancestors 'none'; upgrade-insecure-requests;`，它混合了最常见的 3 个 CSP 指令。
 
-The content security policy often has to allow content from other origins than its own in order to support loading of media such as fonts, ad related scripts, and general content delivery network usage. As such, the top 10 origins across requests are as follows:
+内容安全策略通常必须允许来自其他源的内容，而不是自己的内容，以支持加载媒体，如字体、广告相关脚本和一般内容交付网络的使用，因此，整个请求的前 10 个来源如下：
 
 <figure>
   <table>
     <thead>
       <tr>
         <th>Origin</th>
-        <th>Desktop</th>
-        <th>Mobile</th>
+        <th>桌面端</th>
+        <th>移动端</th>
       </tr>
     </thead>
     <tbody>
@@ -491,40 +490,40 @@ The content security policy often has to allow content from other origins than i
   </table>
   <figcaption>
     {{ figure_link(
-      caption="Most frequently allowed hosts in CSP policies.",
+      caption="CSP 策略中最常被允许的提供商",
       sheets_gid="106248959",
       sql_file="csp_allowed_host_frequency.sql"
     ) }}
   </figcaption>
 </figure>
 
-The above hosts account for roughly the same positioning in rank as was reported last year, but the usage is up slightly.
+上述提供商的排名与去年报告的大致相同，但使用量略有上升。
 
-The CSP security standard is widely supported both by web browsers, as well as content delivery networks and content management systems and is a highly recommended tool for websites and web applications in defense of web security vulnerabilities.
+CSP 安全标准得到了 Web 浏览器以及内容传输网络和内容管理系统的广泛支持，是网站和 web 应用防御 web 安全漏洞的一个强烈推荐工具。
 
-### Subresource Integrity
+### 子资源完整性（Subresource Integrity，简称 SRI）
 
-Another defense-in-depth tool is Subresource Integrity which provides a web security defensive layer against content tampering. Whereas a Content Security Policy defines which types and source of content are allowed, a Subresource Integrity mechanism ensures that said content hasn't been modified for malicious intents.
+另一个深度防御工具是子资源完整性，它提供了一个 Web 安全防御层，防止内容被篡改，内容安全策略定义了允许的内容类型和来源，而子资源完整性机制确保上述内容没有被恶意修改。
 
-A reference use-case for using Subresource Integrity is when loading JavaScript content from third-party package managers which also act as a CDN. Some examples of these are unpkg.com or cdnjs.com, both of which serve the content source for JavaScript libraries.
+使用子资源完整性的一个参考用例是当从第三方包管理器加载 JavaScript 内容时，第三方包管理器也充当 CDN，例如 unpkg.com 或 cdnjs.com，它们都为 JavaScript 库的内容资源提供服务。
 
-If a third-party library could be compromised due to a hosting issue by the CDN provider, or by one of the project's contributors or maintainers then you are effectively loading someone else's code into your website.
+如果第三方库可能因为 CDN 提供商的托管问题，或项目贡献者或维护者的问题而被破坏，那么你实际上是在把别人的代码加载到你的网站上。
 
-Similar to CSP's use of a `nonce-`, Subresource Integrity (also known as SRI) allows browsers to validate the content that is served matches a cryptographically signed hash and prevents tampering with the content, whether over the wire or at its source.
+与 CSP 使用 `nonce-` 类似，子资源完整性（也称为 SRI）允许浏览器验证所提供的内容是否与加密签名的哈希值相符，并防止内容被篡改，无论是通过网络还是在其源头。
 
 {{ figure_markup(
   content="20%",
-  caption="Desktop sites using SRI.",
+  caption="使用 SRI 的桌面站点",
   classes="big-number",
   sheets_gid="953586778",
   sql_file="sri_usage.sql",
 ) }}
 
-Just about one of every fifth website (20%) adopts a subresource integrity in one of its web page elements on desktop. Out of these, 83% were specifically used in `<script>` type elements on desktop, and 17% were used in `<link>` type  elements in desktop requests.
+大约每 5 个网站中就有一个（20%）在桌面端网页元素中设置了子资源完整性，其中，83% 专门用于桌面端的 `<script>` 类型元素，17% 用于桌面端请求中的 `<link>` 类型元素。
 
-At a per page coverage, adoption rate for the SRI security feature is still considerably low. Last year, the median percentage for both mobile and desktop was 3.3% and this year it decreased by 2% to 3.23%.
+从每页的覆盖率来看，SRI 安全功特性的采用率仍然相当低，去年，移动端和桌面端的平均比例为 3.3%，今年下降了 2%，为 3.23%。
 
-Subresource integrity is specified as a base64 string of a computed hash of one of SHA256, SHA384 or SHA512 cryptographic functions. As a [use-case reference](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity), developers can implement them as follows:
+子资源完整性被指定采用 SHA256、SHA384 或 SHA512 中的其中一种加密函数来计算其哈希值的 base64 字符串，作为[用例参考](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity)，开发者可以按照以下方式实现它们：
 
 ```html
 <script src="https://example.com/example-framework.js"
@@ -534,25 +533,24 @@ Subresource integrity is specified as a base64 string of a computed hash of one 
 
 {{ figure_markup(
   image="sri-hash-function-usage.png",
-  caption="SRI hash functions.",
-  description="Bar chart showing percent of SRI elements using various hash functions. SHA-384 is used in 58.4% of SRI elements in desktop websites and 60.7% of SRI elements in mobile websites. SHA-256 is used in 32.4% of SRI elements in desktop websites and 30.8% of SRI elements in mobile websites. SHA-512 is used in 10.9% of SRI elements in desktop websites and 9.9% of SRI elements in mobile websites.",
+  caption="SRI 哈希函数",
+  description="条形图显示使用各种哈希函数的 SRI 元素百分比。桌面端网站中 58.4% 的 SRI 元素和移动端网站中 60.7% 的 SRI 元素使用了 SHA-384；桌面端网站中 32.4% 的 SRI 元素和移动端网站中 30.8% 的 SRI 元素使用了 SHA-256；桌面端网站中 10.9% 的 SRI 元素和移动端网站中 9.9% 的 SRI 元素使用了 SHA-512。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPHK3G2Ir-ys_oTrrhugqxV0aOSj3y5d1lANQ54GdaQtIHrzXIjQQGEpIdT_mQvxTrMtpd0Hn30zhF/pubchart?oid=699960446&format=interactive",
   sheets_gid="1419400151",
   sql_file="sri_hash_functions.sql"
 ) }}
 
-Consistent with last year's report, SHA384 continues to demonstrate the majority of SRI hash types observed between all available hash functions.
+与去年的报告一致，SHA384 继续展示了在所有可用的哈希函数中被使用最多的 SRI 哈希类型。
 
-
-CDNs are no strangers to Subresource Integrity and provide secure defaults to their consumers by including a Subresource Integrity value as part of their URL references for content to be served on the page.
+CDNs 对子资源完整性并不陌生，通过在页面内容的 URL 引用中包含子资源完整性值，向其调用者提供安全的默认值。
 
 <figure>
   <table>
     <thead>
       <tr>
         <th>Host</th>
-        <th>Desktop</th>
-        <th>Mobile</th>
+        <th>桌面端</th>
+        <th>移动端</th>
       </tr>
     </thead>
     <tbody>
@@ -603,21 +601,21 @@ CDNs are no strangers to Subresource Integrity and provide secure defaults to th
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Most common hosts from which SRI-protected scripts are included.", sheets_gid="998292064", sql_file="sri_popular_hosts.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="包括 SRI 保护脚本的大多数常见提供商", sheets_gid="998292064", sql_file="sri_popular_hosts.sql") }}</figcaption>
 </figure>
 
-The above list shows the top 10 most common hosts for which a subresource integrity value has been observed. Notable changes from last year are the Cloudflare hosts jumping from position 4 to position 3, and jsDelivr jumping from position 7 to position 6 in ranking, surpassing Bootstrap's hosts rankings.
+上述列表显示了已观察到子资源完整性值的前 10 个最常见的提供商，与去年相比，值得注意的变化是 Cloudflare 提供商从第 4 位跃升至第 3 位，jsDelivr 的排名从第 7 位跳到第 6 位，超过了 Bootstrap 提供商排名。
 
-### Permissions Policy
+### 权限策略（Permissions Policy）
 
-Browsers are becoming more and more powerful with time, adding more native APIs to access and control different sorts of hardware and feature sets that are made available to websites. These also introduce potential security risks to users through misuse of said features, such as malicious scripts turning on a microphone and collecting data, or fingerprinting geolocation of a device to collect location information.
+随着时间的推移，浏览器变得越来越强大，添加了更多的原生 API 来访问和控制不同种类的硬件和网站提供的功能集。通过滥用上述功能，也会给用户带来潜在的安全风险，例如恶意脚本打开麦克风并收集数据，或通过指纹识别设备的地理位置来收集位置信息。
 
-Previously known as `Feature-Policy`, and now named `Permissions-Policy`, this is an experimental browser API that enables control to an allowlist and a denylist of a wide array of capabilities a browser is able to access.
+以前被称为 `Feature-Policy`，现在被命名为 `Permissions-Policy`，这是一个实验性的浏览器 API，能够控制浏览器访问一系列功能的白名单列表和黑名单列表。
 
-We've noticed a high correlation of usage for the `Permissions-Policy` with HTTPS-enabled connections (97%), with `X-Content-Type-Options` (82%), and `X-Frame-Options` (78%). All correlations are across desktop requests. Another high correlation is within the specific technology intersection, observed for Google My Business mobile pages (99%), and the next closest is Acquia's Cloud Platform (67%). All correlations are across mobile requests.
+我们注意到 `Permissions-Policy` 的使用与启用 HTTPS 连接（97%）、`X-Content-Type-Options`（82%）以及 `X-Frame-Options`（78%）高度相关，所有的相关性都是跨桌面端请求。另一个高相关性是在特定的技术交叉点，观察到的是 Google My Business 移动端页面（99%），其次是 Acquia 的云平台（67%）。所有的相关性都是跨移动端请求。
 
 {{ figure_markup(
-  caption="Relative increase in adoption of `Permissions-Policy` from 2021.",
+  caption="从2021年开始， `Permissions-Policy` 的采用率相对增加",
   content="+85%",
   classes="big-number",
   sheets_gid="1799124531",
@@ -625,25 +623,25 @@ We've noticed a high correlation of usage for the `Permissions-Policy` with HTTP
 )
 }}
 
-We're seeing an 85% relative increase in adoption for `Permissions-Policy` from 2021's data (1.3%) to 2022's data (2.4%) for mobile requests and similar trend for desktop requests too. The deprecated `Feature-Policy` shows a minuscule increase of 1 percentage point between last year's data and this year's which demonstrates that users are keeping pace with web browsers' specification changes.
+我们看到，从 2021 年的数据（1.3%）到 2022 年的数据（2.4%），移动端请求对 `Permissions-Policy` 的采用率相对增加了 85%，桌面端请求也有类似的趋势。被废弃的 `Feature-Policy` 在去年和今年的数据之间出现了 1% 的微弱增长，这表明用户正在跟上 Web 浏览器规范的变化。
 
-Besides being used as an HTTP header, this feature can be used within `<iframe>` elements as follows:
+除了作为 HTTP 标头之外，该特性还可以在 `<iframe>` 元素中使用，如下所示：
 
 ```html
   <iframe src="https://example.com" allow="geolocation 'src' https://example.com'; camera *"></iframe>
 ```
 
-18.9% of 11.5 million frames in mobile contained the `allow` attribute to enable permission or feature policies.
+在移动端的 1150 万个框架中，有 18.9% 包含 `allow` 属性，以启用权限或特性策略。
 
-The following is a list of the top 10 `allow` directives that were detected in frames:
+以下是在框架中检测到的前 10 条 `allow` 指令列表：
 
 <figure>
   <table>
     <thead>
       <tr>
-        <th>Directive</th>
-        <th>Desktop</th>
-        <th>Mobile</th>
+        <th>指令</th>
+        <th>桌面端</th>
+        <th>移动端</th>
       </tr>
     </thead>
     <tbody>
@@ -701,20 +699,20 @@ The following is a list of the top 10 `allow` directives that were detected in f
   </table>
   <figcaption>
     {{ figure_link(
-      caption="Prevalence of `allow` directives on iframes.",
+      caption="iframes 上 `allow` 指令的普遍性",
       sheets_gid="1848560369",
       sql_file="iframe_allow_directives.sql"
     ) }}
   </figcaption>
 </figure>
 
-Interesting to point out are places 11th, 12th and 13th allow directives for mobile that didn't make it into the above list and they are `vr` with 6%, `payment` with 2%, and `web-share` with 1%. They perhaps speak of growing trends we're seeing in the industry around virtual reality (and the metaverse, if you will), online payments and the fintech industry. Lastly, it seems to indicate better support for web-based sharing which is presumably due to the rise of work-from-home habits in the last couple of years.
+有趣的是，第 11、12 和 13 位的移动端指令没有进入到上述名单，它们是 `vr`（占 6%），`payment`（占 2%），`web-share`（占 1%），它们也许说明了我们在虚拟现实（如果你愿意，也可以称之为元宇宙）、在线支付和金融科技行业中看到的日益增长的趋势。最后，这似乎表明了基于 web 共享得到了更好的支持，这可能是由于过去几年在家办公（指新冠疫情期间）的兴起。
 
-### Iframe Sandbox
+### Iframe 沙盒（Iframe Sandbox）
 
-Using iframe elements in websites has been a long-time practice for developers in order to easily embed third-party content such as rich media, cross-application components, or even ads. Some may even assume that iframe elements form a security boundary between the website embedding them to the sourced website, however that's not exactly the case.
+在网站中使用 iframe 元素是开发人员长期以来的做法，以便轻松嵌入第三方内容，如富媒体、跨应用组件，甚至是广告，有些人甚至会认为 iframe 元素在嵌入它们的网站和源网站之间形成了一个安全边界，但事实并非如此。
 
-HTML `<iframe>` elements by default have access to top-level page capabilities such as pop-ups or direct interaction with the top-page browser navigation. For example, the following code could be embedded in the source of an iframe element which makes use of active user gestures and results in the hosting website of the iframe to  navigate to a new URL at `https://example.com`:
+HTML `<iframe>` 元素默认可以访问顶层页面的功能，如弹出窗口可以与顶层浏览器导航直接进行交互，例如，下面的代码可以嵌入到一个 iframe 元素的源代码中，它利用用户的主动触发，导致 iframe 的托管网站导航到一个新的 URL `https://example.com`：
 
 ```js
 function clickToGo() {
@@ -722,38 +720,38 @@ function clickToGo() {
 }
 ```
 
-This is largely known as a clickjacking attack and is one of many other security risks that are embedded within iframes (pun intended).
+这在很大程度上被称为点击劫持攻击，是嵌入在 iframe 中的许多其他安全风险之一（双关语）。
 
-To mitigate these concerns the HTML specification (version 5) introduced the `sandbox` attribute that may be applied to iframe elements. It acts as an allowlist and if kept empty it essentially does not enable any capabilities within the iframe element. This results in no access to page interactivity like pop-ups, no permissions to run JavaScript code, and no access to cookies.
+为了减轻这些担忧，HTML 规范（第 5 版）引入了 `sandbox` 属性，可以应用于 iframe 元素，它充当一个白名单列表，如果保持为空，它基本上不启用 iframe 元素中的任何功能，这将导致无法访问弹出窗口等页面交互功能，没有运行 JavaScript 代码的权限，也无法访问 cookies。
 
 {{ figure_markup(
   image="prevalence-of-sandbox-directives-on-frames.png",
-  caption="Prevalence of sandbox directives on frames.",
-  description="Bar chart showing prevalence of sandbox directives in frames. `allow-scrips` and `allow-same-origin` are the most used directive with almost 100% of iframes having `sandbox` attributes using these directives. `allow-popups` is found in 82% frames in desktop and 85% frames in mobile, `allow-forms` is found in 81% frames in desktop and 84% frames in mobile, `allow-popups-to-escape-sandbox` is found in 80% frames in desktop and 83% frames in mobile, `allow-top-navigation-by-user-activation` is found in 59% frames in desktop and 61% frames in mobile, `allow-top-navigation` is found in 21% frames in desktop and 22% frames in mobile, and `allow-modals` is found in 20% frames in desktop and 21% frames in mobile.",
+  caption="框架上 sandbox 指令的普遍性",
+  description="图表显示 iframes 中 sandbox 指令的流行程度。`allow-scrips` 和 `allow-same-origin` 是使用最多的指令，几乎 100% 具有 `sandbox` 属性的 iframes 都使用了这些指令。`allow-popups` 出现在 82% 的桌面端和 85% 的移动端框架中；`allow-forms` 出现在 81% 的桌面端和 84% 的移动端框架中；`allow-popups-to-escape-sandbox` 出现在 80% 的桌面端和 83% 的移动端框架中； `allow-top-navigation-by-user-activation` 出现在 59% 的桌面端和 61% 的移动端框架中；`allow-top-navigation` 出现在 21% 的桌面端和 22% 的移动端框架中，`allow-modals` 在桌面端占 20%，在移动端占 21%。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPHK3G2Ir-ys_oTrrhugqxV0aOSj3y5d1lANQ54GdaQtIHrzXIjQQGEpIdT_mQvxTrMtpd0Hn30zhF/pubchart?oid=1144896878&format=interactive",
   sheets_gid="245152438",
   sql_file="iframe_sandbox_directives.sql"
   )
 }}
 
-The above chart of the 2022 data shows that more than 99% of websites with a `sandbox` attribute enable the `allow-scripts` and `allow-same-origin` permissions.
+上述 2022 年的数据图表显示，超过 99% 的具有 `sandbox` 属性的网站都启用了 `allow-scripts` 和 `allow-same-origin` 权限。
 
-Of desktop websites that embed an iframe, 35.2% also include the `sandbox` attribute.
+在嵌入 iframe 的桌面端网站中，35.2% 的网站还包括 `sandbox` 属性。
 
-We find that `Content-Security-Policy` headers which include a `sandbox` directive are at a mere 0.3% usage for mobile (desktop is similar at 0.4%) which may speak to the fact that this attribute is only applied on a per-case basis for the practice of embedding iframe content within pages, rather than ahead-of-time planning through a content security policy definition.
+我们发现包含 `sandbox` 指令的 `Content-Security-Policy` 标头在移动端仅占 0.3% 的使用率（桌面端为 0.4%），这可能说明了这样一个事实，即该属性仅适用于在页面中嵌入 iframe 内容的实践，而不是通过内容安全策略定义进行预先规划。
 
-## Attack preventions
+## 预防攻击
 
-There are many different attacks that can exploit a website, and it's almost never possible to fully secure your website. However, there are many steps that a web developer can take to prevent most of these attacks, or to limit the effects of them on the users.
+有许多不同的攻击可以利用一个网站，要完全保护你的网站（不受攻击）几乎不现实，然而，web 开发人员可以采取许多措施来防止大多数此类攻击，或限制它们对用户的影响。
 
-### Security header adoptions
+### 采用安全标头
 
-Security headers are one of the most common ways of preventing attacks by restricting the kind of traffic and data flow. But most of these security headers have to be set manually by website developers. Thus, the presence of security headers are often a good indication of the security hygiene that the developers of the website follow.
+安全标头是通过限制流量和数据流类型来防止攻击的最常用方法之一，但大多数安全标头都需要网站开发人员手动设置，因此，安全标头的出现通常是网站开发人员所遵循安全保障的良好指示。
 
 {{ figure_markup(
   image="adoption-of-security-headers.png",
-  caption="Adoption of security headers for site requests in mobile pages.",
-  description="Bar chart showing the prevalence of different security headers, for any requests under the same domain in mobile pages in 2022 and 2021. `X-Content-Type-Options` was 37% in 2021 and is 40% in 2022, `X-Frame-Options` was 29% in 2021 and is 31% in 2022, `Strict-Transport-Security` was 23% in 2021 and is 26% in 2022, `X-XSS-Protection` was 20% in 2021 and is 21% in 2022, `Expect-CT` was 13% in 2021 and are 15% in 2022, `Content-Security-Policy` was 13% in 2021 and 15% in 2022, `Report-To` was 12% in 2021 and is 11% in 2022, `Referrer-Policy` was 10% in 2021 and is 12% in 2022, `Permissions-Policy` was 1% in 2021 and is 2% in 2022.",
+  caption="在移动端页面的网站请求中采用安全标头",
+  description="柱状图显示了 2022 年和 2021 年移动端页面中相同域下任何请求的不同安全标头的流行程度。`X-Content-Type-Options` 在 2021 年是 37%，在 2022 年是 40%；`X-Frame-Options` 在 2021 年是 29%，在 2022 年是 31%；`Strict-Transport-Security` 在 2021 年是 23%，在 2022 年是 26%；`X-XSS-Protection` 在 2021 年是 20%，在 2022 年是 21%；`Expect-CT` 在 2021 年为 13%，2022 年为 15%；`Content-Security-Policy` 在 2021 年为 13%，2022 年为 15%；`Report-To` 在 2021 年为 12%，2022 年为 11%；`Referrer-Policy` 在 2021 年为 10%，2022 年为 12%；`Permissions-Policy` 在 2021 年为 1%，2022 年为 2%。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPHK3G2Ir-ys_oTrrhugqxV0aOSj3y5d1lANQ54GdaQtIHrzXIjQQGEpIdT_mQvxTrMtpd0Hn30zhF/pubchart?oid=479752873&format=interactive",
   sheets_gid="1799124531",
   sql_file="security_headers_prevalence.sql",
@@ -761,14 +759,14 @@ Security headers are one of the most common ways of preventing attacks by restri
   height=496
 ) }}
 
-The most widely used security mechanism is still the X-Content-Type-Options header, which is used on 40% of the websites we crawled on mobile, to protect against MIME-sniffing attacks. This header is followed by the X-Frame-Options header, which is enabled on 30% of all sites. We don't see much difference from last year's data with a gradual increase in adoption of all the security headers but the ranking of security headers by percentage usage is the same.
+使用最广泛的安全机制仍然是 X-Content-Type-Options 标头，我们在移动端抓取的网站中，有 40% 使用该标头，以防止 MIME 嗅探攻击。紧随其后的是 X-Frame-Options 标头，30% 的网站都启用了该标头。与去年的数据相比，我们没有看到太大的差别，所有安全标头的采用率都在逐渐增加，但标头的使用百分比排名是相同的。
 
-### Preventing attacks using CSP
+### 使用 CSP 预防攻击
 
-The main use of Content Security Policy (CSP) is to determine the trusted sources from which content can be loaded safely. This makes CSP a really useful security header in preventing various kinds of attacks such as clickjacking, cross-site scripting attacks, mixed-content inclusion and many more.
+内容安全策略（CSP）的主要用途是确定可以安全地从哪些可信源加载内容，这使得 CSP 成为一个非常有用的安全标头，可以防止各种攻击，如点击劫持、跨站脚本攻击、混合内容包含（mixed-content inclusion）等等。
 
 {{ figure_markup(
-  caption="The percentage of website on mobile with CSP that have frame-ancestors directive.",
+  caption="使用 CSP 的移动端网站中，有 frame-ancestors 指令的百分比",
   content="53%",
   classes="big-number",
   sheets_gid="1303493233",
@@ -776,15 +774,15 @@ The main use of Content Security Policy (CSP) is to determine the trusted source
 )
 }}
 
-One of the common ways to prevent clickjacking attacks is to prevent the browser from loading the website in a frame. One can use the [`frame-ancestors`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/frame-ancestors) directive in a CSP Header to restrict other domains from including the page content in a frame. We found 53% of the websites in mobile that have CSP have a `frame-ancestor` directive. It's the second most used CSP directive, which is good for prevention of clickjacking attacks. Setting the value of `frame-ancestors` directive to `none` or `self` is the safest. `none` doesn't allow any domain to frame the content, while `self` allows only the origin domain to frame the contents. We found that 8% of websites in mobile which have a CSP header have only `frame-ancestors 'self'` and is the third most common value of CSP header.
+防止点击劫持攻击的常见方法之一是防止浏览器在框架中加载网站，人们可以在 CSP 标头中使用 [`frame-ancestors`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/frame-ancestors) 指令来限制其他域将页面内容嵌入框架中。我们发现 53% 设置了 CSP 的 移动网站都有 `frame-ancestor` 指令，这是第二大使用的 CSP 指令，这有助于防止点击劫持攻击。将 `frame-ancestors` 指令的值设置为 `none` 或 `self` 是最安全的，`none` 不允许任何域名框住内容，而 `self` 只允许原始域名框住内容。我们发现，在有 CSP 标头的移动端网站中，有 8% 的网站只设置了 `frame-ancestors 'self'`，是 CSP 标头的第三大常见值。
 
 <figure>
   <table>
     <thead>
       <tr>
         <th>Keyword</th>
-        <th>Desktop</th>
-        <th>Mobile</th>
+        <th>桌面端</th>
+        <th>移动端</th>
       </tr>
     </thead>
     <tbody>
@@ -812,41 +810,41 @@ One of the common ways to prevent clickjacking attacks is to prevent the browser
   </table>
   <figcaption>
     {{ figure_link(
-      caption="Prevalence of CSP keywords based on policies that define a `default-src` or `script-src` directive.",
+      caption="CSP 关键字的普遍性，基于定义了 `default-src` 或 `script-src` 指令",
       sheets_gid="323360740",
       sql_file="csp_script_source_list_keywords.sql"
     ) }}
   </figcaption>
 </figure>
 
-One of the mechanisms to defend against XSS attacks is by setting a restrictive `script-src` directive for the website. This ensures that JavaScript is loaded only from a trusted source and the attacker cannot inject some malicious code. <a hreflang="en" href="https://content-security-policy.com/strict-dynamic/">`strict-dynamic`</a> is gradually gaining more adoption across websites with 6% websites in desktop using it compared to 5% of websites last year. `strict-dynamic` is helpful if you have a root script in your HTML that dynamically loads or injects other script files. It makes use of nonce or hash on the root script and ignores other allowlists like `unsafe-inline` or individual links. It's supported in all modern browsers apart from IE. Also, we see that `unsafe-inline` and `unsafe-eval` usage has decreased by approximately 2% from last year. This is a step in the right direction.
+防御 XSS 攻击的一种机制是为网站设置限制性的 `script-src` 指令，它确保了 JavaScript 只从一个受信任的源加载，攻击者无法注入恶意代码。<a hreflang="en" href="https://content-security-policy.com/strict-dynamic/">`strict-dynamic`</a> 正逐渐被更多的网站采用，桌面端有 6% 的网站在使用它，而去年只有 5% 的网站在使用。如果你的 HTML 中有一个动态加载或注入其他脚本文件的根脚本，`strict-dynamic` 就很有用，它在根脚本上使用 nonce 或 hash，并忽略其他允许列表，如 `unsafe-inline` 或个别链接，除了IE之外，所有现代浏览器都支持它。此外，我们看到`unsafe-inline` 和 `unsafe-eval` 的使用量比去年减少了大约 2%，这是朝着正确方向迈出的一步。
 
-### Preventing attacks using Cross-Origin policies
+### 使用 Cross-Origin 策略预防攻击
 
-Cross Origin policies are one of the main mechanisms used to defend against micro-architectural attacks like Cross Site leaks. XS-Leaks are kind of similar to Cross Site Request Forgery, however they infer small pieces of information about the user which are exposed during interactions between websites.
+Cross Origin 策略是用于防御像 Cross Site 泄漏等微架构攻击的主要机制之一。XS-Leaks 有点类似于跨站点请求伪造（Cross Site Request Forgery），但是它们推断出在网站之间的交互过程中暴露出关于用户的小块信息。
 
 {{ figure_markup(
   image="percentage-of-cross-origin-headers.png",
-  caption="Percentage of Cross Origin headers.",
-  description="Bar chart showing the prevalence of cross origin headers. `Cross-Origin-Resource-Policy` is found in 0.86% of desktop websites and 1.46% of mobile websites. `Cross-Origin-Embedder-Policy` is found in 0.0.4% of desktop websites and 0.03% of mobile websites. `Cross-Origin-Opener-Policy` is found in 0.23% of desktop websites and 0.45% of mobile websites.",
+  caption="Cross Origin 标头的百分比",
+  description="柱状图显示了 Cross Origin 标头的流行程度。在0.86% 的桌面端网站和 1.46% 的移动端网站中存在 `Cross-Origin-Resource-Policy`；在 0.04% 的桌面端网站和 0.03% 的移动端网站中存在 `Cross-Origin-Embedder-Policy`；在 0.23% 的桌面端网站和 0.45% 的移动端网站存在 `Cross-Origin-Opener-Policy`。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPHK3G2Ir-ys_oTrrhugqxV0aOSj3y5d1lANQ54GdaQtIHrzXIjQQGEpIdT_mQvxTrMtpd0Hn30zhF/pubchart?oid=976367634&format=interactive",
   sheets_gid="1799124531",
   sql_file="security_headers_prevalence.sql"
 ) }}
 
-[`Cross-Origin-Resource-Policy`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Resource-Policy) is present on 114,111(1.46%) websites in mobile and is the most used cross origin policy. It is used to indicate to the browser whether a resource should be included from cross-origin or not. [`Cross-Origin-Embedder-Policy`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy) is now present in 2,559 websites compared to 911 websites last year. We see a similar growth in the adoption of [`Cross-Origin-Opener-Policy`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Opener-Policy) as well with 34,968 websites in mobile now having the header compared to 15,727 sites last year. So there is a steady growth in the adoption of all the cross-origin policies, which is great because they can be really helpful in preventing XS-Leak attacks.
+[`Cross-Origin-Resource-Policy`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Resource-Policy) 存在于 114,111(1.46%) 个移动端网站中，是最常用的跨源策略，它用于向浏览器表明是否允许来自跨源的资源。[`Cross-Origin-Embedder-Policy`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy) 出现在 2559 个网站中，而去年是 911 个。我们看到 [`Cross-Origin-Opener-Policy`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Opener-Policy) 的采用也有类似的增长，现在有 34,968 家移动端网站设置了该标头，而去年只有 15,727 家。因此，所有跨源政策的采用都在稳步增长，这很好，因为它们对防止 XS-Leak 攻击非常有帮助。
 
-### Preventing attacks using Clear-Site-Data
+### 使用 Clear-Site-Data 预防攻击
 
-[Clear-Site-Data](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Clear-Site-Data) provides web developers more control over clearing of user data related to their website. For example, a web developer can now make decisions such that when a user signs out of their web site, then all related cookie, cache, storage information about the user can be removed. This helps in limiting the consequences of an attack by having a restricted amount of data stored in the browser when not needed. This is a comparatively new header which is restricted only for sites served over HTTPS and only some of the features are [supported by browsers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Clear-Site-Data#browser_compatibility). There were only 75 sites in mobile which had `Clear-Site-Data` header in 2021 and it has increased to 428 this year. It is worth noting that often times websites use this header only in their logout pages, which are not tracked in the web almanac data.
+[Clear-Site-Data](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Clear-Site-Data) 为 web 开发人员提供了更多的控制，用于清除与他们网站相关的用户数据。例如，web 开发人员现在可以做出这样的决定：当用户退出他们的网站时，所有与该用户相关的 cookie、缓存和存储信息都可以删除，这有助于限制攻击的后果，因为在不需要时浏览器中存储的数据量是有限的。这是一个相对较新的标头，只限于通过 HTTPS 提供服务的网站，而且只有部分功能被[浏览器支持](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Clear-Site-Data#browser_compatibility)。
 
 <figure>
   <table>
     <thead>
       <tr>
-        <th>CSD Header</th>
-        <th>Desktop</th>
-        <th>Mobile</th>
+        <th>CSD 标头</th>
+        <th>桌面端</th>
+        <th>移动端</th>
       </tr>
     </thead>
     <tbody>
@@ -904,41 +902,41 @@ Cross Origin policies are one of the main mechanisms used to defend against micr
   </table>
   <figcaption>
     {{ figure_link(
-      caption="Prevalence of `Clear-Site-Data` headers.",
+      caption="`Clear-Site-Data` 标头的流行度",
       sheets_gid="1206925009",
       sql_file="clear-site-data_value_prevalence.sql"
     ) }}
   </figcaption>
 </figure>
 
-`cache` is the most prevalent directive (63% websites in mobile) for Clear-Site-Data which could mean that many developers are using this security header more for clearing cache to probably load newer static files, than for privacy and security of the user. But directives are supposed to follow <a hreflang="en" href="https://datatracker.ietf.org/doc/html/rfc7230#section-3.2.6">quoted-string grammar</a> and hence this directive is invalid. It is great to see that 9% of mobile websites using this header use "*" which means that they indicate the browser to clear all user data stored. Third most used directive is again `"cache"`, but used properly this time.
+`cache` 是 Clear-Site-Data 最普遍的指令（63% 的移动端网站在使用），这可能意味着许多开发者使用这个安全标头更多是为了清除缓存，便于加载更新的静态文件，而不是为了用户的隐私和安全，但是指令应该遵循 <a hreflang="en" href="https://datatracker.ietf.org/doc/html/rfc7230#section-3.2.6">quoted-string 语法</a>，因此这个指令是无效的。很高兴看到 9% 的移动端网站设置了 "*"，这意味着他们指示浏览器要清除所有存储的用户数据。第三个最常用的指令仍然是 `"cache"`，但这次使用正确。
 
-### Preventing attacks using `<meta>`
+### 使用 `<meta>` 预防攻击
 
-A `Content-Security-Policy` and `Referrer-Policy` can be set using a `<meta>` tag in the HTML code itself for a website. For example, one can set `Content-Security-Policy` using the code: `<meta http-equiv="Content-Security-Policy" content="default-src 'self'">`. We found that 0.47% and 2.60% of the websites in mobile enabled CSP and Referrer-Policy this way.
+网站的 `Content-Security-Policy` 和 `Referrer-Policy` 可以通过 HTML 代码中的 `<meta>` 标签来设置。例如，可以使用代码来设置 `Content-Security-Policy`：`<meta http-equiv="Content-Security-Policy" content="default-src 'self'">`。我们发现，在移动端领域有 0.47% 和 2.60% 的网站以这种方式启用了 CSP 和 Referrer-Policy。
 
 <figure>
   <table>
     <thead>
       <tr>
-        <th>Meta tag values</th>
-        <th>Desktop</th>
-        <th>Mobile</th>
+        <th>Meta 标签值</th>
+        <th>桌面端</th>
+        <th>移动端</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>include Referrer-Policy</td>
+        <td>包含 Referrer-Policy</td>
         <td class="numeric">3.11%</td>
         <td class="numeric">2.60%</td>
       </tr>
       <tr>
-        <td>include CSP</td>
+        <td>包含 CSP</td>
         <td class="numeric">0.55%</td>
         <td class="numeric">0.47%</td>
       </tr>
       <tr>
-        <td>include note-allowed headers</td>
+        <td>包含 note-allowed headers</td>
         <td class="numeric">0.08%</td>
         <td class="numeric">0.06%</td>
       </tr>
@@ -946,26 +944,26 @@ A `Content-Security-Policy` and `Referrer-Policy` can be set using a `<meta>` ta
   </table>
   <figcaption>
     {{ figure_link(
-      caption="Security headers used in `<meta>` tags.",
+      caption="`<meta>` 标签中使用的安全标头",
       sheets_gid="2049304175",
       sql_file="meta_policies_allowed_vs_disallowed.sql"
     ) }}
   </figcaption>
 </figure>
 
-The issue with preventing attacks using `<meta>` tag is if you set any other security headers using it, then the browser will ignore that security header. For example, 2,815 sites had `X-Frame-Options` in the `<meta>` tag. So the developer might be expecting the website to be secure against certain attacks since they added the `<meta>` tag when in reality, that security header never gets added. However, this number has gone down from 3,410 sites last year, so maybe websites are fixing this misuse of the `<meta>` tag.
+使用 `<meta>` 标签防止攻击的问题是，如果你使用它设置任何其他安全头，那么浏览器将忽略该安全头。例如，2815 个网站在 `<meta>` 标签中设置了 `X-Frame-Options`，因此，开发人员可能期望网站能够安全地应对某些攻击，因为他们添加了 `<meta>` 标签，但实际上该安全头从未生效。然而，这个数字已经从去年的 3410 个网站下降了，所以也许网站正在修复这种对 `<meta>` 标签的错误使用。
 
 ### Web Cryptography API
 
-<a hreflang="en" href="https://www.w3.org/TR/WebCryptoAPI/">Web Cryptography API</a> is a JavaScript API for performing basic cryptographic operations on a website such as random number generation, hashing, signing, encryption and decryption.
+<a hreflang="en" href="https://www.w3.org/TR/WebCryptoAPI/">Web Cryptography API</a> 是一个 JavaScript API，用于在网站上执行基本的加密操作，如随机数生成、哈希、签名、加密和解密。
 
 <figure>
   <table>
     <thead>
       <tr>
         <th>Feature</th>
-        <th>Desktop</th>
-        <th>Mobile</th>
+        <th>桌面端</th>
+        <th>移动端</th>
       </tr>
     </thead>
     <tbody>
@@ -1023,45 +1021,45 @@ The issue with preventing attacks using `<meta>` tag is if you set any other sec
   </table>
   <figcaption>
     {{ figure_link(
-      caption="Top used cryptography APIs.",
+      caption="最常用的加密 APIs",
       sheets_gid="971581635",
       sql_file="web_cryptography_api.sql"
     ) }}
   </figcaption>
 </figure>
 
-There is not much change in the data from last year. `CryptoGetRandomValues` continues to be the most adopted feature (even though its usage has dropped by approximately 1% since last year) because of its use in generating strong pseudo-random numbers. Its high usage is attributable to being used in common services such as Google Analytics.
+与去年相比，数据没有太大变化。`CryptoGetRandomValues` 仍然是采用最多的特性（尽管自去年以来它的使用量下降了大约 1%），因为它用于生成强伪随机数，它的高使用率是由于在诸如谷歌 Analytics 等常见服务中被使用。
 
-### Bot protection services
+### 机器人保护服务（Bot protection services）
 
-The internet today is filled with bots, and hence there is a constant rise in bad bot attacks. According to <a hreflang="en" href="https://www.imperva.com/resources/reports/2022-Imperva-Bad-Bot-Report.pdf">2022 Bad Bot Report</a> by Imperva, 27.7% of all internet traffic was by bad bots. Bad bots are the ones which try to scrape data and exploit it. According to the report, the end of 2021 saw a surge in bad bot attacks probably because of the log4j vulnerability which is exploitable by bots.
+今天的互联网充满了机器人，因此恶意机器人攻击不断上升。根据 Imperva <a hreflang="en" href="https://www.imperva.com/resources/reports/2022-Imperva-Bad-Bot-Report.pdf">2022 年恶意机器人报告</a>， 27.7% 的互联网流量是由恶意机器人造成的。恶意机器人是那些试图抓取数据并利用它的机器人，根据该报告，2021 年底恶意机器人攻击激增，可能是因为 log4j 漏洞可被机器人利用。
 
 {{ figure_markup(
   image="bot-protection-service-usage.png",
-  caption="Usage of bot protection services by provider.",
-  description="Bar chart showing usage of bot protection services. reCaptcha is used by 19.9% of websites on desktop and 18.4% of websites on mobile. Cloudflare bot management is used by 7.9% of websites on desktop and 6.1% of websites on mobile. Akamai Bot Manager is used by 0.6% of websites on desktop and 0.5% of websites on mobile. Imperva is used by 0.4% of websites on desktop and 0.3% of websites on mobile. hCaptcha is used by 0.1% of websites on both desktop and mobile. Other bot protection services are used by 0.4% of websites on desktop and 0.3% of websites on mobile.",
+  caption="供应商使用机器人保护服务的情况",
+  description="条形图显示了机器人保护服务的使用情况。19.9% 的桌面端网站和 18.4% 的移动端网站使用 reCaptcha；7.9% 的桌面端网站和 6.1% 的移动端网站使用 Cloudflare 机器人管理；有 0.6% 的桌面端网站和 0.5% 的移动端网站使用 Akamai 机器人管理；有 0.4% 的桌面端网站和 0.3% 的移动端网站使用了 Imperva；其他机器人保护服务有 0.4% 的网站在桌面端使用，0.3% 的网站在移动端使用。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPHK3G2Ir-ys_oTrrhugqxV0aOSj3y5d1lANQ54GdaQtIHrzXIjQQGEpIdT_mQvxTrMtpd0Hn30zhF/pubchart?oid=1782263355&format=interactive",
   sheets_gid="1592374295",
   sql_file="bot_detection.sql"
 ) }}
 
-Our analysis shows that 29% of desktop websites and 26% of mobile websites use a mechanism to fight malicious bots which is a significant increase from last year (11% and 10% respectively). This increase could be because of <a hreflang="en" href="https://www.cloudflare.com/en-gb/products/bot-management/">Cloudflare Bot Management</a> which is a captcha-free solution for protection against bad bots. Last year's data crawl didn't track this, but identifying this was added this year and we see 6% of websites on mobile using it. Usage of reCaptcha has also increased from last year on both desktop and mobile by approximately 9%.
+我们的分析显示 29% 的桌面端网站和 26% 的移动端网站使用了对抗恶意机器人的机制，这比去年（分别为 11% 和 10%）有了明显的增长，这一增长可能是因为 <a hreflang="en" href="https://www.cloudflare.com/en-gb/products/bot-management/">Cloudflare Bot Management</a>，它是一种保护免受恶意机器人攻击的免验证码解决方案。去年的数据抓取没有追踪到这一点，但今年增加了这一点，我们看到 6% 的移动端网站使用了它。reCaptcha 在桌面和移动端的使用率也比去年增长了约 9%。
 
-## Drivers of security mechanism adoption
+## 采用安全机制的驱动因素
 
-There are multiple driving factors for a website to adopt more security practices. The three primary ones ares:
-- Societal: more security-oriented education in certain countries, or laws that take more punitive measures in case of a data breach
-- Technological: it might be easier to adopt security features in certain technology stacks, or certain vendors might enable security features by default
-- Popularity: widely popular websites may face more targeted attacks than a website that is little known
+网站采用更多的安全措施有多种驱动因素，主要包括以下三种：
+- 社会方面：在某些国家进行更多的安全教育，或在发生数据泄露时采取更多基于法律的惩罚措施
+- 技术层面：在某些技术栈中采用安全特性可能更容易，或者某些供应商可能在默认情况下启用安全特性
+- 知名度：广受欢迎的网站可能比鲜为人知的网站面临更多有针对性的攻击
 
-### Location of website
+### 网站地理位置
 
-Location of the website, where the website developers are based or where the website is hosted can often have impacts on adoption of security features. This can be because of the awareness among developers being different, but can also be because of the laws of the country mandating adoption of certain security practices.
+网站地理位置、网站开发人员的所在地或网站的托管地往往会对安全功能的采用产生影响，这可能是因为开发人员之间的意识不同，但也可能是因为国家的法律强制采用某些安全实践。
 
 {{ figure_markup(
   image="adoption-of-https-per-country.png",
-  caption="Adoption of HTTPS per country.",
-  description="Bar chart showing percentage of sites with HTTPS enabled, for sites related to different countries. New Zealand, Nigeria, Australia, Norway, Switzerland, Denmark, Ireland, South Africa, Netherlands and Canada are the top in order at 95% to 93%. At the other end Vietnam, Serbia, Russian Federation, Poland, Iran, Indonesia, Taiwan, Thailand, Korea and Japan are at 85% to 81%.",
+  caption="每个国家启用 HTTPS 的情况",
+  description="条形图显示了与不同国家有关的网站启用 HTTPS 的百分比。新西兰、尼日利亚、澳大利亚、挪威、瑞士、丹麦、爱尔兰、南非、荷兰和加拿大依次为 95% 至 93%。在另一端，越南、塞尔维亚、俄罗斯联邦、波兰、伊朗、印度尼西亚、台湾、泰国、韩国和日本为 85% 至 81%。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPHK3G2Ir-ys_oTrrhugqxV0aOSj3y5d1lANQ54GdaQtIHrzXIjQQGEpIdT_mQvxTrMtpd0Hn30zhF/pubchart?oid=1218814034&format=interactive",
   sheets_gid="1838772734",
   sql_file="feature_adoption_by_country.sql",
@@ -1069,12 +1067,12 @@ Location of the website, where the website developers are based or where the web
   height=617
 ) }}
 
-We see a lot of new countries like Nigeria, Norway and Denmark quickly rise to the top in the adoption of HTTPS. It's a good sign to see new countries also adopting widespread security practices because that can be an indication of rising awareness everywhere. Also, the difference between the least adoption and most adoption of HTTPS is reducing, which shows that almost all countries at least strive to have HTTPS by default on their websites.
+我们看到许多新国家，如尼日利亚、挪威和丹麦，在启用 HTTPS 方面迅速上升到前列，看到新的国家也采取广泛的安全措施是一个好迹象，因为这可能表明各地的安全意识都在提高。另外，启用 HTTPS 最少的国家和启用 HTTPS 最多的国家之间的差距正在缩小，这表明几乎所有国家都在努力将 HTTPS 作为其网站的默认设置。
 
 {{ figure_markup(
   image="adoption-of-csp-and-xfo-per-country.png",
-  caption="Adoption of CSP and XFO per country.",
-  description="Bar chart showing New Zealand has 22% of sites using CSP and 38% using XFO, Australia has 21% for CSP and 35% for XFO, Indonesia has 21% for CSP and 32% for XFO, USA has 20% for CSP and 31% for XFO, and Ireland has 20% for CSP and 36% for XFO. At the bottom end Ukraine has 7% for CSP and 21% for XFO, Japan has 7% for CSP and 17% for XFO, Kazakhstan has 6% for CSP and 21% for XFO, Belarus has 5% for CSP and 20% for XFO, and Russia has 5% for CSP and 20% for XFO.",
+  caption="每个国家启用 CSP 和 XFO 的情况",
+  description="条形图显示，新西兰有 22% 的站点使用 CSP，38% 使用 XFO；澳大利亚有 21% 使用 CSP，35% 使用 XFO；印度尼西亚有 21% 使用 CSP，32% 使用 XFO；美国有 20% 使用CSP，31% 使用 XFO；爱尔兰有 20% 使用 CSP，36% 使用 XFO；乌克兰有 7% 的 CSP和 21% 的 XFO 占比；日本有 7% 的 CSP 和 17% 的 XFO 占比；哈萨克斯坦有 6% 的 CSP 和 21% 的 XFO 占比，白俄罗斯有 5% 的 CSP 和 20% 的 XFO 占比，而俄罗斯有 5% 的 CSP 和 20% 的 XFO 占比。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPHK3G2Ir-ys_oTrrhugqxV0aOSj3y5d1lANQ54GdaQtIHrzXIjQQGEpIdT_mQvxTrMtpd0Hn30zhF/pubchart?oid=651643593&format=interactive",
   sheets_gid="1838772734",
   sql_file="feature_adoption_by_country.sql",
@@ -1082,18 +1080,18 @@ We see a lot of new countries like Nigeria, Norway and Denmark quickly rise to t
   height=598
 ) }}
 
-The adoption of CSP and `X-Frame-Options` (XFO) is very similar to last year. Surprisingly, we see websites in Indonesia have started adopting CSP a lot, even though their adoption of HTTPS continues to be low. The adoption of CSP still seems to be very varied across countries but the gap between adoption of XFO is gradually decreasing. More countries need to increase the adoption of CSP since it is a very important security feature that protects against a varied number of attacks.
+CSP 和 `X-Frame-Options`（XFO）的启用与去年非常相似，令人惊讶的是，我们看到印尼的网站已经开始大量使用 CSP，尽管他们对 HTTPS 的启用仍然很低。各国对 CSP 的采用似乎仍有很大差异，但对 XFO 的采用之间的差距正在逐渐缩小。更多的国家需要增加对 CSP 的采用，因为它是一个非常重要的安全特性，可以抵御各种各样的攻击。
 
-### Technology stack
+### 技术栈
 
-Another factor that can strongly influence the adoption of certain security mechanisms is the technology stack that's being used to build a website. In some cases, security features may be enabled by default, for example, in content management systems.
+另一个可以强烈影响某些安全机制采用的因素是用于构建网站的技术栈，在某些情况下，例如在内容管理系统中，安全特性可能是默认启用的。
 
 <figure>
   <table>
     <thead>
       <tr>
         <th>Technology</th>
-        <th>Security features</th>
+        <th>安全特性</th>
       </tr>
     </thead>
     <tbody>
@@ -1162,121 +1160,121 @@ Another factor that can strongly influence the adoption of certain security mech
   </table>
   <figcaption>
     {{ figure_link(
-      caption="Security features adoption by various technology.",
+      caption="各类技术（网站等）所采用的安全特性",
       sheets_gid="1386880960",
       sql_file="feature_adoption_by_technology.sql"
     ) }}
   </figcaption>
 </figure>
 
-Above we see some of the common CMS and blogging sites. A common pattern that we see with sites that provide very little customization and focus more on content editing, like Wix, Squarespace and Medium, is they have basic security features by default such as `Strict-Transport-Security`. Content management systems like Wagtail, Plone and Drupal have very bare minimum security features, since they are often used by developers to set up the website and hence the responsibility to add security features are more on developers. We also see that websites using Google Sites have many security features by default.
+上面我们看到一些常见的 CMS 和博客网站，我们看到的一个共同模式是，像 Wix、Squarespace 和 Medium 这样很少提供定制服务，更注重内容编辑的网站，它们默认有基本的安全功能，如 `Strict-Transport-Security`。像 Wagtail、Plone 和 Drupal 这样的内容管理系统只采用了非常少的安全功能，因为它们经常被开发人员用来建立网站，因此增加安全功能的责任更多地落在了开发人员身上。我们还看到，使用谷歌站点的网站在默认情况下具有许多安全特性。
 
-### Website popularity
+### 网站知名度
 
-Websites that have many visitors may be more prone to targeted attacks given that there are more users with potentially sensitive data to attract attackers. Therefore, it can be expected that widely visited websites invest more in security in order to safeguard their users.
+访问者多的网站可能更容易受到有针对性的攻击，因为有更多的用户拥有潜在的敏感数据来吸引攻击者。因此，可以预期的是浏览量大的网站为了保护用户，会在安全方面投入更多资金。
 
 {{ figure_markup(
   image="prevalence-of-headers-in-sites-by-rank.png",
-  caption="Prevalence of security headers set in a first-party context by rank.",
-  description="Bar chart showing in top 1,000 sites, 55.9% have XFO, 56.8% have HSTS and 27% have CSP headers. In top 10,000, 51.3% have XFO, 44.5% have HSTS and 20.6% have CSP headers. In top 100,000, 48.1% have XFO, 38% have HSTS and 17.8% have CSP headers. In top 1,000,000, 41.9% have XFO, 31.1% have HSTS and 16.4% have CSP headers. Among all sites, 31% have XFO, 25.7% have HSTS and 14.6% have CSP.",
+  caption="第一方环境中按等级设置安全标头的流行度",
+  description="条柱状图显示，在排名前 1000 位的网站中，55.9% 设置了 XFO，56.8% 设置了 HSTS，27% 设置了 CSP 标头；在排名前 10,000 的网站中，51.3% 设置了 XFO，44.5% 设置了 HSTS，20.6% 设置了 CSP 标头；在前 100,000 名中，48.1% 设置了 XFO，38% 设置了 HSTS，17.8% 设置了 CSP 标头；在排名前 100 万的网站中，41.9% 设置了 XFO，31.1% 设置了 HSTS，16.4% 设置了 CSP 标头；在所有网站中，31% 设置了 XFO，25.7% 设置了 HSTS，14.6% 设置了 CSP。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPHK3G2Ir-ys_oTrrhugqxV0aOSj3y5d1lANQ54GdaQtIHrzXIjQQGEpIdT_mQvxTrMtpd0Hn30zhF/pubchart?oid=1055039456&format=interactive",
   sheets_gid="1909836848",
   sql_file="security_adoption_by_rank.sql"
   )
 }}
 
-We found that `Strict-Transport-Security`, `X-Frame-Options`, and `X-Content-Type-Options` always have more adoption for websites which are more popular. 56.8% of the top 1000 websites in mobile have Strict-Transport-Security, which means these websites care more about serving their content and data only via HTTPS. The less popular websites might have HTTPS enabled, but often seem to not add a `Strict-Transport-Security` header to ensure that their website is always served over HTTPS. The numbers this year are pretty consistent with last year's findings.
+我们发现，`Strict-Transport-Security`、`X-Frame-Options` 和 `X-Content-Type-Options` 总是被更受欢迎的网站采用。在移动端领域排名前 1000 的网站中，56.8% 的网站设置了 Strict-Transport-Security，这意味着这些网站更关心只通过 HTTPS 提供内容和数据。不太受欢迎的网站可能启用了 HTTPS，但往往可能没有添加一个 `Strict-Transport-Security` 标头，以确保他们的网站总是通过 HTTPS 服务，今年的数字与去年的调查结果相当一致。
 
-## Malpractices on the web
+## 网络上的不良行为
 
-Cryptocurrencies continued to grow in popularity this year with more types available for various use cases. With that continued growth and existing economic incentive, cybercriminals have consistently leveraged this to their advantage via [cryptojacking](https://en.wikipedia.org/wiki/Cryptojacking). However the use of crypto miners has overall trended downward since last year. What seems to occur is certain vulnerability events that enable attackers to inject crypto miners into systems on both desktop and mobile triggers a spike in their usage:
+今年加密货币的受欢迎程度继续增长，有更多的类型可用于各种使用情况，随着这种持续增长和现有的经济激励，网络犯罪分子通过[加密货币劫持](https://en.wikipedia.org/wiki/Cryptojacking)这一点为他们获得好处。然而，自去年以来，加密货币矿工的使用总体呈下降趋势，似乎是因为某些漏洞事件，使攻击者能够将加密货币矿工注入到桌面和移动端系统中，从而引发其使用量的激增。
 
 {{ figure_markup(
   image="cryptominer-usage.png",
-  caption="Cryptominer usage.",
-  description="Time series chart showing the evolution of the number of sites with cryptojacking scripts from January 2020 until July 2022. There is an upward trend from 500 desktop sites and 606 mobile sites at the beginning to 827 sites on desktop and 983 sites on mobile at August 2021, and then a downward trend with 61 sites on desktop and 127 sites on mobile at July 2022.",
+  caption="Cryptominer 的使用",
+  description="时间序列图显示了从 2020 年 1 月到 2022 年 7 月带有加密劫持脚本网站数量的演变。从最初的 500 个桌面端站点和 606 个移动端站点到 2021 年 8 月的 827 个桌面端站点和 983 个移动端站点，呈上升趋势，然后在 2022 年 7 月呈下降趋势，桌面端站点为 61 个，移动端站点为 127 个。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPHK3G2Ir-ys_oTrrhugqxV0aOSj3y5d1lANQ54GdaQtIHrzXIjQQGEpIdT_mQvxTrMtpd0Hn30zhF/pubchart?oid=1621924056&format=interactive",
   sheets_gid="367286091",
   sql_file="cryptominer_usage.sql"
 ) }}
 
-As an example, around July and August of 2021, there were reports of several cryptojacking campaigns and vulnerabilities1,2,3 which could be the cause for the spikes in cryptominers found in websites around that time. More recently, in April of 2022 hackers attempted to leverage the <a hreflang="en" href="https://arstechnica.com/information-technology/2022/04/hackers-hammer-springshell-vulnerability-in-attempt-to-install-cryptominers/">SpringShell vulnerability to set up and run crypto miners</a>.
+例如，在 2021 年 7 月和 8 月左右，出现了几次加密劫持活动和漏洞 1、2、3 的报告，这可能是当时在网站上发现加密矿机激增的原因。最近，在 2022 年 4 月，黑客试图利用 <a hreflang="en" href="https://arstechnica.com/information-technology/2022/04/hackers-hammer-springshell-vulnerability-in-attempt-to-install-cryptominers/">SpringShell 漏洞来建立和运行加密货币矿机</a>。
 
-Getting into the specifics of the cryptominers found in use among websites on both desktop and mobile we found that the share among miners has spread from last year. For example, Coinimp's share has shrunk since last year by about 24% while Minero.cc has grown by about 11%.
+深入了解在桌面和移动端网站中发现加密货币的具体情况，我们发现，矿工中的份额比去年有所扩散，例如，Coinimp 的份额自去年以来缩减了约 24%，而 Minero.cc 则增长了约 11%。
 
 {{ figure_markup(
   image="cryptominer-market-share.png",
-  caption="Cryptominer market share (mobile).",
-  description="Pie chart showing CoinImp has 60.4% of market share, Coinhive has 15.6%, Minero has 12.4%, JSECoin has 6.8% and others have approximately 4.8%.",
+  caption="加密货币市场份额（移动端）",
+  description="饼状图显示 CoinImp 占 60.4% 的市场份额，Coinhive 占 15.6%，Minero 占 12.4%，JSECoin 占 6.8%，其他约占 4.8%。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPHK3G2Ir-ys_oTrrhugqxV0aOSj3y5d1lANQ54GdaQtIHrzXIjQQGEpIdT_mQvxTrMtpd0Hn30zhF/pubchart?oid=1570078079&format=interactive",
   sheets_gid="280179954",
   sql_file="cryptominer_share.sql"
 ) }}
 
-These results suggest that cryptojacking continues to be a serious attack vector each year with usage spikes based on newly emerged vulnerabilities that enable them. Therefore proper diligence is still required in order to mitigate risks in this space.
+这些结果表明，加密劫持仍然是一个严重的攻击载体，每年根据新出现的漏洞使其使用量激增。因此，为了减轻这一领域的风险，仍然需要适当的努力。
 
-Note that not all of these websites are infected. Website operators may also deploy this technique (instead of showing ads) to finance their website. But the use of this technique is also heavily discussed technically, legally, and ethically.
+注意，并非所有这些网站都受到了感染，网站运营商也可能部署这种技术(而不是展示广告)来资助他们的网站，但这种技术的使用也在技术上、法律上和伦理上被大量讨论。
 
-Please also note that our results may not show the actual state of the websites infected with cryptojacking. Since we run our crawler once a month, not all websites that run a cryptominer can be discovered. This is the case, for example, if a website remains infected for only X days and not on the day our crawler ran.
+请注意，我们的结果可能不会显示受加密劫持感染网站的实际状态。由于我们每个月运行一次爬虫程序，并不是所有运行加密程序的网站都能被发现，例如，如果一个网站只受感染 X 天，但不在我们的爬虫运行的那天，情况就是这样。
 
 ## Well-known URIs
 
-<a hreflang="en" href="https://datatracker.ietf.org/doc/html/rfc8615">Well-known URIs</a> are used to designate specific locations to data or services related to the overall website. A well-known URI is a <a hreflang="en" href="https://datatracker.ietf.org/doc/html/rfc3986">URI</a> whose path component begins with the characters `/.well-known/`
+<a hreflang="en" href="https://datatracker.ietf.org/doc/html/rfc8615">Well-known URIs</a> 用于指定与整个网站有关的数据或服务的特定位置。well-known URI 是一个 <a hreflang="en" href="https://datatracker.ietf.org/doc/html/rfc3986">URI</a>，其路径组件以 `/.well-known/` 字符开头。
 
 ### `security.txt`
 
-<a hreflang="en" href="https://datatracker.ietf.org/doc/html/draft-foudil-securitytxt-12">`security.txt`</a> is a file format for websites to provide a standard for vulnerability reporting. Website providers can provide contact details, PGP key, policy, and other information in this file. White hat hackers and penetration testers can use this information to conduct security analyses on these websites and report a vulnerability.
+<a hreflang="en" href="https://datatracker.ietf.org/doc/html/draft-foudil-securitytxt-12">`security.txt`</a> 是网站提供漏洞报告标准的文件格式，网站提供者可以在这个文件中提供详细的联系方式、PGP 密钥、策略和其他信息。白帽黑客和渗透测试人员可以利用这些信息对这些网站进行安全分析并报告漏洞。
 
 {{ figure_markup(
   image="usage-of-properties-in-well-known-security.png",
-  caption="Use of security.txt properties.",
-  description="Bar chart showing use of different properties in `security.txt`.  0.6% of desktop and 0.4% of mobile `security.txt` files are signed, `Canonical` is used in for 4.2% in desktop and 3.5% in mobile, `Encryption` is 3.0% in desktop and 2.4% in mobile, `Expires` is 3.0% in desktop and 2.3% in mobile, `Policy` is 7.3% in desktop and 6.8% in mobile.",
+  caption="security.txt 属性的使用",
+  description="柱状图显示了 `security.txt` 中不同属性的使用。0.6% 的桌面端和 0.4% 的移动端设备使用 `security.txt` 文件签名，4.2% 的桌面端和 3.5% 的移动端设备使用 `Canonical`，3.0% 的桌面端和 2.4% 的移动端设备使用 `Encryption`，3.0% 的桌面端和 2.3% 的移动端设备使用 `Expires`，7.3% 的桌面端和 6.8% 的移动端设备使用 `Policy`。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPHK3G2Ir-ys_oTrrhugqxV0aOSj3y5d1lANQ54GdaQtIHrzXIjQQGEpIdT_mQvxTrMtpd0Hn30zhF/pubchart?oid=446092062&format=interactive",
   sheets_gid="337263220",
   sql_file="well-known_security.sql"
   )
 }}
 
-The percentage of `security.txt` URIs with the `expires` property has increased from 0.7% to 2.3% this year. The `expires` property is a required property based on the standard, so it is good to see more websites adhering to the standard. `policy` continues to be the most popular property in a `security.txt` URI. `policy` is very essential in a `security.txt` URI since it describes the steps to be followed by a security researcher to report a vulnerability.
+今年，带有 `expires` 属性的 `security.txt` URI 百分比从 0.7% 增加到 2.3%，`expires` 属于该标准的必需属性，所以看到更多的网站遵守该标准是件好事。`policy` 仍然是 `security.txt` URI中最受欢迎的属性，`policy` 在 `security.txt` URI 中非常重要，因为它描述了安全研究人员报告漏洞时应遵循的步骤。
 
 ### `change-password`
 
-The <a hreflang="en" href="https://w3c.github.io/webappsec-change-password-url/">`change-password`</a> well-known URI is a specification under the Web Application Security Working Group of the W3C which is in editor's draft state right now. This specific well-known URI was suggested as a way for users and softwares to easily identify the link to be used for changing passwords.
+The <a hreflang="en" href="https://w3c.github.io/webappsec-change-password-url/">`change-password`</a> well-known URI 是 W3C Web 应用程序安全工作组的一个规范，目前处于编辑草案状态。这个特定的 well-known URI 被建议作为一种方式，让用户和软件能够轻松识别用于更改密码的链接。
 
 {{ figure_markup(
   image="usage-of-change-password.png",
-  caption="Use of change-password endpoint.",
-  description="Bar chart showing 0.28% websites on desktop and 0.26% websites on mobile use change-password endpoint.",
+  caption="使用 change-password 端点",
+  description="柱状图显示 0.28% 的桌面端网站和 0.26% 的移动端网站使用 change-password 端点。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPHK3G2Ir-ys_oTrrhugqxV0aOSj3y5d1lANQ54GdaQtIHrzXIjQQGEpIdT_mQvxTrMtpd0Hn30zhF/pubchart?oid=1340997331&format=interactive",
   sheets_gid="168419039",
   sql_file="well-known_change-password.sql"
   )
 }}
 
-The adoption of this well-known URI is still pretty low. The specification is still work-in-progress so it's understandable that not many websites have started adopting it. Also, not all websites will have a change-password form, especially if they don't have a sign-in system for their website.
+这个 well-known URI 的采用率仍然相当低，该规范仍在进行中，所以没有多少网站开始采用它是可以理解的。另外，并不是所有的网站都会有一个 change-password 的表格，特别是如果他们的网站没有登录系统。
 
-### Detecting Status Code Reliability
+### 检测状态码可靠性
 
-This particular well-known URI determines the reliability of a website's HTTP response status code. This URI is also still in <a hreflang="en" href="https://w3c.github.io/webappsec-change-password-url/response-code-reliability.html">editor's draft</a> state and may change in the future. The idea behind this well-known URI is that it should never exist in any website. So this well-known URI should never respond with an <a hreflang="en" href="https://fetch.spec.whatwg.org/#ok-status">ok-status</a>. If it redirects and returns an "ok-status", that means the website's status codes are not reliable.
+这个 well-known URI 决定了网站 HTTP 响应状态码的可靠性，此 URI 也仍然处于<a hreflang="en" href="https://w3c.github.io/webappsec-change-password-url/response-code-reliability.html">编辑草案</a>状态，将来可能会更改。这个 well-known URI 背后的理念是，它不应该存在于任何网站中，因此这个 well-known URI 不应该响应 <a hreflang="en" href="https://fetch.spec.whatwg.org/#ok-status">ok-status</a>，如果它重定向并返回一个 "ok-status"，这意味着该网站的状态码不可靠。
 
 {{ figure_markup(
   image="detecting-status-code-reliability.png",
-  caption="Statuses of the resource-that-should-not-exist-whose-status-code-should-not-be-200 endpoint.",
-  description="Bar chart showing response status returned by `resource-that-should-not-exist-whose-status-code-should-not-be-200` endpoint. Among websites on desktop, 10% return 200, 84% return not-ok status and 6% return 201-299 status codes. Among websites on desktop, 9% return 200, 84% return not-ok status and 7% return 201-299 status codes.",
+  caption="resource-that-should-not-exist-whose-status-code-should-not-be-200 端点的状态",
+  description="条形图显示由 `resource-that-should-not-exist-whose-status-code-should-not-200` 端点返回的响应状态。在桌面端网站中，10% 返回 200，84% 返回 not-ok 状态，6% 返回 201-299 状态码。在移动端网站中，9% 返回 200，84% 返回 not-ok 状态，7% 返回 201-299 状态码。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPHK3G2Ir-ys_oTrrhugqxV0aOSj3y5d1lANQ54GdaQtIHrzXIjQQGEpIdT_mQvxTrMtpd0Hn30zhF/pubchart?oid=1477977449&format=interactive",
   sheets_gid="1163882629",
   sql_file="well-known_resource-not-be-200.sql"
   )
 }}
 
-We found that 84% of websites in both mobile and desktop respond with a not-ok status for this well-known URI. The good thing about this specification is if websites are correctly configured, this specification should automatically work and won't need website developers to make any specific changes.
+我们发现，84% 的网站在移动端和桌面端都对这一 well-known URI 做出了 not-ok 的回应，这个规范的好处是，如果网站配置正确，这个规范应该自动工作，不需要网站开发人员做任何具体的修改。
 
-## Conclusion
+## 总结
 
-Our analysis this year shows that websites are continuing to make improvements in their security features like we have seen over the past years. It's also exciting to see that many countries who were behind on web security adoptions are increasing their usage. This could mean that awareness around web security in general is increasing.
+我们今年的分析显示，各网站正在继续对其安全功能进行加固，就像我们在过去几年中看到的那样。同样令人兴奋的是，许多在网络安全采用方面落后的国家正在增加其使用量，这可能意味着人们对网络安全的意识正在普遍提高。
 
-We found that web developers are also slowly adopting new standards and replacing the old ones. This is definitely a step in the right direction. The importance of security and privacy on the internet is growing everyday. The web keeps becoming an integral part of life for many people and hence, web developers should continue to increase the usage of web security features.
+我们发现，web 开发人员也在慢慢采用新的标准，取代旧的标准，这绝对是朝着正确的方向迈出的一步，网络安全和隐私的重要性与日俱增。网络已经成为许多人生活中不可分割的一部分，因此网络开发人员应该继续增加网络安全功能的使用。
 
-There's still a lot of progress that we need to do in setting stricter Content Security Policy. Cross-site scripting continues to be in <a hreflang="en" href="https://owasp.org/Top10/">OWASP Top 10</a>. There needs to be wider adoption of stricter `script-src` directives to prevent such attacks. Also, more developers can look into taking advantage of Web Cryptography API. Similar efforts need to be made in adopting well-known URIs like security.txt. Not only does it provide a way for security professionals to report vulnerabilities in the website, but it also shows that the developers care about the website's security and are open to making improvements.
+在制定更严格的内容安全政策方面，我们还有很多工作要做。跨站脚本继续在 <a hreflang="en" href="https://owasp.org/Top10/">OWASP 前十名</a>，需要更广泛地采用更严格的 `script-src` 指令，来防止此类攻击。此外，更多的开发人员可以考虑利用 Web Cryptography API，在采用 well-known URIs（如 security.txt）时也需要做出类似的努力，它不仅为安全专家提供了一种报告网站漏洞的方法，而且还表明开发人员关心网站的安全，并愿意进行改进。
 
-It's encouraging to observe the continuous progress in usage of web security over the past years, but the web community needs to continue researching and adopting more security features since the web continues to grow and security becomes more crucial.
+在过去的几年里网络安全的使用不断进步是令人鼓舞的，但网络社区需要继续研究和采用更多的安全特性，因为 web 在不断增长，安全变得更加重要。
