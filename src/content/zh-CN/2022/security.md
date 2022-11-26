@@ -24,7 +24,7 @@ featured_stat_label_3: Increase in adoption of Permissions Policy
 
 随着人们的个人信息越来越数字化，安全和隐私在互联网上变得极其重要，网站所有者有责任确保他们从用户那里获取数据的安全性。因此，必须采用所有的安全最佳实践，以确保用户免受恶意软件利用漏洞获取敏感信息的影响。
 
-与[往年](../2021/security)一样，我们分析了 Web 社区对安全方法和最佳实践的采用和使用情况。我们分析了与每个网站应该采取的最基本安全措施有关的指标，如[传输安全](#传输安全（transport-security）)和[适当的 cookie 管理](#cookies)。我们还讨论了与采用不同安全头（security headers）有关的数据，以及它们如何帮助 [content inclusion](#内容包含（content-inclusion）) 和[防止各种恶意攻击](#attack-preventions)。
+与[往年](../2021/security)一样，我们分析了 Web 社区对安全方法和最佳实践的采用和使用情况。我们分析了与每个网站应该采取的最基本安全措施有关的指标，如[传输安全](#传输安全（transport-security）)和[适当的 cookie 管理](#cookies)。我们还讨论了与采用不同安全头（security headers）有关的数据，以及它们如何帮助 [content inclusion](#内容包含（content-inclusion）) 和[防止各种恶意攻击](#预防攻击)。
 
 我们研究了[安全措施的采用](#采用安全机制的驱动因素)与地点、技术栈和网站受欢迎程度的相关性，我们希望通过这种相关性鼓励所有的技术栈在默认情况下采取更好的安全措施。我们还讨论了一些 [well-known URIs](#well-known-uris)，它们有助于基于 Web 应用程序安全工作组的标准和草案进行漏洞披露和其他与安全相关的设置。
 
