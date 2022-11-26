@@ -6,7 +6,7 @@ authors: [SaptakS, lirantal, clarkio]
 reviewers: [kushaldas, tunetheweb]
 analysts: [VictorLeP, vikvanderlinden, GJFR]
 editors: [tunetheweb]
-translators: []
+translators: [Levix]
 SaptakS_bio:  Saptak S 是一名以人权为中心的 Web 开发者，专注于 Web 开发中的可用性、安全性、隐私和无障碍性主题。他是各种不同开源项目的贡献者和维护者，如 <a hreflang="en" href="https://www.a11yproject.com">A11Y 项目</a>, <a hreflang="en" href="https://onionshare.org/">OnionShare</a> 和 <a hreflang="en" href="https://wagtail.org/">Wagtail</a>。你可以在 <a hreflang="en" href="https://saptaks.blog">saptaks.blog</a> 找到他的博客。
 lirantal_bio: <a hreflang="en" href="https://www.lirantal.com/">Liran Tal</a> 因其开源和 JavaScript 安全倡议而闻名，并在 Node.js 安全方面的工作获得了OpenJS 基金会的安全探路者奖项，是国际公认的 <a hreflang="en" href="https://stars.github.com/profiles/lirantal/">GitHub Star</a>，他是 JavaScript 社区获奖的软件开发人员、安全研究员和开源倡导者。他对开发者安全教育的贡献包括领导 OWASP 项目，建立供应链安全工具，参与 CNCF 和 OpenSSF 计划，并撰写了 O'Reilly 的 《Serverless Security》 等书籍，他领导着 Snyk.io 开发者宣传团队，并以赋予开发者更好的应用安全技能为使命。
 clarkio_bio: Brian 是一位在应用安全方面有深入经验的 Web 开发者，通过在 Snyk.io 担任开发者大使的工作，帮助开发者构建安全的 Web 应用。虽然他有全栈项目的工作经验，但他的重点是后端服务、API 和开发者工具。Brian 喜欢向开发人员传授他从整个职业生涯的成功和失败中学到的东西。你可以在他<a hreflang="en" href="https://clarkio.live">每周的直播</a>中或在他的 <a hreflang="en" href="https://www.pluralsight.com/authors/brian-clark">Pluralsight 课程</a>中找到他正在做的事情。
