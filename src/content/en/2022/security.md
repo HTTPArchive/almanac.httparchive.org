@@ -1262,7 +1262,7 @@ This particular well-known URI determines the reliability of a website's HTTP re
 {{ figure_markup(
   image="detecting-status-code-reliability.png",
   caption="Statuses of the resource-that-should-not-exist-whose-status-code-should-not-be-200 endpoint.",
-  description="Bar chart showing response status returned by `resource-that-should-not-exist-whose-status-code-should-not-be-200` endpoint. Among websites on desktop, 10% return 200, 84% return not-ok status and 6% return 201-299 status codes. Among websites on desktop, 9% return 200, 84% return not-ok status and 7% return 201-299 status codes.",
+  description="Bar chart showing response status returned by `resource-that-should-not-exist-whose-status-code-should-not-be-200` endpoint. Among websites on desktop, 10% return 200, 84% return not-ok status and 6% return 201-299 status codes. Among websites on mobile, 9% return 200, 84% return not-ok status and 7% return 201-299 status codes.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPHK3G2Ir-ys_oTrrhugqxV0aOSj3y5d1lANQ54GdaQtIHrzXIjQQGEpIdT_mQvxTrMtpd0Hn30zhF/pubchart?oid=1477977449&format=interactive",
   sheets_gid="1163882629",
   sql_file="well-known_resource-not-be-200.sql"
