@@ -256,7 +256,6 @@ There are two different ways to set the time when a cookie is deleted: `Max-Age`
 
 Unlike last year, where we saw that the median for `Max-Age` was 365 days but the median for `Expires` was 180 days, this year it's around 365 days for both. Hence the median for real maximum age has gone up from 180 days to 365 days this year. Even though the `Max-Age` is 729 days and `Expires` is 730 days in the 90th percentile, Chrome has been planning to put a <a hreflang="en" href="https://chromestatus.com/feature/4887741241229312">cap of 400 days</a> for both `Max-Age` and `Expires`.
 
-
 <figure>
   <table>
     <thead>
@@ -542,7 +541,6 @@ Subresource integrity is specified as a base64 string of a computed hash of one 
 ) }}
 
 Consistent with last year's report, SHA384 continues to demonstrate the majority of SRI hash types observed between all available hash functions.
-
 
 CDNs are no strangers to Subresource Integrity and provide secure defaults to their consumers by including a Subresource Integrity value as part of their URL references for content to be served on the page.
 
