@@ -126,7 +126,6 @@ def test_render_search_year(client):
 def test_render_search_year_slash(client):
     assert_route(client, "/en/2020/search/", 301, "/en/search")
 
-
 def test_render_sitemap(client):
     assert_route(client, "/sitemap.xml", 200)
 
@@ -149,6 +148,15 @@ def test_render_en_2019_bad_chapter(client):
 
 def test_render_en_2019_good_chapter_slash(client):
     assert_route(client, "/en/2019/css/", 302, "/en/2019/css")
+
+
+def test_redirect_untranslated_chapter(client):
+    assert_route(client, "/nl/2019/http", 302, "/en/2019/http")
+
+
+def test_redirect_untranslated_chapter_qith_queryparam(client):
+    assert_route(client, "/nl/2019/http?queryparam", 302, "/en/2019/http?queryparam")
+
 
 
 def test_render_robots(client):
