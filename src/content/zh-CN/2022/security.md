@@ -13,11 +13,11 @@ clarkio_bio: Brian 是一位在应用安全方面有深入经验的 Web 开发�
 results: https://docs.google.com/spreadsheets/d/1cwJ43NL2IN2PxJa5oiOoJCRkSh566XE_k9uHnGJdWeg/
 featured_quote: 人们的个人信息以及生活的各个方面每天都在变得越来越数字化，这使得安全和隐私变得极为重要，网站有责任采用最佳的安全实践来确保其用户隐私受到保护。
 featured_stat_1: +14%
-featured_stat_label_1: Increase in adoption for Content Security Policy
+featured_stat_label_1: 内容安全策略（CSP）的采用率增加
 featured_stat_2: 428
-featured_stat_label_2: Websites using the `Clear-Site-Data` header
+featured_stat_label_2: 使用 `Clear-Site-Data` 标头的网站
 featured_stat_3: +85%
-featured_stat_label_3: Increase in adoption of Permissions Policy
+featured_stat_label_3: 权限策略（Permissions Policy）的采用率增加
 ---
 
 ## 介绍
@@ -45,7 +45,7 @@ featured_stat_label_3: Increase in adoption of Permissions Policy
 {{ figure_markup(
   image="https-usage-by-site.png",
   caption="网站的 HTTPS 使用率",
-  description="柱状图显示 89% 的桌面端站点使用 HTTPS，剩下的 11% 使用 HTTP，而 85% 的移动端站点使用 HTTPS，剩下的 15% 使用 HTTP。",
+  description="条形图显示 89% 的桌面端站点使用 HTTPS，剩下的 11% 使用 HTTP，而 85% 的移动端站点使用 HTTPS，剩下的 15% 使用 HTTP。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPHK3G2Ir-ys_oTrrhugqxV0aOSj3y5d1lANQ54GdaQtIHrzXIjQQGEpIdT_mQvxTrMtpd0Hn30zhF/pubchart?oid=1343950152&format=interactive",
   sheets_gid="1806760937",
   sql_file="home_page_https_usage.sql"
@@ -63,7 +63,7 @@ IETF 于 2018 年 8 月发布的 TLS v1.3 是最新版本，相较于 TLS v1.2 �
 {{ figure_markup(
   image="tls-version-by-site.png",
   caption="网站的 TLS 版本使用分布",
-  description="柱状图显示桌面端 67% 的站点采用 TLSv1.3, 33% 的站点采用 TLSv1.2 版本。在移动端上，这一数字分别为 70% 和 30%。",
+  description="条形图显示桌面端 67% 的站点采用 TLSv1.3, 33% 的站点采用 TLSv1.2 版本。在移动端上，这一数字分别为 70% 和 30%。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPHK3G2Ir-ys_oTrrhugqxV0aOSj3y5d1lANQ54GdaQtIHrzXIjQQGEpIdT_mQvxTrMtpd0Hn30zhF/pubchart?oid=1390978067&format=interactive",
   sheets_gid="1385583211",
   sql_file="tls_versions_pages.sql"
@@ -79,7 +79,7 @@ IETF 于 2018 年 8 月发布的 TLS v1.3 是最新版本，相较于 TLS v1.2 �
 {{ figure_markup(
   image="distribution-of-cipher-suites.png",
   caption="密码套件的分布",
-  description="堆叠柱状图显示了各设备使用的密码套件，`AES_128_GCM` 是最常见的，被 79% 的桌面端网站和 79% 的移动端网站使用，`AES_256_GCM` 被 19% 的桌面端网站和 18% 的移动端网站使用，`AES_256_CBC` 被 2% 的桌面端网站和 1% 的移动端网站使用，`CHACHA20_POLY1305` 分别被 1% 和 1% 的网站使用，`AES_128_CBC` 分别被 0% 和 0% 使用。",
+  description="条形图显示了各设备使用的密码套件，`AES_128_GCM` 是最常见的，被 79% 的桌面端网站和 79% 的移动端网站使用，`AES_256_GCM` 被 19% 的桌面端网站和 18% 的移动端网站使用，`AES_256_CBC` 被 2% 的桌面端网站和 1% 的移动端网站使用，`CHACHA20_POLY1305` 分别被 1% 和 1% 的网站使用，`AES_128_CBC` 分别被 0% 和 0% 使用。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPHK3G2Ir-ys_oTrrhugqxV0aOSj3y5d1lANQ54GdaQtIHrzXIjQQGEpIdT_mQvxTrMtpd0Hn30zhF/pubchart?oid=1789949340&format=interactive",
   sheets_gid="711514835",
   sql_file="tls_cipher_suite.sql"
@@ -91,7 +91,7 @@ IETF 于 2018 年 8 月发布的 TLS v1.3 是最新版本，相较于 TLS v1.2 �
 {{ figure_markup(
   image="forward-secrecy-support.png",
   caption="前向保密（Forward secrecy）的使用情况",
-  description="柱状图显示，97% 的移动端和桌面端请求都使用了前向保密。",
+  description="条形图显示，97% 的移动端和桌面端请求都使用了前向保密。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPHK3G2Ir-ys_oTrrhugqxV0aOSj3y5d1lANQ54GdaQtIHrzXIjQQGEpIdT_mQvxTrMtpd0Hn30zhF/pubchart?oid=298331860&format=interactive",
   sheets_gid="1454804483",
   sql_file="tls_forward_secrecy.sql"
@@ -180,14 +180,14 @@ TLS v1.3还强制要求[前向保密](https://en.wikipedia.org/wiki/Forward_secr
   sql_file="hsts_attributes.sql",
 ) }}
 
-25% 的移动端响应和 28% 的桌面相应携带 HSTS 头。
+25% 的移动端响应和 28% 的桌面响应携带 HSTS 头。
 
 HSTS 是使用 `Strict-Transport-Security` 请求头来设置的，它可以有三种不同的指令：`max-age`、`includeSubDomains` 和 `preload`。 `max-age` 表示浏览器应该记住只使用 HTTPS 访问网站的时间，以秒为单位，是该请求头的一个强制性指令。
 
 {{ figure_markup(
   image="hsts-directives-usage.png",
   caption="不同 HSTS 指令的使用情况",
-  description="不同 HSTS 指令使用情况百分比条形图。19% 的网站在移动和桌面端都使用了 `preload`，`includeSubdomain` 在 37% 的桌面网站和 34% 的移动网站中被使用，Zero `max-age`用于 6% 的桌面网站和 5% 的移动网站，94% 的桌面网站和 95% 的移动网站设置了有效的 `max-age`。",
+  description="不同 HSTS 指令使用情况百分比柱状图。19% 的网站在移动和桌面端都使用了 `preload`，`includeSubdomain` 在 37% 的桌面网站和 34% 的移动网站中被使用，6% 的桌面端网站和 5% 的移动端网站使用了 max-age 为 0，94% 的桌面网站和 95% 的移动网站设置了有效的 `max-age`。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPHK3G2Ir-ys_oTrrhugqxV0aOSj3y5d1lANQ54GdaQtIHrzXIjQQGEpIdT_mQvxTrMtpd0Hn30zhF/pubchart?oid=683864207&format=interactive",
   sheets_gid="822440544",
   sql_file="hsts_attributes.sql"
@@ -221,7 +221,7 @@ HSTS 是使用 `Strict-Transport-Security` 请求头来设置的，它可以有�
 {{ figure_markup(
   image="httponly-secure-samesite-cookie-usage.png",
   caption="Cookie 属性 (桌面端)",
-  description="桌面端网站上使用 cookie 属性条形图，按第一方和第三方 cookie 划分。第一方 cookie 使用 `HttpOnly` 的比例为 36%，`Secure` 的比例为 37%，`SameSite` 的比例为 45%，而第三方 cookie 使用`HttpOnly` 的比例为 21%，`Secure` 的比例为 90%，`SameSite` 的比例为 88%。",
+  description="桌面端网站上使用 cookie 属性柱状图，按第一方和第三方 cookie 划分。第一方 cookie 使用 `HttpOnly` 的比例为 36%，`Secure` 的比例为 37%，`SameSite` 的比例为 45%，而第三方 cookie 使用`HttpOnly` 的比例为 21%，`Secure` 的比例为 90%，`SameSite` 的比例为 88%。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPHK3G2Ir-ys_oTrrhugqxV0aOSj3y5d1lANQ54GdaQtIHrzXIjQQGEpIdT_mQvxTrMtpd0Hn30zhF/pubchart?oid=528777115&format=interactive",
   sheets_gid="168091712",
   sql_file="cookie_attributes.sql"
@@ -706,7 +706,7 @@ CDNs 对子资源完整性并不陌生，通过在页面内容的 URL 引用中�
   </figcaption>
 </figure>
 
-有趣的是，第 11、12 和 13 位的移动端指令没有进入到上述名单，它们是 `vr`（占 6%），`payment`（占 2%），`web-share`（占 1%），它们也许说明了我们在虚拟现实（如果你愿意，也可以称之为元宇宙）、在线支付和金融科技行业中看到的日益增长的趋势。最后，这似乎表明了基于 web 共享得到了更好的支持，这可能是由于过去几年在家办公（指新冠疫情期间）的兴起。
+有趣的是，第 11、12 和 13 位的移动端指令没有进入到上述名单，它们是 `vr`（占 6%），`payment`（占 2%），`web-share`（占 1%），它们也许说明了我们在虚拟现实（以及元宇宙，如果你愿意的话）、在线支付和金融科技行业中看到的日益增长的趋势。最后，这似乎表明了基于 web 共享得到了更好的支持，这可能是由于过去几年在家办公（指新冠疫情期间）的兴起。
 
 ### Iframe 沙盒（Iframe Sandbox）
 
@@ -727,7 +727,7 @@ function clickToGo() {
 {{ figure_markup(
   image="prevalence-of-sandbox-directives-on-frames.png",
   caption="框架上 sandbox 指令的普遍性",
-  description="图表显示 iframes 中 sandbox 指令的流行程度。`allow-scrips` 和 `allow-same-origin` 是使用最多的指令，几乎 100% 具有 `sandbox` 属性的 iframes 都使用了这些指令。`allow-popups` 出现在 82% 的桌面端和 85% 的移动端框架中；`allow-forms` 出现在 81% 的桌面端和 84% 的移动端框架中；`allow-popups-to-escape-sandbox` 出现在 80% 的桌面端和 83% 的移动端框架中； `allow-top-navigation-by-user-activation` 出现在 59% 的桌面端和 61% 的移动端框架中；`allow-top-navigation` 出现在 21% 的桌面端和 22% 的移动端框架中，`allow-modals` 在桌面端占 20%，在移动端占 21%。",
+  description="条形图显示 iframes 中 sandbox 指令的流行程度。`allow-scrips` 和 `allow-same-origin` 是使用最多的指令，几乎 100% 具有 `sandbox` 属性的 iframes 都使用了这些指令。`allow-popups` 出现在 82% 的桌面端和 85% 的移动端框架中；`allow-forms` 出现在 81% 的桌面端和 84% 的移动端框架中；`allow-popups-to-escape-sandbox` 出现在 80% 的桌面端和 83% 的移动端框架中； `allow-top-navigation-by-user-activation` 出现在 59% 的桌面端和 61% 的移动端框架中；`allow-top-navigation` 出现在 21% 的桌面端和 22% 的移动端框架中，`allow-modals` 在桌面端占 20%，在移动端占 21%。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPHK3G2Ir-ys_oTrrhugqxV0aOSj3y5d1lANQ54GdaQtIHrzXIjQQGEpIdT_mQvxTrMtpd0Hn30zhF/pubchart?oid=1144896878&format=interactive",
   sheets_gid="245152438",
   sql_file="iframe_sandbox_directives.sql"
@@ -780,7 +780,7 @@ function clickToGo() {
   <table>
     <thead>
       <tr>
-        <th>Keyword</th>
+        <th>关键字</th>
         <th>桌面端</th>
         <th>移动端</th>
       </tr>
@@ -1037,7 +1037,7 @@ Cross Origin 策略是用于防御像 Cross Site 泄漏等微架构攻击的主�
 {{ figure_markup(
   image="bot-protection-service-usage.png",
   caption="供应商使用机器人保护服务的情况",
-  description="条形图显示了机器人保护服务的使用情况。19.9% 的桌面端网站和 18.4% 的移动端网站使用 reCaptcha；7.9% 的桌面端网站和 6.1% 的移动端网站使用 Cloudflare 机器人管理；有 0.6% 的桌面端网站和 0.5% 的移动端网站使用 Akamai 机器人管理；有 0.4% 的桌面端网站和 0.3% 的移动端网站使用了 Imperva；其他机器人保护服务有 0.4% 的网站在桌面端使用，0.3% 的网站在移动端使用。",
+  description="条形图显示了机器人保护服务的使用情况。19.9% 的桌面端网站和 18.4% 的移动端网站使用 reCaptcha；7.9% 的桌面端网站和 6.1% 的移动端网站使用 Cloudflare 机器人管理；有 0.6% 的桌面端网站和 0.5% 的移动端网站使用 Akamai Bot Manager；有 0.4% 的桌面端网站和 0.3% 的移动端网站使用了 Imperva；其他机器人保护服务有 0.4% 的网站在桌面端使用，0.3% 的网站在移动端使用。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPHK3G2Ir-ys_oTrrhugqxV0aOSj3y5d1lANQ54GdaQtIHrzXIjQQGEpIdT_mQvxTrMtpd0Hn30zhF/pubchart?oid=1782263355&format=interactive",
   sheets_gid="1592374295",
   sql_file="bot_detection.sql"
@@ -1058,8 +1058,8 @@ Cross Origin 策略是用于防御像 Cross Site 泄漏等微架构攻击的主�
 
 {{ figure_markup(
   image="adoption-of-https-per-country.png",
-  caption="每个国家启用 HTTPS 的情况",
-  description="条形图显示了与不同国家有关的网站启用 HTTPS 的百分比。新西兰、尼日利亚、澳大利亚、挪威、瑞士、丹麦、爱尔兰、南非、荷兰和加拿大依次为 95% 至 93%。在另一端，越南、塞尔维亚、俄罗斯联邦、波兰、伊朗、印度尼西亚、台湾、泰国、韩国和日本为 85% 至 81%。",
+  caption="每个国家或地区启用 HTTPS 的情况",
+  description="条形图显示了与不同国家或地区有关的网站启用 HTTPS 的百分比。新西兰、尼日利亚、澳大利亚、挪威、瑞士、丹麦、爱尔兰、南非、荷兰和加拿大依次为 95% 至 93%。在另一端，越南、塞尔维亚、俄罗斯联邦、波兰、伊朗、印度尼西亚、台湾、泰国、韩国和日本为 85% 至 81%。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPHK3G2Ir-ys_oTrrhugqxV0aOSj3y5d1lANQ54GdaQtIHrzXIjQQGEpIdT_mQvxTrMtpd0Hn30zhF/pubchart?oid=1218814034&format=interactive",
   sheets_gid="1838772734",
   sql_file="feature_adoption_by_country.sql",
@@ -1176,7 +1176,7 @@ CSP 和 `X-Frame-Options`（XFO）的启用与去年非常相似，令人惊讶�
 {{ figure_markup(
   image="prevalence-of-headers-in-sites-by-rank.png",
   caption="第一方环境中按等级设置安全标头的流行度",
-  description="条柱状图显示，在排名前 1000 位的网站中，55.9% 设置了 XFO，56.8% 设置了 HSTS，27% 设置了 CSP 标头；在排名前 10,000 的网站中，51.3% 设置了 XFO，44.5% 设置了 HSTS，20.6% 设置了 CSP 标头；在前 100,000 名中，48.1% 设置了 XFO，38% 设置了 HSTS，17.8% 设置了 CSP 标头；在排名前 100 万的网站中，41.9% 设置了 XFO，31.1% 设置了 HSTS，16.4% 设置了 CSP 标头；在所有网站中，31% 设置了 XFO，25.7% 设置了 HSTS，14.6% 设置了 CSP。",
+  description="柱状图显示，在排名前 1000 位的网站中，55.9% 设置了 XFO，56.8% 设置了 HSTS，27% 设置了 CSP 标头；在排名前 10,000 的网站中，51.3% 设置了 XFO，44.5% 设置了 HSTS，20.6% 设置了 CSP 标头；在前 100,000 名中，48.1% 设置了 XFO，38% 设置了 HSTS，17.8% 设置了 CSP 标头；在排名前 100 万的网站中，41.9% 设置了 XFO，31.1% 设置了 HSTS，16.4% 设置了 CSP 标头；在所有网站中，31% 设置了 XFO，25.7% 设置了 HSTS，14.6% 设置了 CSP。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPHK3G2Ir-ys_oTrrhugqxV0aOSj3y5d1lANQ54GdaQtIHrzXIjQQGEpIdT_mQvxTrMtpd0Hn30zhF/pubchart?oid=1055039456&format=interactive",
   sheets_gid="1909836848",
   sql_file="security_adoption_by_rank.sql"
@@ -1213,7 +1213,7 @@ CSP 和 `X-Frame-Options`（XFO）的启用与去年非常相似，令人惊讶�
 
 这些结果表明，加密劫持仍然是一个严重的攻击载体，每年根据新出现的漏洞使其使用量激增。因此，为了减轻这一领域的风险，仍然需要适当的努力。
 
-注意，并非所有这些网站都受到了感染，网站运营商也可能部署这种技术(而不是展示广告)来资助他们的网站，但这种技术的使用也在技术上、法律上和伦理上被大量讨论。
+注意，并非所有这些网站都受到了感染，网站运营商也可能部署这种技术（而不是展示广告）来资助他们的网站，但这种技术的使用也在技术上、法律上和伦理上被大量讨论。
 
 请注意，我们的结果可能不会显示受加密劫持感染网站的实际状态。由于我们每个月运行一次爬虫程序，并不是所有运行加密程序的网站都能被发现，例如，如果一个网站只受感染 X 天，但不在我们的爬虫运行的那天，情况就是这样。
 
