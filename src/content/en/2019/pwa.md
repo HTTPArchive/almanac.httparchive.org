@@ -22,7 +22,7 @@ featured_stat_label_3: PWAs that use the `standalone` `display` property
 
 ## Introduction
 
-Progressive Web Apps (PWAs) are a new class of web applications, building on top of platform primitives like the [Service Worker APIs](https://developer.mozilla.org/en/docs/Web/API/Service_Worker_API). Service workers allow apps to support network-independent loading by acting as a network proxy, intercepting your web app's outgoing requests, and replying with programmatic or cached responses. Service workers can receive push notifications and synchronize data in the background even when the corresponding app is not running. Additionally, service workers, together with [Web App Manifests](https://developer.mozilla.org/en-US/docs/Web/Manifest), allow users to install PWAs to their devices' home screens.
+Progressive Web Apps (PWAs) are a new class of web applications, building on top of platform primitives like the [Service Worker APIs](https://developer.mozilla.org/docs/Web/API/Service_Worker_API). Service workers allow apps to support network-independent loading by acting as a network proxy, intercepting your web app's outgoing requests, and replying with programmatic or cached responses. Service workers can receive push notifications and synchronize data in the background even when the corresponding app is not running. Additionally, service workers, together with [Web App Manifests](https://developer.mozilla.org/docs/Web/Manifest), allow users to install PWAs to their devices' home screens.
 
 Service workers were <a hreflang="en" href="https://blog.chromium.org/2014/12/chrome-40-beta-powerful-offline-and.html">first implemented in Chrome 40</a>, back in December 2014, and the term Progressive Web Apps was <a hreflang="en" href="https://infrequently.org/2015/06/progressive-apps-escaping-tabs-without-losing-our-soul/">coined by Frances Berriman and Alex Russell</a> in 2015. As service workers are now finally <a hreflang="en" href="https://jakearchibald.github.io/isserviceworkerready/">implemented in all major browsers</a>, the goal for this chapter is to determine how many PWAs are actually out there, and how they make use of these new technologies. Certain advanced APIs like <a hreflang="en" href="https://developers.google.com/web/updates/2015/12/background-sync">Background Sync</a> are currently still <a hreflang="en" href="https://caniuse.com/#feat=background-sync">only available on Chromium-based browsers</a>, so as an additional question, we looked into which features these PWAs actually use.
 
@@ -95,7 +95,7 @@ File size or lines of code are generally a bad proxy for the complexity of the t
   )
 }}
 
-The median service worker file on desktop is 895 bytes, whereas on mobile it's 694 bytes. Throughout all percentiles desktop service workers are larger than mobile service workers. We note that these stats don't account for dynamically imported scripts through the [`importScripts()`](https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/importScripts) method, which likely skews the results higher.
+The median service worker file on desktop is 895 bytes, whereas on mobile it's 694 bytes. Throughout all percentiles desktop service workers are larger than mobile service workers. We note that these stats don't account for dynamically imported scripts through the [`importScripts()`](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/importScripts) method, which likely skews the results higher.
 
 ## Web app manifests
 

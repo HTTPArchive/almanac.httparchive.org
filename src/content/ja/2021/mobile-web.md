@@ -176,7 +176,7 @@ Cloudflareも素晴らしい調査結果を発表しています。アカマイ�
 
 ### クライアントヒント
 
-[_クライアントヒント_](https://developer.mozilla.org/ja/docs/Web/HTTP/Client_hints)は、サーバーがアクセスするクライアントに要求して、デバイスやその機能、ネットワーク状況、その他のエージェント設定やプリファレンスに関する情報を取得できるHTTPリクエストヘッダーフィールドの集合体です。
+[_クライアントヒント_](https://developer.mozilla.org/docs/Web/HTTP/Client_hints)は、サーバーがアクセスするクライアントに要求して、デバイスやその機能、ネットワーク状況、その他のエージェント設定やプリファレンスに関する情報を取得できるHTTPリクエストヘッダーフィールドの集合体です。
 
 これにより、そのデバイスに合わせた判断やコード、コンテンツ、エクスペリエンスの提供が可能になります。
 
@@ -204,7 +204,7 @@ HTTPクライアントヒントは比較的新しい機能で、<a hreflang="en"
   )
 }}
 
-[`DPR`](https://developer.mozilla.org/ja/docs/Web/HTTP/Headers/DPR) と [`Viewport-Width`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Viewport-Width) はモバイルサイトの0.15%でトップ、 [`Device-Memory`](https://developer.mozilla.org/ja/docs/Web/HTTP/Headers/Device-Memory) は0.14%で少し遅れ[`Width`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Width) はわずか0%ですが、これは現在非推奨で代替案はSec-CH-Widthで、これを要求するサイトは見つかりませんでした。
+[`DPR`](https://developer.mozilla.org/docs/Web/HTTP/Headers/DPR) と [`Viewport-Width`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Viewport-Width) はモバイルサイトの0.15%でトップ、 [`Device-Memory`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Device-Memory) は0.14%で少し遅れ[`Width`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Width) はわずか0%ですが、これは現在非推奨で代替案はSec-CH-Widthで、これを要求するサイトは見つかりませんでした。
 
 現在、これらのヘッダーをサポートしているのは、Chrome（およびMicrosoftのEdgeなどのChromiumベースのブラウザ）とOperaのみで、<a hreflang="en" href="https://caniuse.com/client-hints-dpr-width-viewport">SafariとFirefoxはまだ搭載されていません</a>。
 
@@ -220,7 +220,7 @@ HTTPクライアントヒントは比較的新しい機能で、<a hreflang="en"
   )
 }}
 
-ネットワーククライアントヒントは、デバイスクライアントヒントと同様の利用率を示しており、[Downlink](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Downlink) と [ECT](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ECT)（エフェクティブコネクションタイプ）はモバイルの負荷の0.2%が要求し、 [RTT](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/RTT)（ラウンドトリップタイム）はモバイルの負荷の0.1%が要求しています。
+ネットワーククライアントヒントは、デバイスクライアントヒントと同様の利用率を示しており、[Downlink](https://developer.mozilla.org/docs/Web/HTTP/Headers/Downlink) と [ECT](https://developer.mozilla.org/docs/Web/HTTP/Headers/ECT)（エフェクティブコネクションタイプ）はモバイルの負荷の0.2%が要求し、 [RTT](https://developer.mozilla.org/docs/Web/HTTP/Headers/RTT)（ラウンドトリップタイム）はモバイルの負荷の0.1%が要求しています。
 
 Google Web Fundamentalsの記事、<a hreflang="en" href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/save-data/">セーブデータで高速・軽快なアプリケーションを実現する</a>で詳しく述べられているように、ユーザーの利点を考えると、この機会を逃したように思われます。
 
@@ -234,7 +234,7 @@ _User-Agentクライアントヒント_ はこの情報を取得する方法を�
 
 ### ネットワーク情報APIおよびデバイスメモリAPIの使用状況
 
-[_ネットワーク情報API_](https://developer.mozilla.org/ja/docs/Web/API/Network_Information_API) と [`Navigator.deviceMemory`](https://developer.mozilla.org/ja/docs/Web/API/Navigator/deviceMemory) は、クライアントヒントで公開されるものと同様のスコープで、デバイスと接続情報を収集するためのJavaScriptへのインタフェースを提供します。
+[_ネットワーク情報API_](https://developer.mozilla.org/docs/Web/API/Network_Information_API) と [`Navigator.deviceMemory`](https://developer.mozilla.org/docs/Web/API/Navigator/deviceMemory) は、クライアントヒントで公開されるものと同様のスコープで、デバイスと接続情報を収集するためのJavaScriptへのインタフェースを提供します。
 
 #### ネットワーク情報API
 
@@ -248,7 +248,7 @@ _User-Agentクライアントヒント_ はこの情報を取得する方法を�
   )
 }}
 
-モバイルとデスクトップのページロードの比較には、[`NetworkInformation.effectiveType`](https://developer.mozilla.org/en-US/docs/Web/API/NetworkInformation/effectiveType)を使用しました。これは、有効な接続タイプ、`slow-2g`、`2g`、`3g`、`4g`に基づく文字列を返します。最上位は`4g`なので、5gやブロードバンド、固定接続を含む「4g以上の高速接続」と考えてもよいでしょう。
+モバイルとデスクトップのページロードの比較には、[`NetworkInformation.effectiveType`](https://developer.mozilla.org/docs/Web/API/NetworkInformation/effectiveType)を使用しました。これは、有効な接続タイプ、`slow-2g`、`2g`、`3g`、`4g`に基づく文字列を返します。最上位は`4g`なので、5gやブロードバンド、固定接続を含む「4g以上の高速接続」と考えてもよいでしょう。
 
 モバイルリクエストの18.2%に `NetworkInformation.effectiveType` を利用したページロードがありましたが、驚くべきことに、デスクトップリクエストの18.4%がこのAPIの利用を検知しています。
 
@@ -647,7 +647,7 @@ URIスキームが、ユーザーがウェブサイトからアクションを�
 
 #### オートコンプリート
 
-[`オートコンプリート`](https://developer.mozilla.org/ja/docs/Web/HTML/Attributes/autocomplete)属性は、フォームや入力がブラウザの自動入力機能でどのように動作するかをある程度制御できるようにするものです。完全に無効にする方法から、名前や住所などの自動入力のヒントを提供する方法まで、さまざまなオプションがあります。
+[`オートコンプリート`](https://developer.mozilla.org/docs/Web/HTML/Attributes/autocomplete)属性は、フォームや入力がブラウザの自動入力機能でどのように動作するかをある程度制御できるようにするものです。完全に無効にする方法から、名前や住所などの自動入力のヒントを提供する方法まで、さまざまなオプションがあります。
 
 モバイル端末でのテキストやデータの入力は、フルキーボードを備えた端末よりも一般的に面倒な作業となるため、自動入力はデスクトップユーザーよりもさらに便利で時間の節約になる機能です。<a hreflang="en" href="https://www.youtube.com/watch?v=m2a9hlUFRhg&t=1433s">Googleは、自動入力を使用するとフォーム送信が25% 増加することを発見しました</a>。
 
@@ -842,7 +842,7 @@ CSSやJavaScriptなど、さまざまなアセットがモバイルのロード�
 
 #### レスポンシブ画像
 
-画像も[レスポンシブに提供](https://developer.mozilla.org/ja/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images)できます。`srcset`属性と`<picture>`要素で適切なサイズと適切なフォーマットの画像を指定し、画面とデバイスにもっとも適した画像をブラウザにダウンロードさせることができます。
+画像も[レスポンシブに提供](https://developer.mozilla.org/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images)できます。`srcset`属性と`<picture>`要素で適切なサイズと適切なフォーマットの画像を指定し、画面とデバイスにもっとも適した画像をブラウザにダウンロードさせることができます。
 
 {{ figure_markup(
   image="mobile-web-responsive-images.png",
@@ -982,7 +982,7 @@ Core Web Vitals全般について知りたい場合は、[パフォーマンス]
 
 ### サービスワーカー
 
-[サービスワーカー](https://developer.mozilla.org/ja/docs/Web/API/Service_Worker_API)は、モバイルデバイスに限らずオフライン機能を追加したり、キャッシュからWebアプリケーションへの読み込みをよりよく制御したりすることで、ユニークな機能を発揮します。この2つの機能は、接続性の低下や全喪失に遭遇する可能性が高いモバイルユーザーにとって、しばしばより適切なものとなります。
+[サービスワーカー](https://developer.mozilla.org/docs/Web/API/Service_Worker_API)は、モバイルデバイスに限らずオフライン機能を追加したり、キャッシュからWebアプリケーションへの読み込みをよりよく制御したりすることで、ユニークな機能を発揮します。この2つの機能は、接続性の低下や全喪失に遭遇する可能性が高いモバイルユーザーにとって、しばしばより適切なものとなります。
 
 14.8%の事業所がサービス従事者を登録、2020年の0.9%から大きく上昇
 

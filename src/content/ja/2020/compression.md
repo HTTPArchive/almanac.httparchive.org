@@ -237,7 +237,7 @@ HTTPレスポンスの約60%は、テキストベースの圧縮を行わずに�
 
 ## あなたのサイトの圧縮率を分析する方法
 
-[Firefox Developer Tools](https://developer.mozilla.org/ja/docs/Tools)または<a hreflang="en" href="https://developers.google.com/web/tools/chrome-devtools">Chrome DevTools</a>を使用すると、ウェブサイトがすでに圧縮しているコンテンツをすばやく把握できます。これを行うには、[ネットワーク]タブを開き、右クリックして[応答ヘッダー]の[コンテンツエンコード]を有効にします。個々のファイルのサイズにカーソルを合わせると、「ネットワークでの転送量」と「リソースサイズ」が表示されます。サイト全体で集計すると、Firefoxではサイズ/転送サイズ、Chromeでは「転送」と「リソース」がネットワークタブの左下に表示されます。
+[Firefox Developer Tools](https://developer.mozilla.org/docs/Tools)または<a hreflang="en" href="https://developers.google.com/web/tools/chrome-devtools">Chrome DevTools</a>を使用すると、ウェブサイトがすでに圧縮しているコンテンツをすばやく把握できます。これを行うには、[ネットワーク]タブを開き、右クリックして[応答ヘッダー]の[コンテンツエンコード]を有効にします。個々のファイルのサイズにカーソルを合わせると、「ネットワークでの転送量」と「リソースサイズ」が表示されます。サイト全体で集計すると、Firefoxではサイズ/転送サイズ、Chromeでは「転送」と「リソース」がネットワークタブの左下に表示されます。
 
 {{ figure_markup(
   image="content-encoding.png",

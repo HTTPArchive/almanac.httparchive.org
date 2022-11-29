@@ -232,7 +232,7 @@ Qu’il s’agisse de s’inscrire à un nouveau service, d’acheter quelque ch
 
 Dans le passé, `text` et `password` étaient parmi les seuls types de saisie (`<input>`) disponibles pour les équipes de développement, car ils répondaient à presque tous nos besoins sur ordinateurs de bureau. Ce n’est pas le cas pour les appareils mobiles. Les claviers mobiles sont incroyablement petits, et une tâche simple, comme la saisie d’une adresse électronique, peut obliger les utilisateurs à passer d’un clavier à l’autre&nbsp;: le clavier standard et le clavier à caractères spéciaux pour le symbole `@`. La simple saisie d’un numéro de téléphone peut être difficile en utilisant les minuscules chiffres du clavier par défaut.
 
-De nombreux [nouveaux types de saisies](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types) ont été introduits depuis, permettant aux équipes de développement d’informer les navigateurs du type de données attendu et permettant aux navigateurs de fournir des claviers personnalisés spécifiquement pour ces types de saisie. Par exemple, le type `email` permet au navigateur de fournir un clavier alphanumérique comprenant le symbole `@`, et le type `tel`, un clavier numérique.
+De nombreux [nouveaux types de saisies](https://developer.mozilla.org/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types) ont été introduits depuis, permettant aux équipes de développement d’informer les navigateurs du type de données attendu et permettant aux navigateurs de fournir des claviers personnalisés spécifiquement pour ces types de saisie. Par exemple, le type `email` permet au navigateur de fournir un clavier alphanumérique comprenant le symbole `@`, et le type `tel`, un clavier numérique.
 
 Lors de l’analyse des sites contenant une saisie d’email, 56,42&nbsp;% utilisent `type="email"`. De même, pour les saisies de numéros de téléphone, `type="tel"` est utilisé 36,7&nbsp;% du temps. Les autres nouveaux types de saisie ont un taux d’adoption encore plus faible.
 
@@ -262,7 +262,7 @@ Assurez-vous de bien vous informer et de renseigner les autres sur la grande qua
 
 ### Activation de l’autocomplétion pour les saisies
 
-L’attribut [`autocomplete`](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) de l’élément `<input>` permet aux gens de remplir les champs du formulaire en un seul clic. Ils remplissent des tonnes de formulaires, souvent avec exactement les mêmes informations à chaque fois. Conscients de ce fait, les navigateurs ont commencé à stocker ces informations de manière sécurisée afin de pouvoir les réutiliser. Tout ce que les équipes de développement doivent faire, c’est utiliser cet attribut `autocomplete` pour indiquer aux navigateurs quelle est l’information exacte à remplir, et le navigateur fait le reste.
+L’attribut [`autocomplete`](https://developer.mozilla.org/docs/Web/HTML/Attributes/autocomplete) de l’élément `<input>` permet aux gens de remplir les champs du formulaire en un seul clic. Ils remplissent des tonnes de formulaires, souvent avec exactement les mêmes informations à chaque fois. Conscients de ce fait, les navigateurs ont commencé à stocker ces informations de manière sécurisée afin de pouvoir les réutiliser. Tout ce que les équipes de développement doivent faire, c’est utiliser cet attribut `autocomplete` pour indiquer aux navigateurs quelle est l’information exacte à remplir, et le navigateur fait le reste.
 
 {{ figure_markup(
   caption="Pourcentage des pages utilisant <code>autocomplete</code>.",

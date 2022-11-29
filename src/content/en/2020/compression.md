@@ -237,7 +237,7 @@ Compared with [last year's results](../2019/compression#first-party-vs-third-par
 
 ## How to analyze compression on your sites
 
-You can use [Firefox Developer Tools](https://developer.mozilla.org/en-US/docs/Tools) or <a hreflang="en" href="https://developers.google.com/web/tools/chrome-devtools">Chrome DevTools</a> to quickly figure out what content a website already compresses. To do this, go to the Network tab, right click and activate "Content Encoding" under Response Headers. Hovering over the size of individual files you will see "transferred over network" and "resource size". Aggregated for the entire site one can see size/transferred size for Firefox and  "transferred" and "resources" for Chrome on the bottom left hand side of the Network tab.
+You can use [Firefox Developer Tools](https://developer.mozilla.org/docs/Tools) or <a hreflang="en" href="https://developers.google.com/web/tools/chrome-devtools">Chrome DevTools</a> to quickly figure out what content a website already compresses. To do this, go to the Network tab, right click and activate "Content Encoding" under Response Headers. Hovering over the size of individual files you will see "transferred over network" and "resource size". Aggregated for the entire site one can see size/transferred size for Firefox and  "transferred" and "resources" for Chrome on the bottom left hand side of the Network tab.
 
 {{ figure_markup(
   image="content-encoding.png",

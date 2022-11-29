@@ -32,7 +32,7 @@ We'll start with some of the more general aspects of a markup document: things l
 
 ### Doctypes
 
-Ever wondered why all pages start with `<!DOCTYPE html>` or something similar, even in 2021? Doctypes are required because they tell the browsers not to switch into "[quirks mode](https://developer.mozilla.org/en-US/docs/Web/HTML/Quirks_Mode_and_Standards_Mode)" when rendering a page, and instead, they should make a best-effort attempt to follow the HTML spec.
+Ever wondered why all pages start with `<!DOCTYPE html>` or something similar, even in 2021? Doctypes are required because they tell the browsers not to switch into "[quirks mode](https://developer.mozilla.org/docs/Web/HTML/Quirks_Mode_and_Standards_Mode)" when rendering a page, and instead, they should make a best-effort attempt to follow the HTML spec.
 
 This year, 97.4% of pages had a doctype, slightly up from last year's 96.8%. Looking at the past couple of years, the doctype percentage has increased steadily by half a percentage point every year.  In an ideal world, 100% of web pages would have a doctype—at this rate, we'll live in an ideal world by 2027!
 
@@ -121,7 +121,7 @@ Compression is important as, particularly in a mobile world, every byte of data 
 
 ### Document language
 
-We've encountered 3,598 unique instances of the `lang` attribute on the `html` element. Because there are <a hreflang="en" href="https://www.ethnologue.com/guides/how-many-languages">7,139 spoken languages</a> at the time of writing this chapter, it made us think not all of them were represented. When we factored in the [script and region subtags](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang#language_tag_syntax), even fewer remained.
+We've encountered 3,598 unique instances of the `lang` attribute on the `html` element. Because there are <a hreflang="en" href="https://www.ethnologue.com/guides/how-many-languages">7,139 spoken languages</a> at the time of writing this chapter, it made us think not all of them were represented. When we factored in the [script and region subtags](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/lang#language_tag_syntax), even fewer remained.
 
 {{ figure_markup(
   image="lang-region.png",
@@ -193,7 +193,7 @@ Elements are the DNA of a HTML document. We wanted to analyze the cells that mak
 
 ### Element diversity
 
-There are <a hreflang="en" href="https://html.spec.whatwg.org/multipage/indices.html#elements-3">112 elements</a> currently defined and in use (excepting SVG and MathML), with another [28 being deprecated](https://developer.mozilla.org/en-US/docs/Web/HTML/Element#obsolete_and_deprecated_elements) or obsolete. We wanted to see how many of them were actually used on a page, and how likely a web of `div`s was.
+There are <a hreflang="en" href="https://html.spec.whatwg.org/multipage/indices.html#elements-3">112 elements</a> currently defined and in use (excepting SVG and MathML), with another [28 being deprecated](https://developer.mozilla.org/docs/Web/HTML/Element#obsolete_and_deprecated_elements) or obsolete. We wanted to see how many of them were actually used on a page, and how likely a web of `div`s was.
 
 {{ figure_markup(
   image="element-diversity.png",
@@ -343,7 +343,7 @@ Throughout the chapter we wanted to also look at the adoption of some of the mor
 
 #### `canvas`
 
-The `canvas` element can be used with either the [Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API) or [WebGL API](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API) to draw graphics and animations. It's one of the main elements used for games or mixed reality on the web. It's no surprise 3.1% of the desktop pages and 2.6% of the mobile pages use it. The higher usage on desktop makes sense when you consider the graphic capabilities of the different devices, and the use cases skewed towards games and virtual reality.
+The `canvas` element can be used with either the [Canvas API](https://developer.mozilla.org/docs/Web/API/Canvas_API) or [WebGL API](https://developer.mozilla.org/docs/Web/API/WebGL_API) to draw graphics and animations. It's one of the main elements used for games or mixed reality on the web. It's no surprise 3.1% of the desktop pages and 2.6% of the mobile pages use it. The higher usage on desktop makes sense when you consider the graphic capabilities of the different devices, and the use cases skewed towards games and virtual reality.
 
 ### Probability of element use
 
@@ -393,7 +393,7 @@ While the percentages are slightly different when compared with last year, the o
   ) }}</figcaption>
 </figure>
 
-It's interesting to see that `tt`, a deprecated element for [Teletype Text](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tt), is 100% more popular than `ruby` and `rt`, which are the [Ruby Annotation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ruby) and [Text](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/rt) elements still used for showing the pronunciation of East Asian characters.
+It's interesting to see that `tt`, a deprecated element for [Teletype Text](https://developer.mozilla.org/docs/Web/HTML/Element/tt), is 100% more popular than `ruby` and `rt`, which are the [Ruby Annotation](https://developer.mozilla.org/docs/Web/HTML/Element/ruby) and [Text](https://developer.mozilla.org/docs/Web/HTML/Element/rt) elements still used for showing the pronunciation of East Asian characters.
 
 ### `script`
 
@@ -419,7 +419,7 @@ A little over 98% of the pages scanned contain at least one `script` element. It
 
 ### `template`
 
-One of the <a hreflang="en" href="https://css-tricks.com/crafting-reusable-html-templates/">least recognized, but most powerful features</a> of the Web Components specification is the `template` element. Despite the fact that the [`template` element](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots) is well supported on modern browsers since 2013, only 0.5% of the pages were using it in 2021. In terms of popularity, it didn't even make it into the top 50 elements. We thought this speaks volumes about the adoption curve of the modern HTML specification for web developers.
+One of the <a hreflang="en" href="https://css-tricks.com/crafting-reusable-html-templates/">least recognized, but most powerful features</a> of the Web Components specification is the `template` element. Despite the fact that the [`template` element](https://developer.mozilla.org/docs/Web/Web_Components/Using_templates_and_slots) is well supported on modern browsers since 2013, only 0.5% of the pages were using it in 2021. In terms of popularity, it didn't even make it into the top 50 elements. We thought this speaks volumes about the adoption curve of the modern HTML specification for web developers.
 
 In case you don't really know what `template` does, here is a refresher from the specification: "the `template` element is used to declare fragments of HTML that can be cloned and inserted in the document by script". If you're a web developer and think that sounds familiar, you're right. Most of the popular frameworks today have a similar non-native mechanism to do the same: Angular has <a hreflang="en" href="https://angular.io/guide/content-projection">`ng-content`</a>, React has <a hreflang="en" href="https://reactjs.org/docs/portals.html">portals</a> and Vue has <a hreflang="en" href="https://v3.vuejs.org/guide/component-slots.html#slots">`slot`</a>. We would have thought those frameworks would use the native `template` element or Web Components instead of re-creating the functionality within the frameworks.
 
@@ -501,7 +501,7 @@ We would have thought that popular frameworks like <a hreflang="en" href="https:
 
 ### Obsolete elements
 
-There are currently [28 obsolete and deprecated elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Element#obsolete_and_deprecated_elements) described in the HTML reference. We wanted to see how many of those were still in use today. By far, the most used ones are `center` and `font`, and we're glad to see their usage has slightly declined when compared with last year.
+There are currently [28 obsolete and deprecated elements](https://developer.mozilla.org/docs/Web/HTML/Element#obsolete_and_deprecated_elements) described in the HTML reference. We wanted to see how many of those were still in use today. By far, the most used ones are `center` and `font`, and we're glad to see their usage has slightly declined when compared with last year.
 
 `nobr` and `big` on the other hand, while still being deprecated, have increased in usage slightly when compared with last year.
 
@@ -674,7 +674,7 @@ Element behaviors are heavily influenced by attributes, so we thought it was onl
 
 The most popular attribute is `class` and that's no surprise, given that it's used for styling. 34.3% of all the attributes found on the pages we queried were `class`. By contrast, `id` was much less used, at 5.2%. It's interesting to note that the `style` attribute edged out the `id` attribute in popularity, accounting for 5.6% of occurrences.
 
-The second most popular attribute is `href`, with 9.9% of occurrences. With links being part of the fabric of the web, it's not surprising an anchor element attribute was this popular. What was surprising is that the `src` attribute was only twice as popular as the `alt` attribute, despite it being [available to considerably more elements.](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes)
+The second most popular attribute is `href`, with 9.9% of occurrences. With links being part of the fabric of the web, it's not surprising an anchor element attribute was this popular. What was surprising is that the `src` attribute was only twice as popular as the `alt` attribute, despite it being [available to considerably more elements.](https://developer.mozilla.org/docs/Web/HTML/Attributes)
 
 #### Meta flavors
 
@@ -814,7 +814,7 @@ The `viewport` `meta` element is used to control layout on mobile devices. Or at
   ) }}</figcaption>
 </figure>
 
-The most common `viewport` content option is `initial-scale=1,width=device-width`, which is not surprising when it's the recommended option on the [MDN guide](https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag) explaining viewports. 45.0% of the pages analyzed are using it, almost 3% more than [last year](../2020/markup#viewport-specifications). 8.2% of pages had an empty `content` attribute, slightly more than last year as well. That correlates with a decrease in usage for improper combinations of viewport options.
+The most common `viewport` content option is `initial-scale=1,width=device-width`, which is not surprising when it's the recommended option on the [MDN guide](https://developer.mozilla.org/docs/Web/HTML/Viewport_meta_tag) explaining viewports. 45.0% of the pages analyzed are using it, almost 3% more than [last year](../2020/markup#viewport-specifications). 8.2% of pages had an empty `content` attribute, slightly more than last year as well. That correlates with a decrease in usage for improper combinations of viewport options.
 
 ### Favicons
 

@@ -657,7 +657,7 @@ eコマースの優れた点の1つは、サイトを訪問した人のうち何
 
 ### Webプッシュ通知
 
-訪問者の許可を得れば、[_Push API_](https://developer.mozilla.org/ja/docs/Web/API/Push_API)を使って、ECサイトが開いていない時でもプッシュ通知を送ることができるようになります。
+訪問者の許可を得れば、[_Push API_](https://developer.mozilla.org/docs/Web/API/Push_API)を使って、ECサイトが開いていない時でもプッシュ通知を送ることができるようになります。
 
 Chromeのユーザー体験レポートを使って、ECサイトによるWebプッシュ通知の導入状況を調べてみました。実際のユーザーデータから作成されているため、プッシュ許可リクエストの承認率も確認できます。このデータがどのように取得され、どのような指標が利用できるかの詳細については、<a hreflang="en" href="https://developers.google.com/web/updates/2020/02/notification-permission-data-in-crux">このGoogleの記事</a>を参照してください。
 

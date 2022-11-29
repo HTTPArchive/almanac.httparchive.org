@@ -266,7 +266,7 @@ La méthode la plus courante pour implémenter des images adaptatives est de con
   )
 }}
 
-L’utilisation nettement plus faible de `<picture>` n’est pas surprenante dans la mesure où cet élément est le plus souvent utilisé pour des gabarits adaptatifs avancés en termes de [direction artistique](https://developer.mozilla.org/fr/docs/Apprendre/HTML/Comment/Ajouter_des_images_adaptatives_%C3%A0_une_page_web#D%C3%A9cision_de_nature_artistique).
+L’utilisation nettement plus faible de `<picture>` n’est pas surprenante dans la mesure où cet élément est le plus souvent utilisé pour des gabarits adaptatifs avancés en termes de [direction artistique](https://developer.mozilla.org/docs/Apprendre/HTML/Comment/Ajouter_des_images_adaptatives_%C3%A0_une_page_web#D%C3%A9cision_de_nature_artistique).
 
 ### Utilisation de sizes
 

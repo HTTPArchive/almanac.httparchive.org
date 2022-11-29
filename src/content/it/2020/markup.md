@@ -47,7 +47,7 @@ In questa sezione, tratteremo gli aspetti di livello superiore dell'HTML come i 
   sql_file="summary_pages_by_device_and_doctype.sql"
 ) }}
 
-Il 96.82% delle pagine dichiara un [_doctype_](https://developer.mozilla.org/it/docs/Glossary/Doctype). I documenti HTML che dichiarano un doctype sono utili per ragioni storiche, "per evitare di attivare la modalità quirks nei browser", come <a hreflang="en" href="https://lists.w3.org/Archives/Public/public-html-comments/2009Jul/0020.html">ha spiegato Ian Hickson nel 2009</a>. Quali sono i valori più popolari?
+Il 96.82% delle pagine dichiara un [_doctype_](https://developer.mozilla.org/docs/Glossary/Doctype). I documenti HTML che dichiarano un doctype sono utili per ragioni storiche, "per evitare di attivare la modalità quirks nei browser", come <a hreflang="en" href="https://lists.w3.org/Archives/Public/public-html-comments/2009Jul/0020.html">ha spiegato Ian Hickson nel 2009</a>. Quali sono i valori più popolari?
 
 <figure>
   <table>
@@ -120,7 +120,7 @@ Come è questa situazione in generale, allora? Il documento mediano pesa 24.65 K
 
 Abbiamo identificato 2.863 valori diversi per l'attributo `lang` nel tag di inizio `html` (confrontandole con le <a hreflang="en" href="https://www.ethnologue.com/guides/how-many-languages">7.117 lingue parlate</a> secondo l'Etnologo). Quasi tutti sembrano validi, secondo il capitolo [Accessibilità](./accessibility#language-identification).
 
-Il 22,36% di tutti i documenti non specifica alcun attributo `lang`. L'opinione comunemente accettata è che <a hreflang="en" href="https://www.w3.org/TR/i18n-html-tech-lang/#overall">dovrebbero</a>, ma ignorano il fatto che il software potrebbe eventualmente <a hreflang="en" href="https://meiert.com/en/blog/lang/">rilevare automaticamente la lingua</a>, la lingua del documento può anche essere specificata [a livello di protocollo](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Language), cosa che non abbiamo controllato.
+Il 22,36% di tutti i documenti non specifica alcun attributo `lang`. L'opinione comunemente accettata è che <a hreflang="en" href="https://www.w3.org/TR/i18n-html-tech-lang/#overall">dovrebbero</a>, ma ignorano il fatto che il software potrebbe eventualmente <a hreflang="en" href="https://meiert.com/en/blog/lang/">rilevare automaticamente la lingua</a>, la lingua del documento può anche essere specificata [a livello di protocollo](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Language), cosa che non abbiamo controllato.
 
 Ecco le 10 lingue più popolari (normalizzate) nel nostro campione. È importante notare che l'HTTP Archive esegue la scansione dai data center degli Stati Uniti con le impostazioni della lingua inglese, quindi guardando le pagine della lingua in cui sono scritte, sarà orientato verso l'inglese. Tuttavia presentiamo gli attributi `lang` visti per dare un contesto ai siti analizzati.
 
@@ -329,7 +329,7 @@ Ecco un semplice esempio che mostra l'uso di un `summary` in un elemento `detail
 </details>
 ```
 
-Tempo fa, Steve Faulkner [ha sottolineato](https://twitter.com/stevefaulkner/status/806474286592561152) come questi due elementi fossero usati in modo inadeguato in natura. Come puoi vedere dall'esempio sopra, per ogni elemento `details` avresti bisogno di un elemento `summary` che può essere usato solo come [primo figlio](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/summary#Usage_notes) di `details`.
+Tempo fa, Steve Faulkner [ha sottolineato](https://twitter.com/stevefaulkner/status/806474286592561152) come questi due elementi fossero usati in modo inadeguato in natura. Come puoi vedere dall'esempio sopra, per ogni elemento `details` avresti bisogno di un elemento `summary` che può essere usato solo come [primo figlio](https://developer.mozilla.org/docs/Web/HTML/Element/summary#Usage_notes) di `details`.
 
 Di conseguenza, abbiamo esaminato il numero di elementi `details` e `summary` e sembra che continuino ad essere utilizzati in modo improprio. Il conteggio degli elementi `summary` è maggiore sia su dispositivi mobile che desktop, con un rapporto di 1.11 elementi `summary` per ogni elemento `details` su dispositivi mobile e 1.19 su desktop, rispettivamente:
 
@@ -965,7 +965,7 @@ Abbiamo trattato l'uso dell'HTML in generale, nonché l'adozione degli elementi 
 
 ### Specifiche di `viewport`
 
-Il meta elemento [viewport](https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag) viene utilizzato per controllare il layout sui browser mobile. Mentre anni fa, il motto era una specie di "non dimenticare il meta elemento viewport" durante la creazione di una pagina web, alla fine questa divenne una pratica comune e il motto cambiò in "assicurati che lo zoom e il ridimensionamento non siano disabilitati".
+Il meta elemento [viewport](https://developer.mozilla.org/docs/Web/HTML/Viewport_meta_tag) viene utilizzato per controllare il layout sui browser mobile. Mentre anni fa, il motto era una specie di "non dimenticare il meta elemento viewport" durante la creazione di una pagina web, alla fine questa divenne una pratica comune e il motto cambiò in "assicurati che lo zoom e il ridimensionamento non siano disabilitati".
 
 Gli utenti dovrebbero essere in grado di ingrandire e ridimensionare il testo <a hreflang="en" href="https://dequeuniversity.com/rules/axe/4.0/meta-viewport-large">fino al 500%</a>.Ecco perché i controlli in strumenti popolari come <a hreflang="en" href="https://developers.google.com/web/tools/lighthouse">Lighthouse</a> o <a hreflang="en" href="https://www.deque.com/axe/">axe</a> falliscono quando `user-scalable="no"` è usato all'interno dell'elemento `metaname="viewport"`, e quando il valore dell'attributo `maximum-scale` è minore di `5`.
 
@@ -1196,7 +1196,7 @@ Le pagine nel 10° e 25° percentile non contengono alcun pulsante, mentre una p
 
 ### I target di collegamento
 
-L'[elemento ancora](https://developer.mozilla.org/it/docs/Web/HTML/Element/a), o l'elemento `a`, collega insieme le risorse web. In questa sezione si analizza l'adozione dei protocolli inclusi nei rispettivi target di collegamento.
+L'[elemento ancora](https://developer.mozilla.org/docs/Web/HTML/Element/a), o l'elemento `a`, collega insieme le risorse web. In questa sezione si analizza l'adozione dei protocolli inclusi nei rispettivi target di collegamento.
 
 <figure>
   <table>

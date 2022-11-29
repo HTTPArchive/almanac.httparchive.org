@@ -21,7 +21,7 @@ featured_stat_label_3: 関連アプリのインストールを許可している
 
 ## 序章
 
-<a hreflang="en" href="./pwa">Progressive Web Apps</a>(PWA)はWeb技術をベースにしたクロスプラットフォームのアプリケーションモデルです。サービスワーカーの協力を得て、これらのアプリケーションはユーザーがオフラインの時でも実行されます。[Webアプリマニフェスト](https://developer.mozilla.org/ja/docs/Web/Manifest)を利用すると、ホーム画面やプログラムリストにPWAを追加できます。そこから開くと、PWAはネイティブアプリケーションとして表示されます。ただしPWAはWebプラットフォームAPIを通して公開されている機能のみを使用できます。任意のネイティブインターフェイスを呼び出すことはできず、ネイティブアプリケーションとWebアプリケーションの間にギャップが残ります。
+<a hreflang="en" href="./pwa">Progressive Web Apps</a>(PWA)はWeb技術をベースにしたクロスプラットフォームのアプリケーションモデルです。サービスワーカーの協力を得て、これらのアプリケーションはユーザーがオフラインの時でも実行されます。[Webアプリマニフェスト](https://developer.mozilla.org/docs/Web/Manifest)を利用すると、ホーム画面やプログラムリストにPWAを追加できます。そこから開くと、PWAはネイティブアプリケーションとして表示されます。ただしPWAはWebプラットフォームAPIを通して公開されている機能のみを使用できます。任意のネイティブインターフェイスを呼び出すことはできず、ネイティブアプリケーションとWebアプリケーションの間にギャップが残ります。
 
 <a hreflang="en" href="https://www.chromium.org/teams/web-capabilities-fugu">Capabilities Project</a>は、非公式にはProject Fuguとしても知られていますがGoogle、Microsoft、Intelの3社によるWebとネイティブの間のギャップを埋めるためのクロスカンパニーの取り組みです。これは、プラットフォームとしてのWebの関連性を保つために重要です。そのために、Chromiumの貢献者たちは、ユーザーのセキュリティ、プライバシー、信頼性を維持しながらOSの機能をWebに公開する新しいAPIを実装しています。これらの機能には以下のものが含まれますが、これらに限定されません。
 
@@ -68,7 +68,7 @@ featured_stat_label_3: 関連アプリのインストールを許可している
 
 ブラウザは、Cookies、インデックス化されたデータベース（IndexedDB）、サービスワーカーのキャッシュストレージ、またはWebストレージ（ローカルストレージ、セッションストレージ）など、さまざまな方法でユーザーのシステム上にデータを保存できます。最近のブラウザでは、開発者はブラウザに応じて簡単に<a hreflang="ja" href="https://web.dev/i18n/ja/storage-for-the-web/">数百メガバイト、さらにはそれ以上の容量を保存</a>できます。ブラウザが容量を使い果たすと、システムが限界を超えるまでデータをクリアしてしまい、データの損失につながることがあります。
 
-<a hreflang="en" href="https://storage.spec.whatwg.org/#storagemanager">WHATWG Storage Living Standard</a>の一部である<a hreflang="en" href="https://developer.mozilla.org/ja/docs/Web/API/StorageManager">StorageManager API</a>のおかげで、ブラウザはもはやブラックボックスのように振る舞うことはありません。このAPIにより、開発者は残りの空き容量を推定して<a hreflang="en" href="https://web.dev/persistent-storage/">永続ストレージ</a>にオプトインでき、ディスク容量が少なくなってもブラウザがウェブサイトのデータをクリアしないことを意味します。そのため、このAPIでは、現在Chrome、Edge、Firefoxで利用可能な`navigator`オブジェクトに新しい`StorageManager`インターフェイスが導入されています。
+<a hreflang="en" href="https://storage.spec.whatwg.org/#storagemanager">WHATWG Storage Living Standard</a>の一部である<a hreflang="en" href="https://developer.mozilla.org/docs/Web/API/StorageManager">StorageManager API</a>のおかげで、ブラウザはもはやブラックボックスのように振る舞うことはありません。このAPIにより、開発者は残りの空き容量を推定して<a hreflang="en" href="https://web.dev/persistent-storage/">永続ストレージ</a>にオプトインでき、ディスク容量が少なくなってもブラウザがウェブサイトのデータをクリアしないことを意味します。そのため、このAPIでは、現在Chrome、Edge、Firefoxで利用可能な`navigator`オブジェクトに新しい`StorageManager`インターフェイスが導入されています。
 
 ### 利用可能なストレージを見積もる
 
@@ -145,7 +145,7 @@ registration.showNotification('Title', {
 
 ## Screen Wake Lock API
 
-エネルギーを節約するために、モバイルデバイスは画面のバックライトを暗くし、最終的にはデバイスのディスプレイをオフにしますが、これはほとんどの場合で理にかなっています。しかし、例えば料理中にレシピを読んだり、プレゼンテーションを見たりしているときなど、ユーザーがアプリケーションに明示的にディスプレイをオフにしておきたいと思うようなシナリオもあります。<a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/API/Screen_Wake_Lock_API">Screen Wake Lock API</a>(<a hreflang="en" href="https://www.w3.org/TR/screen-wake-lock/">W3C作業ドラフト</a>)は、画面をオンに保つメカニズムを提供することで、この問題を解決します。
+エネルギーを節約するために、モバイルデバイスは画面のバックライトを暗くし、最終的にはデバイスのディスプレイをオフにしますが、これはほとんどの場合で理にかなっています。しかし、例えば料理中にレシピを読んだり、プレゼンテーションを見たりしているときなど、ユーザーがアプリケーションに明示的にディスプレイをオフにしておきたいと思うようなシナリオもあります。<a hreflang="en" href="https://developer.mozilla.org/docs/Web/API/Screen_Wake_Lock_API">Screen Wake Lock API</a>(<a hreflang="en" href="https://www.w3.org/TR/screen-wake-lock/">W3C作業ドラフト</a>)は、画面をオンに保つメカニズムを提供することで、この問題を解決します。
 
 `navigator.wakeLock.request()`メソッドはウェイクロックを作成する。このメソッドは `WakeLockType`パラメーターを取ります。将来的には、Wake Lock APIは画面をオフにしてCPUをオンにしたままにするなど、他のロックタイプを提供できるようになるかもしれません。今のところ、APIはスクリーンロックのみをサポートしているので、デフォルト値が `screen` のオプション引数を1つだけ用意しています。このメソッドは`WakeLockSentinel`オブジェクトに解決するプロミスを返す。開発者はこの参照を保存して`release()`メソッドを呼び出し、後で画面のウェイクロックを解除する必要があります。ブラウザはタブが非アクティブになったり、ユーザがウィンドウを最小化したりすると自動的にロックを解除します。またブラウザは、例えばバッテリー残量が少ないなどの理由で、要求を拒否して約束を拒否することがあります。
 

@@ -19,7 +19,7 @@ featured_stat_label_3: _宣言型リンクキャプチャ_を使用したモバ�
 ---
 
 ## 序章
-ケイパビリティは、Webアプリケーションのまったく新しいユースケースを解放する新しいWebプラットフォームAPIです。それらの新しいAPIは、Webベースのアプリケーションモデルである[プログレッシブ・ウェブ・アプリケーション(PWA)](./pwa)に不可欠なものです。PWAとは、ユーザーが自分のシステムにインストールできるWebアプリのことです。PWAはオフラインでも動作し、素早く起動する。基本的なオペレーティングシステムと統合するために、PWAはウェブプラットフォームAPIのみを使用できます。ブラウザはすでにいくつかの低レベルの機能をウェブに公開していますが（たとえば、[geolocation](https://developer.mozilla.org/ja/docs/Web/API/Geolocation_API), [gamepad](https://developer.mozilla.org/ja/docs/Web/API/Gamepad_API), または [webcam](https://developer.mozilla.org/ja/docs/Web/API/MediaDevices/getUserMedia)アクセス）、多くのAPIはまだ欠けていたり使い勝手が悪かったり（たとえば、ファイルシステムやクリップボードへのアクセスを）していました。
+ケイパビリティは、Webアプリケーションのまったく新しいユースケースを解放する新しいWebプラットフォームAPIです。それらの新しいAPIは、Webベースのアプリケーションモデルである[プログレッシブ・ウェブ・アプリケーション(PWA)](./pwa)に不可欠なものです。PWAとは、ユーザーが自分のシステムにインストールできるWebアプリのことです。PWAはオフラインでも動作し、素早く起動する。基本的なオペレーティングシステムと統合するために、PWAはウェブプラットフォームAPIのみを使用できます。ブラウザはすでにいくつかの低レベルの機能をウェブに公開していますが（たとえば、[geolocation](https://developer.mozilla.org/docs/Web/API/Geolocation_API), [gamepad](https://developer.mozilla.org/docs/Web/API/Gamepad_API), または [webcam](https://developer.mozilla.org/docs/Web/API/MediaDevices/getUserMedia)アクセス）、多くのAPIはまだ欠けていたり使い勝手が悪かったり（たとえば、ファイルシステムやクリップボードへのアクセスを）していました。
 
 ### プロジェクト・フグ
 
@@ -49,10 +49,10 @@ featured_stat_label_3: _宣言型リンクキャプチャ_を使用したモバ�
 すでにいくつかのブラウザで出荷されているAPIもあれば、Chromiumベースのものでしか利用できないAPIもあります。これらのブラウザには、Google Chrome、Microsoft Edge、Opera、Brave、またはSamsung Internetが含まれます。Chromiumベースのブラウザのベンダーは、特定の機能を無効にすることができるため、ChromiumベースのすべてのブラウザですべてのAPIが使用できるとは限らないことに注意してください。また、一部の機能は、ブラウザの設定でフラグを有効にしたあとでのみ利用できる場合があります。
 
 ## 非同期クリップボードAPI
-[_非同期クリップボードAPI_](https://developer.mozilla.org/ja/docs/Web/API/Clipboard_API)を使用すると、クリップボードからのデータの読み取りやクリップボードへのデータの書き込みを行うことができます。非同期のため、UIをブロックすることなく、画像を縮小しながら貼り付けるような使い方が可能です。これまでクリップボードの操作に使われていた `document.execCommand()` のような性能の低いAPIを置き換えることができます。
+[_非同期クリップボードAPI_](https://developer.mozilla.org/docs/Web/API/Clipboard_API)を使用すると、クリップボードからのデータの読み取りやクリップボードへのデータの書き込みを行うことができます。非同期のため、UIをブロックすることなく、画像を縮小しながら貼り付けるような使い方が可能です。これまでクリップボードの操作に使われていた `document.execCommand()` のような性能の低いAPIを置き換えることができます。
 
 ### 書き込みアクセス
-非同期クリップボードAPIは、データをクリップボードにコピーするための2つのメソッドを提供します。省略記法の [`writeText()`](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/writeText) はプレーンテキストを引数にとり、ブラウザはそれをクリップボードにコピーします。[`write()`](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/write) メソッドは、任意のデータを含むことができるクリップボード項目の配列を受け取ります。ブラウザは、特定のデータ形式のみを実装することを決めることができます。Clipboard API仕様は、プレーンテキスト、HTML、URIリスト、PNG画像など、ブラウザが最低限サポートしなければならない必須データ型の <a hreflang="en" href="https://www.w3.org/TR/clipboard-apis/#mandatory-data-types-x"> リストを指定しています</a>。
+非同期クリップボードAPIは、データをクリップボードにコピーするための2つのメソッドを提供します。省略記法の [`writeText()`](https://developer.mozilla.org/docs/Web/API/Clipboard/writeText) はプレーンテキストを引数にとり、ブラウザはそれをクリップボードにコピーします。[`write()`](https://developer.mozilla.org/docs/Web/API/Clipboard/write) メソッドは、任意のデータを含むことができるクリップボード項目の配列を受け取ります。ブラウザは、特定のデータ形式のみを実装することを決めることができます。Clipboard API仕様は、プレーンテキスト、HTML、URIリスト、PNG画像など、ブラウザが最低限サポートしなければならない必須データ型の <a hreflang="en" href="https://www.w3.org/TR/clipboard-apis/#mandatory-data-types-x"> リストを指定しています</a>。
 
 ```js
 await navigator.clipboard.writeText('hello world');
@@ -66,7 +66,7 @@ await navigator.clipboard.write([
 ```
 
 ### 読み取りアクセス
-クリップボードにデータをコピーするのと同様に、クリップボードからデータを貼り付けて戻すには2つの方法があります。まず、クリップボードからプレーンテキストを返す [`readText()`](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/readText) という別のショートハンドメソッドを紹介します。[`read()`](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/read) メソッドを用いると、ブラウザがサポートするデータ形式でクリップボード内のすべてのアイテムにアクセスできます。
+クリップボードにデータをコピーするのと同様に、クリップボードからデータを貼り付けて戻すには2つの方法があります。まず、クリップボードからプレーンテキストを返す [`readText()`](https://developer.mozilla.org/docs/Web/API/Clipboard/readText) という別のショートハンドメソッドを紹介します。[`read()`](https://developer.mozilla.org/docs/Web/API/Clipboard/read) メソッドを用いると、ブラウザがサポートするデータ形式でクリップボード内のすべてのアイテムにアクセスできます。
 
 ```js
 const item = await navigator.clipboard.readText();
@@ -108,10 +108,10 @@ sheets_gid="1382342903"
 }}
 
 ## ファイルシステムアクセスAPI
-次に生産性関連のAPIとして、[_ファイルシステムアクセスAPI_](https://developer.mozilla.org/en-US/docs/Web/API/File_System_Access_API)を紹介します。Webアプリは、<a hreflang="en" href="https://web.dev/browser-fs-access/#the-traditional-way-of-dealing-with-files">すでにファイルを扱うことができました</a>。`<input type="file">` では、ユーザーはファイルピッカーを使って1つまたは複数のファイルを開くことができます。また、`<a download>` により、ダウンロードフォルダーにファイルを保存できます。File System Access APIは、さらなるユースケースをサポートする。ディレクトリを開いたり、変更したり、ユーザーが指定した場所にファイルを保存したり、ユーザーが開いたファイルを上書きしたりします。また、`IndexedDB` にファイルハンドルを持続させて、ページを再読み込みしたあとでも（パーミッション制限された）アクセスを継続できるようにすることも可能です。とくに、APIはファイルシステムへのランダムアクセスを許可しておらず、特定のシステムフォルダーはデフォルトでブロックされている。
+次に生産性関連のAPIとして、[_ファイルシステムアクセスAPI_](https://developer.mozilla.org/docs/Web/API/File_System_Access_API)を紹介します。Webアプリは、<a hreflang="en" href="https://web.dev/browser-fs-access/#the-traditional-way-of-dealing-with-files">すでにファイルを扱うことができました</a>。`<input type="file">` では、ユーザーはファイルピッカーを使って1つまたは複数のファイルを開くことができます。また、`<a download>` により、ダウンロードフォルダーにファイルを保存できます。File System Access APIは、さらなるユースケースをサポートする。ディレクトリを開いたり、変更したり、ユーザーが指定した場所にファイルを保存したり、ユーザーが開いたファイルを上書きしたりします。また、`IndexedDB` にファイルハンドルを持続させて、ページを再読み込みしたあとでも（パーミッション制限された）アクセスを継続できるようにすることも可能です。とくに、APIはファイルシステムへのランダムアクセスを許可しておらず、特定のシステムフォルダーはデフォルトでブロックされている。
 
 ### 書き込みアクセス
-グローバルな `window` オブジェクトに対して [`showSaveFilePicker()`](https://developer.mozilla.org/en-US/docs/Web/API/Window/showSaveFilePicker) メソッドを呼び出すと、ブラウザはオペレーティングシステムのファイルピッカーを表示するようになります。このメソッドはオプションのオプションオブジェクトを受け取り、保存を許可するファイルタイプ (`types`, default: all types) と、ユーザーが "accept all" オプションでこのフィルターを無効にできるかどうか (`excludeAcceptAllOption`, default: `false`) を指定できます。
+グローバルな `window` オブジェクトに対して [`showSaveFilePicker()`](https://developer.mozilla.org/docs/Web/API/Window/showSaveFilePicker) メソッドを呼び出すと、ブラウザはオペレーティングシステムのファイルピッカーを表示するようになります。このメソッドはオプションのオプションオブジェクトを受け取り、保存を許可するファイルタイプ (`types`, default: all types) と、ユーザーが "accept all" オプションでこのフィルターを無効にできるかどうか (`excludeAcceptAllOption`, default: `false`) を指定できます。
 
 ユーザーがローカルファイルシステムからファイルを正常に選択すると、そのハンドルを受け取ることができます。そのハンドルに対して `createWritable()` メソッドを実行すると、ストリームライターにアクセスできます。以下の例では、このライターはテキスト `hello world` をファイルに書き込み、その後ファイルを閉じます。
 
@@ -129,7 +129,7 @@ await writable.close();
 ```
 
 ### アクセスを読み取る
-オープンファイルピッカーを表示するには、グローバルな `window` オブジェクトの [`showOpenFilePicker()`](https://developer.mozilla.org/en-US/docs/Web/API/Window/showOpenFilePicker)メソッドを呼び出してください。このメソッドには、オプションのオプションオブジェクトも渡されます。このオブジェクトには、上記と同じプロパティ (`types`, `excludeAcceptAllOption`) が設定されます。さらに、ユーザーが1つのファイルを選択するか、複数のファイルを選択するか (`multiple`, default: `false`) を指定できます。
+オープンファイルピッカーを表示するには、グローバルな `window` オブジェクトの [`showOpenFilePicker()`](https://developer.mozilla.org/docs/Web/API/Window/showOpenFilePicker)メソッドを呼び出してください。このメソッドには、オプションのオプションオブジェクトも渡されます。このオブジェクトには、上記と同じプロパティ (`types`, `excludeAcceptAllOption`) が設定されます。さらに、ユーザーが1つのファイルを選択するか、複数のファイルを選択するか (`multiple`, default: `false`) を指定できます。
 
 ユーザーは複数のファイルを選択する可能性があるため、ファイルハンドルの配列を受け取ります。配列の再構築式 `[handle]` を用いると、最初に選択されたファイルのハンドルが配列の最初の要素として受け取られます。ファイルハンドルに対して `getFile()` メソッドを呼び出すと、`File` オブジェクトが得られ、ファイルのバイナリデータへアクセスできるようになります。`text()` メソッドを呼び出すと、オープンされたファイルからプレーンテキストを受け取ることができます。
 
@@ -143,7 +143,7 @@ console.log(text);
 ```
 
 ### ディレクトリーを開く
-最後に、このAPIでは、ウェブアプリ（統合開発環境など）がディレクトリ全体のハンドルを取得できます。このハンドルを使って、開いたディレクトリ内で既存のファイルやフォルダーを作成、更新、削除できます。今回のメソッドは [`showDirectoryPicker()`](https://developer.mozilla.org/en-US/docs/Web/API/window/showDirectoryPicker) という名前になっています。
+最後に、このAPIでは、ウェブアプリ（統合開発環境など）がディレクトリ全体のハンドルを取得できます。このハンドルを使って、開いたディレクトリ内で既存のファイルやフォルダーを作成、更新、削除できます。今回のメソッドは [`showDirectoryPicker()`](https://developer.mozilla.org/docs/Web/API/window/showDirectoryPicker) という名前になっています。
 
 ```js
 const handle = await window.showDirectoryPicker();
@@ -171,7 +171,7 @@ height=409
 ) }}
 
 ## WebシェアAPI
-[_WebシェアAPI_](https://developer.mozilla.org/ja/docs/Web/API/Navigator/share)を使用すると、WebサイトやWebアプリケーションのテキスト、URL、ファイルを、メールクライアントやメッセンジャーなど、他のアプリケーションと共有できます。そのためには、[`navigator.share()`](https://developer.mozilla.org/ja/docs/Web/API/Navigator/share)メソッドを呼び出してください。他のアプリケーションと共有するためのデータをオブジェクトとして取得します。ブラウザは内蔵の共有シートを開き、ユーザーはそこからターゲットアプリケーションを選択できます。このメソッドは、コンテンツが正常に共有された場合に解決するプロミスを返し、そうでない場合は拒否されます。
+[_WebシェアAPI_](https://developer.mozilla.org/docs/Web/API/Navigator/share)を使用すると、WebサイトやWebアプリケーションのテキスト、URL、ファイルを、メールクライアントやメッセンジャーなど、他のアプリケーションと共有できます。そのためには、[`navigator.share()`](https://developer.mozilla.org/docs/Web/API/Navigator/share)メソッドを呼び出してください。他のアプリケーションと共有するためのデータをオブジェクトとして取得します。ブラウザは内蔵の共有シートを開き、ユーザーはそこからターゲットアプリケーションを選択できます。このメソッドは、コンテンツが正常に共有された場合に解決するプロミスを返し、そうでない場合は拒否されます。
 
 ```js
 await navigator.share({
@@ -219,7 +219,7 @@ sheets_gid="1372715282"
 この章で説明する生産性に関連する最後の2つの機能は、_URLハンドラー_と_宣言型リンクキャプチャ_で、オペレーティングシステムとさらに深く統合するための追加メソッドです。
 
 ### URLの取り扱い
-<a hreflang="en" href="https://web.dev/pwa-url-handler/">URLハンドラー</a> の助けを借りて、PWAはインストール時に特定のURLスキームに対するハンドラーとして自身を登録できます。たとえば `https://*.example.com` のハンドラーとして登録できます。ユーザーがこのスキームに一致するURLを開くと、新しいブラウザタブではなく、インストールされたPWAが開きます。URLハンドリングは、<a hreflang="en" href="https://www.w3.org/TR/appmanifest/">_Webアプリケーションマニフェスト_</a>という[Webアプリケーションのメタデータ](https://developer.mozilla.org/ja/docs/Web/Manifest)を含むファイルを拡張したものです。URLスキームに登録するには、マニフェストに `url_handlers` プロパティを追加する必要があります。このプロパティは `origin` プロパティを持つオブジェクトを含む配列を取ります。
+<a hreflang="en" href="https://web.dev/pwa-url-handler/">URLハンドラー</a> の助けを借りて、PWAはインストール時に特定のURLスキームに対するハンドラーとして自身を登録できます。たとえば `https://*.example.com` のハンドラーとして登録できます。ユーザーがこのスキームに一致するURLを開くと、新しいブラウザタブではなく、インストールされたPWAが開きます。URLハンドリングは、<a hreflang="en" href="https://www.w3.org/TR/appmanifest/">_Webアプリケーションマニフェスト_</a>という[Webアプリケーションのメタデータ](https://developer.mozilla.org/docs/Web/Manifest)を含むファイルを拡張したものです。URLスキームに登録するには、マニフェストに `url_handlers` プロパティを追加する必要があります。このプロパティは `origin` プロパティを持つオブジェクトを含む配列を取ります。
 
 ```json
 {

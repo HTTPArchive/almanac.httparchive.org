@@ -117,9 +117,9 @@ JavaScript can be loaded into a page in a number of different ways, and how it i
 
 ### `module` and `nomodule`
 
-When loading a website, the browser renders the HTML and requests the appropriate resources. It consumes the polyfills referenced in the code for the effective rendering and functioning of the page. Modern browsers that support newer syntax like [arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) and [async functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function) do not need loads of polyfills to make things work and therefore, should not have to.
+When loading a website, the browser renders the HTML and requests the appropriate resources. It consumes the polyfills referenced in the code for the effective rendering and functioning of the page. Modern browsers that support newer syntax like [arrow functions](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Functions/Arrow_functions) and [async functions](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/async_function) do not need loads of polyfills to make things work and therefore, should not have to.
 
-This is when differential loading takes care of things. Specifying the `type="module"` attribute would serve the modern browsers the bundle with modern syntax and fewer polyfills, if any. Similarly, older browsers that lack support for modules will be served the bundle with required polyfills and transpiled code syntax with the `type="nomodule"` attribute. Read more about [the usage of module/nomodule](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules#applying_the_module_to_your_html).
+This is when differential loading takes care of things. Specifying the `type="module"` attribute would serve the modern browsers the bundle with modern syntax and fewer polyfills, if any. Similarly, older browsers that lack support for modules will be served the bundle with required polyfills and transpiled code syntax with the `type="nomodule"` attribute. Read more about [the usage of module/nomodule](https://developer.mozilla.org/docs/Web/JavaScript/Guide/Modules#applying_the_module_to_your_html).
 
 Let's look at the data to understand the adoption of these attributes.
 
@@ -442,7 +442,7 @@ When we segmented the unminified JavaScript resources by host, we found that 82.
 
 ### Source maps
 
-[Source maps](https://developer.mozilla.org/en-US/docs/Tools/Debugger/How_to/Use_a_source_map) are hints sent along with JavaScript resources that allow the browser to map the minified resource back to their source code. This is especially helpful to web developers for debugging in a production environment.
+[Source maps](https://developer.mozilla.org/docs/Tools/Debugger/How_to/Use_a_source_map) are hints sent along with JavaScript resources that allow the browser to map the minified resource back to their source code. This is especially helpful to web developers for debugging in a production environment.
 
 {{ figure_markup(
   content="0.1%",
@@ -453,7 +453,7 @@ When we segmented the unminified JavaScript resources by host, we found that 82.
   )
 }}
 
-Only 0.1% of mobile pages use the [`SourceMap`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/SourceMap) response header on script resources. One reason for this extremely small percentage could be that not many sites choose to put their original source code in production through the source map.
+Only 0.1% of mobile pages use the [`SourceMap`](https://developer.mozilla.org/docs/Web/HTTP/Headers/SourceMap) response header on script resources. One reason for this extremely small percentage could be that not many sites choose to put their original source code in production through the source map.
 
 {{ figure_markup(
   content="98.0%",
@@ -686,7 +686,7 @@ Now that we've looked at how we get the JavaScript, what are we using it for?
 
 ### AJAX
 
-One way that JavaScript is used is to communicate with servers to asynchronously receive information in various formats. [_Asynchronous JavaScript and XML_](https://developer.mozilla.org/en-US/docs/Web/Guide/AJAX/Getting_Started) (AJAX) is typically used to send and receive data, and it supports more than just XML, including JSON, HTML, and text formats.
+One way that JavaScript is used is to communicate with servers to asynchronously receive information in various formats. [_Asynchronous JavaScript and XML_](https://developer.mozilla.org/docs/Web/Guide/AJAX/Getting_Started) (AJAX) is typically used to send and receive data, and it supports more than just XML, including JSON, HTML, and text formats.
 
 With multiple ways to send and receive data on the web, let's look at how many asynchronous requests are sent per page.
 
@@ -704,7 +704,7 @@ The median mobile page makes 4 asynchronous requests. If we look at the long tai
 
 An alternative to the asynchronous AJAX requests are the synchronous requests. Rather than passing a request to a callback, they block the main thread until the request completes.
 
-However, [this practice is discouraged](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Synchronous_and_Asynchronous_Requests#synchronous_request) due to the potential for poor performance and user experiences, and many browsers already warn about such usage. It would be intriguing to see how many pages still use synchronous AJAX requests.
+However, [this practice is discouraged](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/Synchronous_and_Asynchronous_Requests#synchronous_request) due to the potential for poor performance and user experiences, and many browsers already warn about such usage. It would be intriguing to see how many pages still use synchronous AJAX requests.
 
 {{ figure_markup(
   image="usage-sync-async.png",
@@ -732,7 +732,7 @@ We see that there is a clear increase in the usage of asynchronous AJAX requests
 
 Knowing the number of AJAX requests per page now, we'd also be interested in knowing the most commonly used APIs to request the data from the server.
 
-We can broadly classify these AJAX requests into three different APIs and dig in to see how they're used. The core APIs [`XMLHttpRequest`](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) (XHR), [`Fetch`](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch), and [`Beacon`](https://developer.mozilla.org/en-US/docs/Web/API/Beacon_API) are used commonly across websites with XHR being used primarily, however `Fetch` is gaining popularity and growing rapidly while `Beacon` has low usage.
+We can broadly classify these AJAX requests into three different APIs and dig in to see how they're used. The core APIs [`XMLHttpRequest`](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest) (XHR), [`Fetch`](https://developer.mozilla.org/docs/Web/API/Fetch_API/Using_Fetch), and [`Beacon`](https://developer.mozilla.org/docs/Web/API/Beacon_API) are used commonly across websites with XHR being used primarily, however `Fetch` is gaining popularity and growing rapidly while `Beacon` has low usage.
 
 {{ figure_markup(
   image="ajax_xhr.png",
@@ -786,11 +786,11 @@ For both `Fetch` and XHR, the usage has increased significantly over the years. 
 
 ### Web Components and the shadow DOM
 
-With the web becoming [componentized](https://developer.mozilla.org/en-US/docs/Web/Web_Components), a developer building a single page application may think about a user view as a set of components. This is not only for the sake of developers building dedicated components for each feature, but also to maximize component reusability. It could be in the same app on a different view or in a completely different application. Such use cases lead to the usage of custom elements and web components in applications.
+With the web becoming [componentized](https://developer.mozilla.org/docs/Web/Web_Components), a developer building a single page application may think about a user view as a set of components. This is not only for the sake of developers building dedicated components for each feature, but also to maximize component reusability. It could be in the same app on a different view or in a completely different application. Such use cases lead to the usage of custom elements and web components in applications.
 
 It would be justified to say that with many JavaScript frameworks gaining popularity, the idea of reusability and building dedicated feature-based components has been adopted more widely. This feeds our curiosity to look into the adoption of custom elements, shadow DOM, template elements.
 
-<a hreflang="en" href="https://developers.google.com/web/fundamentals/web-components/customelements">Custom Elements</a> are customized elements built on top of the [`HTMLElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement) API. Browsers provide a `customElements` API that allows developers to define an element and register it with the browser as a custom element.
+<a hreflang="en" href="https://developers.google.com/web/fundamentals/web-components/customelements">Custom Elements</a> are customized elements built on top of the [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement) API. Browsers provide a `customElements` API that allows developers to define an element and register it with the browser as a custom element.
 
 {{ figure_markup(
   content="3.0%",
@@ -825,7 +825,7 @@ It would be justified to say that with many JavaScript frameworks gaining popula
   )
 }}
 
-A [`template`](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots#the_truth_about_templates) element is very useful when there is a pattern in the markup which could be reused. The contents of `template` elements render only when referenced by JavaScript.
+A [`template`](https://developer.mozilla.org/docs/Web/Web_Components/Using_templates_and_slots#the_truth_about_templates) element is very useful when there is a pattern in the markup which could be reused. The contents of `template` elements render only when referenced by JavaScript.
 
 Templates work well when dealing with web components, as the content that is not yet referenced by JavaScript is then appended to a shadow root using the shadow DOM.
 

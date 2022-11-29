@@ -269,7 +269,7 @@ CrUXデータセットにおけるページの <a hreflang="ja" href="https://we
 
 ### `as` 属性
 
-`as` 属性は、 `rel="preload"` (または `rel="prefetch"`) を使用して、ダウンロードするリソースの種類を指定するときに指定する必要があります。正しい `as` 属性を適用することで、ブラウザはより正確にリソースの優先順位を決定できます。たとえば、`preload as="script"` は低または中の優先順位になり、`preload as="style"` は内部リクエストの優先順位が _最高_ になります。`as` 属性は、今後のリクエストに備えてリソースをキャッシュし、正しい <a hreflang="en" href="https://developer.mozilla.org/ja/docs/Web/HTTP/CSP">コンテンツセキュリティポリシー</a> を適用するために必要です。
+`as` 属性は、 `rel="preload"` (または `rel="prefetch"`) を使用して、ダウンロードするリソースの種類を指定するときに指定する必要があります。正しい `as` 属性を適用することで、ブラウザはより正確にリソースの優先順位を決定できます。たとえば、`preload as="script"` は低または中の優先順位になり、`preload as="style"` は内部リクエストの優先順位が _最高_ になります。`as` 属性は、今後のリクエストに備えてリソースをキャッシュし、正しい <a hreflang="en" href="https://developer.mozilla.org/docs/Web/HTTP/CSP">コンテンツセキュリティポリシー</a> を適用するために必要です。
 
 {{ figure_markup(
   image="preload-as-attribute-values.png",
@@ -303,7 +303,7 @@ CSSの `background-image` のように、画像が最初のHTMLに含まれて�
 
 ### `crossorigin` 属性
 
-`crossorigin` 属性は、要求されたリソースを取得する際に[オリジン間リソース共有](https://developer.mozilla.org/ja/docs/Web/HTTP/CORS) (CORS)を使用しなければならないかどうかを示すために使用されます。これはあらゆるリソースタイプに適用できますが、フォントファイルは常にCORSを使用して要求されるべきなので、もっとも一般的に関連付けられます。
+`crossorigin` 属性は、要求されたリソースを取得する際に[オリジン間リソース共有](https://developer.mozilla.org/docs/Web/HTTP/CORS) (CORS)を使用しなければならないかどうかを示すために使用されます。これはあらゆるリソースタイプに適用できますが、フォントファイルは常にCORSを使用して要求されるべきなので、もっとも一般的に関連付けられます。
 
 <figure>
   <table>
@@ -338,7 +338,7 @@ CSSの `background-image` のように、画像が最初のHTMLに含まれて�
 
 #### `anonymous`
 
-値が指定されていない場合のデフォルト値は `anonymous` で、この値では資格情報フラグが <a hreflang="en" href="https://developer.mozilla.org/ja/docs/Web/Security/Same-origin_policy">`same-origin`</a> に設定されます。CORSで保護されたリソースをダウンロードする際に必要です。また、フォント ファイルをダウンロードする際の <a hreflang="en" href="https://drafts.csswg.org/css-fonts/#font-fetching-requirements">必須条件</a>でもあります、たとえそれが同じオリジンであってもです！プリロードされたリソースに対する最終的なリクエストがCORSを使用しているときに `crossorigin` 属性を省略すると、プリロードキャッシュでマッチしないため、重複したリクエストになってしまいます。
+値が指定されていない場合のデフォルト値は `anonymous` で、この値では資格情報フラグが <a hreflang="en" href="https://developer.mozilla.org/docs/Web/Security/Same-origin_policy">`same-origin`</a> に設定されます。CORSで保護されたリソースをダウンロードする際に必要です。また、フォント ファイルをダウンロードする際の <a hreflang="en" href="https://drafts.csswg.org/css-fonts/#font-fetching-requirements">必須条件</a>でもあります、たとえそれが同じオリジンであってもです！プリロードされたリソースに対する最終的なリクエストがCORSを使用しているときに `crossorigin` 属性を省略すると、プリロードキャッシュでマッチしないため、重複したリクエストになってしまいます。
 
 #### `use-credentials`
 

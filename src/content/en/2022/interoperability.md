@@ -61,7 +61,7 @@ A good example of this is the ability to animate grid tracks—grid rows and col
 
 ### Flexbox
 
-Flexbox is even older and more widely used. This year its use has grown again, [now appearing on 75% of mobile pages and 76% of desktop pages](./css#flexbox-and-grid-adoption). It has a similar number of tests to Grid and despite very wide adoption started in much worse shape. Entering 2021, we had a combination of ragged bugs and sub-features that remained under-implemented.  For example, [positional-alignment keyword values](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Alignment#positional_alignment_keyword_values) (which can be applied to justify-content and align-content and also to justify-self and align-self) had ragged support and several interoperability issues. For absolute positioned flex items this was even worse. These issues have been resolved.
+Flexbox is even older and more widely used. This year its use has grown again, [now appearing on 75% of mobile pages and 76% of desktop pages](./css#flexbox-and-grid-adoption). It has a similar number of tests to Grid and despite very wide adoption started in much worse shape. Entering 2021, we had a combination of ragged bugs and sub-features that remained under-implemented.  For example, [positional-alignment keyword values](https://developer.mozilla.org/docs/Web/CSS/CSS_Box_Alignment#positional_alignment_keyword_values) (which can be applied to justify-content and align-content and also to justify-self and align-self) had ragged support and several interoperability issues. For absolute positioned flex items this was even worse. These issues have been resolved.
 
 {{ figure_markup(
   caption="Desktop pages using `flex-basis: content` in their stylesheets.",
@@ -200,7 +200,7 @@ Aligning implementations is particularly difficult. There is a delicate balance 
 
 A dialog element was first shipped in Chrome 37 in August 2014. Introducing a dialog requires introducing and defining a number of supporting concepts like "top-layer" and "inertness." It also requires answering many new accessibility and UX questions.
 
-A number of things caused work on dialogs to stall for a long time, but over the years it's picked back up. It landed in Firefox Nightly 53 behind a flag in April 2017. Since then, a lot of work has gone into answering all of those questions. Final details were sorted out and work was prioritized as part of Interop 2022 to ensure good interoperability to start with. We identified 88 Tests. It was shipped by default in stable browsers in both [Firefox 98](https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Releases/98) and <a hreflang="en" href="https://developer.apple.com/documentation/safari-release-notes/safari-15_4-release-notes">Safari 15.4</a> in March 2022, with all browsers scoring ~93% or better.
+A number of things caused work on dialogs to stall for a long time, but over the years it's picked back up. It landed in Firefox Nightly 53 behind a flag in April 2017. Since then, a lot of work has gone into answering all of those questions. Final details were sorted out and work was prioritized as part of Interop 2022 to ensure good interoperability to start with. We identified 88 Tests. It was shipped by default in stable browsers in both [Firefox 98](https://developer.mozilla.org/docs/Mozilla/Firefox/Releases/98) and <a hreflang="en" href="https://developer.apple.com/documentation/safari-release-notes/safari-15_4-release-notes">Safari 15.4</a> in March 2022, with all browsers scoring ~93% or better.
 
 {{ figure_markup(
   image="dialog-element-wpt-dashboard.png",
@@ -215,7 +215,7 @@ It's hard to predict how many of the pages the archive crawls will require a `<d
 
 #### CSS containment
 
-CSS containment introduces a concept for isolating a subtree of the page from the rest of the page in terms of how CSS should process and render it. It was introduced as a primitive which could be used to improve performance, and to open the door for figuring out [Container Queries](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Container_Queries).
+CSS containment introduces a concept for isolating a subtree of the page from the rest of the page in terms of how CSS should process and render it. It was introduced as a primitive which could be used to improve performance, and to open the door for figuring out [Container Queries](https://developer.mozilla.org/docs/Web/CSS/CSS_Container_Queries).
 
 {{ figure_markup(
   image="containment-wpt-dashboard.png",
@@ -270,7 +270,7 @@ Not much, yet it would seem! A mere 238 pages, out of the nearly 8 million pages
 
 #### Subgrid
 
-While CSS grid layout has allowed a container to express layout of its children in terms of rows, columns and tracks—there has always been something of a limit here. There is frequently a need for descendants that are not children to participate in the same grid layout. [Subgrid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Subgrid) is the solution for problems like this. It was first supported in a stable release in Firefox in December 2019, but other implementations didn't immediately follow.
+While CSS grid layout has allowed a container to express layout of its children in terms of rows, columns and tracks—there has always been something of a limit here. There is frequently a need for descendants that are not children to participate in the same grid layout. [Subgrid](https://developer.mozilla.org/docs/Web/CSS/CSS_Grid_Layout/Subgrid) is the solution for problems like this. It was first supported in a stable release in Firefox in December 2019, but other implementations didn't immediately follow.
 
 Coordinating work on this long awaited feature and ensuring good interoperability was another goal in Interop 2022. We marked <a hreflang="en" href="https://wpt.fyi/results/css/css-grid/subgrid?label=master&label=experimental&product=chrome&product=firefox&product=safari&aligned&view=interop&q=label%3Ainterop-2022-subgrid">51 Tests in Web Platform Tests</a>.
 

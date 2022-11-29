@@ -22,7 +22,7 @@ featured_stat_label_3: PWAs that use Workbox in some capacity
 
 In the early days of Progressive Web Apps, there were two key features that harnessed the promise of an advanced modern web application: offline support and a direct icon on the home screen of the device.
 
-These two concepts were enabled after installing a PWA, a process that generally began by tapping on an "ambient badge" that would appear on the browser's URL bar. This badge would prompt the user to install the website. Mobile browsers such as Samsung Internet and Mozilla Firefox, were among the first ones to explicitly support this behavior, commonly known as ["Add to home screen" (A2HS)](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Add_to_home_screen).
+These two concepts were enabled after installing a PWA, a process that generally began by tapping on an "ambient badge" that would appear on the browser's URL bar. This badge would prompt the user to install the website. Mobile browsers such as Samsung Internet and Mozilla Firefox, were among the first ones to explicitly support this behavior, commonly known as ["Add to home screen" (A2HS)](https://developer.mozilla.org/docs/Web/Progressive_web_apps/Add_to_home_screen).
 
 Five years ago, this was a radical idea. A website would be able to launch directly from the home screen, listed alongside other applications a user had installed on their device. This was the start of progress made towards reducing the gap between capabilities of web apps and OS-specific experiences.
 
@@ -32,9 +32,9 @@ Note: As a set of web technologies, PWAs are not isolated from the rest of the w
 
 ## Service workers
 
-[Service workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) is one of the core technologies of PWAs and the enabler of offline apps, getting push notifications, and doing background processing. They serve as the base for most of the advanced experiences we expect from applications. They are also being used to define data updates and for upcoming modern functionality like <a hreflang="en" href="https://github.com/aarongustafson/pwa-widgets#rich-widgets">widgets based on PWA technologies</a>.
+[Service workers](https://developer.mozilla.org/docs/Web/API/Service_Worker_API) is one of the core technologies of PWAs and the enabler of offline apps, getting push notifications, and doing background processing. They serve as the base for most of the advanced experiences we expect from applications. They are also being used to define data updates and for upcoming modern functionality like <a hreflang="en" href="https://github.com/aarongustafson/pwa-widgets#rich-widgets">widgets based on PWA technologies</a>.
 
-While there isn't parity between major browsers when it comes to service worker feature support, Webkit adding support for <a hreflang="en" href="https://caniuse.com/push-api">push notifications</a> was a huge milestone. Earlier this year it was announced that <a hreflang="en" href="https://webkit.org/blog/12945/meet-web-push/">Apple had made changes</a> to their desktop platform to support the relevant parts of the [Push API](https://developer.mozilla.org/en-US/docs/Web/API/Push_API), [Notifications API](https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API) and that [service workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) would enable Web Push. They also announced the feature would be coming to their mobile platforms in 2023.
+While there isn't parity between major browsers when it comes to service worker feature support, Webkit adding support for <a hreflang="en" href="https://caniuse.com/push-api">push notifications</a> was a huge milestone. Earlier this year it was announced that <a hreflang="en" href="https://webkit.org/blog/12945/meet-web-push/">Apple had made changes</a> to their desktop platform to support the relevant parts of the [Push API](https://developer.mozilla.org/docs/Web/API/Push_API), [Notifications API](https://developer.mozilla.org/docs/Web/API/Notifications_API) and that [service workers](https://developer.mozilla.org/docs/Web/API/Service_Worker_API) would enable Web Push. They also announced the feature would be coming to their mobile platforms in 2023.
 
 ### Service worker usage
 
@@ -59,7 +59,7 @@ There hasn't been a noticeable change for service worker controlled pages in the
 
 ### Service worker events
 
-A service worker acts as a proxy server that sits between the web app, the browser and the network. To install a service worker it must be fetched and registered. If this is successful, the service worker is executed in a [special worker container](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope) that runs off the main thread and has no DOM access. This is when events can be processed.
+A service worker acts as a proxy server that sits between the web app, the browser and the network. To install a service worker it must be fetched and registered. If this is successful, the service worker is executed in a [special worker container](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope) that runs off the main thread and has no DOM access. This is when events can be processed.
 
 {{ figure_markup(
   image="most-used-sw-events.png",
@@ -143,7 +143,7 @@ The remaining events in the chart represent background processing events:
   )
 }}
 
-Similar to the [stats of last year](../2021/pwa#other-popular-service-worker-features), the [`skipWaiting`](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope/skipWaiting) method that is used to immediately activate the service worker is still very popular among developers, being present on 60% of desktop and 59% of mobile web apps.
+Similar to the [stats of last year](../2021/pwa#other-popular-service-worker-features), the [`skipWaiting`](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/skipWaiting) method that is used to immediately activate the service worker is still very popular among developers, being present on 60% of desktop and 59% of mobile web apps.
 
 These are the top most used service worker objects:
 

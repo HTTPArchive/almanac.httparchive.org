@@ -33,7 +33,7 @@ featured_stat_label_3: 優先順位のヒントの使い方
 
 ### `dns-prefetch`
 
-[`dns-prefetch`](https://developer.mozilla.org/en-US/docs/Learn/Performance/dns-prefetch)の役割は、初期のDNS検索を開始することである。サードパーティのDNSルックアップを完了させるのに便利です。たとえば、CDN、フォントプロバイダー、サードパーティAPIのDNSルックアップなどです。
+[`dns-prefetch`](https://developer.mozilla.org/docs/Learn/Performance/dns-prefetch)の役割は、初期のDNS検索を開始することである。サードパーティのDNSルックアップを完了させるのに便利です。たとえば、CDN、フォントプロバイダー、サードパーティAPIのDNSルックアップなどです。
 
 ### `preconnect`
 
@@ -49,13 +49,13 @@ featured_stat_label_3: 優先順位のヒントの使い方
 
 ## 文法
 
-リソースヒント使用率の97%は、リソースヒントを指定するために[`<link>`](https://developer.mozilla.org/ja/docs/Web/HTML/Element/link)タグを使用しています。たとえば、以下のようになります。
+リソースヒント使用率の97%は、リソースヒントを指定するために[`<link>`](https://developer.mozilla.org/docs/Web/HTML/Element/link)タグを使用しています。たとえば、以下のようになります。
 
 ```html
 <link rel="prefetch" href="shopping-cart.js">
 ```
 
-リソースヒント使用率のわずか3%は、リソースヒントの指定に[HTTPヘッダ](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Link)を使用しました。たとえば、以下のようになります。
+リソースヒント使用率のわずか3%は、リソースヒントの指定に[HTTPヘッダ](https://developer.mozilla.org/docs/Web/HTTP/Headers/Link)を使用しました。たとえば、以下のようになります。
 
 ```
 Link: <https://example.com/shopping-cart.js>; rel=prefetch
@@ -168,7 +168,7 @@ HTTPヘッダー内のリソースヒントの使用量が非常に少ないた�
 
 ## `crossorigin`属性
 
-ウェブ上に取り込まれるほとんどの「伝統的な」リソース（[images](./media)、[stylesheets](./css)、[script](./javascript)）は、クロスオリジンリソース共有（[CORS](https://developer.mozilla.org/ja/docs/Web/HTTP/CORS)）を選択せずに取り込まれています。つまり、これらのリソースがクロスオリジンサーバーからフェッチされた場合、デフォルトでは同一オリジンポリシーのために、その内容をページで読み返すことができないということです。
+ウェブ上に取り込まれるほとんどの「伝統的な」リソース（[images](./media)、[stylesheets](./css)、[script](./javascript)）は、クロスオリジンリソース共有（[CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS)）を選択せずに取り込まれています。つまり、これらのリソースがクロスオリジンサーバーからフェッチされた場合、デフォルトでは同一オリジンポリシーのために、その内容をページで読み返すことができないということです。
 
 場合によっては、ページはコンテンツを読む必要がある場合、CORSを使用してリソースを取得するようにオプトインできます。CORSは、ブラウザが「許可を求める」ことを可能にし、それらのクロスオリジンリソースへのアクセスを取得します。
 

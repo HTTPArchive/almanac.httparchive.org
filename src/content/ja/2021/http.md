@@ -277,7 +277,7 @@ HTTP/2で提唱されたもう1つの機能は、ヘッダーの圧縮です。H
   )
 }}
 
-受信したレスポンスヘッダーの中で、もっとも多いヘッダーは上位5つです。それぞれ、 `date`, `content-type`, `server`, `cache-control`, `content-length` です。もっとも一般的な非標準ヘッダーはCloudflareの `cf-ray` で、Amazonの `x-amz-cf-pop` と `X-amz-cf-id` がそれに続いています。コンテンツ情報 (`length`, `type`, `encoding`) 以外では、キャッシュポリシー (`expires`, `etag`, `last-modified`) やオリジンポリシー (STS,  [CORS](https://developer.mozilla.org/ja/docs/Web/HTTP/Headers/Access-Control-Allow-Origin)), [`expect-ct`](https://developer.mozilla.org/ja/docs/Web/HTTP/Headers/Expect-CT) レポート証明書の透明性やCSP [`report-to`](https://developer.mozilla.org/ja/docs/Web/HTTP/Headers/Content-Security-Policy/report-to) ヘッダーはもっともよく使われるヘッダーとなります。
+受信したレスポンスヘッダーの中で、もっとも多いヘッダーは上位5つです。それぞれ、 `date`, `content-type`, `server`, `cache-control`, `content-length` です。もっとも一般的な非標準ヘッダーはCloudflareの `cf-ray` で、Amazonの `x-amz-cf-pop` と `X-amz-cf-id` がそれに続いています。コンテンツ情報 (`length`, `type`, `encoding`) 以外では、キャッシュポリシー (`expires`, `etag`, `last-modified`) やオリジンポリシー (STS,  [CORS](https://developer.mozilla.org/docs/Web/HTTP/Headers/Access-Control-Allow-Origin)), [`expect-ct`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Expect-CT) レポート証明書の透明性やCSP [`report-to`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/report-to) ヘッダーはもっともよく使われるヘッダーとなります。
 
 これらのヘッダーの一部 (たとえば `date` や `content-length`) はリクエストごとに変わるかもしれませんが、大部分はリクエストごとに同じか、限られた数のバリエーションを送信します。同様にリクエストヘッダーも、リクエストごとに同じデータ（長い `user-agent` ヘッダーなど）を何度も送信することがよくあります。したがって、影響を考慮するためには、ページが行っているリクエストの数に注目する必要があります。
 
@@ -469,7 +469,7 @@ HTTP/3は代わりに`alt-svc`ヘッダーを必要とします。TCPベース�
 
 ページレベルでは、リクエストの約15%が `alt-svc` ヘッダーを提供します。これらはQUICを提供する構文、さまざまなH3プレリリースバージョンの1つ（公式にはHTTP/3は執筆時点で標準化されていませんが、非常に最終段階にあります）間で異なります。いくつかのサイトは `quic=":443"; ma=2592000; v="39,43,46,50"` のように複数のバージョンのQUICのサポートを宣伝していますが、中には1つのバージョンしか提供しないサイトもあります。もっとも一般的な `alt-svc` のアドバタイズは `"h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400, h3=":443"; ma=86400"` で、すべての `alt-svc` 応答に対して11%に及んでいます。このヘッダーは、HTTP/33バージョン27、28、29をサポートし、 `max-age` が24時間であることをクライアントに指示します。
 
-`alt-svc`がある場合、ほとんどのサイトは新しいプロトコルのバージョンをサポートするようにバージョン番号を追加していますが、[`clear`](https://developer.mozilla.org/ja/docs/Web/HTTP/Headers/alt-svc)ディレクティブを使って以前に宣伝したサポートを無効にしているケースも多く見られました。
+`alt-svc`がある場合、ほとんどのサイトは新しいプロトコルのバージョンをサポートするようにバージョン番号を追加していますが、[`clear`](https://developer.mozilla.org/docs/Web/HTTP/Headers/alt-svc)ディレクティブを使って以前に宣伝したサポートを無効にしているケースも多く見られました。
 
 この記事の執筆時点では、<a hreflang="en" href="https://datatracker.ietf.org/doc/html/draft-ietf-quic-http-34">HTTP/3仕様</a>の最新バージョンは34です。しかし、この最新バージョンを報告している回答は、わずか0.01%です。リクエストレベルで `alt-svc` の詳細を見る場合、レスポンスヘッダーでもっともよく要求されるバージョンは27であす。サーバーは左から右の順に優先されるバージョンを表示します。6%のリクエストでは、最初に `h3-27` が優先され、同じレスポンスで28と29が代替バージョンとして提供されると報告されます。2%のレスポンスは `h3-29` をアップグレードのための唯一の優先バージョンとして提供します。QUICは優先的に更新されるプロトコルですが、わずか0.11% しか受信していません。実際には `h3-29` 以降は技術的にほとんど違いがなく、ほとんどの実装は `h3` の正式リリースを待ってバージョンを凍結していました。
 
