@@ -675,8 +675,8 @@
   },
   "en/2022/chapters/security.html": {
     "date_published": "2022-09-26T00:00:00.000Z",
-    "date_modified": "2022-11-23T00:00:00.000Z",
-    "hash": "dae6575ed88077a63b343f353db4dc70"
+    "date_modified": "2022-11-29T00:00:00.000Z",
+    "hash": "9a8d11e064042ee55bc0e0e32a75e2f7"
   },
   "en/2022/chapters/seo.html": {
     "date_published": "2022-09-26T00:00:00.000Z",
@@ -2192,6 +2192,11 @@
     "date_published": "2022-10-03T00:00:00.000Z",
     "date_modified": "2022-10-03T00:00:00.000Z",
     "hash": "ad347648874649895636bc93087ddcf0"
+  },
+  "zh-CN/2022/chapters/security.html": {
+    "date_published": "2022-11-29T00:00:00.000Z",
+    "date_modified": "2022-11-29T00:00:00.000Z",
+    "hash": "64091e6b4381ff09fc82739527d77424"
   },
   "zh-CN/2022/chapters/webassembly.html": {
     "date_published": "2022-11-07T00:00:00.000Z",
