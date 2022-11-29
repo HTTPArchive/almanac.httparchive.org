@@ -287,7 +287,7 @@ Open source code, or code with a permissive license that can be accessed, viewed
     <figcaption>{{ figure_link(caption="Top JavaScript libraries on desktop and mobile.") }}</figcaption>
 </figure>
 
-<a hreflang="en" href="https://jquery.com/">jQuery</a>, the most popular JavaScript library ever created, is used in 85.03% of desktop pages and 83.46% of mobile pages. The advent of many Browser APIs and methods, such as [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) and [querySelector](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector), standardized much of the functionality provided by the library into a native form. Although the popularity of jQuery may seem to be declining, why is it still used in the vast majority of the web?
+<a hreflang="en" href="https://jquery.com/">jQuery</a>, the most popular JavaScript library ever created, is used in 85.03% of desktop pages and 83.46% of mobile pages. The advent of many Browser APIs and methods, such as [Fetch](https://developer.mozilla.org/docs/Web/API/Fetch_API) and [querySelector](https://developer.mozilla.org/docs/Web/API/Document/querySelector), standardized much of the functionality provided by the library into a native form. Although the popularity of jQuery may seem to be declining, why is it still used in the vast majority of the web?
 
 There are a number of possible reasons:
 
@@ -359,7 +359,7 @@ Similarly, very few sites (0.50%-0.80%) use the `nomodule` attribute for any scr
 
 ## Preload and prefetch
 
-[Preload](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types/preload) and [prefetch](https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ) are [resource hints](./resource-hints) which enable you to aid the browser in determining what resources need to be downloaded.
+[Preload](https://developer.mozilla.org/docs/Web/HTML/Link_types/preload) and [prefetch](https://developer.mozilla.org/docs/Web/HTTP/Link_prefetching_FAQ) are [resource hints](./resource-hints) which enable you to aid the browser in determining what resources need to be downloaded.
 
 - Preloading a resource with `<link rel="preload">` tells the browser to download this resource as soon as possible. This is especially helpful for critical resources which are discovered late in the page loading process (e.g., JavaScript located at the bottom of your HTML) and are otherwise downloaded last.
 - Using `<link rel="prefetch">` tells the browser to take advantage of any idle time it has to fetch these resources needed for future navigations
@@ -396,12 +396,12 @@ With HTTP Archive, we can take a look at any newer API that is supported (or is 
 
 How many sites use the following APIs?
 
-- [Atomics](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Atomics)
-- [Intl](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl)
-- [Proxy](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy)
-- [SharedArrayBuffer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer)
-- [WeakMap](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap)
-- [WeakSet](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet)
+- [Atomics](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Atomics)
+- [Intl](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl)
+- [Proxy](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Proxy)
+- [SharedArrayBuffer](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer)
+- [WeakMap](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WeakMap)
+- [WeakSet](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WeakSet)
 
 {{ figure_markup(
   image="fig17.png",

@@ -361,7 +361,7 @@ TTFBは、ネットワークのレイテンシーと接続タイプの影響を�
 
 ## パフォーマンス・オブザーバーの使い方
 
-Webサイトやアプリケーションの評価に使用できるユーザー中心の評価基準は、何十種類もあります。しかし、事前に定義された評価基準は、私たちの特定のシナリオやニーズにまったく合わないことがあります。[PerformanceObserver API](https://developer.mozilla.org/ja/docs/Web/API/PerformanceObserver)では、[User Timing API](https://developer.mozilla.org/ja/docs/Web/API/User_Timing_API)、[Long Task API](https://developer.mozilla.org/ja/docs/Web/API/Long_Tasks_API)、<a hreflang="ja" href="https://web.dev/i18n/ja/custom-metrics/#event-timing-api">Event Timing API</a>や<a hreflang="ja" href="https://web.dev/i18n/ja/custom-metrics/">その他のいくつかの低レベルAPI</a>で得られたカスタムメトリックデータを取得できます。たとえば、彼らの協力を得て、ページ間の遷移のタイミングを記録したり、SSR（Server-Side-rendered）アプリケーションの水和を数値化したりすることができました。
+Webサイトやアプリケーションの評価に使用できるユーザー中心の評価基準は、何十種類もあります。しかし、事前に定義された評価基準は、私たちの特定のシナリオやニーズにまったく合わないことがあります。[PerformanceObserver API](https://developer.mozilla.org/docs/Web/API/PerformanceObserver)では、[User Timing API](https://developer.mozilla.org/docs/Web/API/User_Timing_API)、[Long Task API](https://developer.mozilla.org/docs/Web/API/Long_Tasks_API)、<a hreflang="ja" href="https://web.dev/i18n/ja/custom-metrics/#event-timing-api">Event Timing API</a>や<a hreflang="ja" href="https://web.dev/i18n/ja/custom-metrics/">その他のいくつかの低レベルAPI</a>で得られたカスタムメトリックデータを取得できます。たとえば、彼らの協力を得て、ページ間の遷移のタイミングを記録したり、SSR（Server-Side-rendered）アプリケーションの水和を数値化したりすることができました。
 
 {{ figure_markup(
   image="performance-performance-observer-usage.png",

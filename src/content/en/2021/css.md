@@ -184,7 +184,7 @@ The ranking and distribution of both pseudo-classes and pseudo-elements was not 
 
 Just as in 2020, the user-action pseudo-classes `:hover`, `:focus`, and `:active` took the top three spots, with all of them appearing in a minimum of two-thirds of all pages. Structural pseudo-classes put in a number of appearances, but one of the most interesting changes was `:not()`, the negation pseudo-class, becoming more popular than `:visited` and achieving a 50% share of pages.
 
-One thing we did check specifically this year was the use of [`:focus-visible`, a way to style elements in focus in a way that better matches user expectations](https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible). This capability landed in Chromium in 2020, Firefox in January 2021, and (as of publication) is available in Safari 15 behind an experimental flag. Likely reflecting its recent implementation status, it appeared in less than 1% of the pages analyzed. It will be interesting to see if that number changes over the next few years.
+One thing we did check specifically this year was the use of [`:focus-visible`, a way to style elements in focus in a way that better matches user expectations](https://developer.mozilla.org/docs/Web/CSS/:focus-visible). This capability landed in Chromium in 2020, Firefox in January 2021, and (as of publication) is available in Safari 15 behind an experimental flag. Likely reflecting its recent implementation status, it appeared in less than 1% of the pages analyzed. It will be interesting to see if that number changes over the next few years.
 
 {{ figure_markup(
   image="most-popular-unprefixed-pseudo-elements.png",
@@ -981,7 +981,7 @@ Animations continue to be widely used, with the `animation` property appearing o
   sql_file="transition_properties.sql"
 ) }}
 
-Among those transitions, the most common application is to all [animatable properties](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties) using the `all` keyword (whether explicitly or by default), which occurred in 46% of the analyzed pages. Just behind that is `opacity`, at 42% of all pages containing transitions.
+Among those transitions, the most common application is to all [animatable properties](https://developer.mozilla.org/docs/Web/CSS/CSS_animated_properties) using the `all` keyword (whether explicitly or by default), which occurred in 46% of the analyzed pages. Just behind that is `opacity`, at 42% of all pages containing transitions.
 
 {{ figure_markup(
   image="distribution-of-transition-durations.png",
@@ -1053,7 +1053,7 @@ When authors build their media queries, they most often test the width of the vi
 
 Where we did see a notable change was in the ranking of the `prefers-reduced-motion` query. This query placed 7th in 2020, with a share of 24%; this year, with a share of 32%, it's up to fifth, where it just missed edging out `orientation`.
 
-We also saw newcomers come and go at the bottom of the list. [`pointer`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/pointer), a query which checks to see if the display device's primary input mechanism is a pointing device such as a mouse and which placed 19th last year, fell off the chart as it slipped to 21st place. The [`hover` media feature](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/hover), on the other hand, entered the chart at 20th place. `hover` is used to test if the display device's primary input mechanism can cause a hover state in elements on the page.
+We also saw newcomers come and go at the bottom of the list. [`pointer`](https://developer.mozilla.org/docs/Web/CSS/@media/pointer), a query which checks to see if the display device's primary input mechanism is a pointing device such as a mouse and which placed 19th last year, fell off the chart as it slipped to 21st place. The [`hover` media feature](https://developer.mozilla.org/docs/Web/CSS/@media/hover), on the other hand, entered the chart at 20th place. `hover` is used to test if the display device's primary input mechanism can cause a hover state in elements on the page.
 
 Both queries have a similar aim, which is (put simply) to figure out if the device being used to display the page is mouse-driven or not. Combined with a mobile-first design philosophy, where desktop styles are added to override the default mobile styling, one can see how queries like `pointer` or `hover` would be useful. While it's too soon to say if one or the other will become dominant, the trends this year swung toward `hover`.
 
@@ -1433,7 +1433,7 @@ This year's parsing run, which as in 2020 uses the <a hreflang="en" href="https:
   sql_file="meta_unknown_properties.sql"
 ) }}
 
-One of the things we like to check for is the existence of declarations that are syntactically valid, but use properties that don't actually exist. This doesn't count vendor-prefixed properties, but does include malformed vendor-prefixed properties. Indeed, the most widespread non-existent property we found was `webkit-transition` (which lacks the `-` at the beginning needed for a proper vendor prefix), appearing on 14% of all pages that contained a nonexistent property. Essentially tied with that was `font-smoothing`, an unprefixed version of `-webkit-font-smoothing` that does not actually exist, [nor is it likely to](https://developer.mozilla.org/en-US/docs/Web/CSS/font-smooth) any time soon.
+One of the things we like to check for is the existence of declarations that are syntactically valid, but use properties that don't actually exist. This doesn't count vendor-prefixed properties, but does include malformed vendor-prefixed properties. Indeed, the most widespread non-existent property we found was `webkit-transition` (which lacks the `-` at the beginning needed for a proper vendor prefix), appearing on 14% of all pages that contained a nonexistent property. Essentially tied with that was `font-smoothing`, an unprefixed version of `-webkit-font-smoothing` that does not actually exist, [nor is it likely to](https://developer.mozilla.org/docs/Web/CSS/font-smooth) any time soon.
 
 #### Longhands before shorthands
 

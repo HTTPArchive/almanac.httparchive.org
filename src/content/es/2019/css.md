@@ -186,7 +186,7 @@ Con el surgimiento de las estrategias OOCSS, atómicas y funcionales de CSS que 
 
 ### Flexbox
 
-[Flexbox](https://developer.mozilla.org/es/docs/Web/CSS/CSS_Flexible_Box_Layout/Conceptos_Basicos_de_Flexbox) es un estilo contenedor que dirige y alinea a sus hijos; es decir, ayuda con el diseño de una manera basada en restricciones. Tuvo un comienzo bastante difícil en la web, ya que su especificación experimentó dos o tres cambios bastante drásticos entre 2010 y 2013. Afortunadamente, se resolvió y se implementó en todos los navegadores en 2014. Dado ese historial, tuvo una tasa de adopción lenta, ¡pero han pasado algunos años desde entonces! Es bastante popular ahora, tiene muchos artículos sobre su uso y cómo sacarle provecho, pero aún es nuevo en comparación con otras tácticas de diseño.
+[Flexbox](https://developer.mozilla.org/docs/Web/CSS/CSS_Flexible_Box_Layout/Conceptos_Basicos_de_Flexbox) es un estilo contenedor que dirige y alinea a sus hijos; es decir, ayuda con el diseño de una manera basada en restricciones. Tuvo un comienzo bastante difícil en la web, ya que su especificación experimentó dos o tres cambios bastante drásticos entre 2010 y 2013. Afortunadamente, se resolvió y se implementó en todos los navegadores en 2014. Dado ese historial, tuvo una tasa de adopción lenta, ¡pero han pasado algunos años desde entonces! Es bastante popular ahora, tiene muchos artículos sobre su uso y cómo sacarle provecho, pero aún es nuevo en comparación con otras tácticas de diseño.
 
 {{ figure_markup(
   image="fig12.png",
@@ -200,7 +200,7 @@ Toda una historia de éxito se muestra aquí, ya que casi el 50% de la web usa f
 
 ### Grid
 
-Similar a flexbox, [grid](https://developer.mozilla.org/es/docs/Web/CSS/CSS_Grid_Layout) también pasó por algunas alteraciones de especificaciones al principio de su vida útil, pero sin cambiar las implementaciones en los navegadores lanzados al público. Microsoft tenía grid en las primeras versiones de Windows 8, como el motor de diseño primario para su estilo de diseño de desplazamiento horizontal. Primero se investigó allí, se hizo la transición a la web y luego los otros navegadores lo maduraron hasta su lanzamiento final en 2017. Tuvo un lanzamiento muy exitoso en el sentido de que casi todos los navegadores lanzaron sus implementaciones al mismo tiempo, por lo que los desarrolladores web simplemente se despertaron un día con un excelente soporte de grid. Hoy, a fines de 2019, grid todavía se siente como un niño nuevo en el bloque, ya que la gente todavía está despertando a su poder y capacidades.
+Similar a flexbox, [grid](https://developer.mozilla.org/docs/Web/CSS/CSS_Grid_Layout) también pasó por algunas alteraciones de especificaciones al principio de su vida útil, pero sin cambiar las implementaciones en los navegadores lanzados al público. Microsoft tenía grid en las primeras versiones de Windows 8, como el motor de diseño primario para su estilo de diseño de desplazamiento horizontal. Primero se investigó allí, se hizo la transición a la web y luego los otros navegadores lo maduraron hasta su lanzamiento final en 2017. Tuvo un lanzamiento muy exitoso en el sentido de que casi todos los navegadores lanzaron sus implementaciones al mismo tiempo, por lo que los desarrolladores web simplemente se despertaron un día con un excelente soporte de grid. Hoy, a fines de 2019, grid todavía se siente como un niño nuevo en el bloque, ya que la gente todavía está despertando a su poder y capacidades.
 
 {{ figure_markup(
   caption="Porcentaje de sitios web que usan grid.",

@@ -64,7 +64,7 @@ Using a <a hreflang="en" href="https://accessibleweb.com/question-answer/minimum
 
 There are rare cases when disabling scaling is acceptable, like when the page in question is a web-based game using touch controls. If left enabled in this case, players' phones will zoom in and out every time the player taps twice on the game, ironically making it inaccessible.
 
-Because of this, developers are given the ability to disable this feature by setting one of the following two properties in the [meta viewport tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag):
+Because of this, developers are given the ability to disable this feature by setting one of the following two properties in the [meta viewport tag](https://developer.mozilla.org/docs/Web/HTML/Viewport_meta_tag):
 
 1. `user-scalable` set to `0` or `no`
 
@@ -84,7 +84,7 @@ Sadly, developers have misused this so much that almost one out of every three s
 
 The web is full of wondrous amounts of content. However, there's a catch: over 1,000 different languages exist in the world, and the content you're looking for may not be written in one you are fluent in. In recent years, we've made great strides in translation technologies and you probably have used one of them on the web (e.g., Google translate).
 
-In order to facilitate this feature, the translation engines need to know what language your pages are written in. This is done by using the [`lang` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang). Without this, computers must guess what language your page is written in. As you might imagine, this leads to many errors, especially when pages use multiple languages (e.g., your page navigation is in English, but the post content is in Japanese).
+In order to facilitate this feature, the translation engines need to know what language your pages are written in. This is done by using the [`lang` attribute](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/lang). Without this, computers must guess what language your page is written in. As you might imagine, this leads to many errors, especially when pages use multiple languages (e.g., your page navigation is in English, but the post content is in Japanese).
 
 This problem is even more pronounced on text-to-speech assistive technologies like screen readers, where if no language has been specified, they tend to read the text in the default user language.
 
@@ -94,7 +94,7 @@ Of the pages analyzed, 26.13% do not specify a language with the `lang` attribut
 
 Some users, such as those with cognitive disabilities, have difficulties concentrating on the same task for long periods of time. These users don't want to deal with pages that include lots of motion and animations, especially when these effects are purely cosmetic and not related to the task at hand. At a minimum, these users need a way to turn all distracting animations off.
 
-Unfortunately, our findings indicate that infinitely looping animations are quite common on the web, with 21.04% of pages using them through infinite CSS animations or [`<marquee>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/marquee) and [`<blink>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blink) elements.
+Unfortunately, our findings indicate that infinitely looping animations are quite common on the web, with 21.04% of pages using them through infinite CSS animations or [`<marquee>`](https://developer.mozilla.org/docs/Web/HTML/Element/marquee) and [`<blink>`](https://developer.mozilla.org/docs/Web/HTML/Element/blink) elements.
 
 It is interesting to note however, that the bulk of this problem appears to be a few popular third-party stylesheets which include infinitely looping CSS animations by default. We were unable to determine how many pages actually used these animation styles.
 
@@ -110,7 +110,7 @@ Even though alt attributes have been around for 25 years, 49.91% of pages still 
 
 Just as images are powerful storytellers, so too are audio and video in grabbing attention and expressing ideas. When audio and video content is not captioned, users who cannot hear this content miss out on large portions of the web. One of the most common things we hear from users who are Deaf or hard of hearing is the need to include captions for all audio and video content.
 
-Of sites using [`<audio>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio) or [`<video>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video) elements, only 0.54% provide captions (as measured by those that include the [`<track>`](https://developer.mozilla.org/en-US/docs/Web/Guide/Audio_and_video_delivery/Adding_captions_and_subtitles_to_HTML5_video) element). Note that some websites have custom solutions for providing video and audio captions to users. We were unable to detect these and thus the true percentage of sites utilizing captions is slightly higher.
+Of sites using [`<audio>`](https://developer.mozilla.org/docs/Web/HTML/Element/audio) or [`<video>`](https://developer.mozilla.org/docs/Web/HTML/Element/video) elements, only 0.54% provide captions (as measured by those that include the [`<track>`](https://developer.mozilla.org/docs/Web/Guide/Audio_and_video_delivery/Adding_captions_and_subtitles_to_HTML5_video) element). Note that some websites have custom solutions for providing video and audio captions to users. We were unable to detect these and thus the true percentage of sites utilizing captions is slightly higher.
 
 ## Ease of page navigation
 
@@ -140,7 +140,7 @@ With that being said, here are our results:
 
 ### Main landmark
 
-A [main landmark](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Main_role) indicates to screen readers where the main content of a web page starts so users can jump right to it. Without this, screen reader users have to manually skip over your navigation every single time they go to a new page within your site. Obviously, this is rather frustrating.
+A [main landmark](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/Main_role) indicates to screen readers where the main content of a web page starts so users can jump right to it. Without this, screen reader users have to manually skip over your navigation every single time they go to a new page within your site. Obviously, this is rather frustrating.
 
 We found only one in every four pages (26.03%) include a main landmark. And surprisingly, 8.06% of pages erroneously contained more than one main landmark, leaving these users guessing which landmark contains the actual main content.
 
@@ -156,9 +156,9 @@ We found only one in every four pages (26.03%) include a main landmark. And surp
 
 Since HTML5 was released in 2008, and made the official standard in 2014, there are many HTML elements to aid computers and screen readers in understanding our page layout and structure.
 
-Elements like [`<header>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header), [`<footer>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/footer), [`<navigation>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav), and [`<main>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/main) indicate where specific types of content live and allow users to quickly jump around your page. These are being used widely across the web, with most of them being used on over 50% of pages (`<main>` being the outlier).
+Elements like [`<header>`](https://developer.mozilla.org/docs/Web/HTML/Element/header), [`<footer>`](https://developer.mozilla.org/docs/Web/HTML/Element/footer), [`<navigation>`](https://developer.mozilla.org/docs/Web/HTML/Element/nav), and [`<main>`](https://developer.mozilla.org/docs/Web/HTML/Element/main) indicate where specific types of content live and allow users to quickly jump around your page. These are being used widely across the web, with most of them being used on over 50% of pages (`<main>` being the outlier).
 
-Others like [`<article>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/article), [`<hr>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr), and [`<aside>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/aside) aid readers in understanding a page's main content. For example, `<article>` says where one article ends and another begins. These elements are not used nearly as much, with each sitting at around 20% usage. Not all of these belong on every web page, so this isn't necessarily an alarming statistic.
+Others like [`<article>`](https://developer.mozilla.org/docs/Web/HTML/Element/article), [`<hr>`](https://developer.mozilla.org/docs/Web/HTML/Element/hr), and [`<aside>`](https://developer.mozilla.org/docs/Web/HTML/Element/aside) aid readers in understanding a page's main content. For example, `<article>` says where one article ends and another begins. These elements are not used nearly as much, with each sitting at around 20% usage. Not all of these belong on every web page, so this isn't necessarily an alarming statistic.
 
 All of these elements are primarily designed for accessibility support and have no visual effect, which means you can safely replace existing elements with them and suffer no unintended consequences.
 
@@ -203,13 +203,13 @@ It's hard to accurately determine what a skip link is when analyzing sites. For 
 
 ### Shortcuts
 
-Shortcut keys set via the <a hreflang="en" href="https://www.w3.org/TR/wai-aria-1.1/#aria-keyshortcuts">`aria-keyshortcuts`</a> or [`accesskey`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey) attributes can be used in one of two ways:
+Shortcut keys set via the <a hreflang="en" href="https://www.w3.org/TR/wai-aria-1.1/#aria-keyshortcuts">`aria-keyshortcuts`</a> or [`accesskey`](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/accesskey) attributes can be used in one of two ways:
 
 1. Activating an element on the page, like a link or button.
 
 2. Giving a certain element on the page focus. For example, shifting focus to a certain input on the page, allowing a user to then start typing into it.
 
-Adoption of <a hreflang="en" href="https://www.w3.org/TR/wai-aria-1.1/#aria-keyshortcuts">`aria-keyshortcuts`</a> was almost absent from our sample, with it only being used on 159 sites out of over 4 million analyzed. The [`accesskey`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey) attribute was used more frequently, being found on 2.47% of web pages (1.74% on mobile). We believe the higher usage of shortcuts on desktop is due to developers expecting mobile sites to only be accessed via a touch screen and not a keyboard.
+Adoption of <a hreflang="en" href="https://www.w3.org/TR/wai-aria-1.1/#aria-keyshortcuts">`aria-keyshortcuts`</a> was almost absent from our sample, with it only being used on 159 sites out of over 4 million analyzed. The [`accesskey`](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/accesskey) attribute was used more frequently, being found on 2.47% of web pages (1.74% on mobile). We believe the higher usage of shortcuts on desktop is due to developers expecting mobile sites to only be accessed via a touch screen and not a keyboard.
 
 What is especially surprising here is 15.56% of mobile and 13.03% of desktop sites which use shortcut keys assign the same shortcut to multiple different elements. This means browsers have to guess which element should own this shortcut key.
 
@@ -221,13 +221,13 @@ Tables are one of the primary ways we organize and express large amounts of data
 
 Depending on the way a particular table is structured, the use of table headers makes it easier to read across columns or rows without losing context on what data that particular column or row refers to. Having to navigate a table lacking in header rows or columns is a subpar experience for a screen reader user. This is because it's hard for a screen reader user to keep track of their place in a table absent of headers, especially when the table is quite large.
 
-To mark up table headers, simply use the [`<th>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/th) tag (instead of [`<td>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/td)), or either of the ARIA [`columnheader`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Table_Role) or [`rowheader`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Table_Role) roles. Only 24.5% of pages with tables were found to markup their tables with either of these methods. So the three quarters of pages choosing to include tables without headers are creating serious challenges for screen reader users.
+To mark up table headers, simply use the [`<th>`](https://developer.mozilla.org/docs/Web/HTML/Element/th) tag (instead of [`<td>`](https://developer.mozilla.org/docs/Web/HTML/Element/td)), or either of the ARIA [`columnheader`](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/Table_Role) or [`rowheader`](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/Table_Role) roles. Only 24.5% of pages with tables were found to markup their tables with either of these methods. So the three quarters of pages choosing to include tables without headers are creating serious challenges for screen reader users.
 
 Using `<th>` and `<td>` was by far the most commonly used method for marking up table headers. The use of `columnheader` and `rowheader` roles was almost non-existent with only 677 total sites using them (0.058%).
 
 #### Captions
 
-Table captions via the [`<caption>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/caption) element are helpful in providing more context for readers of all kinds. A caption can prepare a reader to take in the information your table is sharing, and it can be especially useful for people who may get distracted or interrupted easily. They are also useful for people who may lose their place within a large table, such as a screen reader user or someone with a learning or intellectual disability. The easier you can make it for readers to understand what they're analyzing, the better.
+Table captions via the [`<caption>`](https://developer.mozilla.org/docs/Web/HTML/Element/caption) element are helpful in providing more context for readers of all kinds. A caption can prepare a reader to take in the information your table is sharing, and it can be especially useful for people who may get distracted or interrupted easily. They are also useful for people who may lose their place within a large table, such as a screen reader user or someone with a learning or intellectual disability. The easier you can make it for readers to understand what they're analyzing, the better.
 
 Despite this, only 4.32% of pages with tables provide captions.
 
@@ -273,7 +273,7 @@ Another result pointing towards this conclusion is the fact that more "advanced"
 
 ##### Many sites attempt to make dialogs accessible
 
-The relative popularity of the [dialog role](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/dialog_role) stands out because making dialogs accessible for screen reader users is very challenging. It is therefore exciting to see around 8% of the analyzed pages stepping up to the challenge. Again, we suspect this might be due to the use of some UI frameworks.
+The relative popularity of the [dialog role](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/dialog_role) stands out because making dialogs accessible for screen reader users is very challenging. It is therefore exciting to see around 8% of the analyzed pages stepping up to the challenge. Again, we suspect this might be due to the use of some UI frameworks.
 
 #### Labels on interactive elements
 
@@ -285,11 +285,11 @@ Buttons and links are almost always included in the tab order and thus have extr
 
 ### Accessibility of Form Controls
 
-Filling out forms is a task many of us do every single day. Whether we're shopping, booking travel, or applying for a job, forms are the main way users share information with web pages. Because of this, ensuring your forms are accessible is incredibly important. The simplest means of accomplishing this is by providing labels (via the [`<label>` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label), [`aria-label`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-label_attribute) or [`aria-labelledby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute)) for each of your inputs. Sadly, only 22.33% of pages provide labels for all their form inputs, meaning 4 out of every 5 pages have forms that may be very difficult to fill out.
+Filling out forms is a task many of us do every single day. Whether we're shopping, booking travel, or applying for a job, forms are the main way users share information with web pages. Because of this, ensuring your forms are accessible is incredibly important. The simplest means of accomplishing this is by providing labels (via the [`<label>` element](https://developer.mozilla.org/docs/Web/HTML/Element/label), [`aria-label`](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-label_attribute) or [`aria-labelledby`](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute)) for each of your inputs. Sadly, only 22.33% of pages provide labels for all their form inputs, meaning 4 out of every 5 pages have forms that may be very difficult to fill out.
 
 #### Indicators of required and invalid fields
 
-When we come across a field with a big red asterisk next to it, we know it's a required field. Or when we hit submit and are informed there were invalid inputs, anything highlighted in a different color needs to be corrected and then resubmitted. However, people with low or no vision cannot rely on these visual cues, which is why the HTML input attributes `required`, `aria-required`, and `aria-invalid` are so important. They provide screen readers with the equivalent of red asterisks and red highlighted fields. As a nice bonus, when you inform browsers what fields are required, they'll [validate parts of your forms](https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Form_validation) for you. No JavaScript required.
+When we come across a field with a big red asterisk next to it, we know it's a required field. Or when we hit submit and are informed there were invalid inputs, anything highlighted in a different color needs to be corrected and then resubmitted. However, people with low or no vision cannot rely on these visual cues, which is why the HTML input attributes `required`, `aria-required`, and `aria-invalid` are so important. They provide screen readers with the equivalent of red asterisks and red highlighted fields. As a nice bonus, when you inform browsers what fields are required, they'll [validate parts of your forms](https://developer.mozilla.org/docs/Learn/HTML/Forms/Form_validation) for you. No JavaScript required.
 
 Of pages using forms, 21.73% use `required` or `aria-required` when marking up required fields. Only one in every five sites make use of this. This is a simple step to make your site accessible, and unlocks helpful browser features for all users.
 
@@ -297,11 +297,11 @@ We also found 3.52% of sites with forms make use of `aria-invalid`. However, sin
 
 #### Duplicate IDs
 
-IDs can be used in HTML to link two elements together. For example, the [`<label>` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label) works this way. You specify the ID of the input field this label is describing and the browser links them together. The result? Users can now click on this label to focus on the input field, and screen readers will use this label as the description.
+IDs can be used in HTML to link two elements together. For example, the [`<label>` element](https://developer.mozilla.org/docs/Web/HTML/Element/label) works this way. You specify the ID of the input field this label is describing and the browser links them together. The result? Users can now click on this label to focus on the input field, and screen readers will use this label as the description.
 
 Unfortunately, 34.62% of sites have duplicate IDs, which means on many sites the ID specified by the user could refer to multiple different inputs. So when a user clicks on the label to select a field, they may end up <a hreflang="en" href="https://www.deque.com/blog/unique-id-attributes-matter/">selecting something different</a> than they intended. As you might imagine, this could have negative consequences in something like a shopping cart.
 
-This issue is even more pronounced for screen readers because their users may not be able to visually double check what is selected. Plus, many ARIA attributes, such as [`aria-describedby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-describedby_attribute)  and [`aria-labelledby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute), work similarly to the label element detailed above. So to make your site accessible, removing all duplicate IDs is a good first step.
+This issue is even more pronounced for screen readers because their users may not be able to visually double check what is selected. Plus, many ARIA attributes, such as [`aria-describedby`](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-describedby_attribute)  and [`aria-labelledby`](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute), work similarly to the label element detailed above. So to make your site accessible, removing all duplicate IDs is a good first step.
 
 ## Conclusion
 

@@ -3,7 +3,7 @@
 CREATE TEMPORARY FUNCTION getLengthUnit(css STRING)
 RETURNS ARRAY<STRING> LANGUAGE js AS '''
 try {
-  // https://developer.mozilla.org/en-US/docs/Web/CSS/length
+  // https://developer.mozilla.org/docs/Web/CSS/length
   var units = ['cap', 'ch', 'em', 'ex', 'ic', 'lh', 'rem',
       'rlh', 'vh', 'vw', 'vi', 'vb', 'vmin', 'vmax',
       'px', 'cm', 'nm', 'Q', 'in', 'pc', 'pt'];

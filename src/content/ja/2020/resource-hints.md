@@ -161,9 +161,9 @@ HTTP Archiveをもとに、2020年のトレンド分析に飛び込み、前回�
 
 ### `as`属性
 
-`preload`や`prefetch`では、`as`属性を使用して、ブラウザがリソースの優先順位をより正確に判断できるようにすることが重要です。そうすることで将来のリクエストに備えてキャッシュに適切に保存し、正しいコンテンツセキュリティポリシー([CSP](https://developer.mozilla.org/ja/docs/Web/HTTP/CSP))を適用し、正しい`Accept`リクエストヘッダーを設定できます。
+`preload`や`prefetch`では、`as`属性を使用して、ブラウザがリソースの優先順位をより正確に判断できるようにすることが重要です。そうすることで将来のリクエストに備えてキャッシュに適切に保存し、正しいコンテンツセキュリティポリシー([CSP](https://developer.mozilla.org/docs/Web/HTTP/CSP))を適用し、正しい`Accept`リクエストヘッダーを設定できます。
 
-`preload`では、さまざまなコンテンツタイプをプリロードできます。[完全なリスト](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link#Attributes)は、Fetch <a hreflang="en" href="https://fetch.spec.whatwg.org/#concept-request-destination">spec</a>で推奨されているものにしたがっています。もっとも人気があるのは、64％の使用率を誇る `script` タイプです。これはシングルページアプリとして構築されたサイトの大部分が、残りのJS依存ファイルのダウンロードを開始するために、できるだけ早くメインバンドルを必要としていることに関連していると考えられます。その後の使用率は、fontが8％、styleが5％、imageが1％、fetchが1％となっています。
+`preload`では、さまざまなコンテンツタイプをプリロードできます。[完全なリスト](https://developer.mozilla.org/docs/Web/HTML/Element/link#Attributes)は、Fetch <a hreflang="en" href="https://fetch.spec.whatwg.org/#concept-request-destination">spec</a>で推奨されているものにしたがっています。もっとも人気があるのは、64％の使用率を誇る `script` タイプです。これはシングルページアプリとして構築されたサイトの大部分が、残りのJS依存ファイルのダウンロードを開始するために、できるだけ早くメインバンドルを必要としていることに関連していると考えられます。その後の使用率は、fontが8％、styleが5％、imageが1％、fetchが1％となっています。
 
 {{ figure_markup(
   image="mobile-as-attribute-values-by-year.png",
@@ -264,7 +264,7 @@ Lighthouseの「<a hreflang="en" href="https://web.dev/offscreen-images/">Defer 
 
 ## HTTP/2プッシュ
 
-[HTTP/2](./http)には「サーバープッシュ」と呼ばれる機能があり、製品のラウンドトリップタイム([RTTs](https://developer.mozilla.org/ja/docs/Glossary/Round_Trip_Time_(RTT)))やサーバーの処理が長い場合に、ページのパフォーマンスを改善できる可能性があります。簡単に説明すると、クライアントがリクエストを送信するのを待つのではなく、クライアントがすぐにリクエストするだろうと予測したリソースをサーバーが先取りしてプッシュするのです。
+[HTTP/2](./http)には「サーバープッシュ」と呼ばれる機能があり、製品のラウンドトリップタイム([RTTs](https://developer.mozilla.org/docs/Glossary/Round_Trip_Time_(RTT)))やサーバーの処理が長い場合に、ページのパフォーマンスを改善できる可能性があります。簡単に説明すると、クライアントがリクエストを送信するのを待つのではなく、クライアントがすぐにリクエストするだろうと予測したリソースをサーバーが先取りしてプッシュするのです。
 
 {{ figure_markup(
   caption="`preload`/`nopush`を使用したHTTP/2 Pushページの割合です。",

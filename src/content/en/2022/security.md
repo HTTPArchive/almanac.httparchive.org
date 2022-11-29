@@ -30,7 +30,7 @@ We looked at correlations for [adoption of security measures](#drivers-of-securi
 
 ## Transport security
 
-Transport Layer Security ensures secure communication of data and resources between the user and the websites. [HTTPS](https://developer.mozilla.org/en-US/docs/Glossary/https) uses <a hreflang="en" href="https://www.cloudflare.com/en-gb/learning/ssl/transport-layer-security-tls/">TLS</a> to encrypt all communication between the client and the server.
+Transport Layer Security ensures secure communication of data and resources between the user and the websites. [HTTPS](https://developer.mozilla.org/docs/Glossary/https) uses <a hreflang="en" href="https://www.cloudflare.com/en-gb/learning/ssl/transport-layer-security-tls/">TLS</a> to encrypt all communication between the client and the server.
 
 {{ figure_markup(
   content="94%",
@@ -170,7 +170,7 @@ A <a hreflang="en" href="https://www.ssl.com/faqs/what-is-a-certificate-authorit
 
 ### HTTP Strict Transport Security
 
-[HTTP Strict Transport Security (HSTS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security) is a response header that informs the browser to automatically convert all attempts to access a site using HTTP to HTTPS requests instead.
+[HTTP Strict Transport Security (HSTS)](https://developer.mozilla.org/docs/Web/HTTP/Headers/Strict-Transport-Security) is a response header that informs the browser to automatically convert all attempts to access a site using HTTP to HTTPS requests instead.
 
 {{ figure_markup(
   content="25%",
@@ -195,7 +195,7 @@ HSTS is set using the `Strict-Transport-Security` header that can have three dif
 
 We see 94% of sites in desktop and 95% of sites in mobile have a non-zero, non-empty `max-age`.
 
-34% of request responses for mobile, and 37% for desktop include `includeSubdomain` in the HSTS settings. The number of responses with the `preload` directive, which is [not part of the HSTS specification](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security#preloading_strict_transport_security) is lower. It needs a minimum `max-age` of 31,536,000 seconds (or 1 year) and also the `includeSubdomain` directive to be present.
+34% of request responses for mobile, and 37% for desktop include `includeSubdomain` in the HSTS settings. The number of responses with the `preload` directive, which is [not part of the HSTS specification](https://developer.mozilla.org/docs/Web/HTTP/Headers/Strict-Transport-Security#preloading_strict_transport_security) is lower. It needs a minimum `max-age` of 31,536,000 seconds (or 1 year) and also the `includeSubdomain` directive to be present.
 
 {{ figure_markup(
   image="hsts-max-age-values-in-days.png",
@@ -210,7 +210,7 @@ The median value for `max-age` attribute in HSTS headers over all requests is 36
 
 ## Cookies
 
-An [HTTP cookie](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies) is a set of data about the user that the server sends to the browser. A cookie can be used for things like session management, personalization, tracking and other stateful information related to the user over different requests.
+An [HTTP cookie](https://developer.mozilla.org/docs/Web/HTTP/Cookies) is a set of data about the user that the server sends to the browser. A cookie can be used for things like session management, personalization, tracking and other stateful information related to the user over different requests.
 
 If a cookie is not set properly, it can be susceptible to many different forms of attacks such as <a hreflang="en" href="https://owasp.org/www-community/attacks/Session_hijacking_attack">session hijacking</a>, <a hreflang="en" href="https://owasp.org/www-community/attacks/csrf">Cross-Site Request Forgery (CSRF)</a>, <a hreflang="en" href="https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/11-Client_Side_Testing/13-Testing_for_Cross_Site_Script_Inclusion">Cross-Site Script Inclusion (XSSI)</a> and various other <a hreflang="en" href="https://xsleaks.dev/">Cross-Site Leak</a> vulnerabilities.
 
@@ -377,7 +377,7 @@ The top three CSP directives that we're seeing serving more than a quarter of th
 
 The `upgrade-insecure-requests` policy's high adoption rate could perhaps be attributed to the high adoption of TLS requests as a de-facto standard. However, despite `block-all-mixed-content` being considered deprecated as of this date, it's showing a high adoption rate. This perhaps speaks to the fast rate at which the CSP specification is advancing and users having a hard time keeping up to date.
 
-More to do with mitigating cross-site scripting attacks is Google's security initiative for [Trusted Types](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/trusted-types), which requires native browser API support to employ a technique which helps prevent DOM-injection class of vulnerabilities. It is actively advocated by Google engineers yet is still in <a hreflang="en" href="https://w3c.github.io/trusted-types/dist/spec/">draft proposal mode</a> for the W3C. Nonetheless, we record its CSP related security headers `require-trusted-types-for` and `trusted-types` at 0.1% of requests which is not a lot, but perhaps speaks to a growing trend of adoption.
+More to do with mitigating cross-site scripting attacks is Google's security initiative for [Trusted Types](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/trusted-types), which requires native browser API support to employ a technique which helps prevent DOM-injection class of vulnerabilities. It is actively advocated by Google engineers yet is still in <a hreflang="en" href="https://w3c.github.io/trusted-types/dist/spec/">draft proposal mode</a> for the W3C. Nonetheless, we record its CSP related security headers `require-trusted-types-for` and `trusted-types` at 0.1% of requests which is not a lot, but perhaps speaks to a growing trend of adoption.
 
 To assess whether a CSP violation from the pre-defined set of rules is occurring, websites can set the `report-uri` directive that the browser will send JSON formatted data as an HTTP POST request. Although `report-uri` requests account for 4.3% of all desktop traffic with a CSP header, it is to date a deprecated directive and has been replaced with `report-to` which accounts for 1.8% of desktop requests.
 
@@ -523,7 +523,7 @@ Just about one of every fifth website (20%) adopts a subresource integrity in on
 
 At a per page coverage, adoption rate for the SRI security feature is still considerably low. Last year, the median percentage for both mobile and desktop was 3.3% and this year it decreased by 2% to 3.23%.
 
-Subresource integrity is specified as a base64 string of a computed hash of one of SHA256, SHA384 or SHA512 cryptographic functions. As a [use-case reference](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity), developers can implement them as follows:
+Subresource integrity is specified as a base64 string of a computed hash of one of SHA256, SHA384 or SHA512 cryptographic functions. As a [use-case reference](https://developer.mozilla.org/docs/Web/Security/Subresource_Integrity), developers can implement them as follows:
 
 ```html
 <script src="https://example.com/example-framework.js"
@@ -774,7 +774,7 @@ The main use of Content Security Policy (CSP) is to determine the trusted source
 )
 }}
 
-One of the common ways to prevent clickjacking attacks is to prevent the browser from loading the website in a frame. One can use the [`frame-ancestors`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/frame-ancestors) directive in a CSP Header to restrict other domains from including the page content in a frame. We found 53% of the websites in mobile that have CSP have a `frame-ancestor` directive. It's the second most used CSP directive, which is good for prevention of clickjacking attacks. Setting the value of `frame-ancestors` directive to `none` or `self` is the safest. `none` doesn't allow any domain to frame the content, while `self` allows only the origin domain to frame the contents. We found that 8% of websites in mobile which have a CSP header have only `frame-ancestors 'self'` and is the third most common value of CSP header.
+One of the common ways to prevent clickjacking attacks is to prevent the browser from loading the website in a frame. One can use the [`frame-ancestors`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/frame-ancestors) directive in a CSP Header to restrict other domains from including the page content in a frame. We found 53% of the websites in mobile that have CSP have a `frame-ancestor` directive. It's the second most used CSP directive, which is good for prevention of clickjacking attacks. Setting the value of `frame-ancestors` directive to `none` or `self` is the safest. `none` doesn't allow any domain to frame the content, while `self` allows only the origin domain to frame the contents. We found that 8% of websites in mobile which have a CSP header have only `frame-ancestors 'self'` and is the third most common value of CSP header.
 
 <figure>
   <table>
@@ -832,11 +832,11 @@ Cross Origin policies are one of the main mechanisms used to defend against micr
   sql_file="security_headers_prevalence.sql"
 ) }}
 
-[`Cross-Origin-Resource-Policy`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Resource-Policy) is present on 114,111(1.46%) websites in mobile and is the most used cross origin policy. It is used to indicate to the browser whether a resource should be included from cross-origin or not. [`Cross-Origin-Embedder-Policy`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy) is now present in 2,559 websites compared to 911 websites last year. We see a similar growth in the adoption of [`Cross-Origin-Opener-Policy`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Opener-Policy) as well with 34,968 websites in mobile now having the header compared to 15,727 sites last year. So there is a steady growth in the adoption of all the cross-origin policies, which is great because they can be really helpful in preventing XS-Leak attacks.
+[`Cross-Origin-Resource-Policy`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cross-Origin-Resource-Policy) is present on 114,111(1.46%) websites in mobile and is the most used cross origin policy. It is used to indicate to the browser whether a resource should be included from cross-origin or not. [`Cross-Origin-Embedder-Policy`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy) is now present in 2,559 websites compared to 911 websites last year. We see a similar growth in the adoption of [`Cross-Origin-Opener-Policy`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cross-Origin-Opener-Policy) as well with 34,968 websites in mobile now having the header compared to 15,727 sites last year. So there is a steady growth in the adoption of all the cross-origin policies, which is great because they can be really helpful in preventing XS-Leak attacks.
 
 ### Preventing attacks using Clear-Site-Data
 
-[Clear-Site-Data](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Clear-Site-Data) provides web developers more control over clearing of user data related to their website. For example, a web developer can now make decisions such that when a user signs out of their web site, then all related cookie, cache, storage information about the user can be removed. This helps in limiting the consequences of an attack by having a restricted amount of data stored in the browser when not needed. This is a comparatively new header which is restricted only for sites served over HTTPS and only some of the features are [supported by browsers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Clear-Site-Data#browser_compatibility). There were only 75 sites in mobile which had `Clear-Site-Data` header in 2021 and it has increased to 428 this year. It is worth noting that often times websites use this header only in their logout pages, which are not tracked in the web almanac data.
+[Clear-Site-Data](https://developer.mozilla.org/docs/Web/HTTP/Headers/Clear-Site-Data) provides web developers more control over clearing of user data related to their website. For example, a web developer can now make decisions such that when a user signs out of their web site, then all related cookie, cache, storage information about the user can be removed. This helps in limiting the consequences of an attack by having a restricted amount of data stored in the browser when not needed. This is a comparatively new header which is restricted only for sites served over HTTPS and only some of the features are [supported by browsers](https://developer.mozilla.org/docs/Web/HTTP/Headers/Clear-Site-Data#browser_compatibility). There were only 75 sites in mobile which had `Clear-Site-Data` header in 2021 and it has increased to 428 this year. It is worth noting that often times websites use this header only in their logout pages, which are not tracked in the web almanac data.
 
 <figure>
   <table>

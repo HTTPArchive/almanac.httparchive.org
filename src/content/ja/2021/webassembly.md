@@ -54,7 +54,7 @@ WebAssemblyのコンテンツ解析では、BigQueryを直接利用すること�
 
 そのうちのいくつかは `application/octet-stream` という任意のバイナリデータの一般的な型を使い、いくつかは `Content-Type` ヘッダーを持たず、他のものはplainやHTMLなどのテキスト型、あるいは `binary/octet-stream` のように不正な型を使っています。
 
-WebAssemblyの場合、正しい `Content-Type` ヘッダーを提供することは、セキュリティ上の理由だけでなく、[`WebAssembly.compileStreaming`](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/compileStreaming) や [`WebAssembly.instantiateStreaming`](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/instantiateStreaming) によるストリーミング、コンパイルやインスタンス化の高速化も可能になるので、重要です。
+WebAssemblyの場合、正しい `Content-Type` ヘッダーを提供することは、セキュリティ上の理由だけでなく、[`WebAssembly.compileStreaming`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/compileStreaming) や [`WebAssembly.instantiateStreaming`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/instantiateStreaming) によるストリーミング、コンパイルやインスタンス化の高速化も可能になるので、重要です。
 
 ## Wasmのライブラリはどのくらいの頻度で再利用されているのでしょうか？
 

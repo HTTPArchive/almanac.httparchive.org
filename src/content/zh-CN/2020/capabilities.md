@@ -21,7 +21,7 @@ featured_stat_label_3: 网站允许安装相关应用程序
 
 ## 介绍
 
-[渐进式Web应用](./pwa) (PWA)是一种基于网络技术的跨平台应用模型。在 Service Workers的帮助下，这些应用即使在用户离线时也可以运行。[Web应用程序清单](https://developer.mozilla.org/zh-CN/docs/Web/Manifest) 允许用户将PWA添加到主屏幕或程序列表中。当从那里打开时，PWA将作为原生应用Native App出现。然而，PWA只能使用通过Web平台API暴露的功能和能力，而无法调用任意的本地接口，这使得Native App和Web App之间留下了一个缺隙。
+[渐进式Web应用](./pwa) (PWA)是一种基于网络技术的跨平台应用模型。在 Service Workers的帮助下，这些应用即使在用户离线时也可以运行。[Web应用程序清单](https://developer.mozilla.org/docs/Web/Manifest) 允许用户将PWA添加到主屏幕或程序列表中。当从那里打开时，PWA将作为原生应用Native App出现。然而，PWA只能使用通过Web平台API暴露的功能和能力，而无法调用任意的本地接口，这使得Native App和Web App之间留下了一个缺隙。
 
 <a hreflang="en" href="https://www.chromium.org/teams/web-capabilities-fugu">能力项目</a>，非正式的被称为<span lang="en">Project Fugu</span>，是谷歌、微软和英特尔通过跨公司的努力来弥补web和原生之间差距的工程项目。这对于保持web作为一个平台的相关性非常重要。为此，Chromium的贡献者们实现了新的API，将操作系统的能力（capability）暴露给网络，同时维护用户的安全、隐私和信任。这能力包括但不局限于:
 
@@ -68,7 +68,7 @@ featured_stat_label_3: 网站允许安装相关应用程序
 
 Web浏览器允许用户以不同的方式在用户系统上存储数据，如Cookie、索引数据库(IndexedDB)、Service Worker的缓存存储或Web存储(本地存储、会话存储)。在现代的浏览器中，取决于浏览器，开发者可以轻松<a hreflang="zh" href="https://web.dev/i18n/zh/storage-for-the-web/">存储数百兆甚至更多</a>。当浏览器的空间耗尽时，可以清除数据，直到系统不再超过限制（可能导致数据丢失）。
 
-归功于[存储管理API](https://developer.mozilla.org/en-US/docs/Web/API/StorageManager)，它是<a hreflang="en" href="https://storage.spec.whatwg.org/#storagemanager">WHATWG 存储动态标准</a>的一部分，使得浏览器在这方面的表现不再像一个黑盒子了。这个API允许开发者估计剩余的可用空间，并选择加入<a hreflang="en" href="https://web.dev/persistent-storage/">持久性存储</a>，这意味着当磁盘空间不足时，浏览器不会清除网站的数据。因此，该API在`navigator` 对象上引入了一个新的`StorageManager`接口，目前在Chrome、Edge和Firefox上都支持。
+归功于[存储管理API](https://developer.mozilla.org/docs/Web/API/StorageManager)，它是<a hreflang="en" href="https://storage.spec.whatwg.org/#storagemanager">WHATWG 存储动态标准</a>的一部分，使得浏览器在这方面的表现不再像一个黑盒子了。这个API允许开发者估计剩余的可用空间，并选择加入<a hreflang="en" href="https://web.dev/persistent-storage/">持久性存储</a>，这意味着当磁盘空间不足时，浏览器不会清除网站的数据。因此，该API在`navigator` 对象上引入了一个新的`StorageManager`接口，目前在Chrome、Edge和Firefox上都支持。
 
 ### 预估可用存储
 
@@ -145,7 +145,7 @@ registration.showNotification('Title', {
 
 ## 屏幕唤醒锁定API
 
-为了节约能源，移动设备会将屏幕背光变暗，最终关闭设备的显示屏，这在大多数情况下是合理的。然而，在某些情况下，用户可能希望应用程序明确地保持显示屏的唤醒，例如，在做饭时阅读菜谱或观看演示时。[屏幕唤醒锁定API](https://developer.mozilla.org/en-US/docs/Web/API/Screen_Wake_Lock_API)(<a hreflang="en" href="https://www.w3.org/TR/screen-wake-lock/">W3C工作草案</a>)通过提供一种保持屏幕开启的机制来解决这个问题。
+为了节约能源，移动设备会将屏幕背光变暗，最终关闭设备的显示屏，这在大多数情况下是合理的。然而，在某些情况下，用户可能希望应用程序明确地保持显示屏的唤醒，例如，在做饭时阅读菜谱或观看演示时。[屏幕唤醒锁定API](https://developer.mozilla.org/docs/Web/API/Screen_Wake_Lock_API)(<a hreflang="en" href="https://www.w3.org/TR/screen-wake-lock/">W3C工作草案</a>)通过提供一种保持屏幕开启的机制来解决这个问题。
 
 `navigator.wakeLock.request()`方法创建一个唤醒保持锁。这个方法需要一个`WakeLockType`参数。在未来，唤醒保持API可以提供其他的保持类型，比如关闭屏幕但保持CPU开启。目前，该API只支持屏幕唤醒的保持，所以只有一个可选的参数，默认值为`screen`。该方法返回一个承诺，该承诺解析为一个`WakeLockSentinel`对象。开发者需要存储这个引用，以便以后调用它的`release()`方法，释放屏幕唤醒保持锁。当标签页处于非活动状态，或者用户将窗口最小化时，浏览器会自动释放保持锁。另外，浏览器可能会拒绝请求，拒绝承诺，例如由于电池电量不足的时候。
 

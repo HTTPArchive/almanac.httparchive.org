@@ -730,7 +730,7 @@ The three different ways to implement hreflang tags are via the `<head>`, link h
 
 ### Content language usage
 
-While Google tends to use hreflang tags, other search engines such as Bing prefer the [content-language attribute](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Language). This can be implemented using two methods:
+While Google tends to use hreflang tags, other search engines such as Bing prefer the [content-language attribute](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Language). This can be implemented using two methods:
 
 1. HTML
 2. HTTP Header

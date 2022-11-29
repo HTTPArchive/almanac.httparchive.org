@@ -109,7 +109,7 @@ De onderstaande grafiek toont de verdeling van pagina's op basis van het aantal 
 
 ### Inhoudstypen
 
-We kunnen verzoeken van derden opsplitsen op basis van hun inhoudstype. Dit is het gerapporteerde [inhoudstype](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Type) van de bronnen die worden geleverd vanuit domeinen van derden.
+We kunnen verzoeken van derden opsplitsen op basis van hun inhoudstype. Dit is het gerapporteerde [inhoudstype](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Type) van de bronnen die worden geleverd vanuit domeinen van derden.
 
 {{ figure_markup(
   image="thirdparty-by-content-types.png",
@@ -263,7 +263,7 @@ Deze grafiek toont de kansdichtheidsfunctie van de totale CPU-tijd van de pagina
 
 ## Prevalentie van `timing-allow-origin`
 
-Met de [Resource Timing API](https://developer.mozilla.org/en-US/docs/Web/API/Resource_Timing_API/Using_the_Resource_Timing_API) kunnen website-eigenaren de prestaties van individuele bronnen meten via JavaScript. Deze gegevens zijn standaard extreem beperkt voor bronnen van verschillende oorsprong, zoals inhoud van derden. Er zijn legitieme redenen om deze timinginformatie niet te verstrekken, zoals reacties die verschillen per authenticatiestatus: bijv. een website-eigenaar kan mogelijk bepalen of een bezoeker is ingelogd op Facebook door de responsgrootte van een widgetverzoek te meten. Voor de meeste inhoud van derden is het instellen van de `timing-allow-origin`-header echter een daad van transparantie om de hostingwebsite in staat te stellen de prestaties en de grootte van hun inhoud van derden te volgen.
+Met de [Resource Timing API](https://developer.mozilla.org/docs/Web/API/Resource_Timing_API/Using_the_Resource_Timing_API) kunnen website-eigenaren de prestaties van individuele bronnen meten via JavaScript. Deze gegevens zijn standaard extreem beperkt voor bronnen van verschillende oorsprong, zoals inhoud van derden. Er zijn legitieme redenen om deze timinginformatie niet te verstrekken, zoals reacties die verschillen per authenticatiestatus: bijv. een website-eigenaar kan mogelijk bepalen of een bezoeker is ingelogd op Facebook door de responsgrootte van een widgetverzoek te meten. Voor de meeste inhoud van derden is het instellen van de `timing-allow-origin`-header echter een daad van transparantie om de hostingwebsite in staat te stellen de prestaties en de grootte van hun inhoud van derden te volgen.
 
 {{ figure_markup(
   image="requests-with-tao.png",
@@ -281,7 +281,7 @@ De resultaten in HTTP Archive laten zien dat slechts een derde van de reacties v
 
 ## Gevolgen
 
-We weten dat het toevoegen van willekeurig JavaScript aan onze sites risico's met zich meebrengt voor zowel de sitesnelheid als de veiligheid. Site-eigenaren moeten ijverig zijn om de waarde van de scripts van derden die ze bevatten in evenwicht te brengen met de snelheidsbeperking die ze met zich meebrengen, en moderne functies gebruiken, zoals [integriteit van subbronnen](https://developer.mozilla.org/nl/docs/Web/Security/Subresource_Integrity) en [content security policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) om een sterke beveiligingshouding te behouden. Zie het [hoofdstuk Beveiliging](./security) voor meer informatie over deze en andere browserbeveiligingsfuncties.
+We weten dat het toevoegen van willekeurig JavaScript aan onze sites risico's met zich meebrengt voor zowel de sitesnelheid als de veiligheid. Site-eigenaren moeten ijverig zijn om de waarde van de scripts van derden die ze bevatten in evenwicht te brengen met de snelheidsbeperking die ze met zich meebrengen, en moderne functies gebruiken, zoals [integriteit van subbronnen](https://developer.mozilla.org/docs/Web/Security/Subresource_Integrity) en [content security policy](https://developer.mozilla.org/docs/Web/HTTP/CSP) om een sterke beveiligingshouding te behouden. Zie het [hoofdstuk Beveiliging](./security) voor meer informatie over deze en andere browserbeveiligingsfuncties.
 
 ## Gevolgtrekking
 

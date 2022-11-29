@@ -510,7 +510,7 @@ It is important to remember that digital accessibility is a civil right and that
 
 It is very important that any form error handling be communicated to assistive technology. There are a variety of techniques for handling this depending on the validation implementation. Web AIM's <a hreflang="en" href="https://webaim.org/techniques/formvalidation/">Usable and Accessible Form Validation and Error Recovery</a> article is a great resource for learning more about various accessible form validation strategies.
 
-If a form element is required this also needs to be communicated to assistive technology. For native HTML form elements the [`required` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/required) can be used and for customized elements the [`aria-required`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-required_attribute) attribute may be needed. If there is an issue with a form submission, this needs to be conveyed to assistive technology.
+If a form element is required this also needs to be communicated to assistive technology. For native HTML form elements the [`required` attribute](https://developer.mozilla.org/docs/Web/HTML/Attributes/required) can be used and for customized elements the [`aria-required`](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-required_attribute) attribute may be needed. If there is an issue with a form submission, this needs to be conveyed to assistive technology.
 
 ### Form labels
 
@@ -554,7 +554,7 @@ This list is not exhaustive and is intended to encourage thought about how all o
 
 **UI designers**
   - Color contrast choices, font selections, spacing and line height considerations.
-  - Animation considerations (determining if they are necessary, supplying static assets for [`prefers-reduced-motion`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion) scenarios, designing pause/stop mechanisms).
+  - Animation considerations (determining if they are necessary, supplying static assets for [`prefers-reduced-motion`](https://developer.mozilla.org/docs/Web/CSS/@media/prefers-reduced-motion) scenarios, designing pause/stop mechanisms).
 
 **Product managers**
   - Prioritizing accessibility work in the roadmap, ensuring it does not become technical debt at the end of a backlog.

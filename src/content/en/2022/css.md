@@ -84,7 +84,7 @@ We can see from the total number of stylesheets loaded, that typically people ar
 
 ## Selectors and the cascade
 
-2022 saw a shake-up with regard to the cascade with [`@layer`](https://developer.mozilla.org/en-US/docs/Web/CSS/@layer) landing in all engines. This new at-rule enables the grouping of selectors into layers, the order of precedence of the layers can then be managed.
+2022 saw a shake-up with regard to the cascade with [`@layer`](https://developer.mozilla.org/docs/Web/CSS/@layer) landing in all engines. This new at-rule enables the grouping of selectors into layers, the order of precedence of the layers can then be managed.
 
 It's a little early to see widespread usage of this new method of managing the cascade, but let's take a look at how selector usage has evolved.
 
@@ -641,7 +641,7 @@ There are interesting things happening in the world of color. In addition to new
 
 The <a hreflang="en" href="https://web.dev/accent-color/">`accent-color`</a> property lets you add your brand color as an accent color to notoriously hard-to-style form elements such as checkboxes, radio buttons, and range sliders. Perhaps due to the fact it has only been available in all engines since March this year, it still shows less than 0.3% usage.
 
-Another property becoming available in all engines this year is [`color-scheme`](https://developer.mozilla.org/en-US/docs/Web/CSS/color-scheme), a property that lets you specify in which color schemes (light or dark) a component can be rendered. This property is, somewhat surprisingly, so far only found in 0.2% of pages.
+Another property becoming available in all engines this year is [`color-scheme`](https://developer.mozilla.org/docs/Web/CSS/color-scheme), a property that lets you specify in which color schemes (light or dark) a component can be rendered. This property is, somewhat surprisingly, so far only found in 0.2% of pages.
 
 ## Gradients and Images
 
@@ -805,7 +805,7 @@ The median mobile page declares `border-box` 22 times. At the 90th percentile, i
   )
 }}
 
-Use of [multi-column](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Columns) layout has increased once again, it's now found on 23% of pages, a rise of 3 points since 2021.
+Use of [multi-column](https://developer.mozilla.org/docs/Web/CSS/CSS_Columns) layout has increased once again, it's now found on 23% of pages, a rise of 3 points since 2021.
 
 ### The `aspect-ratio` property
 
@@ -953,7 +953,7 @@ Around 18% of pages were using a custom property `var(--overlay-mix-blend-mode)`
 
 Of the percentage of pages that have set filters to apply graphical effects, 82% are using the `alpha()` value, which is non-standard and used for Internet Explorer 8 and below. We also see a high usage of the <a hreflang="en" href="https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms532997(v=vs.85)">`Microsoft.gradient()`</a> filter.
 
-Of the [standard values](https://developer.mozilla.org/en-US/docs/Web/CSS/filter), 31% of pages use `blur()`, making it the most popular value after `none`.
+Of the [standard values](https://developer.mozilla.org/docs/Web/CSS/filter), 31% of pages use `blur()`, making it the most popular value after `none`.
 
 {{ figure_markup(
     image="clip-path-functions.png",
@@ -971,7 +971,7 @@ After that, and the value `none`, most developers have chosen to use `polygon()`
 
 ## Responsive design
 
-While many developers are eagerly anticipating [container queries](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Container_Queries), and new layout methods such as flexbox and grid can often enable a design to work well on multiple screen sizes, [media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries) are used in the majority of pages for responsive design.
+While many developers are eagerly anticipating [container queries](https://developer.mozilla.org/docs/Web/CSS/CSS_Container_Queries), and new layout methods such as flexbox and grid can often enable a design to work well on multiple screen sizes, [media queries](https://developer.mozilla.org/docs/Web/CSS/Media_Queries/Using_media_queries) are used in the majority of pages for responsive design.
 
 When developers write media queries, they most often test the width of the viewport. `max-width` and `min-width` were the most popular queries by far, the same as in 2020 and 2021. There was no ranking change in the third and fourth place results either.
 
@@ -1110,7 +1110,7 @@ Logical property usage has increased slightly from 2021, up from 4% to 5%. Howev
 
 ### Ruby
 
-Once again we checked for usage of [CSS Ruby](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Ruby), a collection of properties used for interlinear annotation, which are short runs of text alongside the base text.
+Once again we checked for usage of [CSS Ruby](https://developer.mozilla.org/docs/Web/CSS/CSS_Ruby), a collection of properties used for interlinear annotation, which are short runs of text alongside the base text.
 
 {{ figure_markup(
     content="0.2%",
@@ -1139,7 +1139,7 @@ The use of CSS-in-JS has not increased from last year, staying at 3%. This usage
 
 ## Houdini
 
-There is still very little usage of [Houdini](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Houdini) on the open web. Looking at the number of pages using animated custom properties shows only a small increase since 2021. We also looked at usage of the Houdini Paint API. We do find instances of this in use on the web. By looking at the names of worklets used, much of this is the <a hreflang="en" href="https://css-houdini.rocks/smooth-corners/">smooth corners</a> worklet, indicating that people are using it as a progressive enhancement, given that this can fall back nicely to a regular `border-radius`.
+There is still very little usage of [Houdini](https://developer.mozilla.org/docs/Web/CSS/CSS_Houdini) on the open web. Looking at the number of pages using animated custom properties shows only a small increase since 2021. We also looked at usage of the Houdini Paint API. We do find instances of this in use on the web. By looking at the names of worklets used, much of this is the <a hreflang="en" href="https://css-houdini.rocks/smooth-corners/">smooth corners</a> worklet, indicating that people are using it as a progressive enhancement, given that this can fall back nicely to a regular `border-radius`.
 
 ## Sass
 
@@ -1230,7 +1230,7 @@ The `orphans` property appears in 22% of print stylesheets, despite lacking supp
 
 There is an entire specification for dealing with Paged Media, and CSS for print. However, this has been poorly implemented in browsers. To find a good implementation of these features you need to use a print-specific user agent.
 
-There is some browser support for the [`@page`](https://developer.mozilla.org/en-US/docs/Web/CSS/@page) rule and its pseudo-classes, and we did find developers using these to set different page properties for the first page, and the left and right pages of a spread.
+There is some browser support for the [`@page`](https://developer.mozilla.org/docs/Web/CSS/@page) rule and its pseudo-classes, and we did find developers using these to set different page properties for the first page, and the left and right pages of a spread.
 
 <figure>
   <table>

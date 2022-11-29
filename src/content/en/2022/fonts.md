@@ -312,7 +312,7 @@ Use of `font-display: swap` has grown to an impressive 30% (from [11% in 2020](.
 
 Our guess is that developers—or their customers—really dislike seeing a flash of fallback fonts. Using `font-display: block` is an easy "fix" for that problem. However, there is a better solution on the horizon. In the near future you can use CSS font metric overrides to tweak your fallback fonts to approximate the metrics of your web fonts. This will reduce the jarring reflow of text when a fallback font is swapped with a web font.
 
-The CSS `ascent-override`, `descent-override`, `line-gap-override`, and `size-adjust` descriptors go into the `@font-face` rule and can be used to override the metrics in any font. You can use these descriptors with `local()` to [create a customized fallback](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/ascent-override#overriding_metrics_of_a_fallback_font) font that roughly matches your web font—hey, finally a good use for <a hreflang="en" href="https://bramstein.com/writing/web-font-anti-patterns-local-fonts.html">`local()`</a>.
+The CSS `ascent-override`, `descent-override`, `line-gap-override`, and `size-adjust` descriptors go into the `@font-face` rule and can be used to override the metrics in any font. You can use these descriptors with `local()` to [create a customized fallback](https://developer.mozilla.org/docs/Web/CSS/@font-face/ascent-override#overriding_metrics_of_a_fallback_font) font that roughly matches your web font—hey, finally a good use for <a hreflang="en" href="https://bramstein.com/writing/web-font-anti-patterns-local-fonts.html">`local()`</a>.
 
 {{ figure_markup(
   image="css-font-metrics-override-usage.png",
@@ -691,7 +691,7 @@ We hope to see more use of these generic family names next year. They are great 
   )
 }}
 
-And now for a complete surprise—to us anyway: people really like to specify their MacOS-only [font smoothing preferences](https://developer.mozilla.org/en-US/docs/Web/CSS/font-smooth). For example, the `-webkit-font-smoothing: antialiased` value is used on 73.4% of all sites. This is surprising because it—and its siblings `-mox-osx-font-smoothing`, and `font-smoothing`—are not even official CSS properties. This might make them the most used unofficial CSS properties!
+And now for a complete surprise—to us anyway: people really like to specify their MacOS-only [font smoothing preferences](https://developer.mozilla.org/docs/Web/CSS/font-smooth). For example, the `-webkit-font-smoothing: antialiased` value is used on 73.4% of all sites. This is surprising because it—and its siblings `-mox-osx-font-smoothing`, and `font-smoothing`—are not even official CSS properties. This might make them the most used unofficial CSS properties!
 
 Our hunch this is a combination of CSS frameworks including these properties and a dislike of how fonts are rendered slightly bolder on macOS—variable font grades to the rescue! It would be interesting to return to these properties in the 2023 Fonts chapter. Perhaps it is also time to put these properties on a standards track? The demand is clearly there.
 

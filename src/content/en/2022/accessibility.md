@@ -122,7 +122,7 @@ Language identification using the `lang` attribute is important for providing be
   sql_file="valid_html_lang.sql",
 ) }}
 
-It's encouraging to see that 83% of mobile websites do have a `lang` attribute, and within that group, over 99% have a valid value. There's still room for improvement given this is a Level A conformance issue under WCAG 2.1. To meet this success criteria, one can put the `lang` attribute in the `<html>` tag with a <a hreflang="en" href="https://www.w3.org/WAI/standards-guidelines/act/rules/bf051a/#known-primary-language-tag">known primary language tag</a>. The [`lang` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang) is a global attribute and can be set on other tags as well in case the web page has content in more than one language. It's important to define the correct language for a website. In cases where people copy a template to create a website, there is sometimes a discrepancy between the language used in the website's content and the `lang="en"` attribute used in the code.
+It's encouraging to see that 83% of mobile websites do have a `lang` attribute, and within that group, over 99% have a valid value. There's still room for improvement given this is a Level A conformance issue under WCAG 2.1. To meet this success criteria, one can put the `lang` attribute in the `<html>` tag with a <a hreflang="en" href="https://www.w3.org/WAI/standards-guidelines/act/rules/bf051a/#known-primary-language-tag">known primary language tag</a>. The [`lang` attribute](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/lang) is a global attribute and can be set on other tags as well in case the web page has content in more than one language. It's important to define the correct language for a website. In cases where people copy a template to create a website, there is sometimes a discrepancy between the language used in the website's content and the `lang="en"` attribute used in the code.
 
 ### User preference
 
@@ -143,7 +143,7 @@ We found that 34% of mobile websites use `prefers-reduced-motion`. Websites that
 
 ### Forced colors mode
 
-Forced colors mode is an accessibility feature intended to increase the readability of text through color contrast. In forced colors mode, the user's operating system takes over control of most color-related styles. Common patterns such as background images are completely disabled, so text-to-background contrast is more predictable. Its best-known implementation is the _High Contrast Mode_ in Windows, renamed <a hreflang="en" href="https://support.microsoft.com/en-us/topic/fedc744c-90ac-69df-aed5-c8a90125e696">_Contrast Themes_</a> in Windows 11. Those themes provide alternative low and high contrast color palettes, as well as the ability to customize any of the available [system colors](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/system_color_keywords).
+Forced colors mode is an accessibility feature intended to increase the readability of text through color contrast. In forced colors mode, the user's operating system takes over control of most color-related styles. Common patterns such as background images are completely disabled, so text-to-background contrast is more predictable. Its best-known implementation is the _High Contrast Mode_ in Windows, renamed <a hreflang="en" href="https://support.microsoft.com/en-us/topic/fedc744c-90ac-69df-aed5-c8a90125e696">_Contrast Themes_</a> in Windows 11. Those themes provide alternative low and high contrast color palettes, as well as the ability to customize any of the available [system colors](https://developer.mozilla.org/docs/Web/CSS/color_value/system_color_keywords).
 
 {{ figure_markup(
   image="forced-colors-mode.png",
@@ -367,7 +367,7 @@ There are specific things that one should keep in mind when it comes to accessib
 
 ### `<label>` element
 
-The `<label>` element is the most effective way of providing accessible names to input fields (or [form controls](https://developer.mozilla.org/en-US/docs/Learn/Forms/Basic_native_form_controls)) in a form. One can link a `<label>` to a form control programmatically using the `for` attribute. The `for` attribute should contain the value of the `id` attribute of the form control element that you want to link it with. For example:
+The `<label>` element is the most effective way of providing accessible names to input fields (or [form controls](https://developer.mozilla.org/docs/Learn/Forms/Basic_native_form_controls)) in a form. One can link a `<label>` to a form control programmatically using the `for` attribute. The `for` attribute should contain the value of the `id` attribute of the form control element that you want to link it with. For example:
 
 ```html
 <label for="emailaddress">Email</label>
@@ -721,9 +721,9 @@ ARIA live regions allow us to listen for changes in the DOM, such that the updat
   </figcaption>
 </figure>
 
-The [`<output>` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/output) also deserves an honorable mention, as the only HTML element with an implicit live region role that will announce its contents to end users. We see it used 16,144 times across our dataset for mobile sites and 12,120 times on desktop, or around 0.0002% of elements usage.
+The [`<output>` element](https://developer.mozilla.org/docs/Web/HTML/Element/output) also deserves an honorable mention, as the only HTML element with an implicit live region role that will announce its contents to end users. We see it used 16,144 times across our dataset for mobile sites and 12,120 times on desktop, or around 0.0002% of elements usage.
 
-For more information about live region variants and usage check out the [MDN live region documentation](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions) or play with this <a hreflang="en" href="https://dequeuniversity.com/library/aria/liveregion-playground">live demo by Deque</a>.
+For more information about live region variants and usage check out the [MDN live region documentation](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/ARIA_Live_Regions) or play with this <a hreflang="en" href="https://dequeuniversity.com/library/aria/liveregion-playground">live demo by Deque</a>.
 
 ## Accessibility apps and overlays
 

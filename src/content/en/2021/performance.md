@@ -103,7 +103,7 @@ The top takeaway is that 3G and lower speeds correlated with significant perform
 
 Earlier, we mentioned year-over-year improvements in LCP and FID improvements. These could be partly due to faster mobile devices and mobile networks. The chart above shows total origins accessed on 3G dropped by 2 percentage points while 4G access increased by 3 percentage points. Percent of origins is not necessarily correlated with traffic. But, I would guess if people have more access to higher speeds, then more origins would be accessed from that connection type.
 
-Performance by connection type would be easier to understand if we could start tracking by traffic and not just origin.  It would also be nice to see data for higher speeds. However, [the API is currently limited](https://developer.mozilla.org/en-US/docs/Glossary/Effective_connection_type) to grouping anything above 4G as 4G.
+Performance by connection type would be easier to understand if we could start tracking by traffic and not just origin.  It would also be nice to see data for higher speeds. However, [the API is currently limited](https://developer.mozilla.org/docs/Glossary/Effective_connection_type) to grouping anything above 4G as 4G.
 
 ### By Geographic Region
 
@@ -173,7 +173,7 @@ TTFB was faster on desktop than mobile, presumably because of faster network spe
 
 We have a long way to go for TTFB. 75% of our websites were in the 4G connection group and 25% in the 3G group, with the remaining ones negligible. At 4G effective speeds, only 19% of origins had "good" performance.
 
-You may be asking yourself how TTFB can even occur with offline connections. Presumably, most of the offline sites that record and send TTFB data use [service worker caching](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Offline_Service_workers). TTFB measures how long it takes the first byte of the response for the page to be received, even if that response is coming from the Cache Storage API or the HTTP Cache. An actual server doesn't have to be involved. If the response requires action from the service worker, then the time it takes the service worker thread to start up and handle the response can also contribute to TTFB. But even considering service worker startup times, these sites on average receive their first byte faster than the other connection categories.
+You may be asking yourself how TTFB can even occur with offline connections. Presumably, most of the offline sites that record and send TTFB data use [service worker caching](https://developer.mozilla.org/docs/Web/Progressive_web_apps/Offline_Service_workers). TTFB measures how long it takes the first byte of the response for the page to be received, even if that response is coming from the Cache Storage API or the HTTP Cache. An actual server doesn't have to be involved. If the response requires action from the service worker, then the time it takes the service worker thread to start up and handle the response can also contribute to TTFB. But even considering service worker startup times, these sites on average receive their first byte faster than the other connection categories.
 
 {{ figure_markup(
   image="performance-TTFB-by-rank.png",
@@ -359,7 +359,7 @@ Not all browsers support native lazy loading. Popular lazy loading polyfills det
 
 Lazy loading your LCP element will result in worse performance. *Don't do it!* WordPress was an early adopter of native lazy loading. The early method was a naive solution applying lazy loading to all images, and the results showed a <a hreflang="en" href="https://web.dev/lcp-lazy-loading/">negative performance correlation</a>. They were able to use this data to implement a more nuanced approach for better performance.
 
-The <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-decoding">`decode` attribute</a> for images is relatively new. Setting it to `async` can improve load and scroll performance. Currently, 0.4% of sites used the async decode directive for their LCP image. The negative impact of asynchronous decode on an LCP image is currently unclear. Thus, test your site before and after if you choose to set an LCP image to `decode="async"`.
+The <a hreflang="en" href="https://developer.mozilla.org/docs/Web/HTML/Element/img#attr-decoding">`decode` attribute</a> for images is relatively new. Setting it to `async` can improve load and scroll performance. Currently, 0.4% of sites used the async decode directive for their LCP image. The negative impact of asynchronous decode on an LCP image is currently unclear. Thus, test your site before and after if you choose to set an LCP image to `decode="async"`.
 
 {{ figure_markup(
   content="354",

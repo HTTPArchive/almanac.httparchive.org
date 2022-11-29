@@ -47,7 +47,7 @@ In dit gedeelte behandelen we de aspecten van een hoger niveau van HTML, zoals d
   sql_file="summary_pages_by_device_and_doctype.sql"
 ) }}
 
-96,82% van de pagina's geeft een [_doctype_](https://developer.mozilla.org/en-US/docs/Glossary/Doctype) aan. HTML-documenten waarin wordt verklaard dat een doctype om historische redenen nuttig is, "om te voorkomen dat de modus voor eigenaardigheden in browsers wordt geactiveerd", zoals <a hreflang="en" href="https://lists.w3.org/Archives/Public/public-html-comments/2009Jul/0020.html">Ian Hickson schreef in 2009</a>. Wat zijn de meest populaire waarden?
+96,82% van de pagina's geeft een [_doctype_](https://developer.mozilla.org/docs/Glossary/Doctype) aan. HTML-documenten waarin wordt verklaard dat een doctype om historische redenen nuttig is, "om te voorkomen dat de modus voor eigenaardigheden in browsers wordt geactiveerd", zoals <a hreflang="en" href="https://lists.w3.org/Archives/Public/public-html-comments/2009Jul/0020.html">Ian Hickson schreef in 2009</a>. Wat zijn de meest populaire waarden?
 
 <figure>
   <table>
@@ -120,7 +120,7 @@ Hoe is deze situatie in het algemeen dan? Het mediaan document weegt 24,65 KB, e
 
 We hebben 2.863 verschillende waarden geïdentificeerd voor het `lang`-attribuut op de `html`-starttag (vergelijk dat met de <a hreflang="en" href="https://www.ethnologue.com/guides/how-many-languages">7.117 gesproken talen</a> volgens Ethnologue). Ze lijken bijna allemaal geldig, volgens het hoofdstuk [Toegankelijkheid](./accessibility#language-identification).
 
-22,36% van alle documenten specificeren geen `lang`-attribuut. De algemeen aanvaarde opvatting is dat <a hreflang="en" href="https://www.w3.org/TR/i18n-html-tech-lang/#overall">ze zouden moeten</a>, maar naast het idee dat software uiteindelijk <a hreflang="en" href="https://meiert.com/en/blog/lang/">taal automatisch kan detecteren</a>, kan de documenttaal ook worden gespecificeerd [op protocolniveau](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Language), dat hebben we niet gecontroleerd.
+22,36% van alle documenten specificeren geen `lang`-attribuut. De algemeen aanvaarde opvatting is dat <a hreflang="en" href="https://www.w3.org/TR/i18n-html-tech-lang/#overall">ze zouden moeten</a>, maar naast het idee dat software uiteindelijk <a hreflang="en" href="https://meiert.com/en/blog/lang/">taal automatisch kan detecteren</a>, kan de documenttaal ook worden gespecificeerd [op protocolniveau](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Language), dat hebben we niet gecontroleerd.
 
 Hier zijn de 10 meest populaire (genormaliseerde) talen in ons voorbeeld. Het is belangrijk op te merken dat het HTTP Archive crawlt vanuit Amerikaanse datacentra met Engelse taalinstellingen, dus het bekijken van de taalpagina's waarin is geschreven, zal scheef naar het Engels gaan. Desalniettemin presenteren we de `lang`-attributen die gezien worden om enige context te geven aan de geanalyseerde sites.
 
@@ -329,7 +329,7 @@ Hier is een eenvoudig voorbeeld dat het gebruik van een `summary` in een `detail
 </details>
 ```
 
-Een tijdje geleden wees Steve Faulkner [erop](https://twitter.com/stevefaulkner/status/806474286592561152) hoe deze twee elementen in het wild onvoldoende werden gebruikt. Zoals u aan het bovenstaande voorbeeld kunt zien, heeft u voor elk `details`-element een `summary`-element nodig dat alleen mag worden gebruikt als het [eerste kind](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/summary#Usage_notes) van `details`.
+Een tijdje geleden wees Steve Faulkner [erop](https://twitter.com/stevefaulkner/status/806474286592561152) hoe deze twee elementen in het wild onvoldoende werden gebruikt. Zoals u aan het bovenstaande voorbeeld kunt zien, heeft u voor elk `details`-element een `summary`-element nodig dat alleen mag worden gebruikt als het [eerste kind](https://developer.mozilla.org/docs/Web/HTML/Element/summary#Usage_notes) van `details`.
 
 Dienovereenkomstig hebben we gekeken naar het aantal `details` en `summary` elementen en het lijkt erop dat ze nog steeds worden misbruikt. Het aantal `summary`-elementen is hoger op zowel mobiel als desktop, met een verhouding van respectievelijk 1,11 `samenvatting`-elementen voor elk `details`-element op mobiel en 1,19 op desktop:
 
@@ -965,7 +965,7 @@ We hebben het gebruik van HTML in het algemeen behandeld, evenals de acceptatie 
 
 ### `viewport` specificaties
 
-Het meta-element [viewport](https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag) wordt gebruikt om de lay-out op mobiele browsers te beheren. Terwijl het motto jaren geleden een beetje was "vergeet het viewport-meta-element niet" bij het bouwen van een webpagina, werd dit uiteindelijk een gangbare praktijk en veranderde het motto in "zorg ervoor dat zoomen en schalen niet worden uitgeschakeld."
+Het meta-element [viewport](https://developer.mozilla.org/docs/Web/HTML/Viewport_meta_tag) wordt gebruikt om de lay-out op mobiele browsers te beheren. Terwijl het motto jaren geleden een beetje was "vergeet het viewport-meta-element niet" bij het bouwen van een webpagina, werd dit uiteindelijk een gangbare praktijk en veranderde het motto in "zorg ervoor dat zoomen en schalen niet worden uitgeschakeld."
 
 Gebruikers moeten de tekst kunnen zoomen en schalen <a hreflang="en" href="https://dequeuniversity.com/rules/axe/4.0/meta-viewport-large">tot 500%</a>. Daarom mislukken audits in populaire hulpmiddelen zoals <a hreflang="en" href="https://developers.google.com/web/tools/lighthouse">Lighthouse</a> of <a hreflang="en" href="https://www.deque.com/axe/">axe</a> wanneer `user-scalable="no"` wordt gebruikt binnen het `meta name="viewport"` element, en wanneer de `maximum-scale` attribuutwaarde kleiner is dan `5`.
 
@@ -1196,7 +1196,7 @@ Pagina's in het 10e en 25e percentiel bevatten helemaal geen knoppen, terwijl ee
 
 ### Link doelen
 
-Het [`anchor`-element](https://developer.mozilla.org/nl/docs/Web/HTML/Element/a), of `a` element, verbindt webbronnen met elkaar. In deze sectie analyseren we de acceptatie van de protocollen die in deze linkdoelen zijn opgenomen.
+Het [`anchor`-element](https://developer.mozilla.org/docs/Web/HTML/Element/a), of `a` element, verbindt webbronnen met elkaar. In deze sectie analyseren we de acceptatie van de protocollen die in deze linkdoelen zijn opgenomen.
 
 <figure>
   <table>
