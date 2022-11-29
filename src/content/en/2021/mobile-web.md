@@ -176,7 +176,7 @@ In this section we will also look at overall app usage for the mobile web and ho
 
 ### Client Hints
 
-[_Client Hints_](https://developer.mozilla.org/en-US/docs/Glossary/Client_hints) are a collection of HTTP request header fields a server can request from the client accessing it to get information on the device, its capabilities, the network conditions and other agent settings and preferences.
+[_Client Hints_](https://developer.mozilla.org/docs/Glossary/Client_hints) are a collection of HTTP request header fields a server can request from the client accessing it to get information on the device, its capabilities, the network conditions and other agent settings and preferences.
 
 This gives the ability to make decisions and serve code, content and experience that's more tailored to that device.
 
@@ -204,7 +204,7 @@ These hints can be roughly assigned into three groups:
   )
 }}
 
-Uptake here is low, with [`DPR`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/DPR) and [`Viewport-Width`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Viewport-Width) leading with 0.15% of mobile sites requesting this, [`Device-Memory`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Device-Memory) a little behind at 0.14% and [`Width`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Width) at just 0.0%, but this is now deprecated, the proposed replacement being Sec-CH-Width, we detected no sites requesting this.
+Uptake here is low, with [`DPR`](https://developer.mozilla.org/docs/Web/HTTP/Headers/DPR) and [`Viewport-Width`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Viewport-Width) leading with 0.15% of mobile sites requesting this, [`Device-Memory`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Device-Memory) a little behind at 0.14% and [`Width`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Width) at just 0.0%, but this is now deprecated, the proposed replacement being Sec-CH-Width, we detected no sites requesting this.
 
 Currently, only Chrome, (and Chromium based browsers like Microsoft's Edge), and Opera support these headers, with <a hreflang="en" href="https://caniuse.com/client-hints-dpr-width-viewport">Safari and Firefox not yet onboard</a>.
 
@@ -220,7 +220,7 @@ Currently, only Chrome, (and Chromium based browsers like Microsoft's Edge), and
   )
 }}
 
-Network Client Hints show a similar uptake to Device Client Hints, with [Downlink](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Downlink) and [ECT](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ECT) (effective connection type) being requested by 0.2% of loads on mobile, and [RTT](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/RTT) (round trip time) on 0.1% of loads on mobile.
+Network Client Hints show a similar uptake to Device Client Hints, with [Downlink](https://developer.mozilla.org/docs/Web/HTTP/Headers/Downlink) and [ECT](https://developer.mozilla.org/docs/Web/HTTP/Headers/ECT) (effective connection type) being requested by 0.2% of loads on mobile, and [RTT](https://developer.mozilla.org/docs/Web/HTTP/Headers/RTT) (round trip time) on 0.1% of loads on mobile.
 
 Save-Data is surprisingly present less, at just 0.1% of mobile requests, seemingly a missed opportunity, given the user benefits possible, as detailed in the Google Web Fundamentals article, <a hreflang="en" href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/save-data/">Delivering Fast and Light Applications with Save-Data</a>.
 
@@ -234,7 +234,7 @@ _User-Agent Client Hints_ offer a way to get this information, but unlike the De
 
 ### Network Information API and Device Memory API usage
 
-The [_Network Information API_](https://developer.mozilla.org/en-US/docs/Web/API/Network_Information_API) and [`Navigator.deviceMemory`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/deviceMemory) offer an interface to JavaScript to gather device and connection information, similar in scope to those exposed with Client Hints.
+The [_Network Information API_](https://developer.mozilla.org/docs/Web/API/Network_Information_API) and [`Navigator.deviceMemory`](https://developer.mozilla.org/docs/Web/API/Navigator/deviceMemory) offer an interface to JavaScript to gather device and connection information, similar in scope to those exposed with Client Hints.
 
 #### Network Information API
 
@@ -248,7 +248,7 @@ The [_Network Information API_](https://developer.mozilla.org/en-US/docs/Web/API
   )
 }}
 
-We focused of mobile vs. desktop page loads making use of [`NetworkInformation.effectiveType`](https://developer.mozilla.org/en-US/docs/Web/API/NetworkInformation/effectiveType), which returns a string based on the effective connection type, `slow-2g`, `2g`, `3g`, or `4g`. The top tier is `4g`, so could really be seen as "4g or faster", including 5g and broadband, fixed connections.
+We focused of mobile vs. desktop page loads making use of [`NetworkInformation.effectiveType`](https://developer.mozilla.org/docs/Web/API/NetworkInformation/effectiveType), which returns a string based on the effective connection type, `slow-2g`, `2g`, `3g`, or `4g`. The top tier is `4g`, so could really be seen as "4g or faster", including 5g and broadband, fixed connections.
 
 18.2% of mobile requests had page loads utilizing `NetworkInformation.effectiveType`, but surprisingly, a very slightly higher 18.4% of desktop requests detected use of this API.
 
@@ -647,7 +647,7 @@ Business value appears to impact input type adoption. Ecommerce sites have a ves
 
 #### Autocomplete
 
-The [`autocomplete`](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) attribute allows some control over how forms and inputs work with browsers autofill features. There are a number of options, from disabling it entirely, to providing hints as to what to autofill, like a name, or street address.
+The [`autocomplete`](https://developer.mozilla.org/docs/Web/HTML/Attributes/autocomplete) attribute allows some control over how forms and inputs work with browsers autofill features. There are a number of options, from disabling it entirely, to providing hints as to what to autofill, like a name, or street address.
 
 Inputting text and data on mobile devices is a generally more tedious process than on a device with a full keyboard, so autofill becomes an even more useful and time saving feature than for desktop users. <a hreflang="en" href="https://www.youtube.com/watch?v=m2a9hlUFRhg&t=1433s">Google discovered</a> a 25% increase in form submission when autofill is used.
 
@@ -842,7 +842,7 @@ This is sadly a step back from 58.8% in 2020. That's 43.4% of mobile users getti
 
 #### Responsive images
 
-Images can be [served responsively](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images) too, the `srcset` attribute, and the `<picture>` element allow appropriately sized, and appropriately formatted images to be specified, allowing the browser to download the one that best matches the screen and device.
+Images can be [served responsively](https://developer.mozilla.org/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images) too, the `srcset` attribute, and the `<picture>` element allow appropriately sized, and appropriately formatted images to be specified, allowing the browser to download the one that best matches the screen and device.
 
 {{ figure_markup(
     image="mobile-web-responsive-images.png",
@@ -982,7 +982,7 @@ If you are looking to learn more about Core Web Vitals in general, the [Performa
 
 ### Service workers
 
-[Service workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) while not only applying to mobile devices do become uniquely useful in their ability to add offline capabilities, and better control of loading from caches to web apps, both features which are often more relevant to mobile users, who are more likely to encounter poor or total loss of connectivity.
+[Service workers](https://developer.mozilla.org/docs/Web/API/Service_Worker_API) while not only applying to mobile devices do become uniquely useful in their ability to add offline capabilities, and better control of loading from caches to web apps, both features which are often more relevant to mobile users, who are more likely to encounter poor or total loss of connectivity.
 
 14.8% of sites register a service worker, a sizeable uptake since 2020's 0.9%
 

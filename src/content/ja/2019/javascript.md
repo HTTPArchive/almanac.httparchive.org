@@ -287,7 +287,7 @@ JavaScriptのリソースを圧縮しているサイトはどれくらいある�
   <figcaption>{{ figure_link(caption="デスクトップとモバイルでのトップ JavaScript ライブラリ") }}</figcaption>
 </figure>
 
-これまでに作成された中で最も人気のあるJavaScriptライブラリである<a hreflang="en" href="https://jquery.com/">jQuery</a>は、デスクトップページの85.03％、モバイルページの83.46％で使用されています。[Fetch](https://developer.mozilla.org/ja/docs/Web/API/Fetch_API)や[querySelector](https://developer.mozilla.org/ja/docs/Web/API/Document/querySelector)など、多くのブラウザAPIやメソッドの出現により、ライブラリが提供する機能の多くがネイティブ形式に標準化されました。jQueryの人気は衰退しているように見えるかもしれませんが、なぜ今でもウェブの大部分で使われているのでしょうか？
+これまでに作成された中で最も人気のあるJavaScriptライブラリである<a hreflang="en" href="https://jquery.com/">jQuery</a>は、デスクトップページの85.03％、モバイルページの83.46％で使用されています。[Fetch](https://developer.mozilla.org/docs/Web/API/Fetch_API)や[querySelector](https://developer.mozilla.org/docs/Web/API/Document/querySelector)など、多くのブラウザAPIやメソッドの出現により、ライブラリが提供する機能の多くがネイティブ形式に標準化されました。jQueryの人気は衰退しているように見えるかもしれませんが、なぜ今でもウェブの大部分で使われているのでしょうか？
 
 理由はいくつか考えられます。
 
@@ -359,7 +359,7 @@ JavaScriptのリソースを圧縮しているサイトはどれくらいある�
 
 ## プリロードとプリフェッチ
 
-[プリロード](https://developer.mozilla.org/ja/docs/Web/HTML/Link_types/preload) と [プリフェッチ](https://developer.mozilla.org/ja/docs/Web/HTTP/Link_prefetching_FAQ)は[リソースヒント](./resource-hints)であり、どのリソースをダウンロードする必要があるかを判断する際にブラウザを助けることができます。
+[プリロード](https://developer.mozilla.org/docs/Web/HTML/Link_types/preload) と [プリフェッチ](https://developer.mozilla.org/docs/Web/HTTP/Link_prefetching_FAQ)は[リソースヒント](./resource-hints)であり、どのリソースをダウンロードする必要があるかを判断する際にブラウザを助けることができます。
 
 - `<link rel="preload">`でリソースをプリロードすると、ブラウザはこのリソースをできるだけ早くダウンロードするように指示します。これは、ページの読み込みプロセスの後半に発見され、最後にダウンロードされてしまう重要なリソース（例えば、HTMLの下部にあるJavaScriptなど）に特に役立ちます。
 - `<link rel="prefetch">`を使用することで、ブラウザが将来のナビゲーションに必要なリソースを取得するためのアイドル時間を利用できるようにします。
@@ -396,12 +396,12 @@ HTTP Archiveを使用すると、サポートされている（あるいはこ�
 
 以下のAPIを使用しているサイトはどれくらいありますか？
 
-- [Atomics](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Atomics)
-- [Intl](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Intl)
-- [Proxy](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Proxy)
-- [SharedArrayBuffer](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer)
-- [WeakMap](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/WeakMap)
-- [WeakSet](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/WeakSet)
+- [Atomics](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Atomics)
+- [Intl](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl)
+- [Proxy](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Proxy)
+- [SharedArrayBuffer](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer)
+- [WeakMap](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WeakMap)
+- [WeakSet](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WeakSet)
 
 {{ figure_markup(
   image="fig17.png",

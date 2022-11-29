@@ -361,7 +361,7 @@ TTFB 會受到網路延遲時間及網路連線方式的影響。網路延遲時
 
 ## <span lang="en">Performance Observer</span> 的用途 {performance-observer-的用途}
 
-能夠估算網站及應用程式的使用者體驗效能的衡量標準有百百種。但是，有時候那些既有的衡量標準並不一定符合我們的需求或是情境。[PerformanceObserver API](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver) 能夠讓我們取得透過 [User Timing API](https://developer.mozilla.org/en-US/docs/Web/API/User_Timing_API)、[Long Task API](https://developer.mozilla.org/en-US/docs/Web/API/Long_Tasks_API)、<a hreflang="en" href="https://wicg.github.io/event-timing/">Event Timing API</a> 或<a hreflang="en" href="https://web.dev/custom-metrics/">其他的低階 APIs</a> 所客製的衡量標準資料。舉例來說，有了這些 API 的幫助，我們可以紀錄頁面之間轉換的時間或是量化 <span lang="en">server-side-rendered (SSR) hydration</span> 時間。
+能夠估算網站及應用程式的使用者體驗效能的衡量標準有百百種。但是，有時候那些既有的衡量標準並不一定符合我們的需求或是情境。[PerformanceObserver API](https://developer.mozilla.org/docs/Web/API/PerformanceObserver) 能夠讓我們取得透過 [User Timing API](https://developer.mozilla.org/docs/Web/API/User_Timing_API)、[Long Task API](https://developer.mozilla.org/docs/Web/API/Long_Tasks_API)、<a hreflang="en" href="https://wicg.github.io/event-timing/">Event Timing API</a> 或<a hreflang="en" href="https://web.dev/custom-metrics/">其他的低階 APIs</a> 所客製的衡量標準資料。舉例來說，有了這些 API 的幫助，我們可以紀錄頁面之間轉換的時間或是量化 <span lang="en">server-side-rendered (SSR) hydration</span> 時間。
 
 {{ figure_markup(
   image="performance-performance-observer-usage.png",

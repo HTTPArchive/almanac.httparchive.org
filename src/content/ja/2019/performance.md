@@ -43,7 +43,7 @@ Web Almanacにある他のほとんどの章は、<a hreflang="en" href="https:/
   - 4G
 - ユーザーの地理的な位置
 
-体験は描画、読み込み、そして対話性の定量化を含めて毎月測定されます。最初に私達が見るべき指標は<a hreflang="en" href="https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#first_paint_and_first_contentful_paint">コンテンツの初回ペイント(First Contentful Paint)</a>(FCP)です。これはページや画像やテキストなど、ユーザーが画面として見るために必要なものが表示されるのを待つ時間です。次は、読み込み時間の指標である[最初のバイトまでの時間(Time to First Byte)](https://developer.mozilla.org/en-US/docs/Glossary/time_to_first_byte) (TTFB)です。これはユーザーがナビゲーションを行ってから、Webページのレスポンスの最初のバイトを受信するまでにかかった時間を計測したものです。そして最後に確認するフィールドの指標は<a hreflang="en" href="https://developers.google.com/web/updates/2018/05/first-input-delay">初回入力遅延(First Input Delay)</a> (FID)です。これは比較的新しい指標で、読み込み以外のパフォーマンスUXの一部を表すものです。ユーザーがページのUIを操作できるようになるまでの時間、つまり、ブラウザのメインスレッドがイベント処理の準備が整うまでの時間を測定したものです。
+体験は描画、読み込み、そして対話性の定量化を含めて毎月測定されます。最初に私達が見るべき指標は<a hreflang="en" href="https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#first_paint_and_first_contentful_paint">コンテンツの初回ペイント(First Contentful Paint)</a>(FCP)です。これはページや画像やテキストなど、ユーザーが画面として見るために必要なものが表示されるのを待つ時間です。次は、読み込み時間の指標である[最初のバイトまでの時間(Time to First Byte)](https://developer.mozilla.org/docs/Glossary/time_to_first_byte) (TTFB)です。これはユーザーがナビゲーションを行ってから、Webページのレスポンスの最初のバイトを受信するまでにかかった時間を計測したものです。そして最後に確認するフィールドの指標は<a hreflang="en" href="https://developers.google.com/web/updates/2018/05/first-input-delay">初回入力遅延(First Input Delay)</a> (FID)です。これは比較的新しい指標で、読み込み以外のパフォーマンスUXの一部を表すものです。ユーザーがページのUIを操作できるようになるまでの時間、つまり、ブラウザのメインスレッドがイベント処理の準備が整うまでの時間を測定したものです。
 
 では、それによってどのような洞察ができるのかを見てきましょう。
 
@@ -150,7 +150,7 @@ Webサイトでデスクトップユーザーが高確率で携帯電話のユ�
   )
 }}
 
-TTFBとそれに影響する多くの要因を説明するために、[Navigation Timing APIの仕様](https://developer.mozilla.org/ja/docs/Web/API/Navigation_timing_API)から図を借りました。上の図7.8は`startTime`から`responseStart`までの間を表しており、`unload`、`redirects`、`AppCache`、`DNS`、`SSL`、`TCP`などのサーバー側のリクエスト処理に費やす全てを含んでいます。このようなコンテキストを考慮して、ユーザーがこの数値をどのように体験しているかを見てみましょう。
+TTFBとそれに影響する多くの要因を説明するために、[Navigation Timing APIの仕様](https://developer.mozilla.org/docs/Web/API/Navigation_timing_API)から図を借りました。上の図7.8は`startTime`から`responseStart`までの間を表しており、`unload`、`redirects`、`AppCache`、`DNS`、`SSL`、`TCP`などのサーバー側のリクエスト処理に費やす全てを含んでいます。このようなコンテキストを考慮して、ユーザーがこの数値をどのように体験しているかを見てみましょう。
 
 {{ figure_markup(
   image="fig9.png",

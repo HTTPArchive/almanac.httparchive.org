@@ -33,7 +33,7 @@ La plupart des navigateurs actuels prennent en charge quatre indices de ressourc
 
 ### `dns-prefetch`
 
-Le rôle de [`dns-prefetch`](https://developer.mozilla.org/en-US/docs/Learn/Performance/dns-prefetch) est de lancer une résolution DNS par anticipation. On peut ainsi anticiper la résolution DNS de tierces parties. Par exemple, la résolution DNS d'un CDN, d'un fournisseur de polices d'écriture ou d'une API en tierce partie.
+Le rôle de [`dns-prefetch`](https://developer.mozilla.org/docs/Learn/Performance/dns-prefetch) est de lancer une résolution DNS par anticipation. On peut ainsi anticiper la résolution DNS de tierces parties. Par exemple, la résolution DNS d'un CDN, d'un fournisseur de polices d'écriture ou d'une API en tierce partie.
 
 ### `preconnect`
 
@@ -49,13 +49,13 @@ Le rôle de [`dns-prefetch`](https://developer.mozilla.org/en-US/docs/Learn/Perf
 
 ## Syntaxe
 
-97&nbsp;% des usages d'indices de ressources sont spécifiés par le tag [`<link>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link). Par exemple&nbsp;:
+97&nbsp;% des usages d'indices de ressources sont spécifiés par le tag [`<link>`](https://developer.mozilla.org/docs/Web/HTML/Element/link). Par exemple&nbsp;:
 
 ```html
 <link rel="prefetch" href="shopping-cart.js">
 ```
 
-Seuls 3&nbsp;% des indices de ressources proviennent [d'en-têtes HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Link) permettant de les spécifier. Par exemple&nbsp;:
+Seuls 3&nbsp;% des indices de ressources proviennent [d'en-têtes HTTP](https://developer.mozilla.org/docs/Web/HTTP/Headers/Link) permettant de les spécifier. Par exemple&nbsp;:
 
 ```
 Link: <https://example.com/shopping-cart.js>; rel=prefetch
@@ -168,7 +168,7 @@ Les indices de ressources sont plus efficaces lorsqu'ils sont utilisés de mani�
 
 ## L'attribut `crossorigin`
 
-La plupart des ressources "traditionnelles" récupérées sur le web (les [images](./media), les [feuilles de style](./css) et les [scripts](./javascript)) sont récupérées sans avoir à activer le partage de ressources entre origines multiples (en anglais, <i lang="en">Cross-Origin Resource Sharing</i> ou [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)). Cela signifie que si ces ressources sont extraites d'un serveur `Cross-Origin`, par défaut, leur contenu ne peut pas être relu par la page, en raison de la politique `Same-Origin`.
+La plupart des ressources "traditionnelles" récupérées sur le web (les [images](./media), les [feuilles de style](./css) et les [scripts](./javascript)) sont récupérées sans avoir à activer le partage de ressources entre origines multiples (en anglais, <i lang="en">Cross-Origin Resource Sharing</i> ou [CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS)). Cela signifie que si ces ressources sont extraites d'un serveur `Cross-Origin`, par défaut, leur contenu ne peut pas être relu par la page, en raison de la politique `Same-Origin`.
 
 Dans certains cas, la page peut choisir d'aller chercher la ressource à l'aide de CORS si elle a besoin d'en lire le contenu. Le système CORS permet au navigateur de "demander la permission" et d'accéder à ces ressources d'origines mixtes.
 

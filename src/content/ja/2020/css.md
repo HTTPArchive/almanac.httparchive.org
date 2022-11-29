@@ -45,7 +45,7 @@ CSS（Cascading Stylesheets）とは、ウェブページやその他のメデ�
 
 特定の指標については、CSS ASTを見るだけでは十分ではありませんでした。私たちは、ソースマップを介して提供された<a hreflang="en" href="https://sass-lang.com/">SCSS</a>を見たいと考えていました。それは、開発者がCSSから何を必要としているかを示しているのに対し、CSSを研究することで開発者が現在使用しているものを示すことができるからです。そのためには、クローラーが特定のページを訪問したときにクローラーで実行される*カスタムメトリック*—JavaScriptコードを使用しなければなりませんでした。適切なSCSSパーサーを使用するとクロールが遅くなりすぎるので、<a hreflang="en" href="https://github.com/LeaVerou/css-almanac/blob/master/runtime/sass.js">正規表現</a>(*ああ、恐ろしい！*)に頼らざるを得ませんでした。粗野なアプローチにもかかわらず、私たちは[多くの洞察](#sass)を得ることができました！
 
-カスタムメトリクスは[カスタムプロパティの分析](#カスタムプロパティ)の一部にも使われていました。スタイルシートだけでもカスタムプロパティの使用状況に関する多くの情報を得ることができますが、カスタムプロパティは継承されているため、DOMツリーを見てコンテキストを確認できなければ依存関係グラフを構築することはできません。またDOMノードの計算されたスタイルを見ることで、各プロパティがどのような種類の要素に適用されているのか、どの要素が[registered](https://developer.mozilla.org/ja/docs/Web/API/CSS/RegisterProperty)であるのかといった情報を得ることができます。
+カスタムメトリクスは[カスタムプロパティの分析](#カスタムプロパティ)の一部にも使われていました。スタイルシートだけでもカスタムプロパティの使用状況に関する多くの情報を得ることができますが、カスタムプロパティは継承されているため、DOMツリーを見てコンテキストを確認できなければ依存関係グラフを構築することはできません。またDOMノードの計算されたスタイルを見ることで、各プロパティがどのような種類の要素に適用されているのか、どの要素が[registered](https://developer.mozilla.org/docs/Web/API/CSS/RegisterProperty)であるのかといった情報を得ることができます。
 
 <p class="note">我々はデスクトップとモバイルの両方のモードでページをクロールしていますが、多くのデータでは同様の結果が得られるため、特に断りのない限り、この章で提示されている統計はモバイルページのセットを参照しています。</p>
 
@@ -122,7 +122,7 @@ CSSには、クラスやID、スタイルの重複を避けるために重要な
 
 最近ではIDの特異度が非常に高いため、一部の業界では推奨されていませんが、ほとんどのウェブサイトでは、ほとんど使用されていません。セレクターで複数のIDを使用しているページは半数以下（最大特異度は(1,x,y)以下）で、ほぼ全てのページでIDを含まない特異度の中央値は(0,x,y)となっています。特異度の計算の詳細とこの(a,b,c)表記法については、<a hreflang="en" href="https://www.w3.org/TR/selectors/#specificity-rules">selectors specification</a>を参照してください。
 
-しかし、これらのIDは何に使われているのでしょうか？　最も人気のあるIDは構造的なものであることがわかりました:`#content`,`#footer`,`#header`,`#main`ですが、[対応するHTML要素](https://developer.mozilla.org/ja/docs/Learn/HTML/Introduction_to_HTML/Document_and_website_structure#html_layout_elements_in_more_detail)が存在するにもかかわらず、セレクターとして使用できます。
+しかし、これらのIDは何に使われているのでしょうか？　最も人気のあるIDは構造的なものであることがわかりました:`#content`,`#footer`,`#header`,`#main`ですが、[対応するHTML要素](https://developer.mozilla.org/docs/Learn/HTML/Introduction_to_HTML/Document_and_website_structure#html_layout_elements_in_more_detail)が存在するにもかかわらず、セレクターとして使用できます。
 
 {{ figure_markup(
   image="popular-ids.png",
@@ -248,7 +248,7 @@ IDは、意図的に特異度を下げたり、上げたりするために使う
 
 圧倒的に最も人気のある擬似クラスはユーザーアクションのもので、`:hover`,`:focus`,`:active`がリストのトップにあり、すべてのページの3分の2以上で使用されていて、開発者が宣言的なUIインタラクションを指定できる利便性を気に入っていることがわかります。
 
-`:root`は、その機能が正当化されるよりもはるかに人気があるようで、3分の1のページで使用されています。HTMLコンテンツでは、`<html>`要素を選択するだけなのに、なぜ開発者は`html`を使わなかったのでしょうか？　考えられる答えは、`:root`擬似クラスへカスタムプロパティを定義することに関連した一般的な慣習にあるかもしれません[これも非常によく使われています](#カスタムプロパティ)。もう1つの答えは特異性にあるかもしれません:`:root`は擬似クラスであるため、`html`よりも高い特異性を持っています。(0, 1, 0) 対 (0, 0, 1) です。例えば、`:root .foo`の特異度は (0, 2, 0) であるのに対し、`.foo`の特異度は (0, 1, 0) です。これは、カスケードレースの中でセレクターが他のセレクターよりもわずかに上を行くのに必要なことが多く、`!important`のようなスレッジハンマーを避けるために必要なことです。この仮説を検証するために、私たちはまた、まさにこれを測定しました：子孫セレクターの先頭に`:root`を使うページがどれくらいあるか？　結果は我々の仮説を検証しました：29%のページがそのように`:root`を使用しています。さらにデスクトップページの14％とモバイルページの19％が、子孫セレクターの開始時に`html`を使用しており、おそらくセレクターの特異性をさらに小さくするために使用していると思われます。これらの特異性ハックの人気は、開発者が`!important`を介してそれらに与えられているものよりも特異性を微調整するためのより細かい制御を必要とすることを強く示しています。ありがたいことに、これは [`:where()`](https://developer.mozilla.org/ja/docs/Web/CSS/:where) でまもなく実現します。すでに <a hreflang="en" href="https://caniuse.com/mdn-css_selectors_where">全面的に実装されています</a>（今のところChromeではフラグの後ろに隠れていますが）。
+`:root`は、その機能が正当化されるよりもはるかに人気があるようで、3分の1のページで使用されています。HTMLコンテンツでは、`<html>`要素を選択するだけなのに、なぜ開発者は`html`を使わなかったのでしょうか？　考えられる答えは、`:root`擬似クラスへカスタムプロパティを定義することに関連した一般的な慣習にあるかもしれません[これも非常によく使われています](#カスタムプロパティ)。もう1つの答えは特異性にあるかもしれません:`:root`は擬似クラスであるため、`html`よりも高い特異性を持っています。(0, 1, 0) 対 (0, 0, 1) です。例えば、`:root .foo`の特異度は (0, 2, 0) であるのに対し、`.foo`の特異度は (0, 1, 0) です。これは、カスケードレースの中でセレクターが他のセレクターよりもわずかに上を行くのに必要なことが多く、`!important`のようなスレッジハンマーを避けるために必要なことです。この仮説を検証するために、私たちはまた、まさにこれを測定しました：子孫セレクターの先頭に`:root`を使うページがどれくらいあるか？　結果は我々の仮説を検証しました：29%のページがそのように`:root`を使用しています。さらにデスクトップページの14％とモバイルページの19％が、子孫セレクターの開始時に`html`を使用しており、おそらくセレクターの特異性をさらに小さくするために使用していると思われます。これらの特異性ハックの人気は、開発者が`!important`を介してそれらに与えられているものよりも特異性を微調整するためのより細かい制御を必要とすることを強く示しています。ありがたいことに、これは [`:where()`](https://developer.mozilla.org/docs/Web/CSS/:where) でまもなく実現します。すでに <a hreflang="en" href="https://caniuse.com/mdn-css_selectors_where">全面的に実装されています</a>（今のところChromeではフラグの後ろに隠れていますが）。
 
 {{ figure_markup(
   image="popular-selector-pseudo-classes.png",
@@ -460,7 +460,7 @@ CSSには値や単位を指定する方法が多数用意されており、長�
 
 ### 計算
 
-CSSで異なる単位間の計算を行うために[`calc()`](https://developer.mozilla.org/ja/docs/Web/CSS/calc()) 関数が導入されたとき、それは革命でした。以前はプリプロセッサだけがこのような計算に対応していましたが、結果は静的な値に限定され、しばしば必要とされる動的なコンテキストを欠いていたため、信頼性がありませんでした。
+CSSで異なる単位間の計算を行うために[`calc()`](https://developer.mozilla.org/docs/Web/CSS/calc()) 関数が導入されたとき、それは革命でした。以前はプリプロセッサだけがこのような計算に対応していましたが、結果は静的な値に限定され、しばしば必要とされる動的なコンテキストを欠いていたため、信頼性がありませんでした。
 
 今日では、`calc()`は<a hreflang="en" href="https://caniuse.com/calc">すべてのブラウザでサポートされている</a> ということで、すでに9年が経過しているので60%のページで一度は使われており、広く採用されているのは驚くに値しません。どちらかと言えば、これよりももっと高い採用率を期待していました。
 
@@ -509,11 +509,11 @@ CSSで異なる単位間の計算を行うために[`calc()`](https://developer.
 
 ### グローバルキーワードと`all`
 
-それは[`inherit`](https://developer.mozilla.org/ja/docs/Web/CSS/inherit)で、継承可能なプロパティを継承された値にリセットしたり、継承不可能なプロパティに対して親の値を再利用したりすることを可能にします。前者の方が後者よりもはるかに一般的で、`inherit`の81.37%が継承可能なプロパティで使用されています。残りのほとんどは、背景、境界線、寸法を継承するためのものです。後者は、適切なレイアウトモードでは`width`と`height`を強制的に継承する必要がほとんどないため、レイアウトの難しさを示している可能性が高いです。
+それは[`inherit`](https://developer.mozilla.org/docs/Web/CSS/inherit)で、継承可能なプロパティを継承された値にリセットしたり、継承不可能なプロパティに対して親の値を再利用したりすることを可能にします。前者の方が後者よりもはるかに一般的で、`inherit`の81.37%が継承可能なプロパティで使用されています。残りのほとんどは、背景、境界線、寸法を継承するためのものです。後者は、適切なレイアウトモードでは`width`と`height`を強制的に継承する必要がほとんどないため、レイアウトの難しさを示している可能性が高いです。
 
 `inherit`キーワードは、リンクのアフォーダンスとして色以外のものを使おうとしている場合に、デフォルトのリンク色を親のテキスト色にリセットするのに特に便利です。したがって、`color`が`inherit`で使用される最も一般的なプロパティであることは驚くことではありません。すべての`inherit`の使用量のほぼ3分の1は`color`プロパティにあります。75%のページでは、少なくとも一度は`color: inherit`を使用しています。
 
-プロパティの*初期値*は<a hreflang="en" href="https://www.w3.org/TR/CSS1/#cascading-order">CSS1の頃から存在していた</a>概念ですが、それを明示的に参照するための専用のキーワード`initial`ができたのは<a hreflang="en" href="https://www.w3.org/TR/2013/WD-css3-cascade-20130103/#initial-keyword">17年後</a>で、そのキーワードが<a hreflang="en" href="https://caniuse.com/css-initial-value">ブラウザのユニバーサルサポート</a>になるまでにはさらに2年かかりました。したがって、`inherit`よりもはるかに使用されていないのは当然のことです。古い継承が85%のページで見られるのに対し、`initial`は51%のページで見られます。さらに、`initial`が実際に何をするのかについては多くの混乱があり、`display`は`initial`とともに最もよく使われるプロパティのリストのトップにあり、`display: initial`はページの10%に表示されています。おそらく開発者は、これによって`display`が[user agent stylesheet](https://developer.mozilla.org/ja/docs/Web/CSS/Cascade#user-agent_stylesheets)の値にリセットされ、`display: none`のオンオフを切り替えるために利用されていると考えたのだろう。しかし、<a hreflang="en" href="https://drafts.csswg.org/css-display/#the-display-properties">`display`の初期値は`inline`である</a>ので、`display: initial`は単に`display: inline`を書くための別の方法であり、コンテキストに依存した魔法のような特性を持たない。
+プロパティの*初期値*は<a hreflang="en" href="https://www.w3.org/TR/CSS1/#cascading-order">CSS1の頃から存在していた</a>概念ですが、それを明示的に参照するための専用のキーワード`initial`ができたのは<a hreflang="en" href="https://www.w3.org/TR/2013/WD-css3-cascade-20130103/#initial-keyword">17年後</a>で、そのキーワードが<a hreflang="en" href="https://caniuse.com/css-initial-value">ブラウザのユニバーサルサポート</a>になるまでにはさらに2年かかりました。したがって、`inherit`よりもはるかに使用されていないのは当然のことです。古い継承が85%のページで見られるのに対し、`initial`は51%のページで見られます。さらに、`initial`が実際に何をするのかについては多くの混乱があり、`display`は`initial`とともに最もよく使われるプロパティのリストのトップにあり、`display: initial`はページの10%に表示されています。おそらく開発者は、これによって`display`が[user agent stylesheet](https://developer.mozilla.org/docs/Web/CSS/Cascade#user-agent_stylesheets)の値にリセットされ、`display: none`のオンオフを切り替えるために利用されていると考えたのだろう。しかし、<a hreflang="en" href="https://drafts.csswg.org/css-display/#the-display-properties">`display`の初期値は`inline`である</a>ので、`display: initial`は単に`display: inline`を書くための別の方法であり、コンテキストに依存した魔法のような特性を持たない。
 
 代わりに、`display: revert`は、これらの開発者が期待していたことを実際に行い、`display`を与えられた要素のUA値にリセットすることになるだろう。しかし、`revert`はもっと新しいもので、定義されたのは<a hreflang="en" href="https://www.w3.org/TR/2015/WD-css-cascade-4-20150908/#valdef-all-revert">2015年</a>であり、<a hreflang="en" href="https://caniuse.com/css-revert-value">今年ユニバーサルブラウザのサポートを得ただけ</a>であるため、あまり使われていないことがわかります：ページの0.14%にしか表示されず、使用量の半分は<a hreflang="en" href="https://github.com/WordPress/WordPress/commit/303180b392c530b8e2c8b3c27532d591b915caeb">WordPressのTwentyTwentyテーマの最近のバージョン</a>にある`line-height: revert;`です。
 
@@ -1002,9 +1002,9 @@ CSSには現在、レイアウトオプションが多数用意されており�
 
 ### Flexboxとグリッドの採用
 
-[2019年版](../2019/css#flexbox)では、モバイルとデスクトップをまたいだページの41%が[Flexbox](https://developer.mozilla.org/ja/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox)のプロパティを含むと報告されていました。2020年には、この数字はモバイルで63%、デスクトップで65%にまで拡大しています。Flexboxが実行可能なツールとなる前に開発されたレガシーサイトの数がまだ存在していることから、このレイアウト方法は広く採用されていると言えるでしょう。
+[2019年版](../2019/css#flexbox)では、モバイルとデスクトップをまたいだページの41%が[Flexbox](https://developer.mozilla.org/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox)のプロパティを含むと報告されていました。2020年には、この数字はモバイルで63%、デスクトップで65%にまで拡大しています。Flexboxが実行可能なツールとなる前に開発されたレガシーサイトの数がまだ存在していることから、このレイアウト方法は広く採用されていると言えるでしょう。
 
-[グリッドレイアウト](https://developer.mozilla.org/ja/docs/Web/CSS/CSS_Grid_Layout)を見てみると、グリッドレイアウトを利用しているサイトの割合は、モバイルでは4％、デスクトップでは5％にまで伸びています。昨年から倍増していますが、フレックスレイアウトにはまだ大きく遅れをとっています。
+[グリッドレイアウト](https://developer.mozilla.org/docs/Web/CSS/CSS_Grid_Layout)を見てみると、グリッドレイアウトを利用しているサイトの割合は、モバイルでは4％、デスクトップでは5％にまで伸びています。昨年から倍増していますが、フレックスレイアウトにはまだ大きく遅れをとっています。
 
 {{ figure_markup(
   image="flexbox-grid-mobile.png",
@@ -1045,7 +1045,7 @@ GridではなくFlexboxを選択した理由は、Gridレイアウトが<a hrefl
 
 ### 異なるグリッドレイアウト技術の使用法
 
-グリッド・レイアウト仕様では、CSSでレイアウトを記述し定義するための多くの方法を提供しています。最も基本的な使い方は、<a hreflang="en" href="https://www.smashingmagazine.com/2020/01/understanding-css-grid-lines/">あるグリッド線から別のグリッド線へ</a> のように項目をレイアウトすることです。[名前付き行](https://developer.mozilla.org/ja/docs/Web/CSS/CSS_Grid_Layout/Layout_using_Named_Grid_Lines)や`grid-template-areas`の使用はどうでしょうか？
+グリッド・レイアウト仕様では、CSSでレイアウトを記述し定義するための多くの方法を提供しています。最も基本的な使い方は、<a hreflang="en" href="https://www.smashingmagazine.com/2020/01/understanding-css-grid-lines/">あるグリッド線から別のグリッド線へ</a> のように項目をレイアウトすることです。[名前付き行](https://developer.mozilla.org/docs/Web/CSS/CSS_Grid_Layout/Layout_using_Named_Grid_Lines)や`grid-template-areas`の使用はどうでしょうか？
 
 名前付きの行については、トラックリストの中に角括弧があるかどうかをチェックしました。角括弧の内側に配置されている名前または名前。
 
@@ -1058,17 +1058,17 @@ GridではなくFlexboxを選択した理由は、Gridレイアウトが<a hrefl
 
 その結果、モバイルではグリッドを利用しているページの0.23％が名前付きラインを持っていたのに対し、デスクトップでは0.27％という結果が出ました。
 
-[グリッドテンプレートエリア](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Grid_Template_Areas)の機能は、グリッドアイテムに名前を付け、`grid-template-areas`プロパティの値としてグリッド上に配置することを可能にするもので、少し良い結果が得られました。グリッドを使用しているサイトのうち、モバイルでは19%、デスクトップでは20%がこの方法を使用していました。
+[グリッドテンプレートエリア](https://developer.mozilla.org/docs/Web/CSS/CSS_Grid_Layout/Grid_Template_Areas)の機能は、グリッドアイテムに名前を付け、`grid-template-areas`プロパティの値としてグリッド上に配置することを可能にするもので、少し良い結果が得られました。グリッドを使用しているサイトのうち、モバイルでは19%、デスクトップでは20%がこの方法を使用していました。
 
 これらの結果から、グリッドレイアウトの使用率は、プロダクションウェブサイトではまだ比較的低いだけでなく、その使用方法も比較的シンプルであることがわかります。著者は、行や領域に名前を付けられるような方法よりも、シンプルなラインベースの配置を選択しています。そうすることは何も悪いことではありませんが、グリッドレイアウトの採用が遅れているのは、作者がまだこの機能の威力を理解していないことが一因なのではないでしょうか。もしグリッドレイアウトがブラウザのサポートが不十分で本質的にFlexboxとみなされているとしたら、それは確かに説得力のある選択ではないでしょう。
 
 ### 複数カラムレイアウト
 
-[マルチカラムレイアウト](https://developer.mozilla.org/ja/docs/Web/CSS/CSS_Columns/Basic_Concepts_of_Multicol)、または*multicol*とは、新聞のようにコンテンツを列に並べることができる仕様のことです。印刷用のCSSではよく使われていますが、Web上では読者がコンテンツを読むために上下にスクロールしなければならないような状況が発生するリスクがあるため、あまり有用ではありません。しかし、データによると、デスクトップでは15.33%、モバイルでは14.95%と、グリッドレイアウトよりもmulticolを使用しているページがかなり多くなっています。基本的なmulticolプロパティは十分にサポートされていますが、より複雑な使い方や<a hreflang="en" href="https://www.smashingmagazine.com/2019/02/css-fragmentation/">断片化</a>での改行制御は<a hreflang="en" href="https://caniuse.com/multicolumn">ざっくばらんなサポート</a>となっています。このようなことを考えると、これだけの使用法があるというのはかなり驚きでした。
+[マルチカラムレイアウト](https://developer.mozilla.org/docs/Web/CSS/CSS_Columns/Basic_Concepts_of_Multicol)、または*multicol*とは、新聞のようにコンテンツを列に並べることができる仕様のことです。印刷用のCSSではよく使われていますが、Web上では読者がコンテンツを読むために上下にスクロールしなければならないような状況が発生するリスクがあるため、あまり有用ではありません。しかし、データによると、デスクトップでは15.33%、モバイルでは14.95%と、グリッドレイアウトよりもmulticolを使用しているページがかなり多くなっています。基本的なmulticolプロパティは十分にサポートされていますが、より複雑な使い方や<a hreflang="en" href="https://www.smashingmagazine.com/2019/02/css-fragmentation/">断片化</a>での改行制御は<a hreflang="en" href="https://caniuse.com/multicolumn">ざっくばらんなサポート</a>となっています。このようなことを考えると、これだけの使用法があるというのはかなり驚きでした。
 
 ### ボックスのサイジング
 
-ページ上のボックスの大きさを知っておくと便利ですが、[標準のCSSボックスモデル](https://developer.mozilla.org/ja/docs/Learn/CSS/Building_blocks/The_box_model#what_is_the_css_box_model)では、コンテンツボックスのサイズにpaddingとborderを追加しているため、ボックスに与えたサイズはページ上でレンダリングされるボックスよりも小さくなってしまいます。履歴を変更することはできませんが、`box-sizing`プロパティで指定したサイズを`border-box`に適用するように切り替えることができるので、設定したサイズがレンダリングされるサイズになります。どのくらいのサイトが`box-sizing`プロパティを使っているのでしょうか？ほとんどのサイトが使っています。box-sizing`プロパティは、デスクトップCSSの83.79%、モバイルでは86.39%のサイトで利用されています。
+ページ上のボックスの大きさを知っておくと便利ですが、[標準のCSSボックスモデル](https://developer.mozilla.org/docs/Learn/CSS/Building_blocks/The_box_model#what_is_the_css_box_model)では、コンテンツボックスのサイズにpaddingとborderを追加しているため、ボックスに与えたサイズはページ上でレンダリングされるボックスよりも小さくなってしまいます。履歴を変更することはできませんが、`box-sizing`プロパティで指定したサイズを`border-box`に適用するように切り替えることができるので、設定したサイズがレンダリングされるサイズになります。どのくらいのサイトが`box-sizing`プロパティを使っているのでしょうか？ほとんどのサイトが使っています。box-sizing`プロパティは、デスクトップCSSの83.79%、モバイルでは86.39%のサイトで利用されています。
 
 {{ figure_markup(
   image="box-sizing.png",
@@ -1293,13 +1293,13 @@ FlexboxやGridのような柔軟で応答性の高い新しいレイアウト手
 
 ### Houdini
 
-[Houdini](https://developer.mozilla.org/ja/docs/Web/Houdini)という言葉を聞いたことがあるかもしれません。HoudiniはCSSエンジンの一部を公開する低レベルAPIのセットで、ブラウザのレンダリングエンジンのスタイリングやレイアウトプロセスにフックすることでCSSを拡張する力を開発者に与えます。いくつかの[Houdiniの仕様がブラウザで出荷されている](https://ishoudinireadyyet.com/)ので、実際に使用されているかどうかを確認する時が来たと考えました。短い答え: いいえ。そして今、長い答えのために。。。
+[Houdini](https://developer.mozilla.org/docs/Web/Houdini)という言葉を聞いたことがあるかもしれません。HoudiniはCSSエンジンの一部を公開する低レベルAPIのセットで、ブラウザのレンダリングエンジンのスタイリングやレイアウトプロセスにフックすることでCSSを拡張する力を開発者に与えます。いくつかの[Houdiniの仕様がブラウザで出荷されている](https://ishoudinireadyyet.com/)ので、実際に使用されているかどうかを確認する時が来たと考えました。短い答え: いいえ。そして今、長い答えのために。。。
 
-まず、[Properties & Values API](https://developer.mozilla.org/ja/docs/Web/API/CSS/RegisterProperty)を見てみました。これは開発者がカスタムプロパティを登録して、型や初期値を与え、継承を防ぐことができるというものです。主なユースケースの1つはカスタムプロパティをアニメーションさせることができることなので、カスタムプロパティがアニメーションされる頻度も調べてみました。
+まず、[Properties & Values API](https://developer.mozilla.org/docs/Web/API/CSS/RegisterProperty)を見てみました。これは開発者がカスタムプロパティを登録して、型や初期値を与え、継承を防ぐことができるというものです。主なユースケースの1つはカスタムプロパティをアニメーションさせることができることなので、カスタムプロパティがアニメーションされる頻度も調べてみました。
 
 最先端の技術によくあるように、特にすべてのブラウザでサポートされていない場合は、野生での採用は非常に低くなっています。登録されているカスタムプロパティがあるのはデスクトップページが32ページ、モバイルページが20ページのみでしたが、これには登録されているがクロール時には適用されていないカスタムプロパティは含まれていません。アニメーションでカスタムプロパティを使用しているのは、325のモバイルページと330のデスクトップページ（0.00%）のみで、そのほとんど（74%）は<a hreflang="en" href="https://quasar.dev/vue-components/expansion-item">Vueコンポーネント</a>によって駆動されているようです。これは、クロール時にアニメーションがアクティブになっていなかったため、スタイルを登録する必要のない計算されたスタイルが存在しなかったためと考えられます。
 
-[Paint API](https://developer.mozilla.org/ja/docs/Web/API/CSS_Painting_API)は、より広く実装されたHoudiniの仕様で、開発者はカスタムグラデーションやパターンを実装するなど、`<image>`の値を返すカスタムCSS関数を作成することができます。12ページだけが`paint()`を使用していることがわかりました。各ワークレット名(`hexagon`,`ruler`,`lozenge`,`image-cross`,`grid`,`dashed-line`,`ripple`)はそれぞれ1ページに1つしか表示されませんでした。
+[Paint API](https://developer.mozilla.org/docs/Web/API/CSS_Painting_API)は、より広く実装されたHoudiniの仕様で、開発者はカスタムグラデーションやパターンを実装するなど、`<image>`の値を返すカスタムCSS関数を作成することができます。12ページだけが`paint()`を使用していることがわかりました。各ワークレット名(`hexagon`,`ruler`,`lozenge`,`image-cross`,`grid`,`dashed-line`,`ripple`)はそれぞれ1ページに1つしか表示されませんでした。
 
 <a hreflang="en" href="https://github.com/w3c/css-houdini-drafts/blob/master/css-typed-om/README.md">Typed OM</a>は、別のHoudini仕様で、古典的なCSS OMの文字列の代わりに構造化された値へのアクセスを可能にします。他のHoudini仕様に比べてかなり高い採用率を持っているようですが、全体的にはまだ低いです。デスクトップページでは9,864件（0.18%）、モバイルページ6,391件（0.1%）で使用されています。これは低いように見えるかもしれませんが、視点を変えれば、これらの数字は`<input type="date">`の採用と同じようなものです! この章のほとんどの統計とは異なり、これらの数字は実際の利用状況を反映しており、ウェブサイトの資産に含まれているだけではないことに注意してください。
 
@@ -1345,7 +1345,7 @@ CSS-in-JSについては、誰もが愛犬と一緒に使っていると思わ�
 
 CSSを学ぶ際に最初に教えられるプロパティの多くは、`width`,`height`,`margin-left`,`padding-bottom`,`right`など、特定の物理的な方向性に基づいています。しかし、コンテンツを異なる指向性特性を持つ複数の言語で表示する必要がある場合、これらの物理的な方向はしばしば言語に依存します。方向性は2次元的な特性である。例えば、縦書きでコンテンツを表示する場合（伝統的な中国語のような）、`height`は`width`になる必要があるかもしれません。
 
-過去には、これらの問題に対する唯一の解決策は、異なる記述システム用のオーバーライドを持つ別個のスタイルシートでした。しかし、最近になって、CSSは[*物理的な*プロパティと値](https://developer.mozilla.org/ja/docs/Web/CSS/CSS_Logical_Properties)を取得しました。これは *物理的な*プロパティと同じように動作しますが、コンテキストの方向性に敏感です。例えば、`width`の代わりに`inline-size`と書き、`left`の代わりに [`inset-inline`](https://developer.mozilla.org/ja/docs/Web/CSS/inset-inline)プロパティを使用できます。論理的な *property* の他に、論理的な *keywords* もあります。例えば、`float: left`の代わりに`float: inline-start`と書くこともできます。
+過去には、これらの問題に対する唯一の解決策は、異なる記述システム用のオーバーライドを持つ別個のスタイルシートでした。しかし、最近になって、CSSは[*物理的な*プロパティと値](https://developer.mozilla.org/docs/Web/CSS/CSS_Logical_Properties)を取得しました。これは *物理的な*プロパティと同じように動作しますが、コンテキストの方向性に敏感です。例えば、`width`の代わりに`inline-size`と書き、`left`の代わりに [`inset-inline`](https://developer.mozilla.org/docs/Web/CSS/inset-inline)プロパティを使用できます。論理的な *property* の他に、論理的な *keywords* もあります。例えば、`float: left`の代わりに`float: inline-start`と書くこともできます。
 
 これらのプロパティはかなり<a hreflang="en" href="https://caniuse.com/css-logical-props">よくサポートされている</a>（いくつかの例外を除いて）ですが、ユーザーエージェントスタイルシートの外ではあまり使われていません。論理プロパティは0.6%以上のページで使用されていませんでした。ほとんどの場合、余白とパディングを指定するために使用されていた。`text-align`のための論理キーワードは2.25%のページで使われていたが、それ以外のキーワードには全く出くわしていなかった。これはブラウザのサポートによるところが大きい。`text-align: start`と`end`は <a hreflang="en" href="https://caniuse.com/mdn-css_properties_text-align_flow_relative_values_start_and_end">かなり良いブラウザサポート</a> であるのに対し、`clear`と`float`の論理キーワードはFirefoxでしかサポートされていません。
 
@@ -1449,9 +1449,9 @@ ChromeやSafariの方がずっとプレフィックスを好むようになっ�
   sql_file="vendor_prefix_functions.sql"
 ) }}
 
-接頭辞付きメディア機能の使用率は全体的に低く、最も人気のあるものは`-webkit-min-pixel-ratio`で、「Retina」ディスプレイを検出するために13%のページで使用されています。これに対応する標準メディア機能である[`resolution`](https://developer.mozilla.org/ja/docs/Web/CSS/@media/resolution)がついにこれを上回り、モバイルページの22%とデスクトップページの15%で使用されています。
+接頭辞付きメディア機能の使用率は全体的に低く、最も人気のあるものは`-webkit-min-pixel-ratio`で、「Retina」ディスプレイを検出するために13%のページで使用されています。これに対応する標準メディア機能である[`resolution`](https://developer.mozilla.org/docs/Web/CSS/@media/resolution)がついにこれを上回り、モバイルページの22%とデスクトップページの15%で使用されています。
 
-全体では、`*-min-pixel-ratio`はデスクトップではプレフィックス付きメディア機能の4分の3を占め、モバイルでは約半分を占めています。この違いの理由はモバイルでの利用率の低下ではなく、もう1つのプレフィックスメディア機能である`-*-ハイコントラスト`の人気がモバイルでははるかに高く、プレフィックスメディア機能の残りの半分近くを占めていますが、デスクトップでは18%しか占めていません。対応する標準メディア機能である [forced-colors](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/forced-colors)は、ChromeとFirefoxではまだ実験的であり、フラグの後ろに隠れているため、我々の分析では全く表示されていません。
+全体では、`*-min-pixel-ratio`はデスクトップではプレフィックス付きメディア機能の4分の3を占め、モバイルでは約半分を占めています。この違いの理由はモバイルでの利用率の低下ではなく、もう1つのプレフィックスメディア機能である`-*-ハイコントラスト`の人気がモバイルでははるかに高く、プレフィックスメディア機能の残りの半分近くを占めていますが、デスクトップでは18%しか占めていません。対応する標準メディア機能である [forced-colors](https://developer.mozilla.org/docs/Web/CSS/@media/forced-colors)は、ChromeとFirefoxではまだ実験的であり、フラグの後ろに隠れているため、我々の分析では全く表示されていません。
 
 {{ figure_markup(
   image="vendor-prefixed-media.png",
@@ -1464,7 +1464,7 @@ ChromeやSafariの方がずっとプレフィックスを好むようになっ�
 
 ### フィーチャークエリ
 
-フィーチャークエリ（[@supports](https://developer.mozilla.org/ja/docs/Web/CSS/@supports)）は、ここ数年着実にトラクションを得ており、ページの39%で使用されており、昨年の30%から顕著に増加しています。
+フィーチャークエリ（[@supports](https://developer.mozilla.org/docs/Web/CSS/@supports)）は、ここ数年着実にトラクションを得ており、ページの39%で使用されており、昨年の30%から顕著に増加しています。
 
 しかし、それらは何のために使用されているのでしょうか？我々は、最も人気のあるクエリを見てみました。結果は意外なものでした。グリッド関連のクエリがトップになると思っていたのですが、圧倒的に人気のある機能クエリは`position: sticky`のものでした。これはフィーチャークエリ全体の半分を占め、約4分の1のページで使用されています。対照的に、グリッド関連のクエリは全クエリの2%に過ぎず、開発者はグリッドのブラウザサポートが十分に快適であると感じているため、グリッドの機能強化としてだけ使用する必要はないことを示しています。
 
@@ -1619,7 +1619,7 @@ background-clip: border-box;
 
 #### Flex
 
-ほぼすべての`flex`,`flex-*`プロパティは非常によく使われており、30～60%のページで使用されています。しかし、`flex-wrap`と`flex-direction`の両方が、その短縮形である`flex-flow`よりもはるかに多く使われています。`flex-flow`が使われるときは、2つの値、つまり両方の通常の記載を短く設定する方法として使われます。1つまたは2つの値で`flex`を使用するための[精巧な賢明なデフォルト](https://developer.mozilla.org/ja/docs/Web/CSS/flex#Syntax:~:text=The%20flex%20property%20may%20be%20specified%20using%20one%2C%20two%2C%20or%20three%20value)があるにもかかわらず、使用の約90%は3つの値の構文で、3つの通常の記載を明示的に設定しています。
+ほぼすべての`flex`,`flex-*`プロパティは非常によく使われており、30～60%のページで使用されています。しかし、`flex-wrap`と`flex-direction`の両方が、その短縮形である`flex-flow`よりもはるかに多く使われています。`flex-flow`が使われるときは、2つの値、つまり両方の通常の記載を短く設定する方法として使われます。1つまたは2つの値で`flex`を使用するための[精巧な賢明なデフォルト](https://developer.mozilla.org/docs/Web/CSS/flex#Syntax:~:text=The%20flex%20property%20may%20be%20specified%20using%20one%2C%20two%2C%20or%20three%20value)があるにもかかわらず、使用の約90%は3つの値の構文で、3つの通常の記載を明示的に設定しています。
 
 {{ figure_markup(
   image="flex-shorthand-vs-longhand.png",
@@ -1660,7 +1660,7 @@ background-clip: border-box;
 - そのうち37%は接頭辞付きプロパティの変形した形式でした(例:`webkit-transition`や`-transition`)。
 - 43%は接頭辞のみでしか存在しないプロパティの接頭辞なしの形式(例えば、`font-smoothing`は384Kのウェブサイトに登場しました)で、おそらく互換性のために、標準であるという誤った仮定の下で、あるいは標準になることを願って含まれていたのでしょう。
 - 人気のあるライブラリへの道を見つけたタイプミス。この分析の結果、`white-wpace`というプロパティが234,027のウェブサイトに存在していることがわかりました。これは、同じタイプミスが有機的に発生したとは思えないほどの数です。そして驚いたことに、Facebookウィジェットが原因であることが判明しました(https://twitter.com/rick_viscomi/status/1326739379533000704)。修正はすでに行われています。
-- そして、もう一つの奇妙なことがあります。プロパティ`font-rendering`が2,575ページに登場しています。しかし、プリフィックスの有無にかかわらず、このようなプロパティが存在する証拠を見つけることができません。非標準の<a hreflang="en" href="https://medium.com/better-programming/improving-font-rendering-with-css-3383fc358cbc">`-webkit-font-smoothing`</a> がありますが、これは300万のウェブサイト、つまりページの約49%に登場しており、非常に人気がありますが、`font-rendering`はスペルミスというには十分に近くありません。[`テキストレンダリング`](https://developer.mozilla.org/ja/docs/Web/CSS/text-rendering)は約10万のWebサイトで使われているので、2.5万人の開発者が皆、`font-smoothing`と`text-rendering`の混成語を間違えて作ってしまったと考えられます。
+- そして、もう一つの奇妙なことがあります。プロパティ`font-rendering`が2,575ページに登場しています。しかし、プリフィックスの有無にかかわらず、このようなプロパティが存在する証拠を見つけることができません。非標準の<a hreflang="en" href="https://medium.com/better-programming/improving-font-rendering-with-css-3383fc358cbc">`-webkit-font-smoothing`</a> がありますが、これは300万のウェブサイト、つまりページの約49%に登場しており、非常に人気がありますが、`font-rendering`はスペルミスというには十分に近くありません。[`テキストレンダリング`](https://developer.mozilla.org/docs/Web/CSS/text-rendering)は約10万のWebサイトで使われているので、2.5万人の開発者が皆、`font-smoothing`と`text-rendering`の混成語を間違えて作ってしまったと考えられます。
 
 {{ figure_markup(
   image="most-popupular-unknown-properties.png",

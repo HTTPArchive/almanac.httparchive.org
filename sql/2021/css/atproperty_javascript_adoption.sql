@@ -1,6 +1,6 @@
 #standardSQL
 # CSS.registerProperty adoption
-# https://developer.mozilla.org/en-US/docs/Web/API/CSS/RegisterProperty
+# https://developer.mozilla.org/docs/Web/API/CSS/RegisterProperty
 SELECT DISTINCT
   client,
   num_urls,

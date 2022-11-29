@@ -1,6 +1,6 @@
 #standardSQL
 # Percent of third party requests cached
-# Cache-Control documentation: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control#Directives
+# Cache-Control documentation: https://developer.mozilla.org/docs/Web/HTTP/Headers/Cache-Control#Directives
 
 WITH requests AS (
   SELECT

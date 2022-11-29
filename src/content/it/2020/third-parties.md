@@ -109,7 +109,7 @@ Il grafico seguente mostra la distribuzione delle pagine in base al conteggio di
 
 ### Tipi di contenuto
 
-Possiamo suddividere le richieste di terze parti in base al tipo di contenuto. Questo è il [tipo di contenuto](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Type) riportato delle risorse fornite da domini di terze parti.
+Possiamo suddividere le richieste di terze parti in base al tipo di contenuto. Questo è il [tipo di contenuto](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Type) riportato delle risorse fornite da domini di terze parti.
 
 {{ figure_markup(
   image="thirdparty-by-content-types.png",
@@ -263,7 +263,7 @@ Questo grafico mostra la funzione di densità di probabilità del tempo CPU tota
 
 ## prevalenza di `timing-allow-origin`
 
-La [Resource Timing API](https://developer.mozilla.org/en-US/docs/Web/API/Resource_Timing_API/Using_the_Resource_Timing_API) consente ai proprietari di siti web di misurare le prestazioni delle singole risorse tramite JavaScript. Questi dati sono, di default, estremamente limitati per le risorse cross-origin come i contenuti di terze parti. Esistono motivi legittimi per non fornire queste informazioni temporali come le risposte che variano in base allo stato di autenticazione: ad es. il proprietario di un sito web potrebbe essere in grado di determinare se un visitatore ha effettuato l'accesso a Facebook misurando la dimensione della risposta a una richiesta di widget. Per la maggior parte dei contenuti di terze parti, tuttavia, impostare l'header `timing-allow-origin` è un atto di trasparenza per consentire al sito Web di hosting di monitorare le prestazioni e le dimensioni del contenuto di terze parti.
+La [Resource Timing API](https://developer.mozilla.org/docs/Web/API/Resource_Timing_API/Using_the_Resource_Timing_API) consente ai proprietari di siti web di misurare le prestazioni delle singole risorse tramite JavaScript. Questi dati sono, di default, estremamente limitati per le risorse cross-origin come i contenuti di terze parti. Esistono motivi legittimi per non fornire queste informazioni temporali come le risposte che variano in base allo stato di autenticazione: ad es. il proprietario di un sito web potrebbe essere in grado di determinare se un visitatore ha effettuato l'accesso a Facebook misurando la dimensione della risposta a una richiesta di widget. Per la maggior parte dei contenuti di terze parti, tuttavia, impostare l'header `timing-allow-origin` è un atto di trasparenza per consentire al sito Web di hosting di monitorare le prestazioni e le dimensioni del contenuto di terze parti.
 
 {{ figure_markup(
   image="requests-with-tao.png",
@@ -281,7 +281,7 @@ I risultati nel HTTP Archive mostrano che solo un terzo delle risposte di terze 
 
 ## Ripercussioni
 
-Sappiamo che l'aggiunta di JavaScript arbitrario ai nostri siti introduce rischi sia per la velocità che per la sicurezza del sito. I proprietari dei siti devono essere diligenti per bilanciare il valore degli script di terze parti che includono con le penalità di velocità che possono comportare e utilizzare funzionalità moderne come [integrità subresource](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity) e [politica di sicurezza dei contenuti](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) per mantenere una solida posizione di sicurezza. Per maggiori dettagli  puoi vedere il [capitolo sulla sicurezza](./security) e altre funzioni di sicurezza del browser.
+Sappiamo che l'aggiunta di JavaScript arbitrario ai nostri siti introduce rischi sia per la velocità che per la sicurezza del sito. I proprietari dei siti devono essere diligenti per bilanciare il valore degli script di terze parti che includono con le penalità di velocità che possono comportare e utilizzare funzionalità moderne come [integrità subresource](https://developer.mozilla.org/docs/Web/Security/Subresource_Integrity) e [politica di sicurezza dei contenuti](https://developer.mozilla.org/docs/Web/HTTP/CSP) per mantenere una solida posizione di sicurezza. Per maggiori dettagli  puoi vedere il [capitolo sulla sicurezza](./security) e altre funzioni di sicurezza del browser.
 
 ## Conclusione
 

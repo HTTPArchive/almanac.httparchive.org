@@ -120,7 +120,7 @@ featured_stat_label_3: FLoCコホートからのオプトアウトを行う人�
 
 広告ブロックなどのプライバシー保護ツールの台頭や[Firefox](https://blog.mozilla.org/en/products/firefox/todays-firefox-blocks-third-party-tracking-cookies-and-cryptomining-by-default/)、<a hreflang="en" href="https://webkit.org/blog/10218/full-third-party-cookie-blocking-and-more/">Safari</a>、そして2023年には<a hreflang="en" href="https://blog.google/products/chrome/updated-timeline-privacy-sandbox-milestones/#:~:text=Chrome%20could%20then%20phase%20out%20third-party%20cookies%20over%20a%20three%20month%20period%2C%20starting%20in%20mid-2023%20and%20ending%20in%20late%202023">Chrome</a>などの主要ブラウザからサードパーティCookieを段階的に排除する取り組みにより、トラッカーはサイト間でユーザーを追跡する、より持続的で密かな方法を探しています。
 
-その1つが_ブラウザフィンガープリント_です。ウェブサイトは、[ユーザーエージェント](https://developer.mozilla.org/ja/docs/Glossary/User_agent)、画面解像度、インストールされているフォントなど、ユーザーのデバイスに関する情報を収集し、それらの値のユニークな組み合わせを使用して_フィンガープリント_を作成できます。このフィンガープリントは、ユーザーがウェブサイトを訪れるたびに再作成され、照合することでユーザーを特定することができるのです。この方法は、不正行為の検出に使用できますが、繰り返し利用するユーザーを持続的に追跡したり、サイト間でユーザーを追跡するためにも使用されます。
+その1つが_ブラウザフィンガープリント_です。ウェブサイトは、[ユーザーエージェント](https://developer.mozilla.org/docs/Glossary/User_agent)、画面解像度、インストールされているフォントなど、ユーザーのデバイスに関する情報を収集し、それらの値のユニークな組み合わせを使用して_フィンガープリント_を作成できます。このフィンガープリントは、ユーザーがウェブサイトを訪れるたびに再作成され、照合することでユーザーを特定することができるのです。この方法は、不正行為の検出に使用できますが、繰り返し利用するユーザーを持続的に追跡したり、サイト間でユーザーを追跡するためにも使用されます。
 
 フィンガープリントの検出は複雑です。メソッドコールとイベントリスナーの組み合わせにより効果を発揮し、追跡以外の目的にも使用されることがあります。そこで、これらの個々のメソッドに焦点を当てる代わりに、ウェブサイトがフィンガープリントを簡単に実装できるようにする5つの人気のあるライブラリに焦点を当てます。
 
@@ -226,7 +226,7 @@ Webサイトが機密性の高いリソースへのアクセスを要求する�
 
 ### メディアデバイス
 
-[MediaDevices API](https://developer.mozilla.org/ja/docs/Web/API/MediaDevices)を使用すると、カメラやマイク、画面共有などの接続されたメディア入力にアクセスできます。
+[MediaDevices API](https://developer.mozilla.org/docs/Web/API/MediaDevices)を使用すると、カメラやマイク、画面共有などの接続されたメディア入力にアクセスできます。
 
 {{ figure_markup(
   caption="`MediaDevicesEnumerateDevices` APIを使用したデスクトップページの割合。",
@@ -241,7 +241,7 @@ Webサイトが機密性の高いリソースへのアクセスを要求する�
 
 ### ジオロケーションサービス
 
-ジオロケーションサービスは、GPSやユーザーのその他の位置情報（[IPアドレス](https://developer.mozilla.org/ja/docs/Glossary/IP_Address)など）を提供し、トラッカーはとくにユーザーにより関連性の高いコンテンツを提供するために利用できます。そこで、[Wappalyzer](./methodology#wappalyzer)で検出したライブラリをもとに、Webサイトにおける「ジオロケーションサービス」技術の利用を分析します。
+ジオロケーションサービスは、GPSやユーザーのその他の位置情報（[IPアドレス](https://developer.mozilla.org/docs/Glossary/IP_Address)など）を提供し、トラッカーはとくにユーザーにより関連性の高いコンテンツを提供するために利用できます。そこで、[Wappalyzer](./methodology#wappalyzer)で検出したライブラリをもとに、Webサイトにおける「ジオロケーションサービス」技術の利用を分析します。
 
 {{ figure_markup(
   image="nb_websites_using_each_geolocation.png",
@@ -265,7 +265,7 @@ Webサイトが機密性の高いリソースへのアクセスを要求する�
   )
 }}
 
-また、Webサイトからは[WebブラウザAPI](https://developer.mozilla.org/ja/docs/Web/API/Geolocation_API)を介して、ジオロケーションデータにアクセスすることが可能です。デスクトップクライアントで0.59%、モバイルクライアントでは0.63%のWebサイトがユーザーの現在位置にアクセスしていることがわかります（[ブリンク機能](./methodology#blink-features)に基づいています）。
+また、Webサイトからは[WebブラウザAPI](https://developer.mozilla.org/docs/Web/API/Geolocation_API)を介して、ジオロケーションデータにアクセスすることが可能です。デスクトップクライアントで0.59%、モバイルクライアントでは0.63%のWebサイトがユーザーの現在位置にアクセスしていることがわかります（[ブリンク機能](./methodology#blink-features)に基づいています）。
 
 ### 情報漏えい
 
@@ -330,7 +330,7 @@ HTTPリクエストはオプションで `Referer` ヘッダーを含むこと�
 
 ナビゲーションやiframeの場合、このデータはJavaScriptで `document.referrer` を使用してアクセスすることもできます。
 
-`Referer` の値は、洞察力を高めることができます。しかし、パスとクエリ文字列を含む完全なURLが `Referer` としてオリジン間で送信される場合、プライバシーを侵害する可能性があります。URLには、個人情報、時には個人を特定するような重要な情報が含まれていることがあります。このような情報は、送信元を越えて静かに流出することで、ユーザーのプライバシーを侵害し、セキュリティ上のリスクをもたらします。[`Referrer-Policy`](https://developer.mozilla.org/ja/docs/Web/HTTP/Headers/Referrer-Policy) HTTPヘッダーは、開発者が自分のサイトからのリクエストで利用できるリファラーデータを制限して、このリスクを軽減することを可能にします。
+`Referer` の値は、洞察力を高めることができます。しかし、パスとクエリ文字列を含む完全なURLが `Referer` としてオリジン間で送信される場合、プライバシーを侵害する可能性があります。URLには、個人情報、時には個人を特定するような重要な情報が含まれていることがあります。このような情報は、送信元を越えて静かに流出することで、ユーザーのプライバシーを侵害し、セキュリティ上のリスクをもたらします。[`Referrer-Policy`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Referrer-Policy) HTTPヘッダーは、開発者が自分のサイトからのリクエストで利用できるリファラーデータを制限して、このリスクを軽減することを可能にします。
 
 {{ figure_markup(
   image="nb_websites_with_referrerpolicy.png",
@@ -364,7 +364,7 @@ HTTPリクエストはオプションで `Referer` ヘッダーを含むこと�
 
 ### User-Agent クライアントヒント
 
-ウェブブラウザがHTTPリクエストを行う際、クライアントのブラウザ、デバイス、ネットワーク機能に関する情報を提供する[`User-Agent`](https://developer.mozilla.org/ja/docs/Web/HTTP/Headers/User-Agent)ヘッダーが含まれます。しかし、これを悪用してユーザーをプロファイリングしたり、[フィンガープリンティング](#指紋認証)によって一意に特定することが可能です。
+ウェブブラウザがHTTPリクエストを行う際、クライアントのブラウザ、デバイス、ネットワーク機能に関する情報を提供する[`User-Agent`](https://developer.mozilla.org/docs/Web/HTTP/Headers/User-Agent)ヘッダーが含まれます。しかし、これを悪用してユーザーをプロファイリングしたり、[フィンガープリンティング](#指紋認証)によって一意に特定することが可能です。
 
 <a hreflang="en" href="https://wicg.github.io/ua-client-hints/">User-Agentクライアントヒント</a> は `User-Agent` 文字列と同じ情報へのアクセスを可能にしますが、よりプライバシーを保護する方法でアクセスします。これにより、Chromeが <a hreflang="en" href="https://www.chromium.org/updates/ua-reduction">User Agent削減</a> の段階的な計画で提案しているように、ブラウザが `User-Agent` 文字列をデフォルトで提供する情報量を最終的に削減することができるようになります。
 
@@ -480,7 +480,7 @@ USPフレームワークでは、ウェブサイトとユーザーのプライ�
 
 ### 追跡禁止 - グローバルなプライバシー管理
 
-<a hreflang="en" href="https://www.eff.org/issues/do-not-track">追跡禁止</a> (DNT) HTTPヘッダーは、ユーザーが追跡を希望しないことをウェブサイトへ伝えるために使用できます。以下に、DNTの現在値にアクセスしていると思われるサイトの数を、[`Navigator.doNotTrack`](https://developer.mozilla.org/ja/docs/Web/API/Navigator/doNotTrack) JavaScriptコールの存在に基づいて確認できます。
+<a hreflang="en" href="https://www.eff.org/issues/do-not-track">追跡禁止</a> (DNT) HTTPヘッダーは、ユーザーが追跡を希望しないことをウェブサイトへ伝えるために使用できます。以下に、DNTの現在値にアクセスしていると思われるサイトの数を、[`Navigator.doNotTrack`](https://developer.mozilla.org/docs/Web/API/Navigator/doNotTrack) JavaScriptコールの存在に基づいて確認できます。
 
 {{ figure_markup(
   image="nb_websites_with_dnt_blink_usage.png",
@@ -500,7 +500,7 @@ DNTの後継となる<a hreflang="en" href="https://globalprivacycontrol.org/">�
 
 ウェブ閲覧中のユーザーのプライバシー保護を強化するため、主要ブラウザはユーザーの機密情報をより安全に保護する新機能を実装しています。[`Referrer-Policy` ヘッダー](#refererポリシー)や[`SameSite`クッキー](#サードパーティークッキー) に対して、ブラウザがよりプライバシーを保護するデフォルト設定を強制し始めたことは、すでに説明しました。
 
-さらに、Firefoxは[トラッキング防止機能の強化](https://developer.mozilla.org/en-US/docs/Web/Privacy/Tracking_Protection)、Safariは<a hreflang="en" href="https://webkit.org/tracking-prevention/">インテリジェントなトラッキング防止</a>によりトラッキングをブロックしようとしています。
+さらに、Firefoxは[トラッキング防止機能の強化](https://developer.mozilla.org/docs/Web/Privacy/Tracking_Protection)、Safariは<a hreflang="en" href="https://webkit.org/tracking-prevention/">インテリジェントなトラッキング防止</a>によりトラッキングをブロックしようとしています。
 
 トラッカーのブロックにとどまらず、Chromeは<a hreflang="en" href="https://privacysandbox.com/">プライバシー・サンドボックス</a> を立ち上げ、広告や詐欺防止などさまざまなユースケースでよりプライバシーに配慮した機能を提供する新しいウェブ標準を開発中です。サイトがユーザーを追跡する機会を減らすために設計された、これらの新進気鋭の技術について詳しく見ていきます。
 

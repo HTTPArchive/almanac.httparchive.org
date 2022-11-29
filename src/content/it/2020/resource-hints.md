@@ -161,9 +161,9 @@ Man mano che creiamo sempre più automazione con le resource hints, sii cauto qu
 
 ### L'attributo `as`
 
-Con `preload` e `prefetch`, è fondamentale usare l'attributo `as` per aiutare il browser a dare la priorità alla resource in modo più accurato. Ciò consente una corretta memorizzazione nella cache per richieste future, l'applicazione della corretta Content Security Policy ([CSP](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP)) e l'impostazione le headers di richiesta "Accept" corrette.
+Con `preload` e `prefetch`, è fondamentale usare l'attributo `as` per aiutare il browser a dare la priorità alla resource in modo più accurato. Ciò consente una corretta memorizzazione nella cache per richieste future, l'applicazione della corretta Content Security Policy ([CSP](https://developer.mozilla.org/docs/Web/HTTP/CSP)) e l'impostazione le headers di richiesta "Accept" corrette.
 
-Con `preload` possono essere precaricati molti diversi tipi di contenuto e la <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link#Attributes">lista completa</a> segue i consigli fatti nelle <a hreflang="en" href="https://fetch.spec.whatwg.org/#concept-request-destination">specifiche</a> Fetch. Il più popolare è il tipo `script` con il 64% di utilizzo. Ciò è probabilmente correlato a un ampio gruppo di siti creati come Single Page Apps che richiedono il pacchetto principale il prima possibile per avviare il download del resto delle loro dipendenze JS. L'utilizzo successivo proviene dal font all'8%, dallo stile al 5%, dall'immagine all'1% e dal fetch all'1%.
+Con `preload` possono essere precaricati molti diversi tipi di contenuto e la <a href="https://developer.mozilla.org/docs/Web/HTML/Element/link#Attributes">lista completa</a> segue i consigli fatti nelle <a hreflang="en" href="https://fetch.spec.whatwg.org/#concept-request-destination">specifiche</a> Fetch. Il più popolare è il tipo `script` con il 64% di utilizzo. Ciò è probabilmente correlato a un ampio gruppo di siti creati come Single Page Apps che richiedono il pacchetto principale il prima possibile per avviare il download del resto delle loro dipendenze JS. L'utilizzo successivo proviene dal font all'8%, dallo stile al 5%, dall'immagine all'1% e dal fetch all'1%.
 
 {{ figure_markup(
   image="mobile-as-attribute-values-by-year.png",
@@ -264,7 +264,7 @@ Nel complesso, il prefetching predittivo è ancora un territorio inesplorato, ma
 
 ## HTTP/2 Push
 
-<a href="./http">HTTP/2</a> ha una feature chiamata "server push" che può potenzialmente migliorare le prestazioni della pagina quando il tuo prodotto ha lunghi Round Trip Times ([RTT](https://developer.mozilla.org/en-US/docs/Glossary/Round_Trip_Time_(RTT))) o elaborazione server. In breve, invece di aspettare che il client invii una richiesta, il server invia preventivamente una risorsa che prevede che il client richiederà subito dopo.
+<a href="./http">HTTP/2</a> ha una feature chiamata "server push" che può potenzialmente migliorare le prestazioni della pagina quando il tuo prodotto ha lunghi Round Trip Times ([RTT](https://developer.mozilla.org/docs/Glossary/Round_Trip_Time_(RTT))) o elaborazione server. In breve, invece di aspettare che il client invii una richiesta, il server invia preventivamente una risorsa che prevede che il client richiederà subito dopo.
 
 {{ figure_markup(
   caption="La percentuale di pagine HTTP/2 Push che utilizzano `preload`/`nopush`.",

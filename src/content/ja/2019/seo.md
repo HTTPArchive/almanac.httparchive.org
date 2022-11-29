@@ -233,7 +233,7 @@ Web全体の読み込み速度の分析に使った指標は [Chrome UX Report](
 
 ### 構造化データ
 
-構造化データを使うことでWebサイトの所有者は、[JSON-LD](https://en.wikipedia.org/wiki/JSON-LD)スニペットや[Microdata](https://developer.mozilla.org/en-US/docs/Web/HTML/Microdata)などを加える事で、Webページに付属的なセマンティックデータを付与できます。検索エンジンはこのデータを解析してこれらのページを深く理解し、マークアップにより検索結果に追加の関連情報を表示も行う事ができます。よく見る構造化データの種類には次のようなものがあります。
+構造化データを使うことでWebサイトの所有者は、[JSON-LD](https://en.wikipedia.org/wiki/JSON-LD)スニペットや[Microdata](https://developer.mozilla.org/docs/Web/HTML/Microdata)などを加える事で、Webページに付属的なセマンティックデータを付与できます。検索エンジンはこのデータを解析してこれらのページを深く理解し、マークアップにより検索結果に追加の関連情報を表示も行う事ができます。よく見る構造化データの種類には次のようなものがあります。
 
 - <a hreflang="en" href="https://developers.google.com/search/docs/data-types/review-snippet">reviews</a>
 - <a hreflang="en" href="https://developers.google.com/search/docs/data-types/product">products</a>
@@ -417,7 +417,7 @@ ReactやVue.jsなどのフレームワークで構築されたシングルペー
 
 ハッシュURLを介して提供されるリンクの数が比較的少なく、Reactモバイルページの13.08%がナビゲーションにハッシュURLを使用し、モバイルVue.jsページで8.15%、モバイルAngularページで2.37%で使用されているという結果になっています。この結果はデスクトップ用ページでも非常に似通った結果でした。ハッシュURLからコンテンツの発見に対する影響を考慮すると、この結果はSEOの観点からは良い状態と言えるでしょう。
 
-特に驚いた点は、ハッシュURLの数がAngularページでは少ないのとは対照的に、ReactページでのハッシュURLの数が多くなっている点です。両方のフレームワークはハッシュURLに依存せず、代わりにリンク時に[History API](https://developer.mozilla.org/en-US/docs/Web/API/History)が標準となっているルーティングパッケージの採用を推奨しています。Vue.jsは`vue-router`パッケージのバージョン3から、<a hreflang="en" href="https://github.com/vuejs/rfcs/pull/40">History APIを標準で使うことを検討</a>しています。
+特に驚いた点は、ハッシュURLの数がAngularページでは少ないのとは対照的に、ReactページでのハッシュURLの数が多くなっている点です。両方のフレームワークはハッシュURLに依存せず、代わりにリンク時に[History API](https://developer.mozilla.org/docs/Web/API/History)が標準となっているルーティングパッケージの採用を推奨しています。Vue.jsは`vue-router`パッケージのバージョン3から、<a hreflang="en" href="https://github.com/vuejs/rfcs/pull/40">History APIを標準で使うことを検討</a>しています。
 
 ### AMP
 

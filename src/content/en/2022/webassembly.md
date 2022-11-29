@@ -39,7 +39,7 @@ This represents a modest drop in the number of modules we discovered in the craw
 - While you can use WebAssembly to create all sorts of web-based content, its main benefit is found in more complex line-of-business applications with large codebases, that are often many years old (e.g. Google Earth, Photoshop, AutoCAD). These web 'apps' are not as numerous as the websites, and are not always available to the Almanac crawl, which is primarily based on home pages where WebAssembly may be less prevalent.
 - As we shall see in a later section, much of the WebAssembly usage we see comes from a relatively small number of third-party libraries. As a result, a small change in any one of those libraries will have a significant impact on the number of modules we find.
 
-We found slightly fewer (-13%) WebAssembly modules served to mobile browsers. This isn't a reflection on the WebAssembly capabilities of mobile browsers, which generally have excellent support. Rather, it is likely due to the standard practice of [progressive enhancement](https://developer.mozilla.org/en-US/docs/Glossary/Progressive_Enhancement), where in these cases the more advanced features that require WebAssembly are not supported for mobile users.
+We found slightly fewer (-13%) WebAssembly modules served to mobile browsers. This isn't a reflection on the WebAssembly capabilities of mobile browsers, which generally have excellent support. Rather, it is likely due to the standard practice of [progressive enhancement](https://developer.mozilla.org/docs/Glossary/Progressive_Enhancement), where in these cases the more advanced features that require WebAssembly are not supported for mobile users.
 
 {{ figure_markup(
   caption="Number of Wasm responses.",

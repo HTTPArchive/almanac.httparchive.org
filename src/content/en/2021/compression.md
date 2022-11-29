@@ -44,7 +44,7 @@ Compared to the other content types, `text/plain` and `text/html` use the least 
 
 ## Server settings for HTTP compression
 
-For HTTP content encoding, the HTTP standard defines the [Accept-Encoding](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Encoding) request header, with which a HTTP client can announce to the server what content encodings it can handle. The server's response can then contain a [Content-Encoding](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Encoding) header field that specifies which of the encodings was chosen to transform the data in the response body.
+For HTTP content encoding, the HTTP standard defines the [Accept-Encoding](https://developer.mozilla.org/docs/Web/HTTP/Headers/Accept-Encoding) request header, with which a HTTP client can announce to the server what content encodings it can handle. The server's response can then contain a [Content-Encoding](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Encoding) header field that specifies which of the encodings was chosen to transform the data in the response body.
 
 Practically all text compression is done by one of two HTTP content encodings: <a hreflang="en" href="https://tools.ietf.org/html/rfc1952">Gzip</a> and <a hreflang="en" href="https://github.com/google/brotli">Brotli</a>. Both Brotli and Gzip are supported by virtually all browsers. On the server side, most [popular servers](https://en.wikipedia.org/wiki/HTTP_compression#Servers_that_support_HTTP_compression) like nginx and Apache can be configured to use Brotli and/or Gzip. The configuration is different depending on when the content is generated:
 
@@ -188,7 +188,7 @@ The figure breaks down each compression level by content type. JavaScript is the
 
 ## How to analyze compression on sites
 
-To check which content of a website is using HTTP compression, the [Firefox Developer Tools](https://developer.mozilla.org/en-US/docs/Tools) or the <a hreflang="en" href="https://developers.google.com/web/tools/chrome-devtools">Chrome DevTools</a> can be used. In the developer tools, open the Network tab and reload your site. A list of responses such as HTML, CSS, JavaScript, fonts and images should appear. To see which ones are compressed, you can check the content encoding in their response header. You can enable a column to easily see this for all responses at once. To do this, right click on the column titles, and in the menu navigate to Response Headers and enable Content-Encoding.
+To check which content of a website is using HTTP compression, the [Firefox Developer Tools](https://developer.mozilla.org/docs/Tools) or the <a hreflang="en" href="https://developers.google.com/web/tools/chrome-devtools">Chrome DevTools</a> can be used. In the developer tools, open the Network tab and reload your site. A list of responses such as HTML, CSS, JavaScript, fonts and images should appear. To see which ones are compressed, you can check the content encoding in their response header. You can enable a column to easily see this for all responses at once. To do this, right click on the column titles, and in the menu navigate to Response Headers and enable Content-Encoding.
 
 Responses that are Gzip compressed will show "gzip", while those compressed with Brotli will show "br". If the value is blank, no HTTP compression is used. For images this is normal, since these resources are already compressed on their own.
 

@@ -33,7 +33,7 @@ Há quatro sugestões de recursos separados suportados pela maioria dos navegado
 
 ### `dns-prefetch`
 
-A função de [`dns-prefetch`](https://developer.mozilla.org/en-US/docs/Learn/Performance/dns-prefetch) é iniciar uma pesquisa DNS antecipada. É útil para completar a busca DNS de terceiros. Por exemplo, a pesquisa DNS de um CDN, provedor de fontes ou API de terceiros.
+A função de [`dns-prefetch`](https://developer.mozilla.org/docs/Learn/Performance/dns-prefetch) é iniciar uma pesquisa DNS antecipada. É útil para completar a busca DNS de terceiros. Por exemplo, a pesquisa DNS de um CDN, provedor de fontes ou API de terceiros.
 
 ### `preconnect`
 
@@ -49,13 +49,13 @@ A dica <a hreflang="en" href="https://medium.com/reloading/preload-prefetch-and-
 
 ## Sintaxe
 
-97% do uso da dica de recurso dependia do uso da tag [`<link>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link) para especificar uma dica de recurso. Por exemplo:
+97% do uso da dica de recurso dependia do uso da tag [`<link>`](https://developer.mozilla.org/docs/Web/HTML/Element/link) para especificar uma dica de recurso. Por exemplo:
 
 ```html
 <link rel="prefetch" href="shopping-cart.js">
 ```
 
-Apenas 3% do uso de dicas de recursos usaram [HTTP headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Link) para especificar dicas de recursos. Por exemplo:
+Apenas 3% do uso de dicas de recursos usaram [HTTP headers](https://developer.mozilla.org/docs/Web/HTTP/Headers/Link) para especificar dicas de recursos. Por exemplo:
 
 ```
 Link: <https://example.com/shopping-cart.js>; rel=prefetch
@@ -168,7 +168,7 @@ As dicas de recursos são mais eficazes quando usadas seletivamente (_"quando tu
 
 ## O atributo `crossorigin`
 
-A maioria dos recursos "tradicionais" obtidos na web ([images](./media), [stylesheets](./css), e [scripts](./javascript)) são obtidos sem a opção de Compartilhamento de recursos entre origens ([CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)). Isso significa que se esses recursos forem obtidos de um servidor de cross-origin, por padrão, seu conteúdo não pode ser lido de volta pela página, devido à política de mesma origem.
+A maioria dos recursos "tradicionais" obtidos na web ([images](./media), [stylesheets](./css), e [scripts](./javascript)) são obtidos sem a opção de Compartilhamento de recursos entre origens ([CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS)). Isso significa que se esses recursos forem obtidos de um servidor de cross-origin, por padrão, seu conteúdo não pode ser lido de volta pela página, devido à política de mesma origem.
 
 Em alguns casos, a página pode optar por buscar o recurso usando CORS se precisar ler seu conteúdo. O CORS permite que o navegador "peça permissão" e obtenha acesso a esses recursos de origem cruzada.
 

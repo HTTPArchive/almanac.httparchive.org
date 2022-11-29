@@ -109,7 +109,7 @@ _CDNに関する注意事項。ここでのCDNカテゴリには、パブリッ�
 
 ### コンテンツタイプ
 
-サードパーティのリクエストをコンテンツタイプ別に分解できます。これは、サードパーティドメインから配信されたリソースの[content-type](https://developer.mozilla.org/ja/docs/Web/HTTP/Headers/Content-Type)が報告されているものです。
+サードパーティのリクエストをコンテンツタイプ別に分解できます。これは、サードパーティドメインから配信されたリソースの[content-type](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Type)が報告されているものです。
 
 {{ figure_markup(
   image="thirdparty-by-content-types.png",
@@ -263,7 +263,7 @@ _CDNに関する注意事項。ここでのCDNカテゴリには、パブリッ�
 
 ## `timing-allow-origin`の普及率
 
-[Resource Timing API](https://developer.mozilla.org/ja/docs/Web/API/Resource_Timing_API/Using_the_Resource_Timing_API)は、ウェブサイトのオーナーがJavaScriptを介して個々のリソースのパフォーマンスを測定することを可能にします。このデータは、サードパーティコンテンツのようなクロスオリジンのリソースに対しては、デフォルトでは非常に制限されています。例えば、ウェブサイトのオーナーは、ウィジェットのリクエストのレスポンスサイズを測定することで、訪問者がFacebookにログインしているかどうかを判断できるかもしれません。しかし、ほとんどのサードパーティコンテンツの場合、`timing-allow-origin`ヘッダーを設定することは、ホスティングウェブサイトがサードパーティコンテンツのパフォーマンスとサイズを追跡できるようにするための透明性の行為です。
+[Resource Timing API](https://developer.mozilla.org/docs/Web/API/Resource_Timing_API/Using_the_Resource_Timing_API)は、ウェブサイトのオーナーがJavaScriptを介して個々のリソースのパフォーマンスを測定することを可能にします。このデータは、サードパーティコンテンツのようなクロスオリジンのリソースに対しては、デフォルトでは非常に制限されています。例えば、ウェブサイトのオーナーは、ウィジェットのリクエストのレスポンスサイズを測定することで、訪問者がFacebookにログインしているかどうかを判断できるかもしれません。しかし、ほとんどのサードパーティコンテンツの場合、`timing-allow-origin`ヘッダーを設定することは、ホスティングウェブサイトがサードパーティコンテンツのパフォーマンスとサイズを追跡できるようにするための透明性の行為です。
 
 {{ figure_markup(
   image="requests-with-tao.png",
@@ -281,7 +281,7 @@ HTTP Archiveの結果は、サードパーティのレスポンスの3分の1だ
 
 ## 反響
 
-サイトに任意のJavaScriptを追加すると、サイトの速度とセキュリティの両方にリスクをもたらすことがわかっています。サイトの所有者はサードパーティ製スクリプトの価値と、それらがもたらす可能性のある速度のペナルティのバランスを取るために勤勉でなければならず、また強力なセキュリティ態勢を維持するために、[サブリソースの完全性](https://developer.mozilla.org/ja/docs/Web/Security/Subresource_Integrity)や[コンテンツセキュリティポリシー](https://developer.mozilla.org/ja/docs/Web/HTTP/CSP)のような最新の機能を使用しなければなりません。これらおよびその他のブラウザのセキュリティ機能の詳細については、[セキュリティの章](./security)を参照してください。
+サイトに任意のJavaScriptを追加すると、サイトの速度とセキュリティの両方にリスクをもたらすことがわかっています。サイトの所有者はサードパーティ製スクリプトの価値と、それらがもたらす可能性のある速度のペナルティのバランスを取るために勤勉でなければならず、また強力なセキュリティ態勢を維持するために、[サブリソースの完全性](https://developer.mozilla.org/docs/Web/Security/Subresource_Integrity)や[コンテンツセキュリティポリシー](https://developer.mozilla.org/docs/Web/HTTP/CSP)のような最新の機能を使用しなければなりません。これらおよびその他のブラウザのセキュリティ機能の詳細については、[セキュリティの章](./security)を参照してください。
 
 ## 結論
 

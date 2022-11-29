@@ -117,9 +117,9 @@ JavaScriptはさまざまな方法でページに読み込まれますが、そ�
 
 ### `module`と`nomodule`
 
-Webサイトを読み込む際、ブラウザはHTMLをレンダリングし、適切なリソースを要求します。ブラウザは、ページを効果的にレンダリングして機能させるために、コード内で参照されるポリフィルを消費します。[アロー関数式](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Functions/Arrow_functions)や[非同期関数](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Statements/async_function)のような新しい構文をサポートしているモダンブラウザは、動作させるために大量のポリフィルを必要としませんし、その必要もありません。
+Webサイトを読み込む際、ブラウザはHTMLをレンダリングし、適切なリソースを要求します。ブラウザは、ページを効果的にレンダリングして機能させるために、コード内で参照されるポリフィルを消費します。[アロー関数式](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Functions/Arrow_functions)や[非同期関数](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/async_function)のような新しい構文をサポートしているモダンブラウザは、動作させるために大量のポリフィルを必要としませんし、その必要もありません。
 
-この時、differential loadingが活躍します。`type="module"`属性を指定すると、モダンブラウザにはモダンな構文のバンドルが提供され、ポリフィルがあったとしても少なくなります。同様に、モジュールをサポートしていない古いブラウザには、`type="nomodule"`属性を指定することで、必要なポリフィルとトランスパイルされたコード構文を持つバンドルが提供されます。[HTMLにモジュールを適用する](https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Modules#applying_the_module_to_your_html)の続きを読んでください。
+この時、differential loadingが活躍します。`type="module"`属性を指定すると、モダンブラウザにはモダンな構文のバンドルが提供され、ポリフィルがあったとしても少なくなります。同様に、モジュールをサポートしていない古いブラウザには、`type="nomodule"`属性を指定することで、必要なポリフィルとトランスパイルされたコード構文を持つバンドルが提供されます。[HTMLにモジュールを適用する](https://developer.mozilla.org/docs/Web/JavaScript/Guide/Modules#applying_the_module_to_your_html)の続きを読んでください。
 
 これらの属性の採用状況をデータで見てみましょう。
 
@@ -442,7 +442,7 @@ JavaScriptのリソースは、圧縮と最小化によってネットワーク�
 
 ### ソースマップ
 
-[ソースマップ](https://developer.mozilla.org/ja/docs/Tools/Debugger/How_to/Use_a_source_map)とは、JavaScriptのリソースと一緒に送信されるヒントで、ブラウザがそのリソースを最小化してソースコードにマッピングできます。ウェブ開発者にとっては、本番環境でのデバッグにとくに役立ちます。
+[ソースマップ](https://developer.mozilla.org/docs/Tools/Debugger/How_to/Use_a_source_map)とは、JavaScriptのリソースと一緒に送信されるヒントで、ブラウザがそのリソースを最小化してソースコードにマッピングできます。ウェブ開発者にとっては、本番環境でのデバッグにとくに役立ちます。
 
 {{ figure_markup(
   content="0.1%",
@@ -453,7 +453,7 @@ JavaScriptのリソースは、圧縮と最小化によってネットワーク�
   )
 }}
 
-スクリプトリソースに[`ソースマップ`](https://developer.mozilla.org/ja/docs/Web/HTTP/Headers/SourceMap)レスポンスヘッダーを使用しているモバイルページは、わずか0.1%です。この極端に少ない割合の理由としては、ソースマップを使ってオリジナルのソースコードを本番に出すことを選択するサイトは少ないことが考えられます。
+スクリプトリソースに[`ソースマップ`](https://developer.mozilla.org/docs/Web/HTTP/Headers/SourceMap)レスポンスヘッダーを使用しているモバイルページは、わずか0.1%です。この極端に少ない割合の理由としては、ソースマップを使ってオリジナルのソースコードを本番に出すことを選択するサイトは少ないことが考えられます。
 
 {{ figure_markup(
   content="98.0%",
@@ -686,7 +686,7 @@ JavaScriptライブラリを使用するには、それなりのメリットと�
 
 ### AJAX
 
-JavaScriptは、サーバーと通信してさまざまな形式の情報を非同期的に受け取るために使用されます。[_Asynchronous JavaScript and XML_](https://developer.mozilla.org/en-US/docs/Web/Guide/AJAX/Getting_Started) (AJAX)は、一般的にデータの送受信に使用され、XML以外にもJSON、HTML、テキスト形式などをサポートしています。
+JavaScriptは、サーバーと通信してさまざまな形式の情報を非同期的に受け取るために使用されます。[_Asynchronous JavaScript and XML_](https://developer.mozilla.org/docs/Web/Guide/AJAX/Getting_Started) (AJAX)は、一般的にデータの送受信に使用され、XML以外にもJSON、HTML、テキスト形式などをサポートしています。
 
 ウェブ上でデータを送受信する方法が複数ある中で、1ページあたりに送信される非同期リクエストの数を見てみましょう。
 
@@ -704,7 +704,7 @@ JavaScriptは、サーバーと通信してさまざまな形式の情報を非�
 
 非同期型のAJAXリクエストの代わりに、同期型のリクエストがあります。リクエストをコールバックに渡すのではなく、リクエストが完了するまでメインスレッドをブロックします。
 
-しかし、パフォーマンスやユーザー体験が、低下する可能性があるため、[このような行為は推奨されません](https://developer.mozilla.org/ja/docs/Web/API/XMLHttpRequest/Synchronous_and_Asynchronous_Requests#synchronous_request)。また、多くのブラウザでは、このような使用方法についてすでに警告を発しています。今でも同期型のAJAXリクエストを使用しているページがどれだけあるのか、興味をそそられますね。
+しかし、パフォーマンスやユーザー体験が、低下する可能性があるため、[このような行為は推奨されません](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/Synchronous_and_Asynchronous_Requests#synchronous_request)。また、多くのブラウザでは、このような使用方法についてすでに警告を発しています。今でも同期型のAJAXリクエストを使用しているページがどれだけあるのか、興味をそそられますね。
 
 {{ figure_markup(
   image="usage-sync-async.png",
@@ -732,7 +732,7 @@ JavaScriptは、サーバーと通信してさまざまな形式の情報を非�
 
 現在、ページあたりのAJAXリクエストの数を知っているので、サーバーからデータを要求するためにもっとも一般的に使用されているAPIについても知りたいと思います。
 
-これらのAJAXリクエストを大まかに3つの異なるAPIに分類し、それらがどのように使用されているかを調べてみましょう。コアAPIである[`XMLHttpRequest`](https://developer.mozilla.org/ja/docs/Web/API/XMLHttpRequest) (XHR)、[`Fetch`](https://developer.mozilla.org/ja/docs/Web/API/Fetch_API/Using_Fetch)、[`Beacon`](https://developer.mozilla.org/en-US/docs/Web/API/Beacon_API)は、Webサイト全体で一般的に使用されており主にXHRが使用されていますが、`Fetch`は人気が高く急成長しており、`Beacon`は使用率が低いです。
+これらのAJAXリクエストを大まかに3つの異なるAPIに分類し、それらがどのように使用されているかを調べてみましょう。コアAPIである[`XMLHttpRequest`](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest) (XHR)、[`Fetch`](https://developer.mozilla.org/docs/Web/API/Fetch_API/Using_Fetch)、[`Beacon`](https://developer.mozilla.org/docs/Web/API/Beacon_API)は、Webサイト全体で一般的に使用されており主にXHRが使用されていますが、`Fetch`は人気が高く急成長しており、`Beacon`は使用率が低いです。
 
 {{ figure_markup(
   image="ajax_xhr.png",
@@ -786,11 +786,11 @@ XHRと`Fetch`の採用状況を時系列で比較するのもおもしろいか�
 
 ### Web ComponentsとシャドウDOM
 
-ウェブが[コンポーネント化](https://developer.mozilla.org/ja/docs/Web/Web_Components)されていく中で、シングルページアプリケーションを構築する開発者は、ユーザービューをコンポーネントのセットとして考えることができます。これは、開発者が各機能ごとに専用のコンポーネントを構築するためだけでなく、コンポーネントの再利用性を最大限に高めるためでもあります。それは、同じアプリの別のビューにあったり、まったく別のアプリにあったりします。このようなユースケースでは、アプリケーションにカスタムエレメントやウェブコンポーネントが使用されます。
+ウェブが[コンポーネント化](https://developer.mozilla.org/docs/Web/Web_Components)されていく中で、シングルページアプリケーションを構築する開発者は、ユーザービューをコンポーネントのセットとして考えることができます。これは、開発者が各機能ごとに専用のコンポーネントを構築するためだけでなく、コンポーネントの再利用性を最大限に高めるためでもあります。それは、同じアプリの別のビューにあったり、まったく別のアプリにあったりします。このようなユースケースでは、アプリケーションにカスタムエレメントやウェブコンポーネントが使用されます。
 
 多くのJavaScriptフレームワークが普及したことで、再利用性や専用の機能ベースのコンポーネントを構築するという考え方がより広く採用されるようになったと言ってもいいでしょう。このことは、カスタム要素、シャドウDOM、テンプレート要素の採用を検討する上で、私たちの好奇心を刺激します。
 
-<a hreflang="en" href="https://developers.google.com/web/fundamentals/web-components/customelements">カスタムエレメント</a>は、[`HTMLElement`](https://developer.mozilla.org/ja/docs/Web/API/HTMLElement)のAPIの上に構築されたカスタマイズされたエレメントです。ブラウザは`customElements`というAPIを提供しており、開発者は要素を定義し、それをカスタム要素としてブラウザに登録できます。
+<a hreflang="en" href="https://developers.google.com/web/fundamentals/web-components/customelements">カスタムエレメント</a>は、[`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement)のAPIの上に構築されたカスタマイズされたエレメントです。ブラウザは`customElements`というAPIを提供しており、開発者は要素を定義し、それをカスタム要素としてブラウザに登録できます。
 
 {{ figure_markup(
   content="3.0%",
@@ -825,7 +825,7 @@ XHRと`Fetch`の採用状況を時系列で比較するのもおもしろいか�
   )
 }}
 
-マークアップに再利用可能なパターンがある場合には、[`template`](https://developer.mozilla.org/ja/docs/Web/Web_Components/Using_templates_and_slots#%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88%E3%81%AE%E7%9C%9F%E5%AE%9F)要素が非常に便利です。`template`要素のコンテンツは、JavaScriptで参照されたときにのみレンダリングされます。
+マークアップに再利用可能なパターンがある場合には、[`template`](https://developer.mozilla.org/docs/Web/Web_Components/Using_templates_and_slots#%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88%E3%81%AE%E7%9C%9F%E5%AE%9F)要素が非常に便利です。`template`要素のコンテンツは、JavaScriptで参照されたときにのみレンダリングされます。
 
 テンプレートは、JavaScriptでまだ参照されていないコンテンツが、シャドウDOMを使ってシャドウルートに追加されるため、ウェブコンポーネントを扱う際に有効です。
 

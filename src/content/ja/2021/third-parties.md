@@ -437,7 +437,7 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkT-CF5-NB7Oatd6XZq_
 
 ### Timing-Allow-Originヘッダーの普及率
 
-昨年は、<a href="https://developer.mozilla.org/ja/docs/Web/API/Resource_Timing_API/Using_the_Resource_Timing_API">Resource Timing API</a> をサードパーティのリクエストで使用できるようにする [`timing-allow-origin` header の普及](../2020/third-parties#timing-allow-origin-prevalence) について調べました。このHTTPヘッダーがない場合、サードパーティからのリクエストに対してオンページ・パフォーマンス・モニタリング・ツールが利用できる情報は、セキュリティとプライバシー上の理由から制限されます。しかし、静的なリクエストについては、このヘッダーを許可するサードパーティは、そのリソースの読み込み性能についてより高い透明性を実現します。
+昨年は、<a href="https://developer.mozilla.org/docs/Web/API/Resource_Timing_API/Using_the_Resource_Timing_API">Resource Timing API</a> をサードパーティのリクエストで使用できるようにする [`timing-allow-origin` header の普及](../2020/third-parties#timing-allow-origin-prevalence) について調べました。このHTTPヘッダーがない場合、サードパーティからのリクエストに対してオンページ・パフォーマンス・モニタリング・ツールが利用できる情報は、セキュリティとプライバシー上の理由から制限されます。しかし、静的なリクエストについては、このヘッダーを許可するサードパーティは、そのリソースの読み込み性能についてより高い透明性を実現します。
 
 {{ figure_markup(
   image="third-parties-timing-allow-origin-header-usage.png",
@@ -457,11 +457,11 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkT-CF5-NB7Oatd6XZq_
 
 ### セキュリティ
 
-サイト自身は、さまざまな方法でサードパーティを利用するリスクを減らすことができます。`HttpOnly` 属性で<a href="https://developer.mozilla.org/ja/docs/Web/HTTP/Cookies#restrict_access_to_cookies">クッキーへのアクセスを制限し</a>、JavaScriptからアクセスできないようにし、`SameSite` 属性を適切に使用します。これらについては、[セキュリティの章](./security)で詳しく説明されていますので、ここではこれ以上掘り下げません。
+サイト自身は、さまざまな方法でサードパーティを利用するリスクを減らすことができます。`HttpOnly` 属性で<a href="https://developer.mozilla.org/docs/Web/HTTP/Cookies#restrict_access_to_cookies">クッキーへのアクセスを制限し</a>、JavaScriptからアクセスできないようにし、`SameSite` 属性を適切に使用します。これらについては、[セキュリティの章](./security)で詳しく説明されていますので、ここではこれ以上掘り下げません。
 
-サードパーティのリソースをより安全にするもう1つのセキュリティ機能は、<a href="https://developer.mozilla.org/ja/docs/Web/Security/Subresource_Integrity">Subresource Integrity</a> (SRI) の使用です。これは、リソースを読み込む `<link>` または `<script>` 要素にリソースの暗号ハッシュを追加して有効にするものです。このハッシュをブラウザで確認することにより、ダウンロードされたコンテンツが期待通りのものであることを確認します。しかし、サードパーティーのリソースはさまざまな性質を持っているため、サードパーティーが意図的にリソースを更新した場合、サイトが壊れるなど、解決策よりもリスクが大きくなる可能性もあります。もし、本当に静的なコンテンツであれば、セルフホスティングが可能であり、SRIの必要性はない。このように多くの人がSRIを推奨していますが、筆者はSRIが、本当に推進派が主張するようなセキュリティ上の利点を提供しているのか、まだ確信が持てません。
+サードパーティのリソースをより安全にするもう1つのセキュリティ機能は、<a href="https://developer.mozilla.org/docs/Web/Security/Subresource_Integrity">Subresource Integrity</a> (SRI) の使用です。これは、リソースを読み込む `<link>` または `<script>` 要素にリソースの暗号ハッシュを追加して有効にするものです。このハッシュをブラウザで確認することにより、ダウンロードされたコンテンツが期待通りのものであることを確認します。しかし、サードパーティーのリソースはさまざまな性質を持っているため、サードパーティーが意図的にリソースを更新した場合、サイトが壊れるなど、解決策よりもリスクが大きくなる可能性もあります。もし、本当に静的なコンテンツであれば、セルフホスティングが可能であり、SRIの必要性はない。このように多くの人がSRIを推奨していますが、筆者はSRIが、本当に推進派が主張するようなセキュリティ上の利点を提供しているのか、まだ確信が持てません。
 
-サードパーティのリソースの使用や、ユーザーが作成したコンテンツなど、サードパーティのコンテンツがサイトに入ってくる際のセキュリティ リスクを減らすには、堅牢な <a href="https://developer.mozilla.org/ja/docs/Web/HTTP/CSP">Content Security Policy</a> (CSP) が最適な方法の1つでしょう。これは、オリジナルのウェブサイトとともに送信されるHTTPヘッダーで、どのようなリソースを誰が読み込むめるのか、またできないかを正確にブラウザに伝えます。[セキュリティ](./security)の章によると、使っているサイトは少ないという、より高度な技術でありCSPの使用状況の分析は彼らに任せるとして、ここで取り上げる価値があるのは普及しない理由の1つ_が_サードパーティにあるのではないかということです。筆者の経験では、サードパーティを問題なく利用するためにサイトがポリシーに追加しなければならない要件を正確に記載したCSP情報を公開しているサードパーティはごくわずかです。さらに悪いことに、安全なCSPと互換性のないものもあります。一部のサードパーティは、インラインのスクリプト要素を使用したり、通知なしにドメインを変更したりするため、CSPを使用しているサイトでは、ポリシーを更新するまでその機能が壊れてしまいます。Google広告は、<a hreflang="en" href="https://stackoverflow.com/questions/34361383/google-adwords-csp-content-security-policy-img-src">国ごとに異なるドメインの使用</a>により、CSPを本当にロックダウンすることを難しくしているもう1つの例です。
+サードパーティのリソースの使用や、ユーザーが作成したコンテンツなど、サードパーティのコンテンツがサイトに入ってくる際のセキュリティ リスクを減らすには、堅牢な <a href="https://developer.mozilla.org/docs/Web/HTTP/CSP">Content Security Policy</a> (CSP) が最適な方法の1つでしょう。これは、オリジナルのウェブサイトとともに送信されるHTTPヘッダーで、どのようなリソースを誰が読み込むめるのか、またできないかを正確にブラウザに伝えます。[セキュリティ](./security)の章によると、使っているサイトは少ないという、より高度な技術でありCSPの使用状況の分析は彼らに任せるとして、ここで取り上げる価値があるのは普及しない理由の1つ_が_サードパーティにあるのではないかということです。筆者の経験では、サードパーティを問題なく利用するためにサイトがポリシーに追加しなければならない要件を正確に記載したCSP情報を公開しているサードパーティはごくわずかです。さらに悪いことに、安全なCSPと互換性のないものもあります。一部のサードパーティは、インラインのスクリプト要素を使用したり、通知なしにドメインを変更したりするため、CSPを使用しているサイトでは、ポリシーを更新するまでその機能が壊れてしまいます。Google広告は、<a hreflang="en" href="https://stackoverflow.com/questions/34361383/google-adwords-csp-content-security-policy-img-src">国ごとに異なるドメインの使用</a>により、CSPを本当にロックダウンすることを難しくしているもう1つの例です。
 
 そもそも自分の管理下にあるサイトの部分についてCSPを設定することだけでも十分難しいのに、サードパーティーの複雑さが加わって、自分の管理外のことがさらに難しくなっているのです。サードパーティは、サイトがCSPを使用するリスクを軽減するために、CSPのサポートをより良くする必要があります。
 
@@ -476,7 +476,7 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkT-CF5-NB7Oatd6XZq_
 
 さらに問題なのは、ウェブサイトの利用者や所有者が気づかないうちに、トラッキングが行われていることでしょう。製品やサービスに対してお金を払っていないなら、あなたが製品であるという古い格言があります。多くのサードパーティは、製品を「無料」で提供していますが、これはほとんどの場合、他の方法で収益化していることを意味します。通常、訪問者のプライバシーを犠牲にしています
 
-<a href="https://developer.mozilla.org/ja/docs/Web/HTTP/Headers/Feature-Policy">`feature-policy` や `permission-policy`</a> といった新しい技術を採用すると、マイクやビデオカメラといったブラウザの特定の機能の使用を制限できます。これらの多くは、通常、ブラウザのプロンプトの背後に保護されているため、黙って起動されることはありませんが、プライバシーとセキュリティのリスクを軽減できます。Googleはまた、ウェブブラウザのプライバシーへの影響を制限するための<a hreflang="en" href="https://github.com/bslassey/privacy-budget">プライバシー予算案</a>に取り組んでいますが、他の人々は<a hreflang="en" href="https://blog.mozilla.org/en/mozilla/google-privacy-budget-analysis/"> この分野での彼らの仕事に対して懐疑的なまま</a>なのです。全体として、多くのサードパーティリソースの意図を考えると、プライバシーコントロールを追加することは、流れに逆らっているように見えます。
+<a href="https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy">`feature-policy` や `permission-policy`</a> といった新しい技術を採用すると、マイクやビデオカメラといったブラウザの特定の機能の使用を制限できます。これらの多くは、通常、ブラウザのプロンプトの背後に保護されているため、黙って起動されることはありませんが、プライバシーとセキュリティのリスクを軽減できます。Googleはまた、ウェブブラウザのプライバシーへの影響を制限するための<a hreflang="en" href="https://github.com/bslassey/privacy-budget">プライバシー予算案</a>に取り組んでいますが、他の人々は<a hreflang="en" href="https://blog.mozilla.org/en/mozilla/google-privacy-budget-analysis/"> この分野での彼らの仕事に対して懐疑的なまま</a>なのです。全体として、多くのサードパーティリソースの意図を考えると、プライバシーコントロールを追加することは、流れに逆らっているように見えます。
 
 ## 結論
 

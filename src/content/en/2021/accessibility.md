@@ -159,13 +159,13 @@ The <a hreflang="en" href="https://www.w3.org/TR/mediaqueries-5">CSS Media Queri
   sql_file="../css/media_query_features.sql"
 ) }}
 
-[`prefers-reduced-motion`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion) is used by web authors to replace animations or other sources of motion on the web page with a more static experience, typically by removing or replacing the content. This can help a range of people that may be distracted or otherwise triggered by rapid movement on the screen. We found that 32% of websites use the `prefers-reduced-motion` media query.
+[`prefers-reduced-motion`](https://developer.mozilla.org/docs/Web/CSS/@media/prefers-reduced-motion) is used by web authors to replace animations or other sources of motion on the web page with a more static experience, typically by removing or replacing the content. This can help a range of people that may be distracted or otherwise triggered by rapid movement on the screen. We found that 32% of websites use the `prefers-reduced-motion` media query.
 
 `prefers-reduced-transparency` indicates that the end user has asked the operating system to minimize or eliminate translucency and transparency effects. This affordance might be turned on by end users to help with reading comprehension or to avoid common "halo effects" that can negatively affect users with visual impairments. We do not have data on the usage of this relatively new media query.
 
-[`prefers-contrast`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-contrast) (`high` or `low`) suggests that the end user would prefer a [high-contrast or low-contrast](#color-contrast) contrast theme. This can help with reading comprehension and eye strain. We do not have data on the usage of this relatively new media query though we found that 25% of websites use [`ms-high-contrast`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/-ms-high-contrast) which is a Windows-specific approach to handling contrast preferences.
+[`prefers-contrast`](https://developer.mozilla.org/docs/Web/CSS/@media/prefers-contrast) (`high` or `low`) suggests that the end user would prefer a [high-contrast or low-contrast](#color-contrast) contrast theme. This can help with reading comprehension and eye strain. We do not have data on the usage of this relatively new media query though we found that 25% of websites use [`ms-high-contrast`](https://developer.mozilla.org/docs/Web/CSS/@media/-ms-high-contrast) which is a Windows-specific approach to handling contrast preferences.
 
-[`prefers-color-scheme`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme) (`light` or `dark`) allows a user to request light color on a dark background experience, or vice-versa. This was the earliest of the User Preference Media Queries to be introduced. This capability, commonly known as "dark mode" support, rose to prominence in 2019 after <a hreflang="en" href="https://en.wikipedia.org/wiki/Light-on-dark_color_scheme#History">Apple standardized it</a> in iOS 13 and iPadOS, though it had been a common accessibility feature for many years prior to that.
+[`prefers-color-scheme`](https://developer.mozilla.org/docs/Web/CSS/@media/prefers-color-scheme) (`light` or `dark`) allows a user to request light color on a dark background experience, or vice-versa. This was the earliest of the User Preference Media Queries to be introduced. This capability, commonly known as "dark mode" support, rose to prominence in 2019 after <a hreflang="en" href="https://en.wikipedia.org/wiki/Light-on-dark_color_scheme#History">Apple standardized it</a> in iOS 13 and iPadOS, though it had been a common accessibility feature for many years prior to that.
 
 While dark mode is recognized by many developers and designers as an accessibility affordance, it is important to note that dark mode may, in fact, reduce accessibility for certain users. Some people with <a hreflang="en" href="https://www.boia.org/blog/dark-mode-can-improve-text-readability-but-not-for-everyone">dyslexia or astigmatism might find light text on a dark background harder to read</a>, and might find that it exacerbates the halo effect. The important takeaway here is to let your user choose what works best for them. We found that 7% of websites use the `prefers-color-scheme` media query.
 
@@ -408,7 +408,7 @@ The 2019 Click-Away Pound survey in the UK was designed "to explore the online s
 
 ### The `<label>` element
 
-One of the most important ways of making HTML forms accessible is using the `<label>` element to programmatically link the short descriptive text that describes the [form control](https://developer.mozilla.org/en-US/docs/Learn/Forms/Basic_native_form_controls). This is typically done by matching the `for` attribute on the `<label>` element with the `id` attribute on the form control element. For example:
+One of the most important ways of making HTML forms accessible is using the `<label>` element to programmatically link the short descriptive text that describes the [form control](https://developer.mozilla.org/docs/Learn/Forms/Basic_native_form_controls). This is typically done by matching the `for` attribute on the `<label>` element with the `id` attribute on the form control element. For example:
 
 ```html
 <label for="first-name">First Name</label>
@@ -464,9 +464,9 @@ There are <a hreflang="en" href="https://www.smashingmagazine.com/2018/06/placeh
 
 When web developers gather input from their end users, they need a clear way to indicate what information is optional, and what information is required to proceed. For example, a shipping address is optional if the end user is buying something online that they can download. However, the method of payment is most likely required in order to complete the sale.
 
-Before HTML5 introduced the [`required` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/required) for `<input>` fields in 2014, web developers were forced to solve this problem on an ad hoc, case-by-case basis. A common convention is to put an asterisk (`*`) in the label for required input fields. This is purely a visual, stylistic convention—labels with asterisks don't enforce any kind of field validation. Additionally, screen readers typically announce this character as "star" unless it is explicitly hidden from assistive technology, which can be confusing.
+Before HTML5 introduced the [`required` attribute](https://developer.mozilla.org/docs/Web/HTML/Attributes/required) for `<input>` fields in 2014, web developers were forced to solve this problem on an ad hoc, case-by-case basis. A common convention is to put an asterisk (`*`) in the label for required input fields. This is purely a visual, stylistic convention—labels with asterisks don't enforce any kind of field validation. Additionally, screen readers typically announce this character as "star" unless it is explicitly hidden from assistive technology, which can be confusing.
 
-There are two attributes that can be used to communicate the required state of a form field to assistive technology. The `required` attribute will be announced by most screen readers and actually prevents form submission when a required field has not been properly filled out. The [`aria-required`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-required_attribute) attribute can be used to indicate required fields to assistive technology, but does not come with any associated behavior that would interfere with form submission.
+There are two attributes that can be used to communicate the required state of a form field to assistive technology. The `required` attribute will be announced by most screen readers and actually prevents form submission when a required field has not been properly filled out. The [`aria-required`](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-required_attribute) attribute can be used to indicate required fields to assistive technology, but does not come with any associated behavior that would interfere with form submission.
 
 {{ figure_markup(
   image="form-required-controls.png",
@@ -544,7 +544,7 @@ We found that 27% of `alt` text attributes were empty. In an ideal world this wo
 
 #### Audio
 
-[`<track>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/track) provides a way for a text equivalent to be provided for audio in `<audio>` and `<video>` elements. This allows people with permanent or temporary hearing loss to be able to understand audio content.
+[`<track>`](https://developer.mozilla.org/docs/Web/HTML/Element/track) provides a way for a text equivalent to be provided for audio in `<audio>` and `<video>` elements. This allows people with permanent or temporary hearing loss to be able to understand audio content.
 
 {{ figure_markup(
   caption="Desktop websites with an `<audio>` element have at least one accompanying `<track>` element",
@@ -645,7 +645,7 @@ Removing an element's semantics means that it is no longer that element in terms
 
 ### Labelling and describing elements with ARIA
 
-Parallel to the DOM there is a similar browser structure called the [accessibility tree](https://developer.mozilla.org/en-US/docs/Glossary/Accessibility_tree). It contains information about HTML elements including accessible names, descriptions, roles and states. This information is conveyed to assistive technology through accessibility APIs.
+Parallel to the DOM there is a similar browser structure called the [accessibility tree](https://developer.mozilla.org/docs/Glossary/Accessibility_tree). It contains information about HTML elements including accessible names, descriptions, roles and states. This information is conveyed to assistive technology through accessibility APIs.
 
 The accessibility tree has a computation system that assigns the accessible name (if there is one) to a control, widget, group, or landmark such that it can be announced or targeted by assistive technology.
 
@@ -731,7 +731,7 @@ The most common CSS class names for this <a hreflang="en" href="https://css-tric
 
 The presence of new or updated content in the DOM sometimes needs to be communicated to screen readers. Some thought needs to be put into which updates need to be conveyed to avoid frustration. For example, form validation errors need to be conveyed whereas a lazy-loaded image may not. Updates to the DOM also need to be done in a way that is not disruptive.
 
-_ARIA live regions_ allow us to listen for changes in the DOM, such that the updated content can be announced by a screen reader. We found that 21% of desktop pages (up from 17% in 2020) and 20% of mobile pages (up from 16% in 2020) have live regions. For more information about live region variants and usage check out the [MDN live region documentation](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions) or play with this <a hreflang="en" href="https://dequeuniversity.com/library/aria/liveregion-playground">live demo by Deque</a>.
+_ARIA live regions_ allow us to listen for changes in the DOM, such that the updated content can be announced by a screen reader. We found that 21% of desktop pages (up from 17% in 2020) and 20% of mobile pages (up from 16% in 2020) have live regions. For more information about live region variants and usage check out the [MDN live region documentation](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/ARIA_Live_Regions) or play with this <a hreflang="en" href="https://dequeuniversity.com/library/aria/liveregion-playground">live demo by Deque</a>.
 
 ## Accessibility overlays
 

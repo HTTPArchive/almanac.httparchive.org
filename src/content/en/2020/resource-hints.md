@@ -161,9 +161,9 @@ As we create more and more automation with resource hints, be cautious when dyna
 
 ### The `as` attribute
 
-With `preload` and `prefetch`, it's crucial to use the `as` attribute to help the browser prioritize the resource more accurately. Doing so allows for proper storage in the cache for future requests, applying the correct Content Security Policy ([CSP](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP)), and setting the correct `Accept` request headers.
+With `preload` and `prefetch`, it's crucial to use the `as` attribute to help the browser prioritize the resource more accurately. Doing so allows for proper storage in the cache for future requests, applying the correct Content Security Policy ([CSP](https://developer.mozilla.org/docs/Web/HTTP/CSP)), and setting the correct `Accept` request headers.
 
-With `preload` many different content-types can be preloaded and the [full list](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link#Attributes) follows the recommendations made in the Fetch <a hreflang="en" href="https://fetch.spec.whatwg.org/#concept-request-destination">spec</a>. The most popular is the `script` type with 64% usage. This is likely related to a large group of sites built as Single Page Apps that need the main bundle as soon as possible to start downloading the rest of their JS dependencies. Subsequent usage comes from font at 8%, style at 5%, image at 1%, and fetch at 1%.
+With `preload` many different content-types can be preloaded and the [full list](https://developer.mozilla.org/docs/Web/HTML/Element/link#Attributes) follows the recommendations made in the Fetch <a hreflang="en" href="https://fetch.spec.whatwg.org/#concept-request-destination">spec</a>. The most popular is the `script` type with 64% usage. This is likely related to a large group of sites built as Single Page Apps that need the main bundle as soon as possible to start downloading the rest of their JS dependencies. Subsequent usage comes from font at 8%, style at 5%, image at 1%, and fetch at 1%.
 
 {{ figure_markup(
   image="mobile-as-attribute-values-by-year.png",
@@ -264,7 +264,7 @@ Overall, predictive prefetching is still uncharted territory, but combined with 
 
 ## HTTP/2 Push
 
-[HTTP/2](./http) has a feature called "server push" that can potentially improve page performance when your product experiences long Round Trip Times([RTTs](https://developer.mozilla.org/en-US/docs/Glossary/Round_Trip_Time_(RTT))) or server processing. In brief, rather than waiting for the client to send a request, the server preemptively pushes a resource that it predicts the client will request soon afterwards.
+[HTTP/2](./http) has a feature called "server push" that can potentially improve page performance when your product experiences long Round Trip Times([RTTs](https://developer.mozilla.org/docs/Glossary/Round_Trip_Time_(RTT))) or server processing. In brief, rather than waiting for the client to send a request, the server preemptively pushes a resource that it predicts the client will request soon afterwards.
 
 {{ figure_markup(
   caption="The percent of HTTP/2 Push pages using `preload`/`nopush`.",

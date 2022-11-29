@@ -1,6 +1,6 @@
 #standardSQL
 # Percent of pages that use @property
-# https://developer.mozilla.org/en-US/docs/Web/CSS/@property
+# https://developer.mozilla.org/docs/Web/CSS/@property
 CREATE TEMP FUNCTION countAtProperties(css STRING) RETURNS ARRAY<INT64> LANGUAGE js AS '''
 try {
   var $ = JSON.parse(css);

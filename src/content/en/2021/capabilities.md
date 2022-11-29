@@ -19,7 +19,7 @@ featured_stat_label_3: Mobile sites using _Declarative Link Capturing_
 ---
 
 ## Introduction
-Capabilities are new web platform APIs that unlock entirely new use cases for web applications. Those new APIs are essential for [Progressive Web Apps (PWA)](./pwa), a web-based application model. A PWA is a web app that users can install to their system. PWAs run even offline and launch quickly. To integrate with the underlying operating system, PWAs can only use web platform APIs. While browsers have already exposed some lower-level features to the web (e.g., [geolocation](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API), [gamepad](https://developer.mozilla.org/en-US/docs/Web/API/Gamepad_API), or [webcam](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia) access), many APIs were still missing or were clumsy to use (e.g., file system or clipboard access).
+Capabilities are new web platform APIs that unlock entirely new use cases for web applications. Those new APIs are essential for [Progressive Web Apps (PWA)](./pwa), a web-based application model. A PWA is a web app that users can install to their system. PWAs run even offline and launch quickly. To integrate with the underlying operating system, PWAs can only use web platform APIs. While browsers have already exposed some lower-level features to the web (e.g., [geolocation](https://developer.mozilla.org/docs/Web/API/Geolocation_API), [gamepad](https://developer.mozilla.org/docs/Web/API/Gamepad_API), or [webcam](https://developer.mozilla.org/docs/Web/API/MediaDevices/getUserMedia) access), many APIs were still missing or were clumsy to use (e.g., file system or clipboard access).
 
 ### Project Fugu
 
@@ -49,10 +49,10 @@ Please note that most of the APIs presented here are so-called _incubations_. Un
 Some APIs have already shipped in several browsers; others are only available on Chromium-based ones. These browsers include Google Chrome, Microsoft Edge, Opera, Brave, or Samsung Internet. Please note that vendors of Chromium-based browsers can choose to disable specific capabilities, so not all APIs may be available in all browsers based on Chromium. Some capabilities may also only be available after activating a flag in the browser settings.
 
 ## Async Clipboard API
-The [_Async Clipboard API_](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API) allows you to read and write data from or to the clipboard. Due to its asynchronous nature, it enables use cases like scaling down an image while pasting it—all without blocking the UI. It replaces less capable APIs like `document.execCommand()` that were previously used to interact with the clipboard.
+The [_Async Clipboard API_](https://developer.mozilla.org/docs/Web/API/Clipboard_API) allows you to read and write data from or to the clipboard. Due to its asynchronous nature, it enables use cases like scaling down an image while pasting it—all without blocking the UI. It replaces less capable APIs like `document.execCommand()` that were previously used to interact with the clipboard.
 
 ### Write access
-The Async Clipboard API offers two methods to copy data to the clipboard: The shorthand method [`writeText()`](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/writeText) takes plain text as an argument which the browser then copies to the clipboard. The [`write()`](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/write) method takes an array of clipboard items that could contain arbitrary data. Browsers can decide to only implement certain data formats. The Clipboard API specification specifies a <a hreflang="en" href="https://www.w3.org/TR/clipboard-apis/#mandatory-data-types-x">list of mandatory data types</a> browsers must support as a minimum, including plain text, HTML, URI lists, and PNG images.
+The Async Clipboard API offers two methods to copy data to the clipboard: The shorthand method [`writeText()`](https://developer.mozilla.org/docs/Web/API/Clipboard/writeText) takes plain text as an argument which the browser then copies to the clipboard. The [`write()`](https://developer.mozilla.org/docs/Web/API/Clipboard/write) method takes an array of clipboard items that could contain arbitrary data. Browsers can decide to only implement certain data formats. The Clipboard API specification specifies a <a hreflang="en" href="https://www.w3.org/TR/clipboard-apis/#mandatory-data-types-x">list of mandatory data types</a> browsers must support as a minimum, including plain text, HTML, URI lists, and PNG images.
 
 ```js
 await navigator.clipboard.writeText('hello world');
@@ -66,7 +66,7 @@ await navigator.clipboard.write([
 ```
 
 ### Read access
-Similar to copying data to the clipboard, there are two methods to paste data back from the clipboard: First, another shorthand method called [`readText()`](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/readText) that returns plain text from the clipboard. Using the [`read()`](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/read) method, you access all items in the clipboard in the data formats supported by the browser.
+Similar to copying data to the clipboard, there are two methods to paste data back from the clipboard: First, another shorthand method called [`readText()`](https://developer.mozilla.org/docs/Web/API/Clipboard/readText) that returns plain text from the clipboard. Using the [`read()`](https://developer.mozilla.org/docs/Web/API/Clipboard/read) method, you access all items in the clipboard in the data formats supported by the browser.
 
 ```js
 const item = await navigator.clipboard.readText();
@@ -108,10 +108,10 @@ sheets_gid="1382342903"
 }}
 
 ## File System Access API
-The next productivity-related API is the [_File System Access API_](https://developer.mozilla.org/en-US/docs/Web/API/File_System_Access_API). Web apps could <a hreflang="en" href="https://web.dev/browser-fs-access/#the-traditional-way-of-dealing-with-files">already deal with files</a>: `<input type="file">` allows the user to open one or more files via a file picker. Also, they could already save files to the Downloads folder via `<a download>`. The File System Access API adds support for additional use cases: Opening and modifying directories, saving files to a location specified by the user, and overwriting files that were opened by them. It is also possible to persist file handles to `IndexedDB` to allow for continued (permission-gated) access, even after a page reload. In particular, the API does not grant random access to the file system and certain system folders are blocked by default.
+The next productivity-related API is the [_File System Access API_](https://developer.mozilla.org/docs/Web/API/File_System_Access_API). Web apps could <a hreflang="en" href="https://web.dev/browser-fs-access/#the-traditional-way-of-dealing-with-files">already deal with files</a>: `<input type="file">` allows the user to open one or more files via a file picker. Also, they could already save files to the Downloads folder via `<a download>`. The File System Access API adds support for additional use cases: Opening and modifying directories, saving files to a location specified by the user, and overwriting files that were opened by them. It is also possible to persist file handles to `IndexedDB` to allow for continued (permission-gated) access, even after a page reload. In particular, the API does not grant random access to the file system and certain system folders are blocked by default.
 
 ### Write access
-When calling the [`showSaveFilePicker()`](https://developer.mozilla.org/en-US/docs/Web/API/Window/showSaveFilePicker) method on the global `window` object, the browser will show the operating system's file picker. The method takes an optional options object where you can specify which file types are allowed for saving (`types`, default: all types), and whether the user can disable this filter via an "accept all" option (`excludeAcceptAllOption`, default: `false`).
+When calling the [`showSaveFilePicker()`](https://developer.mozilla.org/docs/Web/API/Window/showSaveFilePicker) method on the global `window` object, the browser will show the operating system's file picker. The method takes an optional options object where you can specify which file types are allowed for saving (`types`, default: all types), and whether the user can disable this filter via an "accept all" option (`excludeAcceptAllOption`, default: `false`).
 
 When the user successfully picks a file from the local file system, you will receive its handle. With the help of the `createWritable()` method on the handle, you can access a stream writer. In the following example, this writer writes the text `hello world` to the file and closes it afterward.
 
@@ -129,7 +129,7 @@ await writable.close();
 ```
 
 ### Read access
-To show an open file picker, call the [`showOpenFilePicker()`](https://developer.mozilla.org/en-US/docs/Web/API/Window/showOpenFilePicker) method on the global `window` object. This method also takes an optional options object with the same properties from above (`types`, `excludeAcceptAllOption`). Additionally, you can specify if the user can select one or multiple files (`multiple`, default: `false`).
+To show an open file picker, call the [`showOpenFilePicker()`](https://developer.mozilla.org/docs/Web/API/Window/showOpenFilePicker) method on the global `window` object. This method also takes an optional options object with the same properties from above (`types`, `excludeAcceptAllOption`). Additionally, you can specify if the user can select one or multiple files (`multiple`, default: `false`).
 
 As the user could potentially select more than one file, you will receive an array of file handles. Using the array destructuring expression `[handle]`, you will receive the handle of the first selected file as the first element in the array. By calling the `getFile()` method on the file handle, you will receive a `File` object which gives you access to the file's binary data. By calling the `text()` method, you will receive the plain text from the opened file.
 
@@ -143,7 +143,7 @@ console.log(text);
 ```
 
 ### Opening directories
-Finally, the API allows web apps (e.g., integrated development environments) to get a handle for an entire directory. Using this handle, you can create, update, or delete existing files or folders within the opened directory. This time, the method is called [`showDirectoryPicker()`](https://developer.mozilla.org/en-US/docs/Web/API/window/showDirectoryPicker):
+Finally, the API allows web apps (e.g., integrated development environments) to get a handle for an entire directory. Using this handle, you can create, update, or delete existing files or folders within the opened directory. This time, the method is called [`showDirectoryPicker()`](https://developer.mozilla.org/docs/Web/API/window/showDirectoryPicker):
 
 ```js
 const handle = await window.showDirectoryPicker();
@@ -171,7 +171,7 @@ height=409
 ) }}
 
 ## Web Share API
-The [_Web Share API_](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share) allows you to share text, a URL, or files from a website or web application with other applications, e.g., mail clients or messengers. To do so, call the [`navigator.share()`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share) method. It takes an object with the data to share with another application. The browser then opens the built-in share sheet, where the user can select the target application from. The method returns a promise that resolves in case the content was successfully shared; otherwise, it will be rejected.
+The [_Web Share API_](https://developer.mozilla.org/docs/Web/API/Navigator/share) allows you to share text, a URL, or files from a website or web application with other applications, e.g., mail clients or messengers. To do so, call the [`navigator.share()`](https://developer.mozilla.org/docs/Web/API/Navigator/share) method. It takes an object with the data to share with another application. The browser then opens the built-in share sheet, where the user can select the target application from. The method returns a promise that resolves in case the content was successfully shared; otherwise, it will be rejected.
 
 ```js
 await navigator.share({
@@ -219,7 +219,7 @@ sheets_gid="1372715282"
 The last two productivity-related capabilities described in this chapter are _URL Handlers_ and _Declarative Link Capturing_, additional methods for even deeper integration with the operating system.
 
 ### URL Handling
-With the help of <a hreflang="en" href="https://web.dev/pwa-url-handler/">URL Handling</a>, PWAs can register themselves as handlers for certain URL schemes upon installation, e.g., for `https://*.example.com`. When the user opens a URL that matches this scheme, the installed PWA will open instead of a new browser tab. URL Handling is an extension of the <a hreflang="en" href="https://www.w3.org/TR/appmanifest/">_Web Application Manifest_</a>, a file that contains [metadata for web applications](https://developer.mozilla.org/en-US/docs/Web/Manifest). To register for URL schemes, you have to add the `url_handlers` property to your manifest. This property takes an array containing objects with an `origin` property.
+With the help of <a hreflang="en" href="https://web.dev/pwa-url-handler/">URL Handling</a>, PWAs can register themselves as handlers for certain URL schemes upon installation, e.g., for `https://*.example.com`. When the user opens a URL that matches this scheme, the installed PWA will open instead of a new browser tab. URL Handling is an extension of the <a hreflang="en" href="https://www.w3.org/TR/appmanifest/">_Web Application Manifest_</a>, a file that contains [metadata for web applications](https://developer.mozilla.org/docs/Web/Manifest). To register for URL schemes, you have to add the `url_handlers` property to your manifest. This property takes an array containing objects with an `origin` property.
 
 ```json
 {

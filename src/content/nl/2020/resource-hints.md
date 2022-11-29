@@ -161,9 +161,9 @@ Aangezien we steeds meer automatisering creëren met bronhints, moet u voorzicht
 
 ### Het `as`-attribuut
 
-Met `preload` en `prefetch` is het cruciaal om het `as`-attribuut te gebruiken om de browser te helpen de bron nauwkeuriger te prioriteren. Hierdoor is de juiste opslag in de cache mogelijk voor toekomstige verzoeken, wordt het juiste Inhoudsbeveiligingsbeleid ([CSP](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP)) en de juiste `Accept`-verzoekheaders toegepast.
+Met `preload` en `prefetch` is het cruciaal om het `as`-attribuut te gebruiken om de browser te helpen de bron nauwkeuriger te prioriteren. Hierdoor is de juiste opslag in de cache mogelijk voor toekomstige verzoeken, wordt het juiste Inhoudsbeveiligingsbeleid ([CSP](https://developer.mozilla.org/docs/Web/HTTP/CSP)) en de juiste `Accept`-verzoekheaders toegepast.
 
-Met `preload` kunnen veel verschillende content-types worden voorgeladen en de [complete lijst](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link#Attributes) volgt de aanbevelingen die in de Fetch <a hreflang="en" href="https://fetch.spec.whatwg.org/#concept-request-destination">spec</a> staan. De meest populaire is het `script`-type met 64% gebruik. Dit heeft waarschijnlijk te maken met een grote groep sites die zijn gebouwd als Enkele Pagina Apps die de hoofdbundel zo snel mogelijk nodig hebben om de rest van hun JS-afhankelijkheden te downloaden. Daaropvolgend gebruik komt van lettertype op 8%, stijl op 5%, afbeelding op 1% en ophalen op 1%.
+Met `preload` kunnen veel verschillende content-types worden voorgeladen en de [complete lijst](https://developer.mozilla.org/docs/Web/HTML/Element/link#Attributes) volgt de aanbevelingen die in de Fetch <a hreflang="en" href="https://fetch.spec.whatwg.org/#concept-request-destination">spec</a> staan. De meest populaire is het `script`-type met 64% gebruik. Dit heeft waarschijnlijk te maken met een grote groep sites die zijn gebouwd als Enkele Pagina Apps die de hoofdbundel zo snel mogelijk nodig hebben om de rest van hun JS-afhankelijkheden te downloaden. Daaropvolgend gebruik komt van lettertype op 8%, stijl op 5%, afbeelding op 1% en ophalen op 1%.
 
 {{ figure_markup(
   image="mobile-as-attribute-values-by-year.png",
@@ -264,7 +264,7 @@ Over het algemeen is voorspellend prefetchen nog onbekend terrein, maar in combi
 
 ## HTTP/2 Push
 
-[HTTP/2](./http) heeft een functie genaamd "server push" die de paginaprestaties mogelijk kan verbeteren wanneer uw product lange Round Trip Times ([RTTs](https://developer.mozilla.org/en-US/docs/Glossary/Round_Trip_Time_(RTT))) of serververwerking ervaart. Kort gezegd, in plaats van te wachten tot de cliënt een verzoek verzendt, pusht de server preventief een bron waarvan hij voorspelt dat de cliënt deze spoedig daarna zal opvragen.
+[HTTP/2](./http) heeft een functie genaamd "server push" die de paginaprestaties mogelijk kan verbeteren wanneer uw product lange Round Trip Times ([RTTs](https://developer.mozilla.org/docs/Glossary/Round_Trip_Time_(RTT))) of serververwerking ervaart. Kort gezegd, in plaats van te wachten tot de cliënt een verzoek verzendt, pusht de server preventief een bron waarvan hij voorspelt dat de cliënt deze spoedig daarna zal opvragen.
 
 {{ figure_markup(
   caption="Het percentage HTTP / 2-push-pagina's dat gebruikmaakt van `preload`/`nopush`.",

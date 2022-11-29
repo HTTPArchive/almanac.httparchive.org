@@ -47,7 +47,7 @@ In this section, we're covering the higher-level aspects of HTML like document t
   sql_file="summary_pages_by_device_and_doctype.sql"
 ) }}
 
-96.82% of pages declare a [_doctype_](https://developer.mozilla.org/en-US/docs/Glossary/Doctype). HTML documents declaring a doctype is useful for historical reasons, "to avoid triggering quirks mode in browsers" as <a hreflang="en" href="https://lists.w3.org/Archives/Public/public-html-comments/2009Jul/0020.html">Ian Hickson explained in 2009</a>. What are the most popular values?
+96.82% of pages declare a [_doctype_](https://developer.mozilla.org/docs/Glossary/Doctype). HTML documents declaring a doctype is useful for historical reasons, "to avoid triggering quirks mode in browsers" as <a hreflang="en" href="https://lists.w3.org/Archives/Public/public-html-comments/2009Jul/0020.html">Ian Hickson explained in 2009</a>. What are the most popular values?
 
 <figure>
   <table>
@@ -120,7 +120,7 @@ How is this situation in general, then? The median document weighs 24.65 KB, whi
 
 We identified 2,863 different values for the `lang` attribute on the `html` start tag (compare that to the <a hreflang="en" href="https://www.ethnologue.com/guides/how-many-languages">7,117 spoken languages</a> as per Ethnologue). Almost all of them seem valid, according to the [Accessibility](./accessibility#language-identification) chapter.
 
-22.36% of all documents specify no `lang` attribute. The commonly accepted view is that <a hreflang="en" href="https://www.w3.org/TR/i18n-html-tech-lang/#overall">they should</a>, but ignoring the fact that software could eventually <a hreflang="en" href="https://meiert.com/en/blog/lang/">detect language automatically</a>, document language can also be specified [on the protocol level](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Language), which is something we didn't check.
+22.36% of all documents specify no `lang` attribute. The commonly accepted view is that <a hreflang="en" href="https://www.w3.org/TR/i18n-html-tech-lang/#overall">they should</a>, but ignoring the fact that software could eventually <a hreflang="en" href="https://meiert.com/en/blog/lang/">detect language automatically</a>, document language can also be specified [on the protocol level](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Language), which is something we didn't check.
 
 Here are the 10 most popular (normalized) languages in our sample. It's important to note that the HTTP Archive crawls from US data centers with English language settings, so looking at the language pages are written in, will be skewed towards English. Nevertheless we present the `lang` attributes seen to give some context to the sites analyzed.
 
@@ -329,7 +329,7 @@ Here's a simple example showing the use of a `summary` in a `details` element:
 </details>
 ```
 
-A while ago, Steve Faulkner [pointed out](https://twitter.com/stevefaulkner/status/806474286592561152) how these two elements were used inadequately in the wild. As you can tell from the example above, for each `details` element you'd need a `summary` element that may only be used as the [first child](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/summary#Usage_notes) of `details`.
+A while ago, Steve Faulkner [pointed out](https://twitter.com/stevefaulkner/status/806474286592561152) how these two elements were used inadequately in the wild. As you can tell from the example above, for each `details` element you'd need a `summary` element that may only be used as the [first child](https://developer.mozilla.org/docs/Web/HTML/Element/summary#Usage_notes) of `details`.
 
 Accordingly, we looked at the number of `details` and `summary` elements and it seems that they do continue to be misused. The count of `summary` elements is higher on both mobile and desktop, with a ratio of 1.11 `summary` elements for every `details` element on mobile, and 1.19 on desktop, respectively:
 
@@ -965,7 +965,7 @@ We've covered the use of HTML in general as well as the adoption of top elements
 
 ### `viewport` specifications
 
-The [viewport](https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag) meta element is used to control layout on mobile browsers. While years ago, the motto was kind of "don't forget the viewport meta element" when building a web page, eventually this became a common practice and the motto changed to "make sure zooming and scaling are not disabled."
+The [viewport](https://developer.mozilla.org/docs/Web/HTML/Viewport_meta_tag) meta element is used to control layout on mobile browsers. While years ago, the motto was kind of "don't forget the viewport meta element" when building a web page, eventually this became a common practice and the motto changed to "make sure zooming and scaling are not disabled."
 
 Users should be able to zoom and scale the text <a hreflang="en" href="https://dequeuniversity.com/rules/axe/4.0/meta-viewport-large">up to 500%</a>. That's why audits in popular tools like <a hreflang="en" href="https://developers.google.com/web/tools/lighthouse">Lighthouse</a> or <a hreflang="en" href="https://www.deque.com/axe/">axe</a> fail when `user-scalable="no"` is used within the `meta name="viewport"` element, and when the `maximum-scale` attribute value is less than `5`.
 
@@ -1196,7 +1196,7 @@ Pages in the 10th and 25th percentiles contain no buttons at all, while a page i
 
 ### Link targets
 
-The [anchor element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a), or `a` element, links web resources together. In this section, we analyze the adoption of the protocols included in the respective link targets.
+The [anchor element](https://developer.mozilla.org/docs/Web/HTML/Element/a), or `a` element, links web resources together. In this section, we analyze the adoption of the protocols included in the respective link targets.
 
 <figure>
   <table>

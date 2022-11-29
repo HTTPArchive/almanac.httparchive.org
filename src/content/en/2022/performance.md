@@ -24,7 +24,7 @@ Web performance is crucial to user experience. We've all bounced from a site due
 
 How do we measure something that is hard to define in the first place? As [Sergey Chernyshev](https://twitter.com/sergeyche), creator of <a hreflang="en" href="https://github.com/ux-capture/ux-capture">UX Capture</a>, says, "_The best way to measure performance is to be embedded into the user's brain to understand exactly what they're thinking as they use the site_".  We can't—and shouldn't in case that was unclear—do this, so what are our options?
 
-Thankfully, there's a way to measure some aspects of performance automatically! We know the browser is in charge of loading a page, and it goes through a checklist of steps each time. Depending on which step the browser is on, we can tell how far along the site is in the page load process. Conveniently, a [number of performance timeline APIs](https://developer.mozilla.org/en-US/docs/Web/API/Performance) are used to fire off timestamps when the browser gets to certain page load steps.
+Thankfully, there's a way to measure some aspects of performance automatically! We know the browser is in charge of loading a page, and it goes through a checklist of steps each time. Depending on which step the browser is on, we can tell how far along the site is in the page load process. Conveniently, a [number of performance timeline APIs](https://developer.mozilla.org/docs/Web/API/Performance) are used to fire off timestamps when the browser gets to certain page load steps.
 
 It's important to note that these metrics are only our best guess at how to gauge user experience. For example, just because the browser fired an event that an element has been painted onto the screen, does that always mean it was visible to the user at that time? Additionally, as the industry grew, more and more metrics showed up while some became deprecated. It can be complicated to know where to start and understand what performance metrics are telling us about our users, especially for folks newer to the field.
 
@@ -170,7 +170,7 @@ The LCP element can be a number of different types of content, like an image, a 
 
 It's clear that images are the most common type of LCP content, with the `img` element representing the LCP on 42% of mobile pages. Mobile pages are slightly more likely to have heading and paragraph elements be the LCP than desktop pages, while desktop pages are more likely to have image elements as the LCP. One possible explanation is the way that mobile layouts—especially in portrait orientation—make images that are _not_ responsive appear smaller, giving way to large blocks of text like headings and paragraphs to become the LCP elements.
 
-The second most popular LCP element type is `div`. This is a generic HTML container that could be used for text or styling background images. To help disambiguate how often these elements contain images or text, we can evaluate the `url` property of the [LCP API](https://developer.mozilla.org/en-US/docs/Web/API/LargestContentfulPaint).  According to the <a hreflang="en" href="https://www.w3.org/TR/largest-contentful-paint/#dom-largestcontentfulpaint-url">specification</a>, when this property is set, the LCP content must be an image.
+The second most popular LCP element type is `div`. This is a generic HTML container that could be used for text or styling background images. To help disambiguate how often these elements contain images or text, we can evaluate the `url` property of the [LCP API](https://developer.mozilla.org/docs/Web/API/LargestContentfulPaint).  According to the <a hreflang="en" href="https://www.w3.org/TR/largest-contentful-paint/#dom-largestcontentfulpaint-url">specification</a>, when this property is set, the LCP content must be an image.
 
 {{ figure_markup(
   image="top-lcp-content-types.png",
@@ -385,7 +385,7 @@ We also looked at the largest LCP image sizes and found a 68,607 KB image on des
 
 Looking at it a different way, the figure above shows the distribution as a histogram in 100 KB increments. This view makes it clearer to see how LCP image sizes fall predominantly in the sub-200 KB range. We also see that 5% of LCP images on mobile are greater than 1,000 KB in size.
 
-How large an LCP image should _optimally_ be depends on many factors. But the fact that 1 in 20 websites are serving megabyte-sized images to our [360px-wide](./methodology#webpagetest) mobile viewports clearly highlights the need for site owners to embrace [responsive images](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images). For more analysis on this topic, refer to the [Media](./media#srcset) and [Mobile Web](./mobile-web#responsive-images) chapters.
+How large an LCP image should _optimally_ be depends on many factors. But the fact that 1 in 20 websites are serving megabyte-sized images to our [360px-wide](./methodology#webpagetest) mobile viewports clearly highlights the need for site owners to embrace [responsive images](https://developer.mozilla.org/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images). For more analysis on this topic, refer to the [Media](./media#srcset) and [Mobile Web](./mobile-web#responsive-images) chapters.
 
 #### LCP format
 
@@ -597,7 +597,7 @@ In the page load process, it can take some time for the browser to discover, req
   )
 }}
 
-One way to avoid font-induced layout shifts is to use [`font-display: optional`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display), which will never swap in a web font after the system text has already been shown. However, as noted by the [Fonts](./fonts#font-display) chapter, less than 1% of pages are taking advantage of this directive.
+One way to avoid font-induced layout shifts is to use [`font-display: optional`](https://developer.mozilla.org/docs/Web/CSS/@font-face/font-display), which will never swap in a web font after the system text has already been shown. However, as noted by the [Fonts](./fonts#font-display) chapter, less than 1% of pages are taking advantage of this directive.
 
 Even though `optional` is good for CLS, there are UX tradeoffs. Site owners might be willing to have some layout instability or a noticeable flash of unstyled text (FOUT) if it means that their preferred font can be displayed to users.
 
@@ -631,7 +631,7 @@ The best way to tell if a given page is eligible for bfcache is to <a hreflang="
   )
 }}
 
-The [`unload`](https://developer.mozilla.org/en-US/docs/Web/API/Window/unload_event) event is a discouraged way to do work when the page is in the process of going away (unloading). Besides there being <a hreflang="en" href="https://web.dev/bfcache/#never-use-the-unload-event">better ways</a> to do that, it's also one way to make your page ineligible for bfcache.
+The [`unload`](https://developer.mozilla.org/docs/Web/API/Window/unload_event) event is a discouraged way to do work when the page is in the process of going away (unloading). Besides there being <a hreflang="en" href="https://web.dev/bfcache/#never-use-the-unload-event">better ways</a> to do that, it's also one way to make your page ineligible for bfcache.
 
 17% of all mobile pages set this event handler, however the situation worsens the more popular the website is. In the top 1k, 36% of mobile pages are ineligible for bfcache for this reason.
 
@@ -645,7 +645,7 @@ The [`unload`](https://developer.mozilla.org/en-US/docs/Web/API/Window/unload_ev
   )
 }}
 
-The [`Cache-Control: no-store`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control#no-store) header tells user agents never to cache a given resource. When set on the main HTML document, this makes the entire page ineligible for bfcache.
+The [`Cache-Control: no-store`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cache-Control#no-store) header tells user agents never to cache a given resource. When set on the main HTML document, this makes the entire page ineligible for bfcache.
 
 22% of all mobile pages set this header, and 28% of mobile pages in the top 1k. This and the `unload` criteria are not mutually exclusive, so combined we can only say that at least 22% of mobile pages are ineligible for bfcache.
 

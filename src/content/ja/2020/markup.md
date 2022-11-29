@@ -47,7 +47,7 @@ HTMLをどのように使うのかでは、どれだけ素晴らしい基盤が�
   sql_file="summary_pages_by_device_and_doctype.sql"
 ) }}
 
-96.82%のページが[_doctype_](https://developer.mozilla.org/ja/docs/Glossary/Doctype)を宣言しています。HTML文書がdoctypeを宣言することは、<a hreflang="en" href="https://lists.w3.org/Archives/Public/public-html-comments/2009Jul/0020.html">Ian Hickson氏が2009年に説明したように</a>、「ブラウザのquirksモードのトリガーを避けるため」という歴史的な理由から有用です。もっとも人気のある値は何ですか？
+96.82%のページが[_doctype_](https://developer.mozilla.org/docs/Glossary/Doctype)を宣言しています。HTML文書がdoctypeを宣言することは、<a hreflang="en" href="https://lists.w3.org/Archives/Public/public-html-comments/2009Jul/0020.html">Ian Hickson氏が2009年に説明したように</a>、「ブラウザのquirksモードのトリガーを避けるため」という歴史的な理由から有用です。もっとも人気のある値は何ですか？
 
 <figure>
   <table>
@@ -120,7 +120,7 @@ XHTML1.0以降、数がかなり減り、いくつかの標準的なもの、い
 
 `html`開始タグの`lang`属性に2,863の異なる値を確認しました（Ethnologueによる<a hreflang="en" href="https://www.ethnologue.com/guides/how-many-languages">7,117の話されている言語</a>と比較してみてください）。[アクセシビリティ](./accessibility#language-identification)の章によると、ほとんどすべての値が有効なようです。
 
-全ドキュメントの22.36%が`lang`属性を指定していません。一般的には<a hreflang="en" href="https://www.w3.org/TR/i18n-html-tech-lang/#overall">そうすべきだ</a>という意見は多いです、ソフトウェアが最終的に<a hreflang="en" href="https://meiert.com/en/blog/lang/">言語を自動的に検出する</a>という事実を無視してドキュメントの言語は[プロトコルレベルで](https://developer.mozilla.org/ja/docs/Web/HTTP/Headers/Content-Language)指定することもできますが、これは私たちがチェックしなかったことです。
+全ドキュメントの22.36%が`lang`属性を指定していません。一般的には<a hreflang="en" href="https://www.w3.org/TR/i18n-html-tech-lang/#overall">そうすべきだ</a>という意見は多いです、ソフトウェアが最終的に<a hreflang="en" href="https://meiert.com/en/blog/lang/">言語を自動的に検出する</a>という事実を無視してドキュメントの言語は[プロトコルレベルで](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Language)指定することもできますが、これは私たちがチェックしなかったことです。
 
 ここでは、サンプルの中でもっとも人気のある（正規化された）10の言語を紹介します。HTTP Archiveは米国のデータセンターから英語の言語設定でクロールしているため、ページが書かれている言語を見ると、英語に偏っていることに注意してください。とはいえ、分析したサイトのコンテキストを示すために、`lang`属性を提示します。
 
@@ -329,7 +329,7 @@ XHTML1.0以降、数がかなり減り、いくつかの標準的なもの、い
 </details>
 ```
 
-しばらく前に、Steve Faulkner氏が、この2つの要素がいかに不適切に使われているかを[指摘](https://twitter.com/stevefaulkner/status/806474286592561152)していました。上の例からわかるように、`details`要素ごとに、`details`の[最初の子](https://developer.mozilla.org/ja/docs/Web/HTML/Element/summary#usage_notes)としてのみ使用可能な`summary`要素が必要になります。
+しばらく前に、Steve Faulkner氏が、この2つの要素がいかに不適切に使われているかを[指摘](https://twitter.com/stevefaulkner/status/806474286592561152)していました。上の例からわかるように、`details`要素ごとに、`details`の[最初の子](https://developer.mozilla.org/docs/Web/HTML/Element/summary#usage_notes)としてのみ使用可能な`summary`要素が必要になります。
 
 そこで、`details`要素と`summary`要素の数を調べてみたところ、引き続き誤用されていることがわかりました。また、`summary`要素の数は、モバイルとデスクトップの両方で多く、モバイルでは`details`要素1つに対して`summary`要素が1.11、デスクトップでは1.19となっています。
 
@@ -965,7 +965,7 @@ HTML仕様によると、<a hreflang="en" href="https://html.spec.whatwg.org/mul
 
 ### `viewport`の仕様
 
-[viewport](https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag)メタ要素は、モバイルブラウザでのレイアウトを制御するために使用されます。数年前まではWebページを構築する際に「viewport meta要素を忘れないように」というモットーのようなものがありましたが、やがてこれが一般的になり、「ズームやスケーリングが無効になっていないか確認する」というモットーに変わりました。
+[viewport](https://developer.mozilla.org/docs/Web/HTML/Viewport_meta_tag)メタ要素は、モバイルブラウザでのレイアウトを制御するために使用されます。数年前まではWebページを構築する際に「viewport meta要素を忘れないように」というモットーのようなものがありましたが、やがてこれが一般的になり、「ズームやスケーリングが無効になっていないか確認する」というモットーに変わりました。
 
 ユーザーは、テキストを<a hreflang="en" href="https://dequeuniversity.com/rules/axe/4.0/meta-viewport-large">最大500%</a>まで拡大・縮小できる必要があります。これが、<a hreflang="en" href="https://developers.google.com/web/tools/lighthouse">Lighthouse</a>や<a hreflang="en" href="https://www.deque.com/axe/">axe</a>のような人気のあるツールの監査が、`meta name="viewport"`要素内で`user-scalable="no"`が使用され、`maximum-scale`属性値が`5`未満の場合に失敗する理由です。
 
@@ -1196,7 +1196,7 @@ HTML仕様によると、<a hreflang="en" href="https://html.spec.whatwg.org/mul
 
 ### リンク対象
 
-[アンカー要素](https://developer.mozilla.org/ja/docs/Web/HTML/Element/a)、つまり`a`要素は、ウェブリソースをリンクするものです。本節では、それぞれのリンク先に含まれるプロトコルの採用状況を分析します。
+[アンカー要素](https://developer.mozilla.org/docs/Web/HTML/Element/a)、つまり`a`要素は、ウェブリソースをリンクするものです。本節では、それぞれのリンク先に含まれるプロトコルの採用状況を分析します。
 
 <figure>
   <table>

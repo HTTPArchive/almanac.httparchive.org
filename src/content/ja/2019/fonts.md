@@ -181,7 +181,7 @@ Googleは`https://fonts.googleapis.com`でホストされているサードパ�
 
 - ページがGoogle Fontsを使用する場合、彼らはGoogle Fontsを多く使用しています。それらは結局のところ、金銭的なコストなしで提供されています。おそらく、人気のあるWYSIWYGエディタで使われているのではないでしょうか？　これは非常に可能性の高い説明のように思えます。
 - あるいは、もっとありそうにない話としては、多くの人が`<link>`の代わりに`@import`を使ってGoogle Fontsを使っているということかもしれません。
-- あるいは、超ありえないシナリオにまで踏み込んでみたいのであれば、多くの人が代わりに[HTTP `Link:`ヘッダー](https://developer.mozilla.org/ja/docs/Web/HTTP)を使ってGoogle Fontsを使っているということになるかもしれません。
+- あるいは、超ありえないシナリオにまで踏み込んでみたいのであれば、多くの人が代わりに[HTTP `Link:`ヘッダー](https://developer.mozilla.org/docs/Web/HTTP)を使ってGoogle Fontsを使っているということになるかもしれません。
 
 {{ figure_markup(
   caption="ドキュメントの最初の子としてGoogle Fontsスタイルシートのリンクを含むページの割合 <code><head></code>。",
@@ -540,7 +540,7 @@ Google Fontsのドキュメントでは、Google Fonts CSSの`<link>`はペー�
 
 私はこれが時間の経過とともに忍び寄ってくることを想定しています、特に今は<a hreflang="en" href="https://www.zachleat.com/web/google-fonts-display/">Google Fontsがすべての新しいコードスニペットに `font-display` を追加しています</a>が彼らのサイトからコピーされています。
 
-Google Fontsを使っているなら、スニペットを更新しよう！　Google Fontsを使っていない場合は、`font-display`を使いましょう！　`font-display`についての詳細は [MDN](https://developer.mozilla.org/ja/docs/Web/CSS/@font-face/font-display) を参照してください。
+Google Fontsを使っているなら、スニペットを更新しよう！　Google Fontsを使っていない場合は、`font-display`を使いましょう！　`font-display`についての詳細は [MDN](https://developer.mozilla.org/docs/Web/CSS/@font-face/font-display) を参照してください。
 
 どのような`font-display`値が人気あるのか見てみましょう。
 
@@ -604,7 +604,7 @@ Webフォントのリクエストがデスクトップとモバイルの間で�
 )
 }}
 
-[`unicode-range`](https://developer.mozilla.org/ja/docs/Web/CSS/@font-face/unicode-range)は、ブラウザに、ページがフォントファイルで使用したいコードポイントを具体的に知らせるための優れたCSSプロパティです。`@font-face`宣言に`unicode-range`がある場合、ページ上のコンテンツは、フォントが要求される前に、その範囲内のコードポイントのいずれかにマッチしなければなりません。これは非常に良いことです。
+[`unicode-range`](https://developer.mozilla.org/docs/Web/CSS/@font-face/unicode-range)は、ブラウザに、ページがフォントファイルで使用したいコードポイントを具体的に知らせるための優れたCSSプロパティです。`@font-face`宣言に`unicode-range`がある場合、ページ上のコンテンツは、フォントが要求される前に、その範囲内のコードポイントのいずれかにマッチしなければなりません。これは非常に良いことです。
 
 Google FontsはそのCSSのほとんど（すべてではないにしても）で`unicode-range`を使用しているので、これもGoogle Fontsの使用状況によって偏っていると予想される指標です。ユーザーの世界でこれはあまり一般的でないと思いますが、Web Almanacの次の版ではGoogle Fontsのリクエストをフィルタリングして除外することが可能かもしれません。
 
@@ -630,13 +630,13 @@ Google FontsはそのCSSのほとんど（すべてではないにしても）�
 )
 }}
 
-歴史的に、`font-stretch`はブラウザのサポートが悪く、よく知られた`@font-face`プロパティではありませんでした。詳しくは[MDNの`font-stretch`について](https://developer.mozilla.org/ja/docs/Web/CSS/font-stretch) を参照してください。しかし、<a hreflang="en" href="https://caniuse.com/#feat=css-font-stretch">ブラウザのサポート</a>は広がっています。
+歴史的に、`font-stretch`はブラウザのサポートが悪く、よく知られた`@font-face`プロパティではありませんでした。詳しくは[MDNの`font-stretch`について](https://developer.mozilla.org/docs/Web/CSS/font-stretch) を参照してください。しかし、<a hreflang="en" href="https://caniuse.com/#feat=css-font-stretch">ブラウザのサポート</a>は広がっています。
 
 小さいビューポートで凝縮されたフォントを使用することで、より多くのテキストを表示できるようになることが示唆されていますが、このアプローチは一般的には使用されていません。とはいえ、このプロパティがモバイルよりもデスクトップで半パーセントポイント多く使われているというのは予想外で、7％というのは私が予想していたよりもはるかに高いと思えます。
 
 ## 可変フォントは未来のもの
 
-[可変フォント](https://developer.mozilla.org/ja/docs/Web/CSS/CSS_Fonts/Variable_Fonts_Guide)では、1つのフォントファイルに複数のフォントの太さやスタイルを含めることができます。
+[可変フォント](https://developer.mozilla.org/docs/Web/CSS/CSS_Fonts/Variable_Fonts_Guide)では、1つのフォントファイルに複数のフォントの太さやスタイルを含めることができます。
 
 {{ figure_markup(
   caption="可変フォントを含むページの割合",

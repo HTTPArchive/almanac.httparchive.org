@@ -33,7 +33,7 @@ There are four separate resource hints supported by most browsers today: `dns-pr
 
 ### `dns-prefetch`
 
-The role of [`dns-prefetch`](https://developer.mozilla.org/en-US/docs/Learn/Performance/dns-prefetch) is to initiate an early DNS lookup. It's useful for completing the DNS lookup for third-parties. For example, the DNS lookup of a CDN, font provider, or third-party API.
+The role of [`dns-prefetch`](https://developer.mozilla.org/docs/Learn/Performance/dns-prefetch) is to initiate an early DNS lookup. It's useful for completing the DNS lookup for third-parties. For example, the DNS lookup of a CDN, font provider, or third-party API.
 
 ### `preconnect`
 
@@ -49,13 +49,13 @@ The <a hreflang="en" href="https://medium.com/reloading/preload-prefetch-and-pri
 
 ## Syntax
 
-97% of resource hint usage relied on using the [`<link>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link) tag to specify a resource hint. For example:
+97% of resource hint usage relied on using the [`<link>`](https://developer.mozilla.org/docs/Web/HTML/Element/link) tag to specify a resource hint. For example:
 
 ```html
 <link rel="prefetch" href="shopping-cart.js">
 ```
 
-Only 3% of resource hint usage used [HTTP headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Link) to specify resource hints. For example:
+Only 3% of resource hint usage used [HTTP headers](https://developer.mozilla.org/docs/Web/HTTP/Headers/Link) to specify resource hints. For example:
 
 ```
 Link: <https://example.com/shopping-cart.js>; rel=prefetch
@@ -168,7 +168,7 @@ Resource hints are most effective when they're used selectively (_"when everythi
 
 ## The `crossorigin` attribute
 
-Most "traditional" resources fetched on the web ([images](./media), [stylesheets](./css), and [scripts](./javascript)) are fetched without opting in to Cross-Origin Resource Sharing ([CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)). That means that if those resources are fetched from a cross-origin server, by default their contents cannot be read back by the page, due to the same-origin policy.
+Most "traditional" resources fetched on the web ([images](./media), [stylesheets](./css), and [scripts](./javascript)) are fetched without opting in to Cross-Origin Resource Sharing ([CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS)). That means that if those resources are fetched from a cross-origin server, by default their contents cannot be read back by the page, due to the same-origin policy.
 
 In some cases, the page can opt-in to fetch the resource using CORS if it needs to read its content. CORS enables the browser to "ask permission" and get access to those cross-origin resources.
 
