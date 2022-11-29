@@ -151,6 +151,14 @@ def test_render_en_2019_good_chapter_slash(client):
     assert_route(client, "/en/2019/css/", 302, "/en/2019/css")
 
 
+def test_redirect_untranslated_chapter(client):
+    assert_route(client, "/nl/2019/http", 302, "/en/2019/http")
+
+
+def test_redirect_untranslated_chapter_qith_queryparam(client):
+    assert_route(client, "/nl/2019/http?queryparam", 302, "/en/2019/http?queryparam")
+
+
 def test_render_robots(client):
     assert_route(client, "/robots.txt", 200)
 
