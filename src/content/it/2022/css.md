@@ -80,7 +80,7 @@ Dando un'occhiata al numero di regole di stile per pagina notiamo un aumento in 
   )
 }}
 
-Possiamo vedere dal numero totale di fogli di stile caricati, che in genere le persone suddividono i loro CSS in più fogli di stile. Al 50° percentile risulatno 31 regole per foglio di stile, che al 90° percentile salgono a 276 regole su desktop e 285 regole sui dispositivi mobili.
+Possiamo vedere dal numero totale di fogli di stile caricati, che in genere le persone suddividono i loro CSS in più fogli di stile. Al 50° percentile risultano 31 regole per foglio di stile, che al 90° percentile salgono a 276 regole su desktop e 285 regole sui dispositivi mobili.
 
 ## I selettori e la cascata
 
@@ -122,7 +122,7 @@ Il nome `content` è ancora una volta il nome ID più popolare, seguito da `foot
 
 {{ figure_markup(
     image="important-adoption.png",
-    caption="La distribuzione per pagina delle occrrenze di proprietà `!important`.",
+    caption="La distribuzione per pagina delle occorrenze di proprietà `!important`.",
     description="Grafico a barre che mostra il 10°, 25°, 50°, 75° e 90° percentile del numero di occorrenze della proprietà `!important` utilizzate per pagina. Sulle pagine mobili, i valori sono rispettivamente 0%, 1%, 2%, 5% e 9%. I valori del desktop sono gli stessi.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=316255168&format=interactive",
     sheets_gid="1802353995",
@@ -446,7 +446,7 @@ La percentuale di siti che utilizzano i pixel nei calcoli è diminuita di 9 punt
 
 {{ figure_markup(
     image="calc-operators.png",
-    caption="Gli operarori più diffusi utilizzati nelle funzioni `calc()`.",
+    caption="Gli operatori più diffusi utilizzati nelle funzioni `calc()`.",
     description="Grafico a barre che mostra gli operatori usati in `calc()` nella maggior parte delle pagine. L'operatore di sottrazione (-) viene utilizzato sul 42% delle pagine, seguito dall'addizione (+) nel 18%, dalla divisione (/) nell'11% e dalla moltiplicazione (*) nel 10%.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1571752832&format=interactive",
     sheets_gid="220199231",
@@ -670,7 +670,7 @@ Le sfumature lineari continuano a essere la scelta più frequente, compaiono inf
 
 Questo grafico scompone i formati immagine delle immagini caricate dai CSS. Non include le immagini caricate da HTML, ma solo quelle che appaiono in una regola di stile. C'è stato un significativo allontanamento da PNG, un calo dal 44% al 30%, con SVG e WebP in aumento di 6 punti percentuali ciascuno.
 
-### Numero di immmagini in CSS
+### Numero di immagini in CSS
 
 {{ figure_markup(
     image="css-initiated-images.png",
@@ -750,7 +750,7 @@ Abbiamo anche dato un'occhiata ad un paio di valori delle proprietà `flex` e `g
 
 Il valore del contenuto per la proprietà `flex-basis` è un'istruzione esplicita al browser di guardare alla dimensione del contenuto intrinseco dell'elemento, piuttosto che a qualsiasi larghezza impostata sull'elemento stesso. È un valore recente, al momento in cui scrivo non disponibile nella versione di rilascio di Safari. Attualmente, solo lo 0,5% dei siti mobili e lo 0,6% dei siti desktop utilizzano questo valore.
 
-Il valore `subgrid` per `grid-template-rows` e `grid-template-columns` è, al momento dell'indagine, supportato solo da Firefox. Forse non sorprende notare che compare solo in 211 pagine mobili e 212 desktop nell'intero set di dati. Dal momento che il valore fa parte del progetto [Interop 2022](./interoperabilità), sarà interessante vedere come crescerà il supporto una volta divenato interoperabile.
+Il valore `subgrid` per `grid-template-rows` e `grid-template-columns` è, al momento dell'indagine, supportato solo da Firefox. Forse non sorprende notare che compare solo in 211 pagine mobili e 212 desktop nell'intero set di dati. Dal momento che il valore fa parte del progetto [Interop 2022](./interoperabilità), sarà interessante vedere come crescerà il supporto una volta diventato interoperabile.
 
 ### `Box-sizing`
 
@@ -880,7 +880,7 @@ Abbiamo anche esaminato il numero medio di fotogrammi chiave utilizzati per anim
   )
 }}
 
-Come ci si potrebbe aspettare, gli stop alle animazioni più popolari sono al valore 0% da e verso il valore 100%, seguiti dal valore 50%. Gli sviluppatori generalmente impostano questi stop a intervalli del varolore di 10%, solo l'1% delle pagine utilizza il valore 33%, ad esempio.
+Come ci si potrebbe aspettare, gli stop alle animazioni più popolari sono al valore 0% da e verso il valore 100%, seguiti dal valore 50%. Gli sviluppatori generalmente impostano questi stop a intervalli del valore di 10%, solo l'1% delle pagine utilizza il valore 33%, ad esempio.
 
 {{ figure_markup(
     image="transition-timing-functions.png",
@@ -933,7 +933,7 @@ Abbiamo esaminato alcuni effetti visivi utilizzati nei CSS. Ad esempio, il 18% d
   )
 }}
 
-Il valore più frequente per i metodi di fusione è stato `multiply`, comparso nel 42% delle pagine. Anche per gli altri valori comunque c'è un'equa distribuzione .
+Il valore più frequente per i metodi di fusione è stato `multiply`, comparso nel 42% delle pagine. Anche per gli altri valori comunque c'è un'equa distribuzione.
 
 Circa il 18% delle pagine utilizzava una proprietà personalizzata `var(--overlay-mix-blend-mode)`, un nome specifico che deve provenire da una libreria o da uno strumento di qualche tipo.
 
@@ -1080,7 +1080,7 @@ Sebbene la proprietà `display` sia tra le prime 20, occorre scendere molto in b
 
 ## Internazionalizzazione
 
-L'inglese è descritto come una lingua orizzontale dall'alto verso il basso, perché le frasi sono scritte orizzontalmente, a partire dalla parte superiore della pagina. La direzione di scrittura va da sinistra a destra, <i lang="en">left-to-right</i> (LTR). Anche l'arabo, l'ebraico e l'urdu sono lingue orizzontali dall'alto verso il basso, ma hanno una direzione della scrittura da destra a sinistra, <i lang="en">right-to-left</i>(RTL). Ci sono anche lingue scritte verticalmente, dall'alto verso il basso, come il cinese, il giapponese e il mongolo. I CSS si sono evoluti per far fronte meglio a queste diverse modalità di scrittura e direzioni dello script.
+L'inglese è descritto come una lingua orizzontale dall'alto verso il basso, perché le frasi sono scritte orizzontalmente, a partire dalla parte superiore della pagina. La direzione di scrittura va da sinistra a destra, <i lang="en">left-to-right</i> (LTR). Anche l'arabo, l'ebraico e l'urdu sono lingue orizzontali dall'alto verso il basso, ma hanno una direzione della scrittura da destra a sinistra, <i lang="en">right-to-left</i> (RTL). Ci sono anche lingue scritte verticalmente, dall'alto verso il basso, come il cinese, il giapponese e il mongolo. I CSS si sono evoluti per far fronte meglio a queste diverse modalità di scrittura e direzioni dello script.
 
 ### Direzione
 
@@ -1088,7 +1088,7 @@ Il numero di pagine che utilizzano la proprietà CSS `direction` per impostare l
 
 ## Proprietà logiche vs. fisiche
 
-Le proprietà logiche (o relative al flusso) come `border-block-start` e i valori come `start` per `text-align` sono utili per l'internazionalizzazione poiché seguono il flusso del testo piuttosto che essere legati alle dimensioni fisiche del schermo. Visto che il supporto dei browser per queste proprietà è ora eccellente, ci siamo chiesti se ne avremmo visto una maggiore adozione.
+Le proprietà logiche (o relative al flusso) come `border-block-start` e i valori come `start` per `text-align` sono utili per l'internazionalizzazione poiché seguono il flusso del testo piuttosto che essere legati alle dimensioni fisiche dello schermo. Visto che il supporto dei browser per queste proprietà è ora eccellente, ci siamo chiesti se ne avremmo visto una maggiore adozione.
 
 {{ figure_markup(
     image="logical-props.png",
@@ -1216,7 +1216,7 @@ La stampa è un mezzo frammentato; il contenuto è frammentato in pagine e abbia
   )
 }}
 
-In questo grafico vediamo che molti sviluppatori stanno usando le vecchie proprietà di frammentazione di `page-break-inside`, `page-break-after` e `page-break-before`, piuttosto che le nuove proprietà come `break- before`, che ha invece un utilizzo molto basso.
+In questo grafico vediamo che molti sviluppatori stanno usando le vecchie proprietà di frammentazione di `page-break-inside`, `page-break-after` e `page-break-before`, piuttosto che le nuove proprietà come `break-before`, che ha invece un utilizzo molto basso.
 
 La proprietà `orphans` appare nel 22% dei fogli di stile di stampa, nonostante manchi il supporto in Firefox. Questa proprietà definisce il numero di righe che devono essere lasciate in fondo a una pagina prima di un'interruzione di frammentazione. La proprietà `widows` (che imposta il numero di righe da sole dopo un'interruzione di frammentazione) compare con circa la stessa frequenza. È probabile che le persone stiano impostando lo stesso valore per entrambi.
 
@@ -1224,7 +1224,7 @@ La proprietà `orphans` appare nel 22% dei fogli di stile di stampa, nonostante 
 
 C'è un'intera specifica per la gestione dei media con pagine (<i lang="en">Paged Media</i>) e CSS per la stampa. Anche se sono state implementate male nei browser. Per trovare una buona implementazione di queste funzionalità è necessario utilizzare uno user agent (browser) specifico per la stampa.
 
-C'è un po' di supporto dei browser per la regola [`@page`](https://developer.mozilla.org/en-US/docs/Web/CSS/@page) e per le sue pseudo-classi, e in realtà abbiamo riscrontrato che degli sviluppatori le usano per impostare proprietà di pagina diverse per la prima pagina e le pagine sinistra e destra di uno spread.
+C'è un po' di supporto dei browser per la regola [`@page`](https://developer.mozilla.org/en-US/docs/Web/CSS/@page) e per le sue pseudo-classi, e in realtà abbiamo riscontrato che degli sviluppatori le usano per impostare proprietà di pagina diverse per la prima pagina e le pagine sinistra e destra di uno spread.
 
 <figure>
   <table>
