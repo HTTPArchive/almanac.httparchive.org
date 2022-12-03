@@ -345,7 +345,7 @@ orientationプロパティの有効な値は、Screen Orientation API<a hreflang
 
 ### 人気のインポートスクリプト
 
-[WorkerGlobalScope インタフェース](https://developer.mozilla.org/ja/docs/Web/API/WorkerGlobalScope)の[importScripts() API](https://developer.mozilla.org/ja/docs/Web/API/WorkerGlobalScope/importScripts)は、1つまたは複数のスクリプトをワーカーのスコープに同期的にインポートします。同じことが、外部の依存関係をサービスワーカーにインポートするためにも使われます。
+[WorkerGlobalScope インタフェース](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope)の[importScripts() API](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/importScripts)は、1つまたは複数のスクリプトをワーカーのスコープに同期的にインポートします。同じことが、外部の依存関係をサービスワーカーにインポートするためにも使われます。
 
 <figure>
 <table>

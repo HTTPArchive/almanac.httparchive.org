@@ -32,7 +32,7 @@ Neste capítulo, vamos explorar como conteúdo de texto é comprimido na web. An
 
 ## Como a compressão HTTP funciona
 
-Quando um cliente faz um pedido HTTP, frequentemente, inclui um cabeçalho [`Accept-Encoding`](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Headers/Accept-Encoding) para comunicar os algoritmos de compressão que é capaz de descodificar. O servidor pode depois selecionar um dos algoritmos comunicados que suporte e servir uma resposta comprimida. A resposta comprimida iria por sua vez incluir o cabeçalho [`Content-Encoding`](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Headers/Content-Encoding) para que o cliente perceba que tipo de compressão foi usada. Adicionalmente, um cabeçalho [`Content-Type`](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Headers/Content-Type) é, frequentemente, usado para indicar o [MIME type](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Basico_sobre_HTTP/MIME_types) do resurso a ser servido.
+Quando um cliente faz um pedido HTTP, frequentemente, inclui um cabeçalho [`Accept-Encoding`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Accept-Encoding) para comunicar os algoritmos de compressão que é capaz de descodificar. O servidor pode depois selecionar um dos algoritmos comunicados que suporte e servir uma resposta comprimida. A resposta comprimida iria por sua vez incluir o cabeçalho [`Content-Encoding`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Encoding) para que o cliente perceba que tipo de compressão foi usada. Adicionalmente, um cabeçalho [`Content-Type`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Type) é, frequentemente, usado para indicar o [MIME type](https://developer.mozilla.org/docs/Web/HTTP/Basico_sobre_HTTP/MIME_types) do resurso a ser servido.
 
 No exemplo seguinte, o cliente comunica que tem suporte para compressão Gzip, Brotli e Deflate. O servidor decidiu retornar uma resposta comprimida com Gzip que contém um documento `text/html`.
 
@@ -163,7 +163,7 @@ Não conseguimos determinar os níveis de compressão dos diagnósticos obtidos 
 
 ## Que tipos de conteúdos estamos comprimindo?
 
-A maior parte dos recursos baseados em texto (como HTML, CSS e Javascript) podem se beneficiar de compressão Gzip e Brotli. No entanto, normalmente não é necessário usar estas técnicas de compressão em recursos binários, como imagens, videos e algumas fontes web porque os seus formatos de arquivo já estão comprimidos.
+A maior parte dos recursos baseados em texto (como HTML, CSS e JavaScript) podem se beneficiar de compressão Gzip e Brotli. No entanto, normalmente não é necessário usar estas técnicas de compressão em recursos binários, como imagens, videos e algumas fontes web porque os seus formatos de arquivo já estão comprimidos.
 
 No gráfico abaixo, podemos ver o top 25 de tipos de conteúdo em caixas cujo tamanho representa o número relativo de pedidos. A cor de cada caixa representa a quantidade de recursos servidos com compressão. A maior parte do conteúdo mídia é mostrado com uma sombra laranja uma vez que, tal como esperado, Gzip e Brotli trariam pouco ou nenhum benefício para os mesmos. A maior parte do conteúdo baseado em texto é sombreado a azul indicando que foram comprimidos. No entanto, o sombreado azul claro para alguns tipos de conteúdo indica que não são comprimidos tão consistentemente como os outros.
 

@@ -46,7 +46,7 @@ FROM (
     )
   USING
     (_TABLE_SUFFIX,
-      url) ),
+      url)),
   UNNEST(['Content-Security-Policy', 'Content-Security-Policy-Report-Only']) AS headername
 GROUP BY
   client,

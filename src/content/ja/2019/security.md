@@ -600,15 +600,15 @@ Content-Security-Policy: upgrade-insecure-requests; default-src https:
   <figcaption>{{ figure_link(caption=" 使用される `X-Frame-Options` の設定。") }}</figcaption>
 </figure>
 
-大多数のページでは、そのページのオリジンのみにフレーミングを制限しているようで、次の重要なアプローチはフレーミングを完全に防止することです。これはCSPの`frame-ancestors`と似ており、これら2つのアプローチが最も一般的です。また、`allow-from`オプションは、理論的にはサイト所有者がフレーム化を許可するサードパーティのドメインをリストアップできるようにするものですが、[決して十分にサポートされていないので](https://developer.mozilla.org/ja/docs/Web/HTTP/X-Frame-Options#Browser_compatibility)、非推奨とされています。
+大多数のページでは、そのページのオリジンのみにフレーミングを制限しているようで、次の重要なアプローチはフレーミングを完全に防止することです。これはCSPの`frame-ancestors`と似ており、これら2つのアプローチが最も一般的です。また、`allow-from`オプションは、理論的にはサイト所有者がフレーム化を許可するサードパーティのドメインをリストアップできるようにするものですが、[決して十分にサポートされていないので](https://developer.mozilla.org/docs/Web/HTTP/X-Frame-Options#Browser_compatibility)、非推奨とされています。
 
 ### `X-Content-Type-Options`
-[`X-Content-Type-Options`](https://developer.mozilla.org/ja/docs/Web/HTTP/Headers/X-Content-Type-Options)ヘッダは最も広く展開されているセキュリティヘッダであり、最もシンプルであり、設定可能な値は`nosniff`のみです。このヘッダが発行されると、ブラウザはコンテンツの一部を`Content-Type`ヘッダで宣言されたMIMEタイプとして扱わなければならず、ファイルが異なるタイプのものであることを示唆したときに値を変更しようとはしません。ブラウザが誤ってタイプを嗅ぎ取るように説得された場合、さまざまなセキュリティ上の欠陥が導入される可能性となります。
+[`X-Content-Type-Options`](https://developer.mozilla.org/docs/Web/HTTP/Headers/X-Content-Type-Options)ヘッダは最も広く展開されているセキュリティヘッダであり、最もシンプルであり、設定可能な値は`nosniff`のみです。このヘッダが発行されると、ブラウザはコンテンツの一部を`Content-Type`ヘッダで宣言されたMIMEタイプとして扱わなければならず、ファイルが異なるタイプのものであることを示唆したときに値を変更しようとはしません。ブラウザが誤ってタイプを嗅ぎ取るように説得された場合、さまざまなセキュリティ上の欠陥が導入される可能性となります。
 
 モバイルとデスクトップの両方で、17.61％のページが`X-Content-Type-Options`ヘッダを発行していることがわかりました。
 
 ### `X-XSS-Protection`
-[X-XSS-Protection`](https://developer.mozilla.org/ja/docs/Web/HTTP/Headers/X-XSS-Protection)ヘッダーは、サイトがブラウザに組み込まれたXSS AuditorやXSS Filterを制御することを可能にし、理論的には何らかのXSS保護を提供するはずです。
+[X-XSS-Protection`](https://developer.mozilla.org/docs/Web/HTTP/Headers/X-XSS-Protection)ヘッダーは、サイトがブラウザに組み込まれたXSS AuditorやXSS Filterを制御することを可能にし、理論的には何らかのXSS保護を提供するはずです。
 
 デスクトップリクエストの14.69％とモバイルリクエストの15.2％が`X-XSS-Protection`ヘッダを使用していた。データを掘り下げてみると、ほとんどのサイト運営者がどのような意図を持っているかが図7.13に示されています。
 
@@ -798,7 +798,7 @@ Webの機能が向上し、より多くの機密データへのアクセスが�
 
 近年、ブラウザーは、主要な脆弱性や新たなWeb脅威からの保護を提供する強力な新しいメカニズムを実装しています; これには、[サブリソースの完全性](#サブリソースの完全性)、[同じサイトのクッキー](#samesite)、および[クッキーのプレフィックス](#プレフィックス)が含まれます。
 
-これらの機能は比較的少数のウェブサイトでしか採用されていません。<a hreflang="en" href="https://w3c.github.io/webappsec-trusted-types/dist/spec/">Trusted Types</a>、[オリジン間リソース共有](https://developer.mozilla.org/ja/docs/Web/HTTP/Cross-Origin_Resource_Policy_(CORP))、<a hreflang="en" href="https://www.chromestatus.com/feature/5432089535053824">オリジン間オープナー共有</a>のような、さらに最近のセキュリティメカニズムは、まだ広く採用されていません。
+これらの機能は比較的少数のウェブサイトでしか採用されていません。<a hreflang="en" href="https://w3c.github.io/webappsec-trusted-types/dist/spec/">Trusted Types</a>、[オリジン間リソース共有](https://developer.mozilla.org/docs/Web/HTTP/Cross-Origin_Resource_Policy_(CORP))、<a hreflang="en" href="https://www.chromestatus.com/feature/5432089535053824">オリジン間オープナー共有</a>のような、さらに最近のセキュリティメカニズムは、まだ広く採用されていません。
 
 同様に、[Reporting API](#report-to)、[ネットワークエラーロギング](#ネットワークエラーロギング)、[`Clear-Site-Data`](#クリアサイトデータ)ヘッダのような便利な機能もまだ初期段階であり、現在は少数のサイトで利用されています。
 

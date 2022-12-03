@@ -181,7 +181,7 @@ Si bien el alto uso de Google Fonts aquí es muy impresionante, también es dign
 
 - Cuando las páginas usan fuentes de Google, usan _muchas_ fuentes de Google. Se proporcionan sin costo monetario, después de todo. ¿Quizás están siendo utilizados en un editor WYSIWYG popular? Esta parece una explicación muy probable.
 - O una historia más improbable es que podría significar que mucha gente está usando Google Fonts con `@import` en lugar de `<link>`.
-- O si queremos irnos al extremo profundo hacia escenarios súper improbables, podría significar que muchas personas están usando Google Fonts con un [HTTP `Link:` header](https://developer.mozilla.org/es/docs/Web/HTTP/Headers/Link) en su lugar.
+- O si queremos irnos al extremo profundo hacia escenarios súper improbables, podría significar que muchas personas están usando Google Fonts con un [HTTP `Link:` header](https://developer.mozilla.org/docs/Web/HTTP/Headers/Link) en su lugar.
 
 {{ figure_markup(
   caption="Porcentaje de páginas que incluyen un vínculo de hoja de estilo de Google Fonts como primer elemento secundario del documento <code><head></code>.",
@@ -540,7 +540,7 @@ La herramienta número uno que tenemos para combatir el comportamiento de carga 
 
 Supongo que esto aumentará con el tiempo, especialmente ahora que <a hreflang="en" href="https://www.zachleat.com/web/google-fonts-display/">Google Fonts está agregando `font-display` a todos los nuevos fragmentos de código</a> copiado desde su sitio.
 
-Si está utilizando Google Fonts, actualice sus fragmentos. Si no está utilizando Google Fonts, use `font-display`. Lea más sobre `font-display` en [MDN](https://developer.mozilla.org/es/docs/Web/CSS/@font-face/font-display).
+Si está utilizando Google Fonts, actualice sus fragmentos. Si no está utilizando Google Fonts, use `font-display`. Lea más sobre `font-display` en [MDN](https://developer.mozilla.org/docs/Web/CSS/@font-face/font-display).
 
 Echemos un vistazo a los valores de `font-display` que son populares:
 
@@ -604,7 +604,7 @@ Es irónico que un complemento de optimización del rendimiento pueda empeorar s
 )
 }}
 
-[`unicode-range`](https://developer.mozilla.org/es/docs/Web/CSS/@font-face/unicode-range) es una excelente propiedad de CSS para que el navegador sepa específicamente qué puntos de código le gustaría usar la página en el archivo de fuente. Si la declaración `@font-face` tiene un `unicode-range`, el contenido de la página debe coincidir con uno de los puntos de código en el rango antes de que se solicite la fuente. Es algo muy bueno.
+[`unicode-range`](https://developer.mozilla.org/docs/Web/CSS/@font-face/unicode-range) es una excelente propiedad de CSS para que el navegador sepa específicamente qué puntos de código le gustaría usar la página en el archivo de fuente. Si la declaración `@font-face` tiene un `unicode-range`, el contenido de la página debe coincidir con uno de los puntos de código en el rango antes de que se solicite la fuente. Es algo muy bueno.
 
 Esta es otra métrica que espero que esté sesgada por el uso de Google Fonts, ya que Google Fonts usa `unicode-range` en la mayoría (si no en todos) de su CSS. Espero que esto sea menos común en la tierra de los usuarios, pero tal vez sea posible filtrar las solicitudes de Google Fonts en la próxima edición del Almanaque.
 
@@ -630,13 +630,13 @@ También debe tenerse en cuenta aquí que personas más inteligentes que yo (Bra
 )
 }}
 
-Históricamente, `font-stretch` ha sufrido de un soporte deficiente del navegador y no era una prpopiedad `@font-face` conocida. Lee mas sobre [`font-stretch` en MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/font-stretch). Pero el <a hreflang="en" href="https://caniuse.com/#feat=css-font-stretch">soporte de los navegadores</a> se ha ampliado.
+Históricamente, `font-stretch` ha sufrido de un soporte deficiente del navegador y no era una prpopiedad `@font-face` conocida. Lee mas sobre [`font-stretch` en MDN](https://developer.mozilla.org/docs/Web/CSS/font-stretch). Pero el <a hreflang="en" href="https://caniuse.com/#feat=css-font-stretch">soporte de los navegadores</a> se ha ampliado.
 
 Se ha sugerido que el uso de fuentes condensadas en ventanas gráficas más pequeñas permite ver más texto, pero este enfoque no se usa comúnmente. Dicho esto, que esta propiedad se use medio punto porcentual más en computadoras de escritorio que en dispositivos móviles es inesperado, y el 7% parece mucho más alto de lo que hubiera predicho.
 
 ## Las fuentes variables son el futuro
 
-[Las fuentes variables](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Fonts/Variable_Fonts_Guide) permite incluir varios tamaños y estilos de fuente en un archivo de fuente.
+[Las fuentes variables](https://developer.mozilla.org/docs/Web/CSS/CSS_Fonts/Variable_Fonts_Guide) permite incluir varios tamaños y estilos de fuente en un archivo de fuente.
 
 {{ figure_markup(
   caption="Porcentaje de páginas que incluyen una fuente variable.",

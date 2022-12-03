@@ -159,13 +159,13 @@ HTMLの `lang` 属性を設定することで、ページの翻訳が容易に�
   sql_file="../css/media_query_features.sql"
 ) }}
 
-[`prefers-reduced-motion`](https://developer.mozilla.org/ja/docs/Web/CSS/@media/prefers-reduced-motion) は、ウェブ制作者がウェブページ上のアニメーションやその他の動きのあるソースを通常はコンテンツを削除したり、置き換えたりして、より静的な体験へ置き換えるために使用します。 これは、画面上の速い動きによって注意力が散漫になったり、その他の誘因を受けたりするさまざまな人々を助けることができます。32%のウェブサイトが `prefers-reduced-motion` メディアクエリを使用していることがわかりました。
+[`prefers-reduced-motion`](https://developer.mozilla.org/docs/Web/CSS/@media/prefers-reduced-motion) は、ウェブ制作者がウェブページ上のアニメーションやその他の動きのあるソースを通常はコンテンツを削除したり、置き換えたりして、より静的な体験へ置き換えるために使用します。 これは、画面上の速い動きによって注意力が散漫になったり、その他の誘因を受けたりするさまざまな人々を助けることができます。32%のウェブサイトが `prefers-reduced-motion` メディアクエリを使用していることがわかりました。
 
 `prefers-reduced-transparency` は、エンドユーザーがオペレーティングシステムに半透明や透明効果を最小化または除去するように依頼したことを示します。このアフォーダンスは、エンドユーザーが読解を助けるため、あるいは視覚障害のあるユーザーに悪影響を与える可能性のある一般的な「ハロー効果」を避けるためオンにされるかもしれません。この比較的新しいメディアクエリの使用に関するデータはありません。
 
-[`prefers-contrast`](https://developer.mozilla.org/ja/docs/Web/CSS/@media/prefers-contrast) (`high` または `low`) は、エンドユーザーが [ハイコントラストかローコントラスト](#カラーコントラスト) のコントラストテーマを好むことを示唆します。読解力や眼精疲労に効果が期待できます。この比較的新しいメディアクエリの使用に関するデータはありませんが、25%のウェブサイトが[`ms-high-contrast`](https://developer.mozilla.org/ja/docs/Web/CSS/@media/-ms-high-contrast)を使用しており、Windows特有のコントラスト優先の処理方法であることがわかっています。
+[`prefers-contrast`](https://developer.mozilla.org/docs/Web/CSS/@media/prefers-contrast) (`high` または `low`) は、エンドユーザーが [ハイコントラストかローコントラスト](#カラーコントラスト) のコントラストテーマを好むことを示唆します。読解力や眼精疲労に効果が期待できます。この比較的新しいメディアクエリの使用に関するデータはありませんが、25%のウェブサイトが[`ms-high-contrast`](https://developer.mozilla.org/docs/Web/CSS/@media/-ms-high-contrast)を使用しており、Windows特有のコントラスト優先の処理方法であることがわかっています。
 
-[`prefers-color-scheme`](https://developer.mozilla.org/ja/docs/Web/CSS/@media/prefers-color-scheme) (`light` または `dark`) は、ユーザーが暗い背景の体験に明るい色を要求したり、その逆を行うことができるようにします。User Preference Media Queriesの中でもっとも早く導入されました。この機能は通称「ダークモード」対応と呼ばれ、2019年に<a hreflang="en" href="https://en.wikipedia.org/wiki/Light-on-dark_color_scheme#History">AppleがiOS 13とiPadOSで標準化</a>したことにより一躍有名になりましたが、それ以前からアクセシビリティ機能としては一般的な機能となっていました。
+[`prefers-color-scheme`](https://developer.mozilla.org/docs/Web/CSS/@media/prefers-color-scheme) (`light` または `dark`) は、ユーザーが暗い背景の体験に明るい色を要求したり、その逆を行うことができるようにします。User Preference Media Queriesの中でもっとも早く導入されました。この機能は通称「ダークモード」対応と呼ばれ、2019年に<a hreflang="en" href="https://en.wikipedia.org/wiki/Light-on-dark_color_scheme#History">AppleがiOS 13とiPadOSで標準化</a>したことにより一躍有名になりましたが、それ以前からアクセシビリティ機能としては一般的な機能となっていました。
 
 ダークモードはアクセシビリティのアフォーダンスとして多くの開発者やデザイナーに認識されていますが、実際には特定のユーザーにとってアクセシビリティを低下させる可能性があることに注意することが重要です。<a hreflang="en" href="https://www.boia.org/blog/dark-mode-can-improve-text-readability-but-not-for-everyone">失読症や乱視の人の中には、暗い背景に明るいテキストは読みにくく</a>、ハロー効果を悪化させると感じる人がいるかもしれません。ここで重要なことは、ユーザーに最適なものを選んでもらうことです。7%のウェブサイトが `prefers-color-scheme` メディアクエリを使用していることがわかりました。
 
@@ -408,7 +408,7 @@ COVID-19の大流行の影響により、2021年には数百万人の子ども�
 
 ### `<label>` 要素
 
-HTMLフォームをアクセシブルにするもっとも重要な方法の1つは、`<label>`要素を使って、[フォームコントロール](https://developer.mozilla.org/ja/docs/Learn/Forms/Basic_native_form_controls)を説明する短い記述テキストをプログラムでリンクさせることです。これは通常、 `<label>` 要素の `for` 属性とフォームコントロール要素の `id` 属性をマッチングさせることで行われます。たとえば
+HTMLフォームをアクセシブルにするもっとも重要な方法の1つは、`<label>`要素を使って、[フォームコントロール](https://developer.mozilla.org/docs/Learn/Forms/Basic_native_form_controls)を説明する短い記述テキストをプログラムでリンクさせることです。これは通常、 `<label>` 要素の `for` 属性とフォームコントロール要素の `id` 属性をマッチングさせることで行われます。たとえば
 
 ```html
 <label for="first-name">First Name</label>
@@ -464,9 +464,9 @@ HTMLフォームをアクセシブルにするもっとも重要な方法の1つ
 
 ウェブ開発者がエンドユーザーから情報を収集する場合、どの情報がオプションで、どの情報が必要なのかを明確に示す必要があります。たとえば、エンドユーザーがオンラインで何かをダウンロード購入する場合、配送先の住所は任意です。しかし、支払い方法は、販売を完了するために必要である可能性が高いです。
 
-2014年にHTML5が`<input>`フィールドに[`required`属性](https://developer.mozilla.org/ja/docs/Web/HTML/Attributes/required)を導入する以前は、Web開発者はこの問題をアドホックにケースバイケースで解決することを余儀なくされました。一般的な慣例は、必須入力フィールドのラベルにアスタリスク（`*`）を付けることです。これは純粋に視覚的、様式的な慣習であり、アスタリスクの付いたラベルはいかなる種類のフィールド検証を強制するものではありません。さらに、スクリーン・リーダーは、この文字が明示的に支援技術から隠されていない限り、通常「星」とアナウンスするので、混乱することがあります。
+2014年にHTML5が`<input>`フィールドに[`required`属性](https://developer.mozilla.org/docs/Web/HTML/Attributes/required)を導入する以前は、Web開発者はこの問題をアドホックにケースバイケースで解決することを余儀なくされました。一般的な慣例は、必須入力フィールドのラベルにアスタリスク（`*`）を付けることです。これは純粋に視覚的、様式的な慣習であり、アスタリスクの付いたラベルはいかなる種類のフィールド検証を強制するものではありません。さらに、スクリーン・リーダーは、この文字が明示的に支援技術から隠されていない限り、通常「星」とアナウンスするので、混乱することがあります。
 
-フォームフィールドの必要な状態を支援技術に伝えるため使用できる属性は2つあります。`required` 属性は、ほとんどのスクリーンリーダーによって通知され、必須フィールドが適切に記入されていない場合、実際にはフォームの送信を阻止します。[`aria-required`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-required_attribute)属性は、支援技術に必須フィールドを示すために使用できますが、フォーム送信を妨害するような関連した動作は付属していません。
+フォームフィールドの必要な状態を支援技術に伝えるため使用できる属性は2つあります。`required` 属性は、ほとんどのスクリーンリーダーによって通知され、必須フィールドが適切に記入されていない場合、実際にはフォームの送信を阻止します。[`aria-required`](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-required_attribute)属性は、支援技術に必須フィールドを示すために使用できますが、フォーム送信を妨害するような関連した動作は付属していません。
 
 {{ figure_markup(
   image="form-required-controls.png",
@@ -544,7 +544,7 @@ HTML5仕様では、2014年に `<video>` と `<audio>` 要素が導入され、�
 
 #### 音声
 
-[`<track>`](https://developer.mozilla.org/ja/docs/Web/HTML/Element/track) は、`<audio>` と `<video>` 要素の音声と同等のテキストの方法を提供します。これにより、永久的または一時的な難聴の方でも、音声コンテンツを理解できます。
+[`<track>`](https://developer.mozilla.org/docs/Web/HTML/Element/track) は、`<audio>` と `<video>` 要素の音声と同等のテキストの方法を提供します。これにより、永久的または一時的な難聴の方でも、音声コンテンツを理解できます。
 
 {{ figure_markup(
   caption="デスクトップの `<audio>` 要素には、少なくとも1つの `<track>` 要素が付随しています。",
@@ -645,7 +645,7 @@ ARIAロールのもっとも一般的な誤用の1つは、 `<div>`や `<span>`�
 
 ### ARIAによる要素のラベリングと説明
 
-DOMと平行して、[アクセシビリティツリー](https://developer.mozilla.org/ja/docs/Glossary/Accessibility_tree)と呼ばれる同様のブラウザ構造があります。これには、アクセシブルな名前、説明、役割、状態など、HTML要素に関する情報が含まれています。この情報は、アクセシビリティAPIを通じて支援技術に伝達されます。
+DOMと平行して、[アクセシビリティツリー](https://developer.mozilla.org/docs/Glossary/Accessibility_tree)と呼ばれる同様のブラウザ構造があります。これには、アクセシブルな名前、説明、役割、状態など、HTML要素に関する情報が含まれています。この情報は、アクセシビリティAPIを通じて支援技術に伝達されます。
 
 アクセシビリティツリーには、コントロール、ウィジェット、グループ、ランドマークに対して、アクセシブルネーム（ある場合）を割り当て、支援技術によって告知またはターゲット化できるようにする計算システムがあります。
 
@@ -731,7 +731,7 @@ DOMと平行して、[アクセシビリティツリー](https://developer.mozil
 
 DOMに新しいコンテンツや更新されたコンテンツがある場合、スクリーン・リーダーに伝える必要があります。フラストレーションを避けるために、どの更新を伝える必要があるかについて、ある程度考慮する必要があります。たとえば、フォームの検証エラーは伝える必要がありますが、遅延ロードされた画像は伝える必要がないかもしれません。DOMの更新は、混乱を招かない方法で行われる必要があります。
 
-_ARIAライブリージョン_は、DOMの変更を監視し、スクリーンリーダーで更新されたコンテンツを知らせることができます。デスクトップページの21％（2020年の17％から増加）、モバイルページの20％（2020年の16％から増加）がライブリージョンを持っていることがわかりました。ライブリージョンバリアントや使い方についての詳しい情報は [ARIAライブリージョン](https://developer.mozilla.org/ja/docs/Web/Accessibility/ARIA/ARIA_Live_Regions) をチェックするか、この <a hreflang="en" href="https://dequeuniversity.com/library/aria/liveregion-playground">Dequeによるライブデモ</a>で遊んでみてください。
+_ARIAライブリージョン_は、DOMの変更を監視し、スクリーンリーダーで更新されたコンテンツを知らせることができます。デスクトップページの21％（2020年の17％から増加）、モバイルページの20％（2020年の16％から増加）がライブリージョンを持っていることがわかりました。ライブリージョンバリアントや使い方についての詳しい情報は [ARIAライブリージョン](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/ARIA_Live_Regions) をチェックするか、この <a hreflang="en" href="https://dequeuniversity.com/library/aria/liveregion-playground">Dequeによるライブデモ</a>で遊んでみてください。
 
 ## アクセシビリティオーバーレイ
 

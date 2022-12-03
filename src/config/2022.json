@@ -3,7 +3,7 @@
     {
       "is_live": true,
       "supported_languages": ["en","es","fr","hi","it","ja","nl","pt","ru","tr","uk","zh-CN","zh-TW"],
-      "ebook_languages": []
+      "ebook_languages": ["en"]
     }
   ],
   "outline": [
@@ -90,8 +90,7 @@
           "part": "II",
           "chapter_number": "12",
           "title": "Performance",
-          "slug": "performance",
-          "todo": true
+          "slug": "performance"
         },
         {
           "part": "II",
@@ -597,6 +596,14 @@
       "website": "http://h3manth.com",
       "twitter": "gnumanth"
     },
+    "harendra":{
+      "name": "Haren Bhandari",
+      "teams":[
+        "analysts",
+        "authors"
+      ],
+      "github":"harendra"
+    },
     "housseindjirdeh": {
       "name": "Houssein Djirdeh",
       "teams": [
@@ -660,6 +667,14 @@
       ],
       "avatar_url": "29200198",
       "github": "JasmineDW"
+    },
+    "joeviggiano":{
+      "name": "Joe Viggiano",
+      "teams":[
+        "analysts",
+        "authors"
+      ],
+      "github":"joeviggiano"
     },
     "j9t": {
       "name": "Jens Oliver Meiert",
@@ -859,7 +874,7 @@
       ],
       "avatar_url": "5370850",
       "github": "mel-ada",
-      "website": "https://www.linkedin.com/in/morelmelissa",
+      "linkedin": "mel-ada",
       "twitter": "mel_melificent"
     },
     "MichaelLewittes": {
@@ -955,6 +970,15 @@
       "website": "https://pankajparkar.dev",
       "twitter": "pankajparkar"
     },
+    "pmeenan": {
+      "name": "Patrick Meenan",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "444165",
+      "github": "pmeenan",
+      "twitter": "patmeenan"
+    },
     "patrickstox": {
       "name": "Patrick Stox",
       "teams": [
@@ -984,6 +1008,16 @@
       "github": "foolip",
       "website": "https://foolip.org/"
     },
+    "decrecementofeliz": {
+      "name": "Pilar Mera",
+      "teams": [
+        "translators"
+      ],
+      "avatar_url": "1857745",
+      "github": "decrecementofeliz",
+      "twitter": "DecreceFeliz",
+      "website": "http://pi-comunicacion.com"
+    },
     "25prathamesh": {
       "name": "Prathamesh Rasam",
       "teams": [
@@ -992,7 +1026,7 @@
       ],
       "avatar_url": "10120153",
       "github": "25prathamesh",
-      "website": "https://www.linkedin.com/in/prathameshrasam"
+      "linkedin": "prathameshrasam"
     },
     "rachelandrew": {
       "name": "Rachel Andrew",
@@ -1010,7 +1044,7 @@
         "analysts",
         "editors",
         "leads",
-        "reviewers"
+        "authors"
       ],
       "avatar_url": "1120896",
       "github": "rviscomi",
@@ -1211,6 +1245,17 @@
       "avatar_url": "10332876",
       "github": "vikvanderlinden"
     },
+    "Xav83":{
+      "name": "Xavier Jouvenot",
+      "teams":[
+        "translators"
+      ],
+      "avatar_url": "6787157",
+      "website": "https://10xlearner.com/",
+      "github": "Xav83",
+      "linkedin": "xavier-jouvenot-98787794",
+      "twitter": "10xLearner"
+    },
     "ydimova": {
       "name": "Yana Dimova",
       "teams": [
@@ -1229,28 +1274,27 @@
       "github": "yoavweiss",
       "twitter": "yoavweiss"
     },
-    "harendra":{
-      "name": "Haren Bhandari",
-      "teams":[
-        "analysts",
-        "authors"
-      ],
-      "github":"harendra"
-    },
-    "joeviggiano":{
-      "name": "Joe Viggiano",
-      "teams":[
-        "analysts",
-        "authors"
-      ],
-      "github":"joeviggiano"
-    },
     "ytkoka":{
       "name": "Yutaka Oka",
       "teams":[
         "reviewers"
       ],
-      "github":"ytkoka"
+      "github":"yokoka"
+    },
+    "Levix":{
+      "name": "Zhiwei Li",
+      "teams":[
+        "translators"
+      ],
+      "avatar_url": "65117011",
+      "github":"Levix"
+    },
+    "luckybai": {
+        "name": "Zongchao Bai",
+        "teams": [
+          "translators"
+        ],
+        "github": "luckybai"
     }
   }
 }

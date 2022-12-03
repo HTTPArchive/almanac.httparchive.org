@@ -10,8 +10,8 @@ FROM (
   FROM
     `httparchive.almanac.requests`
   WHERE
-    date = '2022-06-01'
-    AND type = 'font' AND
+    date = '2022-06-01' AND
+    type = 'font' AND
     REGEXP_CONTAINS(JSON_EXTRACT(payload,
         '$._font_details.color.formats'), '(?i)(sbix|CBDT|SVG|COLRv0|COLRv1)'))
 JOIN (

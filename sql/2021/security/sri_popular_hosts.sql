@@ -6,7 +6,7 @@ WITH totals AS (
     COUNT(0) AS total_sri_scripts
   FROM
     `httparchive.pages.2021_07_01_*`,
-    UNNEST( JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._security'), '$.sri-integrity')) AS sri
+    UNNEST(JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._security'), '$.sri-integrity')) AS sri
   WHERE
     sri IS NOT NULL AND
     JSON_EXTRACT_SCALAR(sri, '$.tagname') = 'script'

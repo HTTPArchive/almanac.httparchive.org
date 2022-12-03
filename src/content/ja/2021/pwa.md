@@ -43,7 +43,7 @@ featured_stat_label_3: サービスワーカーがいるモバイルサイトの
 
 ## サービスワーカー
 
-[サービスワーカー](https://developer.mozilla.org/ja/docs/Web/API/Service_Worker_API)（2014年12月導入）は、PWAの中核をなすコンポーネントの1つです。ネットワークプロキシとして機能し、オフライン、プッシュ通知、バックグラウンド処理など、「アプリらしい」体験に特徴的な機能を可能にします。
+[サービスワーカー](https://developer.mozilla.org/docs/Web/API/Service_Worker_API)（2014年12月導入）は、PWAの中核をなすコンポーネントの1つです。ネットワークプロキシとして機能し、オフライン、プッシュ通知、バックグラウンド処理など、「アプリらしい」体験に特徴的な機能を可能にします。
 
 サービスワーカーが広く採用されるには時間がかかりましたが、現在では <a hreflang="en" href="https://caniuse.com/serviceworkers">ほとんどの主要なブラウザ</a>でサポートされています。しかし、これはすべてのサービスワーカー機能がブラウザ間で動作することを意味するものではありません。たとえば、ネットワーク プロキシなどの中核的な機能のほとんどは利用可能ですが、`Push` などのAPIは<a hreflang="en" href="https://caniuse.com/push-api"> WebKitではまだ利用できません</a>。
 
@@ -63,7 +63,7 @@ featured_stat_label_3: サービスワーカーがいるモバイルサイトの
 
 サービスワーカーが使われているかどうかを測定するのは、案外簡単ではありません。たとえば、Lighthouseは1.5% を検出しますが、この定義には  サービス ワーカーの使用だけでなく、<a hreflang="en" href="https://web.dev/service-worker">いくつかの追加チェック</a>が加えられているので下限と見なすことができます。<a hreflang="en" href="https://httparchive.org/reports/progressive-web-apps#swControlledPages">Chrome自体は、サービス ワーカーを使用しているサイトの割合は1.22%です</a>。これは、私たちが把握できていない理由でLighthouseよりも奇妙なほど少なくなっています。
 
-今年のPWA編では、<a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/blob/master/custom_metrics/pwa.js">新しい測定基準</a>を作成し、測定技術を更新しました。たとえば、[サービスワーカー登録](https://developer.mozilla.org/ja/docs/Web/API/ServiceWorkerRegistration)の呼び出しがあるか、サービスワーカー固有のメソッド、ライブラリ、イベントを使用しているかなど、いくつかのサービスワーカーの特徴をチェックするヒューリスティックを現在使用しています。
+今年のPWA編では、<a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/blob/master/custom_metrics/pwa.js">新しい測定基準</a>を作成し、測定技術を更新しました。たとえば、[サービスワーカー登録](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration)の呼び出しがあるか、サービスワーカー固有のメソッド、ライブラリ、イベントを使用しているかなど、いくつかのサービスワーカーの特徴をチェックするヒューリスティックを現在使用しています。
 
 収集したデータから、デスクトップサイトの約3.05%、モバイルサイトの約3.22%がサービスワーカー機能を利用していることがわかり、[昨年の章](../2020/pwa#サービスワーカーの利用状況)で計測した値（デスクトップ0.88%、モバイル0.87%）よりサービスワーカーの利用率が高いかもしれないことがわかります。
 
@@ -93,11 +93,11 @@ featured_stat_label_3: サービスワーカーがいるモバイルサイトの
 
 ### サービスワーカーの機能
 
-このセクションでは、もっとも一般的なPWAタスク（オフライン、プッシュ通知、バックグラウンド処理など）に対するさまざまなサービスワーカー機能（[イベント](https://developer.mozilla.org/ja/docs/Web/API/ServiceWorkerGlobalScope#event)、[プロパティ](https://developer.mozilla.org/ja/docs/Web/API/ServiceWorkerGlobalScope#properties)、[メソッド](https://developer.mozilla.org/ja/docs/Web/API/ServiceWorkerGlobalScope#methods)）の採用について分析します。
+このセクションでは、もっとも一般的なPWAタスク（オフライン、プッシュ通知、バックグラウンド処理など）に対するさまざまなサービスワーカー機能（[イベント](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope#event)、[プロパティ](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope#properties)、[メソッド](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope#methods)）の採用について分析します。
 
 #### サービスワーカーのイベント
 
-[ServiceWorkerGlobalScope](https://developer.mozilla.org/ja/docs/Web/API/ServiceWorkerGlobalScope) インターフェイスは、サービスワーカーのグローバルな実行コンテキストを表し、異なる [events](https://developer.mozilla.org/ja/docs/Web/API/ServiceWorkerGlobalScope#event) によって管理されます。イベントリスナーやサービスワーカーのプロパティを介して、2つの方法でそれらをリッスンできます。
+[ServiceWorkerGlobalScope](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope) インターフェイスは、サービスワーカーのグローバルな実行コンテキストを表し、異なる [events](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope#event) によって管理されます。イベントリスナーやサービスワーカーのプロパティを介して、2つの方法でそれらをリッスンできます。
 
 たとえば、サービスワーカーで `install` イベントをリスニングする方法を2つ紹介します。
 
@@ -148,7 +148,7 @@ this.oninstall = function(event) {
 <!-- markdownlint-disable-next-line MD051 -->
 [図16.4](#fig-4)の最後のイベントグループは、サービスワーカーの特定のタスクをバックグラウンドで実行できます。たとえば、データの同期や接続に失敗したときのタスクの再試行などです。<a hreflang="en" href="https://developers.google.com/web/updates/2015/12/background-sync">バックグラウンド同期</a>（`sync` イベントリスナーを介して）は、Webアプリがタスクをサービスワーカーに委任し、失敗したり接続がない場合に自動的に再試行できるようにします（その場合サービスワーカーは、接続が回復するのを待ち自動的に再試行する）。<a hreflang="en" href="https://web.dev/periodic-background-sync/">周期的なバックグラウンド同期</a>（`periodicSync` 経由）は、サービスワーカーのタスクを定期的に実行させます（たとえば、毎朝トップニュースを取得してキャッシュします）。<a hreflang="en" href="https://developers.google.com/web/updates/2018/12/background-fetch">バックグランドフェッチ</a> のような他のAPIは、その使用率がまだかなり低いため、グラフには表示されていません。
 
-このように、バックグラウンド同期技術は、他の技術に比べてまだ広く採用されていません。これは、バックグラウンド同期のユースケースが少ないことと、APIがまだすべてのブラウザで利用可能でないことが一因です。また、[Periodic Background Sync](https://developer.mozilla.org/ja/docs/Web/API/Web_Periodic_Background_Synchronization_API)を利用するにはPWAをインストールする必要があるため、[「ホーム画面に追加」](https://developer.mozilla.org/ja/docs/Web/Progressive_web_apps/Add_to_home_screen)機能を提供しないサイトでは利用することができません。
+このように、バックグラウンド同期技術は、他の技術に比べてまだ広く採用されていません。これは、バックグラウンド同期のユースケースが少ないことと、APIがまだすべてのブラウザで利用可能でないことが一因です。また、[Periodic Background Sync](https://developer.mozilla.org/docs/Web/API/Web_Periodic_Background_Synchronization_API)を利用するにはPWAをインストールする必要があるため、[「ホーム画面に追加」](https://developer.mozilla.org/docs/Web/Progressive_web_apps/Add_to_home_screen)機能を提供しないサイトでは利用することができません。
 
 その1つがオフライン分析（<a hreflang="en" href="https://developers.google.com/web/tools/workbox/modules/workbox-google-analytics">Workbox Analyticsはバックグラウンド同期を使用しています</a>）、または接続性の欠如による失敗したクエリの再試行（<a hreflang="en" href="https://web.dev/google-search-sw/">某検索エンジン</a>）などです。
 
@@ -163,7 +163,7 @@ this.oninstall = function(event) {
 - `ServiceWorkerGlobalScope.skipWaiting()`
 - `Clients.claim()`
 
-[`ServiceWorkerGlobalScope.skipWaiting()`](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope/skipWaiting) は通常 `install` イベントの最初に呼ばれ、新しくインストールされたサービスワーカーが、他にアクティブなサービスワーカーがあったとしても、すぐに `active` 状態へ移行できるようにするものです。我々の分析では、デスクトップPWAの60.47% とモバイルPWAの59.60% で使用されていることがわかりました。
+[`ServiceWorkerGlobalScope.skipWaiting()`](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/skipWaiting) は通常 `install` イベントの最初に呼ばれ、新しくインストールされたサービスワーカーが、他にアクティブなサービスワーカーがあったとしても、すぐに `active` 状態へ移行できるようにするものです。我々の分析では、デスクトップPWAの60.47% とモバイルPWAの59.60% で使用されていることがわかりました。
 
 {{ figure_markup(
   caption="サービスワーカーが`skipWaiting()`を呼び出すモバイルサイトの割合",
@@ -175,7 +175,7 @@ this.oninstall = function(event) {
 )
 }}
 
-[`Clients.claim()`](https://developer.mozilla.org/en-US/docs/Web/API/Clients/claim) は `skipWaiting()` と組み合わせてよく使われ、アクティブなサービスワーカーがその範囲内のすべてのクライアントの「コントロールを主張」できるようにします。デスクトップでは48.98％、モバイルでは47.14％のページで表示されます。
+[`Clients.claim()`](https://developer.mozilla.org/docs/Web/API/Clients/claim) は `skipWaiting()` と組み合わせてよく使われ、アクティブなサービスワーカーがその範囲内のすべてのクライアントの「コントロールを主張」できるようにします。デスクトップでは48.98％、モバイルでは47.14％のページで表示されます。
 
 {{ figure_markup(
   caption="サービスワーカーが `clients.claim()` を呼び出すモバイルサイトの割合",
@@ -191,7 +191,7 @@ this.oninstall = function(event) {
 開発者は、重要なアップデートを即座に実行するため、この手法が有効であると考え、広く採用されているのです。
 
 キャッシュ処理は、サービスワーカーで頻繁に使用され、オフラインなどの機能を有効にし、パフォーマンスの向上に役立つため、PWA体験の中核をなしています。
-[`ServiceWorkerGlobalScope.caches`](https://developer.mozilla.org/ja/docs/web/api/caches) プロパティは、異なる [キャッシュ](https://developer.mozilla.org/ja/docs/Web/API/Cache) にアクセスできるサービスワーカーへ関連付けられた [キャッシュストレージオブジェクト](https://developer.mozilla.org/ja/docs/Web/API/CacheStorage) を返すものです。サービスワーカーを使用しているデスクトップでは57.41％、モバイルでは57.88％のサイトで使用されていることがわかりました。
+[`ServiceWorkerGlobalScope.caches`](https://developer.mozilla.org/docs/web/api/caches) プロパティは、異なる [キャッシュ](https://developer.mozilla.org/docs/Web/API/Cache) にアクセスできるサービスワーカーへ関連付けられた [キャッシュストレージオブジェクト](https://developer.mozilla.org/docs/Web/API/CacheStorage) を返すものです。サービスワーカーを使用しているデスクトップでは57.41％、モバイルでは57.88％のサイトで使用されていることがわかりました。
 
 {{ figure_markup(
   caption="サービスワーカーを持つモバイルサイトのうち、サービスワーカーキャッシュを利用している割合",
@@ -205,7 +205,7 @@ this.oninstall = function(event) {
 
 キャッシュは信頼性とパフォーマンスの高いWebアプリケーションを可能にするため、その高い使用率は予想外ではありません。これは、開発者がPWAに取り組む主な理由の1つであることが多いのです。
 
-最後に、<a hreflang="en" href="https://developers.google.com/web/updates/2017/02/navigation-preload">ナビゲーションプリロード</a> を見てみましょう。これは、サービスワーカーの起動時間と並行してリクエストを行うことで、その状況下でリクエストを遅らせることがないようにするものです。[`NavigationPreloadManager`](https://developer.mozilla.org/ja/docs/Web/API/NavigationPreloadManager) インターフェイスは、この技術を実装するための一連のメソッドを提供します。私たちの分析によると、現在、サービスワーカーを使用しているデスクトップサイトの11.02%とモバイルサイトの9.78%でこの技術が使用されているとのことです。
+最後に、<a hreflang="en" href="https://developers.google.com/web/updates/2017/02/navigation-preload">ナビゲーションプリロード</a> を見てみましょう。これは、サービスワーカーの起動時間と並行してリクエストを行うことで、その状況下でリクエストを遅らせることがないようにするものです。[`NavigationPreloadManager`](https://developer.mozilla.org/docs/Web/API/NavigationPreloadManager) インターフェイスは、この技術を実装するための一連のメソッドを提供します。私たちの分析によると、現在、サービスワーカーを使用しているデスクトップサイトの11.02%とモバイルサイトの9.78%でこの技術が使用されているとのことです。
 
 {{ figure_markup(
   caption="ナビゲーションのプリロードを使用しているモバイルサイトの割合",
@@ -217,11 +217,11 @@ this.oninstall = function(event) {
 )
 }}
 
-ナビゲーションのプリロードは、<a hreflang="en" href="https://caniuse.com/?search=navigation%20preload%20manager">まだすべてのブラウザーで利用可能ではない</a>という事実にもかかわらず、適切なレベルで採用されていると言えます。多くの開発者が恩恵を受けることができる技術であり、[プログレッシブエンハンスメント](https://developer.mozilla.org/ja/docs/Glossary/Progressive_Enhancement)として実装することができるのです。
+ナビゲーションのプリロードは、<a hreflang="en" href="https://caniuse.com/?search=navigation%20preload%20manager">まだすべてのブラウザーで利用可能ではない</a>という事実にもかかわらず、適切なレベルで採用されていると言えます。多くの開発者が恩恵を受けることができる技術であり、[プログレッシブエンハンスメント](https://developer.mozilla.org/docs/Glossary/Progressive_Enhancement)として実装することができるのです。
 
 ## ウェブアプリマニフェスト
 
-[ウェブアプリマニフェスト](https://developer.mozilla.org/ja/docs/Web/Manifest)は、Webアプリケーションに関するメタデータを含むJSONファイルで、Webアプリのマニフェストを公開することが、ユーザーが端末にWebアプリをインストールする「ホーム画面に追加」機能を提供する前提条件の1つとなるため、PWAの主要コンポーネントの1つとなっています。その他の条件としては、HTTPSでサイトを提供すること、アイコンがあること、一部のブラウザ（ChromeやEdgeなど）ではサービスワーカーがあることなどが挙げられます。
+[ウェブアプリマニフェスト](https://developer.mozilla.org/docs/Web/Manifest)は、Webアプリケーションに関するメタデータを含むJSONファイルで、Webアプリのマニフェストを公開することが、ユーザーが端末にWebアプリをインストールする「ホーム画面に追加」機能を提供する前提条件の1つとなるため、PWAの主要コンポーネントの1つとなっています。その他の条件としては、HTTPSでサイトを提供すること、アイコンがあること、一部のブラウザ（ChromeやEdgeなど）ではサービスワーカーがあることなどが挙げられます。
 <a hreflang="ja" href="https://web.dev/i18n/ja/installable-manifest/#in-other-browsers">ブラウザによってインストールするための基準が異なる</a>ことを考慮してください。
 
 Web App Manifestsに関する使用統計情報をいくつか紹介します。サービスワーカーと一緒に可視化することで、「インストール可能な」Webアプリケーションの潜在的な割合について知ることができます。
@@ -316,7 +316,7 @@ PWA開発者の大多数がPWA体験をネイティブアプリケーション�
 
 ### マニフェストのトップカテゴリー
 
-昨年のPWA章では、<a hreflang="ja" href="../2020/pwa#トップマニフェストのカテゴリー">マニフェストカテゴリ</a> に関するセクションを設け、[マニフェストカテゴリ](https://developer.mozilla.org/ja/docs/Web/Manifest/categories) のプロパティに基づいて業界ごとのPWAのパーセンテージを示しました。
+昨年のPWA章では、<a hreflang="ja" href="../2020/pwa#トップマニフェストのカテゴリー">マニフェストカテゴリ</a> に関するセクションを設け、[マニフェストカテゴリ](https://developer.mozilla.org/docs/Web/Manifest/categories) のプロパティに基づいて業界ごとのPWAのパーセンテージを示しました。
 
 今年は、このプロパティの使用率が非常に低い（このプロパティが設定されているサイトは1％未満）ため、各カテゴリーのPWAの数を決定するために、このプロパティへ依存しないことにしました。
 
@@ -374,9 +374,9 @@ Lighthouseは、これらすべての監査の「合格率」に基づいて、<
 
 ## サービスワーカーライブラリ
 
-サービスワーカーは、ライブラリを使用して、一般的なタスクや機能、ベストプラクティスを実現できます（キャッシュ技術やプッシュ通知の実装など）。もっとも一般的なのは [importScripts()](https://developer.mozilla.org/ja/docs/Web/API/WorkerGlobalScope/importScripts)を使う方法で、これはワーカーにJavaScriptライブラリをインポートする方法です。他のケースでは、ビルドツールがビルド時にライブラリのコードをサービスワーカーに直接注入することもできます。
+サービスワーカーは、ライブラリを使用して、一般的なタスクや機能、ベストプラクティスを実現できます（キャッシュ技術やプッシュ通知の実装など）。もっとも一般的なのは [importScripts()](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/importScripts)を使う方法で、これはワーカーにJavaScriptライブラリをインポートする方法です。他のケースでは、ビルドツールがビルド時にライブラリのコードをサービスワーカーに直接注入することもできます。
 
-すべてのライブラリがワーカーのコンテキストで使用できるわけではないことを考慮に入れてください。Workerは[Window](https://developer.mozilla.org/ja/docs/Web/API/Window) 、したがって [Document](https://developer.mozilla.org/ja/docs/Web/API/Document) オブジェクトにアクセスできず、ブラウザAPIへのアクセスも制限されています。そのため、サービスワーカーライブラリは、このような文脈で使用されることをとくに想定して設計されています。
+すべてのライブラリがワーカーのコンテキストで使用できるわけではないことを考慮に入れてください。Workerは[Window](https://developer.mozilla.org/docs/Web/API/Window) 、したがって [Document](https://developer.mozilla.org/docs/Web/API/Document) オブジェクトにアクセスできず、ブラウザAPIへのアクセスも制限されています。そのため、サービスワーカーライブラリは、このような文脈で使用されることをとくに想定して設計されています。
 
 このセクションでは、さまざまなサービスワーカーライブラリの人気度を分析します。
 
@@ -397,7 +397,7 @@ Workboxは依然としてもっとも人気のあるライブラリで、サー�
 
 また、Workboxの前身である`sw_toolbox`は、<a hreflang="ja" href="../2020/pwa#人気のインポートスクリプト"> 昨年の使用率がデスクトップで13.92％、モバイルで12.84％</a>でしたが、今年はそれぞれ0.51％と0.36％に低下しているのも重要な点です。これは、`sw_toolbox`が<a hreflang="en" href="https://github.com/GoogleChromeLabs/sw-toolbox/pull/288">2019年に非推奨</a>となったことが一因であると考えられます。人気のあるフレームワークやビルドツールの中には、このパッケージを削除するのに時間がかかったものもあるかもしれないので、今年はより明確に採用数の減少が見て取れます。また2020年と比較して、サイトを増やすなどして測定方法が変わったため、この指標はさらに減少し、直接の前年比は難しくなっています。
 
-<p class="note">**備考:** [`importScripts()`](https://developer.mozilla.org/ja/docs/Web/API/WorkerGlobalScope/importScripts) は [`WorkerGlobalScope`](https://developer.mozilla.org/ja/docs/Web/API/WorkerGlobalScope) の API で、[Web Workers](https://developer.mozilla.org/ja/docs/Web/API/Web_Workers_API/Using_web_workers) など他のタイプの Worker コンテキストでも使用できることを考慮に入れておいてください。<a hreflang="en" href="https://www.google.com/recaptcha/about/">reCaptcha</a> は、例えば、reCaptcha JavaScript コードを取得する `importScripts()` コールを含むウェブワーカーを使用しているので、2番目に広く使われているライブラリとして表示されているようです。そのため、サービスワーカーのコンテキストで2番目に広く使われているライブラリとして、代わりに <a hreflang="en" href="https://firebase.google.com/docs/web/setup">Firebase</a> を考慮すべきです。
+<p class="note">**備考:** [`importScripts()`](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/importScripts) は [`WorkerGlobalScope`](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope) の API で、[Web Workers](https://developer.mozilla.org/docs/Web/API/Web_Workers_API/Using_web_workers) など他のタイプの Worker コンテキストでも使用できることを考慮に入れておいてください。<a hreflang="en" href="https://www.google.com/recaptcha/about/">reCaptcha</a> は、例えば、reCaptcha JavaScript コードを取得する `importScripts()` コールを含むウェブワーカーを使用しているので、2番目に広く使われているライブラリとして表示されているようです。そのため、サービスワーカーのコンテキストで2番目に広く使われているライブラリとして、代わりに <a hreflang="en" href="https://firebase.google.com/docs/web/setup">Firebase</a> を考慮すべきです。
 </p>
 
 ### Workboxの使用状況
@@ -482,7 +482,7 @@ Workboxライブラリは、特定の機能を含む <a hreflang="en" href="http
 
 ここでは、もっとも人気のある通知関連のAPIについて、使用状況をいくつか紹介します。
 
-ページは [Push API](https://developer.mozilla.org/ja/docs/Web/API/Push_API) の [`PushManager`](https://developer.mozilla.org/ja/docs/Web/API/PushManager) インターフェイス経由で通知を購読します。このインターフェイスは [`ServiceWorkerRegistration`](https://developer.mozilla.org/ja/docs/Web/API/ServiceWorkerRegistration) の `pushManager` プロパティでアクセスします。デスクトップ用PWAの44.14％、モバイル用PWAの45.09％で使用されています。
+ページは [Push API](https://developer.mozilla.org/docs/Web/API/Push_API) の [`PushManager`](https://developer.mozilla.org/docs/Web/API/PushManager) インターフェイス経由で通知を購読します。このインターフェイスは [`ServiceWorkerRegistration`](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration) の `pushManager` プロパティでアクセスします。デスクトップ用PWAの44.14％、モバイル用PWAの45.09％で使用されています。
 
 {{ figure_markup(
   caption="サービスワーカーを持つモバイルサイトのうち、`pushManager`プロパティの何らかのメソッドが使用された割合",
@@ -527,7 +527,7 @@ PWAの重要な点は、ユーザーがブラウザのURLバーへURLを入力�
 
 このインストール可能な体験を配布する方法は、以下の通りです。
 
-- [ホーム画面に追加](https://developer.mozilla.org/ja/docs/Web/Progressive_web_apps/Add_to_home_screen)機能により、ユーザーにPWAのインストールを促す。
+- [ホーム画面に追加](https://developer.mozilla.org/docs/Web/Progressive_web_apps/Add_to_home_screen)機能により、ユーザーにPWAのインストールを促す。
 - <a hreflang="en" href="https://developer.chrome.com/docs/android/trusted-web-activity/">Trusted Web Activity (TWA)</a>（現在、Google PlayやMicrosoft Storeなど、あらゆるAndroidアプリストアで利用可能）でパッケージ化し、PWAをApp Storeにアップロードする。
 
 次に、これらの技術に関連する統計データを紹介し、これらのトレンドの使用率と成長率を把握します。
@@ -538,7 +538,7 @@ PWAの重要な点は、ユーザーがブラウザのURLバーへURLを入力�
 
 ブラウザで提供されるインストール体験に加え、開発者は独自のカスタムインストールフローをアプリ内で直接提供できます。
 
-`Window` オブジェクトの[`onbeforeinstallprompt`](https://developer.mozilla.org/en-US/docs/Web/API/Window/onbeforeinstallprompt) プロパティを使用すると、ユーザーがWebアプリケーションをインストールするように促されようとするときに発生するイベントをドキュメントに取り込むことができます。開発者は、プロンプトを直接表示するか、あるいは、より適切と思われるときに表示するようにプロンプトを延期するかを決定できます。
+`Window` オブジェクトの[`onbeforeinstallprompt`](https://developer.mozilla.org/docs/Web/API/Window/onbeforeinstallprompt) プロパティを使用すると、ユーザーがWebアプリケーションをインストールするように促されようとするときに発生するイベントをドキュメントに取り込むことができます。開発者は、プロンプトを直接表示するか、あるいは、より適切と思われるときに表示するようにプロンプトを延期するかを決定できます。
 
 我々の分析によると、`beforeinstallprompt`は、サービスワーカーとマニフェストを持つデスクトップサイトの0.48%、モバイルサイトの0.63%で使用されていることが判明しました。
 

@@ -657,7 +657,7 @@ The obvious yet disappointing conclusion is the majority of ecommerce sites were
 
 ### Web push notifications
 
-Once a visitor gives their permission, the [_Push API_](https://developer.mozilla.org/en-US/docs/Web/API/Push_API) enables ecommerce sites to send push notifications even when the website is not open.
+Once a visitor gives their permission, the [_Push API_](https://developer.mozilla.org/docs/Web/API/Push_API) enables ecommerce sites to send push notifications even when the website is not open.
 
 We tried to look at the adoption of web push notifications by ecommerce sites using the Chrome User Experience report. As this is generated from real user data, we can also see the approval rates for push permission requests. Please refer to <a hreflang="en" href="https://developers.google.com/web/updates/2020/02/notification-permission-data-in-crux">this Google article</a> for more details on how this data is captured and what metrics are available.
 

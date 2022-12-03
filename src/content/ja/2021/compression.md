@@ -44,7 +44,7 @@ HTTP圧縮は、[HTML](./markup)、[CSS](./css)、[JavaScript](./javascript)、J
 
 ## HTTP圧縮のためのサーバー設定
 
-HTTPのコンテンツエンコーディングについては、HTTP規格で [Accept-Encoding](https://developer.mozilla.org/ja/docs/Web/HTTP/Headers/Accept-Encoding)リクエストヘッダーが定義されており、HTTPクライアントは、どのコンテンツエンコーディングを扱えるかをサーバーに通知できます。サーバーの応答には、応答本文のデータを変換するためにどのエンコーディングが選ばれたかを指定する [Content-Encoding](https://developer.mozilla.org/ja/docs/Web/HTTP/Headers/Content-Encoding) ヘッダーフィールドを含めることができます。
+HTTPのコンテンツエンコーディングについては、HTTP規格で [Accept-Encoding](https://developer.mozilla.org/docs/Web/HTTP/Headers/Accept-Encoding)リクエストヘッダーが定義されており、HTTPクライアントは、どのコンテンツエンコーディングを扱えるかをサーバーに通知できます。サーバーの応答には、応答本文のデータを変換するためにどのエンコーディングが選ばれたかを指定する [Content-Encoding](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Encoding) ヘッダーフィールドを含めることができます。
 
 実質的にすべてのテキスト圧縮は、2つのHTTPコンテンツエンコーディングのうちの1つによって行われます。<a hreflang="en" href="https://tools.ietf.org/html/rfc1952">Gzip</a>と<a hreflang="en" href="https://github.com/google/brotli">Brotli</a>です。BrotliとGzipの両方は、事実上すべてのブラウザでサポートされています。サーバー側では、nginxやApacheなど[もっとも普及しているサーバー](https://en.wikipedia.org/wiki/HTTP_compression#Servers_that_support_HTTP_compression)でBrotliやGzipを使用するように設定できます。この設定は、コンテンツが生成されるタイミングによって異なります。
 
@@ -188,7 +188,7 @@ Gzip圧縮は、圧縮レベル6を中心に、レベル9まで適用されま�
 
 ## サイトの圧縮率を分析する方法
 
-WebサイトのどのコンテンツがHTTP圧縮を使用しているかを確認するには、[Firefox Developer Tools](https://developer.mozilla.org/en-US/docs/Tools) または <a hreflang="en" href="https://developers.google.com/web/tools/chrome-devtools">Chrome DevTools</a> を使用することが可能です。開発者ツールで、「ネットワーク」タブを開き、サイトを再読み込みしてください。HTML、CSS、JavaScript、フォント、画像などのレスポンスのリストが表示されるはずです。どれが圧縮されているかを確認するには、その応答ヘッダーのコンテンツエンコーディングをチェックします。列を有効にすることで、すべてのレスポンスについて一度に簡単に確認できます。これを行うには、列のタイトルを右クリックし、メニューの［レスポンスヘッダー］に移動して［コンテンツエンコード］を有効にします。
+WebサイトのどのコンテンツがHTTP圧縮を使用しているかを確認するには、[Firefox Developer Tools](https://developer.mozilla.org/docs/Tools) または <a hreflang="en" href="https://developers.google.com/web/tools/chrome-devtools">Chrome DevTools</a> を使用することが可能です。開発者ツールで、「ネットワーク」タブを開き、サイトを再読み込みしてください。HTML、CSS、JavaScript、フォント、画像などのレスポンスのリストが表示されるはずです。どれが圧縮されているかを確認するには、その応答ヘッダーのコンテンツエンコーディングをチェックします。列を有効にすることで、すべてのレスポンスについて一度に簡単に確認できます。これを行うには、列のタイトルを右クリックし、メニューの［レスポンスヘッダー］に移動して［コンテンツエンコード］を有効にします。
 
 Gzipで圧縮された応答は "gzip "と表示され、Brotliで圧縮された応答は "br "と表示されます。この値が空白の場合、HTTP圧縮は行われません。画像の場合、これらのリソースはすでにそれ自体で圧縮されているため、これは正常です。
 

@@ -40,7 +40,7 @@ The latest version of HTTP is HTTP/3, which was recently <a hreflang="en" href="
 
 With various HTTP versions introduced over the years, we begin by describing the current state of HTTP version adoption. We measure the HTTP version usage by taking all resources in the 2022 Web Almanac dataset and identify which version of HTTP each resource was served on.
 
-However, with our setup, it is not trivial to accurately count resources delivered on HTTP/3, as clients have to discover HTTP/3 support, typically via [the `alt-svc` HTTP response header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Alt-Svc). By the time the client receives the `alt-svc` header however, it has already completed the protocol negotiation for HTTP/1.1 or HTTP/2. Only after this point can the client upgrade the protocol to HTTP/3 on subsequent requests or page loads. As such, our data never captures a full HTTP/3 page load.
+However, with our setup, it is not trivial to accurately count resources delivered on HTTP/3, as clients have to discover HTTP/3 support, typically via [the `alt-svc` HTTP response header](https://developer.mozilla.org/docs/Web/HTTP/Headers/Alt-Svc). By the time the client receives the `alt-svc` header however, it has already completed the protocol negotiation for HTTP/1.1 or HTTP/2. Only after this point can the client upgrade the protocol to HTTP/3 on subsequent requests or page loads. As such, our data never captures a full HTTP/3 page load.
 
 With the discovery of HTTP/3 being so delayed via the `alt-svc` HTTP header mechanism, our measurements may undercount resources that would have been delivered on HTTP/3 for normal browsing users. Thus, we group resources delivered on HTTP/2 and HTTP/3 together as HTTP/2+.
 
@@ -155,7 +155,7 @@ Given the challenges to using HTTP/2 Push, and it's deprecation from Chrome, dev
 
 #### Preload
 
-Developers can use Preload as one alternative to pre-emptively request a resource that will be used later in a page load. This is enabled by including[`<link rel="preload">`](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types/preload) in the `<head>` section of the HTML. For example:
+Developers can use Preload as one alternative to pre-emptively request a resource that will be used later in a page load. This is enabled by including[`<link rel="preload">`](https://developer.mozilla.org/docs/Web/HTML/Link_types/preload) in the `<head>` section of the HTML. For example:
 
 ```html
 <link rel="preload" href="/css/style.css" as="style" />

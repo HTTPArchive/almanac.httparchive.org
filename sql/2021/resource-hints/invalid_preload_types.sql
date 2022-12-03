@@ -5,7 +5,7 @@ CREATE TEMPORARY FUNCTION getInvalidTypes(almanac_string STRING)
 RETURNS ARRAY<STRUCT<type STRING, num_occurrences NUMERIC>>
 LANGUAGE js AS '''
 try {
-  // obtained from https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types/preload#what_types_of_content_can_be_preloaded
+  // obtained from https://developer.mozilla.org/docs/Web/HTML/Link_types/preload#what_types_of_content_can_be_preloaded
   var validResourceTypes = [
     "audio",
     "document",

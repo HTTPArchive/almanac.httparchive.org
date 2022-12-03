@@ -43,7 +43,7 @@ featured_stat_label_3: 有快速FID的站点
   - 4G
 - 用户地理位置
 
-用户体验按月量度，包括绘制、加载和交互性指标。我们要看的第一个度量是<a hreflang="en" href="https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#first_paint_and_first_contentful_paint">首次有内容的绘制</a> (FCP)。这个指标是用户等待在屏幕上显示出有用处的页面内容（例如图像或文本）所花费的时间。然后，我们来看一下加载指标[首包时间](https://developer.mozilla.org/zh-CN/docs/Glossary/%E7%AC%AC%E4%B8%80%E5%AD%97%E8%8A%82%E6%97%B6%E9%97%B4) (TTFB)。这是网页从用户导航到接收到响应的第一个字节所花费的时间的指标。最后，我们要看的最后一个真实用户指标是<a hreflang="en" href="https://developers.google.com/web/updates/2018/05/first-input-delay">首次输入延迟</a> (FID)。这是一个相对较新的度量标准，它表示的是用户体验的部分，而不是加载性能。它测量从用户第一次与页面UI交互到浏览器主线程准备好处理事件的时间。
+用户体验按月量度，包括绘制、加载和交互性指标。我们要看的第一个度量是<a hreflang="en" href="https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#first_paint_and_first_contentful_paint">首次有内容的绘制</a> (FCP)。这个指标是用户等待在屏幕上显示出有用处的页面内容（例如图像或文本）所花费的时间。然后，我们来看一下加载指标[首包时间](https://developer.mozilla.org/docs/Glossary/%E7%AC%AC%E4%B8%80%E5%AD%97%E8%8A%82%E6%97%B6%E9%97%B4) (TTFB)。这是网页从用户导航到接收到响应的第一个字节所花费的时间的指标。最后，我们要看的最后一个真实用户指标是<a hreflang="en" href="https://developers.google.com/web/updates/2018/05/first-input-delay">首次输入延迟</a> (FID)。这是一个相对较新的度量标准，它表示的是用户体验的部分，而不是加载性能。它测量从用户第一次与页面UI交互到浏览器主线程准备好处理事件的时间。
 
 因此，让我们深入研究看看可以找到哪些见解。
 
@@ -150,7 +150,7 @@ featured_stat_label_3: 有快速FID的站点
   )
 }}
 
-为了帮助解释TTFB及其影响因素，让我们借鉴一份[Navigation Timing API 规范](https://developer.mozilla.org/en-US/docs/Web/API/Navigation_timing_API)中的图表。在上面的图7.8中，TTFB是从`开始时间 startTime` 到 `响应时间 responseStart`，包括介于两者之间的所有内容：`卸载 unload`，`重定向 redirects`，`AppCache`，`DNS`，`SSL`，`TCP`，以及服务器处理请求的时间。在这些条件下，我们来看看这一指标用户的体验。
+为了帮助解释TTFB及其影响因素，让我们借鉴一份[Navigation Timing API 规范](https://developer.mozilla.org/docs/Web/API/Navigation_timing_API)中的图表。在上面的图7.8中，TTFB是从`开始时间 startTime` 到 `响应时间 responseStart`，包括介于两者之间的所有内容：`卸载 unload`，`重定向 redirects`，`AppCache`，`DNS`，`SSL`，`TCP`，以及服务器处理请求的时间。在这些条件下，我们来看看这一指标用户的体验。
 
 {{ figure_markup(
   image="fig9.png",

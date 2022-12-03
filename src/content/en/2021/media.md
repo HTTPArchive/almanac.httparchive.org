@@ -106,9 +106,9 @@ Many `<img>` elements don't actually represent contentful <a hreflang="en" href=
   <figcaption>{{ figure_link(caption="Single pixel image use.", sheets_gid="1851007461", sql_file="image_1x1.sql") }}</figcaption>
 </figure>
 
-These single pixel `<img>` elements are, put bluntly, hacks: they are being abused either [to do layout](https://en.wikipedia.org/wiki/Spacer_GIF) (which would be better done with CSS) or [to track users](https://en.wikipedia.org/wiki/Web_beacon) (which would be better-accomplished using the [Beacon API](https://developer.mozilla.org/en-US/docs/Web/API/Beacon_API)).
+These single pixel `<img>` elements are, put bluntly, hacks: they are being abused either [to do layout](https://en.wikipedia.org/wiki/Spacer_GIF) (which would be better done with CSS) or [to track users](https://en.wikipedia.org/wiki/Web_beacon) (which would be better-accomplished using the [Beacon API](https://developer.mozilla.org/docs/Web/API/Beacon_API)).
 
-We can establish a baseline breakdown of what jobs all of these single pixel `<img>`s are doing by looking at how many use [data URIs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URIs).
+We can establish a baseline breakdown of what jobs all of these single pixel `<img>`s are doing by looking at how many use [data URIs](https://developer.mozilla.org/docs/Web/HTTP/Basics_of_HTTP/Data_URIs).
 
 <figure>
   <table>
@@ -369,7 +369,7 @@ When you embed contentful images on web pages, you should make their content as 
 
 In 2013, a suite of features enabling adaptive image loading on responsive websites landed, too much fanfare. Eight years in, how are responsive image features being used?
 
-First, let us consider the [`srcset` attribute](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/srcset), which allows developers to supply multiple possible resources for the same `<img>`.
+First, let us consider the [`srcset` attribute](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/srcset), which allows developers to supply multiple possible resources for the same `<img>`.
 
 ##### `x` and `w` descriptor adoption
 
@@ -570,8 +570,8 @@ So: one in ten `sizes` attributes is being authored on the client by a JavaScrip
 
 The `<picture>` element serves a couple of use cases:
 
-1. Art direction, with the [`media` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture#the_media_attribute)
-2. Format-switching, based on MIME-type, via the [`type` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture#the_type_attribute)
+1. Art direction, with the [`media` attribute](https://developer.mozilla.org/docs/Web/HTML/Element/picture#the_media_attribute)
+2. Format-switching, based on MIME-type, via the [`type` attribute](https://developer.mozilla.org/docs/Web/HTML/Element/picture#the_type_attribute)
 
 {{ figure_markup(
   caption="The percentage of mobile pages which use `<picture>`.",
@@ -596,7 +596,7 @@ The `<picture>` element serves a couple of use cases:
 
 Art direction appears a bit more popular than format-switching, but both features appear underutilized when you consider their potential utility. As we've seen, very few pages are tailoring images' aspect ratios to fit mobile screens, and many more pages could deliver their imagery more efficiently using next-generation formats. These are exactly the problems that `<picture>` was invented to solve, and perhaps more than 5.9% of pages could be addressing them, using it.
 
-It's possible that format-switching with `<source type>` is only used on 2-3% of pages because format-switching can also be accomplished using [server-side content negotiation](https://developer.mozilla.org/en-US/docs/Web/HTTP/Content_negotiation). Unfortunately, server-side adaptation mechanisms are hard to detect in the crawled data, and we have not analyzed them here.
+It's possible that format-switching with `<source type>` is only used on 2-3% of pages because format-switching can also be accomplished using [server-side content negotiation](https://developer.mozilla.org/docs/Web/HTTP/Content_negotiation). Unfortunately, server-side adaptation mechanisms are hard to detect in the crawled data, and we have not analyzed them here.
 
 Notably, `<source type>` and `<source media>` are not mutually exclusive, and, put together, the usage percentages here do not add up to 100%. This suggests that at least 15% of `<picture>` elements do not leverage either of these attributes, making those `<picture>`s functionally equivalent to a `<span>`.
 
@@ -606,7 +606,7 @@ Once you've embedded an image on a page, you must lay it out amongst the rest of
 
 #### Intrinsic vs extrinsic sizing
 
-As [replaced elements](https://developer.mozilla.org/en-US/docs/Web/CSS/Replaced_element), images have a natural, ["intrinsic" size](https://developer.mozilla.org/en-US/docs/Glossary/Intrinsic_Size). This is the size that they will render at by default, if there are no CSS rules placing "extrinsic" layout constraints upon them.
+As [replaced elements](https://developer.mozilla.org/docs/Web/CSS/Replaced_element), images have a natural, ["intrinsic" size](https://developer.mozilla.org/docs/Glossary/Intrinsic_Size). This is the size that they will render at by default, if there are no CSS rules placing "extrinsic" layout constraints upon them.
 
 How many images are intrinsically vs extrinsically sized?
 
@@ -630,7 +630,7 @@ This brings us to the last web platform feature that we'd like to investigate: <
 
 By default, images left to their intrinsic dimensions take up no space until they load, and their intrinsic dimensions become known. At that point—poof—they pop into the page, causing a <a hreflang="en" href="https://developers.google.com/publisher-tag/guides/minimize-layout-shift">layout shift</a>. This was exactly the problem that the `height` and `width` attributes were invented to solve—<a hreflang="en" href="https://www.w3.org/TR/2018/SPSD-html32-20180315/#img">in 1996</a>.
 
-Unfortunately, `height` and `width` never played well with images that are assigned a variable extrinsic size in one dimension (e.g., `width: 100%;`), and left to fill out their intrinsic aspect ratio, in the other dimension. This is the dominant pattern in responsive design. So `width` and `height` fell out of favor within responsive contexts until 2019, when [a tweak to how `height` and `width` are used by browsers](https://developer.mozilla.org/en-US/docs/Web/Media/images/aspect_ratio_mapping#a_new_way_of_sizing_images_before_loading_completes) fixed this problem. Now, consistently setting `height` and `width` is one of the best things authors can do to reduce <a hreflang="en" href="https://web.dev/cls/">Cumulative Layout Shift</a>. How often are these attributes accomplishing this task?
+Unfortunately, `height` and `width` never played well with images that are assigned a variable extrinsic size in one dimension (e.g., `width: 100%;`), and left to fill out their intrinsic aspect ratio, in the other dimension. This is the dominant pattern in responsive design. So `width` and `height` fell out of favor within responsive contexts until 2019, when [a tweak to how `height` and `width` are used by browsers](https://developer.mozilla.org/docs/Web/Media/images/aspect_ratio_mapping#a_new_way_of_sizing_images_before_loading_completes) fixed this problem. Now, consistently setting `height` and `width` is one of the best things authors can do to reduce <a hreflang="en" href="https://web.dev/cls/">Cumulative Layout Shift</a>. How often are these attributes accomplishing this task?
 
 {{ figure_markup(
   caption="The percentage of `<img>`s on mobile that have both `height` and `width` attributes and are extrinsically sized in only one dimension.",
@@ -661,7 +661,7 @@ How many images are being hosted by the same origin that they're being embedded 
   )
 }}
 
-Cross-origin images are subject to significant [security restrictions](https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_enabled_image), and can sometimes incur <a hreflang="en" href="https://andydavies.me/blog/2019/03/22/improving-perceived-performance-with-a-link-rel-equals-preconnect-http-header/">performance costs</a>. On the other hand, moving static assets to a dedicated CDN is one of the most impactful things you can do to help [Time to First Byte](https://developer.mozilla.org/en-US/docs/Glossary/time_to_first_byte), and image CDNs provide powerful transformation and <a hreflang="en" href="https://web.dev/image-cdns/">optimization</a> features which can automate all sorts of best-practices. It would be fascinating to see how many of the 51% of cross-origin images are hosted on image CDNs and to compare their performance against the rest of the web's. Unfortunately, that was outside the scope of our analysis.
+Cross-origin images are subject to significant [security restrictions](https://developer.mozilla.org/docs/Web/HTML/CORS_enabled_image), and can sometimes incur <a hreflang="en" href="https://andydavies.me/blog/2019/03/22/improving-perceived-performance-with-a-link-rel-equals-preconnect-http-header/">performance costs</a>. On the other hand, moving static assets to a dedicated CDN is one of the most impactful things you can do to help [Time to First Byte](https://developer.mozilla.org/docs/Glossary/time_to_first_byte), and image CDNs provide powerful transformation and <a hreflang="en" href="https://web.dev/image-cdns/">optimization</a> features which can automate all sorts of best-practices. It would be fascinating to see how many of the 51% of cross-origin images are hosted on image CDNs and to compare their performance against the rest of the web's. Unfortunately, that was outside the scope of our analysis.
 
 And with that, it is time to turn our attention to...
 

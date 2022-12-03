@@ -233,7 +233,7 @@ Bien que les chiffres soient inquiétants pour la vitesse du web, la bonne nouve
 
 ### Données structurées
 
-Les données structurées permettent aux propriétaires de sites web d'ajouter des données sémantiques supplémentaires à leurs pages web, en ajoutant des extraits de code [JSON-LD](https://en.wikipedia.org/wiki/JSON-LD) ou des [microdonnées](https://developer.mozilla.org/fr/docs/web/HTML/Microdonn%C3%A9es), par exemple. Les moteurs de recherche analysent ces données pour mieux comprendre ces pages et utilisent parfois le balisage pour afficher des informations pertinentes supplémentaires dans les résultats de la recherche. Les types de données structurées les plus courants sont&nbsp;:
+Les données structurées permettent aux propriétaires de sites web d'ajouter des données sémantiques supplémentaires à leurs pages web, en ajoutant des extraits de code [JSON-LD](https://en.wikipedia.org/wiki/JSON-LD) ou des [microdonnées](https://developer.mozilla.org/docs/web/HTML/Microdonn%C3%A9es), par exemple. Les moteurs de recherche analysent ces données pour mieux comprendre ces pages et utilisent parfois le balisage pour afficher des informations pertinentes supplémentaires dans les résultats de la recherche. Les types de données structurées les plus courants sont&nbsp;:
 
 - <a hreflang="en" href="https://developers.google.com/search/docs/data-types/review-snippet">Review</a>
 - <a hreflang="en" href="https://developers.google.com/search/docs/data-types/product">Product</a>
@@ -417,7 +417,7 @@ Les applications monopages (SPA) construites avec des frameworks comme React et 
 
 Le nombre de SPA testés avait un nombre relativement faible de liens servis via des URL de hachage, avec 13,08 % des pages mobiles React utilisant des URL de hachage pour la navigation, 8,15 % des pages mobiles Vue.js les utilisant et 2,37 % des pages angulaires mobiles les utiliser. Ces résultats étaient également très similaires pour les pages de bureau. Cela est positif à voir du point de vue du référencement, compte tenu de l'impact que les URL de hachage peuvent avoir sur la découverte de contenu.
 
-Le nombre plus élevé d'URL de hachage dans les pages React est surprenant, en particulier contrairement au nombre plus faible d'URL de hachage trouvées sur les pages angulaires. Les deux frameworks favorisent l'adoption de packages de routage où [API historique](https://developer.mozilla.org/en-US/docs/web/API/History) est la valeur par défaut pour les liens, au lieu de s'appuyer sur des URL de hachage. Vue.js <a hreflang="en" href="https://github.com/vuejs/rfcs/pull/40">envisage de passer à l'utilisation de l'API Historique par défaut</a> ainsi que dans la version 3 de leur package `vue-router`.
+Le nombre plus élevé d'URL de hachage dans les pages React est surprenant, en particulier contrairement au nombre plus faible d'URL de hachage trouvées sur les pages angulaires. Les deux frameworks favorisent l'adoption de packages de routage où [API historique](https://developer.mozilla.org/docs/web/API/History) est la valeur par défaut pour les liens, au lieu de s'appuyer sur des URL de hachage. Vue.js <a hreflang="en" href="https://github.com/vuejs/rfcs/pull/40">envisage de passer à l'utilisation de l'API Historique par défaut</a> ainsi que dans la version 3 de leur package `vue-router`.
 
 ### AMP
 

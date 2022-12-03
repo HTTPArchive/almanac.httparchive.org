@@ -64,7 +64,7 @@ Het gebruik van een <a hreflang="en" href="https://accessibleweb.com/question-an
 
 Er zijn zeldzame gevallen waarin het uitschakelen van schalen acceptabel is, zoals wanneer de betreffende pagina een webgebaseerd spel is met aanraakbediening. Indien ingeschakeld in dit geval, zullen de telefoons van spelers elke keer dat de speler tweemaal op het spel tikt in- en uitzoomen, waardoor het ironisch genoeg ontoegankelijk wordt.
 
-Daarom krijgen ontwikkelaars de mogelijkheid om deze functie uit te schakelen door een van de volgende twee eigenschappen in de [meta viewport-tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag) in te stellen:
+Daarom krijgen ontwikkelaars de mogelijkheid om deze functie uit te schakelen door een van de volgende twee eigenschappen in de [meta viewport-tag](https://developer.mozilla.org/docs/Web/HTML/Viewport_meta_tag) in te stellen:
 
 1. `user-scalable` ingesteld op `0` of `no`
 
@@ -84,7 +84,7 @@ Helaas hebben ontwikkelaars dit zo vaak misbruikt dat bijna één op de drie sit
 
 Het web staat vol met wonderbaarlijke hoeveelheden inhoud. Er is echter een addertje onder het gras: er bestaan meer dan 1000 verschillende talen in de wereld en de inhoud die u zoekt, is mogelijk niet geschreven in een taal die u vloeiend beheerst. In de afgelopen jaren hebben we grote vooruitgang geboekt op het gebied van vertaaltechnologieën en u heeft er waarschijnlijk een op internet gebruikt (bijv. Google translate).
 
-Om deze functie te vergemakkelijken, moeten de vertaalmachines weten in welke taal uw pagina's zijn geschreven. Dit wordt gedaan met behulp van het [`lang` attribuut](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang). Zonder dit moeten computers raden in welke taal uw pagina is geschreven. Zoals u zich wellicht kunt voorstellen, leidt dit tot veel fouten, vooral wanneer pagina's meerdere talen gebruiken (uw paginanavigatie is bijvoorbeeld in het Engels, maar de inhoud van het bericht is in het Japans).
+Om deze functie te vergemakkelijken, moeten de vertaalmachines weten in welke taal uw pagina's zijn geschreven. Dit wordt gedaan met behulp van het [`lang` attribuut](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/lang). Zonder dit moeten computers raden in welke taal uw pagina is geschreven. Zoals u zich wellicht kunt voorstellen, leidt dit tot veel fouten, vooral wanneer pagina's meerdere talen gebruiken (uw paginanavigatie is bijvoorbeeld in het Engels, maar de inhoud van het bericht is in het Japans).
 
 Dit probleem is zelfs nog meer uitgesproken bij tekst-naar-spraak-ondersteunende technologieën zoals schermlezers, waar, als er geen taal is gespecificeerd, ze de neiging hebben om de tekst in de standaard gebruikerstaal te lezen.
 
@@ -94,7 +94,7 @@ Van de geanalyseerde pagina's specificeert 26,13% geen taal met het kenmerk `lan
 
 Sommige gebruikers, zoals mensen met cognitieve beperkingen, hebben moeite om zich gedurende lange tijd op dezelfde taak te concentreren. Deze gebruikers willen niet omgaan met pagina's met veel beweging en animaties, vooral als deze effecten puur cosmetisch zijn en geen verband houden met de taak die voorhanden is. Deze gebruikers hebben minimaal een manier nodig om alle afleidende animaties uit te schakelen.
 
-Helaas geven onze bevindingen aan dat oneindig herhalende animaties vrij gebruikelijk zijn op internet, waarbij 21,04% van de pagina's ze gebruikt via oneindige CSS-animaties of [`<marquee>`](https://developer.mozilla.org/nl/docs/Web/HTML/Element/marquee) en [`<blink>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blink) elementen.
+Helaas geven onze bevindingen aan dat oneindig herhalende animaties vrij gebruikelijk zijn op internet, waarbij 21,04% van de pagina's ze gebruikt via oneindige CSS-animaties of [`<marquee>`](https://developer.mozilla.org/docs/Web/HTML/Element/marquee) en [`<blink>`](https://developer.mozilla.org/docs/Web/HTML/Element/blink) elementen.
 
 Het is echter interessant om op te merken dat het grootste deel van dit probleem een paar populaire stylesheets van derden lijkt te zijn die standaard oneindig doorlopende CSS-animaties bevatten. We konden niet bepalen hoeveel pagina's deze animatiestijlen daadwerkelijk hebben gebruikt.
 
@@ -110,7 +110,7 @@ Hoewel alt-attributen al 25 jaar bestaan, levert 49,91% van de pagina's nog stee
 
 Net zoals afbeeldingen krachtige verhalenvertellers zijn, zo zijn ook audio en video die de aandacht trekken en ideeën tot uitdrukking brengen. Als audio- en video-inhoud niet is voorzien van ondertiteling, lopen gebruikers die deze inhoud niet kunnen horen grote delen van het internet mis. Een van de meest voorkomende dingen die we horen van gebruikers die doof of slechthorend zijn, is de noodzaak om bijschriften op te nemen voor alle audio- en video-inhoud.
 
-Van sites die [`<audio>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio) of [`<video>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video) -elementen gebruiken, levert slechts 0,54% ondertiteling (zoals gemeten door degenen die het [`<track>`](https://developer.mozilla.org/en-US/docs/Web/Guide/Audio_and_video_delivery/Adding_captions_and_subtitles_to_HTML5_video) element bevatten). Merk op dat sommige websites aangepaste oplossingen hebben voor het leveren van video- en audiobijschriften aan gebruikers. We hebben deze niet kunnen detecteren en daarom is het werkelijke percentage sites dat ondertiteling gebruikt iets hoger.
+Van sites die [`<audio>`](https://developer.mozilla.org/docs/Web/HTML/Element/audio) of [`<video>`](https://developer.mozilla.org/docs/Web/HTML/Element/video) -elementen gebruiken, levert slechts 0,54% ondertiteling (zoals gemeten door degenen die het [`<track>`](https://developer.mozilla.org/docs/Web/Guide/Audio_and_video_delivery/Adding_captions_and_subtitles_to_HTML5_video) element bevatten). Merk op dat sommige websites aangepaste oplossingen hebben voor het leveren van video- en audiobijschriften aan gebruikers. We hebben deze niet kunnen detecteren en daarom is het werkelijke percentage sites dat ondertiteling gebruikt iets hoger.
 
 ## Eenvoudige paginanavigatie
 
@@ -140,7 +140,7 @@ Met dat gezegd zijnde, hier zijn onze resultaten:
 
 ### Hoofdinhoudsgebied
 
-Een [Hoofdinhoudsgebied <i lang="en">`main`</i>](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Main_role) geeft aan schermlezers aan waar de hoofdinhoud van een webpagina begint, zodat gebruikers er direct naartoe kunnen springen. Zonder dit moeten gebruikers van schermlezers uw navigatie handmatig overslaan elke keer dat ze naar een nieuwe pagina op uw site gaan. Dit is natuurlijk nogal frustrerend.
+Een [Hoofdinhoudsgebied <i lang="en">`main`</i>](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/Main_role) geeft aan schermlezers aan waar de hoofdinhoud van een webpagina begint, zodat gebruikers er direct naartoe kunnen springen. Zonder dit moeten gebruikers van schermlezers uw navigatie handmatig overslaan elke keer dat ze naar een nieuwe pagina op uw site gaan. Dit is natuurlijk nogal frustrerend.
 
 We ontdekten dat slechts één op de vier pagina's (26,03%) een belangrijk Hoofdinhoudsgebied bevatte. En verrassend genoeg bevatte 8,06% van de pagina's ten onrechte meer dan één belangrijk Hoofdinhoudsgebied, waardoor deze gebruikers raden welk gebied de werkelijke hoofdinhoud bevat.
 
@@ -156,9 +156,9 @@ We ontdekten dat slechts één op de vier pagina's (26,03%) een belangrijk Hoofd
 
 Sinds HTML5 in 2008 werd uitgebracht en in 2014 de officiële standaard werd, zijn er veel HTML-elementen die computers en schermlezers helpen om onze pagina-indeling en -structuur te begrijpen.
 
-Elementen zoals [`<header>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header), [`<footer>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/footer), [`<navigation>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav) en [`<main>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/main) geven aan waar specifieke soorten inhoud zich bevinden en stellen gebruikers in staat snel door uw pagina te bladeren. Deze worden op grote schaal gebruikt op internet, waarvan de meeste op meer dan 50% van de pagina's worden gebruikt (`<main>` is de uitbijter).
+Elementen zoals [`<header>`](https://developer.mozilla.org/docs/Web/HTML/Element/header), [`<footer>`](https://developer.mozilla.org/docs/Web/HTML/Element/footer), [`<navigation>`](https://developer.mozilla.org/docs/Web/HTML/Element/nav) en [`<main>`](https://developer.mozilla.org/docs/Web/HTML/Element/main) geven aan waar specifieke soorten inhoud zich bevinden en stellen gebruikers in staat snel door uw pagina te bladeren. Deze worden op grote schaal gebruikt op internet, waarvan de meeste op meer dan 50% van de pagina's worden gebruikt (`<main>` is de uitbijter).
 
-Anderen zoals [`<article>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/article), [`<hr>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr), en [`<aside>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/aside) helpen lezers bij het begrijpen van de belangrijkste inhoud van een pagina. `<article>` zegt bijvoorbeeld waar het ene artikel eindigt en het andere begint. Deze elementen worden lang niet zo vaak gebruikt, met elk ongeveer 20% verbruik. Deze horen niet allemaal op elke webpagina, dus dit is niet per se een alarmerende statistiek.
+Anderen zoals [`<article>`](https://developer.mozilla.org/docs/Web/HTML/Element/article), [`<hr>`](https://developer.mozilla.org/docs/Web/HTML/Element/hr), en [`<aside>`](https://developer.mozilla.org/docs/Web/HTML/Element/aside) helpen lezers bij het begrijpen van de belangrijkste inhoud van een pagina. `<article>` zegt bijvoorbeeld waar het ene artikel eindigt en het andere begint. Deze elementen worden lang niet zo vaak gebruikt, met elk ongeveer 20% verbruik. Deze horen niet allemaal op elke webpagina, dus dit is niet per se een alarmerende statistiek.
 
 Al deze elementen zijn primair ontworpen voor toegankelijkheidsondersteuning en hebben geen visueel effect, wat betekent dat u bestaande elementen er veilig door kunt vervangen en geen onbedoelde gevolgen ondervindt.
 
@@ -203,13 +203,13 @@ Het is moeilijk om nauwkeurig te bepalen wat een vermijdingslink is bij het anal
 
 ### Snelkoppelingen
 
-Sneltoetsen ingesteld met de <a hreflang="en" href="https://www.w3.org/TR/wai-aria-1.1/#aria-keyshortcuts">`aria-keyshortcuts`</a> of [`accesskey`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey) -attributen kunnen op twee manieren worden gebruikt:
+Sneltoetsen ingesteld met de <a hreflang="en" href="https://www.w3.org/TR/wai-aria-1.1/#aria-keyshortcuts">`aria-keyshortcuts`</a> of [`accesskey`](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/accesskey) -attributen kunnen op twee manieren worden gebruikt:
 
 1. Een element op de pagina activeren, zoals een link of knop.
 
 2. Een bepaald element op de paginafocus geven. Bijvoorbeeld het verschuiven van de focus naar een bepaalde invoer op de pagina, zodat een gebruiker er vervolgens in kan typen.
 
-Adoptie van <a hreflang="en" href="https://www.w3.org/TR/wai-aria-1.1/#aria-keyshortcuts">`aria-keyshortcuts`</a> was bijna afwezig in onze steekproef, en werd alleen gebruikt op 159 sites van meer dan 4 miljoen geanalyseerd. Het [`accesskey`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey) attribuut werd vaker gebruikt en werd gevonden op 2,47% van de webpagina's (1,74% op mobiele). We zijn van mening dat het hogere gebruik van snelkoppelingen op desktops het gevolg is van het feit dat ontwikkelaars verwachten dat mobiele sites alleen toegankelijk zijn via een touchscreen en niet via een toetsenbord.
+Adoptie van <a hreflang="en" href="https://www.w3.org/TR/wai-aria-1.1/#aria-keyshortcuts">`aria-keyshortcuts`</a> was bijna afwezig in onze steekproef, en werd alleen gebruikt op 159 sites van meer dan 4 miljoen geanalyseerd. Het [`accesskey`](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/accesskey) attribuut werd vaker gebruikt en werd gevonden op 2,47% van de webpagina's (1,74% op mobiele). We zijn van mening dat het hogere gebruik van snelkoppelingen op desktops het gevolg is van het feit dat ontwikkelaars verwachten dat mobiele sites alleen toegankelijk zijn via een touchscreen en niet via een toetsenbord.
 
 Wat hier vooral verrassend is, is dat 15,56% van de mobiele en 13,03% van de desktopsites die sneltoetsen gebruiken, dezelfde snelkoppeling toewijzen aan meerdere verschillende elementen. Dit betekent dat browsers moeten raden welk element deze sneltoets moet bezitten.
 
@@ -221,13 +221,13 @@ Tabellen zijn een van de belangrijkste manieren waarop we grote hoeveelheden geg
 
 Afhankelijk van de manier waarop een bepaalde tabel is gestructureerd, maakt het gebruik van tabelkoppen het gemakkelijker om kolommen of rijen te lezen zonder de context te verliezen over naar welke gegevens die specifieke kolom of rij verwijst. Het moeten navigeren door een tabel zonder koptekstrijen of -kolommen is een ondermaatse ervaring voor een gebruiker van een schermlezer. Dit komt omdat het voor een gebruiker van een schermlezer moeilijk is om zijn plaats in een tabel zonder kopteksten bij te houden, vooral wanneer de tabel vrij groot is.
 
-Om tabelkoppen te markeren, gebruikt u gewoon de tag [`<th>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/th) (in plaats van [`<td>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/td)), of een van de ARIA [`columnheader`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Table_Role) of [`rowheader`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Table_Role) rollen. Slechts 24,5% van de pagina's met tabellen bleken hun tabellen met een van deze methoden te markeren. De driekwart van de pagina's die ervoor kiezen om tabellen zonder kopteksten op te nemen, vormen dus serieuze uitdagingen voor gebruikers van schermlezers.
+Om tabelkoppen te markeren, gebruikt u gewoon de tag [`<th>`](https://developer.mozilla.org/docs/Web/HTML/Element/th) (in plaats van [`<td>`](https://developer.mozilla.org/docs/Web/HTML/Element/td)), of een van de ARIA [`columnheader`](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/Table_Role) of [`rowheader`](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/Table_Role) rollen. Slechts 24,5% van de pagina's met tabellen bleken hun tabellen met een van deze methoden te markeren. De driekwart van de pagina's die ervoor kiezen om tabellen zonder kopteksten op te nemen, vormen dus serieuze uitdagingen voor gebruikers van schermlezers.
 
 Het gebruik van `<th>` en `<td>` was verreweg de meest gebruikte methode voor het markeren van tabelkoppen. Het gebruik van de rollen `columnheader` en `rowheader` was bijna onbestaande met slechts 677 sites die ze gebruikten (0,058%).
 
 #### Bijschriften
 
-Tabelbijschriften via het element [`<caption>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/caption) zijn nuttig om meer context te bieden aan alle soorten lezers. Een bijschrift kan een lezer voorbereiden om de informatie op te nemen die uw tabel deelt, en het kan vooral handig zijn voor mensen die snel afgeleid of onderbroken worden. Ze zijn ook handig voor mensen die hun plaats in een grote tabel kunnen verliezen, zoals een gebruiker van een schermlezer of iemand met een leer- of verstandelijke beperking. Hoe gemakkelijker u het voor lezers kunt maken om te begrijpen wat ze analyseren, hoe beter.
+Tabelbijschriften via het element [`<caption>`](https://developer.mozilla.org/docs/Web/HTML/Element/caption) zijn nuttig om meer context te bieden aan alle soorten lezers. Een bijschrift kan een lezer voorbereiden om de informatie op te nemen die uw tabel deelt, en het kan vooral handig zijn voor mensen die snel afgeleid of onderbroken worden. Ze zijn ook handig voor mensen die hun plaats in een grote tabel kunnen verliezen, zoals een gebruiker van een schermlezer of iemand met een leer- of verstandelijke beperking. Hoe gemakkelijker u het voor lezers kunt maken om te begrijpen wat ze analyseren, hoe beter.
 
 Desondanks bevat slechts 4,32% van de pagina's met tabellen bijschriften.
 
@@ -273,7 +273,7 @@ Een ander resultaat dat naar deze conclusie wijst, is het feit dat meer "geavanc
 
 ##### Veel sites proberen dialogen toegankelijk te maken
 
-De relatieve populariteit van de [`dialog` rol](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/dialog_role) valt op omdat het erg moeilijk is om dialogen toegankelijk te maken voor gebruikers van schermlezers. Het is daarom spannend om te zien dat ongeveer 8% van de geanalyseerde pagina's de uitdaging aangaat. Nogmaals, we vermoeden dat dit te wijten kan zijn aan het gebruik van sommige gebruikersomgeving-frameworks.
+De relatieve populariteit van de [`dialog` rol](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/dialog_role) valt op omdat het erg moeilijk is om dialogen toegankelijk te maken voor gebruikers van schermlezers. Het is daarom spannend om te zien dat ongeveer 8% van de geanalyseerde pagina's de uitdaging aangaat. Nogmaals, we vermoeden dat dit te wijten kan zijn aan het gebruik van sommige gebruikersomgeving-frameworks.
 
 #### Labels op interactieve elementen
 
@@ -285,11 +285,11 @@ Knoppen en links zijn bijna altijd in de tabvolgorde opgenomen en hebben dus een
 
 ### Toegankelijkheid van formulierbesturingselementen
 
-Formulieren invullen is een taak die velen van ons elke dag doen. Of we nu winkelen, reizen boeken of solliciteren, formulieren zijn de belangrijkste manier waarop gebruikers informatie delen met webpagina's. Daarom is het ongelooflijk belangrijk dat uw formulieren toegankelijk zijn. De eenvoudigste manier om dit te bereiken is door labels te verstrekken (via het [`<label>` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label), [`aria -label`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-label_attribute) of [`aria-labelledby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute)) voor elk van uw invoer. Helaas biedt slechts 22,33% van de pagina's labels voor al hun formulierinvoer, wat betekent dat 4 van de 5 pagina's formulieren bevatten die erg moeilijk in te vullen kunnen zijn.
+Formulieren invullen is een taak die velen van ons elke dag doen. Of we nu winkelen, reizen boeken of solliciteren, formulieren zijn de belangrijkste manier waarop gebruikers informatie delen met webpagina's. Daarom is het ongelooflijk belangrijk dat uw formulieren toegankelijk zijn. De eenvoudigste manier om dit te bereiken is door labels te verstrekken (via het [`<label>` element](https://developer.mozilla.org/docs/Web/HTML/Element/label), [`aria -label`](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-label_attribute) of [`aria-labelledby`](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute)) voor elk van uw invoer. Helaas biedt slechts 22,33% van de pagina's labels voor al hun formulierinvoer, wat betekent dat 4 van de 5 pagina's formulieren bevatten die erg moeilijk in te vullen kunnen zijn.
 
 #### Indicatoren van verplichte en ongeldige velden
 
-Als we een veld tegenkomen met een grote rode asterisk ernaast, weten we dat dit een verplicht veld is. Of als we op verzenden klikken en te horen krijgen dat er ongeldige invoer was, moet alles wat in een andere kleur is gemarkeerd, worden gecorrigeerd en vervolgens opnieuw worden ingediend. Mensen met een laag of geen zicht kunnen echter niet vertrouwen op deze visuele aanwijzingen, daarom zijn de HTML-invoerattributen `required`, `aria-required` en `aria-invalid` zo belangrijk. Ze bieden schermlezers het equivalent van rode asterisken en rood gemarkeerde velden. Als een leuke bonus, wanneer u browsers informeert welke velden vereist zijn, zullen ze [delen van uw formulieren valideren](https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Form_validation) voor u. Geen Javascript nodig.
+Als we een veld tegenkomen met een grote rode asterisk ernaast, weten we dat dit een verplicht veld is. Of als we op verzenden klikken en te horen krijgen dat er ongeldige invoer was, moet alles wat in een andere kleur is gemarkeerd, worden gecorrigeerd en vervolgens opnieuw worden ingediend. Mensen met een laag of geen zicht kunnen echter niet vertrouwen op deze visuele aanwijzingen, daarom zijn de HTML-invoerattributen `required`, `aria-required` en `aria-invalid` zo belangrijk. Ze bieden schermlezers het equivalent van rode asterisken en rood gemarkeerde velden. Als een leuke bonus, wanneer u browsers informeert welke velden vereist zijn, zullen ze [delen van uw formulieren valideren](https://developer.mozilla.org/docs/Learn/HTML/Forms/Form_validation) voor u. Geen JavaScript nodig.
 
 Van de pagina's die formulieren gebruiken, gebruikt 21,73% `required` of `aria-required` bij het markeren van verplichte velden. Slechts één op de vijf sites maakt hiervan gebruik. Dit is een eenvoudige stap om uw site toegankelijk te maken en biedt alle gebruikers handige browserfuncties.
 
@@ -297,11 +297,11 @@ We ontdekten ook dat 3,52% van de sites met formulieren gebruik maken van `aria-
 
 #### Dubbele `id`'s
 
-`id`'s kunnen in HTML worden gebruikt om twee elementen aan elkaar te koppelen. Het [`<label>` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label) werkt bijvoorbeeld op deze manier. U specificeert de `id` van het invoerveld dat dit label beschrijft en de browser koppelt ze aan elkaar. Het resultaat? Gebruikers kunnen nu op dit label klikken om zich op het invoerveld te concentreren, en schermlezers zullen dit label gebruiken als beschrijving.
+`id`'s kunnen in HTML worden gebruikt om twee elementen aan elkaar te koppelen. Het [`<label>` element](https://developer.mozilla.org/docs/Web/HTML/Element/label) werkt bijvoorbeeld op deze manier. U specificeert de `id` van het invoerveld dat dit label beschrijft en de browser koppelt ze aan elkaar. Het resultaat? Gebruikers kunnen nu op dit label klikken om zich op het invoerveld te concentreren, en schermlezers zullen dit label gebruiken als beschrijving.
 
 Helaas heeft 34,62% van de sites dubbele `id`'s, wat betekent dat op veel sites de door de gebruiker gespecificeerde `id` naar meerdere verschillende ingangen kan verwijzen. Dus als een gebruiker op het label klikt om een veld te selecteren, kan het zijn dat hij <a hreflang="en" href="https://www.deque.com/blog/unique-id-attributes-matter/">iets anders selecteert</a> dan hij van plan was. Zoals u zich wellicht kunt voorstellen, kan dit negatieve gevolgen hebben in bijvoorbeeld een winkelwagentje.
 
-Dit probleem is zelfs nog meer uitgesproken voor schermlezers, omdat hun gebruikers mogelijk niet visueel kunnen controleren wat er is geselecteerd. Plus, veel ARIA-attributen, zoals [`aria-describedby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-describedby_attribute) en [`aria-labelledby`] (https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute), werken op dezelfde manier als het labelelement dat hierboven is beschreven. Dus om uw site toegankelijk te maken, is het verwijderen van alle dubbele `id`'s een goede eerste stap.
+Dit probleem is zelfs nog meer uitgesproken voor schermlezers, omdat hun gebruikers mogelijk niet visueel kunnen controleren wat er is geselecteerd. Plus, veel ARIA-attributen, zoals [`aria-describedby`](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-describedby_attribute) en [`aria-labelledby`] (https://developer.mozilla.org/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute), werken op dezelfde manier als het labelelement dat hierboven is beschreven. Dus om uw site toegankelijk te maken, is het verwijderen van alle dubbele `id`'s een goede eerste stap.
 
 ## Gevolgtrekking
 

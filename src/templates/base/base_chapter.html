@@ -173,7 +173,7 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
         // Set up the date format - initially using the users default locale
         // This allows different locales in same language to be respected
         // (e.g. en-GB or en-US).
-        var options = { day: "numeric", month: "short", year: "numeric" };
+        var options = { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" };
         var dateFormat = new Intl.DateTimeFormat([], options)
         const usedOptions = dateFormat.resolvedOptions();
         if (!usedOptions.locale.startsWith("{{ lang }}")) {

@@ -27,7 +27,7 @@ if ( matched && matched[1] ) {
 WITH framecounts AS (
   SELECT
     _TABLE_SUFFIX AS client,
-    CAST( JSON_VALUE(payload, '$._image_details.metadata.GIF.FrameCount') AS NUMERIC ) AS framecount
+    CAST(JSON_VALUE(payload, '$._image_details.metadata.GIF.FrameCount') AS NUMERIC) AS framecount
   FROM `requests.2022_06_01_*`
   WHERE
     JSON_VALUE(payload, '$._image_details.metadata.GIF.FrameCount') IS NOT NULL AND

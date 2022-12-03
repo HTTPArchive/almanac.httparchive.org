@@ -120,7 +120,7 @@ With `Lax` becoming the default value of the <a hreflang="en" href="https://web.
 
 With the rise of privacy-protecting tools such as ad blockers and initiatives to phase out third-party cookies from major browsers such as [Firefox](https://blog.mozilla.org/en/products/firefox/todays-firefox-blocks-third-party-tracking-cookies-and-cryptomining-by-default/), <a hreflang="en" href="https://webkit.org/blog/10218/full-third-party-cookie-blocking-and-more/">Safari</a>, and by 2023 also <a hreflang="en" href="https://blog.google/products/chrome/updated-timeline-privacy-sandbox-milestones/#:~:text=Chrome%20could%20then%20phase%20out%20third-party%20cookies%20over%20a%20three%20month%20period%2C%20starting%20in%20mid-2023%20and%20ending%20in%20late%202023">Chrome</a>, trackers are looking for more persistent and stealthy ways to track users across sites.
 
-One such technique is _browser fingerprinting_. A website collects information about the user's device, such as the [user agent](https://developer.mozilla.org/en-US/docs/Glossary/User_agent), screen resolution and installed fonts, and uses the often unique combination of those values to create a _fingerprint_. This fingerprint is recreated every time a user visits the website and can then be matched to identify the user. While this method can be used for fraud detection, it is also used to persistently track recurring users, or to track users across sites.
+One such technique is _browser fingerprinting_. A website collects information about the user's device, such as the [user agent](https://developer.mozilla.org/docs/Glossary/User_agent), screen resolution and installed fonts, and uses the often unique combination of those values to create a _fingerprint_. This fingerprint is recreated every time a user visits the website and can then be matched to identify the user. While this method can be used for fraud detection, it is also used to persistently track recurring users, or to track users across sites.
 
 Detecting fingerprinting is complex: it is effective through a combination of method calls and event listeners that may also be used for non-tracking purposes. Instead of focusing on these individual methods, we therefore focus on five popular libraries that make it easy for a website to implement fingerprinting.
 
@@ -226,7 +226,7 @@ Sensors can be useful to make a website more interactive but could also be abuse
 
 ### Media devices
 
-The [MediaDevices API](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices) can be used to access connected media input such as cameras, microphones and screen sharing.
+The [MediaDevices API](https://developer.mozilla.org/docs/Web/API/MediaDevices) can be used to access connected media input such as cameras, microphones and screen sharing.
 
 {{ figure_markup(
   caption="Percent of desktop pages that used the MediaDevices `EnumerateDevices` API.",
@@ -241,7 +241,7 @@ On 7.23% of desktop websites, and 5.33% of mobile websites the `enumerateDevices
 
 ### Geolocation-as-a-service
 
-Geolocation services provide GPS and other location data (such as [IP address](https://developer.mozilla.org/en-US/docs/Glossary/IP_Address)) of the user and can be used by trackers to provide more relevant content to the user among other things. Therefore, we analyze the use of "geolocation-as-a-service" technologies on websites, based on libraries detected through [Wappalyzer](./methodology#wappalyzer).
+Geolocation services provide GPS and other location data (such as [IP address](https://developer.mozilla.org/docs/Glossary/IP_Address)) of the user and can be used by trackers to provide more relevant content to the user among other things. Therefore, we analyze the use of "geolocation-as-a-service" technologies on websites, based on libraries detected through [Wappalyzer](./methodology#wappalyzer).
 
 {{ figure_markup(
   image="nb_websites_using_each_geolocation.png",
@@ -265,7 +265,7 @@ We find that the most popular service, <a hreflang="en" href="https://www.ipify.
   )
 }}
 
-Geolocation data can also be accessed by websites through a [web browser API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API). We find that 0.59% of websites on a desktop client and 0.63% of websites on a mobile client access the current position of the user (based on [Blink features](./methodology#blink-features)).
+Geolocation data can also be accessed by websites through a [web browser API](https://developer.mozilla.org/docs/Web/API/Geolocation_API). We find that 0.59% of websites on a desktop client and 0.63% of websites on a mobile client access the current position of the user (based on [Blink features](./methodology#blink-features)).
 
 ### Data breaches
 
@@ -330,7 +330,7 @@ HTTP requests may include the optional `Referer` header, which indicates the ori
 
 For navigations and iframes, this data can also be accessed via JavaScript using `document.referrer`.
 
-The `Referer` value can be insightful. But when the full URL including the path and query string is sent in the `Referer` across origins, this can be privacy-hindering: URLs can contain private information—sometimes even identifying or sensitive information. Leaking this silently across origins can compromise users' privacy and pose security risks. The [`Referrer-Policy`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy) HTTP header allows developers to restrict what referrer data is made available for requests made from their site to reduce this risk.
+The `Referer` value can be insightful. But when the full URL including the path and query string is sent in the `Referer` across origins, this can be privacy-hindering: URLs can contain private information—sometimes even identifying or sensitive information. Leaking this silently across origins can compromise users' privacy and pose security risks. The [`Referrer-Policy`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Referrer-Policy) HTTP header allows developers to restrict what referrer data is made available for requests made from their site to reduce this risk.
 
 {{ figure_markup(
   image="nb_websites_with_referrerpolicy.png",
@@ -364,7 +364,7 @@ In addition, around 0.5% of websites set the value of the referrer policy to `un
 
 ### User-Agent Client Hints
 
-When a web browser makes an HTTP request, it will include a [`User-Agent`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent) header that provides information about the client's browser, device and network capabilities. However, this can be abused for profiling users or uniquely identifying them through [fingerprinting](#fingerprinting).
+When a web browser makes an HTTP request, it will include a [`User-Agent`](https://developer.mozilla.org/docs/Web/HTTP/Headers/User-Agent) header that provides information about the client's browser, device and network capabilities. However, this can be abused for profiling users or uniquely identifying them through [fingerprinting](#fingerprinting).
 
 <a hreflang="en" href="https://wicg.github.io/ua-client-hints/">User-Agent Client Hints</a> enable access to the same information as the `User-Agent` string, but in a more privacy-preserving way. This will in turn enable browsers to eventually reduce the amount of information provided by default by the `User-Agent` string, as Chrome is proposing with a gradual plan for <a hreflang="en" href="https://www.chromium.org/updates/ua-reduction">User Agent Reduction</a>.
 
@@ -480,7 +480,7 @@ By looking for keywords such as "privacy policy", "cookie policy", and more, in 
 
 ### Do Not Track - Global Privacy Control
 
-The <a hreflang="en" href="https://www.eff.org/issues/do-not-track">Do Not Track</a> (DNT) HTTP header can be used to communicate to websites that a user does not wish to be tracked. We can see the number of sites that appear to access the current value for DNT below, based on the presence of the [`Navigator.doNotTrack`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/doNotTrack) JavaScript call.
+The <a hreflang="en" href="https://www.eff.org/issues/do-not-track">Do Not Track</a> (DNT) HTTP header can be used to communicate to websites that a user does not wish to be tracked. We can see the number of sites that appear to access the current value for DNT below, based on the presence of the [`Navigator.doNotTrack`](https://developer.mozilla.org/docs/Web/API/Navigator/doNotTrack) JavaScript call.
 
 {{ figure_markup(
   image="nb_websites_with_dnt_blink_usage.png",
@@ -500,7 +500,7 @@ DNT's successor <a hreflang="en" href="https://globalprivacycontrol.org/">Global
 
 Given the push to better protect users' privacy while browsing the web, major browsers are implementing new features that should better safeguard users' sensitive data. We already covered ways in which browsers have started enforcing more privacy-preserving default settings for [`Referrer-Policy` headers](#referrer-policy) and [`SameSite` cookies](#third-party-cookies).
 
-Furthermore, Firefox and Safari seek to block tracking through [Enhanced Tracking Protection](https://developer.mozilla.org/en-US/docs/Web/Privacy/Tracking_Protection) and <a hreflang="en" href="https://webkit.org/tracking-prevention/">Intelligent Tracking Prevention</a> respectively.
+Furthermore, Firefox and Safari seek to block tracking through [Enhanced Tracking Protection](https://developer.mozilla.org/docs/Web/Privacy/Tracking_Protection) and <a hreflang="en" href="https://webkit.org/tracking-prevention/">Intelligent Tracking Prevention</a> respectively.
 
 Beyond blocking trackers, Chrome has launched the <a hreflang="en" href="https://privacysandbox.com/">Privacy Sandbox</a> to develop new web standards that provide more privacy-friendly functionality for various use cases, such as advertising and fraud protection. We'll look more closely at these up-and-coming technologies that are designed to reduce the opportunity for sites to track users.
 

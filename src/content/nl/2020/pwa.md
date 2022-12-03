@@ -345,7 +345,7 @@ Er zijn veel gevallen waarin de service workers bibliotheken als afhankelijkhede
 
 ### Populaire importscripts
 
-De [importScripts() API](https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/importScripts) van de [WorkerGlobalScope-interface](https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope) importeert synchroon een of meer scripts in het bereik van de worker. Hetzelfde wordt gebruikt om externe afhankelijkheden naar de service worker te importeren.
+De [importScripts() API](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/importScripts) van de [WorkerGlobalScope-interface](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope) importeert synchroon een of meer scripts in het bereik van de worker. Hetzelfde wordt gebruikt om externe afhankelijkheden naar de service worker te importeren.
 
 <figure>
 <table>

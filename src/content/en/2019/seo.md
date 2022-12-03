@@ -233,7 +233,7 @@ Although the numbers are bleak for the speed of the web, the good news is that S
 
 ### Structured data
 
-Structured data allows website owners to add additional semantic data to their web pages, by adding [JSON-LD](https://en.wikipedia.org/wiki/JSON-LD) snippets or [Microdata](https://developer.mozilla.org/en-US/docs/Web/HTML/Microdata), for example. Search engines parse this data to better understand these pages and sometimes use the markup to display additional relevant information in the search results. Some of the useful types of structured data are:
+Structured data allows website owners to add additional semantic data to their web pages, by adding [JSON-LD](https://en.wikipedia.org/wiki/JSON-LD) snippets or [Microdata](https://developer.mozilla.org/docs/Web/HTML/Microdata), for example. Search engines parse this data to better understand these pages and sometimes use the markup to display additional relevant information in the search results. Some of the useful types of structured data are:
 
 - <a hreflang="en" href="https://developers.google.com/search/docs/data-types/review-snippet">reviews</a>
 - <a hreflang="en" href="https://developers.google.com/search/docs/data-types/product">products</a>
@@ -417,7 +417,7 @@ Single-page applications (SPAs) built with frameworks like React and Vue.js come
 
 The number of SPAs that were tested had a relatively low number of links served via hash URLs, with 13.08% of React mobile pages using hash URLs for navigation, 8.15% of mobile Vue.js pages using them, and 2.37% of mobile Angular pages using them. These results were very similar for desktop pages too. This is positive to see from an SEO perspective, considering the impact that hash URLs can have on content discovery.
 
-The higher number of hash URLs in React pages is surprising, especially in contrast to the lower number of hash URLs found on Angular pages. Both frameworks promote the adoption of routing packages where the [History API](https://developer.mozilla.org/en-US/docs/Web/API/History) is the default for links, instead of relying on hash URLs. Vue.js is <a hreflang="en" href="https://github.com/vuejs/rfcs/pull/40">considering moving to using the History API as the default</a> as well in version 3 of their `vue-router` package.
+The higher number of hash URLs in React pages is surprising, especially in contrast to the lower number of hash URLs found on Angular pages. Both frameworks promote the adoption of routing packages where the [History API](https://developer.mozilla.org/docs/Web/API/History) is the default for links, instead of relying on hash URLs. Vue.js is <a hreflang="en" href="https://github.com/vuejs/rfcs/pull/40">considering moving to using the History API as the default</a> as well in version 3 of their `vue-router` package.
 
 ### AMP
 

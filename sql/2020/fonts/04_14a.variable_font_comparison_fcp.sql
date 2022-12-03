@@ -29,7 +29,7 @@ JOIN (
   FROM
     `httparchive.pages.2020_09_01_*`
   GROUP BY
-    _TABLE_SUFFIX, url, payload )
+    _TABLE_SUFFIX, url, payload)
 USING
   (client, page)
 JOIN (
@@ -39,7 +39,7 @@ JOIN (
   FROM
     `httparchive.pages.2020_09_01_*`
   GROUP BY
-    _TABLE_SUFFIX )
+    _TABLE_SUFFIX)
 USING
   (client)
 GROUP BY

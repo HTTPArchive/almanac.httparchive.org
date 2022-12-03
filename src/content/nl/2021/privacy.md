@@ -121,7 +121,7 @@ Nu `Lax` de standaardwaarde van het <a hreflang="en" href="https://web.dev/sames
 
 Met de opkomst van privacybeschermende tools zoals adblockers en initiatieven van grote browsers zoals [Firefox](https://blog.mozilla.org/en/products/firefox/todays-firefox-blocks-third-party-tracking-cookies-and-cryptomining-by-default/), <a hreflang="en" href="https://webkit.org/blog/10218/full-third-party-cookie-blocking-and-more/">Safari</a>, en vanaf 2023 ook <a hreflang="en" href="https://blog.google/products/chrome/updated-timeline-privacy-sandbox-milestones/#:~:text=Chrome%20could%20then%20phase%20out%20third-party%20cookies%20over%20a%20three%20month%20period%2C%20starting%20in%20mid-2,23%20and%20ending%20in%20late%202023">Chrome</a> om cookies van derden uit te faseren, zijn trackers op zoek naar meer hardnekkige en verdoken manieren om gebruikers over sites heen te volgen.
 
-Een van die technieken is _browser fingerprinting_ (letterlijk: "vingerafdrukken"). Een website verzamelt gegeven over een gebruikerstoestel, zoals de [user agent](https://developer.mozilla.org/en-US/docs/Glossary/User_agent), schermresolutie en geïnstalleerde lettertypes, en gebruikt de vaak unieke combinatie van deze waarden om een vingerafdruk te creëren. Deze vingerafdruk wordt opnieuw gecreëerd elke keer wanneer een gebruiker de website bezoekt en kan dan vergeleken worden om de gebruiker te identificeren. Hoewel deze methode gebruikt kan worden voor fraudedetectie, wordt ze ook gebruikt om terugkerende gebruikers aanhoudend te volgen, of om gebruikers te volgen over sites heen.
+Een van die technieken is _browser fingerprinting_ (letterlijk: "vingerafdrukken"). Een website verzamelt gegeven over een gebruikerstoestel, zoals de [user agent](https://developer.mozilla.org/docs/Glossary/User_agent), schermresolutie en geïnstalleerde lettertypes, en gebruikt de vaak unieke combinatie van deze waarden om een vingerafdruk te creëren. Deze vingerafdruk wordt opnieuw gecreëerd elke keer wanneer een gebruiker de website bezoekt en kan dan vergeleken worden om de gebruiker te identificeren. Hoewel deze methode gebruikt kan worden voor fraudedetectie, wordt ze ook gebruikt om terugkerende gebruikers aanhoudend te volgen, of om gebruikers te volgen over sites heen.
 
 Het detecteren van fingerprinting is complex: het is effectief door een combinatie van methodeoproepen en _event listeners_ die ook gebruikt kunnen worden voor niet-trackingdoeleinden. In plaats van op deze individuele methoden te focussen, focussen we daarom op vijf populaire bibliotheken die het eenvoudig maken voor een website om fingerprinting te implementeren.
 
@@ -226,7 +226,7 @@ Sensoren kunnen nuttig zijn om een website interactiever te maken maar kunnen oo
 
 ### Mediatoestellen
 
-De [MediaDevices API](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices) kan gebruikt worden om toegang te krijgen tot aangesloten media-invoerbronnen zoals camera's, microfoon en het delen van een scherm.
+De [MediaDevices API](https://developer.mozilla.org/docs/Web/API/MediaDevices) kan gebruikt worden om toegang te krijgen tot aangesloten media-invoerbronnen zoals camera's, microfoon en het delen van een scherm.
 
 {{ figure_markup(
   caption="Percentage van desktoppagina's dat de `MediaDevicesEnumerateDevices`-API gebruikte.",
@@ -241,7 +241,7 @@ Op 7,23% van de desktopwebsites en 5,33% van de mobiele websites wordt de `enume
 
 ### Geolocation-as-a-service
 
-Geolocatiediensten voorzien GPS- en andere locatiegegevens (zoals [IP-adres](https://developer.mozilla.org/en-US/docs/Glossary/IP_Address)) van een gebruiker en kunnen gebruikt worden door trackers om relevantere inhoud weer te geven aan de gebruiker, naast andere zaken. We analyseren daarom het gebruik van "geolocation-as-a-service"-technologieën op websites, gebaseerd op bibliotheken gedetecteerd met [Wappalyzer](./methodology#wappalyzer).
+Geolocatiediensten voorzien GPS- en andere locatiegegevens (zoals [IP-adres](https://developer.mozilla.org/docs/Glossary/IP_Address)) van een gebruiker en kunnen gebruikt worden door trackers om relevantere inhoud weer te geven aan de gebruiker, naast andere zaken. We analyseren daarom het gebruik van "geolocation-as-a-service"-technologieën op websites, gebaseerd op bibliotheken gedetecteerd met [Wappalyzer](./methodology#wappalyzer).
 
 {{ figure_markup(
   image="nb_websites_using_each_geolocation.png",
@@ -265,7 +265,7 @@ We zien dat de populairste dienst, <a hreflang="en" href="https://www.ipify.org/
   )
 }}
 
-Geolocatiegegevens kunnen ook opgevraagd worden door websites via een [webbrowser-API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API). We zien dat 0,59% van de websites op een desktopclient en 0,63% van de websites op een mobiele client de huidige positie van een gebruiker opvragen (gebaseerd op [Blinkfuncties](./methodology#blink-features)).
+Geolocatiegegevens kunnen ook opgevraagd worden door websites via een [webbrowser-API](https://developer.mozilla.org/docs/Web/API/Geolocation_API). We zien dat 0,59% van de websites op een desktopclient en 0,63% van de websites op een mobiele client de huidige positie van een gebruiker opvragen (gebaseerd op [Blinkfuncties](./methodology#blink-features)).
 
 ### Gegevenslekken
 
@@ -331,7 +331,7 @@ HTTP-verzoeken kunnen een optionele `Referer`-header ("verwijzer") bevatten, die
 
 Voor navigaties en iframes, kunnen deze gegevens ook opgevraagd worden via JavaScript door `document.referrer` te gebruiken.
 
-De `Referer`-waarde kan goede inzichten bieden. Maar wanneer de volledige URL inclusief het pad en de vraagstring in de `Referer` over oorsprongen heen gestuurd wordt, kan dit privacyverhinderend zijn: URL's kunnen privé-informatie bevatten—soms zelfs identificerende of gevoelige informatie. Het stilletjes lekken hiervan over oorsprongen heen kan de privacy van gebruikers aantasten en beveiligingsrisico's inhouden. De HTTP-header [`Referrer-Policy`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy) laat ontwikkelaars toe om te beperken welke verwijzergegevens toegankelijk wordt gemaakt aan verzoeken vanop hun website, om dit risico te verminderen.
+De `Referer`-waarde kan goede inzichten bieden. Maar wanneer de volledige URL inclusief het pad en de vraagstring in de `Referer` over oorsprongen heen gestuurd wordt, kan dit privacyverhinderend zijn: URL's kunnen privé-informatie bevatten—soms zelfs identificerende of gevoelige informatie. Het stilletjes lekken hiervan over oorsprongen heen kan de privacy van gebruikers aantasten en beveiligingsrisico's inhouden. De HTTP-header [`Referrer-Policy`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Referrer-Policy) laat ontwikkelaars toe om te beperken welke verwijzergegevens toegankelijk wordt gemaakt aan verzoeken vanop hun website, om dit risico te verminderen.
 
 {{ figure_markup(
   image="nb_websites_with_referrerpolicy.png",
@@ -365,7 +365,7 @@ Daarenboven zetten ongeveer 0,5% van de websites de waarde van de Referrer Polic
 
 ### User-Agent Client Hints
 
-Wanneer een webbrowser een HTTP-verzoek maakt, zal het een [`User-Agent`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent)-header meesturen die informatie voorziet over de browser, het toestel en de netwerkmogelijkheden van de client. Dit kan echter misbruikt worden om gebruikers te profileren of uniek te identificeren door [fingerprinting](#fingerprinting).
+Wanneer een webbrowser een HTTP-verzoek maakt, zal het een [`User-Agent`](https://developer.mozilla.org/docs/Web/HTTP/Headers/User-Agent)-header meesturen die informatie voorziet over de browser, het toestel en de netwerkmogelijkheden van de client. Dit kan echter misbruikt worden om gebruikers te profileren of uniek te identificeren door [fingerprinting](#fingerprinting).
 
 <a hreflang="en" href="https://wicg.github.io/ua-client-hints/">User-Agent Client Hints</a> voorzien toegang tot dezelfde informatie als de `User-Agent`-string, maar op een meer privacybeschermende manier. Dit zal op zijn beurt aan browsers toelaten om uiteindelijk de hoeveelheid informatie die standaard door de `User-Agent`-string teruggegeven wordt ter verminderen, zoals Chrome voorstelt met een geleidelijk plan voor <a hreflang="en" href="https://www.chromium.org/updates/ua-reduction">_User Agent Reduction_</a> ("User Agent-vermindering").
 
@@ -480,7 +480,7 @@ Door te zoeken naar trefwoorden zoals "privacybeleid", "cookiebeleid" en meer, i
 
 ### Do Not Track - Global Privacy Control
 
-De <a hreflang="en" href="https://www.eff.org/issues/do-not-track">Do Not Track</a> (DNT) HTTP-header kan gebruikt worden om naar websites te communiceren dat een gebruiker niet gevolgd wenst te worden. We kunnen het aantal websites dat de huidige waarde voor DNT lijkt op te vragen hier beneden zien, gebaseerd op de aanwezigheid van de [`Navigator.doNotTrack`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/doNotTrack) JavaScript-oproep.
+De <a hreflang="en" href="https://www.eff.org/issues/do-not-track">Do Not Track</a> (DNT) HTTP-header kan gebruikt worden om naar websites te communiceren dat een gebruiker niet gevolgd wenst te worden. We kunnen het aantal websites dat de huidige waarde voor DNT lijkt op te vragen hier beneden zien, gebaseerd op de aanwezigheid van de [`Navigator.doNotTrack`](https://developer.mozilla.org/docs/Web/API/Navigator/doNotTrack) JavaScript-oproep.
 
 {{ figure_markup(
   image="nb_websites_with_dnt_blink_usage.png",
@@ -500,7 +500,7 @@ DNT's opvolger <a hreflang="en" href="https://globalprivacycontrol.org/">Global 
 
 Gegeven het streven om de privacy van gebruikers beter te beschermen terwijl ze op het web surfen, implementeren grote browsers nieuwe functies die de gevoelige gegevens van gebruikers beter zouden moeten beschermen. We hebben al manieren besproken waarop browsers meer privacybeschermende standaardinstellingen voor [`Referrer-Policy`-headers](#referrer-policy) en [`SameSite`-cookies](#cookies-van-derden) zijn beginnen afdwingen.
 
-Verder trachten Firefox en Safari tracking te blokkeren door respectievelijk [Verbeterde bescherming tegen volgen](https://developer.mozilla.org/en-US/docs/Web/Privacy/Tracking_Protection) en <a hreflang="en" href="https://webkit.org/tracking-prevention/">Intelligente trackingpreventie</a>.
+Verder trachten Firefox en Safari tracking te blokkeren door respectievelijk [Verbeterde bescherming tegen volgen](https://developer.mozilla.org/docs/Web/Privacy/Tracking_Protection) en <a hreflang="en" href="https://webkit.org/tracking-prevention/">Intelligente trackingpreventie</a>.
 
 Naast het blokkeren van trackers, heeft Chrome de <a hreflang="en" href="https://privacysandbox.com/">Privacy Sandbox</a> gelanceerd om nieuwe webstandaarden te ontwikkelen die privacyvriendelijkere functionaliteit voor verscheidene doeleinden voorzien, zoals advertenties en fraudebescherming. We zullen deze opkomende technologieën, die ontworpen zijn om de mogelijkheid voor sites om gebruikers te volgen te verminderen, nader bekijken.
 

@@ -359,7 +359,7 @@ Del mismo modo, muy pocos sitios (0,50% - 0,80%) usan el atributo `nomodule` par
 
 ## Preload y prefetch
 
-[Preload](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types/preload) y [prefetch](https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ) son directivas que le permiten ayudar al navegador a determinar qué recursos deben descargarse.
+[Preload](https://developer.mozilla.org/docs/Web/HTML/Link_types/preload) y [prefetch](https://developer.mozilla.org/docs/Web/HTTP/Link_prefetching_FAQ) son directivas que le permiten ayudar al navegador a determinar qué recursos deben descargarse.
 
 - Precargar un recurso con `<link rel="preload">` le dice al navegador que descargue este recurso lo antes posible. Esto es especialmente útil para los recursos críticos que se descubren tarde en el proceso de carga de la página (por ejemplo, JavaScript ubicado en la parte inferior de su HTML) y que, de lo contrario, se descargan al final.
 - Usar `<link rel="prefetch">` le dice al navegador que aproveche el tiempo de inactividad que tiene para obtener estos recursos necesarios para futuras navegaciones
@@ -396,12 +396,12 @@ Con HTTP Archive, podemos echar un vistazo a cualquier API más nueva que sea co
 
 **¿Cuántos sitios usan las siguientes API?**
 
-- [Atomics](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Atomics)
-- [Intl](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl)
-- [Proxy](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy)
-- [SharedArrayBuffer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer)
-- [WeakMap](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap)
-- [WeakSet](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet)
+- [Atomics](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Atomics)
+- [Intl](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl)
+- [Proxy](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Proxy)
+- [SharedArrayBuffer](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer)
+- [WeakMap](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WeakMap)
+- [WeakSet](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WeakSet)
 
 {{ figure_markup(
   image="fig17.png",

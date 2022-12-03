@@ -287,7 +287,7 @@ Parlons ici du code source ouvert (<i lang="en">open source</i>), ou du code sou
   <figcaption>{{ figure_link(caption="Principales bibliothèques JavaScript sur ordinateurs de bureau et mobiles.") }}</figcaption>
 </figure>
 
-<a hreflang="en" href="https://jquery.com/">jQuery</a>, la bibliothèque JavaScript la plus populaire jamais créée, est utilisée dans 85,03&nbsp;% des pages sur ordinateurs de bureau et 83,46&nbsp;% des pages mobiles. L’avènement de nombreuses API et fonctionnalités de navigateurs, comme [Fetch](https://developer.mozilla.org/fr/docs/Web/API/Fetch_API) et [querySelector](https://developer.mozilla.org/fr/docs/Web/API/Document/querySelector), a standardisé une grande partie des fonctionnalités fournies par la bibliothèque dans une forme native. Bien que la popularité de jQuery semble en déclin, pourquoi est-il encore utilisé dans la grande majorité du web&nbsp;?
+<a hreflang="en" href="https://jquery.com/">jQuery</a>, la bibliothèque JavaScript la plus populaire jamais créée, est utilisée dans 85,03&nbsp;% des pages sur ordinateurs de bureau et 83,46&nbsp;% des pages mobiles. L’avènement de nombreuses API et fonctionnalités de navigateurs, comme [Fetch](https://developer.mozilla.org/docs/Web/API/Fetch_API) et [querySelector](https://developer.mozilla.org/docs/Web/API/Document/querySelector), a standardisé une grande partie des fonctionnalités fournies par la bibliothèque dans une forme native. Bien que la popularité de jQuery semble en déclin, pourquoi est-il encore utilisé dans la grande majorité du web&nbsp;?
 
 Il y a plusieurs raisons possibles&nbsp;:
 
@@ -359,7 +359,7 @@ De même, très peu de sites (0,50&nbsp;%-0,80&nbsp;%) utilisent l’attribut `n
 
 ## <span lang="en">Preload</span> et <span lang="en">prefetch</span> {preload-et-prefetch}
 
-[Preload](https://developer.mozilla.org/fr/docs/Web/HTML/Pr%C3%A9charger_du_contenu) et [prefetch](https://developer.mozilla.org/fr/docs/Web/HTTP/FAQ_sur_le_pr%C3%A9chargement_des_liens) sont des [Indices de Ressources](./resource-hints) qui permettent d’aider le navigateur à déterminer quelles ressources doivent être téléchargées.
+[Preload](https://developer.mozilla.org/docs/Web/HTML/Pr%C3%A9charger_du_contenu) et [prefetch](https://developer.mozilla.org/docs/Web/HTTP/FAQ_sur_le_pr%C3%A9chargement_des_liens) sont des [Indices de Ressources](./resource-hints) qui permettent d’aider le navigateur à déterminer quelles ressources doivent être téléchargées.
 
 - Le préchargement d’une ressource avec `<link rel="preload">` indique au navigateur de télécharger cette ressource dès que possible. C’est particulièrement utile pour les ressources critiques qui sont découvertes tard dans le processus de chargement de la page (par exemple, du JavaScript situé au bas de votre HTML) et qui seraient, sinon, téléchargées en dernier.
 - L’utilisation de `<link rel="prefetch">` indique au navigateur de profiter de tout le temps d’inactivité dont il dispose pour aller chercher ces ressources nécessaires aux navigations futures.
@@ -396,12 +396,12 @@ Grâce à HTTP Archive, nous pouvons examiner toute nouvelle API prise en charge
 
 Combien de sites utilisent les API suivantes&nbsp;?
 
-- [Atomics](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Atomics)
-- [Intl](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Intl)
-- [Proxy](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Proxy)
-- [SharedArrayBuffer](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/SharedArrayBuffer)
-- [WeakMap](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/WeakMap)
-- [WeakSet](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/WeakSet)
+- [Atomics](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Objets_globaux/Atomics)
+- [Intl](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Objets_globaux/Intl)
+- [Proxy](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Objets_globaux/Proxy)
+- [SharedArrayBuffer](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Objets_globaux/SharedArrayBuffer)
+- [WeakMap](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Objets_globaux/WeakMap)
+- [WeakSet](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Objets_globaux/WeakSet)
 
 {{ figure_markup(
   image="fig17.png",
