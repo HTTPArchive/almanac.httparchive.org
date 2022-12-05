@@ -32,8 +32,8 @@ Ogni anno vediamo che i file CSS aumentano di dimensioni e il 2022 non ha fatto 
 
 {{ figure_markup(
     image="stylesheet-transfer-size.png",
-    caption="Distribuzione delle dimensioni di trasferimento dei fogli di stile per pagina",
-    description="Grafico a barre che mostra il 10°, 25°, 50°, 75° e 90° percentile delle dimensioni di trasferimento dei fogli di stile per pagina. Per le pagine mobili, i valori sono 6, 28, 68, 139 e 256 KB. In tutti i percentili queste statistiche tendono a essere inferiori a quelle desktop per meno di 10 KB.",
+    caption="Distribuzione delle peso dei fogli di stile per pagina",
+    description="Grafico a barre che mostra il 10°, 25°, 50°, 75° e 90° percentile del peso dei fogli di stile per pagina. Per le pagine mobili, i valori sono 6, 28, 68, 139 e 256 KB. In tutti i percentili queste statistiche tendono a essere inferiori a quelle desktop per meno di 10 KB.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1081662712&format=interactive",
     sheets_gid="1921790724",
     sql_file="stylesheet_kbytes.sql"
@@ -42,7 +42,7 @@ Ogni anno vediamo che i file CSS aumentano di dimensioni e il 2022 non ha fatto 
 
 A parte il 25° percentile, che è sceso di un punto percentuale, ogni percentile mostra un piccolo aumento delle dimensioni. Al 90° percentile l'aumento è di quasi il 7%, un aumento simile a quello osservato tra il [2020](../2020/css) e il [2021](../2021/css). I fogli di stile serviti ai dispositivi mobili rimangono leggermente più piccoli di quelli serviti ai desktop.
 
-La pagina desktop con il maggior peso CSS è leggermente inferiore rispetto allo scorso anno, è di 62.631 KB. Il foglio di stile mobile più pesante è cresciuto da 17.823 KB a 78.543 KB, fortunatamente questa è un'eccezione.
+La pagina desktop con il maggior peso CSS, leggermente inferiore rispetto allo scorso anno, è di 62.631 KB. Il foglio di stile mobile più pesante è cresciuto da 17.823 KB a 78.543 KB, fortunatamente questa è un'eccezione.
 
 {{ figure_markup(
     image="stylesheet-count.png",
@@ -84,7 +84,7 @@ Possiamo vedere dal numero totale di fogli di stile caricati, che in genere le p
 
 ## I selettori e la cascata
 
-Il 2022 ha visto uno scossone alla cascata con la regola [`@layer`](https://developer.mozilla.org/en-US/docs/Web/CSS/@layer) che si afferma su tutti i motori. Questa nuova <i lang="en">at-rule</i> consente il raggruppamento dei selettori in livelli (detti appunto <i lang="en">layers</i> in inglese), quindi - una volta raggruppati - è possibile gestire l'ordine di precedenza dei livelli.
+Il 2022 ha visto uno scossone alla cascata con la regola [`@layer`](https://developer.mozilla.org/docs/Web/CSS/@layer) che si afferma su tutti i motori. Questa nuova <i lang="en">at-rule</i> consente il raggruppamento dei selettori in livelli (detti appunto <i lang="en">layers</i> in inglese), quindi - una volta raggruppati - è possibile gestire l'ordine di precedenza dei livelli.
 
 È un po' presto per vedere un uso diffuso di questo nuovo metodo di gestione della cascata, ma diamo un'occhiata a come si è evoluto l'utilizzo del selettore.
 
@@ -101,14 +101,14 @@ Il 2022 ha visto uno scossone alla cascata con la regola [`@layer`](https://deve
   )
 }}
 
-Come nel 2020 e nel 2021, il nome della classe più popolare sul web è `active`. I prefissi `fa`, `fa-*` per Font Awesome rimangono fissi al secondo e terzo posto. Tuttavia, i nomi delle classi `wp-*` sono saliti di posizione, spostandosi al quarto posto. Ora compaiono sul 31% delle pagine, essendo già stati sul 20% delle pagine nel 2021. Vediamo anche comparire nomi di classi come `has-large-font-size`, che sono usati nel nuovo editor a blocchi di WordPress.
+Come nel 2020 e nel 2021, il nome della classe più popolare sul web è `active`. I prefissi `fa`, `fa-*` per Font Awesome rimangono fissi al secondo e terzo posto. Tuttavia, i nomi delle classi `wp-*` sono saliti di posizione, spostandosi al quarto posto. Ora compaiono nel 31% delle pagine, essendo già stati nel 20% delle pagine nel 2021. Vediamo anche comparire nomi di classi come `has-large-font-size`, che sono usati nel nuovo editor a blocchi di WordPress.
 
-`clearfix` è scomparso dalla top 20, ora si trova solo sul 10% delle pagine, un'indicazione molto chiara che i layout basati su float stanno scomparendo dal web.
+`clearfix` è scomparso dalla top 20, ora si trova solo nel 10% delle pagine, un'indicazione molto chiara che i layout basati su float stanno scomparendo dal web.
 
 {{ figure_markup(
     image="top-selector-ids.png",
     caption="I nomi degli ID più popolari per la percentuale di pagine che li utilizzano.",
-    description="Grafico a barre che mostra gli ID CSS utilizzati nella maggior parte delle pagine. Le tendenze mobili e desktop sono simili. L'ID `content` viene utilizzato nel 15% delle pagine, seguito da `footer` nel 12%, `header`, `fb-root`, `fb_dialog_loader_close`, `fb_dialog_ipad_overlay` e `fb_dialog_loader_spinner` tutti nel 10%, quindi `respond` e `comments` nel 9% e infine `main` nell'8% di pagine.",
+    description="Grafico a barre che mostra gli ID CSS utilizzati nella maggior parte delle pagine. Le tendenze per il mobile e per il desktop sono simili. L'ID `content` viene utilizzato nel 15% delle pagine, seguito da `footer` nel 12%, `header`, `fb-root`, `fb_dialog_loader_close`, `fb_dialog_ipad_overlay` e `fb_dialog_loader_spinner` tutti nel 10%, quindi `respond` e `comments` nel 9% e infine `main` nell'8% delle pagine.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=224121847&format=interactive",
     height="497",
     sheets_gid="756835829",
@@ -116,26 +116,26 @@ Come nel 2020 e nel 2021, il nome della classe più popolare sul web è `active`
   )
 }}
 
-Il nome `content` è ancora una volta il nome ID più popolare, seguito da `footer` e `header`. Gli ID che iniziano con `fb_` indicano l'utilizzo dei widget di Facebook. Nel 2021 gli ID che iniziano con `rc-`, a indicare l'uso del sistema reCAPTCHA di Google, erano presenti nel 7% delle pagine e sono ancora presenti con la stessa frequenza, nonostante siano stati spinti fuori dalla top ten dai nomi degli ID di Facebook.
+Il nome `content` è ancora una volta il nome ID più popolare, seguito da `footer` e `header`. Gli ID che iniziano con `fb_` indicano l'utilizzo dei widget di Facebook. Nel 2021 gli ID che iniziano con `rc-`, a indicare l'uso del sistema reCAPTCHA di Google, erano presenti nel 7% delle pagine e sono ancora presenti con la stessa frequenza, nonostante siano stati scalzati dalla top ten dai nomi degli ID di Facebook.
 
 ### `!important`
 
 {{ figure_markup(
     image="important-adoption.png",
-    caption="La distribuzione per pagina delle occorrenze di proprietà `!important`.",
-    description="Grafico a barre che mostra il 10°, 25°, 50°, 75° e 90° percentile del numero di occorrenze della proprietà `!important` utilizzate per pagina. Sulle pagine mobili, i valori sono rispettivamente 0%, 1%, 2%, 5% e 9%. I valori del desktop sono gli stessi.",
+    caption="La distribuzione per pagina del numero di proprietà contrassegnate `!important`.",
+    description="Grafico a barre che mostra il 10°, 25°, 50°, 75° e 90° percentile del numero di occorrenze della proprietà contrassegnate come `!important` per pagina. Nelle pagine mobili, i valori sono rispettivamente 0%, 1%, 2%, 5% e 9%. Stessi valori nelle pagine desktop.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=316255168&format=interactive",
     sheets_gid="1802353995",
     sql_file="meta_important_adoption.sql"
   )
 }}
 
-L'uso di `!important` è leggermente aumentato per i primi due percentili quest'anno. Man mano che l'utilizzo di `@layer` prende piede, sarà interessante vedere come questo influisca sull'uso di questa proprietà, tipicamente usata per affrontare problemi di specificità.
+L'uso di `!important` è leggermente aumentato per i primi due percentili quest'anno. Man mano che l'utilizzo di `@layer` prenderà piede, sarà interessante vedere come la nuova pratica influirà sull'uso di questa proprietà, tipicamente usata per affrontare problemi di specificità.
 
 {{ figure_markup(
     image="important-props.png",
     caption="Le principali proprietà a cui viene applicato `!important` in percentuale di pagine.",
-    description="Grafico a barre che mostra le proprietà più popolari utilizzate con !important. Per le pagine mobili, i valori sono: `display` nell'83% delle pagine, `color` nel 77%, `width` nel 76%, `height` nel 74%, `padding` nel 72%, `background`, `background-color` e `margin` ciascuno nel 70%, `border` nel 69% e infine `font-size` nel 64%.",
+    description="Grafico a barre che mostra le proprietà più popolari contrassegnate con !important. Per le pagine mobili, i valori sono: `display` nell'83% delle pagine, `color` nel 77%, `width` nel 76%, `height` nel 74%, `padding` nel 72%, `background`, `background-color` e `margin` ciascuno nel 70%, `border` nel 69% e infine `font-size` nel 64%.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1202340370&format=interactive",
     height="604",
     sheets_gid="377488072",
@@ -143,7 +143,7 @@ L'uso di `!important` è leggermente aumentato per i primi due percentili quest'
   )
 }}
 
-In termini di ciò a cui viene applicato `!important`, le proprietà principali rimangono invariate. Tuttavia, `position` è uscito dalla top ten, per essere sostituito con `font-size`.
+Rispetto a ciò a cui viene applicato `!important`, le proprietà principali rimangono invariate. Tuttavia va notato che `position` è uscito dalla top ten per essere sostituito da `font-size`.
 
 ### Specificità dei selettori
 
@@ -185,13 +185,13 @@ In termini di ciò a cui viene applicato `!important`, le proprietà principali 
     </tbody>
   </table>
   <figcaption>{{ figure_link(
-    caption="Distribuzione della specificità mediana per pagina.",
+    caption="Distribuzione della mediana di specificità per pagina.",
     sheets_gid="1684019013",
     sql_file="specificity.sql"
   ) }}</figcaption>
 </figure>
 
-Fatta eccezione per il desktop al 25° percentile, i valori di specificità mediana sono esattamente gli stessi dell'anno scorso, rimanendo costanti negli ultimi due anni. Questi valori indicano la specificità appiattita creata da metodologie come <a href="https://en.bem.info/methodology/quick-start/" hreflang="en">BEM</a>.
+Fatta eccezione per il valore dei desktop al 25° percentile, i valori mediani di specificità sono esattamente gli stessi dell'anno scorso, rimanendo costanti negli ultimi due anni. Questi valori indicano la specificità appiattita creata da metodologie come <a href="https://en.bem.info/methodology/quick-start/" hreflang="en">BEM</a>.
 
 ### Pseudo-classi e pseudo-elementi
 
@@ -206,7 +206,7 @@ Fatta eccezione per il desktop al 25° percentile, i valori di specificità medi
   )
 }}
 
-Ancora una volta le pseudo-classi user-action `:hover`, `:focus` e `:active` sono nelle prime tre posizioni. Anche la pseudo-classe di negazione `:not()` continua a crescere in popolarità, insieme a `:root`, probabilmente usata per creare proprietà personalizzate (variabili CSS).
+Ancora una volta le pseudo-classi legate alle azioni utente `:hover`, `:focus` e `:active` sono nelle prime tre posizioni. Anche la pseudo-classe di negazione `:not()` continua a crescere in popolarità, insieme a `:root`, probabilmente usata per creare proprietà personalizzate (variabili CSS).
 
 L'anno scorso è stato notato che `:focus-visible`, un modo per dare uno stile agli elementi in focus in un modo che corrisponda meglio alle aspettative degli utenti, è apparso in meno dell'1% delle pagine. La proprietà è disponibile in tutti e tre i principali motori da marzo 2022 e ora si trova sul 10% delle pagine desktop e sul 9% delle pagine mobili.
 
@@ -225,7 +225,7 @@ Abbiamo escluso dai dati qualsiasi pseudo-elemento con prefisso, e quindi specif
 
 L'uso di `::before` e `::after` è aumentato rispetto allo scorso anno. Questi pseudo-elementi vengono utilizzati per inserire nel documento del contenuto generato a partire dal CSS. Controllando l'uso della proprietà `content`, si nota che viene spesso utilizzata per inserire una stringa vuota, usata per scopi di stile. Il contenuto generato è un modo per modellare un'area di una griglia senza dover aggiungere un elemento; è forse questo il motivo che ha contribuito all'aumento dell'uso di queste proprietà?
 
-L'uso dello pseudo-elemento `::marker` ha ora guadagnato l'1%, dimostrando che le persone stanno lentamente iniziando a sfruttare la capacità di selezionare e definire lo stile dei punti elenco.
+L'uso dello pseudo-elemento `::marker` ha ora guadagnato la posizione dell'1%, dimostrando che le persone stanno lentamente iniziando a sfruttare la capacità di selezionare e definire lo stile dei punti elenco.
 
 ### Selettori di attributo
 
@@ -251,7 +251,7 @@ I CSS offrono diversi modi per specificare valori e unità, o in misure prestabi
 {{ figure_markup(
     image="length-units.png",
     caption="Unità di misura della lunghezza più popolari per percentuale di pagine.",
-    description="Grafico a barre che mostra le unità di lunghezza utilizzate nella maggior parte delle pagine. L'unità di lunghezza più popolare è pixel (`px`), utilizzata nel 71% delle pagine, seguita dalla percentuale (`%`) nel 18%, `em` nell'8% e `rem` nel 2%.",
+    description="Grafico a barre che mostra le unità di misura della lunghezza utilizzate nella maggior parte delle pagine. L'unità più popolare è pixel (`px`), utilizzata nel 71% delle pagine, seguita dalla percentuale (`%`) nel 18%, `em` nell'8% e `rem` nel 2%.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1742992649&format=interactive",
     sheets_gid="161285719",
     sql_file="units_frequency.sql"
@@ -396,7 +396,8 @@ Le frecce in su e in giù nel grafico mostrano il cambiamento rispetto ai [risul
 
 {{ figure_markup(
     image="font-relative-length-units.png",
-    caption="Grafico a torta che mostra la diffusione relativa delle unità di lunghezza applicate ai caratteri sulle pagine mobili. `em` costituisce il 79,9% delle occorrenze, `rem` il 19,5% e `ch` lo 0,5%.",
+    caption="Le più diffuse unità di misura della lunghezza relative ai font.",
+    description="Grafico a torta che mostra la diffusione relativa delle unità di lunghezza applicate ai caratteri sulle pagine mobili. `em` costituisce il 79,9% delle occorrenze, `rem` il 19,5% e `ch` lo 0,5%.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1099832022&format=interactive",
     sheets_gid="161285719",
     sql_file="units_frequency.sql"
@@ -407,15 +408,15 @@ Mentre `em` rimane il metodo più popolare per fissare le dimensioni dei caratte
 
 {{ figure_markup(
     image="zero-length-units.png",
-    caption="Le unità di misura per la lunghezza (o la loro mancanza) utilizzate per indicare il valore a zero.",
-    description="Grafico a torta che mostra la popolarità relativa delle unità utilizzate su valori di lunghezza zero. Il più popolare è lo 0 senza unità nell'86,6% delle pagine, seguito da px nel 12,7% e altre unità nello 0,7%.",
+    caption="Le unità di misura per la lunghezza (esplicitate o mancanti) utilizzate per indicare il valore a zero.",
+    description="Grafico a torta che mostra la popolarità relativa delle unità di misura utilizzate su valori di lunghezza zero. Il più popolare è lo 0 senza unità nell'86,6% delle pagine, seguito da px nel 12,7% e altre unità nello 0,7%.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=782579377&format=interactive",
     sheets_gid="242535636",
     sql_file="units_zero.sql"
   )
 }}
 
-Esistono alcune proprietà che consentono l'uso delle semplici unità numeriche (ad esempio, `line-height`), ma anche i valori che esprimono la `<lunghezza>` si comportano in modo speciale quando la lunghezza è pari a zero, non richiedendo che venga specificata l'unità di misura. Quando abbiamo esaminato tutti i valori di lunghezza zero, quasi l'87% di essi ometteva l'unità, una piccola diminuzione rispetto allo scorso anno. Quasi tutte le lunghezze zero che includevano un'unità utilizzavano i pixel (0px).
+Esistono alcune proprietà che consentono l'uso delle semplici unità numeriche (ad esempio, `line-height`), ma anche i valori che esprimono la lunghezza si comportano in modo speciale quando la lunghezza è pari a zero, non richiedendo che venga specificata l'unità di misura. Quando abbiamo esaminato tutti i valori di lunghezza zero, quasi l'87% di essi ometteva l'unità, una piccola diminuzione rispetto allo scorso anno. Quasi tutte le lunghezze zero che includevano un'unità utilizzavano i pixel (0px).
 
 ### Calcoli
 
@@ -435,7 +436,7 @@ Come negli anni precedenti, l'uso più diffuso di `calc()` è nel calcolare i va
 {{ figure_markup(
     image="calc-units.png",
     caption="Le unità di lunghezza più diffuse utilizzate nelle funzioni `calc()`.",
-    description="Grafico a barre che mostra le unità usate per `calc()` nella maggior parte delle pagine. Percentuale (`%`) e pixel (`px`) sono entrambi usati nel 42% delle pagine, larghezza viewport (`vw`), altezza viewport (`vh`) ed `em` sono tutti usati nell'8% delle pagine e `rem` è usato nel 6%.",
+    description="Grafico a barre che mostra le unità di misura usate per `calc()` nella maggior parte delle pagine. Percentuale (`%`) e pixel (`px`) sono entrambe usate nel 42% delle pagine, larghezza viewport (`vw`), altezza viewport (`vh`) ed `em` sono tutte usate nell'8% delle pagine e `rem` è usata nel 6%.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1749089658&format=interactive",
     sheets_gid="1431660156",
     sql_file="calc_units.sql"
@@ -447,7 +448,7 @@ La percentuale di siti che utilizzano i pixel nei calcoli è diminuita di 9 punt
 {{ figure_markup(
     image="calc-operators.png",
     caption="Gli operatori più diffusi utilizzati nelle funzioni `calc()`.",
-    description="Grafico a barre che mostra gli operatori usati in `calc()` nella maggior parte delle pagine. L'operatore di sottrazione (-) viene utilizzato sul 42% delle pagine, seguito dall'addizione (+) nel 18%, dalla divisione (/) nell'11% e dalla moltiplicazione (*) nel 10%.",
+    description="Grafico a barre che mostra gli operatori usati in `calc()` nella maggior parte delle pagine. L'operatore di sottrazione (-) viene utilizzato nel 42% delle pagine, seguito dall'operatore dell'addizione (+) nel 18%, da quello della divisione (/) nell'11% e da quello della moltiplicazione (*) nel 10%.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1571752832&format=interactive",
     sheets_gid="220199231",
     sql_file="calc_operators.sql"
@@ -498,14 +499,15 @@ Le proprietà personalizzate (<i lang="en">custom property</i>, chiamate anche "
 
 {{ figure_markup(
     image="custom-property-names.png",
-    caption="Grafico a torta che mostra la diffusione relativa delle origini di nomi delle proprietà personalizzate. WordPress rappresenta il 40,2% dell'utilizzo delle proprietà personalizzate, altre origini il 36,5%, Elementor l'11,4%, Bootstrap il 10,2% e Woocommerce l'1,3%.",
+    caption="Origine dei nomi delle proprietà personalizzate comuni.",
+    description="Grafico a torta che mostra la diffusione relativa ddi ciò che causa l'origine dei nomi delle proprietà personalizzate. WordPress rappresenta la fonte per il 40,2% delle occorrenze delle proprietà personalizzate, altre fonti per il 36,5%, Elementor per l'11,4%, Bootstrap per il 10,2% e Woocommerce per l'1,3%.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=321767420&format=interactive",
     sheets_gid="409270558",
     sql_file="custom_property_names.sql"
   )
 }}
 
-Come si è visto l'anno scorso, WordPress è il driver per i nomi di proprietà personalizzate più comuni, che sono facilmente identificabili dal prefisso `–wp–*`. A seguire troviamo ancora una volta molti nomi di colori `–white`, `–blue` e così via, usati per assegnare una particolare sfumatura di quel colore.
+Come si è visto l'anno scorso, WordPress è la scaturigine principale per i nomi di proprietà personalizzate più comuni, che sono facilmente identificabili dal prefisso `–wp–*`. A seguire troviamo ancora una volta molti nomi di colori `–white`, `–blue` e così via, usati per assegnare una particolare tonalità di quel colore.
 
 ### Tipi
 
@@ -637,16 +639,16 @@ Come ci si aspetterebbe da altri dati, `rgba()` è il formato di supporto alfa p
 
 Cose interessanti accadono nel mondo del colore. Oltre ai nuovi spazi colore, abbiamo una serie di proprietà e valori relativi al colore. Ci siamo chiesti se qualcuno di questi avesse avuto un impatto sui dati.
 
-La proprietà <a hreflang="en" href="https://web.dev/accent-color/">`accent-color`</a>  consente di aggiungere il colore del marchio come colore di accento a quegli elementi del moduli che sono notoriamente difficili da personalizzare, come i <i lang="en">checkbox</i> (caselle di controllo), i <i lang="en">radio buttons</i> (pulsanti di opzione) e i <i lang="en">range sliders</i> (cursori di intervallo). Forse a causa del fatto che è disponibile in tutti i motori solo da marzo di quest'anno, mostra ancora meno dello 0,3% di utilizzo.
+La proprietà <a hreflang="en" href="https://web.dev/accent-color/">`accent-color`</a> consente di aggiungere il colore del marchio come colore di accento a quegli elementi del moduli che sono notoriamente difficili da personalizzare, come i <i lang="en">checkbox</i> (caselle di controllo), i <i lang="en">radio buttons</i> (pulsanti di opzione) e i <i lang="en">range sliders</i> (cursori di intervallo). Forse a causa del fatto che è disponibile in tutti i motori solo da marzo di quest'anno, mostra ancora meno dello 0,3% di utilizzo.
 
-Un'altra proprietà disponibile in tutti i motori a partire da quest'anno è [`color-scheme`](https://developer.mozilla.org/en-US/docs/Web/CSS/color-scheme), una proprietà che ti consente di specificare in quali combinazioni di colori (chiari o scuri) un componente può essere renderizzato. Questa proprietà è, in qualche modo sorprendentemente, finora trovata solo nello 0,2% delle pagine.
+Un'altra proprietà disponibile in tutti i motori a partire da quest'anno è [`color-scheme`](https://developer.mozilla.org/docs/Web/CSS/color-scheme), una proprietà che ti consente di specificare in quali combinazioni di colori (chiari o scuri) un componente può essere renderizzato. Questa proprietà è, in qualche modo sorprendentemente, finora trovata solo nello 0,2% delle pagine.
 
 ## Gradienti e immagini
 
 {{ figure_markup(
     image="gradient-functions.png",
     caption="Le funzioni <i lang="en">gradient</i> (di sfumatura) più popolari per percentuale di pagine",
-    description="Grafico a barre che mostra le funzioni di sfumatura utilizzate sulla maggior parte delle pagine. `linear-gradient` viene utilizzato nel 76% delle pagine, seguito da `-webkit-linear-gradient` nel 53%, `-webkit-gradient` nel 44%, `-o-linear-gradient` nel 43%, `-moz-linear-gradient` nel 38% , `-ms-linear-gradient` nel 23%, `radial-gradient` nel 15%, `-webkit-radial-gradient` nel 6%, `repeating-linear-gradient` nel 4% e infine `-moz-radial-gradient` nel 2% delle pagine.",
+    description="Grafico a barre che mostra le funzioni di sfumatura utilizzate sulla maggior parte delle pagine. `linear-gradient` viene utilizzata nel 76% delle pagine, seguita da `-webkit-linear-gradient` nel 53%, `-webkit-gradient` nel 44%, `-o-linear-gradient` nel 43%, `-moz-linear-gradient` nel 38% , `-ms-linear-gradient` nel 23%, `radial-gradient` nel 15%, `-webkit-radial-gradient` nel 6%, `repeating-linear-gradient` nel 4% e infine `-moz-radial-gradient` nel 2% delle pagine.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=824533060&format=interactive",
     height="486",
     sheets_gid="972045834",
@@ -674,14 +676,15 @@ Questo grafico scompone i formati immagine delle immagini caricate dai CSS. Non 
 
 {{ figure_markup(
     image="css-initiated-images.png",
-    caption="Grafico a barre che mostra il 10°, 25°, 50°, 75° e 90° percentile delle immagini caricate dai CSS per pagina. I valori per le pagine mobili sono rispettivamente 1, 1, 3, 5 e 10 e sono molto simili a quelli delle pagine desktop.",
+    caption="Distribuzione del numero di immagini caricate da CSS.",
+    description="Grafico a barre che mostra il 10°, 25°, 50°, 75° e 90° percentile delle immagini caricate dai CSS per pagina. I valori per le pagine mobili sono rispettivamente 1, 1, 3, 5 e 10 e sono molto simili a quelli delle pagine desktop.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1307100659&format=interactive",
     sheets_gid="504054046",
     sql_file="image_weights.sql"
   )
 }}
 
-Il numero di immagini caricate dai CSS rimane lo stesso del 2021. I CSS non causano molti caricamenti di immagini: i due percentili più bassi arrivavano ad un'immagine ciascuno e persino il 90° percentile si aggira intorno a 10 immagini, per tutti i tipi di immagine.
+Il numero di immagini caricate dai CSS è rimasto lo stesso del 2021. I CSS non causano molti caricamenti di immagini: i due percentili più bassi arrivavano entrambi ad un'immagine e persino il 90° percentile si aggira attorno a 10 immagini, per tutti i tipi di immagine.
 
 ### Peso delle immagini nei CSS
 
@@ -802,7 +805,7 @@ La pagina mobile mediana dichiara `border-box` 22 volte. Al 90° percentile vien
   )
 }}
 
-L'uso del layout [multi-colonna](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Columns) è aumentato ancora una volta, ora si trova nel 23% delle pagine, con un aumento di 3 punti dal 2021.
+L'uso del layout [multi-colonna](https://developer.mozilla.org/docs/Web/CSS/CSS_Columns) è aumentato ancora una volta, ora si trova nel 23% delle pagine, con un aumento di 3 punti dal 2021.
 
 ### La proprietà `aspect-ratio`
 
@@ -819,7 +822,7 @@ La nuova proprietà `aspect-ratio` viene usata nel 2% delle pagine. La propriet�
 
 ## Transizioni e animazioni
 
-La proprietà `animation` compare nel 77% delle pagine mobili (la stessa percentuale dello scorso anno) e ha un leggero aumento su desktop arrivando al 76,8%. La proprietà `transition` è ancora più popolare, si trova nell'85% delle pagine mobili e nell'85,6% delle pagine desktop. La frequenza su desktop è leggermente diminuita di circa 4 punti percentuali dal 2021.
+La proprietà `animation` compare nel 77% delle pagine mobili (la stessa percentuale dello scorso anno) e aumenta leggermente su desktop arrivando al 76,8%. La proprietà `transition` è ancora più popolare, si trova nell'85% delle pagine mobili e nell'85,6% delle pagine desktop. La frequenza su desktop è leggermente diminuita di circa 4 punti percentuali dal 2021.
 
 {{ figure_markup(
     image="transition-props.png",
@@ -856,7 +859,7 @@ Guardando la durata delle transizioni, vediamo un cambiamento rispetto allo scor
   )
 }}
 
-Anche la distribuzione del ritardo delle transizioni è cambiata. Il ritardo del 90° percentile è sceso da 1,7 secondi a mezzo secondo. Sebbene il ritardo mediano del 10° percentile sia ora di oltre mezzo secondo negativo. Questo si vede quando una transizione inizia a metà dell'animazione risultante.
+Anche la distribuzione del ritardo delle transizioni è cambiata. Il ritardo del 90° percentile è sceso da 1,7 secondi a mezzo secondo. Sebbene il ritardo mediano del 10° percentile sia ora di oltre mezzo secondo negativo. Caso che si vede quando una transizione inizia a metà dell'animazione risultante.
 
 {{ figure_markup(
     image="transition-keyframe-distribution.png",
@@ -885,7 +888,7 @@ Come ci si potrebbe aspettare, gli stop alle animazioni più popolari sono al va
 {{ figure_markup(
     image="transition-timing-functions.png",
     caption="Distribuzione delle funzioni di temporizzazione.",
-    description="Grafico a torta che mostra la distribuzione relativa dell'utilizzo della funzione di temporizzazione. La funzione `ease` viene utilizzata nel 31,8% delle `cubic-bezier` nel 16,4%, `ease-out` nell'8,4%, `ease-in` nel 5,2% e `steps` nel 2,8%",
+    description="Grafico a torta che mostra la distribuzione relativa dell'utilizzo della funzione di temporizzazione. La funzione `ease` viene utilizzata nel 31,8% delle transizioni, seguita da `linear` nel 17,9%, `ease-in-out` nel 17,5%, `cubic-bezier` nel 16,4%, `ease-out` nell'8,4%, `ease-in` nel 5,2% e `steps` nel 2,8%",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=586595091&format=interactive",
     sheets_gid="1907298177",
     sql_file="transition_timing_functions.sql"
@@ -897,7 +900,7 @@ Rispetto al 2021, c'è stato poco cambiamento nella distribuzione delle funzioni
 {{ figure_markup(
     image="transition-animation-names.png",
     caption="Tipi di animazione identificati a partire dal nome dell'animazione.",
-    description="Grafico a barre che mostra i tipi di animazione utilizzati per la maggior parte del tempo. Il tipo più popolare è senza categoria al 13%, seguito da `rotate` al 13%, `bounce` all'11%, `slide` al 10%, `fade` al 9%, `wobble` al 5%, `scale` al 4%, `pulse` al 2% e `visibility` al 2%.",
+    description="Grafico a barre che mostra i tipi di animazione utilizzati per la maggior parte delle volte. Il tipo più popolare è _uncategorized_ al 13%, seguito da `rotate` al 13%, `bounce` all'11%, `slide` al 10%, `fade` al 9%, `wobble` al 5%, `scale` al 4%, `pulse` al 2% e `visibility` al 2%.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=214267440&format=interactive",
     height="463",
     sheets_gid="1632805666",
@@ -907,7 +910,7 @@ Rispetto al 2021, c'è stato poco cambiamento nella distribuzione delle funzioni
 
 Per capire come gli sviluppatori utilizzano le animazioni, abbiamo dato un'occhiata ai nomi usati per le classi di animazione. Ad esempio, qualsiasi cosa con `spin` nel nome della classe viene considerata ruotata (`rotate`). Le animazioni di rotazione sono state anche quest'anno le più popolari, come nel 2021, anche se la percentuale è scesa dal 18% al 13%; con le animazioni di rimbalzo (`bounce`) che sono passate dal 5° al 3° posto nell'elenco.
 
-Come l'anno scorso, l'alto valore nella categoria unknown/other è dovuto alla prevalenza del nome di classe `a`, che non riusciamo a ricondurre ad un tipo di animazione specifico.
+Come l'anno scorso, l'alto valore nella categoria _unknown/other_ è dovuto alla prevalenza del nome di classe `a`, che non riusciamo a ricondurre ad un tipo di animazione specifico.
 
 ## Effetti visivi
 
@@ -940,7 +943,7 @@ Circa il 18% delle pagine utilizzava una proprietà personalizzata `var(--overla
 {{ figure_markup(
     image="filter-functions.png",
     caption="Le funzioni di filtro più popolari nelle pagine che impostano i filtri.",
-    description="Grafico a barre che mostra le funzioni utilizzate nella maggior parte delle pagine che impostano i filtri. La funzione `alpha` viene utilizzata l'82% delle volte, seguita da nessun filtro (`none`) il 59%, `progid:DXImageTransform.Microsoft.gradient` il 46%, `blur` il 31%, `drop-shadow` e `grayscale` il 22%, `brightness` il 20%, `progid:DXImageTransform.Microsoft.BasicImage` ed `inherit` il 10%, `url`, `sepia`, `contrast` e `none !important` tutte l'8%.",
+    description="Grafico a barre che mostra le funzioni utilizzate nella maggior parte delle pagine che impostano i filtri. La funzione `alpha` viene utilizzata l'82% delle volte, seguita da nessun filtro (`none`) il 59%, `progid:DXImageTransform.Microsoft.gradient` il 46%, `blur` il 31%, `drop-shadow` e `grayscale` il 22%, `brightness` il 20%, `progid:DXImageTransform.Microsoft.BasicImage` il 16%, `saturate` l'11%, `inherit` il 10%, `url`, `sepia`, `contrast` e `none !important` tutte l'8%.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1568163707&format=interactive",
     height="591",
     sheets_gid="1004790461",
@@ -950,11 +953,12 @@ Circa il 18% delle pagine utilizzava una proprietà personalizzata `var(--overla
 
 Della percentuale di pagine che usano i filtri per applicare effetti grafici, l'82% utilizza il valore `alpha()`, che non è un valore standard e viene utilizzato per Internet Explorer 8 e versioni precedenti. Inoltre vediamo anche un elevato utilizzo del filtro <a hreflang="en" href="https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms532997(v=vs.85)">`Microsoft.gradient()`</a>.
 
-Fra i [valori standard](https://developer.mozilla.org/en-US/docs/Web/CSS/filter), il 31% delle pagine usa `blur()`, facendone il valore più popolare dopo `none `.
+Fra i [valori standard](https://developer.mozilla.org/docs/Web/CSS/filter), il 31% delle pagine usa `blur()`, facendone il valore più popolare dopo `none `.
 
 {{ figure_markup(
     image="clip-path-functions.png",
-    caption="Grafico a barre che mostra i valori per `clip-path` (percorso di ritaglio) utilizzati nella maggior parte delle pagine che impostano `clip-path`. Il valore più popolare è `inset`, che viene utilizzato l'88% delle volte, seguito da `none` al 70%, `polygon` al 17%, `var` al 9%, `circle` al 7%, `url` al 3% ed `ellipse` al 2%.",
+    caption="Valori `clip-path` più diffusi in pagine che settano `clip-path()`.",
+    description="Grafico a barre che mostra i valori per `clip-path` (percorso di ritaglio) utilizzati nella maggior parte delle pagine che impostano `clip-path`. Il valore più popolare è `inset`, che viene utilizzato l'88% delle volte, seguito da `none` al 70%, `polygon` al 17%, `var` al 9%, `circle` al 7%, `url` al 3% ed `ellipse` al 2%.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=163739565&format=interactive",
     sheets_gid="1458239816",
     sql_file="effects_clip_path_functions.sql"
@@ -967,9 +971,9 @@ Dopo di che, e dopo il valore `none`, la maggior parte degli sviluppatori ha sce
 
 ## Responsive design
 
-Mentre molti sviluppatori stanno aspettando con impazienza le [container queries](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Container_Queries) e contemporaneamente i nuovi metodi di layout come flexbox e grid possono in molti casi consentire ad un progetto di funzionare bene su diverse dimensioni di schermo, sono le [media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries) ad essere utilizzate nella maggior parte delle pagine per realizzare il _responsive design_.
+Mentre molti sviluppatori stanno aspettando con impazienza le [container queries](https://developer.mozilla.org/docs/Web/CSS/CSS_Container_Queries) e contemporaneamente i nuovi metodi di layout come flexbox e grid possono in molti casi consentire ad un progetto di funzionare bene su diverse dimensioni di schermo, sono le [media queries](https://developer.mozilla.org/docs/Web/CSS/Media_Queries/Using_media_queries) ad essere utilizzate nella maggior parte delle pagine per realizzare il _responsive design_.
 
-Quando gli sviluppatori scrivono le _media query_, ciò che testano più spesso è la larghezza del viewport. `max-width` e `min-width` sono state di gran lunga le query più popolari, proprio come nel 2020 e nel 2021. Non ci sono stati cambiamenti in classifica nemmeno per i risultati del terzo e quarto posto.
+Quando gli sviluppatori scrivono le _media query_, ciò che testano più spesso è la larghezza del viewport. `max-width` e `min-width` sono state di gran lunga le query più popolari quest'anno, proprio come nel 2020 e nel 2021. Non ci sono stati cambiamenti in classifica nemmeno per i risultati del terzo e quarto posto.
 
 {{ figure_markup(
     image="media-query-features.png",
@@ -986,7 +990,8 @@ La media query `prefers-reduced-motion`, che era in ascesa in classifica già ne
 
 {{ figure_markup(
     image="prefers-features.png",
-    caption="Grafico a barre che mostra le funzionalità delle media query con il prefisso `prefers`. Il valore più popolare è `prefers-reduced-motion` nel 34% delle pagine, quindi `prefers-color-scheme` nell'8%, `prefers-contrast` nell'1% e `prefers-reduced-transparency` in meno dell'1%.",
+    caption="Uso delle funzionalità di preferenze utente per percentuale di pagine.",
+    description="Grafico a barre che mostra le funzionalità delle media query con il prefisso `prefers`. Il valore più popolare è `prefers-reduced-motion` nel 34% delle pagine, quindi `prefers-color-scheme` nell'8%, `prefers-contrast` nell'1% e `prefers-reduced-transparency` in meno dell'1%.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=632942914&format=interactive",
     sheets_gid="2106336302",
     sql_file="media_query_features.sql"
@@ -997,7 +1002,8 @@ Se guardiamo solo alle funzionalità delle preferenze utente con prefisso `prefe
 
 {{ figure_markup(
     image="hover-features.png",
-    caption="Grafico a barre che mostra la popolarità delle _media feature_ `hover` e `pointer`. La _media feature_ `hover` viene utilizzata nel 5% delle pagine, `pointer` nel 2% e `any-pointer` e `any-hover` al di sotto dell'1% delle pagine.",
+    caption="Utilizzo delle funzionalità del tipo di medium `hover` e `pointer`.",
+    description="Grafico a barre che mostra la popolarità delle _media feature_ `hover` e `pointer`. La _media feature_ `hover` viene utilizzata nel 5% delle pagine, `pointer` nel 2% e `any-pointer` e `any-hover` al di sotto dell'1% delle pagine.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1898240066&format=interactive",
     sheets_gid="2106336302",
     sql_file="media_query_features.sql"
@@ -1066,7 +1072,7 @@ In questi test risaltano molto le funzionalità non standard come `touch-callout
 {{ figure_markup(
     image="supports-props.png",
     caption="Proprietà utilizzate all'interno dei blocchi di feature query per percentuale di pagine.",
-    description="Grafico a barre che mostra le proprietà utilizzate all'interno dei blocchi di feature query che si trovano nella maggior parte delle pagine. La proprietà `object-fit` si trova in un blocco di feature query nel 27% delle pagine, seguita da `content` nel 26%, `background-attachment` nel25%, `border-radius`, `mask-size`, `mask-image`, `mask-repeat`, `mask-position`, `mask-mode` e `-webkit-mask-image` nel 24%, `-webkit-mask-size`, `-webkit-mask-repeat`, `-webkit-mask-position` e `-o-object-fit` nel 23%, `display` nel 17%, `width` nel 15%, `height` nel 13%, `flex` nel 11%, `justify-content` e `align-items` nel 10%.",
+    description="Grafico a barre che mostra le proprietà utilizzate all'interno dei blocchi di feature query che si trovano nella maggior parte delle pagine. La proprietà `object-fit` si trova in un blocco di feature query nel 27% delle pagine, seguita da `content` nel 26%, `background-attachment` nel 25%, `border-radius`, `mask-size`, `mask-image`, `mask-repeat`, `mask-position`, `mask-mode` e `-webkit-mask-image` nel 24%, `-webkit-mask-size`, `-webkit-mask-repeat`, `-webkit-mask-position` e `-o-object-fit` nel 23%, `display` nel 17%, `width` nel 15%, `height` nel 13%, `flex` nel 11%, `justify-content` e `align-items` nel 10%.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1247122547&format=interactive",
     height="783",
     sheets_gid="1467181186",
@@ -1093,7 +1099,7 @@ Le proprietà logiche (o relative al flusso) come `border-block-start` e i valor
 {{ figure_markup(
     image="logical-props.png",
     caption="La distribuzione delle proprietà logiche utilizzate.",
-    description="Grafico a torta che mostra la distribuzione relativa dell'utilizzo delle proprietà logiche. La proprietà `margin` viene utilizzata il 70,0% delle volte, `text-aliugn` il 12,6%, `padding` l'11,2%, `border` il 4,5% e `inser` dl'1,7%.",
+    description="Grafico a torta che mostra la distribuzione relativa dell'utilizzo delle proprietà logiche. La proprietà `margin` viene utilizzata il 70,0% delle volte, `text-aliugn` il 12,6%, `padding` l'11,2%, `border` il 4,5% e `inset` dl'1,7%.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=597319721&format=interactive",
     sheets_gid="1478929671",
     sql_file="i18n_logical_properties.sql"
@@ -1104,7 +1110,7 @@ L'utilizzo delle proprietà logiche è leggermente aumentato dal 2021, passando 
 
 ### Ruby
 
-Abbiamo nuovamente verificato l'utilizzo di [Ruby CSS](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Ruby), un insieme di proprietà utilizzate per l'annotazione fra linee: brevi sequenze di testo presentate in corrispondenza del testo di base.
+Abbiamo nuovamente verificato l'utilizzo di [Ruby CSS](https://developer.mozilla.org/docs/Web/CSS/CSS_Ruby), un insieme di proprietà utilizzate per l'annotazione fra linee: brevi sequenze di testo presentate in corrispondenza del testo di base.
 
 {{ figure_markup(
     content="0.2%",
@@ -1133,15 +1139,15 @@ L'uso di CSS-in-JS non è aumentato rispetto allo scorso anno, rimanendo fermo a
 
 ## Houdini
 
-C'è ancora molto poco utilizzo di [Houdini](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Houdini) nell'open web. Guardando i numeri, la quantità di pagine che utilizzano proprietà personalizzate animate mostra solo un piccolo aumento dal 2021. Abbiamo anche esaminato l'utilizzo dell'API Houdini Paint. Ne troviamo degli esempi in uso nel web. Analizzando i nomi dei worklet utilizzati, si nota che per la maggior parte è usato il worklet <a hreflang="en" href="https://css-houdini.rocks/smooth-corners/">smooth corners (angoli smussati)</a>, il che indica che le persone lo usano come un miglioramento progressivo, dato che questo può, nel caso non sia supportato, essere sostituito degnamente da un semplice `border-radius`.
+C'è ancora molto poco utilizzo di [Houdini](https://developer.mozilla.org/docs/Web/CSS/CSS_Houdini) nell'open web. Guardando i numeri, la quantità di pagine che utilizzano proprietà personalizzate animate mostra solo un piccolo aumento dal 2021. Abbiamo anche esaminato l'utilizzo dell'API Houdini Paint. Ne troviamo degli esempi in uso nel web. Analizzando i nomi dei worklet utilizzati, si nota che per la maggior parte è usato il worklet <a hreflang="en" href="https://css-houdini.rocks/smooth-corners/">smooth corners (angoli smussati)</a>, il che indica che le persone lo usano come un miglioramento progressivo, dato che questo può, nel caso non sia supportato, essere sostituito degnamente da un semplice `border-radius`.
 
 ## Sass
 
-I preprocessori come Sass possono essere visti come buoni indicatori di ciò che gli sviluppatori desiderano essere in grado di fare con i CSS, ma non possono fare. E, con la crescente potenza dei CSS, una domanda comune da parte degli sviluppatori è se abbiamo in fondo ancora bisogno di usare Sass. Lo capiamo dall'aumento dell'utilizzo delle proprietà personalizzate CSS (le _custom property_): uno degli usi più comuni del preprocessore (la possibilità di avere variabili o costanti) ha ora un equivalente CSS nativo.
+I preprocessori come Sass possono essere visti come buoni indicatori di ciò che gli sviluppatori desiderano poter fare con i CSS, ma non riescono fare. E, con la crescente potenza dei CSS, una domanda comune da parte degli sviluppatori è se abbiamo in fondo ancora bisogno di usare Sass. Lo capiamo dall'aumento dell'utilizzo delle proprietà personalizzate CSS (le _custom property_): uno degli usi più comuni del preprocessore (la possibilità di avere variabili o costanti) ha ora un equivalente CSS nativo.
 
 {{ figure_markup(
     image="sass-function-calls.png",
-    caption="Le chiamate di funzioni Sass più popolari per percentuale di richiami.",
+    caption="Le chiamate di funzioni Sass più popolari per percentuale di chiamate.",
     description="Grafico a barre che mostra le chiamate di funzioni Sass utilizzate per la maggior parte delle volte. La funzione `if` costituisce il 19% delle chiamate di funzione Sass, seguita da altre funzioni al 17%, `darken` al 14%, `map-get` al 10%, `map-keys` al 9%, `percentage` al 6%, `nth` al 5%, `lighten` e `mix` al 4%, `type-of`, regolazione alfa, `unit` e `lenght` al 3%.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1702171363&format=interactive",
     height="552",
@@ -1150,7 +1156,7 @@ I preprocessori come Sass possono essere visti come buoni indicatori di ciò che
   )
 }}
 
-Guardando alle chiamate di funzione si nota che le funzioni relative al colore sono ancora un uso molto popolare di Sass, qualcosa che potrebbe presto essere sostituito con <a href="https://www.w3.org/TR/css-color-5/" hreflang="it">nuove funzioni colore in CSS</a> come `color-mix()`. Ci sono alcuni cambiamenti rispetto allo scorso anno. La funzione `darken` è scesa di 2 punti percentuali al 14% e al terzo posto. La funzione `lighten` ha, in compenso, guadagnato punti.
+Guardando alle chiamate di funzione si nota che le funzioni relative al colore sono ancora un uso molto popolare di Sass, qualcosa che potrebbe presto essere sostituito con <a href="https://www.w3.org/TR/css-color-5/" hreflang="en">nuove funzioni colore in CSS</a> come `color-mix()`. Ci sono alcuni cambiamenti rispetto allo scorso anno. La funzione `darken` è scesa di 2 punti percentuali al 14% e al terzo posto. La funzione `lighten` ha, in compenso, guadagnato punti.
 
 {{ figure_markup(
     image="sass-control-flow-statements.png",
@@ -1175,7 +1181,7 @@ Osservando le dichiarazioni di flusso di controllo, vediamo un piccolo aumento d
   )
 }}
 
-Anche l'annidamento (<i lang="en">nesting</i>) è interessante, dato che una specifica futura per CSS Nesting è attualmente in fase di sviluppo e discussione presso il CSS Working Group. L'annidamento nei fogli SCSS è molto comune e può essere identificato cercando il carattere `&`. Come l'anno scorso, pseudo-classi come `:hover` e classi come `.active` costituiscono la maggior parte dei casi di annidamento. Tutti gli utilizzo sono leggermente aumentati, tuttavia `& descendent` è aumentato di 7 punti percentuali dal 18% al 25%. L'annidamento implicito non viene misurato in questa analisi, poiché non utilizza caratteri speciali.
+Anche l'annidamento (<i lang="en">nesting</i>) è interessante, dato che una specifica futura per CSS Nesting è attualmente in fase di sviluppo e discussione presso il CSS Working Group. L'annidamento nei fogli SCSS è molto comune e può essere identificato cercando il carattere `&`. Come l'anno scorso, pseudo-classi come `:hover` e classi come `.active` costituiscono la maggior parte dei casi di annidamento. Tutti gli utilizzi sono leggermente aumentati, tuttavia `& descendent` è aumentato di 7 punti percentuali dal 18% al 25%. L'annidamento implicito non viene misurato in questa analisi, poiché non utilizza caratteri speciali.
 
 ## CSS per la stampa
 
@@ -1224,7 +1230,7 @@ La proprietà `orphans` appare nel 22% dei fogli di stile di stampa, nonostante 
 
 C'è un'intera specifica per la gestione dei media con pagine (<i lang="en">Paged Media</i>) e CSS per la stampa. Anche se sono state implementate male nei browser. Per trovare una buona implementazione di queste funzionalità è necessario utilizzare uno user agent (browser) specifico per la stampa.
 
-C'è un po' di supporto dei browser per la regola [`@page`](https://developer.mozilla.org/en-US/docs/Web/CSS/@page) e per le sue pseudo-classi, e in realtà abbiamo riscontrato che degli sviluppatori le usano per impostare proprietà di pagina diverse per la prima pagina e le pagine sinistra e destra di uno spread.
+C'è un certo supporto dei browser per la regola [`@page`](https://developer.mozilla.org/docs/Web/CSS/@page) e per le sue pseudo-classi, e in realtà abbiamo riscontrato che degli sviluppatori le usano per impostare proprietà di pagina diverse per la prima pagina e le pagine sinistra e destra di uno _spread_ (doppia pagina).
 
 <figure>
   <table>
@@ -1255,7 +1261,7 @@ C'è un po' di supporto dei browser per la regola [`@page`](https://developer.mo
   </table>
 
   <figcaption>{{ figure_link(
-    caption="Numero di pagine trovate che usano le pseudo-classi di diffusione `@page`.",
+    caption="Numero di pagine trovate che usano le pseudo-classi di doppia pagina con `@page`.",
     sheets_gid="590030258",
     sql_file="print_page_pseudo_classes.sql"
   ) }}</figcaption>
@@ -1296,13 +1302,11 @@ In CSS, una proprietà abbreviata (<i lang=="en">shorthand</i>) è quella che pu
 - `background-repeat`
 - `background-size`
 
-When developers mix shorthand properties like `background` and longhand properties like `background-size` in a stylesheet, it is always best to have the longhands come after the shorthands. We looked at instances of this to see which longhands were most common.
-
 Quando gli sviluppatori mescolano proprietà abbreviate come `background` e proprietà singole come `background-size` in un foglio di stile, è sempre meglio avere la sintassi estesa dopo l'abbreviazione. Abbiamo esaminato i casi di questo utilizzo per vedere quali proprietà singole fossero più comuni.
 
 {{ figure_markup(
     image="shorthand-first-props.png",
-    caption="Le proprietà singole più popolari che vengono dopo le abbreviazioni.",
+    caption="Le proprietà singole più diffuse che vengono dopo le abbreviazioni.",
     description="Grafico a barre che mostra la popolarità relativa delle proprietà singole che seguono le proprietà con sintassi abbreviata a loro associate. La proprietà `background-size` costituisce il 15% di questo schema, seguita da `background-image` al 6%, `font-size`, `margin-bottom`, `margin-top` e `border-bottom-color` al 5%, `line-height`, `border-top-color` e `margin-left` al 4% e `padding-left` al 3%.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1722219756&format=interactive",
     height="445",
@@ -1311,7 +1315,7 @@ Quando gli sviluppatori mescolano proprietà abbreviate come `background` e prop
   )
 }}
 
-Come nel 2020 e nel 2021, la `background-size` è risultata in cima alla classifica e con poca differenza rispetto al 2021.
+Come nel 2020 e nel 2021, `background-size` è risultata in cima alla classifica e con poca differenza rispetto al 2021.
 
 ### Errori di sintassi irrecuperabili
 
@@ -1324,7 +1328,7 @@ Come negli anni precedenti, abbiamo ricercato la presenza di dichiarazioni con s
 {{ figure_markup(
     image="unknown-props.png",
     caption="Le proprietà sconosciute più frequentemente riscontrate.",
-    description="Grafico a barre che mostra le proprietà non valide presenti nella maggior parte delle pagine. La più popolare è `-archetype` nell'11% delle pagine, seguita da `font-smoothing` e `behavior` nel 10%, `tap-highlight-color` nel 6%, `moz-transition` nel 5%, `margin-center` nel 4%, `box-flex` nel 3%, `webkit -transition` nel 3% e le restanti si trovano tutte in meno dell'1% delle pagine: `url-encoded`, `border-collapse`, `webkit-border-radius`, `moz-border-radius` e `enable-background`.",
+    description="Grafico a barre che mostra le proprietà non valide presenti nella maggior parte delle pagine. La più popolare è `-archetype` nell'11% delle pagine, seguita da `font-smoothing` e `behavior` nel 10%, `tap-highlight-color` nel 6%, `moz-transition` nel 5%, `margin-center` nel 4%, `box-flex` nel 3%, `webkit-transition` nel 3% e le restanti si trovano tutte in meno dell'1% delle pagine: `url-encoded`, `border-collapse`, `webkit-border-radius`, `moz-border-radius` e `enable-background`.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=932637515&format=interactive",
     height="514",
     sheets_gid="127761236",
