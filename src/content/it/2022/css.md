@@ -93,7 +93,7 @@ Il 2022 ha visto uno scossone alla cascata con la regola [`@layer`](https://deve
 {{ figure_markup(
     image="top-selector-classes.png",
     caption="I nomi delle classi più popolari per la percentuale di pagine che li utilizzano.",
-    description="Grafico a barre che mostra i nomi delle classi CSS utilizzati nella maggior parte delle pagine. Mobile e desktop hanno risultati simili. Sui dispositivi mobili il nome di classe più usato è `active`, presente nel 47% delle pagine. Seguito da `fa` sul 33% delle pagine, altre classi con prefisso `fa` sul 32% delle pagine e classi con prefisso `wp` sul 31%. Il resto delle prime 10 classi in ordine decrescente sono: `button` con il 27% di adozione, `pull-right`, `emoji` e `disabled` al 26%, e infine `pull-left` e `title ` al 25%.",
+    description="Grafico a barre che mostra i nomi delle classi CSS utilizzati nella maggior parte delle pagine. Mobile e desktop hanno risultati simili. Sui dispositivi mobili il nome di classe più usato è `active`, presente nel 47% delle pagine. Seguito da `fa` sul 33% delle pagine, altre classi con prefisso `fa` sul 32% delle pagine e classi con prefisso `wp` sul 31%. Il resto delle prime 10 classi in ordine decrescente sono: `button` con il 27% di adozione, `pull-right`, `emoji` e `disabled` al 26%, e infine `pull-left` e `title` al 25%.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1082092053&format=interactive",
     height="691",
     sheets_gid="1020483137",
@@ -599,7 +599,7 @@ Il basso utilizzo degli altri valori ci mostra una storia simile: la comunità w
 {{ figure_markup(
     image="color-keywords.png",
     caption="I nomi-colore meno diffusi per numero di occorrenze",
-    description="Grafico a barre che mostra i nomi-colore utilizzati sul minor numero di pagine. `MediumSpringGreen` viene utilizzato solo in 1.793 pagine mobili. L'adozione aumenta gradualmente con `DarkSalmon`, `MediumOrchid`, `DarkOrchid`, `MediumSlateBlue`, `LavenderBlush`, `RosyBrown`,` Moccasin`, `SpringGreen` e `Thistle`, che arriva ad essere utilizzato in 2.205 pagine.",
+    description="Grafico a barre che mostra i nomi-colore utilizzati sul minor numero di pagine. `MediumSpringGreen` viene utilizzato solo in 1.793 pagine mobili. L'adozione aumenta gradualmente con `DarkSalmon`, `MediumOrchid`, `DarkOrchid`, `MediumSlateBlue`, `LavenderBlush`, `RosyBrown`,`Moccasin`, `SpringGreen` e `Thistle`, che arriva ad essere utilizzato in 2.205 pagine.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=80217989&format=interactive",
     height="464",
     sheets_gid="2096495459",
@@ -953,7 +953,7 @@ Circa il 18% delle pagine utilizzava una proprietà personalizzata `var(--overla
 
 Della percentuale di pagine che usano i filtri per applicare effetti grafici, l'82% utilizza il valore `alpha()`, che non è un valore standard e viene utilizzato per Internet Explorer 8 e versioni precedenti. Inoltre vediamo anche un elevato utilizzo del filtro <a hreflang="en" href="https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms532997(v=vs.85)">`Microsoft.gradient()`</a>.
 
-Fra i [valori standard](https://developer.mozilla.org/docs/Web/CSS/filter), il 31% delle pagine usa `blur()`, facendone il valore più popolare dopo `none `.
+Fra i [valori standard](https://developer.mozilla.org/docs/Web/CSS/filter), il 31% delle pagine usa `blur()`, facendone il valore più popolare dopo `none`.
 
 {{ figure_markup(
     image="clip-path-functions.png",
