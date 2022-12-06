@@ -1,13 +1,13 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Markup
-description: Capitolo sul markup del Web Almanac 2022 che tratta dei dati relativi ai documenti (doctype, compressione, lingue, conformità all'HTML, dimensione dei documenti), dell'uso di elementi e attibuti HTML, degli attributi di dati e dei social media.
+description: Capitolo sul markup del Web Almanac 2022 che tratta dei dati relativi ai documenti (doctype, compressione, lingue, conformità all'HTML, dimensione dei documenti), dell'uso di elementi e attributi HTML, degli attributi di dati e dei social media.
 authors: [j9t]
 reviewers: [bkardell, zcorpan]
 analysts: [rviscomi]
 editors: [tunetheweb]
 translators: [webmatter-it]
-j9t_bio: Jens Oliver Meiert è un ingegnere capo e autore (<a hreflang="en" href="https://leanpub.com/web-development-glossary"><cite>The Web Development Glossary</cite></a>, <a hreflang="en" href="https://www.amazon.com/dp/B094W54R2N/"><cite>Upgrade Your HTML</cite></a>), che lavora in qualità di engineering manager presso <a hreflang="en" href="https://www.liveperson.com/">LivePerson</a>. È specializzato nella minimizzaziozione e ottimizzazine dell'HTML e dei CSS. Jens scrive regolarmente sul mestiere dello sviluppo web sul suo sito <a hreflang="en" href="https://meiert.com/en/">meiert.com</a>.
+j9t_bio: Jens Oliver Meiert è un ingegnere capo e autore (<a hreflang="en" href="https://leanpub.com/web-development-glossary"><cite>The Web Development Glossary</cite></a>, <a hreflang="en" href="https://www.amazon.com/dp/B094W54R2N/"><cite>Upgrade Your HTML</cite></a>), che lavora in qualità di engineering manager presso <a hreflang="en" href="https://www.liveperson.com/">LivePerson</a>. È specializzato nella minimizzazione e ottimizzazione dell'HTML e dei CSS. Jens scrive regolarmente sul mestiere dello sviluppo web sul suo sito <a hreflang="en" href="https://meiert.com/en/">meiert.com</a>.
 results: https://docs.google.com/spreadsheets/d/1grkd2_1xSV3jvNK6ucRQ0OL1HmGTsScHuwA8GZuRLHU/
 featured_quote: Senza l'HTML non ci possono essere pagine web, siti web, app web. Si può dire che senza HTML non ci sarebbe il Web. Ciò rende l'HTML uno degli standard web più importanti, se non il più importante standard web.
 featured_stat_1: 90%
@@ -28,7 +28,7 @@ Di conseguenza, come ogni anno, abbiamo utilizzato i milioni di pagine nel nostr
 
 C'è molto di cui essere curiosi quando si tratta di come scriviamo l'HTML. Possiamo porre molte domande, ma quando si tratta di HTML in generale, diamo un'occhiata a come il nostro HTML viene inviato ai browser, prima ancora di entrare nel contenuto del markup stesso.
 
-### Doctypes
+### Doctype
 
 <figure>
   <table>
@@ -127,7 +127,7 @@ I documenti sono conformi alle specifiche HTML, ovvero sono validi? Un modo rapi
 
 Non l'abbiamo fatto e non abbiamo ancora potuto verificarlo. Allora perché includere questa sezione?
 
-Il motivo per almeno citare la conformità è che se non controlli la conformità, se non validi i documenti, ci sono buone probabilità (in pratica, <a hreflang="en" href="https://meiert.com /it/blog/valid-html-2022/">di fatto una probabilità del 100%</a>) che finirai per scrivere almeno un po' di codice HTML fittizio e di fantasia (e quindi sbagliato). Ma l'HTML non è finzione o fantasia: è uno standard tecnico rigido con regole chiare su cosa funziona e cosa no.
+Il motivo per almeno citare la conformità è che se non controlli la conformità, se non validi i documenti, ci sono buone probabilità (in pratica, <a hreflang="en" href="https://meiert.com/it/blog/valid-html-2022/">di fatto una probabilità del 100%</a>) che finirai per scrivere almeno un po' di codice HTML fittizio e di fantasia (e quindi sbagliato). Ma l'HTML non è finzione o fantasia: è uno standard tecnico rigido con regole chiare su cosa funziona e cosa no.
 
 Per un professionista, è bene conoscere queste regole. È un bene produrre codice che funzioni e che non contenga nulla di superfluo. Ed entrambe le azioni (l'imparare e il non licenziare alcunché di non funzionante o superfluo) rappresentano il motivo per cui la conformità è importante e perché la validazione è importante.
 
@@ -146,13 +146,13 @@ Il payload HTML e le dimensioni del documento sono un punto fermo in questa seri
   sql_file="document_trends.sql",
 )}}
 
-Dopo un breve sollievo nel 2020, le dimensioni dei documenti hanno continuato a crescere nel 2021 e di nuovo nel 2022, con una dimensione media di trasferimento di 30 kB nel nostro set di dati relativo a dispositivi mobili.
+Dopo un breve sollievo nel 2020, le dimensioni dei documenti hanno continuato a crescere nel 2021 e di nuovo nel 2022, con una dimensione media di trasferimento di 30 KB nel nostro set di dati relativo a dispositivi mobili.
 
 Un modo per contrastare questa tendenza è <a hreflang="en" href="https://css-tricks.com/write-html-the-html-way-not-the-xhtml-way/">scrivere HTML alla HTML (e non alla XHTML)</a>, in quanto ciò da solo comporterebbe un peso di trasferimento dell'HTML inferiore. _Chiarimento: al tuo autore qui piace inventare classificazioni sui tipi di scrittura HTML ed è un forte promotore dell'HTML minimale._
 
 ## Elementi
 
-Se non si contanto gli elementi `svg` e `math` (poiché sono specificati al di fuori dell'HTML) l'attuale specifica HTML consiste al momento di 111 elementi.
+Se non si contano gli elementi `svg` e `math` (poiché sono specificati al di fuori dell'HTML) l'attuale specifica HTML consiste al momento di 111 elementi.
 
 <p class="note">Elementi, non tag, perché non ci riferiamo a semplici tag di inizio o fine, come `<li>` o `</ins>`. E alcune persone contano gli elementi HTML in modo diverso, ma la cosa più importante è <a hreflang="en" href="https://meiert.com/it/blog/the-number-of-html-elements/">essere chiari su come si contano</a>.</p>
 
@@ -265,7 +265,7 @@ I seguenti elementi sono usati con più frequenza:
   </table>
   <figcaption>
     {{ figure_link(
-      caption="Element più utilizzati.",
+      caption="Elementi più utilizzati.",
       sheets_gid="571472591",
       sql_file="element_frequency.sql",
     ) }}
@@ -284,7 +284,7 @@ L'elemento `div` è di gran lunga l'elemento più popolare: abbiamo trovato 2.12
 
 [Divitis](https://en.wiktionary.org/wiki/divitis) è una realtà.
 
-Se ti stai chiedendo qual è l'elemento strano, [l'elemento `i`](https://developer.mozilla.org/docs/Web/HTML/Element/i), è logico che ciò sia ancora in gran parte dovuto a <a hreflang="en" href="https://fontawesome.com/">Font Awesome</a> e il suo discutibile uso improprio di questo elemento. L'elemento ha anche una cattiva reputazione perché durante i tempi di XHTML, tutti suggerivano di usare invece `em`, ma quel consiglio non era valido, e <a hreflang="en" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-i-element">Gli elementi `i` hanno i loro casi d'uso</a>.
+Se ti stai chiedendo qual è l'elemento strano, [l'elemento `i`](https://developer.mozilla.org/docs/Web/HTML/Element/i), è logico che ciò sia ancora in gran parte dovuto a <a hreflang="en" href="https://fontawesome.com/">Font Awesome</a> e il suo discutibile uso improprio di questo elemento. L'elemento ha anche una cattiva reputazione perché durante i tempi di XHTML, tutti suggerivano di usare invece `em`, che invece non era un buon consiglio e infatti si veda <a hreflang="en" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-i-element">Gli elementi `i` hanno i loro casi d'uso</a>.
 
 Quando si tratta di quali elementi vengono utilizzati nella maggior parte dei documenti, l'elenco ha un aspetto leggermente diverso:
 
@@ -390,7 +390,7 @@ Quali sono gli elementi personalizzati che seguono per popolarità e che non fan
   <table>
     <thead>
       <tr>
-        <th>Custom element</th>
+        <th>Elemento personalizzato</th>
         <th>Desktop</th>
         <th>Mobile</th>
       </tr>
@@ -432,7 +432,7 @@ Quali sono gli elementi personalizzati che seguono per popolarità e che non fan
   </figcaption>
 </figure>
 
-This is more diverse: `pages-css`, `wix-image` and `wix-iframe` come from the Wix website builder. `router-outlet` originates in Angular. And `ss3-loader` seems to be related to Smart Slider.
+Qui i dati sono più vari: `pages-css`, `wix-image` e `wix-iframe` provengono dal website builder Wix. `router-outlet` ha origine in Angular. E `ss3-loader` sembra essere correlato a Smart Slider.
 
 ### Elementi obsoleti
 
