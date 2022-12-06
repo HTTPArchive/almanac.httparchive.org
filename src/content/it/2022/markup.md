@@ -535,7 +535,7 @@ L'edizione dello scorso anno ha introdotto [una sezione sul social markup](../20
 {{ figure_markup(
   image="social-meta-nodes-usage.png",
   caption="Utilizzo dei metanodi social.",
-  description="Grafico a barre che mostra che `og:title` è nel 56% delle pagine desktop e nel 57% delle pagine mobile, `og:url` rispettivamente nel 53% e 54%, `og:type` nel 51% e 51%, `og :description` nel 50% e 50%, `og:site_name` nel 45% e 45%, `twitter:card` nel 40% e 39%, `og:image` nel 39% e 39%, `og:locale ` nel 28% e 29%, `twitter:title` nel 24% e 23% e infine `twitter:description` nel 21% di entrambi.",
+  description="Grafico a barre che mostra che `og:title` è nel 56% delle pagine desktop e nel 57% delle pagine mobile, `og:url` rispettivamente nel 53% e 54%, `og:type` nel 51% e 51%, `og :description` nel 50% e 50%, `og:site_name` nel 45% e 45%, `twitter:card` nel 40% e 39%, `og:image` nel 39% e 39%, `og:locale` nel 28% e 29%, `twitter:title` nel 24% e 23% e infine `twitter:description` nel 21% di entrambi.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRjXjOczLu9q3mcQ-UFLUOmZgefGNCPVYeEwo4cDxQTymgmD_1D5dbZ728Mz1SkEMZHxQgwcWmLjkgx/pubchart?oid=429652195&format=interactive",
   sheets_gid="1925328234",
   sql_file="meta_node_names.sql",
