@@ -9,7 +9,7 @@ editors: [shantsis]
 translators: [webmatter-it]
 bramstein_bio: Bram Stein è uno sviluppatore e product manager. È molto appassionato di tipografia ed si trova a suo agio nel lavorare all'intersezione tra design e tecnologia. È autore del manuale <a hreflang="en" href="https://abookapart.com/products/webfont-handbook">Webfont Handbook</a> edito da A Book Apart e della libreria software <a hreflang="en" href="https://fontfaceobserver.com">FontFace Observer</a>. Inoltre parla di tipografia e performance web in conferenze in tutto il mondo.
 results: https://docs.google.com/spreadsheets/d/1A1XwuGa1DkqNLaF-lSXz4ndxO9G6SfACHwUvvywHgbQ/
-featured_quote: Pensiamo, infatti, che sia tempo di affermare con forzacolon; "Usiamo esclusivamente il formato WOFF2 e scordiamoci di tutti gli altri". Così semplifichiamo di molto i nostri CSS e il nostro metodo di lavoro ed inoltre WOFF2 è ora supportato ovunque.
+featured_quote: Pensiamo, infatti, che sia tempo di affermare con forza&colon; "Usiamo esclusivamente il formato WOFF2 e scordiamoci di tutti gli altri". Così semplifichiamo di molto i nostri CSS e il nostro metodo di lavoro ed inoltre WOFF2 è ora supportato ovunque.
 featured_stat_1: 29%
 featured_stat_label_1: Siti che usano `font-display&colon; swap`
 featured_stat_2: 18%
