@@ -1,75 +1,76 @@
 ---
 ##See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
-title: Structured Data
-description: Structured Data chapter of the 2022 Web Almanac covering adoption and year on year change of RDFa, Opne Graph, Twitter, JSON-LD, Microdata, Facebook, Dublin Core, Microformats and microformats2 structured data.
+title: Dati strutturati
+description: Capitolo sui dati strutturati del Web Almanac 2022 che copre l'adozione e il cambiamento anno dopo anno dei dati strutturati RDFa, Open Graph, Twitter, JSON-LD, Microdati, Facebook, Dublin Core, Microformati e microformati2.
 authors: [cyberandy, DataBytzAI]
 reviewers: [SeoRobt, jonoalderson]
 analysts: [rviscomi]
 editors: [JasmineDW]
 translators: [webmatter-it]
-cyberandy_bio: Andrea Volpini is the CEO of WordLift, and is currently focusing on the semantic web, SEO and artificial intelligence.
-DataBytzAI_bio: Allen is founder and CTO for 'The DataWorks', delivering AI-driven web-data solutions to top tier organizations worldwide. His core focus is designing innovative technology solutions at scale, and his primary background is in enterprise systems.
-results: https://docs.google.com/spreadsheets/d/1iRsyYq4TDMpsgeo_uLq-yqBisHviypeKVUMF1pM1fiM/
-featured_quote: While SEO remains a crucial driver for adopting structured data, a growing landscape of use cases is emerging beyond search engines.
-featured_stat_1: 3%
-featured_stat_label_1: JSON-LD growth year over year
-featured_stat_2: 59%
-featured_stat_label_2: Pages using Open Graph structured data
-featured_stat_3: 40%
-featured_stat_label_3: Pages using Twitter structured data
+cyberandy_bio: Andrea Volpini è il CEO di WordLift, e attualmente si occupa di web semantico, SEO e intelligenza artificiale.
+DataBytzAI_bio: Allen è fondatore e CTO di 'The DataWorks', fornitore di soluzioni di dati Web basate sull'intelligenza artificiale a organizzazioni di alto livello in tutto il mondo. Il suo obiettivo principale è la progettazione di soluzioni tecnologiche innovative su larga scala e il suo background principale è nei sistemi aziendali.
+risultati: https://docs.google.com/spreadsheets/d/1iRsyYq4TDMpsgeo_uLq-yqBisHviypeKVUMF1pM1fiM/
+Featured_quote: Mentre la SEO rimane un driver cruciale per l'adozione dei dati strutturati, sta emergendo un panorama crescente di casi d'uso al di là dei motori di ricerca.
+features_stat_1: 3%
+feature_stat_label_1: crescita di JSON-LD anno dopo anno
+features_stat_2: 59%
+Featured_stat_label_2: Pagine che utilizzano i dati strutturati Open Graph
+features_stat_3: 40%
+Featured_stat_label_3: Pagine che utilizzano i dati strutturati di Twitter
+
 ---
 
-## Introduction
+## Introduzione
 
-This is the second year that the Web Almanac has included a chapter on structured data. Last year's content [gave a solid grounding](../2021/structured-data#key-concepts) in the concept of structured data, outlining the reason it exists, the most frequently used types, and how it benefits organizations. This year we compared data gathered in 2022 with the previous data from last year, so were able to monitor trends that occurred within that period.
+Questo è il secondo anno in cui il Web Almanac include un capitolo sui dati strutturati. Il contenuto dell'anno scorso [ha fornito una solida base](../2021/structured-data#key-concepts) sul concetto di dati strutturati, delineando il motivo per cui esistono, i tipi utilizzati più di frequente e i vantaggi per le organizzazioni. Quest'anno abbiamo confrontato i dati raccolti nel 2022 con i dati precedenti dello scorso anno, così siamo stati in grado di monitorare le tendenze che si sono verificate in quel periodo.
 
-Despite many advances in machine learning and in particular the field of "natural language progressing", data still needs to be presented in a machine-readable format. Structured data assists in information discoverability in web search, data linkage and archival purposes. By implementing structured data on websites, engineers and web content creators facilitate:
+Nonostante i numerosi progressi nell'apprendimento automatico (<i lang="en">machine learning</i>) e in particolare nel campo del processamento del linguaggio naturale <i lang="en">natural language processing</i>, i dati devono ancora essere presentati in un formato leggibile dalla macchina. I dati strutturati aiutano nell'individuazione delle informazioni durante una ricerca sul web, aiutano nel collegamento dei dati e negli scopi dell'archiviazione. Implementando i dati strutturati sui siti web, gli ingegneri e i creatori di contenuti web facilitano:
 
-- making website data more widely available for automated discovery and linking
-- the open availability of data for public research
-- ensuring the quality of the organization's data is maintained when the data leaves its origin
+- rendere i dati dei siti Web più ampiamente disponibili per la scoperta e il collegamento automatizzati
+- la disponibilità dei dati aperta per la ricerca pubblica
+- garantire che la qualità dei dati dell'organizzazione sia mantenuta quando i dati lasciano la loro origine
 
-Organizations of all sizes and types want their content to be discovered on the web. Search engines such as Google and Bing emphasize data discoverability by promoting the use of structured data. From an [SEO](./seo) point of view, it is advantageous to present data in an easy to find and parse manner. Some of these advantages will be discussed in the [use cases](#use-cases) and [key concepts](#key-concepts) sections within this chapter.
+Le organizzazioni di ogni dimensione e tipo desiderano che i propri contenuti vengano scoperti sul web. I motori di ricerca come Google e Bing enfatizzano la trovabilità dei dati promuovendo l'uso di dati strutturati. Da un punto di vista [SEO](./seo), è vantaggioso presentare i dati in modo facile da trovare e analizzare. Alcuni di questi vantaggi saranno discussi nelle sezioni [casi d'uso](#use-cases) e [concetti chiave](#key-concepts) all'interno di questo capitolo.
 
-[Last year's introduction](../2021/structured-data#introduction) pointed out that "when machines can reliably extract structured data, at scale, we enable new and smarter types of software, systems, services and businesses". This year's chapter includes sections that explore recently published research on structured data, open source frameworks and tools that assist the generation of high-quality structured data.
+[L'introduzione dell'anno scorso](../2021/structured-data#introduction) ha sottolineato che "quando le macchine possono estrarre in modo affidabile dati strutturati, su larga scala, abilitiamo nuovi e più intelligenti tipi di software, sistemi, servizi e attività". Il capitolo di quest'anno include sezioni che esplorano le ricerche pubblicate di recente sui dati strutturati, i framework open source e gli strumenti che aiutano la generazione di dati strutturati di alta qualità.
 
-This year we provide the first year over year comparison of metrics such as the presence of different structured data types as well as the growth of those structured data types, and examines the evolving benefits of using structured data. Having a baseline of data from 2021 allows us to gain insights into how the use of structured data has changed over the intervening period and observe interesting trends, for example the growth of TikTok in the period.
+Quest'anno forniamo il primo confronto anno su anno di metriche come la presenza di diversi tipi di dati strutturati e la crescita di tali tipi di dati strutturati, ed esaminiamo i vantaggi in evoluzione dell'utilizzo di dati strutturati. Avere una base di dati dal 2021 ci consente di ottenere informazioni su come è cambiato l'uso dei dati strutturati nel periodo intercorso e osservare tendenze interessanti, ad esempio la crescita di TikTok nel periodo.
 
-## Data caveats
+## Avvertenze sui dati
 
-Structured data can appear in many forms, and may be more visible in certain domains, and their corresponding websites, over others. For example, compare a news website with an ecommerce website. In general, a news site shows the most important breaking news on its home page, therefore the structured data relating to the news articles may be present on the main website landing page attached as data-snippets to the individual article headlines. In comparison, structured data in ecommerce pertains to individual products and, as such, is mostly present within a website's product catalog itself, and in many ways, "hidden" from a high level search of the main navigation and promotional parts of the website. This is the key caveat that we need to be aware of in relation to the structured data chapter and report.
+I dati strutturati possono comparire in molte forme e possono essere più visibili in alcuni ambiti e nei relativi siti web rispetto ad altri ambiti. Ad esempio, si confronti un sito web di news con un sito web di e-commerce. In generale un sito di news mostra le ultime notizie più importanti nella sua homepage, pertanto i dati strutturati relativi agli articoli di news possono essere presenti nella landing page principale del sito allegati come data-snippet ai titoli dei singoli articoli. In confronto, i dati strutturati nell'e-commerce riguardano singoli prodotti e, come tali, sono per lo più presenti all'interno del catalogo prodotti di un sito web stesso e, in molti modi, "nascosti" da una ricerca di alto livello delle principali parti di navigazione e promozionali del sito web. Questo è l'avvertimento chiave di cui dobbiamo essere consapevoli in relazione al capitolo e al rapporto sui dati strutturati.
 
-Due to the fact that the technology used to harvest data from websites only scratches the surface of sites (ie: the home pages), and does not go into depth on a full crawl of the site, we are unable to get a full picture of the extent of structured data usage in sites where such data is by necessity, contained deep within the site. In future years we hope to take a sample of sites across different domains and go deep to rectify this issue and give additional insight into domain-specific use of structured data.
+Poiché la tecnologia qui utilizzata per raccogliere i dati dai siti web scalfisce appena la superficie dei siti (vale a dire le homepage) e non va in profondità con una scansione completa dei siti, non siamo in grado di ottenere un quadro completo dell'estensione di utilizzo dei dati strutturati nei siti in cui tali dati sono necessariamente contenuti in profondità all'interno del sito. Nei prossimi anni ci auguriamo di prendere un campione di siti in diversi ambiti e di andare in profondità per correggere questo problema e fornire ulteriori informazioni sull'uso specifico dei dati strutturati in ciascun ambito.
 
-The high level caveats from last year's chapter still remain, namely:
+Rimangono ancora gli avvertimenti di alto livello del capitolo dello scorso anno, vale a dire:
 
-- **Auto-generated structured data**: This is where technologies such as content creation systems auto-generate structured data snippets based on templates. In this case any template-based error will inevitably populate across all data presented.
+- **Dati strutturati generati automaticamente**: questo avviene quando tecnologie come i sistemi di creazione di contenuti generano automaticamente snippet di dati strutturati basati su modelli. In questo caso qualsiasi errore basato su modello andrà inevitabilmente a scrivere in tutti i dati presentati.
 
-- **Data format overlaps**: Structured data can be presented in a number of different ways, including JSON-LD, RDF etc. This means that we may see overlap, for example, between a Facebook meta tag and the same tag presented in a different manner in the RDFa section. As analysis is tightly based on queries created for the baseline in 2021, we expect the impact of cleaning/normalization and data flattening should carry through for like analysis.
+- **Sovrapposizioni del formato dei dati**: i dati strutturati possono essere presentati in diversi modi, tra cui JSON-LD, RDF ecc. Ciò significa che potremmo avere delle sovrapposizioni, ad esempio, tra un meta tag di Facebook e lo stesso tag presentato in modo diverso nella sezione RDFa. Poiché l'analisi è strettamente basata sulle query create per la linea di base nel 2021, prevediamo che l'impatto della pulizia/normalizzazione e dell'appiattimento dei dati dovrebbe essere portato avanti per un'analisi simile.
 
-## Key concepts
+## Concetti chiave
 
-As structured data is a rich and complex area, it is important to explore and explain some key concepts of the topic before diving head-first into further analysis.
+Poiché i dati strutturati sono un'area ricca e complessa, è importante esplorare e spiegare alcuni concetti chiave dell'argomento prima di tuffarsi a capofitto in ulteriori analisi.
 
-### Linked data
+### Dati collegati (<i lang="en">linked data</i>)
 
-By adding structured data to web pages, and providing URI links to the entities the pages contain/reference, we create <a hreflang="en" href="https://en.wikipedia.org/wiki/Linked_data">_linked data_</a>. This structured data is then interlinked, making it more useful through semantic queries.
+Aggiungendo dati strutturati alle pagine web e fornendo collegamenti URI alle entità contenute o richiamate dalle pagine, creiamo i cosiddetti <a hreflang="en" href="https://en.wikipedia.org/wiki/Linked_data">_linked data_ </a>. Questi dati strutturati vengono quindi interconnessi, rendendoli più utili tramite query semantiche.
 
-Adding linked data to describe web page content enables machines to treat web pages as databases. At a large scale, this contributes to the <a hreflang="en" href="https://en.wikipedia.org/wiki/Semantic_Web">semantic web</a>. The semantic web links data together through The _Resource Description Framework (RDF)_. This is a framework for representing information on the web using URIs to define entities and the relationships between them.
+L'aggiunta di dati collegati per descrivere il contenuto della pagina web consente alle macchine di trattare le pagine web come database. Su larga scala, questo contribuisce al <a hreflang="en" href="https://en.wikipedia.org/wiki/Semantic_Web">web semantico</a>. Il web semantico collega i dati insieme attraverso il _Resource Description Framework (RDF)_. Si tratta di un framework per rappresentare le informazioni sul web che utilizza gli URI per definire le entità e le relazioni tra di esse.
 
-A relationship between entities in the RDF data model is known as a _semantic triple_. With a <a hreflang="en" href="https://en.wikipedia.org/wiki/Semantic_triple">semantic triple</a> (or just _triple_), we can codify a statement about data. These expressions follow the form of subject–predicate–object (e.g., "Allen knows John").
+Una relazione tra entità nel modello di dati RDF è nota come _tripla semantica_. Con una <a hreflang="en" href="https://en.wikipedia.org/wiki/Semantic_triple">tripla semantica</a> (o semplicemente _tripla_), possiamo codificare un'affermazione sui dati. Queste espressioni seguono la forma di soggetto-predicato-oggetto (ad esempio, "Allen conosce John").
 
-To be able to retrieve and manipulate RDF data, we can use an RDF Query Language such as <a hreflang="en" href="https://www.w3.org/TR/sparql11-query/">SPARQL</a>, the standard RDF query language.
+Per essere in grado di recuperare e manipolare i dati RDF, possiamo utilizzare un RDF Query Language come <a hreflang="en" href="https://www.w3.org/TR/sparql11-query/">SPARQL</ a>, il linguaggio di query RDF standard.
 
-As will be discussed later, this semantic web creates many opportunities for business and technology.
+Come verrà discusso in seguito, questo web semantico crea molte opportunità per il business e la tecnologia.
 
-### Open data
+### Dati aperti (<i lang="en">open data</i>)
 
-Linked data may also be <a hreflang="en" href="https://en.wikipedia.org/wiki/Open_data">_open data_</a>, described as _Linked Open Data_. Open data, as the name implies, is data that is openly accessible to anyone for any purpose. This data is licensed under an open license.
+I dati collegati possono anche essere <a hreflang="en" href="https://en.wikipedia.org/wiki/Open_data">_open data_</a>, descritti come _Linked Open Data_. I dati aperti, come suggerisce il nome, sono dati che sono apertamente accessibili a chiunque per qualsiasi scopo. Questi dati sono concessi in licenza con una licenza aperta.
 
-Open data is the first of the <a hreflang="en" href="https://5stardata.info/en/">5 stars of open data</a>, a deployment scheme suggested by Tim Berners-Lee. According to the <a hreflang="en" href="https://opendatahandbook.org/">open data handbook</a>, to score the maximum five stars, data must (1) Be available on the Web under an open license, (2) Be in the form of structured data, (3) Be in a non-proprietary file format, (4) Use URIs as its identifiers, (5) Include links to other data sources (see [data linking](#data-linking)).
+Gli open data sono la prima delle <a hreflang="en" href="https://5stardata.info/en/">5 stelle degli open data</a>, uno schema di implementazione suggerito da Tim Berners-Lee. Secondo il <a hreflang="en" href="https://opendatahandbook.org/">manuale sugli open data</a>, per ottenere il punteggio massimo di cinque stelle, i dati devono (1) essere disponibili sul web con un licenza aperta, (2) essere sotto forma di dati strutturati, (3) essere in un formato di file non proprietario, (4) utilizzare gli URI come identificatori, (5) includere collegamenti ad altre fonti di dati (vedere [collegamento dati](#data-linking)).
 
-While structured data is the second star in the 5 star open data plan, linked data should fulfill requirements for all 5 stars of open data.
+Mentre i dati strutturati sono la seconda stella nel piano open data a 5 stelle, i linked data dovrebbero soddisfare i requisiti per tutte le 5 stelle degli open data.
 
 ### Semantic search engines, rich results and beyond
 
