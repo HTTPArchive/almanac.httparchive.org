@@ -487,8 +487,8 @@ L'anno scorso l'uso delle keyword globali era aumentato in modo significativo, n
 
 {{ figure_markup(
     image="custom-property-adoption.png",
-    caption="Uso delle proprietà personalizzate (<i lang='en'>custom property</i>) negli ultimi quattro anni.",
-    description="Grafico a barre che mostra la cronologia per anno dell'utilizzo delle proprietà personalizzate (<i lang='en'>custom property</i>) nelle pagine mobili a partire dal 2019. Dal 2019 al 2022, l'utilizzo delle proprietà personalizzate è cresciuto dal 5%, al 19%, al 29% e ora, nel 2022, al 42%. La funzione `var()` era utilizzata nel 27% delle pagine nel 2020, nel 35% nel 2021 e ora (2022) nel 43%.",
+    caption="Uso delle proprietà personalizzate (custom property) negli ultimi quattro anni.",
+    description="Grafico a barre che mostra la cronologia per anno dell'utilizzo delle proprietà personalizzate (custom property) nelle pagine mobili a partire dal 2019. Dal 2019 al 2022, l'utilizzo delle proprietà personalizzate è cresciuto dal 5%, al 19%, al 29% e ora, nel 2022, al 42%. La funzione `var()` era utilizzata nel 27% delle pagine nel 2020, nel 35% nel 2021 e ora (2022) nel 43%.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=832908182&format=interactive",
     sheets_gid="786267748",
     sql_file="custom_property_adoption.sql"
