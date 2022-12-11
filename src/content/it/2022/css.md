@@ -647,7 +647,7 @@ Un'altra proprietà disponibile in tutti i motori a partire da quest'anno è [`c
 
 {{ figure_markup(
     image="gradient-functions.png",
-    caption="Le funzioni <i lang="en">gradient</i> (di sfumatura) più popolari per percentuale di pagine",
+    caption="Le funzioni gradient (di sfumatura) più popolari per percentuale di pagine",
     description="Grafico a barre che mostra le funzioni di sfumatura utilizzate sulla maggior parte delle pagine. `linear-gradient` viene utilizzata nel 76% delle pagine, seguita da `-webkit-linear-gradient` nel 53%, `-webkit-gradient` nel 44%, `-o-linear-gradient` nel 43%, `-moz-linear-gradient` nel 38% , `-ms-linear-gradient` nel 23%, `radial-gradient` nel 15%, `-webkit-radial-gradient` nel 6%, `repeating-linear-gradient` nel 4% e infine `-moz-radial-gradient` nel 2% delle pagine.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=824533060&format=interactive",
     height="486",
