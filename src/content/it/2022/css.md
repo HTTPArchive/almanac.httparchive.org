@@ -487,8 +487,8 @@ L'anno scorso l'uso delle keyword globali era aumentato in modo significativo, n
 
 {{ figure_markup(
     image="custom-property-adoption.png",
-    caption="Uso delle proprietà personalizzate (custom property) negli ultimi quattro anni.",
-    description="Grafico a barre che mostra la cronologia per anno dell'utilizzo delle proprietà personalizzate (custom property) nelle pagine mobili a partire dal 2019. Dal 2019 al 2022, l'utilizzo delle proprietà personalizzate è cresciuto dal 5%, al 19%, al 29% e ora, nel 2022, al 42%. La funzione `var()` era utilizzata nel 27% delle pagine nel 2020, nel 35% nel 2021 e ora (2022) nel 43%.",
+    caption='Uso delle proprietà personalizzate (<i lang="en">custom property</i>) negli ultimi quattro anni.',
+    description='Grafico a barre che mostra la cronologia per anno dell’utilizzo delle proprietà personalizzate (<i lang="en">custom property</i>) nelle pagine mobili a partire dal 2019. Dal 2019 al 2022, l’utilizzo delle proprietà personalizzate è cresciuto dal 5%, al 19%, al 29% e ora, nel 2022, al 42%. La funzione `var()` era utilizzata nel 27% delle pagine nel 2020, nel 35% nel 2021 e ora (2022) nel 43%.',
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=832908182&format=interactive",
     sheets_gid="786267748",
     sql_file="custom_property_adoption.sql"
@@ -647,7 +647,7 @@ Un'altra proprietà disponibile in tutti i motori a partire da quest'anno è [`c
 
 {{ figure_markup(
     image="gradient-functions.png",
-    caption="Le funzioni gradient (di sfumatura) più popolari per percentuale di pagine",
+    caption='Le funzioni <i lang="en">gradient</i> (di sfumatura) più popolari per percentuale di pagine',
     description="Grafico a barre che mostra le funzioni di sfumatura utilizzate sulla maggior parte delle pagine. `linear-gradient` viene utilizzata nel 76% delle pagine, seguita da `-webkit-linear-gradient` nel 53%, `-webkit-gradient` nel 44%, `-o-linear-gradient` nel 43%, `-moz-linear-gradient` nel 38% , `-ms-linear-gradient` nel 23%, `radial-gradient` nel 15%, `-webkit-radial-gradient` nel 6%, `repeating-linear-gradient` nel 4% e infine `-moz-radial-gradient` nel 2% delle pagine.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=824533060&format=interactive",
     height="486",
@@ -1291,7 +1291,7 @@ Nel 2021 si era visto un leggero calo delle ripetizioni, quest'anno c'è un legg
 
 ### Abbreviazioni e proprietà singole
 
-In CSS, una proprietà abbreviata (<i lang=="en">shorthand</i>) è quella che può impostare un numero di proprietà singole (<i lang=="en">longhand</i>) in un'unica dichiarazione. Ad esempio, la proprietà abbreviata `background` può essere utilizzata per impostare tutte le seguenti proprietà singole:
+In CSS, una proprietà abbreviata (<i lang="en">shorthand</i>) è quella che può impostare un numero di proprietà singole (<i lang="en">longhand</i>) in un'unica dichiarazione. Ad esempio, la proprietà abbreviata `background` può essere utilizzata per impostare tutte le seguenti proprietà singole:
 
 - `background-attachment`
 - `background-clip`
