@@ -3,6 +3,7 @@ from server.helpers import (
     get_versioned_filename,
     get_ebook_size_in_mb,
     chapter_lang_exists,
+    page_lang_exists,
     featured_chapters_exists,
     get_chapter_nextprev,
     get_chapter_config,
@@ -156,6 +157,14 @@ def test_chapter_lang_exists():
 
 def test_chapter_lang_not_exists():
     assert chapter_lang_exists("en", "2019", "random") is False
+
+
+def test_page_lang_exists():
+    assert page_lang_exists("en", "2019", "methodology") is True
+
+
+def test_page_lang_not_exists():
+    assert page_lang_exists("en", "2019", "random") is False
 
 
 def test_featured_chapters_exists():
