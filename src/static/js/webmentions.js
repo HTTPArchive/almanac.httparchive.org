@@ -318,10 +318,10 @@ function handleShareButton() {
   const canonical = document.querySelector('link[rel="canonical"]');
 
   // Feature detection to see if the Web Share API is supported.
-  if (!('share' in navigator)) {
-    button.remove();
-    return;
-  }
+  // if (!('share' in navigator)) {
+  //   button.remove();
+  //   return;
+  // }
 
   // Find out if the user is on a device made by Apple and, if so, switch the icon.
   if (/Mac|iPhone/.test(navigator.platform)) {
