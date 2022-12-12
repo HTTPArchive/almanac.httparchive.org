@@ -732,7 +732,7 @@ hreflang属性でもっとも利用されているのは、`"en"`（英語版）
 
 Bingにとって、[`hreflang` は `content-language` ヘッダーよりも「はるかに弱い信号」です](https://twitter.com/facan/status/1304120691172601856)。
 
-他の多くのSEOパラメーターと同様に、[`content-language`](https://developer.mozilla.org/ja/docs/Web/HTTP/Headers/Content-Language)には、以下のような複数の実装方法があります。
+他の多くのSEOパラメーターと同様に、[`content-language`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Language)には、以下のような複数の実装方法があります。
 
 1. HTTPサーバーレスポンス
 2. HTMLタグ

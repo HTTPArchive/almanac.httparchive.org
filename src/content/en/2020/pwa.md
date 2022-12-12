@@ -345,7 +345,7 @@ There are many cases, where the service workers use libraries as dependencies, b
 
 ### Popular import scripts
 
-The [importScripts() API](https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/importScripts) of the [WorkerGlobalScope interface](https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope) synchronously imports one or more scripts into the worker's scope. The same is used to import external dependencies to the service worker.
+The [importScripts() API](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/importScripts) of the [WorkerGlobalScope interface](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope) synchronously imports one or more scripts into the worker's scope. The same is used to import external dependencies to the service worker.
 
 <figure>
 <table>

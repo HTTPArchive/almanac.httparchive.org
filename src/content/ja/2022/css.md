@@ -84,7 +84,7 @@ CSSのウェイトがもっとも大きいデスクトップ ページは62,631K
 
 ## セレクターとカスケード
 
-2022年には、[`@layer`](https://developer.mozilla.org/ja/docs/Web/CSS/@layer)がすべてのエンジンに搭載され、カスケードに関しても変化がありました。この新しいアットルールは、セレクターをレイヤーにグループ化し、そのレイヤーの優先順位を管理できます。
+2022年には、[`@layer`](https://developer.mozilla.org/docs/Web/CSS/@layer)がすべてのエンジンに搭載され、カスケードに関しても変化がありました。この新しいアットルールは、セレクターをレイヤーにグループ化し、そのレイヤーの優先順位を管理できます。
 
 この新しいカスケード管理方法が広く使われるようになるにはまだ少し早いですが、セレクターの使い方がどのように進化してきたかを見てみましょう。
 
@@ -641,7 +641,7 @@ CSSでは値や単位を指定する方法として、設定された長さや�
 
 <a hreflang="en" href="https://web.dev/accent-color/">`accent-color`</a> プロパティを使うと、チェックボックス、ラジオボタン、レンジスライダーなど、スタイルが決まりにくいフォーム要素にアクセントカラーとしてブランドカラーを追加できます。今年3月から全エンジンに搭載されたばかりのためか、使用率はまだ0.3％未満です。
 
-今年、すべてのエンジンで利用可能になったもうひとつのプロパティは [`color-scheme`](https://developer.mozilla.org/ja/docs/Web/CSS/color-scheme) で、コンポーネントをどの配色（明暗）でレンダリングするかを指定できます。このプロパティは、意外なことに、今のところ0.2%のページでしか見つかっていない。
+今年、すべてのエンジンで利用可能になったもうひとつのプロパティは [`color-scheme`](https://developer.mozilla.org/docs/Web/CSS/color-scheme) で、コンポーネントをどの配色（明暗）でレンダリングするかを指定できます。このプロパティは、意外なことに、今のところ0.2%のページでしか見つかっていない。
 
 ## グラデーションと画像
 
@@ -805,7 +805,7 @@ CSSでは画像の読み込みはあまり発生しませんが、その画像�
   )
 }}
 
-[CSS 段組みレイアウト](https://developer.mozilla.org/ja/docs/Web/CSS/CSS_Columns)レイアウトの利用が再び増加し、現在23%のページで見られ、2021年から3ポイント上昇しました。
+[CSS 段組みレイアウト](https://developer.mozilla.org/docs/Web/CSS/CSS_Columns)レイアウトの利用が再び増加し、現在23%のページで見られ、2021年から3ポイント上昇しました。
 
 ### `aspect-ratio`プロパティ
 
@@ -953,7 +953,7 @@ CSSで使用されているいくつかの視覚効果について調べまし�
 
 グラフィカルな効果を適用するフィルターを設定しているページの割合のうち、82%がInternet Explorer 8以下で使用される非標準の値である `alpha()` を使用しています。また、<a hreflang="ja" href="https://learn.microsoft.com/ja-jp/previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms532997(v=vs.85)">`Microsoft.gradient()`</a> フィルターの使用率も高いことがわかります。
 
-[標準値](https://developer.mozilla.org/ja/docs/Web/CSS/filter)のうち、31%のページで `blur()` が使用されており、`none` に次いでもっとも普及している値となっています。
+[標準値](https://developer.mozilla.org/docs/Web/CSS/filter)のうち、31%のページで `blur()` が使用されており、`none` に次いでもっとも普及している値となっています。
 
 {{ figure_markup(
     image="clip-path-functions.png",
@@ -971,7 +971,7 @@ CSSで使用されているいくつかの視覚効果について調べまし�
 
 ## レスポンシブデザイン
 
-多くの開発者が[コンテナクエリ](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Container_Queries)を熱望しており、フレックスボックスやグリッドなどの新しいレイアウト手法によって、複数の画面サイズでうまく動作するデザインが可能になることも多いですが、レスポンシブデザインを行うページの大半で[メディアクエリ](https://developer.mozilla.org/ja/docs/Web/CSS/Media_Queries/Using_media_queries)が使用されています。
+多くの開発者が[コンテナクエリ](https://developer.mozilla.org/docs/Web/CSS/CSS_Container_Queries)を熱望しており、フレックスボックスやグリッドなどの新しいレイアウト手法によって、複数の画面サイズでうまく動作するデザインが可能になることも多いですが、レスポンシブデザインを行うページの大半で[メディアクエリ](https://developer.mozilla.org/docs/Web/CSS/Media_Queries/Using_media_queries)が使用されています。
 
 開発者がメディアクエリを書くとき、もっとも多いのはビューポートの幅をテストすることです。`max-width`と`min-width`は、2020年、2021年と同じように、もっとも普及しているクエリでした。3位と4位の結果も順位変動はありませんでした。
 
@@ -1110,7 +1110,7 @@ CSS機能の対応テストに使用されるフィーチャー・クエリー�
 
 ### Ruby
 
-今回も、[CSS Ruby](https://developer.mozilla.org/ja/docs/Web/CSS/CSS_Ruby)の使用を確認しました。これは、インターリニアアノテーション（ベーステキストに沿った短いテキスト）に使用するプロパティの集合体です。
+今回も、[CSS Ruby](https://developer.mozilla.org/docs/Web/CSS/CSS_Ruby)の使用を確認しました。これは、インターリニアアノテーション（ベーステキストに沿った短いテキスト）に使用するプロパティの集合体です。
 
 {{ figure_markup(
     content="0.2%",
@@ -1139,7 +1139,7 @@ CSS-in-JSの利用は昨年から増えておらず、3％にとどまってい�
 
 ## Houdini
 
-[Houdini](https://developer.mozilla.org/ja/docs/Web/CSS/CSS_Houdini)は、オープンなWeb上ではまだほとんど使われていないんです。アニメーションのカスタムプロパティを使用しているページ数を見ると、2021年以降、わずかな増加にとどまっています。また、Houdini Paint APIの利用状況も調べてみました。私たちは、Web上でこれが使用されている事例を発見しました。使用されている小作品名を見ると、その多くが <a hreflang="en" href="https://css-houdini.rocks/smooth-corners/">smooth corners</a> 小作品で、通常の `border-radius` にうまくフォールバックできることから、人々はこれを段階的強化として使用していることがわかります。
+[Houdini](https://developer.mozilla.org/docs/Web/CSS/CSS_Houdini)は、オープンなWeb上ではまだほとんど使われていないんです。アニメーションのカスタムプロパティを使用しているページ数を見ると、2021年以降、わずかな増加にとどまっています。また、Houdini Paint APIの利用状況も調べてみました。私たちは、Web上でこれが使用されている事例を発見しました。使用されている小作品名を見ると、その多くが <a hreflang="en" href="https://css-houdini.rocks/smooth-corners/">smooth corners</a> 小作品で、通常の `border-radius` にうまくフォールバックできることから、人々はこれを段階的強化として使用していることがわかります。
 
 ## Sass
 
@@ -1230,7 +1230,7 @@ Sassのようなプリプロセッサーは、開発者がCSSでできるよう�
 
 Paged Mediaを扱うための全体の仕様があり、印刷用のCSSもある。しかし、これはブラウザにうまく実装されていません。これらの機能の優れた実装を見つけるには、印刷に特化したユーザーエージェントを使用する必要があります。
 
-ブラウザは、[`@page`](https://developer.mozilla.org/ja/docs/Web/CSS/@page)ルールとその擬似クラスをいくらかサポートしており、開発者はこれらを使って、最初のページと見開きの左右のページに対して異なるページプロパティを設定しているのを見かけました。
+ブラウザは、[`@page`](https://developer.mozilla.org/docs/Web/CSS/@page)ルールとその擬似クラスをいくらかサポートしており、開発者はこれらを使って、最初のページと見開きの左右のページに対して異なるページプロパティを設定しているのを見かけました。
 
 <figure>
   <table>

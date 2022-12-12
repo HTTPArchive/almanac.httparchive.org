@@ -30,7 +30,11 @@ def render_template(template, *args, **kwargs):
     # If the template does not exist, then redirect to English version if it exists, else home
     if lang != "" and not (os.path.isfile(TEMPLATES_DIR + "/%s" % template)):
         if os.path.isfile(TEMPLATES_DIR + "/en/%s" % (template[langcode_length:])):
-            return redirect("/en%s" % (request.full_path[langcode_length:]), code=302)
+            # Strip empty query string if full_path returns this
+            path = request.full_path[langcode_length:]
+            if path[-1] == "?":
+                path = path[:-1]
+            return redirect("/en%s" % path, code=302)
         else:
             return redirect(url_for("home", lang=lang, year=year))
 

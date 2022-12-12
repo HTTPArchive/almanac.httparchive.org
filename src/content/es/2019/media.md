@@ -266,7 +266,7 @@ El método más usado para implementar las imágenes <i lang="en">responsive</i>
   )
 }}
 
-No es sorprendente el notable menor uso del `<picture>` ya que se usan más a menudo para el diseño web <i lang="en">responsive</i> (RWD, siglas del inglés <i lang="en">responsive web design</i>) avanzado como el de [dirección de arte](https://developer.mozilla.org/es/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#Art_direction).
+No es sorprendente el notable menor uso del `<picture>` ya que se usan más a menudo para el diseño web <i lang="en">responsive</i> (RWD, siglas del inglés <i lang="en">responsive web design</i>) avanzado como el de [dirección de arte](https://developer.mozilla.org/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#Art_direction).
 
 ### Uso de sizes
 

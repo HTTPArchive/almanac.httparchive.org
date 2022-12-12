@@ -232,7 +232,7 @@ From signing up for a new service, buying something online, or even to receive n
 
 In the past, `text` and `password` were some of the only input types available to developers as it met almost all of our needs on desktop. This is not the case for mobile devices. Mobile keyboards are incredibly small, and a simple task, like entering an email address, may require users to switch between multiple keyboards: the standard keyboard and the special character keyboard for the "@" symbol. Simply entering a phone number can be difficult using the default keyboard's tiny numbers.
 
-Many [new input types](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types) have since been introduced, allowing developers to inform browsers what kind of data is expected, and enable browsers to provide customized keyboards specifically for these input types. For example, a type of `email` provides users with an alphanumeric keyboard including the "@" symbol, and a type of `tel` will display a numeric keypad.
+Many [new input types](https://developer.mozilla.org/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types) have since been introduced, allowing developers to inform browsers what kind of data is expected, and enable browsers to provide customized keyboards specifically for these input types. For example, a type of `email` provides users with an alphanumeric keyboard including the "@" symbol, and a type of `tel` will display a numeric keypad.
 
 When analyzing sites containing an email input, 56.42% use `type="email"`. Similarly, for phone inputs, `type="tel"` is used 36.7% of the time. Other new input types have an even lower adoption rate.
 
@@ -262,7 +262,7 @@ Make sure to educate yourself and others on the large amount of input types avai
 
 ### Enabling autocomplete for inputs
 
-The [`autocomplete`](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) input attribute enables users to fill out form fields in a single click. Users fill out tons of forms, often with the exact same information each time. Realizing this, browsers have begun to securely store this information so it can be used on future pages. All developers need to do is use this `autocomplete` attribute to tell browsers what exact piece of information needs to be filled in, and the browser does the rest.
+The [`autocomplete`](https://developer.mozilla.org/docs/Web/HTML/Attributes/autocomplete) input attribute enables users to fill out form fields in a single click. Users fill out tons of forms, often with the exact same information each time. Realizing this, browsers have begun to securely store this information so it can be used on future pages. All developers need to do is use this `autocomplete` attribute to tell browsers what exact piece of information needs to be filled in, and the browser does the rest.
 
 {{ figure_markup(
   caption="Percent of pages that use <code>autocomplete</code>.",

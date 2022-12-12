@@ -237,7 +237,7 @@ Vergeleken met [de resultaten van vorig jaar](../2019/compression#eerste-partij-
 
 ## Hoe u compressie op uw sites kunt analyseren
 
-U kunt [Firefox Developer Tools](https://developer.mozilla.org/nl/docs/Tools) of <a hreflang="en" href="https://developers.google.com/web/tools/chrome-devtools">Chrome DevTools</a> gebruiken om snel uit te zoeken welke inhoud een website al comprimeert. Ga hiervoor naar het tabblad Netwerk, klik met de rechtermuisknop en activeer "Content Encoding" onder Response Headers. Als u over de grootte van individuele bestanden zweeft, ziet u "transferred over network" en "resource size". Geaggregeerd voor de hele site kan men de grootte/overgedragen grootte voor Firefox en "transferred" en "resources" voor Chrome linksonder op het tabblad Netwerk zien.
+U kunt [Firefox Developer Tools](https://developer.mozilla.org/docs/Tools) of <a hreflang="en" href="https://developers.google.com/web/tools/chrome-devtools">Chrome DevTools</a> gebruiken om snel uit te zoeken welke inhoud een website al comprimeert. Ga hiervoor naar het tabblad Netwerk, klik met de rechtermuisknop en activeer "Content Encoding" onder Response Headers. Als u over de grootte van individuele bestanden zweeft, ziet u "transferred over network" en "resource size". Geaggregeerd voor de hele site kan men de grootte/overgedragen grootte voor Firefox en "transferred" en "resources" voor Chrome linksonder op het tabblad Netwerk zien.
 
 {{ figure_markup(
   image="content-encoding.png",

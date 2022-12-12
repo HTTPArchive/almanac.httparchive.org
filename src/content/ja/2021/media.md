@@ -106,9 +106,9 @@ featured_stat_label_3: 動画要素を含むデスクトップページのシェ
   <figcaption>{{ figure_link(caption="1画素の画像使用。", sheets_gid="1851007461", sql_file="image_1x1.sql") }}</figcaption>
 </figure>
 
-これらの1画素 `<img>` 要素は、はっきり言ってハッキングです。[レイアウトのため](https://en.wikipedia.org/wiki/Spacer_GIF)（これはCSSでやったほうがいい）か [ユーザーの追跡](https://ja.wikipedia.org/wiki/%E3%82%A6%E3%82%A7%E3%83%96%E3%83%93%E3%83%BC%E3%82%B3%E3%83%B3)（これは [Beacon API](https://developer.mozilla.org/en-US/docs/Web/API/Beacon_API) でやったほうがいい）かのいずれかで乱用されているのです。
+これらの1画素 `<img>` 要素は、はっきり言ってハッキングです。[レイアウトのため](https://en.wikipedia.org/wiki/Spacer_GIF)（これはCSSでやったほうがいい）か [ユーザーの追跡](https://ja.wikipedia.org/wiki/%E3%82%A6%E3%82%A7%E3%83%96%E3%83%93%E3%83%BC%E3%82%B3%E3%83%B3)（これは [Beacon API](https://developer.mozilla.org/docs/Web/API/Beacon_API) でやったほうがいい）かのいずれかで乱用されているのです。
 
-これらの1画素の画像 `<img>` がどのような仕事をしているかは、[データ URI](https://developer.mozilla.org/ja/docs/Web/HTTP/Basics_of_HTTP/Data_URIs) を使っているものがどれだけあるかを見ることで、基本的な内訳を知ることができます。
+これらの1画素の画像 `<img>` がどのような仕事をしているかは、[データ URI](https://developer.mozilla.org/docs/Web/HTTP/Basics_of_HTTP/Data_URIs) を使っているものがどれだけあるかを見ることで、基本的な内訳を知ることができます。
 
 <figure>
   <table>
@@ -369,7 +369,7 @@ WebPとAVIFの採用が時間とともにどのように変化したか（およ
 
 2013年、レスポンシブWebサイトにおける画像のアダプティブ・ローディングを可能にする一連の機能が、あまりに大きな反響を呼んで上陸しました。それから8年、レスポンシブ画像機能はどのように活用されているのでしょうか？
 
-まず、[`srcset` 属性](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/srcset) について考えてみましょう。この属性によって、開発者は同じ `<img>` に対して複数の可能なリソースを提供できます。
+まず、[`srcset` 属性](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/srcset) について考えてみましょう。この属性によって、開発者は同じ `<img>` に対して複数の可能なリソースを提供できます。
 
 ##### `x` と `w` の記述子の採用
 
@@ -570,8 +570,8 @@ WebPとAVIFの採用が時間とともにどのように変化したか（およ
 
 `<picture>` 要素は、いくつかのユースケースに対応しています。
 
-1. アートディレクション、[`media`属性](https://developer.mozilla.org/ja/docs/Web/HTML/Element/picture#the_media_attribute)付き
-2. MIMEタイプに基づくフォーマット切り替え、[`type` 属性](https://developer.mozilla.org/ja/docs/Web/HTML/Element/picture#the_type_attribute) による
+1. アートディレクション、[`media`属性](https://developer.mozilla.org/docs/Web/HTML/Element/picture#the_media_attribute)付き
+2. MIMEタイプに基づくフォーマット切り替え、[`type` 属性](https://developer.mozilla.org/docs/Web/HTML/Element/picture#the_type_attribute) による
 
 {{ figure_markup(
   caption="モバイルページで `<picture>` が使用されている割合。",
@@ -596,7 +596,7 @@ WebPとAVIFの採用が時間とともにどのように変化したか（およ
 
 アートディレクションは、フォーマット切り替えに比べるとやや多いようですが、どちらも潜在的な有用性を考えると、あまり活用されていないように思います。これまで見てきたように、モバイル画面に合わせて画像のアスペクト比を調整しているページはほとんどなく、多くのページが次世代フォーマットを使ってより効率的に画像を配信できるはずです。これらはまさに `<picture>` が解決するために考案された問題であり、おそらく5.9%以上のページがこの機能を使って、これらの問題に対処することができたのでしょう。
 
-フォーマット切り替えは [サーバサイドコンテンツネゴシエーション](https://developer.mozilla.org/ja/docs/Web/HTTP/Content_negotiation) でも実現できるので、`<source type>` によるフォーマット切り替えは2〜3%のページでしか使われていない可能性があります。残念ながら、サーバーサイドの適応メカニズムは、クローリングされたデータから検出することが困難であり、ここでは解析していない。
+フォーマット切り替えは [サーバサイドコンテンツネゴシエーション](https://developer.mozilla.org/docs/Web/HTTP/Content_negotiation) でも実現できるので、`<source type>` によるフォーマット切り替えは2〜3%のページでしか使われていない可能性があります。残念ながら、サーバーサイドの適応メカニズムは、クローリングされたデータから検出することが困難であり、ここでは解析していない。
 
 なお、`<source type>`と`<source media>`は相互に排他的ではないので、ここでの使用比率を合わせても100%にはならない。このことから、少なくとも15%の `<picture>` 要素はこれらの属性のどちらも利用しておらず、それらの `<picture>` は機能的に `<span>` と同等であることがわかります。
 
@@ -606,7 +606,7 @@ WebPとAVIFの採用が時間とともにどのように変化したか（およ
 
 #### 内在サイジングと外在サイジング
 
-[置換要素](https://developer.mozilla.org/ja/docs/Web/CSS/Replaced_element)である画像は、自然で[“内在“サイズ](https://developer.mozilla.org/ja/docs/Glossary/Intrinsic_Size)を持っています。このサイズは、CSSルールによる「外在」レイアウト制約がない場合に、デフォルトでレンダリングされるサイズです。
+[置換要素](https://developer.mozilla.org/docs/Web/CSS/Replaced_element)である画像は、自然で[“内在“サイズ](https://developer.mozilla.org/docs/Glossary/Intrinsic_Size)を持っています。このサイズは、CSSルールによる「外在」レイアウト制約がない場合に、デフォルトでレンダリングされるサイズです。
 
 内在性と外在性のサイズの画像はいくつありますか？
 
@@ -630,7 +630,7 @@ WebPとAVIFの採用が時間とともにどのように変化したか（およ
 
 デフォルトでは、画像が読み込まれ、その固有寸法が判明するまで、内在寸法のままではスペースを取りません。その時点で、パッとページに現れて、<a hreflang="en" href="https://developers.google.com/publisher-tag/guides/minimize-layout-shift">レイアウト シフト</a>が発生するのです。これは、まさに `height` と `width` 属性が解決するために発明された問題でした。<a hreflang="en" href="https://www.w3.org/TR/2018/SPSD-html32-20180315/#img">1996年</a> 。
 
-残念ながら`height` と `width` は、ある次元では可変の外在サイズ（たとえば、 `width: 100%;`）が割り当てられ、他の次元では内在の縦横比を満たすように放置される画像とはうまく動作しません。これはレスポンシブデザインにおける支配的なパターンです。そのため、`width` と `height` はレスポンシブコンテキスト内で人気がなくなりましたが、2019年に [ブラウザが `height` と `width` を使用する方法を調整](https://developer.mozilla.org/ja/docs/Web/Media/images/aspect_ratio_mapping#a_new_way_of_sizing_images_before_loading_completes) によってこの問題が修正されました。さて、一貫して `height` と `width` を設定することは、<a hreflang="ja" href="https://web.dev/i18n/ja/cls/">Cumulative Layout Shift</a> を減らすために作成者ができる最善のことの1つです。これらの属性はどれくらいの頻度でこのタスクを達成しているのでしょうか？
+残念ながら`height` と `width` は、ある次元では可変の外在サイズ（たとえば、 `width: 100%;`）が割り当てられ、他の次元では内在の縦横比を満たすように放置される画像とはうまく動作しません。これはレスポンシブデザインにおける支配的なパターンです。そのため、`width` と `height` はレスポンシブコンテキスト内で人気がなくなりましたが、2019年に [ブラウザが `height` と `width` を使用する方法を調整](https://developer.mozilla.org/docs/Web/Media/images/aspect_ratio_mapping#a_new_way_of_sizing_images_before_loading_completes) によってこの問題が修正されました。さて、一貫して `height` と `width` を設定することは、<a hreflang="ja" href="https://web.dev/i18n/ja/cls/">Cumulative Layout Shift</a> を減らすために作成者ができる最善のことの1つです。これらの属性はどれくらいの頻度でこのタスクを達成しているのでしょうか？
 
 {{ figure_markup(
   caption="モバイルの `<img>` のうち、`height` と `width` の両方の属性を持ち、1次元のみの外形寸法を持つものの割合です。",
@@ -661,7 +661,7 @@ WebPとAVIFの採用が時間とともにどのように変化したか（およ
   )
 }}
 
-クロスオリジン画像は、重要な[セキュリティ制限](https://developer.mozilla.org/ja/docs/Web/HTML/CORS_enabled_image)の対象となり、時には<a hreflang="en" href="https://andydavies.me/blog/2019/03/22/improving-perceived-performance-with-a-link-rel-equals-preconnect-http-header/">パフォーマンスコスト</a>を発生することがあります。一方、静的資産を専用のCDNに移動することは、[最初の1バイトまでの時間](https://developer.mozilla.org/en-US/docs/Glossary/time_to_first_byte) を助けるためにできるもっともインパクトのあることの1つです。画像CDNは、あらゆる種類のベストプラクティスを自動化できる強力な変換および <a hreflang="ja" href="https://web.dev/i18n/ja/image-cdns/">最適化</a> 機能を提供します。51%のクロスオリジン画像のうち、何枚が画像CDNでホストされているか、またそのパフォーマンスを他のウェブのものと比較することは、とても興味深いことでしょう。残念ながら、これは私たちの分析の範囲外でした。
+クロスオリジン画像は、重要な[セキュリティ制限](https://developer.mozilla.org/docs/Web/HTML/CORS_enabled_image)の対象となり、時には<a hreflang="en" href="https://andydavies.me/blog/2019/03/22/improving-perceived-performance-with-a-link-rel-equals-preconnect-http-header/">パフォーマンスコスト</a>を発生することがあります。一方、静的資産を専用のCDNに移動することは、[最初の1バイトまでの時間](https://developer.mozilla.org/docs/Glossary/time_to_first_byte) を助けるためにできるもっともインパクトのあることの1つです。画像CDNは、あらゆる種類のベストプラクティスを自動化できる強力な変換および <a hreflang="ja" href="https://web.dev/i18n/ja/image-cdns/">最適化</a> 機能を提供します。51%のクロスオリジン画像のうち、何枚が画像CDNでホストされているか、またそのパフォーマンスを他のウェブのものと比較することは、とても興味深いことでしょう。残念ながら、これは私たちの分析の範囲外でした。
 
 と、いうことで、そろそろ目を向けてもいいのでは。。。
 

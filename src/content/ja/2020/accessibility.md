@@ -510,7 +510,7 @@ ARIA属性は、インターフェイスのアクセシビリティを強化す�
 
 どのようなフォームのエラー処理であっても、支援技術に伝えることは非常に重要です。これを処理するためには、バリデーションの実装に応じてさまざまなテクニックがあります。Web AIMの<a hreflang="en" href="https://webaim.org/techniques/formvalidation/">Usable and Accessible Form Validation and Error Recovery</a> の記事は、様々なアクセシブルなフォームバリデーション戦略について学ぶための素晴らしいリソースです。
 
-フォーム要素が必要とされる場合、これも支援技術に伝える必要があります。ネイティブHTMLフォーム要素には[`required`属性](https://developer.mozilla.org/ja/docs/Web/HTML/Attributes/required) を使用し、カスタマイズされた要素には [`aria-required`](https://developer.mozilla.org/ja/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-required_attribute) 属性が必要になるかもしれません。フォーム送信に問題がある場合は、その旨を支援技術に伝える必要があります。
+フォーム要素が必要とされる場合、これも支援技術に伝える必要があります。ネイティブHTMLフォーム要素には[`required`属性](https://developer.mozilla.org/docs/Web/HTML/Attributes/required) を使用し、カスタマイズされた要素には [`aria-required`](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-required_attribute) 属性が必要になるかもしれません。フォーム送信に問題がある場合は、その旨を支援技術に伝える必要があります。
 
 ### フォームラベル
 
@@ -554,7 +554,7 @@ ARIA属性は、インターフェイスのアクセシビリティを強化す�
 
 **UIデザイナー**
   - 色のコントラストの選択、フォントの選択、間隔、行の高さの考慮事項。
-  - アニメーションの考察（必要かどうかの判断、[`prefers-reduced-motion`](https://developer.mozilla.org/ja/docs/Web/CSS/@media/prefers-reduced-motion)シナリオへの静的アセットの供給、ポーズ/ストップ機構の設計）。
+  - アニメーションの考察（必要かどうかの判断、[`prefers-reduced-motion`](https://developer.mozilla.org/docs/Web/CSS/@media/prefers-reduced-motion)シナリオへの静的アセットの供給、ポーズ/ストップ機構の設計）。
 
 **プロダクトマネージャー**
   - ロードマップの中でアクセシビリティの作業に優先順位をつけ、バックログの最後に技術的な負債とならないようにします。

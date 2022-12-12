@@ -39,7 +39,7 @@ WebAssembly 作为编译目标，以二进制模块分发。因此，我们在�
 - 虽然你可以使用 WebAssembly 创建各种基于 Web 的内容，但它的主要优势是在复杂业务线具有大型代码库的应用程序中使用，这些应用通常已有多年历史（例如 Google Earth、Photoshop、AutoCAD）。这些 Web “应用程序” 并不像网站那么多，同时由于 Almanac 的爬虫网络主要是基于一些不太使用 WebAssembly 的站点首页组成，所以它们也并不总是可以被统计到。
 - 正如我们将在后面章节中看到的那样，大部分 WebAssembly 的使用都是来自于数量相对较少的第三方库。因此，这些库中的任何一个发生微小的变化都会对我们找到的模块数量产生重大影响。
 
-我们发现在移动端浏览器中使用 WebAssembly 模块更少一些（-13%），但这并不是移动端浏览器 WebAssembly 功能的反映，移动端浏览器通常具有更好的支持。相反，更可能是因为[渐进式增强](https://developer.mozilla.org/zh-CN/docs/Glossary/Progressive_Enhancement)标准的实践。在这些场景中，越是高级功能需要 WebAssembly 反而不支持。
+我们发现在移动端浏览器中使用 WebAssembly 模块更少一些（-13%），但这并不是移动端浏览器 WebAssembly 功能的反映，移动端浏览器通常具有更好的支持。相反，更可能是因为[渐进式增强](https://developer.mozilla.org/docs/Glossary/Progressive_Enhancement)标准的实践。在这些场景中，越是高级功能需要 WebAssembly 反而不支持。
 
 {{ figure_markup(
   caption="Wasm 响应数量",

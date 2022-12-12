@@ -83,7 +83,7 @@ Let's start with the resources themselves. Bitmap images are made of pixels. How
 
 A suspiciously large number of them are 1×1. These `<img>`s don't contain any image content at all. Instead, they're being used for two purposes: for layout (as [spacer GIFs](https://en.wikipedia.org/wiki/Spacer_GIF)) or as [tracking beacons](https://en.wikipedia.org/wiki/Web_beacon).
 
-Any newly authored website should use CSS for layout and the [Beacon API](https://developer.mozilla.org/en-US/docs/Web/API/Beacon_API) for tracking. Lots of existing content will use tracking pixels and spacer GIFs forever, but it's disheartening that the desktop number here is unchanged from [last year](../2021/media#fig-5), and that the mobile number has only shrunk by a tiny amount. <a hreflang="en" href="https://developers.facebook.com/docs/meta-pixel/implementation/marketing-api#intialize-img">Old habits</a> <a hreflang="en" href="https://spacergif.org/stats/">die hard</a>!
+Any newly authored website should use CSS for layout and the [Beacon API](https://developer.mozilla.org/docs/Web/API/Beacon_API) for tracking. Lots of existing content will use tracking pixels and spacer GIFs forever, but it's disheartening that the desktop number here is unchanged from [last year](../2021/media#fig-5), and that the mobile number has only shrunk by a tiny amount. <a hreflang="en" href="https://developers.facebook.com/docs/meta-pixel/implementation/marketing-api#intialize-img">Old habits</a> <a hreflang="en" href="https://spacergif.org/stats/">die hard</a>!
 
 Wherever possible, we excluded these not-really-an-image `<img>`s from our analysis.
 
@@ -730,7 +730,7 @@ Just like the resources that they embed, most of the web's images end up pretty 
 )
 }}
 
-More than 75% of mobile pages have at least one image that takes up more than 75vw worth of viewport. From there, things more or less top out, rising slowly until a significant number (somewhere between 10-25%) of pages have an image that ends up wider than the viewport. That's likely because the author has not included a [viewport meta tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag) and the desktop-sized page is being scaled down to fit within the mobile screen.
+More than 75% of mobile pages have at least one image that takes up more than 75vw worth of viewport. From there, things more or less top out, rising slowly until a significant number (somewhere between 10-25%) of pages have an image that ends up wider than the viewport. That's likely because the author has not included a [viewport meta tag](https://developer.mozilla.org/docs/Web/HTML/Viewport_meta_tag) and the desktop-sized page is being scaled down to fit within the mobile screen.
 
 It's interesting to contrast this with the desktop layout widths, which don't top out at all. They just keep growing. I find it surprising that more than 10% of pages on desktop included an image that was wider than the crawler's 1360px viewport, presumably triggering horizontal scrollbars.
 
@@ -738,7 +738,7 @@ It's interesting to contrast this with the desktop layout widths, which don't to
 
 Why do the web's images end up at these layout sizes? There are many ways to scale an image with CSS. But how many images are being scaled with any CSS at all?
 
-Images, like all ["replaced elements"](https://developer.mozilla.org/en-US/docs/Web/CSS/Replaced_element), have an [intrinsic size](https://developer.mozilla.org/en-US/docs/Glossary/Intrinsic_Size). By default—in the absence of a `srcset` controlling their density or any CSS rules controlling their layout width—images on the web display at a density of 1x. Plop a 640×480 image into an `<img src>` and, by default, that `<img>` will be laid out with a width of 640 CSS pixels.
+Images, like all ["replaced elements"](https://developer.mozilla.org/docs/Web/CSS/Replaced_element), have an [intrinsic size](https://developer.mozilla.org/docs/Glossary/Intrinsic_Size). By default—in the absence of a `srcset` controlling their density or any CSS rules controlling their layout width—images on the web display at a density of 1x. Plop a 640×480 image into an `<img src>` and, by default, that `<img>` will be laid out with a width of 640 CSS pixels.
 
 Authors may apply extrinsic sizing to an image's height, width, or both. If an image has been extrinsically sized in one dimension (e.g., with a `width: 100%;` rule), but left to its intrinsic size in the other (`height: auto;` or no rule at all), it will scale proportionally, using its intrinsic aspect ratio.
 
@@ -762,7 +762,7 @@ The majority of images have extrinsic widths; the majority of images have intrin
 
 Any `<img>` whose layout size is dependent on its intrinsic width risks triggering a <a hreflang="en" href="https://web.dev/cls/">Cumulative Layout Shift</a>. In essence, such images risk being laid out twice: Once when the page's DOM and CSS have been processed, and then a second time when they finally finish loading and their intrinsic dimensions are known.
 
-As we've just seen, extrinsically scaling images to fit a certain width while leaving the height (and aspect ratio) intrinsic is very common. To fight the resulting plague of layout shifts, a couple of years ago browsers decided to <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/Media/images/aspect_ratio_mapping#a_new_way_of_sizing_images_before_loading_completes">change the way that the `height` and `width` attributes on `<img>` work</a>. These days, consistently setting the `height` and `width` attributes to reflect the aspect ratio of the resource is a universally recommended best practice, which allows authors to tell the browser the intrinsic dimensions of an image resource before it loads.
+As we've just seen, extrinsically scaling images to fit a certain width while leaving the height (and aspect ratio) intrinsic is very common. To fight the resulting plague of layout shifts, a couple of years ago browsers decided to <a hreflang="en" href="https://developer.mozilla.org/docs/Web/Media/images/aspect_ratio_mapping#a_new_way_of_sizing_images_before_loading_completes">change the way that the `height` and `width` attributes on `<img>` work</a>. These days, consistently setting the `height` and `width` attributes to reflect the aspect ratio of the resource is a universally recommended best practice, which allows authors to tell the browser the intrinsic dimensions of an image resource before it loads.
 
 {{ figure_markup(
   content="28%",

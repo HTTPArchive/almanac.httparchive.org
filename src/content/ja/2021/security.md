@@ -199,7 +199,7 @@ Cloudflareは、同様に顧客向けに無料の証明書を提供しており�
 
 ### HTTPストリクトトランスポートセキュリティ
 
-[_HTTPストリクトトランスポートセキュリティ_](https://developer.mozilla.org/ja/docs/Web/HTTP/Headers/Strict-Transport-Security) (HSTS)は、ウェブサイトとの通信に安全なHTTPS接続を_常に_使用するようブラウザに指示する応答ヘッダーです。
+[_HTTPストリクトトランスポートセキュリティ_](https://developer.mozilla.org/docs/Web/HTTP/Headers/Strict-Transport-Security) (HSTS)は、ウェブサイトとの通信に安全なHTTPS接続を_常に_使用するようブラウザに指示する応答ヘッダーです。
 
 {{ figure_markup(
   caption="モバイルでHSTSヘッダーを持つリクエストの割合です。",
@@ -243,7 +243,7 @@ Cloudflareは、同様に顧客向けに無料の証明書を提供しており�
 
 HSTSヘッダーを持つサイトのうち、デスクトップで92.7%、モバイルでは93.4%が有効な`max-age`（つまり、値がゼロでなく、空でないこと）を持ち、ブラウザは何秒間だけHTTPSでウェブサイトにアクセスすべきか判断しています。
 
-モバイルで33.3%、デスクトップでは34.5%のリクエストレスポンスがHSTS設定に`includeSubdomain`を含んでいます。`preload` ディレクティブは [HSTS仕様の一部ではない](https://developer.mozilla.org/ja/docs/Web/HTTP/Headers/Strict-Transport-Security#preloading_strict_transport_security) ため、レスポンス数が少なくなっています。また、最低でも `max-age` が31,536,000秒（または1年）で、さらに `includeSubdomain` ディレクティブも必要なため、このディレクティブは存在します。
+モバイルで33.3%、デスクトップでは34.5%のリクエストレスポンスがHSTS設定に`includeSubdomain`を含んでいます。`preload` ディレクティブは [HSTS仕様の一部ではない](https://developer.mozilla.org/docs/Web/HTTP/Headers/Strict-Transport-Security#preloading_strict_transport_security) ため、レスポンス数が少なくなっています。また、最低でも `max-age` が31,536,000秒（または1年）で、さらに `includeSubdomain` ディレクティブも必要なため、このディレクティブは存在します。
 
 {{ figure_markup(
   image="security-hsts-max-age-values-in-days.png",
@@ -277,7 +277,7 @@ Cookieを適切に保護しないと、攻撃者はセッションを乗っ取�
 
 ### `Secure`
 
-`Secure` 属性が設定されたクッキーは、安全なHTTPS接続でのみ送信され、<a hreflang="en" href="https://owasp.org/www-community/attacks/Manipulator-in-the-middle_attack">_Manipulator-in-the-middle_</a> 攻撃で盗まれないようにします。HSTSと同様に、TLSプロトコルが提供するセキュリティの強化にも貢献します。ファーストパーティのクッキーについては、デスクトップとモバイルの両方で、30%強のクッキーに `Secure` 属性が設定されています。しかし、デスクトップにおけるサードパーティ製クッキーのうち、`Secure`属性を持つものの割合が、[昨年](../2020/security#クッキー)の35.2％から今年は67.0％に大きく増加していることがわかります。この増加は、後述する `SameSite=none` のクッキーに対して [`Secure` 属性が必須である](https://developer.mozilla.org/ja/docs/Web/HTTP/Headers/Set-Cookie/SameSite#none) ことに起因すると思われます。
+`Secure` 属性が設定されたクッキーは、安全なHTTPS接続でのみ送信され、<a hreflang="en" href="https://owasp.org/www-community/attacks/Manipulator-in-the-middle_attack">_Manipulator-in-the-middle_</a> 攻撃で盗まれないようにします。HSTSと同様に、TLSプロトコルが提供するセキュリティの強化にも貢献します。ファーストパーティのクッキーについては、デスクトップとモバイルの両方で、30%強のクッキーに `Secure` 属性が設定されています。しかし、デスクトップにおけるサードパーティ製クッキーのうち、`Secure`属性を持つものの割合が、[昨年](../2020/security#クッキー)の35.2％から今年は67.0％に大きく増加していることがわかります。この増加は、後述する `SameSite=none` のクッキーに対して [`Secure` 属性が必須である](https://developer.mozilla.org/docs/Web/HTTP/Headers/Set-Cookie/SameSite#none) ことに起因すると思われます。
 
 ### `HttpOnly`
 
@@ -351,7 +351,7 @@ Cookieを適切に保護しないと、攻撃者はセッションを乗っ取�
 
 ### コンテンツセキュリティポリシー
 
-[_コンテンツセキュリティポリシー_](https://developer.mozilla.org/ja/docs/Web/HTTP/CSP) (CSP) は、さまざまなコンテンツの読み込みを許可するオリジンを制限することにより、クロスサイトスクリプティングやデータインジェクション攻撃を緩和するために使用される主要な方法です。ウェブサイトには、さまざまな種類のコンテンツのソースを指定するために使用できる数多くのディレクティブがあります。たとえば、`script-src` はスクリプトを読み込むことができるオリジンやドメインを指定するために使用されます。また、インラインスクリプトと `eval()` 関数が許可されているかどうかを定義するための値も持っています。
+[_コンテンツセキュリティポリシー_](https://developer.mozilla.org/docs/Web/HTTP/CSP) (CSP) は、さまざまなコンテンツの読み込みを許可するオリジンを制限することにより、クロスサイトスクリプティングやデータインジェクション攻撃を緩和するために使用される主要な方法です。ウェブサイトには、さまざまな種類のコンテンツのソースを指定するために使用できる数多くのディレクティブがあります。たとえば、`script-src` はスクリプトを読み込むことができるオリジンやドメインを指定するために使用されます。また、インラインスクリプトと `eval()` 関数が許可されているかどうかを定義するための値も持っています。
 
 {{ figure_markup(
   image="security-csp-directives-usage.png",
@@ -685,7 +685,7 @@ iframeの`sandbox`属性は、コンテンツに制限をかけるため、埋�
 
 このように、セキュリティ機構の採用率が上昇し続けていることは注目に値しますが、まだまだ改善の余地は残されています。もっとも広く利用されているセキュリティメカニズムは、依然として `X-Content-Type-Options` ヘッダーであり、モバイルでクロールしたウェブサイトの36.6% でMIMEスニッフィング攻撃から保護するために利用されています。このヘッダーに続くのは、`X-Frame-Options`ヘッダーで、全サイトの29.4%で有効になっています。興味深いことに、CSPのより柔軟な`frame-ancestors`ディレクティブを使用しているウェブサイトは、わずか5.6%に過ぎません。
 
-もう1つの興味深いのは、[`X-XSS-Protection`](https://developer.mozilla.org/ja/docs/Web/HTTP/Headers/X-XSS-Protection)ヘッダーの進化です。この機能は、レガシーブラウザのXSSフィルターを制御するために使用されます。<a hreflang="en" href="https://blogs.windows.com/windows-insider/2018/07/25/announcing-windows-10-insider-preview-build-17723-and-build-18204/">Edge</a>と<a hreflang="en" href="https://www.chromium.org/developers/design-documents/xss-auditor">Chrome</a>は意図しない新たな脆弱性をもたらす恐れがあるとして、XSSフィルターをそれぞれ2018年7月、2019年8月に引退させたそうです。しかし、`X-XSS-Protection`ヘッダーは昨年より8.5%も多いことがわかりました。
+もう1つの興味深いのは、[`X-XSS-Protection`](https://developer.mozilla.org/docs/Web/HTTP/Headers/X-XSS-Protection)ヘッダーの進化です。この機能は、レガシーブラウザのXSSフィルターを制御するために使用されます。<a hreflang="en" href="https://blogs.windows.com/windows-insider/2018/07/25/announcing-windows-10-insider-preview-build-17723-and-build-18204/">Edge</a>と<a hreflang="en" href="https://www.chromium.org/developers/design-documents/xss-auditor">Chrome</a>は意図しない新たな脆弱性をもたらす恐れがあるとして、XSSフィルターをそれぞれ2018年7月、2019年8月に引退させたそうです。しかし、`X-XSS-Protection`ヘッダーは昨年より8.5%も多いことがわかりました。
 
 ### `<meta>` 要素で有効な機能
 
@@ -706,7 +706,7 @@ iframeの`sandbox`属性は、コンテンツに制限をかけるため、埋�
 
 CSPは、クリックジャック攻撃、混合コンテンツの取り込みの防止、コンテンツを取り込む信頼できるソースの決定（[上](#コンテンツセキュリティポリシー)で述べたとおり）など、多数のものから守るために使用できます。
 
-さらに、XSS攻撃から身を守るために必要不可欠な仕組みです。たとえば、制限的な `script-src` ディレクティブを設定することで、ウェブ開発者はアプリケーションのJavaScriptコードだけが実行されるようにできます（攻撃者のコードは実行されません）。さらに、DOMベースのクロスサイトスクリプティングを防御するために、<a hreflang="ja" href="https://web.dev/i18n/ja/trusted-types/">_信頼できるタイプ_</a> を使うことができます。これは、CSPの[`require-trusted-types-for`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/require-trusted-types-for) ディレクティブを使って有効にすることが可能です。
+さらに、XSS攻撃から身を守るために必要不可欠な仕組みです。たとえば、制限的な `script-src` ディレクティブを設定することで、ウェブ開発者はアプリケーションのJavaScriptコードだけが実行されるようにできます（攻撃者のコードは実行されません）。さらに、DOMベースのクロスサイトスクリプティングを防御するために、<a hreflang="ja" href="https://web.dev/i18n/ja/trusted-types/">_信頼できるタイプ_</a> を使うことができます。これは、CSPの[`require-trusted-types-for`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/require-trusted-types-for) ディレクティブを使って有効にすることが可能です。
 
 <figure>
   <table>
@@ -751,13 +751,13 @@ CSPの採用は全体的に緩やかな増加（17％）ですが、それ以上
 
 Web開発者が[Spectre](https://ja.wikipedia.org/wiki/Spectre)のような攻撃などのマイクロアーキテクチャ攻撃や、一般に <a hreflang="en" href="https://xsleaks.dev">XS-Leaks</a> と呼ばれる攻撃からWebサイトを防御できるように、さまざまな新しいセキュリティ機能を導入しています。これらの攻撃の多くがここ数年で発見されたものであることを考えると、それらに対処するためのメカニズムも明らかにごく最近のものであり、これが比較的低い普及率の理由かもしれません。とはいえ、[昨年](../2020/security#defending-against-xs-leaks-with-cross-origin-policies)と比較すると、クロスオリジンポリシーの採用が大幅に増えています。
 
-リソースをどのように含めるか（クロスオリジン、同一サイト、同一オリジン）をブラウザへ示すために使用される[`Cross-Origin-Resource-Policy`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cross-Origin_Resource_Policy_(CORP)) は、 [昨年](../2020/security#defending-against-xs-leaks-with-cross-origin-policies)1,712サイトから106,443サイト (1.5%)で存在することがわかりました。この理由としてもっとも考えられるのは、<a hreflang="ja" href="https://web.dev/i18n/ja/cross-origin-isolation-guide/">クロスオリジンの分離</a>が `SharedArrayBuffer` やハイレゾタイマーなどの機能を使うために必要で、それにはサイトの [`Cross-Origin-Embedder-Policy`](https://developer.mozilla.org/ja/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy)を`require-corp`に設定する必要があるからだと思われます。要するに、これらの機能を使いたいサイトのために、ロードされたすべてのサブリソースに `Cross-Origin-Resource-Policy` レスポンスヘッダーを設定することを要求しているのです。
+リソースをどのように含めるか（クロスオリジン、同一サイト、同一オリジン）をブラウザへ示すために使用される[`Cross-Origin-Resource-Policy`](https://developer.mozilla.org/docs/Web/HTTP/Cross-Origin_Resource_Policy_(CORP)) は、 [昨年](../2020/security#defending-against-xs-leaks-with-cross-origin-policies)1,712サイトから106,443サイト (1.5%)で存在することがわかりました。この理由としてもっとも考えられるのは、<a hreflang="ja" href="https://web.dev/i18n/ja/cross-origin-isolation-guide/">クロスオリジンの分離</a>が `SharedArrayBuffer` やハイレゾタイマーなどの機能を使うために必要で、それにはサイトの [`Cross-Origin-Embedder-Policy`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy)を`require-corp`に設定する必要があるからだと思われます。要するに、これらの機能を使いたいサイトのために、ロードされたすべてのサブリソースに `Cross-Origin-Resource-Policy` レスポンスヘッダーを設定することを要求しているのです。
 
 その結果、<a hreflang="en" href="https://github.com/cdnjs/cdnjs/issues/13782">several</a> <a hreflang="en" href="https://github.com/jsdelivr/bootstrapcdn/issues/1495">CDN</a> は現在、ヘッダーの値を `cross-origin` に設定します（CDNのリソースは通常クロスサイトのコンテキストに含まれるべきものだからです）。CORPヘッダーの値を`cross-origin`に設定しているサイトは96.8%であるのに対し、`same-site`に設定しているサイトは2.9%、より限定的な`same-origin`を使用しているサイトは0.3%であり、これは実際にそうであるということがわかります。
 
 この変化に伴い、`Cross-Origin-Embedder-Policy`の採用が着実に増えているのは当然のことです。2021年には、911サイトがこのヘッダーを有効にし、昨年の6サイトを大幅に上回りました。来年、これがさらにどのように発展していくのか、興味深いところです。
 
-最後に、もう1つのXS-Leak対策ヘッダーである[`Cross-Origin-Opener-Policy`](https://developer.mozilla.org/ja/docs/Web/HTTP/Headers/Cross-Origin-Opener-Policy)も昨年と比較して大幅に増加しています。現在、このセキュリティ機構を有効にしているサイトは15,727件で、特定のXS-Leak攻撃から保護されているサイトが31件しかなかった昨年と比較すると、大幅に増加していることがわかりました。
+最後に、もう1つのXS-Leak対策ヘッダーである[`Cross-Origin-Opener-Policy`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cross-Origin-Opener-Policy)も昨年と比較して大幅に増加しています。現在、このセキュリティ機構を有効にしているサイトは15,727件で、特定のXS-Leak攻撃から保護されているサイトが31件しかなかった昨年と比較すると、大幅に増加していることがわかりました。
 
 ### ウェブ暗号化API
 

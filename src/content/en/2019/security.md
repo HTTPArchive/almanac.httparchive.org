@@ -600,15 +600,15 @@ We see that the usage of the `X-Frame-Options` header is quite high on both desk
   <figcaption>{{ figure_link(caption="`X-Frame-Options` configuration used.") }}</figcaption>
 </figure>
 
-It seems that the vast majority of pages restrict framing to only their own origin and the next significant approach is to prevent framing altogether. This is similar to `frame-ancestors` in CSP where these 2 approaches are also the most common. It should also be noted that the `allow-from` option, which in theory allow site owners to list the third-party domains allowed to frame was [never well supported](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options#Browser_compatibility) and has been deprecated.
+It seems that the vast majority of pages restrict framing to only their own origin and the next significant approach is to prevent framing altogether. This is similar to `frame-ancestors` in CSP where these 2 approaches are also the most common. It should also be noted that the `allow-from` option, which in theory allow site owners to list the third-party domains allowed to frame was [never well supported](https://developer.mozilla.org/docs/Web/HTTP/Headers/X-Frame-Options#Browser_compatibility) and has been deprecated.
 
 ### `X-Content-Type-Options`
-The [`X-Content-Type-Options`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options) header is the most widely deployed Security Header and is also the most simple, with only one possible configuration value `nosniff`. When this header is issued a browser must treat a piece of content as the MIME Type declared in the `Content-Type` header and not try to change the advertised value when it infers a file is of a different type. Various security flaws can be introduced if a browser is persuaded to incorrectly sniff the type..
+The [`X-Content-Type-Options`](https://developer.mozilla.org/docs/Web/HTTP/Headers/X-Content-Type-Options) header is the most widely deployed Security Header and is also the most simple, with only one possible configuration value `nosniff`. When this header is issued a browser must treat a piece of content as the MIME Type declared in the `Content-Type` header and not try to change the advertised value when it infers a file is of a different type. Various security flaws can be introduced if a browser is persuaded to incorrectly sniff the type..
 
 We find that an identical 17.61% of pages on both mobile and desktop issue the `X-Content-Type-Options` header.
 
 ### `X-XSS-Protection`
-The [`X-XSS-Protection`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection) header allows a site to control the XSS Auditor or XSS Filter built into a browser, which should in theory provide some XSS protection.
+The [`X-XSS-Protection`](https://developer.mozilla.org/docs/Web/HTTP/Headers/X-XSS-Protection) header allows a site to control the XSS Auditor or XSS Filter built into a browser, which should in theory provide some XSS protection.
 
 14.69% of Desktop requests, and 15.2% of mobile requests used the `X-XSS-Protection` header. Digging into the data we can see what the intention for most site operators was in Figure 8.13.
 
@@ -798,7 +798,7 @@ In large part due to the complexity of both the security features and web applic
 
 In the recent years, web browsers have implemented powerful new mechanisms which offer protections from major classes of vulnerabilities and new web threats; this includes [Subresource Integrity](#subresource-integrity), [SameSite cookies](#samesite), and [cookie prefixes](#prefixes).
 
-These features have seen adoption only by a relatively small number of websites; their total coverage is generally well below 1%. The even more recent security mechanisms such as <a hreflang="en" href="https://w3c.github.io/webappsec-trusted-types/dist/spec/">Trusted Types</a>, [Cross-Origin Resource Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cross-Origin_Resource_Policy_(CORP)) or <a hreflang="en" href="https://www.chromestatus.com/feature/5432089535053824">Cross-Origin-Opener Policy</a> have not seen any widespread adoption as of yet.
+These features have seen adoption only by a relatively small number of websites; their total coverage is generally well below 1%. The even more recent security mechanisms such as <a hreflang="en" href="https://w3c.github.io/webappsec-trusted-types/dist/spec/">Trusted Types</a>, [Cross-Origin Resource Policy](https://developer.mozilla.org/docs/Web/HTTP/Cross-Origin_Resource_Policy_(CORP)) or <a hreflang="en" href="https://www.chromestatus.com/feature/5432089535053824">Cross-Origin-Opener Policy</a> have not seen any widespread adoption as of yet.
 
 Similarly, convenience features such as the [Reporting API](#report-to), [Network Error Logging](#network-error-logging) and the [`Clear-Site-Data`](#clear-site-data) header are also still in their infancy and are currently being used by a small number of sites.
 

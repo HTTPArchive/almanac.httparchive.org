@@ -266,7 +266,7 @@ CSSピクセルと自然ピクセル量を見ると、中央値のウェブサ�
   )
 }}
 
-[アートディレクション](https://developer.mozilla.org/ja/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#Art_direction)のような高度なレスポンシブウェブデザイン（RWD）レイアウトによく使われていることを考えると、`<picture>`の使用率が著しく低いのは驚くべきことでありません。
+[アートディレクション](https://developer.mozilla.org/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#Art_direction)のような高度なレスポンシブウェブデザイン（RWD）レイアウトによく使われていることを考えると、`<picture>`の使用率が著しく低いのは驚くべきことでありません。
 
 ### サイズの使用
 

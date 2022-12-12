@@ -22,13 +22,13 @@ featured_stat_label_3: Sites on mobile and desktop use the _Web Share API_.
 
 Compelling web experiences aren't limited to basic browser capabilities; they can take advantage of their underlying operating system. Web platform APIs expose these capabilities that are the foundation for [Progressive Web Apps (PWA)](./pwa)—web applications capable of providing high-quality experiences like platform-specific apps.
 
-In addition, some functionality on the web platform gives access to lower-level features such as access to the [file system](https://developer.mozilla.org/en-US/docs/Web/API/File_System_Access_API), [geolocation](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API), access to the [clipboard](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API), and even the ability to detect [gamepads](https://developer.mozilla.org/en-US/docs/Web/API/Gamepad_API).
+In addition, some functionality on the web platform gives access to lower-level features such as access to the [file system](https://developer.mozilla.org/docs/Web/API/File_System_Access_API), [geolocation](https://developer.mozilla.org/docs/Web/API/Geolocation_API), access to the [clipboard](https://developer.mozilla.org/docs/Web/API/Clipboard_API), and even the ability to detect [gamepads](https://developer.mozilla.org/docs/Web/API/Gamepad_API).
 
 ## Methodology
 
 This chapter used the HTTP Archive's public dataset of millions of pages. These pages were archived as if they were visited on both desktop and mobile, as some sites will serve different content based on what device is requesting the page.
 
-The HTTP Archive's crawler then parsed the source code for all of these pages to determine which APIs were (potentially) used on the pages. For instance, regular expressions, such as `/navigator\.share\s*\(/g`, test pages to see if in the concrete case the [Web Share API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Share_API) is found in its source code.
+The HTTP Archive's crawler then parsed the source code for all of these pages to determine which APIs were (potentially) used on the pages. For instance, regular expressions, such as `/navigator\.share\s*\(/g`, test pages to see if in the concrete case the [Web Share API](https://developer.mozilla.org/docs/Web/API/Web_Share_API) is found in its source code.
 
 This method does have two significant issues. First, it may underreport some APIs used as it can not detect obfuscated code that may exist due to minification, for example, when `navigator` was minified to `n`. Additionally, it may overreport occurrences of APIs because it does not execute code to see if an API is actually used. Regardless of these limitations, we believe this methodology should provide a sufficiently good overview of what capabilities are used on the web.
 
@@ -40,13 +40,13 @@ This chapter will also compare API usage to last year's usage; you can view the 
 
 ## Async Clipboard API
 
-Our first API, the [_Async Clipboard API_](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API), allows read/write access to the system's clipboard.
+Our first API, the [_Async Clipboard API_](https://developer.mozilla.org/docs/Web/API/Clipboard_API), allows read/write access to the system's clipboard.
 
 Note that the Async Clipboard API replaces the deprecated `document.execCommand()` API to access the clipboard.
 
 ### Write access
 
-In order to write data into the clipboard, there are the [`writeText()`](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/writeText) and [`write()`](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/write) methods. The `writeText()` method takes a String argument and returns a Promise, while `write()` takes an array of [`ClipboardItem`](https://developer.mozilla.org/en-US/docs/Web/API/ClipboardItem) objects and also returns a Promise. `ClipboardItem` objects can hold arbitrary data, such as images.
+In order to write data into the clipboard, there are the [`writeText()`](https://developer.mozilla.org/docs/Web/API/Clipboard/writeText) and [`write()`](https://developer.mozilla.org/docs/Web/API/Clipboard/write) methods. The `writeText()` method takes a String argument and returns a Promise, while `write()` takes an array of [`ClipboardItem`](https://developer.mozilla.org/docs/Web/API/ClipboardItem) objects and also returns a Promise. `ClipboardItem` objects can hold arbitrary data, such as images.
 
 A list of the mandatory data types a browser must support by the Clipboards API specification exists; see this <a hreflang="en" href="https://www.w3.org/TR/clipboard-apis/#mandatory-data-types-x">list by the W3C</a>. Unfortunately, not all vendors support the complete list; check browser-specific documentation when possible.
 
@@ -63,14 +63,14 @@ await navigator.clipboard.write([
 
 ### Read access
 
-In order to read data from the clipboard, there are the [`readText()`](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/readText) and [`read()`](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/read) methods. Both methods return a Promise which will resolve with data from the clipboard. The `readText()` method resolves as a String while `read()` resolves as an array of `ClipboardItem` objects.
+In order to read data from the clipboard, there are the [`readText()`](https://developer.mozilla.org/docs/Web/API/Clipboard/readText) and [`read()`](https://developer.mozilla.org/docs/Web/API/Clipboard/read) methods. Both methods return a Promise which will resolve with data from the clipboard. The `readText()` method resolves as a String while `read()` resolves as an array of `ClipboardItem` objects.
 
 ```js
 const item = await navigator.clipboard.readText();
 const items = await navigator.clipboard.read();
 ```
 
-To keep user data safe, the `"clipboard-read"` permission of the [Permissions API](https://developer.mozilla.org/en-US/docs/Web/API/Permissions_API) must be granted to read data from the clipboard.
+To keep user data safe, the `"clipboard-read"` permission of the [Permissions API](https://developer.mozilla.org/docs/Web/API/Permissions_API) must be granted to read data from the clipboard.
 
 Both read and write access to the clipboard is available on modern versions of Chrome, Edge, and Safari. Firefox only supports `writeText()`.
 
@@ -89,9 +89,9 @@ The Async Clipboard API saw growth in usage from 8.91% in 2021 to 10.10% in 2022
 
 ## Web Share API
 
-The [_Web Share API_](https://developer.mozilla.org/en-US/docs/Web/API/Web_Share_API) invokes the platform-specific sharing mechanism of the device, allowing data such as text, a URL, or files from a web application to be shared with any other application, such as mail clients, messaging applications, and more.
+The [_Web Share API_](https://developer.mozilla.org/docs/Web/API/Web_Share_API) invokes the platform-specific sharing mechanism of the device, allowing data such as text, a URL, or files from a web application to be shared with any other application, such as mail clients, messaging applications, and more.
 
-The method called to share data is [`navigator.share()`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share). The `navigator.share()` method accepts an object containing the data to share and returns a Promise. Not every file type can be shared, though, and the [`navigator.canShare()`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/canShare) method can test a data object to see if the browser can share it. You can see the [list of shareable file types](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share#shareable_file_types) on MDN.
+The method called to share data is [`navigator.share()`](https://developer.mozilla.org/docs/Web/API/Navigator/share). The `navigator.share()` method accepts an object containing the data to share and returns a Promise. Not every file type can be shared, though, and the [`navigator.canShare()`](https://developer.mozilla.org/docs/Web/API/Navigator/canShare) method can test a data object to see if the browser can share it. You can see the [list of shareable file types](https://developer.mozilla.org/docs/Web/API/Navigator/share#shareable_file_types) on MDN.
 
 After calling `navigator.share()`, the browser will open a platform-specific sheet where users select which application to share the data with.
 
@@ -139,7 +139,7 @@ On many sites, you can find the Web Share API in use. For example, social media 
 
 ## Add to Home Screen
 
-The ability to add a web application to a device's home screen is a feature we didn't look at in last year's Capabilities report. To calculate how many sites have this functionality, pages were tested to see if they had a listener for the [`beforeinstallprompt`](https://developer.mozilla.org/en-US/docs/Web/API/Window/beforeinstallprompt_event) event.
+The ability to add a web application to a device's home screen is a feature we didn't look at in last year's Capabilities report. To calculate how many sites have this functionality, pages were tested to see if they had a listener for the [`beforeinstallprompt`](https://developer.mozilla.org/docs/Web/API/Window/beforeinstallprompt_event) event.
 
 Note that the `beforeinstallprompt` event is a Chromium-only API and is currently <a hreflang="en" href="https://wicg.github.io/manifest-incubations/index.html#installation-prompts">incubating within the WICG</a>.
 
@@ -151,7 +151,7 @@ The ability to add an application to the home screen is a crucial feature of PWA
 - The user must have spent at least 30 seconds viewing the page at any time.
 - The user must have clicked or tapped at least once on the page at any time.
 - The web app must be served over HTTPS.
-- The web app must include a [web app manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest) with:
+- The web app must include a [web app manifest](https://developer.mozilla.org/docs/Web/Manifest) with:
   - `short_name` or `name`.
   - `icons` (must include a 192×192px and a 512×512px icon).
   - `start_url`.
@@ -189,7 +189,7 @@ By taking advantage of the `beforeinstallprompt` event, developers can provide a
 
 ## Media Session API
 
-The [_Media Session API_](https://developer.mozilla.org/en-US/docs/Web/API/Media_Session_API) allows developers to create custom media notifications for audio or video content on the web. The API includes action handlers that browsers can use to access media control on keyboards, headsets, and the software controls on a device's notification area and lock screens. The Media Session API empowers users to know and control what's playing on a web page without needing to be actively viewing said page.
+The [_Media Session API_](https://developer.mozilla.org/docs/Web/API/Media_Session_API) allows developers to create custom media notifications for audio or video content on the web. The API includes action handlers that browsers can use to access media control on keyboards, headsets, and the software controls on a device's notification area and lock screens. The Media Session API empowers users to know and control what's playing on a web page without needing to be actively viewing said page.
 
 When a page plays audio or video content, users get a media notification that appears in their mobile device's notification tray or on their desktop's media hub. Browsers will try to show a title and an icon, but the Media Session API allows the notification to be customized with rich media metadata, such as the title, artist name, album name, and album artwork.
 
@@ -260,7 +260,7 @@ For a deeper dive into video usage on the web, check out the [Media](./media#vid
 
 ## Device Memory API
 
-A device's capabilities depend on a few things, like the network, the CPU core count, and the amount of memory available. The [_Device Memory API_](https://developer.mozilla.org/en-US/docs/Web/API/Device_Memory_API) provides insight into the memory available by providing the read-only property `deviceMemory` on the `Navigator` interface. The property returns an approximate amount of device memory in gigabytes as a floating point number.
+A device's capabilities depend on a few things, like the network, the CPU core count, and the amount of memory available. The [_Device Memory API_](https://developer.mozilla.org/docs/Web/API/Device_Memory_API) provides insight into the memory available by providing the read-only property `deviceMemory` on the `Navigator` interface. The property returns an approximate amount of device memory in gigabytes as a floating point number.
 
 The value returned is imprecise, protecting the user's privacy. It's calculated by rounding down to the nearest power of 2, then dividing that number by 1,024. The number is also clamped within an upper and lower bound. So you can expect the numbers: `0.25`, `0.5`, `1`, `2`, `4`, and `8` (gigabytes).
 
@@ -284,13 +284,13 @@ The Device Memory API is only available on modern versions of Chrome and Edge.
 
 The Device Memory API was not measured last year. In its first year of tracking, the API was used on 6.27% of desktop pages and 5.76% of mobile pages, making it the fifth most used capability on desktop and mobile.
 
-For the release of Facebook's 2019 redesign, FB5, they actively integrated adaptive loading into this new version. They did this by adapting based on users' actual hardware, changing what loaded and what ran based on what users were using. For example, on the desktop, Facebook defined buckets of users based on CPU cores ([`navigator.hardwareConcurrency`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/hardwareConcurrency)) and device memory (`navigator.deviceMemory`) available.
+For the release of Facebook's 2019 redesign, FB5, they actively integrated adaptive loading into this new version. They did this by adapting based on users' actual hardware, changing what loaded and what ran based on what users were using. For example, on the desktop, Facebook defined buckets of users based on CPU cores ([`navigator.hardwareConcurrency`](https://developer.mozilla.org/docs/Web/API/Navigator/hardwareConcurrency)) and device memory (`navigator.deviceMemory`) available.
 
 Check out <a hreflang="en" href="https://www.youtube.com/watch?v=puUPpVrIRkc&t=1443s">this video</a> from Chrome Dev Summit 2019, starting at 24:03, where Nate Schloss shares how Facebook handles adaptive loading using features such as the Device Memory API.
 
 ## Service Worker API
 
-[_Service workers_](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) are one of the core components of Progressive Web Apps. They act as a client-side proxy that puts developers in control of the system's cache and how to respond to resource requests. By pre-caching essential resources, developers can eliminate the dependence on the network, ensuring instant and reliable experiences.
+[_Service workers_](https://developer.mozilla.org/docs/Web/API/Service_Worker_API) are one of the core components of Progressive Web Apps. They act as a client-side proxy that puts developers in control of the system's cache and how to respond to resource requests. By pre-caching essential resources, developers can eliminate the dependence on the network, ensuring instant and reliable experiences.
 
 In addition to caching resources, service workers can update assets from the server, allow for push notifications, and allow access to the background and periodic background sync APIs.
 
@@ -317,7 +317,7 @@ For a deeper dive into service worker usage on the web, check out the [PWA chapt
 
 ## Gamepad API
 
-The [_Gamepad API_](https://developer.mozilla.org/en-US/docs/Web/API/Gamepad_API) is how web applications respond to input from gamepads and other game controllers. This API has three interfaces; one that represents the controller connected to the device, one that represents buttons on the connected controller, and finally, one that is for events fired when a gamepad is connected or disconnected.
+The [_Gamepad API_](https://developer.mozilla.org/docs/Web/API/Gamepad_API) is how web applications respond to input from gamepads and other game controllers. This API has three interfaces; one that represents the controller connected to the device, one that represents buttons on the connected controller, and finally, one that is for events fired when a gamepad is connected or disconnected.
 
 ```js
 window.addEventListener("gamepadconnected", (e) => {
@@ -354,9 +354,9 @@ Web applications such as Google's Stadia, NVIDIA's GeForce Now, and Microsoft's 
 
 ## Push API
 
-The [_Push API_](https://developer.mozilla.org/en-US/docs/Web/API/Push_API) allows web applications to receive messages from a server regardless of whether the application was in the foreground. Developers can send asynchronous notifications and updates to users who opt in, giving them meaningful updates and a nudge to reengage with an application.
+The [_Push API_](https://developer.mozilla.org/docs/Web/API/Push_API) allows web applications to receive messages from a server regardless of whether the application was in the foreground. Developers can send asynchronous notifications and updates to users who opt in, giving them meaningful updates and a nudge to reengage with an application.
 
-Web applications must also have a service worker to receive push notifications from a server. From within the service worker, push notifications can be subscribed to using the [`PushManager.subscribe()`](https://developer.mozilla.org/en-US/docs/Web/API/PushManager/subscribe) method.
+Web applications must also have a service worker to receive push notifications from a server. From within the service worker, push notifications can be subscribed to using the [`PushManager.subscribe()`](https://developer.mozilla.org/docs/Web/API/PushManager/subscribe) method.
 
 The Push API is available on modern versions of Chrome, Edge, and Firefox.
 

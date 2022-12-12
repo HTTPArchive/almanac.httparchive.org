@@ -32,7 +32,7 @@ _マークアップの章では、HTMLに焦点を当てます。他のマーク
 
 ### Doctypes
 
-2021年になっても、すべてのページが `<!DOCTYPE html>` などで始まることを不思議に思ったことはないだろうか。DOCTYPEが必要なのは、ブラウザがページをレンダリングする際、"[後方互換モード](https://developer.mozilla.org/ja/docs/Web/HTML/Quirks_Mode_and_Standards_Mode)"に切り替えてはいけない、その代わりHTML仕様に従うよう最善の努力をするように、ということを伝えるためなのです。
+2021年になっても、すべてのページが `<!DOCTYPE html>` などで始まることを不思議に思ったことはないだろうか。DOCTYPEが必要なのは、ブラウザがページをレンダリングする際、"[後方互換モード](https://developer.mozilla.org/docs/Web/HTML/Quirks_Mode_and_Standards_Mode)"に切り替えてはいけない、その代わりHTML仕様に従うよう最善の努力をするように、ということを伝えるためなのです。
 
 今年は、97.4%のページがdoctypeを持ち、昨年の96.8%からわずかに増加しました。ここ数年を見ると、doctypeの比率は毎年半ポイントずつ着実に増えています。 理想を言えば、100％のウェブページがdoctypeを持つことになるのだが、この調子だと2027年には理想郷に住んでいることになります。
 
@@ -121,7 +121,7 @@ _マークアップの章では、HTMLに焦点を当てます。他のマーク
 
 ### ドキュメントの言語
 
-私たちは、`html` 要素の `lang` 属性のユニークなインスタンスに3,598個遭遇しました。この章を書いた時点では、<a hreflang="en" href="https://www.ethnologue.com/guides/how-many-languages">7,139の言語が話されている</a> ので、そのすべてが表現されているわけではないと思わされました。[言語タグの構文](https://developer.mozilla.org/ja/docs/Web/HTML/Global_attributes/lang#language_tag_syntax) を考慮すると、さらに少ない数しか残っていません。
+私たちは、`html` 要素の `lang` 属性のユニークなインスタンスに3,598個遭遇しました。この章を書いた時点では、<a hreflang="en" href="https://www.ethnologue.com/guides/how-many-languages">7,139の言語が話されている</a> ので、そのすべてが表現されているわけではないと思わされました。[言語タグの構文](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/lang#language_tag_syntax) を考慮すると、さらに少ない数しか残っていません。
 
 {{ figure_markup(
   image="lang-region.png",
@@ -193,7 +193,7 @@ SVGはstyle要素と比較するとより多くのユースケースを持って
 
 ### 要素の多様性
 
-現在定義され使用されている <a hreflang="en" href="https://html.spec.whatwg.org/multipage/indices.html#elements-3">112要素</a>（SVGとMathMLを除く）があり、さらに [28 は非推奨] (https://developer.mozilla.org/ja/docs/Web/HTML/Element#obsolete_and_deprecated_elements) または廃止されています。私たちは、1つのページで実際に使用される要素がいくつあるのか、また `div` がどの程度あり得るのかを確認したいと思いました。
+現在定義され使用されている <a hreflang="en" href="https://html.spec.whatwg.org/multipage/indices.html#elements-3">112要素</a>（SVGとMathMLを除く）があり、さらに [28 は非推奨] (https://developer.mozilla.org/docs/Web/HTML/Element#obsolete_and_deprecated_elements) または廃止されています。私たちは、1つのページで実際に使用される要素がいくつあるのか、また `div` がどの程度あり得るのかを確認したいと思いました。
 
 {{ figure_markup(
   image="element-diversity.png",
@@ -343,7 +343,7 @@ SVGはstyle要素と比較するとより多くのユースケースを持って
 
 #### `canvas`
 
-`canvas` 要素は、[Canvas API](https://developer.mozilla.org/ja/docs/Web/API/Canvas_API) または [WebGL API](https://developer.mozilla.org/ja/docs/Web/API/WebGL_API) と共に使用して、グラフィックスやアニメーションを描画することが可能です。Web上のゲームや複合現実感に使われる主要な要素の1つです。デスクトップページの3.1％、モバイルページの2.6％が使用しているのは当然のことです。デスクトップでの使用率が高いのは、さまざまなデバイスのグラフィック性能や、ゲームやバーチャルリアリティに偏ったユースケースを考慮すれば納得がいきます。
+`canvas` 要素は、[Canvas API](https://developer.mozilla.org/docs/Web/API/Canvas_API) または [WebGL API](https://developer.mozilla.org/docs/Web/API/WebGL_API) と共に使用して、グラフィックスやアニメーションを描画することが可能です。Web上のゲームや複合現実感に使われる主要な要素の1つです。デスクトップページの3.1％、モバイルページの2.6％が使用しているのは当然のことです。デスクトップでの使用率が高いのは、さまざまなデバイスのグラフィック性能や、ゲームやバーチャルリアリティに偏ったユースケースを考慮すれば納得がいきます。
 
 ### 要素の使用頻度
 
@@ -393,7 +393,7 @@ SVGはstyle要素と比較するとより多くのユースケースを持って
   ) }}</figcaption>
 </figure>
 
-興味深いのは、[テレタイプテキスト](https://developer.mozilla.org/ja/docs/Web/HTML/Element/tt) の非推奨要素である `tt` が、東アジアの文字の発音を示すために今でも使われている [ルビアノテーション](https://developer.mozilla.org/ja/docs/Web/HTML/Element/ruby) と [ルビ文字列](https://developer.mozilla.org/ja/docs/Web/HTML/Element/rt) の要素である `ruby` と `rt` より100%人気があることです。
+興味深いのは、[テレタイプテキスト](https://developer.mozilla.org/docs/Web/HTML/Element/tt) の非推奨要素である `tt` が、東アジアの文字の発音を示すために今でも使われている [ルビアノテーション](https://developer.mozilla.org/docs/Web/HTML/Element/ruby) と [ルビ文字列](https://developer.mozilla.org/docs/Web/HTML/Element/rt) の要素である `ruby` と `rt` より100%人気があることです。
 
 ### `script`
 
@@ -419,7 +419,7 @@ SVGはstyle要素と比較するとより多くのユースケースを持って
 
 ### `template`
 
-Web Components仕様の <a hreflang="en" href="https://css-tricks.com/crafting-reusable-html-templates/"> もっとも認知されていないが、もっとも強力な機能</a> のひとつに `template` 要素があります。2013年からモダンブラウザで [`template`要素](https://developer.mozilla.org/ja/docs/Web/Web_Components/Using_templates_and_slots) がしっかりサポートされているにもかかわらず、2021年には0.5% のページしか使っていませんでした。人気度では、トップ50の要素にすら入っていない。これは、ウェブ開発者にとってのモダンなHTML仕様の普及カーブを物語っていると考えました。
+Web Components仕様の <a hreflang="en" href="https://css-tricks.com/crafting-reusable-html-templates/"> もっとも認知されていないが、もっとも強力な機能</a> のひとつに `template` 要素があります。2013年からモダンブラウザで [`template`要素](https://developer.mozilla.org/docs/Web/Web_Components/Using_templates_and_slots) がしっかりサポートされているにもかかわらず、2021年には0.5% のページしか使っていませんでした。人気度では、トップ50の要素にすら入っていない。これは、ウェブ開発者にとってのモダンなHTML仕様の普及カーブを物語っていると考えました。
 
 `template`が何をするのかよく分からないという人のために、仕様書を読んで復習しておきましょう。`template` 要素は、スクリプトによって複製され、ドキュメントに挿入されるHTMLの断片を宣言するために使用されます。もしあなたがウェブ開発者で、この言葉に聞き覚えがあると思うのなら、その通りです。 Angularは<a hreflang="en" href="https://angular.io/guide/content-projection">`ng-content`</a>、Reactでは<a hreflang="en" href="https://reactjs.org/docs/portals.html">portals</a>、そしてVueは<a hreflang="en" href="https://v3.vuejs.org/guide/component-slots.html#slots">`slot`</a> です。現在人気のフレームワークはほとんど同じことを行う非ネイティブ機構が備わっています。これらのフレームワークでは、フレームワーク内で機能を再作成する代わりに、ネイティブの `template` 要素またはWeb Componentsを使用するものと考えていました。
 
@@ -501,7 +501,7 @@ Web Components仕様の <a hreflang="en" href="https://css-tricks.com/crafting-r
 
 ### 廃止された要素
 
-現在、HTMLリファレンスには、[28の廃止・非推奨要素](https://developer.mozilla.org/ja/docs/Web/HTML/Element#obsolete_and_deprecated_elements)が記述されています。私たちは、そのうちのいくつが現在も使われているのかを知りたかったのです。圧倒的に使われているのは `center` と `font` で、昨年と比較してその使用率がわずかに減少しているのは喜ばしいことです。
+現在、HTMLリファレンスには、[28の廃止・非推奨要素](https://developer.mozilla.org/docs/Web/HTML/Element#obsolete_and_deprecated_elements)が記述されています。私たちは、そのうちのいくつが現在も使われているのかを知りたかったのです。圧倒的に使われているのは `center` と `font` で、昨年と比較してその使用率がわずかに減少しているのは喜ばしいことです。
 
 一方、`nobr`と`big`はまだ非推奨ですが、昨年と比較して使用頻度がわずかに増加しています。
 
@@ -674,7 +674,7 @@ Googleは2021年になってもトップページに`center`要素を使用し�
 
 もっとも人気のある属性は `class` で、これはスタイリングに使用されることを考えると、驚くことではありません。私たちが調査したページで見つかったすべての属性の34.3%は `class` でした。一方、`id`の使用率は5.2%と非常に少ない。興味深いのは、`style` 属性が `id` 属性よりも人気があり、5.6% を占めている点です。
 
-2番目に多い属性は `href` で、9.9%の出現率でした。リンクはウェブの一部なので、アンカー要素の属性がこれほど人気があるのは驚きではありません。意外だったのは、`src`属性が、[かなり多くの要素で利用できる](https://developer.mozilla.org/ja/docs/Web/HTML/Attributes)にもかかわらず、`alt`属性の2倍しか利用されていなかったことです。
+2番目に多い属性は `href` で、9.9%の出現率でした。リンクはウェブの一部なので、アンカー要素の属性がこれほど人気があるのは驚きではありません。意外だったのは、`src`属性が、[かなり多くの要素で利用できる](https://developer.mozilla.org/docs/Web/HTML/Attributes)にもかかわらず、`alt`属性の2倍しか利用されていなかったことです。
 
 #### メタフレーバー
 
@@ -814,7 +814,7 @@ Googleは2021年になってもトップページに`center`要素を使用し�
   ) }}</figcaption>
 </figure>
 
-もっとも一般的な `viewport` コンテンツオプションは `initial-scale=1,width=device-width` で、これはビューポートについて説明している [MDN guide](https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag) で推奨されているオプションなので、驚くことではありません。分析したページの45.0%がこれを使用しており、[昨年](../2020/markup#viewportの仕様)よりほぼ3%多くなっています。8.2%のページで `content` 属性が空になっており、これも昨年より若干多くなっています。これは、ビューポートオプションの不適切な組み合わせの使用率が減少したことと相関しています。
+もっとも一般的な `viewport` コンテンツオプションは `initial-scale=1,width=device-width` で、これはビューポートについて説明している [MDN guide](https://developer.mozilla.org/docs/Web/HTML/Viewport_meta_tag) で推奨されているオプションなので、驚くことではありません。分析したページの45.0%がこれを使用しており、[昨年](../2020/markup#viewportの仕様)よりほぼ3%多くなっています。8.2%のページで `content` 属性が空になっており、これも昨年より若干多くなっています。これは、ビューポートオプションの不適切な組み合わせの使用率が減少したことと相関しています。
 
 ### ファビコン
 

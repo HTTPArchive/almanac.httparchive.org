@@ -361,7 +361,7 @@ TTFB 受网络延迟和连接类型的影响。由上图可知，延迟越高、
 
 ## 性能监测的使用
 
-有许多不同的以用户为中心的指标可用于评估网站和应用程序。然而，有时预定义的指标并不完全符合我们的特定场景和需要。[性能监测对象 API](https://developer.mozilla.org/zh-CN/docs/Web/API/PerformanceObserver)允许我们通过[自定义时间测量 API](https://developer.mozilla.org/zh-CN/docs/Web/API/User_Timing_API)、[Long Tasks API](https://developer.mozilla.org/en-US/docs/Web/API/Long_Tasks_API)、<a hreflang="en" href="https://web.dev/custom-metrics/#event-timing-api">Event Timing API</a>和<a hreflang="en" href="https://web.dev/custom-metrics/">一些底层 APIs</a>去获取自定义度量数据。举例来说，在这些 API 的帮助下我们可以记录页面转场时间或者量化服务端渲染应用的客户端激活。
+有许多不同的以用户为中心的指标可用于评估网站和应用程序。然而，有时预定义的指标并不完全符合我们的特定场景和需要。[性能监测对象 API](https://developer.mozilla.org/docs/Web/API/PerformanceObserver)允许我们通过[自定义时间测量 API](https://developer.mozilla.org/docs/Web/API/User_Timing_API)、[Long Tasks API](https://developer.mozilla.org/docs/Web/API/Long_Tasks_API)、<a hreflang="en" href="https://web.dev/custom-metrics/#event-timing-api">Event Timing API</a>和<a hreflang="en" href="https://web.dev/custom-metrics/">一些底层 APIs</a>去获取自定义度量数据。举例来说，在这些 API 的帮助下我们可以记录页面转场时间或者量化服务端渲染应用的客户端激活。
 
 {{ figure_markup(
   image="performance-performance-observer-usage.png",

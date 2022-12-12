@@ -181,7 +181,7 @@ While the high usage of Google Fonts here is very impressive, it is also notewor
 
 - When pages uses Google Fonts, they use _a lot_ of Google Fonts. They are provided without monetary cost, after all. Perhaps they're being used in a popular WYSIWYG editor? This seems like a very likely explanation.
 - Or a more unlikely story is that it could mean that a lot of people are using Google Fonts with `@import` instead of `<link>`.
-- Or if we want to go off the deep end into super unlikely scenarios, it could mean that many people are using Google Fonts with an [HTTP `Link:` header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Link) instead.
+- Or if we want to go off the deep end into super unlikely scenarios, it could mean that many people are using Google Fonts with an [HTTP `Link:` header](https://developer.mozilla.org/docs/Web/HTTP/Headers/Link) instead.
 
 {{ figure_markup(
   caption="Percent of pages that include a Google Fonts stylesheet link as the first child in the document <code><head></code>.",
@@ -540,7 +540,7 @@ The number one tool we have to fight the default web font loading behavior of "i
 
 I assume this will be creeping up over time, especially now that <a hreflang="en" href="https://www.zachleat.com/web/google-fonts-display/">Google Fonts is adding `font-display` to all new code snippets</a> copied from their site.
 
-If you're using Google Fonts, update your snippets! If you're not using Google Fonts, use `font-display`! Read more about `font-display` on [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display).
+If you're using Google Fonts, update your snippets! If you're not using Google Fonts, use `font-display`! Read more about `font-display` on [MDN](https://developer.mozilla.org/docs/Web/CSS/@font-face/font-display).
 
 Let's have a look at what `font-display` values are popular:
 
@@ -604,7 +604,7 @@ Ironic that a performance optimization plugin can make your performance much wor
 )
 }}
 
-[`unicode-range`](https://developer.mozilla.org/en-US/docs/Web/CSS/%40font-face/unicode-range) is a great CSS property to let the browser know specifically which code points the page would like to use in the font file. If the `@font-face` declaration has a `unicode-range`, content on the page must match one of the code points in the range before the font is requested. It is a very good thing.
+[`unicode-range`](https://developer.mozilla.org/docs/Web/CSS/%40font-face/unicode-range) is a great CSS property to let the browser know specifically which code points the page would like to use in the font file. If the `@font-face` declaration has a `unicode-range`, content on the page must match one of the code points in the range before the font is requested. It is a very good thing.
 
 This is another metric that I expect was skewed by Google Fonts usage, as Google Fonts uses `unicode-range` in most (if not all) of its CSS. I'd expect this to be less common in user land, but perhaps filtering out Google Fonts requests in the next edition of the Almanac may be possible.
 
@@ -630,13 +630,13 @@ It should also be noted here that it has been said by smarter people than I (Bra
 )
 }}
 
-Historically, `font-stretch` has suffered from poor browser support and was not a well-known `@font-face` property. Read more about [`font-stretch` on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/font-stretch). But <a hreflang="en" href="https://caniuse.com/#feat=css-font-stretch">browser support</a> has broadened.
+Historically, `font-stretch` has suffered from poor browser support and was not a well-known `@font-face` property. Read more about [`font-stretch` on MDN](https://developer.mozilla.org/docs/Web/CSS/font-stretch). But <a hreflang="en" href="https://caniuse.com/#feat=css-font-stretch">browser support</a> has broadened.
 
 It has been suggested that using condensed fonts on smaller viewports allows more text to be viewable, but this approach isn't commonly used. That being said, that this property is used half a percentage point more on desktop than mobile is unexpected, and 7% seems much higher than I would have predicted.
 
 ## Variable fonts are the future
 
-[Variable fonts](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Fonts/Variable_Fonts_Guide) allow several font weights and styles to be included in the one font file.
+[Variable fonts](https://developer.mozilla.org/docs/Web/CSS/CSS_Fonts/Variable_Fonts_Guide) allow several font weights and styles to be included in the one font file.
 
 {{ figure_markup(
   caption="Percent of pages that include a variable font.",

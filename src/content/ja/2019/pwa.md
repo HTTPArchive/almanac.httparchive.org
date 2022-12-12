@@ -22,7 +22,7 @@ featured_stat_label_3: `standalone` `display`プロパティを使用するPWA
 
 ## 導入
 
-プログレッシブWebアプリ（PWA）は、[Service Worker API](https://developer.mozilla.org/en/docs/Web/API/Service_Worker_API)などのプラットフォームプリミティブ上に構築される新しいクラスのWebアプリケーションです。Service Workerは、ネットワークプロキシとして機能し、Webアプリの発信要求をインターセプトしプログラムまたはキャッシュされた内容で応答することによりアプリがネットワークに依存しない読み込みをサポートできるようにします。Service Workerは、プッシュ通知を受信し、対応するアプリが実行されていなくてもバックグラウンドでデータを同期できます。さらに、Service Workerは、[Webアプリマニフェスト](https://developer.mozilla.org/en-US/docs/Web/Manifest)と共にユーザーがデバイスのホーム画面にPWAをインストールできるようにします。
+プログレッシブWebアプリ（PWA）は、[Service Worker API](https://developer.mozilla.org/docs/Web/API/Service_Worker_API)などのプラットフォームプリミティブ上に構築される新しいクラスのWebアプリケーションです。Service Workerは、ネットワークプロキシとして機能し、Webアプリの発信要求をインターセプトしプログラムまたはキャッシュされた内容で応答することによりアプリがネットワークに依存しない読み込みをサポートできるようにします。Service Workerは、プッシュ通知を受信し、対応するアプリが実行されていなくてもバックグラウンドでデータを同期できます。さらに、Service Workerは、[Webアプリマニフェスト](https://developer.mozilla.org/docs/Web/Manifest)と共にユーザーがデバイスのホーム画面にPWAをインストールできるようにします。
 
 Service Workerは2014年12月に<a hreflang="en" href="https://blog.chromium.org/2014/12/chrome-40-beta-powerful-offline-and.html">Chrome 40で初めて実装</a>され、プログレッシブWebアプリという用語は2015年に<a hreflang="en" href="https://infrequently.org/2015/06/progressive-apps-escaping-tabs-without-losing-our-soul/">Frances BerrimanとAlex Russellによって作られました</a>。Service Workerはすべての主要なブラウザでようやく実装されたため、この章の目標は実際に存在するPWAの数と、これらの新しいテクノロジーをどのように利用するかを決定します。<a hreflang="en" href="https://caniuse.com/#feat=background-sync">バックグラウンド同期</a>のような特定の高度なAPIは、現在もChromiumベースのブラウザでのみ利用できるため、追加の質問として、これらのPWAが実際に使用する機能を調べました。
 
@@ -95,7 +95,7 @@ HTTP Archiveで見つけることのできるService Workerがこれらのイベ
   )
 }}
 
-デスクトップのService Workerファイルの中央値は895バイトですが、モバイルでは694バイトです。すべてのパーセンタイルを通じて、デスクトップService WorkerはモバイルService Workerよりも大きくなっています。これらの統計は、[`importScripts()`](https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/importScripts)メソッドを使用して動的にインポートされたスクリプトを考慮しないため、結果は大きく歪む可能性が高いことに注意してください。
+デスクトップのService Workerファイルの中央値は895バイトですが、モバイルでは694バイトです。すべてのパーセンタイルを通じて、デスクトップService WorkerはモバイルService Workerよりも大きくなっています。これらの統計は、[`importScripts()`](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/importScripts)メソッドを使用して動的にインポートされたスクリプトを考慮しないため、結果は大きく歪む可能性が高いことに注意してください。
 
 ## Webアプリマニフェスト
 

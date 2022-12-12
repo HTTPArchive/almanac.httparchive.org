@@ -732,7 +732,7 @@ The most popular hreflang attribute is `"en"` (English version). 4.75% of mobile
 
 For Bing, [`hreflang` is a "far weaker signal" than the `content-language` header](https://twitter.com/facan/status/1304120691172601856).
 
-As with many other SEO parameters, [`content-language`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Language) has multiple implementation methods including:
+As with many other SEO parameters, [`content-language`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Language) has multiple implementation methods including:
 
 1. HTTP server response
 2. HTML tag

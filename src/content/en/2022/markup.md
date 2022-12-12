@@ -284,7 +284,7 @@ The `div` element is—by far—the most popular element: We found 2,123,819,193
 
 [Divitis](https://en.wiktionary.org/wiki/divitis) is real.
 
-If you wonder about the odd one out, [the `i` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/i), it stands to reason that this is still largely due to <a hreflang="en" href="https://fontawesome.com/">Font Awesome</a> and its arguable misuse of this element. The element has also a bad reputation because during XHTML times, everyone suggested to use `em` instead—but that advice wasn't sound, and <a hreflang="en" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-i-element">`i` elements have their use cases</a>.
+If you wonder about the odd one out, [the `i` element](https://developer.mozilla.org/docs/Web/HTML/Element/i), it stands to reason that this is still largely due to <a hreflang="en" href="https://fontawesome.com/">Font Awesome</a> and its arguable misuse of this element. The element has also a bad reputation because during XHTML times, everyone suggested to use `em` instead—but that advice wasn't sound, and <a hreflang="en" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-i-element">`i` elements have their use cases</a>.
 
 When it comes to what elements are being used on the most documents, the list looks a little different:
 

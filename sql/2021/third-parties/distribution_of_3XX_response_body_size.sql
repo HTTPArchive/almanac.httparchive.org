@@ -1,6 +1,6 @@
 #standardSQL
 # Distribution of response body size by redirected third parties
-# HTTP status codes documentation: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+# HTTP status codes documentation: https://developer.mozilla.org/docs/Web/HTTP/Status
 
 WITH requests AS (
   SELECT

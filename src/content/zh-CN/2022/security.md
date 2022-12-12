@@ -30,7 +30,7 @@ featured_stat_label_3: 权限策略（Permissions Policy）的采用率增加
 
 ## 传输安全（Transport security）
 
-传输层安全保证用户与网站之间的数据和资源的安全通信，[HTTPS](https://developer.mozilla.org//docs/Glossary/https) 使用 <a hreflang="en" href="https://www.cloudflare.com/en-gb/learning/ssl/transport-layer-security-tls/">TLS</a> 来加密客户端和服务器之间的所有通信。
+传输层安全保证用户与网站之间的数据和资源的安全通信，[HTTPS](https://developer.mozilla.org/docs/Glossary/https) 使用 <a hreflang="en" href="https://www.cloudflare.com/en-gb/learning/ssl/transport-layer-security-tls/">TLS</a> 来加密客户端和服务器之间的所有通信。
 
 {{ figure_markup(
   content="94%",
@@ -170,7 +170,7 @@ TLS v1.3还强制要求[前向保密](https://en.wikipedia.org/wiki/Forward_secr
 
 ### HTTP 严格传输安全（HSTS）
 
-[HTTP 严格传输安全（HSTS）](https://developer.mozilla.org//docs/Web/HTTP/Headers/Strict-Transport-Security)是一个标头，它通知浏览器自动将所有使用 HTTP 访问网站的尝试转换为 HTTPS 请求。
+[HTTP 严格传输安全（HSTS）](https://developer.mozilla.org/docs/Web/HTTP/Headers/Strict-Transport-Security)是一个标头，它通知浏览器自动将所有使用 HTTP 访问网站的尝试转换为 HTTPS 请求。
 
 {{ figure_markup(
   content="25%",
@@ -195,7 +195,7 @@ HSTS 是使用 `Strict-Transport-Security` 请求头来设置的，它可以有�
 
 我们看到 94% 的桌面端站点和 95% 的移动端站点都设置了一个非零、非空的 `max-age`。
 
-34% 的移动端请求响应，37%的桌面端请求响应在 HSTS 设置中包含了 `includeSubdomain`，而带有 `preload` 指令的响应数量较少，该指令[不属于 HSTS 标准中的一部分](https://developer.mozilla.org//docs/Web/HTTP/Headers/Strict-Transport-Security#preloading_strict_transport_security)，它需要设置最小的 `max-age` 为 31,536,000 秒（或1年），且 `includeSubdomain` 指令也要同时存在。
+34% 的移动端请求响应，37%的桌面端请求响应在 HSTS 设置中包含了 `includeSubdomain`，而带有 `preload` 指令的响应数量较少，该指令[不属于 HSTS 标准中的一部分](https://developer.mozilla.org/docs/Web/HTTP/Headers/Strict-Transport-Security#preloading_strict_transport_security)，它需要设置最小的 `max-age` 为 31,536,000 秒（或1年），且 `includeSubdomain` 指令也要同时存在。
 
 {{ figure_markup(
   image="hsts-max-age-values-in-days.png",
@@ -210,7 +210,7 @@ HSTS 是使用 `Strict-Transport-Security` 请求头来设置的，它可以有�
 
 ## Cookies
 
-[HTTP cookie](https://developer.mozilla.org//docs/Web/HTTP/Cookies) 是服务器发送给浏览器关于用户的一组数据，cookie 可用于会话管理、个性化、跟踪和其他与用户在不同请求中的状态信息。
+[HTTP cookie](https://developer.mozilla.org/docs/Web/HTTP/Cookies) 是服务器发送给浏览器关于用户的一组数据，cookie 可用于会话管理、个性化、跟踪和其他与用户在不同请求中的状态信息。
 
 如果 cookie 设置不当，可能容易遭受许多不同形式的攻击，例如<a hreflang="en" href="https://owasp.org/www-community/attacks/Session_hijacking_attack">会话劫持</a>、<a hreflang="en" href="https://owasp.org/www-community/attacks/csrf">跨站请求伪造（CSRF）</a>、<a hreflang="en" href="https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/11-Client_Side_Testing/13-Testing_for_Cross_Site_Script_Inclusion">跨站脚本包含（XSSI）</a>和其他各种<a hreflang="en" href="https://xsleaks.dev/">跨站泄漏</a>漏洞。
 
@@ -377,7 +377,7 @@ HSTS 是使用 `Strict-Transport-Security` 请求头来设置的，它可以有�
 
 `upgrade-insecure-requests` 策略的高采用率也许归功于 TLS 请求作为业界标准（de-facto standard）的高采用率。然而，尽管 `block-all-mixed-content` 被认为已经过时，但它的采用率依旧很高，这也许说明了 CSP 规范的发展速度之快，用户很难跟上时代的步伐。
 
-在减少跨站脚本攻击方面，谷歌针对[Trusted Types](https://developer.mozilla.org//docs/Web/HTTP/Headers/Content-Security-Policy/trusted-types)的安全倡议做得更多，它需要本地浏览器 API 支持，以帮助防止 DOM 注入类漏洞，它是由谷歌工程师积极倡导的，但仍处于 W3C 的<a hreflang="en" href="https://w3c.github.io/trusted-types/dist/spec/">建议草案阶段</a>，尽管如此，我们将其 CSP 相关的安全头 `require-trusted-types-for` 和 `trusted-types` 记录在 0.1% 的请求中，这并不多，但也许说明采用这种方法的趋势正在增长。
+在减少跨站脚本攻击方面，谷歌针对[Trusted Types](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/trusted-types)的安全倡议做得更多，它需要本地浏览器 API 支持，以帮助防止 DOM 注入类漏洞，它是由谷歌工程师积极倡导的，但仍处于 W3C 的<a hreflang="en" href="https://w3c.github.io/trusted-types/dist/spec/">建议草案阶段</a>，尽管如此，我们将其 CSP 相关的安全头 `require-trusted-types-for` 和 `trusted-types` 记录在 0.1% 的请求中，这并不多，但也许说明采用这种方法的趋势正在增长。
 
 为了评估是否发生了违反预先定义规则集的 CSP 行为，网站可以设置 `report-uri` 指令，让浏览器将 JSON 格式数据作为 HTTP POST 请求发送。尽管 `report-uri` 请求占所有带有 CSP 标头桌面流量的 4.3%，但到目前为止，它已被废弃，被 `report-to` 取代，它占桌面请求的 1.8%。
 
@@ -523,7 +523,7 @@ CSP 安全标准得到了 Web 浏览器以及内容传输网络和内容管理�
 
 从每页的覆盖率来看，SRI 安全功特性的采用率仍然相当低，去年，移动端和桌面端的平均比例为 3.3%，今年下降了 2%，为 3.23%。
 
-子资源完整性被指定采用 SHA256、SHA384 或 SHA512 中的其中一种加密函数来计算其哈希值的 base64 字符串，作为[用例参考](https://developer.mozilla.org//docs/Web/Security/Subresource_Integrity)，开发者可以按照以下方式实现它们：
+子资源完整性被指定采用 SHA256、SHA384 或 SHA512 中的其中一种加密函数来计算其哈希值的 base64 字符串，作为[用例参考](https://developer.mozilla.org/docs/Web/Security/Subresource_Integrity)，开发者可以按照以下方式实现它们：
 
 ```html
 <script src="https://example.com/example-framework.js"
@@ -774,7 +774,7 @@ function clickToGo() {
 )
 }}
 
-防止点击劫持攻击的常见方法之一是防止浏览器在框架中加载网站，人们可以在 CSP 标头中使用 [`frame-ancestors`](https://developer.mozilla.org//docs/Web/HTTP/Headers/Content-Security-Policy/frame-ancestors) 指令来限制其他域将页面内容嵌入框架中。我们发现 53% 设置了 CSP 的 移动网站都有 `frame-ancestor` 指令，这是第二大使用的 CSP 指令，这有助于防止点击劫持攻击。将 `frame-ancestors` 指令的值设置为 `none` 或 `self` 是最安全的，`none` 不允许任何域名框住内容，而 `self` 只允许原始域名框住内容。我们发现，在有 CSP 标头的移动端网站中，有 8% 的网站只设置了 `frame-ancestors 'self'`，是 CSP 标头的第三大常见值。
+防止点击劫持攻击的常见方法之一是防止浏览器在框架中加载网站，人们可以在 CSP 标头中使用 [`frame-ancestors`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/frame-ancestors) 指令来限制其他域将页面内容嵌入框架中。我们发现 53% 设置了 CSP 的 移动网站都有 `frame-ancestor` 指令，这是第二大使用的 CSP 指令，这有助于防止点击劫持攻击。将 `frame-ancestors` 指令的值设置为 `none` 或 `self` 是最安全的，`none` 不允许任何域名框住内容，而 `self` 只允许原始域名框住内容。我们发现，在有 CSP 标头的移动端网站中，有 8% 的网站只设置了 `frame-ancestors 'self'`，是 CSP 标头的第三大常见值。
 
 <figure>
   <table>
@@ -832,11 +832,11 @@ Cross Origin 策略是用于防御像 Cross Site 泄漏等微架构攻击的主�
   sql_file="security_headers_prevalence.sql"
 ) }}
 
-[`Cross-Origin-Resource-Policy`](https://developer.mozilla.org//docs/Web/HTTP/Headers/Cross-Origin-Resource-Policy) 存在于 114,111(1.46%) 个移动端网站中，是最常用的跨源策略，它用于向浏览器表明是否允许来自跨源的资源。[`Cross-Origin-Embedder-Policy`](https://developer.mozilla.org//docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy) 出现在 2559 个网站中，而去年是 911 个。我们看到 [`Cross-Origin-Opener-Policy`](https://developer.mozilla.org//docs/Web/HTTP/Headers/Cross-Origin-Opener-Policy) 的采用也有类似的增长，现在有 34,968 家移动端网站设置了该标头，而去年只有 15,727 家。因此，所有跨源政策的采用都在稳步增长，这很好，因为它们对防止 XS-Leak 攻击非常有帮助。
+[`Cross-Origin-Resource-Policy`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cross-Origin-Resource-Policy) 存在于 114,111(1.46%) 个移动端网站中，是最常用的跨源策略，它用于向浏览器表明是否允许来自跨源的资源。[`Cross-Origin-Embedder-Policy`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy) 出现在 2559 个网站中，而去年是 911 个。我们看到 [`Cross-Origin-Opener-Policy`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cross-Origin-Opener-Policy) 的采用也有类似的增长，现在有 34,968 家移动端网站设置了该标头，而去年只有 15,727 家。因此，所有跨源政策的采用都在稳步增长，这很好，因为它们对防止 XS-Leak 攻击非常有帮助。
 
 ### 使用 Clear-Site-Data 预防攻击
 
-[Clear-Site-Data](https://developer.mozilla.org//docs/Web/HTTP/Headers/Clear-Site-Data) 为 web 开发人员提供了更多的控制，用于清除与他们网站相关的用户数据。例如，web 开发人员现在可以做出这样的决定：当用户退出他们的网站时，所有与该用户相关的 cookie、缓存和存储信息都可以删除，这有助于限制攻击的后果，因为在不需要时浏览器中存储的数据量是有限的。这是一个相对较新的标头，只限于通过 HTTPS 提供服务的网站，而且只有部分功能被[浏览器支持](https://developer.mozilla.org//docs/Web/HTTP/Headers/Clear-Site-Data#browser_compatibility)。
+[Clear-Site-Data](https://developer.mozilla.org/docs/Web/HTTP/Headers/Clear-Site-Data) 为 web 开发人员提供了更多的控制，用于清除与他们网站相关的用户数据。例如，web 开发人员现在可以做出这样的决定：当用户退出他们的网站时，所有与该用户相关的 cookie、缓存和存储信息都可以删除，这有助于限制攻击的后果，因为在不需要时浏览器中存储的数据量是有限的。这是一个相对较新的标头，只限于通过 HTTPS 提供服务的网站，而且只有部分功能被[浏览器支持](https://developer.mozilla.org/docs/Web/HTTP/Headers/Clear-Site-Data#browser_compatibility)。
 
 <figure>
   <table>
