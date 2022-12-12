@@ -1,4 +1,5 @@
 // Code related to parsing and showing webmentions
+// And Share button
 
 // Gets the webmentions json data from current URL
 async function getWebmentions(targetURL) {
@@ -221,6 +222,13 @@ function renderWebmentions(webmentions) {
   renderReactions(webmentions, "replies", "in-reply-to");
   renderReactions(webmentions, "mentions", "mention-of");
 
+  // Show count of reactions (except if 0)
+  if (webmentions.length > 0) {
+    document.querySelectorAll('.num-reactions').forEach(t => t.innerText = webmentions.length);
+    document.querySelectorAll('.num-label').forEach(t => setReactionsLabel(webmentions.length, t));
+  }
+  document.querySelector('#cta-container').classList.remove('hidden');
+
   // Set the first active tab (in case no "likes" so that tab is hidden)
   setActiveTab();
 }
@@ -301,6 +309,50 @@ function addTabListeners() {
 }
 
 
+// Change tabs for webmentions UI
+function handleShareButton() {
+    // DOM references
+  const button = document.querySelector('.share-cta');
+  const appleIcon = button.querySelector('.apple-icon');
+  const androidIcon = button.querySelector('.android-icon');
+  const canonical = document.querySelector('link[rel="canonical"]');
+
+  // Feature detection to see if the Web Share API is supported.
+  if (!('share' in navigator)) {
+    button.remove();
+    return;
+  }
+
+  // Find out if the user is on a device made by Apple and, if so, switch the icon.
+  if (/Mac|iPhone/.test(navigator.platform)) {
+    appleIcon.classList.remove('hidden');
+    androidIcon.classList.add('hidden');
+  }
+
+  button.addEventListener('click', async () => {
+    // Title and text are identical, since the title may actually be ignored.
+    const title = document.title;
+    const text = document.title;
+    // Use the canonical URL, if it exists, else, the current location.
+    const url = canonical?.href || location.href;
+
+    try {
+      await navigator.share({
+        url,
+        text,
+        title,
+      });
+      return;
+    } catch (err) {
+      // If the user cancels, an `AbortError` is thrown.
+      if (err.name !== "AbortError") {
+        console.error(err.name, err.message);
+      }
+    }
+  });
+}
+
+handleShareButton();
 addTabListeners();
 const BASE_URL = "https://almanac.httparchive.org";
 processWebmentions(BASE_URL + window.location.pathname);

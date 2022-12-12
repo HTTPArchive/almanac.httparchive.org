@@ -265,6 +265,14 @@
   line-height: 1.5rem;
 }
 
+.share-cta {
+  line-height: 1.6em;
+}
+
+.share-cta:hover svg {
+  fill: white;
+}
+
 [data-translation] {
   display: none;
 }
