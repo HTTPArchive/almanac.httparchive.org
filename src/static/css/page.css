@@ -230,6 +230,10 @@
   margin: -6px 3px;
 }
 
+#cta-container.invisible {
+  opacity: 0;
+}
+
 #cta-container {
   display: flex;
   height: 0;
@@ -239,6 +243,8 @@
   bottom: 1.25rem;
   z-index: 1;
   justify-content: flex-end;
+  opacity: 1;
+  transition: opacity 1000ms;
 }
 
 .chapter-cta {
@@ -263,15 +269,6 @@
 #num-comments {
   line-height: 24px;
   line-height: 1.5rem;
-}
-
-#cta-container.invisible {
-  opacity: 0;
-}
-
-#cta-container {
-  opacity: 1;
-  transition: opacity 1000ms;
 }
 
 .share-cta {
