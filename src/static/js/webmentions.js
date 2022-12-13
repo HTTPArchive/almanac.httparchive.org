@@ -318,10 +318,10 @@ function handleShareButton() {
   const canonical = document.querySelector('link[rel="canonical"]');
 
   // Feature detection to see if the Web Share API is supported.
-  // if (!('share' in navigator)) {
-  //   button.remove();
-  //   return;
-  // }
+  if (!('share' in navigator)) {
+    button.remove();
+    return;
+  }
 
   // Find out if the user is on a device made by Apple and, if so, switch the icon.
   if (/Mac|iPhone/.test(navigator.platform)) {
@@ -336,6 +336,13 @@ function handleShareButton() {
     // Use the canonical URL, if it exists, else, the current location.
     const url = canonical?.href || location.href;
 
+    gtag('event', 'WebShare', {
+      'event_category': 'clicks',
+      'event_label': url,
+      'transport_type': 'beacon',
+      'value': 1
+    })
+
     try {
       await navigator.share({
         url,
@@ -347,6 +354,12 @@ function handleShareButton() {
       // If the user cancels, an `AbortError` is thrown.
       if (err.name !== "AbortError") {
         console.error(err.name, err.message);
+        gtag('event', 'error', {
+          'event_category': 'WebShare',
+          'event_label': err.message,
+          'transport_type': 'beacon',
+          'value': 1
+        })
       }
     }
   });
