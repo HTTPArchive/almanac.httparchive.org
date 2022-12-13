@@ -269,7 +269,7 @@
   line-height: 1.6em;
 }
 
-.share-cta:hover svg {
+.share-cta:hover svg, .share-cta:focus svg {
   fill: white;
 }
 
