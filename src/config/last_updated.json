@@ -21,8 +21,8 @@
   },
   "/static/css/page.css": {
     "date_published": "2020-11-13T00:00:00.000Z",
-    "date_modified": "2022-10-25T00:00:00.000Z",
-    "hash": "5f0f74e0a58f1876aa0403a5967ac483"
+    "date_modified": "2022-12-13T00:00:00.000Z",
+    "hash": "f00848215660c365c3266948f44017f0"
   },
   "/static/css/splash.css": {
     "date_published": "2020-11-13T00:00:00.000Z",
@@ -31,8 +31,8 @@
   },
   "/static/js/almanac.js": {
     "date_published": "2021-02-24T00:00:00.000Z",
-    "date_modified": "2022-04-29T00:00:00.000Z",
-    "hash": "4c4ea41eae805e8a6894a7cf51308dea"
+    "date_modified": "2022-12-13T00:00:00.000Z",
+    "hash": "9c395a38708aa33f3c645692687b4245"
   },
   "/static/js/send-web-vitals.js": {
     "date_published": "2021-02-24T00:00:00.000Z",
@@ -46,8 +46,8 @@
   },
   "/static/js/webmentions.js": {
     "date_published": "2021-12-01T00:00:00.000Z",
-    "date_modified": "2022-10-25T00:00:00.000Z",
-    "hash": "6d0a0ac4914e62f499c6f4a50541a105"
+    "date_modified": "2022-12-13T00:00:00.000Z",
+    "hash": "13be3f76f6902375f7b2aa27ae4255e8"
   },
   "/static/pdfs/web_almanac_2019_en.pdf": {
     "date_published": "2020-05-15T00:00:00.000Z",
