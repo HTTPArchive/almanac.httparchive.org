@@ -424,9 +424,9 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
         <section class="authors">
             {{ render_authors() }}
         </section>
-        <div id="cta-container" class="hidden">
+        <div id="cta-container" class="invisible">
           {% if metadata.get('discuss') %}
-          <a class="alt btn chapter-cta comment-cta" hreflang="en" href="https://discuss.httparchive.org/t/{{ metadata.get('discuss') }}">
+          <a class="alt btn chapter-cta comment-cta discuss-cta hidden" hreflang="en" href="https://discuss.httparchive.org/t/{{ metadata.get('discuss') }}">
             <svg width="22" height="22" role="img" aria-labelledby="discuss-this-chapter-cta">
               <title id="discuss-this-chapter-cta">{{ self.discuss_this_chapter() }}:</title>
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#comment-logo"></use>
@@ -435,14 +435,14 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
             <span data-translation class="comment-plural visually-hidden-mobile">{{ self.comments() }}</span>
           </a>
           {% elif year | int >= 2021 %}
-          <a class="alt btn chapter-cta comment-cta" href="#reactions">
+          <a class="alt btn chapter-cta comment-cta webmentions-cta hidden" href="#reactions">
             <svg width="22" height="22" role="img" aria-hidden="true">
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#comment-logo"></use>
             </svg>
             <span class="num-reactions"></span> <span class="reactions-label" data-singular="{{ self.reactions() }}" data-plural-alt="{{ self.reactionsAlt() }}">{{ self.reactions() }}</span>
           </a>
           {% endif %}
-          <button class="alt btn chapter-cta share-cta">
+          <button class="alt btn chapter-cta share-cta hidden">
             <svg width="22" height="22" role="img" aria-hidden="true" class="apple-icon hidden">
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#share-apple-logo"></use>
             </svg>

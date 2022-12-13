@@ -213,9 +213,13 @@ function setActiveTab() {
 
 // Parses and renders mentions into likes, reposts, replies and mentions
 function renderWebmentions(webmentions) {
+  if (!document.querySelector('.webmentions-cta')) {
+    return;
+  }
+
   if (!webmentions.length) {
-    document.querySelector('.comment-cta').classList.add('hidden');
-    document.querySelector('#cta-container').classList.remove('hidden');
+    document.querySelector('.webmentions-cta').classList.remove('hidden');
+    document.querySelector('#cta-container').classList.remove('invisible');
     return;
   }
 
@@ -229,7 +233,8 @@ function renderWebmentions(webmentions) {
     document.querySelectorAll('.num-reactions').forEach(t => t.innerText = webmentions.length);
     document.querySelectorAll('.num-label').forEach(t => setReactionsLabel(webmentions.length, t));
   }
-  document.querySelector('#cta-container').classList.remove('hidden');
+  document.querySelector('.webmentions-cta').classList.remove('hidden');
+  document.querySelector('#cta-container').classList.remove('invisible');
 
   // Set the first active tab (in case no "likes" so that tab is hidden)
   setActiveTab();
@@ -321,7 +326,6 @@ function handleShareButton() {
 
   // Feature detection to see if the Web Share API is supported.
   if (!('share' in navigator)) {
-    button.remove();
     return;
   }
 
@@ -365,6 +369,7 @@ function handleShareButton() {
       }
     }
   });
+  button.classList.remove('hidden');
 }
 
 handleShareButton();

@@ -265,6 +265,15 @@
   line-height: 1.5rem;
 }
 
+#cta-container.invisible {
+  opacity: 0;
+}
+
+#cta-container {
+  opacity: 1;
+  transition: opacity 1000ms;
+}
+
 .share-cta {
   line-height: 1.6em;
 }
