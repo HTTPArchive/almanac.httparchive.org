@@ -52,17 +52,23 @@ function setReactionsLabel(length, reactionLabel) {
 
   // Singular
   if (plural_rules.select(length) === "one") {
-    reactionLabel.textContent = reactionLabel.getAttribute("data-singular");
+    reactionLabel.textContent = reactionLabel.dataset.singular;
     return;
   }
 
   // Few - alternative plural (Used by "ru" and "uk")
-  if (reactionLabel.getAttribute("data-plural-alt") !== "" && plural_rules.select(length) === "few") {
-    reactionLabel.textContent = reactionLabel.getAttribute("data-plural-alt");
-      return;
+  if (reactionLabel.dataset.plural_alt !== "" && plural_rules.select(length) === "few") {
+    reactionLabel.textContent = reactionLabel.dataset.plural_alt;
+    return;
   }
 
-  // Everything else sticks with the default plural
+  // If a plural exists use that.
+  if (reactionLabel.dataset.plural) {
+    reactionLabel.textContent = reactionLabel.dataset.plural;
+    return;
+  }
+
+  // Everything else sticks with the default
   return;
 
 }
@@ -175,7 +181,7 @@ function renderReactions(webmentions, reactionType, wmProperty) {
       const reactionASource = document.createElement("a");
       reactionASource.setAttribute("class", "webmention-source");
       reactionASource.setAttribute("href", reaction["url"]);
-      reactionASource.textContent = document.querySelector(".reactions").getAttribute("data-source");
+      reactionASource.textContent = document.querySelector(".reactions").dataset.source;
 
       reactionDivMeta.appendChild(reactionTime);
       reactionDivMeta.appendChild(reactionSpan);
@@ -218,7 +224,6 @@ function renderWebmentions(webmentions) {
   }
 
   if (!webmentions.length) {
-    document.querySelector('.webmentions-cta').classList.remove('hidden');
     document.querySelector('#cta-container').classList.remove('invisible');
     return;
   }
@@ -231,9 +236,9 @@ function renderWebmentions(webmentions) {
   // Show count of reactions (except if 0)
   if (webmentions.length > 0) {
     document.querySelectorAll('.num-reactions').forEach(t => t.innerText = webmentions.length);
-    document.querySelectorAll('.num-label').forEach(t => setReactionsLabel(webmentions.length, t));
+    document.querySelectorAll('.reactions-label').forEach(t => setReactionsLabel(webmentions.length, t));
+    document.querySelector('.webmentions-cta').classList.remove('hidden');
   }
-  document.querySelector('.webmentions-cta').classList.remove('hidden');
   document.querySelector('#cta-container').classList.remove('invisible');
 
   // Set the first active tab (in case no "likes" so that tab is hidden)
