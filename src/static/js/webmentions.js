@@ -214,6 +214,8 @@ function setActiveTab() {
 // Parses and renders mentions into likes, reposts, replies and mentions
 function renderWebmentions(webmentions) {
   if (!webmentions.length) {
+    document.querySelector('.comment-cta').classList.add('hidden');
+    document.querySelector('#cta-container').classList.remove('hidden');
     return;
   }
 
