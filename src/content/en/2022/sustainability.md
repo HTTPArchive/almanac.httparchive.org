@@ -119,8 +119,8 @@ At the 90th percentile, desktop pages were over 9 MB and mobile pages over 8 MB.
 <p class="note">Note: The notion of "carbon emissions" is a simplification since we are considering Greenhouse Gas Emissions, not only carbon emissions.</p>
 
 {{ figure_markup(
-  image="total-carbon-emissions-by-percentile.png",
-  caption="Total Carbon emissions (g) by percentile",
+  image="carbon-emissions-by-percentile.png",
+  caption="Carbon emissions (g) by percentile",
   description="A column chart showing that on the 90th percentile, desktop web pages emit 3.09g of carbon and mobile pages emit 2.76g of carbon, on the 75th percentile desktop pages emit 1.59g of carbon and mobile pages emit 1.38g of carbon. On the 50th percentile it goes 0.79g of carbon on desktop and 0.69 on mobile. On the 25th percentile it's 0.39g of carbon for desktop pages and 0.34g of carbon on mobile pages. Lastly, on the 10th percentile desktop pages emit 0.18g of carbon and mobile pages emit 0.15g of carbon.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=568360340&format=interactive",
   sheets_gid="1911144863",
