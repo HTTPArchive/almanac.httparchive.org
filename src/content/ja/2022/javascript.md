@@ -261,7 +261,7 @@ HTMLの `<script>` 要素にある `async` と `defer` 属性は、スクリプ�
 
 ### `preload`、`prefetch`と`modulepreload`
 
-`preload`、`prefetch`、`modulepreload` などのリソースヒントは、どのリソースを早期に取得すべきかをブラウザへ示唆するのに有用です。それぞれのヒントは異なる目的を持っており、`preload`は現在のナビゲーションに必要なリソースを取得するために使用され、`modulepreload`は[JavaScriptモジュール](https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Modules)を含むスクリプトを`preload`するために相当し、`prefetch`は次のナビゲーションで必要なリソースに使用されます。
+`preload`、`prefetch`、`modulepreload` などのリソースヒントは、どのリソースを早期に取得すべきかをブラウザへ示唆するのに有用です。それぞれのヒントは異なる目的を持っており、`preload`は現在のナビゲーションに必要なリソースを取得するために使用され、`modulepreload`は[JavaScriptモジュール](https://developer.mozilla.org/docs/Web/JavaScript/Guide/Modules)を含むスクリプトを`preload`するために相当し、`prefetch`は次のナビゲーションで必要なリソースに使用されます。
 
 <figure>
   <table>
@@ -380,7 +380,7 @@ HTMLの `<script>` 要素にある `async` と `defer` 属性は、スクリプ�
 
 ### スクリプトインジェクション
 
-スクリプトインジェクションとは、[`HTMLScriptElement`](https://developer.mozilla.org/ja/docs/Web/API/HTMLScriptElement)を [`document.createElement`](https://developer.mozilla.org/ja/docs/Web/API/Document/createElement)を使ってJavaScriptで作成し、DOM挿入メソッドでDOMに注入するパターンのことです。また、文字列中の `<script>` 要素のマークアップは、 [`innerHTML`](https://developer.mozilla.org/ja/docs/Web/API/Element/innerHTML)メソッドによってDOMに注入できます。
+スクリプトインジェクションとは、[`HTMLScriptElement`](https://developer.mozilla.org/docs/Web/API/HTMLScriptElement)を [`document.createElement`](https://developer.mozilla.org/docs/Web/API/Document/createElement)を使ってJavaScriptで作成し、DOM挿入メソッドでDOMに注入するパターンのことです。また、文字列中の `<script>` 要素のマークアップは、 [`innerHTML`](https://developer.mozilla.org/docs/Web/API/Element/innerHTML)メソッドによってDOMに注入できます。
 
 スクリプトインジェクションは多くのシナリオで使用されるかなり一般的な手法ですが、この方法の問題は、<a hreflang="en" href="https://web.dev/preload-scanner/#injected-async-scripts">最初のHTMLペイロードが解析されるときにスクリプトを発見できないようにして、ブラウザのプリロード スキャンナー</a>を破ってしまうということです。これは、注入されたスクリプト リソースが最終的にマークアップのレンダリングを担当する場合、<a hreflang="ja" href="https://web.dev/i18n/ja/lcp/">最大のコンテントフルペイント (LCP)</a>などのメトリックに影響を与える可能性があり、マークアップの大きな塊をその場で解析する長いタスクを開始させる可能性があります。
 
@@ -427,7 +427,7 @@ Webサイトがよく提供するJavaScriptには、2つのカテゴリがあり
 
 サードパーティ製スクリプトを軽減するための手順は、技術的なものよりも文化的なものであることが多い。サードパーティ製スクリプトを過剰に出荷している場合は、各スクリプトとその実行内容を監査し、アクティビティのプロファイルを作成して、パフォーマンスに関する問題を見つけます。
 
-もしあなたがかなりのUX研究をしているのなら、（オリジンが適切な[`Timing-Allow-Origin`](https://developer.mozilla.org/ja/docs/Web/HTTP/Headers/Timing-Allow-Origin)ヘッダーを送信する場合）独自のフィールドデータを収集し、サードパーティ製スクリプトが引き起こすパフォーマンスの問題を回避するための情報に基づいた意思決定を検討することをオススメします。サードパーティーのスクリプトを追加するたびに、ロードコストだけでなく、ユーザーの入力に対する応答性が重要なランタイム中のコストも発生します。
+もしあなたがかなりのUX研究をしているのなら、（オリジンが適切な[`Timing-Allow-Origin`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Timing-Allow-Origin)ヘッダーを送信する場合）独自のフィールドデータを収集し、サードパーティ製スクリプトが引き起こすパフォーマンスの問題を回避するための情報に基づいた意思決定を検討することをオススメします。サードパーティーのスクリプトを追加するたびに、ロードコストだけでなく、ユーザーの入力に対する応答性が重要なランタイム中のコストも発生します。
 
 #### バイト
 
@@ -449,7 +449,7 @@ Webサイトがよく提供するJavaScriptには、2つのカテゴリがあり
 
 ### ダイナミックな`import()`
 
-<a hreflang="en" href="https://v8.dev/features/dynamic-import">ダイナミックな`import()`</a>は[静的な`import`構文](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Statements/import)の変形で、スクリプト内のどこでも実行できます。一方静的な`import`式はJavaScriptファイルの先頭で実行しなければならず、他の場所では実行することができません。
+<a hreflang="en" href="https://v8.dev/features/dynamic-import">ダイナミックな`import()`</a>は[静的な`import`構文](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/import)の変形で、スクリプト内のどこでも実行できます。一方静的な`import`式はJavaScriptファイルの先頭で実行しなければならず、他の場所では実行することができません。
 
 ダイナミックな`import()`により、開発者はメインのバンドルからJavaScriptコードのチャンクを効果的に「分割」してオンデマンドでロードすることができ、前もってロードするJavaScriptを少なくして起動時のパフォーマンスを改善できます。
 
@@ -464,15 +464,15 @@ Webサイトがよく提供するJavaScriptには、2つのカテゴリがあり
 
 現在観測されているモバイルページの0.34%という驚異的な低さで、デスクトップページの0.41%で動的な `import()` が使用されています。とはいえ、バンドルによっては動的な `import()` 構文をES5互換の代替構文にトランスフォームすることが一般的です。この機能が広く使われている可能性は高いのですが、プロダクションのJavaScriptファイルではあまり使われていないようです。
 
-これは難しいことですが、バランスを取ることができ、それにはユーザーの意図を測ることが必要です。インタラクションを遅らせることなくJavaScriptのロードを延期する1つの方法は、ユーザーがインタラクションを行う意図を示したときにJavaScriptを[preload](https://developer.mozilla.org/ja/docs/Web/HTML/Link_types/preload)することです。たとえば、フォームの検証のためにJavaScriptのロードを延期し、ユーザーがそのフォームのフィールドにフォーカスした時点でそのJavaScriptをプリロードできます。そうすれば、JavaScriptが要求されたとき、すでにブラウザーのキャッシュにあるはずです。
+これは難しいことですが、バランスを取ることができ、それにはユーザーの意図を測ることが必要です。インタラクションを遅らせることなくJavaScriptのロードを延期する1つの方法は、ユーザーがインタラクションを行う意図を示したときにJavaScriptを[preload](https://developer.mozilla.org/docs/Web/HTML/Link_types/preload)することです。たとえば、フォームの検証のためにJavaScriptのロードを延期し、ユーザーがそのフォームのフィールドにフォーカスした時点でそのJavaScriptをプリロードできます。そうすれば、JavaScriptが要求されたとき、すでにブラウザーのキャッシュにあるはずです。
 
-また、サービスワーカーのインストール時に、インタラクションに必要なJavaScriptをプリキャストしておくという方法も考えられます。インストールは、ページの <a hreflang="en" href="https://developer.mozilla.org/ja/docs/Web/API/Window/load_event">`load` イベント</a>でページが完全にロードされた時点で行う必要があります。これにより、必要な機能が要求されたときに、サービスワーカーのキャッシュから起動コストをかけずに取得することができる。
+また、サービスワーカーのインストール時に、インタラクションに必要なJavaScriptをプリキャストしておくという方法も考えられます。インストールは、ページの <a hreflang="en" href="https://developer.mozilla.org/docs/Web/API/Window/load_event">`load` イベント</a>でページが完全にロードされた時点で行う必要があります。これにより、必要な機能が要求されたときに、サービスワーカーのキャッシュから起動コストをかけずに取得することができる。
 
 動的な `import()` は使い方が難しいのですが、より広く採用することで、JavaScriptを起動時に読み込むパフォーマンスコストをページのライフサイクルの後半、おそらくネットワークリソースの競合が少ない時点にシフトさせることができます。起動時に読み込まれるJavaScriptの量は増える一方なので、動的な `import()` の採用が増えることを期待しています。
 
 ### Web ワーカー
 
-[Webワーカー](https://developer.mozilla.org/ja/docs/Web/API/Web_Workers_API/Using_web_workers)は、DOMへ直接アクセスせずに専用のJavaScriptファイルを独自スレッドで回転させることで、メインスレッドの作業を軽減するウェブプラットフォームの機能です。この技術は、メインスレッドに負担をかけるような作業を別スレッドで、行うことで負荷を軽減するために利用されます。
+[Webワーカー](https://developer.mozilla.org/docs/Web/API/Web_Workers_API/Using_web_workers)は、DOMへ直接アクセスせずに専用のJavaScriptファイルを独自スレッドで回転させることで、メインスレッドの作業を軽減するウェブプラットフォームの機能です。この技術は、メインスレッドに負担をかけるような作業を別スレッドで、行うことで負荷を軽減するために利用されます。
 
 {{ figure_markup(
     caption="Web Workerを利用したモバイルページ数。",
@@ -485,7 +485,7 @@ Webサイトがよく提供するJavaScriptには、2つのカテゴリがあり
 
 現在、モバイルおよびデスクトップページの12% が、ユーザー体験を悪化させる可能性のあるメインスレッドの作業を軽減するために、1つ以上のウェブワーカーを使用していることは喜ばしいことですが、改善の余地は多くあります。
 
-DOMに直接アクセスしなくてもできる重要な作業がある場合は、Web Workerを使用するのがよいアイデアです。Web Workerとのデータ転送には[専用の通信パイプライン](https://developer.mozilla.org/ja/docs/Web/API/Web_Workers_API/Using_web_workers#%E3%83%AF%E3%83%BC%E3%82%AB%E3%83%BC%E3%81%A8%E3%81%AE%E3%83%87%E3%83%BC%E3%82%BF%E8%BB%A2%E9%80%81%E3%81%AE%E8%A9%B3%E7%B4%B0)を使う必要がありますが、この技術を使うことで、ユーザーの入力に対するWebページの応答性を格段に向上させることは十分可能です。
+DOMに直接アクセスしなくてもできる重要な作業がある場合は、Web Workerを使用するのがよいアイデアです。Web Workerとのデータ転送には[専用の通信パイプライン](https://developer.mozilla.org/docs/Web/API/Web_Workers_API/Using_web_workers#%E3%83%AF%E3%83%BC%E3%82%AB%E3%83%BC%E3%81%A8%E3%81%AE%E3%83%87%E3%83%BC%E3%82%BF%E8%BB%A2%E9%80%81%E3%81%AE%E8%A9%B3%E7%B4%B0)を使う必要がありますが、この技術を使うことで、ユーザーの入力に対するWebページの応答性を格段に向上させることは十分可能です。
 
 しかし、その通信パイプラインは、設定や使い方にコツがいるものですが、このプロセスを簡略化できるオープンソースのソリューションがあります。<a hreflang="en" href="https://www.npmjs.com/package/comlink">comlink</a>はこれを支援するライブラリの1つで、Webワーカーに関する開発者の体験をより楽しいものにできます。
 
@@ -609,7 +609,7 @@ JavaScriptのパフォーマンスで同様に重要なのは、ブラウザに�
 
 ### ソースマップ
 
-<a hreflang="en" href="https://firefox-source-docs.mozilla.org/devtools-user/debugger/how_to/use_a_source_map/index.html">ソースマップ</a>は、Web開発者が、最小化および醜形化したプロダクション コードを元のソースへマッピングするために使用するツールです。ソースマップはプロダクションのJavaScriptファイルで使用され、デバッグのための便利なツールです。ソースマップはリソースの最後にあるソースマップファイルを指すコメントで指定するか、<a hreflang="en" href="https://developer.mozilla.org/ja/docs/Web/HTTP/Headers/SourceMap">`SourceMap`</a>HTTPレスポンスヘッダーとして指定することが可能です。
+<a hreflang="en" href="https://firefox-source-docs.mozilla.org/devtools-user/debugger/how_to/use_a_source_map/index.html">ソースマップ</a>は、Web開発者が、最小化および醜形化したプロダクション コードを元のソースへマッピングするために使用するツールです。ソースマップはプロダクションのJavaScriptファイルで使用され、デバッグのための便利なツールです。ソースマップはリソースの最後にあるソースマップファイルを指すコメントで指定するか、<a hreflang="en" href="https://developer.mozilla.org/docs/Web/HTTP/Headers/SourceMap">`SourceMap`</a>HTTPレスポンスヘッダーとして指定することが可能です。
 
 {{ figure_markup(
     caption="一般に公開されているソースマップに対して、ソースマップコメントを指定しているモバイルページの割合。",
@@ -739,7 +739,7 @@ JavaScriptが影響を与えるのは、スタートアップのパフォーマ�
 
 ### スケジューラAPI
 
-JavaScriptのタスクのスケジューリングは、歴史的にブラウザに委ねられてきました。新しいメソッドとして、 [`requestIdleCallback`](https://developer.mozilla.org/ja/docs/Web/API/Window/requestIdleCallback)や [`queueMicrotask`](https://developer.mozilla.org/ja/docs/Web/API/queueMicrotask)がありますが、これらのAPIは粗い方法でタスクをスケジュールします。とくに `queueMicrotask` の場合、使い方を誤るとパフォーマンスの問題を引き起こす可能性があります。
+JavaScriptのタスクのスケジューリングは、歴史的にブラウザに委ねられてきました。新しいメソッドとして、 [`requestIdleCallback`](https://developer.mozilla.org/docs/Web/API/Window/requestIdleCallback)や [`queueMicrotask`](https://developer.mozilla.org/docs/Web/API/queueMicrotask)がありますが、これらのAPIは粗い方法でタスクをスケジュールします。とくに `queueMicrotask` の場合、使い方を誤るとパフォーマンスの問題を引き起こす可能性があります。
 
 Scheduler APIは最近リリースされ、優先順位に基づくタスクのスケジューリングをより細かく制御できるようになりましたが、<a hreflang="en" href="https://caniuse.com/mdn-api_scheduler_posttask">Chromiumベースのブラウザ</a>にしか今のところ限定されていません。
 
@@ -756,7 +756,7 @@ Scheduler APIは最近リリースされ、優先順位に基づくタスクの�
 
 ### 同期型XHR
 
-AJAX、つまりナビゲーション リクエストなしでページ上のデータを非同期に取得し情報を更新する <a hreflang="en" href="https://developer.mozilla.org/ja/docs/Web/API/XMLHttpRequest">`XMLHttpRequest`</a> (XHR) メソッドの使用は、動的なユーザー体験を生み出す方法として非常に一般的でした。これは主に非同期の [`fetch`](https://developer.mozilla.org/docs/Web/API/Fetch_API)メソッドに取って代わられましたが、XHRは<a hreflang="en" href="https://caniuse.com/mdn-api_xmlhttprequest">すべての主要なブラウザ</a>でまだサポートされています。
+AJAX、つまりナビゲーション リクエストなしでページ上のデータを非同期に取得し情報を更新する <a hreflang="en" href="https://developer.mozilla.org/docs/Web/API/XMLHttpRequest">`XMLHttpRequest`</a> (XHR) メソッドの使用は、動的なユーザー体験を生み出す方法として非常に一般的でした。これは主に非同期の [`fetch`](https://developer.mozilla.org/docs/Web/API/Fetch_API)メソッドに取って代わられましたが、XHRは<a hreflang="en" href="https://caniuse.com/mdn-api_xmlhttprequest">すべての主要なブラウザ</a>でまだサポートされています。
 
 XHRには同期的なリクエストを行うためのフラグがあります。<a hreflang="en" href="https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/Synchronous_and_Asynchronous_Requests#synchronous_request">同期XHR</a>は、イベントループとメインスレッドがリクエストを終了するまでブロックされ、結果としてデータが利用可能になるまでページが停止するため、パフォーマンス上有害です。`fetch` は、よりシンプルなAPIで、より効果的かつ効率的な代替手段であり、データの同期取得はサポートされていません。
 
@@ -775,7 +775,7 @@ XHRには同期的なリクエストを行うためのフラグがあります�
 
 ### `document.write`
 
-DOMの挿入メソッド（[`appendChild`](https://developer.mozilla.org/ja/docs/Web/API/Node/appendChild)など）が導入される前は、<a hreflang="ja" href="https://developer.mozilla.org/ja/docs/Web/API/Document/write">`document.write`</a>を使用して、ドキュメント内の `document.write` が行われた位置にコンテンツを挿入しました。
+DOMの挿入メソッド（[`appendChild`](https://developer.mozilla.org/docs/Web/API/Node/appendChild)など）が導入される前は、<a hreflang="ja" href="https://developer.mozilla.org/docs/Web/API/Document/write">`document.write`</a>を使用して、ドキュメント内の `document.write` が行われた位置にコンテンツを挿入しました。
 
 `document.write` は非常に問題があります。ひとつにはHTMLパーサをブロックしてしまうこと、そして他の多くの理由から問題があり、<a hreflang="en" href="https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#document.write()">HTMLの仕様書では、その使用について警告しています</a>。低速な接続では、この方法でノードを追加するためにドキュメントの解析をブロックすると、完全に回避可能なパフォーマンスの問題が発生します。
 
@@ -796,7 +796,7 @@ DOMの挿入メソッド（[`appendChild`](https://developer.mozilla.org/ja/docs
 
 JavaScriptはここ数年でかなり進化しています。新しい言語機能の導入により、JavaScriptはより有能でエレガントな言語となり、開発者はより簡潔なJavaScriptを書くことができるようになり、結果としてJavaScriptの読み込み量が減りました。ただし、それらの機能がBabelのような[transpiler](#トランスパイラ)を使って不必要に古い構文に変換されていないことが条件です。
 
-Lighthouseは現在、[`async` と `await`](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Statements/async_function)や [JavaScript クラス](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Classes)などの新しい、しかし広くサポートされている言語機能のトランスフォームなど、現代のウェブでは不要かもしれないBabelトランスフォームをチェックします。
+Lighthouseは現在、[`async` と `await`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/async_function)や [JavaScript クラス](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Classes)などの新しい、しかし広くサポートされている言語機能のトランスフォームなど、現代のウェブでは不要かもしれないBabelトランスフォームをチェックします。
 
 {{ figure_markup(
     caption="レガシーJavaScriptを搭載しているモバイルページの割合です。",
@@ -1059,7 +1059,7 @@ Bootstrapは、開発者が[CSS](./css)を直接使用せずに、素早くプ�
   )
 }}
 
-HTMLの[`is`](https://developer.mozilla.org/ja/docs/Web/HTML/Global_attributes/is)属性は、カスタム要素をページに挿入するための代替手段です。カスタム要素の名前をHTMLタグとして使用するのではなく、その名前は任意の標準的なHTML要素に渡され、ウェブコンポーネントのロジックが実装されます。`is` 属性は、ウェブコンポーネントがページに登録できなかった場合でも、標準的なHTML要素の動作にフォールバックすることができるウェブコンポーネントを使用する方法です。
+HTMLの[`is`](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/is)属性は、カスタム要素をページに挿入するための代替手段です。カスタム要素の名前をHTMLタグとして使用するのではなく、その名前は任意の標準的なHTML要素に渡され、ウェブコンポーネントのロジックが実装されます。`is` 属性は、ウェブコンポーネントがページに登録できなかった場合でも、標準的なHTML要素の動作にフォールバックすることができるウェブコンポーネントを使用する方法です。
 
 この属性の使用状況を追跡するのは今年がはじめてですが、当然のことながら、その採用率はカスタム要素そのものよりも低くなっています。Safariがサポートされていないため、iOSのブラウザとmacOSのSafariはこの属性を利用できず、この属性の利用が限定的である一因になっている可能性があります。
 
