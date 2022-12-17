@@ -838,7 +838,7 @@ To understand the usage of libraries and frameworks, HTTP Archive uses [Wappalyz
   )
 }}
 
-It's still no surprise that jQuery is by far the most used library on the web today. Part of that is because WordPress is used on [35%](./cms##most-popular-cmss) of sites, but even so, the majority of jQuery usage occurs outside of the WordPress platform.
+It's still no surprise that jQuery is by far the most used library on the web today. Part of that is because WordPress is used on [35%](./cms#most-popular-cmss) of sites, but even so, the majority of jQuery usage occurs outside of the WordPress platform.
 
 While jQuery is relatively small and reasonably quick at what it does, it still represents a certain amount of overhead in applications. Most of what jQuery offers is now <a hreflang="en" href="https://youmightnotneedjquery.com/">doable with native DOM APIs</a>, and may be unnecessary in today's web applications.
 
