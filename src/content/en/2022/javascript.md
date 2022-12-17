@@ -207,7 +207,7 @@ The `type="module"` and `nomodule` attributes are specific to the presence (or a
 
 It's encouraging that 76% of mobile pages load scripts with `async`, as that suggests developers are cognizant of the effects of render blocking. However, such a low usage of `defer` suggests that there are opportunities being left on the table to improve rendering performance.
 
-As noted [last year](../2021/javascript/#async-and-defer), using both `async` and `defer` is an antipattern that should be avoided as the `defer` part is ignored and `async` takes precedence.
+As noted [last year](../2021/javascript#async-and-defer), using both `async` and `defer` is an antipattern that should be avoided as the `defer` part is ignored and `async` takes precedence.
 
 The general absence of `type="module"` and `nomodule` is not surprising, as few pages seem to be shipping JavaScript modules. As time goes on, the usage of `type="module"` in particular may increase, as developers ship untransformed JavaScript modules to the browser.
 
