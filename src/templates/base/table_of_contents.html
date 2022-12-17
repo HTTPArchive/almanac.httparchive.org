@@ -135,10 +135,18 @@
         <h2 id="appendices" class="part-name"><a href="#appendices" class="anchor-link">{{ self.appendices() }}</a></h2>
         <div class="chapters">
           <div class="chapter">
+            {% if page_lang_exists(lang, year, 'methodology') %}
             <a href="{{ url_for('methodology', year=year, lang=lang) }}">{{ self.methodology_title() }}</a>
+            {% else %}
+            <a href="{{ url_for('methodology', year=year, lang='en') }}">{{ self.methodology_title() }} <span class="not-translated">({{ self.translation_not_available() }})</span></a>
+            {% endif %}
           </div>
           <div class="chapter">
+            {% if page_lang_exists(lang, year, 'contributors') %}
             <a href="{{ url_for('contributors', year=year, lang=lang) }}">{{ self.contributors_title() }}</a>
+            {% else %}
+            <a href="{{ url_for('contributors', year=year, lang='en') }}">{{ self.contributors_title() }} <span class="not-translated">({{ self.translation_not_available() }})</span></a>
+            {% endif %}
           </div>
         </div>
       </section>

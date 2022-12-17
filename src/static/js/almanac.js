@@ -482,7 +482,8 @@ function setDiscussionCount() {
               el.removeAttribute('data-translation');
             });
           }
-
+          document.querySelector('#cta-container').classList.remove('invisible');
+          document.querySelector('.discuss-cta').classList.remove('hidden');
           gtag('event', 'discussion-count', { 'event_category': 'user', 'event_label': 'enabled', 'value': 1 });
         })
         .catch(function (err) {

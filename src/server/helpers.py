@@ -133,6 +133,15 @@ def chapter_lang_exists(lang, year, chapter):
         return False
 
 
+def page_lang_exists(lang, year, page):
+    if os.path.isfile(
+        TEMPLATES_DIR + "/%s/%s/%s.html" % (lang, year, page)
+    ):
+        return True
+    else:
+        return False
+
+
 def featured_chapters_exists(lang, year):
     if os.path.isfile(TEMPLATES_DIR + "/%s/%s/featured_chapters.html" % (lang, year)):
         return True

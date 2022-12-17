@@ -337,7 +337,11 @@
     </li>
     {% else %}
     <li class="nav-dropdown-list-chapter">
+      {% if page_lang_exists(lang, year, 'methodology') %}
       <a href="{{ url_for('methodology', year=year, lang=lang) }}">{{ self.methodology_title() }}</a>
+      {% else %}
+      <a href="{{ url_for('methodology', year=year, lang='en') }}">{{ self.methodology_title() }} <span class="not-translated">({{ self.translation_not_available() }})</span></a>
+      {% endif %}
     </li>
     {% endif %}
     {% if request.path.endswith("contributors") %}
@@ -346,7 +350,11 @@
     </li>
     {% else %}
     <li class="nav-dropdown-list-chapter">
+      {% if page_lang_exists(lang, year, 'contributors') %}
       <a href="{{ url_for('contributors', year=year, lang=lang) }}">{{ self.contributors_title() }}</a>
+      {% else %}
+      <a href="{{ url_for('contributors', year=year, lang='en') }}">{{ self.contributors_title() }} <span class="not-translated">({{ self.translation_not_available() }})</span></a>
+      {% endif %}
     </li>
     {% endif %}
 
