@@ -105,7 +105,7 @@ JavaScriptのバンドルに関しては豊富な選択肢がありますが、�
 
 {{ figure_markup(
     image="webpack-rank.png",
-    caption="webpack-bundled JavaScriptを使用しているページの順位。",
+    caption="webpackでバンドルされたJavaScriptを使用しているページの順位。",
     description="webpackを使用しているページの割合を、人気の高い順に棒グラフで表示したものです。モバイルでは、上位1Kで17%、上位10Kでは15%、上位100Kは12%、上位1Mが8%、全ウェブサイトでは5%という値になっています。デスクトップページはモバイルに近い傾向です。",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTok8UGqYaA58uKaASB2pfM2jlmQu6g3kwHxB6Lb8L7dbccyDtQht823YhchdXRG8SZpB3asRayJI97/pubchart?oid=1191436570&format=interactive",
     sheets_gid="1329160999",
@@ -117,7 +117,7 @@ JavaScriptのバンドルに関しては豊富な選択肢がありますが、�
 
 {{ figure_markup(
     image="parcel-rank.png",
-    caption="Parcel-bundled JavaScriptを使用しているページの順位。",
+    caption="ParcelでバンドルされたJavaScriptを使用しているページの順位。",
     description="Parcelを使用しているページの割合を、人気の高い順に示した棒グラフです。モバイルでは、上位1Kで1.3%、上位10Kでは1.9%、上位100Kが1.5%、上位1Mは1.2%、全ウェブサイトでは1.3%という値になっています。デスクトップページはモバイルに近い傾向です。",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTok8UGqYaA58uKaASB2pfM2jlmQu6g3kwHxB6Lb8L7dbccyDtQht823YhchdXRG8SZpB3asRayJI97/pubchart?oid=369910383&format=interactive",
     sheets_gid="908384281",
