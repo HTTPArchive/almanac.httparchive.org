@@ -334,7 +334,7 @@ Unfortunately, we see five `preload` hints for JavaScript resources at the 90th 
 {{ figure_markup(
     image="modulepreload.png",
     caption="Distribution of `modulepreload` adoption for JavaScript resources per page.",
-    description="Bar chart showing the 10, 25, 50, 75, and 90th percentiles of modulepreload hints for JavaScript resources per page. The values for mobile pages are 1, 1, 2, 6, and 14, respectively. Desktop values are nearly identical to mobile..",
+    description="Bar chart showing the 10, 25, 50, 75, and 90th percentiles of modulepreload hints for JavaScript resources per page. The values for mobile pages are 1, 1, 2, 6, and 14, respectively. Desktop values are nearly identical to mobile.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTok8UGqYaA58uKaASB2pfM2jlmQu6g3kwHxB6Lb8L7dbccyDtQht823YhchdXRG8SZpB3asRayJI97/pubchart?oid=100852946&format=interactive",
     sheets_gid="397179470",
     sql_file="resource-hints-preload-prefetch-modulepreload-distribution.sql"
@@ -648,7 +648,7 @@ The first of these is <a hreflang="en" href="https://web.dev/fid/">First Input D
 {{ figure_markup(
     image="fid.png",
     caption="The distribution of websites' 75th percentile FID values.",
-    description="Bar chart showing the 10, 25, 50, 75 and 90th percentiles of origin's 75th percentile FID values. All values are 0 ms until the 90th percentile, where both desktop and phone are 25 ms.'",
+    description="Bar chart showing the 10, 25, 50, 75 and 90th percentiles of origin's 75th percentile FID values. All values are 0 ms until the 90th percentile, where both desktop and phone are 25 ms.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTok8UGqYaA58uKaASB2pfM2jlmQu6g3kwHxB6Lb8L7dbccyDtQht823YhchdXRG8SZpB3asRayJI97/pubchart?oid=217835320&format=interactive",
     sheets_gid="2108420759",
     sql_file="fid.sql"
@@ -777,7 +777,7 @@ Avoid using synchronous XHR, and XHR in general. `fetch` is a much more ergonomi
 
 Before the introduction of DOM insertion methods ([`appendChild`](https://developer.mozilla.org/docs/Web/API/Node/appendChild) and others, for example), <a hreflang="en" href="https://developer.mozilla.org/docs/Web/API/Document/write">`document.write`</a> was used to insert content at the position the `document.write` was made in the document.
 
-`document.write` is very problematic. For one, it blocks the HTML parser, and is problematic for a number of other reasons <a hreflang="en" href="https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#document.write(">the HTML spec itself warns against its use</a>). On slow connections, blocking document parsing to append nodes in this way creates performance problems that are entirely avoidable.
+`document.write` is very problematic. For one, it blocks the HTML parser, and is problematic for a number of other reasons <a hreflang="en" href="https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#document.write()">the HTML spec itself warns against its use</a>. On slow connections, blocking document parsing to append nodes in this way creates performance problems that are entirely avoidable.
 
 {{ figure_markup(
     caption="The number of mobile pages using `document.write`.",
