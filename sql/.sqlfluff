@@ -145,12 +145,6 @@ unquoted_identifiers_policy = all
 [sqlfluff:rules:L003]
 hanging_indents = True
 
-# TODO - remove once 1.4.1 fully rolled out as this has been replaced by
-# [sqlfluff:layout:type:binary_operator]
-# line_position = trailing
-[sqlfluff:rules:L007]
-operator_new_lines = before
-
 [sqlfluff:rules:L010]
 # Keywords
 capitalisation_policy = upper
