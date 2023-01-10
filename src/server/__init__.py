@@ -4,6 +4,7 @@ from werkzeug.http import HTTP_STATUS_CODES
 from .helpers import (
     get_view_args,
     chapter_lang_exists,
+    page_lang_exists,
     featured_chapters_exists,
     get_ebook_methodology,
     add_footnote_links,
@@ -63,6 +64,7 @@ app.config["SEND_FILE_MAX_AGE_DEFAULT"] = 10800
 # Make these functions available in templates.
 app.jinja_env.globals["get_view_args"] = get_view_args
 app.jinja_env.globals["chapter_lang_exists"] = chapter_lang_exists
+app.jinja_env.globals["page_lang_exists"] = page_lang_exists
 app.jinja_env.globals["featured_chapters_exists"] = featured_chapters_exists
 app.jinja_env.globals["HTTP_STATUS_CODES"] = HTTP_STATUS_CODES
 app.jinja_env.globals["get_ebook_methodology"] = get_ebook_methodology

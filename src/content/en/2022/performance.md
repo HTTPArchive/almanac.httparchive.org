@@ -13,7 +13,7 @@ featured_quote: These results show that sites absolutely do have responsiveness 
 featured_stat_1: 39%
 featured_stat_label_1: LCP images that are not statically discoverable
 featured_stat_2: 22%
-featured_stat_label_2: Pages that are ineligible for bfache due to `no-store`
+featured_stat_label_2: Pages that are ineligible for bfcache due to `no-store`
 featured_stat_3: 20%
 featured_stat_label_3: Top 1k websites that would have good CWV with INP
 ---
@@ -309,7 +309,7 @@ Another benefit to using native lazy-loading is that browsers like Chrome are <a
 
 {{ figure_markup(
   content="18%",
-  caption="The percent of mobile pages having image-based LCP that use native or custom lazy-loading it.",
+  caption="The percent of mobile pages having image-based LCP that use native or custom lazy-loading on it.",
   classes="big-number",
   sheets_gid="1585533536",
   sql_file="lcp_lazy.sql"

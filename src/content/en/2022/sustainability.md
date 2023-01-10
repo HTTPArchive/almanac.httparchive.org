@@ -79,7 +79,7 @@ The internet is the greatest, most energy intense, machine that has ever existed
 
 While most of the energy and waste of the internet is embedded in the devices themselves, the energy required to run the internet is not insignificant. While we are constantly marketed to about how data is essentially free, to store as much as we want, data storage and processing have real and exponentially growing energy demands. In 2015, for example, data centers in Ireland were consuming 5% of electricity, by 2021 that had grown to 14%—more than the demand of all the houses and buildings in rural Ireland.
 
-We can design and develop more sustainability for the eb by focusing on better managing our devices, and by seeking to put as little stress as possible on the devices that are used to interact with our websites or apps. In relation to our own devices, we must focus on device life and energy consumption. The longer the working life of a computer, the more we can amortize the harm that was caused during its manufacture. The pinnacle of this thinking is going open source and using an operating system like Linux to extend the life of a device. Open source is the original digital sustainability philosophy by focusing on reusing and sharing. Nonetheless, it should not prevent the implementation of sustainability best practices.
+We can design and develop more sustainability for the web by focusing on better managing our devices, and by seeking to put as little stress as possible on the devices that are used to interact with our websites or apps. In relation to our own devices, we must focus on device life and energy consumption. The longer the working life of a computer, the more we can amortize the harm that was caused during its manufacture. The pinnacle of this thinking is going open source and using an operating system like Linux to extend the life of a device. Open source is the original digital sustainability philosophy by focusing on reusing and sharing. Nonetheless, it should not prevent the implementation of sustainability best practices.
 
 The less energy consumed during the design and development process the better. If we can reuse code or content, then that's a great idea. Use the least amount of wattage. A laptop will be much more energy efficient than a desktop. Large screens, for example, should be avoided, as they can consume as much energy themselves as a laptop. Anything that reduces energy consumption is a good thing.
 
@@ -119,9 +119,9 @@ At the 90th percentile, desktop pages were over 9 MB and mobile pages over 8 MB.
 <p class="note">Note: The notion of "carbon emissions" is a simplification since we are considering Greenhouse Gas Emissions, not only carbon emissions.</p>
 
 {{ figure_markup(
-  image="total-carbon-emissions-by-percentile.png",
-  caption="Total Carbon emissions (g) by percentile",
-  description="A column chart showing that on the 90th percentile, desktop web pages emit 3.9g of carbon and mobile pages emit 2.76g of carbon, on the 75th percentile desktop pages emit 1.59g of carbon and mobile pages emit 1.38g of carbon. On the 50th percentile it goes 0.79g of carbon on desktop and 0.69 on mobile. On the 25th percentile it's 0.39g of carbon for desktop pages and 0.34g of carbon on mobile pages. Lastly, on the 10th percentile desktop pages emit 0.18g of carbon and mobile pages emit 0.15g of carbon.",
+  image="carbon-emissions-by-percentile.png",
+  caption="Carbon emissions (g) by percentile",
+  description="A column chart showing that on the 90th percentile, desktop web pages emit 3.09g of carbon and mobile pages emit 2.76g of carbon, on the 75th percentile desktop pages emit 1.59g of carbon and mobile pages emit 1.38g of carbon. On the 50th percentile it goes 0.79g of carbon on desktop and 0.69 on mobile. On the 25th percentile it's 0.39g of carbon for desktop pages and 0.34g of carbon on mobile pages. Lastly, on the 10th percentile desktop pages emit 0.18g of carbon and mobile pages emit 0.15g of carbon.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=568360340&format=interactive",
   sheets_gid="1911144863",
   sql_file=""
@@ -488,7 +488,7 @@ Minifying JavaScript involves removing unnecessary characters for the browser, m
 
 On this graph, we notice that most websites already do a great job at minifying JavaScript and that benefits from minifying are not so big. However, why not do it since it's easy to implement and always beneficial?
 
-##### Including as few as possible directly in HTML
+##### Including as little as possible directly in HTML
 
 Inlining code is bad practice, even more for sustainability. Making your HTML heavier to load and process is not something you want. Inlining JavaScript might also make it sometimes more difficult to optimize (and maintain).
 
@@ -522,7 +522,7 @@ As with CSS, minifying JavaScript involves removing unnecessary characters for t
 
 Unminified CSS is absent from most of the websites and the potential gains appear really light. However, it is still beneficial to minify CSS and this should be implemented on all websites.
 
-##### Including as few as possible directly in HTML
+##### Including as little as possible directly in HTML
 
 As with JavaScript, inlining CSS could prove detrimental for the size of your HTML file and for the performance of your website. This is often found on websites built with CM and those relying on the <a hreflang="en" href="https://web.dev/extract-critical-css/">Critical CSS method</a>.
 

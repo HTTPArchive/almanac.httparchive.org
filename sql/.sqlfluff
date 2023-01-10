@@ -11,9 +11,10 @@ templater = jinja
 # Comma separated list of rules to check, default to all
 rules = all
 # Comma separated list of rules to exclude, or None
-exclude_rules = L011,L014,L016,L020,L022,L026,L027,L028,L029,L030,L031,L032,L034,L035,L036,L037,L042,L043,L051,L060
+exclude_rules = L011,L014,L015,L016,L020,L022,L026,L027,L028,L029,L030,L031,L032,L034,L035,L036,L037,L042,L043,L051,L060,L071
 # L011 - We don't always alias tables with AS ("FROM table1 AS tb1" instead of "FROM table1 tb1"). Do for columns but not for tables.
 # L014 - Unquoted identifiers (e.g. column names) will be mixed case so don't enforce case
+# L015 - Sometimes clearer to include brackets for complex COUNT(DISTINCT) cases
 # L016 - We allow longer lines as some of our queries are complex. Maybe should limit in future?
 # L020 - Asks for unique table aliases meaning it complains if selecting from two 2021_07_01 tables as implicit alias is table name (not fully qualified) so same.
 # L022 - CTEs may be chained and do not require a blank line separator, only the last one.
@@ -32,6 +33,7 @@ exclude_rules = L011,L014,L016,L020,L022,L026,L027,L028,L029,L030,L031,L032,L034
 # L043 - Use coalesce instead of case if you can. But it's clearer!?
 # L051 - INNER JOIN must be fully qualified. Probably should use this but not our style.
 # L060 - Use COALESCE instead of IFNULL or NVL. We think ISNULL is clearer.
+# L071 - Turn off until https://github.com/sqlfluff/sqlfluff/issues/4188 is addressed
 # The depth to recursively parse to (0 for unlimited)
 recurse = 0
 # Below controls SQLFluff output, see max_line_length for SQL output
@@ -142,12 +144,6 @@ unquoted_identifiers_policy = all
 # Some rules have their own specific config.
 [sqlfluff:rules:L003]
 hanging_indents = True
-
-# TODO - remove once 1.4.1 fully rolled out as this has been replaced by
-# [sqlfluff:layout:type:binary_operator]
-# line_position = trailing
-[sqlfluff:rules:L007]
-operator_new_lines = before
 
 [sqlfluff:rules:L010]
 # Keywords
