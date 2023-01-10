@@ -1,7 +1,7 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Markup
-description: Capitolo sul markup del Web Almanac 2022 che tratta dei dati relativi ai documenti (doctype, compressione, lingue, conformità all'HTML, dimensione dei documenti), dell'uso di elementi e attributi HTML, degli attributi di dati e dei social media.
+description: Capitolo sul markup del Web Almanac 2022 che tratta di dati relativi ai documenti (doctype, compressione, lingue, conformità all'HTML, dimensione dei documenti), di uso di elementi e attributi HTML, di attributi di dati e di social media.
 authors: [j9t]
 reviewers: [bkardell, zcorpan]
 analysts: [rviscomi]
