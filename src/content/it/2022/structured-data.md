@@ -1,197 +1,196 @@
 ---
 ##See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Dati strutturati
-description: Capitolo sui dati strutturati del Web Almanac 2022 che copre l'adozione e il cambiamento anno dopo anno dei dati strutturati RDFa, Open Graph, Twitter, JSON-LD, Microdati, Facebook, Dublin Core, Microformati e microformati2.
+description: Capitolo sui dati strutturati del Web Almanac 2022 che copre l'adozione e il cambiamento anno dopo anno dei dati strutturati RDFa, Open Graph, Twitter, JSON-LD, Microdati, Facebook, Dublin Core, Microformat e microformat2.
 authors: [cyberandy, DataBytzAI]
 reviewers: [SeoRobt, jonoalderson]
 analysts: [rviscomi]
 editors: [JasmineDW]
 translators: [webmatter-it]
 cyberandy_bio: Andrea Volpini è il CEO di WordLift, e attualmente si occupa di web semantico, SEO e intelligenza artificiale.
-DataBytzAI_bio: Allen è fondatore e CTO di 'The DataWorks', fornitore di soluzioni di dati Web basate sull'intelligenza artificiale a organizzazioni di alto livello in tutto il mondo. Il suo obiettivo principale è la progettazione di soluzioni tecnologiche innovative su larga scala e il suo background principale è nei sistemi aziendali.
-risultati: https://docs.google.com/spreadsheets/d/1iRsyYq4TDMpsgeo_uLq-yqBisHviypeKVUMF1pM1fiM/
-Featured_quote: Mentre la SEO rimane un driver cruciale per l'adozione dei dati strutturati, sta emergendo un panorama crescente di casi d'uso al di là dei motori di ricerca.
-features_stat_1: 3%
-feature_stat_label_1: crescita di JSON-LD anno dopo anno
-features_stat_2: 59%
-Featured_stat_label_2: Pagine che utilizzano i dati strutturati Open Graph
-features_stat_3: 40%
-Featured_stat_label_3: Pagine che utilizzano i dati strutturati di Twitter
-
+DataBytzAI_bio: Allen è fondatore e CTO di 'The DataWorks', fornitore di soluzioni di dati web basati sull'intelligenza artificiale rivolte ad organizzazioni di alto livello in tutto il mondo. Il suo obiettivo principale è la progettazione di soluzioni tecnologiche innovative su larga scala e il suo background principale è nei sistemi aziendali.
+results: https://docs.google.com/spreadsheets/d/1iRsyYq4TDMpsgeo_uLq-yqBisHviypeKVUMF1pM1fiM/
+featured_quote: Anche se la SEO rimane ad oggi un driver cruciale per l'adozione dei dati strutturati, sta emergendo un panorama crescente di casi d'uso al di là dei motori di ricerca.
+featured_stat_1: 3%
+featured_stat_label_1: Crescita di JSON-LD anno su anno
+featured_stat_2: 59%
+featured_stat_label_2: Pagine che utilizzano i dati strutturati Open Graph
+featured_stat_3: 40%
+featured_stat_label_3: Pagine che utilizzano i dati strutturati di Twitter
 ---
 
 ## Introduzione
 
-Questo è il secondo anno in cui il Web Almanac include un capitolo sui dati strutturati. Il contenuto dell'anno scorso [ha fornito una solida base](../2021/structured-data#key-concepts) sul concetto di dati strutturati, delineando il motivo per cui esistono, i tipi utilizzati più di frequente e i vantaggi per le organizzazioni. Quest'anno abbiamo confrontato i dati raccolti nel 2022 con i dati precedenti dello scorso anno, così siamo stati in grado di monitorare le tendenze che si sono verificate in quel periodo.
+Questo è il secondo anno in cui il Web Almanac include un capitolo sui dati strutturati. Il contenuto dell'anno scorso [ha fornito una solida base](../2021/structured-data#key-concepts) sul concetto di dati strutturati, tratteggiando il motivo per cui esiste, i tipi di dati strutturati utilizzati più di frequente e i vantaggi per le organizzazioni. Quest'anno abbiamo confrontato i dati raccolti nel 2022 con i dati precedenti dello scorso anno, così siamo stati in grado di monitorare le tendenze che hanno avuto luogo in tale periodo di tempo.
 
-Nonostante i numerosi progressi nell'apprendimento automatico (<i lang="en">machine learning</i>) e in particolare nel campo del processamento del linguaggio naturale <i lang="en">natural language processing</i>, i dati devono ancora essere presentati in un formato leggibile dalla macchina. I dati strutturati aiutano nell'individuazione delle informazioni durante una ricerca sul web, aiutano nel collegamento dei dati e negli scopi dell'archiviazione. Implementando i dati strutturati sui siti web, gli ingegneri e i creatori di contenuti web facilitano:
+Nonostante i numerosi progressi nell'apprendimento automatico (<i lang="en">machine learning</i>) e in particolare nel campo del processamento del linguaggio naturale <i lang="en">natural language processing</i>, i dati devono ancora essere presentati in un formato leggibile dalle macchine. I dati strutturati aiutano nell'individuazione delle informazioni nelle ricerche web, aiutano nel collegamento dei dati fra loro e aiutano nell'archiviazione dei dati. Implementando i dati strutturati nei siti web, gli ingegneri e i creatori di contenuti web facilitano le seguenti operazioni:
 
-- rendere i dati dei siti Web più ampiamente disponibili per la scoperta e il collegamento automatizzati
-- la disponibilità dei dati aperta per la ricerca pubblica
-- garantire che la qualità dei dati dell'organizzazione sia mantenuta quando i dati lasciano la loro origine
+- il rendere i dati dei siti web più ampiamente disponibili alla scoperta automatica e al collegamento
+- la disponibilità dei dati aperta alla pubblica ricerca
+- il garantire che la qualità dei dati dell'organizzazione sia mantenuta quando i dati lasciano la loro origine
 
-Le organizzazioni di ogni dimensione e tipo desiderano che i propri contenuti vengano scoperti sul web. I motori di ricerca come Google e Bing enfatizzano la trovabilità dei dati promuovendo l'uso di dati strutturati. Da un punto di vista [SEO](./seo), è vantaggioso presentare i dati in modo facile da trovare e analizzare. Alcuni di questi vantaggi saranno discussi nelle sezioni [casi d'uso](#use-cases) e [concetti chiave](#key-concepts) all'interno di questo capitolo.
+Le organizzazioni di ogni dimensione e tipo desiderano che i propri contenuti vengano trovati sul web. I motori di ricerca come Google e Bing danno rilievo alla trovabilità dei dati promuovendo l'uso di dati strutturati. Da un punto di vista [SEO](./seo), è vantaggioso presentare i dati in modo facile da trovare e analizzare (<i lang="en">parse</i>). Alcuni di questi vantaggi saranno discussi nelle sezioni [casi d'uso](#casi-duso) e [concetti chiave](#concetti-chiave) all'interno di questo capitolo.
 
-[L'introduzione dell'anno scorso](../2021/structured-data#introduction) ha sottolineato che "quando le macchine possono estrarre in modo affidabile dati strutturati, su larga scala, abilitiamo nuovi e più intelligenti tipi di software, sistemi, servizi e attività". Il capitolo di quest'anno include sezioni che esplorano le ricerche pubblicate di recente sui dati strutturati, i framework open source e gli strumenti che aiutano la generazione di dati strutturati di alta qualità.
+[L'introduzione dell'anno scorso](../2021/structured-data#introduction) ha sottolineato che "quando le macchine possono estrarre dati strutturati in modo affidabile, su larga scala questo significa che si abilitano nuovi e più intelligenti tipi di software, di sistemi, di servizi e di business". Il capitolo di quest'anno include sezioni che esplorano la ricerche pubblicate di recente sui dati strutturati, i framework open source e gli strumenti che aiutano la generazione di dati strutturati di alta qualità.
 
-Quest'anno forniamo il primo confronto anno su anno di metriche come la presenza di diversi tipi di dati strutturati e la crescita di tali tipi di dati strutturati, ed esaminiamo i vantaggi in evoluzione dell'utilizzo di dati strutturati. Avere una base di dati dal 2021 ci consente di ottenere informazioni su come è cambiato l'uso dei dati strutturati nel periodo intercorso e osservare tendenze interessanti, ad esempio la crescita di TikTok nel periodo.
+Quest'anno forniamo il primo confronto anno su anno di metriche come la presenza di diversi tipi di dati strutturati e anche l'aumento di tali tipi di dati strutturati, ed infine esaminiamo i crescenti vantaggi dell'utilizzo di dati strutturati. Avere una base di dati dal 2021 ci consente di ottenere informazioni su come è cambiato l'uso dei dati strutturati nel periodo intercorso e di osservare tendenze interessanti, ad esempio la crescita di TikTok nel periodo.
 
 ## Avvertenze sui dati
 
-I dati strutturati possono comparire in molte forme e possono essere più visibili in alcuni ambiti e nei relativi siti web rispetto ad altri ambiti. Ad esempio, si confronti un sito web di news con un sito web di e-commerce. In generale un sito di news mostra le ultime notizie più importanti nella sua homepage, pertanto i dati strutturati relativi agli articoli di news possono essere presenti nella landing page principale del sito allegati come data-snippet ai titoli dei singoli articoli. In confronto, i dati strutturati nell'e-commerce riguardano singoli prodotti e, come tali, sono per lo più presenti all'interno del catalogo prodotti di un sito web stesso e, in molti modi, "nascosti" da una ricerca di alto livello delle principali parti di navigazione e promozionali del sito web. Questo è l'avvertimento chiave di cui dobbiamo essere consapevoli in relazione al capitolo e al rapporto sui dati strutturati.
+I dati strutturati possono comparire in molte forme e possono essere più visibili in alcuni settori e nei relativi siti web rispetto ad altri settori. Ad esempio, si confronti un sito web di news con un sito web di e-commerce. In generale un sito di news mostra le ultime notizie più importanti nella sua homepage, pertanto i dati strutturati relativi agli articoli di news possono essere presenti nella principale landing page del sito allegati come data-snippet ai titoli di ciascun  articolo. In confronto, i dati strutturati nell'e-commerce riguardano i singoli prodotti e, come tali, sono per lo più presenti all'interno del solo catalogo prodotti del sito web e, per molti versi, risultano "nascosti" durante una ricerca di alto livello nella navigazione principale e nelle parti promozionali del sito web. Questo è l'avvertimento chiave di cui dobbiamo essere consapevoli in relazione a questo capitolo e al report sui dati strutturati.
 
 Poiché la tecnologia qui utilizzata per raccogliere i dati dai siti web scalfisce appena la superficie dei siti (vale a dire le homepage) e non va in profondità con una scansione completa dei siti, non siamo in grado di ottenere un quadro completo dell'estensione di utilizzo dei dati strutturati nei siti in cui tali dati sono necessariamente contenuti in profondità all'interno del sito. Nei prossimi anni ci auguriamo di prendere un campione di siti in diversi ambiti e di andare in profondità per correggere questo problema e fornire ulteriori informazioni sull'uso specifico dei dati strutturati in ciascun ambito.
 
-Rimangono ancora gli avvertimenti di alto livello del capitolo dello scorso anno, vale a dire:
+Valgono anche quest'anno gli avvertimenti generali dello scorso anno per il capitolo, vale a dire:
 
-- **Dati strutturati generati automaticamente**: questo avviene quando tecnologie come i sistemi di creazione di contenuti generano automaticamente snippet di dati strutturati basati su modelli. In questo caso qualsiasi errore basato su modello andrà inevitabilmente a scrivere in tutti i dati presentati.
+- **Dati strutturati generati automaticamente**: il che avviene quando tecnologie come i sistemi di creazione di contenuti generano automaticamente snippet di dati strutturati basati su modelli. In questo caso qualsiasi errore basato su modello andrà inevitabilmente a scrivere in tutti i dati presentati.
 
-- **Sovrapposizioni del formato dei dati**: i dati strutturati possono essere presentati in diversi modi, tra cui JSON-LD, RDF ecc. Ciò significa che potremmo avere delle sovrapposizioni, ad esempio, tra un meta tag di Facebook e lo stesso tag presentato in modo diverso nella sezione RDFa. Poiché l'analisi è strettamente basata sulle query create per la linea di base nel 2021, prevediamo che l'impatto della pulizia/normalizzazione e dell'appiattimento dei dati dovrebbe essere portato avanti per un'analisi simile.
+- **Sovrapposizione dei formati di dati**: i dati strutturati possono essere presentati in diversi modi, tra cui JSON-LD, RDF ecc. Ciò significa che potremmo avere delle sovrapposizioni, ad esempio, tra un meta tag di Facebook e lo stesso tag presentato in modo diverso nella sezione RDFa. Poiché l'analisi è strettamente basata sulle query create per la valutazione dei dati del 2021, ci aspettiamo che l'impatto della pulizia/normalizzazione e appiattimento dei dati ci porti ad un risultato comparabile.
 
 ## Concetti chiave
 
 Poiché i dati strutturati sono un'area ricca e complessa, è importante esplorare e spiegare alcuni concetti chiave dell'argomento prima di tuffarsi a capofitto in ulteriori analisi.
 
-### Dati collegati (<i lang="en">linked data</i>)
+### _Linked data_
 
-Aggiungendo dati strutturati alle pagine web e fornendo collegamenti URI alle entità contenute o richiamate dalle pagine, creiamo i cosiddetti <a hreflang="en" href="https://en.wikipedia.org/wiki/Linked_data">_linked data_ </a>. Questi dati strutturati vengono quindi interconnessi, rendendoli più utili tramite query semantiche.
+Aggiungendo dati strutturati alle pagine web e fornendo collegamenti URI alle entità contenute o richiamate dalle pagine, creiamo i cosiddetti <a hreflang="en" href="https://en.wikipedia.org/wiki/Linked_data">_linked data_</a>. Questi dati strutturati vengono cioè interconnessi, rendendoli più utili se interrogati tramite query semantiche.
 
-L'aggiunta di dati collegati per descrivere il contenuto della pagina web consente alle macchine di trattare le pagine web come database. Su larga scala, questo contribuisce al <a hreflang="en" href="https://en.wikipedia.org/wiki/Semantic_Web">web semantico</a>. Il web semantico collega i dati insieme attraverso il _Resource Description Framework (RDF)_. Si tratta di un framework per rappresentare le informazioni sul web che utilizza gli URI per definire le entità e le relazioni tra di esse.
+L'aggiunta di _linked data_ per descrivere il contenuto della pagina web consente alle macchine di trattare le pagine web come database. Su larga scala, questo contribuisce al <a hreflang="en" href="https://en.wikipedia.org/wiki/Semantic_Web">web semantico</a>. Il web semantico collega i dati fra loro attraverso il _Resource Description Framework (RDF)_. Si tratta di un framework per rappresentare le informazioni sul web che utilizza gli URI per definire le entità e le relazioni tra di esse.
 
-Una relazione tra entità nel modello di dati RDF è nota come _tripla semantica_. Con una <a hreflang="en" href="https://en.wikipedia.org/wiki/Semantic_triple">tripla semantica</a> (o semplicemente _tripla_), possiamo codificare un'affermazione sui dati. Queste espressioni seguono la forma di soggetto-predicato-oggetto (ad esempio, "Allen conosce John").
+Una relazione tra entità nel modello di dati RDF è nota come _tripla semantica_. Con una <a hreflang="en" href="https://en.wikipedia.org/wiki/Semantic_triple">tripla semantica</a> (o semplicemente _tripla_), possiamo codificare un'affermazione (<i lang="en">statement</i>) sui dati . Queste espressioni seguono la forma di soggetto-predicato-oggetto (ad esempio "Allen conosce John").
 
-Per essere in grado di recuperare e manipolare i dati RDF, possiamo utilizzare un RDF Query Language come <a hreflang="en" href="https://www.w3.org/TR/sparql11-query/">SPARQL</ a>, il linguaggio di query RDF standard.
+Per essere in grado di recuperare e manipolare i dati RDF, possiamo utilizzare un linguaggio di interrgazione RDF (<i lang="en">RDF Query Language</i>) come <a hreflang="en" href="https://www.w3.org/TR/sparql11-query/">SPARQL</a>, il linguaggio di query RDF standard.
 
-Come verrà discusso in seguito, questo web semantico crea molte opportunità per il business e la tecnologia.
+Come verrà discusso in seguito, il web semantico crea molte opportunità per il business e la tecnologia.
 
-### Dati aperti (<i lang="en">open data</i>)
+### _Open data_
 
-I dati collegati possono anche essere <a hreflang="en" href="https://en.wikipedia.org/wiki/Open_data">_open data_</a>, descritti come _Linked Open Data_. I dati aperti, come suggerisce il nome, sono dati che sono apertamente accessibili a chiunque per qualsiasi scopo. Questi dati sono concessi in licenza con una licenza aperta.
+I _linked data_ possono anche essere <a hreflang="en" href="https://en.wikipedia.org/wiki/Open_data">_open data_</a>, nel cui caso vengono denominati _Linked Open Data_. Gli _open data_, come suggerisce il nome, sono dati che sono apertamente accessibili a chiunque per qualsiasi scopo. Tali dati sono concessi in licenza con una licenza _open_.
 
-Gli open data sono la prima delle <a hreflang="en" href="https://5stardata.info/en/">5 stelle degli open data</a>, uno schema di implementazione suggerito da Tim Berners-Lee. Secondo il <a hreflang="en" href="https://opendatahandbook.org/">manuale sugli open data</a>, per ottenere il punteggio massimo di cinque stelle, i dati devono (1) essere disponibili sul web con un licenza aperta, (2) essere sotto forma di dati strutturati, (3) essere in un formato di file non proprietario, (4) utilizzare gli URI come identificatori, (5) includere collegamenti ad altre fonti di dati (vedere [collegamento dati](#data-linking)).
+Gli _open data_ sono la prima delle <a hreflang="en" href="https://5stardata.info/en/">5 stelle degli open data</a>, uno schema di implementazione suggerito da Tim Berners-Lee. Secondo il manuale sugli open data <a hreflang="en" href="https://opendatahandbook.org/">_Open data handbook_</a>, per ottenere il punteggio massimo di cinque stelle, i dati devono (1) essere disponibili sul web con un licenza _open_, (2) essere sotto forma di dati strutturati, (3) essere in un formato di file non proprietario, (4) utilizzare gli URI come identificatori, (5) includere collegamenti ad altre fonti di dati (vedi [_Data linking_](#data-linking)).
 
-Mentre i dati strutturati sono la seconda stella nel piano open data a 5 stelle, i linked data dovrebbero soddisfare i requisiti per tutte le 5 stelle degli open data.
+Mentre i dati strutturati (_structured data_) sono indicati come la seconda stella nel piano degli _open data_ a 5 stelle, i _linked data_ dovrebbero soddisfare i requisiti per tutte le 5 stelle per gli open data.
 
-### Semantic search engines, rich results and beyond
+### Motori di ricerca semantici, risultati arricchiti e altro ancora
 
-A semantic search engine is one which performs <a hreflang="en" href="https://en.wikipedia.org/wiki/Semantic_search">semantic search</a>. This is different from lexical search where search engines look for exact or close matches to words or strings of text. Semantic search aims to understand the user's intent and the context of the search terms in order to improve the accuracy of search. An example would be a structured data entity of "local business: hairdresser" versus "TG Locks n Lashes"; the latter is a business name, and while it tells the creative name of the hair salon as a key-word, it does little to help the search engine to understand what the business does. By using structured data, the website can better help the search engine understand the context of its information, and thus enable the engine to offer better search results in the context of the query asked by the search user. Google and Bing are excellent examples of semantic search engines.
+Un motore di ricerca semantico è un motore che esegue la <a hreflang="en" href="https://en.wikipedia.org/wiki/Semantic_search">ricerca semantica</a>. Cosa diversa dalla ricerca lessicale in cui i motori di ricerca cercano corrispondenze esatte o simili a parole o stringhe di testo. La ricerca semantica mira a comprendere l'intento dell'utente e il contesto dei termini di ricerca al fine di migliorare l'accuratezza della ricerca. Un esempio potrebbe essere un'entità di dati strutturati di "attività locale: parrucchiere" rispetto a "TG Locks n Lashes"; quest'ultimo è un nome commerciale, e anche se contiene come parola chiave il nome creativo del parrucchiere, fa poco per aiutare il motore di ricerca a capire cosa fa quell'attività. Utilizzando dati strutturati, il sito web può aiutare il motore di ricerca a comprendere il contesto delle informazioni fornite e quindi consentire al motore di offrire risultati di ricerca migliori nel contesto della query posta dall'utente che fa la ricerca. Google e Bing sono ottimi esempi di motori di ricerca semantici.
 
-Google uses semantic search technologies to serve relevant information from the <a hreflang="en" href="https://blog.google/products/search/introducing-knowledge-graph-things-not/">Google Knowledge Graph</a> which is a knowledge base used to serve search results in an infobox. This infobox is known as a <a hreflang="en" href="https://support.google.com/knowledgepanel/answer/9163198">knowledge panel</a>, and can be seen in many results. This knowledge box can be enabled or enhanced by structured data.
+Google utilizza tecnologie di ricerca semantica per offrire informazioni pertinenti dal <a hreflang="en" href="https://blog.google/products/search/introducing-knowledge-graph-things-not/">Google Knowledge Graph</a> che è una _knowledge base_ utilizzata per servire i risultati della ricerca in un riquadro informativo. Questo riquadro è noto come <a hreflang="en" href="https://support.google.com/knowledgepanel/answer/9163198">_knowledge panel_</a> e può comparire in molti risultati. Questo riquadro di conoscenza (_knowledge box_) può essere innescato o migliorato grazie ai dati strutturati.
 
-Another search result that is made possible by structured data combined with linked data is the <a hreflang="en" href="https://developers.google.com/search/docs/advanced/structured-data/search-gallery">rich result</a>. These results display richer features in search results, and come in the form of Events, FAQs, How-tos, Job listings and <a hreflang="en" href="https://developers.google.com/search/docs/advanced/structured-data/search-gallery">many more</a>. Implementing structured data to make web pages eligible for rich results <a hreflang="en" href="https://www.searchenginejournal.com/how-important-is-structured-data/257775/">could increase clickthrough rate</a>. The image below illustrates how structured data with business details for a Hair Studio allows the search engine to easily extract and display information about the business, highlighting it and optimizing SEO.
+Un altro risultato di ricerca reso possibile dai dati strutturati combinati con i _linked data_ è il <a hreflang="en" href="https://developers.google.com/search/docs/advanced/structured-data/search-gallery">risultato arricchito</a>. Questi tipi di risultati mostrano maggiori particolari nei risultati di ricerca e possono presentarsi sotto forma di eventi, domande frequenti (FAQ), istruzioni how-to, annunci di lavoro e <a hreflang="en" href="https://developers.google.com/search/docs/advanced/structured-data/search-gallery">molti altri</a>. Implementare i dati strutturati per rendere le pagine web idonee per i risultati arricchitti <a hreflang="en" href="https://www.searchenginejournal.com/how-important-is-structured-data/257775/">potrebbe aumentare la percentuale di clic</a>. L'immagine sottostante illustra come i dati strutturati con i dettagli aziendali per un Hair Studio consentano al motore di ricerca di estrarre e visualizzare facilmente informazioni sull'attività, evidenziandola e ottimizzando la SEO.
 
 {{ figure_markup(
   image="structured-data-surfaced-in-a-web-search.png",
-  caption="Structured data surfaced in a web search.",
-  description="A screenshot of a rich result in mobile results providing extra data for a business including location, actions (call, directions, and website), the address, opening hours and an option to book an appointment.",
+  caption="Dati strutturati che emergono in una ricerca web.",
+  description="Screenshot di un risultato arricchito nei risultati per dispositivi mobili che fornisce dati aggiuntivi per un'azienda tra cui posizione, azioni (chiama, indicazioni stradali e sito web), indirizzo, orari di apertura e un'opzione per prenotare un appuntamento.",
   width=282,
   height=451
   )
 }}
 
-Beyond knowledge panels and web page rich results, structured data can also enable answers to <a hreflang="en" href="https://gofishdigital.com/blog/answering-questions-structured-data/">factual queries</a> in search. A factual query search can get multiple signals from different structured data sources and support more precise results. Here, structured data implementation, and the technologies that allow for it, provide faster and more reliable access to information in order to improve user experience.
+Oltre ai riquadri informativi e ai risultati arricchiti delle pagine web, i dati strutturati possono anche consentire risposte a <a hreflang="en" href="https://gofishdigital.com/blog/answering-questions-structured-data/">quesiti fattuali</a> nella ricerca. Una query di ricerca fattuale può ottenere più segnali da diverse fonti di dati strutturati e supportare risultati più precisi. In questo modo, l'implementazione di dati strutturati e le tecnologie che lo permettono, forniscono un accesso più rapido e affidabile alle informazioni al fine di migliorare l'esperienza utente.
 
-The combination of SEO importance, higher click-through rates, improved user experience and machine-readable data being accessible for analysis illustrate significant benefits to implementing structured data. Understanding these key concepts will help both content providers and technical personnel who construct sites how to implement better navigation and understand the function of automated data consumption from web pages.
+La combinazione di importanza SEO, percentuali di clic più elevate, esperienza utente migliorata e dati leggibili dalle macchine resi accessibili per l'analisi rappresentano i vantaggi significativi dell'implementare i dati strutturati. La comprensione di questi concetti chiave aiuterà sia i fornitori di contenuti che il personale tecnico che costruisce i siti a capire come implementare una navigazione migliore e a comprendere la funzione del consumo automatizzato di dati ricavati da pagine web.
 
-## Structured Data research
+## Ricerca sui dati strutturati
 
-For this year's chapter we were interested in investigating what—if any—academic research has been carried out in the area of structured data, or if structured data was documented as being used to assist in development of state-of-the-art technologies and services.
+Per il capitolo di quest'anno eravamo interessati a capire quali ricerche accademiche, ammesso che ne esistano, siano state condotte nell'area dei dati strutturati, o se via sia prova di utilizzo di dati strutturati a complemento dello sviluppo di tecnologie e servizi all'avanguardia.
 
-To look for published research, we used academic search tools such as <a hreflang="en" href="https://scholar.google.com/">Google Scholar</a>, <a hreflang="en" href="https://www.connectedpapers.com/">ConnectedPapers</a> and University-based citation databases. We not only looked for recent publications, but also older research that continues to be cited.
+Per cercare ricerche pubblicate, abbiamo utilizzato strumenti di ricerca accademici come <a href="https://scholar.google.com/">Google Scholar</a>, <a hreflang="en" href ="https://www.connectedpapers.com/">ConnectedPapers</a> e database di citazioni universitari. Non abbiamo ricercato solo pubblicazioni recenti, ma anche ricerche più datate che continuino ad essere citate.
 
-The results of our search showed that there is not a lot of highly cited recent work conducted into generating, managing and building structured web data. However, research on the application of structured web data (["The Semantic Web"](https://en.wikipedia.org/wiki/Semantic_Web)) like knowledge graphs, recommendation engines, information retrieval, chatbots and explainable AI has been conducted in the past twelve months and continues to grow.
+I risultati della nostra ricerca hanno mostrato che non esistono molti lavori recenti, molto citati, condotti attorno alla generazione, gestione e costruzione di dati strutturati per il web. Tuttavia, della ricerca sull'applicazione di dati strutturati per il web (["The Semantic Web"](https://en.wikipedia.org/wiki/Semantic_Web)), ad esempio grafi della conoscenza (<i lang="en">knowledge graph</i>), motori di raccomandazione (<i lang="en">recommendation engine</i>), recupero di informazioni (<i lang="en">information retrieval</i>), chatbot e intelligenza artificiale spiegabile (<i lang="en">explainable AI</i>), è stata condotta negli ultimi dodici mesi e continua ad aumentare.
 
-Web structured data shares a synergetic relationship with the field of machine learning by providing consistent data with appropriate Uniform Reference Indicator (URI) vocabulary which can be used to generate <a hreflang="en" href="https://developers.google.com/machine-learning/crash-course/framing/ml-terminology">machine readable labels</a>. Our searches and background reading have shown that structured data has considerably reduced the work and time input to generate high quality web data for training machine learning algorithms.
+I dati strutturati per il web condividono una relazione sinergica con il campo del _machine learning_ fornendo dati coerenti con un vocabolario URI (Uniform Reference Indicator) appropriato che può essere utilizzato per generare <a hreflang="en" href="https://developers.google.com/machine-learning/crash-course/framing/ml-terminology">etichette leggibili dalle macchine</a>. Le nostre ricerche e letture di riferimento hanno dimostrato che i dati strutturati hanno notevolmente ridotto il lavoro e il tempo impiegato per generare dati web di alta qualità per l'addestramento di algoritmi di machine learning.
 
-On a practical level, we highlight three areas that structured data has improved:
+A livello pratico, evidenziamo tre aree che sono migliorate grazie ai dati strutturati:
 
-- Knowledge graphs
-- Question Answering over Knowledge Graphs
-- Explainable AI
+- I grafi di conoscenza
+- Il rispondere alle domande sui grafi di conoscenza
+- L'IA spiegabile
 
-### Knowledge graphs
+### Grafi di conoscenza
 
-Structured web data provides fixed vocabularies between entities and objects as a domain-specific language, which are generally stored in a RDF format. Knowledge graphs using RDF have proven to be great tools for querying relationships between entities. As an example, Wikidated 1.0 is an evolving knowledge graph which uses web structured data to store Wikipedia's revision history. Its <a hreflang="en" href="https://arxiv.org/abs/2112.05003">corresponding paper</a> talks through the process of aggregating revisions to a page as a set of additions and deletions of the RDF tuple. The authors have open sourced their method to convert wikipedia dumps into knowledge graphs. Applied research carried out by doordash engineering demonstrates that using [knowledge graphs can dramatically improve search performance] (https://doordash.engineering/2020/12/15/understanding-search-intent-with-better-recall/).
+I dati strutturati per il web forniscono vocabolari fissi tra entità e oggetti come fossero un linguaggio specifico del dominio, tali vocabolari sono generalmente memorizzati in un formato RDF. I grafi della conoscenza che utilizzano RDF si sono dimostrati ottimi strumenti per interrogare le relazioni tra entità. Ad esempio, Wikidated 1.0 è un grafo della conoscenza in evoluzione che utilizza dati web strutturati per archiviare la cronologia delle revisioni di Wikipedia. Il suo <a hreflang="en" href="https://arxiv.org/abs/2112.05003">documento corrispondente</a> illustra il processo di aggregazione delle revisioni a una pagina come un insieme di aggiunte e cancellazioni della tupla RDF. Gli autori hanno reso open source il loro metodo per convertire i dump di wikipedia in grafi della conoscenza. La ricerca applicata condotta dalla Doordash Engineering dimostra che [utilizzare i grafi della conoscenza può migliorare notevolmente le prestazioni di ricerca](https://doordash.engineering/2020/12/15/understanding-search-intent-with-better-recall/).
 
-### Question Answering over Knowledge Graphs
+### Rispondere alle domande sui grafi di conoscenza
 
-Question answering systems enable end users to find answers to their questions. When built upon a knowledge graph, a question answering system makes it possible to access the rich and structured data stored in knowledge graphs. Query languages such as [SPARQL](https://en.wikipedia.org/wiki/SPARQL) are often used to query the information stored as RDF triples in knowledge graphs.
+I sistemi di risposta alle domande consentono agli utenti finali di trovare le risposte alle loro domande. Se costruito su un grafo della conoscenza, un sistema di risposta alle domande consente di accedere ai dati ricchi e strutturati memorizzati nei grafi di conoscenza. Linguaggi di interrogazione come [SPARQL](https://en.wikipedia.org/wiki/SPARQL) sono spesso usati per interrogare le informazioni memorizzate come triple RDF nei grafi della conoscenza.
 
-However, writing SPARQL queries can be tedious and challenging for end-users. Therefore, natural language questions (NLQs) are an attractive solution that allows overcoming the numerous complexities of querying knowledge graphs. This work proposes a KG-based question answering system (KGQAS) that consists of two main phases: 1) an offline phase, and 2) a semantic parsing phase.
+Tuttavia, scrivere query SPARQL può essere noioso e impegnativo per gli utenti finali. Pertanto, le domande in linguaggio naturale (_Natural Language Questions_ = NLQ) sono una soluzione interessante che consente di superare le numerose complessità dell'interrogazione dei grafi della conoscenza. Questo lavoro propone un sistema di risposta alle domande basato su KG (KGQAS) che consiste in due fasi principali: 1) una fase offline e 2) una fase di analisi semantica.
 
-While the offline phase aims to convert natural language questions into formal query patterns in a semi-automated way, the semantic parsing phase leverages machine learning to build a prediction model. The model is trained on the output of the first phase. It enables predicting the most appropriate query pattern for a given question. For evaluation, SalzburgerLand KG is used as a practical use case. It's a real-world knowledge graph that is built using the schema markup vocabulary and its primary focus is structured data automation that describes touristic entities of the region of Salzburg, Austria.
+Mentre la fase offline mira a convertire le domande in linguaggio naturale in modelli di query formali in modo semi-automatico, la fase di analisi semantica sfrutta l'apprendimento automatico per costruire un modello di previsione. Il modello viene addestrato sull'output della prima fase. Consente di prevedere il modello di query più appropriato per una determinata domanda. Per la valutazione, SalzburgerLand KG viene utilizzato come caso d'uso pratico. È un grafo della conoscenza del mondo reale creato utilizzando il vocabolario del markup di _schema_ e il suo obiettivo primario è l'automazione dei dati strutturati che descrivono le entità turistiche della regione di Salisburgo, in Austria.
 
-### Explainable AI
+### IA spiegabile
 
-Explainable AI focuses on explaining decisions of an AI model. Most AI models are not openly available to the public, and so do not provide rationale for the decisions they make. Owing to knowledge graphs built on top of semantic web; harder to find relationships between entities can be found. These are then used as 'ground truth' to trace back the results of the model. The most common approach is to map network inputs or neurons to classes of an ontology or entities of a web structured data.
+L'intelligenza artificiale spiegabile si focalizza sulla spiegazione delle decisioni prese da un modello di intelligenza artificiale. La maggior parte dei modelli di intelligenza artificiale non è apertamente disponibile al pubblico e quindi non fornisce una motivazione per le decisioni che prende. Grazie ai grafi della conoscenza costruiti a partire dal web semantico;  relazioni tra entità difficili da trovare possono essere ora individuate. Tali relazioni vengono quindi utilizzate come "verità fondamentali" per ripercorrere a ritroso i risultati del modello. L'approccio più comune consiste nel mappare input di rete o neuroni a classi di un'ontologia o ad entità di dati strutturati web.
 
-_References:_
+_Riferimenti:_
 
-- Knowledge graphs: <a hreflang="en" href="https://arxiv.org/abs/2112.05003">Wikidated 1.0: An Evolving Knowledge Graph Dataset of Wikidata's Revision History</a>
-- Question Answering Over Knowledge Graphs: <a hreflang="en" href="https://ieeexplore.ieee.org/abstract/document/9810255">Question Answering Over Knowledge Graphs: A Case Study in Tourism</a>
-- Explainable AI using structured data: <a hreflang="en" href="https://www.researchgate.net/profile/Matthias-Pfaff/publication/336578867_Semantic_Web_Technologies_for_Explainable_Machine_Learning_Models_A_Literature_Review/links/5daafb99a6fdccc99d91d120/Semantic-Web-Technologies-for-Explainable-Machine-Learning-Models-A-Literature-Review.pdf">Semantic Web Technologies for Explainable Machine Learning Models: A Literature Review</a>
+- _Knowledge graph_: <a hreflang="en" href="https://arxiv.org/abs/2112.05003">Wikidated 1.0: An Evolving Knowledge Graph Dataset of Wikidata's Revision History</a>
+- Domanda/risposta su _knowledge graph_: <a hreflang="en" href="https://ieeexplore.ieee.org/abstract/document/9810255">Question Answering Over Knowledge Graphs: A Case Study in Tourism</a>
+- Intelligenza Artificiale spiegabile e uso di dati strutturati: <a hreflang="en" href="https://www.researchgate.net/profile/Matthias-Pfaff/publication/336578867_Semantic_Web_Technologies_for_Explainable_Machine_Learning_Models_A_Literature_Review/links/5daafb99a6fdccc99d91d120/Semantic-Web-Technologies-Machine-Learning-Models-A-Literature-Review.pdf">Semantic Web Technologies for Explainable Machine Learning Models: A Literature Review</a>
 
-## Open source use of Structured Data
+## Uso open source di dati strutturati
 
-Three projects of note that rely heavily on the use of structured data are the following:
+Tre progetti degni di nota che fanno molto affidamento sull'uso di dati strutturati sono i seguenti:
 
-- <a hreflang="en" href="https://www.ibiblio.org/osrt/omf/">**Open Source Metadata Framework (OMF)**</a> - The OMF aims to collect data about Open Source documentation / metadata which are typically stored in a structured data format that will be used to describe the documentation. The idea is that the OMF will act as a sophisticated card catalog type of system for the numerous Open Source documentation projects that exist.
-- <a hreflang="en" href="https://www.dbpedia.org/">**DBpedia**</a> is a set of datasets, tools and services related to structured web data. It contains more than 228 million freely-available entities to date. The main DBpedia Knowledge Graph encompasses clean data from Wikipedia. DBPedia is available in all supported Wikipedia languages and averages over 600k file downloads per year. Some open source tools that are built on top of DBpedia provide data access, versioning, quality control, ontology visualization and linking infrastructures.
-- <a hreflang="en" href="https://www.wikidata.org/">**Wikidata**</a> stores structured data from Wikimedia projects like Wikipedia. It is a document-oriented database, which focuses on storing structured web data.
+- <a hreflang="en" href="https://www.ibiblio.org/osrt/omf/">**Open Source Metadata Framework (OMF)**</a> - L'OMF mira a raccogliere dati su documentazione/metadati Open Source che vengono generalmente archiviati in un formato di dati strutturati che verrà utilizzato per descrivere la documentazione. L'idea è che l'OMF agirà come un sofisticato tipo di sistema di catalogo a schede per i numerosi progetti di documentazione Open Source esistenti.
+- <a hreflang="en" href="https://www.dbpedia.org/">**DBpedia**</a> è un insieme di set di dati, strumenti e servizi relativi ai dati web strutturati. Ad oggi contiene più di 228 milioni di entità liberamente disponibili. Il principale Knowledge Graph di DBpedia comprende dati puliti provenienti da Wikipedia. DBPedia è disponibile in tutte le lingue supportate da Wikipedia e ha una media di oltre 600.000 download di file all'anno. Alcuni strumenti open source costruiti su DBpedia forniscono accesso ai dati, controllo delle versioni, controllo di qualità, visualizzazione delle ontologie e infrastrutture di collegamento.
+- <a hreflang="en" href="https://www.wikidata.org/">**Wikidata**</a> memorizza dati strutturati da progetti Wikimedia come Wikipedia. È un database orientato ai documenti, che si concentra sulla memorizzazione di dati web strutturati.
 
-_References:_
+_Riferimenti:_
 - <a hreflang="en" href="http://www.ibiblio.org/osrt/omf/">Open Source Metadata Framework</a>
 - <a hreflang="en" href="https://en.wikipedia.org/wiki/DBpedia">DBpedia</a>
 - <a hreflang="en" href="https://en.wikipedia.org/wiki/Wikidata">WikiData</a>
 
-## Use cases
+## Casi d'uso
 
-The implementation of structured data is widely beneficial in numerous areas, some of which will be focused on in this section. It is important to note that many of these areas are overlapping, such is the nature of linked and structured data.
+L'implementazione dei dati strutturati è ampiamente vantaggiosa in numerose aree, alcune delle quali verranno trattate in questa sezione. È importante notare che molte di queste aree si sovrappongono, così è infatti la natura dei dati collegati e strutturati.
 
-### Data linking
+### Collegamento di dati
 
-Having structured and linked data, while using identifiers to designate places, events, people, concepts, etc, the data can be cited by other data sources and therefore make their metadata descriptions more accessible. This data is then more shareable and reusable.
+Quando si hanno dati strutturati e collegati, mentre si utilizzano identificatori per designare luoghi, eventi, persone, concetti, ecc., i dati possono essere citati da altre fonti di dati e in questo modo dunque possono rendere più accessibili le loro descrizioni dei metadati. Tali dati sono quindi più condivisibili e riutilizzabili.
 
-With data linking, we collect information from different sources to create richer and more useful data. This is possible thanks to structured data, whose global, unique identifiers allow machines to read and understand the relationship between different types of data. This has the use of creating a more connected web of relationships.
+Con il collegamento dei dati (<i lang="en">data linking</i>) raccogliamo informazioni da diverse fonti per creare dati più ricchi e utili. Ciò è possibile grazie ai dati strutturati, i cui identificatori univoci globali consentono alle macchine di leggere e comprendere la relazione tra diversi tipi di dati. Il che comporta l'utilità di creare una rete di relazioni più connessa.
 
-### Search Engine Optimization & discoverability
+### Ottimizzazione per i motori di ricerca e trovabilità
 
-Search engine optimization (<a hreflang="en" href="https://www.webopedia.com/definitions/seo/#How_does_SEO_work">SEO</a>) is the area focusing on building the content of a web page so that it has better results from search engines. Naturally, this is highly important for discoverability as a successful implementation of SEO may allow for a page to appear higher on the search engine results page (<a hreflang="en" href="https://www.webopedia.com/definitions/serp/">SERP</a>). The SERP is where the titles, URLs, and meta descriptions are displayed from a search query.
+L'ottimizzazione per i motori di ricerca (<a hreflang="en" href="https://www.webopedia.com/definitions/seo/#How_does_SEO_work">SEO</a>) è l'area incentrata sul creare il contenuto di una pagina web in modo che abbia risultati migliori nei motori di ricerca. Naturalmente, questo è molto importante per la trovabilità poiché un'implementazione di successo della SEO può consentire a una pagina di apparire più in alto nella pagina dei risultati del motore di ricerca (<a hreflang="en" href="https://www.webopedia.com/definitions/serp/">SERP</a>). La SERP è dove i titoli, gli URL e le meta descrizioni vengono mostrati in seguito ad una query di ricerca.
 
-By adding structured data to web pages, we can optimize a web page for search engines, as well as have extra content visible from the SERP. This extra content can come in many forms, some of which has been [discussed previously](#semantic-search-engines-rich-results-and-beyond), namely Knowledge Panels, Rich Snippets and Related Questions.
+Aggiungendo dati strutturati alle pagine web, possiamo ottimizzare una pagina web per i motori di ricerca, nonché avere contenuti extra visibili dalla SERP. Questo contenuto extra può presentarsi in molte forme, alcune delle quali sono state [discusse in precedenza](#semantic-search-engines-rich-results-and-beyond), vale a dire nel _Knowledge Panel_, nei _Rich Snippet_ e nelle _Domande correlate_.
 
-Having this added discoverability, enabled by structured data, is essential for increasing traffic to a web page from search engines. It follows that businesses and ecommerce pages would find great value in these technologies, which will be discussed in the following section.
+Avere questa ulteriore trovabilità, abilitata dai dati strutturati, è essenziale per aumentare il traffico verso una pagina web dai motori di ricerca. Ne consegue che le pagine di aziende e e-commerce possono trarre grande beneficio da queste tecnologie, che saranno discusse nella sezione seguente.
 
-### Ecommerce & business
+### E-commerce e business
 
-The implementation of structured data for ecommerce web pages is incredibly beneficial for those involved with the business. There are numerous structured data types which are widely used for these businesses for SEO.
+L'implementazione di dati strutturati per le pagine web degli e-commerce è incredibilmente vantaggiosa per i gestori del business. Esistono numerosi tipi di dati strutturati ampiamente utilizzati da queste aziende per la SEO.
 
-<a hreflang="en" href="https://developers.google.com/search/docs/advanced/structured-data/local-business">LocalBusiness</a> is a structured data type which may return a Google knowledge panel with details entered in the structured data type during relevant search queries (e.g. "popular restaurants in Dublin"). This type also may have business hours, different departments within a business, reviews for the business, which could all be returned from a maps app search query as well.
+<a href="https://developers.google.com/search/docs/advanced/structured-data/local-business">LocalBusiness</a> (attività locale) è un tipo di dati strutturati che può restituire una scheda informativa Google (<i lang="en">Google knowledge panel</i>) arricchita con i dettagli inseriti in quel tipo di dati strutturati a seguito di una query di ricerca pertinente (ad esempio "ristoranti famosi a Dublino"). Questo particolare tipo di dati strutturati può anche contenere gli orari di apertura, i diversi reparti all'interno di un'azienda, le recensioni per l'azienda, dati che potrebbero tutti essere visualizzati anche a seguito di una query di ricerca in un'app di mappe.
 
-<a hreflang="en" href="https://developers.google.com/search/docs/advanced/structured-data/product">Product</a>, the structured data type, works similarly to LocalBusiness in that it allows for a search query to return rich results. These results can include price, availability, reviews, ratings, and even images in the search results. These added elements can make the product far more likely to receive attention from the search. Product attributes can help link products together and better respond to search queries, increasing discoverability.
+<a href="https://developers.google.com/search/docs/advanced/structured-data/product">Product</a> (prodotto), questo tipo di dati strutturati, funziona in modo simile a _LocalBusiness_ in quanto consente a una query di ricerca di restituire risultati arricchiti. Questi risultati possono includere il prezzo, la disponibilità, le recensioni, le valutazioni e persino delle immagini visibili nei risultati di ricerca. Questi elementi aggiunti possono aumentare di molto le probabilità che il prodotto riceva attenzione durante la ricerca. Gli attributi del prodotto possono aiutare a collegare i prodotti tra loro e rispondere meglio alle query di ricerca, aumentando la trovabilità.
 
-These are just a couple of examples of use cases for structured data in ecommerce, but there are many <a hreflang="en" href="https://developers.google.com/search/docs/advanced/ecommerce/include-structured-data-relevant-to-ecommerce">more structured data types</a> that an ecommerce page can benefit from implementing.
+Questi sono solo un paio di esempi di casi d'uso di dati strutturati negli e-commerce, ma esistono molti <a href="https://developers.google.com/search/docs/advanced/ecommerce/include-structure-data-relevant-to-ecommerce">altri tipi di dati strutturati</a> che una pagina di e-commerce può implementare per trarne vantaggio.
 
-## A year in review
+## Un anno in rassegna
 
-Structured data is underpinned by formats and standards that describe a meta-level schema into which publishers can fit and present data in a pre-defined manner. RDFa, OpenGraph, JSON-LD and other established formats have been used in the analysis for this chapter.
+I dati strutturati si basano su formati e standard che descrivono uno schema di meta-livello in cui gli editori possono far rientrare e presentare i dati in una modalità predefinita. RDFa, OpenGraph, JSON-LD e altri formati consolidati sono stati indagati nell'analisi per questo capitolo.
 
-{{ figure_markup(
+{{ figura_markup(
   image="structured-data-types.png",
-  caption="Structured data types",
-  description="Bar chart showing RDFa is used on 62% of desktop and mobile pages, Open Graph on 59% of each, Twitter on 41% and 40% respectively, JSON-LD on 37% and 37%, Microdata on 23% and 25%, Facebook on 7% and 8%, Dublin Core and Microformats on 1% of both, and finally microformats2 on 0% of both desktop and mobile pages.",
+  caption="Tipi di dati strutturati",
+  description="Grafico a barre che mostra il formato RDFa utilizzato nel 62% delle pagine sia desktop che per dispositivi mobili, Open Graph nel 59% di ciascun tipo, Twitter rispettivamente nel 41% e nel 40%, JSON-LD nel 37% e nel 37%, Microdati nel 23% e 25%, Facebook nel 7% e 8%, Dublin Core e Microformats nell'1% di entrambi, e infine microformats2 nello 0% delle pagine desktop e mobili.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr8oRb8NNs5MbpPpDi7QSsTUTPQL_vxQtQvmn52qGk97gpNhJIHa8VF0x5ZJtWXAFuEbDFZQB6TIuN/pubchart?oid=1295789309&format=interactive",
   sheets_gid="138285863",
   sql_file="present_types.sql"
   )
 }}
 
-RDFa and Open Graph remain in the majority with 62% and 57% of mobile pages, respectively. Structured data types are seen consistently across mobile and desktop pages, with Microformats and microformats2 differing the most from other structured data types we examined in this chapter. Microformats are 86% as prominent on mobile pages, whereas microformats2 are 171% as prominent on mobile pages. These two structured data types make up a small percentage of those found in our set.
+RDFa e Open Graph rimangono nella maggioranza delle pagine per dispositivi mobili rispettivamente al 62% e al 57%. I tipi di dati strutturati sono visti in modo coerente nelle pagine mobili e desktop, con i tipi Microformat e Microformat2 che si differenziano maggiormente dagli altri tipi di dati strutturati che abbiamo esaminato in questo capitolo. I Microformat hanno l'86% di rilievo sulle pagine per dispositivi mobili, mentre i Microformat2 hanno il 171% di rilievo sulle pagine per dispositivi mobili. Questi due tipi di dati strutturati costituiscono una piccola percentuale di quelli trovati nel nostro set.
 
 {{ figure_markup(
   image="structured-data-usage-by-year.png",
-  caption="Structured data usage by year on mobile",
-  description="Bar chart showing RDFa was used on 61% of mobile pages in 2021 and 62% in 2022, Open Graph on 57% and 59% respectively, Twitter on 37% and 40%, JSON-LD on 34% and 37%, Microdata on 25% and 25%, Facebook on 8% and 8%, Dublin Core and Microformats on 1% in both years, and finally microformats2 on 0% in both years.",
+  caption="Utilizzo per anno dei dati strutturati nei dispositivi mobili",
+  description="Grafico a barre che mostra che RDFa è stato utilizzato nel 61% delle pagine mobili nel 2021 e nel 62% nel 2022, Open Graph rispettivamente nel 57% e 59%, Twitter nel 37% e 40%, JSON-LD nel 34% e 37% , Microdata nel 25% e nel 25%, Facebook nell'8% e nell'8%, Dublin Core e Microformat nell'1% in entrambi gli anni e infine Microformat2 nello 0% in entrambi gli anni.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr8oRb8NNs5MbpPpDi7QSsTUTPQL_vxQtQvmn52qGk97gpNhJIHa8VF0x5ZJtWXAFuEbDFZQB6TIuN/pubchart?oid=1841491057&format=interactive",
   sheets_gid="1452747230",
   sql_file="present_types.sql",
@@ -200,29 +199,29 @@ RDFa and Open Graph remain in the majority with 62% and 57% of mobile pages, res
   )
 }}
 
-A general increase in these widely-used structured data types can be seen, including Twitter meta tags (which has increased from 37% to 40%) and JSON-LD (which has increased coverage from 34% overall in 2021 to 37% overall in 2022). There is a slight decrease in usage for some of the less prevalent structured data types such as Microdata, Facebook meta tags, Dublin Core and Microformats. Desktop movements were very similar.
+Si apprezza un generale aumento dei tipi di dati strutturati di ampia diffusione, inclusi i meta tag di Twitter (passati dal 37% al 40%) e JSON-LD (con un aumento di copertura dal 34% complessivo nel 2021 al 37% complessivo nel 2022). C'è una leggera flessione nell'utilizzo di alcuni tipi di dati strutturati meno diffusi come i Microdata, i meta tag di Facebook, i Dublin Core e i Microformat. Gli andamenti per le pagine desktop si sono rivelati molto simili.
 
-The below table lists the major changes to structured data formats in the last year. Only types with changes have been listed.
+La tabella seguente elenca le principali modifiche apportate ai formati di dati strutturati nell'ultimo anno. Sono stati elencati solo i tipi che hanno avuto modifiche.
 
 <figure>
   <table>
     <thead>
       <tr>
-        <th class="width-20">Data type</th>
-        <th>Change</th>
+        <th class="width-20">Tipo di dati</th>
+        <th>Modifche</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td>RDFa</td>
         <td>
-          Although there are no changes in the base format of RDFa, version 3 of the _Data Catalog Vocabulary (DCAT)_ contained a significant update. DCAT is an <em>"RDF vocabulary designed to facilitate interoperability between data catalogs published on the Web"</em>. This is significant due to the increased availability of open datasets on the web. Being able to describe the entire contents of a dataset greatly increases the discoverability, and thus usefulness, of a public dataset and makes federated search and distribution more likely.
+          Sebbene non ci siano cambiamenti nel formato di base degli RDFa, la versione 3 del _Data Catalog Vocabulary (DCAT)_ ha avuto un aggiornamento significativo. DCAT è un <em>"vocabolario RDF progettato per facilitare l'interoperabilità tra cataloghi di dati pubblicati sul web"</em>. Ciò risulta maggiormente significativo per via della maggiore disponibilità di insiemi di dati aperti sul web. Essere in grado di descrivere l'intero contenuto di un set di dati aumenta notevolmente la trovabilità, e quindi l'utilità, di un set di dati pubblico e rende più probabile la ricerca e la distribuzione federate.
           <p>
-            References:
+            Riferimenti:
             <ul>
-              <li>DCAT: <a href="https://www.w3.org/TR/2022/WD-vocab-dcat-3-20220510">https://www.w3.org/TR/2022/WD-vocab-dcat-3-20220510</a></li>
-              <li>Google <a href="https://datasetsearch.research.google.com/">dataset search engine</a></li>
-              <li>Google dataset <a href="https://developers.google.com/search/docs/advanced/structured-data/dataset">structured data format guide</a></li>
+              <li>DCAT: <a hreflang="en" href="https://www.w3.org/TR/2022/WD-vocab-dcat-3-20220510">https://www.w3.org/TR/2022/WD-vocab-dcat-3-20220510</a></li>
+              <li>Google <a hreflang="en" href="https://datasetsearch.research.google.com/">dataset search engine</a></li>
+              <li>Google dataset <a hreflang="en" href="https://developers.google.com/search/docs/advanced/structured-data/dataset">structured data format guide</a></li>
             </ul>
           </p>
         </td>
@@ -230,30 +229,30 @@ The below table lists the major changes to structured data formats in the last y
       <tr>
         <td>JSON-LD</td>
         <td>
-          Updates and additions in the past year were minor. Of these, most were related to maintenance and minor expansion of context, for example "adding OnlineBusiness as a subtype of Organization and OnlineStore as a subtype of OnlineBusiness".
+          Gli aggiornamenti e le aggiunte nell'ultimo anno sono stati poco rilevanti. Di questi, la maggior parte era correlata alla manutenzione e ad una relativa espansione del contesto, ad esempio "è stato aggiunto OnlineBusiness come sottotipo di Organizzazione e OnlineStore come sottotipo di OnlineBusiness".
           <p>
-            References:
+            Riferimenti:
             <ul>
-              <li><a href="https://schema.org/docs/releases.html">https://schema.org/docs/releases.html</a></li>
+              <li><a hreflang="en" href="https://schema.org/docs/releases.html">https://schema.org/docs/releases.html</a></li>
             </ul>
           </p>
         </td>
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Changes between 2021 and 2022 in data type formats.") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Modifiche tra il 2021 e il 2022 nei formati dei tipi di dati.") }}</figcaption>
 </figure>
 
-Overall there has been little change in the definitions of the major data types as the table outlines, however some formats have been advanced in specific domains.
+Nel complesso ci sono stati pochi cambiamenti nelle definizioni dei principali tipi di dati come mostra la tabella, tuttavia alcuni formati sono stati migliorati in domini specifici.
 
-Let's delve a little deeper into each type.
+Analizziamo un po' più a fondo ciascun tipo.
 
 ### RDFa
 
-{{ figure_markup(
+{{ figura_markup(
   image="rdfa-usage-by-year-mobile.png",
-  caption="RDFa usage by year on mobile",
-  description="Bar chart showing `foaf:image` on was used on 0.86% of pages in 2021 and 0.81% in 2022, `foaf:document` on 0.36% and 0.30% respectively, `sioc:item` on 0.24% and 0.20%, `schema:webpage` on 0.11% and 0.12%, `image` on 0.09% and 0.10%, `og:website` on 0.06% and 0.08%, `listitem` on 0.08% and 0.08%, `breadcrumblist` on 0.07% and 0.07%, `webpage` on 0.04% and 0.04%, `person` on 0.03% and 0.03%, `schema:article` on 0.03% and 0.03%, `skos:concept` on 0.04% and 0.03%, `v:breadcrumb` on 0.04% and 0.03%, and finally `sioc:useraccount` was used on 0.03% of pages in 2021 and 0.02% in 2022.",
+  caption="Utilizzo per anno degli RDFa sui dispositivi mobili",
+  description="Grafico a barre che mostra che `foaf:image` è stato utilizzato rispettivamente nello 0,86% delle pagine nel 2021 e nello 0,81% nel 2022, `foaf:document` nello 0,36% e 0,30%, `sioc:item` nello 0,24% e 0,20 %, `schema:webpage` nello 0,11% e 0,12%, `image` nello 0,09% e 0,10%, `og:website` nell 0,06% e 0,08%, `listitem` nello 0,08% e 0,08%, `breadcrumblist` nello 0,07% e 0,07%, `webpage` nello 0,04% e 0,04%, `person` nello 0,03% e 0,03%, `schema:article` nello 0,03% e 0,03%, `skos:concept` nello 0,04% e 0,03%, `v:breadcrumb` nello 0,04% e nello 0,03% e infine `sioc:useraccount` è stato utilizzato nello 0,03% delle pagine nel 2021 e nello 0,02% nel 2022.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr8oRb8NNs5MbpPpDi7QSsTUTPQL_vxQtQvmn52qGk97gpNhJIHa8VF0x5ZJtWXAFuEbDFZQB6TIuN/pubchart?oid=1434267711&format=interactive",
   sheets_gid="1452747230",
   sql_file="rdfa_type_ofs.sql",
@@ -262,12 +261,12 @@ Let's delve a little deeper into each type.
   )
 }}
 
-When evaluating the types of RDFa, `foaf:image` remains present on more pages than any other type, though it has shown a decrease in the percent of pages in our set since 2021. This applies to the next two types, `foaf:document` and `sioc:item`, with small decreases in usage. Many of the other types show a slight increase in usage, as RDFa has seen as a whole.
+Quando si valutano i tipi di RDFa, `foaf:image` rimane presente su un maggior numero di pagine rispetto a qualsiasi altro tipo, sebbene abbia mostrato una diminuzione della percentuale di pagine nel nostro set dal 2021. Questo vale anche per i due tipi successivi, `foaf:document` e `sioc:item`, con piccole diminuzioni nell'utilizzo. Molti degli altri tipi mostrano un leggero aumento nell'utilizzo, come è successo agli RDFa nel complesso.
 
-{{ figure_markup(
+{{ figura_markup(
   image="rdfa-usage-by-device.png",
-  caption="RDFa usage by device",
-  description="Bar chart showing `foaf:image` was used on 1.05% of desktop and 0.81% of mobile pages, `foaf:document` on 0.38% and 0.30% respectively, `sioc:item` on 0.25% and 0.20%, `schema:webpage` on 0.16% and 0.12%, `image` on 0.13% and 0.10%, `og:website` on 0.07% and 0.08%, `listitem` on 0.09% and 0.08%, `breadcrumblist` on 0.08% and 0.07%, `webpage` on 0.05% and 0.04%, `person` on 0.03% and 0.03%, `schema:article` on 0.04% and 0.03%, `skos:concept` on 0.04% and 0.03%, `v:breadcrumb` on 0.03% and 0.03%, and finally `sioc:useraccount` on 0.02% of both desktop and mobile pages.",
+  caption="Utilizzo di RDFa per dispositivo",
+  description="Grafico a barre che mostra che `foaf:image` è stato utilizzato nell'1,05% delle pagine desktop e nello 0,81% delle pagine mobili, `foaf:document` rispettivamente nello 0,38% e nello 0,30%, `sioc:item` nello 0,25% e nello 0,20%, `schema:webpage` su 0,16% e 0,12%, `image` nello 0,13% e 0,10%, `og:website` nello 0,07% e 0,08%, `listitem` nello 0,09% e 0,08%, `breadcrumblist` nello 0,08% e 0,07%, `webpage` nello 0,05% e 0,04%, `person` nello 0,03% e 0,03%, `schema:article` nello 0,04% e 0,03%, `skos:concept` nello 0,04% e 0,03%, `v:breadcrumb` nello 0,03% e 0,03% e infine `sioc:useraccount` nello 0,02% delle pagine desktop e mobili.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr8oRb8NNs5MbpPpDi7QSsTUTPQL_vxQtQvmn52qGk97gpNhJIHa8VF0x5ZJtWXAFuEbDFZQB6TIuN/pubchart?oid=193330933&format=interactive",
   sheets_gid="1452747230",
   sql_file="rdfa_type_ofs.sql",
@@ -276,14 +275,14 @@ When evaluating the types of RDFa, `foaf:image` remains present on more pages th
   )
 }}
 
-RDFa remains more prominent on desktop with `foaf:image` appearing on 1% of desktop pages, compared to 0.81% on mobile pages. Other RDFa types saw a slight increase in appearance on desktop pages over mobile, with the exception of `og:website` reaching ahead with 0.08% on mobile pages and 0.07% on desktop pages.
+Fra gli RDFa rimane più prominente sul desktop `foaf:image` che compare nell'1% delle pagine desktop, rispetto allo 0,81% delle pagine mobili. Altri tipi di  RDFa hanno registrato un leggero aumento di occorrenze nelle pagine desktop rispetto ai dispositivi mobili, con l'eccezione di `og:website` che ha raggiunto lo 0,08% nelle pagine mobili e lo 0,07% nelle pagine desktop.
 
 ### Dublin Core
 
 {{ figure_markup(
   image="dublin-core-usage-by-year-mobile.png",
-  caption="Dublin Core usage by year (mobile)",
-  description="Bar chart showing `dc.title` was used on 0.71% of mobile pages in 2021 and 0.70% in 2022, `dc.language` on 0.50% and 0.49% respectively, `dc.description` on 0.46% and 0.44%, `dc.publisher` on 0.21% and 0.22%, `dc.creator` on 0.21% and 0.21%, `dc.subject` on 0.20% and 0.20%, `dc.source` on 0.22% and 0.19%, `dc.identifier` on 0.18% and 0.17%, `dc.relation` on 0.19% and 0.16%, `dcterms.title` on 0.13% and 0.15%, `dc.format` on 0.15% and 0.15%, `dc.type` on 0.14% and 0.14%, `dcterms.rightsholder` on 0.13% and 0.12%, and finally `dcterms.identifier` on 0.18% of mobile pages in 2021 and 0.11% in 2022.",
+  caption="Utilizzo per anno dei Dublin Core (dispositivi mobili)",
+  description="Grafico a barre che mostra che `dc.title` è stato utilizzato nello 0,71% delle pagine per dispositivi mobili nel 2021 e nello 0,70% nel 2022, `dc.language` rispettivamente nello 0,50% e nello 0,49%, `dc.description` nello 0,46% e nello 0,44%, `dc.publisher` nello 0,21% e 0,22%, `dc.creator` nello 0,21% e 0,21%, `dc.subject` nello 0,20% e 0,20%, `dc.source` nello 0,22% e 0,19%, `dc.identifier` nello 0,18% e 0,17%, `dc.relation` nello 0,19% e 0,16%, `dcterms.title` nello 0,13% e 0,15%, `dc.format` nello 0,15% e 0,15%, `dc.type` nello 0,14% e 0,14%, `dcterms.rightsholder` nello 0,13% e 0,12% e infine `dcterms.identifier` nello 0,18% delle pagine mobile nel 2021 e nello 0,11% nel 2022.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr8oRb8NNs5MbpPpDi7QSsTUTPQL_vxQtQvmn52qGk97gpNhJIHa8VF0x5ZJtWXAFuEbDFZQB6TIuN/pubchart?oid=1093040433&format=interactive",
   sheets_gid="1452747230",
   sql_file="dublin_core_types.sql",
@@ -292,12 +291,12 @@ RDFa remains more prominent on desktop with `foaf:image` appearing on 1% of desk
   )
 }}
 
-Dublin Core attribute type usage remains very similar across the most prominent attribute types. A notable exception is `dcterms.identifier`, going from 0.11% in 2021 to 0.18% in 2022 for mobile pages. Though small in percentage, this totals to a usage count of nearly 15,000 in our set. This increase was also seen for desktop pages, though not as substantial, going from 0.14% in 2021 to 0.18% in 2022.
+L'utilizzo del tipo di attributo Dublin Core rimane molto simile tra i tipi di attributo più importanti. Un'eccezione degna di nota è `dcterms.identifier`, che passa dallo 0,11% nel 2021 allo 0,18% nel 2022 per le pagine mobili. Anche se piccolo in percentuale, ammonta a un conteggio di utilizzo di quasi 15.000 occorrenze nel nostro set. Questo aumento è stato riscontrato anche per le pagine desktop, sebbene non così consistente, con un passaggio dallo 0,14% nel 2021 allo 0,18% nel 2022.
 
 {{ figure_markup(
   image="dublin-core-usage-by-device.png",
-  caption="Dublin Core usage by device",
-  description="Bar chart showing `dc.title` was used on 0.74% of desktop and 0.70% of mobile pages, `dc.language` on 0.53% and 0.49% respectively, `dc.description` on 0.48% and 0.44%, `dc.publisher` on 0.22% and 0.22%, `dc.creator` on 0.22% and 0.21%, `dc.subject` on 0.20% and 0.20%, `dc.source` on 0.25% and 0.19%, `dc.identifier` on 0.18% and 0.17%, `dc.relation` on 0.21% and 0.16%, `dcterms.title` on 0.16% and 0.15%, `dc.format` on 0.16% and 0.15%, `dc.type` on 0.15% and 0.14%, `dcterms.rightsholder` on 0.14% and 0.12%, and finally `dcterms.identifier` on 0.18% of desktop and 0.11% of mobile pages.",
+  caption="Utilizzo dei Dublin Core per dispositivo",
+  description="Grafico a barre che mostra che `dc.title` è stato utilizzato nello 0,74% delle pagine desktop e nello 0,70% delle pagine mobili, `dc.language` rispettivamente nello 0,53% e 0,49%, `dc.description` nello 0,48% e 0,44%, `dc.publisher` nello 0.22% e 0.22%, `dc.creator` nello 0.22% e 0.21%, `dc.subject` nello 0.20% e 0.20%, `dc.source` nello 0.25% e 0.19%, `dc.identifier` nello 0,18% e 0,17%, `dc.relation` nello 0,21% e 0,16%, `dcterms.title` nello 0,16% e 0,15%, `dc.format` nello 0,16% e 0,15%, `dc.type` nello 0,15 % e 0,14%, `dcterms.rightsholder` nello 0,14% e 0,12% e infine `dcterms.identifier` nello 0,18% delle pagine desktop e nello 0,11% delle pagine mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr8oRb8NNs5MbpPpDi7QSsTUTPQL_vxQtQvmn52qGk97gpNhJIHa8VF0x5ZJtWXAFuEbDFZQB6TIuN/pubchart?oid=690445913&format=interactive",
   sheets_gid="1452747230",
   sql_file="dublin_core_types.sql",
@@ -306,40 +305,40 @@ Dublin Core attribute type usage remains very similar across the most prominent 
   )
 }}
 
-Other than that, Dublin Core types are similar between mobile and desktop pages, sharing the same slight increase in appearances compared to the previous year.
+A parte questo, l'utilizzo dei tipi Dublin Core è simile per le pagine mobili e desktop, con lo stesso modesto aumento delle occorrenze rispetto all'anno precedente.
 
 ### Open Graph
 
-{{ figure_markup(
+{{ figura_markup(
   image="open-graph-usage-by-year-mobile.png",
-  caption="Open Graph usage by year (mobile)",
-  description="Bar chart showing `og:image` was used on 37% of mobile pages in 2021 and 39% in 2022, `og:image:width` on 13% and 14% respectively, `og:image:height` on 13% and 14%, `og:image:secure_url` on 6% and 6%, `og:image:type` on 2% and 5%, and finally `og:image:alt` on 2% of mobile pages in 2021 and 3% in 2022.",
+  caption="Utilizzo di Open Graph per anno (dispositivi mobili)",
+  description="Grafico a barre che mostra che `og:image` è stato utilizzato nel 37% delle pagine per dispositivi mobili nel 2021 e nel 39% nel 2022, `og:image:width` rispettivamente nel 13% e nel 14%, `og:image:height` nel 13% e 14%, `og:image:secure_url` nel 6% e 6%, `og:image:type` nel 2% e 5% e infine `og:image:alt` nel 2% delle pagine mobili nel 2021 e 3% nel 2022.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr8oRb8NNs5MbpPpDi7QSsTUTPQL_vxQtQvmn52qGk97gpNhJIHa8VF0x5ZJtWXAFuEbDFZQB6TIuN/pubchart?oid=1953710107&format=interactive",
   sheets_gid="1452747230",
   sql_file="open_graph_types.sql"
   )
 }}
 
-Open Graph tags have seen a widespread increase in use. The most common of these tags is `og:title` appearing in over half of all pages in our set, joined by `og:url` and `og:type`. Most of these increases are small, with `og:image:type` as an exception which more than tripled on mobile pages since 2021. This is matched by desktop, going from 1.6% to 5.4% over the course of the year.
+I tag Open Graph hanno visto un incremento nella diffusione di utilizzo, con il più comune di questi tag  `og:title` che appare in oltre la metà di tutte le pagine del nostro set, insieme a `og:url` e `og:type`. La maggior parte di questi incrementi sono modesti, ad eccezione di `og:image:type`, la cui presenza è più che triplicata nelle pagine mobili dal 2021. Cosa che gareggia con le pagine desktop, dove si è passati dall'1,6% al 5,4% nel giro di un anno.
 
-{{ figure_markup(
+{{ figura_markup(
   image="open-graph-usage-by-device.png",
-  caption="Open Graph usage by device",
-  description="Bar chart showing `og:image` was used on 40% of desktop and 39% of mobile pages, `og:image:width` on 15% and 14% respectively, `og:image:height` on 15% and 14%, `og:image:secure_url` on 6% and 6%, `og:image:type` on 5% of both, and finally `og:image:alt` was used on 3% of both desktop and mobile pages.",
+  caption="Utilizzo di Open Graph per dispositivo",
+  description="Grafico a barre che mostra che `og:image` è stato utilizzato nel 40% delle pagine desktop e nel 39% delle pagine mobili, `og:image:width` rispettivamente nel 15% e nel 14%, `og:image:height` nel 15% e 14%, `og:image:secure_url` nel 6% e 6%, `og:image:type` nel 5% di entrambi, e infine `og:image:alt` è stato utilizzato nel 3% sia su desktop che su dispositivi mobili.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr8oRb8NNs5MbpPpDi7QSsTUTPQL_vxQtQvmn52qGk97gpNhJIHa8VF0x5ZJtWXAFuEbDFZQB6TIuN/pubchart?oid=1302475483&format=interactive",
   sheets_gid="1452747230",
   sql_file="open_graph_types.sql"
   )
 }}
 
-We have seen an increase in use for each Open Graph type in the top 10 for both mobile and desktop, resulting in Open Graph's relative growth of 1.5% since 2021.
+Abbiamo visto un aumento nell'utilizzo di ciascun tipo di Open Graph presente nella top 10 dei tipi, sia su dispositivi mobili che su desktop, il che ha portato ad una crescita complessiva di Open Graph dell'1,5% rispetto al 2021.
 
 ### Twitter
 
 {{ figure_markup(
   image="twitter-meta-tag-usage-by-year-mobile.png",
-  caption="Twitter meta tag usage by year (mobile)",
-  description="Bar chart showing `twitter:card` was used on 35% of mobile pages in 2021 and 38% in 2022, `twitter:title` on 21% and 22% respectively, `twitter:description` on 19% and 20%, `twitter:image` on 11% and 12%, `twitter:site` on 11% and 11%, `twitter:label1` on 7% and 10%, `twitter:data1` on 7% and 10%, `twitter:creator` on 4% and 3%, `twitter:url` on 3% and 3%, `twitter:domain` on 2% and 2%, `twitter:image:src` on 1% and 1%, `twitter:text:title` on 1% and 1%, and finally `twitter:app:id:iphone` was used on 1% of mobile pages in 2021 and 0% in 2022.",
+  caption="Utilizzo per anno dei meta tag di Twitter (dispositivi mobili)",
+  description="Grafico a barre che mostra che `twitter:card` è stato utilizzato nel 35% delle pagine mobili nel 2021 e nel 38% nel 2022, `twitter:title` rispettivamente nel 21% e nel 22%, `twitter:description` nel 19% e nel 20%, `twitter:image` nel 11% e 12%, `twitter:site` nel 11% e 11%, `twitter:label1` nel 7% e 10%, `twitter:data1` nel 7% e 10%, `twitter: creator` nel 4% e 3%, `twitter:url` nel 3% e 3%, `twitter:domain` nel 2% e 2%, `twitter:image:src` nell'1% e 1%, `twitter: text:title` nell'1% e nell'1% e infine `twitter:app:id:iphone` è stato utilizzato nell'1% delle pagine mobili nel 2021 e nello 0% nel 2022.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr8oRb8NNs5MbpPpDi7QSsTUTPQL_vxQtQvmn52qGk97gpNhJIHa8VF0x5ZJtWXAFuEbDFZQB6TIuN/pubchart?oid=1993854314&format=interactive",
   sheets_gid="1452747230",
   sql_file="twitter_types.sql",
@@ -348,54 +347,54 @@ We have seen an increase in use for each Open Graph type in the top 10 for both 
   )
 }}
 
-Twitter meta tags once again follow the pattern of a general increase in usage, more specifically in the common tags of `twitter:card`, `twitter:title`, `twitter:description` and `twitter:image`. A notable increase can be seen for `twitter:label1` and `twitter:data1`, both at 7% in 2021 to 10% in 2022 for mobile pages.
+I meta tag di Twitter seguono ancora una volta l'andamento di un aumento generale dell'utilizzo, più specificamente nei tag comuni di `twitter:card`, `twitter:title`, `twitter:description` e `twitter:image`. Un notevole aumento si apprezza per `twitter:label1` e `twitter:data1`, entrambi dal 7% nel 2021 al 10% nel 2022 per le pagine mobili.
 
-{{ figure_markup(
+{{ figura_markup(
   image="twitter-meta-tag-usage-by-device.png",
-  caption="Twitter meta tag usage by device",
-  description="Bar chart showing `twitter:card` was used on 39% of desktop and 38% of mobile pages, `twitter:title` on 22% and 22% respectively, `twitter:description` on 20% and 20%, `twitter:image` on 12% and 12%, `twitter:site` on 13% and 11%, `twitter:label1` on 10% and 10%, `twitter:data1` on 10% and 10%, `twitter:creator` on 4% and 3%, `twitter:url` on 4% and 3%, `twitter:domain` on 2% and 2%, `twitter:image:src` on 1% and 1%, `twitter:text:title` on 0% and 1%, and finally `twitter:app:id:iphone` was used on 0% of both desktop and mobile pages.",
+  caption="Utilizzo dei meta tag di Twitter per dispositivo",
+  description="Grafico a barre che mostra che `twitter:card` è stato utilizzato nel 39% delle pagine desktop e nel 38% delle pagine mobili, `twitter:title` rispettivamente nel 22% e nel 22%, `twitter:description` nel 20% e nel 20%, `twitter:image` nel 12% e 12%, `twitter:site` nel 13% e 11%, `twitter:label1` nel 10% e 10%, `twitter:data1` nel 10% e 10%, `twitter:creator` nel 4% e 3%, `twitter:url` nel 4% e 3%, `twitter:domain` nel 2% e 2%, `twitter:image:src` nell'1% e 1%, `twitter:text:title` nello 0% e sull'1% e infine `twitter:app:id:iphone` è stato utilizzato nello 0% delle pagine desktop e mobili.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr8oRb8NNs5MbpPpDi7QSsTUTPQL_vxQtQvmn52qGk97gpNhJIHa8VF0x5ZJtWXAFuEbDFZQB6TIuN/pubchart?oid=270505823&format=interactive",
   sheets_gid="1452747230",
   sql_file="twitter_types.sql",
   width=600,
   height=546
-  )
+   )
 }}
 
-Twitter meta tags such as `twitter:site` and `twitter:image` have a larger presence on desktop sites, though the majority of these meta tags share the same prevalence between mobile and desktop, as well as year-to-year. Some of the less common tags saw a slight decrease in use this year, though Twitter meta tag usage maintains an overall increase from last year.
+I meta tag di Twitter come `twitter:site` e `twitter:image` hanno una presenza maggiore sui siti desktop, sebbene la maggior parte di questi meta tag condivida la stessa prevalenza tra dispositivi mobili e desktop, nonché di anno in anno. Alcuni dei tag meno comuni hanno visto un leggero calo nell'uso quest'anno, sebbene l'utilizzo dei meta tag di Twitter ottiene complessivamente un aumento rispetto allo scorso anno.
 
 ### Facebook
 
 {{ figure_markup(
   image="facebook-meta-tag-usage-by-year-mobile.png",
-  caption="Facebook meta tag usage by year (mobile)",
-  description="Bar chart showing `fb:app_id` was used on 6.1% of mobile pages in 2021 and 5.8% in 2022, `fb:admins` on 2.6% and 2.6% respectively, `fb:pages` on 0.9% and 0.8%, `fb:page_id` and `fb:profile_id` on 0.1% in both years, and `fb:use_automatic_ad_placement` and `fb:article_style` on 0.0% in both years.",
+  caption="Utilizzo per anno dei meta tag di Facebook (dispositivi mobili)",
+  description="Grafico a barre che mostra  che `fb:app_id` è stato utilizzato nel 6,1% delle pagine mobili nel 2021 e nel 5,8% nel 2022, `fb:admins` rispettivamente nel 2,6% e nel 2,6%, `fb:pages` nello 0,9% e nello 0,8%, `fb:page_id` e `fb:profile_id` nello 0,1% in entrambi gli anni e `fb:use_automatic_ad_placement` e `fb:article_style` nello 0,0% in entrambi gli anni.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr8oRb8NNs5MbpPpDi7QSsTUTPQL_vxQtQvmn52qGk97gpNhJIHa8VF0x5ZJtWXAFuEbDFZQB6TIuN/pubchart?oid=978227692&format=interactive",
   sheets_gid="1452747230",
   sql_file="facebook_types.sql"
   )
 }}
 
-Out of all of the Facebook tags here, there are only three with significant numbers of appearances. These are the same as the top three in 2021, namely `fb:app_id`, `fb:admins` and `fb:pages` at 5.8%, 2.6% and 0.8% on mobile, all a slight decrease from last year.
+Di tutti i tag di Facebook qui, ce ne sono solo tre con un numero significativo di apparizioni. Si tratta degli stessi tre che erano primi nel 2021, vale a dire `fb:app_id`, `fb:admins` e `fb:pages` al 5,8%, 2,6% e 0,8% nei dispositivi mobili, tutti in leggera diminuzione rispetto allo scorso anno.
 
 {{ figure_markup(
   image="facebook-meta-tag-usage-by-device.png",
-  caption="Facebook meta tag usage by device",
-  description="Bar chart showing `fb:app_id` was used on 5.6% of desktop and 5.8% of mobile pages, `fb:admins` on 2.2% and 2.6% respectively, `fb:pages` on 0.9% and 0.8%, `fb:page_id` on 0.2% and 0.1%, `fb:profile_id` on 0.1% on both, and `fb:use_automatic_ad_placement` and `fb:article_style` on 0.0% of both desktop and mobile pages.",
+  caption="Utilizzo dei meta tag di Facebook per dispositivo",
+  description="Grafico a barre che mostra che `fb:app_id` è stato utilizzato nel 5,6% delle pagine desktop e nel 5,8% delle pagine mobili, `fb:admins` rispettivamente nel 2,2% e nel 2,6%, `fb:pages` nello 0,9% e nello 0,8%, `fb:page_id` nello 0,2% e 0,1%, `fb:profile_id` nello 0,1% su entrambi e `fb:use_automatic_ad_placement` e `fb:article_style` nello 0,0% delle pagine desktop e mobili.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr8oRb8NNs5MbpPpDi7QSsTUTPQL_vxQtQvmn52qGk97gpNhJIHa8VF0x5ZJtWXAFuEbDFZQB6TIuN/pubchart?oid=230494604&format=interactive",
   sheets_gid="1452747230",
   sql_file="facebook_types.sql"
   )
 }}
 
-This is true for desktop pages too, with the exception of `fb:pages` at a slight increase from 0.90% in 2021 to 0.92% in 2022. The meta tag `fb:pages_id` sees a slight increase on mobile and desktop pages alike, but overall facebook meta tag usage has seen a decline for both mobile and desktop pages since last year.
+Questo vale anche per le pagine desktop, con l'eccezione di `fb:pages` in leggero aumento dallo 0,90% nel 2021 allo 0,92% nel 2022. Il meta tag `fb:pages_id` vede un leggero aumento sia nelle pagine mobili che in quelle desktop, ma dall'anno scorso l'utilizzo complessivo dei meta tag di Facebook ha registrato un calo sia per le pagine mobili che per quelle desktop.
 
-### Microformats and microformats2
+### Microformat e microformat2
 
 {{ figure_markup(
   image="microformats-usage-by-year-mobile.png",
-  caption="Microformats usage by year (mobile)",
-  description="Bar chart showing `adr` was used on 0.50% of mobile pages in 2021 and 0.47% in 2022, `geo` on 0.10% and 0.10% respectively, `hReview` on 0.06% and 0.05%, `hReview-aggregate` on 0.05% and 0.03%, `hListing` and `hProduct` on 0.01% in both years, and finally `hCard` on 0.01% of mobile pages in 2021 and 0.00% in 2022.",
+  caption="Utilizzo per anno dei Microformat (dispositivi mobili)",
+  description="Grafico a barre che mostra che `adr` è stato utilizzato nello 0,50% delle pagine mobili nel 2021 e nello 0,47% nel 2022, `geo` rispettivamente nello 0,10% e 0,10%, `hReview` nello 0,06% e 0,05%, `hReview-aggregate` nello 0,05 % e 0,03%, `hListing` e `hProduct` nello 0,01% in entrambi gli anni, e infine `hCard` nello 0,01% delle pagine mobile nel 2021 e nello 0,00% nel 2022.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr8oRb8NNs5MbpPpDi7QSsTUTPQL_vxQtQvmn52qGk97gpNhJIHa8VF0x5ZJtWXAFuEbDFZQB6TIuN/pubchart?oid=1161847910&format=interactive",
   sheets_gid="1452747230",
   sql_file="classic_microformats_types.sql",
@@ -404,50 +403,50 @@ This is true for desktop pages too, with the exception of `fb:pages` at a slight
   )
 }}
 
-Microformats have remained very similar in usage numbers since 2021, with `adr` (appearing on 0.47% of pages in our set) still being the most common on the list.
+I Microformat (microformati) sono rimasti molto simili nei dati di utilizzo dal 2021, con `adr` (presente nello 0,47% delle pagine del nostro set) che è ancora il più comune nella classifica.
 
-{{ figure_markup(
+{{ figura_markup(
   image="microformats-usage-by-device.png",
-  caption="Microformats usage by device",
-  description="Bar chart showing `adr` was used on 0.56% of desktop and 0.47% of mobile pages, `geo` on 0.12% and 0.10% respectively, `hReview` on 0.04% and 0.05%, `hReview-aggregate` on 0.03% and 0.03%, `hListing` on 0.00% and 0.01%, `hProduct` on 0.01% and 0.01%, and finally `hCard` was used on 0.01% of desktop and 0.00% of mobile pages.",
+  caption="Utilizzo dei Microformat per dispositivo",
+  description="Grafico a barre che mostra che `adr` è stato utilizzato nello 0,56% delle pagine desktop e nello 0,47% delle pagine mobili, `geo` rispettivamente nello 0,12% e 0,10%, `hReview` nello 0,04% e 0,05%, `hReview-aggregate` nello 0,03% e 0,03%, `hListing` nello 0,00% e 0,01%, `hProduct` nello 0,01% e 0,01% e infine `hCard` è stato utilizzato nello 0,01% delle pagine desktop e nello 0,00% delle pagine mobili.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr8oRb8NNs5MbpPpDi7QSsTUTPQL_vxQtQvmn52qGk97gpNhJIHa8VF0x5ZJtWXAFuEbDFZQB6TIuN/pubchart?oid=1952037124&format=interactive",
   sheets_gid="1452747230",
   sql_file="classic_microformats_types.sql"
-  )
+   )
 }}
 
-Both mobile and desktop share a mix of increased and decreased usage between microformat types, though both averaging out to less than last year's numbers. Some types which factor into this decrease are `hReview` (going from 0.06% to 0.05% on mobile pages and 0.06% to 0.04% on desktop pages) and `hReview-aggregate` (going from 0.06% to 0.04% on both mobile and desktop pages).
+Sia il mobile che il desktop condividono un mix di aumenti e diminuzioni di utilizzo tra i tipi di microformato, sebbene entrambi abbiano una media inferiore ai numeri registrati l'anno scorso. Alcuni tipi che pesano su questa diminuzione sono `hReview` (passato dallo 0,06% allo 0,05% nelle pagine per dispositivi mobili e dallo 0,06% allo 0,04% nelle pagine desktop) e `hReview-aggregate` (passando dallo 0,06% allo 0,04% sia su dispositivi mobili che su pagine desktop).
 
-{{ figure_markup(
+{{ figura_markup(
   image="microformats2-usage-by-year-mobile.png",
-  caption="Microformats2 usage by year",
-  description="Bar chart showing `h-entry` was used on 0.08% of mobile pages in 2021 and 0.25% in 2022 `h-card` on 0.04% and 0.21% respectively, `h-feed` on 0.01% and 0.18%, `h-adr` on 0.02% and 0.02%, `h-event` on 0.00% and 0.00%, `h-product` on 0.00% and 0.00%, and finally `h-item` was used on 0.01% of mobile pages in 2021 and 0.00% in 2022.",
+  caption="Utilizzo di Microformat2 per anno",
+  description="Grafico a barre che mostra che `h-entry` è stato utilizzato nello 0,08% delle pagine mobili nel 2021 e nello 0,25% nel 2022 `h-card` rispettivamente nello 0,04% e 0,21%, `h-feed` nello 0,01% e 0,18% , `h-adr` nello 0,02% e 0,02%, `h-event` nello 0,00% e 0,00%, `h-product` nello 0,00% e 0,00% e infine `h-item` è stato utilizzato nello 0,01% delle pagine mobili nel 2021 e 0,00% nel 2022.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr8oRb8NNs5MbpPpDi7QSsTUTPQL_vxQtQvmn52qGk97gpNhJIHa8VF0x5ZJtWXAFuEbDFZQB6TIuN/pubchart?oid=392054831&format=interactive",
   sheets_gid="1452747230",
   sql_file="microformats2_types.sql"
   )
 }}
 
-Meanwhile, microformats2 attributes have skyrocketed since 2021. The properties of `h-entry`, `h-card` and `h-feed` have shown huge increases in our set of pages, which account for the fact that microformats2 attributes have almost tripled in our set since the previous year.
+Nel frattempo, gli attributi nel formato Microformat2 sono saliti alle stelle dal 2021. Le proprietà  `h-entry`, `h-card` e `h-feed` hanno visto copicui aumenti nel nostro set di pagine, il che spiega il fatto che gli attributi Microformat2 sono complessivamente quasi triplicati nel nostro set dall'anno precedente.
 
-{{ figure_markup(
+{{ figura_markup(
   image="microformats2-usage-by-device.png",
-  caption="Microformats2 usage by device",
-  description="Bar chart showing `h-entry` was used on 0.12% of desktop and 0.25% of mobile pages, `h-card` on 0.09% and 0.21% respectively, `h-feed` on 0.05% and 0.18%, `h-adr` on 0.02% and 0.02%, and `h-event`, `h-product` and `h-item` on 0.00% of both desktop and mobile pages.",
+  caption="Utilizzo di Microformat2 per dispositivo",
+  description="Grafico a barre che mostra che `h-entry` è stato utilizzato nello 0,12% delle pagine desktop e nello 0,25% delle pagine mobili, `h-card` rispettivamente nello 0,09% e 0,21%, `h-feed` nello 0,05% e 0,18%, `h-adr` nello 0,02% e 0,02% e `h-event`, `h-product` e `h-item` nello 0,00% delle pagine desktop e mobili.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr8oRb8NNs5MbpPpDi7QSsTUTPQL_vxQtQvmn52qGk97gpNhJIHa8VF0x5ZJtWXAFuEbDFZQB6TIuN/pubchart?oid=1709601989&format=interactive",
   sheets_gid="1452747230",
   sql_file="microformats2_types.sql"
   )
 }}
 
-This growth is seen more drastically on mobile pages, though desktop pages do follow the same pattern. Other than that, `h-adr` remains the exact same across both years and both platforms at 0.02% of pages.
+Questa crescita è visibile in modo più drastico nelle pagine mobili, sebbene le pagine desktop seguano lo stesso andamento. A parte questo, `h-adr` rimane esattamente lo stesso in entrambi gli anni e su entrambe le piattaforme allo 0,02% delle pagine.
 
 ### Microdata
 
 {{ figure_markup(
   image="microdata-usage-by-year-mobile.png",
-  caption="Microdata usage by year (mobile)",
-  description="Bar chart showing `schema.org/webpage` was used on 7.4% of mobile pages in 2021 and 7.9% in 2022, `schema.org/sitenavigationelement` on 5.6% and 6.1% respectively, `schema.org/wpheader` on 4.9% and 5.3%, `schema.org/wpfooter` on 4.6% and 4.9%, `schema.org/organization` on 4.0% and 4.3%, `schema.org/blog` on 3.7% and 3.4%, `schema.org/creativework` on 2.1% and 2.5%, `schema.org/imageobject` on 1.8% and 1.9%, `schema.org/person` on 1.4% and 1.4%, `schema.org/website` on 1.3% and 1.4%, `schema.org/postaladdress` on 1.3% and 1.3%, `schema.org/blogposting` on 1.3% and 1.2%, `schema.org/wpsidebar` on 1.4% and 1.2%, `schema.org/imagegallery` on 1.1% and 1.1%, `schema.org/product` on 1.2% and 1.1%, `schema.org/offer` on 1.1% and 1.0%, `schema.org/listitem` on 1.0% and 1.0%, `schema.org/breadcrumblist` on 1.0% and 1.0%, and finally `schema.org/article` on 0.9% of mobile pages in 2021 and 0.8% of mobile pages in 2022.",
+  caption="Utilizzo per anno dei Microdata usage (dispositivi mobili)",
+  description="Grafico a barre che mostra che `schema.org/webpage` è stato utilizzato nel 7,4% delle pagine per dispositivi mobili nel 2021 e nel 7,9% nel 2022, `schema.org/sitenavigationelement` rispettivamente nel 5,6% e nel 6,1%, `schema.org/wpheader` nel 4,9 % e 5,3%, `schema.org/wpfooter` nel 4,6% e 4,9%, `schema.org/organization` nel 4,0% e 4,3%, `schema.org/blog` nel 3,7% e 3,4%, `schema.org/creativework` nel 2,1% e nel 2,5%, `schema.org/imageobject` nel'1,8% e nel'1,9%, `schema.org/person` nel'1,4% e nell'1,4%, `schema.org/website` nel'1,3% e 1,4%, `schema.org/postaladdress` nel 1,3% e 1,3%, `schema.org/blogposting` nel 1,3% e 1,2%, `schema.org/wpsidebar` nel 1,4% e 1,2%, `schema.org/imagegallery` nel 1,1% e 1,1%, `schema.org/product` nel 1,2% e 1,1%, `schema.org/offer` nel 1,1% e 1,0%, `schema.org/listitem` nel 1,0% e 1,0% , `schema.org/breadcrumblist` nell'1,0% e nell'1,0% e infine `schema.org/article` nello 0,9% delle pagine per dispositivi mobili nel 2021 e nello 0,8% delle pagine per dispositivi mobili nel 2022.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr8oRb8NNs5MbpPpDi7QSsTUTPQL_vxQtQvmn52qGk97gpNhJIHa8VF0x5ZJtWXAFuEbDFZQB6TIuN/pubchart?oid=1393933149&format=interactive",
   sheets_gid="1452747230",
   sql_file="microdata_item_types.sql",
@@ -456,12 +455,12 @@ This growth is seen more drastically on mobile pages, though desktop pages do fo
   )
 }}
 
-Most of the properties for Microdata have not seen much change, with a slight increase in some of the more common properties such as `webpage`, `sitenavigationelement` and `wpheader` appearing in 7.9%, 6.1% and 5.3% of mobile pages respectively.
+La maggior parte delle proprietà per i Microdata non ha subito grandi cambiamenti, con un leggero aumento di alcune delle proprietà più comuni come `webpage`, `sitenavigationelement` e `wpheader` che appaiono rispettivamente nel 7,9%, 6,1% e 5,3% delle pagine per dispositivi mobili .
 
 {{ figure_markup(
   image="microdata-usage-by-device.png",
-  caption="Microdata usage by device",
-  description="Bar chart showing `schema.org/webpage` was used on 7.4% of desktop and 7.9% of mobile pages, `schema.org/sitenavigationelement` on 5.8% and 6.1% respectively, `schema.org/wpheader` on 4.9% and 5.3%, `schema.org/wpfooter` on 4.6% and 4.9%, `schema.org/organization` on 4.3% and 4.3%, `schema.org/blog` on 2.5% and 3.4%, `schema.org/creativework` on 2.4% and 2.5%, `schema.org/imageobject` on 1.7% and 1.9%, `schema.org/person` on 1.6% and 1.4%, `schema.org/website` on 1.4% and 1.4%, `schema.org/postaladdress` on 1.3% and 1.3%, `schema.org/blogposting` on 1.5% and 1.2%, `schema.org/wpsidebar` on 1.1% and 1.2%, `schema.org/imagegallery` on 0.9% and 1.1%, `schema.org/product` on 1.0% and 1.1%, `schema.org/offer` on 0.9% and 1.0%, `schema.org/listitem` on 0.9% and 1.0%, `schema.org/breadcrumblist` on 0.9% and 1.0%, and finally `schema.org/article` was used on 0.8% of both desktop and mobile pages.",
+  caption="Utilizzo dei Microdata per dispositivo",
+  description="Grafico a barre che mostra che `schema.org/webpage` è stato utilizzato rispettivamente nel 7,4% delle pagine desktop e nel 7,9% delle pagine mobili, `schema.org/sitenavigationelement` rispettivamente nel 5,8% e 6,1%, `schema.org/wpheader` nel 4,9% e 5,3%, `schema.org/wpfooter` nel 4,6% e 4,9%, `schema.org/organization` nel 4,3% e 4,3%, `schema.org/blog` nel 2,5% e 3,4%, `schema.org/creativework` nel 2,4% e 2,5%, `schema.org/imageobject` nel 1,7% e 1,9%, `schema.org/person` nel 1,6% e 1,4%, `schema.org/website` nel 1,4% e 1,4% , `schema.org/postaladdress` nel 1,3% e 1,3%, `schema.org/blogposting` nel 1,5% e 1,2%, `schema.org/wpsidebar` nel 1,1% e 1,2%, `schema.org/imagegallery` nello 0,9% e 1,1%, `schema.org/product` nell'1,0% e 1,1%, `schema.org/offer` nello 0,9% e 1,0%, `schema.org/listitem` nello 0,9% e 1,0%, ` schema.org/breadcrumblist` nello 0,9% e nell'1,0% e infine `schema.org/article` è stato utilizzato nello 0,8% delle pagine desktop e mobili.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr8oRb8NNs5MbpPpDi7QSsTUTPQL_vxQtQvmn52qGk97gpNhJIHa8VF0x5ZJtWXAFuEbDFZQB6TIuN/pubchart?oid=1132507895&format=interactive",
   sheets_gid="1452747230",
   sql_file="microdata_item_types.sql",
@@ -470,14 +469,14 @@ Most of the properties for Microdata have not seen much change, with a slight in
   )
 }}
 
-These increases are common for desktop as well, with slight decreases elsewhere such as `wpsidebar` (going from 1.4% to 1.2% on mobile pages and going from 1.3% to 1.1% on desktop pages), resulting in minimum change over the last year for both mobile and desktop pages as a whole.
+Questi incrementi sono comuni anche per i desktop, con leggere diminuzioni altrove come `wpsidebar` (che passa dall'1,4% all'1,2% nelle pagine per dispositivi mobili e dall'1,3% all'1,1% nelle pagine desktop), con una variazione minima nell'ultimo anno sia per le pagine mobili che per quelle desktop nel loro complesso.
 
 ### JSON-LD
 
 {{ figure_markup(
   image="json-ld-usage-by-year-mobile.png",
-  caption="JSON-LD usage by year (mobile)",
-  description="Bar chart showing `WebSite` was used on 8.9% of mobile pages in 2021 and 8.8% in 2022, `Organization` on 6.0% and 6.2% respectively, `LocalBusiness` on 1.7% and 2.8%, `BreadcrumbList` on 1.5% and 1.6%, `WebPage` on 1.0% and 1.1%, `Product` on 0.6% and 0.7%, `ItemList` on 0.5% and 0.5%, `BlogPosting` on 0.5% and 0.4%, `Article` on 0.3% and 0.3%, `Restaurant` on 0.2% and 0.3%, `Person` on 0.3% and 0.3%, `AutoDealer` on 0.2% and 0.2%, `FAQPage` on 0.1% and 0.2%, `Corporation` on 0.2% and 0.2%, `Event` on 0.2% and 0.2%, `Store` on 0.2% and 0.2%, `VideoObject` on 0.2% and 0.1%, and finally `ApartmentComplex` on 0.1% on mobile pages in both 2021 and 2022.",
+  caption="Utilizzo per anno di JSON-LD (dispositivi mobili)",
+  description="Grafico a barre che mostra che `WebSite` è stato utilizzato nell'8,9% delle pagine mobili nel 2021 e nell'8,8% nel 2022, `Organization` rispettivamente nel 6,0% e nel 6,2%, `LocalBusiness` nell'1,7% e nel 2,8%, `BreadcrumbList` nell'1,5% e 1,6%, `WebPage` nel 1,0% e 1,1%, `Product` nel 0,6% e 0,7%, `ItemList` nel 0,5% e 0,5%, `BlogPosting` nel 0,5% e 0,4%, `Article` nel 0,3% e 0,3%, `Restaurant` nello 0,2% e 0,3%, `Person` nello 0,3% e 0,3%, `AutoDealer` nello 0,2% e 0,2%, `FAQPage` nello 0,1% e 0,2%, `Corporation` nello 0,2% e 0,2%, `Event` nello 0,2% e 0,2%, `Store` nello 0,2% e 0,2%, `VideoObject` nello 0,2% e 0,1% e infine `ApartmentComplex` nello 0,1% nelle pagine mobili sia nel 2021 che nel 2022.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr8oRb8NNs5MbpPpDi7QSsTUTPQL_vxQtQvmn52qGk97gpNhJIHa8VF0x5ZJtWXAFuEbDFZQB6TIuN/pubchart?oid=1634241816&format=interactive",
   sheets_gid="1452747230",
   sql_file="jsonld_types.sql",
@@ -486,12 +485,12 @@ These increases are common for desktop as well, with slight decreases elsewhere 
   )
 }}
 
-JSON-LD types continue to be mostly similar with a few notable increases over the previous year. Namely, these are `LocalBusiness` (which has increased to 2.8% of pages in our set) and `Restaurant` (which has increased to 0.3% of pages in our set).
+I tipi JSON-LD continuano ad essere per lo più simili all'anno precedente con però alcuni notevoli incrementi. Vale a dire, questi sono `LocalBusiness`(che è aumentato raggiungendo il 2,8% delle pagine nel nostro set) e `Restaurant` (che è aumentato a quota 0,3% delle pagine nel nostro set).
 
 {{ figure_markup(
   image="json-ld-usage-by-device.png",
-  caption="JSON-LD usage by device",
-  description="Bar chart showing `WebSite` was used on 9.6% of desktop and 8.8% of mobile pages, `Organization` on 6.9% and 6.2% respectively, `LocalBusiness` on 2.3% and 2.8%, `BreadcrumbList` on 1.6% and 1.6%, `WebPage` on 1.0% and 1.1%, `Product` on 0.5% and 0.7%, `ItemList` on 0.6% and 0.5%, `BlogPosting` on 0.2% and 0.4%, `Article` on 0.3% and 0.3%, `Restaurant` on 0.1% and 0.3%, `Person` on 0.3% and 0.3%, `AutoDealer` on 0.3% and 0.2%, `FAQPage` on 0.2% and 0.2%, `Corporation` on 0.2% and 0.2%, `Event` on 0.2% and 0.2%, `Store` on 0.2% and 0.2%, `VideoObject` on 0.2% and 0.1%, and finally `ApartmentComplex` was used on 0.1% of both desktop and mobile pages.",
+  caption="Utilizzo di JSON-LD per dispositivo",
+  description="Grafico a barre che mostra che `WebSite` è stato utilizzato nel 9,6% delle pagine desktop e nell'8,8% delle pagine mobili, `Organization` rispettivamente nel 6,9% e 6,2%, `LocalBusiness` nel 2,3% e 2,8%, `BreadcrumbList` nell'1,6% e nell'1,6% , `WebPage` nel 1,0% e 1,1%, `Product` nel 0,5% e 0,7%, `ItemList` nel 0,6% e 0,5%, `BlogPosting` nel 0,2% e 0,4%, `Article` nel 0,3% e 0,3% , `Restaurant` nello 0,1% e 0,3%, `Person` nello 0,3% e 0,3%, `AutoDealer` nello 0,3% e 0,2%, `FAQPage` nello 0,2% e 0,2%, `Corporation` nello 0,2% e 0,2% , `Event` nello 0,2% e 0,2%, `Store` nello 0,2% e 0,2%, `VideoObject` nello 0,2% e 0,1% e infine `ApartmentComplex` è stato utilizzato nello 0,1% delle pagine desktop e mobili.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr8oRb8NNs5MbpPpDi7QSsTUTPQL_vxQtQvmn52qGk97gpNhJIHa8VF0x5ZJtWXAFuEbDFZQB6TIuN/pubchart?oid=1274560821&format=interactive",
   sheets_gid="1452747230",
   sql_file="jsonld_types.sql",
@@ -500,35 +499,35 @@ JSON-LD types continue to be mostly similar with a few notable increases over th
   )
 }}
 
-These increases are enough to make JSON-LD types have the 2nd biggest positive change since 2021, going from appearing on 33.5% to 36.5% of mobile pages in our set and going from 34.1% to 36.9% on desktop pages.
+Questi incrementi sono sufficienti per consacrare i tipi JSON-LD come il secondo più grande cambiamento positivo dal 2021, con un passaggio dal 33,5% al 36,5% delle pagine mobili nel nostro set e dal 34,1% al 36,9% delle pagine desktop.
 
-#### JSON-LD Relationships
+#### Relazioni JSON-LD
 
-When evaluating JSON-LD, we can focus on the most recurring patterns of relationships among the different classes. More than with other syntaxes, JSON-LD expresses the value of graphs in structured data. An `Article`, for example, is frequently characterized by a linked `image` and the entity type `Person` to represent its _author_. Quite similarly, we would see that `BlogPosting` is also connected with image but as a frequent relationship with the `Organization` that serves as `Publisher`.
+Quando valutiamo JSON-LD, possiamo concentrarci sui modelli più ricorrenti di relazioni tra le diverse classi. Più di altre sintassi, la forma con JSON-LD esprime il valore dei grafi nei dati strutturati. Un `Article` (_articolo_), ad esempio, è spesso caratterizzato da un'`Image`(_immagine_) collegata e dal tipo di entità `Person` (_persona_) per rappresentare il suo `Author` (_autore_). Allo stesso modo, vedremmo che `BlogPosting` è anche connesso con `Image`(_immagine_), ma più spesso con l'`Organization` (_organizzazione_) che funge da `Publisher` (_editore_).
 
-Some types are purely syntactic like `BreadcrumbList` that is used exclusively to connect different items (`itemListElement`) of a site navigation’s system or a `Question` that is typically linked with its answer (`acceptedAnswer`). Other elements deal with meanings: a `LocalBusiness` typically is linked to an `address` and to the opening hours (`openingHoursSpecification`).
+Alcuni tipi di dati sono puramente sintattici come `BreadcrumbList` (_elenco-a-briciole-di-pane_) che viene utilizzato esclusivamente per collegare diversi elementi (`itemListElement`) del sistema di navigazione di un sito o una `Question` (_domanda_) che è tipicamente collegata alla sua `acceptedAnswer` (_risposta_). Altri elementi riguardano i significati: un `LocalBusiness` (_attività-locale_) è tipicamente legato ad un `address` (_indirizzo_) e agli `openingHoursSpecification` (_orari-di-apertura_).
 
-With this analysis we want to share a birds-eye overview of the most common types of relationships between entities and the subtle differences between let’s say `Article` and `BlogPosting`.
+Con questa analisi vogliamo condividere una panoramica a volo d'uccello dei tipi più comuni di relazioni tra entità e delle sottili differenze tra, diciamo, `Article` e `BlogPosting`.
 
-Here below we can see the common links between the different types, based on how frequently they occur within all structure/relationship values. Some of these structures are typically part of larger relationship chains.
+Qui di seguito possiamo vedere i collegamenti comuni tra i diversi tipi, in base alla frequenza con cui si verificano all'interno di tutti i valori di struttura/relazione. Alcune di queste strutture fanno tipicamente parte di catene di relazioni più ampie.
 
 {{ figure_markup(
   image="structured-data-json-ld-entities-relationships.svg",
-  caption="JSON-LD entity relationship as a Sankey diagram.",
-  description='Sankey diagram showing a complex interweaving of relationships of the form: "From" -> "Relationship" -> "To". `WebPage` is the largest "From" item branching off to multiple "Relationship" types and "To" results (for example `WebPage` -> `PotentialAction` -> `SearchAction`). This is followed by `WebSite`, then `Organization`, `Product`, `BreadCrumblist`, `BlogPosting` and then a decreasingly used list of other items. Of the middle "Relationships" column `PotentialAction` is used most, followed by `ItemListElement`, `IsPartOf`, `Publisher`, `image` and then a similar long tail of ever-decreasing usage. The "To" column has `ImageObject` as the most used at the top, following by `Organization`, `SearchAction`, `ListItem`, `WebSite`, `WebPage` and then again a longer tail of every decreasing usage. The general sense created by the graph is a lot of different relationships with much cross-usage between the three columns.',
+  caption="Relazione tra entità JSON-LD in un diagramma di Sankey.",
+  description='Diagramma di Sankey che mostra un complesso intreccio di relazioni della forma: "Da" -> "Relazione" -> "A". `WebPage` è l'elemento "Da" più grande che si dirama a più tipi di "Relazione" e risultati "A" (ad esempio `WebPage` -> `PotentialAction` -> `SearchAction`). Questo è seguito da `WebSite`, quindi `Organization`, `Product`, `BreadCrumblist`, `BlogPosting` e quindi un elenco di altri elementi utilizzato in modo decrescente. Della colonna centrale "Relazioni" viene utilizzata maggiormente `PotentialAction`, seguita da `ItemListElement`, `IsPartOf`, `Publisher`, `image` e quindi una lunga coda simile di utilizzi in progressiva diminuzione. La colonna "A" ha `ImageObject` come il più utilizzato in alto, seguito da `Organization`, `SearchAction`, `ListItem`, `WebSite`, `WebPage` e poi, di nuovo, una coda anche più lunga di ogni utilizzi sempre meno frequenti. Il senso generale suggerito dal grafico è una gran quantità di relazioni diverse con un elevato uso incrociato tra le tre colonne.',
   width=1200,
   height=1200
   )
 }}
 
-The analysis also provides an overview of the verticals behind these constructs: from news and media to e-commerce, from local businesses to events, and so on.
+L'analisi fornisce anche una panoramica degli ambiti verticali alla base di questi costrutti: dalle notizie e dai media all'e-commerce, dalle attività locali agli eventi e così via.
 
-Here below we can see the same data interactively with the source attribute on the left and the target class on the right.
+Qui sotto possiamo vedere gli stessi dati in modo interattivo con l'attributo sorgente a sinistra e la classe target a destra.
 
 {{ figure_markup(
   image="sankey.png",
-  caption="Sankey Chart.",
-  description='Sankey chart showing the flows with source attribute on the left and the target class on the right. The top used flows are `itemListElement` to `ListItem`, `isPartOf` to `Website`, `potentialAction` to both `SearchAction` and `ReadAction`, and `image`, `logo`, and `primaryImageOfPage` to `ImageObject`, followed with a long list of lesser used relationships.',
+  caption="Grafico di Sankey.",
+  description='Grafico di Sankey che mostra i flussi con l'attributo di origine a sinistra e la classe di destinazione a destra. I flussi più utilizzati sono da `itemListElement` a `ListItem`, da `isPartOf` a `Website`, da `potentialAction` a `SearchAction` e `ReadAction` e da `image`, `logo` e `primaryImageOfPage` a `ImageObject `, seguito da un lungo elenco di relazioni meno utilizzate.',
   chart_url="/en/2022/embeds/structured-data-sankey",
   width=600,
   height=1200,
@@ -537,14 +536,14 @@ Here below we can see the same data interactively with the source attribute on t
   )
 }}
 
-The main limitation of this analysis is represented by the fact that we can evaluate relationship chains at the homepage level.
+Il limite principale di questa analisi è rappresentato dal fatto che possiamo valutare le catene di relazioni a livello di homepage.
 
 #### `SameAs`
 
 {{ figure_markup(
   image="sameas-usage-by-year-mobile.png",
-  caption="`SameAs` usage by year (mobile)",
-  description="Bar chart showing `WebSite` was used on 4.3% of mobile pages in both 2021 and 2022, `instagram.com` on 2.7% and 2.9% respectively, `twitter.com` on 2.5% and 2.3%, `youtube.com` on 1.8% and 1.8%, `linkedin.com` on 1.0% and 1.0%, `pinterest.com` on 0.6% and 0.6%, `google.com` on 0.5% and 0.4%, `wikipedia.org` on 0.1% and 0.1%, `wikidata.org` on 0.1% and 0.1%, `yelp.com` on 0.1% and 0.1%, `tumblr.com` on 0.1% and 0.1%, `uptodown.io` on 0.1% and 0.1%, `vk.com` on 0.1% and 0.1%, and `t.me`, `soundcloud.com`, `pinterest.co.uk`, `tripadvisor.com`, `flickr.com`, and `vimeo.com` all were used on 0.0% of mobile pages in both 2021 and 2022.",
+  caption="Utilizzo per anndo di `SameAs` (dispositivi mobili)",
+  description="Grafico a barre che mostra che `WebSite` è stato utilizzato nel 4,3% delle pagine mobili sia nel 2021 che nel 2022, `instagram.com` rispettivamente nel 2,7% e nel 2,9%, `twitter.com` nel 2,5% e nel 2,3%, `youtube.com` nel 1,8% e 1,8%, `linkedin.com` nel 1,0% e 1,0%, `pinterest.com` nello 0,6% e 0,6%, `google.com` nello 0,5% e 0,4%, `wikipedia.org` nello 0,1 % e 0,1%, `wikidata.org` nello 0,1% e 0,1%, `yelp.com` nello 0,1% e 0,1%, `tumblr.com` nello 0,1% e 0,1%, `uptodown.io` nello 0,1% e 0,1%, `vk.com` nello 0,1% e 0,1% e `t.me`, `soundcloud.com`, `pinterest.co.uk`, `tripadvisor.com`, `flickr.com` e ` vimeo.com` sono stati tutti utilizzati nello 0,0% delle pagine mobili sia nel 2021 che nel 2022.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr8oRb8NNs5MbpPpDi7QSsTUTPQL_vxQtQvmn52qGk97gpNhJIHa8VF0x5ZJtWXAFuEbDFZQB6TIuN/pubchart?oid=1443969983&format=interactive",
   sheets_gid="1452747230",
   sql_file="jsonld_same_ases.sql",
@@ -553,12 +552,12 @@ The main limitation of this analysis is represented by the fact that we can eval
   )
 }}
 
-As was the case in 2021, the most common values of the `sameAs` property are social media platforms. These include facebook.com (at 4.32% on mobile and 4.94% on desktop), instagram.com (at 2.93% on mobile and 3.34% on desktop) and twitter.com (at 2.30% on mobile and 2.86% on desktop). The former two of which have seen a slight increase on mobile from 2021, with all 3 increasing on desktop.
+Come nel 2021, i valori più comuni della proprietà `sameAs` sono le piattaforme di social media. Queste includono facebook.com (al 4,32% su mobile e 4,94% su desktop), instagram.com (al 2,93% su mobile e 3,34% su desktop) e twitter.com (al 2,30% su mobile e 2,86% su desktop). I primi due fra questi hanno visto un leggero aumento sui dispositivi mobili dal 2021, e tutti e 3 in aumento sul desktop.
 
 {{ figure_markup(
   image="sameas-usage-by-device.png",
-  caption="`SameAs` usage by device",
-  description="Bar chart showing `facebook.com` was used on 4.9% of desktop and 4.3% of mobile pages, `instagram.com` on 3.3% and 2.9% respectively, `twitter.com` on 2.9% and 2.3%, `youtube.com` on 2.1% and 1.8%, `linkedin.com` on 1.4% and 1.0%, `pinterest.com` on 0.7% and 0.6%, `google.com` on 0.5% and 0.4%, `wikipedia.org` on 0.1% and 0.1%, `wikidata.org` on 0.1% and 0.1%, `yelp.com` on 0.1% and 0.1%, `tumblr.com` on 0.1% and 0.1%, `uptodown.io` on 0.1% and 0.1%, `vk.com` on 0.1% and 0.1%, and `t.me`, `soundcloud.com`, `pinterest.co.uk`, `tripadvisor.com`, `flickr.com`, and `vimeo.com` were all used on 0.0% of both desktop and mobile pages.",
+  caption="Utilizzo di `SameAs` per dispositivo",
+  description="Grafico a barre che mostra che `facebook.com` è stato utilizzato nel 4,9% delle pagine desktop e nel 4,3% delle pagine mobili, `instagram.com` rispettivamente nel 3,3% e nel 2,9%, `twitter.com` nel 2,9% e nel 2,3%, `youtube.com` nel 2,1% e 1,8%, `linkedin.com` nel 1,4% e 1,0%, `pinterest.com` nello 0,7% e 0,6%, `google.com` nello 0,5% e 0,4%, `wikipedia.org` nello 0,1% e 0,1%, `wikidata.org` nello 0,1% e 0,1%, `yelp.com` nello 0,1% e 0,1%, `tumblr.com` nello 0,1% e 0,1%, `uptodown.io` nello 0,1% % e 0,1%, `vk.com` nello 0,1% e 0,1% e `t.me`, `soundcloud.com`, `pinterest.co.uk`, `tripadvisor.com`, `flickr.com` e `vimeo.com` sono stati tutti utilizzati nello 0,0% delle pagine desktop e mobili.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr8oRb8NNs5MbpPpDi7QSsTUTPQL_vxQtQvmn52qGk97gpNhJIHa8VF0x5ZJtWXAFuEbDFZQB6TIuN/pubchart?oid=30131405&format=interactive",
   sheets_gid="1452747230",
   sql_file="jsonld_same_ases.sql",
@@ -567,14 +566,14 @@ As was the case in 2021, the most common values of the `sameAs` property are soc
   )
 }}
 
-The rest of the list includes information sources such as wikipedia.org (at 0.13% on both mobile and desktop) and yelp.com (at 0.11% on mobile and 0.13% on desktop), both at an increase from the previous year.
+Il resto dell'elenco include fonti di informazione come wikipedia.org (allo 0,13% sia su dispositivi mobili che desktop) e yelp.com (allo 0,11% su dispositivi mobili e 0,13% su desktop), entrambi in aumento rispetto all'anno precedente.
 
-#### Further JSON-LD insights - relative changes
+#### Ulteriori approfondimenti JSON-LD - modifiche relative
 
 {{ figure_markup(
   image="sameas-relative-change.png",
-  caption="`SameAs` relative change",
-  description="Bar chart showing `tiktok.com` changed by 600% by both desktop and mobile pages, `spotify.com` by 100.00% on desktop and 200.00% on mobile, `pinterest.fr` by 200.00% and 200.00% respectively, `t.me` by 133.33% and 133.33%, `flickr.com` by 150.00% and 133.33%, `wikipedia.org` by 118.18% and 118.18%, `instagram.com` by 106.93% and 112.46%, `tumblr.com` by 112.50% and 111.11%, `yelp.com` by 110.00% and 108.33%, `facebook.com` by 101.41% and 107.39%, `snapchat.com` by 100.00% and 100.00%, `vimeo.com` by 100.00% and 100.00%, `tripadvisor.com` by 100.00% and 100.00%, `trello.com` by 100.00% and 100.00%, `xing.com` by 100.00% and 100.00%, `pinterest.co.uk` by 133.33% and 100.00%, `behance.net`, `crunchbase.com`, `myspace.com`, `pinterest.ca`, and `pinterest.com.au` all changed by 200.00% on desktop and 100.00% on mobile.",
+  caption="Modifica relativa a `SameAs`",
+  description="Grafico a barre che mostra che `tiktok.com` è cambiato del 600% nelle pagine sia desktop che mobili, `spotify.com` del 100,00% su desktop e del 200,00% su dispositivo mobile, `pinterest.fr` rispettivamente del 200,00% e del 200,00%, `t.me` del 133,33% e 133,33%, `flickr.com` del 150,00% e 133,33%, `wikipedia.org` del 118,18% e 118,18%, `instagram.com` del 106,93% e 112,46%, `tumblr.com` del 112,50% e del 111,11%, `yelp.com` del 110,00% e del 108,33%, `facebook.com` del 101,41% e del 107,39%, `snapchat.com` del 100,00% e del 100,00%, `vimeo.com` del 100.00% e 100.00%, `tripadvisor.com` del 100.00% e 100.`xing.com` del 100.00% e 100.00%, `pinterest.co.uk` del 133,33% e 100,00%, `behance.net`, `crunchbase.com`, `myspace.com`, `pinterest.ca` e `pinterest.com.au` sono tutti cambiati del 200,00% su desktop e del 100,00% su dispositivi mobili .",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr8oRb8NNs5MbpPpDi7QSsTUTPQL_vxQtQvmn52qGk97gpNhJIHa8VF0x5ZJtWXAFuEbDFZQB6TIuN/pubchart?oid=1046677446&format=interactive",
   sheets_gid="1452747230",
   sql_file="jsonld_same_ases.sql",
@@ -583,12 +582,12 @@ The rest of the list includes information sources such as wikipedia.org (at 0.13
   )
 }}
 
-It is insightful to look at the `SameAs` entries and how they change over time. TikTok has seen a huge increase with 2022 showing its appearance on six times as many pages relative to our set compared to 2021. This change is equal for both desktop and mobile pages. Pinterest, and the various domain names it has, make up for 3 of the top 5 largest growth for mobile pages in 2022. Mobile overall has seen a larger increase for `SameAs` entries than desktop, with Spotify being an exception with its desktop page appearances being doubled compared to 2021.
+È interessante osservare le voci `SameAs` e come esse cambiano nel tempo. TikTok ha registrato un enorme aumento con il 2022 che ha visto la sua apparizione in un numero di pagine sei volte superiore rispetto al nostro set del 2021. Questa modifica è uguale sia per le pagine desktop che per quelle mobili. Pinterest e i vari nomi di dominio che ha, compensano 3 delle prime 5 maggiori crescite per le pagine mobili nel 2022. Il mobile nel complesso ha visto un aumento maggiore per le voci `SameAs` rispetto al desktop, con Spotify che fa eccezione con le occorrenze nelle pagine desktop raddoppiate rispetto al 2021.
 
 {{ figure_markup(
   image="sameas-domain-average-relative-change.png",
-  caption="`SameAs` domain average relative change",
-  description="Bar chart showing `fr` changed by 200% by both desktop and mobile pages, `site` by 200.00% on desktop and 100.00% on mobile, `de` by 200% and 100% respectively, `com` by 125% and 118%, `me` by 117% and 117%, `org` by 103% and 106%, `net` by 100% and 200%, `ca` by 100% and 200%, `co` by 100% and 117%, and finally `it`, `page`, and `es` by 100% on both desktop and mobile.",
+  caption="Modifica relativa alla media di dominio `SameAs`",
+  description="Grafico a barre che mostra `fr` modificato del 200% sia nelle pagine desktop che da quelle per dispositivi mobili, `site` del 200,00% su desktop e del 100,00% su dispositivi mobili, `de` rispettivamente del 200% e del 100%, `com` del 125% e 118 %, `me` del 117% e 117%, `org`" del 103% e 106%, `net` del 100% e 200%, `ca` del 100% e 200%, `co` del 100% e 117 %, e infine `it`, `page` e `es` del 100% sia su desktop che su dispositivi mobili.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr8oRb8NNs5MbpPpDi7QSsTUTPQL_vxQtQvmn52qGk97gpNhJIHa8VF0x5ZJtWXAFuEbDFZQB6TIuN/pubchart?oid=1247757269&format=interactive",
   sheets_gid="1452747230",
   sql_file="jsonld_same_ases.sql",
@@ -597,12 +596,12 @@ It is insightful to look at the `SameAs` entries and how they change over time. 
   )
 }}
 
-Looking at the domain names of the `SameAs` entries, and how they change over time, also may give valuable insight. In the largest desktop page growth we see `.ca`, `.net` and `.fr`, with the latter also being up there in the top for mobile page increases. As this is an average, the amount of entries is not accounted for. In both years .com is far larger in numbers than all other entries, but the average change is 125% for mobile pages and 117% for desktop pages. The Canadian and French domain averages are heavily boosted by Pinterest, which—as mentioned above—has seen widespread increases from last year. In fact, 7 out of the top 10 `SameAs` domain growers have Pinterest in their entries, sometimes being their only entry.
+Anche esaminare i nomi di dominio delle voci `SameAs` e il modo in cui cambiano nel tempo può fornire informazioni preziose. Nel gruppo con maggiore crescita in pagine desktop vediamo `.ca`, `.net` e `.fr`, con quest'ultimo che si trova anche nella parte con incrementi maggiori nelle pagine mobili. Poiché si tratta di una media, la quantità di voci non viene contabilizzata. In entrambi gli anni `.com` è molto più numeroso di tutte le altre voci, ma la variazione media è del 125% per le pagine mobili e del 117% per le pagine desktop. Le medie dei domini canadesi e francesi sono fortemente spinte da Pinterest, che, come accennato in precedenza, ha registrato aumenti ovunque rispetto allo scorso anno. In effetti, 7 dei primi 10 domini `SameAs` in crescita hanno Pinterest nelle loro voci, che a volte è la loro unica voce.
 
 {{ figure_markup(
   image="json-ld-contexts-relative-change.png",
-  caption="JSON-LD contexts relative change",
-  description="Bar chart showing `contao.org` had a 819% increase on desktop and 701% on mobile, for `contao.org` it was 819% and 701% respectively, for `rich-snippets.io` 579% and 849%, for `inventorychanger.ru` 232% and 94%, for `itall.com` 232% and 94%, for `ftmo.com` 232% and 189%, for `drivealfaaromeo.com` 232% and 189%, for `congresopuebla.gob.mx` 232% and 189%, for `pompiers.brussels` 232% and 189%, for `urldefense.com` 232% and 252%, for `googleapis.com` 227% and 214%, and finally for `archive.org` there was a 174% increase on desktop and 157% on mobile.",
+  caption="Cambiamenti relativi rispetto al 2021 dei contesti JSON-LD",
+  description="Grafico a barre che mostra che `contao.org` ha avuto un aumento dell'819% su desktop e del 701% su mobile, per `contao.org` è stato rispettivamente dell'819% e del 701%, per `rich-snippets.io` del 579% e 849%, per `inventorychanger.ru` 232% e 94%, per `itall.com` 232% e 94%, per `ftmo.com` 232% e 189%, per `drivealfaaromeo.com` 232% e 189% , per `congresopuebla.gob.mx` 232% e 189%, per `pompiers.brussels` 232% e 189%, per `urldefense.com` 232% e 252%, per `googleapis.com` 227% e 214%, e infine per `archive.org` c'è stato un aumento del 174% su desktop e del 157% su mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr8oRb8NNs5MbpPpDi7QSsTUTPQL_vxQtQvmn52qGk97gpNhJIHa8VF0x5ZJtWXAFuEbDFZQB6TIuN/pubchart?oid=1092709727&format=interactive",
   sheets_gid="1452747230",
   sql_file="jsonld_contexts.sql",
@@ -611,24 +610,24 @@ Looking at the domain names of the `SameAs` entries, and how they change over ti
   )
 }}
 
-For JSON-LD contexts, schema.org is by far the largest contributor, with over 6,000 times as many appearances for desktop pages and over 3,500 times as many appearances for mobile pages than the second largest contributor, googleapis.com. With that said, googleapis.com's appearances more than doubled for both desktop and mobile pages, compared to schema.org's more modest increase to 108% of last year's numbers. In terms of top growers, contao.org and rich-snippets.io take the top spots with contao.org's desktop page increase of 819% and rich-snippets.io's mobile increase of 849%. Contao.org ranks 4th in total entries, while rich-snippets.io ranks at 8th.
+Per i contesti JSON-LD, schema.org è di gran lunga il maggior contributore, con oltre 6.000 volte il numero di occorrenze in pagine desktop e oltre 3.500 volte il numero di occorenze in pagine mobili rispetto al secondo contributore, googleapis.com. Detto questo, le occorrenze di googleapis.com sono più che raddoppiate sia per le pagine desktop che per quelle mobili, a differenza del modesto aumento di schema.org al 108% dei valori dello scorso anno. In termini di maggior crescita, contao.org e rich-snippets.io occupano i primi posti con l'aumento dell'819% nelle pagine desktop di contao.org e l'aumento dell'849% nelle pagine mobili di rich-snippets.io. Contao.org è al 4° posto nel totale delle voci, mentre rich-snippets.io è all'8° posto.
 
-## Conclusion
+## Conclusione
 
-A lot has been outlined about how structured data affects the web and, by extension, our experience. This year we also focused on comparing how the adoption of structured data has changed over a year. We could see, for example, the general increase in some classes like LocalBusiness (particularly for Restaurants) or FAQ and the slight decrease in usage for some of the less relevant structured data types that come from `foaf` or the microdata syntax.
+Molto è stato mostrato su come i dati strutturati influenzano il web e, per estensione, la nostra esperienza. Quest'anno, in più, ci siamo concentrati sul confronto di come è cambiata l'adozione dei dati strutturati nel corso di un anno. Abbiamo potuto vedere, ad esempio, l'aumento generale di alcune classi come LocalBusiness (in particolare per i ristoranti) o FAQ e la leggera diminuzione dell'utilizzo di alcuni dei tipi di dati strutturati meno rilevanti che provengono da `foaf` o dalla sintassi dei microdati.
 
-Although far from being a comprehensive list, we can see structured (linked) data bringing several advantages to:
+Sebbene lungi dall'essere un elenco completo, notiamo che i dati strutturati (collegati) apportano diversi vantaggi a:
 
-- Ecommerce pages
-- Business pages
-- Researchers
-- Social media sites
-- Users
+- Pagine di e-commerce
+- Pagine aziendali
+- Ricercatori
+- Siti di social media
+- Utenti
 
-Through SEO, increased discoverability, general data linking, and rich results drive the adoption. Implementing semantic markup within web pages results in a more connected and accessible web.
+Spingono l'adozione i fini SEO, una maggiore trovabilità, il collegamento fra dati e i risultati arricchiti. L'implementazione del markup semantico all'interno delle pagine web si traduce in un web più connesso e accessibile.
 
-With more information and insight available than ever, it is essential to understand the capabilities and limitations of specific techniques or choices when trying to increase web page traffic. Adding fake reviews or misleading data in the hopes of improving SEO will be detected, resulting in fewer benefits from those mentioned above and poorer discoverability and performance from search engines.
+Con informazioni e approfondimenti più disponibili che mai, è essenziale comprendere le capacità e i limiti di tecniche o di scelte specifiche quando si cerca di aumentare il traffico di una pagina web. L'aggiunta di recensioni false o dati fuorvianti nella speranza di migliorare la SEO verrà facilmente scoperta, con conseguenti minori benefici dei soggetti sopra menzionati e minore trovabilità e prestazioni da parte dei motori di ricerca.
 
-As already seen in the previous year, while SEO remains a crucial driver for adopting structured data, a growing landscape of use cases is emerging beyond search engines. Website owners are adding data in diverse scenarios to make their systems interoperable, train their content recommendation systems, and gain new insights from web pages.
+Come già visto nell'anno precedente, sebbene la SEO rimane un driver cruciale per l'adozione di dati strutturati, sta emergendo un panorama crescente di casi d'uso al di là dei motori di ricerca. I proprietari di siti web stanno aggiungendo dati in diversi scenari per rendere i loro sistemi interoperabili, addestrare i loro sistemi di suggerimento dei contenuti e ottenere nuove informazioni dalle pagine web.
 
-Although this is only the second year for this chapter in the Web Almanac, we are excited to see how these trends continue and change, along with the state of structured data on the web. With all of the benefits structured data brings, we expect an increasing implementation of these technologies.
+Anche se questo è solo il secondo anno in cui compare questo capitolo nel Web Almanac, siamo felici di vedere come queste tendenze si confermano e cambiano in seguito allo stato dei dati strutturati sul web. Con tutti i vantaggi che i dati strutturati offrono, prevediamo un'implementazione crescente di queste tecnologie.
