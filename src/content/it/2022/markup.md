@@ -7,7 +7,7 @@ reviewers: [bkardell, zcorpan]
 analysts: [rviscomi]
 editors: [tunetheweb]
 translators: [webmatter-it]
-j9t_bio: Jens Oliver Meiert è un ingegnere capo e autore (<a hreflang="en" href="https://leanpub.com/web-development-glossary"><cite>The Web Development Glossary</cite></a>, <a hreflang="en" href="https://www.amazon.com/dp/B094W54R2N/"><cite>Upgrade Your HTML</cite></a>), che lavora in qualità di engineering manager presso <a hreflang="en" href="https://www.liveperson.com/">LivePerson</a>. È specializzato nella minimizzazione e ottimizzazione dell'HTML e dei CSS. Jens scrive regolarmente sul mestiere dello sviluppo web sul suo sito <a hreflang="en" href="https://meiert.com/en/">meiert.com</a>.
+j9t_bio: Jens Oliver Meiert è un ingegnere capo e autore (<a hreflang="en" href="https://leanpub.com/web-development-glossary"><cite>The Web Development Glossary</cite></a>, <a hreflang="en" href="https://www.amazon.com/dp/B094W54R2N/"><cite>Upgrade Your HTML</cite></a>), che lavora in qualità di engineering manager presso <a hreflang="en" href="https://www.liveperson.com/">LivePerson</a>. È specializzato nella minimizzazione e ottimizzazione dell'HTML e dei CSS. Jens scrive regolarmente a proposito dell'arte dello sviluppo web sul suo sito <a hreflang="en" href="https://meiert.com/en/">meiert.com</a>.
 results: https://docs.google.com/spreadsheets/d/1grkd2_1xSV3jvNK6ucRQ0OL1HmGTsScHuwA8GZuRLHU/
 featured_quote: Senza l'HTML non ci possono essere pagine web, siti web, app web. Si può dire che senza HTML non ci sarebbe il Web. Ciò rende l'HTML uno degli standard web più importanti, se non il più importante standard web.
 featured_stat_1: 90%
@@ -22,7 +22,7 @@ featured_stat_label_3: Elementi HTML che sono `div`.
 
 Come diceva il [capitolo del 2020](../2020/markup#introduction), senza l'HTML non ci possono essere pagine web, siti web, app web. Si può dire che senza HTML non ci sarebbe il Web. Ciò rende l'HTML uno degli standard web più importanti, se non il più importante standard web.
 
-Di conseguenza, come ogni anno, abbiamo utilizzato i milioni di pagine nel nostro set di dati (7,9 milioni nel set mobile, 5,4 milioni nel set desktop, con sovrapposizione) per esaminare anche l'HTML. Questo capitolo non copre "tutto" sull'HTML, quindi sei caldamente invitato ad [analizzare anche i dati raccolti](https://docs.google.com/spreadsheets/d/1grkd2_1xSV3jvNK6ucRQ0OL1HmGTsScHuwA8GZuRLHU/edit) e a condividere le tue riflessioni e, nel caso, a taggarle: [#htmlalmanac](https://twitter.com/hashtag/htmlalmanac).
+Di conseguenza, come ogni anno, abbiamo utilizzato i milioni di pagine nel nostro set di dati (7,9 milioni nel set di pagine per dispositivi mobili, 5,4 milioni nel set di paginne desktop, con sovrapposizione) per esaminare anche l'HTML. Questo capitolo non copre "tutto" sull'HTML, quindi siete caldamente invitati ad [analizzare anche i dati raccolti](https://docs.google.com/spreadsheets/d/1grkd2_1xSV3jvNK6ucRQ0OL1HmGTsScHuwA8GZuRLHU/edit) e a condividere le vostre riflessioni e, nel caso, a taggarle: [#htmlalmanac](https://twitter.com/hashtag/htmlalmanac).
 
 ## Dati del documento
 
@@ -42,33 +42,33 @@ C'è molto di cui essere curiosi quando si tratta di come scriviamo l'HTML. Poss
     <tbody>
       <tr>
         <td>`html`</td>
-        <td class="numeric">88.1%</td>
-        <td class="numeric">90.0%</td>
+        <td class="numeric">88,1%</td>
+        <td class="numeric">90,0%</td>
       </tr>
       <tr>
         <td>`html -//w3c//dtd xhtml 1.0 transitional//en http://www.w3.org/tr/xhtml1/dtd/xhtml1-transitional.dtd`</td>
-        <td class="numeric">4.7%</td>
-        <td class="numeric">3.9%</td>
+        <td class="numeric">4,7%</td>
+        <td class="numeric">3,9%</td>
       </tr>
       <tr>
-        <td>No doctype</td>
-        <td class="numeric">3.0%</td>
-        <td class="numeric">2.7%</td>
+        <td>Nessun doctype</td>
+        <td class="numeric">3,0%</td>
+        <td class="numeric">2,7%</td>
       </tr>
       <tr>
         <td>`html -//w3c//dtd xhtml 1.0 strict//en http://www.w3.org/tr/xhtml1/dtd/xhtml1-strict.dtd`</td>
-        <td class="numeric">1.2%</td>
-        <td class="numeric">1.1%</td>
+        <td class="numeric">1,2%</td>
+        <td class="numeric">1,1%</td>
       </tr>
       <tr>
         <td>`html -//w3c//dtd html 4.01 transitional//en http://www.w3.org/tr/html4/loose.dtd`</td>
-        <td class="numeric">0.9%</td>
-        <td class="numeric">0.6%</td>
+        <td class="numeric">0,9%</td>
+        <td class="numeric">0,6%</td>
       </tr>
       <tr>
         <td>`html -//w3c//dtd html 4.01 transitional//en`</td>
-        <td class="numeric">0.4%</td>
-        <td class="numeric">0.4%</td>
+        <td class="numeric">0,4%</td>
+        <td class="numeric">0,4%</td>
       </tr>
     </tbody>
   </table>
@@ -81,37 +81,37 @@ C'è molto di cui essere curiosi quando si tratta di come scriviamo l'HTML. Poss
   </figcaption>
 </figure>
 
-Cominciamo con i doctype: qual è il più popolare? Certamente per questa domanda sai già la risposta: è il corto, semplice e noioso standard dei tipi di documento HTML, vale a dire `<!DOCTYPE html>`.
+Cominciamo con i doctype: qual è il più popolare? Certamente conoscete già la risposta: è il semplice, stringato e noioso doctype standard HTML, vale a dire `<!DOCTYPE html>`.
 
 {{ figure_markup(
   content="90%",
-  caption="Page mobili che usano il doctype standard HTML.",
+  caption="Pagine mobili che usano il doctype standard HTML.",
   classes="big-number",
   sheets_gid="1535288056",
   sql_file="doctype.sql",
 ) }}
 
-Il 90% di tutte le pagine per dispositivi mobili lo utilizza: poiché il set di dati per dispositivi mobili è più grande, questo capitolo di solito si baserà su tali dati. Il secondo più popolare è XHTML 1.0 Transitional (3,9%, [in calo rispetto al 4,6% del 2021](../2021/markup#doctypes)). A seguire al 2,7% è la configurazione in cui non viene definito alcun doctype, in salita rispetto al 2,5% dell'anno scorso.
+Il 90% di tutte le pagine per dispositivi mobili lo utilizza: poiché il set di dati per dispositivi mobili è più grande di quello desktop, questo capitolo si baserà principalmente su tali dati. Il secondo doctype più popolare è XHTML 1.0 Transitional (3,9%, [in calo rispetto al 4,6% del 2021](../2021/markup#doctypes)). A seguire al 2,7% sono le pagine in cui non viene definito alcun doctype, in salita rispetto al 2,5% dell'anno scorso.
 
 ### Compressione
 
 {{ figure_markup(
    image="content-encoding.png",
    caption="Codifica del contenuto del documento HTML.",
-   description="Grafico a barre in pila, che mostra che il 28% dei documenti HTML desktop e mobile viene compresso con Brotli, il 58% dei documenti desktop e mobile viene compresso con Gzip e il 14% dei documenti HTML desktop e il 13% dei dispositivi mobili non viene compresso affatto.",
+   description="Grafico a barre impilate, che mostra che il 28% dei documenti HTML desktop e mobili viene compresso con Brotli, il 58% dei documenti desktop e mobili viene compresso con Gzip e il 14% dei documenti HTML desktop e il 13% dei dispositivi mobili non viene compresso affatto.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRjXjOczLu9q3mcQ-UFLUOmZgefGNCPVYeEwo4cDxQTymgmD_1D5dbZ728Mz1SkEMZHxQgwcWmLjkgx/pubchart?oid=1176900527&format=interactive",
    sheets_gid="1434175283",
    sql_file="content_encoding.sql",
 )}}
 
-I documenti HTML vengono compressi? Quanti? Come? L'86% di essi lo è, con il 58% (in calo del 5,8% rispetto allo scorso anno) compresso tramite Gzip e il 28% (in aumento del 6,1%) è compresso tramite Brotli. In totale risultano compressi un po' più documenti e vengono compressi in modo più efficiente.
+I documenti HTML sono compressi? Quanti lo sono? In che modo? L'86% di essi lo è, con il 58% (in calo del 5,8% rispetto allo scorso anno) compresso tramite Gzip e il 28% (in aumento del 6,1%) compresso tramite Brotli. In totale rispetto all'anno scorso risulta compresso un numero leggermente maggiore di documenti e con compressione più efficiente.
 
 ### Lingue
 
 {{ figure_markup(
   image="html-languages.png",
-  caption="Valori più popolari per le lingue regionali nell'attributo `lang` HTML.",
-  description="Grafico a barre che mostra che `en` è la lingua impostata nel 22% delle pagine desktop e nel 19% delle pagine mobile, `(not set)` è rispettivamente nel 18% e 17%, `en-us` nel 16% e 13%, `ja` nel 6% e 6%, `es` nel 4% e 5%, `pt-br` nel 2% e 3%, `en-gb` nel 2% e 2%, `ru` nel 2 % e 2%, `de` nel 2% e 2% e `de-de` nell'1% delle pagine desktop e sul 2% delle pagine mobili.",
+  caption="Valori di lingue regionali più diffusi (attributo `lang` dell'HTML).",
+  description="Grafico a barre che mostra che `en` è la lingua impostata nel 22% delle pagine desktop e nel 19% delle pagine mobili, `(not set)` è rispettivamente nel 18% e 17%, `en-us` nel 16% e 13%, `ja` nel 6% e 6%, `es` nel 4% e 5%, `pt-br` nel 2% e 3%, `en-gb` nel 2% e 2%, `ru` nel 2 % e 2%, `de` nel 2% e 2% e `de-de` nell'1% delle pagine desktop e sul 2% delle pagine mobili.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRjXjOczLu9q3mcQ-UFLUOmZgefGNCPVYeEwo4cDxQTymgmD_1D5dbZ728Mz1SkEMZHxQgwcWmLjkgx/pubchart?oid=677908280&format=interactive",
   sheets_gid="1194853402",
   sql_file="lang.sql",
@@ -119,7 +119,7 @@ I documenti HTML vengono compressi? Quanti? Come? L'86% di essi lo è, con il 58
   height=511
 )}}
 
-E le lingue? Nel nostro set di dati, il 35% delle pagine utilizzava un attributo di `lang` mappato sull' inglese; il 17% non aveva la lingua impostata; e avrai già capito la problematica: il campione è plausibilmente distorto e anche non così grande da riflettere tutto il mondo. Inoltre nessun attributo `lang` utilizzato non equivale a nessuna lingua impostata quindi, per questo scopo i nostri dati non sembrano esserci utili.
+E le lingue? Nel nostro set di dati, il 35% delle pagine utilizzava un attributo di `lang` riconducibile all'inglese; il 17% non aveva la lingua impostata; e avrete già capito la problematica: il campione è plausibilmente distorto e anche non così grande da riflettere tutto il mondo. Inoltre nessun attributo `lang` utilizzato non equivale a nessuna lingua impostata quindi, per questo scopo i nostri dati non sembrano esserci utili.
 
 ### Conformità
 
@@ -127,28 +127,28 @@ I documenti sono conformi alle specifiche HTML, ovvero sono validi? Un modo rapi
 
 Non l'abbiamo fatto e non abbiamo ancora potuto verificarlo. Allora perché includere questa sezione?
 
-Il motivo per almeno citare la conformità è che se non controlli la conformità, se non validi i documenti, ci sono buone probabilità (in pratica, <a hreflang="en" href="https://meiert.com/it/blog/valid-html-2022/">di fatto una probabilità del 100%</a>) che finirai per scrivere almeno un po' di codice HTML fittizio e di fantasia (e quindi sbagliato). Ma l'HTML non è finzione o fantasia: è uno standard tecnico rigido con regole chiare su cosa funziona e cosa no.
+Il motivo per almeno citare la conformità è che se non controllate la conformità, se non validate i documenti, ci sono buone probabilità (in pratica, <a hreflang="en" href="https://meiert.com/it/blog/valid-html-2022/">di fatto una probabilità del 100%</a>) che finirete per scrivere almeno un po' di codice HTML fittizio e di fantasia (e quindi sbagliato). Ma l'HTML non è finzione o fantasia: è uno standard tecnico rigido con regole chiare su cosa funziona e cosa no.
 
 Per un professionista, è bene conoscere queste regole. È un bene produrre codice che funzioni e che non contenga nulla di superfluo. Ed entrambe le azioni (l'imparare e il non licenziare alcunché di non funzionante o superfluo) rappresentano il motivo per cui la conformità è importante e perché la validazione è importante.
 
-Non abbiamo ancora dati di conformità da condividere nel Web Almanac, ma ciò non significa che il punto sia meno importante. E se non ti sei ancora concentrato sulla conformità, comincia a validare il tuo output HTML. Forse una delle prossime edizioni del Web Almanac avrà qualche notizia positiva da condividere grazie a te.
+Non abbiamo ancora dati di conformità da condividere nel Web Almanac, ma ciò non significa che il punto sia meno importante. E se non vi siete ancora concentrati sulla conformità, cominciate ora a validare il vostro output HTML. Forse una delle prossime edizioni del Web Almanac avrà qualche notizia positiva da condividere grazie a voi.
 
 ### Dimensione del documento
 
-Il payload HTML e le dimensioni del documento sono un punto fermo in questa serie: abbiamo guardato a queste informazioni dal 2019. Ma la tendenza è chiara e, sebbene segua un tema comune che anche altri capitoli confermeranno, non è buona:
+Il caruco HTML e le dimensioni del documento sono un punto fermo in questa serie: abbiamo guardato a queste informazioni dal 2019. Ma la tendenza è chiara e, sebbene segua un tema comune che anche altri capitoli confermeranno, non è buona:
 
 {{ figure_markup(
   image="html-document-transfer-size.png",
-  caption="Dimensione media di trasferimento del documento HTML.",
-  description="Il grafico a colonne che mostra che la dimensione di trasferimento media di un documento HTML è in aumento. Nel 2019 era di 27 KB su desktop e 26 KB su dispositivo mobile, nel 2020 è scesa leggermente rispettivamente a 26 KB e 25 KB, ma nel 2021 è aumentata di nuovo a 29 KB e 27 KB, e nel 2022 è la più grande arrivando fino a 31 KB su desktop e 30 KB su dispositivo mobile.",
+  caption="Dimensione di trasferimento mediana per documento HTML.",
+  description="Grafico a colonne che mostra che la dimensione di trasferimento mediana di un documento HTML è in aumento. Nel 2019 era di 27 KB su desktop e 26 KB su dispositivo mobile, nel 2020 è scesa leggermente rispettivamente a 26 KB e 25 KB, ma nel 2021 è aumentata di nuovo a 29 KB e 27 KB, e nel 2022 è la più grande arrivando fino a 31 KB su desktop e 30 KB su dispositivo mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRjXjOczLu9q3mcQ-UFLUOmZgefGNCPVYeEwo4cDxQTymgmD_1D5dbZ728Mz1SkEMZHxQgwcWmLjkgx/pubchart?oid=381017848&format=interactive",
   sheets_gid="1090657426",
   sql_file="document_trends.sql",
 )}}
 
-Dopo un breve sollievo nel 2020, le dimensioni dei documenti hanno continuato a crescere nel 2021 e di nuovo nel 2022, con una dimensione media di trasferimento di 30 KB nel nostro set di dati relativo a dispositivi mobili.
+Dopo un breve sollievo nel 2020, le dimensioni dei documenti hanno continuato a crescere nel 2021 e di nuovo nel 2022, con una dimensione mediana di trasferimento di 30 KB nel nostro set di dati relativo a dispositivi mobili.
 
-Un modo per contrastare questa tendenza è <a hreflang="en" href="https://css-tricks.com/write-html-the-html-way-not-the-xhtml-way/">scrivere HTML alla HTML (e non alla XHTML)</a>, in quanto ciò da solo comporterebbe un peso di trasferimento dell'HTML inferiore. _Chiarimento: al tuo autore qui piace inventare classificazioni sui tipi di scrittura HTML ed è un forte promotore dell'HTML minimale._
+Un modo per contrastare questa tendenza è <a hreflang="en" href="https://css-tricks.com/write-html-the-html-way-not-the-xhtml-way/">scrivere HTML alla HTML (e non alla XHTML)</a>, in quanto ciò da solo comporterebbe un peso di trasferimento dell'HTML inferiore. _Chiarimento: al vostro autore qui piace inventare classificazioni sui tipi di scrittura HTML ed è un forte promotore dell'HTML minimale._
 
 ## Elementi
 
@@ -163,7 +163,7 @@ Cosa possiamo osservare?
 {{ figure_markup(
   image="element-count-distribution.png",
   caption="Distribuzione di elementi distinti per pagina.",
-  description="Grafico a colonne che mostra il conteggio di elementi distinti per pagina a percentili comuni. Desktop e mobile sono quasi identici con 22 elementi al 10° percentile, 27 al 25°, 32 al 50° percentile, 39 per desktop e 38 per mobile a al 75° percentile e 45 al 90° percentile.",
+  description="Grafico a colonne che mostra il conteggio di elementi distinti per pagina a percentili comuni. Desktop e dispositivi mobili sono quasi identici con 22 elementi al 10° percentile, 27 al 25°, 32 al 50° percentile, 39 per desktop e 38 per mobili a al 75° percentile e 45 al 90° percentile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRjXjOczLu9q3mcQ-UFLUOmZgefGNCPVYeEwo4cDxQTymgmD_1D5dbZ728Mz1SkEMZHxQgwcWmLjkgx/pubchart?oid=2146886292&format=interactive",
   sheets_gid="1201800477",
   sql_file="element_count_distribution.sql",
@@ -284,14 +284,14 @@ L'elemento `div` è di gran lunga l'elemento più popolare: abbiamo trovato 2.12
 
 [Divitis](https://en.wiktionary.org/wiki/divitis) è una realtà.
 
-Se ti stai chiedendo qual è l'elemento strano, [l'elemento `i`](https://developer.mozilla.org/docs/Web/HTML/Element/i), è logico che ciò sia ancora in gran parte dovuto a <a hreflang="en" href="https://fontawesome.com/">Font Awesome</a> e il suo discutibile uso improprio di questo elemento. L'elemento ha anche una cattiva reputazione perché durante i tempi di XHTML, tutti suggerivano di usare invece `em`, che invece non era un buon consiglio e infatti si veda <a hreflang="en" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-i-element">Gli elementi `i` hanno i loro casi d'uso</a>.
+Se vi state chiedendo qual è l'elemento strano, [l'elemento `i`](https://developer.mozilla.org/docs/Web/HTML/Element/i), è logico che ciò sia ancora in gran parte dovuto a <a hreflang="en" href="https://fontawesome.com/">Font Awesome</a> e il suo discutibile uso improprio di questo elemento. L'elemento ha anche una cattiva reputazione perché durante i tempi di XHTML, tutti suggerivano di usare invece `em`, che invece non era un buon consiglio e infatti si veda <a hreflang="en" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-i-element">Gli elementi `i` hanno i loro casi d'uso</a>.
 
-Quando si tratta di quali elementi vengono utilizzati nella maggior parte dei documenti, l'elenco ha un aspetto leggermente diverso:
+Quando poi si analizza quali elementi vengono utilizzati nella maggior parte dei documenti, l'elenco ha un aspetto leggermente diverso:
 
 {{ figure_markup(
   image="adoption-of-top-html-elements.png",
   caption="Adozione dei principali elementi HTML.",
-  description="Il grafico a barre che mostra che  `html` è utilizzato nel 99,3% delle pagine desktop e nel 99,4% delle pagine mobili, `head` rispettivamente nel 99,3% e 99,4%, `body` nel 99,1% e 99,2%, `title` nel 98,9 % e 99,0%, `meta` su 98,5% e 98,9%, `div` su 98,3% e 98,5%, `a` su 98,0% e 98,1%, `link` su 97,8% e 98,0%, `script` su 97,6 % e 97,8%, `img` su 95,9% e 96,1%, `span` su 94,2% e 94,7%, `p` su 89,9% e 90,0%, `ul` su 88,8% e 88,7% e infine `li` sull'88,7% delle pagine desktop e sull'88,6% delle pagine mobili.",
+  description="Grafico a barre che mostra che `html` è utilizzato nel 99,3% delle pagine desktop e nel 99,4% delle pagine mobili, `head` rispettivamente nel 99,3% e 99,4%, `body` nel 99,1% e 99,2%, `title` nel 98,9 % e 99,0%, `meta` nel 98,5% e 98,9%, `div` nel 98,3% e 98,5%, `a` nel 98,0% e 98,1%, `link` nel 97,8% e 98,0%, `script` nel 97,6 % e 97,8%, `img` nel 95,9% e 96,1%, `span` nel 94,2% e 94,7%, `p` nel 89,9% e 90,0%, `ul` nel 88,8% e 88,7% e infine `li` nell'88,7% delle pagine desktop e nell'88,6% delle pagine mobili.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRjXjOczLu9q3mcQ-UFLUOmZgefGNCPVYeEwo4cDxQTymgmD_1D5dbZ728Mz1SkEMZHxQgwcWmLjkgx/pubchart?oid=714125011&format=interactive",
   sheets_gid="2057119066",
   sql_file="element_popularity.sql",
@@ -303,13 +303,13 @@ Non è una sorpresa che quasi tutti i documenti utilizzino i tag `html`, `head` 
 
 È molto più sorprendente il `title` mancante nell'1% di tutti i documenti campionati: questo elemento non è facoltativo e non viene inserito nel DOM e la sua omissione è un indicatore della mancanza di controllo di conformità.
 
-Gli elementi che seguono sono vecchie conoscenze, in particolare `a`, `img` e `meta` sono stati elementi popolari sin da tempi de <a hreflang="it" href="https://web.archive.org/web/20060203035414/http://code.google.com/webstats/index.html">L'importante studio sull'HTML di Ian Hickson</a> nel 2005.
+Gli elementi che seguono sono vecchie conoscenze, in particolare `a`, `img` e `meta` sono stati elementi popolari sin da tempi de <a hreflang="en" href="https://web.archive.org/web/20060203035414/http://code.google.com/webstats/index.html">L'importante studio sull'HTML di Ian Hickson</a> nel 2005.
 
-Qual è l'elemento HTML meno utilizzato che fa parte dello standard attuale, ti stai chiedendo? Ebbene è <a hreflang="it" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-samp-element">`samp`</a>, con appena 2.002 occorrenze nel nostro set di dati sui dispositivi mobili.
+Qual è l'elemento HTML meno utilizzato che fa parte dello standard attuale, vi state forse chiedendo? Ebbene è <a hreflang="en" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-samp-element">`samp`</a>, con appena 2.002 occorrenze nel nostro set di dati sui dispositivi mobili.
 
 ### Elementi personalizzati
 
-<a hreflang="en" href="https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements-core-concepts">Elementi personalizzati</a>: elementi che possiamo approssimativamente identificare come quelli che hanno un trattino nel nome, erano nuovamente presenti nei nostri siti campionati. Quest'anno, però, la Top 10 è interamente dominata da <a hreflang="en" href="https://www.sliderrevolution.com/">Slider Revolution</a>:
+<a hreflang="en" href="https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements-core-concepts">Elementi personalizzati</a>: elementi che possiamo approssimativamente identificare come quelli che hanno un trattino nel nome, erano nuovamente presenti nei siti campionati quest'anno. Ora, però, la Top 10 è interamente dominata da <a hreflang="en" href="https://www.sliderrevolution.com/">Slider Revolution</a>:
 
 <figure>
   <table>
@@ -382,7 +382,7 @@ Qual è l'elemento HTML meno utilizzato che fa parte dello standard attuale, ti 
   </figcaption>
 </figure>
 
-È impressionante, ma ci dà poco su cui lavorare oltre a dire che Slider Revolution viene utilizzato su circa il 2% di tutte le pagine campionate.
+È impressionante, ma ci dà poco su cui lavorare oltre a dire che Slider Revolution viene utilizzato in circa il 2% di tutte le pagine campionate.
 
 Quali sono gli elementi personalizzati che seguono per popolarità e che non fanno parte di Slider Revolution?
 
@@ -436,7 +436,7 @@ Qui i dati sono più vari: `pages-css`, `wix-image` e `wix-iframe` provengono da
 
 ### Elementi obsoleti
 
-Gli elementi obsoleti esistono ancora? Dato che la non-validazione continua ad essere una pratica, allora sì esistono.
+Gli elementi obsoleti si ritrovano ancora? Dato che la non-validazione continua ad essere una pratica, ecco che sì, si trovano ancora.
 
 {{ figure_markup(
   image="obsolete-elements.png",
@@ -447,14 +447,14 @@ Gli elementi obsoleti esistono ancora? Dato che la non-validazione continua ad e
   sql_file="obsolete_elements.sql",
 )}}
 
-Nel 6,1% delle pagine si trovano ancora gli elementi `center` (ciao <a hreflang="it" href="https://www.google.com/">home page di Google</a>) e nel 5,4% delle pagine si trovano gli elementi `font`. L'uso di entrambi questi elementi è diminuito (meno dello 0,5% in entrambi i casi), fortunatamente, mentre `marquee`, `nobr` e `big` non hanno registrato cambiamenti significativi.
+Nel 6,1% delle pagine si trovano ancora gli elementi `center` (ciao <a href="https://www.google.com/">home page di Google</a>) e nel 5,4% delle pagine si trovano gli elementi `font`. L'uso di entrambi questi elementi è diminuito (meno dello 0,5% in entrambi i casi), fortunatamente, mentre `marquee`, `nobr` e `big` non hanno registrato cambiamenti significativi.
 
 `center` e `font` fanno la parte del leone (81,2%) di tutti gli elementi obsoleti, secondo la nostra analisi:
 
 {{ figure_markup(
   image="obsolete-elements-relative-use.png",
   caption="Uso relativo degli elementi obsoleti.",
-  description="Il grafico a torta che mostra che `center` rappresenta il 43,0% dell'utilizzo di elementi obsoleti su dispositivi mobili, `font` è il 38,2%, `marquee` è il 7,0%, `nobr` il 2,6%, `big` il 2,6%, `frame` l'1,5% e il resto della torta è costituito da altri elementi senza etichetta.",
+  description="Grafico a torta che mostra che `center` rappresenta il 43,0% dell'utilizzo di elementi obsoleti su dispositivi mobili, `font` è il 38,2%, `marquee` è il 7,0%, `nobr` il 2,6%, `big` il 2,6%, `frame` l'1,5% e il resto della torta è costituito da altri elementi senza etichetta.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRjXjOczLu9q3mcQ-UFLUOmZgefGNCPVYeEwo4cDxQTymgmD_1D5dbZ728Mz1SkEMZHxQgwcWmLjkgx/pubchart?oid=1875548366&format=interactive",
   sheets_gid="69619977",
   sql_file="obsolete_elements.sql",
@@ -479,10 +479,10 @@ L'attributo più popolare, di gran lunga, era ed è ancora `class`:
   height=558
 )}}
 
-Questo ordine non è diverso da quello che abbiamo visto l'anno scorso, ma ci sono alcuni cambiamenti:
+Questo ordine degli attributi non è diverso da quello che abbiamo visto l'anno scorso, ma ci sono alcuni cambiamenti:
 
-- `class` (<span class="numeric-bad">▼0.3%</span>), `href` (<span class="numeric-bad">▼0.9%</span>), `style` (<span class="numeric-bad">▼0.6%</span>), `id` (<span class="numeric-bad">▼0.2%</span>), `type` (<span class="numeric-bad">▼0.1%</span>), `title` (<span class="numeric-bad">▼0.3%</span>)e e `value` (<span class="numeric-bad">▼0.5%</span>) sono tutti usati un po' meno di prima.
-- `src` (<span class="numeric-good">▲0.3%</span>) e `alt` (<span class="numeric-good">▲0.1%</span>) sono usati più di prima, buone notizie per l'accessibilità per il momento!
+- `class` (<span class="numeric-bad">▼0,3%</span>), `href` (<span class="numeric-bad">▼0,9%</span>), `style` (<span class="numeric-bad">▼0,6%</span>), `id` (<span class="numeric-bad">▼0,2%</span>), `type` (<span class="numeric-bad">▼0,1%</span>), `title` (<span class="numeric-bad">▼0,3%</span>)e e `value` (<span class="numeric-bad">▼0,5%</span>) sono tutti usati un po' meno di prima.
+- `src` (<span class="numeric-good">▲0,3%</span>) e `alt` (<span class="numeric-good">▲0,1%</span>) sono usati più di prima, buone notizie per l'accessibilità per il momento!
 - L'utilizzo di `rel` non è cambiato in modo significativo.
 
 Ci sono attributi che troviamo su (quasi) tutti i documenti? Sì, ci sono:
@@ -535,7 +535,7 @@ L'edizione dello scorso anno ha introdotto [una sezione sul social markup](../20
 {{ figure_markup(
   image="social-meta-nodes-usage.png",
   caption="Utilizzo dei metanodi social.",
-  description="Grafico a barre che mostra che `og:title` è nel 56% delle pagine desktop e nel 57% delle pagine mobile, `og:url` rispettivamente nel 53% e 54%, `og:type` nel 51% e 51%, `og :description` nel 50% e 50%, `og:site_name` nel 45% e 45%, `twitter:card` nel 40% e 39%, `og:image` nel 39% e 39%, `og:locale` nel 28% e 29%, `twitter:title` nel 24% e 23% e infine `twitter:description` nel 21% di entrambi.",
+  description="Grafico a barre che mostra che `og:title` è nel 56% delle pagine desktop e nel 57% delle pagine mobili, `og:url` rispettivamente nel 53% e 54%, `og:type` nel 51% e 51%, `og:description` nel 50% e 50%, `og:site_name` nel 45% e 45%, `twitter:card` nel 40% e 39%, `og:image` nel 39% e 39%, `og:locale` nel 28% e 29%, `twitter:title` nel 24% e 23% e infine `twitter:description` nel 21% di entrambi.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRjXjOczLu9q3mcQ-UFLUOmZgefGNCPVYeEwo4cDxQTymgmD_1D5dbZ728Mz1SkEMZHxQgwcWmLjkgx/pubchart?oid=429652195&format=interactive",
   sheets_gid="1925328234",
   sql_file="meta_node_names.sql",
@@ -543,14 +543,14 @@ L'edizione dello scorso anno ha introdotto [una sezione sul social markup](../20
   height=604
 )}}
 
-Hai bisogno di tutti questi metadati? Dipende dalle tue esigenze. Ma se questi requisiti riguardano la visualizzazione di titolo, descrizione e immagine, non sembra che tu abbia bisogno di così tanto. Potresti essere in grado di farlo con `twitter:card`, `og:title`, `og:description` (collegato ai metadati standard di `description`) e `og:image`. L'autore e molti altri hanno descritto le opzioni per il <a hreflang="en" href="https://meiert.com/en/blog/minimal-social-markup/">social markup minimo</a>.
+Ma c'è proprio bisogno di tutti questi metadati? Dipende dalle esigenze. Infatti, se questi requisiti riguardano la visualizzazione di titolo, descrizione e immagine, non sembra che siano necessari così tanti. Potreste essere in grado di farlo con `twitter:card`, `og:title`, `og:description` (collegato ai metadati standard di `description`) e `og:image`. L'autore e molti altri hanno descritto le opzioni per il <a hreflang="en" href="https://meiert.com/en/blog/minimal-social-markup/">social markup minimo</a>.
 
 ## Conclusione
 
-Questo è stata la nostra occhiata all'HTML nel 2022.
+Chiudiamo il nostro sguardo all'HTML del 2022.
 
-La conclusione è breve: andando di anno in anno, è difficile dire quali tendenze importanti siano state avviate o invertite. Le dimensioni dei documenti sembrano continuare a crescere, almeno dal 2020 al 2021 al 2022. Anche il numero di elementi per pagina aumenta ogni anno. Ci potrebbe essere qualche attributo `alt` in più ora, ma il dato è relativo a se stesso e non possiamo dire se ora più immagini  abbiano impostato l'attributo `alt` appropriato, né se il testo sia davvero <a hreflang="it" href ="https://html.spec.whatwg.org/multipage/images.html#alt">significativo</a>.
+La conclusione è breve: analizzando da un anno all'altro è difficile dire quali tendenze importanti si siano avviate o siano in recessione. Le dimensioni dei documenti sembrano continuare a crescere, almeno dal 2020 al 2021 al 2022. Anche il numero di elementi per pagina aumenta ogni anno. Ci potrebbe essere qualche attributo `alt` in più ora, ma il dato è relativo a se stesso e non possiamo dire se ora più immagini abbiano impostato un appropriato attributo `alt`, né se il testo contenuto sia davvero <a hreflang="en" href ="https://html.spec.whatwg.org/multipage/images.html#alt">significativo</a>.
 
-Ma per tutto questo, il Web Almanac potrà aiutare. Esamineremo di nuovo l'HTML l'anno prossimo, l'anno dopo il prossimo e l'anno dopo ancora. Ed entreremo ancora più nel dettaglio confrontando i dati con più anni precedenti.
+Ma per questo scopo, il Web Almanac potrà aiutare. Esamineremo di nuovo l'HTML l'anno prossimo, l'anno dopo il prossimo e l'anno dopo ancora. Ed entreremo ancora più nel dettaglio confrontando i dati con più anni precedenti.
 
-Quello che forse saremo anche in grado di fare è guardare anche alla conformità. In questo momento forse non a tutti nel nostro campo interessa l'argomento. Ma siamo tutti professionisti e sembra quantomeno rilevante sapere se nel nostro complesso produciamo un codice che corrisponde a <a hreflang="en" href="https://html.spec.whatwg.org/multipage/">gli standard web sottostanti</a>. Dopo tutto, questo non dovrebbe essere un capitolo sull'HTML di fantasia, piuttosto un capitolo sull'HTML che funziona davvero. In fondo l'HTML è uno degli standard web più importanti.
+Quello che forse saremo anche in grado di fare è guardare anche alla conformità. In questo momento forse non a tutti nel nostro campo interessa l'argomento. Ma siamo tutti professionisti e sembra quantomeno rilevante sapere se nel nostro complesso produciamo un codice che corrisponde a <a hreflang="en" href="https://html.spec.whatwg.org/multipage/">gli standard web sottostanti</a>. Dopo tutto, questo non dovrebbe essere un capitolo sull'HTML di fantasia, piuttosto un capitolo sull'HTML che funziona davvero. L'HTML è infatti uno degli standard web più importanti.
