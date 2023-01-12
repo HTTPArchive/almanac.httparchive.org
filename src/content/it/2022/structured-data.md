@@ -358,7 +358,7 @@ I meta tag di Twitter seguono ancora una volta l'andamento di un aumento general
   sql_file="twitter_types.sql",
   width=600,
   height=546
-   )
+  )
 }}
 
 I meta tag di Twitter come `twitter:site` e `twitter:image` hanno una presenza maggiore sui siti desktop, sebbene la maggior parte di questi meta tag condivida la stessa prevalenza tra dispositivi mobili e desktop, nonché di anno in anno. Alcuni dei tag meno comuni hanno visto un leggero calo nell'uso quest'anno, sebbene l'utilizzo dei meta tag di Twitter ottiene complessivamente un aumento rispetto allo scorso anno.
@@ -412,7 +412,7 @@ I Microformat (microformati) sono rimasti molto simili nei dati di utilizzo dal 
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr8oRb8NNs5MbpPpDi7QSsTUTPQL_vxQtQvmn52qGk97gpNhJIHa8VF0x5ZJtWXAFuEbDFZQB6TIuN/pubchart?oid=1952037124&format=interactive",
   sheets_gid="1452747230",
   sql_file="classic_microformats_types.sql"
-   )
+  )
 }}
 
 Sia il mobile che il desktop condividono un mix di aumenti e diminuzioni di utilizzo tra i tipi di microformato, sebbene entrambi abbiano una media inferiore ai numeri registrati l'anno scorso. Alcuni tipi che pesano su questa diminuzione sono `hReview` (passato dallo 0,06% allo 0,05% nelle pagine per dispositivi mobili e dallo 0,06% allo 0,04% nelle pagine desktop) e `hReview-aggregate` (passando dallo 0,06% allo 0,04% sia su dispositivi mobili che su pagine desktop).
