@@ -96,12 +96,12 @@ Il 90% di tutte le pagine per dispositivi mobili lo utilizza: poiché il set di 
 ### Compressione
 
 {{ figure_markup(
-   image="content-encoding.png",
-   caption="Codifica del contenuto del documento HTML.",
-   description="Grafico a barre impilate, che mostra che il 28% dei documenti HTML desktop e mobili viene compresso con Brotli, il 58% dei documenti desktop e mobili viene compresso con Gzip e il 14% dei documenti HTML desktop e il 13% dei dispositivi mobili non viene compresso affatto.",
-   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRjXjOczLu9q3mcQ-UFLUOmZgefGNCPVYeEwo4cDxQTymgmD_1D5dbZ728Mz1SkEMZHxQgwcWmLjkgx/pubchart?oid=1176900527&format=interactive",
-   sheets_gid="1434175283",
-   sql_file="content_encoding.sql",
+  image="content-encoding.png",
+  caption="Codifica del contenuto del documento HTML.",
+  description="Grafico a barre impilate, che mostra che il 28% dei documenti HTML desktop e mobili viene compresso con Brotli, il 58% dei documenti desktop e mobili viene compresso con Gzip e il 14% dei documenti HTML desktop e il 13% dei dispositivi mobili non viene compresso affatto.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRjXjOczLu9q3mcQ-UFLUOmZgefGNCPVYeEwo4cDxQTymgmD_1D5dbZ728Mz1SkEMZHxQgwcWmLjkgx/pubchart?oid=1176900527&format=interactive",
+  sheets_gid="1434175283",
+  sql_file="content_encoding.sql",
 )}}
 
 I documenti HTML sono compressi? Quanti lo sono? In che modo? L'86% di essi lo è, con il 58% (in calo del 5,8% rispetto allo scorso anno) compresso tramite Gzip e il 28% (in aumento del 6,1%) compresso tramite Brotli. In totale rispetto all'anno scorso risulta compresso un numero leggermente maggiore di documenti e con compressione più efficiente.
