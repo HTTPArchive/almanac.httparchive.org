@@ -222,7 +222,7 @@ As the IP-based geolocation service can be quite inaccurate, especially when use
 
 ## Established controls to improve visitor's privacy
 
-As websites include a lot of content (scripts, plugins... etc.) from third parties that they might not entirely trust, they might want to protect their users' privacy from these third parties. Next, we explore the various controls that can be used to restrict the features or data that third parties have access to, or that make it explicitly clear which information a website wants to obtain from a user.
+As websites include a lot of content (scripts, plugins, etc.) from third parties that they might not entirely trust, they might want to protect their users' privacy from these third parties. Next, we explore the various controls that can be used to restrict the features or data that third parties have access to, or that make it explicitly clear which information a website wants to obtain from a user.
 
 ### Permissions Policy
 
@@ -253,7 +253,7 @@ By default most of the features regulated by the Permissions Policy are disabled
   )
 }}
 
-When we look at the directives that are used in the Permissions Policy, we see a similar usage compared to [last year](../2021/privacy), with the exception of the one that's most widely used in 2022, namely `interest-cohort`. This directive can be used to limit the access to the now-defunct FLoC API. Presumably, this increase can be attributed to the various shortcomings of FLoC (increases fingerprinting surface, reveals potentially sensitive information about users... etc.) where website owners, providers and libraries took an active step in trying to protect the privacy of their users.
+When we look at the directives that are used in the Permissions Policy, we see a similar usage compared to [last year](../2021/privacy), with the exception of the one that's most widely used in 2022, namely `interest-cohort`. This directive can be used to limit the access to the now-defunct FLoC API. Presumably, this increase can be attributed to the various shortcomings of FLoC (increases fingerprinting surface, reveals potentially sensitive information about users, etc.) where website owners, providers and libraries took an active step in trying to protect the privacy of their users.
 
 ### Referrer Policy
 
@@ -284,7 +284,7 @@ We find that the most common usage of the Referrer Policy is to not include the 
 
 ### User-Agent Client Hints
 
-In an effort to reduce the information that is revealed about the browser environment, and more specifically the `User-Agent` string, the <a hreflang="en" href="https://wicg.github.io/ua-client-hints/">User-Agent Client Hints</a> mechanism was introduced. Through this feature, websites that want to access certain information about the user's browsing environment (browser version, operating system... etc.) now have to set a header (`Accept-CH`) in the first response, upon which the browser will send the requested data in subsequent requests. Among other benefits, this feature reduces the fingerprinting surface and allows browsers to intervene in sending certain data, for example, via the <a hreflang="en" href="https://github.com/mikewest/privacy-budget">Privacy Budget</a> proposal.
+In an effort to reduce the information that is revealed about the browser environment, and more specifically the `User-Agent` string, the <a hreflang="en" href="https://wicg.github.io/ua-client-hints/">User-Agent Client Hints</a> mechanism was introduced. Through this feature, websites that want to access certain information about the user's browsing environment (browser version, operating system, etc.) now have to set a header (`Accept-CH`) in the first response, upon which the browser will send the requested data in subsequent requests. Among other benefits, this feature reduces the fingerprinting surface and allows browsers to intervene in sending certain data, for example, via the <a hreflang="en" href="https://github.com/mikewest/privacy-budget">Privacy Budget</a> proposal.
 
 {{ figure_markup(
   image="client-hints-by-rank.png",
@@ -484,6 +484,6 @@ On a more positive, privacy-preserving, track, we find that fewer sites are tryi
 
 Generally, it seems that websites are starting to hear the call of users to respect their privacy—a call that is getting louder and louder. More and more sites are switching to employing browser features that restrict the information that is sent to third parties. Furthermore, mainly motivated by privacy regulations such as GDPR and CCPA, we are seeing a clear increase —almost 60%—in the adoption of consent management platforms (CMPs), giving users more control over which information they want to share.
 
-Finally, on the side of the browsers, we are also seeing a strong evolution towards providing users with more control of their online privacy. Next to the features that several privacy-focused browsers offer as a built-in solution, there is also the Privacy Sandbox initiative that aims to continue providing the current functionalities on the web—such as targeted advertising, anti-fraud, attribution of purchases... etc.—without the nefarious side-effects of cross-site tracking. Although the development is still in fairly early stages, we see that web services on a substantial number of websites are already opting-in to the Origin Trial. As such, the features are extensively being tested, and are likely to become a persistent part of the web.
+Finally, on the side of the browsers, we are also seeing a strong evolution towards providing users with more control of their online privacy. Next to the features that several privacy-focused browsers offer as a built-in solution, there is also the Privacy Sandbox initiative that aims to continue providing the current functionalities on the web—such as targeted advertising, anti-fraud, attribution of purchases, etc.—without the nefarious side-effects of cross-site tracking. Although the development is still in fairly early stages, we see that web services on a substantial number of websites are already opting-in to the Origin Trial. As such, the features are extensively being tested, and are likely to become a persistent part of the web.
 
 While it may still take a couple of years to finally get there, we are transitioning towards a web that gives users more control over what they want to share with which parties. We can see this convergence on both sides of the spectrum: on the one hand initiated by the website, and on the other hand enforced by the browser. We can be hopeful that in the not-so-distant future the data we share, is the data that we intend to share, and the journey on the web that we take on a day-to-day basis no longer needs to be collected, shared, and analyzed by the numerous trackers that we currently encounter—in the hope of respectfully tomorrow for all.

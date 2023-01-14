@@ -112,7 +112,7 @@ Another thing to keep in mind is the unit you choose for font size. We found tha
 
 ### Language identification
 
-Language identification using the `lang` attribute is important for providing better screen reader support, and also helps for automatic browser translations. This is another good example of a feature that helps everyone, including people with disabilities. Without the `lang` attribute, the automatic browser translation in Chrome can often translate the text incorrectly. Manuel Matuzovic gives one such <a hreflang="en" href="https://www.matuzo.at/blog/lang-attribute/">example of an auto-translate mishap</a> due to the lack of a `lang` attribute.
+Language identification using the `lang` attribute is important for providing better screen reader support, and also helps for automatic browser translations. This is another good example of a feature that helps everyone, including people with disabilities. Without the `lang` attribute, the automatic browser translation in Chrome can often translate the text incorrectly. Manuel Matuzović gives one such <a hreflang="en" href="https://www.matuzo.at/blog/lang-attribute/">example of an auto-translate mishap</a> due to the lack of a `lang` attribute.
 
 {{ figure_markup(
   content="83%",
@@ -178,7 +178,7 @@ The WCAG requires a visible focus indicator for all interactive content to help 
   sql_file="focus_outline_0.sql",
 ) }}
 
-We found that 86% of websites add `:focus {outline: 0}`. This removes the default outline that browsers use for the focused interactive element. In some cases, they are overridden using some custom styling, but not always. This makes it impossible for users to determine which element has focus which in turn hinders navigation. [Sara Souedian](https://twitter.com/SaraSoueidan) has a great article on how to <a hreflang="en" href="https://www.sarasoueidan.com/blog/focus-indicators/">design WCAG-compliant focus indicators</a>. However, it's exciting to see that 9% of websites have `:focus-visible` compared to only 0.6% last year. This is definitely a step in the right direction.
+We found that 86% of websites add `:focus {outline: 0}`. This removes the default outline that browsers use for the focused interactive element. In some cases, they are overridden using some custom styling, but not always. This makes it impossible for users to determine which element has focus which in turn hinders navigation. [Sara Soueidan](https://twitter.com/SaraSoueidan) has a great article on how to <a hreflang="en" href="https://www.sarasoueidan.com/blog/focus-indicators/">design WCAG-compliant focus indicators</a>. However, it's exciting to see that 9% of websites have `:focus-visible` compared to only 0.6% last year. This is definitely a step in the right direction.
 
 #### `tabindex`
 

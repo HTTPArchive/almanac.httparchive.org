@@ -33,7 +33,7 @@ Due to the explosion of web content such as videos and images, CDN has been a vi
 
 During the early days, a CDN was a simple network of proxy servers which would:
 
-1. Cache content (like HTML, images, stylesheets, JavaScript, videos... etc.)
+1. Cache content (like HTML, images, stylesheets, JavaScript, videos, etc.)
 2. Reduce network hops for end users to access content
 3. Offload TCP connection termination away from the data centers hosting the web properties
 
@@ -146,8 +146,8 @@ Looking at CDN usage for websites based on their popularity—sourced from Googl
 
 CDN providers can be broadly classified into 2 segments:
 
-1. Generic CDN (Akamai, Cloudflare, CloudFront, Fastly... etc.)
-2. Purpose-built CDN (Netlify, WordPress... etc.)
+1. Generic CDN (Akamai, Cloudflare, CloudFront, Fastly, etc.)
+2. Purpose-built CDN (Netlify, WordPress, etc.)
 
 Generic CDNs address the mass market requirements. Their offerings include:
 
