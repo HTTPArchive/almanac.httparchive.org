@@ -41,8 +41,8 @@
   },
   "/static/js/web-vitals.js": {
     "date_published": "2020-11-13T00:00:00.000Z",
-    "date_modified": "2022-11-23T00:00:00.000Z",
-    "hash": "eb1b23894dec8f35c2652e44e2897ca6"
+    "date_modified": "2023-01-14T00:00:00.000Z",
+    "hash": "dfedc4c6e9b5f5c4654caffe0b595a1f"
   },
   "/static/js/webmentions.js": {
     "date_published": "2021-12-01T00:00:00.000Z",
@@ -685,8 +685,8 @@
   },
   "en/2022/chapters/structured-data.html": {
     "date_published": "2022-10-25T00:00:00.000Z",
-    "date_modified": "2022-11-07T00:00:00.000Z",
-    "hash": "e2f4f6d006bd8240e08df91dbc37f29a"
+    "date_modified": "2023-01-14T00:00:00.000Z",
+    "hash": "3514f7753cd3ba3ce03f8209bb40eba3"
   },
   "en/2022/chapters/sustainability.html": {
     "date_published": "2022-09-26T00:00:00.000Z",
@@ -1182,6 +1182,16 @@
     "date_published": "2022-10-25T00:00:00.000Z",
     "date_modified": "2022-12-12T00:00:00.000Z",
     "hash": "03f0f7fa53439a14b6c40e0831c8e077"
+  },
+  "it/2022/chapters/markup.html": {
+    "date_published": "2023-01-14T00:00:00.000Z",
+    "date_modified": "2023-01-14T00:00:00.000Z",
+    "hash": "fc70b77c70190023f352094fb20e14a2"
+  },
+  "it/2022/chapters/structured-data.html": {
+    "date_published": "2023-01-14T00:00:00.000Z",
+    "date_modified": "2023-01-14T00:00:00.000Z",
+    "hash": "03804f5de5e628c279b0800f94ed568f"
   },
   "it/2022/contributors.html": {
     "date_published": "2022-07-02T00:00:00.000Z",
