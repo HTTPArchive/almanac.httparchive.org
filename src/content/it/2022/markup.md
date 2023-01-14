@@ -7,7 +7,7 @@ reviewers: [bkardell, zcorpan]
 analysts: [rviscomi]
 editors: [tunetheweb]
 translators: [webmatter-it]
-j9t_bio: Jens Oliver Meiert è un ingegnere capo e autore (<a hreflang="en" href="https://leanpub.com/web-development-glossary"><cite>The Web Development Glossary</cite></a>, <a hreflang="en" href="https://www.amazon.com/dp/B094W54R2N/"><cite>Upgrade Your HTML</cite></a>), che lavora in qualità di engineering manager presso <a hreflang="en" href="https://www.liveperson.com/">LivePerson</a>. È specializzato nella minimizzazione e ottimizzazione dell'HTML e dei CSS. Jens scrive regolarmente a proposito dell'arte dello sviluppo web sul suo sito <a hreflang="en" href="https://meiert.com/en/">meiert.com</a>.
+j9t_bio: Jens Oliver Meiert è un ingegnere capo e autore (<a hreflang="en" href="https://leanpub.com/web-development-glossary"><cite lang="en">The Web Development Glossary</cite></a>, <a hreflang="en" href="https://www.amazon.com/dp/B094W54R2N/"><cite lang="en">Upgrade Your HTML</cite></a>), che lavora in qualità di engineering manager presso <a hreflang="en" href="https://www.liveperson.com/">LivePerson</a>. È specializzato nella minimizzazione e ottimizzazione dell'HTML e dei CSS. Jens scrive regolarmente a proposito dell'arte dello sviluppo web sul suo sito <a hreflang="en" href="https://meiert.com/en/">meiert.com</a>.
 results: https://docs.google.com/spreadsheets/d/1grkd2_1xSV3jvNK6ucRQ0OL1HmGTsScHuwA8GZuRLHU/
 featured_quote: Senza l'HTML non ci possono essere pagine web, siti web, app web. Si può dire che senza HTML non ci sarebbe il Web. Ciò rende l'HTML uno degli standard web più importanti, se non il più importante standard web.
 featured_stat_1: 90%
