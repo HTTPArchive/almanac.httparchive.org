@@ -222,7 +222,7 @@ Aunque la geolocalización basada en la IP puede ser bastante imprecisa, sobre t
 
 ## Controles establecidos para mejorar la privacidad del usuario
 
-Dado que los sitios web incluyen mucho contenido de terceros (scripts, plugins... etc.) en el que no tienen por qué confiar plenamente, pueden proteger la privacidad de sus usuarios de estas terceras partes. A continuación exploraremos los diferentes controles que se pueden usar para restringir los datos o funcionalidades a los que tienen acceso los terceros, o para dejarles explícitamente claro qué información del usuario puede obtener un sitio web.
+Dado que los sitios web incluyen mucho contenido de terceros (scripts, plugins, etc.) en el que no tienen por qué confiar plenamente, pueden proteger la privacidad de sus usuarios de estas terceras partes. A continuación exploraremos los diferentes controles que se pueden usar para restringir los datos o funcionalidades a los que tienen acceso los terceros, o para dejarles explícitamente claro qué información del usuario puede obtener un sitio web.
 
 ### Política de Permisos
 
