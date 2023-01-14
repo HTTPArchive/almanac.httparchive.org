@@ -138,11 +138,6 @@ Three projects of note that rely heavily on the use of structured data are the f
 - <a hreflang="en" href="https://www.dbpedia.org/">**DBpedia**</a> is a set of datasets, tools and services related to structured web data. It contains more than 228 million freely-available entities to date. The main DBpedia Knowledge Graph encompasses clean data from Wikipedia. DBPedia is available in all supported Wikipedia languages and averages over 600k file downloads per year. Some open source tools that are built on top of DBpedia provide data access, versioning, quality control, ontology visualization and linking infrastructures.
 - <a hreflang="en" href="https://www.wikidata.org/">**Wikidata**</a> stores structured data from Wikimedia projects like Wikipedia. It is a document-oriented database, which focuses on storing structured web data.
 
-_References:_
-- <a hreflang="en" href="http://www.ibiblio.org/osrt/omf/">Open Source Metadata Framework</a>
-- <a hreflang="en" href="https://en.wikipedia.org/wiki/DBpedia">DBpedia</a>
-- <a hreflang="en" href="https://en.wikipedia.org/wiki/Wikidata">WikiData</a>
-
 ## Use cases
 
 The implementation of structured data is widely beneficial in numerous areas, some of which will be focused on in this section. It is important to note that many of these areas are overlapping, such is the nature of linked and structured data.
@@ -215,7 +210,7 @@ The below table lists the major changes to structured data formats in the last y
       <tr>
         <td>RDFa</td>
         <td>
-          Although there are no changes in the base format of RDFa, version 3 of the _Data Catalog Vocabulary (DCAT)_ contained a significant update. DCAT is an <em>"RDF vocabulary designed to facilitate interoperability between data catalogs published on the Web"</em>. This is significant due to the increased availability of open datasets on the web. Being able to describe the entire contents of a dataset greatly increases the discoverability, and thus usefulness, of a public dataset and makes federated search and distribution more likely.
+          Although there are no changes in the base format of RDFa, version 3 of the <em>Data Catalog Vocabulary (DCAT)</em> contained a significant update. DCAT is an <em>"RDF vocabulary designed to facilitate interoperability between data catalogs published on the Web"</em>. This is significant due to the increased availability of open datasets on the web. Being able to describe the entire contents of a dataset greatly increases the discoverability, and thus usefulness, of a public dataset and makes federated search and distribution more likely.
           <p>
             References:
             <ul>
