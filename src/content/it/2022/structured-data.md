@@ -175,7 +175,7 @@ Questi sono solo un paio di esempi di casi d'uso di dati strutturati negli e-com
 
 I dati strutturati si basano su formati e standard che descrivono uno schema di meta-livello in cui gli editori possono far rientrare e presentare i dati in una modalità predefinita. RDFa, OpenGraph, JSON-LD e altri formati consolidati sono stati indagati nell'analisi per questo capitolo.
 
-{{ figura_markup(
+{{ figure_markup(
   image="structured-data-types.png",
   caption="Tipi di dati strutturati",
   description="Grafico a barre che mostra il formato RDFa utilizzato nel 62% delle pagine sia desktop che per dispositivi mobili, Open Graph nel 59% di ciascun tipo, Twitter rispettivamente nel 41% e nel 40%, JSON-LD nel 37% e nel 37%, Microdati nel 23% e 25%, Facebook nel 7% e 8%, Dublin Core e Microformats nell'1% di entrambi, e infine microformats2 nello 0% delle pagine desktop e mobili.",
@@ -249,7 +249,7 @@ Analizziamo un po' più a fondo ciascun tipo.
 
 ### RDFa
 
-{{ figura_markup(
+{{ figure_markup(
   image="rdfa-usage-by-year-mobile.png",
   caption="Utilizzo per anno degli RDFa sui dispositivi mobili",
   description="Grafico a barre che mostra che `foaf:image` è stato utilizzato rispettivamente nello 0,86% delle pagine nel 2021 e nello 0,81% nel 2022, `foaf:document` nello 0,36% e 0,30%, `sioc:item` nello 0,24% e 0,20 %, `schema:webpage` nello 0,11% e 0,12%, `image` nello 0,09% e 0,10%, `og:website` nell 0,06% e 0,08%, `listitem` nello 0,08% e 0,08%, `breadcrumblist` nello 0,07% e 0,07%, `webpage` nello 0,04% e 0,04%, `person` nello 0,03% e 0,03%, `schema:article` nello 0,03% e 0,03%, `skos:concept` nello 0,04% e 0,03%, `v:breadcrumb` nello 0,04% e nello 0,03% e infine `sioc:useraccount` è stato utilizzato nello 0,03% delle pagine nel 2021 e nello 0,02% nel 2022.",
@@ -263,7 +263,7 @@ Analizziamo un po' più a fondo ciascun tipo.
 
 Quando si valutano i tipi di RDFa, `foaf:image` rimane presente su un maggior numero di pagine rispetto a qualsiasi altro tipo, sebbene abbia mostrato una diminuzione della percentuale di pagine nel nostro set dal 2021. Questo vale anche per i due tipi successivi, `foaf:document` e `sioc:item`, con piccole diminuzioni nell'utilizzo. Molti degli altri tipi mostrano un leggero aumento nell'utilizzo, come è successo agli RDFa nel complesso.
 
-{{ figura_markup(
+{{ figure_markup(
   image="rdfa-usage-by-device.png",
   caption="Utilizzo di RDFa per dispositivo",
   description="Grafico a barre che mostra che `foaf:image` è stato utilizzato nell'1,05% delle pagine desktop e nello 0,81% delle pagine mobili, `foaf:document` rispettivamente nello 0,38% e nello 0,30%, `sioc:item` nello 0,25% e nello 0,20%, `schema:webpage` su 0,16% e 0,12%, `image` nello 0,13% e 0,10%, `og:website` nello 0,07% e 0,08%, `listitem` nello 0,09% e 0,08%, `breadcrumblist` nello 0,08% e 0,07%, `webpage` nello 0,05% e 0,04%, `person` nello 0,03% e 0,03%, `schema:article` nello 0,04% e 0,03%, `skos:concept` nello 0,04% e 0,03%, `v:breadcrumb` nello 0,03% e 0,03% e infine `sioc:useraccount` nello 0,02% delle pagine desktop e mobili.",
@@ -309,7 +309,7 @@ A parte questo, l'utilizzo dei tipi Dublin Core è simile per le pagine mobili e
 
 ### Open Graph
 
-{{ figura_markup(
+{{ figure_markup(
   image="open-graph-usage-by-year-mobile.png",
   caption="Utilizzo di Open Graph per anno (dispositivi mobili)",
   description="Grafico a barre che mostra che `og:image` è stato utilizzato nel 37% delle pagine per dispositivi mobili nel 2021 e nel 39% nel 2022, `og:image:width` rispettivamente nel 13% e nel 14%, `og:image:height` nel 13% e 14%, `og:image:secure_url` nel 6% e 6%, `og:image:type` nel 2% e 5% e infine `og:image:alt` nel 2% delle pagine mobili nel 2021 e 3% nel 2022.",
@@ -321,7 +321,7 @@ A parte questo, l'utilizzo dei tipi Dublin Core è simile per le pagine mobili e
 
 I tag Open Graph hanno visto un incremento nella diffusione di utilizzo, con il più comune di questi tag  `og:title` che appare in oltre la metà di tutte le pagine del nostro set, insieme a `og:url` e `og:type`. La maggior parte di questi incrementi sono modesti, ad eccezione di `og:image:type`, la cui presenza è più che triplicata nelle pagine mobili dal 2021. Cosa che gareggia con le pagine desktop, dove si è passati dall'1,6% al 5,4% nel giro di un anno.
 
-{{ figura_markup(
+{{ figure_markup(
   image="open-graph-usage-by-device.png",
   caption="Utilizzo di Open Graph per dispositivo",
   description="Grafico a barre che mostra che `og:image` è stato utilizzato nel 40% delle pagine desktop e nel 39% delle pagine mobili, `og:image:width` rispettivamente nel 15% e nel 14%, `og:image:height` nel 15% e 14%, `og:image:secure_url` nel 6% e 6%, `og:image:type` nel 5% di entrambi, e infine `og:image:alt` è stato utilizzato nel 3% sia su desktop che su dispositivi mobili.",
@@ -349,7 +349,7 @@ Abbiamo visto un aumento nell'utilizzo di ciascun tipo di Open Graph presente ne
 
 I meta tag di Twitter seguono ancora una volta l'andamento di un aumento generale dell'utilizzo, più specificamente nei tag comuni di `twitter:card`, `twitter:title`, `twitter:description` e `twitter:image`. Un notevole aumento si apprezza per `twitter:label1` e `twitter:data1`, entrambi dal 7% nel 2021 al 10% nel 2022 per le pagine mobili.
 
-{{ figura_markup(
+{{ figure_markup(
   image="twitter-meta-tag-usage-by-device.png",
   caption="Utilizzo dei meta tag di Twitter per dispositivo",
   description="Grafico a barre che mostra che `twitter:card` è stato utilizzato nel 39% delle pagine desktop e nel 38% delle pagine mobili, `twitter:title` rispettivamente nel 22% e nel 22%, `twitter:description` nel 20% e nel 20%, `twitter:image` nel 12% e 12%, `twitter:site` nel 13% e 11%, `twitter:label1` nel 10% e 10%, `twitter:data1` nel 10% e 10%, `twitter:creator` nel 4% e 3%, `twitter:url` nel 4% e 3%, `twitter:domain` nel 2% e 2%, `twitter:image:src` nell'1% e 1%, `twitter:text:title` nello 0% e sull'1% e infine `twitter:app:id:iphone` è stato utilizzato nello 0% delle pagine desktop e mobili.",
@@ -405,7 +405,7 @@ Questo vale anche per le pagine desktop, con l'eccezione di `fb:pages` in legger
 
 I Microformat (microformati) sono rimasti molto simili nei dati di utilizzo dal 2021, con `adr` (presente nello 0,47% delle pagine del nostro set) che è ancora il più comune nella classifica.
 
-{{ figura_markup(
+{{ figure_markup(
   image="microformats-usage-by-device.png",
   caption="Utilizzo dei Microformat per dispositivo",
   description="Grafico a barre che mostra che `adr` è stato utilizzato nello 0,56% delle pagine desktop e nello 0,47% delle pagine mobili, `geo` rispettivamente nello 0,12% e 0,10%, `hReview` nello 0,04% e 0,05%, `hReview-aggregate` nello 0,03% e 0,03%, `hListing` nello 0,00% e 0,01%, `hProduct` nello 0,01% e 0,01% e infine `hCard` è stato utilizzato nello 0,01% delle pagine desktop e nello 0,00% delle pagine mobili.",
@@ -417,7 +417,7 @@ I Microformat (microformati) sono rimasti molto simili nei dati di utilizzo dal 
 
 Sia il mobile che il desktop condividono un mix di aumenti e diminuzioni di utilizzo tra i tipi di microformato, sebbene entrambi abbiano una media inferiore ai numeri registrati l'anno scorso. Alcuni tipi che pesano su questa diminuzione sono `hReview` (passato dallo 0,06% allo 0,05% nelle pagine per dispositivi mobili e dallo 0,06% allo 0,04% nelle pagine desktop) e `hReview-aggregate` (passando dallo 0,06% allo 0,04% sia su dispositivi mobili che su pagine desktop).
 
-{{ figura_markup(
+{{ figure_markup(
   image="microformats2-usage-by-year-mobile.png",
   caption="Utilizzo di Microformat2 per anno",
   description="Grafico a barre che mostra che `h-entry` è stato utilizzato nello 0,08% delle pagine mobili nel 2021 e nello 0,25% nel 2022 `h-card` rispettivamente nello 0,04% e 0,21%, `h-feed` nello 0,01% e 0,18% , `h-adr` nello 0,02% e 0,02%, `h-event` nello 0,00% e 0,00%, `h-product` nello 0,00% e 0,00% e infine `h-item` è stato utilizzato nello 0,01% delle pagine mobili nel 2021 e 0,00% nel 2022.",
@@ -429,7 +429,7 @@ Sia il mobile che il desktop condividono un mix di aumenti e diminuzioni di util
 
 Nel frattempo, gli attributi nel formato Microformat2 sono saliti alle stelle dal 2021. Le proprietà  `h-entry`, `h-card` e `h-feed` hanno visto copicui aumenti nel nostro set di pagine, il che spiega il fatto che gli attributi Microformat2 sono complessivamente quasi triplicati nel nostro set dall'anno precedente.
 
-{{ figura_markup(
+{{ figure_markup(
   image="microformats2-usage-by-device.png",
   caption="Utilizzo di Microformat2 per dispositivo",
   description="Grafico a barre che mostra che `h-entry` è stato utilizzato nello 0,12% delle pagine desktop e nello 0,25% delle pagine mobili, `h-card` rispettivamente nello 0,09% e 0,21%, `h-feed` nello 0,05% e 0,18%, `h-adr` nello 0,02% e 0,02% e `h-event`, `h-product` e `h-item` nello 0,00% delle pagine desktop e mobili.",
@@ -514,7 +514,7 @@ Qui di seguito possiamo vedere i collegamenti comuni tra i diversi tipi, in base
 {{ figure_markup(
   image="structured-data-json-ld-entities-relationships.svg",
   caption="Relazione tra entità JSON-LD in un diagramma di Sankey.",
-  description='Diagramma di Sankey che mostra un complesso intreccio di relazioni della forma: "Da" -> "Relazione" -> "A". `WebPage` è l'elemento "Da" più grande che si dirama a più tipi di "Relazione" e risultati "A" (ad esempio `WebPage` -> `PotentialAction` -> `SearchAction`). Questo è seguito da `WebSite`, quindi `Organization`, `Product`, `BreadCrumblist`, `BlogPosting` e quindi un elenco di altri elementi utilizzato in modo decrescente. Della colonna centrale "Relazioni" viene utilizzata maggiormente `PotentialAction`, seguita da `ItemListElement`, `IsPartOf`, `Publisher`, `image` e quindi una lunga coda simile di utilizzi in progressiva diminuzione. La colonna "A" ha `ImageObject` come il più utilizzato in alto, seguito da `Organization`, `SearchAction`, `ListItem`, `WebSite`, `WebPage` e poi, di nuovo, una coda anche più lunga di ogni utilizzi sempre meno frequenti. Il senso generale suggerito dal grafico è una gran quantità di relazioni diverse con un elevato uso incrociato tra le tre colonne.',
+  description='Diagramma di Sankey che mostra un complesso intreccio di relazioni della forma: "Da" -> "Relazione" -> "A". `WebPage` è l\'elemento "Da" più grande che si dirama a più tipi di "Relazione" e risultati "A" (ad esempio `WebPage` -> `PotentialAction` -> `SearchAction`). Questo è seguito da `WebSite`, quindi `Organization`, `Product`, `BreadCrumblist`, `BlogPosting` e quindi un elenco di altri elementi utilizzato in modo decrescente. Della colonna centrale "Relazioni" viene utilizzata maggiormente `PotentialAction`, seguita da `ItemListElement`, `IsPartOf`, `Publisher`, `image` e quindi una lunga coda simile di utilizzi in progressiva diminuzione. La colonna "A" ha `ImageObject` come il più utilizzato in alto, seguito da `Organization`, `SearchAction`, `ListItem`, `WebSite`, `WebPage` e poi, di nuovo, una coda anche più lunga di ogni utilizzi sempre meno frequenti. Il senso generale suggerito dal grafico è una gran quantità di relazioni diverse con un elevato uso incrociato tra le tre colonne.',
   width=1200,
   height=1200
   )
@@ -527,7 +527,7 @@ Qui sotto possiamo vedere gli stessi dati in modo interattivo con l'attributo so
 {{ figure_markup(
   image="sankey.png",
   caption="Grafico di Sankey.",
-  description='Grafico di Sankey che mostra i flussi con l'attributo di origine a sinistra e la classe di destinazione a destra. I flussi più utilizzati sono da `itemListElement` a `ListItem`, da `isPartOf` a `Website`, da `potentialAction` a `SearchAction` e `ReadAction` e da `image`, `logo` e `primaryImageOfPage` a `ImageObject`, seguito da un lungo elenco di relazioni meno utilizzate.',
+  description="Grafico di Sankey che mostra i flussi con l'attributo di origine a sinistra e la classe di destinazione a destra. I flussi più utilizzati sono da `itemListElement` a `ListItem`, da `isPartOf` a `Website`, da `potentialAction` a `SearchAction` e `ReadAction` e da `image`, `logo` e `primaryImageOfPage` a `ImageObject`, seguito da un lungo elenco di relazioni meno utilizzate.",
   chart_url="/en/2022/embeds/structured-data-sankey",
   width=600,
   height=1200,
@@ -587,7 +587,7 @@ Il resto dell'elenco include fonti di informazione come wikipedia.org (allo 0,13
 {{ figure_markup(
   image="sameas-domain-average-relative-change.png",
   caption="Modifica relativa alla media di dominio `SameAs`",
-  description="Grafico a barre che mostra `fr` modificato del 200% sia nelle pagine desktop che da quelle per dispositivi mobili, `site` del 200,00% su desktop e del 100,00% su dispositivi mobili, `de` rispettivamente del 200% e del 100%, `com` del 125% e 118 %, `me` del 117% e 117%, `org`" del 103% e 106%, `net` del 100% e 200%, `ca` del 100% e 200%, `co` del 100% e 117 %, e infine `it`, `page` e `es` del 100% sia su desktop che su dispositivi mobili.",
+  description="Grafico a barre che mostra `fr` modificato del 200% sia nelle pagine desktop che da quelle per dispositivi mobili, `site` del 200,00% su desktop e del 100,00% su dispositivi mobili, `de` rispettivamente del 200% e del 100%, `com` del 125% e 118 %, `me` del 117% e 117%, `org` del 103% e 106%, `net` del 100% e 200%, `ca` del 100% e 200%, `co` del 100% e 117 %, e infine `it`, `page` e `es` del 100% sia su desktop che su dispositivi mobili.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr8oRb8NNs5MbpPpDi7QSsTUTPQL_vxQtQvmn52qGk97gpNhJIHa8VF0x5ZJtWXAFuEbDFZQB6TIuN/pubchart?oid=1247757269&format=interactive",
   sheets_gid="1452747230",
   sql_file="jsonld_same_ases.sql",
