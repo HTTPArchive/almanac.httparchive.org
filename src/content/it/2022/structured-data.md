@@ -138,11 +138,6 @@ Tre progetti degni di nota che fanno molto affidamento sull'uso di dati struttur
 - <a hreflang="en" href="https://www.dbpedia.org/">**DBpedia**</a> è un insieme di set di dati, strumenti e servizi relativi ai dati web strutturati. Ad oggi contiene più di 228 milioni di entità liberamente disponibili. Il principale Knowledge Graph di DBpedia comprende dati puliti provenienti da Wikipedia. DBPedia è disponibile in tutte le lingue supportate da Wikipedia e ha una media di oltre 600.000 download di file all'anno. Alcuni strumenti open source costruiti su DBpedia forniscono accesso ai dati, controllo delle versioni, controllo di qualità, visualizzazione delle ontologie e infrastrutture di collegamento.
 - <a hreflang="en" href="https://www.wikidata.org/">**Wikidata**</a> memorizza dati strutturati da progetti Wikimedia come Wikipedia. È un database orientato ai documenti, che si concentra sulla memorizzazione di dati web strutturati.
 
-_Riferimenti:_
-- <a hreflang="en" href="http://www.ibiblio.org/osrt/omf/">Open Source Metadata Framework</a>
-- <a hreflang="en" href="https://en.wikipedia.org/wiki/DBpedia">DBpedia</a>
-- <a hreflang="en" href="https://en.wikipedia.org/wiki/Wikidata">WikiData</a>
-
 ## Casi d'uso
 
 L'implementazione dei dati strutturati è ampiamente vantaggiosa in numerose aree, alcune delle quali verranno trattate in questa sezione. È importante notare che molte di queste aree si sovrappongono, così è infatti la natura dei dati collegati e strutturati.
