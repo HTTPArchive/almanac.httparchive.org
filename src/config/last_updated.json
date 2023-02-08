@@ -31,8 +31,8 @@
   },
   "/static/js/almanac.js": {
     "date_published": "2021-02-24T00:00:00.000Z",
-    "date_modified": "2022-12-13T00:00:00.000Z",
-    "hash": "9c395a38708aa33f3c645692687b4245"
+    "date_modified": "2023-02-08T00:00:00.000Z",
+    "hash": "98246bed20d79e0580018616c7760a22"
   },
   "/static/js/send-web-vitals.js": {
     "date_published": "2021-02-24T00:00:00.000Z",
@@ -1617,6 +1617,11 @@
     "date_published": "2023-01-09T00:00:00.000Z",
     "date_modified": "2023-01-09T00:00:00.000Z",
     "hash": "ca1508a9d6926c7390286533bfad3855"
+  },
+  "ja/2022/chapters/structured-data.html": {
+    "date_published": "2023-02-08T00:00:00.000Z",
+    "date_modified": "2023-02-08T00:00:00.000Z",
+    "hash": "360b4b8ca1c304d1f32d60088a53972e"
   },
   "ja/2022/contributors.html": {
     "date_published": "2022-07-02T00:00:00.000Z",
