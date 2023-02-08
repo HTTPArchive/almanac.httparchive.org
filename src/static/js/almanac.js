@@ -155,6 +155,8 @@ function handleNavMenu() {
 function handleMobileMenu() {
   var menuBtn = document.querySelector('.menu-btn');
   var menuNav = document.querySelector('#menu');
+  var main = document.querySelector('main');
+  var footer = document.querySelector('footer');
 
   function toggleNavMenu() {
     var menuOpen = document.body.classList.toggle('menu-open');
@@ -162,6 +164,10 @@ function handleMobileMenu() {
     menuBtn.setAttribute('aria-expanded', menuOpen);
     var ariaLabel = menuOpen ? menuBtn.getAttribute('data-close-text') : menuBtn.getAttribute('data-open-text');
     menuBtn.setAttribute('aria-label', ariaLabel);
+
+    // Toogle inert to keep focus in the menu and header
+    main.toggleAttribute('inert');
+    footer.toggleAttribute('inert');
 
     /* When you open the menu, add an event listener to close it when clicking outside the menu area */
     /* Remove it on closing the menu */
