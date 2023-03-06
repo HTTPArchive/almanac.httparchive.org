@@ -238,7 +238,7 @@ JavaScriptを使ってメディアを埋め込むアプローチは無数にあ�
           srcset="image/example_square.jpg 1x, image/example_square_2x.jpg 2x">
   <source media="(max-width: 1400px)"
           srcset="image/example_4_3_aspect.jpg 1x, image/example_4_3_aspect_2x.jpg 2x">
-  <source srcset="image/example_16_9_aspect.jpg 1x, image/example_16_9_aspect_2x.jpg 2x"/>
+  <source srcset="image/example_16_9_aspect.jpg 1x, image/example_16_9_aspect_2x.jpg 2x">
   <img src="image/example_fallback.jpg" alt="...">
 </picture>
 ```

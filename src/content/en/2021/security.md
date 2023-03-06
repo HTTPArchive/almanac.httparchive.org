@@ -974,7 +974,7 @@ When looking at the adoption of certain security features such as CSP and `X-Fra
       <tr>
         <td>Blogger (Blogs)</td>
         <td>
-          X-Content-Type-Options (99.6%),<br/>
+          X-Content-Type-Options (99.6%),<br>
           X-XSS-Protection (99.6%)
         </td>
       </tr>
@@ -997,35 +997,35 @@ When looking at the adoption of certain security features such as CSP and `X-Fra
       <tr>
         <td>Shopify (E-commerce)</td>
         <td>
-          Content-Security-Policy (96.4%),<br/>
-          Expect-CT (95.5%),<br/>
-          Report-To (95.5%),<br/>
-          Strict-Transport-Security (98.2%),<br/>
-          X-Content-Type-Options (98.3%),<br/>
-          X-Frame-Options (95.2%),<br/>
+          Content-Security-Policy (96.4%),<br>
+          Expect-CT (95.5%),<br>
+          Report-To (95.5%),<br>
+          Strict-Transport-Security (98.2%),<br>
+          X-Content-Type-Options (98.3%),<br>
+          X-Frame-Options (95.2%),<br>
           X-XSS-Protection (98.2%)
         </td>
       </tr>
       <tr>
         <td>Squarespace (CMS)</td>
         <td>
-          Strict-Transport-Security (87.9%),<br/>
+          Strict-Transport-Security (87.9%),<br>
           X-Content-Type-Options (98.7%)
         </td>
       </tr>
       <tr>
         <td>Sucuri (CDN)</td>
         <td>
-          Content-Security-Policy (84.0%),<br/>
-          X-Content-Type-Options (88.8%),<br/>
-          X-Frame-Options (88.8%),<br/>
+          Content-Security-Policy (84.0%),<br>
+          X-Content-Type-Options (88.8%),<br>
+          X-Frame-Options (88.8%),<br>
           X-XSS-Protection (88.7%)
         </td>
       </tr>
       <tr>
         <td>Wix (Blogs)</td>
         <td>
-          Strict-Transport-Security (98.8%),<br/>
+          Strict-Transport-Security (98.8%),<br>
           X-Content-Type-Options (99.4%)
         </td>
       </tr>
