@@ -346,7 +346,7 @@ Questa <a hreflang="en" href="https://github.com/andydavies/http2-prioritization
     <thead>
       <tr>
         <th>CDN</th>
-        <th>Assegna la priorità <br />correttamente</th>
+        <th>Assegna la priorità <br>correttamente</th>
         <th>Desktop</th>
         <th>Mobile</th>
       </tr>

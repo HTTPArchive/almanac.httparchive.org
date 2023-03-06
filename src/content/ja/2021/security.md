@@ -986,7 +986,7 @@ CSPや `X-Frame-Options` などの特定のセキュリティ機能の採用状�
         <td>Drupal (CMS)</td>
         <td>
           X-Content-Type-Options (77.9%),
-          <br />
+          <br>
           X-Frame-Options (83.1%)
         </td>
       </tr>

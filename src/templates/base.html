@@ -33,13 +33,13 @@
       <meta property="og:title" content="{{ self.title() }}">
       <meta property="og:image" content="/static/images/ha.png">
     {% endblock %}
-    <link rel="canonical" href="https://almanac.httparchive.org{{ url_for(request.endpoint, **get_view_args(lang=language.lang_code)) }}" />
-    <link rel="alternate" type="application/rss+xml" title="{{ self.organization() }} RSS ({{lang }})" href="/{{ lang }}/rss.xml" />
+    <link rel="canonical" href="https://almanac.httparchive.org{{ url_for(request.endpoint, **get_view_args(lang=language.lang_code)) }}">
+    <link rel="alternate" type="application/rss+xml" title="{{ self.organization() }} RSS ({{lang }})" href="/{{ lang }}/rss.xml">
     {% if supported_languages | length > 1%}
     {% for l in supported_languages %}
-    <link rel="alternate" href="https://almanac.httparchive.org{{ url_for(request.endpoint, **get_view_args(lang=l.lang_code)) }}" hreflang="{{ l.lang_code}}" />
+    <link rel="alternate" href="https://almanac.httparchive.org{{ url_for(request.endpoint, **get_view_args(lang=l.lang_code)) }}" hreflang="{{ l.lang_code}}">
     {% endfor %}
-    <link rel="alternate" href="https://almanac.httparchive.org{{ url_for(request.endpoint, **get_view_args(lang='en')) }}" hreflang="x-default" />
+    <link rel="alternate" href="https://almanac.httparchive.org{{ url_for(request.endpoint, **get_view_args(lang='en')) }}" hreflang="x-default">
     {% endif %}
   </head>
 

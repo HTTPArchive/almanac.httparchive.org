@@ -986,7 +986,7 @@ When looking at the adoption of certain security features such as CSP and `X-Fra
         <td>Drupal (CMS)</td>
         <td>
           X-Content-Type-Options (77.9%),
-          <br />
+          <br>
           X-Frame-Options (83.1%)
         </td>
       </tr>

@@ -346,7 +346,7 @@ Este <a hreflang="en" href="https://github.com/andydavies/http2-prioritization-i
     <thead>
       <tr>
         <th>CDN</th>
-        <th>Prioriza <br />correctamente</th>
+        <th>Prioriza <br>correctamente</th>
         <th>Escritorio</th>
         <th>Móvil</th>
       </tr>

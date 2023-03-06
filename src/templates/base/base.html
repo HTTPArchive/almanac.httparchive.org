@@ -36,12 +36,12 @@
 <meta name="twitter:site" content="@HTTPArchive">
 <meta name="twitter:title" content="{{ self.title() }}">
 <meta name="twitter:image" content="{{ self.image_url() }}">
-<meta name="twitter:image:alt" content="{{ self.twitter_image_alt() }}" />
+<meta name="twitter:image:alt" content="{{ self.twitter_image_alt() }}">
 <meta name="twitter:description" content="{{ self.description() }}">
 
-<link rel="webmention" href="https://webmention.io/almanac.httparchive.org/webmention" />
-<link rel="pingback" href="https://webmention.io/almanac.httparchive.org/xmlrpc" />
-<link rel="me" href="mailto:team@httparchive.org" />
+<link rel="webmention" href="https://webmention.io/almanac.httparchive.org/webmention">
+<link rel="pingback" href="https://webmention.io/almanac.httparchive.org/xmlrpc">
+<link rel="me" href="mailto:team@httparchive.org">
 
 {% block structured_data %}
 <script type="application/ld+json">
@@ -791,19 +791,19 @@
     {%- if not ebook and not print and gif != "" %}
     <picture class="fig-mobile fig-desktop video-embed">
       <source media="(prefers-reduced-motion: no-preference)" type="image/gif" srcset="{{ gif }}" width="{{ gif_width }}" height="{{ gif_height }}" >
-      <img src="{{ image }}" alt="{{ caption|striptags }}" aria-labelledby="{{ anchor }}-caption" aria-describedby="{{ anchor }}-description" width="{{ width }}" height="{{ height }}" loading="lazy" />
+      <img src="{{ image }}" alt="{{ caption|striptags }}" aria-labelledby="{{ anchor }}-caption" aria-describedby="{{ anchor }}-description" width="{{ width }}" height="{{ height }}" loading="lazy">
     </picture>
     {%- endif %}
     {% if not ebook and not print and (video or gif) %}{% set anchor_class="video-fallback-image"%}{% endif %}
     <a href="{{ link }}"  class="{{ anchor_class }}">
       {%- if chart_url != "" %}
-      <img src="{{ image }}" alt="{{ caption|striptags }}" aria-labelledby="{{ anchor }}-caption" aria-describedby="{{ anchor }}-description" width="{{ width }}" height="{{ height }}" data-width="{{ data_width }}" data-height="{{ data_height }}" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="{{ chart_url|safe }}" loading="lazy" />
+      <img src="{{ image }}" alt="{{ caption|striptags }}" aria-labelledby="{{ anchor }}-caption" aria-describedby="{{ anchor }}-description" width="{{ width }}" height="{{ height }}" data-width="{{ data_width }}" data-height="{{ data_height }}" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="{{ chart_url|safe }}" loading="lazy">
       {%- elif not ebook and object != "" %}
       <object type="image/svg+xml" width="{{ width }}" height="{{ height }}" data="{{ image }}" role="img" aria-labelledby="{{ anchor }}-caption" aria-describedby="{{ anchor }}-description">
         {{ caption }}
       </object>
       {% else %}
-      <img src="{{ image }}" class="{{ classes }}" alt="{{ caption|striptags }}" aria-labelledby="{{ anchor }}-caption" aria-describedby="{{ anchor }}-description" width="{{ width }}" height="{{ height }}" loading="lazy" />
+      <img src="{{ image }}" class="{{ classes }}" alt="{{ caption|striptags }}" aria-labelledby="{{ anchor }}-caption" aria-describedby="{{ anchor }}-description" width="{{ width }}" height="{{ height }}" loading="lazy">
       {%- endif %}
     </a>
     {% if not ebook %}{{ figure_dropdown(metadata, chapter_config, id, sheets_gid, sql_file, image) }}{% endif %}
@@ -899,7 +899,7 @@
 {% macro swatch(color) %}
 <svg width="10" height="15" version="1.1" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" >
   <title>{{ color }}</title>
-  <rect x="0" y="0" width="10" height="15" stroke="black" fill="{{ color }}" stroke-width="1" />
+  <rect x="0" y="0" width="10" height="15" stroke="black" fill="{{ color }}" stroke-width="1">
 </svg>
 {% endmacro %}
 
@@ -908,6 +908,6 @@
 {% if request.path.endswith("/" + year + "/") or request.path.endswith("table-of-contents") or request.path.endswith("contributors") %}
 <!-- Let's assume you're going to visit one of the chapters and prefetch the page.css stylesheet -->
 <!-- A small optimisation but hey, every little helps! -->
-<link rel="prefetch" href="{{ get_versioned_filename('/static/css/page.css') }}" as="style" />
+<link rel="prefetch" href="{{ get_versioned_filename('/static/css/page.css') }}">
 {% endif %}
 {% endblock %}

@@ -43,7 +43,7 @@ Bijvoorbeeld:
 
 ```html
 <img srcset="images/example_3x.jpg 3x, images/example_2x.jpg 2x"
-      src="images/example.jpg" alt="..." />
+      src="images/example.jpg" alt="...">
 ```
 
 Ongeveer 26,5% van alle pagina's bevat nu `srcset`
@@ -79,7 +79,7 @@ Bij het verstrekken van de kandidatenlijst aan de user-agent, hebben we twee mec
 
 ```html
 <img srcset="images/example_3x.jpg 3x, images/example_2x.jpg 2x"
-      src="images/example.jpg" alt="..." />
+      src="images/example.jpg" alt="...">
 ```
 
 `w`-descriptoren beschrijven de pixelbreedte van de kandidaat, samen met een `sizes`-attribuut dat wordt gebruikt om de juiste afbeelding te selecteren.
@@ -87,7 +87,7 @@ Bij het verstrekken van de kandidatenlijst aan de user-agent, hebben we twee mec
 ```html
 <img srcset="images/example_small.jpg 600w, images/example_medium.jpg 1400w, images/example_large.jpg 2400w"
       sizes="100vw"
-      src="images/example_fallback.jpg" alt="..." />
+      src="images/example_fallback.jpg" alt="...">
 ```
 
 Beide benaderingen stellen de user-agent in staat om wiskundig rekening te houden met de huidige pixelverhouding van het apparaat bij het beoordelen van de meest geschikte afbeeldingskandidaat.
@@ -115,7 +115,7 @@ Bijvoorbeeld:
 ```html
 <img sizes="(min-width: 640px) 50vw, 100vw"
       srcset="images/example_small.jpg 600w, images/example_medium.jpg 1400w, images/example_large.jpg 2400w"
-      src="images/example_fallback.jpg" alt="..." />
+      src="images/example_fallback.jpg" alt="...">
 ```
 
 {{ figure_markup(
@@ -154,8 +154,8 @@ Hoewel er enkele services en afbeeldings-CDN's zijn die het automatisch overscha
 
 ```html
 <picture>
-    <source type="image/webp" srcset="images/example.webp" />
-    <img src="images/example.jpg" alt="..." />
+    <source type="image/webp" srcset="images/example.webp">
+    <img src="images/example.jpg" alt="...">
 </picture>
 ```
 
@@ -191,11 +191,11 @@ Hier is een voorbeeld van de markup-syntaxis die kan worden gebruikt om meerdere
 
 ```html
 <picture>
-  <source type="image/avif" srcset="images/example.avif" />
-  <source type="image/webp" srcset="images/example.webp" />
-  <source type="image/jp2" srcset="images/example.jp2" />
-  <source type="image/vnd.ms-photo"  srcset="images/example.jxr" />
-  <img src="images/example.jpg" alt="Description" />
+  <source type="image/avif" srcset="images/example.avif">
+  <source type="image/webp" srcset="images/example.webp">
+  <source type="image/jp2" srcset="images/example.jp2">
+  <source type="image/vnd.ms-photo"  srcset="images/example.jxr">
+  <img src="images/example.jpg" alt="Description">
 </picture>
 ```
 
@@ -235,11 +235,11 @@ In dit voorbeeld veranderen we de aspectverhouding van de aangeboden media, van 
 ```html
 <picture>
   <source media="(max-width: 780px)"
-          srcset="image/example_square.jpg 1x, image/example_square_2x.jpg 2x" />
+          srcset="image/example_square.jpg 1x, image/example_square_2x.jpg 2x">
   <source media="(max-width: 1400px)"
-          srcset="image/example_4_3_aspect.jpg 1x, image/example_4_3_aspect_2x.jpg 2x" />
-  <source srcset="image/example_16_9_aspect.jpg 1x, image/example_16_9_aspect_2x.jpg 2x" />
-  <img src="image/example_fallback.jpg" alt="..." />
+          srcset="image/example_4_3_aspect.jpg 1x, image/example_4_3_aspect_2x.jpg 2x">
+  <source srcset="image/example_16_9_aspect.jpg 1x, image/example_16_9_aspect_2x.jpg 2x">
+  <img src="image/example_fallback.jpg" alt="...">
 </picture>
 ```
 
@@ -267,7 +267,7 @@ Voorbeeld syntaxis:
           media="(min-width: 960px) and (orientation: landscape)">
   <source srcset="images/example_tall.jpg"
           media="(min-width: 960px) and (orientation: portrait)">
-  <img src="..." alt="..." />
+  <img src="..." alt="...">
 </picture>
 ```
 

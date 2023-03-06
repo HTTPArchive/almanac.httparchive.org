@@ -183,11 +183,11 @@ HTML5導入以前は、これを実現するためにARIAのランドマーク�
   <table>
     <thead>
       <tr>
-        <th>HTML5 <br />要素</th>
-        <th>ARIAロール <br />と同じ</th>
-        <th>要素 <br />のあるページ</th>
-        <th>ロール <br />のあるページ</th>
-        <th>要素またはロール <br />のあるページ</th>
+        <th>HTML5 <br>要素</th>
+        <th>ARIAロール <br>と同じ</th>
+        <th>要素 <br>のあるページ</th>
+        <th>ロール <br>のあるページ</th>
+        <th>要素またはロール <br>のあるページ</th>
       </tr>
     </thead>
     <tbody>
