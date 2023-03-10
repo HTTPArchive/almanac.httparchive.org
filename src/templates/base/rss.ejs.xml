@@ -3,7 +3,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <title>{{ self.organization() }}</title>
-    <link rel="alternate" type="text/html" href="https://almanac.httparchive.org/{{ lang }}/" />
+    <link rel="alternate" type="text/html" href="https://almanac.httparchive.org/{{ lang }}/">
     <% if (updated_date) { %><updated><%= updated_date %></updated><% } %>
     <link href="https://almanac.httparchive.org/{{ lang }}/rss.xml" rel="self" type="application/rss+xml"/>
     <id>https://almanac.httparchive.org/{{ lang }}/rss.xml</id>
@@ -11,7 +11,7 @@
 <% if (url.language == language) { -%>
     <entry>
         <title><%= url.title %></title>
-        <link href="https://almanac.httparchive.org/<%= url.url %>" />
+        <link href="https://almanac.httparchive.org/<%= url.url %>">
         <summary><%= url.description %></summary>
         <id>https://almanac.httparchive.org/<%= url.url %></id>
         <% if (url.pubdate) { %><published><%= url.pubdate %></published><% } %>

@@ -113,7 +113,7 @@ With the challenges to HTTP/2 priorities, a new prioritization scheme was needed
 While most of the resource priorities are decided by the browser itself, developers can now also use the new <a hreflang="en" href="https://web.dev/priority-hints/">priority hints</a> to tweak the priority of a particular resource. Priority hints can be specified via the `fetchpriority` attribute in the HTML. For example, suppose that a website would like to prioritize a hero image, it can add `fetchpriority` to the image tag:
 
 ```html
-<img src="hero.png" fetchpriority="high" />
+<img src="hero.png" fetchpriority="high">
 ```
 
 Priority hints can be very effective in improving user experience. For example, <a hreflang="en" href="https://www.etsy.com/codeascraft/priority-hints-what-your-browser-doesnt-know-yet">Etsy conducted an experiment</a> and observed a 4% improvement in Largest Contentful Paint (LCP) on product listing pages that included priority hints for certain images.
@@ -158,7 +158,7 @@ Given the challenges to using HTTP/2 Push, and it's deprecation from Chrome, dev
 Developers can use Preload as one alternative to pre-emptively request a resource that will be used later in a page load. This is enabled by including[`<link rel="preload">`](https://developer.mozilla.org/docs/Web/HTML/Link_types/preload) in the `<head>` section of the HTML. For example:
 
 ```html
-<link rel="preload" href="/css/style.css" as="style" />
+<link rel="preload" href="/css/style.css" as="style">
 ```
 
 Or as a `Link` HTTP header:
