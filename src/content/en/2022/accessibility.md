@@ -211,11 +211,11 @@ Landmarks help divide a web page into thematic regions that makes it easier for 
   <table>
     <thead>
       <tr>
-        <th>HTML5 <br />element</th>
-        <th>ARIA role <br />equivalent</th>
-        <th>Pages with <br /> element</th>
-        <th>Pages with <br /> role</th>
-        <th>Pages with <br /> element or role</th>
+        <th>HTML5 <br>element</th>
+        <th>ARIA role <br>equivalent</th>
+        <th>Pages with <br> element</th>
+        <th>Pages with <br> role</th>
+        <th>Pages with <br> element or role</th>
       </tr>
     </thead>
     <tbody>

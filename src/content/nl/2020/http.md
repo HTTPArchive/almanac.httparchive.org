@@ -346,7 +346,7 @@ Deze <a hreflang="en" href="https://github.com/andydavies/http2-prioritization-i
     <thead>
       <tr>
         <th>CDN</th>
-        <th>Prioriteer <br /> correct</th>
+        <th>Prioriteer <br> correct</th>
         <th>Desktop</th>
         <th>Mobiel</th>
       </tr>

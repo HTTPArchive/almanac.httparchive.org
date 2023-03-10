@@ -124,7 +124,7 @@
 {% block rss_feed %}RSS Feed{% endblock %}
 
 {% block featured_chapter %}Рекомендований розділ{% endblock %}
-{% block featured_chapter_last_year %}Рекомендований розділ<br/>з Web Almanac {{ year|int -1 }}{% endblock %}
+{% block featured_chapter_last_year %}Рекомендований розділ<br>з Web Almanac {{ year|int -1 }}{% endblock %}
 
 {# Check if read_chapter already defined in child template as macros can't be overridden #}
 {% if not read_chapter %}

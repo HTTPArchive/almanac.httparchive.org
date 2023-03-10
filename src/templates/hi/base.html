@@ -124,7 +124,7 @@
 {% block rss_feed %}RSS Feed{% endblock %}
 
 {% block featured_chapter %}विशेष अध्याय{% endblock %}
-{% block featured_chapter_last_year %}विशेष अध्याय<br/>{{ year|int -1 }} Web Almanac से {% endblock %}
+{% block featured_chapter_last_year %}विशेष अध्याय<br>{{ year|int -1 }} Web Almanac से {% endblock %}
 
 {# Check if read_chapter already defined in child template as macros can't be overridden #}
 {% if not read_chapter %}
