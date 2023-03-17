@@ -8,7 +8,9 @@ FROM
   (
     SELECT
       client,
-      IF(NET.HOST(url) IN ('unpkg.com',
+      IF(
+        NET.HOST(url) IN (
+          'unpkg.com',
           'cdn.jsdelivr.net',
           'cdnjs.cloudflare.com',
           'ajax.aspnetcdn.com',
@@ -17,7 +19,10 @@ FROM
           'maxcdn.bootstrapcdn.com',
           'use.fontawesome.com',
           'code.jquery.com',
-          'fonts.googleapis.com'), NET.HOST(url), 'OTHER') AS jsCDN,
+          'fonts.googleapis.com'
+        ),
+        NET.HOST(url), 'OTHER'
+      ) AS jsCDN,
       COUNT(DISTINCT page) AS pageUseCount,
       SUM(COUNTIF(firstHtml)) OVER (PARTITION BY client) AS totalPagesCount
     FROM

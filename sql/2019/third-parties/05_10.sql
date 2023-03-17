@@ -19,19 +19,22 @@ SELECT
   COUNT(0) AS totalScripts,
   SUM(executionTime) AS totalExecutionTime,
   ROUND(SUM(executionTime) * 100 / MAX(t2.totalExecutionTime), 2) AS percentExecutionTime
-FROM (
-  SELECT
-    item.url AS requestUrl,
-    item.execution_time AS executionTime
-  FROM
-    `httparchive.lighthouse.2019_07_01_mobile`,
-    UNNEST(getExecutionTimes(report)) AS item) t1,
+FROM
+  (
+    SELECT
+      item.url AS requestUrl,
+      item.execution_time AS executionTime
+    FROM
+      `httparchive.lighthouse.2019_07_01_mobile`,
+      UNNEST(getExecutionTimes(report)) AS item
+  ) t1,
   (
     SELECT
       SUM(item.execution_time) AS totalExecutionTime
     FROM
       `httparchive.lighthouse.2019_07_01_mobile`,
-      UNNEST(getExecutionTimes(report)) AS item) t2
+      UNNEST(getExecutionTimes(report)) AS item
+  ) t2
 WHERE requestUrl != 'Other'
 GROUP BY
   requestUrl

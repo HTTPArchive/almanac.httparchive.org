@@ -31,20 +31,21 @@ SELECT
   COUNTIF(sets_flex_basis_content) AS sets_flex_basis_content,
   ANY_VALUE(total_pages) AS total_pages,
   COUNTIF(sets_flex_basis_content) / ANY_VALUE(total_pages) AS pct_sets_flex_basis_content
-FROM (
-  SELECT
-    client,
-    page,
-    LOGICAL_AND(flex_basis_content) AS sets_flex_basis_content
-  FROM
-    `httparchive.almanac.parsed_css`,
-    UNNEST(getFlexBasisContent(css)) AS flex_basis_content
-  WHERE
-    date = '2022-07-01'
-  GROUP BY
-    client,
-    page
-)
+FROM
+  (
+    SELECT
+      client,
+      page,
+      LOGICAL_AND(flex_basis_content) AS sets_flex_basis_content
+    FROM
+      `httparchive.almanac.parsed_css`,
+      UNNEST(getFlexBasisContent(css)) AS flex_basis_content
+    WHERE
+      date = '2022-07-01'
+    GROUP BY
+      client,
+      page
+  )
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,

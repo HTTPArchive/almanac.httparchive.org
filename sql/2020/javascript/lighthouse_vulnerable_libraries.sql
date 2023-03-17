@@ -1,7 +1,9 @@
 #standardSQL
 # Most frequent vulnerable libraries
 CREATE TEMPORARY FUNCTION getVulnerabilities(audit STRING)
-RETURNS ARRAY<STRING> LANGUAGE js AS '''
+RETURNS ARRAY<STRING>
+LANGUAGE js
+AS '''
 try {
   var $ = JSON.parse(audit);
   return $.details.items.map(i => i.detectedLib.text.split('@')[0]);
@@ -17,11 +19,13 @@ SELECT
   COUNT(0) / total AS pct
 FROM
   `httparchive.lighthouse.2020_08_01_mobile`,
-  UNNEST(getVulnerabilities(JSON_EXTRACT(report, "$.audits['no-vulnerable-libraries']"))) AS lib, (
+  UNNEST(getVulnerabilities(JSON_EXTRACT(report, "$.audits['no-vulnerable-libraries']"))) AS lib,
+  (
     SELECT
       COUNT(DISTINCT url) AS total
     FROM
-      `httparchive.lighthouse.2020_08_01_mobile`)
+      `httparchive.lighthouse.2020_08_01_mobile`
+  )
 GROUP BY
   lib,
   total

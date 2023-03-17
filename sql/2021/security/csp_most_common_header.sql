@@ -17,16 +17,17 @@ SELECT
   SUM(COUNT(0)) OVER (PARTITION BY client) AS total_csp_headers,
   COUNT(0) AS freq,
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
-FROM (
-  SELECT
-    client,
-    getHeader(response_headers, 'Content-Security-Policy') AS csp_header
-  FROM
-    `httparchive.almanac.requests`
-  WHERE
-    date = '2021-07-01' AND
-    firstHtml
-)
+FROM
+  (
+    SELECT
+      client,
+      getHeader(response_headers, 'Content-Security-Policy') AS csp_header
+    FROM
+      `httparchive.almanac.requests`
+    WHERE
+      date = '2021-07-01' AND
+      firstHtml
+  )
 WHERE
   csp_header IS NOT NULL
 GROUP BY

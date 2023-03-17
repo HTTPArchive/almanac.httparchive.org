@@ -6,16 +6,18 @@ SELECT
   COUNT(0) AS freq,
   SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
-FROM (
-  SELECT
-    client,
-    format,
-    page
-  FROM
-    `httparchive.almanac.requests`
-  WHERE
-    date = '2021-07-01' AND
-    type = 'image')
+FROM
+  (
+    SELECT
+      client,
+      format,
+      page
+    FROM
+      `httparchive.almanac.requests`
+    WHERE
+      date = '2021-07-01' AND
+      type = 'image'
+  )
 JOIN (
   SELECT DISTINCT
     _TABLE_SUFFIX AS client,
@@ -25,7 +27,8 @@ JOIN (
   WHERE
     LOWER(category) = 'static site generator' OR
     app = 'Next.js' OR
-    app = 'Nuxt.js')
+    app = 'Nuxt.js'
+)
 USING
   (client, page)
 GROUP BY

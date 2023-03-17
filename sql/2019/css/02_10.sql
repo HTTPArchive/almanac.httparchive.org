@@ -11,12 +11,15 @@ FROM
 JOIN (
   SELECT _TABLE_SUFFIX, COUNT(0) AS total
   FROM `httparchive.summary_pages.2019_07_01_*`
-  GROUP BY _TABLE_SUFFIX)
+  GROUP BY _TABLE_SUFFIX
+)
 USING (_TABLE_SUFFIX)
 WHERE
-  app IN ('animate.css', 'Ant Design', 'Bootstrap', 'Bulma', 'Clarity', 'ZURB Foundation',
+  app IN (
+    'animate.css', 'Ant Design', 'Bootstrap', 'Bulma', 'Clarity', 'ZURB Foundation',
     'Angular Material', 'Material Design Lite', 'Materialize CSS',
-    'Milligram', 'Pure CSS', 'Semantic-ui', 'Shapecss', 'tailwindcss', 'UIKit')
+    'Milligram', 'Pure CSS', 'Semantic-ui', 'Shapecss', 'tailwindcss', 'UIKit'
+  )
 GROUP BY
   client,
   total,

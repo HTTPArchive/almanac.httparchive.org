@@ -37,17 +37,18 @@ SELECT
   COUNTIF(REGEXP_CONTAINS(cookie_value, r'(?i)^\s*__Secure-')) / COUNT(0) AS pct_secure_prefix,
   COUNTIF(REGEXP_CONTAINS(cookie_value, r'(?i)^\s*__Host-')) AS count_host_prefix,
   COUNTIF(REGEXP_CONTAINS(cookie_value, r'(?i)^\s*__Host-')) / COUNT(0) AS pct_host_prefix
-FROM (
-  SELECT
-    client,
-    getSetCookieHeaders(response_headers) AS cookie_values,
-    IF(NET.REG_DOMAIN(url) = NET.REG_DOMAIN(page), 1, 3) AS party
-  FROM
-    `httparchive.almanac.requests`
-  WHERE
-    date = '2022-06-01'
-),
-UNNEST(cookie_values) AS cookie_value
+FROM
+  (
+    SELECT
+      client,
+      getSetCookieHeaders(response_headers) AS cookie_values,
+      IF(NET.REG_DOMAIN(url) = NET.REG_DOMAIN(page), 1, 3) AS party
+    FROM
+      `httparchive.almanac.requests`
+    WHERE
+      date = '2022-06-01'
+  ),
+  UNNEST(cookie_values) AS cookie_value
 GROUP BY
   client,
   party

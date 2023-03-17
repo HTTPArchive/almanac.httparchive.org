@@ -1,7 +1,7 @@
 CREATE TEMPORARY FUNCTION getFontDisplay(json STRING)
-RETURNS ARRAY < STRING >
+RETURNS ARRAY<STRING>
 LANGUAGE js
-OPTIONS(library = "gs://httparchive/lib/css-utils.js")
+OPTIONS (library = "gs://httparchive/lib/css-utils.js")
 AS '''
 try {
   const ast = JSON.parse(json);
@@ -25,19 +25,21 @@ SELECT
   pages,
   total,
   pages / total AS pct
-FROM (
-  SELECT
-    client,
-    font_display,
-    COUNT(DISTINCT page) AS pages
-  FROM
-    `httparchive.almanac.parsed_css`,
-    UNNEST(getFontDisplay(css)) AS font_display
-  WHERE
-    date = '2022-07-01'
-  GROUP BY
-    client,
-    font_display)
+FROM
+  (
+    SELECT
+      client,
+      font_display,
+      COUNT(DISTINCT page) AS pages
+    FROM
+      `httparchive.almanac.parsed_css`,
+      UNNEST(getFontDisplay(css)) AS font_display
+    WHERE
+      date = '2022-07-01'
+    GROUP BY
+      client,
+      font_display
+  )
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -45,7 +47,8 @@ JOIN (
   FROM
     `httparchive.summary_pages.2022_07_01_*` -- noqa: L062
   GROUP BY
-    client)
+    client
+)
 USING
   (client)
 ORDER BY

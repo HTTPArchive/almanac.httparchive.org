@@ -22,17 +22,18 @@ SELECT
   percentile,
   client,
   APPROX_QUANTILES(image.clientWidth, 1000)[OFFSET(percentile * 10)] AS clientWidth
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    image
-  FROM
-    `httparchive.pages.2022_06_01_*`,
-    UNNEST(layoutDimensions(payload)) AS image
-  WHERE
-    image.clientWidth > 1
-),
-UNNEST([0, 10, 25, 50, 75, 90, 100]) AS percentile
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      image
+    FROM
+      `httparchive.pages.2022_06_01_*`,
+      UNNEST(layoutDimensions(payload)) AS image
+    WHERE
+      image.clientWidth > 1
+  ),
+  UNNEST([0, 10, 25, 50, 75, 90, 100]) AS percentile
 GROUP BY
   percentile,
   client

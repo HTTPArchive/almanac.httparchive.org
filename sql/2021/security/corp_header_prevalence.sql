@@ -17,16 +17,17 @@ SELECT
   SUM(COUNT(DISTINCT host)) OVER (PARTITION BY client) AS total_corp_headers,
   COUNT(DISTINCT host) AS freq,
   COUNT(DISTINCT host) / SUM(COUNT(DISTINCT host)) OVER (PARTITION BY client) AS pct
-FROM (
-  SELECT
-    client,
-    NET.HOST(urlShort) AS host,
-    getHeader(response_headers, 'Cross-Origin-Resource-Policy') AS corp_header
-  FROM
-    `httparchive.almanac.requests`
-  WHERE
-    date = '2021-07-01'
-)
+FROM
+  (
+    SELECT
+      client,
+      NET.HOST(urlShort) AS host,
+      getHeader(response_headers, 'Cross-Origin-Resource-Policy') AS corp_header
+    FROM
+      `httparchive.almanac.requests`
+    WHERE
+      date = '2021-07-01'
+  )
 WHERE
   corp_header IS NOT NULL
 GROUP BY

@@ -165,17 +165,19 @@ SELECT
   SUM(value) AS freq,
   SUM(SUM(value)) OVER (PARTITION BY client) AS total,
   SAFE_DIVIDE(SUM(value), SUM(SUM(value)) OVER (PARTITION BY client)) AS pct
-FROM (
-  SELECT
-    client,
-    page,
-    color_space.name AS color_space,
-    color_space.value
-  FROM
-    `httparchive.almanac.parsed_css`,
-    UNNEST(getColorSpaces(css)) AS color_space
-  WHERE
-    date = '2020-08-01')
+FROM
+  (
+    SELECT
+      client,
+      page,
+      color_space.name AS color_space,
+      color_space.value
+    FROM
+      `httparchive.almanac.parsed_css`,
+      UNNEST(getColorSpaces(css)) AS color_space
+    WHERE
+      date = '2020-08-01'
+  )
 GROUP BY
   client,
   color_space

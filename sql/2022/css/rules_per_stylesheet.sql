@@ -82,21 +82,25 @@ SELECT
   percentile,
   client,
   APPROX_QUANTILES(rule_count, 1000 IGNORE NULLS)[OFFSET(percentile * 10)] AS rules_per_stylesheet
-FROM (
-  SELECT
-    client,
-    info.ruleCount AS rule_count
-  FROM (
+FROM
+  (
     SELECT
       client,
-      getSpecificityInfo(css) AS info
+      info.ruleCount AS rule_count
     FROM
-      `httparchive.almanac.parsed_css`
-    WHERE
-      date = '2022-07-01' AND
-      url NOT IN ('inline', 'block') AND
-      # Limit the size of the CSS to avoid OOM crashes. This loses ~20% of stylesheets.
-      LENGTH(css) < 0.1 * 1024 * 1024)),
+      (
+        SELECT
+          client,
+          getSpecificityInfo(css) AS info
+        FROM
+          `httparchive.almanac.parsed_css`
+        WHERE
+          date = '2022-07-01' AND
+          url NOT IN ('inline', 'block') AND
+          # Limit the size of the CSS to avoid OOM crashes. This loses ~20% of stylesheets.
+          LENGTH(css) < 0.1 * 1024 * 1024
+      )
+  ),
   UNNEST([10, 25, 50, 75, 90]) AS percentile
 GROUP BY
   percentile,

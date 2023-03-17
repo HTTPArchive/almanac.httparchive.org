@@ -1,5 +1,5 @@
 CREATE TEMPORARY FUNCTION getFontSmoothing(json STRING)
-RETURNS ARRAY < STRING > LANGUAGE js
+RETURNS ARRAY<STRING> LANGUAGE js
 OPTIONS (library = "gs://httparchive/lib/css-utils.js")
 AS '''
 try {
@@ -22,19 +22,21 @@ SELECT
   pages,
   total,
   pages / total AS pct
-FROM (
-  SELECT
-    client,
-    font_smoothing,
-    COUNT(DISTINCT page) AS pages
-  FROM
-    `httparchive.almanac.parsed_css`,
-    UNNEST(getFontSmoothing(css)) AS font_smoothing
-  WHERE
-    date = '2022-07-01'
-  GROUP BY
-    client,
-    font_smoothing)
+FROM
+  (
+    SELECT
+      client,
+      font_smoothing,
+      COUNT(DISTINCT page) AS pages
+    FROM
+      `httparchive.almanac.parsed_css`,
+      UNNEST(getFontSmoothing(css)) AS font_smoothing
+    WHERE
+      date = '2022-07-01'
+    GROUP BY
+      client,
+      font_smoothing
+  )
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -42,7 +44,8 @@ JOIN (
   FROM
     `httparchive.summary_pages.2022_07_01_*` -- noqa: L062
   GROUP BY
-    client)
+    client
+)
 USING
   (client)
 ORDER BY

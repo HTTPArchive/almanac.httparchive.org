@@ -1,7 +1,9 @@
 #standardSQL
 # 10_05: structured data by @type
 CREATE TEMPORARY FUNCTION getSchemaTypes(payload STRING)
-RETURNS ARRAY<STRING> LANGUAGE js AS '''
+RETURNS ARRAY<STRING>
+LANGUAGE js
+AS '''
   try {
     var $ = JSON.parse(payload);
     var almanac = JSON.parse($._almanac);

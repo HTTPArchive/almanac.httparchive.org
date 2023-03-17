@@ -63,21 +63,22 @@ SELECT
   COUNTIF(uses_last_modified) / COUNT(0) AS pct_using_last_modified,
   COUNTIF(uses_etag AND uses_last_modified) / COUNT(0) AS pct_using_both,
   COUNTIF(NOT uses_etag AND NOT uses_last_modified) / COUNT(0) AS pct_using_neither
-FROM (
-  SELECT
-    year,
-    client,
-    TRIM(resp_expires) != '' AS uses_expires,
-    TRIM(resp_cache_control) != '' AS uses_cache_control,
-    REGEXP_CONTAINS(resp_cache_control, r'(?i)max-age\s*=\s*[0-9]+') AS uses_max_age,
-    TRIM(resp_etag) = '' AS uses_no_etag,
-    TRIM(resp_etag) != '' AS uses_etag,
-    TRIM(resp_last_modified) != '' AS uses_last_modified,
-    REGEXP_CONTAINS(TRIM(resp_etag), '^W/".*"') AS uses_weak_etag,
-    REGEXP_CONTAINS(TRIM(resp_etag), '^".*"') AS uses_strong_etag
-  FROM
-    summary_requests
-)
+FROM
+  (
+    SELECT
+      year,
+      client,
+      TRIM(resp_expires) != '' AS uses_expires,
+      TRIM(resp_cache_control) != '' AS uses_cache_control,
+      REGEXP_CONTAINS(resp_cache_control, r'(?i)max-age\s*=\s*[0-9]+') AS uses_max_age,
+      TRIM(resp_etag) = '' AS uses_no_etag,
+      TRIM(resp_etag) != '' AS uses_etag,
+      TRIM(resp_last_modified) != '' AS uses_last_modified,
+      REGEXP_CONTAINS(TRIM(resp_etag), '^W/".*"') AS uses_weak_etag,
+      REGEXP_CONTAINS(TRIM(resp_etag), '^".*"') AS uses_strong_etag
+    FROM
+      summary_requests
+  )
 GROUP BY
   year,
   client

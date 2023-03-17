@@ -1,7 +1,9 @@
 #standardSQL
 # 09_32b: % of pages using alt tags
 CREATE TEMPORARY FUNCTION hasImages(payload STRING)
-RETURNS BOOLEAN LANGUAGE js AS '''
+RETURNS BOOLEAN
+LANGUAGE js
+AS '''
 try {
   var $ = JSON.parse(payload);
   var elements = JSON.parse($._element_count);
@@ -19,14 +21,15 @@ SELECT
 
   ROUND(COUNTIF(has_images) * 100 / COUNT(0), 2) AS perc_with_images,
   ROUND(COUNTIF(has_images AND has_alt_tags) * 100 / COUNTIF(has_images), 2) AS perc_with_an_alt_tag
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    url AS page,
-    hasImages(payload) AS has_images
-  FROM
-    `httparchive.pages.2019_07_01_*`
-)
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      url AS page,
+      hasImages(payload) AS has_images
+    FROM
+      `httparchive.pages.2019_07_01_*`
+  )
 JOIN (
   SELECT
     client,

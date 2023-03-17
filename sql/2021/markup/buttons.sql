@@ -3,10 +3,9 @@
 
 # returns button struct
 CREATE TEMPORARY FUNCTION get_markup_buttons_info(markup_string STRING)
-RETURNS ARRAY<STRUCT<
-  name STRING,
-  freq INT64
-  >> LANGUAGE js AS '''
+RETURNS ARRAY<STRUCT<name STRING, freq INT64>>
+LANGUAGE js
+AS '''
 var result = [];
 try {
     var markup = JSON.parse(markup_string);

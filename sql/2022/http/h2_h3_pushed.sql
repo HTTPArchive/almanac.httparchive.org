@@ -21,17 +21,18 @@ SELECT
   COUNT(DISTINCT page) AS num_pages,
   total_pages,
   COUNT(DISTINCT page) / total_pages AS pct_pages
-FROM (
-  SELECT
-    date,
-    client,
-    page
-  FROM
-    `httparchive.almanac.requests`
-  WHERE
-    date IN ('2019-07-01', '2020-08-01', '2021-07-01', '2022-06-01') AND
-    pushed = '1'
-)
+FROM
+  (
+    SELECT
+      date,
+      client,
+      page
+    FROM
+      `httparchive.almanac.requests`
+    WHERE
+      date IN ('2019-07-01', '2020-08-01', '2021-07-01', '2022-06-01') AND
+      pushed = '1'
+  )
 JOIN
   totals
 USING (date, client)

@@ -2,7 +2,9 @@
 # percentage/count of pages that contain common elements and roles
 
 CREATE TEMPORARY FUNCTION getUsedRoles(payload STRING)
-RETURNS ARRAY<STRING> LANGUAGE js AS '''
+RETURNS ARRAY<STRING>
+LANGUAGE js
+AS '''
 try {
   const almanac = JSON.parse(payload);
   return Object.keys(almanac.nodes_using_role.usage_and_count);
@@ -12,7 +14,9 @@ try {
 ''';
 
 CREATE TEMPORARY FUNCTION get_element_types(element_count_string STRING)
-RETURNS ARRAY<STRING> LANGUAGE js AS '''
+RETURNS ARRAY<STRING>
+LANGUAGE js
+AS '''
 try {
     if (!element_count_string) return []; // 2019 had a few cases
 
@@ -43,7 +47,8 @@ elements AS (
     url,
     element_type
   FROM
-    `httparchive.pages.2022_06_01_*`,
+    `httparchive.pages.2022_06_01_*`
+  ,
     UNNEST(get_element_types(JSON_EXTRACT_SCALAR(payload, '$._element_count'))) AS element_type
   JOIN
     mappings
@@ -56,7 +61,8 @@ roles AS (
     url,
     role_type
   FROM
-    `httparchive.pages.2022_06_01_*`,
+    `httparchive.pages.2022_06_01_*`
+  ,
     UNNEST(getUsedRoles(JSON_EXTRACT_SCALAR(payload, '$._almanac'))) AS role_type
   JOIN
     mappings

@@ -28,19 +28,21 @@ SELECT
   SUM(freq) AS freq,
   SUM(SUM(freq)) OVER (PARTITION BY client) / 2 AS total,
   SUM(freq) / (SUM(SUM(freq)) OVER (PARTITION BY client) / 2) AS pct
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    url AS page,
-    nested.nested,
-    SUM(nested.freq) AS freq
-  FROM
-    `httparchive.pages.2020_08_01_*`,
-    UNNEST(getNestedUsage(payload)) AS nested
-  GROUP BY
-    client,
-    page,
-    nested)
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      url AS page,
+      nested.nested,
+      SUM(nested.freq) AS freq
+    FROM
+      `httparchive.pages.2020_08_01_*`,
+      UNNEST(getNestedUsage(payload)) AS nested
+    GROUP BY
+      client,
+      page,
+      nested
+  )
 GROUP BY
   client,
   nested

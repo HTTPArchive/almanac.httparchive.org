@@ -147,15 +147,17 @@ SELECT DISTINCT
   SUM(freq) OVER (PARTITION BY client, type) AS freq,
   SUM(freq) OVER (PARTITION BY client) AS total,
   SUM(freq) OVER (PARTITION BY client, type) / SUM(freq) OVER (PARTITION BY client) AS pct
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    url AS page,
-    value.type,
-    value.freq
-  FROM
-    `httparchive.pages.2020_08_01_*`
-  LEFT JOIN
-    UNNEST(getCustomPropertyValueTypes(JSON_EXTRACT_SCALAR(payload, "$['_css-variables']"))) AS value)
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      url AS page,
+      value.type,
+      value.freq
+    FROM
+      `httparchive.pages.2020_08_01_*`
+    LEFT JOIN
+      UNNEST(getCustomPropertyValueTypes(JSON_EXTRACT_SCALAR(payload, "$['_css-variables']"))) AS value
+  )
 ORDER BY
   pct DESC

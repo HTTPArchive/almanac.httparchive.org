@@ -1,4 +1,6 @@
-CREATE TEMP FUNCTION getBlendModes(css STRING) RETURNS ARRAY<STRING> LANGUAGE js AS '''
+CREATE TEMP FUNCTION getBlendModes(css STRING) RETURNS ARRAY<STRING>
+LANGUAGE js
+AS '''
 try {
   var blendModes = new Set(['background-blend-mode', 'mix-blend-mode']);
   var reduceValues = (values, rule) => {

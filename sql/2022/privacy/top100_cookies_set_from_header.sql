@@ -70,24 +70,25 @@ cookies AS (
 
 SELECT
   *
-FROM (
-  SELECT
-    client,
-    whotracksme.category,
-    request,
-    cookie,
-    cookie || ' - ' || request AS cookie_and_request,
-    websites_count,
-    websites_per_client,
-    pct_websites,
-    RANK() OVER (PARTITION BY client, category ORDER BY pct_websites DESC) AS rank
-  FROM
-    cookies
-  LEFT JOIN
-    whotracksme
-  ON NET.HOST(request) = domain
-  ORDER BY
-    pct_websites DESC,
-    client
-)
+FROM
+  (
+    SELECT
+      client,
+      whotracksme.category,
+      request,
+      cookie,
+      cookie || ' - ' || request AS cookie_and_request,
+      websites_count,
+      websites_per_client,
+      pct_websites,
+      RANK() OVER (PARTITION BY client, category ORDER BY pct_websites DESC) AS rank
+    FROM
+      cookies
+    LEFT JOIN
+      whotracksme
+    ON NET.HOST(request) = domain
+    ORDER BY
+      pct_websites DESC,
+      client
+  )
 WHERE rank <= 10

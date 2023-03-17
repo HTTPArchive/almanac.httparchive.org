@@ -1,5 +1,7 @@
 #standardSQL
-CREATE TEMP FUNCTION parseInt(n STRING) RETURNS STRING LANGUAGE js AS '''
+CREATE TEMP FUNCTION parseInt(n STRING) RETURNS STRING
+LANGUAGE js
+AS '''
 try {
   return parseInt(n, 10);
 } catch (e) {

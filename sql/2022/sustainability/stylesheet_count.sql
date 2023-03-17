@@ -30,12 +30,13 @@ SELECT
   SUM(document.inlineStyles) / SUM(document.total) AS pct_inline_stylesheets,
   APPROX_QUANTILES(SAFE_DIVIDE(document.stylesheets, document.total), 1000)[OFFSET(500)] AS median_external,
   APPROX_QUANTILES(SAFE_DIVIDE(document.inlineStyles, document.total), 1000)[OFFSET(500)] AS median_inline
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    getStyles(payload) AS document
-  FROM
-    `httparchive.pages.2022_06_01_*`
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      getStyles(payload) AS document
+    FROM
+      `httparchive.pages.2022_06_01_*`
   )
 GROUP BY
   client

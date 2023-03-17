@@ -24,7 +24,9 @@ RETURNS STRUCT<
   inputs_types_submit_total INT64,
   dirs_html_dir STRING,
   dirs_body_nodes_dir_total INT64
-> LANGUAGE js AS '''
+>
+LANGUAGE js
+AS '''
 var result = {};
 try {
     var markup = JSON.parse(markup_string);

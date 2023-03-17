@@ -35,22 +35,24 @@ catch (e) {
 
 SELECT
   *
-FROM (
-  SELECT
-    client,
-    prop,
-    COUNT(DISTINCT page) AS pages,
-    COUNT(0) AS freq,
-    SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
-    COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
-  FROM
-    `httparchive.almanac.parsed_css`,
-    UNNEST(getProperties(css)) AS prop
-  WHERE
-    date = '2020-08-01'
-  GROUP BY
-    client,
-    prop)
+FROM
+  (
+    SELECT
+      client,
+      prop,
+      COUNT(DISTINCT page) AS pages,
+      COUNT(0) AS freq,
+      SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
+      COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
+    FROM
+      `httparchive.almanac.parsed_css`,
+      UNNEST(getProperties(css)) AS prop
+    WHERE
+      date = '2020-08-01'
+    GROUP BY
+      client,
+      prop
+  )
 WHERE
   pages >= 1000
 ORDER BY

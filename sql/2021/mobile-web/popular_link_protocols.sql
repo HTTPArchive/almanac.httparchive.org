@@ -1,7 +1,9 @@
 #standardSQL
 # % of pages using each link protocol
 CREATE TEMPORARY FUNCTION getUsedProtocols(payload STRING)
-RETURNS ARRAY<STRING> LANGUAGE js AS '''
+RETURNS ARRAY<STRING>
+LANGUAGE js
+AS '''
 try {
   const almanac = JSON.parse(payload);
   return Object.keys(almanac.link_protocols_used);

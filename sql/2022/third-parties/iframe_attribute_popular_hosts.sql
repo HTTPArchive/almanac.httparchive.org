@@ -15,21 +15,24 @@ SELECT
   COUNTIF(has_policy) AS freq,
   total_iframes,
   COUNTIF(has_policy) / total_iframes AS pct
-FROM (
-  SELECT
-    client,
-    policy_type,
-    JSON_EXTRACT_SCALAR(iframeAttr, '$.hostname') AS hostname,
-    hasPolicy(iframeAttr, policy_type) AS has_policy
-  FROM (
+FROM
+  (
     SELECT
-      _TABLE_SUFFIX AS client,
-      JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._security'), '$.iframe-allow-sandbox') AS iframeAttrs
+      client,
+      policy_type,
+      JSON_EXTRACT_SCALAR(iframeAttr, '$.hostname') AS hostname,
+      hasPolicy(iframeAttr, policy_type) AS has_policy
     FROM
-      `httparchive.pages.2022_06_01_*`),
-    UNNEST(iframeAttrs) AS iframeAttr,
-    UNNEST(['allow', 'sandbox']) AS policy_type
-)
+      (
+        SELECT
+          _TABLE_SUFFIX AS client,
+          JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._security'), '$.iframe-allow-sandbox') AS iframeAttrs
+        FROM
+          `httparchive.pages.2022_06_01_*`
+      ),
+      UNNEST(iframeAttrs) AS iframeAttr,
+      UNNEST(['allow', 'sandbox']) AS policy_type
+  )
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -37,7 +40,8 @@ JOIN (
   FROM
     `httparchive.pages.2022_06_01_*`
   GROUP BY
-    client)
+    client
+)
 USING
   (client)
 GROUP BY

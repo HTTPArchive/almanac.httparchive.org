@@ -1,7 +1,9 @@
 #standardSQL
 # 06_14b: Popular unicode-range values
 CREATE TEMPORARY FUNCTION getFonts(css STRING)
-RETURNS ARRAY<STRING> LANGUAGE js AS '''
+RETURNS ARRAY<STRING>
+LANGUAGE js
+AS '''
 try {
   var reduceValues = (values, rule) => {
     if ('rules' in rule) {

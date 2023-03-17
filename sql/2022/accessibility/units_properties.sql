@@ -99,31 +99,36 @@ try {
 
 SELECT
   *
-FROM (
-  SELECT
-    client,
-    property,
-    unit,
-    SUM(freq) AS freq,
-    SUM(SUM(freq)) OVER (PARTITION BY client, property) AS total,
-    SUM(freq) / SUM(SUM(freq)) OVER (PARTITION BY client, property) AS pct
-  FROM (
+FROM
+  (
     SELECT
       client,
-      unit.property,
-      unit.unit,
-      unit.freq
+      property,
+      unit,
+      SUM(freq) AS freq,
+      SUM(SUM(freq)) OVER (PARTITION BY client, property) AS total,
+      SUM(freq) / SUM(SUM(freq)) OVER (PARTITION BY client, property) AS pct
     FROM
-      `httparchive.almanac.parsed_css`,
-      UNNEST(getPropertyUnits(css)) AS unit
-    WHERE
-      date = '2022-07-01' AND
-      # Limit the size of the CSS to avoid OOM crashes.
-      LENGTH(css) < 0.1 * 1024 * 1024)
-  GROUP BY
-    client,
-    unit,
-    property)
+      (
+        SELECT
+          client,
+          unit.property,
+          unit.unit,
+          unit.freq
+        FROM
+          `httparchive.almanac.parsed_css`
+        ,
+          UNNEST(getPropertyUnits(css)) AS unit
+        WHERE
+          date = '2022-07-01' AND
+          # Limit the size of the CSS to avoid OOM crashes.
+          LENGTH(css) < 0.1 * 1024 * 1024
+      )
+    GROUP BY
+      client,
+      unit,
+      property
+  )
 WHERE
   total >= 1000 AND
   pct >= 0.01

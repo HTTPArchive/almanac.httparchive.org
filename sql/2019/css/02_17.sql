@@ -1,7 +1,9 @@
 #standardSQL
 # 02_17: % of pages using em/rem/px in media queries
 CREATE TEMPORARY FUNCTION getUnits(css STRING)
-RETURNS STRUCT<em BOOLEAN, rem BOOLEAN, px BOOLEAN> LANGUAGE js AS '''
+RETURNS STRUCT<em BOOLEAN, rem BOOLEAN, px BOOLEAN>
+LANGUAGE js
+AS '''
 try {
   var reduceValues = (values, rule) => {
     if (rule.type != 'media') {
@@ -33,24 +35,28 @@ SELECT
   ROUND(COUNTIF(em > 0) * 100 / total, 2) AS pct_em,
   ROUND(COUNTIF(rem > 0) * 100 / total, 2) AS pct_rem,
   ROUND(COUNTIF(px > 0) * 100 / total, 2) AS pct_px
-FROM (
-  SELECT
-    client,
-    COUNTIF(unit.em) AS em,
-    COUNTIF(unit.rem) AS rem,
-    COUNTIF(unit.px) AS px
-  FROM (
+FROM
+  (
     SELECT
       client,
-      page,
-      getUnits(css) AS unit
+      COUNTIF(unit.em) AS em,
+      COUNTIF(unit.rem) AS rem,
+      COUNTIF(unit.px) AS px
     FROM
-      `httparchive.almanac.parsed_css`
-    WHERE
-      date = '2019-07-01')
-  GROUP BY
-    client,
-    page)
+      (
+        SELECT
+          client,
+          page,
+          getUnits(css) AS unit
+        FROM
+          `httparchive.almanac.parsed_css`
+        WHERE
+          date = '2019-07-01'
+      )
+    GROUP BY
+      client,
+      page
+  )
 JOIN
   (SELECT _TABLE_SUFFIX AS client, COUNT(0) AS total FROM `httparchive.summary_pages.2019_07_01_*` GROUP BY client)
 USING

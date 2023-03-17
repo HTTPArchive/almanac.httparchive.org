@@ -15,18 +15,20 @@ SELECT
   COUNT(DISTINCT host) AS total_hosts,
   COUNT(DISTINCT IF(hasHeader(response_headers, headername), host, NULL)) AS count_with_header,
   COUNT(DISTINCT IF(hasHeader(response_headers, headername), host, NULL)) / COUNT(DISTINCT host) AS pct_with_header
-FROM (
-  SELECT
-    date,
-    client,
-    NET.HOST(urlShort) AS host,
-    response_headers
-  FROM
-    `httparchive.almanac.requests`
-  WHERE
-    (date = '2020-08-01' OR date = '2021-07-01')
-),
-UNNEST(['Server', 'X-Server', 'X-Backend-Server', 'X-Powered-By', 'X-Aspnet-Version']) AS headername
+FROM
+  (
+    SELECT
+      date,
+      client,
+      NET.HOST(urlShort
+      ) AS host,
+      response_headers
+    FROM
+      `httparchive.almanac.requests`
+    WHERE
+      (date = '2020-08-01' OR date = '2021-07-01')
+  ),
+  UNNEST(['Server', 'X-Server', 'X-Backend-Server', 'X-Powered-By', 'X-Aspnet-Version']) AS headername
 GROUP BY
   date,
   client,

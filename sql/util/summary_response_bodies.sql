@@ -15,13 +15,14 @@ SELECT -- noqa: disable=L044
   ext,
   format,
   payload
-FROM (
-  SELECT
-    *
-  FROM
-    `httparchive.almanac.requests`
-  WHERE
-    date = '2022-06-01')
+FROM
+  (
+    SELECT *
+    FROM
+      `httparchive.almanac.requests`
+    WHERE
+      date = '2022-06-01'
+  )
 JOIN
   (SELECT _TABLE_SUFFIX AS client, * FROM `httparchive.response_bodies.2022_06_01_*`)
 USING

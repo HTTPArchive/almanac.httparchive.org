@@ -1,7 +1,9 @@
 #standardSQL
 # 02_18: % of pages using all/print/screen/speech in media queries
 CREATE TEMPORARY FUNCTION getMediaType(css STRING)
-RETURNS STRUCT<all_media BOOLEAN, print_media BOOLEAN, screen_media BOOLEAN, speech_media BOOLEAN> LANGUAGE js AS '''
+RETURNS STRUCT<all_media BOOLEAN, print_media BOOLEAN, screen_media BOOLEAN, speech_media BOOLEAN>
+LANGUAGE js
+AS '''
 try {
   var reduceValues = (values, rule) => {
     if (rule.type != 'media') {
@@ -36,25 +38,29 @@ SELECT
   ROUND(COUNTIF(print_media > 0) * 100 / total, 2) AS pct_print,
   ROUND(COUNTIF(screen_media > 0) * 100 / total, 2) AS pct_screen,
   ROUND(COUNTIF(speech_media > 0) * 100 / total, 2) AS pct_speech
-FROM (
-  SELECT
-    client,
-    COUNTIF(type.all_media) AS all_media,
-    COUNTIF(type.print_media) AS print_media,
-    COUNTIF(type.screen_media) AS screen_media,
-    COUNTIF(type.speech_media) AS speech_media
-  FROM (
+FROM
+  (
     SELECT
       client,
-      page,
-      getMediaType(css) AS type
+      COUNTIF(type.all_media) AS all_media,
+      COUNTIF(type.print_media) AS print_media,
+      COUNTIF(type.screen_media) AS screen_media,
+      COUNTIF(type.speech_media) AS speech_media
     FROM
-      `httparchive.almanac.parsed_css`
-    WHERE
-      date = '2019-07-01')
-  GROUP BY
-    client,
-    page)
+      (
+        SELECT
+          client,
+          page,
+          getMediaType(css) AS type
+        FROM
+          `httparchive.almanac.parsed_css`
+        WHERE
+          date = '2019-07-01'
+      )
+    GROUP BY
+      client,
+      page
+  )
 JOIN
   (SELECT _TABLE_SUFFIX AS client, COUNT(0) AS total FROM `httparchive.summary_pages.2019_07_01_*` GROUP BY client)
 USING

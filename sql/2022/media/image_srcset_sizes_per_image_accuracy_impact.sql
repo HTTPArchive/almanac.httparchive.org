@@ -50,13 +50,15 @@ SELECT
   APPROX_QUANTILES(image.actualSizesEstimatedWastedLoadedPixels, 1000)[OFFSET(percentile * 10)] AS actualSizesEstimatedWastedLoadedPixels,
   APPROX_QUANTILES(image.actualSizesEstimatedWastedLoadedBytes, 1000)[OFFSET(percentile * 10)] AS actualSizesEstimatedWastedLoadedBytes,
   APPROX_QUANTILES(image.wastedLoadedPercent, 1000)[OFFSET(percentile * 10)] AS wastedLoadedPercent
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    image
-  FROM
-    `httparchive.pages.2022_06_01_*`,
-    UNNEST(getSrcsetSizesAccuracy(payload)) AS image),
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      image
+    FROM
+      `httparchive.pages.2022_06_01_*`,
+      UNNEST(getSrcsetSizesAccuracy(payload)) AS image
+  ),
   UNNEST([10, 25, 50, 75, 90]) AS percentile
 GROUP BY
   percentile,

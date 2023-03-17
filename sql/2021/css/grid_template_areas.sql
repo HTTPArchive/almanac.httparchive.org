@@ -36,18 +36,20 @@ SELECT
   # TODO: Update denominator to number of pages using `grid`.
   total,
   COUNTIF(grid_template_areas) / total AS pct
-FROM (
-  SELECT
-    client,
-    page,
-    COUNTIF(hasGridTemplateAreas(css)) > 0 AS grid_template_areas
-  FROM
-    `httparchive.almanac.parsed_css`
-  WHERE
-    date = '2021-07-01'
-  GROUP BY
-    client,
-    page)
+FROM
+  (
+    SELECT
+      client,
+      page,
+      COUNTIF(hasGridTemplateAreas(css)) > 0 AS grid_template_areas
+    FROM
+      `httparchive.almanac.parsed_css`
+    WHERE
+      date = '2021-07-01'
+    GROUP BY
+      client,
+      page
+  )
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -55,7 +57,8 @@ JOIN (
   FROM
     `httparchive.summary_pages.2021_07_01_*`
   GROUP BY
-    client)
+    client
+)
 USING
   (client)
 GROUP BY

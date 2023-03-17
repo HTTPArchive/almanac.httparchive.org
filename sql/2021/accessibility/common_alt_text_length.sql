@@ -10,23 +10,26 @@ SELECT
   alt_length_clipped AS alt_length,
   COUNT(0) AS occurrences,
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct_all_occurrences
-FROM (
-  SELECT
-    client,
-    LEAST(alt_length, 2000) AS alt_length_clipped
-  FROM (
+FROM
+  (
     SELECT
-      _TABLE_SUFFIX AS client,
-      SAFE_CAST(alt_length_string AS INT64) AS alt_length
+      client,
+      LEAST(alt_length, 2000) AS alt_length_clipped
     FROM
-      `httparchive.pages.2021_07_01_*`,
-      UNNEST(
-        JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._almanac'), '$.images.alt_lengths')
-      ) AS alt_length_string
+      (
+        SELECT
+          _TABLE_SUFFIX AS client,
+          SAFE_CAST(alt_length_string AS INT64) AS alt_length
+        FROM
+          `httparchive.pages.2021_07_01_*`
+        ,
+          UNNEST(
+            JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._almanac'), '$.images.alt_lengths')
+          ) AS alt_length_string
+      )
+    WHERE
+      alt_length IS NOT NULL
   )
-  WHERE
-    alt_length IS NOT NULL
-)
 GROUP BY
   client,
   alt_length

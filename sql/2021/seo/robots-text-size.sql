@@ -9,7 +9,9 @@
 # Note: Assumes mostly ASCII 1byte = 1character.  Size is collected by
 # custom measurement as string length.
 CREATE TEMPORARY FUNCTION getRobotsSize(payload STRING)
-RETURNS FLOAT64 LANGUAGE js AS '''
+RETURNS FLOAT64
+LANGUAGE js
+AS '''
 try {
   var $ = JSON.parse(payload);
   var robots = JSON.parse($._robots_txt);
@@ -31,13 +33,15 @@ SELECT
   SAFE_DIVIDE(COUNTIF(robots_size = 0), COUNT(DISTINCT(site))) AS pct_missing,
   COUNTIF(robots_size > 500) AS count_gt500,
   COUNTIF(robots_size = 0) AS count_missing
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    url AS site,
-    getRobotsSize(payload) AS robots_size
-  FROM
-    `httparchive.pages.2021_07_01_*`)
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      url AS site,
+      getRobotsSize(payload) AS robots_size
+    FROM
+      `httparchive.pages.2021_07_01_*`
+  )
 GROUP BY
   client
 ORDER BY

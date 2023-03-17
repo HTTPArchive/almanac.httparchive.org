@@ -1,6 +1,8 @@
 #standardSQL
 # Most popular custom property names as a percent of pages.
-CREATE TEMPORARY FUNCTION getCustomPropertyNames(payload STRING) RETURNS ARRAY<STRING> LANGUAGE js AS '''
+CREATE TEMPORARY FUNCTION getCustomPropertyNames(payload STRING) RETURNS ARRAY<STRING>
+LANGUAGE js
+AS '''
 try {
   var $ = JSON.parse(payload);
   var vars = JSON.parse($['_css-variables']);
@@ -16,23 +18,27 @@ SELECT
   COUNT(DISTINCT url) AS freq,
   total,
   COUNT(DISTINCT url) / total AS pct
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    url,
-    getCustomPropertyNames(payload) AS names,
-    total
-  FROM
-    `httparchive.pages.2020_08_01_*`
-  JOIN (
+FROM
+  (
     SELECT
-      _TABLE_SUFFIX,
-      COUNT(DISTINCT url) AS total
+      _TABLE_SUFFIX AS client,
+      url,
+      getCustomPropertyNames(payload
+      ) AS names,
+      total
     FROM
       `httparchive.pages.2020_08_01_*`
-    GROUP BY
-      _TABLE_SUFFIX)
-  USING (_TABLE_SUFFIX)),
+    JOIN (
+      SELECT
+        _TABLE_SUFFIX,
+        COUNT(DISTINCT url) AS total
+      FROM
+        `httparchive.pages.2020_08_01_*`
+      GROUP BY
+        _TABLE_SUFFIX
+    )
+    USING (_TABLE_SUFFIX)
+  ),
   UNNEST(names) AS name
 GROUP BY
   client,

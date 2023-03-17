@@ -4,7 +4,9 @@
 # note: homepage only data
 # note: also see 10.05
 CREATE TEMPORARY FUNCTION hasEligibleType(payload STRING)
-RETURNS BOOLEAN LANGUAGE js AS '''
+RETURNS BOOLEAN
+LANGUAGE js
+AS '''
   try {
     var $ = JSON.parse(payload);
     var almanac = JSON.parse($._almanac);
@@ -24,11 +26,13 @@ SELECT
   COUNTIF(has_eligible_type) AS freq,
   COUNT(0) AS total,
   ROUND(COUNTIF(has_eligible_type) * 100 / SUM(COUNT(0)) OVER (), 2) AS pct
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    hasEligibleType(payload) AS has_eligible_type
-  FROM
-    `httparchive.pages.2019_07_01_*`)
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      hasEligibleType(payload) AS has_eligible_type
+    FROM
+      `httparchive.pages.2019_07_01_*`
+  )
 GROUP BY
   client

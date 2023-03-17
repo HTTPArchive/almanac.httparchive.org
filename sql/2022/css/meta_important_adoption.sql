@@ -34,23 +34,27 @@ SELECT
   client,
   COUNTIF(pct_important = 100) AS all_important_pages,
   APPROX_QUANTILES(pct_important, 1000)[OFFSET(percentile * 10)] AS pct_important_props
-FROM (
-  SELECT
-    client,
-    page,
-    SAFE_DIVIDE(SUM(properties.important), SUM(properties.total)) AS pct_important
-  FROM (
-      SELECT
-        client,
-        page,
-        getImportantProperties(css) AS properties
-      FROM
-        `httparchive.almanac.parsed_css`
-      WHERE
-        date = '2022-07-01')
-  GROUP BY
-    client,
-    page),
+FROM
+  (
+    SELECT
+      client,
+      page,
+      SAFE_DIVIDE(SUM(properties.important), SUM(properties.total)) AS pct_important
+    FROM
+      (
+        SELECT
+          client,
+          page,
+          getImportantProperties(css) AS properties
+        FROM
+          `httparchive.almanac.parsed_css`
+        WHERE
+          date = '2022-07-01'
+      )
+    GROUP BY
+      client,
+      page
+  ),
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 GROUP BY
   percentile,

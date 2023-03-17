@@ -28,13 +28,14 @@ SELECT
   COUNTIF(has_lazy_iframes IS NOT NULL) AS has_iframe,
   COUNTIF(has_lazy_iframes) / COUNTIF(has_lazy_iframes IS NOT NULL) AS pct,
   COUNT(0) AS total
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    hasLazyLoadedIframe(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS has_lazy_iframes
-  FROM
-    `httparchive.pages.2021_07_01_*`
-)
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      hasLazyLoadedIframe(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS has_lazy_iframes
+    FROM
+      `httparchive.pages.2021_07_01_*`
+  )
 GROUP BY
   client
 ORDER BY

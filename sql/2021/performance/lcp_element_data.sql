@@ -1,7 +1,9 @@
 #standardSQL
 # LCP element node details
 
-CREATE TEMP FUNCTION getLoadingAttr(attributes STRING) RETURNS STRING LANGUAGE js AS '''
+CREATE TEMP FUNCTION getLoadingAttr(attributes STRING) RETURNS STRING
+LANGUAGE js
+AS '''
   try {
     const data = JSON.parse(attributes);
     const loadingAttr = data.find(attr => attr["name"] === "loading")
@@ -11,7 +13,9 @@ CREATE TEMP FUNCTION getLoadingAttr(attributes STRING) RETURNS STRING LANGUAGE j
   }
 ''';
 
-CREATE TEMP FUNCTION getDecodingAttr(attributes STRING) RETURNS STRING LANGUAGE js AS '''
+CREATE TEMP FUNCTION getDecodingAttr(attributes STRING) RETURNS STRING
+LANGUAGE js
+AS '''
   try {
     const data = JSON.parse(attributes);
     const decodingAttr = data.find(attr => attr["name"] === "decoding")
@@ -21,7 +25,9 @@ CREATE TEMP FUNCTION getDecodingAttr(attributes STRING) RETURNS STRING LANGUAGE 
   }
 ''';
 
-CREATE TEMP FUNCTION getLoadingClasses(attributes STRING) RETURNS STRING LANGUAGE js AS '''
+CREATE TEMP FUNCTION getLoadingClasses(attributes STRING) RETURNS STRING
+LANGUAGE js
+AS '''
   try {
     const data = JSON.parse(attributes);
     const classes = data.find(attr => attr["name"] === "class").value
@@ -79,7 +85,8 @@ JOIN (
   FROM
     `httparchive.summary_pages.2021_07_01_*`
   GROUP BY
-    _TABLE_SUFFIX)
+    _TABLE_SUFFIX
+)
 USING
   (client)
 GROUP BY

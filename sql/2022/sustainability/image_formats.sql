@@ -22,18 +22,20 @@ SELECT
   COUNT(0) AS freqImages,
   SUM(COUNT(0)) OVER (PARTITION BY client) AS totalImages,
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pctImages
-FROM (
-  SELECT
-    client,
-    page,
-    url,
-    fixFormat(format, mimeType) AS trueFormat
-  FROM
-    `httparchive.almanac.requests`
-  WHERE
-    date = '2022-06-01' AND
-    type = 'image' AND
-    respSize > 1500)
+FROM
+  (
+    SELECT
+      client,
+      page,
+      url,
+      fixFormat(format, mimeType) AS trueFormat
+    FROM
+      `httparchive.almanac.requests`
+    WHERE
+      date = '2022-06-01' AND
+      type = 'image' AND
+      respSize > 1500
+  )
 GROUP BY
   client,
   trueFormat

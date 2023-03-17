@@ -2,7 +2,9 @@
 # % manifests with window controls overlay display override for service worker pages and all pages
 
 CREATE TEMP FUNCTION hasWindowControlsOverlay(manifest STRING)
-RETURNS BOOLEAN LANGUAGE js AS '''
+RETURNS BOOLEAN
+LANGUAGE js
+AS '''
 try {
   var manifest = Object.values(JSON.parse(manifest))[0];
   var display_override = manifest.display_override;

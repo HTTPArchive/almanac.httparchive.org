@@ -1,7 +1,9 @@
 #standardSQL
 # Audio elements attribute usage
 CREATE TEMPORARY FUNCTION getUsedAttributes(payload STRING)
-RETURNS ARRAY<STRING> LANGUAGE js AS '''
+RETURNS ARRAY<STRING>
+LANGUAGE js
+AS '''
 try {
   const almanac = JSON.parse(payload);
   return Object.keys(almanac.audios.attribute_usage_count);
@@ -29,13 +31,14 @@ LEFT JOIN (
     COUNT(0) AS total_sites,
     COUNTIF(total_audios > 0) AS total_sites_with_audio,
     COUNTIF(total_audios > 0) / COUNT(0) AS pct_sites_with_audio
-  FROM (
-    SELECT
-      _TABLE_SUFFIX AS client,
-      CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._almanac'), '$.audios.total') AS INT64) AS total_audios
-    FROM
-      `httparchive.pages.2021_07_01_*`
-  )
+  FROM
+    (
+      SELECT
+        _TABLE_SUFFIX AS client,
+        CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._almanac'), '$.audios.total') AS INT64) AS total_audios
+      FROM
+        `httparchive.pages.2021_07_01_*`
+    )
   GROUP BY
     client
 )

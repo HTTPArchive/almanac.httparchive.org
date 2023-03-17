@@ -19,38 +19,44 @@ WITH geo_summary AS (
 
 SELECT
   *
-FROM (
-  SELECT
-    app,
-    client,
-    geo,
-    COUNT(0) AS pages,
-    COUNT(DISTINCT url) AS origins,
-    ANY_VALUE(total) AS total,
-    COUNT(0) / ANY_VALUE(total) AS pct
-  FROM (
-    SELECT DISTINCT
-      geo,
-      client,
-      total,
-      CONCAT(origin, '/') AS url
-    FROM
-      geo_summary
-  ) JOIN (
-    SELECT DISTINCT
-      _TABLE_SUFFIX AS client,
+FROM
+  (
+    SELECT
       app,
-      url
+      client,
+      geo,
+      COUNT(0) AS pages,
+      COUNT(DISTINCT url) AS origins,
+      ANY_VALUE(total) AS total,
+      COUNT(0) / ANY_VALUE(total) AS pct
     FROM
-      `httparchive.technologies.2021_07_01_*`
-    WHERE
-      LOWER(category) = 'static site generator' OR
-      app = 'Next.js' OR
-      app = 'Nuxt.js'
-  ) USING (client, url)
-  GROUP BY
-    app,
-    client,
-    geo
-  ORDER BY
-    origins DESC)
+      (
+        SELECT DISTINCT
+          geo,
+          client,
+          total,
+          CONCAT(origin, '/') AS url
+        FROM
+          geo_summary
+      )
+    JOIN
+      (
+        SELECT DISTINCT
+          _TABLE_SUFFIX AS client,
+          app,
+          url
+        FROM
+          `httparchive.technologies.2021_07_01_*`
+        WHERE
+          LOWER(category) = 'static site generator' OR
+          app = 'Next.js' OR
+          app = 'Nuxt.js'
+      )
+    USING (client, url)
+    GROUP BY
+      app,
+      client,
+      geo
+    ORDER BY
+      origins DESC
+  )

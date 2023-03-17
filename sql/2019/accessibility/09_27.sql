@@ -1,7 +1,9 @@
 #standardSQL
 # 09_27: Sites with elements that are in the tab order but have no interactive role, e.g. a paragraph
 CREATE TEMPORARY FUNCTION getTagsWithTabIndex(payload STRING)
-RETURNS ARRAY<STRING> LANGUAGE js AS '''
+RETURNS ARRAY<STRING>
+LANGUAGE js
+AS '''
   try {
     var $ = JSON.parse(payload);
     var almanac = JSON.parse($._almanac);

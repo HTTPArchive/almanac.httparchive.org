@@ -38,21 +38,22 @@ SELECT
   COUNT(0) AS freq,
   ANY_VALUE(total_pages) AS total_pages,
   COUNT(0) / ANY_VALUE(total_pages) AS pct
-FROM (
-  SELECT
-    client,
-    page,
-    justify_content
-  FROM
-    `httparchive.almanac.parsed_css`,
-    UNNEST(getJustifyContent(css)) AS justify_content
-  WHERE
-    date = '2022-07-01'
-  GROUP BY
-    client,
-    page,
-    justify_content
-)
+FROM
+  (
+    SELECT
+      client,
+      page,
+      justify_content
+    FROM
+      `httparchive.almanac.parsed_css`,
+      UNNEST(getJustifyContent(css)) AS justify_content
+    WHERE
+      date = '2022-07-01'
+    GROUP BY
+      client,
+      page,
+      justify_content
+  )
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,

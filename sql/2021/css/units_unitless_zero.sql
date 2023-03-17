@@ -95,16 +95,18 @@ SELECT
   COUNT(DISTINCT IF(has_unitless_zero, page, NULL)) AS pages,
   COUNT(DISTINCT page) AS total,
   COUNT(DISTINCT IF(has_unitless_zero, page, NULL)) / COUNT(DISTINCT page) AS pct
-FROM (
-  SELECT
-    client,
-    page,
-    hasUnitlessZero(css) AS has_unitless_zero
-  FROM
-    `httparchive.almanac.parsed_css`
-  WHERE
-    date = '2021-07-01' AND
-    # Limit the size of the CSS to avoid OOM crashes.
-    LENGTH(css) < 0.1 * 1024 * 1024)
+FROM
+  (
+    SELECT
+      client,
+      page,
+      hasUnitlessZero(css) AS has_unitless_zero
+    FROM
+      `httparchive.almanac.parsed_css`
+    WHERE
+      date = '2021-07-01' AND
+      # Limit the size of the CSS to avoid OOM crashes.
+      LENGTH(css) < 0.1 * 1024 * 1024
+  )
 GROUP BY
   client

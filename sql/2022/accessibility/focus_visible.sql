@@ -63,21 +63,23 @@ SELECT
   COUNTIF(num_focus_visible > 0) AS has_focus_visible,
   COUNT(0) AS total,
   COUNTIF(num_focus_visible > 0) / COUNT(0) AS pct_pages_focus_visible
-FROM (
-  SELECT
-    client,
-    page,
-    COUNTIF(pseudo_class = 'focus-visible') AS num_focus_visible
-  FROM
-    `httparchive.almanac.parsed_css`
-  LEFT JOIN
-    UNNEST(getSelectorParts(css).pseudo_class) AS pseudo_class
-  WHERE
-    date = '2022-07-01' AND
-    # Limit the size of the CSS to avoid OOM crashes.
-    LENGTH(css) < 0.1 * 1024 * 1024
-  GROUP BY
-    client,
-    page)
+FROM
+  (
+    SELECT
+      client,
+      page,
+      COUNTIF(pseudo_class = 'focus-visible') AS num_focus_visible
+    FROM
+      `httparchive.almanac.parsed_css`
+    LEFT JOIN
+      UNNEST(getSelectorParts(css).pseudo_class) AS pseudo_class
+    WHERE
+      date = '2022-07-01' AND
+      # Limit the size of the CSS to avoid OOM crashes.
+      LENGTH(css) < 0.1 * 1024 * 1024
+    GROUP BY
+      client,
+      page
+  )
 GROUP BY
   client

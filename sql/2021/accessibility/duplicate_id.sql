@@ -8,7 +8,8 @@ SELECT
 
   percentile,
   APPROX_QUANTILES(total_duplicate_ids, 1000)[OFFSET(percentile * 10)] AS total_duplicate_ids
-FROM (
+FROM
+  (
     SELECT
       _TABLE_SUFFIX AS client,
       CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._markup'), '$.ids.duplicate_ids_total') AS INT64) AS total_duplicate_ids

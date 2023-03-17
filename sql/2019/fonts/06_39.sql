@@ -1,7 +1,9 @@
 #standardSQL
 # 06_39-41: Font formats declared together
 CREATE TEMPORARY FUNCTION getFontFormats(css STRING)
-RETURNS ARRAY<STRING> LANGUAGE js AS '''
+RETURNS ARRAY<STRING>
+LANGUAGE js
+AS '''
 try {
   var reduceValues = (values, rule) => {
     if ('rules' in rule) {

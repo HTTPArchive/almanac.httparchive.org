@@ -19,13 +19,14 @@ SELECT
   COUNTIF(num_link_rel_preload_tag > 0) AS num_sites_using_link_preload_tag,
   COUNT(0) AS total_sites,
   COUNTIF(num_link_rel_preload_tag > 0) / COUNT(0) AS pct_sites_using_link_preload_tag
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    url AS page,
-    getNumLinkRelPreload(payload) AS num_link_rel_preload_tag
-  FROM
-    `httparchive.pages.2022_06_01_*`
-)
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      url AS page,
+      getNumLinkRelPreload(payload) AS num_link_rel_preload_tag
+    FROM
+      `httparchive.pages.2022_06_01_*`
+  )
 GROUP BY
   client

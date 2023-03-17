@@ -1,7 +1,9 @@
 #standardSQL
 # Pages that combine preconnect and dns-prefetch hints divided by pages with either hint.
 CREATE TEMPORARY FUNCTION preconnectsAndPrefetchesDns(payload STRING)
-RETURNS STRUCT<both BOOLEAN, either BOOLEAN> LANGUAGE js AS '''
+RETURNS STRUCT<both BOOLEAN, either BOOLEAN>
+LANGUAGE js
+AS '''
 try {
   var $ = JSON.parse(payload);
   var almanac = JSON.parse($._almanac);
@@ -25,11 +27,13 @@ SELECT
   COUNTIF(hint.both) AS freq_both,
   COUNTIF(hint.either) AS total_either,
   COUNTIF(hint.both) / COUNTIF(hint.either) AS pct_both
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    preconnectsAndPrefetchesDns(payload) AS hint
-  FROM
-    `httparchive.pages.2020_08_01_*`)
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      preconnectsAndPrefetchesDns(payload) AS hint
+    FROM
+      `httparchive.pages.2020_08_01_*`
+  )
 GROUP BY
   client

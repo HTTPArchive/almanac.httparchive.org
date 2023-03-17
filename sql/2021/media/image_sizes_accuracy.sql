@@ -20,13 +20,15 @@ SELECT
   client,
   APPROX_QUANTILES(image.sizesAbsoluteError, 1000)[OFFSET(percentile * 10)] AS sizesAbsoluteError,
   APPROX_QUANTILES(image.sizesRelativeError, 1000)[OFFSET(percentile * 10)] AS sizesRelativeError
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    image
-  FROM
-    `httparchive.pages.2021_07_01_*`,
-    UNNEST(getSizesAccuracy(payload)) AS image),
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      image
+    FROM
+      `httparchive.pages.2021_07_01_*`,
+      UNNEST(getSizesAccuracy(payload)) AS image
+  ),
   UNNEST([10, 25, 50, 75, 90]) AS percentile
 GROUP BY
   percentile,

@@ -49,20 +49,22 @@ SELECT
   ANY_VALUE(total_pages) AS total_pages,
   COUNTIF(sets_focus_style) / ANY_VALUE(total_pages) AS pct_pages_focus,
   COUNTIF(sets_focus_outline_0) / ANY_VALUE(total_pages) AS pct_pages_focus_outline_0
-FROM (
-  SELECT
-    client,
-    page,
-    COUNT(0) > 0 AS sets_focus_style,
-    COUNTIF(sets_outline_0) > 0 AS sets_focus_outline_0
-  FROM
-    `httparchive.almanac.parsed_css`,
-    UNNEST(getFocusStylesOutline0(css)) AS sets_outline_0
-  WHERE
-    date = '2022-07-01'
-  GROUP BY
-    client,
-    page)
+FROM
+  (
+    SELECT
+      client,
+      page,
+      COUNT(0) > 0 AS sets_focus_style,
+      COUNTIF(sets_outline_0) > 0 AS sets_focus_outline_0
+    FROM
+      `httparchive.almanac.parsed_css`,
+      UNNEST(getFocusStylesOutline0(css)) AS sets_outline_0
+    WHERE
+      date = '2022-07-01'
+    GROUP BY
+      client,
+      page
+  )
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -70,7 +72,8 @@ JOIN (
   FROM
     `httparchive.summary_pages.2022_07_01_*` -- noqa: L062
   GROUP BY
-    _TABLE_SUFFIX)
+    _TABLE_SUFFIX
+)
 USING (client)
 GROUP BY
   client

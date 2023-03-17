@@ -29,15 +29,17 @@ SELECT
   SAFE_DIVIDE(COUNTIF(respimg.sizesWasImplicit = FALSE), COUNT(0)) AS explicit_pct,
   SAFE_DIVIDE(COUNTIF(respimg.sizesParseError = TRUE), COUNT(0)) AS parseError_pct,
   SAFE_DIVIDE(COUNTIF(respimg.srcsetHasWDescriptors = TRUE), COUNT(0)) AS wDescriptor_pct
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    a.url AS pageUrl,
-    respimg
-  FROM
-    `httparchive.pages.2022_06_01_*` AS a,
-    UNNEST(get_responsive_settings(JSON_EXTRACT_SCALAR(payload, '$._responsive_images'))) AS respimg
-  WHERE
-    respimg.srcsetHasWDescriptors)
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      a.url AS pageUrl,
+      respimg
+    FROM
+      `httparchive.pages.2022_06_01_*` AS a,
+      UNNEST(get_responsive_settings(JSON_EXTRACT_SCALAR(payload, '$._responsive_images'))) AS respimg
+    WHERE
+      respimg.srcsetHasWDescriptors
+  )
 GROUP BY
   client

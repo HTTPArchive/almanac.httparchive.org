@@ -5,7 +5,9 @@
 CREATE TEMPORARY FUNCTION getFaviconImage(almanac_string STRING)
 RETURNS STRUCT<
   image_type_extension STRING
-> LANGUAGE js AS '''
+>
+LANGUAGE js
+AS '''
 var result = {};
 try {
     var almanac = JSON.parse(almanac_string);

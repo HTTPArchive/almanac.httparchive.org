@@ -18,14 +18,15 @@ SELECT
 
   SUM(total_captioned) / SUM(total_tables) AS pct_captioned,
   SUM(total_presentational) / SUM(total_tables) AS pct_presentational
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._a11y'), '$.tables.total') AS INT64) AS total_tables,
-    CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._a11y'), '$.tables.total_with_caption') AS INT64) AS total_captioned,
-    CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._a11y'), '$.tables.total_with_presentational') AS INT64) AS total_presentational
-  FROM
-    `httparchive.pages.2021_07_01_*`
-)
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._a11y'), '$.tables.total') AS INT64) AS total_tables,
+      CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._a11y'), '$.tables.total_with_caption') AS INT64) AS total_captioned,
+      CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._a11y'), '$.tables.total_with_presentational') AS INT64) AS total_presentational
+    FROM
+      `httparchive.pages.2021_07_01_*`
+  )
 GROUP BY
   client

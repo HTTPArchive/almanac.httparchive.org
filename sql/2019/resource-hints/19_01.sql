@@ -31,11 +31,13 @@ SELECT
   ROUND(COUNTIF(hints.prerender) * 100 / COUNT(0), 2) AS pct_prerender,
   COUNTIF(hints.`dns-prefetch`) AS dns_prefetch,
   ROUND(COUNTIF(hints.`dns-prefetch`) * 100 / COUNT(0), 2) AS pct_dns_prefetch
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    getResourceHints(payload) AS hints
-  FROM
-    `httparchive.pages.2019_07_01_*`)
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      getResourceHints(payload) AS hints
+    FROM
+      `httparchive.pages.2019_07_01_*`
+  )
 GROUP BY
   client

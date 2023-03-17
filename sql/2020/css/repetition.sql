@@ -39,23 +39,27 @@ SELECT
   APPROX_QUANTILES(total, 1000 IGNORE NULLS)[OFFSET(percentile * 10)] AS total,
   APPROX_QUANTILES(unique, 1000 IGNORE NULLS)[OFFSET(percentile * 10)] AS unique,
   APPROX_QUANTILES(SAFE_DIVIDE(unique, total), 1000 IGNORE NULLS)[OFFSET(percentile * 10)] AS unique_ratio
-FROM (
-  SELECT
-    client,
-    SUM(info.total) AS total,
-    SUM(info.unique) AS unique
-  FROM (
+FROM
+  (
     SELECT
       client,
-      page,
-      getDeclarationCounts(css) AS info
+      SUM(info.total) AS total,
+      SUM(info.unique) AS unique
     FROM
-      `httparchive.almanac.parsed_css`
-    WHERE
-      date = '2020-08-01')
-  GROUP BY
-    client,
-    page),
+      (
+        SELECT
+          client,
+          page,
+          getDeclarationCounts(css) AS info
+        FROM
+          `httparchive.almanac.parsed_css`
+        WHERE
+          date = '2020-08-01'
+      )
+    GROUP BY
+      client,
+      page
+  ),
   UNNEST([10, 25, 50, 75, 90, 95, 100]) AS percentile
 GROUP BY
   percentile,

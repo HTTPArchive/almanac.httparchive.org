@@ -19,15 +19,17 @@ SELECT
   COUNT(0) AS total_preload_http_headers,
   COUNTIF(link_header LIKE '%nopush%') / COUNT(0) AS pct_nopush,
   COUNTIF(link_header NOT LIKE '%nopush%') / COUNT(0) AS pct_push
-FROM (
-  SELECT
-    client,
-    extractHTTPHeaders(response_headers, 'link') AS link_headers
-  FROM
-    `httparchive.almanac.requests`
-  WHERE
-    date = '2021-07-01' AND
-    firstHtml),
+FROM
+  (
+    SELECT
+      client,
+      extractHTTPHeaders(response_headers, 'link') AS link_headers
+    FROM
+      `httparchive.almanac.requests`
+    WHERE
+      date = '2021-07-01' AND
+      firstHtml
+  ),
   UNNEST(link_headers) AS link_header
 WHERE
   link_header LIKE '%preload%'

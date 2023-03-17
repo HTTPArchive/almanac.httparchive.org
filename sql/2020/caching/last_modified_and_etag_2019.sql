@@ -19,16 +19,17 @@ SELECT
   COUNTIF(uses_last_modified) / COUNT(0) AS pct_using_last_modified,
   COUNTIF(uses_etag AND uses_last_modified) / COUNT(0) AS pct_using_both,
   COUNTIF(NOT uses_etag AND NOT uses_last_modified) / COUNT(0) AS pct_using_neither
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    TRIM(resp_etag) = '' AS uses_no_etag,
-    TRIM(resp_etag) != '' AS uses_etag,
-    TRIM(resp_last_modified) != '' AS uses_last_modified,
-    REGEXP_CONTAINS(TRIM(resp_etag), '^W/".*"') AS uses_weak_etag,
-    REGEXP_CONTAINS(TRIM(resp_etag), '^".*"') AS uses_strong_etag
-  FROM
-    `httparchive.summary_requests.2019_07_01_*`
-)
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      TRIM(resp_etag) = '' AS uses_no_etag,
+      TRIM(resp_etag) != '' AS uses_etag,
+      TRIM(resp_last_modified) != '' AS uses_last_modified,
+      REGEXP_CONTAINS(TRIM(resp_etag), '^W/".*"') AS uses_weak_etag,
+      REGEXP_CONTAINS(TRIM(resp_etag), '^".*"') AS uses_strong_etag
+    FROM
+      `httparchive.summary_requests.2019_07_01_*`
+  )
 GROUP BY
   client

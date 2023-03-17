@@ -8,18 +8,20 @@ SELECT
   COUNT(DISTINCT IF(variable_fonts > 0, page, NULL)) / total AS pct,
   APPROX_QUANTILES(fcp, 1000)[OFFSET(500)] AS median_fcp,
   APPROX_QUANTILES(lcp, 1000)[OFFSET(500)] AS median_lcp
-FROM (
-  SELECT
-    client,
-    page,
-    COUNTIF(REGEXP_CONTAINS(JSON_EXTRACT(payload, '$._font_details.table_sizes'), '(?i)gvar')) AS variable_fonts
-  FROM
-    `httparchive.almanac.requests`
-  WHERE
-    date = '2020-09-01'
-  GROUP BY
-    client,
-    page)
+FROM
+  (
+    SELECT
+      client,
+      page,
+      COUNTIF(REGEXP_CONTAINS(JSON_EXTRACT(payload, '$._font_details.table_sizes'), '(?i)gvar')) AS variable_fonts
+    FROM
+      `httparchive.almanac.requests`
+    WHERE
+      date = '2020-09-01'
+    GROUP BY
+      client,
+      page
+  )
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -29,7 +31,8 @@ JOIN (
   FROM
     `httparchive.pages.2020_09_01_*`
   GROUP BY
-    _TABLE_SUFFIX, url, payload)
+    _TABLE_SUFFIX, url, payload
+)
 USING
   (client, page)
 JOIN (
@@ -39,7 +42,8 @@ JOIN (
   FROM
     `httparchive.pages.2020_09_01_*`
   GROUP BY
-    _TABLE_SUFFIX)
+    _TABLE_SUFFIX
+)
 USING
   (client)
 GROUP BY

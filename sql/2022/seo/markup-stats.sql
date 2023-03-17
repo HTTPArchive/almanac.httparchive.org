@@ -13,7 +13,9 @@ RETURNS STRUCT<
   has_html_amp_attribute BOOL,
   has_rel_amphtml_tag BOOL,
   has_html_amp_emoji_attribute BOOL
-> LANGUAGE js AS '''
+>
+LANGUAGE js
+AS '''
 var result = {
   images_img_total: 0,
   images_alt_missing_total: 0,

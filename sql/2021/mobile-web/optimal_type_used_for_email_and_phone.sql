@@ -1,7 +1,9 @@
 #standardSQL
 # Optimal type used for email and phone inputs
 CREATE TEMPORARY FUNCTION getInputInfo(payload STRING)
-RETURNS ARRAY<STRUCT<detected_type STRING, using_best_type BOOLEAN>> LANGUAGE js AS '''
+RETURNS ARRAY<STRUCT<detected_type STRING, using_best_type BOOLEAN>>
+LANGUAGE js
+AS '''
   const new_line_regex = new RegExp('(?:\\r\\n|\\r|\\n)', 'g');
   function isFuzzyMatch(value, options) {
     value = value.replace(new_line_regex, '').trim().toLowerCase();

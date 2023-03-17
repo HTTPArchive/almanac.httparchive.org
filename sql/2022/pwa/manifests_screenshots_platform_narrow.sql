@@ -2,7 +2,9 @@
 # % manifests with narrow platform screenshots for service worker pages and all pages
 
 CREATE TEMP FUNCTION hasScreenshotsPlatformNarrow(manifest STRING)
-RETURNS BOOLEAN LANGUAGE js AS '''
+RETURNS BOOLEAN
+LANGUAGE js
+AS '''
 try {
   var manifest = Object.values(JSON.parse(manifest))[0];
   var screenshots = manifest.screenshots;

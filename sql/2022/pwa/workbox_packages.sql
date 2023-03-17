@@ -1,7 +1,9 @@
 #standardSQL
 #Workbox package and methods
 CREATE TEMPORARY FUNCTION getWorkboxPackages(workboxInfo STRING)
-RETURNS ARRAY<STRING> LANGUAGE js AS '''
+RETURNS ARRAY<STRING>
+LANGUAGE js
+AS '''
 try {
   var workboxPackageMethods = Object.values(JSON.parse(workboxInfo));
   if (typeof workboxPackageMethods == 'string') {

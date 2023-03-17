@@ -31,21 +31,24 @@ SELECT
   COUNTIF(hints.prerender) / COUNT(0) AS pct_prerender,
   COUNTIF(hints.`dns-prefetch`) AS dns_prefetch,
   COUNTIF(hints.`dns-prefetch`) / COUNT(0) AS pct_dns_prefetch
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    getResourceHints(payload) AS hints
-  FROM
-    `httparchive.pages.2020_08_01_*`
-  JOIN (
+FROM
+  (
     SELECT
-      url
+      _TABLE_SUFFIX AS client,
+      getResourceHints(payload) AS hints
     FROM
-      `httparchive.blink_features.features`
-    WHERE
-      yyyymmdd = '20200801' AND
-      feature = 'ServiceWorkerControlledPage')
-  USING
-    (url))
+      `httparchive.pages.2020_08_01_*`
+    JOIN (
+      SELECT
+        url
+      FROM
+        `httparchive.blink_features.features`
+      WHERE
+        yyyymmdd = '20200801' AND
+        feature = 'ServiceWorkerControlledPage'
+    )
+    USING
+      (url)
+  )
 GROUP BY
   client

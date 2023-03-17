@@ -1,7 +1,9 @@
 #standardSQL
 #icon_fonts
 CREATE TEMPORARY FUNCTION checksSupports(css STRING)
-RETURNS ARRAY<STRING> LANGUAGE js AS '''
+RETURNS ARRAY<STRING>
+LANGUAGE js
+AS '''
 try {
     var reduceValues = (values, rule) => {
         if (rule.type == 'stylesheet' && rule.supports.toLowerCase().includes('icon')) {

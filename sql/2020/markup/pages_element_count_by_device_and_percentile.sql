@@ -6,7 +6,9 @@ CREATE TEMPORARY FUNCTION get_element_count_info(element_count_string STRING)
 RETURNS STRUCT<
   elements_count INT64,
   types_count INT64
-> LANGUAGE js AS '''
+>
+LANGUAGE js
+AS '''
 var result = {};
 try {
     if (!element_count_string) return result;
@@ -34,16 +36,17 @@ SELECT
   # number of types of elements on a page
   APPROX_QUANTILES(element_count_info.types_count, 1000)[OFFSET(percentile * 10)] AS types_count
 
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    percentile,
-    url,
-    get_element_count_info(JSON_EXTRACT_SCALAR(payload, '$._element_count')) AS element_count_info
-  FROM
-    `httparchive.pages.2020_08_01_*`,
-    UNNEST([10, 25, 50, 75, 90]) AS percentile
-)
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      percentile,
+      url,
+      get_element_count_info(JSON_EXTRACT_SCALAR(payload, '$._element_count')) AS element_count_info
+    FROM
+      `httparchive.pages.2020_08_01_*`,
+      UNNEST([10, 25, 50, 75, 90]) AS percentile
+  )
 GROUP BY
   percentile,
   client

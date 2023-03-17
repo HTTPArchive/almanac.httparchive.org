@@ -1,5 +1,7 @@
 CREATE TEMPORARY FUNCTION get_element_types(element_count_string STRING)
-RETURNS ARRAY<STRING> LANGUAGE js AS '''
+RETURNS ARRAY<STRING>
+LANGUAGE js
+AS '''
 try {
     if (!element_count_string) return []; // 2019 had a few cases
 

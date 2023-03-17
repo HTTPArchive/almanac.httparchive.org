@@ -36,16 +36,17 @@ SELECT
   COUNTIF(uses_percent) AS freq,
   ANY_VALUE(total_pages) AS total_pages,
   COUNTIF(uses_percent) / ANY_VALUE(total_pages) AS pct
-FROM (
-  SELECT
-    client,
-    page,
-    doesGTCUsePercent(css) AS uses_percent
-  FROM
-    `httparchive.almanac.parsed_css`
-  WHERE
-    date = '2022-07-01'
-)
+FROM
+  (
+    SELECT
+      client,
+      page,
+      doesGTCUsePercent(css) AS uses_percent
+    FROM
+      `httparchive.almanac.parsed_css`
+    WHERE
+      date = '2022-07-01'
+  )
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,

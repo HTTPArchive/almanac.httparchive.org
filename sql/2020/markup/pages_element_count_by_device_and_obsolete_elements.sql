@@ -2,12 +2,14 @@
 # Top obsolete elements M216
 # See related: sql/2019/03_Markup/03_01b.sql
 
-CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
+CREATE TEMP FUNCTION AS_PERCENT(freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
   ROUND(SAFE_DIVIDE(freq, total), 4)
 );
 
 CREATE TEMPORARY FUNCTION get_element_types(element_count_string STRING)
-RETURNS ARRAY<STRING> LANGUAGE js AS '''
+RETURNS ARRAY<STRING>
+LANGUAGE js
+AS '''
 try {
     if (!element_count_string) return []; // 2019 had a few cases
 
@@ -35,9 +37,15 @@ SELECT
 FROM
   `httparchive.pages.2020_08_01_*`
 JOIN
-  (SELECT _TABLE_SUFFIX, COUNT(0) AS total FROM
-    `httparchive.pages.2020_08_01_*`
-    GROUP BY _TABLE_SUFFIX) # to get an accurate total of pages per device. also seems fast
+  (
+    SELECT
+      _TABLE_SUFFIX,
+      COUNT(0) AS total
+    FROM
+      `httparchive.pages.2020_08_01_*`
+    GROUP BY
+      _TABLE_SUFFIX
+  )
 USING (_TABLE_SUFFIX),
   UNNEST(get_element_types(JSON_EXTRACT_SCALAR(payload, '$._element_count'))) AS element_type
 WHERE

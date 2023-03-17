@@ -33,11 +33,13 @@ SELECT
   APPROX_QUANTILES(hints.preconnect, 1000)[OFFSET(900)] AS p90_preconnect,
   APPROX_QUANTILES(hints.prerender, 1000)[OFFSET(900)] AS p90_prerender,
   APPROX_QUANTILES(hints.`dns-prefetch`, 1000)[OFFSET(900)] AS p90_dns_prefetch
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    getResourceHints(payload) AS hints
-  FROM
-    `httparchive.pages.2019_07_01_*`)
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      getResourceHints(payload) AS hints
+    FROM
+      `httparchive.pages.2019_07_01_*`
+  )
 GROUP BY
   client

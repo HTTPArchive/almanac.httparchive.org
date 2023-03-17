@@ -1,7 +1,9 @@
 #standardSQL
 # 01_15: Percent of pages that include link[rel=modulepreload]
 CREATE TEMP FUNCTION hasModulePreload(payload STRING)
-RETURNS BOOLEAN LANGUAGE js AS '''
+RETURNS BOOLEAN
+LANGUAGE js
+AS '''
   try {
     var $ = JSON.parse(payload);
     var almanac = JSON.parse($._almanac);

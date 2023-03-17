@@ -1,7 +1,9 @@
 #standardSQL
 # Age of resources party, type wise.
 CREATE TEMPORARY FUNCTION toTimestamp(date_string STRING)
-RETURNS INT64 LANGUAGE js AS '''
+RETURNS INT64
+LANGUAGE js
+AS '''
   try {
     var timestamp = Math.round(new Date(date_string).getTime() / 1000);
     return isNaN(timestamp) || timestamp < 0 ? null : timestamp;

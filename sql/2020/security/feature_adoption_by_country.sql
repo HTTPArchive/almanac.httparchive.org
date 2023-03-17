@@ -25,22 +25,24 @@ SELECT
   SAFE_DIVIDE(COUNTIF(REGEXP_CONTAINS(respOtherHeaders, '(?i)X-XSS-Protection ')), COUNT(0)) AS pct_xss,
   AVG(getNumSecurityHeaders(respOtherHeaders)) AS avg_security_headers,
   APPROX_QUANTILES(getNumSecurityHeaders(respOtherHeaders), 1000)[OFFSET(500)] AS median_security_headers
-FROM (
-  SELECT
-    r._TABLE_SUFFIX AS client,
-    `chrome-ux-report.experimental`.GET_COUNTRY(country_code) AS country,
-    respOtherHeaders,
-    r.urlShort AS url,
-    firstHtml
-  FROM
-    `httparchive.summary_requests.2020_08_01_*` AS r
-  INNER JOIN
-    `chrome-ux-report.experimental.country` AS c
-  ON r.urlShort = CONCAT(c.origin, '/')
-  WHERE
-    firstHtml AND
-    yyyymm = 202008
-)
+FROM
+  (
+    SELECT
+      r._TABLE_SUFFIX AS client,
+      `chrome-ux-report.experimental`.GET_COUNTRY(country_code
+      ) AS country,
+      respOtherHeaders,
+      r.urlShort AS url,
+      firstHtml
+    FROM
+      `httparchive.summary_requests.2020_08_01_*` AS r
+    INNER JOIN
+      `chrome-ux-report.experimental.country` AS c
+    ON r.urlShort = CONCAT(c.origin, '/')
+    WHERE
+      firstHtml AND
+      yyyymm = 202008
+  )
 GROUP BY
   client,
   country

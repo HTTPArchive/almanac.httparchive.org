@@ -3,7 +3,9 @@
 
 CREATE TEMPORARY FUNCTION
 getUrls(audit STRING)
-RETURNS ARRAY<STRUCT<url STRING>> LANGUAGE js AS '''
+RETURNS ARRAY<STRUCT<url STRING>>
+LANGUAGE js
+AS '''
 try {
   var $ = JSON.parse(audit);
   return $.details.items.map(i => ({url: i.url}));
@@ -54,18 +56,19 @@ SELECT
   freq,
   total,
   pct
-FROM (
-  SELECT
-    base.client AS client,
-    domain,
-    url,
-    COUNT(0) AS freq,
-    total,
-    COUNT(0) / total AS pct,
-    RANK() OVER (PARTITION BY base.client ORDER BY COUNT(0) DESC) AS url_rank
-  FROM
-    base
-  JOIN (
+FROM
+  (
+    SELECT
+      base.client AS client,
+      domain,
+      url,
+      COUNT(0) AS freq,
+      total,
+      COUNT(0) / total AS pct,
+      RANK() OVER (PARTITION BY base.client ORDER BY COUNT(0) DESC) AS url_rank
+    FROM
+      base
+    JOIN (
       SELECT
         _TABLE_SUFFIX AS client,
         COUNT(DISTINCT url) AS total
@@ -73,15 +76,15 @@ FROM (
         `httparchive.lighthouse.2022_06_01_*`
       GROUP BY
         _TABLE_SUFFIX
+    )
+    USING
+      (client)
+    GROUP BY
+      client,
+      domain,
+      url,
+      total
   )
-  USING
-    (client)
-  GROUP BY
-    client,
-    domain,
-    url,
-    total
-)
 WHERE
   url_rank <= 100
 ORDER BY

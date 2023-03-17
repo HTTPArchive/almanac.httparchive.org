@@ -1,7 +1,9 @@
 #standardSQL
 #popular_typeface
 CREATE TEMPORARY FUNCTION getFontFamilies(css STRING)
-RETURNS ARRAY <STRING> LANGUAGE js AS '''
+RETURNS ARRAY<STRING>
+LANGUAGE js
+AS '''
 try {
   var $ = JSON.parse(css);
   return $.stylesheet.rules.filter(rule => rule.type == 'font-face').map(rule => {
@@ -19,19 +21,21 @@ SELECT
   pages,
   total,
   pages / total AS pct
-FROM (
-  SELECT
-    client,
-    font_family,
-    COUNT(DISTINCT page) AS pages
-  FROM
-    `httparchive.almanac.parsed_css`,
-    UNNEST(getFontFamilies(css)) AS font_family
-  WHERE
-    date = '2020-08-01'
-  GROUP BY
-    client,
-    font_family)
+FROM
+  (
+    SELECT
+      client,
+      font_family,
+      COUNT(DISTINCT page) AS pages
+    FROM
+      `httparchive.almanac.parsed_css`,
+      UNNEST(getFontFamilies(css)) AS font_family
+    WHERE
+      date = '2020-08-01'
+    GROUP BY
+      client,
+      font_family
+  )
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -39,7 +43,8 @@ JOIN (
   FROM
     `httparchive.summary_pages.2020_08_01_*`
   GROUP BY
-    client)
+    client
+)
 USING
   (client)
 WHERE

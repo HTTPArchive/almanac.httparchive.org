@@ -9,44 +9,46 @@ WITH base AS (
     resp_content_encoding,
     type,
     num_requests
-  FROM (
-    SELECT
-      '2022' AS year,
-      client,
-      third_party_domains.domain AS domain,
-      resp_content_encoding,
-      type,
-      COUNT(0) AS num_requests
-    FROM (
+  FROM
+    (
       SELECT
+        '2022' AS year,
         client,
-        url AS page,
-        NET.HOST(url) AS domain,
+        third_party_domains.domain AS domain,
+        resp_content_encoding,
+        type,
+        COUNT(0) AS num_requests
+      FROM
+        (
+          SELECT
+            client,
+            url AS page,
+            NET.HOST(url) AS domain,
+            resp_content_encoding,
+            type
+          FROM
+            `httparchive.almanac.requests`
+          WHERE
+            date = '2022-06-01'
+        ) AS potential_third_parties
+      LEFT OUTER JOIN (
+        SELECT DISTINCT
+          NET.HOST(domain) AS domain
+        FROM
+          `httparchive.almanac.third_parties`
+        WHERE
+          date = '2022-06-01' AND
+          category != 'hosting'
+      ) AS third_party_domains
+      ON
+        potential_third_parties.domain = third_party_domains.domain
+      GROUP BY
+        client,
+        page,
+        domain,
         resp_content_encoding,
         type
-      FROM
-        `httparchive.almanac.requests`
-      WHERE
-        date = '2022-06-01'
-    ) AS potential_third_parties
-    LEFT OUTER JOIN (
-      SELECT DISTINCT
-        NET.HOST(domain) AS domain
-      FROM
-        `httparchive.almanac.third_parties`
-      WHERE
-        date = '2022-06-01' AND
-        category != 'hosting'
-    ) AS third_party_domains
-    ON
-      potential_third_parties.domain = third_party_domains.domain
-    GROUP BY
-      client,
-      page,
-      domain,
-      resp_content_encoding,
-      type
-  )
+    )
   UNION ALL
   SELECT
     '2021' AS year,
@@ -55,44 +57,46 @@ WITH base AS (
     resp_content_encoding,
     type,
     num_requests
-  FROM (
-    SELECT
-      '2021' AS year,
-      client,
-      third_party_domains.domain AS domain,
-      resp_content_encoding,
-      type,
-      COUNT(0) AS num_requests
-    FROM (
+  FROM
+    (
       SELECT
+        '2021' AS year,
         client,
-        url AS page,
-        NET.HOST(url) AS domain,
+        third_party_domains.domain AS domain,
+        resp_content_encoding,
+        type,
+        COUNT(0) AS num_requests
+      FROM
+        (
+          SELECT
+            client,
+            url AS page,
+            NET.HOST(url) AS domain,
+            resp_content_encoding,
+            type
+          FROM
+            `httparchive.almanac.requests`
+          WHERE
+            date = '2021-07-01'
+        ) AS potential_third_parties
+      LEFT OUTER JOIN (
+        SELECT DISTINCT
+          NET.HOST(domain) AS domain
+        FROM
+          `httparchive.almanac.third_parties`
+        WHERE
+          date = '2021-07-01' AND
+          category != 'hosting'
+      ) AS third_party_domains
+      ON
+        potential_third_parties.domain = third_party_domains.domain
+      GROUP BY
+        client,
+        page,
+        domain,
         resp_content_encoding,
         type
-      FROM
-        `httparchive.almanac.requests`
-      WHERE
-        date = '2021-07-01'
-    ) AS potential_third_parties
-    LEFT OUTER JOIN (
-      SELECT DISTINCT
-        NET.HOST(domain) AS domain
-      FROM
-        `httparchive.almanac.third_parties`
-      WHERE
-        date = '2021-07-01' AND
-        category != 'hosting'
-    ) AS third_party_domains
-    ON
-      potential_third_parties.domain = third_party_domains.domain
-    GROUP BY
-      client,
-      page,
-      domain,
-      resp_content_encoding,
-      type
-  )
+    )
   UNION ALL
   SELECT
     '2020' AS year,
@@ -101,44 +105,46 @@ WITH base AS (
     resp_content_encoding,
     type,
     num_requests
-  FROM (
-    SELECT
-      '2020' AS year,
-      client,
-      third_party_domains.domain AS domain,
-      resp_content_encoding,
-      type,
-      COUNT(0) AS num_requests
-    FROM (
+  FROM
+    (
       SELECT
+        '2020' AS year,
         client,
-        url AS page,
-        NET.HOST(url) AS domain,
+        third_party_domains.domain AS domain,
+        resp_content_encoding,
+        type,
+        COUNT(0) AS num_requests
+      FROM
+        (
+          SELECT
+            client,
+            url AS page,
+            NET.HOST(url) AS domain,
+            resp_content_encoding,
+            type
+          FROM
+            `httparchive.almanac.requests`
+          WHERE
+            date = '2020-08-01'
+        ) AS potential_third_parties
+      LEFT OUTER JOIN (
+        SELECT DISTINCT
+          NET.HOST(domain) AS domain
+        FROM
+          `httparchive.almanac.third_parties`
+        WHERE
+          date = '2020-08-01' AND
+          category != 'hosting'
+      ) AS third_party_domains
+      ON
+        potential_third_parties.domain = third_party_domains.domain
+      GROUP BY
+        client,
+        page,
+        domain,
         resp_content_encoding,
         type
-      FROM
-        `httparchive.almanac.requests`
-      WHERE
-        date = '2020-08-01'
-    ) AS potential_third_parties
-    LEFT OUTER JOIN (
-      SELECT DISTINCT
-        NET.HOST(domain) AS domain
-      FROM
-        `httparchive.almanac.third_parties`
-      WHERE
-        date = '2020-08-01' AND
-        category != 'hosting'
-    ) AS third_party_domains
-    ON
-      potential_third_parties.domain = third_party_domains.domain
-    GROUP BY
-      client,
-      page,
-      domain,
-      resp_content_encoding,
-      type
-  )
+    )
 )
 
 SELECT

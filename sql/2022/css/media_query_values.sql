@@ -37,18 +37,20 @@ SELECT
   COUNT(DISTINCT page) AS pages,
   total,
   COUNT(DISTINCT page) / total AS pct
-FROM (
-  SELECT DISTINCT
-    client,
-    page,
-    LOWER(value) AS value
-  FROM
-    `httparchive.almanac.parsed_css`
-  LEFT JOIN
-    UNNEST(getMediaQueryValues(css)) AS value
-  WHERE
-    date = '2022-07-01' AND
-    value IS NOT NULL)
+FROM
+  (
+    SELECT DISTINCT
+      client,
+      page,
+      LOWER(value) AS value
+    FROM
+      `httparchive.almanac.parsed_css`
+    LEFT JOIN
+      UNNEST(getMediaQueryValues(css)) AS value
+    WHERE
+      date = '2022-07-01' AND
+      value IS NOT NULL
+  )
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -56,7 +58,8 @@ JOIN (
   FROM
     `httparchive.summary_pages.2022_07_01_*` -- noqa: L062
   GROUP BY
-    client)
+    client
+)
 USING
   (client)
 GROUP BY

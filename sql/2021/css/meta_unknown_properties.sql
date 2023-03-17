@@ -37,28 +37,33 @@ try {
 
 SELECT
   *
-FROM (
-  SELECT DISTINCT
-    client,
-    property,
-    COUNT(DISTINCT page) OVER (PARTITION BY client, property) AS pages,
-    COUNT(DISTINCT page) OVER (PARTITION BY client) AS total,
-    COUNT(DISTINCT page) OVER (PARTITION BY client, property) / COUNT(DISTINCT page) OVER (PARTITION BY client) AS pct_pages,
-    SUM(freq) OVER (PARTITION BY client, property) AS freq,
-    SUM(freq) OVER (PARTITION BY client) AS total,
-    SUM(freq) OVER (PARTITION BY client, property) / SUM(freq) OVER (PARTITION BY client) AS pct
-  FROM (
-    SELECT
+FROM
+  (
+    SELECT DISTINCT
       client,
-      page,
-      property.property,
-      property.freq
+      property,
+      COUNT(DISTINCT page) OVER (PARTITION BY client, property) AS pages,
+      COUNT(DISTINCT page) OVER (PARTITION BY client) AS total,
+      COUNT(DISTINCT page) OVER (PARTITION BY client, property) / COUNT(DISTINCT page) OVER (PARTITION BY client) AS pct_pages,
+      SUM(freq) OVER (PARTITION BY client, property) AS freq,
+      SUM(freq) OVER (PARTITION BY client) AS total,
+      SUM(freq) OVER (PARTITION BY client, property) / SUM(freq) OVER (PARTITION BY client) AS pct
     FROM
-      `httparchive.almanac.parsed_css`,
-      UNNEST(getUnknownProperties(css)) AS property
-    WHERE
-      date = '2021-07-01' AND
-      LENGTH(property.property) > 1))
+      (
+        SELECT
+          client,
+          page,
+          property.property,
+          property.freq
+        FROM
+          `httparchive.almanac.parsed_css`
+        ,
+          UNNEST(getUnknownProperties(css)) AS property
+        WHERE
+          date = '2021-07-01' AND
+          LENGTH(property.property) > 1
+      )
+  )
 WHERE
   pct >= 0.01
 ORDER BY

@@ -1,7 +1,9 @@
 #standardSQL
 # 02_06: % of sites that use each color format
 CREATE TEMPORARY FUNCTION getColorFormats(css STRING)
-RETURNS STRUCT<hsl BOOLEAN, hsla BOOLEAN, rgb BOOLEAN, rgba BOOLEAN, hex BOOLEAN> LANGUAGE js AS '''
+RETURNS STRUCT<hsl BOOLEAN, hsla BOOLEAN, rgb BOOLEAN, rgba BOOLEAN, hex BOOLEAN>
+LANGUAGE js
+AS '''
 try {
   var getColorFormat = (value) => {
     value = value.toLowerCase();
@@ -59,26 +61,30 @@ SELECT
   ROUND(COUNTIF(rgb > 0) * 100 / total, 2) AS pct_rgb,
   ROUND(COUNTIF(rgba > 0) * 100 / total, 2) AS pct_rgba,
   ROUND(COUNTIF(hex > 0) * 100 / total, 2) AS pct_hex
-FROM (
-  SELECT
-    client,
-    COUNTIF(color.hsl) AS hsl,
-    COUNTIF(color.hsla) AS hsla,
-    COUNTIF(color.rgb) AS rgb,
-    COUNTIF(color.rgba) AS rgba,
-    COUNTIF(color.hex) AS hex
-  FROM (
+FROM
+  (
     SELECT
       client,
-      page,
-      getColorFormats(css) AS color
+      COUNTIF(color.hsl) AS hsl,
+      COUNTIF(color.hsla) AS hsla,
+      COUNTIF(color.rgb) AS rgb,
+      COUNTIF(color.rgba) AS rgba,
+      COUNTIF(color.hex) AS hex
     FROM
-      `httparchive.almanac.parsed_css`
-    WHERE
-      date = '2019-07-01')
-  GROUP BY
-    client,
-    page)
+      (
+        SELECT
+          client,
+          page,
+          getColorFormats(css) AS color
+        FROM
+          `httparchive.almanac.parsed_css`
+        WHERE
+          date = '2019-07-01'
+      )
+    GROUP BY
+      client,
+      page
+  )
 JOIN
   (SELECT _TABLE_SUFFIX AS client, COUNT(0) AS total FROM `httparchive.summary_pages.2019_07_01_*` GROUP BY client)
 USING

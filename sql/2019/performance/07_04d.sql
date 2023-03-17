@@ -482,7 +482,7 @@ SELECT
   geo,
   COUNT(0) AS websites,
   ROUND(COUNTIF(fast_fid >= .95) * 100 / COUNT(0), 2) AS pct_fast_fid,
-  ROUND(COUNTIF(NOT(slow_fid >= .05) AND NOT(fast_fid >= .95)) * 100 / COUNT(0), 2) AS pct_avg_fid,
+  ROUND(COUNTIF(NOT(slow_fid >= .05) AND NOT (fast_fid >= .95)) * 100 / COUNT(0), 2) AS pct_avg_fid,
   ROUND(COUNTIF(slow_fid >= .05) * 100 / COUNT(0), 2) AS pct_slow_fid
 FROM
   (

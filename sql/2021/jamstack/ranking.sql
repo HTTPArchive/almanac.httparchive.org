@@ -7,19 +7,21 @@ SELECT
   app,
   COUNT(0) AS pages_with_app,
   COUNT(0) / total_in_rank AS pct_pages_with_app
-FROM (
-  SELECT DISTINCT
-    _TABLE_SUFFIX,
-    app,
-    category,
-    url
-  FROM
-    `httparchive.technologies.2021_07_01_*`
-  WHERE
-    LOWER(category) = 'static site generator' OR
-    app = 'Next.js' OR
-    app = 'Nuxt.js'
-)
+FROM
+  (
+    SELECT DISTINCT
+      _TABLE_SUFFIX,
+      app,
+      category,
+      url
+    FROM
+      `httparchive.technologies.2021_07_01_*`
+    WHERE
+      LOWER(category
+      ) = 'static site generator' OR
+      app = 'Next.js' OR
+      app = 'Nuxt.js'
+  )
 LEFT OUTER JOIN (
   SELECT
     _TABLE_SUFFIX,

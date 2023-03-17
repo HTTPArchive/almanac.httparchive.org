@@ -1,4 +1,6 @@
-CREATE TEMP FUNCTION getLoadingAttr(attributes STRING) RETURNS STRING LANGUAGE js AS '''
+CREATE TEMP FUNCTION getLoadingAttr(attributes STRING) RETURNS STRING
+LANGUAGE js
+AS '''
   try {
     const data = JSON.parse(attributes);
     const loadingAttr = data.find(attr => attr["name"] === "loading")
@@ -8,7 +10,9 @@ CREATE TEMP FUNCTION getLoadingAttr(attributes STRING) RETURNS STRING LANGUAGE j
   }
 ''';
 
-CREATE TEMP FUNCTION hasLazyHeuristics(attributes STRING) RETURNS BOOLEAN LANGUAGE js AS '''
+CREATE TEMP FUNCTION hasLazyHeuristics(attributes STRING) RETURNS BOOLEAN
+LANGUAGE js
+AS '''
   try {
     const data = JSON.parse(attributes);
     const classes = data.find(attr => attr["name"] === "class").value;

@@ -36,15 +36,16 @@ SELECT
   COUNTIF(hints.`dns-prefetch`) / COUNT(0) AS pct_dns_prefetch,
   COUNTIF(hints.modulepreload) AS modulepreload,
   COUNTIF(hints.modulepreload) / COUNT(0) AS pct_modulepreload
-FROM (
-  SELECT
-    client,
-    getResourceHints(payload) AS hints
-  FROM
-    `httparchive.almanac.requests`
-  WHERE
-    payload IS NOT NULL AND
-    firstHtml
-)
+FROM
+  (
+    SELECT
+      client,
+      getResourceHints(payload) AS hints
+    FROM
+      `httparchive.almanac.requests`
+    WHERE
+      payload IS NOT NULL AND
+      firstHtml
+  )
 GROUP BY
   client

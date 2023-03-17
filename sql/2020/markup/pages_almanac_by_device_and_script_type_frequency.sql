@@ -1,12 +1,14 @@
 #standardSQL
 # pages almanac metrics grouped by device and element attribute use (frequency)
 
-CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
+CREATE TEMP FUNCTION AS_PERCENT(freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
   ROUND(SAFE_DIVIDE(freq, total), 4)
 );
 
 CREATE TEMPORARY FUNCTION get_almanac_attribute_info(almanac_string STRING)
-RETURNS ARRAY<STRING> LANGUAGE js AS '''
+RETURNS ARRAY<STRING>
+LANGUAGE js
+AS '''
 try {
     var almanac = JSON.parse(almanac_string);
 

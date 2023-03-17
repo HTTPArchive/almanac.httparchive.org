@@ -22,13 +22,14 @@ meta_tags AS (
     url AS page,
     LOWER(JSON_VALUE(meta_node, '$.http-equiv')) AS tag_name,
     LOWER(JSON_VALUE(meta_node, '$.content')) AS tag_value
-  FROM (
-    SELECT
-      _TABLE_SUFFIX AS client,
-      url,
-      JSON_VALUE(payload, '$._almanac') AS metrics
-    FROM
-      `httparchive.pages.2021_07_01_*`
+  FROM
+    (
+      SELECT
+        _TABLE_SUFFIX AS client,
+        url,
+        JSON_VALUE(payload, '$._almanac') AS metrics
+      FROM
+        `httparchive.pages.2021_07_01_*`
     ),
     UNNEST(JSON_QUERY_ARRAY(metrics, '$.meta-nodes.nodes')) meta_node
   WHERE

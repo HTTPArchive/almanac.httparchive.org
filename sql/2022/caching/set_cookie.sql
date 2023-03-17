@@ -12,14 +12,15 @@ SELECT
   COUNTIF(NOT uses_no_store AND NOT uses_cookies) / COUNTIF(NOT uses_no_store) AS pct_cacheable_without_set_cookie,
   COUNTIF(NOT uses_no_store AND uses_cookies AND uses_private) / COUNTIF(NOT uses_no_store AND uses_cookies) AS pct_pvt_cacheable_set_cookie,
   COUNTIF(NOT uses_no_store AND uses_cookies AND NOT uses_private) / COUNTIF(NOT uses_no_store AND uses_cookies) AS pct_pvt_public_cacheable_set_cookie
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    REGEXP_CONTAINS(resp_cache_control, r'(?i)no-store') AS uses_no_store,
-    REGEXP_CONTAINS(resp_cache_control, r'(?i)private') AS uses_private,
-    (reqCookieLen > 0) AS uses_cookies
-  FROM
-    `httparchive.summary_requests.2022_06_01_*`
-)
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      REGEXP_CONTAINS(resp_cache_control, r'(?i)no-store') AS uses_no_store,
+      REGEXP_CONTAINS(resp_cache_control, r'(?i)private') AS uses_private,
+      (reqCookieLen > 0) AS uses_cookies
+    FROM
+      `httparchive.summary_requests.2022_06_01_*`
+  )
 GROUP BY
   client

@@ -3,15 +3,17 @@ SELECT
   country,
   COUNT(0) AS freq_url,
   APPROX_QUANTILES(bytesFont, 1000)[OFFSET(500)] / 1024 AS median_font_kbytes
-FROM (
-  SELECT DISTINCT
-    origin,
-    device,
-    `chrome-ux-report`.experimental.GET_COUNTRY(country_code) AS country
-  FROM
-    `chrome-ux-report.materialized.country_summary`
-  WHERE
-    yyyymm = 202206)
+FROM
+  (
+    SELECT DISTINCT
+      origin,
+      device,
+      `chrome-ux-report`.experimental.GET_COUNTRY(country_code) AS country
+    FROM
+      `chrome-ux-report.materialized.country_summary`
+    WHERE
+      yyyymm = 202206
+  )
 JOIN
   `httparchive.summary_pages.2022_06_01_*`
 ON

@@ -2,7 +2,9 @@
 # Trend of pages using native image lazy loading
 
 CREATE TEMPORARY FUNCTION nativeLazyLoads(payload STRING)
-RETURNS BOOLEAN LANGUAGE js AS '''
+RETURNS BOOLEAN
+LANGUAGE js
+AS '''
 try {
   var $ = JSON.parse(payload);
   var almanac = JSON.parse($._almanac);

@@ -6,7 +6,9 @@
 CREATE TEMPORARY FUNCTION getVideosAlmanacInfo(almanac_string STRING)
 RETURNS STRUCT<
   videos_total INT64
-> LANGUAGE js AS '''
+>
+LANGUAGE js
+AS '''
 var result = {
   videos_total: 0
 };

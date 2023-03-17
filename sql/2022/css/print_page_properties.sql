@@ -36,18 +36,20 @@ SELECT
   COUNT(0) AS freq,
   SUM(COUNT(0)) OVER (PARTITION BY client) AS total_freq,
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct_freq
-FROM (
-  SELECT DISTINCT
-    client,
-    page,
-    LOWER(property) AS property
-  FROM
-    `httparchive.almanac.parsed_css`
-  LEFT JOIN
-    UNNEST(getPageQueryProperties(css)) AS property
-  WHERE
-    date = '2022-07-01' AND
-    property IS NOT NULL)
+FROM
+  (
+    SELECT DISTINCT
+      client,
+      page,
+      LOWER(property) AS property
+    FROM
+      `httparchive.almanac.parsed_css`
+    LEFT JOIN
+      UNNEST(getPageQueryProperties(css)) AS property
+    WHERE
+      date = '2022-07-01' AND
+      property IS NOT NULL
+  )
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -55,7 +57,8 @@ JOIN (
   FROM
     `httparchive.summary_pages.2022_07_01_*` -- noqa: L062
   GROUP BY
-    client)
+    client
+)
 USING
   (client)
 GROUP BY

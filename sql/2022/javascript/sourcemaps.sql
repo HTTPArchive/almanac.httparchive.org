@@ -31,13 +31,14 @@ SELECT
   COUNT(0) AS total_pages,
   COUNTIF(sourcemaps.hasSourceMaps = true) / COUNT(0) AS pct_has_sourcemaps,
   COUNTIF(sourcemaps.isPublic = true) / COUNT(0) AS pct_has_public_sourcemaps
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    url AS page,
-    getSourceMaps(payload) AS sourcemaps
-  FROM
-    `httparchive.pages.2022_06_01_*`
-)
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      url AS page,
+      getSourceMaps(payload) AS sourcemaps
+    FROM
+      `httparchive.pages.2022_06_01_*`
+  )
 GROUP BY
   client

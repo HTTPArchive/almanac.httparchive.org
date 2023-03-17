@@ -24,18 +24,20 @@ SELECT
   APPROX_QUANTILES(total_img_emissions, 1000)[OFFSET(500)] AS median_total_img_emissions,
   APPROX_QUANTILES(font_kb, 1000)[OFFSET(500)] AS median_font_kb,
   APPROX_QUANTILES(total_font_emissions, 1000)[OFFSET(500)] AS median_total_font_emissions
-FROM (
-  SELECT DISTINCT
-    _TABLE_SUFFIX AS client,
-    url,
-    app AS ssg
-  FROM
-    `httparchive.technologies.2022_06_01_*`
-  WHERE
-    LOWER(category) = 'static site generator' OR
-    app = 'Next.js' OR
-    app = 'Nuxt.js'
-)
+FROM
+  (
+    SELECT DISTINCT
+      _TABLE_SUFFIX AS client,
+      url,
+      app AS ssg
+    FROM
+      `httparchive.technologies.2022_06_01_*`
+    WHERE
+      LOWER(category
+      ) = 'static site generator' OR
+      app = 'Next.js' OR
+      app = 'Nuxt.js'
+  )
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,

@@ -84,24 +84,26 @@ try {
 
 SELECT
   *
-FROM (
-  SELECT
-    client,
-    keyword,
-    COUNT(DISTINCT page) AS pages,
-    COUNT(0) AS freq,
-    SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
-    COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
-  FROM
-    `httparchive.almanac.parsed_css`,
-    UNNEST(getVendorPrefixKeywords(css)) AS keyword
-  WHERE
-    date = '2021-07-01' AND
-    # Limit the size of the CSS to avoid OOM crashes.
-    LENGTH(css) < 0.1 * 1024 * 1024
-  GROUP BY
-    client,
-    keyword)
+FROM
+  (
+    SELECT
+      client,
+      keyword,
+      COUNT(DISTINCT page) AS pages,
+      COUNT(0) AS freq,
+      SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
+      COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
+    FROM
+      `httparchive.almanac.parsed_css`,
+      UNNEST(getVendorPrefixKeywords(css)) AS keyword
+    WHERE
+      date = '2021-07-01' AND
+      # Limit the size of the CSS to avoid OOM crashes.
+      LENGTH(css) < 0.1 * 1024 * 1024
+    GROUP BY
+      client,
+      keyword
+  )
 ORDER BY
   pct DESC
 LIMIT 500

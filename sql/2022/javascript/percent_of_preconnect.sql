@@ -18,15 +18,17 @@ WITH resource_hints AS (
     client,
     page,
     host
-  FROM (
-    SELECT
-      _TABLE_SUFFIX AS client,
-      url AS page,
-      NET.HOST(href) AS host
-    FROM
-      `httparchive.pages.2022_06_01_*`,
-      UNNEST(getResourceHintsHrefs(payload, 'preconnect')) AS href
-  )
+  FROM
+    (
+      SELECT
+        _TABLE_SUFFIX AS client,
+        url AS page,
+        NET.HOST(href) AS host
+      FROM
+        `httparchive.pages.2022_06_01_*`
+      ,
+        UNNEST(getResourceHintsHrefs(payload, 'preconnect')) AS href
+    )
   GROUP BY
     client,
     page,
@@ -65,7 +67,8 @@ SELECT
   freq,
   total,
   pct
-FROM (
+FROM
+  (
     SELECT
       client,
       COUNTIF(resource_hints.host IS NOT NULL) AS freq,
@@ -79,6 +82,6 @@ FROM (
       (client, page, host)
     GROUP BY
       client
-)
+  )
 ORDER BY
   client

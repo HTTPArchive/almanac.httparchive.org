@@ -1,6 +1,8 @@
 #standardSQL
 # Adoption of preprocessors as a percent of pages that use sourcemaps.
-CREATE TEMPORARY FUNCTION getSourcemappedExts(payload STRING) RETURNS ARRAY<STRING> LANGUAGE js AS '''
+CREATE TEMPORARY FUNCTION getSourcemappedExts(payload STRING) RETURNS ARRAY<STRING>
+LANGUAGE js
+AS '''
 try {
   var $ = JSON.parse(payload);
   var sass = JSON.parse($._sass);

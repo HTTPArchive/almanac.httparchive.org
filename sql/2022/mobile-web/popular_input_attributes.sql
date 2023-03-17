@@ -1,7 +1,9 @@
 #standardSQL
 # % of pages using each input element attribute
 CREATE TEMPORARY FUNCTION getUsedAttributes(payload STRING)
-RETURNS ARRAY<STRING> LANGUAGE js AS '''
+RETURNS ARRAY<STRING>
+LANGUAGE js
+AS '''
 try {
   const almanac = JSON.parse(payload);
   return Object.keys(almanac.input_elements.attribute_usage_count);

@@ -1,7 +1,9 @@
 #standardSQL
 #font_weight_font_style
 CREATE TEMPORARY FUNCTION getFonts(css STRING)
-RETURNS ARRAY<STRUCT<weight STRING, stretch STRING, style STRING>> LANGUAGE js AS '''
+RETURNS ARRAY<STRUCT<weight STRING, stretch STRING, style STRING>>
+LANGUAGE js
+AS '''
 try {
     var reduceValues = (values, rule) => {
         if ('rules' in rule) {
@@ -42,18 +44,20 @@ SELECT
   COUNT(0) AS freq,
   SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
-FROM (
-  SELECT DISTINCT
-    client,
-    page,
-    font.style AS style,
-    font.weight AS weight,
-    font.stretch AS stretch
-  FROM
-    `httparchive.almanac.parsed_css`
-  LEFT JOIN UNNEST(getFonts(css)) AS font
-  WHERE
-    date = '2020-08-01')
+FROM
+  (
+    SELECT DISTINCT
+      client,
+      page,
+      font.style AS style,
+      font.weight AS weight,
+      font.stretch AS stretch
+    FROM
+      `httparchive.almanac.parsed_css`
+    LEFT JOIN UNNEST(getFonts(css)) AS font
+    WHERE
+      date = '2020-08-01'
+  )
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -61,7 +65,8 @@ JOIN (
   FROM
     `httparchive.summary_pages.2020_08_01_*`
   GROUP BY
-    client)
+    client
+)
 USING
   (client)
 GROUP BY

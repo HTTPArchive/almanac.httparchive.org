@@ -40,18 +40,19 @@ SELECT
   COUNT(DISTINCT url) AS freq_pages,
   total_pages,
   COUNT(DISTINCT url) / total_pages AS pct_pages
-FROM (
-  SELECT
-    client,
-    url,
-    -- Removes the protocol and any subdomains from the URL.
-    -- e.g. "https://my.example.com/pathname" becomes "example.com/pathname"
-    -- This is done to normalize the URL a bit before counting.
-    CONCAT(NET.REG_DOMAIN(microdata_item_type), SPLIT(microdata_item_type, NET.REG_DOMAIN(microdata_item_type))[SAFE_OFFSET(1)]) AS microdata_item_type
-  FROM
-    rendered_data,
-    UNNEST(microdata_item_types) AS microdata_item_type
-)
+FROM
+  (
+    SELECT
+      client,
+      url,
+      -- Removes the protocol and any subdomains from the URL.
+      -- e.g. "https://my.example.com/pathname" becomes "example.com/pathname"
+      -- This is done to normalize the URL a bit before counting.
+      CONCAT(NET.REG_DOMAIN(microdata_item_type), SPLIT(microdata_item_type, NET.REG_DOMAIN(microdata_item_type))[SAFE_OFFSET(1)]) AS microdata_item_type
+    FROM
+      rendered_data,
+      UNNEST(microdata_item_types) AS microdata_item_type
+  )
 JOIN
   page_totals
 USING (client)

@@ -16,15 +16,17 @@ SELECT
   COUNTIF(link_header LIKE '%nopush%') AS num_nopush,
   COUNT(0) AS total_preload,
   ROUND(COUNTIF(link_header LIKE '%nopush%') / COUNT(0), 4) AS pct_nopush
-FROM (
-  SELECT
-    client,
-    getLinkHeaders(payload) AS link_headers
-  FROM
-    `httparchive.almanac.requests`
-  WHERE
-    date = '2020-08-01' AND
-    firstHtml),
+FROM
+  (
+    SELECT
+      client,
+      getLinkHeaders(payload) AS link_headers
+    FROM
+      `httparchive.almanac.requests`
+    WHERE
+      date = '2020-08-01' AND
+      firstHtml
+  ),
   UNNEST(link_headers) AS link_header
 WHERE
   link_header LIKE '%preload%'

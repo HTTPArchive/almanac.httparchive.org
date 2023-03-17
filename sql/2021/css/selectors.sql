@@ -85,25 +85,29 @@ SELECT
   APPROX_QUANTILES(rule_count, 1000 IGNORE NULLS)[OFFSET(percentile * 10)] AS rule_count,
   APPROX_QUANTILES(selector_count, 1000 IGNORE NULLS)[OFFSET(percentile * 10)] AS selector_count,
   APPROX_QUANTILES(SAFE_DIVIDE(selector_count, rule_count), 1000 IGNORE NULLS)[OFFSET(percentile * 10)] AS selectors_per_rule
-FROM (
-  SELECT
-    client,
-    SUM(info.ruleCount) AS rule_count,
-    SUM(info.selectorCount) AS selector_count
-  FROM (
+FROM
+  (
     SELECT
       client,
-      page,
-      getSpecificityInfo(css) AS info
+      SUM(info.ruleCount) AS rule_count,
+      SUM(info.selectorCount) AS selector_count
     FROM
-      `httparchive.almanac.parsed_css`
-    WHERE
-      date = '2021-07-01' AND
-      # Limit the size of the CSS to avoid OOM crashes. This loses ~20% of stylesheets.
-      LENGTH(css) < 0.1 * 1024 * 1024)
-  GROUP BY
-    client,
-    page),
+      (
+        SELECT
+          client,
+          page,
+          getSpecificityInfo(css) AS info
+        FROM
+          `httparchive.almanac.parsed_css`
+        WHERE
+          date = '2021-07-01' AND
+          # Limit the size of the CSS to avoid OOM crashes. This loses ~20% of stylesheets.
+          LENGTH(css) < 0.1 * 1024 * 1024
+      )
+    GROUP BY
+      client,
+      page
+  ),
   UNNEST([10, 25, 50, 75, 90]) AS percentile
 GROUP BY
   percentile,

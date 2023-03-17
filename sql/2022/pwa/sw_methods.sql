@@ -1,7 +1,9 @@
 #standardSQL
 # SW methods
 CREATE TEMPORARY FUNCTION getSWMethods(swMethodsInfo STRING)
-RETURNS ARRAY<STRING> LANGUAGE js AS '''
+RETURNS ARRAY<STRING>
+LANGUAGE js
+AS '''
 try {
   var swMethods = JSON.parse(swMethodsInfo);
   return Array.from(new Set(Object.values(swMethods).flat()));

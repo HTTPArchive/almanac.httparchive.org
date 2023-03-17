@@ -1,7 +1,9 @@
 #standardSQL
 # Top manifest categories - based on 2019/14_04d.sql
 CREATE TEMPORARY FUNCTION getCategories(manifest STRING)
-RETURNS ARRAY<STRING> LANGUAGE js AS '''
+RETURNS ARRAY<STRING>
+LANGUAGE js
+AS '''
 try {
   var $ = JSON.parse(manifest);
   var categories = $.categories;
@@ -21,7 +23,8 @@ SELECT
   SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
 FROM
-  (SELECT DISTINCT
+  (
+    SELECT DISTINCT
       client,
       body
     FROM
@@ -31,7 +34,9 @@ FROM
     USING
       (date, client, page)
     WHERE
-      date = '2020-08-01'),
+      date = '2020-08-01'
+  )
+,
   UNNEST(getCategories(body)) AS category
 GROUP BY
   client,

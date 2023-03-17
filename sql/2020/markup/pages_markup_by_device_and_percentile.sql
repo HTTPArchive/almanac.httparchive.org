@@ -24,7 +24,9 @@ RETURNS STRUCT<
   inputs_types_submit_total INT64,
   dirs_html_dir STRING,
   dirs_body_nodes_dir_total INT64
-> LANGUAGE js AS '''
+>
+LANGUAGE js
+AS '''
 var result = {};
 try {
     var markup = JSON.parse(markup_string);
@@ -124,16 +126,17 @@ SELECT
   APPROX_QUANTILES(markup_info.inputs_types_button_total, 1000)[OFFSET(percentile * 10)] AS inputs_types_button_count_m306,
   APPROX_QUANTILES(markup_info.inputs_types_submit_total, 1000)[OFFSET(percentile * 10)] AS inputs_types_submit_count_m307
 
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    percentile,
-    url,
-    get_markup_info(JSON_EXTRACT_SCALAR(payload, '$._markup')) AS markup_info
-  FROM
-    `httparchive.pages.2020_08_01_*`,
-    UNNEST([10, 25, 50, 75, 90, 95, 96, 97, 98, 99]) AS percentile
-)
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      percentile,
+      url,
+      get_markup_info(JSON_EXTRACT_SCALAR(payload, '$._markup')) AS markup_info
+    FROM
+      `httparchive.pages.2020_08_01_*`,
+      UNNEST([10, 25, 50, 75, 90, 95, 96, 97, 98, 99]) AS percentile
+  )
 GROUP BY
   percentile,
   client

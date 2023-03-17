@@ -31,20 +31,21 @@ SELECT
   COUNTIF(sets_transform_perspective_none) AS sets_transform_perspective_none,
   ANY_VALUE(total_pages) AS total_pages,
   COUNTIF(sets_transform_perspective_none) / ANY_VALUE(total_pages) AS pct_sets_transform_perspective_none
-FROM (
-  SELECT
-    client,
-    page,
-    COUNTIF(transform_perspective_none) > 0 AS sets_transform_perspective_none
-  FROM
-    `httparchive.almanac.parsed_css`,
-    UNNEST(getTransformPerspectiveNone(css)) AS transform_perspective_none
-  WHERE
-    date = '2022-07-01'
-  GROUP BY
-    client,
-    page
-)
+FROM
+  (
+    SELECT
+      client,
+      page,
+      COUNTIF(transform_perspective_none) > 0 AS sets_transform_perspective_none
+    FROM
+      `httparchive.almanac.parsed_css`,
+      UNNEST(getTransformPerspectiveNone(css)) AS transform_perspective_none
+    WHERE
+      date = '2022-07-01'
+    GROUP BY
+      client,
+      page
+  )
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,

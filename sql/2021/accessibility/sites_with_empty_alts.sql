@@ -1,7 +1,9 @@
 #standardSQL
 # % of sites with empty alt tags
 CREATE TEMPORARY FUNCTION getAltStats(payload STRING)
-RETURNS STRUCT<has_alts BOOL, has_alt_of_zero_length BOOL> LANGUAGE js AS '''
+RETURNS STRUCT<has_alts BOOL, has_alt_of_zero_length BOOL>
+LANGUAGE js
+AS '''
 try {
   const almanac = JSON.parse(payload);
   const alt_lengths = almanac.images.alt_lengths;
@@ -24,12 +26,13 @@ SELECT
   COUNTIF(alt_stats.has_alt_of_zero_length) AS total_sites_with_zero_length_alt,
 
   COUNTIF(alt_stats.has_alt_of_zero_length) / COUNTIF(alt_stats.has_alts) AS perc_sites_with_zero_length_alt
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    getAltStats(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS alt_stats
-  FROM
-    `httparchive.pages.2021_07_01_*`
-)
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      getAltStats(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS alt_stats
+    FROM
+      `httparchive.pages.2021_07_01_*`
+  )
 GROUP BY
   client

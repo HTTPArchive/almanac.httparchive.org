@@ -75,32 +75,36 @@ SELECT
   pseudo_class.value AS pseudo_class,
   pseudo_class.count AS freq,
   pseudo_class.count / pages AS pct
-FROM (
-  SELECT
-    client,
-    COUNT(DISTINCT page) AS pages,
-    ANY_VALUE(total_pages) AS total_pages,
-    COUNT(DISTINCT page) / ANY_VALUE(total_pages) AS pct_pages,
-    APPROX_TOP_COUNT(pseudo_class, 100) AS pseudo_classes
-  FROM (
-      SELECT DISTINCT
-        client,
-        page,
-        pseudo_class
-      FROM
-        `httparchive.almanac.parsed_css`
-      LEFT JOIN
-        UNNEST(getSelectorParts(css).pseudo_class) AS pseudo_class
-      WHERE
-        date = '2022-07-01' AND
-        # Limit the size of the CSS to avoid OOM crashes.
-        LENGTH(css) < 0.1 * 1024 * 1024)
-  JOIN
-    totals
-  USING
-    (client)
-  GROUP BY
-    client),
+FROM
+  (
+    SELECT
+      client,
+      COUNT(DISTINCT page) AS pages,
+      ANY_VALUE(total_pages) AS total_pages,
+      COUNT(DISTINCT page) / ANY_VALUE(total_pages) AS pct_pages,
+      APPROX_TOP_COUNT(pseudo_class, 100) AS pseudo_classes
+    FROM
+      (
+        SELECT DISTINCT
+          client,
+          page,
+          pseudo_class
+        FROM
+          `httparchive.almanac.parsed_css`
+        LEFT JOIN
+          UNNEST(getSelectorParts(css).pseudo_class) AS pseudo_class
+        WHERE
+          date = '2022-07-01' AND
+          # Limit the size of the CSS to avoid OOM crashes.
+          LENGTH(css) < 0.1 * 1024 * 1024
+      )
+    JOIN
+      totals
+    USING
+      (client)
+    GROUP BY
+      client
+  ),
   UNNEST(pseudo_classes) AS pseudo_class
 WHERE
   pseudo_class.value IS NOT NULL

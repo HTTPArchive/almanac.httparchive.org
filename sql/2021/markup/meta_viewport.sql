@@ -2,7 +2,9 @@
 # meta viewport
 
 CREATE TEMPORARY FUNCTION normalise(content STRING)
-RETURNS STRING LANGUAGE js AS '''
+RETURNS STRING
+LANGUAGE js
+AS '''
 try {
   // split by ,
   // trim

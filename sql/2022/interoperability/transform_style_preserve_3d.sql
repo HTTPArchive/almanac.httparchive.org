@@ -31,20 +31,21 @@ SELECT
   COUNTIF(sets_transform_style_preserve_3d) AS sets_transform_style_preserve_3d,
   ANY_VALUE(total_pages) AS total_pages,
   COUNTIF(sets_transform_style_preserve_3d) / ANY_VALUE(total_pages) AS pct_sets_transform_style_preserve_3d
-FROM (
-  SELECT
-    client,
-    page,
-    COUNTIF(transform_style_preserve_3d) > 0 AS sets_transform_style_preserve_3d
-  FROM
-    `httparchive.almanac.parsed_css`,
-    UNNEST(getTransformStylePreserve3d(css)) AS transform_style_preserve_3d
-  WHERE
-    date = '2022-07-01'
-  GROUP BY
-    client,
-    page
-)
+FROM
+  (
+    SELECT
+      client,
+      page,
+      COUNTIF(transform_style_preserve_3d) > 0 AS sets_transform_style_preserve_3d
+    FROM
+      `httparchive.almanac.parsed_css`,
+      UNNEST(getTransformStylePreserve3d(css)) AS transform_style_preserve_3d
+    WHERE
+      date = '2022-07-01'
+    GROUP BY
+      client,
+      page
+  )
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,

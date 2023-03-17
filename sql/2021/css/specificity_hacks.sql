@@ -109,29 +109,33 @@ SELECT
   COUNTIF(not_id_descendant > 0) AS not_id_descendant_pages,
   COUNTIF(not_id_descendant > 0) / COUNT(0) AS not_id_descendant_pages_pct,
   APPROX_QUANTILES(not_id_descendant, 1000 IGNORE NULLS)[OFFSET(percentile * 10)] AS not_id_descendant_per_page
-FROM (
-  SELECT
-    client,
-    SUM(hack.bem) AS bem,
-    SUM(hack.attribute_id) AS attribute_id,
-    SUM(hack.duplicate_classes) AS duplicate_classes,
-    SUM(hack.root_descendant) AS root_descendant,
-    SUM(hack.html_descendant) AS html_descendant,
-    SUM(hack.not_id_descendant) AS not_id_descendant
-  FROM (
+FROM
+  (
     SELECT
       client,
-      page,
-      getSpecificityHacks(css) AS hack
+      SUM(hack.bem) AS bem,
+      SUM(hack.attribute_id) AS attribute_id,
+      SUM(hack.duplicate_classes) AS duplicate_classes,
+      SUM(hack.root_descendant) AS root_descendant,
+      SUM(hack.html_descendant) AS html_descendant,
+      SUM(hack.not_id_descendant) AS not_id_descendant
     FROM
-      `httparchive.almanac.parsed_css`
-    WHERE
-      date = '2021-07-01' AND
-      # Limit the size of the CSS to avoid OOM crashes.
-      LENGTH(css) < 0.1 * 1024 * 1024)
-  GROUP BY
-    client,
-    page),
+      (
+        SELECT
+          client,
+          page,
+          getSpecificityHacks(css) AS hack
+        FROM
+          `httparchive.almanac.parsed_css`
+        WHERE
+          date = '2021-07-01' AND
+          # Limit the size of the CSS to avoid OOM crashes.
+          LENGTH(css) < 0.1 * 1024 * 1024
+      )
+    GROUP BY
+      client,
+      page
+  ),
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 GROUP BY
   percentile,

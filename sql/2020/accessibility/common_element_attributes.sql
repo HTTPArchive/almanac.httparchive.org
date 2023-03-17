@@ -1,7 +1,9 @@
 #standardSQL
 # How often pages contain an element with a given attribute
 CREATE TEMPORARY FUNCTION getUsedAttributes(payload STRING)
-RETURNS ARRAY<STRING> LANGUAGE js AS '''
+RETURNS ARRAY<STRING>
+LANGUAGE js
+AS '''
 try {
   const almanac = JSON.parse(payload);
   return Object.keys(almanac.attributes_used_on_elements);

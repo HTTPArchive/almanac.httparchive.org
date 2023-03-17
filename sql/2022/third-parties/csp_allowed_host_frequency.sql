@@ -31,36 +31,38 @@ SELECT
   freq,
   total_pages,
   pct
-FROM (
-  SELECT
-    client,
-    csp_allowed_host,
-    COUNT(DISTINCT page) AS freq,
-    total AS total_pages,
-    COUNT(DISTINCT page) / total AS pct,
-    RANK() OVER (PARTITION BY client ORDER BY COUNT(DISTINCT page) DESC) AS csp_allowed_host_rank
-  FROM (
+FROM
+  (
     SELECT
       client,
-      page,
-      getHeader(response_headers, 'Content-Security-Policy') AS csp_header
+      csp_allowed_host,
+      COUNT(DISTINCT page) AS freq,
+      total AS total_pages,
+      COUNT(DISTINCT page) / total AS pct,
+      RANK() OVER (PARTITION BY client ORDER BY COUNT(DISTINCT page) DESC) AS csp_allowed_host_rank
     FROM
-      `httparchive.almanac.requests`
+      (
+        SELECT
+          client,
+          page,
+          getHeader(response_headers, 'Content-Security-Policy') AS csp_header
+        FROM
+          `httparchive.almanac.requests`
+        WHERE
+          date = '2022-06-01' AND
+          firstHtml
+      )
+    JOIN
+      totals
+    USING (client),
+      UNNEST(REGEXP_EXTRACT_ALL(csp_header, r'(?i)(https*://[^\s;]+)[\s;]')) AS csp_allowed_host
     WHERE
-      date = '2022-06-01' AND
-      firstHtml
+      csp_header IS NOT NULL
+    GROUP BY
+      client,
+      total,
+      csp_allowed_host
   )
-  JOIN
-    totals
-  USING (client),
-    UNNEST(REGEXP_EXTRACT_ALL(csp_header, r'(?i)(https*://[^\s;]+)[\s;]')) AS csp_allowed_host
-  WHERE
-    csp_header IS NOT NULL
-  GROUP BY
-    client,
-    total,
-    csp_allowed_host
-)
 WHERE
   csp_allowed_host_rank <= 100
 ORDER BY

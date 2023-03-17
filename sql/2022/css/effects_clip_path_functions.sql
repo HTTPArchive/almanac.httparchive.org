@@ -1,4 +1,6 @@
-CREATE TEMP FUNCTION getClipPathFunctions(css STRING) RETURNS ARRAY<STRING> LANGUAGE js AS '''
+CREATE TEMP FUNCTION getClipPathFunctions(css STRING) RETURNS ARRAY<STRING>
+LANGUAGE js
+AS '''
 try {
   var reduceValues = (values, rule) => {
     if ('rules' in rule) {
@@ -43,25 +45,27 @@ totals AS (
 
 SELECT
   *
-FROM (
-  SELECT
-    client,
-    fn,
-    COUNT(DISTINCT page) AS pages,
-    ANY_VALUE(total_pages) AS total,
-    COUNT(DISTINCT page) / ANY_VALUE(total_pages) AS pct_pages,
-    COUNT(0) AS freq,
-    SUM(COUNT(0)) OVER (PARTITION BY client) AS total_usage,
-    COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct_usage
-  FROM
-    totals
-  JOIN
-    clip_path_fns
-  USING
-    (client)
-  GROUP BY
-    client,
-    fn)
+FROM
+  (
+    SELECT
+      client,
+      fn,
+      COUNT(DISTINCT page) AS pages,
+      ANY_VALUE(total_pages) AS total,
+      COUNT(DISTINCT page) / ANY_VALUE(total_pages) AS pct_pages,
+      COUNT(0) AS freq,
+      SUM(COUNT(0)) OVER (PARTITION BY client) AS total_usage,
+      COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct_usage
+    FROM
+      totals
+    JOIN
+      clip_path_fns
+    USING
+      (client)
+    GROUP BY
+      client,
+      fn
+  )
 WHERE
   pct_pages > 0.01
 ORDER BY

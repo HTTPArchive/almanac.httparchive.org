@@ -4,14 +4,18 @@
 # https://stackoverflow.com/a/65054751/7391782
 # Warning: fails if there are colons in the keys/values, but these are not expected
 
-CREATE TEMPORARY FUNCTION ExtractKeyValuePairs(input STRING) RETURNS ARRAY < STRUCT < key STRING,
-  value STRING > > AS (
+CREATE TEMPORARY FUNCTION ExtractKeyValuePairs(input STRING)
+RETURNS ARRAY<STRUCT<
+  key STRING,
+  value STRING
+  >>
+AS (
   (
     SELECT
-      ARRAY(
+      ARRAY (
         SELECT AS STRUCT
-          TRIM(SPLIT(kv, ':') [SAFE_OFFSET(0)]) AS key,
-          TRIM(SPLIT(kv, ':') [SAFE_OFFSET(1)]) AS value
+          TRIM(SPLIT(kv, ':')[SAFE_OFFSET(0)]) AS key,
+          TRIM(SPLIT(kv, ':')[SAFE_OFFSET(1)]) AS value
         FROM
           t.kv
       )

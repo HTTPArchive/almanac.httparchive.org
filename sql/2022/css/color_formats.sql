@@ -194,18 +194,20 @@ SELECT
   SUM(value) AS freq,
   SUM(SUM(value)) OVER (PARTITION BY client) AS total,
   SUM(value) / SUM(SUM(value)) OVER (PARTITION BY client) AS pct
-FROM (
-  SELECT
-    client,
-    page,
-    format.name,
-    format.value
-  FROM
-    `httparchive.almanac.parsed_css`,
-    UNNEST(getColorFormats(css)) AS format
-  WHERE
-    date = '2022-07-01' AND
-    format.value IS NOT NULL)
+FROM
+  (
+    SELECT
+      client,
+      page,
+      format.name,
+      format.value
+    FROM
+      `httparchive.almanac.parsed_css`,
+      UNNEST(getColorFormats(css)) AS format
+    WHERE
+      date = '2022-07-01' AND
+      format.value IS NOT NULL
+  )
 JOIN
   totals
 USING

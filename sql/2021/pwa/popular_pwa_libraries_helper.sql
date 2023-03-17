@@ -2,7 +2,9 @@
 # Use this sql to find popular library imports for popular_pwa_libraries.sql
 # And also other importscripts used in service workers
 CREATE TEMPORARY FUNCTION getSWLibraries(importScriptsInfo STRING)
-RETURNS ARRAY<STRING> LANGUAGE js AS '''
+RETURNS ARRAY<STRING>
+LANGUAGE js
+AS '''
 try {
   /* 'importScriptsInfo' returns an array of libraries that might import other libraries
       The final array of libraries comes from the combination of both */

@@ -14,18 +14,20 @@ SELECT
   COUNTIF(NOT uses_cache_control AND NOT uses_expires) / COUNTIF(NOT uses_no_store) AS pct_using_neither,
   COUNTIF(NOT uses_no_store AND uses_max_age AND exp_age = 0) / COUNTIF(NOT uses_no_store) AS pct_using_exp_age_zero,
   COUNTIF(NOT uses_no_store AND uses_max_age AND exp_age > 0) / COUNTIF(NOT uses_no_store) AS pct_using_exp_age_gt_zero
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    type AS resource_type,
-    TRIM(resp_cache_control) != '' AS uses_cache_control,
-    TRIM(resp_expires) != '' AS uses_expires,
-    REGEXP_CONTAINS(resp_cache_control, r'(?i)no-store') AS uses_no_store,
-    REGEXP_CONTAINS(resp_cache_control, r'(?i)max-age\s*=\s*[0-9]+') AS uses_max_age,
-    expAge AS exp_age
-  FROM
-    `httparchive.summary_requests.2020_08_01_*`
-)
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      type AS resource_type,
+      TRIM(resp_cache_control) != '' AS uses_cache_control,
+      TRIM(resp_expires) != '' AS uses_expires,
+      REGEXP_CONTAINS(resp_cache_control, r'(?i)no-store') AS uses_no_store,
+      REGEXP_CONTAINS(resp_cache_control, r'(?i)max-age\s*=\s*[0-9]+'
+      ) AS uses_max_age,
+      expAge AS exp_age
+    FROM
+      `httparchive.summary_requests.2020_08_01_*`
+  )
 GROUP BY
   client,
   resource_type

@@ -10,7 +10,7 @@
 # Estimate about twice the speed of the original code. But should scale up far better as the custom metrics are only parsed once.
 
 # helper to create percent fields
-CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
+CREATE TEMP FUNCTION AS_PERCENT(freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
   ROUND(SAFE_DIVIDE(freq, total), 4)
 );
 
@@ -25,7 +25,9 @@ RETURNS STRUCT<
   contains_videos_with_autoplay BOOL,
   contains_videos_without_autoplay BOOL,
   html_node_lang STRING
-> LANGUAGE js AS '''
+>
+LANGUAGE js
+AS '''
 var result = {};
 try {
     var almanac = JSON.parse(almanac_string);

@@ -35,18 +35,20 @@ SELECT
   client,
   APPROX_QUANTILES(script_hint, 1000)[OFFSET(percentile * 10)] AS hints_per_page,
   APPROX_QUANTILES(IF(script_hint = 0, NULL, script_hint), 1000 IGNORE NULLS)[OFFSET(percentile * 10)] AS hints_per_page_with_hints
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    url AS page,
-    COUNTIF(hint.name IN ('prefetch', 'preload', 'modulepreload') AND hint.value = 'script') AS script_hint
-  FROM
-    `httparchive.pages.2022_06_01_*`
-  LEFT JOIN
-    UNNEST(getResourceHintAttrs(payload)) AS hint
-  GROUP BY
-    client,
-    page),
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      url AS page,
+      COUNTIF(hint.name IN ('prefetch', 'preload', 'modulepreload') AND hint.value = 'script') AS script_hint
+    FROM
+      `httparchive.pages.2022_06_01_*`
+    LEFT JOIN
+      UNNEST(getResourceHintAttrs(payload)) AS hint
+    GROUP BY
+      client,
+      page
+  ),
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 GROUP BY
   percentile,

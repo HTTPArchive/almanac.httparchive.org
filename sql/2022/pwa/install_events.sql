@@ -2,7 +2,9 @@
 # SW install events
 
 CREATE TEMPORARY FUNCTION getInstallEvents(payload STRING)
-RETURNS ARRAY<STRING> LANGUAGE js AS '''
+RETURNS ARRAY<STRING>
+LANGUAGE js
+AS '''
 try {
   var payloadJSON = JSON.parse(payload);
 

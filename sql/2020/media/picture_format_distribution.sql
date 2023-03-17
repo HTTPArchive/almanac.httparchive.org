@@ -7,7 +7,9 @@ RETURNS STRUCT<
   num_picture_img INT64,
   num_picture_formats INT64,
   picture_formats ARRAY<STRING>
-> LANGUAGE js AS '''
+>
+LANGUAGE js
+AS '''
 var result = {};
 try {
     var media = JSON.parse(media_string);
@@ -46,12 +48,14 @@ SELECT
   SAFE_DIVIDE(COUNTIF('image/jpg' IN UNNEST(media_info.picture_formats)), COUNTIF(media_info.num_picture_formats > 0)) AS pages_with_jpg_pct,
   SAFE_DIVIDE(COUNTIF('image/png' IN UNNEST(media_info.picture_formats)), COUNTIF(media_info.num_picture_formats > 0)) AS pages_with_png_pct,
   SAFE_DIVIDE(COUNTIF('image/avif' IN UNNEST(media_info.picture_formats)), COUNTIF(media_info.num_picture_formats > 0)) AS pages_with_avif_pct
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    get_media_info(JSON_EXTRACT_SCALAR(payload, '$._media')) AS media_info
-  FROM
-    `httparchive.pages.2020_08_01_*`)
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      get_media_info(JSON_EXTRACT_SCALAR(payload, '$._media')) AS media_info
+    FROM
+      `httparchive.pages.2020_08_01_*`
+  )
 GROUP BY
   client
 ORDER BY

@@ -92,16 +92,18 @@ SELECT
   COUNT(DISTINCT url) AS pages,
   SUM(COUNT(DISTINCT url)) OVER (PARTITION BY client) AS total,
   COUNT(DISTINCT url) / SUM(COUNT(DISTINCT url)) OVER (PARTITION BY client) AS pct
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    url,
-    SUM(getCustomPropertyCycles(payload)) AS cycles
-  FROM
-    `httparchive.pages.2021_07_01_*`
-  GROUP BY
-    client,
-    url)
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      url,
+      SUM(getCustomPropertyCycles(payload)) AS cycles
+    FROM
+      `httparchive.pages.2021_07_01_*`
+    GROUP BY
+      client,
+      url
+  )
 WHERE
   cycles IS NOT NULL
 GROUP BY

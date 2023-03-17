@@ -1,6 +1,8 @@
 #standardSQL
 CREATE TEMPORARY FUNCTION getCustomFunctionCalls(payload STRING) RETURNS
-ARRAY<STRUCT<fn STRING, freq INT64>> LANGUAGE js AS '''
+ARRAY<STRUCT<fn STRING, freq INT64>>
+LANGUAGE js
+AS '''
 try {
   var $ = JSON.parse(payload);
   var scss = JSON.parse($['_sass']);
@@ -18,24 +20,29 @@ try {
 
 SELECT
   *
-FROM (
-  SELECT
-    client,
-    fn,
-    SUM(freq) AS freq,
-    SUM(SUM(freq)) OVER (PARTITION BY client) AS total,
-    SUM(freq) / SUM(SUM(freq)) OVER (PARTITION BY client) AS pct
-  FROM (
+FROM
+  (
     SELECT
-      _TABLE_SUFFIX AS client,
-      fn.fn,
-      fn.freq
+      client,
+      fn,
+      SUM(freq) AS freq,
+      SUM(SUM(freq)) OVER (PARTITION BY client) AS total,
+      SUM(freq) / SUM(SUM(freq)) OVER (PARTITION BY client) AS pct
     FROM
-      `httparchive.pages.2020_08_01_*`,
-      UNNEST(getCustomFunctionCalls(payload)) AS fn)
-  GROUP BY
-    client,
-    fn)
+      (
+        SELECT
+          _TABLE_SUFFIX AS client,
+          fn.fn,
+          fn.freq
+        FROM
+          `httparchive.pages.2020_08_01_*`
+        ,
+          UNNEST(getCustomFunctionCalls(payload)) AS fn
+      )
+    GROUP BY
+      client,
+      fn
+  )
 WHERE
   freq >= 1000
 ORDER BY

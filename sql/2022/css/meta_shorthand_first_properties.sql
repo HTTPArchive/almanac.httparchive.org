@@ -464,17 +464,19 @@ SELECT
   SUM(freq) AS freq,
   SUM(SUM(freq)) OVER (PARTITION BY client) AS total,
   SUM(freq) / SUM(SUM(freq)) OVER (PARTITION BY client) AS pct
-FROM (
-  SELECT
-    client,
-    page,
-    property.property,
-    property.freq
-  FROM
-    `httparchive.almanac.parsed_css`,
-    UNNEST(getShorthandFirstProperties(css)) AS property
-  WHERE
-    date = '2022-07-01')
+FROM
+  (
+    SELECT
+      client,
+      page,
+      property.property,
+      property.freq
+    FROM
+      `httparchive.almanac.parsed_css`,
+      UNNEST(getShorthandFirstProperties(css)) AS property
+    WHERE
+      date = '2022-07-01'
+  )
 JOIN
   totals
 USING

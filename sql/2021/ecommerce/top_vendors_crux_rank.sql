@@ -11,17 +11,19 @@ SELECT
   total_pages,
   COUNT(DISTINCT url) / total_pages AS pct,
   COUNT(DISTINCT url) / rank AS rank_pct
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    app,
-    url
-  FROM
-    `httparchive.technologies.2021_07_01_*`
-  WHERE
-    category = 'Ecommerce' AND
-    app != 'Cart Functionality' AND
-    app != 'Google Analytics Enhanced eCommerce')
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      app,
+      url
+    FROM
+      `httparchive.technologies.2021_07_01_*`
+    WHERE
+      category = 'Ecommerce' AND
+      app != 'Cart Functionality' AND
+      app != 'Google Analytics Enhanced eCommerce'
+  )
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -29,7 +31,8 @@ JOIN (
   FROM
     `httparchive.summary_pages.2021_07_01_*`
   GROUP BY
-    client)
+    client
+)
 USING
   (client)
 JOIN (
@@ -44,7 +47,8 @@ JOIN (
     rank <= rank_magnitude
   GROUP BY
     client,
-    url)
+    url
+)
 USING
   (client, url)
 GROUP BY

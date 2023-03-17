@@ -8,7 +8,9 @@
 # <link rel="preload" href="./roboto.woff" as="font" />
 # <link rel="preload" href="./montserrat.woff2" as="font" />
 CREATE TEMPORARY FUNCTION getUnusedFontDownloadsCount(almanac_string STRING)
-RETURNS INT64 LANGUAGE js AS '''
+RETURNS INT64
+LANGUAGE js
+AS '''
 try {
   const almanac = JSON.parse(almanac_string);
   if (Array.isArray(almanac) || typeof almanac != "object") return null;
@@ -65,13 +67,14 @@ SELECT
   COUNT(0) AS freq,
   SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
-FROM (
+FROM
+  (
     SELECT
       _TABLE_SUFFIX AS client,
       getUnusedFontDownloadsCount(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS unused_font_count
     FROM
       `httparchive.pages.2021_07_01_*`
-)
+  )
 WHERE
   unused_font_count IS NOT NULL
 GROUP BY

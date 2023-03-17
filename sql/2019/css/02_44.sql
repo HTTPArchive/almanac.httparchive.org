@@ -1,7 +1,9 @@
 #standardSQL
 # 02_44: % of sites that use different class attr selectors
 CREATE TEMPORARY FUNCTION getAttributeSelectorType(css STRING)
-RETURNS STRUCT<`=` BOOLEAN, `*=` BOOLEAN, `^=` BOOLEAN, `$=` BOOLEAN, `~=` BOOLEAN> LANGUAGE js AS '''
+RETURNS STRUCT<`=` BOOLEAN, `*=` BOOLEAN, `^=` BOOLEAN, `$=` BOOLEAN, `~=` BOOLEAN>
+LANGUAGE js
+AS '''
 try {
   var reduceValues = (values, rule) => {
     if ('rules' in rule) {
@@ -41,26 +43,30 @@ SELECT
   ROUND(COUNTIF(caret_equals > 0) * 100 / total, 2) AS pct_caret_equals,
   ROUND(COUNTIF(dollar_equals > 0) * 100 / total, 2) AS pct_dollar_equals,
   ROUND(COUNTIF(tilde_equals > 0) * 100 / total, 2) AS pct_tilde_equals
-FROM (
-  SELECT
-    client,
-    COUNTIF(type.`=`) AS equals, -- noqa: L057
-    COUNTIF(type.`*=`) AS star_equals, -- noqa: L057
-    COUNTIF(type.`^=`) AS caret_equals, -- noqa: L057
-    COUNTIF(type.`$=`) AS dollar_equals, -- noqa: L057
-    COUNTIF(type.`~=`) AS tilde_equals -- noqa: L057
-  FROM (
+FROM
+  (
     SELECT
       client,
-      page,
-      getAttributeSelectorType(css) AS type
+      COUNTIF(type.`=`) AS equals, -- noqa: L057
+      COUNTIF(type.`*=`) AS star_equals, -- noqa: L057
+      COUNTIF(type.`^=`) AS caret_equals, -- noqa: L057
+      COUNTIF(type.`$=`) AS dollar_equals, -- noqa: L057
+      COUNTIF(type.`~=`) AS tilde_equals -- noqa: L057
     FROM
-      `httparchive.almanac.parsed_css`
-    WHERE
-      date = '2019-07-01')
-  GROUP BY
-    client,
-    page)
+      (
+        SELECT
+          client,
+          page,
+          getAttributeSelectorType(css) AS type
+        FROM
+          `httparchive.almanac.parsed_css`
+        WHERE
+          date = '2019-07-01'
+      )
+    GROUP BY
+      client,
+      page
+  )
 JOIN
   (SELECT _TABLE_SUFFIX AS client, COUNT(0) AS total FROM `httparchive.summary_pages.2019_07_01_*` GROUP BY client)
 USING

@@ -10,7 +10,8 @@ WITH videonotes AS (
     source_formats,
     video_source_format_type,
     source_format_count
-  FROM (
+  FROM
+    (
       SELECT
         _TABLE_SUFFIX AS client,
         url AS pageURL,

@@ -25,7 +25,9 @@ try {
 ''';
 
 CREATE TEMPORARY FUNCTION getCustomPropertiesWithComputedStyle(payload STRING) RETURNS
-ARRAY<STRING> LANGUAGE js AS '''
+ARRAY<STRING>
+LANGUAGE js
+AS '''
 try {
   var $ = JSON.parse(payload);
   var vars = JSON.parse($['_css-variables']);
@@ -80,16 +82,18 @@ SELECT
   COUNT(DISTINCT page) AS pages,
   ANY_VALUE(total_pages) AS total_pages,
   COUNT(DISTINCT page) / ANY_VALUE(total_pages) AS pct_pages
-FROM (
-  SELECT
-    client,
-    page,
-    prop
-  FROM
-    `httparchive.almanac.parsed_css`,
-    UNNEST(getAnimatedCustomProperties(css)) AS prop
-  WHERE
-    date = '2022-07-01')
+FROM
+  (
+    SELECT
+      client,
+      page,
+      prop
+    FROM
+      `httparchive.almanac.parsed_css`,
+      UNNEST(getAnimatedCustomProperties(css)) AS prop
+    WHERE
+      date = '2022-07-01'
+  )
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -97,7 +101,8 @@ JOIN (
     prop
   FROM
     `httparchive.pages.2022_07_01_*`, -- noqa: L062
-    UNNEST(getCustomPropertiesWithComputedStyle(payload)) AS prop)
+    UNNEST(getCustomPropertiesWithComputedStyle(payload)) AS prop
+)
 USING
   (client, page, prop)
 JOIN

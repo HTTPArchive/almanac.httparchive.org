@@ -1,7 +1,9 @@
 #standardSQL
 # 02_38: Top numeric z-index values
 CREATE TEMPORARY FUNCTION getNumericZIndexValues(css STRING)
-RETURNS ARRAY<STRING> LANGUAGE js AS '''
+RETURNS ARRAY<STRING>
+LANGUAGE js
+AS '''
 try {
   var reduceValues = (values, rule) => {
     if ('rules' in rule) {

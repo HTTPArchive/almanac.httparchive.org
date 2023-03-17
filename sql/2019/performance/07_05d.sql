@@ -482,24 +482,26 @@ SELECT
   geo,
   COUNT(0) AS websites,
   ROUND(COUNTIF(fast_fcp >= .9 AND fast_fid >= .95) * 100 / COUNT(0), 2) AS pct_fast,
-  ROUND(COUNTIF(NOT(slow_fcp >= .1 OR slow_fid >= 0.05) AND NOT(fast_fcp >= .9 AND fast_fid >= .95)) * 100 / COUNT(0), 2) AS pct_avg,
+  ROUND(COUNTIF(NOT(slow_fcp >= .1 OR slow_fid >= 0.05) AND NOT (fast_fcp >= .9 AND fast_fid >= .95)) * 100 / COUNT(0), 2) AS pct_avg,
   ROUND(COUNTIF(slow_fcp >= .1 OR slow_fid >= 0.05) * 100 / COUNT(0), 2) AS pct_slow
-FROM (
-  SELECT
-    geo,
-    ROUND(SAFE_DIVIDE(SUM(IF(fcp.start < 1000, fcp.density, 0)), SUM(fcp.density)), 4) AS fast_fcp,
-    ROUND(SAFE_DIVIDE(SUM(IF(fcp.start >= 1000 AND fcp.start < 2500, fcp.density, 0)), SUM(fcp.density)), 4) AS avg_fcp,
-    ROUND(SAFE_DIVIDE(SUM(IF(fcp.start >= 2500, fcp.density, 0)), SUM(fcp.density)), 4) AS slow_fcp,
-    ROUND(SAFE_DIVIDE(SUM(IF(fid.start < 50, fid.density, 0)), SUM(fid.density)), 4) AS fast_fid,
-    ROUND(SAFE_DIVIDE(SUM(IF(fid.start >= 50 AND fid.start < 250, fid.density, 0)), SUM(fid.density)), 4) AS avg_fid,
-    ROUND(SAFE_DIVIDE(SUM(IF(fid.start >= 250, fid.density, 0)), SUM(fid.density)), 4) AS slow_fid
-  FROM
-    geos,
-    UNNEST(first_contentful_paint.histogram.fid) AS fcp,
-    UNNEST(experimental.first_input_delay.histogram.fid) AS fid
-  GROUP BY
-    origin,
-    geo)
+FROM
+  (
+    SELECT
+      geo,
+      ROUND(SAFE_DIVIDE(SUM(IF(fcp.start < 1000, fcp.density, 0)), SUM(fcp.density)), 4) AS fast_fcp,
+      ROUND(SAFE_DIVIDE(SUM(IF(fcp.start >= 1000 AND fcp.start < 2500, fcp.density, 0)), SUM(fcp.density)), 4) AS avg_fcp,
+      ROUND(SAFE_DIVIDE(SUM(IF(fcp.start >= 2500, fcp.density, 0)), SUM(fcp.density)), 4) AS slow_fcp,
+      ROUND(SAFE_DIVIDE(SUM(IF(fid.start < 50, fid.density, 0)), SUM(fid.density)), 4) AS fast_fid,
+      ROUND(SAFE_DIVIDE(SUM(IF(fid.start >= 50 AND fid.start < 250, fid.density, 0)), SUM(fid.density)), 4) AS avg_fid,
+      ROUND(SAFE_DIVIDE(SUM(IF(fid.start >= 250, fid.density, 0)), SUM(fid.density)), 4) AS slow_fid
+    FROM
+      geos,
+      UNNEST(first_contentful_paint.histogram.fid) AS fcp,
+      UNNEST(experimental.first_input_delay.histogram.fid) AS fid
+    GROUP BY
+      origin,
+      geo
+  )
 WHERE
   fast_fid + avg_fid + slow_fid > 0
 GROUP BY

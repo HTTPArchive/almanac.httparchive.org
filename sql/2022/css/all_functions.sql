@@ -46,28 +46,30 @@ WITH totals AS (
 
 SELECT
   *
-FROM (
-  SELECT
-    client,
-    prop,
-    COUNT(DISTINCT page) AS pages,
-    ANY_VALUE(total_pages) AS total_pages,
-    COUNT(DISTINCT page) / ANY_VALUE(total_pages) AS pct_pages,
-    COUNT(0) AS freq,
-    SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
-    COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
-  FROM
-    `httparchive.almanac.parsed_css`,
-    UNNEST(getProperties(css)) AS prop
-  JOIN
-    totals
-  USING
-    (client)
-  WHERE
-    date = '2022-07-01'
-  GROUP BY
-    client,
-    prop)
+FROM
+  (
+    SELECT
+      client,
+      prop,
+      COUNT(DISTINCT page) AS pages,
+      ANY_VALUE(total_pages) AS total_pages,
+      COUNT(DISTINCT page) / ANY_VALUE(total_pages) AS pct_pages,
+      COUNT(0) AS freq,
+      SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
+      COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
+    FROM
+      `httparchive.almanac.parsed_css`,
+      UNNEST(getProperties(css)) AS prop
+    JOIN
+      totals
+    USING
+      (client)
+    WHERE
+      date = '2022-07-01'
+    GROUP BY
+      client,
+      prop
+  )
 WHERE
   pages >= 1000
 ORDER BY

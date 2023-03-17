@@ -52,59 +52,62 @@ SELECT
   percentile,
   wasted_ms,
   total_bytes_kib
-FROM (
-  SELECT
-    client,
-    canonicalDomain,
-    category,
-    total_pages,
-    COUNT(DISTINCT page) AS blocking_pages,
-    percentile,
-    APPROX_QUANTILES(wasted_ms, 1000)[OFFSET(percentile * 10)] AS wasted_ms,
-    APPROX_QUANTILES(total_bytes_kib, 1000)[OFFSET(percentile * 10)] AS total_bytes_kib,
-    RANK() OVER (PARTITION BY client ORDER BY COUNT(DISTINCT page) DESC) AS total_pages_rank
-  FROM (
+FROM
+  (
     SELECT
       client,
       canonicalDomain,
-      page,
       category,
-      SUM(SAFE_CAST(JSON_VALUE(render_blocking_items, '$.wastedMs') AS FLOAT64)) AS wasted_ms,
-      SUM(SAFE_CAST(JSON_VALUE(render_blocking_items, '$.totalBytes') AS FLOAT64) / 1024) AS total_bytes_kib
+      total_pages,
+      COUNT(DISTINCT page) AS blocking_pages,
+      percentile,
+      APPROX_QUANTILES(wasted_ms, 1000)[OFFSET(percentile * 10)] AS wasted_ms,
+      APPROX_QUANTILES(total_bytes_kib, 1000)[OFFSET(percentile * 10)] AS total_bytes_kib,
+      RANK() OVER (PARTITION BY client ORDER BY COUNT(DISTINCT page) DESC) AS total_pages_rank
     FROM
       (
         SELECT
-          _TABLE_SUFFIX AS client,
-          url AS page,
-          report
+          client,
+          canonicalDomain,
+          page,
+          category,
+          SUM(SAFE_CAST(JSON_VALUE(render_blocking_items, '$.wastedMs') AS FLOAT64)) AS wasted_ms,
+          SUM(SAFE_CAST(JSON_VALUE(render_blocking_items, '$.totalBytes') AS FLOAT64) / 1024) AS total_bytes_kib
         FROM
-          `httparchive.lighthouse.2022_06_01_*`
-      ),
-      UNNEST(JSON_QUERY_ARRAY(report, '$.audits.render-blocking-resources.details.items')) AS render_blocking_items
+          (
+            SELECT
+              _TABLE_SUFFIX AS client,
+              url AS page,
+              report
+            FROM
+              `httparchive.lighthouse.2022_06_01_*`
+          )
+        ,
+          UNNEST(JSON_QUERY_ARRAY(report, '$.audits.render-blocking-resources.details.items')) AS render_blocking_items
+        INNER JOIN
+          `httparchive.almanac.third_parties`
+        ON
+          NET.HOST(JSON_VALUE(render_blocking_items, '$.url')) = domain AND
+          date = '2022-06-01'
+        GROUP BY
+          client,
+          canonicalDomain,
+          page,
+          category
+      )
     INNER JOIN
-      `httparchive.almanac.third_parties`
-    ON
-      NET.HOST(JSON_VALUE(render_blocking_items, '$.url')) = domain AND
-      date = '2022-06-01'
+      total_third_party_usage
+    USING (client, canonicalDomain, category),
+      UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
     GROUP BY
       client,
       canonicalDomain,
-      page,
-      category
-    )
-  INNER JOIN
-    total_third_party_usage
-  USING (client, canonicalDomain, category),
-    UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
-  GROUP BY
-    client,
-    canonicalDomain,
-    category,
-    total_pages,
-    percentile
-  HAVING
-    total_pages >= 50
-)
+      category,
+      total_pages,
+      percentile
+    HAVING
+      total_pages >= 50
+  )
 WHERE
   total_pages_rank <= 200
 ORDER BY

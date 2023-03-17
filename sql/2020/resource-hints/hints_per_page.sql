@@ -29,12 +29,14 @@ SELECT
   APPROX_QUANTILES(hints.preconnect, 1000)[OFFSET(percentile * 10)] AS preconnect,
   APPROX_QUANTILES(hints.prerender, 1000)[OFFSET(percentile * 10)] AS prerender,
   APPROX_QUANTILES(hints.`dns-prefetch`, 1000)[OFFSET(percentile * 10)] AS dns_prefetch
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    getResourceHints(payload) AS hints
-  FROM
-    `httparchive.pages.2020_08_01_*`),
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      getResourceHints(payload) AS hints
+    FROM
+      `httparchive.pages.2020_08_01_*`
+  ),
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 GROUP BY
   percentile,

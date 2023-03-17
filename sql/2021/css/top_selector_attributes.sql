@@ -63,26 +63,30 @@ SELECT
   attribute.value AS attribute,
   attribute.count AS freq,
   attribute.count / pages AS pct
-FROM (
-  SELECT
-    client,
-    COUNT(DISTINCT page) AS pages,
-    APPROX_TOP_COUNT(attribute, 100) AS attributes
-  FROM (
-      SELECT DISTINCT
-        client,
-        page,
-        attribute
-      FROM
-        `httparchive.almanac.parsed_css`
-      LEFT JOIN
-        UNNEST(getSelectorParts(css).attribute) AS attribute
-      WHERE
-        date = '2021-07-01' AND
-        # Limit the size of the CSS to avoid OOM crashes.
-        LENGTH(css) < 0.1 * 1024 * 1024)
-  GROUP BY
-    client),
+FROM
+  (
+    SELECT
+      client,
+      COUNT(DISTINCT page) AS pages,
+      APPROX_TOP_COUNT(attribute, 100) AS attributes
+    FROM
+      (
+        SELECT DISTINCT
+          client,
+          page,
+          attribute
+        FROM
+          `httparchive.almanac.parsed_css`
+        LEFT JOIN
+          UNNEST(getSelectorParts(css).attribute) AS attribute
+        WHERE
+          date = '2021-07-01' AND
+          # Limit the size of the CSS to avoid OOM crashes.
+          LENGTH(css) < 0.1 * 1024 * 1024
+      )
+    GROUP BY
+      client
+  ),
   UNNEST(attributes) AS attribute
 WHERE
   attribute.value IS NOT NULL

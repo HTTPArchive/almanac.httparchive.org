@@ -6,7 +6,9 @@
 CREATE TEMPORARY FUNCTION getRobotsTxtUserAgents(robots_txt_string STRING)
 RETURNS STRUCT<
   user_agents ARRAY<STRING>
-> LANGUAGE js AS '''
+>
+LANGUAGE js
+AS '''
 var result = {
   user_agents: []
 };

@@ -14,43 +14,46 @@ SELECT
   percentile,
   p50_transfer_size_kib,
   p50_blocking_time
-FROM (
-  SELECT
-    client,
-    COUNT(DISTINCT page) AS total_pages,
-    COUNTIF(blocking > 0) AS blocking_pages,
-    percentile,
-    APPROX_QUANTILES(transfer_size_kib, 1000)[OFFSET(percentile * 10)] AS p50_transfer_size_kib,
-    APPROX_QUANTILES(blocking_time, 1000)[OFFSET(percentile * 10)] AS p50_blocking_time,
-    RANK() OVER (PARTITION BY client ORDER BY COUNT(DISTINCT page) DESC) AS total_pages_rank
-  FROM (
+FROM
+  (
     SELECT
       client,
-      page,
-      COUNTIF(SAFE_CAST(JSON_VALUE(report, '$.audits.third-party-summary.details.summary.wastedMs') AS FLOAT64) > 250) AS blocking,
-      SUM(SAFE_CAST(JSON_VALUE(third_party_items, '$.blockingTime') AS FLOAT64)) AS blocking_time,
-      SUM(SAFE_CAST(JSON_VALUE(third_party_items, '$.transferSize') AS FLOAT64) / 1024) AS transfer_size_kib
+      COUNT(DISTINCT page) AS total_pages,
+      COUNTIF(blocking > 0) AS blocking_pages,
+      percentile,
+      APPROX_QUANTILES(transfer_size_kib, 1000)[OFFSET(percentile * 10)] AS p50_transfer_size_kib,
+      APPROX_QUANTILES(blocking_time, 1000)[OFFSET(percentile * 10)] AS p50_blocking_time,
+      RANK() OVER (PARTITION BY client ORDER BY COUNT(DISTINCT page) DESC) AS total_pages_rank
     FROM
       (
         SELECT
-          _TABLE_SUFFIX AS client,
-          url AS page,
-          report
+          client,
+          page,
+          COUNTIF(SAFE_CAST(JSON_VALUE(report, '$.audits.third-party-summary.details.summary.wastedMs') AS FLOAT64) > 250) AS blocking,
+          SUM(SAFE_CAST(JSON_VALUE(third_party_items, '$.blockingTime') AS FLOAT64)) AS blocking_time,
+          SUM(SAFE_CAST(JSON_VALUE(third_party_items, '$.transferSize') AS FLOAT64) / 1024) AS transfer_size_kib
         FROM
-          `httparchive.lighthouse.2022_06_01_*`
+          (
+            SELECT
+              _TABLE_SUFFIX AS client,
+              url AS page,
+              report
+            FROM
+              `httparchive.lighthouse.2022_06_01_*`
+          )
+        ,
+          UNNEST(JSON_QUERY_ARRAY(report, '$.audits.third-party-summary.details.items')) AS third_party_items
+        GROUP BY
+          client,
+          page
       ),
-      UNNEST(JSON_QUERY_ARRAY(report, '$.audits.third-party-summary.details.items')) AS third_party_items
+      UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
     GROUP BY
       client,
-      page
-    ),
-    UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
-  GROUP BY
-    client,
-    percentile
-  HAVING
-    total_pages >= 50
-)
+      percentile
+    HAVING
+      total_pages >= 50
+  )
 WHERE
   total_pages_rank <= 200
 ORDER BY

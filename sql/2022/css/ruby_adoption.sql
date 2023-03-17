@@ -2,7 +2,9 @@
 #standardSQL
 # Adoption of CSS Ruby
 CREATE TEMPORARY FUNCTION usesRuby(css STRING)
-RETURNS BOOLEAN LANGUAGE js AS '''
+RETURNS BOOLEAN
+LANGUAGE js
+AS '''
 try {
   var reduceValues = (values, rule) => {
     if ('rules' in rule) {
@@ -30,18 +32,20 @@ SELECT
   COUNTIF(uses_ruby) AS freq,
   total,
   COUNTIF(uses_ruby) / total AS pct
-FROM (
-  SELECT
-    client,
-    page,
-    COUNTIF(usesRuby(css)) > 0 AS uses_ruby
-  FROM
-    `httparchive.almanac.parsed_css`
-  WHERE
-    date = '2022-07-01'
-  GROUP BY
-    client,
-    page)
+FROM
+  (
+    SELECT
+      client,
+      page,
+      COUNTIF(usesRuby(css)) > 0 AS uses_ruby
+    FROM
+      `httparchive.almanac.parsed_css`
+    WHERE
+      date = '2022-07-01'
+    GROUP BY
+      client,
+      page
+  )
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -49,7 +53,8 @@ JOIN (
   FROM
     `httparchive.summary_pages.2022_07_01_*` -- noqa: L062
   GROUP BY
-    client)
+    client
+)
 USING
   (client)
 GROUP BY

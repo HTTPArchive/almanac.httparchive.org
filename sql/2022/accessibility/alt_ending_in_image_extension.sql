@@ -1,7 +1,9 @@
 #standardSQL
 # Alt text ending in an image extension
 CREATE TEMPORARY FUNCTION getUsedExtensions(payload STRING)
-RETURNS ARRAY<STRUCT<extension STRING, total INT64>> LANGUAGE js AS '''
+RETURNS ARRAY<STRUCT<extension STRING, total INT64>>
+LANGUAGE js
+AS '''
 try {
   const a11y = JSON.parse(payload);
 
@@ -43,14 +45,15 @@ LEFT JOIN (
 
     SUM(total_non_empty_alt) AS total_non_empty_alts,
     SUM(total_with_file_extension) AS total_alts_with_file_extensions
-  FROM (
-    SELECT
-      _TABLE_SUFFIX AS client,
-      CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._markup'), '$.images.img.alt.present') AS INT64) AS total_non_empty_alt,
-      CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._a11y'), '$.file_extension_alts.total_with_file_extension') AS INT64) AS total_with_file_extension
-    FROM
-      `httparchive.pages.2022_06_01_*`
-  )
+  FROM
+    (
+      SELECT
+        _TABLE_SUFFIX AS client,
+        CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._markup'), '$.images.img.alt.present') AS INT64) AS total_non_empty_alt,
+        CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._a11y'), '$.file_extension_alts.total_with_file_extension') AS INT64) AS total_with_file_extension
+      FROM
+        `httparchive.pages.2022_06_01_*`
+    )
   GROUP BY
     client
 )

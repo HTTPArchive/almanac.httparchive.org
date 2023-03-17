@@ -2,7 +2,7 @@
 # page wpt_bodies metrics grouped by device
 
 # helper to create percent fields
-CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
+CREATE TEMP FUNCTION AS_PERCENT(freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
   ROUND(SAFE_DIVIDE(freq, total), 4)
 );
 
@@ -88,7 +88,9 @@ RETURNS STRUCT<
   rendered_googlebot_news_notranslate BOOL,
   rendered_googlebot_news_noimageindex BOOL,
   rendered_googlebot_news_nocache BOOL
-> LANGUAGE js AS '''
+>
+LANGUAGE js
+AS '''
 var result = {};
 try {
   var wpt_bodies = JSON.parse(wpt_bodies_string);
@@ -477,13 +479,14 @@ SELECT
   AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_googlebot_news_noimageindex), COUNT(0)) AS pct_rendered_googlebot_news_noimageindex,
   AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_googlebot_news_nocache), COUNT(0)) AS pct_rendered_googlebot_news_nocache
 
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    SPLIT(url, ':')[OFFSET(0)] AS protocol,
-    get_wpt_bodies_info(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS wpt_bodies_info
-  FROM
-    `httparchive.pages.2020_08_01_*`
-)
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      SPLIT(url, ':')[OFFSET(0)] AS protocol,
+      get_wpt_bodies_info(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS wpt_bodies_info
+    FROM
+      `httparchive.pages.2020_08_01_*`
+  )
 GROUP BY
   client

@@ -162,19 +162,21 @@ SELECT
   percentile,
   client,
   APPROX_QUANTILES(median_color_stop, 1000 IGNORE NULLS)[OFFSET(percentile * 10)] AS median_color_stop
-FROM (
-  SELECT
-    client,
-    page,
-    APPROX_QUANTILES(color_stops, 1000 IGNORE NULLS)[OFFSET(500)] AS median_color_stop
-  FROM
-    `httparchive.almanac.parsed_css`,
-    UNNEST(getColorStops(css)) AS color_stops
-  WHERE
-    date = '2021-07-01'
-  GROUP BY
-    client,
-    page),
+FROM
+  (
+    SELECT
+      client,
+      page,
+      APPROX_QUANTILES(color_stops, 1000 IGNORE NULLS)[OFFSET(500)] AS median_color_stop
+    FROM
+      `httparchive.almanac.parsed_css`,
+      UNNEST(getColorStops(css)) AS color_stops
+    WHERE
+      date = '2021-07-01'
+    GROUP BY
+      client,
+      page
+  ),
   UNNEST([10, 25, 50, 75, 90]) AS percentile
 GROUP BY
   percentile,

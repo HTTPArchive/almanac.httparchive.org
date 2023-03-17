@@ -178,16 +178,18 @@ SELECT
   SUM(value) AS freq,
   SUM(SUM(value)) OVER (PARTITION BY client) AS total,
   SUM(value) / SUM(SUM(value)) OVER (PARTITION BY client) AS pct
-FROM (
-  SELECT
-    client,
-    format.name,
-    format.value
-  FROM
-    `httparchive.almanac.parsed_css`,
-    UNNEST(getColorFormats(css)) AS format
-  WHERE
-    date = '2020-08-01')
+FROM
+  (
+    SELECT
+      client,
+      format.name,
+      format.value
+    FROM
+      `httparchive.almanac.parsed_css`,
+      UNNEST(getColorFormats(css)) AS format
+    WHERE
+      date = '2020-08-01'
+  )
 GROUP BY
   client,
   format

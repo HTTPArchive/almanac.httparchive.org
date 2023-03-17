@@ -1,7 +1,9 @@
 #standardSQL
 # 11_04d: Top manifest categories
 CREATE TEMPORARY FUNCTION getCategories(manifest STRING)
-RETURNS ARRAY<STRING> LANGUAGE js AS '''
+RETURNS ARRAY<STRING>
+LANGUAGE js
+AS '''
 try {
   var $ = JSON.parse(manifest);
   var categories = $.categories;

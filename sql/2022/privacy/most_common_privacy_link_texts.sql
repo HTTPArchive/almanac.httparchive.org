@@ -4,7 +4,7 @@
 WITH privacy_link_texts AS (
   SELECT
     _TABLE_SUFFIX AS client,
-    ARRAY(
+    ARRAY (
       SELECT DISTINCT
         LOWER(JSON_VALUE(p, '$.text'))
       FROM

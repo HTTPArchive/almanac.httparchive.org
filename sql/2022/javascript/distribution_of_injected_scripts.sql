@@ -37,15 +37,16 @@ SELECT
   client,
   percentile,
   APPROX_QUANTILES(IF(scripts.scripts > 0, scripts.injectedScripts / scripts.scripts, 0), 1000)[OFFSET(percentile * 10)] AS pct_injected_scripts_per_page
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    url AS page,
-    getScripts(payload) AS scripts
-  FROM
-    `httparchive.pages.2022_06_01_*`
-),
-UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      url AS page,
+      getScripts(payload) AS scripts
+    FROM
+      `httparchive.pages.2022_06_01_*`
+  ),
+  UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 WHERE
   scripts IS NOT NULL
 GROUP BY

@@ -1,5 +1,7 @@
 #standardSQL
-CREATE TEMPORARY FUNCTION getMixinNames(payload STRING) RETURNS ARRAY<STRING> LANGUAGE js AS '''
+CREATE TEMPORARY FUNCTION getMixinNames(payload STRING) RETURNS ARRAY<STRING>
+LANGUAGE js
+AS '''
 try {
   var $ = JSON.parse(payload);
   var scss = JSON.parse($['_sass']);
@@ -19,14 +21,16 @@ SELECT
   COUNT(DISTINCT url) AS pages,
   total_sass,
   COUNT(DISTINCT url) / total_sass AS pct
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    url,
-    mixin
-  FROM
-    `httparchive.pages.2020_08_01_*`,
-    UNNEST(getMixinNames(payload)) AS mixin)
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      url,
+      mixin
+    FROM
+      `httparchive.pages.2020_08_01_*`,
+      UNNEST(getMixinNames(payload)) AS mixin
+  )
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -34,7 +38,8 @@ JOIN (
   FROM
     `httparchive.pages.2020_08_01_*`
   GROUP BY
-    client)
+    client
+)
 USING
   (client)
 GROUP BY

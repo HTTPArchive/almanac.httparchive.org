@@ -6,13 +6,15 @@ SELECT
   rank,
   COUNT(DISTINCT page) AS pages,
   COUNT(DISTINCT page) / rank AS pct
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    url AS page,
-    rank AS _rank
-  FROM
-    `httparchive.summary_pages.2021_07_01_*`)
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      url AS page,
+      rank AS _rank
+    FROM
+      `httparchive.summary_pages.2021_07_01_*`
+  )
 LEFT JOIN (
   SELECT DISTINCT
     _TABLE_SUFFIX AS client,
@@ -21,7 +23,8 @@ LEFT JOIN (
   FROM
     `httparchive.technologies.2021_07_01_*`
   WHERE
-    category = 'UI frameworks')
+    category = 'UI frameworks'
+)
 USING
   (client, page),
   UNNEST([1e3, 1e4, 1e5, 1e6, 1e7]) AS rank

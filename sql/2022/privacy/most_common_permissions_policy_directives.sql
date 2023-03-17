@@ -55,13 +55,14 @@ meta_tags AS (
     url AS page,
     LOWER(JSON_VALUE(meta_node, '$.http-equiv')) AS tag_name,
     LOWER(JSON_VALUE(meta_node, '$.content')) AS tag_value
-  FROM (
-    SELECT
-      _TABLE_SUFFIX AS client,
-      url,
-      JSON_VALUE(payload, '$._almanac') AS metrics
-    FROM
-      `httparchive.pages.2022_06_01_*`
+  FROM
+    (
+      SELECT
+        _TABLE_SUFFIX AS client,
+        url,
+        JSON_VALUE(payload, '$._almanac') AS metrics
+      FROM
+        `httparchive.pages.2022_06_01_*`
     ),
     UNNEST(JSON_QUERY_ARRAY(metrics, '$.meta-nodes.nodes')) meta_node
   WHERE
@@ -92,8 +93,10 @@ merged_policy AS (
     meta_tags
   USING (client, page)
   WHERE
-    (header_name IN ('feature-policy', 'permissions-policy') OR
-      tag_name IN ('feature-policy', 'permissions-policy')) AND
+    (
+      header_name IN ('feature-policy', 'permissions-policy') OR
+      tag_name IN ('feature-policy', 'permissions-policy')
+    ) AND
     header_value IS NOT NULL AND
     tag_value IS NOT NULL
 )

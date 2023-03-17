@@ -3,7 +3,9 @@
 # links or buttons only containing an icon
 
 CREATE TEMPORARY FUNCTION hasButtonIconSet(payload STRING)
-RETURNS BOOL LANGUAGE js AS '''
+RETURNS BOOL
+LANGUAGE js
+AS '''
   try {
     var $ = JSON.parse(payload);
     var almanac = JSON.parse($._almanac);

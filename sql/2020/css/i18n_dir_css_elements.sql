@@ -54,31 +54,36 @@ try {
 
 SELECT
   *
-FROM (
-  SELECT
-    client,
-    element,
-    value,
-    SUM(freq) AS freq,
-    SUM(SUM(freq)) OVER (PARTITION BY client, element) AS total,
-    SUM(freq) / SUM(SUM(freq)) OVER (PARTITION BY client, element) AS pct
-  FROM (
+FROM
+  (
     SELECT
       client,
-      dir.element,
-      dir.value,
-      dir.freq
+      element,
+      value,
+      SUM(freq) AS freq,
+      SUM(SUM(freq)) OVER (PARTITION BY client, element) AS total,
+      SUM(freq) / SUM(SUM(freq)) OVER (PARTITION BY client, element) AS pct
     FROM
-      `httparchive.almanac.parsed_css`,
-      UNNEST(getDirValues(css)) AS dir
-    WHERE
-      date = '2020-08-01' AND
-      # Limit the size of the CSS to avoid OOM crashes.
-      LENGTH(css) < 0.1 * 1024 * 1024)
-  GROUP BY
-    client,
-    element,
-    value)
+      (
+        SELECT
+          client,
+          dir.element,
+          dir.value,
+          dir.freq
+        FROM
+          `httparchive.almanac.parsed_css`
+        ,
+          UNNEST(getDirValues(css)) AS dir
+        WHERE
+          date = '2020-08-01' AND
+          # Limit the size of the CSS to avoid OOM crashes.
+          LENGTH(css) < 0.1 * 1024 * 1024
+      )
+    GROUP BY
+      client,
+      element,
+      value
+  )
 WHERE
   pct >= 0.01
 ORDER BY

@@ -150,17 +150,20 @@ SELECT
   COUNT(DISTINCT page) AS pages,
   total,
   COUNT(DISTINCT page) / total AS pct
-FROM (
-  SELECT DISTINCT
-    client,
-    page,
-    function
-  FROM
-    `httparchive.almanac.parsed_css`,
-    UNNEST(getGradientFunctions(css)) AS function
-  WHERE
-    date = '2021-07-01' AND
-    function IS NOT NULL)
+FROM
+  (
+    SELECT DISTINCT
+      client,
+      page,
+      function
+    FROM
+      `httparchive.almanac.parsed_css`
+    ,
+      UNNEST(getGradientFunctions(css)) AS function
+    WHERE
+      date = '2021-07-01' AND
+      function IS NOT NULL
+  )
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -168,7 +171,8 @@ JOIN (
   FROM
     `httparchive.summary_pages.2021_07_01_*`
   GROUP BY
-    client)
+    client
+)
 USING
   (client)
 GROUP BY

@@ -14,18 +14,19 @@ SELECT
   ROUND(COUNTIF(uses_public) * 100 / COUNTIF(uses_cache_control), 2) AS pct_control_using_public,
   ROUND(COUNTIF(uses_private) * 100 / COUNTIF(uses_cache_control), 2) AS pct_control_using_private,
   ROUND(COUNTIF(uses_public AND uses_private) * 100 / COUNTIF(uses_cache_control), 2) AS pct_control_using_both
-FROM (
-  SELECT
-    client,
-    IF(STRPOS(NET.HOST(url), REGEXP_EXTRACT(NET.REG_DOMAIN(page), r'([\w-]+)')) > 0, 1, 3) AS party,
-    TRIM(resp_cache_control) != '' AS uses_cache_control,
-    REGEXP_CONTAINS(resp_cache_control, r'(?i)(^\s*|,\s*)public(\s*,|\s*$)') AS uses_public,
-    REGEXP_CONTAINS(resp_cache_control, r'(?i)(^\s*|,\s*)private(\s*,|\s*$)') AS uses_private
-  FROM
-    `httparchive.almanac.requests`
-  WHERE
-    date = '2019-07-01'
-)
+FROM
+  (
+    SELECT
+      client,
+      IF(STRPOS(NET.HOST(url), REGEXP_EXTRACT(NET.REG_DOMAIN(page), r'([\w-]+)')) > 0, 1, 3) AS party,
+      TRIM(resp_cache_control) != '' AS uses_cache_control,
+      REGEXP_CONTAINS(resp_cache_control, r'(?i)(^\s*|,\s*)public(\s*,|\s*$)') AS uses_public,
+      REGEXP_CONTAINS(resp_cache_control, r'(?i)(^\s*|,\s*)private(\s*,|\s*$)') AS uses_private
+    FROM
+      `httparchive.almanac.requests`
+    WHERE
+      date = '2019-07-01'
+  )
 GROUP BY
   client,
   party

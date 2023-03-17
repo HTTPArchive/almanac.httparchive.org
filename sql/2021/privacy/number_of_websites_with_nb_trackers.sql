@@ -31,25 +31,26 @@ SELECT
   COUNT(DISTINCT page) AS number_of_websites,
   total_websites,
   COUNT(DISTINCT page) / total_websites AS pct_websites
-FROM (
-  SELECT
-    client,
-    page,
-    COUNT(DISTINCT tracker) AS number_of_trackers
-  FROM
-    `httparchive.almanac.requests`
-  JOIN
-    whotracksme
-  ON (
-    NET.HOST(urlShort) = domain OR
-    ENDS_WITH(NET.HOST(urlShort), CONCAT('.', domain))
-  )
-  WHERE
-    date = '2021-07-01' AND
-    NET.REG_DOMAIN(page) != NET.REG_DOMAIN(urlShort) -- third party
-  GROUP BY
-    client,
-    page
+FROM
+  (
+    SELECT
+      client,
+      page,
+      COUNT(DISTINCT tracker) AS number_of_trackers
+    FROM
+      `httparchive.almanac.requests`
+    JOIN
+      whotracksme
+    ON (
+      NET.HOST(urlShort) = domain OR
+      ENDS_WITH(NET.HOST(urlShort), CONCAT('.', domain))
+    )
+    WHERE
+      date = '2021-07-01' AND
+      NET.REG_DOMAIN(page) != NET.REG_DOMAIN(urlShort) -- third party
+    GROUP BY
+      client,
+      page
   )
 JOIN
   totals
@@ -66,32 +67,33 @@ SELECT
   COUNT(DISTINCT page) AS number_of_websites,
   total_websites,
   COUNT(DISTINCT page) / total_websites AS pct_websites
-FROM (
-  SELECT
-    client,
-    page,
-    COUNT(DISTINCT tracker) AS number_of_trackers
-  FROM
-    `httparchive.almanac.requests`
-  JOIN
-    whotracksme
-  ON (
-    NET.HOST(urlShort) = domain OR
-    ENDS_WITH(NET.HOST(urlShort), CONCAT('.', domain))
-  )
-  WHERE
-    date = '2021-07-01' AND
-    NET.REG_DOMAIN(page) != NET.REG_DOMAIN(urlShort) AND -- third party
-    (
-      -- categories selected from https://whotracks.me/blog/tracker_categories.html
-      whotracksme.category = 'advertising' OR
-      whotracksme.category = 'pornvertising' OR
-      whotracksme.category = 'site_analytics' OR
-      whotracksme.category = 'social_media'
+FROM
+  (
+    SELECT
+      client,
+      page,
+      COUNT(DISTINCT tracker) AS number_of_trackers
+    FROM
+      `httparchive.almanac.requests`
+    JOIN
+      whotracksme
+    ON (
+      NET.HOST(urlShort) = domain OR
+      ENDS_WITH(NET.HOST(urlShort), CONCAT('.', domain))
     )
-  GROUP BY
-    client,
-    page
+    WHERE
+      date = '2021-07-01' AND
+      NET.REG_DOMAIN(page) != NET.REG_DOMAIN(urlShort) AND -- third party
+      (
+        -- categories selected from https://whotracks.me/blog/tracker_categories.html
+        whotracksme.category = 'advertising' OR
+        whotracksme.category = 'pornvertising' OR
+        whotracksme.category = 'site_analytics' OR
+        whotracksme.category = 'social_media'
+      )
+    GROUP BY
+      client,
+      page
   )
 JOIN
   totals

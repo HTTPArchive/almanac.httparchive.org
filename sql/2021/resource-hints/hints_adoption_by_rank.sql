@@ -36,21 +36,22 @@ SELECT
   COUNTIF(hints.`dns-prefetch`) / COUNT(0) AS pct_dns_prefetch,
   COUNTIF(hints.modulepreload) AS modulepreload,
   COUNTIF(hints.modulepreload) / COUNT(0) AS pct_modulepreload
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    url AS page,
-    getResourceHints(payload) AS hints
-  FROM
-    `httparchive.pages.2021_07_01_*`
-)
-JOIN (
+FROM
+  (
     SELECT
       _TABLE_SUFFIX AS client,
       url AS page,
-      rank AS _rank
+      getResourceHints(payload) AS hints
     FROM
-      `httparchive.summary_pages.2021_07_01_*`
+      `httparchive.pages.2021_07_01_*`
+  )
+JOIN (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    url AS page,
+    rank AS _rank
+  FROM
+    `httparchive.summary_pages.2021_07_01_*`
 )
 USING
   (client, page),

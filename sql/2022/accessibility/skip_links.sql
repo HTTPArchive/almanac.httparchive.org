@@ -1,7 +1,9 @@
 #standardSQL
 # % of pages having skip links
 CREATE TEMPORARY FUNCTION getEarlyHash(payload STRING)
-RETURNS INT64 LANGUAGE js AS '''
+RETURNS INT64
+LANGUAGE js
+AS '''
 try {
   const almanac = JSON.parse(payload);
   return almanac['seo-anchor-elements'].earlyHash;

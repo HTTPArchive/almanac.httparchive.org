@@ -7,11 +7,13 @@ SELECT
   IF(prioritization_status IS NOT NULL, prioritization_status, 'Unknown') AS prioritizes_correctly,
   COUNT(0) AS num_pages,
   ROUND(COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client), 4) AS pct
-FROM (
+FROM
+  (
     SELECT
       date,
       client,
-      JSON_EXTRACT_SCALAR(payload, '$._protocol') AS http_version,
+      JSON_EXTRACT_SCALAR(payload, '$._protocol'
+      ) AS http_version,
       url,
       _cdn_provider AS cdn
     FROM
@@ -25,7 +27,7 @@ FROM (
         LOWER(JSON_EXTRACT_SCALAR(payload, '$._protocol')) LIKE 'h3%' OR
         LOWER(JSON_EXTRACT_SCALAR(payload, '$._protocol')) LIKE 'http/3%'
       )
-) AS pages
+  ) AS pages
 LEFT JOIN
   `httparchive.almanac.h2_prioritization_cdns`
 USING (cdn, date)

@@ -17,12 +17,14 @@ SELECT
   total_sri_elements,
   COUNT(0) AS freq,
   COUNT(0) / total_sri_elements AS pct
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._security'), '$.sri-integrity') AS sris
-  FROM
-    `httparchive.pages.2021_07_01_*`),
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._security'), '$.sri-integrity') AS sris
+    FROM
+      `httparchive.pages.2021_07_01_*`
+  ),
   UNNEST(sris) AS sri,
   UNNEST(REGEXP_EXTRACT_ALL(JSON_EXTRACT_SCALAR(sri, '$.integrity'), r'(sha[^-]+)-')) AS hash_function
 JOIN totals USING (client)

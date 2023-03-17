@@ -26,20 +26,22 @@ SELECT
   COUNT(0) AS freq,
   SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
-FROM (
-  SELECT
-    client,
-    REGEXP_EXTRACT_ALL(consoleLog, r'A preload for (.*?) is found, but is not used because the script type does not match.') AS value
-  FROM (
+FROM
+  (
     SELECT
-      _TABLE_SUFFIX AS client,
-      JSON_EXTRACT(payload, '$._consoleLog') AS consoleLog,
-      getResourceHints(payload) AS hints
+      client,
+      REGEXP_EXTRACT_ALL(consoleLog, r'A preload for (.*?) is found, but is not used because the script type does not match.') AS value
     FROM
-      `httparchive.pages.2021_07_01_*`
+      (
+        SELECT
+          _TABLE_SUFFIX AS client,
+          JSON_EXTRACT(payload, '$._consoleLog') AS consoleLog,
+          getResourceHints(payload) AS hints
+        FROM
+          `httparchive.pages.2021_07_01_*`
+      )
+    WHERE hints.preload
   )
-  WHERE hints.preload
-)
 GROUP BY
   client,
   num_incorrect_type

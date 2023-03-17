@@ -4,15 +4,16 @@
 SELECT
   *,
   domains_using_wasm / all_domains AS domains_using_wasm_pct
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    COUNT(DISTINCT NET.REG_DOMAIN(url)) AS all_domains
-  FROM
-    `httparchive.summary_pages.2022_06_01_*`
-  GROUP BY
-    client
-)
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      COUNT(DISTINCT NET.REG_DOMAIN(url)) AS all_domains
+    FROM
+      `httparchive.summary_pages.2022_06_01_*`
+    GROUP BY
+      client
+  )
 JOIN (
   SELECT
     client,

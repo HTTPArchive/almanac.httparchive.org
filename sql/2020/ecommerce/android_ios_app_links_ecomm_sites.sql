@@ -8,14 +8,16 @@ SELECT
   COUNT(0) AS total,
   COUNTIF(android_app_links) / COUNT(0) AS pct_android_app_links,
   COUNTIF(ios_universal_links) / COUNT(0) AS pct_ios_universal_links
-FROM (
-  SELECT DISTINCT
-    _TABLE_SUFFIX AS client,
-    url
-  FROM
-    `httparchive.technologies.2020_08_01_*`
-  WHERE
-    category = 'Ecommerce')
+FROM
+  (
+    SELECT DISTINCT
+      _TABLE_SUFFIX AS client,
+      url
+    FROM
+      `httparchive.technologies.2020_08_01_*`
+    WHERE
+      category = 'Ecommerce'
+  )
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -23,7 +25,8 @@ JOIN (
     JSON_EXTRACT(JSON_EXTRACT_SCALAR(payload, '$._ecommerce'), '$.AndroidAppLinks') = '1' AS android_app_links,
     JSON_EXTRACT(JSON_EXTRACT_SCALAR(payload, '$._ecommerce'), '$.iOSUniveralLinks') = '1' AS ios_universal_links
   FROM
-    `httparchive.pages.2020_08_01_*`)
+    `httparchive.pages.2020_08_01_*`
+)
 USING
   (client, url)
 GROUP BY

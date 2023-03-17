@@ -94,29 +94,31 @@ try {
 
 SELECT
   *
-FROM (
-  SELECT
-    client,
-    unit.unit,
-    CASE
-      WHEN unit.unit = '<number>' THEN 'Unitless 0'
-      WHEN unit.unit = 'px' THEN 'px'
-      ELSE 'other'
-    END AS type,
-    COUNT(DISTINCT page) AS pages,
-    SUM(unit.freq) AS freq,
-    SUM(SUM(unit.freq)) OVER (PARTITION BY client) AS total,
-    SUM(unit.freq) / SUM(SUM(unit.freq)) OVER (PARTITION BY client) AS pct
-  FROM
-    `httparchive.almanac.parsed_css`,
-    UNNEST(getZeroUnits(css)) AS unit
-  WHERE
-    date = '2022-07-01' AND
-    # Limit the size of the CSS to avoid OOM crashes.
-    LENGTH(css) < 0.1 * 1024 * 1024
-  GROUP BY
-    client,
-    unit)
+FROM
+  (
+    SELECT
+      client,
+      unit.unit,
+      CASE
+        WHEN unit.unit = '<number>' THEN 'Unitless 0'
+        WHEN unit.unit = 'px' THEN 'px'
+        ELSE 'other'
+      END AS type,
+      COUNT(DISTINCT page) AS pages,
+      SUM(unit.freq) AS freq,
+      SUM(SUM(unit.freq)) OVER (PARTITION BY client) AS total,
+      SUM(unit.freq) / SUM(SUM(unit.freq)) OVER (PARTITION BY client) AS pct
+    FROM
+      `httparchive.almanac.parsed_css`,
+      UNNEST(getZeroUnits(css)) AS unit
+    WHERE
+      date = '2022-07-01' AND
+      # Limit the size of the CSS to avoid OOM crashes.
+      LENGTH(css) < 0.1 * 1024 * 1024
+    GROUP BY
+      client,
+      unit
+  )
 WHERE
   freq >= 1000
 ORDER BY

@@ -7,7 +7,8 @@ SELECT
   COUNT(DISTINCT page) AS num_pages,
   APPROX_QUANTILES(num_requests, 1000)[OFFSET(percentile * 10)] AS pushed_requests,
   APPROX_QUANTILES(kb_transfered, 1000)[OFFSET(percentile * 10)] AS kb_transfered
-FROM (
+FROM
+  (
     SELECT
       client,
       page,
@@ -28,7 +29,8 @@ FROM (
     GROUP BY
       client,
       http_version,
-      page),
+      page
+  ),
   UNNEST([10, 25, 50, 75, 90]) AS percentile
 GROUP BY
   percentile,

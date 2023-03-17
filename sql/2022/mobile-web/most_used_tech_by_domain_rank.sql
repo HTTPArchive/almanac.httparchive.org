@@ -8,14 +8,15 @@ SELECT
   app,
   COUNT(0) AS pages_with_app,
   COUNT(0) / total_in_rank AS pct_pages_with_app
-FROM (
-  SELECT
-    app,
-    category,
-    url
-  FROM
-    `httparchive.technologies.2022_06_01_mobile`
-)
+FROM
+  (
+    SELECT
+      app,
+      category,
+      url
+    FROM
+      `httparchive.technologies.2022_06_01_mobile`
+  )
 LEFT OUTER JOIN (
   SELECT
     url,

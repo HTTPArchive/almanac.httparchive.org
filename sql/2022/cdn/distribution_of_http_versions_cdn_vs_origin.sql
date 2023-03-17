@@ -11,25 +11,27 @@ SELECT
   COUNTIF(IFNULL(a.protocol, b.protocol) = 'HTTP/1.1') / COUNT(0) AS http11_pct,
   COUNTIF(IFNULL(a.protocol, b.protocol) IN ('HTTP/2', 'H3-29', 'H3-Q050')) / COUNT(0) AS http2plus_pct,
   COUNTIF(IFNULL(a.protocol, b.protocol) NOT IN ('HTTP/1.1', 'HTTP/2', 'H3-29', 'H3-Q050')) / COUNT(0) AS http_other_pct
-FROM (
-  SELECT
-    client,
-    page,
-    url,
-    firstHtml,
-    CAST(JSON_EXTRACT(payload, '$._socket') AS INT64) AS socket,
-    # WPT is inconsistent with protocol population.
-    UPPER(IFNULL(JSON_EXTRACT_SCALAR(payload, '$._protocol'), IFNULL(NULLIF(JSON_EXTRACT_SCALAR(payload, '$._tls_next_proto'), 'unknown'), NULLIF(concat('HTTP/', JSON_EXTRACT_SCALAR(payload, '$.response.httpVersion')), 'HTTP/')))) AS protocol,
+FROM
+  (
+    SELECT
+      client,
+      page,
+      url,
+      firstHtml,
+      CAST(JSON_EXTRACT(payload, '$._socket') AS INT64) AS socket,
+      # WPT is inconsistent with protocol population.
+      UPPER(IFNULL(JSON_EXTRACT_SCALAR(payload, '$._protocol'), IFNULL(NULLIF(JSON_EXTRACT_SCALAR(payload, '$._tls_next_proto'), 'unknown'), NULLIF(concat('HTTP/', JSON_EXTRACT_SCALAR(payload, '$.response.httpVersion')), 'HTTP/')))) AS protocol,
 
-    # WPT joins CDN detection but we bias to the DNS detection which is the first entry
-    IFNULL(NULLIF(REGEXP_EXTRACT(_cdn_provider, r'^([^,]*).*'), ''), 'Origin') AS cdn
-  FROM
-    `httparchive.almanac.requests`
-  WHERE
-    # WPT changes the response fields based on a redirect (url becomes the Location path instead of the original) causing insonsistencies in the counts, so we ignore them
-    resp_location = '' OR
-    resp_location IS NULL AND
-    date = '2022-06-01') AS a
+      # WPT joins CDN detection but we bias to the DNS detection which is the first entry
+      IFNULL(NULLIF(REGEXP_EXTRACT(_cdn_provider, r'^([^,]*).*'), ''), 'Origin') AS cdn
+    FROM
+      `httparchive.almanac.requests`
+    WHERE
+      # WPT changes the response fields based on a redirect (url becomes the Location path instead of the original) causing insonsistencies in the counts, so we ignore them
+      resp_location = '' OR
+      resp_location IS NULL AND
+      date = '2022-06-01'
+  ) AS a
 LEFT JOIN (
   SELECT
     client,
@@ -46,7 +48,8 @@ LEFT JOIN (
   GROUP BY
     client,
     page,
-    socket) AS b
+    socket
+) AS b
 ON
   a.client = b.client AND
   a.page = b.page AND

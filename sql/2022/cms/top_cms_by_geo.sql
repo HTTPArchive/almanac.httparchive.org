@@ -29,39 +29,45 @@ WITH geo_summary AS (
 
 SELECT
   *
-FROM (
-  SELECT
-    client,
-    geo,
-    cms,
-    COUNT(0) AS pages,
-    ANY_VALUE(total) AS total,
-    COUNT(DISTINCT url) / ANY_VALUE(total) AS pct
-  FROM (
-    SELECT DISTINCT
-      geo,
+FROM
+  (
+    SELECT
       client,
-      CONCAT(origin, '/') AS url,
-      total
+      geo,
+      cms,
+      COUNT(0) AS pages,
+      ANY_VALUE(total) AS total,
+      COUNT(DISTINCT url) / ANY_VALUE(total) AS pct
     FROM
-      geo_summary
-  ) JOIN (
-    SELECT DISTINCT
-      _TABLE_SUFFIX AS client,
-      category,
-      app AS cms,
-      url
-    FROM
-      `httparchive.technologies.2022_06_01_*`
-    WHERE
-      app IS NOT NULL AND
-      category = 'CMS' AND
-      app != ''
-  ) USING (client, url)
-  GROUP BY
-    client,
-    geo,
-    cms)
+      (
+        SELECT DISTINCT
+          geo,
+          client,
+          CONCAT(origin, '/') AS url,
+          total
+        FROM
+          geo_summary
+      )
+    JOIN
+      (
+        SELECT DISTINCT
+          _TABLE_SUFFIX AS client,
+          category,
+          app AS cms,
+          url
+        FROM
+          `httparchive.technologies.2022_06_01_*`
+        WHERE
+          app IS NOT NULL AND
+          category = 'CMS' AND
+          app != ''
+      )
+    USING (client, url)
+    GROUP BY
+      client,
+      geo,
+      cms
+  )
 WHERE
   pages > 1000
 ORDER BY

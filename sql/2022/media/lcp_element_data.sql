@@ -3,7 +3,9 @@
 # How many LCPs had images? (either <img>s or as background images)?
 # How many of those <img>s were lazy-loaded (anti-pattern!)
 
-CREATE TEMP FUNCTION getLoadingAttr(attributes STRING) RETURNS STRING LANGUAGE js AS '''
+CREATE TEMP FUNCTION getLoadingAttr(attributes STRING) RETURNS STRING
+LANGUAGE js
+AS '''
   try {
     const data = JSON.parse(attributes);
     const loadingAttr = data.find(attr => attr["name"] === "loading")
@@ -13,7 +15,9 @@ CREATE TEMP FUNCTION getLoadingAttr(attributes STRING) RETURNS STRING LANGUAGE j
   }
 ''';
 
-CREATE TEMP FUNCTION getDecodingAttr(attributes STRING) RETURNS STRING LANGUAGE js AS '''
+CREATE TEMP FUNCTION getDecodingAttr(attributes STRING) RETURNS STRING
+LANGUAGE js
+AS '''
   try {
     const data = JSON.parse(attributes);
     const decodingAttr = data.find(attr => attr["name"] === "decoding")
@@ -23,7 +27,9 @@ CREATE TEMP FUNCTION getDecodingAttr(attributes STRING) RETURNS STRING LANGUAGE 
   }
 ''';
 
-CREATE TEMP FUNCTION getLoadingClasses(attributes STRING) RETURNS STRING LANGUAGE js AS '''
+CREATE TEMP FUNCTION getLoadingClasses(attributes STRING) RETURNS STRING
+LANGUAGE js
+AS '''
   try {
     const data = JSON.parse(attributes);
     const classes = data.find(attr => attr["name"] === "class").value
@@ -83,7 +89,8 @@ JOIN (
   FROM
     `httparchive.summary_pages.2022_06_01_*`
   GROUP BY
-    _TABLE_SUFFIX)
+    _TABLE_SUFFIX
+)
 USING
   (client)
 GROUP BY

@@ -2,7 +2,7 @@
 # pages markup metrics grouped by device
 
 # helper to create percent fields
-CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
+CREATE TEMP FUNCTION AS_PERCENT(freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
   ROUND(SAFE_DIVIDE(freq, total), 4)
 );
 
@@ -29,7 +29,9 @@ RETURNS STRUCT<
   inputs_types_submit_total INT64,
   dirs_html_dir STRING,
   dirs_body_nodes_dir_total INT64
-> LANGUAGE js AS '''
+>
+LANGUAGE js
+AS '''
 var result = {};
 try {
     var markup = JSON.parse(markup_string);

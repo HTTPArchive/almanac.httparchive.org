@@ -1,6 +1,7 @@
 #standardSQL
 # 04_09a: Client Hints
-SELECT client,
+SELECT
+  client,
   COUNTIF(chHTML) AS chHTMLCount,
   COUNTIF(chHeader) AS chHeaderCount,
   COUNTIF(chHTML AND chHeader) AS chBothCount,

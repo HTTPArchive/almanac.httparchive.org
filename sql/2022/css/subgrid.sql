@@ -16,14 +16,16 @@ SELECT
   COUNT(DISTINCT IF(declarations > 0, page, NULL)) AS pages,
   COUNT(DISTINCT page) AS total,
   COUNT(DISTINCT IF(declarations > 0, page, NULL)) / COUNT(DISTINCT page) AS pct_pages
-FROM (
-  SELECT
-    client,
-    page,
-    countSubgridDeclarations(css) AS declarations
-  FROM
-    `httparchive.almanac.parsed_css`
-  WHERE
-    date = '2022-07-01')
+FROM
+  (
+    SELECT
+      client,
+      page,
+      countSubgridDeclarations(css) AS declarations
+    FROM
+      `httparchive.almanac.parsed_css`
+    WHERE
+      date = '2022-07-01'
+  )
 GROUP BY
   client

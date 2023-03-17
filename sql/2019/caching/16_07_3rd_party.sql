@@ -15,16 +15,17 @@ SELECT
   ROUND(COUNT(0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY client, type, party), 2) AS pct_of_type,
   ROUND(COUNT(0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY client, party), 2) AS pct_of_all_requests,
   ROUND(COUNT(DISTINCT pageid) * 100 / SUM(COUNT(DISTINCT pageid)) OVER (PARTITION BY client, party), 2) AS pct_of_all_pages
-FROM (
-  SELECT
-    client,
-    pageid,
-    requestid,
-    type,
-    IF(STRPOS(NET.HOST(url), REGEXP_EXTRACT(NET.REG_DOMAIN(page), r'([\w-]+)')) > 0, 1, 3) AS party
-  FROM
-    `httparchive.almanac.summary_requests`
-)
+FROM
+  (
+    SELECT
+      client,
+      pageid,
+      requestid,
+      type,
+      IF(STRPOS(NET.HOST(url), REGEXP_EXTRACT(NET.REG_DOMAIN(page), r'([\w-]+)')) > 0, 1, 3) AS party
+    FROM
+      `httparchive.almanac.summary_requests`
+  )
 JOIN
   (SELECT requestid, reqCookieLen > 0 AS uses_cookies FROM `httparchive.almanac.summary_requests` WHERE date = '2019-07-01')
 USING (requestid)

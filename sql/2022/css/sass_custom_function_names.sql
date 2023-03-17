@@ -1,5 +1,7 @@
 #standardSQL
-CREATE TEMPORARY FUNCTION getCustomFunctionNames(payload STRING) RETURNS ARRAY<STRING> LANGUAGE js AS '''
+CREATE TEMPORARY FUNCTION getCustomFunctionNames(payload STRING) RETURNS ARRAY<STRING>
+LANGUAGE js
+AS '''
 try {
   var $ = JSON.parse(payload);
   var scss = JSON.parse($['_sass']);
@@ -19,14 +21,16 @@ SELECT
   COUNT(DISTINCT url) AS pages,
   total_sass,
   COUNT(DISTINCT url) / total_sass AS pct_pages
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    url,
-    sass_custom_function
-  FROM
-    `httparchive.pages.2022_07_01_*`, -- noqa: L062
-    UNNEST(getCustomFunctionNames(payload)) AS sass_custom_function)
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      url,
+      sass_custom_function
+    FROM
+      `httparchive.pages.2022_07_01_*`, -- noqa: L062
+      UNNEST(getCustomFunctionNames(payload)) AS sass_custom_function
+  )
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -34,7 +38,8 @@ JOIN (
   FROM
     `httparchive.pages.2022_07_01_*` -- noqa: L062
   GROUP BY
-    client)
+    client
+)
 USING
   (client)
 GROUP BY

@@ -69,18 +69,20 @@ SELECT
   COUNT(DISTINCT IF(const IS NOT NULL, page, NULL)) AS pages,
   COUNT(DISTINCT page) AS total,
   COUNT(DISTINCT IF(const IS NOT NULL, page, NULL)) / COUNT(DISTINCT page) AS pct
-FROM (
-  SELECT
-    client,
-    page,
-    const
-  FROM
-    `httparchive.almanac.parsed_css`
-  LEFT JOIN
-    UNNEST(getCalcConstants(css)) AS const
-  WHERE
-    date = '2021-07-01' AND
-    # Limit the size of the CSS to avoid OOM crashes.
-    LENGTH(css) < 0.1 * 1024 * 1024)
+FROM
+  (
+    SELECT
+      client,
+      page,
+      const
+    FROM
+      `httparchive.almanac.parsed_css`
+    LEFT JOIN
+      UNNEST(getCalcConstants(css)) AS const
+    WHERE
+      date = '2021-07-01' AND
+      # Limit the size of the CSS to avoid OOM crashes.
+      LENGTH(css) < 0.1 * 1024 * 1024
+  )
 GROUP BY
   client

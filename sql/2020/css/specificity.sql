@@ -88,34 +88,41 @@ SELECT
   client,
   extractSpecificity(APPROX_QUANTILES(max_specificity_cmp, 1000)[OFFSET(percentile * 10)]) AS max_specificity,
   extractSpecificity(APPROX_QUANTILES(median_specificity_cmp, 1000)[OFFSET(percentile * 10)]) AS median_specificity
-FROM (
-  SELECT
-    client,
-    MAX(specificity_cmp) AS max_specificity_cmp,
-    MIN(IF(freq_cdf >= 0.5, specificity_cmp, NULL)) AS median_specificity_cmp
-  FROM (
+FROM
+  (
     SELECT
       client,
-      page,
-      bin.specificity_cmp,
-      SUM(bin.freq) OVER (PARTITION BY client, page ORDER BY bin.specificity_cmp) / SUM(bin.freq) OVER (PARTITION BY client, page) AS freq_cdf
-    FROM (
-      SELECT
-        client,
-        page,
-        getSpecificityInfo(css) AS info
-      FROM
-        `httparchive.almanac.parsed_css`
-      WHERE
-        date = '2020-08-01' AND
-        # Limit the size of the CSS to avoid OOM crashes.
-        LENGTH(css) < 0.1 * 1024 * 1024),
-      UNNEST(info.distribution) AS bin
-    WHERE
-      bin.specificity_cmp IS NOT NULL)
-  GROUP BY
-    client,
-    page),
+      MAX(specificity_cmp) AS max_specificity_cmp,
+      MIN(IF(freq_cdf >= 0.5, specificity_cmp, NULL)) AS median_specificity_cmp
+    FROM
+      (
+        SELECT
+          client,
+          page,
+          bin.specificity_cmp,
+          SUM(bin.freq) OVER (PARTITION BY client, page ORDER BY bin.specificity_cmp) / SUM(bin.freq) OVER (PARTITION BY client, page) AS freq_cdf
+        FROM
+          (
+            SELECT
+              client,
+              page,
+              getSpecificityInfo(css) AS info
+            FROM
+              `httparchive.almanac.parsed_css`
+            WHERE
+              date = '2020-08-01' AND
+              # Limit the size of the CSS to avoid OOM crashes.
+              LENGTH(css) < 0.1 * 1024 * 1024
+          )
+        ,
+          UNNEST(info.distribution) AS bin
+        WHERE
+          bin.specificity_cmp IS NOT NULL
+      )
+    GROUP BY
+      client,
+      page
+  ),
   UNNEST([10, 25, 50, 75, 90, 95, 99, 100]) AS percentile
 GROUP BY
   percentile,

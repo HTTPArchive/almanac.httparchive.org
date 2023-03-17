@@ -35,14 +35,16 @@ SELECT
   COUNT(DISTINCT IF(script_hint, page, NULL)) AS pages,
   COUNT(DISTINCT page) AS total,
   COUNT(DISTINCT IF(script_hint, page, NULL)) / COUNT(DISTINCT page) AS pct
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    url AS page,
-    hint.name IN ('prefetch', 'preload', 'modulepreload') AND hint.value = 'script' AS script_hint
-  FROM
-    `httparchive.pages.2022_06_01_*`
-  LEFT JOIN
-    UNNEST(getResourceHintAttrs(payload)) AS hint)
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      url AS page,
+      hint.name IN ('prefetch', 'preload', 'modulepreload') AND hint.value = 'script' AS script_hint
+    FROM
+      `httparchive.pages.2022_06_01_*`
+    LEFT JOIN
+      UNNEST(getResourceHintAttrs(payload)) AS hint
+  )
 GROUP BY
   client

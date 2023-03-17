@@ -3,7 +3,7 @@
 -- from https://stackoverflow.com/a/54835472
 CREATE TEMP FUNCTION array_slice(arr ARRAY<STRING>, start INT64, finish INT64)
 RETURNS ARRAY<STRING> AS (
-  ARRAY(
+  ARRAY (
     SELECT part
     FROM UNNEST(arr) part WITH OFFSET AS index
     WHERE index BETWEEN start AND finish
@@ -46,28 +46,30 @@ INNER JOIN (
     headername,
     client,
     ARRAY_AGG(CONCAT(category, '_', app) ORDER BY freq DESC) AS top_apps
-  FROM (
-    SELECT
-      headername,
-      client,
-      category,
-      app,
-      COUNT(DISTINCT IF(REGEXP_CONTAINS(respOtherHeaders, CONCAT('(?i)', headername, ' ')), url, NULL)) AS freq,
-      SAFE_DIVIDE(COUNT(DISTINCT IF(REGEXP_CONTAINS(respOtherHeaders, CONCAT('(?i)', headername, ' ')), url, NULL)), COUNT(DISTINCT url)) AS pct
-    FROM
-      app_headers
-    GROUP BY
-      headername,
-      client,
-      category,
-      app
-    HAVING
-      pct > 0.8 AND
-      freq > 1000
-  )
+  FROM
+    (
+      SELECT
+        headername,
+        client,
+        category,
+        app,
+        COUNT(DISTINCT IF(REGEXP_CONTAINS(respOtherHeaders, CONCAT('(?i)', headername, ' ')), url, NULL)) AS freq,
+        SAFE_DIVIDE(COUNT(DISTINCT IF(REGEXP_CONTAINS(respOtherHeaders, CONCAT('(?i)', headername, ' ')), url, NULL)), COUNT(DISTINCT url)) AS pct
+      FROM
+        app_headers
+      GROUP BY
+        headername,
+        client,
+        category,
+        app
+      HAVING
+        pct > 0.8 AND
+        freq > 1000
+    )
   GROUP BY
     client,
-    headername)
+    headername
+)
 USING
   (client, headername)
 INNER JOIN (
@@ -79,7 +81,8 @@ INNER JOIN (
     app_headers
   GROUP BY
     client,
-    headername)
+    headername
+)
 USING
   (client, headername),
   UNNEST(GENERATE_ARRAY(1, 10)) AS topN

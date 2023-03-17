@@ -1,7 +1,9 @@
 #standardSQL
 # 12_12: Popular input types
 CREATE TEMPORARY FUNCTION getInputTypes(payload STRING)
-RETURNS ARRAY<STRING> LANGUAGE js AS '''
+RETURNS ARRAY<STRING>
+LANGUAGE js
+AS '''
   try {
     var $ = JSON.parse(payload);
     var almanac = JSON.parse($._almanac);

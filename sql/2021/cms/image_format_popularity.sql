@@ -8,15 +8,17 @@ SELECT
   COUNT(0) AS freq,
   SUM(COUNT(0)) OVER (PARTITION BY client, cms) AS total,
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client, cms) AS pct
-FROM (
-  SELECT DISTINCT
-    _TABLE_SUFFIX AS client,
-    url,
-    app AS cms
-  FROM
-    `httparchive.technologies.2021_07_01_*`
-  WHERE
-    category = 'CMS')
+FROM
+  (
+    SELECT DISTINCT
+      _TABLE_SUFFIX AS client,
+      url,
+      app AS cms
+    FROM
+      `httparchive.technologies.2021_07_01_*`
+    WHERE
+      category = 'CMS'
+  )
 JOIN (
   SELECT
     client,
@@ -26,7 +28,8 @@ JOIN (
     `httparchive.almanac.requests`
   WHERE
     date = '2021-07-01' AND
-    type = 'image')
+    type = 'image'
+)
 USING
   (client, url)
 JOIN (
@@ -40,7 +43,8 @@ JOIN (
     category = 'CMS'
   GROUP BY
     client,
-    cms)
+    cms
+)
 USING
   (client, cms)
 WHERE

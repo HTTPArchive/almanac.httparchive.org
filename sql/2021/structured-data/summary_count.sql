@@ -14,19 +14,21 @@ SELECT
   COUNTIF(errors IS NOT NULL AND success IS NULL) / COUNT(0) AS pct_errors_no_success,
   COUNTIF(success IS NOT NULL AND errors IS NOT NULL) / COUNT(0) AS pct_success_errors,
   COUNTIF(success IS NULL AND errors IS NULL) / COUNT(0) AS pct_no_success_no_errors
-FROM (
-  SELECT
-    client,
-    JSON_EXTRACT(structured_data, '$.structured_data') AS success,
-    JSON_EXTRACT(structured_data, '$.log') AS errors
-  FROM (
+FROM
+  (
     SELECT
-      _TABLE_SUFFIX AS client,
-      JSON_VALUE(JSON_EXTRACT(payload, '$._structured-data')) AS structured_data
+      client,
+      JSON_EXTRACT(structured_data, '$.structured_data') AS success,
+      JSON_EXTRACT(structured_data, '$.log') AS errors
     FROM
-      `httparchive.pages.2021_07_01_*`
+      (
+        SELECT
+          _TABLE_SUFFIX AS client,
+          JSON_VALUE(JSON_EXTRACT(payload, '$._structured-data')) AS structured_data
+        FROM
+          `httparchive.pages.2021_07_01_*`
+      )
   )
-)
 GROUP BY
   client
 ORDER BY

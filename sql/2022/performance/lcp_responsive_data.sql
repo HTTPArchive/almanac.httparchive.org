@@ -1,4 +1,6 @@
-CREATE TEMP FUNCTION checkResponsiveImages(responsivelist STRING, lcpImgUrl STRING, nodePath STRING) RETURNS BOOLEAN LANGUAGE js AS '''
+CREATE TEMP FUNCTION checkResponsiveImages(responsivelist STRING, lcpImgUrl STRING, nodePath STRING) RETURNS BOOLEAN
+LANGUAGE js
+AS '''
   try {
     //we will check lcp elment is img
     const lastSegment = (JSON.parse(nodePath).split(",").reverse())[0];

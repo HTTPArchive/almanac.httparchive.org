@@ -7,7 +7,9 @@ RETURNS STRUCT<
   num_srcset_all INT64,
   num_srcset_descriptor_x INT64,
   num_srcset_descriptor_w INT64
-> LANGUAGE js AS '''
+>
+LANGUAGE js
+AS '''
 var result = {};
 try {
     var media = JSON.parse(media_string);
@@ -29,12 +31,14 @@ SELECT
   SAFE_DIVIDE(COUNTIF(media_info.num_srcset_descriptor_w > 0), COUNT(0)) AS pages_with_srcset_descriptor_w_pct,
   SAFE_DIVIDE(SUM(media_info.num_srcset_descriptor_x), SUM(media_info.num_srcset_all)) AS instances_of_srcset_descriptor_x_pct,
   SAFE_DIVIDE(SUM(media_info.num_srcset_descriptor_w), SUM(media_info.num_srcset_all)) AS instances_of_srcset_descriptor_w_pct
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    get_media_info(JSON_EXTRACT_SCALAR(payload, '$._media')) AS media_info
-  FROM
-    `httparchive.pages.2020_08_01_*`)
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      get_media_info(JSON_EXTRACT_SCALAR(payload, '$._media')) AS media_info
+    FROM
+      `httparchive.pages.2020_08_01_*`
+  )
 GROUP BY
   client
 ORDER BY

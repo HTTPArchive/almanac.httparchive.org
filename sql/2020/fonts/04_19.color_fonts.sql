@@ -6,17 +6,19 @@ SELECT
   COUNT(DISTINCT page) AS pages_color,
   total_page,
   COUNT(DISTINCT page) / total_page AS pct_color
-FROM (
-  SELECT
-    client,
-    page,
-    format,
-    payload
-  FROM
-    `httparchive.almanac.requests`
-  WHERE
-    date = '2020-09-01' AND
-    type = 'font')
+FROM
+  (
+    SELECT
+      client,
+      page,
+      format,
+      payload
+    FROM
+      `httparchive.almanac.requests`
+    WHERE
+      date = '2020-09-01' AND
+      type = 'font'
+  )
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -24,7 +26,8 @@ JOIN (
   FROM
     `httparchive.summary_pages.2020_09_01_*`
   GROUP BY
-    _TABLE_SUFFIX)
+    _TABLE_SUFFIX
+)
 USING
   (client),
   # Color fonts have any of sbix, cbdt, svg or colr tables.

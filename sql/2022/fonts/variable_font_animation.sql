@@ -1,7 +1,7 @@
 CREATE TEMPORARY FUNCTION animatesVariableFonts(css STRING)
 RETURNS BOOLEAN
 LANGUAGE js
-OPTIONS(library = "gs://httparchive/lib/css-utils.js")
+OPTIONS (library = "gs://httparchive/lib/css-utils.js")
 AS '''
 try {
   var ast = JSON.parse(css);
@@ -25,16 +25,18 @@ SELECT
   COUNTIF(animates_variable_fonts > 0) AS animates_variable_fonts,
   COUNT(DISTINCT page) AS total,
   COUNTIF(animates_variable_fonts > 0) / COUNT(DISTINCT page) AS pct
-FROM (
-  SELECT
-    client,
-    page,
-    COUNTIF(animatesVariableFonts(css)) AS animates_variable_fonts
-  FROM
-    `httparchive.almanac.parsed_css`
-  WHERE date = '2022-07-01'
-  GROUP BY
-    client,
-    page)
+FROM
+  (
+    SELECT
+      client,
+      page,
+      COUNTIF(animatesVariableFonts(css)) AS animates_variable_fonts
+    FROM
+      `httparchive.almanac.parsed_css`
+    WHERE date = '2022-07-01'
+    GROUP BY
+      client,
+      page
+  )
 GROUP BY
   client

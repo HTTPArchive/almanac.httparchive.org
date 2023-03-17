@@ -1,7 +1,9 @@
 #standardSQL
 # 02_16: % of pages using min/max-width in media queries
 CREATE TEMPORARY FUNCTION getMediaType(css STRING)
-RETURNS STRUCT<max_width BOOLEAN, min_width BOOLEAN> LANGUAGE js AS '''
+RETURNS STRUCT<max_width BOOLEAN, min_width BOOLEAN>
+LANGUAGE js
+AS '''
 try {
   var reduceValues = (values, rule) => {
     if (rule.type != 'media') {
@@ -32,23 +34,27 @@ SELECT
   ROUND(COUNTIF(max_width > 0) * 100 / total, 2) AS pct_max_width,
   ROUND(COUNTIF(min_width > 0) * 100 / total, 2) AS pct_min_width,
   ROUND(COUNTIF(max_width > 0 AND min_width > 0) * 100 / total, 2) AS pct_both
-FROM (
-  SELECT
-    client,
-    COUNTIF(type.max_width) AS max_width,
-    COUNTIF(type.min_width) AS min_width
-  FROM (
+FROM
+  (
     SELECT
       client,
-      page,
-      getMediaType(css) AS type
+      COUNTIF(type.max_width) AS max_width,
+      COUNTIF(type.min_width) AS min_width
     FROM
-      `httparchive.almanac.parsed_css`
-    WHERE
-      date = '2019-07-01')
-  GROUP BY
-    client,
-    page)
+      (
+        SELECT
+          client,
+          page,
+          getMediaType(css) AS type
+        FROM
+          `httparchive.almanac.parsed_css`
+        WHERE
+          date = '2019-07-01'
+      )
+    GROUP BY
+      client,
+      page
+  )
 JOIN
   (SELECT _TABLE_SUFFIX AS client, COUNT(0) AS total FROM `httparchive.summary_pages.2019_07_01_*` GROUP BY client)
 USING

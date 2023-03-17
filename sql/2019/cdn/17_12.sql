@@ -10,7 +10,8 @@ SELECT
   APPROX_QUANTILES(tlstime, 1000)[OFFSET(500)] AS p50,
   APPROX_QUANTILES(tlstime, 1000)[OFFSET(750)] AS p75,
   APPROX_QUANTILES(tlstime, 1000)[OFFSET(900)] AS p90
-FROM (
+FROM
+  (
     SELECT
       client, requestid, page, url, firstHtml,
       IFNULL(NULLIF(REGEXP_EXTRACT(_cdn_provider, r'^([^,]*).*'), ''), 'ORIGIN') AS cdn, # sometimes _cdn provider detection includes multiple entries. we bias for the DNS detected entry which is the first entry
@@ -21,7 +22,7 @@ FROM (
     FROM `httparchive.almanac.requests`
     WHERE date = '2019-07-01'
     GROUP BY client, requestid, page, url, firstHtml, cdn, tlstime, sanLength
-)
+  )
 WHERE
   tlstime != -1 AND
   sanLength IS NOT NULL

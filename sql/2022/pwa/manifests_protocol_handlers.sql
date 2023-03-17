@@ -2,7 +2,9 @@
 # % manifests with protocol handlers for service worker pages and all pages
 
 CREATE TEMP FUNCTION hasProtocolHandlers(manifest STRING)
-RETURNS BOOLEAN LANGUAGE js AS '''
+RETURNS BOOLEAN
+LANGUAGE js
+AS '''
 try {
   var $ = Object.values(JSON.parse(manifest))[0];
   return $.hasOwnProperty('protocol_handlers') && $.protocol_handlers.length > 0;

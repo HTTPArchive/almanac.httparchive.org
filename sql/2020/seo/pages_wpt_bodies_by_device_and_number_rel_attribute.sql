@@ -3,7 +3,7 @@
 # Note: this query only reports if a rel attribute value was ever used on a page. It is not a per anchor report.
 
 # helper to create percent fields
-CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
+CREATE TEMP FUNCTION AS_PERCENT(freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
   ROUND(SAFE_DIVIDE(freq, total), 4)
 );
 
@@ -11,7 +11,9 @@ CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS
 CREATE TEMPORARY FUNCTION get_wpt_bodies_info(wpt_bodies_string STRING)
 RETURNS STRUCT<
   rel ARRAY<STRING>
-> LANGUAGE js AS '''
+>
+LANGUAGE js
+AS '''
 var result = {};
 
 //Function to retrieve only keys if value is >0

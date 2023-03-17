@@ -3,7 +3,9 @@
 
 CREATE TEMPORARY FUNCTION
 getUrls(audit STRING)
-RETURNS ARRAY<STRUCT<url STRING>> LANGUAGE js AS '''
+RETURNS ARRAY<STRUCT<url STRING>>
+LANGUAGE js
+AS '''
 try {
   var $ = JSON.parse(audit);
   return $.details.items.map(i => ({url: i.url}));
@@ -53,13 +55,13 @@ SELECT
 FROM
   base
 JOIN (
-    SELECT
-      _TABLE_SUFFIX AS client,
-      COUNT(DISTINCT url) AS total
-    FROM
-      `httparchive.lighthouse.2022_06_01_*`
-    GROUP BY
-      _TABLE_SUFFIX
+  SELECT
+    _TABLE_SUFFIX AS client,
+    COUNT(DISTINCT url) AS total
+  FROM
+    `httparchive.lighthouse.2022_06_01_*`
+  GROUP BY
+    _TABLE_SUFFIX
 )
 USING
   (client)

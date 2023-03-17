@@ -6,7 +6,8 @@ SELECT
   IF(prioritization_status IS NOT NULL, prioritization_status, 'Unknown') AS prioritizes_correctly,
   COUNT(0) AS num_pages,
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
-FROM (
+FROM
+  (
     SELECT
       date,
       client,
@@ -24,7 +25,7 @@ FROM (
         LOWER(protocol) LIKE 'h3%' OR
         LOWER(protocol) = 'http/3'
       )
-) AS pages
+  ) AS pages
 LEFT JOIN
   `httparchive.almanac.h2_prioritization_cdns`
 USING (cdn, date)

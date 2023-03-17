@@ -64,13 +64,15 @@ SELECT
   COUNTIF(hints.`dns-prefetch`) / COUNT(0) AS pct_dns_prefetch,
   COUNTIF(hints.modulepreload) AS modulepreload,
   COUNTIF(hints.modulepreload) / COUNT(0) AS pct_modulepreload
-FROM (
-  SELECT
-    client,
-    year,
-    getResourceHints(payload) AS hints
-  FROM
-    pages)
+FROM
+  (
+    SELECT
+      client,
+      year,
+      getResourceHints(payload) AS hints
+    FROM
+      pages
+  )
 GROUP BY
   year,
   client

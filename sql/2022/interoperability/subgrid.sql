@@ -31,20 +31,21 @@ SELECT
   COUNTIF(sets_subgrid) AS sets_subgrid,
   ANY_VALUE(total_pages) AS total_pages,
   COUNTIF(sets_subgrid) / ANY_VALUE(total_pages) AS pct_sets_subgrid
-FROM (
-  SELECT
-    client,
-    page,
-    COUNTIF(subgrid) > 0 AS sets_subgrid
-  FROM
-    `httparchive.almanac.parsed_css`,
-    UNNEST(getSubgrid(css)) AS subgrid
-  WHERE
-    date = '2022-07-01'
-  GROUP BY
-    client,
-    page
-)
+FROM
+  (
+    SELECT
+      client,
+      page,
+      COUNTIF(subgrid) > 0 AS sets_subgrid
+    FROM
+      `httparchive.almanac.parsed_css`,
+      UNNEST(getSubgrid(css)) AS subgrid
+    WHERE
+      date = '2022-07-01'
+    GROUP BY
+      client,
+      page
+  )
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,

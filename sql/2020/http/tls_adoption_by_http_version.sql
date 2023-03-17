@@ -7,18 +7,20 @@ SELECT
   COUNT(DISTINCT page) AS freq,
   total,
   COUNT(DISTINCT page) / total AS pct
-FROM (
-  SELECT
-    client,
-    page,
-    IF(JSON_EXTRACT_SCALAR(payload, '$._protocol') IN ('http/0.9', 'http/1.0', 'http/1.1', 'HTTP/2', 'QUIC', 'http/2+quic/46', 'HTTP/3'), JSON_EXTRACT_SCALAR(payload, '$._protocol'), 'other') AS protocol,
-    IFNULL(JSON_EXTRACT_SCALAR(payload, '$._tls_version'), JSON_EXTRACT_SCALAR(payload, '$._securityDetails.protocol')) AS tls_version
-  FROM
-    `httparchive.almanac.requests`
-  WHERE
-    date = '2020-08-01' AND
-    STARTS_WITH(url, 'https') AND
-    firstHtml)
+FROM
+  (
+    SELECT
+      client,
+      page,
+      IF(JSON_EXTRACT_SCALAR(payload, '$._protocol') IN ('http/0.9', 'http/1.0', 'http/1.1', 'HTTP/2', 'QUIC', 'http/2+quic/46', 'HTTP/3'), JSON_EXTRACT_SCALAR(payload, '$._protocol'), 'other') AS protocol,
+      IFNULL(JSON_EXTRACT_SCALAR(payload, '$._tls_version'), JSON_EXTRACT_SCALAR(payload, '$._securityDetails.protocol')) AS tls_version
+    FROM
+      `httparchive.almanac.requests`
+    WHERE
+      date = '2020-08-01' AND
+      STARTS_WITH(url, 'https') AND
+      firstHtml
+  )
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -28,7 +30,8 @@ JOIN (
   WHERE
     STARTS_WITH(url, 'https')
   GROUP BY
-    client)
+    client
+)
 USING
   (client)
 GROUP BY

@@ -5,7 +5,9 @@
 CREATE TEMPORARY FUNCTION getStructuredDataWptBodies(wpt_bodies_string STRING)
 RETURNS STRUCT<
   items_by_format ARRAY<STRING>
-> LANGUAGE js AS '''
+>
+LANGUAGE js
+AS '''
 var result = {
 items_by_format: []
 };
@@ -61,7 +63,8 @@ FROM
           _TABLE_SUFFIX
       )
     USING (_TABLE_SUFFIX)
-  ), UNNEST(structured_data_wpt_bodies_info.items_by_format) AS format
+  ),
+  UNNEST(structured_data_wpt_bodies_info.items_by_format) AS format
 GROUP BY
   total,
   format,

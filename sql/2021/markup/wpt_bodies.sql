@@ -13,7 +13,9 @@ RETURNS STRUCT<
   target_blank_noopener_total INT64,
   target_blank_noreferrer_total INT64,
   target_blank_neither_total INT64
-> LANGUAGE js AS '''
+>
+LANGUAGE js
+AS '''
 var result = {};
 try {
     var wpt_bodies = JSON.parse(wpt_bodies_string);

@@ -3,7 +3,9 @@
 # Note scores, weightings, groups and descriptions may be off in mixed months when new versions of Lighthouse roles out
 
 CREATE TEMPORARY FUNCTION getAudits(auditRefs STRING, audits STRING)
-RETURNS ARRAY<STRUCT<id STRING, weight INT64, audit_group STRING, title STRING, description STRING, score INT64>> LANGUAGE js AS '''
+RETURNS ARRAY<STRUCT<id STRING, weight INT64, audit_group STRING, title STRING, description STRING, score INT64>>
+LANGUAGE js
+AS '''
 var auditrefs = JSON.parse(auditRefs);
 var audits = JSON.parse(audits);
 var results = [];

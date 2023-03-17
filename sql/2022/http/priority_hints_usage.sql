@@ -18,14 +18,15 @@ SELECT
   COUNT(0) AS total_sites,
   COUNTIF(num_priority_hints > 0) AS sites_using_priority_hints,
   COUNTIF(num_priority_hints > 0) / COUNT(0) AS sites_using_priority_hints_pct
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    url AS page,
-    getNumPriorityHints(payload) AS num_priority_hints
-  FROM
-    `httparchive.pages.2022_06_01_*`
-)
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      url AS page,
+      getNumPriorityHints(payload) AS num_priority_hints
+    FROM
+      `httparchive.pages.2022_06_01_*`
+  )
 GROUP BY
   client
 ORDER BY

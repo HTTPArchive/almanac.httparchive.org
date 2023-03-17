@@ -41,15 +41,16 @@ SELECT
   canonicalDomain,
   total_pages,
   pct_pages
-FROM (
-  SELECT
-    canonicalDomain,
-    total_pages,
-    pct_pages,
-    DENSE_RANK() OVER (PARTITION BY client ORDER BY total_pages DESC) AS rank
-  FROM
-    base
-)
+FROM
+  (
+    SELECT
+      canonicalDomain,
+      total_pages,
+      pct_pages,
+      DENSE_RANK() OVER (PARTITION BY client ORDER BY total_pages DESC) AS rank
+    FROM
+      base
+  )
 WHERE
   rank <= 100
 ORDER BY

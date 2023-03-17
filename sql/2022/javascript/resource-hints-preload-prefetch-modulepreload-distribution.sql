@@ -37,20 +37,22 @@ SELECT
   APPROX_QUANTILES(IF(preload_hint = 0, NULL, preload_hint), 1000 IGNORE NULLS)[OFFSET(percentile * 10)] AS preload_hints_per_page_with_hints,
   APPROX_QUANTILES(modulepreload_hint, 1000)[OFFSET(percentile * 10)] AS modulepreload_hints_per_page,
   APPROX_QUANTILES(IF(modulepreload_hint = 0, NULL, modulepreload_hint), 1000 IGNORE NULLS)[OFFSET(percentile * 10)] AS modulepreload_hints_per_page_with_hints
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    url AS page,
-    COUNTIF(hint.name = 'prefetch' AND hint.value = 'script') AS prefetch_hint,
-    COUNTIF(hint.name = 'preload' AND hint.value = 'script') AS preload_hint,
-    COUNTIF(hint.name = 'modulepreload' AND hint.value = 'script') AS modulepreload_hint
-  FROM
-    `httparchive.pages.2022_06_01_*`
-  LEFT JOIN
-    UNNEST(getResourceHintAttrs(payload)) AS hint
-  GROUP BY
-    client,
-    page),
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      url AS page,
+      COUNTIF(hint.name = 'prefetch' AND hint.value = 'script') AS prefetch_hint,
+      COUNTIF(hint.name = 'preload' AND hint.value = 'script') AS preload_hint,
+      COUNTIF(hint.name = 'modulepreload' AND hint.value = 'script') AS modulepreload_hint
+    FROM
+      `httparchive.pages.2022_06_01_*`
+    LEFT JOIN
+      UNNEST(getResourceHintAttrs(payload)) AS hint
+    GROUP BY
+      client,
+      page
+  ),
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 GROUP BY
   percentile,

@@ -85,7 +85,9 @@ RETURNS STRUCT<
   rendered_googlebot_news_notranslate BOOL,
   rendered_googlebot_news_noimageindex BOOL,
   rendered_googlebot_news_nocache BOOL
-> LANGUAGE js AS '''
+>
+LANGUAGE js
+AS '''
 var result = {};
 try {
   var wpt_bodies = JSON.parse(wpt_bodies_string);
@@ -474,13 +476,14 @@ SELECT
   SAFE_DIVIDE(COUNTIF(wpt_bodies_info.rendered_googlebot_news_noimageindex), COUNT(0)) AS pct_rendered_googlebot_news_noimageindex,
   SAFE_DIVIDE(COUNTIF(wpt_bodies_info.rendered_googlebot_news_nocache), COUNT(0)) AS pct_rendered_googlebot_news_nocache
 
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    SPLIT(url, ':')[OFFSET(0)] AS protocol,
-    getSeoStatsWptBodies(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS wpt_bodies_info
-  FROM
-    `httparchive.pages.2022_07_01_*` -- noqa: L062
-)
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      SPLIT(url, ':')[OFFSET(0)] AS protocol,
+      getSeoStatsWptBodies(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS wpt_bodies_info
+    FROM
+      `httparchive.pages.2022_07_01_*` -- noqa: L062
+  )
 GROUP BY
   client

@@ -5,7 +5,9 @@
 CREATE TEMPORARY FUNCTION getVideosAlmanacInfo(almanac_string STRING)
 RETURNS STRUCT<
   videos_total INT64
-> LANGUAGE js AS '''
+>
+LANGUAGE js
+AS '''
 var result = {
   videos_total: 0
 };
@@ -29,16 +31,17 @@ SELECT
   # videos per page
   APPROX_QUANTILES(almanac_info.videos_total, 1000)[OFFSET(percentile * 10)] AS videos_count
 
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    percentile,
-    url,
-    getVideosAlmanacInfo(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS video_almanac_info
-  FROM
-    `httparchive.pages.2021_07_01_*`,
-    UNNEST([10, 25, 50, 75, 90]) AS percentile
-)
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      percentile,
+      url,
+      getVideosAlmanacInfo(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS video_almanac_info
+    FROM
+      `httparchive.pages.2021_07_01_*`,
+      UNNEST([10, 25, 50, 75, 90]) AS percentile
+  )
 WHERE
   video_almanac_info.videos_total > 0
 GROUP BY

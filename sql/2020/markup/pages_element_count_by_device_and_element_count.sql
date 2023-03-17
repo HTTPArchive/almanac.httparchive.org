@@ -3,7 +3,9 @@
 
 # returns all the data we need from _element_count
 CREATE TEMPORARY FUNCTION get_element_COUNT(element_count_string STRING)
-RETURNS INT64 LANGUAGE js AS '''
+RETURNS INT64
+LANGUAGE js
+AS '''
 try {
     if (!element_count_string) return null;
 

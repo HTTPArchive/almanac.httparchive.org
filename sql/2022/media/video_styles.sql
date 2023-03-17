@@ -7,19 +7,20 @@ WITH videonotes AS (
     pageURL,
     num_video_nodes,
     styles
-  FROM (
-    SELECT
-      _TABLE_SUFFIX AS client,
-      url AS pageURL,
-      JSON_VALUE(payload, '$._media') AS media,
-      CAST(JSON_VALUE(JSON_VALUE(payload, '$._media'), '$.num_video_nodes') AS INT64) AS num_video_nodes,
-      JSON_QUERY_ARRAY(JSON_VALUE(payload, '$._media'), '$.video_durations') AS video_duration,
-      JSON_QUERY_ARRAY(JSON_VALUE(payload, '$._media'), '$.video_display_style') AS video_display_style,
-      JSON_QUERY_ARRAY(JSON_VALUE(payload, '$._media'), '$.video_attributes_values_counts') AS video_attributes_values_counts,
-      JSON_QUERY_ARRAY(JSON_VALUE(payload, '$._media'), '$.video_source_format_count') AS video_source_format_count,
-      JSON_QUERY_ARRAY(JSON_VALUE(payload, '$._media'), '$.video_source_format_type') AS video_source_format_type
-    FROM
-      `httparchive.pages.2022_06_01_*`
+  FROM
+    (
+      SELECT
+        _TABLE_SUFFIX AS client,
+        url AS pageURL,
+        JSON_VALUE(payload, '$._media') AS media,
+        CAST(JSON_VALUE(JSON_VALUE(payload, '$._media'), '$.num_video_nodes') AS INT64) AS num_video_nodes,
+        JSON_QUERY_ARRAY(JSON_VALUE(payload, '$._media'), '$.video_durations') AS video_duration,
+        JSON_QUERY_ARRAY(JSON_VALUE(payload, '$._media'), '$.video_display_style') AS video_display_style,
+        JSON_QUERY_ARRAY(JSON_VALUE(payload, '$._media'), '$.video_attributes_values_counts') AS video_attributes_values_counts,
+        JSON_QUERY_ARRAY(JSON_VALUE(payload, '$._media'), '$.video_source_format_count') AS video_source_format_count,
+        JSON_QUERY_ARRAY(JSON_VALUE(payload, '$._media'), '$.video_source_format_type') AS video_source_format_type
+      FROM
+        `httparchive.pages.2022_06_01_*`
     )
   CROSS JOIN
     UNNEST(video_display_style) AS styles

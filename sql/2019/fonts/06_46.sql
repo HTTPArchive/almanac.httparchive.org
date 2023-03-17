@@ -1,7 +1,9 @@
 #standardSQL
 # 06_46: % of pages linking to a Google Fonts stylesheet
 CREATE TEMP FUNCTION preloadsGoogleFont(payload STRING)
-RETURNS BOOLEAN LANGUAGE js AS '''
+RETURNS BOOLEAN
+LANGUAGE js
+AS '''
   try {
     var $ = JSON.parse(payload);
     var almanac = JSON.parse($._almanac);

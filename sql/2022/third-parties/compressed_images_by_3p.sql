@@ -49,30 +49,31 @@ SELECT
   num_requests,
   total_requests,
   pct_requests
-FROM (
-  SELECT
-    client,
-    content_encoding,
-    domain,
-    COUNT(0) AS num_requests,
-    SUM(size) AS size,
-    SUM(COUNT(0)) OVER (PARTITION BY client) AS total_requests,
-    COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct_requests,
-    RANK() OVER (PARTITION BY client, type, content_encoding ORDER BY COUNT(0) DESC) AS domain_rank
-  FROM
-    requests
-  LEFT JOIN
-    third_party
-  ON
-    NET.HOST(requests.url) = NET.HOST(third_party.domain)
-  WHERE
-    domain IS NOT NULL
-  GROUP BY
-    client,
-    type,
-    content_encoding,
-    domain
-)
+FROM
+  (
+    SELECT
+      client,
+      content_encoding,
+      domain,
+      COUNT(0) AS num_requests,
+      SUM(size) AS size,
+      SUM(COUNT(0)) OVER (PARTITION BY client) AS total_requests,
+      COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct_requests,
+      RANK() OVER (PARTITION BY client, type, content_encoding ORDER BY COUNT(0) DESC) AS domain_rank
+    FROM
+      requests
+    LEFT JOIN
+      third_party
+    ON
+      NET.HOST(requests.url) = NET.HOST(third_party.domain)
+    WHERE
+      domain IS NOT NULL
+    GROUP BY
+      client,
+      type,
+      content_encoding,
+      domain
+  )
 WHERE
   domain_rank <= 100
 ORDER BY

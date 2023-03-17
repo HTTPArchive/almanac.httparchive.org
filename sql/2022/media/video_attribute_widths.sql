@@ -1,7 +1,9 @@
 #standardSQL
 # Histogram of video withs (bin size: 100px)
 
-CREATE TEMP FUNCTION parseInt(n STRING) RETURNS STRING LANGUAGE js AS '''
+CREATE TEMP FUNCTION parseInt(n STRING) RETURNS STRING
+LANGUAGE js
+AS '''
 try {
   return parseInt(n, 10);
 } catch (e) {

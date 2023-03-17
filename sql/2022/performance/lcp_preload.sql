@@ -1,4 +1,6 @@
-CREATE TEMPORARY FUNCTION isLCPPreloaded(payload STRING) RETURNS BOOLEAN LANGUAGE js AS '''
+CREATE TEMPORARY FUNCTION isLCPPreloaded(payload STRING) RETURNS BOOLEAN
+LANGUAGE js
+AS '''
 try {
   var $ = JSON.parse(payload);
   var lcp_url = $._performance.lcp_elem_stats.url;

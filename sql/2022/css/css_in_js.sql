@@ -1,7 +1,9 @@
 #standardSQL
 # CSS in JS. Show number of sites that using each framework or not using any.
 CREATE TEMPORARY FUNCTION getCssInJS(payload STRING)
-RETURNS ARRAY<STRING> LANGUAGE js AS '''
+RETURNS ARRAY<STRING>
+LANGUAGE js
+AS '''
   try {
     var $ = JSON.parse(payload);
     var css = JSON.parse($._css);
@@ -38,14 +40,16 @@ SELECT
   COUNT(DISTINCT url) AS pages,
   total,
   COUNT(DISTINCT url) / total AS pct
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    url,
-    cssInJs
-  FROM
-    `httparchive.pages.2022_07_01_*`, -- noqa: L062
-    UNNEST(getCssInJS(payload)) AS cssInJs)
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      url,
+      cssInJs
+    FROM
+      `httparchive.pages.2022_07_01_*`, -- noqa: L062
+      UNNEST(getCssInJS(payload)) AS cssInJs
+  )
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -53,7 +57,8 @@ JOIN (
   FROM
     `httparchive.summary_pages.2022_07_01_*` -- noqa: L062
   GROUP BY
-    client)
+    client
+)
 USING (client)
 GROUP BY
   client,

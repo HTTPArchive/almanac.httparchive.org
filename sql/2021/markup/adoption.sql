@@ -21,7 +21,9 @@ RETURNS STRUCT<
   contains_videos_with_autoplay BOOL,
   contains_videos_without_autoplay BOOL,
   html_node_lang STRING
-> LANGUAGE js AS '''
+>
+LANGUAGE js
+AS '''
 var result = {};
 try {
     var almanac = JSON.parse(almanac_string);

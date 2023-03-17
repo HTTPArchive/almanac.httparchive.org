@@ -5,7 +5,9 @@
 CREATE TEMPORARY FUNCTION getHreflangWptBodies(wpt_bodies_string STRING)
 RETURNS STRUCT<
   hreflangs ARRAY<STRING>
-> LANGUAGE js AS '''
+>
+LANGUAGE js
+AS '''
 var result = {
   hreflangs: []
 };
@@ -48,7 +50,8 @@ FROM
           _TABLE_SUFFIX
       )
     USING (_TABLE_SUFFIX)
-  ), UNNEST(hreflang_wpt_bodies_info.hreflangs) AS hreflang
+  ),
+  UNNEST(hreflang_wpt_bodies_info.hreflangs) AS hreflang
 GROUP BY
   total,
   hreflang,

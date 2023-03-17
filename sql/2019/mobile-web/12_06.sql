@@ -4,7 +4,9 @@
 # (!) 7.71 TB
 
 CREATE TEMPORARY FUNCTION hasBreakpoint(css STRING)
-RETURNS BOOLEAN LANGUAGE js AS '''
+RETURNS BOOLEAN
+LANGUAGE js
+AS '''
 function matchAll(re, str) {
   var results = [];
   while ((matches = re.exec(str)) !== null) {

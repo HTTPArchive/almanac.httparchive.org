@@ -33,18 +33,19 @@ SELECT
   COUNT(0) AS total_pages_using,
   COUNT(0) / total_pages AS pct_pages,
   COUNT(0) / SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS pct_ch_pages_using
-FROM (
-  SELECT
-    page,
-    client,
-    ch_directive
-  FROM
-    `httparchive.almanac.requests`,
-    UNNEST(getClientHints(JSON_EXTRACT(payload, '$.response.headers'))) AS ch_directive
-  WHERE
-    date = '2022-06-01' AND
-    firstHtml
-)
+FROM
+  (
+    SELECT
+      page,
+      client,
+      ch_directive
+    FROM
+      `httparchive.almanac.requests`,
+      UNNEST(getClientHints(JSON_EXTRACT(payload, '$.response.headers'))) AS ch_directive
+    WHERE
+      date = '2022-06-01' AND
+      firstHtml
+  )
 LEFT JOIN (
   SELECT
     _TABLE_SUFFIX AS client,

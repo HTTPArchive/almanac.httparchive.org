@@ -4,13 +4,14 @@ SELECT DISTINCT
   page,
   url,
   body
-FROM (
-  SELECT
-    *
-  FROM
-    `httparchive.almanac.summary_response_bodies`
-  WHERE
-    date = '2020-08-01')
+FROM
+  (
+    SELECT *
+    FROM
+      `httparchive.almanac.summary_response_bodies`
+    WHERE
+      date = '2020-08-01'
+  )
 JOIN (
   SELECT
     date,
@@ -25,9 +26,11 @@ JOIN (
     date,
     client,
     page,
-    url)
+    url
+)
 USING (
   date,
   client,
   page,
-  url)
+  url
+)

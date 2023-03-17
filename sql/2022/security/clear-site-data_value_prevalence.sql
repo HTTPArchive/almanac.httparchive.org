@@ -17,16 +17,17 @@ SELECT
   SUM(COUNT(DISTINCT host)) OVER (PARTITION BY client) AS total_csd_headers,
   COUNT(DISTINCT host) AS freq,
   COUNT(DISTINCT host) / SUM(COUNT(DISTINCT host)) OVER (PARTITION BY client) AS pct
-FROM (
-  SELECT
-    client,
-    NET.HOST(urlShort) AS host,
-    getHeader(response_headers, 'Clear-Site-Data') AS csd_header
-  FROM
-    `httparchive.almanac.requests`
-  WHERE
-    date = '2022-06-01'
-)
+FROM
+  (
+    SELECT
+      client,
+      NET.HOST(urlShort) AS host,
+      getHeader(response_headers, 'Clear-Site-Data') AS csd_header
+    FROM
+      `httparchive.almanac.requests`
+    WHERE
+      date = '2022-06-01'
+  )
 WHERE
   csd_header IS NOT NULL
 GROUP BY

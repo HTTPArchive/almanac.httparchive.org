@@ -24,17 +24,18 @@ SELECT
   COUNT(DISTINCT csp_header) AS num_unique_csp_headers,
   APPROX_QUANTILES(LENGTH(csp_header), 1000 IGNORE NULLS)[OFFSET(percentile * 10)] AS csp_header_length,
   APPROX_QUANTILES(getNumUniqueHosts(csp_header), 1000 IGNORE NULLS)[OFFSET(percentile * 10)] AS unique_allowed_hosts
-FROM (
-  SELECT
-    client,
-    getHeader(JSON_EXTRACT(payload, '$.response.headers'), 'Content-Security-Policy') AS csp_header
-  FROM
-    `httparchive.almanac.requests`
-  WHERE
-    date = '2020-08-01' AND
-    firstHtml
-),
-UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
+FROM
+  (
+    SELECT
+      client,
+      getHeader(JSON_EXTRACT(payload, '$.response.headers'), 'Content-Security-Policy') AS csp_header
+    FROM
+      `httparchive.almanac.requests`
+    WHERE
+      date = '2020-08-01' AND
+      firstHtml
+  ),
+  UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 GROUP BY
   client,
   percentile

@@ -30,41 +30,44 @@ SELECT
   APPROX_QUANTILES(amountOfCdnTime / executionTime, 100) AS percentCdnTimeQuantiles,
   APPROX_QUANTILES(amountOfTagManagerTime / executionTime, 100) AS percentTagManagerTimeQuantiles,
   APPROX_QUANTILES(amountOfOtherTime / executionTime, 100) AS percentOtherTimeQuantiles
-FROM (
-  SELECT
-    pageUrl,
-    COUNT(0) AS numberOfScripts,
-    SUM(executionTime) AS executionTime,
-    SUM(IF(thirdPartyDomain IS NULL, executionTime, 0)) AS amountOfFirstPartyTime,
-    SUM(IF(thirdPartyDomain IS NOT NULL, executionTime, 0)) AS amountOfThirdPartyTime,
-    SUM(IF(thirdPartyCategory = 'ad', executionTime, 0)) AS amountOfAdTime,
-    SUM(IF(thirdPartyCategory = 'analytics', executionTime, 0)) AS amountOfAnalyticsTime,
-    SUM(IF(thirdPartyCategory = 'social', executionTime, 0)) AS amountOfSocialTime,
-    SUM(IF(thirdPartyCategory = 'video', executionTime, 0)) AS amountOfVideoTime,
-    SUM(IF(thirdPartyCategory = 'utility', executionTime, 0)) AS amountOfUtilityTime,
-    SUM(IF(thirdPartyCategory = 'hosting', executionTime, 0)) AS amountOfHostingTime,
-    SUM(IF(thirdPartyCategory = 'marketing', executionTime, 0)) AS amountOfMarketingTime,
-    SUM(IF(thirdPartyCategory = 'customer-success', executionTime, 0)) AS amountOfCustomerSuccessTime,
-    SUM(IF(thirdPartyCategory = 'content', executionTime, 0)) AS amountOfContentTime,
-    SUM(IF(thirdPartyCategory = 'cdn', executionTime, 0)) AS amountOfCdnTime,
-    SUM(IF(thirdPartyCategory = 'tag-manager', executionTime, 0)) AS amountOfTagManagerTime,
-    SUM(IF(thirdPartyCategory = 'other' OR thirdPartyCategory IS NULL, executionTime, 0)) AS amountOfOtherTime
-  FROM (
+FROM
+  (
     SELECT
-      lh.url AS pageUrl,
-      item.execution_time AS executionTime,
-      DomainsOver50Table.requestDomain AS thirdPartyDomain,
-      ThirdPartyTable.category AS thirdPartyCategory
+      pageUrl,
+      COUNT(0) AS numberOfScripts,
+      SUM(executionTime) AS executionTime,
+      SUM(IF(thirdPartyDomain IS NULL, executionTime, 0)) AS amountOfFirstPartyTime,
+      SUM(IF(thirdPartyDomain IS NOT NULL, executionTime, 0)) AS amountOfThirdPartyTime,
+      SUM(IF(thirdPartyCategory = 'ad', executionTime, 0)) AS amountOfAdTime,
+      SUM(IF(thirdPartyCategory = 'analytics', executionTime, 0)) AS amountOfAnalyticsTime,
+      SUM(IF(thirdPartyCategory = 'social', executionTime, 0)) AS amountOfSocialTime,
+      SUM(IF(thirdPartyCategory = 'video', executionTime, 0)) AS amountOfVideoTime,
+      SUM(IF(thirdPartyCategory = 'utility', executionTime, 0)) AS amountOfUtilityTime,
+      SUM(IF(thirdPartyCategory = 'hosting', executionTime, 0)) AS amountOfHostingTime,
+      SUM(IF(thirdPartyCategory = 'marketing', executionTime, 0)) AS amountOfMarketingTime,
+      SUM(IF(thirdPartyCategory = 'customer-success', executionTime, 0)) AS amountOfCustomerSuccessTime,
+      SUM(IF(thirdPartyCategory = 'content', executionTime, 0)) AS amountOfContentTime,
+      SUM(IF(thirdPartyCategory = 'cdn', executionTime, 0)) AS amountOfCdnTime,
+      SUM(IF(thirdPartyCategory = 'tag-manager', executionTime, 0)) AS amountOfTagManagerTime,
+      SUM(IF(thirdPartyCategory = 'other' OR thirdPartyCategory IS NULL, executionTime, 0)) AS amountOfOtherTime
     FROM
-      `httparchive.lighthouse.2019_07_01_mobile` AS lh,
-      UNNEST(getExecutionTimes(lh.report)) AS item
-    LEFT JOIN
-      `lighthouse-infrastructure.third_party_web.2019_07_01` AS ThirdPartyTable
-    ON NET.HOST(item.url) = ThirdPartyTable.domain
-    LEFT JOIN
-      `lighthouse-infrastructure.third_party_web.2019_07_01_all_observed_domains` AS DomainsOver50Table
-    ON NET.HOST(item.url) = DomainsOver50Table.requestDomain
+      (
+        SELECT
+          lh.url AS pageUrl,
+          item.execution_time AS executionTime,
+          DomainsOver50Table.requestDomain AS thirdPartyDomain,
+          ThirdPartyTable.category AS thirdPartyCategory
+        FROM
+          `httparchive.lighthouse.2019_07_01_mobile` AS lh
+        ,
+          UNNEST(getExecutionTimes(lh.report)) AS item
+        LEFT JOIN
+          `lighthouse-infrastructure.third_party_web.2019_07_01` AS ThirdPartyTable
+        ON NET.HOST(item.url) = ThirdPartyTable.domain
+        LEFT JOIN
+          `lighthouse-infrastructure.third_party_web.2019_07_01_all_observed_domains` AS DomainsOver50Table
+        ON NET.HOST(item.url) = DomainsOver50Table.requestDomain
+      )
+    GROUP BY
+      pageUrl
   )
-  GROUP BY
-    pageUrl
-)

@@ -1,7 +1,9 @@
 #standardSQL
 # Percentage of script execution time that are from third party requests broken down by third party category.
 CREATE TEMPORARY FUNCTION getExecutionTimes(report STRING)
-RETURNS ARRAY<STRUCT<url STRING, execution_time FLOAT64>> LANGUAGE js AS '''
+RETURNS ARRAY<STRUCT<url STRING, execution_time FLOAT64>>
+LANGUAGE js
+AS '''
 try {
   var $ = JSON.parse(report);
   return $.audits['bootup-time'].details.items.map(item => ({
@@ -14,7 +16,8 @@ try {
 ''';
 
 SELECT
-  IFNULL(ThirdPartyTable.category,
+  IFNULL(
+    ThirdPartyTable.category,
     IF(DomainsOver50Table.requestDomain IS NULL, 'first-party', 'other')
   ) AS third_party_category,
   SUM(item.execution_time) AS total_execution_time,

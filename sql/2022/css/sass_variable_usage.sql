@@ -1,6 +1,8 @@
 #standardSQL
 CREATE TEMPORARY FUNCTION getVariableUsage(payload STRING) RETURNS
-ARRAY<STRUCT<variable STRING, freq INT64>> LANGUAGE js AS '''
+ARRAY<STRUCT<variable STRING, freq INT64>>
+LANGUAGE js
+AS '''
 try {
   var $ = JSON.parse(payload);
   var scss = JSON.parse($['_sass']);
@@ -25,15 +27,17 @@ SELECT
   SUM(freq) AS freq,
   SUM(SUM(freq)) OVER (PARTITION BY client) AS total,
   SUM(freq) / SUM(SUM(freq)) OVER (PARTITION BY client) AS pct
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    url AS page,
-    variable.variable,
-    variable.freq
-  FROM
-    `httparchive.pages.2022_07_01_*`, -- noqa: L062
-    UNNEST(getVariableUsage(payload)) AS variable)
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      url AS page,
+      variable.variable,
+      variable.freq
+    FROM
+      `httparchive.pages.2022_07_01_*`, -- noqa: L062
+      UNNEST(getVariableUsage(payload)) AS variable
+  )
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -42,7 +46,8 @@ JOIN (
     `httparchive.pages.2022_07_01_*`, -- noqa: L062
     UNNEST(getVariableUsage(payload))
   GROUP BY
-    client)
+    client
+)
 USING
   (client)
 GROUP BY

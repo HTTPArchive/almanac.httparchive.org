@@ -20,7 +20,8 @@ SELECT
   freq,
   total,
   pct
-FROM (
+FROM
+  (
     SELECT
       client,
       host,
@@ -28,30 +29,33 @@ FROM (
       SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
       COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct,
       ROW_NUMBER() OVER (PARTITION BY client ORDER BY COUNT(0) DESC) AS pos
-    FROM (
-      SELECT
-        client,
-        url,
-        host
-      FROM (
-          SELECT
-            _TABLE_SUFFIX AS client,
-            url,
-            NET.HOST(href) AS host
-          FROM
-            `httparchive.pages.2021_07_01_*`,
-            UNNEST(getResourceHintsHrefs(payload, 'preconnect')) AS href
-        )
-      GROUP BY
-        client,
-        url,
-        host
-    )
+    FROM
+      (
+        SELECT
+          client,
+          url,
+          host
+        FROM
+          (
+            SELECT
+              _TABLE_SUFFIX AS client,
+              url,
+              NET.HOST(href) AS host
+            FROM
+              `httparchive.pages.2021_07_01_*`
+            ,
+              UNNEST(getResourceHintsHrefs(payload, 'preconnect')) AS href
+          )
+        GROUP BY
+          client,
+          url,
+          host
+      )
     GROUP BY
       client,
       host
     ORDER BY
       client,
       freq DESC
-)
+  )
 WHERE pos <= 100

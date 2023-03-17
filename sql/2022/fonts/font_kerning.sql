@@ -1,4 +1,6 @@
-CREATE TEMP FUNCTION hasGPOSKerning(data STRING) RETURNS BOOL LANGUAGE js AS '''
+CREATE TEMP FUNCTION hasGPOSKerning(data STRING) RETURNS BOOL
+LANGUAGE js
+AS '''
 try {
   const json = JSON.parse(data);
   const result = new Set();
@@ -20,8 +22,17 @@ fonts AS (
   SELECT
     client,
     url,
-    (hasGPOSKerning(JSON_EXTRACT(payload, '$._font_details.features')) OR IFNULL(REGEXP_CONTAINS(JSON_EXTRACT(payload,
-      '$._font_details.table_sizes'), '(?i)kern'), false)) AS kerning
+    (
+      hasGPOSKerning(JSON_EXTRACT(payload, '$._font_details.features'))
+      OR
+      IFNULL(
+        REGEXP_CONTAINS(
+          JSON_EXTRACT(payload, '$._font_details.table_sizes'),
+          '(?i)kern'
+        ),
+        false
+      )
+    ) AS kerning
   FROM
     `httparchive.almanac.requests`
   WHERE

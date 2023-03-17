@@ -1,4 +1,6 @@
-CREATE TEMPORARY FUNCTION getCSRRatio(payload STRING) RETURNS FLOAT64 LANGUAGE js AS '''
+CREATE TEMPORARY FUNCTION getCSRRatio(payload STRING) RETURNS FLOAT64
+LANGUAGE js
+AS '''
 try {
   var $ = JSON.parse(payload);
   var stats = JSON.parse($._wpt_bodies);

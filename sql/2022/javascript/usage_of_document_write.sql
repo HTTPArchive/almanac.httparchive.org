@@ -3,7 +3,9 @@
 
 CREATE TEMPORARY FUNCTION
 getUrls(audit STRING)
-RETURNS ARRAY<STRUCT<url STRING>> LANGUAGE js AS '''
+RETURNS ARRAY<STRUCT<url STRING>>
+LANGUAGE js
+AS '''
 try {
   var $ = JSON.parse(audit);
   return $.details.items.map(i => ({url: i.url}));

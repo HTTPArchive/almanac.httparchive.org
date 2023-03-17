@@ -1,7 +1,9 @@
 #standardSQL
 # 06_30: VF variation axes used in concert
 CREATE TEMPORARY FUNCTION getFontVariationSettings(css STRING)
-RETURNS ARRAY<STRING> LANGUAGE js AS '''
+RETURNS ARRAY<STRING>
+LANGUAGE js
+AS '''
 try {
   var reduceValues = (values, rule) => {
     if ('rules' in rule) {

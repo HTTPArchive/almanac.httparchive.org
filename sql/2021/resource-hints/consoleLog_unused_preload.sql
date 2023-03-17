@@ -26,20 +26,22 @@ SELECT
   COUNT(0) AS freq,
   SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
-FROM (
-  SELECT
-    client,
-    REGEXP_EXTRACT_ALL(consoleLog, r'The resource (.*?) was preloaded using link preload but not used within a few seconds from the window\'s load event') AS value
-  FROM (
+FROM
+  (
     SELECT
-      _TABLE_SUFFIX AS client,
-      JSON_EXTRACT(payload, '$._consoleLog') AS consoleLog,
-      getResourceHints(payload) AS hints
+      client,
+      REGEXP_EXTRACT_ALL(consoleLog, r'The resource (.*?) was preloaded using link preload but not used within a few seconds from the window\'s load event') AS value
     FROM
-      `httparchive.pages.2021_07_01_*`
+      (
+        SELECT
+          _TABLE_SUFFIX AS client,
+          JSON_EXTRACT(payload, '$._consoleLog') AS consoleLog,
+          getResourceHints(payload) AS hints
+        FROM
+          `httparchive.pages.2021_07_01_*`
+      )
+    WHERE hints.preload
   )
-  WHERE hints.preload
-)
 GROUP BY
   client,
   num_unused_preload

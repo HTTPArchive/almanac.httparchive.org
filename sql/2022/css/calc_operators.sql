@@ -83,20 +83,22 @@ SELECT
   SUM(freq) AS freq,
   SUM(SUM(freq)) OVER (PARTITION BY client) AS total,
   SUM(freq) / SUM(SUM(freq)) OVER (PARTITION BY client) AS pct
-FROM (
-  SELECT
-    client,
-    page,
-    url,
-    operator.name AS operator,
-    operator.freq
-  FROM
-    `httparchive.almanac.parsed_css`,
-    UNNEST(getCalcOperators(css)) AS operator
-  WHERE
-    date = '2022-07-01' AND
-    # Limit the size of the CSS to avoid OOM crashes.
-    LENGTH(css) < 0.1 * 1024 * 1024)
+FROM
+  (
+    SELECT
+      client,
+      page,
+      url,
+      operator.name AS operator,
+      operator.freq
+    FROM
+      `httparchive.almanac.parsed_css`,
+      UNNEST(getCalcOperators(css)) AS operator
+    WHERE
+      date = '2022-07-01' AND
+      # Limit the size of the CSS to avoid OOM crashes.
+      LENGTH(css) < 0.1 * 1024 * 1024
+  )
 JOIN
   totals
 USING

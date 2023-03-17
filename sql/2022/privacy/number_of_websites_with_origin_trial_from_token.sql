@@ -176,13 +176,14 @@ meta_tags AS (
     url AS page,
     LOWER(JSON_VALUE(meta_node, '$.http-equiv')) AS tag_name,
     JSON_VALUE(meta_node, '$.content') AS tag_value  -- may not lowercase this value as it is a base64 string
-  FROM (
-    SELECT
-      _TABLE_SUFFIX AS client,
-      url,
-      JSON_VALUE(payload, '$._almanac') AS metrics
-    FROM
-      `httparchive.pages.2022_06_01_*`
+  FROM
+    (
+      SELECT
+        _TABLE_SUFFIX AS client,
+        url,
+        JSON_VALUE(payload, '$._almanac') AS metrics
+      FROM
+        `httparchive.pages.2022_06_01_*`
     ),
     UNNEST(JSON_QUERY_ARRAY(metrics, '$.meta-nodes.nodes')) meta_node
   WHERE
@@ -195,7 +196,8 @@ extracted_origin_trials_from_custom_metric AS (
     url AS site, -- the home page that was crawled
     retrieveOriginTrials(JSON_VALUE(metric, '$.token')) AS origin_trials_from_custom_metric
   FROM
-    pages_origin_trials, UNNEST(JSON_QUERY_ARRAY(metrics)) metric
+    pages_origin_trials,
+    UNNEST(JSON_QUERY_ARRAY(metrics)) metric
 ),
 
 extracted_origin_trials_from_headers_and_meta_tags AS (

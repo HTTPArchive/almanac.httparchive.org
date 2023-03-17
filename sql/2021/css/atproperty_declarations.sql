@@ -1,6 +1,8 @@
 #standardSQL
 # Adoption of @property declarations
-CREATE TEMP FUNCTION getAtPropertyValues(css STRING) RETURNS ARRAY<STRUCT<syntax STRING, inherits STRING, `initial-value` STRING>> LANGUAGE js AS '''
+CREATE TEMP FUNCTION getAtPropertyValues(css STRING) RETURNS ARRAY<STRUCT<syntax STRING, inherits STRING, `initial-value` STRING>>
+LANGUAGE js
+AS '''
 try {
   var $ = JSON.parse(css);
   return $.stylesheet.rules.flatMap(rule => {
@@ -36,18 +38,21 @@ SELECT
   COUNT(0) AS freq,
   SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
-FROM (
-  SELECT
-    client,
-    page,
-    REGEXP_REPLACE(atproperty.syntax, r'[\'"]', '') AS syntax,
-    atproperty.inherits,
-    atproperty.`initial-value` AS initial_value
-  FROM
-    `httparchive.almanac.parsed_css`,
-    UNNEST(getAtPropertyValues(css)) AS atproperty
-  WHERE
-    date = '2021-07-01')
+FROM
+  (
+    SELECT
+      client,
+      page,
+      REGEXP_REPLACE(atproperty.syntax, r'[\'"]', ''
+      ) AS syntax,
+      atproperty.inherits,
+      atproperty.`initial-value` AS initial_value
+    FROM
+      `httparchive.almanac.parsed_css`,
+      UNNEST(getAtPropertyValues(css)) AS atproperty
+    WHERE
+      date = '2021-07-01'
+  )
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -55,7 +60,8 @@ JOIN (
   FROM
     `httparchive.summary_pages.2021_07_01_*`
   GROUP BY
-    client)
+    client
+)
 USING
   (client)
 GROUP BY

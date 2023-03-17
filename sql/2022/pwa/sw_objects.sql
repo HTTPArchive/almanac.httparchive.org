@@ -1,7 +1,9 @@
 #standardSQL
 # SW objects
 CREATE TEMPORARY FUNCTION getSWObjects(swObjectsInfo STRING)
-RETURNS ARRAY<STRING> LANGUAGE js AS '''
+RETURNS ARRAY<STRING>
+LANGUAGE js
+AS '''
 try {
   var swObjects = Object.values(JSON.parse(swObjectsInfo));
   if (typeof swObjects != 'string') {

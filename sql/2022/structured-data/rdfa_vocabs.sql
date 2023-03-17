@@ -40,18 +40,19 @@ SELECT
   COUNT(DISTINCT url) AS freq_pages,
   total_pages,
   COUNT(DISTINCT url) / total_pages AS pct_pages
-FROM (
-  SELECT
-    client,
-    url,
-    -- Removes the protocol and any subdomains from the URL.
-    -- e.g. "https://my.example.com/pathname" becomes "example.com/pathname"
-    -- This is done to normalize the URL a bit before counting.
-    CONCAT(NET.REG_DOMAIN(rdfa_vocab), SPLIT(rdfa_vocab, NET.REG_DOMAIN(rdfa_vocab))[SAFE_OFFSET(1)]) AS rdfa_vocab
-  FROM
-    rendered_data,
-    UNNEST(rdfa_vocabs) AS rdfa_vocab
-)
+FROM
+  (
+    SELECT
+      client,
+      url,
+      -- Removes the protocol and any subdomains from the URL.
+      -- e.g. "https://my.example.com/pathname" becomes "example.com/pathname"
+      -- This is done to normalize the URL a bit before counting.
+      CONCAT(NET.REG_DOMAIN(rdfa_vocab), SPLIT(rdfa_vocab, NET.REG_DOMAIN(rdfa_vocab))[SAFE_OFFSET(1)]) AS rdfa_vocab
+    FROM
+      rendered_data,
+      UNNEST(rdfa_vocabs) AS rdfa_vocab
+  )
 JOIN
   page_totals
 USING (client)

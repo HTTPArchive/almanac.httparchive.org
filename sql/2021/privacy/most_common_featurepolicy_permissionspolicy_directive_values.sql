@@ -33,13 +33,14 @@ meta_tags AS (
     url AS page,
     LOWER(JSON_VALUE(meta_node, '$.http-equiv')) AS tag_name,
     LOWER(JSON_VALUE(meta_node, '$.content')) AS tag_value
-  FROM (
-    SELECT
-      _TABLE_SUFFIX AS client,
-      url,
-      JSON_VALUE(payload, '$._almanac') AS metrics
-    FROM
-      `httparchive.pages.2021_07_01_*`
+  FROM
+    (
+      SELECT
+        _TABLE_SUFFIX AS client,
+        url,
+        JSON_VALUE(payload, '$._almanac') AS metrics
+      FROM
+        `httparchive.pages.2021_07_01_*`
     ),
     UNNEST(JSON_QUERY_ARRAY(metrics, '$.meta-nodes.nodes')) meta_node
   WHERE
@@ -107,15 +108,18 @@ normalized_permissions_policy AS (  -- normalize
     client,
     page,
     REPLACE(REPLACE(
-        REPLACE(REPLACE(
-            REPLACE(
-              REPLACE(
-                REPLACE(permissions_policy_value, ',', ';'),  -- swap directive delimiter
-                '=', ' '), -- drop name/value delimiter
-              '()', 'none' -- special case for feature disabling
-            ),
-            '(', ''), ')', ''), -- remove parentheses
-        '"', ''), "'", '') -- remove quotes
+      REPLACE(REPLACE(
+        REPLACE(
+          REPLACE(
+            REPLACE(permissions_policy_value, ',', ';'),  -- swap directive delimiter
+            '=', ' '
+          ), -- drop name/value delimiter
+          '()', 'none' -- special case for feature disabling
+        ),
+        '(', ''
+      ), ')', ''), -- remove parentheses
+      '"', ''
+    ), "'", '') -- remove quotes
     AS policy_value
   FROM
     merged_permissions_policy
@@ -132,11 +136,13 @@ SELECT
   COUNT(DISTINCT page) / total_websites AS pct_websites_with_directive
 FROM
   (
-    SELECT DISTINCT * FROM (
-      SELECT * FROM normalized_feature_policy
-      UNION ALL
-      SELECT * FROM normalized_permissions_policy
-    )
+    SELECT DISTINCT *
+    FROM
+      (
+        SELECT * FROM normalized_feature_policy
+        UNION ALL
+        SELECT * FROM normalized_permissions_policy
+      )
   ),
   UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
 JOIN

@@ -34,24 +34,28 @@ SELECT
   client,
   total AS num_properties_per_page,
   COUNT(0) AS freq
-FROM (
-  SELECT
-    client,
-    page,
-    SUM(properties.important) AS important,
-    SUM(properties.total) AS total
-  FROM (
-      SELECT
-        client,
-        page,
-        getImportantProperties(css) AS properties
-      FROM
-        `httparchive.almanac.parsed_css`
-      WHERE
-        date = '2021-07-01')
-  GROUP BY
-    client,
-    page)
+FROM
+  (
+    SELECT
+      client,
+      page,
+      SUM(properties.important) AS important,
+      SUM(properties.total) AS total
+    FROM
+      (
+        SELECT
+          client,
+          page,
+          getImportantProperties(css) AS properties
+        FROM
+          `httparchive.almanac.parsed_css`
+        WHERE
+          date = '2021-07-01'
+      )
+    GROUP BY
+      client,
+      page
+  )
 WHERE
   important = total AND
   important > 0

@@ -25,18 +25,20 @@ SELECT
   COUNTIF(gridlike_flexbox) AS pages_with_gridlike_flexbox,
   total,
   COUNTIF(gridlike_flexbox) / total AS pct
-FROM (
-  SELECT
-    client,
-    page,
-    COUNTIF(hasGridlikeFlexbox(css)) > 0 AS gridlike_flexbox
-  FROM
-    `httparchive.almanac.parsed_css`
-  WHERE
-    date = '2020-08-01'
-  GROUP BY
-    client,
-    page)
+FROM
+  (
+    SELECT
+      client,
+      page,
+      COUNTIF(hasGridlikeFlexbox(css)) > 0 AS gridlike_flexbox
+    FROM
+      `httparchive.almanac.parsed_css`
+    WHERE
+      date = '2020-08-01'
+    GROUP BY
+      client,
+      page
+  )
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -44,7 +46,8 @@ JOIN (
   FROM
     `httparchive.summary_pages.2020_08_01_*`
   GROUP BY
-    client)
+    client
+)
 USING
   (client)
 GROUP BY

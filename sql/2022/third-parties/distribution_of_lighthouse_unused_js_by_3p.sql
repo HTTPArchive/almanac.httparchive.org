@@ -2,7 +2,9 @@
 # Pages with unused third-party JavaScript
 
 CREATE TEMPORARY FUNCTION getUnusedJavascriptUrls(audit STRING)
-RETURNS ARRAY<STRUCT<url STRING, wastedBytes INT64>> LANGUAGE js AS '''
+RETURNS ARRAY<STRUCT<url STRING, wastedBytes INT64>>
+LANGUAGE js
+AS '''
 try {
   var $ = JSON.parse(audit);
   return $.details.items.map(({url, wastedBytes}) => {
@@ -27,16 +29,18 @@ base AS (
     page,
     SUM(IF(third_party_domains.domain IS NOT NULL, potential_savings, 0)) AS potential_third_party_savings,
     SUM(potential_savings) AS potential_total_savings
-  FROM (
-    SELECT
-      _TABLE_SUFFIX AS client,
-      lighthouse.url AS page,
-      NET.HOST(data.url) AS domain,
-      data.wastedBytes AS potential_savings
-    FROM
-      `httparchive.lighthouse.2022_06_01_*` AS lighthouse,
-      UNNEST(getUnusedJavascriptUrls(JSON_EXTRACT(report, "$.audits['unused-javascript']"))) AS data
-  ) AS potential_third_parties
+  FROM
+    (
+      SELECT
+        _TABLE_SUFFIX AS client,
+        lighthouse.url AS page,
+        NET.HOST(data.url) AS domain,
+        data.wastedBytes AS potential_savings
+      FROM
+        `httparchive.lighthouse.2022_06_01_*` AS lighthouse
+      ,
+        UNNEST(getUnusedJavascriptUrls(JSON_EXTRACT(report, "$.audits['unused-javascript']"))) AS data
+    ) AS potential_third_parties
   LEFT OUTER JOIN
     third_party_domains
   ON

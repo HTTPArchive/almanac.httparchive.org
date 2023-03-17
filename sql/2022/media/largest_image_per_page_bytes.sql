@@ -27,14 +27,15 @@ SELECT
   percentile,
   client,
   APPROX_QUANTILES(largestImageBytes, 1000)[OFFSET(percentile * 10)] AS largestImageBytesize
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    largestImage(payload) AS largestImageBytes
-  FROM
-    `httparchive.pages.2022_06_01_*`
-),
-UNNEST([10, 25, 50, 75, 90]) AS percentile
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      largestImage(payload) AS largestImageBytes
+    FROM
+      `httparchive.pages.2022_06_01_*`
+  ),
+  UNNEST([10, 25, 50, 75, 90]) AS percentile
 GROUP BY
   percentile,
   client

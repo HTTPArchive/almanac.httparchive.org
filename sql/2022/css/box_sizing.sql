@@ -21,18 +21,20 @@ SELECT
   COUNT(0) AS total,
   COUNTIF(declarations > 0) / COUNT(0) AS pct_pages,
   APPROX_QUANTILES(declarations, 1000 IGNORE NULLS)[OFFSET(percentile * 10)] AS declarations_per_page
-FROM (
-  SELECT
-    client,
-    page,
-    SUM(countBorderBoxDeclarations(css)) AS declarations
-  FROM
-    `httparchive.almanac.parsed_css`
-  WHERE
-    date = '2022-07-01'
-  GROUP BY
-    client,
-    page),
+FROM
+  (
+    SELECT
+      client,
+      page,
+      SUM(countBorderBoxDeclarations(css)) AS declarations
+    FROM
+      `httparchive.almanac.parsed_css`
+    WHERE
+      date = '2022-07-01'
+    GROUP BY
+      client,
+      page
+  ),
   UNNEST([10, 25, 50, 75, 90]) AS percentile
 GROUP BY
   percentile,

@@ -20,7 +20,9 @@ RETURNS STRUCT<
   has_relative_canonical BOOL,
   has_absolute_canonical BOOL,
   js_error BOOL
-> LANGUAGE js AS '''
+>
+LANGUAGE js
+AS '''
 
 var result = {has_wpt_bodies: true,
               has_canonicals: false,
@@ -159,12 +161,14 @@ SELECT
   # Pages with canonicals that are relative
   SAFE_DIVIDE(COUNTIF(canonical_metrics.has_relative_canonical), COUNTIF(canonical_metrics.has_canonicals)) AS pct_canonicals_relative
 
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    getCanonicalMetrics(payload) AS canonical_metrics
-  FROM
-    `httparchive.pages.2021_07_01_*`)
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      getCanonicalMetrics(payload) AS canonical_metrics
+    FROM
+      `httparchive.pages.2021_07_01_*`
+  )
 
 -- Only reporting where wpt_bodies sucessfully extracted. ~20/100,000 pages missing wpt_bodies.
 WHERE

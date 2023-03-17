@@ -1,7 +1,9 @@
 #standardSQL
 # Positive tabindex value occurrences
 CREATE TEMPORARY FUNCTION getTotalPositiveTabIndexes(payload STRING)
-RETURNS STRUCT<total INT64, total_positive INT64, total_negative INT64, total_zero INT64> LANGUAGE js AS '''
+RETURNS STRUCT<total INT64, total_positive INT64, total_negative INT64, total_zero INT64>
+LANGUAGE js
+AS '''
 try {
   const almanac = JSON.parse(payload);
 
@@ -39,12 +41,13 @@ SELECT
   COUNTIF(tab_index_stats.total > 0) / COUNT(0) AS pct_with_tab_indexes,
   COUNTIF(tab_index_stats.total_positive > 0) / COUNT(0) AS pct_with_positive_tab_indexes,
   COUNTIF(tab_index_stats.total_positive > 0) / COUNTIF(tab_index_stats.total > 0) AS pct_positive_in_sites_with_tab_indexes
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    getTotalPositiveTabIndexes(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS tab_index_stats
-  FROM
-    `httparchive.pages.2022_06_01_*`
-)
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      getTotalPositiveTabIndexes(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS tab_index_stats
+    FROM
+      `httparchive.pages.2022_06_01_*`
+  )
 GROUP BY
   client

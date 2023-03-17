@@ -45,14 +45,16 @@ SELECT
   SUM(freq) AS freq,
   SUM(SUM(freq)) OVER (PARTITION BY client) AS total,
   SUM(freq) / SUM(SUM(freq)) OVER (PARTITION BY client) AS pct
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    usage.name,
-    usage.freq
-  FROM
-    `httparchive.pages.2021_07_01_*`,
-    UNNEST(getCustomPropertyUsage(payload)) AS usage)
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      usage.name,
+      usage.freq
+    FROM
+      `httparchive.pages.2021_07_01_*`,
+      UNNEST(getCustomPropertyUsage(payload)) AS usage
+  )
 GROUP BY
   client,
   usage

@@ -1,6 +1,8 @@
 #standardSQL
 # All CMS popularity per geo
-CREATE TEMP FUNCTION GET_GEO(country_code STRING, geo STRING) RETURNS STRING LANGUAGE js AS '''
+CREATE TEMP FUNCTION GET_GEO(country_code STRING, geo STRING) RETURNS STRING
+LANGUAGE js
+AS '''
 var countries = {
   "af": {
     "name": "Afghanistan",
@@ -1216,33 +1218,39 @@ WITH geo_summary AS (
 
 SELECT
   *
-FROM (
-  SELECT
-    client,
-    region,
-    COUNT(0) AS pages,
-    ANY_VALUE(total) AS total,
-    COUNT(0) / ANY_VALUE(total) AS pct
-  FROM (
-    SELECT DISTINCT
-      region,
+FROM
+  (
+    SELECT
       client,
-      total,
-      CONCAT(origin, '/') AS url
+      region,
+      COUNT(0) AS pages,
+      ANY_VALUE(total) AS total,
+      COUNT(0) / ANY_VALUE(total) AS pct
     FROM
-      geo_summary
-  ) JOIN (
-    SELECT DISTINCT
-      _TABLE_SUFFIX AS client,
-      url
-    FROM
-      `httparchive.technologies.2021_07_01_*`
-    WHERE
-      category = 'CMS'
-  ) USING (client, url)
-  GROUP BY
-    client,
-    region)
+      (
+        SELECT DISTINCT
+          region,
+          client,
+          total,
+          CONCAT(origin, '/') AS url
+        FROM
+          geo_summary
+      )
+    JOIN
+      (
+        SELECT DISTINCT
+          _TABLE_SUFFIX AS client,
+          url
+        FROM
+          `httparchive.technologies.2021_07_01_*`
+        WHERE
+          category = 'CMS'
+      )
+    USING (client, url)
+    GROUP BY
+      client,
+      region
+  )
 WHERE
   pages > 1000
 ORDER BY

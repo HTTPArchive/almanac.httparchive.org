@@ -10,7 +10,8 @@ SELECT
   APPROX_QUANTILES(tlstime, 1000)[OFFSET(500)] AS p50,
   APPROX_QUANTILES(tlstime, 1000)[OFFSET(750)] AS p75,
   APPROX_QUANTILES(tlstime, 1000)[OFFSET(900)] AS p90
-FROM (
+FROM
+  (
     SELECT
       client,
       requestid,
@@ -35,7 +36,7 @@ FROM (
       cdn,
       tlstime,
       sanLength
-)
+  )
 WHERE
   tlstime != -1 AND
   sanLength IS NOT NULL

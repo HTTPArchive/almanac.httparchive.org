@@ -1,7 +1,9 @@
 #standardSQL
 # 09_30b: Usage of aria-label or aria-labelledby
 CREATE TEMPORARY FUNCTION getAriaLabelUsage(payload STRING)
-RETURNS ARRAY<BOOLEAN> LANGUAGE js AS '''
+RETURNS ARRAY<BOOLEAN>
+LANGUAGE js
+AS '''
   try {
     var $ = JSON.parse(payload);
     var almanac = JSON.parse($._almanac);

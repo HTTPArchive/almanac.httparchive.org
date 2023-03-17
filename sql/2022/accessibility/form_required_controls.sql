@@ -1,7 +1,9 @@
 #standardSQL
 # Various stats for required form controls (form controls being: input, select, textarea)
 CREATE TEMPORARY FUNCTION requiredControls(payload STRING)
-RETURNS STRUCT<total INT64, asterisk INT64, required_attribute INT64, aria_required INT64, all_three INT64, asterisk_required INT64, asterisk_aria INT64, required_with_aria INT64> LANGUAGE js AS '''
+RETURNS STRUCT<total INT64, asterisk INT64, required_attribute INT64, aria_required INT64, all_three INT64, asterisk_required INT64, asterisk_aria INT64, required_with_aria INT64>
+LANGUAGE js
+AS '''
   try {
     const a11y = JSON.parse(payload);
     const required_form_controls = a11y.required_form_controls
@@ -97,12 +99,13 @@ SELECT
 
   SUM(stats.required_with_aria) AS total_required_with_aria,
   SUM(stats.required_with_aria) / SUM(stats.total) AS perc_required_with_aria
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    requiredControls(JSON_EXTRACT_SCALAR(payload, '$._a11y')) AS stats
-  FROM
-    `httparchive.pages.2022_06_01_*`
-)
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      requiredControls(JSON_EXTRACT_SCALAR(payload, '$._a11y')) AS stats
+    FROM
+      `httparchive.pages.2022_06_01_*`
+  )
 GROUP BY
   client

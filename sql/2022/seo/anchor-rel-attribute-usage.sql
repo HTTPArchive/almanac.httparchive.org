@@ -5,7 +5,9 @@
 CREATE TEMPORARY FUNCTION getRelStatsWptBodies(wpt_bodies_string STRING)
 RETURNS STRUCT<
   rel ARRAY<STRING>
-> LANGUAGE js AS '''
+>
+LANGUAGE js
+AS '''
 var result = {};
 //Function to retrieve only keys if value is >0
 function getKey(dict){

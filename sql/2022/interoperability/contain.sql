@@ -28,20 +28,21 @@ SELECT
   COUNTIF(sets_contain) AS sets_contain,
   ANY_VALUE(total_pages) AS total_pages,
   COUNTIF(sets_contain) / ANY_VALUE(total_pages) AS pct_sets_contain
-FROM (
-  SELECT
-    client,
-    page,
-    COUNTIF(contain) > 0 AS sets_contain
-  FROM
-    `httparchive.almanac.parsed_css`,
-    UNNEST(getContain(css)) AS contain
-  WHERE
-    date = '2022-07-01'
-  GROUP BY
-    client,
-    page
-)
+FROM
+  (
+    SELECT
+      client,
+      page,
+      COUNTIF(contain) > 0 AS sets_contain
+    FROM
+      `httparchive.almanac.parsed_css`,
+      UNNEST(getContain(css)) AS contain
+    WHERE
+      date = '2022-07-01'
+    GROUP BY
+      client,
+      page
+  )
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,

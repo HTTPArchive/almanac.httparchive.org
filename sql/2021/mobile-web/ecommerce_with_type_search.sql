@@ -1,7 +1,9 @@
 #standardSQL
 # Ecommerce pages using type=search inputs
 CREATE TEMPORARY FUNCTION getSearchInputStats(payload STRING)
-RETURNS STRUCT<has_inputs BOOLEAN, has_search_inputs BOOLEAN> LANGUAGE js AS '''
+RETURNS STRUCT<has_inputs BOOLEAN, has_search_inputs BOOLEAN>
+LANGUAGE js
+AS '''
   try {
     const almanac = JSON.parse(payload);
     const search_node_index = almanac.input_elements.nodes.findIndex((node) => {
@@ -28,14 +30,16 @@ SELECT
 
   COUNTIF(search_input_stats.has_search_inputs) / COUNT(0) AS pct_pages_with_search_inputs,
   COUNTIF(search_input_stats.has_search_inputs) / COUNTIF(search_input_stats.has_inputs) AS pct_input_pages_with_search_inputs
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    getSearchInputStats(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS search_input_stats,
-    url
-  FROM
-    `httparchive.pages.2021_07_01_*`
-)
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      getSearchInputStats(JSON_EXTRACT_SCALAR(payload, '$._almanac')
+      ) AS search_input_stats,
+      url
+    FROM
+      `httparchive.pages.2021_07_01_*`
+  )
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,

@@ -1,5 +1,5 @@
 #standardSQL
-  # A count of pages which include each type of structured data
+# A count of pages which include each type of structured data
 SELECT
   client,
   COUNTIF(CAST(JSON_EXTRACT(structured_data, '$.structured_data.rendered.present.rdfa') AS BOOL)) AS rdfa,
@@ -23,12 +23,14 @@ SELECT
   COUNTIF(CAST(JSON_EXTRACT(structured_data, '$.structured_data.rendered.present.facebook') AS BOOL)) / COUNT(0) AS pct_facebook,
   COUNTIF(CAST(JSON_EXTRACT(structured_data, '$.structured_data.rendered.present.opengraph') AS BOOL)) / COUNT(0) AS pct_opengraph,
   COUNTIF(JSON_EXTRACT(structured_data, '$.structured_data') IS NOT NULL AND JSON_EXTRACT(structured_data, '$.log') IS NULL) / COUNT(0) AS pct_total_structured_data_ran
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    JSON_VALUE(JSON_EXTRACT(payload, '$._structured-data')) AS structured_data
-  FROM
-    `httparchive.pages.2021_07_01_*`)
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      JSON_VALUE(JSON_EXTRACT(payload, '$._structured-data')) AS structured_data
+    FROM
+      `httparchive.pages.2021_07_01_*`
+  )
 GROUP BY
   client
 ORDER BY

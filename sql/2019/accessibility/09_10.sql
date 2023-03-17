@@ -1,7 +1,9 @@
 #standardSQL
 # 09_10: % of pages having skip links
 CREATE TEMPORARY FUNCTION getEarlyHash(payload STRING)
-RETURNS INT64 LANGUAGE js AS '''
+RETURNS INT64
+LANGUAGE js
+AS '''
 try {
   var $ = JSON.parse(payload);
   var almanac = JSON.parse($._almanac);

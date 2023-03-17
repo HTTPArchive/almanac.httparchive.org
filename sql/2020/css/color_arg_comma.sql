@@ -159,13 +159,15 @@ SELECT
   SUM(args.commas + args.nocommas) AS total,
   SUM(args.commas) / SUM(args.commas + args.nocommas) AS pct_commas,
   SUM(args.nocommas) / SUM(args.commas + args.nocommas) AS pct_no_commas
-FROM (
-  SELECT
-    client,
-    getColorArgComma(css) AS args
-  FROM
-    `httparchive.almanac.parsed_css`
-  WHERE
-    date = '2020-08-01')
+FROM
+  (
+    SELECT
+      client,
+      getColorArgComma(css) AS args
+    FROM
+      `httparchive.almanac.parsed_css`
+    WHERE
+      date = '2020-08-01'
+  )
 GROUP BY
   client

@@ -75,32 +75,36 @@ SELECT
   class_prefix.value AS class,
   class_prefix.count AS freq,
   class_prefix.count / pages AS pct
-FROM (
-  SELECT
-    client,
-    COUNT(DISTINCT page) AS pages,
-    ANY_VALUE(total_pages) AS total_pages,
-    COUNT(DISTINCT page) / ANY_VALUE(total_pages) AS pct_pages,
-    APPROX_TOP_COUNT(class_prefix, 200) AS class_prefixes
-  FROM (
-      SELECT DISTINCT
-        client,
-        page,
-        IF(REGEXP_CONTAINS(class, r'^(wp|fa)-.+'), REGEXP_REPLACE(class, r'^([^-]+).*', r'\1-*'), class) AS class_prefix
-      FROM
-        `httparchive.almanac.parsed_css`
-      LEFT JOIN
-        UNNEST(getSelectorParts(css).class) AS class
-      WHERE
-        date = '2022-07-01' AND
-        # Limit the size of the CSS to avoid OOM crashes.
-        LENGTH(css) < 0.1 * 1024 * 1024)
-  JOIN
-    totals
-  USING
-    (client)
-  GROUP BY
-    client),
+FROM
+  (
+    SELECT
+      client,
+      COUNT(DISTINCT page) AS pages,
+      ANY_VALUE(total_pages) AS total_pages,
+      COUNT(DISTINCT page) / ANY_VALUE(total_pages) AS pct_pages,
+      APPROX_TOP_COUNT(class_prefix, 200) AS class_prefixes
+    FROM
+      (
+        SELECT DISTINCT
+          client,
+          page,
+          IF(REGEXP_CONTAINS(class, r'^(wp|fa)-.+'), REGEXP_REPLACE(class, r'^([^-]+).*', r'\1-*'), class) AS class_prefix
+        FROM
+          `httparchive.almanac.parsed_css`
+        LEFT JOIN
+          UNNEST(getSelectorParts(css).class) AS class
+        WHERE
+          date = '2022-07-01' AND
+          # Limit the size of the CSS to avoid OOM crashes.
+          LENGTH(css) < 0.1 * 1024 * 1024
+      )
+    JOIN
+      totals
+    USING
+      (client)
+    GROUP BY
+      client
+  ),
   UNNEST(class_prefixes) AS class_prefix
 WHERE
   class_prefix.value IS NOT NULL

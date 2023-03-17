@@ -33,14 +33,15 @@ SELECT
   COUNT(0) AS total_pages_with_sourcemaps,
   COUNTIF(sourcemaps.isBabel = true) / COUNT(0) AS pct_use_babel,
   COUNTIF(sourcemaps.isTypeScript = true) / COUNT(0) AS pct_use_typescript
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    url AS page,
-    getSourceMaps(payload) AS sourcemaps
-  FROM
-    `httparchive.pages.2022_06_01_*`
-)
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      url AS page,
+      getSourceMaps(payload) AS sourcemaps
+    FROM
+      `httparchive.pages.2022_06_01_*`
+  )
 WHERE
   sourcemaps.isPublic = true
 GROUP BY

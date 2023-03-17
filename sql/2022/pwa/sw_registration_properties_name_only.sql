@@ -1,7 +1,9 @@
 #standardSQL
 # SW registration properties name only
 CREATE TEMPORARY FUNCTION getSWRegistrationProperties(swRegistrationPropertiesInfo STRING)
-RETURNS ARRAY<STRING> LANGUAGE js AS '''
+RETURNS ARRAY<STRING>
+LANGUAGE js
+AS '''
 try {
   var swRegistrationProperties = Object.values(JSON.parse(swRegistrationPropertiesInfo));
   if (typeof swRegistrationProperties != 'string') {

@@ -7,15 +7,16 @@ SELECT
 
   COUNT(DISTINCT url) AS sites_with_a11y_tech,
   COUNT(DISTINCT url) / total_in_rank AS pct_sites_with_a11y_tech
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    url
-  FROM
-    `httparchive.technologies.2022_06_01_*`
-  WHERE
-    category = 'Accessibility'
-)
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      url
+    FROM
+      `httparchive.technologies.2022_06_01_*`
+    WHERE
+      category = 'Accessibility'
+  )
 LEFT OUTER JOIN (
   SELECT
     _TABLE_SUFFIX AS client,

@@ -1,7 +1,9 @@
 #standardSQL
 # 06_10: % of pages that declare a font with italics
 CREATE TEMPORARY FUNCTION getFonts(css STRING)
-RETURNS ARRAY<STRUCT<weight STRING, style STRING>> LANGUAGE js AS '''
+RETURNS ARRAY<STRUCT<weight STRING, style STRING>>
+LANGUAGE js
+AS '''
 try {
   var reduceValues = (values, rule) => {
     if ('rules' in rule) {
@@ -51,24 +53,26 @@ SELECT
   ROUND(COUNTIF(weight_700_bold > 0) * 100 / total, 2) AS pct_weight_700_bold,
   ROUND(COUNTIF(lighter > 0) * 100 / total, 2) AS pct_lighter,
   ROUND(COUNTIF(bolder > 0) * 100 / total, 2) AS pct_bolder
-FROM (
-  SELECT
-    client,
-    COUNTIF(font.style = 'italic') AS italic,
-    COUNTIF(font.style = 'oblique') AS oblique,
-    COUNTIF(font.style = 'normal') AS style_normal,
-    COUNTIF(font.weight = 'normal' OR font.weight = '400') AS weight_400_normal,
-    COUNTIF(font.weight = 'bold' OR font.weight = '700') AS weight_700_bold,
-    COUNTIF(CAST(font.weight AS NUMERIC) > 400) AS bolder,
-    COUNTIF(CAST(font.weight AS NUMERIC) < 400) AS lighter
-  FROM
-    `httparchive.almanac.parsed_css`,
-    UNNEST(getFonts(css)) AS font
-  WHERE
-    date = '2019-07-01'
-  GROUP BY
-    client,
-    page)
+FROM
+  (
+    SELECT
+      client,
+      COUNTIF(font.style = 'italic') AS italic,
+      COUNTIF(font.style = 'oblique') AS oblique,
+      COUNTIF(font.style = 'normal') AS style_normal,
+      COUNTIF(font.weight = 'normal' OR font.weight = '400') AS weight_400_normal,
+      COUNTIF(font.weight = 'bold' OR font.weight = '700') AS weight_700_bold,
+      COUNTIF(CAST(font.weight AS NUMERIC) > 400) AS bolder,
+      COUNTIF(CAST(font.weight AS NUMERIC) < 400) AS lighter
+    FROM
+      `httparchive.almanac.parsed_css`,
+      UNNEST(getFonts(css)) AS font
+    WHERE
+      date = '2019-07-01'
+    GROUP BY
+      client,
+      page
+  )
 JOIN
   (SELECT _TABLE_SUFFIX AS client, COUNT(0) AS total FROM `httparchive.summary_pages.2019_07_01_*` GROUP BY _TABLE_SUFFIX)
 USING

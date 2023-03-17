@@ -48,25 +48,26 @@ SELECT
   canonicalDomain,
   metric,
   rank
-FROM (
-  SELECT
-    'median_body_size_kb' AS ranking,
-    client,
-    category,
-    canonicalDomain,
-    median_body_size_kb AS metric,
-    DENSE_RANK() OVER (PARTITION BY client ORDER BY median_body_size_kb DESC) AS rank
-  FROM base
-  UNION ALL
-  SELECT
-    'median_time_s' AS ranking,
-    client,
-    category,
-    canonicalDomain,
-    median_time_s AS metric,
-    DENSE_RANK() OVER (PARTITION BY client ORDER BY median_time_s DESC) AS rank
-  FROM base
-)
+FROM
+  (
+    SELECT
+      'median_body_size_kb' AS ranking,
+      client,
+      category,
+      canonicalDomain,
+      median_body_size_kb AS metric,
+      DENSE_RANK() OVER (PARTITION BY client ORDER BY median_body_size_kb DESC) AS rank
+    FROM base
+    UNION ALL
+    SELECT
+      'median_time_s' AS ranking,
+      client,
+      category,
+      canonicalDomain,
+      median_time_s AS metric,
+      DENSE_RANK() OVER (PARTITION BY client ORDER BY median_time_s DESC) AS rank
+    FROM base
+  )
 WHERE
   rank <= 100
 ORDER BY

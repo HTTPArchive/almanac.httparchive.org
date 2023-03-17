@@ -3,17 +3,17 @@
 SELECT
   client,
   COUNT(DISTINCT page) AS num_pages
-FROM (
-
-  SELECT
-    client,
-    page
-  FROM
-    `httparchive.almanac.requests`
-  WHERE
-    date = '2019-07-01' AND
-    JSON_EXTRACT_SCALAR(payload, '$._protocol') = 'HTTP/2' AND
-    JSON_EXTRACT_SCALAR(payload, '$._was_pushed') = '1'
-)
+FROM
+  (
+    SELECT
+      client,
+      page
+    FROM
+      `httparchive.almanac.requests`
+    WHERE
+      date = '2019-07-01' AND
+      JSON_EXTRACT_SCALAR(payload, '$._protocol') = 'HTTP/2' AND
+      JSON_EXTRACT_SCALAR(payload, '$._was_pushed') = '1'
+  )
 GROUP BY
   client

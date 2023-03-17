@@ -6,7 +6,9 @@ RETURNS STRUCT<
   same_site INT64,
   same_property INT64,
   other_property INT64
-> LANGUAGE js AS '''
+>
+LANGUAGE js
+AS '''
 var result = {same_site: 0,
               same_property: 0,
               other_property: 0};
@@ -40,15 +42,16 @@ SELECT
   APPROX_QUANTILES(outgoing_link_metrics.same_site, 1000)[OFFSET(percentile * 10)] AS outgoing_links_same_site,
   APPROX_QUANTILES(outgoing_link_metrics.same_property, 1000)[OFFSET(percentile * 10)] AS outgoing_links_same_property,
   APPROX_QUANTILES(outgoing_link_metrics.other_property, 1000)[OFFSET(percentile * 10)] AS outgoing_links_other_property
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    url AS page,
-    getOutgoingLinkMetrics(payload) AS outgoing_link_metrics
-  FROM
-    `httparchive.pages.2021_07_01_*`
-),
-UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      url AS page,
+      getOutgoingLinkMetrics(payload) AS outgoing_link_metrics
+    FROM
+      `httparchive.pages.2021_07_01_*`
+  ),
+  UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 LEFT JOIN (
   SELECT
     _TABLE_SUFFIX AS client,

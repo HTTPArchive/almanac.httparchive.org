@@ -24,20 +24,21 @@ SELECT
   APPROX_QUANTILES(total_img_emissions, 1000)[OFFSET(500)] AS median_total_img_emissions,
   APPROX_QUANTILES(font_kb, 1000)[OFFSET(500)] AS median_font_kb,
   APPROX_QUANTILES(total_font_emissions, 1000)[OFFSET(500)] AS median_total_font_emissions
-FROM (
-  SELECT DISTINCT
-    _TABLE_SUFFIX AS client,
-    url,
-    app AS ecommerce
-  FROM
-    `httparchive.technologies.2022_06_01_*`
-  WHERE
-    category = 'Ecommerce' AND
-    (
-      app != 'Cart Functionality' AND
-      app != 'Google Analytics Enhanced eCommerce'
-    )
-)
+FROM
+  (
+    SELECT DISTINCT
+      _TABLE_SUFFIX AS client,
+      url,
+      app AS ecommerce
+    FROM
+      `httparchive.technologies.2022_06_01_*`
+    WHERE
+      category = 'Ecommerce' AND
+      (
+        app != 'Cart Functionality' AND
+        app != 'Google Analytics Enhanced eCommerce'
+      )
+  )
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,

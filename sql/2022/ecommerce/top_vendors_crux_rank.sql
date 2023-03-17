@@ -15,19 +15,20 @@ SELECT
   COUNT(DISTINCT url) AS freq,
   total_pages,
   COUNT(DISTINCT url) / total_pages AS pct
-FROM (
-  SELECT DISTINCT
-    _TABLE_SUFFIX AS client,
-    app,
-    url
-  FROM
-    `httparchive.technologies.2022_06_01_*`
-  WHERE
-    category = 'Ecommerce' AND
-    (
-      app != 'Cart Functionality' AND
-      app != 'Google Analytics Enhanced eCommerce'
-    )
+FROM
+  (
+    SELECT DISTINCT
+      _TABLE_SUFFIX AS client,
+      app,
+      url
+    FROM
+      `httparchive.technologies.2022_06_01_*`
+    WHERE
+      category = 'Ecommerce' AND
+      (
+        app != 'Cart Functionality' AND
+        app != 'Google Analytics Enhanced eCommerce'
+      )
   )
 JOIN (
   SELECT
@@ -42,7 +43,8 @@ JOIN (
   GROUP BY
     client,
     url,
-    rank_grouping)
+    rank_grouping
+)
 USING
   (client, url)
 JOIN (
@@ -57,7 +59,8 @@ JOIN (
     rank <= rank_grouping
   GROUP BY
     rank_grouping,
-    client)
+    client
+)
 USING
   (client, rank_grouping)
 GROUP BY

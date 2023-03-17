@@ -448,16 +448,18 @@ SELECT
   percentile,
   client,
   APPROX_QUANTILES(freq_longhand_first, 1000)[OFFSET(percentile * 10)] AS longhand_first_per_page
-FROM (
-  SELECT
-    client,
-    property.freq AS freq_longhand_first
-  FROM
-    `httparchive.almanac.parsed_css`,
-    UNNEST(getLonghandFirstProperties(css)) AS property
-  WHERE
-    date = '2020-08-01' AND
-    property.freq > 0),
+FROM
+  (
+    SELECT
+      client,
+      property.freq AS freq_longhand_first
+    FROM
+      `httparchive.almanac.parsed_css`,
+      UNNEST(getLonghandFirstProperties(css)) AS property
+    WHERE
+      date = '2020-08-01' AND
+      property.freq > 0
+  ),
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 GROUP BY
   percentile,

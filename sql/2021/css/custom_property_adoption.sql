@@ -2,7 +2,9 @@
 # % of sites that use custom properties.
 # Same query as 2019, to compare trend
 CREATE TEMPORARY FUNCTION usesCustomProps(css STRING)
-RETURNS BOOLEAN LANGUAGE js AS '''
+RETURNS BOOLEAN
+LANGUAGE js
+AS '''
 try {
   var reduceValues = (values, rule) => {
     if ('rules' in rule) {
@@ -26,18 +28,20 @@ SELECT
   COUNTIF(num_stylesheets > 0) AS freq,
   total,
   COUNTIF(num_stylesheets > 0) / total AS pct
-FROM (
-  SELECT
-    client,
-    page,
-    COUNTIF(usesCustomProps(css)) AS num_stylesheets
-  FROM
-    `httparchive.almanac.parsed_css`
-  WHERE
-    date = '2021-07-01'
-  GROUP BY
-    client,
-    page)
+FROM
+  (
+    SELECT
+      client,
+      page,
+      COUNTIF(usesCustomProps(css)) AS num_stylesheets
+    FROM
+      `httparchive.almanac.parsed_css`
+    WHERE
+      date = '2021-07-01'
+    GROUP BY
+      client,
+      page
+  )
 JOIN
   (SELECT _TABLE_SUFFIX AS client, COUNT(0) AS total FROM `httparchive.summary_pages.2021_07_01_*` GROUP BY client)
 USING

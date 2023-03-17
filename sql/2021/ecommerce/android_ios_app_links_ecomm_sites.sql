@@ -11,18 +11,19 @@ SELECT
   COUNT(0) AS total,
   COUNTIF(android_app_links) / COUNT(0) AS pct_android_app_links,
   COUNTIF(ios_universal_links) / COUNT(0) AS pct_ios_universal_links
-FROM (
-  SELECT DISTINCT
-    _TABLE_SUFFIX AS client,
-    url
-  FROM
-    `httparchive.technologies.2021_07_01_*`
-  WHERE
-    category = 'Ecommerce' AND
-    (
-      app != 'Cart Functionality' AND
-      app != 'Google Analytics Enhanced eCommerce'
-    )
+FROM
+  (
+    SELECT DISTINCT
+      _TABLE_SUFFIX AS client,
+      url
+    FROM
+      `httparchive.technologies.2021_07_01_*`
+    WHERE
+      category = 'Ecommerce' AND
+      (
+        app != 'Cart Functionality' AND
+        app != 'Google Analytics Enhanced eCommerce'
+      )
   )
 JOIN (
   SELECT
@@ -32,7 +33,7 @@ JOIN (
     JSON_VALUE(JSON_EXTRACT_SCALAR(payload, '$._well-known'), '$."/.well-known/apple-app-site-association".found') = 'true' AS ios_universal_links
   FROM
     `httparchive.pages.2021_07_01_*`
-  )
+)
 USING
   (client, url)
 GROUP BY

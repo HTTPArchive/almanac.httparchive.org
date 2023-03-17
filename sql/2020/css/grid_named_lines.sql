@@ -18,18 +18,20 @@ SELECT
   COUNTIF(grid_named_lines) AS pages_with_grid_named_lines,
   total,
   COUNTIF(grid_named_lines) / total AS pct
-FROM (
-  SELECT
-    client,
-    page,
-    COUNTIF(hasGridNamedLines(css)) > 0 AS grid_named_lines
-  FROM
-    `httparchive.almanac.parsed_css`
-  WHERE
-    date = '2020-08-01'
-  GROUP BY
-    client,
-    page)
+FROM
+  (
+    SELECT
+      client,
+      page,
+      COUNTIF(hasGridNamedLines(css)) > 0 AS grid_named_lines
+    FROM
+      `httparchive.almanac.parsed_css`
+    WHERE
+      date = '2020-08-01'
+    GROUP BY
+      client,
+      page
+  )
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -37,7 +39,8 @@ JOIN (
   FROM
     `httparchive.summary_pages.2020_08_01_*`
   GROUP BY
-    client)
+    client
+)
 USING
   (client)
 GROUP BY

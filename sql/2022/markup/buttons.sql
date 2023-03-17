@@ -1,5 +1,7 @@
 CREATE TEMPORARY FUNCTION get_markup_buttons_info(markup_string STRING)
-RETURNS ARRAY<STRING> LANGUAGE js AS '''
+RETURNS ARRAY<STRING>
+LANGUAGE js
+AS '''
 try {
     var markup = JSON.parse(markup_string);
     var type_total = Object.values(markup.buttons.types).reduce((total, i) => total + i, 0);

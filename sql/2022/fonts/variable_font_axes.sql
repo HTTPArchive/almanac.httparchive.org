@@ -1,4 +1,6 @@
-CREATE TEMP FUNCTION getAxes(fvar STRING) RETURNS ARRAY<STRING> LANGUAGE js AS '''
+CREATE TEMP FUNCTION getAxes(fvar STRING) RETURNS ARRAY<STRING>
+LANGUAGE js
+AS '''
 try {
   return Object.keys(JSON.parse(fvar));
 } catch (e) {

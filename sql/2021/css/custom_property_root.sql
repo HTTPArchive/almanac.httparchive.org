@@ -68,15 +68,17 @@ SELECT
   COUNT(DISTINCT IF(freq > 0, page, NULL)) AS pages,
   total_pages,
   COUNT(DISTINCT IF(freq > 0, page, NULL)) / total_pages AS pct_pages
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    url AS page,
-    root.name,
-    root.freq
-  FROM
-    `httparchive.pages.2021_07_01_*`,
-    UNNEST(getCustomPropertyRoots(payload)) AS root)
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      url AS page,
+      root.name,
+      root.freq
+    FROM
+      `httparchive.pages.2021_07_01_*`,
+      UNNEST(getCustomPropertyRoots(payload)) AS root
+  )
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -84,7 +86,8 @@ JOIN (
   FROM
     `httparchive.summary_pages.2021_07_01_*`
   GROUP BY
-    client)
+    client
+)
 USING
   (client)
 GROUP BY

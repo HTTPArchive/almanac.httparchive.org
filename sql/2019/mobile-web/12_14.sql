@@ -3,7 +3,9 @@
 # input attributes
 
 CREATE TEMPORARY FUNCTION getInputAttributes(payload STRING)
-RETURNS ARRAY<STRING> LANGUAGE js AS '''
+RETURNS ARRAY<STRING>
+LANGUAGE js
+AS '''
   var attrs = [];
   try {
     var $ = JSON.parse(payload);
@@ -20,7 +22,9 @@ RETURNS ARRAY<STRING> LANGUAGE js AS '''
 ''';
 
 CREATE TEMPORARY FUNCTION hasInputs(payload STRING)
-RETURNS BOOLEAN LANGUAGE js AS '''
+RETURNS BOOLEAN
+LANGUAGE js
+AS '''
   try {
     var $ = JSON.parse(payload);
     var almanac = JSON.parse($._almanac);

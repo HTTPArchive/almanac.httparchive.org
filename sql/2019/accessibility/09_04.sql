@@ -1,7 +1,9 @@
 #standardSQL
 # 09_04: % of pages having more than one "main" landmark
 CREATE TEMPORARY FUNCTION getMainCount(payload STRING)
-RETURNS INT64 LANGUAGE js AS '''
+RETURNS INT64
+LANGUAGE js
+AS '''
 try {
   var $ = JSON.parse(payload);
   var elements = JSON.parse($._element_count);

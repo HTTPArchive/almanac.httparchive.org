@@ -10,18 +10,20 @@ SELECT
   APPROX_QUANTILES(css_kb, 1000)[OFFSET(500)] AS median_css_kb,
   APPROX_QUANTILES(img_kb, 1000)[OFFSET(500)] AS median_img_kb,
   APPROX_QUANTILES(font_kb, 1000)[OFFSET(500)] AS median_font_kb
-FROM (
-  SELECT DISTINCT
-    _TABLE_SUFFIX AS client,
-    url,
-    app AS ssg
-  FROM
-    `httparchive.technologies.2021_07_01_*`
-  WHERE
-    LOWER(category) = 'static site generator' OR
-    app = 'Next.js' OR
-    app = 'Nuxt.js'
-)
+FROM
+  (
+    SELECT DISTINCT
+      _TABLE_SUFFIX AS client,
+      url,
+      app AS ssg
+    FROM
+      `httparchive.technologies.2021_07_01_*`
+    WHERE
+      LOWER(category
+      ) = 'static site generator' OR
+      app = 'Next.js' OR
+      app = 'Nuxt.js'
+  )
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,

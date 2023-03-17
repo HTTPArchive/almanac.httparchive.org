@@ -40,24 +40,26 @@ try {
 SELECT
   *,
   pages / total_pages AS pct_pages
-FROM (
-  SELECT
-    client,
-    kw.keyword,
-    kw.property,
-    SUM(kw.freq) AS freq,
-    SUM(SUM(IF(kw.property = 'total', 0, kw.freq))) OVER (PARTITION BY client, kw.keyword) AS total,
-    SUM(kw.freq) / SUM(SUM(IF(kw.property = 'total', 0, kw.freq))) OVER (PARTITION BY client, kw.keyword) AS pct,
-    COUNT(DISTINCT page) AS pages
-  FROM
-    `httparchive.almanac.parsed_css`,
-    UNNEST(getGlobalKeywords(css)) AS kw
-  WHERE
-    date = '2021-07-01'
-  GROUP BY
-    client,
-    keyword,
-    property)
+FROM
+  (
+    SELECT
+      client,
+      kw.keyword,
+      kw.property,
+      SUM(kw.freq) AS freq,
+      SUM(SUM(IF(kw.property = 'total', 0, kw.freq))) OVER (PARTITION BY client, kw.keyword) AS total,
+      SUM(kw.freq) / SUM(SUM(IF(kw.property = 'total', 0, kw.freq))) OVER (PARTITION BY client, kw.keyword) AS pct,
+      COUNT(DISTINCT page) AS pages
+    FROM
+      `httparchive.almanac.parsed_css`,
+      UNNEST(getGlobalKeywords(css)) AS kw
+    WHERE
+      date = '2021-07-01'
+    GROUP BY
+      client,
+      keyword,
+      property
+  )
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -65,7 +67,8 @@ JOIN (
   FROM
     `httparchive.summary_pages.2021_07_01_*`
   GROUP BY
-    client)
+    client
+)
 USING
   (client)
 WHERE

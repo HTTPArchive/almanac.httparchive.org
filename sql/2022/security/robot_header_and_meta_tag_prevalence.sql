@@ -5,14 +5,16 @@ WITH meta_tags AS (
     client,
     url AS page,
     LOWER(JSON_VALUE(meta_node, '$.content')) AS robots_content
-  FROM (
-    SELECT
-      _TABLE_SUFFIX AS client,
-      url,
-      JSON_VALUE(payload, '$._almanac') AS metrics
-    FROM
-      `httparchive.pages.2022_06_01_*`
-    ),
+  FROM
+    (
+      SELECT
+        _TABLE_SUFFIX AS client,
+        url,
+        JSON_VALUE(payload, '$._almanac') AS metrics
+      FROM
+        `httparchive.pages.2022_06_01_*`
+    )
+  ,
     UNNEST(JSON_QUERY_ARRAY(metrics, '$.meta-nodes.nodes')) meta_node
   WHERE LOWER(JSON_VALUE(meta_node, '$.name')) = 'robots'
 ),
@@ -22,16 +24,17 @@ robot_headers AS (
     client,
     url AS page,
     LOWER(JSON_VALUE(response_header, '$.value')) AS robot_header_value
-  FROM (
-    SELECT
-      client,
-      url,
-      response_headers
-    FROM
-      `httparchive.almanac.requests`
-    WHERE
-      firstHtml = TRUE AND
-      date = '2022-06-01'
+  FROM
+    (
+      SELECT
+        client,
+        url,
+        response_headers
+      FROM
+        `httparchive.almanac.requests`
+      WHERE
+        firstHtml = TRUE AND
+        date = '2022-06-01'
     ),
     UNNEST(JSON_QUERY_ARRAY(response_headers)) AS response_header
   WHERE
@@ -66,7 +69,8 @@ SELECT
   COUNTIF(REGEXP_CONTAINS(robots_content, r'.*noarchive.*') OR REGEXP_CONTAINS(robot_header_value, r'.*noarchive.*')) AS count_noarchive,
   COUNTIF(REGEXP_CONTAINS(robots_content, r'.*noarchive.*') OR REGEXP_CONTAINS(robot_header_value, r'.*noarchive.*')) / COUNTIF(robots_content IS NOT NULL OR robot_header_value IS NOT NULL) AS pct_noarchive
 FROM
-  meta_tags FULL OUTER JOIN robot_headers USING (client, page)
+  meta_tags
+FULL OUTER JOIN robot_headers USING (client, page)
 JOIN
   totals
 USING (client)

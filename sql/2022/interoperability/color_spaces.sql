@@ -178,17 +178,19 @@ SELECT
   SUM(value) AS freq,
   SUM(SUM(value)) OVER (PARTITION BY client) AS total,
   SAFE_DIVIDE(SUM(value), SUM(SUM(value)) OVER (PARTITION BY client)) AS pct
-FROM (
-  SELECT
-    client,
-    page,
-    p3.name,
-    p3.value
-  FROM
-    `httparchive.almanac.parsed_css`,
-    UNNEST(getP3Usage(css)) AS p3
-  WHERE
-    date = '2022-07-01')
+FROM
+  (
+    SELECT
+      client,
+      page,
+      p3.name,
+      p3.value
+    FROM
+      `httparchive.almanac.parsed_css`,
+      UNNEST(getP3Usage(css)) AS p3
+    WHERE
+      date = '2022-07-01'
+  )
 JOIN
   totals
 USING

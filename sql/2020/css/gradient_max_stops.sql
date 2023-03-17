@@ -171,18 +171,20 @@ SELECT
   client,
   APPROX_QUANTILES(getStops(max_color_stops), 1000)[OFFSET(percentile * 10)] AS max_color_stops,
   getGradient(APPROX_QUANTILES(max_color_stops, 1000)[OFFSET(percentile * 10)]) AS gradient
-FROM (
-  SELECT
-    client,
-    page,
-    MAX(getMaxColorStops(css)) AS max_color_stops
-  FROM
-    `httparchive.almanac.parsed_css`
-  WHERE
-    date = '2020-08-01'
-  GROUP BY
-    client,
-    page),
+FROM
+  (
+    SELECT
+      client,
+      page,
+      MAX(getMaxColorStops(css)) AS max_color_stops
+    FROM
+      `httparchive.almanac.parsed_css`
+    WHERE
+      date = '2020-08-01'
+    GROUP BY
+      client,
+      page
+  ),
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 WHERE
   getStops(max_color_stops) > 0

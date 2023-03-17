@@ -29,11 +29,13 @@ SELECT
   SUM(script.async_and_defer) / SUM(script.src) AS pct_external_async_defer,
   SUM(script.type_module) / SUM(script.src) AS pct_external_module,
   SUM(script.nomodule) / SUM(script.src) AS pct_external_nomodule
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    getScripts(payload) AS script
-  FROM
-    `httparchive.pages.2021_07_01_*`)
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      getScripts(payload) AS script
+    FROM
+      `httparchive.pages.2021_07_01_*`
+  )
 GROUP BY
   client

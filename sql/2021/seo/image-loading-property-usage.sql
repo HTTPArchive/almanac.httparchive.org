@@ -6,7 +6,9 @@
 CREATE TEMPORARY FUNCTION getLoadingPropertyMarkupInfo(markup_string STRING)
 RETURNS STRUCT<
   loading ARRAY<STRING>
-> LANGUAGE js AS '''
+>
+LANGUAGE js
+AS '''
 var result = {};
 
 //Function to retrieve only keys if value is >0

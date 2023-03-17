@@ -449,17 +449,19 @@ SELECT
   client,
   shorthand,
   APPROX_QUANTILES(value, 1000)[OFFSET(percentile * 10)] AS number_of_values
-FROM (
-  SELECT
-    client,
-    shorthand.property AS shorthand,
-    value
-  FROM
-    `httparchive.almanac.parsed_css`,
-    UNNEST(getShorthandValueCounts(css)) AS shorthand,
-    UNNEST(shorthand.values) AS value
-  WHERE
-    date = '2020-08-01'),
+FROM
+  (
+    SELECT
+      client,
+      shorthand.property AS shorthand,
+      value
+    FROM
+      `httparchive.almanac.parsed_css`,
+      UNNEST(getShorthandValueCounts(css)) AS shorthand,
+      UNNEST(shorthand.values) AS value
+    WHERE
+      date = '2020-08-01'
+  ),
   UNNEST([10, 25, 50, 75, 90]) AS percentile
 GROUP BY
   percentile,

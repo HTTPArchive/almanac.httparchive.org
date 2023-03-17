@@ -8,7 +8,9 @@ RETURNS STRUCT<
   images_with_alt_present INT64,
   images_with_alt_blank INT64,
   images_with_alt_missing INT64
-> LANGUAGE js AS '''
+>
+LANGUAGE js
+AS '''
 var result = {
   images_img_total: 0,
   images_with_alt_present: 0,
@@ -63,16 +65,17 @@ SELECT
   # number of images without an alt attribute
   APPROX_QUANTILES(markup_info.images_with_alt_missing, 1000)[OFFSET(percentile * 10)] AS images_with_alt_missing
 
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    percentile,
-    url,
-    get_markup_info(JSON_EXTRACT_SCALAR(payload, '$._markup')) AS markup_info
-  FROM
-    `httparchive.pages.2022_07_01_*`, -- noqa: L062
-    UNNEST([10, 25, 50, 75, 90]) AS percentile
-)
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      percentile,
+      url,
+      get_markup_info(JSON_EXTRACT_SCALAR(payload, '$._markup')) AS markup_info
+    FROM
+      `httparchive.pages.2022_07_01_*`, -- noqa: L062
+      UNNEST([10, 25, 50, 75, 90]) AS percentile
+  )
 GROUP BY
   percentile,
   client

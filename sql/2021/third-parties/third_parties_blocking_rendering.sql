@@ -43,32 +43,33 @@ SELECT
   (total_pages - COUNT(DISTINCT page)) / total_pages AS non_blocking_pages_pct,
   APPROX_QUANTILES(wasted_ms, 1000)[OFFSET(500)] AS p50_wastedMs,
   APPROX_QUANTILES(total_bytes_kib, 1000)[OFFSET(500)] AS p50_total_bytes_kib
-FROM (
-  SELECT
-    canonicalDomain,
-    domain,
-    page,
-    category,
-    SUM(SAFE_CAST(JSON_VALUE(renderBlockingItems, '$.wastedMs') AS FLOAT64)) AS wasted_ms,
-    SUM(SAFE_CAST(JSON_VALUE(renderBlockingItems, '$.totalBytes') AS FLOAT64) / 1024) AS total_bytes_kib
-  FROM
-    (
-      SELECT
-        url AS page,
-        report
-      FROM
-        `httparchive.lighthouse.2021_07_01_mobile`
-    ),
-    UNNEST(JSON_QUERY_ARRAY(report, '$.audits.render-blocking-resources.details.items')) AS renderBlockingItems
-  INNER JOIN
-    `httparchive.almanac.third_parties`
-  ON
-    NET.HOST(JSON_VALUE(renderBlockingItems, '$.url')) = domain
-  GROUP BY
-    canonicalDomain,
-    domain,
-    page,
-    category
+FROM
+  (
+    SELECT
+      canonicalDomain,
+      domain,
+      page,
+      category,
+      SUM(SAFE_CAST(JSON_VALUE(renderBlockingItems, '$.wastedMs') AS FLOAT64)) AS wasted_ms,
+      SUM(SAFE_CAST(JSON_VALUE(renderBlockingItems, '$.totalBytes') AS FLOAT64) / 1024) AS total_bytes_kib
+    FROM
+      (
+        SELECT
+          url AS page,
+          report
+        FROM
+          `httparchive.lighthouse.2021_07_01_mobile`
+      ),
+      UNNEST(JSON_QUERY_ARRAY(report, '$.audits.render-blocking-resources.details.items')) AS renderBlockingItems
+    INNER JOIN
+      `httparchive.almanac.third_parties`
+    ON
+      NET.HOST(JSON_VALUE(renderBlockingItems, '$.url')) = domain
+    GROUP BY
+      canonicalDomain,
+      domain,
+      page,
+      category
   )
 INNER JOIN
   total_third_party_usage

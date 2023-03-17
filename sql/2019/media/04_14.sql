@@ -1,7 +1,9 @@
 #standardSQL
 # 04_14: Distribution of image network setup times
 CREATE TEMPORARY FUNCTION getNetworkSetupTime(payload STRING)
-RETURNS INT64 LANGUAGE js AS '''
+RETURNS INT64
+LANGUAGE js
+AS '''
 try {
   var $ = JSON.parse(payload);
   var timings = $.timings;

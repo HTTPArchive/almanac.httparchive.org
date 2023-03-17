@@ -1,7 +1,9 @@
 #standardSQL
 # Top manifest icon sizes - based on 2019/14_04f.sql
 CREATE TEMPORARY FUNCTION getIconSizes(manifest STRING)
-RETURNS ARRAY<STRING> LANGUAGE js AS '''
+RETURNS ARRAY<STRING>
+LANGUAGE js
+AS '''
 try {
   var $ = JSON.parse(manifest);
   return $.icons.map(icon => icon.sizes);
@@ -17,7 +19,8 @@ SELECT
   SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
 FROM
-  (SELECT DISTINCT
+  (
+    SELECT DISTINCT
       client,
       body
     FROM
@@ -27,7 +30,9 @@ FROM
     USING
       (date, client, page)
     WHERE
-      date = '2020-08-01'),
+      date = '2020-08-01'
+  )
+,
   UNNEST(getIconSizes(body)) AS size
 GROUP BY
   client,

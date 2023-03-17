@@ -1,7 +1,9 @@
 #standardSQL
 # 04_11a: Bytes per pixel per image format
 CREATE TEMPORARY FUNCTION getImages(payload STRING)
-RETURNS ARRAY<STRUCT<url STRING, naturalWidth INT64, naturalHeight INT64, width INT64, height INT64>> LANGUAGE js AS '''
+RETURNS ARRAY<STRUCT<url STRING, naturalWidth INT64, naturalHeight INT64, width INT64, height INT64>>
+LANGUAGE js
+AS '''
 try {
   var $ = JSON.parse(payload);
   var images = JSON.parse($._Images) || [];

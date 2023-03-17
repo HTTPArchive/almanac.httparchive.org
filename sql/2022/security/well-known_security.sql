@@ -15,7 +15,8 @@ SELECT
   COUNTIF(expires IS NOT NULL) / COUNTIF(has_security_txt = 'true') AS pct_expires,
   COUNTIF(policy IS NOT NULL) AS policy,
   COUNTIF(policy IS NOT NULL) / COUNTIF(has_security_txt = 'true') AS pct_policy
-FROM (
+FROM
+  (
     SELECT
       _TABLE_SUFFIX AS client,
       url AS page,
@@ -27,6 +28,6 @@ FROM (
       JSON_QUERY(JSON_VALUE(payload, '$._well-known'), '$."/.well-known/security.txt".data.policy') AS policy
     FROM
       `httparchive.pages.2022_06_01_*`
-)
+  )
 GROUP BY
   client

@@ -15,18 +15,19 @@ SELECT
 
   COUNTIF(total_th_with_scope > 0) / COUNTIF(total_th > 0) AS pct_th_sites_with_scope,
   COUNTIF(total_td_with_headers > 0) / COUNTIF(total_td > 0) AS pct_td_sites_with_headers
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._a11y'), '$.tables.total') AS INT64) AS total_tables,
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._a11y'), '$.tables.total') AS INT64) AS total_tables,
 
-    CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._a11y'), '$.th_with_scope_attribute.total_th') AS INT64) AS total_th,
-    CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._a11y'), '$.th_with_scope_attribute.total_with_scope') AS INT64) AS total_th_with_scope,
+      CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._a11y'), '$.th_with_scope_attribute.total_th') AS INT64) AS total_th,
+      CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._a11y'), '$.th_with_scope_attribute.total_with_scope') AS INT64) AS total_th_with_scope,
 
-    CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._a11y'), '$.td_with_headers_attribute.total_tds') AS INT64) AS total_td,
-    CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._a11y'), '$.td_with_headers_attribute.total_with_headers') AS INT64) AS total_td_with_headers
-  FROM
-    `httparchive.pages.2020_08_01_*`
-)
+      CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._a11y'), '$.td_with_headers_attribute.total_tds') AS INT64) AS total_td,
+      CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._a11y'), '$.td_with_headers_attribute.total_with_headers') AS INT64) AS total_td_with_headers
+    FROM
+      `httparchive.pages.2020_08_01_*`
+  )
 GROUP BY
   client

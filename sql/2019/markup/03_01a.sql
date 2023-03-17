@@ -1,7 +1,9 @@
 #standardSQL
 # 03_01a: % of pages with deprecated elements
 CREATE TEMPORARY FUNCTION containsDeprecatedElement(payload STRING)
-RETURNS BOOLEAN LANGUAGE js AS '''
+RETURNS BOOLEAN
+LANGUAGE js
+AS '''
 try {
   var $ = JSON.parse(payload);
   var elements = JSON.parse($._element_count)

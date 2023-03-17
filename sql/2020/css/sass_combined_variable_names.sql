@@ -1,6 +1,8 @@
 #standardSQL
 CREATE TEMPORARY FUNCTION getCombinedVariableNames(payload STRING) RETURNS
-ARRAY<STRING> LANGUAGE js AS '''
+ARRAY<STRING>
+LANGUAGE js
+AS '''
 try {
   var $ = JSON.parse(payload);
   var scss = JSON.parse($['_sass']);

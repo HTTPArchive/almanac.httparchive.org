@@ -2,7 +2,9 @@
 # % manifests with screenshots for service worker pages and all pages
 
 CREATE TEMP FUNCTION hasScreenshots(manifest STRING)
-RETURNS BOOLEAN LANGUAGE js AS '''
+RETURNS BOOLEAN
+LANGUAGE js
+AS '''
 try {
   var $ = Object.values(JSON.parse(manifest))[0];
   return $.hasOwnProperty('screenshots') && $.screenshots.length > 0;

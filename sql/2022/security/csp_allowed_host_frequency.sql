@@ -30,17 +30,18 @@ SELECT
   total AS total_pages,
   COUNT(DISTINCT page) AS freq,
   COUNT(DISTINCT page) / total AS pct
-FROM (
-  SELECT
-    client,
-    page,
-    getHeader(response_headers, 'Content-Security-Policy') AS csp_header
-  FROM
-    `httparchive.almanac.requests`
-  WHERE
-    date = '2022-06-01' AND
-    firstHtml
-)
+FROM
+  (
+    SELECT
+      client,
+      page,
+      getHeader(response_headers, 'Content-Security-Policy') AS csp_header
+    FROM
+      `httparchive.almanac.requests`
+    WHERE
+      date = '2022-06-01' AND
+      firstHtml
+  )
 JOIN
   totals
 USING (client),

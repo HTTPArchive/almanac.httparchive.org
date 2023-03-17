@@ -1,7 +1,9 @@
 #standardSQL
 # 19_08: Top tags that use priority hints
 CREATE TEMPORARY FUNCTION getPriorityHints(payload STRING)
-RETURNS ARRAY<STRING> LANGUAGE js AS '''
+RETURNS ARRAY<STRING>
+LANGUAGE js
+AS '''
 try {
   var $ = JSON.parse(payload);
   var almanac = JSON.parse($._almanac);

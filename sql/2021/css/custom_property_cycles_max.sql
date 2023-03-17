@@ -90,16 +90,18 @@ SELECT
   percentile,
   client,
   APPROX_QUANTILES(max_cycles, 1000 IGNORE NULLS)[OFFSET(percentile * 10)] AS max_cycles_per_page
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    url,
-    MAX(getCustomPropertyMaxCycles(payload)) AS max_cycles
-  FROM
-    `httparchive.pages.2021_07_01_*`
-  GROUP BY
-    client,
-    url),
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      url,
+      MAX(getCustomPropertyMaxCycles(payload)) AS max_cycles
+    FROM
+      `httparchive.pages.2021_07_01_*`
+    GROUP BY
+      client,
+      url
+  ),
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 GROUP BY
   percentile,

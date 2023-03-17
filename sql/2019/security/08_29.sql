@@ -1,7 +1,9 @@
 #standardSQL
 # 08_29: Groupings of "x-content-type-options" values
 CREATE TEMPORARY FUNCTION extractHeader(payload STRING, name STRING)
-RETURNS STRING LANGUAGE js AS '''
+RETURNS STRING
+LANGUAGE js
+AS '''
 try {
   var $ = JSON.parse(payload);
   var header = $._headers.response.find(h => h.toLowerCase().startsWith(name.toLowerCase()));

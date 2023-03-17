@@ -449,19 +449,21 @@ SELECT
   COUNTIF(freq_longhand_first > 0) AS pages,
   COUNT(0) AS total,
   COUNTIF(freq_longhand_first > 0) / COUNT(0) AS pct
-FROM (
-  SELECT
-    client,
-    page,
-    SUM(property.freq) AS freq_longhand_first
-  FROM
-    `httparchive.almanac.parsed_css`
-  LEFT JOIN
-    UNNEST(getLonghandFirstProperties(css)) AS property
-  WHERE
-    date = '2020-08-01'
-  GROUP BY
-    client,
-    page)
+FROM
+  (
+    SELECT
+      client,
+      page,
+      SUM(property.freq) AS freq_longhand_first
+    FROM
+      `httparchive.almanac.parsed_css`
+    LEFT JOIN
+      UNNEST(getLonghandFirstProperties(css)) AS property
+    WHERE
+      date = '2020-08-01'
+    GROUP BY
+      client,
+      page
+  )
 GROUP BY
   client

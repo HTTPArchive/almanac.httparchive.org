@@ -2,7 +2,9 @@
 # % manifests with wide platform screenshots for service worker pages and all pages
 
 CREATE TEMP FUNCTION hasScreenshotsPlatformWide(manifest STRING)
-RETURNS BOOLEAN LANGUAGE js AS '''
+RETURNS BOOLEAN
+LANGUAGE js
+AS '''
 try {
   var manifest = Object.values(JSON.parse(manifest))[0];
   var screenshots = manifest.screenshots;

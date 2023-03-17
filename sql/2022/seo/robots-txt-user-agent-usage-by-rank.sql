@@ -5,7 +5,9 @@
 CREATE TEMPORARY FUNCTION getRobotsTxtUserAgents(robots_txt_string STRING)
 RETURNS STRUCT<
   user_agents ARRAY<STRING>
-> LANGUAGE js AS '''
+>
+LANGUAGE js
+AS '''
 var result = {
   user_agents: []
 };
@@ -54,7 +56,8 @@ base AS (
     rank,
     url AS page
   FROM
-    robots,
+    robots
+  ,
     UNNEST(robots_txt_user_agent_info.user_agents) AS user_agent
   JOIN
     `httparchive.summary_pages.2022_07_01_*` -- noqa: L062

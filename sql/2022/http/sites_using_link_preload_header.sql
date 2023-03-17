@@ -33,19 +33,20 @@ SELECT
   COUNTIF(num_link_rel_preload_resp_header > 0) AS num_sites_using_link_preload_resp_header,
   COUNT(0) AS total_sites,
   COUNTIF(num_link_rel_preload_resp_header > 0) / COUNT(0) AS pct_sites_using_link_preload_resp_header
-FROM (
-  SELECT
-    client,
-    page,
-    SUM(getNumLinkRelPreloadRespHeader(response_headers, 'link')) AS num_link_rel_preload_resp_header
-  FROM
-    `httparchive.almanac.requests`
-  WHERE
-    date = '2022-06-01' AND
-    firstHtml
-  GROUP BY
-    client,
-    page
-)
+FROM
+  (
+    SELECT
+      client,
+      page,
+      SUM(getNumLinkRelPreloadRespHeader(response_headers, 'link')) AS num_link_rel_preload_resp_header
+    FROM
+      `httparchive.almanac.requests`
+    WHERE
+      date = '2022-06-01' AND
+      firstHtml
+    GROUP BY
+      client,
+      page
+  )
 GROUP BY
   client

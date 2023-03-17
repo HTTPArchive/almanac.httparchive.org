@@ -1,5 +1,5 @@
 CREATE TEMPORARY FUNCTION getResourceHints(payload STRING)
-RETURNS ARRAY < STRUCT < name STRING, href STRING >>
+RETURNS ARRAY<STRUCT<name STRING, href STRING>>
 LANGUAGE js AS '''
 var hints = new Set(['preload', 'prefetch', 'preconnect', 'prerender', 'dns-prefetch']);
 try {
@@ -26,15 +26,17 @@ SELECT
   COUNT(DISTINCT page) AS pages,
   SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS total,
   COUNT(DISTINCT page) / SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS pct_hints
-FROM (
-  SELECT DISTINCT
-    _TABLE_SUFFIX AS client,
-    url AS page,
-    hint.name
-  FROM
-    `httparchive.pages.2022_06_01_*`
-  LEFT JOIN
-    UNNEST(getResourceHints(payload)) AS hint)
+FROM
+  (
+    SELECT DISTINCT
+      _TABLE_SUFFIX AS client,
+      url AS page,
+      hint.name
+    FROM
+      `httparchive.pages.2022_06_01_*`
+    LEFT JOIN
+      UNNEST(getResourceHints(payload)) AS hint
+  )
 LEFT JOIN (
   SELECT
     client,
@@ -43,7 +45,8 @@ LEFT JOIN (
   FROM
     `httparchive.almanac.requests`
   WHERE
-    date = '2022-06-01')
+    date = '2022-06-01'
+)
 USING
   (client, page)
 WHERE

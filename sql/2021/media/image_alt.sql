@@ -7,7 +7,9 @@ RETURNS STRUCT<
   alt_blank INT64,
   alt_present INT64,
   decode_lazy INT64
-> LANGUAGE js AS '''
+>
+LANGUAGE js
+AS '''
 var result = {};
 try {
     var markup = JSON.parse(markup_string);
@@ -34,13 +36,15 @@ SELECT
   SAFE_DIVIDE(SUM(markup_info.alt_missing), SUM(markup_info.total)) AS imgs_alt_missing_pct,
   SAFE_DIVIDE(SUM(markup_info.alt_blank), SUM(markup_info.total)) AS img_alt_blank_pct,
   SAFE_DIVIDE(SUM(markup_info.alt_present), SUM(markup_info.total)) AS img_alt_present_pct
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    url,
-    get_markup_info(JSON_EXTRACT_SCALAR(payload, '$._markup')) AS markup_info
-  FROM
-    `httparchive.pages.2021_07_01_*`)
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      url,
+      get_markup_info(JSON_EXTRACT_SCALAR(payload, '$._markup')) AS markup_info
+    FROM
+      `httparchive.pages.2021_07_01_*`
+  )
 GROUP BY
   client
 ORDER BY

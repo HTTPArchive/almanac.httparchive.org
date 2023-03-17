@@ -1,5 +1,7 @@
 CREATE TEMPORARY FUNCTION get_almanac_attribute_info(almanac_string STRING)
-RETURNS ARRAY<STRUCT<name STRING, freq INT64>> LANGUAGE js AS '''
+RETURNS ARRAY<STRUCT<name STRING, freq INT64>>
+LANGUAGE js
+AS '''
 try {
     var almanac = JSON.parse(almanac_string);
 

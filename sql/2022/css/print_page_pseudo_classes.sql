@@ -62,7 +62,8 @@ SELECT
   COUNT(0) AS freq,
   SUM(COUNT(0)) OVER (PARTITION BY client) AS total_freq,
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct_freq
-FROM (
+FROM
+  (
     SELECT DISTINCT
       client,
       page,
@@ -73,7 +74,8 @@ FROM (
       UNNEST(getSelectorParts(css)) AS pseudo_class
     WHERE
       date = '2022-07-01' AND
-      pseudo_class IS NOT NULL)
+      pseudo_class IS NOT NULL
+  )
 JOIN
   totals
 USING

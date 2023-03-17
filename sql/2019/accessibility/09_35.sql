@@ -1,7 +1,9 @@
 #standardSQL
 # 09_35: % of pages with distracting UX (marquee/blink elements, or animation-iteration-count: infinite)
 CREATE TEMPORARY FUNCTION includesInfiniteAnimation(css STRING)
-RETURNS BOOLEAN LANGUAGE js AS '''
+RETURNS BOOLEAN
+LANGUAGE js
+AS '''
 try {
   var reduceValues = (values, rule) => {
     if (values) {
@@ -27,7 +29,9 @@ try {
 
 
 CREATE TEMPORARY FUNCTION includesMotionElement(payload STRING)
-RETURNS BOOLEAN LANGUAGE js AS '''
+RETURNS BOOLEAN
+LANGUAGE js
+AS '''
 try {
   var $ = JSON.parse(payload);
   var elements = JSON.parse($._element_count);
@@ -45,13 +49,15 @@ SELECT
   COUNTIF(motion OR animations > 0) AS freq,
   SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS total,
   ROUND(COUNTIF(motion OR animations > 0) * 100 / SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client), 2) AS pct
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    url AS page,
-    includesMotionElement(payload) AS motion
-  FROM
-    `httparchive.pages.2019_07_01_*`)
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      url AS page,
+      includesMotionElement(payload) AS motion
+    FROM
+      `httparchive.pages.2019_07_01_*`
+  )
 JOIN (
   SELECT
     client,
@@ -63,7 +69,8 @@ JOIN (
     date = '2019-07-01'
   GROUP BY
     client,
-    page)
+    page
+)
 USING
   (client, page)
 GROUP BY

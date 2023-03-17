@@ -20,16 +20,17 @@ SELECT
   firstHtml,
   COUNT(0) AS num_requests,
   ROUND(COUNT(0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY client), 2) AS pct
-FROM (
-  SELECT
-    client,
-    firstHtml,
-    getLinkHeaders(payload) AS link_headers
-  FROM
-    `httparchive.almanac.requests`
-  WHERE
-    date = '2019-07-01'
-)
+FROM
+  (
+    SELECT
+      client,
+      firstHtml,
+      getLinkHeaders(payload) AS link_headers
+    FROM
+      `httparchive.almanac.requests`
+    WHERE
+      date = '2019-07-01'
+  )
 CROSS JOIN
   UNNEST(link_headers) AS link_header
 WHERE

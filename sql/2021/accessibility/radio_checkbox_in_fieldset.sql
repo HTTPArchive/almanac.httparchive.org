@@ -1,7 +1,9 @@
 #standardSQL
 # How many radios and checkboxes are there. How many of those inputs are correctly placed in a fieldset with a legend?
 CREATE TEMPORARY FUNCTION totalCheckboxAndRadio(payload STRING)
-RETURNS STRUCT<radios INT64, checkboxes INT64, radios_in_fieldsets INT64, checkboxes_in_fieldsets INT64, checkboxes_in_fieldset_with_legend INT64, radios_in_fieldset_with_legend INT64> LANGUAGE js AS '''
+RETURNS STRUCT<radios INT64, checkboxes INT64, radios_in_fieldsets INT64, checkboxes_in_fieldsets INT64, checkboxes_in_fieldset_with_legend INT64, radios_in_fieldset_with_legend INT64>
+LANGUAGE js
+AS '''
   try {
     const a11y = JSON.parse(payload);
 
@@ -50,12 +52,13 @@ SELECT
 
   SUM(stats.checkboxes_in_fieldset_with_legend) / SUM(stats.checkboxes) AS perc_checkboxes_in_legend,
   SUM(stats.radios_in_fieldset_with_legend) / SUM(stats.radios) AS perc_radios_in_legend
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    totalCheckboxAndRadio(JSON_EXTRACT_SCALAR(payload, '$._a11y')) AS stats
-  FROM
-    `httparchive.pages.2021_07_01_*`
-)
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      totalCheckboxAndRadio(JSON_EXTRACT_SCALAR(payload, '$._a11y')) AS stats
+    FROM
+      `httparchive.pages.2021_07_01_*`
+  )
 GROUP BY
   client

@@ -23,7 +23,9 @@ RETURNS STRUCT<
   same_page_other_total INT64,
 
   valid_data BOOL
-> LANGUAGE js AS '''
+>
+LANGUAGE js
+AS '''
 
 function allPropsAreInt(props) {
   const keys = Object.keys(props);
@@ -131,16 +133,17 @@ SELECT
   APPROX_QUANTILES(wpt_bodies_info.visible_words_rendered_count, 1000)[OFFSET(percentile * 10)] AS visible_words_rendered,
   APPROX_QUANTILES(wpt_bodies_info.visible_words_raw_count, 1000)[OFFSET(percentile * 10)] AS visible_words_raw
 
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    percentile,
-    url,
-    get_wpt_bodies_info(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS wpt_bodies_info
-  FROM
-    `httparchive.pages.2021_07_01_*`,
-    UNNEST([10, 25, 50, 75, 90]) AS percentile
-)
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      percentile,
+      url,
+      get_wpt_bodies_info(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS wpt_bodies_info
+    FROM
+      `httparchive.pages.2021_07_01_*`,
+      UNNEST([10, 25, 50, 75, 90]) AS percentile
+  )
 WHERE
   wpt_bodies_info.valid_data
 GROUP BY

@@ -1,6 +1,8 @@
 #standardSQL
 # All CMS popularity per geo
-CREATE TEMP FUNCTION GET_GEO(country_code STRING, geo STRING) RETURNS STRING LANGUAGE js AS '''
+CREATE TEMP FUNCTION GET_GEO(country_code STRING, geo STRING) RETURNS STRING
+LANGUAGE js
+AS '''
 var countries = {
   "af": {
     "name": "Afghanistan",
@@ -1215,38 +1217,44 @@ WITH geo_summary AS (
 
 SELECT
   *
-FROM (
-  SELECT
-    app,
-    client,
-    region,
-    COUNT(DISTINCT url) AS origins,
-    COUNT(0) AS pages,
-    ANY_VALUE(total) AS total,
-    COUNT(0) / ANY_VALUE(total) AS pct
-  FROM (
-    SELECT DISTINCT
-      region,
-      client,
-      total,
-      CONCAT(origin, '/') AS url
-    FROM
-      geo_summary
-  ) JOIN (
-    SELECT DISTINCT
-      _TABLE_SUFFIX AS client,
+FROM
+  (
+    SELECT
       app,
-      url
+      client,
+      region,
+      COUNT(DISTINCT url) AS origins,
+      COUNT(0) AS pages,
+      ANY_VALUE(total) AS total,
+      COUNT(0) / ANY_VALUE(total) AS pct
     FROM
-      `httparchive.technologies.2021_07_01_*`
-    WHERE
-      LOWER(category) = 'static site generator' OR
-      app = 'Next.js' OR
-      app = 'Nuxt.js'
-  ) USING (client, url)
-  GROUP BY
-    app,
-    client,
-    region
-  ORDER BY
-    origins DESC)
+      (
+        SELECT DISTINCT
+          region,
+          client,
+          total,
+          CONCAT(origin, '/') AS url
+        FROM
+          geo_summary
+      )
+    JOIN
+      (
+        SELECT DISTINCT
+          _TABLE_SUFFIX AS client,
+          app,
+          url
+        FROM
+          `httparchive.technologies.2021_07_01_*`
+        WHERE
+          LOWER(category) = 'static site generator' OR
+          app = 'Next.js' OR
+          app = 'Nuxt.js'
+      )
+    USING (client, url)
+    GROUP BY
+      app,
+      client,
+      region
+    ORDER BY
+      origins DESC
+  )

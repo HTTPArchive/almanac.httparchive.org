@@ -7,18 +7,22 @@ SELECT
   custom_elements / total AS pct_custom_elements,
   shadow_roots / total AS pct_shadow_roots,
   templates / total AS pct_templates
-FROM (
-  SELECT
-    client,
-    COUNT(0) AS total,
-    COUNTIF(ARRAY_LENGTH(JSON_EXTRACT_ARRAY(js, '$.web_component_specs.custom_elements')) > 0) AS custom_elements,
-    COUNTIF(ARRAY_LENGTH(JSON_EXTRACT_ARRAY(js, '$.web_component_specs.shadow_roots')) > 0) AS shadow_roots,
-    COUNTIF(ARRAY_LENGTH(JSON_EXTRACT_ARRAY(js, '$.web_component_specs.template')) > 0) AS templates
-  FROM (
+FROM
+  (
     SELECT
-      _TABLE_SUFFIX AS client,
-      JSON_EXTRACT_SCALAR(payload, '$._javascript') AS js
+      client,
+      COUNT(0) AS total,
+      COUNTIF(ARRAY_LENGTH(JSON_EXTRACT_ARRAY(js, '$.web_component_specs.custom_elements')) > 0) AS custom_elements,
+      COUNTIF(ARRAY_LENGTH(JSON_EXTRACT_ARRAY(js, '$.web_component_specs.shadow_roots')) > 0) AS shadow_roots,
+      COUNTIF(ARRAY_LENGTH(JSON_EXTRACT_ARRAY(js, '$.web_component_specs.template')) > 0) AS templates
     FROM
-      `httparchive.pages.2022_06_01_*`)
-  GROUP BY
-    client)
+      (
+        SELECT
+          _TABLE_SUFFIX AS client,
+          JSON_EXTRACT_SCALAR(payload, '$._javascript') AS js
+        FROM
+          `httparchive.pages.2022_06_01_*`
+      )
+    GROUP BY
+      client
+  )

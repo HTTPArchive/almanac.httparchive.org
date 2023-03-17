@@ -1,4 +1,6 @@
-CREATE TEMP FUNCTION getFeatures(data STRING) RETURNS ARRAY<STRING> LANGUAGE js AS '''
+CREATE TEMP FUNCTION getFeatures(data STRING) RETURNS ARRAY<STRING>
+LANGUAGE js
+AS '''
 try {
   const json = JSON.parse(data);
   const result = new Set();

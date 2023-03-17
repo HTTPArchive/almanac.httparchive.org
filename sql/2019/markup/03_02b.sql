@@ -1,7 +1,9 @@
 #standardSQL
 # 03_02b: Top elements
 CREATE TEMPORARY FUNCTION getElements(payload STRING)
-RETURNS ARRAY<STRUCT<name STRING, freq INT64>> LANGUAGE js AS '''
+RETURNS ARRAY<STRUCT<name STRING, freq INT64>>
+LANGUAGE js
+AS '''
 try {
   var $ = JSON.parse(payload);
   var elements = JSON.parse($._element_count);

@@ -2,7 +2,9 @@
 # Third-party pages with unoptimized images
 
 CREATE TEMPORARY FUNCTION getUnminifiedImageUrls(audit STRING)
-RETURNS ARRAY<STRUCT<url STRING, wastedBytes INT64, totalBytes INT64>> LANGUAGE js AS '''
+RETURNS ARRAY<STRUCT<url STRING, wastedBytes INT64, totalBytes INT64>>
+LANGUAGE js
+AS '''
 try {
   var $ = JSON.parse(audit);
   return $.details.items.map(({url, wastedBytes, totalBytes}) => {
@@ -27,17 +29,19 @@ base AS (
     potential_third_parties.domain AS domain,
     SUM(IF(third_party_domains.domain IS NOT NULL, potential_savings, 0)) AS potential_third_party_savings,
     SUM(IF(third_party_domains.domain IS NOT NULL, transfer_size, 0)) AS third_party_transfer_size
-  FROM (
-    SELECT
-      _TABLE_SUFFIX AS client,
-      NET.HOST(data.url) AS domain,
-      lighthouse.url AS page,
-      data.wastedBytes AS potential_savings,
-      data.totalBytes AS transfer_size
-    FROM
-      `httparchive.lighthouse.2022_06_01_*` AS lighthouse,
-      UNNEST(getUnminifiedImageUrls(JSON_EXTRACT(report, "$.audits['uses-optimized-images']"))) AS data
-  ) AS potential_third_parties
+  FROM
+    (
+      SELECT
+        _TABLE_SUFFIX AS client,
+        NET.HOST(data.url) AS domain,
+        lighthouse.url AS page,
+        data.wastedBytes AS potential_savings,
+        data.totalBytes AS transfer_size
+      FROM
+        `httparchive.lighthouse.2022_06_01_*` AS lighthouse
+      ,
+        UNNEST(getUnminifiedImageUrls(JSON_EXTRACT(report, "$.audits['uses-optimized-images']"))) AS data
+    ) AS potential_third_parties
   LEFT OUTER JOIN
     third_party_domains
   ON

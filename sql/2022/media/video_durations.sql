@@ -21,7 +21,8 @@ WITH videonotes AS (
       WHEN (CAST(durations AS FLOAT64) > 300 AND CAST(durations AS FLOAT64) <= 600) THEN 'under600'
       ELSE 'over600'
     END AS duration_bucket
-  FROM (
+  FROM
+    (
       SELECT
         _TABLE_SUFFIX AS client,
         url AS pageURL,

@@ -2,7 +2,9 @@
 # 10_13: % of desktop pages that include a stylesheet with a breakpoint under 600px.
 # See also 12_06
 CREATE TEMPORARY FUNCTION hasBreakpoint(css STRING)
-RETURNS BOOLEAN LANGUAGE js AS '''
+RETURNS BOOLEAN
+LANGUAGE js
+AS '''
 function matchAll(re, str) {
   var results = [];
   while ((matches = re.exec(str)) !== null) {

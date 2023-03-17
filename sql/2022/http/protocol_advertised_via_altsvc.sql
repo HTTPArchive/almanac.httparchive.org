@@ -47,7 +47,8 @@ FROM
       url,
       flattened_protocol AS protocol
     FROM
-      altsvcTable, altsvcTable.protocol AS flattened_protocol
+      altsvcTable,
+      altsvcTable.protocol AS flattened_protocol
   )
 GROUP BY
   client,

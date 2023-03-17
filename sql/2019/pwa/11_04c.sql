@@ -1,7 +1,9 @@
 #standardSQL
 # 11_04c: Top manifest display values
 CREATE TEMPORARY FUNCTION getDisplay(manifest STRING)
-RETURNS STRING LANGUAGE js AS '''
+RETURNS STRING
+LANGUAGE js
+AS '''
 try {
   var $ = JSON.parse(manifest);
   if (!('display' in $)) {

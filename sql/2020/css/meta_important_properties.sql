@@ -38,17 +38,19 @@ SELECT
   SUM(freq) AS freq,
   SUM(SUM(freq)) OVER (PARTITION BY client) AS total,
   SUM(freq) / SUM(SUM(freq)) OVER (PARTITION BY client) AS pct
-FROM (
-  SELECT
-    client,
-    page,
-    important.property,
-    important.freq
-  FROM
-    `httparchive.almanac.parsed_css`,
-    UNNEST(getImportantProperties(css)) AS important
-  WHERE
-    date = '2020-08-01')
+FROM
+  (
+    SELECT
+      client,
+      page,
+      important.property,
+      important.freq
+    FROM
+      `httparchive.almanac.parsed_css`,
+      UNNEST(getImportantProperties(css)) AS important
+    WHERE
+      date = '2020-08-01'
+  )
 GROUP BY
   client,
   property

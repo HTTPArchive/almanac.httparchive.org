@@ -163,18 +163,20 @@ SELECT
   COUNTIF(hints > 0) AS pages,
   total,
   COUNTIF(hints > 0) / total AS pct
-FROM (
-  SELECT
-    client,
-    page,
-    SUM(getGradientHints(css)) AS hints
-  FROM
-    `httparchive.almanac.parsed_css`
-  WHERE
-    date = '2021-07-01'
-  GROUP BY
-    client,
-    page)
+FROM
+  (
+    SELECT
+      client,
+      page,
+      SUM(getGradientHints(css)) AS hints
+    FROM
+      `httparchive.almanac.parsed_css`
+    WHERE
+      date = '2021-07-01'
+    GROUP BY
+      client,
+      page
+  )
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -182,7 +184,8 @@ JOIN (
   FROM
     `httparchive.summary_pages.2021_07_01_*`
   GROUP BY
-    client)
+    client
+)
 USING
   (client)
 GROUP BY

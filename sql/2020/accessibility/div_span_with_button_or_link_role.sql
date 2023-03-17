@@ -14,14 +14,15 @@ SELECT
   SUM(total_role_button) AS total_div_span_role_button,
   SUM(total_role_link) AS total_div_span_role_link,
   SUM(total_either) AS total_div_span_role_either
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._a11y'), '$.divs_or_spans_as_button_or_link.total_role_button') AS INT64) AS total_role_button,
-    CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._a11y'), '$.divs_or_spans_as_button_or_link.total_role_link') AS INT64) AS total_role_link,
-    CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._a11y'), '$.divs_or_spans_as_button_or_link.total_either') AS INT64) AS total_either
-  FROM
-    `httparchive.pages.2020_08_01_*`
-)
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._a11y'), '$.divs_or_spans_as_button_or_link.total_role_button') AS INT64) AS total_role_button,
+      CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._a11y'), '$.divs_or_spans_as_button_or_link.total_role_link') AS INT64) AS total_role_link,
+      CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._a11y'), '$.divs_or_spans_as_button_or_link.total_either') AS INT64) AS total_either
+    FROM
+      `httparchive.pages.2020_08_01_*`
+  )
 GROUP BY
   client

@@ -1,4 +1,6 @@
-CREATE TEMPORARY FUNCTION normalise(content STRING) RETURNS STRING LANGUAGE js AS '''
+CREATE TEMPORARY FUNCTION normalise(content STRING) RETURNS STRING
+LANGUAGE js
+AS '''
 try {
   // split by ,
   // trim

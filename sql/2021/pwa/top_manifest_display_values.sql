@@ -1,7 +1,9 @@
 #standardSQL
 # Top most used display values in manifest files
 
-CREATE TEMP FUNCTION getDisplay(manifest STRING) RETURNS STRING LANGUAGE js AS '''
+CREATE TEMP FUNCTION getDisplay(manifest STRING) RETURNS STRING
+LANGUAGE js
+AS '''
 try {
   var $ = Object.values(JSON.parse(manifest))[0];
   if (!('display' in $)) {

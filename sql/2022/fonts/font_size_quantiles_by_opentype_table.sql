@@ -1,5 +1,5 @@
 CREATE TEMPORARY FUNCTION getTableSizes(json STRING)
-RETURNS ARRAY<STRUCT <key STRING, value INT64>>
+RETURNS ARRAY<STRUCT<key STRING, value INT64>>
 LANGUAGE js AS '''
 if (json === null) {
   return [];
@@ -36,16 +36,18 @@ SELECT
   table,
   COUNT(0) AS total,
   APPROX_QUANTILES(bytes, 1000)[OFFSET(percentile * 10)] AS bytes
-FROM (
-  SELECT
-    client,
-    percentile,
-    key AS table,
-    value AS bytes
-  FROM
-    fonts,
-    UNNEST(getTableSizes(payload)) AS table,
-    UNNEST([10, 25, 50, 75, 90, 100]) AS percentile)
+FROM
+  (
+    SELECT
+      client,
+      percentile,
+      key AS table,
+      value AS bytes
+    FROM
+      fonts,
+      UNNEST(getTableSizes(payload)) AS table,
+      UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
+  )
 GROUP BY
   client,
   table,

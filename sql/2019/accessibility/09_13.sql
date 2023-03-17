@@ -1,7 +1,9 @@
 #standardSQL
 # 09_13: % pages with headings out of order
 CREATE TEMPORARY FUNCTION includesUnorderedHeading(headings ARRAY<STRING>)
-RETURNS BOOLEAN LANGUAGE js AS '''
+RETURNS BOOLEAN
+LANGUAGE js
+AS '''
 var previous = null;
 var seen = new Set();
 for (h of headings) {

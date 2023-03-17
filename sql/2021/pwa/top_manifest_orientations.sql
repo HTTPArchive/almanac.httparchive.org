@@ -1,7 +1,9 @@
 #standardSQL
 # Top manifest orientations
 
-CREATE TEMP FUNCTION getOrientation(manifest STRING) RETURNS STRING LANGUAGE js AS '''
+CREATE TEMP FUNCTION getOrientation(manifest STRING) RETURNS STRING
+LANGUAGE js
+AS '''
 try {
   var $ = Object.values(JSON.parse(manifest))[0];
   if (!('orientation' in $)) {

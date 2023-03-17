@@ -19,7 +19,8 @@ headers AS (
     COUNT(DISTINCT IF(LOWER(JSON_VALUE(headers, '$.name')) = 'sec-gpc' AND JSON_VALUE(headers, '$.value') = '1', page, NULL)) AS headers_num_urls,
     COUNT(DISTINCT IF(LOWER(JSON_VALUE(headers, '$.name')) = 'sec-gpc' AND JSON_VALUE(headers, '$.value') = '1', page, NULL)) / COUNT(DISTINCT page) AS headers_pct_urls
   FROM
-    `httparchive.almanac.requests`,
+    `httparchive.almanac.requests`
+  ,
     UNNEST(JSON_QUERY_ARRAY(response_headers)) headers
   WHERE
     date = '2022-06-01' AND

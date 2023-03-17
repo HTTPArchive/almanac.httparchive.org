@@ -6,9 +6,11 @@ CREATE TEMP FUNCTION getNumSecurityHeaders(headers STRING) AS (
     SELECT
       COUNTIF(REGEXP_CONTAINS(headers, CONCAT('(?i)', headername, ' ')))
     FROM
-      UNNEST(['Content-Security-Policy', 'Content-Security-Policy-Report-Only', 'Cross-Origin-Embedder-Policy', 'Cross-Origin-Opener-Policy',
-              'Cross-Origin-Resource-Policy', 'Expect-CT', 'Feature-Policy', 'Permissions-Policy', 'Referrer-Policy', 'Report-To',
-              'Strict-Transport-Security', 'X-Content-Type-Options', 'X-Frame-Options', 'X-XSS-Protection']) AS headername
+      UNNEST([
+        'Content-Security-Policy', 'Content-Security-Policy-Report-Only', 'Cross-Origin-Embedder-Policy', 'Cross-Origin-Opener-Policy',
+        'Cross-Origin-Resource-Policy', 'Expect-CT', 'Feature-Policy', 'Permissions-Policy', 'Referrer-Policy', 'Report-To',
+        'Strict-Transport-Security', 'X-Content-Type-Options', 'X-Frame-Options', 'X-XSS-Protection'
+      ]) AS headername
   )
 );
 
@@ -27,28 +29,30 @@ SELECT
   SAFE_DIVIDE(COUNTIF(REGEXP_CONTAINS(respOtherHeaders, '(?i)X-XSS-Protection ')), COUNT(0)) AS pct_xss,
   AVG(getNumSecurityHeaders(respOtherHeaders)) AS avg_security_headers,
   APPROX_QUANTILES(getNumSecurityHeaders(respOtherHeaders), 1000)[OFFSET(500)] AS median_security_headers
-FROM (
-  SELECT
-    r._TABLE_SUFFIX AS client,
-    `chrome-ux-report.experimental`.GET_COUNTRY(country_code) AS country,
-    respOtherHeaders,
-    r.urlShort AS url,
-    firstHtml
-  FROM
-    `httparchive.summary_requests.2021_07_01_*` AS r
-  INNER JOIN
-    `httparchive.summary_pages.2021_07_01_*` AS p
-  ON
-    r._TABLE_SUFFIX = p._TABLE_SUFFIX AND
-    r.pageid = p.pageid
-  INNER JOIN
-    `chrome-ux-report.experimental.country` AS c
-  ON
-    p.url = CONCAT(c.origin, '/')
-  WHERE
-    firstHtml AND
-    yyyymm = 202107
-)
+FROM
+  (
+    SELECT
+      r._TABLE_SUFFIX AS client,
+      `chrome-ux-report.experimental`.GET_COUNTRY(country_code
+      ) AS country,
+      respOtherHeaders,
+      r.urlShort AS url,
+      firstHtml
+    FROM
+      `httparchive.summary_requests.2021_07_01_*` AS r
+    INNER JOIN
+      `httparchive.summary_pages.2021_07_01_*` AS p
+    ON
+      r._TABLE_SUFFIX = p._TABLE_SUFFIX AND
+      r.pageid = p.pageid
+    INNER JOIN
+      `chrome-ux-report.experimental.country` AS c
+    ON
+      p.url = CONCAT(c.origin, '/')
+    WHERE
+      firstHtml AND
+      yyyymm = 202107
+  )
 GROUP BY
   client,
   country

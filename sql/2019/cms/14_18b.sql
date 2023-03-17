@@ -12,7 +12,8 @@ JOIN (
     url,
     JSON_EXTRACT_SCALAR(report, '$.audits.is-crawlable.score') AS crawlable
   FROM
-    `httparchive.lighthouse.2019_07_01_mobile`)
+    `httparchive.lighthouse.2019_07_01_mobile`
+)
 USING (url)
 WHERE
   category = 'CMS' AND

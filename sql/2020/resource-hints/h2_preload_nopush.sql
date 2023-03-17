@@ -23,15 +23,17 @@ SELECT
   COUNT(0) AS num_requests,
   SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
-FROM (
-  SELECT
-    client,
-    firstHtml,
-    getLinkHeaders(payload) AS link_headers
-  FROM
-    `httparchive.almanac.requests`
-  WHERE
-    date = '2020-08-01'),
+FROM
+  (
+    SELECT
+      client,
+      firstHtml,
+      getLinkHeaders(payload) AS link_headers
+    FROM
+      `httparchive.almanac.requests`
+    WHERE
+      date = '2020-08-01'
+  ),
   UNNEST(link_headers) AS link_header
 WHERE
   link_header LIKE '%preload%' AND

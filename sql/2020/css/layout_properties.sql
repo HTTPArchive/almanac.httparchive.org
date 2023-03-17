@@ -45,28 +45,33 @@ try {
 SELECT
   *,
   pages / total_pages AS pct_pages
-FROM (
-  SELECT
-    client,
-    layout,
-    SUM(value) AS freq,
-    SUM(SUM(value)) OVER (PARTITION BY client) AS total,
-    SUM(value) / SUM(SUM(value)) OVER (PARTITION BY client) AS pct,
-    COUNT(DISTINCT page) AS pages
-  FROM (
+FROM
+  (
     SELECT
       client,
-      page,
-      layout.name AS layout,
-      layout.value
+      layout,
+      SUM(value) AS freq,
+      SUM(SUM(value)) OVER (PARTITION BY client) AS total,
+      SUM(value) / SUM(SUM(value)) OVER (PARTITION BY client) AS pct,
+      COUNT(DISTINCT page) AS pages
     FROM
-      `httparchive.almanac.parsed_css`,
-      UNNEST(getLayoutUsage(css)) AS layout
-    WHERE
-      date = '2020-08-01')
-  GROUP BY
-    client,
-    layout)
+      (
+        SELECT
+          client,
+          page,
+          layout.name AS layout,
+          layout.value
+        FROM
+          `httparchive.almanac.parsed_css`
+        ,
+          UNNEST(getLayoutUsage(css)) AS layout
+        WHERE
+          date = '2020-08-01'
+      )
+    GROUP BY
+      client,
+      layout
+  )
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -74,7 +79,8 @@ JOIN (
   FROM
     `httparchive.summary_pages.2020_08_01_*`
   GROUP BY
-    client)
+    client
+)
 USING
   (client)
 WHERE

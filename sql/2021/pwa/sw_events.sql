@@ -2,7 +2,9 @@
 # SW events
 
 CREATE TEMPORARY FUNCTION getSWEvents(payload STRING)
-RETURNS ARRAY<STRING> LANGUAGE js AS '''
+RETURNS ARRAY<STRING>
+LANGUAGE js
+AS '''
 try {
   var payloadJSON = JSON.parse(payload);
   var swEventListenersInfo = (Object.values(payloadJSON.swEventListenersInfo)).flat();

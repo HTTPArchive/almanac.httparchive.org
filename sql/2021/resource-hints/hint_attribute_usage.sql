@@ -38,16 +38,17 @@ SELECT
   COUNT(0) AS freq,
   SUM(COUNT(0)) OVER (PARTITION BY client, name, attribute) AS total,
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client, name, attribute) AS pct
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    hint.name AS name,
-    hint.attribute AS attribute,
-    IFNULL(TRIM(NORMALIZE_AND_CASEFOLD(hint.value)), 'not set') AS value
-  FROM
-    `httparchive.pages.2021_07_01_*`,
-    UNNEST(getResourceHintAttrs(payload)) AS hint
-)
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      hint.name AS name,
+      hint.attribute AS attribute,
+      IFNULL(TRIM(NORMALIZE_AND_CASEFOLD(hint.value)), 'not set') AS value
+    FROM
+      `httparchive.pages.2021_07_01_*`,
+      UNNEST(getResourceHintAttrs(payload)) AS hint
+  )
 GROUP BY
   client,
   name,

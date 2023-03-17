@@ -10,16 +10,18 @@ SELECT
   ANY_VALUE(occurrences) / ANY_VALUE(total_requests) AS pct_of_total_requests,
   ANY_VALUE(total_using_both) / ANY_VALUE(total_using_vary) AS pct_of_vary_with_cache_control,
   ANY_VALUE(total_using_vary) / ANY_VALUE(total_requests) AS pct_using_vary
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    COUNT(0) AS total_requests,
-    COUNTIF(TRIM(resp_vary) != '') AS total_using_vary,
-    COUNTIF(TRIM(resp_vary) != '' AND TRIM(resp_cache_control) != '') AS total_using_both
-  FROM
-    `httparchive.summary_requests.2022_06_01_*`
-  GROUP BY
-    client)
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      COUNT(0) AS total_requests,
+      COUNTIF(TRIM(resp_vary) != '') AS total_using_vary,
+      COUNTIF(TRIM(resp_vary) != '' AND TRIM(resp_cache_control) != '') AS total_using_both
+    FROM
+      `httparchive.summary_requests.2022_06_01_*`
+    GROUP BY
+      client
+  )
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -31,7 +33,8 @@ JOIN (
     UNNEST(REGEXP_EXTRACT_ALL(LOWER(resp_vary), r'([a-z][^,\s="\']*)')) AS vary_header
   GROUP BY
     client,
-    vary_header)
+    vary_header
+)
 USING
   (client)
 WHERE

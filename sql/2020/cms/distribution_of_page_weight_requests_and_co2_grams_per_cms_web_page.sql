@@ -20,24 +20,27 @@ SELECT
   APPROX_QUANTILES(requests, 1000)[OFFSET(percentile * 10)] AS requests,
   ROUND(APPROX_QUANTILES(bytes, 1000)[OFFSET(percentile * 10)] / 1024 / 1024, 2) AS mbytes,
   APPROX_QUANTILES(co2grams, 1000)[OFFSET(percentile * 10)] AS co2grams
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    reqTotal AS requests,
-    bytesTotal AS bytes,
-    CO2(url, bytesTotal) AS co2grams
-  FROM
-    `httparchive.summary_pages.2020_08_01_*`
-  JOIN (
+FROM
+  (
     SELECT
-      _TABLE_SUFFIX,
-      url
+      _TABLE_SUFFIX AS client,
+      reqTotal AS requests,
+      bytesTotal AS bytes,
+      CO2(url, bytesTotal) AS co2grams
     FROM
-      `httparchive.technologies.2020_08_01_*`
-    WHERE
-      category = 'CMS')
-  USING
-    (_TABLE_SUFFIX, url)),
+      `httparchive.summary_pages.2020_08_01_*`
+    JOIN (
+      SELECT
+        _TABLE_SUFFIX,
+        url
+      FROM
+        `httparchive.technologies.2020_08_01_*`
+      WHERE
+        category = 'CMS'
+    )
+    USING
+      (_TABLE_SUFFIX, url)
+  ),
   UNNEST([10, 25, 50, 75, 90]) AS percentile
 GROUP BY
   percentile,

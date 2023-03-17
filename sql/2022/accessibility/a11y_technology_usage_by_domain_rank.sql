@@ -8,16 +8,17 @@ SELECT
   app,
   COUNT(0) AS sites_with_app,
   COUNT(0) / total_in_rank AS pct_sites_with_app
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    app,
-    url
-  FROM
-    `httparchive.technologies.2022_06_01_*`
-  WHERE
-    category = 'Accessibility'
-)
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      app,
+      url
+    FROM
+      `httparchive.technologies.2022_06_01_*`
+    WHERE
+      category = 'Accessibility'
+  )
 LEFT OUTER JOIN (
   SELECT
     _TABLE_SUFFIX AS client,

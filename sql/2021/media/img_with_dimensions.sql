@@ -35,15 +35,17 @@ SELECT
   SAFE_DIVIDE(COUNTIF(hasHeight = 1), COUNT(0)) AS percHasHeight,
   SAFE_DIVIDE(COUNTIF(hasAlt = 1), COUNT(0)) AS percHasAlt,
   SAFE_DIVIDE(COUNTIF(hasReservedLayoutDimension = 1), COUNT(0)) AS percHasDimensions
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    hasWidth,
-    hasHeight,
-    hasAlt,
-    hasReservedLayoutDimension
-  FROM
-    `httparchive.pages.2021_07_01_*`,
-    UNNEST(get_image_info(JSON_VALUE(payload, '$._responsive_images'))))
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      hasWidth,
+      hasHeight,
+      hasAlt,
+      hasReservedLayoutDimension
+    FROM
+      `httparchive.pages.2021_07_01_*`,
+      UNNEST(get_image_info(JSON_VALUE(payload, '$._responsive_images')))
+  )
 GROUP BY
   client

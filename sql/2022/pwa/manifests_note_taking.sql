@@ -2,7 +2,9 @@
 # % manifests with note taking for service worker pages and all pages
 
 CREATE TEMP FUNCTION hasNoteTaking(manifest STRING)
-RETURNS BOOLEAN LANGUAGE js AS '''
+RETURNS BOOLEAN
+LANGUAGE js
+AS '''
 try {
   var $ = Object.values(JSON.parse(manifest))[0];
   return $.hasOwnProperty('note_taking') && $.note_taking != {};

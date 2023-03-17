@@ -15,12 +15,14 @@ SELECT
   total_iframes_with_sandbox,
   COUNT(0) AS freq,
   COUNT(0) / total_iframes_with_sandbox AS pct
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._security'), '$.iframe-allow-sandbox') AS iframeAttrs
-  FROM
-    `httparchive.pages.2021_07_01_*`),
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._security'), '$.iframe-allow-sandbox') AS iframeAttrs
+    FROM
+      `httparchive.pages.2021_07_01_*`
+  ),
   UNNEST(iframeAttrs) AS iframeAttr,
   UNNEST(SPLIT(JSON_EXTRACT_SCALAR(iframeAttr, '$.sandbox'), ' ')) AS sandbox_attr
 JOIN (

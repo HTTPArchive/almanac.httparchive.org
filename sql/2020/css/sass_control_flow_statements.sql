@@ -1,6 +1,8 @@
 #standardSQL
 CREATE TEMPORARY FUNCTION getStatements(payload STRING) RETURNS
-ARRAY<STRUCT<statement STRING, freq INT64>> LANGUAGE js AS '''
+ARRAY<STRUCT<statement STRING, freq INT64>>
+LANGUAGE js
+AS '''
 try {
   var $ = JSON.parse(payload);
   var scss = JSON.parse($['_sass']);
@@ -34,19 +36,21 @@ SELECT
   SUM(freq) AS freq,
   SUM(SUM(freq)) OVER (PARTITION BY client) AS total,
   SUM(freq) / SUM(SUM(freq)) OVER (PARTITION BY client) AS pct
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    url AS page,
-    statement.statement,
-    SUM(statement.freq) AS freq
-  FROM
-    `httparchive.pages.2020_08_01_*`,
-    UNNEST(getStatements(payload)) AS statement
-  GROUP BY
-    client,
-    page,
-    statement)
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      url AS page,
+      statement.statement,
+      SUM(statement.freq) AS freq
+    FROM
+      `httparchive.pages.2020_08_01_*`,
+      UNNEST(getStatements(payload)) AS statement
+    GROUP BY
+      client,
+      page,
+      statement
+  )
 GROUP BY
   client,
   statement

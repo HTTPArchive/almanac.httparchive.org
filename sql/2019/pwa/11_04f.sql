@@ -1,7 +1,9 @@
 #standardSQL
 # 11_04f: Top manifest icon sizes
 CREATE TEMPORARY FUNCTION getIconSizes(manifest STRING)
-RETURNS ARRAY<STRING> LANGUAGE js AS '''
+RETURNS ARRAY<STRING>
+LANGUAGE js
+AS '''
 try {
   var $ = JSON.parse(manifest);
   return $.icons.map(icon => icon.sizes);

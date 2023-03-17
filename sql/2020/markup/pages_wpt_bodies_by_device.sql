@@ -2,7 +2,7 @@
 # page wpt_bodies metrics grouped by device
 
 # helper to create percent fields
-CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
+CREATE TEMP FUNCTION AS_PERCENT(freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
   ROUND(SAFE_DIVIDE(freq, total), 4)
 );
 
@@ -35,7 +35,9 @@ RETURNS STRUCT<
   n_non_empty_h6 INT64,
   n_non_empty_h7 INT64,
   n_non_empty_h8 INT64
-> LANGUAGE js AS '''
+>
+LANGUAGE js
+AS '''
 var result = {};
 try {
     var wpt_bodies = JSON.parse(wpt_bodies_string);

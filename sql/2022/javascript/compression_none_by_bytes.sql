@@ -21,20 +21,25 @@ SELECT
   COUNT(0) AS js_requests,
   SUM(COUNT(0)) OVER (PARTITION BY client, host) AS total,
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client, host) AS pct
-FROM (
-  SELECT
-    client,
-    page,
-    IF(NET.HOST(url) IN (
-      SELECT domain FROM `httparchive.almanac.third_parties` WHERE date = '2022-06-01' AND category != 'hosting'
-    ), 'third party', 'first party') AS host,
-    respSize / 1024 AS kbytes
-  FROM
-    `httparchive.almanac.requests`
-  WHERE
-    date = '2022-06-01' AND
-    type = 'script' AND
-    getHeader(JSON_EXTRACT(payload, '$.response.headers'), 'Content-Encoding') IS NULL)
+FROM
+  (
+    SELECT
+      client,
+      page,
+      IF(
+        NET.HOST(url
+        ) IN (
+          SELECT domain FROM `httparchive.almanac.third_parties` WHERE date = '2022-06-01' AND category != 'hosting'
+        ), 'third party', 'first party'
+      ) AS host,
+      respSize / 1024 AS kbytes
+    FROM
+      `httparchive.almanac.requests`
+    WHERE
+      date = '2022-06-01' AND
+      type = 'script' AND
+      getHeader(JSON_EXTRACT(payload, '$.response.headers'), 'Content-Encoding') IS NULL
+  )
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -42,7 +47,8 @@ JOIN (
   FROM
     `httparchive.summary_pages.2022_06_01_*`
   GROUP BY
-    client)
+    client
+)
 USING
   (client)
 GROUP BY

@@ -18,15 +18,18 @@ SELECT
   SUM(small_cls) / (SUM(small_cls) + SUM(medium_cls) + SUM(large_cls)) AS good_cls,
   SUM(medium_cls) / (SUM(small_cls) + SUM(medium_cls) + SUM(large_cls)) AS ni_cls,
   SUM(large_cls) / (SUM(small_cls) + SUM(medium_cls) + SUM(large_cls)) AS poor_cls
-FROM (
-  SELECT
-    IF(device = 'desktop', 'desktop', 'mobile') AS client,
-    CONCAT(origin, '/') AS url,
-    *
-  FROM
-    `chrome-ux-report.materialized.device_summary`
-  WHERE
-    date = '2021-07-01')
+FROM
+  (
+    SELECT
+      IF(device = 'desktop', 'desktop', 'mobile') AS client,
+      CONCAT(origin, '/'
+      ) AS url,
+      *
+    FROM
+      `chrome-ux-report.materialized.device_summary`
+    WHERE
+      date = '2021-07-01'
+  )
 JOIN (
   SELECT
     CASE
@@ -50,7 +53,8 @@ JOIN (
     `httparchive.almanac.requests`
   WHERE
     date = '2021-07-01' AND
-    firstHtml)
+    firstHtml
+)
 USING
   (client, url)
 JOIN (
@@ -63,7 +67,7 @@ JOIN (
     LOWER(category) = 'static site generator' OR
     app = 'Next.js' OR
     app = 'Nuxt.js'
-  )
+)
 USING (client, url)
 WHERE
   CDN IS NOT NULL

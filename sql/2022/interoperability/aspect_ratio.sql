@@ -28,20 +28,21 @@ SELECT
   COUNTIF(sets_aspect_ratio) AS sets_aspect_ratio,
   ANY_VALUE(total_pages) AS total_pages,
   COUNTIF(sets_aspect_ratio) / ANY_VALUE(total_pages) AS pct_sets_aspect_ratio
-FROM (
-  SELECT
-    client,
-    page,
-    COUNTIF(aspect_ratio) > 0 AS sets_aspect_ratio
-  FROM
-    `httparchive.almanac.parsed_css`,
-    UNNEST(getAspectRatio(css)) AS aspect_ratio
-  WHERE
-    date = '2022-07-01'
-  GROUP BY
-    client,
-    page
-)
+FROM
+  (
+    SELECT
+      client,
+      page,
+      COUNTIF(aspect_ratio) > 0 AS sets_aspect_ratio
+    FROM
+      `httparchive.almanac.parsed_css`,
+      UNNEST(getAspectRatio(css)) AS aspect_ratio
+    WHERE
+      date = '2022-07-01'
+    GROUP BY
+      client,
+      page
+  )
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,

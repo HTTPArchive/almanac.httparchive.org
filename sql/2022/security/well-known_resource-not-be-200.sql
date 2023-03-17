@@ -9,7 +9,8 @@ SELECT
   SAFE_DIVIDE(COUNTIF(status BETWEEN 200 AND 299), COUNT(DISTINCT page)) AS pct_status_200,
   COUNTIF(status NOT BETWEEN 200 AND 299) AS count_status_not_ok,
   SAFE_DIVIDE(COUNTIF(status NOT BETWEEN 200 AND 299), COUNT(DISTINCT page)) AS pct_status_not_ok
-FROM (
+FROM
+  (
     SELECT
       _TABLE_SUFFIX AS client,
       url AS page,
@@ -17,6 +18,6 @@ FROM (
       CAST(JSON_VALUE(JSON_VALUE(payload, '$._well-known'), '$."/.well-known/resource-that-should-not-exist-whose-status-code-should-not-be-200/".data.status') AS INT64) AS status
     FROM
       `httparchive.pages.2022_06_01_*`
-)
+  )
 GROUP BY
   client

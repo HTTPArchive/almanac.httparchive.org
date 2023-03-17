@@ -13,13 +13,14 @@ SELECT
   SUM(total_placeholder) AS total_placeholders,
   SUM(total_no_label) AS total_placeholder_with_no_label,
   SUM(total_no_label) / SUM(total_placeholder) AS pct_placeholders_with_no_label
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._a11y'), '$.placeholder_but_no_label.total_placeholder') AS INT64) AS total_placeholder,
-    CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._a11y'), '$.placeholder_but_no_label.total_no_label') AS INT64) AS total_no_label
-  FROM
-    `httparchive.pages.2020_08_01_*`
-)
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._a11y'), '$.placeholder_but_no_label.total_placeholder') AS INT64) AS total_placeholder,
+      CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._a11y'), '$.placeholder_but_no_label.total_no_label') AS INT64) AS total_no_label
+    FROM
+      `httparchive.pages.2020_08_01_*`
+  )
 GROUP BY
   client

@@ -82,30 +82,35 @@ try {
 
 SELECT
   *
-FROM (
-  SELECT
-    client,
-    property,
-    COUNT(DISTINCT page) AS pages,
-    SUM(freq) AS freq,
-    SUM(SUM(freq)) OVER (PARTITION BY client) AS total,
-    SUM(freq) / SUM(SUM(freq)) OVER (PARTITION BY client) AS pct
-  FROM (
+FROM
+  (
     SELECT
       client,
-      page,
-      prop.property,
-      prop.freq
+      property,
+      COUNT(DISTINCT page) AS pages,
+      SUM(freq) AS freq,
+      SUM(SUM(freq)) OVER (PARTITION BY client) AS total,
+      SUM(freq) / SUM(SUM(freq)) OVER (PARTITION BY client) AS pct
     FROM
-      `httparchive.almanac.parsed_css`,
-      UNNEST(getLogicalProperties(css)) AS prop
-    WHERE
-      date = '2020-08-01' AND
-      # Limit the size of the CSS to avoid OOM crashes.
-      LENGTH(css) < 0.1 * 1024 * 1024)
-  GROUP BY
-    client,
-    property)
+      (
+        SELECT
+          client,
+          page,
+          prop.property,
+          prop.freq
+        FROM
+          `httparchive.almanac.parsed_css`
+        ,
+          UNNEST(getLogicalProperties(css)) AS prop
+        WHERE
+          date = '2020-08-01' AND
+          # Limit the size of the CSS to avoid OOM crashes.
+          LENGTH(css) < 0.1 * 1024 * 1024
+      )
+    GROUP BY
+      client,
+      property
+  )
 WHERE
   pct >= 0.01
 ORDER BY

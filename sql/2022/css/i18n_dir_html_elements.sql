@@ -28,21 +28,23 @@ try {
 
 SELECT
   *
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    dir.element,
-    dir.value,
-    COUNT(0) AS freq,
-    SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX, dir.element) AS total,
-    COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX, dir.element) AS pct
-  FROM
-    `httparchive.pages.2022_07_01_*`, -- noqa: L062
-    UNNEST(getMarkupDirs(payload)) AS dir
-  GROUP BY
-    client,
-    element,
-    value)
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      dir.element,
+      dir.value,
+      COUNT(0) AS freq,
+      SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX, dir.element) AS total,
+      COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX, dir.element) AS pct
+    FROM
+      `httparchive.pages.2022_07_01_*`, -- noqa: L062
+      UNNEST(getMarkupDirs(payload)) AS dir
+    GROUP BY
+      client,
+      element,
+      value
+  )
 WHERE
   freq >= 100
 ORDER BY

@@ -30,22 +30,23 @@ SELECT
   APPROX_QUANTILES(hints.prerender, 1000)[OFFSET(percentile * 10)] AS prerender,
   APPROX_QUANTILES(hints.`dns-prefetch`, 1000)[OFFSET(percentile * 10)] AS dns_prefetch,
   APPROX_QUANTILES(hints.modulepreload, 1000)[OFFSET(percentile * 10)] AS modulepreload
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    url AS page,
-    getResourceHints(payload) AS hints
-  FROM
-    `httparchive.pages.2021_07_01_*`
-),
-UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
-JOIN (
+FROM
+  (
     SELECT
       _TABLE_SUFFIX AS client,
       url AS page,
-      rank AS _rank
+      getResourceHints(payload) AS hints
     FROM
-      `httparchive.summary_pages.2021_07_01_*`
+      `httparchive.pages.2021_07_01_*`
+  ),
+  UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
+JOIN (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    url AS page,
+    rank AS _rank
+  FROM
+    `httparchive.summary_pages.2021_07_01_*`
 )
 USING
   (client, page),

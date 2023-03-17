@@ -92,36 +92,41 @@ WITH totals AS (
 
 SELECT
   *
-FROM (
-  SELECT
-    client,
-    property,
-    COUNT(DISTINCT page) AS pages,
-    ANY_VALUE(total_pages) AS total_pages,
-    COUNT(DISTINCT page) / ANY_VALUE(total_pages) AS pct_pages,
-    SUM(freq) AS freq,
-    SUM(SUM(freq)) OVER (PARTITION BY client) AS total,
-    SUM(freq) / SUM(SUM(freq)) OVER (PARTITION BY client) AS pct
-  FROM (
+FROM
+  (
     SELECT
       client,
-      page,
-      prop.property,
-      prop.freq
+      property,
+      COUNT(DISTINCT page) AS pages,
+      ANY_VALUE(total_pages) AS total_pages,
+      COUNT(DISTINCT page) / ANY_VALUE(total_pages) AS pct_pages,
+      SUM(freq) AS freq,
+      SUM(SUM(freq)) OVER (PARTITION BY client) AS total,
+      SUM(freq) / SUM(SUM(freq)) OVER (PARTITION BY client) AS pct
     FROM
-      `httparchive.almanac.parsed_css`,
-      UNNEST(getLogicalProperties(css)) AS prop
-    WHERE
-      date = '2022-07-01' AND
-      # Limit the size of the CSS to avoid OOM crashes.
-      LENGTH(css) < 0.1 * 1024 * 1024)
-  JOIN
-    totals
-  USING
-    (client)
-  GROUP BY
-    client,
-    property)
+      (
+        SELECT
+          client,
+          page,
+          prop.property,
+          prop.freq
+        FROM
+          `httparchive.almanac.parsed_css`
+        ,
+          UNNEST(getLogicalProperties(css)) AS prop
+        WHERE
+          date = '2022-07-01' AND
+          # Limit the size of the CSS to avoid OOM crashes.
+          LENGTH(css) < 0.1 * 1024 * 1024
+      )
+    JOIN
+      totals
+    USING
+      (client)
+    GROUP BY
+      client,
+      property
+  )
 WHERE
   pct >= 0.01
 ORDER BY

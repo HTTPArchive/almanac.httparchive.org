@@ -41,17 +41,18 @@ SELECT
   COUNT(0) AS freq,
   SUM(COUNT(0)) OVER (PARTITION BY client) AS total_freq,
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct_freq
-FROM (
-  SELECT
-    client,
-    page,
-    contain
-  FROM
-    `httparchive.almanac.parsed_css`,
-    UNNEST(getContaine(css)) AS contain
-  WHERE
-    date = '2022-07-01'
-)
+FROM
+  (
+    SELECT
+      client,
+      page,
+      contain
+    FROM
+      `httparchive.almanac.parsed_css`,
+      UNNEST(getContaine(css)) AS contain
+    WHERE
+      date = '2022-07-01'
+  )
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,

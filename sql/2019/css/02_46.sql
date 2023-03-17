@@ -1,7 +1,9 @@
 #standardSQL
 # 02_46: Distribution of selector class length
 CREATE TEMPORARY FUNCTION getClassChainLengths(css STRING)
-RETURNS ARRAY<INT64> LANGUAGE js AS '''
+RETURNS ARRAY<INT64>
+LANGUAGE js
+AS '''
 try {
   var reduceValues = (values, rule) => {
     if ('rules' in rule) {

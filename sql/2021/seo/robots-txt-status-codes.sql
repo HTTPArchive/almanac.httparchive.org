@@ -5,7 +5,9 @@
 CREATE TEMPORARY FUNCTION getRobotsStatusInfo(robots_txt_string STRING)
 RETURNS STRUCT<
   status_code STRING
-> LANGUAGE js AS '''
+>
+LANGUAGE js
+AS '''
 var result = {};
 try {
     var robots_txt = JSON.parse(robots_txt_string);

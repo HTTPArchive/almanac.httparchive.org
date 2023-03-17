@@ -1,6 +1,8 @@
 #standardSQL
 CREATE TEMPORARY FUNCTION getMixinUsage(payload STRING) RETURNS
-ARRAY<STRUCT<mixin STRING, freq INT64>> LANGUAGE js AS '''
+ARRAY<STRUCT<mixin STRING, freq INT64>>
+LANGUAGE js
+AS '''
 try {
   var $ = JSON.parse(payload);
   var scss = JSON.parse($['_sass']);
@@ -18,24 +20,29 @@ try {
 
 SELECT
   *
-FROM (
-  SELECT
-    client,
-    mixin,
-    SUM(freq) AS freq,
-    SUM(SUM(freq)) OVER (PARTITION BY client) AS total,
-    SUM(freq) / SUM(SUM(freq)) OVER (PARTITION BY client) AS pct
-  FROM (
+FROM
+  (
     SELECT
-      _TABLE_SUFFIX AS client,
-      mixin.mixin,
-      mixin.freq
+      client,
+      mixin,
+      SUM(freq) AS freq,
+      SUM(SUM(freq)) OVER (PARTITION BY client) AS total,
+      SUM(freq) / SUM(SUM(freq)) OVER (PARTITION BY client) AS pct
     FROM
-      `httparchive.pages.2021_07_01_*`,
-      UNNEST(getMixinUsage(payload)) AS mixin)
-  GROUP BY
-    client,
-    mixin)
+      (
+        SELECT
+          _TABLE_SUFFIX AS client,
+          mixin.mixin,
+          mixin.freq
+        FROM
+          `httparchive.pages.2021_07_01_*`
+        ,
+          UNNEST(getMixinUsage(payload)) AS mixin
+      )
+    GROUP BY
+      client,
+      mixin
+  )
 WHERE
   freq >= 1000
 ORDER BY

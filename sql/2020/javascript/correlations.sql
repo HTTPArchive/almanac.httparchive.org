@@ -10,13 +10,15 @@ SELECT
   CORR(performance_score, num_async_scripts) AS num_async_scripts_on_performance_score,
   CORR(accessibility_score, num_async_scripts) AS num_async_scripts_on_accessibility_score,
   CORR(tbt, num_async_scripts) AS num_async_scripts_on_tbt
-FROM (
-  SELECT
-    pageid,
-    url AS page,
-    bytesJs
-  FROM
-    `httparchive.summary_pages.2020_09_01_mobile`)
+FROM
+  (
+    SELECT
+      pageid,
+      url AS page,
+      bytesJs
+    FROM
+      `httparchive.summary_pages.2020_09_01_mobile`
+  )
 JOIN (
   SELECT
     url AS page,
@@ -24,7 +26,8 @@ JOIN (
     SAFE_CAST(JSON_EXTRACT_SCALAR(report, '$.categories.accessibility.score') AS FLOAT64) AS accessibility_score,
     SAFE_CAST(JSON_EXTRACT_SCALAR(report, "$.audits['total-blocking-time'].numericValue") AS FLOAT64) AS tbt
   FROM
-    `httparchive.lighthouse.2020_09_01_mobile`)
+    `httparchive.lighthouse.2020_09_01_mobile`
+)
 USING
   (page)
 JOIN (
@@ -37,7 +40,8 @@ JOIN (
     type = 'script' AND
     NET.HOST(url) IN (SELECT domain FROM `httparchive.almanac.third_parties` WHERE date = '2020-08-01' AND category != 'hosting')
   GROUP BY
-    pageid)
+    pageid
+)
 USING
   (pageid)
 JOIN (
@@ -45,6 +49,7 @@ JOIN (
     url AS page,
     SAFE_CAST(JSON_EXTRACT_SCALAR(payload, '$._num_scripts_async') AS INT64) AS num_async_scripts
   FROM
-    `httparchive.pages.2020_09_01_mobile`)
+    `httparchive.pages.2020_09_01_mobile`
+)
 USING
   (page)

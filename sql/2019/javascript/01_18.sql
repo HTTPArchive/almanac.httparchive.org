@@ -15,23 +15,25 @@ SELECT
   ROUND(COUNTIF(weakmap > 0) * 100 / COUNT(0), 2) AS pct_weakmap,
   COUNTIF(weakset > 0) AS weakset,
   ROUND(COUNTIF(weakset > 0) * 100 / COUNT(0), 2) AS pct_weakset
-FROM (
-  SELECT
-    client,
-    COUNTIF(body LIKE '%Atomics.%') AS atomics,
-    COUNTIF(body LIKE '%new Intl.%') AS intl,
-    COUNTIF(body LIKE '%new Proxy%') AS proxy,
-    COUNTIF(body LIKE '%new SharedArrayBuffer(%') AS sharedarraybuffer,
-    COUNTIF(body LIKE '%new WeakMap%') AS weakmap,
-    COUNTIF(body LIKE '%new WeakSet%') AS weakset
-  FROM
-    `httparchive.almanac.summary_response_bodies`
-  WHERE
-    date = '2019-07-01' AND
-    type = 'script'
-  GROUP BY
-    client,
-    page)
+FROM
+  (
+    SELECT
+      client,
+      COUNTIF(body LIKE '%Atomics.%') AS atomics,
+      COUNTIF(body LIKE '%new Intl.%') AS intl,
+      COUNTIF(body LIKE '%new Proxy%') AS proxy,
+      COUNTIF(body LIKE '%new SharedArrayBuffer(%') AS sharedarraybuffer,
+      COUNTIF(body LIKE '%new WeakMap%') AS weakmap,
+      COUNTIF(body LIKE '%new WeakSet%') AS weakset
+    FROM
+      `httparchive.almanac.summary_response_bodies`
+    WHERE
+      date = '2019-07-01' AND
+      type = 'script'
+    GROUP BY
+      client,
+      page
+  )
 GROUP BY
   client
 ORDER BY

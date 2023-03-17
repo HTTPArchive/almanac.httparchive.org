@@ -1,7 +1,9 @@
 #standardSQL
 # 02_08: % of sites that use classes or IDs in selectors
 CREATE TEMPORARY FUNCTION getSelectorType(css STRING)
-RETURNS STRUCT<class BOOLEAN, id BOOLEAN> LANGUAGE js AS '''
+RETURNS STRUCT<class BOOLEAN, id BOOLEAN>
+LANGUAGE js
+AS '''
 try {
   var reduceValues = (values, rule) => {
     if ('rules' in rule) {
@@ -36,23 +38,27 @@ SELECT
   total,
   ROUND(COUNTIF(class > 0) * 100 / total, 2) AS pct_class,
   ROUND(COUNTIF(id > 0) * 100 / total, 2) AS pct_id
-FROM (
-  SELECT
-    client,
-    COUNTIF(type.class) AS class,
-    COUNTIF(type.id) AS id
-  FROM (
+FROM
+  (
     SELECT
       client,
-      page,
-      getSelectorType(css) AS type
+      COUNTIF(type.class) AS class,
+      COUNTIF(type.id) AS id
     FROM
-      `httparchive.almanac.parsed_css`
-    WHERE
-      date = '2019-07-01')
-  GROUP BY
-    client,
-    page)
+      (
+        SELECT
+          client,
+          page,
+          getSelectorType(css) AS type
+        FROM
+          `httparchive.almanac.parsed_css`
+        WHERE
+          date = '2019-07-01'
+      )
+    GROUP BY
+      client,
+      page
+  )
 JOIN
   (SELECT _TABLE_SUFFIX AS client, COUNT(0) AS total FROM `httparchive.summary_pages.2019_07_01_*` GROUP BY client)
 USING

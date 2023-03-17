@@ -21,11 +21,13 @@ SELECT
   SUM(script.inline) / SUM(script.total) AS pct_inline_script,
   APPROX_QUANTILES(SAFE_DIVIDE(script.src, script.total), 1000)[OFFSET(500)] AS median_external,
   APPROX_QUANTILES(SAFE_DIVIDE(script.inline, script.total), 1000)[OFFSET(500)] AS median_inline
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    getScripts(payload) AS script
-  FROM
-    `httparchive.pages.2022_06_01_*`)
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      getScripts(payload) AS script
+    FROM
+      `httparchive.pages.2022_06_01_*`
+  )
 GROUP BY
   client

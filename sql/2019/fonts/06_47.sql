@@ -1,7 +1,9 @@
 #standardSQL
 # 06_47: % of pages linking to a Google Fonts stylesheet as first item in <head>
 CREATE TEMP FUNCTION preloadsGoogleFontFirst(payload STRING)
-RETURNS BOOLEAN LANGUAGE js AS '''
+RETURNS BOOLEAN
+LANGUAGE js
+AS '''
   try {
     var $ = JSON.parse(payload);
     var almanac = JSON.parse($._almanac);

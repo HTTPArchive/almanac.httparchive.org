@@ -1,7 +1,9 @@
 #standardSQL
 # 03_06: Elements per page
 CREATE TEMPORARY FUNCTION countElements(payload STRING)
-RETURNS INT64 LANGUAGE js AS '''
+RETURNS INT64
+LANGUAGE js
+AS '''
 try {
   var $ = JSON.parse(payload);
   var elements = JSON.parse($._element_count);
@@ -20,13 +22,15 @@ SELECT
   CAST(ROUND(AVG(elements)) AS INT64) AS avg,
   MIN(elements) AS min,
   MAX(elements) AS max
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    url,
-    countElements(payload) AS elements
-  FROM
-    `httparchive.pages.2019_07_01_*`),
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      url,
+      countElements(payload) AS elements
+    FROM
+      `httparchive.pages.2019_07_01_*`
+  ),
   UNNEST([10, 25, 50, 75, 90]) AS percentile
 GROUP BY
   percentile,

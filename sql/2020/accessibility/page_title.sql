@@ -10,13 +10,14 @@ SELECT
   COUNTIF(total_title_words > 0) / COUNT(0) AS pct_with_title,
   COUNTIF(total_title_words > 3) / COUNTIF(total_title_words > 0) AS pct_titles_four_or_more_words,
   COUNTIF(title_changed_on_render) / COUNTIF(total_title_words > 0) AS pct_titles_changed_on_render
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies'), '$.title.title_changed_on_render') AS BOOL) AS title_changed_on_render,
-    CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies'), '$.title.rendered.primary.words') AS INT64) AS total_title_words
-  FROM
-    `httparchive.pages.2020_08_01_*`
-)
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies'), '$.title.title_changed_on_render') AS BOOL) AS title_changed_on_render,
+      CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies'), '$.title.rendered.primary.words') AS INT64) AS total_title_words
+    FROM
+      `httparchive.pages.2020_08_01_*`
+  )
 GROUP BY
   client

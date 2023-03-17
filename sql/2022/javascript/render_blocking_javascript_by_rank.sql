@@ -19,14 +19,15 @@ WITH render_blocking_scripts AS (
     url,
     rank,
     number_of_render_blocking_scripts
-  FROM (
-    SELECT
-      _TABLE_SUFFIX AS client,
-      url,
-      getRenderBlockingScripts(payload) AS number_of_render_blocking_scripts
-    FROM
-      `httparchive.pages.2022_06_01_*`
-  )
+  FROM
+    (
+      SELECT
+        _TABLE_SUFFIX AS client,
+        url,
+        getRenderBlockingScripts(payload) AS number_of_render_blocking_scripts
+      FROM
+        `httparchive.pages.2022_06_01_*`
+    )
   JOIN (
     SELECT
       _TABLE_SUFFIX AS client,

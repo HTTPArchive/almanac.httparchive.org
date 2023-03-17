@@ -4,7 +4,9 @@
 ## $4.11 run
 
 CREATE TEMPORARY FUNCTION getImageDimensions(payload STRING)
-RETURNS ARRAY<STRUCT<height INT64, width INT64>> LANGUAGE js AS '''
+RETURNS ARRAY<STRUCT<height INT64, width INT64>>
+LANGUAGE js
+AS '''
 try {
   var $ = JSON.parse(payload);
   var images = JSON.parse($._Images);

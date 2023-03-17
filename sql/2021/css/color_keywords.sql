@@ -168,16 +168,18 @@ SELECT
   SUM(value) AS freq,
   SUM(SUM(value)) OVER (PARTITION BY client) AS total,
   SUM(value) / SUM(SUM(value)) OVER (PARTITION BY client) AS pct
-FROM (
-  SELECT
-    client,
-    keyword.name,
-    keyword.value
-  FROM
-    `httparchive.almanac.parsed_css`,
-    UNNEST(getColorKeywords(css)) AS keyword
-  WHERE
-    date = '2021-07-01')
+FROM
+  (
+    SELECT
+      client,
+      keyword.name,
+      keyword.value
+    FROM
+      `httparchive.almanac.parsed_css`,
+      UNNEST(getColorKeywords(css)) AS keyword
+    WHERE
+      date = '2021-07-01'
+  )
 GROUP BY
   client,
   keyword

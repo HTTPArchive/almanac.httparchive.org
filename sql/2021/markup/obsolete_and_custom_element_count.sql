@@ -8,7 +8,9 @@ RETURNS STRUCT<
   contains_obsolete_element BOOL,
   contains_details_element BOOL,
   contains_summary_element BOOL
-> LANGUAGE js AS '''
+>
+LANGUAGE js
+AS '''
 var result = {};
 try {
     if (!element_count_string) return result;

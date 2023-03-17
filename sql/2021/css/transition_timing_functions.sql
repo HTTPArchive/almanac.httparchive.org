@@ -99,30 +99,35 @@ try {
 
 SELECT
   *
-FROM (
-  SELECT
-    client,
-    fn,
-    COUNT(DISTINCT page) AS pages,
-    SUM(freq) AS freq,
-    SUM(SUM(freq)) OVER (PARTITION BY client) AS total,
-    SUM(freq) / SUM(SUM(freq)) OVER (PARTITION BY client) AS pct
-  FROM (
+FROM
+  (
     SELECT
       client,
-      page,
-      transition.fn,
-      transition.freq
+      fn,
+      COUNT(DISTINCT page) AS pages,
+      SUM(freq) AS freq,
+      SUM(SUM(freq)) OVER (PARTITION BY client) AS total,
+      SUM(freq) / SUM(SUM(freq)) OVER (PARTITION BY client) AS pct
     FROM
-      `httparchive.almanac.parsed_css`,
-      UNNEST(getTimingFunctions(css)) AS transition
-    WHERE
-      date = '2021-07-01' AND
-      # Limit the size of the CSS to avoid OOM crashes.
-      LENGTH(css) < 0.1 * 1024 * 1024)
-  GROUP BY
-    client,
-    fn)
+      (
+        SELECT
+          client,
+          page,
+          transition.fn,
+          transition.freq
+        FROM
+          `httparchive.almanac.parsed_css`
+        ,
+          UNNEST(getTimingFunctions(css)) AS transition
+        WHERE
+          date = '2021-07-01' AND
+          # Limit the size of the CSS to avoid OOM crashes.
+          LENGTH(css) < 0.1 * 1024 * 1024
+      )
+    GROUP BY
+      client,
+      fn
+  )
 WHERE
   pct >= 0.01
 ORDER BY

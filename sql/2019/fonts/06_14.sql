@@ -1,7 +1,9 @@
 #standardSQL
 # 06_14: % of pages that declare a font with unicode-range
 CREATE TEMPORARY FUNCTION getFonts(css STRING)
-RETURNS ARRAY<STRING> LANGUAGE js AS '''
+RETURNS ARRAY<STRING>
+LANGUAGE js
+AS '''
 try {
   var reduceValues = (values, rule) => {
     if ('rules' in rule) {
@@ -33,17 +35,19 @@ SELECT
   COUNTIF(ranges > 0) AS freq,
   total,
   ROUND(COUNTIF(ranges > 0) * 100 / total, 2) AS pct
-FROM (
-  SELECT
-    client,
-    SUM(ARRAY_LENGTH(getFonts(css))) AS ranges
-  FROM
-    `httparchive.almanac.parsed_css`
-  WHERE
-    date = '2019-07-01'
-  GROUP BY
-    client,
-    page)
+FROM
+  (
+    SELECT
+      client,
+      SUM(ARRAY_LENGTH(getFonts(css))) AS ranges
+    FROM
+      `httparchive.almanac.parsed_css`
+    WHERE
+      date = '2019-07-01'
+    GROUP BY
+      client,
+      page
+  )
 JOIN
   (SELECT _TABLE_SUFFIX AS client, COUNT(0) AS total FROM `httparchive.summary_pages.2019_07_01_*` GROUP BY _TABLE_SUFFIX)
 USING

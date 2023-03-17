@@ -4,7 +4,9 @@
 
 # returns all the data we need from _almanac
 CREATE TEMPORARY FUNCTION get_almanac_html_dir(almanac_string STRING)
-RETURNS STRING LANGUAGE js AS '''
+RETURNS STRING
+LANGUAGE js
+AS '''
 try {
     var almanac = JSON.parse(almanac_string);
 

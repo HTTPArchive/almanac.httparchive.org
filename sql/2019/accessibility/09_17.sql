@@ -1,7 +1,9 @@
 #standardSQL
 # 09_17: % pages using tables with headings
 CREATE TEMPORARY FUNCTION getTableInfo(payload STRING)
-RETURNS STRUCT<has_table BOOLEAN, has_th BOOLEAN> LANGUAGE js AS '''
+RETURNS STRUCT<has_table BOOLEAN, has_th BOOLEAN>
+LANGUAGE js
+AS '''
 try {
   var $ = JSON.parse(payload);
   var elements = JSON.parse($._element_count);

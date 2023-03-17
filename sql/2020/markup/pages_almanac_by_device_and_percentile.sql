@@ -10,7 +10,9 @@ RETURNS STRUCT<
   none_jsonld_scripts_total INT64,
   src_scripts_total INT64,
   inline_scripts_total INT64
-> LANGUAGE js AS '''
+>
+LANGUAGE js
+AS '''
 var result = {};
 try {
     var almanac = JSON.parse(almanac_string);
@@ -45,16 +47,17 @@ SELECT
   # src scripts
   APPROX_QUANTILES(almanac_info.src_scripts_total, 1000)[OFFSET(percentile * 10)] AS src_scripts_count_m209
 
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    percentile,
-    url,
-    get_almanac_info(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS almanac_info
-  FROM
-    `httparchive.pages.2020_08_01_*`,
-    UNNEST([10, 25, 50, 75, 90]) AS percentile
-)
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      percentile,
+      url,
+      get_almanac_info(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS almanac_info
+    FROM
+      `httparchive.pages.2020_08_01_*`,
+      UNNEST([10, 25, 50, 75, 90]) AS percentile
+  )
 GROUP BY
   percentile,
   client

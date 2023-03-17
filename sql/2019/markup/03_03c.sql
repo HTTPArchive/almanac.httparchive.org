@@ -1,7 +1,9 @@
 #standardSQL
 # 03_03c: % of pages having custom elements
 CREATE TEMPORARY FUNCTION getCustomElements(payload STRING)
-RETURNS ARRAY<STRING> LANGUAGE js AS '''
+RETURNS ARRAY<STRING>
+LANGUAGE js
+AS '''
 try {
   var $ = JSON.parse(payload);
   var elements = JSON.parse($._element_count);
