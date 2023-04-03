@@ -775,10 +775,10 @@ The enormous disparity between desktop and mobile users' INP experiences is much
 To see how unevenly distributed INP performance is across the web, it's useful to segment websites by their popularity ranking.
 
 {{ figure_markup(
-  image="inp-performance-by-rank.png",
-  caption="INP performance by rank.",
+  image="inp-mobile-performance-by-rank.png",
+  caption="Mobile INP performance by rank.",
   description="Stacked bar chart showing INP performance on mobile devices segmented by rank. The top 1,000 sites have 27% of good INP experiences, 52% have needs improvement INP experiences, and 20% have poor INP experiences. For the top 10,000 sites it's 25%, 50%, and 24% respectively, for the top 100,000 sites it's 31%, 50%, and 18%, for the top 1,000,000 sites it's 42%, 46%, and 12%, and finally for all sites it's 55% of good, 27% of needs improvement, and 5% of poor experiences.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR-dJP3uphZoGE5A_luniNBFm5V2ww6irfOxANg0hrMid7gjgrtchsN_utOIDOvVZUjIwpmUBb27nHF/pubchart?oid=1730743352&format=interactive",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR-dJP3uphZoGE5A_luniNBFm5V2ww6irfOxANg0hrMid7gjgrtchsN_utOIDOvVZUjIwpmUBb27nHF/pubchart?oid=1034889047&format=interactive",
   sheets_gid="805166525",
   sql_file="web_vitals_by_rank_and_device.sql"
   )
