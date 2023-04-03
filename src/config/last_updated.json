@@ -41,8 +41,8 @@
   },
   "/static/js/web-vitals.js": {
     "date_published": "2020-11-13T00:00:00.000Z",
-    "date_modified": "2023-01-14T00:00:00.000Z",
-    "hash": "dfedc4c6e9b5f5c4654caffe0b595a1f"
+    "date_modified": "2023-04-03T00:00:00.000Z",
+    "hash": "ce6cd33b3f58914e6e9478e728e57420"
   },
   "/static/js/webmentions.js": {
     "date_published": "2021-12-01T00:00:00.000Z",
@@ -51,122 +51,122 @@
   },
   "/static/pdfs/web_almanac_2019_en.pdf": {
     "date_published": "2020-05-15T00:00:00.000Z",
-    "date_modified": "2023-01-14T00:00:00.000Z",
-    "hash": "5300406c7f2547d1adfdc623eef0cd1a",
+    "date_modified": "2023-04-03T00:00:00.000Z",
+    "hash": "ceb25c9e651088abfb7438ede1c2648d",
     "size": 17
   },
   "/static/pdfs/web_almanac_2019_en_cover_A5.pdf": {
     "date_published": "2020-05-15T00:00:00.000Z",
-    "date_modified": "2023-01-14T00:00:00.000Z",
-    "hash": "72fbf432c9b82f1793c83269f00ea39d"
+    "date_modified": "2023-04-03T00:00:00.000Z",
+    "hash": "419b1b3851f7bfb0326e47be21c70ee9"
   },
   "/static/pdfs/web_almanac_2019_en_print_A5.pdf": {
     "date_published": "2020-05-15T00:00:00.000Z",
-    "date_modified": "2023-01-14T00:00:00.000Z",
-    "hash": "29e7d7ea891a8d4260ca74f7012f459f",
+    "date_modified": "2023-04-03T00:00:00.000Z",
+    "hash": "5ec39c6aca096b10ba46077cf8cff449",
     "size": 16
   },
   "/static/pdfs/web_almanac_2019_ja.pdf": {
     "date_published": "2020-05-15T00:00:00.000Z",
-    "date_modified": "2023-01-14T00:00:00.000Z",
-    "hash": "82ba34cf36a550d20434a2e0ef008bab",
+    "date_modified": "2023-04-03T00:00:00.000Z",
+    "hash": "e1c1f8390d7889e3c0be08fd23760f25",
     "size": 17
   },
   "/static/pdfs/web_almanac_2019_ja_cover_A5.pdf": {
     "date_published": "2020-05-15T00:00:00.000Z",
-    "date_modified": "2023-01-14T00:00:00.000Z",
-    "hash": "2bb24bacaf62614fd3e823c884771917"
+    "date_modified": "2023-04-03T00:00:00.000Z",
+    "hash": "a04a14c307d592b2dfb29f5632bde84a"
   },
   "/static/pdfs/web_almanac_2019_ja_print_A5.pdf": {
     "date_published": "2020-05-15T00:00:00.000Z",
-    "date_modified": "2023-01-14T00:00:00.000Z",
-    "hash": "7bda396a339078f32a02bdcfc8d77fa1",
+    "date_modified": "2023-04-03T00:00:00.000Z",
+    "hash": "5061758a27eb9ee66ac87bd738d00c4a",
     "size": 17
   },
   "/static/pdfs/web_almanac_2020_en.pdf": {
     "date_published": "2020-12-08T00:00:00.000Z",
-    "date_modified": "2023-01-14T00:00:00.000Z",
-    "hash": "9bbad00dff6da92a911ce8fb862a11e4",
+    "date_modified": "2023-04-03T00:00:00.000Z",
+    "hash": "f6e654b0a4c6491c60ab58048ae225de",
     "size": 24
   },
   "/static/pdfs/web_almanac_2020_en_cover_A5.pdf": {
     "date_published": "2020-12-09T00:00:00.000Z",
-    "date_modified": "2023-01-14T00:00:00.000Z",
-    "hash": "ec659b063bd1ad9712679076d698a666"
+    "date_modified": "2023-04-03T00:00:00.000Z",
+    "hash": "6161191221dc09cd9083c3969bee9759"
   },
   "/static/pdfs/web_almanac_2020_en_print_A5.pdf": {
     "date_published": "2020-12-09T00:00:00.000Z",
-    "date_modified": "2023-01-14T00:00:00.000Z",
-    "hash": "e10b959a9f9888ce49430bf1dc4e4f9b",
+    "date_modified": "2023-04-03T00:00:00.000Z",
+    "hash": "9e92beac2bf4f873499e158e4a476360",
     "size": 24
   },
   "/static/pdfs/web_almanac_2020_ja.pdf": {
     "date_published": "2021-10-24T00:00:00.000Z",
-    "date_modified": "2023-01-14T00:00:00.000Z",
-    "hash": "8828045f125bc895ca272eab649cf703",
+    "date_modified": "2023-04-03T00:00:00.000Z",
+    "hash": "3bbb9c3080c82ee3999fb13a7300b645",
     "size": 25
   },
   "/static/pdfs/web_almanac_2020_ja_cover_A5.pdf": {
     "date_published": "2021-10-24T00:00:00.000Z",
-    "date_modified": "2023-01-14T00:00:00.000Z",
-    "hash": "d9efc6c6a61b1b6d487caaf17524d760"
+    "date_modified": "2023-04-03T00:00:00.000Z",
+    "hash": "8652627b6a13e6d70ce6436400d43836"
   },
   "/static/pdfs/web_almanac_2020_ja_print_A5.pdf": {
     "date_published": "2021-10-24T00:00:00.000Z",
-    "date_modified": "2023-01-14T00:00:00.000Z",
-    "hash": "ebd47704b5ff57c690a119ccc5a12dcc",
+    "date_modified": "2023-04-03T00:00:00.000Z",
+    "hash": "fea84cb89f93007d2a295f56fa987006",
     "size": 24
   },
   "/static/pdfs/web_almanac_2021_en.pdf": {
     "date_published": "2021-12-01T00:00:00.000Z",
-    "date_modified": "2023-01-14T00:00:00.000Z",
-    "hash": "e75d5d876f178e14f36d1f017e39c656",
+    "date_modified": "2023-04-03T00:00:00.000Z",
+    "hash": "d170d2e8ba837f979e0e01f397c51d8d",
     "size": 32
   },
   "/static/pdfs/web_almanac_2021_en_cover_A5.pdf": {
     "date_published": "2021-12-01T00:00:00.000Z",
-    "date_modified": "2023-01-14T00:00:00.000Z",
-    "hash": "40692e277efa65d7b5732a1c73f541d2"
+    "date_modified": "2023-04-03T00:00:00.000Z",
+    "hash": "dea0deeefb9d9e9ab7d70e9e307c3e8f"
   },
   "/static/pdfs/web_almanac_2021_en_print_A5.pdf": {
     "date_published": "2021-12-01T00:00:00.000Z",
-    "date_modified": "2023-01-14T00:00:00.000Z",
-    "hash": "eeb987490edaa3cab26c2d003bcc21c5",
+    "date_modified": "2023-04-03T00:00:00.000Z",
+    "hash": "69da17ae6dbe75dc70b818a41d7da6eb",
     "size": 31
   },
   "/static/pdfs/web_almanac_2021_ja.pdf": {
     "date_published": "22-08-01T00:00:00.000Z",
-    "date_modified": "2023-01-14T00:00:00.000Z",
-    "hash": "69f48f801106e8bf2463acd57e484e97",
+    "date_modified": "2023-04-03T00:00:00.000Z",
+    "hash": "f896a77cdb6e9b5940ffae848e2c2e45",
     "size": 32
   },
   "/static/pdfs/web_almanac_2021_ja_cover_A5.pdf": {
     "date_published": "22-08-01T00:00:00.000Z",
-    "date_modified": "2023-01-14T00:00:00.000Z",
-    "hash": "751de58571813f473814834f19259a98"
+    "date_modified": "2023-04-03T00:00:00.000Z",
+    "hash": "9fcbc415494ce27453b3c47d5e6f5c63"
   },
   "/static/pdfs/web_almanac_2021_ja_print_A5.pdf": {
     "date_published": "22-08-01T00:00:00.000Z",
-    "date_modified": "2023-01-14T00:00:00.000Z",
-    "hash": "2ae673698bb31b4f7c1b639a096ce542",
+    "date_modified": "2023-04-03T00:00:00.000Z",
+    "hash": "3d93513d80538a2a4541f92608b6afdf",
     "size": 32
   },
   "/static/pdfs/web_almanac_2022_en.pdf": {
     "date_published": "2022-10-19T00:00:00.000Z",
-    "date_modified": "2023-01-14T00:00:00.000Z",
-    "hash": "bc1be345e900cc36a205671ae5d66fa5",
+    "date_modified": "2023-04-03T00:00:00.000Z",
+    "hash": "265a05068f1d6e3fda98c082c681d084",
     "size": 32
   },
   "/static/pdfs/web_almanac_2022_en_cover_A5.pdf": {
     "date_published": "2022-10-19T00:00:00.000Z",
-    "date_modified": "2023-01-14T00:00:00.000Z",
-    "hash": "e3901ee6c180bdbb3df04813cf94f166"
+    "date_modified": "2023-04-03T00:00:00.000Z",
+    "hash": "4d2648668a6fc8eb9d5da552fd4c2413"
   },
   "/static/pdfs/web_almanac_2022_en_print_A5.pdf": {
     "date_published": "2022-10-19T00:00:00.000Z",
-    "date_modified": "2023-01-14T00:00:00.000Z",
-    "hash": "37cedc85c6a2efe3e2365d228cb0152e",
-    "size": 32
+    "date_modified": "2023-04-03T00:00:00.000Z",
+    "hash": "f0614a4dcb25ad5282e928e0c68459be",
+    "size": 31
   },
   "en/2019/chapters/accessibility.html": {
     "date_published": "2019-11-11T00:00:00.000Z",
@@ -285,8 +285,8 @@
   },
   "en/2019/methodology.html": {
     "date_published": "2019-11-04T00:00:00.000Z",
-    "date_modified": "2022-09-26T00:00:00.000Z",
-    "hash": "c781bbec58e94f65cd874e06d1edf278"
+    "date_modified": "2023-04-03T00:00:00.000Z",
+    "hash": "fdb1802a376a8632b8ce97609ed10b22"
   },
   "en/2019/table_of_contents.html": {
     "date_published": "2019-11-04T00:00:00.000Z",
@@ -335,8 +335,8 @@
   },
   "en/2020/chapters/http.html": {
     "date_published": "2020-12-09T00:00:00.000Z",
-    "date_modified": "2022-12-12T00:00:00.000Z",
-    "hash": "404923d998705dabb1fc367f09f14639"
+    "date_modified": "2023-04-03T00:00:00.000Z",
+    "hash": "caa83faf533866f522af6982dfeff0cd"
   },
   "en/2020/chapters/jamstack.html": {
     "date_published": "2020-12-09T00:00:00.000Z",
@@ -355,8 +355,8 @@
   },
   "en/2020/chapters/media.html": {
     "date_published": "2020-12-09T00:00:00.000Z",
-    "date_modified": "2022-04-29T00:00:00.000Z",
-    "hash": "e34780075e682d13e8b69456981c4bdd"
+    "date_modified": "2023-04-03T00:00:00.000Z",
+    "hash": "fd4e41c269e90a43581b4e84efb6de6a"
   },
   "en/2020/chapters/mobile-web.html": {
     "date_published": "2020-12-09T00:00:00.000Z",
@@ -420,23 +420,23 @@
   },
   "en/2020/methodology.html": {
     "date_published": "2020-10-24T00:00:00.000Z",
-    "date_modified": "2022-09-26T00:00:00.000Z",
-    "hash": "6c42582ed7e36839f1e318b617639fd4"
+    "date_modified": "2023-04-03T00:00:00.000Z",
+    "hash": "53d84e98374316485b1a0d89a03225dc"
   },
   "en/2020/stories/content_distribution.html": {
     "date_published": "2021-01-18T00:00:00.000Z",
-    "date_modified": "2022-04-29T00:00:00.000Z",
-    "hash": "6ceac0d9fac8e0782488ac4e930e0003"
+    "date_modified": "2023-04-03T00:00:00.000Z",
+    "hash": "f891df6f93db3359f4d00f010ede0891"
   },
   "en/2020/stories/content_publishing.html": {
     "date_published": "2021-01-13T00:00:00.000Z",
-    "date_modified": "2022-04-29T00:00:00.000Z",
-    "hash": "8595194c157490ae2985620a6d477dcc"
+    "date_modified": "2023-04-03T00:00:00.000Z",
+    "hash": "0163cbc6587659d9bb74eaadda3d15e4"
   },
   "en/2020/stories/page_content.html": {
     "date_published": "2020-12-22T00:00:00.000Z",
-    "date_modified": "2021-11-17T00:00:00.000Z",
-    "hash": "da3daf83d6881a3529669dd277a7e0e5"
+    "date_modified": "2023-04-03T00:00:00.000Z",
+    "hash": "bd52befefea6fea2ee6e4263a176da4b"
   },
   "en/2020/stories/user_experience.html": {
     "date_published": "2021-01-07T00:00:00.000Z",
@@ -450,8 +450,8 @@
   },
   "en/2021/chapters/accessibility.html": {
     "date_published": "2021-12-01T00:00:00.000Z",
-    "date_modified": "2022-12-12T00:00:00.000Z",
-    "hash": "05af95027861bc54598ff6a30f2a4274"
+    "date_modified": "2023-04-03T00:00:00.000Z",
+    "hash": "f0e6b7c5a16ceb1d8a0f447e8e4e9c18"
   },
   "en/2021/chapters/caching.html": {
     "date_published": "2021-12-15T00:00:00.000Z",
@@ -545,8 +545,8 @@
   },
   "en/2021/chapters/security.html": {
     "date_published": "2021-12-01T00:00:00.000Z",
-    "date_modified": "2022-12-12T00:00:00.000Z",
-    "hash": "201dd22ce683ed5d9157706a02f3c82e"
+    "date_modified": "2023-04-03T00:00:00.000Z",
+    "hash": "16e8cb36540378355ad7f6f008f0c62f"
   },
   "en/2021/chapters/seo.html": {
     "date_published": "2021-12-01T00:00:00.000Z",
@@ -580,8 +580,8 @@
   },
   "en/2021/methodology.html": {
     "date_published": "2021-11-17T00:00:00.000Z",
-    "date_modified": "2022-09-26T00:00:00.000Z",
-    "hash": "7fd3c940bc8ea261c6f4efc5f3c334c2"
+    "date_modified": "2023-04-03T00:00:00.000Z",
+    "hash": "c27daeeca25d6484f6534afb64b648cd"
   },
   "en/2021/table_of_contents.html": {
     "date_published": "2021-11-17T00:00:00.000Z",
@@ -590,8 +590,8 @@
   },
   "en/2022/chapters/accessibility.html": {
     "date_published": "2022-09-26T00:00:00.000Z",
-    "date_modified": "2023-01-14T00:00:00.000Z",
-    "hash": "c4309d78dd1a375b072b0a2a009d4d4e"
+    "date_modified": "2023-04-03T00:00:00.000Z",
+    "hash": "a640fbf9eec27730e0d8a4c49d67a876"
   },
   "en/2022/chapters/capabilities.html": {
     "date_published": "2022-09-26T00:00:00.000Z",
@@ -620,8 +620,8 @@
   },
   "en/2022/chapters/http.html": {
     "date_published": "2022-09-26T00:00:00.000Z",
-    "date_modified": "2022-12-12T00:00:00.000Z",
-    "hash": "8458f25542490536435637cb6cbe0727"
+    "date_modified": "2023-04-03T00:00:00.000Z",
+    "hash": "a864b6aa89de0ef9b6708d9ff83a8b9f"
   },
   "en/2022/chapters/interoperability.html": {
     "date_published": "2022-09-26T00:00:00.000Z",
@@ -650,8 +650,8 @@
   },
   "en/2022/chapters/mobile-web.html": {
     "date_published": "2022-09-26T00:00:00.000Z",
-    "date_modified": "2022-12-12T00:00:00.000Z",
-    "hash": "2d704cb149c7b4779b4210bf98cb32df"
+    "date_modified": "2023-04-03T00:00:00.000Z",
+    "hash": "08b66515061d7872094fec8ea6a9388f"
   },
   "en/2022/chapters/page-weight.html": {
     "date_published": "2022-09-26T00:00:00.000Z",
@@ -660,8 +660,8 @@
   },
   "en/2022/chapters/performance.html": {
     "date_published": "2022-10-25T00:00:00.000Z",
-    "date_modified": "2023-01-09T00:00:00.000Z",
-    "hash": "de9900154cdb0b20fe312e09f1c2fa10"
+    "date_modified": "2023-04-03T00:00:00.000Z",
+    "hash": "283428641c36d2801ae1643a7b6041c3"
   },
   "en/2022/chapters/privacy.html": {
     "date_published": "2022-10-13T00:00:00.000Z",
@@ -675,8 +675,8 @@
   },
   "en/2022/chapters/security.html": {
     "date_published": "2022-09-26T00:00:00.000Z",
-    "date_modified": "2022-12-12T00:00:00.000Z",
-    "hash": "27998dd5817ea400ffcd8f16f35fe18d"
+    "date_modified": "2023-04-03T00:00:00.000Z",
+    "hash": "8ce6c5e98257a16d8c9dbf75145b95fa"
   },
   "en/2022/chapters/seo.html": {
     "date_published": "2022-09-26T00:00:00.000Z",
@@ -715,8 +715,8 @@
   },
   "en/2022/methodology.html": {
     "date_published": "2022-09-26T00:00:00.000Z",
-    "date_modified": "2022-10-25T00:00:00.000Z",
-    "hash": "dcdc7e20be46eca9c4be709c06d29a48"
+    "date_modified": "2023-04-03T00:00:00.000Z",
+    "hash": "ed0797d471f1ac97702dbb66275cc170"
   },
   "en/2022/table_of_contents.html": {
     "date_published": "2022-07-02T00:00:00.000Z",
@@ -785,8 +785,8 @@
   },
   "es/2020/chapters/http.html": {
     "date_published": "2021-01-03T00:00:00.000Z",
-    "date_modified": "2022-12-12T00:00:00.000Z",
-    "hash": "e69f022c855d5f895cb5d12ba4d8f632"
+    "date_modified": "2023-04-03T00:00:00.000Z",
+    "hash": "e54eefc8880ea41a285fb09181c3957b"
   },
   "es/2020/chapters/javascript.html": {
     "date_published": "2021-07-02T00:00:00.000Z",
@@ -930,8 +930,8 @@
   },
   "fr/2019/methodology.html": {
     "date_published": "2019-11-04T00:00:00.000Z",
-    "date_modified": "2022-09-26T00:00:00.000Z",
-    "hash": "0e9304c2cee7a9b2d843dab4a24adc18"
+    "date_modified": "2023-04-03T00:00:00.000Z",
+    "hash": "0d1b425966edea81d7079a68d15728d3"
   },
   "fr/2019/table_of_contents.html": {
     "date_published": "2019-11-04T00:00:00.000Z",
@@ -955,8 +955,8 @@
   },
   "fr/2020/methodology.html": {
     "date_published": "2020-10-24T00:00:00.000Z",
-    "date_modified": "2022-09-26T00:00:00.000Z",
-    "hash": "58d48ba7c7904e4019c04f62e2143d36"
+    "date_modified": "2023-04-03T00:00:00.000Z",
+    "hash": "90ab468911d96bf1018898dc20f9ebd6"
   },
   "fr/2020/table_of_contents.html": {
     "date_published": "2020-10-24T00:00:00.000Z",
@@ -1015,8 +1015,8 @@
   },
   "hi/2019/methodology.html": {
     "date_published": "2020-11-26T00:00:00.000Z",
-    "date_modified": "2022-09-26T00:00:00.000Z",
-    "hash": "fc8fc46ac5da9a7463f3c4580d5ebd2c"
+    "date_modified": "2023-04-03T00:00:00.000Z",
+    "hash": "456daf53f56b366bf61b29be526d4e1a"
   },
   "hi/2019/table_of_contents.html": {
     "date_published": "2019-11-04T00:00:00.000Z",
@@ -1035,8 +1035,8 @@
   },
   "hi/2020/methodology.html": {
     "date_published": "2020-11-26T00:00:00.000Z",
-    "date_modified": "2022-09-26T00:00:00.000Z",
-    "hash": "a83044c6f4a0440bd3ee2a64e49c4a39"
+    "date_modified": "2023-04-03T00:00:00.000Z",
+    "hash": "dc91f2c11d8127dc6f154117bb120bf1"
   },
   "hi/2020/table_of_contents.html": {
     "date_published": "2020-10-24T00:00:00.000Z",
@@ -1105,8 +1105,8 @@
   },
   "it/2020/chapters/http.html": {
     "date_published": "2021-03-17T00:00:00.000Z",
-    "date_modified": "2022-12-12T00:00:00.000Z",
-    "hash": "40c9a65cddcb7cddc3d1e25a38715182"
+    "date_modified": "2023-04-03T00:00:00.000Z",
+    "hash": "937337b7c17cc817456896cf8423a577"
   },
   "it/2020/chapters/javascript.html": {
     "date_published": "2021-02-05T00:00:00.000Z",
@@ -1325,8 +1325,8 @@
   },
   "ja/2019/methodology.html": {
     "date_published": "2019-11-04T00:00:00.000Z",
-    "date_modified": "2022-09-26T00:00:00.000Z",
-    "hash": "b003d760ea61a351e00a6d0a8ecf00f1"
+    "date_modified": "2023-04-03T00:00:00.000Z",
+    "hash": "80f9e468e68076fd1d5e9398293b837a"
   },
   "ja/2019/table_of_contents.html": {
     "date_published": "2019-11-04T00:00:00.000Z",
@@ -1375,8 +1375,8 @@
   },
   "ja/2020/chapters/http.html": {
     "date_published": "2021-02-06T00:00:00.000Z",
-    "date_modified": "2022-12-12T00:00:00.000Z",
-    "hash": "a153335b6a6ca3dba90781b8c87cf882"
+    "date_modified": "2023-04-03T00:00:00.000Z",
+    "hash": "d6c0b90c9928dabd61223db4a24f8195"
   },
   "ja/2020/chapters/jamstack.html": {
     "date_published": "2021-03-06T00:00:00.000Z",
@@ -1395,8 +1395,8 @@
   },
   "ja/2020/chapters/media.html": {
     "date_published": "2021-06-26T00:00:00.000Z",
-    "date_modified": "2022-04-29T00:00:00.000Z",
-    "hash": "5c00176236d056b5387ea17576d04518"
+    "date_modified": "2023-04-03T00:00:00.000Z",
+    "hash": "5abbd75c69001e10f123e2bd0f996a25"
   },
   "ja/2020/chapters/mobile-web.html": {
     "date_published": "2021-05-04T00:00:00.000Z",
@@ -1455,8 +1455,8 @@
   },
   "ja/2020/methodology.html": {
     "date_published": "2020-10-24T00:00:00.000Z",
-    "date_modified": "2022-09-26T00:00:00.000Z",
-    "hash": "470b7f68f5f642a55e03c3a72025fba4"
+    "date_modified": "2023-04-03T00:00:00.000Z",
+    "hash": "db9a98a9d768c09318a0210f84f51408"
   },
   "ja/2020/table_of_contents.html": {
     "date_published": "2020-10-24T00:00:00.000Z",
@@ -1465,8 +1465,8 @@
   },
   "ja/2021/chapters/accessibility.html": {
     "date_published": "2022-02-19T00:00:00.000Z",
-    "date_modified": "2022-12-12T00:00:00.000Z",
-    "hash": "f2b7a0c4ae9ca2dca0def4532015f72a"
+    "date_modified": "2023-04-03T00:00:00.000Z",
+    "hash": "7c8adbb7a6e342b17e2f939d48c6ec37"
   },
   "ja/2021/chapters/caching.html": {
     "date_published": "2022-07-19T00:00:00.000Z",
@@ -1560,8 +1560,8 @@
   },
   "ja/2021/chapters/security.html": {
     "date_published": "2022-03-20T00:00:00.000Z",
-    "date_modified": "2022-12-12T00:00:00.000Z",
-    "hash": "7b616a4f549eec6928f0a9de9d3a4780"
+    "date_modified": "2023-04-03T00:00:00.000Z",
+    "hash": "be907814d8675e68ca157e14abacb42c"
   },
   "ja/2021/chapters/seo.html": {
     "date_published": "2022-01-30T00:00:00.000Z",
@@ -1595,8 +1595,8 @@
   },
   "ja/2021/methodology.html": {
     "date_published": "2022-10-03T00:00:00.000Z",
-    "date_modified": "2022-10-03T00:00:00.000Z",
-    "hash": "56b19e0e3372db93fcd8afd58f8ced87"
+    "date_modified": "2023-04-03T00:00:00.000Z",
+    "hash": "49c6e415396b23b434c967bf0992b664"
   },
   "ja/2021/table_of_contents.html": {
     "date_published": "2021-11-17T00:00:00.000Z",
@@ -1607,6 +1607,11 @@
     "date_published": "2022-11-07T00:00:00.000Z",
     "date_modified": "2022-12-12T00:00:00.000Z",
     "hash": "8e9fee4dca56d0cff8d1ff4258bae1d7"
+  },
+  "ja/2022/chapters/fonts.html": {
+    "date_published": "2023-04-03T00:00:00.000Z",
+    "date_modified": "2023-04-03T00:00:00.000Z",
+    "hash": "9fe6314b5aa1535f05dabaf0e997f30e"
   },
   "ja/2022/chapters/javascript.html": {
     "date_published": "2023-01-09T00:00:00.000Z",
@@ -1660,8 +1665,8 @@
   },
   "nl/2019/methodology.html": {
     "date_published": "2020-12-16T00:00:00.000Z",
-    "date_modified": "2022-09-26T00:00:00.000Z",
-    "hash": "c380d50da338f40cd5d1b382c5633294"
+    "date_modified": "2023-04-03T00:00:00.000Z",
+    "hash": "7f84e59aacf36b65f519491e46bd1313"
   },
   "nl/2019/table_of_contents.html": {
     "date_published": "2020-12-16T00:00:00.000Z",
@@ -1705,8 +1710,8 @@
   },
   "nl/2020/chapters/http.html": {
     "date_published": "2021-04-02T00:00:00.000Z",
-    "date_modified": "2022-12-12T00:00:00.000Z",
-    "hash": "9e125dc28e61af13c42f7a4c92b7dfe3"
+    "date_modified": "2023-04-03T00:00:00.000Z",
+    "hash": "2d11638cbe4e4c94aff23b64ac6084c8"
   },
   "nl/2020/chapters/jamstack.html": {
     "date_published": "2021-02-21T00:00:00.000Z",
@@ -1725,8 +1730,8 @@
   },
   "nl/2020/chapters/media.html": {
     "date_published": "2021-03-14T00:00:00.000Z",
-    "date_modified": "2022-04-29T00:00:00.000Z",
-    "hash": "60168da58d009551dd612d11ffafebe3"
+    "date_modified": "2023-04-03T00:00:00.000Z",
+    "hash": "23a658c94c8d125bf0197cc79d42774a"
   },
   "nl/2020/chapters/mobile-web.html": {
     "date_published": "2021-03-12T00:00:00.000Z",
@@ -1780,8 +1785,8 @@
   },
   "nl/2020/methodology.html": {
     "date_published": "2020-12-16T00:00:00.000Z",
-    "date_modified": "2022-09-26T00:00:00.000Z",
-    "hash": "2359e75630017c1c403db9ca4148348f"
+    "date_modified": "2023-04-03T00:00:00.000Z",
+    "hash": "64f10ce836f1899c71a1c99b4d2192fd"
   },
   "nl/2020/table_of_contents.html": {
     "date_published": "2020-12-16T00:00:00.000Z",
@@ -1935,8 +1940,8 @@
   },
   "ru/2019/methodology.html": {
     "date_published": "2020-11-21T00:00:00.000Z",
-    "date_modified": "2022-09-26T00:00:00.000Z",
-    "hash": "15e2bc830c662214ce4132d99ca51504"
+    "date_modified": "2023-04-03T00:00:00.000Z",
+    "hash": "a15a042c3e0504d728cdf1b86fbbcc6b"
   },
   "ru/2019/table_of_contents.html": {
     "date_published": "2020-11-21T00:00:00.000Z",
@@ -1965,8 +1970,8 @@
   },
   "ru/2020/methodology.html": {
     "date_published": "2020-11-21T00:00:00.000Z",
-    "date_modified": "2022-09-26T00:00:00.000Z",
-    "hash": "23013a57b6049e1b5cdc367948b97999"
+    "date_modified": "2023-04-03T00:00:00.000Z",
+    "hash": "2866562a292c11bcb0c385417ee948ae"
   },
   "ru/2020/table_of_contents.html": {
     "date_published": "2020-11-21T00:00:00.000Z",
@@ -2165,8 +2170,8 @@
   },
   "zh-CN/2019/methodology.html": {
     "date_published": "2019-11-04T00:00:00.000Z",
-    "date_modified": "2022-09-26T00:00:00.000Z",
-    "hash": "2b32bf9b1a4d27e0f6c053bf21bea931"
+    "date_modified": "2023-04-03T00:00:00.000Z",
+    "hash": "71747232301985f39fcb1e5b24b23e9f"
   },
   "zh-CN/2019/table_of_contents.html": {
     "date_published": "2019-11-04T00:00:00.000Z",
@@ -2195,8 +2200,8 @@
   },
   "zh-CN/2020/methodology.html": {
     "date_published": "2020-12-09T00:00:00.000Z",
-    "date_modified": "2022-09-26T00:00:00.000Z",
-    "hash": "4354cf89ecc6c8bdb098f8489ec03f20"
+    "date_modified": "2023-04-03T00:00:00.000Z",
+    "hash": "9e079dfbc67f6271abec6df54c336718"
   },
   "zh-CN/2020/table_of_contents.html": {
     "date_published": "2020-10-24T00:00:00.000Z",
@@ -2225,8 +2230,8 @@
   },
   "zh-CN/2022/chapters/security.html": {
     "date_published": "2022-11-29T00:00:00.000Z",
-    "date_modified": "2022-12-12T00:00:00.000Z",
-    "hash": "574b1469d2fdbf3dee2ae92e391901c8"
+    "date_modified": "2023-04-03T00:00:00.000Z",
+    "hash": "535166028eb81a0126ed6a2a7ad6ab5b"
   },
   "zh-CN/2022/chapters/webassembly.html": {
     "date_published": "2022-11-07T00:00:00.000Z",
@@ -2285,8 +2290,8 @@
   },
   "zh-TW/2020/methodology.html": {
     "date_published": "2020-12-22T00:00:00.000Z",
-    "date_modified": "2022-09-26T00:00:00.000Z",
-    "hash": "fa652933680fa3ae84489bc90dae9fe7"
+    "date_modified": "2023-04-03T00:00:00.000Z",
+    "hash": "6388ddb2399fb34423636fc98a051cc5"
   },
   "zh-TW/2020/table_of_contents.html": {
     "date_published": "2020-10-24T00:00:00.000Z",

@@ -124,7 +124,7 @@
 {% block rss_feed %}RSS Feed{% endblock %}
 
 {% block featured_chapter %}章節精選{% endblock %}
-{% block featured_chapter_last_year %}精選章節<br/>從 {{ year|int -1 }} Web Almanac{% endblock %}
+{% block featured_chapter_last_year %}精選章節<br>從 {{ year|int -1 }} Web Almanac{% endblock %}
 
 {# Check if read_chapter already defined in child template as macros can't be overridden #}
 {% if not read_chapter %}

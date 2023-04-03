@@ -183,11 +183,11 @@ Before the introduction of HTML5, ARIA landmark roles were needed to accomplish 
   <table>
     <thead>
       <tr>
-        <th>HTML5 <br />element</th>
-        <th>ARIA role <br />equivalent</th>
-        <th>Pages with <br />element</th>
-        <th>Pages with <br />role</th>
-        <th>Pages with <br />element or role</th>
+        <th>HTML5 <br>element</th>
+        <th>ARIA role <br>equivalent</th>
+        <th>Pages with <br>element</th>
+        <th>Pages with <br>role</th>
+        <th>Pages with <br>element or role</th>
       </tr>
     </thead>
     <tbody>

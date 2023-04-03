@@ -25,7 +25,7 @@
 
             <!-- Only use JPG for Ebook as not sure on support for other formats in PDFs -->
             <picture>
-                <img src="{{ chapter_hero_dir }}hero_lg.jpg" class="content-banner" alt="" width="866" height="433" />
+                <img src="{{ chapter_hero_dir }}hero_lg.jpg" class="content-banner" alt="" width="866" height="433">
             </picture>
 
             <div class="byline">{{ self.written_by_before() }}
@@ -87,9 +87,9 @@
                 {% set authordata = config.contributors[author] if author in config.contributors else None %}
                 <li>
                     {% if authordata.avatar_url|int != 0 %}
-                    <a class="avatar-link" href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="https://avatars.githubusercontent.com/u/{{ authordata.avatar_url }}?v=4&s=200" height="200" width="200" /></a>
+                    <a class="avatar-link" href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="https://avatars.githubusercontent.com/u/{{ authordata.avatar_url }}?v=4&s=200" height="200" width="200"></a>
                     {% else %}
-                    <a class="avatar-link" href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" /></a>
+                    <a class="avatar-link" href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200"></a>
                     {% endif %}
                     <div class="info">
                         <a href="#contributors-{{ author }}"><span class="name">{{ authordata.name }}</span></a>

@@ -124,7 +124,7 @@ Our mission is to combine the raw stats and trends of the HTTP Archive with the 
 {% block rss_feed %}RSS Feed{% endblock %}
 
 {% block featured_chapter %}Featured Chapter{% endblock %}
-{% block featured_chapter_last_year %}Featured Chapter<br/>from the {{ year|int -1 }} Web Almanac{% endblock %}
+{% block featured_chapter_last_year %}Featured Chapter<br>from the {{ year|int -1 }} Web Almanac{% endblock %}
 
 {# Check if read_chapter already defined in child template as macros can't be overridden #}
 {% if not read_chapter %}

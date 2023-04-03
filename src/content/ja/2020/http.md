@@ -346,7 +346,7 @@ Andy Daviesによって維持されているこの<a hreflang="en" href="https:/
     <thead>
       <tr>
         <th>CDN</th>
-        <th>正しく優先<br />順位をつける</th>
+        <th>正しく優先<br>順位をつける</th>
         <th>デスクトップ</th>
         <th>モバイル</th>
       </tr>

@@ -1098,41 +1098,41 @@ Another factor that can strongly influence the adoption of certain security mech
       <tr>
         <td>Blogger</td>
         <td>
-          <code>Content-Security-Policy</code> (99%),<br/>
-          <code>X-Content-Type-Options</code> (99%),<br/>
-          <code>X-Frame-Options</code> (99%),<br/>
+          <code>Content-Security-Policy</code> (99%),<br>
+          <code>X-Content-Type-Options</code> (99%),<br>
+          <code>X-Frame-Options</code> (99%),<br>
           <code>X-XSS-Protection</code> (99%)
         </td>
       </tr>
       <tr>
         <td>Wix</td>
         <td>
-          <code>Strict-Transport-Security</code> (99%),<br/>
+          <code>Strict-Transport-Security</code> (99%),<br>
           <code>X-Content-Type-Options</code> (99%)
         </td>
       </tr>
       <tr>
         <td>Drupal</td>
         <td>
-          <code>X-Content-Type-Options</code> (77%),<br/>
+          <code>X-Content-Type-Options</code> (77%),<br>
           <code>X-Frame-Options</code> (77%)
         </td>
       </tr>
       <tr>
         <td>Squarespace</td>
         <td>
-          <code>Strict-Transport-Security</code> (91%),<br/>
+          <code>Strict-Transport-Security</code> (91%),<br>
           <code>X-Content-Type-Options</code> (98%)
         </td>
       </tr>
       <tr>
         <td>Google Sites</td>
         <td>
-          <code>Content-Security-Policy</code> (96%),<br/>
-          <code>Cross-Origin-Opener-Policy</code> (96%),<br/>
-          <code>Referrer-Policy</code> (96%),<br/>
-          <code>X-Content-Type-Options</code> (97%),<br/>
-          <code>X-Frame-Options</code> (97%),<br/>
+          <code>Content-Security-Policy</code> (96%),<br>
+          <code>Cross-Origin-Opener-Policy</code> (96%),<br>
+          <code>Referrer-Policy</code> (96%),<br>
+          <code>X-Content-Type-Options</code> (97%),<br>
+          <code>X-Frame-Options</code> (97%),<br>
           <code>X-XSS-Protection</code> (97%)
         </td>
       </tr>
@@ -1143,16 +1143,16 @@ Another factor that can strongly influence the adoption of certain security mech
       <tr>
         <td>Wagtail</td>
         <td>
-          <code>X-Content-Type-Options</code> (51%),<br/>
+          <code>X-Content-Type-Options</code> (51%),<br>
           <code>X-Frame-Options</code> (72%)
         </td>
       </tr>
       <tr>
         <td>Medium</td>
         <td>
-          <code>Content-Security-Policy</code> (75%),<br/>
-          <code>Expect-CT</code> (83%),<br/>
-          <code>Strict-Transport-Security</code> (84%),<br/>
+          <code>Content-Security-Policy</code> (75%),<br>
+          <code>Expect-CT</code> (83%),<br>
+          <code>Strict-Transport-Security</code> (84%),<br>
           <code>X-Content-Type-Options</code> (83%)
         </td>
       </tr>

@@ -43,7 +43,7 @@ JavaScriptを使ってメディアを埋め込むアプローチは無数にあ�
 
 ```html
 <img srcset="images/example_3x.jpg 3x, images/example_2x.jpg 2x"
-      src="images/example.jpg" alt="..." />
+      src="images/example.jpg" alt="...">
 ```
 
 全ページの約26.5%が`srcset`を含むようになりました。
@@ -79,7 +79,7 @@ JavaScriptを使ってメディアを埋め込むアプローチは無数にあ�
 
 ```html
 <img srcset="images/example_3x.jpg 3x, images/example_2x.jpg 2x"
-      src="images/example.jpg" alt="..." />
+      src="images/example.jpg" alt="...">
 ```
 
 `w`記述子は、候補者のピクセル幅を記述するもので、適切な画像を選択するために使用される`sizes`属性と一緒になっています。
@@ -87,7 +87,7 @@ JavaScriptを使ってメディアを埋め込むアプローチは無数にあ�
 ```html
 <img srcset="images/example_small.jpg 600w, images/example_medium.jpg 1400w, images/example_large.jpg 2400w"
       sizes="100vw"
-      src="images/example_fallback.jpg" alt="..." />
+      src="images/example_fallback.jpg" alt="...">
 ```
 
 どちらの方法でも、ユーザーエージェントは、最適な画像候補を評価する際に、現在のデバイスのピクセル比を数学的に考慮できます。
@@ -115,7 +115,7 @@ JavaScriptを使ってメディアを埋め込むアプローチは無数にあ�
 ```html
 <img sizes="(min-width: 640px) 50vw, 100vw"
       srcset="images/example_small.jpg 600w, images/example_medium.jpg 1400w, images/example_large.jpg 2400w"
-      src="images/example_fallback.jpg" alt="..." />
+      src="images/example_fallback.jpg" alt="...">
 ```
 
 {{ figure_markup(
@@ -154,8 +154,8 @@ JavaScriptを使ってメディアを埋め込むアプローチは無数にあ�
 
 ```html
 <picture>
-    <source type="image/webp" srcset="images/example.webp" />
-    <img src="images/example.jpg" alt="..." />
+    <source type="image/webp" srcset="images/example.webp">
+    <img src="images/example.jpg" alt="...">
 </picture>
 ```
 
@@ -191,11 +191,11 @@ JavaScriptを使ってメディアを埋め込むアプローチは無数にあ�
 
 ```html
 <picture>
-  <source type="image/avif" srcset="images/example.avif" />
-  <source type="image/webp" srcset="images/example.webp" />
-  <source type="image/jp2" srcset="images/example.jp2" />
-  <source type="image/vnd.ms-photo"  srcset="images/example.jxr" />
-  <img src="images/example.jpg" alt="説明" />
+  <source type="image/avif" srcset="images/example.avif">
+  <source type="image/webp" srcset="images/example.webp">
+  <source type="image/jp2" srcset="images/example.jp2">
+  <source type="image/vnd.ms-photo"  srcset="images/example.jxr">
+  <img src="images/example.jpg" alt="説明">
 </picture>
 ```
 
@@ -235,11 +235,11 @@ JavaScriptを使ってメディアを埋め込むアプローチは無数にあ�
 ```html
 <picture>
   <source media="(max-width: 780px)"
-          srcset="image/example_square.jpg 1x, image/example_square_2x.jpg 2x" />
+          srcset="image/example_square.jpg 1x, image/example_square_2x.jpg 2x">
   <source media="(max-width: 1400px)"
-          srcset="image/example_4_3_aspect.jpg 1x, image/example_4_3_aspect_2x.jpg 2x" />
-  <source srcset="image/example_16_9_aspect.jpg 1x, image/example_16_9_aspect_2x.jpg 2x"/>
-  <img src="image/example_fallback.jpg" alt="..." />
+          srcset="image/example_4_3_aspect.jpg 1x, image/example_4_3_aspect_2x.jpg 2x">
+  <source srcset="image/example_16_9_aspect.jpg 1x, image/example_16_9_aspect_2x.jpg 2x">
+  <img src="image/example_fallback.jpg" alt="...">
 </picture>
 ```
 
@@ -267,7 +267,7 @@ JavaScriptを使ってメディアを埋め込むアプローチは無数にあ�
           media="(min-width: 960px) and (orientation: landscape)">
   <source srcset="images/example_tall.jpg"
           media="(min-width: 960px) and (orientation: portrait)">
-  <img src="..." alt="..." />
+  <img src="..." alt="...">
 </picture>
 ```
 
