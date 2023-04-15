@@ -12,7 +12,8 @@ FROM (
     url,
     CAST(JSON_EXTRACT(report, '$.categories.pwa.score') AS NUMERIC) AS score
   FROM
-    `httparchive.lighthouse.2022_06_01_*`)
+    `httparchive.lighthouse.2022_06_01_*`
+)
 JOIN
   (
     SELECT
@@ -42,7 +43,8 @@ FROM (
     _TABLE_SUFFIX AS client,
     CAST(JSON_EXTRACT(report, '$.categories.pwa.score') AS NUMERIC) AS score
   FROM
-    `httparchive.lighthouse.2022_06_01_*`),
+    `httparchive.lighthouse.2022_06_01_*`
+),
   UNNEST([10, 25, 50, 75, 90]) AS percentile
 GROUP BY
   client,

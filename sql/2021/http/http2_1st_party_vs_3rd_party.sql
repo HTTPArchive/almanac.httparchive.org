@@ -23,13 +23,15 @@ FROM (
     FROM
       `httparchive.almanac.requests`
     WHERE
-      date = '2021-07-01')
+      date = '2021-07-01'
+  )
   WHERE
     type = 'script'
   GROUP BY
     client,
     page,
-    is_third_party),
+    is_third_party
+),
   UNNEST(GENERATE_ARRAY(1, 100)) AS percentile
 GROUP BY
   percentile,

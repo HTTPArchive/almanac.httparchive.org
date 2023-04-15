@@ -16,8 +16,10 @@ FROM
     WHERE
       date = '2019-07-01' AND
       firstHtml AND
-      (REGEXP_CONTAINS(body, r'(?is)<meta[^><]*Accept-CH\b') OR
-        REGEXP_CONTAINS(respOtherHeaders, r'(?is)Accept-CH = '))
+      (
+        REGEXP_CONTAINS(body, r'(?is)<meta[^><]*Accept-CH\b') OR
+        REGEXP_CONTAINS(respOtherHeaders, r'(?is)Accept-CH = ')
+      )
   )
 GROUP BY
   client,

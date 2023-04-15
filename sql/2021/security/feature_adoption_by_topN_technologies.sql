@@ -3,7 +3,7 @@
 -- from https://stackoverflow.com/a/54835472
 CREATE TEMP FUNCTION array_slice(arr ARRAY<STRING>, start INT64, finish INT64)
 RETURNS ARRAY<STRING> AS (
-  ARRAY(
+  ARRAY (
     SELECT part FROM UNNEST(arr) part WITH OFFSET AS index
     WHERE index BETWEEN start AND finish ORDER BY index
   )
@@ -29,9 +29,11 @@ WITH app_headers AS (
   ON
     r._TABLE_SUFFIX = t._TABLE_SUFFIX AND
     p.url = t.url,
-    UNNEST(['Content-Security-Policy', 'Content-Security-Policy-Report-Only', 'Cross-Origin-Embedder-Policy', 'Cross-Origin-Opener-Policy',
-            'Cross-Origin-Resource-Policy', 'Expect-CT', 'Feature-Policy', 'Permissions-Policy', 'Referrer-Policy', 'Report-To',
-            'Strict-Transport-Security', 'X-Content-Type-Options', 'X-Frame-Options', 'X-XSS-Protection']) AS headername
+    UNNEST([
+      'Content-Security-Policy', 'Content-Security-Policy-Report-Only', 'Cross-Origin-Embedder-Policy', 'Cross-Origin-Opener-Policy',
+      'Cross-Origin-Resource-Policy', 'Expect-CT', 'Feature-Policy', 'Permissions-Policy', 'Referrer-Policy', 'Report-To',
+      'Strict-Transport-Security', 'X-Content-Type-Options', 'X-Frame-Options', 'X-XSS-Protection'
+    ]) AS headername
   WHERE
     firstHtml AND
     category IN UNNEST(['Blogs', 'CDN', 'Web frameworks', 'Programming languages', 'CMS', 'Ecommerce', 'PaaS', 'Security'])
@@ -72,7 +74,8 @@ INNER JOIN (
   )
   GROUP BY
     client,
-    headername)
+    headername
+)
 USING
   (client, headername)
 INNER JOIN (
@@ -84,7 +87,8 @@ INNER JOIN (
     app_headers
   GROUP BY
     client,
-    headername)
+    headername
+)
 USING
   (client, headername),
   UNNEST(GENERATE_ARRAY(1, 10)) AS topN

@@ -3,7 +3,7 @@
 SELECT
   speed,
   ROUND(COUNTIF(fast_ttfb >= .9) * 100 / COUNT(0), 2) AS pct_fast_ttfb,
-  ROUND(COUNTIF(NOT(slow_ttfb >= .1) AND NOT(fast_ttfb >= .9)) * 100 / COUNT(0), 2) AS pct_avg_ttfb,
+  ROUND(COUNTIF(NOT (slow_ttfb >= .1) AND NOT (fast_ttfb >= .9)) * 100 / COUNT(0), 2) AS pct_avg_ttfb,
   ROUND(COUNTIF(slow_ttfb >= .1) * 100 / COUNT(0), 2) AS pct_slow_ttfb
 FROM (
   SELECT
@@ -16,7 +16,8 @@ FROM (
     UNNEST(experimental.time_to_first_byte.histogram.bin) AS bin
   GROUP BY
     origin,
-    speed)
+    speed
+)
 GROUP BY
   speed
 ORDER BY

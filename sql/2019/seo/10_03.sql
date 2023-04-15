@@ -21,6 +21,7 @@ FROM (
     _TABLE_SUFFIX AS client,
     hasAmpLink(payload) AS has_amp_link
   FROM
-    `httparchive.pages.2019_07_01_*`)
+    `httparchive.pages.2019_07_01_*`
+)
 GROUP BY
   client

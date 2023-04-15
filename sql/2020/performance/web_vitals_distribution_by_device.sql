@@ -51,7 +51,8 @@ fid AS (
     FROM
       base
     WHERE
-      fast_fid + avg_fid + slow_fid > 0)
+      fast_fid + avg_fid + slow_fid > 0
+  )
   WHERE
     MOD(row, CAST(FLOOR(n / 1000) AS INT64)) = 0
 ),
@@ -74,7 +75,8 @@ lcp AS (
     FROM
       base
     WHERE
-      fast_lcp + avg_lcp + slow_lcp > 0)
+      fast_lcp + avg_lcp + slow_lcp > 0
+  )
   WHERE
     MOD(row, CAST(FLOOR(n / 1000) AS INT64)) = 0
 ),
@@ -97,7 +99,8 @@ cls AS (
     FROM
       base
     WHERE
-      small_cls + medium_cls + large_cls > 0)
+      small_cls + medium_cls + large_cls > 0
+  )
   WHERE
     MOD(row, CAST(FLOOR(n / 1000) AS INT64)) = 0
 ),
@@ -120,7 +123,8 @@ fcp AS (
     FROM
       base
     WHERE
-      fast_fcp + avg_fcp + slow_fcp > 0)
+      fast_fcp + avg_fcp + slow_fcp > 0
+  )
   WHERE
     MOD(row, CAST(FLOOR(n / 1000) AS INT64)) = 0
 ),
@@ -143,7 +147,8 @@ ttfb AS (
     FROM
       base
     WHERE
-      fast_ttfb + avg_ttfb + slow_ttfb > 0)
+      fast_ttfb + avg_ttfb + slow_ttfb > 0
+  )
   WHERE
     MOD(row, CAST(FLOOR(n / 1000) AS INT64)) = 0
 )

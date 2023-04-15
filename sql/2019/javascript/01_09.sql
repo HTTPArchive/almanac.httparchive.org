@@ -23,7 +23,8 @@ FROM (
   GROUP BY
     app,
     client,
-    total)
+    total
+)
 JOIN (
   SELECT
     app,
@@ -40,7 +41,8 @@ JOIN (
   GROUP BY
     app,
     client,
-    total)
+    total
+)
 USING (app, client)
 WHERE
   freq_2019 > 10

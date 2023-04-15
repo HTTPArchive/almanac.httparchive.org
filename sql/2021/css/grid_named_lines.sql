@@ -30,7 +30,8 @@ FROM (
     date = '2021-07-01'
   GROUP BY
     client,
-    page)
+    page
+)
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -38,7 +39,8 @@ JOIN (
   FROM
     `httparchive.summary_pages.2021_07_01_*`
   GROUP BY
-    client)
+    client
+)
 USING
   (client)
 GROUP BY

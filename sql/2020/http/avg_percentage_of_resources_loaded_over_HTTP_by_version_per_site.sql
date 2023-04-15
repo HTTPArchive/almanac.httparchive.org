@@ -28,7 +28,8 @@ FROM (
     date = '2020-08-01'
   GROUP BY
     client,
-    page)
+    page
+)
 GROUP BY
   client
 ORDER BY

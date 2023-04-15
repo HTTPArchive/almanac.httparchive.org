@@ -13,6 +13,7 @@ FROM (
     JSON_EXTRACT_SCALAR(payload, "$['_heroElementTimes.Image']") IS NOT NULL AS has_hero_image,
     JSON_EXTRACT_SCALAR(payload, "$['_heroElementTimes.BackgroundImage']") IS NOT NULL AS has_hero_bgimage
   FROM
-    `httparchive.pages.2019_07_01_*`)
+    `httparchive.pages.2019_07_01_*`
+)
 GROUP BY
   client

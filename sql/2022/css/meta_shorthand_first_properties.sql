@@ -450,7 +450,7 @@ WITH totals AS (
     _TABLE_SUFFIX AS client,
     COUNT(0) AS total_pages
   FROM
-    `httparchive.summary_pages.2022_07_01_*` -- noqa: L062
+    `httparchive.summary_pages.2022_07_01_*` -- noqa: CV09
   GROUP BY
     client
 )
@@ -474,7 +474,8 @@ FROM (
     `httparchive.almanac.parsed_css`,
     UNNEST(getShorthandFirstProperties(css)) AS property
   WHERE
-    date = '2022-07-01')
+    date = '2022-07-01'
+)
 JOIN
   totals
 USING

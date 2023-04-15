@@ -13,7 +13,8 @@ FROM (
     url,
     JSON_EXTRACT(report, '$.categories') AS categories
   FROM
-    `httparchive.lighthouse.2021_07_01_mobile`)
+    `httparchive.lighthouse.2021_07_01_mobile`
+)
 JOIN (
   SELECT DISTINCT
     app AS ssg,
@@ -23,7 +24,8 @@ JOIN (
   WHERE
     LOWER(category) = 'static site generator' OR
     app = 'Next.js' OR
-    app = 'Nuxt.js')
+    app = 'Nuxt.js'
+)
 USING
   (url)
 GROUP BY

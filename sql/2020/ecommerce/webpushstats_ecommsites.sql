@@ -36,15 +36,17 @@ SELECT
 FROM
   `chrome-ux-report.materialized.metrics_summary`
 JOIN (
-    SELECT DISTINCT
-      _TABLE_SUFFIX AS client,
-      RTRIM(url, '/') AS origin
-    FROM
-      `httparchive.technologies.2020_08_01_*`
-    WHERE category = 'Ecommerce')
+  SELECT DISTINCT
+    _TABLE_SUFFIX AS client,
+    RTRIM(url, '/') AS origin
+  FROM
+    `httparchive.technologies.2020_08_01_*`
+  WHERE category = 'Ecommerce'
+)
 USING
   (origin)
-WHERE date IN ('2020-08-01') AND
+WHERE
+  date IN ('2020-08-01') AND
   notification_permission_accept IS NOT NULL
 GROUP BY
   date,

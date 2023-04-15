@@ -111,7 +111,8 @@ FROM (
     LENGTH(css) < 0.1 * 1024 * 1024
   GROUP BY
     client,
-    unit)
+    unit
+)
 WHERE
   freq >= 1000
 ORDER BY

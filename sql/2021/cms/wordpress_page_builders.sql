@@ -13,7 +13,8 @@ FROM (
   FROM
     `httparchive.technologies.2021_07_01_*`
   WHERE
-    app = 'WordPress')
+    app = 'WordPress'
+)
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -25,7 +26,8 @@ JOIN (
     category = 'Page builders'
   GROUP BY
     client,
-    url)
+    url
+)
 USING
   (client, url)
 GROUP BY

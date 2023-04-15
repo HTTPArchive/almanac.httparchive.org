@@ -38,7 +38,7 @@ WITH totals AS (
     _TABLE_SUFFIX AS client,
     COUNT(0) AS total_pages
   FROM
-    `httparchive.summary_pages.2022_07_01_*` -- noqa: L062
+    `httparchive.summary_pages.2022_07_01_*` -- noqa: CV09
   GROUP BY
     client
 )
@@ -67,7 +67,8 @@ FROM (
     date = '2022-07-01'
   GROUP BY
     client,
-    prop)
+    prop
+)
 WHERE
   pages >= 1000
 ORDER BY

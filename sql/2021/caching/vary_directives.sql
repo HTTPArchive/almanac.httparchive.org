@@ -19,7 +19,8 @@ FROM (
   FROM
     `httparchive.summary_requests.2021_07_01_*`
   GROUP BY
-    client)
+    client
+)
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -31,7 +32,8 @@ JOIN (
     UNNEST(REGEXP_EXTRACT_ALL(LOWER(resp_vary), r'([a-z][^,\s="\']*)')) AS vary_header
   GROUP BY
     client,
-    vary_header)
+    vary_header
+)
 USING
   (client)
 WHERE

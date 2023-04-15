@@ -14,7 +14,8 @@ FROM
 JOIN (
   SELECT _TABLE_SUFFIX AS client, url AS page
   FROM `httparchive.technologies.2019_07_01_*`
-  WHERE category = 'Ecommerce')
+  WHERE category = 'Ecommerce'
+)
 USING
   (client, page)
 JOIN
@@ -24,7 +25,8 @@ ON
 JOIN (
   SELECT _TABLE_SUFFIX AS client, COUNT(0) AS total
   FROM `httparchive.summary_pages.2019_07_01_*`
-  GROUP BY _TABLE_SUFFIX)
+  GROUP BY _TABLE_SUFFIX
+)
 USING
   (client)
 WHERE

@@ -19,7 +19,8 @@ FROM (
     date = '2020-09-01'
   GROUP BY
     client,
-    page)
+    page
+)
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -29,7 +30,8 @@ JOIN (
   FROM
     `httparchive.pages.2020_09_01_*`
   GROUP BY
-    _TABLE_SUFFIX, url, payload)
+    _TABLE_SUFFIX, url, payload
+)
 USING
   (client, page)
 JOIN (
@@ -39,7 +41,8 @@ JOIN (
   FROM
     `httparchive.pages.2020_09_01_*`
   GROUP BY
-    _TABLE_SUFFIX)
+    _TABLE_SUFFIX
+)
 USING
   (client)
 GROUP BY

@@ -39,6 +39,7 @@ FROM (
     date = '2019-07-01'
   GROUP BY
     client,
-    page)
+    page
+)
 GROUP BY
   client

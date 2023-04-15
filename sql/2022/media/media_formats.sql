@@ -32,7 +32,8 @@ FROM (
   WHERE
     date = '2022-06-01' AND
     type = 'image' AND
-    respSize > 0)
+    respSize > 0
+)
 GROUP BY
   client,
   trueFormat

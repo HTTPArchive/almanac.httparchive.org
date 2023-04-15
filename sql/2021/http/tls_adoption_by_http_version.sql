@@ -29,7 +29,8 @@ FROM (
   WHERE
     date = '2021-07-01' AND
     STARTS_WITH(url, 'https') AND
-    firstHtml)
+    firstHtml
+)
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -39,7 +40,8 @@ JOIN (
   WHERE
     STARTS_WITH(url, 'https')
   GROUP BY
-    client)
+    client
+)
 USING
   (client)
 GROUP BY

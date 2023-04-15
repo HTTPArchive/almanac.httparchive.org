@@ -17,7 +17,8 @@ FROM (
   JOIN (
     SELECT _TABLE_SUFFIX AS client, url AS page
     FROM `httparchive.technologies.2019_07_01_*`
-    WHERE category = 'Ecommerce')
+    WHERE category = 'Ecommerce'
+  )
   USING
     (client, page)
   JOIN
@@ -30,7 +31,8 @@ FROM (
   GROUP BY
     client,
     category,
-    page),
+    page
+),
   UNNEST([10, 25, 50, 75, 90]) AS percentile
 GROUP BY
   percentile,

@@ -31,8 +31,10 @@ FROM (
     FROM
       `httparchive.pages.2020_08_01_*`
     GROUP BY
-      _TABLE_SUFFIX)
-  USING (_TABLE_SUFFIX)),
+      _TABLE_SUFFIX
+  )
+  USING (_TABLE_SUFFIX)
+),
   UNNEST(values) AS value
 GROUP BY
   client,

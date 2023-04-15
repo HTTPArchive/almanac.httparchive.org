@@ -18,9 +18,9 @@ FROM (
   WHERE
     date = '2019-07-01'
 ),
-(
-  SELECT SUM(respSize) AS totalRequestBytes FROM `httparchive.almanac.summary_requests` WHERE date = '2019-07-01'
-)
+  (
+    SELECT SUM(respSize) AS totalRequestBytes FROM `httparchive.almanac.summary_requests` WHERE date = '2019-07-01'
+  )
 WHERE thirdPartyDomain IS NOT NULL
 GROUP BY
   thirdPartyDomain

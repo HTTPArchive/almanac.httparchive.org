@@ -160,15 +160,17 @@ FROM (
     UNNEST(getGradientFunctions(css)) AS function
   WHERE
     date = '2022-07-01' AND
-    function IS NOT NULL)
+    function IS NOT NULL
+)
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
     COUNT(0) AS total
   FROM
-    `httparchive.summary_pages.2022_07_01_*` -- noqa: L062
+    `httparchive.summary_pages.2022_07_01_*` -- noqa: CV09
   GROUP BY
-    client)
+    client
+)
 USING
   (client)
 GROUP BY

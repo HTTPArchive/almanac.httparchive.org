@@ -62,7 +62,8 @@ FROM (
     (client)
   GROUP BY
     client,
-    blend_mode)
+    blend_mode
+)
 WHERE
   pct_pages > 0.01
 ORDER BY

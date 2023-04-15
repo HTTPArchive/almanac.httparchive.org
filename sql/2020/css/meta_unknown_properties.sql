@@ -58,7 +58,9 @@ FROM (
       UNNEST(getUnknownProperties(css)) AS property
     WHERE
       date = '2020-08-01' AND
-      LENGTH(property.property) > 1))
+      LENGTH(property.property) > 1
+  )
+)
 WHERE
   pct >= 0.01
 ORDER BY

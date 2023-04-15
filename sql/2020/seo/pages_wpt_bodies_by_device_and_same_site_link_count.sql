@@ -3,7 +3,7 @@
 # this query aims to highlight sites with few same site links, like SPAs
 
 # helper to create percent fields
-CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
+CREATE TEMP FUNCTION AS_PERCENT(freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
   ROUND(SAFE_DIVIDE(freq, total), 4)
 );
 
@@ -69,7 +69,7 @@ FROM (
   )
   USING
     (_TABLE_SUFFIX)
-  )
+)
 GROUP BY
   client,
   links_same_site,

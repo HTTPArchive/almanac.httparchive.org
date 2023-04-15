@@ -37,7 +37,8 @@ FROM (
   FROM
     `httparchive.almanac.requests`
   WHERE
-    date = '2022-06-01'),
+    date = '2022-06-01'
+),
   UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
 WHERE
   rank <= rank_grouping

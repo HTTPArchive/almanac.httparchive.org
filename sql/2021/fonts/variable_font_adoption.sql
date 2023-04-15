@@ -29,7 +29,8 @@ FROM (
   WHERE
     date = '2021-07-01' AND
     type = 'font' AND
-    REGEXP_CONTAINS(JSON_EXTRACT(payload, '$._font_details.table_sizes'), '(?i)gvar'))
+    REGEXP_CONTAINS(JSON_EXTRACT(payload, '$._font_details.table_sizes'), '(?i)gvar')
+)
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -37,7 +38,8 @@ JOIN (
   FROM
     `httparchive.pages.2021_07_01_*`
   GROUP BY
-    _TABLE_SUFFIX)
+    _TABLE_SUFFIX
+)
 USING
   (client, page)
 WHERE

@@ -29,7 +29,8 @@ FROM (
     var.freq
   FROM
     `httparchive.pages.2020_08_01_*`,
-    UNNEST(countCombinedVariables(payload)) AS var)
+    UNNEST(countCombinedVariables(payload)) AS var
+)
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -37,7 +38,8 @@ JOIN (
   FROM
     `httparchive.summary_pages.2020_08_01_*`
   GROUP BY
-    client)
+    client
+)
 USING
   (client)
 GROUP BY

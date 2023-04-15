@@ -16,7 +16,8 @@ FROM (
       _TABLE_SUFFIX AS client,
       JSON_EXTRACT_SCALAR(payload, '$._almanac') AS almanac
     FROM
-      `httparchive.pages.2019_07_01_*`)
+      `httparchive.pages.2019_07_01_*`
+  )
 )
 GROUP BY
   client

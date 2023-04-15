@@ -98,7 +98,8 @@ FROM (
     SUM(class.value) OVER (PARTITION BY client, class.name) AS class_freq
   FROM
     selector_parts,
-    UNNEST(parts.class) AS class)
+    UNNEST(parts.class) AS class
+)
 JOIN (
   SELECT
     client,
@@ -106,7 +107,8 @@ JOIN (
     SUM(id.value) OVER (PARTITION BY client, id.name) AS id_freq
   FROM
     selector_parts,
-    UNNEST(parts.id) AS id)
+    UNNEST(parts.id) AS id
+)
 USING
   (client)
 JOIN (
@@ -116,7 +118,8 @@ JOIN (
     SUM(attribute.value) OVER (PARTITION BY client, attribute.name) AS attribute_freq
   FROM
     selector_parts,
-    UNNEST(parts.attribute) AS attribute)
+    UNNEST(parts.attribute) AS attribute
+)
 USING
   (client)
 JOIN (
@@ -126,7 +129,8 @@ JOIN (
     SUM(pseudo_class.value) OVER (PARTITION BY client, pseudo_class.name) AS pseudo_class_freq
   FROM
     selector_parts,
-    UNNEST(parts.pseudo_class) AS pseudo_class)
+    UNNEST(parts.pseudo_class) AS pseudo_class
+)
 USING
   (client)
 JOIN (
@@ -136,7 +140,8 @@ JOIN (
     SUM(pseudo_element.value) OVER (PARTITION BY client, pseudo_element.name) AS pseudo_element_freq
   FROM
     selector_parts,
-    UNNEST(parts.pseudo_element) AS pseudo_element)
+    UNNEST(parts.pseudo_element) AS pseudo_element
+)
 USING
   (client)
 GROUP BY

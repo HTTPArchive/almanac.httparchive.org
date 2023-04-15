@@ -18,11 +18,13 @@ FROM (
     FROM
       `httparchive.almanac.summary_requests`
     WHERE
-      date = '2019-07-01')
+      date = '2019-07-01'
+  )
   WHERE
     type = 'script'
   GROUP BY
-    page),
+    page
+),
   UNNEST([10, 25, 50, 75, 90]) AS percentile
 GROUP BY
   percentile

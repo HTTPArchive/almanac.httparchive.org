@@ -96,7 +96,7 @@ FROM (
       domain,
       page,
       category
-    )
+  )
   INNER JOIN
     total_third_party_usage
   USING

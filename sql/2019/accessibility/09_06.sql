@@ -22,7 +22,8 @@ FROM (
     client,
     total,
     page,
-    id)
+    id
+)
 WHERE
   freq > 1
 GROUP BY

@@ -50,7 +50,7 @@ FROM (
   GROUP BY
     client,
     page
-  )
+)
 JOIN
   totals
 USING (client)
@@ -92,7 +92,7 @@ FROM (
   GROUP BY
     client,
     page
-  )
+)
 JOIN
   totals
 USING (client)

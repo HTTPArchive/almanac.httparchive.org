@@ -52,7 +52,8 @@ FROM (
     usage.freq
   FROM
     `httparchive.pages.2021_07_01_*`,
-    UNNEST(getCustomPropertyUsage(payload)) AS usage)
+    UNNEST(getCustomPropertyUsage(payload)) AS usage
+)
 GROUP BY
   client,
   usage

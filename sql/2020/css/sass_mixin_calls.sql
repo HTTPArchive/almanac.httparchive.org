@@ -32,10 +32,12 @@ FROM (
       mixin.freq
     FROM
       `httparchive.pages.2020_08_01_*`,
-      UNNEST(getMixinUsage(payload)) AS mixin)
+      UNNEST(getMixinUsage(payload)) AS mixin
+  )
   GROUP BY
     client,
-    mixin)
+    mixin
+)
 WHERE
   freq >= 1000
 ORDER BY

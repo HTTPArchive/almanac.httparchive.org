@@ -14,7 +14,8 @@ FROM (
       CAST(IFNULL(JSON_EXTRACT(payload, "$['_cpu.UpdateLayoutTree']"), '0') AS INT64)
     ) AS layout_cpu_time
   FROM
-    `httparchive.pages.2019_07_01_*`),
+    `httparchive.pages.2019_07_01_*`
+),
   UNNEST([10, 25, 50, 75, 90]) AS percentile
 GROUP BY
   percentile,

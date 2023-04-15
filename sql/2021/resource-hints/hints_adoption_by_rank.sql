@@ -45,12 +45,12 @@ FROM (
     `httparchive.pages.2021_07_01_*`
 )
 JOIN (
-    SELECT
-      _TABLE_SUFFIX AS client,
-      url AS page,
-      rank AS _rank
-    FROM
-      `httparchive.summary_pages.2021_07_01_*`
+  SELECT
+    _TABLE_SUFFIX AS client,
+    url AS page,
+    rank AS _rank
+  FROM
+    `httparchive.summary_pages.2021_07_01_*`
 )
 USING
   (client, page),

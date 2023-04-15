@@ -462,7 +462,8 @@ FROM (
     `httparchive.almanac.parsed_css`,
     UNNEST(getShorthandFirstProperties(css)) AS property
   WHERE
-    date = '2020-08-01')
+    date = '2020-08-01'
+)
 GROUP BY
   client,
   property

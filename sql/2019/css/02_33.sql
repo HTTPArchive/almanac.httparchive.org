@@ -47,9 +47,11 @@ FROM (
     GROUP BY
       client,
       page,
-      value)
+      value
+  )
   GROUP BY
     client,
-    page)
+    page
+)
 GROUP BY
   client

@@ -26,9 +26,10 @@ FROM (
       url,
       JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._security'), '$.iframe-allow-sandbox') AS iframeAttrs
     FROM
-      `httparchive.pages.2021_07_01_*`)
-  LEFT JOIN UNNEST(iframeAttrs) AS iframeAttr
+      `httparchive.pages.2021_07_01_*`
   )
+  LEFT JOIN UNNEST(iframeAttrs) AS iframeAttr
+)
 GROUP BY
   client
 ORDER BY

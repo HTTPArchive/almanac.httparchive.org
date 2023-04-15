@@ -38,7 +38,7 @@ FROM (
     domain,
     page,
     category
-  )
+)
 GROUP BY
   domain,
   category

@@ -10,7 +10,8 @@ FROM (
   SELECT
     client,
     type AS contentType,
-    IFNULL(ThirdPartyTable.category,
+    IFNULL(
+      ThirdPartyTable.category,
       IF(DomainsOver50Table.requestDomain IS NULL, 'first-party', 'other')
     ) AS thirdPartyCategory
   FROM

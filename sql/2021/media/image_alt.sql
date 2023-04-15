@@ -40,7 +40,8 @@ FROM (
     url,
     get_markup_info(JSON_EXTRACT_SCALAR(payload, '$._markup')) AS markup_info
   FROM
-    `httparchive.pages.2021_07_01_*`)
+    `httparchive.pages.2021_07_01_*`
+)
 GROUP BY
   client
 ORDER BY

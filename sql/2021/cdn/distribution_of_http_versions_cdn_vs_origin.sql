@@ -55,12 +55,16 @@ LEFT JOIN
       `httparchive.almanac.requests`
     WHERE
       JSON_EXTRACT_SCALAR(payload, '$._tls_version') IS NOT NULL AND
-      IFNULL(JSON_EXTRACT_SCALAR(payload, '$._protocol'), IFNULL(NULLIF(JSON_EXTRACT_SCALAR(payload, '$._tls_next_proto'), 'unknown'), NULLIF(CONCAT('HTTP/',
-        JSON_EXTRACT_SCALAR(payload, '$.response.httpVersion')), 'HTTP/'))) IS NOT NULL AND
+      IFNULL(JSON_EXTRACT_SCALAR(payload, '$._protocol'), IFNULL(NULLIF(JSON_EXTRACT_SCALAR(
+        payload, '$._tls_next_proto'), 'unknown'), NULLIF(CONCAT(
+        'HTTP/',
+        JSON_EXTRACT_SCALAR(payload, '$.response.httpVersion')
+      ), 'HTTP/'))) IS NOT NULL AND
       JSON_EXTRACT(payload, '$._socket') IS NOT NULL AND
       date = '2021-07-01'
     GROUP BY client, page, socket
-  ) b ON (a.client = b.client AND a.page = b.page AND a.socket = b.socket)
+  ) b
+ON (a.client = b.client AND a.page = b.page AND a.socket = b.socket)
 
 GROUP BY
   client,

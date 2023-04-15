@@ -22,6 +22,7 @@ FROM (
     REGEXP_CONTAINS(resp_cache_control, r'(?i)max-age\s*=\s*[0-9]+') AS uses_max_age,
     expAge AS exp_age
   FROM
-    `httparchive.summary_requests.2022_06_01_*`)
+    `httparchive.summary_requests.2022_06_01_*`
+)
 GROUP BY
   client

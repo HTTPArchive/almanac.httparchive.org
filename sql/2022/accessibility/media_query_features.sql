@@ -51,7 +51,8 @@ FROM (
     UNNEST(getMediaQueryFeatures(css)) AS feature
   WHERE
     date = '2022-07-01' AND
-    feature IS NOT NULL)
+    feature IS NOT NULL
+)
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -59,7 +60,8 @@ JOIN (
   FROM
     `httparchive.summary_pages.2022_07_01_*` -- noqa: L062
   GROUP BY
-    client)
+    client
+)
 USING
   (client)
 GROUP BY

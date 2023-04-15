@@ -3,7 +3,7 @@
 -- from https://stackoverflow.com/a/54835472
 CREATE TEMP FUNCTION array_slice(arr ARRAY<STRING>, start INT64, finish INT64)
 RETURNS ARRAY<STRING> AS (
-  ARRAY(
+  ARRAY (
     SELECT part
     FROM UNNEST(arr) part WITH OFFSET AS index
     WHERE index BETWEEN start AND finish
@@ -67,7 +67,8 @@ INNER JOIN (
   )
   GROUP BY
     client,
-    headername)
+    headername
+)
 USING
   (client, headername)
 INNER JOIN (
@@ -79,7 +80,8 @@ INNER JOIN (
     app_headers
   GROUP BY
     client,
-    headername)
+    headername
+)
 USING
   (client, headername),
   UNNEST(GENERATE_ARRAY(1, 10)) AS topN

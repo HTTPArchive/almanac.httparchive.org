@@ -7,7 +7,8 @@ SELECT
   client,
   _cdn_provider,
   CASE
-    WHEN respHttpVersion IN ('HTTP/3', 'h3', 'h3-29') OR
+    WHEN
+      respHttpVersion IN ('HTTP/3', 'h3', 'h3-29') OR
       reqHttpVersion IN ('HTTP/3', 'h3', 'h3-29') OR
       REGEXP_EXTRACT(REGEXP_EXTRACT(respOtherHeaders, r'alt-svc = (.*)'), r'(.*?)(?:, [^ ]* = .*)?$') LIKE '%h3=%' OR
       REGEXP_EXTRACT(REGEXP_EXTRACT(respOtherHeaders, r'alt-svc = (.*)'), r'(.*?)(?:, [^ ]* = .*)?$') LIKE '%h3-29=%' THEN 'h3_supported'

@@ -156,6 +156,7 @@ FROM (
   FROM
     `httparchive.pages.2021_07_01_*`
   LEFT JOIN
-    UNNEST(getCustomPropertyValueTypes(JSON_EXTRACT_SCALAR(payload, "$['_css-variables']"))) AS value)
+    UNNEST(getCustomPropertyValueTypes(JSON_EXTRACT_SCALAR(payload, "$['_css-variables']"))) AS value
+)
 ORDER BY
   pct DESC

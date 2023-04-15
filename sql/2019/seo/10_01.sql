@@ -29,6 +29,7 @@ FROM (
     _TABLE_SUFFIX AS client,
     hasEligibleType(payload) AS has_eligible_type
   FROM
-    `httparchive.pages.2019_07_01_*`)
+    `httparchive.pages.2019_07_01_*`
+)
 GROUP BY
   client

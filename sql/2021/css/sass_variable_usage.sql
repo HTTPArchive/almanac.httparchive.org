@@ -33,7 +33,8 @@ FROM (
     variable.freq
   FROM
     `httparchive.pages.2021_07_01_*`,
-    UNNEST(getVariableUsage(payload)) AS variable)
+    UNNEST(getVariableUsage(payload)) AS variable
+)
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -42,7 +43,8 @@ JOIN (
     `httparchive.pages.2021_07_01_*`,
     UNNEST(getVariableUsage(payload))
   GROUP BY
-    client)
+    client
+)
 USING
   (client)
 GROUP BY

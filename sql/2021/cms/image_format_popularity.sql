@@ -16,7 +16,8 @@ FROM (
   FROM
     `httparchive.technologies.2021_07_01_*`
   WHERE
-    category = 'CMS')
+    category = 'CMS'
+)
 JOIN (
   SELECT
     client,
@@ -26,7 +27,8 @@ JOIN (
     `httparchive.almanac.requests`
   WHERE
     date = '2021-07-01' AND
-    type = 'image')
+    type = 'image'
+)
 USING
   (client, url)
 JOIN (
@@ -40,7 +42,8 @@ JOIN (
     category = 'CMS'
   GROUP BY
     client,
-    cms)
+    cms
+)
 USING
   (client, cms)
 WHERE

@@ -46,7 +46,8 @@ FROM (
     date = '2020-08-01'
   GROUP BY
     client,
-    page)
+    page
+)
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -54,7 +55,8 @@ JOIN (
   FROM
     `httparchive.summary_pages.2020_08_01_*`
   GROUP BY
-    client)
+    client
+)
 USING
   (client)
 GROUP BY

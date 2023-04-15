@@ -13,7 +13,8 @@ FROM (
   FROM
     `httparchive.almanac.requests`
   WHERE
-    date = '2022-06-01')
+    date = '2022-06-01'
+)
 WHERE
   issuer IS NOT NULL
 GROUP BY

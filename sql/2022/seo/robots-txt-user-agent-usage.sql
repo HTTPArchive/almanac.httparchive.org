@@ -31,13 +31,13 @@ FROM
       total,
       getRobotsTextUserAgents(JSON_EXTRACT_SCALAR(payload, '$._robots_txt')) AS robots_txt_user_agent_info
     FROM
-      `httparchive.pages.2022_07_01_*` -- noqa: L062
+      `httparchive.pages.2022_07_01_*` -- noqa: CV09
     JOIN
       (
 
         SELECT _TABLE_SUFFIX, COUNT(0) AS total
         FROM
-          `httparchive.pages.2022_07_01_*` -- noqa: L062
+          `httparchive.pages.2022_07_01_*` -- noqa: CV09
         GROUP BY _TABLE_SUFFIX
       )
     USING (_TABLE_SUFFIX)

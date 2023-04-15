@@ -70,7 +70,8 @@ FROM (
     year,
     getResourceHints(payload) AS hints
   FROM
-    pages)
+    pages
+)
 GROUP BY
   year,
   client
