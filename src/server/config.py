@@ -81,7 +81,7 @@ def update_config():
                 config_filename = "config/%s" % file
                 with open(config_filename, "r") as config_file:
                     timestamps_json = json.load(config_file)
-            if file == "contributors.json":
+            elif file == "contributors.json":
                 config_filename = "config/%s" % file
                 with open(config_filename, "r") as config_file:
                     contributors = json.load(config_file)
