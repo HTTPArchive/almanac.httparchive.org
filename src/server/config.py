@@ -99,10 +99,9 @@ def update_config():
 
                 json_config["contributors"] = {}
                 for contributor_id, contributor in contributors.items():
-                    if (contributor["contributions"]["year"]):
+                    if (contributor["teams"][year]):
                         json_config["contributors"][contributor_id] = contributor
-                        json_config["contributors"][contributor_id]["teams"] = contributor["contributions"]["year"]
-                        del json_config["contributors"][contributor_id]["contributions"]
+                        json_config["contributors"][contributor_id]["teams"] = contributor["teams"][year]
 
                         if "avatar_url" not in contributor:
                             contributor["avatar_url"] = (
@@ -110,8 +109,6 @@ def update_config():
                                 + str(hash(contributor_id) % AVATARS_NUMBER)
                                 + ".jpg"
                             )
-                    break
 
-            print(json_config)
 
 update_config()

@@ -16,9 +16,9 @@ def merged_contributors():
             contributors = data.get("contributors", {})
 
             for key, value in contributors.items():
-                if "contributions" not in merged_contributors[key]:
-                    merged_contributors[key]["contributions"] = {}
-                merged_contributors[key]["contributions"][year] = value.pop("teams")
+                if "teams" not in merged_contributors[key]:
+                    merged_contributors[key]["teams"] = {}
+                merged_contributors[key]["teams"][year] = value.pop("teams")
 
                 merged_contributors[key].update(value)
 

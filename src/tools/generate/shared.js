@@ -84,12 +84,10 @@ function get_yearly_contributors(year) {
   const yearlyContributors = {};
 
   for (const contributorKey in contributorsData) {
-    const yearContributions = contributorsData[contributorKey].contributions[year];
+    const yearContributions = contributorsData[contributorKey].teams[year];
     if (typeof yearContributions == "object") {
       yearlyContributors[contributorKey] = { ...contributorsData[contributorKey] }
-      yearlyContributors[contributorKey]["teams"] = {};
-      yearlyContributors[contributorKey]["teams"] = yearContributions;
-      delete yearlyContributors[contributorKey].contributions;
+      yearlyContributors[contributorKey].teams = yearContributions;
     }
   }
 
