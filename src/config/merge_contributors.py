@@ -25,9 +25,11 @@ def merged_contributors():
         del data["contributors"]
         with open(filename, "w") as file:
             json.dump(data, file, indent=2, sort_keys=True)
+            print("", file=outfile)
 
     with open("src/config/contributors.json", "w") as outfile:
         json.dump(merged_contributors, outfile, indent=2, sort_keys=True)
+        print("", file=outfile)
 
 
 merged_contributors()
