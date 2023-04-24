@@ -84,6 +84,8 @@ def update_config():
             elif ".json" in file:
                 config_files.append(file[0:4])
 
+    contributors = json.load(open("config/contributors.json", 'r', encoding="utf-8"))
+
     for year in config_files:
         config_filename = "config/%s.json" % year
         with open(config_filename, "r") as config_file:
@@ -95,13 +97,21 @@ def update_config():
                 SUPPORTED_LANGUAGES.update({year: get_languages(json_config)})
                 SUPPORTED_CHAPTERS.update({year: set(get_chapters(json_config))})
 
-                for contributor_id, contributor in json_config["contributors"].items():
-                    if "avatar_url" not in contributor:
-                        contributor["avatar_url"] = (
-                            DEFAULT_AVATAR_FOLDER_PATH
-                            + str(hash(contributor_id) % AVATARS_NUMBER)
-                            + ".jpg"
-                        )
+                json_config["contributors"] = {}
+                for contributor_id, contributor in contributors.items():
+                    if (contributor["contributions"]["year"]):
+                        json_config["contributors"][contributor_id] = contributor
+                        json_config["contributors"][contributor_id]["teams"] = contributor["contributions"]["year"]
+                        del json_config["contributors"][contributor_id]["contributions"]
 
+                        if "avatar_url" not in contributor:
+                            contributor["avatar_url"] = (
+                                DEFAULT_AVATAR_FOLDER_PATH
+                                + str(hash(contributor_id) % AVATARS_NUMBER)
+                                + ".jpg"
+                            )
+                    break
+
+            print(json_config)
 
 update_config()
