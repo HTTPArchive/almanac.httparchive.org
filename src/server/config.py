@@ -84,7 +84,8 @@ def update_config():
             elif ".json" in file:
                 config_files.append(file[0:4])
 
-    contributors = json.load(open("config/contributors.json", 'r', encoding="utf-8"))
+    with open("config/contributors.json", "r") as contributors_file:
+        contributors = json.load(contributors_file)
 
     for year in config_files:
         config_filename = "config/%s.json" % year
@@ -99,7 +100,7 @@ def update_config():
 
                 json_config["contributors"] = {}
                 for contributor_id, contributor in contributors.items():
-                    if (contributor["teams"][year]):
+                    if (year in contributor["teams"]):
                         json_config["contributors"][contributor_id] = contributor
                         json_config["contributors"][contributor_id]["teams"] = contributor["teams"][year]
 
