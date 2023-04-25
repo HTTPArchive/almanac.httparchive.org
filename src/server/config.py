@@ -19,6 +19,7 @@ SUPPORTED_LANGUAGES = {}
 
 config_json = {}
 timestamps_json = {}
+contributors = {}
 
 
 def get_config(year):
@@ -72,6 +73,7 @@ def update_config():
     global SUPPORTED_LANGUAGES
     global config_json
     global timestamps_json
+    global contributors
 
     config_files = []
 
@@ -102,15 +104,16 @@ def update_config():
                 json_config["contributors"] = {}
                 for contributor_id, contributor in contributors.items():
                     if (year in contributor["teams"]):
-                        json_config["contributors"][contributor_id] = contributor
+                        json_config["contributors"][contributor_id] = {**contributor}
                         json_config["contributors"][contributor_id]["teams"] = contributor["teams"][year]
 
-                        if "avatar_url" not in contributor:
-                            contributor["avatar_url"] = (
-                                DEFAULT_AVATAR_FOLDER_PATH
-                                + str(hash(contributor_id) % AVATARS_NUMBER)
-                                + ".jpg"
-                            )
+                for contributor_id, contributor in json_config["contributors"].items():
+                    if "avatar_url" not in contributor:
+                        contributor["avatar_url"] = (
+                            DEFAULT_AVATAR_FOLDER_PATH
+                            + str(hash(contributor_id) % AVATARS_NUMBER)
+                            + ".jpg"
+                        )
 
 
 update_config()
