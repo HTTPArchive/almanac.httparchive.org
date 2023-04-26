@@ -1,5 +1,5 @@
 /**
-  * Show the contributors should be added in `config/year.json` file and which should remove based on their contributions in a perticular team
+  * Show the contributors should be added in `config/contributors.json` file and which should remove based on their contributions in a perticular team
   *
   * @param {object} configs all config file generate with get_yearly_configs().
   * @param {object}  chapter_contributors parsed contributors for each year (author, analyst, reviewer, editor)[Must be a Set (finding is more efficient)]
@@ -27,7 +27,7 @@ const get_contributors_difference = async (configs, chapter_contributors) => {
     const config_contributors = configs[year].contributors;
     const year_chapter_contributors = chapter_contributors[year];
 
-    // Generates contributors who are in config/year.json file but not contributed for a team
+    // Generates contributors who are in config/contributors.json file but not contributed for a team
     for (let contributor in config_contributors) {
       const contributor_teams = config_contributors[contributor].teams;
       if (contributor_teams.includes("analysts")) {
@@ -55,7 +55,7 @@ const get_contributors_difference = async (configs, chapter_contributors) => {
       }
     }
 
-    // Generates contributes who contributed in team but not in config/year.json file
+    // Generates contributes who contributed in team but not in config/contributors.json file
     const year_chapter_authors = year_chapter_contributors.authors;
     const year_chapter_reviewers = year_chapter_contributors.reviewers;
     const year_chapter_analysts = year_chapter_contributors.analysts;
@@ -94,7 +94,7 @@ const get_contributors_difference = async (configs, chapter_contributors) => {
 
     if (not_contributed_analysts.size > 0 || not_contributed_authors.size > 0 || not_contributed_reviewers.size > 0 || contributed_analysts.size > 0 || contributed_authors.size > 0 || contributed_reviewers.size > 0 || contributed_editors.size > 0) {
       console.log("\n****************************************************");
-      console.log(`Contributor Discrepancies in config/${year}.json`);
+      console.log(`Contributor Discrepancies in config/contributors.json for ${year}`);
       if (not_contributed_authors.size > 0 || contributed_authors.size > 0) {
         console.log("\tAuthors");
         if (not_contributed_authors.size > 0) {
