@@ -2,25 +2,8 @@
   "settings": [
     {
       "is_live": true,
-      "supported_languages": [
-        "en",
-        "es",
-        "fr",
-        "hi",
-        "it",
-        "ja",
-        "nl",
-        "pt",
-        "ru",
-        "tr",
-        "uk",
-        "zh-CN",
-        "zh-TW"
-      ],
-      "ebook_languages": [
-        "en",
-        "ja"
-      ]
+      "supported_languages": ["en","es","fr","hi","it","ja","nl","pt","ru","tr","uk","zh-CN","zh-TW"],
+      "ebook_languages": ["en"]
     }
   ],
   "outline": [
