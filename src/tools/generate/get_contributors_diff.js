@@ -134,6 +134,11 @@ const get_contributors_difference = async (configs, chapter_contributors) => {
       if (not_contributed_editors.size > 0 || contributed_editors.size > 0) {
         console.log("\n\tEditors");
         // Editors are not always listed against a chapter so only list editors not in config
+        if (not_contributed_editors.size > 0) {
+          console.log("\t\tRemove(did not contribute, but listed)");
+          not_contributed_editors.forEach(editor => console.log("\t\t\t### ", editor));
+        }
+        // Editors are not always listed against a chapter so only list editors not in config
         if (contributed_editors.size > 0) {
           console.log("\t\tAdd(contributed, but are not listed)");
           contributed_editors.forEach(editor => console.log("\t\t\t### ", editor));
