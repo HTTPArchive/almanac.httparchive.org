@@ -101,6 +101,8 @@ def update_config():
                 SUPPORTED_LANGUAGES.update({year: get_languages(json_config)})
                 SUPPORTED_CHAPTERS.update({year: set(get_chapters(json_config))})
 
+                # Add the contributors details that contributed to this year
+                # for ease of look up later
                 json_config["contributors"] = {}
                 for contributor_id, contributor in contributors.items():
                     if (year in contributor["teams"]):
