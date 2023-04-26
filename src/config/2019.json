@@ -1,156 +1,6 @@
 {
-  "outline": [
-    {
-      "chapters": [
-        {
-          "chapter_number": "1",
-          "part": "I",
-          "slug": "javascript",
-          "title": "JavaScript"
-        },
-        {
-          "chapter_number": "2",
-          "part": "I",
-          "slug": "css",
-          "title": "CSS"
-        },
-        {
-          "chapter_number": "3",
-          "part": "I",
-          "slug": "markup",
-          "title": "Markup"
-        },
-        {
-          "chapter_number": "4",
-          "part": "I",
-          "slug": "media",
-          "title": "Media"
-        },
-        {
-          "chapter_number": "5",
-          "part": "I",
-          "slug": "third-parties",
-          "title": "Third Parties"
-        },
-        {
-          "chapter_number": "6",
-          "part": "I",
-          "slug": "fonts",
-          "title": "Fonts"
-        }
-      ],
-      "part": "I. Page Content",
-      "part_number": "1"
-    },
-    {
-      "chapters": [
-        {
-          "chapter_number": "7",
-          "part": "II",
-          "slug": "performance",
-          "title": "Performance"
-        },
-        {
-          "chapter_number": "8",
-          "part": "II",
-          "slug": "security",
-          "title": "Security"
-        },
-        {
-          "chapter_number": "9",
-          "part": "II",
-          "slug": "accessibility",
-          "title": "Accessibility"
-        },
-        {
-          "chapter_number": "10",
-          "part": "II",
-          "slug": "seo",
-          "title": "SEO"
-        },
-        {
-          "chapter_number": "11",
-          "part": "II",
-          "slug": "pwa",
-          "title": "PWA"
-        },
-        {
-          "chapter_number": "12",
-          "part": "II",
-          "slug": "mobile-web",
-          "title": "Mobile Web"
-        }
-      ],
-      "part": "II. User Experience",
-      "part_number": "2"
-    },
-    {
-      "chapters": [
-        {
-          "chapter_number": "13",
-          "part": "III",
-          "slug": "ecommerce",
-          "title": "Ecommerce"
-        },
-        {
-          "chapter_number": "14",
-          "part": "III",
-          "slug": "cms",
-          "title": "CMS"
-        }
-      ],
-      "part": "III. Content Publishing",
-      "part_number": "3"
-    },
-    {
-      "chapters": [
-        {
-          "chapter_number": "15",
-          "part": "IV",
-          "slug": "compression",
-          "title": "Compression"
-        },
-        {
-          "chapter_number": "16",
-          "part": "IV",
-          "slug": "caching",
-          "title": "Caching"
-        },
-        {
-          "chapter_number": "17",
-          "part": "IV",
-          "slug": "cdn",
-          "title": "CDN"
-        },
-        {
-          "chapter_number": "18",
-          "part": "IV",
-          "slug": "page-weight",
-          "title": "Page Weight"
-        },
-        {
-          "chapter_number": "19",
-          "part": "IV",
-          "slug": "resource-hints",
-          "title": "Resource Hints"
-        },
-        {
-          "chapter_number": "20",
-          "part": "IV",
-          "slug": "http",
-          "title": "HTTP/2"
-        }
-      ],
-      "part": "IV. Content Distribution",
-      "part_number": "4"
-    }
-  ],
   "settings": [
     {
-      "ebook_languages": [
-        "en",
-        "ja"
-      ],
       "is_live": true,
       "supported_languages": [
         "en",
@@ -166,6 +16,156 @@
         "uk",
         "zh-CN",
         "zh-TW"
+      ],
+      "ebook_languages": [
+        "en",
+        "ja"
+      ]
+    }
+  ],
+  "outline": [
+    {
+      "part": "I. Page Content",
+      "part_number": "1",
+      "chapters": [
+        {
+          "part": "I",
+          "chapter_number": "1",
+          "title": "JavaScript",
+          "slug": "javascript"
+        },
+        {
+          "part": "I",
+          "chapter_number": "2",
+          "title": "CSS",
+          "slug": "css"
+        },
+        {
+          "part": "I",
+          "chapter_number": "3",
+          "title": "Markup",
+          "slug": "markup"
+        },
+        {
+          "part": "I",
+          "chapter_number": "4",
+          "title": "Media",
+          "slug": "media"
+        },
+        {
+          "part": "I",
+          "chapter_number": "5",
+          "title": "Third Parties",
+          "slug": "third-parties"
+        },
+        {
+          "part": "I",
+          "chapter_number": "6",
+          "title": "Fonts",
+          "slug": "fonts"
+        }
+      ]
+    },
+    {
+      "part": "II. User Experience",
+      "part_number": "2",
+      "chapters": [
+        {
+          "part": "II",
+          "chapter_number": "7",
+          "title": "Performance",
+          "slug": "performance"
+        },
+        {
+          "part": "II",
+          "chapter_number": "8",
+          "title": "Security",
+          "slug": "security"
+        },
+        {
+          "part": "II",
+          "chapter_number": "9",
+          "title": "Accessibility",
+          "slug": "accessibility"
+        },
+        {
+          "part": "II",
+          "chapter_number": "10",
+          "title": "SEO",
+          "slug": "seo"
+        },
+        {
+          "part": "II",
+          "chapter_number": "11",
+          "title": "PWA",
+          "slug": "pwa"
+        },
+        {
+          "part": "II",
+          "chapter_number": "12",
+          "title": "Mobile Web",
+          "slug": "mobile-web"
+        }
+      ]
+    },
+    {
+      "part": "III. Content Publishing",
+      "part_number": "3",
+      "chapters": [
+        {
+          "part": "III",
+          "chapter_number": "13",
+          "title": "Ecommerce",
+          "slug": "ecommerce"
+        },
+        {
+          "part": "III",
+          "chapter_number": "14",
+          "title": "CMS",
+          "slug": "cms"
+        }
+      ]
+    },
+    {
+      "part": "IV. Content Distribution",
+      "part_number": "4",
+      "chapters": [
+        {
+          "part": "IV",
+          "chapter_number": "15",
+          "title": "Compression",
+          "slug": "compression"
+        },
+        {
+          "part": "IV",
+          "chapter_number": "16",
+          "title": "Caching",
+          "slug": "caching"
+        },
+        {
+          "part": "IV",
+          "chapter_number": "17",
+          "title": "CDN",
+          "slug": "cdn"
+        },
+        {
+          "part": "IV",
+          "chapter_number": "18",
+          "title": "Page Weight",
+          "slug": "page-weight"
+        },
+        {
+          "part": "IV",
+          "chapter_number": "19",
+          "title": "Resource Hints",
+          "slug": "resource-hints"
+        },
+        {
+          "part": "IV",
+          "chapter_number": "20",
+          "title": "HTTP/2",
+          "slug": "http"
+        }
       ]
     }
   ],
