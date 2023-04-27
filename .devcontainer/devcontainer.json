@@ -1,0 +1,29 @@
+{
+    "name": "Dev Container",
+    "build": {
+        "dockerfile": "../src/Dockerfile",
+        "context": "../src/",
+        "args": {
+            "SKIPGC": "false"
+        }
+    },
+    "forwardPorts": [
+        8080
+    ],
+    "customizations": {
+        // Configure properties specific to VS Code.
+        "vscode": {
+            // Set *default* container specific settings.json values on container create.
+            "settings": {
+                "python.defaultInterpreterPath": "/usr/local/bin/python",
+                "python.linting.enabled": true,
+                "python.linting.pylintEnabled": true
+            },
+            // Add the IDs of extensions you want installed when the container is created.
+            "extensions": [
+                "ms-python.python",
+                "ms-python.vscode-pylance"
+            ]
+        }
+    }
+}
