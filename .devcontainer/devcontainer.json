@@ -4,6 +4,7 @@
         "dockerfile": "../src/Dockerfile",
         "context": "../src/",
         "args": {
+            "IS_DEV_CONTAINER": "true",
             "SKIPGC": "false"
         }
     },
@@ -23,6 +24,11 @@
             "extensions": [
                 "ms-python.python",
                 "ms-python.vscode-pylance"
+            ]
+        },
+        "codespaces": {
+            "openFiles": [
+                "README.md"
             ]
         }
     }
