@@ -68,7 +68,7 @@ jobs:
       if: ${{ github.event.inputs.ebooks == 'true' }}
       uses: actions/upload-artifact@v3
       with:
-        name: pdfs-${{ github.ref }}
+        name: pdfs-${{ github.ref_name }}
         path: ./src/static/pdfs/*.pdf
         if-no-files-found: warn # 'warn' or 'ignore' are also available, defaults to `warn`
         retention-days: 5 # defaults to 90
