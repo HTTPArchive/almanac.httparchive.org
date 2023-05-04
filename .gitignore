@@ -4,3 +4,4 @@ env/
 *.log
 *.pyc
 **/.DS_Store
+src/static/pdfs/
