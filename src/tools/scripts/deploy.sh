@@ -111,6 +111,7 @@ REPO_OWNER=HTTPArchive
 REPO_NAME=almanac.httparchive.org
 WORKFLOW_ID=predeploy.yml
 # Set your Github personal access token
+# shellcheck disable=SC1091
 source .env
 #read -sp 'Enter your Github personal access token: ' GITHUB_TOKEN
 
