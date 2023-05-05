@@ -13,6 +13,7 @@ csp = {
         "'self'",
         "webmention.io",
         "discuss.httparchive.org",
+        "*.google-analytics.com",
         "www.google-analytics.com",
         "www.googletagmanager.com",
     ],

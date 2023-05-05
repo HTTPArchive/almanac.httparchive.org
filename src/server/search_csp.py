@@ -14,7 +14,7 @@ csp = {
     "connect-src": ["'self'", "www.google-analytics.com", "www.googletagmanager.com"],
     "img-src": [
         "'self'",
-        "www.google-analytics.com",
+        "*.google-analytics.com",
         "www.googletagmanager.com",
         "www.googleapis.com",
         "*.google.com",
