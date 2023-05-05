@@ -11,7 +11,7 @@ csp = {
     "connect-src": [
         "'self'",
         "discuss.httparchive.org",
-        "www.google-analytics.com",
+        "*.google-analytics.com",
         "www.googletagmanager.com",
         "cdn.ampproject.org",
     ],
