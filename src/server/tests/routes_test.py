@@ -255,6 +255,7 @@ def test_embed(client):
     response = client.get("/en/2022/embeds/structured-data-sankey")
     assert response.status_code == 200
 
+
 def test_report_to_header(client):
     response = client.get("/en/2022/")
     assert response.headers["Report-To"].startswith("{")
