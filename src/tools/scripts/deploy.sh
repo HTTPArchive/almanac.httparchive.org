@@ -98,10 +98,30 @@ if [ "$(pgrep -f 'python main.py')" ]; then
   pkill -9 python main.py
 fi
 
-#Remove generated chapters (in case new one from other branch in there)
+#Remove generated chapters and e-books (in case new one from other branch in there)
 # Or with "true" to prevent failure if files don't exist
-echo "Removing Generated Chapters"
+echo "Removing Generated Chapters and e-books"
 rm -f ./templates/*/*/chapters/* || true
+rm -f ./static/pdfs/* || true
+
+# Download latest e-books from Github Action artifacts
+echo "Downloading latest e-books from Github Action artifacts"
+# Set your GitHub repository and workflow name
+REPO_OWNER=HTTPArchive
+REPO_NAME=almanac.httparchive.org
+WORKFLOW_ID=predeploy.yml
+# Set your Github personal access token
+export $(cat ../.env | xargs)
+#read -sp 'Enter your Github personal access token: ' GITHUB_TOKEN
+
+# Get the latest workflow run ID and download its artifact's ZIP file
+RUN_ID=$(curl -s -H "Authorization: token ${GITHUB_TOKEN}" https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/actions/workflows/${WORKFLOW_ID}/runs | jq -r '.workflow_runs[0].id')
+ARTIFACT_ID=$(curl -s -H "Authorization: token ${GITHUB_TOKEN}" https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/actions/runs/${RUN_ID}/artifacts | jq -r '.artifacts[0].id')
+curl -L -H "Authorization: token ${GITHUB_TOKEN}" -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/actions/artifacts/${ARTIFACT_ID}/zip -o ${ARTIFACT_ID}.zip
+
+# Extract the contents of the ZIP file and clean up
+unzip -q ${ARTIFACT_ID}.zip -d ./static/pdfs/
+rm ${ARTIFACT_ID}.zip
 
 echo "Run and test website"
 ./tools/scripts/run_and_test_website.sh
