@@ -1,6 +1,6 @@
 # Because of the "true" value we can't use a Python object
 # and have to use actual JSON
-report_to="""
+report_to = """
 {
     "group": "default",
     "max_age": 31536000,
@@ -11,4 +11,8 @@ report_to="""
     ],
     "include_subdomains": true
 }
-""".replace("\n","").replace(" ","")
+""".replace(
+    "\n", ""
+).replace(
+    " ", ""
+)
