@@ -42,7 +42,7 @@ WebAssemblyはコンパイル対象であり、バイナリモジュールとし
 モバイルブラウザに提供されたWebAssemblyモジュールがわずかに少ない（-13％）ことがわかりました。これは、一般的に優れたサポートを持つモバイルブラウザのWebAssembly能力を反映しているわけではありません。むしろ、[プログレッシブ・エンハンスメント](https://developer.mozilla.org/ja/docs/Glossary/Progressive_Enhancement)の標準的な実践によるものと思われます。この場合、WebAssemblyを必要とするより高度な機能は、モバイルユーザーにはサポートされていません。
 
 {{ figure_markup(
-  caption="Number of Wasm responses.",
+  caption="Wasmの対応数。",
   description="デスクトップとモバイルのデータセットにおけるWasmの総回答数、およびユニークファイル数を示す棒グラフ。ユニークファイル数は、デスクトップでは全回答数3,204件のうち383件、モバイルでは2,777件のうち310件と、かなり少なくなっています。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRZqlPK0L45J7IoVgmLcuRut9-M2nhaDMhs8cHtCLZacS7pkIqvEhHfdcYNSoEotQp0-Rs_RRslZ8sT/pubchart?oid=1842699031&format=interactive",
   sheets_gid="2142789475",
@@ -56,7 +56,7 @@ WebAssemblyのモジュールをハッシュ化することで、デスクトッ
 wasmリクエストのかなりの割合がクロスオリジンであり、再利用されているという考えをさらに強めています。とくに、これは昨年から大幅に増加しています（67.2％対55.2％）。
 
 {{ figure_markup(
-  caption="Cross-origin WebAssembly usage.",
+  caption="クロスオリジンのWebAssembly使用。",
   description="デスクトップにおけるWebAssemblyの使用率の67.2％、モバイルにおける使用率の60.9％がクロスオリジンであることを示す棒グラフです。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRZqlPK0L45J7IoVgmLcuRut9-M2nhaDMhs8cHtCLZacS7pkIqvEhHfdcYNSoEotQp0-Rs_RRslZ8sT/pubchart?oid=2039142493&format=interactive",
   sheets_gid="491240617",
