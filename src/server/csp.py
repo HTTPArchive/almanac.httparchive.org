@@ -4,7 +4,7 @@ csp = {
     "script-src": [
         "'self'",
         "'strict-dynamic'",
-        "www.google-analytics.com",
+        "*.google-analytics.com",
         "www.googletagmanager.com",
         "'unsafe-inline'",
     ],
