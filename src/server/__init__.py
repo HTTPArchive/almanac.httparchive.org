@@ -13,7 +13,7 @@ from .helpers import (
     get_versioned_filename,
 )
 from .config import TEMPLATES_DIR, STATIC_DIR
-from . import csp, feature_policy
+from . import csp, feature_policy, report_api
 import logging
 
 
@@ -53,6 +53,8 @@ def add_header(response):
         if response.status_code == 200 or response.status_code == 304:
             response.cache_control.public = True
             response.cache_control.max_age = 600
+    # Add Report API header
+    response.headers["Report-To"] = report_api.report_to
     return response
 
 

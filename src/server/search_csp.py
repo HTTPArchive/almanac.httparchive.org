@@ -4,14 +4,14 @@ csp = {
     "script-src": [
         "'self'",
         "'strict-dynamic'",
-        "www.google-analytics.com",
+        "*.google-analytics.com",
         "www.googletagmanager.com",
         "cse.google.com",
         "'unsafe-inline'",
         "'unsafe-eval'",
     ],
     "font-src": ["'self'"],
-    "connect-src": ["'self'", "www.google-analytics.com", "www.googletagmanager.com"],
+    "connect-src": ["'self'", "*.google-analytics.com", "www.googletagmanager.com"],
     "img-src": [
         "'self'",
         "*.google-analytics.com",

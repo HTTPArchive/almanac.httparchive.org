@@ -4,7 +4,7 @@ csp = {
     "script-src": [
         "'self'",
         "cdn.ampproject.org",
-        "www.google-analytics.com",
+        "*.google-analytics.com",
         "www.googletagmanager.com",
     ],
     "font-src": ["'self'", "fonts.gstatic.com"],
