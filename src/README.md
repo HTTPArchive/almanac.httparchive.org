@@ -177,7 +177,7 @@ It is possible to run the Super-Linter locally if you have Docker installed.
 First up pull the Super-Linter Docker image (this takes some time to download but only need to do this once or when you want to upgrade the version of the super-linter):
 
 ```
-docker pull github/super-linter:latest
+docker pull github/super-linter/slim:latest
 ```
 
 Then to run the linting do this:
@@ -253,7 +253,7 @@ To actually generate the ebooks, start your local server, then run the following
 npm run ebooks
 ```
 
-There is a GitHub Action which can be run manually from the Actions tab to generate the Ebooks and open a Pull Request for them. This is the easiest way to generate them.
+There is a GitHub Action which can be run manually from the Actions tab to generate the Ebooks and store the resulting files in an artifact. This is the easiest way to generate them.
 
 ## Generating ebooks - including print-ready ebooks if you want a hardcopy
 
@@ -291,7 +291,7 @@ This is the same as below since it uses all the default settings:
 prince "http://127.0.0.1:8080/en/2019/ebook?print&printer&page-size=A5&inside-margin=19.5mm&bleed=3mm&prince-trim=5mm&base-font-size=10px" -o static/pdfs/web_almanac_2019_en_print_A5.pdf
 ```
 
-Note this will create two extra pages at the begining which will need to be removed with a PDF editor (e.g. Adobe Acrobat) to start with a clean page starting on right hand side for printing. Please remove these before checking in versions into git.
+Note this will create two extra pages at the begining which will need to be removed with a PDF editor (e.g. Adobe Acrobat) to start with a clean page starting on right hand side for printing. Please remove these before deploying.
 
 It is also possible to generate a cover using the `&cover` URL param. This consists of basically 2 pages - the first page is a double width-page with front and back cover as one page (with spine in between) and the second page is a blank inside page.
 
@@ -332,6 +332,14 @@ You must first do some setup locally:
 gcloud init
 ```
 
+3. Set Github personal access token to GITHUB_TOKEN environment variable
+
+Use existing or create a new token [in GitHub.com](https://github.com/settings/personal-access-tokens/new). In token configuration select *Repository access = Public Repositories (read-only)*.
+
+```bash
+export GITHUB_TOKEN=github_pat_...
+```
+
 ### Deploying staged versions of the site
 
 It's sometimes useful to deploy a staged version of the site for others to see this.
@@ -360,8 +368,9 @@ The deploy script will do the following:
 - Ask you to confirm you've run the pre-deploy script via GitHub Actions
 - Switch to the production branch
 - Merge changes from main
-- Do a clean install
-- Run the tests
+- Do a clean install (remove generated chapters and e-books)
+- Downloade latest e-books from Github Action artifacts
+- Run and test the website
 - Ask you to complete any local tests and confirm good to deploy
 - Ask for a version number (suggesing the last verision tagged and incrementing the patch)
 - Tag the release (after asking you for the version number to use)

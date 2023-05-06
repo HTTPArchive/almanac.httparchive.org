@@ -1,8 +1,10 @@
 #!/bin/bash
 
 # This script is used to deploy the Web Almanac to Google Cloud Platform (GCP).
-# Users must have push permissions on the production branch and also release
-# permissions for the Web Almanac on GCP
+# Users must have the following permissions:
+# - push permissions on the production branch,
+# - Github permissions to download the latest e-books from Github Action artifacts,
+# - release permissions for the Web Almanac on GCP
 
 # exit when any command fails instead of trying to continue on
 set -e
@@ -110,10 +112,6 @@ echo "Downloading latest e-books from Github Action artifacts"
 REPO_OWNER=HTTPArchive
 REPO_NAME=almanac.httparchive.org
 WORKFLOW_ID=predeploy.yml
-# Set your Github personal access token
-# shellcheck disable=SC1091
-source .env
-#read -sp 'Enter your Github personal access token: ' GITHUB_TOKEN
 
 # Get the latest workflow run ID and download its artifact's ZIP file
 RUN_ID=$(curl -s -H "Authorization: token ${GITHUB_TOKEN}" "https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/actions/workflows/${WORKFLOW_ID}/runs" | jq -r '.workflow_runs[0].id')
