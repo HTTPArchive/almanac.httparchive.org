@@ -334,7 +334,7 @@ gcloud init
 
 3. Set Github personal access token to GITHUB_TOKEN environment variable
 
-Use existing or create a new token [in GitHub.com](https://github.com/settings/personal-access-tokens/new). In token configuration select *Repository access = Public Repositories (read-only)*.
+Use an existing token or create a new token [in GitHub.com](https://github.com/settings/personal-access-tokens/new). In token configuration select *Repository access = Public Repositories (read-only)*.
 
 ```bash
 export GITHUB_TOKEN=github_pat_...
