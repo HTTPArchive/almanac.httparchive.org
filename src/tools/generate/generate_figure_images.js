@@ -1,11 +1,22 @@
 const fs = require('fs-extra');
 const puppeteer = require('puppeteer');
+const https = require('https');
+const { optimize } = require('svgo');
 
 const { find_markdown_files } = require('./shared');
 
+const svgo_config = {
+  multipass: true,
+  plugins: [
+    'preset-default',
+    { name: 'convertTransform', params: { transformPrecision: 1, floatPrecision: 1 } },
+    { name: 'convertPathData', params: { floatPrecision: 1, transformPrecision: 1 } },
+  ]
+}
+
 const take_single_screenshot = async (graphUrl, filename) => {
 
-  const sheets_chart = graphUrl.startsWith('https://docs.google.com/spreadsheets') ? true :  false;
+  const sheets_chart = graphUrl.startsWith('https://docs.google.com/spreadsheets') ? true : false;
 
   const chartUrl = sheets_chart ? graphUrl : 'http://localhost:8080/' + graphUrl;
   const browser = await puppeteer.launch();
@@ -21,6 +32,36 @@ const take_single_screenshot = async (graphUrl, filename) => {
   const el = sheets_chart ? await page.$('#embed_chart') : await page.$('main');
   await el.screenshot({ path: filename });
   await browser.close();
+}
+
+const download_single_svg = async (graphUrl, filename) => {
+
+  const sheets_chart = graphUrl.startsWith('https://docs.google.com/spreadsheets') ? true : false;
+  const chartUrl = sheets_chart ? graphUrl : 'http://localhost:8080/' + graphUrl;
+  const svgUrl = chartUrl.replace('/pubchart', '/embed/oimg').replace('&format=interactive', '&filetype=svg');
+
+  https.get(svgUrl, (res) => {
+    const { statusCode } = res;
+    if (statusCode !== 200) {
+      console.error(`Failed to download image. Status code: ${statusCode}`);
+      return;
+    }
+
+    let rawData = '';
+    res.on('data', (chunk) => {
+      rawData += chunk;
+    });
+
+    res.on('end', () => {
+      try {
+        const result = optimize(rawData, svgo_config)
+        fs.writeFileSync(filename, result.data, 'utf8');
+        console.log(`Image optimized and saved to ${filename}`);
+      } catch (error) {
+        console.error('Error optimizing image:', error);
+      };
+    });
+  });
 }
 
 const generate_images = async (chapter_match) => {
@@ -112,7 +153,13 @@ const generate_images = async (chapter_match) => {
       }
 
       console.log(`  Generating image ${image_file}...`);
-      await take_single_screenshot(chart_url, file_path);
+      // download SVG image depending on format in filename
+      if (file_path.endsWith('.png')) {
+        await take_single_screenshot(chart_url, file_path);
+      }
+      else if (file_path.endsWith('.svg')) {
+        await download_single_svg(chart_url, file_path);
+      }
     }
   }
 
