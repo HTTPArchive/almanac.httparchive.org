@@ -337,7 +337,7 @@ gcloud init
 Use an existing token or create a new token [in GitHub.com](https://github.com/settings/personal-access-tokens/new). In token configuration select *Repository access = Public Repositories (read-only)*.
 
 ```bash
-export GITHUB_TOKEN=github_pat_...
+export GITHUB_TOKEN=...
 ```
 
 ### Deploying staged versions of the site
