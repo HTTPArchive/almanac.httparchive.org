@@ -369,7 +369,7 @@ The deploy script will do the following:
 - Switch to the production branch
 - Merge changes from main
 - Do a clean install (remove generated chapters and e-books)
-- Downloade latest e-books from Github Action artifacts
+- Download latest e-books from Github Action artifacts
 - Run and test the website
 - Ask you to complete any local tests and confirm good to deploy
 - Ask for a version number (suggesing the last verision tagged and incrementing the patch)
