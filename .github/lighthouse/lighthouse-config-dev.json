@@ -3,6 +3,7 @@
     "assert": {
       "preset": "lighthouse:recommended",
       "assertions": {
+        "bf-cache": "off",
         "bootup-time": "off",
         "canonical": "off",
         "dom-size": "off",

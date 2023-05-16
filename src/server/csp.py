@@ -4,7 +4,7 @@ csp = {
     "script-src": [
         "'self'",
         "'strict-dynamic'",
-        "www.google-analytics.com",
+        "*.google-analytics.com",
         "www.googletagmanager.com",
         "'unsafe-inline'",
     ],
@@ -13,7 +13,7 @@ csp = {
         "'self'",
         "webmention.io",
         "discuss.httparchive.org",
-        "www.google-analytics.com",
+        "*.google-analytics.com",
         "www.googletagmanager.com",
     ],
     "img-src": ["'self'", "https:", "data:"],

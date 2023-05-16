@@ -79,6 +79,21 @@ const find_config_files = async () => {
   return await recursive('config', [filter]);
 };
 
+function get_yearly_contributors(year) {
+  const contributorsData = JSON.parse(fs.readFileSync('config/contributors.json', 'utf8'));
+  const yearlyContributors = {};
+
+  for (const contributorKey in contributorsData) {
+    const yearContributions = contributorsData[contributorKey].teams[year];
+    if (typeof yearContributions == "object") {
+      yearlyContributors[contributorKey] = { ...contributorsData[contributorKey] }
+      yearlyContributors[contributorKey].teams = yearContributions;
+    }
+  }
+
+  return yearlyContributors;
+}
+
 const get_yearly_configs = async () => {
 
   let configs = {};
@@ -90,6 +105,9 @@ const get_yearly_configs = async () => {
     const [path,year] = config_file.match(re);
 
     configs[year] = JSON.parse(await fs.readFile(`config/${year}.json`, 'utf8'));
+
+    configs[year]["contributors"] = get_yearly_contributors(year);
+
   }
   return configs;
 };
