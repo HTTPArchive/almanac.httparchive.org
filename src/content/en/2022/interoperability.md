@@ -11,11 +11,11 @@ bkardell_bio: Brian Kardell is a developer advocate and W3C Advisory Committee R
 results: https://docs.google.com/spreadsheets/d/1w3GzzTNeKxafFODmjDs6OC2dseNEDDKwUV8KeSgRI1Y/
 featured_quote: Interoperability is a key goal of standards, but we've sometimes fallen short.  This chapter will begin providing an annual update to developers about efforts to come together to improve things. It will cover what's new or improved in terms of interoperability this year, and will provide a means for implementers to measure the impacts over time.
 featured_stat_1: 309%
-featured_stat_label_1: The increase in sites using CSS aspect-ratio between April 2021 and September 2022
+featured_stat_label_1: The increase in sites using CSS `aspect-ratio` between April 2021 and September 2022
 featured_stat_2: 0.3%
-featured_stat_label_2: The percentage of sites using the newly interoperable dialog element as of September 2022
+featured_stat_label_2: The percentage of sites using the newly interoperable `dialog` element as of September 2022
 featured_stat_3: 4%
-featured_stat_label_3: The number of mobile pages using recently interoperable CSS containment in their stylesheets. Containment support is critical for Container Queries.
+featured_stat_label_3: Mobile pages using recently interoperable CSS `containment`. This support is critical for Container Queries.
 ---
 
 ## Introduction
