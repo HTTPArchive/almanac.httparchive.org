@@ -63,6 +63,7 @@ jobs:
       if: ${{ github.event.inputs.ebooks == 'true' }}
       run: |
         cd src
+        mkdir static/pdfs/
         npm run ebooks
     - name: Upload PDF artifact
       if: ${{ github.event.inputs.ebooks == 'true' }}
