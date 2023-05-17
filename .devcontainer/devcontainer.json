@@ -1,0 +1,32 @@
+{
+    "name": "Dev Container",
+    "build": {
+        "dockerfile": "../src/Dockerfile",
+        "context": "../src/",
+        "args": {
+            "IS_DEV_CONTAINER": "true",
+            "SKIPGC": "false"
+        }
+    },
+    "forwardPorts": [
+        8080
+    ],
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "python.defaultInterpreterPath": "/usr/local/bin/python",
+                "python.linting.enabled": true,
+                "python.linting.pylintEnabled": true
+            },
+            "extensions": [
+                "ms-python.python",
+                "ms-python.vscode-pylance"
+            ]
+        },
+        "codespaces": {
+            "openFiles": [
+                "src/README.md"
+            ]
+        }
+    }
+}
