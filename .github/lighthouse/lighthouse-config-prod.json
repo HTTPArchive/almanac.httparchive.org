@@ -27,7 +27,6 @@
         "service-worker": "off",
         "speed-index": "off",
         "splash-screen": "off",
-        "tap-targets": "off",
         "themed-omnibox": "off",
         "third-party-facades": "off",
         "unminified-css": "off",
