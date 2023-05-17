@@ -1,6 +1,8 @@
 # Developing the Web Almanac
 
-The Web Almanac can be developed on macOS, Windows or Linux. It requires Node v12, Python v3.8 and pip to be installed. Alternatively, use Docker to avoid manually configuring the development environment.
+The Web Almanac can be developed on macOS, Windows or Linux. It requires Node v12, Python v3.8 and pip to be installed. You can use Docker to avoid manually configuring the development environment.
+It can be quickly deployed as a development container in GitHub Codespaces to develop in cloud:
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/HTTPArchive/almanac.httparchive.org?quickstart=1)
 
 ## Style guide
 

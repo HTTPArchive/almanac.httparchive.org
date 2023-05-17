@@ -6,8 +6,6 @@
 
 [![Open Dev Pull Requests](https://img.shields.io/github/issues-pr/HTTPArchive/almanac.httparchive.org/development)](https://github.com/HTTPArchive/almanac.httparchive.org/pulls?q=is%3Apr+is%3Aopen+label%3Adevelopment) [![Open Analysis Pull Requests](https://img.shields.io/github/issues-pr/HTTPArchive/almanac.httparchive.org/analysis)](https://github.com/HTTPArchive/almanac.httparchive.org/pulls?q=is%3Apr+is%3Aopen+label%3Aanalysis) [![Open Translation Pull Requests](https://img.shields.io/github/issues-pr/HTTPArchive/almanac.httparchive.org/translation)](https://github.com/HTTPArchive/almanac.httparchive.org/pulls?q=is%3Apr+is%3Aopen+label%3Atranslation) [![Open Writing Pull Requests](https://img.shields.io/github/issues-pr/HTTPArchive/almanac.httparchive.org/writing)](https://github.com/HTTPArchive/almanac.httparchive.org/pulls?q=is%3Apr+is%3Aopen+label%3Awriting)
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/HTTPArchive/almanac.httparchive.org?quickstart=1)
-
 The Web Almanac is HTTP Archive's annual **state of the web** report.
 
 Our mission is to combine the raw stats and trends of the HTTP Archive with the expertise of the web community. The Web Almanac is a comprehensive report on the state of the web, backed by real data and trusted web experts. It is comprised of 20+ chapters spanning aspects of page content, user experience, publishing, and distribution.

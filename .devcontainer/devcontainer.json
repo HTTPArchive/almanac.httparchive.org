@@ -25,7 +25,7 @@
         },
         "codespaces": {
             "openFiles": [
-                "README.md"
+                "src/README.md"
             ]
         }
     }
