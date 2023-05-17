@@ -9,6 +9,7 @@
         "bf-cache": "off",
         "bootup-time": "off",
         "dom-size": "off",
+        "efficient-animated-content": "off",
         "first-contentful-paint": "off",
         "first-cpu-idle": "off",
         "first-meaningful-paint": "off",
