@@ -429,11 +429,11 @@ docker image build --build-arg PYVER=3.8 --build-arg NODEVER=14.x --build-arg SK
 This will depend on your operating system but for MacOS/Linux this would be:
 
 ```
-docker container run -it --rm -v /app/node_modules -v "$PWD/..":/app -w /app/src --entrypoint=./tools/scripts/run_linter_locally.sh github/super-linter
+docker container run -it --rm -v /app/node_modules -v "$PWD/..":/app -w /app/src --entrypoint=./tools/scripts/run_linter_locally.sh github/super-linter:slim-latest
 ```
 
 And for Windows:
 
 ```
-docker container run --rm -v /app/node_modules -v %cd%\\..:/app -w /app/src --entrypoint=./tools/scripts/run_linter_locally.sh github/super-linter
+docker container run --rm -v /app/node_modules -v %cd%\\..:/app -w /app/src --entrypoint=./tools/scripts/run_linter_locally.sh github/super-linter:slim-latest
 ```
