@@ -29,6 +29,5 @@
             ]
         }
     },
-    "workspaceFolder": "/workspaces/almanac.httparchive.org/src",
-    "onCreateCommand": "pip install -r requirements.txt && npm install"
+    "onCreateCommand": "cd src && pip install -r requirements.txt && npm install"
 }
