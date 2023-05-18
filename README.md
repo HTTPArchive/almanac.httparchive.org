@@ -28,14 +28,11 @@ The Web Almanac is available in the original [English](https://almanac.httparchi
 
 See [our contributing guide](CONTRIBUTING.md). To run the Web Almanac locally please see [src/README.md](src/README.md).
 
-## 2022 Timeline
+## Next Web Almanac timeline
 
-- April: forming teams
-- May: forming teams / planning content
-- June: HTTP Archive crawl / analysis
-- August: analysis / writing
-- September: analysis / writing
-- End of September: launch!
+We are [taking a break for 2023](https://github.com/HTTPArchive/almanac.httparchive.org/discussions/33610), but hope to return in future.
+
+In the meantime, enjoy the [2022 edition](https://almanac.httparchive.org) and we're still open to contributions in the form of [translations](https://github.com/HTTPArchive/almanac.httparchive.org/issues?q=is%3Aissue+is%3Aopen+label%3Atranslation), [development](https://github.com/HTTPArchive/almanac.httparchive.org/issues?q=is%3Aissue+is%3Aopen+label%3Adevelopment) or bug fixes.
 
 ## Where to find us
 
