@@ -2,9 +2,9 @@
     "name": "Dev Container",
     "build": {
         "dockerfile": "../src/Dockerfile",
-        "context": "../src/",
+        "target": "base",
+        "context": "../",
         "args": {
-            "IS_DEV_CONTAINER": "true",
             "SKIPGC": "false"
         }
     },
@@ -28,5 +28,6 @@
                 "src/README.md"
             ]
         }
-    }
+    },
+    "onCreateCommand": "cd src && pip install -r requirements.txt && npm install"
 }

@@ -1,6 +1,6 @@
 # Developing the Web Almanac
 
-The Web Almanac can be developed on macOS, Windows or Linux. It requires Node v12, Python v3.8 and pip to be installed. You can use Docker to avoid manually configuring the development environment.
+The Web Almanac can be developed on macOS, Windows or Linux. It requires Node v16, Python v3.8 and pip to be installed. You can use Docker to avoid manually configuring the development environment.
 It can be quickly deployed as a development container in GitHub Codespaces to develop in cloud:
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/HTTPArchive/almanac.httparchive.org?quickstart=1)
 
@@ -14,7 +14,7 @@ An `.editorconfig` file exists for those using [EditorConfig](https://editorconf
 
 Make sure you run the following commands from within the `src` directory by executing `cd src` first.
 
-Make sure Python (3.8 or above), pip and NodeJS (v12 or above) are installed on your machine.
+Make sure Python (3.8 or above), pip and NodeJS (v16 or above) are installed on your machine.
 
 1. If you don't have virtualenv, install it using pip.
 
@@ -413,7 +413,6 @@ docker container run --rm -it -v "$PWD":/app webalmanac npm run pytest
 ```
 docker container run --rm -it -v "$PWD":/app -v /app/node_modules -p 8080:8080 webalmanac bash
 root@[CID]:/app# python main.py
-^C
 root@[CID]:/app# npm run generate
 root@[CID]:/app# npm run pytest
 root@[CID]:/app# exit
@@ -430,11 +429,11 @@ docker image build --build-arg PYVER=3.8 --build-arg NODEVER=14.x --build-arg SK
 This will depend on your operating system but for MacOS/Linux this would be:
 
 ```
-docker container run -it --rm -v /app/node_modules -v "$PWD/..":/app -w /app/src --entrypoint=./tools/scripts/run_linter_locally.sh github/super-linter
+docker container run -it --rm -v /app/node_modules -v "$PWD/..":/app -w /app/src --entrypoint=./tools/scripts/run_linter_locally.sh github/super-linter:slim-latest
 ```
 
 And for Windows:
 
 ```
-docker container run --rm -v /app/node_modules -v %cd%\\..:/app -w /app/src --entrypoint=./tools/scripts/run_linter_locally.sh github/super-linter
+docker container run --rm -v /app/node_modules -v %cd%\\..:/app -w /app/src --entrypoint=./tools/scripts/run_linter_locally.sh github/super-linter:slim-latest
 ```
