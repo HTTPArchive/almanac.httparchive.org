@@ -1065,10 +1065,10 @@ This is the first year we are tracking usage of this attribute, and unsurprising
 
 ## Conclusion
 
-The state of JavaScript is largely continuing the way trends would have suggested last year. We're shipping more of it, for sure, but we're also trying to mitigate the ill effects of excessive JavaScript through increased usage of techniques such as minifiation, resource hints, compression, and even down to the libraries we use.
+The state of JavaScript is largely continuing the way trends would have suggested last year. We're shipping more of it, for sure, but we're also trying to mitigate the ill effects of excessive JavaScript through increased usage of techniques such as minification, resource hints, compression, and even down to the libraries we use.
 
 The state of JavaScript is a constantly evolving phenomenon. It's clear that we have an increased reliance on it more than ever, but that spells trouble for the collective user experience of the web. We need to do all we can—and more—to stem the tide of how much JavaScript we ship on production websites.
 
-As the web platform matures, we're hoping that we see increased direct adoption of its various APIs and features where it makes sense to do so. For those experiences that require frameworks for a better developer experience, we're hoping to see additional optimizations and opportunities for framework authors to adopt new APIs to help them develier on both a better developer experience and better experiences for users.
+As the web platform matures, we're hoping that we see increased direct adoption of its various APIs and features where it makes sense to do so. For those experiences that require frameworks for a better developer experience, we're hoping to see additional optimizations and opportunities for framework authors to adopt new APIs to help them deliver on both a better developer experience and better experiences for users.
 
 Let's hope that next year signals a shift in the trend. In the meantime, <a hreflang="en" href="https://web.dev/fast/">let's continue to do all we can</a> to make the web as fast as we possibly can, while keeping an eye on both <a hreflang="en" href="https://web.dev/lab-and-field-data-differences/#lab-data">lab</a> and <a hreflang="en" href="https://web.dev/lab-and-field-data-differences/#field-data">field</a> data along the way.
