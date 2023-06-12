@@ -47,7 +47,7 @@ In the case where third-party content is served from a first-party domain, it is
 We are relying on the <a hreflang="en" href="https://github.com/patrickhulce/third-party-web/#third-parties-by-category">third-party-web</a> repository from [Patrick Hulce](https://twitter.com/patrickhulce) to help us identify and categorize third parties. This repository breaks down third parties by the following categories:
 
 - **Ad** - These scripts are part of advertising networks, either serving or measuring.
-- **Analytics** -These scripts measure or track users and their actions. There's a wide range in impact here depending on what's being tracked.
+- **Analytics** - These scripts measure or track users and their actions. There's a wide range in impact here depending on what's being tracked.
 - **CDN** - These are a mixture of publicly hosted open source libraries (e.g. jQuery) served over different public CDNs and private CDN usage.
 - **Content** - These scripts are from content providers or publishing-specific affiliate tracking.
 - **Customer Success** - These scripts are from customer support/marketing providers that offer chat and contact solutions. These scripts are generally heavier in weight.
@@ -62,7 +62,7 @@ We are relying on the <a hreflang="en" href="https://github.com/patrickhulce/thi
 
 Note: The CDN category here includes providers that provide resources on public CDN domains (e.g. bootstrapcdn.com, cdnjs.cloudflare.com, etc.) and does not include resources that are simply served over a CDN. For example, putting Cloudflare in front of a page would not influence its first-party designation according to our criteria.
 
-*The same as in the previous year, the Hosting category is removed from our analysis. For example, if you happen to use WordPress.com for your blog, or Shopify for your e-commerce platform, then we're going to ignore other requests for those domains by that site as not truly "third-party" as they are, in many ways, part of hosting on those platforms.
+* The same as in the previous year, the Hosting category is removed from our analysis. For example, if you happen to use WordPress.com for your blog, or Shopify for your e-commerce platform, then we're going to ignore other requests for those domains by that site as not truly "third-party" as they are, in many ways, part of hosting on those platforms.
 
 ### Caveats
 

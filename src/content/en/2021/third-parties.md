@@ -53,7 +53,7 @@ Similarly, first-party content served from a third-party domain is counted as th
 
 This year we will, again, be drawing heavily on the <a hreflang="en" href="https://github.com/patrickhulce/third-party-web/blob/master/data/entities.js">third-party-web</a> repository from <a hreflang="en" href="https://twitter.com/patrickhulce">Patrick Hulce</a> to help us identify and categorize third parties. This repository categorizes commonly used third-party URLs into the following categories:
 - **Ad** - These scripts are part of advertising networks, either serving or measuring.
-- **Analytics** -These scripts measure or track users and their actions. There's a wide range in impact here depending on what's being tracked.
+- **Analytics** - These scripts measure or track users and their actions. There's a wide range in impact here depending on what's being tracked.
 - **CDN** - These are a mixture of publicly hosted open source libraries (e.g. jQuery) served over different public CDNs and private CDN usage.
 - **Content** - These scripts are from content providers or publishing-specific affiliate tracking.
 - **Customer Success** - These scripts are from customer support/marketing providers that offer chat and contact solutions. These scripts are generally heavier in weight.

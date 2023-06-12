@@ -21,8 +21,8 @@
     "ebooks": "node ./tools/generate/generate_ebook_pdfs",
     "deploy": "./tools/scripts/deploy.sh",
     "lint": "run-script-os",
-    "lint:darwin:linux": "docker container run -it --rm -v \"$PWD/..\":/app -w /app/src --entrypoint=./tools/scripts/run_linter_locally.sh github/super-linter",
-    "lint:win32": "docker container run --rm -v \"%cd%\\..\":/app -w /app/src --entrypoint=./tools/scripts/run_linter_locally.sh github/super-linter",
+    "lint:darwin:linux": "docker container run -it --rm -v \"$PWD/..\":/app -w /app/src --entrypoint=./tools/scripts/run_linter_locally.sh github/super-linter:slim-latest",
+    "lint:win32": "docker container run --rm -v \"%cd%\\..\":/app -w /app/src --entrypoint=./tools/scripts/run_linter_locally.sh github/super-linter:slim-latest",
     "pytest": "pytest --cov server --cov-fail-under=100 --cov-report=term-missing -s",
     "stage": "./tools/scripts/deploy.sh -n",
     "start": "run-script-os",
@@ -36,17 +36,17 @@
   "devDependencies": {
     "ejs": "3.1.9",
     "fs-extra": "11.1.1",
-    "jsdom": "22.0.0",
+    "jsdom": "22.1.0",
     "node-fetch": "3.3.1",
     "node-watch": "0.7.3",
     "prettier": "2.8.8",
-    "puppeteer": "20.2.1",
+    "puppeteer": "20.6.0",
     "rainbow-code": "2.1.7",
     "recursive-readdir": "2.2.3",
     "run-script-os": "1.1.6",
     "showdown": "2.1.0",
-    "smartypants": "0.1.6",
-    "web-vitals": "3.3.1",
+    "smartypants": "0.2.2",
+    "web-vitals": "3.3.2",
     "xml-js": "1.6.11"
   }
 }

@@ -1,8 +1,8 @@
 # 📕 Web Almanac
 
-[![Production Checks GitHub Action](https://github.com/HTTPArchive/almanac.httparchive.org/workflows/Production%20Checks/badge.svg)](https://github.com/HTTPArchive/almanac.httparchive.org/actions?query=workflow%3A%22Production+Checks%22) [![Test Website GitHub Action](https://github.com/HTTPArchive/almanac.httparchive.org/workflows/Test%20Website/badge.svg?branch=main)](https://github.com/HTTPArchive/almanac.httparchive.org/actions?query=workflow%3A%22Test+Website%22) [![Security Headers Rating](https://img.shields.io/security-headers?url=https%3A%2F%2Falmanac.httparchive.org%2Fen%2F2019%2F)](https://securityheaders.com/?q=https%3A%2F%2Falmanac.httparchive.org%2Fen%2F2019%2F&followRedirects=on) [![TLS Observatory](https://img.shields.io/mozilla-observatory/grade-score/almanac.httparchive.org?publish)](https://observatory.mozilla.org/analyze/almanac.httparchive.org)
+[![Production Checks GitHub Action](https://github.com/HTTPArchive/almanac.httparchive.org/workflows/Production%20Checks/badge.svg)](https://github.com/HTTPArchive/almanac.httparchive.org/actions?query=workflow%3A%22Production+Checks%22) [![Test Website GitHub Action](https://github.com/HTTPArchive/almanac.httparchive.org/workflows/Test%20Website/badge.svg?branch=main)](https://github.com/HTTPArchive/almanac.httparchive.org/actions?query=workflow%3A%22Test+Website%22) [![TLS Observatory](https://img.shields.io/mozilla-observatory/grade-score/almanac.httparchive.org?publish)](https://observatory.mozilla.org/analyze/almanac.httparchive.org)
 
-[![2022 Content Planning](https://img.shields.io/github/milestones/progress/HttpArchive/almanac.httparchive.org/20)](https://github.com/HTTPArchive/almanac.httparchive.org/milestone/20) [![2022 Analysis Milestone](https://img.shields.io/github/milestones/progress/HttpArchive/almanac.httparchive.org/21)](https://github.com/HTTPArchive/almanac.httparchive.org/milestone/21) [![2022 Content Writing Milestone](https://img.shields.io/github/milestones/progress/HttpArchive/almanac.httparchive.org/22)](https://github.com/HTTPArchive/almanac.httparchive.org/milestone/22) [![2022 Launch!](https://img.shields.io/github/milestones/progress/HttpArchive/almanac.httparchive.org/23)](https://github.com/HTTPArchive/almanac.httparchive.org/milestone/23) [![2021 Content Translation Milestone](https://img.shields.io/github/milestones/progress/HttpArchive/almanac.httparchive.org/19)](https://github.com/HTTPArchive/almanac.httparchive.org/milestone/19)
+[![2022 Content Planning](https://img.shields.io/github/milestones/progress/HttpArchive/almanac.httparchive.org/20)](https://github.com/HTTPArchive/almanac.httparchive.org/milestone/20) [![2022 Analysis Milestone](https://img.shields.io/github/milestones/progress/HttpArchive/almanac.httparchive.org/21)](https://github.com/HTTPArchive/almanac.httparchive.org/milestone/21) [![2022 Content Writing Milestone](https://img.shields.io/github/milestones/progress/HttpArchive/almanac.httparchive.org/22)](https://github.com/HTTPArchive/almanac.httparchive.org/milestone/22) [![2022 Launch!](https://img.shields.io/github/milestones/progress/HttpArchive/almanac.httparchive.org/23)](https://github.com/HTTPArchive/almanac.httparchive.org/milestone/23) [![Content Translation Milestone](https://img.shields.io/github/milestones/progress/HttpArchive/almanac.httparchive.org/19)](https://github.com/HTTPArchive/almanac.httparchive.org/milestone/19)
 
 [![Open Dev Pull Requests](https://img.shields.io/github/issues-pr/HTTPArchive/almanac.httparchive.org/development)](https://github.com/HTTPArchive/almanac.httparchive.org/pulls?q=is%3Apr+is%3Aopen+label%3Adevelopment) [![Open Analysis Pull Requests](https://img.shields.io/github/issues-pr/HTTPArchive/almanac.httparchive.org/analysis)](https://github.com/HTTPArchive/almanac.httparchive.org/pulls?q=is%3Apr+is%3Aopen+label%3Aanalysis) [![Open Translation Pull Requests](https://img.shields.io/github/issues-pr/HTTPArchive/almanac.httparchive.org/translation)](https://github.com/HTTPArchive/almanac.httparchive.org/pulls?q=is%3Apr+is%3Aopen+label%3Atranslation) [![Open Writing Pull Requests](https://img.shields.io/github/issues-pr/HTTPArchive/almanac.httparchive.org/writing)](https://github.com/HTTPArchive/almanac.httparchive.org/pulls?q=is%3Apr+is%3Aopen+label%3Awriting)
 
@@ -28,14 +28,11 @@ The Web Almanac is available in the original [English](https://almanac.httparchi
 
 See [our contributing guide](CONTRIBUTING.md). To run the Web Almanac locally please see [src/README.md](src/README.md).
 
-## 2022 Timeline
+## Next Web Almanac timeline
 
-- April: forming teams
-- May: forming teams / planning content
-- June: HTTP Archive crawl / analysis
-- August: analysis / writing
-- September: analysis / writing
-- End of September: launch!
+We are [taking a break for 2023](https://github.com/HTTPArchive/almanac.httparchive.org/discussions/33610), but hope to return in future.
+
+In the meantime, enjoy the [2022 edition](https://almanac.httparchive.org) and we're still open to contributions in the form of [translations](https://github.com/HTTPArchive/almanac.httparchive.org/issues?q=is%3Aissue+is%3Aopen+label%3Atranslation), [development](https://github.com/HTTPArchive/almanac.httparchive.org/issues?q=is%3Aissue+is%3Aopen+label%3Adevelopment) or bug fixes.
 
 ## Where to find us
 
