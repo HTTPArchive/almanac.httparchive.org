@@ -14,8 +14,8 @@ function sendWebVitals() {
         break;
       case 'FCP':
         overrides = {
-          debug_ttfb: attribution.timeToFirstByte,
-          debug_fb2fcp: attribution.firstByteToFCP,
+          debug_time_to_first_byte: attribution.timeToFirstByte,
+          debug_first_byte_to_fcp: attribution.firstByteToFCP,
           debug_load_state: attribution.loadState,
           debug_target: attribution.loadState || '(not set)',
         };
@@ -24,18 +24,24 @@ function sendWebVitals() {
       case 'INP':
         overrides = {
           debug_event: attribution.eventType,
-          debug_time: attribution.eventTime,
+          debug_time: Math.round(attribution.eventTime),
           debug_load_state: attribution.loadState,
           debug_target: attribution.eventTarget || '(not set)',
         };
+        if (!attribution.eventEntry) {
+          break;
+        }
+        overrides.debug_interaction_delay = Math.round(attribution.eventEntry.processingStart - attribution.eventEntry.startTime);
+        overrides.debug_processing_time = Math.round(attribution.eventEntry.processingEnd - attribution.eventEntry.processingStart);
+        overrides.debug_presentation_delay =  Math.round(attribution.eventEntry.duration + attribution.eventEntry.startTime - attribution.eventEntry.processingEnd);
         break;
       case 'LCP':
         overrides = {
           debug_url: attribution.url,
-          debug_ttfb: attribution.timeToFirstByte,
-          debug_rld: attribution.resourceLoadDelay,
-          debug_rlt: attribution.resourceLoadTime,
-          debug_erd: attribution.elementRenderDelay,
+          debug_time_to_first_byte: attribution.timeToFirstByte,
+          debug_resource_load_delay: attribution.resourceLoadDelay,
+          debug_resource_load_time: attribution.resourceLoadTime,
+          debug_element_render_delay: attribution.elementRenderDelay,,
           debug_target: attribution.element || '(not set)',
         };
         break;
