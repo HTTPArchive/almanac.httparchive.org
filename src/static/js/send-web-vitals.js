@@ -41,7 +41,7 @@ function sendWebVitals() {
           debug_time_to_first_byte: attribution.timeToFirstByte,
           debug_resource_load_delay: attribution.resourceLoadDelay,
           debug_resource_load_time: attribution.resourceLoadTime,
-          debug_element_render_delay: attribution.elementRenderDelay,,
+          debug_element_render_delay: attribution.elementRenderDelay,
           debug_target: attribution.element || '(not set)',
         };
         break;
