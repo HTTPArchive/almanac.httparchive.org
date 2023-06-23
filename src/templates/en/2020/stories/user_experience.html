@@ -2499,6 +2499,146 @@ AMP optimization could not be completed due to the following:
         }
       }      </script>
   </amp-analytics>
+  <amp-analytics type="gtag" data-credentials="include" class="i-amphtml-layout-fixed i-amphtml-layout-size-defined pixel" i-amphtml-layout="fixed">
+    <script type="application/json">
+      {
+        "vars": {
+          "gtag_id": "G-PQ5N2MZG5M",
+          "config": {
+            "G-PQ5N2MZG5M": {
+              "groups": "default"
+            }
+          }
+        },
+        "triggers": {
+          "storyProgress": {
+            "on": "story-page-visible",
+            "request": "event",
+            "vars": {
+              "event_name": "custom",
+              "event_action": "story_progress",
+              "event_category": "${title}",
+              "event_label": "${storyPageIndex}",
+              "event_value": "${storyProgress}",
+              "send_to": "G-PQ5N2MZG5M"
+            }
+          },
+          "storyEnd": {
+            "on": "story-last-page-visible",
+            "request": "event",
+            "vars": {
+              "event_name": "custom",
+              "event_action": "story_complete",
+              "event_category": "${title}",
+              "event_label": "${storyPageCount}",
+              "send_to": "G-PQ5N2MZG5M"
+            }
+          },
+          "trackFocusState": {
+            "on": "story-focus",
+            "tagName": "a",
+            "request": "click ",
+            "vars": {
+              "event_name": "custom",
+              "event_action": "story_focus",
+              "event_category": "${title}",
+              "send_to": "G-PQ5N2MZG5M"
+            }
+          },
+          "trackClickThrough": {
+            "on": "story-click-through",
+            "tagName": "a",
+            "request": "click ",
+            "vars": {
+              "event_name": "custom",
+              "event_action": "story_click_through",
+              "event_category": "${title}",
+              "send_to": "G-PQ5N2MZG5M"
+            }
+          },
+          "storyOpen": {
+            "on": "story-open",
+            "request": "event",
+            "vars": {
+              "event_name": "custom",
+              "event_action": "story_open",
+              "event_category": "${title}",
+              "send_to": "G-PQ5N2MZG5M"
+            }
+          },
+          "storyClose": {
+            "on": "story-close",
+            "request": "event",
+            "vars": {
+              "event_name": "custom",
+              "event_action": "story_close",
+              "event_category": "${title}",
+              "send_to": "G-PQ5N2MZG5M"
+            }
+          },
+          "audioMuted": {
+            "on": "story-audio-muted",
+            "request": "event",
+            "vars": {
+              "event_name": "custom",
+              "event_action": "story_audio_muted",
+              "event_category": "${title}",
+              "send_to": "G-PQ5N2MZG5M"
+            }
+          },
+          "audioUnmuted": {
+            "on": "story-audio-unmuted",
+            "request": "event",
+            "vars": {
+              "event_name": "custom",
+              "event_action": "story_audio_unmuted",
+              "event_category": "${title}",
+              "send_to": "G-PQ5N2MZG5M"
+            }
+          },
+          "pageAttachmentEnter": {
+            "on": "story-page-attachment-enter",
+            "request": "event",
+            "vars": {
+              "event_name": "custom",
+              "event_action": "story_page_attachment_enter",
+              "event_category": "${title}",
+              "send_to": "G-PQ5N2MZG5M"
+            }
+          },
+          "pageAttachmentExit": {
+            "on": "story-page-attachment-exit",
+            "request": "event",
+            "vars": {
+              "event_name": "custom",
+              "event_action": "story_page_attachment_exit",
+              "event_category": "${title}",
+              "send_to": "G-PQ5N2MZG5M"
+            }
+          },
+          "storyBookendEnter": {
+            "on": "story-bookend-enter",
+            "request": "event",
+            "vars": {
+              "event_name": "custom",
+              "event_action": "story_bookend_enter",
+              "event_category": "${title}",
+              "send_to": "G-PQ5N2MZG5M"
+            }
+          },
+          "storyBookendExit": {
+            "on": "story-bookend-exit",
+            "request": "event",
+            "vars": {
+              "event_name": "custom",
+              "event_action": "story_bookend_exit",
+              "event_category": "${title}",
+              "send_to": "G-PQ5N2MZG5M"
+            }
+          }
+        }
+      }      </script>
+  </amp-analytics>
 </amp-story>
 </body>
 </html>
