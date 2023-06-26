@@ -101,8 +101,8 @@ function sendWebVitals() {
         prefers_reduced_motion: prefersReducedMotion,
         prefers_color_scheme: prefersColorScheme,
         navigation_type: navigationType,
-      }
-    ), overrides);
+      }, overrides)
+    );
 
   }
 
