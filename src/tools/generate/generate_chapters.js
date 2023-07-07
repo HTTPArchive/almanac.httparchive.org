@@ -211,7 +211,7 @@ const write_template = async (language, year, chapter, metadata, body, toc) => {
   const path = `templates/${language}/${year}/chapters/${chapter}.html`;
 
   if (fs.existsSync(template)) {
-    body = prettier.format(body, {
+    body = await prettier.format(body, {
       parser: 'html',
       printWidth: Number.MAX_SAFE_INTEGER
     });
