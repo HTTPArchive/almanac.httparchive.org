@@ -514,7 +514,7 @@ How user agents prioritize the rendering and displaying of images is affected by
 What we found:
 
 - There has been a significant reduction in the number of pages that do not use any image loading property. In 2021, 83.3% of desktop pages and 83.5% of mobile pages didn’t utilize any image loading property at all. It’s now 78.3% of desktop pages and 77.9% of mobile pages in 2022.
-- Conversely, the implementation of loading=" lazy" has increased. In 2021, both 15.6% of desktop and mobile pages implemented loading=" lazy". This has increased to 19.8% (desktop) and 20.3% (mobile) in 2022.
+- Conversely, the implementation of loading="lazy" has increased. In 2021, both 15.6% of desktop and mobile pages implemented loading="lazy". This has increased to 19.8% (desktop) and 20.3% (mobile) in 2022.
 - The number of pages defaulting to the brower’s loading method has fallen in 2022. On desktop, .07% of pages use loading="auto" and .08% on mobile. In 2021, .01% of pages utilized loading="auto".
 
 ### Word count
