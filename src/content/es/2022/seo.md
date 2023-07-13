@@ -167,7 +167,7 @@ El elemento `<div>` es el único otro elemento mal aplicado que aparece dentro d
 
 ## Etiquetas Canonical
 
-Las etiquetas canonical son tradicionalmente usadas para definir páginas de contenido duplicado y ayudan a los motores de búsqueda a priorizar. Son un fragmento de código HTML (rel=”canonical”) que permite a los webmasters definir al motor de búsqueda cuál es la versión "preferida". No son directivas, sino que actúan como "pistas". Por lo tanto, los motores de búsqueda como Google determinan por su cuenta la versión canónica de una página, basándose en que tan útil creen que sea la página para el usuario. Las etiquetas canonical también pueden ser usadas para consolidar otras señales como enlaces, así como simplificar métricas de seguimiento y gestionar mejor el contenido sindicado.
+Las etiquetas canonical son tradicionalmente usadas para definir páginas de contenido duplicado y ayudan a los motores de búsqueda a priorizar. Son un fragmento de código HTML (`rel="canonical"`) que permite a los webmasters definir al motor de búsqueda cuál es la versión "preferida". No son directivas, sino que actúan como "pistas". Por lo tanto, los motores de búsqueda como Google determinan por su cuenta la versión canónica de una página, basándose en que tan útil creen que sea la página para el usuario. Las etiquetas canonical también pueden ser usadas para consolidar otras señales como enlaces, así como simplificar métricas de seguimiento y gestionar mejor el contenido sindicado.
 
 {{ figure_markup(
   image="canonical-usage.png",
@@ -514,8 +514,8 @@ El atributo loading aplicado a los elementos `<img>` influye en la forma en la q
 Lo que encontramos:
 
 - Se ha reducido considerablemente el número de páginas que no utilizan ninguna propiedad de carga de imágenes. En 2021, 83.3% de las páginas de escritorio y 83.5% de las páginas móviles no utilizaban ninguna propiedad de carga de imágenes. Ahora es de 78.3% en páginas de escritorio y 77.9% en páginas móviles en 2022.
-- Por el contrario, la implementación de loading=”lazy” ha aumentado. En 2021, el 15.6% de páginas de escritorio y móviles implementaron loading=”lazy”. Esto ha aumentado a 19.8% (escritorio) y 20.3% (móvil) en 2022.
-- El número de páginas que utilizan el método de carga predeterminado de los navegadores ha disminuido en 2022. En escritorio .07% de las páginas usan loading=”auto” y .08% en móvil. En 2021, .01% de páginas utilizaban loading=”auto”.
+- Por el contrario, la implementación de loading="lazy" ha aumentado. En 2021, el 15.6% de páginas de escritorio y móviles implementaron loading="lazy". Esto ha aumentado a 19.8% (escritorio) y 20.3% (móvil) en 2022.
+- El número de páginas que utilizan el método de carga predeterminado de los navegadores ha disminuido en 2022. En escritorio .07% de las páginas usan loading="auto" y .08% en móvil. En 2021, .01% de páginas utilizaban loading="auto".
 
 ### Conteo de palabras
 
@@ -722,7 +722,7 @@ Las etiquetas hreflang ayudan a Google y otros motores de búsqueda, como Bing y
 
 Actualmente, 9.6% de los sitios usan etiquetas hreflang en escritorio mientras que 8.9% las usan en móvil. Esto es un ligero aumento desde 2021 donde 9.0% de sitios usaban etiquetas hreflang en escritorio y 8.4% las implementaron en móvil.
 
-El valor hreflang más popular en 2022 es “en” [English], que representa un 5.4% del uso en escritorio y 4.7% en móvil. Estos porcentajes son aproximadamente los mismos que el año pasado.
+El valor hreflang más popular en 2022 es `en` [English], que representa un 5.4% del uso en escritorio y 4.7% en móvil. Estos porcentajes son aproximadamente los mismos que el año pasado.
 
 Después de x-default, que es el valor "de respaldo" (y el segundo más común en uso), las etiquetas hreflang para francés, alemán y español son las siguientes más frecuentes.
 
@@ -730,7 +730,7 @@ Las tres diferentes formas de implementar etiquetas hreflang son en el `<head>`,
 
 ### Uso de content language
 
-Aunque Google tiende a usar etiquetas hreflang, otros motores de búsqueda como Bing prefieren el [atributo content-language](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Language). Esto puede ser implementado usando dos métodos:
+Aunque Google tiende a usar etiquetas hreflang, otros motores de búsqueda como Bing prefieren el [atributo `content-language`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Language). Esto puede ser implementado usando dos métodos:
 
 1. HTML
 2. Encabezados HTTP

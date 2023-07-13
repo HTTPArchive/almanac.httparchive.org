@@ -167,7 +167,7 @@ The `<div>` element is the only other misapplied element to appear within the `<
 
 ## Canonical tags
 
-Canonical tags are traditionally used when defining duplicate content pages and to help search engines prioritize. They are a snippet of HTML code (rel=”canonical”) that allows webmasters to define to the search engine which page is the “preferred” version. They are not directives, and instead act as a “hint.” Therefore, search engines such as Google determine their own canonical version of the page, based on how useful they believe the page is for the user. Canonical tags can also be used to consolidate other signals such as links, as well as to simplify tracking metrics and better manage syndicated content.
+Canonical tags are traditionally used when defining duplicate content pages and to help search engines prioritize. They are a snippet of HTML code (`rel="canonical"`) that allows webmasters to define to the search engine which page is the "preferred" version. They are not directives, and instead act as a "hint." Therefore, search engines such as Google determine their own canonical version of the page, based on how useful they believe the page is for the user. Canonical tags can also be used to consolidate other signals such as links, as well as to simplify tracking metrics and better manage syndicated content.
 
 {{ figure_markup(
   image="canonical-usage.png",
@@ -514,8 +514,8 @@ How user agents prioritize the rendering and displaying of images is affected by
 What we found:
 
 - There has been a significant reduction in the number of pages that do not use any image loading property. In 2021, 83.3% of desktop pages and 83.5% of mobile pages didn’t utilize any image loading property at all. It’s now 78.3% of desktop pages and 77.9% of mobile pages in 2022.
-- Conversely, the implementation of loading=” lazy” has increased. In 2021, both 15.6% of desktop and mobile pages implemented loading=” lazy”. This has increased to 19.8% (desktop) and 20.3% (mobile) in 2022.
-- The number of pages defaulting to the brower’s loading method has fallen in 2022. On desktop, .07% of pages use loading=”auto” and .08% on mobile. In 2021, .01% of pages utilized loading=”auto”.
+- Conversely, the implementation of loading=" lazy" has increased. In 2021, both 15.6% of desktop and mobile pages implemented loading=" lazy". This has increased to 19.8% (desktop) and 20.3% (mobile) in 2022.
+- The number of pages defaulting to the brower’s loading method has fallen in 2022. On desktop, .07% of pages use loading="auto" and .08% on mobile. In 2021, .01% of pages utilized loading="auto".
 
 ### Word count
 
@@ -623,7 +623,7 @@ Search engines utilize links to discover new pages and to pass PageRank, which h
 
 ### Non-descriptive link text
 
-Anchor text, which is the clickable text used in a link, helps search engines to understand the content of the linked page. Lighthouse has a test to check if the anchor text used is useful and/or contextual, or if it’s generic and/or non-descriptive such as “learn more” or “click here.” In 2022, 15% and 17% of the tested links on mobile and desktop, respectively, did not have descriptive anchor text, a missed opportunity from an SEO perspective and bad for accessibility.
+Anchor text, which is the clickable text used in a link, helps search engines to understand the content of the linked page. Lighthouse has a test to check if the anchor text used is useful and/or contextual, or if it’s generic and/or non-descriptive such as "learn more" or "click here." In 2022, 15% and 17% of the tested links on mobile and desktop, respectively, did not have descriptive anchor text, a missed opportunity from an SEO perspective and bad for accessibility.
 
 ### Outgoing links
 
@@ -722,15 +722,15 @@ Hreflang tags help Google and other search engines, such as Bing and Yandex, und
 
 Currently, 9.6% of sites use hreflang tags on desktop while 8.9% use them on mobile. This is a slight increase from 2021 when 9.0% of sites used hreflangs tags on desktop and 8.4% implemented them on mobile.
 
-The most popular hreflang tag in 2022 is “en” [English], which accounts for 5.4% usage on desktop and 4.7% on mobile. Those percentages are approximately the same as the year before.
+The most popular hreflang tag in 2022 is `en` [English], which accounts for 5.4% usage on desktop and 4.7% on mobile. Those percentages are approximately the same as the year before.
 
-After x-default, which is the “fallback” version (and the second most common to be adopted), the hreflang tags for French, German and Spanish are the next most frequently used.
+After x-default, which is the "fallback" version (and the second most common to be adopted), the hreflang tags for French, German and Spanish are the next most frequently used.
 
 The three different ways to implement hreflang tags are via the `<head>`, link headers, or XML sitemaps. Note: As this data is looking solely at homepages, XML sitemaps are not included.
 
 ### Content language usage
 
-While Google tends to use hreflang tags, other search engines such as Bing prefer the [content-language attribute](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Language). This can be implemented using two methods:
+While Google tends to use hreflang tags, other search engines such as Bing prefer the [`content-language` attribute](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Language). This can be implemented using two methods:
 
 1. HTML
 2. HTTP Header
