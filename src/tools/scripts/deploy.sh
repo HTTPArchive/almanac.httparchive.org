@@ -116,11 +116,14 @@ WORKFLOW_ID=predeploy.yml
 # Get the latest workflow run ID and download its artifact's ZIP file
 RUN_ID=$(curl -s -H "Authorization: token ${GITHUB_TOKEN}" "https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/actions/workflows/${WORKFLOW_ID}/runs" | jq -r '.workflow_runs[0].id')
 ARTIFACT_ID=$(curl -s -H "Authorization: token ${GITHUB_TOKEN}" "https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/actions/runs/${RUN_ID}/artifacts" | jq -r '.artifacts[0].id')
-curl -L -H "Authorization: token ${GITHUB_TOKEN}" -H "Accept: application/vnd.github.v3+json" "https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/actions/artifacts/${ARTIFACT_ID}/zip" -o "${ARTIFACT_ID}.zip"
 
-# Extract the contents of the ZIP file and clean up
-unzip -q "${ARTIFACT_ID}.zip" -d ./static/pdfs/
-rm "${ARTIFACT_ID}.zip"
+if [[ "${ARTIFACT_ID}" != "null" ]]; then
+  curl -L -H "Authorization: token ${GITHUB_TOKEN}" -H "Accept: application/vnd.github.v3+json" "https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/actions/artifacts/${ARTIFACT_ID}/zip" -o "${ARTIFACT_ID}.zip"
+
+  # Extract the contents of the ZIP file and clean up
+  unzip -q "${ARTIFACT_ID}.zip" -d ./static/pdfs/
+  rm "${ARTIFACT_ID}.zip"
+fi
 
 echo "Run and test website"
 ./tools/scripts/run_and_test_website.sh
@@ -171,14 +174,16 @@ zip -q -r deployed . --exclude @.gcloudignore static/images/*/*/* static/pdfs/*
 echo "Deploying to GCP"
 echo "Y" | gcloud app deploy --project webalmanac --stop-previous-version
 
-echo "Deploying ebooks to GCP Storage"
-# shellcheck disable=SC2010
-pdfs=$(cd static/pdfs;ls web_almanac_* | grep -v print | grep -v cover)
-for pdf in ${pdfs}
-do
-  echo "Uploading $pdf"
-  gsutil cp "static/pdfs/${pdf}" "gs://httparchive/almanac/ebooks/${pdf}"
-done
+if [[ "${ARTIFACT_ID}" != "null" ]]; then
+  echo "Deploying ebooks to GCP Storage"
+  # shellcheck disable=SC2010
+  pdfs=$(cd static/pdfs;ls web_almanac_* | grep -v print | grep -v cover)
+  for pdf in ${pdfs}
+  do
+    echo "Uploading $pdf"
+    gsutil cp "static/pdfs/${pdf}" "gs://httparchive/almanac/ebooks/${pdf}"
+  done
+fi
 
 echo "Push production branch"
 git push

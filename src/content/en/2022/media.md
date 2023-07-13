@@ -377,7 +377,7 @@ At 0.22%, AVIF's slice of that pie is so small it's not even labeled on the char
 {{ figure_markup(
   image="image-format-adoption-year-over-year-change.png",
   caption="Image format adoption, year-over-year change.",
-  description="A bar chart showing the year-over-year change in each format's share of usage. AVIF is the standout, showing a 405% gain. WebP and SVG also saw gains of 29% and 16%, respectively. The legacy formats are all slightly down: JPEG: -4%; PNG: -2%; GIF: -4%; ICO: -8%. Lastly, “other/unknown” comes in at +2%.",
+  description="A bar chart showing the year-over-year change in each format's share of usage. AVIF is the standout, showing a 405% gain. WebP and SVG also saw gains of 29% and 16%, respectively. The legacy formats are all slightly down: JPEG: -4%; PNG: -2%; GIF: -4%; ICO: -8%. Lastly, \"other/unknown\" comes in at +2%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSsMG0kx2OTN-Dl9ap_Iu_99Ewpaf-X81B5EMTjVphfCJk953qZijIkGIfLF4mqCGlcrLWWzx_sWkJH/pubchart?oid=1597734507&format=interactive",
   sheets_gid="635730566",
   sql_file="media_formats.sql"
