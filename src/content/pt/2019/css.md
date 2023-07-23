@@ -1,7 +1,7 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: CSS
-description: CSS chapter of the 2019 Web Almanac covering color, units, selectors, layout, typography and fonts, spacing, decoration, animation, and media queries.
+description: Capítulo CSS do Web Almanac de 2019 que abrange cor, unidades, seletores, layout, tipografia e fontes, espaçamento, decoração, animação e consultas de mídia.
 authors: [una, argyleink]
 reviewers: [meyerweb, huijing]
 analysts: [rviscomi]
@@ -20,15 +20,15 @@ featured_stat_3: 780
 featured_stat_label_3: Number of digits in largest Z-Index value
 ---
 
-## Introduction
+## Introdução
 
-Cascading Style Sheets (CSS) are used to paint, format, and layout web pages. Their capabilities span concepts as simple as text color to 3D perspective. It also has hooks to empower developers to handle varying screen sizes, viewing contexts, and printing. CSS helps developers wrangle content and ensure it's adapting properly to the user.
+As Folhas de Estilo em Cascata (CSS) são usadas para pintar, formatar e dispor páginas da web. Suas capacidades abrangem conceitos tão simples quanto a cor do texto até a perspectiva 3D. Ele também tem ganchos para capacitar os desenvolvedores a lidar com tamanhos de tela variados, contextos de visualização e impressão. O CSS ajuda os desenvolvedores a lidar com o conteúdo e garantir que ele se adapte adequadamente ao usuário.
 
-When describing CSS to those not familiar with web technology, it can be helpful to think of it as the language to paint the walls of the house; describing the size and position of windows and doors, as well as flourishing decorations such as wallpaper or plant life. The fun twist to that story is that depending on the user walking through the house, a developer can adapt the house to that specific user's preferences or contexts!
+Quando se descreve o CSS para aqueles que não estão familiarizados com a tecnologia web, pode ser útil pensar nele como a linguagem para pintar as paredes da casa; descrevendo o tamanho e a posição das janelas e portas, assim como decorações exuberantes, como papel de parede ou plantas. O detalhe interessante dessa história é que, dependendo do usuário que atravessa a casa, um desenvolvedor pode adaptar a casa às preferências ou contextos específicos desse usuário!
 
-In this chapter, we'll be inspecting, tallying, and extracting data about how CSS is used across the web. Our goal is to holistically understand what features are being used, how they're used, and how CSS is growing and being adopted.
+Neste capítulo, estaremos examinando, contabilizando e extraindo dados sobre como o CSS é usado em toda a web. Nosso objetivo é compreender holisticamente quais recursos estão sendo utilizados, como estão sendo utilizados e como o CSS está crescendo e sendo adotado.
 
-Ready to dig into the fascinating data?! Many of the following numbers may be small, but don't mistake them as insignificant! It can take many years for new things to saturate the web.
+Pronto para mergulhar nos fascinantes dados?! Muitos dos números a seguir podem ser pequenos, mas não os considere insignificantes! Pode levar muitos anos para que coisas novas sejam amplamente adotadas na web.
 
 ## Color
 
