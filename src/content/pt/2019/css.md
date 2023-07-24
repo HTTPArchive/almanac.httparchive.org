@@ -30,30 +30,30 @@ Neste capítulo, estaremos examinando, contabilizando e extraindo dados sobre co
 
 Pronto para mergulhar nos fascinantes dados?! Muitos dos números a seguir podem ser pequenos, mas não os considere insignificantes! Pode levar muitos anos para que coisas novas sejam amplamente adotadas na web.
 
-## Color
+## Cor
 
-Color is an integral part of theming and styling on the web. Let's take a look at how websites tend to use color.
+A cor é uma parte integral do tema e estilo na web. Vamos dar uma olhada em como os sites costumam usar a cor.
 
-### Color types
+### Tipos de cores
 
-Hex is the most popular way to describe color by far, with 93% usage, followed by RGB, and then HSL. Interestingly, developers are taking full advantage of the alpha-transparency argument when it comes to these color types: HSLA and RGBA are far more popular than HSL and RGB, with almost double the usage! Even though the alpha-transparency was added later to the web spec, HSLA and RGBA are supported <a hreflang="en" href="https://caniuse.com/#feat=css3-colors">as far back as IE9</a>, so you can go ahead and use them, too!
+O formato hexadecimal é, de longe, a maneira mais popular de descrever cores, com 93% de uso, seguido por RGB e, em seguida, HSL. Curiosamente, os desenvolvedores estão aproveitando ao máximo o argumento de alfa-transparência quando se trata desses tipos de cores: HSLA e RGBA são muito mais populares do que HSL e RGB, com quase o dobro do uso! Embora a transparência alfa tenha sido adicionada posteriormente à especificação da web,  HSLA e RGBA são suportados <a hreflang="en" href="https://caniuse.com/#feat=css3-colors">desde o IE9</a>, então você pode usá-los sem problemas!
 
 {{ figure_markup(
   image="fig1.png",
-  caption="Popularity of color formats.",
-  description="Bar chart showing the adoption of HSL, HSLA, RGB, RGBA, and hex color formats. Hex is used on 93% of desktop pages, RGBA on 83%, RGB on 22%, HSLA 19%, and HSL 1%. Desktop and mobile adoption is similar for all color formats except HSL, for which mobile adoption is 9% (9 times higher).",
+  caption="Popularidade dos formatos de cores.",
+  description="Gráfico de barras mostrando a adoção dos formatos de cores HSL, HSLA, RGB, RGBA e hexadecimal. O formato hexadecimal é usado em 93% das páginas para desktop, RGBA em 83%, RGB em 22%, HSLA em 19% e HSL em 1%. A adoção entre desktop e dispositivos móveis é semelhante para todos os formatos de cores, exceto para HSL, no qual a adoção em dispositivos móveis é de 9% (9 vezes maior).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1946838030&format=interactive"
   )
 }}
 
-### Color selection
+### Seleção de cores
 
-There are <a hreflang="en" href="https://www.w3.org/TR/css-color-4/#named-colors">148 named CSS colors</a>, not including the special values `transparent` and `currentcolor`. You can use these by their string name for more readable styling. The most popular named colors are `black` and `white`, unsurprisingly, followed by `red` and `blue`.
+Existem <a hreflang="en" href="https://www.w3.org/TR/css-color-4/#named-colors">148 cores nomeadas em CSS</a>, sem incluir os valores especiais `transparent` and `currentcolor`. Você pode usar essas cores pelo nome em formato de texto para obter estilos mais legíveis. As cores nomeadas mais populares são `black` (preto) e `white`(branco), o que não é surpreendente, seguidas por `red` (vermelho) e `blue` (azul).
 
 {{ figure_markup(
   image="fig2.png",
-  caption="Top named colors.",
-  description="Pie chart showing the most popular named colors. White is the most popular at 40%, then black at 22%, red 11%, and blue 5%.",
+  caption="Principais cores nomeadas.",
+  description="Gráfico de pizza mostrando as cores nomeadas mais populares. O branco é o mais popular com 40%, seguido pelo preto com 22%, vermelho com 11% e azul com 5%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1985913808&format=interactive",
   width=600,
   height=415,
@@ -62,121 +62,121 @@ There are <a hreflang="en" href="https://www.w3.org/TR/css-color-4/#named-colors
   )
 }}
 
-Language is interestingly inferred via color as well. There are more instances of the American-style "gray" than the British-style "grey". Almost every instance of <a hreflang="en" href="https://www.rapidtables.com/web/color/gray-color.html">gray colors</a> (`gray`, `lightgray`, `darkgray`, `slategray`, etc.) had nearly double the usage when spelled with an "a" instead of an "e". If gr[a/e]ys were combined, they would rank higher than blue, solidifying themselves in the #4 spot. This could be why `silver` is ranked higher than `grey` with an "e" in the charts!
+A língua é interessantemente inferida também através das cores. Existem mais ocorrências do estilo americano "gray" do que do estilo britânico "grey". Quase todas as instâncias de <a hreflang="en" href="https://www.rapidtables.com/web/color/gray-color.html">gray colors</a> (`gray`, `lightgray`, `darkgray`, `slategray`, etc.) tiveram quase o dobro de uso quando grafadas com "a" em vez de "e". Se as variantes gr[a/e]ys fossem combinadas, elas ocupariam uma posição mais alta do que o azul, consolidando-se na quarta posição. Isso pode ser o motivo pelo qual `silver` (prata) está classificado acima de `grey` (cinza) com "e" nos gráficos!
 
-### Color count
+### Contagem de cores
 
-How many different font colors are used across the web? So this isn't the total number of unique colors; rather, it's how many different colors are used just for text. The numbers in this chart are quite high, and from experience, we know that without CSS variables, spacing, sizes and colors can quickly get away from you and fragment into lots of tiny values across your styles. These numbers reflect a difficulty of style management, and we hope this helps create some perspective for you to bring back to your teams or projects. How can you reduce this number into a manageable and reasonable amount?
+Quantas cores de fonte diferentes são usadas em toda a web? Portanto, isso não é o número total de cores únicas; é apenas quantas cores diferentes são usadas apenas para o texto. Os números neste gráfico são bastante altos e, pela experiência, sabemos que sem variáveis CSS, o espaçamento, tamanhos e cores podem rapidamente se tornar difíceis de gerenciar e se fragmentar em muitos valores pequenos em seus estilos. Esses números refletem uma dificuldade de gerenciamento de estilos, e esperamos que isso ajude a criar uma perspectiva para você levar de volta para suas equipes ou projetos. Como você pode reduzir esse número para uma quantidade gerenciável e razoável?
 
 {{ figure_markup(
   image="fig3.png",
-  caption="Distribution of colors per page.",
-  description="Distribution showing the 10, 25, 50, 75, and 90th percentiles of colors per desktop and mobile page. On desktop the distribution is 8, 22, 48, 83, and 131. Mobile pages tend to have more colors by 1-10.",
+  caption="Distribuição de cores por página.",
+  description="Distribuição mostrando os percentis 10, 25, 50, 75 e 90 de cores por página em desktop e dispositivos móveis. Em desktop, a distribuição é de 8, 22, 48, 83 e 131 cores. As páginas em dispositivos móveis tendem a ter 1-10 cores a mais.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1361184636&format=interactive"
   )
 }}
 
-### Color duplication
+### Duplicação de cores
 
-Well, we got curious here and wanted to inspect how many duplicate colors are present on a page. Without a tightly managed reusable class CSS system, duplicates are quite easy to create. It turns out that the median has enough duplicates that it could be worth doing a pass to unify them with custom properties.
+Bem, ficamos curiosos aqui e queríamos verificar quantas cores duplicadas estão presentes em uma página. Sem um sistema CSS de classe reutilizável bem gerenciado, é bastante fácil criar duplicatas. Descobriu-se que a mediana contém cores duplicadas o suficiente para que valha a pena unificá-las com propriedades personalizadas.
 
 {{ figure_markup(
   image="fig4.png",
-  caption="Distribution of duplicate colors per page.",
-  description="Bar chart showing the distribution of colors per page. The median desktop page has 24 duplicate colors. The 10th percentile is 4 duplicate colors and the 90th percentile is 62. Desktop and mobile distributions are similar.",
+  caption="Distribuição de cores duplicadas por página.",
+  description="Gráfico de barras mostrando a distribuição de cores por página. A mediana das páginas em desktop possui 24 cores duplicadas. O 10º percentil apresenta 4 cores duplicadas e o 90º percentil mostra 62. As distribuições em desktop e dispositivos móveis são semelhantes.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=326531498&format=interactive"
   )
 }}
 
-## Units
+## Unidades
 
-In CSS, there are many different ways to achieve the same visual result using different unit types: `rem`, `px`, `em`, `ch`, or even `cm`! So which unit types are most popular?
+No CSS, existem muitas maneiras diferentes de alcançar o mesmo resultado visual usando tipos de unidades diferentes: `rem`, `px`, `em`, `ch`, ou até mesmo `cm`! Então, quais tipos de unidades são os mais populares?
 
 {{ figure_markup(
   image="fig5.png",
-  caption="Popularity of unit types.",
-  description="Bar chart of the popularity of various unit types. px and em are used on at over 90% of pages. rem is the next most popular unit type on 40% of pages and the popularity quickly falls for the remaining unit types.",
+  caption="Popularidade dos tipos de unidades.",
+  description="Gráfico de barras da popularidade dos vários tipos de unidades. px e em são usados em mais de 90% das páginas. O rem  é o próximo tipo de unidade mais popular, presente em 40% das páginas, e a popularidade cai rapidamente para os demais tipos de unidades restantes.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=540111393&format=interactive"
   )
 }}
 
-### Length and sizing
+### Comprimento e dimensionamento
 
-Unsurprisingly, in Figure 2.5 above, `px` is the most used unit type, with about 95% of web pages using pixels in some form or another (this could be element sizing, font size, and so on). However, the `em` unit is almost as popular, with about 90% usage. This is over 2x more popular than the `rem` unit, which has only 40% frequency in web pages. If you're wondering what the difference is, `em` is based on the parent font size, while `rem` is based on the base font size set to the page. It doesn't change per-component like `em` could, and thus allows for adjustment of all spacing evenly.
+Sem surpresa, na Figura 2.5 acima, a unidade `px` é o tipo de unidade mais utilizado, com cerca de 95% das páginas da web usando pixels de alguma forma ou outra (isso pode ser para dimensionamento de elementos, tamanho de fonte, e assim por diante). No entanto, a unidade `em` é quase tão popular, com cerca de 90% de uso. Isso é mais de duas vezes mais popular do que a unidade `rem`, que possui apenas 40% de frequência nas páginas da web. Se você está se perguntando qual é a diferença, `em` é baseado no tamanho da fonte do elemento pai, enquanto `rem` é baseado no tamanho de fonte base definido para a página. O `rem` não muda por componente como poderia acontecer com `em`, permitindo, assim, o ajuste de todo o espaçamento de forma uniforme.
 
-When it comes to units based on physical space, the `cm` (or centimeter) unit is the most popular by far, followed by `in` (inches), and then `Q`. We know these types of units are specifically useful for print stylesheets, but we didn't even know the `Q` unit existed until this survey! Did you?
+Quando se trata de unidades baseadas em espaço físico, a unidade `cm` (centímetro) é de longe a mais popular, seguida por `in` (polegadas) e, em seguida, `Q`. . Sabemos que esses tipos de unidades são especialmente úteis para folhas de estilo de impressão, mas nem sabíamos que a unidade `Q` existia até esta pesquisa! E você, sabia?
 
-<p class="note">An earlier version of this chapter discussed the unexpected popularity of the <code>Q</code> unit. Thanks to the <a hreflang="en" href="https://discuss.httparchive.org/t/chapter-2-css/1757/6">community discussion</a> surrounding this chapter, we've identified that this was a bug in our analysis and have updated Figure 2.5 accordingly.</p>
+<p class="note">Uma versão anterior deste capítulo discutiu a popularidade inesperada da unidade <code>Q</code>. Graças à  <a hreflang="en" href="https://discuss.httparchive.org/t/chapter-2-css/1757/6">discussão da comunidade</a> em torno deste capítulo, identificamos que isso foi um erro em nossa análise e atualizamos a Figura 2.5 de acordo.</p>
 
-### Viewport-based units
+### Unidades baseadas na visualização
 
-We saw larger differences in unit types when it comes to mobile and desktop usage for viewport-based units. 36.8% of mobile sites use `vh` (viewport height), while only 31% of desktop sites do. We also found that `vh` is more common than `vw` (viewport width) by about 11%. `vmin` (viewport minimum) is more popular than `vmax` (viewport maximum), with about 8% usage of `vmin` on mobile while `vmax` is only used by 1% of websites.
+Observamos maiores diferenças nos tipos de unidades quando se trata do uso em dispositivos móveis e desktop para unidades baseadas na visualização (Viewport-based units). 36,8% dos sites móveis utilizam a unidade `vh` (altura da visualização), enquanto apenas 31% dos sites de desktop o fazem. Também descobrimos que `vh`  é mais comum do que `vw` (largura da visualização) em cerca de 11%. A unidade `vmin`  (visualização mínima) é mais popular do que `vmax` (visualização máxima), com cerca de 8% de uso de `vmin` em dispositivos móveis, enquanto `vmax` é usado apenas por 1% dos sites.
 
-### Custom properties
+### Propriedades personalizadas
 
-Custom properties are what many call CSS variables. They're more dynamic than a typical static variable though! They're very powerful and as a community we're still discovering their potential.
+As propriedades personalizadas são o que muitos chamam de variáveis CSS. No entanto, elas são mais dinâmicas do que uma variável estática típica! São extremamente poderosas e como comunidade, ainda estamos descobrindo o seu potencial.
 
 {{ figure_markup(
-  caption="Percent of pages using custom properties.",
+  caption="Porcentagem de páginas que utilizam propriedades personalizadas (CSS variables).",
   content="5%",
   classes="big-number"
 )
 }}
 
-We felt like this was exciting information, since it shows healthy growth of one of our favorite CSS additions. They were available in all major browsers since 2016 or 2017, so it's fair to say they're fairly new. Many folks are still transitioning from their CSS preprocessor variables to CSS custom properties. We estimate it'll be a few more years until custom properties are the norm.
+WSentimos que essa é uma informação empolgante, pois mostra um crescimento saudável de uma de nossas adições favoritas ao CSS. Elas estão disponíveis em todos os principais navegadores desde 2016 ou 2017, então é justo dizer que são relativamente novas. Muitas pessoas ainda estão fazendo a transição de suas variáveis de pré-processadores CSS para propriedades personalizadas do CSS. Estimamos que levará mais alguns anos até que as propriedades personalizadas se tornem a norma.
 
-## Selectors
+## Seletores
 
-### ID vs class selectors
+### Seletores de ID vs. classe
 
-CSS has a few ways to find elements on the page for styling, so let's put IDs and classes against each other to see which is more prevalent! The results shouldn't be too surprising: classes are more popular!
+O CSS possui algumas maneiras de encontrar elementos na página para estilização, então vamos comparar IDs e classes para ver qual é mais prevalente! Os resultados não devem ser muito surpreendentes: as classes são mais populares!
 
 {{ figure_markup(
   image="fig7.png",
-  caption="Popularity of selector types per page.",
-  description="Bar chart showing the adoption of ID and class selector types. Classes are used on 95% of desktop and mobile pages. IDs are used on 89% of desktop and 87% of mobile pages.",
+  caption="Popularidade dos tipos de seletores por página.",
+  description="Gráfico de barras mostrando a adoção dos tipos de seletores de ID e classe. Classes são utilizadas em 95% das páginas para desktop e dispositivos móveis. IDs são utilizados em 89% das páginas para desktop e 87% das páginas para dispositivos móveis.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1216272563&format=interactive"
   )
 }}
 
-A nice follow up chart is this one, showing that classes take up 93% of the selectors found in a stylesheet.
+Um gráfico de acompanhamento interessante é este, mostrando que as classes representam 93% dos seletores encontrados em uma folha de estilos.
 
 {{ figure_markup(
   image="fig8.png",
-  caption="Popularity of selector types per selector.",
-  description="Bar chart showing that 94% of selectors include the class selector for desktop and mobile, while 7% of desktop selectors include the ID selector (8% for mobile).",
+  caption="Popularidade dos tipos de seletores por seletor.",
+  description="Gráfico de barras mostrando que 94% dos seletores incluem o seletor de classe para desktop e dispositivos móveis, enquanto 7% dos seletores para desktop incluem o seletor de ID (8% para dispositivos móveis).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=351006989&format=interactive"
   )
 }}
 
-### Attribute selectors
+### Seletores de atributos
 
-CSS has some very powerful comparison selectors. These are selectors like `[target="_blank"]`, `[attribute^="value"]`, `[title~="rad"]`, `[attribute$="-rad"]` or `[attribute*="value"]`. Do you use them? Think they're used a lot? Let's compare how those are used with IDs and classes across the web.
+O CSS possui seletores de comparação muito poderosos. São seletores como `[target="_blank"]`, `[attribute^="value"]`, `[title~="rad"]`, `[attribute$="-rad"]` ou `[attribute*="value"]`. Você os usa? Acha que são muito utilizados? Vamos comparar como eles são usados em relação a IDs e classes em toda a web.
 
 {{ figure_markup(
   image="fig9.png",
-  caption="Popularity of operators per ID attribute selector.",
-  description="Bar chart showing the popularity of operators used by ID attribute selectors. About 4% of desktop and mobile pages use star-equals and caret-equals. 1% of pages use equals and dollar-equals. 0% use tilde-equals.",
+  caption="Popularidade dos operadores por seletor de atributos de ID.",
+  description="Gráfico de barras mostrando a popularidade dos operadores utilizados pelos seletores de atributos de ID. Cerca de 4% das páginas para desktop e dispositivos móveis utilizam o operador "estrela-igual" e "acentos-igual". 1% das páginas utilizam o operador "igual" e "dólar-igual". Nenhuma página utiliza o operador "til-igual",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=695879874&format=interactive"
   )
 }}
 
 {{ figure_markup(
   image="fig10.png",
-  caption="Popularity of operators per class attribute selector.",
-  description="Bar chart showing the popularity of operators used by class attribute selectors. 57% of pages use star-equals. 36% use caret-equals. 1% use equals and dollar-equals. 0% use tilde-equals.",
+  caption="Popularidade dos operadores por seletor de atributos de classe.",
+  description="Gráfico de barras mostrando a popularidade dos operadores utilizados pelos seletores de atributos de classe. 57% das páginas utilizam o operador "estrela-igual". 36% utilizam o operador "acentos-igual". 1% utilizam o operador "igual" e "dólar-igual". Nenhuma página utiliza o operador "til-igual".,
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=377805296&format=interactive"
   )
 }}
 
-These operators are much more popular with class selectors than IDs, which feels natural since a stylesheet usually has fewer ID selectors than class selectors, but still neat to see the uses of all these combinations.
+Esses operadores são muito mais populares com seletores de classe do que com IDs, o que parece natural, já que uma folha de estilos geralmente tem menos seletores de ID do que seletores de classe, mas ainda é interessante ver o uso de todas essas combinações.
 
-### Classes per element
+### Classes por elemento
 
-With the rise of OOCSS, atomic, and functional CSS strategies which can compose 10 or more classes on an element to achieve a design look, perhaps we'd see some interesting results. The query came back quite unexciting, with the median on mobile and desktop being 1 class per element.
+Com o surgimento de estratégias de CSS como OOCSS, CSS atômico e CSS funcional, que podem compor 10 ou mais classes em um elemento para obter um design específico, talvez pudéssemos ver alguns resultados interessantes. A consulta retornou resultados bastante pouco empolgantes, com a mediana tanto em dispositivos móveis quanto em desktop sendo de 1 classe por elemento.
 
 {{ figure_markup(
-  caption="The median number of class names per class attribute (desktop and mobile).",
+  caption="Número médio de nomes de classe por atributo de classe (desktop e dispositivos móveis).",
   content="1",
   classes="big-number"
 )
@@ -186,48 +186,48 @@ With the rise of OOCSS, atomic, and functional CSS strategies which can compose 
 
 ### Flexbox
 
-[Flexbox](https://developer.mozilla.org/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox) is a container style that directs and aligns its children; that is, it helps with layout in a constraint-based way. It had a quite rocky beginning on the web, as its specification went through two or three quite drastic changes between 2010 and 2013. Fortunately, it settled and was implemented across all browsers by 2014. Given that history, it had a slow adoption rate, but it's been a few years since then! It's quite popular now and has many articles about it and how to leverage it, but it's still new in comparison to other layout tactics.
+[Flexbox](https://developer.mozilla.org/pt-BR/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox) é um estilo de contêiner que direciona e alinha seus elementos filhos; ou seja, ele auxilia no layout de forma baseada em restrições. No início, teve um começo conturbado na web, pois sua especificação passou por duas ou três mudanças bastante drásticas entre 2010 e 2013. Felizmente, foi estabilizado e implementado em todos os navegadores até 2014. Devido a essa história, teve uma adoção lenta, mas já se passaram alguns anos desde então! Atualmente, é bastante popular e existem muitos artigos sobre como utilizá-lo, mas ainda é uma técnica de layout relativamente nova em comparação com outras.
 
 {{ figure_markup(
   image="fig12.png",
-  caption="Adoption of flexbox.",
-  description="Bar chart showing 49% of desktop pages and 52% of mobile pages using flexbox.",
+  caption="Adoção do flexbox.",
+  description="Gráfico de barras mostrando que 49% das páginas para desktop e 52% das páginas para dispositivos móveis utilizam flexbox.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=2021161093&format=interactive"
   )
 }}
 
-Quite the success story shown here, as nearly 50% of the web has flexbox usage in its stylesheets.
+Uma história de sucesso bastante evidente aqui, já que quase 50% da web utiliza flexbox em suas folhas de estilo.
 
 ### Grid
 
-Like flexbox, [grid](https://developer.mozilla.org/docs/Web/CSS/CSS_Grid_Layout) too went through a few spec alternations early on in its lifespan, but without changing implementations in publicly-deployed browsers. Microsoft had grid in the first versions of Windows 8, as the primary layout engine for its horizontally scrolling design style. It was vetted there first, transitioned to the web, and then hardened by the other browsers until its final release in 2017. It had a very successful launch in that nearly all browsers released their implementations at the same time, so web developers just woke up one day to superb grid support. Today, at the end of 2019, grid still feels like a new kid on the block, as folks are still awakening to its power and capabilities.
+Assim como o flexbox, [grid](https://developer.mozilla.org/pt-BR/docs/Web/CSS/CSS_Grid_Layout) também passou por algumas alterações na especificação no início de sua existência, mas sem alterar as implementações em navegadores publicamente disponíveis. A Microsoft tinha o grid nas primeiras versões do Windows 8, como o mecanismo de layout principal para seu estilo de design de rolagem horizontal. Ele foi testado lá primeiro, depois transicionado para a web e, em seguida, aprimorado pelos outros navegadores até o seu lançamento final em 2017. Ele teve um lançamento muito bem-sucedido, já que quase todos os navegadores lançaram suas implementações ao mesmo tempo, permitindo que os desenvolvedores da web acordassem um dia com um suporte excelente para grid. Hoje, no final de 2019, o grid ainda parece ser uma novidade, pois as pessoas ainda estão descobrindo o seu poder e capacidades.
 
 {{ figure_markup(
-  caption="Percent of websites using grid.",
+  caption="Porcentagem de sites usando grid.",
   content="2%",
   classes="big-number"
 )
 }}
 
-This shows just how little the web development community has exercised and explored their latest layout tool. We look forward to the eventual takeover of grid as the primary layout engine folks lean on when building a site. For us authors, we love writing grid: we typically reach for it first, then dial our complexity back as we realize and iterate on layout. It remains to be seen what the rest of the world will do with this powerful CSS feature over the next few years.
+Isso mostra o quão pouco a comunidade de desenvolvimento web tem exercitado e explorado sua mais recente ferramenta de layout. Estamos ansiosos pela eventual adoção do grid como o mecanismo de layout principal em que as pessoas contarão ao construir um site. Para nós, autores, adoramos escrever usando o grid: geralmente recorremos a ele primeiro e, em seguida, reduzimos a complexidade à medida que percebemos e iteramos no layout. Ainda resta ver o que o restante do mundo fará com esse recurso poderoso do CSS nos próximos anos.
 
-### Writing modes
+### Modos de escrita
 
-The web and CSS are international platform features, and writing modes offer a way for HTML and CSS to indicate a user's preferred reading and writing direction within our elements.
+A web e o CSS são recursos de plataforma internacional, e os modos de escrita oferecem uma maneira para o HTML e o CSS indicarem a direção de leitura e escrita preferida do usuário dentro de nossos elementos.
 
 {{ figure_markup(
   image="fig14.png",
-  caption="Popularity of direction values.",
-  description="Bar chart showing the popularity of direction values ltr and rtl. ltr is used by 32% of desktop pages and 40% of mobile pages. rtl is used by 32% of desktop pages and 36% of mobile pages.",
+  caption="Popularidade dos valores de direção.",
+  description="Gráfico de barras mostrando a popularidade dos valores de direção ltr e rtl. ltr é utilizado por 32% das páginas para desktop e 40% das páginas para dispositivos móveis. rtl é utilizado por 32% das páginas para desktop e 36% das páginas para dispositivos móveis.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=136847988&format=interactive"
   )
 }}
 
-## Typography
+## Tipografia
 
-### Web fonts per page
+### Fontes da web por página
 
-How many web fonts are you loading on your web page: 0? 10? The median number of web fonts per page is 3!
+Quantas fontes da web você está carregando em sua página da web: 0? 10? O número mediano de fontes da web por página é 3!
 
 {{ figure_markup(
   image="fig15.png",
@@ -237,14 +237,14 @@ How many web fonts are you loading on your web page: 0? 10? The median number of
   )
 }}
 
-### Popular font families
+### Famílias de fontes populares
 
-A natural follow up to the inquiry of total number of fonts per page, is: what fonts are they?! Designers, tune in, because you'll now get to see if your choices are in line with what's popular or not.
+Uma continuação natural da investigação sobre o número total de fontes por página é: quais são essas fontes?! Designers, atentem-se, pois agora vocês verão se suas escolhas estão de acordo com o que é popular ou não.
 
 {{ figure_markup(
   image="fig16.png",
-  caption="Top web fonts.",
-  description="Bar chart of the most popular fonts. Among desktop pages, they are Open Sans (24%), Roboto (15%), Montserrat (5%), Source Sans Pro (4%), Noto Sans JP (3%), and Lato (3%). On mobile the most notable differences are that Open Sans is used 22% of the time (down from 24%) and Roboto is used 19% of the time (up from 15%).",
+  caption="Principais fontes da web.",
+  description="Gráfico de barras das fontes mais populares. Entre as páginas para desktop, elas são: Open Sans (24%), Roboto (15%), Montserrat (5%), Source Sans Pro (4%), Noto Sans JP (3%), and Lato (3%). Nos dispositivos móveis, as diferenças mais notáveis são que o Open Sans é utilizado 22% do tempo (caiu de 24%) e o Roboto é usado 19% do tempo (aumentou de 15%).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1883567922&format=interactive",
   width=600,
   height=450,
@@ -253,168 +253,167 @@ A natural follow up to the inquiry of total number of fonts per page, is: what f
   )
 }}
 
-Open Sans is a huge winner here, with nearly 1 in 4 CSS `@font-family` declarations specifying it. We've definitely used Open Sans in projects at agencies.
+Open Sans é um grande vencedor aqui, com quase 1 em cada 4 declarações de `@font-family` CSS especificando-o. Definitivamente, usamos Open Sans em projetos em agências.
 
-It's also interesting to note the differences between desktop and mobile adoption. For example, mobile pages use Open Sans slightly less often than desktop. Meanwhile, they also use Roboto slightly more often.
+Também é interessante observar as diferenças entre a adoção em desktop e dispositivos móveis. Por exemplo, as páginas para dispositivos móveis usam Open Sans um pouco menos frequentemente do que em desktop. Enquanto isso, eles também usam Roboto um pouco mais frequentemente.
 
-### Font sizes
+### Tamanhos de fonte
 
-This is a fun one, because if you asked a user how many font sizes they feel are on a page, they'd generally return a number of 5 or definitely less than 10. Is that reality though? Even in a design system, how many font sizes are there? We queried the web and found the median to be 40 on mobile and 38 on desktop. Might be time to really think hard about custom properties or creating some reusable classes to help you distribute your type ramp.
+Este é um ponto interessante, pois se você perguntasse a um usuário quantos tamanhos de fonte eles acham que existem em uma página, eles geralmente retornariam um número de 5 ou definitivamente menos de 10. Mas será que essa é a realidade? Mesmo em um sistema de design, quantos tamanhos de fonte existem? Pesquisamos a web e descobrimos que a mediana é de 40 para dispositivos móveis e 38 para desktop. Pode ser hora de pensar seriamente sobre propriedades personalizadas ou criar algumas classes reutilizáveis para ajudar a distribuir melhor sua hierarquia tipográfica.
 
 {{ figure_markup(
   image="fig17.png",
-  caption="Distribution of the number of distinct font sizes per page.",
-  description="Bar chart showing the distribution of distinct font sizes per page. For desktop pages the 10, 25, 50, 75, and 90th percentiles are: 8, 20, 40, 66, and 92 font sizes. The desktop distribution diverges from mobile at the 75th percentile, where it is larger by 7 to 13 distinct sizes.",
+  caption="Distribuição do número de tamanhos de fonte distintos por página.",
+  description="Gráfico de barras mostrando a distribuição de tamanhos de fonte distintos por página. Para as páginas em desktop, os percentis 10, 25, 50, 75 e 90 são: 8, 20, 40, 66 e 92 tamanhos de fonte. A distribuição em desktop diverge da distribuição em dispositivos móveis no percentil 75, onde é maior em 7 a 13 tamanhos distintos.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1695270216&format=interactive"
   )
 }}
 
-## Spacing
+## Espaçamento
 
-### Margins
+### Margens
 
-A margin is the space outside of elements, like the space you demand when you push your arms out from yourself. This often looks like the spacing between elements, but is not limited to that effect. In a website or app, spacing plays a huge role in UX and design. Let's see how much margin spacing code goes into a stylesheet, shall we?
+A margem é o espaço fora dos elementos, como o espaço que você cria quando estende seus braços para longe de si mesmo. Isso muitas vezes se parece com o espaçamento entre elementos, mas não se limita a esse efeito. Em um site ou aplicativo, o espaçamento desempenha um papel importante na experiência do usuário e no design. Vamos ver quantos códigos de espaçamento de margem existem em uma folha de estilos, certo?
 
 {{ figure_markup(
   image="fig18.png",
-  caption="Distribution of the number of distinct margin values per page.",
-  description="Bar chart showing the distribution of distinct margin values per page. For desktop pages the 10, 25, 50, 75, and 90th percentiles are: 12, 47, 96, 167, and 248 distinct margin values. The desktop distribution diverges from mobile at the 75th percentile, where it is smaller by 12 to 31 distinct values.",
+  caption="Distribuição do número de valores de margem distintos por página.",
+  description="Gráfico de barras mostrando a distribuição de valores de margem distintos por página. Para as páginas em desktop, os percentis 10, 25, 50, 75 e 90 são: 12, 47, 96, 167 e 248 valores de margem distintos. A distribuição em desktop diverge da distribuição em dispositivos móveis no percentil 75, onde é menor em 12 a 31 valores distintos.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=4233531&format=interactive"
   )
 }}
 
-Quite a lot, it seems! The median desktop page has 96 distinct margin values and 104 on mobile. That makes for a lot of unique spacing moments in your design. Curious how many margins you have in your site? How can we make all this whitespace more manageable?
+Parece ser uma quantidade considerável! A página média em desktop possui 96 valores de margem distintos e 104 em dispositivos móveis. Isso resulta em muitos momentos únicos de espaçamento em seu design. Curioso para saber quantas margens você tem em seu site? Como podemos tornar todo esse espaço em branco mais gerenciável?
 
-### Logical properties
+### Propriedades lógicas
 
 {{ figure_markup(
-  caption="Percent of desktop and mobile pages that include logical properties.",
+  caption="Porcentagem de páginas para desktop e dispositivos móveis que incluem propriedades lógicas.",
   content="0.6%",
   classes="big-number"
 )
 }}
 
-We estimate that the hegemony of `margin-left` and `padding-top` is of limited duration, soon to be supplemented by their writing direction agnostic, successive, logical property syntax. While we're optimistic, current usage is quite low at 0.67% usage on desktop pages. To us, this feels like a habit change we'll need to develop as an industry, while hopefully training new developers to use the new syntax.
+Estimamos que a hegemonia de `margin-left` e `padding-top` em uma duração limitada, prestes a ser substituída por sua sintaxe de propriedade lógica sucessiva, independente da direção de escrita. Embora estejamos otimistas, o uso atual é bastante baixo, com 0,67% de utilização em páginas para desktop. Para nós, isso parece ser uma mudança de hábito que precisaremos desenvolver como indústria, enquanto esperamos treinar novos desenvolvedores para utilizarem a nova sintaxe.
 
 ### z-index
 
-Vertical layering, or stacking, can be managed with `z-index` in CSS. We were curious how many different values folks use in their sites. The range of what `z-index` accepts is theoretically infinite, bounded only by a browser's variable size limitations. Are all those stack positions used? Let's see!
+O empilhamento vertical, ou "stacking", pode ser gerenciado com `z-index` o CSS. Estávamos curiosos para saber quantos valores diferentes as pessoas usam em seus sites. A faixa do que o `z-index` aceita é teoricamente infinita, limitada apenas pelas limitações de tamanho variável do navegador. Será que todas essas posições de empilhamento são utilizadas? Vamos ver!
 
 {{ figure_markup(
   image="fig20.png",
-  caption="Distribution of the number of distinct <code>z-index</code> values per page.",
-  description="Bar chart showing the distribution of distinct z-index values per page. For desktop pages the 10, 25, 50, 75, and 90th percentiles are: 1, 7, 16, 26, and 36 distinct z-index values. The desktop distribution is much higher than mobile, by as many as 16 distinct values at the 90th percentile.",
+  caption="Distribuição do número de valores distintos de <code>z-index</code> por página",
+  description="Gráfico de barras mostrando a distribuição de valores distintos de z-index por página. Para as páginas em desktop, os percentis 10, 25, 50, 75 e 90 são: 1, 7, 16, 26 e 36 valores distintos de z-index. A distribuição em desktop é muito maior do que em dispositivos móveis, com até 16 valores distintos a mais no percentil 90.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1320871189&format=interactive"
   )
 }}
 
-### Popular z-index values
+### Valores populares de z-index
 
-From our work experience, any number of 9's seemed to be the most popular choice. Even though we taught ourselves to use the lowest number possible, that's not the communal norm. So what is then?! If folks need things on top, what are the most popular `z-index` numbers to pass in? Put your drink down; this one is funny enough you might lose it.
+Com base em nossa experiência de trabalho, qualquer número com vários noves parecia ser a escolha mais popular. Mesmo que tenhamos aprendido a usar o menor número possível, isso não é a norma comum. Então, o que é então?! Se as pessoas precisam que algo fique acima de outros elementos, quais são os números mais populares de `z-index` a serem utilizados? Pode colocar a bebida de lado; este é engraçado o suficiente para fazer você perdê-la.
 
 {{ figure_markup(
   image="fig21.png",
-  caption="Most frequently used <code>z-index</code> values.",
-  description="Scatterplot of all known z-index values and the number of times they're used, for both desktop and mobile. 1 and 2 are the most frequently used, but the rest of the popular values explode in orders of magnitude: 10, 100, 1,000, and so on all the way to numbers with hundreds of digits.",
+  caption="Valores de <code>z-index</code> mais frequentemente utilizados.",
+  description="Gráfico de dispersão de todos os valores conhecidos de z-index e a quantidade de vezes que são utilizados, tanto para desktop como para dispositivos móveis. 1 e 2 são os mais frequentemente utilizados, mas o restante dos valores populares explodem em ordens de magnitude: 10, 100, 1.000 e assim por diante, chegando a números com centenas de dígitos.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1169148473&format=interactive"
   )
 }}
 
 {{ figure_markup(
-  caption="The largest known <code>z-index</code> value.",
+  caption="O maior valor conhecido de <code>z-index</code>.",
   content="999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 !important",
   classes="really-big-number"
 )
 }}
 
-## Decoration
+## Decoração
 
-### Filters
+### Filtros
 
-Filters are a fun and great way to modify the pixels the browser intends to draw to the screen. It's a post-processing effect that is done against a flat version of the element, node, or layer that it's being applied to. Photoshop made them easy to use, then Instagram made them accessible to the masses through bespoke, stylized combinations. They've been around since about 2012, there are 10 of them, and they can be combined to create unique effects.
+Os filtros são uma forma divertida e ótima de modificar os pixels que o navegador pretende desenhar na tela. É um efeito de pós-processamento que é aplicado a uma versão plana do elemento, nó ou camada a que está sendo aplicado. O Photoshop os tornou fáceis de usar e, em seguida, o Instagram os tornou acessíveis às massas através de combinações estilizadas exclusivas. Eles existem desde cerca de 2012, existem 10 deles e podem ser combinados para criar efeitos únicos.
 
 {{ figure_markup(
-  caption="Percent of pages that include a stylesheet with the <code>filter</code> property.",
+  caption="Porcentagem de páginas que incluem uma folha de estilos com a propriedade <code>filter</code>.",
   content="78%",
   classes="big-number"
 )
 }}
 
-We were excited to see that 78% of stylesheets contain the `filter` property! That number was also so high it seemed a little fishy, so we dug in and sought to explain the high number. Because let's be honest, filters are neat, but they don't make it into all of our applications and projects. Unless!
+Ficamos animados ao ver que 78% das folhas de estilos contêm a propriedade `filter`! Esse número também era tão alto que parecia um pouco suspeito, então investigamos para explicar o alto valor. Porque sejamos honestos, os filtros são legais, mas eles não estão presentes em todas as nossas aplicações e projetos. A menos que!
 
-Upon further investigation, we discovered <a hreflang="en" href="https://fontawesome.com">FontAwesome</a>'s stylesheet comes with some `filter` usage, as well as a <a hreflang="en" href="https://youtube.com">YouTube</a> embed. Therefore, we believe `filter` snuck in the back door by piggybacking onto a couple very popular stylesheets. We also believe that `-ms-filter` presence could have been included as well, contributing to the high percent of use.
+Após uma investigação mais detalhada, descobrimos que a folha de estilos do <a hreflang="en" href="https://fontawesome.com">FontAwesome</a>contém algum uso de `filter` , assim como um vídeo embutido do <a hreflang="en" href="https://youtube.com">YouTube</a>. Portanto, acreditamos que a propriedade `filter` acabou sendo incluída através do uso compartilhado em algumas folhas de estilos muito populares. Também acreditamos que a presença do `-ms-filter` pode ter contribuído para a alta porcentagem de uso.
 
-### Blend modes
+### Modos de mesclagem
 
-Blend modes are similar to filters in that they are a post-processing effect that are run against a flat version of their target elements, but are unique in that they are concerned with pixel convergence. Said another way, blend modes are how 2 pixels _should_ impact each other when they overlap. Whichever element is on the top or the bottom will affect the way that the blend mode manipulates the pixels. There are 16 blend modes -- let's see which ones are the most popular.
+Os modos de mesclagem são semelhantes aos filtros no sentido de que são um efeito de pós-processamento executado contra uma versão plana de seus elementos-alvo, mas são únicos porque estão relacionados à convergência de pixels. Dito de outra forma, os modos de mesclagem determinam como 2 pixels _devem_  interagir quando se sobrepõem. O elemento que está acima ou abaixo afetará a forma como o modo de mesclagem manipula os pixels. Existem 16 modos de mesclagem - vamos ver quais são os mais populares.
 
 {{ figure_markup(
-  caption="Percent of pages that include a stylesheet with the <code>*-blend-mode</code> property.",
+  caption="Porcentagem de páginas que incluem uma folha de estilos com a propriedade <code>*-blend-mode</code>.",
   content="8%",
   classes="big-number"
 )
 }}
 
-Overall, usage of blend modes is much lower than of filters, but is still enough to be considered moderately used.
+No geral, o uso dos modos de mesclagem é muito menor em comparação com os filtros, mas ainda é suficiente para ser considerado moderadamente utilizado.
 
-In a future edition of the Web Almanac, it would be great to drill down into blend mode usage to get an idea of the exact modes developers are using, like multiply, screen, color-burn, lighten, etc.
+Em uma edição futura do Web Almanac, seria ótimo aprofundar o uso dos modos de mesclagem para ter uma ideia dos modos exatos que os desenvolvedores estão usando, como multiplicar, tela, queimar cor, iluminar, etc.
 
-## Animation
+## Animação
 
-### Transitions
+### Transições
 
-CSS has this awesome interpolation power that can be simply used by just writing a single rule on how to transition those values. If you're using CSS to manage states in your app, how often are you employing transitions to do the task? Let's query the web!
+O CSS possui esse incrível poder de interpolação que pode ser facilmente utilizado escrevendo apenas uma regra para fazer a transição desses valores. Se você está usando o CSS para gerenciar estados em seu aplicativo, com que frequência você está empregando transições para realizar a tarefa? Vamos consultar a web!
 
 {{ figure_markup(
   image="fig25.png",
-  caption="Distribution of the number of transitions per page.",
-  description="Bar chart showing the distribution of transitions per page. For desktop pages the 10, 25, 50, 75, and 90th percentiles are: 0, 2, 16, 49, and 118 transitions. The desktop distribution is much lower than mobile, by as many as 77 transitions at the 90th percentile.",
+  caption="Distribuição do número de transições por página.",
+  description="Gráfico de barras mostrando a distribuição de transições por página. Para as páginas em desktop, os percentis 10, 25, 50, 75 e 90 são: 0, 2, 16, 49 e 118 transições. A distribuição em desktop é muito menor do que em dispositivos móveis, com até 77 transições a menos no percentil 90.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=419145172&format=interactive"
   )
 }}
 
-That's pretty good! We did see `animate.css` as a popular library to include, which brings in a ton of transition animations, but it's still nice to see folks are considering transitioning their UIs.
+Isso é muito bom! Vimos a biblioteca `animate.css` como uma biblioteca popular a ser incluída, que traz várias animações de transição, mas ainda é bom ver que as pessoas estão considerando a transição em suas interfaces de usuário.
 
-### Keyframe animations
+### Animações com Keyframes
 
-CSS keyframe animations are a great solution for your more complex animations or transitions. They allow you to be more explicit which provides higher control over the effects. They can be small, like one keyframe effect, or be large with many many keyframe effects composed into a robust animation. The median number of keyframe animations per page is much lower than CSS transitions.
+As animações de keyframes do CSS são uma ótima solução para animações ou transições mais complexas. Elas permitem ser mais explícitas, o que oferece um maior controle sobre os efeitos. Elas podem ser simples, com apenas um efeito de keyframe, ou serem grandes, com muitos efeitos de keyframe compostos em uma animação robusta. O número médio de animações com keyframes por página é muito menor do que as transições CSS.
 
 {{ figure_markup(
   image="fig26.png",
-  caption="Distribution of the number of keyframes per page.",
-  description="Bar chart showing the distribution of keyframes per page. For mobile pages the 10, 25, 50, 75, and 90th percentiles are: 0, 0, 3, 18, and 76 keyframes. The mobile distribution is slightly higher than desktop by 6 keyframes at the 75th and 90th percentiles.",
+  caption="Distribuição do número de keyframes por página.",
+  description="Gráfico de barras mostrando a distribuição de keyframes por página. Para as páginas em dispositivos móveis, os percentis 10, 25, 50, 75 e 90 são: 0, 0, 3, 18 e 76 keyframes. A distribuição em dispositivos móveis é ligeiramente maior do que em desktop, com 6 keyframes a mais no percentil 75 e 90.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=11848448&format=interactive"
   )
 }}
 
-## Media queries
+## Consultas de mídia
 
-Media queries let CSS hook into various system-level variables in order to adapt appropriately for the visiting user. Some of these queries could handle print styles, projector screen styles, and viewport/screen size. For a long time, media queries were primarily leveraged for their viewport knowledge. Designers and developers could adapt their layouts for small screens, large screens, and so forth. Later, the web started bringing more and more capabilities and queries, meaning media queries can now manage accessibility features on top of viewport features.
+As consultas de mídia permitem que o CSS se conecte a várias variáveis de nível do sistema para se adaptar adequadamente ao usuário que está visitando a página. Algumas dessas consultas podem lidar com estilos de impressão, estilos de tela de projetor e tamanho de viewport/tela. Por muito tempo, as consultas de mídia eram principalmente utilizadas para o conhecimento do viewport. Designers e desenvolvedores podiam adaptar seus layouts para telas pequenas, grandes e assim por diante. Mais tarde, a web passou a oferecer cada vez mais capacidades e consultas, o que significa que as consultas de mídia agora podem gerenciar recursos de acessibilidade além das características do viewport.
 
-A good place to start with media queries, is just about how many are used per page? How many different moments or contexts does the typical page feel they want to respond to?
+Um bom ponto de partida para as consultas de mídia é saber quantas delas são usadas por página? Quantos momentos ou contextos diferentes a página típica deseja responder?
 
 {{ figure_markup(
   image="fig27.png",
-  caption="Distribution of the number of media queries per page.",
-  description="Bar chart showing the distribution of media queries per page. For desktop pages the 10, 25, 50, 75, and 90th percentiles are: 0, 3, 14, 27, and 43 media queries. The desktop distribution is similar to the mobile distribution.",
+  caption="Distribuição do número de consultas de mídia por página.",
+  description="Gráfico de barras mostrando a distribuição de consultas de mídia por página. Para as páginas em desktop, os percentis 10, 25, 50, 75 e 90 são: 0, 3, 14, 27 e 43 consultas de mídia. A distribuição em desktop é similar à distribuição em dispositivos móveis.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1892465673&format=interactive"
   )
 }}
 
-### Popular media query breakpoint sizes
+### Tamanhos de pontos de interrupção de consulta de mídia populares
 
-For viewport media queries, any type of CSS unit can be passed into the query expression for evaluation. In earlier days, folks would pass `em` and `px` into the query, but more units were added over time, making us very curious about what types of sizes were commonly found across the web. We assume most media queries will follow popular device sizes, but instead of assuming, let's look at the data!
+Para as consultas de mídia do viewport, qualquer tipo de unidade CSS pode ser usada na expressão da consulta para avaliação. Nos primeiros dias, as pessoas costumavam usar `em` e `px` na consulta, mas ao longo do tempo foram adicionadas mais unidades, despertando nossa curiosidade sobre os tipos de tamanhos encontrados comumente na web. Supomos que a maioria das consultas de mídia seguirá tamanhos populares de dispositivos, mas ao invés de supor, vamos analisar os dados!
 
 {{ figure_markup(
   image="fig28.png",
-  caption="Most frequently used snap points used in media queries.",
-  description="Bar chart of the most popular media query snap points. 768px and 767px are the most popular at 23% and 16%, respectively. The list drops off quickly after that, with 992px used 6% of the time and 1200px used 4% of the time. Desktop and mobile have similar usage.",
+  caption="Pontos de interrupção mais frequentemente usados em consultas de mídia.",
+  description="Gráfico de barras dos pontos de interrupção mais populares em consultas de mídia. 768px e 767px são os mais populares, com 23% e 16%, respectivamente. A lista diminui rapidamente após esses tamanhos, com 992px sendo usado em 6% das vezes e 1200px em 4% das vezes. O uso em desktop e dispositivos móveis é similar.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1353707515&format=interactive"
   )
 }}
 
-Figure 2.28 above shows that part of our assumptions were correct: there's certainly a high amount of phone specific sizes in there, but there's also some that aren't. It's interesting also how it's very pixel dominant, with a few trickling entries using `em` beyond the scope of this chart.
-
+A Figura 2.28 acima mostra que parte de nossas suposições estavam corretas: certamente há uma quantidade considerável de tamanhos específicos para dispositivos móveis, mas também há alguns que não são. É interessante notar também que os tamanhos são dominados principalmente por valores em pixels, com algumas entradas utilizando `em`, que estão além do escopo deste gráfico.
 ### Portrait vs landscape usage
 
 The most popular query value from the popular breakpoint sizes looks to be `768px`, which made us curious. Was this value primarily used to switch to a portrait layout, since it could be based on an assumption that `768px` represents the typical mobile portrait viewport? So we ran a follow up query to see the popularity of using the portrait and landscape modes:
