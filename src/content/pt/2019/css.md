@@ -414,6 +414,7 @@ Para as consultas de mídia do viewport, qualquer tipo de unidade CSS pode ser u
 }}
 
 A Figura 2.28 acima mostra que parte de nossas suposições estavam corretas: certamente há uma quantidade considerável de tamanhos específicos para dispositivos móveis, mas também há alguns que não são. É interessante notar também que os tamanhos são dominados principalmente por valores em pixels, com algumas entradas utilizando `em`, que estão além do escopo deste gráfico.
+
 ### Uso de retrato vs paisagem
 
 O valor de consulta mais popular dentre os tamanhos de ponto de interrupção populares parece ser `768px`, o que nos deixou curiosos. Esse valor é principalmente utilizado para mudar para um layout em retrato, já que pode ser baseado na suposição de que `768px` representa o tamanho típico da visualização móvel em modo retrato? Então, realizamos uma consulta adicional para verificar a popularidade do uso dos modos retrato e paisagem:
