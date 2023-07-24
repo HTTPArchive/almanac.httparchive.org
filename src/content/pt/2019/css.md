@@ -6,7 +6,7 @@ authors: [una, argyleink]
 reviewers: [meyerweb, huijing]
 analysts: [rviscomi]
 editors: [rachellcostello]
-translators: []
+translators: [HakaCode]
 discuss: 1757
 results: https://docs.google.com/spreadsheets/d/1uFlkuSRetjBNEhGKWpkrXo4eEIsgYelxY-qR9Pd7QpM/
 una_bio: Una Kravets is a Brooklyn-based international public speaker, technical writer, and Developer Advocate for Material Design at Google. Una hosts the <a hreflang="en" href="https://www.youtube.com/watch?v=YK8GZBx3hpg">Designing the Browser</a> web series and the <a hreflang="en" href="https://spec.fm/podcasts/toolsday">Toolsday</a> developer podcast. Follow her on <a href="https://twitter.com/una">Twitter</a> to find her musings on creative CSS, user experiences, and web development best practices.
