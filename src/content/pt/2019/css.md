@@ -414,81 +414,81 @@ Para as consultas de mídia do viewport, qualquer tipo de unidade CSS pode ser u
 }}
 
 A Figura 2.28 acima mostra que parte de nossas suposições estavam corretas: certamente há uma quantidade considerável de tamanhos específicos para dispositivos móveis, mas também há alguns que não são. É interessante notar também que os tamanhos são dominados principalmente por valores em pixels, com algumas entradas utilizando `em`, que estão além do escopo deste gráfico.
-### Portrait vs landscape usage
+### Uso de retrato vs paisagem
 
-The most popular query value from the popular breakpoint sizes looks to be `768px`, which made us curious. Was this value primarily used to switch to a portrait layout, since it could be based on an assumption that `768px` represents the typical mobile portrait viewport? So we ran a follow up query to see the popularity of using the portrait and landscape modes:
+O valor de consulta mais popular dentre os tamanhos de ponto de interrupção populares parece ser `768px`, o que nos deixou curiosos. Esse valor é principalmente utilizado para mudar para um layout em retrato, já que pode ser baseado na suposição de que `768px` representa o tamanho típico da visualização móvel em modo retrato? Então, realizamos uma consulta adicional para verificar a popularidade do uso dos modos retrato e paisagem:
 
 {{ figure_markup(
   image="fig29.png",
-  caption="Adoption of media query orientation modes.",
-  description="Bar chart showing the adoption of portrait and landscape orientation modes of media queries. 31% of pages specify landscape, 8% specify portrait, and 7% specify both. Adoption is the same for desktop and mobile pages.",
+  caption="Adoção dos modos de orientação de consulta de mídia.",
+  description="Gráfico de barras mostrando a adoção dos modos de orientação retrato e paisagem nas consultas de mídia. 31% das páginas especificam o modo paisagem, 8% especificam o modo retrato e 7% especificam ambos. A adoção é a mesma para páginas em desktop e dispositivos móveis.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=295845630&format=interactive"
   )
 }}
 
-Interestingly, `portrait` isn't used very much, whereas `landscape` is used much more. We can only assume that `768px` has been reliable enough as the portrait layout case that it's reached for much less. We also assume that folks on a desktop computer, testing their work, can't trigger portrait to see their mobile layout as easily as they can just squish the browser. Hard to tell, but the data is fascinating.
+Curiosamente, o modo `retrato` não é muito utilizado, enquanto o modo `paisagem` é muito mais usado. Podemos supor que `768px` tem sido considerado confiável o suficiente como o caso de layout em retrato, sendo assim, é menos utilizado. Também podemos supor que pessoas em um computador desktop, testando seu trabalho, não podem visualizar facilmente o modo retrato para ver o layout em dispositivos móveis, ao contrário de apenas ajustar o tamanho do navegador. É difícil afirmar com certeza, mas os dados são fascinantes.
 
-### Most popular unit types
+### Tipos de unidades mais populares
 
-In the width and height media queries we've seen so far, pixels look like the dominant unit of choice for developers looking to adapt their UI to viewports. We wanted to exclusively query this though, and really take a look at the types of units folks use. Here's what we found.
+Nas consultas de mídia para largura e altura que analisamos até agora, os pixels parecem ser a unidade dominante escolhida pelos desenvolvedores para adaptar suas interfaces de usuário aos viewports. No entanto, queríamos fazer uma consulta exclusiva sobre isso e realmente analisar os tipos de unidades que as pessoas usam. Aqui está o que encontramos.
 
 {{ figure_markup(
   image="fig30.png",
-  caption="Adoption of units in media query snap points.",
-  description="Bar chart showing 75% of media query snap points specifying pixels, 8% specifying ems, and 1% specifying rems.",
+  caption="Adoção de unidades em pontos de interrupção de consultas de mídia.",
+  description="Gráfico de barras mostrando que 75% dos pontos de interrupção de consulta de mídia especificam pixels, 8% especificam ems e 1% especifica rems.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=305563768&format=interactive"
   )
 }}
 
 ### `min-width` vs `max-width`
 
-When folks write a media query, are they typically checking for a viewport that's over or under a specific range, _or_ both, checking if it's between a range of sizes? Let's ask the web!
+Quando as pessoas escrevem uma consulta de mídia, elas geralmente estão verificando se o viewport está acima ou abaixo de um intervalo específico, _ou_ ambas, verificando se está entre um intervalo de tamanhos? Vamos perguntar à web!
 
 {{ figure_markup(
   image="fig31.png",
-  caption="Adoption of properties used in media query snap points.",
-  description="Bar chart showing 74% of desktop pages using max-width, 70% using min-width, and 68% using both properties. Adoption is similar for mobile pages.",
+  caption="Adoção das propriedades usadas nos pontos de interrupção de consultas de mídia.",
+  description="Gráfico de barras mostrando que 74% das páginas de desktop usam max-width, 70% usam min-width e 68% usam ambas as propriedades. A adoção é semelhante para páginas móveis.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=2091525146&format=interactive"
   )
 }}
 
-No clear winners here; `max-width` and `min-width` are nearly equally used.
+Aqui não há vencedores claros; `max-width` e `min-width`  são usados quase igualmente.
 
-### Print and speech
+### Impressão e Fala
 
-Websites feel like digital paper, right? As users, it's generally known that you can just hit print from your browser and turn that digital content into physical content. A website isn't required to change itself for that use case, but it can if it wants to! Lesser known is the ability to adjust your website in the use case of it being read by a tool or robot. So just how often are these features taken advantage of?
+Sites da web são como papel digital, certo? Como usuários, é geralmente sabido que você pode simplesmente clicar em "imprimir" no seu navegador e transformar esse conteúdo digital em conteúdo físico. Um site não é obrigado a se adaptar para esse caso de uso, mas pode fazê-lo se quiser! Menos conhecida é a capacidade de ajustar o site para ser lido por uma ferramenta ou robô. Então, com que frequência esses recursos são aproveitados?
 
 {{ figure_markup(
   image="fig32.png",
-  caption="Adoption of the all, print, screen, and speech types of media queries.",
-  description='Bar chart showing 35% of desktop pages using the "all" media query type, 46% using print, 72% using screen, and 0% using speech. Adoption is lower by about 5 percentage points for desktop compared to mobile.',
+  caption="Adoção dos tipos de media queries "all", "print", "screen" e "speech".",
+  description='Gráfico de barras mostrando que 35% das páginas de desktop usam o tipo de media query "all", 46% usam "print", 72% usam "screen" e 0% usam "speech". A adoção é menor em cerca de 5 pontos percentuais para desktop em comparação com dispositivos móveis.',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=939890574&format=interactive"
   )
 }}
 
-## Page-level stats
+## Estatísticas por página
 
-### Stylesheets
+### Folhas de estilos
 
-How many stylesheets do you reference from your home page? How many from your apps? Do you serve more or less to mobile vs desktop? Here's a chart of everyone else!
+Quantas folhas de estilos você referencia na sua página inicial? Quantas no seu aplicativo? Você serve mais ou menos para dispositivos móveis em comparação com desktops? Aqui está um gráfico de todos os outros!
 
 {{ figure_markup(
   image="fig33.png",
-  caption="Distribution of the number of stylesheets loaded per page.",
-  description="Distribution of the number of stylesheets loaded per page. Desktop and mobile have identical distributions with 10, 25, 50, 75, and 90th percentiles: 1, 3, 6, 12, and 20 stylesheets per page.",
+  caption="Distribuição do número de folhas de estilos carregadas por página.",
+  description="Gráfico mostrando a distribuição do número de folhas de estilos carregadas por página. Desktop e dispositivos móveis têm distribuições idênticas com os seguintes percentis: 10º, 25º, 50º, 75º e 90º: 1, 3, 6, 12 e 20 folhas de estilos por página.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1377313548&format=interactive"
   )
 }}
 
-### Stylesheet names
+### Nomes de folhas de estilos
 
-What do you name your stylesheets? Have you been consistent throughout your career? Have you slowly converged or consistently diverged? This chart shows a small glimpse into library popularity, but also a large glimpse into popular names of CSS files.
+Como você nomeia suas folhas de estilos? Você tem sido consistente ao longo da sua carreira? Você tem convergido lentamente ou divergido consistentemente? Este gráfico mostra uma pequena visão da popularidade das bibliotecas, mas também uma grande visão dos nomes populares dos arquivos CSS.
 
 <figure>
   <table>
     <thead>
       <tr>
-        <th scope="col">Stylesheet name</th>
+        <th scope="col">Nome da folha de estilos</th>
         <th scope="col">Desktop</th>
         <th scope="col">Mobile</th>
       </tr>
@@ -586,34 +586,34 @@ What do you name your stylesheets? Have you been consistent throughout your care
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Most frequently used stylesheet names.") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Nomes de folhas de estilos mais frequentemente usados.") }}</figcaption>
 </figure>
 
-Look at all those creative file names! style, styles, main, default, all. One stood out though, do you see it? `BfWyFJ2Rl5s.css` takes the number four spot for most popular. We went researching it a bit and our best guess is that it's related to Facebook "like" buttons. Do you know what that file is? Leave a comment, because we'd love to hear the story.
+Olhe todos esses nomes de arquivo criativos! style, styles, main, default, all. Porém, um se destacou, você o vê? `BfWyFJ2Rl5s.css` ocupa a quarta posição como mais popular. Fizemos uma pesquisa sobre ele e nossa melhor suposição é que esteja relacionado aos botões de "curtir" do Facebook. Você sabe o que é esse arquivo? Deixe um comentário, pois adoraríamos ouvir a história.
 
-### Stylesheet size
+### Tamanho dos Arquivos de Estilo
 
-How big are these stylesheets? Is our CSS size something to worry about? Judging by this data, our CSS is not a main offender for page bloat.
+Qual é o tamanho desses arquivos de estilo? O tamanho do nosso CSS é motivo de preocupação? Com base nesses dados, nosso CSS não é uma das principais causas de inchaço das páginas.
 
 {{ figure_markup(
   image="fig35.png",
-  caption="Distribution of the number of stylesheet bytes (KB) loaded per page.",
-  description="Distribution of the number of stylesheet bytes loaded per page. The desktop page's 10, 25, 50, 75, and 90th percentiles are: 8, 26, 62, 129, and 240 KB. The desktop distribution is slightly higher than the mobile distribution by 5 to 10 KB.",
+  caption="Distribuição do número de bytes (KB) de arquivos de estilo carregados por página.",
+  description="Distribuição do número de bytes de arquivos de estilo carregados por página. Os percentis 10, 25, 50, 75 e 90 das páginas de desktop são: 8, 26, 62, 129 e 240 KB. A distribuição para desktop é ligeiramente maior do que a distribuição para mobile em 5 a 10 KB.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=2132635319&format=interactive"
   )
 }}
 
-See the [Page Weight](./page-weight) chapter for a more in-depth look at the number of bytes websites are loading for each content type.
+Consulte o capítulo [Peso da Página](./page-weight) para uma análise mais detalhada do número de bytes que os sites estão carregando para cada tipo de conteúdo.
 
-### Libraries
+### Bibliotecas
 
-It's common, popular, convenient, and powerful to reach for a CSS library to kick start a new project. While you may not be one to reach for a library, we've queried the web in 2019 to see which are leading the pack. If the results astound you, like they did us, I think it's an interesting clue to just how small of a developer bubble we can live in. Things can feel massively popular, but when the web is inquired, reality is a bit different.
+É comum, popular, conveniente e poderoso recorrer a uma biblioteca de CSS para iniciar um novo projeto. Embora você possa não ser alguém que recorre a uma biblioteca, pesquisamos a web em 2019 para ver quais estão liderando o grupo. Se os resultados o surpreenderem, assim como nos surpreenderam, acredito que é uma pista interessante de quão pequena pode ser a bolha de desenvolvedores em que vivemos. As coisas podem parecer extremamente populares, mas quando a web é consultada, a realidade é um pouco diferente.
 
 <figure>
   <table>
     <thead>
       <tr>
-        <th scope="col">Library</th>
+        <th scope="col">Bibliotecas</th>
         <th scope="col">Desktop</th>
         <th scope="col">Mobile</th>
       </tr>
@@ -691,48 +691,48 @@ It's common, popular, convenient, and powerful to reach for a CSS library to kic
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Percent of pages that include a given CSS library.") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Porcentagem de páginas que incluem uma determinada biblioteca de CSS.") }}</figcaption>
 </figure>
 
-This chart suggests that <a hreflang="en" href="https://getbootstrap.com/">Bootstrap</a> is a valuable library to know to assist with getting a job. Look at all the opportunity there is to help! It's also worth noting that this is a positive signal chart only: the math doesn't add up to 100% because not all sites are using a CSS framework. A little bit over half of all sites _are not_ using a known CSS framework. Very interesting, no?!
+Este gráfico sugere que o <a hreflang="en" href="https://getbootstrap.com/">Bootstrap</a> é uma biblioteca valiosa para se conhecer e pode ajudar a obter emprego. Veja todas as oportunidades que existem para ajudar! Também vale ressaltar que este é um gráfico de sinais positivos apenas: a matemática não totaliza 100% porque nem todos os sites estão usando um framework de CSS. Pouco mais da metade de todos os sites _não estão_ usando um framework de CSS conhecido. Muito interessante, não é?
 
-### Reset utilities
+### utilitários de redefinição
 
-CSS reset utilities intend to normalize or create a baseline for native web elements. In case you didn't know, each browser serves its own stylesheet for all HTML elements, and each browser gets to make their own unique decisions about how those elements look or behave. Reset utilities have looked at these files, found their common ground (or not), and ironed out any differences so you as a developer can style in one browser and have reasonable confidence it will look the same in another.
+As ferramentas de reset de CSS têm a intenção de normalizar ou criar uma linha de base para os elementos nativos da web. Caso você não saiba, cada navegador serve seu próprio arquivo de estilo para todos os elementos HTML, e cada navegador toma decisões únicas sobre como esses elementos devem parecer ou se comportar. As ferramentas de reset analisam esses arquivos, encontram pontos comuns (ou não) e resolvem quaisquer diferenças para que você, como desenvolvedor, possa estilizar em um navegador e ter uma confiança razoável de que ele parecerá o mesmo em outro.
 
-So let's take a peek at how many sites are using one! Their existence seems quite reasonable, so how many folks agree with their tactics and use them in their sites?
+Então vamos dar uma olhada em quantos sites estão usando uma! A existência delas parece bastante razoável, então quantas pessoas concordam com suas táticas e as utilizam em seus sites?
 
 {{ figure_markup(
   image="fig37.png",
-  caption="Adoption of CSS reset utilities.",
-  description="Bar chart showing the adoption of three CSS reset utilities: Normalize.css (33%), Reset CSS (3%), and Pure CSS (0%). There is no difference in adoption across desktop and mobile pages.",
+  caption="Adoção de utilitários de redefinição de CSS.",
+  description="Gráfico de barras mostrando a adoção de três utilitários de redefinição de CSS: Normalize.css (33%), Reset CSS (3%) e Pure CSS (0%). Não há diferença na adoção entre páginas de desktop e mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1318910215&format=interactive"
   )
 }}
 
-Turns out that about one-third of the web is using <a hreflang="en" href="https://necolas.github.io/normalize.css">`normalize.css`</a>, which could be considered a more gentle approach to the task then a reset is. We looked a little deeper, and it turns out that Bootstrap includes `normalize.css`, which likely accounts for a massive amount of its usage. It's worth noting as well that `normalize.css` has more adoption than Bootstrap, so there are plenty of folks using it on its own.
+Parece que cerca de um terço da web está usando o <a hreflang="en" href="https://necolas.github.io/normalize.css">`normalize.css`</a>, que pode ser considerado uma abordagem mais suave para a tarefa do que um reset. Investigamos um pouco mais e descobrimos que o Bootstrap inclui o `normalize.css`, o que provavelmente representa uma grande parte de sua utilização. Vale ressaltar também que o `normalize.css`  tem uma adoção maior do que o Bootstrap, o que significa que muitas pessoas o estão utilizando de forma independente.
 
-### `@supports` and `@import`
+### `@supports` e `@import`
 
-CSS `@supports` is a way for the browser to check whether a particular property-value combination is parsed as valid, and then apply styles if the check returns as true.
+O `@supports` do CSS é uma maneira para o navegador verificar se uma combinação específica de propriedade-valor é interpretada como válida e, em seguida, aplicar estilos se a verificação retornar como verdadeira.
 
 {{ figure_markup(
   image="fig38.png",
-  caption='Popularity of CSS "at" rules.',
-  description='Bar chart showing the popularity of @import and @supports "at" rules. On desktop, @import is used on 28% of pages and @supports is used on 31%. For mobile @import is used on 26% of pages and @supports is used on 29%',
+  caption='Popularidade das regras "at" do CSS',
+  description='Gráfico de barras mostrando a popularidade das regras @import e @supports "at". . No desktop, @import é usado em 28% das páginas e @supports é usado em 31%. Para dispositivos móveis, @import é usado em 26% das páginas e @supports is é usado em 29%.',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1739611283&format=interactive"
   )
 }}
 
-Considering `@supports` was implemented across most browsers in 2013, it's not too surprising to see a high amount of usage and adoption. We're impressed at the mindfulness of developers here. This is considerate coding! 30% of all websites are checking for some display related support before using it.
+Considerando que o `@supports` foi implementado na maioria dos navegadores em 2013, não é surpreendente ver uma quantidade elevada de uso e adoção. Estamos impressionados com a atenção dos desenvolvedores aqui. Isso é codificação considerada! 30% de todos os sites estão verificando algum suporte relacionado à exibição antes de usá-lo.
 
-An interesting follow up to this is that there's more usage of `@supports` than `@imports`! We did not expect that! `@import` has been in browsers since 1994.
+Um acompanhamento interessante disso é que há mais uso do `@supports` do que `@imports`! Não esperávamos por isso! O `@import` está nos navegadores desde 1994.
 
-## Conclusion
+## Conclusão
 
-There is so much more here to datamine! Many of the results surprised us, and we can only hope that they've surprised you as well. This surprising data set made the summarizing very fun, and left us with lots of clues and trails to investigate if we want to hunt down the reasons _why_ some of the results are the way they are.
+Há muito mais aqui para explorar em dados! Muitos dos resultados nos surpreenderam, e esperamos que também tenham surpreendido você. Esse conjunto de dados surpreendente tornou a tarefa de resumir muito divertida e nos deixou com muitas pistas e caminhos para investigar se quisermos descobrir as razões por que alguns dos resultados são como são.
 
-Which results did you find the most alarming?
-Which results make you head to your codebase for a quick query?
+Quais resultados você achou mais alarmantes?
+Quais resultados o levam a acessar rapidamente sua base de código para fazer uma consulta?
 
-We felt the biggest takeaway from these results is that custom properties offer the most bang for your buck in terms of performance, DRYness, and scalability of your stylesheets. We look forward to scrubbing the internet's stylesheets again, hunting for new datums and provocative chart treats. Reach out to [@una](https://twitter.com/una) or [@argyleink](https://twitter.com/argyleink) in the comments with your queries, questions, and assertions. We'd love to hear them!
+Nós consideramos que a maior conclusão a ser tirada desses resultados é que as propriedades personalizadas oferecem o melhor custo-benefício em termos de desempenho, organização e escalabilidade das suas folhas de estilo. Estamos ansiosos para vasculhar novamente as folhas de estilo da internet, em busca de novos dados e gráficos interessantes. Entre em contato com [@una](https://twitter.com/una) ou [@argyleink](https://twitter.com/argyleink) nos comentários com suas consultas, perguntas e afirmações. Gostaríamos de ouvi-las!
