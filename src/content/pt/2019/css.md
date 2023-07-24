@@ -231,8 +231,8 @@ Quantas fontes da web você está carregando em sua página da web: 0? 10? O nú
 
 {{ figure_markup(
   image="fig15.png",
-  caption="Distribution of the number of web fonts loaded per page.",
-  description="Distribution of the number of web fonts loaded per page. On desktop the 10, 25, 50, 75, and 90th percentiles are: 0, 1, 3, 6, and 9. This slightly higher than the mobile distribution which is one fewer font in the 75th and 90th percentiles.",
+  caption="Distribuição do número de fontes da web carregadas por página.",
+  description="Distribuição do número de fontes da web carregadas por página. No desktop, os percentis 10, 25, 50, 75 e 90 são: 0, 1, 3, 6 e 9. Isso é ligeiramente maior do que a distribuição em dispositivos móveis, que possui uma fonte a menos nos percentis 75 e 90..",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1453570774&format=interactive"
   )
 }}
