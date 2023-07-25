@@ -156,7 +156,7 @@ O CSS possui seletores de comparação muito poderosos. São seletores como `[ta
 {{ figure_markup(
   image="fig9.png",
   caption="Popularidade dos operadores por seletor de atributos de ID.",
-  description="Gráfico de barras mostrando a popularidade dos operadores utilizados pelos seletores de atributos de ID. Cerca de 4% das páginas para desktop e dispositivos móveis utilizam o operador "estrela-igual" e "acentos-igual". 1% das páginas utilizam o operador "igual" e "dólar-igual". Nenhuma página utiliza o operador "til-igual",
+  description='Gráfico de barras mostrando a popularidade dos operadores utilizados pelos seletores de atributos de ID. Cerca de 4% das páginas para desktop e dispositivos móveis utilizam o operador "estrela-igual" e "acentos-igual". 1% das páginas utilizam o operador "igual" e "dólar-igual". Nenhuma página utiliza o operador "til-igual"',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=695879874&format=interactive"
   )
 }}
@@ -164,7 +164,7 @@ O CSS possui seletores de comparação muito poderosos. São seletores como `[ta
 {{ figure_markup(
   image="fig10.png",
   caption="Popularidade dos operadores por seletor de atributos de classe.",
-  description="Gráfico de barras mostrando a popularidade dos operadores utilizados pelos seletores de atributos de classe. 57% das páginas utilizam o operador "estrela-igual". 36% utilizam o operador "acentos-igual". 1% utilizam o operador "igual" e "dólar-igual". Nenhuma página utiliza o operador "til-igual".,
+  description='Gráfico de barras mostrando a popularidade dos operadores utilizados pelos seletores de atributos de classe. 57% das páginas utilizam o operador "estrela-igual". 36% utilizam o operador "acentos-igual". 1% utilizam o operador "igual" e "dólar-igual". Nenhuma página utiliza o operador "til-igual".',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=377805296&format=interactive"
   )
 }}
@@ -461,7 +461,7 @@ Sites da web são como papel digital, certo? Como usuários, é geralmente sabid
 
 {{ figure_markup(
   image="fig32.png",
-  caption="Adoção dos tipos de media queries "all", "print", "screen" e "speech".",
+  caption='Adoção dos tipos de media queries "all", "print", "screen" e "speech".',
   description='Gráfico de barras mostrando que 35% das páginas de desktop usam o tipo de media query "all", 46% usam "print", 72% usam "screen" e 0% usam "speech". A adoção é menor em cerca de 5 pontos percentuais para desktop em comparação com dispositivos móveis.',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=939890574&format=interactive"
   )
