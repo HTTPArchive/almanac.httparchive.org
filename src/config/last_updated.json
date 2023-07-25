@@ -1868,6 +1868,11 @@
     "date_modified": "2022-12-12T00:00:00.000Z",
     "hash": "541de0461a3407d119bfbf80749ffdd9"
   },
+  "pt/2019/chapters/css.html": {
+    "date_published": "2023-07-25T00:00:00.000Z",
+    "date_modified": "2023-07-25T00:00:00.000Z",
+    "hash": "987f0cf41275a2c544daabbafb3f7237"
+  },
   "pt/2019/chapters/ecommerce.html": {
     "date_published": "2021-06-10T00:00:00.000Z",
     "date_modified": "2022-08-08T00:00:00.000Z",
@@ -1897,6 +1902,11 @@
     "date_published": "2019-11-04T00:00:00.000Z",
     "date_modified": "2020-12-09T00:00:00.000Z",
     "hash": "e69f9e7be4baab846b85e8247611056e"
+  },
+  "pt/2019/methodology.html": {
+    "date_published": "2023-07-25T00:00:00.000Z",
+    "date_modified": "2023-07-25T00:00:00.000Z",
+    "hash": "65988722b92d79a08c2259d5ef2d1d0e"
   },
   "pt/2019/table_of_contents.html": {
     "date_published": "2019-11-04T00:00:00.000Z",
