@@ -6,7 +6,7 @@ authors: [ColinEberhardt]
 reviewers: [binji, RReverser]
 analysts: [JamieWhitMac]
 editors: [tunetheweb]
-translators: [hakacode]
+translators: [Hakacode]
 ColinEberhardt_bio: Colin é CTO na empresa <a hreflang="en" href="https://www.scottlogic.com/">Scott Logic</a> e é um prolífico autor técnico, blogueiro e palestrante em diversas tecnologias. Ele é membro do conselho da <a hreflang="en" href="https://www.finos.org/">FINOS</a>, que promove a colaboração de código aberto no setor financeiro. Além disso, ele é muito ativo no GitHub, contribuindo para diversos projetos diferentes.
 results: https://docs.google.com/spreadsheets/d/11jyABro0fKtuN6INnYP9pJlv5QWwp0jfJyTsGfKgScg/
 featured_quote: Apesar de ser uma tecnologia de nicho, o WebAssembly já está agregando valor à web. Existem várias aplicações web que se beneficiam significativamente dessa tecnologia.
