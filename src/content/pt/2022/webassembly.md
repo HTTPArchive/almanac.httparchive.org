@@ -81,7 +81,7 @@ Os módulos menores de WebAssembly provavelmente estão sendo usados para funcio
 
 Claramente, o WebAssembly não é amplamente utilizado, e em vez de ver um crescimento no uso, estamos observando uma contração modesta.
 
-## What is WebAssembly being used for?
+## Para que o WebAssembly está sendo usado?
 
 {{ figure_markup(
   caption="Bibliotecas populares de WebAssembly.",
@@ -93,31 +93,31 @@ Claramente, o WebAssembly não é amplamente utilizado, e em vez de ver um cresc
   )
 }}
 
-- <a hreflang="en" href="https://aws.amazon.com/ivs/">Amazon IVS (Amazon Interactive Video Service)</a> - Here WebAssembly is likely being used as a video codec, allowing consistent video decoding independent of the codec support of the user's browser
-- <a hreflang="en" href="https://mnater.github.io/Hyphenopoly/">Hyphenopoly</a> - This in an npm module that provides a polyfill for CSS hyphenation. The core algorithm is shipped as a WebAssembly module, giving a small footprint and consistent performance
-- <a hreflang="en" href="https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor">Blazor</a> - Microsoft Blazor is a platform—runtime and UI library—that supports the development of web applications using the .NET platform and C#.
-- <a hreflang="en" href="https://developers.arcgis.com/javascript/latest/">ArcGIS</a> - A comprehensive suite of tools for building interactive mapping applications. Performance is a primary concern for the ArcGIS team, and they employ various technologies such as WebGL to achieve this. Specifically, WebAssembly is used to enable fast client-side projections.
-- <a hreflang="en" href="https://skia.org/docs/user/modules/canvaskit/">CanvasKit</a> - This library provides more advanced capabilities than the standard Canvas2D API. It is implemented via Skia, a graphics library written in C++, which is compiled to WebAssembly allowing execution in the browser.
-- <a hreflang="en" href="https://www.tableau.com/">Tableau</a> - A popular tool for building interactive visualizations. It is not clear whether WebAssembly is used as part of their core product, or whether it is just being used for the specific dashboards that were found as part of the crawl.
-- <a hreflang="en" href="https://google.github.io/draco/">Draco</a> - A library for compressing and decompressing 3D geometric meshes and point clouds. It is written in C++, with the WebAssemby building allowing its use within the browser.
-- <a hreflang="en" href="https://xat.com/">Xat</a> - A social media site. It is unclear what they are using WebAssembly for.
-- <a hreflang="en" href="https://www.hpe.com/us/en/home.html">Hewlett Packard Enterprise</a> - It is unclear what they are using WebAssembly for.
+- <a hreflang="en" href="https://aws.amazon.com/ivs/">Amazon IVS (Amazon Interactive Video Service)</a> - Aqui, o WebAssembly provavelmente é usado como um codec de vídeo, permitindo a decodificação consistente de vídeo independente do suporte ao codec do navegador do usuário.
+- <a hreflang="en" href="https://mnater.github.io/Hyphenopoly/">Hyphenopoly</a> - Este é um módulo npm que fornece um polyfill para hifenização CSS. O algoritmo principal é enviado como um módulo WebAssembly, proporcionando uma pequena pegada e desempenho consistente.
+- <a hreflang="en" href="https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor">Blazor</a> - O Microsoft Blazor é uma plataforma - runtime e biblioteca de interface do usuário - que suporta o desenvolvimento de aplicações web usando a plataforma .NET e C#.
+- <a hreflang="en" href="https://developers.arcgis.com/javascript/latest/">ArcGIS</a> - Uma suíte abrangente de ferramentas para construir aplicações de mapeamento interativas. O desempenho é uma preocupação principal para a equipe do ArcGIS, e eles utilizam várias tecnologias como WebGL para alcançar isso. Especificamente, o WebAssembly é usado para permitir projeções rápidas do lado do cliente.
+- <a hreflang="en" href="https://skia.org/docs/user/modules/canvaskit/">CanvasKit</a> - Essa biblioteca oferece capacidades mais avançadas do que a API padrão Canvas2D. É implementada por meio do Skia, uma biblioteca gráfica escrita em C++, que é compilada para WebAssembly permitindo a execução no navegador.
+- <a hreflang="en" href="https://www.tableau.com/">Tableau</a> - Uma ferramenta popular para criar visualizações interativas. Não está claro se o WebAssembly é usado como parte do produto principal deles ou se está sendo usado apenas para os painéis específicos que foram encontrados durante o rastreamento.
+- <a hreflang="en" href="https://google.github.io/draco/">Draco</a> - Uma biblioteca para compressão e descompressão de malhas geométricas 3D e nuvens de pontos. É escrita em C++ e o uso do WebAssembly permite sua utilização no navegador.
+- <a hreflang="en" href="https://xat.com/">Xat</a> - Uma rede social. Não está claro para que eles estão usando o WebAssembly.
+- <a hreflang="en" href="https://www.hpe.com/us/en/home.html">Hewlett Packard Enterprise</a> - Não está claro para que eles estão usando o WebAssembly.
 
-From looking at the popular WebAssembly libraries we can see that its usage is quite targeted, often being used for specific number-crunching tasks, or leveraging large and mature C++ codebases, bringing their capabilities to the web without the need to port to JavaScript.
+Ao observarmos as bibliotecas populares do WebAssembly, podemos ver que seu uso é bastante específico, muitas vezes sendo utilizado para tarefas específicas de cálculos numéricos ou aproveitando grandes e maduros conjuntos de código em C++, trazendo suas capacidades para a web sem a necessidade de portar para JavaScript.
 
-## What languages are people using?
+## Que linguagens as pessoas estão usando?
 
-WebAssembly is a binary format, and as a result, much of the information in the source—programming language, application structure, variable names—is obfuscated or entirely lost in the compilation process.
+O WebAssembly é um formato binário e, como resultado, muitas informações do código-fonte - como a linguagem de programação, a estrutura do aplicativo e os nomes das variáveis - são obfuscadas ou completamente perdidas durante o processo de compilação.
 
-However, modules often have exports and imports, which name functions within the hosting environment—the JavaScript runtime within the browser—that describe the module interface. Most WebAssembly toolchains create a small amount of JavaScript code, for the purposes of 'binding', making it easier to integrate modules into JavaScript applications. These bindings often have recognizable function names which are present in the modules exports or imports, giving a reliable mechanism for identifying the language that was used to author the module.
+No entanto, os módulos geralmente têm exportações e importações que nomeiam funções dentro do ambiente de hospedagem - a execução de JavaScript dentro do navegador - que descrevem a interface do módulo. A maioria das cadeias de ferramentas do WebAssembly cria uma pequena quantidade de código JavaScript, com o propósito de 'vinculação', tornando mais fácil integrar módulos em aplicativos JavaScript. Essas vinculações muitas vezes possuem nomes de função reconhecíveis que estão presentes nas exportações ou importações dos módulos, proporcionando um mecanismo confiável para identificar a linguagem usada para criar o módulo.
 
-We enhanced the <a hreflang="en" href="https://github.com/HTTPArchive/wasm-stats">wasm-stats</a> project, which provides WebAssembly-specific analysis to the crawler, adding code which inspects exports / imports to identify common patterns that provide an indication of the language used to author a given module. As an example, if a module imports a module names `wbindgen` this is a reference to code generated by <a hreflang="en" href="https://crates.io/crates/wasm-bindgen">wasm-bindgen</a> and a clear indicator that the module was written in Rust.
+Aprimoramos o projeto <a hreflang="en" href="https://github.com/HTTPArchive/wasm-stats">wasm-stats</a>, que fornece análises específicas para WebAssembly ao rastreador, adicionando código que inspeciona exportações / importações para identificar padrões comuns que indicam a linguagem usada para criar um determinado módulo. Como exemplo, se um módulo importa um módulo com o nome `wbindgen` , isso é uma referência a código gerado pelo <a hreflang="en" href="https://crates.io/crates/wasm-bindgen">wasm-bindgen</a>  e um claro indicativo de que o módulo foi escrito em Rust.
 
-In some cases, the export / import names are minified, making it harder to identify the source language. However, Emscripten (a C++ toolchain), has a distinctive convention for minified names, meaning that we can be relatively confident that modules exhibiting this pattern were generated using Emscripten.
+Em alguns casos, os nomes de exportação/importação são minificados, tornando mais difícil identificar a linguagem de origem. No entanto, o Emscripten (uma cadeia de ferramentas de C++) possui uma convenção distintiva para nomes minificados, o que significa que podemos ter uma confiança relativa de que os módulos que exibem esse padrão foram gerados usando o Emscripten.
 
 {{ figure_markup(
-  caption="WebAssembly language usage.",
-  description="LikelyEmscripten (63.8% on desktop and 61.1% on mobile), Unknown (11.7% and 16.9%), Emscripten (13.3% and 11.8%), Rust (8.0% and 6.0%), Blazor (2.7% and 3.5%), and Go (0.6% and 0.7%).",
+  caption="Uso de linguagens no WebAssembly.",
+  description="Provável Emscripten (63,8% no desktop e 61,1% no mobile), Desconhecido (11,7% e 16,9%), Emscripten (13,3% e 11,8%), Rust (8,0% e 6,0%), Blazor (2,7% e 3,5%) e Go (0,6% e 0,7%).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRZqlPK0L45J7IoVgmLcuRut9-M2nhaDMhs8cHtCLZacS7pkIqvEhHfdcYNSoEotQp0-Rs_RRslZ8sT/pubchart?oid=1942715596&format=interactive",
   sheets_gid="915015663",
   sql_file="language_usage.sql",
@@ -125,19 +125,19 @@ In some cases, the export / import names are minified, making it harder to ident
   )
 }}
 
-Looking at the results, we found that, on desktop, 72.8% of modules were very likely created using Emscripten, and as a result are most likely written in C++. Next most popular is Rust at 6.0%, then Blazor (C#) at 3.5%. We also found a small number of modules written in Go.
+Analisando os resultados, descobrimos que, no desktop, 72,8% dos módulos foram muito provavelmente criados usando o Emscripten e, como resultado, são muito provavelmente escritos em C++. Em seguida, a linguagem mais popular é o Rust, com 6,0%, seguida por Blazor (C#) com 3,5%. Também encontramos um pequeno número de módulos escritos em Go.
 
-Notably, 16.9% of modules didn't have an identifiable language. <a hreflang="en" href="https://www.assemblyscript.org/">AssemblyScript</a> is a popular WebAssembly-specific language which doesn't provide any obvious clues in the modules it produces. We know that Hypehnopoly—which represents 8.2% of all modules—uses AssemblyScript, and it accounts for almost half of these 'unidentified' modules.
+Notavelmente, 16,9% dos módulos não possuíam uma linguagem identificável. <a hreflang="en" href="https://www.assemblyscript.org/">AssemblyScript</a>  é uma linguagem popular específica para WebAssembly que não fornece pistas óbvias nos módulos que produz. Sabemos que Hypehnopoly, que representa 8,2% de todos os módulos, usa AssemblyScript, e isso representa quase metade desses módulos "não identificados".
 
-It is interesting to contrast these results with the <a hreflang="en" href="https://blog.scottlogic.com/2022/06/20/state-of-wasm-2022.html">State of WebAssembly 2022 survey</a>, where Rust was the most frequently used language. However, a significant number of respondents to that survey were using WebAssembly for non-browser based applications.
+É interessante contrastar esses resultados com a <a hreflang="en" href="https://blog.scottlogic.com/2022/06/20/state-of-wasm-2022.html">State of WebAssembly 2022 survey</a>, onde Rust foi a linguagem mais utilizada com maior frequência. No entanto, um número significativo de respondentes dessa pesquisa estava usando o WebAssembly para aplicações fora do navegador.
 
-## What features are being used?
+## Quais recursos estão sendo utilizados?
 
-The initial release of WebAssembly was considered an MVP. In common with other web standards, it is continually evolving under the governance of the World Wide Web Consortium (W3C). This year saw the announcement of the <a hreflang="en" href="https://www.w3.org/TR/wasm-core-2/">WebAssembly v2 draft</a>, adding a number of new features.
+O lançamento inicial do WebAssembly foi considerado um MVP (Produto Viável Mínimo). De acordo com outros padrões da web, ele está em constante evolução sob a governança do World Wide Web Consortium (W3C). Este ano marcou o anúncio do rascunho do <a hreflang="en" href="https://www.w3.org/TR/wasm-core-2/">WebAssembly v2 draft</a>, adicionando vários novos recursos.
 
 {{ figure_markup(
-  caption="Post-MVP extensions usage.",
-  description="Bar chart showing total module counts along with numbers of modules using various post-MVP extensions. Total numbers, as mentioned in the beginning of the article, are at 3,204 and 2,777 on desktop and mobile correspondingly. Sign extension ops stand out and were found in a large number of those—2,850 on desktop and 2,378 on mobile. The rest are so much lower that they barely register on the graph. Each of atomics, BigInt imports/exports, bulk memory, SIMD and mutable imports/exports proposals were found only in up to 38 modules on desktop and up to 28 modules on mobile. Proposals like multi-value, non-trapping float-to-int conversions, reference types and tail calls weren't found in any modules in either dataset.",
+  caption="Uso de extensões pós-MVP.",
+  description="Gráfico de barras mostrando o total de módulos, juntamente com o número de módulos que utilizam diversas extensões pós-MVP. Os números totais, como mencionado no início do artigo, são de 3.204 e 2.777 em desktop e mobile, respectivamente. As operações de extensão de sinal (sign extension ops) se destacam e foram encontradas em um grande número desses módulos - 2.850 em desktop e 2.378 em mobile. As demais extensões têm números tão baixos que mal aparecem no gráfico. Cada uma das propostas de atomics, BigInt imports/exports, bulk memory, SIMD e mutable imports/exports foi encontrada em apenas até 38 módulos em desktop e até 28 módulos em mobile. Propostas como multi-value, non-trapping float-to-int conversions, reference types e tail calls não foram encontradas em nenhum módulo em ambos os conjuntos de dados.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRZqlPK0L45J7IoVgmLcuRut9-M2nhaDMhs8cHtCLZacS7pkIqvEhHfdcYNSoEotQp0-Rs_RRslZ8sT/pubchart?oid=1935172150&format=interactive",
   sheets_gid="1865524955",
   sql_file="proposals.sql",
