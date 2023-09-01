@@ -11,11 +11,11 @@ bkardell_bio: Brian Kardell é um defensor de desenvolvedores e Representante do
 results: https://docs.google.com/spreadsheets/d/1w3GzzTNeKxafFODmjDs6OC2dseNEDDKwUV8KeSgRI1Y/
 featured_quote: A interoperabilidade é um objetivo fundamental dos padrões, mas às vezes não conseguimos alcançá-lo totalmente. Este capítulo começará a fornecer uma atualização anual aos desenvolvedores sobre os esforços para se unirem e melhorar as coisas. Ele abordará o que é novo ou foi aprimorado em termos de interoperabilidade este ano e fornecerá um meio para os implementadores medirem os impactos ao longo do tempo.
 featured_stat_1: 309%
-featured_stat_label_1: The increase in sites using CSS `aspect-ratio` between April 2021 and September 2022
+featured_stat_label_1: O aumento no uso de CSS `aspect-ratio` entre abril de 2021 e setembro de 2022
 featured_stat_2: 0.3%
-featured_stat_label_2: The percentage of sites using the newly interoperable `dialog` element as of September 2022
+featured_stat_label_2: A porcentagem de sites usando o novo elemento `dialog` interoperável até setembro de 2022.
 featured_stat_3: 4%
-featured_stat_label_3: Mobile pages using recently interoperable CSS `containment`. This support is critical for Container Queries.
+featured_stat_label_3: Páginas móveis usando o CSS `containment` recentemente interoperável. Essa compatibilidade é fundamental para as Consultas de Contêiner.
 ---
 
 ## Introduction
