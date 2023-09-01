@@ -34,11 +34,11 @@ Este capítulo resumirá o trabalho realizado no Compat 2021 e medirá o que for
 
 O Compat 2021 teve 5 principais áreas de foco:
 
-- Grid
-- Flexbox
-- Sticky Position
-- Transforms
-- Aspect Ratio
+- <span lang="en">Grid</span>
+- <span lang="en">Flexbox</span>
+- <span lang="en">Sticky Position</span>
+- <span lang="en">Transforms</span>
+- <span lang="en">Aspect Ratio</span>
 
 Em janeiro de 2021, todos os navegadores estáveis/em funcionamento obtiveram uma pontuação de 65-70% de compatibilidade nessas áreas, e não necessariamente foram os mesmos 30-35% de testes que falharam em cada navegador.
 
@@ -229,7 +229,7 @@ O CSS containment introduz um conceito para isolar uma subárvore da página do 
 Primeiro foi lançado no Chrome estável em julho de 2016. O Firefox lançou a segunda implementação em setembro de 2019. Neste ano, o Interop 2022 tomou a iniciativa de alinhar e garantir que, à medida que ele se torne universalmente disponível, comecemos em boa forma. Identificamos <a hreflang="en" href="https://wpt.fyi/results/css/css-contain?label=master&label=experimental&product=chrome&product=firefox&product=safari&aligned&view=interop&q=label%3Ainterop-2022-contain">235 testes</a>. <a hreflang="en" href="https://developer.apple.com/documentation/safari-release-notes/safari-15_4-release-notes">O Safari lançou o suporte para containment na versão estável 15.4</a> em março de 2022. Ao longo do ano, cada navegador melhorou o suporte e agora está universalmente disponível.
 
 {{ figure_markup(
-  caption="Número de páginas móveis que utilizam "containment" em suas folhas de estilo.",
+  caption='Número de páginas móveis que utilizam "containment" em suas folhas de estilo.',
   content="3.7%",
   classes="big-number",
   sheets_gid="1436876723",
