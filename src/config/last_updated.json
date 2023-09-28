@@ -41,8 +41,8 @@
   },
   "/static/js/web-vitals.js": {
     "date_published": "2020-11-13T00:00:00.000Z",
-    "date_modified": "2023-07-13T00:00:00.000Z",
-    "hash": "8161ec2a155e58c88dc8ea49c6024974"
+    "date_modified": "2023-09-28T00:00:00.000Z",
+    "hash": "0fa371ef0624041ff02cf6458e74441a"
   },
   "/static/js/webmentions.js": {
     "date_published": "2021-12-01T00:00:00.000Z",
@@ -1947,6 +1947,16 @@
     "date_published": "2021-11-17T00:00:00.000Z",
     "date_modified": "2021-11-17T00:00:00.000Z",
     "hash": "1c7d30bbfe654efcc5e872e5b35b63b3"
+  },
+  "pt/2022/chapters/http.html": {
+    "date_published": "2023-09-28T00:00:00.000Z",
+    "date_modified": "2023-09-28T00:00:00.000Z",
+    "hash": "d971bf6d571194ae0ae971782f558c7d"
+  },
+  "pt/2022/chapters/interoperability.html": {
+    "date_published": "2023-09-28T00:00:00.000Z",
+    "date_modified": "2023-09-28T00:00:00.000Z",
+    "hash": "6c74bd044240c7b79a1ac1ded2546081"
   },
   "pt/2022/chapters/webassembly.html": {
     "date_published": "2023-07-31T00:00:00.000Z",
