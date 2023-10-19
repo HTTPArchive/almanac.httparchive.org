@@ -36,8 +36,8 @@
   },
   "/static/js/send-web-vitals.js": {
     "date_published": "2021-02-24T00:00:00.000Z",
-    "date_modified": "2023-06-26T00:00:00.000Z",
-    "hash": "b25cb04b670393c1b9d203b9a9138c21"
+    "date_modified": "2023-10-19T00:00:00.000Z",
+    "hash": "f39931f7013948beff8a4d85804cbf7a"
   },
   "/static/js/web-vitals.js": {
     "date_published": "2020-11-13T00:00:00.000Z",
@@ -425,23 +425,23 @@
   },
   "en/2020/stories/content_distribution.html": {
     "date_published": "2021-01-18T00:00:00.000Z",
-    "date_modified": "2023-06-23T00:00:00.000Z",
-    "hash": "6fd47663cfb0c739ffc6b3f0f268dea1"
+    "date_modified": "2023-10-19T00:00:00.000Z",
+    "hash": "162bc5e5f51975bb756a49bdbe721d84"
   },
   "en/2020/stories/content_publishing.html": {
     "date_published": "2021-01-13T00:00:00.000Z",
-    "date_modified": "2023-06-23T00:00:00.000Z",
-    "hash": "94a8cfe74b13a0d749fb91a1fa60199d"
+    "date_modified": "2023-10-19T00:00:00.000Z",
+    "hash": "892505cf0e382a58d05622551193dd65"
   },
   "en/2020/stories/page_content.html": {
     "date_published": "2020-12-22T00:00:00.000Z",
-    "date_modified": "2023-06-23T00:00:00.000Z",
-    "hash": "22823ffbea656764455d3f86e33329ff"
+    "date_modified": "2023-10-19T00:00:00.000Z",
+    "hash": "f567610520c1795d7c9aee3d086491db"
   },
   "en/2020/stories/user_experience.html": {
     "date_published": "2021-01-07T00:00:00.000Z",
-    "date_modified": "2023-06-23T00:00:00.000Z",
-    "hash": "f5bcfdba63c429f600c3a758458e84b8"
+    "date_modified": "2023-10-19T00:00:00.000Z",
+    "hash": "924fc47a85ceeae0a4a4b3fa80682dfa"
   },
   "en/2020/table_of_contents.html": {
     "date_published": "2020-10-24T00:00:00.000Z",
