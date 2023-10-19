@@ -86,14 +86,6 @@ function sendWebVitals() {
         event_label: id,
         non_interaction: true,
 
-        // See: https://web.dev/debug-web-vitals-in-the-field/
-        dimension1: overrides.debug_target,
-        dimension2: effectiveType,
-        dimension3: dataSaver,
-        dimension4: deviceMemory,
-        dimension5: prefersReducedMotion,
-        dimension6: prefersColorScheme,
-        dimension7: navigationType,
         //GA4
         effective_type: effectiveType,
         data_saver: dataSaver,
