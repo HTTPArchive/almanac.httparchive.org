@@ -26,8 +26,8 @@ WITH lazy_tech AS (
     client,
     page,
     isLazyLoaded(JSON_EXTRACT(custom_metrics, '$.performance.lcp_elem_stats.attributes')) AS native_lazy,
-    hasLazyHeuristics(JSON_EXTRACT(custom_metrics, '$.performance.lcp_elem_stats.attributes')) AS custom_lazy
-    t.technology
+    hasLazyHeuristics(JSON_EXTRACT(custom_metrics, '$.performance.lcp_elem_stats.attributes')) AS custom_lazy,
+    t.technology AS technology
   FROM
     `httparchive.all.pages`,
     UNNEST(technologies) AS t
@@ -73,4 +73,3 @@ HAVING
   pct_either_lazy > 0.1
 ORDER BY
   either_lazy DESC
-
