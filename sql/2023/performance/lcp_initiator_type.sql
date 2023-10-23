@@ -2,7 +2,7 @@ WITH lcp AS (
   SELECT
     client,
     page,
-    JSON_VALUE(custom_metrics, '$.performance.lcp_elem_stats.url') AS url,
+    JSON_VALUE(custom_metrics, '$.performance.lcp_resource.initiator.url') AS url,
     JSON_VALUE(custom_metrics, '$.performance.is_lcp_statically_discoverable') = 'false' AS not_discoverable
   FROM
     `httparchive.all.pages`
