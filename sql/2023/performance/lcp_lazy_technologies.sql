@@ -26,7 +26,7 @@ WITH lazy_tech AS (
     client,
     page,
     isLazyLoaded(JSON_EXTRACT(custom_metrics, '$.performance.lcp_elem_stats.attributes')) AS native_lazy,
-    hasLazyHeuristics(JSON_EXTRACT(custom_metrics, '$.performance.lcp_elem_stats.attributes')) AS custom_lazy,
+    hasLazyHeuristics(JSON_EXTRACT(custom_metrics, '$.performance.lcp_elem_stats.attributes')) AS custom_lazy
     t.technology
   FROM
     `httparchive.all.pages`,

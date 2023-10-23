@@ -7,7 +7,7 @@ WITH pages AS (
     `httparchive.all.pages`
   WHERE
     date = '2023-10-01' AND
-    is_root_page 
+    is_root_page
 ),
 
 requests AS (

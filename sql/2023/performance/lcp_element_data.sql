@@ -82,7 +82,7 @@ WITH lcp_stats AS (
     `httparchive.all.pages`
   WHERE
     date = '2023-10-01' AND
-    is_root_page 
+    is_root_page
 )
 
 SELECT
@@ -115,7 +115,7 @@ JOIN (
     `httparchive.all.pages`
   WHERE
     date = '2023-10-01' AND
-    is_root_page 
+    is_root_page
   GROUP BY
     client)
 USING

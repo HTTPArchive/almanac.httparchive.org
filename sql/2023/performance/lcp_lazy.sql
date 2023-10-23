@@ -25,7 +25,7 @@ WITH lcp_stats AS (
   SELECT
     client,
     isLazyLoaded(JSON_EXTRACT(custom_metrics, '$.performance.lcp_elem_stats.attributes')) AS native_lazy,
-    hasLazyHeuristics(JSON_EXTRACT(custom_metrics, '$.performance.lcp_elem_stats.attributes')) AS custom_lazy,
+    hasLazyHeuristics(JSON_EXTRACT(custom_metrics, '$.performance.lcp_elem_stats.attributes')) AS custom_lazy
   FROM
     `httparchive.all.pages`
   WHERE
