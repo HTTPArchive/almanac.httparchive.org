@@ -1,11 +1,14 @@
 WITH lcp AS (
   SELECT
-    _TABLE_SUFFIX AS client,
-    url AS page,
-    JSON_VALUE(payload, '$._performance.lcp_resource.initiator.url') AS url,
-    JSON_VALUE(payload, '$._performance.is_lcp_statically_discoverable') = 'false' AS not_discoverable
+    client,
+    page,
+    JSON_VALUE(custom_metrics, '$.performance.lcp_elem_stats.url') AS url,
+    JSON_VALUE(custom_metrics, '$.performance.is_lcp_statically_discoverable') = 'false' AS not_discoverable
   FROM
-    `httparchive.pages.2022_06_01_*`
+    `httparchive.all.pages`
+  WHERE
+    date = '2023-10-01' AND
+    is_root_page
 ),
 
 requests AS (
@@ -15,9 +18,9 @@ requests AS (
     url,
     type
   FROM
-    `httparchive.almanac.requests`
+    `httparchive.all.requests`
   WHERE
-    date = '2022-06-01'
+    date = '2023-10-01'
 )
 
 

@@ -1,6 +1,3 @@
-#standardSQL
-# Core WebVitals by rank and device
-
 CREATE TEMP FUNCTION IS_GOOD (good FLOAT64, needs_improvement FLOAT64, poor FLOAT64) RETURNS BOOL AS (
   SAFE_DIVIDE(good, (good + needs_improvement + poor)) >= 0.75
 );
@@ -54,7 +51,7 @@ base AS (
     `chrome-ux-report.materialized.device_summary`
   WHERE
     device IN ('desktop', 'phone') AND
-    date IN ('2022-06-01')
+    date IN ('2022-06-01', '2023-09-01')
 )
 
 SELECT
@@ -72,9 +69,9 @@ SELECT
         IS_GOOD(small_cls, medium_cls, large_cls), origin, NULL)),
     COUNT(DISTINCT IF(
         IS_NON_ZERO(fast_lcp, avg_lcp, slow_lcp) AND
-        IS_NON_ZERO(small_cls, medium_cls, large_cls), origin, NULL))) AS pct_cwv_good,
+        IS_NON_ZERO(small_cls, medium_cls, large_cls), origin, NULL))) AS pct_cwv23_good,
 
-  # Good CWV with optional INP (hypothetical!)
+  # Good CWV with optional INP
   SAFE_DIVIDE(
     COUNT(DISTINCT IF(
         IS_GOOD(fast_inp, avg_inp, slow_inp) IS NOT FALSE AND
@@ -82,7 +79,7 @@ SELECT
         IS_GOOD(small_cls, medium_cls, large_cls), origin, NULL)),
     COUNT(DISTINCT IF(
         IS_NON_ZERO(fast_lcp, avg_lcp, slow_lcp) AND
-        IS_NON_ZERO(small_cls, medium_cls, large_cls), origin, NULL))) AS pct_cwv_inp_good,
+        IS_NON_ZERO(small_cls, medium_cls, large_cls), origin, NULL))) AS pct_cwv24_good,
 
   SAFE_DIVIDE(
     COUNT(DISTINCT IF(
@@ -182,7 +179,7 @@ SELECT
 
 FROM
   base,
-  UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
+  UNNEST([1000, 10000, 100000, 1000000, 10000000, 100000000]) AS rank_grouping
 WHERE
   rank <= rank_grouping
 GROUP BY

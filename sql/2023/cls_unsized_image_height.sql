@@ -1,10 +1,13 @@
 WITH lh AS (
   SELECT
-    _TABLE_SUFFIX AS client,
+    client,
     CAST(JSON_VALUE(unsized_image, '$.node.boundingRect.height') AS INT64) AS height
   FROM
-    `httparchive.lighthouse.2022_06_01_*`,
-    UNNEST(JSON_QUERY_ARRAY(report, '$.audits.unsized-images.details.items')) AS unsized_image
+    `httparchive.all.pages`,
+    UNNEST(JSON_QUERY_ARRAY(lighthouse, '$.audits.unsized-images.details.items')) AS unsized_image
+  WHERE
+    date = '2023-10-01' AND
+    is_root_page
 )
 
 

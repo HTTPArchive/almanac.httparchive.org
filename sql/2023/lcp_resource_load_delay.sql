@@ -1,27 +1,33 @@
 WITH pages AS (
   SELECT
-    _TABLE_SUFFIX AS client,
-    url AS page,
-    JSON_VALUE(payload, '$._performance.lcp_elem_stats.url') AS url,
+    client,
+    page,
+    JSON_VALUE(custom_metrics, '$.performance.lcp_elem_stats.url') AS url,
     httparchive.core_web_vitals.GET_LAB_TTFB(payload) AS ttfb
   FROM
-    `httparchive.pages.2022_06_01_*`
+    `httparchive.all.pages`
+  WHERE
+    date = '2023-10-01' AND
+    is_root_page
 ),
 
 requests AS (
   SELECT
-    _TABLE_SUFFIX AS client,
+    client,
     page,
     url,
     CAST(JSON_QUERY(payload, '$._created') AS FLOAT64) AS lcp_req_time
   FROM
-    `httparchive.requests.2022_06_01_*`
+    `httparchive.all.requests`
+  WHERE
+    date = '2023-10-01' AND
+    is_root_page
 ),
 
 delays AS (
   SELECT
     client,
-    CAST(lcp_req_time - ttfb AS INT64) AS lcp_resource_delay
+    CAST(lcp_req_time - ttfb AS INT64) AS lcp_resource_load_delay
   FROM
     pages
   JOIN
@@ -29,15 +35,13 @@ delays AS (
   USING
     (client, page, url)
   WHERE
-    lcp_req_time IS NOT NULL AND
-    lcp_req_time > 0 AND
-    ttfb IS NOT NULL
+    lcp_req_time > ttfb
 )
 
 SELECT
   percentile,
   client,
-  APPROX_QUANTILES(lcp_resource_delay, 1000)[OFFSET(percentile * 10)] AS lcp_resource_delay
+  APPROX_QUANTILES(lcp_resource_load_delay, 1000)[OFFSET(percentile * 10)] AS lcp_resource_load_delay
 FROM
   delays,
   UNNEST([10, 25, 50, 75, 90]) AS percentile

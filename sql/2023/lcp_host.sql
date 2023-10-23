@@ -1,10 +1,13 @@
 WITH lcp AS (
   SELECT
-    _TABLE_SUFFIX AS client,
-    url AS page,
-    JSON_VALUE(payload, '$._performance.lcp_elem_stats.url') AS url
+    client,
+    page,
+    JSON_VALUE(custom_metrics, '$.performance.lcp_elem_stats.url') AS url
   FROM
-    `httparchive.pages.2022_06_01_*`
+    `httparchive.all.pages`
+  WHERE
+    date = '2023-10-01' AND
+    is_root_page
 )
 
 

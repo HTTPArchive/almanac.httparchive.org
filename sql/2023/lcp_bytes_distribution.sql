@@ -1,20 +1,26 @@
 WITH pages AS (
   SELECT
-    _TABLE_SUFFIX AS client,
-    CAST(JSON_VALUE(payload, '$._metadata.page_id') AS INT64) AS pageid,
-    JSON_VALUE(payload, '$._performance.lcp_elem_stats.url') AS url
+    client,
+    page,
+    JSON_VALUE(custom_metrics, '$.performance.lcp_elem_stats.url') AS url
   FROM
-    `httparchive.pages.2022_06_01_*`
+    `httparchive.all.pages`
+  WHERE
+    date = '2023-10-01' AND
+    is_root_page 
 ),
 
 requests AS (
   SELECT
-    _TABLE_SUFFIX AS client,
-    pageid,
+    client,
+    page,
     url,
-    respSize / 1024 AS kbytes
+    CAST(JSON_VALUE(summary, '$.respSize') AS INT64) / 1024 AS kbytes
   FROM
-    `httparchive.summary_requests.2022_06_01_*`
+    `httparchive.all.requests`
+  WHERE
+    date = '2023-10-01' AND
+    is_root_page
 )
 
 SELECT
@@ -26,7 +32,7 @@ FROM
 JOIN
   requests
 USING
-  (client, pageid, url),
+  (client, page, url),
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 GROUP BY
   percentile,

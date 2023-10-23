@@ -1,7 +1,7 @@
 CREATE TEMP FUNCTION checkResponsiveImages(responsivelist STRING, lcpImgUrl STRING, nodePath STRING) RETURNS BOOLEAN LANGUAGE js AS '''
   try {
     //we will check lcp elment is img
-    const lastSegment = (JSON.parse(nodePath).split(",").reverse())[0];
+    const lastSegment = (nodePath.split(",").reverse())[0];
     let lastNodeImg = false
     if(lastSegment == 'IMG'){
       lastNodeImg = true
@@ -11,7 +11,7 @@ CREATE TEMP FUNCTION checkResponsiveImages(responsivelist STRING, lcpImgUrl STRI
       if(listJson.length > 0){
         for(let i=0;i<listJson.length;i++){
           let currentUrl = listJson[i].url;
-          if(currentUrl == JSON.parse(lcpImgUrl)){
+          if(currentUrl == lcpImgUrl){
             return true
           }
         }
@@ -23,12 +23,37 @@ CREATE TEMP FUNCTION checkResponsiveImages(responsivelist STRING, lcpImgUrl STRI
   }
 ''';
 
-SELECT
-  _TABLE_SUFFIX AS client,
-  COUNT(0) AS total,
-  SUM(IF(checkResponsiveImages(JSON_EXTRACT(report, '$.audits.uses-responsive-images.details.items'), JSON_EXTRACT(report, '$.audits.preload-lcp-image.details.items[0].url'), JSON_EXTRACT(report, '$.audits.largest-contentful-paint-element.details.items[0].node.path')) = true, 1, 0)) AS check_responsive_images,
-  SUM(IF(checkResponsiveImages(JSON_EXTRACT(report, '$.audits.uses-responsive-images.details.items'), JSON_EXTRACT(report, '$.audits.preload-lcp-image.details.items[0].url'), JSON_EXTRACT(report, '$.audits.largest-contentful-paint-element.details.items[0].node.path')) = true, 1, 0)) / COUNT(0) AS lcp_responsive_images_per
 
-FROM `httparchive.lighthouse.2022_06_01_*`
+WITH lh AS (
+  SELECT
+    client,
+    page,
+    JSON_VALUE(lighthouse, '$.audits.prioritize-lcp-image.details.items[0].url') AS url,
+    JSON_VALUE(lighthouse, '$.audits.largest-contentful-paint-element.details.items[0].items[0].node.path') AS node_path,
+    JSON_QUERY(lighthouse, '$.audits.uses-responsive-images.details.items') AS responsive_images
+  FROM
+    `httparchive.all.pages`
+  WHERE
+    date = '2023-10-01' AND
+    is_root_page
+),
+
+responsive_lcp AS (
+  SELECT
+    client,
+    page,
+    ENDS_WITH(node_path, 'IMG') AS is_img_lcp,
+    checkResponsiveImages(responsive_images, url, node_path) AS is_responsive_lcp
+  FROM
+    lh
+)
+
+SELECT
+  client,
+  COUNTIF(is_responsive_lcp) AS is_responsive_lcp,
+  COUNTIF(is_img_lcp) AS pages_with_img_lcp,
+  COUNTIF(is_responsive_lcp) / COUNTIF(is_img_lcp) AS pct_responsive_lcp
+FROM
+  responsive_lcp
 GROUP BY
   client

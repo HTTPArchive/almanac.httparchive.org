@@ -1,9 +1,12 @@
 WITH lh AS (
   SELECT
-    _TABLE_SUFFIX AS client,
-    ARRAY_LENGTH(JSON_QUERY_ARRAY(report, '$.audits.unsized-images.details.items')) AS num_unsized_images
+    client,
+    ARRAY_LENGTH(JSON_QUERY_ARRAY(lighthouse, '$.audits.unsized-images.details.items')) AS num_unsized_images
   FROM
-    `httparchive.lighthouse.2022_06_01_*`
+    `httparchive.all.pages`
+  WHERE
+    date = '2023-10-01' AND
+    is_root_page
 )
 
 

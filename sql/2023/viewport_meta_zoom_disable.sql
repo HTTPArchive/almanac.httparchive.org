@@ -1,6 +1,12 @@
 SELECT
-  COUNTIF(JSON_VALUE(report, '$.audits.viewport.score') = '0') AS viewport_failed,
+  client,
+  COUNTIF(JSON_VALUE(lighthouse, '$.audits.viewport.score') = '0') AS viewport_failed,
   COUNT(0) AS total,
-  COUNTIF(JSON_VALUE(report, '$.audits.viewport.score') = '0') / COUNT(0) AS pct_failed
+  COUNTIF(JSON_VALUE(lighthouse, '$.audits.viewport.score') = '0') / COUNT(0) AS pct_failed
 FROM
-  `httparchive.lighthouse.2022_06_01_mobile`
+  `httparchive.all.pages`
+WHERE
+  date = '2023-10-01' AND
+  is_root_page
+GROUP BY
+  client

@@ -1,10 +1,13 @@
 WITH lcp AS (
   SELECT
-    _TABLE_SUFFIX AS client,
-    JSON_VALUE(payload, '$._performance.is_lcp_statically_discoverable') = 'true' AS discoverable,
-    JSON_VALUE(payload, '$._performance.is_lcp_preloaded') = 'true' AS preloaded
+    client,
+    JSON_VALUE(custom_metrics, '$.performance.is_lcp_statically_discoverable') = 'true' AS discoverable,
+    JSON_VALUE(custom_metrics, '$.performance.is_lcp_preloaded') = 'true' AS preloaded
   FROM
-    `httparchive.pages.2022_06_01_*`
+    `httparchive.all.pages`
+  WHERE
+    date = '2023-10-01' AND
+    is_root_page
 )
 
 

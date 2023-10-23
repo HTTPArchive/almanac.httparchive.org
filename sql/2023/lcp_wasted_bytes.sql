@@ -1,33 +1,40 @@
-WITH pages AS (
+WITH lcp AS (
   SELECT
-    _TABLE_SUFFIX AS client,
-    url AS page,
-    CAST(JSON_VALUE(payload, '$._metadata.page_id') AS INT64) AS pageid,
-    JSON_VALUE(payload, '$._performance.lcp_elem_stats.url') AS url
+    client,
+    page,
+    JSON_VALUE(custom_metrics, '$.performance.lcp_elem_stats.url') AS url
   FROM
-    `httparchive.pages.2022_06_01_*`
+    `httparchive.all.pages`
+  WHERE
+    date = '2023-10-01' AND
+    is_root_page
 ),
 
 lh AS (
   SELECT
-    _TABLE_SUFFIX AS client,
-    url AS page,
+    client,
+    page,
     JSON_VALUE(unoptimized_img, '$.url') AS url,
     CAST(JSON_VALUE(unoptimized_img, '$.wastedBytes') AS INT64) / 1024 AS wasted_kbytes
   FROM
-    `httparchive.lighthouse.2022_06_01_*`,
-    UNNEST(JSON_QUERY_ARRAY(report, '$.audits.uses-optimized-images.details.items')) AS unoptimized_img
+    `httparchive.all.pages`,
+    UNNEST(JSON_QUERY_ARRAY(lighthouse, '$.audits.uses-optimized-images.details.items')) AS unoptimized_img
+  WHERE
+    date = '2023-10-01' AND
+    is_root_page
 ),
 
 jpgs AS (
   SELECT
-    _TABLE_SUFFIX AS client,
-    pageid,
+    client,
+    page,
     url
   FROM
-    `httparchive.summary_requests.2022_06_01_*`
+    `httparchive.all.requests`
   WHERE
-    format = 'jpg'
+    date = '2023-10-01' AND
+    is_root_page AND
+    JSON_VALUE(summary, '$.format') = 'jpg'
 )
 
 SELECT
@@ -38,11 +45,11 @@ SELECT
   COUNT(0) AS total_pages,
   COUNTIF(wasted_kbytes IS NOT NULL) / COUNT(0) AS pct_pages
 FROM
-  pages
+  lcp
 JOIN
   jpgs
 USING
-  (client, pageid, url)
+  (client, page, url)
 LEFT JOIN
   lh
 USING
