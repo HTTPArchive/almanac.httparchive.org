@@ -33,11 +33,11 @@ jobs:
     - name: Checkout branch
       uses: actions/checkout@v4
     - name: Setup Node.js for use with actions
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
         node-version: '16'
     - name: Set up Python 3.8
-      uses: actions/setup-python@v4.7.1
+      uses: actions/setup-python@v5.0.0
       with:
         python-version: '3.8'
     - name: Install Asian Fonts
@@ -67,7 +67,7 @@ jobs:
         npm run ebooks
     - name: Upload PDF artifact
       if: ${{ github.event.inputs.ebooks == 'true' }}
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: pdfs
         path: ./src/static/pdfs/*.pdf
