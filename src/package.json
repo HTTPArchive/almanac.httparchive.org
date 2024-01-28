@@ -36,17 +36,17 @@
   "devDependencies": {
     "ejs": "3.1.9",
     "fs-extra": "11.2.0",
-    "jsdom": "23.2.0",
+    "jsdom": "24.0.0",
     "node-fetch": "3.3.2",
     "node-watch": "0.7.4",
-    "prettier": "3.1.1",
-    "puppeteer": "21.7.0",
+    "prettier": "3.2.4",
+    "puppeteer": "21.9.0",
     "rainbow-code": "2.1.7",
     "recursive-readdir": "2.2.3",
     "run-script-os": "1.1.6",
     "showdown": "2.1.0",
     "smartypants": "0.2.2",
-    "web-vitals": "3.5.1",
+    "web-vitals": "3.5.2",
     "xml-js": "1.6.11"
   }
 }
