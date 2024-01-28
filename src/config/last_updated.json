@@ -41,8 +41,8 @@
   },
   "/static/js/web-vitals.js": {
     "date_published": "2020-11-13T00:00:00.000Z",
-    "date_modified": "2024-01-04T00:00:00.000Z",
-    "hash": "4041ad869843be08e145c80e9b084ee7"
+    "date_modified": "2024-01-28T00:00:00.000Z",
+    "hash": "4a23d952fb9349975e2e5252ca09a482"
   },
   "/static/js/webmentions.js": {
     "date_published": "2021-12-01T00:00:00.000Z",
@@ -1957,6 +1957,11 @@
     "date_published": "2021-11-17T00:00:00.000Z",
     "date_modified": "2021-11-17T00:00:00.000Z",
     "hash": "1c7d30bbfe654efcc5e872e5b35b63b3"
+  },
+  "pt/2022/chapters/capabilities.html": {
+    "date_published": "2024-01-28T00:00:00.000Z",
+    "date_modified": "2024-01-28T00:00:00.000Z",
+    "hash": "029238591628c78fae7d061bc8276615"
   },
   "pt/2022/chapters/http.html": {
     "date_published": "2023-09-28T00:00:00.000Z",
