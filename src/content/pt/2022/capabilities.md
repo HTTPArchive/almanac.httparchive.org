@@ -1,54 +1,54 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
-title: Capabilities
-description: Capabilities chapter of the 2022 Web Almanac covering brand-new, powerful web platform APIs that give web apps access to hardware interfaces, enhance web-based productivity apps, and more.
+title: Capacidades
+description: Capítulo "Capacidades" do Web Almanac de 2022 abordando APIs inovadoras e poderosas da plataforma web que proporcionam acesso a interfaces de hardware para aplicativos web, aprimoram aplicativos de produtividade baseados na web e muito mais.
 authors: [MichaelSolati]
 reviewers: [tomayac, christianliebel]
 analysts: [tunetheweb]
 editors: [tunetheweb]
-translators: []
-MichaelSolati_bio: Michael is a Developer Advocate at Amplication, focusing on helping developers build APIs and drink IPAs. Additionally, he is a Web GDE and has found his love in creating compelling experiences on the web and the voodoo ways of the web...
+translators: [HakaCode]
+MichaelSolati_bio: Michael é um Defensor de Desenvolvedores na Amplication, concentrando-se em ajudar desenvolvedores a construir APIs e apreciar IPAs. Além disso, ele é um Web GDE (Google Developer Expert) e encontrou seu amor na criação de experiências envolventes na web e nas práticas misteriosas da web...
 results: https://docs.google.com/spreadsheets/d/13S9FRj8OPRtoMPb94jFh6pPNz3lNS9yztIaorZYe288/
-featured_quote: The Capabilities Project allows applications to migrate to the web, removing some barriers associated with platform-specific applications.
+featured_quote: O Projeto Capacidades permite que aplicativos migrem para a web, eliminando algumas barreiras associadas a aplicativos específicos de plataformas.
 featured_stat_1: 38
-featured_stat_label_1: Capabilities were used on one site.
+featured_stat_label_1: As capacidades foram utilizadas em um site.
 featured_stat_2: ~10%
-featured_stat_label_2: Sites on mobile and desktop use the _Async Clipboard API_.
+featured_stat_label_2: Sites em dispositivos móveis e desktop utilizam a _Async Clipboard API_.
 featured_stat_3: 8%
-featured_stat_label_3: Sites on mobile and desktop use the _Web Share API_.
+featured_stat_label_3: Sites em dispositivos móveis e desktop utilizam a _Web Share API_.
 ---
 
-## Introduction
+## Introdução
 
-Compelling web experiences aren't limited to basic browser capabilities; they can take advantage of their underlying operating system. Web platform APIs expose these capabilities that are the foundation for [Progressive Web Apps (PWA)](./pwa)—web applications capable of providing high-quality experiences like platform-specific apps.
+Experiências envolventes na web não estão limitadas às capacidades básicas do navegador; elas podem aproveitar o sistema operacional subjacente. As APIs da plataforma web expõem essas capacidades que são a base para [Progressive Web Apps (PWA)](./pwa)— aplicativos web capazes de oferecer experiências de alta qualidade, semelhantes a aplicativos específicos de plataformas.
 
-In addition, some functionality on the web platform gives access to lower-level features such as access to the [file system](https://developer.mozilla.org/docs/Web/API/File_System_Access_API), [geolocation](https://developer.mozilla.org/docs/Web/API/Geolocation_API), access to the [clipboard](https://developer.mozilla.org/docs/Web/API/Clipboard_API), and even the ability to detect [gamepads](https://developer.mozilla.org/docs/Web/API/Gamepad_API).
+Além disso, algumas funcionalidades na plataforma web proporcionam acesso a recursos de nível mais baixo, como acesso ao [sistema de arquivos](https://developer.mozilla.org/docs/Web/API/File_System_Access_API), [geolocalização](https://developer.mozilla.org/pt-BR/docs/Web/API/Geolocation_API), acesso à [área de transferência](https://developer.mozilla.org/docs/Web/API/Clipboard_API), e até mesmo a capacidade de detectar [gamepads](https://developer.mozilla.org/pt-BR/docs/Web/API/Gamepad_API).
 
-## Methodology
+## Metodologia
 
-This chapter used the HTTP Archive's public dataset of millions of pages. These pages were archived as if they were visited on both desktop and mobile, as some sites will serve different content based on what device is requesting the page.
+Este capítulo utilizou o conjunto de dados público do HTTP Archive, composto por milhões de páginas. Essas páginas foram arquivadas como se fossem visitadas tanto em desktop quanto em dispositivos móveis, pois alguns sites fornecem conteúdo diferente com base no dispositivo que está solicitando a página.
 
-The HTTP Archive's crawler then parsed the source code for all of these pages to determine which APIs were (potentially) used on the pages. For instance, regular expressions, such as `/navigator\.share\s*\(/g`, test pages to see if in the concrete case the [Web Share API](https://developer.mozilla.org/docs/Web/API/Web_Share_API) is found in its source code.
+O rastreador do HTTP Archive analisou o código-fonte de todas essas páginas para determinar quais APIs foram (potencialmente) utilizadas nelas. Por exemplo, expressões regulares, como `/navigator\.share\s*\(/g`, testam as páginas para verificar se, no caso específico, a [Web Share API](https://developer.mozilla.org/docs/Web/API/Web_Share_API) é encontrada em seu código-fonte.
 
-This method does have two significant issues. First, it may underreport some APIs used as it can not detect obfuscated code that may exist due to minification, for example, when `navigator` was minified to `n`. Additionally, it may overreport occurrences of APIs because it does not execute code to see if an API is actually used. Regardless of these limitations, we believe this methodology should provide a sufficiently good overview of what capabilities are used on the web.
+Este método apresenta dois problemas significativos. Em primeiro lugar, ele pode sub-relatar o uso de algumas APIs, pois não consegue detectar código ofuscado que pode existir devido à minificação, por exemplo, quando `navigator` foi minificado para `n`. Além disso, pode super-relatar ocorrências de APIs porque não executa o código para verificar se uma API é realmente utilizada. Apesar dessas limitações, acreditamos que esta metodologia deve fornecer uma visão suficientemente boa das capacidades que são utilizadas na web.
 
-Seventy-five total regular expressions for supported capabilities exist; view this <a hreflang="en" href="https://github.com/HTTPArchive/custom-metrics/blob/5d2f74fbdc580e76da5d1dad738fca8381429b9a/dist/fugu-apis.js">source file</a> to see all the expressions used.
+Existem setenta e cinco expressões regulares no total para capacidades suportadas; consulte este <a hreflang="en" href="https://github.com/HTTPArchive/custom-metrics/blob/5d2f74fbdc580e76da5d1dad738fca8381429b9a/dist/fugu-apis.js">arquivo fonte</a> para ver todas as expressões utilizadas.
 
-The usage data in this chapter is from a crawl in June 2022; you can view the raw data in the <a hreflang="en" href="https://docs.google.com/spreadsheets/d/13S9FRj8OPRtoMPb94jFh6pPNz3lNS9yztIaorZYe288/edit?usp=sharing">Capabilities 2022 Results Sheet</a>.
+Os dados de uso neste capítulo são de um rastreamento em junho de 2022; você pode visualizar os dados brutos na <a hreflang="en" href="https://docs.google.com/spreadsheets/d/13S9FRj8OPRtoMPb94jFh6pPNz3lNS9yztIaorZYe288/edit?usp=sharing">Planilha de Resultados das Capacidades 2022</a>.
 
-This chapter will also compare API usage to last year's usage; you can view the raw data from the previous year in the <a hreflang="en" href="https://docs.google.com/spreadsheets/d/1b4moteB9EiLYkH1Ln9qfi1tnU-E4N2UQ87uayWytDKw/edit#gid=2077755325">Capabilities 2021 Results Sheet</a>.
+Este capítulo também comparará o uso de APIs com o uso do ano passado; você pode visualizar os dados brutos do ano anterior na <a hreflang="en" href="https://docs.google.com/spreadsheets/d/1b4moteB9EiLYkH1Ln9qfi1tnU-E4N2UQ87uayWytDKw/edit#gid=2077755325">Planilha de Resultados das Capacidades 2021</a>.
 
 ## Async Clipboard API
 
-Our first API, the [_Async Clipboard API_](https://developer.mozilla.org/docs/Web/API/Clipboard_API), allows read/write access to the system's clipboard.
+Nossa primeira API, o [_Async Clipboard API_](https://developer.mozilla.org/docs/Web/API/Clipboard_API), permite acesso de leitura/escrita à área de transferência do sistema.
 
-Note that the Async Clipboard API replaces the deprecated `document.execCommand()` API to access the clipboard.
+Observe que a Async Clipboard API substitui a API `document.execCommand()` obsoleta para acessar a área de transferência.
 
-### Write access
+### Acesso de escrita
 
-In order to write data into the clipboard, there are the [`writeText()`](https://developer.mozilla.org/docs/Web/API/Clipboard/writeText) and [`write()`](https://developer.mozilla.org/docs/Web/API/Clipboard/write) methods. The `writeText()` method takes a String argument and returns a Promise, while `write()` takes an array of [`ClipboardItem`](https://developer.mozilla.org/docs/Web/API/ClipboardItem) objects and also returns a Promise. `ClipboardItem` objects can hold arbitrary data, such as images.
+Para escrever dados na área de transferência, existem os métodos [`writeText()`](https://developer.mozilla.org/docs/Web/API/Clipboard/writeText) e [`write()`](https://developer.mozilla.org/docs/Web/API/Clipboard/write). O método `writeText()` recebe um argumento de String e retorna uma Promise, enquanto `write()` recebe um array de objetos [`ClipboardItem`](https://developer.mozilla.org/docs/Web/API/ClipboardItem)  e também retorna uma Promise. Objetos `ClipboardItem` podem conter dados arbitrários, como imagens.
 
-A list of the mandatory data types a browser must support by the Clipboards API specification exists; see this <a hreflang="en" href="https://www.w3.org/TR/clipboard-apis/#mandatory-data-types-x">list by the W3C</a>. Unfortunately, not all vendors support the complete list; check browser-specific documentation when possible.
+Existe uma lista dos tipos de dados obrigatórios que um navegador deve suportar pela especificação da Clipboards API; consulte esta <a hreflang="en" href="https://www.w3.org/TR/clipboard-apis/#mandatory-data-types-x">lista do W3C</a>. Infelizmente, nem todos os fornecedores suportam a lista completa; verifique a documentação específica do navegador sempre que possível.
 
 ```js
 await navigator.clipboard.writeText("hello world");
@@ -61,41 +61,41 @@ await navigator.clipboard.write([
 ]);
 ```
 
-### Read access
+### Acesso de leitura
 
-In order to read data from the clipboard, there are the [`readText()`](https://developer.mozilla.org/docs/Web/API/Clipboard/readText) and [`read()`](https://developer.mozilla.org/docs/Web/API/Clipboard/read) methods. Both methods return a Promise which will resolve with data from the clipboard. The `readText()` method resolves as a String while `read()` resolves as an array of `ClipboardItem` objects.
+Para ler dados da área de transferência, existem os métodos [`readText()`](https://developer.mozilla.org/docs/Web/API/Clipboard/readText) e [`read()`](https://developer.mozilla.org/docs/Web/API/Clipboard/read) . Ambos os métodos retornam uma Promise que será resolvida com os dados da área de transferência. O método `readText()`  resolve como uma String, enquanto `read()` resolve como um array de objetos `ClipboardItem`.
 
 ```js
 const item = await navigator.clipboard.readText();
 const items = await navigator.clipboard.read();
 ```
 
-To keep user data safe, the `"clipboard-read"` permission of the [Permissions API](https://developer.mozilla.org/docs/Web/API/Permissions_API) must be granted to read data from the clipboard.
+Para manter os dados do usuário seguros, a permissão `"clipboard-read"` da [Permissions API](https://developer.mozilla.org/docs/Web/API/Permissions_API) deve ser concedida para ler dados da área de transferência.
 
-Both read and write access to the clipboard is available on modern versions of Chrome, Edge, and Safari. Firefox only supports `writeText()`.
+Tanto o acesso de leitura quanto de escrita à área de transferência estão disponíveis nas versões modernas do Chrome, Edge e Safari. O Firefox suporta apenas `writeText()`.
 
-### Growth of the Async Clipboard API
+### Crescimento da Async Clipboard API
 
 {{ figure_markup(
   image="Async-Clipboard-API-Usage.png",
-  caption="Usage of the Async Clipboard API from 2021 to 2022 on desktop and mobile.",
-  description="The Async Clipboard API grew in usage from 8.91% in 2021 to 10.10% in 2022 on desktop. On mobile, usage grew from 8.25% in 2021 to 9.27% in 2022.",
+  caption="O uso da Async Clipboard API de 2021 para 2022 em desktop e dispositivos móveis.",
+  description="O uso da Async Clipboard API cresceu de 8,91% em 2021 para 10,10% em 2022 em desktop. Em dispositivos móveis, o uso cresceu de 8,25% em 2021 para 9,27% em 2022.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTZp0g2lyspAvJUN-xV4TtqC_9wrRMqyg_bEzHCd1Be3p0Yhy3o2k-SH7DGX5a-LfaodNUTl4Ai-NXg/pubchart?oid=602028150&format=interactive",
   sheets_gid="637848098",
   sql_file="fugu.sql"
 ) }}
 
-The Async Clipboard API saw growth in usage from 8.91% in 2021 to 10.10% in 2022 on desktop. On mobile, there was also growth from 8.25% in 2021 to 9.27% in 2022. As a result, this year, the Async Clipboard API was the most used API on both desktop and mobile, beating the Web Share API (last year's most used API).
+A Async Clipboard API apresentou crescimento no uso, passando de 8,91% em 2021 para 10,10% em 2022 em desktop. Em dispositivos móveis, também houve crescimento, de 8,25% em 2021 para 9,27% em 2022. Como resultado, este ano, a Async Clipboard API foi a API mais utilizada tanto em desktop quanto em dispositivos móveis, superando a Web Share API (API mais utilizada no ano anterior).
 
 ## Web Share API
 
-The [_Web Share API_](https://developer.mozilla.org/docs/Web/API/Web_Share_API) invokes the platform-specific sharing mechanism of the device, allowing data such as text, a URL, or files from a web application to be shared with any other application, such as mail clients, messaging applications, and more.
+A [_Web Share API_](https://developer.mozilla.org/docs/Web/API/Web_Share_API) invoca o mecanismo de compartilhamento específico da plataforma do dispositivo, permitindo que dados, como texto, uma URL ou arquivos, de um aplicativo web sejam compartilhados com qualquer outro aplicativo, como clientes de e-mail, aplicativos de mensagens e muito mais.
 
-The method called to share data is [`navigator.share()`](https://developer.mozilla.org/docs/Web/API/Navigator/share). The `navigator.share()` method accepts an object containing the data to share and returns a Promise. Not every file type can be shared, though, and the [`navigator.canShare()`](https://developer.mozilla.org/docs/Web/API/Navigator/canShare) method can test a data object to see if the browser can share it. You can see the [list of shareable file types](https://developer.mozilla.org/docs/Web/API/Navigator/share#shareable_file_types) on MDN.
+O método chamado para compartilhar dados é [`navigator.share()`](https://developer.mozilla.org/pt-BR/docs/Web/API/Navigator/share). O método `navigator.share()` aceita um objeto contendo os dados a serem compartilhados e retorna uma Promise. Nem todo tipo de arquivo pode ser compartilhado, no entanto, o método [`navigator.canShare()`](https://developer.mozilla.org/docs/Web/API/Navigator/canShare) pode testar um objeto de dados para verificar se o navegador pode compartilhá-lo. Você pode ver a [lista de tipos de arquivo compartilháveis](https://developer.mozilla.org/pt-BR/docs/Web/API/Navigator/share#shareable_file_types) na MDN.
 
-After calling `navigator.share()`, the browser will open a platform-specific sheet where users select which application to share the data with.
+Após chamar `navigator.share()`, o navegador abrirá uma folha específica da plataforma onde os usuários selecionam com qual aplicativo compartilhar os dados.
 
-Additionally, the Web Share API can only be triggered by a user's interaction with the page, such as a button click; the Web Share API cannot be called arbitrarily by executed code.
+Além disso, a Web Share API só pode ser acionada por uma interação do usuário com a página, como um clique em um botão; a Web Share API não pode ser chamada arbitrariamente por código executado.
 
 ```js
 const data = {
@@ -111,62 +111,62 @@ if (navigator.canShare(data)) {
 }
 ```
 
-The Web Share API is available on modern versions of Chrome, Edge, and Safari. For Chrome, though, it is only supported on Windows and ChromeOS.
+A Web Share API está disponível em versões modernas do Chrome, Edge e Safari. No entanto, para o Chrome, ela é suportada apenas no Windows e no ChromeOS.
 
-### Growth of the Web Share API
+### Crescimento da Web Share API
 
 {{ figure_markup(
   image="Web-Share-API-Usage.png",
-  caption="Usage of the Web Share API from 2021 to 2022 on desktop and mobile.",
-  description="The Web Share API shrunk in usage from 9.00% in 2021 to 8.84% in 2022 on desktop. On mobile, usage shrunk from 8.58% in 2021 to 8.36% in 2022.",
+  caption="O uso da Web Share API de 2021 para 2022 em desktop e dispositivos móveis.",
+  description="O uso da Web Share API diminuiu de 9,00% em 2021 para 8,84% em 2022 em desktop. Em dispositivos móveis, o uso diminuiu de 8,58% em 2021 para 8,36% em 2022.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTZp0g2lyspAvJUN-xV4TtqC_9wrRMqyg_bEzHCd1Be3p0Yhy3o2k-SH7DGX5a-LfaodNUTl4Ai-NXg/pubchart?oid=934956615&format=interactive",
   sheets_gid="1887140434",
   sql_file="fugu.sql"
 ) }}
 
-The Web Share API shrunk in usage from 9.00% in 2021 to 8.84% in 2022 on desktop. On mobile, usage shrunk from 8.58% in 2021 to 8.36% in 2022. As a result, this year, the Web Share API was the second most used API on both desktop and mobile, falling behind the Async Clipboard API—last year's second most used API.
+A Web Share API diminuiu em uso de 9,00% em 2021 para 8,84% em 2022 em desktop. Em dispositivos móveis, o uso diminuiu de 8,58% em 2021 para 8,36% em 2022. Como resultado, este ano, a Web Share API foi a segunda API mais utilizada tanto em desktop quanto em dispositivos móveis, ficando atrás da Async Clipboard API — a segunda API mais utilizada no ano passado.
 
-On many sites, you can find the Web Share API in use. For example, social media platforms, documentation sites, and others use it as a great way to share content. Some examples where you can find the API in use include <a hreflang="en" href="https://web.dev/">web.dev</a> and [twitter.com](https://twitter.com/).
+Em muitos sites, é possível encontrar a Web Share API em uso. Por exemplo, plataformas de mídia social, sites de documentação e outros a utilizam como uma ótima maneira de compartilhar conteúdo. Alguns exemplos onde você pode encontrar a API em uso incluem <a hreflang="en" href="https://web.dev/">web.dev</a> e [twitter.com](https://twitter.com/).
 
 {{ figure_markup(
   gif="Web-Share-API.gif",
   image="Web-Share-API.webp",
-  caption="Sharing a Twitter profile using the Web Share API.",
-  description="Sharing a Twitter profile using the Web Share API.",
+  caption="Compartilhando um perfil do Twitter usando a Web Share API.",
+  description="Compartilhando um perfil do Twitter usando a Web Share API.",
   width=640,
   height=360
 ) }}
 
-## Add to Home Screen
+## Adicionar à Tela Inicial
 
-The ability to add a web application to a device's home screen is a feature we didn't look at in last year's Capabilities report. To calculate how many sites have this functionality, pages were tested to see if they had a listener for the [`beforeinstallprompt`](https://developer.mozilla.org/docs/Web/API/Window/beforeinstallprompt_event) event.
+A capacidade de adicionar um aplicativo web à tela inicial de um dispositivo é uma funcionalidade que não examinamos no relatório de Capacidades do ano passado. Para calcular quantos sites têm essa funcionalidade, as páginas foram testadas para ver se tinham um ouvinte para o evento [`beforeinstallprompt`](https://developer.mozilla.org/docs/Web/API/Window/beforeinstallprompt_event) event.
 
-Note that the `beforeinstallprompt` event is a Chromium-only API and is currently <a hreflang="en" href="https://wicg.github.io/manifest-incubations/index.html#installation-prompts">incubating within the WICG</a>.
+Observe que o evento `beforeinstallprompt` é uma API exclusiva do Chromium e atualmente está <a hreflang="en" href="https://wicg.github.io/manifest-incubations/index.html#installation-prompts">em fase de incubação dentro do WICG</a>.
 
-The `beforeinstallprompt` event triggers right before a user is about to be prompted to "install" a web app. The usage of an event listener for the `beforeinstallprompt` event is not required for web apps to be added to a device's home screen, so it is safe to assume that the actual usage is much higher. However, this methodology will allow us to get an idea of how popular of a feature it is.
+O evento `beforeinstallprompt` é acionado imediatamente antes de um usuário ser solicitado a "instalar" um aplicativo web. O uso de um ouvinte de eventos para o evento `beforeinstallprompt` não é necessário para que aplicativos web sejam adicionados à tela inicial de um dispositivo, portanto, é seguro assumir que o uso real é muito maior. No entanto, essa metodologia nos permitirá ter uma ideia de quão popular é essa funcionalidade.
 
-The ability to add an application to the home screen is a crucial feature of PWAs. To use this feature, web applications must meet the <a hreflang="en" href="https://web.dev/install-criteria/#criteria">following criteria</a>:
+A capacidade de adicionar um aplicativo à tela inicial é uma característica crucial das PWAs. Para usar essa funcionalidade, os aplicativos web devem atender aos <a hreflang="en" href="https://web.dev/articles/install-criteria?hl=pt-br#criteria">seguintes critérios</a>:
 
-- The web app must not already be installed.
-- The user must have spent at least 30 seconds viewing the page at any time.
-- The user must have clicked or tapped at least once on the page at any time.
-- The web app must be served over HTTPS.
-- The web app must include a [web app manifest](https://developer.mozilla.org/docs/Web/Manifest) with:
-  - `short_name` or `name`.
-  - `icons` (must include a 192×192px and a 512×512px icon).
+- O aplicativo web não deve estar instalado.
+- O usuário deve ter passado pelo menos 30 segundos visualizando a página em algum momento.
+- O usuário deve ter clicado ou tocado pelo menos uma vez na página em algum momento.
+- O aplicativo web deve ser servido por HTTPS.
+- O aplicativo web deve incluir um [ manifesto de aplicativo web](https://developer.mozilla.org/pt-BR/docs/Web/Manifest) com:
+  - `short_name` ou `name`.
+  - `icons` (deve incluir um ícone de 192x192 pixels e um ícone de 512x512 pixels).
   - `start_url`.
-  - `display` (must be one of `fullscreen`, `standalone`, or `minimal-ui`).
-  - `prefer_related_applications` (must not be present, or `be false`).
-- The web app must register a service worker with a `fetch` handler.
+  - `display` (deve ser um dos seguintes: `fullscreen`, `standalone`, ou `minimal-ui`).
+  - `prefer_related_applications` (não deve estar presente ou deve ser `false`).
+- O aplicativo web deve registrar um service worker com um manipulador de `fetch`.
 
-Installed applications can appear in Start menus, desktops, home screens, the Applications folder, when searching for applications on a device, content sharing sheets, and more.
+Aplicações instaladas podem aparecer em menus Iniciar, desktops, telas iniciais, na pasta de Aplicativos, ao procurar aplicativos em um dispositivo, em folhas de compartilhamento de conteúdo e muito mais.
 
-The ability to add to the home screen is only available on modern versions of Chrome, Edge, and Safari on iOS and iPadOS.
+A capacidade de adicionar à tela inicial está disponível apenas em versões modernas do Chrome, Edge e Safari no iOS e iPadOS.
 
 ### Usage of Add to Home Screen
 
 {{ figure_markup(
-  caption="Usage of Add to Home Screen on mobile.",
+  caption="Uso do Adicionar à Tela Inicial",
   content="7.71%",
   classes="big-number",
   sheets_gid="1887140434",
@@ -174,24 +174,24 @@ The ability to add to the home screen is only available on modern versions of Ch
 )
 }}
 
-As mentioned, the add to home screen capability was not measured last year. However, for posterity and detailed reporting, the `beforeinstallprompt` event was used on 8.56% of desktop pages and 7.71% of mobile pages, making it the third most used capability on desktop and mobile.
+Como mencionado, a capacidade de "Adicionar à Tela Inicial" não foi medida no ano passado. No entanto, para posteridade e relatórios detalhados, o evento `beforeinstallprompt` foi usado em 8,56% das páginas desktop e 7,71% das páginas móveis, tornando-se a terceira capacidade mais usada em desktop e mobile.
 
-By taking advantage of the `beforeinstallprompt` event, developers can provide a customized experience in how users install their web application. One example is YouTube TV, which invites users to install their application to access it more quickly and easily.
+Ao aproveitar o evento `beforeinstallprompt`, os desenvolvedores podem fornecer uma experiência personalizada na forma como os usuários instalam seu aplicativo web. Um exemplo é o YouTube TV, que convida os usuários a instalar seu aplicativo para acessá-lo de forma mais rápida e fácil.
 
 {{ figure_markup(
   gif="Add-to-Home-Screen.gif",
   image="Add-to-Home-Screen.webp",
-  caption="Installing YouTube TV from an in app prompt, powered by the `beforeinstallprompt` event.",
-  description="Installing YouTube TV from an in app prompt, powered by the `beforeinstallprompt` event.",
+  caption="Instalando o YouTube TV a partir de um prompt no aplicativo, alimentado pelo evento `beforeinstallprompt`.",
+  description="Instalando o YouTube TV a partir de um prompt no aplicativo, alimentado pelo evento `beforeinstallprompt`.",
   width=640,
   height=360
 ) }}
 
 ## Media Session API
 
-The [_Media Session API_](https://developer.mozilla.org/docs/Web/API/Media_Session_API) allows developers to create custom media notifications for audio or video content on the web. The API includes action handlers that browsers can use to access media control on keyboards, headsets, and the software controls on a device's notification area and lock screens. The Media Session API empowers users to know and control what's playing on a web page without needing to be actively viewing said page.
+A [_Media Session API_](https://developer.mozilla.org/docs/Web/API/Media_Session_API) permite que os desenvolvedores criem notificações personalizadas para conteúdo de áudio ou vídeo na web. A API inclui manipuladores de ações que os navegadores podem usar para acessar o controle de mídia em teclados, headsets e os controles de software na área de notificação e nas telas de bloqueio de um dispositivo. A Media Session API capacita os usuários a saberem e controlarem o que está sendo reproduzido em uma página da web sem precisar estar ativamente visualizando essa página.
 
-When a page plays audio or video content, users get a media notification that appears in their mobile device's notification tray or on their desktop's media hub. Browsers will try to show a title and an icon, but the Media Session API allows the notification to be customized with rich media metadata, such as the title, artist name, album name, and album artwork.
+Quando uma página reproduz conteúdo de áudio ou vídeo, os usuários recebem uma notificação de mídia que aparece na bandeja de notificações de seus dispositivos móveis ou no hub de mídia de seus desktops. Os navegadores tentarão mostrar um título e um ícone, mas a Media Session API permite que a notificação seja personalizada com metadados de mídia ricos, como título, nome do artista, nome do álbum e arte do álbum.
 
 ```js
 navigator.mediaSession.metadata = new MediaMetadata({
@@ -233,12 +233,12 @@ navigator.mediaSession.metadata = new MediaMetadata({
 });
 ```
 
-The Media Session API is available on modern versions of Chrome, Edge, Firefox, and Safari.
+A Media Session API está disponível em versões modernas do Chrome, Edge, Firefox e Safari.
 
-### Usage of the Media Session API
+### Uso da Media Session API
 
 {{ figure_markup(
-  caption="Usage of Media Session API on mobile.",
+  caption="Uso da Media Session API em dispositivos móveis.",
   content="7.41%",
   classes="big-number",
   sheets_gid="1887140434",
@@ -246,35 +246,35 @@ The Media Session API is available on modern versions of Chrome, Edge, Firefox, 
 )
 }}
 
-The Media Session API was not measured last year. In its first year of tracking, the API was used on 8.37% of desktop pages and 7.41% of mobile pages, making it the fourth most used capability on desktop and mobile.
+A Media Session API não foi medida no ano passado. Em seu primeiro ano de rastreamento, a API foi utilizada em 8,37% das páginas desktop e 7,41% das páginas móveis, tornando-se a quarta capacidade mais utilizada em desktop e mobile.
 
-Web applications such as YouTube, YouTube Music, Spotify, and others take advantage of the Media Session API and provide rich controls for the video or audio played.
+Aplicativos web, como YouTube, YouTube Music, Spotify e outros, aproveitam a Media Session API e fornecem controles avançados para o vídeo ou áudio reproduzido.
 
 {{ figure_markup(
   image="Media-Session-API.png",
-  caption="Accessing controls and information for YouTube Music via the Window's Taskbar.",
-  description="Accessing controls and information for YouTube Music via the Window's Taskbar.",
+  caption="Acessando controles e informações para o YouTube Music pela barra de tarefas do Windows.",
+  description="Acessando controles e informações para o YouTube Music pela barra de tarefas do Windows.",
 ) }}
 
-For a deeper dive into video usage on the web, check out the [Media](./media#video) chapter.
+Para uma análise mais aprofundada sobre o uso de vídeo na web, confira o capítulo [Media](./media#video).
 
 ## Device Memory API
 
-A device's capabilities depend on a few things, like the network, the CPU core count, and the amount of memory available. The [_Device Memory API_](https://developer.mozilla.org/docs/Web/API/Device_Memory_API) provides insight into the memory available by providing the read-only property `deviceMemory` on the `Navigator` interface. The property returns an approximate amount of device memory in gigabytes as a floating point number.
+As capacidades de um dispositivo dependem de algumas coisas, como a rede, a contagem de núcleos da CPU e a quantidade de memória disponível. A [_Device Memory API_](https://developer.mozilla.org/docs/Web/API/Device_Memory_API) fornece insights sobre a memória disponível, disponibilizando a propriedade somente leitura `deviceMemory` na interface `Navigator`. A propriedade retorna uma quantidade aproximada de memória do dispositivo em gigabytes como um número de ponto flutuante.
 
-The value returned is imprecise, protecting the user's privacy. It's calculated by rounding down to the nearest power of 2, then dividing that number by 1,024. The number is also clamped within an upper and lower bound. So you can expect the numbers: `0.25`, `0.5`, `1`, `2`, `4`, and `8` (gigabytes).
+O valor retornado é impreciso para proteger a privacidade do usuário. Ele é calculado arredondando para baixo para a potência de 2 mais próxima e, em seguida, dividindo esse número por 1.024. O número também é limitado a um valor máximo e mínimo. Assim, você pode esperar números como `0.25`, `0.5`, `1`, `2`, `4`, e `8` (gigabytes).
 
 ```js
 const memory = navigator.deviceMemory;
 console.log('This device has at least ', memory, 'GiB of RAM.');
 ```
 
-The Device Memory API is only available on modern versions of Chrome and Edge.
+A Device Memory API está disponível apenas em versões modernas do Chrome e Edge.
 
-### Usage of the Device Memory API
+### Uso da Device Memory API
 
 {{ figure_markup(
-  caption="Usage of Device Memory API on mobile.",
+  caption="Uso da Device Memory API em dispositivos móveis.",
   content="5.76%",
   classes="big-number",
   sheets_gid="1887140434",
@@ -282,42 +282,42 @@ The Device Memory API is only available on modern versions of Chrome and Edge.
 )
 }}
 
-The Device Memory API was not measured last year. In its first year of tracking, the API was used on 6.27% of desktop pages and 5.76% of mobile pages, making it the fifth most used capability on desktop and mobile.
+A Device Memory API não foi medida no ano passado. Em seu primeiro ano de rastreamento, a API foi utilizada em 6,27% das páginas desktop e 5,76% das páginas móveis, tornando-se a quinta capacidade mais utilizada em desktop e mobile.
 
-For the release of Facebook's 2019 redesign, FB5, they actively integrated adaptive loading into this new version. They did this by adapting based on users' actual hardware, changing what loaded and what ran based on what users were using. For example, on the desktop, Facebook defined buckets of users based on CPU cores ([`navigator.hardwareConcurrency`](https://developer.mozilla.org/docs/Web/API/Navigator/hardwareConcurrency)) and device memory (`navigator.deviceMemory`) available.
+Para o lançamento do redesenho do Facebook em 2019, o FB5, eles integraram ativamente o carregamento adaptativo nesta nova versão. Eles fizeram isso adaptando-se com base no hardware real dos usuários, alterando o que era carregado e executado com base no que os usuários estavam utilizando. Por exemplo, no desktop, o Facebook definiu grupos de usuários com base nos núcleos da CPU ([`navigator.hardwareConcurrency`](https://developer.mozilla.org/docs/Web/API/Navigator/hardwareConcurrency)) e na memória do dispositivo (`navigator.deviceMemory`) disponíveis.
 
-Check out <a hreflang="en" href="https://www.youtube.com/watch?v=puUPpVrIRkc&t=1443s">this video</a> from Chrome Dev Summit 2019, starting at 24:03, where Nate Schloss shares how Facebook handles adaptive loading using features such as the Device Memory API.
+Confira <a hreflang="en" href="https://www.youtube.com/watch?v=puUPpVrIRkc&t=1443s">este vídeo</a> do Chrome Dev Summit 2019, começando em 24:03, onde Nate Schloss compartilha como o Facebook lida com o carregamento adaptativo usando recursos como a Device Memory API.
 
 ## Service Worker API
 
-[_Service workers_](https://developer.mozilla.org/docs/Web/API/Service_Worker_API) are one of the core components of Progressive Web Apps. They act as a client-side proxy that puts developers in control of the system's cache and how to respond to resource requests. By pre-caching essential resources, developers can eliminate the dependence on the network, ensuring instant and reliable experiences.
+[_Service workers_](https://developer.mozilla.org/pt-BR/docs/Web/API/Service_Worker_API) são um dos componentes principais das Progressive Web Apps. Eles atuam como um proxy no lado do cliente que coloca os desenvolvedores no controle do cache do sistema e de como responder às solicitações de recursos. Ao pré-armazenar recursos essenciais, os desenvolvedores podem eliminar a dependência da rede, garantindo experiências instantâneas e confiáveis.
 
-In addition to caching resources, service workers can update assets from the server, allow for push notifications, and allow access to the background and periodic background sync APIs.
+Além de armazenar em cache recursos, os service workers podem atualizar ativos do servidor, permitir notificações push e conceder acesso às APIs de segundo plano e de sincronização de segundo plano periódica.
 
-While service workers have become widely adopted and supported by major browsers, not all features of service workers are available on all browsers. An example of a currently unsupported feature is that of the Push API on Safari. Safari will support the Push API in the upcoming release of <a hreflang="en" href="https://www.apple.com/macos/macos-ventura-preview/features/">macOS Ventura</a> in 2022 and <a hreflang="en" href="https://www.apple.com/ios/ios-16/features/">iOS 16</a> and iPadOS 16 in 2023.
+Embora os service workers tenham sido amplamente adotados e suportados pelos principais navegadores, nem todos os recursos dos service workers estão disponíveis em todos os navegadores. Um exemplo de recurso atualmente não suportado é o Push API no Safari. O Safari oferecerá suporte ao Push API no próximo lançamento do <a hreflang="en" href="https://www.apple.com/macos/macos-ventura-preview/features/">macOS Ventura</a> em 2022 e no <a hreflang="en" href="https://www.apple.com/ios/ios-16/features/">iOS 16</a> e iPadOS 16 em 2023.
 
-The Service Worker API is available on modern versions of Chrome, Edge, Firefox, and Safari.
+A Service Worker API está disponível em versões modernas do Chrome, Edge, Firefox e Safari.
 
 ### Growth of the Service Worker API
 
 {{ figure_markup(
   image="Service-Worker-API-Usage.png",
-  caption="Usage of the Service Worker API from 2021 to 2022 on desktop and mobile.",
-  description="The Service Worker API grew in usage from 3.05% in 2021 to 4.17% in 2022 on desktop. On mobile, usage grew from 3.22% in 2021 to 3.85% in 2022.",
+  caption="Uso da Service Worker API de 2021 para 2022 em desktop e dispositivos móveis.",
+  description="O uso da Service Worker API cresceu de 3,05% em 2021 para 4,17% em 2022 em desktop. Em dispositivos móveis, o uso aumentou de 3,22% em 2021 para 3,85% em 2022.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTZp0g2lyspAvJUN-xV4TtqC_9wrRMqyg_bEzHCd1Be3p0Yhy3o2k-SH7DGX5a-LfaodNUTl4Ai-NXg/pubchart?oid=304563360&format=interactive",
   sheets_gid="208641216",
   sql_file="fugu.sql"
 ) }}
 
-The Service Worker API was not measured in last year's Capabilities chapter. However, using [data from the previous year's PWA chapter](/en/2021/pwa#service-workers-usage), the API grew in usage from 3.05% to 4.17% on desktop and 3.22% to 3.85% on mobile pages, making it the sixth most used capability on desktop and the seventh most used mobile.
+A Service Worker API não foi medida no capítulo de Capacidades do ano passado. No entanto, usando [dados do capítulo PWA do ano anterior](/en/2021/pwa#service-workers-usage), a API cresceu em uso de 3,05% para 4,17% em páginas desktop e de 3,22% para 3,85% em páginas móveis, tornando-se a sexta capacidade mais usada em desktop e a sétima mais usada em dispositivos móveis.
 
-Note that how the service worker usage in the PWA chapter is measured differs from how the Capabilities chapter measures it. Additionally, a bug in the data pipeline for last year's PWA chapter was found, resulting in an undercounting of service worker usage.
+Observe que a forma como o uso do service worker no capítulo PWA é medido difere da maneira como o capítulo de Capacidades o mede. Além disso, um bug no pipeline de dados do capítulo PWA do ano passado foi encontrado, resultando em uma contagem menor do uso do service worker.
 
-For a deeper dive into service worker usage on the web, check out the [PWA chapter](/en/2022/pwa#service-workers) of the 2022 Web Almanac.
+Para uma análise mais aprofundada sobre o uso de service workers na web, confira o [capítulo PWA](/en/2022/pwa#service-workers) do Web Almanac de 2022.
 
 ## Gamepad API
 
-The [_Gamepad API_](https://developer.mozilla.org/docs/Web/API/Gamepad_API) is how web applications respond to input from gamepads and other game controllers. This API has three interfaces; one that represents the controller connected to the device, one that represents buttons on the connected controller, and finally, one that is for events fired when a gamepad is connected or disconnected.
+A [_Gamepad API_](https://developer.mozilla.org/pt-BR/docs/Web/API/Gamepad_API) é como as aplicações web respondem à entrada de gamepads e outros controladores de jogos. Esta API possui três interfaces: uma que representa o controlador conectado ao dispositivo, uma que representa os botões no controlador conectado e, finalmente, uma para eventos disparados quando um gamepad é conectado ou desconectado.
 
 ```js
 window.addEventListener("gamepadconnected", (e) => {
@@ -326,44 +326,44 @@ window.addEventListener("gamepadconnected", (e) => {
 });
 ```
 
-The Gamepad API is available on modern versions of Chrome, Edge, Firefox, and Safari.
+A Gamepad API está disponível em versões modernas do Chrome, Edge, Firefox e Safari.
 
-### Growth of the Gamepad API
+### Crescimento da Gamepad API
 
 {{ figure_markup(
   image="Gamepad-API-Usage.png",
-  caption="Usage of the Gamepad API from 2021 to 2022 on desktop and mobile.",
-  description="The Gamepad API shrunk in usage from 4.39% in 2021 to 4.12% in 2022 on desktop. On mobile, usage shrunk from 5.10% in 2021 to 4.65% in 2022.",
+  caption="Uso da Gamepad API de 2021 para 2022 em desktop e dispositivos móveis.",
+  description="O uso da Gamepad API diminuiu de 4,39% em 2021 para 4,12% em 2022 em desktop. Em dispositivos móveis, o uso diminuiu de 5,10% em 2021 para 4,65% em 2022.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTZp0g2lyspAvJUN-xV4TtqC_9wrRMqyg_bEzHCd1Be3p0Yhy3o2k-SH7DGX5a-LfaodNUTl4Ai-NXg/pubchart?oid=679096832&format=interactive",
   sheets_gid="1737472884",
   sql_file="fugu.sql"
 ) }}
 
-The Gamepad API shrunk in usage from 4.39% in 2021 to 4.12% in 2022 on desktop. On mobile, use shrunk from 5.10% in 2021 to 4.65% in 2022. As a result, this year, the Gamepad API was the seventh most used capability on desktop and the sixth most used mobile.
+O uso da Gamepad API diminuiu de 4,39% em 2021 para 4,12% em 2022 em desktop. Em dispositivos móveis, o uso diminuiu de 5,10% em 2021 para 4,65% em 2022. Como resultado, neste ano, a Gamepad API foi a sétima capacidade mais usada em desktop e a sexta mais usada em dispositivos móveis.
 
-Web applications such as Google's Stadia, NVIDIA's GeForce Now, and Microsoft's Xbox Cloud Gaming provide gaming experiences that run on the cloud comparable to the experience of running games on local devices or a gaming console. Thanks to the Gamepad API, these web applications allow users to use traditional console game controllers rather than just a keyboard and mouse.
+Aplicações web como o Google Stadia, o NVIDIA GeForce Now e o Xbox Cloud Gaming da Microsoft fornecem experiências de jogo que rodam na nuvem, comparáveis à experiência de executar jogos em dispositivos locais ou um console de jogos. Graças à Gamepad API, essas aplicações web permitem que os usuários usem controladores de jogo tradicionais em vez de apenas um teclado e mouse.
 
 {{ figure_markup(
   image="Gamepad-API.webp",
   gif="Gamepad-API.gif",
-  caption="Connecting an Xbox controller to Google Stadia in the Chrome browser.",
-  description="Connecting an Xbox controller to Google Stadia in the Chrome browser.",
+  caption="Conectando um controle Xbox ao Google Stadia no navegador Chrome.",
+  description="Conectando um controle Xbox ao Google Stadia no navegador Chrome.",
   width=640,
   height=360
 ) }}
 
 ## Push API
 
-The [_Push API_](https://developer.mozilla.org/docs/Web/API/Push_API) allows web applications to receive messages from a server regardless of whether the application was in the foreground. Developers can send asynchronous notifications and updates to users who opt in, giving them meaningful updates and a nudge to reengage with an application.
+A [_Push API_](https://developer.mozilla.org/pt-BR/docs/Web/API/Push_API) permite que as aplicações web recebam mensagens de um servidor, independentemente de a aplicação estar em primeiro plano. Os desenvolvedores podem enviar notificações e atualizações assíncronas para usuários que optaram por isso, fornecendo atualizações significativas e um estímulo para se envolverem novamente com uma aplicação.
 
-Web applications must also have a service worker to receive push notifications from a server. From within the service worker, push notifications can be subscribed to using the [`PushManager.subscribe()`](https://developer.mozilla.org/docs/Web/API/PushManager/subscribe) method.
+As aplicações web também devem ter um service worker para receber notificações push de um servidor. Dentro do service worker, as notificações push podem ser inscritas usando o método [`PushManager.subscribe()`](https://developer.mozilla.org/docs/Web/API/PushManager/subscribe).
 
-The Push API is available on modern versions of Chrome, Edge, and Firefox.
+A Push API está disponível em versões modernas do Chrome, Edge e Firefox.
 
-### Usage of the Push API
+### Uso da Push API
 
 {{ figure_markup(
-  caption="Usage of Push API on mobile.",
+  caption="Uso da Push API em dispositivos móveis.",
   content="1.86%",
   classes="big-number",
   sheets_gid="1887140434",
@@ -371,20 +371,20 @@ The Push API is available on modern versions of Chrome, Edge, and Firefox.
 )
 }}
 
-The Push API was not measured last year. In its first year of tracking, the API was used on 2.03% of desktop pages and 1.86% of mobile pages, making it the eighth most used capability on desktop and mobile.
+A Push API não foi medida no ano passado. Em seu primeiro ano de rastreamento, a API foi utilizada em 2,03% das páginas desktop e 1,86% das páginas móveis, tornando-se a oitava capacidade mais utilizada em desktop e dispositivos móveis.
 
-## Project Fugu
+## Projeto Fugu
 
-Many features users expect to belong to platform-specific applications also exist on the web. However, thanks to the Capabilities Project, known by many as Project Fugu, these features exist on the web. Project Fugu is a cross-company effort to bring feature parity to web applications, considering what iOS, Android, or desktop apps can do. Project Fugu works on exposing platform-specific capabilities to the web while maintaining user security, privacy, trust, and the web's other core tenets.
+Muitos recursos que os usuários esperam encontrar em aplicativos específicos de plataformas também estão disponíveis na web. No entanto, graças ao Projeto Fugu, conhecido por muitos como Projeto Fugu, esses recursos existem na web. O Projeto Fugu é um esforço conjunto entre várias empresas para trazer paridade de recursos para aplicações web, considerando o que os aplicativos para iOS, Android ou desktop podem fazer. O Projeto Fugu trabalha na exposição de capacidades específicas de plataformas para a web, mantendo a segurança, privacidade, confiança do usuário e outros princípios fundamentais da web.
 
-Project Fugu comprises Microsoft, Intel, Samsung, Google, and many other groups and individuals.
+O Projeto Fugu inclui a participação da Microsoft, Intel, Samsung, Google e muitos outros grupos e indivíduos.
 
-Check out <a hreflang="en" href="https://developer.chrome.com/blog/fugu-status/">this post</a> on the Chrome Developers blog to learn more about the Capabilities Project.
+Confira <a hreflang="en" href="https://developer.chrome.com/docs/capabilities/status?hl=pt-br">este post</a> o blog dos desenvolvedores do Chrome para saber mais sobre o Projeto Fugu.
 
-## Conclusion
+## Conclusão
 
-Capabilities unlock new possibilities and functionality for developers to take advantage of on the web. This chapter shared eight of the most popular web platform APIs currently being used on the web. It also showcased some of these capabilities used in different web applications. The beauty of the web is that it can use these platform-based functionalities without needing to (necessarily) be installed onto a device or additional libraries and plugins.
+As capacidades desbloqueiam novas possibilidades e funcionalidades para os desenvolvedores aproveitarem na web. Este capítulo compartilhou oito das APIs de plataforma web mais populares atualmente utilizadas na web. Ele também destacou algumas dessas capacidades utilizadas em diferentes aplicações web. A beleza da web está no fato de que ela pode utilizar essas funcionalidades baseadas em plataformas sem precisar (necessariamente) ser instalada em um dispositivo ou depender de bibliotecas e plugins adicionais.
 
-Some exciting experiences that utilize the web's capabilities include <a hreflang="en" href="https://whatwebcando.today/">What Web Can Do Today?</a> (WWCDT) and <a hreflang="en" href="https://www.discourse.org/">Discourse</a>. WWCDT, which uses 38 of the capabilities we track, showcases many Web APIs with a live demo of each API. Discourse provides communities with web forums and uses 14 of the capabilities we track, such as the Badging API, so users can see the number of unread notifications they have.
+Algumas experiências empolgantes que utilizam as capacidades da web incluem <a hreflang="en" href="https://whatwebcando.today/">What Web Can Do Today?</a> (WWCDT) e <a hreflang="en" href="https://www.discourse.org/">Discourse</a>. O WWCDT, que utiliza 38 das capacidades que rastreamos, apresenta muitas APIs da web com uma demonstração ao vivo de cada API. O Discourse fornece comunidades com fóruns na web e utiliza 14 das capacidades que rastreamos, como a Badging API, para que os usuários possam ver o número de notificações não lidas que têm.
 
-The Capabilities Project, Project Fugu, allows applications to migrate to the web, removing some barriers associated with platform-specific applications. No need to write "native" code, no need to worry about users having access to the latest updates, and no need to get users to search for and download from your application in app stores. The web, and its capabilities, open up all new possibilities in building compelling experiences for users.
+O Projeto Fugu, também conhecido como Projeto Capabilities, permite que aplicativos migrem para a web, eliminando algumas barreiras associadas a aplicativos específicos de plataformas. Não há necessidade de escrever código "nativo", não é preciso se preocupar com os usuários tendo acesso às últimas atualizações, e não é necessário fazer com que os usuários busquem e baixem seu aplicativo nas lojas de aplicativos. A web, com suas capacidades, abre todas as novas possibilidades na construção de experiências envolventes para os usuários.
