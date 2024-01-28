@@ -151,7 +151,7 @@ A capacidade de adicionar um aplicativo à tela inicial é uma característica c
 - O usuário deve ter passado pelo menos 30 segundos visualizando a página em algum momento.
 - O usuário deve ter clicado ou tocado pelo menos uma vez na página em algum momento.
 - O aplicativo web deve ser servido por HTTPS.
-- O aplicativo web deve incluir um [ manifesto de aplicativo web](https://developer.mozilla.org/pt-BR/docs/Web/Manifest) com:
+- O aplicativo web deve incluir um [manifesto de aplicativo web](https://developer.mozilla.org/pt-BR/docs/Web/Manifest) com:
   - `short_name` ou `name`.
   - `icons` (deve incluir um ícone de 192x192 pixels e um ícone de 512x512 pixels).
   - `start_url`.
