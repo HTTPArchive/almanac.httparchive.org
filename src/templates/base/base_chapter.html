@@ -181,7 +181,7 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
           // Set date format to page's language locale to avoid incorrect date translation.
           dateFormat = new Intl.DateTimeFormat("{{ lang }}", options)
         }
-        publishedDateElement.innerHTML = dateFormat.format(publishedDate);
+        publishedDateElement.textContent = dateFormat.format(publishedDate);
 
       } else {
         console.log("Could not format date");

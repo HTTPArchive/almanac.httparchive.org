@@ -235,7 +235,7 @@ function renderWebmentions(webmentions) {
 
   // Show count of reactions (except if 0)
   if (webmentions.length > 0) {
-    document.querySelectorAll('.num-reactions').forEach(t => t.innerText = webmentions.length);
+    document.querySelectorAll('.num-reactions').forEach(t => t.textContent = webmentions.length);
     document.querySelectorAll('.reactions-label').forEach(t => setReactionsLabel(webmentions.length, t));
     document.querySelector('.webmentions-cta').classList.remove('hidden');
   }
