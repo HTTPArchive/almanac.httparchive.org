@@ -972,7 +972,7 @@ p.copyright a {
 
 @media (scripting: none) {
   .novisibility-until-js {
-    display:none;
+    display: none;
   }
 }
 
