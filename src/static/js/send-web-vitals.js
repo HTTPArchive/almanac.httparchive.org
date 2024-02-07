@@ -158,8 +158,6 @@ function sendWebVitals() {
       navigation_type: navigationType,
     }, overrides);
 
-    console.log('BARRY', name, params);
-
     gtag('event', name, params);
 
   }
