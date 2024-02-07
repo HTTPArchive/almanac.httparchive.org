@@ -483,8 +483,8 @@
         }
 
         var filteredCount = getFilteredContributorCount();
-        counter.innerText = filteredCount;
-        if ( counter.innerText ===  totalContributors.innerText ) {
+        counter.textContent = filteredCount;
+        if ( counter.textContent ===  totalContributors.textContent ) {
           totalText.classList.add('hidden')
           if (totalTextNonFiltered) totalTextNonFiltered.classList.remove('hidden')
         } else {
