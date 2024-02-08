@@ -1,4 +1,68 @@
 function sendWebVitals() {
+  function getLoafAttribution(attribution) {
+    if (!attribution) {
+      return {};
+    }
+
+    const entry = attribution.eventEntry;
+
+    if (!entry) {
+      return {};
+    }
+
+    if (!PerformanceObserver.supportedEntryTypes.includes('long-animation-frame')) {
+      return {};
+    }
+
+    let loafAttribution = {
+      debug_loaf_script_total_duration: 0
+    };
+
+    const longAnimationFrames = performance.getEntriesByType('long-animation-frame');
+    longAnimationFrames.filter(loaf => {
+      // LoAFs that intersect with the event.
+      return entry.startTime < (loaf.startTime + loaf.duration) && loaf.startTime < (entry.startTime + entry.duration);
+    }).forEach(loaf => {
+      loaf.scripts.forEach(script => {
+        const totalDuration = script.startTime + script.duration - script.desiredExecutionStart;
+        if (totalDuration > loafAttribution.debug_loaf_script_total_duration) {
+          loafAttribution = {
+            // Stats for the LoAF entry itself.
+            debug_loaf_entry_start_time: loaf.startTime,
+            debug_loaf_entry_end_time: loaf.startTime + loaf.duration,
+            debug_loaf_entry_work_duration: loaf.renderStart ? loaf.renderStart - loaf.startTime : loaf.duration,
+            debug_loaf_entry_render_duration: loaf.renderStart ? loaf.startTime + loaf.duration - loaf.renderStart : 0,
+            debug_loaf_entry_total_forced_style_and_layout_duration: loaf.scripts.reduce((sum, script) => sum + script.forcedStyleAndLayoutDuration, 0),
+            debug_loaf_entry_pre_layout_duration: loaf.styleAndLayoutStart ? loaf.styleAndLayoutStart - loaf.renderStart : 0,
+            debug_loaf_entry_style_and_layout_duration: loaf.styleAndLayoutStart ? loaf.startTime + loaf.duration - loaf.styleAndLayoutStart : 0,
+
+            // Stats for the longest script in the LoAF entry.
+            debug_loaf_script_total_duration: totalDuration,
+            debug_loaf_script_compile_duration: script.executionStart - script.startTime,
+            debug_loaf_script_exec_duration: script.startTime + script.duration - script.executionStart,
+            debug_loaf_script_invoker: script.invoker,
+            debug_loaf_script_type: script.invokerType,
+            debug_loaf_script_source_url: script.sourceURL,
+            debug_loaf_script_source_function_name: script.sourceFunctionName,
+            debug_loaf_script_source_char_position: script.sourceCharPosition,
+
+            // LoAF metadata.
+            debug_loaf_meta_length: longAnimationFrames.length,
+          }
+        }
+      });
+    });
+
+    if (!loafAttribution.debug_loaf_script_total_duration) {
+      return {};
+    }
+
+    // The LoAF script with the single longest total duration.
+    return Object.fromEntries(Object.entries(loafAttribution).map(([k, v]) => {
+      // Convert all floats to ints.
+      return [k, typeof v == 'number' ? Math.floor(v) : v];
+    }));
+  }
 
   function sendWebVitalsGAEvents({name, delta, id, attribution, navigationType}) {
 
@@ -22,11 +86,13 @@ function sendWebVitals() {
         break;
       case 'FID':
       case 'INP':
+        const loafAttribution = getLoafAttribution(attribution);
         overrides = {
           debug_event: attribution.eventType,
           debug_time: Math.round(attribution.eventTime),
           debug_load_state: attribution.loadState,
           debug_target: attribution.eventTarget || '(not set)',
+          ...loafAttribution
         };
         if (!attribution.eventEntry) {
           break;
@@ -79,22 +145,20 @@ function sendWebVitals() {
       prefersColorScheme = 'not supported';
     }
 
-    gtag('event', name, Object.assign(
-      {
-        event_category: 'Web Vitals',
-        value: Math.round(name === 'CLS' ? delta * 1000 : delta),
-        event_label: id,
-        non_interaction: true,
+    const params = Object.assign({
+      event_category: 'Web Vitals',
+      value: Math.round(name === 'CLS' ? delta * 1000 : delta),
+      event_label: id,
+      non_interaction: true,
+      effective_type: effectiveType,
+      data_saver: dataSaver,
+      device_memory: deviceMemory,
+      prefers_reduced_motion: prefersReducedMotion,
+      prefers_color_scheme: prefersColorScheme,
+      navigation_type: navigationType,
+    }, overrides);
 
-        //GA4
-        effective_type: effectiveType,
-        data_saver: dataSaver,
-        device_memory: deviceMemory,
-        prefers_reduced_motion: prefersReducedMotion,
-        prefers_color_scheme: prefersColorScheme,
-        navigation_type: navigationType,
-      }, overrides)
-    );
+    gtag('event', name, params);
 
   }
 

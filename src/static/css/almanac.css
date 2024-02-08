@@ -966,6 +966,16 @@ p.copyright a {
   display: none !important;
 }
 
+.novisibility-until-js {
+  visibility: hidden;
+}
+
+@media (scripting: none) {
+  .novisibility-until-js {
+    display: none;
+  }
+}
+
 .nav-dropdown-btn.js-enable,
 .nav-dropdown-btn.js-enable:hover {
   opacity: 0.5;

@@ -960,6 +960,7 @@ pre {
   border-radius: 50%;
   object-fit: cover;
   background: grey;
+  display: block;
 }
 
 .webmention-meta {

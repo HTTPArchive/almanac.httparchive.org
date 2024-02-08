@@ -476,7 +476,7 @@ function setDiscussionCount() {
             return;
           }
           document.querySelectorAll('.num-comments').forEach(el => {
-            el.innerText = comments;
+            el.textContent = comments;
           });
 
           if (comments === 1) {
@@ -625,7 +625,7 @@ function toggleDescription(event) {
 
   description.hidden = !description.hidden;
   event_button.setAttribute('aria-expanded', event_button.getAttribute('aria-expanded') == 'true' ? 'false' : 'true');
-  event_button.innerHTML = event_button.getAttribute('aria-expanded') == 'true' ? event_button.getAttribute('data-hide-text') : event_button.getAttribute('data-show-text');
+  event_button.textContent = event_button.getAttribute('aria-expanded') == 'true' ? event_button.getAttribute('data-hide-text') : event_button.getAttribute('data-show-text');
 
 }
 
@@ -635,7 +635,7 @@ function addShowDescription() {
   for (var index = 0; index < all_desc_buttons.length; ++index) {
     var desc_button = all_desc_buttons[index];
     desc_button.addEventListener('click', toggleDescription);
-    desc_button.hidden = false;
+    desc_button.classList.remove('novisibility-until-js');
     var description = document.querySelector('#' + desc_button.getAttribute('aria-controls'));
     if (description) {
       description.classList.remove('visually-hidden');
