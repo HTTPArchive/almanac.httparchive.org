@@ -20,6 +20,7 @@
     "watch": "node ./tools/generate/chapter_watcher",
     "ebooks": "node ./tools/generate/generate_ebook_pdfs",
     "deploy": "./tools/scripts/deploy.sh",
+    "dev": "source .venv/bin/activate && npm run start",
     "lint": "run-script-os",
     "lint:darwin:linux": "docker container run -it --rm -v \"$PWD/..\":/app -w /app/src --entrypoint=./tools/scripts/run_linter_locally.sh github/super-linter:slim-latest",
     "lint:win32": "docker container run --rm -v \"%cd%\\..\":/app -w /app/src --entrypoint=./tools/scripts/run_linter_locally.sh github/super-linter:slim-latest",
