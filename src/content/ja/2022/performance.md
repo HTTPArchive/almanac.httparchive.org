@@ -136,7 +136,7 @@ TTFBのデータが反対のことを示していない限り、これはフロ�
 
 #### レンダリングをブロックするリソース
 
-ページにレンダリングをブロックするリソースがあるとは、リソースがページの初期描画（またはレンダリング）を遅らせる場合を指します。これは、ネットワーク経由でロードされる重要なスクリプトやスタイルにとくに当てはまります。Lighthouseには、これらのリソースをチェックする<a hreflang="en" href="https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources?hl=ja">監査</a>が含まれており、CrUXの各ウェブサイトのホームページで実行しました。これらのページをどのようにテストしているかについては、[Methodology](./methodology)で詳しく学ぶことができます。
+ページにレンダリングをブロックするリソースがあるとは、リソースがページの初期描画（またはレンダリング）を遅らせる場合を指します。これは、ネットワーク経由でロードされる重要なスクリプトやスタイルにとくに当てはまります。Lighthouseには、これらのリソースをチェックする<a hreflang="ja" href="https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources?hl=ja">監査</a>が含まれており、CrUXの各ウェブサイトのホームページで実行しました。これらのページをどのようにテストしているかについては、[Methodology](./methodology)で詳しく学ぶことができます。
 
 {{ figure_markup(
   image="pages-passing-render-blocking-resources-audit.png",
@@ -188,9 +188,9 @@ LCP要素は、画像、見出し、またはテキストの段落など、さ�
 
 #### LCPの優先順位付け
 
-HTMLドキュメントがロードされた後、LCPリソース自体をいかに早くロードできるかに影響を与える2つの主要な要因があります：発見可能性と優先順位付け。[LCPの発見可能性](#LCPの静的発見可能性)については後で探りますが、まずLCP画像がどのように優先されるかを見てみましょう。
+HTMLドキュメントがロードされた後、LCPリソース自体をいかに早くロードできるかに影響を与える2つの主要な要因があります：発見可能性と優先順位付け。[lcpの発見可能性](#LCPの静的発見可能性)については後で探りますが、まずLCP画像がどのように優先されるかを見てみましょう。
 
-画像はデフォルトでは高優先度でロードされませんが、新しい<a hreflang="en" href="https://web.dev/articles/fetch-priority?hl=ja">優先度のヒント</a> APIのおかげで、開発者はLCP画像を高優先度でロードするように明示的に設定し、非必須リソースよりも優先させることができます。
+画像はデフォルトでは高優先度でロードされませんが、新しい<a hreflang="ja" href="https://web.dev/articles/fetch-priority?hl=ja">優先度のヒント</a> APIのおかげで、開発者はLCP画像を高優先度でロードするように明示的に設定し、非必須リソースよりも優先させることができます。
 
 {{ figure_markup(
   content="0.03%",
@@ -409,7 +409,7 @@ LCP画像のフォーマット選択は、そのバイトサイズに[大きな�
 
 前のセクションでは、LCPリソースに使用されるさまざまな画像フォーマットの人気を見てきました。開発者がLCPリソースを小さくし、より速くロードするための別の方法は、効率的な圧縮設定を利用することです。JPGフォーマットは、画質をあまり落とさずに不要なバイトを削減するために、損失圧縮できます。しかし、一部のJPG画像は十分に圧縮されていないかもしれません。
 
-Lighthouseには、JPGを圧縮レベル85に設定した際のバイト節約を測定する<a hreflang="en" href="https://developer.chrome.com/docs/lighthouse/performance/uses-optimized-images?hl=ja">監査</a>が含まれています。画像が結果として4KB以上小さくなる場合、監査は失敗し、最適化の機会と見なされます。
+Lighthouseには、JPGを圧縮レベル85に設定した際のバイト節約を測定する<a hreflang="ja" href="https://developer.chrome.com/docs/lighthouse/performance/uses-optimized-images?hl=ja">監査</a>が含まれています。画像が結果として4KB以上小さくなる場合、監査は失敗し、最適化の機会と見なされます。
 
 {{ figure_markup(
   image="lcp-image-optimization.png",
@@ -760,7 +760,7 @@ FIDとは異なり、INPはページ上の最初のインタラクションだ�
   image="inp-device.png",
   caption="デバイス別のINPパフォーマンスの分布。",
   description="デバイス別に良好、改善が必要、または悪いINPを持つウェブサイトの割合を示す棒グラフ。デスクトップウェブサイトの95%が良好なINPを持ち、4%が改善が必要で、1%が悪いです。モバイルウェブサイトの55%が良好なINPを持ち、36%が改善が必要で、8%が悪いです。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR-dJP3uphZoGE5A_luniNBFm5V2ww6irfOxANg0hrMid7gjgrtchsN_utOIDovVZUjIwpmUBb27nHF/pubchart?oid=755106375&format=interactive",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR-dJP3uphZoGE5A_luniNBFm5V2ww6irfOxANg0hrMid7gjgrtchsN_utOIDOvVZUjIwpmUBb27nHF/pubchart?oid=755106375&format=interactive",
   sheets_gid="555510064",
   sql_file="web_vitals_by_device.sql"
   )
