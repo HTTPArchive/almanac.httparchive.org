@@ -38,25 +38,26 @@ LIGHTHOUSE_URLS=""
 
 # Set some URLs that should always be checked on pull requests
 # to ensure basic coverage
+# We exclude webmentions to avoid Lighthouse issues
 BASE_URLS=$(cat <<-END
-http://127.0.0.1:8080/en/2019/
-http://127.0.0.1:8080/en/2019/javascript
-http://127.0.0.1:8080/en/2020/
-http://127.0.0.1:8080/en/2020/css
-http://127.0.0.1:8080/en/2021/
-http://127.0.0.1:8080/en/2021/third-parties
-http://127.0.0.1:8080/en/2022/
-http://127.0.0.1:8080/en/2022/javascript
+http://127.0.0.1:8080/en/2019/?nowebmentions
+http://127.0.0.1:8080/en/2019/javascript?nowebmentions
+http://127.0.0.1:8080/en/2020/?nowebmentions
+http://127.0.0.1:8080/en/2020/css?nowebmentions
+http://127.0.0.1:8080/en/2021/?nowebmentions
+http://127.0.0.1:8080/en/2021/third-parties?nowebmentions
+http://127.0.0.1:8080/en/2022/?nowebmentions
+http://127.0.0.1:8080/en/2022/javascript?nowebmentions
 END
 )
 
 if [ "${production}" == "1" ]; then
 
     # Get the production URLs from the production sitemap (except PDFs and Stories)
-    LIGHTHOUSE_URLS=$(curl -s https://almanac.httparchive.org/sitemap.xml | grep "<loc" | grep -v "/static/" | grep -v stories | sed 's/ *<loc>//g' | sed 's/<\/loc>//g')
+    LIGHTHOUSE_URLS=$(curl -s https://almanac.httparchive.org/sitemap.xml | grep "<loc" | grep -v "/static/" | grep -v stories | sed 's/ *<loc>//g' | sed 's/<\/loc>//g' | sed 's/$/?nowebmentions/g' )
 
     # Temporarily remove chapters failing in Lighthouse - TODO Try removing this on next Lighthouse upgrade
-    LIGHTHOUSE_URLS=$(echo "${LIGHTHOUSE_URLS}" | grep -v "/en/2021/cdn" | grep -v '/2021/ecommerce')
+    #LIGHTHOUSE_URLS=$(echo "${LIGHTHOUSE_URLS}" | grep -v "/en/2021/cdn" | grep -v '/2021/ecommerce')
 
     # Switch to the Production Config file
     LIGHTHOUSE_CONFIG_FILE="${LIGHTHOUSE_PROD_CONFIG_FILE}"
@@ -74,10 +75,10 @@ elif [ "${RUN_TYPE}" == "pull_request" ] && [ "${COMMIT_SHA}" != "" ]; then
     git checkout --progress --force "${COMMIT_SHA}"
 
     # Transform the files to http://127.0.0.1:8080 URLs
-    LIGHTHOUSE_URLS=$(echo "${CHANGED_FILES}" | sed 's/src\/content/http:\/\/127.0.0.1:8080/g' | sed 's/\.md//g' | sed 's/\/base\//\/en\/2019\//g' | sed 's/src\/templates/http:\/\/127.0.0.1:8080/g' | sed 's/index\.html//g' | sed 's/\.html//g' | sed 's/_/-/g' | sed 's/\/2019\/accessibility-statement/\/accessibility-statement/g' | sed 's/\/2019\/search/\/search/g' )
+    LIGHTHOUSE_URLS=$(echo "${CHANGED_FILES}" | sed 's/src\/content/http:\/\/127.0.0.1:8080/g' | sed 's/\.md//g' | sed 's/\/base\//\/en\/2019\//g' | sed 's/src\/templates/http:\/\/127.0.0.1:8080/g' | sed 's/index\.html//g' | sed 's/\.html//g' | sed 's/_/-/g' | sed 's/\/2019\/accessibility-statement/\/accessibility-statement/g' | sed 's/\/2019\/search/\/search/g' | sed 's/$/?nowebmentions/g' )
 
     # Temporarily remove chapters failing in Lighthouse - TODO Try removing this on next Lighthouse upgrade
-    LIGHTHOUSE_URLS=$(echo "${LIGHTHOUSE_URLS}" | grep -v "/en/2021/cdn" | grep -v '/2021/ecommerce')
+    # LIGHTHOUSE_URLS=$(echo "${LIGHTHOUSE_URLS}" | grep -v "/en/2021/cdn" | grep -v '/2021/ecommerce')
 
     # Add base URLs and strip out newlines
     LIGHTHOUSE_URLS=$(echo -e "${LIGHTHOUSE_URLS}\n${BASE_URLS}" | sort -u | sed '/^$/d')
@@ -85,10 +86,10 @@ elif [ "${RUN_TYPE}" == "pull_request" ] && [ "${COMMIT_SHA}" != "" ]; then
 else
 
     # Else test every URL (except PDFs and Stories) in the sitemap
-    LIGHTHOUSE_URLS=$(grep loc templates/sitemap.xml | grep -v "/static/" | grep -v stories | sed 's/ *<loc>//g' | sed 's/<\/loc>//g' | sed 's/https:\/\/almanac.httparchive.org/http:\/\/127.0.0.1:8080/g')
+    LIGHTHOUSE_URLS=$(grep loc templates/sitemap.xml | grep -v "/static/" | grep -v stories | sed 's/ *<loc>//g' | sed 's/<\/loc>//g' | sed 's/https:\/\/almanac.httparchive.org/http:\/\/127.0.0.1:8080/g' | sed 's/$/?nowebmentions/g' )
 
     # Temporarily remove chapters failing in Lighthouse - TODO Try removing this on next Lighthouse upgrade
-    LIGHTHOUSE_URLS=$(echo "${LIGHTHOUSE_URLS}" | grep -v "/en/2021/cdn" | grep -v '/2021/ecommerce')
+    #LIGHTHOUSE_URLS=$(echo "${LIGHTHOUSE_URLS}" | grep -v "/en/2021/cdn" | grep -v '/2021/ecommerce')
 fi
 
 echo "URLS to check:"
