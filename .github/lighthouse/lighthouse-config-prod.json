@@ -31,7 +31,6 @@
         "service-worker": "off",
         "speed-index": "off",
         "splash-screen": "off",
-        "target-size": "off",
         "td-has-header": "off",
         "themed-omnibox": "off",
         "third-party-facades": "off",
