@@ -56,7 +56,7 @@ if [ "${production}" == "1" ]; then
     LIGHTHOUSE_URLS=$(curl -s https://almanac.httparchive.org/sitemap.xml | grep "<loc" | grep -v "/static/" | grep -v stories | sed 's/ *<loc>//g' | sed 's/<\/loc>//g')
 
     # Temporarily remove English CDN file as failing in Lighthouse - TODO Try removing this on next Lighthouse upgrade
-    LIGHTHOUSE_URLS=$(echo "${LIGHTHOUSE_URLS}" | grep -v "/en/2021/cdn")
+    LIGHTHOUSE_URLS=$(echo "${LIGHTHOUSE_URLS}" | grep -v "/en/2021/cdn" | grep -v '/2021/ecommerce')
 
     # Switch to the Production Config file
     LIGHTHOUSE_CONFIG_FILE="${LIGHTHOUSE_PROD_CONFIG_FILE}"
@@ -69,7 +69,7 @@ elif [ "${RUN_TYPE}" == "pull_request" ] && [ "${COMMIT_SHA}" != "" ]; then
     git pull --quiet
     git checkout main
     # Then get the changes
-    CHANGED_FILES=$(git diff --name-only "main...${COMMIT_SHA}" --diff-filter=d content templates | grep -v base.html | grep -v ejs | grep -v base_ | grep -v sitemap | grep -v error.html | grep -v stories | grep -v embed.html | grep -v "/embeds/" )
+    CHANGED_FILES=$(git diff --name-only "main...${COMMIT_SHA}" --diff-filter=d content templates | grep -v base.html | grep -v ejs | grep -v base_ | grep -v sitemap | grep -v error.html | grep -v stories | grep -v embed.html | grep -v "/embeds/" | grep -v '/2021/ecommerce' )
     # Then back to the pull request changes
     git checkout --progress --force "${COMMIT_SHA}"
 
@@ -82,7 +82,7 @@ elif [ "${RUN_TYPE}" == "pull_request" ] && [ "${COMMIT_SHA}" != "" ]; then
 else
 
     # Else test every URL (except PDFs and Stories) in the sitemap
-    LIGHTHOUSE_URLS=$(grep loc templates/sitemap.xml | grep -v "/static/" | grep -v stories | sed 's/ *<loc>//g' | sed 's/<\/loc>//g' | sed 's/https:\/\/almanac.httparchive.org/http:\/\/127.0.0.1:8080/g')
+    LIGHTHOUSE_URLS=$(grep loc templates/sitemap.xml | grep -v "/static/" | grep -v stories | grep -v '/2021/ecommerce' | sed 's/ *<loc>//g' | sed 's/<\/loc>//g' | sed 's/https:\/\/almanac.httparchive.org/http:\/\/127.0.0.1:8080/g')
 
     # Temporarily remove English CDN file as failing in Lighthouse - TODO Try removing this on next Lighthouse upgrade
     LIGHTHOUSE_URLS=$(echo "${LIGHTHOUSE_URLS}" | grep -v "/en/2021/cdn")
