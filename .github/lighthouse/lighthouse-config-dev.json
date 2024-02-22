@@ -32,6 +32,7 @@
         "splash-screen": "off",
         "td-has-header": "off",
         "themed-omnibox": "off",
+        "third-party-cookies": "off",
         "third-party-facades": "off",
         "total-byte-weight": "off",
         "unminified-css": "off",
