@@ -693,10 +693,6 @@ The table below details the cache TTL values for mobile requests by type:
 
 <figure>
   <table>
-    <thead>
-      <tr>
-        <th colspan="6" scope="col">Cache TTL percentiles (in hours)</th>
-      </tr>
       <tr>
         <th scope="col">Type</th>
         <th scope="col">10</th>
@@ -789,7 +785,7 @@ The table below details the cache TTL values for mobile requests by type:
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Mobile cache TTL percentiles by resource type.", sheets_gid="676954337", sql_file="ttl_by_resource.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Mobile cache TTL hours by percentiles and resource type.", sheets_gid="676954337", sql_file="ttl_by_resource.sql") }}</figcaption>
 </figure>
 
 While most of the median TTLs are high, the lower percentiles highlight some of the missed caching opportunities. For example, the median TTL for images is 720 hours (1 month); however the 25<sup>th</sup> percentile is just 168 hours (1 week) and the 10<sup>th</sup> percentile has dropped to just a few hours. Compare this with fonts, which have a very high TTL of 8,760 hours (1 year) all the way down to the 25<sup>th</sup> percentile, with even the 10<sup>th</sup> percentile showing a TTL of 1 month.
