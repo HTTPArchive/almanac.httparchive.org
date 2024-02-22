@@ -693,6 +693,7 @@ The table below details the cache TTL values for mobile requests by type:
 
 <figure>
   <table>
+    <thead>
       <tr>
         <th scope="col">Type</th>
         <th scope="col">10</th>
