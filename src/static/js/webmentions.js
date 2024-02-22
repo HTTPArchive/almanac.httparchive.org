@@ -377,7 +377,9 @@ function handleShareButton() {
   button.classList.remove('hidden');
 }
 
-handleShareButton();
-addTabListeners();
-const BASE_URL = "https://almanac.httparchive.org";
-processWebmentions(BASE_URL + window.location.pathname);
+if (!window.location.search.includes('nowebmentions')) {
+  handleShareButton();
+  addTabListeners();
+  const BASE_URL = "https://almanac.httparchive.org";
+  processWebmentions(BASE_URL + window.location.pathname);
+}
