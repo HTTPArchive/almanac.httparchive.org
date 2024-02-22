@@ -695,9 +695,6 @@ HTTPレスポンスの43.4％がVaryヘッダーを使用しており、その�
   <table>
     <thead>
       <tr>
-        <th colspan="6" scope="col">キャッシュのTTLパーセンタイル（単位：時間）</th>
-      </tr>
-      <tr>
         <th scope="col">タイプ</th>
         <th scope="col">10</th>
         <th scope="col">25</th>

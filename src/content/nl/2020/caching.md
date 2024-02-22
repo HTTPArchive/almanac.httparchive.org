@@ -695,9 +695,6 @@ In de onderstaande tabel worden de cache-TTL-waarden voor mobiele verzoeken per 
   <table>
     <thead>
       <tr>
-        <th colspan="6" scope="col">TTL-percentielen in cache (in uren)</th>
-      </tr>
-      <tr>
         <th scope="col">Type</th>
         <th scope="col">10</th>
         <th scope="col">25</th>
@@ -789,7 +786,7 @@ In de onderstaande tabel worden de cache-TTL-waarden voor mobiele verzoeken per 
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="TTL-percentielen voor mobiele cache per brontype.", sheets_gid="676954337", sql_file="ttl_by_resource.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="TTL in uren voor mobiele cache per percentielen en brontype.", sheets_gid="676954337", sql_file="ttl_by_resource.sql") }}</figcaption>
 </figure>
 
 Hoewel de meeste mediane TTL's hoog zijn, benadrukken de lagere percentielen enkele van de gemiste cachemogelijkheden. De mediane TTL voor afbeeldingen is bijvoorbeeld 720 uur (1 maand); het 25<sup>e</sup> percentiel is echter slechts 168 uur (1 week) en het 10<sup>de</sup> percentiel is gedaald tot slechts een paar uur. Vergelijk dit met lettertypen, die een zeer hoge TTL hebben van 8.760 uur (1 jaar) helemaal tot aan het 25<sup>e</sup> percentiel, waarbij zelfs het 10<sup>de</sup> percentiel een TTL van 1 maand laat zien.
