@@ -638,7 +638,7 @@ function addShowDescription() {
     desc_button.classList.remove('novisibility-until-js');
     var description = document.querySelector('#' + desc_button.getAttribute('aria-controls'));
     if (description) {
-      description.classList.remove('visually-hidden');
+      description.classList.remove('hidden');
       description.classList.add('fig-description');
       description.hidden = true;
     }
