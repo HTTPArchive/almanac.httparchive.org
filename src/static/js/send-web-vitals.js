@@ -24,7 +24,7 @@ function sendWebVitals() {
       return entry.startTime < (loaf.startTime + loaf.duration) && loaf.startTime < (entry.startTime + entry.duration);
     }).forEach(loaf => {
       loaf.scripts.forEach(script => {
-        const totalDuration = script.startTime + script.duration - script.desiredExecutionStart;
+        const totalDuration = script.startTime + script.duration;
         if (totalDuration > loafAttribution.debug_loaf_script_total_duration) {
           loafAttribution = {
             // Stats for the LoAF entry itself.
