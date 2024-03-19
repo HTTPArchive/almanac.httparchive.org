@@ -23,32 +23,35 @@ function sendWebVitals() {
       // LoAFs that intersect with the event.
       return entry.startTime < (loaf.startTime + loaf.duration) && loaf.startTime < (entry.startTime + entry.duration);
     }).forEach(loaf => {
+      const loafEndTime = loaf.startTime + loaf.duration;
       loaf.scripts.forEach(script => {
-        const totalDuration = script.startTime + script.duration;
-        if (totalDuration > loafAttribution.debug_loaf_script_total_duration) {
-          loafAttribution = {
-            // Stats for the LoAF entry itself.
-            debug_loaf_entry_start_time: loaf.startTime,
-            debug_loaf_entry_end_time: loaf.startTime + loaf.duration,
-            debug_loaf_entry_work_duration: loaf.renderStart ? loaf.renderStart - loaf.startTime : loaf.duration,
-            debug_loaf_entry_render_duration: loaf.renderStart ? loaf.startTime + loaf.duration - loaf.renderStart : 0,
-            debug_loaf_entry_total_forced_style_and_layout_duration: loaf.scripts.reduce((sum, script) => sum + script.forcedStyleAndLayoutDuration, 0),
-            debug_loaf_entry_pre_layout_duration: loaf.styleAndLayoutStart ? loaf.styleAndLayoutStart - loaf.renderStart : 0,
-            debug_loaf_entry_style_and_layout_duration: loaf.styleAndLayoutStart ? loaf.startTime + loaf.duration - loaf.styleAndLayoutStart : 0,
+        if (script.duration <= loafAttribution.debug_loaf_script_total_duration) {
+          return;
+        }
+        loafAttribution = {
+          // Stats for the LoAF entry itself.
+          debug_loaf_entry_start_time: loaf.startTime,
+          debug_loaf_entry_end_time: loafEndTime,
+          debug_loaf_entry_work_duration: loaf.renderStart ? loaf.renderStart - loaf.startTime : loaf.duration,
+          debug_loaf_entry_render_duration: loaf.renderStart ? loafEndTime - loaf.renderStart : 0,
+          debug_loaf_entry_total_forced_style_and_layout_duration: loaf.scripts.reduce((sum, script) => sum + script.forcedStyleAndLayoutDuration, 0),
+          debug_loaf_entry_pre_layout_duration: loaf.styleAndLayoutStart ? loaf.styleAndLayoutStart - loaf.renderStart : 0,
+          debug_loaf_entry_style_and_layout_duration: loaf.styleAndLayoutStart ? loafEndTime - loaf.styleAndLayoutStart : 0,
 
-            // Stats for the longest script in the LoAF entry.
-            debug_loaf_script_total_duration: totalDuration,
-            debug_loaf_script_compile_duration: script.executionStart - script.startTime,
-            debug_loaf_script_exec_duration: script.startTime + script.duration - script.executionStart,
-            debug_loaf_script_invoker: script.invoker,
-            debug_loaf_script_type: script.invokerType,
-            debug_loaf_script_source_url: script.sourceURL,
-            debug_loaf_script_source_function_name: script.sourceFunctionName,
-            debug_loaf_script_source_char_position: script.sourceCharPosition,
+          // Stats for the longest script in the LoAF entry.
+          debug_loaf_script_total_duration: script.duration,
+          debug_loaf_script_compile_duration: script.executionStart - script.startTime,
+          debug_loaf_script_exec_duration: script.startTime + script.duration - script.executionStart,
+          debug_loaf_script_source: script.sourceLocation || script.invoker || script.name, // TODO: remove after Chrome 123
+          debug_loaf_script_type: script.invokerType || script.type, // TODO: remove `|| script.type` after Chrome 123
+          // New in Chrome 122/123 (will be null until then)
+          debug_loaf_script_invoker: script.invoker,
+          debug_loaf_script_source_url: script.sourceURL,
+          debug_loaf_script_source_function_name: script.sourceFunctionName,
+          debug_loaf_script_source_char_position: script.sourceCharPosition,
 
-            // LoAF metadata.
-            debug_loaf_meta_length: longAnimationFrames.length,
-          }
+          // LoAF metadata.
+          debug_loaf_meta_length: longAnimationFrames.length,
         }
       });
     });
