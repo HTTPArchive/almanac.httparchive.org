@@ -64,6 +64,11 @@ function check_continue {
   fi
 }
 
+if [ ! "$(which pgrep)" ]; then
+  echo "Need pgrep installed. Try 'brew install proctools'"
+  exit 1
+fi
+
 echo "Beginning the Web Almanac deployment process"
 
 # This script must be run from src directory
@@ -95,7 +100,7 @@ git status
 git pull
 git pull origin main
 
-if [ "$(pgrep -f 'python main.py')" ]; then
+if [ "$(pgrep -if 'python main.py')" ]; then
   echo "Killing existing server to run a fresh version"
   pkill -9 python main.py
 fi
@@ -192,7 +197,7 @@ git status
 echo "Checking out main branch"
 git checkout main
 
-if [ "$(pgrep -f 'python main.py')" ]; then
+if [ "$(pgrep -if 'python main.py')" ]; then
   echo "Killing server so backgrounded version isn't left there"
   pkill -9 -f "python main.py"
 fi
