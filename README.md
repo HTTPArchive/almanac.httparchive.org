@@ -30,7 +30,7 @@ See [our contributing guide](CONTRIBUTING.md). To run the Web Almanac locally pl
 
 ## Next Web Almanac timeline
 
-We are [taking a break for 2023](https://github.com/HTTPArchive/almanac.httparchive.org/discussions/33610), but hope to return in future.
+We [took a break in 2023](https://github.com/HTTPArchive/almanac.httparchive.org/discussions/33610), and are currently working on the 2024 version. If you would like to get involved, here's a [list of chapters](https://github.com/HTTPArchive/almanac.httparchive.org/issues?q=is%3Aissue+is%3Aopen+label%3A%222024+chapter%22) looking for help.
 
 In the meantime, enjoy the [2022 edition](https://almanac.httparchive.org) and we're still open to contributions in the form of [translations](https://github.com/HTTPArchive/almanac.httparchive.org/issues?q=is%3Aissue+is%3Aopen+label%3Atranslation), [development](https://github.com/HTTPArchive/almanac.httparchive.org/issues?q=is%3Aissue+is%3Aopen+label%3Adevelopment) or bug fixes.
 
