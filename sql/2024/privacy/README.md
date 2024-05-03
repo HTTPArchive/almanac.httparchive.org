@@ -16,5 +16,5 @@
 - [📝 Markdown file][~chapter-markdown]
 
 [~google-doc]: https://docs.google.com/document/d/14XXHV7A8WI1a-UQqmlRj4dKYIJjZMqo__CN5POfM9Po/edit
-[~google-sheets]: https://docs.google.com/spreadsheets/d/1U6DTYxxhDWf-39Fr0o1Jq2r1RUVa4EbyxIZu-wqrso0/edit
+[~google-sheets]: https://docs.google.com/spreadsheets/d/18r8cT6x9lPdM-rXvXjsqx84W7ZDdTDYGD59xr0UGOwg/edit
 [~chapter-markdown]: https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/src/content/en/2024/privacy.md
