@@ -24,10 +24,14 @@ This query generates a list of candidate URLs for manifest and service worker fi
 
 The `almanac.manifests` and `almanac.service_workers` tables depend on the `pwa_candidates` table. Running these queries will generate the latest data that can be appended to their respective tables.
 
-## green_web_foundation
+## [green_web_foundation.sql](./green_web_foundation.sql)
 
 1. Go to https://admin.thegreenwebfoundation.org/admin/green-urls
 2. Scroll to the bottom for the latest database dump
 3. Convert to a BQ-compatible format, ie CSV
 4. Import into a temporary BQ table
 5. Join with the date-partitioned `green_web_foundation` table
+
+## [bq_sql_to_spreadsheet.ipynb](./bq_to_sheets.ipynb)
+
+This Jupyter notebook runs BigQuery SQL queries for a chapter and saves the results to a Google Sheet. It uses the `gspread` library to interact with Google Sheets.
