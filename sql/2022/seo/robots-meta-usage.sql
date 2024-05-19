@@ -32,8 +32,8 @@ return results;
 SELECT
   client,
   total,
-  data.bot AS bot,
-  data.report AS report,
+  data.bot,
+  data.report,
   COUNT(0) AS count,
   SAFE_DIVIDE(COUNT(0), total) AS pct,
   SAFE_DIVIDE(SUM(data.noindex), COUNT(0)) AS noindex,

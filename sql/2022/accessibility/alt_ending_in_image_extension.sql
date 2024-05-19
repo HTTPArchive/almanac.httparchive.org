@@ -23,7 +23,7 @@ SELECT
   # Given a random alt, how often will it end in a file extension
   total_alts_with_file_extensions / total_non_empty_alts AS pct_alts_with_file_extension,
 
-  extension_stat.extension AS extension,
+  extension_stat.extension,
   COUNT(0) AS total_sites_using,
   # Of sites with a non-empty alt, what % have an alt with this file extension
   COUNT(0) / sites_with_non_empty_alt AS pct_applicable_sites_using,

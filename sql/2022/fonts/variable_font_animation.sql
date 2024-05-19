@@ -35,6 +35,7 @@ FROM (
   WHERE date = '2022-07-01'
   GROUP BY
     client,
-    page)
+    page
+)
 GROUP BY
   client

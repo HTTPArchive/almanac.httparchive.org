@@ -23,7 +23,7 @@ return results;
 
 SELECT
   _TABLE_SUFFIX AS client,
-  audits.id AS id,
+  audits.id,
   COUNTIF(audits.score > 0) AS num_pages,
   COUNT(0) AS total,
   COUNTIF(audits.score IS NOT NULL) AS total_applicable,

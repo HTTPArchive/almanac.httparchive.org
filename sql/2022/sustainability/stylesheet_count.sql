@@ -36,6 +36,6 @@ FROM (
     getStyles(payload) AS document
   FROM
     `httparchive.pages.2022_06_01_*`
-  )
+)
 GROUP BY
   client

@@ -159,7 +159,8 @@ FROM (
     UNNEST(getGradientAdoption(css)) AS property
   WHERE
     date = '2022-07-01' AND
-    property IS NOT NULL)
+    property IS NOT NULL
+)
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -167,7 +168,8 @@ JOIN (
   FROM
     `httparchive.summary_pages.2022_07_01_*` -- noqa: L062
   GROUP BY
-    client)
+    client
+)
 USING
   (client)
 GROUP BY

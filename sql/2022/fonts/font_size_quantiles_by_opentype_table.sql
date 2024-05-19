@@ -45,7 +45,8 @@ FROM (
   FROM
     fonts,
     UNNEST(getTableSizes(payload)) AS table,
-    UNNEST([10, 25, 50, 75, 90, 100]) AS percentile)
+    UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
+)
 GROUP BY
   client,
   table,

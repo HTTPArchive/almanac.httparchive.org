@@ -13,7 +13,7 @@ WITH base AS (
     SELECT
       '2022' AS year,
       client,
-      third_party_domains.domain AS domain,
+      third_party_domains.domain,
       resp_content_encoding,
       type,
       COUNT(0) AS num_requests
@@ -59,7 +59,7 @@ WITH base AS (
     SELECT
       '2021' AS year,
       client,
-      third_party_domains.domain AS domain,
+      third_party_domains.domain,
       resp_content_encoding,
       type,
       COUNT(0) AS num_requests
@@ -105,7 +105,7 @@ WITH base AS (
     SELECT
       '2020' AS year,
       client,
-      third_party_domains.domain AS domain,
+      third_party_domains.domain,
       resp_content_encoding,
       type,
       COUNT(0) AS num_requests

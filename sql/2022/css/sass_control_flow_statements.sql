@@ -61,7 +61,8 @@ FROM (
   GROUP BY
     client,
     page,
-    statement)
+    statement
+)
 JOIN
   totals
 USING

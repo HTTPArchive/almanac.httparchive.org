@@ -57,7 +57,8 @@ FROM
       COUNTIF(LOWER(script) LIKE '%pushprofit%') AS pushprofit,
       COUNTIF(LOWER(script) LIKE '%sendpulse%') AS sendpulse,
       COUNTIF(LOWER(script) LIKE '%quore%') AS quora,
-      COUNTIF(LOWER(script) NOT LIKE '%workbox%' AND
+      COUNTIF(
+        LOWER(script) NOT LIKE '%workbox%' AND
         LOWER(script) NOT LIKE '%sw-toolbox%' AND
         LOWER(script) NOT LIKE '%firebase%' AND
         LOWER(script) NOT LIKE '%onesignalsdk%' AND
@@ -69,7 +70,8 @@ FROM
         LOWER(script) NOT LIKE '%pwabuilder%' AND
         LOWER(script) NOT LIKE '%pushprofit%' AND
         LOWER(script) NOT LIKE '%sendpulse%' AND
-        LOWER(script) NOT LIKE '%quora%') AS none_of_the_above
+        LOWER(script) NOT LIKE '%quora%'
+      ) AS none_of_the_above
     FROM
       `httparchive.pages.2022_06_01_*`,
       UNNEST(getSWLibraries(JSON_EXTRACT(payload, '$._pwa.importScriptsInfo'))) AS script

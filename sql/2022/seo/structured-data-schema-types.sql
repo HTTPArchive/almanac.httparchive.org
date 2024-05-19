@@ -34,8 +34,10 @@ FROM (
   SELECT
     _TABLE_SUFFIX AS client,
     total,
-    getStructuredSchemaWptBodies(JSON_EXTRACT_SCALAR(payload,
-        '$._wpt_bodies')) AS structured_schema_wpt_bodies_info
+    getStructuredSchemaWptBodies(JSON_EXTRACT_SCALAR(
+      payload,
+      '$._wpt_bodies'
+    )) AS structured_schema_wpt_bodies_info
   FROM
     `httparchive.pages.2022_07_01_*` -- noqa: L062
   JOIN (
@@ -45,9 +47,11 @@ FROM (
     FROM
       `httparchive.pages.2022_07_01_*` -- noqa: L062
     GROUP BY
-      _TABLE_SUFFIX)
+      _TABLE_SUFFIX
+  )
   USING
-    (_TABLE_SUFFIX)),
+    (_TABLE_SUFFIX)
+),
   UNNEST(structured_schema_wpt_bodies_info.jsonld_and_microdata_types) AS type
 GROUP BY
   total,

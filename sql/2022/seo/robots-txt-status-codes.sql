@@ -22,7 +22,7 @@ return result;
 
 SELECT
   client,
-  robots_txt_status_info.status_code AS status_code,
+  robots_txt_status_info.status_code,
   COUNT(0) AS total,
   SAFE_DIVIDE(COUNT(0), SUM(COUNT(0)) OVER (PARTITION BY client)) AS pct
 

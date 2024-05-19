@@ -23,7 +23,7 @@ base AS (
   SELECT
     client,
     page,
-    third_party_domains.domain AS domain
+    third_party_domains.domain
   FROM
     (
       SELECT
@@ -45,7 +45,7 @@ base AS (
 )
 
 SELECT
-  base.client AS client,
+  base.client,
   domain,
   COUNT(0) AS freq,
   total,
@@ -53,13 +53,13 @@ SELECT
 FROM
   base
 JOIN (
-    SELECT
-      _TABLE_SUFFIX AS client,
-      COUNT(DISTINCT url) AS total
-    FROM
-      `httparchive.lighthouse.2022_06_01_*`
-    GROUP BY
-      _TABLE_SUFFIX
+  SELECT
+    _TABLE_SUFFIX AS client,
+    COUNT(DISTINCT url) AS total
+  FROM
+    `httparchive.lighthouse.2022_06_01_*`
+  GROUP BY
+    _TABLE_SUFFIX
 )
 USING
   (client)

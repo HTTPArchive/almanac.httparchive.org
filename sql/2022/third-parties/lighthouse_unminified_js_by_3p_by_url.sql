@@ -24,15 +24,15 @@ base AS (
   SELECT
     client,
     page,
-    potential_third_parties.domain AS domain,
-    potential_third_parties.url AS url,
+    potential_third_parties.domain,
+    potential_third_parties.url,
     SUM(IF(third_party_domains.domain IS NOT NULL, potential_savings, 0)) AS potential_third_party_savings,
     SUM(IF(third_party_domains.domain IS NOT NULL, transfer_size, 0)) AS third_party_transfer_size
   FROM (
     SELECT
       _TABLE_SUFFIX AS client,
       NET.HOST(data.url) AS domain,
-      data.url AS url,
+      data.url,
       lighthouse.url AS page,
       data.wastedBytes AS potential_savings,
       data.totalBytes AS transfer_size

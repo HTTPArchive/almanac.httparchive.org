@@ -23,7 +23,8 @@ FROM (
     `httparchive.summary_requests.2022_06_01_*`
   WHERE
     resp_last_modified != '' AND
-    expAge > 0)
+    expAge > 0
+)
 GROUP BY
   client
 ORDER BY

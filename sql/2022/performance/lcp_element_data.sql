@@ -121,7 +121,8 @@ JOIN (
   FROM
     `httparchive.summary_pages.2022_06_01_*`
   GROUP BY
-    _TABLE_SUFFIX)
+    _TABLE_SUFFIX
+)
 USING
   (client)
 GROUP BY

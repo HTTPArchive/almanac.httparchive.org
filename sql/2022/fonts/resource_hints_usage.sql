@@ -34,7 +34,8 @@ FROM (
   FROM
     `httparchive.pages.2022_06_01_*`
   LEFT JOIN
-    UNNEST(getResourceHints(payload)) AS hint)
+    UNNEST(getResourceHints(payload)) AS hint
+)
 LEFT JOIN (
   SELECT
     client,
@@ -43,7 +44,8 @@ LEFT JOIN (
   FROM
     `httparchive.almanac.requests`
   WHERE
-    date = '2022-06-01')
+    date = '2022-06-01'
+)
 USING
   (client, page)
 WHERE

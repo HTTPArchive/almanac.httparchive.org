@@ -31,7 +31,7 @@ WITH base AS (
 )
 
 SELECT
-  base.client AS client,
+  base.client,
   COUNT(0) AS freq,
   total,
   COUNT(0) / total AS pct

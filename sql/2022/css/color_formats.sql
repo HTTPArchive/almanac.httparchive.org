@@ -205,7 +205,8 @@ FROM (
     UNNEST(getColorFormats(css)) AS format
   WHERE
     date = '2022-07-01' AND
-    format.value IS NOT NULL)
+    format.value IS NOT NULL
+)
 JOIN
   totals
 USING

@@ -1,5 +1,5 @@
 #standardSQL
-  # compression_formats.sql : What compression formats are being used (gzip, brotli, etc)
+# compression_formats.sql : What compression formats are being used (gzip, brotli, etc)
 SELECT
   client,
   resp_content_encoding,

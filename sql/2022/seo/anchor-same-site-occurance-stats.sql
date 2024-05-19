@@ -35,7 +35,7 @@ return result;
 SELECT
   client,
 
-  wpt_bodies_info.links_same_site AS links_same_site,
+  wpt_bodies_info.links_same_site,
 
   COUNT(0) AS pages,
 
@@ -65,7 +65,7 @@ FROM (
   )
   USING
     (_TABLE_SUFFIX)
-  )
+)
 GROUP BY
   client,
   links_same_site,

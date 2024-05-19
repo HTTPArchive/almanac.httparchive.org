@@ -33,8 +33,10 @@ FROM (
   SELECT
     _TABLE_SUFFIX AS client,
     total,
-    getHreflangWptBodies(JSON_EXTRACT_SCALAR(payload,
-        '$._wpt_bodies')) AS hreflang_wpt_bodies_info
+    getHreflangWptBodies(JSON_EXTRACT_SCALAR(
+      payload,
+      '$._wpt_bodies'
+    )) AS hreflang_wpt_bodies_info
   FROM
     `httparchive.pages.2022_07_01_*` -- noqa: L062
   JOIN (
@@ -44,9 +46,11 @@ FROM (
     FROM
       `httparchive.pages.2022_07_01_*` -- noqa: L062
     GROUP BY
-      _TABLE_SUFFIX)
+      _TABLE_SUFFIX
+  )
   USING
-    (_TABLE_SUFFIX)),
+    (_TABLE_SUFFIX)
+),
   UNNEST(hreflang_wpt_bodies_info.hreflangs) AS hreflang
 GROUP BY
   total,

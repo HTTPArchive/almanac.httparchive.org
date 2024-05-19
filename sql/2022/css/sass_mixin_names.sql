@@ -26,7 +26,8 @@ FROM (
     mixin
   FROM
     `httparchive.pages.2022_07_01_*`, -- noqa: L062
-    UNNEST(getMixinNames(payload)) AS mixin)
+    UNNEST(getMixinNames(payload)) AS mixin
+)
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -34,7 +35,8 @@ JOIN (
   FROM
     `httparchive.pages.2022_07_01_*` -- noqa: L062
   GROUP BY
-    client)
+    client
+)
 USING
   (client)
 GROUP BY

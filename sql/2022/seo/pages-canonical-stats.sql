@@ -118,7 +118,7 @@ try {
 SELECT
   client,
   COUNT(0) AS total,
-  canonical_metrics.js_error AS js_error,
+  canonical_metrics.js_error,
 
   # Pages with canonical
   SAFE_DIVIDE(COUNTIF(canonical_metrics.has_canonicals), COUNT(0)) AS pct_has_canonical,
@@ -164,7 +164,8 @@ FROM (
     _TABLE_SUFFIX AS client,
     getCanonicalMetrics(payload) AS canonical_metrics
   FROM
-    `httparchive.pages.2022_07_01_*`) -- noqa: L062
+    `httparchive.pages.2022_07_01_*`
+) -- noqa: L062
 
 -- Only reporting where wpt_bodies sucessfully extracted. ~20/100,000 pages missing wpt_bodies.
 WHERE

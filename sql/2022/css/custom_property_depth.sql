@@ -108,7 +108,8 @@ FROM (
     custom_properties.freq
   FROM
     `httparchive.pages.2022_07_01_*`, -- noqa: L062
-    UNNEST(getCustomPropertyLengths(payload)) AS custom_properties)
+    UNNEST(getCustomPropertyLengths(payload)) AS custom_properties
+)
 JOIN
   totals
 USING

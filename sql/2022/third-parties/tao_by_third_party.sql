@@ -57,7 +57,7 @@ third_party AS (
 
 headers AS (
   SELECT
-    requests.client AS client,
+    requests.client,
     requests.origin AS req_origin,
     pages.origin AS page_origin,
     get_tao(LOWER(respOtherHeaders)) AS timing_allow_origin,
@@ -87,7 +87,8 @@ base AS (
       timing_allow_origin LIKE '%, ' || page_origin OR
       timing_allow_origin LIKE '%,' || page_origin || ',%' OR
       timing_allow_origin LIKE '%, ' || page_origin || ',%',
-      1, 0) AS timing_allowed
+      1, 0
+    ) AS timing_allowed
   FROM headers
 )
 

@@ -63,10 +63,12 @@ FROM (
       `httparchive.almanac.parsed_css`,
       UNNEST(getLayoutUsage(css)) AS layout
     WHERE
-      date = '2022-07-01')
+      date = '2022-07-01'
+  )
   GROUP BY
     client,
-    layout)
+    layout
+)
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -74,7 +76,8 @@ JOIN (
   FROM
     `httparchive.summary_pages.2022_07_01_*` -- noqa: L062
   GROUP BY
-    client)
+    client
+)
 USING
   (client)
 WHERE

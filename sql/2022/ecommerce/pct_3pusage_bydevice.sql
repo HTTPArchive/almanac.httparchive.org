@@ -21,18 +21,21 @@ FROM (
         app != 'Cart Functionality' AND
         app != 'Google Analytics Enhanced eCommerce'
       )
-    )
+  )
   USING
     (client, page)
   WHERE
     date = '2022-06-01' AND
     NET.HOST(url) IN
-    (SELECT domain
-            FROM `httparchive.almanac.third_parties`
-      WHERE category != 'hosting')
+    (
+      SELECT domain
+      FROM `httparchive.almanac.third_parties`
+      WHERE category != 'hosting'
+    )
   GROUP BY
     client,
-    page),
+    page
+),
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 GROUP BY
   percentile,

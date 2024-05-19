@@ -26,7 +26,8 @@ FROM (
     `httparchive.pages.2022_07_01_*` -- noqa: L062
   GROUP BY
     client,
-    page),
+    page
+),
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 GROUP BY
   percentile,

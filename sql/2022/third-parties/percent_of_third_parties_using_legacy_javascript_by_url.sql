@@ -23,13 +23,13 @@ base AS (
   SELECT
     client,
     page,
-    third_party_domains.domain AS domain,
+    third_party_domains.domain,
     url
   FROM
     (
       SELECT
         _TABLE_SUFFIX AS client,
-        data.url AS url,
+        data.url,
         NET.HOST(data.url) AS domain,
         lighthouse.url AS page
       FROM
@@ -56,7 +56,7 @@ SELECT
   pct
 FROM (
   SELECT
-    base.client AS client,
+    base.client,
     domain,
     url,
     COUNT(0) AS freq,
@@ -66,13 +66,13 @@ FROM (
   FROM
     base
   JOIN (
-      SELECT
-        _TABLE_SUFFIX AS client,
-        COUNT(DISTINCT url) AS total
-      FROM
-        `httparchive.lighthouse.2022_06_01_*`
-      GROUP BY
-        _TABLE_SUFFIX
+    SELECT
+      _TABLE_SUFFIX AS client,
+      COUNT(DISTINCT url) AS total
+    FROM
+      `httparchive.lighthouse.2022_06_01_*`
+    GROUP BY
+      _TABLE_SUFFIX
   )
   USING
     (client)

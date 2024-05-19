@@ -8,8 +8,10 @@ FROM
 WHERE
   date = '2022-06-01' AND
   type = 'font' AND
-  REGEXP_CONTAINS(JSON_EXTRACT(payload,
-      '$._font_details.table_sizes'), '(?i)gvar|CFF2')
+  REGEXP_CONTAINS(JSON_EXTRACT(
+    payload,
+    '$._font_details.table_sizes'
+  ), '(?i)gvar|CFF2')
 GROUP BY
   client,
   googlefonts

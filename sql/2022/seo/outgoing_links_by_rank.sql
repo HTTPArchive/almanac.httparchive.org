@@ -52,7 +52,7 @@ FROM (
   FROM
     `httparchive.pages.2022_07_01_*` -- noqa: L062
 ),
-UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
+  UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 LEFT JOIN (
   SELECT
     _TABLE_SUFFIX AS client,

@@ -47,7 +47,7 @@ FROM (
   WHERE
     date = '2022-06-01'
 ),
-UNNEST(cookie_values) AS cookie_value
+  UNNEST(cookie_values) AS cookie_value
 GROUP BY
   client,
   party

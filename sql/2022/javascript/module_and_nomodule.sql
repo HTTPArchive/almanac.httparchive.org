@@ -21,6 +21,6 @@ FROM (
   WHERE
     date = '2022-06-01' AND
     firstHtml
-  )
+)
 GROUP BY
   client

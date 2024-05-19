@@ -24,7 +24,7 @@ base AS (
   SELECT
     client,
     page,
-    potential_third_parties.domain AS domain,
+    potential_third_parties.domain,
     SUM(IF(third_party_domains.domain IS NOT NULL, potential_savings, 0)) AS potential_third_party_savings,
     SUM(IF(third_party_domains.domain IS NOT NULL, transfer_size, 0)) AS third_party_transfer_size
   FROM (

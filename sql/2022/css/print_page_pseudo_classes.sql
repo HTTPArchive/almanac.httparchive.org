@@ -63,17 +63,18 @@ SELECT
   SUM(COUNT(0)) OVER (PARTITION BY client) AS total_freq,
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct_freq
 FROM (
-    SELECT DISTINCT
-      client,
-      page,
-      pseudo_class
-    FROM
-      `httparchive.almanac.parsed_css`
-    LEFT JOIN
-      UNNEST(getSelectorParts(css)) AS pseudo_class
-    WHERE
-      date = '2022-07-01' AND
-      pseudo_class IS NOT NULL)
+  SELECT DISTINCT
+    client,
+    page,
+    pseudo_class
+  FROM
+    `httparchive.almanac.parsed_css`
+  LEFT JOIN
+    UNNEST(getSelectorParts(css)) AS pseudo_class
+  WHERE
+    date = '2022-07-01' AND
+    pseudo_class IS NOT NULL
+)
 JOIN
   totals
 USING

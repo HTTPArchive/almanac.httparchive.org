@@ -35,7 +35,8 @@ FROM (
     date = '2022-07-01'
   GROUP BY
     client,
-    font_override)
+    font_override
+)
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -43,7 +44,8 @@ JOIN (
   FROM
     `httparchive.summary_pages.2022_07_01_*` -- noqa: L062
   GROUP BY
-    client)
+    client
+)
 USING
   (client)
 ORDER BY

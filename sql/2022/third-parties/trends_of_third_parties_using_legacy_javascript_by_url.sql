@@ -29,7 +29,7 @@ base AS (
     SELECT
       year,
       page,
-      third_party_domains.domain AS domain
+      third_party_domains.domain
     FROM
       (
         SELECT
@@ -70,7 +70,7 @@ base AS (
     SELECT
       year,
       page,
-      third_party_domains.domain AS domain
+      third_party_domains.domain
     FROM
       (
         SELECT
@@ -111,7 +111,7 @@ base AS (
     SELECT
       year,
       page,
-      third_party_domains.domain AS domain
+      third_party_domains.domain
     FROM
       (
         SELECT

@@ -28,7 +28,7 @@ FROM (
   GROUP BY
     client,
     page
-  )
+)
 GROUP BY
   client,
   unminified_js_kbytes

@@ -22,7 +22,7 @@ return results;
 SELECT
   _TABLE_SUFFIX AS client,
   'PWA Sites' AS type,
-  audits.id AS id,
+  audits.id,
   COUNTIF(audits.score > 0) AS num_pages,
   COUNT(0) AS total,
   COUNTIF(audits.score IS NOT NULL) AS total_applicable,
@@ -52,7 +52,7 @@ UNION ALL
 SELECT
   _TABLE_SUFFIX AS client,
   'ALL Sites' AS type,
-  audits.id AS id,
+  audits.id,
   COUNTIF(audits.score > 0) AS num_pages,
   COUNT(0) AS total,
   COUNTIF(audits.score IS NOT NULL) AS total_applicable,

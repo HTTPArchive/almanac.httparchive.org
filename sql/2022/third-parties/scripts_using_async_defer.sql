@@ -36,7 +36,7 @@ base AS (
   SELECT
     client,
     page,
-    third_party_domains.domain AS domain,
+    third_party_domains.domain,
     COUNTIF(isAsync) AS async_count,
     COUNTIF(isDefer) AS defer_count
   FROM
@@ -44,8 +44,8 @@ base AS (
       SELECT
         _TABLE_SUFFIX AS client,
         NET.HOST(data.src) AS domain,
-        data.isAsync AS isAsync,
-        data.isDefer AS isDefer,
+        data.isAsync,
+        data.isDefer,
         pages.url AS page
       FROM
         `httparchive.pages.2022_06_01_*` AS pages,
@@ -62,7 +62,7 @@ base AS (
 )
 
 SELECT
-  base.client AS client,
+  base.client,
   COUNTIF(async_count > 0) AS freq_async,
   COUNTIF(defer_count > 0) AS freq_defer,
   COUNT(0) AS total,
