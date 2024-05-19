@@ -34,10 +34,11 @@ exclude_rules = L011,L014,L015,L016,L020,L022,L026,L027,L028,L029,L030,L031,L032
 # L051 - INNER JOIN must be fully qualified. Probably should use this but not our style.
 # L060 - Use COALESCE instead of IFNULL or NVL. We think ISNULL is clearer.
 # L071 - Turn off until https://github.com/sqlfluff/sqlfluff/issues/4188 is addressed
-# The depth to recursively parse to (0 for unlimited)
-recurse = 0
 # Below controls SQLFluff output, see max_line_length for SQL output
 output_line_length = 80
+
+# The maximum line length for SQL output
+max_line_length = 80
 # Number of passes to run before admitting defeat
 runaway_limit = 10
 # Ignore errors by category (one or more of the following, separated by commas: lexing,linting,parsing,templating)
@@ -69,11 +70,14 @@ processes = -1
 
 [sqlfluff:indentation]
 # See https://docs.sqlfluff.com/en/stable/indentation.html
+tab_space_size = 2
+indent_unit = space
 indented_joins = False
 indented_ctes = False
 indented_using_on = False
 indented_on_contents = True
 template_blocks_indent = True
+allow_implicit_indents = True
 
 # Layout configuration
 # See https://docs.sqlfluff.com/en/stable/layout.html#configuring-layout-and-spacing
@@ -134,60 +138,53 @@ apply_dbt_builtins = True
 
 # Some rules can be configured directly from the config common to other rules
 [sqlfluff:rules]
-tab_space_size = 2
-max_line_length = 80
-indent_unit = space
 allow_scalar = True
 single_table_references = consistent
 unquoted_identifiers_policy = all
 
-# Some rules have their own specific config.
-[sqlfluff:rules:L003]
-hanging_indents = True
-
-[sqlfluff:rules:L010]
+[sqlfluff:rules:capitalisation.keywords]
 # Keywords
 capitalisation_policy = upper
 # Comma separated list of words to ignore for this rule
 ignore_words = None
 ignore_words_regex = None
 
-[sqlfluff:rules:L011]
+[sqlfluff:rules:aliasing.table]
 # Aliasing preference for tables
 aliasing = explicit
 
-[sqlfluff:rules:L012]
+[sqlfluff:rules:aliasing.column]
 # Aliasing preference for columns
 aliasing = explicit
 
-[sqlfluff:rules:L014]
+[sqlfluff:rules:capitalisation.identifiers]
 # Unquoted identifiers
 extended_capitalisation_policy = consistent
 # Comma separated list of words to ignore for this rule
 ignore_words = None
 ignore_words_regex = None
 
-[sqlfluff:rules:L016]
+[sqlfluff:rules:layout.long_lines]
 # Line length
 ignore_comment_lines = False
 ignore_comment_clauses = False
 
-[sqlfluff:rules:L027]
+[sqlfluff:rules:references.qualification]
 # Comma separated list of words to ignore for this rule
 ignore_words = None
 ignore_words_regex = None
 
-[sqlfluff:rules:L026]
+[sqlfluff:rules:references.from]
 # References must be in FROM clause
 # Disabled for some dialects (e.g. bigquery)
 force_enable = False
 
-[sqlfluff:rules:L028]
+[sqlfluff:rules:references.consistent]
 # References must be consistently used
 # Disabled for some dialects (e.g. bigquery)
 force_enable = False
 
-[sqlfluff:rules:L029]
+[sqlfluff:rules:references.keywords]
 # Keywords should not be used as identifiers.
 unquoted_identifiers_policy = aliases
 quoted_identifiers_policy = none
@@ -195,55 +192,55 @@ quoted_identifiers_policy = none
 ignore_words = None
 ignore_words_regex = None
 
-[sqlfluff:rules:L030]
+[sqlfluff:rules:capitalisation.functions]
 # Function names
 extended_capitalisation_policy = consistent
 # Comma separated list of words to ignore for this rule
 ignore_words = None
 ignore_words_regex = None
 
-[sqlfluff:rules:L031]
+[sqlfluff:rules:aliasing.forbid]
 # Avoid table aliases in from clauses and join conditions.
 # Disabled for some dialects (e.g. bigquery)
 force_enable = False
 
-[sqlfluff:rules:L036]
+[sqlfluff:rules:layout.select_targets]
 wildcard_policy = single
 
-[sqlfluff:rules:L038]
+[sqlfluff:rules:convention.select_trailing_comma]
 # Trailing commas
 select_clause_trailing_comma = forbid
 
-[sqlfluff:rules:L040]
+[sqlfluff:rules:capitalisation.literals]
 # Null & Boolean Literals
 capitalisation_policy = consistent
 # Comma separated list of words to ignore for this rule
 ignore_words = None
 ignore_words_regex = None
 
-[sqlfluff:rules:L042]
+[sqlfluff:rules:structure.subquery]
 # By default, allow subqueries in from clauses, but not join clauses
 forbid_subquery_in = join
 
-[sqlfluff:rules:L047]
+[sqlfluff:rules:convention.count_rows]
 # Consistent syntax to count all rows
 prefer_count_1 = False
 prefer_count_0 = True
 
-[sqlfluff:rules:L051]
+[sqlfluff:rules:ambiguous.join]
 # Fully qualify JOIN clause
 fully_qualify_join_types = inner
 
-[sqlfluff:rules:L052]
+[sqlfluff:rules:convention.terminator]
 # Semi-colon formatting approach
 multiline_newline = False
 require_final_semicolon = False
 
-[sqlfluff:rules:L054]
+[sqlfluff:rules:ambiguous.column_references]
 # GROUP BY/ORDER BY column references
 group_by_and_order_by_style = consistent
 
-[sqlfluff:rules:L057]
+[sqlfluff:rules:references.special_chars]
 ## Special characters in identifiers
 unquoted_identifiers_policy = all
 quoted_identifiers_policy = all
@@ -252,14 +249,14 @@ additional_allowed_characters = "-."
 ignore_words = None
 ignore_words_regex = None
 
-[sqlfluff:rules:L059]
+[sqlfluff:rules:references.quoting]
 # Policy on quoted and unquoted identifiers
 prefer_quoted_identifiers = False
 ignore_words = None
 ignore_words_regex = None
 force_enable = False
 
-[sqlfluff:rules:L062]
+[sqlfluff:rules:convention.blocked_words]
 # Comma separated list of blocked words that should not be used
 blocked_words = None
 # Regex of blocked SQL that should not be used.
@@ -272,19 +269,19 @@ blocked_words = None
 # Block 2021_06_01 (probably forgot to update month to July for 2021)
 blocked_regex = (TABLESAMPLE|sample_data|2022_?05_?12|2022_?06_?09|2022_?07_?01|2021_?06_?01)
 
-[sqlfluff:rules:L063]
+[sqlfluff:rules:capitalisation.types]
 # Data Types
 extended_capitalisation_policy = upper
 # Comma separated list of words to ignore for this rule
 ignore_words = None
 ignore_words_regex = None
 
-[sqlfluff:rules:L064]
+[sqlfluff:rules:convention.quoted_literals]
 # Consistent usage of preferred quotes for quoted literals
 preferred_quoted_literal_style = single_quotes
 # Disabled for dialects that do not support single and double quotes for quoted literals (e.g. Postgres)
 force_enable = False
 
-[sqlfluff:rules:L066]
+[sqlfluff:rules:aliasing.length]
 min_alias_length = None
 max_alias_length = None
