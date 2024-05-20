@@ -4,10 +4,10 @@
 # https://stackoverflow.com/a/65054751/7391782
 # Warning: fails if there are colons in the keys/values, but these are not expected
 
-CREATE TEMPORARY FUNCTION ExtractKeyValuePairs(input STRING) RETURNS ARRAY < STRUCT <
+CREATE TEMPORARY FUNCTION ExtractKeyValuePairs(input STRING) RETURNS ARRAY<STRUCT<
   key STRING,
   value STRING
-> > AS (
+>> AS (
   (
     SELECT
       ARRAY(
