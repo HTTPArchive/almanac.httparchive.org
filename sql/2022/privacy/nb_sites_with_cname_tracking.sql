@@ -25,7 +25,7 @@ WITH websites_using_cname_tracking AS (
 
 totals AS (
   SELECT
-    _TABLE_SUFFIX AS _TABLE_SUFFIX,
+    _TABLE_SUFFIX,
     count(0) AS total_pages
   FROM
     `httparchive.summary_pages.2022_06_01_*`
