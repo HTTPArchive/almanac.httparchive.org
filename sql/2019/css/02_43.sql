@@ -46,11 +46,11 @@ SELECT
 FROM (
   SELECT
     client,
-    COUNTIF(type.`=`) AS equals, -- noqa: L057
-    COUNTIF(type.`*=`) AS star_equals, -- noqa: L057
-    COUNTIF(type.`^=`) AS caret_equals, -- noqa: L057
-    COUNTIF(type.`$=`) AS dollar_equals, -- noqa: L057
-    COUNTIF(type.`~=`) AS tilde_equals -- noqa: L057
+    COUNTIF(type.`=`) AS equals, -- noqa: RF05
+    COUNTIF(type.`*=`) AS star_equals, -- noqa: RF05
+    COUNTIF(type.`^=`) AS caret_equals, -- noqa: RF05
+    COUNTIF(type.`$=`) AS dollar_equals, -- noqa: RF05
+    COUNTIF(type.`~=`) AS tilde_equals -- noqa: RF05
   FROM (
     SELECT
       client,

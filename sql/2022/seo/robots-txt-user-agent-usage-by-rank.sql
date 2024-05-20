@@ -29,7 +29,7 @@ WITH totals AS (
     COUNT(DISTINCT pageid) AS pages,
     COUNT(0) AS rank_page_count
   FROM
-    `httparchive.summary_pages.2022_07_01_*`, -- noqa: L062
+    `httparchive.summary_pages.2022_07_01_*`, -- noqa: CV09
     UNNEST([1000, 10000, 100000, 1000000, 10000000, 100000000]) AS rank_grouping
   WHERE
     rank <= rank_grouping
@@ -44,7 +44,7 @@ robots AS (
     url,
     getRobotsTxtUserAgents(JSON_EXTRACT_SCALAR(payload, '$._robots_txt')) AS robots_txt_user_agent_info
   FROM
-    `httparchive.pages.2022_07_01_*` -- noqa: L062
+    `httparchive.pages.2022_07_01_*` -- noqa: CV09
 ),
 
 base AS (
@@ -57,7 +57,7 @@ base AS (
     robots,
     UNNEST(robots_txt_user_agent_info.user_agents) AS user_agent
   JOIN
-    `httparchive.summary_pages.2022_07_01_*` -- noqa: L062
+    `httparchive.summary_pages.2022_07_01_*` -- noqa: CV09
   USING (_TABLE_SUFFIX, url)
 )
 

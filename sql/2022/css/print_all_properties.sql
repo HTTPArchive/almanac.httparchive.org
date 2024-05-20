@@ -50,7 +50,7 @@ WITH print_stylesheets AS (
     url AS page,
     css_url AS url
   FROM
-    `httparchive.pages.2022_07_01_*`, -- noqa: L062
+    `httparchive.pages.2022_07_01_*`, -- noqa: CV09
     UNNEST(getPrintStylesheets(payload)) AS css_url
 ),
 

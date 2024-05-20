@@ -23,7 +23,7 @@ FROM (
     url AS page,
     SUM(getCustomFunctionCount(payload)) AS fn
   FROM
-    `httparchive.pages.2022_07_01_*` -- noqa: L062
+    `httparchive.pages.2022_07_01_*` -- noqa: CV09
   GROUP BY
     client,
     page),

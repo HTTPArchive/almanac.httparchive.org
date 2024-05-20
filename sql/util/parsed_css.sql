@@ -5,6 +5,6 @@ SELECT
   url,
   css
 FROM
-  `httparchive.experimental_parsed_css.2022_07_01_*` -- noqa: L062
+  `httparchive.experimental_parsed_css.2022_07_01_*` -- noqa: CV09
 WHERE
   is_root_page

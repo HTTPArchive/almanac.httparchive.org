@@ -70,7 +70,7 @@ FROM (
     url,
     get_markup_info(JSON_EXTRACT_SCALAR(payload, '$._markup')) AS markup_info
   FROM
-    `httparchive.pages.2022_07_01_*`, -- noqa: L062
+    `httparchive.pages.2022_07_01_*`, -- noqa: CV09
     UNNEST([10, 25, 50, 75, 90]) AS percentile
 )
 GROUP BY

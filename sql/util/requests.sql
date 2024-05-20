@@ -197,7 +197,7 @@ SELECT
   page,
   rank,
   url,
-  getSummary(payload).*, -- noqa: L013
+  getSummary(payload).*, -- noqa: AL03
   JSON_EXTRACT(payload, '$.request.headers') AS request_headers,
   JSON_EXTRACT(payload, '$.response.headers') AS response_headers,
   payload
