@@ -11,7 +11,8 @@ FROM (
   FROM
     `httparchive.summary_requests.2019_07_01_*`
   WHERE
-    firstHtml),
+    firstHtml
+),
   UNNEST([10, 25, 50, 75, 90]) AS percentile
 WHERE
   max_age IS NOT NULL

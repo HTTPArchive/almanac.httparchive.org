@@ -164,7 +164,8 @@ FROM (
     _TABLE_SUFFIX AS client,
     getCanonicalMetrics(payload) AS canonical_metrics
   FROM
-    `httparchive.pages.2021_07_01_*`)
+    `httparchive.pages.2021_07_01_*`
+)
 
 -- Only reporting where wpt_bodies sucessfully extracted. ~20/100,000 pages missing wpt_bodies.
 WHERE

@@ -14,6 +14,7 @@ FROM (
     device = 'phone' AND
     yyyymm = '201907'
   ORDER BY
-    small_cls DESC)
+    small_cls DESC
+)
 WHERE
   MOD(row, 5229) = 0

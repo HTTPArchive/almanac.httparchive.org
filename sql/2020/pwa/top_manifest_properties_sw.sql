@@ -29,7 +29,7 @@ FROM (
     (date, client, page)
   WHERE
     date = '2020-08-01'
-  ),
+),
   UNNEST(properties) AS property
 GROUP BY
   client,

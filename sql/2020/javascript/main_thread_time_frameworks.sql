@@ -21,7 +21,8 @@ FROM (
     url AS page,
     totalMainThreadTime(payload) AS v8_time
   FROM
-    `httparchive.pages.2020_08_01_*`)
+    `httparchive.pages.2020_08_01_*`
+)
 JOIN (
   SELECT DISTINCT
     _TABLE_SUFFIX AS client,
@@ -30,7 +31,8 @@ JOIN (
   FROM
     `httparchive.technologies.2020_08_01_*`
   WHERE
-    category = 'JavaScript frameworks')
+    category = 'JavaScript frameworks'
+)
 USING
   (client, page),
   UNNEST([10, 25, 50, 75, 90]) AS percentile

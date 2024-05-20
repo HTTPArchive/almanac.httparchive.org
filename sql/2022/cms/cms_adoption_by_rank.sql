@@ -15,14 +15,16 @@ FROM (
   FROM
     `httparchive.technologies.2022_06_01_*`
   WHERE
-    category = 'CMS')
+    category = 'CMS'
+)
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
     url,
     rank
   FROM
-    `httparchive.summary_pages.2022_06_01_*`)
+    `httparchive.summary_pages.2022_06_01_*`
+)
 USING
   (client, url)
 JOIN (
@@ -37,7 +39,8 @@ JOIN (
     rank <= rank_magnitude
   GROUP BY
     _TABLE_SUFFIX,
-    rank_magnitude)
+    rank_magnitude
+)
 USING
   (client, rank),
   UNNEST([1e3, 1e4, 1e5, 1e6, 1e7]) AS rank_magnitude

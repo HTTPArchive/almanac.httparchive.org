@@ -20,14 +20,16 @@ FROM (
     `httparchive.almanac.requests`
   WHERE
     date = '2021-07-01' AND
-    firstHtml)
+    firstHtml
+)
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
     url AS page,
     _connections
   FROM
-    `httparchive.summary_pages.2021_07_01_*`)
+    `httparchive.summary_pages.2021_07_01_*`
+)
 USING
   (client, page),
   UNNEST([10, 25, 50, 75, 90]) AS percentile

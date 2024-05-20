@@ -1,5 +1,5 @@
 #standardSQL
-  # distribution_of_compression_types_by_cdn.sql : What compression formats are being used (gzip, brotli, etc) for compressed resources served by CDNs
+# distribution_of_compression_types_by_cdn.sql : What compression formats are being used (gzip, brotli, etc) for compressed resources served by CDNs
 
 SELECT
   client,
@@ -23,7 +23,7 @@ FROM (
   WHERE
     date = '2021-07-01' AND
     resp_content_encoding != ''
-  )
+)
 GROUP BY
   client,
   cdn,

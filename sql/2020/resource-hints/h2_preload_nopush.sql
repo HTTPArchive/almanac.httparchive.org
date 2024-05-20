@@ -31,7 +31,8 @@ FROM (
   FROM
     `httparchive.almanac.requests`
   WHERE
-    date = '2020-08-01'),
+    date = '2020-08-01'
+),
   UNNEST(link_headers) AS link_header
 WHERE
   link_header LIKE '%preload%' AND

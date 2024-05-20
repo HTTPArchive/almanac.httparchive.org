@@ -46,7 +46,8 @@ FROM (
       `httparchive.almanac.parsed_css`,
       UNNEST(getBorderBoxSelectors(css)) AS selector
     WHERE
-      date = '2021-07-01')
+      date = '2021-07-01'
+  )
   JOIN (
     SELECT
       _TABLE_SUFFIX AS client,
@@ -54,12 +55,14 @@ FROM (
     FROM
       `httparchive.summary_pages.2021_07_01_*`
     GROUP BY
-      client)
+      client
+  )
   USING
     (client)
   GROUP BY
     client,
-    selector)
+    selector
+)
 ORDER BY
   pct DESC
 LIMIT 1000

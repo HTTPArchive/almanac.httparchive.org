@@ -19,7 +19,8 @@ FROM (
     feature IN ('CSSAtRuleImport', 'CSSAtRuleSupports')
   GROUP BY
     client,
-    feature)
+    feature
+)
 JOIN
   (SELECT _TABLE_SUFFIX AS client, COUNT(0) AS total FROM `httparchive.summary_pages.2019_07_01_*` GROUP BY client)
 USING

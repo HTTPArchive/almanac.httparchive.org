@@ -188,7 +188,8 @@ FROM (
     `httparchive.almanac.parsed_css`,
     UNNEST(getP3Usage(css)) AS p3
   WHERE
-    date = '2022-07-01')
+    date = '2022-07-01'
+)
 JOIN
   totals
 USING

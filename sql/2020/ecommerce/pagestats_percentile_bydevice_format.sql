@@ -19,7 +19,8 @@ FROM (
       _TABLE_SUFFIX AS client,
       url AS page
     FROM `httparchive.technologies.2020_08_01_*`
-    WHERE category = 'Ecommerce')
+    WHERE category = 'Ecommerce'
+  )
   USING
     (client, page)
   WHERE
@@ -27,7 +28,8 @@ FROM (
   GROUP BY
     client,
     type,
-    page),
+    page
+),
   UNNEST([10, 25, 50, 75, 90]) AS percentile
 GROUP BY
   percentile,

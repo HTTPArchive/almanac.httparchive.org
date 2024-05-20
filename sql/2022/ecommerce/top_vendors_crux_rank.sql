@@ -28,7 +28,7 @@ FROM (
       app != 'Cart Functionality' AND
       app != 'Google Analytics Enhanced eCommerce'
     )
-  )
+)
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -42,7 +42,8 @@ JOIN (
   GROUP BY
     client,
     url,
-    rank_grouping)
+    rank_grouping
+)
 USING
   (client, url)
 JOIN (
@@ -57,7 +58,8 @@ JOIN (
     rank <= rank_grouping
   GROUP BY
     rank_grouping,
-    client)
+    client
+)
 USING
   (client, rank_grouping)
 GROUP BY

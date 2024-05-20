@@ -66,7 +66,7 @@ FROM (
     canonicalDomain,
     page,
     category
-  )
+)
 INNER JOIN
   total_third_party_usage
 USING (canonicalDomain, category),

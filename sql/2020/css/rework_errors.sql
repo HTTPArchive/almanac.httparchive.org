@@ -14,7 +14,8 @@ FROM (
     date = '2020-08-01' AND
     type = 'css'
   GROUP BY
-    client)
+    client
+)
 JOIN (
   SELECT
     client,
@@ -25,6 +26,7 @@ JOIN (
     date = '2020-08-01' AND
     url != 'inline'
   GROUP BY
-    client)
+    client
+)
 USING
   (client)

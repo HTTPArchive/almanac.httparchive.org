@@ -187,7 +187,8 @@ FROM (
     `httparchive.almanac.parsed_css`,
     UNNEST(getColorFormats(css)) AS format
   WHERE
-    date = '2021-07-01')
+    date = '2021-07-01'
+)
 GROUP BY
   client,
   format

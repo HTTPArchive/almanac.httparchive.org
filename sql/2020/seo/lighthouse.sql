@@ -4,7 +4,7 @@
 # live run is about $9
 
 # helper to create percent fields
-CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
+CREATE TEMP FUNCTION AS_PERCENT(freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
   ROUND(SAFE_DIVIDE(freq, total), 4)
 );
 
@@ -65,14 +65,14 @@ SELECT
   COUNTIF(is_crawlable_details.disallow AND is_crawlable_details.noindex) AS disallow_noindex,
   AS_PERCENT(COUNTIF(is_crawlable_details.disallow AND is_crawlable_details.noindex), COUNT(0)) AS pct_disallow_noindex,
 
-  COUNTIF(NOT(is_crawlable_details.disallow) AND NOT(is_crawlable_details.noindex)) AS allow_index,
-  AS_PERCENT(COUNTIF(NOT(is_crawlable_details.disallow) AND NOT(is_crawlable_details.noindex)), COUNT(0)) AS pct_allow_index,
+  COUNTIF(NOT (is_crawlable_details.disallow) AND NOT (is_crawlable_details.noindex)) AS allow_index,
+  AS_PERCENT(COUNTIF(NOT (is_crawlable_details.disallow) AND NOT (is_crawlable_details.noindex)), COUNT(0)) AS pct_allow_index,
 
-  COUNTIF(is_crawlable_details.disallow AND NOT(is_crawlable_details.noindex)) AS disallow_index,
-  AS_PERCENT(COUNTIF(is_crawlable_details.disallow AND NOT(is_crawlable_details.noindex)), COUNT(0)) AS pct_disallow_index,
+  COUNTIF(is_crawlable_details.disallow AND NOT (is_crawlable_details.noindex)) AS disallow_index,
+  AS_PERCENT(COUNTIF(is_crawlable_details.disallow AND NOT (is_crawlable_details.noindex)), COUNT(0)) AS pct_disallow_index,
 
-  COUNTIF(NOT(is_crawlable_details.disallow) AND is_crawlable_details.noindex) AS allow_noindex,
-  AS_PERCENT(COUNTIF(NOT(is_crawlable_details.disallow) AND is_crawlable_details.noindex), COUNT(0)) AS pct_allow_noindex
+  COUNTIF(NOT (is_crawlable_details.disallow) AND is_crawlable_details.noindex) AS allow_noindex,
+  AS_PERCENT(COUNTIF(NOT (is_crawlable_details.disallow) AND is_crawlable_details.noindex), COUNT(0)) AS pct_allow_noindex
 FROM (
   SELECT
     JSON_EXTRACT_SCALAR(report, '$.audits.is-crawlable.score') = '1' AS is_crawlable,

@@ -65,7 +65,7 @@ FROM (
   )
   USING
     (_TABLE_SUFFIX)
-  )
+)
 GROUP BY
   client,
   links_same_site,

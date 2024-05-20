@@ -1,7 +1,7 @@
 #standardSQL
 # pages almanac metrics grouped by device and element attribute use (frequency)
 
-CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
+CREATE TEMP FUNCTION AS_PERCENT(freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
   ROUND(SAFE_DIVIDE(freq, total), 4)
 );
 

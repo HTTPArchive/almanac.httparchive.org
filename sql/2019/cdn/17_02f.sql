@@ -12,7 +12,9 @@ FROM
       client,
       page,
       COUNTIF(
-        NET.HOST(url) IN ('unpkg.com',
+        NET.HOST(
+          url) IN (
+          'unpkg.com',
           'www.jsdelivr.net',
           'cdnjs.cloudflare.com',
           'ajax.aspnetcdn.com',
@@ -21,7 +23,8 @@ FROM
           'maxcdn.bootstrapcdn.com',
           'use.fontawesome.com',
           'code.jquery.com',
-          'fonts.googleapis.com')
+          'fonts.googleapis.com'
+        )
       ) AS jscdnHits
     FROM `httparchive.almanac.requests3`
     GROUP BY

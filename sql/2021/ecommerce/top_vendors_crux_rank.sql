@@ -21,7 +21,8 @@ FROM (
   WHERE
     category = 'Ecommerce' AND
     app != 'Cart Functionality' AND
-    app != 'Google Analytics Enhanced eCommerce')
+    app != 'Google Analytics Enhanced eCommerce'
+)
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -29,7 +30,8 @@ JOIN (
   FROM
     `httparchive.summary_pages.2021_07_01_*`
   GROUP BY
-    client)
+    client
+)
 USING
   (client)
 JOIN (
@@ -44,7 +46,8 @@ JOIN (
     rank <= rank_magnitude
   GROUP BY
     client,
-    url)
+    url
+)
 USING
   (client, url)
 GROUP BY

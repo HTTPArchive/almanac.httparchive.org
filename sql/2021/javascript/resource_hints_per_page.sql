@@ -44,7 +44,8 @@ FROM (
     UNNEST(getResourceHintAttrs(payload)) AS hint
   GROUP BY
     client,
-    page),
+    page
+),
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 GROUP BY
   percentile,

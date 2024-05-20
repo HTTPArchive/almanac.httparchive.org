@@ -38,7 +38,8 @@ LEFT JOIN
       IFNULL(JSON_EXTRACT_SCALAR(payload, '$._protocol'), IFNULL(NULLIF(JSON_EXTRACT_SCALAR(payload, '$._tls_next_proto'), 'unknown'), NULLIF(concat('HTTP/', JSON_EXTRACT_SCALAR(payload, '$.response.httpVersion')), 'HTTP/'))) IS NOT NULL AND
       jSON_EXTRACT(payload, '$._socket') IS NOT NULL
     GROUP BY client, page, socket
-  ) b ON (a.client = b.client AND a.page = b.page AND a.socket = b.socket)
+  ) b
+ON (a.client = b.client AND a.page = b.page AND a.socket = b.socket)
 
 GROUP BY
   client,

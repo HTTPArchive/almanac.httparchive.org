@@ -33,10 +33,10 @@ FROM (
     FROM
       `httparchive.lighthouse.2022_06_01_*` AS lighthouse,
       UNNEST(getUnminifiedJsUrls(JSON_EXTRACT(report, "$.audits['unminified-javascript']"))) AS unminified
-    )
+  )
   GROUP BY
     client,
     page
-  )
+)
 GROUP BY
   client

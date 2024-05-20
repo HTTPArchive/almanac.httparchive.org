@@ -14,14 +14,16 @@ FROM (
   FROM
     `httparchive.technologies.2021_07_01_*`
   WHERE
-    category = 'CMS')
+    category = 'CMS'
+)
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
     url,
     bytesTotal / 1024 AS total_kb
   FROM
-    `httparchive.summary_pages.2021_07_01_*`)
+    `httparchive.summary_pages.2021_07_01_*`
+)
 USING
   (client, url),
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile

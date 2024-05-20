@@ -1,5 +1,5 @@
 #standardSQL
-  # compression_format_trend.sql : What compression formats are being used (gzip, brotli, etc)
+# compression_format_trend.sql : What compression formats are being used (gzip, brotli, etc)
 SELECT
   EXTRACT(YEAR FROM date) AS year,
   client,

@@ -67,12 +67,12 @@ SELECT
   COUNTIF(CrUX.largest_contentful_paint IS NOT NULL AND CrUX.cumulative_layout_shift IS NOT NULL) AS eligible_cwv,
   COUNTIF(CrUX.largest_contentful_paint AND CrUX.first_input_delay IS NOT FALSE AND CrUX.cumulative_layout_shift) / COUNTIF(CrUX.largest_contentful_paint IS NOT NULL AND CrUX.cumulative_layout_shift IS NOT NULL) AS pct_cwv_good
 FROM (
-    SELECT
-      _TABLE_SUFFIX AS device,
-      getResourceHints(payload) AS hints,
-      getGoodCwv(payload) AS CrUX
-    FROM
-      `httparchive.pages.2021_07_01_*`
+  SELECT
+    _TABLE_SUFFIX AS device,
+    getResourceHints(payload) AS hints,
+    getGoodCwv(payload) AS CrUX
+  FROM
+    `httparchive.pages.2021_07_01_*`
 )
 WHERE
   CrUX IS NOT NULL

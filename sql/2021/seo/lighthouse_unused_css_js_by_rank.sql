@@ -15,7 +15,8 @@ FROM (
     rank
   FROM
     `httparchive.summary_pages.2021_07_01_*`
-  WHERE _TABLE_SUFFIX = 'mobile')
+  WHERE _TABLE_SUFFIX = 'mobile'
+)
 
 LEFT JOIN (
   SELECT
@@ -24,7 +25,8 @@ LEFT JOIN (
     SAFE_DIVIDE(CAST(JSON_EXTRACT_SCALAR(report, '$.audits.unused-javascript.details.overallSavingsBytes') AS INT64), 1024) AS unused_javascript,
     SAFE_DIVIDE(CAST(JSON_EXTRACT_SCALAR(report, '$.audits.unused-css-rules.details.overallSavingsBytes') AS INT64), 1024) AS unused_css_rules
   FROM
-    `httparchive.lighthouse.2021_07_01_*`)
+    `httparchive.lighthouse.2021_07_01_*`
+)
 
 USING
   (client, page),

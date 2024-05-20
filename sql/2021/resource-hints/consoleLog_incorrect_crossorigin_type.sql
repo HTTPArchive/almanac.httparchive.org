@@ -2,7 +2,7 @@
 # returns the file types for preload tags without the required crossorigin attribute
 
 # helper to convert the href into a type
-CREATE TEMPORARY FUNCTION getType (href STRING) RETURNS STRING AS (
+CREATE TEMPORARY FUNCTION getType(href STRING) RETURNS STRING AS (
   IF(
     REGEXP_CONTAINS(href, r'fonts\.googleapis\.com'),
     'fonts.googleapis.com',

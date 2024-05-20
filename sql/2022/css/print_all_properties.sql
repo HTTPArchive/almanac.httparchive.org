@@ -91,7 +91,8 @@ FROM (
     date = '2022-07-01'
   GROUP BY
     client,
-    prop)
+    prop
+)
 WHERE
   pages >= 1000
 ORDER BY

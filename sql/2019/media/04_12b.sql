@@ -33,6 +33,7 @@ FROM (
     type = 'image'
   GROUP BY
     client,
-    page)
+    page
+)
 GROUP BY
   client

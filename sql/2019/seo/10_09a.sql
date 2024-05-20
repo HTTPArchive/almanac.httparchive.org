@@ -15,7 +15,8 @@ FROM (
     CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._almanac'), "$['seo-titles'].titleWords") AS INT64) AS header_words_count,
     CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._almanac'), "$['seo-titles'].titleElements") AS INT64) AS header_elements
   FROM
-    `httparchive.pages.2019_07_01_*`),
+    `httparchive.pages.2019_07_01_*`
+),
   UNNEST([10, 25, 50, 75, 90]) AS percentile
 GROUP BY
   percentile,

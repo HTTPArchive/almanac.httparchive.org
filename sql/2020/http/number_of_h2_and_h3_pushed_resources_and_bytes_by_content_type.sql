@@ -31,7 +31,8 @@ FROM (
     client,
     http_version,
     page,
-    type),
+    type
+),
   UNNEST([10, 25, 50, 75, 90]) AS percentile
 GROUP BY
   percentile,

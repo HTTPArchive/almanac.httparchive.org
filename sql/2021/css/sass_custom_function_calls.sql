@@ -32,10 +32,12 @@ FROM (
       fn.freq
     FROM
       `httparchive.pages.2021_07_01_*`,
-      UNNEST(getCustomFunctionCalls(payload)) AS fn)
+      UNNEST(getCustomFunctionCalls(payload)) AS fn
+  )
   GROUP BY
     client,
-    fn)
+    fn
+)
 WHERE
   freq >= 1000
 ORDER BY

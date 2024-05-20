@@ -14,7 +14,8 @@ FROM (
     _TABLE_SUFFIX AS client,
     CAST(JSON_EXTRACT(payload, '$._score_progressive_jpeg') AS NUMERIC) AS score
   FROM
-    `httparchive.pages.2020_08_01_*`)
+    `httparchive.pages.2020_08_01_*`
+)
 GROUP BY
   client
 ORDER BY

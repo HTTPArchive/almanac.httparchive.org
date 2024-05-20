@@ -1,7 +1,7 @@
 #standardSQL
 #popular_typeface
 CREATE TEMPORARY FUNCTION getFontFamilies(css STRING)
-RETURNS ARRAY <STRING> LANGUAGE js AS '''
+RETURNS ARRAY<STRING> LANGUAGE js AS '''
 try {
   var $ = JSON.parse(css);
   return $.stylesheet.rules.filter(rule => rule.type == 'font-face').map(rule => {
@@ -31,7 +31,8 @@ FROM (
     date = '2021-07-01'
   GROUP BY
     client,
-    font_family)
+    font_family
+)
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -39,7 +40,8 @@ JOIN (
   FROM
     `httparchive.summary_pages.2021_07_01_*`
   GROUP BY
-    client)
+    client
+)
 USING
   (client)
 WHERE

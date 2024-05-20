@@ -24,7 +24,8 @@ FROM (
       FROM
         `httparchive.summary_pages.2020_08_01_*`
       GROUP BY
-        _TABLE_SUFFIX)
+        _TABLE_SUFFIX
+    )
     USING
       (_TABLE_SUFFIX)
     WHERE
@@ -32,11 +33,13 @@ FROM (
     GROUP BY
       client,
       url,
-      total)
+      total
+  )
   GROUP BY
     client,
     apps,
-    total)
+    total
+)
 WHERE
   pages >= 10000
 ORDER BY

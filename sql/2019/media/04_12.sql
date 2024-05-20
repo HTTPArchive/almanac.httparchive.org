@@ -33,7 +33,8 @@ FROM (
     type = 'image'
   GROUP BY
     client,
-    page)
+    page
+)
 JOIN
   (SELECT _TABLE_SUFFIX AS client, COUNT(0) AS total FROM `httparchive.summary_pages.2019_07_01_*` GROUP BY _TABLE_SUFFIX)
 USING (client)

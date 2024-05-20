@@ -61,7 +61,8 @@ FROM (
     date = '2019-07-01'
   GROUP BY
     client,
-    unit)
+    unit
+)
 JOIN
   (SELECT _TABLE_SUFFIX AS client, COUNT(0) AS total FROM `httparchive.summary_pages.2019_07_01_*` GROUP BY client)
 USING

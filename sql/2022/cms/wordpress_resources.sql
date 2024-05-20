@@ -26,7 +26,8 @@ FROM (
     page,
     path
   HAVING
-    path IS NOT NULL),
+    path IS NOT NULL
+),
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 GROUP BY
   percentile,

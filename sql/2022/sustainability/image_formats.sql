@@ -33,7 +33,8 @@ FROM (
   WHERE
     date = '2022-06-01' AND
     type = 'image' AND
-    respSize > 1500)
+    respSize > 1500
+)
 GROUP BY
   client,
   trueFormat

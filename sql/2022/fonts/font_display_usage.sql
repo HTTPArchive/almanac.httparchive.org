@@ -1,7 +1,7 @@
 CREATE TEMPORARY FUNCTION getFontDisplay(json STRING)
-RETURNS ARRAY < STRING >
+RETURNS ARRAY<STRING>
 LANGUAGE js
-OPTIONS(library = "gs://httparchive/lib/css-utils.js")
+OPTIONS (library = "gs://httparchive/lib/css-utils.js")
 AS '''
 try {
   const ast = JSON.parse(json);
@@ -37,7 +37,8 @@ FROM (
     date = '2022-07-01'
   GROUP BY
     client,
-    font_display)
+    font_display
+)
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -45,7 +46,8 @@ JOIN (
   FROM
     `httparchive.summary_pages.2022_07_01_*` -- noqa: CV09
   GROUP BY
-    client)
+    client
+)
 USING
   (client)
 ORDER BY

@@ -20,7 +20,8 @@ FROM (
       url AS page
     FROM `httparchive.technologies.2020_08_01_*`
     WHERE
-      category = 'Ecommerce')
+      category = 'Ecommerce'
+  )
   USING
     (client, page)
   JOIN
@@ -32,7 +33,8 @@ FROM (
   GROUP BY
     client,
     category,
-    page),
+    page
+),
 
   UNNEST([10, 25, 50, 75, 90]) AS percentile
 GROUP BY

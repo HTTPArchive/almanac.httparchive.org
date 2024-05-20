@@ -21,13 +21,15 @@ FROM (
     UNNEST(REGEXP_EXTRACT_ALL(LOWER(resp_cache_control), r'([a-z][^,\s="\']*)')) AS directive_name
   GROUP BY
     client,
-    directive_name)
+    directive_name
+)
 WHERE
   directive_name NOT IN (
     'max-age', 'public', 'no-cache', 'must-revalidate', 'no-store',
     'private', 'proxy-revalidate', 's-maxage', 'no-transform',
     'immutable', 'stale-while-revalidate', 'stale-if-error',
-    'pre-check', 'post-check')
+    'pre-check', 'post-check'
+  )
 ORDER BY
   client,
   directive_occurrences DESC

@@ -26,7 +26,8 @@ FROM (
     sass_custom_function
   FROM
     `httparchive.pages.2022_07_01_*`, -- noqa: CV09
-    UNNEST(getCustomFunctionNames(payload)) AS sass_custom_function)
+    UNNEST(getCustomFunctionNames(payload)) AS sass_custom_function
+)
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -34,7 +35,8 @@ JOIN (
   FROM
     `httparchive.pages.2022_07_01_*` -- noqa: CV09
   GROUP BY
-    client)
+    client
+)
 USING
   (client)
 GROUP BY

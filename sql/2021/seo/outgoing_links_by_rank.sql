@@ -48,7 +48,7 @@ FROM (
   FROM
     `httparchive.pages.2021_07_01_*`
 ),
-UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
+  UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 LEFT JOIN (
   SELECT
     _TABLE_SUFFIX AS client,

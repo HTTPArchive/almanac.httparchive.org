@@ -15,7 +15,8 @@ FROM (
     `httparchive.almanac.requests`
   WHERE
     date = '2020-08-01' AND
-    type = 'image')
+    type = 'image'
+)
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -26,7 +27,8 @@ JOIN (
     LOWER(category) = 'static site generator' OR
     app = 'Next.js' OR
     app = 'Nuxt.js' OR
-    app = 'Docusaurus')
+    app = 'Docusaurus'
+)
 USING
   (client, page)
 GROUP BY

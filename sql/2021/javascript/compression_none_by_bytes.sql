@@ -34,7 +34,8 @@ FROM (
   WHERE
     date = '2021-07-01' AND
     type = 'script' AND
-    getHeader(JSON_EXTRACT(payload, '$.response.headers'), 'Content-Encoding') IS NULL)
+    getHeader(JSON_EXTRACT(payload, '$.response.headers'), 'Content-Encoding') IS NULL
+)
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -42,7 +43,8 @@ JOIN (
   FROM
     `httparchive.summary_pages.2021_07_01_*`
   GROUP BY
-    client)
+    client
+)
 USING
   (client)
 GROUP BY

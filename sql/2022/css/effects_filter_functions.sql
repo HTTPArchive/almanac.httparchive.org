@@ -61,7 +61,8 @@ FROM (
     (client)
   GROUP BY
     client,
-    fn)
+    fn
+)
 WHERE
   pct_pages > 0.01
 ORDER BY

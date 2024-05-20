@@ -45,7 +45,8 @@ FROM (
     FROM
       `httparchive.summary_pages.2021_07_01_*`
     GROUP BY
-      client)
+      client
+  )
   USING
     (client)
   WHERE
@@ -54,5 +55,6 @@ FROM (
     client,
     position
   ORDER BY
-    pct DESC)
+    pct DESC
+)
 LIMIT 500

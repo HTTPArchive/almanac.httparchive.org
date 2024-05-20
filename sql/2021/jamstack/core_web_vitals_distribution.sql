@@ -26,7 +26,8 @@ FROM (
   FROM
     `chrome-ux-report.materialized.device_summary`
   WHERE
-    date = '2021-07-01')
+    date = '2021-07-01'
+)
 JOIN (
   SELECT
     client,
@@ -35,7 +36,8 @@ JOIN (
     `httparchive.almanac.requests`
   WHERE
     date = '2021-07-01' AND
-    firstHtml)
+    firstHtml
+)
 USING
   (client, url)
 JOIN (
@@ -49,7 +51,7 @@ JOIN (
     LOWER(category) = 'static site generator' OR
     app = 'Next.js' OR
     app = 'Nuxt.js'
-  )
+)
 USING (client, url)
 GROUP BY
   app,
