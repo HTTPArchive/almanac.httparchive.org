@@ -9,7 +9,7 @@ function sendWebVitals() {
       debug_loaf_script_total_duration: 0
     };
 
-    // The last LoAF entry is the most relevant.
+    // The last LoAF entry is usually the most relevant.
     const loaf = attribution.longAnimationFrameEntries.at(-1)
     const loafEndTime = loaf.startTime + loaf.duration;
     loaf.scripts.forEach(script => {
