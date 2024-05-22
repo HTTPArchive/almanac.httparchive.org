@@ -34,6 +34,7 @@ WITH altsvcTable AS (
     date = '2022-06-01' AND
     firstHtml
 )
+
 SELECT
   client,
   protocol,

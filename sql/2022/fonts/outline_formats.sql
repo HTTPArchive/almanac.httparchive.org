@@ -14,6 +14,7 @@ fonts AS (
     url,
     payload
 )
+
 SELECT
   client,
   format,

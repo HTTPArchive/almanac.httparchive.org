@@ -26,7 +26,9 @@ WITH totals AS (
     `httparchive.pages.2022_06_01_*`
   GROUP BY
     _TABLE_SUFFIX
-), attributes AS (
+),
+
+attributes AS (
   SELECT
     _TABLE_SUFFIX AS client,
     almanac_attribute_info.name,

@@ -4,7 +4,9 @@ WITH bodies AS (
     JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies') AS wpt_bodies
   FROM
     `httparchive.pages.2022_06_01_*`
-), links AS (
+),
+
+links AS (
   SELECT
     client,
     SAFE_CAST(JSON_VALUE(wpt_bodies, '$.anchors.rendered.target_blank.total') AS INT64) AS target_blank_total,

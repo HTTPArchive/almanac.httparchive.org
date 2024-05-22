@@ -6,7 +6,9 @@ WITH totals AS (
     `httparchive.summary_pages.2022_06_01_*`
   GROUP BY
     _TABLE_SUFFIX
-), svgs AS (
+),
+
+svgs AS (
   SELECT
     _TABLE_SUFFIX,
     CAST(JSON_VALUE(JSON_VALUE(payload, '$._markup'), '$.svgs.svg_total') AS INT64) AS svg

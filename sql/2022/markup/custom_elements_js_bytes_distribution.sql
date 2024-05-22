@@ -5,7 +5,9 @@ WITH js_bytes AS (
     bytesJs / 1024 AS kbytes_js
   FROM
     `httparchive.summary_pages.2022_06_01_*`
-), custom_elements AS (
+),
+
+custom_elements AS (
   SELECT
     _TABLE_SUFFIX,
     url,

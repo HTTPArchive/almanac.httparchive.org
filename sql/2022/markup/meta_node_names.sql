@@ -17,7 +17,9 @@ WITH totals AS (
     `httparchive.pages.2022_06_01_*`
   GROUP BY
     _TABLE_SUFFIX
-), meta AS (
+),
+
+meta AS (
   SELECT
     _TABLE_SUFFIX AS client,
     IF(IFNULL(TRIM(name), '') = '', '(not set)', name) AS name,

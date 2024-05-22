@@ -1,7 +1,7 @@
 [sqlfluff]
 dialect = bigquery
 # Comma separated list of rules to exclude, or None
-exclude_rules = AL01,AL04,AL07,AL09,AM03,AM05,CP02,CP03,CV02,LT05,LT08,LT09,RF01,RF02,RF03,RF04,ST01,ST02,ST05,ST06,ST07,ST08
+exclude_rules = AL01,AL04,AL07,AL09,AM03,AM05,CP02,CP03,CV02,LT05,LT09,RF01,RF02,RF03,RF04,ST01,ST02,ST05,ST06,ST07,ST08
 # AL01 - We don't always alias tables with AS ("FROM table1 AS tb1" instead of "FROM table1 tb1"). Do for columns but not for tables.
 # AL04 - Asks for unique table aliases meaning it complains if selecting from two 2021_07_01 tables as implicit alias is table name (not fully qualified) so same.
 # AL07 - Avoid aliases in from and join - why?
@@ -12,7 +12,6 @@ exclude_rules = AL01,AL04,AL07,AL09,AM03,AM05,CP02,CP03,CV02,LT05,LT08,LT09,RF01
 # CP03 - Function names will be mixed case so don't enforce case
 # CV02 - Use COALESCE instead of IFNULL or NVL. We think ISNULL is clearer.
 # LT05 - We allow longer lines as some of our queries are complex. Maybe should limit in future?
-# LT08 - CTEs may be chained and do not require a blank line separator, only the last one.
 # LT09 - Select targets should be on new lines but sub clauses don't always obey this. Maybe revisit in future?
 # RF01 - BigQuery uses STRUCTS which can look like incorrect table references
 # RF02 - Asks for qualified columns for ambiguous ones, but we not qualify our columns, and they are not really ambiguous (or BigQuery would complain)
