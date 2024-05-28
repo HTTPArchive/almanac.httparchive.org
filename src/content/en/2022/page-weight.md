@@ -233,7 +233,7 @@ Looking at the median page weight over time, it remains clear that the trend rem
 
 In the 10-year period between June 2012 to June 2022, the median page weight increased by 221%, or 1.6 MB, for desktop page loads, 594%, or 1.7 MB for mobile page loads
 
-Year on year, (June 2022 versus June 2021) desktop increased from 2,121 KB to 2,315 KB on desktop, 1,912 KB to 2,020 KB on desktop.
+Year on year, (June 2022 versus June 2021) desktop increased from 2,121 KB to 2,315 KB on desktop, 1,912 KB to 2,020 KB on mobile.
 
 #### Content type and file formats
 
