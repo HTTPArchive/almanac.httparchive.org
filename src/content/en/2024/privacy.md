@@ -8,11 +8,11 @@ editors: []
 analysts: []
 translators: []
 results: https://docs.google.com/spreadsheets/d/18r8cT6x9lPdM-rXvXjsqx84W7ZDdTDYGD59xr0UGOwg/edit#gid=1778117656
-featured_quote: ..
-featured_stat_1: ..
-featured_stat_label_1: ..
-featured_stat_2: ..
-featured_stat_label_2: ..
-featured_stat_3: ..
-featured_stat_label_3: ..
+featured_quote:
+featured_stat_1:
+featured_stat_label_1:
+featured_stat_2:
+featured_stat_label_2:
+featured_stat_3:
+featured_stat_label_3:
 ---
