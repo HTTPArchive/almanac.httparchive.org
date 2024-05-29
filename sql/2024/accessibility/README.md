@@ -18,3 +18,4 @@
 [~google-doc]: https://docs.google.com/document/d/1anCSQk9g_YDfZP6GtjqdC-vCfnCNZAUEQwjSr8AzqTw/edit
 [~google-sheets]: https://docs.google.com/spreadsheets/d/1btB1r9QpdgTyToPhn7glcGAdMFs7eq4UcQSVIHBqiYQ/edit#gid=1778117656
 [~chapter-markdown]: https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/src/content/en/2024/accessibility.md
+
