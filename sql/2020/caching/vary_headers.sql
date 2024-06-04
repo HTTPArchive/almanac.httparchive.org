@@ -10,7 +10,7 @@ SELECT
   pct_of_total_requests,
   total_using_both / total_using_vary AS pct_of_vary_with_cache_control,
   total_using_vary / total_requests AS pct_using_vary
-FROM ((
+FROM (
   SELECT
     'desktop' AS client,
     total_requests,
@@ -37,8 +37,8 @@ FROM ((
     total_using_vary,
     total_using_both,
     vary_header
-)
-UNION ALL (
+
+  UNION ALL
   SELECT
     'mobile' AS client,
     total_requests,
@@ -65,7 +65,7 @@ UNION ALL (
     total_using_vary,
     total_using_both,
     vary_header
-)
+
 )
 ORDER BY
   client, occurrences DESC

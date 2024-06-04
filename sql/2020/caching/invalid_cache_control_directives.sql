@@ -8,7 +8,7 @@ SELECT
   directive_occurrences,
   pct_of_cache_control,
   pct_of_total_requests
-FROM ((
+FROM (
   SELECT
     'desktop' AS client,
     total_requests,
@@ -32,8 +32,7 @@ FROM ((
     total_requests,
     total_using_cache_control,
     directive_name
-)
-UNION ALL (
+  UNION ALL
   SELECT
     'mobile' AS client,
     total_requests,
@@ -57,7 +56,7 @@ UNION ALL (
     total_requests,
     total_using_cache_control,
     directive_name
-)
+
 )
 WHERE
   directive_name NOT IN ('max-age', 'public', 'no-cache', 'must-revalidate', 'no-store', 'private', 'proxy-revalidate', 's-maxage', 'no-transform', 'immutable', 'stale-while-revalidate', 'stale-if-error', 'pre-check', 'post-check')

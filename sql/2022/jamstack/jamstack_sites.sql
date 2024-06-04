@@ -44,10 +44,7 @@ CREATE OR REPLACE TABLE `httparchive.almanac.jamstack_sites` AS (
       `chrome-ux-report.materialized.device_summary` c
     ON
       url = CONCAT(origin, '/') AND
-      s.date = c.date AND ((s.client = 'mobile' AND c.device = 'phone') OR (s.client = 'desktop' AND c.device = 'desktop')
-        OR
-        c.device IS NULL
-      )
+      s.date = c.date AND ((s.client = 'mobile' AND c.device = 'phone') OR (s.client = 'desktop' AND c.device = 'desktop') OR c.device IS NULL)
     WHERE (client = 'mobile' AND p75_lcp <= 2400 AND p75_cls < 0.05) OR (client = 'desktop' AND p75_lcp <= 2000 AND p75_cls < 0.05)
   )
 
