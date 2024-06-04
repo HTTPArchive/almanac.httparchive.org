@@ -17,8 +17,7 @@ FROM (
     `httparchive.almanac.requests`
   WHERE
     date = '2021-07-01' AND
-    firstHtml AND
-    (
+    firstHtml AND (
       LOWER(protocol) = 'http/2' OR
       LOWER(protocol) LIKE '%quic%' OR
       LOWER(protocol) LIKE 'h3%' OR

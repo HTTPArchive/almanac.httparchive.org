@@ -26,8 +26,7 @@ FROM
   custom_elements
 JOIN
   js_bytes
-USING
-  (_TABLE_SUFFIX, url),
+USING (_TABLE_SUFFIX, url),
   UNNEST([10, 25, 50, 75, 90]) AS percentile
 GROUP BY
   percentile,

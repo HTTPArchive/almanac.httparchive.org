@@ -24,8 +24,7 @@ JOIN (
   FROM
     `httparchive.summary_pages.2022_06_01_*`
 )
-USING
-  (client, url),
+USING (client, url),
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 GROUP BY
   percentile,

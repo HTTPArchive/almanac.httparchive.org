@@ -70,8 +70,7 @@ JOIN (
   GROUP BY
     _TABLE_SUFFIX, page, payload
 )
-USING
-  (client, page)
+USING (client, page)
 GROUP BY
   client,
   use_unicode

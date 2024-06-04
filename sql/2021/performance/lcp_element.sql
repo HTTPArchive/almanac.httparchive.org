@@ -19,8 +19,7 @@ JOIN (
   GROUP BY
     _TABLE_SUFFIX
 )
-USING
-  (_TABLE_SUFFIX)
+USING (_TABLE_SUFFIX)
 GROUP BY
   client,
   lcp_node

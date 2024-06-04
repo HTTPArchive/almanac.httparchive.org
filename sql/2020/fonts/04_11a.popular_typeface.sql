@@ -42,8 +42,7 @@ JOIN (
   GROUP BY
     client
 )
-USING
-  (client)
+USING (client)
 WHERE
   pages / total >= 0.004
 ORDER BY

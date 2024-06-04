@@ -109,8 +109,7 @@ JOIN (
     selector_parts,
     UNNEST(parts.id) AS id
 )
-USING
-  (client)
+USING (client)
 JOIN (
   SELECT
     client,
@@ -120,8 +119,7 @@ JOIN (
     selector_parts,
     UNNEST(parts.attribute) AS attribute
 )
-USING
-  (client)
+USING (client)
 JOIN (
   SELECT
     client,
@@ -131,8 +129,7 @@ JOIN (
     selector_parts,
     UNNEST(parts.pseudo_class) AS pseudo_class
 )
-USING
-  (client)
+USING (client)
 JOIN (
   SELECT
     client,
@@ -142,7 +139,6 @@ JOIN (
     selector_parts,
     UNNEST(parts.pseudo_element) AS pseudo_element
 )
-USING
-  (client)
+USING (client)
 GROUP BY
   client

@@ -32,8 +32,7 @@ JOIN (
   GROUP BY
     client
 )
-USING
-  (client)
+USING (client)
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -48,8 +47,7 @@ JOIN (
     client,
     url
 )
-USING
-  (client, url)
+USING (client, url)
 GROUP BY
   client,
   rank,

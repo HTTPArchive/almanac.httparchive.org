@@ -30,8 +30,7 @@ FROM (
     WHERE
       category = 'CMS'
   )
-  USING
-    (client, page)
+  USING (client, page)
   WHERE
     NET.HOST(url) IN (
       SELECT

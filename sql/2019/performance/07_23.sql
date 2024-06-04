@@ -7,8 +7,7 @@ SELECT
   APPROX_QUANTILES(loading_cpu_time, 1000)[OFFSET(100)] AS loading_cpu_time
 FROM (
   SELECT
-    _TABLE_SUFFIX AS client,
-    (
+    _TABLE_SUFFIX AS client, (
       CAST(IFNULL(JSON_EXTRACT(payload, "$['_cpu.ParseHTML']"), '0') AS INT64)
     ) AS loading_cpu_time
   FROM

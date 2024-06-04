@@ -63,8 +63,7 @@ JOIN (
   WHERE
     category = 'CMS'
 )
-USING
-  (client, url)
+USING (client, url)
 GROUP BY
   client,
   geo,

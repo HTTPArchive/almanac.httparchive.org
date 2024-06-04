@@ -78,8 +78,7 @@ JOIN (
   GROUP BY
     client
 )
-USING
-  (client)
+USING (client)
 WHERE
   pages >= 100
 ORDER BY

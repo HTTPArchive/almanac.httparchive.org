@@ -33,8 +33,7 @@ FROM (
       date = '2021-07-01' AND
       type = 'css'
   )
-  USING
-    (client, page, url)
+  USING (client, page, url)
   GROUP BY
     client,
     page

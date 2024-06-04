@@ -5,13 +5,12 @@ WITH totals AS (
     COUNT(0) AS total
   FROM
     `httparchive.summary_pages.*`
-  WHERE
-    (
-      _TABLE_SUFFIX LIKE '2019_07_01%' OR
-      _TABLE_SUFFIX LIKE '2020_08_01%' OR
-      _TABLE_SUFFIX LIKE '2021_07_01%' OR
-      _TABLE_SUFFIX LIKE '2022_06_01%'
-    )
+  WHERE (
+    _TABLE_SUFFIX LIKE '2019_07_01%' OR
+    _TABLE_SUFFIX LIKE '2020_08_01%' OR
+    _TABLE_SUFFIX LIKE '2021_07_01%' OR
+    _TABLE_SUFFIX LIKE '2022_06_01%'
+  )
   GROUP BY
     client,
     date
@@ -42,16 +41,14 @@ counts AS (
     LOGICAL_OR(REGEXP_CONTAINS(url, r'kernest\.com')) AS kernest,
     LOGICAL_OR(REGEXP_CONTAINS(url, r'typefront\.com')) AS typefront,
     LOGICAL_OR((
-      REGEXP_CONTAINS(mimeType, r'font|woff|eot') OR
-      (
+      REGEXP_CONTAINS(mimeType, r'font|woff|eot') OR (
         ext = 'woff' OR
         ext = 'woff2' OR
         ext = 'eot' OR
         ext = 'ttf' OR
         ext = 'otf'
       )
-    ) AND
-    (
+    ) AND (
       REGEXP_CONTAINS(url, r'(fonts\.(gstatic|googleapis)\.com)|(themes.googleusercontent.com/static/fonts)|(ssl.gstatic.com/fonts/)') IS FALSE AND
       REGEXP_CONTAINS(url, r'(use|fonts)\.typekit\.(net|com)') IS FALSE AND
       REGEXP_CONTAINS(url, r'(use\.edgefonts\.net|webfonts\.creativecloud\.com)') IS FALSE AND
@@ -74,13 +71,12 @@ counts AS (
     )) AS self_hosted
   FROM
     `httparchive.summary_requests.*`
-  WHERE
-    (
-      _TABLE_SUFFIX LIKE '2019_07_01%' OR
-      _TABLE_SUFFIX LIKE '2020_08_01%' OR
-      _TABLE_SUFFIX LIKE '2021_07_01%' OR
-      _TABLE_SUFFIX LIKE '2022_06_01%'
-    )
+  WHERE (
+    _TABLE_SUFFIX LIKE '2019_07_01%' OR
+    _TABLE_SUFFIX LIKE '2020_08_01%' OR
+    _TABLE_SUFFIX LIKE '2021_07_01%' OR
+    _TABLE_SUFFIX LIKE '2022_06_01%'
+  )
   GROUP BY
     date,
     client,

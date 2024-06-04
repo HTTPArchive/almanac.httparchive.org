@@ -34,10 +34,9 @@ SELECT
 
 FROM
   `httparchive.pages.2020_08_01_*`
-JOIN
-  (SELECT _TABLE_SUFFIX, COUNT(0) AS total FROM
-    `httparchive.pages.2020_08_01_*`
-  GROUP BY _TABLE_SUFFIX) # to get an accurate total of pages per device. also seems fast
+JOIN (SELECT _TABLE_SUFFIX, COUNT(0) AS total FROM
+  `httparchive.pages.2020_08_01_*`
+GROUP BY _TABLE_SUFFIX) # to get an accurate total of pages per device. also seems fast
 USING (_TABLE_SUFFIX),
   UNNEST(get_wpt_bodies_protocols(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies'))) AS protocol
 GROUP BY

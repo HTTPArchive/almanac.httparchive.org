@@ -107,12 +107,10 @@ FROM
   totals
 JOIN
   afters
-USING
-  (client)
+USING (client)
 JOIN
   technologies
-USING
-  (client, page)
+USING (client, page)
 GROUP BY
   client,
   app

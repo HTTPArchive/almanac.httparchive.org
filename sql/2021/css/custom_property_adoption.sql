@@ -39,10 +39,8 @@ FROM (
     client,
     page
 )
-JOIN
-  (SELECT _TABLE_SUFFIX AS client, COUNT(0) AS total FROM `httparchive.summary_pages.2021_07_01_*` GROUP BY client)
-USING
-  (client)
+JOIN (SELECT _TABLE_SUFFIX AS client, COUNT(0) AS total FROM `httparchive.summary_pages.2021_07_01_*` GROUP BY client)
+USING (client)
 GROUP BY
   client,
   total

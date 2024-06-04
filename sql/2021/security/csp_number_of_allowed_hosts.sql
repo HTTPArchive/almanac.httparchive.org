@@ -10,8 +10,7 @@ LANGUAGE js AS '''
   }
   return null;
 ''';
-CREATE TEMP FUNCTION getNumUniqueHosts(str STRING) AS (
-  (SELECT COUNT(DISTINCT x) FROM UNNEST(REGEXP_EXTRACT_ALL(str, r'(?i)(https*://[^\s;]+)[\s;]')) AS x)
+CREATE TEMP FUNCTION getNumUniqueHosts(str STRING) AS ((SELECT COUNT(DISTINCT x) FROM UNNEST(REGEXP_EXTRACT_ALL(str, r'(?i)(https*://[^\s;]+)[\s;]')) AS x)
 );
 
 SELECT

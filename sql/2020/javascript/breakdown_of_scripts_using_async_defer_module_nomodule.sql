@@ -15,19 +15,18 @@ SELECT
   SUM(IF(script LIKE '%defer%', 1, 0)) / SUM(IF(script LIKE '%src%', 1, 0)) AS pct_external_defer,
   SUM(IF(script LIKE '%module%', 1, 0)) / SUM(IF(script LIKE '%src%', 1, 0)) AS pct_external_module,
   SUM(IF(script LIKE '%nomodule%', 1, 0)) / SUM(IF(script LIKE '%src%', 1, 0)) AS pct_external_nomodule
-FROM
-  (
-    SELECT
-      client,
-      page,
-      url,
-      REGEXP_EXTRACT_ALL(LOWER(body), '(<script [^>]*)') AS scripts
-    FROM
-      `httparchive.almanac.summary_response_bodies`
-    WHERE
-      date = '2020-08-01' AND
-      firstHtml
-  )
+FROM (
+  SELECT
+    client,
+    page,
+    url,
+    REGEXP_EXTRACT_ALL(LOWER(body), '(<script [^>]*)') AS scripts
+  FROM
+    `httparchive.almanac.summary_response_bodies`
+  WHERE
+    date = '2020-08-01' AND
+    firstHtml
+)
 CROSS JOIN
   UNNEST(scripts) AS script
 GROUP BY

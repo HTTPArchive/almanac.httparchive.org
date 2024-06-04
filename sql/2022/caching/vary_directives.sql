@@ -34,8 +34,7 @@ JOIN (
     client,
     vary_header
 )
-USING
-  (client)
+USING (client)
 WHERE
   vary_header IS NOT NULL
 GROUP BY

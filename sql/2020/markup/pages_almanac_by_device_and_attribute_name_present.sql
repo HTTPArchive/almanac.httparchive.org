@@ -30,13 +30,12 @@ SELECT
   AS_PERCENT(COUNT(DISTINCT url), total) AS pct_m401
 FROM
   `httparchive.pages.2020_08_01_*`
-JOIN
-  (
-    SELECT _TABLE_SUFFIX, COUNT(0) AS total
-    FROM
-      `httparchive.pages.2020_08_01_*`
-    GROUP BY _TABLE_SUFFIX
-  ) # to get an accurate total of pages per device. also seems fast
+JOIN (
+  SELECT _TABLE_SUFFIX, COUNT(0) AS total
+  FROM
+    `httparchive.pages.2020_08_01_*`
+  GROUP BY _TABLE_SUFFIX
+) # to get an accurate total of pages per device. also seems fast
 USING (_TABLE_SUFFIX),
   UNNEST(get_almanac_attribute_names(JSON_EXTRACT_SCALAR(payload, '$._almanac'))) AS attribute_name
 GROUP BY

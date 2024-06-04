@@ -192,8 +192,7 @@ FROM (
 )
 JOIN
   totals
-USING
-  (client)
+USING (client)
 GROUP BY
   client,
   p3

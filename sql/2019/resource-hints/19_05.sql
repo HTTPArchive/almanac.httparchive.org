@@ -42,8 +42,7 @@ LEFT JOIN (
   FROM `httparchive.almanac.summary_requests`
   WHERE date = '2019-07-01'
 )
-USING
-  (_TABLE_SUFFIX, page, url)
+USING (_TABLE_SUFFIX, page, url)
 GROUP BY
   client,
   name,

@@ -65,11 +65,10 @@ JOIN (
     url,
     payload
 )
-USING
-  (
-    client,
-    page
-  )
+USING (
+  client,
+  page
+)
 GROUP BY
   client,
   font_subset

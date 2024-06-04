@@ -10,8 +10,7 @@ SELECT DISTINCT
 FROM
   `httparchive.blink_features.usage`
 WHERE
-  yyyymmdd = '20220601' AND
-  (feature LIKE '%FeaturePolicy%' OR feature LIKE '%PermissionsPolicy%')
+  yyyymmdd = '20220601' AND (feature LIKE '%FeaturePolicy%' OR feature LIKE '%PermissionsPolicy%')
 ORDER BY
   feature,
   client

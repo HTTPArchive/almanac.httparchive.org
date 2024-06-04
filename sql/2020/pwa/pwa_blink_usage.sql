@@ -8,8 +8,7 @@ SELECT
 FROM
   `httparchive.blink_features.usage`
 WHERE
-  yyyymmdd = '20200801' AND
-  (
+  yyyymmdd = '20200801' AND (
     feature LIKE '%ServiceWorker%' OR
     feature LIKE '%BackgroundSync%' OR
     feature LIKE '%GetInstalledRelatedApps%'

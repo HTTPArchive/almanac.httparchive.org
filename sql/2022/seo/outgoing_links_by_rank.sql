@@ -61,8 +61,7 @@ LEFT JOIN (
   FROM
     `httparchive.summary_pages.2022_07_01_*` -- noqa: CV09
 )
-USING
-  (client, page),
+USING (client, page),
   UNNEST([1000, 10000, 100000, 1000000, 10000000, 100000000]) AS rank_grouping
 WHERE
   rank <= rank_grouping

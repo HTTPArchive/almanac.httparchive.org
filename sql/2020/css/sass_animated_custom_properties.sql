@@ -88,7 +88,6 @@ JOIN (
     `httparchive.pages.2020_08_01_*`,
     UNNEST(getCustomPropertiesWithComputedStyle(payload)) AS prop
 )
-USING
-  (client, page, prop)
+USING (client, page, prop)
 GROUP BY
   client

@@ -43,8 +43,7 @@ attributes AS (
     UNNEST(get_almanac_attribute_info(JSON_EXTRACT_SCALAR(payload, '$._almanac'))) AS almanac_attribute_info
   JOIN
     totals
-  USING
-    (_TABLE_SUFFIX)
+  USING (_TABLE_SUFFIX)
   GROUP BY
     client,
     almanac_attribute_info.name

@@ -25,17 +25,16 @@ base AS (
     page,
     third_party_domains.domain AS domain,
     url
-  FROM
-    (
-      SELECT
-        _TABLE_SUFFIX AS client,
-        data.url AS url,
-        NET.HOST(data.url) AS domain,
-        lighthouse.url AS page
-      FROM
-        `httparchive.lighthouse.2022_06_01_*` AS lighthouse,
-        UNNEST(getUrls(JSON_EXTRACT(report, "$.audits['legacy-javascript']"))) AS data
-    ) AS potential_third_parties
+  FROM (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      data.url AS url,
+      NET.HOST(data.url) AS domain,
+      lighthouse.url AS page
+    FROM
+      `httparchive.lighthouse.2022_06_01_*` AS lighthouse,
+      UNNEST(getUrls(JSON_EXTRACT(report, "$.audits['legacy-javascript']"))) AS data
+  ) AS potential_third_parties
   INNER JOIN
     third_party_domains
   ON
@@ -74,8 +73,7 @@ FROM (
     GROUP BY
       _TABLE_SUFFIX
   )
-  USING
-    (client)
+  USING (client)
   GROUP BY
     client,
     domain,

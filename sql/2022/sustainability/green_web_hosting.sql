@@ -35,8 +35,7 @@ FROM
   pages
 LEFT JOIN
   green
-USING
-  (host),
+USING (host),
   UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
 WHERE
   rank <= rank_grouping

@@ -38,18 +38,17 @@ SELECT
   COUNT(DISTINCT page) AS num_pages,
   APPROX_QUANTILES(early_hints.num_hints, 1000)[OFFSET(percentile * 10)] AS num_hints,
   APPROX_QUANTILES(early_hints.num_resources_hinted, 1000)[OFFSET(percentile * 10)] AS num_resources_hinted
-FROM
-  (
-    SELECT
-      client,
-      page,
-      getNumEarlyHints(JSON_EXTRACT(payload, '$._early_hint_headers')) AS early_hints
-    FROM
-      `httparchive.almanac.requests`
-    WHERE
-      date = '2022-06-01' AND
-      firstHtml
-  ),
+FROM (
+  SELECT
+    client,
+    page,
+    getNumEarlyHints(JSON_EXTRACT(payload, '$._early_hint_headers')) AS early_hints
+  FROM
+    `httparchive.almanac.requests`
+  WHERE
+    date = '2022-06-01' AND
+    firstHtml
+),
   UNNEST(GENERATE_ARRAY(1, 100)) AS percentile
 GROUP BY
   client,

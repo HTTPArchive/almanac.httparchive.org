@@ -40,8 +40,7 @@ JOIN (
   GROUP BY
     client
 )
-USING
-  (client)
+USING (client)
 GROUP BY
   client,
   has_sourcemap_header

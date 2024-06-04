@@ -68,8 +68,7 @@ JOIN (
   GROUP BY
     client
 )
-USING
-  (client)
+USING (client)
 WHERE
   pct >= 0.01
 ORDER BY

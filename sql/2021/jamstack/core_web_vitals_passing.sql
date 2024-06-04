@@ -34,8 +34,7 @@ SELECT
   # Origins with good LCP, FID, and CLS dividied by origins with any LCP, FID, and CLS.
   SAFE_DIVIDE(
     COUNT(DISTINCT IF(
-      IS_GOOD(fast_lcp, avg_lcp, slow_lcp) AND
-      (NOT IS_NON_ZERO(fast_fid, avg_fid, slow_fid) OR IS_GOOD(fast_fid, avg_fid, slow_fid)) AND
+      IS_GOOD(fast_lcp, avg_lcp, slow_lcp) AND (NOT IS_NON_ZERO(fast_fid, avg_fid, slow_fid) OR IS_GOOD(fast_fid, avg_fid, slow_fid)) AND
       IS_GOOD(small_cls, medium_cls, large_cls), origin, NULL
     )),
     COUNT(DISTINCT IF(
@@ -63,8 +62,7 @@ JOIN (
     date = '2021-07-01' AND
     firstHtml
 )
-USING
-  (client, url)
+USING (client, url)
 JOIN (
   SELECT DISTINCT
     _TABLE_SUFFIX AS client,

@@ -46,8 +46,7 @@ LEFT JOIN (
   WHERE
     date = '2022-06-01'
 )
-USING
-  (client, page)
+USING (client, page)
 WHERE
   type = 'font'
 GROUP BY

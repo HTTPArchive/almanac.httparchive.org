@@ -28,8 +28,7 @@ LEFT JOIN (
     `httparchive.lighthouse.2021_07_01_*`
 )
 
-USING
-  (client, page),
+USING (client, page),
   UNNEST([1e3, 1e4, 1e5, 1e6, 1e7]) AS rank_grouping
 WHERE
   rank <= rank_grouping

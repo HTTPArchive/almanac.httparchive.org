@@ -33,8 +33,7 @@ FROM (
       app = 'Nuxt.js' OR
       app = 'Docusaurus'
   )
-  USING
-    (client, page)
+  USING (client, page)
   WHERE
     NET.HOST(url) IN (
       SELECT

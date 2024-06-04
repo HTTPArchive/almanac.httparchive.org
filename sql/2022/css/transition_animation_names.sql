@@ -132,8 +132,7 @@ FROM (
   )
   JOIN
     totals
-  USING
-    (client)
+  USING (client)
   GROUP BY
     client,
     animation_name

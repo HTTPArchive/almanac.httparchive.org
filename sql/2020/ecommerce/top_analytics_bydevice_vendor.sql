@@ -16,8 +16,7 @@ JOIN (
   FROM `httparchive.technologies.2020_08_01_*`
   WHERE category = 'Ecommerce'
 )
-USING
-  (client, page)
+USING (client, page)
 JOIN
   `httparchive.almanac.third_parties`
 ON
@@ -29,8 +28,7 @@ JOIN (
   FROM `httparchive.summary_pages.2020_08_01_*`
   GROUP BY _TABLE_SUFFIX
 )
-USING
-  (client)
+USING (client)
 WHERE
   `httparchive.almanac.summary_requests`.date = '2020-08-01' AND
   LOWER(category) = 'analytics'

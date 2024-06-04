@@ -40,8 +40,7 @@ JOIN (
   GROUP BY
     _TABLE_SUFFIX
 )
-USING
-  (client, page)
+USING (client, page)
 WHERE
   name IS NOT NULL
 GROUP BY

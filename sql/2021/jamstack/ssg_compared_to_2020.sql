@@ -18,8 +18,7 @@ JOIN (
   GROUP BY
     _TABLE_SUFFIX
 )
-USING
-  (_TABLE_SUFFIX)
+USING (_TABLE_SUFFIX)
 WHERE
   LOWER(category) = 'static site generator' OR
   app = 'Next.js' OR
@@ -47,8 +46,7 @@ JOIN (
   GROUP BY
     _TABLE_SUFFIX
 )
-USING
-  (_TABLE_SUFFIX)
+USING (_TABLE_SUFFIX)
 WHERE
   LOWER(category) = 'static site generator' OR
   app = 'Next.js' OR

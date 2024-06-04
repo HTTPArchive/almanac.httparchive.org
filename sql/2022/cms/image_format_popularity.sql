@@ -29,8 +29,7 @@ JOIN (
     date = '2022-06-01' AND
     type = 'image'
 )
-USING
-  (client, url)
+USING (client, url)
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -44,8 +43,7 @@ JOIN (
     client,
     cms
 )
-USING
-  (client, cms)
+USING (client, cms)
 WHERE
   pages > 1000
 GROUP BY

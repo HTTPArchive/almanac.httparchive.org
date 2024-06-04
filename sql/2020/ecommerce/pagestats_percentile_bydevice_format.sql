@@ -21,8 +21,7 @@ FROM (
     FROM `httparchive.technologies.2020_08_01_*`
     WHERE category = 'Ecommerce'
   )
-  USING
-    (client, page)
+  USING (client, page)
   WHERE
     date = '2020-08-01'
   GROUP BY

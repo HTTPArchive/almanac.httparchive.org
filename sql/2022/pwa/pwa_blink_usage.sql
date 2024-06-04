@@ -9,8 +9,7 @@ SELECT DISTINCT
 FROM
   `httparchive.blink_features.usage`
 WHERE
-  yyyymmdd = '20220601' AND
-  (
+  yyyymmdd = '20220601' AND (
     feature LIKE '%ServiceWorker%' OR
     feature LIKE '%BackgroundSync%' OR
     feature LIKE '%GetInstalledRelatedApps%'

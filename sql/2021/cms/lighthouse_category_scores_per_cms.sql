@@ -24,8 +24,7 @@ JOIN (
   WHERE
     category = 'CMS'
 )
-USING
-  (url)
+USING (url)
 GROUP BY
   cms
 ORDER BY

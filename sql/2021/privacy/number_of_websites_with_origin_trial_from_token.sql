@@ -224,15 +224,14 @@ FROM
 FULL OUTER JOIN
   extracted_origin_trials_from_headers_and_meta_tags
 USING (client, site)
-WHERE
-  (
-    origin_trials_from_custom_metric.featureElem = 'InterestCohortAPI' OR
-    origin_trials_from_custom_metric.featureElem = 'ConversionMeasurement' OR
-    origin_trials_from_custom_metric.featureElem = 'TrustTokens' OR
-    origin_trials_from_headers_and_meta_tags.featureElem = 'InterestCohortAPI' OR
-    origin_trials_from_headers_and_meta_tags.featureElem = 'ConversionMeasurement' OR
-    origin_trials_from_headers_and_meta_tags.featureElem = 'TrustTokens'
-  )
+WHERE (
+  origin_trials_from_custom_metric.featureElem = 'InterestCohortAPI' OR
+  origin_trials_from_custom_metric.featureElem = 'ConversionMeasurement' OR
+  origin_trials_from_custom_metric.featureElem = 'TrustTokens' OR
+  origin_trials_from_headers_and_meta_tags.featureElem = 'InterestCohortAPI' OR
+  origin_trials_from_headers_and_meta_tags.featureElem = 'ConversionMeasurement' OR
+  origin_trials_from_headers_and_meta_tags.featureElem = 'TrustTokens'
+)
 GROUP BY
   client,
   featureElem

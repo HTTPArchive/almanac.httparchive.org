@@ -66,8 +66,7 @@ JOIN (
     client,
     page
 )
-USING
-  (client, page)
+USING (client, page)
 GROUP BY
   client
 ORDER BY

@@ -26,8 +26,7 @@ JOIN (
   FROM
     `httparchive.pages.2020_08_01_*`
 )
-USING
-  (client, url)
+USING (client, url)
 GROUP BY
   client
 ORDER BY

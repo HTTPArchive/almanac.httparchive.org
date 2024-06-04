@@ -28,8 +28,7 @@ JOIN (
     app = 'Next.js' OR
     app = 'Nuxt.js'
 )
-USING
-  (client, page)
+USING (client, page)
 GROUP BY
   client,
   format

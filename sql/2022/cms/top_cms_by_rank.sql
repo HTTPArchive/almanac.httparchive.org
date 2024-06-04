@@ -28,8 +28,7 @@ JOIN (
   WHERE
     rank <= rank_magnitude
 )
-USING
-  (client, url)
+USING (client, url)
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -44,8 +43,7 @@ JOIN (
     _TABLE_SUFFIX,
     rank_magnitude
 )
-USING
-  (client, rank)
+USING (client, rank)
 GROUP BY
   client,
   cms,

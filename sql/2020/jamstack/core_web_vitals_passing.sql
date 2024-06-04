@@ -80,8 +80,7 @@ JOIN (
     date = '2020-08-01' AND
     firstHtml
 )
-USING
-  (client, url)
+USING (client, url)
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,

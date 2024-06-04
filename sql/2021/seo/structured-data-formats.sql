@@ -42,26 +42,24 @@ SELECT
   COUNT(0) AS count,
   SAFE_DIVIDE(COUNT(0), SUM(COUNT(0)) OVER (PARTITION BY client)) AS pct
 
-FROM
-  (
+FROM (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    total,
+    getStructuredDataWptBodies(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS structured_data_wpt_bodies_info
+  FROM
+    `httparchive.pages.2021_07_01_*`
+  JOIN (
     SELECT
-      _TABLE_SUFFIX AS client,
-      total,
-      getStructuredDataWptBodies(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS structured_data_wpt_bodies_info
+      _TABLE_SUFFIX,
+      COUNT(0) AS total
     FROM
       `httparchive.pages.2021_07_01_*`
-    JOIN
-      (
-        SELECT
-          _TABLE_SUFFIX,
-          COUNT(0) AS total
-        FROM
-          `httparchive.pages.2021_07_01_*`
-        GROUP BY
-          _TABLE_SUFFIX
-      )
-    USING (_TABLE_SUFFIX)
-  ), UNNEST(structured_data_wpt_bodies_info.items_by_format) AS format
+    GROUP BY
+      _TABLE_SUFFIX
+  )
+  USING (_TABLE_SUFFIX)
+), UNNEST(structured_data_wpt_bodies_info.items_by_format) AS format
 GROUP BY
   total,
   format,

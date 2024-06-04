@@ -20,12 +20,10 @@ FROM (
     FROM `httparchive.technologies.2021_07_01_*`
     WHERE category = 'Ecommerce'
   )
-  USING
-    (client, page)
+  USING (client, page)
   WHERE
     date = '2021-07-01' AND
-    NET.HOST(url) IN
-    (
+    NET.HOST(url) IN (
       SELECT domain
       FROM `httparchive.almanac.third_parties`
       WHERE date = '2021-07-01' AND category != 'hosting'

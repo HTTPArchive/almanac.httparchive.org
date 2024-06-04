@@ -49,8 +49,7 @@ requests AS (
     `httparchive.almanac.requests`
   INNER JOIN
     third_party_domains
-  ON
-    (third_party_domains.host = NET.HOST(url))
+  ON (third_party_domains.host = NET.HOST(url))
   WHERE
     date = '2022-06-01' AND
     type = 'script'
@@ -75,8 +74,7 @@ FROM (
     requests
   LEFT OUTER JOIN
     resource_hints
-  USING
-    (client, page, host)
+  USING (client, page, host)
   GROUP BY
     client
 )

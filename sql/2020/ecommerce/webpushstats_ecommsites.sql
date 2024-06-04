@@ -43,8 +43,7 @@ JOIN (
     `httparchive.technologies.2020_08_01_*`
   WHERE category = 'Ecommerce'
 )
-USING
-  (origin)
+USING (origin)
 WHERE date IN ('2020-08-01') AND
   notification_permission_accept IS NOT NULL
 GROUP BY

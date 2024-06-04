@@ -19,8 +19,7 @@ FROM
   UNNEST(JSON_VALUE_ARRAY(JSON_VALUE(payload, '$._markup'), '$.anchors.hrefs_without_special_scheme')) AS href
 JOIN
   totals
-USING
-  (_TABLE_SUFFIX)
+USING (_TABLE_SUFFIX)
 GROUP BY
   client,
   scheme

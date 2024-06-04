@@ -18,8 +18,7 @@ FROM
   UNNEST(JSON_VALUE_ARRAY(JSON_VALUE(payload, '$._markup'), '$.anchors.hrefs_without_special_scheme')) AS href
 JOIN
   totals
-USING
-  (_TABLE_SUFFIX)
+USING (_TABLE_SUFFIX)
 WHERE
   REGEXP_CONTAINS(href, r'^[\'"]?javascript:\s*void\(0\);?[\'"]?$')
 GROUP BY

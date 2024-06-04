@@ -23,8 +23,7 @@ FROM (
     response_headers
   FROM
     `httparchive.almanac.requests`
-  WHERE
-    (date = '2020-08-01' OR date = '2021-07-01' OR date = '2022-06-01')
+  WHERE (date = '2020-08-01' OR date = '2021-07-01' OR date = '2022-06-01')
 ),
   UNNEST(['Server', 'X-Server', 'X-Backend-Server', 'X-Powered-By', 'X-Aspnet-Version']) AS headername
 GROUP BY

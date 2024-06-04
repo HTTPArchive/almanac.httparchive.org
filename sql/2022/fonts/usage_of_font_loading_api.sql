@@ -27,5 +27,4 @@ JOIN (
   GROUP BY
     client
 )
-USING
-  (client)
+USING (client)

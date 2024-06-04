@@ -7,8 +7,7 @@ SELECT
   APPROX_QUANTILES(paint_cpu_time, 1000)[OFFSET(percentile * 10)] AS paint_cpu_time
 FROM (
   SELECT
-    _TABLE_SUFFIX AS client,
-    (
+    _TABLE_SUFFIX AS client, (
       CAST(IFNULL(JSON_EXTRACT(payload, "$['_cpu.Paint']"), '0') AS INT64) +
       CAST(IFNULL(JSON_EXTRACT(payload, "$['_cpu.UpdateLayerTree']"), '0') AS INT64)
     ) AS paint_cpu_time

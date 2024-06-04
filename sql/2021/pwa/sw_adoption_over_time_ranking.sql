@@ -11,19 +11,18 @@ SELECT
   COUNT(0) AS freq,
   total,
   COUNT(0) / total AS pct
-FROM
-  (
-    SELECT DISTINCT
-      FORMAT_DATE('%Y%m%d', yyyymmdd) AS yyyymmdd,
-      client,
-      url,
-      rank
-    FROM
-      `httparchive.blink_features.features`
-    WHERE
-      feature = 'ServiceWorkerControlledPage' AND
-      yyyymmdd >= '2021-05-01'
-  ),
+FROM (
+  SELECT DISTINCT
+    FORMAT_DATE('%Y%m%d', yyyymmdd) AS yyyymmdd,
+    client,
+    url,
+    rank
+  FROM
+    `httparchive.blink_features.features`
+  WHERE
+    feature = 'ServiceWorkerControlledPage' AND
+    yyyymmdd >= '2021-05-01'
+),
   UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
 JOIN (
   SELECT
@@ -42,8 +41,7 @@ JOIN (
     rank_grouping,
     client
 )
-USING
-  (yyyymmdd, client, rank_grouping)
+USING (yyyymmdd, client, rank_grouping)
 WHERE
   rank <= rank_grouping
 GROUP BY

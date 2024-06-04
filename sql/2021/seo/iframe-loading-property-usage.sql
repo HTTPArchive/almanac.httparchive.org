@@ -56,8 +56,7 @@ FROM (
     GROUP BY
       _TABLE_SUFFIX
   )
-  USING
-    (_TABLE_SUFFIX)
+  USING (_TABLE_SUFFIX)
 ),
   UNNEST(iframe_markup_info.loading) AS loading
 GROUP BY

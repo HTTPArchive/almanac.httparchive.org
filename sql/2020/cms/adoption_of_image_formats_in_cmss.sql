@@ -26,8 +26,7 @@ JOIN (
   WHERE
     category = 'CMS'
 )
-USING
-  (client, page)
+USING (client, page)
 GROUP BY
   client,
   format

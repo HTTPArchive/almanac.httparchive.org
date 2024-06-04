@@ -32,8 +32,7 @@ JOIN (
   FROM
     `httparchive.pages.2021_07_01_*`
 )
-USING
-  (client, page)
+USING (client, page)
 GROUP BY
   client,
   host

@@ -18,14 +18,12 @@ FROM (
       url AS page
     FROM `httparchive.technologies.2022_06_01_*`
     WHERE
-      category = 'Ecommerce' AND
-      (
+      category = 'Ecommerce' AND (
         app != 'Cart Functionality' AND
         app != 'Google Analytics Enhanced eCommerce'
       )
   )
-  USING
-    (client, page)
+  USING (client, page)
   WHERE
     date = '2022-06-01'
   GROUP BY

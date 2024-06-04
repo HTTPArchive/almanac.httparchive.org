@@ -66,12 +66,11 @@ USING (client, page),
 JOIN
   totals
 USING (client, rank_grouping)
-WHERE
-  (
-    header_name = 'accept-ch' OR
-    tag_name = 'accept-ch'
-  ) AND
-  rank <= rank_grouping
+WHERE (
+  header_name = 'accept-ch' OR
+  tag_name = 'accept-ch'
+) AND
+rank <= rank_grouping
 GROUP BY
   client,
   rank_grouping,

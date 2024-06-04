@@ -23,14 +23,13 @@ SELECT
   COUNT(0) AS freq,
   almanac_html_dir AS html_dir,
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
-FROM
-  (
-    SELECT
-      _TABLE_SUFFIX AS client,
-      get_almanac_html_dir(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS almanac_html_dir
-    FROM
-      `httparchive.pages.2021_07_01_*`
-  )
+FROM (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    get_almanac_html_dir(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS almanac_html_dir
+  FROM
+    `httparchive.pages.2021_07_01_*`
+)
 GROUP BY
   client,
   html_dir

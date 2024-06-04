@@ -28,8 +28,7 @@ JOIN (
     client,
     url
 )
-USING
-  (client, url)
+USING (client, url)
 GROUP BY
   client,
   page_builders

@@ -22,8 +22,7 @@ FROM
   UNNEST(JSON_VALUE_ARRAY(JSON_VALUE(payload, '$._wpt_bodies'), '$.web_components.raw.hyphenatedElements.slots')) AS num_slots
 JOIN
   totals
-USING
-  (_TABLE_SUFFIX)
+USING (_TABLE_SUFFIX)
 GROUP BY
   client,
   num_slots

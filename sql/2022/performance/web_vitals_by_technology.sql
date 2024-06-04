@@ -255,8 +255,7 @@ FROM
   base
 JOIN
   tech
-USING
-  (client, page)
+USING (client, page)
 GROUP BY
   date,
   client,

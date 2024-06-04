@@ -221,8 +221,7 @@ FROM (
 )
 JOIN
   totals
-USING
-  (client)
+USING (client)
 GROUP BY
   client,
   format

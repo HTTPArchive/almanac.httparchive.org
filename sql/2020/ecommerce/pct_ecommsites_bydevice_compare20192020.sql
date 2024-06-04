@@ -19,8 +19,7 @@ JOIN (
   GROUP BY
     _TABLE_SUFFIX
 )
-USING
-  (_TABLE_SUFFIX)
+USING (_TABLE_SUFFIX)
 WHERE
   category = 'Ecommerce'
 GROUP BY
@@ -44,8 +43,7 @@ JOIN (
   GROUP BY
     _TABLE_SUFFIX
 )
-USING
-  (_TABLE_SUFFIX)
+USING (_TABLE_SUFFIX)
 WHERE
   category = 'Ecommerce'
 GROUP BY

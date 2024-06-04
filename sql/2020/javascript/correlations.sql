@@ -27,8 +27,7 @@ JOIN (
   FROM
     `httparchive.lighthouse.2020_09_01_mobile`
 )
-USING
-  (page)
+USING (page)
 JOIN (
   SELECT
     pageid,
@@ -41,8 +40,7 @@ JOIN (
   GROUP BY
     pageid
 )
-USING
-  (pageid)
+USING (pageid)
 JOIN (
   SELECT
     url AS page,
@@ -50,5 +48,4 @@ JOIN (
   FROM
     `httparchive.pages.2020_09_01_mobile`
 )
-USING
-  (page)
+USING (page)

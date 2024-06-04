@@ -11,8 +11,7 @@ SELECT
 FROM
   `httparchive.almanac.requests`
 WHERE
-  date = '2021-07-01' AND
-  (status < 200 OR status > 299)
+  date = '2021-07-01' AND (status < 200 OR status > 299)
 GROUP BY
   client,
   status,

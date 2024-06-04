@@ -149,20 +149,16 @@ granular_metrics AS (
     cls
   LEFT JOIN
     lcp
-  USING
-    (origin, network)
+  USING (origin, network)
   LEFT JOIN
     fid
-  USING
-    (origin, network)
+  USING (origin, network)
   LEFT JOIN
     fcp
-  USING
-    (origin, network)
+  USING (origin, network)
   LEFT JOIN
     ttfb
-  USING
-    (origin, network)
+  USING (origin, network)
 )
 
 SELECT

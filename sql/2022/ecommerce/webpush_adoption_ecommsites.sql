@@ -19,14 +19,12 @@ JOIN (
     `httparchive.technologies.*`
   WHERE
     REGEXP_REPLACE(_TABLE_SUFFIX, r'(\d+)_(\d+)_(\d+).*', r'\1-\2-\3') IN ('2022-06-01', '2021-07-01', '2020-08-01', '2019-07-01') AND
-    category = 'Ecommerce' AND
-    (
+    category = 'Ecommerce' AND (
       app != 'Cart Functionality' AND
       app != 'Google Analytics Enhanced eCommerce'
     )
 )
-USING
-  (origin, date)
+USING (origin, date)
 WHERE
   date IN ('2022-06-01', '2021-07-01', '2020-08-01', '2019-07-01')
 GROUP BY

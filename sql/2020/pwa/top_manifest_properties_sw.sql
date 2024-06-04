@@ -25,8 +25,7 @@ FROM (
     `httparchive.almanac.manifests`
   JOIN
     `httparchive.almanac.service_workers`
-  USING
-    (date, client, page)
+  USING (date, client, page)
   WHERE
     date = '2020-08-01'
 ),

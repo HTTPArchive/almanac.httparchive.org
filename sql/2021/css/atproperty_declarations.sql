@@ -58,8 +58,7 @@ JOIN (
   GROUP BY
     client
 )
-USING
-  (client)
+USING (client)
 GROUP BY
   client,
   syntax,

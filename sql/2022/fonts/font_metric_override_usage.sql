@@ -46,7 +46,6 @@ JOIN (
   GROUP BY
     client
 )
-USING
-  (client)
+USING (client)
 ORDER BY
   pct DESC

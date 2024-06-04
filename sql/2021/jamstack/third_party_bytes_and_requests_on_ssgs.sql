@@ -32,8 +32,7 @@ FROM (
       app = 'Next.js' OR
       app = 'Nuxt.js'
   )
-  USING
-    (client, page)
+  USING (client, page)
   WHERE
     NET.HOST(url) IN (
       SELECT

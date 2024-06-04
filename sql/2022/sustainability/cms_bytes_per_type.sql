@@ -38,23 +38,16 @@ JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
     url,
-    bytesTotal / 1024 AS total_kb,
-    (bytesTotal / 1024 / 1024 / 1024) * kw_per_GB * global_grid_intensity AS total_emissions,
-    bytesHtml / 1024 AS html_kb,
-    (bytesHtml / 1024 / 1024 / 1024) * kw_per_GB * global_grid_intensity AS total_html_emissions,
-    bytesJS / 1024 AS js_kb,
-    (bytesJS / 1024 / 1024 / 1024) * kw_per_GB * global_grid_intensity AS total_js_emissions,
-    bytesCSS / 1024 AS css_kb,
-    (bytesCSS / 1024 / 1024 / 1024) * kw_per_GB * global_grid_intensity AS total_css_emissions,
-    bytesImg / 1024 AS img_kb,
-    (bytesImg / 1024 / 1024 / 1024) * kw_per_GB * global_grid_intensity AS total_img_emissions,
-    bytesFont / 1024 AS font_kb,
-    (bytesFont / 1024 / 1024 / 1024) * kw_per_GB * global_grid_intensity AS total_font_emissions
+    bytesTotal / 1024 AS total_kb, (bytesTotal / 1024 / 1024 / 1024) * kw_per_GB * global_grid_intensity AS total_emissions,
+    bytesHtml / 1024 AS html_kb, (bytesHtml / 1024 / 1024 / 1024) * kw_per_GB * global_grid_intensity AS total_html_emissions,
+    bytesJS / 1024 AS js_kb, (bytesJS / 1024 / 1024 / 1024) * kw_per_GB * global_grid_intensity AS total_js_emissions,
+    bytesCSS / 1024 AS css_kb, (bytesCSS / 1024 / 1024 / 1024) * kw_per_GB * global_grid_intensity AS total_css_emissions,
+    bytesImg / 1024 AS img_kb, (bytesImg / 1024 / 1024 / 1024) * kw_per_GB * global_grid_intensity AS total_img_emissions,
+    bytesFont / 1024 AS font_kb, (bytesFont / 1024 / 1024 / 1024) * kw_per_GB * global_grid_intensity AS total_font_emissions
   FROM
     `httparchive.summary_pages.2022_06_01_*`
 )
-USING
-  (client, url)
+USING (client, url)
 GROUP BY
   client,
   cms

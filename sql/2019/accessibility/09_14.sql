@@ -18,8 +18,7 @@ FROM (
     date = '2019-07-01' AND
     firstHtml
 )
-JOIN
-  (SELECT _TABLE_SUFFIX AS client, COUNT(0) AS total FROM `httparchive.pages.2019_07_01_*` GROUP BY _TABLE_SUFFIX)
+JOIN (SELECT _TABLE_SUFFIX AS client, COUNT(0) AS total FROM `httparchive.pages.2019_07_01_*` GROUP BY _TABLE_SUFFIX)
 USING (client)
 GROUP BY
   client,

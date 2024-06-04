@@ -81,12 +81,10 @@ FROM (
     UNNEST(getProperties(css)) AS prop
   JOIN
     totals
-  USING
-    (client)
+  USING (client)
   JOIN
     print_stylesheets
-  USING
-    (client, page, url)
+  USING (client, page, url)
   WHERE
     date = '2022-07-01'
   GROUP BY

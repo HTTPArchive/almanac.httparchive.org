@@ -65,3 +65,6 @@ preferred_quoted_literal_style = single_quotes
 
 [sqlfluff:rules:references.special_chars]
 additional_allowed_characters = "-."
+
+[sqlfluff:layout:type:start_bracket]
+spacing_before = single:inline

@@ -30,8 +30,7 @@ JOIN (
     date = '2022-06-01' AND
     type = 'css'
 )
-USING
-  (client, page, css_url)
+USING (client, page, css_url)
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -41,8 +40,7 @@ JOIN (
     `httparchive.pages.2022_06_01_*`,
     UNNEST(JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._Images'), '$')) AS image
 )
-USING
-  (client, page, img_url)
+USING (client, page, img_url)
 GROUP BY
   client,
   format

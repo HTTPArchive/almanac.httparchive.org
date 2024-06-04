@@ -22,8 +22,7 @@ FROM (
     WHERE
       category = 'Ecommerce'
   )
-  USING
-    (client, page)
+  USING (client, page)
   JOIN
     `httparchive.almanac.third_parties`
   ON

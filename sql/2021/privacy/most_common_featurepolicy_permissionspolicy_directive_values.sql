@@ -133,14 +133,13 @@ SELECT
   COUNT(DISTINCT page) AS number_of_websites_with_directive,
   total_websites,
   COUNT(DISTINCT page) / total_websites AS pct_websites_with_directive
-FROM
-  (
-    SELECT DISTINCT * FROM (
-      SELECT * FROM normalized_feature_policy
-      UNION ALL
-      SELECT * FROM normalized_permissions_policy
-    )
-  ),
+FROM (
+  SELECT DISTINCT * FROM (
+    SELECT * FROM normalized_feature_policy
+    UNION ALL
+    SELECT * FROM normalized_permissions_policy
+  )
+),
   UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
 JOIN
   page_ranks

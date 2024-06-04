@@ -6,8 +6,7 @@ SELECT
   SUM(COUNT(0)) OVER () AS total,
   ROUND(COUNT(0) * 100 / SUM(COUNT(0)) OVER (), 2) AS pct
 FROM
-  `httparchive.technologies.2019_07_01_mobile`,
-  (SELECT COUNT(0) AS total FROM `httparchive.summary_pages.2019_07_01_mobile`)
+  `httparchive.technologies.2019_07_01_mobile`, (SELECT COUNT(0) AS total FROM `httparchive.summary_pages.2019_07_01_mobile`)
 JOIN
   `httparchive.lighthouse.2019_07_01_mobile`
 USING (url)

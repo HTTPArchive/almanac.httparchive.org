@@ -22,8 +22,7 @@ FROM (
     WHERE
       category = 'Ecommerce' AND (app != 'Cart Functionality' AND app != 'Google Analytics Enhanced eCommerce')
   )
-  USING
-    (client, page)
+  USING (client, page)
   JOIN
     `httparchive.almanac.third_parties`
   ON

@@ -11,19 +11,18 @@ SELECT
   COUNT(0) / total_pages AS pct
 FROM
   `httparchive.almanac.requests`
-JOIN
-  (
-    SELECT
-      client,
-      COUNT(0) AS total_pages
-    FROM
-      `httparchive.almanac.requests`
-    WHERE
-      date = '2021-07-01' AND
-      firstHtml
-    GROUP BY
-      client
-  )
+JOIN (
+  SELECT
+    client,
+    COUNT(0) AS total_pages
+  FROM
+    `httparchive.almanac.requests`
+  WHERE
+    date = '2021-07-01' AND
+    firstHtml
+  GROUP BY
+    client
+)
 USING (client)
 
 WHERE

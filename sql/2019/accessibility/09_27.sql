@@ -40,8 +40,7 @@ SELECT
 FROM
   `httparchive.pages.2019_07_01_*`,
   UNNEST(getTagsWithTabIndex(payload)) AS tag_type
-JOIN
-  (SELECT _TABLE_SUFFIX, COUNT(0) AS total FROM `httparchive.summary_pages.2019_07_01_*` GROUP BY _TABLE_SUFFIX)
+JOIN (SELECT _TABLE_SUFFIX, COUNT(0) AS total FROM `httparchive.summary_pages.2019_07_01_*` GROUP BY _TABLE_SUFFIX)
 USING (_TABLE_SUFFIX)
 GROUP BY client, tag_type, total
 ORDER BY occurrences DESC

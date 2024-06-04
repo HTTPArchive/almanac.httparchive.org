@@ -41,8 +41,7 @@ JOIN (
   GROUP BY
     _TABLE_SUFFIX, url, payload
 )
-USING
-  (client, page)
+USING (client, page)
 WHERE
   name IS NOT NULL
 GROUP BY

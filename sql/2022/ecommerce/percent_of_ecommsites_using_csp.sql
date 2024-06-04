@@ -51,17 +51,15 @@ FROM (
     FROM
       `httparchive.technologies.2021_07_01_*`
     WHERE
-      category = 'Ecommerce' AND
-      (
+      category = 'Ecommerce' AND (
         app != 'Cart Functionality' AND
         app != 'Google Analytics Enhanced eCommerce'
       )
   )
-  USING
-    (
-      _TABLE_SUFFIX,
-      url
-    )
+  USING (
+    _TABLE_SUFFIX,
+    url
+  )
 ),
   UNNEST(['Content-Security-Policy', 'Content-Security-Policy-Report-Only']) AS headername
 GROUP BY

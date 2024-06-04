@@ -29,8 +29,7 @@ JOIN (
     app = 'Nuxt.js' OR
     app = 'Docusaurus'
 )
-USING
-  (client, page)
+USING (client, page)
 GROUP BY
   client,
   format

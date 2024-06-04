@@ -35,8 +35,7 @@ FROM (
       date = '2022-06-01' AND
       type = 'css'
   )
-  USING
-    (client, page, css_url)
+  USING (client, page, css_url)
   JOIN (
     SELECT
       _TABLE_SUFFIX AS client,
@@ -48,8 +47,7 @@ FROM (
       `httparchive.pages.2022_06_01_*`,
       UNNEST(JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._Images'), '$')) AS image
   )
-  USING
-    (client, page, img_url)
+  USING (client, page, img_url)
 ),
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 GROUP BY

@@ -27,8 +27,7 @@ JOIN (
   WHERE
     category = 'CMS'
 )
-USING
-  (url, client)
+USING (url, client)
 GROUP BY
   client,
   cms

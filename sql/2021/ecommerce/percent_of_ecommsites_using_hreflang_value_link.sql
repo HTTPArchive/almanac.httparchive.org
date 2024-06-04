@@ -54,17 +54,15 @@ FROM (
     FROM
       `httparchive.technologies.2021_07_01_*`
     WHERE
-      category = 'Ecommerce' AND
-      (
+      category = 'Ecommerce' AND (
         app != 'Cart Functionality' AND
         app != 'Google Analytics Enhanced eCommerce'
       )
   )
-  USING
-    (
-      _TABLE_SUFFIX,
-      url
-    )
+  USING (
+    _TABLE_SUFFIX,
+    url
+  )
   JOIN (
     SELECT
       _TABLE_SUFFIX,
@@ -74,8 +72,7 @@ FROM (
     GROUP BY
       _TABLE_SUFFIX
   ) # to get an accurate total of pages per device. also seems fast
-  USING
-    (_TABLE_SUFFIX)
+  USING (_TABLE_SUFFIX)
 ),
   UNNEST(wpt_bodies_info.hreflangs) AS hreflang
 GROUP BY

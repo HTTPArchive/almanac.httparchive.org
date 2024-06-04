@@ -47,8 +47,7 @@ FROM (
     GROUP BY
       client
   )
-  USING
-    (client)
+  USING (client)
   WHERE
     date = '2021-07-01'
   GROUP BY

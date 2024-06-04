@@ -57,8 +57,7 @@ FROM (
     totals
   JOIN
     clip_path_fns
-  USING
-    (client)
+  USING (client)
   GROUP BY
     client,
     fn

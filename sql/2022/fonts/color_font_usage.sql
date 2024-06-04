@@ -26,8 +26,7 @@ JOIN (
   GROUP BY
     _TABLE_SUFFIX
 )
-USING
-  (client)
+USING (client)
 GROUP BY
   client,
   total_page

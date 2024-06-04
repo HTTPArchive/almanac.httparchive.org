@@ -17,8 +17,7 @@ FROM (
     FROM `httparchive.technologies.2019_07_01_*`
     WHERE category = 'CMS'
   )
-  USING
-    (client, page)
+  USING (client, page)
   WHERE
     date = '2019-07-01'
   GROUP BY

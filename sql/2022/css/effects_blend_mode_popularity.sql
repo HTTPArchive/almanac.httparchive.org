@@ -51,7 +51,6 @@ FROM
   totals
 JOIN
   blend_modes
-USING
-  (client)
+USING (client)
 GROUP BY
   client

@@ -59,8 +59,7 @@ LEFT JOIN (
   WHERE
     date = '2020-08-01'
 )
-USING
-  (client, page, url)
+USING (client, page, url)
 GROUP BY
   client,
   name,

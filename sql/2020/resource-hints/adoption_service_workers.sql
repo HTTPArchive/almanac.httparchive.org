@@ -46,8 +46,7 @@ FROM (
       yyyymmdd = '20200801' AND
       feature = 'ServiceWorkerControlledPage'
   )
-  USING
-    (url)
+  USING (url)
 )
 GROUP BY
   client

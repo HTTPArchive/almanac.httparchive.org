@@ -35,8 +35,7 @@ JOIN (
   FROM
     `httparchive.pages.2020_08_01_*`
 )
-USING
-  (client, page)
+USING (client, page)
 GROUP BY
   client,
   font_host

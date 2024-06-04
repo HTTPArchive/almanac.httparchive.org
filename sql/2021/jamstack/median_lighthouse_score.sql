@@ -26,8 +26,7 @@ JOIN (
     app = 'Next.js' OR
     app = 'Nuxt.js'
 )
-USING
-  (url)
+USING (url)
 GROUP BY
   ssg
 ORDER BY

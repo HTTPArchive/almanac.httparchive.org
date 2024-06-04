@@ -36,21 +36,20 @@ SELECT
     LOWER(body) NOT LIKE '%cache-polyfill.js%' AND
     LOWER(body) NOT LIKE '%analytics-helper.js%'
   ) AS none_of_the_above
-FROM
-  (
-    SELECT
-      date,
-      client,
-      page,
-      body
-    FROM
-      `httparchive.almanac.service_workers`
-    GROUP BY
-      date,
-      client,
-      page,
-      body
-  )
+FROM (
+  SELECT
+    date,
+    client,
+    page,
+    body
+  FROM
+    `httparchive.almanac.service_workers`
+  GROUP BY
+    date,
+    client,
+    page,
+    body
+)
 GROUP BY
   date,
   client

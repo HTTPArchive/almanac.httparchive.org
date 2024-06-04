@@ -18,8 +18,7 @@ JOIN (
   GROUP BY
     _TABLE_SUFFIX
 )
-USING
-  (_TABLE_SUFFIX)
+USING (_TABLE_SUFFIX)
 WHERE
   category IN ('JavaScript frameworks', 'JavaScript libraries')
 GROUP BY

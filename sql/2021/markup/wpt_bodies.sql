@@ -64,13 +64,12 @@ SELECT
   COUNTIF(wpt_bodies_info.target_blank_noreferrer_total > 0) / COUNT(0) AS pct_has_target_blank_noreferrer,
   COUNTIF(wpt_bodies_info.target_blank_neither_total > 0) / COUNT(0) AS pct_has_target_blank_neither
 
-FROM
-  (
-    SELECT
-      _TABLE_SUFFIX AS client,
-      get_wpt_bodies_info(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS wpt_bodies_info
-    FROM
-      `httparchive.pages.2021_07_01_*`
-  )
+FROM (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    get_wpt_bodies_info(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS wpt_bodies_info
+  FROM
+    `httparchive.pages.2021_07_01_*`
+)
 GROUP BY
   client

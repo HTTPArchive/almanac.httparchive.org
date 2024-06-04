@@ -33,8 +33,7 @@ FROM
   `httparchive.pages.2022_06_01_*`
 JOIN
   totals
-USING
-  (_TABLE_SUFFIX),
+USING (_TABLE_SUFFIX),
   UNNEST(get_markup_buttons_info(JSON_EXTRACT_SCALAR(payload, '$._markup'))) AS button_type
 GROUP BY
   client,

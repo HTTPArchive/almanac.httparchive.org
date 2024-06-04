@@ -53,8 +53,7 @@ JOIN (
     date = '2021-07-01' AND
     firstHtml
 )
-USING
-  (client, url)
+USING (client, url)
 JOIN (
   SELECT DISTINCT
     _TABLE_SUFFIX AS client,

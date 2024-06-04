@@ -48,8 +48,7 @@ FROM (
     GROUP BY
       _TABLE_SUFFIX
   )
-  USING
-    (_TABLE_SUFFIX)
+  USING (_TABLE_SUFFIX)
 ),
   UNNEST(hreflang_wpt_bodies_info.hreflangs) AS hreflang
 GROUP BY

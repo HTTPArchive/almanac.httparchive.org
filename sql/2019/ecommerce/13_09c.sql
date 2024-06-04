@@ -19,8 +19,7 @@ FROM (
     FROM `httparchive.technologies.2019_07_01_*`
     WHERE category = 'Ecommerce'
   )
-  USING
-    (client, page)
+  USING (client, page)
   JOIN
     `httparchive.almanac.third_parties` tp
   ON

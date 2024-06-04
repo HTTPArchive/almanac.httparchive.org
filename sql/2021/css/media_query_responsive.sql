@@ -60,8 +60,7 @@ JOIN (
   GROUP BY
     client
 )
-USING
-  (client)
+USING (client)
 WHERE
   REGEXP_CONTAINS(feature, r'(-width|-height|-aspect-ratio)$')
 GROUP BY

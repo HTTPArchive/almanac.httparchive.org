@@ -33,14 +33,13 @@ SELECT
   COUNTIF(has_search_input) / COUNT(0) AS perc_sites_with_search_input,
   # Of sites that have at least 1 input element, how many have a search input
   COUNTIF(has_search_input) / COUNTIF(has_inputs) AS perc_input_sites_with_search_input
-FROM
-  (
-    SELECT
-      _TABLE_SUFFIX AS client,
-      SAFE_CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._almanac'), '$.input_elements.total') AS INT64) > 0 AS has_inputs,
-      hasSearchInput(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS has_search_input
-    FROM
-      `httparchive.pages.2022_06_01_*`
-  )
+FROM (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    SAFE_CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._almanac'), '$.input_elements.total') AS INT64) > 0 AS has_inputs,
+    hasSearchInput(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS has_search_input
+  FROM
+    `httparchive.pages.2022_06_01_*`
+)
 GROUP BY
   client

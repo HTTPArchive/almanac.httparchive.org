@@ -19,8 +19,7 @@ FROM (
     FROM `httparchive.technologies.2021_07_01_*`
     WHERE category = 'Ecommerce' AND (app != 'Cart Functionality' AND app != 'Google Analytics Enhanced eCommerce')
   )
-  USING
-    (client, page)
+  USING (client, page)
   WHERE
     date = '2021-07-01'
   GROUP BY

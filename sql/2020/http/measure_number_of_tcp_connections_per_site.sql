@@ -25,8 +25,7 @@ JOIN (
   FROM
     `httparchive.summary_pages.2020_08_01_*`
 )
-USING
-  (client, page),
+USING (client, page),
   UNNEST([10, 25, 50, 75, 90]) AS percentile
 GROUP BY
   percentile,

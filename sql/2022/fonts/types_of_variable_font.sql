@@ -26,8 +26,7 @@ JOIN (
   GROUP BY
     _TABLE_SUFFIX
 )
-USING
-  (client),
+USING (client),
   # Variable fonts have either a glyf or CFF2 table
   UNNEST(REGEXP_EXTRACT_ALL(JSON_EXTRACT(payload, '$._font_details.table_sizes'), '(?i)(CFF2|glyf)')) AS format
 GROUP BY

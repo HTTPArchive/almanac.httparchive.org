@@ -49,8 +49,7 @@ FROM (
   )
   JOIN
     `httparchive.almanac.parsed_css`
-  USING
-    (client),
+  USING (client),
     UNNEST(getContentStrings(css)) AS content
   WHERE
     date = '2022-07-01'

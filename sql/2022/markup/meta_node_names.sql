@@ -32,8 +32,7 @@ meta AS (
     UNNEST(getMetaNodes(JSON_VALUE(payload, '$._almanac'))) AS name
   JOIN
     totals
-  USING
-    (_TABLE_SUFFIX)
+  USING (_TABLE_SUFFIX)
   GROUP BY
     client,
     total_pages,

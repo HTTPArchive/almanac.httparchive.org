@@ -20,14 +20,11 @@ SELECT DISTINCT
 FROM
   `httparchive.almanac.summary_response_bodies`
 WHERE
-  date = '2020-08-01' AND
-  (
-    (
-      REGEXP_EXTRACT(body, 'navigator\\.serviceWorker\\.register\\s*\\(\\s*["\']([^\\),\\s"\']+)') IS NOT NULL AND
-      REGEXP_EXTRACT(body, 'navigator\\.serviceWorker\\.register\\s*\\(\\s*["\']([^\\),\\s"\']+)') != '/'
-    ) OR
-    (
-      REGEXP_EXTRACT(REGEXP_EXTRACT(body, '(<link[^>]+rel=["\']?manifest["\']?[^>]+>)'), 'href=["\']?([^\\s"\'>]+)["\']?') IS NOT NULL AND
-      REGEXP_EXTRACT(REGEXP_EXTRACT(body, '(<link[^>]+rel=["\']?manifest["\']?[^>]+>)'), 'href=["\']?([^\\s"\'>]+)["\']?') != '/'
-    )
+  date = '2020-08-01' AND ((
+    REGEXP_EXTRACT(body, 'navigator\\.serviceWorker\\.register\\s*\\(\\s*["\']([^\\),\\s"\']+)') IS NOT NULL AND
+    REGEXP_EXTRACT(body, 'navigator\\.serviceWorker\\.register\\s*\\(\\s*["\']([^\\),\\s"\']+)') != '/'
+  ) OR (
+    REGEXP_EXTRACT(REGEXP_EXTRACT(body, '(<link[^>]+rel=["\']?manifest["\']?[^>]+>)'), 'href=["\']?([^\\s"\'>]+)["\']?') IS NOT NULL AND
+    REGEXP_EXTRACT(REGEXP_EXTRACT(body, '(<link[^>]+rel=["\']?manifest["\']?[^>]+>)'), 'href=["\']?([^\\s"\'>]+)["\']?') != '/'
+  )
   )

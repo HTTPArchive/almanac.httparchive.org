@@ -18,8 +18,7 @@ FROM (
   FROM
     `httparchive.technologies.2021_07_01_*`
   WHERE
-    category = 'Ecommerce' AND
-    (
+    category = 'Ecommerce' AND (
       app != 'Cart Functionality' AND
       app != 'Google Analytics Enhanced eCommerce'
     )
@@ -33,8 +32,7 @@ JOIN (
   FROM
     `httparchive.pages.2021_07_01_*`
 )
-USING
-  (client, url)
+USING (client, url)
 GROUP BY
   client
 ORDER BY

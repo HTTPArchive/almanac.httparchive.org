@@ -55,8 +55,7 @@ JOIN (
   GROUP BY
     client
 )
-USING
-  (client),
+USING (client),
   UNNEST(attrs) AS attr
 ORDER BY
   pct DESC

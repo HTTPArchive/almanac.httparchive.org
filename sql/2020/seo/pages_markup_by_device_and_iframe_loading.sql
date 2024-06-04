@@ -61,8 +61,7 @@ FROM (
     GROUP BY
       _TABLE_SUFFIX
   ) # to get an accurate total of pages per device. also seems fast
-  USING
-    (_TABLE_SUFFIX)
+  USING (_TABLE_SUFFIX)
 ),
   UNNEST(markup_info.loading) AS loading
 GROUP BY

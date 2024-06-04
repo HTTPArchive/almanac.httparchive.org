@@ -100,11 +100,9 @@ JOIN (
     `httparchive.pages.2022_07_01_*`, -- noqa: CV09
     UNNEST(getCustomPropertiesWithComputedStyle(payload)) AS prop
 )
-USING
-  (client, page, prop)
+USING (client, page, prop)
 JOIN
   totals
-USING
-  (client)
+USING (client)
 GROUP BY
   client

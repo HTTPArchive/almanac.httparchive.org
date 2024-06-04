@@ -67,18 +67,15 @@ USING (client, page),
 JOIN
   totals
 USING (client, rank_grouping)
-WHERE
-  (
-    (
-      header_name = 'permissions-policy' AND
-      header_value LIKE 'interest-cohort=()'  # value could contain other policies
-    ) OR
-    (
-      tag_name = 'permissions-policy' AND
-      tag_value LIKE 'interest-cohort=()'
-    )
-  ) AND
-  rank <= rank_grouping
+WHERE ((
+  header_name = 'permissions-policy' AND
+  header_value LIKE 'interest-cohort=()'  # value could contain other policies
+) OR (
+  tag_name = 'permissions-policy' AND
+  tag_value LIKE 'interest-cohort=()'
+)
+) AND
+rank <= rank_grouping
 GROUP BY
   client,
   rank_grouping,

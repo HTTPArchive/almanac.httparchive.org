@@ -13,10 +13,9 @@ FROM (
     `httparchive.almanac.summary_requests`
   WHERE
     date = '2019-07-01'
-),
-  (
-    SELECT COUNT(0) AS totalRequestCount FROM `httparchive.almanac.summary_requests` WHERE date = '2019-07-01'
-  )
+), (
+  SELECT COUNT(0) AS totalRequestCount FROM `httparchive.almanac.summary_requests` WHERE date = '2019-07-01'
+)
 GROUP BY
   requestUrl
 ORDER BY

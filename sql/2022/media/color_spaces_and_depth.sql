@@ -67,7 +67,6 @@ FROM
   counts
 JOIN
   totals
-USING
-  (client)
+USING (client)
 ORDER BY
   count DESC

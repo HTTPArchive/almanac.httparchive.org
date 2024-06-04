@@ -57,8 +57,7 @@ FROM (
     totals
   JOIN
     filter_fns
-  USING
-    (client)
+  USING (client)
   GROUP BY
     client,
     fn

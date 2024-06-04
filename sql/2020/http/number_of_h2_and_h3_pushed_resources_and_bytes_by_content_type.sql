@@ -20,8 +20,7 @@ FROM (
     `httparchive.almanac.requests`
   WHERE
     date = '2020-08-01' AND
-    JSON_EXTRACT_SCALAR(payload, '$._was_pushed') = '1' AND
-    (
+    JSON_EXTRACT_SCALAR(payload, '$._was_pushed') = '1' AND (
       LOWER(JSON_EXTRACT_SCALAR(payload, '$._protocol')) LIKE 'http/2' OR
       LOWER(JSON_EXTRACT_SCALAR(payload, '$._protocol')) LIKE '%quic%' OR
       LOWER(JSON_EXTRACT_SCALAR(payload, '$._protocol')) LIKE 'h3%' OR

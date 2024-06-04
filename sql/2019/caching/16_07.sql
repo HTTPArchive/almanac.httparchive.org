@@ -16,8 +16,7 @@ SELECT
   ROUND(COUNT(DISTINCT pageid) * 100 / SUM(COUNT(DISTINCT pageid)) OVER (PARTITION BY client), 2) AS pct_of_all_pages
 FROM
   `httparchive.almanac.summary_requests`
-JOIN
-  (SELECT requestid, reqCookieLen > 0 AS uses_cookies FROM `httparchive.almanac.summary_requests` WHERE date = '2019-07-01')
+JOIN (SELECT requestid, reqCookieLen > 0 AS uses_cookies FROM `httparchive.almanac.summary_requests` WHERE date = '2019-07-01')
 USING (requestid)
 WHERE
   date = '2019-07-01'

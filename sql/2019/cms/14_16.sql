@@ -16,8 +16,7 @@ JOIN (
   FROM `httparchive.technologies.2019_07_01_*`
   WHERE category = 'CMS'
 )
-USING
-  (client, page)
+USING (client, page)
 JOIN
   `httparchive.almanac.third_parties` tp
 ON
@@ -27,8 +26,7 @@ JOIN (
   FROM `httparchive.summary_pages.2019_07_01_*`
   GROUP BY _TABLE_SUFFIX
 )
-USING
-  (client)
+USING (client)
 WHERE
   r.date = '2019-07-01' AND
   tp.date = '2019-07-01' AND

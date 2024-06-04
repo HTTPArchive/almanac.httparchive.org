@@ -29,16 +29,15 @@ SELECT
   COUNT(DISTINCT(CASE WHEN REGEXP_CONTAINS(disallowed_endpoint, r'.*/sso/.*') THEN page END)) / COUNT(DISTINCT(CASE WHEN has_robots_txt = 'true' THEN page END)) AS pct_disallow_sso,
   COUNT(DISTINCT(CASE WHEN REGEXP_CONTAINS(disallowed_endpoint, r'.*/account/.*') THEN page END)) AS count_disallow_account,
   COUNT(DISTINCT(CASE WHEN REGEXP_CONTAINS(disallowed_endpoint, r'.*/account/.*') THEN page END)) / COUNT(DISTINCT(CASE WHEN has_robots_txt = 'true' THEN page END)) AS pct_disallow_account
-FROM
-  (
-    SELECT
-      _TABLE_SUFFIX AS client,
-      url AS page,
-      JSON_VALUE(JSON_VALUE(payload, '$._well-known'), '$."/robots.txt".found') AS has_robots_txt,
-      getAllDisallowedEndpoints(JSON_VALUE(payload, '$._well-known')) AS disallowed_endpoints
-    FROM
-      `httparchive.pages.2021_07_01_*`
-  )
+FROM (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    url AS page,
+    JSON_VALUE(JSON_VALUE(payload, '$._well-known'), '$."/robots.txt".found') AS has_robots_txt,
+    getAllDisallowedEndpoints(JSON_VALUE(payload, '$._well-known')) AS disallowed_endpoints
+  FROM
+    `httparchive.pages.2021_07_01_*`
+)
 LEFT JOIN UNNEST(disallowed_endpoints) AS disallowed_endpoint
 GROUP BY
   client

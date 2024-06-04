@@ -19,8 +19,7 @@ WITH
 fonts AS (
   SELECT
     client,
-    url,
-    (hasGPOSKerning(JSON_EXTRACT(payload, '$._font_details.features')) OR IFNULL(REGEXP_CONTAINS(JSON_EXTRACT(
+    url, (hasGPOSKerning(JSON_EXTRACT(payload, '$._font_details.features')) OR IFNULL(REGEXP_CONTAINS(JSON_EXTRACT(
       payload,
       '$._font_details.table_sizes'
     ), '(?i)kern'), false)) AS kerning

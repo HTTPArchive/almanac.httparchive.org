@@ -32,8 +32,7 @@ JOIN (
   GROUP BY
     _TABLE_SUFFIX, url, payload
 )
-USING
-  (client, page)
+USING (client, page)
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -43,8 +42,7 @@ JOIN (
   GROUP BY
     _TABLE_SUFFIX
 )
-USING
-  (client)
+USING (client)
 GROUP BY
   client,
   total,
