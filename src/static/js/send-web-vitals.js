@@ -11,7 +11,7 @@ function sendWebVitals() {
     };
 
     // The last LoAF entry is usually the most relevant.
-    const loaf = attribution.longAnimationFrameEntries.at(-1)
+    const loaf = attribution.longAnimationFrameEntries.at(-1);
     const loafEndTime = loaf.startTime + loaf.duration;
     loaf.scripts.forEach(script => {
       if (script.duration <= loafAttribution.debug_loaf_script_total_duration) {
