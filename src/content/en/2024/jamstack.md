@@ -1,0 +1,18 @@
+---
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
+title: Jamstack
+description: Jamstack chapter of the 2024 Web Almanac covers quantifying Jamstack sites, the growth of Jamstack, Jamstack-y frameworks and hosting.
+authors: []
+reviewers: []
+editors: []
+analysts: []
+translators: []
+results: https://docs.google.com/spreadsheets/d/1wKswSnp8TuN4aZb63ir7hE5eCikIu8zEdQYPp4Xo6O0/edit#gid=807625051
+featured_quote:
+featured_stat_1:
+featured_stat_label_1:
+featured_stat_2:
+featured_stat_label_2:
+featured_stat_3:
+featured_stat_label_3:
+---
