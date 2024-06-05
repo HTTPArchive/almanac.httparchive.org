@@ -36,13 +36,13 @@
   },
   "/static/js/send-web-vitals.js": {
     "date_published": "2021-02-24T00:00:00.000Z",
-    "date_modified": "2024-03-19T00:00:00.000Z",
-    "hash": "894f90d1e739fb10194e73258c7946ec"
+    "date_modified": "2024-06-05T00:00:00.000Z",
+    "hash": "93b415ccbc2d2f5de8627d6019546f09"
   },
   "/static/js/web-vitals.js": {
     "date_published": "2020-11-13T00:00:00.000Z",
-    "date_modified": "2024-01-28T00:00:00.000Z",
-    "hash": "4a23d952fb9349975e2e5252ca09a482"
+    "date_modified": "2024-06-05T00:00:00.000Z",
+    "hash": "10638eba1611ff0dc07edbe721e3eb45"
   },
   "/static/js/webmentions.js": {
     "date_published": "2021-12-01T00:00:00.000Z",
@@ -655,8 +655,8 @@
   },
   "en/2022/chapters/page-weight.html": {
     "date_published": "2022-09-26T00:00:00.000Z",
-    "date_modified": "2022-10-13T00:00:00.000Z",
-    "hash": "02943b734d7d521d4f91f198a07a4277"
+    "date_modified": "2024-06-05T00:00:00.000Z",
+    "hash": "2cf54309f51288c37ec3ae24e4ead8ca"
   },
   "en/2022/chapters/performance.html": {
     "date_published": "2022-10-25T00:00:00.000Z",
@@ -722,6 +722,131 @@
     "date_published": "2022-07-02T00:00:00.000Z",
     "date_modified": "2022-07-02T00:00:00.000Z",
     "hash": "21329bd976566f8d3771f03c27afff60"
+  },
+  "en/2024/chapters/accessibility.html": {
+    "date_published": "2024-06-05T00:00:00.000Z",
+    "date_modified": "2024-06-05T00:00:00.000Z",
+    "hash": "029570b890a63b3ccbf096153d400bf0"
+  },
+  "en/2024/chapters/capabilities.html": {
+    "date_published": "2024-06-05T00:00:00.000Z",
+    "date_modified": "2024-06-05T00:00:00.000Z",
+    "hash": "4c7507c18cac1e3ad6558463d74d43bc"
+  },
+  "en/2024/chapters/cdn.html": {
+    "date_published": "2024-06-05T00:00:00.000Z",
+    "date_modified": "2024-06-05T00:00:00.000Z",
+    "hash": "4284a6b0d6a92107bdc0e60cc1a59a66"
+  },
+  "en/2024/chapters/cms.html": {
+    "date_published": "2024-06-05T00:00:00.000Z",
+    "date_modified": "2024-06-05T00:00:00.000Z",
+    "hash": "220026b8cd6ff6a84a9105d4d12d47a2"
+  },
+  "en/2024/chapters/cookies.html": {
+    "date_published": "2024-06-05T00:00:00.000Z",
+    "date_modified": "2024-06-05T00:00:00.000Z",
+    "hash": "bba953463484e88f58492dac8154b2cc"
+  },
+  "en/2024/chapters/css.html": {
+    "date_published": "2024-06-05T00:00:00.000Z",
+    "date_modified": "2024-06-05T00:00:00.000Z",
+    "hash": "45f9a4750be4ee82defa423db9dbab62"
+  },
+  "en/2024/chapters/fonts.html": {
+    "date_published": "2024-06-05T00:00:00.000Z",
+    "date_modified": "2024-06-05T00:00:00.000Z",
+    "hash": "b3e026e98b8f8d53045b71f9d1bf1f5b"
+  },
+  "en/2024/chapters/http.html": {
+    "date_published": "2024-06-05T00:00:00.000Z",
+    "date_modified": "2024-06-05T00:00:00.000Z",
+    "hash": "df06c287e13a651af6e5c0b742202612"
+  },
+  "en/2024/chapters/interoperability.html": {
+    "date_published": "2024-06-05T00:00:00.000Z",
+    "date_modified": "2024-06-05T00:00:00.000Z",
+    "hash": "2ea43e61e26b1e74acc8b5deb81042bb"
+  },
+  "en/2024/chapters/jamstack.html": {
+    "date_published": "2024-06-05T00:00:00.000Z",
+    "date_modified": "2024-06-05T00:00:00.000Z",
+    "hash": "c9bbbeb1451f0a60ee4c21948be77ae9"
+  },
+  "en/2024/chapters/javascript.html": {
+    "date_published": "2024-06-05T00:00:00.000Z",
+    "date_modified": "2024-06-05T00:00:00.000Z",
+    "hash": "b7e386fa6664ab2fe9085551ae3fbef0"
+  },
+  "en/2024/chapters/markup.html": {
+    "date_published": "2024-06-05T00:00:00.000Z",
+    "date_modified": "2024-06-05T00:00:00.000Z",
+    "hash": "1191e1550cf8d0c5a6211defa2145ffb"
+  },
+  "en/2024/chapters/media.html": {
+    "date_published": "2024-06-05T00:00:00.000Z",
+    "date_modified": "2024-06-05T00:00:00.000Z",
+    "hash": "c3b2bb2096c1335c6427d92b01cd761c"
+  },
+  "en/2024/chapters/mobile-web.html": {
+    "date_published": "2024-06-05T00:00:00.000Z",
+    "date_modified": "2024-06-05T00:00:00.000Z",
+    "hash": "a775f6e57c5cc677411cc693529bcc13"
+  },
+  "en/2024/chapters/page-weight.html": {
+    "date_published": "2024-06-05T00:00:00.000Z",
+    "date_modified": "2024-06-05T00:00:00.000Z",
+    "hash": "b49a92506237ef803d8850cdca6eddc8"
+  },
+  "en/2024/chapters/performance.html": {
+    "date_published": "2024-06-05T00:00:00.000Z",
+    "date_modified": "2024-06-05T00:00:00.000Z",
+    "hash": "3a99aed0a8912a4471371cbb14602b32"
+  },
+  "en/2024/chapters/privacy.html": {
+    "date_published": "2024-06-05T00:00:00.000Z",
+    "date_modified": "2024-06-05T00:00:00.000Z",
+    "hash": "df8a0dbb6f687f14ab86ebc9a07bdef6"
+  },
+  "en/2024/chapters/pwa.html": {
+    "date_published": "2024-06-05T00:00:00.000Z",
+    "date_modified": "2024-06-05T00:00:00.000Z",
+    "hash": "7738672b049f9c647a62ff5f271ad809"
+  },
+  "en/2024/chapters/security.html": {
+    "date_published": "2024-06-05T00:00:00.000Z",
+    "date_modified": "2024-06-05T00:00:00.000Z",
+    "hash": "8bc795786fe05e15ec36c9189b9c20a7"
+  },
+  "en/2024/chapters/seo.html": {
+    "date_published": "2024-06-05T00:00:00.000Z",
+    "date_modified": "2024-06-05T00:00:00.000Z",
+    "hash": "24f0f9f65cdbf0f9e332a4836cb13a63"
+  },
+  "en/2024/chapters/structured-data.html": {
+    "date_published": "2024-06-05T00:00:00.000Z",
+    "date_modified": "2024-06-05T00:00:00.000Z",
+    "hash": "22ad54794ee02de801bdc2269719f427"
+  },
+  "en/2024/chapters/sustainability.html": {
+    "date_published": "2024-06-05T00:00:00.000Z",
+    "date_modified": "2024-06-05T00:00:00.000Z",
+    "hash": "85ae830eae193053ca9d6adbe09a467c"
+  },
+  "en/2024/chapters/third-parties.html": {
+    "date_published": "2024-06-05T00:00:00.000Z",
+    "date_modified": "2024-06-05T00:00:00.000Z",
+    "hash": "d2b0ae88d9d33e262061648e3267b54f"
+  },
+  "en/2024/chapters/trends.html": {
+    "date_published": "2024-06-05T00:00:00.000Z",
+    "date_modified": "2024-06-05T00:00:00.000Z",
+    "hash": "ce5cc589bfe56bd9c278ce6b8727cb40"
+  },
+  "en/2024/chapters/webassembly.html": {
+    "date_published": "2024-06-05T00:00:00.000Z",
+    "date_modified": "2024-06-05T00:00:00.000Z",
+    "hash": "307d6563f5c113a78ca03213d8cbdf32"
   },
   "en/accessibility_statement.html": {
     "date_published": "2020-02-03T00:00:00.000Z",
