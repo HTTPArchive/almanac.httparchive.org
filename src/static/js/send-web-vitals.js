@@ -1,7 +1,8 @@
 function sendWebVitals() {
 
   function getLoafAttribution(attribution) {
-    if (!attribution?.longAnimationFrameEntries) {
+    const loafEntriesLength = attribution?.longAnimationFrameEntries?.length || 0;
+    if (loafEntriesLength === 0) {
       return {};
     }
 
@@ -38,7 +39,7 @@ function sendWebVitals() {
         debug_loaf_script_source_char_position: script.sourceCharPosition,
 
         // LoAF metadata.
-        debug_loaf_meta_length: attribution.longAnimationFrameEntries.length,
+        debug_loaf_meta_length: loafEntriesLength,
       }
     });
 
