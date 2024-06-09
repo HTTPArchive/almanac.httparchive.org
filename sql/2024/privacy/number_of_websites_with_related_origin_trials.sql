@@ -71,7 +71,7 @@ meta_tags AS (
     FROM
       pages
   ),
-    UNNEST(JSON_QUERY_ARRAY(custom_metrics, '$.meta-nodes.nodes')) meta_node
+  UNNEST(JSON_QUERY_ARRAY(custom_metrics, '$.meta-nodes.nodes')) meta_node
   WHERE
     JSON_VALUE(meta_node, '$.http-equiv') IS NOT NULL
 ),
@@ -99,7 +99,6 @@ extracted_origin_trials_from_headers_and_meta_tags AS (
     header_name = 'origin-trial' OR
     tag_name = 'origin-trial'
 )
-
 
 SELECT
   client,
