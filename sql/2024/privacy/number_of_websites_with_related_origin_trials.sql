@@ -30,12 +30,13 @@ WITH pages AS (
     client,
     page,
     custom_metrics
-  FROM
-    `httparchive.all.pages`
+  FROM `httparchive.all.pages`
   WHERE
-    date = '2022-05-01'
-    AND is_root_page
-),pages_origin_trials AS (
+    date = '2022-05-01' AND
+    is_root_page
+),
+
+pages_origin_trials AS (
   SELECT
     client,
     page,
@@ -49,12 +50,11 @@ response_headers AS (
     page,
     LOWER(response_header.name) AS header_name,
     response_header.value AS header_value  -- may not lowercase this value as it is a base64 string
-  FROM
-    `httparchive.all.requests`,
+  FROM `httparchive.all.requests`,
     UNNEST(response_headers) response_header
   WHERE
-    date = '2022-06-01'
-    AND is_main_document = TRUE
+    date = '2022-06-01' AND
+    is_main_document = TRUE
 ),
 
 meta_tags AS (
@@ -70,7 +70,7 @@ meta_tags AS (
       JSON_QUERY(custom_metrics, '$.almanac') AS custom_metrics
     FROM
       pages
-    ),
+  ),
     UNNEST(JSON_QUERY_ARRAY(custom_metrics, '$.meta-nodes.nodes')) meta_node
   WHERE
     JSON_VALUE(meta_node, '$.http-equiv') IS NOT NULL
