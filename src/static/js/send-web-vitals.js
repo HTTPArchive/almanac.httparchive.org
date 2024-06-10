@@ -136,6 +136,11 @@ function sendWebVitals() {
       event_category: 'Web Vitals',
       value: Math.round(name === 'CLS' ? delta * 1000 : delta),
       event_label: id,
+      // Repeat with new fields to match web-vitals documentation
+      // TODO deprecate above names when no longer required
+      metric_value: Math.round(name === 'CLS' ? value * 1000 : value),
+      metric_delta: Math.round(name === 'CLS' ? delta * 1000 : delta),
+      metric_id: id,
       non_interaction: true,
       effective_type: effectiveType,
       data_saver: dataSaver,
