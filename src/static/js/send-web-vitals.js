@@ -54,7 +54,7 @@ function sendWebVitals() {
     }));
   }
 
-  function sendWebVitalsGAEvents({name, delta, id, attribution, navigationType}) {
+  function sendWebVitalsGAEvents({name, delta, value, id, attribution, navigationType}) {
 
     let overrides = {};
 
