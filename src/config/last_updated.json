@@ -41,8 +41,8 @@
   },
   "/static/js/web-vitals.js": {
     "date_published": "2020-11-13T00:00:00.000Z",
-    "date_modified": "2024-06-10T00:00:00.000Z",
-    "hash": "fd1e29002e3518e8bf128dbbddaecc07"
+    "date_modified": "2024-06-21T00:00:00.000Z",
+    "hash": "0bf1a7e9889865e1cbbc6058659c9d83"
   },
   "/static/js/webmentions.js": {
     "date_published": "2021-12-01T00:00:00.000Z",
@@ -1777,6 +1777,11 @@
     "date_published": "2024-05-07T00:00:00.000Z",
     "date_modified": "2024-05-07T00:00:00.000Z",
     "hash": "025f7034129e8d56d6b4a7ee0d699762"
+  },
+  "ja/2022/chapters/security.html": {
+    "date_published": "2024-06-21T00:00:00.000Z",
+    "date_modified": "2024-06-21T00:00:00.000Z",
+    "hash": "805a470811f9e404912bac394555f032"
   },
   "ja/2022/chapters/seo.html": {
     "date_published": "2023-10-19T00:00:00.000Z",
