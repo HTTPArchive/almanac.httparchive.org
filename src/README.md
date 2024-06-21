@@ -376,7 +376,6 @@ The deploy script will do the following:
 - Ask you to complete any local tests and confirm good to deploy
 - Ask for a version number (suggesing the last verision tagged and incrementing the patch)
 - Tag the release (after asking you for the version number to use)
-- Generate a `deploy.zip` file of what has been deployed
 - Deploy to GCP
 - Push changes to `production` branch on GitHub
 - Switch you back to the `main` branch.
