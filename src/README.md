@@ -14,7 +14,7 @@ An `.editorconfig` file exists for those using [EditorConfig](https://editorconf
 
 Make sure you run the following commands from within the `src` directory by executing `cd src` first.
 
-Make sure Python (3.8 or above), pip and NodeJS (v16 or above) are installed on your machine.
+Make sure Python (3.8 or above), pip and NodeJS (v20 or above) are installed on your machine.
 
 1. If you don't have virtualenv, install it using pip.
 
