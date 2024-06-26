@@ -3,7 +3,7 @@
 CREATE TEMPORARY FUNCTION animatesVariableFonts(css STRING)
 RETURNS BOOLEAN
 LANGUAGE js
-OPTIONS(library = "gs://httparchive/lib/css-utils.js")
+OPTIONS (library = "gs://httparchive/lib/css-utils.js")
 AS '''
 try {
   var ast = JSON.parse(css);
@@ -27,6 +27,7 @@ FROM (
     `httparchive.almanac.parsed_css`
   GROUP BY
     client,
-    page)
+    page
+)
 GROUP BY
   client

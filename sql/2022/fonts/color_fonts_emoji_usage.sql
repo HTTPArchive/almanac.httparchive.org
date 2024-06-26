@@ -28,17 +28,21 @@ if (codepoints && codepoints.length) {
 """;
 SELECT
   client,
-  hasEmoji(JSON_EXTRACT_STRING_ARRAY(payload,
-      '$._font_details.cmap.codepoints')) AS emoji,
+  hasEmoji(JSON_EXTRACT_STRING_ARRAY(
+    payload,
+    '$._font_details.cmap.codepoints'
+  )) AS emoji,
   COUNT(0) AS total,
-  COUNT(0) * 1.0 / SUM(COUNT(0)) OVER(PARTITION BY client) AS pct
+  COUNT(0) * 1.0 / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
 FROM
   `httparchive.almanac.requests`
 WHERE
   date = '2022-06-01' AND
   type = 'font' AND
-  REGEXP_CONTAINS(JSON_EXTRACT(payload,
-      '$._font_details.color.formats'), '(?i)(sbix|CBDT|SVG|COLRv0|COLRv1)')
+  REGEXP_CONTAINS(JSON_EXTRACT(
+    payload,
+    '$._font_details.color.formats'
+  ), '(?i)(sbix|CBDT|SVG|COLRv0|COLRv1)')
 GROUP BY
   client,
   emoji

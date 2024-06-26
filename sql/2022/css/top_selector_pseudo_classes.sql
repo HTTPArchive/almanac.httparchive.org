@@ -62,7 +62,7 @@ WITH totals AS (
     _TABLE_SUFFIX AS client,
     COUNT(0) AS total_pages
   FROM
-    `httparchive.summary_pages.2022_07_01_*` -- noqa: L062
+    `httparchive.summary_pages.2022_07_01_*` -- noqa: CV09
   GROUP BY
     client
 )
@@ -83,24 +83,25 @@ FROM (
     COUNT(DISTINCT page) / ANY_VALUE(total_pages) AS pct_pages,
     APPROX_TOP_COUNT(pseudo_class, 100) AS pseudo_classes
   FROM (
-      SELECT DISTINCT
-        client,
-        page,
-        pseudo_class
-      FROM
-        `httparchive.almanac.parsed_css`
-      LEFT JOIN
-        UNNEST(getSelectorParts(css).pseudo_class) AS pseudo_class
-      WHERE
-        date = '2022-07-01' AND
-        # Limit the size of the CSS to avoid OOM crashes.
-        LENGTH(css) < 0.1 * 1024 * 1024)
+    SELECT DISTINCT
+      client,
+      page,
+      pseudo_class
+    FROM
+      `httparchive.almanac.parsed_css`
+    LEFT JOIN
+      UNNEST(getSelectorParts(css).pseudo_class) AS pseudo_class
+    WHERE
+      date = '2022-07-01' AND
+      # Limit the size of the CSS to avoid OOM crashes.
+      LENGTH(css) < 0.1 * 1024 * 1024
+  )
   JOIN
     totals
-  USING
-    (client)
+  USING (client)
   GROUP BY
-    client),
+    client
+),
   UNNEST(pseudo_classes) AS pseudo_class
 WHERE
   pseudo_class.value IS NOT NULL

@@ -87,7 +87,8 @@ base AS (
       timing_allow_origin LIKE '%, ' || page_origin OR
       timing_allow_origin LIKE '%,' || page_origin || ',%' OR
       timing_allow_origin LIKE '%, ' || page_origin || ',%',
-      1, 0) AS timing_allowed
+      1, 0
+    ) AS timing_allowed
   FROM headers
 )
 

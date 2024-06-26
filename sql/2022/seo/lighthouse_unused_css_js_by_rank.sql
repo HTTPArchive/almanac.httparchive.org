@@ -18,8 +18,8 @@ FROM (
     url AS page,
     rank
   FROM
-    `httparchive.summary_pages.2022_07_01_*` -- noqa: L062
-  )
+    `httparchive.summary_pages.2022_07_01_*` -- noqa: CV09
+)
 
 LEFT JOIN (
   SELECT
@@ -28,10 +28,10 @@ LEFT JOIN (
     SAFE_DIVIDE(CAST(JSON_EXTRACT_SCALAR(report, '$.audits.unused-javascript.details.overallSavingsBytes') AS INT64), 1024) AS unused_javascript,
     SAFE_DIVIDE(CAST(JSON_EXTRACT_SCALAR(report, '$.audits.unused-css-rules.details.overallSavingsBytes') AS INT64), 1024) AS unused_css_rules
   FROM
-    `httparchive.lighthouse.2022_07_01_*`) -- noqa: L062
+    `httparchive.lighthouse.2022_07_01_*` -- noqa: CV09
+)
 
-USING
-  (client, page),
+USING (client, page),
   UNNEST([1000, 10000, 100000, 1000000, 10000000, 100000000]) AS rank_grouping
 WHERE
   rank <= rank_grouping

@@ -44,8 +44,9 @@ FROM (
       `httparchive.blink_features.features`
     WHERE
       yyyymmdd = '20200801' AND
-      feature = 'ServiceWorkerControlledPage')
-  USING
-    (url))
+      feature = 'ServiceWorkerControlledPage'
+  )
+  USING (url)
+)
 GROUP BY
   client

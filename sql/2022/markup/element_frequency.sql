@@ -38,8 +38,7 @@ FROM
   UNNEST(get_element_types_info(JSON_EXTRACT_SCALAR(payload, '$._element_count'))) AS element_type_info
 JOIN
   totals
-USING
-  (_TABLE_SUFFIX)
+USING (_TABLE_SUFFIX)
 GROUP BY
   client,
   element_type_info.name

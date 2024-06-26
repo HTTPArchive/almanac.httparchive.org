@@ -14,7 +14,8 @@ FROM (
   FROM
     `httparchive.pages.*`
   WHERE
-    _TABLE_SUFFIX >= '2020-08-01')
+    _TABLE_SUFFIX >= '2020-08-01'
+)
 GROUP BY
   date,
   client

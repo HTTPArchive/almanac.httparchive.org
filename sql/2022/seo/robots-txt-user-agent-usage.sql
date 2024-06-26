@@ -24,24 +24,22 @@ SELECT
   total,
   COUNT(0) AS count,
   SAFE_DIVIDE(COUNT(0), total) AS pct
-FROM
-  (
-    SELECT
-      _TABLE_SUFFIX AS client,
-      total,
-      getRobotsTextUserAgents(JSON_EXTRACT_SCALAR(payload, '$._robots_txt')) AS robots_txt_user_agent_info
-    FROM
-      `httparchive.pages.2022_07_01_*` -- noqa: L062
-    JOIN
-      (
+FROM (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    total,
+    getRobotsTextUserAgents(JSON_EXTRACT_SCALAR(payload, '$._robots_txt')) AS robots_txt_user_agent_info
+  FROM
+    `httparchive.pages.2022_07_01_*` -- noqa: CV09
+  JOIN (
 
-        SELECT _TABLE_SUFFIX, COUNT(0) AS total
-        FROM
-          `httparchive.pages.2022_07_01_*` -- noqa: L062
-        GROUP BY _TABLE_SUFFIX
-      )
-    USING (_TABLE_SUFFIX)
-  ),
+    SELECT _TABLE_SUFFIX, COUNT(0) AS total
+    FROM
+      `httparchive.pages.2022_07_01_*` -- noqa: CV09
+    GROUP BY _TABLE_SUFFIX
+  )
+  USING (_TABLE_SUFFIX)
+),
   UNNEST(robots_txt_user_agent_info.user_agents) AS user_agent
 GROUP BY
   total,

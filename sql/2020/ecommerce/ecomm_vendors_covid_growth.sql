@@ -12,20 +12,18 @@ SELECT
   SUBSTR(_TABLE_SUFFIX, 6, 2) AS month
 FROM
   `httparchive.technologies.*`
-JOIN
-  (
-    SELECT
-      _TABLE_SUFFIX,
-      COUNT(DISTINCT url) AS total
-    FROM
-      `httparchive.summary_pages.*`
-    GROUP BY
-      _TABLE_SUFFIX
-  )
+JOIN (
+  SELECT
+    _TABLE_SUFFIX,
+    COUNT(DISTINCT url) AS total
+  FROM
+    `httparchive.summary_pages.*`
+  GROUP BY
+    _TABLE_SUFFIX
+)
 USING (_TABLE_SUFFIX)
 WHERE
-  category = 'Ecommerce' AND
-  (
+  category = 'Ecommerce' AND (
     app != 'Cart Functionality' AND
     app != 'Google Analytics Enhanced eCommerce'
   )

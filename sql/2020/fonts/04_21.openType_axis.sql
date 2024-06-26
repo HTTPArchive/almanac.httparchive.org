@@ -23,7 +23,8 @@ FROM (
     UNNEST(getAxes(JSON_EXTRACT(payload, '$._font_details'))) AS axis
   WHERE
     date = '2020-09-01' AND
-    type = 'font')
+    type = 'font'
+)
 GROUP BY
   client,
   axis

@@ -10,14 +10,14 @@ SELECT
 FROM
   `chrome-ux-report.materialized.metrics_summary`
 JOIN (
-    SELECT DISTINCT
-      _TABLE_SUFFIX AS client,
-      RTRIM(url, '/') AS origin
-    FROM
-      `httparchive.technologies.2020_08_01_*`
-    WHERE category = 'Ecommerce')
-USING
-  (origin)
+  SELECT DISTINCT
+    _TABLE_SUFFIX AS client,
+    RTRIM(url, '/') AS origin
+  FROM
+    `httparchive.technologies.2020_08_01_*`
+  WHERE category = 'Ecommerce'
+)
+USING (origin)
 WHERE date IN ('2020-08-01')
 GROUP BY
   client

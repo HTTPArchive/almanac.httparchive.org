@@ -15,7 +15,8 @@ FROM (
     `httparchive.almanac.requests`
   WHERE
     date = '2020-08-01' AND
-    STARTS_WITH(url, 'https'))
+    STARTS_WITH(url, 'https')
+)
 WHERE
   tls_version IS NOT NULL
 GROUP BY

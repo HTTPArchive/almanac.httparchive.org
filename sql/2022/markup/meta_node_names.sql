@@ -17,7 +17,9 @@ WITH totals AS (
     `httparchive.pages.2022_06_01_*`
   GROUP BY
     _TABLE_SUFFIX
-), meta AS (
+),
+
+meta AS (
   SELECT
     _TABLE_SUFFIX AS client,
     IF(IFNULL(TRIM(name), '') = '', '(not set)', name) AS name,
@@ -30,8 +32,7 @@ WITH totals AS (
     UNNEST(getMetaNodes(JSON_VALUE(payload, '$._almanac'))) AS name
   JOIN
     totals
-  USING
-    (_TABLE_SUFFIX)
+  USING (_TABLE_SUFFIX)
   GROUP BY
     client,
     total_pages,

@@ -24,8 +24,7 @@ FROM
   `httparchive.almanac.requests`,
   UNNEST(SPLIT(extractHeader(payload, 'Set-Cookie'), ';')) AS directive,
   UNNEST(REGEXP_EXTRACT_ALL(directive, '(__Host-|__Secure-)')) AS prefix
-JOIN
-  (SELECT _TABLE_SUFFIX AS client, COUNT(0) AS total FROM `httparchive.summary_pages.2019_07_01_*` GROUP BY _TABLE_SUFFIX)
+JOIN (SELECT _TABLE_SUFFIX AS client, COUNT(0) AS total FROM `httparchive.summary_pages.2019_07_01_*` GROUP BY _TABLE_SUFFIX)
 USING (client)
 WHERE
   date = '2019-07-01' AND

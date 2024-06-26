@@ -41,12 +41,10 @@ FROM
   pages
 JOIN
   jpgs
-USING
-  (client, pageid, url)
+USING (client, pageid, url)
 LEFT JOIN
   lh
-USING
-  (client, page, url),
+USING (client, page, url),
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 GROUP BY
   percentile,

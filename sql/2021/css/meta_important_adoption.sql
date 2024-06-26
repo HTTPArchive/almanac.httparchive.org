@@ -40,17 +40,19 @@ FROM (
     page,
     SAFE_DIVIDE(SUM(properties.important), SUM(properties.total)) AS pct_important
   FROM (
-      SELECT
-        client,
-        page,
-        getImportantProperties(css) AS properties
-      FROM
-        `httparchive.almanac.parsed_css`
-      WHERE
-        date = '2021-07-01')
+    SELECT
+      client,
+      page,
+      getImportantProperties(css) AS properties
+    FROM
+      `httparchive.almanac.parsed_css`
+    WHERE
+      date = '2021-07-01'
+  )
   GROUP BY
     client,
-    page),
+    page
+),
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 GROUP BY
   percentile,

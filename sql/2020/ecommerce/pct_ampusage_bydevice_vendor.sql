@@ -16,8 +16,7 @@ JOIN (
   WHERE
     category = 'Ecommerce'
 )
-USING
-  (_TABLE_SUFFIX, url)
+USING (_TABLE_SUFFIX, url)
 JOIN (
   SELECT
     _TABLE_SUFFIX,
@@ -29,8 +28,7 @@ JOIN (
   GROUP BY
     _TABLE_SUFFIX
 )
-USING
-  (_TABLE_SUFFIX)
+USING (_TABLE_SUFFIX)
 WHERE
   app = 'AMP'
 GROUP BY

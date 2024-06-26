@@ -40,7 +40,8 @@ FROM (
     _TABLE_SUFFIX AS client,
     getResourceHints(payload) AS hints
   FROM
-    `httparchive.pages.2021_07_01_*`)
+    `httparchive.pages.2021_07_01_*`
+)
 GROUP BY
   client
 ORDER BY

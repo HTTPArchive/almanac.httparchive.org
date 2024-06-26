@@ -38,8 +38,7 @@ combined AS (
     per_page
   JOIN
     crux_inp
-  USING
-    (client, page)
+  USING (client, page)
 ),
 
 meta AS (

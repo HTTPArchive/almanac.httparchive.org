@@ -14,9 +14,9 @@ FROM
 JOIN (
   SELECT _TABLE_SUFFIX AS client, url AS page
   FROM `httparchive.technologies.2021_07_01_*`
-  WHERE category = 'Ecommerce')
-USING
-  (client, page)
+  WHERE category = 'Ecommerce'
+)
+USING (client, page)
 JOIN
   `httparchive.almanac.third_parties`
 ON
@@ -26,9 +26,9 @@ JOIN (
     _TABLE_SUFFIX AS client,
     COUNT(0) AS total
   FROM `httparchive.summary_pages.2021_07_01_*`
-  GROUP BY _TABLE_SUFFIX)
-USING
-  (client)
+  GROUP BY _TABLE_SUFFIX
+)
+USING (client)
 WHERE
   `httparchive.almanac.summary_requests`.date = '2021-07-01' AND
   lower(category) = 'analytics'

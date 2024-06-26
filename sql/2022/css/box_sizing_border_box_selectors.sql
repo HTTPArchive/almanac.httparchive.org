@@ -46,20 +46,22 @@ FROM (
       `httparchive.almanac.parsed_css`,
       UNNEST(getBorderBoxSelectors(css)) AS selector
     WHERE
-      date = '2022-07-01')
+      date = '2022-07-01'
+  )
   JOIN (
     SELECT
       _TABLE_SUFFIX AS client,
       COUNT(0) AS total_pages
     FROM
-      `httparchive.summary_pages.2022_07_01_*` -- noqa: L062
+      `httparchive.summary_pages.2022_07_01_*` -- noqa: CV09
     GROUP BY
-      client)
-  USING
-    (client)
+      client
+  )
+  USING (client)
   GROUP BY
     client,
-    selector)
+    selector
+)
 ORDER BY
   pct DESC
 LIMIT 1000

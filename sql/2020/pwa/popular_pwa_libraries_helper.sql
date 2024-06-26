@@ -7,10 +7,8 @@ SELECT
   COUNT(DISTINCT page) AS pages,
   total,
   COUNT(DISTINCT page) / total AS pct
-FROM
-  (SELECT DISTINCT * FROM `httparchive.almanac.service_workers`)
-JOIN
-  (SELECT client, date, COUNT(DISTINCT page) AS total FROM `httparchive.almanac.service_workers` GROUP BY client, date)
+FROM (SELECT DISTINCT * FROM `httparchive.almanac.service_workers`)
+JOIN (SELECT client, date, COUNT(DISTINCT page) AS total FROM `httparchive.almanac.service_workers` GROUP BY client, date)
 USING (client, date),
   UNNEST(ARRAY_CONCAT(REGEXP_EXTRACT_ALL(body, r'(?i)importscripts\([\'"]([^(]*)[\'"]\)'))) AS importscript
 WHERE

@@ -26,8 +26,7 @@ hosts AS (
     lcp
   JOIN
     requests
-  USING
-    (client, page)
+  USING (client, page)
   WHERE
     req_start <= lcp_time
   GROUP BY

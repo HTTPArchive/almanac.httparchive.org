@@ -42,30 +42,28 @@ SELECT
   Round(APPROX_QUANTILES(naturalPixels, 1000)[OFFSET(500)] / (any_value(viewportHeight) * any_value(viewportWidth)), 2) AS pct_p50,
   Round(APPROX_QUANTILES(naturalPixels, 1000)[OFFSET(750)] / (any_value(viewportHeight) * any_value(viewportWidth)), 2) AS pct_p75,
   Round(APPROX_QUANTILES(naturalPixels, 1000)[OFFSET(900)] / (any_value(viewportHeight) * any_value(viewportWidth)), 2) AS pct_p90
-FROM
-  (
-    SELECT
-      _TABLE_SUFFIX AS client,
-      url AS page,
-      getCssPixels(json_extract_scalar(payload, '$._Images')) AS cssPixels,
-      getNaturalPixels(json_extract_scalar(payload, '$._Images')) AS naturalPixels,
-      CAST(json_extract_scalar(payload, '$._smallImageCount') AS INT64) AS smallImageCount,
-      CAST(json_extract_scalar(payload, '$._bigImageCount') AS INT64) AS bigImageCount,
-      CAST(json_extract_scalar(payload, '$._image_total') AS INT64) AS imageBytes,
-      CAST(json_extract_scalar(json_extract_scalar(payload, '$._Dpi'), '$.dppx') AS FLOAT64) AS dpr,
-      CAST(json_extract_scalar(json_extract_scalar(payload, '$._Resolution'), '$.absolute.height') AS INT64) AS viewportHeight,
-      CAST(json_extract_scalar(json_extract_scalar(payload, '$._Resolution'), '$.absolute.width') AS INT64) AS viewportWidth
-    FROM
-      `httparchive.pages.2019_07_01_*`
-  --  LIMIT 1000
-  )
+FROM (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    url AS page,
+    getCssPixels(json_extract_scalar(payload, '$._Images')) AS cssPixels,
+    getNaturalPixels(json_extract_scalar(payload, '$._Images')) AS naturalPixels,
+    CAST(json_extract_scalar(payload, '$._smallImageCount') AS INT64) AS smallImageCount,
+    CAST(json_extract_scalar(payload, '$._bigImageCount') AS INT64) AS bigImageCount,
+    CAST(json_extract_scalar(payload, '$._image_total') AS INT64) AS imageBytes,
+    CAST(json_extract_scalar(json_extract_scalar(payload, '$._Dpi'), '$.dppx') AS FLOAT64) AS dpr,
+    CAST(json_extract_scalar(json_extract_scalar(payload, '$._Resolution'), '$.absolute.height') AS INT64) AS viewportHeight,
+    CAST(json_extract_scalar(json_extract_scalar(payload, '$._Resolution'), '$.absolute.width') AS INT64) AS viewportWidth
+  FROM
+    `httparchive.pages.2019_07_01_*`
+--  LIMIT 1000
+)
 WHERE
   # it appears the _Images array is populated only from <img> tag requests and not CSS or favicon
   # likewise the bigImageCount and smallImageCount only track images > 100,000 and < 10,000 respectively.
   # Meaning images between 10KB and 100KB won't show up in the count
   # https://github.com/WPO-Foundation/webpagetest/blob/master/www/breakdown.inc#L95
-  cssPixels > 0 AND naturalPixels > 0 AND
-  (smallImageCount > 0 OR bigImageCount > 0)
+  cssPixels > 0 AND naturalPixels > 0 AND (smallImageCount > 0 OR bigImageCount > 0)
 GROUP BY
   client
 ORDER BY

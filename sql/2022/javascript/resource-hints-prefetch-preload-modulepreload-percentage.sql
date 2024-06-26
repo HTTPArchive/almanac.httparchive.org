@@ -47,6 +47,7 @@ FROM (
   FROM
     `httparchive.pages.2022_06_01_*`
   LEFT JOIN
-    UNNEST(getResourceHintAttrs(payload)) AS hint)
+    UNNEST(getResourceHintAttrs(payload)) AS hint
+)
 GROUP BY
   client

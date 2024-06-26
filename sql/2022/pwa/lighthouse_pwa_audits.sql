@@ -33,17 +33,16 @@ SELECT
 FROM
   `httparchive.lighthouse.2022_06_01_*`,
   UNNEST(getAudits(JSON_EXTRACT(report, '$.categories.pwa.auditRefs'), JSON_EXTRACT(report, '$.audits'))) AS audits
-JOIN
-  (
-    SELECT
-      _TABLE_SUFFIX,
-      url
-    FROM
-      `httparchive.pages.2022_06_01_*`
-    WHERE
-      JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = 'true' AND
-      JSON_EXTRACT(payload, '$._pwa.manifests') != '[]' AND JSON_EXTRACT(payload, '$._pwa.manifests') != '{}'
-  )
+JOIN (
+  SELECT
+    _TABLE_SUFFIX,
+    url
+  FROM
+    `httparchive.pages.2022_06_01_*`
+  WHERE
+    JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = 'true' AND
+    JSON_EXTRACT(payload, '$._pwa.manifests') != '[]' AND JSON_EXTRACT(payload, '$._pwa.manifests') != '{}'
+)
 USING (_TABLE_SUFFIX, url)
 GROUP BY
   client,

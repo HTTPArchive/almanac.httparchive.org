@@ -40,8 +40,7 @@ FROM
   `httparchive.blink_features.features`
 JOIN
   totals
-USING
-  (yyyymmdd, client)
+USING (yyyymmdd, client)
 WHERE
   yyyymmdd IN ('2021-07-01', '2020-08-01', '2019-07-01') AND
   feature IN ('CSSFlexibleBox', 'CSSGridLayout')

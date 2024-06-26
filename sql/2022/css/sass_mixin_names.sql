@@ -25,18 +25,19 @@ FROM (
     url,
     mixin
   FROM
-    `httparchive.pages.2022_07_01_*`, -- noqa: L062
-    UNNEST(getMixinNames(payload)) AS mixin)
+    `httparchive.pages.2022_07_01_*`, -- noqa: CV09
+    UNNEST(getMixinNames(payload)) AS mixin
+)
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
     COUNTIF(SAFE_CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._sass'), '$.scss.size') AS INT64) > 0) AS total_sass
   FROM
-    `httparchive.pages.2022_07_01_*` -- noqa: L062
+    `httparchive.pages.2022_07_01_*` -- noqa: CV09
   GROUP BY
-    client)
-USING
-  (client)
+    client
+)
+USING (client)
 GROUP BY
   client,
   mixin,

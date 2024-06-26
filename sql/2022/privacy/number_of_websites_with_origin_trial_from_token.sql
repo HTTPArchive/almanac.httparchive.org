@@ -183,7 +183,7 @@ meta_tags AS (
       JSON_VALUE(payload, '$._almanac') AS metrics
     FROM
       `httparchive.pages.2022_06_01_*`
-    ),
+  ),
     UNNEST(JSON_QUERY_ARRAY(metrics, '$.meta-nodes.nodes')) meta_node
   WHERE
     JSON_VALUE(meta_node, '$.http-equiv') IS NOT NULL

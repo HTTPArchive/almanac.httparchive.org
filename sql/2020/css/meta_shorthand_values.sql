@@ -459,7 +459,8 @@ FROM (
     UNNEST(getShorthandValueCounts(css)) AS shorthand,
     UNNEST(shorthand.values) AS value
   WHERE
-    date = '2020-08-01'),
+    date = '2020-08-01'
+),
   UNNEST([10, 25, 50, 75, 90]) AS percentile
 GROUP BY
   percentile,

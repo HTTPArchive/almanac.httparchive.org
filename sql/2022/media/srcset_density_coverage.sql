@@ -3,13 +3,14 @@
 
 CREATE TEMPORARY FUNCTION getSrcsetInfo(responsiveImagesJsonString STRING)
 RETURNS ARRAY<STRUCT<
-    hasSrcset BOOL,
-    srcsetHasXDescriptors BOOL,
-    srcsetHasWDescriptors BOOL,
-    srcsetCandidateDensities ARRAY<FLOAT64>,
-    numberOfSrcsetCandidates INT64,
-    minDensity FLOAT64,
-    maxDensity FLOAT64>>
+  hasSrcset BOOL,
+  srcsetHasXDescriptors BOOL,
+  srcsetHasWDescriptors BOOL,
+  srcsetCandidateDensities ARRAY<FLOAT64>,
+  numberOfSrcsetCandidates INT64,
+  minDensity FLOAT64,
+  maxDensity FLOAT64
+>>
 LANGUAGE js AS '''
   const parsed = JSON.parse( responsiveImagesJsonString );
   if ( parsed && parsed.map ) {

@@ -42,10 +42,10 @@ FROM (
     client,
     property,
     COUNT(DISTINCT page) OVER (PARTITION BY client, property) AS pages,
-    COUNT(DISTINCT page) OVER (PARTITION BY client) AS total,
+    COUNT(DISTINCT page) OVER (PARTITION BY client) AS total_pages,
     COUNT(DISTINCT page) OVER (PARTITION BY client, property) / COUNT(DISTINCT page) OVER (PARTITION BY client) AS pct_pages,
     SUM(freq) OVER (PARTITION BY client, property) AS freq,
-    SUM(freq) OVER (PARTITION BY client) AS total,
+    SUM(freq) OVER (PARTITION BY client) AS total_freq,
     SUM(freq) OVER (PARTITION BY client, property) / SUM(freq) OVER (PARTITION BY client) AS pct
   FROM (
     SELECT
@@ -58,7 +58,9 @@ FROM (
       UNNEST(getUnknownProperties(css)) AS property
     WHERE
       date = '2020-08-01' AND
-      LENGTH(property.property) > 1))
+      LENGTH(property.property) > 1
+  )
+)
 WHERE
   pct >= 0.01
 ORDER BY

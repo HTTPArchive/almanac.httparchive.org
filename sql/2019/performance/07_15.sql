@@ -8,7 +8,8 @@ FROM (
   SELECT
     CAST(IFNULL(JSON_EXTRACT(report, '$.audits.first-interactive.numericValue'), JSON_EXTRACT(report, '$.audits.first-cpu-idle.numericValue')) AS FLOAT64) AS first_cpu_idle
   FROM
-    `httparchive.lighthouse.2019_07_01_mobile`),
+    `httparchive.lighthouse.2019_07_01_mobile`
+),
   UNNEST([10, 25, 50, 75, 90]) AS percentile
 GROUP BY
   percentile

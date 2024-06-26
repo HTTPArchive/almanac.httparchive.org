@@ -27,7 +27,8 @@ FROM (
   FROM
     `chrome-ux-report.materialized.device_summary`
   WHERE
-    date = '2020-08-01')
+    date = '2020-08-01'
+)
 JOIN (
   SELECT
     CASE
@@ -51,9 +52,9 @@ JOIN (
     `httparchive.almanac.requests`
   WHERE
     date = '2020-08-01' AND
-    firstHtml)
-USING
-  (client, url)
+    firstHtml
+)
+USING (client, url)
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -66,7 +67,7 @@ JOIN (
     app = 'Next.js' OR
     app = 'Nuxt.js' OR
     app = 'Docusaurus'
-  )
+)
 USING (client, url)
 WHERE
   CDN IS NOT NULL

@@ -26,8 +26,7 @@ delays AS (
     pages
   JOIN
     requests
-  USING
-    (client, page, url)
+  USING (client, page, url)
   WHERE
     lcp_req_time IS NOT NULL AND
     lcp_req_time > 0 AND

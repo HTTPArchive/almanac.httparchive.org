@@ -15,7 +15,7 @@ WITH print AS (
     _TABLE_SUFFIX AS client,
     hasPrintStylesheet(payload) AS has_print_stylesheet
   FROM
-    `httparchive.pages.2022_07_01_*` -- noqa: L062
+    `httparchive.pages.2022_07_01_*` -- noqa: CV09
 )
 
 

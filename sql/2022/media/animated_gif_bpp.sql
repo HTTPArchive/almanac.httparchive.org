@@ -52,8 +52,7 @@ if ( matched && matched[1] && matched[2] ) {
 WITH gifs AS (
   SELECT
     _TABLE_SUFFIX AS client,
-    CAST(JSON_VALUE(payload, '$._image_details.animated') AS BOOL) AS is_animated,
-    (magickBytes(JSON_VALUE(payload, '$._image_details.magick.filesize')) * 8) /
+    CAST(JSON_VALUE(payload, '$._image_details.animated') AS BOOL) AS is_animated, (magickBytes(JSON_VALUE(payload, '$._image_details.magick.filesize')) * 8) /
     magickPixels(JSON_VALUE(payload, '$._image_details.magick.numberPixels')) AS bits_per_pixel
   FROM
     `requests.2022_06_01_*`

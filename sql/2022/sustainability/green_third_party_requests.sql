@@ -76,8 +76,7 @@ base AS (
     NET.HOST(requests.url) = NET.HOST(third_party.domain)
   INNER JOIN
     pages
-  USING
-    (client, page)
+  USING (client, page)
   GROUP BY
     client,
     page,
@@ -98,8 +97,7 @@ base_green AS (
     NET.HOST(requests.url) = NET.HOST(green_tp.domain)
   INNER JOIN
     pages
-  USING
-    (client, page)
+  USING (client, page)
   GROUP BY
     client,
     page,

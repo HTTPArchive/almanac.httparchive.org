@@ -13,7 +13,8 @@ CROSS JOIN (
   SELECT
     COUNT(DISTINCT url) AS total
   FROM
-    `httparchive.summary_pages.2020_08_01_*`)
+    `httparchive.summary_pages.2020_08_01_*`
+)
 WHERE
   category = 'CMS'
 GROUP BY
@@ -32,7 +33,8 @@ CROSS JOIN (
   SELECT
     COUNT(DISTINCT url) AS total
   FROM
-    `httparchive.summary_pages.2019_07_01_*`)
+    `httparchive.summary_pages.2019_07_01_*`
+)
 WHERE
   category = 'CMS'
 GROUP BY

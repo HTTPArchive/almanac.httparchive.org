@@ -20,9 +20,11 @@
 # 0xD002 TLS_ECDHE_PSK_WITH_AES_256_GCM_SHA384
 # 0xD005 TLS_ECDHE_PSK_WITH_AES_128_CCM_SHA256
 CREATE TEMPORARY FUNCTION isModern(cipher STRING) RETURNS BOOLEAN AS (
-  cipher IN ('1301', '1302', '1303', '1304', '1305',
+  cipher IN (
+    '1301', '1302', '1303', '1304', '1305',
     'C02B', 'C02C', 'C02F', 'C030', 'CCA8', 'CCA9',
-    'CCAC', 'D001', 'D002', 'D005')
+    'CCAC', 'D001', 'D002', 'D005'
+  )
 );
 
 SELECT
@@ -40,4 +42,5 @@ FROM (
   WHERE
     JSON_EXTRACT(payload, '$._securityDetails') IS NOT NULL
   GROUP BY
-    client)
+    client
+)

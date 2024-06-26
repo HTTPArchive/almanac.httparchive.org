@@ -40,7 +40,8 @@ FROM (
     CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._Resolution'), '$.absolute.height') AS FLOAT64) AS viewport_height,
     CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._Resolution'), '$.absolute.width') AS FLOAT64) AS viewport_width
   FROM
-    `httparchive.pages.2021_07_01_*`),
+    `httparchive.pages.2021_07_01_*`
+),
   UNNEST([10, 25, 50, 75, 90]) AS percentile
 WHERE
   # it appears the _Images array is populated only from <img> tag requests and not CSS or favicon

@@ -17,6 +17,7 @@ FROM (
     date = '2019-07-01' AND
     fast_fid + avg_fid + slow_fid > 0
   ORDER BY
-    fast DESC)
+    fast DESC
+)
 WHERE
   MOD(row, CAST(FLOOR(n / 1000) AS INT64)) = 0

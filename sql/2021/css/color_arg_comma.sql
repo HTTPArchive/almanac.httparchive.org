@@ -166,6 +166,7 @@ FROM (
   FROM
     `httparchive.almanac.parsed_css`
   WHERE
-    date = '2021-07-01')
+    date = '2021-07-01'
+)
 GROUP BY
   client

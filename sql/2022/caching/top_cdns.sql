@@ -14,7 +14,8 @@ FROM (
   FROM
     `httparchive.summary_pages.2022_06_01_*`
   GROUP BY
-    client),
+    client
+),
   UNNEST(cdn_list) AS cdn
 GROUP BY
   client,

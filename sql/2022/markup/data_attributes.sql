@@ -21,7 +21,9 @@ WITH totals AS (
     `httparchive.pages.2022_06_01_*`
   GROUP BY
     _TABLE_SUFFIX
-), data_attrs AS (
+),
+
+data_attrs AS (
   SELECT
     _TABLE_SUFFIX AS client,
     almanac_attribute_info.name,
@@ -35,8 +37,7 @@ WITH totals AS (
     `httparchive.pages.2022_06_01_*`
   JOIN
     totals
-  USING
-    (_TABLE_SUFFIX),
+  USING (_TABLE_SUFFIX),
     UNNEST(get_almanac_attribute_info(JSON_EXTRACT_SCALAR(payload, '$._almanac'))) AS almanac_attribute_info
   GROUP BY
     client,

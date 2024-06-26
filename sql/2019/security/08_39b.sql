@@ -27,6 +27,7 @@ FROM (
     `httparchive.almanac.requests`
   WHERE
     date = '2019-07-01' AND
-    firstHtml)
+    firstHtml
+)
 GROUP BY
   client

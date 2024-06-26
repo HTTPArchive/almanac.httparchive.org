@@ -18,7 +18,8 @@ FROM (
     type = 'font' AND
     NET.HOST(url) != NET.HOST(page)
   GROUP BY
-    client),
+    client
+),
   UNNEST(font_host) AS font_host
 WHERE
   font_host.count > 1000

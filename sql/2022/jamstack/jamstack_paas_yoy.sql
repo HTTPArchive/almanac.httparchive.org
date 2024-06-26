@@ -7,9 +7,7 @@ WITH apps AS (
     app
   FROM
     `httparchive.technologies.*`
-  WHERE
-    (_TABLE_SUFFIX LIKE '2021_07_01%' OR _TABLE_SUFFIX LIKE '2022_06_01%') AND
-    (LOWER(category) = 'paas' OR LOWER(app) = 'vercel')
+  WHERE (_TABLE_SUFFIX LIKE '2021_07_01%' OR _TABLE_SUFFIX LIKE '2022_06_01%') AND (LOWER(category) = 'paas' OR LOWER(app) = 'vercel')
 ),
 
 jamstack_totals AS (

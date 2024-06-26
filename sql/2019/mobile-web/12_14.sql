@@ -46,8 +46,7 @@ SELECT
   ROUND(COUNT(DISTINCT url) * 100 / total_pages_with_inputs, 2) AS perc_of_pages_using
 FROM
   `httparchive.pages.2019_07_01_mobile`,
-  UNNEST(getInputAttributes(payload)) AS input_attributes,
-  (SELECT COUNTIF(hasInputs(payload)) AS total_pages_with_inputs FROM `httparchive.pages.2019_07_01_mobile`)
+  UNNEST(getInputAttributes(payload)) AS input_attributes, (SELECT COUNTIF(hasInputs(payload)) AS total_pages_with_inputs FROM `httparchive.pages.2019_07_01_mobile`)
 GROUP BY input_attributes, total_pages_with_inputs
 ORDER BY perc_of_pages_using DESC
 LIMIT 1000

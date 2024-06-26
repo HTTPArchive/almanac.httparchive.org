@@ -32,12 +32,11 @@ JOIN (
   FROM
     `httparchive.technologies.2022_06_01_*`
   WHERE
-    category = 'Ecommerce' AND
-    (
+    category = 'Ecommerce' AND (
       app != 'Cart Functionality' AND
       app != 'Google Analytics Enhanced eCommerce'
     )
-  )
+)
 ON
   CONCAT(origin, '/') = url AND
   IF(device = 'desktop', 'desktop', 'mobile') = client

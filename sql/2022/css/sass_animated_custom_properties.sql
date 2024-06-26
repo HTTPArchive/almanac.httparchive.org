@@ -70,7 +70,7 @@ WITH totals AS (
     _TABLE_SUFFIX AS client,
     COUNT(0) AS total_pages
   FROM
-    `httparchive.summary_pages.2022_07_01_*` -- noqa: L062
+    `httparchive.summary_pages.2022_07_01_*` -- noqa: CV09
   GROUP BY
     client
 )
@@ -89,20 +89,20 @@ FROM (
     `httparchive.almanac.parsed_css`,
     UNNEST(getAnimatedCustomProperties(css)) AS prop
   WHERE
-    date = '2022-07-01')
+    date = '2022-07-01'
+)
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
     url AS page,
     prop
   FROM
-    `httparchive.pages.2022_07_01_*`, -- noqa: L062
-    UNNEST(getCustomPropertiesWithComputedStyle(payload)) AS prop)
-USING
-  (client, page, prop)
+    `httparchive.pages.2022_07_01_*`, -- noqa: CV09
+    UNNEST(getCustomPropertiesWithComputedStyle(payload)) AS prop
+)
+USING (client, page, prop)
 JOIN
   totals
-USING
-  (client)
+USING (client)
 GROUP BY
   client

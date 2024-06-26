@@ -17,7 +17,8 @@ FROM (
     date = '2020-08-01' AND
     NET.HOST(page) = NET.HOST(url) AND
     JSON_EXTRACT_SCALAR(payload, '$._securityDetails.issuer') IS NOT NULL
-  GROUP BY client, request_host)
+  GROUP BY client, request_host
+)
 GROUP BY
   client,
   issuer
