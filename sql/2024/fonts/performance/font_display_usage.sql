@@ -1,5 +1,5 @@
-CREATE TEMPORARY FUNCTION getFontDisplay(json STRING)
-RETURNS ARRAY < STRING >
+CREATE TEMPORARY FUNCTION getProperty(json STRING)
+RETURNS ARRAY<STRING>
 LANGUAGE js
 OPTIONS(library = "gs://httparchive/lib/css-utils.js")
 AS '''
@@ -19,34 +19,42 @@ try {
 }
 ''';
 
+WITH
+pages AS (
+  SELECT
+    client,
+    COUNT(DISTINCT page) AS total
+  FROM
+    `httparchive.all.pages`
+  WHERE
+    date = '2024-06-01'
+  GROUP BY
+    client
+),
+properties AS (
+  SELECT
+    client,
+    property,
+    COUNT(DISTINCT page) AS count
+  FROM
+    `httparchive.all.parsed_css`,
+    UNNEST(getProperty(css)) AS property
+  WHERE
+    date = '2024-06-01'
+  GROUP BY
+    client,
+    property
+)
+
 SELECT
   client,
-  font_display,
-  pages,
+  property,
+  count,
   total,
-  pages / total AS pct
-FROM (
-  SELECT
-    client,
-    font_display,
-    COUNT(DISTINCT page) AS pages
-  FROM
-    `httparchive.almanac.parsed_css`,
-    UNNEST(getFontDisplay(css)) AS font_display
-  WHERE
-    date = '2022-07-01'
-  GROUP BY
-    client,
-    font_display)
-JOIN (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    COUNT(0) AS total
-  FROM
-    `httparchive.summary_pages.2022_07_01_*` -- noqa: L062
-  GROUP BY
-    client)
-USING
-  (client)
+  count / total AS proportion
+FROM
+  properties
+JOIN
+  pages USING (client)
 ORDER BY
-  pct DESC
+  proportion DESC
