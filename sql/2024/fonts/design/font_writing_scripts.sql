@@ -1,4 +1,4 @@
-CREATE TEMP FUNCTION detect(codepoints ARRAY<STRING>)
+CREATE TEMPORARY FUNCTION detect(codepoints ARRAY<STRING>)
 RETURNS ARRAY<STRING>
 LANGUAGE js
 OPTIONS (library = ["gs://httparchive/lib/text-utils.js"])
@@ -17,9 +17,9 @@ fonts AS (
     url,
     payload
   FROM
-    `httparchive.almanac.requests`
+    `httparchive.all.requests`
   WHERE
-    date = '2022-06-01' AND
+    date = '2024-06-01' AND
     type = 'font'
   GROUP BY
     client,
@@ -29,15 +29,15 @@ fonts AS (
 
 SELECT
   client,
-  writing_system,
-  COUNT(0) AS freq,
+  script,
+  COUNT(0) AS count,
   SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
-  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct_freq
+  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS proportion
 FROM
   fonts,
-  UNNEST(detect(JSON_EXTRACT_STRING_ARRAY(payload, '$._font_details.cmap.codepoints'))) AS writing_system
+  UNNEST(detect(JSON_EXTRACT_STRING_ARRAY(payload, '$._font_details.cmap.codepoints'))) AS script
 GROUP BY
   client,
-  writing_system
+  script
 ORDER BY
-  pct_freq DESC
+  proportion DESC
