@@ -1,18 +1,18 @@
 SELECT
   client,
-  JSON_EXTRACT_SCALAR(payload, '$._font_details.OS2.achVendID') AS vendor,
+  JSON_EXTRACT_SCALAR(payload, '$._font_details.OS2.achVendID') AS foundry,
   JSON_EXTRACT_SCALAR(payload, '$._font_details.names[1]') AS family,
-  COUNT(0) AS total,
-  COUNT(0) * 1.0 / SUM(COUNT(0)) OVER(PARTITION BY client) AS pct
+  COUNT(0) AS count,
+  SUM(COUNT(0)) OVER(PARTITION BY client) AS total,
+  COUNT(0) / SUM(COUNT(0)) OVER(PARTITION BY client) AS proportion
 FROM
-  `httparchive.almanac.requests`
+  `httparchive.all.requests`
 WHERE
-  date = '2022-06-01' AND
+  date = '2024-06-01' AND
   type = 'font'
 GROUP BY
   client,
-  vendor,
+  foundry,
   family
-QUALIFY
-  pct > 0.001
-ORDER BY pct DESC
+ORDER BY
+  proportion DESC
