@@ -1,29 +1,37 @@
-SELECT
-  client,
-  font_loading_api,
-  pages,
-  total,
-  pages / total AS pct
-FROM (
+WITH
+pages AS (
   SELECT
     client,
-    REGEXP_CONTAINS(body, r'new FontFace\(') AS font_loading_api,
-    COUNT(DISTINCT page) AS pages
+    COUNT(DISTINCT page) AS total
   FROM
-    `httparchive.almanac.summary_response_bodies`
+    `httparchive.all.pages`
+  WHERE
+    date = '2024-06-01'
+  GROUP BY
+    client
+),
+scripts AS (
+  SELECT
+    client,
+    COUNT(DISTINCT page) AS count
+  FROM
+    `httparchive.all.requests`
   WHERE
     type = 'script' AND
-    date = '2022-06-01'
+    date = '2024-06-01' AND
+    REGEXP_CONTAINS(response_body, r'new FontFace\(')
   GROUP BY
-    client,
-    font_loading_api)
-JOIN (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    COUNT(0) AS total
-  FROM
-    `httparchive.summary_pages.2022_06_01_*`
-  GROUP BY
-    client)
-USING
-  (client)
+    client
+)
+
+SELECT
+  client,
+  count,
+  total,
+  count / total AS proportion
+FROM
+  scripts
+JOIN
+  pages USING (client)
+ORDER BY
+  client
