@@ -1,56 +1,69 @@
-CREATE TEMPORARY FUNCTION getResourceHints(payload STRING)
-RETURNS ARRAY < STRUCT < name STRING, href STRING >>
+CREATE TEMPORARY FUNCTION getHints(payload STRING)
+RETURNS ARRAY<STRUCT<name STRING, href STRING>>
 LANGUAGE js AS '''
 var hints = new Set(['preload', 'prefetch', 'preconnect', 'prerender', 'dns-prefetch']);
 try {
-    var $ = JSON.parse(payload);
-    var almanac = JSON.parse($._almanac);
-    return almanac['link-nodes'].nodes.reduce((results, link) => {
-        var hint = link.rel.toLowerCase();
-        if (!hints.has(hint)) {
-            return results;
-        }
-        results.push({
-            name: hint,
-            href: link.href
-        });
-        return results;
-    }, []);
+  var $ = JSON.parse(payload);
+  var almanac = JSON.parse($._almanac);
+  return almanac['link-nodes'].nodes.reduce((results, link) => {
+    var hint = link.rel.toLowerCase();
+    if (!hints.has(hint)) {
+      return results;
+    }
+    results.push({
+      name: hint,
+      href: link.href
+    });
+    return results;
+  }, []);
 } catch (e) {
-    return [];
+  return [];
 }
 ''';
-SELECT
-  client,
-  name,
-  COUNT(DISTINCT page) AS pages,
-  SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS total,
-  COUNT(DISTINCT page) / SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS pct_hints
-FROM (
-  SELECT DISTINCT
-    _TABLE_SUFFIX AS client,
-    url AS page,
-    hint.name
+
+WITH
+fonts AS (
+  SELECT
+    client,
+    page
   FROM
-    `httparchive.pages.2022_06_01_*`
-  LEFT JOIN
-    UNNEST(getResourceHints(payload)) AS hint)
-LEFT JOIN (
+    `httparchive.all.requests`
+  WHERE
+    date = '2024-06-01' AND
+    type = 'font'
+  GROUP BY
+    client,
+    page
+),
+hints AS (
   SELECT
     client,
     page,
-    type
+    hint.name AS hint
   FROM
-    `httparchive.almanac.requests`
+    `httparchive.all.pages`,
+    UNNEST(getHints(payload)) AS hint
   WHERE
-    date = '2022-06-01')
-USING
-  (client, page)
-WHERE
-  type = 'font'
+    date = '2024-06-01'
+  GROUP BY
+    client,
+    page,
+    hint
+)
+
+SELECT
+  client,
+  hint,
+  COUNT(DISTINCT page) AS count,
+  SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS total,
+  COUNT(DISTINCT page) / SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS proportion
+FROM
+  fonts
+LEFT JOIN
+  hints USING (client, page)
 GROUP BY
   client,
-  name,
-  type
+  hint
 ORDER BY
-  pct_hints DESC
+  client,
+  proportion DESC
