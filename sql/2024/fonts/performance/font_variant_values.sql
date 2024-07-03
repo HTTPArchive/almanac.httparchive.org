@@ -28,37 +28,42 @@ catch (e) {
 }
 ''';
 
-WITH totals AS (
+WITH
+pages AS (
   SELECT
-    _TABLE_SUFFIX AS client,
-    COUNT(0) AS total_pages
+    client,
+    COUNT(DISTINCT page) AS total
   FROM
-    `httparchive.summary_pages.2022_07_01_*` -- noqa: L062
+    `httparchive.all.pages`
+  WHERE
+    date = '2024-06-01'
   GROUP BY
     client
 )
 
-
 SELECT
   client,
-  prop,
-  COUNT(DISTINCT page) AS pages,
-  ANY_VALUE(total_pages) AS total_pages,
-  COUNT(DISTINCT page) / ANY_VALUE(total_pages) AS pct_pages,
-  COUNT(0) AS freq,
-  SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
-  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
+  property,
+  STRUCT(
+    COUNT(DISTINCT page) AS count,
+    ANY_VALUE(total) AS total,
+    COUNT(DISTINCT page) / ANY_VALUE(total) AS proportion
+  ) AS pages,
+  STRUCT(
+    COUNT(0) AS count,
+    SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
+    COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS proportion
+  ) AS sheets
 FROM
-  `httparchive.almanac.parsed_css`,
-  UNNEST(getProperties(css)) AS prop
+  `httparchive.all.parsed_css`,
+  UNNEST(getProperties(css)) AS property
 JOIN
-  totals
-USING
-  (client)
+  pages USING (client)
 WHERE
-  date = '2022-07-01'
+  date = '2024-06-01'
 GROUP BY
   client,
-  prop
+  property
 ORDER BY
-  pct DESC
+  client,
+  sheets.proportion DESC
