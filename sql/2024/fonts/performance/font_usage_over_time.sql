@@ -1,17 +1,16 @@
 SELECT
-  IF(ENDS_WITH(_TABLE_SUFFIX, 'desktop'), 'desktop', 'mobile') AS client,
-  REGEXP_REPLACE(_TABLE_SUFFIX, r'(\d+)_(\d+)_(\d+).*', r'\1-\2-\3') AS date,
-  COUNTIF(reqFont > 0) AS freq_fonts,
+  client,
+  date,
+  COUNTIF(type = 'font') AS count,
   COUNT(0) AS total,
-  COUNTIF(reqFont > 0) / COUNT(0) AS pct_fonts
+  COUNTIF(type = 'font') / COUNT(0) AS proportion
 FROM
-  `httparchive.summary_pages.*`
+  `httparchive.all.requests`
 WHERE
-  reqFont IS NOT NULL AND
-  bytesFont IS NOT NULL
+  date IS NOT NULL
 GROUP BY
   client,
   date
 ORDER BY
-  date DESC,
-  client
+  client,
+  date DESC
