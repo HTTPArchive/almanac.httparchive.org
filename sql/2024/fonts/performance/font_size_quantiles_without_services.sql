@@ -22,10 +22,10 @@ CREATE TEMPORARY FUNCTION SERVICE(url STRING) AS (
 );
 
 WITH
-urls AS (
+fonts AS (
   SELECT
-    url,
     client,
+    url,
     AVG(PARSE_NUMERIC(header.value)) AS size
   FROM
     `httparchive.all.requests`,
@@ -37,8 +37,8 @@ urls AS (
     TRIM(header.value) != '' AND
     SERVICE(url) = 'self-hosted'
   GROUP BY
-    url,
-    client
+    client,
+    url
 )
 
 SELECT
@@ -47,7 +47,7 @@ SELECT
   COUNT(DISTINCT url) AS count,
   APPROX_QUANTILES(size, 1000)[OFFSET(percentile * 10)] AS size
 FROM
-  urls,
+  fonts,
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 GROUP BY
   client,

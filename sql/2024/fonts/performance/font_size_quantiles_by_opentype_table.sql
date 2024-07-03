@@ -16,8 +16,8 @@ try {
 WITH
 fonts AS (
   SELECT
-    client,
     url,
+    client,
     JSON_EXTRACT(payload, '$._font_details.table_sizes') AS payload
   FROM
     `httparchive.all.requests`
@@ -25,8 +25,8 @@ fonts AS (
     date = '2024-06-01' AND
     type = 'font'
   GROUP BY
-    client,
     url,
+    client,
     payload
 ),
 tables AS (
