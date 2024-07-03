@@ -46,7 +46,6 @@ try {
 } catch (e) {
   return [];
 }
-
 ''';
 
 WITH
