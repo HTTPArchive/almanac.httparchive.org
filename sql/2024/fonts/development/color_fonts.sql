@@ -1,5 +1,5 @@
 -- Section: Development
--- Question: Which color-font formats are used?
+-- Question: How widespread are color fonts?
 
 CREATE TEMPORARY FUNCTION COLOR_FORMATS(payload STRING) AS (
   REGEXP_EXTRACT_ALL(
@@ -8,21 +8,40 @@ CREATE TEMPORARY FUNCTION COLOR_FORMATS(payload STRING) AS (
   )
 );
 
+WITH
+pages AS (
+  SELECT
+    client,
+    COUNT(DISTINCT page) AS total
+  FROM
+    `httparchive.all.requests`
+  WHERE
+    date = '2024-06-01'
+  GROUP BY
+    client
+),
+fonts AS (
+  SELECT
+    client,
+    COUNT(DISTINCT page) AS count
+  FROM
+    `httparchive.all.requests`
+  WHERE
+    date = '2024-06-01' AND
+    type = 'font' AND
+    ARRAY_LENGTH(COLOR_FORMATS(payload)) > 0
+  GROUP BY
+    client
+)
+
 SELECT
   client,
-  format,
-  COUNT(0) AS count,
-  SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
-  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS proportion
+  count,
+  total,
+  count / total AS proportion
 FROM
-  `httparchive.all.requests`,
-  UNNEST(COLOR_FORMATS(payload)) AS format
-WHERE
-  date = '2024-06-01' AND
-  type = 'font'
-GROUP BY
-  client,
-  format
+  fonts
+JOIN
+  pages USING (client)
 ORDER BY
-  client,
   proportion DESC
