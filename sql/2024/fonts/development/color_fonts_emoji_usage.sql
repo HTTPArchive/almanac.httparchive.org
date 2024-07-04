@@ -1,5 +1,14 @@
-CREATE TEMP FUNCTION
-hasEmoji(codepoints ARRAY<STRING>)
+-- Section: Development
+-- Question: Are color fonts used for the sake of emojis?
+
+CREATE TEMPORARY FUNCTION COLOR_FORMATS(payload STRING) AS (
+  REGEXP_EXTRACT_ALL(
+    JSON_EXTRACT(payload, '$._font_details.color.formats'),
+    '(?i)(sbix|CBDT|SVG|COLRv0|COLRv1)'
+  )
+);
+
+CREATE TEMPORARY FUNCTION HAS_EMOJIS(codepoints ARRAY<STRING>)
 RETURNS BOOL
 LANGUAGE js
 OPTIONS (library = ["gs://httparchive/lib/text-utils.js"])
@@ -24,21 +33,23 @@ if (codepoints && codepoints.length) {
 } else {
   return false;
 }
-
 """;
+
 SELECT
   client,
-  hasEmoji(JSON_EXTRACT_STRING_ARRAY(payload,
-      '$._font_details.cmap.codepoints')) AS emoji,
-  COUNT(0) AS total,
-  COUNT(0) * 1.0 / SUM(COUNT(0)) OVER(PARTITION BY client) AS pct
+  HAS_EMOJIS(JSON_EXTRACT_STRING_ARRAY(payload, '$._font_details.cmap.codepoints')) AS emojis,
+  COUNT(0) AS count,
+  SUM(COUNT(0)) OVER(PARTITION BY client) AS total,
+  COUNT(0) / SUM(COUNT(0)) OVER(PARTITION BY client) AS proportion
 FROM
-  `httparchive.almanac.requests`
+  `httparchive.all.requests`
 WHERE
-  date = '2022-06-01' AND
+  date = '2024-06-01' AND
   type = 'font' AND
-  REGEXP_CONTAINS(JSON_EXTRACT(payload,
-      '$._font_details.color.formats'), '(?i)(sbix|CBDT|SVG|COLRv0|COLRv1)')
+  ARRAY_LENGTH(COLOR_FORMATS(payload)) > 0
 GROUP BY
   client,
-  emoji
+  emojis
+ORDER BY
+  client,
+  emojis
