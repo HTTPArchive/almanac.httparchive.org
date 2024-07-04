@@ -1,3 +1,6 @@
+-- Section: Design
+-- Question: Which foundries are popular?
+
 WITH
 pages AS (
   SELECT

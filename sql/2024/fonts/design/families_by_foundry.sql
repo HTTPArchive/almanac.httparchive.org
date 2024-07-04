@@ -1,3 +1,6 @@
+-- Section: Design
+-- Question: Which families are used within each foundry?
+
 SELECT
   client,
   JSON_EXTRACT_SCALAR(payload, '$._font_details.OS2.achVendID') AS foundry,
