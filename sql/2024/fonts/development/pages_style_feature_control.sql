@@ -1,5 +1,5 @@
 -- Section: Development
--- Question: Which mechanism is used for working with features in CSS?
+-- Question: How does one control features in CSS?
 
 CREATE TEMPORARY FUNCTION PROPERTIES(css STRING)
 RETURNS ARRAY<STRING>
