@@ -1,3 +1,6 @@
+-- Section: Development
+-- Question: Which OpenType features are used in CSS?
+
 CREATE TEMPORARY FUNCTION FEATURES(json STRING)
 RETURNS ARRAY<STRING>
 LANGUAGE js
