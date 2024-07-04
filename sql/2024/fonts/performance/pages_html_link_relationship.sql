@@ -44,10 +44,11 @@ hints AS (
     page,
     hint.name AS hint
   FROM
-    `httparchive.all.pages`,
+    `httparchive.all.requests`,
     UNNEST(getHints(payload)) AS hint
   WHERE
-    date = '2024-06-01'
+    date = '2024-06-01' AND
+    type = 'html'
   GROUP BY
     client,
     page,

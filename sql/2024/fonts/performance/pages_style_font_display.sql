@@ -28,7 +28,7 @@ pages AS (
     client,
     COUNT(DISTINCT page) AS total
   FROM
-    `httparchive.all.pages`
+    `httparchive.all.requests`
   WHERE
     date = '2024-06-01'
   GROUP BY
