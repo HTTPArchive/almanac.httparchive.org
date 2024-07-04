@@ -1,3 +1,6 @@
+-- Section: Design
+-- Question: Which system families are popular?
+
 CREATE TEMPORARY FUNCTION getFamilies(json STRING)
 RETURNS ARRAY<STRING>
 LANGUAGE js

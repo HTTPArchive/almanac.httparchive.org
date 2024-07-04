@@ -1,3 +1,6 @@
+-- Section: Design
+-- Question: Which families are popular?
+
 CREATE TEMPORARY FUNCTION getFamilies(css STRING)
 RETURNS ARRAY<STRING>
 LANGUAGE js

@@ -1,3 +1,6 @@
+-- Section: Design
+-- Question: Which scripts does one design for?
+
 CREATE TEMPORARY FUNCTION detect(codepoints ARRAY<STRING>)
 RETURNS ARRAY<STRING>
 LANGUAGE js
