@@ -1,3 +1,6 @@
+-- Section: Performance
+-- Question: What is the distribution of the file size by table?
+
 CREATE TEMPORARY FUNCTION getTables(json STRING)
 RETURNS ARRAY<STRUCT<name STRING, value INT64>>
 LANGUAGE js AS '''

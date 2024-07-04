@@ -1,3 +1,6 @@
+-- Section: Performance
+-- Question: Which outline formats are served?
+
 WITH
 fonts AS (
   SELECT
