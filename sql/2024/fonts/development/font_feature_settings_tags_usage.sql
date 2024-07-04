@@ -1,9 +1,8 @@
-CREATE TEMPORARY FUNCTION getFontFeatureTags(json STRING)
-RETURNS ARRAY < STRING >
+CREATE TEMPORARY FUNCTION FEATURES(json STRING)
+RETURNS ARRAY<STRING>
 LANGUAGE js
 OPTIONS(library = "gs://httparchive/lib/css-utils.js")
 AS '''
-
 function parseFontFeatureSettings(value) {
   const features = (value || '').split(/\\s*,\\s*/);
   const result = []
@@ -37,34 +36,42 @@ try {
 }
 ''';
 
+WITH
+features AS (
+  SELECT
+    client,
+    feature,
+    COUNT(DISTINCT page) AS count
+  FROM
+    `httparchive.all.parsed_css`,
+    UNNEST(FEATURES(css)) AS feature
+  WHERE
+    date = '2024-06-01'
+  GROUP BY
+    client,
+    feature
+),
+pages AS (
+  SELECT
+    client,
+    COUNT(DISTINCT page) AS total
+  FROM
+    `httparchive.all.requests`
+  WHERE
+    date = '2024-06-01'
+  GROUP BY
+    client
+)
+
 SELECT
   client,
-  font_feature,
-  pages,
+  feature,
+  count,
   total,
-  pages / total AS pct
-FROM (
-  SELECT
-    client,
-    font_feature,
-    COUNT(DISTINCT page) AS pages
-  FROM
-    `httparchive.almanac.parsed_css`,
-    UNNEST(getFontFeatureTags(css)) AS font_feature
-  WHERE
-    date = '2022-07-01'
-  GROUP BY
-    client,
-    font_feature)
-JOIN (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    COUNT(0) AS total
-  FROM
-    `httparchive.summary_pages.2022_07_01_*` -- noqa: L062
-  GROUP BY
-    client)
-USING
-  (client)
+  count / total AS proportion
+FROM
+  features
+JOIN
+  pages USING (client)
 ORDER BY
-  pct DESC
+  proportion DESC
