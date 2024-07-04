@@ -1,4 +1,10 @@
-CREATE TEMP FUNCTION hasGPOSKerning(data STRING) RETURNS BOOL LANGUAGE js AS '''
+-- Section: Development
+-- Question: How widespread is kerning support?
+
+CREATE TEMPORARY FUNCTION HAS_KERNING(data STRING)
+RETURNS BOOL
+LANGUAGE js
+AS '''
 try {
   const json = JSON.parse(data);
   const result = new Set();
@@ -20,12 +26,14 @@ fonts AS (
   SELECT
     client,
     url,
-    (hasGPOSKerning(JSON_EXTRACT(payload, '$._font_details.features')) OR IFNULL(REGEXP_CONTAINS(JSON_EXTRACT(payload,
-      '$._font_details.table_sizes'), '(?i)kern'), false)) AS kerning
+    (
+      HAS_KERNING(JSON_EXTRACT(payload, '$._font_details.features')) OR
+      IFNULL(REGEXP_CONTAINS(JSON_EXTRACT(payload, '$._font_details.table_sizes'), '(?i)kern'), FALSE)
+    ) AS kerning
   FROM
-    `httparchive.almanac.requests`
+    `httparchive.all.requests`
   WHERE
-    date = '2022-06-01' AND
+    date = '2024-06-01' AND
     type = 'font'
   GROUP BY
     client,
@@ -35,14 +43,13 @@ fonts AS (
 
 SELECT
   client,
-  kerning,
-  COUNT(0) AS freq,
-  SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
-  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct_freq
+  COUNTIF(kerning) AS count,
+  SUM(COUNTIF(kerning)) OVER (PARTITION BY client) AS total,
+  COUNTIF(kerning) / SUM(COUNTIF(kerning)) OVER (PARTITION BY client) AS proportion
 FROM
   fonts
 GROUP BY
-  client,
-  kerning
+  client
 ORDER BY
-  pct_freq DESC
+  client,
+  proportion DESC
