@@ -25,6 +25,7 @@ WITH
 fonts AS (
   SELECT
     client,
+    SERVICE(url) AS service,
     url,
     AVG(PARSE_NUMERIC(header.value)) AS size
   FROM
@@ -34,15 +35,16 @@ fonts AS (
     date = '2024-06-01' AND
     type = 'font' AND
     LOWER(header.name) = 'content-length' AND
-    TRIM(header.value) != '' AND
-    SERVICE(url) = 'self-hosted'
+    TRIM(header.value) != ''
   GROUP BY
     client,
+    service,
     url
 )
 
 SELECT
   client,
+  service,
   percentile,
   COUNT(DISTINCT url) AS count,
   APPROX_QUANTILES(size, 1000)[OFFSET(percentile * 10)] AS size
@@ -51,7 +53,9 @@ FROM
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 GROUP BY
   client,
+  service,
   percentile
 ORDER BY
   client,
+  service,
   percentile
