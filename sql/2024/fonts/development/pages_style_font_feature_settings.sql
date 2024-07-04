@@ -1,5 +1,5 @@
 -- Section: Development
--- Question: Which OpenType features are used in CSS?
+-- Question: Which features are used via font-feature-settings?
 
 CREATE TEMPORARY FUNCTION FEATURES(json STRING)
 RETURNS ARRAY<STRING>

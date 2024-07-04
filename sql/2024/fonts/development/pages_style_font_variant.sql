@@ -1,4 +1,7 @@
-CREATE TEMPORARY FUNCTION getProperties(css STRING)
+-- Section: Development
+-- Question: Which features are used via font-variant?
+
+CREATE TEMPORARY FUNCTION PROPERTIES(css STRING)
 RETURNS ARRAY<STRING>
 LANGUAGE js
 OPTIONS (library = "gs://httparchive/lib/css-utils.js")
@@ -34,36 +37,36 @@ pages AS (
     client,
     COUNT(DISTINCT page) AS total
   FROM
-    `httparchive.all.pages`
+    `httparchive.all.requests`
   WHERE
     date = '2024-06-01'
   GROUP BY
     client
+),
+properties AS (
+  SELECT
+    client,
+    property,
+    COUNT(DISTINCT page) AS count
+  FROM
+    `httparchive.all.parsed_css`,
+    UNNEST(PROPERTIES(css)) AS property
+  WHERE
+    date = '2024-06-01'
+  GROUP BY
+    client,
+    property
 )
 
 SELECT
   client,
   property,
-  STRUCT(
-    COUNT(DISTINCT page) AS count,
-    ANY_VALUE(total) AS total,
-    COUNT(DISTINCT page) / ANY_VALUE(total) AS proportion
-  ) AS pages,
-  STRUCT(
-    COUNT(0) AS count,
-    SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
-    COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS proportion
-  ) AS sheets
+  count,
+  total,
+  count / total AS proportion
 FROM
-  `httparchive.all.parsed_css`,
-  UNNEST(getProperties(css)) AS property
+  properties
 JOIN
   pages USING (client)
-WHERE
-  date = '2024-06-01'
-GROUP BY
-  client,
-  property
 ORDER BY
-  client,
-  sheets.proportion DESC
+  proportion DESC
