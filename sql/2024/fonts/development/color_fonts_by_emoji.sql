@@ -8,7 +8,7 @@ CREATE TEMPORARY FUNCTION COLOR_FORMATS(payload STRING) AS (
   )
 );
 
-CREATE TEMPORARY FUNCTION HAS_EMOJIS(codepoints ARRAY<STRING>)
+CREATE TEMPORARY FUNCTION HAS_EMOJI(codepoints ARRAY<STRING>)
 RETURNS BOOL
 LANGUAGE js
 OPTIONS (library = ["gs://httparchive/lib/text-utils.js"])
@@ -37,7 +37,7 @@ if (codepoints && codepoints.length) {
 
 SELECT
   client,
-  HAS_EMOJIS(JSON_EXTRACT_STRING_ARRAY(payload, '$._font_details.cmap.codepoints')) AS emojis,
+  HAS_EMOJI(JSON_EXTRACT_STRING_ARRAY(payload, '$._font_details.cmap.codepoints')) AS emoji,
   COUNT(0) AS count,
   SUM(COUNT(0)) OVER(PARTITION BY client) AS total,
   COUNT(0) / SUM(COUNT(0)) OVER(PARTITION BY client) AS proportion
@@ -49,7 +49,7 @@ WHERE
   ARRAY_LENGTH(COLOR_FORMATS(payload)) > 0
 GROUP BY
   client,
-  emojis
+  emoji
 ORDER BY
   client,
-  emojis
+  emoji
