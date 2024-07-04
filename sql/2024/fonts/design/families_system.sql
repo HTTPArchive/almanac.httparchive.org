@@ -7,19 +7,19 @@ LANGUAGE js
 OPTIONS (library = ["gs://httparchive/lib/css-font-parser.js", "gs://httparchive/lib/css-utils.js"])
 AS '''
 const system = [
-  'serif',
-  'sans-serif',
   'cursive',
-  'fantasy',
-  'monospace',
-  'system-ui',
   'emoji',
-  'math',
   'fangsong',
-  'ui-serif',
-  'ui-sans-serif',
+  'fantasy',
+  'math',
+  'monospace',
+  'sans-serif',
+  'serif',
+  'system-ui',
   'ui-monospace',
-  'ui-rounded'
+  'ui-rounded',
+  'ui-sans-serif',
+  'ui-serif'
 ];
 
 try {
