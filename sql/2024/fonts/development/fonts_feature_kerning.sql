@@ -1,5 +1,5 @@
 -- Section: Development
--- Question: How widespread is kerning support?
+-- Question: How prevalent is kerning support?
 
 CREATE TEMPORARY FUNCTION HAS_KERNING(data STRING)
 RETURNS BOOL
