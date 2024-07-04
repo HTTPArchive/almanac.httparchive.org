@@ -1,7 +1,7 @@
 -- Section: Development
 -- Question: How does one control features in CSS?
 
-CREATE TEMPORARY FUNCTION PROPERTIES(css STRING)
+CREATE TEMPORARY FUNCTION PROPERTIES(json STRING)
 RETURNS ARRAY<STRING>
 LANGUAGE js
 OPTIONS (library = "gs://httparchive/lib/css-utils.js")
@@ -20,7 +20,7 @@ try {
     });
     return sortObject(ret);
   }
-  let ast = JSON.parse(css);
+  let ast = JSON.parse(json);
   let props = compute(ast);
   return Object.entries(props).flatMap(([prop, freq]) => {
     return Array(freq).fill(prop);

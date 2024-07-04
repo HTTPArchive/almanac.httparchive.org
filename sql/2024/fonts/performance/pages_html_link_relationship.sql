@@ -1,12 +1,12 @@
 -- Section: Performance
 -- Question: What is the usage of link relationship in HTML?
 
-CREATE TEMPORARY FUNCTION HINTS(payload STRING)
+CREATE TEMPORARY FUNCTION HINTS(json STRING)
 RETURNS ARRAY<STRUCT<name STRING, href STRING>>
 LANGUAGE js AS '''
 var hints = new Set(['preload', 'prefetch', 'preconnect', 'prerender', 'dns-prefetch']);
 try {
-  var $ = JSON.parse(payload);
+  var $ = JSON.parse(json);
   var almanac = JSON.parse($._almanac);
   return almanac['link-nodes'].nodes.reduce((results, link) => {
     var hint = link.rel.toLowerCase();

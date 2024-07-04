@@ -1,9 +1,9 @@
 -- Section: Development
 -- Question: Are color fonts used for the sake of emojis?
 
-CREATE TEMPORARY FUNCTION COLOR_FORMATS(payload STRING) AS (
+CREATE TEMPORARY FUNCTION COLOR_FORMATS(json STRING) AS (
   REGEXP_EXTRACT_ALL(
-    JSON_EXTRACT(payload, '$._font_details.color.formats'),
+    JSON_EXTRACT(json, '$._font_details.color.formats'),
     '(?i)(sbix|CBDT|SVG|COLRv0|COLRv1)'
   )
 );

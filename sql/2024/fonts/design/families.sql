@@ -1,13 +1,13 @@
 -- Section: Design
 -- Question: Which families are popular?
 
-CREATE TEMPORARY FUNCTION FAMILIES(css STRING)
+CREATE TEMPORARY FUNCTION FAMILIES(json STRING)
 RETURNS ARRAY<STRING>
 LANGUAGE js
 OPTIONS (library = ["gs://httparchive/lib/css-font-parser.js", "gs://httparchive/lib/css-utils.js"])
 AS '''
 try {
-  const ast = JSON.parse(css);
+  const ast = JSON.parse(json);
   let result = [];
 
   walkDeclarations(ast, (decl) => {
