@@ -1,7 +1,7 @@
 -- Section: Performance
 -- Question: What is the usage of link relationship in HTML?
 
-CREATE TEMPORARY FUNCTION getHints(payload STRING)
+CREATE TEMPORARY FUNCTION HINTS(payload STRING)
 RETURNS ARRAY<STRUCT<name STRING, href STRING>>
 LANGUAGE js AS '''
 var hints = new Set(['preload', 'prefetch', 'preconnect', 'prerender', 'dns-prefetch']);
@@ -45,7 +45,7 @@ hints AS (
     hint.name AS hint
   FROM
     `httparchive.all.requests`,
-    UNNEST(getHints(payload)) AS hint
+    UNNEST(HINTS(payload)) AS hint
   WHERE
     date = '2024-06-01' AND
     type = 'html'

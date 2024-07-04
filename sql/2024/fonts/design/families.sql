@@ -1,7 +1,7 @@
 -- Section: Design
 -- Question: Which families are popular?
 
-CREATE TEMPORARY FUNCTION getFamilies(css STRING)
+CREATE TEMPORARY FUNCTION FAMILIES(css STRING)
 RETURNS ARRAY<STRING>
 LANGUAGE js
 OPTIONS (library = ["gs://httparchive/lib/css-font-parser.js", "gs://httparchive/lib/css-utils.js"])
@@ -42,7 +42,7 @@ families AS (
     COUNT(DISTINCT page) AS count
   FROM
     `httparchive.all.parsed_css`,
-    UNNEST(getFamilies(css)) AS family
+    UNNEST(FAMILIES(css)) AS family
   WHERE
     date = '2024-06-01'
   GROUP BY

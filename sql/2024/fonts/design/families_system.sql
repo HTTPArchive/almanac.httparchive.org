@@ -1,7 +1,7 @@
 -- Section: Design
 -- Question: Which system families are popular?
 
-CREATE TEMPORARY FUNCTION getFamilies(json STRING)
+CREATE TEMPORARY FUNCTION FAMILIES(json STRING)
 RETURNS ARRAY<STRING>
 LANGUAGE js
 OPTIONS (library = ["gs://httparchive/lib/css-font-parser.js", "gs://httparchive/lib/css-utils.js"])
@@ -52,6 +52,20 @@ try {
 ''';
 
 WITH
+families AS (
+  SELECT
+    client,
+    family,
+    COUNT(DISTINCT page) AS count
+  FROM
+    `httparchive.all.parsed_css`,
+    UNNEST(FAMILIES(css)) AS family
+  WHERE
+    date = '2024-06-01'
+  GROUP BY
+    client,
+    family
+),
 pages AS (
   SELECT
     client,
@@ -62,20 +76,6 @@ pages AS (
     date = '2024-06-01'
   GROUP BY
     client
-),
-families AS (
-  SELECT
-    client,
-    family,
-    COUNT(DISTINCT page) AS count
-  FROM
-    `httparchive.all.parsed_css`,
-    UNNEST(getFamilies(css)) AS family
-  WHERE
-    date = '2024-06-01'
-  GROUP BY
-    client,
-    family
 )
 
 SELECT

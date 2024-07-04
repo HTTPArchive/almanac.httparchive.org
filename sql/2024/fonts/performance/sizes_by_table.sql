@@ -1,7 +1,7 @@
 -- Section: Performance
 -- Question: What is the distribution of the file size by table?
 
-CREATE TEMPORARY FUNCTION getTables(json STRING)
+CREATE TEMPORARY FUNCTION TABLES(json STRING)
 RETURNS ARRAY<STRUCT<name STRING, value INT64>>
 LANGUAGE js AS '''
 if (json === null) {
@@ -39,7 +39,7 @@ tables AS (
     table.value AS size
   FROM
     fonts,
-    UNNEST(getTables(payload)) AS table
+    UNNEST(TABLES(payload)) AS table
 )
 
 SELECT
