@@ -24,17 +24,6 @@ try {
 ''';
 
 WITH
-pages AS (
-  SELECT
-    client,
-    COUNT(DISTINCT page) AS total
-  FROM
-    `httparchive.all.requests`
-  WHERE
-    date = '2024-06-01'
-  GROUP BY
-    client
-),
 families AS (
   SELECT
     client,
@@ -48,6 +37,17 @@ families AS (
   GROUP BY
     client,
     family
+),
+pages AS (
+  SELECT
+    client,
+    COUNT(DISTINCT page) AS total
+  FROM
+    `httparchive.all.requests`
+  WHERE
+    date = '2024-06-01'
+  GROUP BY
+    client
 )
 
 SELECT
