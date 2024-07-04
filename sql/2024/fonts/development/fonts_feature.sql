@@ -1,4 +1,10 @@
-CREATE TEMP FUNCTION getFeatures(data STRING) RETURNS ARRAY<STRING> LANGUAGE js AS '''
+-- Section: Development
+-- Question: What features are supported in fonts?
+
+CREATE TEMPORARY FUNCTION FEATURES(data STRING)
+RETURNS ARRAY<STRING>
+LANGUAGE js
+AS '''
 try {
   const json = JSON.parse(data);
   const result = new Set();
@@ -16,33 +22,34 @@ try {
 ''';
 
 WITH
-fonts AS (
+features AS (
   SELECT
     client,
     url,
-    payload
+    feature
   FROM
-    `httparchive.almanac.requests`
+    `httparchive.all.requests`
+    UNNEST(FEATURES(JSON_EXTRACT(payload, '$._font_details.features'))) AS feature
   WHERE
-    date = '2022-06-01' AND
+    date = '2024-06-01' AND
     type = 'font'
   GROUP BY
     client,
     url,
-    payload
+    feature
 )
 
 SELECT
   client,
   feature,
-  COUNT(0) AS freq,
+  COUNT(0) AS count,
   SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
-  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct_freq
+  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS proportion
 FROM
-  fonts,
-  UNNEST(getFeatures(JSON_EXTRACT(payload, '$._font_details.features'))) AS feature
+  features
 GROUP BY
   client,
   feature
 ORDER BY
-  pct_freq DESC
+  client,
+  proportion DESC
