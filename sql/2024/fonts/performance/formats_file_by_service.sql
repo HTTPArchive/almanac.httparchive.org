@@ -1,6 +1,14 @@
 -- Section: Performance
 -- Question: Which file formats are served by service?
 
+CREATE TEMPORARY FUNCTION FILE_FORMAT(url STRING, header STRING) AS (
+  LOWER(COALESCE(
+    REGEXP_EXTRACT(LOWER(header), r'(otf|sfnt|svg|ttf|woff2?|fontobject|opentype|truetype)'),
+    REGEXP_EXTRACT(url, r'\.(\w+)(?:$|\?|#)'),
+    header
+  ))
+);
+
 CREATE TEMPORARY FUNCTION SERVICE(url STRING) AS (
   CASE
     WHEN REGEXP_CONTAINS(url, r'((use|fonts)\.typekit\.(net|com))|webfonts\.creativecloud\.com') THEN 'Adobe'
@@ -22,14 +30,6 @@ CREATE TEMPORARY FUNCTION SERVICE(url STRING) AS (
     WHEN REGEXP_CONTAINS(url, r'webfonts\.justanotherfoundry\.com') THEN 'justanotherfoundry.com'
     ELSE 'self-hosted'
   END
-);
-
-CREATE TEMPORARY FUNCTION FILE_FORMAT(url STRING, header STRING) AS (
-  LOWER(COALESCE(
-    REGEXP_EXTRACT(LOWER(header), r'(otf|sfnt|svg|ttf|woff2?|fontobject|opentype|truetype)'),
-    REGEXP_EXTRACT(url, r'\.(\w+)(?:$|\?|#)'),
-    header
-  ))
 );
 
 SELECT

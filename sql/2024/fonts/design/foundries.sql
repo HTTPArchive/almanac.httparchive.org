@@ -2,17 +2,6 @@
 -- Question: Which foundries are popular?
 
 WITH
-pages AS (
-  SELECT
-    client,
-    COUNT(DISTINCT page) AS total
-  FROM
-    `httparchive.all.requests`
-  WHERE
-    date = '2024-06-01'
-  GROUP BY
-    client
-),
 foundries AS (
   SELECT
     client,
@@ -26,6 +15,17 @@ foundries AS (
   GROUP BY
     client,
     foundry
+),
+pages AS (
+  SELECT
+    client,
+    COUNT(DISTINCT page) AS total
+  FROM
+    `httparchive.all.requests`
+  WHERE
+    date = '2024-06-01'
+  GROUP BY
+    client
 )
 
 SELECT

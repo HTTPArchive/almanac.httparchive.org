@@ -1,7 +1,7 @@
 -- Section: Performance
 -- Question: What is the usage of font-display in CSS?
 
-CREATE TEMPORARY FUNCTION getProperty(json STRING)
+CREATE TEMPORARY FUNCTION PROPERTIES(json STRING)
 RETURNS ARRAY<STRING>
 LANGUAGE js
 OPTIONS(library = "gs://httparchive/lib/css-utils.js")
@@ -41,7 +41,7 @@ properties AS (
     COUNT(DISTINCT page) AS count
   FROM
     `httparchive.all.parsed_css`,
-    UNNEST(getProperty(css)) AS property
+    UNNEST(PROPERTIES(css)) AS property
   WHERE
     date = '2024-06-01'
   GROUP BY

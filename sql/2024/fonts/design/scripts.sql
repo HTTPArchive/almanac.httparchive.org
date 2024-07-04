@@ -1,7 +1,7 @@
 -- Section: Design
 -- Question: Which scripts does one design for?
 
-CREATE TEMPORARY FUNCTION detect(codepoints ARRAY<STRING>)
+CREATE TEMPORARY FUNCTION SCRIPTS(codepoints ARRAY<STRING>)
 RETURNS ARRAY<STRING>
 LANGUAGE js
 OPTIONS (library = ["gs://httparchive/lib/text-utils.js"])
@@ -38,7 +38,7 @@ SELECT
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS proportion
 FROM
   fonts,
-  UNNEST(detect(JSON_EXTRACT_STRING_ARRAY(payload, '$._font_details.cmap.codepoints'))) AS script
+  UNNEST(SCRIPTS(JSON_EXTRACT_STRING_ARRAY(payload, '$._font_details.cmap.codepoints'))) AS script
 GROUP BY
   client,
   script
