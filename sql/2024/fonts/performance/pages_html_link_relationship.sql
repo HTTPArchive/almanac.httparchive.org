@@ -1,3 +1,6 @@
+-- Section: Performance
+-- Question: What is the usage of link relationship in HTML?
+
 CREATE TEMPORARY FUNCTION getHints(payload STRING)
 RETURNS ARRAY<STRUCT<name STRING, href STRING>>
 LANGUAGE js AS '''

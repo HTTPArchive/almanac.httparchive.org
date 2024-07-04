@@ -1,3 +1,6 @@
+-- Section: Performance
+-- Question: What is the distribution of the file size by service?
+
 CREATE TEMPORARY FUNCTION SERVICE(url STRING) AS (
   CASE
     WHEN REGEXP_CONTAINS(url, r'((use|fonts)\.typekit\.(net|com))|webfonts\.creativecloud\.com') THEN 'Adobe'

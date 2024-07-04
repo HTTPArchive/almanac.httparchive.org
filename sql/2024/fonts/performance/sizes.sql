@@ -1,3 +1,6 @@
+-- Section: Performance
+-- Question: What is the distribution of the file size?
+
 WITH
 fonts AS (
   SELECT
