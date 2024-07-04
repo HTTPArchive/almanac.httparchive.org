@@ -1,33 +1,47 @@
-SELECT
-  client,
-  COUNT(DISTINCT page) AS freq_color,
-  total_page,
-  COUNT(DISTINCT page) / total_page AS pct_color
-FROM (
+-- Section: Development
+-- Question: How popular are color fonts?
+
+CREATE TEMPORARY FUNCTION COLOR_FORMATS(payload STRING) AS (
+  REGEXP_EXTRACT_ALL(
+    JSON_EXTRACT(payload, '$._font_details.color.formats'),
+    '(?i)(sbix|CBDT|SVG|COLRv0|COLRv1)'
+  )
+);
+
+WITH
+pages AS (
   SELECT
     client,
-    page
+    COUNT(DISTINCT page) AS total
   FROM
-    `httparchive.almanac.requests`
+    `httparchive.all.requests`
   WHERE
-    date = '2022-06-01' AND
-    type = 'font' AND
-    REGEXP_CONTAINS(JSON_EXTRACT(payload,
-        '$._font_details.color.formats'), '(?i)(sbix|CBDT|SVG|COLRv0|COLRv1)'))
-JOIN (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    COUNT(0) AS total_page
-  FROM
-    `httparchive.pages.2022_06_01_*`
+    date = '2024-06-01'
   GROUP BY
-    _TABLE_SUFFIX)
-USING
-  (client)
-GROUP BY
+    client
+),
+fonts AS (
+  SELECT
+    client,
+    COUNT(DISTINCT page) AS count
+  FROM
+    `httparchive.all.requests`
+  WHERE
+    date = '2024-06-01' AND
+    type = 'font' AND
+    ARRAY_LENGTH(COLOR_FORMATS(payload)) > 0
+  GROUP BY
+    client
+)
+
+SELECT
   client,
-  total_page
-HAVING
-  freq_color > 100
+  count,
+  total,
+  count / total AS proportion
+FROM
+  fonts
+JOIN
+  pages USING (client)
 ORDER BY
-  freq_color DESC
+  proportion DESC
