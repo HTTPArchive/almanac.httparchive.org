@@ -7,16 +7,14 @@ LANGUAGE js
 OPTIONS (library = ["gs://httparchive/lib/css-font-parser.js", "gs://httparchive/lib/css-utils.js"])
 AS '''
 try {
-  const ast = JSON.parse(json);
+  const $ = JSON.parse(json);
   let result = [];
-
-  walkDeclarations(ast, (decl) => {
+  walkDeclarations($, (decl) => {
     result.push(parseFontFamilyProperty(decl.value)[0]);
   }, {
     properties: 'font-family',
     rules: (r) =>  r.type === 'font-face'
   });
-
   return result;
 } catch (e) {
   return [];

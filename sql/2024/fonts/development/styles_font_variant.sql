@@ -7,9 +7,9 @@ LANGUAGE js
 OPTIONS (library = "gs://httparchive/lib/css-utils.js")
 AS '''
 try {
-  function compute(ast) {
+  function compute(tree) {
     let ret = {};
-    walkDeclarations(ast, ({property, value}) => {
+    walkDeclarations(tree, ({property, value}) => {
       const propName = property.toLowerCase();
 
       if (propName === 'font-variant') {
@@ -20,8 +20,7 @@ try {
     });
     return sortObject(ret);
   }
-  let ast = JSON.parse(json);
-  let props = compute(ast);
+  let props = compute(JSON.parse(json));
   return Object.entries(props).flatMap(([prop, freq]) => {
     return Array(freq).fill(prop);
   });

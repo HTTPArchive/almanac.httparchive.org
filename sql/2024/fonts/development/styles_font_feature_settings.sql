@@ -9,7 +9,6 @@ AS '''
 function parseFontFeatureSettings(value) {
   const features = (value || '').split(/\\s*,\\s*/);
   const result = []
-
   for (let i = 0; i < features.length; i++) {
     const match = /^"([\u0020-\u007e]{1,4})"(?:\\s+(\\d+|on|off))?$/i.exec(features[i]);
 
@@ -19,11 +18,10 @@ function parseFontFeatureSettings(value) {
   }
   return result;
 }
-
 try {
-  const ast = JSON.parse(json);
+  const $ = JSON.parse(json);
   const result = [];
-  walkDeclarations(ast, decl => {
+  walkDeclarations($, decl => {
     const tags = parseFontFeatureSettings(decl.value);
     if (tags && tags.length) {
       tags.forEach(t => result.push(t));
@@ -32,7 +30,6 @@ try {
     properties: 'font-feature-settings',
     rules: r => r.type !== 'font-face'
   });
-
   return result;
 } catch (e) {
   return [];
