@@ -11,7 +11,6 @@ try {
     let ret = {};
     walkDeclarations(tree, ({property, value}) => {
       const propName = property.toLowerCase();
-
       if (propName === 'font-variant') {
         incrementByKey(ret, 'font-variant: ' + value)
       } else if (propName.startsWith('font-variant-')) {
@@ -24,8 +23,7 @@ try {
   return Object.entries(props).flatMap(([prop, freq]) => {
     return Array(freq).fill(prop);
   });
-}
-catch (e) {
+} catch (e) {
   return [];
 }
 ''';

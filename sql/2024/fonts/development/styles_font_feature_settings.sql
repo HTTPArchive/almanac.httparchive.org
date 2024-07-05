@@ -11,7 +11,6 @@ function parseFontFeatureSettings(value) {
   const result = []
   for (let i = 0; i < features.length; i++) {
     const match = /^"([\u0020-\u007e]{1,4})"(?:\\s+(\\d+|on|off))?$/i.exec(features[i]);
-
     if (match) {
       result.push(match[1]);
     }
