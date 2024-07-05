@@ -28,7 +28,7 @@ features AS (
     url,
     feature
   FROM
-    `httparchive.all.requests`
+    `httparchive.all.requests`,
     UNNEST(FEATURES(JSON_EXTRACT(payload, '$._font_details.features'))) AS feature
   WHERE
     date = '2024-06-01' AND
