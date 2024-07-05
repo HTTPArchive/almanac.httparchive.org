@@ -18,7 +18,7 @@ fonts AS (
   SELECT
     client,
     url,
-    payload
+    ANY_VALUE(payload) AS payload
   FROM
     `httparchive.all.requests`
   WHERE
@@ -26,8 +26,7 @@ fonts AS (
     type = 'font'
   GROUP BY
     client,
-    url,
-    payload
+    url
 )
 
 SELECT
