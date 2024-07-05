@@ -1,12 +1,12 @@
 -- Section: Development
--- Question: How widespread are the two outline formats of variable fonts?
+-- Question: Which outline formats are used in variable fonts?
 
 WITH
 fonts AS (
   SELECT
     client,
-    format,
-    COUNT(DISTINCT page) AS count
+    url,
+    format
   FROM
     `httparchive.all.requests`,
     UNNEST(REGEXP_EXTRACT_ALL(JSON_EXTRACT(payload, '$._font_details.table_sizes'), '(?i)glyf|CFF2')) AS format
@@ -16,30 +16,21 @@ fonts AS (
     REGEXP_CONTAINS(JSON_EXTRACT(payload, '$._font_details.table_sizes'), '(?i)gvar|CFF2')
   GROUP BY
     client,
+    url,
     format
-),
-pages AS (
-  SELECT
-    client,
-    COUNT(DISTINCT page) AS total
-  FROM
-    `httparchive.all.requests`
-  WHERE
-    date = '2024-06-01'
-  GROUP BY
-    client
 )
 
 SELECT
   client,
   format,
-  count,
-  total,
-  count / total AS proportion
+  COUNT(0) AS count,
+  SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
+  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS proportion
 FROM
   fonts
-JOIN
-  pages USING (client)
+GROUP BY
+  client,
+  format
 ORDER BY
   client,
   proportion DESC

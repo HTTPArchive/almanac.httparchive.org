@@ -1,5 +1,5 @@
 -- Section: Development
--- Question: Which axes are variable?
+-- Question: Which axes are used in variable fonts?
 
 CREATE TEMPORARY FUNCTION AXES(js STRING)
 RETURNS ARRAY<STRING>
