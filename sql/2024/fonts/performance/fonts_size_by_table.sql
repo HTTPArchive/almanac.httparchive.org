@@ -18,18 +18,17 @@ try {
 WITH
 fonts AS (
   SELECT
-    url,
     client,
-    JSON_EXTRACT(payload, '$._font_details.table_sizes') AS payload
+    url,
+    JSON_EXTRACT(ANY_VALUE(payload), '$._font_details.table_sizes') AS payload
   FROM
     `httparchive.all.requests`
   WHERE
     date = '2024-06-01' AND
     type = 'font'
   GROUP BY
-    url,
     client,
-    payload
+    url
 ),
 tables AS (
   SELECT
