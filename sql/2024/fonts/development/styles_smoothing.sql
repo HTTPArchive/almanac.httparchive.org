@@ -7,9 +7,9 @@ LANGUAGE js
 OPTIONS (library = "gs://httparchive/lib/css-utils.js")
 AS '''
 try {
-  const ast = JSON.parse(json);
+  const $ = JSON.parse(json);
   const result = [];
-  walkDeclarations(ast, decl => {
+  walkDeclarations($, decl => {
     result.push(`${decl.property}: ${decl.value}`);
   }, {
     properties: ['-webkit-font-smoothing', '-moz-osx-font-smoothing', 'font-smooth']

@@ -6,9 +6,9 @@ RETURNS ARRAY<STRING>
 LANGUAGE js
 AS '''
 try {
-  const json = JSON.parse(data);
+  const $ = JSON.parse(data);
   const result = new Set();
-  for (const [table, scripts] of Object.entries(json)) {
+  for (const [table, scripts] of Object.entries($)) {
     for (const [script, languages] of Object.entries(scripts)) {
       for (const [language, features] of Object.entries(languages)) {
         features.forEach(feature => result.add(feature));

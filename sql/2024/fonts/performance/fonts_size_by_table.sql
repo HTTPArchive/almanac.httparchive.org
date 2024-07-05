@@ -7,10 +7,9 @@ LANGUAGE js AS '''
 if (json === null) {
   return [];
 }
-
 try {
-  const sizes = JSON.parse(json);
-  return Object.entries(sizes).map(([name, value]) => ({ name, value }));
+  const $ = JSON.parse(json);
+  return Object.entries($).map(([name, value]) => ({ name, value }));
 } catch (e) {
   return [];
 }

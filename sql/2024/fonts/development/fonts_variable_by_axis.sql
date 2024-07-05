@@ -1,12 +1,12 @@
 -- Section: Development
 -- Question: Which axes are used in variable fonts?
 
-CREATE TEMPORARY FUNCTION AXES(js STRING)
+CREATE TEMPORARY FUNCTION AXES(json STRING)
 RETURNS ARRAY<STRING>
 LANGUAGE js
 AS '''
 try {
-  return Object.keys(JSON.parse(js));
+  return Object.keys(JSON.parse(json));
 } catch (e) {
   return [];
 }

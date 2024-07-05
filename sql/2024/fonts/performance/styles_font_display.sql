@@ -7,15 +7,14 @@ LANGUAGE js
 OPTIONS(library = "gs://httparchive/lib/css-utils.js")
 AS '''
 try {
-  const ast = JSON.parse(json);
+  const $ = JSON.parse(json);
   const result = [];
-  walkDeclarations(ast, decl => {
+  walkDeclarations($, decl => {
     result.push(decl.value);
   }, {
     properties: 'font-display',
     rules: r => r.type === 'font-face'
   });
-
   return result;
 } catch (e) {
   return [];

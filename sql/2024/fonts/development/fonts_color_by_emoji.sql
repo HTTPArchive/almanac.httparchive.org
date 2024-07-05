@@ -22,13 +22,11 @@ if (codepoints && codepoints.length) {
     'Emoji_Modifier_Base',
     'Emoji_Presentation'
   ];
-
   for (script of scripts) {
     if (detected.includes(script)) {
       return true;
     }
   }
-
   return false;
 } else {
   return false;

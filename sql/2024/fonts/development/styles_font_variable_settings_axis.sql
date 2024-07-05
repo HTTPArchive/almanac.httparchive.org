@@ -1,7 +1,7 @@
 -- Section: Development
 -- Question: Which axes are controlled via CSS?
 
-CREATE TEMPORARY FUNCTION PROPERTIES(js STRING)
+CREATE TEMPORARY FUNCTION PROPERTIES(json STRING)
 RETURNS ARRAY<STRING>
 LANGUAGE js
 AS '''
@@ -19,7 +19,7 @@ try {
         .map(d => d.value)
     );
   };
-  var $ = JSON.parse(js);
+  var $ = JSON.parse(json);
   return $.stylesheet.rules.reduce(reduceValues, []);
 } catch (e) {
   return [];

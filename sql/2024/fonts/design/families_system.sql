@@ -21,21 +21,17 @@ const system = [
   'ui-sans-serif',
   'ui-serif'
 ];
-
 try {
-  const ast = JSON.parse(json);
+  const $ = JSON.parse(json);
   const result = [];
-
-  walkDeclarations(ast, decl => {
+  walkDeclarations($, decl => {
     if (decl.property === 'font-family') {
       const fonts = parseFontFamilyProperty(decl.value);
-
       if (fonts) {
         fonts.forEach(font => result.push(font));
       }
     } else if (decl.property === 'font') {
       const value = parseFontProperty(decl.value);
-
       if (value) {
         value['font-family'].forEach(font => result.push(font));
       }
@@ -44,7 +40,6 @@ try {
     properties: ['font-family', 'font'],
     rules: (r) => r.type !== 'font-face'
   });
-
   return result.filter(font => system.includes(font));
 } catch (e) {
   return [];
