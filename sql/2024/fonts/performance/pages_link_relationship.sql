@@ -2,25 +2,21 @@
 -- Question: What is the usage of link relationship in HTML?
 
 CREATE TEMPORARY FUNCTION HINTS(json STRING)
-RETURNS ARRAY<STRUCT<name STRING, href STRING>>
+RETURNS ARRAY<STRING>
 LANGUAGE js AS '''
-var hints = new Set(['preload', 'prefetch', 'preconnect', 'prerender', 'dns-prefetch']);
+var hints = new Set(['dns-prefetch', 'preconnect', 'prefetch', 'preload', 'prerender']);
 try {
   var $ = JSON.parse(json);
-  var almanac = JSON.parse($._almanac);
-  return almanac['link-nodes'].nodes.reduce((results, link) => {
+  return $.almanac['link-nodes'].nodes.reduce((results, link) => {
     var hint = link.rel.toLowerCase();
     if (!hints.has(hint)) {
       return results;
     }
-    results.push({
-      name: hint,
-      href: link.href
-    });
+    results.push(hint);
     return results;
-  }, []);
+  }, ['total']);
 } catch (e) {
-  return [];
+  return ['total'];
 }
 ''';
 
@@ -42,13 +38,12 @@ hints AS (
   SELECT
     client,
     page,
-    hint.name AS hint
+    hint
   FROM
-    `httparchive.all.requests`,
-    UNNEST(HINTS(payload)) AS hint
+    `httparchive.all.pages`,
+    UNNEST(HINTS(custom_metrics)) AS hint
   WHERE
-    date = '2024-06-01' AND
-    type = 'html'
+    date = '2024-06-01'
   GROUP BY
     client,
     page,
@@ -59,12 +54,12 @@ SELECT
   client,
   hint,
   COUNT(DISTINCT page) AS count,
-  SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS total,
-  COUNT(DISTINCT page) / SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS proportion
+  SUM(COUNT(DISTINCT IF(hint = 'total', NULL, page))) OVER (PARTITION BY client) AS total,
+  COUNT(DISTINCT page) / SUM(COUNT(DISTINCT IF(hint = 'total', NULL, page))) OVER (PARTITION BY client) AS proportion
 FROM
-  fonts
+  hints
 LEFT JOIN
-  hints USING (client, page)
+  fonts USING (client, page)
 GROUP BY
   client,
   hint
