@@ -13,7 +13,7 @@ try {
     result.push(parseFontFamilyProperty(decl.value)[0]);
   }, {
     properties: 'font-family',
-    rules: (r) =>  r.type === 'font-face'
+    rules: (r) => r.type === 'font-face'
   });
   return result;
 } catch (e) {
