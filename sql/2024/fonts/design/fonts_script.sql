@@ -42,4 +42,5 @@ GROUP BY
   client,
   script
 ORDER BY
+  client,
   proportion DESC
