@@ -18,4 +18,5 @@ GROUP BY
   foundry,
   family
 ORDER BY
+  client,
   proportion DESC
