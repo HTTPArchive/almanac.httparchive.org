@@ -1,5 +1,5 @@
 -- Section: Development
--- Question: How does one control features in CSS?
+-- Question: How are features controlled in CSS?
 
 CREATE TEMPORARY FUNCTION PROPERTIES(json STRING)
 RETURNS ARRAY<STRING>

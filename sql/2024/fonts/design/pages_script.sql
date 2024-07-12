@@ -1,5 +1,5 @@
 -- Section: Performance
--- Question: Which scripts are used on the web?
+-- Question: Which scripts are popular on the web?
 
 CREATE TEMPORARY FUNCTION SCRIPTS(body STRING)
 RETURNS ARRAY<STRING>

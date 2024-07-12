@@ -1,5 +1,5 @@
 -- Section: Development
--- Question: How and how often is smoothing used?
+-- Question: How and how often is smoothing used in CSS?
 
 CREATE TEMPORARY FUNCTION PROPERTIES(json STRING)
 RETURNS ARRAY<STRING>

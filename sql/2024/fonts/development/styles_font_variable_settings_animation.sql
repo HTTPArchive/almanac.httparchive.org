@@ -1,5 +1,5 @@
 -- Section: Development
--- Question: How widespread is variable-font animimation in CSS?
+-- Question: How popular is variable-font animimation in CSS?
 
 CREATE TEMPORARY FUNCTION HAS_ANIMATION(json STRING)
 RETURNS BOOLEAN

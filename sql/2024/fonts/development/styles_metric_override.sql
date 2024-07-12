@@ -1,5 +1,5 @@
 -- Section: Development
--- Question: How and how often does one override font metrics via CSS?
+-- Question: How and how often metrics override used in CSS?
 
 CREATE TEMPORARY FUNCTION PROPERTIES(json STRING)
 RETURNS ARRAY<STRING>

@@ -1,5 +1,5 @@
 -- Section: Development
--- Question: What features are supported in fonts?
+-- Question: Which features are used in fonts?
 
 CREATE TEMPORARY FUNCTION FEATURES(data STRING)
 RETURNS ARRAY<STRING>
