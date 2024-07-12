@@ -2,7 +2,7 @@
 -- Question: Which designers are popular?
 
 WITH
-foundries AS (
+designers AS (
   SELECT
     client,
     NULLIF(TRIM(JSON_EXTRACT_SCALAR(payload, '$._font_details.names[9]')), '') AS designer,
@@ -35,7 +35,7 @@ SELECT
   total,
   count / total AS proportion
 FROM
-  foundries
+  designers
 JOIN
   pages USING (client)
 ORDER BY
