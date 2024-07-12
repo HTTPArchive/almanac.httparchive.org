@@ -10,7 +10,7 @@ countries AS (
   FROM
     `chrome-ux-report.materialized.country_summary`
   WHERE
-    yyyymm = 202405
+    yyyymm = 202406
   GROUP BY
     client,
     domain,
