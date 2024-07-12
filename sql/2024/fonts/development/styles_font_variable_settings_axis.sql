@@ -1,5 +1,5 @@
 -- Section: Development
--- Question: Which axes are controlled in CSS?
+-- Question: Which axes are used in CSS?
 
 CREATE TEMPORARY FUNCTION PROPERTIES(json STRING)
 RETURNS ARRAY<STRING>

@@ -1,5 +1,5 @@
 -- Section: Development
--- Question: Which features are controlled via font-variant in CSS?
+-- Question: Which features are used via font-variant in CSS?
 
 CREATE TEMPORARY FUNCTION PROPERTIES(json STRING)
 RETURNS ARRAY<STRING>
