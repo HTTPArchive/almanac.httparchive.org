@@ -1,5 +1,5 @@
 -- Section: Performance
--- Question: What is the distribution of the metrics?
+-- Question: What is the distribution of metrics?
 
 WITH
 fonts AS (

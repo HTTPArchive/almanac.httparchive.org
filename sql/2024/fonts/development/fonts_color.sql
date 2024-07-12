@@ -1,5 +1,5 @@
 -- Section: Development
--- Question: How widespread are color fonts?
+-- Question: How popular are color fonts?
 
 CREATE TEMPORARY FUNCTION COLOR_FORMATS(json STRING) AS (
   REGEXP_EXTRACT_ALL(

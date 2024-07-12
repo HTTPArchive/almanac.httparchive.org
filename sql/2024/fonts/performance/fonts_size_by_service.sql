@@ -1,5 +1,5 @@
 -- Section: Performance
--- Question: What is the distribution of the file size by service?
+-- Question: What is the distribution of the file size broken down by service?
 
 CREATE TEMPORARY FUNCTION SERVICE(url STRING) AS (
   CASE

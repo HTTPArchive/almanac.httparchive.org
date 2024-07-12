@@ -1,5 +1,5 @@
 -- Section: Design
--- Question: Which families are used within each foundry?
+-- Question: Which families are used broken down by foundry?
 
 SELECT
   client,

@@ -1,5 +1,5 @@
 -- Section: Performance
--- Question: Which outline formats are served?
+-- Question: Which outline formats are used?
 
 WITH
 fonts AS (

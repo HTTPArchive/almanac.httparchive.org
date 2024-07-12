@@ -1,5 +1,5 @@
 -- Section: Development
--- Question: How widespread are variable fonts?
+-- Question: How popular are variable fonts?
 
 WITH
 fonts AS (

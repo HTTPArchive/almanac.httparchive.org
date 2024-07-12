@@ -1,5 +1,5 @@
 -- Section: Performance
--- Question: Which file formats are served by service?
+-- Question: Which file formats are used broken down by service?
 
 CREATE TEMPORARY FUNCTION FILE_FORMAT(url STRING, header STRING) AS (
   LOWER(COALESCE(

@@ -1,5 +1,5 @@
 -- Section: Performance
--- Question: Which file formats are served?
+-- Question: Which file formats are used?
 
 CREATE TEMPORARY FUNCTION FILE_FORMAT(url STRING, header STRING) AS (
   LOWER(COALESCE(

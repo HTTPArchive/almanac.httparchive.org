@@ -1,5 +1,5 @@
 -- Section: Development
--- Question: Which features are used via font-feature-settings?
+-- Question: Which features are controlled via font-feature-settings in CSS?
 
 CREATE TEMPORARY FUNCTION FEATURES(json STRING)
 RETURNS ARRAY<STRING>

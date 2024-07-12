@@ -1,5 +1,5 @@
 -- Section: Performance
--- Question: What is the distribution of the file size by country?
+-- Question: What is the distribution of the file size broken down by country?
 
 WITH
 countries AS (
