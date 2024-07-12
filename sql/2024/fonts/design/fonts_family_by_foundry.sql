@@ -1,10 +1,14 @@
 -- Section: Design
 -- Question: Which families are used broken down by foundry?
 
+CREATE TEMPORARY FUNCTION NAME(value STRING) AS (
+  IF(LENGTH(TRIM(value)) < 3, NULL, NULLIF(TRIM(value), ''))
+);
+
 SELECT
   client,
   JSON_EXTRACT_SCALAR(payload, '$._font_details.OS2.achVendID') AS foundry,
-  JSON_EXTRACT_SCALAR(payload, '$._font_details.names[1]') AS family,
+  NAME(JSON_EXTRACT_SCALAR(payload, '$._font_details.names[1]')) AS family,
   COUNT(DISTINCT url) AS count,
   SUM(COUNT(DISTINCT url)) OVER(PARTITION BY client) AS total,
   COUNT(DISTINCT url) / SUM(COUNT(DISTINCT url)) OVER(PARTITION BY client) AS proportion
