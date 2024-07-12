@@ -1,6 +1,13 @@
 -- Section: Development
 -- Question: Who is serving variable fonts?
 
+CREATE TEMPORARY FUNCTION IS_VARIABLE(json STRING) AS (
+  REGEXP_CONTAINS(
+    JSON_EXTRACT(json, '$._font_details.table_sizes'),
+    '(?i)gvar|CFF2'
+  )
+);
+
 CREATE TEMPORARY FUNCTION SERVICE(url STRING) AS (
   CASE
     WHEN REGEXP_CONTAINS(url, r'((use|fonts)\.typekit\.(net|com))|webfonts\.creativecloud\.com') THEN 'Adobe'
@@ -34,7 +41,7 @@ FROM
 WHERE
   date = '2024-06-01' AND
   type = 'font' AND
-  REGEXP_CONTAINS(JSON_EXTRACT(payload, '$._font_details.table_sizes'), '(?i)gvar|CFF2')
+  IS_VARIABLE(payload)
 GROUP BY
   client,
   service

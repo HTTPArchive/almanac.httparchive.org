@@ -1,6 +1,13 @@
 -- Section: Development
 -- Question: How popular are variable fonts?
 
+CREATE TEMPORARY FUNCTION IS_VARIABLE(json STRING) AS (
+  REGEXP_CONTAINS(
+    JSON_EXTRACT(json, '$._font_details.table_sizes'),
+    '(?i)gvar|CFF2'
+  )
+);
+
 WITH
 fonts AS (
   SELECT
@@ -11,7 +18,7 @@ fonts AS (
   WHERE
     date = '2024-06-01' AND
     type = 'font' AND
-    REGEXP_CONTAINS(JSON_EXTRACT(payload, '$._font_details.table_sizes'), '(?i)gvar|CFF2')
+    IS_VARIABLE(payload)
   GROUP BY
     client
 ),
