@@ -14,7 +14,7 @@ An `.editorconfig` file exists for those using [EditorConfig](https://editorconf
 
 Make sure you run the following commands from within the `src` directory by executing `cd src` first.
 
-Make sure Python (3.8 or above), pip and NodeJS (v16 or above) are installed on your machine.
+Make sure Python (3.8 or above), pip and NodeJS (v20 or above) are installed on your machine.
 
 1. If you don't have virtualenv, install it using pip.
 
@@ -376,7 +376,6 @@ The deploy script will do the following:
 - Ask you to complete any local tests and confirm good to deploy
 - Ask for a version number (suggesing the last verision tagged and incrementing the patch)
 - Tag the release (after asking you for the version number to use)
-- Generate a `deploy.zip` file of what has been deployed
 - Deploy to GCP
 - Push changes to `production` branch on GitHub
 - Switch you back to the `main` branch.
