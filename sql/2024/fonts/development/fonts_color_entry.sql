@@ -1,6 +1,8 @@
 -- Section: Development
 -- Question: How many entries are there in color palettes?
 
+-- INCLUDE ../common.sql
+
 SELECT
   client,
   SAFE_CAST(JSON_EXTRACT_SCALAR(payload, '$._font_details.color.numPaletteEntries') AS INT64) AS entries,
@@ -11,7 +13,8 @@ FROM
   `httparchive.all.requests`
 WHERE
   date = '2024-06-01' AND
-  type = 'font'
+  type = 'font' AND
+  IS_COLOR(payload)
 GROUP BY
   client,
   entries

@@ -1,12 +1,7 @@
 -- Section: Development
 -- Question: Are color fonts used for the sake of emojis?
 
-CREATE TEMPORARY FUNCTION COLOR_FORMATS(json STRING) AS (
-  REGEXP_EXTRACT_ALL(
-    JSON_EXTRACT(json, '$._font_details.color.formats'),
-    '(?i)(sbix|CBDT|COLRv0|COLRv1|SVG)'
-  )
-);
+-- INCLUDE ../common.sql
 
 CREATE TEMPORARY FUNCTION HAS_EMOJI(codepoints ARRAY<STRING>)
 RETURNS BOOL
@@ -44,7 +39,7 @@ FROM
 WHERE
   date = '2024-06-01' AND
   type = 'font' AND
-  ARRAY_LENGTH(COLOR_FORMATS(payload)) > 0
+  IS_COLOR(payload)
 GROUP BY
   client,
   emoji

@@ -1,13 +1,7 @@
 -- Section: Performance
 -- Question: Which file formats are used?
 
-CREATE TEMPORARY FUNCTION FILE_FORMAT(url STRING, header STRING) AS (
-  LOWER(COALESCE(
-    REGEXP_EXTRACT(LOWER(header), r'(otf|sfnt|svg|ttf|woff2?|fontobject|opentype|truetype)'),
-    REGEXP_EXTRACT(url, r'\.(\w+)(?:$|\?|#)'),
-    header
-  ))
-);
+-- INCLUDE ../common.sql
 
 SELECT
   client,

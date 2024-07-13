@@ -1,12 +1,7 @@
 -- Section: Development
 -- Question: How popular are color fonts?
 
-CREATE TEMPORARY FUNCTION COLOR_FORMATS(json STRING) AS (
-  REGEXP_EXTRACT_ALL(
-    JSON_EXTRACT(json, '$._font_details.color.formats'),
-    '(?i)(sbix|CBDT|COLRv0|COLRv1|SVG)'
-  )
-);
+-- INCLUDE ../common.sql
 
 WITH
 pages AS (
@@ -29,7 +24,7 @@ fonts AS (
   WHERE
     date = '2024-06-01' AND
     type = 'font' AND
-    ARRAY_LENGTH(COLOR_FORMATS(payload)) > 0
+    IS_COLOR(payload)
   GROUP BY
     client
 )
