@@ -4,8 +4,8 @@
 WITH
 fonts AS (
   SELECT
-    url,
     client,
+    url,
     REGEXP_CONTAINS(
       JSON_EXTRACT(payload, '$._font_details.table_sizes'),
       '(?i)GPOS|GSUB'
@@ -16,8 +16,8 @@ fonts AS (
     date = '2024-06-01' AND
     type = 'font'
   GROUP BY
-    url,
     client,
+    url,
     opentype
 )
 

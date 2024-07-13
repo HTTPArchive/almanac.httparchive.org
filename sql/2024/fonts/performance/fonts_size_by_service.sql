@@ -4,7 +4,7 @@
 -- INCLUDE ../common.sql
 
 WITH
-fonts AS (
+services AS (
   SELECT
     client,
     SERVICE(url) AS service,
@@ -31,7 +31,7 @@ SELECT
   COUNT(DISTINCT url) AS count,
   APPROX_QUANTILES(size, 1000)[OFFSET(percentile * 10)] AS size
 FROM
-  fonts,
+  services,
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 GROUP BY
   client,

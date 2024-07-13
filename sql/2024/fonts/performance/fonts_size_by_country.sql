@@ -16,7 +16,7 @@ countries AS (
     domain,
     country
 ),
-fonts AS (
+pages AS (
   SELECT
     client,
     NET.HOST(page) AS domain,
@@ -40,7 +40,7 @@ SELECT
   COUNT(0) AS count,
   APPROX_QUANTILES(size, 1000)[OFFSET(500)] AS median_size
 FROM
-  fonts
+  pages
 JOIN
   countries USING (client, domain)
 GROUP BY
