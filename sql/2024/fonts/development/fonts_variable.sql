@@ -1,12 +1,7 @@
 -- Section: Development
 -- Question: How popular are variable fonts?
 
-CREATE TEMPORARY FUNCTION IS_VARIABLE(json STRING) AS (
-  REGEXP_CONTAINS(
-    JSON_EXTRACT(json, '$._font_details.table_sizes'),
-    '(?i)gvar|CFF2'
-  )
-);
+-- INCLUDE ../common.sql
 
 WITH
 fonts AS (

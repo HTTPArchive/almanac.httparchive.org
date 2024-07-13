@@ -1,19 +1,7 @@
 -- Section: Development
 -- Question: Which outline formats are used in variable fonts?
 
-CREATE TEMPORARY FUNCTION IS_VARIABLE(json STRING) AS (
-  REGEXP_CONTAINS(
-    JSON_EXTRACT(json, '$._font_details.table_sizes'),
-    '(?i)gvar|CFF2'
-  )
-);
-
-CREATE TEMPORARY FUNCTION VARIABLE_FORMATS(json STRING) AS (
-  REGEXP_EXTRACT_ALL(
-    JSON_EXTRACT(json, '$._font_details.table_sizes'),
-    '(?i)glyf|CFF2'
-  )
-);
+-- INCLUDE ../common.sql
 
 WITH
 fonts AS (

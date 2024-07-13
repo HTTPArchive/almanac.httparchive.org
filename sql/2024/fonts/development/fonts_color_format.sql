@@ -1,12 +1,7 @@
 -- Section: Development
 -- Question: Which color-font formats are used?
 
-CREATE TEMPORARY FUNCTION COLOR_FORMATS(json STRING) AS (
-  REGEXP_EXTRACT_ALL(
-    JSON_EXTRACT(json, '$._font_details.color.formats'),
-    '(?i)(sbix|CBDT|COLRv0|COLRv1|SVG)'
-  )
-);
+-- INCLUDE ../common.sql
 
 SELECT
   client,
