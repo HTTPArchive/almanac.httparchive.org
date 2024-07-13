@@ -22,7 +22,7 @@ try {
 ''';
 
 WITH
-features AS (
+fonts AS (
   SELECT
     client,
     url,
@@ -46,7 +46,7 @@ SELECT
   SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS proportion
 FROM
-  features
+  fonts
 GROUP BY
   client,
   feature
