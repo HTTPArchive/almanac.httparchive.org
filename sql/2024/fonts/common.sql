@@ -1,11 +1,14 @@
+-- Normalize a name. Used in FAMILY.
 CREATE TEMPORARY FUNCTION FAMILY_INNER(name STRING) AS (
   IF(LENGTH(TRIM(name)) < 3, NULL, NULLIF(TRIM(name), ''))
 );
 
+-- Extract the family name from a payload.
 CREATE TEMPORARY FUNCTION FAMILY(payload STRING) AS (
   FAMILY_INNER(JSON_EXTRACT_SCALAR(payload, '$._font_details.names[1]'))
 );
 
+-- Extract the file format from a URL and a Content-Type header.
 CREATE TEMPORARY FUNCTION FILE_FORMAT(url STRING, header STRING) AS (
   LOWER(COALESCE(
     REGEXP_EXTRACT(LOWER(header), r'(otf|sfnt|svg|ttf|woff2?|fontobject|opentype|truetype)'),
@@ -14,10 +17,12 @@ CREATE TEMPORARY FUNCTION FILE_FORMAT(url STRING, header STRING) AS (
   ))
 );
 
+-- Extract the foundry name from a payload.
 CREATE TEMPORARY FUNCTION FOUNDRY(payload STRING) AS (
   JSON_EXTRACT_SCALAR(payload, '$._font_details.OS2.achVendID')
 );
 
+-- Infer scripts from codepoints. Used in SCRIPTS.
 CREATE TEMPORARY FUNCTION SCRIPTS_INNER(codepoints ARRAY<STRING>)
 RETURNS ARRAY<STRING>
 LANGUAGE js
@@ -30,10 +35,12 @@ if (codepoints && codepoints.length) {
 }
 """;
 
+-- Infer scripts from a payload.
 CREATE TEMPORARY FUNCTION SCRIPTS(payload STRING) AS (
   SCRIPTS_INNER(JSON_EXTRACT_STRING_ARRAY(payload, '$._font_details.cmap.codepoints'))
 );
 
+-- Infer the service from a URL.
 CREATE TEMPORARY FUNCTION SERVICE(url STRING) AS (
   CASE
     WHEN REGEXP_CONTAINS(url, r'((use|fonts)\.typekit\.(net|com))|webfonts\.creativecloud\.com') THEN 'Adobe'
@@ -57,6 +64,7 @@ CREATE TEMPORARY FUNCTION SERVICE(url STRING) AS (
   END
 );
 
+-- Extract the color formats from a payload.
 CREATE TEMPORARY FUNCTION COLOR_FORMATS(payload STRING) AS (
   REGEXP_EXTRACT_ALL(
     JSON_EXTRACT(payload, '$._font_details.color.formats'),
@@ -64,10 +72,12 @@ CREATE TEMPORARY FUNCTION COLOR_FORMATS(payload STRING) AS (
   )
 );
 
+-- Check if it is a color font given its payload.
 CREATE TEMPORARY FUNCTION IS_COLOR(payload STRING) AS (
   ARRAY_LENGTH(COLOR_FORMATS(payload)) > 0
 );
 
+-- Check if it is a variable font given its payload.
 CREATE TEMPORARY FUNCTION IS_VARIABLE(payload STRING) AS (
   REGEXP_CONTAINS(
     JSON_EXTRACT(payload, '$._font_details.table_sizes'),
@@ -75,6 +85,7 @@ CREATE TEMPORARY FUNCTION IS_VARIABLE(payload STRING) AS (
   )
 );
 
+-- Extract the variable formats from a payload.
 CREATE TEMPORARY FUNCTION VARIABLE_FORMATS(payload STRING) AS (
   REGEXP_EXTRACT_ALL(
     JSON_EXTRACT(payload, '$._font_details.table_sizes'),
