@@ -103,4 +103,6 @@ def parse_sellers_json(
 if __name__ == "__main__":
     url = input("Enter the sellers.json URL: ").strip()
     parsed_data = parse_sellers_json(url)
-    open("sellers.json", "w", encoding="utf-8").write(json.dumps(parsed_data, indent=4))
+
+    with open("sellers.json", "w", encoding="utf-8") as f:
+        f.write(json.dumps(parsed_data, indent=4))
