@@ -4,8 +4,9 @@ and extract the required information.
 The extracted information is then written to a file named sellers.json in the current directory.
 e.g. Google sellers.json url = https://storage.googleapis.com/adx-rtb-dictionaries/sellers.json
 """
+
 import json
-import requests
+import requests # pylint: disable=import-error
 
 SELLER_TYPES = ["publisher", "intermediary", "both"]
 
@@ -24,7 +25,9 @@ def is_present(response, paths):
     return any(path in response.url for path in paths)
 
 
-def parse_sellers_json(url="https://storage.googleapis.com/adx-rtb-dictionaries/sellers.json"):
+def parse_sellers_json(
+    url="https://storage.googleapis.com/adx-rtb-dictionaries/sellers.json",
+):
     """
     Parse the sellers.json file from a given URL.
 
