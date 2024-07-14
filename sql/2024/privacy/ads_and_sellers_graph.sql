@@ -3,10 +3,10 @@ WITH RECURSIVE pages AS (
     NET.REG_DOMAIN(page) AS page,
     custom_metrics
   FROM `httparchive.all.pages`
-  WHERE date = '2024-06-01'
-    AND client = 'desktop'
-    AND is_root_page = TRUE
-    AND rank <= 10000
+  WHERE date = '2024-06-01' AND
+    client = 'desktop' AND
+    is_root_page = TRUE AND
+    rank <= 10000
 ), ads AS (
   SELECT
     page,
@@ -23,7 +23,7 @@ WITH RECURSIVE pages AS (
     CAST(JSON_VALUE(custom_metrics, '$.ads.sellers.seller_count') AS INT64) > 0
 ), relationships AS (
   SELECT
-    NET.REG_DOMAIN(REGEXP_EXTRACT(NORMALIZE_AND_CASEFOLD(domain), r'\b[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}\b')) as demand,
+    NET.REG_DOMAIN(REGEXP_EXTRACT(NORMALIZE_AND_CASEFOLD(domain), r'\b[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}\b')) AS demand,
     'Web' AS supply,
     'direct' AS relationship,
     page AS publisher
@@ -85,10 +85,10 @@ WITH RECURSIVE pages AS (
       nodes.supply_sketch AS supply_sketch
     FROM relationships
     INNER JOIN nodes
-    ON relationships.supply = nodes.demand
-      AND nodes.supply_sketch IS NOT NULL
-      AND nodes.relationship = 'indirect'
-      AND STRPOS(nodes.path_history, CONCAT(relationships.demand, '-', relationships.supply)) = 0
+    ON relationships.supply = nodes.demand AND
+      nodes.supply_sketch IS NOT NULL AND
+      nodes.relationship = 'indirect' AND
+      STRPOS(nodes.path_history, CONCAT(relationships.demand, '-', relationships.supply)) = 0
   )
 )
 

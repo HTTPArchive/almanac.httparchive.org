@@ -6,7 +6,7 @@ e.g. Google sellers.json url = https://storage.googleapis.com/adx-rtb-dictionari
 """
 
 import json
-import requests # pylint: disable=import-error
+import requests  # pylint: disable=import-error
 
 SELLER_TYPES = ["publisher", "intermediary", "both"]
 
