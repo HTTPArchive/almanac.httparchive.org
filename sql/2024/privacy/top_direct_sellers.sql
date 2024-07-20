@@ -12,7 +12,7 @@ WITH RECURSIVE pages AS (
     CASE page
       WHEN 'chunkbase.com' THEN 'adthrive.com'
       ELSE page
-      END AS page,
+    END AS page,
     JSON_QUERY(custom_metrics, '$.ads.ads.account_types') AS ad_accounts
   FROM pages
   WHERE
@@ -22,7 +22,7 @@ WITH RECURSIVE pages AS (
     CASE page
       WHEN 'chunkbase.com' THEN 'cafemedia.com'
       ELSE page
-      END AS page,
+    END AS page,
     JSON_QUERY(custom_metrics, '$.ads.sellers.seller_types') AS ad_sellers
   FROM pages
   WHERE

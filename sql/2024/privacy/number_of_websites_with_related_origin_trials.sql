@@ -1,7 +1,5 @@
 #standardSQL
 # Pages that participate in the privacy-relayed origin trials
-
-
 CREATE TEMP FUNCTION `DECODE_ORIGIN_TRIAL`(token STRING) RETURNS STRING DETERMINISTIC AS (
   REGEXP_EXTRACT(SAFE_CONVERT_BYTES_TO_STRING(SAFE.FROM_BASE64(token)), r'({".*)')
 );
@@ -32,7 +30,7 @@ WITH pages AS (
     custom_metrics
   FROM `httparchive.all.pages`
   WHERE
-    date = '2022-05-01' AND
+    date = '2024-06-01' AND
     is_root_page
 ),
 
@@ -53,7 +51,7 @@ response_headers AS (
   FROM `httparchive.all.requests`,
     UNNEST(response_headers) response_header
   WHERE
-    date = '2022-06-01' AND
+    date = '2024-06-01' AND
     is_main_document = TRUE
 ),
 
