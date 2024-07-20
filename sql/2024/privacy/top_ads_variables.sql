@@ -1,16 +1,15 @@
-WITH
-  RECURSIVE pages AS (
+WITH RECURSIVE pages AS (
   SELECT
     NET.REG_DOMAIN(page) AS page,
     custom_metrics
   FROM
     `httparchive.all.pages`
   WHERE
-    date = '2024-06-01'
-    AND client = 'desktop'
-    AND is_root_page = TRUE
-    AND rank <= 10000 ),
-  ads AS (
+    date = '2024-06-01' AND
+    client = 'desktop' AND
+    is_root_page = TRUE AND
+    rank <= 10000
+), ads AS (
   SELECT
     page,
     variable,
@@ -20,8 +19,8 @@ WITH
     UNNEST(JSON_VALUE_ARRAY(custom_metrics, '$.ads.ads.variables')) AS variable
   WHERE
     CAST(JSON_VALUE(custom_metrics, '$.ads.ads.account_types.reseller.account_count') AS INT64) > 0 OR
-    CAST(JSON_VALUE(custom_metrics, '$.ads.ads.account_types.direct.account_count') AS INT64) > 0 )
-
+    CAST(JSON_VALUE(custom_metrics, '$.ads.ads.account_types.direct.account_count') AS INT64) > 0
+)
 
 SELECT
   variable,
