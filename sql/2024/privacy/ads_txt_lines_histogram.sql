@@ -12,8 +12,8 @@ WITH RECURSIVE pages AS (
     CASE page
       WHEN 'chunkbase.com' THEN 'adthrive.com'
       ELSE page
-      END AS page,
-    CEIL(CAST(JSON_VALUE(custom_metrics, '$.ads.ads.line_count') AS INT64)/100)*100 AS line_count_bucket
+    END AS page,
+    CEIL(CAST(JSON_VALUE(custom_metrics, '$.ads.ads.line_count') AS INT64) / 100) * 100 AS line_count_bucket
   FROM pages
   WHERE
     CAST(JSON_VALUE(custom_metrics, '$.ads.ads.line_count') AS INT64) > 0
