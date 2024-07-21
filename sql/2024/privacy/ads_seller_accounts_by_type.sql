@@ -9,8 +9,8 @@ WITH RECURSIVE pages AS (
     rank <= 10000
 ), ads AS (
   SELECT
-    CEIL(CAST(JSON_VALUE(custom_metrics, '$.ads.ads.account_types.direct.account_count') AS INT64)/100)*100 AS direct_account_count_bucket,
-    CEIL(CAST(JSON_VALUE(custom_metrics, '$.ads.ads.account_types.reseller.account_count') AS INT64)/100)*100 AS reseller_account_count_bucket
+    CEIL(CAST(JSON_VALUE(custom_metrics, '$.ads.ads.account_types.direct.account_count') AS INT64) / 100) * 100 AS direct_account_count_bucket,
+    CEIL(CAST(JSON_VALUE(custom_metrics, '$.ads.ads.account_types.reseller.account_count') AS INT64) / 100) * 100 AS reseller_account_count_bucket
   FROM pages
   WHERE
     CAST(JSON_VALUE(custom_metrics, '$.ads.ads.account_count') AS INT64) > 0
