@@ -31,7 +31,7 @@ scripts AS (
     `httparchive.all.requests`,
     UNNEST(SCRIPTS(response_body)) AS script
   WHERE
-    date = '2024-06-01' AND
+    date = '2024-07-01' AND
     type = 'html'
   GROUP BY
     client,
@@ -44,7 +44,7 @@ pages AS (
   FROM
     `httparchive.all.requests`
   WHERE
-    date = '2024-06-01'
+    date = '2024-07-01'
   GROUP BY
     client
 )

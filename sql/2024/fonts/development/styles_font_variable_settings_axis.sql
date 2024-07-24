@@ -34,7 +34,7 @@ pages AS (
   FROM
     `httparchive.all.requests`
   WHERE
-    date = '2024-06-01'
+    date = '2024-07-01'
   GROUP BY
     client
 ),
@@ -48,7 +48,7 @@ properties AS (
     UNNEST(PROPERTIES(css)) AS property,
     UNNEST(SPLIT(property, ',')) AS chunk
   WHERE
-    date = '2024-06-01'
+    date = '2024-07-01'
   GROUP BY
     client,
     axis

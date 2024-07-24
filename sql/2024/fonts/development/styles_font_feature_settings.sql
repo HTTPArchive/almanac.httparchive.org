@@ -45,7 +45,7 @@ features AS (
     `httparchive.all.parsed_css`,
     UNNEST(FEATURES(css)) AS feature
   WHERE
-    date = '2024-06-01'
+    date = '2024-07-01'
   GROUP BY
     client,
     feature
@@ -57,7 +57,7 @@ pages AS (
   FROM
     `httparchive.all.requests`
   WHERE
-    date = '2024-06-01'
+    date = '2024-07-01'
   GROUP BY
     client
 )
