@@ -56,7 +56,7 @@ families AS (
     `httparchive.all.parsed_css`,
     UNNEST(FAMILIES(css)) AS family
   WHERE
-    date = '2024-06-01'
+    date = '2024-07-01'
   GROUP BY
     client,
     family
@@ -68,7 +68,7 @@ pages AS (
   FROM
     `httparchive.all.requests`
   WHERE
-    date = '2024-06-01'
+    date = '2024-07-01'
   GROUP BY
     client
 )

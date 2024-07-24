@@ -9,7 +9,7 @@ pages AS (
   FROM
     `httparchive.all.requests`
   WHERE
-    date = '2024-06-01'
+    date = '2024-07-01'
   GROUP BY
     client
 ),
@@ -21,7 +21,7 @@ scripts AS (
     `httparchive.all.requests`
   WHERE
     type = 'script' AND
-    date = '2024-06-01' AND
+    date = '2024-07-01' AND
     REGEXP_CONTAINS(response_body, r'new FontFace\(')
   GROUP BY
     client

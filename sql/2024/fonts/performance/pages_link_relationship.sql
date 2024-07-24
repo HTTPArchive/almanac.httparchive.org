@@ -28,7 +28,7 @@ fonts AS (
   FROM
     `httparchive.all.requests`
   WHERE
-    date = '2024-06-01' AND
+    date = '2024-07-01' AND
     type = 'font'
   GROUP BY
     client,
@@ -43,7 +43,7 @@ hints AS (
     `httparchive.all.pages`,
     UNNEST(HINTS(custom_metrics)) AS hint
   WHERE
-    date = '2024-06-01'
+    date = '2024-07-01'
   GROUP BY
     client,
     page,

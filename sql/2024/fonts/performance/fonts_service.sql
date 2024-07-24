@@ -11,7 +11,7 @@ pages AS (
   FROM
     `httparchive.all.requests`
   WHERE
-    date = '2024-06-01'
+    date = '2024-07-01'
   GROUP BY
     client
 ),
@@ -23,7 +23,7 @@ services AS (
   FROM
     `httparchive.all.requests`
   WHERE
-    date = '2024-06-01' AND
+    date = '2024-07-01' AND
     type = 'font'
   GROUP BY
     client,

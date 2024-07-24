@@ -22,7 +22,7 @@ fonts AS (
     `httparchive.all.requests`,
     UNNEST(AXES(JSON_EXTRACT(payload, '$._font_details.fvar'))) AS axis
   WHERE
-    date = '2024-06-01' AND
+    date = '2024-07-01' AND
     type = 'font'
   GROUP BY
     client,

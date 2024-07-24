@@ -34,7 +34,7 @@ pages AS (
   FROM
     `httparchive.all.requests`
   WHERE
-    date = '2024-06-01'
+    date = '2024-07-01'
   GROUP BY
     client
 ),
@@ -45,7 +45,7 @@ properties AS (
   FROM
     `httparchive.all.parsed_css`
   WHERE
-    date = '2024-06-01' AND
+    date = '2024-07-01' AND
     HAS_ANIMATION(css)
   GROUP BY
     client

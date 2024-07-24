@@ -11,7 +11,7 @@ fonts AS (
   FROM
     `httparchive.all.requests`
   WHERE
-    date = '2024-06-01' AND
+    date = '2024-07-01' AND
     type = 'font' AND
     IS_VARIABLE(payload)
   GROUP BY
@@ -24,7 +24,7 @@ pages AS (
   FROM
     `httparchive.all.requests`
   WHERE
-    date = '2024-06-01'
+    date = '2024-07-01'
   GROUP BY
     client
 )
