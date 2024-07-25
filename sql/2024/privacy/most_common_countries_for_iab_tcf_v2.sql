@@ -18,13 +18,13 @@ WITH totals AS (
 ), cmps AS (
   SELECT
     client,
-    JSON_VALUE(JSON_VALUE(payload, '$._privacy'), '$.iab_tcf_v2.data.publisherCC') AS publisherCC
+    JSON_VALUE(custom_metrics, '$.privacy.iab_tcf_v2.data.publisherCC') AS publisherCC
   FROM `httparchive.all.pages`
   WHERE
     date = '2024-06-01' AND
     is_root_page = TRUE AND
     rank <= 10000 AND
-    JSON_VALUE(JSON_VALUE(payload, '$._privacy'), '$.iab_tcf_v2.data.publisherCC') IS NOT NULL
+    JSON_VALUE(custom_metrics, '$.privacy.iab_tcf_v2.data.publisherCC') IS NOT NULL
 )
 
 SELECT

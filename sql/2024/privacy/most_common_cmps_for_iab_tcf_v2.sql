@@ -15,13 +15,13 @@ WITH totals AS (
 ), cmps AS (
   SELECT
     client,
-    JSON_VALUE(JSON_VALUE(payload, '$._privacy'), '$.iab_tcf_v2.data.cmpId') AS cmpId
+    JSON_VALUE(custom_metrics, '$.privacy.iab_tcf_v2.data.cmpId') AS cmpId
   FROM `httparchive.all.pages`
   WHERE
     date = '2024-06-01' AND
     is_root_page = TRUE AND
     rank <= 10000 AND
-    JSON_VALUE(JSON_VALUE(payload, '$._privacy'), '$.iab_tcf_v2.data.cmpId') IS NOT NULL
+    JSON_VALUE(custom_metrics, '$.privacy.iab_tcf_v2.data.cmpId') IS NOT NULL
 )
 
 SELECT
