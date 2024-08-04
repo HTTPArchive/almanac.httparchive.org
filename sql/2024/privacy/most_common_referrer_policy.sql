@@ -4,7 +4,7 @@
 WITH totals AS (
   SELECT
     client,
-    COUNT(0) AS total_pages
+    COUNT(DISTINCT page) AS total_pages
   FROM
     `httparchive.all.pages`
   WHERE
@@ -19,7 +19,7 @@ referrer_policy_custom_metrics AS (
   SELECT
     client,
     page,
-    JSON_VALUE(custom_metrics, '$._privacy.referrerPolicy.entire_document_policy') AS entire_document_policy_meta
+    JSON_VALUE(custom_metrics, '$.privacy.referrerPolicy.entire_document_policy') AS entire_document_policy_meta
   FROM
     `httparchive.all.pages`
   WHERE
@@ -32,7 +32,7 @@ response_headers AS (
   SELECT
     client,
     page,
-    response_header.name AS name,
+    LOWER(response_header.name) AS name,
     LOWER(response_header.value) AS value
   FROM
     `httparchive.all.requests`,
@@ -56,9 +56,9 @@ referrer_policy_headers AS (
 SELECT
   client,
   COALESCE(entire_document_policy_header, entire_document_policy_meta) AS entire_document_policy,
-  COUNT(0) AS pages_with_values,
-  total_pages,
-  COUNT(0) / total_pages AS pct_pages_with_values
+  COUNT(DISTINCT page) AS pages_with_values,
+  ANY_VALUE(total_pages) AS total_pages,
+  COUNT(DISTINCT page) / ANY_VALUE(total_pages) AS pct_pages_with_values
 FROM
   referrer_policy_custom_metrics
 FULL OUTER JOIN
@@ -69,8 +69,7 @@ JOIN
 USING (client)
 GROUP BY
   client,
-  entire_document_policy,
-  total_pages
+  entire_document_policy
 ORDER BY
   client,
   pages_with_values DESC
