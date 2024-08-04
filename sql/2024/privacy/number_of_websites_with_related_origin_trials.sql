@@ -31,7 +31,8 @@ WITH pages AS (
   FROM `httparchive.all.pages`
   WHERE
     date = '2024-06-01' AND
-    is_root_page
+    is_root_page AND
+    rank <= 10000
 ),
 
 pages_origin_trials AS (

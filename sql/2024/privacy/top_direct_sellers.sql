@@ -1,6 +1,9 @@
 WITH RECURSIVE pages AS (
   SELECT
-    NET.REG_DOMAIN(page) AS page,
+    CASE page -- publisher websites may redirect to an SSP domain, and need to use redirected domain instead of page domain
+      WHEN 'https://www.chunkbase.com/' THEN 'cafemedia.com'
+      ELSE NET.REG_DOMAIN(page)
+    END AS page,
     custom_metrics
   FROM `httparchive.all.pages`
   WHERE date = '2024-06-01' AND
@@ -9,20 +12,14 @@ WITH RECURSIVE pages AS (
     rank <= 10000
 ), ads AS (
   SELECT
-    CASE page
-      WHEN 'chunkbase.com' THEN 'adthrive.com'
-      ELSE page
-    END AS page,
+    page,
     JSON_QUERY(custom_metrics, '$.ads.ads.account_types') AS ad_accounts
   FROM pages
   WHERE
     CAST(JSON_VALUE(custom_metrics, '$.ads.ads.account_count') AS INT64) > 0
 ), sellers AS (
   SELECT
-    CASE page
-      WHEN 'chunkbase.com' THEN 'cafemedia.com'
-      ELSE page
-    END AS page,
+    page,
     JSON_QUERY(custom_metrics, '$.ads.sellers.seller_types') AS ad_sellers
   FROM pages
   WHERE
