@@ -45,7 +45,7 @@ SELECT
   table,
   percentile,
   COUNT(0) AS count,
-  APPROX_QUANTILES(size, 1000)[OFFSET(percentile * 10)] AS size
+  ROUND(APPROX_QUANTILES(size, 1000)[OFFSET(percentile * 10)]) AS size
 FROM
   tables,
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
