@@ -9,11 +9,11 @@ AS '''
 try {
   const $ = JSON.parse(json);
   let result = [];
-  walkDeclarations($, (decl) => {
-    result.push(parseFontFamilyProperty(decl.value)[0]);
+  walkDeclarations($, (declaration) => {
+    result.push(parseFontFamilyProperty(declaration.value)[0]);
   }, {
     properties: 'font-family',
-    rules: (r) => r.type === 'font-face'
+    rules: (rule) => rule.type === 'font-face'
   });
   return result;
 } catch (e) {

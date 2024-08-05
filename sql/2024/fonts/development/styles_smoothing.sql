@@ -9,8 +9,8 @@ AS '''
 try {
   const $ = JSON.parse(json);
   const result = [];
-  walkDeclarations($, decl => {
-    result.push(`${decl.property}: ${decl.value}`);
+  walkDeclarations($, (declaration) => {
+    result.push(`${declaration.property}: ${declaration.value}`);
   }, {
     properties: ['-webkit-font-smoothing', '-moz-osx-font-smoothing', 'font-smooth']
   });
