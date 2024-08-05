@@ -67,8 +67,7 @@ meta_tags AS (
       client,
       page,
       JSON_QUERY(custom_metrics, '$.almanac') AS custom_metrics
-    FROM
-      pages
+    FROM pages
   ),
   UNNEST(JSON_QUERY_ARRAY(custom_metrics, '$.meta-nodes.nodes')) meta_node
   WHERE
@@ -80,8 +79,8 @@ extracted_origin_trials_from_custom_metric AS (
     client,
     page, -- the home page that was crawled
     PARSE_ORIGIN_TRIAL(JSON_VALUE(metric, '$.token')) AS origin_trials_from_custom_metric
-  FROM
-    pages_origin_trials, UNNEST(JSON_QUERY_ARRAY(custom_metrics)) metric
+  FROM pages_origin_trials,
+    UNNEST(JSON_QUERY_ARRAY(custom_metrics)) metric
 ),
 
 extracted_origin_trials_from_headers_and_meta_tags AS (
@@ -89,10 +88,8 @@ extracted_origin_trials_from_headers_and_meta_tags AS (
     client,
     page, -- the home page that was crawled
     PARSE_ORIGIN_TRIAL(IF(header_name = 'origin-trial', header_value, tag_value)) AS origin_trials_from_headers_and_meta_tags
-  FROM
-    response_headers
-  FULL OUTER JOIN
-    meta_tags
+  FROM response_headers
+  FULL OUTER JOIN meta_tags
   USING (client, page)
   WHERE
     header_name = 'origin-trial' OR
@@ -104,10 +101,8 @@ SELECT
   COALESCE(origin_trials_from_custom_metric.feature, origin_trials_from_headers_and_meta_tags.feature) AS feature,
   COALESCE(origin_trials_from_custom_metric.origin, origin_trials_from_headers_and_meta_tags.origin) AS origin, -- origins with an origin trial
   COUNT(DISTINCT page) AS number_of_websites -- crawled sites containing at leat one origin trial
-FROM
-  extracted_origin_trials_from_custom_metric
-FULL OUTER JOIN
-  extracted_origin_trials_from_headers_and_meta_tags
+FROM extracted_origin_trials_from_custom_metric
+FULL OUTER JOIN extracted_origin_trials_from_headers_and_meta_tags
 USING (client, page)
 WHERE
   COALESCE(

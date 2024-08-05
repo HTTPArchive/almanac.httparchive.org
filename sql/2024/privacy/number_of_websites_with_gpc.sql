@@ -8,8 +8,7 @@ WITH pages AS (
     COUNT(DISTINCT IF(JSON_VALUE(custom_metrics, '$.well-known."/.well-known/gpc.json".found') = 'true', page, NULL)) / COUNT(DISTINCT page) AS well_known_pages_pct,
     COUNT(DISTINCT IF(JSON_VALUE(custom_metrics, '$.privacy.navigator_globalPrivacyControl') = 'true', page, NULL)) AS js_api_pages_count,
     COUNT(DISTINCT IF(JSON_VALUE(custom_metrics, '$.privacy.navigator_globalPrivacyControl') = 'true', page, NULL)) / COUNT(DISTINCT page) AS js_api_pages_pct
-  FROM
-    `httparchive.all.pages`
+  FROM `httparchive.all.pages`
   WHERE
     date = '2024-06-01' AND
     is_root_page = TRUE AND
@@ -22,8 +21,7 @@ headers AS (
     client,
     COUNT(DISTINCT IF(headers.name = 'sec-gpc' AND headers.value = '1', page, NULL)) AS headers_pages_count,
     COUNT(DISTINCT IF(headers.name = 'sec-gpc' AND headers.value = '1', page, NULL)) / COUNT(DISTINCT page) AS headers_pages_pct
-  FROM
-    `httparchive.all.requests`,
+  FROM `httparchive.all.requests`,
     UNNEST(response_headers) headers
   WHERE
     date = '2024-06-01' AND
@@ -32,8 +30,7 @@ headers AS (
   GROUP BY client
 )
 
-SELECT
-  *
+SELECT *
 FROM pages
 FULL OUTER JOIN headers
 USING (client)

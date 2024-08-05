@@ -5,14 +5,12 @@ WITH totals AS (
   SELECT
     client,
     COUNT(DISTINCT page) AS total_pages
-  FROM
-    `httparchive.all.pages`
+  FROM `httparchive.all.pages`
   WHERE
     date = '2024-06-01' AND
     is_root_page = TRUE AND
     rank <= 10000
-  GROUP BY
-    client
+  GROUP BY client
 ),
 
 referrer_policy_custom_metrics AS (
@@ -20,8 +18,7 @@ referrer_policy_custom_metrics AS (
     client,
     page,
     JSON_VALUE(custom_metrics, '$.privacy.referrerPolicy.entire_document_policy') AS entire_document_policy_meta
-  FROM
-    `httparchive.all.pages`
+  FROM `httparchive.all.pages`
   WHERE
     date = '2024-06-01' AND
     is_root_page = TRUE AND
@@ -34,8 +31,7 @@ response_headers AS (
     page,
     LOWER(response_header.name) AS name,
     LOWER(response_header.value) AS value
-  FROM
-    `httparchive.all.requests`,
+  FROM `httparchive.all.requests`,
     UNNEST(response_headers) AS response_header
   WHERE
     date = '2024-06-01' AND
@@ -47,8 +43,7 @@ referrer_policy_headers AS (
     client,
     page,
     value AS entire_document_policy_header
-  FROM
-    response_headers
+  FROM response_headers
   WHERE
     name = 'referrer-policy'
 )
@@ -59,13 +54,10 @@ SELECT
   COUNT(DISTINCT page) AS pages_with_values,
   ANY_VALUE(total_pages) AS total_pages,
   COUNT(DISTINCT page) / ANY_VALUE(total_pages) AS pct_pages_with_values
-FROM
-  referrer_policy_custom_metrics
-FULL OUTER JOIN
-  referrer_policy_headers
+FROM referrer_policy_custom_metrics
+FULL OUTER JOIN referrer_policy_headers
 USING (client, page)
-JOIN
-  totals
+JOIN totals
 USING (client)
 GROUP BY
   client,

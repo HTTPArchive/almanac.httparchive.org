@@ -5,8 +5,7 @@ WITH privacy_custom_metrics_data AS (
   SELECT
     client,
     JSON_QUERY(custom_metrics, '$.privacy') AS metrics
-  FROM
-    `httparchive.all.pages`
+  FROM `httparchive.all.pages`
   WHERE
     date = '2024-06-01' AND
     is_root_page = TRUE AND
@@ -21,7 +20,7 @@ SELECT
   number_of_websites_with_iab_tcf_any / number_of_websites AS pct_websites_with_iab_tcf_any,
   number_of_websites_with_iab_any / number_of_websites AS pct_websites_with_iab_any,
   number_of_websites_with_iab_tcf_v1_compliant / number_of_websites_with_iab_tcf_v1 AS pct_websites_with_iab_tcf_v1_compliant,
-  number_of_websites_with_iab_tcf_v2_compliant / number_of_websites_with_iab_tcf_v2 AS pct_websites_with_iab_tcf_v2_compliant,
+  number_of_websites_with_iab_tcf_v2_compliant / number_of_websites_with_iab_tcf_v2 AS pct_websites_with_iab_tcf_v2_compliant
 FROM (
   SELECT
     client,
@@ -46,8 +45,6 @@ FROM (
       JSON_VALUE(metrics, '$.iab_tcf_v2.present') = 'true' AND
       JSON_VALUE(metrics, '$.iab_tcf_v2.compliant_setup') = 'true'
     ) AS number_of_websites_with_iab_tcf_v2_compliant
-  FROM
-    privacy_custom_metrics_data
-  GROUP BY
-    client
+  FROM privacy_custom_metrics_data
+  GROUP BY client
 )

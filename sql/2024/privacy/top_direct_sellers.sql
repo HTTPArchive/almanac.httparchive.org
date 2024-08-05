@@ -76,7 +76,11 @@ WITH RECURSIVE pages AS (
       HLL_COUNT.INIT(publisher) AS supply_sketch
     FROM relationships
     WHERE supply = 'Web'
-    GROUP BY demand, supply, path_history, relationship
+    GROUP BY
+      demand,
+      supply,
+      path_history,
+      relationship
   )
   UNION ALL
   (

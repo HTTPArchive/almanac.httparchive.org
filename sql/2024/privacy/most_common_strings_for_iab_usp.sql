@@ -6,20 +6,17 @@ WITH totals AS (
   SELECT
     client,
     COUNT(DISTINCT page) AS pages_total
-  FROM
-    `httparchive.all.pages`
+  FROM `httparchive.all.pages`
   WHERE
     date = '2024-06-01' AND
     rank <= 10000
-  GROUP BY
-    client
+  GROUP BY client
 ), usp_data AS (
   SELECT
     client,
     page,
     JSON_VALUE(custom_metrics, '$.privacy.iab_usp.privacy_string.uspString') AS uspString
-  FROM
-    `httparchive.all.pages`
+  FROM `httparchive.all.pages`
   WHERE
     date = '2024-06-01' AND
     JSON_VALUE(custom_metrics, '$.privacy.iab_usp.privacy_string.uspString') IS NOT NULL AND

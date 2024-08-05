@@ -43,6 +43,11 @@ SELECT
 FROM cnames
 LEFT JOIN adguard_trackers
 ON cnames.cname LIKE CONCAT('%', adguard_trackers.domain, '%')
-GROUP BY client, cname, adguard_cname
+GROUP BY
+  client,
+  cname,
+  adguard_cname
 HAVING request_domain_count > 100
-ORDER BY client, request_domain_count DESC
+ORDER BY
+  client,
+  request_domain_count DESC
