@@ -38,7 +38,7 @@ SELECT
   NET.REG_DOMAIN(adguard_trackers.domain) AS adguard_cname,
   COUNT(DISTINCT NET.REG_DOMAIN(cnames.origin)) AS request_domain_count,
   COUNT(DISTINCT page) AS page_count
---ARRAY_AGG(DISTINCT cnames.hostname LIMIT 2) AS request_domain_examples,
+--ARRAY_AGG(DISTINCT cnames.origin LIMIT 2) AS request_domain_examples,
 --ARRAY_AGG(DISTINCT page LIMIT 2) AS page_examples,
 FROM cnames
 LEFT JOIN adguard_trackers
