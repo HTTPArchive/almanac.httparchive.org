@@ -53,6 +53,9 @@ GROUP BY
   client,
   table,
   percentile
+HAVING
+  -- Filter out spurious tables.
+  count > 1000
 ORDER BY
   client,
   table,
