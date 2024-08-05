@@ -38,7 +38,7 @@ SELECT
   client,
   country,
   COUNT(0) AS count,
-  APPROX_QUANTILES(size, 1000)[OFFSET(500)] AS median_size
+  ROUND(APPROX_QUANTILES(size, 1000)[OFFSET(500)]) AS size
 FROM
   pages
 JOIN
@@ -48,4 +48,4 @@ GROUP BY
   country
 ORDER BY
   client,
-  country
+  size
