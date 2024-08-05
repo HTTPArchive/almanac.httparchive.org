@@ -8,16 +8,16 @@ OPTIONS (library = "gs://httparchive/lib/css-utils.js")
 AS '''
 try {
   function compute(tree) {
-    let ret = {};
+    let result = {};
     walkDeclarations(tree, ({property, value}) => {
       const propName = property.toLowerCase();
       if (propName === 'font-variant') {
-        incrementByKey(ret, 'font-variant: ' + value)
+        incrementByKey(result, 'font-variant: ' + value)
       } else if (propName.startsWith('font-variant-')) {
-        incrementByKey(ret, propName + ': ' + value);
+        incrementByKey(result, propName + ': ' + value);
       }
     });
-    return sortObject(ret);
+    return sortObject(result);
   }
   let props = compute(JSON.parse(json));
   return Object.entries(props).flatMap(([prop, freq]) => {

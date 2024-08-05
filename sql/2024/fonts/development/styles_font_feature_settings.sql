@@ -20,14 +20,14 @@ function parseFontFeatureSettings(value) {
 try {
   const $ = JSON.parse(json);
   const result = [];
-  walkDeclarations($, decl => {
-    const tags = parseFontFeatureSettings(decl.value);
+  walkDeclarations($, (declaration) => {
+    const tags = parseFontFeatureSettings(declaration.value);
     if (tags && tags.length) {
-      tags.forEach(t => result.push(t));
+      tags.forEach((tag) => result.push(tag));
     }
   }, {
     properties: 'font-feature-settings',
-    rules: r => r.type !== 'font-face'
+    rules: (rule) => rule.type !== 'font-face'
   });
   return result;
 } catch (e) {

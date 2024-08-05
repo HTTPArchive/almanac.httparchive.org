@@ -24,21 +24,21 @@ const system = [
 try {
   const $ = JSON.parse(json);
   const result = [];
-  walkDeclarations($, decl => {
-    if (decl.property === 'font-family') {
-      const fonts = parseFontFamilyProperty(decl.value);
+  walkDeclarations($, (declaration) => {
+    if (declaration.property === 'font-family') {
+      const fonts = parseFontFamilyProperty(declaration.value);
       if (fonts) {
         fonts.forEach(font => result.push(font));
       }
-    } else if (decl.property === 'font') {
-      const value = parseFontProperty(decl.value);
+    } else if (declaration.property === 'font') {
+      const value = parseFontProperty(declaration.value);
       if (value) {
         value['font-family'].forEach(font => result.push(font));
       }
     }
   }, {
     properties: ['font-family', 'font'],
-    rules: (r) => r.type !== 'font-face'
+    rules: (rule) => rule.type !== 'font-face'
   });
   return result.filter(font => system.includes(font));
 } catch (e) {
