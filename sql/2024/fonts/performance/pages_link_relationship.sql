@@ -14,31 +14,18 @@ try {
     }
     results.push(hint);
     return results;
-  }, ['total']);
+  }, []);
 } catch (e) {
-  return ['total'];
+  return [];
 }
 ''';
 
 WITH
-fonts AS (
-  SELECT
-    client,
-    page
-  FROM
-    `httparchive.all.requests`
-  WHERE
-    date = '2024-07-01' AND
-    type = 'font'
-  GROUP BY
-    client,
-    page
-),
 hints AS (
   SELECT
     client,
-    page,
-    hint
+    hint,
+    COUNT(DISTINCT page) AS count
   FROM
     `httparchive.all.pages`,
     UNNEST(HINTS(custom_metrics)) AS hint
@@ -46,23 +33,30 @@ hints AS (
     date = '2024-07-01'
   GROUP BY
     client,
-    page,
     hint
+),
+pages AS (
+  SELECT
+    client,
+    COUNT(DISTINCT page) AS total
+  FROM
+    `httparchive.all.pages`
+  WHERE
+    date = '2024-07-01'
+  GROUP BY
+    client
 )
 
 SELECT
   client,
   hint,
-  COUNT(DISTINCT page) AS count,
-  SUM(COUNT(DISTINCT IF(hint = 'total', NULL, page))) OVER (PARTITION BY client) AS total,
-  COUNT(DISTINCT page) / SUM(COUNT(DISTINCT IF(hint = 'total', NULL, page))) OVER (PARTITION BY client) AS proportion
+  count,
+  total,
+  count / total AS proportion
 FROM
   hints
 LEFT JOIN
-  fonts USING (client, page)
-GROUP BY
-  client,
-  hint
+  pages USING (client)
 ORDER BY
   client,
   proportion DESC
