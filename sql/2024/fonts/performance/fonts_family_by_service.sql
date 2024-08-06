@@ -1,5 +1,5 @@
 -- Section: Performance
--- Question: Which families are used broken down by service?
+-- Question: Which families are used by service?
 
 -- INCLUDE ../common.sql
 
