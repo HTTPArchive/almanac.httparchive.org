@@ -1,14 +1,14 @@
 #standardSQL
-# Percentiles of Max-Age-attribute, Expires-attribute and real age (Max-Age has precedence) of cookies set over all requests
-# Only incorporates values that are larger than 0
-CREATE TEMPORARY FUNCTION getCookieAgeValues(headers STRING, epochOfRequest NUMERIC)
+# Section: Cookies - Cookie Age
+# Question: How long are cookies valid? (Max-Age, Expires, Real Age)
+# Note: Only incorporates values that are larger than 0; cookies set over all all requests on the root_page
+# Note: Could be combined with the other cookie queries to run the expensive response_header unnesting only once?
+CREATE TEMPORARY FUNCTION getCookieAgeValues(cookie_value STRING, epochOfRequest NUMERIC)
 RETURNS STRING DETERMINISTIC
 LANGUAGE js AS '''
   const regexMaxAge = new RegExp(/max-age\\s*=\\s*(?<value>-*[0-9]+)/i);
   const regexExpires = new RegExp(/expires\\s*=\\s*(?<value>.*?)(;|$)/i);
-  const parsed_headers = JSON.parse(headers);
-  const cookies = parsed_headers.filter(h => h.name.match(/set-cookie/i));
-  const cookieValues = cookies.map(h => h.value);
+  const cookieValues = [cookie_value];
   const result = {
       "maxAge": [],
       "expires": [],
@@ -37,11 +37,14 @@ LANGUAGE js AS '''
 WITH age_values AS (
   SELECT
     client,
-    getCookieAgeValues(response_headers, startedDateTime) AS values
+    getCookieAgeValues(response_headers.value, CAST(JSON_QUERY(summary, '$.startedDateTime') AS NUMERIC)) AS values
   FROM
-    `httparchive.almanac.requests`
+    `httparchive.all.requests`,
+    UNNEST (response_headers) as response_headers
   WHERE
-    date = '2022-06-01'
+    date = '2024-06-01'
+    AND is_root_page
+    AND LOWER(response_headers.name) = 'set-cookie'
 ),
 
 max_age_values AS (

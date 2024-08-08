@@ -1,13 +1,14 @@
 #standardSQL
-# Count the number of cookies where the Max-Age-attribute, Expires-attribute and real age (Max-Age has precedence) of cookies are negative
-CREATE TEMPORARY FUNCTION getCookieAgeValues(headers STRING, epochOfRequest NUMERIC)
+# Section: Cookies - Cookie Age
+# Question: How many cookies (total, hosts, pages) have negative Max-Age, Expires and real age (Max-Age has precedence over Expires) attributes?
+# Note: Query is expensive and slow (14TB). Query is inefficient (We create a result array of length 1 for each cookie-attribute for each cookie and then unnest it again; We could instead not use arrays and skip the unnesting).
+# Note: Some of the percentages are quite different to the old query; one of both might be broken (difficult to compare as both cannot operate on a shared dataset)
+CREATE TEMPORARY FUNCTION getCookieAgeValues(cookie_value STRING, epochOfRequest NUMERIC)
 RETURNS STRING DETERMINISTIC
 LANGUAGE js AS '''
   const regexMaxAge = new RegExp(/max-age\\s*=\\s*(?<value>-*[0-9]+)/i);
   const regexExpires = new RegExp(/expires\\s*=\\s*(?<value>.*?)(;|$)/i);
-  const parsed_headers = JSON.parse(headers);
-  const cookies = parsed_headers.filter(h => h.name.match(/set-cookie/i));
-  const cookieValues = cookies.map(h => h.value);
+  const cookieValues = [cookie_value];
   const result = {
       "maxAge": [],
       "expires": [],
@@ -37,12 +38,15 @@ WITH age_values AS (
   SELECT
     client,
     page,
-    NET.HOST(urlShort) AS host,
-    getCookieAgeValues(response_headers, startedDateTime) AS values
+    NET.HOST(url) AS host,
+    getCookieAgeValues(response_headers.value, CAST(JSON_QUERY(summary, '$.startedDateTime') AS NUMERIC)) AS values
   FROM
-    `httparchive.almanac.requests`
+    `httparchive.all.requests`,
+    UNNEST (response_headers) as response_headers
   WHERE
-    date = '2022-06-01'
+    date = '2024-06-01'
+    AND is_root_page
+    AND LOWER(response_headers.name) = 'set-cookie'
 ),
 
 max_age_values AS (
