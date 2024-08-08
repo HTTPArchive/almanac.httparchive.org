@@ -1,15 +1,6 @@
 #standardSQL
-# CSP on home pages: number of unique headers, header length and number of allowed hosts in all directives
-CREATE TEMPORARY FUNCTION getHeader(headers STRING, headername STRING)
-RETURNS STRING DETERMINISTIC
-LANGUAGE js AS '''
-  const parsed_headers = JSON.parse(headers);
-  const matching_headers = parsed_headers.filter(h => h.name.toLowerCase() == headername.toLowerCase());
-  if (matching_headers.length > 0) {
-    return matching_headers[0].value;
-  }
-  return null;
-''';
+# Section: Attack Preventions - Preventing attacks using CSP
+# Question: CSP on home pages: number of unique headers, header length and number of allowed hosts in all directives
 CREATE TEMP FUNCTION getNumUniqueHosts(str STRING) AS (
   (SELECT COUNT(DISTINCT x) FROM UNNEST(REGEXP_EXTRACT_ALL(str, r'(?i)(https*://[^\s;]+)[\s;]')) AS x)
 );
@@ -26,12 +17,15 @@ SELECT
 FROM (
   SELECT
     client,
-    getHeader(response_headers, 'Content-Security-Policy') AS csp_header
+    response_headers.value AS csp_header
   FROM
-    `httparchive.almanac.requests`
+    `httparchive.all.requests`,
+    UNNEST (response_headers) AS response_headers
   WHERE
-    date = '2022-06-01' AND
-    firstHtml
+    date = '2024-06-01'
+    AND is_root_page
+    AND is_main_document
+    AND LOWER(response_headers.name) = 'content-security-policy'
 ),
 UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 GROUP BY

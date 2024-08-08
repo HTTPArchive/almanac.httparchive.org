@@ -1,15 +1,6 @@
 #standardSQL
-# CSP: usage of default/script-src, and within the directive usage of strict-dynamic, nonce values, unsafe-inline and unsafe-eval
-CREATE TEMPORARY FUNCTION getHeader(headers STRING, headername STRING)
-RETURNS STRING DETERMINISTIC
-LANGUAGE js AS '''
-  const parsed_headers = JSON.parse(headers);
-  const matching_headers = parsed_headers.filter(h => h.name.toLowerCase() == headername.toLowerCase());
-  if (matching_headers.length > 0) {
-    return matching_headers[0].value;
-  }
-  return null;
-''';
+# Section: Attack preventions - Preventing attacks using CSP
+# Question: usage of default/script-src, and within the directive usage of strict-dynamic, nonce values, unsafe-inline and unsafe-eval
 SELECT
   client,
   total_pages,
@@ -43,15 +34,16 @@ FROM (
   FROM (
     SELECT
       client,
-      getHeader(response_headers, 'Content-Security-Policy') AS csp_header
+      response_headers.value AS csp_header
     FROM
-      `httparchive.almanac.requests`
+      `httparchive.all.requests`,
+      UNNEST (response_headers) AS response_headers
     WHERE
-      date = '2022-06-01' AND
-      firstHtml
-  )
+      date = '2024-06-01'
+      AND is_root_page
+      AND is_main_document
+      AND LOWER(response_headers.name) = 'content-security-policy' )
   GROUP BY
-    client
-)
+    client )
 ORDER BY
   client
