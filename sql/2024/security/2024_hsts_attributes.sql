@@ -1,5 +1,6 @@
 #standardSQL
-# HSTS includeSubDomains and preload usage
+# Section: Transport Security - HTTP Strict Transport Security
+# Question: How many websites use HSTS includeSubDomains and preload?
 SELECT
   client,
   COUNT(0) AS total_requests,
@@ -12,12 +13,13 @@ SELECT
 FROM (
   SELECT
     client,
-    REGEXP_EXTRACT(respOtherHeaders, r'(?i)strict-transport-security =([^,]+)') AS hsts_header_val
+    REGEXP_EXTRACT(JSON_VALUE(summary, '$.respOtherHeaders'), r'(?i)strict-transport-security =([^,]+)') AS hsts_header_val
   FROM
-    `httparchive.almanac.requests`
+    `httparchive.all.requests`
   WHERE
-    date = '2022-06-01' AND
-    firstHtml
+    date = '2024-06-01'
+    AND is_root_page
+    AND is_main_document
 )
 GROUP BY
   client

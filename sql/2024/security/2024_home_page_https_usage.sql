@@ -1,5 +1,6 @@
 #standardSQL
-# Home page usage of HTTPS
+# Section: Transpont Security - Protocol versions
+# Question: How many websites (home pages only) use HTTP vs HTTPS?
 SELECT
   client,
   STARTS_WITH(page, 'https') AS https,
@@ -7,10 +8,11 @@ SELECT
   SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
 FROM
-  `httparchive.almanac.requests`
+  `httparchive.all.requests`
 WHERE
-  date = '2022-06-01' AND
-  firstHtml
+  date = '2024-06-01'
+  AND is_root_page
+  AND is_main_document
 GROUP BY
   client,
   https
