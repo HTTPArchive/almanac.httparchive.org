@@ -28,20 +28,19 @@ SELECT
   SAFE_DIVIDE(COUNTIF(age_weeks >= 8 AND age_weeks <= 52), COUNTIF(age_weeks IS NOT NULL)) AS age_8_to_52wk_pct,
   SAFE_DIVIDE(COUNTIF(age_weeks >= 53 AND age_weeks <= 104), COUNTIF(age_weeks IS NOT NULL)) AS age_gt_1y_pct,
   SAFE_DIVIDE(COUNTIF(age_weeks >= 105), COUNTIF(age_weeks IS NOT NULL)) AS age_gt_2y_pct
-FROM
-  (
-    SELECT
-      _TABLE_SUFFIX AS client,
-      IF(NET.HOST(url) IN (
-        SELECT domain FROM `httparchive.almanac.third_parties` WHERE date = '2021-07-01' AND category != 'hosting'
-      ), 'third party', 'first party') AS party,
-      type AS resource_type,
-      ROUND((startedDateTime - toTimestamp(resp_last_modified)) / (60 * 60 * 24 * 7)) AS age_weeks
-    FROM
-      `httparchive.summary_requests.2021_07_01_*`
-    WHERE
-      TRIM(resp_last_modified) != ''
-  )
+FROM (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    IF(NET.HOST(url) IN (
+      SELECT domain FROM `httparchive.almanac.third_parties` WHERE date = '2021-07-01' AND category != 'hosting'
+    ), 'third party', 'first party') AS party,
+    type AS resource_type,
+    ROUND((startedDateTime - toTimestamp(resp_last_modified)) / (60 * 60 * 24 * 7)) AS age_weeks
+  FROM
+    `httparchive.summary_requests.2021_07_01_*`
+  WHERE
+    TRIM(resp_last_modified) != ''
+)
 GROUP BY
   client,
   party,

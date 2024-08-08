@@ -1,5 +1,5 @@
 #standardSQL
-  # 15_01: What compression formats are being used (gzip, brotli, etc)
+# 15_01: What compression formats are being used (gzip, brotli, etc)
 SELECT
   _TABLE_SUFFIX AS client,
   resp_content_encoding,

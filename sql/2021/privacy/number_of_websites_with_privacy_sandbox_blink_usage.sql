@@ -10,8 +10,7 @@ SELECT DISTINCT
 FROM
   `httparchive.blink_features.usage`
 WHERE
-  yyyymmdd = '20210701' AND
-  (
+  yyyymmdd = '20210701' AND (
     feature = 'InterestCohortAPI_interestCohort_Method' OR
     feature = 'V8Navigator_JoinAdInterestGroup_Method' OR
     feature = 'V8Navigator_LeaveAdInterestGroup_Method' OR

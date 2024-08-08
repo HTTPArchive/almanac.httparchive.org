@@ -11,8 +11,7 @@ LANGUAGE js AS '''
   }
   return null;
 ''';
-CREATE TEMP FUNCTION getNumUniqueHosts(str STRING) AS (
-  (SELECT COUNT(DISTINCT x) FROM UNNEST(REGEXP_EXTRACT_ALL(str, r'(?i)(https*://[^\s;]+)[\s;]')) AS x)
+CREATE TEMP FUNCTION getNumUniqueHosts(str STRING) AS ((SELECT COUNT(DISTINCT x) FROM UNNEST(REGEXP_EXTRACT_ALL(str, r'(?i)(https*://[^\s;]+)[\s;]')) AS x)
 );
 
 SELECT
@@ -34,7 +33,7 @@ FROM (
     date = '2020-08-01' AND
     firstHtml
 ),
-UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
+  UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 GROUP BY
   client,
   percentile

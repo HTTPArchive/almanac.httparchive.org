@@ -26,6 +26,7 @@ FROM (
     _TABLE_SUFFIX AS client,
     getScripts(payload) AS script
   FROM
-    `httparchive.pages.2022_06_01_*`)
+    `httparchive.pages.2022_06_01_*`
+)
 GROUP BY
   client

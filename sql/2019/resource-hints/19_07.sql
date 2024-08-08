@@ -21,6 +21,7 @@ FROM (
     _TABLE_SUFFIX AS client,
     getPriorityHints(payload) AS has_hint
   FROM
-    `httparchive.pages.2019_07_01_*`)
+    `httparchive.pages.2019_07_01_*`
+)
 GROUP BY
   client

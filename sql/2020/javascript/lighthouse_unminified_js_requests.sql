@@ -24,7 +24,8 @@ FROM (
   LEFT JOIN
     UNNEST(getUnminifiedJsBytes(JSON_EXTRACT(report, "$.audits['unminified-javascript']"))) AS unminified_js_bytes
   GROUP BY
-    page)
+    page
+)
 GROUP BY
   unminified_js_kbytes
 ORDER BY

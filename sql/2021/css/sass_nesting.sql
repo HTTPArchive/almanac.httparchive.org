@@ -40,7 +40,8 @@ FROM (
   GROUP BY
     client,
     page,
-    nested)
+    nested
+)
 GROUP BY
   client,
   nested

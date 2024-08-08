@@ -18,6 +18,7 @@ SELECT
   ROUND(APPROX_QUANTILES(v8_time, 1000)[OFFSET(750)], 3) AS p75,
   ROUND(APPROX_QUANTILES(v8_time, 1000)[OFFSET(900)], 3) AS p90
 FROM (
-  SELECT _TABLE_SUFFIX AS client, totalMainThreadTime(payload) AS v8_time FROM `httparchive.pages.2019_07_01_*`)
+  SELECT _TABLE_SUFFIX AS client, totalMainThreadTime(payload) AS v8_time FROM `httparchive.pages.2019_07_01_*`
+)
 GROUP BY
   client

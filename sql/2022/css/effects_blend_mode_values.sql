@@ -58,11 +58,11 @@ FROM (
     totals
   JOIN
     blend_modes
-  USING
-    (client)
+  USING (client)
   GROUP BY
     client,
-    blend_mode)
+    blend_mode
+)
 WHERE
   pct_pages > 0.01
 ORDER BY

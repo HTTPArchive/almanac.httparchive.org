@@ -44,14 +44,13 @@ SELECT
   # % of pages with details and summary elements
   COUNTIF(element_count_info.contains_details_element AND element_count_info.contains_summary_element) / COUNT(0) AS pct_contains_details_and_summary_element
 
-FROM
-  (
-    SELECT
-      _TABLE_SUFFIX AS client,
-      get_element_count_info(JSON_EXTRACT_SCALAR(payload, '$._element_count')) AS element_count_info
-    FROM
-      `httparchive.pages.2021_07_01_*`
-  )
+FROM (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    get_element_count_info(JSON_EXTRACT_SCALAR(payload, '$._element_count')) AS element_count_info
+  FROM
+    `httparchive.pages.2021_07_01_*`
+)
 GROUP BY
   client
 ORDER BY

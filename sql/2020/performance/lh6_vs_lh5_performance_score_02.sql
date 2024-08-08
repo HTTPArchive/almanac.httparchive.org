@@ -31,7 +31,10 @@ FROM (
         `httparchive.lighthouse.2020_09_01_mobile` AS lh6
       JOIN
         `httparchive.lighthouse.2019_07_01_mobile` AS lh5
-      USING (url)))
+      USING (url)
+    )
+  )
   GROUP BY
     direction,
-    magnitude)
+    magnitude
+)

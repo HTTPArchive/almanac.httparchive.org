@@ -28,8 +28,7 @@ sites_and_events AS (
     site, -- the home page that was crawled
     url_and_events.key AS url, -- the url that added the event listener, can be scripts etc.
     event -- the name of the event
-  FROM
-    (SELECT client, url AS site, jsonToKeyValueArray(events) AS events_per_site FROM pages_events),
+  FROM (SELECT client, url AS site, jsonToKeyValueArray(events) AS events_per_site FROM pages_events),
     UNNEST(events_per_site) url_and_events,
     UNNEST(url_and_events.value) event
 ),

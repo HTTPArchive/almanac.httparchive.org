@@ -5,14 +5,15 @@ SELECT
   percentile,
   client,
   APPROX_QUANTILES(respSize, 1000)[OFFSET(percentile * 10)] AS bytes
-FROM
-  (SELECT DISTINCT
-      date,
-      client,
-      page,
-      url
-    FROM
-      `httparchive.almanac.service_workers`)
+FROM (
+  SELECT DISTINCT
+    date,
+    client,
+    page,
+    url
+  FROM
+    `httparchive.almanac.service_workers`
+)
 JOIN
   `httparchive.almanac.requests`
 USING (date, client, page, url),

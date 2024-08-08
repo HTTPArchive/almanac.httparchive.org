@@ -96,7 +96,8 @@ FROM (
     custom_properties.freq
   FROM
     `httparchive.pages.2020_08_01_*`,
-    UNNEST(getCustomPropertyLengths(payload)) AS custom_properties)
+    UNNEST(getCustomPropertyLengths(payload)) AS custom_properties
+)
 GROUP BY
   client,
   depth

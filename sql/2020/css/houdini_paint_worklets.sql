@@ -43,7 +43,8 @@ FROM (
     `httparchive.almanac.parsed_css`,
     UNNEST(getPaintWorklets(css)) AS paint
   WHERE
-    date = '2020-08-01')
+    date = '2020-08-01'
+)
 GROUP BY
   client,
   worklet

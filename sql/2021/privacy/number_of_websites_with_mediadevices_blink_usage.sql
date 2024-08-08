@@ -10,8 +10,7 @@ SELECT DISTINCT
 FROM
   `httparchive.blink_features.usage`
 WHERE
-  yyyymmdd = '20210701' AND
-  (
+  yyyymmdd = '20210701' AND (
     feature LIKE '%MediaDevices%' OR
     feature LIKE '%EnumerateDevices%' OR
     feature LIKE '%GetUserMedia%' OR

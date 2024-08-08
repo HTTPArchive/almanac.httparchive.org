@@ -1,5 +1,5 @@
 #standardSQL
-  # A count of pages which include each type of structured data
+# A count of pages which include each type of structured data
 SELECT
   client,
   COUNTIF(CAST(JSON_EXTRACT(structured_data, '$.structured_data.rendered.present.rdfa') AS BOOL)) AS rdfa,
@@ -28,7 +28,8 @@ FROM (
     _TABLE_SUFFIX AS client,
     JSON_VALUE(JSON_EXTRACT(payload, '$._structured-data')) AS structured_data
   FROM
-    `httparchive.pages.2021_07_01_*`)
+    `httparchive.pages.2021_07_01_*`
+)
 GROUP BY
   client
 ORDER BY

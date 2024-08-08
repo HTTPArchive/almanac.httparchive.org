@@ -16,7 +16,8 @@ FROM (
     date = '2022-06-01'
   GROUP BY
     client,
-    font_loading_api)
+    font_loading_api
+)
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -24,6 +25,6 @@ JOIN (
   FROM
     `httparchive.summary_pages.2022_06_01_*`
   GROUP BY
-    client)
-USING
-  (client)
+    client
+)
+USING (client)

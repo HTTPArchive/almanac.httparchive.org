@@ -89,7 +89,7 @@ technologies AS (
     ARRAY_TO_STRING(ARRAY_AGG(category ORDER BY category), ', ') AS categories,
     app
   FROM
-    `httparchive.technologies.2022_07_01_*` -- noqa: L062
+    `httparchive.technologies.2022_07_01_*` -- noqa: CV09
   GROUP BY
     client,
     page,
@@ -107,12 +107,10 @@ FROM
   totals
 JOIN
   afters
-USING
-  (client)
+USING (client)
 JOIN
   technologies
-USING
-  (client, page)
+USING (client, page)
 GROUP BY
   client,
   app

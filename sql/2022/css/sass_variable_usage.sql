@@ -32,19 +32,20 @@ FROM (
     variable.variable,
     variable.freq
   FROM
-    `httparchive.pages.2022_07_01_*`, -- noqa: L062
-    UNNEST(getVariableUsage(payload)) AS variable)
+    `httparchive.pages.2022_07_01_*`, -- noqa: CV09
+    UNNEST(getVariableUsage(payload)) AS variable
+)
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
     COUNT(DISTINCT url) AS total_sass
   FROM
-    `httparchive.pages.2022_07_01_*`, -- noqa: L062
+    `httparchive.pages.2022_07_01_*`, -- noqa: CV09
     UNNEST(getVariableUsage(payload))
   GROUP BY
-    client)
-USING
-  (client)
+    client
+)
+USING (client)
 GROUP BY
   client,
   variable,

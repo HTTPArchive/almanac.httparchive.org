@@ -2,7 +2,7 @@
 # pages markup metrics grouped by device
 
 # helper to create percent fields
-CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
+CREATE TEMP FUNCTION AS_PERCENT(freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
   ROUND(SAFE_DIVIDE(freq, total), 4)
 );
 
@@ -82,13 +82,12 @@ SELECT
   # Pages with rel=amphtml
   AS_PERCENT(COUNTIF(markup_info.has_rel_amphtml_tag), COUNT(0)) AS pct_has_rel_amphtml_tag
 
-FROM
-  (
-    SELECT
-      _TABLE_SUFFIX AS client,
-      get_markup_info(JSON_EXTRACT_SCALAR(payload, '$._markup')) AS markup_info
-    FROM
-      `httparchive.pages.2020_08_01_*`
-  )
+FROM (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    get_markup_info(JSON_EXTRACT_SCALAR(payload, '$._markup')) AS markup_info
+  FROM
+    `httparchive.pages.2020_08_01_*`
+)
 GROUP BY
   client

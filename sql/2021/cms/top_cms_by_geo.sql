@@ -61,7 +61,8 @@ FROM (
   GROUP BY
     client,
     geo,
-    cms)
+    cms
+)
 WHERE
   pages > 1000
 ORDER BY

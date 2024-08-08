@@ -21,7 +21,7 @@ FROM (
     client,
     request_host,
     cert_issuer
-  )
+)
 GROUP BY
   client,
   issuer

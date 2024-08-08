@@ -25,7 +25,8 @@ SELECT
   ROUND(APPROX_QUANTILES(render_blocking_js.wasted_ms, 1000)[OFFSET(percentile * 10)] / 1000, 2) AS wasted_sec
 FROM (
   SELECT renderBlockingJS(report) AS render_blocking_js
-  FROM `httparchive.lighthouse.2019_07_01_mobile`),
+  FROM `httparchive.lighthouse.2019_07_01_mobile`
+),
   UNNEST([10, 25, 50, 75, 90]) AS percentile
 GROUP BY
   percentile

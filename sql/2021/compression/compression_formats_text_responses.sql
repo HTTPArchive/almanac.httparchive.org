@@ -14,8 +14,7 @@ SELECT
 FROM
   `httparchive.almanac.requests`
 WHERE
-  date = '2021-07-01' AND
-  (
+  date = '2021-07-01' AND (
     resp_content_type LIKE 'text/%' OR
     resp_content_type LIKE '%svg+xml%' OR
     resp_content_type LIKE '%ttf%' OR

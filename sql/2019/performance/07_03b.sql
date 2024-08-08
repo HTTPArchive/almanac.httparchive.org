@@ -3,7 +3,7 @@
 SELECT
   device,
   ROUND(COUNTIF(fast_fcp >= .75) * 100 / COUNT(0), 2) AS pct_fast_fcp,
-  ROUND(COUNTIF(NOT(slow_fcp >= .25) AND NOT(fast_fcp >= .75)) * 100 / COUNT(0), 2) AS pct_avg_fcp,
+  ROUND(COUNTIF(NOT (slow_fcp >= .25) AND NOT (fast_fcp >= .75)) * 100 / COUNT(0), 2) AS pct_avg_fcp,
   ROUND(COUNTIF(slow_fcp >= .25) * 100 / COUNT(0), 2) AS pct_slow_fcp
 FROM (
   SELECT
@@ -15,6 +15,7 @@ FROM (
     `chrome-ux-report.materialized.device_summary`
   WHERE
     yyyymm = '201907' AND
-    device IN ('desktop', 'phone'))
+    device IN ('desktop', 'phone')
+)
 GROUP BY
   device

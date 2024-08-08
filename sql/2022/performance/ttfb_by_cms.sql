@@ -15,7 +15,8 @@ JOIN (
   FROM
     `httparchive.technologies.2022_06_01_*`
   WHERE
-    category = 'CMS')
+    category = 'CMS'
+)
 ON
   client = IF(form_factor.name = 'desktop', 'desktop', 'mobile') AND
   CONCAT(origin, '/') = url

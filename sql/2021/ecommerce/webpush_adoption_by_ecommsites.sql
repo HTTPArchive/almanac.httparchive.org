@@ -10,20 +10,18 @@ SELECT
 FROM
   `chrome-ux-report.materialized.metrics_summary`
 JOIN (
-    SELECT DISTINCT
-      _TABLE_SUFFIX AS client,
-      RTRIM(url, '/') AS origin
-    FROM
-      `httparchive.technologies.2021_07_01_*`
-    WHERE
-      category = 'Ecommerce' AND
-      (
-        app != 'Cart Functionality' AND
-        app != 'Google Analytics Enhanced eCommerce'
-      )
+  SELECT DISTINCT
+    _TABLE_SUFFIX AS client,
+    RTRIM(url, '/') AS origin
+  FROM
+    `httparchive.technologies.2021_07_01_*`
+  WHERE
+    category = 'Ecommerce' AND (
+      app != 'Cart Functionality' AND
+      app != 'Google Analytics Enhanced eCommerce'
+    )
 )
-USING
-  (origin)
+USING (origin)
 WHERE
   date IN ('2021-07-01')
 GROUP BY

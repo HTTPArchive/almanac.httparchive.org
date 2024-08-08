@@ -1,5 +1,5 @@
 CREATE TEMPORARY FUNCTION getResourceHints(payload STRING)
-RETURNS ARRAY < STRUCT < name STRING, href STRING >>
+RETURNS ARRAY<STRUCT<name STRING, href STRING>>
 LANGUAGE js AS '''
 var hints = new Set(['preload', 'prefetch', 'preconnect', 'prerender', 'dns-prefetch']);
 try {
@@ -33,14 +33,19 @@ FROM (
     _TABLE_SUFFIX AS client,
     url AS page,
     hint.name,
-    CAST(JSON_EXTRACT_SCALAR(payload,
-        "$['_chromeUserTiming.firstContentfulPaint']") AS INT64) AS fcp,
-    CAST(JSON_EXTRACT_SCALAR(payload,
-        "$['_chromeUserTiming.LargestContentfulPaint']") AS INT64) AS lcp
+    CAST(JSON_EXTRACT_SCALAR(
+      payload,
+      "$['_chromeUserTiming.firstContentfulPaint']"
+    ) AS INT64) AS fcp,
+    CAST(JSON_EXTRACT_SCALAR(
+      payload,
+      "$['_chromeUserTiming.LargestContentfulPaint']"
+    ) AS INT64) AS lcp
   FROM
     `httparchive.pages.2020_08_01_*`
   LEFT JOIN
-    UNNEST(getResourceHints(payload)) AS hint)
+    UNNEST(getResourceHints(payload)) AS hint
+)
 LEFT JOIN (
   SELECT
     client,
@@ -49,9 +54,9 @@ LEFT JOIN (
   FROM
     `httparchive.almanac.requests`
   WHERE
-    date = '2020-08-01')
-USING
-  (client, page)
+    date = '2020-08-01'
+)
+USING (client, page)
 WHERE
   type = 'font'
 GROUP BY

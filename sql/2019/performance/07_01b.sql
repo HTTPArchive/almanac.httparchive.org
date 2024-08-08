@@ -19,6 +19,7 @@ FROM (
     fast_fcp + avg_fcp + slow_fcp > 0 AND
     device = 'desktop'
   ORDER BY
-    fast DESC)
+    fast DESC
+)
 WHERE
   MOD(row, CAST(FLOOR(n / 1000) AS INT64)) = 0

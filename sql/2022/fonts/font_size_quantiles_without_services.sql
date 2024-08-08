@@ -3,7 +3,8 @@ SELECT
   client,
   COUNT(DISTINCT url) AS total,
   APPROX_QUANTILES(KiB_size, 1000)[
-    OFFSET(percentile * 10)] AS KiB_size
+    OFFSET(percentile * 10)
+  ] AS KiB_size
 FROM (
   SELECT
     url,
@@ -16,7 +17,8 @@ FROM (
   WHERE
     date = '2022-06-01' AND
     type = 'font' AND
-    NOT (REGEXP_CONTAINS(url, r'(fonts\.(gstatic|googleapis)\.com)|(themes.googleusercontent.com/static/fonts)|(ssl.gstatic.com/fonts/)') OR
+    NOT (
+      REGEXP_CONTAINS(url, r'(fonts\.(gstatic|googleapis)\.com)|(themes.googleusercontent.com/static/fonts)|(ssl.gstatic.com/fonts/)') OR
       REGEXP_CONTAINS(url, r'(use|fonts)\.typekit\.(net|com)') OR
       REGEXP_CONTAINS(url, r'(use\.edgefonts\.net|webfonts\.creativecloud\.com)') OR
       REGEXP_CONTAINS(url, r'fast\.fonts\.(com|net)\/(jsapi|cssapi)') OR
@@ -32,7 +34,9 @@ FROM (
       REGEXP_CONTAINS(url, r'fontawesome\.com') OR
       REGEXP_CONTAINS(url, r'webfonts\.fontslive\.com') OR
       REGEXP_CONTAINS(url, r'webfonts\.justanotherfoundry\.com') OR
-      REGEXP_CONTAINS(url, r'fonts\.typonine\.com')))
+      REGEXP_CONTAINS(url, r'fonts\.typonine\.com')
+    )
+)
 GROUP BY
   client,
   percentile

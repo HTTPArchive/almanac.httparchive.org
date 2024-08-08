@@ -9,7 +9,8 @@ FROM (
     _TABLE_SUFFIX AS client,
     CAST(JSON_EXTRACT(payload, "$['_heroElementTimes.Image']") AS INT64) AS largest_image
   FROM
-    `httparchive.pages.2019_07_01_*`),
+    `httparchive.pages.2019_07_01_*`
+),
   UNNEST([10, 25, 50, 75, 90]) AS percentile
 GROUP BY
   percentile,

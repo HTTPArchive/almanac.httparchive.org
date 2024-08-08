@@ -71,15 +71,14 @@ FROM (
       category,
       SUM(SAFE_CAST(JSON_VALUE(render_blocking_items, '$.wastedMs') AS FLOAT64)) AS wasted_ms,
       SUM(SAFE_CAST(JSON_VALUE(render_blocking_items, '$.totalBytes') AS FLOAT64) / 1024) AS total_bytes_kib
-    FROM
-      (
-        SELECT
-          _TABLE_SUFFIX AS client,
-          url AS page,
-          report
-        FROM
-          `httparchive.lighthouse.2022_06_01_*`
-      ),
+    FROM (
+      SELECT
+        _TABLE_SUFFIX AS client,
+        url AS page,
+        report
+      FROM
+        `httparchive.lighthouse.2022_06_01_*`
+    ),
       UNNEST(JSON_QUERY_ARRAY(report, '$.audits.render-blocking-resources.details.items')) AS render_blocking_items
     INNER JOIN
       `httparchive.almanac.third_parties`
@@ -91,7 +90,7 @@ FROM (
       canonicalDomain,
       page,
       category
-    )
+  )
   INNER JOIN
     total_third_party_usage
   USING (client, canonicalDomain, category),

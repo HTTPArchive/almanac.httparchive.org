@@ -3,7 +3,7 @@
 SELECT
   device,
   ROUND(COUNTIF(fast_ttfb >= .9) * 100 / COUNT(0), 2) AS pct_fast_ttfb,
-  ROUND(COUNTIF(NOT(slow_ttfb >= .1) AND NOT(fast_ttfb >= .9)) * 100 / COUNT(0), 2) AS pct_avg_ttfb,
+  ROUND(COUNTIF(NOT (slow_ttfb >= .1) AND NOT (fast_ttfb >= .9)) * 100 / COUNT(0), 2) AS pct_avg_ttfb,
   ROUND(COUNTIF(slow_ttfb >= .1) * 100 / COUNT(0), 2) AS pct_slow_ttfb
 FROM (
   SELECT
@@ -16,6 +16,7 @@ FROM (
   WHERE
     yyyymm = '201907' AND
     fast_ttfb + avg_ttfb + slow_ttfb > 0 AND
-    device IN ('desktop', 'phone'))
+    device IN ('desktop', 'phone')
+)
 GROUP BY
   device

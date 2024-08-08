@@ -26,14 +26,13 @@ SELECT
   COUNT(0) AS total,
   SAFE_DIVIDE(COUNT(0), SUM(COUNT(0)) OVER (PARTITION BY client)) AS pct
 
-FROM
-  (
-    SELECT
-      _TABLE_SUFFIX AS client,
-      getRobotsStatusInfo(JSON_EXTRACT_SCALAR(payload, '$._robots_txt')) AS robots_txt_status_info
-    FROM
-      `httparchive.pages.2022_07_01_*` -- noqa: L062
-  )
+FROM (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    getRobotsStatusInfo(JSON_EXTRACT_SCALAR(payload, '$._robots_txt')) AS robots_txt_status_info
+  FROM
+    `httparchive.pages.2022_07_01_*` -- noqa: CV09
+)
 GROUP BY
   client,
   status_code

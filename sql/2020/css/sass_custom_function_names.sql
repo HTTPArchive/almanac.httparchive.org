@@ -26,7 +26,8 @@ FROM (
     sass_custom_function
   FROM
     `httparchive.pages.2020_08_01_*`,
-    UNNEST(getCustomFunctionNames(payload)) AS sass_custom_function)
+    UNNEST(getCustomFunctionNames(payload)) AS sass_custom_function
+)
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -34,9 +35,9 @@ JOIN (
   FROM
     `httparchive.pages.2020_08_01_*`
   GROUP BY
-    client)
-USING
-  (client)
+    client
+)
+USING (client)
 GROUP BY
   client,
   sass_custom_function,

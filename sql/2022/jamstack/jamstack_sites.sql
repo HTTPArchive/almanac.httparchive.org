@@ -1,5 +1,4 @@
-CREATE OR REPLACE TABLE `httparchive.almanac.jamstack_sites` AS
-(
+CREATE OR REPLACE TABLE `httparchive.almanac.jamstack_sites` AS (
   WITH potential_jamstack_sites AS (
     SELECT DISTINCT
       client,
@@ -13,22 +12,18 @@ CREATE OR REPLACE TABLE `httparchive.almanac.jamstack_sites` AS
     FROM
       `httparchive.almanac.requests`
     WHERE
-      firstHtml AND
-      (
-        (
-          resp_age IS NOT NULL AND
-          resp_age != '' AND
-          safe_cast(resp_age AS NUMERIC) > 0
-        )
-        OR
-        (
-          resp_cache_control IS NOT NULL AND
-          resp_cache_control != '' AND
-          expAge IS NOT NULL AND
-          resp_cache_control NOT LIKE 'no-store' AND
-          resp_cache_control NOT LIKE 'no-cache' AND
-          expAge > 0
-        )
+      firstHtml AND ((
+        resp_age IS NOT NULL AND
+        resp_age != '' AND
+        safe_cast(resp_age AS NUMERIC) > 0
+      ) OR (
+        resp_cache_control IS NOT NULL AND
+        resp_cache_control != '' AND
+        expAge IS NOT NULL AND
+        resp_cache_control NOT LIKE 'no-store' AND
+        resp_cache_control NOT LIKE 'no-cache' AND
+        expAge > 0
+      )
       )
   ),
 
@@ -49,18 +44,8 @@ CREATE OR REPLACE TABLE `httparchive.almanac.jamstack_sites` AS
       `chrome-ux-report.materialized.device_summary` c
     ON
       url = CONCAT(origin, '/') AND
-      s.date = c.date AND
-      (
-        (s.client = 'mobile' AND c.device = 'phone')
-        OR
-        (s.client = 'desktop' AND c.device = 'desktop')
-        OR
-        c.device IS NULL
-      )
-    WHERE
-      (client = 'mobile' AND p75_lcp <= 2400 AND p75_cls < 0.05)
-      OR
-      (client = 'desktop' AND p75_lcp <= 2000 AND p75_cls < 0.05)
+      s.date = c.date AND ((s.client = 'mobile' AND c.device = 'phone') OR (s.client = 'desktop' AND c.device = 'desktop') OR c.device IS NULL)
+    WHERE (client = 'mobile' AND p75_lcp <= 2400 AND p75_cls < 0.05) OR (client = 'desktop' AND p75_lcp <= 2000 AND p75_cls < 0.05)
   )
 
   -- Add with methodology of 2022, so different methodologies

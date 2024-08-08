@@ -13,4 +13,5 @@ FROM (
     JSON_EXTRACT_SCALAR(report, '$.audits.document-title.score') = '1' AS has_title,
     JSON_EXTRACT_SCALAR(report, '$.audits.meta-description.score') = '1' AS has_meta_description
   FROM
-    `httparchive.lighthouse.2019_07_01_mobile`)
+    `httparchive.lighthouse.2019_07_01_mobile`
+)

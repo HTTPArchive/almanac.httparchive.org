@@ -44,11 +44,11 @@ SELECT
 FROM (
   SELECT
     client,
-    COUNTIF(type.`=`) AS equals, -- noqa: L057
-    COUNTIF(type.`*=`) AS star_equals, -- noqa: L057
-    COUNTIF(type.`^=`) AS caret_equals, -- noqa: L057
-    COUNTIF(type.`$=`) AS dollar_equals, -- noqa: L057
-    COUNTIF(type.`~=`) AS tilde_equals -- noqa: L057
+    COUNTIF(type.`=`) AS equals, -- noqa: RF05
+    COUNTIF(type.`*=`) AS star_equals, -- noqa: RF05
+    COUNTIF(type.`^=`) AS caret_equals, -- noqa: RF05
+    COUNTIF(type.`$=`) AS dollar_equals, -- noqa: RF05
+    COUNTIF(type.`~=`) AS tilde_equals -- noqa: RF05
   FROM (
     SELECT
       client,
@@ -57,14 +57,14 @@ FROM (
     FROM
       `httparchive.almanac.parsed_css`
     WHERE
-      date = '2019-07-01')
+      date = '2019-07-01'
+  )
   GROUP BY
     client,
-    page)
-JOIN
-  (SELECT _TABLE_SUFFIX AS client, COUNT(0) AS total FROM `httparchive.summary_pages.2019_07_01_*` GROUP BY client)
-USING
-  (client)
+    page
+)
+JOIN (SELECT _TABLE_SUFFIX AS client, COUNT(0) AS total FROM `httparchive.summary_pages.2019_07_01_*` GROUP BY client)
+USING (client)
 GROUP BY
   client,
   total

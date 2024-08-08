@@ -18,7 +18,8 @@ FROM (
   WHERE
     date = '2022-06-01' AND
     firstHtml AND
-    rank IS NOT NULL),
+    rank IS NOT NULL
+),
   UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS nested_rank
 WHERE
   rank <= nested_rank

@@ -26,7 +26,8 @@ FROM (
   FROM
     `chrome-ux-report.materialized.device_summary`
   WHERE
-    date = '2021-07-01')
+    date = '2021-07-01'
+)
 JOIN (
   SELECT
     CASE
@@ -50,9 +51,9 @@ JOIN (
     `httparchive.almanac.requests`
   WHERE
     date = '2021-07-01' AND
-    firstHtml)
-USING
-  (client, url)
+    firstHtml
+)
+USING (client, url)
 JOIN (
   SELECT DISTINCT
     _TABLE_SUFFIX AS client,
@@ -63,7 +64,7 @@ JOIN (
     LOWER(category) = 'static site generator' OR
     app = 'Next.js' OR
     app = 'Nuxt.js'
-  )
+)
 USING (client, url)
 WHERE
   CDN IS NOT NULL

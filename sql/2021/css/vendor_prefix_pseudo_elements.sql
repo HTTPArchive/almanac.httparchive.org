@@ -99,7 +99,8 @@ FROM (
     LENGTH(css) < 0.1 * 1024 * 1024
   GROUP BY
     client,
-    pseudo_element)
+    pseudo_element
+)
 ORDER BY
   pct DESC
 LIMIT 500

@@ -16,29 +16,29 @@ WITH privacy_custom_metrics_data AS (
 SELECT
   *,
   number_of_websites_document_interestCohort / number_of_websites
-  AS pct_websites_document_interestCohort,
+    AS pct_websites_document_interestCohort,
   number_of_websites_navigator_doNotTrack / number_of_websites
-  AS pct_websites_navigator_doNotTrack,
+    AS pct_websites_navigator_doNotTrack,
   number_of_websites_navigator_globalPrivacyControl / number_of_websites
-  AS pct_websites_navigator_globalPrivacyControl,
+    AS pct_websites_navigator_globalPrivacyControl,
   number_of_websites_document_permissionsPolicy / number_of_websites
-  AS pct_websites_document_permissionsPolicy,
+    AS pct_websites_document_permissionsPolicy,
   number_of_websites_document_featurePolicy / number_of_websites
-  AS pct_websites_document_featurePolicy,
+    AS pct_websites_document_featurePolicy,
   number_of_websites_navigator_mediaDevices_enumerateDevices / number_of_websites
-  AS pct_websites_navigator_mediaDevices_enumerateDevices,
+    AS pct_websites_navigator_mediaDevices_enumerateDevices,
   number_of_websites_navigator_mediaDevices_getUserMedia / number_of_websites
-  AS pct_websites_navigator_mediaDevices_getUserMedia,
+    AS pct_websites_navigator_mediaDevices_getUserMedia,
   number_of_websites_navigator_mediaDevices_getDisplayMedia / number_of_websites
-  AS pct_websites_navigator_mediaDevices_getDisplayMedia,
+    AS pct_websites_navigator_mediaDevices_getDisplayMedia,
   number_of_websites_navigator_mediaDevices_any / number_of_websites
-  AS pct_websites_navigator_mediaDevices_any,
+    AS pct_websites_navigator_mediaDevices_any,
   number_of_websites_navigator_geolocation_getCurrentPosition / number_of_websites
-  AS pct_websites_navigator_geolocation_getCurrentPosition,
+    AS pct_websites_navigator_geolocation_getCurrentPosition,
   number_of_websites_navigator_geolocation_watchPosition / number_of_websites
-  AS pct_websites_navigator_geolocation_watchPosition,
+    AS pct_websites_navigator_geolocation_watchPosition,
   number_of_websites_navigator_geolocation_any / number_of_websites
-  AS pct_websites_navigator_geolocation_any
+    AS pct_websites_navigator_geolocation_any
 FROM (
   SELECT
     client,
@@ -91,6 +91,6 @@ FROM (
     privacy_custom_metrics_data
   GROUP BY
     client
-  )
+)
 ORDER BY
   client

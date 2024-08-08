@@ -14,7 +14,7 @@ FROM (
     IF(JSON_EXTRACT(payload, '$._pwa.manifests') != '[]' AND JSON_EXTRACT(payload, '$._pwa.manifests') != '{}' AND JSON_EXTRACT(payload, '$._pwa.manifests') != '{}', 1, 0) AS manifests
   FROM
     `httparchive.pages.2022_06_01_*`
-  )
+)
 GROUP BY
   client
 ORDER BY

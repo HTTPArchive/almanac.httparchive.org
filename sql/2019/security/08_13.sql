@@ -20,6 +20,7 @@ FROM (
     status = 200
   GROUP BY
     client,
-    page)
+    page
+)
 GROUP BY
   client

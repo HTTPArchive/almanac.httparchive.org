@@ -34,8 +34,7 @@ FROM
   `httparchive.pages.2022_06_01_*`
 JOIN
   totals
-USING
-  (_TABLE_SUFFIX),
+USING (_TABLE_SUFFIX),
   UNNEST(get_element_types(JSON_EXTRACT_SCALAR(payload, '$._element_count'))) AS element_type
 GROUP BY
   client,
