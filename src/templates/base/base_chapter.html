@@ -318,6 +318,31 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
 </ul>
 {% endmacro %}
 
+{% macro render_bibtex() %}
+<h2 id="cite">
+  <a href="#cite" class="anchor-link">BibTeX</a>
+</h2>
+    <pre id="bibtex-citation">
+@inbook{WebAlmanac.{{ year }}.{{ metadata.get('title').replace(' ', '') }},
+author = "{% for author in metadata.get('authors') -%}
+  {%- set authordata = config.contributors.get(author, None) -%}
+  {%- if authordata %}
+    {%- set full_name = authordata.name.split(' ') -%}
+    {{ full_name[-1] }}, {{ full_name[0] }}{% if full_name|length > 2 %} {{ full_name[1:-1]|join(' ') }}{% endif %}{% if not loop.last %} and {% endif %}
+  {%- else %}
+    {%- set full_name = author.split(' ') -%}
+    {{ full_name[-1] }}, {{ full_name[0] }}{% if full_name|length > 2 %} {{ full_name[1:-1]|join(' ') }}{% endif %}{% if not loop.last %} and {% endif %}
+  {%- endif %}
+{%- endfor %}", 
+title = "{{ metadata.get('title') }}",
+booktitle = "The {{ year }} Web Almanac",
+chapter = {{ chapter_config.chapter_number }},
+publisher = "HTTP Archive",
+year = "{{ year }}",
+url = "https://almanac.httparchive.org/en/{{ year }}/{{ metadata.get('chapter') }}"
+}</pre>
+{% endmacro %}
+
 {% macro render_prevnext() %}
   {% if prev_chapter %}
     {% if chapter_lang_exists(lang, year, prev_chapter['slug']) %}
@@ -423,6 +448,8 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
         {% endif %}
         <section class="authors">
             {{ render_authors() }}
+        </section><section class="citation-box">
+            {{ render_bibtex() }} 
         </section>
         <div id="cta-container" class="invisible">
           {% if metadata.get('discuss') %}
