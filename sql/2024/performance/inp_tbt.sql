@@ -6,8 +6,8 @@ FROM
   `httparchive.all.pages`,
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 WHERE
-  date = '2024-06-01'
-  AND is_root_page
+  date = '2024-06-01' AND
+  is_root_page
 GROUP BY
   percentile,
   client

@@ -6,8 +6,8 @@ FROM
   `httparchive.all.pages`,
   UNNEST([1000, 10000, 100000, 1000000, 10000000, 100000000]) AS _rank
 WHERE
-  date = '2024-06-01'
-  AND is_root_page AND
+  date = '2024-06-01' AND
+  is_root_page AND
   rank <= _rank
 GROUP BY
   rank,

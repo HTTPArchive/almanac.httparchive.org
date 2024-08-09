@@ -9,8 +9,8 @@ WITH lcp AS (
   FROM
     `httparchive.all.pages`
   WHERE
-    date = '2024-06-01'
-    AND is_root_page
+    date = '2024-06-01' AND
+    is_root_page
 )
 
 
@@ -21,9 +21,9 @@ SELECT
     WHEN STARTS_WITH(lcp.url, 'data:') THEN 'inline image'
     ELSE 'image'
   END AS lcp_type,
-  COUNT(0) AS pages,
-  SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
-  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
+  COUNT(*) AS pages,
+  SUM(COUNT(*)) OVER (PARTITION BY client) AS total,
+  COUNT(*) / SUM(COUNT(*)) OVER (PARTITION BY client) AS pct
 FROM
   lcp
 GROUP BY

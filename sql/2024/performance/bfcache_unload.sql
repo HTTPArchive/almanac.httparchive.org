@@ -9,8 +9,8 @@ WITH lh AS (
   FROM
     `httparchive.all.pages`
   WHERE
-    date = '2024-06-01'
-    AND is_root_page
+    date = '2024-06-01' AND
+    is_root_page
 )
 
 
@@ -18,8 +18,8 @@ SELECT
   client,
   _rank AS rank,
   COUNTIF(has_unload) AS pages,
-  COUNT(0) AS total,
-  COUNTIF(has_unload) / COUNT(0) AS pct
+  COUNT(*) AS total,
+  COUNTIF(has_unload) / COUNT(*) AS pct
 FROM
   lh,
   UNNEST([1000, 10000, 100000, 1000000, 10000000, 100000000]) AS _rank

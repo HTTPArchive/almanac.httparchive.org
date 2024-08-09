@@ -9,8 +9,8 @@ WITH lcp AS (
   FROM
     `httparchive.all.pages`
   WHERE
-    date = '2024-06-01'
-    AND is_root_page
+    date = '2024-06-01' AND
+    is_root_page
 ),
 
 requests AS (
@@ -30,8 +30,8 @@ SELECT
   client,
   IFNULL(type, 'unknown') AS lcp_initiator_type,
   COUNTIF(not_discoverable) AS pages,
-  SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
-  COUNTIF(not_discoverable) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
+  SUM(COUNT(*)) OVER (PARTITION BY client) AS total,
+  COUNTIF(not_discoverable) / SUM(COUNT(*)) OVER (PARTITION BY client) AS pct
 FROM
   lcp
 LEFT JOIN

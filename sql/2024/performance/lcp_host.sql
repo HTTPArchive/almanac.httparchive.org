@@ -6,8 +6,8 @@ WITH lcp AS (
   FROM
     `httparchive.all.pages`
   WHERE
-    date = '2024-06-01'
-    AND is_root_page
+    date = '2024-06-01' AND
+    is_root_page
 )
 
 
@@ -19,9 +19,9 @@ SELECT
     WHEN NET.HOST(page) = NET.HOST(url) THEN 'same host'
     ELSE 'cross host'
   END AS lcp_same_host,
-  COUNT(0) AS pages,
-  SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
-  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
+  COUNT(*) AS pages,
+  SUM(COUNT(*)) OVER (PARTITION BY client) AS total,
+  COUNT(*) / SUM(COUNT(*)) OVER (PARTITION BY client) AS pct
 FROM
   lcp
 GROUP BY

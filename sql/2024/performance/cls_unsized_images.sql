@@ -5,8 +5,8 @@ WITH lh AS (
   FROM
     `httparchive.all.pages`
   WHERE
-    date = '2024-06-01'
-    AND is_root_page
+    date = '2024-06-01' AND
+    is_root_page
 )
 
 
@@ -15,8 +15,8 @@ SELECT
   client,
   APPROX_QUANTILES(num_unsized_images, 1000)[OFFSET(percentile * 10)] AS num_unsized_images,
   COUNTIF(num_unsized_images > 0) AS pages,
-  COUNT(0) AS total,
-  COUNTIF(num_unsized_images > 0) / COUNT(0) AS pct
+  COUNT(*) AS total,
+  COUNTIF(num_unsized_images > 0) / COUNT(*) AS pct
 FROM
   lh,
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile

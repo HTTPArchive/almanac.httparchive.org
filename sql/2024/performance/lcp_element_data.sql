@@ -81,8 +81,8 @@ WITH lcp_stats AS (
   FROM
     `httparchive.all.pages`
   WHERE
-    date = '2024-06-01'
-    AND is_root_page
+    date = '2024-06-01' AND
+    is_root_page
 )
 
 SELECT
@@ -104,20 +104,21 @@ SELECT
   COUNTIF(fetchPriority = 'low') AS priority_low,
   COUNTIF(fetchPriority = 'high') AS priority_high,
   COUNTIF(hints.preload) AS preload,
-  COUNTIF(hints.preload) / COUNT(0) AS pct_preload
+  COUNTIF(hints.preload) / COUNT(*) AS pct_preload
 FROM
   lcp_stats
 JOIN (
   SELECT
     client,
-    COUNT(0) AS total
+    COUNT(*) AS total
   FROM
     `httparchive.all.pages`
   WHERE
-    date = '2024-06-01'
-    AND is_root_page
+    date = '2024-06-01' AND
+    is_root_page
   GROUP BY
-    client)
+    client
+)
 USING
   (client)
 GROUP BY

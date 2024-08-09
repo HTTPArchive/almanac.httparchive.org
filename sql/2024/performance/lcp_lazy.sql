@@ -29,18 +29,18 @@ WITH lcp_stats AS (
   FROM
     `httparchive.all.pages`
   WHERE
-    date = '2024-06-01'
-    AND is_root_page AND
+    date = '2024-06-01' AND
+    is_root_page AND
     JSON_EXTRACT_SCALAR(custom_metrics, '$.performance.lcp_elem_stats.nodeName') = 'IMG'
 )
 
 SELECT
   client,
-  COUNT(0) AS total,
-  COUNTIF(native_lazy) / COUNT(0) AS pct_native_lazy,
-  COUNTIF(custom_lazy) / COUNT(0) AS pct_custom_lazy,
-  COUNTIF(custom_lazy OR native_lazy) / COUNT(0) AS pct_either_lazy,
-  COUNTIF(custom_lazy AND native_lazy) / COUNT(0) AS pct_both_lazy
+  COUNT(*) AS total,
+  COUNTIF(native_lazy) / COUNT(*) AS pct_native_lazy,
+  COUNTIF(custom_lazy) / COUNT(*) AS pct_custom_lazy,
+  COUNTIF(custom_lazy OR native_lazy) / COUNT(*) AS pct_either_lazy,
+  COUNTIF(custom_lazy AND native_lazy) / COUNT(*) AS pct_both_lazy
 FROM
   lcp_stats
 GROUP BY

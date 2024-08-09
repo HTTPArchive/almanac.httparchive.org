@@ -6,8 +6,8 @@ WITH pages AS (
   FROM
     `httparchive.all.pages`
   WHERE
-    date = '2024-06-01'
-    AND is_root_page
+    date = '2024-06-01' AND
+    is_root_page
 ),
 
 requests AS (
@@ -19,16 +19,16 @@ requests AS (
   FROM
     `httparchive.all.requests`
   WHERE
-    date = '2024-06-01'
-    AND is_root_page
+    date = '2024-06-01' AND
+    is_root_page
 )
 
 SELECT
   client,
   IF(CEILING(kbytes / 100) * 100 < 1000, CAST(CEILING(kbytes / 100) * 100 AS STRING), '1000+') AS kbytes,
-  COUNT(0) AS freq,
-  SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
-  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
+  COUNT(*) AS freq,
+  SUM(COUNT(*)) OVER (PARTITION BY client) AS total,
+  COUNT(*) / SUM(COUNT(*)) OVER (PARTITION BY client) AS pct
 FROM
   pages
 JOIN

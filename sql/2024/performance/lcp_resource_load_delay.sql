@@ -9,8 +9,8 @@ WITH pages AS (
   FROM
     `httparchive.all.pages`
   WHERE
-    date = '2024-06-01'
-    AND is_root_page
+    date = '2024-06-01' AND
+    is_root_page
 ),
 
 requests AS (
@@ -22,8 +22,8 @@ requests AS (
   FROM
     `httparchive.all.requests`
   WHERE
-    date = '2024-06-01'
-    AND is_root_page
+    date = '2024-06-01' AND
+    is_root_page
 ),
 
 delays AS (

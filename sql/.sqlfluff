@@ -34,8 +34,6 @@ exclude_rules = L011,L014,L015,L016,L020,L022,L026,L027,L028,L029,L030,L031,L032
 # L051 - INNER JOIN must be fully qualified. Probably should use this but not our style.
 # L060 - Use COALESCE instead of IFNULL or NVL. We think ISNULL is clearer.
 # L071 - Turn off until https://github.com/sqlfluff/sqlfluff/issues/4188 is addressed
-# The depth to recursively parse to (0 for unlimited)
-recurse = 0
 # Below controls SQLFluff output, see max_line_length for SQL output
 output_line_length = 80
 # Number of passes to run before admitting defeat
@@ -140,10 +138,6 @@ indent_unit = space
 allow_scalar = True
 single_table_references = consistent
 unquoted_identifiers_policy = all
-
-# Some rules have their own specific config.
-[sqlfluff:rules:L003]
-hanging_indents = True
 
 [sqlfluff:rules:L010]
 # Keywords

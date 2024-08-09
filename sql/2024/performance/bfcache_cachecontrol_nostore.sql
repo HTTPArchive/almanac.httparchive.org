@@ -9,8 +9,8 @@ WITH requests AS (
   FROM
     `httparchive.all.requests`
   WHERE
-    date = '2024-06-01'
-    AND is_main_document
+    date = '2024-06-01' AND
+    is_main_document
   GROUP BY
     client,
     page
@@ -19,8 +19,8 @@ WITH requests AS (
 SELECT
   client,
   COUNTIF(includes_ccns) AS pages,
-  COUNT(0) AS total,
-  COUNTIF(includes_ccns) / COUNT(0) AS pct
+  COUNT(*) AS total,
+  COUNTIF(includes_ccns) / COUNT(*) AS pct
 FROM
   requests
 GROUP BY

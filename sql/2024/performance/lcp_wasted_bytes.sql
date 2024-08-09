@@ -6,8 +6,8 @@ WITH lcp AS (
   FROM
     `httparchive.all.pages`
   WHERE
-    date = '2024-06-01'
-    AND is_root_page
+    date = '2024-06-01' AND
+    is_root_page
 ),
 
 lh AS (
@@ -20,8 +20,8 @@ lh AS (
     `httparchive.all.pages`,
     UNNEST(JSON_QUERY_ARRAY(lighthouse, '$.audits.uses-optimized-images.details.items')) AS unoptimized_img
   WHERE
-    date = '2024-06-01'
-    AND is_root_page
+    date = '2024-06-01' AND
+    is_root_page
 ),
 
 jpgs AS (
@@ -32,8 +32,8 @@ jpgs AS (
   FROM
     `httparchive.all.requests`
   WHERE
-    date = '2024-06-01'
-    AND is_root_page AND
+    date = '2024-06-01' AND
+    is_root_page AND
     JSON_VALUE(summary, '$.format') = 'jpg'
 )
 
@@ -42,8 +42,8 @@ SELECT
   client,
   APPROX_QUANTILES(wasted_kbytes, 1000 RESPECT NULLS)[OFFSET(percentile * 10)] AS wasted_kbytes,
   COUNTIF(wasted_kbytes IS NOT NULL) AS pages,
-  COUNT(0) AS total_pages,
-  COUNTIF(wasted_kbytes IS NOT NULL) / COUNT(0) AS pct_pages
+  COUNT(*) AS total_pages,
+  COUNTIF(wasted_kbytes IS NOT NULL) / COUNT(*) AS pct_pages
 FROM
   lcp
 JOIN
