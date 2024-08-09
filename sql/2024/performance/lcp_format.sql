@@ -26,9 +26,9 @@ requests AS (
 SELECT
   client,
   format,
-  COUNT(*) AS freq,
-  SUM(COUNT(*)) OVER (PARTITION BY client) AS total,
-  COUNT(*) / SUM(COUNT(*)) OVER (PARTITION BY client) AS pct
+  COUNT(0) AS freq,
+  SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
+  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
 FROM
   pages
 JOIN

@@ -15,7 +15,7 @@ SELECT
   percentile,
   client,
   APPROX_QUANTILES(height, 1000)[OFFSET(percentile * 10)] AS height,
-  COUNT(*) AS unsized_images
+  COUNT(0) AS unsized_images
 FROM
   lh,
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile

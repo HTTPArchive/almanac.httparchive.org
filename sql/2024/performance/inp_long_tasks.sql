@@ -18,7 +18,7 @@ WITH long_tasks AS (
 meta AS (
   SELECT
     *,
-    COUNT(*) OVER (PARTITION BY client) AS n,
+    COUNT(0) OVER (PARTITION BY client) AS n,
     ROW_NUMBER() OVER (PARTITION BY client ORDER BY inp) AS row
   FROM
     long_tasks

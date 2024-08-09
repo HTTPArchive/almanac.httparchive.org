@@ -19,8 +19,8 @@ WITH requests AS (
 SELECT
   client,
   COUNTIF(includes_ccns) AS pages,
-  COUNT(*) AS total,
-  COUNTIF(includes_ccns) / COUNT(*) AS pct
+  COUNT(0) AS total,
+  COUNTIF(includes_ccns) / COUNT(0) AS pct
 FROM
   requests
 GROUP BY

@@ -14,9 +14,9 @@ WITH lcp AS (
 SELECT
   client,
   NET.REG_DOMAIN(url) AS lcp_domain,
-  COUNT(*) AS pages,
-  SUM(COUNT(*)) OVER (PARTITION BY client) AS total,
-  COUNT(*) / SUM(COUNT(*)) OVER (PARTITION BY client) AS pct
+  COUNT(0) AS pages,
+  SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
+  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
 FROM
   lcp
 WHERE

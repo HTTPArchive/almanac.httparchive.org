@@ -30,8 +30,8 @@ SELECT
   client,
   IFNULL(type, 'unknown') AS lcp_initiator_type,
   COUNTIF(not_discoverable) AS pages,
-  SUM(COUNT(*)) OVER (PARTITION BY client) AS total,
-  COUNTIF(not_discoverable) / SUM(COUNT(*)) OVER (PARTITION BY client) AS pct
+  SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
+  COUNTIF(not_discoverable) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
 FROM
   lcp
 LEFT JOIN

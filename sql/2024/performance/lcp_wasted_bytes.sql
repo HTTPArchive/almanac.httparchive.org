@@ -42,8 +42,8 @@ SELECT
   client,
   APPROX_QUANTILES(wasted_kbytes, 1000 RESPECT NULLS)[OFFSET(percentile * 10)] AS wasted_kbytes,
   COUNTIF(wasted_kbytes IS NOT NULL) AS pages,
-  COUNT(*) AS total_pages,
-  COUNTIF(wasted_kbytes IS NOT NULL) / COUNT(*) AS pct_pages
+  COUNT(0) AS total_pages,
+  COUNTIF(wasted_kbytes IS NOT NULL) / COUNT(0) AS pct_pages
 FROM
   lcp
 JOIN

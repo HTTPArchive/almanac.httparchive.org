@@ -36,11 +36,11 @@ WITH lcp_stats AS (
 
 SELECT
   client,
-  COUNT(*) AS total,
-  COUNTIF(native_lazy) / COUNT(*) AS pct_native_lazy,
-  COUNTIF(custom_lazy) / COUNT(*) AS pct_custom_lazy,
-  COUNTIF(custom_lazy OR native_lazy) / COUNT(*) AS pct_either_lazy,
-  COUNTIF(custom_lazy AND native_lazy) / COUNT(*) AS pct_both_lazy
+  COUNT(0) AS total,
+  COUNTIF(native_lazy) / COUNT(0) AS pct_native_lazy,
+  COUNTIF(custom_lazy) / COUNT(0) AS pct_custom_lazy,
+  COUNTIF(custom_lazy OR native_lazy) / COUNT(0) AS pct_either_lazy,
+  COUNTIF(custom_lazy AND native_lazy) / COUNT(0) AS pct_both_lazy
 FROM
   lcp_stats
 GROUP BY

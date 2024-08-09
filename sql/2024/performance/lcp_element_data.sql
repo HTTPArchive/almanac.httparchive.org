@@ -104,13 +104,13 @@ SELECT
   COUNTIF(fetchPriority = 'low') AS priority_low,
   COUNTIF(fetchPriority = 'high') AS priority_high,
   COUNTIF(hints.preload) AS preload,
-  COUNTIF(hints.preload) / COUNT(*) AS pct_preload
+  COUNTIF(hints.preload) / COUNT(0) AS pct_preload
 FROM
   lcp_stats
 JOIN (
   SELECT
     client,
-    COUNT(*) AS total
+    COUNT(0) AS total
   FROM
     `httparchive.all.pages`
   WHERE

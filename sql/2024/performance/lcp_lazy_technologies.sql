@@ -40,7 +40,7 @@ tech_totals AS (
   SELECT
     client,
     technology,
-    COUNT(*) AS pages_per_technology
+    COUNT(0) AS pages_per_technology
   FROM
     lazy_tech
   GROUP BY
@@ -55,10 +55,10 @@ SELECT
   COUNTIF(native_lazy) AS native_lazy,
   COUNTIF(custom_lazy) AS custom_lazy,
   COUNTIF(native_lazy OR custom_lazy) AS either_lazy,
-  COUNT(*) AS pages,
-  COUNTIF(native_lazy) / COUNT(*) AS pct_native_lazy,
-  COUNTIF(custom_lazy) / COUNT(*) AS pct_custom_lazy,
-  COUNTIF(native_lazy OR custom_lazy) / COUNT(*) AS pct_either_lazy
+  COUNT(0) AS pages,
+  COUNTIF(native_lazy) / COUNT(0) AS pct_native_lazy,
+  COUNTIF(custom_lazy) / COUNT(0) AS pct_custom_lazy,
+  COUNTIF(native_lazy OR custom_lazy) / COUNT(0) AS pct_either_lazy
 FROM
   lazy_tech
 JOIN
