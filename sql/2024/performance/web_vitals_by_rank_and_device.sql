@@ -7,8 +7,8 @@ CREATE TEMP FUNCTION IS_POOR (good FLOAT64, needs_improvement FLOAT64, poor FLOA
 );
 
 CREATE TEMP FUNCTION IS_NI (good FLOAT64, needs_improvement FLOAT64, poor FLOAT64) RETURNS BOOL AS (
-  NOT IS_GOOD(good, needs_improvement, poor) AND
-  NOT IS_POOR(good, needs_improvement, poor)
+  NOT IS_GOOD(good, needs_improvement, poor)
+  AND NOT IS_POOR(good, needs_improvement, poor)
 );
 
 CREATE TEMP FUNCTION IS_NON_ZERO (good FLOAT64, needs_improvement FLOAT64, poor FLOAT64) RETURNS BOOL AS (
@@ -50,8 +50,8 @@ base AS (
   FROM
     `chrome-ux-report.materialized.device_summary`
   WHERE
-    device IN ('desktop', 'phone') AND
-    date IN ('2022-06-01', '2023-09-01', '2024-06-01')
+    device IN ('desktop', 'phone')
+    AND date IN ('2022-06-01', '2023-09-01', '2024-06-01')
 )
 
 SELECT
@@ -64,22 +64,22 @@ SELECT
   # Good CWV with optional FID
   SAFE_DIVIDE(
     COUNT(DISTINCT IF(
-        IS_GOOD(fast_fid, avg_fid, slow_fid) IS NOT FALSE AND
-        IS_GOOD(fast_lcp, avg_lcp, slow_lcp) AND
+        IS_GOOD(fast_fid, avg_fid, slow_fid) IS NOT FALSE
+        AND IS_GOOD(fast_lcp, avg_lcp, slow_lcp) AND
         IS_GOOD(small_cls, medium_cls, large_cls), origin, NULL)),
     COUNT(DISTINCT IF(
-        IS_NON_ZERO(fast_lcp, avg_lcp, slow_lcp) AND
-        IS_NON_ZERO(small_cls, medium_cls, large_cls), origin, NULL))) AS pct_cwv23_good,
+        IS_NON_ZERO(fast_lcp, avg_lcp, slow_lcp)
+        AND IS_NON_ZERO(small_cls, medium_cls, large_cls), origin, NULL))) AS pct_cwv23_good,
 
   # Good CWV with optional INP
   SAFE_DIVIDE(
     COUNT(DISTINCT IF(
-        IS_GOOD(fast_inp, avg_inp, slow_inp) IS NOT FALSE AND
-        IS_GOOD(fast_lcp, avg_lcp, slow_lcp) AND
+        IS_GOOD(fast_inp, avg_inp, slow_inp) IS NOT FALSE
+        AND IS_GOOD(fast_lcp, avg_lcp, slow_lcp) AND
         IS_GOOD(small_cls, medium_cls, large_cls), origin, NULL)),
     COUNT(DISTINCT IF(
-        IS_NON_ZERO(fast_lcp, avg_lcp, slow_lcp) AND
-        IS_NON_ZERO(small_cls, medium_cls, large_cls), origin, NULL))) AS pct_cwv24_good,
+        IS_NON_ZERO(fast_lcp, avg_lcp, slow_lcp)
+        AND IS_NON_ZERO(small_cls, medium_cls, large_cls), origin, NULL))) AS pct_cwv24_good,
 
   SAFE_DIVIDE(
     COUNT(DISTINCT IF(

@@ -5,11 +5,11 @@ WITH long_tasks AS (
     ANY_VALUE(httparchive.core_web_vitals.GET_CRUX_INP(payload)) AS inp,
     SUM(CAST(JSON_QUERY(item, '$.duration') AS FLOAT64)) AS long_tasks
   FROM
-    `httparchive.all.pages` TABLESAMPLE SYSTEM(1 PERCENT),
+    `httparchive.all.pages`,
     UNNEST(JSON_QUERY_ARRAY(lighthouse, '$.audits.long-tasks.details.items')) AS item
   WHERE
-    date = '2024-06-01' AND
-    is_root_page
+    date = '2024-06-01'
+    AND is_root_page
   GROUP BY
     client,
     page

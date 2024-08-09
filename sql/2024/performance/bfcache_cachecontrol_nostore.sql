@@ -7,10 +7,10 @@ WITH requests AS (
     client,
     LOGICAL_OR(HAS_NO_STORE_DIRECTIVE(JSON_VALUE(payload, '$._cacheControl'))) AS includes_ccns
   FROM
-    `httparchive.all.requests` TABLESAMPLE SYSTEM(1 PERCENT)
+    `httparchive.all.requests`
   WHERE
-    date = '2024-06-01' AND
-    is_main_document
+    date = '2024-06-01'
+    AND is_main_document
   GROUP BY
     client,
     page

@@ -3,11 +3,11 @@ WITH lh AS (
     client,
     CAST(JSON_VALUE(unsized_image, '$.node.boundingRect.height') AS INT64) AS height
   FROM
-    `httparchive.all.pages` TABLESAMPLE SYSTEM(1 PERCENT),
+    `httparchive.all.pages`,
     UNNEST(JSON_QUERY_ARRAY(lighthouse, '$.audits.unsized-images.details.items')) AS unsized_image
   WHERE
-    date = '2024-06-01' AND
-    is_root_page
+    date = '2024-06-01'
+    AND is_root_page
 )
 
 

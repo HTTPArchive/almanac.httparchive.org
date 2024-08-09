@@ -32,8 +32,8 @@ WITH lazy_tech AS (
     `httparchive.all.pages`,
     UNNEST(technologies) AS t
   WHERE
-    date = '2024-06-01' AND
-    is_root_page
+    date = '2024-06-01'
+    AND is_root_page
 ),
 
 tech_totals AS (
@@ -69,7 +69,7 @@ GROUP BY
   client,
   technology
 HAVING
-  pages > 1000 AND
-  pct_either_lazy > 0.1
+  pages > 1000
+  AND pct_either_lazy > 0.1
 ORDER BY
   either_lazy DESC

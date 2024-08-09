@@ -6,8 +6,8 @@ WITH lcp AS (
   FROM
     `httparchive.all.pages`
   WHERE
-    date = '2024-06-01' AND
-    is_root_page
+    date = '2024-06-01'
+    AND is_root_page
 ),
 
 lh AS (
@@ -20,8 +20,8 @@ lh AS (
     `httparchive.all.pages`,
     UNNEST(JSON_QUERY_ARRAY(lighthouse, '$.audits.uses-optimized-images.details.items')) AS unoptimized_img
   WHERE
-    date = '2024-06-01' AND
-    is_root_page
+    date = '2024-06-01'
+    AND is_root_page
 ),
 
 jpgs AS (
@@ -32,8 +32,8 @@ jpgs AS (
   FROM
     `httparchive.all.requests`
   WHERE
-    date = '2024-06-01' AND
-    is_root_page AND
+    date = '2024-06-01'
+    AND is_root_page AND
     JSON_VALUE(summary, '$.format') = 'jpg'
 )
 

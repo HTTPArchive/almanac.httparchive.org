@@ -7,10 +7,10 @@ WITH lh AS (
     rank,
     JSON_VALUE(lighthouse, '$.audits.no-unload-listeners.score') = '0' AS has_unload
   FROM
-    `httparchive.all.pages` TABLESAMPLE SYSTEM(1 PERCENT)
+    `httparchive.all.pages`
   WHERE
-    date = '2024-06-01' AND
-    is_root_page
+    date = '2024-06-01'
+    AND is_root_page
 )
 
 

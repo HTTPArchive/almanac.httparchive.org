@@ -4,10 +4,10 @@ WITH lcp AS (
     page,
     JSON_VALUE(custom_metrics, '$.performance.lcp_elem_stats.url') AS url
   FROM
-    `httparchive.all.pages` TABLESAMPLE SYSTEM(1 PERCENT)
+    `httparchive.all.pages`
   WHERE
-    date = '2024-06-01' AND
-    is_root_page
+    date = '2024-06-01'
+    AND is_root_page
 )
 
 
@@ -20,8 +20,8 @@ SELECT
 FROM
   lcp
 WHERE
-  NET.HOST(page) != NET.HOST(url) AND
-  NET.HOST(url) != 'data'
+  NET.HOST(page) != NET.HOST(url)
+  AND NET.HOST(url) != 'data'
 GROUP BY
   client,
   lcp_domain

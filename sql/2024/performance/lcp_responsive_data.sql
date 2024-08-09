@@ -34,10 +34,10 @@ WITH lh AS (
     JSON_VALUE(lighthouse, '$.audits.largest-contentful-paint-element.details.items[0].items[0].node.path') AS node_path,
     JSON_QUERY(lighthouse, '$.audits.uses-responsive-images.details.items') AS responsive_images
   FROM
-    `httparchive.all.pages` TABLESAMPLE SYSTEM(1 PERCENT)
+    `httparchive.all.pages`
   WHERE
-    date = '2024-06-01' AND
-    is_root_page
+    date = '2024-06-01'
+    AND is_root_page
 ),
 
 responsive_lcp AS (

@@ -7,10 +7,10 @@ WITH lcp AS (
     JSON_VALUE(custom_metrics, '$.performance.lcp_resource.initiator.url') AS url,
     JSON_VALUE(custom_metrics, '$.performance.is_lcp_statically_discoverable') = 'false' AS not_discoverable
   FROM
-    `httparchive.all.pages` TABLESAMPLE SYSTEM(1 PERCENT)
+    `httparchive.all.pages`
   WHERE
-    date = '2024-06-01' AND
-    is_root_page
+    date = '2024-06-01'
+    AND is_root_page
 ),
 
 requests AS (
@@ -20,7 +20,7 @@ requests AS (
     url,
     type
   FROM
-    `httparchive.all.requests` TABLESAMPLE SYSTEM(1 PERCENT)
+    `httparchive.all.requests`
   WHERE
     date = '2024-06-01'
 )

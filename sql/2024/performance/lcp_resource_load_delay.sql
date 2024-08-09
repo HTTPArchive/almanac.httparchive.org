@@ -7,10 +7,10 @@ WITH pages AS (
     JSON_VALUE(custom_metrics, '$.performance.lcp_elem_stats.url') AS url,
     httparchive.core_web_vitals.GET_LAB_TTFB(payload) AS ttfb
   FROM
-    `httparchive.all.pages` TABLESAMPLE SYSTEM(1 PERCENT)
+    `httparchive.all.pages`
   WHERE
-    date = '2024-06-01' AND
-    is_root_page
+    date = '2024-06-01'
+    AND is_root_page
 ),
 
 requests AS (
@@ -20,10 +20,10 @@ requests AS (
     url,
     CAST(JSON_QUERY(payload, '$._created') AS FLOAT64) AS lcp_req_time
   FROM
-    `httparchive.all.requests` TABLESAMPLE SYSTEM(1 PERCENT)
+    `httparchive.all.requests`
   WHERE
-    date = '2024-06-01' AND
-    is_root_page
+    date = '2024-06-01'
+    AND is_root_page
 ),
 
 delays AS (

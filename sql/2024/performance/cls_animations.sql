@@ -6,10 +6,10 @@ WITH lh AS (
     client,
     ARRAY_LENGTH(JSON_QUERY_ARRAY(lighthouse, '$.audits.non-composited-animations.details.items')) AS num_animations
   FROM
-    `httparchive.all.pages` TABLESAMPLE SYSTEM(1 PERCENT)
+    `httparchive.all.pages`
   WHERE
-    date = '2024-06-01' AND
-    is_root_page
+    date = '2024-06-01'
+    AND is_root_page
 )
 
 

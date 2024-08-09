@@ -4,10 +4,10 @@ WITH pages AS (
     page,
     JSON_VALUE(custom_metrics, '$.performance.lcp_elem_stats.url') AS url
   FROM
-    `httparchive.all.pages` TABLESAMPLE SYSTEM(1 PERCENT)
+    `httparchive.all.pages`
   WHERE
-    date = '2024-06-01' AND
-    is_root_page
+    date = '2024-06-01'
+    AND is_root_page
 ),
 
 requests AS (
@@ -17,10 +17,10 @@ requests AS (
     url,
     CAST(JSON_VALUE(summary, '$.respSize') AS INT64) / 1024 AS kbytes
   FROM
-    `httparchive.all.requests` TABLESAMPLE SYSTEM(1 PERCENT)
+    `httparchive.all.requests`
   WHERE
-    date = '2024-06-01' AND
-    is_root_page
+    date = '2024-06-01'
+    AND is_root_page
 )
 
 SELECT

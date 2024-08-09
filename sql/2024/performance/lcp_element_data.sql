@@ -81,8 +81,8 @@ WITH lcp_stats AS (
   FROM
     `httparchive.all.pages`
   WHERE
-    date = '2024-06-01' AND
-    is_root_page
+    date = '2024-06-01'
+    AND is_root_page
 )
 
 SELECT
@@ -114,8 +114,8 @@ JOIN (
   FROM
     `httparchive.all.pages`
   WHERE
-    date = '2024-06-01' AND
-    is_root_page
+    date = '2024-06-01'
+    AND is_root_page
   GROUP BY
     client)
 USING

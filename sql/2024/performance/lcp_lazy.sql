@@ -27,10 +27,10 @@ WITH lcp_stats AS (
     isLazyLoaded(JSON_EXTRACT(custom_metrics, '$.performance.lcp_elem_stats.attributes')) AS native_lazy,
     hasLazyHeuristics(JSON_EXTRACT(custom_metrics, '$.performance.lcp_elem_stats.attributes')) AS custom_lazy
   FROM
-    `httparchive.all.pages` TABLESAMPLE SYSTEM(1 PERCENT)
+    `httparchive.all.pages`
   WHERE
-    date = '2024-06-01' AND
-    is_root_page AND
+    date = '2024-06-01'
+    AND is_root_page AND
     JSON_EXTRACT_SCALAR(custom_metrics, '$.performance.lcp_elem_stats.nodeName') = 'IMG'
 )
 
