@@ -1,17 +1,21 @@
 #standardSQL
-# Prevalence of X-robots-tag header values and robots meta values.
+# Section: Unclear?
+# Question: What is the prevalence of robots meta tag values and the X-robots-tag header?
 WITH meta_tags AS (
   SELECT
     client,
-    url AS page,
+    page,
     LOWER(JSON_VALUE(meta_node, '$.content')) AS robots_content
   FROM (
     SELECT
-      _TABLE_SUFFIX AS client,
-      url,
+      client,
+      page,
       JSON_VALUE(payload, '$._almanac') AS metrics
     FROM
-      `httparchive.pages.2022_06_01_*`
+      `httparchive.all.pages`
+    WHERE
+      date = '2024-06-01'
+      AND is_root_page
     ),
     UNNEST(JSON_QUERY_ARRAY(metrics, '$.meta-nodes.nodes')) meta_node
   WHERE LOWER(JSON_VALUE(meta_node, '$.name')) = 'robots'
@@ -21,29 +25,26 @@ robot_headers AS (
   SELECT
     client,
     url AS page,
-    LOWER(JSON_VALUE(response_header, '$.value')) AS robot_header_value
-  FROM (
-    SELECT
-      client,
-      url,
-      response_headers
-    FROM
-      `httparchive.almanac.requests`
-    WHERE
-      firstHtml = TRUE AND
-      date = '2022-06-01'
-    ),
-    UNNEST(JSON_QUERY_ARRAY(response_headers)) AS response_header
+    LOWER(response_headers.value) as robot_header_value
+  FROM
+    `httparchive.all.requests`,
+    UNNEST(response_headers) as response_headers
   WHERE
-    LOWER(JSON_VALUE(response_header, '$.name')) = 'x-robots-tag'
+    date = '2024-06-01'
+    AND is_root_page
+    AND is_main_document
+    AND LOWER(response_headers.name) = 'x-robots-tag'
 ),
 
 totals AS (
   SELECT
-    _TABLE_SUFFIX AS client,
-    COUNT(DISTINCT url) AS total_nb_pages
+    client,
+    COUNT(DISTINCT page) AS total_nb_pages
   FROM
-    `httparchive.pages.2022_06_01_*`
+    `httparchive.all.pages`
+  WHERE
+    date = '2024-06-01'
+    AND is_root_page
   GROUP BY
     client
 )

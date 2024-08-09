@@ -1,5 +1,6 @@
 #standardSQL
-# usage of allow and sandbox attribute of iframe elements, per page and over all iframe elements
+# Section: Content Inclusion - Iframe Sandbox/Permissions Policy
+# Question: How often are the allow and sandbox attributes used on iframes? Both per page and over all iframe elements
 SELECT
   client,
   COUNT(0) AS total_iframes,
@@ -22,11 +23,15 @@ FROM (
     JSON_EXTRACT_SCALAR(iframeAttr, '$.sandbox') AS sandbox
   FROM (
     SELECT
-      _TABLE_SUFFIX AS client,
-      url,
+      client,
+      page as url,
       JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._security'), '$.iframe-allow-sandbox') AS iframeAttrs
     FROM
-      `httparchive.pages.2022_06_01_*`)
+      `httparchive.all.pages`
+    WHERE
+      date = '2024-06-01'
+      AND is_root_page
+  )
   LEFT JOIN UNNEST(iframeAttrs) AS iframeAttr
   )
 GROUP BY

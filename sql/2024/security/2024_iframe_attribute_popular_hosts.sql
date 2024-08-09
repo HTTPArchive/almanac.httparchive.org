@@ -1,5 +1,6 @@
 #standardSQL
-# most common hostnames of iframes that have the allow or sandbox attribute
+# Section: Content Inclusion - Iframe Sandbox/Permissions Policy
+# Question: Wich are the most commont hostnames of iframes that have an allow or sandbox attribute?
 CREATE TEMP FUNCTION hasPolicy(attr STRING, policy_type STRING)
 RETURNS BOOL DETERMINISTIC
 LANGUAGE js AS '''
@@ -22,19 +23,26 @@ FROM (
     hasPolicy(iframeAttr, policy_type) AS has_policy
   FROM (
     SELECT
-      _TABLE_SUFFIX AS client,
+      client,
       JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._security'), '$.iframe-allow-sandbox') AS iframeAttrs
     FROM
-      `httparchive.pages.2022_06_01_*`),
+      `httparchive.all.pages`
+    WHERE
+      date = '2024-06-01'
+      AND is_root_page
+    ),
     UNNEST(iframeAttrs) AS iframeAttr,
     UNNEST(['allow', 'sandbox']) AS policy_type
 )
 JOIN (
   SELECT
-    _TABLE_SUFFIX AS client,
+    client,
     SUM(ARRAY_LENGTH(JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._security'), '$.iframe-allow-sandbox'))) AS total_iframes
   FROM
-    `httparchive.pages.2022_06_01_*`
+    `httparchive.all.pages`
+  WHERE
+    date = '2024-06-01'
+    AND is_root_page
   GROUP BY
     client)
 USING

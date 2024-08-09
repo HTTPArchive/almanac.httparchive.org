@@ -1,5 +1,6 @@
 #standardSQL
-# usage of different directives for sandbox attribute on iframes
+# Section: Content Inclusion - Iframe Sandbox
+# Question: Which are the most common directives for the sandbox attribute on iframes?
 CREATE TEMP FUNCTION getNumWithSandboxAttribute(payload STRING) AS ((
   SELECT
     COUNT(0)
@@ -17,18 +18,25 @@ SELECT
   COUNT(0) / total_iframes_with_sandbox AS pct
 FROM (
   SELECT
-    _TABLE_SUFFIX AS client,
+    client,
     JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._security'), '$.iframe-allow-sandbox') AS iframeAttrs
   FROM
-    `httparchive.pages.2022_06_01_*`),
+    `httparchive.all.pages`
+  WHERE
+    date = '2024-06-01'
+    AND is_root_page
+  ),
   UNNEST(iframeAttrs) AS iframeAttr,
   UNNEST(SPLIT(JSON_EXTRACT_SCALAR(iframeAttr, '$.sandbox'), ' ')) AS sandbox_attr
 JOIN (
   SELECT
-    _TABLE_SUFFIX AS client,
+    client,
     SUM(getNumWithSandboxAttribute(payload)) AS total_iframes_with_sandbox
   FROM
-    `httparchive.pages.2022_06_01_*`
+    `httparchive.all.pages`
+  WHERE
+    date = '2024-06-01'
+    AND is_root_page
   GROUP BY
     client
 ) USING (client)

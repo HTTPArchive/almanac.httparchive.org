@@ -1,5 +1,6 @@
 #standardSQL
-# Prevalence of pages with /robots.txt and prevalence of pages with disallowed potentially sensitive endpoints (containing 'login', 'log-in', 'signin', 'sign-in', 'admin', 'auth', 'sso' or 'account').
+# Section: Well-know URIs - robots.txt (?)
+# Question: What is the prevalence of /robots.txt and what is the prevalence of potentially sensitive endpoints in disallow directives ('login', 'log-in', 'signin', 'sign-in', 'admin', 'auth', 'sso', 'account')
 CREATE TEMPORARY FUNCTION getAllDisallowedEndpoints(data STRING)
 RETURNS ARRAY<STRING> DETERMINISTIC
 LANGUAGE js AS '''
@@ -37,12 +38,15 @@ SELECT
 FROM
   (
     SELECT
-      _TABLE_SUFFIX AS client,
-      url AS page,
+      client,
+      page,
       JSON_VALUE(JSON_VALUE(payload, '$._well-known'), '$."/robots.txt".found') AS has_robots_txt,
       getAllDisallowedEndpoints(JSON_VALUE(payload, '$._well-known')) AS disallowed_endpoints
     FROM
-      `httparchive.pages.2022_06_01_*`
+      `httparchive.all.pages`
+    WHERE
+      date = '2024-06-01'
+      AND is_root_page
   )
 LEFT JOIN UNNEST(disallowed_endpoints) AS disallowed_endpoint
 GROUP BY

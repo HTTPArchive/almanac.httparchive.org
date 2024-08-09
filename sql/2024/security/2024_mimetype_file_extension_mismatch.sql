@@ -1,16 +1,19 @@
 #standardSQL
-# Prevalence of mimetype - file extension mismatches among all requests. Non-SVG images are ignored.
+# Section: unclear
+# Question: How often does the mimetype of a request and the file extension mismatch across all requests?
+# Note: Non-SVG images are ignored
 WITH mimtype_file_ext_pairs AS (
   SELECT
     client,
-    LOWER(mimetype) AS mimetype,
-    LOWER(ext) AS file_extension,
+    LOWER(JSON_VALUE(summary, '$.mimeType')) AS mimetype,
+    LOWER(JSON_VALUE(summary, '$.ext')) AS file_extension,
     SUM(COUNT(0)) OVER (PARTITION BY client) AS total_requests,
     COUNT(0) AS count_pair
   FROM
-    `httparchive.almanac.requests`
+    `httparchive.all.requests`
   WHERE
-    date = '2022-06-01'
+    date = '2024-06-01'
+    AND is_root_page
   GROUP BY
     client,
     mimetype,
