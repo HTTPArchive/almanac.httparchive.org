@@ -1,5 +1,7 @@
 #standardSQL
-# Distribution of all ciphers for all requests
+# Section: Transport Security - Cipher suites
+# Question: What is the distribution of all ciphers for all requests?
+# Note: Query is large (43TB)
 SELECT
   client,
   cipher,
@@ -9,11 +11,13 @@ SELECT
 FROM (
   SELECT
     client,
-    cert_cipher AS cipher
+    JSON_VALUE(payload, '$_securityDetails.cipher') AS cipher
   FROM
-    `httparchive.almanac.requests`
+    `httparchive.all.requests`
   WHERE
-    date = '2022-06-01')
+    date = '2024-06-01'
+    AND is_root_page
+  )
 WHERE
   cipher IS NOT NULL
 GROUP BY

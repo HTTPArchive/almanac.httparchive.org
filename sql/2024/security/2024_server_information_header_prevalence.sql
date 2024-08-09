@@ -1,7 +1,6 @@
 #standardSQL
 # Section: ?
 # Question: How prevalent are headers leaking server information? (count by number of hosts)
-# Note: Different dates taken together for some reason
 SELECT
   date,
   client,

@@ -1,4 +1,8 @@
 #standardSQL
+# Section: Well-known URIs - change-password
+# Question What is the prevalence of correctly configured /.well-known/change-password endpoints?
+# Notes: Safe Cast is required `.data.status` is not always an INT for some reason
+
 # Prevalence of correctly configured /.well-known/change-password endpoints:
 # defined as `change-password` redirecting and having an 'ok' HTTP status code (https://fetch.spec.whatwg.org/#ok-status),
 # while `resource-that-should-not-exist-whose-status-code-should-not-be-200` indeed does not have status code 200,
@@ -11,13 +15,16 @@ SELECT
   COUNTIF(change_password_redirected = 'true' AND (change_password_status BETWEEN 200 AND 299) AND (resource_status NOT BETWEEN 200 AND 299)) / COUNT(DISTINCT page) AS pct_change_password_did_redirect_and_ok
 FROM (
     SELECT
-      _TABLE_SUFFIX AS client,
-      url AS page,
+      client,
+      page,
       JSON_QUERY(JSON_VALUE(payload, '$._well-known'), '$."/.well-known/change-password".data.redirected') AS change_password_redirected,
-      CAST(JSON_QUERY(JSON_VALUE(payload, '$._well-known'), '$."/.well-known/change-password".data.status') AS INT64) AS change_password_status,
-      CAST(JSON_QUERY(JSON_VALUE(payload, '$._well-known'), '$."/.well-known/resource-that-should-not-exist-whose-status-code-should-not-be-200/".data.status') AS INT64) AS resource_status
+      SAFE_CAST(JSON_QUERY(JSON_VALUE(payload, '$._well-known'), '$."/.well-known/change-password".data.status') AS INT64) AS change_password_status,
+      SAFE_CAST(JSON_QUERY(JSON_VALUE(payload, '$._well-known'), '$."/.well-known/resource-that-should-not-exist-whose-status-code-should-not-be-200/".data.status') AS INT64) AS resource_status
     FROM
-      `httparchive.pages.2022_06_01_*`
+      `httparchive.all.pages`
+    WHERE
+      date = '2024-06-01'
+      AND is_root_page
 )
 GROUP BY
   client

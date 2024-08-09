@@ -1,15 +1,18 @@
 #standardSQL
-# Subresource integrity: most popular hosts for which SRI is used on script tags
+# Section: Content Inclusion - Subresource Integrity
+# Question: Which are the most popular hosts for which SRI is used on script tags?
 WITH totals AS (
   SELECT
-    _TABLE_SUFFIX AS client,
+    client,
     COUNT(0) AS total_sri_scripts
   FROM
-    `httparchive.pages.2022_06_01_*`,
+    `httparchive.all.pages`,
     UNNEST(JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._security'), '$.sri-integrity')) AS sri
   WHERE
-    sri IS NOT NULL AND
-    JSON_EXTRACT_SCALAR(sri, '$.tagname') = 'script'
+    date = '2024-06-01'
+    AND is_root_page
+    AND sri IS NOT NULL
+    AND JSON_EXTRACT_SCALAR(sri, '$.tagname') = 'script'
   GROUP BY
     client
 )
@@ -25,11 +28,15 @@ SELECT
   COUNT(DISTINCT url) / SUM(COUNT(DISTINCT url)) OVER (PARTITION BY client) AS pct_urls
 FROM (
   SELECT
-    _TABLE_SUFFIX AS client,
-    url,
+    client,
+    page as url,
     JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._security'), '$.sri-integrity') AS sris
   FROM
-    `httparchive.pages.2022_06_01_*`),
+    `httparchive.all.pages`
+  WHERE
+    date = '2024-06-01'
+    AND is_root_page  
+  ),
   UNNEST(sris) AS sri
 JOIN totals USING (client)
 WHERE

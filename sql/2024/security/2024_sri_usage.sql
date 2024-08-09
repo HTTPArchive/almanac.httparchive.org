@@ -1,5 +1,6 @@
 #standardSQL
-# Subresource integrity: number of pages that use SRI (per tagname), and tagname usage for all SRI elements
+# Section: Content Inclusion - Subresource Integrity
+# Question: How many pages use SRI (per tagname) and what is the tagname usage for all SRI elements?
 SELECT
   client,
   COUNTIF(sri IS NOT NULL) AS total_sris,
@@ -16,11 +17,15 @@ SELECT
   COUNT(DISTINCT IF(JSON_EXTRACT_SCALAR(sri, '$.tagname') = 'link', url, NULL)) / COUNT(DISTINCT url) AS pct_link_urls
 FROM (
   SELECT
-    _TABLE_SUFFIX AS client,
-    url,
+    client,
+    page as url,
     JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._security'), '$.sri-integrity') AS sris
   FROM
-    `httparchive.pages.2022_06_01_*`)
+    `httparchive.all.pages`
+  WHERE
+    date = '2024-06-01'
+    AND is_root_page
+  )
 LEFT JOIN UNNEST(sris) AS sri
 GROUP BY
   client

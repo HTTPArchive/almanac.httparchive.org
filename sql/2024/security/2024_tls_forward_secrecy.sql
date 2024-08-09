@@ -1,5 +1,7 @@
 #standardSQL
-# Cipher suites supporting forward secrecy for all requests
+# Section: Transport Security - Cipher Suites
+# Question: How many used cipher suites support forward secrecy for all requests?
+# Note: Large query (40+TB)
 SELECT
   client,
   COUNT(0) AS total_requests,
@@ -8,12 +10,13 @@ SELECT
 FROM (
   SELECT
     client,
-    cert_keyexchange AS key_exchange,
-    cert_protocol AS protocol
+    JSON_VALUE(payload, '$._securityDetails.keyExchange') AS key_exchange,
+    JSON_VALUE(payload, '$._securityDetails.protocol') AS protocol
   FROM
-    `httparchive.almanac.requests`
+    `httparchive.all.requests`
   WHERE
-    date = '2022-06-01'
+    date = '2024-06-01'
+    AND is_root_page
   )
 WHERE
   protocol IS NOT NULL

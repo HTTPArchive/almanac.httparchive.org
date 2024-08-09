@@ -1,5 +1,7 @@
 #standardSQL
-#Distribution of CA issuers for all pages
+# Section: Transport Security - Certificate Authority
+# Question: What is the distribution of CA issuers for all pages?
+# Note: currently includes HTTP (i.e., pages with no issuer)
 SELECT
   client,
   issuer,
@@ -10,17 +12,17 @@ FROM (
   SELECT
     client,
     NET.HOST(url) AS request_host,
-    cert_issuer AS issuer
+    JSON_VALUE(payload, '$._securityDetails.issuer') AS issuer
   FROM
-    `httparchive.almanac.requests`
+    `httparchive.all.requests`
   WHERE
-    date = '2022-06-01' AND
-    firstHtml AND
-    cert_issuer IS NOT NULL
+    date = '2024-06-01'
+    AND is_root_page
+    AND is_main_document
   GROUP BY
     client,
     request_host,
-    cert_issuer
+    issuer
   )
 GROUP BY
   client,

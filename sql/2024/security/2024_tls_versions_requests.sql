@@ -1,5 +1,7 @@
 #standardSQL
-# Distribution of TLS versions on all TLS-enabled requests
+# Section: Transport Security - Protocol Versions
+# Question: What is the distribution of TLS versions on all TLS-enabled requests?
+# Note: Query is large (40TB)
 SELECT
   client,
   tls_version,
@@ -10,12 +12,14 @@ FROM (
   SELECT
     client,
     NET.HOST(url) AS host,
-    IFNULL(tls_version, cert_protocol) AS tls_version
+    IFNULL(JSON_VALUE(payload, '$._tls_version'), JSON_VALUE(payload, '$._securityDetails.protocol')) AS tls_version
   FROM
-    `httparchive.almanac.requests`
+    `httparchive.all.requests`
   WHERE
-    date = '2022-06-01' AND
-    STARTS_WITH(url, 'https'))
+    date = '2024-06-01'
+    AND is_root_page
+    AND STARTS_WITH(url, 'https')
+  )
 WHERE
   tls_version IS NOT NULL
 GROUP BY
