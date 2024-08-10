@@ -1,0 +1,1 @@
+select client, array_length(JSON_QUERY_ARRAY(custom_metrics, "$.privacy.fingerprinting.likelyFingerprintingScripts")) as script_count, count(distinct page) as page_count from `httparchive.all.pages` TABLESAMPLE SYSTEM (0.001 PERCENT) WHERE date = "2024-06-01" group by script_count, client order by script_count asc;
