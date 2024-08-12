@@ -12,37 +12,50 @@ pages AS (
   FROM
     `httparchive.all.requests`
   WHERE
-    date BETWEEN '2019-01-01' AND '2024-07-01'
+    date IN ('2022-06-01', '2023-07-01', '2024-07-01')
   GROUP BY
     date,
     client
 ),
-services AS (
+services_1 AS (
   SELECT
     date,
     client,
-    SERVICE(url) AS service,
-    COUNT(DISTINCT page) AS count
+    page,
+    SERVICE(url) AS service
   FROM
     `httparchive.all.requests`
   WHERE
-    date BETWEEN '2019-01-01' AND '2024-07-01' AND
+    date IN ('2022-06-01', '2023-07-01', '2024-07-01') AND
     type = 'font'
   GROUP BY
     date,
     client,
+    page,
     service
+),
+services_2 AS (
+  SELECT
+    date,
+    client,
+    STRING_AGG(DISTINCT service, ', ' ORDER BY service) AS services,
+    COUNT(DISTINCT page) AS count
+  FROM
+    services_1
+  GROUP BY
+    date,
+    client
 )
 
 SELECT
   date,
   client,
-  service,
+  services,
   count,
   total,
   count / total AS proportion
 FROM
-  services
+  services_2
 JOIN
   pages USING (date, client)
 ORDER BY
