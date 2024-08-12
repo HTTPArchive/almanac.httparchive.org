@@ -1,7 +1,6 @@
-#standardSQL
-# Section: Drivers of security mechanism adoption - Location of a website
-# Question: How is security feature adoption and location of a website related (i.e. which is the most common country visiting that website)?
-# Note: Security feature adoption grouped by sites frequently visited from different countries
+ #standardSQL
+# Section: Drivers of security mechanism adoption - Website Category
+# Question: How is security feature adoption and category of a website related?
 # Note: Not all headers have their individual percentages
 # Note: Currenly uses regex search on respOtherHeaders that can have false positives if a header name is used as a value of a header; could use the new response_header struct instead
 # Note: Only on the main document (is_main_document)
@@ -18,8 +17,8 @@ CREATE TEMP FUNCTION getNumSecurityHeaders(headers STRING) AS (
 
 SELECT
   client,
-  country,
-  COUNT(0) AS total_pages_for_country,
+  category,
+  COUNT(0) AS total_pages_for_category,
   COUNTIF(STARTS_WITH(url, 'https')) AS freq_https,
   SAFE_DIVIDE(COUNTIF(STARTS_WITH(url, 'https')), COUNT(0)) AS pct_https,
   SAFE_DIVIDE(COUNTIF(REGEXP_CONTAINS(respOtherHeaders, '(?i)X-Frame-Options ')), COUNT(0)) AS pct_xfo,
@@ -34,24 +33,21 @@ SELECT
 FROM (
   SELECT
     client,
-    `chrome-ux-report.experimental`.GET_COUNTRY(country_code) AS country,
+    SPLIT(parent_category, '/')[1] as category,
     JSON_VALUE(r.summary, '$.respOtherHeaders') as respOtherHeaders,
     url
   FROM
     `httparchive.all.requests` AS r
   INNER JOIN
-    `chrome-ux-report.experimental.country` AS c
-  ON
-    url = CONCAT(c.origin, '/')
+    UNNEST(`httparchive.fn.GET_HOST_CATEGORIES`(url))
   WHERE
     date = '2024-06-01'
-    AND yyyymm = 202406
     AND is_root_page
     AND is_main_document
 )
 GROUP BY
   client,
-  country
+  category
 ORDER BY
   client,
-  total_pages_for_country DESC
+  total_pages_for_category DESC
