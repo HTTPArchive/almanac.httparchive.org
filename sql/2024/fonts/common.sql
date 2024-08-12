@@ -9,15 +9,8 @@ CREATE TEMPORARY FUNCTION FAMILY(payload STRING) AS (
 );
 
 -- Extract the file format from a URL and a Content-Type header.
-CREATE TEMPORARY FUNCTION FILE_FORMAT(url STRING, header STRING) AS (
-  LOWER(COALESCE(
-    REGEXP_EXTRACT(
-      LOWER(header),
-      r'(eot|otf|sfnt|svg|ttf|woff2?|fontobject|opentype|truetype|font)'
-    ),
-    REGEXP_EXTRACT(url, r'\.(\w+)(?:$|\?|#)'),
-    REGEXP_REPLACE(header, ';.*', '')
-  ))
+CREATE TEMPORARY FUNCTION FILE_FORMAT(extension STRING, mime STRING) AS (
+  LOWER(IFNULL(REGEXP_EXTRACT(mime, '/(?:x-)?(?:font-)?(.*)'), extension))
 );
 
 -- Extract the foundry name from a payload.
