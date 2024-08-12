@@ -1,6 +1,9 @@
 #standardSQL
-# Security feature adoption grouped by sites frequently visited from different countries
-
+# Section: Drivers of security mechanism adoption - Location of a website
+# Question: How is security featuer adoption and location of a website (i.e. which is the most common country visiting that website)?
+# Note: Security feature adoption grouped by sites frequently visited from different countries
+# Note: Not all headers have their individual percentages
+# Note: Currenly uses regex search on respOtherHeaders that can have false positives if a header name is used as a value of a header; could use the new response_header struct instead
 CREATE TEMP FUNCTION getNumSecurityHeaders(headers STRING) AS (
   (
     SELECT
@@ -29,25 +32,21 @@ SELECT
   APPROX_QUANTILES(getNumSecurityHeaders(respOtherHeaders), 1000)[OFFSET(500)] AS median_security_headers
 FROM (
   SELECT
-    r._TABLE_SUFFIX AS client,
+    client,
     `chrome-ux-report.experimental`.GET_COUNTRY(country_code) AS country,
-    respOtherHeaders,
-    r.urlShort AS url,
-    firstHtml
+    JSON_VALUE(r.summary, '$.respOtherHeaders') as respOtherHeaders,
+    url
   FROM
-    `httparchive.summary_requests.2022_06_01_*` AS r
-  INNER JOIN
-    `httparchive.summary_pages.2022_06_01_*` AS p
-  ON
-    r._TABLE_SUFFIX = p._TABLE_SUFFIX AND
-    r.pageid = p.pageid
+    `httparchive.all.requests` AS r
   INNER JOIN
     `chrome-ux-report.experimental.country` AS c
   ON
-    p.url = CONCAT(c.origin, '/')
+    url = CONCAT(c.origin, '/')
   WHERE
-    firstHtml AND
-    yyyymm = 202206
+    date = '2024-06-01'
+    AND yyyymm = 202406
+    AND is_root_page
+    AND is_main_document
 )
 GROUP BY
   client,
