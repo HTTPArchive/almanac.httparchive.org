@@ -6,31 +6,36 @@
 WITH
 pages AS (
   SELECT
+    date,
     client,
     COUNT(DISTINCT page) AS total
   FROM
     `httparchive.all.requests`
   WHERE
-    date = '2024-07-01'
+    date BETWEEN '2019-01-01' AND '2024-07-01'
   GROUP BY
+    date,
     client
 ),
 services AS (
   SELECT
+    date,
     client,
     SERVICE(url) AS service,
     COUNT(DISTINCT page) AS count
   FROM
     `httparchive.all.requests`
   WHERE
-    date = '2024-07-01' AND
+    date BETWEEN '2019-01-01' AND '2024-07-01' AND
     type = 'font'
   GROUP BY
+    date,
     client,
     service
 )
 
 SELECT
+  date,
   client,
   service,
   count,
@@ -39,7 +44,8 @@ SELECT
 FROM
   services
 JOIN
-  pages USING (client)
+  pages USING (date, client)
 ORDER BY
+  date,
   client,
   proportion DESC
