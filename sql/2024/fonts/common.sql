@@ -11,9 +11,12 @@ CREATE TEMPORARY FUNCTION FAMILY(payload STRING) AS (
 -- Extract the file format from a URL and a Content-Type header.
 CREATE TEMPORARY FUNCTION FILE_FORMAT(url STRING, header STRING) AS (
   LOWER(COALESCE(
-    REGEXP_EXTRACT(LOWER(header), r'(otf|sfnt|svg|ttf|woff2?|fontobject|opentype|truetype)'),
+    REGEXP_EXTRACT(
+      LOWER(header),
+      r'(eot|otf|sfnt|svg|ttf|woff2?|fontobject|opentype|truetype|font)'
+    ),
     REGEXP_EXTRACT(url, r'\.(\w+)(?:$|\?|#)'),
-    header
+    REGEXP_REPLACE(header, ';.*', '')
   ))
 );
 
