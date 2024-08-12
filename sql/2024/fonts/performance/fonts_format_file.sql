@@ -6,8 +6,8 @@
 SELECT
   client,
   FILE_FORMAT(
-    JSON_VALUE(summary, '$.ext'),
-    JSON_VALUE(summary, '$.mimeType')
+    JSON_EXTRACT_SCALAR(summary, '$.ext'),
+    JSON_EXTRACT_SCALAR(summary, '$.mimeType')
   ) AS format,
   COUNT(DISTINCT url) AS count,
   SUM(COUNT(DISTINCT url)) OVER (PARTITION BY client) AS total,

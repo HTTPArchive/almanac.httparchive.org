@@ -6,15 +6,12 @@ fonts AS (
   SELECT
     client,
     url,
-    AVG(PARSE_NUMERIC(header.value)) AS size
+    AVG(PARSE_NUMERIC(JSON_EXTRACT_SCALAR(summary, '$.respBodySize'))) AS size
   FROM
-    `httparchive.all.requests`,
-    UNNEST(response_headers) AS header
+    `httparchive.all.requests`
   WHERE
     date = '2024-07-01' AND
-    type = 'font' AND
-    LOWER(header.name) = 'content-length' AND
-    TRIM(header.value) != ''
+    type = 'font'
   GROUP BY
     client,
     url
