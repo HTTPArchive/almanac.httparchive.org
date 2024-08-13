@@ -190,6 +190,7 @@ ORDER BY
 /*
 # Most found/valid files use content-type text/plain.* We use a filter on the content-type to remove all other files (e.g., HTML files with status code 200 at /.well-known/security.txt)
 # Responses without any content-type are quite rare
+# E.g., in the Top 100K: 2311 with found false and valid==null (i.e., 404 or similar without content), 170 with found true and valid==false (mostly HTML pages), 92 with found false and valid==false (mostly HTML pages with status code != 200 but okay type), and 12 with found true and valid true (false negatives!) (compared to text/plain true, true 1756 and true, false 1430)
 SELECT
   content_type,
   found,
@@ -208,6 +209,7 @@ ORDER BY
 /*
 # Do any of the non text/plain files have anything resembling a security.text file at all?
 # They only have "other" values that appear to be mostly css that we accidentally match as they return status code 200 at /.well-known/security.txt
+# Small number of FNs, e.g., 40 sites with text/html and contact in Top100K (the same would cause ~3545 false positives if not filtering on text/plain)
 SELECT
   content_type as ct,
   COUNT(page) as total,
@@ -251,7 +253,8 @@ WHERE
 
 /*
 # Value distribution of other values!
-# Common values (only text/plain otherwise it will be HTML stuff): Acknowledgements, Hash, OpenBugBounty, Responsible Disclosure Program, Tips, Signature, Info
+# Common values (only text/plain otherwise it will be HTML stuff)
+# Top 100sk, Acknowledgements (268), Hash (368), OpenBugBounty (196), Signature (52), Bug Bountry program (22), Contact (16; with space in front), Expires (14; with space in front), ...
 SELECT
   JSON_VALUE_ARRAY(other_val)[offset(0)] as directive_name,
   COUNT(0) as cnt
