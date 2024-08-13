@@ -12,7 +12,7 @@ pages AS (
   FROM
     `httparchive.all.requests`
   WHERE
-    date IN ('2022-06-01', '2023-07-01', '2024-07-01')
+    date IN ('2022-07-01', '2023-07-01', '2024-07-01')
   GROUP BY
     date,
     client
@@ -22,29 +22,29 @@ services_1 AS (
     date,
     client,
     page,
-    SERVICE(url) AS service
+    STRING_AGG(DISTINCT SERVICE(url), ', ' ORDER BY SERVICE(url)) AS services
   FROM
     `httparchive.all.requests`
   WHERE
-    date IN ('2022-06-01', '2023-07-01', '2024-07-01') AND
+    date IN ('2022-07-01', '2023-07-01', '2024-07-01') AND
     type = 'font'
   GROUP BY
     date,
     client,
-    page,
-    service
+    page
 ),
 services_2 AS (
   SELECT
     date,
     client,
-    STRING_AGG(DISTINCT service, ', ' ORDER BY service) AS services,
+    services,
     COUNT(DISTINCT page) AS count
   FROM
     services_1
   GROUP BY
     date,
-    client
+    client,
+    services
 )
 
 SELECT
