@@ -22,7 +22,7 @@ LANGUAGE js AS """
   }
   const jsonObject = JSON.parse(input);
   const values = jsonObject[key] || [];
-  
+
   function splitByDelimiters(value) {
     const delimiterRegex = new RegExp(',|, |\\n|\\u0000', 'g');
     return value.split(delimiterRegex).map(v => v.trim()).filter(v => v);
@@ -30,8 +30,8 @@ LANGUAGE js AS """
 
   const result = [];
   const replacements = {
-    'Ch': 'CH', 'Ua': 'UA', 'Wow64': 'WoW64', 'Dpr': 'DPR', 'Rtt': 'RTT', 'Ect': 'ECT', 'Etc': 'ETC', '-Architecture': '-Arch', '-Arc': '-Arch', '-Archh': '-Arch', 
-    '-Factors': '-Factor', '-ETC': '-ECT', '-Modal': '-Model', '-UA-UA': '-UA', '-UAm': '-UA', 'UAmodel': 'UA-Model', 'UAplatform': 'UA-Platform', 'Secch-UA': 'Sec-CH-UA', 
+    'Ch': 'CH', 'Ua': 'UA', 'Wow64': 'WoW64', 'Dpr': 'DPR', 'Rtt': 'RTT', 'Ect': 'ECT', 'Etc': 'ETC', '-Architecture': '-Arch', '-Arc': '-Arch', '-Archh': '-Arch',
+    '-Factors': '-Factor', '-ETC': '-ECT', '-Modal': '-Model', '-UA-UA': '-UA', '-UAm': '-UA', 'UAmodel': 'UA-Model', 'UAplatform': 'UA-Platform', 'Secch-UA': 'Sec-CH-UA',
     'CH-Width': 'CH-Viewport-Width', '-UAodel': '-UA-Model', '-Platformua-Platform': '-Platform', '-Platformuser-Agent': '-Platform', '-Version"': '-Version'
   };
   values.forEach(value => {
@@ -41,7 +41,7 @@ LANGUAGE js AS """
         if (["UA", "Arch", "Bitness", "Full-Version-List", "Mobile", "Model", "Platform", "Platform-Version", "WoW64"].includes(part)) {
           result.push("Sec-CH-UA-" + part);
         } else {
-          let formattedPart = part.split('-').map(segment => 
+          let formattedPart = part.split('-').map(segment =>
             segment.charAt(0).toUpperCase() + segment.slice(1).toLowerCase()
           ).join('-');
           for (const [key, value] of Object.entries(replacements)) {
@@ -71,13 +71,13 @@ WITH privacy_sandbox_features AS (
         api
     END AS feature
   FROM `httparchive.all.pages`,
-  UNNEST(jsonObjectKeys(JSON_QUERY(custom_metrics, '$.privacy-sandbox.privacySandBoxAPIUsage'))) AS third_party_domain,
-  UNNEST(jsonObjectValues(JSON_QUERY(custom_metrics, '$.privacy-sandbox.privacySandBoxAPIUsage'), third_party_domain)) AS api
+    UNNEST(jsonObjectKeys(JSON_QUERY(custom_metrics, '$.privacy-sandbox.privacySandBoxAPIUsage'))) AS third_party_domain,
+    UNNEST(jsonObjectValues(JSON_QUERY(custom_metrics, '$.privacy-sandbox.privacySandBoxAPIUsage'), third_party_domain)) AS api
   WHERE
-      date = '2024-06-01' AND
-      client = 'desktop' AND
-      is_root_page = TRUE AND
-      rank <= 1000000
+    date = '2024-06-01' AND
+    client = 'desktop' AND
+    is_root_page = TRUE AND
+    rank <= 1000000
 ),
 
 grouped_features AS (
