@@ -9,7 +9,7 @@ LANGUAGE js AS """
 -- https://github.com/easylist/easylist/blob/master/easylist/easylist_adservers.txt
 WITH easylist_data AS (
   SELECT string_field_0
-  FROM `httparchive.all.easylist_adservers`
+  FROM `httparchive.almanac.easylist_adservers`
 ),
 requests_data AS (
   SELECT url
