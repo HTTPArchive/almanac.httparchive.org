@@ -4,15 +4,51 @@
 CREATE TEMPORARY FUNCTION HINTS(json STRING)
 RETURNS ARRAY<STRING>
 LANGUAGE js AS '''
-var hints = new Set(['dns-prefetch', 'preconnect', 'prefetch', 'preload', 'prerender']);
+// Keep it in sync with SERVICE in common.sql.
+const services = [
+  /(fonts|use)\\.typekit\\.(net|com)/,
+  /cloud\\.typenetwork\\.com/,
+  /cloud\\.typography\\.com/,
+  /cloud\\.webtype\\.com/,
+  /f\\.fontdeck\\.com/,
+  /fast\\.fonts\\.(com|net)\\/(jsapi|cssapi)/,
+  /fnt\\.webink\\.com/,
+  /fontawesome\\.com/,
+  /fonts\\.(gstatic|googleapis)\\.com|themes.googleusercontent.com|ssl.gstatic.com/,
+  /fonts\\.typonine\\.com/,
+  /fonts\\.typotheque\\.com/,
+  /kernest\\.com/,
+  /typefront\\.com/,
+  /typesquare\\.com/,
+  /use\\.edgefonts\\.net|webfonts\\.creativecloud\\.com/,
+  /webfont\\.fontplus\\.jp/,
+  /webfonts\\.fontslive\\.com/,
+  /webfonts\\.fontstand\\.com/,
+  /webfonts\\.justanotherfoundry\\.com/,
+];
+
+const globalHints = new Set([
+  'dns-prefetch',
+  'preconnect',
+]);
+const localHints = new Set([
+  'prefetch',
+  'preload',
+]);
+
 try {
   var $ = JSON.parse(json);
   return $.almanac['link-nodes'].nodes.reduce((results, link) => {
     var hint = link.rel.toLowerCase();
-    if (!hints.has(hint)) {
-      return results;
+    if (globalHints.has(hint)) {
+      if (link.href && services.some((service) => service.search(link.href))) {
+        results.push(hint);
+      }
+    } else if (localHints.has(hint)) {
+      if (link.as === 'font') {
+        results.push(hint);
+      }
     }
-    results.push(hint);
     return results;
   }, []);
 } catch (e) {
