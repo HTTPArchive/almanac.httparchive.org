@@ -39,8 +39,7 @@ CREATE TEMPORARY FUNCTION SCRIPTS(payload STRING) AS (
 -- Infer the service from a URL.
 CREATE TEMPORARY FUNCTION SERVICE(url STRING) AS (
   CASE
-    WHEN REGEXP_CONTAINS(url, r'(use|fonts)\.typekit\.(net|com)') THEN 'Adobe'
-    WHEN REGEXP_CONTAINS(url, r'(fonts\.(gstatic|googleapis)\.com)|themes.googleusercontent.com/static/fonts|ssl.gstatic.com/fonts') THEN 'Google'
+    WHEN REGEXP_CONTAINS(url, r'(fonts|use)\.typekit\.(net|com)') THEN 'Adobe'
     WHEN REGEXP_CONTAINS(url, r'cloud\.typenetwork\.com') THEN 'typenetwork.com'
     WHEN REGEXP_CONTAINS(url, r'cloud\.typography\.com') THEN 'typography.com'
     WHEN REGEXP_CONTAINS(url, r'cloud\.webtype\.com') THEN 'webtype.com'
@@ -48,8 +47,11 @@ CREATE TEMPORARY FUNCTION SERVICE(url STRING) AS (
     WHEN REGEXP_CONTAINS(url, r'fast\.fonts\.(com|net)\/(jsapi|cssapi)') THEN 'fonts.com'
     WHEN REGEXP_CONTAINS(url, r'fnt\.webink\.com') THEN 'webink.com'
     WHEN REGEXP_CONTAINS(url, r'fontawesome\.com') THEN 'fontawesome.com'
+    WHEN REGEXP_CONTAINS(url, r'fonts\.(gstatic|googleapis)\.com|themes.googleusercontent.com/static/fonts|ssl.gstatic.com/fonts') THEN 'Google'
     WHEN REGEXP_CONTAINS(url, r'fonts\.typonine\.com') THEN 'typonine.com'
     WHEN REGEXP_CONTAINS(url, r'fonts\.typotheque\.com') THEN 'typotheque.com'
+    WHEN REGEXP_CONTAINS(url, r'kernest\.com') THEN 'kernest.com'
+    WHEN REGEXP_CONTAINS(url, r'typefront\.com') THEN 'typefront.com'
     WHEN REGEXP_CONTAINS(url, r'typesquare\.com') THEN 'typesquare.com'
     WHEN REGEXP_CONTAINS(url, r'use\.edgefonts\.net|webfonts\.creativecloud\.com') THEN 'edgefonts.net'
     WHEN REGEXP_CONTAINS(url, r'webfont\.fontplus\.jp') THEN 'fontplus.jp'
