@@ -24,17 +24,20 @@ try {
 WITH
 pages AS (
   SELECT
+    date,
     client,
     COUNT(DISTINCT page) AS total
   FROM
     `httparchive.all.requests`
   WHERE
-    date = '2024-07-01'
+    date IN ('2022-07-01', '2023-07-01', '2024-07-01')
   GROUP BY
+    date,
     client
 ),
 properties AS (
   SELECT
+    date,
     client,
     property,
     COUNT(DISTINCT page) AS count
@@ -42,13 +45,15 @@ properties AS (
     `httparchive.all.parsed_css`,
     UNNEST(PROPERTIES(css)) AS property
   WHERE
-    date = '2024-07-01'
+    date IN ('2022-07-01', '2023-07-01', '2024-07-01')
   GROUP BY
+    date,
     client,
     property
 )
 
 SELECT
+  date,
   client,
   property,
   count,
@@ -57,7 +62,8 @@ SELECT
 FROM
   properties
 JOIN
-  pages USING (client)
+  pages USING (date, client)
 ORDER BY
+  date,
   client,
   proportion DESC
