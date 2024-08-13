@@ -4,30 +4,35 @@
 WITH
 pages AS (
   SELECT
+    date,
     client,
     COUNT(DISTINCT page) AS total
   FROM
     `httparchive.all.requests`
   WHERE
-    date = '2024-07-01'
+    date IN ('2022-07-01', '2023-07-01', '2024-07-01')
   GROUP BY
-    client
+    client,
+    date
 ),
 scripts AS (
   SELECT
+    date,
     client,
     COUNT(DISTINCT page) AS count
   FROM
     `httparchive.all.requests`
   WHERE
+    date IN ('2022-07-01', '2023-07-01', '2024-07-01') AND
     type = 'script' AND
-    date = '2024-07-01' AND
     REGEXP_CONTAINS(response_body, r'new FontFace\(')
   GROUP BY
+    date,
     client
 )
 
 SELECT
+  date,
   client,
   count,
   total,
@@ -35,6 +40,7 @@ SELECT
 FROM
   scripts
 JOIN
-  pages USING (client)
+  pages USING (date, client)
 ORDER BY
+  date,
   client
