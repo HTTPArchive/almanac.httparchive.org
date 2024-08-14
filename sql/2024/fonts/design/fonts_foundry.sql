@@ -1,11 +1,13 @@
 -- Section: Design
 -- Question: Which foundries are popular?
 
+-- INCLUDE ../common.sql
+
 WITH
 foundries AS (
   SELECT
     client,
-    JSON_EXTRACT_SCALAR(payload, '$._font_details.OS2.achVendID') AS foundry,
+    FOUNDRY(payload) AS foundry,
     COUNT(DISTINCT page) AS count
   FROM
     `httparchive.all.requests`
