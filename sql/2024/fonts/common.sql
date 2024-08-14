@@ -8,9 +8,9 @@ CREATE TEMPORARY FUNCTION FAMILY(payload STRING) AS (
   FAMILY_INNER(JSON_EXTRACT_SCALAR(payload, '$._font_details.names[1]'))
 );
 
--- Extract the file format from a URL and a Content-Type header.
-CREATE TEMPORARY FUNCTION FILE_FORMAT(extension STRING, mime STRING) AS (
-  LOWER(IFNULL(REGEXP_EXTRACT(mime, '/(?:x-)?(?:font-)?(.*)'), extension))
+-- Extract the file format from an extension and a MIME type.
+CREATE TEMPORARY FUNCTION FILE_FORMAT(extension STRING, type STRING) AS (
+  LOWER(IFNULL(REGEXP_EXTRACT(type, '/(?:x-)?(?:font-)?(.*)'), extension))
 );
 
 -- Extract the foundry name from a payload.
