@@ -1,9 +1,8 @@
-WITH requests AS (
+WITH redirect_requests AS (
   SELECT
     url,
     index,
     response_headers,
-    summary,
     page
   FROM `httparchive.all.requests`
   WHERE
@@ -11,6 +10,7 @@ WITH requests AS (
     client = 'mobile' AND
     is_root_page = TRUE AND
     type NOT IN ('css', 'image', 'font', 'video', 'audio') AND
+    LEFT(JSON_VALUE(summary, '$.status'), 1) = '3' AND
     index <= 2
 ), navigation_redirect AS (
   -- Find the first navigation redirect
@@ -18,14 +18,11 @@ WITH requests AS (
     url,
     page,
     headers.value AS navigation_redirect_location
-  FROM requests,
+  FROM redirect_requests,
     UNNEST(response_headers) AS headers
   WHERE
     index = 1 AND
-    (
-      LEFT(JSON_VALUE(summary, '$.status'), 1) = '3' AND
-      LOWER(headers.name) = 'location'
-    ) AND
+    LOWER(headers.name) = 'location' AND
     NET.REG_DOMAIN(page) != NET.REG_DOMAIN(headers.value)
 ), bounce_redirect AS (
   -- Find the second navigation redirect
@@ -34,15 +31,11 @@ WITH requests AS (
     page,
     headers.value AS bounce_redirect_location,
     response_headers
-  FROM requests,
+  FROM redirect_requests,
     UNNEST(response_headers) AS headers
   WHERE
     index = 2 AND
-    (
-      LEFT(JSON_VALUE(summary, '$.status'), 1) = '3' AND
-      LOWER(headers.name) = 'location'
-    ) AND
-    NET.REG_DOMAIN(page) != NET.REG_DOMAIN(url) AND
+    LOWER(headers.name) = 'location' AND
     NET.REG_DOMAIN(headers.value) = NET.REG_DOMAIN(page)
 ), bounce_redirect_with_cookies AS (
   -- Find the cookies set during the second navigation redirect
@@ -79,7 +72,8 @@ WITH requests AS (
 -- Count the number of websites with bounce tracking per bounce hostname
 SELECT
   NET.HOST(navigation_redirect_location) AS bounce_hostname,
-  COUNT(DISTINCT page) AS pages_count
+  COUNT(DISTINCT page) AS pages_count,
+  ARRAY_AGG(page LIMIT 2) AS page_examples
 FROM bounce_sequences
 GROUP BY bounce_hostname
 ORDER BY pages_count DESC
