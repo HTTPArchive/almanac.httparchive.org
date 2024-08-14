@@ -936,7 +936,7 @@ Compatibilidade, certo? Você não quer que as coisas quebrem? Não. Nas folhas 
 
 {{ figure_markup(
   image="p3-chromaticity-big.svg",
-  object="p3-chromaticity-big.svg",
+  iframe="p3-chromaticity-big.svg",
   caption="Cromaticidade uv especificada de cores p3 de exibição e seus fallbacks.",
   description="Este diagrama u'v' de 1976 mostra a cromaticidade das cores (achatadas em 2D, portanto a luminosidade não é mostrada). A forma curva externa representa o espectro de comprimentos de onda simples e puros; não há cores visíveis fora disso. A linha reta é roxa, uma mistura de vermelho e violeta. O triângulo menor e cinza é a gama sRGB, enquanto o triângulo maior e mais escuro é a gama display-p3. São mostradas as 23 cores de display-p3 exclusivas realmente em uso na web em 2020; para cada par de cores, o círculo maior é o fallback em sRGB, enquanto o círculo menor é a cor display-p3. Se estiver dentro da gama sRGB, esses círculos mostram a cor correta. Caso contrário, um círculo branco com uma borda vermelha indica cores fora da gama sRGB.",
   width=600,
