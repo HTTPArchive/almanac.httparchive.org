@@ -27,8 +27,8 @@ SELECT
   COUNT(DISTINCT url) AS count,
   SUM(COUNT(DISTINCT url)) OVER(PARTITION BY client) AS total,
   COUNT(DISTINCT url) / SUM(COUNT(DISTINCT url)) OVER(PARTITION BY client) AS proportion,
-  ROW_NUMBER() OVER (PARTITION BY client, foundry ORDER BY COUNT(DISTINCT url) DESC) AS foundry_rank,
-  ROW_NUMBER() OVER (PARTITION BY client, foundry, family ORDER BY COUNT(DISTINCT url) DESC) AS family_rank
+  ROW_NUMBER() OVER (PARTITION BY client ORDER BY COUNT(DISTINCT url) DESC) AS foundry_rank,
+  ROW_NUMBER() OVER (PARTITION BY client, foundry ORDER BY COUNT(DISTINCT url) DESC) AS family_rank
 FROM
   fonts
 GROUP BY
