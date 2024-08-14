@@ -27,7 +27,7 @@ families AS (
     client,
     family,
     COUNT(DISTINCT page) AS count,
-    ROW_NUMBER() OVER (PARTITION BY client, family ORDER BY COUNT(0) DESC) AS rank
+    ROW_NUMBER() OVER (PARTITION BY client, family ORDER BY COUNT(DISTINCT page) DESC) AS rank
   FROM
     `httparchive.all.parsed_css`,
     UNNEST(FAMILIES(css)) AS family
