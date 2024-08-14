@@ -12,7 +12,7 @@ FROM (
   SELECT
     client,
     NET.HOST(url) AS host,
-    response_headers.value AS coop_header
+    response_headers.value AS xfo_header
   FROM
     `httparchive.all.requests`,
     UNNEST (response_headers) AS response_headers
