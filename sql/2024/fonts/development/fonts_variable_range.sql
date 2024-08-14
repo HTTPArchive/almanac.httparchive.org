@@ -54,7 +54,7 @@ SELECT
   APPROX_QUANTILES(maximum, 1000)[OFFSET(percentile * 10)] AS maximum
 FROM
   fonts,
-  UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
+  UNNEST([10, 25, 50, 75, 90, 99]) AS percentile
 GROUP BY
   client,
   name,
