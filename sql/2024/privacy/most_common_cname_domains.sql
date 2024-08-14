@@ -28,8 +28,7 @@ WITH adguard_trackers AS (
   FROM `httparchive.all.pages`,
     UNNEST(convert_cname_json(JSON_QUERY(custom_metrics, '$.privacy.request_hostnames_with_cname'))) AS cnames
   WHERE
-    date = '2024-06-01' AND
-    rank <= 10000
+    date = '2024-06-01'
 )
 
 SELECT

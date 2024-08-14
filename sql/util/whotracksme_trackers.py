@@ -7,8 +7,8 @@ import sqlite3
 from datetime import datetime as DateTime
 
 import pandas
-import requests # pylint: disable=import-error
-from google.cloud import bigquery # pylint: disable=import-error
+import requests  # pylint: disable=import-error
+from google.cloud import bigquery  # pylint: disable=import-error
 
 # get current year
 year = DateTime.now().year

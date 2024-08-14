@@ -9,32 +9,21 @@ WITH referrer_policy_custom_metrics AS (
     `httparchive.all.pages`
   WHERE
     date = '2024-06-01' AND
-    is_root_page = TRUE AND
-    rank <= 10000
-),
-response_headers AS (
-  SELECT
-    client,
-    page,
-    LOWER(response_header.name) AS name,
-    LOWER(response_header.value) AS value
-  FROM
-    `httparchive.all.requests` TABLESAMPLE SYSTEM (5 PERCENT),
-    UNNEST(response_headers) AS response_header
-  WHERE
-    date = '2024-06-01' AND
-    is_root_page = TRUE AND
-    is_main_document = TRUE
+    is_root_page = TRUE
 ),
 referrer_policy_headers AS (
   SELECT
     client,
     page,
-    value AS entire_document_policy_header
+    LOWER(response_header.value) AS entire_document_policy_header
   FROM
-    response_headers
+    `httparchive.all.requests`,
+    UNNEST(response_headers) AS response_header
   WHERE
-    name = 'referrer-policy'
+    date = '2024-06-01' AND
+    is_root_page = TRUE AND
+    is_main_document = TRUE AND
+    response_header.name = 'referrer-policy'
 )
 
 SELECT
@@ -48,6 +37,7 @@ SELECT
 FROM (
   SELECT
     client,
+    COUNT(DISTINCT page) AS number_of_websites,
     COUNT(DISTINCT IF(
         entire_document_policy_meta IS NOT NULL,
         page, NULL)) AS number_of_websites_with_entire_document_policy_meta,
@@ -71,8 +61,7 @@ FROM (
       ARRAY_LENGTH(individual_requests) > 0 OR
       ARRAY_LENGTH(link_relations) > 0,
       page, NULL)
-    ) AS number_of_websites_with_any_referrer_policy,
-    COUNT(DISTINCT page) AS number_of_websites
+    ) AS number_of_websites_with_any_referrer_policy
   FROM
     referrer_policy_custom_metrics
   FULL OUTER JOIN
@@ -80,4 +69,5 @@ FROM (
   USING (client, page)
   GROUP BY client
 )
-ORDER BY client
+ORDER BY
+  client

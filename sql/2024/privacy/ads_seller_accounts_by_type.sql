@@ -5,8 +5,7 @@ WITH RECURSIVE pages AS (
   FROM `httparchive.all.pages`
   WHERE date = '2024-06-01' AND
     client = 'desktop' AND
-    is_root_page = TRUE AND
-    rank <= 10000
+    is_root_page = TRUE
 ), ads AS (
   SELECT
     CEIL(CAST(JSON_VALUE(custom_metrics, '$.ads.ads.account_types.direct.account_count') AS INT64) / 100) * 100 AS direct_account_count_bucket,

@@ -8,8 +8,7 @@ WITH RECURSIVE pages AS (
   FROM `httparchive.all.pages`
   WHERE date = '2024-06-01' AND
     client = 'desktop' AND
-    is_root_page = TRUE AND
-    rank <= 10000
+    is_root_page = TRUE
 ), ads AS (
   SELECT
     page,

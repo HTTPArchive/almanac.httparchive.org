@@ -6,8 +6,7 @@ WITH RECURSIVE pages AS (
   WHERE
     date = '2024-06-01' AND
     client = 'desktop' AND
-    is_root_page = TRUE AND
-    rank <= 10000
+    is_root_page = TRUE
 ), ads AS (
   SELECT
     page,
