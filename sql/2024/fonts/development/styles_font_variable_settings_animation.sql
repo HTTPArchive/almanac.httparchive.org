@@ -10,8 +10,8 @@ try {
   const $ = JSON.parse(json);
   let count = 0;
   walkRules($, rule => {
-    rule.keyframes.forEach(f => {
-      count += countDeclarations(f, { properties: 'font-variation-settings' });
+    rule.keyframes.forEach((frame) => {
+      count += countDeclarations(frame, { properties: 'font-variation-settings' });
     });
   }, {
     type: 'keyframes'
