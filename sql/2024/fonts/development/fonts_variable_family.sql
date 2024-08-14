@@ -8,7 +8,8 @@ SELECT
   FAMILY(payload) AS family,
   COUNT(DISTINCT url) AS count,
   SUM(COUNT(DISTINCT url)) OVER (PARTITION BY client) AS total,
-  COUNT(DISTINCT url) / SUM(COUNT(DISTINCT url)) OVER (PARTITION BY client) AS proportion
+  COUNT(DISTINCT url) / SUM(COUNT(DISTINCT url)) OVER (PARTITION BY client) AS proportion,
+  ROW_NUMBER() OVER (PARTITION BY client ORDER BY COUNT(DISTINCT url) DESC) AS rank
 FROM
   `httparchive.all.requests`
 WHERE
@@ -18,6 +19,8 @@ WHERE
 GROUP BY
   client,
   family
+QUALIFY
+  rank <= 100
 ORDER BY
   client,
   proportion DESC
