@@ -8,12 +8,12 @@ OPTIONS (library = ["gs://httparchive/lib/css-font-parser.js", "gs://httparchive
 AS '''
 try {
   const $ = JSON.parse(json);
-  let result = [];
+  const result = [];
   walkDeclarations($, (declaration) => {
     result.push(parseFontFamilyProperty(declaration.value)[0]);
   }, {
     properties: 'font-family',
-    rules: (rule) => rule.type === 'font-face'
+    rules: (rule) => rule.type.toLowerCase() === 'font-face'
   });
   return result;
 } catch (e) {
@@ -26,7 +26,8 @@ families AS (
   SELECT
     client,
     family,
-    COUNT(DISTINCT page) AS count
+    COUNT(DISTINCT page) AS count,
+    ROW_NUMBER() OVER (PARTITION BY client, family ORDER BY COUNT(0) DESC) AS rank
   FROM
     `httparchive.all.parsed_css`,
     UNNEST(FAMILIES(css)) AS family
@@ -35,6 +36,8 @@ families AS (
   GROUP BY
     client,
     family
+  QUALIFY
+    rank <= 100
 ),
 pages AS (
   SELECT
