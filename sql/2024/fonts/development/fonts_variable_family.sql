@@ -1,5 +1,5 @@
 -- Section: Development
--- Question: Which color families are used?
+-- Question: Which variable families are used?
 
 -- INCLUDE ../common.sql
 
