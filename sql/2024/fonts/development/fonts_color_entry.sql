@@ -7,7 +7,7 @@ SELECT
   client,
   SAFE_CAST(JSON_EXTRACT_SCALAR(payload, '$._font_details.color.numPaletteEntries') AS INT64) AS entries,
   COUNT(DISTINCT url) AS count,
-  SUM(COUNT(DISTINCT url)) OVER(PARTITION BY client) AS total,
+  SUM(COUNT(DISTINCT url)) OVER (PARTITION BY client) AS total,
   COUNT(DISTINCT url) / SUM(COUNT(DISTINCT url)) OVER (PARTITION BY client) AS proportion
 FROM
   `httparchive.all.requests`

@@ -27,8 +27,8 @@ SELECT
   service,
   family,
   COUNT(DISTINCT url) AS count,
-  SUM(COUNT(DISTINCT url)) OVER(PARTITION BY client) AS total,
-  COUNT(DISTINCT url) / SUM(COUNT(DISTINCT url)) OVER(PARTITION BY client) AS proportion,
+  SUM(COUNT(DISTINCT url)) OVER (PARTITION BY client) AS total,
+  COUNT(DISTINCT url) / SUM(COUNT(DISTINCT url)) OVER (PARTITION BY client) AS proportion,
   ROW_NUMBER() OVER (PARTITION BY client, service ORDER BY COUNT(DISTINCT url) DESC) AS rank
 FROM
   fonts
