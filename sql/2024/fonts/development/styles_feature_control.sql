@@ -9,7 +9,7 @@ AS '''
 try {
   function compute(tree) {
     const result = {};
-    walkDeclarations(tree, ({property, value}) => {
+    walkDeclarations(tree, ({ property, value }) => {
       const name = property.toLowerCase();
       if (
         name.startsWith('font-variant-') &&
