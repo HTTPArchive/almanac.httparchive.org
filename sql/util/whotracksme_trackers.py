@@ -7,8 +7,8 @@ import sqlite3
 from datetime import datetime as DateTime
 
 import pandas
-import requests
-from google.cloud import bigquery
+import requests # pylint: disable=import-error
+from google.cloud import bigquery # pylint: disable=import-error
 
 # get current year
 year = DateTime.now().year
@@ -53,6 +53,6 @@ job_config = bigquery.LoadJobConfig(
     write_disposition="WRITE_APPEND",
 )
 job = client.load_table_from_dataframe(
-    trackers_df, "max-ostapenko.Public.whotracksme", job_config=job_config
+    trackers_df, "httparchive.almanac.whotracksme", job_config=job_config
 )
 job.result()  # Waits for the job to complete.
