@@ -15,7 +15,7 @@ CREATE TEMPORARY FUNCTION FILE_FORMAT(extension STRING, mime STRING) AS (
 
 -- Extract the foundry name from a payload.
 CREATE TEMPORARY FUNCTION FOUNDRY(payload STRING) AS (
-  JSON_EXTRACT_SCALAR(payload, '$._font_details.OS2.achVendID')
+  NULLIF(TRIM(JSON_EXTRACT_SCALAR(payload, '$._font_details.OS2.achVendID')), '')
 );
 
 -- Infer scripts from codepoints. Used in SCRIPTS.
