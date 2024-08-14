@@ -5,22 +5,23 @@ CREATE TEMPORARY FUNCTION PROPERTIES(json STRING)
 RETURNS ARRAY<STRING>
 LANGUAGE js
 AS '''
+function compute(values, rule) {
+  if ('rules' in rule) {
+    return rule.rules.reduce(compute, values);
+  }
+  if (!('declarations' in rule)) {
+    return values;
+  }
+  return values.concat(
+    rule.declarations
+      .filter((declaration) => declaration.property.toLowerCase() === 'font-variation-settings')
+      .map((declaration) => declaration.value)
+  );
+}
+
 try {
-  const reduceValues = (values, rule) => {
-    if ('rules' in rule) {
-      return rule.rules.reduce(reduceValues, values);
-    }
-    if (!('declarations' in rule)) {
-      return values;
-    }
-    return values.concat(
-      rule.declarations
-        .filter((declaration) => declaration.property.toLowerCase() === 'font-variation-settings')
-        .map((declaration) => declaration.value)
-    );
-  };
   const $ = JSON.parse(json);
-  return $.stylesheet.rules.reduce(reduceValues, []);
+  return $.stylesheet.rules.reduce(compute, []);
 } catch (e) {
   return [];
 }

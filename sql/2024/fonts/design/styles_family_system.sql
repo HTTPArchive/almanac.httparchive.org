@@ -21,6 +21,7 @@ const system = [
   'ui-sans-serif',
   'ui-serif'
 ];
+
 try {
   const $ = JSON.parse(json);
   const result = [];
@@ -33,14 +34,14 @@ try {
     } else if (declaration.property.toLowerCase() === 'font') {
       const value = parseFontProperty(declaration.value);
       if (value) {
-        value['font-family'].forEach(font => result.push(font));
+        value['font-family'].forEach((font) => result.push(font));
       }
     }
   }, {
     properties: ['font-family', 'font'],
     rules: (rule) => rule.type.toLowerCase() !== 'font-face'
   });
-  return result.filter(font => system.includes(font));
+  return result.filter((font) => system.includes(font));
 } catch (e) {
   return [];
 }

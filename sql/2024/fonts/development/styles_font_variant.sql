@@ -6,19 +6,20 @@ RETURNS ARRAY<STRING>
 LANGUAGE js
 OPTIONS (library = "gs://httparchive/lib/css-utils.js")
 AS '''
+function compute(tree) {
+  const result = {};
+  walkDeclarations(tree, ({ property, value }) => {
+    const name = property.toLowerCase();
+    if (name === 'font-variant') {
+      incrementByKey(result, 'font-variant: ' + value)
+    } else if (name.startsWith('font-variant-')) {
+      incrementByKey(result, name + ': ' + value);
+    }
+  });
+  return sortObject(result);
+}
+
 try {
-  function compute(tree) {
-    const result = {};
-    walkDeclarations(tree, ({ property, value }) => {
-      const name = property.toLowerCase();
-      if (name === 'font-variant') {
-        incrementByKey(result, 'font-variant: ' + value)
-      } else if (name.startsWith('font-variant-')) {
-        incrementByKey(result, name + ': ' + value);
-      }
-    });
-    return sortObject(result);
-  }
   const properties = compute(JSON.parse(json));
   return Object.entries(properties).flatMap(([name, count]) => {
     return Array(count).fill(name);
