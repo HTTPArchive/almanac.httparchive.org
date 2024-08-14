@@ -17,6 +17,7 @@ function parseFontFeatureSettings(value) {
   }
   return result;
 }
+
 try {
   const $ = JSON.parse(json);
   const result = [];

@@ -6,26 +6,27 @@ RETURNS ARRAY<STRING>
 LANGUAGE js
 OPTIONS (library = "gs://httparchive/lib/css-utils.js")
 AS '''
+function compute(tree) {
+  const result = {};
+  walkDeclarations(tree, ({ property, value }) => {
+    const name = property.toLowerCase();
+    if (
+      name.startsWith('font-variant-') &&
+      value.toLowerCase() !== 'none' &&
+      value.toLowerCase() !== 'normal'
+    ) {
+      incrementByKey(result, 'font-variant');
+    } else if (
+      name === 'font-feature-settings' &&
+      value.toLowerCase() !== 'normal'
+    ) {
+      incrementByKey(result, 'font-feature-settings');
+    }
+  });
+  return sortObject(result);
+}
+
 try {
-  function compute(tree) {
-    const result = {};
-    walkDeclarations(tree, ({ property, value }) => {
-      const name = property.toLowerCase();
-      if (
-        name.startsWith('font-variant-') &&
-        property.value.toLowerCase() !== 'none' &&
-        property.value.toLowerCase() !== 'normal'
-      ) {
-        incrementByKey(result, 'font-variant');
-      } else if (
-        name === 'font-feature-settings' &&
-        property.value.toLowerCase() !== 'normal'
-      ) {
-        incrementByKey(result, 'font-feature-settings');
-      }
-    });
-    return sortObject(result);
-  }
   const properties = compute(JSON.parse(json));
   return Object.entries(properties).flatMap(([name, count]) => {
     return Array(count).fill(name);
