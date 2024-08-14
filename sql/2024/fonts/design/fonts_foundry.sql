@@ -43,3 +43,5 @@ JOIN
 ORDER BY
   client,
   proportion DESC
+LIMIT
+  100
