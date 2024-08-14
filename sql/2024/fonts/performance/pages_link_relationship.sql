@@ -37,15 +37,15 @@ const localHints = new Set([
 ]);
 
 try {
-  var $ = JSON.parse(json);
+  const $ = JSON.parse(json);
   return $.almanac['link-nodes'].nodes.reduce((results, link) => {
-    var hint = link.rel.toLowerCase();
+    const hint = link.rel.toLowerCase();
     if (globalHints.has(hint)) {
-      if (link.href && services.some((service) => service.search(link.href))) {
+      if (services.some((service) => service.test(link.href))) {
         results.push(hint);
       }
     } else if (localHints.has(hint)) {
-      if (link.as === 'font') {
+      if (link.as.toLowerCase() == 'font') {
         results.push(hint);
       }
     }
