@@ -13,7 +13,7 @@ try {
     result.push(declaration.property);
   }, {
     properties: ['size-adjust', 'ascent-override', 'descent-override', 'line-gap-override'],
-    rules: (rule) => rule.type === 'font-face'
+    rules: (rule) => rule.type.toLowerCase() === 'font-face'
   });
   return result;
 } catch (e) {

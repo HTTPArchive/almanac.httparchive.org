@@ -7,7 +7,7 @@ LANGUAGE js
 OPTIONS(library = "gs://httparchive/lib/css-utils.js")
 AS '''
 try {
-  var $ = JSON.parse(json);
+  const $ = JSON.parse(json);
   let count = 0;
   walkRules($, rule => {
     rule.keyframes.forEach(f => {

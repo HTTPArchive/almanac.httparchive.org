@@ -4,9 +4,6 @@
 CREATE TEMPORARY FUNCTION TABLES(json STRING)
 RETURNS ARRAY<STRUCT<name STRING, value INT64>>
 LANGUAGE js AS '''
-if (json === null) {
-  return [];
-}
 try {
   const $ = JSON.parse(json);
   return Object.entries($).map(([name, value]) => ({ name, value }));

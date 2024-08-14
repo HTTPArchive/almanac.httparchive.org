@@ -27,7 +27,7 @@ try {
     }
   }, {
     properties: 'font-feature-settings',
-    rules: (rule) => rule.type !== 'font-face'
+    rules: (rule) => rule.type.toLowerCase() !== 'font-face'
   });
   return result;
 } catch (e) {

@@ -25,7 +25,7 @@ LANGUAGE js
 OPTIONS (library = ["gs://httparchive/lib/text-utils.js"])
 AS r"""
 if (codepoints && codepoints.length) {
-  return detectWritingScript(codepoints.map(c => parseInt(c, 10)), 0.05);
+  return detectWritingScript(codepoints.map((character) => parseInt(character, 10)), 0.05);
 } else {
   return [];
 }

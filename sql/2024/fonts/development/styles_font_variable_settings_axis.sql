@@ -6,7 +6,7 @@ RETURNS ARRAY<STRING>
 LANGUAGE js
 AS '''
 try {
-  var reduceValues = (values, rule) => {
+  const reduceValues = (values, rule) => {
     if ('rules' in rule) {
       return rule.rules.reduce(reduceValues, values);
     }
@@ -15,11 +15,11 @@ try {
     }
     return values.concat(
       rule.declarations
-        .filter(d => d.property.toLowerCase() == 'font-variation-settings')
-        .map(d => d.value)
+        .filter((declaration) => declaration.property.toLowerCase() === 'font-variation-settings')
+        .map((declaration) => declaration.value)
     );
   };
-  var $ = JSON.parse(json);
+  const $ = JSON.parse(json);
   return $.stylesheet.rules.reduce(reduceValues, []);
 } catch (e) {
   return [];

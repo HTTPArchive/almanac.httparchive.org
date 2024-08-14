@@ -13,7 +13,7 @@ try {
     result.push(declaration.value);
   }, {
     properties: 'font-display',
-    rules: (rule) => rule.type === 'font-face'
+    rules: (rule) => rule.type.toLowerCase() === 'font-face'
   });
   return result;
 } catch (e) {

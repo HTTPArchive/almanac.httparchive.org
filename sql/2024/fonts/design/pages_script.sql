@@ -7,10 +7,10 @@ LANGUAGE js
 OPTIONS (library = ["gs://httparchive/lib/text-utils.js"])
 AS r"""
 try {
-  let codepoints = body
+  const codepoints = body
     .replace(/<\/[^>]+(>|$)/g, '')
     .split('')
-    .map(c => c.codePointAt(0));
+    .map((character) => character.codePointAt(0));
   if (codepoints.length) {
     return detectWritingScript(codepoints, 0.05);
   } else {
