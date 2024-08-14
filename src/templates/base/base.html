@@ -799,7 +799,7 @@
       {%- if chart_url != "" %}
       <img src="{{ image }}" alt="{{ caption|striptags }}" aria-labelledby="{{ anchor }}-caption" aria-describedby="{{ anchor }}-description" width="{{ width }}" height="{{ height }}" data-width="{{ data_width }}" data-height="{{ data_height }}" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="{{ chart_url|safe }}" loading="lazy">
       {%- elif not ebook and iframe != "" %}
-      <iframe class="fig-mobile fig-desktop fig-iframe" src="{{ image }}" width="{{ width }}" height="{{ height }}" aria-labelledby="{{ anchor }}-caption" aria-describedby="{{ anchor }}-description"></iframe>
+      <iframe class="fig-mobile fig-desktop fig-iframe" seamless frameborder="0" src="{{ image }}" width="{{ width }}" height="{{ height }}" aria-labelledby="{{ anchor }}-caption" aria-describedby="{{ anchor }}-description"></iframe>
       {% else %}
       <img src="{{ image }}" class="{{ classes }}" alt="{{ caption|striptags }}" aria-labelledby="{{ anchor }}-caption" aria-describedby="{{ anchor }}-description" width="{{ width }}" height="{{ height }}" loading="lazy">
       {%- endif %}
