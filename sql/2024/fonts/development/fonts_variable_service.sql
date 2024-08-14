@@ -7,7 +7,7 @@ SELECT
   client,
   SERVICE(url) AS service,
   COUNT(DISTINCT url) AS total,
-  COUNT(DISTINCT url) / SUM(COUNT(DISTINCT url)) OVER(PARTITION BY client) AS proportion
+  COUNT(DISTINCT url) / SUM(COUNT(DISTINCT url)) OVER (PARTITION BY client) AS proportion
 FROM
   `httparchive.all.requests`
 WHERE
