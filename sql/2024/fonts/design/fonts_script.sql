@@ -22,9 +22,9 @@ fonts AS (
 SELECT
   client,
   script,
-  COUNT(0) AS count,
-  SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
-  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS proportion
+  COUNT(DISTINCT url) AS count,
+  SUM(COUNT(DISTINCT url)) OVER (PARTITION BY client) AS total,
+  COUNT(DISTINCT url) / SUM(COUNT(DISTINCT url)) OVER (PARTITION BY client) AS proportion
 FROM
   fonts,
   UNNEST(SCRIPTS(payload)) AS script
