@@ -23,13 +23,16 @@ fonts AS (
 
 SELECT
   client,
-  COUNTIF(opentype) AS count,
-  SUM(COUNTIF(opentype)) OVER (PARTITION BY client) AS total,
-  COUNTIF(opentype) / SUM(COUNTIF(opentype)) OVER (PARTITION BY client) AS proportion
+  opentype,
+  COUNT(DISTINCT url) AS count,
+  SUM(COUNT(DISTINCT url)) OVER (PARTITION BY client) AS total,
+  COUNT(DISTINCT url) / SUM(COUNT(DISTINCT url)) OVER (PARTITION BY client) AS proportion
 FROM
   fonts
 GROUP BY
-  client
+  client,
+  opentype
 ORDER BY
   client,
+  opentype,
   proportion DESC
