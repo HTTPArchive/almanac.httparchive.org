@@ -18,7 +18,7 @@ CREATE TEMPORARY FUNCTION FOUNDRY(payload STRING) AS (
   NULLIF(
     TRIM(REGEXP_REPLACE(
       JSON_EXTRACT_SCALAR(payload, '$._font_details.OS2.achVendID'),
-      r'[^[[:graph:]]]+',
+      r'[[:cntrl:]]+',
       ''
     )),
     ''
