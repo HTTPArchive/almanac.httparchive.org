@@ -9,7 +9,7 @@ LANGUAGE js
 OPTIONS (library = ["gs://httparchive/lib/text-utils.js"])
 AS r"""
 if (codepoints && codepoints.length) {
-  const detected = detectWritingScript(codepoints.map(c => parseInt(c, 10)), 0.1);
+  const detected = detectWritingScript(codepoints.map((character) => parseInt(character, 10)), 0.1);
   const scripts = [
     'Emoji',
     'Emoji_Component',

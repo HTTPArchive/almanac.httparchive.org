@@ -25,12 +25,12 @@ try {
   const $ = JSON.parse(json);
   const result = [];
   walkDeclarations($, (declaration) => {
-    if (declaration.property === 'font-family') {
+    if (declaration.property.toLowerCase() === 'font-family') {
       const fonts = parseFontFamilyProperty(declaration.value);
       if (fonts) {
         fonts.forEach(font => result.push(font));
       }
-    } else if (declaration.property === 'font') {
+    } else if (declaration.property.toLowerCase() === 'font') {
       const value = parseFontProperty(declaration.value);
       if (value) {
         value['font-family'].forEach(font => result.push(font));
@@ -38,7 +38,7 @@ try {
     }
   }, {
     properties: ['font-family', 'font'],
-    rules: (rule) => rule.type !== 'font-face'
+    rules: (rule) => rule.type.toLowerCase() !== 'font-face'
   });
   return result.filter(font => system.includes(font));
 } catch (e) {

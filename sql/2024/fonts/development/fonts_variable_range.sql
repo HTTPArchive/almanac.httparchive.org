@@ -8,13 +8,13 @@ RETURNS ARRAY<STRUCT<name STRING, minimum FLOAT64, medium FLOAT64, maximum FLOAT
 LANGUAGE js
 AS '''
 try {
-  let axes = JSON.parse(json);
+  const axes = JSON.parse(json);
   return Object.keys(axes).map((name) => {
     return {
-      "name": name,
-      "minimum": axes[name].min,
-      "medium": axes[name].default,
-      "maximum": axes[name].max
+      name: name,
+      minimum: axes[name].min,
+      medium: axes[name].default,
+      maximum: axes[name].max
     };
   });
 } catch (e) {

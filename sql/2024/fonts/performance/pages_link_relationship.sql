@@ -45,7 +45,7 @@ try {
         results.push(hint);
       }
     } else if (localHints.has(hint)) {
-      if (link.as.toLowerCase() == 'font') {
+      if (link.as.toLowerCase() === 'font') {
         results.push(hint);
       }
     }
