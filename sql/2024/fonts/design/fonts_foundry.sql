@@ -8,7 +8,8 @@ foundries AS (
   SELECT
     client,
     FOUNDRY(payload) AS foundry,
-    COUNT(DISTINCT page) AS count
+    COUNT(DISTINCT page) AS count,
+    ROW_NUMBER() OVER (PARTITION BY client ORDER BY COUNT(DISTINCT page) DESC) AS rank
   FROM
     `httparchive.all.requests`
   WHERE
@@ -17,6 +18,8 @@ foundries AS (
   GROUP BY
     client,
     foundry
+  QUALIFY
+    rank <= 100
 ),
 pages AS (
   SELECT
@@ -43,5 +46,3 @@ JOIN
 ORDER BY
   client,
   proportion DESC
-LIMIT
-  100
