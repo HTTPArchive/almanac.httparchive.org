@@ -16,10 +16,10 @@ WITH technologies AS (
 SELECT
   client,
   technology,
-  ARRAY_AGG(DISTINCT category) AS categories,
-  ANY_VALUE(total_websites) AS total_websites,
+  COUNT(DISTINCT page) / ANY_VALUE(total_websites) AS percent_of_websites,
   COUNT(DISTINCT page) AS number_of_websites,
-  COUNT(DISTINCT page) / ANY_VALUE(total_websites) AS percent_of_websites
+  ARRAY_AGG(DISTINCT category) AS categories,
+  ANY_VALUE(total_websites) AS total_websites
 FROM technologies
 WHERE
   category IN (
@@ -27,7 +27,7 @@ WHERE
     'Geolocation',
     'Advertising', 'Retargeting', 'Personalisation', 'Segmentation',
     'Cookie compliance'
-    )
+  )
 GROUP BY
   client,
   technology
