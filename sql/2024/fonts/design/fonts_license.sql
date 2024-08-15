@@ -7,8 +7,8 @@ CREATE TEMPORARY FUNCTION LICENSE(value STRING) AS (
     WHEN REGEXP_CONTAINS(value, 'apache') THEN 'Apache'
     WHEN REGEXP_CONTAINS(value, 'fontawesome') THEN 'Font Awesome'
     WHEN REGEXP_CONTAINS(value, 'linotype|monotype|myfonts') THEN 'Monotype'
-    WHEN REGEXP_CONTAINS(value, '(?i)(ofl|openfontlicense)') THEN 'OFL'
-    ELSE NULLIF(TRIM(value), '')
+    WHEN REGEXP_CONTAINS(value, r'(?i)(ofl|open\s?font\s?license|sil\.org)') THEN 'OFL'
+    ELSE NULLIF(NULLIF(TRIM(value), ''), '-')
   END
 );
 
