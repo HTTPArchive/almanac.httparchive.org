@@ -1,0 +1,1 @@
+SELECT client, array_length(JSON_QUERY_ARRAY(custom_metrics, '$.privacy.fingerprinting.likelyFingerprintingScripts')) AS script_count, count(DISTINCT page) AS page_count FROM `httparchive.all.pages` WHERE date = '2024-06-01' GROUP BY script_count, client ORDER BY script_count ASC;
