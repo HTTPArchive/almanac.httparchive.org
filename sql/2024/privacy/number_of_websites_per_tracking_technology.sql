@@ -22,8 +22,12 @@ SELECT
   COUNT(DISTINCT page) / ANY_VALUE(total_websites) AS percent_of_websites
 FROM technologies
 WHERE
-  category IN ('Geolocation', 'Retargeting', 'Browser fingerprinting', 'Cookie compliance') AND
-  technology != ''
+  category IN (
+    'Analytics', 'Browser fingerprinting', 'Customer data platform',
+    'Geolocation',
+    'Advertising', 'Retargeting', 'Personalisation', 'Segmentation',
+    'Cookie compliance'
+    )
 GROUP BY
   client,
   technology
