@@ -1,5 +1,5 @@
 CREATE TEMP FUNCTION
-  CheckDomainInURL(url STRING, domain STRING) 
+CheckDomainInURL(url STRING, domain STRING)
 RETURNS INT64
 LANGUAGE js AS """
   return url.includes(domain) ? 1 : 0;
@@ -15,14 +15,14 @@ requests_data AS (
   SELECT url
   FROM `httparchive.all.requests`
   WHERE
-  date = '2024-06-01' AND
-  is_root_page = TRUE
+    date = '2024-06-01' AND
+    is_root_page = TRUE
 ),
 block_status AS (
   SELECT
     r.url,
     MAX(
-      CASE 
+      CASE
         WHEN CheckDomainInURL(r.url, e.string_field_0) = 1 THEN 1
         ELSE 0
       END
@@ -33,6 +33,6 @@ block_status AS (
   GROUP BY r.url
 )
 SELECT
-  COUNT(*) AS blocked_url_count
+  COUNT(0) AS blocked_url_count
 FROM block_status
 WHERE should_block = 1;
