@@ -5,7 +5,7 @@ SELECT
   APPROX_QUANTILES(CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64) / 1024, 1000)[OFFSET(percentile * 10)] AS total_kbytes,
   APPROX_QUANTILES(CAST(JSON_VALUE(summary, '$.bytesHtml') AS INT64) / 1024, 1000)[OFFSET(percentile * 10)] AS html_kbytes,
   APPROX_QUANTILES(CAST(JSON_VALUE(summary, '$.bytesJS') AS INT64) / 1024, 1000)[OFFSET(percentile * 10)] AS js_kbytes,
-  APPROX_QUANTILES(CAST(JSON_VALUE(summary, '$.bytesCSS') AS INT64) / 1024, 1000)[OFFSET(percentile * 10)] AS css_kbytes,
+  APPROX_QUANTILES(CAST(JSON_VALUE(summary, '$.bytesCss') AS INT64) / 1024, 1000)[OFFSET(percentile * 10)] AS css_kbytes,
   APPROX_QUANTILES(CAST(JSON_VALUE(summary, '$.bytesImg') AS INT64) / 1024, 1000)[OFFSET(percentile * 10)] AS img_kbytes,
   APPROX_QUANTILES(CAST(JSON_VALUE(summary, '$.bytesOther') AS INT64) / 1024, 1000)[OFFSET(percentile * 10)] AS other_kbytes,
   APPROX_QUANTILES(CAST(JSON_VALUE(summary, '$.bytesHtmlDoc') AS INT64) / 1024, 1000)[OFFSET(percentile * 10)] AS html_doc_kbytes,
