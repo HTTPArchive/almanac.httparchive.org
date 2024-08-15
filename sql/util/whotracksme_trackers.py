@@ -15,29 +15,29 @@ year = DateTime.now().year
 
 # Retrieve and extract trackers as identified by WhoTracks.me.
 # https://github.com/ghostery/whotracks.me/blob/master/blog/generating_adblocker_filters.md#loading-the-data
-trackerdb_sql = requests.get(
+tracker_db = requests.get(
     "https://raw.githubusercontent.com/whotracksme/whotracks.me/master/whotracksme/data/assets/trackerdb.sql",
-    timeout=10
+    timeout=10,
 ).text
 
-sqlite_query = f"""
-SELECT
-    '{year}-06-01' AS date,
-    categories.name as category,
-    tracker,
-    domain
-FROM
-    tracker_domains
-INNER JOIN
-    trackers
-ON trackers.id = tracker_domains.tracker
-INNER JOIN
-    categories
-ON categories.id = trackers.category_id;
+trackers_query = f"""
+    SELECT
+        '{year}-06-01' AS date,
+        categories.name as category,
+        tracker,
+        domain
+    FROM
+        tracker_domains
+    INNER JOIN
+        trackers
+    ON trackers.id = tracker_domains.tracker
+    INNER JOIN
+        categories
+    ON categories.id = trackers.category_id;
 """
 connection = sqlite3.connect(":memory:")
-connection.executescript(trackerdb_sql)
-trackers_df = pandas.read_sql(sqlite_query, connection)
+connection.executescript(tracker_db)
+trackers_df = pandas.read_sql(trackers_query, connection)
 connection.close()
 
 # Append to almanac.whotracksme BQ table

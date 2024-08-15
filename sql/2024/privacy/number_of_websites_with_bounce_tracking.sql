@@ -42,8 +42,8 @@ WITH redirect_requests AS (
   SELECT
     url,
     page,
-    bounce_redirect_location,
-    response_headers.value AS bounce_tracking_cookies
+    bounce_redirect_location
+  --response_headers.value AS bounce_tracking_cookies
   FROM bounce_redirect,
     UNNEST(response_headers) AS response_headers
   WHERE
@@ -54,8 +54,8 @@ WITH redirect_requests AS (
     nav.page,
     nav.url AS navigation_url,
     nav.navigation_redirect_location,
-    bounce.bounce_redirect_location,
-    ARRAY_AGG(bounce.bounce_tracking_cookies) AS bounce_tracking_cookies
+    bounce.bounce_redirect_location
+  --ARRAY_AGG(bounce.bounce_tracking_cookies) AS bounce_tracking_cookies
   FROM navigation_redirect AS nav
   LEFT JOIN bounce_redirect_with_cookies AS bounce
   ON
@@ -72,8 +72,8 @@ WITH redirect_requests AS (
 -- Count the number of websites with bounce tracking per bounce hostname
 SELECT
   NET.HOST(navigation_redirect_location) AS bounce_hostname,
-  COUNT(DISTINCT page) AS pages_count,
-  ARRAY_AGG(page LIMIT 2) AS page_examples
+  COUNT(DISTINCT page) AS pages_count
+--ARRAY_AGG(page LIMIT 2) AS page_examples
 FROM bounce_sequences
 GROUP BY bounce_hostname
 ORDER BY pages_count DESC
