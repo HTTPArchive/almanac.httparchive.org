@@ -1,7 +1,6 @@
 import requests
 import pandas as pd
 from google.cloud import bigquery
-import os
 
 def extract_domains_from_file(file_path):
     domains = []
