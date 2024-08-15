@@ -77,3 +77,4 @@ SELECT
 FROM bounce_sequences
 GROUP BY bounce_hostname
 ORDER BY pages_count DESC
+LIMIT 100

@@ -26,3 +26,4 @@ SELECT
 FROM ads
 GROUP BY variable
 ORDER BY publishers_count DESC
+LIMIT 100

@@ -50,3 +50,4 @@ HAVING request_domain_count > 100
 ORDER BY
   client,
   request_domain_count DESC
+LIMIT 500

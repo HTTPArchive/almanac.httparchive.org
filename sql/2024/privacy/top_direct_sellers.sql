@@ -106,4 +106,4 @@ FROM nodes
 WHERE supply = 'Web' AND relationship = 'direct'
 GROUP BY demand
 ORDER BY publishers_count DESC
-LIMIT 20
+LIMIT 100

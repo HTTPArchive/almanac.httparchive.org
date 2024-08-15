@@ -36,3 +36,4 @@ GROUP BY
 ORDER BY
   client,
   pages_pct DESC
+LIMIT 100

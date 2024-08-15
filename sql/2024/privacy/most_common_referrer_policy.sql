@@ -63,3 +63,4 @@ GROUP BY
 ORDER BY
   client,
   pages_with_values DESC
+LIMIT 100

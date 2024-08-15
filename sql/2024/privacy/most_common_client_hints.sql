@@ -48,5 +48,5 @@ GROUP BY
   client,
   value
 ORDER BY
-  client,
   number_of_websites DESC
+LIMIT 200
