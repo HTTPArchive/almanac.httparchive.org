@@ -9,7 +9,7 @@ SELECT
   COUNTIF(SAFE_CAST(JSON_VALUE(lighthouse, '$.audits.uses-text-compression.score') AS FLOAT64) < 0.9) / COUNT(0) AS pct_fail
 FROM
   `httparchive.all.pages`
-WHERE 
+WHERE
   date = '2024-06-01'
 GROUP BY
   client,
