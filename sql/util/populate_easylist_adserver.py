@@ -53,7 +53,7 @@ def upload_csv_to_bigquery(csv_file_path):
 
 # URL to the text file containing the regex patterns
 url = "https://raw.githubusercontent.com/easylist/easylist/master/" \
-      "easylist/easylist_adservers.txt"
+        "easylist/easylist_adservers.txt"
 file_path = "easylist_adservers.txt"
 # Path to the output CSV file
 csv_file_path = "easylist_adservers.csv"
