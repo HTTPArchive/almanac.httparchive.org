@@ -74,4 +74,5 @@ FROM
 JOIN
   pages USING (client)
 ORDER BY
+  client,
   proportion DESC
