@@ -1,11 +1,5 @@
--- ara-trigger-registrations-for-different-destinations-by-destinations.sql
--- Analysis of Attribution Reporting API (ARA) Triggers registered for different destinations by destination domains (i.e., advertiser domains):
--- 1. No. of third-parties that register trigger for the given destination
--- 2. Min. epsilon -- MIN(CASE WHEN epsilon IS NOT NULL THEN epsilon END) AS min_epsilon
--- 3. Avg. epsilon -- AVG(CASE WHEN epsilon IS NOT NULL THEN epsilon END) AS avg_epsilon
--- 4. Max. epsilon -- MAX(CASE WHEN epsilon IS NOT NULL THEN epsilon END) AS max_epsilon
--- [Higher the epsilon, the more the privacy protection] [Epsilon is always undefined, so last 3 columns are removed for this year atleast]
--- Output comprises 9.5K rows and 1 column.
+#standardSQL
+# Top 25 Attribution Reporting API Destinations (i.e., advertisers) registered by the most number of distinct third-parties (at site level)
 
 -- Extracting third-parties observed using ARA API on a publisher
 CREATE TEMP FUNCTION jsonObjectKeys(input STRING)
@@ -49,30 +43,36 @@ LANGUAGE js AS """
 
 WITH ara_features AS (
   SELECT
-    NET.REG_DOMAIN(page) AS publisher,
-    third_party_domain,
+    client,
     CASE
       WHEN ara LIKE 'destination=%' THEN NET.REG_DOMAIN(REPLACE(ara, 'destination=', ''))
       ELSE NULL
     END AS destination,
-    CASE
-      WHEN ara LIKE 'epsilon=%' THEN SAFE_CAST(REPLACE(ara, 'epsilon=', '') AS FLOAT64)
-      ELSE NULL
-    END AS epsilon
+    COUNT(NET.REG_DOMAIN(page)) AS total_publishers,
+    COUNT(DISTINCT NET.REG_DOMAIN(page)) AS distinct_publishers,
+    COUNT(third_party_domain) AS total_third_party_domains,
+    COUNT(DISTINCT third_party_domain) AS distinct_third_party_domains
   FROM `httparchive.all.pages`,
     UNNEST(jsonObjectKeys(JSON_QUERY(custom_metrics, '$.privacy-sandbox.privacySandBoxAPIUsage'))) AS third_party_domain,
     UNNEST(jsonObjectValues(JSON_QUERY(custom_metrics, '$.privacy-sandbox.privacySandBoxAPIUsage'), third_party_domain)) AS ara
   WHERE
     date = '2024-06-01' AND
-    client = 'desktop' AND
     is_root_page = TRUE AND
-    rank <= 1000000
+    ara LIKE 'destination%'
+  GROUP BY client, destination
+  HAVING destination IS NOT NULL
+),
+ranked_features AS (
+  SELECT
+    client,
+    destination,
+    total_publishers,
+    distinct_publishers,
+    total_third_party_domains,
+    distinct_third_party_domains,
+    ROW_NUMBER() OVER (PARTITION BY client ORDER BY distinct_third_party_domains DESC) AS third_party_domain_rank
+  FROM ara_features
 )
-SELECT
-  destination,
-  COUNT(DISTINCT third_party_domain) AS third_party_count
-FROM ara_features
-WHERE destination IS NOT NULL
-GROUP BY destination
-HAVING third_party_count > 0
-ORDER BY third_party_count DESC;
+SELECT * FROM ranked_features
+WHERE third_party_domain_rank <= 25
+ORDER BY client, distinct_third_party_domains DESC;

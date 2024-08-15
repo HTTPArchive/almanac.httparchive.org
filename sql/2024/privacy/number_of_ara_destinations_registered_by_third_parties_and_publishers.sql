@@ -1,11 +1,5 @@
--- ara-trigger-registrations-for-different-destinations-by-third-parties.sql
--- Analysis of Attribution Reporting API (ARA) Triggers registered for different destinations by Third Party (TP) domains:
--- 1. No. of destinations registered by a given TP
--- 2. Min. epsilon -- MIN(CASE WHEN epsilon IS NOT NULL THEN epsilon END) AS min_epsilon
--- 3. Avg. epsilon -- AVG(CASE WHEN epsilon IS NOT NULL THEN epsilon END) AS avg_epsilon
--- 4. Max. epsilon -- MAX(CASE WHEN epsilon IS NOT NULL THEN epsilon END) AS max_epsilon
--- [Higher the epsilon, the more the privacy protection] [Epsilon is always undefined, so last 3 columns are removed for this year]
--- Output comprises 17 rows and 1 column.
+#standardSQL
+# Number of Attribution Reporting API Destinations (i.e., advertisers) registered, registering third-parties, and registering publishers (at site level)
 
 -- Extracting third-parties observed using ARA API on a publisher
 CREATE TEMP FUNCTION jsonObjectKeys(input STRING)
@@ -17,7 +11,7 @@ LANGUAGE js AS """
   return Object.keys(JSON.parse(input));
 """;
 
--- Extracting ARA API source registration details being passed by a given third-party (passed as "key")
+-- Extracting ARA API source registration details being passed by a given third-party (passed AS "key")
 CREATE TEMP FUNCTION jsonObjectValues(input STRING, key STRING)
 RETURNS ARRAY<STRING>
 LANGUAGE js AS """
@@ -49,30 +43,51 @@ LANGUAGE js AS """
 
 WITH ara_features AS (
   SELECT
+    client,
+    CASE
+      WHEN rank <= 1000 THEN '1000'
+      WHEN rank <= 10000 THEN '10000'
+      WHEN rank <= 100000 THEN '100000'
+      WHEN rank <= 1000000 THEN '1000000'
+      WHEN rank <= 10000000 THEN '10000000'
+      ELSE 'Other'
+    END AS rank_group,
     NET.REG_DOMAIN(page) AS publisher,
-    third_party_domain,
     CASE
       WHEN ara LIKE 'destination=%' THEN NET.REG_DOMAIN(REPLACE(ara, 'destination=', ''))
       ELSE NULL
     END AS destination,
-    CASE
-      WHEN ara LIKE 'epsilon=%' THEN SAFE_CAST(REPLACE(ara, 'epsilon=', '') AS FLOAT64)
-      ELSE NULL
-    END AS epsilon
+    third_party_domain
   FROM `httparchive.all.pages`,
     UNNEST(jsonObjectKeys(JSON_QUERY(custom_metrics, '$.privacy-sandbox.privacySandBoxAPIUsage'))) AS third_party_domain,
     UNNEST(jsonObjectValues(JSON_QUERY(custom_metrics, '$.privacy-sandbox.privacySandBoxAPIUsage'), third_party_domain)) AS ara
   WHERE
     date = '2024-06-01' AND
-    client = 'desktop' AND
     is_root_page = TRUE AND
-    rank <= 1000000
+    ara LIKE 'destination%'
 )
 SELECT
-  third_party_domain,
-  COUNT(DISTINCT destination) AS destination_count
+  client,
+  rank_group,
+  COUNT(destination) AS total_destinations,
+  COUNT(DISTINCT destination) AS distinct_destinations,
+  ROUND(COUNT(DISTINCT destination) * 100 / COUNT(destination), 2) AS destination_pct,
+  COUNT(third_party_domain) AS total_third_party_domains,
+  COUNT(DISTINCT third_party_domain) AS distinct_third_party_domains,
+  ROUND(COUNT(DISTINCT third_party_domain) * 100 / COUNT(third_party_domain), 2) AS third_party_domain_pct,
+  COUNT(publisher) AS total_publishers,
+  COUNT(DISTINCT publisher) AS distinct_publishers,
+  ROUND(COUNT(DISTINCT publisher) * 100 / COUNT(publisher), 2) AS publisher_pct
 FROM ara_features
-WHERE third_party_domain IS NOT NULL
-GROUP BY third_party_domain
-HAVING destination_count > 0
-ORDER BY destination_count DESC;
+WHERE destination IS NOT NULL AND third_party_domain IS NOT NULL
+GROUP BY client, rank_group
+ORDER BY 
+  client, 
+  CASE rank_group
+    WHEN '1000' THEN 1
+    WHEN '10000' THEN 2
+    WHEN '100000' THEN 3
+    WHEN '1000000' THEN 4
+    WHEN '10000000' THEN 5
+    ELSE 6
+  END;
