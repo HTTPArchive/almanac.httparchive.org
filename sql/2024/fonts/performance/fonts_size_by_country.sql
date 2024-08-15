@@ -45,4 +45,4 @@ GROUP BY
   country
 ORDER BY
   client,
-  size
+  country
