@@ -1,3 +1,4 @@
+# pylint: disable=import-error
 import requests
 import pandas as pd
 from google.cloud import bigquery
