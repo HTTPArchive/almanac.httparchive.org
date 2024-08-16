@@ -35,11 +35,12 @@ SELECT
   COUNTIF(sourcemaps.isTypeScript = true) / COUNT(0) AS pct_use_typescript
 FROM (
   SELECT
-    _TABLE_SUFFIX AS client,
-    url AS page,
+     client,
+     page,
     getSourceMaps(payload) AS sourcemaps
   FROM
-    `httparchive.pages.2022_06_01_*`
+    `httparchive.all.pages`
+    where date='2024-06-01'
 )
 WHERE
   sourcemaps.isPublic = true

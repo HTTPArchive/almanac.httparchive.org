@@ -39,14 +39,16 @@ SELECT
   COUNT(DISTINCT IF(modulepreload_hint, page, NULL)) / COUNT(DISTINCT page) AS modulepreload_pct
 FROM (
   SELECT
-    _TABLE_SUFFIX AS client,
-    url AS page,
+     client,
+     page,
     hint.name = 'prefetch' AND hint.value = 'script' AS prefetch_hint,
     hint.name = 'preload' AND hint.value = 'script' AS preload_hint,
     hint.name = 'modulepreload' AND hint.value = 'script' AS modulepreload_hint
   FROM
-    `httparchive.pages.2022_06_01_*`
+    `httparchive.all.pages`
   LEFT JOIN
-    UNNEST(getResourceHintAttrs(payload)) AS hint)
+    UNNEST(getResourceHintAttrs(payload)) AS hint
+    where date ="2024-06-01"
+    )
 GROUP BY
   client

@@ -22,7 +22,7 @@ WITH base AS (
         _TABLE_SUFFIX AS client,
         lighthouse.url AS page
       FROM
-        `httparchive.lighthouse.2022_06_01_*` AS lighthouse,
+        `httparchive.lighthouse.2024_06_01_*` AS lighthouse,
         UNNEST(getUrls(JSON_EXTRACT(report, "$.audits['no-document-write']"))) AS data
     )
   GROUP BY
@@ -42,7 +42,7 @@ JOIN (
     _TABLE_SUFFIX AS client,
     COUNT(DISTINCT url) AS total
   FROM
-    `httparchive.lighthouse.2022_06_01_*`
+    `httparchive.lighthouse.2024_06_01_*`
   GROUP BY
     client
 )

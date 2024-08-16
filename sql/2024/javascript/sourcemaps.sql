@@ -1,7 +1,6 @@
 #standardSQL
 # Number of pages with publicly available sourcemaps
 
-# returns boolean whether the page has sourcemaps or not
 CREATE TEMPORARY FUNCTION getSourceMaps(payload STRING)
 RETURNS STRUCT<hasSourceMaps BOOL, isPublic BOOL>
 LANGUAGE js AS '''
@@ -33,11 +32,12 @@ SELECT
   COUNTIF(sourcemaps.isPublic = true) / COUNT(0) AS pct_has_public_sourcemaps
 FROM (
   SELECT
-    _TABLE_SUFFIX AS client,
-    url AS page,
+     client,
+     page,
     getSourceMaps(payload) AS sourcemaps
   FROM
-    `httparchive.pages.2022_06_01_*`
+    `httparchive.all.pages`
+    where date="2024-06-01"
 )
 GROUP BY
   client

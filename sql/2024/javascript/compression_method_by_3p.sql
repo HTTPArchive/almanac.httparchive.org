@@ -26,20 +26,20 @@ FROM (
     client,
     page,
     IF(NET.HOST(url) IN (
-      SELECT domain FROM `httparchive.almanac.third_parties` WHERE date = '2022-06-01' AND category != 'hosting'
+      SELECT domain FROM `httparchive.almanac.third_parties` WHERE date = '2024-06-01' AND category != 'hosting'
     ), 'third party', 'first party') AS host,
     getHeader(JSON_EXTRACT(payload, '$.response.headers'), 'Content-Encoding') AS compression
   FROM
-    `httparchive.almanac.requests`
+    `httparchive.all.requests`
   WHERE
-    date = '2022-06-01' AND
+    date = '2024-06-01' AND
     type = 'script')
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
     COUNT(0) AS total_pages
   FROM
-    `httparchive.summary_pages.2022_06_01_*`
+    `httparchive.summary_pages.2024_06_01_*`
   GROUP BY
     client)
 USING

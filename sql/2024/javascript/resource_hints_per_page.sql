@@ -1,6 +1,5 @@
 #standardSQL
 # Returns the number of resource hints per page which are preload, prefetch or modulepreload
-
 CREATE TEMPORARY FUNCTION getResourceHintAttrs(payload STRING)
 RETURNS ARRAY<STRUCT<name STRING, attribute STRING, value STRING>>
 LANGUAGE js AS '''
@@ -37,13 +36,15 @@ SELECT
   APPROX_QUANTILES(IF(script_hint = 0, NULL, script_hint), 1000 IGNORE NULLS)[OFFSET(percentile * 10)] AS hints_per_page_with_hints
 FROM (
   SELECT
-    _TABLE_SUFFIX AS client,
-    url AS page,
+     client,
+     page,
     COUNTIF(hint.name IN ('prefetch', 'preload', 'modulepreload') AND hint.value = 'script') AS script_hint
   FROM
-    `httparchive.pages.2022_06_01_*`
+    `httparchive.all.pages`
   LEFT JOIN
     UNNEST(getResourceHintAttrs(payload)) AS hint
+
+    where date="2024-06-01"
   GROUP BY
     client,
     page),

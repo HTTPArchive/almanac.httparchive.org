@@ -20,12 +20,13 @@ WITH resource_hints AS (
     host
   FROM (
     SELECT
-      _TABLE_SUFFIX AS client,
-      url AS page,
+       client,
+       page,
       NET.HOST(href) AS host
     FROM
-      `httparchive.pages.2022_06_01_*`,
+      `httparchive.all.pages`,
       UNNEST(getResourceHintsHrefs(payload, 'preconnect')) AS href
+      where date = "2024-06-01"
   )
   GROUP BY
     client,
@@ -46,13 +47,13 @@ requests AS (
     page,
     NET.HOST(url) AS host
   FROM
-    `httparchive.almanac.requests`
+    `httparchive.all.requests`
   INNER JOIN
     third_party_domains
   ON
     (third_party_domains.host = NET.HOST(url))
   WHERE
-    date = '2022-06-01' AND
+    date = '2024-06-01' AND
     type = 'script'
   GROUP BY
     client,

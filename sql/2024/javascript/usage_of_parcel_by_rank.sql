@@ -1,12 +1,13 @@
 #standardSQL
 # Percent of pages using parcel grouped by rank
+# usage_of_parcel_by_rank.sql
 
 WITH parcel_pages AS (
   SELECT
     _TABLE_SUFFIX AS client,
     url AS page
   FROM
-    `httparchive.technologies.2022_06_01_*`
+    `httparchive.technologies.2024_06_01_*`
   WHERE
     app = 'parcel'
 ),
@@ -17,7 +18,7 @@ rank_totals AS (
     rank_grouping,
     COUNT(0) AS total
   FROM
-    `httparchive.summary_pages.2022_06_01_*`,
+    `httparchive.summary_pages.2024_06_01_*`,
     UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
   WHERE
     rank <= rank_grouping
@@ -32,7 +33,7 @@ pages AS (
     rank_grouping,
     url AS page
   FROM
-    `httparchive.summary_pages.2022_06_01_*`,
+    `httparchive.summary_pages.2024_06_01_*`,
     UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
   WHERE
     rank <= rank_grouping

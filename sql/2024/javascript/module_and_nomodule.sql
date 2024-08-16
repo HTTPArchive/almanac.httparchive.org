@@ -1,3 +1,4 @@
+# module_and_nomodule.sql
 SELECT
   client,
   COUNT(DISTINCT IF(module, page, NULL)) AS module,
@@ -15,12 +16,12 @@ FROM (
     REGEXP_CONTAINS(script, r'(?i)\bmodule\b') AS module,
     REGEXP_CONTAINS(script, r'(?i)\bnomodule\b') AS nomodule
   FROM
-    `httparchive.almanac.summary_response_bodies`
+    `httparchive.all.requests`
   LEFT JOIN
-    UNNEST(REGEXP_EXTRACT_ALL(body, r'(?i)(<script[^>]*>)')) AS script
+    UNNEST(REGEXP_EXTRACT_ALL(response_body, r'(?i)(<script[^>]*>)')) AS script
   WHERE
-    date = '2022-06-01' AND
-    firstHtml
+    date = '2024-06-01' AND
+    cast(json_value(summary,"$.firstHtml") as bool)
   )
 GROUP BY
   client

@@ -32,7 +32,7 @@ WITH pages AS (
     rank_grouping,
     url AS page
   FROM
-    `httparchive.summary_pages.2022_06_01_*`,
+    `httparchive.summary_pages.2024_06_01_*`,
     UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
   WHERE
     rank <= rank_grouping
@@ -44,7 +44,7 @@ pages_sourcemaps AS (
     url AS page,
     getSourceMaps(payload) AS sourcemaps
   FROM
-    `httparchive.pages.2022_06_01_*`
+    `httparchive.pages.2024_06_01_*`
 )
 
 SELECT

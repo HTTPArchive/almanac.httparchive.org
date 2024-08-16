@@ -10,13 +10,14 @@ FROM (
     client,
     page,
     IF(NET.HOST(url) IN (
-      SELECT domain FROM `httparchive.almanac.third_parties` WHERE date = '2022-06-01' AND category != 'hosting'
+      SELECT domain FROM `httparchive.almanac.third_parties` WHERE date = '2024-06-01' AND category != 'hosting'
     ), 'third party', 'first party') AS host,
-    SUM(respSize) / 1024 AS kbytes
+    SUM(cast(json_value(payload,"$.response.bodySize") as int64)) / 1024 AS kbytes
   FROM
-    `httparchive.almanac.requests`
+    `httparchive.all.requests` TABLESAMPLE SYSTEM (0.01 PERCENT)
+
   WHERE
-    date = '2022-06-01' AND
+    date = '2024-06-01' AND
     type = 'script'
   GROUP BY
     client,

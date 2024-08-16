@@ -1,3 +1,4 @@
+# web_components_pct.sql
 SELECT
   client,
   custom_elements,
@@ -16,9 +17,10 @@ FROM (
     COUNTIF(ARRAY_LENGTH(JSON_EXTRACT_ARRAY(js, '$.web_component_specs.template')) > 0) AS templates
   FROM (
     SELECT
-      _TABLE_SUFFIX AS client,
+       client,
       JSON_EXTRACT_SCALAR(payload, '$._javascript') AS js
     FROM
-      `httparchive.pages.2022_06_01_*`)
+      `httparchive.all.pages`
+      where date='2024-06-01')
   GROUP BY
     client)

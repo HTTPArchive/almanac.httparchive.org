@@ -11,7 +11,7 @@ base AS (
     `chrome-ux-report.materialized.device_summary`
   WHERE
     device IN ('desktop', 'phone') AND
-    date IN ('2022-06-01')
+    date IN ('2024-06-01')
 )
 
 SELECT

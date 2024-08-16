@@ -21,12 +21,13 @@ try {
 
 WITH long_tasks_pages AS (
   SELECT
-    _TABLE_SUFFIX AS client,
-    url,
+    client,
+    page as url,
     _longTasks AS long_tasks
   FROM
-    `httparchive.pages.2022_06_01_*`,
+    `httparchive.all.pages`,
     UNNEST(getLongTasks(payload)) AS _longTasks
+    where date = "2024-06-01"
 ),
 
 long_tasks_by_page AS (

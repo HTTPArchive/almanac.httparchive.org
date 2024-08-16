@@ -26,16 +26,16 @@ FROM (
     page,
     getHeader(JSON_EXTRACT(payload, '$.response.headers'), 'SourceMap') IS NOT NULL AS has_sourcemap_header
   FROM
-    `httparchive.almanac.requests`
+    `httparchive.all.requests`
   WHERE
-    date = '2022-06-01' AND
+    date = '2024-06-01' AND
     type = 'script')
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
     COUNT(0) AS total_pages
   FROM
-    `httparchive.summary_pages.2022_06_01_*`
+    `httparchive.summary_pages.2024_06_01_*`
   GROUP BY
     client)
 USING

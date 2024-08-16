@@ -1,6 +1,6 @@
 #standardSQL
 # Returns the number of pages which have preload, prefetch or modulepreload for scripts
-
+# resource_hints.sql
 CREATE TEMPORARY FUNCTION getResourceHintAttrs(payload STRING)
 RETURNS ARRAY<STRUCT<name STRING, attribute STRING, value STRING>>
 LANGUAGE js AS '''
@@ -37,12 +37,14 @@ SELECT
   COUNT(DISTINCT IF(script_hint, page, NULL)) / COUNT(DISTINCT page) AS pct
 FROM (
   SELECT
-    _TABLE_SUFFIX AS client,
-    url AS page,
+     client,
+     page,
     hint.name IN ('prefetch', 'preload', 'modulepreload') AND hint.value = 'script' AS script_hint
   FROM
-    `httparchive.pages.2022_06_01_*`
+    `httparchive.all.pages`
   LEFT JOIN
-    UNNEST(getResourceHintAttrs(payload)) AS hint)
+    UNNEST(getResourceHintAttrs(payload)) AS hint 
+    where date = "2024-06-01"
+    )
 GROUP BY
   client

@@ -1,6 +1,5 @@
 #standardSQL
 # Percent of pages using render-blocking JavaScript.
-
 CREATE TEMPORARY FUNCTION getRenderBlockingScripts(payload STRING)
 RETURNS INT64
 LANGUAGE js AS '''
@@ -21,11 +20,12 @@ WITH render_blocking_scripts AS (
     number_of_render_blocking_scripts
   FROM (
     SELECT
-      _TABLE_SUFFIX AS client,
-      url,
+       client,
+      page as url,
       getRenderBlockingScripts(payload) AS number_of_render_blocking_scripts
     FROM
-      `httparchive.pages.2022_06_01_*`
+      `httparchive.all.pages`
+      where date="2024-06-01"
   )
   JOIN (
     SELECT
@@ -33,7 +33,7 @@ WITH render_blocking_scripts AS (
       url,
       rank
     FROM
-      `httparchive.summary_pages.2022_06_01_*`
+      `httparchive.summary_pages.2024_06_01_*`
   )
   USING
     (client, url)

@@ -16,13 +16,13 @@ FROM (
       total,
       ARRAY_TO_STRING(ARRAY_AGG(app ORDER BY app), ', ') AS apps
     FROM
-      `httparchive.technologies.2022_06_01_*`
+      `httparchive.technologies.2024_06_01_*`
     JOIN (
       SELECT
         _TABLE_SUFFIX,
         COUNT(0) AS total
       FROM
-        `httparchive.summary_pages.2022_06_01_*`
+        `httparchive.summary_pages.2024_06_01_*`
       GROUP BY
         _TABLE_SUFFIX)
     USING
