@@ -81,8 +81,8 @@ SELECT
 FROM ara_features
 WHERE destination IS NOT NULL AND third_party_domain IS NOT NULL
 GROUP BY client, rank_group
-ORDER BY 
-  client, 
+ORDER BY
+  client,
   CASE rank_group
     WHEN '1000' THEN 1
     WHEN '10000' THEN 2
