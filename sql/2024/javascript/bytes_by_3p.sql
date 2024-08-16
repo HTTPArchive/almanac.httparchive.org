@@ -14,7 +14,7 @@ FROM (
     ), 'third party', 'first party') AS host,
     SUM(cast(json_value(payload,"$.response.bodySize") as int64)) / 1024 AS kbytes
   FROM
-    `httparchive.all.requests` TABLESAMPLE SYSTEM (0.01 PERCENT)
+    `httparchive.all.requests`
 
   WHERE
     date = '2024-06-01' AND
