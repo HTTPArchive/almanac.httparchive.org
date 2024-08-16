@@ -167,15 +167,6 @@ LONG_DATE=$(date -u +%Y-%m-%d\ %H:%M:%S)
 git tag -a "${TAG_VERSION}" -m "Version ${TAG_VERSION} ${LONG_DATE}"
 echo "Tagged ${TAG_VERSION} with message 'Version ${TAG_VERSION} ${LONG_DATE}'"
 
-if [[ -f deployed.zip ]]; then
-  echo "Removing old deploy.zip"
-  rm -f deployed.zip
-fi
-
-echo "Zipping artifacts into deploy.zip"
-# Exclude chapter images as quite large and tracked in git anyway
-zip -q -r deployed . --exclude @.gcloudignore static/images/*/*/* static/pdfs/*
-
 echo "Deploying to GCP"
 echo "Y" | gcloud app deploy --project webalmanac --stop-previous-version
 
@@ -207,7 +198,6 @@ echo -e "${GREEN}Successfully deployed!${RESET_COLOR}"
 echo
 echo -e "${AMBER}Please update release on GitHub: https://github.com/HTTPArchive/almanac.httparchive.org/releases${RESET_COLOR}"
 echo -e "${AMBER}Using tag ${TAG_VERSION}@production${RESET_COLOR}"
-echo -e "${AMBER}Please upload deploy.zip as the release artifact${RESET_COLOR}"
 echo
 echo "Have a good one!"
 echo

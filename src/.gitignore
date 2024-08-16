@@ -8,5 +8,4 @@ templates/*/rss.xml
 templates/sitemap.xml
 static/html/
 static/js/web-vitals.js
-deployed.zip
 .coverage
