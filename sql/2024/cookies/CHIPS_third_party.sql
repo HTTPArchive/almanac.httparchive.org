@@ -1,4 +1,4 @@
--- Extract top 100 third party cookies for each client
+-- Extract top 100 third party cookies that are partitioned (CHIPS) for each client
 
 WITH top_cookies AS (
     SELECT
@@ -8,6 +8,7 @@ WITH top_cookies AS (
         COUNT(DISTINCT page) as distinct_page_count
     FROM `httparchive.almanac.2024-06-01_top10k_cookies`
     WHERE 
+        partitionKey IS NOT NULL AND
         is_first_party = FALSE
     GROUP BY client, name, domain
 ),

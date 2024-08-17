@@ -1,5 +1,6 @@
--- Extract top 100 first party cookies that have the same name for each client
--- They are probably from trackers that use 1st party cookies
+-- Extract top 100 first party cookies that are partitioned (CHIPS) for each client
+-- Note: it is a bit weird that 1st party cookies would also be partitioned, as
+-- CHIPS is meant for a 3rd party context...
 
 WITH top_cookies AS (
     SELECT
@@ -7,7 +8,8 @@ WITH top_cookies AS (
         name,
         COUNT(DISTINCT first_party_host) as distinct_first_party_count
     FROM `httparchive.almanac.2024-06-01_top10k_cookies`
-    WHERE 
+    WHERE
+        partitionKey IS NOT NULL AND
         is_first_party = TRUE
     GROUP BY client, name
 ),
