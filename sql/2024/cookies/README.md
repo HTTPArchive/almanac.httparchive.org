@@ -18,3 +18,10 @@
 [~google-doc]: https://docs.google.com/document/d/1o2AgdsDq_x3OvthZF7Kb50rUKMVLn7UANT9Stz7ku2I/edit#heading=h.ymg495uvm3yx
 [~google-sheets]: https://docs.google.com/spreadsheets/d/1wDGnUkO0rgcU5_V6hmUrhm1pq60VU2XbeMHgYJEEaSM/edit#gid=454016814
 [~chapter-markdown]: https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/src/content/en/2024/cookies.md
+
+## Note about SQL queries
+
+First execute [`0_create_cookies_table.sql`](0_create_cookies_table.sql) and export
+results into a new table that will be used in other SQL queries.
+These other SQL queries assume that the results were exported to
+`httparchive.almanac.2024-06-01_top10k_cookies`, rename as needed.
