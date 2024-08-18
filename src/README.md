@@ -1,6 +1,6 @@
 # Developing the Web Almanac
 
-The Web Almanac can be developed on macOS, Windows or Linux. It requires Node v16, Python v3.8 and pip to be installed. You can use Docker to avoid manually configuring the development environment.
+The Web Almanac can be developed on macOS, Windows or Linux. It requires Node v20, Python v3.11 and pip to be installed. You can use Docker to avoid manually configuring the development environment.
 It can be quickly deployed as a development container in GitHub Codespaces to develop in cloud:
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/HTTPArchive/almanac.httparchive.org?quickstart=1)
 
@@ -14,7 +14,7 @@ An `.editorconfig` file exists for those using [EditorConfig](https://editorconf
 
 Make sure you run the following commands from within the `src` directory by executing `cd src` first.
 
-Make sure Python (3.8 or above), pip and NodeJS (v20 or above) are installed on your machine.
+Make sure Python (3.11 or above), pip and NodeJS (v20 or above) are installed on your machine.
 
 1. If you don't have virtualenv, install it using pip.
 
@@ -31,7 +31,7 @@ py -m pip install --user virtualenv
 2. Create an isolated Python environment, and install dependencies:
 
 ```
-virtualenv --python python3.8 .venv
+virtualenv --python python3.11 .venv
 source .venv/bin/activate
 ```
 
@@ -420,7 +420,7 @@ root@[CID]:/app# exit
 6. To customize the image use `PYVER`, `NODEVER`, and `SKIPGC` build arguments to control which versions of Python and Node are used and whether Google Cloud SDK is installed.
 
 ```
-docker image build --build-arg PYVER=3.8 --build-arg NODEVER=14.x --build-arg SKIPGC=false -t webalmanac:custom .
+docker image build --build-arg PYVER=3.11 --build-arg NODEVER=20.x --build-arg SKIPGC=false -t webalmanac:custom .
 ```
 
 7. If you want to run the GitHub Super-Linter without `npm` being installed you need to call the command directly as given in `package.json`.
