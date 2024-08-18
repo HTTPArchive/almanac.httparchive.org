@@ -2,9 +2,9 @@ WITH referrer_policy_custom_metrics AS (
   SELECT
     client,
     page,
-    JSON_VALUE(custom_metrics, '$.privacy.referrerPolicy.entire_document_policy') AS entire_document_policy_meta,
-    JSON_QUERY_ARRAY(custom_metrics, '$.privacy.referrerPolicy.individual_requests') AS individual_requests,
-    JSON_QUERY_ARRAY(custom_metrics, '$.privacy.referrerPolicy.link_relations') AS link_relations
+    JSON_VALUE(custom_metrics, '$.privacy.referrerPolicy.entire_document_policy') AS meta_policy,
+    ARRAY_LENGTH(JSON_QUERY_ARRAY(custom_metrics, '$.privacy.referrerPolicy.individual_requests')) > 0 AS individual_requests,
+    CAST(JSON_VALUE(custom_metrics, '$.privacy.referrerPolicy.link_relations.A') AS INT64) > 0 AS link_relations
   FROM
     `httparchive.all.pages`
   WHERE
@@ -15,7 +15,7 @@ referrer_policy_headers AS (
   SELECT
     client,
     page,
-    LOWER(response_header.value) AS entire_document_policy_header
+    LOWER(response_header.value) AS header_policy
   FROM
     `httparchive.all.requests`,
     UNNEST(response_headers) AS response_header
@@ -45,27 +45,27 @@ FROM (
     client,
     COUNT(DISTINCT page) AS number_of_pages,
     COUNT(DISTINCT IF(
-        entire_document_policy_meta IS NOT NULL,
+        meta_policy IS NOT NULL,
         page, NULL)) AS number_of_pages_with_entire_document_policy_meta,
     COUNT(DISTINCT IF(
-        entire_document_policy_header IS NOT NULL,
+        header_policy IS NOT NULL,
         page, NULL)) AS number_of_pages_with_entire_document_policy_header,
     COUNT(DISTINCT IF(
-      entire_document_policy_meta IS NOT NULL OR
-      entire_document_policy_header IS NOT NULL,
+      meta_policy IS NOT NULL OR
+      header_policy IS NOT NULL,
       page, NULL)
     ) AS number_of_pages_with_entire_document_policy,
     COUNT(DISTINCT IF(
-        ARRAY_LENGTH(individual_requests) > 0,
+        individual_requests,
         page, NULL)) AS number_of_pages_with_any_individual_requests,
     COUNT(DISTINCT IF(
-        ARRAY_LENGTH(link_relations) > 0,
+        link_relations,
         page, NULL)) AS number_of_pages_with_any_link_relations,
     COUNT(DISTINCT IF(
-      entire_document_policy_meta IS NOT NULL OR
-      entire_document_policy_header IS NOT NULL OR
-      ARRAY_LENGTH(individual_requests) > 0 OR
-      ARRAY_LENGTH(link_relations) > 0,
+      meta_policy IS NOT NULL OR
+      header_policy IS NOT NULL OR
+      individual_requests OR
+      link_relations,
       page, NULL)
     ) AS number_of_pages_with_any_referrer_policy
   FROM

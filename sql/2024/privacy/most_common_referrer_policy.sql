@@ -1,4 +1,3 @@
-#standardSQL
 # Most common values for Referrer-Policy (at site level)
 
 WITH totals AS (
@@ -49,9 +48,8 @@ referrer_policy_headers AS (
 SELECT
   client,
   COALESCE(entire_document_policy_header, entire_document_policy_meta) AS entire_document_policy,
-  COUNT(DISTINCT page) AS pages_with_values,
-  ANY_VALUE(total_pages) AS total_pages,
-  COUNT(DISTINCT page) / ANY_VALUE(total_pages) AS pct_pages_with_values
+  COUNT(DISTINCT page) / ANY_VALUE(total_pages) AS pct_pages,
+  COUNT(DISTINCT page) AS number_of_pages
 FROM referrer_policy_custom_metrics
 FULL OUTER JOIN referrer_policy_headers
 USING (client, page)
@@ -61,6 +59,5 @@ GROUP BY
   client,
   entire_document_policy
 ORDER BY
-  client,
-  pages_with_values DESC
+  pct_pages DESC
 LIMIT 100

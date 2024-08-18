@@ -4,23 +4,23 @@ WITH RECURSIVE pages AS (
       WHEN 'https://www.chunkbase.com/' THEN 'cafemedia.com'
       ELSE NET.REG_DOMAIN(page)
     END AS page,
-    custom_metrics
+    CAST(JSON_VALUE(custom_metrics, '$.ads.ads.line_count') AS INT64) AS line_count
   FROM `httparchive.all.pages`
   WHERE date = '2024-06-01' AND
-    client = 'desktop' AND
     is_root_page = TRUE
 ), ads AS (
   SELECT
     page,
-    CEIL(CAST(JSON_VALUE(custom_metrics, '$.ads.ads.line_count') AS INT64) / 100) * 100 AS line_count_bucket
+    CEIL(line_count / 100) * 100 AS line_count_bucket,
+    COUNT(DISTINCT page) OVER () AS total_pages
   FROM pages
-  WHERE
-    CAST(JSON_VALUE(custom_metrics, '$.ads.ads.line_count') AS INT64) > 0
+  WHERE line_count > 0
 )
 
 SELECT
   line_count_bucket,
-  COUNT(DISTINCT page) AS page_count
+  COUNT(DISTINCT page) / ANY_VALUE(total_pages) AS pct_pages,
+  COUNT(DISTINCT page) AS number_of_pages
 FROM ads
 GROUP BY line_count_bucket
 ORDER BY line_count_bucket ASC

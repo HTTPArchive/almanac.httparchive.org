@@ -11,8 +11,8 @@ pre_aggregated AS (
     client,
     category,
     page,
-    COUNT(DISTINCT tracker) AS number_of_trackers,
-    COUNT(DISTINCT page) OVER (PARTITION BY client) AS total_websites
+    tracker,
+    COUNT(DISTINCT page) OVER (PARTITION BY client) AS total_pages
   FROM `httparchive.all.requests`
   JOIN whotracksme
   ON NET.REG_DOMAIN(url) = domain
@@ -23,18 +23,20 @@ pre_aggregated AS (
   GROUP BY
     client,
     category,
+    tracker,
     page
 )
 
 SELECT
   client,
   category,
-  ANY_VALUE(number_of_trackers) AS number_of_trackers_per_category,
-  COUNT(DISTINCT page) / ANY_VALUE(total_websites) AS pct_pages,
+  tracker,
+  COUNT(DISTINCT page) / ANY_VALUE(total_pages) AS pct_pages,
   COUNT(DISTINCT page) AS number_of_pages
 FROM pre_aggregated
 GROUP BY
   client,
-  category
+  category,
+  tracker
 ORDER BY
   pct_pages DESC
