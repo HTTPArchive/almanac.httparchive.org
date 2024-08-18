@@ -7,11 +7,11 @@
 
 DECLARE kw_per_GB NUMERIC DEFAULT 0.81;
 DECLARE global_grid_intensity NUMERIC DEFAULT 442;
-WITH ssg_data AS (
+WITH ecommerce_data AS (
   SELECT
     client,
     page,
-    tech.technology AS ssg,
+    tech.technology AS ecommerce,
     CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64) / 1024 AS total_kb,
     (CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64) / 1024 / 1024 / 1024) * kw_per_GB * global_grid_intensity AS total_emissions,
     CAST(JSON_VALUE(summary, '$.bytesHtml') AS INT64) / 1024 AS html_kb,
@@ -32,14 +32,14 @@ WITH ssg_data AS (
     EXISTS (
       SELECT 1
       FROM UNNEST(tech.categories) AS category
-      WHERE LOWER(category) = 'static site generator'
-      OR tech.technology IN ('Next.js', 'Nuxt.js')
+      WHERE category = 'Ecommerce'
+      AND tech.technology NOT IN('Cart Functionality', 'Google Analytics Enhanced eCommerce')
     )
 )
 
 SELECT
   client,
-  ssg,
+  ecommerce,
   COUNT(0) AS pages,
   APPROX_QUANTILES(total_kb, 1000)[OFFSET(500)] AS median_total_kb,
   APPROX_QUANTILES(total_emissions, 1000)[OFFSET(500)] AS median_total_emissions,
@@ -54,11 +54,11 @@ SELECT
   APPROX_QUANTILES(font_kb, 1000)[OFFSET(500)] AS median_font_kb,
   APPROX_QUANTILES(total_font_emissions, 1000)[OFFSET(500)] AS median_total_font_emissions
 FROM
-  ssg_data
+  ecommerce_data
 GROUP BY
   client,
-  ssg
+  ecommerce
 ORDER BY
   pages DESC,
-  ssg,
+  ecommerce,
   client;
