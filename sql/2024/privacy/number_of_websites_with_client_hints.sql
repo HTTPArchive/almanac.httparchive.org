@@ -30,8 +30,8 @@ WITH response_headers AS (
 
 SELECT
   client,
-  ANY_VALUE(total_websites) AS total_websites,
-  COUNT(DISTINCT page) / ANY_VALUE(total_websites) AS pct_websites
+  COUNT(DISTINCT page) / ANY_VALUE(total_websites) AS pct_pages,
+  COUNT(DISTINCT page) AS number_of_pages
 FROM response_headers
 FULL OUTER JOIN meta_tags
 USING (client, page)
@@ -39,4 +39,4 @@ WHERE
   header_name = 'accept-ch' OR
   tag_name = 'accept-ch'
 GROUP BY client
-ORDER BY client
+ORDER BY pct_pages DESC

@@ -1,9 +1,8 @@
 SELECT
   client,
   category,
-  COUNT(DISTINCT IF(category = tech_category, page, NULL)) / COUNT(DISTINCT page) AS pct_websites_in_category,
-  COUNT(DISTINCT IF(category = tech_category, page, NULL)) AS number_of_websites_in_category,
-  COUNT(DISTINCT page) AS total_pages
+  COUNT(DISTINCT IF(category = tech_category, page, NULL)) / COUNT(DISTINCT page) AS pct_pages,
+  COUNT(DISTINCT IF(category = tech_category, page, NULL)) AS number_of_pages
 FROM `httparchive.all.pages`,
   UNNEST(technologies) AS tech,
   UNNEST(categories) AS tech_category,
@@ -20,5 +19,4 @@ GROUP BY
   client,
   category
 ORDER BY
-  client,
-  number_of_websites_in_category DESC
+  pct_pages DESC

@@ -1,13 +1,12 @@
-#standardSQL
 # Pages that provide `/.well-known/gpc.json` for Global Privacy Control
 
 WITH pages AS (
   SELECT
     client,
-    COUNT(DISTINCT IF(JSON_VALUE(custom_metrics, '$.well-known."/.well-known/gpc.json".found') = 'true', page, NULL)) AS well_known_pages_count,
-    COUNT(DISTINCT IF(JSON_VALUE(custom_metrics, '$.well-known."/.well-known/gpc.json".found') = 'true', page, NULL)) / COUNT(DISTINCT page) AS well_known_pages_pct,
-    COUNT(DISTINCT IF(JSON_VALUE(custom_metrics, '$.privacy.navigator_globalPrivacyControl') = 'true', page, NULL)) AS js_api_pages_count,
-    COUNT(DISTINCT IF(JSON_VALUE(custom_metrics, '$.privacy.navigator_globalPrivacyControl') = 'true', page, NULL)) / COUNT(DISTINCT page) AS js_api_pages_pct
+    COUNT(DISTINCT IF(JSON_VALUE(custom_metrics, '$.well-known."/.well-known/gpc.json".found') = 'true', page, NULL)) / COUNT(DISTINCT page) AS pct_pages_well_known,
+    COUNT(DISTINCT IF(JSON_VALUE(custom_metrics, '$.well-known."/.well-known/gpc.json".found') = 'true', page, NULL)) AS number_of_pages_well_known,
+    COUNT(DISTINCT IF(JSON_VALUE(custom_metrics, '$.privacy.navigator_globalPrivacyControl') = 'true', page, NULL)) / COUNT(DISTINCT page) AS pct_pages_js_api,
+    COUNT(DISTINCT IF(JSON_VALUE(custom_metrics, '$.privacy.navigator_globalPrivacyControl') = 'true', page, NULL)) AS number_of_pages_js_api
   FROM `httparchive.all.pages`
   WHERE
     date = '2024-06-01' AND
@@ -18,8 +17,8 @@ WITH pages AS (
 headers AS (
   SELECT
     client,
-    COUNT(DISTINCT IF(headers.name = 'sec-gpc' AND headers.value = '1', page, NULL)) AS headers_pages_count,
-    COUNT(DISTINCT IF(headers.name = 'sec-gpc' AND headers.value = '1', page, NULL)) / COUNT(DISTINCT page) AS headers_pages_pct
+    COUNT(DISTINCT IF(headers.name = 'sec-gpc' AND headers.value = '1', page, NULL)) / COUNT(DISTINCT page) AS pct_pages_headers,
+    COUNT(DISTINCT IF(headers.name = 'sec-gpc' AND headers.value = '1', page, NULL)) AS number_of_pages_headers
   FROM `httparchive.all.requests`,
     UNNEST(response_headers) headers
   WHERE

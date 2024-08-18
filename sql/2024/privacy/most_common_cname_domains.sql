@@ -35,8 +35,8 @@ SELECT
   client,
   NET.REG_DOMAIN(cnames.cname) AS cname,
   NET.REG_DOMAIN(adguard_trackers.domain) AS adguard_cname,
-  COUNT(DISTINCT NET.REG_DOMAIN(cnames.origin)) AS request_domain_count,
-  COUNT(DISTINCT page) AS page_count
+  COUNT(DISTINCT NET.REG_DOMAIN(cnames.origin)) AS number_of_request_domains,
+  COUNT(DISTINCT page) AS number_of_pages
 --ARRAY_AGG(DISTINCT cnames.origin LIMIT 2) AS request_domain_examples,
 --ARRAY_AGG(DISTINCT page LIMIT 2) AS page_examples,
 FROM cnames
@@ -49,5 +49,5 @@ GROUP BY
 HAVING request_domain_count > 100
 ORDER BY
   client,
-  request_domain_count DESC
+  number_of_request_domains DESC
 LIMIT 500

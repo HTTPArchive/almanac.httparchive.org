@@ -27,41 +27,47 @@ referrer_policy_headers AS (
 )
 
 SELECT
-  *,
-  number_of_websites_with_entire_document_policy_meta / number_of_websites AS pct_websites_with_entire_document_policy_meta,
-  number_of_websites_with_entire_document_policy_header / number_of_websites AS pct_websites_with_entire_document_policy_header,
-  number_of_websites_with_entire_document_policy / number_of_websites AS pct_websites_with_entire_document_policy,
-  number_of_websites_with_any_individual_requests / number_of_websites AS pct_websites_with_any_individual_requests,
-  number_of_websites_with_any_link_relations / number_of_websites AS pct_websites_with_any_link_relations,
-  number_of_websites_with_any_referrer_policy / number_of_websites AS pct_websites_with_any_referrer_policy
+  client,
+  number_of_pages_with_entire_document_policy_meta / number_of_pages AS pct_pages_with_entire_document_policy_meta,
+  number_of_pages_with_entire_document_policy_meta,
+  number_of_pages_with_entire_document_policy_header / number_of_pages AS pct_pages_with_entire_document_policy_header,
+  number_of_pages_with_entire_document_policy_header,
+  number_of_pages_with_entire_document_policy / number_of_pages AS pct_pages_with_entire_document_policy,
+  number_of_pages_with_entire_document_policy,
+  number_of_pages_with_any_individual_requests / number_of_pages AS pct_pages_with_any_individual_requests,
+  number_of_pages_with_any_individual_requests,
+  number_of_pages_with_any_link_relations / number_of_pages AS pct_pages_with_any_link_relations,
+  number_of_pages_with_any_link_relations,
+  number_of_pages_with_any_referrer_policy / number_of_pages AS pct_pages_with_any_referrer_policy,
+  number_of_pages_with_any_referrer_policy
 FROM (
   SELECT
     client,
-    COUNT(DISTINCT page) AS number_of_websites,
+    COUNT(DISTINCT page) AS number_of_pages,
     COUNT(DISTINCT IF(
         entire_document_policy_meta IS NOT NULL,
-        page, NULL)) AS number_of_websites_with_entire_document_policy_meta,
+        page, NULL)) AS number_of_pages_with_entire_document_policy_meta,
     COUNT(DISTINCT IF(
         entire_document_policy_header IS NOT NULL,
-        page, NULL)) AS number_of_websites_with_entire_document_policy_header,
+        page, NULL)) AS number_of_pages_with_entire_document_policy_header,
     COUNT(DISTINCT IF(
       entire_document_policy_meta IS NOT NULL OR
       entire_document_policy_header IS NOT NULL,
       page, NULL)
-    ) AS number_of_websites_with_entire_document_policy,
+    ) AS number_of_pages_with_entire_document_policy,
     COUNT(DISTINCT IF(
         ARRAY_LENGTH(individual_requests) > 0,
-        page, NULL)) AS number_of_websites_with_any_individual_requests,
+        page, NULL)) AS number_of_pages_with_any_individual_requests,
     COUNT(DISTINCT IF(
         ARRAY_LENGTH(link_relations) > 0,
-        page, NULL)) AS number_of_websites_with_any_link_relations,
+        page, NULL)) AS number_of_pages_with_any_link_relations,
     COUNT(DISTINCT IF(
       entire_document_policy_meta IS NOT NULL OR
       entire_document_policy_header IS NOT NULL OR
       ARRAY_LENGTH(individual_requests) > 0 OR
       ARRAY_LENGTH(link_relations) > 0,
       page, NULL)
-    ) AS number_of_websites_with_any_referrer_policy
+    ) AS number_of_pages_with_any_referrer_policy
   FROM
     referrer_policy_custom_metrics
   FULL OUTER JOIN

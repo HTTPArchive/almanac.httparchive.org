@@ -72,9 +72,9 @@ WITH redirect_requests AS (
 -- Count the number of websites with bounce tracking per bounce hostname
 SELECT
   NET.HOST(navigation_redirect_location) AS bounce_hostname,
-  COUNT(DISTINCT page) AS pages_count
+  COUNT(DISTINCT page) AS number_of_pages
 --ARRAY_AGG(page LIMIT 2) AS page_examples
 FROM bounce_sequences
 GROUP BY bounce_hostname
-ORDER BY pages_count DESC
+ORDER BY number_of_pages DESC
 LIMIT 100

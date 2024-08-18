@@ -1,4 +1,3 @@
-#standardSQL
 # Counts of countries for publishers using IAB Transparency & Consent Framework
 # cf. https://github.com/InteractiveAdvertisingBureau/GDPR-Transparency-and-Consent-Framework/blob/master/TCFv2/IAB%20Tech%20Lab%20-%20CMP%20API%20v2.md#tcdata
 # "Country code of the country that determines the legislation of
@@ -28,16 +27,14 @@ WITH totals AS (
 SELECT
   client,
   publisherCC,
-  COUNT(0) AS number_of_websites,
-  total_websites,
-  COUNT(0) / total_websites AS pct_websites
+  COUNT(0) / ANY_VALUE(total_websites) AS pct_pages,
+  COUNT(0) AS number_of_pages
 FROM cmps
 JOIN totals
 USING (client)
 GROUP BY
   client,
-  total_websites,
   publisherCC
 ORDER BY
   client,
-  number_of_websites DESC
+  pct_pages DESC

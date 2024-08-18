@@ -16,10 +16,9 @@ WITH technologies AS (
 SELECT
   client,
   technology,
-  COUNT(DISTINCT page) / ANY_VALUE(total_websites) AS percent_of_websites,
-  COUNT(DISTINCT page) AS number_of_websites,
-  ARRAY_AGG(DISTINCT category) AS categories,
-  ANY_VALUE(total_websites) AS total_websites
+  COUNT(DISTINCT page) / ANY_VALUE(total_websites) AS pct_pages,
+  COUNT(DISTINCT page) AS number_of_pages,
+  ARRAY_AGG(DISTINCT category) AS categories
 FROM technologies
 WHERE
   category IN (
@@ -32,5 +31,4 @@ GROUP BY
   client,
   technology
 ORDER BY
-  client,
-  number_of_websites DESC
+  pct_pages DESC

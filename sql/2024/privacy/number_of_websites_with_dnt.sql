@@ -1,4 +1,3 @@
-#standardSQL
 # Pages that request DNT status
 
 WITH blink AS (
@@ -26,10 +25,10 @@ pages AS (
 
 SELECT
   COALESCE(blink.client, pages.client) AS client,
-  blink.num_urls AS number_of_websites_usage_per_blink,
-  blink.pct_urls AS percentage_of_websites_usage_per_blink,
-  pages.num_urls AS number_of_websites_usage_per_custom_metric,
-  pages.pct_urls AS percentage_of_websites_usage_per_custom_metric
+  blink.num_urls AS number_of_pages_usage_per_blink,
+  blink.pct_urls AS pct_of_websites_usage_per_blink,
+  pages.num_urls AS number_of_pages_usage_per_custom_metric,
+  pages.pct_urls AS pct_of_websites_usage_per_custom_metric
 FROM blink
 FULL OUTER JOIN pages
 ON blink.client = pages.client

@@ -25,17 +25,16 @@ pre_aggregated AS (
     category,
     page
 )
+
 SELECT
   client,
   category,
-  ANY_VALUE(total_websites) AS total_websites,
-  COUNT(DISTINCT page) AS number_of_websites_per_category,
-  ANY_VALUE(number_of_trackers) AS number_of_trackers,
-  COUNT(DISTINCT page) / ANY_VALUE(total_websites) AS pct_websites
+  ANY_VALUE(number_of_trackers) AS number_of_trackers_per_category,
+  COUNT(DISTINCT page) / ANY_VALUE(total_websites) AS pct_pages,
+  COUNT(DISTINCT page) AS number_of_pages
 FROM pre_aggregated
 GROUP BY
   client,
   category
 ORDER BY
-  client,
-  number_of_websites_per_category DESC
+  pct_pages DESC

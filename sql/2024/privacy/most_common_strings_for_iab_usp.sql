@@ -1,39 +1,27 @@
-#standardSQL
 # Counts of US Privacy String values for websites using IAB US Privacy Framework
 # cf. https://github.com/InteractiveAdvertisingBureau/USPrivacy/blob/master/CCPA/US%20Privacy%20String.md
 
-WITH totals AS (
-  SELECT
-    client,
-    COUNT(DISTINCT page) AS pages_total
-  FROM `httparchive.all.pages`
-  WHERE
-    date = '2024-06-01'
-  GROUP BY client
-), usp_data AS (
+WITH usp_data AS (
   SELECT
     client,
     page,
-    JSON_VALUE(custom_metrics, '$.privacy.iab_usp.privacy_string.uspString') AS uspString
+    JSON_VALUE(custom_metrics, '$.privacy.iab_usp.privacy_string.uspString') AS uspString,
+    COUNT(DISTINCT page) OVER (PARTITION BY client) AS pages_total
   FROM `httparchive.all.pages`
   WHERE
     date = '2024-06-01' AND
-    JSON_VALUE(custom_metrics, '$.privacy.iab_usp.privacy_string.uspString') IS NOT NULL
+    is_root_page = TRUE
 )
 
 SELECT
   client,
   uspString,
-  COUNT(DISTINCT page) AS pages_with_usp,
-  ANY_VALUE(pages_total) AS pages_total,
-  COUNT(DISTINCT page) / ANY_VALUE(pages_total) AS pages_pct
+  COUNT(DISTINCT page) / ANY_VALUE(pages_total) AS pct_pages,
+  COUNT(DISTINCT page) AS number_of_pages
 FROM usp_data
-JOIN totals
-USING (client)
 GROUP BY
   client,
   uspString
 ORDER BY
-  client,
-  pages_pct DESC
+  pct_pages DESC
 LIMIT 100
