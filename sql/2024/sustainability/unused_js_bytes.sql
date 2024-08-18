@@ -1,5 +1,5 @@
 #standardSQL
-# Distribution of unused CSS request bytes per page
+# Distribution of unused JS request bytes per page
 
 SELECT
   client,

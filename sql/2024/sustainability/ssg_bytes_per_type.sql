@@ -1,5 +1,5 @@
 #standardSQL
-# Median resource weights by CMS
+# Median resource weights by static site generator
 
 # Declare variables to calculate the carbon emissions of one byte
 # Source: https://sustainablewebdesign.org/calculating-digital-emissions/
