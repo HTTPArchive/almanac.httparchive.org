@@ -7,11 +7,11 @@
 
 DECLARE kw_per_GB NUMERIC DEFAULT 0.81;
 DECLARE global_grid_intensity NUMERIC DEFAULT 442;
-WITH cms_data AS (
+WITH ssg_data AS (
   SELECT
     client,
     page,
-    tech.technology AS cms,
+    tech.technology AS ssg,
     CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64) / 1024 AS total_kb,
     (CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64) / 1024 / 1024 / 1024) * kw_per_GB * global_grid_intensity AS total_emissions,
     CAST(JSON_VALUE(summary, '$.bytesHtml') AS INT64) / 1024 AS html_kb,
@@ -25,16 +25,20 @@ WITH cms_data AS (
     CAST(JSON_VALUE(summary, '$.bytesFont') AS INT64) / 1024 AS font_kb,
     (CAST(JSON_VALUE(summary, '$.bytesFont') AS INT64) / 1024 / 1024 / 1024) * kw_per_GB * global_grid_intensity AS total_font_emissions
   FROM
-    `httparchive.all.pages`,
-    UNNEST(technologies) AS tech
+    `httparchive.all.pages` TABLESAMPLE SYSTEM (0.0001 PERCENT),
   WHERE
     date = '2024-06-01' AND
-    'CMS' IN UNNEST(tech.categories)
+    AND EXISTS (
+      SELECT 1
+      FROM UNNEST(technologies) AS tech
+      WHERE LOWER(tech.category) = 'static site generator'
+      OR tech.technology IN ('Next.js', 'Nuxt.js')
+    )
 )
 
 SELECT
   client,
-  cms,
+  ssg,
   COUNT(0) AS pages,
   APPROX_QUANTILES(total_kb, 1000)[OFFSET(500)] AS median_total_kb,
   APPROX_QUANTILES(total_emissions, 1000)[OFFSET(500)] AS median_total_emissions,
@@ -49,11 +53,11 @@ SELECT
   APPROX_QUANTILES(font_kb, 1000)[OFFSET(500)] AS median_font_kb,
   APPROX_QUANTILES(total_font_emissions, 1000)[OFFSET(500)] AS median_total_font_emissions
 FROM
-  cms_data
+  ssg_data
 GROUP BY
   client,
-  cms
+  ssg
 ORDER BY
   pages DESC,
-  cms,
+  ssg,
   client;
