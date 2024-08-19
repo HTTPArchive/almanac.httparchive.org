@@ -1,5 +1,5 @@
 #standardSQL
-# 17_19: Percentage of HTTPS responses by protocol
+# distribution_of_http_versions_cdn_vs_origin.sql 17_19: Percentage of HTTPS responses by protocol
 SELECT
   a.client,
   IF(cdn = 'Origin', 'Origin', 'CDN') AS cdn,
@@ -22,7 +22,7 @@ FROM (
     UPPER(IFNULL(JSON_EXTRACT_SCALAR(payload, '$._protocol'), IFNULL(NULLIF(JSON_EXTRACT_SCALAR(payload, '$._tls_next_proto'), 'unknown'), NULLIF(concat('HTTP/', JSON_EXTRACT_SCALAR(payload, '$.response.httpVersion')), 'HTTP/')))) AS protocol,
 
     # WPT joins CDN detection but we bias to the DNS detection which is the first entry
-    IFNULL(NULLIF(REGEXP_EXTRACT(JSON_VALUE(summary,'$._cdn_provider'), r'^([^,]*).*'), ''), 'Origin') AS cdn
+    IFNULL(NULLIF(REGEXP_EXTRACT(JSON_EXTRACT_SCALAR(summary, '$._cdn_provider'), r'^([^,]*).*'), ''), 'Origin') AS cdn
   FROM
     `httparchive.all.requests` CROSS JOIN UNNEST(response_headers) AS r
   WHERE

@@ -1,5 +1,5 @@
 #standardSQL
-# distribution_of_compression_types_cdn_cs_origin.sql : What compression formats are being used (gzip, brotli, etc) for compressed resources served by CDNs
+# distribution_of_compression_types_cdn_vs_origin.sql : What compression formats are being used (gzip, brotli, etc) for compressed resources served by CDNs
 
 SELECT
   client,
@@ -11,7 +11,7 @@ SELECT
 FROM (
   SELECT
     client,
-    IF(IFNULL(NULLIF(REGEXP_EXTRACT(JSON_VALUE(SUMMARY,'$._cdn_provider'), r'^([^,]*).*'), ''), 'ORIGIN') = 'ORIGIN', 'ORIGIN', 'CDN') AS cdn,
+    IF(IFNULL(NULLIF(REGEXP_EXTRACT(JSON_EXTRACT_SCALAR(summary, '$._cdn_provider'), r'^([^,]*).*'), ''), 'ORIGIN') = 'ORIGIN', 'ORIGIN', 'CDN') AS cdn,
     CASE
       WHEN a.value = 'gzip' THEN 'Gzip'
       WHEN a.value = 'br' THEN 'Brotli'

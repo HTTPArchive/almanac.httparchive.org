@@ -19,11 +19,11 @@ FROM
           'code.jquery.com',
           'fonts.googleapis.com'), NET.HOST(url), 'OTHER') AS jsCDN,
       COUNT(DISTINCT page) AS pageUseCount,
-      SUM(COUNTIF(firstHtml)) OVER (PARTITION BY client) AS totalPagesCount
+      SUM(COUNTIF(is_main_document)) OVER (PARTITION BY client) AS totalPagesCount
     FROM
-      `httparchive.almanac.requests`
+      `httparchive.all.requests`
     WHERE
-      date = '2022-06-01'
+      date = '2024-06-01'
     GROUP BY
       client,
       jsCDN

@@ -11,7 +11,7 @@ SELECT
 FROM (
   SELECT
     client,
-    IFNULL(NULLIF(REGEXP_EXTRACT(JSON_VALUE(summary,'$._cdn_provider'), r'^([^,]*).*'), ''), 'ORIGIN') AS cdn, # sometimes _cdn provider detection includes multiple entries. we bias for the DNS detected entry which is the first entry
+    IFNULL(NULLIF(REGEXP_EXTRACT(JSON_EXTRACT_SCALAR(summary, '$._cdn_provider'), r'^([^,]*).*'), ''), 'ORIGIN') AS cdn, # sometimes _cdn provider detection includes multiple entries. we bias for the DNS detected entry which is the first entry
     CASE
       WHEN a.value = 'gzip' THEN 'Gzip'
       WHEN a.value = 'br' THEN 'Brotli'

@@ -1,5 +1,29 @@
 #standardSQL
 # top_cdns_by_rank.sql: Top CDNs used on the root HTML pages by CrUX rank
+
+WITH requests AS (
+  SELECT
+    client,
+    is_main_document as firstHtml,
+    page,
+    url,
+    rank,
+    -- _cdn_provider is now in requests.summary table
+    -- Also it returns empty string ('')rather than 'ORIGIN' when no CDN 
+    IF(IFNULL(NULLIF(REGEXP_EXTRACT(JSON_EXTRACT_SCALAR(resp.summary, '$._cdn_provider'), r'^([^,]*).*'), ''), '') = '', 'ORIGIN', 'CDN') AS cdn,
+    NET.HOST(url) = NET.HOST(page) AS sameHost,
+    NET.HOST(url) = NET.HOST(page) OR NET.REG_DOMAIN(url) = NET.REG_DOMAIN(page) AS sameDomain # if toplevel reg_domain will return NULL so we group this as sameDomain
+  FROM
+    `httparchive.all.requests` AS resp -- NEW table
+  INNER JOIN
+    `httparchive.all.pages` AS pages -- NEW pages table
+    -- `httparchive.sample_data.pages_1k` AS pages -- SAMPLE pages table (quicker)
+  USING (page, client, date)
+  WHERE
+    date = '2024-06-01' AND -- Uncomment this when running on full table
+    is_main_document -- new name for firstHtml
+)
+
 SELECT
   client,
   rank_grouping,
@@ -23,22 +47,8 @@ SELECT
   COUNT(0) AS hits,
   SUM(COUNT(0)) OVER (PARTITION BY client) AS totalHits,
   SAFE_DIVIDE(COUNT(0), SUM(COUNT(0)) OVER (PARTITION BY client)) AS hitsPct
-FROM (
-  SELECT
-    client,
-    rank,
-    page,
-    url,
-    firstHtml,
-    respBodySize,
-    IFNULL(NULLIF(REGEXP_EXTRACT(_cdn_provider, r'^([^,]*).*'), ''), 'ORIGIN') AS cdn, # sometimes _cdn provider detection includes multiple entries. we bias for the DNS detected entry which is the first entry
-    NET.HOST(url) = NET.HOST(page) AS sameHost,
-    NET.HOST(url) = NET.HOST(page) OR NET.REG_DOMAIN(url) = NET.REG_DOMAIN(page) AS sameDomain # if toplevel reg_domain will return NULL so we group this as sameDomain
-  FROM
-    `httparchive.almanac.requests`
-  WHERE
-    date = '2022-06-01'),
-  UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
+FROM requests,
+  UNNEST([1000, 10000, 100000, 1000000, 10000000, 100000000]) AS rank_grouping
 WHERE
   rank <= rank_grouping
 GROUP BY
