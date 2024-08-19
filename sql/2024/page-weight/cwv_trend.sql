@@ -12,8 +12,9 @@ WITH metrics_data AS (
   FROM
     `httparchive.all.pages`
   WHERE
-    date >= '2023-06-01' AND date <= '2024-06-01'
-    AND EXTRACT(DAY FROM date) = 1  -- Only include data from the first day of each month
+    date >= '2023-06-01' AND
+    date <= '2024-06-01' AND
+    EXTRACT(DAY FROM date) = 1 -- Only include data from the first day of each month
 )
 SELECT
   date,
@@ -70,10 +71,10 @@ SELECT
   ROUND(APPROX_QUANTILES(performance_score, 1000)[OFFSET(900)], 2) AS p90_performance_score,
 
   -- Good CWV percentages
-  ROUND(COUNTIF(lcp <= 2500) / COUNT(*) * 100, 2) AS good_lcp_percent,
-  ROUND(COUNTIF(cls <= 0.1) / COUNT(*) * 100, 2) AS good_cls_percent,
-  ROUND(COUNTIF(tbt <= 300) / COUNT(*) * 100, 2) AS good_tbt_percent,
-  ROUND(COUNTIF(fcp <= 1800) / COUNT(*) * 100, 2) AS good_fcp_percent
+  ROUND(COUNTIF(lcp <= 2500) / COUNT(0) * 100, 2) AS good_lcp_percent,
+  ROUND(COUNTIF(cls <= 0.1) / COUNT(0) * 100, 2) AS good_cls_percent,
+  ROUND(COUNTIF(tbt <= 300) / COUNT(0) * 100, 2) AS good_tbt_percent,
+  ROUND(COUNTIF(fcp <= 1800) / COUNT(0) * 100, 2) AS good_fcp_percent
 
 FROM
   metrics_data
