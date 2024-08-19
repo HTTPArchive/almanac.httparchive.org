@@ -1,13 +1,13 @@
 # Pages that participate in the privacy-relayed origin trials
 CREATE TEMP FUNCTION `DECODE_ORIGIN_TRIAL`(token STRING) RETURNS STRING DETERMINISTIC AS (
-  REGEXP_EXTRACT(SAFE_CONVERT_BYTES_TO_STRING(SAFE.FROM_BASE64(token)), r'({".*)')
+  SAFE_CONVERT_BYTES_TO_STRING(SUBSTR(SAFE.FROM_BASE64(token),70))
 );
 
 CREATE TEMP FUNCTION `PARSE_ORIGIN_TRIAL`(token STRING)
 RETURNS STRUCT<
   token STRING,
-  feature STRING,
   origin STRING,
+  feature STRING,
   expiry TIMESTAMP,
   is_subdomain BOOL,
   is_third_party BOOL
