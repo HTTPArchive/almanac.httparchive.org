@@ -27,6 +27,7 @@ SELECT
     ENDS_WITH(first_party_host, NET.REG_DOMAIN(JSON_VALUE(cookie, '$.domain'))) AS is_first_party,
     JSON_VALUE(cookie, '$.name') AS name,
     JSON_VALUE(cookie, '$.domain') AS domain,
+    JSON_VALUE(cookie, '$.path') AS path,
     JSON_VALUE(cookie, '$.expires') AS expires,
     JSON_VALUE(cookie, '$.size') AS size,
     JSON_VALUE(cookie, '$.httpOnly')  AS httpOnly,
