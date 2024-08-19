@@ -15,7 +15,7 @@ referrer_policy_custom_metrics AS (
   SELECT
     client,
     page,
-    JSON_VALUE(custom_metrics, '$.privacy.referrerPolicy.entire_document_policy') AS entire_document_policy_meta
+    JSON_VALUE(custom_metrics, '$.privacy.referrerPolicy.entire_document_policy') AS policy_meta
   FROM `httparchive.all.pages`
   WHERE
     date = '2024-06-01' AND
@@ -39,7 +39,7 @@ referrer_policy_headers AS (
   SELECT
     client,
     page,
-    value AS entire_document_policy_header
+    value AS policy_header
   FROM response_headers
   WHERE
     name = 'referrer-policy'
@@ -47,7 +47,7 @@ referrer_policy_headers AS (
 
 SELECT
   client,
-  COALESCE(entire_document_policy_header, entire_document_policy_meta) AS entire_document_policy,
+  COALESCE(policy_header, policy_meta) AS policy,
   COUNT(DISTINCT page) / ANY_VALUE(total_pages) AS pct_pages,
   COUNT(DISTINCT page) AS number_of_pages
 FROM referrer_policy_custom_metrics
@@ -57,7 +57,7 @@ JOIN totals
 USING (client)
 GROUP BY
   client,
-  entire_document_policy
+  policy
 ORDER BY
   pct_pages DESC
 LIMIT 100
