@@ -12,9 +12,9 @@ FROM
   UNNEST(technologies) AS t,
   UNNEST(t.categories) AS category
 WHERE
-  date = '2024-06-01'
-  AND category = 'Cryptominers'
-  AND is_root_page
+  date = '2024-06-01' AND
+  category = 'Cryptominers' AND
+  is_root_page
 GROUP BY
   client,
   t.technology

@@ -35,7 +35,7 @@ FROM (
   SELECT
     client,
     `chrome-ux-report.experimental`.GET_COUNTRY(country_code) AS country,
-    JSON_VALUE(r.summary, '$.respOtherHeaders') as respOtherHeaders,
+    JSON_VALUE(r.summary, '$.respOtherHeaders') AS respOtherHeaders,
     url
   FROM
     `httparchive.all.requests` AS r
@@ -44,10 +44,10 @@ FROM (
   ON
     url = CONCAT(c.origin, '/')
   WHERE
-    date = '2024-06-01'
-    AND yyyymm = 202406
-    AND is_root_page
-    AND is_main_document
+    date = '2024-06-01' AND
+    yyyymm = 202406 AND
+    is_root_page AND
+    is_main_document
 )
 GROUP BY
   client,

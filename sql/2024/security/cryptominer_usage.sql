@@ -6,19 +6,17 @@ SELECT
   DATE_TRUNC(date, MONTH) AS month,
   client,
   COUNT(DISTINCT
-  IF
-    (category = 'Cryptominers', page, NULL)) AS freq,
+    IF(category = 'Cryptominers', page, NULL)) AS freq,
   COUNT(DISTINCT page) AS total_pages,
   COUNT(DISTINCT
-  IF
-    (category = 'Cryptominers', page, NULL)) / COUNT(DISTINCT page) AS pct
+    IF(category = 'Cryptominers', page, NULL)) / COUNT(DISTINCT page) AS pct
 FROM
   `httparchive.all.pages`,
   UNNEST(technologies) AS t,
   UNNEST(t.categories) AS category
 WHERE
-  date >= '2024-05-01'
-  AND is_root_page
+  date >= '2024-05-01' AND
+  is_root_page
 GROUP BY
   date,
   client

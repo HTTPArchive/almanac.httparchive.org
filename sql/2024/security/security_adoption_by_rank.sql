@@ -6,7 +6,7 @@
 SELECT
   client,
   headername,
-  rank as rank_grouping,
+  rank AS rank_grouping,
   COUNT(DISTINCT NET.HOST(url)) AS total_hosts,
   COUNT(DISTINCT IF(rh.name = headername, NET.HOST(url), NULL)) AS num_with_header,
   COUNT(DISTINCT IF(rh.name = headername, NET.HOST(url), NULL)) / COUNT(DISTINCT NET.HOST(url)) AS pct_with_header
@@ -15,12 +15,12 @@ FROM
   UNNEST(['Content-Security-Policy', 'Content-Security-Policy-Report-Only', 'Cross-Origin-Embedder-Policy', 'Cross-Origin-Opener-Policy',
           'Cross-Origin-Resource-Policy', 'Expect-CT', 'Feature-Policy', 'Permissions-Policy', 'Referrer-Policy', 'Report-To',
           'Strict-Transport-Security', 'X-Content-Type-Options', 'X-Frame-Options', 'X-XSS-Protection', 'Clear-Site-Data', 'Timing-Allow-Origin', 'Origin-Agent-Cluster']) AS headername,
-  UNNEST (response_headers) as rh
+  UNNEST(response_headers) AS rh
 JOIN `httparchive.all.pages` USING (client, page, date, is_root_page)
 WHERE
-  date = '2024-06-01'
-  AND is_root_page
-  AND NET.HOST(url) = NET.HOST(page)
+  date = '2024-06-01' AND
+  is_root_page AND
+  NET.HOST(url) = NET.HOST(page)
 
 GROUP BY
   client,

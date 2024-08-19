@@ -15,11 +15,11 @@ FROM (
     response_headers.value AS tao_header
   FROM
     `httparchive.all.requests`,
-    UNNEST (response_headers) AS response_headers
+    UNNEST(response_headers) AS response_headers
   WHERE
-    date = '2024-06-01'
-    AND is_root_page
-    AND LOWER(response_headers.name) = 'timing-allow-origin' )
+    date = '2024-06-01' AND
+    is_root_page AND
+    LOWER(response_headers.name) = 'timing-allow-origin')
 GROUP BY
   client,
   tao_header

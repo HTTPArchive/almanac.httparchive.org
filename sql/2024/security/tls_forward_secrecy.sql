@@ -15,8 +15,8 @@ FROM (
   FROM
     `httparchive.all.requests`
   WHERE
-    date = '2024-06-01'
-    AND is_root_page
+    date = '2024-06-01' AND
+    is_root_page
   )
 WHERE
   protocol IS NOT NULL

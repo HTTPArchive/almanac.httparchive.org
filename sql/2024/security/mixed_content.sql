@@ -5,17 +5,17 @@
 # Prevalence of landing pages over HTTPS that include at least one reference over HTTP, and distribution over ranking
 SELECT
   client,
-  rank as rank_grouping,
+  rank AS rank_grouping,
   COUNT(DISTINCT(CASE WHEN REGEXP_CONTAINS(page, r'https://.*') THEN page END)) AS total_pages_over_https,
   COUNT(DISTINCT(CASE WHEN REGEXP_CONTAINS(page, r'https://.*') AND REGEXP_CONTAINS(url, r'http://.*') THEN page END)) AS count_pages_over_https_with_http_reference,
   COUNT(DISTINCT(CASE WHEN REGEXP_CONTAINS(page, r'https://.*') AND REGEXP_CONTAINS(url, r'http://.*') THEN page END)) / COUNT(DISTINCT(CASE WHEN REGEXP_CONTAINS(page, r'https://.*') THEN page END)) AS pct_pages_over_https_with_http_reference
 FROM
   `httparchive.all.requests`
 JOIN
-  `httparchive.all.pages`  USING (client, page, date, is_root_page)
+  `httparchive.all.pages` USING (client, page, date, is_root_page)
 WHERE
-  date = '2024-06-01'
-  AND is_root_page
+  date = '2024-06-01' AND
+  is_root_page
 GROUP BY
   client,
   rank

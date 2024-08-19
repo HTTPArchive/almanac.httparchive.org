@@ -1,4 +1,4 @@
- #standardSQL
+#standardSQL
 # Section: Drivers of security mechanism adoption - Website Category
 # Question: How is security feature adoption and category of a website related?
 # Note: Not all headers have their individual percentages
@@ -33,17 +33,17 @@ SELECT
 FROM (
   SELECT
     client,
-    SPLIT(parent_category, '/')[1] as category,
-    JSON_VALUE(r.summary, '$.respOtherHeaders') as respOtherHeaders,
+    SPLIT(parent_category, '/')[1] AS category,
+    JSON_VALUE(r.summary, '$.respOtherHeaders') AS respOtherHeaders,
     url
   FROM
     `httparchive.all.requests` AS r
   INNER JOIN
     UNNEST(`httparchive.fn.GET_HOST_CATEGORIES`(url))
   WHERE
-    date = '2024-06-01'
-    AND is_root_page
-    AND is_main_document
+    date = '2024-06-01' AND
+    is_root_page AND
+    is_main_document
 )
 GROUP BY
   client,

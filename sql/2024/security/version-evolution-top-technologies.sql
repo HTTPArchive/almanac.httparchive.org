@@ -27,13 +27,13 @@ FROM (
       client
     FROM
       `httparchive.all.pages`,
-      UNNEST (technologies) as t,
-      UNNEST (t.categories) as category,
-      UNNEST (t.info) as info
+      UNNEST(technologies) AS t,
+      UNNEST(t.categories) AS category,
+      UNNEST(t.info) AS info
     WHERE
-      DATE >= '2022-06-01'
-      AND is_root_page
-      AND REGEXP_CONTAINS(info, r'\d+\.\d+')
+      DATE >= '2022-06-01' AND
+      is_root_page AND
+      REGEXP_CONTAINS(info, r'\d+\.\d+')
   ) AS tech
   INNER JOIN (
     SELECT
@@ -42,12 +42,12 @@ FROM (
       COUNT(0) AS num
     FROM
       `httparchive.all.pages`,
-      UNNEST (technologies) as t,
-      UNNEST (t.categories) as category,
-      UNNEST (t.info) as info
+      UNNEST(technologies) AS t,
+      UNNEST(t.categories) AS category,
+      UNNEST(t.info) AS info
     WHERE
-      DATE >= '2022-06-01'
-      AND is_root_page
+      DATE >= '2022-06-01' AND
+      is_root_page
     GROUP BY
       category_lower,
       technology_lower

@@ -11,8 +11,8 @@ SELECT
 FROM
   `httparchive.blink_features.usage`
 WHERE
-  (feature LIKE 'Crypto%'
-    OR feature LIKE 'Subtle%')
-  AND yyyymmdd = '20240601'
+  (feature LIKE 'Crypto%' OR
+    feature LIKE 'Subtle%') AND
+  yyyymmdd = '20240601'
 ORDER BY
   pct_urls DESC

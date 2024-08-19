@@ -40,11 +40,11 @@ WITH age_values AS (
     getCookieAgeValues(response_headers.value, CAST(JSON_QUERY(summary, '$.startedDateTime') AS NUMERIC)) AS values
   FROM
     `httparchive.all.requests`,
-    UNNEST (response_headers) as response_headers
+    UNNEST(response_headers) AS response_headers
   WHERE
-    date = '2024-06-01'
-    AND is_root_page
-    AND LOWER(response_headers.name) = 'set-cookie'
+    date = '2024-06-01' AND
+    is_root_page AND
+    LOWER(response_headers.name) = 'set-cookie'
 ),
 
 max_age_values AS (

@@ -15,12 +15,12 @@ FROM (
     response_headers.value AS csd_header
   FROM
     `httparchive.all.requests`,
-    UNNEST (response_headers) AS response_headers
+    UNNEST(response_headers) AS response_headers
   WHERE
-    date = '2024-06-01'
-    AND is_root_page
+    date = '2024-06-01' AND
+    is_root_page AND
     # AND is_main_document # (Uncomment to only run on the main document response; majority of CSD headers are set on them)
-    AND LOWER(response_headers.name) = 'clear-site-data' )
+    LOWER(response_headers.name) = 'clear-site-data')
 GROUP BY
   client,
   csd_header

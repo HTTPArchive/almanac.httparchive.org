@@ -13,7 +13,7 @@ SELECT
 FROM
   `httparchive.blink_features.usage`
 WHERE
-  yyyymmdd = '20240601'
-  AND feature IN UNNEST(['SetHTMLUnsafe', 'ParseHTMLUnsafe']) 
+  yyyymmdd = '20240601' AND
+  feature IN UNNEST(['SetHTMLUnsafe', 'ParseHTMLUnsafe'])
 ORDER BY
   pct_urls DESC

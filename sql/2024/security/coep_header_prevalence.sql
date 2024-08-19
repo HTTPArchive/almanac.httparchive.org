@@ -15,12 +15,12 @@ FROM (
     response_headers.value AS coep_header
   FROM
     `httparchive.all.requests`,
-    UNNEST (response_headers) AS response_headers
+    UNNEST(response_headers) AS response_headers
   WHERE
-    date = '2024-06-01'
-    AND is_root_page
-    AND is_main_document
-    AND LOWER(response_headers.name) = 'cross-origin-embedder-policy' )
+    date = '2024-06-01' AND
+    is_root_page AND
+    is_main_document AND
+    LOWER(response_headers.name) = 'cross-origin-embedder-policy')
 GROUP BY
   client,
   coep_header

@@ -9,10 +9,10 @@ WITH totals AS (
     `httparchive.all.pages`,
     UNNEST(JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._security'), '$.sri-integrity')) AS sri
   WHERE
-    date = '2024-06-01'
-    AND is_root_page
-    AND sri IS NOT NULL
-    AND JSON_EXTRACT_SCALAR(sri, '$.tagname') = 'script'
+    date = '2024-06-01' AND
+    is_root_page AND
+    sri IS NOT NULL AND
+    JSON_EXTRACT_SCALAR(sri, '$.tagname') = 'script'
   GROUP BY
     client
 )
@@ -29,13 +29,13 @@ SELECT
 FROM (
   SELECT
     client,
-    page as url,
+    page AS url,
     JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._security'), '$.sri-integrity') AS sris
   FROM
     `httparchive.all.pages`
   WHERE
-    date = '2024-06-01'
-    AND is_root_page  
+    date = '2024-06-01' AND
+    is_root_page
   ),
   UNNEST(sris) AS sri
 JOIN totals USING (client)

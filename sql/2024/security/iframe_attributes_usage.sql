@@ -24,13 +24,13 @@ FROM (
   FROM (
     SELECT
       client,
-      page as url,
+      page AS url,
       JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._security'), '$.iframe-allow-sandbox') AS iframeAttrs
     FROM
       `httparchive.all.pages`
     WHERE
-      date = '2024-06-01'
-      AND is_root_page
+      date = '2024-06-01' AND
+      is_root_page
   )
   LEFT JOIN UNNEST(iframeAttrs) AS iframeAttr
   )

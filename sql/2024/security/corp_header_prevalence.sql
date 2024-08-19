@@ -15,11 +15,11 @@ FROM (
     response_headers.value AS corp_header
   FROM
     `httparchive.all.requests`,
-    UNNEST (response_headers) AS response_headers
+    UNNEST(response_headers) AS response_headers
   WHERE
-    date = '2024-06-01'
-    AND is_root_page
-    AND LOWER(response_headers.name) = 'cross-origin-resource-policy' )
+    date = '2024-06-01' AND
+    is_root_page AND
+    LOWER(response_headers.name) = 'cross-origin-resource-policy')
 GROUP BY
   client,
   corp_header

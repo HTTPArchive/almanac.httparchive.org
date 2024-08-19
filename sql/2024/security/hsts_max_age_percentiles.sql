@@ -11,11 +11,11 @@ FROM (
     SAFE_CAST(REGEXP_EXTRACT(response_headers.value, r'(?i)max-age=\s*(-?\d+)') AS NUMERIC) AS max_age
   FROM
     `httparchive.all.requests`,
-    UNNEST (response_headers) as response_headers
+    UNNEST(response_headers) AS response_headers
   WHERE
-    date = '2024-06-01'
-    AND is_root_page
-    AND LOWER(response_headers.name) = 'strict-transport-security'
+    date = '2024-06-01' AND
+    is_root_page AND
+    LOWER(response_headers.name) = 'strict-transport-security'
 ),
 UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 GROUP BY

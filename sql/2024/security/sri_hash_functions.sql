@@ -9,8 +9,8 @@ WITH totals AS (
     `httparchive.all.pages`,
     UNNEST(JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._security'), '$.sri-integrity')) AS sri
   WHERE
-    date = '2024-06-01'
-    AND is_root_page
+    date = '2024-06-01' AND
+    is_root_page
   GROUP BY
     client
 )
@@ -28,8 +28,8 @@ FROM (
   FROM
     `httparchive.all.pages`
   WHERE
-    date = '2024-06-01'
-    AND is_root_page
+    date = '2024-06-01' AND
+    is_root_page
   ),
   UNNEST(sris) AS sri,
   UNNEST(REGEXP_EXTRACT_ALL(JSON_EXTRACT_SCALAR(sri, '$.integrity'), r'(sha[^-]+)-')) AS hash_function

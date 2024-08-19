@@ -7,7 +7,7 @@
   # Note: The custom metric only has an entry for a directive if it is not empty, thus we can assume that a non-null value cannot be an empty list
   # Note: Each directive (except signed) is saved as a list, however currently we do not really check the content
 WITH
-  security_txt_data AS (
+security_txt_data AS (
   SELECT
     client,
     page,
@@ -37,17 +37,17 @@ WITH
     SELECT
       client,
       page,
-      JSON_QUERY(custom_metrics, '$.well-known."/.well-known/security.txt"') AS sec_txt,
+      JSON_QUERY(custom_metrics, '$.well-known."/.well-known/security.txt"') AS sec_txt
     FROM
       `httparchive.all.pages`
     WHERE
-      date = '2024-06-01'
-      AND is_root_page
-      # AND rank <= 1000
-    ) 
+      date = '2024-06-01' AND
+      is_root_page
+    # AND rank <= 1000
+    )
 ),
 totals AS (
-  SELECT 
+  SELECT
     client,
     # High Level stats
     COUNT(DISTINCT page) AS total_pages,
@@ -78,13 +78,13 @@ SELECT
   count_redirected_all,
   pct_redirected_all,
   count_redirected_found,
-  
+
   # High level stats on real security.txt files (i.e., found + content-type startswith text/plain)
   # Real security.txt files
   COUNT(0) AS has_security_txt,
   COUNT(0) / total_pages AS pct_security_txt,
   # Redirected and real security.txt file
-  COUNTIF(redirected) as count_redirected_security_txt,
+  COUNTIF(redirected) AS count_redirected_security_txt,
   # Redirected valid == response redirected, final status code is 200 and file is a "valid" security.txt file
   COUNTIF(redirected AND valid) AS count_redirected_valid,
   # Valid == all_required_exist && !only_one_requirement_broken
@@ -96,7 +96,7 @@ SELECT
   # Only one requriement broken == expires & preferred_languages are not allowed to occur multiple times
   COUNTIF(only_one_requirement_broken) AS count_only_one_requirement_broken,
   COUNTIF(only_one_requirement_broken) / COUNT(0) AS pct_only_one_requirement_broken,
-  
+
   # Individual values
   COUNTIF(signed) AS count_signed,
   COUNTIF(signed) / COUNT(0) AS pct_signed,
@@ -120,30 +120,30 @@ SELECT
   COUNTIF(csaf IS NOT NULL) / COUNT(0) AS pct_csaf,
   COUNTIF(other IS NOT NULL) AS other,
   COUNTIF(other IS NOT NULL) / COUNT(0) AS pct_other,
-  
+
   # Other values relative to only valid files (as other can be garbage if the file is not actually a security.txt file)
-  COUNTIF(other IS NOT NULL
-    AND valid ) AS other_valid,
-  COUNTIF(other IS NOT NULL
-    AND valid ) / COUNTIF(valid ) AS pct_other_valid,
-  
+  COUNTIF(other IS NOT NULL AND
+    valid) AS other_valid,
+  COUNTIF(other IS NOT NULL AND
+    valid) / COUNTIF(valid) AS pct_other_valid,
+
   # Average counts of directives (only non-null values are counted; i.e., min is 1, might be better to count the average of all "found" files, i.e., including 0) (COALASCE 0)
-  AVG(ARRAY_LENGTH(contact)) as avg_contact_count,
-  AVG(ARRAY_LENGTH(expires)) as avg_expires_count,
-  AVG(ARRAY_LENGTH(encryption)) as avg_encryption_count,
-  AVG(ARRAY_LENGTH(acknowledgments)) as avg_acknowledgments_count,
-  AVG(ARRAY_LENGTH(preferred_languages)) as avg_preferred_language_count,
-  AVG(ARRAY_LENGTH(canonical)) as avg_canonical_count,
-  AVG(ARRAY_LENGTH(policy)) as avg_policy_count,
-  AVG(ARRAY_LENGTH(hiring)) as avg_hiring_count,
-  AVG(ARRAY_LENGTH(csaf)) as avg_csaf_count,
-  AVG(ARRAY_LENGTH(other)) as avg_other_count
-FROM 
+  AVG(ARRAY_LENGTH(contact)) AS avg_contact_count,
+  AVG(ARRAY_LENGTH(expires)) AS avg_expires_count,
+  AVG(ARRAY_LENGTH(encryption)) AS avg_encryption_count,
+  AVG(ARRAY_LENGTH(acknowledgments)) AS avg_acknowledgments_count,
+  AVG(ARRAY_LENGTH(preferred_languages)) AS avg_preferred_language_count,
+  AVG(ARRAY_LENGTH(canonical)) AS avg_canonical_count,
+  AVG(ARRAY_LENGTH(policy)) AS avg_policy_count,
+  AVG(ARRAY_LENGTH(hiring)) AS avg_hiring_count,
+  AVG(ARRAY_LENGTH(csaf)) AS avg_csaf_count,
+  AVG(ARRAY_LENGTH(other)) AS avg_other_count
+FROM
   security_txt_data
 JOIN totals USING (client)
 WHERE
-  found
-  AND STARTS_WITH(content_type, 'text/plain')
+  found AND
+  STARTS_WITH(content_type, 'text/plain')
 GROUP BY
   client,
   total_pages,
@@ -270,5 +270,3 @@ GROUP BY
 ORDER BY
   cnt DESC
 */
-
-

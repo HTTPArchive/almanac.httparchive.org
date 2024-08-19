@@ -10,8 +10,8 @@ WITH totals AS (
   FROM
     `httparchive.all.requests`
   WHERE
-    date = '2024-06-01'
-    AND is_root_page
+    date = '2024-06-01' AND
+    is_root_page
   GROUP BY
     client
 )
@@ -19,13 +19,13 @@ WITH totals AS (
 SELECT
   client,
   server_timing_header,
-  total as total_responses,
+  total AS total_responses,
   SUM(COUNT(DISTINCT host)) OVER (PARTITION BY client) AS total_server_timing_headers,
   SUM(COUNT(DISTINCT host)) OVER (PARTITION BY client) / total AS pct_server_timing,
   COUNT(DISTINCT host) AS freq,
   COUNT(host) AS freq_non_unique,
   COUNT(DISTINCT host) / SUM(COUNT(DISTINCT host)) OVER (PARTITION BY client) AS pct_value,
-  REGEXP_EXTRACT(server_timing_header, r'dur=(\d+\.?\d*)') as dur_value
+  REGEXP_EXTRACT(server_timing_header, r'dur=(\d+\.?\d*)') AS dur_value
 FROM (
   SELECT
     client,
@@ -34,12 +34,12 @@ FROM (
     response_headers.value AS server_timing_header
   FROM
     `httparchive.all.requests`,
-    UNNEST (response_headers) AS response_headers
+    UNNEST(response_headers) AS response_headers
   JOIN totals USING (client)
   WHERE
-    date = '2024-06-01'
-    AND is_root_page
-    AND LOWER(response_headers.name) = 'server-timing' )
+    date = '2024-06-01' AND
+    is_root_page AND
+    LOWER(response_headers.name) = 'server-timing')
 GROUP BY
   client,
   total,

@@ -7,25 +7,25 @@ WITH app_headers AS (
     client,
     headername,
     category,
-    t.technology as technology,
-    JSON_VALUE(r.summary, '$.respOtherHeaders') as respOtherHeaders,
+    t.technology AS technology,
+    JSON_VALUE(r.summary, '$.respOtherHeaders') AS respOtherHeaders,
     url
   FROM
     `httparchive.all.requests` AS r
   INNER JOIN
-    `httparchive.all.pages` AS p
+    `httparchive.all.pages`
   USING
     (client, page, date, is_root_page),
     UNNEST(['Content-Security-Policy', 'Content-Security-Policy-Report-Only', 'Cross-Origin-Embedder-Policy', 'Cross-Origin-Opener-Policy',
             'Cross-Origin-Resource-Policy', 'Expect-CT', 'Feature-Policy', 'Permissions-Policy', 'Referrer-Policy', 'Report-To',
             'Strict-Transport-Security', 'X-Content-Type-Options', 'X-Frame-Options', 'X-XSS-Protection', 'Timing-Allow-Origin', 'Origin-Agent-Cluster']) AS headername,
-    UNNEST (technologies) as t,
-    UNNEST (t.categories) as category
+    UNNEST(technologies) AS t,
+    UNNEST(t.categories) AS category
   WHERE
-    date = '2024-06-01'
-    AND is_root_page
-    AND is_main_document
-    AND category IN UNNEST(['Blogs', 'CDN', 'Web frameworks', 'Programming languages', 'CMS', 'Ecommerce', 'PaaS', 'Security'])
+    date = '2024-06-01' AND
+    is_root_page AND
+    is_main_document AND
+    category IN UNNEST(['Blogs', 'CDN', 'Web frameworks', 'Programming languages', 'CMS', 'Ecommerce', 'PaaS', 'Security'])
 )
 
 SELECT

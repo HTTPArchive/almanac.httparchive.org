@@ -20,11 +20,11 @@ FROM
       COUNT(DISTINCT NET.HOST(page)) / SUM(COUNT(DISTINCT NET.HOST(page))) OVER (PARTITION BY client) AS pct
     FROM
       `httparchive.all.requests`,
-      UNNEST (response_headers) as response_header
+      UNNEST(response_headers) AS response_header
     WHERE
-      (date = '2022-06-09' OR date = '2023-06-01' OR date = '2024-06-01')
-      AND is_root_page
-      AND LOWER(response_header.name) = 'server'
+      (date = '2022-06-09' OR date = '2023-06-01' OR date = '2024-06-01') AND
+      is_root_page AND
+      LOWER(response_header.name) = 'server'
     GROUP BY
       client,
       type,
@@ -44,11 +44,11 @@ UNION ALL
     COUNT(DISTINCT NET.HOST(page)) / SUM(COUNT(DISTINCT NET.HOST(page))) OVER (PARTITION BY client) AS pct
   FROM
     `httparchive.all.requests`,
-    UNNEST (response_headers) as response_header
+    UNNEST(response_headers) AS response_header
   WHERE
-    (date = '2022-06-09' OR date = '2023-06-01' OR date = '2024-06-01')
-    AND is_root_page
-    AND LOWER(response_header.name) = 'x-powered-by'
+    (date = '2022-06-09' OR date = '2023-06-01' OR date = '2024-06-01') AND
+    is_root_page AND
+    LOWER(response_header.name) = 'x-powered-by'
   GROUP BY
     client,
     type,

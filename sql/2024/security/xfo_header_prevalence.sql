@@ -15,12 +15,12 @@ FROM (
     response_headers.value AS xfo_header
   FROM
     `httparchive.all.requests`,
-    UNNEST (response_headers) AS response_headers
+    UNNEST(response_headers) AS response_headers
   WHERE
-    date = '2024-06-01'
-    AND is_root_page
-    AND is_main_document
-    AND LOWER(response_headers.name) = 'x-frame-options' )
+    date = '2024-06-01' AND
+    is_root_page AND
+    is_main_document AND
+    LOWER(response_headers.name) = 'x-frame-options')
 GROUP BY
   client,
   xfo_header

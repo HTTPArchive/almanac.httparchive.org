@@ -16,9 +16,9 @@ FROM (
   FROM
     `httparchive.all.requests`
   WHERE
-    date = '2024-06-01'
-    AND is_root_page
-    AND STARTS_WITH(url, 'https')
+    date = '2024-06-01' AND
+    is_root_page AND
+    STARTS_WITH(url, 'https')
   )
 WHERE
   tls_version IS NOT NULL

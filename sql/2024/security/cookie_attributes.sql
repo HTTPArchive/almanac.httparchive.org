@@ -30,13 +30,13 @@ SELECT
   COUNTIF(REGEXP_CONTAINS(response_headers.value, r'(?i)^\s*__Secure-')) / COUNT(0) AS pct_secure_prefix,
   COUNTIF(REGEXP_CONTAINS(response_headers.value, r'(?i)^\s*__Host-')) AS count_host_prefix,
   COUNTIF(REGEXP_CONTAINS(response_headers.value, r'(?i)^\s*__Host-')) / COUNT(0) AS pct_host_prefix
-FROM 
-    `httparchive.all.requests`,
-    UNNEST (response_headers) as response_headers
-  WHERE
-    date = '2024-06-01'
-    AND is_root_page
-    AND LOWER(response_headers.name) = 'set-cookie'
+FROM
+  `httparchive.all.requests`,
+  UNNEST(response_headers) AS response_headers
+WHERE
+  date = '2024-06-01' AND
+  is_root_page AND
+  LOWER(response_headers.name) = 'set-cookie'
 GROUP BY
   client,
   party
