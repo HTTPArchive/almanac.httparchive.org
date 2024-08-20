@@ -1,4 +1,4 @@
--- Extract top 100 websites that have the most first party cookies set on them
+-- Extract top 100 websites that have the most cookies (1st and 3rd) set on them
 
 WITH top_websites AS (
   SELECT

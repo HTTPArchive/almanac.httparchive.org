@@ -1,7 +1,7 @@
 -- Stats about size of first party cookies set on websites
 
 CREATE TEMP FUNCTION
-ExactPercentile(arr ARRAY<INT>,percentile FLOAT64)
+ExactPercentile(arr ARRAY<INT>, percentile FLOAT64)
 RETURNS FLOAT64
 LANGUAGE js AS """
 var sortedArray = arr.slice().sort(function(a, b) {
@@ -22,9 +22,9 @@ return sortedArray[lower] * (1 - fraction) + sortedArray[upper] * fraction;
 
 SELECT
   client,
-  MIN(CAST(size AS INT)) as min_value,
-  AVG(CAST(size AS INT)) as avg_value,
-  MAX(CAST(size AS INT)) as max_value,
+  MIN(CAST(size AS INT)) AS min_value,
+  AVG(CAST(size AS INT)) AS avg_value,
+  MAX(CAST(size AS INT)) AS max_value,
   ExactPercentile(ARRAY_AGG(CAST(size AS INT)), 0.5) AS percentile_25,
   ExactPercentile(ARRAY_AGG(CAST(size AS INT)), 0.5) AS percentile_50,
   ExactPercentile(ARRAY_AGG(CAST(size AS INT)), 0.75) AS percentile_75,
