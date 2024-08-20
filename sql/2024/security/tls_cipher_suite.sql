@@ -11,7 +11,7 @@ SELECT
 FROM (
   SELECT
     client,
-    JSON_VALUE(payload, '$_securityDetails.cipher') AS cipher
+    JSON_VALUE(payload, '$._securityDetails.cipher') AS cipher
   FROM
     `httparchive.all.requests`
   WHERE
