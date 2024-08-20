@@ -2,7 +2,7 @@
 
 SELECT
   client,
-  COUNT(*) AS total_cookies,
+  COUNT(0) AS total_cookies,
   COUNT(DISTINCT first_party_host) AS distinct_websites,
   COUNT(DISTINCT CONCAT(name, domain)) AS distinct_cookies_name_domain,
   COUNT(DISTINCT name) AS distinct_cookies,

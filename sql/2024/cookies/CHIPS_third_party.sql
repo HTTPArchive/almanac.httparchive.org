@@ -10,7 +10,7 @@ WITH top_cookies AS (
   WHERE
     partitionKey IS NOT NULL AND
     is_first_party = FALSE
-    GROUP BY client, name, domain
+  GROUP BY client, name, domain
 ),
 top_numbered_cookies AS (
   SELECT

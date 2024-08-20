@@ -3,19 +3,19 @@
 -- Export it as httparchive.almanac.<DATE>_top10k_cookies
 
 WITH intermediate_cookie AS (
-SELECT
-  client,
-  page,
-  root_page,
-  NET.HOST(page) as first_party_host,
-  rank,
-  cookie
-FROM
-  `httparchive.all.pages`,
-  UNNEST(JSON_EXTRACT_ARRAY(custom_metrics, '$.cookies')) AS cookie
-WHERE
-  date = '2024-06-01' AND
-  rank <= 10000
+  SELECT
+    client,
+    page,
+    root_page,
+    NET.HOST(page) AS first_party_host,
+    rank,
+    cookie
+  FROM
+    `httparchive.all.pages`,
+    UNNEST(JSON_EXTRACT_ARRAY(custom_metrics, '$.cookies')) AS cookie
+  WHERE
+    date = '2024-06-01' AND
+    rank <= 10000
 )
 
 SELECT
