@@ -43,4 +43,3 @@ SELECT
   ExactPercentile(ARRAY_AGG(CAST(distinct_first_party_count AS INT)), 0.99) AS percentile_99
 FROM nb_cookies_per_website
 GROUP BY client
-
