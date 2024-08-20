@@ -26,7 +26,7 @@ WITH RECURSIVE pages AS (
 )
 
 SELECT
-  'ads' AS type,
+  'ads.txt' AS type,
   line_count_bucket,
   COUNT(DISTINCT page) / ANY_VALUE(total_pages) AS pct_pages,
   COUNT(DISTINCT page) AS number_of_pages
@@ -35,7 +35,7 @@ GROUP BY line_count_bucket
 HAVING line_count_bucket <= 10000
 UNION ALL
 SELECT
-  'app_ads' AS type,
+  'app-ads.txt' AS type,
   line_count_bucket,
   COUNT(DISTINCT page) / ANY_VALUE(total_pages) AS pct_pages,
   COUNT(DISTINCT page) AS number_of_pages

@@ -27,7 +27,8 @@ WITH pages AS (
     client,
     page,
     JSON_QUERY(custom_metrics, '$.origin-trials') AS ot_metrics,
-    JSON_QUERY(custom_metrics, '$.almanac') AS almanac_metrics
+    JSON_QUERY(custom_metrics, '$.almanac') AS almanac_metrics,
+    COUNT(DISTINCT page) OVER (PARTITION BY client) AS total_pages
   FROM `httparchive.all.pages`
   WHERE
     date = '2024-06-01' AND
@@ -67,19 +68,20 @@ ot_from_custom_metric AS (
 
 SELECT
   client,
-  ot.feature AS feature,
-  ot.origin AS origin, -- origins with an origin trial
-  COUNT(DISTINCT page) AS number_of_pages -- crawled sites containing at leat one origin trial
+  tokens.ot.feature AS feature,
+  COUNT(DISTINCT tokens.page) / ANY_VALUE(total_pages) AS pct_pages,
+  COUNT(DISTINCT tokens.page) AS number_of_pages
 FROM (
   SELECT * FROM response_headers
   UNION ALL
   SELECT * FROM meta_tags
   UNION ALL
   SELECT * FROM ot_from_custom_metric
-)
+) AS tokens
+LEFT JOIN pages
+USING (client)
 GROUP BY
   client,
-  feature,
-  origin
+  feature
 ORDER BY
   number_of_pages DESC
