@@ -27,8 +27,7 @@ WITH pages AS (
     client,
     page,
     JSON_QUERY(custom_metrics, '$.origin-trials') AS ot_metrics,
-    JSON_QUERY(custom_metrics, '$.almanac') AS almanac_metrics,
-    COUNT(DISTINCT page) OVER (PARTITION BY client) AS total_pages
+    JSON_QUERY(custom_metrics, '$.almanac') AS almanac_metrics
   FROM `httparchive.all.pages`
   WHERE
     date = '2024-06-01' AND
@@ -68,20 +67,33 @@ ot_from_custom_metric AS (
 
 SELECT
   client,
-  tokens.ot.feature AS feature,
-  COUNT(DISTINCT tokens.page) / ANY_VALUE(total_pages) AS pct_pages,
-  COUNT(DISTINCT tokens.page) AS number_of_pages
+  feature,
+  number_of_pages / total_pages AS pct_pages,
+  number_of_pages
 FROM (
-  SELECT * FROM response_headers
-  UNION ALL
-  SELECT * FROM meta_tags
-  UNION ALL
-  SELECT * FROM ot_from_custom_metric
-) AS tokens
-LEFT JOIN pages
+  SELECT
+    client,
+    ot.feature AS feature,
+    COUNT(DISTINCT page) AS number_of_pages
+  FROM (
+    SELECT * FROM response_headers
+    UNION ALL
+    SELECT * FROM meta_tags
+    UNION ALL
+    SELECT * FROM ot_from_custom_metric
+  )
+  GROUP BY
+    client,
+    feature
+)
+LEFT JOIN (
+  SELECT
+    client,
+    COUNT(DISTINCT page) AS total_pages
+  FROM pages
+  GROUP BY
+    client
+)
 USING (client)
-GROUP BY
-  client,
-  feature
 ORDER BY
   number_of_pages DESC
