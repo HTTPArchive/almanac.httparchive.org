@@ -8,8 +8,7 @@ WITH RECURSIVE pages AS (
   FROM `httparchive.all.pages`
   WHERE date = '2024-06-01' AND
     client = 'mobile' AND
-    is_root_page = TRUE AND
-    rank <= 1000000
+    is_root_page = TRUE
 ), ads AS (
   SELECT
     page,
@@ -69,7 +68,7 @@ WITH RECURSIVE pages AS (
     SELECT
       demand,
       supply,
-      CONCAT(demand, '-', supply) AS path_history,
+      CONCAT(demand, '-', supply) AS path,
       relationship,
       HLL_COUNT.INIT(publisher) AS supply_sketch
     FROM relationships_web
@@ -80,7 +79,7 @@ WITH RECURSIVE pages AS (
     SELECT
       relationships_grouped.demand AS demand,
       relationships_grouped.supply AS supply,
-      CONCAT(relationships_grouped.demand, '-', nodes.path_history) AS path_history,
+      CONCAT(relationships_grouped.demand, '-', nodes.path) AS path,
       relationships_grouped.relationship AS relationship,
       nodes.supply_sketch AS supply_sketch
     FROM (
@@ -98,17 +97,18 @@ WITH RECURSIVE pages AS (
     ON relationships_grouped.supply = nodes.demand AND
       nodes.supply_sketch IS NOT NULL AND
       nodes.relationship = 'indirect' AND
-      STRPOS(nodes.path_history, CONCAT(relationships_grouped.demand, '-', relationships_grouped.supply)) = 0
+      relationships_grouped.demand IS NOT NULL AND
+      STRPOS(nodes.path, relationships_grouped.demand) = 0
   )
 )
 
 SELECT
-  demand,
   supply,
-  path_history,
+  demand,
+  HLL_COUNT.MERGE(supply_sketch) AS publishers_count,
   relationship,
-  HLL_COUNT.MERGE(supply_sketch) AS publishers_count
+  path
 FROM nodes
-GROUP BY demand, supply, relationship, path_history
+GROUP BY demand, supply, relationship, path
 ORDER BY publishers_count DESC
-LIMIT 1000
+LIMIT 5000
