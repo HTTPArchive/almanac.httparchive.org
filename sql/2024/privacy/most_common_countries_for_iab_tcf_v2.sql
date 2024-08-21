@@ -16,25 +16,26 @@ WITH totals AS (
 ), cmps AS (
   SELECT
     client,
-    JSON_VALUE(custom_metrics, '$.privacy.iab_tcf_v2.data.publisherCC') AS publisherCC
+    JSON_VALUE(custom_metrics, '$.privacy.iab_tcf_v2.data.publisherCC') AS publisherCC,
+    COUNT(0) AS number_of_pages
   FROM `httparchive.all.pages`
   WHERE
     date = '2024-06-01' AND
     is_root_page = TRUE AND
     JSON_VALUE(custom_metrics, '$.privacy.iab_tcf_v2.data.publisherCC') IS NOT NULL
+  GROUP BY
+    client,
+    publisherCC
 )
 
 SELECT
   client,
   publisherCC,
-  COUNT(0) / ANY_VALUE(total_websites) AS pct_pages,
-  COUNT(0) AS number_of_pages
+  number_of_pages / total_websites AS pct_pages,
+  number_of_pages
 FROM cmps
 JOIN totals
 USING (client)
-GROUP BY
-  client,
-  publisherCC
 ORDER BY
   client,
   pct_pages DESC
