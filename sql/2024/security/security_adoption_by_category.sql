@@ -1,6 +1,6 @@
 #standardSQL
-# Section: Drivers of security mechanism adoption - Website popularity
-# Question: How prevalent are the various security headers on first-party resources? (per rank grouping 1K, 5K, 10K, 100K, 500K, 1M, ...)
+# Section: Drivers of security mechanism adoption - Website category
+# Question: How prevalent are the various security headers on first-party resources? (per category)
 # Note: Instead of the parent_category, we could ues full_category or subcategory (https://har.fyi/reference/functions/get_host_categories/)
 # Note: Instead of using every "first-party" resource via url.host = page.host, we could only look at top-level documents (is_main_document) or responses of type document (top-level + iframes)?
 SELECT
