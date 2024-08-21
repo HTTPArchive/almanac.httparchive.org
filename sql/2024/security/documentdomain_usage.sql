@@ -3,7 +3,7 @@
   # Question: How often is document.domain still used even though deprecated?
   # Note: Possible to port to httparchive.all.pages, however would require to recreate num_urls, total_urls, and pct_urls
   # Note: Features here: https://source.chromium.org/chromium/chromium/src/+/main:third_party/blink/renderer/core/dom/document.cc?q=DocumentSetDomain
-  # Note: DocumentDomainSettingWithoutOriginAgentClusterHeader might be broken as the header is very rare and yet this value is very low suggesting otherwise (from '20230201' they count no header as header exist?)
+  # Note: DocumentDomainSettingWithoutOriginAgentClusterHeader seems broken as the OAC header is very rare and yet the difference between DocumentSetDomain and DocumentDomainSettingWithoutOriginAgentClusterHeader is large (Explanation: from '20230201' they count no header as header exist.)
 SELECT
   client,
   feature,
