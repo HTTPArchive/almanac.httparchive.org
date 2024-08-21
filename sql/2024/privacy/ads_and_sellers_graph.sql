@@ -7,8 +7,9 @@ WITH RECURSIVE pages AS (
     custom_metrics
   FROM `httparchive.all.pages`
   WHERE date = '2024-06-01' AND
-    client = 'desktop' AND
-    is_root_page = TRUE
+    client = 'mobile' AND
+    is_root_page = TRUE AND
+    rank <= 1000000
 ), ads AS (
   SELECT
     page,
@@ -23,7 +24,7 @@ WITH RECURSIVE pages AS (
   FROM pages
   WHERE
     CAST(JSON_VALUE(custom_metrics, '$.ads.sellers.seller_count') AS INT64) > 0
-), relationships AS (
+), relationships_web AS (
   SELECT
     NET.REG_DOMAIN(REGEXP_EXTRACT(NORMALIZE_AND_CASEFOLD(domain), r'\b[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}\b')) AS demand,
     'Web' AS supply,
@@ -47,23 +48,21 @@ WITH RECURSIVE pages AS (
   UNION ALL
   SELECT
     page AS demand,
-    NET.REG_DOMAIN(REGEXP_EXTRACT(NORMALIZE_AND_CASEFOLD(domain), r'\b[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}\b')) AS supply,
-    'indirect' AS relationship,
-    NULL AS publisher
-  FROM sellers, UNNEST(JSON_VALUE_ARRAY(ad_sellers, '$.intermediary.domains')) AS domain
-  UNION ALL
-  SELECT
-    page AS demand,
     'Web' AS supply,
     'direct' AS relationship,
     NET.REG_DOMAIN(REGEXP_EXTRACT(NORMALIZE_AND_CASEFOLD(domain), r'\b[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}\b')) AS publisher
   FROM sellers, UNNEST(JSON_VALUE_ARRAY(ad_sellers, '$.both.domains')) AS domain
+), relationships_adtech AS (
+  SELECT
+    page AS demand,
+    NET.REG_DOMAIN(REGEXP_EXTRACT(NORMALIZE_AND_CASEFOLD(domain), r'\b[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}\b')) AS supply,
+    'indirect' AS relationship
+  FROM sellers, UNNEST(JSON_VALUE_ARRAY(ad_sellers, '$.intermediary.domains')) AS domain
   UNION ALL
   SELECT
     page AS demand,
     NET.REG_DOMAIN(REGEXP_EXTRACT(NORMALIZE_AND_CASEFOLD(domain), r'\b[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}\b')) AS supply,
-    'indirect' AS relationship,
-    NULL AS publisher
+    'indirect' AS relationship
   FROM sellers, UNNEST(JSON_VALUE_ARRAY(ad_sellers, '$.both.domains')) AS domain
 ), nodes AS (
   (
@@ -73,24 +72,33 @@ WITH RECURSIVE pages AS (
       CONCAT(demand, '-', supply) AS path_history,
       relationship,
       HLL_COUNT.INIT(publisher) AS supply_sketch
-    FROM relationships
-    WHERE supply = 'Web'
+    FROM relationships_web
     GROUP BY demand, supply, relationship
   )
   UNION ALL
   (
     SELECT
-      relationships.demand AS demand,
-      relationships.supply AS supply,
-      CONCAT(relationships.demand, '-', nodes.path_history) AS path_history,
-      relationships.relationship AS relationship,
+      relationships_grouped.demand AS demand,
+      relationships_grouped.supply AS supply,
+      CONCAT(relationships_grouped.demand, '-', nodes.path_history) AS path_history,
+      relationships_grouped.relationship AS relationship,
       nodes.supply_sketch AS supply_sketch
-    FROM relationships
+    FROM (
+      SELECT
+        demand,
+        supply,
+        relationship
+      FROM relationships_adtech
+      GROUP BY
+        demand,
+        supply,
+        relationship
+    ) AS relationships_grouped
     INNER JOIN nodes
-    ON relationships.supply = nodes.demand AND
+    ON relationships_grouped.supply = nodes.demand AND
       nodes.supply_sketch IS NOT NULL AND
       nodes.relationship = 'indirect' AND
-      STRPOS(nodes.path_history, CONCAT(relationships.demand, '-', relationships.supply)) = 0
+      STRPOS(nodes.path_history, CONCAT(relationships_grouped.demand, '-', relationships_grouped.supply)) = 0
   )
 )
 
@@ -103,3 +111,4 @@ SELECT
 FROM nodes
 GROUP BY demand, supply, relationship, path_history
 ORDER BY publishers_count DESC
+LIMIT 1000

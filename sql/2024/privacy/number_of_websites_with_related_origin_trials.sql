@@ -69,11 +69,13 @@ SELECT
   client,
   feature,
   number_of_pages / total_pages AS pct_pages,
-  number_of_pages
+  number_of_pages,
+  is_active
 FROM (
   SELECT
     client,
     ot.feature AS feature,
+    ot.expiry >= CURRENT_TIMESTAMP() AS is_active,
     COUNT(DISTINCT page) AS number_of_pages
   FROM (
     SELECT * FROM response_headers
@@ -84,7 +86,8 @@ FROM (
   )
   GROUP BY
     client,
-    feature
+    feature,
+    is_active
 )
 LEFT JOIN (
   SELECT
