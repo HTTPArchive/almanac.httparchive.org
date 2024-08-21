@@ -97,7 +97,7 @@ featured_stat_label_3: Lighthouse v6 评分不变的站点
   )
 }}
 
-最高比例的表现良好的 LCP 浏览体验主要集中分布在欧洲和有着76%良好浏览体验的韩国为首的亚洲国家。据<a hreflang="en" href="https://www.speedtest.net/global-index">Speedtest Global Index</a>报导，十月份韩国下载速度高达145Mbps，在移动端的网速一直领先。日本、捷克、台湾、德国和比利时等一些国家的移动端网速也比较快。澳大利亚尽管在移动端网速方面领先，但是在桌面端连接速度慢和延迟令人失望，使得他的排名在上述国家之后。
+最高比例的表现良好的 LCP 浏览体验主要集中分布在欧洲和有着76%良好浏览体验的韩国为首的亚洲国家。据<a hreflang="en" href="https://www.speedtest.net/global-index">Speedtest Global Index</a>报导，十月份韩国下载速度高达145Mbps，在移动端的网速一直领先。日本、捷克、台湾、德国和比利时等一些国家或地区的移动端网速也比较快。澳大利亚尽管在移动端网速方面领先，但是在桌面端连接速度慢和延迟令人失望，使得他的排名在上述国家之后。
 
 在我们的调查数据中，印度依然保持着最后一名，仅有16%的良好体验。尽管新的互联网用户正在持续增长，移动端和桌面端的网速<a hreflang="en" href="https://www.opensignal.com/reports/2020/04/india/mobile-network-experience">仍然是个问题</a>，4G平均下载速度是10Mbps、3G平均下载速度是3Mbps、桌面端下载速度低于50Mbps。
 

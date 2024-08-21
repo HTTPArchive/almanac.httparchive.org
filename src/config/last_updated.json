@@ -1738,6 +1738,11 @@
     "date_modified": "2024-01-09T00:00:00.000Z",
     "hash": "2c6952d1da81ec9ffe4ef15d403378c6"
   },
+  "ja/2022/chapters/capabilities.html": {
+    "date_published": "2024-08-21T00:00:00.000Z",
+    "date_modified": "2024-08-21T00:00:00.000Z",
+    "hash": "b04974725c3e7300e152ece7ac91b1e7"
+  },
   "ja/2022/chapters/css.html": {
     "date_published": "2022-11-07T00:00:00.000Z",
     "date_modified": "2022-12-12T00:00:00.000Z",
@@ -2400,8 +2405,8 @@
   },
   "zh-CN/2020/chapters/performance.html": {
     "date_published": "2020-12-16T00:00:00.000Z",
-    "date_modified": "2022-12-12T00:00:00.000Z",
-    "hash": "9153a88a58bb7777e8b48b6608b952aa"
+    "date_modified": "2024-08-21T00:00:00.000Z",
+    "hash": "d6463769e4cb6129ccf1281a13101d19"
   },
   "zh-CN/2020/contributors.html": {
     "date_published": "2020-07-14T00:00:00.000Z",
