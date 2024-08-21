@@ -15,7 +15,7 @@ FROM
   UNNEST(technologies) AS t,
   UNNEST(t.categories) AS category
 WHERE
-  date >= '2024-05-01' AND
+  date >= '2022-05-01' AND
   is_root_page
 GROUP BY
   date,
