@@ -8,8 +8,8 @@ SELECT
   headername,
   rank AS rank_grouping,
   COUNT(DISTINCT NET.HOST(url)) AS total_hosts,
-  COUNT(DISTINCT IF(rh.name = headername, NET.HOST(url), NULL)) AS num_with_header,
-  COUNT(DISTINCT IF(rh.name = headername, NET.HOST(url), NULL)) / COUNT(DISTINCT NET.HOST(url)) AS pct_with_header
+  COUNT(DISTINCT IF(LOWER(rh.name) = LOWER(headername), NET.HOST(url), NULL)) AS num_with_header,
+  COUNT(DISTINCT IF(LOWER(rh.name) = LOWER(headername), NET.HOST(url), NULL)) / COUNT(DISTINCT NET.HOST(url)) AS pct_with_header
 FROM
   `httparchive.all.requests`,
   UNNEST(['Content-Security-Policy', 'Content-Security-Policy-Report-Only', 'Cross-Origin-Embedder-Policy', 'Cross-Origin-Opener-Policy',
