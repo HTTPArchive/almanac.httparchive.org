@@ -49,8 +49,8 @@ SELECT
 FROM
   `httparchive.all.pages`,  # Single table containing all the necessary data
   UNNEST(getUsedExtensions(JSON_EXTRACT_SCALAR(payload, '$._a11y'))) AS extension_stat  # Unnest the file extension statistics from the payload JSON
-  WHERE
-    date = '2024-06-01'
+WHERE
+  date = '2024-06-01'
 GROUP BY
   client,  # Group by client domain
   extension_stat.extension  # Group by extension to analyze specific file extensions
