@@ -7,21 +7,22 @@ return Object.keys($);
 ''';
 
 SELECT
-  _TABLE_SUFFIX AS client,
-  url,
+  client,
+  page,
   COUNT(DISTINCT fuguAPI) AS fuguAPIs
-FROM
-  `httparchive.pages.2024_06_01_*`,
-  UNNEST(getFuguAPIs(JSON_QUERY(payload, '$."_fugu-apis"'))) AS fuguAPI
+  FROM
+    `httparchive.all.pages`,
+    UNNEST(getFuguAPIs(JSON_QUERY(custom_metrics, '$."fugu-apis"'))) AS fuguAPI
 WHERE
-  JSON_QUERY(payload, '$."_fugu-apis"') != '[]'
+    date = '2024-06-01' AND
+    JSON_QUERY(custom_metrics, '$."fugu-apis"') != '[]'
 GROUP BY
   client,
-  url
+  page
 HAVING
   COUNT(DISTINCT fuguAPI) >= 1
 ORDER BY
   fuguAPIs DESC,
-  url,
+  page,
   client
 LIMIT 100;

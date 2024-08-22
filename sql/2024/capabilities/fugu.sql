@@ -6,34 +6,53 @@ const $ = JSON.parse(data);
 return Object.keys($);
 ''';
 
-SELECT
-  _TABLE_SUFFIX AS client,
-  fuguAPI,
-  COUNT(DISTINCT url) AS pages,
-  total,
-  COUNT(DISTINCT url) / total AS pct,
-  ARRAY_TO_STRING(ARRAY_AGG(DISTINCT url LIMIT 50), ' ') AS sample_urls
-FROM
-  `httparchive.pages.2024_06_01_*`
-JOIN (
+WITH fuguapis AS (
   SELECT
-    _TABLE_SUFFIX,
+    date,
+    client,
+    page,
+    fuguAPI
+  FROM
+    `httparchive.all.pages`,
+    UNNEST(getFuguAPIs(JSON_QUERY(custom_metrics, '$."fugu-apis"'))) AS fuguAPI
+  WHERE
+    date = '2024-06-01' AND
+    JSON_QUERY(custom_metrics, '$."fugu-apis"') != '[]'
+),
+
+totals AS (
+  SELECT
+    date,
+    client,
     COUNT(0) AS total
   FROM
-    `httparchive.pages.2024_06_01_*`
+    `httparchive.all.pages`
+  WHERE
+    date = '2024-06-01'
   GROUP BY
-    _TABLE_SUFFIX)
+    date,
+    client
+)
+
+SELECT
+  client,
+  fuguAPI,
+  COUNT(DISTINCT page) AS pages,
+  total,
+  COUNT(DISTINCT page) / total AS pct,
+  ARRAY_TO_STRING(ARRAY_AGG(DISTINCT page LIMIT 50), ' ') AS sample_urls
+FROM
+  fuguapis
+JOIN
+  totals
 USING
-  (_TABLE_SUFFIX),
-  UNNEST(getFuguAPIs(JSON_QUERY(payload, '$."_fugu-apis"'))) AS fuguAPI
-WHERE
-  JSON_QUERY(payload, '$."_fugu-apis"') != '[]'
+  (client, date)
 GROUP BY
   fuguAPI,
   client,
   total
 HAVING
-  COUNT(DISTINCT url) >= 10
+  COUNT(DISTINCT page) >= 10
 ORDER BY
   pct DESC,
   client;
