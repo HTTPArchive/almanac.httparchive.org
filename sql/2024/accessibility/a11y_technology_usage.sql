@@ -1,6 +1,6 @@
 #standardSQL
 # Accessibility (A11y) technology, ie. Overlays, usage by client
-  
+
 SELECT
   client,  # Client domain
   COUNT(DISTINCT page) AS total_sites,  # Total number of unique sites for the client
