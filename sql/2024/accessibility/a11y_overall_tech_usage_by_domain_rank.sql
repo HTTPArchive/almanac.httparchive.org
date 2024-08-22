@@ -19,8 +19,8 @@ FROM
     FROM
       `httparchive.all.pages`,
       UNNEST([1000, 10000, 100000, 1000000, 10000000, 100000000]) AS rank_grouping, # Expand rank_grouping to cover different rank categories
-      UNNEST (technologies) AS tech,
-      UNNEST (categories) AS category
+      UNNEST(technologies) AS tech,
+      UNNEST(categories) AS category
     WHERE
       date = '2024-06-01' AND
       category = 'Accessibility' AND
@@ -42,7 +42,7 @@ JOIN
     GROUP BY
       client,
       rank_grouping
-   ) USING (client, rank_grouping)
+    ) USING (client, rank_grouping)
 GROUP BY
   rank_grouping,
   total_in_rank,
