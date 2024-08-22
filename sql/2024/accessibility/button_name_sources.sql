@@ -62,7 +62,7 @@ FROM (
       a11yButtonNameSources(JSON_EXTRACT_SCALAR(payload, '$._a11y'))
     ) AS button_name_source
   WHERE
-     date = '2024-06-01' 
+    date = '2024-06-01'
 )
 GROUP BY
   client,
