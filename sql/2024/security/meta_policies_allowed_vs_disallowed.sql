@@ -1,6 +1,6 @@
 #standardSQL
 # Section: Attack preventions - Preventing attacks using <meta>
-# Question: How many pages use security policies in meta tags (both allowed and ignored ones) 
+# Question: How many pages use security policies in meta tags (both allowed and ignored ones)
 # Note: uses the old payload._almanac metric location instead of custom_metrics.almanac (also the meta-nodes metric is in the generic almanac.js custom metric)
 SELECT
   client,
