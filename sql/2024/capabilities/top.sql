@@ -10,12 +10,12 @@ SELECT
   client,
   page,
   COUNT(DISTINCT fuguAPI) AS fuguAPIs
-  FROM
-    `httparchive.all.pages`,
-    UNNEST(getFuguAPIs(JSON_QUERY(custom_metrics, '$."fugu-apis"'))) AS fuguAPI
+FROM
+  `httparchive.all.pages`,
+  UNNEST(getFuguAPIs(JSON_QUERY(custom_metrics, '$."fugu-apis"'))) AS fuguAPI
 WHERE
-    date = '2024-06-01' AND
-    JSON_QUERY(custom_metrics, '$."fugu-apis"') != '[]'
+  date = '2024-06-01' AND
+  JSON_QUERY(custom_metrics, '$."fugu-apis"') != '[]'
 GROUP BY
   client,
   page
