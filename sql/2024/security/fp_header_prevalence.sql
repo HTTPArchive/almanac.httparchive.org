@@ -4,15 +4,15 @@
 # Note: Considers headers of main document responses
 SELECT
   client,
-  coop_header,
-  SUM(COUNT(DISTINCT host)) OVER (PARTITION BY client) AS total_coop_headers,
+  fp_header,
+  SUM(COUNT(DISTINCT host)) OVER (PARTITION BY client) AS total_fp_headers,
   COUNT(DISTINCT host) AS freq,
   COUNT(DISTINCT host) / SUM(COUNT(DISTINCT host)) OVER (PARTITION BY client) AS pct
 FROM (
   SELECT
     client,
     NET.HOST(url) AS host,
-    response_headers.value AS coop_header
+    response_headers.value AS fp_header
   FROM
     `httparchive.all.requests`,
     UNNEST(response_headers) AS response_headers
@@ -23,7 +23,7 @@ FROM (
     LOWER(response_headers.name) = 'feature-policy')
 GROUP BY
   client,
-  coop_header
+  fp_header
 ORDER BY
   pct DESC
 LIMIT
