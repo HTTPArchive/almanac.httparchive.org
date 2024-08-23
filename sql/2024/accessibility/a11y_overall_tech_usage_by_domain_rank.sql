@@ -4,6 +4,7 @@
 # Main SELECT statement to aggregate results by client and rank grouping.
 SELECT
   client,
+  is_root_page,
   rank_grouping, # Grouping of domains by their rank (e.g., top 1000, top 10000, etc.)
   total_in_rank, # Total number of sites within the rank grouping
   COUNT(DISTINCT page) AS sites_with_a11y_tech, # Number of unique sites that use accessibility technology
@@ -13,6 +14,7 @@ FROM
     # Subquery to filter and extract relevant pages with A11Y technology
     SELECT DISTINCT
       client,
+      is_root_page,
       page,
       rank_grouping,
       category
@@ -44,9 +46,11 @@ JOIN
       rank_grouping
   ) USING (client, rank_grouping)
 GROUP BY
+  client,
+  is_root_page,
   rank_grouping,
-  total_in_rank,
-  client
+  total_in_rank
 ORDER BY
   client,
+  is_root_page,
   rank_grouping
