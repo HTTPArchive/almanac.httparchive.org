@@ -1,7 +1,9 @@
 #standardSQL
 # Table stats. Total all, captioned and presentational
+
 SELECT
   client,
+  is_root_page,
   COUNT(0) AS total_sites,
 
   COUNTIF(total_tables > 0) AS sites_with_table,
@@ -21,6 +23,7 @@ SELECT
 FROM (
   SELECT
     client,
+    is_root_page,
     CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._a11y'), '$.tables.total') AS INT64) AS total_tables,
     CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._a11y'), '$.tables.total_with_caption') AS INT64) AS total_captioned,
     CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._a11y'), '$.tables.total_with_presentational') AS INT64) AS total_presentational
@@ -30,4 +33,5 @@ FROM (
     date = '2024-06-01'
 )
 GROUP BY
-  client
+  client,
+  is_root_page;
