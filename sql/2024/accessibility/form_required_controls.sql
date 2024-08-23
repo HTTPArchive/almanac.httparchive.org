@@ -73,6 +73,7 @@ RETURNS STRUCT<total INT64, asterisk INT64, required_attribute INT64, aria_requi
 
 SELECT
   client,
+  is_root_page,
   COUNT(0) AS total_sites,
   COUNTIF(stats.total > 0) AS total_sites_with_required_controls,
   SUM(stats.total) AS total_required_controls,
@@ -100,6 +101,7 @@ SELECT
 FROM (
   SELECT
     client,
+    is_root_page,
     requiredControls(JSON_EXTRACT_SCALAR(payload, '$._a11y')) AS stats
   FROM
     `httparchive.all.pages`
@@ -107,4 +109,5 @@ FROM (
     date = '2024-06-01'
 )
 GROUP BY
-  client
+  client,
+  is_root_page;
