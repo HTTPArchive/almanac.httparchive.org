@@ -10,7 +10,7 @@ WITH score_data AS (
     `httparchive.all.pages`
   WHERE
     date = '2024-06-01' AND
-    lighthouse IS NOT NULL AND 
+    lighthouse IS NOT NULL AND
     lighthouse != '{}'
 )
 
