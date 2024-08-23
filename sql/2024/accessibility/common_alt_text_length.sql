@@ -4,6 +4,7 @@
 # Note: Lengths of 2000+ characters are grouped together
 SELECT
   client,
+  is_root_page,
   SUM(COUNT(0)) OVER (PARTITION BY client) AS total_images,
   SUM(COUNTIF(alt_length_clipped >= 0)) OVER (PARTITION BY client) AS total_alt_tags,
 
@@ -13,10 +14,12 @@ SELECT
 FROM (
   SELECT
     client,
+    is_root_page,
     LEAST(alt_length, 2000) AS alt_length_clipped
   FROM (
     SELECT
       client,
+      is_root_page,
       date,
       SAFE_CAST(alt_length_string AS INT64) AS alt_length
     FROM
@@ -31,6 +34,7 @@ FROM (
 )
 GROUP BY
   client,
+  is_root_page,
   alt_length
 ORDER BY
-  alt_length ASC
+  alt_length ASC;
