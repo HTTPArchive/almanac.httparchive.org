@@ -1,6 +1,6 @@
 #standardSQL
 # Form controls with placeholder but no label
-  
+
 SELECT
   client,
   is_root_page,
