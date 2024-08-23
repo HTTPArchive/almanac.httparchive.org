@@ -4,6 +4,7 @@
 WITH score_data AS (
   SELECT
     client,
+    is_root_page,
     CAST(JSON_EXTRACT_SCALAR(lighthouse, '$.categories.accessibility.score') AS FLOAT64) AS score
   FROM
     `httparchive.all.pages`
@@ -15,6 +16,7 @@ WITH score_data AS (
 
 SELECT
   client,
+  is_root_page,
   '2024_06_01' AS date,
   percentile,
   ROUND(APPROX_QUANTILES(score, 1000)[OFFSET(percentile * 10)], 2) AS score
@@ -22,8 +24,10 @@ FROM
   score_data,
   UNNEST([10, 25, 50, 75, 90]) AS percentile
 GROUP BY
-  client, 
+  client,
+  is_root_page,
   percentile
 ORDER BY
-  client, 
+  client,
+  is_root_page,
   percentile;
