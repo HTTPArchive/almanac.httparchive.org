@@ -47,14 +47,15 @@ RETURNS ARRAY<STRING> LANGUAGE js AS '''
 
 SELECT
   client,
+  is_root_page,
   SUM(COUNT(0)) OVER (PARTITION BY client) AS total_inputs,
-
   input_name_source,
   COUNT(0) AS total_with_this_source,
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS perc_of_all_inputs
 FROM (
   SELECT
     client,
+    is_root_page,
     input_name_source
   FROM
     `httparchive.all.pages`,
@@ -66,4 +67,5 @@ FROM (
 )
 GROUP BY
   client,
-  input_name_source
+  is_root_page,
+  input_name_source;
