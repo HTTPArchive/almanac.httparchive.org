@@ -11,7 +11,7 @@ FROM
   `httparchive.all.pages`,
   UNNEST(technologies) AS tech,  # Expand technologies array to individual rows
   UNNEST(categories) AS category,  # Expand categories array to individual rows
-  UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping  # Expand rank_grouping to cover different rank categories
+  UNNEST([1000, 10000, 100000, 1000000, 10000000, 100000000]) AS rank_grouping  # Expand rank_grouping to cover different rank categories
 WHERE
   date = '2024-06-01' AND
   category = 'Accessibility' AND  # Filter to include only accessibility-related technologies
