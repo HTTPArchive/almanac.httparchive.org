@@ -2,6 +2,7 @@
 # A11Y technology usage by domain rank
 SELECT
   client,  # Client domain
+  is_root_page,
   rank_grouping,  # Grouping of domains by their rank
   COUNT(DISTINCT page) AS total_in_rank,  # Total number of unique sites within the rank grouping
   tech.technology AS app,  # Accessibility technology used
@@ -17,10 +18,12 @@ WHERE
   category = 'Accessibility' AND  # Filter to include only accessibility-related technologies
   rank <= rank_grouping  # Include only sites within the specified rank grouping
 GROUP BY
-  client,  # Group by client domain
+  client,
+  is_root_page,
   rank_grouping,  # Group by rank grouping
   tech.technology  # Group by the specific accessibility technology (extracted from STRUCT)
 ORDER BY
   tech.technology,  # Order results by technology (app)
   rank_grouping,  # Order results by rank grouping
-  client;  # Order results by client domain
+  client,
+  is_root_page;
