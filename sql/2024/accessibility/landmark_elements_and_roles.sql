@@ -30,6 +30,7 @@ try {
 WITH element_role_usage AS (
   SELECT
     page,
+    is_root_page,
     element_type,
     role_type
   FROM
