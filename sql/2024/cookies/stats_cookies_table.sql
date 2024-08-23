@@ -2,14 +2,14 @@
 
 SELECT
   client,
-  COUNT(0) AS total_cookies,
+  is_first_party,
+  SUM(IF(is_first_party = TRUE, 1, 0)) AS nb_first_party,
+  SUM(IF(is_first_party = FALSE, 1, 0)) AS nb_third_party,
   COUNT(DISTINCT first_party_host) AS distinct_websites,
   COUNT(DISTINCT CONCAT(name, domain)) AS distinct_cookies_name_domain,
   COUNT(DISTINCT name) AS distinct_cookies,
   COUNT(DISTINCT domain) AS distinct_domains_setting_them,
   COUNT(DISTINCT NET.REG_DOMAIN(domain)) AS distinct_registrable_domains_setting_them,
-  SUM(IF(is_first_party = TRUE, 1, 0)) AS nb_first_party,
-  SUM(IF(is_first_party = FALSE, 1, 0)) AS nb_third_party,
   SUM(IF(expires = '-1', 1, 0)) AS negative_expires,
   SUM(IF(httpOnly = 'true', 1, 0)) AS http_only_true,
   SUM(IF(httpOnly = 'false', 1, 0)) AS http_only_false,
@@ -28,4 +28,4 @@ SELECT
   SUM(IF(partitionKeyOpaque IS NOT NULL, 1, 0)) AS partition_key_opaque_not_null,
   SUM(IF(partitionKeyOpaque IS NULL, 1, 0)) AS partition_key_opaque_null
 FROM `httparchive.almanac.2024-06-01_top10k_cookies`
-GROUP BY client
+GROUP BY client, is_first_party
