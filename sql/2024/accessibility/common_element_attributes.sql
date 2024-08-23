@@ -14,7 +14,8 @@ try {
 
 # Main query to analyze the usage of specific attributes across sites
 SELECT
-  client,  # Derive client domain from the table suffix
+  client,
+  is_root_page,
   COUNT(DISTINCT page) AS total_sites,  # Total number of unique sites for the client
   attribute,  # The attribute being analyzed
   COUNT(0) AS total_sites_using,  # Number of sites using this specific attribute
@@ -25,7 +26,8 @@ FROM
 WHERE
   date = '2024-06-01'  # Filter for the specific date
 GROUP BY
-  client,  # Group by client domain
+  client,
+  is_root_page,
   attribute  # Group by attribute
 HAVING
   STARTS_WITH(attribute, 'aria-') OR  # Include attributes that start with 'aria-'
