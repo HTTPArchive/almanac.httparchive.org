@@ -2,7 +2,8 @@
 # Analyze the usage of viewport tags and scaling behavior by domain rank
 
 SELECT
-  client,  # Client domain
+  client,
+  is_root_page,
   rank_grouping,  # Grouping of domains by their rank (e.g., top 1000, 10000, etc.)
   COUNT(0) AS total_pages,  # Total number of pages scanned
   COUNTIF(meta_viewport IS NOT NULL) AS total_viewports,  # Number of pages with a meta viewport tag
@@ -15,7 +16,8 @@ SELECT
   COUNTIF(REGEXP_EXTRACT(meta_viewport, r'(?i)user-scalable\s*=\s*(no|0)') IS NOT NULL OR SAFE_CAST(REGEXP_EXTRACT(meta_viewport, r'(?i)maximum-scale\s*=\s*([0-9]*\.[0-9]+|[0-9]+)') AS FLOAT64) <= 1) / COUNT(0) AS pct_pages_either  # Percentage of pages with either condition
 FROM (
   SELECT
-    client,  # Client domain
+    client,
+    is_root_page,
     page,  # Page URL
     JSON_EXTRACT_SCALAR(payload, '$._meta_viewport') AS meta_viewport  # Extract meta viewport content from JSON payload
   FROM
@@ -26,7 +28,9 @@ FROM (
 UNNEST([1000, 10000, 100000, 1000000, 10000000, 100000000]) AS rank_grouping
 GROUP BY
   rank_grouping,  # Group by domain rank grouping
-  client  # Group by client domain
+  client,
+  is_root_page
 ORDER BY
-  client,  # Order by client domain
+  client,
+  is_root_page,
   rank_grouping;  # Order by rank grouping
