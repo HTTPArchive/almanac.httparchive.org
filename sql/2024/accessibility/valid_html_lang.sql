@@ -14,11 +14,11 @@ FROM (
     client,
     is_root_page,
     JSON_EXTRACT_SCALAR(lighthouse, "$.audits['html-has-lang'].score") = '1' AS has_lang,
-    JSON_EXTRACT_SCALAR(lighthouse, "$.audits['html-lang-valid'].score") = '1' AS valid_lang 
+    JSON_EXTRACT_SCALAR(lighthouse, "$.audits['html-lang-valid'].score") = '1' AS valid_lang
   FROM
     `httparchive.all.pages`
   WHERE
-    date = '2024-06-01' 
+    date = '2024-06-01'
   )
 GROUP BY
   client,
