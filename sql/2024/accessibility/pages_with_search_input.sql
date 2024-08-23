@@ -25,6 +25,7 @@ RETURNS BOOLEAN LANGUAGE js AS '''
 
 SELECT
   client,
+  is_root_page,
   COUNT(0) AS total_sites,
   COUNTIF(has_inputs) AS total_with_inputs,
   COUNTIF(has_search_input) AS total_with_search_input,
@@ -37,6 +38,7 @@ FROM
   (
     SELECT
       client,
+      is_root_page,
       SAFE_CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._almanac'), '$.input_elements.total') AS INT64) > 0 AS has_inputs,
       hasSearchInput(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS has_search_input
     FROM
@@ -45,4 +47,5 @@ FROM
       date = '2024-06-01'
   )
 GROUP BY
-  client
+  client,
+  is_root_page;
