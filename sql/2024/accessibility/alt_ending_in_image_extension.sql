@@ -17,7 +17,8 @@ try {
 
 # Main query to analyze alt text usage across sites
 SELECT
-  client,  # Client domain
+  client,
+  is_root_page,
   COUNTIF(CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(custom_metrics, '$.markup'), '$.images.img.alt.present') AS INT64) > 0) AS sites_with_non_empty_alt,  # Count sites with non-empty alt attributes
   COUNTIF(CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._a11y'), '$.file_extension_alts.total_with_file_extension') AS INT64) > 0) AS sites_with_file_extension_alt,  # Count sites with alt attributes ending in a file extension
   SUM(CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._markup'), '$.images.img.alt.present') AS INT64)) AS total_non_empty_alts,  # Sum of all non-empty alt attributes across sites
@@ -52,8 +53,10 @@ FROM
 WHERE
   date = '2024-06-01'
 GROUP BY
-  client,  # Group by client domain
-  extension_stat.extension  # Group by extension to analyze specific file extensions
+  client,
+  is_root_page,
+  extension_stat.extension
 ORDER BY
-  client,  # Order by client domain
+  client,
+  is_root_page,
   total_occurances DESC;  # Order by the number of occurrences of each file extension in descending order
