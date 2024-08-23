@@ -1,7 +1,9 @@
 #standardSQL
 # Form controls with placeholder but no label
+  
 SELECT
   client,
+  is_root_page,
   COUNT(0) AS total_sites,
   COUNTIF(total_placeholder > 0) AS sites_with_placeholder,
   COUNTIF(total_no_label > 0) AS sites_with_no_label, # Has placeholder but no label
@@ -16,6 +18,7 @@ SELECT
 FROM (
   SELECT
     client,
+    is_root_page,
     CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._a11y'), '$.placeholder_but_no_label.total_placeholder') AS INT64) AS total_placeholder,
     CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._a11y'), '$.placeholder_but_no_label.total_no_label') AS INT64) AS total_no_label
   FROM
@@ -24,4 +27,5 @@ FROM (
     date = '2024-06-01'
 )
 GROUP BY
-  client
+  client,
+  is_root_page;
