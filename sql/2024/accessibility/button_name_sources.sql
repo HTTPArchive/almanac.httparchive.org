@@ -46,6 +46,7 @@ RETURNS ARRAY<STRING> LANGUAGE js AS '''
 
 SELECT
   client,
+  is_root_page,
   SUM(COUNT(0)) OVER (PARTITION BY client) AS total_buttons,
 
   button_name_source,
@@ -54,6 +55,7 @@ SELECT
 FROM (
   SELECT
     client,
+    is_root_page,
     date,
     button_name_source
   FROM
@@ -66,6 +68,7 @@ FROM (
 )
 GROUP BY
   client,
+  is_root_page,
   button_name_source
 ORDER BY
   perc_of_all_buttons DESC
