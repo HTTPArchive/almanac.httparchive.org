@@ -2,7 +2,8 @@
 # Captcha usage analysis
 
 SELECT
-  client,  # Client domain
+  client,
+  is_root_page,
   date,  # Date of the analysis
   COUNT(DISTINCT page) AS total_sites,  # Total number of unique sites for the client
   COUNT(DISTINCT IF(app.technology IN ('reCAPTCHA', 'hCaptcha'), page, NULL)) AS sites_with_captcha,  # Number of sites using reCAPTCHA or hCaptcha
@@ -16,7 +17,8 @@ FROM
 WHERE
   date = '2024-06-01'
 GROUP BY
-  client,  # Group by client domain
-  date  # Group by date
+  client,
+  is_root_page,
+  date
 ORDER BY
   client;  # Order results by client domain
