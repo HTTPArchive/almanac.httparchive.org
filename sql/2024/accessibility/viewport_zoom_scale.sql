@@ -32,6 +32,6 @@ FROM (
       date = '2024-06-01'
   )
 )
-GROUP BY 
+GROUP BY
   client,
   is_root_page;
