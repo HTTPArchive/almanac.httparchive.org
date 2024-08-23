@@ -13,9 +13,9 @@ FROM
   UNNEST(categories) AS category
 WHERE
   date = '2024-06-01' # Specific date for data extraction
-GROUP BY 
-  client, 
+GROUP BY
+  client,
   is_root_page
 ORDER BY
   client,
-  is_root_page;  
+  is_root_page;
