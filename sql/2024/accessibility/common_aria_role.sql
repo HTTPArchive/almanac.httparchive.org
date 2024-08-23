@@ -14,7 +14,8 @@ try {
 
 # Main query to analyze ARIA role usage across sites
 SELECT
-  client,  # Derive client domain from the table suffix
+  client,
+  is_root_page,
   COUNT(DISTINCT page) AS total_sites,  # Total number of unique sites for the client
   role,  # The ARIA role being analyzed
   COUNT(0) AS total_sites_using,  # Number of sites using this specific ARIA role
@@ -25,7 +26,8 @@ FROM
 WHERE
   date = '2024-06-01'  # Filter for the specific date
 GROUP BY
-  client,  # Group by client domain
+  client,
+  is_root_page,
   role  # Group by ARIA role
 HAVING
   total_sites_using >= 100  # Filter to include only roles used by 100 or more sites
