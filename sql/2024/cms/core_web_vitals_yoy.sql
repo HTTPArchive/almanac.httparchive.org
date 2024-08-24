@@ -21,7 +21,7 @@ SELECT
   # Origins with good INP divided by origins with any INP.
   SAFE_DIVIDE(
     COUNT(DISTINCT IF(IS_GOOD(fast_inp, avg_inp, slow_inp), origin, NULL)),
-    COUNT(DISTINCT IF(IS_NON_ZERO(fast_inp, avg_inp, slow_inp), origin, NULL))) AS pct_good_fid,
+    COUNT(DISTINCT IF(IS_NON_ZERO(fast_inp, avg_inp, slow_inp), origin, NULL))) AS pct_good_inp,
     
 
   # Origins with good CLS divided by origins with any CLS.
@@ -74,21 +74,21 @@ SELECT
     COUNT(DISTINCT IF(IS_GOOD(fast_lcp, avg_lcp, slow_lcp), origin, NULL)),
     COUNT(DISTINCT IF(IS_NON_ZERO(fast_lcp, avg_lcp, slow_lcp), origin, NULL))) AS pct_good_lcp,
 
-  # Origins with good FID divided by origins with any FID.
+  # Origins with good INP divided by origins with any INP.
   SAFE_DIVIDE(
-    COUNT(DISTINCT IF(IS_GOOD(fast_fid, avg_fid, slow_fid), origin, NULL)),
-    COUNT(DISTINCT IF(IS_NON_ZERO(fast_fid, avg_fid, slow_fid), origin, NULL))) AS pct_good_fid,
+    COUNT(DISTINCT IF(IS_GOOD(fast_inp, avg_inp, slow_inp), origin, NULL)),
+    COUNT(DISTINCT IF(IS_NON_ZERO(fast_inp, avg_inp, slow_inp), origin, NULL))) AS pct_good_inp,
 
   # Origins with good CLS divided by origins with any CLS.
   SAFE_DIVIDE(
     COUNT(DISTINCT IF(IS_GOOD(small_cls, medium_cls, large_cls), origin, NULL)),
     COUNT(DISTINCT IF(IS_NON_ZERO(small_cls, medium_cls, large_cls), origin, NULL))) AS pct_good_cls,
 
-  # Origins with good LCP, FID (optional), and CLS divided by origins with any LCP and CLS.
+  # Origins with good LCP, INP (optional), and CLS divided by origins with any LCP and CLS.
   SAFE_DIVIDE(
     COUNT(DISTINCT IF(
       IS_GOOD(fast_lcp, avg_lcp, slow_lcp) AND
-      IS_GOOD(fast_fid, avg_fid, slow_fid) IS NOT FALSE AND
+      IS_GOOD(fast_inp, avg_inp, slow_inp) IS NOT FALSE AND
       IS_GOOD(small_cls, medium_cls, large_cls), origin, NULL)),
     COUNT(DISTINCT IF(
       IS_NON_ZERO(fast_lcp, avg_lcp, slow_lcp) AND
@@ -129,21 +129,21 @@ SELECT
     COUNT(DISTINCT IF(IS_GOOD(fast_lcp, avg_lcp, slow_lcp), origin, NULL)),
     COUNT(DISTINCT IF(IS_NON_ZERO(fast_lcp, avg_lcp, slow_lcp), origin, NULL))) AS pct_good_lcp,
 
-  # Origins with good FID divided by origins with any FID.
+  # Origins with good INP divided by origins with any INP.
   SAFE_DIVIDE(
-    COUNT(DISTINCT IF(IS_GOOD(fast_fid, avg_fid, slow_fid), origin, NULL)),
-    COUNT(DISTINCT IF(IS_NON_ZERO(fast_fid, avg_fid, slow_fid), origin, NULL))) AS pct_good_fid,
+    COUNT(DISTINCT IF(IS_GOOD(fast_inp, avg_inp, slow_inp), origin, NULL)),
+    COUNT(DISTINCT IF(IS_NON_ZERO(fast_inp, avg_inp, slow_inp), origin, NULL))) AS pct_good_inp,
 
   # Origins with good CLS divided by origins with any CLS.
   SAFE_DIVIDE(
     COUNT(DISTINCT IF(IS_GOOD(small_cls, medium_cls, large_cls), origin, NULL)),
     COUNT(DISTINCT IF(IS_NON_ZERO(small_cls, medium_cls, large_cls), origin, NULL))) AS pct_good_cls,
 
-  # Origins with good LCP, FID (optional), and CLS divided by origins with any LCP and CLS.
+  # Origins with good LCP, INP (optional), and CLS divided by origins with any LCP and CLS.
   SAFE_DIVIDE(
     COUNT(DISTINCT IF(
       IS_GOOD(fast_lcp, avg_lcp, slow_lcp) AND
-      IS_GOOD(fast_fid, avg_fid, slow_fid) IS NOT FALSE AND
+      IS_GOOD(fast_inp, avg_inp, slow_inp) IS NOT FALSE AND
       IS_GOOD(small_cls, medium_cls, large_cls), origin, NULL)),
     COUNT(DISTINCT IF(
       IS_NON_ZERO(fast_lcp, avg_lcp, slow_lcp) AND
