@@ -48,13 +48,16 @@ FROM (
     device IN ('desktop', 'phone'))
 JOIN (
   SELECT DISTINCT
-    _TABLE_SUFFIX AS client,
-    url,
-    app AS cms
+    client,
+    page as url,
+    technologies AS cms
   FROM
-    `httparchive.technologies.2024_06_01_*`
+    `httparchive.all.pages`,
+    UNNEST (technologies) AS technologies,
+    UNNEST(technologies.categories) AS cats
   WHERE
-    category = 'CMS')
+    cats = 'CMS' and
+    date = "2024-06-01")
 USING
   (client, url)
 GROUP BY
