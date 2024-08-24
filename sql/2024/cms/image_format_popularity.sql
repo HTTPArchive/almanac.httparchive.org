@@ -44,13 +44,16 @@ USING
   (client, url)
 JOIN (
   SELECT
-    _TABLE_SUFFIX AS client,
-    app AS cms,
-    COUNT(DISTINCT url) AS pages
+    client,
+    technologies.technology AS cms,
+    COUNT(DISTINCT page) AS pages
   FROM
-    `httparchive.technologies.2024_06_01_*`
+   `httparchive.all.pages`,
+    UNNEST (technologies) AS technologies,
+    UNNEST(technologies.categories) AS cats
   WHERE
-    category = 'CMS'
+    cats = 'CMS' and
+    date = "2024-06-01"
   GROUP BY
     client,
     cms)
