@@ -8,10 +8,9 @@ WITH geo_summary AS (
     COUNT(DISTINCT origin) OVER (PARTITION BY country_code, IF(device = 'desktop', 'desktop', 'mobile')) AS total
   FROM
     `chrome-ux-report.materialized.country_summary`
-  WHERE
+  WHERE 
     yyyymm = 202406
 )
-
 SELECT
   *
 FROM (
@@ -22,22 +21,27 @@ FROM (
     ANY_VALUE(total) AS total,
     COUNT(0) / ANY_VALUE(total) AS pct
   FROM (
-    SELECT DISTINCT
-      geo,
+    SELECT
+      DISTINCT geo,
       client,
       total,
-      CONCAT(origin, '/') AS url
+      CONCAT(origin, '/') AS page
     FROM
-      geo_summary
-  ) JOIN (
-    SELECT DISTINCT
-      _TABLE_SUFFIX AS client,
-      url
+      geo_summary )
+  JOIN (
+    SELECT
+       client,
+      page
     FROM
-      `httparchive.technologies.2024_06_01_*`
+      `httparchive.all.pages`,
+      UNNEST (technologies) AS technologies,
+      UNNEST(technologies.categories) AS cats
     WHERE
-      category = 'CMS'
-  ) USING (client, url)
+      date = '2024-06-01'
+      AND cats= 'CMS' )
+  USING
+    (client,
+      page)
   GROUP BY
     client,
     geo)
