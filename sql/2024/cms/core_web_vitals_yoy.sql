@@ -106,7 +106,7 @@ JOIN (
     UNNEST(technologies.categories) AS cats
   WHERE
     cats = 'CMS'
-    and date ="2024-06-01")
+    and date ="2023-06-01")
 ON
   CONCAT(origin, '/') = url AND
   IF(device = 'desktop', 'desktop', 'mobile') = client
@@ -161,7 +161,7 @@ JOIN (
     UNNEST(technologies.categories) AS cats
   WHERE
     cats = 'CMS'
-    and date ="2024-06-01")
+    and date ="2022-06-01")
 ON
   CONCAT(origin, '/') = url AND
   IF(device = 'desktop', 'desktop', 'mobile') = client
