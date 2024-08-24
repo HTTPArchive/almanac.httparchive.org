@@ -1,5 +1,5 @@
 #standardSQL
-# Third-party scripts that use legacy JavaScript
+# Percent third-party scripts that use legacy JavaScript by URLs
 
 CREATE TEMPORARY FUNCTION
 getUrls(audit STRING)

@@ -1,5 +1,5 @@
 #standardSQL
-# Third-parties that use document.write
+# Percent of third-parties that use document.write
 
 CREATE TEMPORARY FUNCTION
 getUrls(audit STRING)

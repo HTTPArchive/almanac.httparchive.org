@@ -1,5 +1,5 @@
 #standardSQL
-# Number of third-parties per websites by rank and category
+# Number of third-party providers per websites by rank and category
 
 WITH requests AS (
   SELECT

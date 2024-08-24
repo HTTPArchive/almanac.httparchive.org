@@ -1,5 +1,5 @@
 #standardSQL
-# Pages with unminified JS by 1P/3P
+# Pages with unminified CSS by 1P/3P
 CREATE TEMPORARY FUNCTION getUnminifiedJsUrls(audit STRING)
 RETURNS ARRAY<STRUCT<url STRING, wastedBytes INT64>> LANGUAGE js AS '''
 try {
