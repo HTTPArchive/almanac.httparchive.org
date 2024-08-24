@@ -1223,18 +1223,23 @@ FROM (
       sub_region,
       client,
       total,
-      CONCAT(origin, '/') AS url
+      CONCAT(origin, '/') AS page
     FROM
       geo_summary
   ) JOIN (
-    SELECT DISTINCT
-      _TABLE_SUFFIX AS client,
-      url
+       SELECT
+      client,
+      page
     FROM
-      `httparchive.technologies.2024_06_01_*`
+      `httparchive.all.pages`,
+      UNNEST (technologies) AS technologies,
+      UNNEST(technologies.categories) AS cats
     WHERE
-      category = 'CMS'
-  ) USING (client, url)
+      date = '2024-06-01'
+      AND cats= 'CMS' )
+  USING
+    (client,
+      page)
   GROUP BY
     client,
     sub_region)
