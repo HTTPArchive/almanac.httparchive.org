@@ -1,5 +1,4 @@
-#standardSQL
-# Image format popularity by CMS
+#standardSQL # Image format popularity BY CMS
 SELECT
   client,
   cms,
@@ -9,56 +8,62 @@ SELECT
   SUM(COUNT(0)) OVER (PARTITION BY client, cms) AS total,
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client, cms) AS pct
 FROM (
-  SELECT DISTINCT
-    _TABLE_SUFFIX AS client,
-    url,
-    app AS cms
+  SELECT
+    DISTINCT client,
+    page AS url,
+    technologies.technology AS cms
   FROM
-    `httparchive.technologies.2024_06_01_*`
+    `httparchive.all.pages`,
+    UNNEST (technologies) AS technologies,
+    UNNEST(technologies.categories) AS cats
   WHERE
-    category = 'CMS')
+    cats = 'CMS'
+    AND date = "2024-06-01" )
 JOIN (
-    SELECT
+  SELECT
     client,
     page AS url,
-    CASE 
-      WHEN json_value(summary, "$.mimeType") = 'image/avif' THEN 'avif'
-      WHEN json_value(summary, "$.mimeType") = 'image/webp' THEN 'webp'
-      WHEN json_value(summary, "$.mimeType") = 'image/jpeg' THEN 'jpg'
-      WHEN json_value(summary, "$.mimeType") = 'image/png' THEN 'png'
-      WHEN json_value(summary, "$.mimeType") = 'image/gif' THEN 'gif'
-      WHEN json_value(summary, "$.mimeType") = 'image/svg+xml' THEN 'svg'
-      WHEN json_value(summary, "$.mimeType") = 'image/x-icon' THEN 'ico'
-      WHEN json_value(summary, "$.mimeType") = 'image/vnd.microsoft.icon' THEN 'ico'
-      WHEN json_value(summary, "$.mimeType") = 'image/jpg' THEN 'jpg'
-      WHEN json_value(summary, "$.mimeType") = 'image/bmp' THEN 'bmp'
-      WHEN json_value(summary, "$.mimeType") = 'binary/octet-stream' THEN 'binary/octet-stream' 
-      ELSE 'other/unknown'  -- To handle any unexpected formats
-    END AS format
+    CASE
+      WHEN JSON_VALUE(summary, "$.mimeType") = 'image/avif' THEN 'avif'
+      WHEN JSON_VALUE(summary, "$.mimeType") = 'image/webp' THEN 'webp'
+      WHEN JSON_VALUE(summary, "$.mimeType") = 'image/jpeg' THEN 'jpg'
+      WHEN JSON_VALUE(summary, "$.mimeType") = 'image/png' THEN 'png'
+      WHEN JSON_VALUE(summary, "$.mimeType") = 'image/gif' THEN 'gif'
+      WHEN JSON_VALUE(summary, "$.mimeType") = 'image/svg+xml' THEN 'svg'
+      WHEN JSON_VALUE(summary, "$.mimeType") = 'image/x-icon' THEN 'ico'
+      WHEN JSON_VALUE(summary, "$.mimeType") = 'image/vnd.microsoft.icon' THEN 'ico'
+      WHEN JSON_VALUE(summary, "$.mimeType") = 'image/jpg' THEN 'jpg'
+      WHEN JSON_VALUE(summary, "$.mimeType") = 'image/bmp' THEN 'bmp'
+      WHEN JSON_VALUE(summary, "$.mimeType") = 'binary/octet-stream' THEN 'binary/octet-stream'
+      ELSE 'other/unknown' -- TO handle ANY unexpected formats
+  END
+    AS format
   FROM
     httparchive.all.requests
   WHERE
-    date = '2024-06-01' AND
-    type = 'image')
+    date = '2024-06-01'
+    AND type = 'image')
 USING
-  (client, url)
+  (client,
+    url)
 JOIN (
   SELECT
     client,
     technologies.technology AS cms,
     COUNT(DISTINCT page) AS pages
   FROM
-   `httparchive.all.pages`,
+    `httparchive.all.pages`,
     UNNEST (technologies) AS technologies,
     UNNEST(technologies.categories) AS cats
   WHERE
-    cats = 'CMS' and
-    date = "2024-06-01"
+    cats = 'CMS'
+    AND date = "2024-06-01"
   GROUP BY
     client,
     cms)
 USING
-  (client, cms)
+  (client,
+    cms)
 WHERE
   pages > 1000
 GROUP BY
