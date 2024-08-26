@@ -21,7 +21,7 @@ try {
 
 WITH long_tasks_pages AS (
   SELECT
-     client,
+    client,
     page as url,
     _longTasks AS long_tasks
   FROM
