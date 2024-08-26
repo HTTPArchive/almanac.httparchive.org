@@ -36,15 +36,15 @@ SELECT
   APPROX_QUANTILES(IF(script_hint = 0, NULL, script_hint), 1000 IGNORE NULLS)[OFFSET(percentile * 10)] AS hints_per_page_with_hints
 FROM (
   SELECT
-     client,
-     page,
+    client,
+    page,
     COUNTIF(hint.name IN ('prefetch', 'preload', 'modulepreload') AND hint.value = 'script') AS script_hint
   FROM
     `httparchive.all.pages`
   LEFT JOIN
     UNNEST(getResourceHintAttrs(payload)) AS hint
-
-    where date="2024-06-01"
+    WHERE
+      date="2024-06-01"
   GROUP BY
     client,
     page),
