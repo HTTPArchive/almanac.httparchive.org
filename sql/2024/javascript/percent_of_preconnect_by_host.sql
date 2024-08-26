@@ -20,13 +20,14 @@ WITH resource_hints AS (
     host
   FROM (
     SELECT
-       client,
-       page,
+      client,
+      page,
       NET.HOST(href) AS host
     FROM
       `httparchive.all.pages`,
       UNNEST(getResourceHintsHrefs(payload, 'preconnect')) AS href
-      where date = "2024-06-01"
+    WHERE
+      date = "2024-06-01"
   )
   GROUP BY
     client,
