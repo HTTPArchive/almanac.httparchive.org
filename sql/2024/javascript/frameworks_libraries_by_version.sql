@@ -21,7 +21,7 @@ JOIN (
 USING
   (_TABLE_SUFFIX)
 WHERE
-  app IN ('jQuery', 'jQuery Migrate', 'jQuery UI', 'Modernizr', 'FancyBox', 'Slick', 'Lightbox', 'Moment.js', 'Underscore.js', 'Lodash', 'React', 'GSAP', 'Vue.js', 'styled-components', 'Emotion', 'Backbone.js', 'RequireJS', 'AngularJS', 'AMP', 'Redux', 'Next.js', 'Stimulus', 'Angular', 'Handlebars', 'Zone.js', 'Marionette.js', 'Mustache', 'Prototype', 'toastr', 'JSS',  'React Router', 'Nuxt.js', 'Alpine.js', 'Svelte', 'MooTools', 'Knockout.js', 'Socket.io', 'Gatsby', 'Adobe Client Data Layer')
+  app IN ('jQuery', 'jQuery Migrate', 'jQuery UI', 'Modernizr', 'FancyBox', 'Slick', 'Lightbox', 'Moment.js', 'Underscore.js', 'Lodash', 'React', 'GSAP', 'Vue.js', 'styled-components', 'Emotion', 'Backbone.js', 'RequireJS', 'AngularJS', 'AMP', 'Redux', 'Next.js', 'Stimulus', 'Angular', 'Handlebars', 'Zone.js', 'Marionette.js', 'Mustache', 'Prototype', 'toastr', 'JSS', 'React Router', 'Nuxt.js', 'Alpine.js', 'Svelte', 'MooTools', 'Knockout.js', 'Socket.io', 'Gatsby', 'Adobe Client Data Layer')
 GROUP BY
   client,
   category,
