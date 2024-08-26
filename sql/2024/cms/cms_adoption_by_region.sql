@@ -1,9 +1,8 @@
 #standardSQL # ALL CMS popularity per geo
 CREATE TEMP FUNCTION
-  GET_GEO(country_code STRING,
-    geo STRING)
-  RETURNS STRING
-  LANGUAGE js AS ''' var countries = { "af": { "name": "Afghanistan",
+GET_GEO(country_code STRING, geo STRING)
+RETURNS STRING
+LANGUAGE js AS ''' var countries = { "af": { "name": "Afghanistan",
   "region": "Asia",
   "sub-region": "Southern Asia" },
   "ax": { "name": "Åland Islands",
@@ -719,19 +718,20 @@ CREATE TEMP FUNCTION
   "sub-region": "Eastern Europe" } }; return countries[country_code][geo]; ''';
 WITH
   geo_summary AS (
-  SELECT
-    GET_GEO(country_code,
+SELECT
+  GET_GEO(country_code,
       'region') AS region,
   IF
     (device = 'desktop', 'desktop', 'mobile') AS client,
     origin,
     COUNT(DISTINCT origin) OVER (PARTITION BY GET_GEO(country_code, 'region'),
-    IF
+  IF
       (device = 'desktop', 'desktop', 'mobile')) AS total
   FROM
     `chrome-ux-report.materialized.country_summary`
   WHERE
-    yyyymm = 202406 )
+    yyyymm = 202406
+  )
 SELECT
   *
 FROM (
@@ -748,7 +748,8 @@ FROM (
       total,
       CONCAT(origin, '/') AS page
     FROM
-      geo_summary )
+      geo_summary
+  )
   JOIN (
     SELECT
       client,
@@ -758,8 +759,9 @@ FROM (
       UNNEST (technologies) AS technologies,
       UNNEST(technologies.categories) AS cats
     WHERE
-      date = '2024-06-01'
-      AND cats= 'CMS' )
+      date = '2024-06-01' AND
+      cats= 'CMS'
+  )
   USING
     (client,
       page)
