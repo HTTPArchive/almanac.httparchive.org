@@ -39,12 +39,12 @@ SELECT
   COUNTIF(scripts.injectedScripts > 0) / COUNT(0) AS pct_injected_scripts
 FROM (
   SELECT
-     client,
+    client,
     page,
     getScripts(payload) AS scripts
   FROM
     `httparchive.all.pages`
-    WHERE 
+  WHERE 
     date = '2024-06-01'
 )
 GROUP BY
