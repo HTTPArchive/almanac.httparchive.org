@@ -16,7 +16,7 @@ SELECT
   COUNTIF(CAST(JSON_EXTRACT(JSON_EXTRACT_SCALAR(payload, '$._javascript'), '$.script_tags.async') AS INT64) = 0 AND CAST(JSON_EXTRACT(JSON_EXTRACT_SCALAR(payload, '$._javascript'), '$.script_tags.defer') AS INT64) = 0) / COUNT(0) AS neither_pct
 FROM
   `httparchive.all.pages`
-WHERE 
+WHERE
   date = '2024-06-01'
 
 GROUP BY
