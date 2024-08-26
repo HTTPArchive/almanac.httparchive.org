@@ -21,7 +21,7 @@ FROM (
     UNNEST(REGEXP_EXTRACT_ALL(response_body, r'(?i)(<script[^>]*>)')) AS script
   WHERE
     date = '2024-06-01' AND
-    cast(json_value(summary, '$.firstHtml') AS bool)
+    cast(json_value(summary, '$.firstHtml') AS BOOL)
   )
 GROUP BY
   client
