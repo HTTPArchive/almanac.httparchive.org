@@ -26,7 +26,7 @@ WITH robots AS (
     getRobotsTxtUserAgents(JSON_EXTRACT_SCALAR(payload, '$._robots_txt')) AS robots_txt_user_agent_info,
     COUNT(DISTINCT root_page) OVER (PARTITION BY client) AS total_sites
   FROM
-    `httparchive.all.pages` TABLESAMPLE SYSTEM (0.01 PERCENT)
+    `httparchive.all.pages`
   WHERE
     date = '2024-06-01'
 )
