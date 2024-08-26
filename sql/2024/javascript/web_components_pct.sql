@@ -17,10 +17,11 @@ FROM (
     COUNTIF(ARRAY_LENGTH(JSON_EXTRACT_ARRAY(js, '$.web_component_specs.template')) > 0) AS templates
   FROM (
     SELECT
-       client,
+      client,
       JSON_EXTRACT_SCALAR(payload, '$._javascript') AS js
     FROM
       `httparchive.all.pages`
-      where date='2024-06-01')
+      WHERE
+        date='2024-06-01')
   GROUP BY
     client)
