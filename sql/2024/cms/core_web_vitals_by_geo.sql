@@ -50,15 +50,16 @@ FROM (
 JOIN (
   SELECT DISTINCT
     client,
-    page as url,
+    page AS url,
     technologies.technology AS cms
   FROM
     `httparchive.all.pages`,
-    UNNEST (technologies) AS technologies,
+    UNNEST(technologies) AS technologies,
     UNNEST(technologies.categories) AS cats
   WHERE
-    cats = 'CMS' and
-    date = "2024-06-01")
+    cats = 'CMS' AND
+    date = '2024-06-01'
+)
 USING
   (client, url)
 GROUP BY
