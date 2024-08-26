@@ -28,7 +28,7 @@ combined_frame_counts AS (
       THEN "mainframe-only"
       WHEN COUNT(DISTINCT frame_type) = 1 AND MAX(CASE WHEN frame_type = 'iframe' THEN 1 ELSE 0 END) = 1
       THEN "iframe-only"
-      WHEN COUNT(DISTINCT frame_id) >= 2 and COUNT(DISTINCT frame_type) = 2 
+      WHEN COUNT(DISTINCT frame_id) >= 2 and COUNT(DISTINCT frame_type) = 2
       THEN "both"
     END AS frame_presence,
   FROM document_frameid
