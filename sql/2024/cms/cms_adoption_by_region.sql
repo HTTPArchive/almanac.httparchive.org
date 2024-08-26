@@ -719,17 +719,17 @@ LANGUAGE js AS ''' var countries = { "af": { "name": "Afghanistan",
 WITH
 geo_summary AS (
   SELECT
-  GET_GEO(country_code,
+    GET_GEO(country_code,
       'region') AS region,
-  IF(device = 'desktop', 'desktop', 'mobile') AS client,
+    IF(device = 'desktop', 'desktop', 'mobile') AS client,
     origin,
     COUNT(DISTINCT origin) OVER (PARTITION BY GET_GEO(country_code, 'region'),
-  IF(device = 'desktop', 'desktop', 'mobile')) AS total
+    IF(device = 'desktop', 'desktop', 'mobile')) AS total
   FROM
     `chrome-ux-report.materialized.country_summary`
   WHERE
     yyyymm = 202406
-  )
+)
 SELECT
   *
 FROM (
@@ -740,8 +740,7 @@ FROM (
     ANY_VALUE(total) AS total,
     COUNT(0) / ANY_VALUE(total) AS pct
   FROM (
-    SELECT
-      DISTINCT region,
+    SELECT DISTINCT region,
       client,
       total,
       CONCAT(origin, '/') AS page
@@ -754,11 +753,11 @@ FROM (
       page
     FROM
       `httparchive.all.pages`,
-      UNNEST (technologies) AS technologies,
+      UNNEST(technologies) AS technologies,
       UNNEST(technologies.categories) AS cats
     WHERE
       date = '2024-06-01' AND
-      cats= 'CMS'
+      cats = 'CMS'
   )
   USING
     (client,
