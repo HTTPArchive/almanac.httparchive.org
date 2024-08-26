@@ -1,6 +1,6 @@
 #standardSQL
 # Section: Attack Preventions - Preventing attacks using CSP
-# Question: CSP on home pages: number of unique headers, header length and number of allowed hosts in all directives
+# Question: CSP on home pages: number of unique headers, header length and number of allowed HTTP(S) hosts in all directives
 CREATE TEMP FUNCTION getNumUniqueHosts(str STRING) AS (
   (SELECT COUNT(DISTINCT x) FROM UNNEST(REGEXP_EXTRACT_ALL(str, r'(?i)(https*://[^\s;]+)[\s;]')) AS x)
 );
