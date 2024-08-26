@@ -5,7 +5,7 @@ WITH document_frameid AS (
   SELECT
     client,
     NET.HOST(page) AS page_host,
-    CASE 
+    CASE
       WHEN is_main_document = true AND NET.HOST(page) = NET.HOST(url)
       THEN "mainframe"
       ELSE "iframe"
