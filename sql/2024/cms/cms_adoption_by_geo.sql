@@ -21,24 +21,25 @@ FROM (
     ANY_VALUE(total) AS total,
     COUNT(0) / ANY_VALUE(total) AS pct
   FROM (
-    SELECT
-      DISTINCT geo,
+    SELECT DISTINCT 
+      geo,
       client,
       total,
       CONCAT(origin, '/') AS page
     FROM
-      geo_summary )
+      geo_summary
+  )
   JOIN (
     SELECT
       client,
       page
     FROM
       `httparchive.all.pages`,
-      UNNEST (technologies) AS technologies,
+      UNNEST(technologies) AS technologies,
       UNNEST(technologies.categories) AS cats
     WHERE
-      date = '2024-06-01'
-      AND cats= 'CMS'
+      date = '2024-06-01' AND
+      cats= 'CMS'
   )
   USING
     (client,
