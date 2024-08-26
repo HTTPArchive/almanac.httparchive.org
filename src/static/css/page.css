@@ -787,7 +787,7 @@ figure .fig-desktop {
   .index-box ul {
     max-height: 0;
     display: none;
-    border-top: 0 solid #fff;
+    border-top: 0 solid #ffffff;
     transition: max-height 0.15s ease-out;
     overflow: hidden;
   }
