@@ -15,12 +15,13 @@ try {
 
 WITH render_blocking_scripts AS (
   SELECT
-     client,
+    client,
     page as url,
     getRenderBlockingScripts(payload) AS number_of_render_blocking_scripts
   FROM
     `httparchive.all.pages`
-    where date="2024-06-01"
+  WHERE
+    date="2024-06-01"
 )
 
 SELECT
