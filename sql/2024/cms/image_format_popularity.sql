@@ -8,8 +8,7 @@ SELECT
   SUM(COUNT(0)) OVER (PARTITION BY client, cms) AS total,
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client, cms) AS pct
 FROM (
-  SELECT
-    DISTINCT client,
+  SELECT DISTINCT client,
     page AS url,
     technologies.technology AS cms
   FROM
@@ -18,7 +17,8 @@ FROM (
     UNNEST(technologies.categories) AS cats
   WHERE
     cats = 'CMS'
-    AND date = "2024-06-01" )
+    AND date = '2024-06-01'
+)
 JOIN (
   SELECT
     client,
@@ -42,7 +42,8 @@ JOIN (
     httparchive.all.requests
   WHERE
     date = '2024-06-01'
-    AND type = 'image')
+    AND type = 'image'
+)
 USING
   (client,
     url)
@@ -57,7 +58,7 @@ JOIN (
     UNNEST(technologies.categories) AS cats
   WHERE
     cats = 'CMS'
-    AND date = "2024-06-01"
+    AND date = '2024-06-01'
   GROUP BY
     client,
     cms)
