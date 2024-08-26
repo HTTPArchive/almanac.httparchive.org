@@ -21,7 +21,7 @@ FROM (
     ANY_VALUE(total) AS total,
     COUNT(0) / ANY_VALUE(total) AS pct
   FROM (
-    SELECT DISTINCT 
+    SELECT DISTINCT
       geo,
       client,
       total,
@@ -39,7 +39,7 @@ FROM (
       UNNEST(technologies.categories) AS cats
     WHERE
       date = '2024-06-01' AND
-      cats= 'CMS'
+      cats = 'CMS'
   )
   USING
     (client,
