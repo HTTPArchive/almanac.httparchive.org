@@ -17,7 +17,7 @@ FROM (
     UNNEST(technologies.categories) AS cats
   WHERE
     date = '2024-06-01' AND
-    cats= 'CMS'
+    cats = 'CMS'
 )
 JOIN (
   SELECT
