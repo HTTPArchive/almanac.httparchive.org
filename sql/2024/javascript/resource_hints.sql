@@ -37,14 +37,15 @@ SELECT
   COUNT(DISTINCT IF(script_hint, page, NULL)) / COUNT(DISTINCT page) AS pct
 FROM (
   SELECT
-     client,
-     page,
+    client,
+    page,
     hint.name IN ('prefetch', 'preload', 'modulepreload') AND hint.value = 'script' AS script_hint
   FROM
     `httparchive.all.pages`
   LEFT JOIN
     UNNEST(getResourceHintAttrs(payload)) AS hint 
-    where date = "2024-06-01"
+    WHERE
+      date = "2024-06-01"
     )
 GROUP BY
   client
