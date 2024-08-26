@@ -24,7 +24,7 @@ FROM (
     date = '2024-06-01'
 )
 JOIN (
-  SELECT DISTINCT 
+  SELECT DISTINCT
     client,
     technologies.technology AS cms,
     page AS url
