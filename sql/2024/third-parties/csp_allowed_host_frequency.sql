@@ -34,8 +34,7 @@ csp_data AS (
     `httparchive.all.requests`
   WHERE
     date = '2024-06-01' AND
-    is_main_document
-  AND
+    is_main_document AND
     response_headers IS NOT NULL
 ),
 
