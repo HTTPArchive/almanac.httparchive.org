@@ -21,7 +21,9 @@ FROM (
       JSON_EXTRACT_SCALAR(payload, '$._javascript') AS js
     FROM
       `httparchive.all.pages`
-      WHERE
-        date='2024-06-01')
+    WHERE
+      date = '2024-06-01'
+  )
   GROUP BY
-    client)
+    client
+)
