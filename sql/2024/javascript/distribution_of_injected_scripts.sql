@@ -38,12 +38,12 @@ SELECT
   APPROX_QUANTILES(IF(scripts.scripts > 0, scripts.injectedScripts / scripts.scripts, 0), 1000)[OFFSET(percentile * 10)] AS pct_injected_scripts_per_page
 FROM (
   SELECT
-   client,
-     page,
+    client,
+    page,
     getScripts(payload) AS scripts
   FROM
     `httparchive.all.pages`
-    where 
+  WHERE
     date = "2024-06-01"
 ),
 UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
