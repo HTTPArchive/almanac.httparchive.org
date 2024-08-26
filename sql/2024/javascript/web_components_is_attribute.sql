@@ -25,8 +25,8 @@ SELECT
 FROM
   `httparchive.all.pages`,
   UNNEST(get_almanac_attribute_info(JSON_EXTRACT_SCALAR(payload, '$._almanac'))) AS almanac_attribute_info
-  WHERE
-    date="2024-06-01"
+WHERE
+  date = '2024-06-01'
 GROUP BY
   client
 ORDER BY
