@@ -717,16 +717,14 @@ LANGUAGE js AS ''' var countries = { "af": { "name": "Afghanistan",
   "region": "Europe",
   "sub-region": "Eastern Europe" } }; return countries[country_code][geo]; ''';
 WITH
-  geo_summary AS (
-SELECT
+geo_summary AS (
+  SELECT
   GET_GEO(country_code,
       'region') AS region,
-  IF
-    (device = 'desktop', 'desktop', 'mobile') AS client,
+  IF(device = 'desktop', 'desktop', 'mobile') AS client,
     origin,
     COUNT(DISTINCT origin) OVER (PARTITION BY GET_GEO(country_code, 'region'),
-  IF
-      (device = 'desktop', 'desktop', 'mobile')) AS total
+  IF(device = 'desktop', 'desktop', 'mobile')) AS total
   FROM
     `chrome-ux-report.materialized.country_summary`
   WHERE
