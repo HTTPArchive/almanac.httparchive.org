@@ -6,12 +6,10 @@ SELECT
   client,
   cms,
   COUNT(0) AS pages,
-  APPROX_QUANTILES(total_kb, 1000)[
-OFFSET
-  (percentile * 10)] AS total_kb
+  APPROX_QUANTILES(total_kb, 1000)[OFFSET(percentile * 10)] AS total_kb
 FROM (
-  SELECT
-    DISTINCT client,
+  SELECT DISTINCT
+    client,
     page AS url,
     technologies.technology AS cms
   FROM
@@ -20,16 +18,19 @@ FROM (
     UNNEST(technologies.categories) AS cats
   WHERE
     cats = 'CMS'
-    AND date="2024-06-01")
+  AND
+    date= '2024-06-01'
+  )
 JOIN (
   SELECT
     client,
     page AS url,
-    cast(json_value(summary, "$.bytesTotal") as int64) / 1024 AS total_kb
+    cast(json_value(summary, '$.bytesTotal') as int64) / 1024 AS total_kb
   FROM
     `httparchive.all.pages`
   WHERE
-    date="2024-06-01")
+    date = '2024-06-01'
+)
 USING
   (client,
     url),
