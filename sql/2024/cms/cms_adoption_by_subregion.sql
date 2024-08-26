@@ -1227,16 +1227,17 @@ FROM (
     FROM
       geo_summary
   ) JOIN (
-       SELECT
-      client,
-      page
+      SELECT
+        client,
+        page
     FROM
       `httparchive.all.pages`,
       UNNEST (technologies) AS technologies,
       UNNEST(technologies.categories) AS cats
     WHERE
       date = '2024-06-01'
-      AND cats= 'CMS' )
+      AND cats= 'CMS'
+  )
   USING
     (client,
       page)
