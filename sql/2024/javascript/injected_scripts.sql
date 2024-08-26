@@ -44,7 +44,7 @@ FROM (
     getScripts(payload) AS scripts
   FROM
     `httparchive.all.pages`
-  WHERE 
+  WHERE
     date = '2024-06-01'
 )
 GROUP BY
