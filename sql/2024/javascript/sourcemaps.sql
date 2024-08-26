@@ -32,12 +32,13 @@ SELECT
   COUNTIF(sourcemaps.isPublic = true) / COUNT(0) AS pct_has_public_sourcemaps
 FROM (
   SELECT
-     client,
-     page,
+    client,
+    page,
     getSourceMaps(payload) AS sourcemaps
   FROM
     `httparchive.all.pages`
-    where date="2024-06-01"
+    WHERE
+      date="2024-06-01"
 )
 GROUP BY
   client
