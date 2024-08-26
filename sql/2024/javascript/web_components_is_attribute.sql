@@ -18,14 +18,15 @@ return [];
 ''';
 
 SELECT
-   client,
+  client,
   COUNTIF(almanac_attribute_info.name = 'is' AND almanac_attribute_info.freq > 0) AS freq,
   SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS total,
   COUNTIF(almanac_attribute_info.name = 'is' AND almanac_attribute_info.freq > 0) / SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS pct_pages
 FROM
   `httparchive.all.pages`,
   UNNEST(get_almanac_attribute_info(JSON_EXTRACT_SCALAR(payload, '$._almanac'))) AS almanac_attribute_info
-  where date="2024-06-01"
+  WHERE
+    date="2024-06-01"
 GROUP BY
   client
 ORDER BY
