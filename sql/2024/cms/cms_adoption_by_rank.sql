@@ -7,7 +7,7 @@ SELECT
   ANY_VALUE(total) AS total,
   COUNT(DISTINCT page) / ANY_VALUE(total) AS pct
 FROM (
-  SELECT DISTINCT 
+  SELECT DISTINCT
     client,
     technology,
     page
@@ -16,8 +16,8 @@ FROM (
     UNNEST(technologies) AS technologies,
     UNNEST(technologies.categories) AS cats
   WHERE
-    date = '2024-06-01' AND 
-    cats= 'CMS' 
+    date = '2024-06-01' AND
+    cats= 'CMS'
 )
 JOIN (
   SELECT
@@ -41,7 +41,7 @@ JOIN (
     `httparchive.all.pages`,
     UNNEST([1e3, 1e4, 1e5, 1e6, 1e7]) AS rank_magnitude
   WHERE
-    rank <= rank_magnitude AND 
+    rank <= rank_magnitude AND
     date = '2024-06-01'
   GROUP BY
     client,
