@@ -40,8 +40,8 @@ FROM (
     getSourceMaps(payload) AS sourcemaps
   FROM
     `httparchive.all.pages`
-    WHERE
-      date='2024-06-01'
+  WHERE
+    date = '2024-06-01'
 )
 WHERE
   sourcemaps.isPublic = true
