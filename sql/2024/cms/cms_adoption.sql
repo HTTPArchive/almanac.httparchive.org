@@ -7,7 +7,7 @@ SELECT
   COUNT(DISTINCT page) / total AS pct
 FROM
   `httparchive.all.pages`,
-  UNNEST (technologies) AS technologies,
+  UNNEST(technologies) AS technologies,
   UNNEST(technologies.categories) AS cats
 JOIN (
   SELECT
@@ -22,8 +22,8 @@ JOIN (
 USING
   (client)
 WHERE
-  cats = 'CMS'
-  AND date = '2024-06-01'
+  cats = 'CMS' AND
+  date = '2024-06-01'
 GROUP BY
   client,
   total
@@ -36,7 +36,7 @@ SELECT
   COUNT(DISTINCT page) / total AS pct
 FROM
   `httparchive.all.pages`,
-  UNNEST (technologies) AS technologies,
+  UNNEST(technologies) AS technologies,
   UNNEST(technologies.categories) AS cats
 JOIN (
   SELECT
@@ -51,8 +51,8 @@ JOIN (
 USING
   (client)
 WHERE
-  cats = 'CMS'
-  AND date = '2023-06-01'
+  cats = 'CMS' AND
+  date = '2023-06-01'
 GROUP BY
   client,
   total
@@ -65,7 +65,7 @@ SELECT
   COUNT(DISTINCT page) / total AS pct
 FROM
   `httparchive.all.pages`,
-  UNNEST (technologies) AS technologies,
+  UNNEST(technologies) AS technologies,
   UNNEST(technologies.categories) AS cats
 JOIN (
   SELECT
@@ -80,8 +80,8 @@ JOIN (
 USING
   (client)
 WHERE
-  cats = 'CMS'
-  AND date = '2022-06-01'
+  cats = 'CMS' AND
+  date = '2022-06-01'
 GROUP BY
   client,
   total
