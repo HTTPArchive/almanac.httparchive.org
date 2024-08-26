@@ -1,4 +1,4 @@
-#standardSQL 
+#standardSQL
 # Lighthouse category scores per CMS
 # lighthouse_category_scores_per_cms.sql
 SELECT
@@ -25,7 +25,8 @@ FROM (
   FROM
     `httparchive.all.pages`
   WHERE
-    date="2024-06-01")
+    date = '2024-06-01'
+)
 JOIN (
   SELECT
     DISTINCT client,
@@ -36,8 +37,9 @@ JOIN (
     UNNEST (technologies) AS technologies,
     UNNEST(technologies.categories) AS cats
   WHERE
-    cats = 'CMS'
-    AND date ="2024-06-01")
+    cats = 'CMS' AND
+    date = '2024-06-01'
+)
 USING
   (url,
     client)
