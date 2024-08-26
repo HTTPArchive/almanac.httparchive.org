@@ -44,8 +44,8 @@ FROM (
     `httparchive.all.pages`
   LEFT JOIN
     UNNEST(getResourceHintAttrs(payload)) AS hint
-    WHERE
-      date = "2024-06-01"
-    )
+  WHERE
+    date = '2024-06-01'
+)
 GROUP BY
   client
