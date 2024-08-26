@@ -1,6 +1,6 @@
 WITH lh AS (
   SELECT
-    IF(STARTS_WITH(_TABLE_SUFFIX, '2022'), '2022', IF(STARTS_WITH(_TABLE_SUFFIX, '2023'),'2023', '2024')) AS year,
+    IF(STARTS_WITH(_TABLE_SUFFIX, '2022'), '2022', IF(STARTS_WITH(_TABLE_SUFFIX, '2023'), '2023', '2024')) AS year,
     IF(ENDS_WITH(_TABLE_SUFFIX, 'desktop'), 'desktop', 'mobile') AS client,
     CAST(JSON_VALUE(report, '$.audits.render-blocking-resources.score') AS FLOAT64) >= 0.9 AS is_passing
   FROM
