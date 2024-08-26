@@ -28,7 +28,7 @@ FROM (
       CONCAT(origin, '/') AS page
     FROM
       geo_summary
-  )
+)
   JOIN (
     SELECT
       client,
