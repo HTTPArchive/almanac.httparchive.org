@@ -10,11 +10,11 @@ RETURNS STRUCT<
 var result = {
   user_agents: []
 };
-try {
+  try {
     var robots_txt = JSON.parse(robots_txt_string);
     var uas = robots_txt.record_counts.by_useragent;
     result.user_agents  = typeof uas === 'object' ? Object.keys(uas).map(ua => ua.toLowerCase()) : [];
-} catch (e) {}
+  } catch (e) {}
 return result;
 ''';
 
