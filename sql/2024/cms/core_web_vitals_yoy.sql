@@ -41,7 +41,7 @@ FROM
 JOIN (
   SELECT
     client,
-    page url,
+    page AS url,
     technologies.technology AS cms
   FROM
     `httparchive.all.pages`,
