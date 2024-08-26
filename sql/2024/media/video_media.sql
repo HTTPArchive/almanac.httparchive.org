@@ -49,7 +49,7 @@ SELECT
   COUNT(DISTINCT page) / total_pages AS pct_pages
 FROM
   video,
-UNNEST(video_source_media) AS source_media
+  UNNEST(video_source_media) AS source_media
 INNER JOIN
   totals
 USING (date, client, is_root_page)
