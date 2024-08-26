@@ -3,6 +3,7 @@
 # Question: How often are the allow and sandbox attributes used on iframes? Both per page and over all iframe elements
 SELECT
   client,
+  date,
   COUNT(0) AS total_iframes,
   COUNTIF(allow IS NOT NULL) AS freq_allow,
   COUNTIF(allow IS NOT NULL) / COUNT(0) AS pct_allow_frames,
@@ -18,23 +19,27 @@ SELECT
 FROM (
   SELECT
     client,
+    date,
     url,
     JSON_EXTRACT_SCALAR(iframeAttr, '$.allow') AS allow,
     JSON_EXTRACT_SCALAR(iframeAttr, '$.sandbox') AS sandbox
   FROM (
     SELECT
       client,
+      date,
       page AS url,
-      JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._security'), '$.iframe-allow-sandbox') AS iframeAttrs
+      JSON_EXTRACT_ARRAY(JSON_QUERY(custom_metrics, '$.security'), '$.iframe-allow-sandbox') AS iframeAttrs
     FROM
       `httparchive.all.pages`
     WHERE
-      date = '2024-06-01' AND
+      (date = '2022-06-01' OR date = '2023-06-01' OR date = '2023-12-01' OR date = '2024-03-01' OR date = '2024-04-01' OR date = '2024-05-01' OR date = '2024-06-01') AND
       is_root_page
   )
   LEFT JOIN UNNEST(iframeAttrs) AS iframeAttr
   )
 GROUP BY
-  client
+  client,
+  date
 ORDER BY
+  date,
   client
