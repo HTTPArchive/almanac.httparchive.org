@@ -12,7 +12,7 @@ FROM
   UNNEST(REGEXP_EXTRACT_ALL(video, r'(?i)type\s*=\s*["\'](video/[^\'";?]*)')) AS video_type
 WHERE
   date = '2022-06-01' AND
-  type = "html" AND
+  type = 'html' AND
   is_main_document
 GROUP BY
   client,
