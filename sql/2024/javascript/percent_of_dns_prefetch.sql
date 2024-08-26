@@ -27,7 +27,7 @@ WITH resource_hints AS (
       `httparchive.all.pages`,
       UNNEST(getResourceHintsHrefs(payload, 'dns-prefetch')) AS href
     WHERE
-      date = "2024-06-01"
+      date = '2024-06-01'
   )
   GROUP BY
     client,
