@@ -1226,24 +1226,26 @@ FROM (
       CONCAT(origin, '/') AS page
     FROM
       geo_summary
-  ) JOIN (
-      SELECT
-        client,
-        page
+  ) 
+  JOIN (
+    SELECT
+      client,
+      page
     FROM
       `httparchive.all.pages`,
       UNNEST (technologies) AS technologies,
       UNNEST(technologies.categories) AS cats
     WHERE
-      date = '2024-06-01'
-      AND cats= 'CMS'
+      date = '2024-06-01' AND
+      cats = 'CMS'
   )
   USING
     (client,
       page)
   GROUP BY
     client,
-    sub_region)
+    sub_region
+)
 WHERE
   pages > 1000
 ORDER BY
