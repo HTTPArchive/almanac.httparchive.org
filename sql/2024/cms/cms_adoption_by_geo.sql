@@ -8,7 +8,7 @@ WITH geo_summary AS (
     COUNT(DISTINCT origin) OVER (PARTITION BY country_code, IF(device = 'desktop', 'desktop', 'mobile')) AS total
   FROM
     `chrome-ux-report.materialized.country_summary`
-  WHERE 
+  WHERE
     yyyymm = 202406
 )
 SELECT
@@ -30,7 +30,7 @@ FROM (
       geo_summary )
   JOIN (
     SELECT
-       client,
+      client,
       page
     FROM
       `httparchive.all.pages`,
@@ -38,7 +38,8 @@ FROM (
       UNNEST(technologies.categories) AS cats
     WHERE
       date = '2024-06-01'
-      AND cats= 'CMS' )
+      AND cats= 'CMS'
+  )
   USING
     (client,
       page)
