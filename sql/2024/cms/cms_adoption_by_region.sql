@@ -724,7 +724,7 @@ geo_summary AS (
     IF(device = 'desktop', 'desktop', 'mobile') AS client,
     origin,
     COUNT(DISTINCT origin) OVER (PARTITION BY GET_GEO(country_code, 'region'),
-    IF(device = 'desktop', 'desktop', 'mobile')) AS total
+      IF(device = 'desktop', 'desktop', 'mobile')) AS total
   FROM
     `chrome-ux-report.materialized.country_summary`
   WHERE
