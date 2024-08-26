@@ -155,7 +155,7 @@ JOIN (
     technologies.technology AS cms
   FROM
     `httparchive.all.pages`,
-    UNNEST (technologies) AS technologies,
+    UNNEST(technologies) AS technologies,
     UNNEST(technologies.categories) AS cats
   WHERE
     cats = 'CMS' AND
