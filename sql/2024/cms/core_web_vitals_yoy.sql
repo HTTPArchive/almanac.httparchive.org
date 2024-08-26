@@ -22,7 +22,6 @@ SELECT
   SAFE_DIVIDE(
     COUNT(DISTINCT IF(IS_GOOD(fast_inp, avg_inp, slow_inp), origin, NULL)),
     COUNT(DISTINCT IF(IS_NON_ZERO(fast_inp, avg_inp, slow_inp), origin, NULL))) AS pct_good_inp,
-
   # Origins with good CLS divided by origins with any CLS.
   SAFE_DIVIDE(
     COUNT(DISTINCT IF(IS_GOOD(small_cls, medium_cls, large_cls), origin, NULL)),
@@ -46,7 +45,7 @@ JOIN (
     technologies.technology AS cms
   FROM
     `httparchive.all.pages`,
-    UNNEST (technologies) AS technologies,
+    UNNEST(technologies) AS technologies,
     UNNEST(technologies.categories) AS cats
   WHERE
     cats = 'CMS' AND
@@ -101,7 +100,7 @@ JOIN (
     technologies.technology AS cms
   FROM
     `httparchive.all.pages`,
-    UNNEST (technologies) AS technologies,
+    UNNEST(technologies) AS technologies,
     UNNEST(technologies.categories) AS cats
   WHERE
     cats = 'CMS' AND
@@ -152,10 +151,10 @@ FROM
 JOIN (
   SELECT
     client,
-    page as url,
+    page AS url,
     technologies.technology AS cms
   FROM
-  `httparchive.all.pages`,
+    `httparchive.all.pages`,
     UNNEST (technologies) AS technologies,
     UNNEST(technologies.categories) AS cats
   WHERE
@@ -170,6 +169,5 @@ WHERE
 GROUP BY
   client,
   cms
-
-  ORDER BY
+ORDER BY
   origins DESC
