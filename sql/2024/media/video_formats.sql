@@ -34,7 +34,7 @@ FROM (
     url,
     fixMimeType(JSON_VALUE(payload, '$.response.content.mimeType')) AS trueFormat
   FROM
-    `httparchive.all.requests` TABLESAMPLE SYSTEM (0.001 PERCENT)
+    `httparchive.all.requests`
   WHERE
     date = '2024-06-01' AND
     type = 'video' AND
