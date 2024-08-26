@@ -22,7 +22,6 @@ SELECT
   SAFE_DIVIDE(
     COUNT(DISTINCT IF(IS_GOOD(fast_inp, avg_inp, slow_inp), origin, NULL)),
     COUNT(DISTINCT IF(IS_NON_ZERO(fast_inp, avg_inp, slow_inp), origin, NULL))) AS pct_good_inp,
-    
 
   # Origins with good CLS divided by origins with any CLS.
   SAFE_DIVIDE(
@@ -50,8 +49,9 @@ JOIN (
     UNNEST (technologies) AS technologies,
     UNNEST(technologies.categories) AS cats
   WHERE
-    cats = 'CMS'
-    and date ="2024-06-01")
+    cats = 'CMS' AND
+    date = '2024-06-01'
+)
 ON
   CONCAT(origin, '/') = url AND
   IF(device = 'desktop', 'desktop', 'mobile') = client
@@ -60,9 +60,8 @@ WHERE
 GROUP BY
   client,
   cms
+
 UNION ALL
-
-
 
 SELECT
   2023 AS year,
@@ -98,15 +97,16 @@ FROM
 JOIN (
   SELECT
     client,
-    page as url,
+    page AS url,
     technologies.technology AS cms
   FROM
     `httparchive.all.pages`,
     UNNEST (technologies) AS technologies,
     UNNEST(technologies.categories) AS cats
   WHERE
-    cats = 'CMS'
-    and date ="2023-06-01")
+    cats = 'CMS' AND
+    date = '2023-06-01'
+)
 ON
   CONCAT(origin, '/') = url AND
   IF(device = 'desktop', 'desktop', 'mobile') = client
@@ -116,8 +116,7 @@ GROUP BY
   client,
   cms
 
-
-union all
+UNION ALL
 
 SELECT
   2022 AS year,
@@ -160,8 +159,9 @@ JOIN (
     UNNEST (technologies) AS technologies,
     UNNEST(technologies.categories) AS cats
   WHERE
-    cats = 'CMS'
-    and date ="2022-06-01")
+    cats = 'CMS' AND
+    date = '2022-06-01'
+)
 ON
   CONCAT(origin, '/') = url AND
   IF(device = 'desktop', 'desktop', 'mobile') = client
