@@ -10,12 +10,12 @@ WITH totals AS (
     date,
     client,
     is_root_page,
-    COUNT(DISTINCT page) As total_pages
+    COUNT(DISTINCT page) AS total_pages
   FROM
     `httparchive.all.requests`
   WHERE
     date = '2024-06-01' AND
-    type = "html" AND
+    type = 'html' AND
     is_main_document
   GROUP BY
     date,
@@ -29,14 +29,14 @@ video AS (
     client,
     is_root_page,
     page,
-    REGEXP_EXTRACT_ALL (response_body, r'<video [\s\S]*?media="([^"]+)" [\s\S]*?</video>') AS video_source_media
+    REGEXP_EXTRACT_ALL(response_body, r'<video [\s\S]*?media="([^"]+)" [\s\S]*?</video>') AS video_source_media
   FROM
     `httparchive.all.requests`
   WHERE
     date = '2024-06-01' AND
-    type = "html" AND
+    type = 'html' AND
     is_main_document AND
-    REGEXP_EXTRACT (response_body, r'<video[\s\S]*?media="([^*]+)" [\s\S]*?</video>', 1) IS NOT NULL
+    REGEXP_EXTRACT(response_body, r'<video[\s\S]*?media="([^*]+)" [\s\S]*?</video>', 1) IS NOT NULL
 )
 
 SELECT
@@ -49,7 +49,7 @@ SELECT
   COUNT(DISTINCT page) / total_pages AS pct_pages
 FROM
   video,
-UNNEST (video_source_media) AS source_media
+UNNEST(video_source_media) AS source_media
 INNER JOIN
   totals
 USING (date, client, is_root_page)
