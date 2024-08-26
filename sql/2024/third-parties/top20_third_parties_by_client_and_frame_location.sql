@@ -12,7 +12,7 @@ WITH document_frameid AS (
     END AS frame_type,
     NET.HOST(url) AS frame_host,
     JSON_EXTRACT_SCALAR(payload, '$._frame_id') AS frame_id
-  FROM 
+  FROM
     `httparchive.all.requests` AS requests
   WHERE
     requests.date = '2024-06-01'
@@ -33,11 +33,11 @@ combined_frame_counts AS (
       WHEN COUNT(DISTINCT frame_id) >= 2 and COUNT(DISTINCT frame_type) = 2
         THEN 'both'
     END AS frame_presence,
-  FROM 
+  FROM
     document_frameid
-  GROUP BY 
-    client, 
-    page_host, 
+  GROUP BY
+    client,
+    page_host,
     frame_host
 ),
 grouped_data AS (
@@ -83,12 +83,12 @@ SELECT
 FROM
   ranked_publishers
 WHERE
-  rank_mainframe <= 20 
+  rank_mainframe <= 20
 OR
-  rank_iframe <= 20 
+  rank_iframe <= 20
 OR
   rank_both <= 20
-ORDER BY 
+ORDER BY
   client,
   category,
 CASE category
