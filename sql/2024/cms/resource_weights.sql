@@ -31,7 +31,7 @@ JOIN (
     cast(json_value(summary, "$.bytesTotal") as int64) / 1024 AS total_kb,
     cast(json_value(summary, "$.bytesHtml") as int64)  / 1024 AS html_kb,
     cast(json_value(summary, "$.bytesJS") as int64) / 1024 AS js_kb,
-    cast(json_value(summary, "$.bytesCSS") as int64) / 1024 AS css_kb,
+    cast(json_value(summary, "$.bytesCss") as int64) / 1024 AS css_kb,
     cast(json_value(summary, "$.bytesImg") as int64) / 1024 AS img_kb,
     cast(json_value(summary, "$.bytesFont") as int64) / 1024 AS font_kb
   FROM
