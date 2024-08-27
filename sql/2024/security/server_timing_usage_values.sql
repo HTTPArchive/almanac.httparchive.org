@@ -56,12 +56,12 @@ WITH parsed_server_timing AS (
     JSON_EXTRACT(parseServerTiming(response_headers.value), "$.dur") AS dur,
     JSON_EXTRACT(parseServerTiming(response_headers.value), "$.desc") AS desc1
   FROM
-    #`httparchive.all.requests`,
-    `httparchive.sample_data.requests_1k`,
+    `httparchive.all.requests`,
+    # `httparchive.sample_data.requests_1k`,
     UNNEST(response_headers) AS response_headers
   WHERE
-    # date = '2024-06-01' AND
-    date = '2024-08-01' AND
+    date = '2024-06-01' AND
+    # date = '2024-08-01' AND
     is_root_page AND
     LOWER(response_headers.name) = 'server-timing'
 ), st_details AS (
@@ -88,11 +88,11 @@ WHERE
     COUNT(0) AS total,
     COUNT(DISTINCT NET.HOST(url)) AS total_hosts
   FROM
-    #`httparchive.all.requests`
-    `httparchive.sample_data.requests_1k`
+    `httparchive.all.requests`
+    # `httparchive.sample_data.requests_1k`
   WHERE
-    #date = '2024-06-01' AND
-    date = '2024-08-01' AND
+    date = '2024-06-01' AND
+    # date = '2024-08-01' AND
     is_root_page
   GROUP BY
     client
@@ -100,7 +100,7 @@ WHERE
 
 # Most common headers
 # (Data already has one row for each metric (header split at comma) thus some headers occur multiple times)
-
+/*
 SELECT
   client,
   server_timing_header,
@@ -134,7 +134,7 @@ ORDER BY
   pct_value DESC
 LIMIT
   100
-
+*/
 
 # Most common metric names
 /*
@@ -229,23 +229,67 @@ LIMIT
   100
 */
 
-# General query: Total #Pages, #With header, #With any dur, #With 1xdur, #With 2x dur, #With 3x dur, #With >3x dur, #With any desc, #Average number of metrics, #....
-# WIP improve this
-/*
+# General query: Total #Responses (Requests), #With header, #With any dur, #With 1xdur, #With 2x dur, #With >=3x dur, #With any desc, #Average number of metrics, #....
 SELECT
   client,
   total AS total_responses,
-  SUM(COUNT(DISTINCT host)) OVER (PARTITION BY client) AS total_server_timing_headers,
-  SUM(COUNT(DISTINCT host)) OVER (PARTITION BY client) / total AS pct_server_timing,
-  COUNT(DISTINCT host) AS freq,
-  COUNT(host) AS freq_non_unique,
-  COUNT(DISTINCT host) / SUM(COUNT(DISTINCT host)) OVER (PARTITION BY client) AS pct_value,
-FROM st_details
-  JOIN totals USING (client)
+  total_hosts,
+  total_st,
+  total_st_hosts,
+  COUNT(0) AS total_st_metrics, # Counts the total number of metrics
+  total_st / total AS pct_server_timing,
+  total_st_hosts / total_hosts AS pct_server_timing_hosts,
+  COUNTIF(dur != 'null') AS freq_dur, 
+  COUNTIF(desc1 != 'null') AS freq_desc,
+  COUNTIF(dur != 'null') / COUNT(0) AS pct_dur,
+  COUNTIF(desc1 != 'null') / COUNT(0) AS pct_desc,
+  hosts_at_least_1_dur,
+  hosts_1_durs,
+  hosts_2_durs,
+  hosts_more_than_2_durs,
+  hosts_avg_distinct_durs,
+  hosts_avg_durs,
+  hosts_avg_descs,
+  hosts_avg_metrics,
+  hosts_at_least_1_desc,
+FROM (
+  SELECT
+    client,
+    COUNT(DISTINCT CASE WHEN dur_count >= 1 THEN host ELSE NULL END) AS hosts_at_least_1_dur,
+    COUNT(DISTINCT CASE WHEN dur_count = 1 THEN host ELSE NULL END) AS hosts_1_durs,
+    COUNT(DISTINCT CASE WHEN dur_count = 2 THEN host ELSE NULL END) AS hosts_2_durs,
+    COUNT(DISTINCT CASE WHEN dur_count >= 3 THEN host ELSE NULL END) AS hosts_more_than_2_durs,
+    AVG(dur_distinct) AS hosts_avg_distinct_durs,
+    AVG(dur_count) AS hosts_avg_durs, # Average of all hosts that have a least one ST header, they might have 0 ST headers with an metric with a dur content
+    AVG(row_count) AS hosts_avg_metrics,
+    AVG(desc_count) AS hosts_avg_descs,
+    COUNT(DISTINCT CASE WHEN desc_count >= 1 THEN host ELSE NULL END) AS hosts_at_least_1_desc,
+  FROM (
+    SELECT
+      client,
+      host,
+      COUNTIF(dur != 'null') AS dur_count,
+      COUNT(DISTINCT dur) AS dur_distinct, # Counts 'null' as one distinct value?
+      COUNTIF(desc1 != 'null') AS desc_count,
+      COUNT(0) AS row_count,
+    FROM st_details
+    GROUP BY client, host
+  ) GROUP BY client
+)
+JOIN st_details USING (client)
+JOIN totals USING (client)
 GROUP BY
   client,
-ORDER BY
-  pct_value DESC
-LIMIT
-  100
-*/
+  total,
+  total_st,
+  total_st_hosts,
+  total_hosts,
+  hosts_at_least_1_dur,
+  hosts_1_durs,
+  hosts_2_durs,
+  hosts_more_than_2_durs,
+  hosts_avg_distinct_durs,
+  hosts_avg_durs,
+  hosts_avg_descs,
+  hosts_avg_metrics,
+  hosts_at_least_1_desc
