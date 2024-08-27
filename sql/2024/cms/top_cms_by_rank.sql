@@ -1,5 +1,7 @@
 #standardSQL
 # CMS adoption per rank
+# top_cms_by_rank.sql
+
 SELECT
   client,
   cms,
@@ -9,37 +11,42 @@ SELECT
   COUNT(DISTINCT url) / ANY_VALUE(total) AS pct
 FROM (
   SELECT DISTINCT
-    _TABLE_SUFFIX AS client,
-    app AS cms,
-    url
+    client,
+    page AS url,
+    technologies.technology AS cms
   FROM
-    `httparchive.technologies.2024_06_01_*`
+    `httparchive.all.pages`,
+    UNNEST(technologies) AS technologies,
+    UNNEST(technologies.categories) AS cats
   WHERE
-    category = 'CMS')
+    cats = 'CMS' AND
+    date = '2024-06-01')
 JOIN (
   SELECT
-    _TABLE_SUFFIX AS client,
-    url,
+    client,
+    page as url,
     rank_magnitude AS rank
   FROM
-    `httparchive.summary_pages.2024_06_01_*`,
+    `httparchive.all.pages`,
     UNNEST([1e3, 1e4, 1e5, 1e6, 1e7]) AS rank_magnitude
   WHERE
-    rank <= rank_magnitude)
+    rank <= rank_magnitude AND
+    date = '2024-06-01')
 USING
   (client, url)
 JOIN (
   SELECT
-    _TABLE_SUFFIX AS client,
+    client,
     rank_magnitude AS rank,
     COUNT(0) AS total
   FROM
-    `httparchive.summary_pages.2024_06_01_*`,
+    `httparchive.all.pages`,
     UNNEST([1e3, 1e4, 1e5, 1e6, 1e7]) AS rank_magnitude
   WHERE
-    rank <= rank_magnitude
+    rank <= rank_magnitude AND
+    date = '2024-06-01'
   GROUP BY
-    _TABLE_SUFFIX,
+    client,
     rank_magnitude)
 USING
   (client, rank)
