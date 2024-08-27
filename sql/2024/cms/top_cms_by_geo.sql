@@ -1,5 +1,6 @@
 #standardSQL
 # CMS popularity per geo
+# top_cms_by_geo.sql
 WITH geo_summary AS (
   SELECT
     `chrome-ux-report`.experimental.GET_COUNTRY(country_code) AS geo,
