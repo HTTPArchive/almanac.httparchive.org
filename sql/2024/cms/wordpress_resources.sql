@@ -1,26 +1,55 @@
-#standardSQL
-# Distribution of WordPress resource types by path
+#standardSQL 
+# Distribution OF WordPress resource types BY path 
+# wordpress_resources.sql
+
 SELECT
   percentile,
   client,
   path,
-  APPROX_QUANTILES(freq, 1000)[OFFSET(percentile * 10)] AS freq
+  APPROX_QUANTILES(freq, 1000)[OFFSET (percentile * 10)] AS freq
 FROM (
   SELECT
-    _TABLE_SUFFIX AS client,
+    client,
     page,
     REGEXP_EXTRACT(url, r'/(themes|plugins|wp-includes)/') AS path,
     COUNT(0) AS freq
-  FROM
-    (SELECT _TABLE_SUFFIX, url AS page FROM `httparchive.technologies.2024_06_01_*` WHERE app = 'WordPress')
-  JOIN
-    (SELECT _TABLE_SUFFIX, pageid, url AS page FROM `httparchive.summary_pages.2024_06_01_*`)
+  FROM (
+    SELECT
+      client,
+      page
+    FROM
+    `httparchive.all.pages`,
+    UNNEST(technologies) AS technologies,
+    UNNEST(technologies.categories) AS cats 
+  WHERE
+    technologies.technology = 'WordPress' AND
+    date = '2024-06-01')
+  JOIN (
+    SELECT
+      client,
+      cast(json_value(summary, "$.pageid") as int64) as pageid,
+      page
+    FROM
+      `httparchive.all.pages`,
+      UNNEST(technologies) AS technologies,
+      UNNEST(technologies.categories) AS cats 
+    WHERE 
+      date = '2024-06-01')
   USING
-    (_TABLE_SUFFIX, page)
-  JOIN
-    (SELECT _TABLE_SUFFIX, pageid, url FROM `httparchive.summary_requests.2024_06_01_*`)
+    (client,
+      page)
+  JOIN (
+    SELECT
+      client,
+      cast(json_value(summary, "$.pageid") as int64) as pageid,
+      page as url
+    FROM
+      `httparchive.all.pages`
+    WHERE 
+      date = '2024-06-01')
   USING
-    (_TABLE_SUFFIX, pageid)
+    (client,
+      pageid)
   GROUP BY
     client,
     page,
