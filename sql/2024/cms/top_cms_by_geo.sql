@@ -9,11 +9,6 @@ WITH geo_summary AS (
   FROM
     `chrome-ux-report.materialized.country_summary`
   WHERE
-    # We're intentionally using April 2022 CrUX data here.
-    # That's because there's a two month lag between CrUX and HA datasets.
-    # Since we're only JOINing with the CrUX dataset to see which URLs
-    # belong to different countries (as opposed to CWV field data)
-    # it's not necessary to look at the 202207 dataset.
     yyyymm = 202406
   UNION ALL
   SELECT
@@ -47,16 +42,19 @@ FROM (
       geo_summary
   ) JOIN (
     SELECT DISTINCT
-      _TABLE_SUFFIX AS client,
-      category,
-      app AS cms,
-      url
+      client,
+      cats,
+      technologies.technology AS cms,
+      page as url
     FROM
-      `httparchive.technologies.2024_06_01_*`
+      `httparchive.all.pages`,
+      UNNEST (technologies) AS technologies,
+      UNNEST(technologies.categories) AS cats 
     WHERE
-      app IS NOT NULL AND
-      category = 'CMS' AND
-      app != ''
+      technologies.technology IS NOT NULL AND
+      cats = 'CMS' AND
+      technologies.technology != '' AND
+      date = '2024-06-01'
   ) USING (client, url)
   GROUP BY
     client,
