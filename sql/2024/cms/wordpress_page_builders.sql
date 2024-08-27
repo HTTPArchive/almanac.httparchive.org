@@ -1,5 +1,7 @@
 #standardSQL
 # Top WordPress page builder combinations
+# wordpress_page_builders.sql
+
 SELECT
   client,
   page_builders,
@@ -8,21 +10,27 @@ SELECT
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
 FROM (
   SELECT DISTINCT
-    _TABLE_SUFFIX AS client,
-    url
+    client,
+    page as url
   FROM
-    `httparchive.technologies.2024_06_01_*`
+    `httparchive.all.pages`,
+    UNNEST(technologies) AS technologies,
+    UNNEST(technologies.categories) AS cats 
   WHERE
-    app = 'WordPress')
+    technologies.technology = 'WordPress' AND
+    date = '2024-06-01')
 JOIN (
   SELECT
-    _TABLE_SUFFIX AS client,
-    url,
-    ARRAY_TO_STRING(ARRAY_AGG(app ORDER BY app), ', ') AS page_builders
+    client,
+    page as url,
+    ARRAY_TO_STRING(ARRAY_AGG(technologies.technology ORDER BY technologies.technology), ', ') AS page_builders
   FROM
-    `httparchive.technologies.2024_06_01_*`
+    `httparchive.all.pages`,
+    UNNEST(technologies) AS technologies,
+    UNNEST(technologies.categories) AS cats 
   WHERE
-    category = 'Page builders'
+    cats = 'Page builders' AND
+    date = '2024-06-01'
   GROUP BY
     client,
     url)
