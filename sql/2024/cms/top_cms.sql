@@ -1,104 +1,125 @@
 #standardSQL
 # Top CMS platforms, compared to 2020
+# top_cms.sql
 SELECT
-  _TABLE_SUFFIX AS client,
+  client,
   2024 AS year,
-  app AS cms,
-  COUNT(DISTINCT url) AS freq,
+  technologies.technology AS cms,
+  COUNT(DISTINCT page) AS freq,
   total,
-  COUNT(DISTINCT url) / total AS pct
+  COUNT(DISTINCT page) / total AS pct
 FROM
-  `httparchive.technologies.2024_06_01_*`
+  `httparchive.all.pages`,
+  UNNEST (technologies) AS technologies,
+  UNNEST(technologies.categories) AS cats
 JOIN (
   SELECT
-    _TABLE_SUFFIX,
+    client,
     COUNT(0) AS total
   FROM
-    `httparchive.summary_pages.2024_06_01_*`
+    `httparchive.all.pages`
+  WHERE 
+    date = '2024-06-01'
   GROUP BY
-    _TABLE_SUFFIX)
+    client)
 USING
-  (_TABLE_SUFFIX)
+  (client)
 WHERE
-  category = 'CMS'
+  cats = 'CMS' AND
+  date = '2024-06-01'
 GROUP BY
   client,
   total,
-  cms
+  cms 
 UNION ALL
 SELECT
-  _TABLE_SUFFIX AS client,
+  client,
   2023 AS year,
-  app AS cms,
-  COUNT(DISTINCT url) AS freq,
+  technologies.technology AS cms,
+  COUNT(DISTINCT page) AS freq,
   total,
-  COUNT(DISTINCT url) / total AS pct
+  COUNT(DISTINCT page) / total AS pct
 FROM
-  `httparchive.technologies.2023_06_01_*`
+  `httparchive.all.pages`,
+  UNNEST (technologies) AS technologies,
+  UNNEST(technologies.categories) AS cats
 JOIN (
   SELECT
-    _TABLE_SUFFIX,
+    client,
     COUNT(0) AS total
   FROM
-    `httparchive.summary_pages.2023_06_01_*`
+    `httparchive.all.pages`
+  WHERE 
+    date = '2023-06-01'
   GROUP BY
-    _TABLE_SUFFIX)
+    client)
 USING
-  (_TABLE_SUFFIX)
+  (client)
 WHERE
-  category = 'CMS'
+  cats = 'CMS' AND
+  date = '2023-06-01'
 GROUP BY
   client,
   total,
-  cms
+  cms 
 UNION ALL
 SELECT
-  _TABLE_SUFFIX AS client,
+  client,
   2022 AS year,
-  app AS cms,
-  COUNT(DISTINCT url) AS freq,
+  technologies.technology AS cms,
+  COUNT(DISTINCT page) AS freq,
   total,
-  COUNT(DISTINCT url) / total AS pct
+  COUNT(DISTINCT page) / total AS pct
 FROM
-  `httparchive.technologies.2022_08_01_*`
+  `httparchive.all.pages`,
+  UNNEST (technologies) AS technologies,
+  UNNEST(technologies.categories) AS cats
 JOIN (
   SELECT
-    _TABLE_SUFFIX,
+    client,
     COUNT(0) AS total
   FROM
-    `httparchive.summary_pages.2022_08_01_*`
+    `httparchive.all.pages`
+  WHERE 
+    date = '2022-08-01'
   GROUP BY
-    _TABLE_SUFFIX)
+    client)
 USING
-  (_TABLE_SUFFIX)
+  (client)
 WHERE
-  category = 'CMS'
+  cats = 'CMS' AND
+  date = '2022-08-01'
 GROUP BY
   client,
   total,
-  cms
+  cms 
 UNION ALL
 SELECT
-  _TABLE_SUFFIX AS client,
+  client,
   2021 AS year,
-  app AS cms,
-  COUNT(DISTINCT url) AS freq,
+  technologies.technology AS cms,
+  COUNT(DISTINCT page) AS freq,
   total,
-  COUNT(DISTINCT url) / total AS pct
+  COUNT(DISTINCT page) / total AS pct
 FROM
-  `httparchive.technologies.2021_07_01_*`
+  `httparchive.all.pages`,
+  UNNEST (technologies) AS technologies,
+  UNNEST(technologies.categories) AS cats
 JOIN (
   SELECT
-    _TABLE_SUFFIX,
+    client,
     COUNT(0) AS total
   FROM
-    `httparchive.summary_pages.2021_07_01_*`
+    `httparchive.all.pages`
+  WHERE 
+    date = '2021-07-01'
   GROUP BY
-    _TABLE_SUFFIX)
+    client)
 USING
-  (_TABLE_SUFFIX)
+  (client)
 WHERE
-  category = 'CMS'
+  cats = 'CMS' AND
+  date = '2021-07-01'
 GROUP BY
   client,
   total,
