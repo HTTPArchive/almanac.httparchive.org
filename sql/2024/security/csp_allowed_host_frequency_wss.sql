@@ -6,7 +6,7 @@ WITH totals AS (
     client,
     COUNT(0) AS total
   FROM
-    `httparchive.all.requests` 
+    `httparchive.all.requests`
   WHERE
     date = '2024-06-01' AND
     is_root_page AND

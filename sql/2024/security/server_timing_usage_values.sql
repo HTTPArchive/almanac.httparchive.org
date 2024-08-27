@@ -44,17 +44,17 @@ LANGUAGE js AS '''
   return JSON.stringify(result);
 
 ''';
-  
+
 WITH parsed_server_timing AS (
   SELECT
     client,
     NET.HOST(url) AS host,
     COUNT(0) OVER (PARTITION BY CLIENT) AS total_st, # Total number of ST header, if a response has more than one ST header each of them is counted
-    COUNT(DISTINCT NET.HOST(url)) OVER (PARTITION BY CLIENT) as total_st_hosts,
+    COUNT(DISTINCT NET.HOST(url)) OVER (PARTITION BY CLIENT) AS total_st_hosts,
     response_headers.value AS server_timing_header,
-    JSON_EXTRACT(parseServerTiming(response_headers.value), "$.metric_names") AS metric_names,
-    JSON_EXTRACT(parseServerTiming(response_headers.value), "$.dur") AS dur,
-    JSON_EXTRACT(parseServerTiming(response_headers.value), "$.desc") AS desc1
+    JSON_EXTRACT(parseServerTiming(response_headers.value), '$.metric_names') AS metric_names,
+    JSON_EXTRACT(parseServerTiming(response_headers.value), '$.dur') AS dur,
+    JSON_EXTRACT(parseServerTiming(response_headers.value), '$.desc') AS desc1
   FROM
     `httparchive.all.requests`,
     # `httparchive.sample_data.requests_1k`,
@@ -65,23 +65,23 @@ WITH parsed_server_timing AS (
     is_root_page AND
     LOWER(response_headers.name) = 'server-timing'
 ), st_details AS (
-SELECT
-  client,
-  host,
-  server_timing_header,
-  total_st,
-  total_st_hosts,
-  metric_name,
-  dur,
-  desc1
-FROM
-  parsed_server_timing,
-  UNNEST(JSON_EXTRACT_ARRAY(metric_names)) AS metric_name WITH OFFSET idx,
-  UNNEST(JSON_EXTRACT_ARRAY(dur)) AS dur WITH OFFSET idx_dur,
-  UNNEST(JSON_EXTRACT_ARRAY(desc1)) AS desc1 WITH OFFSET idx_desc
-WHERE
-  idx = idx_dur
-  AND idx = idx_desc
+  SELECT
+    client,
+    host,
+    server_timing_header,
+    total_st,
+    total_st_hosts,
+    metric_name,
+    dur,
+    desc1
+  FROM
+    parsed_server_timing,
+    UNNEST(JSON_EXTRACT_ARRAY(metric_names)) AS metric_name WITH OFFSET idx,
+    UNNEST(JSON_EXTRACT_ARRAY(dur)) AS dur WITH OFFSET idx_dur,
+    UNNEST(JSON_EXTRACT_ARRAY(desc1)) AS desc1 WITH OFFSET idx_desc
+  WHERE
+    idx = idx_dur AND
+    idx = idx_desc
 ), totals AS (
   SELECT
     client,
@@ -89,7 +89,7 @@ WHERE
     COUNT(DISTINCT NET.HOST(url)) AS total_hosts
   FROM
     `httparchive.all.requests`
-    # `httparchive.sample_data.requests_1k`
+  # `httparchive.sample_data.requests_1k`
   WHERE
     date = '2024-06-01' AND
     # date = '2024-08-01' AND
@@ -239,7 +239,7 @@ SELECT
   COUNT(0) AS total_st_metrics, # Counts the total number of metrics
   total_st / total AS pct_server_timing,
   total_st_hosts / total_hosts AS pct_server_timing_hosts,
-  COUNTIF(dur != 'null') AS freq_dur, 
+  COUNTIF(dur != 'null') AS freq_dur,
   COUNTIF(desc1 != 'null') AS freq_desc,
   COUNTIF(dur != 'null') / COUNT(0) AS pct_dur,
   COUNTIF(desc1 != 'null') / COUNT(0) AS pct_desc,
@@ -251,7 +251,7 @@ SELECT
   hosts_avg_durs,
   hosts_avg_descs,
   hosts_avg_metrics,
-  hosts_at_least_1_desc,
+  hosts_at_least_1_desc
 FROM (
   SELECT
     client,
@@ -263,7 +263,7 @@ FROM (
     AVG(dur_count) AS hosts_avg_durs, # Average of all hosts that have a least one ST header, they might have 0 ST headers with an metric with a dur content
     AVG(row_count) AS hosts_avg_metrics,
     AVG(desc_count) AS hosts_avg_descs,
-    COUNT(DISTINCT CASE WHEN desc_count >= 1 THEN host ELSE NULL END) AS hosts_at_least_1_desc,
+    COUNT(DISTINCT CASE WHEN desc_count >= 1 THEN host ELSE NULL END) AS hosts_at_least_1_desc
   FROM (
     SELECT
       client,
@@ -271,7 +271,7 @@ FROM (
       COUNTIF(dur != 'null') AS dur_count,
       COUNT(DISTINCT dur) AS dur_distinct, # Counts 'null' as one distinct value?
       COUNTIF(desc1 != 'null') AS desc_count,
-      COUNT(0) AS row_count,
+      COUNT(0) AS row_count
     FROM st_details
     GROUP BY client, host
   ) GROUP BY client
