@@ -1,5 +1,7 @@
 #standardSQL
 # All CMS popularity per geo
+# cms_adoption_by_geo.sql
+
 WITH geo_summary AS (
   SELECT
     `chrome-ux-report`.experimental.GET_COUNTRY(country_code) AS geo,
@@ -39,7 +41,8 @@ FROM (
       UNNEST(technologies.categories) AS cats
     WHERE
       date = '2024-06-01' AND
-      cats = 'CMS'
+      cats = 'CMS' AND
+      is_root_page
   )
   USING
     (client,
