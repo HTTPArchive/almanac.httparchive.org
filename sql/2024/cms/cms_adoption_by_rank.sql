@@ -1,4 +1,7 @@
-#standardSQL # CMS adoption per rank
+#standardSQL 
+# CMS adoption per rank
+# cms_adoption_by_rank.sql
+
 SELECT
   client,
   technology,
@@ -17,7 +20,8 @@ FROM (
     UNNEST(technologies.categories) AS cats
   WHERE
     date = '2024-06-01' AND
-    cats = 'CMS'
+    cats = 'CMS' AND
+    is_root_page
 )
 JOIN (
   SELECT
@@ -27,7 +31,8 @@ JOIN (
   FROM
     `httparchive.all.pages`
   WHERE
-    date = '2024-06-01'
+    date = '2024-06-01' AND
+    is_root_page
 )
 USING
   (client,
@@ -42,7 +47,8 @@ JOIN (
     UNNEST([1e3, 1e4, 1e5, 1e6, 1e7]) AS rank_magnitude
   WHERE
     rank <= rank_magnitude AND
-    date = '2024-06-01'
+    date = '2024-06-01' AND
+    is_root_page
   GROUP BY
     client,
     rank_magnitude)
