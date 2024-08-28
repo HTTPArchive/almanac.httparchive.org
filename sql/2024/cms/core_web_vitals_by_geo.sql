@@ -1,5 +1,6 @@
 # cms passing core web vitals
 # core_web_vitals_by_geo
+# core_web_vitals_by_geo.sql
 CREATE TEMP FUNCTION IS_GOOD (good FLOAT64, needs_improvement FLOAT64, poor FLOAT64) RETURNS BOOL AS (
   good / (good + needs_improvement + poor) >= 0.75
 );
@@ -58,7 +59,8 @@ JOIN (
     UNNEST(technologies.categories) AS cats
   WHERE
     cats = 'CMS' AND
-    date = '2024-06-01'
+    date = '2024-06-01' AND
+    is_root_page
 )
 USING
   (client, url)
