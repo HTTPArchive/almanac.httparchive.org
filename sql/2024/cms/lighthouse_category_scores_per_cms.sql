@@ -21,7 +21,8 @@ FROM (
   FROM
     `httparchive.all.pages`
   WHERE
-    date = '2024-06-01'
+    date = '2024-06-01' AND
+    is_root_page
 )
 JOIN (
   SELECT DISTINCT
@@ -34,7 +35,8 @@ JOIN (
     UNNEST(technologies.categories) AS cats
   WHERE
     cats = 'CMS' AND
-    date = '2024-06-01'
+    date = '2024-06-01' AND
+    is_root_page
 )
 USING
   (url,
