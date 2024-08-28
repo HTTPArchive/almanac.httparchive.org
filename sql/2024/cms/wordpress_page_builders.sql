@@ -18,8 +18,7 @@ FROM (
     UNNEST(technologies.categories) AS cats 
   WHERE
     technologies.technology = 'WordPress' AND
-    date = '2024-06-01' AND
-    is_root_page)
+    date = '2024-06-01')
 JOIN (
   SELECT
     client,
@@ -31,8 +30,7 @@ JOIN (
     UNNEST(technologies.categories) AS cats 
   WHERE
     cats = 'Page builders' AND
-    date = '2024-06-01' AND
-    is_root_page
+    date = '2024-06-01'
   GROUP BY
     client,
     url)
