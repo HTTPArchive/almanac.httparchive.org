@@ -20,7 +20,8 @@ FROM (
     UNNEST(technologies.categories) AS cats
   WHERE
     cats = 'CMS' AND
-    date = '2024-06-01')
+    date = '2024-06-01' AND
+    is_root_page)
 JOIN (
   SELECT
     client,
@@ -31,7 +32,8 @@ JOIN (
     UNNEST([1e3, 1e4, 1e5, 1e6, 1e7]) AS rank_magnitude
   WHERE
     rank <= rank_magnitude AND
-    date = '2024-06-01')
+    date = '2024-06-01' AND
+    is_root_page)
 USING
   (client, url)
 JOIN (
@@ -44,7 +46,8 @@ JOIN (
     UNNEST([1e3, 1e4, 1e5, 1e6, 1e7]) AS rank_magnitude
   WHERE
     rank <= rank_magnitude AND
-    date = '2024-06-01'
+    date = '2024-06-01' AND
+    is_root_page
   GROUP BY
     client,
     rank_magnitude)
