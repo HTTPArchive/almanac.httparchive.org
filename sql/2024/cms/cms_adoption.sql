@@ -1,4 +1,7 @@
-#standardSQL # CMS adoption OVER time
+#standardSQL 
+# CMS adoption OVER time
+# cms_adoption.sql
+
 SELECT
   client,
   2024 AS year,
@@ -16,14 +19,16 @@ JOIN (
   FROM
     `httparchive.all.pages`
   WHERE
-    date = '2024-06-01'
+    date = '2024-06-01' AND 
+    is_root_page
   GROUP BY
     client)
 USING
   (client)
 WHERE
   cats = 'CMS' AND
-  date = '2024-06-01'
+  date = '2024-06-01' AND
+  is_root_page
 GROUP BY
   client,
   total
@@ -45,14 +50,16 @@ JOIN (
   FROM
     `httparchive.all.pages`
   WHERE
-    date = '2023-06-01'
+    date = '2023-06-01' AND
+    is_root_page
   GROUP BY
     client)
 USING
   (client)
 WHERE
   cats = 'CMS' AND
-  date = '2023-06-01'
+  date = '2023-06-01'  AND
+  is_root_page
 GROUP BY
   client,
   total
@@ -74,14 +81,16 @@ JOIN (
   FROM
     `httparchive.all.pages`
   WHERE
-    date = '2022-06-01'
+    date = '2022-06-01' AND
+    is_root_page 
   GROUP BY
     client)
 USING
   (client)
 WHERE
   cats = 'CMS' AND
-  date = '2022-06-01'
+  date = '2022-06-01' AND
+  is_root_page
 GROUP BY
   client,
   total
