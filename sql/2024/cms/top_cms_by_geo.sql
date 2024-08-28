@@ -55,7 +55,8 @@ FROM (
       technologies.technology IS NOT NULL AND
       cats = 'CMS' AND
       technologies.technology != '' AND
-      date = '2024-06-01'
+      date = '2024-06-01' AND
+      is_root_page
   ) USING (client, url)
   GROUP BY
     client,
