@@ -1,4 +1,7 @@
-#standardSQL # Image format popularity BY CMS
+#standardSQL 
+# Image format popularity BY CMS
+# image_format_popularity.sql
+
 SELECT
   client,
   cms,
@@ -17,7 +20,8 @@ FROM (
     UNNEST(technologies.categories) AS cats
   WHERE
     cats = 'CMS' AND
-    date = '2024-06-01'
+    date = '2024-06-01' AND
+    is_root_page
 )
 JOIN (
   SELECT
@@ -42,7 +46,8 @@ JOIN (
     `httparchive.all.requests`
   WHERE
     date = '2024-06-01' AND
-    type = 'image'
+    type = 'image' AND
+    is_root_page
 )
 USING
   (client,
@@ -58,7 +63,8 @@ JOIN (
     UNNEST(technologies.categories) AS cats
   WHERE
     cats = 'CMS' AND
-    date = '2024-06-01'
+    date = '2024-06-01' AND
+    is_root_page
   GROUP BY
     client,
     cms)
