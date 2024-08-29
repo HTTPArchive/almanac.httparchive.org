@@ -1,5 +1,6 @@
 -- Section: Design
 -- Question: Which licenses are used?
+-- Normalization: Pages
 
 CREATE TEMPORARY FUNCTION LICENSE(value STRING) AS (
   CASE

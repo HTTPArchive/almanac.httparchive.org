@@ -1,5 +1,6 @@
 -- Section: Design
 -- Question: Which system families are popular?
+-- Normalization: Pages
 
 CREATE TEMPORARY FUNCTION FAMILIES(json STRING)
 RETURNS ARRAY<STRING>

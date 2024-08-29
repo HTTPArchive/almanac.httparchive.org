@@ -1,5 +1,6 @@
 -- Section: Design
 -- Question: Which families are popular in CSS?
+-- Normalization: Pages
 
 CREATE TEMPORARY FUNCTION FAMILIES(json STRING)
 RETURNS ARRAY<STRING>

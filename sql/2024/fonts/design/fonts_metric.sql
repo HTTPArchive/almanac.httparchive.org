@@ -1,5 +1,6 @@
 -- Section: Performance
 -- Question: What is the distribution of metrics?
+-- Normalization: Fonts
 
 WITH
 fonts AS (

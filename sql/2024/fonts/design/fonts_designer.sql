@@ -1,5 +1,6 @@
 -- Section: Design
 -- Question: Which designers are popular?
+-- Normalization: Pages
 
 WITH
 designers AS (

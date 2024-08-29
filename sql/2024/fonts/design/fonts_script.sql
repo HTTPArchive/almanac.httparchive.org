@@ -1,5 +1,6 @@
 -- Section: Design
 -- Question: Which scripts does one design for?
+-- Normalization: Fonts
 
 -- INCLUDE ../common.sql
 

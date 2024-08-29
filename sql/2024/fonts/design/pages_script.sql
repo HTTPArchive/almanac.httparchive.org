@@ -1,5 +1,6 @@
 -- Section: Performance
 -- Question: Which scripts are popular on the web?
+-- Normalization: Pages
 
 CREATE TEMPORARY FUNCTION SCRIPTS(body STRING)
 RETURNS ARRAY<STRING>
