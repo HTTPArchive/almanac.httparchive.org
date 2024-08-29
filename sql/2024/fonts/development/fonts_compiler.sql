@@ -3,12 +3,11 @@
 
 CREATE TEMPORARY FUNCTION COMPILER(version STRING) AS (
   CASE
-    WHEN REGEXP_CONTAINS(version, r'(?i)(Core \d|PS \d|hotconv|makeotf)') THEN 'Adobe Font Development Kit for OpenType'
+    WHEN REGEXP_CONTAINS(version, r'(?i)(Core \d|PS \d|hotconv|makeotf)') THEN 'makeotf'
     WHEN REGEXP_CONTAINS(version, r'(?i)FontCreator') THEN 'FontCreator'
     WHEN REGEXP_CONTAINS(version, r'(?i)Fontself') THEN 'Fontself Maker'
-    WHEN REGEXP_CONTAINS(version, r'(?i)ttfautohint') THEN 'FreeType'
     WHEN REGEXP_CONTAINS(version, r'(?i)(FEAKit|Glyphs)') THEN 'Glyphs.app'
-    WHEN REGEXP_CONTAINS(version, r'(?i)gftools') THEN 'Google Fonts Tools'
+    WHEN REGEXP_CONTAINS(version, r'(?i)gftools') THEN 'fontmake'
     ELSE TRIM(REGEXP_EXTRACT(version, ';(.*)'))
   END
 );
