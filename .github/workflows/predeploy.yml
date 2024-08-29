@@ -36,10 +36,10 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: '20'
-    - name: Set up Python 3.8
+    - name: Set up Python 3.12
       uses: actions/setup-python@v5.1.1
       with:
-        python-version: '3.8'
+        python-version: '3.12'
     - name: Install Asian Fonts
       if: ${{ github.event.inputs.ebooks == 'true' }}
       run: |
