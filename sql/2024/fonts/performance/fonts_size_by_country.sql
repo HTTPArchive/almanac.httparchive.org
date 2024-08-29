@@ -1,6 +1,8 @@
 -- Section: Performance
 -- Question: What is the distribution of the file size broken down by country?
 
+-- INCLUDE ../common.sql
+
 WITH
 countries AS (
   SELECT
@@ -16,11 +18,16 @@ countries AS (
     domain,
     country
 ),
-pages AS (
+fonts AS (
   SELECT
     client,
-    NET.HOST(page) AS domain,
-    AVG(PARSE_NUMERIC(JSON_EXTRACT_SCALAR(summary, '$.respBodySize'))) AS size
+    url,
+    NET.HOST(ANY_VALUE(page)) AS domain,
+    FILE_FORMAT(
+      JSON_EXTRACT_SCALAR(ANY_VALUE(summary), '$.ext'),
+      JSON_EXTRACT_SCALAR(ANY_VALUE(summary), '$.mimeType')
+    ) AS format,
+    PARSE_NUMERIC(JSON_EXTRACT_SCALAR(ANY_VALUE(summary), '$.respBodySize')) AS size
   FROM
     `httparchive.all.requests`
   WHERE
@@ -28,21 +35,44 @@ pages AS (
     type = 'font'
   GROUP BY
     client,
-    domain
+    url
+),
+formats AS (
+  SELECT
+    client,
+    country,
+    format,
+    ROW_NUMBER() OVER (PARTITION BY client, country ORDER BY COUNT(DISTINCT url) DESC) AS rank
+  FROM
+    fonts
+  INNER JOIN
+    countries USING (client, domain)
+  GROUP BY
+    client,
+    country,
+    format
 )
 
 SELECT
   client,
   country,
-  COUNT(0) AS count,
+  format,
+  COUNT(DISTINCT url) AS count,
   ROUND(APPROX_QUANTILES(size, 1000)[OFFSET(500)]) AS size
 FROM
-  pages
-JOIN
+  fonts
+INNER JOIN
   countries USING (client, domain)
+INNER JOIN
+  formats USING (client, country, format)
+WHERE
+  rank <= 10
 GROUP BY
   client,
-  country
+  country,
+  format,
+  rank
 ORDER BY
   client,
-  country
+  country,
+  rank
