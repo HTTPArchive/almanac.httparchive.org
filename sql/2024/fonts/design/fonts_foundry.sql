@@ -1,5 +1,6 @@
 -- Section: Design
 -- Question: Which foundries are popular?
+-- Normalization: Pages
 
 -- INCLUDE ../common.sql
 

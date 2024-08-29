@@ -1,23 +1,8 @@
 -- Section: Design
 -- Question: Which families are used broken down by script?
+-- Normalization: Fonts on pages
 
 -- INCLUDE ../common.sql
-
-WITH
-fonts AS (
-  SELECT
-    client,
-    url,
-    ANY_VALUE(payload) AS payload
-  FROM
-    `httparchive.all.requests`
-  WHERE
-    date = '2024-07-01' AND
-    type = 'font'
-  GROUP BY
-    client,
-    url
-)
 
 SELECT
   client,
@@ -28,8 +13,11 @@ SELECT
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS proportion,
   ROW_NUMBER() OVER (PARTITION BY client, script ORDER BY COUNT(0) DESC) AS rank
 FROM
-  fonts,
+  `httparchive.all.requests`,
   UNNEST(SCRIPTS(payload)) AS script
+WHERE
+  date = '2024-07-01' AND
+  type = 'font'
 GROUP BY
   client,
   script,
