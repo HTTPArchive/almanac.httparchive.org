@@ -1,5 +1,6 @@
 -- Section: Performance
 -- Question: What is the usage of font-display in CSS?
+-- Normalization: Pages
 
 CREATE TEMPORARY FUNCTION PROPERTIES(json STRING)
 RETURNS ARRAY<STRING>

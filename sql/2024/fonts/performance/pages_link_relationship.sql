@@ -1,5 +1,6 @@
 -- Section: Performance
 -- Question: What is the usage of link relationship in HTML?
+-- Normalization: Pages
 
 CREATE TEMPORARY FUNCTION HINTS(json STRING)
 RETURNS ARRAY<STRING>

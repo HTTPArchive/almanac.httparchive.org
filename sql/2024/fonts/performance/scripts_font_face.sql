@@ -1,5 +1,6 @@
 -- Section: Performance
 -- Question: What is the usage of FontFace in JavaScript?
+-- Normalization: Pages
 
 WITH
 pages AS (

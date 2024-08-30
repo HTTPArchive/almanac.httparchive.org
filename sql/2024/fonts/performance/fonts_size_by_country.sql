@@ -1,5 +1,6 @@
 -- Section: Performance
 -- Question: What is the distribution of the file size broken down by country?
+-- Normalization: Fonts on pages
 
 -- INCLUDE ../common.sql
 
@@ -18,33 +19,29 @@ countries AS (
     domain,
     country
 ),
-fonts AS (
+requests AS (
   SELECT
     client,
-    url,
-    NET.HOST(ANY_VALUE(page)) AS domain,
+    NET.HOST(page) AS domain,
     FILE_FORMAT(
-      JSON_EXTRACT_SCALAR(ANY_VALUE(summary), '$.ext'),
-      JSON_EXTRACT_SCALAR(ANY_VALUE(summary), '$.mimeType')
+      JSON_EXTRACT_SCALAR(summary, '$.ext'),
+      JSON_EXTRACT_SCALAR(summary, '$.mimeType')
     ) AS format,
-    PARSE_NUMERIC(JSON_EXTRACT_SCALAR(ANY_VALUE(summary), '$.respBodySize')) AS size
+    PARSE_NUMERIC(JSON_EXTRACT_SCALAR(summary, '$.respBodySize')) AS size
   FROM
     `httparchive.all.requests`
   WHERE
     date = '2024-07-01' AND
     type = 'font'
-  GROUP BY
-    client,
-    url
 ),
 formats AS (
   SELECT
     client,
     country,
     format,
-    ROW_NUMBER() OVER (PARTITION BY client, country ORDER BY COUNT(DISTINCT url) DESC) AS rank
+    ROW_NUMBER() OVER (PARTITION BY client, country ORDER BY COUNT(0) DESC) AS rank
   FROM
-    fonts
+    requests
   INNER JOIN
     countries USING (client, domain)
   GROUP BY
@@ -57,10 +54,10 @@ SELECT
   client,
   country,
   format,
-  COUNT(DISTINCT url) AS count,
+  COUNT(0) AS count,
   ROUND(APPROX_QUANTILES(size, 1000)[OFFSET(500)]) AS size
 FROM
-  fonts
+  requests
 INNER JOIN
   countries USING (client, domain)
 INNER JOIN

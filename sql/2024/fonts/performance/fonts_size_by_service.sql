@@ -1,5 +1,6 @@
 -- Section: Performance
 -- Question: What is the distribution of the file size broken down by service?
+-- Normalization: Fonts
 
 -- INCLUDE ../common.sql
 

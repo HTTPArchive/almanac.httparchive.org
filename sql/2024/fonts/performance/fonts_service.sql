@@ -1,5 +1,6 @@
 -- Section: Performance
 -- Question: Which services are popular?
+-- Normalization: Pages
 
 -- INCLUDE ../common.sql
 

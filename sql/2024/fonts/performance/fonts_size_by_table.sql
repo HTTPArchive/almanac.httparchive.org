@@ -1,5 +1,6 @@
 -- Section: Performance
 -- Question: What is the distribution of the file size broken down by table?
+-- Normalization: Fonts
 
 CREATE TEMPORARY FUNCTION TABLES(json STRING)
 RETURNS ARRAY<STRUCT<name STRING, value INT64>>
