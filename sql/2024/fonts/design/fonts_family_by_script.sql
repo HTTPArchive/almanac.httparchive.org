@@ -8,8 +8,8 @@ SELECT
   client,
   script,
   FAMILY(payload) AS family,
-  COUNT(0) AS count,
-  SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
+  2 * COUNT(0) AS count,
+  2 * SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS proportion,
   ROW_NUMBER() OVER (PARTITION BY client, script ORDER BY COUNT(0) DESC) AS rank
 FROM
@@ -17,7 +17,9 @@ FROM
   UNNEST(SCRIPTS(payload)) AS script
 WHERE
   date = '2024-07-01' AND
-  type = 'font'
+  type = 'font' AND
+  FAMILY(payload) NOT IN ('Adobe Blank') AND
+  RAND() > 0.5
 GROUP BY
   client,
   script,
