@@ -1,6 +1,6 @@
 -- Section: Performance
 -- Question: Which file formats are used?
--- Normalization: Fonts on page
+-- Normalization: Fonts on pages (primary) and pages (secondary)
 
 -- INCLUDE ../common.sql
 
@@ -11,8 +11,11 @@ SELECT
     JSON_EXTRACT_SCALAR(summary, '$.mimeType')
   ) AS format,
   COUNT(0) AS count,
+  COUNT(DISTINCT url) AS count_secondary,
   SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
+  SUM(COUNT(DISTINCT url)) OVER (PARTITION BY client) AS total_secondary,
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS proportion,
+  COUNT(DISTINCT url) / SUM(COUNT(DISTINCT url)) OVER (PARTITION BY client) AS proportion_secondary,
   ROW_NUMBER() OVER (PARTITION BY client ORDER BY COUNT(0) DESC) AS rank
 FROM
   `httparchive.all.requests`
