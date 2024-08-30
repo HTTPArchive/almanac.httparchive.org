@@ -1,5 +1,6 @@
 -- Section: Development
 -- Question: Which features are used via font-feature-settings in CSS?
+-- Normalization: Pages
 
 CREATE TEMPORARY FUNCTION FEATURES(json STRING)
 RETURNS ARRAY<STRING>

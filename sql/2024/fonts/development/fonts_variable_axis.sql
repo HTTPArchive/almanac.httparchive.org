@@ -1,5 +1,6 @@
 -- Section: Development
 -- Question: Which axes are used in variable fonts?
+-- Normalization: Fonts
 
 CREATE TEMPORARY FUNCTION AXES(json STRING)
 RETURNS ARRAY<STRING>

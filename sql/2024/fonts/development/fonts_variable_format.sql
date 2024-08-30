@@ -1,5 +1,6 @@
 -- Section: Development
 -- Question: Which outline formats are used in variable fonts?
+-- Normalization: Fonts
 
 -- INCLUDE ../common.sql
 

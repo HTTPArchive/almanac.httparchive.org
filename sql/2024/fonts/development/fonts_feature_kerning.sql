@@ -1,5 +1,6 @@
 -- Section: Development
 -- Question: How prevalent is kerning support?
+-- Normalization: Fonts
 
 CREATE TEMPORARY FUNCTION HAS_KERNING(data STRING)
 RETURNS BOOL

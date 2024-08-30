@@ -1,5 +1,6 @@
 -- Section: Development
 -- Question: Which color-font formats are used?
+-- Normalization: Fonts
 
 -- INCLUDE ../common.sql
 

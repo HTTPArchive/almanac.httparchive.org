@@ -1,5 +1,6 @@
 -- Section: Development
 -- Question: How popular is variable-font animimation in CSS?
+-- Normalization: Pages
 
 CREATE TEMPORARY FUNCTION HAS_ANIMATION(json STRING)
 RETURNS BOOLEAN

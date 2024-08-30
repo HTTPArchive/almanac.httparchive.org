@@ -1,14 +1,16 @@
 -- Section: Development
 -- Question: Which color families are used?
+-- Normalization: Fonts on pages
 
 -- INCLUDE ../common.sql
 
 SELECT
   client,
   FAMILY(payload) AS family,
-  COUNT(DISTINCT url) AS count,
-  SUM(COUNT(DISTINCT url)) OVER (PARTITION BY client) AS total,
-  COUNT(DISTINCT url) / SUM(COUNT(DISTINCT url)) OVER (PARTITION BY client) AS proportion
+  COUNT(0) AS count,
+  SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
+  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS proportion,
+  ROW_NUMBER() OVER (PARTITION BY client ORDER BY COUNT(0) DESC) AS rank
 FROM
   `httparchive.all.requests`
 WHERE
@@ -18,6 +20,8 @@ WHERE
 GROUP BY
   client,
   family
+QUALIFY
+  rank <= 100
 ORDER BY
   client,
   proportion DESC

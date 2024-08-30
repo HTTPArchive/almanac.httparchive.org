@@ -1,5 +1,6 @@
 -- Section: Development
 -- Question: Which features are used in fonts?
+-- Normalization: Fonts
 
 CREATE TEMPORARY FUNCTION FEATURES(data STRING)
 RETURNS ARRAY<STRING>

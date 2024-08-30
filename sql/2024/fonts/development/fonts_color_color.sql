@@ -1,5 +1,6 @@
 -- Section: Development
 -- Question: What is the distribution of color palettes?
+-- Normalization: Fonts
 
 -- INCLUDE ../common.sql
 
