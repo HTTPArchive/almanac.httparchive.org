@@ -1,5 +1,6 @@
 -- Section: Performance
 -- Question: Which file formats are used broken down by service?
+-- Normalization: Fonts
 
 -- INCLUDE ../common.sql
 

@@ -1,5 +1,6 @@
 -- Section: Performance
 -- Question: Which file formats are used?
+-- Normalization: Fonts
 
 -- INCLUDE ../common.sql
 

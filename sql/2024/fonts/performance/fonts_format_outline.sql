@@ -1,5 +1,6 @@
 -- Section: Performance
 -- Question: Which outline formats are used?
+-- Normalization: Fonts
 
 WITH
 fonts AS (
