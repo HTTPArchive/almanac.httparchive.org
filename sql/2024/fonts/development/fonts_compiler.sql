@@ -1,5 +1,6 @@
 -- Section: Design
 -- Question: Which compilers are used?
+-- Normalization: Fonts
 
 CREATE TEMPORARY FUNCTION COMPILER(version STRING) AS (
   CASE

@@ -1,5 +1,6 @@
 -- Section: Development
 -- Question: How popular are color fonts?
+-- Normalization: Pages
 
 -- INCLUDE ../common.sql
 

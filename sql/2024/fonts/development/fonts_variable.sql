@@ -1,5 +1,6 @@
 -- Section: Development
 -- Question: How popular are variable fonts?
+-- Normalization: Pages
 
 -- INCLUDE ../common.sql
 

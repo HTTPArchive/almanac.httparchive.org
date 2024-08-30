@@ -1,5 +1,6 @@
 -- Section: Development
 -- Question: Are color fonts used for the sake of emojis?
+-- Normalization: Fonts
 
 -- INCLUDE ../common.sql
 

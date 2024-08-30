@@ -1,5 +1,6 @@
 -- Section: Development
 -- Question: How many palettes are there in color fonts?
+-- Normalization: Fonts
 
 -- INCLUDE ../common.sql
 

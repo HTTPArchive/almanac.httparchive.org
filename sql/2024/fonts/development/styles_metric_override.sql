@@ -1,5 +1,6 @@
 -- Section: Development
 -- Question: How and how often metrics override used in CSS?
+-- Normalization: Pages
 
 CREATE TEMPORARY FUNCTION PROPERTIES(json STRING)
 RETURNS ARRAY<STRING>

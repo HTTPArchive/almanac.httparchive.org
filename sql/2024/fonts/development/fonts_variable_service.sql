@@ -1,13 +1,14 @@
 -- Section: Development
 -- Question: Who is serving variable fonts?
+-- Normalization: Fonts on pages
 
 -- INCLUDE ../common.sql
 
 SELECT
   client,
   SERVICE(url) AS service,
-  COUNT(DISTINCT url) AS total,
-  COUNT(DISTINCT url) / SUM(COUNT(DISTINCT url)) OVER (PARTITION BY client) AS proportion
+  COUNT(0) AS total,
+  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS proportion
 FROM
   `httparchive.all.requests`
 WHERE

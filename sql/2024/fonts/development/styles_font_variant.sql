@@ -1,5 +1,6 @@
 -- Section: Development
 -- Question: Which features are used via font-variant in CSS?
+-- Normalization: Pages
 
 CREATE TEMPORARY FUNCTION PROPERTIES(json STRING)
 RETURNS ARRAY<STRING>

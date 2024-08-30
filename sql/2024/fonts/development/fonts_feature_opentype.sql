@@ -1,5 +1,6 @@
 -- Section: Development
 -- Question: How prevalent is OpenType support?
+-- Normalization: Fonts
 
 WITH
 fonts AS (
