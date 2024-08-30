@@ -1,4 +1,5 @@
 # standardSQL
+# dublin_core_types.sql
 # Count Dublin Core types
 CREATE TEMP FUNCTION getDublinCoreTypes(rendered STRING)
 RETURNS ARRAY<STRING>
@@ -14,21 +15,25 @@ LANGUAGE js AS """
 WITH
 rendered_data AS (
   SELECT
-    _TABLE_SUFFIX AS client,
-    url,
+    client,
+    root_page as url,
     getDublinCoreTypes(JSON_EXTRACT(JSON_VALUE(JSON_EXTRACT(payload, '$._structured-data')), '$.structured_data.rendered')) AS dublin_core_types
   FROM
-    `httparchive.pages.2022_06_01_*`
+    `httparchive.all.pages`
+  WHERE 
+    date = '2024-06-01'
 ),
 
 page_totals AS (
   SELECT
-    _TABLE_SUFFIX AS client,
-    COUNT(0) AS total_pages
+    client,
+    COUNT(distinct root_page) AS total_pages
   FROM
-    `httparchive.pages.2022_06_01_*`
+    `httparchive.all.pages`
+  WHERE 
+    date = '2024-06-01'
   GROUP BY
-    _TABLE_SUFFIX
+    client
 )
 
 SELECT

@@ -1,4 +1,5 @@
 # standardSQL
+# jsonld_depth_percentiles.sql
 # Find the most nested entity in a JSON-LD document
 CREATE TEMP FUNCTION getJSONLDEntitiesRelationships(rendered STRING)
 RETURNS ARRAY<STRUCT<_from STRING, relationship STRING, _to STRING, depth NUMERIC>>
@@ -43,11 +44,13 @@ LANGUAGE js AS """
 
 WITH rendered_data AS (
   SELECT
-    _TABLE_SUFFIX AS client,
-    url,
+    client,
+    root_page as url,
     getJSONLDEntitiesRelationships(JSON_EXTRACT(JSON_VALUE(JSON_EXTRACT(payload, '$._structured-data')), '$.structured_data.rendered')) AS jsonld_entities_relationships
   FROM
-    `httparchive.pages.2022_06_01_*`
+    `httparchive.all.pages`
+  WHERE 
+    date = '2024-06-01'
 )
 
 SELECT

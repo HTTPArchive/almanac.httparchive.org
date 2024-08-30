@@ -1,5 +1,7 @@
 # standardSQL
+# classic_microformats_types.sql
 # Count Classic Microformats types
+
 CREATE TEMP FUNCTION getClassicMicroformatsTypes(rendered STRING)
 RETURNS ARRAY<STRUCT<name STRING, count NUMERIC>>
 LANGUAGE js AS """
@@ -14,21 +16,25 @@ LANGUAGE js AS """
 WITH
 rendered_data AS (
   SELECT
-    _TABLE_SUFFIX AS client,
-    url,
+    client,
+    root_page as url,
     getClassicMicroformatsTypes(JSON_EXTRACT(JSON_VALUE(JSON_EXTRACT(payload, '$._structured-data')), '$.structured_data.rendered')) AS classic_microformats_types
   FROM
-    `httparchive.pages.2022_06_01_*`
+    `httparchive.all.pages`
+  WHERE 
+    date = '2024-06-01'
 ),
 
 page_totals AS (
   SELECT
-    _TABLE_SUFFIX AS client,
-    COUNT(0) AS total_pages
+    client,
+    COUNT(distinct root_page) AS total_pages
   FROM
-    `httparchive.pages.2022_06_01_*`
+    `httparchive.all.pages`
+  WHERE 
+    date = '2024-06-01'
   GROUP BY
-    _TABLE_SUFFIX
+    client
 )
 
 SELECT

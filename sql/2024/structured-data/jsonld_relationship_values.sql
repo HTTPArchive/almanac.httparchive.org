@@ -1,4 +1,5 @@
 # standardSQL
+# jsonld_relationship_values.sql
 # Count JSON-LD relationships with their value entity types
 CREATE TEMP FUNCTION getJSONLDEntitiesRelationships(rendered STRING)
 RETURNS ARRAY<STRUCT<_from STRING, relationship STRING, _to STRING, depth NUMERIC>>
@@ -44,21 +45,25 @@ LANGUAGE js AS """
 WITH
 rendered_data AS (
   SELECT
-    _TABLE_SUFFIX AS client,
-    url,
+    client,
+    root_page as url,
     getJSONLDEntitiesRelationships(JSON_EXTRACT(JSON_VALUE(JSON_EXTRACT(payload, '$._structured-data')), '$.structured_data.rendered')) AS jsonld_entities_relationships
   FROM
-    `httparchive.pages.2022_06_01_*`
+    `httparchive.all.pages`
+  WHERE 
+    date = '2024-06-01'
 ),
 
 page_totals AS (
   SELECT
-    _TABLE_SUFFIX AS client,
-    COUNT(0) AS total_pages
+    client,
+    COUNT(distinct root_page) AS total_pages
   FROM
-    `httparchive.pages.2022_06_01_*`
+    `httparchive.all.pages`
+  WHERE 
+    date = '2024-06-01'
   GROUP BY
-    _TABLE_SUFFIX
+    client
 )
 
 SELECT
