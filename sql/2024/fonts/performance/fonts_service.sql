@@ -17,48 +17,24 @@ pages AS (
   GROUP BY
     date,
     client
-),
-services_1 AS (
-  SELECT
-    date,
-    client,
-    page,
-    STRING_AGG(DISTINCT SERVICE(url), ', ' ORDER BY SERVICE(url)) AS services
-  FROM
-    `httparchive.all.requests`
-  WHERE
-    date IN ('2022-07-01', '2023-07-01', '2024-07-01') AND
-    type = 'font'
-  GROUP BY
-    date,
-    client,
-    page
-),
-services_2 AS (
-  SELECT
-    date,
-    client,
-    services,
-    COUNT(DISTINCT page) AS count
-  FROM
-    services_1
-  GROUP BY
-    date,
-    client,
-    services
 )
 
 SELECT
   date,
   client,
-  services,
-  count,
-  total,
-  count / total AS proportion
+  SERVICE(url) AS service,
+  COUNT(DISTINCT page) AS count,
+  SUM(COUNT(DISTINCT page)) OVER (PARTITION BY date, client) AS total,
+  COUNT(DISTINCT page) / SUM(COUNT(DISTINCT page)) OVER (PARTITION BY date, client) AS proportion
 FROM
-  services_2
-JOIN
-  pages USING (date, client)
+  `httparchive.all.requests`
+WHERE
+  date IN ('2022-07-01', '2023-07-01', '2024-07-01') AND
+  type = 'font'
+GROUP BY
+  date,
+  client,
+  service
 ORDER BY
   date,
   client,
