@@ -25,10 +25,10 @@ WITH score_data AS (
 
 SELECT
   cms,
-  ROUND(AVG(performance_score) * 100, 2) AS avg_performance_score,
-  ROUND(AVG(accessibility_score) * 100, 2) AS avg_accessibility_score,
-  ROUND(AVG(best_practices_score) * 100, 2) AS avg_best_practices_score,
-  ROUND(AVG(seo_score) * 100, 2) AS avg_seo_score,
+  AVG(performance_score) AS avg_performance_score,
+  AVG(accessibility_score) AS avg_accessibility_score,
+  AVG(best_practices_score) AS avg_best_practices_score,
+  AVG(seo_score) AS avg_seo_score,
   COUNT(DISTINCT page) AS total_pages
 FROM
   score_data
