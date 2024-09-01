@@ -68,7 +68,7 @@ WITH focus_visible_data AS (
     `httparchive.almanac.parsed_css`,
     UNNEST(getSelectorParts(css).pseudo_class) AS pseudo_class
   WHERE
-    date = '2022-06-01' AND
+    date = '2024-06-01' AND
     LENGTH(css) < 0.1 * 1024 * 1024  -- Limit the size of the CSS to avoid OOM crashes
   GROUP BY
     client, page
@@ -82,7 +82,7 @@ total_pages_data AS (
   FROM
     `httparchive.all.pages`
   WHERE
-    date = '2022-06-01'
+    date = '2024-06-01'
   GROUP BY
     client
 )
