@@ -12,12 +12,12 @@ WITH score_data AS (
     `httparchive.all.pages`,
     UNNEST(technologies) AS t
   WHERE
-    date = '2024-06-01' 
-    AND lighthouse IS NOT NULL 
-    AND lighthouse != '{}'
-    AND is_root_page = TRUE
-    AND ('Web frameworks' IN UNNEST(t.categories) OR 'JavaScript libraries' IN UNNEST(t.categories) OR 'Frontend frameworks' IN UNNEST(t.categories) OR 'JavaScript frameworks' IN UNNEST(t.categories))
-    AND t.technology IS NOT NULL
+    date = '2024-06-01' AND
+    lighthouse IS NOT NULL AND
+    lighthouse != '{}' AND
+    is_root_page = TRUE AND
+    ('Web frameworks' IN UNNEST(t.categories) OR 'JavaScript libraries' IN UNNEST(t.categories) OR 'Frontend frameworks' IN UNNEST(t.categories) OR 'JavaScript frameworks' IN UNNEST(t.categories)) AND
+    t.technology IS NOT NULL
 )
 
 SELECT
