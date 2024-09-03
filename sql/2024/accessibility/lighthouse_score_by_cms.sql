@@ -9,7 +9,7 @@ WITH score_data AS (
     rank,
     CAST(JSON_EXTRACT_SCALAR(lighthouse, '$.categories.performance.score') AS FLOAT64) AS performance_score,
     CAST(JSON_EXTRACT_SCALAR(lighthouse, '$.categories.accessibility.score') AS FLOAT64) AS accessibility_score,
-    CAST(JSON_EXTRACT_SCALAR(lighthouse, '$.categories.best-practices.score') AS FLOAT64) AS best_practices_score, 
+    CAST(JSON_EXTRACT_SCALAR(lighthouse, '$.categories.best-practices.score') AS FLOAT64) AS best_practices_score,
     CAST(JSON_EXTRACT_SCALAR(lighthouse, '$.categories.seo.score') AS FLOAT64) AS seo_score
   FROM
     `httparchive.all.pages`,
@@ -17,7 +17,7 @@ WITH score_data AS (
     UNNEST(t.categories) AS category
   WHERE
     date = '2024-06-01' AND
-    lighthouse IS NOT NULL AND 
+    lighthouse IS NOT NULL AND
     lighthouse != '{}' AND
     is_root_page AND
     category = 'CMS'
