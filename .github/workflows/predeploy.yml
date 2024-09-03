@@ -79,7 +79,7 @@ jobs:
         npm run timestamps
     - name: Create Pull Request
       id: cpr
-      uses: peter-evans/create-pull-request@v6
+      uses: peter-evans/create-pull-request@v7
       with:
         title: Pre-deploy Updates
         branch-suffix: timestamp
