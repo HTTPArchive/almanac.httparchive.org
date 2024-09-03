@@ -27,7 +27,7 @@ SELECT
   AVG(accessibility_score) AS avg_accessibility_score,
   AVG(best_practices_score) AS avg_best_practices_score,
   AVG(seo_score) AS avg_seo_score,
-  COUNT(DISTINCT page) AS total_pages,
+  COUNT(DISTINCT page) AS total_pages
 FROM (
   SELECT
     client,
@@ -39,7 +39,7 @@ FROM (
     AVG(seo_score) AS seo_score
   FROM
     score_data
-  GROUP BY 
+  GROUP BY
     client,
     page,
     framework
