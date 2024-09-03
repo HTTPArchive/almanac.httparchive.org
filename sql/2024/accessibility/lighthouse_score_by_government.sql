@@ -6,14 +6,14 @@ WITH score_data AS (
     client,
     CAST(JSON_EXTRACT_SCALAR(lighthouse, '$.categories.performance.score') AS FLOAT64) AS performance_score,
     CAST(JSON_EXTRACT_SCALAR(lighthouse, '$.categories.accessibility.score') AS FLOAT64) AS accessibility_score,
-    CAST(JSON_EXTRACT_SCALAR(lighthouse, '$.categories.best-practices.score') AS FLOAT64) AS best_practices_score, 
+    CAST(JSON_EXTRACT_SCALAR(lighthouse, '$.categories.best-practices.score') AS FLOAT64) AS best_practices_score,
     CAST(JSON_EXTRACT_SCALAR(lighthouse, '$.categories.seo.score') AS FLOAT64) AS seo_score,
     page
   FROM
     `httparchive.all.pages`
   WHERE
     date = '2024-06-01' AND
-    lighthouse IS NOT NULL AND 
+    lighthouse IS NOT NULL AND
     lighthouse != '{}' AND
     is_root_page
 ),
@@ -21,11 +21,11 @@ WITH score_data AS (
 domain_scores AS (
   SELECT
 
-  CASE
+    CASE
     -- United Nations
     WHEN REGEXP_CONTAINS(page, r'\.un\.org') THEN 'UN.org'
     WHEN REGEXP_CONTAINS(page, r'\.europa\.eu') THEN 'European Union'
-    
+
     -- USA State Governments (must come before federal .gov check)
     WHEN REGEXP_CONTAINS(page, r'\.alabama\.gov|\.AL\.gov') THEN 'Alabama'
     WHEN REGEXP_CONTAINS(page, r'\.alaska\.gov|\.AK\.gov') THEN 'Alaska'
@@ -77,7 +77,7 @@ domain_scores AS (
     WHEN REGEXP_CONTAINS(page, r'\.westvirginia\.gov|\.WV\.gov') THEN 'West Virginia'
     WHEN REGEXP_CONTAINS(page, r'\.wisconsin\.gov|\.WI\.gov') THEN 'Wisconsin'
     WHEN REGEXP_CONTAINS(page, r'\.wyoming\.gov|\.WY\.gov') THEN  'Wyoming'
-  
+
     -- North American Federal Governments
     WHEN REGEXP_CONTAINS(page, r'\.va\.gov') THEN 'USA VA.gov'
     WHEN REGEXP_CONTAINS(page, r'\.gov') THEN 'USA'
@@ -114,7 +114,7 @@ domain_scores AS (
     WHEN REGEXP_CONTAINS(page, r'\.gv\.at') THEN 'Austria'
     WHEN REGEXP_CONTAINS(page, r'\.gov\.al') THEN 'Albania'
     WHEN REGEXP_CONTAINS(page, r'\.gv\.ua') THEN 'Ukraine'
-    
+
     -- Other Countries
     WHEN REGEXP_CONTAINS(page, r'\.gov\.in|\.nic\.in') THEN 'India'
     WHEN REGEXP_CONTAINS(page, r'\.gov\.cn') THEN 'China'
@@ -141,12 +141,12 @@ domain_scores AS (
     WHEN REGEXP_CONTAINS(page, r'\.gov\.tw') THEN 'Taiwan'
     WHEN REGEXP_CONTAINS(page, r'\.gov\.sg') THEN 'Singapore'
     WHEN REGEXP_CONTAINS(page, r'\.gub\.uy') THEN 'Uruguay'
-    
-  END AS gov_domain,
-  performance_score,
-  accessibility_score,
-  best_practices_score, 
-  seo_score
+
+    END AS gov_domain,
+    performance_score,
+    accessibility_score,
+    best_practices_score, 
+    seo_score
   FROM
     score_data
   WHERE
