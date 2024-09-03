@@ -76,7 +76,7 @@ domain_scores AS (
       WHEN REGEXP_CONTAINS(page, r'\.washington\.gov|\.WA\.gov') THEN 'Washington'
       WHEN REGEXP_CONTAINS(page, r'\.westvirginia\.gov|\.WV\.gov') THEN 'West Virginia'
       WHEN REGEXP_CONTAINS(page, r'\.wisconsin\.gov|\.WI\.gov') THEN 'Wisconsin'
-      WHEN REGEXP_CONTAINS(page, r'\.wyoming\.gov|\.WY\.gov') THEN  'Wyoming'
+      WHEN REGEXP_CONTAINS(page, r'\.wyoming\.gov|\.WY\.gov') THEN 'Wyoming'
 
       -- North American Federal Governments
       WHEN REGEXP_CONTAINS(page, r'\.va\.gov') THEN 'USA VA.gov'
