@@ -8,7 +8,7 @@ WITH metrics_data AS (
     CAST(JSON_VALUE(lighthouse, '$.audits.total-blocking-time.numericValue') AS FLOAT64) AS tbt,
     CAST(JSON_VALUE(lighthouse, '$.audits.first-contentful-paint.numericValue') AS FLOAT64) AS fcp,
     CAST(JSON_VALUE(lighthouse, '$.audits.interactive.numericValue') AS FLOAT64) AS tti,
-    CAST(JSON_VALUE(lighthouse, '$.categories.performance.score') AS FLOAT64) * 100 AS performance_score
+    CAST(JSON_VALUE(lighthouse, '$.categories.performance.score') AS FLOAT64) AS performance_score
   FROM
     `httparchive.all.pages`
   WHERE
@@ -64,11 +64,11 @@ SELECT
   ROUND(APPROX_QUANTILES(tti, 1000)[OFFSET(900)], 2) AS p90_tti,
 
   -- Performance Score metrics
-  ROUND(APPROX_QUANTILES(performance_score, 1000)[OFFSET(100)], 2) AS p10_performance_score,
-  ROUND(APPROX_QUANTILES(performance_score, 1000)[OFFSET(250)], 2) AS p25_performance_score,
-  ROUND(APPROX_QUANTILES(performance_score, 1000)[OFFSET(500)], 2) AS p50_performance_score,
-  ROUND(APPROX_QUANTILES(performance_score, 1000)[OFFSET(750)], 2) AS p75_performance_score,
-  ROUND(APPROX_QUANTILES(performance_score, 1000)[OFFSET(900)], 2) AS p90_performance_score,
+  ROUND(APPROX_QUANTILES(performance_score, 1000)[OFFSET(900)] * 100, 2) AS p10_performance_score,
+  ROUND(APPROX_QUANTILES(performance_score, 1000)[OFFSET(750)] * 100, 2) AS p25_performance_score,
+  ROUND(APPROX_QUANTILES(performance_score, 1000)[OFFSET(500)] * 100, 2) AS p50_performance_score,
+  ROUND(APPROX_QUANTILES(performance_score, 1000)[OFFSET(250)] * 100, 2) AS p75_performance_score,
+  ROUND(APPROX_QUANTILES(performance_score, 1000)[OFFSET(100)] * 100, 2) AS p90_performance_score,
 
   -- Good CWV percentages
   ROUND(COUNTIF(lcp <= 2500) / COUNT(0) * 100, 2) AS good_lcp_percent,
