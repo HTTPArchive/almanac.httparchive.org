@@ -3,34 +3,60 @@
 
 # Temporary function to extract attributes used on elements from the JSON payload
 CREATE TEMPORARY FUNCTION getUsedAttributes(payload STRING)
-RETURNS ARRAY<STRING> LANGUAGE js AS """
+RETURNS ARRAY<STRING> LANGUAGE js AS '''
 try {
   const almanac = JSON.parse(payload);
   return Object.keys(almanac.attributes_used_on_elements);  // Extract attributes from the JSON structure
 } catch (e) {
   return [];
 }
-""";
+''';
 
 # Main query to analyze the usage of specific attributes across sites
+WITH attribute_usage AS (
+  SELECT
+    client,
+    is_root_page,
+    page,  # Distinct pages
+    attribute  # The attribute being analyzed
+  FROM
+    `httparchive.all.pages`,
+    UNNEST(getUsedAttributes(JSON_EXTRACT_SCALAR(payload, '$._almanac'))) AS attribute
+  WHERE
+    date = '2024-06-01'
+)
+
+# Aggregate results to compute totals and percentages
 SELECT
-  client,
-  is_root_page,
-  COUNT(DISTINCT page) AS total_sites,  # Total number of unique sites for the client
-  attribute,  # The attribute being analyzed
-  COUNT(0) AS total_sites_using,  # Number of sites using this specific attribute
-  SAFE_DIVIDE(COUNT(0), COUNT(DISTINCT page)) AS pct_sites_using  # Percentage of sites using this attribute
+  a.client,
+  a.is_root_page,
+  t.total_sites,  # Total number of unique sites
+  a.attribute,  # The attribute being analyzed
+  COUNT(DISTINCT a.page) AS total_sites_using,  # Number of unique sites using this attribute
+  SAFE_DIVIDE(COUNT(DISTINCT a.page), t.total_sites) AS pct_sites_using  # Percentage of sites using this attribute
 FROM
-  `httparchive.all.pages`,  # Single table containing all the necessary data
-  UNNEST(getUsedAttributes(JSON_EXTRACT_SCALAR(payload, '$._almanac'))) AS attribute  # Unnest the attributes extracted from the JSON payload
-WHERE
-  date = '2024-06-01'  # Filter for the specific date
+  attribute_usage a
+JOIN (
+  # Subquery to calculate total unique sites per client and is_root_page
+  SELECT
+    client,
+    is_root_page,
+    COUNT(DISTINCT page) AS total_sites
+  FROM
+    attribute_usage
+  GROUP BY
+    client,
+    is_root_page
+) t
+ON
+  a.client = t.client AND a.is_root_page = t.is_root_page
 GROUP BY
-  client,
-  is_root_page,
-  attribute  # Group by attribute
+  a.client,
+  a.is_root_page,
+  a.attribute,
+  t.total_sites
 HAVING
-  STARTS_WITH(attribute, 'aria-') OR  # Include attributes that start with 'aria-'
-  SAFE_DIVIDE(COUNT(0), COUNT(DISTINCT page)) >= 0.01  # Or include attributes used by 1% or more of sites
+  STARTS_WITH(a.attribute, 'aria-') OR  # Include attributes that start with 'aria-'
+  SAFE_DIVIDE(COUNT(DISTINCT a.page), t.total_sites) >= 0.01  # Or include attributes used by 1% or more of sites
 ORDER BY
-  pct_sites_using DESC;  # Order results by the percentage of sites using each attribute, in descending order
+  pct_sites_using DESC;  # Order by percentage in descending order
