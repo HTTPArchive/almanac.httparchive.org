@@ -80,11 +80,11 @@ base AS (
     elements e
   INNER JOIN
     mappings m
-  ON 
+  ON
     e.element_type = m.element_type
   LEFT JOIN
     roles r
-  ON 
+  ON
     e.client = r.client AND e.page = r.page AND e.is_root_page = r.is_root_page AND e.element_type = r.role_type
   GROUP BY
     e.client,
