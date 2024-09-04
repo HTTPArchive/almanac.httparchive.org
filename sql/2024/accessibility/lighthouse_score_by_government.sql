@@ -159,7 +159,7 @@ SELECT
   AVG(accessibility_score) AS average_accessibility_score,
   AVG(best_practices_score) AS average_best_practices_score,
   AVG(seo_score) AS average_seo_score,
-  COUNT(*) AS total_domains
+  COUNT(0) AS total_domains
 FROM
   domain_scores
 GROUP BY
