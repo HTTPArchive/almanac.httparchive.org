@@ -12,24 +12,53 @@ try {
 }
 ''';
 
-# Main query to analyze ARIA role usage across sites
+# Extract ARIA role usage per page
+WITH role_usage AS (
+  SELECT
+    client,
+    is_root_page,
+    page,  # Distinct pages
+    role  # The ARIA role being analyzed
+  FROM
+    `httparchive.all.pages`,
+    UNNEST(getUsedRoles(JSON_EXTRACT_SCALAR(payload, '$._almanac'))) AS role
+  WHERE
+    date = '2024-06-01'  # Filter for the specific date
+),
+
+# Calculate total sites for each client and is_root_page combination
+total_sites_per_group AS (
+  SELECT
+    client,
+    is_root_page,
+    COUNT(DISTINCT page) AS total_sites  # Total number of unique sites
+  FROM
+    role_usage
+  GROUP BY
+    client,
+    is_root_page
+)
+
+# Aggregate the results to compute totals and percentages
 SELECT
-  client,
-  is_root_page,
-  COUNT(DISTINCT page) AS total_sites,  # Total number of unique sites for the client
-  role,  # The ARIA role being analyzed
-  COUNT(0) AS total_sites_using,  # Number of sites using this specific ARIA role
-  SAFE_DIVIDE(COUNT(0), COUNT(DISTINCT page)) AS pct_sites_using  # Percentage of sites using this ARIA role
+  r.client,
+  r.is_root_page,
+  t.total_sites,  # Total number of unique sites
+  r.role,  # The ARIA role being analyzed
+  COUNT(DISTINCT r.page) AS total_sites_using,  # Number of unique sites using this ARIA role
+  SAFE_DIVIDE(COUNT(DISTINCT r.page), t.total_sites) AS pct_sites_using  # Correct percentage of sites using this ARIA role
 FROM
-  `httparchive.all.pages`,  # Single table containing all the necessary data
-  UNNEST(getUsedRoles(JSON_EXTRACT_SCALAR(payload, '$._almanac'))) AS role  # Unnest the ARIA roles extracted from the JSON payload
-WHERE
-  date = '2024-06-01'  # Filter for the specific date
+  role_usage r
+JOIN
+  total_sites_per_group t  # Join to get the total number of unique sites for each group
+ON
+  r.client = t.client AND r.is_root_page = t.is_root_page
 GROUP BY
-  client,
-  is_root_page,
-  role  # Group by ARIA role
+  r.client,
+  r.is_root_page,
+  t.total_sites,
+  r.role
 HAVING
   total_sites_using >= 100  # Filter to include only roles used by 100 or more sites
 ORDER BY
-  pct_sites_using DESC;  # Order results by the percentage of sites using each ARIA role, in descending order
+  pct_sites_using DESC;  # Order results by percentage of sites using each ARIA role
