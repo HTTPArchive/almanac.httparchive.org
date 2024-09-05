@@ -18,6 +18,7 @@ fonts AS (
     `httparchive.all.requests`
   WHERE
     date = '2024-07-01' AND
+    is_root_page AND
     type = 'font'
   GROUP BY
     client,

@@ -1,6 +1,6 @@
 -- Section: Performance
 -- Question: What is the distribution of the file size broken down by country?
--- Normalization: Fonts on pages
+-- Normalization: Fonts on sites
 
 -- INCLUDE ../common.sql
 
@@ -13,7 +13,7 @@ countries AS (
   FROM
     `chrome-ux-report.materialized.country_summary`
   WHERE
-    yyyymm = 202406
+    yyyymm = 202407
   GROUP BY
     client,
     domain,
@@ -32,6 +32,7 @@ requests AS (
     `httparchive.all.requests`
   WHERE
     date = '2024-07-01' AND
+    is_root_page AND
     type = 'font'
 ),
 formats AS (
