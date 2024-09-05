@@ -1,6 +1,6 @@
 -- Section: Development
 -- Question: Which axes are used in CSS?
--- Normalization: Pages
+-- Normalization: Sites
 
 CREATE TEMPORARY FUNCTION PROPERTIES(json STRING)
 RETURNS ARRAY<STRING>
@@ -36,7 +36,8 @@ pages AS (
   FROM
     `httparchive.all.requests`
   WHERE
-    date = '2024-07-01'
+    date = '2024-07-01' AND
+    is_root_page
   GROUP BY
     client
 ),
@@ -50,7 +51,8 @@ properties AS (
     UNNEST(PROPERTIES(css)) AS property,
     UNNEST(SPLIT(property, ',')) AS chunk
   WHERE
-    date = '2024-07-01'
+    date = '2024-07-01' AND
+    is_root_page
   GROUP BY
     client,
     axis

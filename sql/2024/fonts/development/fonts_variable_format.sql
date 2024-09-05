@@ -15,6 +15,7 @@ fonts AS (
     UNNEST(VARIABLE_FORMATS(payload)) AS format
   WHERE
     date = '2024-07-01' AND
+    is_root_page AND
     type = 'font' AND
     IS_VARIABLE(payload)
   GROUP BY
