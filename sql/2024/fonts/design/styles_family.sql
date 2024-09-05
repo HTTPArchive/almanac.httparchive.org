@@ -1,6 +1,6 @@
 -- Section: Design
 -- Question: Which families are popular in CSS?
--- Normalization: Pages
+-- Normalization: Sites
 
 CREATE TEMPORARY FUNCTION FAMILIES(json STRING)
 RETURNS ARRAY<STRING>
@@ -33,7 +33,8 @@ families AS (
     `httparchive.all.parsed_css`,
     UNNEST(FAMILIES(css)) AS family
   WHERE
-    date = '2024-07-01'
+    date = '2024-07-01' AND
+    is_root_page
   GROUP BY
     client,
     family
@@ -47,7 +48,8 @@ pages AS (
   FROM
     `httparchive.all.requests`
   WHERE
-    date = '2024-07-01'
+    date = '2024-07-01' AND
+    is_root_page
   GROUP BY
     client
 )

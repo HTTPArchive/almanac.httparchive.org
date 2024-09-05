@@ -1,6 +1,6 @@
 -- Section: Performance
 -- Question: Which scripts are popular on the web?
--- Normalization: Pages
+-- Normalization: Sites
 
 CREATE TEMPORARY FUNCTION SCRIPTS(body STRING)
 RETURNS ARRAY<STRING>
@@ -33,6 +33,7 @@ scripts AS (
     UNNEST(SCRIPTS(response_body)) AS script
   WHERE
     date = '2024-07-01' AND
+    is_root_page AND
     type = 'html'
   GROUP BY
     client,
@@ -45,7 +46,8 @@ pages AS (
   FROM
     `httparchive.all.requests`
   WHERE
-    date = '2024-07-01'
+    date = '2024-07-01' AND
+    is_root_page
   GROUP BY
     client
 )

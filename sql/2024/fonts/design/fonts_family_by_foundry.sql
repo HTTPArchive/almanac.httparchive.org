@@ -1,6 +1,6 @@
 -- Section: Design
 -- Question: Which families are used broken down by foundry?
--- Normalization: Fonts on pages
+-- Normalization: Fonts on sites
 
 -- INCLUDE ../common.sql
 
@@ -16,6 +16,7 @@ FROM
   `httparchive.all.requests`
 WHERE
   date = '2024-07-01' AND
+  is_root_page AND
   type = 'font'
 GROUP BY
   client,

@@ -1,6 +1,6 @@
 -- Section: Design
 -- Question: Which designers are popular?
--- Normalization: Pages
+-- Normalization: Sites
 
 WITH
 designers AS (
@@ -13,6 +13,7 @@ designers AS (
     `httparchive.all.requests`
   WHERE
     date = '2024-07-01' AND
+    is_root_page AND
     type = 'font'
   GROUP BY
     client,
@@ -27,7 +28,8 @@ pages AS (
   FROM
     `httparchive.all.requests`
   WHERE
-    date = '2024-07-01'
+    date = '2024-07-01' AND
+    is_root_page
   GROUP BY
     client
 )
