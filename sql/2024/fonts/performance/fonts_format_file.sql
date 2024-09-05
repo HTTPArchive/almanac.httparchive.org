@@ -1,6 +1,6 @@
 -- Section: Performance
 -- Question: Which file formats are used?
--- Normalization: Fonts on pages (primary) and pages (secondary)
+-- Normalization: Fonts on sites (primary) and sites (secondary)
 
 -- INCLUDE ../common.sql
 
@@ -21,7 +21,8 @@ FROM
   `httparchive.all.requests`
 WHERE
   date = '2024-07-01' AND
-  type = 'font'
+  type = 'font' AND
+  is_root_page
 GROUP BY
   client,
   format

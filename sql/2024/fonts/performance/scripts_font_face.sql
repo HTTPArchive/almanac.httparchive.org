@@ -1,6 +1,6 @@
 -- Section: Performance
 -- Question: What is the usage of FontFace in JavaScript?
--- Normalization: Pages
+-- Normalization: Sites
 
 WITH
 pages AS (
@@ -11,7 +11,8 @@ pages AS (
   FROM
     `httparchive.all.requests`
   WHERE
-    date IN ('2022-07-01', '2023-07-01', '2024-07-01')
+    date IN ('2022-07-01', '2023-07-01', '2024-07-01') AND
+    is_root_page
   GROUP BY
     client,
     date
@@ -25,6 +26,7 @@ scripts AS (
     `httparchive.all.requests`
   WHERE
     date IN ('2022-07-01', '2023-07-01', '2024-07-01') AND
+    is_root_page AND
     type = 'script' AND
     REGEXP_CONTAINS(response_body, r'new FontFace\(')
   GROUP BY

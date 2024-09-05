@@ -1,6 +1,6 @@
 -- Section: Performance
 -- Question: What is the usage of link relationship in HTML?
--- Normalization: Pages
+-- Normalization: Sites
 
 CREATE TEMPORARY FUNCTION HINTS(json STRING)
 RETURNS ARRAY<STRING>
@@ -67,7 +67,8 @@ hints AS (
     `httparchive.all.pages`,
     UNNEST(HINTS(custom_metrics)) AS hint
   WHERE
-    date = '2024-07-01'
+    date = '2024-07-01' AND
+    is_root_page
   GROUP BY
     client,
     hint
@@ -79,7 +80,8 @@ pages AS (
   FROM
     `httparchive.all.pages`
   WHERE
-    date = '2024-07-01'
+    date = '2024-07-01' AND
+    is_root_page
   GROUP BY
     client
 )

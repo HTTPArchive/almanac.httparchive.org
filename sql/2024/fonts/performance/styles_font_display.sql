@@ -1,6 +1,6 @@
 -- Section: Performance
 -- Question: What is the usage of font-display in CSS?
--- Normalization: Pages
+-- Normalization: Sites
 
 CREATE TEMPORARY FUNCTION PROPERTIES(json STRING)
 RETURNS ARRAY<STRING>
@@ -26,30 +26,32 @@ WITH
 pages AS (
   SELECT
     client,
-    COUNT(DISTINCT page) AS total,
-    ROW_NUMBER() OVER (PARTITION BY client ORDER BY COUNT(DISTINCT page) DESC) AS rank
+    COUNT(DISTINCT page) AS total
   FROM
     `httparchive.all.requests`
   WHERE
-    date = '2024-07-01'
+    date = '2024-07-01' AND
+    is_root_page
   GROUP BY
     client
-  QUALIFY
-    rank <= 10
 ),
 properties AS (
   SELECT
     client,
     property,
-    COUNT(DISTINCT page) AS count
+    COUNT(DISTINCT page) AS count,
+    ROW_NUMBER() OVER (PARTITION BY client ORDER BY COUNT(DISTINCT page) DESC) AS rank
   FROM
     `httparchive.all.parsed_css`,
     UNNEST(PROPERTIES(css)) AS property
   WHERE
-    date = '2024-07-01'
+    date = '2024-07-01' AND
+    is_root_page
   GROUP BY
     client,
     property
+  QUALIFY
+    rank <= 10
 )
 
 SELECT

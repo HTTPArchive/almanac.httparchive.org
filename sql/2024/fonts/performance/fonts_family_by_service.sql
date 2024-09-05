@@ -1,6 +1,6 @@
 -- Section: Performance
 -- Question: Which families are used broken down by service?
--- Normalization: Fonts on pages
+-- Normalization: Fonts on sites
 
 -- INCLUDE ../common.sql
 
@@ -14,6 +14,7 @@ requests AS (
     `httparchive.all.requests`
   WHERE
     date = '2024-07-01' AND
+    is_root_page AND
     type = 'font'
 )
 
