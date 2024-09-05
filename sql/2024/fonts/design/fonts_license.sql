@@ -1,6 +1,6 @@
 -- Section: Design
 -- Question: Which licenses are used?
--- Normalization: Pages
+-- Normalization: Sites
 
 CREATE TEMPORARY FUNCTION LICENSE(value STRING) AS (
   CASE
@@ -24,6 +24,7 @@ FROM
   `httparchive.all.requests`
 WHERE
   date = '2024-07-01' AND
+  is_root_page AND
   type = 'font'
 GROUP BY
   client,
