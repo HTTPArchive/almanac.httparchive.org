@@ -73,7 +73,7 @@ hints AS (
     client,
     hint
 ),
-pages AS (
+sites AS (
   SELECT
     client,
     COUNT(DISTINCT page) AS total
@@ -95,7 +95,7 @@ SELECT
 FROM
   hints
 LEFT JOIN
-  pages USING (client)
+  sites USING (client)
 ORDER BY
   client,
   proportion DESC

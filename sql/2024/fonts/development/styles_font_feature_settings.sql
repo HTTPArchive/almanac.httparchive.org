@@ -53,7 +53,7 @@ features AS (
     client,
     feature
 ),
-pages AS (
+sites AS (
   SELECT
     client,
     COUNT(DISTINCT page) AS total
@@ -75,7 +75,7 @@ SELECT
 FROM
   features
 JOIN
-  pages USING (client)
+  sites USING (client)
 ORDER BY
   client,
   proportion DESC

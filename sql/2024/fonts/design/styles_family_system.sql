@@ -64,7 +64,7 @@ families AS (
     client,
     family
 ),
-pages AS (
+sites AS (
   SELECT
     client,
     COUNT(DISTINCT page) AS total
@@ -86,7 +86,7 @@ SELECT
 FROM
   families
 JOIN
-  pages USING (client)
+  sites USING (client)
 ORDER BY
   client,
   proportion DESC

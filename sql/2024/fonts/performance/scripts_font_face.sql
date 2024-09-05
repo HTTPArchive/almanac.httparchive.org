@@ -3,20 +3,6 @@
 -- Normalization: Sites
 
 WITH
-pages AS (
-  SELECT
-    date,
-    client,
-    COUNT(DISTINCT page) AS total
-  FROM
-    `httparchive.all.requests`
-  WHERE
-    date IN ('2022-07-01', '2023-07-01', '2024-07-01') AND
-    is_root_page
-  GROUP BY
-    client,
-    date
-),
 scripts AS (
   SELECT
     date,
@@ -32,6 +18,20 @@ scripts AS (
   GROUP BY
     date,
     client
+),
+sites AS (
+  SELECT
+    date,
+    client,
+    COUNT(DISTINCT page) AS total
+  FROM
+    `httparchive.all.requests`
+  WHERE
+    date IN ('2022-07-01', '2023-07-01', '2024-07-01') AND
+    is_root_page
+  GROUP BY
+    client,
+    date
 )
 
 SELECT
@@ -43,7 +43,7 @@ SELECT
 FROM
   scripts
 JOIN
-  pages USING (date, client)
+  sites USING (date, client)
 ORDER BY
   date,
   client
