@@ -8,6 +8,7 @@ return Object.keys($);
 
 SELECT
   client,
+  is_root_page,
   page,
   COUNT(DISTINCT fuguAPI) AS fuguAPIs
 FROM
@@ -18,6 +19,7 @@ WHERE
   JSON_QUERY(custom_metrics, '$."fugu-apis"') != '[]'
 GROUP BY
   client,
+  is_root_page,
   page
 HAVING
   COUNT(DISTINCT fuguAPI) >= 1
@@ -25,4 +27,4 @@ ORDER BY
   fuguAPIs DESC,
   page,
   client
-LIMIT 100;
+LIMIT 200;

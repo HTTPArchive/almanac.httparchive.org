@@ -10,6 +10,7 @@ WITH fuguapis AS (
   SELECT
     date,
     client,
+    root_page,
     page,
     fuguAPI
   FROM
@@ -28,7 +29,8 @@ totals AS (
   FROM
     `httparchive.all.pages`
   WHERE
-    date = '2024-06-01'
+    date = '2024-06-01' AND
+    is_root_page
   GROUP BY
     date,
     client
@@ -37,9 +39,9 @@ totals AS (
 SELECT
   client,
   fuguAPI,
-  COUNT(DISTINCT page) AS pages,
+  COUNT(DISTINCT root_page) AS pages,
   total,
-  COUNT(DISTINCT page) / total AS pct,
+  COUNT(DISTINCT root_page) / total AS pct,
   ARRAY_TO_STRING(ARRAY_AGG(DISTINCT page LIMIT 50), ' ') AS sample_urls
 FROM
   fuguapis
@@ -52,7 +54,7 @@ GROUP BY
   client,
   total
 HAVING
-  COUNT(DISTINCT page) >= 10
+  COUNT(DISTINCT root_page) >= 10
 ORDER BY
   pct DESC,
   client;
