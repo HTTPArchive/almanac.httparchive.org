@@ -29,18 +29,6 @@ try {
 ''';
 
 WITH
-pages AS (
-  SELECT
-    client,
-    COUNT(DISTINCT page) AS total
-  FROM
-    `httparchive.all.requests`
-  WHERE
-    date = '2024-07-01' AND
-    is_root_page
-  GROUP BY
-    client
-),
 properties AS (
   SELECT
     client,
@@ -58,6 +46,18 @@ properties AS (
     axis
   HAVING
     axis IS NOT NULL
+),
+sites AS (
+  SELECT
+    client,
+    COUNT(DISTINCT page) AS total
+  FROM
+    `httparchive.all.requests`
+  WHERE
+    date = '2024-07-01' AND
+    is_root_page
+  GROUP BY
+    client
 )
 
 SELECT
@@ -69,7 +69,7 @@ SELECT
 FROM
   properties
 JOIN
-  pages USING (client)
+  sites USING (client)
 ORDER BY
   client,
   proportion DESC

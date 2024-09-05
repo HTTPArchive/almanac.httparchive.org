@@ -21,7 +21,7 @@ designers AS (
   QUALIFY
     rank <= 100
 ),
-pages AS (
+sites AS (
   SELECT
     client,
     COUNT(DISTINCT page) AS total
@@ -43,7 +43,7 @@ SELECT
 FROM
   designers
 JOIN
-  pages USING (client)
+  sites USING (client)
 ORDER BY
   client,
   proportion DESC

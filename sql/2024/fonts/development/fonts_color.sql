@@ -5,18 +5,6 @@
 -- INCLUDE ../common.sql
 
 WITH
-pages AS (
-  SELECT
-    client,
-    COUNT(DISTINCT page) AS total
-  FROM
-    `httparchive.all.requests`
-  WHERE
-    date = '2024-07-01' AND
-    is_root_page
-  GROUP BY
-    client
-),
 fonts AS (
   SELECT
     client,
@@ -30,6 +18,18 @@ fonts AS (
     IS_COLOR(payload)
   GROUP BY
     client
+),
+sites AS (
+  SELECT
+    client,
+    COUNT(DISTINCT page) AS total
+  FROM
+    `httparchive.all.requests`
+  WHERE
+    date = '2024-07-01' AND
+    is_root_page
+  GROUP BY
+    client
 )
 
 SELECT
@@ -40,6 +40,6 @@ SELECT
 FROM
   fonts
 JOIN
-  pages USING (client)
+  sites USING (client)
 ORDER BY
   proportion DESC
