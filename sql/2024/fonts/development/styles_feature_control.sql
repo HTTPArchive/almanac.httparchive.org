@@ -1,6 +1,6 @@
 -- Section: Development
 -- Question: How are features used in CSS?
--- Normalization: Pages
+-- Normalization: Sites
 
 CREATE TEMPORARY FUNCTION PROPERTIES(json STRING)
 RETURNS ARRAY<STRING>
@@ -45,7 +45,8 @@ pages AS (
   FROM
     `httparchive.all.requests`
   WHERE
-    date = '2024-07-01'
+    date = '2024-07-01' AND
+    is_root_page
   GROUP BY
     client
 ),
@@ -58,7 +59,8 @@ properties AS (
     `httparchive.all.parsed_css`,
     UNNEST(PROPERTIES(css)) AS property
   WHERE
-    date = '2024-07-01'
+    date = '2024-07-01' AND
+    is_root_page
   GROUP BY
     client,
     property

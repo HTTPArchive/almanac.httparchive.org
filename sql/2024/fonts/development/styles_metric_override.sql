@@ -1,6 +1,6 @@
 -- Section: Development
--- Question: How and how often metrics override used in CSS?
--- Normalization: Pages
+-- Question: How and how often is metrics override used in CSS?
+-- Normalization: Sites
 
 CREATE TEMPORARY FUNCTION PROPERTIES(json STRING)
 RETURNS ARRAY<STRING>
@@ -30,7 +30,8 @@ pages AS (
   FROM
     `httparchive.all.requests`
   WHERE
-    date = '2024-07-01'
+    date = '2024-07-01' AND
+    is_root_page
   GROUP BY
     client
 ),
@@ -43,7 +44,8 @@ properties AS (
     `httparchive.all.parsed_css`,
     UNNEST(PROPERTIES(css)) AS property
   WHERE
-    date = '2024-07-01'
+    date = '2024-07-01' AND
+    is_root_page
   GROUP BY
     client,
     property

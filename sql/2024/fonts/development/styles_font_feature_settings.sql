@@ -1,6 +1,6 @@
 -- Section: Development
 -- Question: Which features are used via font-feature-settings in CSS?
--- Normalization: Pages
+-- Normalization: Sites
 
 CREATE TEMPORARY FUNCTION FEATURES(json STRING)
 RETURNS ARRAY<STRING>
@@ -47,7 +47,8 @@ features AS (
     `httparchive.all.parsed_css`,
     UNNEST(FEATURES(css)) AS feature
   WHERE
-    date = '2024-07-01'
+    date = '2024-07-01' AND
+    is_root_page
   GROUP BY
     client,
     feature
@@ -59,7 +60,8 @@ pages AS (
   FROM
     `httparchive.all.requests`
   WHERE
-    date = '2024-07-01'
+    date = '2024-07-01' AND
+    is_root_page
   GROUP BY
     client
 )

@@ -1,6 +1,6 @@
 -- Section: Development
 -- Question: How popular are variable fonts?
--- Normalization: Pages
+-- Normalization: Sites
 
 -- INCLUDE ../common.sql
 
@@ -13,6 +13,7 @@ fonts AS (
     `httparchive.all.requests`
   WHERE
     date = '2024-07-01' AND
+    is_root_page AND
     type = 'font' AND
     IS_VARIABLE(payload)
   GROUP BY
@@ -25,7 +26,8 @@ pages AS (
   FROM
     `httparchive.all.requests`
   WHERE
-    date = '2024-07-01'
+    date = '2024-07-01' AND
+    is_root_page
   GROUP BY
     client
 )

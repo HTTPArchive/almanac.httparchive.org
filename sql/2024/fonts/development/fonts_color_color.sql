@@ -37,6 +37,7 @@ FROM
   UNNEST(COLORS(JSON_EXTRACT(payload, '$._font_details.color.palettes'))) AS color
 WHERE
   date = '2024-07-01' AND
+  is_root_page AND
   type = 'font' AND
   IS_COLOR(payload)
 GROUP BY

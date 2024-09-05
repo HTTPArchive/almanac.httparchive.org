@@ -1,6 +1,6 @@
 -- Section: Development
 -- Question: How popular are color fonts?
--- Normalization: Pages
+-- Normalization: Sites
 
 -- INCLUDE ../common.sql
 
@@ -12,7 +12,8 @@ pages AS (
   FROM
     `httparchive.all.requests`
   WHERE
-    date = '2024-07-01'
+    date = '2024-07-01' AND
+    is_root_page
   GROUP BY
     client
 ),
@@ -24,6 +25,7 @@ fonts AS (
     `httparchive.all.requests`
   WHERE
     date = '2024-07-01' AND
+    is_root_page AND
     type = 'font' AND
     IS_COLOR(payload)
   GROUP BY

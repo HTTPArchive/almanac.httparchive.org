@@ -1,6 +1,6 @@
 -- Section: Development
 -- Question: Who is serving variable fonts?
--- Normalization: Fonts on pages
+-- Normalization: Fonts on sites
 
 -- INCLUDE ../common.sql
 
@@ -13,6 +13,7 @@ FROM
   `httparchive.all.requests`
 WHERE
   date = '2024-07-01' AND
+  is_root_page AND
   type = 'font' AND
   IS_VARIABLE(payload)
 GROUP BY
