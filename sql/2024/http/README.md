@@ -15,6 +15,6 @@
 - [📊 Results sheet][~google-sheets]
 - [📝 Markdown file][~chapter-markdown]
 
-[~google-doc]: https://docs.google.com/document/d/1-vPF7GivpV-fbdj8VE6GaMpb1BJHGxLvK2ElBtc_0ls/edit
-[~google-sheets]:https://docs.google.com/spreadsheets/d/1PfTZkbmgyLA3NmEICeCyxpMWgP7cKY7EsZl9RciE5S4/edit#gid=140668849
-[~chapter-markdown]: https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/src/content/en/2024/http.md
+[~google-doc]: https://docs.google.com/document/d/19MokZOX9llhgG_JxdShJTJy-XC9bFAlGE8bd-_ByRl8/edit?usp=sharing
+[~google-sheets]: https://docs.google.com/spreadsheets/d/1NJrPOjBoJSDsHV0rAHpcZ9qBUgy6RVG3QtvbTqrj5_o/edit?usp=sharing
+[~chapter-markdown]: https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/src/content/en/2022/http.md
