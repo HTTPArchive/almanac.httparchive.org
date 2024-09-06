@@ -3,7 +3,7 @@
 WITH ranked_sites AS (
   -- Get the total number of sites within each rank grouping
   SELECT
-    client, 
+    client,
     is_root_page,
     page,
     rank,
@@ -25,22 +25,22 @@ WITH ranked_sites AS (
 rank_totals AS (
   -- Calculate total sites in each rank grouping
   SELECT
-    client, 
+    client,
     is_root_page,
     rank_grouping,
     COUNT(DISTINCT page) AS total_in_rank
   FROM
     ranked_sites
   GROUP BY
-    client, 
+    client,
     is_root_page,
     rank_grouping
 )
 
 SELECT
-  r.client,  
+  r.client,
   r.is_root_page,
-  r.rank_grouping,  
+  r.rank_grouping,
   rt.total_in_rank,  -- Total number of unique sites within the rank grouping
   tech.technology AS app,  -- Accessibility technology used
   COUNT(DISTINCT r.page) AS sites_with_app,  -- Number of sites using the specific accessibility technology
@@ -51,9 +51,9 @@ JOIN
   UNNEST(r.technologies) AS tech  -- Expand technologies array to individual rows
 JOIN
   rank_totals rt  -- Join to get the total number of sites per rank grouping
-    ON r.client = rt.client
-    AND r.is_root_page = rt.is_root_page
-    AND r.rank_grouping = rt.rank_grouping
+    ON r.client = rt.client AND
+    r.is_root_page = rt.is_root_page AND
+    r.rank_grouping = rt.rank_grouping
 JOIN
   UNNEST(tech.categories) AS category  -- Unnest the categories array to filter for accessibility
 WHERE
