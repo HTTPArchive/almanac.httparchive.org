@@ -50,8 +50,8 @@ FROM
 JOIN
   UNNEST(r.technologies) AS tech  -- Expand technologies array to individual rows
 JOIN
-  rank_totals rt  -- Join to get the total number of sites per rank grouping
-    ON r.client = rt.client AND
+    rank_totals rt  -- Join to get the total number of sites per rank grouping
+  ON r.client = rt.client AND
     r.is_root_page = rt.is_root_page AND
     r.rank_grouping = rt.rank_grouping
 JOIN
