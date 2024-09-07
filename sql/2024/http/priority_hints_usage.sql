@@ -20,7 +20,7 @@ FROM (
 )
 GROUP BY
   client,
-is_root_page
+  is_root_page
 ORDER BY
   client,
   is_root_page
