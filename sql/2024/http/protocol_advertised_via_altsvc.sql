@@ -1,24 +1,15 @@
 #standardSQL
 # Protocol advertised via alt-svc breakdown
 
-#### NOT CONVERTED to 2024 YET!!!
-
-CREATE TEMPORARY FUNCTION extractHTTPHeader(HTTPheaders STRING, header STRING)
+CREATE TEMPORARY FUNCTION extractHTTPHeader(altsvcHeaderValue STRING)
 RETURNS ARRAY<STRING> LANGUAGE js AS """
 try {
-  var headers = JSON.parse(HTTPheaders);
-
-  // Filter by header name (which is case insensitive)
-  // If multiple headers it's the same as comma separated
   const result = [];
-  const allAltSvcHeaderValues = headers.filter(h => h.name.toLowerCase() == header.toLowerCase()).map(h => h.value);
-  for (let altsvcHeaderValue of allAltSvcHeaderValues) {
-    const splittedAltSvcHeaderValue = altsvcHeaderValue.split(",");
-    for (let altsvcToken of splittedAltSvcHeaderValue) {
-      const protocolPortToken = altsvcToken.trim().split(";")[0];
-      const protocolToken = protocolPortToken.split("=")[0];
-      result.push(protocolToken);
-    }
+  const splittedAltSvcHeaderValue = altsvcHeaderValue.split(",");
+  for (let altsvcToken of splittedAltSvcHeaderValue) {
+    const protocolPortToken = altsvcToken.trim().split(";")[0];
+    const protocolToken = protocolPortToken.split("=")[0];
+    result.push(protocolToken);
   }
   return result;
 } catch (e) {
@@ -30,12 +21,15 @@ WITH altsvcTable AS (
   SELECT
     client,
     url,
-    extractHTTPHeader(response_headers, 'alt-svc') AS protocol
+    extractHTTPHeader(resp_headers.value) AS protocol
   FROM
-    `httparchive.almanac.requests`
+    `httparchive.all.requests`
+  LEFT OUTER JOIN
+    UNNEST(response_headers) AS resp_headers ON LOWER(resp_headers.name) = 'alt-svc'
   WHERE
-    date = '2022-06-01' AND
-    firstHtml
+    date = '2024-06-01' AND
+    is_root_page AND
+    is_main_document
 )
 SELECT
   client,
@@ -57,4 +51,4 @@ GROUP BY
   protocol
 ORDER BY
   client ASC,
-  total_advertised DESC
+  pct_advertised DESC
