@@ -14,8 +14,6 @@
 # when HTTP/3 is approved so we include that as it is HTTP/3 in all but name.
 #
 
-#### NOT CONVERTED to 2024 YET!!!
-
 SELECT
   client,
   CASE
@@ -23,19 +21,28 @@ SELECT
     ELSE 'non-cdn'
   END AS cdn,
   CASE
-    WHEN respHttpVersion IN ('HTTP/3', 'h3', 'h3-29') OR
-      reqHttpVersion IN ('HTTP/3', 'h3', 'h3-29') OR
-      REGEXP_EXTRACT(REGEXP_EXTRACT(respOtherHeaders, r'alt-svc = (.*)'), r'(.*?)(?:, [^ ]* = .*)?$') LIKE '%h3=%' OR
-      REGEXP_EXTRACT(REGEXP_EXTRACT(respOtherHeaders, r'alt-svc = (.*)'), r'(.*?)(?:, [^ ]* = .*)?$') LIKE '%h3-29=%' THEN 'h3_supported'
+    WHEN protocol IN ('HTTP/3', 'h3', 'h3-29') OR
+      protocol IN ('HTTP/3', 'h3', 'h3-29') OR
+      alt_svc LIKE '%h3=%' OR
+      alt_svc LIKE '%h3-29=%' THEN 'h3_supported'
     ELSE 'h3_not_supported'
   END AS h3_status,
   COUNT(0) AS num_reqs,
   SUM(count(0)) OVER (PARTITION BY client) AS total_reqs,
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct_reqs
-FROM
-  `httparchive.almanac.requests`
-WHERE
-  date = '2022-06-01'
+FROM (
+  SELECT
+    client,
+    JSON_EXTRACT_SCALAR(summary, '$._cdn_provider') AS _cdn_provider,
+    JSON_EXTRACT_SCALAR(summary, '$.respHttpVersion') AS protocol,
+    resp_headers.value AS alt_svc
+  FROM
+    `httparchive.all.requests`
+  LEFT OUTER JOIN
+    UNNEST (response_headers) AS resp_headers ON LOWER(resp_headers.name) = 'alt-svc'
+  WHERE
+    date = '2024-06-01' AND
+    is_root_page)
 GROUP BY
   client,
   cdn,
