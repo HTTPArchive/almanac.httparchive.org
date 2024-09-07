@@ -25,16 +25,16 @@ SELECT
     ELSE 'h3_not_supported'
   END AS h3_status,
   COUNT(0) AS num_reqs,
-  SUM(count(0)) OVER (PARTITION BY client) AS total_reqs,
-  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct_reqs,
-  COUNT(DISTINCT page) AS num_pages,
-  SUM(COUNT(DISTINCT page)) OVER (PARTITION BY date, client) AS total_pages,
-  COUNT(DISTINCT page) / SUM(COUNT(DISTINCT page)) OVER (PARTITION BY date, client) AS pct_pages
+  SUM(COUNT(0)) OVER (PARTITION BY date, client) AS total_reqs,
+  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY date, client) AS pct_reqs,
+  COUNTIF(is_main_document) AS num_pages,
+  SUM(COUNTIF(is_main_document)) OVER (PARTITION BY date, client) AS total_pages,
+  COUNTIF(is_main_document) / SUM(COUNTIF(is_main_document)) OVER (PARTITION BY date, client) AS pct_pages
 FROM (
   SELECT
     date,
     client,
-    page,
+    is_main_document,
     JSON_EXTRACT_SCALAR(summary, '$.respHttpVersion') AS protocol,
     resp_headers.value AS alt_svc
   FROM
@@ -42,7 +42,7 @@ FROM (
   LEFT OUTER JOIN
     UNNEST(response_headers) AS resp_headers ON LOWER(resp_headers.name) = 'alt-svc'
   WHERE
-    date IN ('2023-06-01', '2024-06-01') AND
+    date IN ('2022-06-01', '2023-06-01', '2024-06-01') AND
     is_root_page)
 GROUP BY
   date,
@@ -50,4 +50,5 @@ GROUP BY
   h3_status
 ORDER BY
   date,
-  client
+  client,
+  h3_status
