@@ -155,7 +155,6 @@ SELECT
   APPROX_QUANTILES(total_img_emissions, 1000)[OFFSET(500)] AS median_total_img_emissions,
   APPROX_QUANTILES(font_kb, 1000)[OFFSET(500)] AS median_font_kb,
   APPROX_QUANTILES(total_font_emissions, 1000)[OFFSET(500)] AS median_total_font_emissions
-
 FROM
   ecommerce_data
 GROUP BY
