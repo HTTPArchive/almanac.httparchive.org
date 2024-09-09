@@ -23,7 +23,7 @@ SELECT
   AVG(accessibility_score) AS avg_accessibility_score,
   AVG(best_practices_score) AS avg_best_practices_score,
   AVG(seo_score) AS avg_seo_score,
-  COUNT(*) AS total_pages
+  COUNT(0) AS total_pages
 FROM
   tld_score_data
 GROUP BY
