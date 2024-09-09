@@ -19,7 +19,7 @@ SELECT
   is_root_page,
   '2024_06_01' AS date,
   percentile,
-  ROUND(APPROX_QUANTILES(score, 1000)[OFFSET(percentile * 10)], 2) AS score
+  APPROX_QUANTILES(score, 1000)[OFFSET(percentile * 10)] AS score
 FROM
   score_data,
   UNNEST([10, 25, 50, 75, 90]) AS percentile
