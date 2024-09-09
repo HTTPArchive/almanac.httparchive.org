@@ -8,7 +8,6 @@ WITH score_data AS (
     CAST(JSON_EXTRACT_SCALAR(lighthouse, '$.categories.accessibility.score') AS FLOAT64) AS score
   FROM
     `httparchive.all.pages`
-  
   WHERE
     date = '2024-06-01' AND
     lighthouse IS NOT NULL AND
