@@ -47,7 +47,7 @@ domain_scores AS (
       WHEN REGEXP_CONTAINS(page, r'(?i)\.louisiana\.gov|\.LA\.gov') THEN 'Louisiana'
       WHEN REGEXP_CONTAINS(page, r'(?i)\.maine\.gov|\.ME\.gov') THEN 'Maine'
       WHEN REGEXP_CONTAINS(page, r'(?i)\.maryland\.gov|\.MD\.gov') THEN 'Maryland'
-      WHEN REGEXP_CONTAINS(page, r'(?i)\.massachusetts\.gov|\.MA\.gov|\.mass\.gov'') THEN 'Massachusetts'
+      WHEN REGEXP_CONTAINS(page, r'(?i)\.massachusetts\.gov|\.MA\.gov|\.mass\.gov') THEN 'Massachusetts'
       WHEN REGEXP_CONTAINS(page, r'(?i)\.michigan\.gov|\.MI\.gov') THEN 'Michigan'
       WHEN REGEXP_CONTAINS(page, r'(?i)\.minnesota\.gov|\.MN\.gov') THEN 'Minnesota'
       WHEN REGEXP_CONTAINS(page, r'(?i)\.mississippi\.gov|\.MS\.gov') THEN 'Mississippi'
