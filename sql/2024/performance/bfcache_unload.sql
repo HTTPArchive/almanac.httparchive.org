@@ -1,13 +1,21 @@
-# TODO: Reporting 0 pages for all pages
+CREATE TEMPORARY FUNCTION getUnloadHandler(audit STRING)
+RETURNS BOOL LANGUAGE js AS '''
+try {
+  var $ = JSON.parse(audit);
+  return $.details?.items?.some(n => n.value?.toLowerCase() === "unloadhandler");
+} catch (e) {
+  return false;
+}
+''';
 
 WITH lh AS (
   SELECT
     client,
     page,
     rank,
-    JSON_VALUE(lighthouse, '$.audits.no-unload-listeners.score') = '0' AS has_unload
+    getUnloadHandler(JSON_EXTRACT(lighthouse, '$.audits.deprecations')) AS has_unload
   FROM
-    `httparchive.all.pages`
+    `httparchive.all.pages` TABLESAMPLE SYSTEM (1 PERCENT)
   WHERE
     date = '2024-06-01' AND
     is_root_page
