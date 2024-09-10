@@ -1,5 +1,3 @@
-# TODO: Did not get any results for discoverable==false and preload==true
-
 WITH lcp AS (
   SELECT
     client,

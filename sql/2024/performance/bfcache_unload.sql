@@ -15,7 +15,7 @@ WITH lh AS (
     rank,
     getUnloadHandler(JSON_EXTRACT(lighthouse, '$.audits.deprecations')) AS has_unload
   FROM
-    `httparchive.all.pages` TABLESAMPLE SYSTEM (1 PERCENT)
+    `httparchive.all.pages`
   WHERE
     date = '2024-06-01' AND
     is_root_page
