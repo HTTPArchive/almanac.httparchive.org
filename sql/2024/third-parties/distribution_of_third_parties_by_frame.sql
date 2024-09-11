@@ -23,12 +23,12 @@ combined_frame_counts AS (
     COUNT(DISTINCT frame_id) AS num_distinct_frameids,
     COUNT(frame_id) AS num_total_frameids,
     CASE
-    WHEN COUNT(DISTINCT frame_type) = 1 AND MAX(CASE WHEN frame_type = 'mainframe' THEN 1 ELSE 0 END) = 1
-      THEN 'mainframe-only'
-    WHEN COUNT(DISTINCT frame_type) = 1 AND MAX(CASE WHEN frame_type = 'iframe' THEN 1 ELSE 0 END) = 1
-      THEN 'iframe-only'
-    WHEN COUNT(DISTINCT frame_id) >= 2 AND COUNT(DISTINCT frame_type) = 2
-      THEN 'both'
+      WHEN COUNT(DISTINCT frame_type) = 1 AND MAX(CASE WHEN frame_type = 'mainframe' THEN 1 ELSE 0 END) = 1
+        THEN 'mainframe-only'
+      WHEN COUNT(DISTINCT frame_type) = 1 AND MAX(CASE WHEN frame_type = 'iframe' THEN 1 ELSE 0 END) = 1
+        THEN 'iframe-only'
+      WHEN COUNT(DISTINCT frame_id) >= 2 AND COUNT(DISTINCT frame_type) = 2
+        THEN 'both'
     END AS frame_presence
   FROM document_frameid
   GROUP BY client, page_host, frame_host

@@ -88,6 +88,6 @@ ORDER BY client, category,
     WHEN 'iframe'
       THEN num_distinct_publishers_iframe_only
     WHEN 'both'
-    THEN num_distinct_publishers_both
-  END 
-DESC;
+      THEN num_distinct_publishers_both
+  END
+  DESC;
