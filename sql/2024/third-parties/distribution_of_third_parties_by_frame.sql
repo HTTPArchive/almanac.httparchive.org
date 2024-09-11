@@ -7,32 +7,31 @@ WITH document_frameid AS (
     NET.HOST(page) AS page_host,
     CASE
       WHEN is_main_document = true AND NET.HOST(page) = NET.HOST(url)
-        THEN 'mainframe'
-        ELSE 'iframe'
+      THEN 'mainframe'
+      ELSE 'iframe'
     END AS frame_type,
     NET.HOST(url) AS frame_host,
     JSON_EXTRACT_SCALAR(payload, '$._frame_id') AS frame_id
   FROM `httparchive.all.requests` AS requests
-  WHERE
-    requests.date = '2024-06-01'
-    AND requests.is_root_page = true
+  WHERE requests.date = '2024-06-01' AND requests.is_root_page = true
+
 ),
 combined_frame_counts AS (
-    SELECT client,
-    page_host,
-    frame_host,
-    COUNT(DISTINCT frame_id) AS num_distinct_frameids,
-    COUNT(frame_id) AS num_total_frameids,
-    CASE
-      WHEN COUNT(DISTINCT frame_type) = 1 AND MAX(CASE WHEN frame_type = 'mainframe' THEN 1 ELSE 0 END) = 1
-      THEN 'mainframe-only'
-      WHEN COUNT(DISTINCT frame_type) = 1 AND MAX(CASE WHEN frame_type = 'iframe' THEN 1 ELSE 0 END) = 1
-      THEN 'iframe-only'
-      WHEN COUNT(DISTINCT frame_id) >= 2 and COUNT(DISTINCT frame_type) = 2
-      THEN 'both'
-    END AS frame_presence,
-    FROM document_frameid
-    GROUP BY client, page_host, frame_host
+  SELECT client,
+  page_host,
+  frame_host,
+  COUNT(DISTINCT frame_id) AS num_distinct_frameids,
+  COUNT(frame_id) AS num_total_frameids,
+  CASE
+    WHEN COUNT(DISTINCT frame_type) = 1 AND MAX(CASE WHEN frame_type = 'mainframe' THEN 1 ELSE 0 END) = 1
+    THEN 'mainframe-only'
+    WHEN COUNT(DISTINCT frame_type) = 1 AND MAX(CASE WHEN frame_type = 'iframe' THEN 1 ELSE 0 END) = 1
+    THEN 'iframe-only'
+    WHEN COUNT(DISTINCT frame_id) >= 2 and COUNT(DISTINCT frame_type) = 2
+    THEN 'both'
+  END AS frame_presence,
+  FROM document_frameid
+  GROUP BY client, page_host, frame_host
 )
 SELECT
   client,
