@@ -7,7 +7,7 @@ WITH document_frameid AS (
     NET.HOST(page) AS page_host,
     CASE
       WHEN is_main_document = true AND NET.HOST(page) = NET.HOST(url)
-      THEN 'mainframe'
+        THEN 'mainframe'
       ELSE 'iframe'
     END AS frame_type,
     NET.HOST(url) AS frame_host,
@@ -18,18 +18,18 @@ WITH document_frameid AS (
 ),
 combined_frame_counts AS (
   SELECT client,
-  page_host,
-  frame_host,
-  COUNT(DISTINCT frame_id) AS num_distinct_frameids,
-  COUNT(frame_id) AS num_total_frameids,
-  CASE
+    page_host,
+    frame_host,
+    COUNT(DISTINCT frame_id) AS num_distinct_frameids,
+    COUNT(frame_id) AS num_total_frameids,
+    CASE
     WHEN COUNT(DISTINCT frame_type) = 1 AND MAX(CASE WHEN frame_type = 'mainframe' THEN 1 ELSE 0 END) = 1
-    THEN 'mainframe-only'
+      THEN 'mainframe-only'
     WHEN COUNT(DISTINCT frame_type) = 1 AND MAX(CASE WHEN frame_type = 'iframe' THEN 1 ELSE 0 END) = 1
-    THEN 'iframe-only'
-    WHEN COUNT(DISTINCT frame_id) >= 2 and COUNT(DISTINCT frame_type) = 2
-    THEN 'both'
-  END AS frame_presence,
+      THEN 'iframe-only'
+    WHEN COUNT(DISTINCT frame_id) >= 2 AND COUNT(DISTINCT frame_type) = 2
+      THEN 'both'
+    END AS frame_presence
   FROM document_frameid
   GROUP BY client, page_host, frame_host
 )

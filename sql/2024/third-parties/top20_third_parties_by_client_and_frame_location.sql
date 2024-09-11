@@ -79,14 +79,15 @@ SELECT
     WHEN rank_both <= 20
       THEN 'both'
   END AS category
-  FROM ranked_publishers
-  WHERE rank_mainframe <= 20 OR rank_iframe <= 20 OR rank_both <= 20
-  ORDER BY client, category,
+FROM ranked_publishers
+WHERE rank_mainframe <= 20 OR rank_iframe <= 20 OR rank_both <= 20
+ORDER BY client, category,
   CASE category
-  WHEN 'mainframe'
-  THEN num_distinct_publishers_mainframe_only
-  WHEN 'iframe'
-  THEN num_distinct_publishers_iframe_only
-  WHEN 'both'
-  THEN num_distinct_publishers_both
-END DESC;
+    WHEN 'mainframe'
+      THEN num_distinct_publishers_mainframe_only
+    WHEN 'iframe'
+      THEN num_distinct_publishers_iframe_only
+    WHEN 'both'
+    THEN num_distinct_publishers_both
+  END 
+DESC;
