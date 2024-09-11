@@ -24,16 +24,18 @@ FROM (
     SUM(IF(is_3p, wasted_bytes, 0)) / SUM(wasted_bytes) AS pct_3p_wasted_bytes
   FROM (
     SELECT
-      _TABLE_SUFFIX AS client,
-      lighthouse.url AS page,
+      client,
+      page,
       NET.HOST(unminified.url) IS NOT NULL AND NET.HOST(unminified.url) IN (
         SELECT domain FROM `httparchive.almanac.third_parties` WHERE date = '2024-06-01' AND category != 'hosting'
       ) AS is_3p,
       unminified.wastedBytes AS wasted_bytes
     FROM
-      `httparchive.lighthouse.2024_06_01_*` AS lighthouse,
-      UNNEST(getUnminifiedJsUrls(JSON_EXTRACT(report, "$.audits['unminified-css']"))) AS unminified
-    )
+      `httparchive.all.pages` AS allpages
+    CROSS JOIN
+      UNNEST(getUnminifiedJsUrls(JSON_EXTRACT(allpages.lighthouse, "$.audits['unminified-css']"))) AS unminified
+    WHERE allpages.date = '2024-06-01' AND allpages.is_root_page = true
+  )
   GROUP BY
     client,
     page
