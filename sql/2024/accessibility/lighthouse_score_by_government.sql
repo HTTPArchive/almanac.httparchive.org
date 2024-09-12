@@ -8,14 +8,14 @@ WITH score_data AS (
     CAST(JSON_EXTRACT_SCALAR(lighthouse, '$.categories.accessibility.score') AS FLOAT64) AS accessibility_score,
     CAST(JSON_EXTRACT_SCALAR(lighthouse, '$.categories.best-practices.score') AS FLOAT64) AS best_practices_score,
     CAST(JSON_EXTRACT_SCALAR(lighthouse, '$.categories.seo.score') AS FLOAT64) AS seo_score,
-    page
+    page,
+    is_root_page
   FROM
     `httparchive.all.pages`
   WHERE
     date = '2024-06-01' AND
     lighthouse IS NOT NULL AND
-    lighthouse != '{}' AND
-    is_root_page
+    lighthouse != '{}'
 ),
 
 domain_scores AS (
