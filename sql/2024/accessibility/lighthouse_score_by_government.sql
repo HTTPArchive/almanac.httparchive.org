@@ -80,13 +80,13 @@ domain_scores AS (
 
       -- North American Federal Governments
       WHEN REGEXP_CONTAINS(page, r'(?i)\.va\.gov') THEN 'USA VA.gov'
-      WHEN REGEXP_CONTAINS(page, r'(?i)\.gov') THEN 'USA'
+      WHEN REGEXP_CONTAINS(page, r'(?i)\.gov') THEN 'United States (USA)'
       WHEN REGEXP_CONTAINS(page, r'(?i)\.mil') THEN 'USA Military'
       WHEN REGEXP_CONTAINS(page, r'(?i)\.gob\.mx') THEN 'Mexico'
       WHEN REGEXP_CONTAINS(page, r'(?i)\.gc\.ca|\.canada\.ca') THEN 'Canada'
 
       -- European Countries
-      WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.uk') THEN 'UK'
+      WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.uk') THEN 'United Kingdom (UK)'
       WHEN REGEXP_CONTAINS(page, r'(?i)\.gouv\.fr') THEN 'France'
       WHEN REGEXP_CONTAINS(page, r'(?i)\.bund\.de') THEN 'Germany'
       WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.it') THEN 'Italy'
