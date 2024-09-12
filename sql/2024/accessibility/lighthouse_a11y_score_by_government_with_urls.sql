@@ -23,8 +23,8 @@ domain_scores AS (
     page,
     CASE
       -- United Nations
-      WHEN REGEXP_CONTAINS(page, r'(?i)\.un\.org') THEN 'UN.org'
-      WHEN REGEXP_CONTAINS(page, r'(?i)\.europa\.eu') THEN 'European Union'
+      WHEN REGEXP_CONTAINS(page, r'(?i)\.un\.org$') THEN 'UN.org'
+      WHEN REGEXP_CONTAINS(page, r'(?i)\.europa\.eu$') THEN 'European Union'
 
       -- USA State Governments (must come before federal .gov check)
       WHEN REGEXP_CONTAINS(page, r'(?i)\.alabama\.gov|\.AL\.gov') THEN 'Alabama'
@@ -72,15 +72,21 @@ domain_scores AS (
       WHEN REGEXP_CONTAINS(page, r'(?i)\.texas\.gov|\.TX\.gov') THEN 'Texas'
       WHEN REGEXP_CONTAINS(page, r'(?i)\.utah\.gov|\.UT\.gov') THEN 'Utah'
       WHEN REGEXP_CONTAINS(page, r'(?i)\.vermont\.gov|\.VT\.gov') THEN 'Vermont'
-      WHEN REGEXP_CONTAINS(page, r'(?i)\.virginia\.gov|\.VA\.gov') THEN 'Virginia'
+      WHEN REGEXP_CONTAINS(page, r'(?i)\.virginia\.gov') THEN 'Virginia'
       WHEN REGEXP_CONTAINS(page, r'(?i)\.washington\.gov|\.WA\.gov') THEN 'Washington'
       WHEN REGEXP_CONTAINS(page, r'(?i)\.westvirginia\.gov|\.WV\.gov') THEN 'West Virginia'
       WHEN REGEXP_CONTAINS(page, r'(?i)\.wisconsin\.gov|\.WI\.gov') THEN 'Wisconsin'
       WHEN REGEXP_CONTAINS(page, r'(?i)\.wyoming\.gov|\.WY\.gov') THEN 'Wyoming'
+      WHEN REGEXP_CONTAINS(page, r'(?i)\.DC\.gov') THEN 'DC'
+      WHEN REGEXP_CONTAINS(page, r'(?i)\.PR\.gov') THEN 'Puerto Rico'
+      WHEN REGEXP_CONTAINS(page, r'(?i)\.guam\.gov') THEN 'Guam'
+      WHEN REGEXP_CONTAINS(page, r'(?i)\.americansamoa\.gov') THEN 'American Samoa'
 
       -- North American Federal Governments
-      WHEN REGEXP_CONTAINS(page, r'(?i)\.va\.gov') THEN 'USA VA.gov'
-      WHEN REGEXP_CONTAINS(page, r'(?i)\.gov') THEN 'United States (USA)'
+      WHEN REGEXP_CONTAINS(page, r'(?i)\.va\.gov$') THEN 'USA VA.gov'
+      WHEN REGEXP_CONTAINS(page, r'(?i)\.cms\.gov') THEN 'USA CMS.gov'
+      -- WHEN REGEXP_CONTAINS(page, r'(?i)\.gov') THEN 'United States (USA)'
+      WHEN REGEXP_CONTAINS(page, r'(?i)://(?:.*\.)?.gov/?$') THEN 'United States (USA)'
       WHEN REGEXP_CONTAINS(page, r'(?i)\.mil') THEN 'USA Military'
       WHEN REGEXP_CONTAINS(page, r'(?i)\.gob\.mx') THEN 'Mexico'
       WHEN REGEXP_CONTAINS(page, r'(?i)\.gc\.ca|\.canada\.ca') THEN 'Canada'
