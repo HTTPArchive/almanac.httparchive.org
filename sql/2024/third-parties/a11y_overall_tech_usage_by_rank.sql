@@ -43,7 +43,7 @@ SELECT
   rank_grouping AS rank,
   COUNT(DISTINCT url) AS freq,
   total,
-  COUNT(DISTINCT url) / total AS pct
+  (COUNT(DISTINCT url) / total) * 100 AS pct
 FROM
   a11y_technologies
 LEFT OUTER JOIN

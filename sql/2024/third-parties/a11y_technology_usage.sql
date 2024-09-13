@@ -27,7 +27,7 @@ SELECT
   client,
   freq,
   total,
-  freq / total AS pct
+  (freq / total) * 100 AS pct
 FROM
   a11y_technologies
 JOIN

@@ -45,7 +45,7 @@ SELECT
   app,
   COUNT(0) AS freq,
   total,
-  COUNT(0) / total AS pct
+  (COUNT(0) / total) * 100 AS pct
 FROM
   a11y_technologies
 LEFT OUTER JOIN

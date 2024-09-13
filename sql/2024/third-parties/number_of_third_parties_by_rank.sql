@@ -2,20 +2,26 @@
 # Number of third-parties per websites by rank
 WITH requests AS (
   SELECT
-    _TABLE_SUFFIX AS client,
-    pageid AS page,
+    client,
+    page,
     url
   FROM
-    `httparchive.summary_requests.2024_06_01_*`
+    `httparchive.all.requests` AS req
+  WHERE
+    req.date = '2024-06-01' AND
+    req.is_root_page = true
 ),
 
 pages AS (
   SELECT
-    _TABLE_SUFFIX AS client,
-    pageid AS page,
+    client,
+    page,
     rank
   FROM
-    `httparchive.summary_pages.2024_06_01_*`
+    `httparchive.all.pages` AS pg
+  WHERE
+    pg.date = '2024-06-01' AND
+    pg.is_root_page = TRUE
 ),
 
 third_party AS (
