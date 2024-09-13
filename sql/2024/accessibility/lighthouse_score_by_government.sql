@@ -99,7 +99,7 @@ domain_scores AS (
       WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.gr/') THEN 'Greece'
       WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.pt/') THEN 'Portugal'
       WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.es/') THEN 'Spain'
-      WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.se/') THEN 'Sweden'
+      WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.se|1177\.se|funktionstjanster\.se|hemnet\.se|smhi\.se|sverigesradio\.se|klart\.se|bankid\.com|synonymer\.se|arbetsformedlingen\.se|skatteverket\.se|schoolsoft\.se|postnord\.se|grandid\.com|viaplay\.se|skola24\.se|forsakringskassan\.se|vklass\.se|sl\.se|familjeliv\.se') THEN 'Sweden'
       WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.no/') THEN 'Norway'
       WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.dk/') THEN 'Denmark'
       WHEN REGEXP_CONTAINS(page, r'(?i)\.riik\.ee/') THEN 'Estonia'
