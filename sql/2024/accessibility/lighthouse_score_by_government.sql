@@ -114,7 +114,7 @@ domain_scores AS (
       WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.hu/') THEN 'Hungary'
       WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.ie/') THEN 'Ireland'
       WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.pl/') THEN 'Poland'
-      WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.lt/') THEN 'Lithuania'
+      WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.lt|\.vrm.lt|\.sam.lt|\.ukmin.lt/') THEN 'Lithuania'
       WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.nl/') THEN 'Netherlands'
       WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.si/') THEN 'Slovenia'
       WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.sk/') THEN 'Slovakia'
@@ -158,7 +158,8 @@ domain_scores AS (
   FROM
     score_data
   WHERE
-    REGEXP_CONTAINS(page, r'(?i)\.un\.org|\.europa\.eu|...|\.gov\.fi|\.valtioneuvosto\.fi|\.minedu\.fi|\.formin\.fi|\.intermin\.fi|...|\.gov\.br|\.govt\.nz|\.gov\.tw|\.gov\.sg|\.gub\.uy|\.belgium\.be|\.fgov\.be|...')
+    -- must update this list.
+    REGEXP_CONTAINS(page, r'(?i)\.un\.org|\.europa\.eu|...|\.gov\.lt|\.vrm.lt|\.sam.lt|\.ukmin.lt|...|\.govt\.nz|\.gov\.tw|\.gov\.sg|\.gub\.uy|\.belgium\.be|\.fgov\.be|...')
 )
 
 SELECT
