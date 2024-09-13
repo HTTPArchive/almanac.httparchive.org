@@ -115,7 +115,7 @@ domain_scores AS (
       WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.ie/') THEN 'Ireland'
       WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.pl/') THEN 'Poland'
       WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.lt|\.vrm.lt|\.sam.lt|\.ukmin.lt/') THEN 'Lithuania'
-      WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.nl/') THEN 'Netherlands'
+      WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.nl|\.overheid\.nl|\.mijnoverheid\.nl') THEN 'Netherlands'
       WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.si/') THEN 'Slovenia'
       WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.sk/') THEN 'Slovakia'
       WHEN REGEXP_CONTAINS(page, r'(?i)\.gv\.at/') THEN 'Austria'
