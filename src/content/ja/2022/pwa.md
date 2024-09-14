@@ -326,6 +326,7 @@ PWAとウェブサイトのトップカテゴリは同じですが、それぞ�
 ## Fugu API
 
 PWAは高度なウェブ機能と密接に関連しています。これらの機能は一般的にプロジェクトFuguの一部であり、これはChromiumプロジェクト内で孵化中の新しいウェブプラットフォーム機能のコレクションのコードネームです。
+
 {{ figure_markup(
   caption="デスクトップでもっとも使用されているFugu API",
   content="8.8%",
@@ -397,7 +398,6 @@ PWAは高度なウェブ機能と密接に関連しています。これらの�
 }}
 
 一般的なWebサイトよりもPWAサイトでPWA監査に合格する頻度がはるかに高いのは驚くことではありませんが、<a hreflang="en" href="https://web.dev/viewport/#how-to-add-a-viewport-meta-tag">viewportメタタグ</a>や<a hreflang="en" href="https://web.dev/apple-touch-icon/#how-the-lighthouse-apple-touch-icon-audit-fails">apple-touch-iconメタタグ</a>の存在など、PWAサイトでなくても適用される（そして使用される）監査も多くあります。
-
 
 {{ figure_markup(
   image="lighthouse-pwa-audits-mobile.png",
