@@ -326,6 +326,7 @@ There is a property in the manifest that specifies if applications listed in the
 ## Fugu APIs
 
 PWAs go hand in hand with advanced web capabilities. These capabilities are generally part of project Fugu which is the codename for a collection of new web platform features incubating within the Chromium project.
+
 {{ figure_markup(
   caption="Most used Fugu API (desktop)",
   content="8.8%",
@@ -397,7 +398,6 @@ We won't delve into these much more as we have a separate [Capabilities](./capab
 }}
 
 It is not surprising to see PWA sites passing the PWA audits much more frequently than the general web, though some audits such as the presence of a <a hreflang="en" href="https://web.dev/viewport/#how-to-add-a-viewport-meta-tag">viewport meta tag</a> and the <a hreflang="en" href="https://web.dev/apple-touch-icon/#how-the-lighthouse-apple-touch-icon-audit-fails">apple-touch-icon</a> meta tag are also often applicable—and used–by non-PWA sites.
-
 
 {{ figure_markup(
   image="lighthouse-pwa-audits-mobile.png",
