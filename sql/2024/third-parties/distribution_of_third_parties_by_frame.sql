@@ -21,7 +21,7 @@ page_frames AS (
     page_host,
     frame_host,
     CASE
-      WHEN frame_host != page_host 
+      WHEN frame_host != page_host
         THEN true
       ELSE false
     END AS tp_flag,
@@ -61,7 +61,7 @@ aggregated_counts AS (
     COUNT(DISTINCT CASE WHEN frame_presence = 'both' AND tp_flag THEN page_host ELSE null END) AS distinct_publishers_both,
     COUNT(DISTINCT CASE WHEN frame_presence = 'mainframe-only' AND tp_flag THEN frame_host ELSE null END) AS distinct_mainframe_third_party_count,
     COUNT(DISTINCT CASE WHEN frame_presence = 'iframe-only' AND tp_flag THEN frame_host ELSE null END) AS distinct_iframe_third_party_count,
-    COUNT(DISTINCT CASE WHEN frame_presence = 'both' AND tp_flag THEN frame_host ELSE null END) AS distinct_both_third_party_count,
+    COUNT(DISTINCT CASE WHEN frame_presence = 'both' AND tp_flag THEN frame_host ELSE null END) AS distinct_both_third_party_count
   FROM combined_frame_counts
   GROUP BY client
 )
@@ -73,9 +73,9 @@ SELECT
   distinct_publishers_iframe_only,
   distinct_publishers_both,
   distinct_mainframe_third_party_count,
-  distinct_mainframe_third_party_count/distinct_third_party_count AS pct_tps_in_mainframe_only,
+  distinct_mainframe_third_party_count / distinct_third_party_count AS pct_tps_in_mainframe_only,
   distinct_iframe_third_party_count,
-  distinct_iframe_third_party_count/distinct_third_party_count AS pct_tps_in_iframe_only,
+  distinct_iframe_third_party_count / distinct_third_party_count AS pct_tps_in_iframe_only,
   distinct_both_third_party_count,
-  distinct_both_third_party_count/distinct_third_party_count AS pct_tps_in_both
+  distinct_both_third_party_count / distinct_third_party_count AS pct_tps_in_both
 FROM aggregated_counts;

@@ -21,7 +21,7 @@ page_frames AS (
     page_host,
     frame_host,
     CASE
-      WHEN frame_host != page_host 
+      WHEN frame_host != page_host
         THEN true
       ELSE false
     END AS tp_flag,
@@ -77,29 +77,24 @@ ranked_publishers AS (
 SELECT
   client,
   frame_host,
-  rank_mainframe,
-  num_distinct_publishers_mainframe_only,
-  rank_iframe,
-  num_distinct_publishers_iframe_only,
-  rank_both,
-  num_distinct_publishers_both,
-  CASE
-    WHEN rank_mainframe <= 20
-      THEN 'mainframe'
-    WHEN rank_iframe <= 20
-      THEN 'iframe'
-    WHEN rank_both <= 20
-      THEN 'both'
-  END AS category
+  num_distinct_publishers_mainframe_only AS num_distinct_publishers,
+  'mainframe' AS category
 FROM ranked_publishers
-WHERE rank_mainframe <= 20 OR rank_iframe <= 20 OR rank_both <= 20
-ORDER BY client, category,
-  CASE category
-    WHEN 'mainframe'
-      THEN num_distinct_publishers_mainframe_only
-    WHEN 'iframe'
-      THEN num_distinct_publishers_iframe_only
-    WHEN 'both'
-      THEN num_distinct_publishers_both
-  END
-  DESC;
+WHERE rank_mainframe <= 20 AND num_distinct_publishers_mainframe_only > 0
+UNION ALL
+SELECT
+  client,
+  frame_host,
+  num_distinct_publishers_iframe_only AS num_distinct_publishers,
+  'iframe' AS category
+FROM ranked_publishers
+WHERE rank_iframe <= 20 AND num_distinct_publishers_iframe_only > 0
+UNION ALL
+SELECT
+  client,
+  frame_host,
+  num_distinct_publishers_both AS num_distinct_publishers,
+  'both' AS category
+FROM ranked_publishers
+WHERE rank_both <= 20 AND num_distinct_publishers_both > 0
+ORDER BY client, category, num_distinct_publishers DESC;

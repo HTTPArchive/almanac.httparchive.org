@@ -21,7 +21,7 @@ pages AS (
     `httparchive.all.pages` AS pg
   WHERE
     pg.date = '2024-06-01' AND
-    pg.is_root_page = TRUE
+    pg.is_root_page = true
 ),
 
 third_party AS (
