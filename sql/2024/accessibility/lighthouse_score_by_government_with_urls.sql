@@ -157,7 +157,23 @@ domain_scores AS (
   FROM
     score_data
   WHERE
-    REGEXP_CONTAINS(page, r'(?i)\.un\.org|\.europa\.eu|\.gov\.uk|\.gouv\.fr|\.bund\.de|\.gov\.it|\.gc\.ca|\.canada\.ca|\.gov\.gr|\.gov\.pt|\.gov\.es|\.gov\.se|\.gov\.no|\.gov\.dk|\.riik\.ee|\.admin\.ch|\.public\.lu|\.gov\.fi|\.gov\.hr|\.gov\.cz|\.government\.bg|\.gov\.be|\.gov\.hu|\.gov\.ie|\.gov\.pl|\.gov\.lt|\.gov\.nl|\.gov\.si|\.gov\.sk|\.gv\.at|\.gov\.al|\.gv\.ua|\.alabama\.gov|\.AL\.gov|\.alaska\.gov|\.AK\.gov|\.arizona\.gov|\.AZ\.gov|\.arkansas\.gov|\.AR\.gov|\.california\.gov|\.CA\.gov|\.colorado\.gov|\.CO\.gov|\.connecticut\.gov|\.CT\.gov|\.delaware\.gov|\.DE\.gov|\.florida\.gov|\.FL\.gov|\.georgia\.gov|\.GA\.gov|\.hawaii\.gov|\.HI\.gov|\.idaho\.gov|\.ID\.gov|\.illinois\.gov|\.IL\.gov|\.indiana\.gov|\.IN\.gov|\.iowa\.gov|\.IA\.gov|\.kansas\.gov|\.KS\.gov|\.kentucky\.gov|\.KY\.gov|\.louisiana\.gov|\.LA\.gov|\.maine\.gov|\.ME\.gov|\.maryland\.gov|\.MD\.gov|\.massachusetts\.gov|\.MA\.gov|\.mass\.gov|\.michigan\.gov|\.MI\.gov|\.minnesota\.gov|\.MN\.gov|\.mississippi\.gov|\.MS\.gov|\.missouri\.gov|\.MO\.gov|\.montana\.gov|\.MT\.gov|\.nebraska\.gov|\.NE\.gov|\.nevada\.gov|\.NV\.gov|\.newhampshire\.gov|\.NH\.gov|\.newjersey\.gov|\.NJ\.gov|\.newmexico\.gov|\.NM\.gov|\.newyork\.gov|\.NY\.gov|\.northcarolina\.gov|\.NC\.gov|\.northdakota\.gov|\.ND\.gov|\.ohio\.gov|\.OH\.gov|\.oklahoma\.gov|\.OK\.gov|\.oregon\.gov|\.OR\.gov|\.pennsylvania\.gov|\.PA\.gov|\.rhodeisland\.gov|\.RI\.gov|\.southcarolina\.gov|\.SC\.gov|\.southdakota\.gov|\.SD\.gov|\.tennessee\.gov|\.TN\.gov|\.texas\.gov|\.TX\.gov|\.utah\.gov|\.UT\.gov|\.vermont\.gov|\.VT\.gov|\.virginia\.gov|\.VA\.gov|\.washington\.gov|\.WA\.gov|\.westvirginia\.gov|\.WV\.gov|\.wisconsin\.gov|\.WI\.gov|\.wyoming\.gov|\.WY\.gov|\.gov|\.va\.gov|\.mil|\.gob\.mx|\.gov\.in|\.nic\.in|\.gov\.cn|\.gov\.pk|\.gov\.bd|\.gov\.ng|\.gov\.ir|\.gov\.il|\.gov\.vn|\.gov\.hk|\.gov\.mo|\.go\.ke|\.gov\.tr|\.gov\.sa|\.gov\.za|\.go\.kr|\.go\.id|\.go\.jp|\.gob\.ar|\.gov\.au|\.gov\.br|\.gov\.ru|\.govt\.nz|\.gov\.tw|\.gov\.sg|\.gub\.uy')
+    REGEXP_CONTAINS(page, r'(?i)('
+      || '\\.un\\.org/|\\.worldbank\\.org/|\\.undp\\.org/|\\.reliefweb\\.int/|\\.who\\.int/|\\.unfccc\\.int/|\\.unccd\\.int/|\\.unesco\\.org/'  -- United Nations and International Organizations
+      || '\\.europa\\.eu/'               -- European Union
+      || '\\.gov/'                       -- Catch-all for any USA .gov domains
+      || '\\.mil/'                       -- Catch-all for any USA .mil domains
+      || '\\.gov(\\.[a-z]{2,3})?/'       -- Global .gov domains, including .gov.uk, .gov.au, .gov.tw, etc.
+      || '\\.mil(\\.[a-z]{2,3})?/'       -- Global military domains
+      || '(\\w+\\.){0,3}(gouv|gob|go|gv|gub|govt)\\.[a-z]{2,3}/'  -- Other generic government formats (e.g., gouv.fr, gob.mx, go.jp, gv.ua, gub.uy, govt.nz)
+      || '\\.gc\\.ca/|\\.canada\\.ca/'   -- Canada and provinces
+      || '\\.belgium\\.be/|\\.fgov\\.be/|\\.vlaanderen\\.be/|\\.wallonie\\.be/|\\.brussels\\.be/|\\.economie\\.fgov\\.be/|\\.health\\.belgium\\.be/|\\.justice\\.belgium\\.be/|\\.mobilit\\.belgium\\.be/|\\.mil\\.be/' -- Belgium
+      || '\\.gov\\.se\\b|1177\\.se|funktionstjanster\\.se|hemnet\\.se|smhi\\.se|sverigesradio\\.se|klart\\.se|bankid\\.com|synonymer\\.se|arbetsformedlingen\\.se|skatteverket\\.se|schoolsoft\\.se|postnord\\.se|grandid\\.com|viaplay\\.se|skola24\\.se|forsakringskassan\\.se|vklass\\.se|sl\\.se|familjeliv\\.se/' -- Sweden
+      || '\\.gov\\.fi|\\.valtioneuvosto\\.fi|\\.minedu\\.fi|\\.formin\\.fi|\\.intermin\\.fi/' -- Finland
+      || '\\.riik\\.ee/'                 -- Estonia
+      || '\\.admin\\.ch/'                -- Switzerland
+      || '\\.public\\.lu/'               -- Luxembourg
+      || '\\.gov\\.nl/|\\.overheid\\.nl/|\\.mijnoverheid\\.nl/'  -- Netherlands
+      || ')')
 )
 
 SELECT
