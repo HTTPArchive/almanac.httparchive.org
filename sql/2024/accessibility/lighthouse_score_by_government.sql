@@ -161,7 +161,7 @@ domain_scores AS (
 FROM
   score_data
 WHERE
-REGEXP_CONTAINS(page, r'(?i)('
+  REGEXP_CONTAINS(page, r'(?i)('
     || '\\.un\\.org/|\\.worldbank\\.org/|\\.undp\\.org/|\\.reliefweb\\.int/|\\.who\\.int/|\\.unfccc\\.int/|\\.unccd\\.int/|\\.unesco\\.org/'  -- United Nations and International Organizations
     || '\\.europa\\.eu/'               -- European Union
     || '\\.gov/'                       -- Catch-all for any USA .gov domains
