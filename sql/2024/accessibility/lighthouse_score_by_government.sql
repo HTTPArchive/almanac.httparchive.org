@@ -23,7 +23,7 @@ domain_scores AS (
     page,
     CASE
       -- United Nations
-      WHEN REGEXP_CONTAINS(page, r'(?i)\.un\.org/') THEN 'UN.org'
+      WHEN REGEXP_CONTAINS(page, r'(?i)\.un\.org/|\.worldbank.org/|\.undp.org/|\.reliefweb.int/|\.who.int/|\.unfccc.int/|\.unccd.int/|\.unesco.org/') THEN 'United Nations'
       WHEN REGEXP_CONTAINS(page, r'(?i)\.europa\.eu/') THEN 'European Union'
 
       -- USA State Governments (must come before federal .gov check)
