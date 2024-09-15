@@ -19,7 +19,7 @@ pages AS (
   FROM
     `httparchive.all.pages`
   WHERE
-    is_root = TRUE AND
+    is_root_page = TRUE AND
     date = '2024-06-01'
 )
 

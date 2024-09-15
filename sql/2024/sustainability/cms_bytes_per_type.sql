@@ -1,9 +1,7 @@
 #standardSQL
-# Median resource weights by CMS
+# Median resource weights by CMS with detailed CO2e breakdown and root_page aggregation
 
-# Declare variables to calculate the carbon emissions of one byte
-# Source: https://sustainablewebdesign.org/calculating-digital-emissions/
-# The implementation below does not make the assumptions about returning visitors or caching that are present in the Sustainable Web Design model.
+# Declare variables to calculate the carbon emissions per gigabyte (kWh/GB)
 
 DECLARE grid_intensity NUMERIC DEFAULT 494;
 DECLARE embodied_emissions_data_centers NUMERIC DEFAULT 0.012;
@@ -15,128 +13,98 @@ DECLARE operational_emissions_user_devices NUMERIC DEFAULT 0.080;
 
 WITH cms_data AS (
   SELECT
+    root_page,  
     client,
-    page,
     tech.technology AS cms,
-    CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64) / 1024 AS total_kb,
 
-    -- Operational emissions calculations
-    (CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64) / 1024 / 1024 / 1024) * operational_emissions_data_centers * grid_intensity AS op_emissions_dc,
-    (CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64) / 1024 / 1024 / 1024) * operational_emissions_network * grid_intensity AS op_emissions_networks,
-    (CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64) / 1024 / 1024 / 1024) * operational_emissions_user_devices * grid_intensity AS op_emissions_devices,
+    -- Aggregate total_kb and CO2e emissions by root_page
+    SUM(CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64)) / 1024 AS total_kb,
 
-    -- Embodied emissions calculations
-    (CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64) / 1024 / 1024 / 1024) * embodied_emissions_data_centers * grid_intensity AS em_emissions_dc,
-    (CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64) / 1024 / 1024 / 1024) * embodied_emissions_network * grid_intensity AS em_emissions_networks,
-    (CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64) / 1024 / 1024 / 1024) * embodied_emissions_user_devices * grid_intensity AS em_emissions_devices,
+    -- Operational emissions calculations aggregated
+    SUM((CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64) / 1024 / 1024 / 1024) * operational_emissions_data_centers * grid_intensity) AS op_emissions_dc,
+    SUM((CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64) / 1024 / 1024 / 1024) * operational_emissions_network * grid_intensity) AS op_emissions_networks,
+    SUM((CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64) / 1024 / 1024 / 1024) * operational_emissions_user_devices * grid_intensity) AS op_emissions_devices,
 
-    -- Total emissions (operational + embodied)
-    (
-      (CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64) / 1024 / 1024 / 1024) * operational_emissions_data_centers * grid_intensity +
-      (CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64) / 1024 / 1024 / 1024) * operational_emissions_network * grid_intensity +
-      (CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64) / 1024 / 1024 / 1024) * operational_emissions_user_devices * grid_intensity
-    ) AS total_operational_emissions,
+    -- Embodied emissions calculations aggregated
+    SUM((CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64) / 1024 / 1024 / 1024) * embodied_emissions_data_centers * grid_intensity) AS em_emissions_dc,
+    SUM((CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64) / 1024 / 1024 / 1024) * embodied_emissions_network * grid_intensity) AS em_emissions_networks,
+    SUM((CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64) / 1024 / 1024 / 1024) * embodied_emissions_user_devices * grid_intensity) AS em_emissions_devices,
 
-    (
-      (CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64) / 1024 / 1024 / 1024) * embodied_emissions_data_centers * grid_intensity +
-      (CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64) / 1024 / 1024 / 1024) * embodied_emissions_network * grid_intensity +
-      (CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64) / 1024 / 1024 / 1024) * embodied_emissions_user_devices * grid_intensity
-    ) AS total_embodied_emissions,
-
-    (
-      (CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64) / 1024 / 1024 / 1024) * operational_emissions_data_centers * grid_intensity +
-      (CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64) / 1024 / 1024 / 1024) * operational_emissions_network * grid_intensity +
-      (CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64) / 1024 / 1024 / 1024) * operational_emissions_user_devices * grid_intensity +
-      (CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64) / 1024 / 1024 / 1024) * embodied_emissions_data_centers * grid_intensity +
-      (CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64) / 1024 / 1024 / 1024) * embodied_emissions_network * grid_intensity +
-      (CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64) / 1024 / 1024 / 1024) * embodied_emissions_user_devices * grid_intensity
+    -- Total aggregated emissions (operational + embodied)
+    SUM(
+      (CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64) / 1024 / 1024 / 1024) * (
+        operational_emissions_data_centers + operational_emissions_network + operational_emissions_user_devices +
+        embodied_emissions_data_centers + embodied_emissions_network + embodied_emissions_user_devices
+      ) * grid_intensity
     ) AS total_emissions,
 
-    -- Proportions of each resource type relative to total bytes
-    CAST(JSON_VALUE(summary, '$.bytesHtml') AS INT64) / CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64) AS html_proportion,
-    CAST(JSON_VALUE(summary, '$.bytesJS') AS INT64) / CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64) AS js_proportion,
-    CAST(JSON_VALUE(summary, '$.bytesCss') AS INT64) / CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64) AS css_proportion,
-    CAST(JSON_VALUE(summary, '$.bytesImg') AS INT64) / CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64) AS img_proportion,
-    CAST(JSON_VALUE(summary, '$.bytesFont') AS INT64) / CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64) AS font_proportion,
+    -- Aggregated resource sizes in KB
+    SUM(CAST(JSON_VALUE(summary, '$.bytesHtml') AS INT64)) / 1024 AS html_kb,
+    SUM(CAST(JSON_VALUE(summary, '$.bytesJS') AS INT64)) / 1024 AS js_kb,
+    SUM(CAST(JSON_VALUE(summary, '$.bytesCss') AS INT64)) / 1024 AS css_kb,
+    SUM(CAST(JSON_VALUE(summary, '$.bytesImg') AS INT64)) / 1024 AS img_kb,
+    SUM(CAST(JSON_VALUE(summary, '$.bytesFont') AS INT64)) / 1024 AS font_kb,
 
-    -- Resource-specific emissions calculations
-    (SAFE_DIVIDE(CAST(JSON_VALUE(summary, '$.bytesHtml') AS INT64),CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64)) * (
+    -- Resource-specific emissions calculations (operational + embodied)
+    SUM(
+      SAFE_DIVIDE(CAST(JSON_VALUE(summary, '$.bytesHtml') AS INT64), CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64)) *
       (CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64) / 1024 / 1024 / 1024) * (
-        operational_emissions_data_centers * grid_intensity +
-        operational_emissions_network * grid_intensity +
-        operational_emissions_user_devices * grid_intensity +
-        embodied_emissions_data_centers * grid_intensity +
-        embodied_emissions_network * grid_intensity +
-        embodied_emissions_user_devices * grid_intensity
-      )
-    )) AS total_html_emissions,
+        operational_emissions_data_centers + operational_emissions_network + operational_emissions_user_devices +
+        embodied_emissions_data_centers + embodied_emissions_network + embodied_emissions_user_devices
+      ) * grid_intensity
+    ) AS total_html_emissions,
 
-    (SAFE_DIVIDE(CAST(JSON_VALUE(summary, '$.bytesJS') AS INT64),CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64)) * (
+    SUM(
+      SAFE_DIVIDE(CAST(JSON_VALUE(summary, '$.bytesJS') AS INT64), CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64)) *
       (CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64) / 1024 / 1024 / 1024) * (
-        operational_emissions_data_centers * grid_intensity +
-        operational_emissions_network * grid_intensity +
-        operational_emissions_user_devices * grid_intensity +
-        embodied_emissions_data_centers * grid_intensity +
-        embodied_emissions_network * grid_intensity +
-        embodied_emissions_user_devices * grid_intensity
-      )
-    )) AS total_js_emissions,
+        operational_emissions_data_centers + operational_emissions_network + operational_emissions_user_devices +
+        embodied_emissions_data_centers + embodied_emissions_network + embodied_emissions_user_devices
+      ) * grid_intensity
+    ) AS total_js_emissions,
 
-    (SAFE_DIVIDE(CAST(JSON_VALUE(summary, '$.bytesCss') AS INT64),CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64)) * (
+    SUM(
+      SAFE_DIVIDE(CAST(JSON_VALUE(summary, '$.bytesCss') AS INT64), CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64)) *
       (CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64) / 1024 / 1024 / 1024) * (
-        operational_emissions_data_centers * grid_intensity +
-        operational_emissions_network * grid_intensity +
-        operational_emissions_user_devices * grid_intensity +
-        embodied_emissions_data_centers * grid_intensity +
-        embodied_emissions_network * grid_intensity +
-        embodied_emissions_user_devices * grid_intensity
-      )
-    )) AS total_css_emissions,
+        operational_emissions_data_centers + operational_emissions_network + operational_emissions_user_devices +
+        embodied_emissions_data_centers + embodied_emissions_network + embodied_emissions_user_devices
+      ) * grid_intensity
+    ) AS total_css_emissions,
 
-    (SAFE_DIVIDE(CAST(JSON_VALUE(summary, '$.bytesImg') AS INT64),CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64)) * (
+    SUM(
+      SAFE_DIVIDE(CAST(JSON_VALUE(summary, '$.bytesImg') AS INT64), CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64)) *
       (CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64) / 1024 / 1024 / 1024) * (
-        operational_emissions_data_centers * grid_intensity +
-        operational_emissions_network * grid_intensity +
-        operational_emissions_user_devices * grid_intensity +
-        embodied_emissions_data_centers * grid_intensity +
-        embodied_emissions_network * grid_intensity +
-        embodied_emissions_user_devices * grid_intensity
-      )
-    )) AS total_img_emissions,
+        operational_emissions_data_centers + operational_emissions_network + operational_emissions_user_devices +
+        embodied_emissions_data_centers + embodied_emissions_network + embodied_emissions_user_devices
+      ) * grid_intensity
+    ) AS total_img_emissions,
 
-    (SAFE_DIVIDE(CAST(JSON_VALUE(summary, '$.bytesFont') AS INT64),CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64)) * (
+    SUM(
+      SAFE_DIVIDE(CAST(JSON_VALUE(summary, '$.bytesFont') AS INT64), CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64)) *
       (CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64) / 1024 / 1024 / 1024) * (
-        operational_emissions_data_centers * grid_intensity +
-        operational_emissions_network * grid_intensity +
-        operational_emissions_user_devices * grid_intensity +
-        embodied_emissions_data_centers * grid_intensity +
-        embodied_emissions_network * grid_intensity +
-        embodied_emissions_user_devices * grid_intensity
-      )
-    )) AS total_font_emissions,
+        operational_emissions_data_centers + operational_emissions_network + operational_emissions_user_devices +
+        embodied_emissions_data_centers + embodied_emissions_network + embodied_emissions_user_devices
+      ) * grid_intensity
+    ) AS total_font_emissions
 
-    -- Resource-specific size in KB
-    CAST(JSON_VALUE(summary, '$.bytesHtml') AS INT64) / 1024 AS html_kb,
-    CAST(JSON_VALUE(summary, '$.bytesJS') AS INT64) / 1024 AS js_kb,
-    CAST(JSON_VALUE(summary, '$.bytesCss') AS INT64) / 1024 AS css_kb,
-    CAST(JSON_VALUE(summary, '$.bytesImg') AS INT64) / 1024 AS img_kb,
-    CAST(JSON_VALUE(summary, '$.bytesFont') AS INT64) / 1024 AS font_kb
   FROM
     `httparchive.all.pages`,
     UNNEST(technologies) AS tech
   WHERE
     date = '2024-06-01' AND
     'CMS' IN UNNEST(tech.categories)
+  GROUP BY
+    root_page, client, tech.technology  -- Group by root_page, client, and CMS type
 )
 
 SELECT
   client,
   cms,
-  COUNT(0) AS pages,
+  COUNT(DISTINCT root_page) AS total_sites,  -- Count distinct root pages
+
   -- Median resource weights and emissions
   APPROX_QUANTILES(total_kb, 1000)[OFFSET(500)] AS median_total_kb,
-  APPROX_QUANTILES(total_operational_emissions, 1000)[OFFSET(500)] AS median_operational_emissions,
-  APPROX_QUANTILES(total_embodied_emissions, 1000)[OFFSET(500)] AS median_embodied_emissions,
+  APPROX_QUANTILES(op_emissions_dc + op_emissions_networks + op_emissions_devices, 1000)[OFFSET(500)] AS median_operational_emissions,
+  APPROX_QUANTILES(em_emissions_dc + em_emissions_networks + em_emissions_devices, 1000)[OFFSET(500)] AS median_embodied_emissions,
   APPROX_QUANTILES(total_emissions, 1000)[OFFSET(500)] AS median_total_emissions,
 
   -- Resource-specific medians
@@ -150,12 +118,13 @@ SELECT
   APPROX_QUANTILES(total_img_emissions, 1000)[OFFSET(500)] AS median_total_img_emissions,
   APPROX_QUANTILES(font_kb, 1000)[OFFSET(500)] AS median_font_kb,
   APPROX_QUANTILES(total_font_emissions, 1000)[OFFSET(500)] AS median_total_font_emissions
+
 FROM
   cms_data
 GROUP BY
   client,
   cms
 ORDER BY
-  pages DESC,
+  total_sites DESC,
   cms,
   client;
