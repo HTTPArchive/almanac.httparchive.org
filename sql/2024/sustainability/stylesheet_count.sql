@@ -20,6 +20,8 @@ WITH stylesheet_data AS (
     `httparchive.all.pages`
   WHERE
     date = '2024-06-01'
+    AND
+    is_root_page = TRUE
     AND JSON_EXTRACT_SCALAR(JSON_EXTRACT(JSON_EXTRACT_SCALAR(payload, '$._javascript'), '$.document'), '$.stylesheets') IS NOT NULL
 )
 
