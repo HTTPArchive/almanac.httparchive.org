@@ -158,8 +158,29 @@ domain_scores AS (
   FROM
     score_data
   WHERE
-    -- must update this list.
-    REGEXP_CONTAINS(page, r'(?i)\.un\.org|\.europa\.eu|...|\.gov\.lt|\.vrm.lt|\.sam.lt|\.ukmin.lt|...|\.govt\.nz|\.gov\.tw|\.gov\.sg|\.gub\.uy|\.belgium\.be|\.fgov\.be|...')
+FROM
+  score_data
+WHERE
+  REGEXP_CONTAINS(page, r'(?i)('
+    || '\.un\.org|'                 -- United Nations
+    || '\.europa\.eu|'              -- European Union
+    || '\.gov|'                     -- Catch-all for any .gov domains (e.g., .gov, .gov.uk, .gov.au, .gov.tw, etc.)
+    || '\.mil|'                     -- U.S. Military domains
+    || '\.gouv\.fr|'                -- France
+    || '\.gouv\.be|'                -- French-speaking countries using gouv
+    || '\.gob\.mx|'                 -- Mexico
+    || '\.gc\.ca|\.canada\.ca|'     -- Canada
+    || '\.belgium\.be|\.fgov\.be|\.vlaanderen\.be|\.wallonie\.be|\.brussels\.be|\.economie\.fgov\.be|\.health\.belgium\.be|\.justice\.belgium\.be|\.mobilit\.belgium\.be|\.mil\.be|' -- Belgium
+    || '\.gov\.se|1177\.se|funktionstjanster\.se|hemnet\.se|smhi\.se|sverigesradio\.se|klart\.se|bankid\.com|synonymer\.se|arbetsformedlingen\.se|skatteverket\.se|schoolsoft\.se|postnord\.se|grandid\.com|viaplay\.se|skola24\.se|forsakringskassan\.se|vklass\.se|sl\.se|familjeliv\.se|' -- Sweden
+    || '\.gov\.fi|\.valtioneuvosto\.fi|\.minedu\.fi|\.formin\.fi|\.intermin\.fi|' -- Finland
+    || '\.govt\.nz|'               -- New Zealand
+    || '\.gov\.uk|'                -- United Kingdom
+    || '\.gov\.it|'                -- Italy
+    || '\.riik\.ee|'               -- Estonia
+    || '\.admin\.ch|'              -- Switzerland
+    || '\.public\.lu|'             -- Luxembourg
+    || '\.gov\.nl|\.overheid\.nl|\.mijnoverheid\.nl'  -- Netherlands
+    || ')')
 )
 
 SELECT
