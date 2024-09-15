@@ -153,27 +153,28 @@ domain_scores AS (
     performance_score,
     accessibility_score,
     best_practices_score,
-    seo_score,
+    seo_score
   FROM
     score_data
   WHERE
     REGEXP_CONTAINS(page, r'(?i)('
-      || '\\.un\\.org/|\\.worldbank\\.org/|\\.undp\\.org/|\\.reliefweb\\.int/|\\.who\\.int/|\\.unfccc\\.int/|\\.unccd\\.int/|\\.unesco\\.org/'  -- United Nations and International Organizations
-      || '\\.europa\\.eu/'               -- European Union
-      || '\\.gov/'                       -- Catch-all for any USA .gov domains
-      || '\\.mil/'                       -- Catch-all for any USA .mil domains
-      || '\\.gov(\\.[a-z]{2,3})?/'       -- Global .gov domains, including .gov.uk, .gov.au, .gov.tw, etc.
-      || '\\.mil(\\.[a-z]{2,3})?/'       -- Global military domains
-      || '(\\w+\\.){0,3}(gouv|gob|go|gv|gub|govt)\\.[a-z]{2,3}/'  -- Other generic government formats (e.g., gouv.fr, gob.mx, go.jp, gv.ua, gub.uy, govt.nz)
-      || '\\.gc\\.ca/|\\.canada\\.ca/'   -- Canada and provinces
-      || '\\.belgium\\.be/|\\.fgov\\.be/|\\.vlaanderen\\.be/|\\.wallonie\\.be/|\\.brussels\\.be/|\\.economie\\.fgov\\.be/|\\.health\\.belgium\\.be/|\\.justice\\.belgium\\.be/|\\.mobilit\\.belgium\\.be/|\\.mil\\.be/' -- Belgium
-      || '\\.gov\\.se\\b|1177\\.se|funktionstjanster\\.se|hemnet\\.se|smhi\\.se|sverigesradio\\.se|klart\\.se|bankid\\.com|synonymer\\.se|arbetsformedlingen\\.se|skatteverket\\.se|schoolsoft\\.se|postnord\\.se|grandid\\.com|viaplay\\.se|skola24\\.se|forsakringskassan\\.se|vklass\\.se|sl\\.se|familjeliv\\.se/' -- Sweden
-      || '\\.gov\\.fi|\\.valtioneuvosto\\.fi|\\.minedu\\.fi|\\.formin\\.fi|\\.intermin\\.fi/' -- Finland
-      || '\\.riik\\.ee/'                 -- Estonia
-      || '\\.admin\\.ch/'                -- Switzerland
-      || '\\.public\\.lu/'               -- Luxembourg
-      || '\\.gov\\.nl/|\\.overheid\\.nl/|\\.mijnoverheid\\.nl/'  -- Netherlands
-      || ')')
+      '\\.un\\.org/|\\.worldbank\\.org/|\\.undp\\.org/|\\.reliefweb\\.int/|\\.who\\.int/|\\.unfccc\\.int/|\\.unccd\\.int/|\\.unesco\\.org/' ||  -- United Nations and International Organizations
+      '\\.europa\\.eu/' ||               -- European Union
+      '\\.gov/' ||                       -- Catch-all for any USA .gov domains
+      '\\.mil/' ||                       -- Catch-all for any USA .mil domains
+      '\\.gov(\\.[a-z]{2,3})?/' ||       -- Global .gov domains, including .gov.uk, .gov.au, .gov.tw, etc.
+      '\\.mil(\\.[a-z]{2,3})?/' ||       -- Global military domains
+      '(\\w+\\.){0,3}(gouv|gob|go|gv|gub|govt)\\.[a-z]{2,3}/' ||  -- Other generic government formats (e.g., gouv.fr, gob.mx, go.jp, gv.ua, gub.uy, govt.nz)
+      '\\.gc\\.ca/|\\.canada\\.ca/' ||   -- Canada and provinces
+      '\\.belgium\\.be/|\\.fgov\\.be/|\\.vlaanderen\\.be/|\\.wallonie\\.be/|\\.brussels\\.be/|\\.economie\\.fgov\\.be/|\\.health\\.belgium\\.be/|\\.justice\\.belgium\\.be/|\\.mobilit\\.belgium\\.be/|\\.mil\\.be/' || -- Belgium
+      '\\.gov\\.se\\b|1177\\.se|funktionstjanster\\.se|hemnet\\.se|smhi\\.se|sverigesradio\\.se|klart\\.se|bankid\\.com|synonymer\\.se|arbetsformedlingen\\.se|skatteverket\\.se|schoolsoft\\.se|postnord\\.se|grandid\\.com|viaplay\\.se|skola24\\.se|forsakringskassan\\.se|vklass\\.se|sl\\.se|familjeliv\\.se/' || -- Sweden
+      '\\.gov\\.fi|\\.valtioneuvosto\\.fi|\\.minedu\\.fi|\\.formin\\.fi|\\.intermin\\.fi/' || -- Finland
+      '\\.riik\\.ee/' ||                 -- Estonia
+      '\\.admin\\.ch/' ||                -- Switzerland
+      '\\.public\\.lu/' ||               -- Luxembourg
+      '\\.gov\\.nl/|\\.overheid\\.nl/|\\.mijnoverheid\\.nl/' ||  -- Netherlands
+      ')')
+
 )
 
 SELECT
