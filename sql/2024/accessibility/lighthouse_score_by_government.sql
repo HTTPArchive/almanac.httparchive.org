@@ -121,6 +121,9 @@ domain_scores AS (
       WHEN REGEXP_CONTAINS(page, r'(?i)\.gv\.at/') THEN 'Austria'
       WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.al/') THEN 'Albania'
       WHEN REGEXP_CONTAINS(page, r'(?i)\.gv\.ua/') THEN 'Ukraine'
+      WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.rs/') THEN 'Serbia'
+      WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.ge/') THEN 'Georgia'
+      WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.by/') THEN 'Belarus'
 
       -- Other Countries
       WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.in/|\.nic\.in/') THEN 'India'
@@ -148,6 +151,21 @@ domain_scores AS (
       WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.tw/') THEN 'Taiwan'
       WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.sg/') THEN 'Singapore'
       WHEN REGEXP_CONTAINS(page, r'(?i)\.gub\.uy/') THEN 'Uruguay'
+      WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.lk/') THEN 'Sri Lanka'
+      WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.my/') THEN 'Malaysia'
+      WHEN REGEXP_CONTAINS(page, r'(?i)\.gub\.ar/|\.gov\.ar/') THEN 'Argentina'
+      WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.ae/') THEN 'United Arab Emirates'
+      WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.co/') THEN 'Columbia'
+      WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.ma/') THEN 'Morocco'
+      WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.eg/') THEN 'Egypt'
+      WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.ph/') THEN 'Philippines'
+      WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.np/') THEN 'Nepal'
+      WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.jo/') THEN 'Paraguay'
+      WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.uy/') THEN 'Jordan'
+      WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.gh/') THEN 'Ghana'
+      WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.mn/') THEN 'Mongolia'
+      WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.kh/') THEN 'Cambodia'
+
       ELSE 'Other'
     END AS gov_domain,
     is_root_page,
