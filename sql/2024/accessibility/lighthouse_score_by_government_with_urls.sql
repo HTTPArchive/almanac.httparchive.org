@@ -239,7 +239,7 @@ domain_scores AS (
       '|(\\w+\\.)*\\.mijnoverheid\\.nl(/|$)'
 
       '|(\\w+\\.)*\\.myflorida\\.com(/|$)' -- Exceptions
-    ')')
+      ')')
 )
 
 SELECT
