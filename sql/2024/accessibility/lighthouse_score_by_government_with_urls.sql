@@ -189,10 +189,12 @@ domain_scores AS (
 
       '|(\\w+\\.)*\\.gov(\\.[a-z]{2,3})?(/|$)'  -- US Government and global .gov domains (e.g., .gov.uk, .gov.au)
       '|(\\w+\\.)*\\.mil(\\.[a-z]{2,3})?(/|$)'  -- US Military and global .mil domains
-      '|(\\w+\\.){0,2}(gov|mil|gouv|gob)\\.(us|uk|ca|au|mx|fr|de|se|fi|nl|jp|[a-z]{2})?(/|$)' -- Other generic government formats (e.g., gouv.fr, gob.mx, go.jp)
+      '|(\\w+\\.){0,2}(gov|mil|gouv|gob|gub|go|govt|gv|nic|government)\\.(taipei|[a-z]{2})?(/|$)' -- Other generic government formats (e.g., gouv.fr, gob.mx, go.jp)
 
       '|(\\w+\\.)*\\.gc\\.ca(/|$)'  -- Canada and provinces
       '|(\\w+\\.)*\\.canada\\.ca(/|$)'
+
+      '|(\\w+\\.)*\\.bund\\.de(/|$)'  -- Germany
 
       '|(\\w+\\.)*\\.belgium\\.be(/|$)'  -- Belgium
       '|(\\w+\\.)*\\.fgov\\.be(/|$)'
