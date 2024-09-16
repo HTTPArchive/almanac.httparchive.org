@@ -21,8 +21,7 @@ WITH totals AS (
   FROM
     `httparchive.all.pages`
   WHERE
-    date = '2024-06-01' AND
-    is_root_page
+    date = '2024-06-01'
   GROUP BY
     client
 )
@@ -44,8 +43,7 @@ JOIN
 USING
   (client)
 WHERE
-  date = '2024-06-01' AND
-  is_root_page
+  date = '2024-06-01'
 GROUP BY
   client,
   element_type_info.name

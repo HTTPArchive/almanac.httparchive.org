@@ -20,8 +20,7 @@ WITH totals AS (
   FROM
     `httparchive.all.pages`
   WHERE
-    date IN ('2022-06-01', '2023-06-01', '2024-06-01') AND
-    is_root_page
+    date = '2024-06-01'
   GROUP BY
     client
 )
@@ -39,7 +38,6 @@ USING
   (client),
   UNNEST(get_almanac_attribute_info(JSON_EXTRACT(custom_metrics, '$.almanac'))) AS almanac_attribute_info
 WHERE
-  date = '2024-06-01' AND
-  is_root_page
+  date = '2024-06-01'
 GROUP BY
   client

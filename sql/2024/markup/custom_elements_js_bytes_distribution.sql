@@ -6,8 +6,7 @@ WITH js_bytes AS (
   FROM
     `httparchive.all.pages`
   WHERE
-    date = '2024-06-01' AND
-    is_root_page
+    date = '2024-06-01'
 ), custom_elements AS (
   SELECT
     client,
@@ -16,8 +15,7 @@ WITH js_bytes AS (
   FROM
     `httparchive.all.pages`
   WHERE
-    date = '2024-06-01' AND
-    is_root_page
+    date = '2024-06-01'
 )
 
 SELECT

@@ -6,8 +6,7 @@ WITH custom_elements AS (
   FROM
     `httparchive.all.pages`
   WHERE
-    date IN ('2022-06-01', '2023-06-01', '2024-06-01') AND
-    is_root_page
+    date IN ('2022-06-01', '2023-06-01', '2024-06-01')
 )
 
 SELECT

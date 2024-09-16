@@ -4,7 +4,7 @@ WITH forms AS (
     page,
     CAST(IFNULL(JSON_VALUE(JSON_EXTRACT(custom_metrics, '$.element_count'), '$.form'), '0') AS INT64) AS forms_count
   FROM
-    `httparchive.all.pages` TABLESAMPLE SYSTEM (0.003 PERCENT)
+    `httparchive.all.pages`
   WHERE
     date = '2024-06-01'
 )
