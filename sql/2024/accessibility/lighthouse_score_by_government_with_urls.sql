@@ -36,7 +36,7 @@ domain_scores AS (
       WHEN REGEXP_CONTAINS(page, r'(?i)\.connecticut\.gov(/|$)|\.CT\.gov(/|$)') THEN 'Connecticut'
       WHEN REGEXP_CONTAINS(page, r'(?i)\.delaware\.gov(/|$)|\.DE\.gov(/|$)') THEN 'Delaware'
       WHEN REGEXP_CONTAINS(page, r'(?i)\.florida\.gov(/|$)|\.FL\.gov(/|$)|\.myflorida\.com(/|$)') THEN 'Florida'
-      WHEN REGEXP_CONTAINS(page, r'(?i)\.georgia\.gov(/|$)|\.GA\.gov(/|$)') THEN 'Georgia'
+      WHEN REGEXP_CONTAINS(page, r'(?i)\.georgia\.gov/|\.GA\.gov/') THEN 'Georgia State' -- To avoid confusion with the country
       WHEN REGEXP_CONTAINS(page, r'(?i)\.hawaii\.gov(/|$)|\.HI\.gov(/|$)|\.ehawaii\.gov(/|$)') THEN 'Hawaii'
       WHEN REGEXP_CONTAINS(page, r'(?i)\.idaho\.gov(/|$)|\.ID\.gov(/|$)') THEN 'Idaho'
       WHEN REGEXP_CONTAINS(page, r'(?i)\.illinois\.gov(/|$)|\.IL\.gov(/|$)') THEN 'Illinois'
@@ -96,6 +96,7 @@ domain_scores AS (
       WHEN REGEXP_CONTAINS(page, r'(?i)\.bund\.de(/|$)') THEN 'Germany'
       WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.it(/|$)') THEN 'Italy'
       WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.gr(/|$)') THEN 'Greece'
+      WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.ge(/|$)') THEN 'Georgia Country'
       WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.pt(/|$)') THEN 'Portugal'
       WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.es(/|$)') THEN 'Spain'
       WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.se/|1177\.se/|funktionstjanster\.se/|hemnet\.se/|smhi\.se/|sverigesradio\.se/|klart\.se/|bankid\.com/|synonymer\.se/|arbetsformedlingen\.se/|skatteverket\.se/|schoolsoft\.se/|postnord\.se/|grandid\.com/|viaplay\.se/|skola24\.se/|forsakringskassan\.se/|vklass\.se|sl\.se/|familjeliv\.se(/|$)') THEN 'Sweden'
@@ -189,6 +190,9 @@ domain_scores AS (
 
       '|(\\w+\\.)*\\.gov(\\.[a-z]{2,3})?(/|$)'  -- US Government and global .gov domains (e.g., .gov.uk, .gov.au)
       '|(\\w+\\.)*\\.mil(\\.[a-z]{2,3})?(/|$)'  -- US Military and global .mil domains
+
+      '|(\\w+\\.)*\\.myflorida\\.com(/|$)' -- Florida
+
       '|(\\w+\\.){0,2}(gov|mil|gouv|gob|gub|go|govt|gv|nic|government)\\.(taipei|[a-z]{2})?(/|$)' -- Other generic government formats (e.g., gouv.fr, gob.mx, go.jp)
 
       '|(\\w+\\.)*\\.gc\\.ca(/|$)'  -- Canada and provinces
@@ -224,8 +228,7 @@ domain_scores AS (
       '|(\\w+\\.)*\\.sl\\.se(/|$)'
       '|(\\w+\\.)*\\.familjeliv\\.se(/|$)'
 
-      '|(\\w+\\.)*\\.gov\\.fi(/|$)'  -- Finland
-      '|(\\w+\\.)*\\.valtioneuvosto\\.fi(/|$)'
+      '|(\\w+\\.)*\\.valtioneuvosto\\.fi(/|$)'  -- Finland
       '|(\\w+\\.)*\\.minedu\\.fi(/|$)'
       '|(\\w+\\.)*\\.formin\\.fi(/|$)'
       '|(\\w+\\.)*\\.intermin\\.fi(/|$)'
@@ -242,18 +245,26 @@ domain_scores AS (
       '|(\\w+\\.)*\\.um\\.fi(/|$)'
       '|(\\w+\\.)*\\.vero\\.fi(/|$)'
       '|(\\w+\\.)*\\.kela\\.fi(/|$)'
+  
+      '|(\\w+\\.)*\\.lrv\\.lt(/|$)'  -- Lithuania
+      '|(\\w+\\.)*\\.uzt\\.lt(/|$)'
+      '|(\\w+\\.)*\\.migracija\\.lt(/|$)'
+      '|(\\w+\\.)*\\.kam\\.lt(/|$)'
+      '|(\\w+\\.)*\\.lrs\\.lt(/|$)'
+      '|(\\w+\\.)*\\.urm\\.lt(/|$)'
 
       '|(\\w+\\.)*\\.riik\\.ee(/|$)'  -- Estonia
+      '|(\\w+\\.)*\\.riigiteataja\\.ee(/|$)'
+      '|(\\w+\\.)*\\.eesti\\.ee(/|$)'
+      '|(\\w+\\.)*\\.valitsus\\.ee(/|$)'
 
       '|(\\w+\\.)*\\.admin\\.ch(/|$)'  -- Switzerland
 
       '|(\\w+\\.)*\\.public\\.lu(/|$)'  -- Luxembourg
 
-      '|(\\w+\\.)*\\.gov\\.nl(/|$)'  -- Netherlands
-      '|(\\w+\\.)*\\.overheid\\.nl(/|$)'
+      '|(\\w+\\.)*\\.overheid\\.nl(/|$)'  -- Netherlands
       '|(\\w+\\.)*\\.mijnoverheid\\.nl(/|$)'
 
-      '|(\\w+\\.)*\\.myflorida\\.com(/|$)' -- Exceptions
       ')')
 )
 
