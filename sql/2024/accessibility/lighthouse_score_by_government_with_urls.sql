@@ -308,7 +308,7 @@ domain_scores AS (
       '|(\\w+\\.)*\\.govvrn\\.ru(/|$)' -- Russia
 
       '|(\\w+\\.)*\\.public\\.lu(/|$)'  -- Luxembourg
-      '|(\\w+\\.)*\\.etat\\.lu(/|$)' 
+      '|(\\w+\\.)*\\.etat\\.lu(/|$)'
 
       '|(\\w+\\.)*\\.governo\\.it(/|$)'  -- Italy
 
@@ -316,7 +316,7 @@ domain_scores AS (
       '|(\\w+\\.)*\\.mijnoverheid\\.nl(/|$)'
 
       '|(\\w+\\.)*\\.govern\\.ad(/|$)'  -- Andorra
-      '|(\\w+\\.)*\\.exteriors\\.ad(/|$)'  
+      '|(\\w+\\.)*\\.exteriors\\.ad(/|$)'
       '|(\\w+\\.)*\\.consellgeneral\\.ad(/|$)'
 
       ')')
