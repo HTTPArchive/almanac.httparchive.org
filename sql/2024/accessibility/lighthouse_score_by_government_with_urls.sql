@@ -105,7 +105,7 @@ domain_scores AS (
       WHEN REGEXP_CONTAINS(page, r'(?i)\\.gov\\.dk(/|$)|\\.ft\\.dk(/|$)|\\.nemkonto\\.dk(/|$)|\\.nemlog-in\\.dk(/|$)|\\.mitid\\.dk(/|$)|\\.digst\\.dk(/|$)|\\.sikkerdigital\\.dk(/|$)|\\.forsvaret\\.dk(/|$)|\\.skat\\.dk(/|$)|\\.stps\\.dk(/|$)|\\.ufm\\.dk(/|$)|\\.urm\\.dk(/|$)|\\.uvm\\.dk(/|$)|\\.politi\\.dk(/|$)|\\.dataetiskraad\\.dk(/|$)|\\.at\\.dk(/|$)|\\.kum\\.dk(/|$)') THEN 'Denmark'
       WHEN REGEXP_CONTAINS(page, r'(?i)\\.riik\\.ee(/|$)|\\.riigiteataja\\.ee(/|$)|\\.eesti\\.ee(/|$)|\\.valitsus\\.ee(/|$)') THEN 'Estonia'
       WHEN REGEXP_CONTAINS(page, r'(?i)\\.admin\\.ch(/|$)') THEN 'Switzerland'
-      WHEN REGEXP_CONTAINS(page, r'(?i)\\.public\\.lu(/|$)') THEN 'Luxembourg'
+      WHEN REGEXP_CONTAINS(page, r'(?i)\\.public\\.lu(/|$)|\\.etat\\.lu(/|$)') THEN 'Luxembourg'
       WHEN REGEXP_CONTAINS(page, r'(?i)\\.gov\\.fi|\\.valtioneuvosto\\.fi(/|$)|\\.minedu\.fi(/|$)|\\.formin\\.fi(/|$)|\\.intermin\\.fi(/|$)') THEN 'Finland'
       WHEN REGEXP_CONTAINS(page, r'(?i)\\.gov\\.hr(/|$)') THEN 'Croatia'
       WHEN REGEXP_CONTAINS(page, r'(?i)\\.gov\\.cz(/|$)') THEN 'Czech Republic'
@@ -307,6 +307,7 @@ domain_scores AS (
       '|(\\w+\\.)*\\.govvrn\\.ru(/|$)' -- Russia
 
       '|(\\w+\\.)*\\.public\\.lu(/|$)'  -- Luxembourg
+      '|(\\w+\\.)*\\.etat\\.lu(/|$)' 
 
       '|(\\w+\\.)*\\.governo\\.it(/|$)'  -- Italy
 
