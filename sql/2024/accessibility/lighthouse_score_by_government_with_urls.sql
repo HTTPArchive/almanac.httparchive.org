@@ -240,6 +240,8 @@ domain_scores AS (
       '|(\\w+\\.)*\\.defmin\\.fi(/|$)'
       '|(\\w+\\.)*\\.oikeusministerio\\.fi(/|$)'
       '|(\\w+\\.)*\\.um\\.fi(/|$)'
+      '|(\\w+\\.)*\\.vero\\.fi(/|$)'
+      '|(\\w+\\.)*\\.kela\\.fi(/|$)'
 
       '|(\\w+\\.)*\\.riik\\.ee(/|$)'  -- Estonia
 
