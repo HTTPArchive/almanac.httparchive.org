@@ -1,6 +1,6 @@
 -- Create the intermediate cookie table for other queries
--- Extract cookie set when visiting websites of rank <= 10 000 on mobile and desktop
--- Export it as httparchive.almanac.<DATE>_top10k_cookies
+-- Extract cookie set when visiting websites of rank <= 100 000 on mobile and desktop
+-- Export it as httparchive.almanac.<DATE>_top100k_cookies
 
 WITH intermediate_cookie AS (
   SELECT
@@ -15,7 +15,7 @@ WITH intermediate_cookie AS (
     UNNEST(JSON_EXTRACT_ARRAY(custom_metrics, '$.cookies')) AS cookie
   WHERE
     date = '2024-06-01' AND
-    rank <= 10000
+    rank <= 100000
 )
 
 SELECT

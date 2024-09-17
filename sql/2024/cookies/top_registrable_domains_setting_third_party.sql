@@ -5,7 +5,7 @@ WITH top_domains AS (
     client,
     NET.REG_DOMAIN(domain) AS registrable_domain,
     COUNT(DISTINCT page) AS distinct_page_count
-  FROM `httparchive.almanac.2024-06-01_top10k_cookies`
+  FROM `httparchive.almanac.2024-06-01_top100k_cookies`
   WHERE
     is_first_party = FALSE
   GROUP BY client, registrable_domain

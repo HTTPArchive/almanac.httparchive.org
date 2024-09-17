@@ -5,7 +5,7 @@ WITH top_websites AS (
     client,
     first_party_host,
     COUNT(DISTINCT CONCAT(name, domain)) AS distinct_first_party_count
-  FROM `httparchive.almanac.2024-06-01_top10k_cookies`
+  FROM `httparchive.almanac.2024-06-01_top100k_cookies`
   WHERE
     is_first_party = TRUE
   GROUP BY client, first_party_host

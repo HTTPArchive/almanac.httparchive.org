@@ -7,7 +7,7 @@ WITH top_cookies AS (
     client,
     name,
     COUNT(DISTINCT first_party_host) AS distinct_first_party_count
-  FROM `httparchive.almanac.2024-06-01_top10k_cookies`
+  FROM `httparchive.almanac.2024-06-01_top100k_cookies`
   WHERE
     partitionKey IS NOT NULL AND
     is_first_party = TRUE

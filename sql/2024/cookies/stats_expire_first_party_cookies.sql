@@ -30,7 +30,7 @@ SELECT
   ExactPercentile(ARRAY_AGG(ROUND(CAST(expires AS FLOAT64), 9)), 0.75) AS percentile_75,
   ExactPercentile(ARRAY_AGG(ROUND(CAST(expires AS FLOAT64), 9)), 0.9) AS percentile_90,
   ExactPercentile(ARRAY_AGG(ROUND(CAST(expires AS FLOAT64), 9)), 0.99) AS percentile_99
-FROM `httparchive.almanac.2024-06-01_top10k_cookies`
+FROM `httparchive.almanac.2024-06-01_top100k_cookies`
 WHERE
   is_first_party = TRUE
 GROUP BY client

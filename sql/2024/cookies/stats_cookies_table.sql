@@ -27,5 +27,5 @@ SELECT
   SUM(IF(partitionKey IS NULL, 1, 0)) AS partition_key_null,
   SUM(IF(partitionKeyOpaque IS NOT NULL, 1, 0)) AS partition_key_opaque_not_null,
   SUM(IF(partitionKeyOpaque IS NULL, 1, 0)) AS partition_key_opaque_null
-FROM `httparchive.almanac.2024-06-01_top10k_cookies`
+FROM `httparchive.almanac.2024-06-01_top100k_cookies`
 GROUP BY client, is_first_party
