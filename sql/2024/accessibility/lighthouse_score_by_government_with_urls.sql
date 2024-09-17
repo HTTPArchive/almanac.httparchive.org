@@ -98,23 +98,23 @@ domain_scores AS (
       WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.gr(/|$)') THEN 'Greece'
       WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.ge(/|$)') THEN 'Georgia Country'
       WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.pt(/|$)') THEN 'Portugal'
-      WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.es(/|$)') THEN 'Spain'
+      WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.es|gob\.es|ine\.es|boe\.es(/|$)') THEN 'Spain'
       WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.se/|1177\.se/|funktionstjanster\.se/|hemnet\.se/|smhi\.se/|sverigesradio\.se/|klart\.se/|bankid\.com/|synonymer\.se/|arbetsformedlingen\.se/|skatteverket\.se/|schoolsoft\.se/|postnord\.se/|grandid\.com/|viaplay\.se/|skola24\.se/|forsakringskassan\.se/|vklass\.se|sl\.se/|familjeliv\.se(/|$)') THEN 'Sweden'
+      WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.fi/|valtioneuvosto\.fi/|minedu\.fi/|formin\.fi/|intermin\.fi/|suomi\.fi/|ym\.fi/|stm\.fi/|tem\.fi/|lvm\.fi/|mmm\.fi/|okm\.fi/|vm\.fi/|defmin\.fi/|oikeusministerio\.fi/|um\.fi/|vero\.fi/|kela\.fi(/|$)') THEN 'Finland'
       WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.no(/|$)') THEN 'Norway'
-      WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.dk(/|$)') THEN 'Denmark'
-      WHEN REGEXP_CONTAINS(page, r'(?i)\.riik\.ee(/|$)') THEN 'Estonia'
+      WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.dk/|\.ft\.dk/|\.nemkonto\.dk/|\.nemlog-in\.dk/|\.mitid\.dk/|\.digst\.dk/|\.sikkerdigital\.dk/|\.forsvaret\.dk/|\.skat\.dk/|\.stps\.dk/|\.ufm\.dk/|\.urm\.dk/|\.uvm\.dk/|\.politi\.dk/|\.dataetiskraad\.dk/|\.at\.dk/|\.kum\.dk(/|$)') THEN 'Denmark'
+      WHEN REGEXP_CONTAINS(page, r'(?i)\.riik\.ee/|\.riigiteataja\.ee/|\.eesti\.ee/|\.valitsus\.ee(/|$)') THEN 'Estonia'
       WHEN REGEXP_CONTAINS(page, r'(?i)\.admin\.ch(/|$)') THEN 'Switzerland'
       WHEN REGEXP_CONTAINS(page, r'(?i)\.public\.lu(/|$)') THEN 'Luxembourg'
       WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.fi|\.valtioneuvosto\.fi/|\.minedu\.fi/|\.formin\.fi/|\.intermin\.fi(/|$)') THEN 'Finland'
       WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.hr(/|$)') THEN 'Croatia'
       WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.cz(/|$)') THEN 'Czech Republic'
       WHEN REGEXP_CONTAINS(page, r'(?i)\.government\.bg(/|$)') THEN 'Bulgaria'
-      WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.be(/|$)') THEN 'Belgium'
-      WHEN REGEXP_CONTAINS(page, r'(?i)\.belgium\.be/|\.fgov\.be/|\.vlaanderen\.be/|\.wallonie\.be/|\.brussels\.be/|\.mil\.be(/|$)') THEN 'Belgium'
+      WHEN REGEXP_CONTAINS(page, r'(?i)\.belgium\.be/|\.gov\.be/\.fgov\.be/|\.vlaanderen\.be/|\.wallonie\.be/|\.brussels\.be/|\.mil\.be(/|$)') THEN 'Belgium'
       WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.hu(/|$)') THEN 'Hungary'
       WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.ie(/|$)') THEN 'Ireland'
       WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.pl(/|$)') THEN 'Poland'
-      WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.lt/|\.vrm.lt/|\.sam.lt/|\.ukmin.lt(/|$)') THEN 'Lithuania'
+      WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.lt/|\.vrm\.lt/|\.sam\.lt/|\.ukmin\.lt/|\.lrv\.lt/|\.uzt\.lt/|\.migracija\.lt/|\.kam\.lt/|\.lrs\.lt/|\.urm\.lt(/|$)') THEN 'Lithuania'
       WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.nl/|\.overheid\.nl/|\.mijnoverheid\.nl(/|$)') THEN 'Netherlands'
       WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.si(/|$)') THEN 'Slovenia'
       WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.sk(/|$)') THEN 'Slovakia'
@@ -245,7 +245,7 @@ domain_scores AS (
       '|(\\w+\\.)*\\.um\\.fi(/|$)'
       '|(\\w+\\.)*\\.vero\\.fi(/|$)'
       '|(\\w+\\.)*\\.kela\\.fi(/|$)'
-  
+
       '|(\\w+\\.)*\\.lrv\\.lt(/|$)'  -- Lithuania
       '|(\\w+\\.)*\\.uzt\\.lt(/|$)'
       '|(\\w+\\.)*\\.migracija\\.lt(/|$)'
@@ -259,6 +259,27 @@ domain_scores AS (
       '|(\\w+\\.)*\\.valitsus\\.ee(/|$)'
 
       '|(\\w+\\.)*\\.admin\\.ch(/|$)'  -- Switzerland
+
+      '|(\\w+\\.)*\\.seg-social\\.es(/|$)'  -- Spain
+      '|(\\w+\\.)*\\.ine\\.es(/|$)'
+      '|(\\w+\\.)*\\.boe\\.es(/|$)'
+
+      '|(\\w+\\.)*\\.ft\\.dk(/|$)'  -- Denmark
+      '|(\\w+\\.)*\\.nemkonto\\.dk(/|$)'
+      '|(\\w+\\.)*\\.nemlog-in\\.dk(/|$)'
+      '|(\\w+\\.)*\\.mitid\\.dk(/|$)'
+      '|(\\w+\\.)*\\.digst\\.dk(/|$)'
+      '|(\\w+\\.)*\\.sikkerdigital\\.dk(/|$)'
+      '|(\\w+\\.)*\\.forsvaret\\.dk(/|$)'
+      '|(\\w+\\.)*\\.skat\\.dk(/|$)'
+      '|(\\w+\\.)*\\.stps\\.dk(/|$)'
+      '|(\\w+\\.)*\\.ufm\\.dk(/|$)'
+      '|(\\w+\\.)*\\.urm\\.dk(/|$)'
+      '|(\\w+\\.)*\\.uvm\\.dk(/|$)'
+      '|(\\w+\\.)*\\.politi\\.dk(/|$)'
+      '|(\\w+\\.)*\\.dataetiskraad\\.dk(/|$)'
+      '|(\\w+\\.)*\\.at\\.dk(/|$)'
+      '|(\\w+\\.)*\\.kum\\.dk(/|$)'
 
       '|(\\w+\\.)*\\.public\\.lu(/|$)'  -- Luxembourg
 
