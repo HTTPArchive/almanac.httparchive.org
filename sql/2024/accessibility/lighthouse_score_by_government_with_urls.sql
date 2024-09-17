@@ -124,6 +124,7 @@ domain_scores AS (
       WHEN REGEXP_CONTAINS(page, r'(?i)\\.gov\\.rs(/|$)') THEN 'Serbia'
       WHEN REGEXP_CONTAINS(page, r'(?i)\\.gov\\.ge(/|$)') THEN 'Georgia'
       WHEN REGEXP_CONTAINS(page, r'(?i)\\.gov\\.by(/|$)') THEN 'Belarus'
+      WHEN REGEXP_CONTAINS(page, r'(?i)\\.gov\\.ad(/|$)|\\.govern\\.ad(/|$)|\\.exteriors\\.ad(/|$)|\\.consellgeneral\\.ad(/|$)') THEN 'Andorra'
 
       -- Other Countries
       WHEN REGEXP_CONTAINS(page, r'(?i)\\.gov\\.in(/|$)|\\.nic\\.in(/|$)') THEN 'India'
@@ -313,6 +314,10 @@ domain_scores AS (
 
       '|(\\w+\\.)*\\.overheid\\.nl(/|$)'  -- Netherlands
       '|(\\w+\\.)*\\.mijnoverheid\\.nl(/|$)'
+
+      '|(\\w+\\.)*\\.govern\\.ad(/|$)'  -- Andorra
+      '|(\\w+\\.)*\\.exteriors\\.ad(/|$)'  
+      '|(\\w+\\.)*\\.consellgeneral\\.ad(/|$)'
 
       ')')
 )
