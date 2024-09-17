@@ -85,10 +85,10 @@ domain_scores AS (
       -- North American Federal Governments
       WHEN REGEXP_CONTAINS(page, r'(?i)\.va\.gov(/|$)') THEN 'USA VA.gov'
       WHEN REGEXP_CONTAINS(page, r'(?i)\.cms\.gov(/|$)') THEN 'USA CMS.gov'
-      WHEN REGEXP_CONTAINS(page, r'(?i)://(?:.*\.)?gov(/[a-zA-Z0-9_.-]*)?$') THEN 'United States (USA)'
+      WHEN REGEXP_CONTAINS(page, r'(?i)://(?:.*\.)?gov(/[a-zA-Z0-9_.-]*)?$') THEN 'United States (USA)' -- Note that the states and specific departments are listed first so that they are distict from the earlier domains.
       WHEN REGEXP_CONTAINS(page, r'(?i)://(?:.*\.)?mil(/[a-zA-Z0-9_.-]*)?$') THEN 'USA Military'
       WHEN REGEXP_CONTAINS(page, r'(?i)\.gob\.mx(/|$)') THEN 'Mexico'
-      WHEN REGEXP_CONTAINS(page, r'(?i)\.gc\.ca/|\.canada\.ca') THEN 'Canada'
+      WHEN REGEXP_CONTAINS(page, r'(?i)\.gc\.ca|\.canada\.ca|\.alberta\.ca|\.gov\.ab\.ca|\.gov\.bc\.ca|\.manitoba\.ca|\.gov\.mb\.ca|\.gnb\.ca|\.gov\.nb\.ca|\.gov\.nl\.ca|\.novascotia\.ca|\.gov\.ns\.ca|\.ontario\.ca|\.gov\.on\.ca|\.gov\.pe\.ca|\.quebec\.ca|\.gouv\.qc\.ca|\.revenuquebec\.ca|\.saskatchewan\.ca|\.gov\.sk\.ca|\.gov\.nt\.ca|\.gov\.nu\.ca|\.yukon\.ca|\.gov\.yk\.ca') THEN 'Canada'
 
       -- European Countries
       WHEN REGEXP_CONTAINS(page, r'(?i)\.gov\.uk(/|$)') THEN 'United Kingdom (UK)'
@@ -197,6 +197,28 @@ domain_scores AS (
 
       '|(\\w+\\.)*\\.gc\\.ca(/|$)'  -- Canada and provinces
       '|(\\w+\\.)*\\.canada\\.ca(/|$)'
+      '|(\\w+\\.)*\\.alberta\\.ca(/|$)'
+      '|(\\w+\\.)*\\.gov\\.ab\\.ca(/|$)'
+      '|(\\w+\\.)*\\.gov\\.bc\\.ca(/|$)'
+      '|(\\w+\\.)*\\.manitoba\\.ca(/|$)'
+      '|(\\w+\\.)*\\.gov\\.mb\\.ca(/|$)'
+      '|(\\w+\\.)*\\.gnb\\.ca(/|$)'
+      '|(\\w+\\.)*\\.gov\\.nb\\.ca(/|$)'
+      '|(\\w+\\.)*\\.gov\\.nl\\.ca(/|$)'
+      '|(\\w+\\.)*\\.novascotia\\.ca(/|$)'
+      '|(\\w+\\.)*\\.gov\\.ns\\.ca(/|$)'
+      '|(\\w+\\.)*\\.ontario\\.ca(/|$)'
+      '|(\\w+\\.)*\\.gov\\.on\\.ca(/|$)'
+      '|(\\w+\\.)*\\.gov\\.pe\\.ca(/|$)'
+      '|(\\w+\\.)*\\.quebec\\.ca(/|$)'
+      '|(\\w+\\.)*\\.gouv\\.qc\\.ca(/|$)'
+      '|(\\w+\\.)*\\.revenuquebec\\.ca(/|$)'
+      '|(\\w+\\.)*\\.saskatchewan\\.ca(/|$)'
+      '|(\\w+\\.)*\\.gov\\.sk\\.ca(/|$)'
+      '|(\\w+\\.)*\\.gov\\.nt\\.ca(/|$)'
+      '|(\\w+\\.)*\\.gov\\.nu\\.ca(/|$)'
+      '|(\\w+\\.)*\\.yukon\\.ca(/|$)'
+      '|(\\w+\\.)*\\.gov\\.yk\\.ca(/|$)'
 
       '|(\\w+\\.)*\\.bund\\.de(/|$)'  -- Germany
 
