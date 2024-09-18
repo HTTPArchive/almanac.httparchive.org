@@ -1,3 +1,5 @@
+
+
 #standardSQL
 # List all included government domains along with scores
 
@@ -186,7 +188,7 @@ domain_scores AS (
       WHEN REGEXP_CONTAINS(page, r'(?i)\\.cf(/|$)') THEN 'Central African Republic'
       WHEN REGEXP_CONTAINS(page, r'(?i)\\.td(/|$)') THEN 'Chad'
       WHEN REGEXP_CONTAINS(page, r'(?i)\\.cl(/|$)') THEN 'Chile'
-      WHEN REGEXP_CONTAINS(page, r'(?i)\\.cn(/|$)') THEN 'China, People’s Republic of'
+      WHEN REGEXP_CONTAINS(page, r'(?i)\\.cn(/|$)') THEN 'China'
       WHEN REGEXP_CONTAINS(page, r'(?i)\\.cx(/|$)') THEN 'Christmas Island'
       WHEN REGEXP_CONTAINS(page, r'(?i)\\.cc(/|$)') THEN 'Cocos (Keeling) Islands'
       WHEN REGEXP_CONTAINS(page, r'(?i)\\.co(/|$)') THEN 'Colombia'
@@ -195,7 +197,7 @@ domain_scores AS (
       WHEN REGEXP_CONTAINS(page, r'(?i)\\.cg(/|$)') THEN 'Congo, Republic of the (Congo-Brazzaville)'
       WHEN REGEXP_CONTAINS(page, r'(?i)\\.ck(/|$)') THEN 'Cook Islands'
       WHEN REGEXP_CONTAINS(page, r'(?i)\\.cr(/|$)') THEN 'Costa Rica'
-      WHEN REGEXP_CONTAINS(page, r'(?i)\\.ci(/|$)') THEN 'Côte d’Ivoire (Ivory Coast)'
+      WHEN REGEXP_CONTAINS(page, r'(?i)\\.ci(/|$)') THEN 'Ivory Coast'
       WHEN REGEXP_CONTAINS(page, r'(?i)\\.cu(/|$)') THEN 'Cuba'
       WHEN REGEXP_CONTAINS(page, r'(?i)\\.cw(/|$)') THEN 'Curaçao'
       WHEN REGEXP_CONTAINS(page, r'(?i)\\.dj(/|$)') THEN 'Djibouti'
@@ -217,10 +219,10 @@ domain_scores AS (
       WHEN REGEXP_CONTAINS(page, r'(?i)\\.gf(/|$)') THEN 'French Guiana'
       WHEN REGEXP_CONTAINS(page, r'(?i)\\.pf(/|$)') THEN 'French Polynesia'
       WHEN REGEXP_CONTAINS(page, r'(?i)\\.tf(/|$)') THEN 'French Southern and Antarctic Lands'
-      WHEN REGEXP_CONTAINS(page, r'(?i)\\.ga(/|$)') THEN 'Gabon (officially: Gabonese Republic)'
+      WHEN REGEXP_CONTAINS(page, r'(?i)\\.ga(/|$)') THEN 'Gabon'
       WHEN REGEXP_CONTAINS(page, r'(?i)\\.gal(/|$)') THEN 'Galicia'
       WHEN REGEXP_CONTAINS(page, r'(?i)\\.gm(/|$)') THEN 'Gambia'
-      WHEN REGEXP_CONTAINS(page, r'(?i)\\.ps(/|$)') THEN 'Gaza Strip (Gaza)'
+      WHEN REGEXP_CONTAINS(page, r'(?i)\\.ps(/|$)') THEN 'Gaza'
       WHEN REGEXP_CONTAINS(page, r'(?i)\\.gh(/|$)') THEN 'Ghana'
       WHEN REGEXP_CONTAINS(page, r'(?i)\\.gl(/|$)') THEN 'Greenland'
       WHEN REGEXP_CONTAINS(page, r'(?i)\\.gd(/|$)') THEN 'Grenada'
@@ -232,7 +234,7 @@ domain_scores AS (
       WHEN REGEXP_CONTAINS(page, r'(?i)\\.gw(/|$)') THEN 'Guinea-Bissau'
       WHEN REGEXP_CONTAINS(page, r'(?i)\\.gy(/|$)') THEN 'Guyana'
       WHEN REGEXP_CONTAINS(page, r'(?i)\\.ht(/|$)') THEN 'Haiti'
-      WHEN REGEXP_CONTAINS(page, r'(?i)\\.hm(/|$)') THEN 'Heard Island and McDonald Islands'
+      WHEN REGEXP_CONTAINS(page, r'(?i)\\.hm(/|$)') THEN 'Heard Island'
       WHEN REGEXP_CONTAINS(page, r'(?i)\\.hn(/|$)') THEN 'Honduras'
       WHEN REGEXP_CONTAINS(page, r'(?i)\\.hk(/|$)') THEN 'Hong Kong'
       WHEN REGEXP_CONTAINS(page, r'(?i)\\.gov\\.in(/|$)|(?i)\\.nic\\.in(/|$)') THEN 'India'
