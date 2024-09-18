@@ -3,12 +3,15 @@ This module retrieves and extracts trackers as identified by WhoTracks.me
 and appends them to the httparchive.almanac.whotracksme BigQuery table.
 """
 
-import sqlite3
+# pylint: disable=import-error
+
 from datetime import datetime as DateTime
+import sqlite3
 
 import pandas
-import requests  # pylint: disable=import-error
-from google.cloud import bigquery  # pylint: disable=import-error
+import requests
+from bq_writer import write_to_bq, bigquery
+
 
 # get current year
 year = DateTime.now().year
@@ -41,18 +44,11 @@ trackers_df = pandas.read_sql(trackers_query, connection)
 connection.close()
 
 # Append to almanac.whotracksme BQ table
-client = bigquery.Client()
-job_config = bigquery.LoadJobConfig(
-    schema=[
-        bigquery.SchemaField("date", "DATE"),
-        bigquery.SchemaField("category", "STRING"),
-        bigquery.SchemaField("tracker", "STRING"),
-        bigquery.SchemaField("domain", "STRING"),
-    ],
-    source_format=bigquery.SourceFormat.CSV,
-    write_disposition="WRITE_APPEND",
-)
-job = client.load_table_from_dataframe(
-    trackers_df, "httparchive.almanac.whotracksme", job_config=job_config
-)
-job.result()  # Waits for the job to complete.
+schema = [
+    bigquery.SchemaField("date", "DATE"),
+    bigquery.SchemaField("category", "STRING"),
+    bigquery.SchemaField("tracker", "STRING"),
+    bigquery.SchemaField("domain", "STRING"),
+]
+
+write_to_bq(trackers_df, "httparchive.almanac.whotracksme", schema)

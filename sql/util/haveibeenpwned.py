@@ -7,7 +7,8 @@ from datetime import datetime as DateTime
 
 import pandas
 import requests  # pylint: disable=import-error
-from google.cloud import bigquery  # pylint: disable=import-error
+from bq_writer import write_to_bq, bigquery
+
 
 # Retrieve data from the "haveibeenpwned" API
 breaches = json.loads(
@@ -34,34 +35,25 @@ df["LogoPath"] = df["LogoPath"].astype(str)
 df["DataClasses"] = df["DataClasses"].apply(json.dumps)
 
 # Append to httparchive.almanac.breaches
-client = bigquery.Client()
-job_config = bigquery.LoadJobConfig(
-    source_format=bigquery.SourceFormat.CSV,
-    write_disposition="WRITE_APPEND",
-    schema=[
-        bigquery.SchemaField("date", "DATE"),
-        bigquery.SchemaField("Name", "STRING"),
-        bigquery.SchemaField("Title", "STRING"),
-        bigquery.SchemaField("Domain", "STRING"),
-        bigquery.SchemaField("BreachDate", "DATE"),
-        bigquery.SchemaField("AddedDate", "DATE"),
-        bigquery.SchemaField("ModifiedDate", "DATE"),
-        bigquery.SchemaField("PwnCount", "INTEGER"),
-        bigquery.SchemaField("Description", "STRING"),
-        bigquery.SchemaField("LogoPath", "STRING"),
-        bigquery.SchemaField("IsVerified", "BOOLEAN"),
-        bigquery.SchemaField("IsFabricated", "BOOLEAN"),
-        bigquery.SchemaField("IsSensitive", "BOOLEAN"),
-        bigquery.SchemaField("IsRetired", "BOOLEAN"),
-        bigquery.SchemaField("IsSpamList", "BOOLEAN"),
-        bigquery.SchemaField("DataClasses", "STRING"),
-    ],
-)
 
-job = client.load_table_from_dataframe(
-    df,
-    "httparchive.almanac.breaches",
-    job_config=job_config,
-)
 
-job.result()  # Waits for the job to complete.
+schema = [
+    bigquery.SchemaField("date", "DATE"),
+    bigquery.SchemaField("Name", "STRING"),
+    bigquery.SchemaField("Title", "STRING"),
+    bigquery.SchemaField("Domain", "STRING"),
+    bigquery.SchemaField("BreachDate", "DATE"),
+    bigquery.SchemaField("AddedDate", "DATE"),
+    bigquery.SchemaField("ModifiedDate", "DATE"),
+    bigquery.SchemaField("PwnCount", "INTEGER"),
+    bigquery.SchemaField("Description", "STRING"),
+    bigquery.SchemaField("LogoPath", "STRING"),
+    bigquery.SchemaField("IsVerified", "BOOLEAN"),
+    bigquery.SchemaField("IsFabricated", "BOOLEAN"),
+    bigquery.SchemaField("IsSensitive", "BOOLEAN"),
+    bigquery.SchemaField("IsRetired", "BOOLEAN"),
+    bigquery.SchemaField("IsSpamList", "BOOLEAN"),
+    bigquery.SchemaField("DataClasses", "STRING"),
+]
+
+write_to_bq(df, "httparchive.almanac.breaches", schema)
