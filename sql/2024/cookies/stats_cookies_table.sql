@@ -5,6 +5,7 @@ SELECT
   is_first_party,
   SUM(IF(is_first_party = TRUE, 1, 0)) AS nb_first_party,
   SUM(IF(is_first_party = FALSE, 1, 0)) AS nb_third_party,
+  COUNT(0) AS total_cookies,
   COUNT(DISTINCT first_party_host) AS distinct_websites,
   COUNT(DISTINCT CONCAT(name, domain)) AS distinct_cookies_name_domain,
   COUNT(DISTINCT name) AS distinct_cookies,
