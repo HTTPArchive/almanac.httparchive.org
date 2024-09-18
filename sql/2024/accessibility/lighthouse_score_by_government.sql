@@ -174,7 +174,8 @@ domain_scores AS (
     performance_score,
     accessibility_score,
     best_practices_score,
-    seo_score
+    seo_score,
+    wptid
   FROM
     score_data
   WHERE
