@@ -25,7 +25,6 @@ domain_scores AS (
   SELECT
     page,
      CASE
-
        -- United Nations
       WHEN REGEXP_CONTAINS(page, r'\.un\.org/|\.worldbank\.org/|\.undp\.org/|\.reliefweb.int/|\.who.int/|\.unfccc.int/|\.unccd.int/|\.unesco.org/') THEN 'United Nations'
       WHEN REGEXP_CONTAINS(page, r'\.europa\.eu/') THEN 'European Union'
@@ -87,64 +86,63 @@ domain_scores AS (
       WHEN REGEXP_CONTAINS(page, r'\.guam\.gov/') THEN 'Guam'
       WHEN REGEXP_CONTAINS(page, r'\.americansamoa\.gov/') THEN 'American Samoa'
       -- USA .gov domains need to be at the very end so that all other instances catch them.
-      WHEN REGEXP_CONTAINS(page, r'\.mil/') THEN 'USA Military'
       WHEN REGEXP_CONTAINS(page, r'\.gob\.mx/') THEN 'Mexico'
       WHEN REGEXP_CONTAINS(page, r'\.(gc\.ca|canada\.ca|alberta\.ca|gov\.ab\.ca|gov\.bc\.ca|manitoba\.ca|gov\.mb\.ca|gnb\.ca|gov\.nb\.ca|gov\.nl\.ca|novascotia\.ca|gov\.ns\.ca|ontario\.ca|gov\.on\.ca|gov\.pe\.ca|quebec\.ca|gouv\.qc\.ca|revenuquebec\.ca|saskatchewan\.ca|gov\.sk\.ca|gov\.nt\.ca|gov\.nu\.ca|yukon\.ca|gov\.yk\.ca)/') THEN 'Canada'
 
       -- European Countries
-      WHEN REGEXP_CONTAINS(page, r'\.gov\.al/') THEN 'Albania'
+      WHEN REGEXP_CONTAINS(page, r'\.(gov|mil)\.al/') THEN 'Albania'
       WHEN REGEXP_CONTAINS(page, r'\.ax/') THEN 'Åland'
-      WHEN REGEXP_CONTAINS(page, r'\.gov\.ad/|\.govern\.ad/|\.exteriors\.ad/|\.consellgeneral\.ad/') THEN 'Andorra'
+      WHEN REGEXP_CONTAINS(page, r'\.(gov|mil)\.ad/|\.govern\.ad/|\.exteriors\.ad/|\.consellgeneral\.ad/') THEN 'Andorra'
       WHEN REGEXP_CONTAINS(page, r'\.am/') THEN 'Armenia'
       WHEN REGEXP_CONTAINS(page, r'\.gv\.at/') THEN 'Austria'
       WHEN REGEXP_CONTAINS(page, r'\.az/') THEN 'Azerbaijan'
       WHEN REGEXP_CONTAINS(page, r'\.eus/') THEN 'Basque Country'
-      WHEN REGEXP_CONTAINS(page, r'\.gov\.by/') THEN 'Belarus'
-      WHEN REGEXP_CONTAINS(page, r'\.belgium\.be/|\.gov\.be/|\.fgov\.be/|\.vlaanderen\.be/|\.wallonie\.be/|\.brussels\.be/|\.mil\.be/') THEN 'Belgium'
+      WHEN REGEXP_CONTAINS(page, r'\.(gov|mil)\.by/') THEN 'Belarus'
+      WHEN REGEXP_CONTAINS(page, r'\.belgium\.be/|\.(gov|mil)\.be/|\.fgov\.be/|\.vlaanderen\.be/|\.wallonie\.be/|\.brussels\.be/|\.mil\.be/') THEN 'Belgium'
       WHEN REGEXP_CONTAINS(page, r'\.ba/') THEN 'Bosnia and Herzegovina'
       WHEN REGEXP_CONTAINS(page, r'\.government\.bg/') THEN 'Bulgaria'
-      WHEN REGEXP_CONTAINS(page, r'\.gov\.hr/') THEN 'Croatia'
+      WHEN REGEXP_CONTAINS(page, r'\.(gov|mil)\.hr/') THEN 'Croatia'
       WHEN REGEXP_CONTAINS(page, r'\.cy/') THEN 'Cyprus'
-      WHEN REGEXP_CONTAINS(page, r'\.gov\.cz/') THEN 'Czechia (Czech Republic)'
-      WHEN REGEXP_CONTAINS(page, r'\.gov\.dk/|\.ft\.dk/|\.nemkonto\.dk/|\.nemlog-in\.dk/|\.mitid\.dk/|\.digst\.dk/|\.sikkerdigital\.dk/|\.forsvaret\.dk/|\.skat\.dk/|\.stps\.dk/|\.ufm\.dk/|\.urm\.dk/|\.uvm\.dk/|\.politi\.dk/|\.dataetiskraad\.dk/|\.at\.dk/|\.kum\.dk/') THEN 'Denmark'
+      WHEN REGEXP_CONTAINS(page, r'\.(gov|mil)\.cz/') THEN 'Czechia (Czech Republic)'
+      WHEN REGEXP_CONTAINS(page, r'\.(gov|mil)\.dk/|\.ft\.dk/|\.nemkonto\.dk/|\.nemlog-in\.dk/|\.mitid\.dk/|\.digst\.dk/|\.sikkerdigital\.dk/|\.forsvaret\.dk/|\.skat\.dk/|\.stps\.dk/|\.ufm\.dk/|\.urm\.dk/|\.uvm\.dk/|\.politi\.dk/|\.dataetiskraad\.dk/|\.at\.dk/|\.kum\.dk/') THEN 'Denmark'
       WHEN REGEXP_CONTAINS(page, r'\.riik\.ee/|\.riigiteataja\.ee/|\.eesti\.ee/|\.valitsus\.ee/') THEN 'Estonia'
-      WHEN REGEXP_CONTAINS(page, r'\.gov\.fi/|\.valtioneuvosto\.fi/|\.minedu\.fi/|\.formin\.fi/|\.intermin\.fi/|\.suomi\.fi/|\.ym\.fi/|\.stm\.fi/|\.tem\.fi/|\.lvm\.fi/|\.mmm\.fi/|\.okm\.fi/|\.vm\.fi/|\.defmin\.fi/|\.oikeusministerio\.fi/|\.um\.fi/|\.vero\.fi/|\.kela\.fi/') THEN 'Finland'
+      WHEN REGEXP_CONTAINS(page, r'\.(gov|mil)\.fi/|\.valtioneuvosto\.fi/|\.minedu\.fi/|\.formin\.fi/|\.intermin\.fi/|\.suomi\.fi/|\.ym\.fi/|\.stm\.fi/|\.tem\.fi/|\.lvm\.fi/|\.mmm\.fi/|\.okm\.fi/|\.vm\.fi/|\.defmin\.fi/|\.oikeusministerio\.fi/|\.um\.fi/|\.vero\.fi/|\.kela\.fi/') THEN 'Finland'
       WHEN REGEXP_CONTAINS(page, r'\.gouv\.fr/') THEN 'France'
-      WHEN REGEXP_CONTAINS(page, r'\.gov\.ge/') THEN 'Georgia Country'
+      WHEN REGEXP_CONTAINS(page, r'\.(gov|mil)\.ge/') THEN 'Georgia Country'
       WHEN REGEXP_CONTAINS(page, r'\.bund\.de/') THEN 'Germany'
       WHEN REGEXP_CONTAINS(page, r'\.gi/') THEN 'Gibraltar'
-      WHEN REGEXP_CONTAINS(page, r'\.gov\.gr/') THEN 'Greece'
-      WHEN REGEXP_CONTAINS(page, r'\.gov\.hu/') THEN 'Hungary'
+      WHEN REGEXP_CONTAINS(page, r'\.(gov|mil)\.gr/') THEN 'Greece'
+      WHEN REGEXP_CONTAINS(page, r'\.(gov|mil)\.hu/') THEN 'Hungary'
       WHEN REGEXP_CONTAINS(page, r'\.is/') THEN 'Iceland'
-      WHEN REGEXP_CONTAINS(page, r'\.gov\.ie/') THEN 'Ireland'
+      WHEN REGEXP_CONTAINS(page, r'\.(gov|mil)\.ie/') THEN 'Ireland'
       WHEN REGEXP_CONTAINS(page, r'\.im/') THEN 'Isle of Man'
-      WHEN REGEXP_CONTAINS(page, r'\.gov\.it/|\.governo\.it/') THEN 'Italy'
+      WHEN REGEXP_CONTAINS(page, r'\.(gov|mil)\.it/|\.governo\.it/') THEN 'Italy'
       WHEN REGEXP_CONTAINS(page, r'\.kz/') THEN 'Kazakhstan'
       WHEN REGEXP_CONTAINS(page, r'\.lv/') THEN 'Latvia'
       WHEN REGEXP_CONTAINS(page, r'\.li/') THEN 'Liechtenstein'
-      WHEN REGEXP_CONTAINS(page, r'\.gov\.lt/|\.vrm\.lt/|\.sam\.lt/|\.ukmin\.lt/|\.lrv\.lt/|\.uzt\.lt/|\.migracija\.lt/|\.kam\.lt/|\.lrs\.lt/|\.urm\.lt/') THEN 'Lithuania'
+      WHEN REGEXP_CONTAINS(page, r'\.(gov|mil)\.lt/|\.vrm\.lt/|\.sam\.lt/|\.ukmin\.lt/|\.lrv\.lt/|\.uzt\.lt/|\.migracija\.lt/|\.kam\.lt/|\.lrs\.lt/|\.urm\.lt/') THEN 'Lithuania'
       WHEN REGEXP_CONTAINS(page, r'\.public\.lu/|\.etat\.lu/') THEN 'Luxembourg'
       WHEN REGEXP_CONTAINS(page, r'\.mt/') THEN 'Malta'
       WHEN REGEXP_CONTAINS(page, r'\.md/') THEN 'Moldova'
       WHEN REGEXP_CONTAINS(page, r'\.mc/') THEN 'Monaco'
       WHEN REGEXP_CONTAINS(page, r'\.me/') THEN 'Montenegro'
-      WHEN REGEXP_CONTAINS(page, r'\.gov\.nl/|\.overheid\.nl/|\.mijnoverheid\.nl/') THEN 'Netherlands'
+      WHEN REGEXP_CONTAINS(page, r'\.(gov|mil)\.nl/|\.overheid\.nl/|\.mijnoverheid\.nl/') THEN 'Netherlands'
       WHEN REGEXP_CONTAINS(page, r'\.mk/') THEN 'Macedonia'
-      WHEN REGEXP_CONTAINS(page, r'\.gov\.no/') THEN 'Norway'
-      WHEN REGEXP_CONTAINS(page, r'\.gov\.pl/') THEN 'Poland'
-      WHEN REGEXP_CONTAINS(page, r'\.gov\.pt/') THEN 'Portugal'
+      WHEN REGEXP_CONTAINS(page, r'\.(gov|mil)\.no/') THEN 'Norway'
+      WHEN REGEXP_CONTAINS(page, r'\.(gov|mil)\.pl/') THEN 'Poland'
+      WHEN REGEXP_CONTAINS(page, r'\.(gov|mil)\.pt/') THEN 'Portugal'
       WHEN REGEXP_CONTAINS(page, r'\.ro/') THEN 'Romania'
-      WHEN REGEXP_CONTAINS(page, r'\.gov\.ru/|\.govvrn\.ru/') THEN 'Russia'
+      WHEN REGEXP_CONTAINS(page, r'\.(gov|mil)\.ru/|\.govvrn\.ru/') THEN 'Russia'
       WHEN REGEXP_CONTAINS(page, r'\.sm/') THEN 'San Marino'
-      WHEN REGEXP_CONTAINS(page, r'\.gov\.rs/') THEN 'Serbia'
-      WHEN REGEXP_CONTAINS(page, r'\.gov\.sk/') THEN 'Slovakia'
-      WHEN REGEXP_CONTAINS(page, r'\.gov\.si/') THEN 'Slovenia'
-      WHEN REGEXP_CONTAINS(page, r'\.gov\.es|gob\.es|ine\.es|boe\.es/') THEN 'Spain'
+      WHEN REGEXP_CONTAINS(page, r'\.(gov|mil)\.rs/') THEN 'Serbia'
+      WHEN REGEXP_CONTAINS(page, r'\.(gov|mil)\.sk/') THEN 'Slovakia'
+      WHEN REGEXP_CONTAINS(page, r'\.(gov|mil)\.si/') THEN 'Slovenia'
+      WHEN REGEXP_CONTAINS(page, r'\.(gov|mil)\.es|gob\.es|ine\.es|boe\.es/') THEN 'Spain'
       WHEN REGEXP_CONTAINS(page, r'\.sj/') THEN 'Svalbard and Jan Mayen Islands'
-      WHEN REGEXP_CONTAINS(page, r'\.gov\.se/|\.1177\.se/|\.funktionstjanster\.se/|\.hemnet\.se/|\.smhi\.se/|\.sverigesradio\.se/|\.klart\.se/|\.bankid\.com/|\.synonymer\.se/|\.arbetsformedlingen\.se/|\.skatteverket\.se/|\.schoolsoft\.se/|\.postnord\.se/|\.grandid\.com/|\.viaplay\.se/|\.skola24\.se/|\.forsakringskassan\.se/|\.vklass\.se|sl\.se/|\.familjeliv\.se(/|\.$)') THEN 'Sweden'
+      WHEN REGEXP_CONTAINS(page, r'\.(gov|mil)\.se/|\.1177\.se/|\.funktionstjanster\.se/|\.hemnet\.se/|\.smhi\.se/|\.sverigesradio\.se/|\.klart\.se/|\.bankid\.com/|\.synonymer\.se/|\.arbetsformedlingen\.se/|\.skatteverket\.se/|\.schoolsoft\.se/|\.postnord\.se/|\.grandid\.com/|\.viaplay\.se/|\.skola24\.se/|\.forsakringskassan\.se/|\.vklass\.se|sl\.se/|\.familjeliv\.se(/|\.$)') THEN 'Sweden'
       WHEN REGEXP_CONTAINS(page, r'\.admin\.ch/') THEN 'Switzerland'
       WHEN REGEXP_CONTAINS(page, r'\.gv\.ua/') THEN 'Ukraine'
-      WHEN REGEXP_CONTAINS(page, r'\.gov\.uk/') THEN 'United Kingdom (UK)'
+      WHEN REGEXP_CONTAINS(page, r'\.(gov|mil)\.uk/') THEN 'United Kingdom (UK)'
 
       -- Other Countries
       WHEN REGEXP_CONTAINS(page, r'\.af/') THEN 'Afghanistan'
@@ -154,7 +152,7 @@ domain_scores AS (
       WHEN REGEXP_CONTAINS(page, r'\.ai/') THEN 'Anguilla'
       WHEN REGEXP_CONTAINS(page, r'\.aq/') THEN 'Antarctica'
       WHEN REGEXP_CONTAINS(page, r'\.ag/') THEN 'Antigua and Barbuda'
-      WHEN REGEXP_CONTAINS(page, r'\.gub\.ar/|\.gov\.ar/') THEN 'Argentina'
+      WHEN REGEXP_CONTAINS(page, r'\.(mil|gov|gob|gub)\.ar/') THEN 'Argentina'
       WHEN REGEXP_CONTAINS(page, r'\.aw/') THEN 'Aruba'
       WHEN REGEXP_CONTAINS(page, r'\.ac/') THEN 'Ascension Island'
       WHEN REGEXP_CONTAINS(page, r'\.au/') THEN 'Australia'
@@ -235,7 +233,7 @@ domain_scores AS (
       WHEN REGEXP_CONTAINS(page, r'\.hm/') THEN 'Heard Island'
       WHEN REGEXP_CONTAINS(page, r'\.hn/') THEN 'Honduras'
       WHEN REGEXP_CONTAINS(page, r'\.hk/') THEN 'Hong Kong'
-      WHEN REGEXP_CONTAINS(page, r'\.gov\.in/|\.nic\.in/') THEN 'India'
+      WHEN REGEXP_CONTAINS(page, r'\.(gov|mil)\.in/|\.nic\.in/') THEN 'India'
       WHEN REGEXP_CONTAINS(page, r'\.id/') THEN 'Indonesia'
       WHEN REGEXP_CONTAINS(page, r'\.ir/') THEN 'Iran'
       WHEN REGEXP_CONTAINS(page, r'\.iq/') THEN 'Iraq'
@@ -324,7 +322,7 @@ domain_scores AS (
       WHEN REGEXP_CONTAINS(page, r'\.sz/') THEN 'Swaziland'
       WHEN REGEXP_CONTAINS(page, r'\.se/') THEN 'Sweden'
       WHEN REGEXP_CONTAINS(page, r'\.sy/') THEN 'Syria'
-      WHEN REGEXP_CONTAINS(page, r'\.tw/') THEN 'Taiwan'
+      WHEN REGEXP_CONTAINS(page, r'\.gov\.tw/|\.taipei/') THEN 'Taiwan'
       WHEN REGEXP_CONTAINS(page, r'\.tj/') THEN 'Tajikistan'
       WHEN REGEXP_CONTAINS(page, r'\.tz/') THEN 'Tanzania'
       WHEN REGEXP_CONTAINS(page, r'\.th/') THEN 'Thailand'
@@ -354,7 +352,7 @@ domain_scores AS (
       WHEN REGEXP_CONTAINS(page, r'\.zw/') THEN 'Zimbabwe'
 
       -- All other .gov defintions will be American
-      WHEN REGEXP_CONTAINS(page, r'\.gov') THEN 'United States (USA)'
+      WHEN REGEXP_CONTAINS(page, r'\.(gov|mil)/') THEN 'United States (USA)'
 
       ELSE 'Other'
     END AS gov_domain,
@@ -363,150 +361,150 @@ domain_scores AS (
     accessibility_score,
     best_practices_score,
     seo_score,
-    wptid
-  FROM
+  wptid
+FROM
     score_data
   WHERE
-    REGEXP_CONTAINS(page, r'(?i)('
-      '(\\w+\\.)*\\.un\\.org(/|$)'  -- United Nations and International Organizations
-      '|(\\w+\\.)*\\.worldbank\\.org(/|$)'
-      '|(\\w+\\.)*\\.undp\\.org(/|$)'
-      '|(\\w+\\.)*\\.reliefweb\\.int(/|$)'
-      '|(\\w+\\.)*\\.who\\.int(/|$)'
-      '|(\\w+\\.)*\\.unfccc\\.int(/|$)'
-      '|(\\w+\\.)*\\.unccd\\.int(/|$)'
-      '|(\\w+\\.)*\\.unesco\\.org(/|$)'
+    REGEXP_CONTAINS(page, r'('
+      '\\.un\\.org/'  -- United Nations and International Organizations
+      '|\\.worldbank\\.org/'
+      '|\\.undp\\.org/'
+      '|\\.reliefweb\\.int/'
+      '|\\.who\\.int/'
+      '|\\.unfccc\\.int/'
+      '|\\.unccd\\.int/'
+      '|\\.unesco\\.org/'
 
-      '|(\\w+\\.)*\\.europa\\.eu(/|$)'  -- European Union
+      '|\\.europa\\.eu/'  -- European Union
 
-      '|(\\w+\\.)*\\.gov(\\.[a-z]{2,3})?(/|$)'  -- US Government and global .gov domains (e.g., .gov.uk, .gov.au)
-      '|(\\w+\\.)*\\.mil(\\.[a-z]{2,3})?(/|$)'  -- US Military and global .mil domains
+      '|\\.gov/'  -- US Government 
+      '|\\.mil/'  -- US Military
 
-      '|(\\w+\\.)*\\.myflorida\\.com(/|$)' -- Florida
+      '|\\.myflorida\\.com/' -- Florida
 
-      '|(\\w+\\.){0,2}(gov|mil|gouv|gob|gub|go|govt|gv|nic|government)\\.(taipei|[a-z]{2})?(/|$)' -- Other generic government formats (e.g., gouv.fr, gob.mx, go.jp)
+      '|\\.(gov|mil|gouv|gob|gub|go|govt|gv|nic|government)\\.(taipei|[a-z]{2,3})/' -- Other generic government formats (e.g., gouv.fr, gob.mx, go.jp)
 
-      '|(\\w+\\.)*\\.gc\\.ca(/|$)'  -- Canada and provinces
-      '|(\\w+\\.)*\\.canada\\.ca(/|$)'
-      '|(\\w+\\.)*\\.alberta\\.ca(/|$)'
-      '|(\\w+\\.)*\\.gov\\.ab\\.ca(/|$)'
-      '|(\\w+\\.)*\\.gov\\.bc\\.ca(/|$)'
-      '|(\\w+\\.)*\\.manitoba\\.ca(/|$)'
-      '|(\\w+\\.)*\\.gov\\.mb\\.ca(/|$)'
-      '|(\\w+\\.)*\\.gnb\\.ca(/|$)'
-      '|(\\w+\\.)*\\.gov\\.nb\\.ca(/|$)'
-      '|(\\w+\\.)*\\.gov\\.nl\\.ca(/|$)'
-      '|(\\w+\\.)*\\.novascotia\\.ca(/|$)'
-      '|(\\w+\\.)*\\.gov\\.ns\\.ca(/|$)'
-      '|(\\w+\\.)*\\.ontario\\.ca(/|$)'
-      '|(\\w+\\.)*\\.gov\\.on\\.ca(/|$)'
-      '|(\\w+\\.)*\\.gov\\.pe\\.ca(/|$)'
-      '|(\\w+\\.)*\\.quebec\\.ca(/|$)'
-      '|(\\w+\\.)*\\.gouv\\.qc\\.ca(/|$)'
-      '|(\\w+\\.)*\\.revenuquebec\\.ca(/|$)'
-      '|(\\w+\\.)*\\.saskatchewan\\.ca(/|$)'
-      '|(\\w+\\.)*\\.gov\\.sk\\.ca(/|$)'
-      '|(\\w+\\.)*\\.gov\\.nt\\.ca(/|$)'
-      '|(\\w+\\.)*\\.gov\\.nu\\.ca(/|$)'
-      '|(\\w+\\.)*\\.yukon\\.ca(/|$)'
-      '|(\\w+\\.)*\\.gov\\.yk\\.ca(/|$)'
+      '|\\.gc\\.ca/'  -- Canada and provinces
+      '|\\.canada\\.ca/'
+      '|\\.alberta\\.ca/'
+      '|\\.gov\\.ab\\.ca/'
+      '|\\.gov\\.bc\\.ca/'
+      '|\\.manitoba\\.ca/'
+      '|\\.gov\\.mb\\.ca/'
+      '|\\.gnb\\.ca/'
+      '|\\.gov\\.nb\\.ca/'
+      '|\\.gov\\.nl\\.ca/'
+      '|\\.novascotia\\.ca/'
+      '|\\.gov\\.ns\\.ca/'
+      '|\\.ontario\\.ca/'
+      '|\\.gov\\.on\\.ca/'
+      '|\\.gov\\.pe\\.ca/'
+      '|\\.quebec\\.ca/'
+      '|\\.gouv\\.qc\\.ca/'
+      '|\\.revenuquebec\\.ca/'
+      '|\\.saskatchewan\\.ca/'
+      '|\\.gov\\.sk\\.ca/'
+      '|\\.gov\\.nt\\.ca/'
+      '|\\.gov\\.nu\\.ca/'
+      '|\\.yukon\\.ca/'
+      '|\\.gov\\.yk\\.ca/'
 
-      '|(\\w+\\.)*\\.bund\\.de(/|$)'  -- Germany
+      '|\\.bund\\.de/'  -- Germany
 
-      '|(\\w+\\.)*\\.belgium\\.be(/|$)'  -- Belgium
-      '|(\\w+\\.)*\\.fgov\\.be(/|$)'
-      '|(\\w+\\.)*\\.vlaanderen\\.be(/|$)'
-      '|(\\w+\\.)*\\.wallonie\\.be(/|$)'
-      '|(\\w+\\.)*\\.brussels\\.be(/|$)'
-      '|(\\w+\\.)*\\.mil\\.be(/|$)'
+      '|\\.belgium\\.be/'  -- Belgium
+      '|\\.fgov\\.be/'
+      '|\\.vlaanderen\\.be/'
+      '|\\.wallonie\\.be/'
+      '|\\.brussels\\.be/'
+      '|\\.mil\\.be/'
 
-      '|(\\w+\\.)*\\.gov\\.se(/|$)'  -- Sweden
-      '|(\\w+\\.)*\\.1177\\.se(/|$)'
-      '|(\\w+\\.)*\\.funktionstjanster\\.se(/|$)'
-      '|(\\w+\\.)*\\.hemnet\\.se(/|$)'
-      '|(\\w+\\.)*\\.smhi\\.se(/|$)'
-      '|(\\w+\\.)*\\.sverigesradio\\.se(/|$)'
-      '|(\\w+\\.)*\\.klart\\.se(/|$)'
-      '|(\\w+\\.)*\\.bankid\\.com(/|$)'
-      '|(\\w+\\.)*\\.synonymer\\.se(/|$)'
-      '|(\\w+\\.)*\\.arbetsformedlingen\\.se(/|$)'
-      '|(\\w+\\.)*\\.skatteverket\\.se(/|$)'
-      '|(\\w+\\.)*\\.schoolsoft\\.se(/|$)'
-      '|(\\w+\\.)*\\.postnord\\.se(/|$)'
-      '|(\\w+\\.)*\\.grandid\\.com(/|$)'
-      '|(\\w+\\.)*\\.viaplay\\.se(/|$)'
-      '|(\\w+\\.)*\\.skola24\\.se(/|$)'
-      '|(\\w+\\.)*\\.forsakringskassan\\.se(/|$)'
-      '|(\\w+\\.)*\\.vklass\\.se(/|$)'
-      '|(\\w+\\.)*\\.sl\\.se(/|$)'
-      '|(\\w+\\.)*\\.familjeliv\\.se(/|$)'
+      '|\\.gov\\.se/'  -- Sweden
+      '|\\.1177\\.se/'
+      '|\\.funktionstjanster\\.se/'
+      '|\\.hemnet\\.se/'
+      '|\\.smhi\\.se/'
+      '|\\.sverigesradio\\.se/'
+      '|\\.klart\\.se/'
+      '|\\.bankid\\.com/'
+      '|\\.synonymer\\.se/'
+      '|\\.arbetsformedlingen\\.se/'
+      '|\\.skatteverket\\.se/'
+      '|\\.schoolsoft\\.se/'
+      '|\\.postnord\\.se/'
+      '|\\.grandid\\.com/'
+      '|\\.viaplay\\.se/'
+      '|\\.skola24\\.se/'
+      '|\\.forsakringskassan\\.se/'
+      '|\\.vklass\\.se/'
+      '|\\.sl\\.se/'
+      '|\\.familjeliv\\.se/'
 
-      '|(\\w+\\.)*\\.valtioneuvosto\\.fi(/|$)'  -- Finland
-      '|(\\w+\\.)*\\.minedu\\.fi(/|$)'
-      '|(\\w+\\.)*\\.formin\\.fi(/|$)'
-      '|(\\w+\\.)*\\.intermin\\.fi(/|$)'
-      '|(\\w+\\.)*\\.suomi\\.fi(/|$)'
-      '|(\\w+\\.)*\\.ym\\.fi(/|$)'
-      '|(\\w+\\.)*\\.stm\\.fi(/|$)'
-      '|(\\w+\\.)*\\.tem\\.fi(/|$)'
-      '|(\\w+\\.)*\\.lvm\\.fi(/|$)'
-      '|(\\w+\\.)*\\.mmm\\.fi(/|$)'
-      '|(\\w+\\.)*\\.okm\\.fi(/|$)'
-      '|(\\w+\\.)*\\.vm\\.fi(/|$)'
-      '|(\\w+\\.)*\\.defmin\\.fi(/|$)'
-      '|(\\w+\\.)*\\.oikeusministerio\\.fi(/|$)'
-      '|(\\w+\\.)*\\.um\\.fi(/|$)'
-      '|(\\w+\\.)*\\.vero\\.fi(/|$)'
-      '|(\\w+\\.)*\\.kela\\.fi(/|$)'
+      '|\\.valtioneuvosto\\.fi/'  -- Finland
+      '|\\.minedu\\.fi/'
+      '|\\.formin\\.fi/'
+      '|\\.intermin\\.fi/'
+      '|\\.suomi\\.fi/'
+      '|\\.ym\\.fi/'
+      '|\\.stm\\.fi/'
+      '|\\.tem\\.fi/'
+      '|\\.lvm\\.fi/'
+      '|\\.mmm\\.fi/'
+      '|\\.okm\\.fi/'
+      '|\\.vm\\.fi/'
+      '|\\.defmin\\.fi/'
+      '|\\.oikeusministerio\\.fi/'
+      '|\\.um\\.fi/'
+      '|\\.vero\\.fi/'
+      '|\\.kela\\.fi/'
 
-      '|(\\w+\\.)*\\.lrv\\.lt(/|$)'  -- Lithuania
-      '|(\\w+\\.)*\\.uzt\\.lt(/|$)'
-      '|(\\w+\\.)*\\.migracija\\.lt(/|$)'
-      '|(\\w+\\.)*\\.kam\\.lt(/|$)'
-      '|(\\w+\\.)*\\.lrs\\.lt(/|$)'
-      '|(\\w+\\.)*\\.urm\\.lt(/|$)'
+      '|\\.lrv\\.lt/'  -- Lithuania
+      '|\\.uzt\\.lt/'
+      '|\\.migracija\\.lt/'
+      '|\\.kam\\.lt/'
+      '|\\.lrs\\.lt/'
+      '|\\.urm\\.lt/'
 
-      '|(\\w+\\.)*\\.riik\\.ee(/|$)'  -- Estonia
-      '|(\\w+\\.)*\\.riigiteataja\\.ee(/|$)'
-      '|(\\w+\\.)*\\.eesti\\.ee(/|$)'
-      '|(\\w+\\.)*\\.valitsus\\.ee(/|$)'
+      '|\\.riik\\.ee/'  -- Estonia
+      '|\\.riigiteataja\\.ee/'
+      '|\\.eesti\\.ee/'
+      '|\\.valitsus\\.ee/'
 
-      '|(\\w+\\.)*\\.admin\\.ch(/|$)'  -- Switzerland
+      '|\\.admin\\.ch/'  -- Switzerland
 
-      '|(\\w+\\.)*\\.seg-social\\.es(/|$)'  -- Spain
-      '|(\\w+\\.)*\\.ine\\.es(/|$)'
-      '|(\\w+\\.)*\\.boe\\.es(/|$)'
+      '|\\.seg-social\\.es/'  -- Spain
+      '|\\.ine\\.es/'
+      '|\\.boe\\.es/'
 
-      '|(\\w+\\.)*\\.ft\\.dk(/|$)'  -- Denmark
-      '|(\\w+\\.)*\\.nemkonto\\.dk(/|$)'
-      '|(\\w+\\.)*\\.nemlog-in\\.dk(/|$)'
-      '|(\\w+\\.)*\\.mitid\\.dk(/|$)'
-      '|(\\w+\\.)*\\.digst\\.dk(/|$)'
-      '|(\\w+\\.)*\\.sikkerdigital\\.dk(/|$)'
-      '|(\\w+\\.)*\\.forsvaret\\.dk(/|$)'
-      '|(\\w+\\.)*\\.skat\\.dk(/|$)'
-      '|(\\w+\\.)*\\.stps\\.dk(/|$)'
-      '|(\\w+\\.)*\\.ufm\\.dk(/|$)'
-      '|(\\w+\\.)*\\.urm\\.dk(/|$)'
-      '|(\\w+\\.)*\\.uvm\\.dk(/|$)'
-      '|(\\w+\\.)*\\.politi\\.dk(/|$)'
-      '|(\\w+\\.)*\\.dataetiskraad\\.dk(/|$)'
-      '|(\\w+\\.)*\\.at\\.dk(/|$)'
-      '|(\\w+\\.)*\\.kum\\.dk(/|$)'
+      '|\\.ft\\.dk/'  -- Denmark
+      '|\\.nemkonto\\.dk/'
+      '|\\.nemlog-in\\.dk/'
+      '|\\.mitid\\.dk/'
+      '|\\.digst\\.dk/'
+      '|\\.sikkerdigital\\.dk/'
+      '|\\.forsvaret\\.dk/'
+      '|\\.skat\\.dk/'
+      '|\\.stps\\.dk/'
+      '|\\.ufm\\.dk/'
+      '|\\.urm\\.dk/'
+      '|\\.uvm\\.dk/'
+      '|\\.politi\\.dk/'
+      '|\\.dataetiskraad\\.dk/'
+      '|\\.at\\.dk/'
+      '|\\.kum\\.dk/'
 
-      '|(\\w+\\.)*\\.govvrn\\.ru(/|$)' -- Russia
+      '|\\.govvrn\\.ru/' -- Russia
 
-      '|(\\w+\\.)*\\.public\\.lu(/|$)'  -- Luxembourg
-      '|(\\w+\\.)*\\.etat\\.lu(/|$)'
+      '|\\.public\\.lu/'  -- Luxembourg
+      '|\\.etat\\.lu/'
 
-      '|(\\w+\\.)*\\.governo\\.it(/|$)'  -- Italy
+      '|\\.governo\\.it/'  -- Italy
 
-      '|(\\w+\\.)*\\.overheid\\.nl(/|$)'  -- Netherlands
-      '|(\\w+\\.)*\\.mijnoverheid\\.nl(/|$)'
+      '|\\.overheid\\.nl/'  -- Netherlands
+      '|\\.mijnoverheid\\.nl/'
 
-      '|(\\w+\\.)*\\.govern\\.ad(/|$)'  -- Andorra
-      '|(\\w+\\.)*\\.exteriors\\.ad(/|$)'
-      '|(\\w+\\.)*\\.consellgeneral\\.ad(/|$)'
+      '|\\.govern\\.ad/'  -- Andorra
+      '|\\.exteriors\\.ad/'
+      '|\\.consellgeneral\\.ad/'
 
       ')')
 )
