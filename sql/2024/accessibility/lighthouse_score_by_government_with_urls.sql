@@ -112,6 +112,7 @@ domain_scores AS (
       WHEN REGEXP_CONTAINS(page, r'\.bund\.de/') THEN 'Germany'
       WHEN REGEXP_CONTAINS(page, r'\.gi/') THEN 'Gibraltar'
       WHEN REGEXP_CONTAINS(page, r'\.(gov|mil)\.gr/') THEN 'Greece'
+      WHEN REGEXP_CONTAINS(page, r'\.gov\.gl/|\.naalakkersuisut\.gl/|\.stat\.gl/|\.oqaasileriffik\.gl/|\.sullissivik\.gl/|\.sisimiut\.gl/|\.kalaallitnunaata\.gl/|\.inatsisartut\.gl/|\.politi\.gl/|\.visitgreenland\.gl/|\.energitjenesten\.gl/|\.nusuka\.gl/|\.telepost\.gl/|\.kujalleq\.gl/|\.sermersooq\.gl/|\.aviisi\.gl/|\.anjuma\.gl/|\.kni\.gl/|\.greenlandinstitute\.gl/|\.mhs\.gl/|\.iluarsartuiffik\.gl/|\.royalgroenland\.gl/|\.gux\.gl/|\.univiseyisarti\.gl/|\.arcticcommand\.gl(/|\.$)') THEN 'Greenland'
       WHEN REGEXP_CONTAINS(page, r'\.(gov|mil)\.hu/') THEN 'Hungary'
       WHEN REGEXP_CONTAINS(page, r'\.is/') THEN 'Iceland'
       WHEN REGEXP_CONTAINS(page, r'\.(gov|mil)\.ie/') THEN 'Ireland'
@@ -128,7 +129,7 @@ domain_scores AS (
       WHEN REGEXP_CONTAINS(page, r'\.me/') THEN 'Montenegro'
       WHEN REGEXP_CONTAINS(page, r'\.(gov|mil)\.nl/|\.overheid\.nl/|\.mijnoverheid\.nl/') THEN 'Netherlands'
       WHEN REGEXP_CONTAINS(page, r'\.mk/') THEN 'Macedonia'
-      WHEN REGEXP_CONTAINS(page, r'\.(gov|mil)\.no/') THEN 'Norway'
+      WHEN REGEXP_CONTAINS(page, r'\.(gov|mil)\.no/|\.regjeringen\.no/|\.stortinget\.no/|\.nav\.no/|\.helsenorge\.no/|\.udir\.no/|\.udi\.no/|\.politi\.no/|\.nve\.no/|\.ssb\.no/|\.norges-bank\.no/|\.miljodirektoratet\.no/|\.arbeidstilsynet\.no/|\.forsvaret\.no/|\.skatteetaten\.no/|\.brreg\.no/|\.vegvesen\.no/|\.mattilsynet\.no/|\.lovdata\.no/|\.altinn\.no/|\.nkom\.no/|\.fhi\.no/|\.dsa\.no/|\.kystverket\.no/|\.bufdir\.no/|\.nupi\.no(/|\.$)') THEN 'Norway'
       WHEN REGEXP_CONTAINS(page, r'\.(gov|mil)\.pl/') THEN 'Poland'
       WHEN REGEXP_CONTAINS(page, r'\.(gov|mil)\.pt/') THEN 'Portugal'
       WHEN REGEXP_CONTAINS(page, r'\.ro/') THEN 'Romania'
@@ -364,7 +365,7 @@ domain_scores AS (
   wptid
 FROM
     score_data
-  WHERE
+WHERE
     REGEXP_CONTAINS(page, r'('
       '\\.un\\.org/'  -- United Nations and International Organizations
       '|\\.worldbank\\.org/'
@@ -438,6 +439,57 @@ FROM
       '|\\.vklass\\.se/'
       '|\\.sl\\.se/'
       '|\\.familjeliv\\.se/'
+
+      '|\\.regjeringen\\.no/'  -- Norway
+      '|\\.stortinget\\.no/'
+      '|\\.nav\\.no/'
+      '|\\.helsenorge\\.no/'
+      '|\\.udir\\.no/'
+      '|\\.udi\\.no/'
+      '|\\.politi\\.no/'
+      '|\\.nve\\.no/'
+      '|\\.ssb\\.no/'
+      '|\\.miljodirektoratet\\.no/'
+      '|\\.arbeidstilsynet\\.no/'
+      '|\\.forsvaret\\.no/'
+      '|\\.skatteetaten\\.no/'
+      '|\\.brreg\\.no/'
+      '|\\.vegvesen\\.no/'
+      '|\\.mattilsynet\\.no/'
+      '|\\.lovdata\\.no/'
+      '|\\.altinn\\.no/'
+      '|\\.nkom\\.no/'
+      '|\\.fhi\\.no/'
+      '|\\.dsa\\.no/'
+      '|\\.kystverket\\.no/'
+      '|\\.bufdir\\.no/'
+      '|\\.nupi\\.no/'
+
+      '|\\.gov\\.gl/' -- Greenland
+      '|\\.naalakkersuisut\\.gl/'
+      '|\\.stat\\.gl/'
+      '|\\.oqaasileriffik\\.gl/'
+      '|\\.sullissivik\\.gl/'
+      '|\\.sisimiut\\.gl/'
+      '|\\.kalaallitnunaata\\.gl/'
+      '|\\.inatsisartut\\.gl/'
+      '|\\.politi\\.gl/'
+      '|\\.visitgreenland\\.gl/'
+      '|\\.energitjenesten\\.gl/'
+      '|\\.nusuka\\.gl/'
+      '|\\.telepost\\.gl/'
+      '|\\.kujalleq\\.gl/'
+      '|\\.sermersooq\\.gl/'
+      '|\\.aviisi\\.gl/'
+      '|\\.anjuma\\.gl/'
+      '|\\.kni\\.gl/'
+      '|\\.greenlandinstitute\\.gl/'
+      '|\\.mhs\\.gl/'
+      '|\\.iluarsartuiffik\\.gl/'
+      '|\\.royalgroenland\\.gl/'
+      '|\\.gux\\.gl/'
+      '|\\.univiseyisarti\\.gl/'
+      '|\\.arcticcommand\\.gl/'
 
       '|\\.valtioneuvosto\\.fi/'  -- Finland
       '|\\.minedu\\.fi/'
