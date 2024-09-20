@@ -67,7 +67,7 @@ featured_stat_label_3: Lighthouse v6 评分不变的站点
 
 ## 页面关键指标：最大内容绘制
 
-最大内容绘制（LCP）是一个具有里程碑意义的基于时间的度量指标，它表明了最大的<a hreflang="en" href="https://web.dev/articles/lcp/#what-elements-are-considered">页面可见区域元素</a>渲染时间。
+最大内容绘制（LCP）是一个具有里程碑意义的基于时间的度量指标，它表明了最大的<a hreflang="en" href="https://web.dev/articles/lcp#what-elements-are-considered">页面可见区域元素</a>渲染时间。
 
 ### 按设备类型看 FCP
 

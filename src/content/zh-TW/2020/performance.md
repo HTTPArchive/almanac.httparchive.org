@@ -67,7 +67,7 @@ featured_stat_label_3: 在 Lighthouse 6 時效能分數（Performance Score）�
 
 ## <span lang="en">Core WebVitals</span>: <span lang="en">Largest Contentful Paint</span> {core-web-vitals-largest-contentful-paint}
 
-<span lang="en">Largest Contentful Paint</span> (LCP) 是指標性的時間基準衡量標準，此項會回報最大的 <a hreflang="en" href="https://web.dev/articles/lcp/#what-elements-are-considered"><span lang="en">above-the-fold element</span></a> 被 <span lang="en">render</span> 所需時間。（註：<span lang="en">above-the-fold element</span> 的意思是，一進到網頁時，不滑動所看到的畫面。<span lang="en">above-the-fold</span> 原意來自於一份未打開的報紙所看到的封面。）
+<span lang="en">Largest Contentful Paint</span> (LCP) 是指標性的時間基準衡量標準，此項會回報最大的 <a hreflang="en" href="https://web.dev/articles/lcp#what-elements-are-considered"><span lang="en">above-the-fold element</span></a> 被 <span lang="en">render</span> 所需時間。（註：<span lang="en">above-the-fold element</span> 的意思是，一進到網頁時，不滑動所看到的畫面。<span lang="en">above-the-fold</span> 原意來自於一份未打開的報紙所看到的封面。）
 
 ### 根據不同裝置來分析 LCP
 

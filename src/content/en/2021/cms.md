@@ -181,7 +181,7 @@ An important aspect of CMSs is the user experience they provide, for users visit
 
 ### Core Web Vitals
 
-2021 was a great year for web performance, with a growing focus on <a hreflang="en" href="https://web.dev/articles/vitals/#core-web-vitals">Core Web Vitals</a>, which helped nudge many platforms in the right direction to focus on improving their user experience and loading times. More importantly, it provides users with the right tools and guidance to monitor and improve their website performance. As a result, we saw large performance improvements from many platforms, which continue to evolve, gradually making user experience better across the web, which is a big win for all of us.
+2021 was a great year for web performance, with a growing focus on <a hreflang="en" href="https://web.dev/articles/vitals#core-web-vitals">Core Web Vitals</a>, which helped nudge many platforms in the right direction to focus on improving their user experience and loading times. More importantly, it provides users with the right tools and guidance to monitor and improve their website performance. As a result, we saw large performance improvements from many platforms, which continue to evolve, gradually making user experience better across the web, which is a big win for all of us.
 
 The <a hreflang="en" href="https://httparchive.org/reports/cwv-tech">Core Web Vitals Technology Report</a> can be used to drill into this data and view the progress of each technology updated on a monthly basis.
 

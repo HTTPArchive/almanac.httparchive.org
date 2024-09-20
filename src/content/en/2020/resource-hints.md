@@ -174,7 +174,7 @@ With `preload` many different content-types can be preloaded and the [full list]
   sql_file="as_attribute_by_year.sql"
 ) }}
 
-Compared to the trend in [2019](../2019/resource-hints#the-as-attribute), we've seen rapid growth in font and style usage with the `as` attribute. This is likely related to developers increasing the priority of critical CSS and also combining `preload` fonts with `display:optional` to <a hreflang="en" href="https://web.dev/articles/optimize-cls/#web-fonts-causing-foutfoit">improve</a> Cumulative Layout Shift (<a hreflang="en" href="https://web.dev/articles/cls">CLS</a>).
+Compared to the trend in [2019](../2019/resource-hints#the-as-attribute), we've seen rapid growth in font and style usage with the `as` attribute. This is likely related to developers increasing the priority of critical CSS and also combining `preload` fonts with `display:optional` to <a hreflang="en" href="https://web.dev/articles/optimize-cls#web-fonts-causing-foutfoit">improve</a> Cumulative Layout Shift (<a hreflang="en" href="https://web.dev/articles/cls">CLS</a>).
 
 Be mindful that omitting the `as` attribute, or having an invalid value will make it harder for the browser to determine the correct priority and in some cases, such as scripts, can even cause the resource to be fetched twice.
 

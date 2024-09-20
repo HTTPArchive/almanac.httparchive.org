@@ -67,7 +67,7 @@ These overall changes are not unexpected considering a multitude of amendments t
 
 ## Core Web Vitals: Largest Contentful Paint
 
-Largest Contentful Paint (LCP) is a landmark timing-based metric that reports the time at which the largest <a hreflang="en" href="https://web.dev/articles/lcp/#what-elements-are-considered">above-the-fold element</a> was rendered.
+Largest Contentful Paint (LCP) is a landmark timing-based metric that reports the time at which the largest <a hreflang="en" href="https://web.dev/articles/lcp#what-elements-are-considered">above-the-fold element</a> was rendered.
 
 ### LCP by device
 

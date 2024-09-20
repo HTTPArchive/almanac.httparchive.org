@@ -67,7 +67,7 @@ Deze algemene veranderingen zijn niet onverwacht, gezien een groot aantal wijzig
 
 ## <span lang="en"> Core Web Vitals: Largest Contentful Paint</span> {core-web-vitals-largest-contentful-paint}
 
-<span lang="en">Largest Contentful Paint</span> (LCP) is een op timing gebaseerde statistiek van een mijlpaal die de tijd rapporteert waarop het grootste <a hreflang="en" href="https://web.dev/articles/lcp/#what-elements-are-considered">boven-de-vouw-element</a> was weergegeven.
+<span lang="en">Largest Contentful Paint</span> (LCP) is een op timing gebaseerde statistiek van een mijlpaal die de tijd rapporteert waarop het grootste <a hreflang="en" href="https://web.dev/articles/lcp#what-elements-are-considered">boven-de-vouw-element</a> was weergegeven.
 
 ### LCP per apparaat
 

@@ -42,7 +42,7 @@ CrUX RUMのデータをHTTP ArchiveのWebPageTestのラボデータで補完し�
 パフォーマンスを前年比で比較する場合、以下の点に留意してください。
 
 - 2020年から<a hreflang="en" href="https://web.dev/articles/cls-web-tooling">累積レイアウトシフト（CLS）</a>の計算が変更されました。
-- 2020年から<a hreflang="en" href="https://web.dev/articles/cls-web-tooling/#additional-updates">コンテンツの初回ペイント（FCP）の基準値（「良い」、「改善が必要」、「悪い」）が変更</a>されました。
+- 2020年から<a hreflang="en" href="https://web.dev/articles/cls-web-tooling#additional-updates">コンテンツの初回ペイント（FCP）の基準値（「良い」、「改善が必要」、「悪い」）が変更</a>されました。
 - 昨年は2020年8月のデータをもとに、今年は2021年7月の実行をもとに報告しました。
 
 詳しくはWeb Almanacの[方法論](./methodology)をお読みください。

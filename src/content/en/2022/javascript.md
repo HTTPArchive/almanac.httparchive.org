@@ -641,7 +641,7 @@ JavaScript affects more than just startup performance. When we rely on JavaScrip
 
 ### Metrics
 
-Many metrics are used to assess responsiveness in both the lab and the field, and tools such as Lighthouse, Chrome UX Report (CrUX), and HTTP Archive track these metrics to provide a data-driven view of the current state of responsiveness on today's websites. Unless otherwise noted, all of the following graphs depict the 75th percentile—<a hreflang="en" href="https://web.dev/articles/vitals/#core-web-vitals">the threshold for which Core Web Vitals are determined to be passing</a>—of that metric at the origin level.
+Many metrics are used to assess responsiveness in both the lab and the field, and tools such as Lighthouse, Chrome UX Report (CrUX), and HTTP Archive track these metrics to provide a data-driven view of the current state of responsiveness on today's websites. Unless otherwise noted, all of the following graphs depict the 75th percentile—<a hreflang="en" href="https://web.dev/articles/vitals#core-web-vitals">the threshold for which Core Web Vitals are determined to be passing</a>—of that metric at the origin level.
 
 The first of these is <a hreflang="en" href="https://web.dev/articles/fid">First Input Delay (FID)</a>, which records the input delay of the very first interaction made with a page. The input delay is the time between which the user has interacted with the page and when the event handlers for that interaction begin to run. It's considered a load responsiveness metric that focuses on the first impression a user gets when interacting with a website.
 
@@ -657,7 +657,7 @@ The first of these is <a hreflang="en" href="https://web.dev/articles/fid">First
 
 This chart shows the distribution of all websites' 75th percentile FID values. The median website has a FID value of 0 ms for at least 75% of both desktop and phone user experiences. This "perfect FID" experience even extends into the 75th percentile of websites. Only when we get to the 90th percentile do we start to see imperfect FID values, but only 25 ms.
 
-Given that the "good" FID threshold is <a hreflang="en" href="https://web.dev/articles/fid/#what-is-a-good-fid-score">100 ms</a>, we can say that at least 90% of websites meet this bar. In fact, we know from the analysis done in the [Performance](./performance) chapter that 100% of websites actually have "good" FID experiences on desktop devices, and 92% on mobile devices. FID is an unusually permissive metric.
+Given that the "good" FID threshold is <a hreflang="en" href="https://web.dev/articles/fid#what-is-a-good-fid-score">100 ms</a>, we can say that at least 90% of websites meet this bar. In fact, we know from the analysis done in the [Performance](./performance) chapter that 100% of websites actually have "good" FID experiences on desktop devices, and 92% on mobile devices. FID is an unusually permissive metric.
 
 {{ figure_markup(
     image="inp.png",
@@ -671,7 +671,7 @@ Given that the "good" FID threshold is <a hreflang="en" href="https://web.dev/ar
 
 In order to get a comprehensive view of page responsiveness across the entire page lifecycle, though, we need to look at <a hreflang="en" href="https://web.dev/articles/inp">Interaction to Next Paint (INP)</a>, which assesses all keyboard, mouse, and touch interactions made with a page and selects a high percentile of interaction latency that's intended to represent overall page responsiveness.
 
-Consider that a "good" INP score is <a hreflang="en" href="https://web.dev/articles/inp/#what's-a-%22good%22-inp-value">200 milliseconds</a> or less. At the median, both mobile and desktop score below this threshold, but the 75th percentile is another story, with both mobile and desktop segments well within the "needs improvement" range. This data, quite unlike FID, suggests that there are many opportunities for websites to do everything they can to run fewer <a hreflang="en" href="https://web.dev/long-tasks-devtools/">long tasks</a> on pages, which are a key contributor to less-than-good INP scores.
+Consider that a "good" INP score is <a hreflang="en" href="https://web.dev/articles/inp#what's-a-%22good%22-inp-value">200 milliseconds</a> or less. At the median, both mobile and desktop score below this threshold, but the 75th percentile is another story, with both mobile and desktop segments well within the "needs improvement" range. This data, quite unlike FID, suggests that there are many opportunities for websites to do everything they can to run fewer <a hreflang="en" href="https://web.dev/long-tasks-devtools/">long tasks</a> on pages, which are a key contributor to less-than-good INP scores.
 
 {{ figure_markup(
     image="tbt.png",

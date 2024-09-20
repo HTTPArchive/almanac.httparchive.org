@@ -67,7 +67,7 @@ Ces changements globaux ne sont pas inattendus compte tenu d’une multitude de 
 
 ## <span lang="en">Core Web Vitals</span> : le <span lang="en">Largest Contentful Paint</span> {core-web-vitals-le-largest-contentful-paint}
 
-Le <span lang="en">Largest Contentful Paint</span> (LCP) est une mesure temporelle de référence qui indique le moment où le plus grand élément <a hreflang="en" href="https://web.dev/articles/lcp/#what-elements-are-considered">au-dessus du pli</a> (<a href="https://www.fasterize.com/fr/blog/core-web-vitals-google-quest-ce-que-le-largest-contentful-paint-lcp/">traduction française</a>) a été affiché.
+Le <span lang="en">Largest Contentful Paint</span> (LCP) est une mesure temporelle de référence qui indique le moment où le plus grand élément <a hreflang="en" href="https://web.dev/articles/lcp#what-elements-are-considered">au-dessus du pli</a> (<a href="https://www.fasterize.com/fr/blog/core-web-vitals-google-quest-ce-que-le-largest-contentful-paint-lcp/">traduction française</a>) a été affiché.
 
 ### LCP par matériel
 

@@ -42,7 +42,7 @@ We supplement our CrUX RUM data with lab data from WebPageTest in HTTP Archive. 
 When comparing performance year-over-year, keep in mind that:
 
 - The <a hreflang="en" href="https://web.dev/articles/cls-web-tooling">Cumulative Layout Shift (CLS) calculation has changed</a> since 2020.
-- The <a hreflang="en" href="https://web.dev/articles/cls-web-tooling/#additional-updates">First Contentful Paint (FCP) thresholds ("good", "needs improvement", and "poor") have changed</a> since 2020.
+- The <a hreflang="en" href="https://web.dev/articles/cls-web-tooling#additional-updates">First Contentful Paint (FCP) thresholds ("good", "needs improvement", and "poor") have changed</a> since 2020.
 - Last year's report was based on August 2020 data, and this year's report was based on the July 2021 run.
 
 Read the full [methodology](./methodology) for the Web Almanac to learn more.

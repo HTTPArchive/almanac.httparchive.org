@@ -530,7 +530,7 @@ Having any unsized images on the page can be a liability for CLS, but perhaps a 
   )
 }}
 
-The median unsized image on mobile has a height of 99px. Given that our [test devices](./methodology#webpagetest) have a mobile viewport height of 512px, that's about 20% of the viewport area that would shift down, assuming full-width content. Depending on where that image is in the viewport when it loads, it could cause a <a hreflang="en" href="https://web.dev/articles/cls/#layout-shift-score">layout shift score</a> of at most 0.2, which more than exceeds the 0.1 threshold for "good" CLS.
+The median unsized image on mobile has a height of 99px. Given that our [test devices](./methodology#webpagetest) have a mobile viewport height of 512px, that's about 20% of the viewport area that would shift down, assuming full-width content. Depending on where that image is in the viewport when it loads, it could cause a <a hreflang="en" href="https://web.dev/articles/cls#layout-shift-score">layout shift score</a> of at most 0.2, which more than exceeds the 0.1 threshold for "good" CLS.
 
 Desktop pages tend to have larger unsized images. The median unsized image on desktop is 113px tall and the 90th percentile has a height of 410px.
 
@@ -547,7 +547,7 @@ In what we can only hope is either a measurement error or a seriously mistaken w
 
 #### Animations
 
-Some <a hreflang="en" href="https://web.dev/non-composited-animations/">non-composited</a> CSS animations can affect the layout of the page and contribute to CLS. The <a hreflang="en" href="https://web.dev/articles/optimize-cls/#animations-%F0%9F%8F%83%E2%80%8D%E2%99%80%EF%B8%8F">best practice</a> is to use `transform` animations instead.
+Some <a hreflang="en" href="https://web.dev/non-composited-animations/">non-composited</a> CSS animations can affect the layout of the page and contribute to CLS. The <a hreflang="en" href="https://web.dev/articles/optimize-cls#animations-%F0%9F%8F%83%E2%80%8D%E2%99%80%EF%B8%8F">best practice</a> is to use `transform` animations instead.
 
 {{ figure_markup(
   content="38%",
@@ -750,7 +750,7 @@ It's also worth noting that these results are significantly higher than the dist
 
 <a hreflang="en" href="https://web.dev/articles/inp">Interaction to Next Paint</a> (INP) measures the amount of time it takes for the browser to complete the next paint in response to a user interaction. This metric was created after Google <a hreflang="en" href="https://web.dev/responsiveness/">requested feedback</a> on a proposal to improve how we measure responsiveness. Many readers may be hearing about this metric for the first time, so it's worth going into a bit more detail about how it works.
 
-An _interaction_ in this context refers to the user experience of providing an input to a web application and waiting for the next frame of visual feedback to be painted on the screen. The only inputs that are considered for INP are clicks, taps, and key presses. The INP value itself is taken from one of the worst interaction latencies on the page. Refer to the <a hreflang="en" href="https://web.dev/articles/inp/#what-is-inp">INP documentation</a> for more info on how it's calculated.
+An _interaction_ in this context refers to the user experience of providing an input to a web application and waiting for the next frame of visual feedback to be painted on the screen. The only inputs that are considered for INP are clicks, taps, and key presses. The INP value itself is taken from one of the worst interaction latencies on the page. Refer to the <a hreflang="en" href="https://web.dev/articles/inp#what-is-inp">INP documentation</a> for more info on how it's calculated.
 
 Unlike FID, INP is a measure of all interactions on the page, not just the first one. It also measures the entire time until the next frame is painted, unlike FID which only measures the time until the event handler starts processing. In these ways, INP is a much more representative metric of the holistic user experience on the page.
 

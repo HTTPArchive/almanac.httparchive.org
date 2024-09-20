@@ -174,7 +174,7 @@ Con `preload` possono essere precaricati molti diversi tipi di contenuto e la <a
   sql_file="as_attribute_by_year.sql"
 ) }}
 
-Rispetto alla tendenza in <a href="../2019/resource-hints#the-as-attribute">2019</a>, abbiamo visto una rapida crescita nell'utilizzo di font e style con l'attributo `as`. Ciò è probabilmente correlato agli sviluppatori che aumentano la priorità dei CSS critici e combinano anche i font `preload` con `display:optional` per <a hreflang="en" href="https://web.dev/articles/optimize-cls/#web-fonts-causing-foutfoit">migliorare</a> Cumulative Layout Shift (<a hreflang="en" href="https://web.dev/articles/cls">CLS</a>).
+Rispetto alla tendenza in <a href="../2019/resource-hints#the-as-attribute">2019</a>, abbiamo visto una rapida crescita nell'utilizzo di font e style con l'attributo `as`. Ciò è probabilmente correlato agli sviluppatori che aumentano la priorità dei CSS critici e combinano anche i font `preload` con `display:optional` per <a hreflang="en" href="https://web.dev/articles/optimize-cls#web-fonts-causing-foutfoit">migliorare</a> Cumulative Layout Shift (<a hreflang="en" href="https://web.dev/articles/cls">CLS</a>).
 
 Tieni presente che omettere l'attributo `as` o avere un valore non valido renderà più difficile per il browser determinare la priorità corretta e in alcuni casi, come gli script, può anche causare il fetch della risorsa due volte.
 

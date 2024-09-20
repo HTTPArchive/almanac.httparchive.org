@@ -174,7 +174,7 @@ Met `preload` kunnen veel verschillende content-types worden voorgeladen en de [
   sql_file="as_attribute_by_year.sql"
 ) }}
 
-Vergeleken met de trend in [2019](../2019/resource-hints#the-as-attribute), hebben we een snelle groei gezien in het gebruik van lettertypen en stijlen met het kenmerk `as`. Dit heeft waarschijnlijk te maken met het feit dat ontwikkelaars de prioriteit van kritieke CSS verhogen en ook `preload`-lettertypen combineren met `display:optional` om de Cumulative Layout Shift (<a hreflang="en" href="https://web.dev/articles/cls">CLS</a>) te <a hreflang="en" href="https://web.dev/articles/optimize-cls/#web-fonts-causing-foutfoit">verbeteren</a>.
+Vergeleken met de trend in [2019](../2019/resource-hints#the-as-attribute), hebben we een snelle groei gezien in het gebruik van lettertypen en stijlen met het kenmerk `as`. Dit heeft waarschijnlijk te maken met het feit dat ontwikkelaars de prioriteit van kritieke CSS verhogen en ook `preload`-lettertypen combineren met `display:optional` om de Cumulative Layout Shift (<a hreflang="en" href="https://web.dev/articles/cls">CLS</a>) te <a hreflang="en" href="https://web.dev/articles/optimize-cls#web-fonts-causing-foutfoit">verbeteren</a>.
 
 Houd er rekening mee dat het weglaten van het `as`-attribuut of het hebben van een ongeldige waarde het voor de browser moeilijker zal maken om de juiste prioriteit te bepalen en in sommige gevallen, zoals scripts, er zelfs voor kan zorgen dat de bron tweemaal wordt opgehaald.
 
