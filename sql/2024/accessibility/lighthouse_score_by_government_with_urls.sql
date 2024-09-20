@@ -53,7 +53,7 @@ domain_scores AS (
       WHEN REGEXP_CONTAINS(page, r'\.(massachusetts|ma|mass)\.gov/') THEN 'Massachusetts'
       WHEN REGEXP_CONTAINS(page, r'\.(michigan|mi)\.gov/') THEN 'Michigan'
       WHEN REGEXP_CONTAINS(page, r'\.(minnesota|mn)\.gov/') THEN 'Minnesota'
-      WHEN REGEXP_CONTAINS(page, r'\.(mississippi|ms)\.gov/') THEN 'Mississippi'
+      WHEN REGEXP_CONTAINS(page, r'\.(mississippi|ms)\.gov/') THEN 'Mississippi' -- Also should factor in state.mn.us
       WHEN REGEXP_CONTAINS(page, r'\.(missouri|mo)\.gov/') THEN 'Missouri'
       WHEN REGEXP_CONTAINS(page, r'\.(montana|mt)\.gov/') THEN 'Montana'
       WHEN REGEXP_CONTAINS(page, r'\.(nebraska|ne)\.gov/') THEN 'Nebraska'
@@ -557,6 +557,11 @@ WHERE
       '|\\.govern\\.ad/'  -- Andorra
       '|\\.exteriors\\.ad/'
       '|\\.consellgeneral\\.ad/'
+
+      '|\\.irangov\\.ir'  -- Iran
+      '|\\.irna\\.ir'
+      '|\\.razavi\\.ir'
+      '|\\.gholhak\\.ir'
 
       ')')
 )
