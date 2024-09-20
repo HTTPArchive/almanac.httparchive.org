@@ -304,13 +304,13 @@ Wix Ecommerce achieves the highest median Lighthouse best practice score with 93
 
 In 2020 Google started an initiative under the term Core Web Vitals (CWV) which looked to help website owners and developers focus on three performance metrics that are critical for a good user experience. These metrics are:
 
-**<a hreflang="en" href="https://web.dev/lcp/">Large Contentful Paint</a> (LCP)**
+**<a hreflang="en" href="https://web.dev/articles/lcp">Large Contentful Paint</a> (LCP)**
 * Measures _loading_ performance. To provide a good user experience, LCP should occur within 2.5 seconds of when the page first starts loading.
 
-**<a hreflang="en" href="https://web.dev/fid/">First Input Delay</a> (FID)**
+**<a hreflang="en" href="https://web.dev/articles/fid">First Input Delay</a> (FID)**
 * Measures _interactivity_. To provide a good user experience, pages should have an FID of 100 milliseconds or less.
 
-**<a hreflang="en" href="https://web.dev/cls/">Cumulative Layout Shift</a> (CLS)**
+**<a hreflang="en" href="https://web.dev/articles/cls">Cumulative Layout Shift</a> (CLS)**
 * Measures _visual_ stability. To provide a good user experience, pages should maintain a CLS of 0.1. or less.
 
 As Core Web Vitals are now <a hreflang="en" href="https://developers.google.com/search/blog/2020/05/evaluating-page-experience">ranking factors in Google's search algorithm</a> they have gained increased attention from ecommerce businesses.
@@ -342,7 +342,7 @@ In the next section, we will consider each CWV metric independently to see wheth
 
 #### Largest Contentful Paint (LCP)
 
-Firstly, there is the <a hreflang="en" href="https://web.dev/lcp/">Largest Contentful Paint</a> which uses the time it takes for the main page content to be loaded as a proxy for how long it takes for the page to be useful.
+Firstly, there is the <a hreflang="en" href="https://web.dev/articles/lcp">Largest Contentful Paint</a> which uses the time it takes for the main page content to be loaded as a proxy for how long it takes for the page to be useful.
 
 {{ figure_markup(
   image="ecommerce-real-user-largest-contentful-paint-experiences.png",
@@ -363,7 +363,7 @@ Out of the three CWV metrics, the hosting setup primarily only affects the LCP s
 
 #### First Input Delay (FID)
 
-The second metric, <a hreflang="en" href="https://web.dev/fid/">First Input Delay</a>, measures how much work the browser has to do once a website visitor interacts with the site, e.g., clicks on a link or button. It can be seen as a proxy for how responsive the site feels or whether it feels laggy and slow to react to user input.
+The second metric, <a hreflang="en" href="https://web.dev/articles/fid">First Input Delay</a>, measures how much work the browser has to do once a website visitor interacts with the site, e.g., clicks on a link or button. It can be seen as a proxy for how responsive the site feels or whether it feels laggy and slow to react to user input.
 
 {{ figure_markup(
   image="ecommerce-real-user-first-input-delay-experiences.png",
@@ -384,7 +384,7 @@ That being said, all six perform better than non-ecommerce sites. [The Performan
 
 #### Cumulative Layout Shift (CLS))
 
-The final of the three CWV metrics is <a hreflang="en" href="https://web.dev/cls/">Cumulative Layout Shift</a>. It is a measure of the amount that items on the page "move around", e.g., a new image appears and pushes the text you were reading or the button you were about to click to a different place.
+The final of the three CWV metrics is <a hreflang="en" href="https://web.dev/articles/cls">Cumulative Layout Shift</a>. It is a measure of the amount that items on the page "move around", e.g., a new image appears and pushes the text you were reading or the button you were about to click to a different place.
 
 {{ figure_markup(
   image="ecommerce-real-user-cumulative-layout-shift-experiences.png",

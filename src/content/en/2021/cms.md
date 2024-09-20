@@ -181,7 +181,7 @@ An important aspect of CMSs is the user experience they provide, for users visit
 
 ### Core Web Vitals
 
-2021 was a great year for web performance, with a growing focus on <a hreflang="en" href="https://web.dev/vitals/#core-web-vitals">Core Web Vitals</a>, which helped nudge many platforms in the right direction to focus on improving their user experience and loading times. More importantly, it provides users with the right tools and guidance to monitor and improve their website performance. As a result, we saw large performance improvements from many platforms, which continue to evolve, gradually making user experience better across the web, which is a big win for all of us.
+2021 was a great year for web performance, with a growing focus on <a hreflang="en" href="https://web.dev/articles/vitals#core-web-vitals">Core Web Vitals</a>, which helped nudge many platforms in the right direction to focus on improving their user experience and loading times. More importantly, it provides users with the right tools and guidance to monitor and improve their website performance. As a result, we saw large performance improvements from many platforms, which continue to evolve, gradually making user experience better across the web, which is a big win for all of us.
 
 The <a hreflang="en" href="https://httparchive.org/reports/cwv-tech">Core Web Vitals Technology Report</a> can be used to drill into this data and view the progress of each technology updated on a monthly basis.
 
@@ -324,7 +324,7 @@ A score of 0.1 or below is measured as "good", over 0.25 as "poor", and anything
   sql_file="core_web_vitals.sql"
 ) }}
 
-Wix had the best CLS score, with 81% of mobile origins having a "good" CLS. Adobe Experience Manager had the lowest CLS scores, with only 44% of mobile origins having a good CLS. Because layout shifts can usually be avoided, regardless of connection speeds–all platforms should strive to improve these numbers by <a hreflang="en" href="https://web.dev/optimize-cls/">reducing layout shifts</a> to the bare minimum.
+Wix had the best CLS score, with 81% of mobile origins having a "good" CLS. Adobe Experience Manager had the lowest CLS scores, with only 44% of mobile origins having a good CLS. Because layout shifts can usually be avoided, regardless of connection speeds–all platforms should strive to improve these numbers by <a hreflang="en" href="https://web.dev/articles/optimize-cls">reducing layout shifts</a> to the bare minimum.
 
 {{ figure_markup(
   image="core-web-vitals-cls-yoy.png",
@@ -613,6 +613,6 @@ CMSs are doing great work and have a huge opportunity to further improve user ex
 
 On the other hand, Core Web Vitals still have some progress and evolving to do.
 
-We mentioned the thoughts towards a <a hreflang="en" href="https://web.dev/responsiveness/">better responsiveness metric</a> above. In addition, navigations between pages in a site should be better tracked and take into account the difference between <a hreflang="en" href="https://web.dev/vitals-spa-faq">Single-Page Applications (SPAs) and Multi-Page Applications (MPAs)</a> architectures.
+We mentioned the thoughts towards a <a hreflang="en" href="https://web.dev/responsiveness/">better responsiveness metric</a> above. In addition, navigations between pages in a site should be better tracked and take into account the difference between <a hreflang="en" href="https://web.dev/articles/vitals-spa-faq">Single-Page Applications (SPAs) and Multi-Page Applications (MPAs)</a> architectures.
 
 Let's continue pushing forward.

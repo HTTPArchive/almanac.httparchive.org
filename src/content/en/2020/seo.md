@@ -764,17 +764,17 @@ Having a fast-loading website is fundamental to provide a great user search expe
 
 As announced in November 2020, three performance metrics known as <a hreflang="en" href="https://webmasters.googleblog.com/2020/05/evaluating-page-experience.html">Core Web Vitals</a> are on track to be a ranking factor as part of the "page experience" signals in May 2021. Core Web Vitals consist of:
 
-**<a hreflang="en" href="https://web.dev/lcp/">Largest Contentful Paint</a> (LCP)**
+**<a hreflang="en" href="https://web.dev/articles/lcp">Largest Contentful Paint</a> (LCP)**
 - Represents: user-perceived loading experience
 - Measurement: the point in the page load timeline when the page's largest image or text block is visible within the viewport
 - Goal: <2.5 seconds
 
-**<a hreflang="en" href="https://web.dev/fid/">First Input Delay</a> (FID)**
+**<a hreflang="en" href="https://web.dev/articles/fid">First Input Delay</a> (FID)**
 - Represents: responsiveness to user input
 - Measurement: the time from when a user first interacts with a page to the time when the browser is actually able to begin processing event handlers in response to that interaction
 - Goal: <300 milliseconds
 
-**<a hreflang="en" href="https://web.dev/cls/">Cumulative Layout Shift</a> (CLS)**
+**<a hreflang="en" href="https://web.dev/articles/cls">Cumulative Layout Shift</a> (CLS)**
 - Represents: visual stability
 - Measurement: the sum of the number of _layout shift scores_ approximating the percent of the viewport that shifted
 - Goal: <0.10
