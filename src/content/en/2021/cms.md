@@ -324,7 +324,7 @@ A score of 0.1 or below is measured as "good", over 0.25 as "poor", and anything
   sql_file="core_web_vitals.sql"
 ) }}
 
-Wix had the best CLS score, with 81% of mobile origins having a "good" CLS. Adobe Experience Manager had the lowest CLS scores, with only 44% of mobile origins having a good CLS. Because layout shifts can usually be avoided, regardless of connection speeds–all platforms should strive to improve these numbers by <a hreflang="en" href="https://web.dev/articles/optimize-cls/">reducing layout shifts</a> to the bare minimum.
+Wix had the best CLS score, with 81% of mobile origins having a "good" CLS. Adobe Experience Manager had the lowest CLS scores, with only 44% of mobile origins having a good CLS. Because layout shifts can usually be avoided, regardless of connection speeds–all platforms should strive to improve these numbers by <a hreflang="en" href="https://web.dev/articles/optimize-cls">reducing layout shifts</a> to the bare minimum.
 
 {{ figure_markup(
   image="core-web-vitals-cls-yoy.png",

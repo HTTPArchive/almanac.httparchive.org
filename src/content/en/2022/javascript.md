@@ -382,7 +382,7 @@ Where possible, render-critical JavaScript can be placed in the footer and prelo
 
 Script injection is a pattern where an [`HTMLScriptElement`](https://developer.mozilla.org/docs/Web/API/HTMLScriptElement) is created in JavaScript using [`document.createElement`](https://developer.mozilla.org/docs/Web/API/Document/createElement) and injected into the DOM with a DOM insertion method. Alternatively, `<script>` element markup in a string can be injected into the DOM via the [`innerHTML`](https://developer.mozilla.org/docs/Web/API/Element/innerHTML) method.
 
-Script injection is a fairly common practice used in a number of scenarios, but the problem with it is that <a hreflang="en" href="https://web.dev/preload-scanner/#injected-async-scripts">it defeats the browser's preload scanner</a> by making the script undiscoverable as the initial HTML payload is parsed. This can affect metrics such as <a hreflang="en" href="https://web.dev/articles/lcp/">Largest Contentful Paint (LCP)</a> if the injected script resource is ultimately responsible for rendering markup, which itself can kick off long tasks to parse large chunks of markup on the fly.
+Script injection is a fairly common practice used in a number of scenarios, but the problem with it is that <a hreflang="en" href="https://web.dev/preload-scanner/#injected-async-scripts">it defeats the browser's preload scanner</a> by making the script undiscoverable as the initial HTML payload is parsed. This can affect metrics such as <a hreflang="en" href="https://web.dev/articles/lcp">Largest Contentful Paint (LCP)</a> if the injected script resource is ultimately responsible for rendering markup, which itself can kick off long tasks to parse large chunks of markup on the fly.
 
 {{ figure_markup(
     image="injected-scripts.png",
@@ -643,7 +643,7 @@ JavaScript affects more than just startup performance. When we rely on JavaScrip
 
 Many metrics are used to assess responsiveness in both the lab and the field, and tools such as Lighthouse, Chrome UX Report (CrUX), and HTTP Archive track these metrics to provide a data-driven view of the current state of responsiveness on today's websites. Unless otherwise noted, all of the following graphs depict the 75th percentile—<a hreflang="en" href="https://web.dev/articles/vitals/#core-web-vitals">the threshold for which Core Web Vitals are determined to be passing</a>—of that metric at the origin level.
 
-The first of these is <a hreflang="en" href="https://web.dev/articles/fid/">First Input Delay (FID)</a>, which records the input delay of the very first interaction made with a page. The input delay is the time between which the user has interacted with the page and when the event handlers for that interaction begin to run. It's considered a load responsiveness metric that focuses on the first impression a user gets when interacting with a website.
+The first of these is <a hreflang="en" href="https://web.dev/articles/fid">First Input Delay (FID)</a>, which records the input delay of the very first interaction made with a page. The input delay is the time between which the user has interacted with the page and when the event handlers for that interaction begin to run. It's considered a load responsiveness metric that focuses on the first impression a user gets when interacting with a website.
 
 {{ figure_markup(
     image="fid.png",
@@ -669,7 +669,7 @@ Given that the "good" FID threshold is <a hreflang="en" href="https://web.dev/ar
   )
 }}
 
-In order to get a comprehensive view of page responsiveness across the entire page lifecycle, though, we need to look at <a hreflang="en" href="https://web.dev/articles/inp/">Interaction to Next Paint (INP)</a>, which assesses all keyboard, mouse, and touch interactions made with a page and selects a high percentile of interaction latency that's intended to represent overall page responsiveness.
+In order to get a comprehensive view of page responsiveness across the entire page lifecycle, though, we need to look at <a hreflang="en" href="https://web.dev/articles/inp">Interaction to Next Paint (INP)</a>, which assesses all keyboard, mouse, and touch interactions made with a page and selects a high percentile of interaction latency that's intended to represent overall page responsiveness.
 
 Consider that a "good" INP score is <a hreflang="en" href="https://web.dev/articles/inp/#what's-a-%22good%22-inp-value">200 milliseconds</a> or less. At the median, both mobile and desktop score below this threshold, but the 75th percentile is another story, with both mobile and desktop segments well within the "needs improvement" range. This data, quite unlike FID, suggests that there are many opportunities for websites to do everything they can to run fewer <a hreflang="en" href="https://web.dev/long-tasks-devtools/">long tasks</a> on pages, which are a key contributor to less-than-good INP scores.
 

@@ -151,9 +151,9 @@ The <a hreflang="en" href="https://httparchive.org/reports/cwv-tech">Core Web Vi
 
 In this section we focus on data from June 2022 to provide a consistent timeframe for data presented across the Web Almanac. We examine three important metrics provided by the [Chrome User Experience Report](../2021/methodology#chrome-ux-report) which can shed light on our understanding of how users are experiencing CMS-powered web pages in the wild:
 
-* <a hreflang="en" href="https://web.dev/articles/lcp/">Largest Contentful Paint</a> (LCP)
-* <a hreflang="en" href="https://web.dev/articles/fid/">First Input Delay</a> (FID)
-* <a hreflang="en" href="https://web.dev/articles/cls/">Cumulative Layout Shift</a> (CLS)
+* <a hreflang="en" href="https://web.dev/articles/lcp">Largest Contentful Paint</a> (LCP)
+* <a hreflang="en" href="https://web.dev/articles/fid">First Input Delay</a> (FID)
+* <a hreflang="en" href="https://web.dev/articles/cls">Cumulative Layout Shift</a> (CLS)
 
 These metrics aim to cover the technical fundamentals of a great web user experience. The [Performance](./performance) chapter covers these metrics in greater detail, but here we are interested in looking at them specifically in terms of CMSs.
 
@@ -237,7 +237,7 @@ First Input Delay (FID) measures the time from when a user first interacts with 
 
 Any delay is a pain point and could correlate with interference from other parts of the site loading while the user tries to interact with the site. A "good" FID is regarded as being under 100 milliseconds.
 
-In 2021's report, the fact that almost all platforms manage to deliver a good FID raised questions about the strictness of this metric. The Chrome team <a hreflang="en" href="https://web.dev/responsiveness/">published an article</a> that was updated in May of 2022 to include a reference to a new metric, <a hreflang="en" href="https://web.dev/articles/inp/">Interaction to Next Paint (INP)</a> . Given its beta nature at the time of this writing, we're limiting its inclusion to this reference in anticipation of a possible expansion in next year's report.
+In 2021's report, the fact that almost all platforms manage to deliver a good FID raised questions about the strictness of this metric. The Chrome team <a hreflang="en" href="https://web.dev/responsiveness/">published an article</a> that was updated in May of 2022 to include a reference to a new metric, <a hreflang="en" href="https://web.dev/articles/inp">Interaction to Next Paint (INP)</a> . Given its beta nature at the time of this writing, we're limiting its inclusion to this reference in anticipation of a possible expansion in next year's report.
 
 {{ figure_markup(
   image="fid-cwv-yoy.png",

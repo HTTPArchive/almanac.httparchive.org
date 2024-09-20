@@ -211,9 +211,9 @@ Dit is vooral belangrijk voor mobiel internet, omdat verschuivende inhoud meer o
 
 ##### Cumulative Layout Shift
 
-<a hreflang="en" href="https://web.dev/articles/cls/">Cumulative Layout Shift</a> (CLS) is een metriek die kwantificeert hoeveel inhoud in de viewport verschuift tijdens het bezoek van de gebruiker.
+<a hreflang="en" href="https://web.dev/articles/cls">Cumulative Layout Shift</a> (CLS) is een metriek die kwantificeert hoeveel inhoud in de viewport verschuift tijdens het bezoek van de gebruiker.
 
-De <a hreflang="en" href="https://web.dev/articles/optimize-cls/">meest voorkomende oorzaken van een slechte CLS</a> zijn:
+De <a hreflang="en" href="https://web.dev/articles/optimize-cls">meest voorkomende oorzaken van een slechte CLS</a> zijn:
 
 * Afbeeldingen zonder afmetingen.
 * Advertenties, embeds en iframes zonder afmetingen.
