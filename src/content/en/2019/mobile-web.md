@@ -110,11 +110,11 @@ One of the most beautiful parts of the web is how web pages load progressively b
 
 Imagine you're reading an article when all of a sudden, an image loads and pushes the text you're reading way down the screen. You now have to hunt for where you were or just give up on reading the article. Or, perhaps even worse, you begin to click a link right before an ad loads in the same spot, resulting in an accidental click on the ad instead.
 
-So, how do we measure how much our sites shift? In the past it was quite difficult (if not impossible), but thanks to the new <a hreflang="en" href="https://web.dev/layout-instability-api">Layout Instability API</a> we can do this in two steps:
+So, how do we measure how much our sites shift? In the past it was quite difficult (if not impossible), but thanks to the new <a hreflang="en" href="https://web.dev/articles/cls">Layout Instability API</a> we can do this in two steps:
 
 1. Via the Layout Instability API, track each shift's impact on the page. This is reported to you as a percentage of how much content in the viewport has shifted.
 
-2. Take all the shifts you've tracked and add them together. The result is what we call the <a hreflang="en" href="https://web.dev/layout-instability-api#a-cumulative-layout-shift-score">Cumulative Layout Shift</a> (CLS) score.
+2. Take all the shifts you've tracked and add them together. The result is what we call the <a hreflang="en" href="https://web.dev/articles/cls#a-cumulative-layout-shift-score">Cumulative Layout Shift</a> (CLS) score.
 
 Because every visitor can have a different CLS, in order to analyze this metric across the web with the [Chrome UX Report](./methodology#chrome-ux-report) (CrUX), we combine every experience into three different buckets:
 

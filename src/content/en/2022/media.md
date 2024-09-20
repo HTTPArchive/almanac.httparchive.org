@@ -49,7 +49,7 @@ Almost every page serves up some kind of an image, even if it's just a backgroun
 )
 }}
 
-On the vast majority of pages—70% on mobile, and 80% on desktop—the most impactful resource is an image. <a hreflang="en" href="https://web.dev/lcp/">Largest Contentful Paint</a> (LCP) is a web performance metric that identifies the largest element above the fold. Most of the time that element has an image.
+On the vast majority of pages—70% on mobile, and 80% on desktop—the most impactful resource is an image. <a hreflang="en" href="https://web.dev/articles/lcp">Largest Contentful Paint</a> (LCP) is a web performance metric that identifies the largest element above the fold. Most of the time that element has an image.
 
 It's hard to overstate the importance of images on the web. So, what can we say about the web's images?
 
@@ -760,7 +760,7 @@ The majority of images have extrinsic widths; the majority of images have intrin
 
 #### `height`, `width`, and Cumulative Layout Shifts
 
-Any `<img>` whose layout size is dependent on its intrinsic width risks triggering a <a hreflang="en" href="https://web.dev/cls/">Cumulative Layout Shift</a>. In essence, such images risk being laid out twice: Once when the page's DOM and CSS have been processed, and then a second time when they finally finish loading and their intrinsic dimensions are known.
+Any `<img>` whose layout size is dependent on its intrinsic width risks triggering a <a hreflang="en" href="https://web.dev/articles/cls">Cumulative Layout Shift</a>. In essence, such images risk being laid out twice: Once when the page's DOM and CSS have been processed, and then a second time when they finally finish loading and their intrinsic dimensions are known.
 
 As we've just seen, extrinsically scaling images to fit a certain width while leaving the height (and aspect ratio) intrinsic is very common. To fight the resulting plague of layout shifts, a couple of years ago browsers decided to <a hreflang="en" href="https://developer.mozilla.org/docs/Web/Media/images/aspect_ratio_mapping#a_new_way_of_sizing_images_before_loading_completes">change the way that the `height` and `width` attributes on `<img>` work</a>. These days, consistently setting the `height` and `width` attributes to reflect the aspect ratio of the resource is a universally recommended best practice, which allows authors to tell the browser the intrinsic dimensions of an image resource before it loads.
 
@@ -871,7 +871,7 @@ There are a number of things to unpack here.
 
 First, `autoplay` overtook `preload` to become the most popular attribute this year. We also see `playsinline`, `muted`, and `loop` increasing in popularity. Perhaps an increasing number of people are <a hreflang="en" href="https://web.dev/replace-gifs-with-videos/">using the `<video>` element to replace animated GIFs</a>? If so, good!
 
-The fact that only 12% of `<video>`s have `width` attributes and just 0.4% (!) have `height` attributes means that most `<video>` elements are susceptible to the same kinds of <a hreflang="en" href="https://web.dev/cls/">CLS</a> problems we saw with `<img>` elements which lack these attributes. Help the browser help you and add these attributes!
+The fact that only 12% of `<video>`s have `width` attributes and just 0.4% (!) have `height` attributes means that most `<video>` elements are susceptible to the same kinds of <a hreflang="en" href="https://web.dev/articles/cls">CLS</a> problems we saw with `<img>` elements which lack these attributes. Help the browser help you and add these attributes!
 
 Additionally, the fact that fewer than one-in-ten `<video>` elements has a `controls` attribute suggests a significant number of people are using players that provide their own user interface for interacting with the video.
 
