@@ -376,7 +376,7 @@ domain_scores AS (
 
       '|\\.europa\\.eu/'  -- European Union
 
-      '|\\.gov/'  -- US Government 
+      '|\\.gov/'  -- US Government
       '|\\.mil/'  -- US Military
 
       '|\\.myflorida\\.com/' -- Florida
