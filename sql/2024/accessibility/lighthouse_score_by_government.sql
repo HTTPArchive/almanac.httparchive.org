@@ -22,7 +22,7 @@ domain_scores AS (
   SELECT
     page,
     CASE
-       -- United Nations
+      -- United Nations
       WHEN REGEXP_CONTAINS(page, r'\.un\.org/|\.worldbank\.org/|\.undp\.org/|\.reliefweb.int/|\.who.int/|\.unfccc.int/|\.unccd.int/|\.unesco.org/') THEN 'United Nations'
       WHEN REGEXP_CONTAINS(page, r'\.europa\.eu/') THEN 'European Union'
 
