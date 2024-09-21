@@ -1,5 +1,3 @@
-
-
 #standardSQL
 # List all included government domains along with scores
 
@@ -24,8 +22,8 @@ WITH score_data AS (
 domain_scores AS (
   SELECT
     page,
-     CASE
-       -- United Nations
+    CASE
+      -- United Nations
       WHEN REGEXP_CONTAINS(page, r'\.un\.org/|\.worldbank\.org/|\.undp\.org/|\.reliefweb.int/|\.who.int/|\.unfccc.int/|\.unccd.int/|\.unesco.org/') THEN 'United Nations'
       WHEN REGEXP_CONTAINS(page, r'\.europa\.eu/') THEN 'European Union'
 
@@ -356,7 +354,7 @@ domain_scores AS (
       WHEN REGEXP_CONTAINS(page, r'\.(gov|mil)/') THEN 'United States (USA)'
 
       ELSE 'Other'
-    END AS gov_domain,
+      END AS gov_domain,
     is_root_page,
     performance_score,
     accessibility_score,
@@ -364,9 +362,9 @@ domain_scores AS (
     seo_score,
   wptid
 FROM
-    score_data
+  score_data
 WHERE
-    REGEXP_CONTAINS(page, r'('
+  REGEXP_CONTAINS(page, r'('
       '\\.un\\.org/'  -- United Nations and International Organizations
       '|\\.worldbank\\.org/'
       '|\\.undp\\.org/'
