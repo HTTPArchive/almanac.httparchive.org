@@ -21,8 +21,7 @@ WITH score_data AS (
 domain_scores AS (
   SELECT
     page,
-
-     CASE
+    CASE
        -- United Nations
       WHEN REGEXP_CONTAINS(page, r'\.un\.org/|\.worldbank\.org/|\.undp\.org/|\.reliefweb.int/|\.who.int/|\.unfccc.int/|\.unccd.int/|\.unesco.org/') THEN 'United Nations'
       WHEN REGEXP_CONTAINS(page, r'\.europa\.eu/') THEN 'European Union'
@@ -361,7 +360,7 @@ domain_scores AS (
     seo_score
   FROM
     score_data
-WHERE
+  WHERE
     REGEXP_CONTAINS(page, r'('
       '\\.un\\.org/'  -- United Nations and International Organizations
       '|\\.worldbank\\.org/'
