@@ -354,215 +354,215 @@ domain_scores AS (
       WHEN REGEXP_CONTAINS(page, r'\.(gov|mil)/') THEN 'United States (USA)'
 
       ELSE 'Other'
-      END AS gov_domain,
+    END AS gov_domain,
     is_root_page,
     performance_score,
     accessibility_score,
     best_practices_score,
     seo_score,
     wptid
-FROM
-  score_data
-WHERE
-  REGEXP_CONTAINS(page, r'('
-    '\\.un\\.org/'  -- United Nations and International Organizations
-    '|\\.worldbank\\.org/'
-    '|\\.undp\\.org/'
-    '|\\.reliefweb\\.int/'
-    '|\\.who\\.int/'
-    '|\\.unfccc\\.int/'
-    '|\\.unccd\\.int/'
-    '|\\.unesco\\.org/'
+  FROM
+    score_data
+  WHERE
+    REGEXP_CONTAINS(page, r'('
+      '\\.un\\.org/'  -- United Nations and International Organizations
+      '|\\.worldbank\\.org/'
+      '|\\.undp\\.org/'
+      '|\\.reliefweb\\.int/'
+      '|\\.who\\.int/'
+      '|\\.unfccc\\.int/'
+      '|\\.unccd\\.int/'
+      '|\\.unesco\\.org/'
 
-    '|\\.europa\\.eu/'  -- European Union
+      '|\\.europa\\.eu/'  -- European Union
 
-    '|\\.gov/'  -- US Government 
-    '|\\.mil/'  -- US Military
+      '|\\.gov/'  -- US Government 
+      '|\\.mil/'  -- US Military
 
-    '|\\.myflorida\\.com/' -- Florida
+      '|\\.myflorida\\.com/' -- Florida
 
-    '|\\.(gov|mil|gouv|gob|gub|go|govt|gv|nic|government)\\.(taipei|[a-z]{2,3})/' -- Other generic government formats (e.g., gouv.fr, gob.mx, go.jp)
+      '|\\.(gov|mil|gouv|gob|gub|go|govt|gv|nic|government)\\.(taipei|[a-z]{2,3})/' -- Other generic government formats (e.g., gouv.fr, gob.mx, go.jp)
 
 
-    '|\\.gc\\.ca/'  -- Canada and provinces
-    '|\\.canada\\.ca/'
-    '|\\.alberta\\.ca/'
-    '|\\.gov\\.ab\\.ca/'
-    '|\\.gov\\.bc\\.ca/'
-    '|\\.manitoba\\.ca/'
-    '|\\.gov\\.mb\\.ca/'
-    '|\\.gnb\\.ca/'
-    '|\\.gov\\.nb\\.ca/'
-    '|\\.gov\\.nl\\.ca/'
-    '|\\.novascotia\\.ca/'
-    '|\\.gov\\.ns\\.ca/'
-    '|\\.ontario\\.ca/'
-    '|\\.gov\\.on\\.ca/'
-    '|\\.gov\\.pe\\.ca/'
-    '|\\.quebec\\.ca/'
-    '|\\.gouv\\.qc\\.ca/'
-    '|\\.revenuquebec\\.ca/'
-    '|\\.saskatchewan\\.ca/'
-    '|\\.gov\\.sk\\.ca/'
-    '|\\.gov\\.nt\\.ca/'
-    '|\\.gov\\.nu\\.ca/'
-    '|\\.yukon\\.ca/'
-    '|\\.gov\\.yk\\.ca/'
+      '|\\.gc\\.ca/'  -- Canada and provinces
+      '|\\.canada\\.ca/'
+      '|\\.alberta\\.ca/'
+      '|\\.gov\\.ab\\.ca/'
+      '|\\.gov\\.bc\\.ca/'
+      '|\\.manitoba\\.ca/'
+      '|\\.gov\\.mb\\.ca/'
+      '|\\.gnb\\.ca/'
+      '|\\.gov\\.nb\\.ca/'
+      '|\\.gov\\.nl\\.ca/'
+      '|\\.novascotia\\.ca/'
+      '|\\.gov\\.ns\\.ca/'
+      '|\\.ontario\\.ca/'
+      '|\\.gov\\.on\\.ca/'
+      '|\\.gov\\.pe\\.ca/'
+      '|\\.quebec\\.ca/'
+      '|\\.gouv\\.qc\\.ca/'
+      '|\\.revenuquebec\\.ca/'
+      '|\\.saskatchewan\\.ca/'
+      '|\\.gov\\.sk\\.ca/'
+      '|\\.gov\\.nt\\.ca/'
+      '|\\.gov\\.nu\\.ca/'
+      '|\\.yukon\\.ca/'
+      '|\\.gov\\.yk\\.ca/'
 
-    '|\\.bund\\.de/'  -- Germany
+      '|\\.bund\\.de/'  -- Germany
 
-    '|\\.belgium\\.be/'  -- Belgium
-    '|\\.fgov\\.be/'
-    '|\\.vlaanderen\\.be/'
-    '|\\.wallonie\\.be/'
-    '|\\.brussels\\.be/'
-    '|\\.mil\\.be/'
+      '|\\.belgium\\.be/'  -- Belgium
+      '|\\.fgov\\.be/'
+      '|\\.vlaanderen\\.be/'
+      '|\\.wallonie\\.be/'
+      '|\\.brussels\\.be/'
+      '|\\.mil\\.be/'
 
-    '|\\.gov\\.se/'  -- Sweden
-    '|\\.1177\\.se/'
-    '|\\.funktionstjanster\\.se/'
-    '|\\.hemnet\\.se/'
-    '|\\.smhi\\.se/'
-    '|\\.sverigesradio\\.se/'
-    '|\\.klart\\.se/'
-    '|\\.bankid\\.com/'
-    '|\\.synonymer\\.se/'
-    '|\\.arbetsformedlingen\\.se/'
-    '|\\.skatteverket\\.se/'
-    '|\\.schoolsoft\\.se/'
-    '|\\.postnord\\.se/'
-    '|\\.grandid\\.com/'
-    '|\\.viaplay\\.se/'
-    '|\\.skola24\\.se/'
-    '|\\.forsakringskassan\\.se/'
-    '|\\.vklass\\.se/'
-    '|\\.sl\\.se/'
-    '|\\.familjeliv\\.se/'
+      '|\\.gov\\.se/'  -- Sweden
+      '|\\.1177\\.se/'
+      '|\\.funktionstjanster\\.se/'
+      '|\\.hemnet\\.se/'
+      '|\\.smhi\\.se/'
+      '|\\.sverigesradio\\.se/'
+      '|\\.klart\\.se/'
+      '|\\.bankid\\.com/'
+      '|\\.synonymer\\.se/'
+      '|\\.arbetsformedlingen\\.se/'
+      '|\\.skatteverket\\.se/'
+      '|\\.schoolsoft\\.se/'
+      '|\\.postnord\\.se/'
+      '|\\.grandid\\.com/'
+      '|\\.viaplay\\.se/'
+      '|\\.skola24\\.se/'
+      '|\\.forsakringskassan\\.se/'
+      '|\\.vklass\\.se/'
+      '|\\.sl\\.se/'
+      '|\\.familjeliv\\.se/'
 
-    '|\\.regjeringen\\.no/'  -- Norway
-    '|\\.stortinget\\.no/'
-    '|\\.nav\\.no/'
-    '|\\.helsenorge\\.no/'
-    '|\\.udir\\.no/'
-    '|\\.udi\\.no/'
-    '|\\.politi\\.no/'
-    '|\\.nve\\.no/'
-    '|\\.ssb\\.no/'
-    '|\\.miljodirektoratet\\.no/'
-    '|\\.arbeidstilsynet\\.no/'
-    '|\\.forsvaret\\.no/'
-    '|\\.skatteetaten\\.no/'
-    '|\\.brreg\\.no/'
-    '|\\.vegvesen\\.no/'
-    '|\\.mattilsynet\\.no/'
-    '|\\.lovdata\\.no/'
-    '|\\.altinn\\.no/'
-    '|\\.nkom\\.no/'
-    '|\\.fhi\\.no/'
-    '|\\.dsa\\.no/'
-    '|\\.kystverket\\.no/'
-    '|\\.bufdir\\.no/'
-    '|\\.nupi\\.no/'
+      '|\\.regjeringen\\.no/'  -- Norway
+      '|\\.stortinget\\.no/'
+      '|\\.nav\\.no/'
+      '|\\.helsenorge\\.no/'
+      '|\\.udir\\.no/'
+      '|\\.udi\\.no/'
+      '|\\.politi\\.no/'
+      '|\\.nve\\.no/'
+      '|\\.ssb\\.no/'
+      '|\\.miljodirektoratet\\.no/'
+      '|\\.arbeidstilsynet\\.no/'
+      '|\\.forsvaret\\.no/'
+      '|\\.skatteetaten\\.no/'
+      '|\\.brreg\\.no/'
+      '|\\.vegvesen\\.no/'
+      '|\\.mattilsynet\\.no/'
+      '|\\.lovdata\\.no/'
+      '|\\.altinn\\.no/'
+      '|\\.nkom\\.no/'
+      '|\\.fhi\\.no/'
+      '|\\.dsa\\.no/'
+      '|\\.kystverket\\.no/'
+      '|\\.bufdir\\.no/'
+      '|\\.nupi\\.no/'
 
-    '|\\.gov\\.gl/' -- Greenland
-    '|\\.naalakkersuisut\\.gl/'
-    '|\\.stat\\.gl/'
-    '|\\.oqaasileriffik\\.gl/'
-    '|\\.sullissivik\\.gl/'
-    '|\\.sisimiut\\.gl/'
-    '|\\.kalaallitnunaata\\.gl/'
-    '|\\.inatsisartut\\.gl/'
-    '|\\.politi\\.gl/'
-    '|\\.visitgreenland\\.gl/'
-    '|\\.energitjenesten\\.gl/'
-    '|\\.nusuka\\.gl/'
-    '|\\.telepost\\.gl/'
-    '|\\.kujalleq\\.gl/'
-    '|\\.sermersooq\\.gl/'
-    '|\\.aviisi\\.gl/'
-    '|\\.anjuma\\.gl/'
-    '|\\.kni\\.gl/'
-    '|\\.greenlandinstitute\\.gl/'
-    '|\\.mhs\\.gl/'
-    '|\\.iluarsartuiffik\\.gl/'
-    '|\\.royalgroenland\\.gl/'
-    '|\\.gux\\.gl/'
-    '|\\.univiseyisarti\\.gl/'
-    '|\\.arcticcommand\\.gl/'
+      '|\\.gov\\.gl/' -- Greenland
+      '|\\.naalakkersuisut\\.gl/'
+      '|\\.stat\\.gl/'
+      '|\\.oqaasileriffik\\.gl/'
+      '|\\.sullissivik\\.gl/'
+      '|\\.sisimiut\\.gl/'
+      '|\\.kalaallitnunaata\\.gl/'
+      '|\\.inatsisartut\\.gl/'
+      '|\\.politi\\.gl/'
+      '|\\.visitgreenland\\.gl/'
+      '|\\.energitjenesten\\.gl/'
+      '|\\.nusuka\\.gl/'
+      '|\\.telepost\\.gl/'
+      '|\\.kujalleq\\.gl/'
+      '|\\.sermersooq\\.gl/'
+      '|\\.aviisi\\.gl/'
+      '|\\.anjuma\\.gl/'
+      '|\\.kni\\.gl/'
+      '|\\.greenlandinstitute\\.gl/'
+      '|\\.mhs\\.gl/'
+      '|\\.iluarsartuiffik\\.gl/'
+      '|\\.royalgroenland\\.gl/'
+      '|\\.gux\\.gl/'
+      '|\\.univiseyisarti\\.gl/'
+      '|\\.arcticcommand\\.gl/'
 
-    '|\\.valtioneuvosto\\.fi/'  -- Finland
-    '|\\.minedu\\.fi/'
-    '|\\.formin\\.fi/'
-    '|\\.intermin\\.fi/'
-    '|\\.suomi\\.fi/'
-    '|\\.ym\\.fi/'
-    '|\\.stm\\.fi/'
-    '|\\.tem\\.fi/'
-    '|\\.lvm\\.fi/'
-    '|\\.mmm\\.fi/'
-    '|\\.okm\\.fi/'
-    '|\\.vm\\.fi/'
-    '|\\.defmin\\.fi/'
-    '|\\.oikeusministerio\\.fi/'
-    '|\\.um\\.fi/'
-    '|\\.vero\\.fi/'
-    '|\\.kela\\.fi/'
+      '|\\.valtioneuvosto\\.fi/'  -- Finland
+      '|\\.minedu\\.fi/'
+      '|\\.formin\\.fi/'
+      '|\\.intermin\\.fi/'
+      '|\\.suomi\\.fi/'
+      '|\\.ym\\.fi/'
+      '|\\.stm\\.fi/'
+      '|\\.tem\\.fi/'
+      '|\\.lvm\\.fi/'
+      '|\\.mmm\\.fi/'
+      '|\\.okm\\.fi/'
+      '|\\.vm\\.fi/'
+      '|\\.defmin\\.fi/'
+      '|\\.oikeusministerio\\.fi/'
+      '|\\.um\\.fi/'
+      '|\\.vero\\.fi/'
+      '|\\.kela\\.fi/'
 
-    '|\\.lrv\\.lt/'  -- Lithuania
-    '|\\.uzt\\.lt/'
-    '|\\.migracija\\.lt/'
-    '|\\.kam\\.lt/'
-    '|\\.lrs\\.lt/'
-    '|\\.urm\\.lt/'
+      '|\\.lrv\\.lt/'  -- Lithuania
+      '|\\.uzt\\.lt/'
+      '|\\.migracija\\.lt/'
+      '|\\.kam\\.lt/'
+      '|\\.lrs\\.lt/'
+      '|\\.urm\\.lt/'
 
-    '|\\.riik\\.ee/'  -- Estonia
-    '|\\.riigiteataja\\.ee/'
-    '|\\.eesti\\.ee/'
-    '|\\.valitsus\\.ee/'
+      '|\\.riik\\.ee/'  -- Estonia
+      '|\\.riigiteataja\\.ee/'
+      '|\\.eesti\\.ee/'
+      '|\\.valitsus\\.ee/'
 
-    '|\\.admin\\.ch/'  -- Switzerland
+      '|\\.admin\\.ch/'  -- Switzerland
 
-    '|\\.seg-social\\.es/'  -- Spain
-    '|\\.ine\\.es/'
-    '|\\.boe\\.es/'
+      '|\\.seg-social\\.es/'  -- Spain
+      '|\\.ine\\.es/'
+      '|\\.boe\\.es/'
 
-    '|\\.ft\\.dk/'  -- Denmark
-    '|\\.nemkonto\\.dk/'
-    '|\\.nemlog-in\\.dk/'
-    '|\\.mitid\\.dk/'
-    '|\\.digst\\.dk/'
-    '|\\.sikkerdigital\\.dk/'
-    '|\\.forsvaret\\.dk/'
-    '|\\.skat\\.dk/'
-    '|\\.stps\\.dk/'
-    '|\\.ufm\\.dk/'
-    '|\\.urm\\.dk/'
-    '|\\.uvm\\.dk/'
-    '|\\.politi\\.dk/'
-    '|\\.dataetiskraad\\.dk/'
-    '|\\.at\\.dk/'
-    '|\\.kum\\.dk/'
+      '|\\.ft\\.dk/'  -- Denmark
+      '|\\.nemkonto\\.dk/'
+      '|\\.nemlog-in\\.dk/'
+      '|\\.mitid\\.dk/'
+      '|\\.digst\\.dk/'
+      '|\\.sikkerdigital\\.dk/'
+      '|\\.forsvaret\\.dk/'
+      '|\\.skat\\.dk/'
+      '|\\.stps\\.dk/'
+      '|\\.ufm\\.dk/'
+      '|\\.urm\\.dk/'
+      '|\\.uvm\\.dk/'
+      '|\\.politi\\.dk/'
+      '|\\.dataetiskraad\\.dk/'
+      '|\\.at\\.dk/'
+      '|\\.kum\\.dk/'
 
-    '|\\.govvrn\\.ru/' -- Russia
+      '|\\.govvrn\\.ru/' -- Russia
 
-    '|\\.public\\.lu/'  -- Luxembourg
-    '|\\.etat\\.lu/'
+      '|\\.public\\.lu/'  -- Luxembourg
+      '|\\.etat\\.lu/'
 
-    '|\\.governo\\.it/'  -- Italy
+      '|\\.governo\\.it/'  -- Italy
 
-    '|\\.overheid\\.nl/'  -- Netherlands
-    '|\\.mijnoverheid\\.nl/'
+      '|\\.overheid\\.nl/'  -- Netherlands
+      '|\\.mijnoverheid\\.nl/'
 
-    '|\\.govern\\.ad/'  -- Andorra
-    '|\\.exteriors\\.ad/'
-    '|\\.consellgeneral\\.ad/'
+      '|\\.govern\\.ad/'  -- Andorra
+      '|\\.exteriors\\.ad/'
+      '|\\.consellgeneral\\.ad/'
 
-    '|\\.irangov\\.ir'  -- Iran
-    '|\\.irna\\.ir'
-    '|\\.razavi\\.ir'
-    '|\\.gholhak\\.ir'
+      '|\\.irangov\\.ir'  -- Iran
+      '|\\.irna\\.ir'
+      '|\\.razavi\\.ir'
+      '|\\.gholhak\\.ir'
 
-    ')')
+      ')')
 )
 
 SELECT
