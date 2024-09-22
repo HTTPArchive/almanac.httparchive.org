@@ -653,7 +653,7 @@ CDNの実装は、ウェブサイトをより持続可能にするのに役立�
     <thead>
       <tr>
         <th scope="col">CMS</th>
-        <th scope="col">Device</th>
+        <th scope="col">デバイス</th>
         <th scope="col">HTML</th>
         <th scope="col">JavaScript</th>
         <th scope="col">CSS</th>
