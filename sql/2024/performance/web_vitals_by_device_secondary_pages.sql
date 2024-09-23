@@ -8,10 +8,10 @@ try {
   if (crux) {
     return Object.keys(crux.metrics).reduce((acc, n) => ({
       ...acc,
-      [n]: crux.metrics[n].histogram[0].density > 0.75
+      [n]: crux.metrics[n].histogram[0].density >= 0.75
     }), {})
   }
-
+0
   return null;
 } catch (e) {
   return null;
