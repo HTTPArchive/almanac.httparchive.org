@@ -159,7 +159,7 @@ Loading performance is a vast topic, so we picked a couple of aspects to cover h
 
 A key aspect of the loading experience is how quickly the main content of a web page loads and is visible to users. This has been difficult to measure, in the past Google recommended performance metrics like <a hreflang="en" href="https://web.dev/first-meaningful-paint/">First Meaningful Paint</a> (FMP) to capture this, but it was hard to explain, and often unable to identify when the main content of the page was visible.
 
-Sometimes simpler is better. More recently it's been found that a more accurate way to measure when the main content of a page is loaded is to simply look at when the largest element was rendered. <a hreflang="en" href="https://web.dev/largest-contentful-paint">Largest Contentful Paint</a> (LCP) is a timing-based metric that captures this—the time at which the largest above-the-fold element was rendered.
+Sometimes simpler is better. More recently it's been found that a more accurate way to measure when the main content of a page is loaded is to simply look at when the largest element was rendered. <a hreflang="en" href="https://web.dev/articles/lcp">Largest Contentful Paint</a> (LCP) is a timing-based metric that captures this—the time at which the largest above-the-fold element was rendered.
 
 A good LCP score is 2.5s at p75. We found that the median LCP at p75 is 2.6s on mobile and 2.3s on desktop. Mobile web is especially susceptible to missing the mark on LCP.
 
@@ -211,9 +211,9 @@ This is especially important for mobile web, as shifting content is more noticea
 
 ##### Cumulative Layout Shift
 
-<a hreflang="en" href="https://web.dev/cls/">Cumulative Layout Shift</a> (CLS) is a metric that quantifies how much content within the viewport shifts around, during the user visit.
+<a hreflang="en" href="https://web.dev/articles/cls">Cumulative Layout Shift</a> (CLS) is a metric that quantifies how much content within the viewport shifts around, during the user visit.
 
-The <a hreflang="en" href="https://web.dev/optimize-cls/">most common causes of a poor CLS</a> are:
+The <a hreflang="en" href="https://web.dev/articles/optimize-cls">most common causes of a poor CLS</a> are:
 
 * Images without dimensions.
 * Ads, embeds, and iframes without dimensions.

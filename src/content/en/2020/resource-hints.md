@@ -72,7 +72,7 @@ The <a hreflang="en" href="https://web.dev/uses-rel-preload/">`preload`</a> hint
 <link rel="preload" href="main.js" as="script">
 ```
 
-Be mindful of what you are going to `preload`, because it can delay the download of other resources, so use it only for what is most critical to help you improve the Largest Contentful Paint (<a hreflang="en" href="https://web.dev/lcp/">LCP</a>). Also, when used on Chrome, it tends to over-prioritize `preload` resources and potentially dispatches preloads before other critical resources.
+Be mindful of what you are going to `preload`, because it can delay the download of other resources, so use it only for what is most critical to help you improve the Largest Contentful Paint (<a hreflang="en" href="https://web.dev/articles/lcp">LCP</a>). Also, when used on Chrome, it tends to over-prioritize `preload` resources and potentially dispatches preloads before other critical resources.
 
 Lastly, if used in a HTTP response header, some CDN's will also automatically turn a `preload` into a [HTTP/2 push](#http2-push) which can over-push cached resources.
 
@@ -174,7 +174,7 @@ With `preload` many different content-types can be preloaded and the [full list]
   sql_file="as_attribute_by_year.sql"
 ) }}
 
-Compared to the trend in [2019](../2019/resource-hints#the-as-attribute), we've seen rapid growth in font and style usage with the `as` attribute. This is likely related to developers increasing the priority of critical CSS and also combining `preload` fonts with `display:optional` to <a hreflang="en" href="https://web.dev/optimize-cls/#web-fonts-causing-foutfoit">improve</a> Cumulative Layout Shift (<a hreflang="en" href="https://web.dev/cls/">CLS</a>).
+Compared to the trend in [2019](../2019/resource-hints#the-as-attribute), we've seen rapid growth in font and style usage with the `as` attribute. This is likely related to developers increasing the priority of critical CSS and also combining `preload` fonts with `display:optional` to <a hreflang="en" href="https://web.dev/articles/optimize-cls#web-fonts-causing-foutfoit">improve</a> Cumulative Layout Shift (<a hreflang="en" href="https://web.dev/articles/cls">CLS</a>).
 
 Be mindful that omitting the `as` attribute, or having an invalid value will make it harder for the browser to determine the correct priority and in some cases, such as scripts, can even cause the resource to be fetched twice.
 

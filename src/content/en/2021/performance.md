@@ -20,7 +20,7 @@ featured_stat_label_3: Longest total blocking time
 
 ## Introduction
 
-Performance is important for user experience. Slow-to-load and slow-to-respond websites frustrate users and cause lost conversions. This is the first year that the <a hreflang="en" href="https://web.dev/vitals/">Core Web Vitals</a> have <a hreflang="en" href="https://developers.google.com/search/blog/2020/11/timing-for-page-experience">contributed to Google search rankings</a>. As such, we've seen greater interest in improving website performance which is great news for users.
+Performance is important for user experience. Slow-to-load and slow-to-respond websites frustrate users and cause lost conversions. This is the first year that the <a hreflang="en" href="https://web.dev/articles/vitals">Core Web Vitals</a> have <a hreflang="en" href="https://developers.google.com/search/blog/2020/11/timing-for-page-experience">contributed to Google search rankings</a>. As such, we've seen greater interest in improving website performance which is great news for users.
 
 *What are our top takeaways from this year's report?* First, we still have a long way to go in providing a good user experience. For example, faster networks and devices have not yet reached the point where we can ignore how much JavaScript we deliver to a site; and, we may never get there. Second, sometimes we misuse new features for performance, resulting in poorer performance. Third, we need better metrics for measuring interactivity, and those are on the way. And fourth, CMS- and framework-level work on performance can significantly impact user experience for the top 10M websites.
 
@@ -41,15 +41,15 @@ We supplement our CrUX RUM data with lab data from WebPageTest in HTTP Archive. 
 
 When comparing performance year-over-year, keep in mind that:
 
-- The <a hreflang="en" href="https://web.dev/cls-web-tooling/">Cumulative Layout Shift (CLS) calculation has changed</a> since 2020.
-- The <a hreflang="en" href="https://web.dev/cls-web-tooling/#additional-updates">First Contentful Paint (FCP) thresholds ("good", "needs improvement", and "poor") have changed</a> since 2020.
+- The <a hreflang="en" href="https://web.dev/articles/cls-web-tooling">Cumulative Layout Shift (CLS) calculation has changed</a> since 2020.
+- The <a hreflang="en" href="https://web.dev/articles/cls-web-tooling#additional-updates">First Contentful Paint (FCP) thresholds ("good", "needs improvement", and "poor") have changed</a> since 2020.
 - Last year's report was based on August 2020 data, and this year's report was based on the July 2021 run.
 
 Read the full [methodology](./methodology) for the Web Almanac to learn more.
 
 ## High-Level Performance: Core Web Vitals
 
-Before we dive into the individual metrics, let's take a look at combined performance for <a hreflang="en" href="https://web.dev/vitals/">Core Web Vitals</a> (CWV). Core Web Vitals (LCP, CLS, FID) are a set of performance metrics focused on user experience. They focus on loading, interactivity, and visual stability.
+Before we dive into the individual metrics, let's take a look at combined performance for <a hreflang="en" href="https://web.dev/articles/vitals">Core Web Vitals</a> (CWV). Core Web Vitals (LCP, CLS, FID) are a set of performance metrics focused on user experience. They focus on loading, interactivity, and visual stability.
 
 Web performance is notorious for an alphabet soup of metrics, but the community is coalescing on this framework.
 
@@ -147,7 +147,7 @@ In this section, we dive into each metric. For those who are less familiar, we'v
 
 ### Time-to-First-Byte (TTFB)
 
-<a hreflang="en" href="https://web.dev/ttfb/">Time-to-first-byte</a> (TTFB) is the time between the browser requesting a page and when it receives the first byte of information from the server. It is the first metric in the chain for website loading. A poor TTFB will result in a chain reaction impacting FCP and LCP. It's why we're talking about it first.
+<a hreflang="en" href="https://web.dev/articles/ttfb">Time-to-first-byte</a> (TTFB) is the time between the browser requesting a page and when it receives the first byte of information from the server. It is the first metric in the chain for website loading. A poor TTFB will result in a chain reaction impacting FCP and LCP. It's why we're talking about it first.
 
 {{ figure_markup(
   image="performance-TTFB-by-device.png",
@@ -227,7 +227,7 @@ Only 5% of origins on WordPress experienced good TTFB in July 2021. Considering 
 
 ### First Contentful Paint (FCP)
 
-<a hreflang="en" href="https://web.dev/fcp/">First Contentful Paint (FCP)</a> measures the time from when a load first begins until the browser first renders any contentful part of the page (e.g, text, images, etc.).
+<a hreflang="en" href="https://web.dev/articles/fcp">First Contentful Paint (FCP)</a> measures the time from when a load first begins until the browser first renders any contentful part of the page (e.g, text, images, etc.).
 
 {{ figure_markup(
   image="performance-FCP-by-device.png",
@@ -273,7 +273,7 @@ Common culprits for poor FCP are render-blocking resources, server response time
 
 ### Largest Contentful Paint (LCP)
 
-<a hreflang="en" href="https://web.dev/lcp/">Largest Contentful Paint (LCP)</a> measures the time from start load to when the browser renders the largest image or text in the viewport.
+<a hreflang="en" href="https://web.dev/articles/lcp">Largest Contentful Paint (LCP)</a> measures the time from start load to when the browser renders the largest image or text in the viewport.
 
 {{ figure_markup(
   image="performance-LCP-by-device.png",
@@ -357,7 +357,7 @@ For user experience, we want LCP elements to load as fast as possible. User expe
 
 Not all browsers support native lazy loading. Popular lazy loading polyfills detect a "lazyload" class on an image element. Thus, we can identify more possibly lazy-loaded images by adding images with a "lazyload" class to the total. The percent of sites probably lazy loading their LCP `<img>` element jumps up to 16.5% on mobile.
 
-Lazy loading your LCP element will result in worse performance. *Don't do it!* WordPress was an early adopter of native lazy loading. The early method was a naive solution applying lazy loading to all images, and the results showed a <a hreflang="en" href="https://web.dev/lcp-lazy-loading/">negative performance correlation</a>. They were able to use this data to implement a more nuanced approach for better performance.
+Lazy loading your LCP element will result in worse performance. *Don't do it!* WordPress was an early adopter of native lazy loading. The early method was a naive solution applying lazy loading to all images, and the results showed a <a hreflang="en" href="https://web.dev/articles/lcp-lazy-loading">negative performance correlation</a>. They were able to use this data to implement a more nuanced approach for better performance.
 
 The <a hreflang="en" href="https://developer.mozilla.org/docs/Web/HTML/Element/img#attr-decoding">`decode` attribute</a> for images is relatively new. Setting it to `async` can improve load and scroll performance. Currently, 0.4% of sites used the async decode directive for their LCP image. The negative impact of asynchronous decode on an LCP image is currently unclear. Thus, test your site before and after if you choose to set an LCP image to `decode="async"`.
 
@@ -384,7 +384,7 @@ Interestingly, 354 origins on desktop attempted to use native lazy-loading on HT
   )
 }}
 
-<a hreflang="en" href="https://web.dev/cls/">Cumulative Layout Shift (CLS)</a> is characterized by how much layout shift a user experiences, not how long it takes to visually see something like FCP and LCP. As such, performance by device was fairly equivalent.
+<a hreflang="en" href="https://web.dev/articles/cls">Cumulative Layout Shift (CLS)</a> is characterized by how much layout shift a user experiences, not how long it takes to visually see something like FCP and LCP. As such, performance by device was fairly equivalent.
 
 {{ figure_markup(
   image="performance-CLS-by-ect.png",
@@ -416,7 +416,7 @@ Common culprits for poor CLS include not reserving space for images, text shifts
 
 ### First Input Delay (FID)
 
-<a hreflang="en" href="https://web.dev/fid/">First Input Delay (FID)</a> measures the time from when a user first interacts with a page to the time the browser begins processing event handlers in response to that interaction.
+<a hreflang="en" href="https://web.dev/articles/fid">First Input Delay (FID)</a> measures the time from when a user first interacts with a page to the time the browser begins processing event handlers in response to that interaction.
 
 {{ figure_markup(
   image="performance-FID-by-device.png",
