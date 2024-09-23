@@ -1,9 +1,12 @@
 SELECT
-  COUNTIF(reqFont > 0) AS freq_fonts,
+  COUNTIF(SAFE_CAST(JSON_EXTRACT_SCALAR(summary, '$.reqFont') AS INT64) > 0) AS freq_fonts,
   COUNT(0) AS total,
-  COUNTIF(reqFont > 0) / COUNT(0) AS pct_fonts
+  COUNTIF(SAFE_CAST(JSON_EXTRACT_SCALAR(summary, '$.reqFont') AS INT64) > 0) / COUNT(0) AS pct_fonts
 FROM
-  `httparchive.summary_pages.2024_06_01_mobile`
+  `httparchive.all.pages`
 WHERE
-  reqFont IS NOT NULL AND
-  bytesFont IS NOT NULL
+  date = '2024-06-01' AND
+  client = 'mobile' AND
+  is_root_page AND
+  SAFE_CAST(JSON_EXTRACT_SCALAR(summary, '$.reqFont') AS INT64) IS NOT NULL AND
+  SAFE_CAST(JSON_EXTRACT_SCALAR(summary, '$.bytesFont') AS INT64) IS NOT NULL

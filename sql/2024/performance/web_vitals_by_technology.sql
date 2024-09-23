@@ -57,20 +57,27 @@ WITH base AS (
 
 tech AS (
   SELECT
-    _TABLE_SUFFIX AS client,
-    category,
-    app AS technology,
-    url AS page
+    client,
+    t.categories,
+    t.technology,
+    page
   FROM
-    `httparchive.technologies.2024_06_01_*`
+    `httparchive.all.pages`,
+    UNNEST(technologies) AS t
   WHERE
-    category IN ('CMS', 'Ecommerce', 'JavaScript frameworks')
+    date = '2024-06-01' AND
+    is_root_page AND
+    EXISTS (
+      SELECT 1
+      FROM UNNEST(t.categories) AS category
+      WHERE category IN ('CMS', 'Ecommerce', 'JavaScript frameworks')
+    )
 )
 
 SELECT
   date,
   client,
-  category,
+  categories,
   technology,
 
   COUNT(DISTINCT origin) AS total_origins,
@@ -200,7 +207,7 @@ USING
 GROUP BY
   date,
   client,
-  category,
+  categories,
   technology
 HAVING
   total_origins >= 1000
