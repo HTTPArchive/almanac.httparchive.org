@@ -2,53 +2,27 @@
 -- Question: What is the usage of link relationship in HTML?
 -- Normalization: Sites
 
-CREATE TEMPORARY FUNCTION HINTS(json STRING)
-RETURNS ARRAY<STRING>
-LANGUAGE js AS '''
-// Keep it in sync with SERVICE in common.sql.
-const services = [
-  /(fonts|use)\\.typekit\\.(net|com)/,
-  /cloud\\.typenetwork\\.com/,
-  /cloud\\.typography\\.com/,
-  /cloud\\.webtype\\.com/,
-  /f\\.fontdeck\\.com/,
-  /fast\\.fonts\\.(com|net)\\/(jsapi|cssapi)/,
-  /fnt\\.webink\\.com/,
-  /fontawesome\\.com/,
-  /fonts\\.(gstatic|googleapis)\\.com|themes.googleusercontent.com|ssl.gstatic.com/,
-  /fonts\\.typonine\\.com/,
-  /fonts\\.typotheque\\.com/,
-  /kernest\\.com/,
-  /typefront\\.com/,
-  /typesquare\\.com/,
-  /use\\.edgefonts\\.net|webfonts\\.creativecloud\\.com/,
-  /webfont\\.fontplus\\.jp/,
-  /webfonts\\.fontslive\\.com/,
-  /webfonts\\.fontstand\\.com/,
-  /webfonts\\.justanotherfoundry\\.com/,
-];
+-- INCLUDE ../common.sql
 
-const globalHints = new Set([
+CREATE TEMPORARY FUNCTION HINTS(json STRING)
+RETURNS ARRAY<STRUCT<name STRING, type STRING, url STRING>>
+LANGUAGE js AS '''
+const names = new Set([
   'dns-prefetch',
   'preconnect',
-]);
-const localHints = new Set([
   'prefetch',
   'preload',
 ]);
-
 try {
   const $ = JSON.parse(json);
-  return $.almanac['link-nodes'].nodes.reduce((results, link) => {
-    const hint = link.rel.toLowerCase();
-    if (globalHints.has(hint)) {
-      if (services.some((service) => service.test(link.href))) {
-        results.push(hint);
-      }
-    } else if (localHints.has(hint)) {
-      if (link.as.toLowerCase() === 'font') {
-        results.push(hint);
-      }
+  return $.almanac['link-nodes'].nodes.reduce((results, node) => {
+    const name = node.rel.toLowerCase();
+    if (names.has(name)) {
+      results.push({
+        'name': name,
+        'type': node.as,
+        'url': node.href
+      });
     }
     return results;
   }, []);
@@ -60,15 +34,28 @@ try {
 WITH
 hints AS (
   SELECT
-    client,
-    hint,
-    COUNT(DISTINCT page) AS count
+    pages.client,
+    hint.name AS hint,
+    COUNT(DISTINCT pages.page) AS count
   FROM
-    `httparchive.all.pages`,
+    `httparchive.all.pages` AS pages,
     UNNEST(HINTS(custom_metrics)) AS hint
+  LEFT JOIN
+    `httparchive.all.requests` AS requests
+  ON
+    requests.date = '2024-07-01' AND
+    requests.type = 'font' AND
+    requests.is_root_page AND
+    pages.page = requests.page AND
+    hint.url = requests.url
   WHERE
-    date = '2024-07-01' AND
-    is_root_page
+    pages.date = '2024-07-01' AND
+    pages.is_root_page AND
+    (
+      requests.url IS NOT NULL OR
+      LOWER(hint.type) = 'font' OR
+      SERVICE(hint.url) != 'self-hosted'
+    )
   GROUP BY
     client,
     hint
