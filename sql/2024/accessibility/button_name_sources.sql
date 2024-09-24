@@ -46,7 +46,6 @@ RETURNS ARRAY<STRING> LANGUAGE js AS '''
 
 SELECT
   client,
-  is_root_page,
   SUM(COUNT(0)) OVER (PARTITION BY client) AS total_buttons,
 
   button_name_source,
@@ -55,7 +54,6 @@ SELECT
 FROM (
   SELECT
     client,
-    is_root_page,
     date,
     button_name_source
   FROM
@@ -64,7 +62,8 @@ FROM (
       a11yButtonNameSources(JSON_EXTRACT_SCALAR(payload, '$._a11y'))
     ) AS button_name_source
   WHERE
-    date = '2024-06-01'
+    date = '2024-06-01' AND
+    is_root_page
 )
 GROUP BY
   client,
