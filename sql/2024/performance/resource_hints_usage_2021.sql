@@ -47,14 +47,14 @@ SELECT
   name,
   COUNT(DISTINCT url) AS pages,
   ANY_VALUE(total_pages) AS total,
-  COUNT(DISTINCT url) / ANY_VALUE(total_pages) AS pct,
+  COUNT(DISTINCT url) / ANY_VALUE(total_pages) AS pct
 FROM
   resource_hints
 JOIN
   totals
 USING
   (client)
-GROUP BY 
+GROUP BY
   client,
   name
 ORDER BY

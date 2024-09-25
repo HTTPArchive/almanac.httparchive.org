@@ -16,7 +16,7 @@ SELECT
   percentile,
   client,
   APPROX_QUANTILES(metricSavings_lcp, 1000)[OFFSET(percentile * 10)] AS metricSavings_lcp,
-  lcp_type 
+  lcp_type
 FROM (
   SELECT
     client,
@@ -24,11 +24,11 @@ FROM (
     CASE
       WHEN lcp_url = '' THEN 'text'
       ELSE 'image'
-    END AS lcp_type,
+    END AS lcp_type
   FROM
     data
 ),
-  UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
+UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 WHERE
   lcp_type = 'text'
 GROUP BY

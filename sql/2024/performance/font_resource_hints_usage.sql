@@ -43,8 +43,8 @@ font_requests AS (
   FROM
     `httparchive.all.requests`
   WHERE
-    date = '2024-06-01'
-    AND type = 'font' AND
+    date = '2024-06-01' AND
+    type = 'font' AND
     is_root_page
 )
 
@@ -54,13 +54,13 @@ SELECT
   COUNT(DISTINCT page) AS pages,
   SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS total,
   COUNT(DISTINCT page) / SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS pct_hints
-FROM 
+FROM
   resource_hints
-LEFT JOIN 
-  font_requests 
-USING 
+LEFT JOIN
+  font_requests
+USING
   (client, page)
-GROUP BY 
+GROUP BY
   client, name, type
-ORDER BY 
+ORDER BY
   pct_hints DESC;

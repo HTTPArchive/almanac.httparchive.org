@@ -32,8 +32,8 @@ WITH resource_hints AS (
   LEFT JOIN
     UNNEST(getResourceHints(payload)) AS hint
   WHERE
-    (date = '2024-06-01' OR date = '2023-06-01' OR date = '2022-06-01')
-    AND is_root_page
+    (date = '2024-06-01' OR date = '2023-06-01' OR date = '2022-06-01') AND
+    is_root_page
 ),
 
 totals AS (
@@ -44,8 +44,8 @@ totals AS (
   FROM
     `httparchive.all.pages`
   WHERE
-    (date = '2024-06-01' OR date = '2023-06-01' OR date = '2022-06-01')
-    AND is_root_page
+    (date = '2024-06-01' OR date = '2023-06-01' OR date = '2022-06-01') AND
+    is_root_page
   GROUP BY
     client,
     date
@@ -57,14 +57,14 @@ SELECT
   name,
   COUNT(DISTINCT page) AS pages,
   ANY_VALUE(total_pages) AS total,
-  COUNT(DISTINCT page) / ANY_VALUE(total_pages) AS pct,
+  COUNT(DISTINCT page) / ANY_VALUE(total_pages) AS pct
 FROM
   resource_hints
 JOIN
   totals
 USING
   (client, date)
-GROUP BY 
+GROUP BY
   client,
   date,
   name
