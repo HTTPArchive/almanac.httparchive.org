@@ -30,6 +30,7 @@ if (codepoints && codepoints.length) {
 """;
 
 SELECT
+  date,
   client,
   HAS_EMOJI(JSON_EXTRACT_STRING_ARRAY(payload, '$._font_details.cmap.codepoints')) AS emoji,
   COUNT(0) AS count,
@@ -38,13 +39,15 @@ SELECT
 FROM
   `httparchive.all.requests`
 WHERE
-  date = '2024-07-01' AND
+  date IN ('2022-07-01', '2023-07-01', '2024-07-01') AND
   is_root_page AND
   type = 'font' AND
   IS_COLOR(payload)
 GROUP BY
+  date,
   client,
   emoji
 ORDER BY
+  date,
   client,
   emoji
