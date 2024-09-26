@@ -35,7 +35,7 @@ Webコンテンツへのモバイルアクセスは、インターネットア�
 
 ### モバイルとデスクトップからのトラフィック
 
-[方法論](./methodology)に従い、このレポートの主要なデータソースはHTTP ArchiveとChrome UXレポート（CrUX）です。データソースからタブレットデータが別の測定値として含まれている場合、それは省略されました。これは、タブレットが主要なモバイルまたはデスクトップの分類に適切に収まらず、モバイルとデスクトップの情報を解釈または対比する際に混乱や複雑さを増加させる可能性があるためです。詳しくは、[CrUXドキュメント](https://developer.chrome.com/docs/crux/methodology?hl=ja#user-eligibility)を参照してください。
+[方法論](./methodology)に従い、このレポートの主要なデータソースはHTTP ArchiveとChrome UXレポート（CrUX）です。データソースからタブレットデータが別の測定値として含まれている場合、それは省略されました。これは、タブレットが主要なモバイルまたはデスクトップの分類に適切に収まらず、モバイルとデスクトップの情報を解釈または対比する際に混乱や複雑さを増加させる可能性があるためです。詳しくは、[CrUXドキュメント](https://developer.chrome.com/docs/cruxmethodology?hl=ja#user-eligibility)を参照してください。
 
 {{ figure_markup(
     image="pct-mobile-traffic-rank.png",

@@ -241,7 +241,7 @@ Ecograder、Website Carbon、Ecoping、CO2.jsなど、いくつかの利用可�
 
 ##### 使用されていないCSS
 
-使用されていないCSSは、とくにCSSフレームワーク（Bootstrapなど）を使用している場合に見られます。その際、ビルドフェーズで使用されていないCSSを削除することを念頭に置くべきです。<a hreflang="en" href="https://developer.chrome.com/docs/devtools/coverage/">Chrome Dev Toolsは、これを確認するためのCoverageツールを提供しています</a>。注意が必要です。多くのウェブサイトでは、初回訪問時にすべてのCSSとJavaScriptが読み込まれ、それらをキャッシュしてウェブサイトのさらなる訪問と探索のために使用します。これは必ずしも悪いことではありませんが、使用されていないコードはとくに考慮すべき欠点の1つです。なぜなら、それはさらなるコード処理を遅くする可能性があるからです。
+使用されていないCSSは、とくにCSSフレームワーク（Bootstrapなど）を使用している場合に見られます。その際、ビルドフェーズで使用されていないCSSを削除することを念頭に置くべきです。<a hreflang="en" href="https://developer.chrome.com/docs/devtools/coverage">Chrome Dev Toolsは、これを確認するためのCoverageツールを提供しています</a>。注意が必要です。多くのウェブサイトでは、初回訪問時にすべてのCSSとJavaScriptが読み込まれ、それらをキャッシュしてウェブサイトのさらなる訪問と探索のために使用します。これは必ずしも悪いことではありませんが、使用されていないコードはとくに考慮すべき欠点の1つです。なぜなら、それはさらなるコード処理を遅くする可能性があるからです。
 
 {{ figure_markup(
   image="unused-css-bytes.png",
@@ -256,7 +256,7 @@ Ecograder、Website Carbon、Ecoping、CO2.jsなど、いくつかの利用可�
 
 ### 使用されていないJavaScript
 
-依存関係を追加したり、jQueryのようなライブラリを使用したりすると、使用されていないJavaScriptの量がすぐに増えることがあります。<a hreflang="en" href="https://developer.chrome.com/docs/devtools/coverage/">Chrome Dev ToolsのCoverageツール</a>は、これをチェックするのに良い方法です。CSSの場合と同様に、これは時にすべての必要なものをキャッシュする戦略の一部です。これは、使用されていないJavaScriptがより長い処理をもたらす傾向があるという事実によってバランスを取るべきです。可能であれば、必要な機能のみを持つ<a hreflang="en" href="http://microjs.com">より小さな代替品</a>を探し、すべてのツールボックスを読み込むことを望むのではなく、いつか役立つことを期待してください。かつて、jQueryはほとんどのウェブサイトで見られるオールインワンソリューションでした。<a hreflang="en" href="https://youmightnotneedjquery.com/">今日では、多くのことがモダンなJavaScriptで処理できます</a>。<a hreflang="en" href="https://bundlephobia.com/">NPMの依存関係とそれがあなたのバンドルをどのように大きくするかをチェックしてください</a>。
+依存関係を追加したり、jQueryのようなライブラリを使用したりすると、使用されていないJavaScriptの量がすぐに増えることがあります。<a hreflang="en" href="https://developer.chrome.com/docs/devtools/coverage">Chrome Dev ToolsのCoverageツール</a>は、これをチェックするのに良い方法です。CSSの場合と同様に、これは時にすべての必要なものをキャッシュする戦略の一部です。これは、使用されていないJavaScriptがより長い処理をもたらす傾向があるという事実によってバランスを取るべきです。可能であれば、必要な機能のみを持つ<a hreflang="en" href="http://microjs.com">より小さな代替品</a>を探し、すべてのツールボックスを読み込むことを望むのではなく、いつか役立つことを期待してください。かつて、jQueryはほとんどのウェブサイトで見られるオールインワンソリューションでした。<a hreflang="en" href="https://youmightnotneedjquery.com/">今日では、多くのことがモダンなJavaScriptで処理できます</a>。<a hreflang="en" href="https://bundlephobia.com/">NPMの依存関係とそれがあなたのバンドルをどのように大きくするかをチェックしてください</a>。
 
 {{ figure_markup(
   image="unused-javascript-bytes.png",
