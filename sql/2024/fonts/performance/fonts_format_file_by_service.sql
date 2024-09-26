@@ -1,6 +1,6 @@
 -- Section: Performance
 -- Question: Which file formats are used broken down by service?
--- Normalization: Fonts
+-- Normalization: Fonts on sites (primary) and fonts (secondary)
 
 -- INCLUDE ../common.sql
 
@@ -20,21 +20,19 @@ fonts AS (
     date = '2024-07-01' AND
     is_root_page AND
     type = 'font'
-  GROUP BY
-    client,
-    url,
-    service,
-    format
 )
 
 SELECT
   client,
   service,
   format,
-  COUNT(DISTINCT url) AS count,
-  SUM(COUNT(DISTINCT url)) OVER (PARTITION BY client) AS total,
-  COUNT(DISTINCT url) / SUM(COUNT(DISTINCT url)) OVER (PARTITION BY client) AS proportion,
-  ROW_NUMBER() OVER (PARTITION BY client, service ORDER BY COUNT(DISTINCT url) DESC) AS rank
+  COUNT(0) AS count,
+  COUNT(DISTINCT url) AS count_secondary,
+  SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
+  SUM(COUNT(DISTINCT url)) OVER (PARTITION BY client) AS total_secondary,
+  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS proportion,
+  COUNT(DISTINCT url) / SUM(COUNT(DISTINCT url)) OVER (PARTITION BY client) AS proportion_secondary,
+  ROW_NUMBER() OVER (PARTITION BY client, service ORDER BY COUNT(0) DESC) AS rank
 FROM
   fonts
 GROUP BY
