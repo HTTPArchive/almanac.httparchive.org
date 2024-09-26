@@ -76,7 +76,7 @@ That can be across a superfast, high monthly usage broadband connection, but it 
 
 The larger the page weight, the longer this will take. It can also be more expensive for those users with lower-capped data plans.
 
-There are optimizations with things like <a hreflang="en" href="https://web.dev/uses-rel-preconnect/">`preconnect`</a>, <a hreflang="en" href="https://web.dev/preload-critical-assets/">`preload`</a>, and <a hreflang="en" href="https://web.dev/priority-hints/">Priority Hints</a> that can manage the order things are loaded and help perceived load times, but ultimately the resources still need to be transmitted and received, and the best optimization of all is serving smaller resources.
+There are optimizations with things like <a hreflang="en" href="https://web.dev/uses-rel-preconnect/">`preconnect`</a>, <a hreflang="en" href="https://web.dev/preload-critical-assets/">`preload`</a>, and <a hreflang="en" href="https://web.dev/articles/fetch-priority">Priority Hints</a> that can manage the order things are loaded and help perceived load times, but ultimately the resources still need to be transmitted and received, and the best optimization of all is serving smaller resources.
 
 ### Rendering
 

@@ -229,7 +229,7 @@ sheets_gid="1372715282"
 }
 ```
 
-ウェブアプリのオリジン以外のオリジンを登録したい場合は、<a hreflang="en" href="https://web.dev/pwa-url-handler/#the-web-app-origin-association-file">所有権を確認する</a>必要があります。この機能は比較的初期の段階にあり、デスクトップのChromeとEdgeにのみ対応しています。URLハンドリングは現在、<a hreflang="en" href="https://developer.chrome.com/blog/origin-trials/">オリジン・トライアル</a>として提供されています。つまり、この機能はまだ一般的に利用できるものではありません。その代わり、開発者はこの実験的なAPIを使うために、まずOrigin Trialトークンに登録し、このトークンをウェブサイトと一緒に配信して、この機能を使うことを選択する必要があります。詳細は、<a hreflang="en" href="https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md">Web開発者向けOriginトライアルガイド</a> に掲載されています。
+ウェブアプリのオリジン以外のオリジンを登録したい場合は、<a hreflang="en" href="https://web.dev/pwa-url-handler/#the-web-app-origin-association-file">所有権を確認する</a>必要があります。この機能は比較的初期の段階にあり、デスクトップのChromeとEdgeにのみ対応しています。URLハンドリングは現在、<a hreflang="en" href="https://developer.chrome.com/blog/origin-trials">オリジン・トライアル</a>として提供されています。つまり、この機能はまだ一般的に利用できるものではありません。その代わり、開発者はこの実験的なAPIを使うために、まずOrigin Trialトークンに登録し、このトークンをウェブサイトと一緒に配信して、この機能を使うことを選択する必要があります。詳細は、<a hreflang="en" href="https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md">Web開発者向けOriginトライアルガイド</a> に掲載されています。
 
 {{ figure_markup(
 caption="デスクトップのWebサイトでは、URLハンドリングを使用しています。",

@@ -506,7 +506,7 @@ Beyond blocking trackers, Chrome has launched the <a hreflang="en" href="https:/
 
 ### Privacy Sandbox
 
-To seek ecosystem feedback, early and experimental versions of Privacy Sandbox APIs are made available initially behind <a hreflang="en" href="https://www.chromium.org/developers/how-tos/run-chromium-with-flags">feature flags</a> for testing by individual developers, and then in Chrome via <a hreflang="en" href="https://developer.chrome.com/blog/origin-trials/">_origin trials_</a>. Sites can take part in these origin trials to test experimental web platform features, and give feedback to the web standards community on a feature's usability, practicality, and effectiveness, before it's made available to all websites by default.
+To seek ecosystem feedback, early and experimental versions of Privacy Sandbox APIs are made available initially behind <a hreflang="en" href="https://www.chromium.org/developers/how-tos/run-chromium-with-flags">feature flags</a> for testing by individual developers, and then in Chrome via <a hreflang="en" href="https://developer.chrome.com/blog/origin-trials">_origin trials_</a>. Sites can take part in these origin trials to test experimental web platform features, and give feedback to the web standards community on a feature's usability, practicality, and effectiveness, before it's made available to all websites by default.
 
 <p class="note">**Disclaimer:** Origin trials are only available for a limited amount of time. The numbers below represent the state or Privacy Sandbox origin trials at the time of this writing, in October 2021.</p>
 
@@ -540,11 +540,11 @@ We saw that 4.10% of the top 1,000 websites have opted out of FLoC. Across all w
 
 Within Google's Privacy Sandbox initiative, a number of experiments are in various stages of development.
 
-The <a hreflang="en" href="https://developer.chrome.com/docs/privacy-sandbox/attribution-reporting/">_Attribution Reporting API_</a> (previously called _Conversion Measurement_) makes it possible to measure when user interaction with an ad leads to a conversion—for example, when an ad click eventually led to a purchase. We saw the first origin trial (which ended in October 2021) enabled on 10 origins.
+The <a hreflang="en" href="https://developer.chrome.com/docs/privacy-sandbox/attribution-reporting">_Attribution Reporting API_</a> (previously called _Conversion Measurement_) makes it possible to measure when user interaction with an ad leads to a conversion—for example, when an ad click eventually led to a purchase. We saw the first origin trial (which ended in October 2021) enabled on 10 origins.
 
-<a hreflang="en" href="https://developer.chrome.com/docs/privacy-sandbox/fledge/">_FLEDGE_</a> (First "Locally-Executed Decision over Groups" Experiment) seeks to address ad targeting. The API can be tested in current versions of Chrome <a hreflang="en" href="https://developer.chrome.com/docs/privacy-sandbox/fledge/">locally by individual developers</a> but there is no origin trial as of October 2021.
+<a hreflang="en" href="https://developer.chrome.com/docs/privacy-sandbox/fledge">_FLEDGE_</a> (First "Locally-Executed Decision over Groups" Experiment) seeks to address ad targeting. The API can be tested in current versions of Chrome <a hreflang="en" href="https://developer.chrome.com/docs/privacy-sandbox/fledge">locally by individual developers</a> but there is no origin trial as of October 2021.
 
-<a hreflang="en" href="https://developer.chrome.com/docs/privacy-sandbox/trust-tokens/">_Trust Tokens_</a> enable a website to convey a limited amount of information from one browsing context to another to help combat fraud, without passive tracking. We saw the first <a hreflang="en" href="https://developer.chrome.com/blog/third-party-origin-trials/">origin trial</a> (which will end in May 2022) enabled on 7 origins that are likely embedded in a number of sites as third-party providers.
+<a hreflang="en" href="https://developer.chrome.com/docs/privacy-sandbox/trust-tokens">_Trust Tokens_</a> enable a website to convey a limited amount of information from one browsing context to another to help combat fraud, without passive tracking. We saw the first <a hreflang="en" href="https://developer.chrome.com/blog/third-party-origin-trials">origin trial</a> (which will end in May 2022) enabled on 7 origins that are likely embedded in a number of sites as third-party providers.
 
 <a hreflang="en" href="https://github.com/WICG/CHIPS">_CHIPS_</a> (Cookies Having Independent Partitioned State) allows websites to mark cross-site cookies as "Partitioned", putting them in a separate cookie jar per top-level site. (Firefox has already introduced the similar <a hreflang="en" href="https://blog.mozilla.org/security/2021/02/23/total-cookie-protection/">_Total Cookie Protection_</a> feature for cookie partitioning.) As of October 2021, there is no origin trial for CHIPS.
 
@@ -560,7 +560,7 @@ The <a hreflang="en" href="https://developer.chrome.com/docs/privacy-sandbox/att
   )
 }}
 
-Finally, <a hreflang="en" href="https://developer.chrome.com/docs/privacy-sandbox/first-party-sets/">_First-Party Sets_</a> allow website owners to define a set of distinct domains that actually belong to the same entity. Owners can then set a `SameParty` attribute on cookies that should be sent across cross-site contexts, as long as the sites are in the same first-party set. A first origin trial ended in September 2021. We saw the `SameParty` attribute on a few thousand cookies.
+Finally, <a hreflang="en" href="https://developer.chrome.com/docs/privacy-sandbox/first-party-sets">_First-Party Sets_</a> allow website owners to define a set of distinct domains that actually belong to the same entity. Owners can then set a `SameParty` attribute on cookies that should be sent across cross-site contexts, as long as the sites are in the same first-party set. A first origin trial ended in September 2021. We saw the `SameParty` attribute on a few thousand cookies.
 
 ## Conclusion
 

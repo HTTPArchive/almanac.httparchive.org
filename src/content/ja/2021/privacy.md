@@ -544,7 +544,7 @@ GoogleのPrivacy Sandbox構想の中では、さまざまな実験が行われ�
 
 <a hreflang="ja" href="https://developer.chrome.com/ja/docs/privacy-sandbox/fledge/">_FLEDGE_</a>（第1回「グループ上の局所実行型判定」実験）は、広告ターゲティングに対応することを目指したものです。このAPIは、現在のバージョンのChrome<a hreflang="ja" href="https://developer.chrome.com/ja/docs/privacy-sandbox/fledge/">ローカルで個々の開発者で</a>試すことができますが、2021年10月現在、オリジントライアルは行われていません。
 
-<a hreflang="ja" href="https://developer.chrome.com/ja/docs/privacy-sandbox/trust-tokens/">_トラストトークン_</a> は、ウェブサイトがある閲覧状況から別の閲覧状況へと限られた量の情報を伝達し、パッシブ追跡なしで詐欺へ対抗できるようにするものです。私たちは、サードパーティのプロバイダーとして多くのサイトへ組み込まれていると思われる7つのオリジンで、最初の <a hreflang="en" href="https://developer.chrome.com/blog/third-party-origin-trials/">オリジン トライアル</a>（2022年5月に終了予定）が有効になっていることを確認しました。
+<a hreflang="ja" href="https://developer.chrome.com/ja/docs/privacy-sandbox/trust-tokens/">_トラストトークン_</a> は、ウェブサイトがある閲覧状況から別の閲覧状況へと限られた量の情報を伝達し、パッシブ追跡なしで詐欺へ対抗できるようにするものです。私たちは、サードパーティのプロバイダーとして多くのサイトへ組み込まれていると思われる7つのオリジンで、最初の <a hreflang="en" href="https://developer.chrome.com/blog/third-party-origin-trials">オリジン トライアル</a>（2022年5月に終了予定）が有効になっていることを確認しました。
 
 <a hreflang="en" href="https://github.com/WICG/CHIPS">_CHIPS_</a> (Cookies Having Independent Partitioned State) では、ウェブサイトがクロスサイトのクッキーを「パーティションド」としてマークし、トップレベルのサイトごとに別のクッキー入れへ入れられるようにします。（Firefoxでは、Cookieのパーティショニングについて、同様の <a hreflang="en" href="https://blog.mozilla.org/security/2021/02/23/total-cookie-protection/">_トータル・クッキー・プロテクト_</a> 機能がすでに導入されています）。2021年10月現在、CHIPSのオリジントライアルはありません。
 
