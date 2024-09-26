@@ -635,7 +635,7 @@ Chrome 95 added experimental support for <a hreflang="en" href="https://datatrac
 
 ### Priority Hints
 
-Priority hints inform the browser of the relative importance of resources within the page, intending to prioritize critical resources and improve Core Web Vitals. Priority Hints are enabled through the document markup by adding the `importance` attribute to resources, such as `<img>` or `<script>`. The `importance` attribute accepts an enumeration of `high`, `low` or `auto` and by combining this with the type of resource, the browser would be able to assign the optimal fetch priority based on its heuristics. Priority Hints are available on Chrome 96 as an <a hreflang="en" href="https://developer.chrome.com/blog/origin-trials/">origin trial</a>.
+Priority hints inform the browser of the relative importance of resources within the page, intending to prioritize critical resources and improve Core Web Vitals. Priority Hints are enabled through the document markup by adding the `importance` attribute to resources, such as `<img>` or `<script>`. The `importance` attribute accepts an enumeration of `high`, `low` or `auto` and by combining this with the type of resource, the browser would be able to assign the optimal fetch priority based on its heuristics. Priority Hints are available on Chrome 96 as an <a hreflang="en" href="https://developer.chrome.com/blog/origin-trials">origin trial</a>.
 
 ## Conclusion
 

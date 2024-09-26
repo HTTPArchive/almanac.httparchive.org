@@ -155,7 +155,7 @@ Forced colors mode is an accessibility feature intended to increase the readabil
 ) }}
 
 Like other user preference media queries, we see a lot of websites making adjustments based on forced colors mode. 8% of mobile sites and 9% of desktop sites use the `forced-colors` media query to alter their styles, while usage of the legacy IE11-only `-ms-high-contrast` media query is above 20% for both mobile and desktop.
-This doesn't tell us to what extent sites do support forced colors mode, but the data is encouraging nonetheless considering the `forced-colors` media query has only been supported in major browsers <a hreflang="en" href="https://caniuse.com/mdn-css_at-rules_media_forced-colors">since 2020</a>, and support for <a hreflang="en" href="https://developer.chrome.com/docs/devtools/rendering/emulate-css/">emulating `forced-colors` mode</a> on devices other than Windows is only available since February 2022.
+This doesn't tell us to what extent sites do support forced colors mode, but the data is encouraging nonetheless considering the `forced-colors` media query has only been supported in major browsers <a hreflang="en" href="https://caniuse.com/mdn-css_at-rules_media_forced-colors">since 2020</a>, and support for <a hreflang="en" href="https://developer.chrome.com/docs/devtools/rendering/emulate-css">emulating `forced-colors` mode</a> on devices other than Windows is only available since February 2022.
 
 ## Navigation
 

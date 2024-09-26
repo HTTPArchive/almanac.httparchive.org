@@ -6,7 +6,7 @@ description: Page Weight chapter of the 2022 Web Almanac covering why page weigh
 authors: [fellowhuman1101, dwsmart]
 reviewers: [CSteele-gh]
 analysts: [drohe]
-editors: []
+editors: [tunetheweb]
 translators: []
 results: https://docs.google.com/spreadsheets/d/1JvJMiRsL6T9m_NEBHFh-rrQmU5a-ufdOKriSJbrEN8M/
 fellowhuman1101_bio: Jamie Indigo isn't a robot, but speaks bot. As a technical SEO at <a hreflang="en" href="https://www.deepcrawl.com">DeepCrawl</a>, they study how search engines crawl, render, and index the web. They love to tame wild JavaScript and optimize rendering strategies. When not working, Jamie likes horror movies, graphic novels, and Dungeons & Dragons.
@@ -76,7 +76,7 @@ That can be across a superfast, high monthly usage broadband connection, but it 
 
 The larger the page weight, the longer this will take. It can also be more expensive for those users with lower-capped data plans.
 
-There are optimizations with things like <a hreflang="en" href="https://web.dev/uses-rel-preconnect/">`preconnect`</a>, <a hreflang="en" href="https://web.dev/preload-critical-assets/">`preload`</a>, and <a hreflang="en" href="https://web.dev/priority-hints/">Priority Hints</a> that can manage the order things are loaded and help perceived load times, but ultimately the resources still need to be transmitted and received, and the best optimization of all is serving smaller resources.
+There are optimizations with things like <a hreflang="en" href="https://web.dev/uses-rel-preconnect/">`preconnect`</a>, <a hreflang="en" href="https://web.dev/preload-critical-assets/">`preload`</a>, and <a hreflang="en" href="https://web.dev/articles/fetch-priority">Priority Hints</a> that can manage the order things are loaded and help perceived load times, but ultimately the resources still need to be transmitted and received, and the best optimization of all is serving smaller resources.
 
 ### Rendering
 

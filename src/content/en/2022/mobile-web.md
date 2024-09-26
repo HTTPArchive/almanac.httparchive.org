@@ -35,7 +35,7 @@ New generations are getting involved in social media and have earlier access to 
 
 ### Traffic from mobile versus desktop
 
-In keeping with the [Methodology](./methodology), the primary data source for this report is the HTTP Archive and the Chrome UX Report (CrUX). In cases where tablet data was included as a separate measurement from any data source, it was omitted, since it does not neatly fit in the primary mobile or desktop classifications and can add confusion and complexity when interpreting or contrasting mobile and desktop information that is more neatly segmented out. Refer to the <a hreflang="en" href="https://developer.chrome.com/docs/crux/methodology/#user-eligibility">CrUX documentation</a> for more information about eligible mobile platforms.
+In keeping with the [Methodology](./methodology), the primary data source for this report is the HTTP Archive and the Chrome UX Report (CrUX). In cases where tablet data was included as a separate measurement from any data source, it was omitted, since it does not neatly fit in the primary mobile or desktop classifications and can add confusion and complexity when interpreting or contrasting mobile and desktop information that is more neatly segmented out. Refer to the <a hreflang="en" href="https://developer.chrome.com/docs/crux/methodology#user-eligibility">CrUX documentation</a> for more information about eligible mobile platforms.
 
 {{ figure_markup(
     image="pct-mobile-traffic-rank.png",

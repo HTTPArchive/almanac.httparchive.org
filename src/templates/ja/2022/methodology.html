@@ -1,0 +1,489 @@
+{% extends "base/methodology.html" %}
+
+{% block title %}方法論 | HTTP ArchiveによるWeb Almanac{% endblock %}
+
+{% block description %}{{ year }}年のWeb Almanacがどのように構築されたかを説明します。使用されたデータセットとツール、およびプロジェクトの運営方法。{% endblock %}
+
+{% block twitter_image_alt %}{{ year }} Web Almanacの方法論{% endblock %}
+
+{% block index %}
+      <ul>
+        <li><a href="#overview">概要</a></li>
+        <li><a href="#dataset">データセットについて</a>
+          <ul>
+            <li><a href="#websites">ウェブサイト</a></li>
+            <li><a href="#metrics">メトリクス</a></li>
+          </ul>
+        </li>
+        <li><a href="#tools">ツール</a>
+          <ul>
+            <li><a href="#webpagetest">ウェブページテスト</a></li>
+            <li><a href="#lighthouse">Lighthouse</a></li>
+            <li><a href="#wappalyzer">Wappalyzer</a></li>
+            <li><a href="#chrome-ux-report">Chrome UXレポート</a></li>
+            <li><a href="#blink-features">Blink機能</a></li>
+            <li><a href="#third-party-web">サードパーティWeb</a></li>
+            <li><a href="#rework-css">Rework CSS</a>
+              <ul>
+                <li><a href="#rework-utils">Rework Utils</a></li>
+              </ul>
+            </li>
+            <li><a href="#parsel">Parsel</a></li>
+          </ul>
+        </li>
+        <li><a href="#process">分析プロセス</a>
+          <ul>
+            <li><a href="#planning">計画</a></li>
+            <li><a href="#analysis">分析</a></li>
+            <li><a href="#interpretation">解釈</a></li>
+          </ul>
+        </li>
+        <li><a href="#looking-ahead">将来の展望</a></li>
+      </ul>
+{% endblock %}
+
+{% block main_content %}
+    <section>
+      <!-- Show large image for large screens and high density screens and use webp when supported -->
+      <picture>
+          <source media="(min-width: 327px)" type="image/webp" srcset="/static/images/methodology-banner.webp">
+          <source media="(min-width: 327px)" type="image/jpeg" srcset="/static/images/methodology-banner.png">
+          <source type="image/webp" srcset="/static/images/methodology-banner.webp 2x">
+          <source type="image/jpeg" srcset="/static/images/methodology-banner.png 2x">
+          <source type="image/webp" srcset="/static/images/methodology-banner-sm.webp">
+          <source type="image/jpeg" srcset="/static/images/methodology-banner-sm.png">
+          <img src="/static/images/methodology-banner.png" class="content-banner" alt="" width="1200" height="984" fetchpriority="high">
+        </picture>
+        <h2 id="overview"><a href="#overview" class="anchor-link">概要</a></h2>
+
+        <p>
+          Web Almanacは、<a hreflang="en" href="https://httparchive.org">HTTP Archive</a>によって組織されたプロジェクトです。HTTP Archiveは、2010年にSteve Soudersによってウェブがどのように構築されているかを追跡する使命で始まりました。月に数百万のウェブページの構成を評価し、そのテラバイトのメタデータを<a hreflang="en" href="https://httparchive.org/faq#how-do-i-use-bigquery-to-write-custom-queries-over-the-data">BigQuery</a>で分析用に提供しています。
+        </p>
+
+        <p>
+          The Web Almanacの使命は、Webの現状に関する公共知識の年間リポジトリになることです。我々の目標は、HTTP ArchiveのデータウェアハウスをWebコミュニティにとってさらにアクセスしやすくすることであり、専門家がコンテキストに沿った洞察を提供することでこれを実現します。
+        </p>
+
+        <p>
+          {{ year }}年版のWeb Almanacは、コンテンツ、エクスペリエンス、パブリッシング、ディストリビューションの4つの部分に分かれています。それぞれの部分では、複数の章がさまざまな角度からその全体的なテーマを探ります。たとえば、第2部では、パフォーマンス、セキュリティ、アクセシビリティの章などでユーザーエクスペリエンスを異なる視点から探求しています。
+        </p>
+    </section>
+
+    <section>
+        <h2 id="dataset"><a href="#dataset" class="anchor-link">データセットについて        </a></h2>
+
+        <p>
+          HTTP Archiveのデータセットは、毎月新しいデータで継続的に更新されています。{{ year }}年版のWeb Almanacでは、とくに章で記載がない限り、すべての指標は{{ year }}年6月のクロールから取得されました。これらの結果は、BigQuery上で<code>{{ year }}_06_01</code>というプレフィックスが付いたテーブルで<a hreflang="en" href="https://github.com/HTTPArchive/httparchive.org/blob/main/docs/gettingstarted_bigquery.md">公開クエリが可能</a>です。
+        </p>
+
+        <p>
+          Web Almanacで提示されているすべての指標は、BigQuery上のデータセットを使用して公開再現可能です。すべての章で使用されたクエリは、<a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/{{ year }}">GitHubリポジトリ</a>で閲覧できます。
+        </p>
+
+        <p class="note">
+          これらのクエリの一部は非常に大きく、自分で実行する場合、<a hreflang="en" href="https://cloud.google.com/bigquery/pricing">高額</a>になる可能性がありますのでご注意ください。費用を抑える方法については、Tim Kadlec氏の投稿<a hreflang="en" href="https://timkadlec.com/remembers/2019-12-10-using-bigquery-without-breaking-the-bank/">Using BigQuery Without Breaking the Bank</a>を参照してください。
+        </p>
+
+        <p>
+          たとえば、デスクトップおよびモバイルページごとのJavaScriptの中央値のバイト数を理解するには、<a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/2022/javascript/bytes_2022.sql">bytes_2022.sql</a>を参照してください。
+        </p>
+
+        <div class="code-block floating-card">
+          {# このマークアップを生成するには、一時的に```sqlコードブロックを章に追加し、その章を生成すると、次のような HTML が得られます。 #}
+          {# キーボードスクロールを可能にするため、preタグに余分な属性があることに注意し、それらを元に戻す。 #}
+          <pre role="region" aria-label="bytes_2022.sql" tabindex="0"><code class="sql language-sql"><span class="comment">#standardSQL</span>
+<span class="comment"># Sum of JS request bytes per page (2022)</span>
+<span class="keyword">SELECT</span>
+  percentile,
+  _TABLE_SUFFIX <span class="keyword">AS</span> client,
+  <span class="function call">APPROX_QUANTILES</span>(bytesJs / <span class="constant numeric">1024</span>, <span class="constant numeric">1000</span>)[<span class="function call">OFFSET</span>(percentile <span class="keyword operator">*</span> <span class="constant numeric">10</span>)] <span class="keyword">AS</span> js_kilobytes
+<span class="keyword">FROM</span>
+  <span class="string">`httparchive.summary_pages.2022_06_01_*`</span>,
+  <span class="function call">UNNEST</span>([<span class="constant numeric">10</span>, <span class="constant numeric">25</span>, <span class="constant numeric">50</span>, <span class="constant numeric">75</span>, <span class="constant numeric">90</span>, <span class="constant numeric">100</span>]) <span class="keyword">AS</span> percentile
+<span class="keyword">GROUP</span> <span class="keyword">BY</span>
+  percentile,
+  client
+<span class="keyword">ORDER</span> <span class="keyword">BY</span>
+  client,
+  percentile</code></pre></div>
+
+        <p>
+          Results for each metric are publicly viewable in chapter-specific spreadsheets, for example <a href="https://docs.google.com/spreadsheets/d/1vOeFUyfEtWRen3Xj57ZsWav40n5tlcJoV0HmAxmNE_I/edit?usp=sharing">JavaScript results</a>. Links to the raw results and queries are available at the bottom of each chapter. Metric-specific results and queries are also linked directly from each figure.
+        </p>
+    </section>
+
+    <section>
+        <h3 id="websites"><a href="#websites" class="anchor-link">Websites</a></h3>
+
+        <p>
+          データセットには8,360,179のウェブサイトが含まれています。そのうち、7,905,956はモバイルウェブサイトで、5,428,235はデスクトップウェブサイトです。ほとんどのウェブサイトは、モバイルおよびデスクトップの両方のサブセットに含まれています。
+        </p>
+
+        <p>
+          HTTP Archiveは、<a href="#chrome-ux-report">Chrome UX Report</a>からウェブサイトのURLを取得しています。Chrome UX Reportは、Googleによる公開データセットで、Chromeユーザーが積極的に訪問している何百万ものウェブサイトにおけるユーザーエクスペリエンスを集約しています。これにより、最新の実際のWeb使用状況を反映したウェブサイトのリストを入手できます。Chrome UX Reportのデータセットにはフォームファクターの次元が含まれており、これを使用してデスクトップまたはモバイルユーザーがアクセスしたすべてのウェブサイトを取得しています。
+        </p>
+
+        <p>
+          Web Almanacで使用された{{ year }}年6月のHTTP Archiveクロールは、もっとも最近利用可能なChrome UX Reportリリースをウェブサイトのリストとして使用しました。{{ year }}04のデータセットは{{ year }}年5月3日にリリースされ、4月にChromeユーザーが訪問したウェブサイトをキャプチャしています。
+        </p>
+
+        <p>
+          リソースの制約により、HTTP Archiveは以前、Chrome UX Reportの各ウェブサイトから1ページしかテストできず、ホームページのみが含まれていました。ホームページは必ずしもウェブサイト全体を代表しているわけではないため、結果にバイアスがかかる可能性があることに注意してください。今年、Web Almanacプロジェクトが開始された後に<a hreflang="en" href="https://discuss.httparchive.org/t/improving-the-http-archive-pipeline-and-dataset-by-10x/2372">セカンダリページ</a>を導入し、一部の章ではこの新しいデータを使用しています。しかし、ほとんどの章ではホームページのみを使用しました。今後の分析では、この新しいデータセットがさらに活用されることを期待しています。
+        </p>
+
+        <p>
+          HTTP Archiveは、ラボテストツールとも見なされており、データセンターからウェブサイトをテストし、実際のユーザーエクスペリエンスからのデータを収集していません。すべてのページは、キャッシュが空の状態で、ログアウトした状態でテストされており、実際のユーザーがアクセスする方法を反映していない場合があります。
+        </p>
+    </section>
+
+    <section>
+      <h3 id="metrics"><a href="#metrics" class="anchor-link">メトリクス</a></h3>
+
+      <p>
+        HTTP Archiveは、Webがどのように構築されているかについて何千ものメトリクスを収集しています。これには、ページごとのバイト数、ページがHTTPSで読み込まれたかどうか、個々のリクエストおよびレスポンスヘッダーなどの基本的なメトリクスが含まれます。これらのメトリクスの大部分は、各ウェブサイトのテストランナーとして機能する<a href="#webpagetest">WebPageTest</a>によって提供されます。
+      </p>
+
+      <p>
+        他のテストツールは、ページに関するより高度なメトリクスを提供するために使用されます。たとえば、<a href="#lighthouse">Lighthouse</a>は、アクセシビリティやSEOなどの分野でページの品質を分析するための監査を実行するために使用されます。これらのツールの詳細については、下の<a href="#tools">ツール</a>セクションで説明しています。
+      </p>
+
+      <p>
+        ラボデータセットの固有の制約を回避するために、Web Almanacは、とくにウェブパフォーマンスの分野でのユーザーエクスペリエンスに関するメトリクスのために<a href="#chrome-ux-report">Chrome UX Report</a>も使用しています。
+      </p>
+
+      <p>
+        一部のメトリクスは完全に把握できません。たとえば、ウェブサイトを構築するために使用されたツールを検出する能力は必ずしも持っていません。create-react-appを使用してウェブサイトが構築されている場合、そのサイトがReactフレームワークを使用していることはわかりますが、特定のビルドツールが使用されているかどうかは必ずしもわかりません。これらのツールがウェブサイトのコードに検出可能な指紋を残さない限り、それらの使用を測定することはできません。
+      </p>
+
+      <p>
+        他のメトリクスは測定が不可能ではないにしても、挑戦的であるか、信頼性が低いことがあります。たとえば、ウェブデザインの側面は本質的に視覚的であり、ページに煩わしいモーダルダイアログがあるかどうかなど、定量化が困難です。
+      </p>
+    </section>
+
+    <section>
+      <h2 id="tools"><a href="#tools" class="anchor-link">ツール</a></h2>
+
+      <p>
+        Web Almanacは、次のオープンソースツールの助けを借りて実現されています。
+      </p>
+    </section>
+
+    <section>
+      <h3 id="webpagetest"><a href="#webpagetest" class="anchor-link">WebPageTest</a></h3>
+
+      <p>
+        <a hreflang="en" href="https://www.webpagetest.org/">WebPageTest</a>は、著名なウェブパフォーマンステストツールであり、HTTP Archiveの基盤です。私たちは、<a hreflang="en" href="https://docs.webpagetest.org/private-instances/">プライベートインスタンス</a>のWebPageTestを使用しており、各ウェブページをテストするためのプライベートテストエージェント（実際のブラウザ）を使用しています。デスクトップおよびモバイルウェブサイトは、異なる構成でテストされています。
+      </p>
+      <div class="table-wrap"><div class="table-wrap-container">
+      <table>
+        <thead>
+          <tr>
+              <th>設定</th>
+              <th>デスクトップ</th>
+              <th>モバイル</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>デバイス</td>
+            <td>Linux VM</td>
+            <td>エミュレートされたMoto G4</td>
+          </tr>
+
+          <tr>
+            <td>ユーザーエージェント</td>
+            <td>
+              Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.61 Safari/537.36 PTST/220609.133020
+            </td>
+            <td>
+              Mozilla/5.0 (Linux; Android 8.1.0; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.115 Mobile Safari/537.36 PTST/220609.133020
+            </td>
+          </tr>
+
+          <tr>
+            <td>ロケーション</td>
+            <td>
+              Google Cloud Locations, USA
+            </td>
+            <td>
+              Google Cloud Locations, USA
+            </td>
+          </tr>
+
+          <tr>
+            <td>接続</td>
+            <td>Cable (5/1 Mbps 28ms RTT)</td>
+            <td>4G (9 Mbps 170ms RTT)</td>
+          </tr>
+
+          <tr>
+            <td>ビューポート</td>
+            <td>1376 x 768px</td>
+            <td>512 x 360px</td>
+          </tr>
+        </tbody>
+      </table>
+      </div></div>
+
+      <p>
+        デスクトップウェブサイトは、Linux VM上のデスクトップChrome環境内で実行されます。ネットワーク速度はケーブル接続に相当します。
+      </p>
+
+      <p>
+        モバイルウェブサイトは、エミュレートされたMoto G4デバイス上のモバイルChrome環境内で実行され、ネットワーク速度は4G接続に相当します。
+      </p>
+
+      <p>
+        テストエージェントは、米国に拠点を置くさまざまな<a hreflang="en" href="https://cloud.google.com/compute/docs/regions-zones/#locations">Google Cloud Platformロケーション</a>から実行されます。
+      </p>
+
+      <p>
+        HTTP ArchiveのWebPageTestのプライベートインスタンスは、最新のパブリックバージョンと同期されており、<a hreflang="en" href="https://github.com/HTTPArchive/custom-metrics">カスタムメトリクス</a>が追加されています。これらは、各ウェブサイトでテストの終了時に評価されるJavaScriptのスニペットです。
+      </p>
+
+      <p>
+        各テストの結果は、ウェブページに関するメタデータを含むJSON形式のアーカイブファイルである<a href="https://en.wikipedia.org/wiki/HAR_(file_format)">HARファイル</a>として利用可能です。
+      </p>
+    </section>
+
+    <section>
+      <h3 id="lighthouse"><a href="#lighthouse" class="anchor-link">Lighthouse</a></h3>
+
+      <p>
+        <a hreflang="en" href="https://developer.chrome.com/docs/lighthouse/overview/">Lighthouse</a>は、Googleによって開発された自動ウェブサイト品質保証ツールです。ウェブページを監査し、最適化されていない画像やアクセシビリティのないコンテンツなど、ユーザーエクスペリエンスに反するパターンが含まれていないことを確認します。
+      </p>
+
+      <p>
+        HTTP Archiveは、すべてのページで最新バージョンのLighthouseを実行しています。今年ははじめて、Lighthouseテストがモバイルとデスクトップの両方のページで行われています。{{ year }}年6月のクロール時点で、HTTP Archiveは<a hreflang="en" href="https://github.com/GoogleChrome/lighthouse/releases/tag/v9.6.2">9.6.2</a>バージョンのLighthouseを使用しました。
+      </p>
+
+      <p>
+        Lighthouseは、<a href="#webpagetest">WebPageTest</a>内から独自のテストとして実行されますが、独自の設定プロファイルを持っています。
+      </p>
+      <div class="table-wrap"><div class="table-wrap-container">
+      <table>
+        <thead>
+          <tr>
+            <th>設定</th>
+            <th>デスクトップ</th>
+            <th>モバイル</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>CPUの速度低下</td>
+            <td><em>N/A</em></td>
+            <td>1x/4x</td>
+          </tr>
+          <tr>
+            <td>ダウンロードのスループット</td>
+            <td>1.6 Mbps</td>
+            <td>1.6 Mbps</td>
+          </tr>
+          <tr>
+            <td>アップロードのスループット</td>
+            <td>0.768 Mbps</td>
+            <td>0.768 Mbps</td>
+          </tr>
+          <tr>
+            <td>RTT</td>
+            <td>150 ms</td>
+            <td>150 ms</td>
+          </tr>
+        </tbody>
+      </table>
+      </div></div>
+
+      <p>
+        LighthouseおよびHTTP Archiveで利用可能な監査に関する詳細は、<a hreflang="en" href="https://developer.chrome.com/docs/lighthouse/overview/">Lighthouse開発者ドキュメント</a>を参照してください。
+      </p>
+    </section>
+
+    <section>
+      <h3 id="wappalyzer"><a href="#wappalyzer" class="anchor-link">Wappalyzer</a></h3>
+
+      <p>
+        <a hreflang="en" href="https://www.wappalyzer.com/">Wappalyzer</a>は、ウェブページで使用されている技術を検出するツールです。JavaScriptフレームワーク、CMSプラットフォーム、さらには暗号通貨マイナーまで、<a hreflang="en" href="https://www.wappalyzer.com/technologies">98のカテゴリ</a>にわたる技術がテストされています。サポートされている技術は3,805を超えており（昨年の2,600から増加しています）。
+      </p>
+
+      <p>
+        HTTP Archiveは、すべてのウェブページで最新バージョンのWappalyzerを実行しています。{{ year }}年7月の時点で、Web Almanacは<a hreflang="en" href="https://github.com/AliasIO/Wappalyzer/releases/tag/v6.10.26">6.10.26バージョン</a>のWappalyzerを使用しました。
+      </p>
+
+      <p>
+        Wappalyzerは、WordPress、Bootstrap、jQueryなどの開発者ツールの人気を分析する多くの章で利用されています。たとえば、<a href="{{ url_for('chapter', year=year, lang=lang, chapter='cms') }}">CMS</a>章では、Wappalyzerが検出した<a hreflang="en" href="https://www.wappalyzer.com/categories/cms">CMS</a>カテゴリの技術に大きく依存しています。
+      </p>
+
+      <p>
+        Wappalyzerを含むすべての検出ツールには制限があります。その結果の正確性は、検出メカニズムの精度に依存します。Web Almanacは、Wappalyzerが使用されるすべての章において、特定の理由で分析が正確でない可能性がある場合、その旨を注記します。
+      </p>
+    </section>
+
+    <section>
+      <h3 id="chrome-ux-report"><a href="#chrome-ux-report" class="anchor-link">Chrome UX Report</a></h3>
+
+      <p>
+        <a hreflang="en" href="https://developer.chrome.com/docs/crux/">Chrome UX Report</a>は、実際のChromeユーザーのエクスペリエンスに関する公開データセットです。エクスペリエンスは、ウェブサイトのオリジンごとにグループ化されます。たとえば、<code>https://www.example.com</code>です。このデータセットには、ペイント、ロード、インタラクション、レイアウト安定性などのUX指標の分布が含まれています。月ごとにグループ化されるだけでなく、国レベルの地理、フォームファクター（デスクトップ、電話、タブレット）、有効な接続タイプ（4G、3Gなど）などの次元で分割することもできます。
+      </p>
+
+      <p>
+        Chrome UX Reportのデータセットには、相対的な<a href="https://developer.chrome.com/blog/crux-rank-magnitude/">ウェブサイトランキングデータ</a>も含まれています。これらは<em>ランクマグニチュード</em>と呼ばれ、1位や116位のような細かな順位ではなく、上位1k、上位10k、最大で上位10Mまでのランクバケットにウェブサイトがグループ化されます。各ウェブサイトは、すべてのページを合わせた<a href="https://developer.chrome.com/docs/crux/methodology/#eligibility">対象となる</a>ページビューの数に基づいてランク付けされます。今年のWeb Almanacでは、この新しいデータを広範に使用し、サイトの人気によってWebの構築方法にどのような違いがあるかを探る手段としています。
+      </p>
+
+      <p>
+        Web Almanacのメトリクスで、Chrome UX Reportからの実際のユーザーエクスペリエンスデータを参照しているものには、{{ year }}年6月のデータセット（{{ year }}06）が使用されています。
+      </p>
+
+      <p>
+        データセットの詳細については、<a hreflang="en" href="https://web.dev/chrome-ux-report-bigquery">Using the Chrome UX Report on BigQuery</a>ガイドを<a hreflang="en" href="https://web.dev/">web.dev</a>でご覧ください。
+      </p>
+    </section>
+
+    <section>
+      <h3 id="blink-features"><a href="#blink-features" class="anchor-link">Blink Features</a></h3>
+
+      <p>
+        <a href="https://chromium.googlesource.com/chromium/src/+/HEAD/docs/use_counter_wiki.md">Blink Features</a>は、特定のWebプラットフォーム機能が使用されていると検出された際にChromeがフラグを立てる指標です。
+      </p>
+
+      <p>
+        私たちは、Blink Featuresを使用して機能の採用状況を別の視点から捉えています。このデータは、ページに実装されている機能と実際に使用されている機能を区別するのにとくに有用です。たとえば、<a href="{{ url_for('chapter', year=year, lang=lang, chapter='css') }}">CSS</a>章のGridレイアウトに関するセクションでは、Blink Featuresデータを使用して、実際のページレイアウトの一部がGridで構築されているかどうかを測定しています。これに対して、多くのページが未使用のGridスタイルをスタイルシートに含んでいることもあります。どちらの統計もそれぞれに興味深く、Webがどのように構築されているかについて何かを教えてくれます。
+      </p>
+
+      <p>
+        Blink Featuresは、<a href="#webpagetest">WebPageTest</a>の通常のテストの一環として報告されています。
+      </p>
+    </section>
+
+    <section>
+      <h3 id="third-party-web"><a href="#third-party-web" class="anchor-link">Third Party Web</a></h3>
+
+      <p>
+        <a hreflang="en" href="https://www.thirdpartyweb.today/">Third Party Web</a>は、HTTP ArchiveおよびLighthouseデータを使用して、Web上のサードパーティリソースの影響を特定し分析する<a href="{{ url_for('contributors', year=year, lang=lang, _anchor='patrickhulce') }}">Patrick Hulce</a>（<a href="{{ url_for('chapter', year=2019, lang=lang, chapter='third-parties') }}">2019年のサードパーティ</a>章の著者）による研究プロジェクトです。
+      </p>
+
+      <p>
+        ドメインは、少なくとも50の異なるページに表示される場合、サードパーティプロバイダーと見なされます。このプロジェクトでは、プロバイダーを広告、分析、ソーシャルなどのカテゴリごとにグループ化しています。
+      </p>
+
+      <p>
+        Web Almanacのいくつかの章では、このデータセットのドメインとカテゴリを使用して、サードパーティの影響を理解しています。
+      </p>
+    </section>
+
+    <section>
+      <h3 id="rework-css"><a href="#rework-css" class="anchor-link">Rework CSS</a></h3>
+
+      <p>
+        <a hreflang="en" href="https://github.com/reworkcss/css">Rework CSS</a>は、JavaScriptベースのCSSパーサーです。スタイルシート全体を取り込み、各スタイルルール、セレクター、ディレクティブ、値を区別するJSON形式のオブジェクトを生成します。
+      </p>
+
+      <p>
+        この特別なツールは、<a href="{{ url_for('chapter', year=year, lang=lang, chapter='css') }}">CSS</a>章の多くの指標の精度を大幅に向上させました。各ページの全外部スタイルシートおよびインラインスタイルブロックのCSSが解析され、クエリされ、分析が可能になりました。BigQuery上のHTTP Archiveデータセットとの統合方法については、<a hreflang="en" href="https://discuss.httparchive.org/t/analyzing-stylesheets-with-a-js-based-parser/1683">このスレッド</a>を参照してください。
+      </p>
+    </section>
+
+    <section>
+      <h4 id="rework-utils"><a href="#rework-utils" class="anchor-link">Rework Utils</a></h4>
+
+      <p>
+        今年の<a href="{{ url_for('chapter', year=year, lang=lang, chapter='css') }}">CSS</a>章では、2020年のCSS章で導入された多くの指標を再訪します。その章は<a href="{{ url_for('contributors', year=2019, lang=lang, _anchor='LeaVerou') }}">Lea Verou</a>が主導しました。Leaは、Rework CSSの出力から洞察をより簡単に抽出するために<a hreflang="en" href="https://github.com/LeaVerou/rework-utils">Rework Utils</a>を書きました。CSS章で見るほとんどの統計は、これらのスクリプトによって引き続き提供されています。
+      </p>
+    </section>
+
+    <section>
+        <h4 id="parsel"><a href="#parsel" class="anchor-link">Parsel</a></h4>
+
+        <p>
+            <a hreflang="en" href="https://projects.verou.me/parsel/">Parsel</a>は、CSSセレクターパーサーおよび特異性計算機で、元々は<a href="{{ url_for('chapter', year=2019, lang=lang, chapter='css') }}">2020年のCSS</a>章のリーダーである<a href="{{ url_for('contributors', year=year, lang=lang, _anchor='LeaVerou') }}">Lea Verou</a>によって書かれ、別のライブラリとしてオープンソース化されました。これは、セレクターや特異性に関連するすべてのCSS指標で広く使用されています。
+        </p>
+    </section>
+
+    <section>
+      <h2 id="process"><a href="#process" class="anchor-link">分析プロセス</a></h2>
+
+      <p>
+        Web Almanacは、ウェブコミュニティの100人以上の<a href="{{ url_for('contributors', year=year, lang=lang) }}">寄稿者</a>との調整を伴い、計画および実行に約1年かかりました。このセクションでは、Web Almanacで選ばれた章がどのような理由で選ばれ、その指標がどのようにクエリされ、どのように解釈されたかを説明します。
+      </p>
+    </section>
+
+    <section>
+      <h3 id="planning"><a href="#planning" class="anchor-link">計画</a></h3>
+
+      <p>
+        {{ year }}年のWeb Almanacは、{{ year }}年3月に<a href="https://twitter.com/HTTPArchive/status/1508506002383069192">寄稿者募集の呼びかけ</a>でスタートしました。プロジェクトは前年の全26章から始まり、コミュニティから提案された追加のトピックが今年の新しい2章となりました：<a href="{{ url_for('chapter', year=year, lang=lang, chapter='interop') }}">相互運用性</a>と<a href="{{ url_for('chapter', year=year, lang=lang, chapter='sustainability') }}">持続可能性</a>。
+      </p>
+
+      <p>
+        私たちは<a href="../2019/methodology#brainstorming">創刊年の方法論</a>で述べた通り：
+      </p>
+
+      <blockquote>
+        Web Almanacの将来の版の1つの明確な目標は、著者やピアレビュアーとして代表されていない多様な声をさらに奨励することです。
+      </blockquote>
+
+      <p>
+        そのために、今年も<a href="https://github.com/HTTPArchive/almanac.httparchive.org/discussions/2165">著者選定プロセス</a>を続けています：
+      </p>
+
+      <ul>
+        <li>
+          以前の著者には、新しい視点を提供するため、再び執筆することをとくに奨励しませんでした。
+        </li>
+        <li>
+          {{ year }}年の著者を推薦する全員に対して、外見や考え方が同じ人々を推薦しないようにとくに意識するよう求めました。
+        </li>
+        <li>
+          プロジェクトリーダーはすべての著者の推薦をレビューし、新しい視点をもたらし、コミュニティ内の代表されていないグループの声を増幅する著者を選出する努力をしました。
+        </li>
+      </ul>
+
+      <p>
+        私たちは、Web Almanacがさらに多様で包括的なプロジェクトとなるよう、このプロセスを将来的に反復し、すべての背景を持つ寄稿者からの意見を取り入れることを望んでいます。
+      </p>
+    </section>
+
+    <section>
+      <h3 id="analysis"><a href="#analysis" class="anchor-link">分析</a></h3>
+
+      <p>
+        {{ year }}年の4月と5月に、データアナリストは著者およびピアレビュアーと協力して、各章でクエリを実行する必要がある指標のリストを作成しました。場合によっては、分析能力のギャップを埋めるために<a hreflang="en" href="https://github.com/HTTPArchive/custom-metrics">カスタムメトリクス</a>が作成されました。
+      </p>
+
+      <p>
+        {{ year }}年6月を通じて、HTTP Archiveのデータパイプラインは数百万のウェブサイトをクロールし、Web Almanacで使用されるメタデータを収集しました。これらの結果は後処理され、<a href="https://console.cloud.google.com/bigquery?p=httparchive&d=almanac&page=dataset">BigQuery</a>に保存されました。
+      </p>
+
+      <p>
+        4年目となる今年、以前のアナリストによって書かれたクエリを更新して再利用することができました。それでも、ゼロから書かれる必要がある多くの新しい指標がありました。GitHub上のオープンソース<a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/{{ year }}">クエリリポジトリ</a>で、年度および章ごとのすべてのクエリを閲覧できます。
+      </p>
+    </section>
+
+    <section>
+      <h3 id="interpretation"><a href="#interpretation" class="anchor-link">解釈</a></h3>
+
+      <p>
+        著者はアナリストと協力して結果を正しく解釈し、適切な結論を導き出しました。著者がそれぞれの章を書く際には、これらの統計を利用してウェブの状態を枠組みとして支えました。ピアレビュアーは著者と協力して分析の技術的正確さを保証しました。
+      </p>
+
+      <p>
+        結果を読者により容易に理解してもらうために、ウェブ開発者およびアナリストは章に埋め込むデータビジュアリゼーションを作成しました。いくつかのビジュアライゼーションは、ポイントをより明確にするために簡略化されています。たとえば、完全な分布を示すのではなく、いくつかのパーセンタイルのみが表示されます。とくに記載がない限り、すべての分布はパーセンタイルを使用して要約され、とくに中央値（50パーセンタイル）が使用され、平均は使用されません。
+      </p>
+
+      <p>
+        最後に、編集者が章を見直して単純な文法的な誤りを修正し、読書体験全体の一貫性を保証しました。
+      </p>
+    </section>
+
+    <section>
+      <h2 id="looking-ahead"><a href="#looking-ahead" class="anchor-link">将来に向けて</a></h2>
+
+      <p>
+        {{ year }}年版のWeb Almanacは、ウェブコミュニティの内省と前向きな変化への取り組みとして、継続することを希望する年次の伝統の第4回目です。この地点に到達するまで、多くの献身的な<a href="{{ url_for('contributors', year=year, lang=lang) }}">寄稿者</a>のおかげで壮大な努力がなされました。私たちは、将来の版をさらに効率的にするために、可能な限りこの作業を活用することを望んでいます。
+      </p>
+
+      <p>
+        2023年版のWeb Almanacへの寄与に興味がある方は、<a hreflang="en" href="https://forms.gle/zmk6wXfDrmkkKzXo8">関心フォーム</a>に記入してください。一緒にウェブの状態を追跡しましょう！
+      </p>
+    </section>
+{% endblock main_content %}

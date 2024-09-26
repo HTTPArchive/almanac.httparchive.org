@@ -75,7 +75,7 @@ HTTP Archiveでクエリとして表現できるJamstackの正確な定義を選
 
 私たちは測定したいことを知っていました。ほとんどのコンテンツを非常に迅速にロードし、キャッシュ可能なサイトです。これらのことを測定するさまざまな方法を多く実験した後、いくつかの具体的な指標を思いつきました。
 
-__Largest Contentful Paint (LCP)__：すべてのページのすべてのLCP時間の分布を取得し、<a hreflang="en" href="https://developer.chrome.com/docs/crux/">Chrome UX Report</a>から実際のユーザーデータの中央値を選び、「もっともコンテンツを迅速にロードした」とみなされる任意のサイトとしました。これはモバイルデバイスで2.4秒、デスクトップデバイスで2.0秒でした。
+__Largest Contentful Paint (LCP)__：すべてのページのすべてのLCP時間の分布を取得し、<a hreflang="en" href="https://developer.chrome.com/docs/crux">Chrome UX Report</a>から実際のユーザーデータの中央値を選び、「もっともコンテンツを迅速にロードした」とみなされる任意のサイトとしました。これはモバイルデバイスで2.4秒、デスクトップデバイスで2.0秒でした。
 
 __Cumulative Layout Shift (CLS)__：非常に迅速にスケルトンをロードするが、実際のコンテンツのロードに長い時間がかかるサイトを避けたいと思いました。それにもっとも近いものは<a hreflang="en" href="https://web.dev/cls/">Cumulative Layout Shift</a>で、ページのレイアウトがロード中にどれだけ跳ねるかを測定します。CLSを「操作」する方法がありますが、私たちはそれが測定しようとしているものの合理的な代理であるとまだ信じています。私たちはこの測定が好きでした、なぜなら「跳ねる」サイトもまた「Jamstack的」ではないと感じられるからです。「Jamstack的」という言葉を多く使うことになるでしょう。再び、Chrome UX Reportのデータの中央値を選びました。
 
@@ -83,7 +83,7 @@ __Cumulative Layout Shift (CLS)__：非常に迅速にスケルトンをロー�
 
 __キャッシュ__：これはとくに定量化が難しいものでした。なぜなら、Jamstackサイトであっても、ほとんどのホームページが実際には長時間キャッシュされているにもかかわらず、再検証を要求するからです。私たちは`Age`、`Cache-Control`、`Expires`を含むHTTPヘッダーの組み合わせを使用しました。これらは長時間キャッシュされる可能性のあるページで一般的に見られました。
 
-当初、私たちは「小さな」サイトを除外するための別の測定が必要だと思っていました。つまり、実際のところ誰も訪れない「まもなく公開」や「Hello world」ページを非常に迅速にロードするサイトです。しかし、HTTP Archiveのデータは<a hreflang="en" href="https://developer.chrome.com/docs/crux/methodology/#popularity-eligibility">Chromeのユーザー訪問による人気</a>に基づいて定義されており、それらのサイトがサンプルに入るほど十分に訪問されるものはほとんどありません（ただしexample.comは入っています！）。
+当初、私たちは「小さな」サイトを除外するための別の測定が必要だと思っていました。つまり、実際のところ誰も訪れない「まもなく公開」や「Hello world」ページを非常に迅速にロードするサイトです。しかし、HTTP Archiveのデータは<a hreflang="en" href="https://developer.chrome.com/docs/crux/methodology#popularity-eligibility">Chromeのユーザー訪問による人気</a>に基づいて定義されており、それらのサイトがサンプルに入るほど十分に訪問されるものはほとんどありません（ただしexample.comは入っています！）。
 
 良い質問は、これらの指標に<a hreflang="en" href="https://web.dev/vitals/">Core Web Vitals</a>（CWV）の数値を使用しない理由は何かということです。LCPについては、私たちの数値はCWVの数値とほぼ同じです。CLSについては、CWVチームが<a hreflang="en" href="https://web.dev/defining-core-web-vitals-thresholds/#achievability-3">要件を緩和しました</a>（彼らの閾値は中央値の2倍以上です）が、私たちはそれがJamstack体験を代表していないと考えました。したがって、両方に中央値を選ぶのが公平だと決めました。そしてCWVには「キャッシュ可能性」の指標はありません。
 

@@ -528,7 +528,7 @@ PWAの重要な点は、ユーザーがブラウザのURLバーへURLを入力�
 このインストール可能な体験を配布する方法は、以下の通りです。
 
 - [ホーム画面に追加](https://developer.mozilla.org/docs/Web/Progressive_web_apps/Add_to_home_screen)機能により、ユーザーにPWAのインストールを促す。
-- <a hreflang="en" href="https://developer.chrome.com/docs/android/trusted-web-activity/">Trusted Web Activity (TWA)</a>（現在、Google PlayやMicrosoft Storeなど、あらゆるAndroidアプリストアで利用可能）でパッケージ化し、PWAをApp Storeにアップロードする。
+- <a hreflang="en" href="https://developer.chrome.com/docs/android/trusted-web-activity">Trusted Web Activity (TWA)</a>（現在、Google PlayやMicrosoft Storeなど、あらゆるAndroidアプリストアで利用可能）でパッケージ化し、PWAをApp Storeにアップロードする。
 
 次に、これらの技術に関連する統計データを紹介し、これらのトレンドの使用率と成長率を把握します。
 
@@ -573,7 +573,7 @@ WebViewベースのアプリはネイティブアプリと似ているように�
 
 TWAを使えば、PWAをネイティブアプリケーションのシェルにパッケージ化し、いくつかのApp Storeにアップロードできます。WebViewベースのソリューションとは異なり、TWAは単なるレンダリングエンジンではなく、フルスクリーンモードで動作する完全なブラウザーとなります。そのため、機能が完全であり、常に最新であり、最新のウェブAPIにアクセスできることを意味します。
 
-開発者はPWAをTWAで直接ネイティブ アプリにパッケージ化し、<a hreflang="en" href="https://developer.chrome.com/docs/android/trusted-web-activity/integration-guide/">Android Studioを使用</a> できますが、このタスクをはるかに容易にするツールがいくつかあります。次に、そのうちの2つを分析します。PWA BuilderとBubblewrapです。
+開発者はPWAをTWAで直接ネイティブ アプリにパッケージ化し、<a hreflang="en" href="https://developer.chrome.com/docs/android/trusted-web-activity/integration-guide">Android Studioを使用</a> できますが、このタスクをはるかに容易にするツールがいくつかあります。次に、そのうちの2つを分析します。PWA BuilderとBubblewrapです。
 
 #### PWAビルダー
 
