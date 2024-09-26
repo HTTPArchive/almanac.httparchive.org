@@ -6,7 +6,7 @@ description: Page Weight chapter of the 2022 Web Almanac covering why page weigh
 authors: [fellowhuman1101, dwsmart]
 reviewers: [CSteele-gh]
 analysts: [drohe]
-editors: []
+editors: [tunetheweb]
 translators: []
 results: https://docs.google.com/spreadsheets/d/1JvJMiRsL6T9m_NEBHFh-rrQmU5a-ufdOKriSJbrEN8M/
 fellowhuman1101_bio: Jamie Indigo isn't a robot, but speaks bot. As a technical SEO at <a hreflang="en" href="https://www.deepcrawl.com">DeepCrawl</a>, they study how search engines crawl, render, and index the web. They love to tame wild JavaScript and optimize rendering strategies. When not working, Jamie likes horror movies, graphic novels, and Dungeons & Dragons.
