@@ -6,11 +6,11 @@ description: 2022年のWeb Almanacのページの重さの章は、ページの�
 authors: [fellowhuman1101, dwsmart]
 reviewers: [CSteele-gh]
 analysts: [drohe]
-editors: []
+editors: [tunetheweb]
 translators: [ksakae1216]
 results: https://docs.google.com/spreadsheets/d/1JvJMiRsL6T9m_NEBHFh-rrQmU5a-ufdOKriSJbrEN8M/
 fellowhuman1101_bio: Jamie Indigoはロボットではありませんが、ボットの言葉を話します。技術的なSEOとして<a hreflang="en" href="https://www.deepcrawl.com">DeepCrawl</a>で、彼らは検索エンジンがウェブをどのようにクロール、レンダリング、そしてインデックス化するかを研究しています。彼らは野生のJavaScriptを手懐けることと、レンダリング戦略の最適化が大好きです。仕事をしていないとき、Jamieはホラー映画やグラフィックノベル、ダンジョンズ＆ドラゴンズが好きです。
-dwsmart_bio: Dave Smart is a developer and technical search engine consultant at <a hreflang="en" href="https://tamethebots.com">Tame the Bots</a>. They love building tools and experimenting with the modern web, and can often be found at the front in a gig or two.
+dwsmart_bio: Dave Smartは、[Tame the Bots](https://tamethebots.com)で開発者および技術的な検索エンジンコンサルタントとして活動しています。彼は現代のウェブでツールを構築し、実験することが大好きで、しばしばライブギグの最前線で見かけることがあります。
 featured_quote: 2022年には、ページのサイズを減らす機会があるにもかかわらず、ページの重さはますます大きくなる傾向が続きました。
 featured_stat_1: 110 MB
 featured_stat_label_1: モバイルページでロードされたフォントの最大重量
