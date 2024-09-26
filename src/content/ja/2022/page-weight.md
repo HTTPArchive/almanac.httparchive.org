@@ -76,7 +76,7 @@ Googleが推進するCore Web Vitalsイニシアチブは、上の折り返し�
 
 ページの重さが大きいほど、これにかかる時間は長くなります。また、データプランが低いユーザーにとってはより高価になることもあります。
 
-<a hreflang="en" href="https://web.dev/uses-rel-preconnect/">`preconnect`</a>、<a hreflang="en" href="https://web.dev/preload-critical-assets/">`preload`</a>、<a hreflang="en" href="https://web.dev/priority-hints/">Priority Hints</a>などロードされるものの順序を管理し、知覚されるロード時間を助ける最適化がありますが、最終的にはリソースはまだ転送され受信される必要があり、最良の最適化はより小さなリソースを提供することです。
+<a hreflang="en" href="https://web.dev/uses-rel-preconnect/">`preconnect`</a>、<a hreflang="en" href="https://web.dev/preload-critical-assets/">`preload`</a>、<a hreflang="en" href="https://web.dev/articles/fetch-priority">Priority Hints</a>などロードされるものの順序を管理し、知覚されるロード時間を助ける最適化がありますが、最終的にはリソースはまだ転送され受信される必要があり、最良の最適化はより小さなリソースを提供することです。
 
 ### レンダリング
 

@@ -110,7 +110,7 @@ HTTP/2では、クライアントは同じ接続上で複数のリクエスト�
 
 HTTP/2の優先順位付けの課題により、新しい優先順位付けスキームが必要とされました。[HTTPのための拡張可能な優先順位付けスキーム](https://httpwg.org/specs/rfc9218.html)はHTTP/3とは別に開発され、2022年6月に標準化されました。このスキームでは、クライアントは`priority` HTTPヘッダーや`PRIORITY_UPDATE`フレームを通じて、2つのパラメーターで明確に優先順位を割り当てることができます。最初のパラメーターである`urgency`は、要求されたリソースの優先度をサーバーに伝えます。2つ目のパラメーターである`incremental`は、リソースがクライアントで部分的に使用できるかどうかをサーバーに伝えます（たとえば、画像の一部が到着するにつれて部分的に表示される場合）。このスキームをHTTPヘッダーと`PRIORITY_UPDATE`フレームとして定義することで、両方の形式が将来の拡張性を提供するように設計されているため、拡張可能です。執筆時点で、このスキームはSafari、Firefox、ChromeでHTTP/3に対して展開されています。
 
-リソースの優先順位のほとんどはブラウザ自身によって決定されますが、開発者は今では新しい[優先度ヒント](https://web.dev/priority-hints/)を使用して特定のリソースの優先度を調整することもできます。優先度ヒントはHTMLの`fetchpriority`属性を通じて指定できます。たとえば、ウェブサイトがヒーローイメージを優先したい場合、画像タグに`fetchpriority`を追加できます。
+リソースの優先順位のほとんどはブラウザ自身によって決定されますが、開発者は今では新しい[優先度ヒント](https://web.dev/articles/fetch-priority)を使用して特定のリソースの優先度を調整することもできます。優先度ヒントはHTMLの`fetchpriority`属性を通じて指定できます。たとえば、ウェブサイトがヒーローイメージを優先したい場合、画像タグに`fetchpriority`を追加できます。
 
 ```html
 <img src="hero.png" fetchpriority="high">
@@ -147,7 +147,7 @@ HTTP/2 Pushにより、ウェブサーバーはクライアントからリクエ
 
 プッシュを使用するウェブサイトの減少は、[効果的に使用するのが難しい](https://jakearchibald.com/2017/h2-push-tougher-than-i-thought/)ためである可能性が高いです。たとえば、ウェブサイトはプッシュされたリソースがクライアントのキャッシュにすでに存在するかどうかを正確に知ることができません。それがクライアントのキャッシュにある場合、そのリソースをプッシュするために使用される帯域幅はムダになります。
 
-この困難さにより、[ChromeはHTTP/2 Pushを非推奨](https://groups.google.com/a/chromium.org/g/blink-dev/c/K3rYLvmQUBY/m/ho4qP49oAwAJ)とすることを決定し、[Chromeバージョン106](https://developer.chrome.com/blog/removing-push/)から始まりました。プッシュは公式にはまだHTTP/3標準の一部ですが、HTTPアーカイブクローラーが使用するChromeはHTTP/3接続に対してプッシュを実装しておらず、それが使用減少の一因となり、サイトがそのバージョンに移行しプッシュ機能を失ったと考えられます。
+この困難さにより、[ChromeはHTTP/2 Pushを非推奨](https://groups.google.com/a/chromium.org/g/blink-dev/c/K3rYLvmQUBY/m/ho4qP49oAwAJ)とすることを決定し、[Chromeバージョン106](https://developer.chrome.com/blog/removing-push/)から始まりました。プッシュは公式にはまだHTTP/3標準の一部ですが、HTTPアーカイブクローラーが使用するChromeはHTTP3接続に対してプッシュを実装しておらず、それが使用減少の一因となり、サイトがそのバージョンに移行しプッシュ機能を失ったと考えられます。
 
 ### HTTP/2 Pushの代替手段
 
@@ -184,13 +184,13 @@ Link: </css/style.css>; rel="preload"; as="style"
 
 #### 103 Early Hints
 
-2017年に<a hreflang="en" href="https://www.rfc-editor.org/rfc/rfc8297">103 Early Hintsステータスコードが提案され</a>、<a hreflang="en" href="https://developer.chrome.com/blog/early-hints/">Chromeは今年それをサポートしました</a>。
+2017年に<a hreflang="en" href="https://www.rfc-editor.org/rfc/rfc8297">103 Early Hintsステータスコードが提案され</a>、<a hreflang="en" href="https://developer.chrome.com/blog/early-hints">Chromeは今年それをサポートしました</a>。
 
 Early Hintsは、要求されたオブジェクトの最終レスポンスの前に暫定的なHTTPレスポンスを送信するために使用できます。ウェブサーバーがレスポンスを準備するのに時間がかかること、とくに動的にレンダリングされるメインのHTMLドキュメントの場合、この事実を利用してパフォーマンスを向上させることができます。
 
 Early Hintsの1つの使用例は、事前にフェッチするための`Link: rel="preload"`を送信することや、他のドメインに事前に接続するための`Link: rel="preconnect"`を送信することです。他のヘッダーも概念的に伝達できますが、これはどのブラウザでもサポートされていません。
 
-Early Hintsはプッシュよりも優れた代替手段である可能性があります。クライアントはリソースの取得方法をより大きくコントロールできますが、メインドキュメントのHTMLにプリロードやプリコネクトを追加するだけの改善を許可します。さらに、Early Hintsはプッシュでは不可能だった第三者リソースにも使用できる可能性がありますが、<a hreflang="en" href="https://developer.chrome.com/blog/early-hints/#current-limitations">これもまだどのブラウザでもサポートされていません</a>。
+Early Hintsはプッシュよりも優れた代替手段である可能性があります。クライアントはリソースの取得方法をより大きくコントロールできますが、メインドキュメントのHTMLにプリロードやプリコネクトを追加するだけの改善を許可します。さらに、Early Hintsはプッシュでは不可能だった第三者リソースにも使用できる可能性がありますが、<a hreflang="en" href="https://developer.chrome.com/blog/early-hints#current-limitations">これもまだどのブラウザでもサポートされていません</a>。
 
 {{ figure_markup(
   caption="103 Early Hintsを使用しているデスクトップページ。",

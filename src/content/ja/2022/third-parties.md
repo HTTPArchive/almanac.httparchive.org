@@ -369,7 +369,7 @@ Facebookは、もっとも多くのページに影響を与えるレガシーJav
 
 近年、いくつかのモダンなサードパーティのロードと実行のソリューションが登場しています。たとえば、<a hreflang="en" href="https://partytown.builder.io/">Partytown</a> は、ファーストパーティのコードのためにメインスレッドを解放するために、サードパーティのスクリプトをWebワーカーに再配置するライブラリです。現在、ライブラリの利用状況は初期導入段階であり、非常に低い状況です。2022年にデータセット全体から70のウェブサイトしか使用していません。しかし、<a hreflang="en" href="https://nextjs.org/docs/basic-features/script#off-loading-scripts-to-a-web-worker-experimental">Next.jsフレームワークがこのソリューション</a>の導入を開始したことで、Partytownの人気が高まるかもしれません。
 
-前のセクションでは、サードパーティの悪影響に対する責任がファーストパーティとサードパーティの開発者の間で分担されていることを示しました。しかし、<a hreflang="en" href="https://developer.chrome.com/blog/third-party-scripts/#proposed-approach">ブラウザもサードパーティ製リソースの読み込みを最適化することに関心を示しています</a>。提案には、より良いリアルユーザーのモニタリングと、サードパーティがウェブサイトに与える影響についてより多くのデータを提供する開発者向けツールが含まれています。
+前のセクションでは、サードパーティの悪影響に対する責任がファーストパーティとサードパーティの開発者の間で分担されていることを示しました。しかし、<a hreflang="en" href="https://developer.chrome.com/blog/third-party-scripts#proposed-approach">ブラウザもサードパーティ製リソースの読み込みを最適化することに関心を示しています</a>。提案には、より良いリアルユーザーのモニタリングと、サードパーティがウェブサイトに与える影響についてより多くのデータを提供する開発者向けツールが含まれています。
 
 {{ figure_markup(
   caption="Timing-Allow-Originヘッダーを持つサードパーティリクエストの割合",

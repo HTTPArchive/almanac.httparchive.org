@@ -379,7 +379,7 @@ GoogleのStadia、NVIDIAのGeForce Now、MicrosoftのXbox Cloud GamingなどのW
 
 プロジェクトフグには、Microsoft、Intel、Samsung、Googleなど多くのグループや個人が参加しています。
 
-Capabilities Projectについてもっと学ぶために、Chrome Developersブログの[この投稿](https://developer.chrome.com/blog/fugu-status/)をチェックしてください。
+Capabilities Projectについてもっと学ぶために、Chrome Developersブログの[この投稿](https://developer.chrome.com/blog/fugu-status)をチェックしてください。
 
 ## 結論
 
