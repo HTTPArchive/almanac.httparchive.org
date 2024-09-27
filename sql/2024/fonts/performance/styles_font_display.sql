@@ -11,7 +11,7 @@ try {
   const $ = JSON.parse(json);
   const result = [];
   walkDeclarations($, (declaration) => {
-    result.push(declaration.value);
+    result.push(declaration.value.replaceAll(/['"]/g, ''));
   }, {
     properties: 'font-display',
     rules: (rule) => rule.type.toLowerCase() === 'font-face'
