@@ -1,6 +1,6 @@
 -- Section: Design
 -- Question: Which families are used broken down by script?
--- Normalization: Fonts on sites
+-- Normalization: Links
 
 -- INCLUDE ../common.sql
 

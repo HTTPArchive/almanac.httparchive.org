@@ -1,6 +1,6 @@
 -- Section: Design
 -- Question: Which families are used broken down by foundry?
--- Normalization: Fonts on sites
+-- Normalization: Links
 
 -- INCLUDE ../common.sql
 

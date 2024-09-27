@@ -1,6 +1,6 @@
 -- Section: Development
 -- Question: Who is serving variable fonts?
--- Normalization: Fonts on sites
+-- Normalization: Links
 
 -- INCLUDE ../common.sql
 

@@ -28,11 +28,13 @@ extended one or several suffixes narrowing down the scope, as in
 
 ## Contents
 
-Each query starts with a preamble indicating the section and the question:
+Each query starts with a preamble indicating the section, question, and
+normalization type:
 
 ```sql
 -- Section: Performance
 -- Question: What is the distribution of the file size broken down by table?
+-- Normalization: Sites
 ```
 
 Many queries rely on temporary functions for convenience and clarity. The

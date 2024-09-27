@@ -1,6 +1,6 @@
 -- Section: Performance
 -- Question: What is the distribution of the file size broken down by country?
--- Normalization: Fonts on sites
+-- Normalization: Links
 
 -- INCLUDE ../common.sql
 
