@@ -34,8 +34,8 @@ SELECT
   client,
   HAS_EMOJI(JSON_EXTRACT_STRING_ARRAY(payload, '$._font_details.cmap.codepoints')) AS emoji,
   COUNT(0) AS count,
-  SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
-  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS proportion
+  SUM(COUNT(0)) OVER (PARTITION BY date, client) AS total,
+  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY date, client) AS proportion
 FROM
   `httparchive.all.requests`
 WHERE

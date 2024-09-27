@@ -8,7 +8,8 @@ SELECT
   date,
   client,
   SERVICE(url) AS service,
-  COUNT(0) AS total,
+  COUNT(0) AS count,
+  SUM(COUNT(0)) OVER (PARTITION BY date, client) AS total,
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY date, client) AS proportion
 FROM
   `httparchive.all.requests`
