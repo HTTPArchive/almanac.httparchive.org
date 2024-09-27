@@ -1,6 +1,6 @@
 -- Section: Development
 -- Question: Which color families are used?
--- Normalization: Fonts on sites
+-- Normalization: Links
 
 -- INCLUDE ../common.sql
 
