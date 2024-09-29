@@ -13,22 +13,40 @@ CREATE TEMPORARY FUNCTION LICENSE(value STRING) AS (
   END
 );
 
+WITH
+sites AS (
+  SELECT
+    client,
+    COUNT(DISTINCT page) AS total
+  FROM
+    `httparchive.all.requests`
+  WHERE
+    date = '2024-07-01' AND
+    is_root_page AND
+    type = 'font'
+  GROUP BY
+    client
+)
+
 SELECT
   client,
   LICENSE(JSON_EXTRACT_SCALAR(payload, '$._font_details.names[14]')) AS license,
   COUNT(DISTINCT page) AS count,
-  SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS total,
-  COUNT(DISTINCT page) / SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS proportion,
+  total,
+  COUNT(DISTINCT page) / total AS proportion,
   ROW_NUMBER() OVER (PARTITION BY client ORDER BY COUNT(DISTINCT page) DESC) AS rank
 FROM
   `httparchive.all.requests`
+INNER JOIN
+  sites USING (client)
 WHERE
   date = '2024-07-01' AND
   is_root_page AND
   type = 'font'
 GROUP BY
   client,
-  license
+  license,
+  total
 QUALIFY
   rank <= 100
 ORDER BY
