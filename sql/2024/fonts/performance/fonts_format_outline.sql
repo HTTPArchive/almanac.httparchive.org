@@ -5,32 +5,39 @@
 WITH
 fonts AS (
   SELECT
+    date,
     client,
     url,
+    COUNT(0) OVER (PARTITION BY date, client) AS total,
     JSON_EXTRACT(ANY_VALUE(payload), '$._font_details.table_sizes') AS payload
   FROM
     `httparchive.all.requests`
   WHERE
-    date = '2024-07-01' AND
+    date IN ('2022-07-01', '2023-07-01', '2024-07-01') AND
     is_root_page AND
     type = 'font'
   GROUP BY
+    date,
     client,
     url
 )
 
 SELECT
+  date,
   client,
   format,
   COUNT(0) AS count,
-  SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
-  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS proportion
+  total,
+  COUNT(0) / total AS proportion
 FROM
   fonts,
   UNNEST(REGEXP_EXTRACT_ALL(payload, '(?i)(CFF |glyf|SVG|CFF2)')) AS format
 GROUP BY
+  date,
   client,
-  format
+  format,
+  total
 ORDER BY
+  date,
   client,
   proportion DESC
