@@ -4,15 +4,33 @@
 
 -- INCLUDE ../common.sql
 
+WITH
+sites AS (
+  SELECT
+    date,
+    client,
+    COUNT(DISTINCT page) AS total
+  FROM
+    `httparchive.all.requests`
+  WHERE
+    date IN ('2022-07-01', '2023-07-01', '2024-07-01') AND
+    is_root_page
+  GROUP By
+    date,
+    client
+)
+
 SELECT
   date,
   client,
   SERVICE(url) AS service,
   COUNT(DISTINCT page) AS count,
-  SUM(COUNT(DISTINCT page)) OVER (PARTITION BY date, client) AS total,
-  COUNT(DISTINCT page) / SUM(COUNT(DISTINCT page)) OVER (PARTITION BY date, client) AS proportion
+  total,
+  COUNT(DISTINCT page) / total AS proportion
 FROM
   `httparchive.all.requests`
+INNER JOIN
+  sites USING (date, client)
 WHERE
   date IN ('2022-07-01', '2023-07-01', '2024-07-01') AND
   is_root_page AND
@@ -20,7 +38,8 @@ WHERE
 GROUP BY
   date,
   client,
-  service
+  service,
+  total
 ORDER BY
   date,
   client,
