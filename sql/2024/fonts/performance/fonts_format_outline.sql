@@ -8,8 +8,8 @@ fonts AS (
     date,
     client,
     url,
-    COUNT(0) OVER (PARTITION BY date, client) AS total,
-    JSON_EXTRACT(ANY_VALUE(payload), '$._font_details.table_sizes') AS payload
+    JSON_EXTRACT(ANY_VALUE(payload), '$._font_details.table_sizes') AS payload,
+    COUNT(0) OVER (PARTITION BY date, client) AS total
   FROM
     `httparchive.all.requests`
   WHERE
