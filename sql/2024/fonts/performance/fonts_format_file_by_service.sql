@@ -5,7 +5,7 @@
 -- INCLUDE ../common.sql
 
 WITH
-fonts AS (
+links AS (
   SELECT
     client,
     url,
@@ -34,7 +34,7 @@ SELECT
   COUNT(DISTINCT url) / SUM(COUNT(DISTINCT url)) OVER (PARTITION BY client) AS proportion_secondary,
   ROW_NUMBER() OVER (PARTITION BY client, service ORDER BY COUNT(0) DESC) AS rank
 FROM
-  fonts
+  links
 GROUP BY
   client,
   service,
