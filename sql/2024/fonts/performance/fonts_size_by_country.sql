@@ -19,7 +19,7 @@ countries AS (
     domain,
     country
 ),
-requests AS (
+links AS (
   SELECT
     client,
     NET.HOST(page) AS domain,
@@ -38,7 +38,7 @@ SELECT
   COUNT(0) AS count,
   ROUND(APPROX_QUANTILES(size, 1000)[OFFSET(500)]) AS size
 FROM
-  requests
+  links
 INNER JOIN
   countries USING (client, domain)
 GROUP BY

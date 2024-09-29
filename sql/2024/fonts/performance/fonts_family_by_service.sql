@@ -5,7 +5,7 @@
 -- INCLUDE ../common.sql
 
 WITH
-requests AS (
+links AS (
   SELECT
     client,
     SERVICE(url) AS service,
@@ -27,7 +27,7 @@ SELECT
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS proportion,
   ROW_NUMBER() OVER (PARTITION BY client, service ORDER BY COUNT(0) DESC) AS rank
 FROM
-  requests
+  links
 GROUP BY
   client,
   service,
