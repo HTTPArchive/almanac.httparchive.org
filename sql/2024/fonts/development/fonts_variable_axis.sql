@@ -1,6 +1,8 @@
 -- Section: Development
 -- Question: Which axes are used in variable fonts?
--- Normalization: Fonts
+-- Normalization: Fonts (variable only)
+
+-- INCLUDE ../common.sql
 
 CREATE TEMPORARY FUNCTION AXES(json STRING)
 RETURNS ARRAY<STRING>
@@ -18,31 +20,33 @@ fonts AS (
   SELECT
     client,
     url,
-    axis
+    AXES(JSON_EXTRACT(ANY_VALUE(payload), '$._font_details.fvar')) AS axes,
+    COUNT(0) OVER (PARTITION BY client) AS total
   FROM
-    `httparchive.all.requests`,
-    UNNEST(AXES(JSON_EXTRACT(payload, '$._font_details.fvar'))) AS axis
+    `httparchive.all.requests`
   WHERE
     date = '2024-07-01' AND
-    type = 'font'
+    type = 'font' AND
     is_root_page AND
+    IS_VARIABLE(payload)
   GROUP BY
     client,
-    url,
-    axis
+    url
 )
 
 SELECT
   client,
   axis,
   COUNT(0) AS count,
-  SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
-  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS proportion
+  total,
+  COUNT(0) / total AS proportion
 FROM
-  fonts
+  fonts,
+  UNNEST(axes) AS axis
 GROUP BY
   client,
-  axis
+  axis,
+  total
 ORDER BY
   client,
   proportion DESC
