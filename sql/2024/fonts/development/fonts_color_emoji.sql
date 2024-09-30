@@ -1,6 +1,6 @@
 -- Section: Development
 -- Question: Are color fonts used for the sake of emojis?
--- Normalization: Links
+-- Normalization: Links (color only)
 
 -- INCLUDE ../common.sql
 
@@ -29,24 +29,41 @@ if (codepoints && codepoints.length) {
 }
 """;
 
+WITH
+links AS (
+  SELECT
+    date,
+    client,
+    HAS_EMOJI(
+      JSON_EXTRACT_STRING_ARRAY(
+        payload,
+        '$._font_details.cmap.codepoints'
+      )
+    ) AS emoji,
+    COUNT(0) OVER (PARTITION BY date, client) AS total
+  FROM
+    `httparchive.all.requests`
+  WHERE
+    date IN ('2022-07-01', '2023-07-01', '2024-07-01') AND
+    type = 'font' AND
+    is_root_page AND
+    IS_COLOR(payload)
+)
+
 SELECT
   date,
   client,
-  HAS_EMOJI(JSON_EXTRACT_STRING_ARRAY(payload, '$._font_details.cmap.codepoints')) AS emoji,
+  emoji,
   COUNT(0) AS count,
-  SUM(COUNT(0)) OVER (PARTITION BY date, client) AS total,
-  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY date, client) AS proportion
+  total,
+  COUNT(0) / total AS proportion
 FROM
-  `httparchive.all.requests`
-WHERE
-  date IN ('2022-07-01', '2023-07-01', '2024-07-01') AND
-  type = 'font' AND
-  is_root_page AND
-  IS_COLOR(payload)
+  links
 GROUP BY
   date,
   client,
-  emoji
+  emoji,
+  total
 ORDER BY
   date,
   client,
