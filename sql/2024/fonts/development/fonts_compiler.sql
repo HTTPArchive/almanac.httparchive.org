@@ -18,7 +18,8 @@ fonts AS (
   SELECT
     client,
     url,
-    ANY_VALUE(COMPILER(JSON_EXTRACT_SCALAR(payload, '$._font_details.names[5]'))) AS compiler
+    ANY_VALUE(COMPILER(JSON_EXTRACT_SCALAR(payload, '$._font_details.names[5]'))) AS compiler,
+    COUNT(0) OVER (PARTITION BY client) AS total
   FROM
     `httparchive.all.requests`
   WHERE
@@ -34,14 +35,15 @@ SELECT
   client,
   compiler,
   COUNT(DISTINCT url) AS count,
-  SUM(COUNT(DISTINCT url)) OVER (PARTITION BY client) AS total,
-  COUNT(DISTINCT url) / SUM(COUNT(DISTINCT url)) OVER (PARTITION BY client) AS proportion,
+  total,
+  COUNT(DISTINCT url) / total AS proportion,
   ROW_NUMBER() OVER (PARTITION BY client ORDER BY COUNT(DISTINCT url) DESC) AS rank
 FROM
   fonts
 GROUP BY
   client,
-  compiler
+  compiler,
+  total
 QUALIFY
   rank <= 100
 ORDER BY
