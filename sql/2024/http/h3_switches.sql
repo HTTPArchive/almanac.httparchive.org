@@ -9,7 +9,7 @@ SELECT
   page,
   url_host,
   COUNTIF(protocol IN ('HTTP/2', 'h2')) AS h2_requests,
-  COUNTIF(protocol IN ('HTTP/3', 'h3', 'h3-29')) AS h3_requests,
+  COUNTIF(protocol IN ('HTTP/3', 'h3', 'h3-29')) AS h3_requests
 FROM (
   SELECT
     date,
@@ -19,9 +19,8 @@ FROM (
     JSON_EXTRACT_SCALAR(summary, '$.respHttpVersion') AS protocol
   FROM
     `httparchive.all.requests`
-    --`httparchive.sample_data.requests_1k`
   WHERE
-    date ='2024-06-01' AND
+    date = '2024-06-01' AND
     is_root_page)
 GROUP BY
   date,
@@ -30,8 +29,8 @@ GROUP BY
   url_host,
   protocol
 HAVING
-   h2_requests > 0 AND
-   h3_requests > 0
+  h2_requests > 0 AND
+  h3_requests > 0
 ORDER BY
   date,
   client,
