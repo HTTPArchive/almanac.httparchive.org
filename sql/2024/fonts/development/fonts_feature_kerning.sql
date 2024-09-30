@@ -29,9 +29,16 @@ fonts AS (
     client,
     url,
     (
-      HAS_KERNING(JSON_EXTRACT(payload, '$._font_details.features')) OR
-      IFNULL(REGEXP_CONTAINS(JSON_EXTRACT(payload, '$._font_details.table_sizes'), '(?i)kern'), FALSE)
-    ) AS support
+      HAS_KERNING(JSON_EXTRACT(ANY_VALUE(payload), '$._font_details.features')) OR
+      IFNULL(
+        REGEXP_CONTAINS(
+          JSON_EXTRACT(ANY_VALUE(payload), '$._font_details.table_sizes'),
+          '(?i)kern'
+        ),
+        FALSE
+      )
+    ) AS support,
+    COUNT(0) OVER (PARTITION BY date, client) AS total
   FROM
     `httparchive.all.requests`
   WHERE
@@ -41,8 +48,7 @@ fonts AS (
   GROUP BY
     date,
     client,
-    url,
-    support
+    url
 )
 
 SELECT
@@ -50,14 +56,15 @@ SELECT
   client,
   support,
   COUNT(DISTINCT url) AS count,
-  SUM(COUNT(DISTINCT url)) OVER (PARTITION BY date, client) AS total,
-  COUNT(DISTINCT url) / SUM(COUNT(DISTINCT url)) OVER (PARTITION BY date, client) AS proportion
+  total,
+  COUNT(DISTINCT url) / total AS proportion
 FROM
   fonts
 GROUP BY
   date,
   client,
-  support
+  support,
+  total
 ORDER BY
   date,
   client,
