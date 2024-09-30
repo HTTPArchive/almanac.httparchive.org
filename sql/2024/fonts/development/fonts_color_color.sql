@@ -1,6 +1,6 @@
 -- Section: Development
 -- Question: What is the distribution of color palettes?
--- Normalization: Fonts
+-- Normalization: Fonts (color only)
 
 -- INCLUDE ../common.sql
 
@@ -26,23 +26,43 @@ try {
 }
 ''';
 
+WITH
+fonts AS (
+  SELECT
+    client,
+    url,
+    COLORS(
+      JSON_EXTRACT(
+        ANY_VALUE(payload),
+        '$._font_details.color.palettes'
+      )
+    ) AS colors,
+    COUNT(0) OVER (PARTITION BY client) AS total
+  FROM
+    `httparchive.all.requests`
+  WHERE
+    date = '2024-07-01' AND
+    type = 'font' AND
+    is_root_page AND
+    IS_COLOR(payload)
+  GROUP BY
+    client,
+    url
+)
+
 SELECT
   client,
   color,
-  COUNT(DISTINCT url) AS count,
-  SUM(COUNT(DISTINCT url)) OVER (PARTITION BY client) AS total,
-  COUNT(DISTINCT url) / SUM(COUNT(DISTINCT url)) OVER (PARTITION BY client) AS proportion
+  COUNT(0) AS count,
+  total,
+  COUNT(0) / total AS proportion
 FROM
-  `httparchive.all.requests`,
-  UNNEST(COLORS(JSON_EXTRACT(payload, '$._font_details.color.palettes'))) AS color
-WHERE
-  date = '2024-07-01' AND
-  type = 'font' AND
-  is_root_page AND
-  IS_COLOR(payload)
+  fonts,
+  UNNEST(colors) AS color
 GROUP BY
   client,
-  color
+  color,
+  total
 ORDER BY
   client,
   proportion DESC
