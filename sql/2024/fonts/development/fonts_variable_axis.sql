@@ -24,8 +24,8 @@ fonts AS (
     UNNEST(AXES(JSON_EXTRACT(payload, '$._font_details.fvar'))) AS axis
   WHERE
     date = '2024-07-01' AND
-    is_root_page AND
     type = 'font'
+    is_root_page AND
   GROUP BY
     client,
     url,

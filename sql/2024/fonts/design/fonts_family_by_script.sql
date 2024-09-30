@@ -17,8 +17,8 @@ FROM
   UNNEST(SCRIPTS(payload)) AS script
 WHERE
   date = '2024-07-01' AND
-  is_root_page AND
   type = 'font' AND
+  is_root_page AND
   FAMILY(payload) NOT IN ('Adobe Blank') AND
   RAND() > 0.5
 GROUP BY
