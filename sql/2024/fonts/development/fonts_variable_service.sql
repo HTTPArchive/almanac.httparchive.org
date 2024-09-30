@@ -1,6 +1,6 @@
 -- Section: Development
 -- Question: Who is serving variable fonts?
--- Normalization: Fonts (only variable)
+-- Normalization: Fonts (variable only)
 
 -- INCLUDE ../common.sql
 

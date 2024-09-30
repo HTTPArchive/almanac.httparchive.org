@@ -1,6 +1,6 @@
 -- Section: Development
 -- Question: Which outline formats are used in variable fonts?
--- Normalization: Fonts
+-- Normalization: Fonts (variable only)
 
 -- INCLUDE ../common.sql
 
@@ -10,10 +10,10 @@ fonts AS (
     date,
     client,
     url,
-    format
+    VARIABLE_FORMATS(ANY_VALUE(payload)) AS formats,
+    COUNT(0) OVER (PARTITION BY date, client) AS total
   FROM
-    `httparchive.all.requests`,
-    UNNEST(VARIABLE_FORMATS(payload)) AS format
+    `httparchive.all.requests`
   WHERE
     date IN ('2022-07-01', '2023-07-01', '2024-07-01') AND
     type = 'font' AND
@@ -22,8 +22,7 @@ fonts AS (
   GROUP BY
     date,
     client,
-    url,
-    format
+    url
 )
 
 SELECT
@@ -31,14 +30,16 @@ SELECT
   client,
   format,
   COUNT(0) AS count,
-  SUM(COUNT(0)) OVER (PARTITION BY date, client) AS total,
-  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY date, client) AS proportion
+  total,
+  COUNT(0) / total AS proportion
 FROM
-  fonts
+  fonts,
+  UNNEST(formats) AS format
 GROUP BY
   date,
   client,
-  format
+  format,
+  total
 ORDER BY
   date,
   client,

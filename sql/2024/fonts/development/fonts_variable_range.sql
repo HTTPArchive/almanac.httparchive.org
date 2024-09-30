@@ -1,6 +1,6 @@
 -- Section: Development
 -- Question: What are the distributions of axes?
--- Normalization: Fonts
+-- Normalization: Fonts (variable only)
 
 -- INCLUDE ../common.sql
 
