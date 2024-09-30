@@ -4,24 +4,36 @@
 
 -- INCLUDE ../common.sql
 
+WITH
+links AS (
+  SELECT
+    client,
+    FOUNDRY(payload) AS foundry,
+    FAMILY(payload) AS family,
+    COUNT(0) OVER (PARTITION BY client) AS total
+  FROM
+    `httparchive.all.requests`
+  WHERE
+    date = '2024-07-01' AND
+    type = 'font' AND
+    is_root_page
+)
+
 SELECT
   client,
-  FOUNDRY(payload) AS foundry,
-  FAMILY(payload) AS family,
+  foundry,
+  family,
   COUNT(0) AS count,
-  SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
-  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS proportion,
+  total,
+  COUNT(0) / total AS proportion,
   ROW_NUMBER() OVER (PARTITION BY client ORDER BY COUNT(0) DESC) AS rank
 FROM
-  `httparchive.all.requests`
-WHERE
-  date = '2024-07-01' AND
-  type = 'font' AND
-  is_root_page
+  links
 GROUP BY
   client,
   foundry,
-  family
+  family,
+  total
 QUALIFY
   rank <= 100
 ORDER BY
