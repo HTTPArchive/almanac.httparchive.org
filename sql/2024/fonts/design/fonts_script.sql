@@ -9,7 +9,7 @@ fonts AS (
   SELECT
     client,
     url,
-    ANY_VALUE(payload) AS payload,
+    SCRIPTS(ANY_VALUE(payload)) AS scripts,
     COUNT(0) OVER (PARTITION BY client) AS total
   FROM
     `httparchive.all.requests`
@@ -30,7 +30,7 @@ SELECT
   COUNT(DISTINCT url) / total AS proportion
 FROM
   fonts,
-  UNNEST(SCRIPTS(payload)) AS script
+  UNNEST(scripts) AS script
 GROUP BY
   client,
   script,

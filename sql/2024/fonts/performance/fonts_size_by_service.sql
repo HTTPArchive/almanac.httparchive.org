@@ -23,8 +23,7 @@ fonts AS (
     is_root_page
   GROUP BY
     client,
-    url,
-    service
+    url
 ),
 formats AS (
   SELECT
