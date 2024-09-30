@@ -1,25 +1,41 @@
 -- Section: Development
 -- Question: Which color-font formats are used?
--- Normalization: Fonts
+-- Normalization: Fonts (color only)
 
 -- INCLUDE ../common.sql
+
+WITH
+fonts AS (
+  SELECT
+    client,
+    url,
+    COLOR_FORMATS(ANY_VALUE(payload)) AS formats,
+    COUNT(0) OVER (PARTITION BY client) AS total
+  FROM
+    `httparchive.all.requests`
+  WHERE
+    date = '2024-07-01' AND
+    type = 'font' AND
+    is_root_page AND
+    IS_COLOR(payload)
+  GROUP BY
+    client,
+    url
+)
 
 SELECT
   client,
   format,
   COUNT(DISTINCT url) AS count,
-  SUM(COUNT(DISTINCT url)) OVER (PARTITION BY client) AS total,
-  COUNT(DISTINCT url) / SUM(COUNT(DISTINCT url)) OVER (PARTITION BY client) AS proportion
+  total,
+  COUNT(DISTINCT url) / total AS proportion
 FROM
-  `httparchive.all.requests`,
-  UNNEST(COLOR_FORMATS(payload)) AS format
-WHERE
-  date = '2024-07-01' AND
-  type = 'font' AND
-  is_root_page
+  fonts,
+  UNNEST(formats) AS format
 GROUP BY
   client,
-  format
+  format,
+  total
 ORDER BY
   client,
   proportion DESC
