@@ -3,11 +3,11 @@
 -- Normalization: Fonts
 
 CREATE TEMPORARY FUNCTION TABLES(json STRING)
-RETURNS ARRAY<STRUCT<name STRING, value INT64>>
+RETURNS ARRAY<STRUCT<name STRING, size INT64>>
 LANGUAGE js AS '''
 try {
   const $ = JSON.parse(json);
-  return Object.entries($).map(([name, value]) => ({ name, value }));
+  return Object.entries($).map(([name, size]) => ({ name, size }));
 } catch (e) {
   return [];
 }
@@ -33,7 +33,7 @@ tables AS (
   SELECT
     client,
     table.name AS table,
-    table.value AS size
+    table.size
   FROM
     fonts,
     UNNEST(TABLES(payload)) AS table
