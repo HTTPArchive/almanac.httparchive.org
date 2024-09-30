@@ -9,9 +9,10 @@ fonts AS (
     client,
     url,
     REGEXP_CONTAINS(
-      JSON_EXTRACT(payload, '$._font_details.table_sizes'),
+      JSON_EXTRACT(ANY_VALUE(payload), '$._font_details.table_sizes'),
       '(?i)GPOS|GSUB'
-    ) AS support
+    ) AS support,
+    COUNT(0) OVER (PARTITION BY date, client) AS total
   FROM
     `httparchive.all.requests`
   WHERE
@@ -21,23 +22,23 @@ fonts AS (
   GROUP BY
     date,
     client,
-    url,
-    support
+    url
 )
 
 SELECT
   date,
   client,
   support,
-  COUNT(DISTINCT url) AS count,
-  SUM(COUNT(DISTINCT url)) OVER (PARTITION BY date, client) AS total,
-  COUNT(DISTINCT url) / SUM(COUNT(DISTINCT url)) OVER (PARTITION BY date, client) AS proportion
+  COUNT(0) AS count,
+  total,
+  COUNT(0) / total AS proportion
 FROM
   fonts
 GROUP BY
   date,
   client,
-  support
+  support,
+  total
 ORDER BY
   date,
   client,
