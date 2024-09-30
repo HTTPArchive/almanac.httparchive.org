@@ -8,7 +8,13 @@ fonts AS (
     date,
     client,
     url,
-    JSON_EXTRACT(ANY_VALUE(payload), '$._font_details.table_sizes') AS payload,
+    REGEXP_EXTRACT_ALL(
+      JSON_EXTRACT(
+        ANY_VALUE(payload),
+        '$._font_details.table_sizes'
+      ),
+      '(?i)(CFF |glyf|SVG|CFF2)'
+    ) AS formats,
     COUNT(0) OVER (PARTITION BY date, client) AS total
   FROM
     `httparchive.all.requests`
@@ -31,7 +37,7 @@ SELECT
   COUNT(0) / total AS proportion
 FROM
   fonts,
-  UNNEST(REGEXP_EXTRACT_ALL(payload, '(?i)(CFF |glyf|SVG|CFF2)')) AS format
+  UNNEST(formats) AS format
 GROUP BY
   date,
   client,
