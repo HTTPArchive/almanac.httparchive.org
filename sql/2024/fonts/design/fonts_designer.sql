@@ -13,8 +13,8 @@ designers AS (
     `httparchive.all.requests`
   WHERE
     date = '2024-07-01' AND
-    is_root_page AND
-    type = 'font'
+    type = 'font' AND
+    is_root_page
   GROUP BY
     client,
     designer

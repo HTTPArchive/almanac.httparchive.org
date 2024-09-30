@@ -12,8 +12,8 @@ scripts AS (
     `httparchive.all.requests`
   WHERE
     date IN ('2022-07-01', '2023-07-01', '2024-07-01') AND
-    is_root_page AND
     type = 'script' AND
+    is_root_page AND
     REGEXP_CONTAINS(response_body, r'new FontFace\(')
   GROUP BY
     date,

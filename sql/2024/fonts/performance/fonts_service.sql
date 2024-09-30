@@ -33,8 +33,8 @@ INNER JOIN
   sites USING (date, client)
 WHERE
   date IN ('2022-07-01', '2023-07-01', '2024-07-01') AND
-  is_root_page AND
-  type = 'font'
+  type = 'font' AND
+  is_root_page
 GROUP BY
   date,
   client,

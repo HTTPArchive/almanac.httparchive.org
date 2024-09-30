@@ -14,8 +14,8 @@ FROM
   `httparchive.all.requests`
 WHERE
   date = '2024-07-01' AND
-  is_root_page AND
   type = 'font' AND
+  is_root_page AND
   IS_COLOR(payload)
 GROUP BY
   client,
