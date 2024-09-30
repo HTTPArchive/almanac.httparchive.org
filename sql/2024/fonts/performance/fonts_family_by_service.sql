@@ -9,7 +9,8 @@ links AS (
   SELECT
     client,
     SERVICE(url) AS service,
-    FAMILY(payload) AS family
+    FAMILY(payload) AS family,
+    COUNT(0) OVER (PARTITION BY client) AS total
   FROM
     `httparchive.all.requests`
   WHERE
@@ -23,15 +24,16 @@ SELECT
   service,
   family,
   COUNT(0) AS count,
-  SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
-  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS proportion,
+  total,
+  COUNT(0) / total AS proportion,
   ROW_NUMBER() OVER (PARTITION BY client, service ORDER BY COUNT(0) DESC) AS rank
 FROM
   links
 GROUP BY
   client,
   service,
-  family
+  family,
+  total
 QUALIFY
   rank <= 10
 ORDER BY
