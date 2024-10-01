@@ -1,6 +1,6 @@
 -- Section: Performance
 -- Question: What is the distribution of the file size?
--- Normalization: Fonts
+-- Normalization: Fonts (parsed only)
 
 -- INCLUDE ../common.sql
 

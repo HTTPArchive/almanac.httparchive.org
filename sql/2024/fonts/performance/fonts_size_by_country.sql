@@ -1,6 +1,6 @@
 -- Section: Performance
 -- Question: What is the distribution of the file size broken down by country?
--- Normalization: Links
+-- Normalization: Links (parsed only)
 
 -- INCLUDE ../common.sql
 
