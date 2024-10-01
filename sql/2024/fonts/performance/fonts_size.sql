@@ -2,6 +2,8 @@
 -- Question: What is the distribution of the file size?
 -- Normalization: Fonts
 
+-- INCLUDE ../common.sql
+
 WITH
 fonts AS (
   SELECT
@@ -13,7 +15,8 @@ fonts AS (
   WHERE
     date = '2024-07-01' AND
     type = 'font' AND
-    is_root_page
+    is_root_page AND
+    IS_PARSED(payload)
   GROUP BY
     client,
     url

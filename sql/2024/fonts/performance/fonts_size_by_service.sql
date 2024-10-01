@@ -20,7 +20,8 @@ fonts AS (
   WHERE
     date = '2024-07-01' AND
     type = 'font' AND
-    is_root_page
+    is_root_page AND
+    IS_PARSED(payload)
   GROUP BY
     client,
     url

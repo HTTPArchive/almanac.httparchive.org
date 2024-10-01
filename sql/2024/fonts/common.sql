@@ -77,12 +77,17 @@ CREATE TEMPORARY FUNCTION COLOR_FORMATS(payload STRING) AS (
   )
 );
 
--- Check if it is a color font given its payload.
+-- Check if the font is a color font given its payload.
 CREATE TEMPORARY FUNCTION IS_COLOR(payload STRING) AS (
   ARRAY_LENGTH(COLOR_FORMATS(payload)) > 0
 );
 
--- Check if it is a variable font given its payload.
+-- Check if the font was successfully parsed given its payload.
+CREATE TEMPORARY FUNCTION IS_PARSED(payload STRING) AS (
+  JSON_EXTRACT(payload, '$._font_details.table_sizes') IS NOT NULL
+);
+
+-- Check if the font is a variable font given its payload.
 CREATE TEMPORARY FUNCTION IS_VARIABLE(payload STRING) AS (
   REGEXP_CONTAINS(
     JSON_EXTRACT(payload, '$._font_details.table_sizes'),
