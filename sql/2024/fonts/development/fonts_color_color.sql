@@ -31,12 +31,7 @@ fonts AS (
   SELECT
     client,
     url,
-    COLORS(
-      JSON_EXTRACT(
-        ANY_VALUE(payload),
-        '$._font_details.color.palettes'
-      )
-    ) AS colors,
+    COLORS(JSON_EXTRACT(ANY_VALUE(payload), '$._font_details.color.palettes')) AS colors,
     COUNT(0) OVER (PARTITION BY client) AS total
   FROM
     `httparchive.all.requests`

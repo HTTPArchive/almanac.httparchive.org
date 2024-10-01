@@ -34,12 +34,7 @@ links AS (
   SELECT
     date,
     client,
-    HAS_EMOJI(
-      JSON_EXTRACT_STRING_ARRAY(
-        payload,
-        '$._font_details.cmap.codepoints'
-      )
-    ) AS emoji,
+    HAS_EMOJI(JSON_EXTRACT_STRING_ARRAY(payload, '$._font_details.cmap.codepoints')) AS emoji,
     COUNT(0) OVER (PARTITION BY date, client) AS total
   FROM
     `httparchive.all.requests`
