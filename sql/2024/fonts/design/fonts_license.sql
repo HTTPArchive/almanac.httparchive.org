@@ -2,6 +2,8 @@
 -- Question: Which licenses are used?
 -- Normalization: Sites
 
+-- INCLUDE ../common.sql
+
 CREATE TEMPORARY FUNCTION LICENSE(value STRING) AS (
   CASE
     WHEN REGEXP_CONTAINS(value, 'adobe|typekit') THEN 'Adobe'
@@ -41,7 +43,8 @@ INNER JOIN
 WHERE
   date = '2024-07-01' AND
   type = 'font' AND
-  is_root_page
+  is_root_page AND
+  IS_PARSED(payload)
 GROUP BY
   client,
   license,

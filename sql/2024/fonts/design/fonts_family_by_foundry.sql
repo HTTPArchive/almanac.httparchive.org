@@ -16,6 +16,7 @@ links AS (
   WHERE
     date = '2024-07-01' AND
     type = 'font' AND
+    IS_PARSED(payload) AND
     is_root_page
 )
 
