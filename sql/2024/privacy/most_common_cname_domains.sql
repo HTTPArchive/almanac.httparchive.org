@@ -28,6 +28,9 @@ WITH adguard_trackers AS (
     `max-ostapenko.Public.whotracksme`
   WHERE
     date = '2024-06-01'
+  GROUP BY
+    domain,
+    category
 ), cnames AS (
   SELECT
     NET.REG_DOMAIN(cnames.cname) AS cname_domain,
