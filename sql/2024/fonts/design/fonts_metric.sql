@@ -106,7 +106,7 @@ SELECT
   metric.name AS metric,
   percentile,
   COUNT(0) AS count,
-  APPROX_QUANTILES(value / granularity, 1000)[OFFSET(percentile * 10)] AS value
+  APPROX_QUANTILES(SAFE_DIVIDE(value, granularity), 1000)[OFFSET(percentile * 10)] AS value
 FROM
   fonts,
   UNNEST(metrics) AS metric,
