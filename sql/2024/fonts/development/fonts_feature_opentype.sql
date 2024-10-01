@@ -1,6 +1,8 @@
 -- Section: Development
 -- Question: How prevalent is OpenType support?
--- Normalization: Fonts
+-- Normalization: Fonts (parsed only)
+
+-- INCLUDE ../common.sql
 
 WITH
 fonts AS (
@@ -18,7 +20,8 @@ fonts AS (
   WHERE
     date IN ('2022-07-01', '2023-07-01', '2024-07-01') AND
     type = 'font' AND
-    is_root_page
+    is_root_page AND
+    IS_PARSED(payload)
   GROUP BY
     date,
     client,
