@@ -56,15 +56,6 @@ fonts AS (
         ) AS value
       ),
       STRUCT(
-        'baseline_at_zero' AS name,
-        SAFE_CAST(
-          JSON_EXTRACT_SCALAR(
-            ANY_VALUE(payload),
-            '$._font_details.OS2.flags'
-          ) AS INTEGER
-        ) & 1 AS value
-      ),
-      STRUCT(
         'descender' AS name,
         SAFE_CAST(
           JSON_EXTRACT_SCALAR(
