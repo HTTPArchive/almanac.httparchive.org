@@ -1,6 +1,6 @@
 -- Section: Design
 -- Question: Which families are used broken down by foundry?
--- Normalization: Links
+-- Normalization: Links (parsed only)
 
 -- INCLUDE ../common.sql
 

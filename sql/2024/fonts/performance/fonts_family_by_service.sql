@@ -1,6 +1,6 @@
 -- Section: Performance
 -- Question: Which families are used broken down by service?
--- Normalization: Links
+-- Normalization: Links (parsed only)
 
 -- INCLUDE ../common.sql
 

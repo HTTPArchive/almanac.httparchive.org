@@ -1,6 +1,6 @@
 -- Section: Performance
 -- Question: What is the distribution of metrics?
--- Normalization: Fonts
+-- Normalization: Fonts (parsed only)
 
 -- INCLUDE ../common.sql
 
