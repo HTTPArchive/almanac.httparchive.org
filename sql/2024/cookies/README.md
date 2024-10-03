@@ -21,7 +21,8 @@
 
 ## Note about SQL queries
 
-First execute [`0_create_cookies_table.sql`](0_create_cookies_table.sql) and export
-results into a new table that will be used in other SQL queries.
-These other SQL queries assume that the results were exported to
-`httparchive.almanac.2024-06-01_top100k_cookies`, rename as needed.
+First execute [`0_create_desktop_cookies.sql`](0_create_desktop_cookies.sql) and
+[`0_create_mobile_cookies.sql`](0_create_mobile_cookies.sql) and export results
+into a new table that will be used in other SQL queries. These other SQL queries
+assume that the results were exported to
+`httparchive.almanac.<DATE>_<CLIENT>_<RANK>_cookies`, rename as needed.

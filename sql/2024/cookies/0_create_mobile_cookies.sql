@@ -1,30 +1,29 @@
--- Create the intermediate cookie table for other queries
--- Extract cookie set when visiting websites of rank <= 100 000 on mobile and desktop
--- Export it as httparchive.almanac.<DATE>_top100k_cookies
+-- Create an intermediate table containing all cookies that were set during the
+-- <DATE> crawl on <CLIENT> when visiting sites of rank <= <RANK>. This table
+-- can then be reused in consecutive queries without having to reextract the
+-- data every time
+-- Export the table as httparchive.almanac.<DATE>_<CLIENT>_<RANK>_cookies
 
 WITH intermediate_cookie AS (
   SELECT
-    client,
     page,
-    root_page,
-    NET.HOST(page) AS first_party_host,
     rank,
+    JSON_VALUE(summary, '$.startedDateTime') AS startedDateTime,
     cookie
   FROM
     `httparchive.all.pages`,
     UNNEST(JSON_EXTRACT_ARRAY(custom_metrics, '$.cookies')) AS cookie
   WHERE
     date = '2024-06-01' AND
-    rank <= 100000
+    client = 'mobile' AND
+    rank <= 1000000
 )
 
 SELECT
-  client,
   page,
-  root_page,
-  first_party_host,
   rank,
-  ENDS_WITH(first_party_host, NET.REG_DOMAIN(JSON_VALUE(cookie, '$.domain'))) AS is_first_party,
+  startedDateTime,
+  ENDS_WITH(NET.HOST(page), NET.REG_DOMAIN(JSON_VALUE(cookie, '$.domain'))) AS firstPartyCookie,
   JSON_VALUE(cookie, '$.name') AS name,
   JSON_VALUE(cookie, '$.domain') AS domain,
   JSON_VALUE(cookie, '$.path') AS path,
