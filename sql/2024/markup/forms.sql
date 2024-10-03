@@ -21,4 +21,4 @@ GROUP BY
   client,
   forms_count
 ORDER BY
-  forms_count DESC
+  forms_count ASC

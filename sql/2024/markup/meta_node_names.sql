@@ -19,7 +19,9 @@ WITH totals AS (
     date = '2024-06-01'
   GROUP BY
     client
-), meta AS (
+), 
+
+meta AS (
   SELECT
     client,
     IF(IFNULL(TRIM(name), '') = '', '(not set)', name) AS name,

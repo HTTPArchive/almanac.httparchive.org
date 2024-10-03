@@ -1,7 +1,7 @@
 WITH langs AS (
   SELECT
     client,
-    TRIM(LOWER(JSON_VALUE(JSON_EXTRACT(custom_metrics, '$.almanac'), '$.html_node.lang'))) AS lang
+    TRIM(LOWER(JSON_EXTRACT(custom_metrics, '$.almanac.html_node.lang'))) AS lang
   FROM
     `httparchive.all.pages`
   WHERE

@@ -22,7 +22,7 @@ SELECT
 FROM
   `httparchive.all.requests`
 WHERE
-  date IN ('2022-06-01', '2023-06-01', '2024-06-01') AND
+  date = '2024-06-01' AND
   is_main_document
 GROUP BY
   client,
