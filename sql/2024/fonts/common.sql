@@ -1,11 +1,23 @@
 -- Normalize a name. Used in FAMILY.
 CREATE TEMPORARY FUNCTION FAMILY_INNER(name STRING) AS (
-  IF(LENGTH(TRIM(name)) < 3, NULL, NULLIF(TRIM(name), ''))
+  CASE
+    WHEN REGEXP_CONTAINS(name, r'(?i)font\s?awesome') THEN 'Font Awesome'
+    ELSE IF(LENGTH(TRIM(name)) < 3, NULL, NULLIF(TRIM(name), ''))
+  END
 );
 
 -- Extract the family name from a payload.
 CREATE TEMPORARY FUNCTION FAMILY(payload STRING) AS (
-  FAMILY_INNER(JSON_EXTRACT_SCALAR(payload, '$._font_details.names[1]'))
+  FAMILY_INNER(
+    REGEXP_REPLACE(
+      COALESCE(
+        JSON_EXTRACT_SCALAR(payload, '$._font_details.names[16]'),
+        JSON_EXTRACT_SCALAR(payload, '$._font_details.names[1]')
+      ),
+      r'(?i)\s+(extra|semi|ultra)?\s?(condensed)?\s?(bold|book|heavy|light|medium|thin)?$',
+      ''
+    )
+  )
 );
 
 -- Extract the file format from an extension and a MIME type.
