@@ -15,7 +15,7 @@ SELECT
   SUM(IF(sameSite IS NULL, 1, 0)) / COUNT(0) AS sameSiteNull,
   SUM(IF(partitionKey IS NOT NULL, 1, 0)) / COUNT(0) AS partitionKey,
   SUM(IF(partitionKeyOpaque IS NOT NULL, 1, 0)) / COUNT(0) AS partitionKeyOpaque
-FROM `httparchive.almanac.<DATE>_<CLIENT>_<RANK>_cookies`,
+FROM `httparchive.almanac.DATE_CLIENT_RANK_cookies`,
   UNNEST([1000, 5000, 10000, 50000, 100000, 500000, 1000000]) AS rank_grouping
 WHERE
   rank <= rank_grouping AND

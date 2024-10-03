@@ -5,8 +5,8 @@
 WITH cookies_age AS (
   SELECT
     firstPartyCookie,
-    ROUND((CAST(expires AS FLOAT64) - CAST(startedDateTime AS FLOAT64))/(24*3600),0) AS age
-  FROM `httparchive.almanac.<DATE>_<CLIENT>_<RANK>_cookies`
+    ROUND((CAST(expires AS FLOAT64) - CAST(startedDateTime AS FLOAT64)) / (24 * 3600), 0) AS age
+  FROM `httparchive.almanac.DATE_CLIENT_RANK_cookies`
   WHERE
     firstPartyCookie IS NOT NULL AND
     CAST(expires AS FLOAT64) >= 0

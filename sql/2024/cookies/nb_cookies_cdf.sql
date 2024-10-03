@@ -3,10 +3,10 @@
 
 WITH nb_cookies_per_website AS (
   SELECT
-  firstPartyCookie,
-  NET.HOST(page) AS pageFirstPartyHost,
-  COUNT(DISTINCT CONCAT(name, domain)) AS distinctNbCookies
-  FROM `httparchive.almanac.<DATE>_<CLIENT>_<RANK>_cookies`
+    firstPartyCookie,
+    NET.HOST(page) AS pageFirstPartyHost,
+    COUNT(DISTINCT CONCAT(name, domain)) AS distinctNbCookies
+  FROM `httparchive.almanac.DATE_CLIENT_RANK_cookies`
   WHERE
     firstPartyCookie IS NOT NULL
   GROUP BY firstPartyCookie, pageFirstPartyHost

@@ -4,7 +4,7 @@
 SELECT
   CAST(size AS INT) AS sizeCookie,
   COUNT(0) AS nbCookies
-FROM `httparchive.almanac.<DATE>_<CLIENT>_<RANK>_cookies`
+FROM `httparchive.almanac.DATE_CLIENT_RANK_cookies`
 WHERE
   firstPartyCookie IS NOT NULL
 GROUP BY sizeCookie

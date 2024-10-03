@@ -25,4 +25,4 @@ First execute [`0_create_desktop_cookies.sql`](0_create_desktop_cookies.sql) and
 [`0_create_mobile_cookies.sql`](0_create_mobile_cookies.sql) and export results
 into a new table that will be used in other SQL queries. These other SQL queries
 assume that the results were exported to
-`httparchive.almanac.<DATE>_<CLIENT>_<RANK>_cookies`, rename as needed.
+`httparchive.almanac.DATE_CLIENT_RANK_cookies`, rename as needed.

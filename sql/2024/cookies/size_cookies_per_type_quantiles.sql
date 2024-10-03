@@ -10,7 +10,7 @@ SELECT
   APPROX_QUANTILES(CAST(size AS INT), 100)[OFFSET(90)] AS p90,
   APPROX_QUANTILES(CAST(size AS INT), 100)[OFFSET(99)] AS p99,
   MAX(CAST(size AS INT)) AS max
-FROM `httparchive.almanac.<DATE>_<CLIENT>_<RANK>_cookies`
+FROM `httparchive.almanac.DATE_CLIENT_RANK_cookies`
 WHERE
   firstPartyCookie IS NOT NULL
 GROUP BY firstPartyCookie

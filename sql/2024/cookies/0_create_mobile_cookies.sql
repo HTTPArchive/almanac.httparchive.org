@@ -2,7 +2,7 @@
 -- <DATE> crawl on <CLIENT> when visiting sites of rank <= <RANK>. This table
 -- can then be reused in consecutive queries without having to reextract the
 -- data every time
--- Export the table as httparchive.almanac.<DATE>_<CLIENT>_<RANK>_cookies
+-- Export the table as httparchive.almanac.DATE_CLIENT_RANK_cookies
 
 WITH intermediate_cookie AS (
   SELECT
