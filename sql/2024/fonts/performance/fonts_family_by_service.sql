@@ -36,7 +36,7 @@ GROUP BY
   family,
   total
 QUALIFY
-  rank <= 10
+  rank <= 100
 ORDER BY
   client,
   service,
