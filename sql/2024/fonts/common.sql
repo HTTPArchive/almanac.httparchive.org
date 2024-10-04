@@ -32,16 +32,18 @@ CREATE TEMPORARY FUNCTION FILE_FORMAT(extension STRING, type STRING) AS (
   LOWER(IFNULL(REGEXP_EXTRACT(type, '/(?:x-)?(?:font-)?(.*)'), extension))
 );
 
+-- Normalize a foundry name. Used in FOUNDRY.
+CREATE TEMPORARY FUNCTION FOUNDRY_INNER(name STRING) AS (
+  CASE UPPER(name)
+    WHEN 'ADBO' THEN 'ADBE'
+    WHEN 'PFED' THEN 'AWSM'
+    ELSE NULLIF(TRIM(REGEXP_REPLACE(name, r'[[:cntrl:]]+', '')), '')
+  END
+);
+
 -- Extract the foundry name from a payload.
 CREATE TEMPORARY FUNCTION FOUNDRY(payload STRING) AS (
-  NULLIF(
-    TRIM(REGEXP_REPLACE(
-      JSON_EXTRACT_SCALAR(payload, '$._font_details.OS2.achVendID'),
-      r'[[:cntrl:]]+',
-      ''
-    )),
-    ''
-  )
+  FOUNDRY_INNER(JSON_EXTRACT_SCALAR(payload, '$._font_details.OS2.achVendID'))
 );
 
 -- Infer scripts from codepoints. Used in SCRIPTS.
