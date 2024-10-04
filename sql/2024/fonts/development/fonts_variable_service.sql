@@ -1,28 +1,25 @@
 -- Section: Development
 -- Question: Who is serving variable fonts?
--- Normalization: Fonts (variable only)
+-- Normalization: Links (variable only) and fonts (variable only)
 
 -- INCLUDE ../common.sql
 
 WITH
-fonts AS (
+links AS (
   SELECT
     date,
     client,
     url,
     SERVICE(url) AS service,
-    COUNT(0) OVER (PARTITION BY date, client) AS total
+    COUNT(0) OVER (PARTITION BY date, client) AS total,
+    COUNT(DISTINCT url) OVER (PARTITION BY date, client) AS total_secondary
   FROM
     `httparchive.all.requests`
   WHERE
-    date IN ('2022-07-01', '2023-07-01', '2024-07-01') AND
+    date IN ('2022-06-01', '2022-07-01', '2023-07-01', '2024-07-01') AND
     type = 'font' AND
     is_root_page AND
     IS_VARIABLE(payload)
-  GROUP BY
-    date,
-    client,
-    url
 )
 
 SELECT
@@ -30,15 +27,19 @@ SELECT
   client,
   service,
   COUNT(0) AS count,
+  COUNT(DISTINCT url) AS count_secondary,
   total,
-  COUNT(0) / total AS proportion
+  total_secondary,
+  COUNT(0) / total AS proportion,
+  COUNT(DISTINCT url) / total_secondary AS proportion_secondary
 FROM
-  fonts
+  links
 GROUP BY
   date,
   client,
   service,
-  total
+  total,
+  total_secondary
 ORDER BY
   date,
   client,

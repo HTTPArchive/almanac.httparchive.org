@@ -1,6 +1,6 @@
 -- Section: Performance
 -- Question: Which file formats are used?
--- Normalization: Links (primary) and fonts (secondary)
+-- Normalization: Links and fonts
 
 -- INCLUDE ../common.sql
 
