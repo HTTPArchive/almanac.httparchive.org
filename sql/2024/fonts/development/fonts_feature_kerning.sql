@@ -71,5 +71,4 @@ GROUP BY
 ORDER BY
   date,
   client,
-  support,
-  proportion DESC
+  support
