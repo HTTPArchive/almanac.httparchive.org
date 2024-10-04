@@ -12,14 +12,24 @@ try {
   let count = 0;
   walkRules($, rule => {
     rule.keyframes.forEach((frame) => {
-      count += countDeclarations(frame, { properties: 'font-variation-settings' });
+      count += countDeclarations(
+        frame,
+        {
+          properties: [
+            'font-stretch',
+            'font-style',
+            'font-variation-settings',
+            'font-weight'
+          ]
+        }
+      );
     });
   }, {
     type: 'keyframes'
   });
   count += countDeclarations($.stylesheet.rules, {
     properties: 'transition',
-    values: /font-variation-settings/
+    values: /font-stretch|font-style|font-variation-settings|font-weight/
   });
   return count > 0;
 } catch (e) {
