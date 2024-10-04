@@ -1,21 +1,28 @@
--- Normalize a name. Used in FAMILY.
-CREATE TEMPORARY FUNCTION FAMILY_INNER(name STRING) AS (
+-- Normalize a family name. Used in FAMILY_INNER.
+CREATE TEMPORARY FUNCTION FAMILY_INNER_INNER(name STRING) AS (
   CASE
     WHEN REGEXP_CONTAINS(name, r'(?i)font\s?awesome') THEN 'Font Awesome'
     ELSE IF(LENGTH(TRIM(name)) < 3, NULL, NULLIF(TRIM(name), ''))
   END
 );
 
+-- Normalize a family name. Used in FAMILY.
+CREATE TEMPORARY FUNCTION FAMILY_INNER(name STRING) AS (
+  FAMILY_INNER_INNER(
+    REGEXP_REPLACE(
+      name,
+      r'(?i)([\s-]?(black|bold|book|cond(ensed)?|demi|ex(tra)?|heavy|italic|light|medium|narrow|regular|semi|thin|ultra|wide|\d00|\d+pt))+$',
+      ''
+    )
+  )
+);
+
 -- Extract the family name from a payload.
 CREATE TEMPORARY FUNCTION FAMILY(payload STRING) AS (
   FAMILY_INNER(
-    REGEXP_REPLACE(
-      COALESCE(
-        JSON_EXTRACT_SCALAR(payload, '$._font_details.names[16]'),
-        JSON_EXTRACT_SCALAR(payload, '$._font_details.names[1]')
-      ),
-      r'(?i)([\s-]?(black|bold|book|cond(ensed)?|demi|ex(tra)?|heavy|italic|light|medium|narrow|regular|semi|thin|ultra|wide|\d00|\d+pt))+$',
-      ''
+    COALESCE(
+      JSON_EXTRACT_SCALAR(payload, '$._font_details.names[16]'),
+      JSON_EXTRACT_SCALAR(payload, '$._font_details.names[1]')
     )
   )
 );

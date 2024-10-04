@@ -2,6 +2,8 @@
 -- Question: Which families are popular in CSS?
 -- Normalization: Sites
 
+-- INCLUDE ../common.sql
+
 CREATE TEMPORARY FUNCTION FAMILIES(json STRING)
 RETURNS ARRAY<STRING>
 LANGUAGE js
@@ -26,7 +28,7 @@ WITH
 families AS (
   SELECT
     client,
-    family,
+    FAMILY_INNER(family) AS family,
     COUNT(DISTINCT page) AS count,
     ROW_NUMBER() OVER (PARTITION BY client ORDER BY COUNT(DISTINCT page) DESC) AS rank
   FROM
