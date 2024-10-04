@@ -1,6 +1,6 @@
 -- Section: Development
 -- Question: Which axes are used in CSS?
--- Normalization: Sites
+-- Normalization: Sites (variable only)
 
 CREATE TEMPORARY FUNCTION PROPERTIES(json STRING)
 RETURNS ARRAY<STRING>
@@ -29,11 +29,12 @@ try {
 ''';
 
 WITH
-properties AS (
+sites AS (
   SELECT
     client,
+    page,
     REGEXP_EXTRACT(chunk, r'''['"]([\w]{4})['"]''') AS axis,
-    COUNT(DISTINCT page) AS count
+    COUNT(DISTINCT page) OVER (PARTITION BY client) AS total
   FROM
     `httparchive.all.parsed_css`,
     UNNEST(PROPERTIES(css)) AS property,
@@ -43,33 +44,24 @@ properties AS (
     is_root_page
   GROUP BY
     client,
+    page,
     axis
   HAVING
     axis IS NOT NULL
-),
-sites AS (
-  SELECT
-    client,
-    COUNT(DISTINCT page) AS total
-  FROM
-    `httparchive.all.requests`
-  WHERE
-    date = '2024-07-01' AND
-    is_root_page
-  GROUP BY
-    client
 )
 
 SELECT
   client,
   axis,
-  count,
+  COUNT(0) AS count,
   total,
-  count / total AS proportion
+  COUNT(0) / total AS proportion
 FROM
-  properties
-JOIN
-  sites USING (client)
+  sites
+GROUP BY
+  client,
+  axis,
+  total
 ORDER BY
   client,
   proportion DESC
