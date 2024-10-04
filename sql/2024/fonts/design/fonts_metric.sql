@@ -17,6 +17,15 @@ fonts AS (
     ) AS granularity,
     [
       STRUCT(
+        'granularity' AS name,
+        SAFE_CAST(
+          JSON_EXTRACT_SCALAR(
+            ANY_VALUE(payload),
+            '$._font_details.head.unitsPerEm'
+          ) AS INTEGER
+        ) AS value
+      ),
+      STRUCT(
         'clipping_ascender' AS name,
         SAFE_CAST(
           JSON_EXTRACT_SCALAR(
@@ -103,10 +112,13 @@ fonts AS (
 
 SELECT
   client,
-  metric.name AS metric,
+  name AS metric,
   percentile,
   COUNT(0) AS count,
-  APPROX_QUANTILES(SAFE_DIVIDE(value, granularity), 1000)[OFFSET(percentile * 10)] AS value
+  APPROX_QUANTILES(
+    IF(name = 'granularity', value, SAFE_DIVIDE(value, granularity)),
+    1000
+  )[OFFSET(percentile * 10)] AS value
 FROM
   fonts,
   UNNEST(metrics) AS metric,
