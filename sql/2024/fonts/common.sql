@@ -14,7 +14,7 @@ CREATE TEMPORARY FUNCTION FAMILY(payload STRING) AS (
         JSON_EXTRACT_SCALAR(payload, '$._font_details.names[16]'),
         JSON_EXTRACT_SCALAR(payload, '$._font_details.names[1]')
       ),
-      r'(?i)([\s-]?(black|bold|book|cond(ensed)?|demi|extra|heavy|italic|light|medium|regular|semi|thin|ultra))+$',
+      r'(?i)([\s-]?(black|bold|book|cond(ensed)?|demi|ex(tra)?|heavy|italic|light|medium|narrow|regular|semi|thin|ultra|wide|\d00|\d+pt))+$',
       ''
     )
   )
