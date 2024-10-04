@@ -1,4 +1,4 @@
--- Section: Design
+-- Section: Development
 -- Question: Which compilers are used?
 -- Normalization: Fonts (parsed only)
 
