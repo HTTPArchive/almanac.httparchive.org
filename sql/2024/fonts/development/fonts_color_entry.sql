@@ -15,7 +15,7 @@ fonts AS (
         '$._font_details.color.numPaletteEntries'
       ) AS INT64
     ) AS entries,
-    COUNT(*) OVER (PARTITION BY client) AS total
+    COUNT(0) OVER (PARTITION BY client) AS total
   FROM
     `httparchive.all.requests`
   WHERE
