@@ -1,25 +1,43 @@
-#standardSQL
-# Lighthouse category scores per eCommerce plaforms. Web Almanac run LightHouse only in mobile mode and hence references to mobile tables. PWA was deleted and is no longer part of lighthouse.
+WITH technologies AS (
+  SELECT
+    client,
+    page,
+    category,
+    technology,
+    rank,
+    lighthouse,
+    COUNT(DISTINCT page) OVER (PARTITION BY client) AS total_websites
+  FROM `httparchive.all.pages`,
+    UNNEST(technologies) AS tech,
+    UNNEST(categories) AS category
+  WHERE
+    date = '2024-09-01' AND
+    is_root_page = TRUE
+)
+
 SELECT
-  app AS ecommVendor,
-  COUNT(DISTINCT url) AS freq,
-  APPROX_QUANTILES(CAST(JSON_EXTRACT_SCALAR(report, '$.categories.performance.score') AS NUMERIC), 1000)[OFFSET(500)] AS median_performance,
-  APPROX_QUANTILES(CAST(JSON_EXTRACT_SCALAR(report, '$.categories.accessibility.score') AS NUMERIC), 1000)[OFFSET(500)] AS median_accessibility,
-  APPROX_QUANTILES(CAST(JSON_EXTRACT_SCALAR(report, '$.categories.seo.score') AS NUMERIC), 1000)[OFFSET(500)] AS median_seo,
-  APPROX_QUANTILES(CAST(JSON_EXTRACT_SCALAR(report, '$.categories.best-practices.score') AS NUMERIC), 1000)[OFFSET(500)] AS median_best_practices
-FROM
-  `httparchive.lighthouse.2024_08_01_mobile`
-JOIN
-  `httparchive.technologies.2024_08_01_mobile`
-USING
-  (url)
+  client,
+  rank,
+  technology,
+  ARRAY_AGG(DISTINCT category) AS categories,
+  APPROX_QUANTILES(CAST(JSON_EXTRACT_SCALAR(lighthouse, '$.categories.performance.score') AS NUMERIC), 1000)[OFFSET(500)] AS median_performance,
+  APPROX_QUANTILES(CAST(JSON_EXTRACT_SCALAR(lighthouse, '$.categories.accessibility.score') AS NUMERIC), 1000)[OFFSET(500)] AS median_accessibility,
+  APPROX_QUANTILES(CAST(JSON_EXTRACT_SCALAR(lighthouse, '$.categories.seo.score') AS NUMERIC), 1000)[OFFSET(500)] AS median_seo,
+  APPROX_QUANTILES(CAST(JSON_EXTRACT_SCALAR(lighthouse, '$.categories.best-practices.score') AS NUMERIC), 1000)[OFFSET(500)] AS median_best_practices,
+  ANY_VALUE(total_websites) AS total_websites,
+  COUNT(DISTINCT page) AS number_of_websites,
+  COUNT(DISTINCT page) / ANY_VALUE(total_websites) AS percent_of_websites
+FROM technologies
 WHERE
   category = 'Ecommerce' AND
   (
-    app != 'Cart Functionality' AND
-    app != 'Google Analytics Enhanced eCommerce'
+    technology != 'Cart Functionality' AND
+    technology != 'Google Analytics Enhanced eCommerce'
   )
 GROUP BY
-  ecommVendor
+  client,
+  rank,
+  technology
 ORDER BY
-  freq DESC
+  client,
+  number_of_websites DESC
