@@ -1,57 +1,38 @@
-#standardSQL
-# Ranking top vendors in terms of top 1000 all the way to top 50000000 (adjusted from the 2021 query since the rank available changed)
-# Uses the Crux rank field in the summary_pages table
+WITH technologies AS (
+  SELECT
+    client,
+    page,
+    category,
+    technology,
+    rank,
+    COUNT(DISTINCT page) OVER (PARTITION BY client) AS total_websites
+  FROM `httparchive.all.pages`,
+    UNNEST(technologies) AS tech,
+    UNNEST(categories) AS category
+  WHERE
+    date = '2024-08-01' AND
+    is_root_page = TRUE
+)
 
-#standardSQL
 SELECT
   client,
   rank,
-  app,
-  COUNT(DISTINCT url) AS freq,
-  total_pages,
-  COUNT(DISTINCT url) / total_pages AS pct,
-  COUNT(DISTINCT url) / rank AS rank_pct
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    app,
-    url
-  FROM
-    `httparchive.technologies.2024_08_01_*`
-  WHERE
-    category = 'Ecommerce' AND
-    app != 'Cart Functionality' AND
-    app != 'Google Analytics Enhanced eCommerce')
-JOIN (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    COUNT(0) AS total_pages
-  FROM
-    `httparchive.summary_pages.2024_08_01_*`
-  GROUP BY
-    client)
-USING
-  (client)
-JOIN (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    url,
-    MAX(rank) AS rank
-  FROM
-    `httparchive.summary_pages.2024_08_01_*`,
-    UNNEST([1000, 5000, 10000, 50000, 100000, 500000, 1000000, 5000000, 10000000, 50000000]) AS rank_magnitude
-  WHERE
-    rank <= rank_magnitude
-  GROUP BY
-    client,
-    url)
-USING
-  (client, url)
+  technology,
+  ARRAY_AGG(DISTINCT category) AS categories,
+  ANY_VALUE(total_websites) AS total_websites,
+  COUNT(DISTINCT page) AS number_of_websites,
+  COUNT(DISTINCT page) / ANY_VALUE(total_websites) AS percent_of_websites
+FROM technologies
+WHERE
+  category = 'Ecommerce' AND
+  (
+    technology != 'Cart Functionality' AND
+    technology != 'Google Analytics Enhanced eCommerce'
+  )
 GROUP BY
   client,
   rank,
-  app,
-  total_pages
+  technology
 ORDER BY
-  rank,
-  pct DESC
+  client,
+  number_of_websites DESC
