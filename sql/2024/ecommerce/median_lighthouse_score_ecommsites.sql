@@ -11,7 +11,7 @@ WITH technologies AS (
     UNNEST(technologies) AS tech,
     UNNEST(categories) AS category
   WHERE
-    date = '2024-09-01' AND
+    date = '2024-08-01' AND
     is_root_page = TRUE
 )
 
