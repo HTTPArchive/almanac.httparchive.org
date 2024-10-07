@@ -17,16 +17,15 @@ links AS (
     date = '2024-07-01' AND
     type = 'font' AND
     is_root_page AND
-    IS_PARSED(payload) AND
-    RAND() > 0.5
+    IS_PARSED(payload)
 )
 
 SELECT
   client,
   script,
   family,
-  2 * COUNT(0) AS count,
-  2 * total AS total,
+  COUNT(0) AS count,
+  total,
   COUNT(0) / total AS proportion,
   ROW_NUMBER() OVER (PARTITION BY client, script ORDER BY COUNT(0) DESC) AS rank
 FROM
