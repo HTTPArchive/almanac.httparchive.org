@@ -4,13 +4,12 @@ WITH category AS (
   SELECT
     client,
     page,
-
     technology
-  FROM `httparchive.sample_data.pages_10k`,
+  FROM `httparchive.all.pages`,
     UNNEST(technologies) AS tech,
     UNNEST(categories) AS category
   WHERE
-    date = '2024-09-01'
+    date = '2024-06-01'
     AND is_root_page = TRUE
     AND category = 'Cookie compliance'
 ),
@@ -20,11 +19,11 @@ ecommerce_data AS (
     page,
     rank,
     COUNT(DISTINCT page) OVER (PARTITION BY client) AS total_websites
-  FROM `httparchive.sample_data.pages_10k`,
+  FROM `httparchive.all.pages`,
     UNNEST(technologies) AS tech,
     UNNEST(categories) AS category
   WHERE
-    date = '2024-09-01'
+    date = '2024-06-01'
     AND is_root_page = TRUE
     AND category = 'Ecommerce'
     AND 
