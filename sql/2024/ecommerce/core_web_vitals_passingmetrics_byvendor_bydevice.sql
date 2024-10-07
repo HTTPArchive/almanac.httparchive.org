@@ -46,7 +46,7 @@ JOIN (
     url,
     app AS ecomm
   FROM
-    `httparchive.technologies.2024_08_01_*`
+    `httparchive.technologies.2024_06_01_*`
   WHERE
     category = 'Ecommerce' AND
     (
@@ -58,7 +58,7 @@ ON
   CONCAT(origin, '/') = url AND
   IF(device = 'desktop', 'desktop', 'mobile') = client
 WHERE
-  date = '2024-08-01'
+  date = '2024-06-01'
 GROUP BY
   client,
   ecomm
