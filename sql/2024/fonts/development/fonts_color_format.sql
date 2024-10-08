@@ -7,6 +7,7 @@
 WITH
 fonts AS (
   SELECT
+    date,
     client,
     url,
     COLOR_FORMATS(ANY_VALUE(payload)) AS formats,
@@ -14,16 +15,18 @@ fonts AS (
   FROM
     `httparchive.all.requests`
   WHERE
-    date = '2024-07-01' AND
+    date IN ('2022-07-01', '2023-07-01', '2024-07-01') AND
     type = 'font' AND
     is_root_page AND
     IS_COLOR(payload)
   GROUP BY
+    date,
     client,
     url
 )
 
 SELECT
+  date,
   client,
   format,
   COUNT(DISTINCT url) AS count,
@@ -33,9 +36,11 @@ FROM
   fonts,
   UNNEST(formats) AS format
 GROUP BY
+  date,
   client,
   format,
   total
 ORDER BY
+  date,
   client,
   proportion DESC
