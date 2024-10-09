@@ -57,7 +57,8 @@ FROM (
   GROUP BY
     client,
     keyword,
-    property)
+    property
+)
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -65,9 +66,9 @@ JOIN (
   FROM
     `httparchive.summary_pages.2021_07_01_*`
   GROUP BY
-    client)
-USING
-  (client)
+    client
+)
+USING (client)
 WHERE
   pct >= 0.01
 ORDER BY

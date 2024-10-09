@@ -99,10 +99,12 @@ FROM (
     WHERE
       date = '2022-07-01' AND
       # Limit the size of the CSS to avoid OOM crashes. This loses ~20% of stylesheets.
-      LENGTH(css) < 0.1 * 1024 * 1024)
+      LENGTH(css) < 0.1 * 1024 * 1024
+  )
   GROUP BY
     client,
-    page),
+    page
+),
   UNNEST([10, 25, 50, 75, 90]) AS percentile
 GROUP BY
   percentile,

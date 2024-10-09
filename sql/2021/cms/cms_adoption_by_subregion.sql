@@ -1242,7 +1242,8 @@ FROM (
   ) USING (client, url)
   GROUP BY
     client,
-    sub_region)
+    sub_region
+)
 WHERE
   pages > 1000
 ORDER BY

@@ -66,11 +66,11 @@ SELECT
   SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
 FROM (
-    SELECT
-      _TABLE_SUFFIX AS client,
-      getUnusedFontDownloadsCount(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS unused_font_count
-    FROM
-      `httparchive.pages.2021_07_01_*`
+  SELECT
+    _TABLE_SUFFIX AS client,
+    getUnusedFontDownloadsCount(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS unused_font_count
+  FROM
+    `httparchive.pages.2021_07_01_*`
 )
 WHERE
   unused_font_count IS NOT NULL

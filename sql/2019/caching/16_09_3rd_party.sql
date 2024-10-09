@@ -9,17 +9,16 @@ SELECT
   COUNT(0) AS occurrences,
   ROUND(COUNT(0) * 100 / total_with_vary, 2) AS pct_of_vary,
   ROUND(COUNT(0) * 100 / all_requests, 2) AS pct_all_requests
-FROM
-  (
-    SELECT
-      client,
-      IF(STRPOS(NET.HOST(url), REGEXP_EXTRACT(NET.REG_DOMAIN(page), r'([\w-]+)')) > 0, 1, 3) AS party,
-      resp_vary
-    FROM
-      `httparchive.almanac.requests`
-    WHERE
-      date = '2019-07-01'
-  ),
+FROM (
+  SELECT
+    client,
+    IF(STRPOS(NET.HOST(url), REGEXP_EXTRACT(NET.REG_DOMAIN(page), r'([\w-]+)')) > 0, 1, 3) AS party,
+    resp_vary
+  FROM
+    `httparchive.almanac.requests`
+  WHERE
+    date = '2019-07-01'
+),
   UNNEST(REGEXP_EXTRACT_ALL(LOWER(resp_vary), r'([a-z][^,\s="\']*)')) AS header_name
 JOIN (
   SELECT

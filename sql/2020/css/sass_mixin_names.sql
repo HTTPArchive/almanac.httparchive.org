@@ -26,7 +26,8 @@ FROM (
     mixin
   FROM
     `httparchive.pages.2020_08_01_*`,
-    UNNEST(getMixinNames(payload)) AS mixin)
+    UNNEST(getMixinNames(payload)) AS mixin
+)
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -34,9 +35,9 @@ JOIN (
   FROM
     `httparchive.pages.2020_08_01_*`
   GROUP BY
-    client)
-USING
-  (client)
+    client
+)
+USING (client)
 GROUP BY
   client,
   mixin,

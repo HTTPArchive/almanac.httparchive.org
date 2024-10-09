@@ -26,7 +26,8 @@ FROM (
     var.freq
   FROM
     `httparchive.pages.2021_07_01_*`,
-    UNNEST(countCombinedVariables(payload)) AS var),
+    UNNEST(countCombinedVariables(payload)) AS var
+),
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 GROUP BY
   percentile,

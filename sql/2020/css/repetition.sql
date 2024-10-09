@@ -52,10 +52,12 @@ FROM (
     FROM
       `httparchive.almanac.parsed_css`
     WHERE
-      date = '2020-08-01')
+      date = '2020-08-01'
+  )
   GROUP BY
     client,
-    page),
+    page
+),
   UNNEST([10, 25, 50, 75, 90, 95, 100]) AS percentile
 GROUP BY
   percentile,

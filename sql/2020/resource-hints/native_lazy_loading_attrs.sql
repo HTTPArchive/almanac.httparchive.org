@@ -10,9 +10,9 @@ FROM
   `httparchive.pages.2020_08_01_*`,
   UNNEST(JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, "$['_img-loading-attr']"), '$')) AS loading
 JOIN (
-  SELECT _TABLE_SUFFIX, COUNT(0) AS total FROM `httparchive.pages.2020_08_01_*` GROUP BY _TABLE_SUFFIX)
-USING
-  (_TABLE_SUFFIX)
+  SELECT _TABLE_SUFFIX, COUNT(0) AS total FROM `httparchive.pages.2020_08_01_*` GROUP BY _TABLE_SUFFIX
+)
+USING (_TABLE_SUFFIX)
 GROUP BY
   client,
   loading,

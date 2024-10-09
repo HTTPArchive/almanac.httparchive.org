@@ -44,7 +44,8 @@ FROM (
   WHERE
     date = '2022-06-01'
   GROUP BY
-    client)
+    client
+)
 JOIN (
   SELECT
     client,
@@ -52,9 +53,9 @@ JOIN (
   FROM
     `httparchive.almanac.requests`
   GROUP BY
-    client)
-USING
-  (client),
+    client
+)
+USING (client),
   UNNEST(attrs) AS attr
 ORDER BY
   pct DESC

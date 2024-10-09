@@ -20,7 +20,8 @@ FROM (
     url,
     JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._security'), '$.sri-integrity') AS sris
   FROM
-    `httparchive.pages.2021_07_01_*`)
+    `httparchive.pages.2021_07_01_*`
+)
 LEFT JOIN UNNEST(sris) AS sri
 GROUP BY
   client

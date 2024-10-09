@@ -45,7 +45,8 @@ FROM (
   ) USING (client, url)
   GROUP BY
     client,
-    geo)
+    geo
+)
 WHERE
   pages > 1000
 ORDER BY

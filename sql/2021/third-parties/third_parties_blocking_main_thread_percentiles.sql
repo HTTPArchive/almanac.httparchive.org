@@ -23,20 +23,19 @@ FROM (
     COUNTIF(SAFE_CAST(JSON_VALUE(report, '$.audits.third-party-summary.details.summary.wastedMs') AS FLOAT64) > 250) AS blocking,
     SUM(SAFE_CAST(JSON_VALUE(third_party_items, '$.blockingTime') AS FLOAT64)) AS blocking_time,
     SUM(SAFE_CAST(JSON_VALUE(third_party_items, '$.transferSize') AS FLOAT64) / 1024) AS transfer_size_kib
-  FROM
-    (
-      SELECT
-        url AS page,
-        report
-      FROM
-        `httparchive.lighthouse.2021_07_01_mobile`
-    ),
+  FROM (
+    SELECT
+      url AS page,
+      report
+    FROM
+      `httparchive.lighthouse.2021_07_01_mobile`
+  ),
     UNNEST(JSON_QUERY_ARRAY(report, '$.audits.third-party-summary.details.items')) AS third_party_items
   GROUP BY
     domain,
     page,
     category
-  ),
+),
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 GROUP BY
   domain,

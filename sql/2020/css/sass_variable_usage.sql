@@ -31,7 +31,8 @@ FROM (
     variable.freq
   FROM
     `httparchive.pages.2020_08_01_*`,
-    UNNEST(getVariableUsage(payload)) AS variable)
+    UNNEST(getVariableUsage(payload)) AS variable
+)
 GROUP BY
   client,
   variable

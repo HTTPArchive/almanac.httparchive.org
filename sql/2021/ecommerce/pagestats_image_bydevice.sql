@@ -12,12 +12,11 @@ JOIN (
     _TABLE_SUFFIX,
     url
   FROM `httparchive.technologies.2021_07_01_*`
-  WHERE category = 'Ecommerce' AND
-    (
+  WHERE category = 'Ecommerce' AND (
       app != 'Cart Functionality' AND
       app != 'Google Analytics Enhanced eCommerce'
     )
-  )
+)
 USING (_TABLE_SUFFIX, url),
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 GROUP BY

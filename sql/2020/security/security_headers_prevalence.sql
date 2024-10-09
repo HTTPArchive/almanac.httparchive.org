@@ -25,11 +25,10 @@ FROM (
     JSON_EXTRACT(payload, '$.response.headers') AS headers
   FROM
     `httparchive.almanac.requests`
-  WHERE
-    (date = '2020-08-01' OR date = '2019-07-01') AND
+  WHERE (date = '2020-08-01' OR date = '2019-07-01') AND
     NET.HOST(urlShort) = NET.HOST(page)
 ),
-UNNEST(['Content-Security-Policy', 'Cross-Origin-Embedder-Policy', 'Cross-Origin-Opener-Policy', 'Cross-Origin-Resource-Policy', 'Expect-CT', 'Feature-Policy', 'Permissions-Policy', 'Referrer-Policy', 'Report-To', 'Strict-Transport-Security', 'X-Content-Type-Options', 'X-Frame-Options', 'X-XSS-Protection']) AS headername
+  UNNEST(['Content-Security-Policy', 'Cross-Origin-Embedder-Policy', 'Cross-Origin-Opener-Policy', 'Cross-Origin-Resource-Policy', 'Expect-CT', 'Feature-Policy', 'Permissions-Policy', 'Referrer-Policy', 'Report-To', 'Strict-Transport-Security', 'X-Content-Type-Options', 'X-Frame-Options', 'X-XSS-Protection']) AS headername
 GROUP BY
   date,
   client,

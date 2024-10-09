@@ -20,6 +20,7 @@ FROM (
     _TABLE_SUFFIX AS client,
     countSourcemaps(payload) > 0 AS has_sourcemap
   FROM
-    `httparchive.pages.2020_08_01_*`)
+    `httparchive.pages.2020_08_01_*`
+)
 GROUP BY
   client

@@ -29,6 +29,8 @@ FROM (
       unminified.wastedBytes AS wasted_bytes
     FROM
       `httparchive.lighthouse.2021_07_01_mobile` AS test,
-      UNNEST(getUnminifiedJsUrls(JSON_EXTRACT(report, "$.audits['unminified-javascript']"))) AS unminified)
+      UNNEST(getUnminifiedJsUrls(JSON_EXTRACT(report, "$.audits['unminified-javascript']"))) AS unminified
+  )
   GROUP BY
-    page)
+    page
+)
