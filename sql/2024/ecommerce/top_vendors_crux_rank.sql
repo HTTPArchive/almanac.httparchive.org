@@ -1,38 +1,63 @@
-WITH technologies AS (
-  SELECT
-    client,
-    page,
-    category,
-    technology,
-    rank,
-    COUNT(DISTINCT page) OVER (PARTITION BY client) AS total_websites
-  FROM `httparchive.all.pages`,
-    UNNEST(technologies) AS tech,
-    UNNEST(categories) AS category
-  WHERE
-    date = '2024-06-01' AND
-    is_root_page = TRUE
-)
+#standardSQL
+# Ecommerce adoption per rank
+# top_ecommerce_by_rank.sql
 
 SELECT
   client,
+  ecommerce,
   rank,
-  technology,
-  ARRAY_AGG(DISTINCT category) AS categories,
-  ANY_VALUE(total_websites) AS total_websites,
-  COUNT(DISTINCT page) AS number_of_websites,
-  COUNT(DISTINCT page) / ANY_VALUE(total_websites) AS percent_of_websites
-FROM technologies
-WHERE
-  category = 'Ecommerce' AND
-  (
-    technology != 'Cart Functionality' AND
-    technology != 'Google Analytics Enhanced eCommerce'
-  )
+  COUNT(DISTINCT url) AS pages,
+  ANY_VALUE(total) AS total,
+  COUNT(DISTINCT url) / ANY_VALUE(total) AS pct
+FROM (
+  SELECT DISTINCT
+    client,
+    page AS url,
+    technologies.technology AS ecommerce
+  FROM
+    `httparchive.all.pages`,
+    UNNEST(technologies) AS technologies,
+    UNNEST(technologies.categories) AS cats
+  WHERE
+    cats = 'Ecommerce' AND
+    date = '2024-06-01' AND
+    is_root_page
+    AND technologies.technology NOT IN ('Cart Functionality', 'Google Analytics Enhanced eCommerce'))
+JOIN (
+  SELECT
+    client,
+    page as url,
+    rank_magnitude AS rank
+  FROM
+    `httparchive.all.pages`,
+    UNNEST([1e3, 1e4, 1e5, 1e6, 1e7]) AS rank_magnitude
+  WHERE
+    rank <= rank_magnitude AND
+    date = '2024-06-01' AND
+    is_root_page)
+USING
+  (client, url)
+JOIN (
+  SELECT
+    client,
+    rank_magnitude AS rank,
+    COUNT(0) AS total
+  FROM
+    `httparchive.all.pages`,
+    UNNEST([1e3, 1e4, 1e5, 1e6, 1e7]) AS rank_magnitude
+  WHERE
+    rank <= rank_magnitude AND
+    date = '2024-06-01' AND
+    is_root_page
+  GROUP BY
+    client,
+    rank_magnitude)
+USING
+  (client, rank)
 GROUP BY
   client,
-  rank,
-  technology
+  ecommerce,
+  rank
 ORDER BY
-  client,
-  number_of_websites DESC
+  rank,
+  pages DESC
