@@ -11,7 +11,7 @@ fonts AS (
     client,
     url,
     COLOR_FORMATS(ANY_VALUE(payload)) AS formats,
-    COUNT(0) OVER (PARTITION BY client) AS total
+    COUNT(0) OVER (PARTITION BY date, client) AS total
   FROM
     `httparchive.all.requests`
   WHERE
