@@ -2,7 +2,7 @@
 -- Question: What is the distribution of the file size broken down by format?
 -- Normalization: Fonts (parsed only)
 
--- INCLUDE ../common.sql
+-- INCLUDE https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/2024/fonts/common.sql
 
 WITH
 fonts AS (

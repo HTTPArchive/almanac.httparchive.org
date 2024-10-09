@@ -2,7 +2,7 @@
 -- Question: Which variable families are used?
 -- Normalization: Links (variable only)
 
--- INCLUDE ../common.sql
+-- INCLUDE https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/2024/fonts/common.sql
 
 WITH
 links AS (

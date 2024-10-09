@@ -2,7 +2,7 @@
 -- Question: What is the distribution of the file size broken down by table?
 -- Normalization: Fonts (parsed only)
 
--- INCLUDE ../common.sql
+-- INCLUDE https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/2024/fonts/common.sql
 
 CREATE TEMPORARY FUNCTION TABLES(json STRING)
 RETURNS ARRAY<STRUCT<name STRING, size INT64>>
