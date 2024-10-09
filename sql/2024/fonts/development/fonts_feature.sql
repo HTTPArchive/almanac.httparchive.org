@@ -2,7 +2,7 @@
 -- Question: Which features are used in fonts?
 -- Normalization: Fonts (parsed only)
 
--- INCLUDE ../common.sql
+-- INCLUDE https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/2024/fonts/common.sql
 
 CREATE TEMPORARY FUNCTION FEATURES(data STRING)
 RETURNS ARRAY<STRING>

@@ -2,7 +2,7 @@
 -- Question: Which file formats are used?
 -- Normalization: Links and fonts
 
--- INCLUDE ../common.sql
+-- INCLUDE https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/2024/fonts/common.sql
 
 WITH
 links AS (

@@ -2,7 +2,7 @@
 -- Question: Which color-font formats are used?
 -- Normalization: Fonts (color only)
 
--- INCLUDE ../common.sql
+-- INCLUDE https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/2024/fonts/common.sql
 
 WITH
 fonts AS (

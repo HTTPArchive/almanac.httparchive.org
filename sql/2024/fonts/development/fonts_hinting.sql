@@ -2,7 +2,7 @@
 -- Question: How prevalent is autohinting?
 -- Normalization: Fonts (parsed only)
 
--- INCLUDE ../common.sql
+-- INCLUDE https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/2024/fonts/common.sql
 
 CREATE TEMPORARY FUNCTION IS_HINTED(payload STRING) AS (
   REGEXP_CONTAINS(

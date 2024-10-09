@@ -2,7 +2,7 @@
 -- Question: How popular are variable fonts?
 -- Normalization: Sites
 
--- INCLUDE ../common.sql
+-- INCLUDE https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/2024/fonts/common.sql
 
 WITH
 fonts AS (
