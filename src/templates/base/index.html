@@ -60,6 +60,10 @@
       <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}" class="btn">
         {{ self.start_exploring() }}
       </a>
+      {% elif year == "2024" %}
+      <a href="{{ url_for('table_of_contents', year=year|int -2, lang=lang) }}" class="btn">
+        {{ self.read_last_years_almanac() }}
+      </a>
       {% else %}
       <a href="{{ url_for('table_of_contents', year=year|int -1, lang=lang) }}" class="btn">
         {{ self.read_last_years_almanac() }}
