@@ -292,7 +292,6 @@ def year_live(year):
     return year in SUPPORTED_YEARS
 
 
-
 # A simple function to strip accents rather than having to import a 3rd party
 # library like unicodedata
 def strip_accents(string):
