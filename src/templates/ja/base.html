@@ -24,7 +24,7 @@
 </p>
 {% endblock %}
 
-{% block read_last_years_almanac %}{{ self.previous_year() }} Web Almanacを読む{% endblock %}
+{% block read_last_years_almanac %}{{ previous_year }} Web Almanacを読む{% endblock %}
 
 {% block http_archive_link %}HTTP ArchiveによるWeb Almanac{% endblock %}
 
@@ -123,17 +123,15 @@
 {% block accessibility_statement %}アクセシビリティに関する声明{% endblock %}
 {% block rss_feed %}RSS Feed{% endblock %}
 
-{% block previous_year %}{{ year|int - 1 }}{% endblock %}
-
 {% block featured_chapter %}注目の章{% endblock %}
-{% block featured_chapter_last_year %}{{ self.previous_year() }} Web Almanac<br>注目の章{% endblock %}
+{% block featured_chapter_last_year %}{{ previous_year }} Web Almanac<br>注目の章{% endblock %}
 
 {# Check if read_chapter already defined in child template as macros can't be overridden #}
 {% if not read_chapter %}
 {% macro read_chapter(chapter) %}<span class="featured-chapter-name">{{ chapter }}</span>の章を読む{% endmacro %}
 {% endif %}
 {% if not read_last_years_chapter %}
-{% macro read_last_years_chapter(chapter) %}<span class="featured-chapter-name">{{ chapter }}</span>の章を読む{{ self.previous_year() }}{% endmacro %}
+{% macro read_last_years_chapter(chapter) %}<span class="featured-chapter-name">{{ chapter }}</span>の章を読む{{ previous_year }}{% endmacro %}
 {% endif %}
 
 {% block contributors_description %}
