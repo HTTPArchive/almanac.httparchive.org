@@ -15,10 +15,24 @@ import datetime
 import logging
 
 
+# This gets the previous year as can no longer assume it's this year -1 as
+# skip some years (e.g. 2024)
+def get_previous_year(year):
+    if year in SUPPORTED_YEARS:
+        year_index = SUPPORTED_YEARS.index(year)
+        if year_index > 0:
+            return SUPPORTED_YEARS[year_index - 1]
+        else:
+            return None  # No previous year if it's the first one
+    else:
+        return None  # Return None if the year is not in the list
+
+
 def render_template(template, *args, **kwargs):
     # If the year has already been set (e.g. for error pages) then use that
     # Otherwise the requested year, otherwise the default year
     year = kwargs.get("year", request.view_args.get("year", DEFAULT_YEAR))
+    previous_year = get_previous_year(year)
     config = kwargs.get("config", get_config(year))
 
     # If the lang has already been set (e.g. for error pages) then use that
@@ -79,6 +93,7 @@ def render_template(template, *args, **kwargs):
 
     kwargs.update(
         year=year,
+        previous_year=previous_year,
         lang=lang,
         language=language,
         supported_languages=template_supported_languages,

@@ -24,7 +24,7 @@ Nossa missão é combinar as estatísticas brutas e as tendências do HTTP Archi
 </p>
 {% endblock %}
 
-{% block read_last_years_almanac %}Leia o  {{ year | int - 1 }} Web Almanac{% endblock %}
+{% block read_last_years_almanac %}Leia o  {{ previous_year }} Web Almanac{% endblock %}
 
 {% block http_archive_link %}Página inicial HTTP Archive{% endblock %}
 
@@ -124,14 +124,14 @@ Nossa missão é combinar as estatísticas brutas e as tendências do HTTP Archi
 {% block rss_feed %}RSS Feed{% endblock %}
 
 {% block featured_chapter %}Capítulo em Destaque{% endblock %}
-{% block featured_chapter_last_year %}Capítulo em Destaque<br>do Web Almanac {{ year|int -1 }}{% endblock %}
+{% block featured_chapter_last_year %}Capítulo em Destaque<br>do Web Almanac {{ previous_year }}{% endblock %}
 
 {# Check if read_chapter already defined in child template as macros can't be overridden #}
 {% if not read_chapter %}
 {% macro read_chapter(chapter) %}Leia o capítulo: <span class="featured-chapter-name">{{ chapter }}</span>{% endmacro %}
 {% endif %}
 {% if not read_last_years_chapter %}
-{% macro read_last_years_chapter(chapter) %}Leia o {{ year|int -1 }} capítulo: <span class="featured-chapter-name">{{ chapter }}</span>{% endmacro %}
+{% macro read_last_years_chapter(chapter) %}Leia o {{ previous_year }} capítulo: <span class="featured-chapter-name">{{ chapter }}</span>{% endmacro %}
 {% endif %}
 
 {% block contributors_description %}

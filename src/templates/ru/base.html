@@ -24,7 +24,7 @@
 </p>
 {% endblock %}
 
-{% block read_last_years_almanac %}Прочитать отчёт Web Almanac за {{ year | int - 1 }} год{% endblock %}
+{% block read_last_years_almanac %}Прочитать отчёт Web Almanac за {{ previous_year }} год{% endblock %}
 
 {% block http_archive_link %}Главная страница HTTP Archive{% endblock %}
 
@@ -124,14 +124,14 @@
 {% block rss_feed %}RSS Feed{% endblock %}
 
 {% block featured_chapter %}Лучшая глава{% endblock %}
-{% block featured_chapter_last_year %}Лучшая глава<br>в Web Almanac из {{ year|int -1 }} года{% endblock %}
+{% block featured_chapter_last_year %}Лучшая глава<br>в Web Almanac из {{ previous_year }} года{% endblock %}
 
 {# Check if read_chapter already defined in child template as macros can't be overridden #}
 {% if not read_chapter %}
 {% macro read_chapter(chapter) %}Перейти к главе <span class="featured-chapter-name">{{ chapter }}</span>{% endmacro %}
 {% endif %}
 {% if not read_last_years_chapter %}
-{% macro read_last_years_chapter(chapter) %}Перейти к главе <span class="featured-chapter-name">{{ chapter }}</span> от {{ year|int-1 }} года{% endmacro %}
+{% macro read_last_years_chapter(chapter) %}Перейти к главе <span class="featured-chapter-name">{{ chapter }}</span> от {{ previous_year }} года{% endmacro %}
 {% endif %}
 
 {% block contributors_description %}

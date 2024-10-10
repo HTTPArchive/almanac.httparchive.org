@@ -1,0 +1,11 @@
+{% extends "base/contributors.html" %}
+
+{% block title %}Контриб'ютори {{ year }} року | Web Almanac від HTTP Archive{% endblock %}
+
+{% block description %}{{ config.contributors.items() | length }} {{ plural_ru(config.contributors.items() | length | int, ["неймовірна людина", "неймовірні людини", "неймовірних людей"]) }}, які долучилися до створення Web Almanac {{ year }} як аналітики, автори, дизайнери, розробники, рецензенти, керівники, редактори та перекладачі.{% endblock %}
+
+{% block filter_by_team %}Фільтрувати за роллю в команді: <span id="filtered-contributors">{{ self.contributors() }}</span><span id="contributors-total-text" class="hidden"> з <span id="contributors-total">{{ config.contributors.items() | length }}</span> {{ plural_ru(config.contributors.items() | length | int, ["контриб'ютора", "контриб'юторів", "контриб'юторів"]) }}</span><span id="contributors-total-text-non-filtered"> {{ plural_ru(config.contributors.items() | length | int, ["контриб'ютор", "контриб'ютори", "контриб'юторів"]) }}</span>.{% endblock %}
+{% block filter_by %}Фільтрувати за{% endblock %}
+
+{% block join_the_team_title%}Приєднуйся до команди Web Almanac{% endblock %}
+{% block join_the_team_text%}Приєднуйся до нас!{% endblock %}

@@ -90,6 +90,9 @@ def update_config():
             elif ".json" in file:
                 config_files.append(file[0:4])
 
+    # Sort the config files so read in year order
+    config_files.sort()
+
     for year in config_files:
         config_filename = "config/%s.json" % year
         with open(config_filename, "r") as config_file:
