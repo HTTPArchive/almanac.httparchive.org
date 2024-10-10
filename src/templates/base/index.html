@@ -60,12 +60,8 @@
       <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}" class="btn">
         {{ self.start_exploring() }}
       </a>
-      {% elif year == "2024" %}
-      <a href="{{ url_for('table_of_contents', year=year|int -2, lang=lang) }}" class="btn">
-        {{ self.read_last_years_almanac() }}
-      </a>
       {% else %}
-      <a href="{{ url_for('table_of_contents', year=year|int -1, lang=lang) }}" class="btn">
+      <a href="{{ url_for('table_of_contents', year=previous_year, lang=lang) }}" class="btn">
         {{ self.read_last_years_almanac() }}
       </a>
       {% endif %}
@@ -169,6 +165,10 @@
     {% include "%s/%s/featured_chapters.html" % (lang, year|int -1) %}
     {% elif featured_chapters_exists('en', year|int -1) %}
     {% include "en/%s/featured_chapters.html" % (year|int -1) %}
+    {% elif featured_chapters_exists(lang, year|int -2) %}
+    {% include "%s/%s/featured_chapters.html" % (lang, year|int -2) %}
+    {% elif featured_chapters_exists('en', year|int -2) %}
+    {% include "en/%s/featured_chapters.html" % (year|int -2) %}
     {% endif %}
   {% endif %}
   {% endblock %}

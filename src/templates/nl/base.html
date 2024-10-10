@@ -24,7 +24,7 @@
 </p>
 {% endblock %}
 
-{% block read_last_years_almanac %}Lees de {{ year | int - 1 }} Web Almanac{% endblock %}
+{% block read_last_years_almanac %}Lees de {{ self.previous_year() }} Web Almanac{% endblock %}
 
 {% block http_archive_link %}HTTP Archive home{% endblock %}
 
@@ -123,15 +123,17 @@
 {% block accessibility_statement %}Toegankelijkheidsverklaring{% endblock %}
 {% block rss_feed %}RSS Feed{% endblock %}
 
+{% block previous_year %}{{ year|int - 1 }}{% endblock %}
+
 {% block featured_chapter %}Uitgelicht Hoofdstuk{% endblock %}
-{% block featured_chapter_last_year %}Uitgelicht Hoofdstuk<br>van de {{ year|int -1 }} Web Almanac{% endblock %}
+{% block featured_chapter_last_year %}Uitgelicht Hoofdstuk<br>van de {{ self.previous_year() }} Web Almanac{% endblock %}
 
 {# Check if read_chapter already defined in child template as macros can't be overridden #}
 {% if not read_chapter %}
 {% macro read_chapter(chapter) %}Lees het <span class="featured-chapter-name">{{ chapter }}</span> hoofdstuk{% endmacro %}
 {% endif %}
 {% if not read_last_years_chapter %}
-{% macro read_last_years_chapter(chapter) %}Lees het {{ year|int-1 }} <span class="featured-chapter-name">{{ chapter }}</span> hoofdstuk{% endmacro %}
+{% macro read_last_years_chapter(chapter) %}Lees het {{ self.previous_year() }} <span class="featured-chapter-name">{{ chapter }}</span> hoofdstuk{% endmacro %}
 {% endif %}
 
 {% block contributors_description %}
