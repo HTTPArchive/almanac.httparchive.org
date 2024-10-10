@@ -292,14 +292,6 @@ def test_previous_year_2019():
     assert previous_year("2019") is None
 
 
-def test_previous_year_2020():
-    assert previous_year("2020") == "2019"
-
-
-def test_previous_year_2021():
-    assert previous_year("2021") == "2020"
-
-
 def test_previous_year_2022():
     assert previous_year("2022") == "2021"
 

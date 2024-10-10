@@ -15,7 +15,8 @@ import datetime
 import logging
 
 
-# This checks whether a requested year is live - used to control the year selector
+# This gets the previous year as can no longer assume it's this year -1 as
+# skip some years (e.g. 2024)
 def get_previous_year(year):
     if year in SUPPORTED_YEARS:
         year_index = SUPPORTED_YEARS.index(year)
