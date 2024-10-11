@@ -12,7 +12,9 @@ SELECT
   SUM(IF(sameSite = 'Strict', 1, 0)) / COUNT(0) AS sameSiteStrict,
   SUM(IF(sameSite IS NULL, 1, 0)) / COUNT(0) AS sameSiteNull,
   SUM(IF(partitionKey IS NOT NULL, 1, 0)) / COUNT(0) AS partitionKey,
-  SUM(IF(partitionKeyOpaque IS NOT NULL, 1, 0)) / COUNT(0) AS partitionKeyOpaque
+  SUM(IF(partitionKeyOpaque IS NOT NULL, 1, 0)) / COUNT(0) AS partitionKeyOpaque,
+  SUM(IF( STARTS_WITH(name, '__Host-'), 1, 0)) / COUNT(0) AS hostPrefix,
+  SUM(IF( STARTS_WITH(name, '__Secure-'), 1, 0)) / COUNT(0) AS securePrefix
 FROM `httparchive.almanac.DATE_CLIENT_RANK_cookies`
 WHERE
   firstPartyCookie IS NOT NULL -- just in case
