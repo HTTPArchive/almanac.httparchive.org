@@ -35,21 +35,21 @@ WITH
 rendered_data AS (
   SELECT
     client,
-    root_page as url,
+    root_page AS url,
     getJSONLDContexts(JSON_EXTRACT(JSON_VALUE(JSON_EXTRACT(payload, '$._structured-data')), '$.structured_data.rendered')) AS jsonld_context
   FROM
     `httparchive.all.pages`
-  WHERE 
+  WHERE
     date = '2024-06-01'
 ),
 
 page_totals AS (
   SELECT
     client,
-    COUNT(distinct root_page) AS total_pages
+    COUNT(DISTINCT root_page) AS total_pages
   FROM
     `httparchive.all.pages`
-  WHERE 
+  WHERE
     date = '2024-06-01'
   GROUP BY
     client

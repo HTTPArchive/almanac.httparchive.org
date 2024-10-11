@@ -14,7 +14,7 @@ SELECT
   COUNTIF(CAST(JSON_EXTRACT(structured_data, '$.structured_data.rendered.present.facebook') AS BOOL)) AS facebook,
   COUNTIF(CAST(JSON_EXTRACT(structured_data, '$.structured_data.rendered.present.opengraph') AS BOOL)) AS opengraph,
   COUNTIF(JSON_EXTRACT(structured_data, '$.structured_data') IS NOT NULL AND JSON_EXTRACT(structured_data, '$.log') IS NULL) AS total_structured_data_ran,
-  COUNT(distinct root_page) AS total_pages,
+  COUNT(DISTINCT root_page) AS total_pages,
   COUNTIF(CAST(JSON_EXTRACT(structured_data, '$.structured_data.rendered.present.rdfa') AS BOOL)) / COUNT(0) AS pct_rdfa,
   COUNTIF(CAST(JSON_EXTRACT(structured_data, '$.structured_data.rendered.present.json_ld') AS BOOL)) / COUNT(0) AS pct_json_ld,
   COUNTIF(CAST(JSON_EXTRACT(structured_data, '$.structured_data.rendered.present.microdata') AS BOOL)) / COUNT(0) AS pct_microdata,
@@ -32,7 +32,7 @@ FROM (
     root_page
   FROM
     `httparchive.all.pages`
-  WHERE 
+  WHERE
     date = '2024-06-01')
 GROUP BY
   client

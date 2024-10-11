@@ -45,11 +45,11 @@ LANGUAGE js AS """
 WITH rendered_data AS (
   SELECT
     client,
-    root_page as url,
+    root_page AS url,
     getJSONLDEntitiesRelationships(JSON_EXTRACT(JSON_VALUE(JSON_EXTRACT(payload, '$._structured-data')), '$.structured_data.rendered')) AS jsonld_entities_relationships
   FROM
     `httparchive.all.pages`
-  WHERE 
+  WHERE
     date = '2024-06-01'
 )
 

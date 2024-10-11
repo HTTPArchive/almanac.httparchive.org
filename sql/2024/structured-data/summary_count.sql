@@ -9,12 +9,12 @@ SELECT
   COUNTIF(errors IS NOT NULL AND success IS NULL) AS errors_no_success,
   COUNTIF(success IS NOT NULL AND errors IS NOT NULL) AS success_errors,
   COUNTIF(success IS NULL AND errors IS NULL) AS no_success_no_errors,
-  COUNTIF(success IS NOT NULL) / COUNT(distinct root_page) AS pct_success,
-  COUNTIF(errors IS NOT NULL) / COUNT(distinct root_page) AS pct_errors,
-  COUNTIF(success IS NOT NULL AND errors IS NULL) / COUNT(distinct root_page) AS pct_success_no_errors,
-  COUNTIF(errors IS NOT NULL AND success IS NULL) / COUNT(distinct root_page) AS pct_errors_no_success,
-  COUNTIF(success IS NOT NULL AND errors IS NOT NULL) / COUNT(distinct root_page) AS pct_success_errors,
-  COUNTIF(success IS NULL AND errors IS NULL) / COUNT(distinct root_page) AS pct_no_success_no_errors
+  COUNTIF(success IS NOT NULL) / COUNT(DISTINCT root_page) AS pct_success,
+  COUNTIF(errors IS NOT NULL) / COUNT(DISTINCT root_page) AS pct_errors,
+  COUNTIF(success IS NOT NULL AND errors IS NULL) / COUNT(DISTINCT root_page) AS pct_success_no_errors,
+  COUNTIF(errors IS NOT NULL AND success IS NULL) / COUNT(DISTINCT root_page) AS pct_errors_no_success,
+  COUNTIF(success IS NOT NULL AND errors IS NOT NULL) / COUNT(DISTINCT root_page) AS pct_success_errors,
+  COUNTIF(success IS NULL AND errors IS NULL) / COUNT(DISTINCT root_page) AS pct_no_success_no_errors
 FROM (
   SELECT
     client,
@@ -28,8 +28,8 @@ FROM (
       root_page
     FROM
       `httparchive.all.pages`
-  WHERE 
-    date = '2024-06-01'
+    WHERE
+      date = '2024-06-01'
   )
 )
 GROUP BY
