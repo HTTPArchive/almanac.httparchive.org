@@ -191,7 +191,7 @@ GROUP BY
   client,
   app
 HAVING
-  COUNT(DISTINCT origin) > 100000
+  COUNT(DISTINCT origin) > 5000
 
 ORDER BY
   origins DESC
