@@ -1,5 +1,5 @@
 -- Section: Development
--- Question: Which color formats are used?
+-- Question: Which color families are used broken down by format?
 -- Normalization: Fonts (color only)
 
 -- INCLUDE https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/2024/fonts/common.sql
@@ -7,40 +7,42 @@
 WITH
 fonts AS (
   SELECT
-    date,
     client,
     url,
     COLOR_FORMATS(ANY_VALUE(payload)) AS formats,
-    COUNT(0) OVER (PARTITION BY date, client) AS total
+    FAMILY(ANY_VALUE(payload)) AS family,
+    COUNT(DISTINCT url) OVER (PARTITION BY client) AS total
   FROM
     `httparchive.all.requests`
   WHERE
-    date IN ('2022-07-01', '2023-07-01', '2024-07-01') AND
+    date = '2024-07-01' AND
     type = 'font' AND
     is_root_page AND
     IS_COLOR(payload)
   GROUP BY
-    date,
     client,
     url
 )
 
 SELECT
-  date,
   client,
   format,
+  family,
   COUNT(0) AS count,
   total,
-  COUNT(0) / total AS proportion
+  COUNT(0) / total AS proportion,
+  ROW_NUMBER() OVER (PARTITION BY client, format ORDER BY COUNT(0) DESC) AS rank
 FROM
   fonts,
   UNNEST(formats) AS format
 GROUP BY
-  date,
   client,
   format,
+  family,
   total
+QUALIFY
+  rank <= 10
 ORDER BY
-  date,
   client,
+  format,
   proportion DESC
