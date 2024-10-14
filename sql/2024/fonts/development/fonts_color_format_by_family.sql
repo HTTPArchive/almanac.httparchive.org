@@ -1,5 +1,5 @@
 -- Section: Development
--- Question: Which color families are used broken down by format?
+-- Question: Which color formats are used broken down by family?
 -- Normalization: Fonts (color only)
 
 -- INCLUDE https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/2024/fonts/common.sql
