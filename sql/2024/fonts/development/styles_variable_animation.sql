@@ -10,7 +10,7 @@ AS '''
 try {
   const $ = JSON.parse(json);
   let count = 0;
-  walkRules($, rule => {
+  walkRules($, (rule) => {
     rule.keyframes.forEach((frame) => {
       count += countDeclarations(
         frame,

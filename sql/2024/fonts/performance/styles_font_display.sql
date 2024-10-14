@@ -8,10 +8,12 @@ LANGUAGE js
 OPTIONS(library = "gs://httparchive/lib/css-utils.js")
 AS '''
 try {
+  const values = ['auto', 'block', 'fallback', 'optional', 'swap'];
   const $ = JSON.parse(json);
   const result = [];
   walkDeclarations($, (declaration) => {
-    result.push(declaration.value.replaceAll(/['"]/g, ''));
+    const value = declaration.value.toLowerCase();
+    result.push(values.find((other) => value.includes(other)) || 'other');
   }, {
     properties: 'font-display',
     rules: (rule) => rule.type.toLowerCase() === 'font-face'
@@ -26,7 +28,7 @@ WITH
 properties AS (
   SELECT
     client,
-    property,
+    NULLIF(property, 'other') AS property,
     COUNT(DISTINCT page) AS count,
     ROW_NUMBER() OVER (PARTITION BY client ORDER BY COUNT(DISTINCT page) DESC) AS rank
   FROM
