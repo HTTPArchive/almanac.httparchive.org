@@ -29,8 +29,7 @@ properties AS (
   SELECT
     client,
     NULLIF(property, 'other') AS property,
-    COUNT(DISTINCT page) AS count,
-    ROW_NUMBER() OVER (PARTITION BY client ORDER BY COUNT(DISTINCT page) DESC) AS rank
+    COUNT(DISTINCT page) AS count
   FROM
     `httparchive.all.parsed_css`,
     UNNEST(PROPERTIES(css)) AS property
@@ -40,8 +39,6 @@ properties AS (
   GROUP BY
     client,
     property
-  QUALIFY
-    rank <= 10
 ),
 sites AS (
   SELECT
