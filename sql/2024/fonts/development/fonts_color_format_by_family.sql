@@ -30,8 +30,7 @@ SELECT
   family,
   COUNT(0) AS count,
   total,
-  COUNT(0) / total AS proportion,
-  ROW_NUMBER() OVER (PARTITION BY client, format ORDER BY COUNT(0) DESC) AS rank
+  COUNT(0) / total AS proportion
 FROM
   fonts,
   UNNEST(formats) AS format
@@ -40,8 +39,6 @@ GROUP BY
   format,
   family,
   total
-QUALIFY
-  rank <= 10
 ORDER BY
   client,
   format,
