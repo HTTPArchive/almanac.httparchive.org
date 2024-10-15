@@ -1,5 +1,5 @@
-#standardSQL 
-# Distribution OF WordPress resource types BY path 
+#standardSQL
+# Distribution OF WordPress resource types BY path
 # wordpress_resources.sql
 
 SELECT

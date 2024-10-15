@@ -1,4 +1,4 @@
-#standardSQL 
+#standardSQL
 # CMS adoption per rank
 # cms_adoption_by_rank.sql
 
