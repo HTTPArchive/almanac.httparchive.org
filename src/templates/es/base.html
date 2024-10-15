@@ -24,7 +24,7 @@
 </p>
 {% endblock %}
 
-{% block read_last_years_almanac %}Lea el Web Almanac {{ year | int - 1 }}{% endblock %}
+{% block read_last_years_almanac %}Lea el Web Almanac {{ previous_year }}{% endblock %}
 
 {% block http_archive_link %}Página de inicio HTTP Archive{% endblock %}
 
@@ -124,14 +124,14 @@
 {% block rss_feed %}RSS Feed{% endblock %}
 
 {% block featured_chapter %}Capítulo destacado{% endblock %}
-{% block featured_chapter_last_year %}Capítulo destacado<br>del Web Almanac {{ year|int -1 }}{% endblock %}
+{% block featured_chapter_last_year %}Capítulo destacado<br>del Web Almanac {{ previous_year }}{% endblock %}
 
 {# Check if read_chapter already defined in child template as macros can't be overridden #}
 {% if not read_chapter %}
 {% macro read_chapter(chapter) %}Lea el capítulo: <span class="featured-chapter-name">{{ chapter }}</span>{% endmacro %}
 {% endif %}
 {% if not read_last_years_chapter %}
-{% macro read_last_years_chapter(chapter) %}Lea el {{ year|int -1 }} capítulo: <span class="featured-chapter-name">{{ chapter }}</span>{% endmacro %}
+{% macro read_last_years_chapter(chapter) %}Lea el {{ previous_year }} capítulo: <span class="featured-chapter-name">{{ chapter }}</span>{% endmacro %}
 {% endif %}
 
 {% block contributors_description %}

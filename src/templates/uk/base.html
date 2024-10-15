@@ -24,7 +24,7 @@
 </p>
 {% endblock %}
 
-{% block read_last_years_almanac %}Читати Web Almanac за {{ year | int - 1 }} рік{% endblock %}
+{% block read_last_years_almanac %}Читати Web Almanac за {{ previous_year }} рік{% endblock %}
 
 {% block http_archive_link %}HTTP Archive home{% endblock %}
 
@@ -124,14 +124,14 @@
 {% block rss_feed %}RSS Feed{% endblock %}
 
 {% block featured_chapter %}Рекомендований розділ{% endblock %}
-{% block featured_chapter_last_year %}Рекомендований розділ<br>з Web Almanac {{ year|int -1 }}{% endblock %}
+{% block featured_chapter_last_year %}Рекомендований розділ<br>з Web Almanac {{ previous_year }}{% endblock %}
 
 {# Check if read_chapter already defined in child template as macros can't be overridden #}
 {% if not read_chapter %}
 {% macro read_chapter(chapter) %}Читати розділ <span class="featured-chapter-name">{{ chapter }}</span>{% endmacro %}
 {% endif %}
 {% if not read_last_years_chapter %}
-{% macro read_last_years_chapter(chapter) %}Читати розділ <span class="featured-chapter-name">{{ chapter }}</span> {{ year|int-1 }} року{% endmacro %}
+{% macro read_last_years_chapter(chapter) %}Читати розділ <span class="featured-chapter-name">{{ chapter }}</span> {{ previous_year }} року{% endmacro %}
 {% endif %}
 
 {% block contributors_description %}

@@ -1,8 +1,8 @@
 {
   "settings": [
     {
-      "is_live": false,
-      "supported_languages": ["en"],
+      "is_live": true,
+      "supported_languages": ["en","es","fr","hi","it","ja","nl","pt","ru","tr","uk","zh-CN","zh-TW"],
       "ebook_languages": []
     }
   ],
