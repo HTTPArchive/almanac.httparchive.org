@@ -27,7 +27,9 @@ FROM (
     IF(
       REGEXP_CONTAINS(content, r'[\'"]\\[ef][0-9a-f]{3}[\'"]'), '"\\f000"-like',
       IF(
-        REGEXP_CONTAINS(content, r'[\'"]\\[a-f0-9]{4}[\'"]'), '"\\hex{4}"-like', content)) AS content,
+        REGEXP_CONTAINS(content, r'[\'"]\\[a-f0-9]{4}[\'"]'), '"\\hex{4}"-like', content
+      )
+    ) AS content,
     COUNT(DISTINCT page) AS pages,
     total_pages,
     COUNT(DISTINCT page) / total_pages AS pct_pages,
@@ -43,18 +45,19 @@ FROM (
     WHERE
       date = '2021-07-01'
     GROUP BY
-      client)
+      client
+  )
   JOIN
     `httparchive.almanac.parsed_css`
-  USING
-    (client),
+  USING (client),
     UNNEST(getContentStrings(css)) AS content
   WHERE
     date = '2021-07-01'
   GROUP BY
     client,
     content,
-    total_pages)
+    total_pages
+)
 WHERE
   pages >= 1000
 ORDER BY

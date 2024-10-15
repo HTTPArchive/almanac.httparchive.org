@@ -14,7 +14,8 @@ try {
 ''';
 
 SELECT
-  IFNULL(ThirdPartyTable.category,
+  IFNULL(
+    ThirdPartyTable.category,
     IF(DomainsOver50Table.requestDomain IS NULL, 'first-party', 'other')
   ) AS third_party_category,
   SUM(item.execution_time) AS total_execution_time,

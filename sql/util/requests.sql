@@ -1,10 +1,12 @@
 CREATE TEMPORARY FUNCTION getSummary(payload STRING)
-RETURNS STRUCT<requestId STRING, startedDateTime INT64, time INT64, method STRING, urlShort STRING, redirectUrl STRING, firstReq BOOLEAN, firstHtml BOOLEAN, reqHttpVersion STRING, reqHeadersSize INT64,
+RETURNS STRUCT<
+  requestId STRING, startedDateTime INT64, time INT64, method STRING, urlShort STRING, redirectUrl STRING, firstReq BOOLEAN, firstHtml BOOLEAN, reqHttpVersion STRING, reqHeadersSize INT64,
   reqBodySize INT64, reqCookieLen INT64, reqOtherHeaders STRING, status INT64, respHttpVersion STRING, respHeadersSize INT64, respBodySize INT64, respSize INT64, respCookieLen INT64, expAge NUMERIC, mimeType STRING, respOtherHeaders STRING,
   req_accept STRING, req_accept_charset STRING, req_accept_encoding STRING, req_accept_language STRING, req_connection STRING, req_host STRING, req_if_modified_since STRING, req_if_none_match STRING, req_referer STRING, req_user_agent STRING,
   resp_accept_ranges STRING, resp_age STRING, resp_cache_control STRING, resp_connection STRING, resp_content_encoding STRING, resp_content_language STRING, resp_content_length STRING, resp_content_location STRING, resp_content_type STRING,
   resp_date STRING, resp_etag STRING, resp_expires STRING, resp_keep_alive STRING, resp_last_modified STRING, resp_location STRING, resp_pragma STRING, resp_server STRING, resp_transfer_encoding STRING, resp_vary STRING, resp_via STRING, resp_x_powered_by STRING,
-  _cdn_provider STRING, _gzip_save INT64, type STRING, ext STRING, format STRING, protocol STRING, pushed STRING, tls_version STRING, tls_cipher_suite STRING, cert_issuer STRING, cert_keyexchange STRING, cert_cipher STRING, cert_protocol STRING>
+  _cdn_provider STRING, _gzip_save INT64, type STRING, ext STRING, format STRING, protocol STRING, pushed STRING, tls_version STRING, tls_cipher_suite STRING, cert_issuer STRING, cert_keyexchange STRING, cert_cipher STRING, cert_protocol STRING
+>
 LANGUAGE js AS """
   function getHeader(headers, name) {
     try {
@@ -197,7 +199,7 @@ SELECT
   page,
   rank,
   url,
-  getSummary(payload).*, -- noqa: L013
+  getSummary(payload).*, -- noqa: AL03
   JSON_EXTRACT(payload, '$.request.headers') AS request_headers,
   JSON_EXTRACT(payload, '$.response.headers') AS response_headers,
   payload

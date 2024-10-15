@@ -77,7 +77,8 @@ FROM (
     `httparchive.almanac.parsed_css`,
     UNNEST(getAnimatedCustomProperties(css)) AS prop
   WHERE
-    date = '2020-08-01')
+    date = '2020-08-01'
+)
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -85,8 +86,8 @@ JOIN (
     prop
   FROM
     `httparchive.pages.2020_08_01_*`,
-    UNNEST(getCustomPropertiesWithComputedStyle(payload)) AS prop)
-USING
-  (client, page, prop)
+    UNNEST(getCustomPropertiesWithComputedStyle(payload)) AS prop
+)
+USING (client, page, prop)
 GROUP BY
   client

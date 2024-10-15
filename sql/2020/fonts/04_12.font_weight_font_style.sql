@@ -53,7 +53,8 @@ FROM (
     `httparchive.almanac.parsed_css`
   LEFT JOIN UNNEST(getFonts(css)) AS font
   WHERE
-    date = '2020-08-01')
+    date = '2020-08-01'
+)
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -61,9 +62,9 @@ JOIN (
   FROM
     `httparchive.summary_pages.2020_08_01_*`
   GROUP BY
-    client)
-USING
-  (client)
+    client
+)
+USING (client)
 GROUP BY
   client,
   style,

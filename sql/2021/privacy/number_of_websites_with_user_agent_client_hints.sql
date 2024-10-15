@@ -29,7 +29,7 @@ meta_tags AS (
       JSON_VALUE(payload, '$._almanac') AS metrics
     FROM
       `httparchive.pages.2021_07_01_*`
-    ),
+  ),
     UNNEST(JSON_QUERY_ARRAY(metrics, '$.meta-nodes.nodes')) meta_node
   WHERE
     JSON_VALUE(meta_node, '$.http-equiv') IS NOT NULL
@@ -67,12 +67,11 @@ USING (client, page),
 JOIN
   totals
 USING (client, rank_grouping)
-WHERE
-  (
-    header_name = 'accept-ch' OR
-    tag_name = 'accept-ch'
-  ) AND
-  rank <= rank_grouping
+WHERE (
+  header_name = 'accept-ch' OR
+  tag_name = 'accept-ch'
+) AND
+rank <= rank_grouping
 GROUP BY
   client,
   rank_grouping,

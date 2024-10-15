@@ -17,9 +17,9 @@ JOIN (
   FROM
     `httparchive.summary_pages.2020_08_01_*`
   GROUP BY
-    _TABLE_SUFFIX)
-USING
-  (_TABLE_SUFFIX)
+    _TABLE_SUFFIX
+)
+USING (_TABLE_SUFFIX)
 WHERE
   category = 'Ecommerce'
 GROUP BY
@@ -41,9 +41,9 @@ JOIN (
   FROM
     `httparchive.summary_pages.2019_07_01_*`
   GROUP BY
-    _TABLE_SUFFIX)
-USING
-  (_TABLE_SUFFIX)
+    _TABLE_SUFFIX
+)
+USING (_TABLE_SUFFIX)
 WHERE
   category = 'Ecommerce'
 GROUP BY

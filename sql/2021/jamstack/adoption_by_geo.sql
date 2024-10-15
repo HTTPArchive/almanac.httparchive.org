@@ -53,4 +53,5 @@ FROM (
     client,
     geo
   ORDER BY
-    origins DESC)
+    origins DESC
+)

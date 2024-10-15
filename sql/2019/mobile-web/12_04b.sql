@@ -42,8 +42,7 @@ SELECT
   ROUND(COUNT(0) * 100 / SUM(COUNT(DISTINCT url)) OVER (PARTITION BY viewport_info.directive), 2) AS perc_value_in_directive,
   ROUND(COUNT(0) * 100 / total_pages, 2) AS perc_in_all_pages
 FROM
-  `httparchive.pages.2019_07_01_mobile`,
-  (SELECT COUNT(0) AS total_pages FROM `httparchive.pages.2019_07_01_mobile`),
+  `httparchive.pages.2019_07_01_mobile`, (SELECT COUNT(0) AS total_pages FROM `httparchive.pages.2019_07_01_mobile`),
   UNNEST(getViewportDirectiveData(payload)) AS viewport_info
 GROUP BY
   total_pages,

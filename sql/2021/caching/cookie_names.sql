@@ -31,7 +31,8 @@ FROM (
   WHERE
     date = '2021-07-01'
   GROUP BY
-    client),
+    client
+),
   UNNEST(cookies) AS cookie
 ORDER BY
   pct DESC

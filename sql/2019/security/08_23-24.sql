@@ -9,8 +9,7 @@ SELECT
 FROM
   `httparchive.summary_requests.2019_07_01_*`,
   UNNEST(REGEXP_EXTRACT_ALL(REGEXP_EXTRACT(respOtherHeaders, r'(?i)\W?strict-transport-security =([^,]+)'), '(max-age|includeSubDomains|preload)')) AS directive
-JOIN
-  (SELECT _TABLE_SUFFIX, COUNT(0) AS total FROM `httparchive.summary_pages.2019_07_01_*` GROUP BY _TABLE_SUFFIX)
+JOIN (SELECT _TABLE_SUFFIX, COUNT(0) AS total FROM `httparchive.summary_pages.2019_07_01_*` GROUP BY _TABLE_SUFFIX)
 USING (_TABLE_SUFFIX)
 WHERE
   firstHtml

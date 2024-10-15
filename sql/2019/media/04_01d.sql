@@ -18,15 +18,16 @@ SELECT
   APPROX_QUANTILES(ROUND(100 * respImagesBytes / (totalImageBytes + 0.1), 2), 1000)[OFFSET(500)] AS pctImageBytes_p50,
   APPROX_QUANTILES(ROUND(100 * respImagesBytes / (totalImageBytes + 0.1), 2), 1000)[OFFSET(750)] AS pctImageBytes_p75,
   APPROX_QUANTILES(ROUND(100 * respImagesBytes / (totalImageBytes + 0.1), 2), 1000)[OFFSET(900)] AS pctImageBytes_p90
-FROM
-  (
-    SELECT
-      url,
-      CAST(JSON_EXTRACT_SCALAR(report, '$.audits.resource-summary.details.items[0].size') AS INT64) AS totalBytes,
-      CAST(JSON_EXTRACT_SCALAR(report, '$.audits.resource-summary.details.items[1].size') AS INT64) AS totalImageBytes,
-      CAST(JSON_EXTRACT_SCALAR(report, '$.audits.uses-responsive-images.details.overallSavingsBytes') AS INT64) AS respImagesBytes,
-      IF(REGEX_CONTAINS(JSON_EXTRACT(report, '$.audits.uses-responsive-images.details.items'), ','),
-        ARRAY_LENGTH(split(JSON_EXTRACT(report, '$.audits.uses-responsive-images.details.items'), ',')), 0) AS respImagesCount
-    FROM
-      `httparchive.lighthouse.2019_07_01_mobile`
-  )
+FROM (
+  SELECT
+    url,
+    CAST(JSON_EXTRACT_SCALAR(report, '$.audits.resource-summary.details.items[0].size') AS INT64) AS totalBytes,
+    CAST(JSON_EXTRACT_SCALAR(report, '$.audits.resource-summary.details.items[1].size') AS INT64) AS totalImageBytes,
+    CAST(JSON_EXTRACT_SCALAR(report, '$.audits.uses-responsive-images.details.overallSavingsBytes') AS INT64) AS respImagesBytes,
+    IF(
+      REGEX_CONTAINS(JSON_EXTRACT(report, '$.audits.uses-responsive-images.details.items'), ','),
+      ARRAY_LENGTH(split(JSON_EXTRACT(report, '$.audits.uses-responsive-images.details.items'), ',')), 0
+    ) AS respImagesCount
+  FROM
+    `httparchive.lighthouse.2019_07_01_mobile`
+)
