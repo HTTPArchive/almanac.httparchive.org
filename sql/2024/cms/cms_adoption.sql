@@ -19,7 +19,7 @@ JOIN (
   FROM
     `httparchive.all.pages`
   WHERE
-    date = '2024-06-01' AND 
+    date = '2024-06-01' AND
     is_root_page
   GROUP BY
     client)
@@ -58,7 +58,7 @@ USING
   (client)
 WHERE
   cats = 'CMS' AND
-  date = '2023-06-01'  AND
+  date = '2023-06-01' AND
   is_root_page
 GROUP BY
   client,
@@ -82,7 +82,7 @@ JOIN (
     `httparchive.all.pages`
   WHERE
     date = '2022-06-01' AND
-    is_root_page 
+    is_root_page
   GROUP BY
     client)
 USING

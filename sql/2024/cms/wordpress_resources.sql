@@ -6,7 +6,7 @@ SELECT
   percentile,
   client,
   path,
-  APPROX_QUANTILES(freq, 1000)[OFFSET (percentile * 10)] AS freq
+  APPROX_QUANTILES(freq, 1000)[OFFSET(percentile * 10)] AS freq
 FROM (
   SELECT
     client,
@@ -18,22 +18,22 @@ FROM (
       client,
       page
     FROM
-    `httparchive.all.pages`,
-    UNNEST(technologies) AS technologies,
-    UNNEST(technologies.categories) AS cats 
-  WHERE
-    technologies.technology = 'WordPress' AND
-    date = '2024-06-01')
+      `httparchive.all.pages`,
+      UNNEST(technologies) AS technologies,
+      UNNEST(technologies.categories) AS cats
+    WHERE
+      technologies.technology = 'WordPress' AND
+      date = '2024-06-01')
   JOIN (
     SELECT
       client,
-      cast(json_value(summary, "$.pageid") as int64) as pageid,
+      cast(json_value(summary, '$.pageid') AS INT64) AS pageid,
       page
     FROM
       `httparchive.all.pages`,
       UNNEST(technologies) AS technologies,
-      UNNEST(technologies.categories) AS cats 
-    WHERE 
+      UNNEST(technologies.categories) AS cats
+    WHERE
       date = '2024-06-01')
   USING
     (client,
@@ -41,11 +41,11 @@ FROM (
   JOIN (
     SELECT
       client,
-      cast(json_value(summary, "$.pageid") as int64) as pageid,
-      page as url
+      cast(json_value(summary, '$.pageid') AS INT64) AS pageid,
+      page AS url
     FROM
       `httparchive.all.pages`
-    WHERE 
+    WHERE
       date = '2024-06-01')
   USING
     (client,

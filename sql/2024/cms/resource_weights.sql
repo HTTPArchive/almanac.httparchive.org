@@ -15,28 +15,28 @@ SELECT
 FROM (
   SELECT DISTINCT
     client,
-    page as url,
+    page AS url,
     technologies.technology AS cms
   FROM
     `httparchive.all.pages`,
-    UNNEST (technologies) AS technologies,
+    UNNEST(technologies) AS technologies,
     UNNEST(technologies.categories) AS cats
   WHERE
-    cats = 'CMS'
-    AND date ='2024-06-01')
+    cats = 'CMS' AND
+    date = '2024-06-01')
 JOIN (
   SELECT
     client,
-    page as url,
-    cast(json_value(summary, "$.bytesTotal") as int64) / 1024 AS total_kb,
-    cast(json_value(summary, "$.bytesHtml") as int64)  / 1024 AS html_kb,
-    cast(json_value(summary, "$.bytesJS") as int64) / 1024 AS js_kb,
-    cast(json_value(summary, "$.bytesCss") as int64) / 1024 AS css_kb,
-    cast(json_value(summary, "$.bytesImg") as int64) / 1024 AS img_kb,
-    cast(json_value(summary, "$.bytesFont") as int64) / 1024 AS font_kb
+    page AS url,
+    cast(json_value(summary, '$.bytesTotal') AS INT64) / 1024 AS total_kb,
+    cast(json_value(summary, '$.bytesHtml') AS INT64) / 1024 AS html_kb,
+    cast(json_value(summary, '$.bytesJS') AS INT64) / 1024 AS js_kb,
+    cast(json_value(summary, '$.bytesCss') AS INT64) / 1024 AS css_kb,
+    cast(json_value(summary, '$.bytesImg') AS INT64) / 1024 AS img_kb,
+    cast(json_value(summary, '$.bytesFont') AS INT64) / 1024 AS font_kb
   FROM
     `httparchive.all.pages`
-  WHERE 
+  WHERE
     date = '2024-06-01')
 USING
   (client, url)

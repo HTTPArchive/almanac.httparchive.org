@@ -11,23 +11,23 @@ SELECT
 FROM (
   SELECT DISTINCT
     client,
-    page as url
+    page AS url
   FROM
     `httparchive.all.pages`,
     UNNEST(technologies) AS technologies,
-    UNNEST(technologies.categories) AS cats 
+    UNNEST(technologies.categories) AS cats
   WHERE
     technologies.technology = 'WordPress' AND
     date = '2024-06-01')
 JOIN (
   SELECT
     client,
-    page as url,
+    page AS url,
     ARRAY_TO_STRING(ARRAY_AGG(technologies.technology ORDER BY technologies.technology), ', ') AS page_builders
   FROM
     `httparchive.all.pages`,
     UNNEST(technologies) AS technologies,
-    UNNEST(technologies.categories) AS cats 
+    UNNEST(technologies.categories) AS cats
   WHERE
     cats = 'Page builders' AND
     date = '2024-06-01'

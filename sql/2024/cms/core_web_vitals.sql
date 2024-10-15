@@ -51,7 +51,7 @@ ON
   CONCAT(origin, '/') = url AND
   IF(device = 'desktop', 'desktop', 'mobile') = client
 WHERE
-  date = '2024-06-01' 
+  date = '2024-06-01'
 GROUP BY
   client,
   cms

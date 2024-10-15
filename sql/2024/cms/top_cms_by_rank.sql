@@ -25,7 +25,7 @@ FROM (
 JOIN (
   SELECT
     client,
-    page as url,
+    page AS url,
     rank_magnitude AS rank
   FROM
     `httparchive.all.pages`,
