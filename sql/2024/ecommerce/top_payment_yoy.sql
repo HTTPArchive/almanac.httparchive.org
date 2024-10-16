@@ -1,5 +1,5 @@
 #standardSQL
-# Top Payment processors platforms, compared to 2020
+# Top Payment processors platforms, compared to 2021
 # top_payment_yoy.sql
 SELECT
   client,
