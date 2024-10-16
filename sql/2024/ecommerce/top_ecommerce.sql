@@ -1,5 +1,5 @@
 #standardSQL
-# Top Ecommerce platforms, compared to until 2020
+# Top Ecommerce platforms, compared to until 2021
 # top_ecommerce.sql
 SELECT
   client,
