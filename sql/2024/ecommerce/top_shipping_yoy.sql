@@ -1,5 +1,5 @@
 #standardSQL
-# Top Shipping carriers platforms, compared to 2020
+# Top Shipping carriers platforms, compared to 2021
 # top_shipping.sql
 SELECT
   client,
