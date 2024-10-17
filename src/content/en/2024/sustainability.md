@@ -9,7 +9,9 @@ analysts: [Falafelqueen, burakguneli, mgifford]
 translators: []
 results: https://docs.google.com/spreadsheets/d/1E6wPVck2-5NDUpFKWjbJXKJKNx0E9fWwIdeM9hUKl8c/edit#gid=806519964
 AlexDawsonUK_bio: Alexander Dawson is a Web Developer, Sustainability Researcher, and editor of the <a href="https://w3c.github.io/sustyweb/">Web Sustainability Guidelines</a>. You can find more details about him at <a href="https://alexanderdawson.com/">alexanderdawson.com</a>.
-lebreRafael_bio: Rafael Lebre is a Software Engineer who has been focused on Web Performance for the last 3 years and recently started to dig into the Web Sustainability work. He likes to contribute to open source projects and projects with social or environmental impact whenever he finds an opportunity. You can find him sharing some articles on twitter as <a href="https://twitter.com/lebreRafael">@lebreRafael</a> or contact him on <a href="https://www.linkedin.com/in/rafael-lebre-8a24b590/l">LinkedIn</a>
+lebreRafael_bio: Rafael Lebre is a Software Engineer who has been focused on Web Performance for the last 3 years and recently started to dig into the Web Sustainability work. He likes to contribute to open source projects and projects with social or environmental impact whenever he finds an opportunity. You can find him sharing some articles on twitter as <a href="https://twitter.com/lebreRafael">@lebreRafael</a> or contact him on <a href="https://www.linkedin.com/in/rafael-lebre-8a24b590/l">LinkedIn</a>  
+timfrick_bio: Tim Frick is President of <a href="https://mightybytes.com">Mightybytes</a>, a digital agency and Certified B Corp located in Chicago. A seasoned public speaker, he regularly presents on sustainable design, measuring impact, and problem solving in the digital economy. Tim is also the author of four books, including <a href="https://www.oreilly.com/library/view/designing-for-sustainability/9781491935767/">Designing for Sustainability, A Guide to Building Greener Digital Products and Services</a>, from O'Reilly Media. Connect with <a href="https://www.linkedin.com/in/timfrick/">Tim on LinkedIn</a>.
+
 featured_quote:
 featured_stat_1:
 featured_stat_label_1:
@@ -517,7 +519,7 @@ It's worth remembering that image quality doesn't always need to be at maximum.
 # TODO
 {{ figure_markup(
   image="image-format-adoption.png",
-  caption="Image format adoption",
+  caption="Responsive image types",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=1820261877&format=interactive",
   sheets_gid="1939630368",
@@ -543,14 +545,21 @@ While the trend is positive, there's still a long way to go before responsive im
 ##### Lazy-loading
 Lazy-loading remains a crucial technique for enhancing both performance and sustainability in web development. By loading images progressively we can significantly reduce initial page load times and unnecessary data transfer. This approach is particularly beneficial for sustainability, as it prevents the loading of images that users may never see, saving energy and resources.
 
-
+{{ figure_markup(
+  image="lazy-loading-adoption.png",
+  caption="Adoption of loading=lazy on <img>",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=1848380246&format=interactive",
+  sheets_gid="228292115",
+  sql_file=""
+) }}
 
 The past two year's data reflects a growing awareness of the importance of optimized image loading. However, there's still considerable room for improvement, as a significant portion of websites have yet to implement any form of lazy-loading. Regarding iframes, the advice remains largely unchanged:
-Native lazy-loading can be applied to iframes, offering similar benefits as with images.
-However, for optimal sustainability, consider avoiding iframes altogether when possible. Usage of iframes can lead to unnecessary resource consumption if overused or if embedded content isn't controlled or optimized (e.g., third-party trackers or ads).
-The facade pattern remains a preferred approach for integrating external content like embedded videos or interactive maps.
+1. Native lazy-loading can be applied to iframes, offering similar benefits as with images.
+2. However, for optimal sustainability, consider avoiding iframes altogether when possible. Usage of iframes can lead to unnecessary resource consumption if overused or if embedded content isn't controlled or optimized (e.g., third-party trackers or ads).
+3. The <a hreflang="en" href="https://developer.chrome.com/docs/lighthouse/performance/third-party-facades">facade pattern</a> remains a preferred approach for integrating external content like embedded videos or interactive maps.
 
-For deeper insights & analysis, refer to our Performance chapter and Media chapter.
+For deeper insights & analysis, refer to our <a hreflang="en" href="https://almanac.httparchive.org/en/2024/performance">Performance chapter</a> and <a hreflang="en" href="https://almanac.httparchive.org/en/2024/media">Media chapter</a>.
 
 ##### Efficiently encoding images
 Image encoding plays a crucial role in web sustainability, directly impacting the amount of data transferred across networks and the energy consumed in the process. Efficient encoding reduces the size of images, which often constitute a large portion of a web page's total size. This reduction in data transfer translates to lower energy consumption in data centers, network infrastructure, and user devices. Moreover, smaller, well-encoded images require less processing power to decode and render.
@@ -558,105 +567,145 @@ Image encoding plays a crucial role in web sustainability, directly impacting th
 The cumulative effect of efficient image encoding across billions of web pages can lead to substantial global energy savings.
 
 #### Video
-Videos remain among the most resource-intensive elements on websites, significantly impacting sustainability. For more detailed information, refer to our Media chapter. When incorporating third-party videos, utilizing facades is still the recommended approach.
+Videos remain among the most resource-intensive elements on websites, significantly impacting sustainability. For more detailed information, refer to our <a hreflang="en" href="https://almanac.httparchive.org/en/2024/media">Media chapter</a>. When incorporating third-party videos, utilizing facades is still the recommended approach.
 
 Additionally, configure your videos thoughtfully:
-Avoid preloading and autoplay to reduce unnecessary data transfer.
-Implement lazy loading for videos below the fold.
-Use appropriate compression techniques to reduce file sizes without compromising quality.
-Consider using adaptive bitrate streaming for varying network conditions.
+1. Avoid preloading and autoplay to reduce unnecessary data transfer.
+2. Implement lazy loading for videos below the fold.
+3. Use appropriate compression techniques to reduce file sizes without compromising quality.
+4. Consider using adaptive bitrate streaming for varying network conditions.
 
 Remember, every optimization in video delivery can lead to substantial energy savings given the large file sizes involved. Balancing video quality with sustainability goals is key to creating engaging yet environmentally responsible web experiences.
 
 For further information, refer to:
-The WSGs 1.0 - SC 2.16.
+* The WSGs 1.0 - SC 2.16.
 
 ##### Preload
 Automatically preloading videos is a concern for web sustainability. This practice involves retrieving data that might not be useful for all users, potentially leading to unnecessary data transfer and energy consumption, especially on pages with high traffic volumes. From a sustainability perspective, preloading should ideally be avoided or only initiated upon user interaction.
 
+{{ figure_markup(
+  image="video-preload-usage.png",
+  caption="Video preload usage",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1517696872&format=interactive",
+  sheets_gid="1377676306",
+  sql_file=""
+) }}
 
-Comparing the usage of the preload attribute between 2022 and 2024, we observe some changes. The percentage of websites not using preload has slightly decreased, from 57.6% to 54.94% on desktop and from 59.5% to 56.27% on mobile. This shift suggests a small increase in the use of preload attributes, which could have implications for sustainability.
+Comparing the usage of the preload attribute between <a hreflang="en" href="https://almanac.httparchive.org/en/2022/sustainability">2022</a> and 2024, we observe some changes. The percentage of websites not using preload has slightly decreased, from 57.6% to 54.94% on desktop and from 59.5% to 56.27% on mobile. This shift suggests a small increase in the use of preload attributes, which could have implications for sustainability.
 
 It's important to remember that the preload attribute only has three valid values: none, auto, and metadata (default). Using the preload attribute with no value or an incorrect value may be interpreted as 'metadata', which can still involve loading up to 3% of the video to retrieve metadata. From a sustainability standpoint, 'none' remains the most environmentally friendly option.
 
 The slight increase in the use of 'metadata' and the decrease in non-use of preload suggest that more attention needs to be paid to video preloading practices to enhance web sustainability.
 
-For more detailed information on this topic, refer to Steve Souders' 2013 article and the web.dev 2017 article on video preloading strategies.
+For more detailed information on this topic, refer to <a hreflang="en" href="https://www.stevesouders.com/blog/2013/04/12/html5-video-preload/">Steve Souders' 2013 article</a> and <a hreflang="en" href="https://web.dev/articles/fast-playback-with-preload">the web.dev 2017 article</a> on video preloading strategies.
 
 ##### Autoplay
 The considerations surrounding autoplay continue to be critical from a sustainability perspective. Autoplaying videos consume data and energy for content that users might not be interested in viewing, potentially leading to unnecessary resource usage.
 
 It's important to note that the autoplay attribute can override preload settings, as autoplaying naturally requires loading the video content. This forced loading further impacts data consumption and energy use.
 
+{{ figure_markup(
+  image="video-autoplay-usage.png",
+  caption="Video autoplay usage",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1761138794&format=interactive",
+  sheets_gid="215678116",
+  sql_file=""
+) }}
 
-Comparing the usage of autoplay between 2022 and 2024, we see some notable changes. The percentage of websites explicitly not using autoplay has decreased, from 53.1% to 44.54% on desktop and from 52.6% to 44.88% on mobile. This could be a concern for sustainability efforts. Also, we notice a slight increase for websites using an empty value for this attribute, which also triggers autoplay (and is bad for sustainability). 
+Comparing the usage of autoplay between <a hreflang="en" href="https://almanac.httparchive.org/en/2022/sustainability">2022</a> and 2024, we see some notable changes. The percentage of websites explicitly not using autoplay has decreased, from 53.1% to 44.54% on desktop and from 52.6% to 44.88% on mobile. This could be a concern for sustainability efforts. Also, we notice a slight increase for websites using an empty value for this attribute, which also triggers autoplay (and is bad for sustainability). 
 
 It's crucial to remember that autoplay is a Boolean attribute, meaning its presence, even with an empty value, triggers autoplay behavior. The combined percentage of explicit autoplay usage (including 'autoplay', 'TRUE', '1', and 'yes' values) has remained relatively stable, around 8% for both desktop and mobile.
 
 Given the sustainability implications, the trend towards more potential autoplay usage (through empty values) is worrying. Developers should be cautious about including the autoplay attribute, even if unintentionally, as it can lead to unnecessary data consumption and energy use. From a sustainability perspective, avoiding autoplay remains a recommended practice in most cases to reduce unnecessary data transfer and processing.
 
 #### Animations
-Animations continue to be a double-edged sword in web design. While they can enhance user experience, they pose challenges for both accessibility (more on this in the Accessibility chapter) and sustainability. 
+Animations continue to be a double-edged sword in web design. While they can enhance user experience, they pose challenges for both accessibility (more on this in the <a hreflang="en" href="https://almanac.httparchive.org/en/2024/accessibility">Accessibility chapter</a>) and sustainability. 
 
 From a sustainability perspective, animations can be resource-intensive:
-They increase battery consumption and CPU/GPU usage, potentially reducing device longevity, especially on mobile devices.
-Animations often require additional code, which can delay rendering and increase page weight.
-Poorly optimized animations can lead to unnecessary repaints and reflows, further taxing device resources.
+* They increase battery consumption and CPU/GPU usage, potentially reducing device longevity, especially on mobile devices.
+* Animations often require additional code, which can delay rendering and increase page weight.
+* Poorly optimized animations can lead to unnecessary repaints and reflows, further taxing device resources.
 
-Recent data on non-composited animations provides insight into their usage across websites:
+Recent data on <a hreflang="en" href="https://web.dev/articles/stick-to-compositor-only-properties-and-manage-layer-count">non-composited animations</a> provides insight into their usage across websites:
+
+# TODO
+{{ figure_markup(
+  image="video-autoplay-usage.png",
+  caption="Non-composited animations per page",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1761138794&format=interactive",
+  sheets_gid="215678116",
+  sql_file=""
+) }}
 
 This data reveals: 
-At least 50% of websites don't use non-composited animations, which is positive from a sustainability perspective. 
-There's a significant jump in usage at the higher percentiles, with the 90th percentile showing 12 animations on desktop and 11 on mobile. This jump could severely impact the accessibility, performance, and sustainability of the webpage.
+* At least 50% of websites don't use non-composited animations, which is positive from a sustainability perspective. 
+* There's a significant jump in usage at the higher percentiles, with the 90th percentile showing 12 animations on desktop and 11 on mobile. This jump could severely impact the accessibility, performance, and sustainability of the webpage.
 
 The case of carousels remains contentious: users, developers, and designers tend to despise them while organizations stick to them.
 
 For arguments against using carousels, visit: 
-Should I Use A Carousel
-Usability Guidelines For Better Carousels UX
+* <a hreflang="en" href="https://shouldiuseacarousel.com/">Should I Use A Carousel</a>
+* <a hreflang="en" href="https://www.smashingmagazine.com/2023/08/designing-better-carousel-ux/">Usability Guidelines For Better Carousels UX</a>
 
 If animations are necessary for your design:
-Use CSS animations where possible, as they're generally more performant than JavaScript-based animations.
-Consider using the `prefers-reduced-motion` media query to respect user preferences for reduced motion.
-Lazy-load animations that are not immediately visible on page load.
+* Use CSS animations where possible, as they're generally more performant than JavaScript-based animations.
+* Consider using the `prefers-reduced-motion` media query to respect user preferences for reduced motion.
+* Lazy-load animations that are not immediately visible on page load.
 
 For further information, refer to:
-The WSGs 1.0 - SC 2.17.
+* The WSGs 1.0 - SC 2.17.
 
 #### Favicon and error pages
 Favicons and error pages continue to play a subtle but important role in website performance and sustainability. 
 
 Key considerations remain: 
-Always include a favicon to prevent unnecessary 404 requests.
-Ensure your favicon is properly cached to reduce repeated requests.
-Optimize your 404 page HTML to be as lightweight as possible.
-Set up redirects properly, so that users find the content they are looking for.
-While browsing to a missing page should lead to a 404 page, loading a missing resource should return a text message rather than the whole 404 HTML page (as is the case with some servers). You should also look for dead links.
+* Always include a favicon to prevent unnecessary 404 requests.
+* Ensure your favicon is properly cached to reduce repeated requests.
+* Optimize your 404 page HTML to be as lightweight as possible.
+* Set up redirects properly, so that users find the content they are looking for.
+* While browsing to a missing page should lead to a 404 page, loading a missing resource should <a hreflang="en" href="https://httpd.apache.org/docs/2.4/en/custom-error.html">return a text message</a> rather than the whole 404 HTML page (as is the case with some servers). You should also <a hreflang="en" href="https://www.deadlinkchecker.com/">look for dead links</a>.
 
-For optimal favicon sustainability: 
-SVG: The ideal choice. SVGs are lightweight, scalable, and eliminate the need for multiple sizes, significantly reducing data transfer and storage needs.
-Optimized PNG: A well-optimized PNG (180x180 pixels for iOS in the base directory named apple-touch-icon.png) can be a good compromise between file size and broad compatibility. Note the filename and location requirements as browsers will seek this (based on the meta tag if used) if no SVG is provided).
-A favicon.ico with sizes 32x32 and 16x16 for compatibility purposes (older browsers will seek this within your base directory so having the file will reduce errors).
+For <a hreflang="en" href="https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs">optimal favicon</a> sustainability: 
+1. SVG: The ideal choice. SVGs are lightweight, scalable, and eliminate the need for multiple sizes, significantly reducing data transfer and storage needs.
+2. Optimized PNG: A well-optimized PNG (180x180 pixels for iOS in the base directory named apple-touch-icon.png) can be a good compromise between file size and broad compatibility. Note the filename and location requirements as browsers will seek this (based on the meta tag if used) if no SVG is provided).
+3. A favicon.ico with sizes 32x32 and 16x16 for compatibility purposes (older browsers will seek this within your base directory so having the file will reduce errors).
 These formats, when properly implemented, minimize data transfer, reduce storage requirements, and lower energy consumption across the web ecosystem. Always ensure your chosen format is properly optimized for the best sustainability impact.
 
+{{ figure_markup(
+  image="favicon-usage.png",
+  caption="Favicon usage",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1102352877&format=interactive",
+  sheets_gid="1918305009",
+  sql_file=""
+) }}
 
-When we compare the 2024 data to 2021 data (since there was no favicon data since the 2021 Markup chapter), we can say that the changes from 2021 to 2024 indicate a positive trend towards more sustainable favicon practices. The shift from ICO to more efficient formats like PNG, SVG, and WebP suggests improved awareness of file size and performance impacts. Also, the reduction in missing icons demonstrates better attention to detail, reducing unnecessary server requests. Finally, the growth in SVG and WebP usage, while still small, represents a move towards more sustainable, scalable formats. 
+When we compare the 2024 data to <a hreflang="en" href="https://almanac.httparchive.org/en/2021/markup#favicons">2021 data</a> (since there was no favicon data since the <a hreflang="en" href="https://almanac.httparchive.org/en/2021/markup#favicons">2021 Markup chapter</a>), we can say that the changes from 2021 to 2024 indicate a positive trend towards more sustainable favicon practices. The shift from ICO to more efficient formats like PNG, SVG, and WebP suggests improved awareness of file size and performance impacts. Also, the reduction in missing icons demonstrates better attention to detail, reducing unnecessary server requests. Finally, the growth in SVG and WebP usage, while still small, represents a move towards more sustainable, scalable formats. 
 
 While there's still room for improvement, particularly in further adopting highly efficient formats like SVG and WebP, the overall trend suggests that developers are increasingly considering the sustainability implications of even small elements like favicons.
 
 For further information, refer to:
-The WSGs 1.0 - SC 3.18 and 4.4.
+* The WSGs 1.0 - SC 3.18 and 4.4.
 
 ### Optimizing external content
 #### Third parties
-
 Since third-party requests make up a large portion of requests on the web, it’s interesting to make sure they come from “green” hosts. Back in 2022, we estimated that 91% of third-party requests came from “green” hosts. As of 2024, it has risen to a whopping 97%!
 
-
+{{ figure_markup(
+  image="green-third-party-requests.png",
+  caption="% green third-party requests",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1139458989&format=interactive",
+  sheets_gid="176951784",
+  sql_file=""
+) }}
 
 This sure looks like really great news but you should keep in mind this is somewhat biased. Most third-parties originate from Google whose servers are considered “green”. More generally, many cloud providers are considered “green” but the truth might be slightly more complicated, as explained in our Green Hosting section.
 
-You should look at this year’s Third-parties chapter for more on all this. 
+You should look at this year’s <a hreflang="en" href="https://almanac.httparchive.org/en/2024/third-parties">Third-parties chapter</a> for more on all this. 
 
 Third-party resources, while often essential for modern web functionality, can significantly impact a website's sustainability and performance. These external assets, ranging from scripts to stylesheets, can increase page weight and create performance bottlenecks. All of these factors contribute to higher data transfer and energy consumption.
 
@@ -676,33 +725,41 @@ When evaluating libraries and frameworks, opt for performant alternatives that a
 By carefully managing third-party integrations and prioritizing user preferences, we can significantly reduce the ecological footprint of our digital products while maintaining functionality and user experience. This is also usually beneficial to performance, security, privacy, and accessibility. 
 
 For further information, refer to:
-The WSGs 1.0 - SC 3.7.
+* The WSGs 1.0 - SC 3.7.
 
-For more detailed information on analyzing and optimizing third-party usage, refer to the Chrome Developers documentation.
+For more detailed information on analyzing and optimizing third-party usage, refer to the <a hreflang="en" href="https://developer.chrome.com/docs/lighthouse/performance/third-party-summary">Chrome Developers documentation</a>.
 
 ### Implementing technical optimizations
 Historically, web performance introduced a lot of recommendations that contribute to efficiency, thus improving sustainability. It also sometimes encourages frugality. But there are still some performance recommendations that could be detrimental to environmental impacts (or at least need some discussion and careful consideration). For instance, CDN should be treated with care (see dedicated section below) and preloading or predictive loading should be avoided because they might result in loading resources that will never be used.
 
 #### JavaScript
-JavaScript has been an important language in the web's growth, enabling dynamic and interactive experiences. However, when not optimized, it can also impact performance and energy consumption. Let's focus on some quick wins: optimizations that are easy to implement and great for sustainability. These tweaks can significantly improve your site's efficiency without sacrificing functionality. For a deeper dive into JavaScript's pros and cons, check out our comprehensive JavaScript chapter.
+JavaScript has been an important language in the web's growth, enabling dynamic and interactive experiences. However, when not optimized, it can also impact performance and energy consumption. Let's focus on some quick wins: optimizations that are easy to implement and great for sustainability. These tweaks can significantly improve your site's efficiency without sacrificing functionality. For a deeper dive into JavaScript's pros and cons, check out our comprehensive <a hreflang="en" href="https://almanac.httparchive.org/en/2024/javascript">JavaScript chapter</a>.
 
 ##### Minification, Tree Shaking & Code Splitting
 Optimizing JavaScript through minification, tree shaking, and code splitting remains crucial for improving website performance and sustainability. By focusing on these optimization techniques, we can significantly reduce data transfer, improve load times, and ultimately decrease the energy consumption associated with web browsing. Remember, even small savings per site can lead to substantial cumulative benefits across billions of page views.
 
+{{ figure_markup(
+  image="unminified-js-savings.png",
+  caption="Unminified Javascript savings",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=260477538&format=interactive",
+  sheets_gid="619269903",
+  sql_file=""
+) }}
 
 Compared to 2022, these figures show a slight increase in potential savings at the higher percentiles, indicating that some websites have accumulated more unminified code.
 
 While many sites are effectively minifying JavaScript, there's still significant potential for savings, especially for larger sites. 
 
 As developers, we can make our apps & websites more sustainable by:
-Implement tree shaking to eliminate dead code, which can provide additional savings beyond minification.
-Use code-splitting to load JavaScript on demand, reducing initial payload sizes.
+* Implement tree shaking to eliminate dead code, which can provide additional savings beyond minification.
+* Use code-splitting to load JavaScript on demand, reducing initial payload sizes.
 
 
-For a deeper dive into JavaScript's pros and cons, check out our comprehensive JavaScript chapter.
+For a deeper dive into JavaScript's pros and cons, check out our comprehensive <a hreflang="en" href="https://almanac.httparchive.org/en/2024/javascript">JavaScript chapter</a>.
 
 For further information, refer to:
-The WSGs 1.0 - SC 3.2.
+* The WSGs 1.0 - SC 3.2.
 
 #### CSS
 Cascading Stylesheets (CSS) have also been a critical feature in the growth of the Internet's popularity. The ability to add stylistic flourishes to pages and apps brings a unique visual appeal to content and features. The visual complexity of the Web however brings with it challenges in offering a sustainable product or service.
@@ -712,37 +769,45 @@ Web performance plays a critical role as too many page repaints or heavy burdens
 Let's focus on some quick wins, some of which will be familiar to you from the JavaScript section to help improve your code efficiency without sacrificing functionality. 
 
 ##### Minification
-While minification for JavaScript is a common practice (as mentioned earlier in this chapter), it's also important to recognize the value of minifying other static text assets such as CSS files due to the data savings that can be obtained. Tools within IDEs can help automate and streamline this process to increase efficiency.
+While minification for JavaScript is a common practice (as mentioned earlier in this chapter), it's also important to recognize the value of minifying other <a hreflang="en" href="https://web.dev/articles/optimizing-content-efficiency-optimize-encoding-and-transfer?hl=en">static text assets</> such as CSS files due to the data savings that can be obtained. Tools within IDEs can help automate and streamline this process to increase efficiency.
 
+{{ figure_markup(
+  image="unminified-css-savings.png",
+  caption="Unminified CSS savings",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1448481615&format=interactive",
+  sheets_gid="1866069863",
+  sql_file=""
+) }}
 
 Compared to 2022, these figures show a slight decrease in potential savings, suggesting a modest improvement in CSS minification practices or potentially a shift towards more efficient CSS authoring. The decrease in potential CSS savings since 2022 indicates progress, but further optimization is possible.
 
 As developers, we can make our apps & websites more sustainable by:
-Consider using CSS Modules approaches, which can help eliminate unused styles.
-Implement critical CSS techniques to inline essential styles and defer the loading of non-critical CSS. 
+* Consider using CSS Modules approaches, which can help eliminate unused styles.
+* Implement critical CSS techniques to inline essential styles and defer the loading of non-critical CSS. 
 
 For further information, refer to:
-The WSGs 1.0 - SC 3.2-4.
+* The WSGs 1.0 - SC 3.2-4.
 
 ##### Print stylesheet
 Reducing the impact of physical documents is critically important because any single-use item not only uses material resources (such as paper and ink), but there is a risk involved that the item may not be recycled properly, or that its production may not come from a sustainable source. Therefore we must treat the creation of such items as a precious commodity and avoid producing more than is required to reduce excess waste.
 
-Having a print-friendly stylesheet (using the @media print and @page at-rule) will allow you to define styles that stylistically affect how the end product will appear on the printed page. This allows you to organize content to fit onto the page better, remove content that doesn't transcend well from digital to print (such as navigation), and include extra information where appropriate (for URLs alongside links as an example).
+Having a <a hreflang="en" href="https://www.smashingmagazine.com/2018/05/print-stylesheets-in-2018/">print-friendly stylesheet</a> (using the @media print and @page at-rule) will allow you to define styles that stylistically affect how the end product will appear on the <a hreflang="en" href="https://alistapart.com/article/goingtoprint/">printed page</a>. This allows you to organize content to fit onto the page better, remove content that doesn't transcend well from digital to print (such as navigation), and include extra information where appropriate (for URLs alongside links as an example).
 
 When creating a print-friendly stylesheet, be considerate of the user preference towards color or monochrome output, the color of paper used in the printer tray, the size of paper provided for printing, and the orientation of paper (responsive design of a sort that exists in print).
 
 For further information, refer to:
-The WSGs 1.0 - SC 2.23 and 3.13.
+* The WSGs 1.0 - SC 2.23 and 3.13.
 
 ##### User Preferences (Dark mode)
 
 Visitors have their preferred way of browsing websites, and one of the most common preferences is "lights on or off" otherwise known as the use of dark mode. While this may outwardly appear to be a visual or stylistic choice, there are some sustainability and accessibility considerations to take into account with this choice.
 
-Before we get into the sustainability benefits, it is worth quickly discussing that while the use of dark mode for some people can increase readability, it can affect others negatively by acting as a trigger for people with astigmatism, It is therefore important that the ability to turn on and off features like dark mode be available to visitors and user preferences (on OS or browser) taken into account.
+Before we get into the sustainability benefits, it is worth quickly discussing that while the use of dark mode for some people can increase readability, it can affect others negatively by acting as a trigger for people with <a hreflang="en" href="https://www.boia.org/blog/dark-mode-can-improve-text-readability-but-not-for-everyone">astigmatism</a>, It is therefore important that the ability to turn on and off features like dark mode be available to visitors and user preferences (on OS or browser) taken into account.
 
-Dark mode itself can be a real benefit for sustainability on OLED screens due to the use of dimmed pixels (blacks and low colors). Studies have shown that on such devices the reduction of energy use can vary but it does make a real difference (and as the screen is the primary energy emitter for handheld devices, this is important).
+Dark mode itself can be a real benefit for sustainability on OLED screens due to the use of <a hreflang="en" href="https://www.youtube.com/watch?v=N_6sPd0Jd3g">dimmed pixels</a> (blacks and <a hreflang="en" href="https://greentheweb.com/energy-efficient-color-palette-ideas/">low colors</a>). Studies have shown that on such devices the <a hreflang="en" href="https://engineering.purdue.edu/ECE/News/2021/dark-mode-may-not-save-your-phones-battery-life-as-much-as-you-think-but-there-are-a-few-silver-linings">reduction of energy use</a> can vary but it does make a <a hreflang="en" href="https://www.businessinsider.com/guides/tech/does-dark-mode-save-battery?r=US&IR=T">real difference</a> (and as the screen is the primary energy emitter for handheld devices, this is important).
 
-There are several other user-preference media queries available to CSS that may (depending on usage) have sustainability benefits for your visitors such as monochrome (to default printing to a single cartridge type), prefers-reduced-motion (to reduce processor-intensive animated effects), and the upcoming prefers-reduced-data (that allows designing around low bandwidth devices).
+There are several other user-preference <a hreflang="en" href="https://polypane.app/blog/the-complete-guide-to-css-media-queries/">media queries</a> available to CSS that may (depending on usage) have sustainability benefits for your visitors such as monochrome (to default printing to a single cartridge type), prefers-reduced-motion (to reduce processor-intensive animated effects), and the upcoming <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-data">prefers-reduced-data</a> (that allows designing around low bandwidth devices).
 
 For further information, refer to:
 The WSGs 1.0 - SC 3.13.
