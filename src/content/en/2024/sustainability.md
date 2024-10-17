@@ -800,7 +800,6 @@ For further information, refer to:
 * The WSGs 1.0 - SC 2.23 and 3.13.
 
 ##### User Preferences (Dark mode)
-
 Visitors have their preferred way of browsing websites, and one of the most common preferences is "lights on or off" otherwise known as the use of dark mode. While this may outwardly appear to be a visual or stylistic choice, there are some sustainability and accessibility considerations to take into account with this choice.
 
 Before we get into the sustainability benefits, it is worth quickly discussing that while the use of dark mode for some people can increase readability, it can affect others negatively by acting as a trigger for people with <a hreflang="en" href="https://www.boia.org/blog/dark-mode-can-improve-text-readability-but-not-for-everyone">astigmatism</a>, It is therefore important that the ability to turn on and off features like dark mode be available to visitors and user preferences (on OS or browser) taken into account.
@@ -810,72 +809,87 @@ Dark mode itself can be a real benefit for sustainability on OLED screens due to
 There are several other user-preference <a hreflang="en" href="https://polypane.app/blog/the-complete-guide-to-css-media-queries/">media queries</a> available to CSS that may (depending on usage) have sustainability benefits for your visitors such as monochrome (to default printing to a single cartridge type), prefers-reduced-motion (to reduce processor-intensive animated effects), and the upcoming <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-data">prefers-reduced-data</a> (that allows designing around low bandwidth devices).
 
 For further information, refer to:
-The WSGs 1.0 - SC 3.13.
+* The WSGs 1.0 - SC 3.13.
 
-For a deeper dive into CSS's pros and cons, check out our comprehensive CSS chapter.
+For a deeper dive into CSS's pros and cons, check out our comprehensive <a hreflang="en" href="https://almanac.httparchive.org/en/2024/css">CSS chapter</a>.
 
 #### Including as little code as possible directly in HTML
-The practice of inlining JavaScript and CSS directly in HTML can bloat HTML files and potentially harm overall performance and sustainability, as well as security. This issue is particularly prevalent in websites built with Content Management Systems (CMS) and those implementing the Critical CSS method.
+The practice of inlining JavaScript and CSS directly in HTML can bloat HTML files and potentially harm overall performance and sustainability, as well as security. This issue is particularly prevalent in websites built with Content Management Systems (CMS) and those implementing the <a hreflang="en" href="https://web.dev/articles/extract-critical-css">Critical CSS method</a>.
 
-The importance of the separation of concerns (HTML, CSS, and JavaScript) cannot be understated as also touched upon earlier in this chapter. While CSS can't defer or asynchronously load assets like JavaScript that would be render-blocking (without reliance on JavaScript itself), it still retains the same key benefit of being able to cache such assets. In doing so, a large library of CSS styles can be re-used among many pages without having to be re-downloaded.
-
+The importance of the <a hreflang="en" href="https://meiert.com/en/blog/what-happened-to-separation-of-concerns/">separation of concerns</a> (HTML, CSS, and JavaScript) cannot be understated as also touched upon earlier in this chapter. While CSS can't defer or asynchronously load assets like JavaScript that would be render-blocking (without reliance on JavaScript itself), it still retains the same key benefit of being able to cache such assets. In doing so, a large library of CSS styles can be re-used among many pages without having to be re-downloaded.
 
 For further information, refer to:
-The WSGs 1.0 - SC 3.17.
+* The WSGs 1.0 - SC 3.17.
 
-When we compare this year’s data to 2022 data we can see the following: 
-Increase in inline stylesheet usage: 
-- Desktop: from 25% in 2022 to 30.77% in 2024.
-- Mobile: from 25% in 2022 to 32.35% in 2024.
-A corresponding decrease in external stylesheet usage: 
-- Desktop: from 75% in 2022 to 69.23% in 2024.
-- Mobile: from 75% in 2022 to 67.65% in 2024.
+{{ figure_markup(
+  image="style-usage.png",
+  caption="Style usage",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=812833828&format=interactive",
+  sheets_gid="109015092",
+  sql_file=""
+) }}
+
+When we compare this year’s data to <a hreflang="en" href="https://almanac.httparchive.org/en/2022/sustainability">2022 data</a> we can see the following: 
+1. Increase in inline stylesheet usage: 
+    - Desktop: from 25% in 2022 to 30.77% in 2024.
+    - Mobile: from 25% in 2022 to 32.35% in 2024.
+2. A corresponding decrease in external stylesheet usage: 
+    - Desktop: from 75% in 2022 to 69.23% in 2024.
+    - Mobile: from 75% in 2022 to 67.65% in 2024.
 
 This trend shows a clear shift towards more inlining of CSS, particularly on mobile devices. While this approach can improve initial render times by reducing HTTP requests, it also presents challenges:
-Increased HTML file sizes, potentially slowing down initial page loads.
-Reduced caching efficiency, as inline styles, can't be cached separately from HTML.
-Potential for redundant code across multiple pages.
+* Increased HTML file sizes, potentially slowing down initial page loads.
+* Reduced caching efficiency, as inline styles, can't be cached separately from HTML.
+* Potential for redundant code across multiple pages.
 In the end, even though inlining critical CSS could help reduce the initial render time we must be careful to not inline more than that because it could have the exact opposite effect and delay the initial render.
 
 #### Obsolete code
 In the rapidly evolving landscape of web development, obsolete code is an often overlooked source of inefficiency that can significantly impact a website's sustainability footprint.
 
 Obsolete code refers to unnecessary, outdated, or redundant code that remains in a codebase. This can include: 
-Deprecated JavaScript and CSS features.
-Polyfills for outdated browsers.
-Unused functions or styles from previous iterations of a site.
-Legacy code supporting discontinued features.
+* Deprecated JavaScript and CSS features.
+* Polyfills for outdated browsers.
+* Unused functions or styles from previous iterations of a site.
+* Legacy code supporting discontinued features.
 
 From a sustainability perspective, obsolete code is problematic for several reasons:
-Increased File Size: Obsolete code bloats JavaScript and CSS files, leading to larger file sizes. This results in increased data transfer, consuming more energy both in transmission and processing.
-Unnecessary Processing: Browsers still need to parse and execute obsolete code, even if it's not used. This consumes additional CPU cycles and, consequently, more energy on user devices.
-Maintenance Overhead: Obsolete code makes codebases harder to maintain, potentially leading to inefficient workarounds and further code bloat over time.
-Security: Obsolete code is much more likely to have known security issues that could put users at risk. 
+1. Increased File Size: Obsolete code bloats JavaScript and CSS files, leading to larger file sizes. This results in increased data transfer, consuming more energy both in transmission and processing.
+2. Unnecessary Processing: Browsers still need to parse and execute obsolete code, even if it's not used. This consumes additional CPU cycles and, consequently, more energy on user devices.
+3. Maintenance Overhead: Obsolete code makes codebases harder to maintain, potentially leading to inefficient workarounds and further code bloat over time.
+4. Security: Obsolete code is much more likely to have known security issues that could put users at risk. 
 
 For further information, refer to:
-The WSGs 1.0 - SC 2.29 and 3.20.
+* The WSGs 1.0 - SC 2.29 and 3.20.
 
 #### CDN
 Content Delivery Networks (CDNs) play a crucial role in optimizing web performance and, by extension, improving the sustainability of web applications. By distributing content across multiple, geographically dispersed servers, CDNs reduce the distance data needs to travel, leading to faster load times and reduced energy consumption.
 
+{{ figure_markup(
+  image="cdn-usage.png",
+  caption="CDN usage on the web",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1471666916&format=interactive",
+  sheets_gid="232665838",
+  sql_file=""
+) }}
 
-
-Comparing this data to 2022 data, we observe several notable trends:
-Increased CDN Adoption: The percentage of websites not using a CDN has decreased from 69.7% to 66.88% for desktop and from 71.2% to 67.20% for mobile. This indicates a growing recognition of CDN benefits.
-Cloudflare's Growth: Cloudflare has solidified its position as the leading CDN provider, increasing its market share from 16.9% to 18.28% on desktop and from 15.1% to 18.16% on mobile.
-Google's Expansion: Google's CDN usage has seen significant growth, rising from 5.2% to 7.40% on desktop and from 6.5% to 7.95% on mobile.
-Shifts in the Market: While Fastly has seen a slight decrease in usage, Amazon CloudFront has maintained its position. Newer players like Vercel have entered the top 10, indicating a dynamic and evolving CDN market.
+Comparing this data to  <a hreflang="en" href="https://developer.chrome.com/docs/devtools/coverage">2022 data</a>, we observe several notable trends:
+* Increased CDN Adoption: The percentage of websites not using a CDN has decreased from 69.7% to 66.88% for desktop and from 71.2% to 67.20% for mobile. This indicates a growing recognition of CDN benefits.
+* Cloudflare's Growth: Cloudflare has solidified its position as the leading CDN provider, increasing its market share from 16.9% to 18.28% on desktop and from 15.1% to 18.16% on mobile.
+* Google's Expansion: Google's CDN usage has seen significant growth, rising from 5.2% to 7.40% on desktop and from 6.5% to 7.95% on mobile.
+* Shifts in the Market: While Fastly has seen a slight decrease in usage, Amazon CloudFront has maintained its position. Newer players like Vercel have entered the top 10, indicating a dynamic and evolving CDN market.
 
 From a sustainability perspective, the increased adoption of CDNs is a positive trend:
-Reduced Data Travel: By serving content from geographically closer locations, CDNs minimize the distance data needs to travel, reducing overall network energy consumption.
-Improved Caching: CDNs often provide advanced caching mechanisms, reducing the need for repeated data transfers and server processing.
-Load Balancing: By distributing traffic across multiple servers, CDNs can help prevent server overload, potentially reducing energy consumption during traffic spikes.
-Edge Computing: Many modern CDNs offer edge computing capabilities, allowing for data processing closer to the end-user, which can further reduce energy consumption.
+* Reduced Data Travel: By serving content from geographically closer locations, CDNs minimize the distance data needs to travel, reducing overall network energy consumption.
+* Improved Caching: CDNs often provide advanced caching mechanisms, reducing the need for repeated data transfers and server processing.
+* Load Balancing: By distributing traffic across multiple servers, CDNs can help prevent server overload, potentially reducing energy consumption during traffic spikes.
+* Edge Computing: Many modern CDNs offer edge computing capabilities, allowing for data processing closer to the end-user, which can further reduce energy consumption.
 
-For a deeper dive into CDNs, check out our comprehensive CDN chapter.
+For a deeper dive into CDNs, check out our comprehensive  <a hreflang="en" href="https://developer.chrome.com/docs/devtools/coverage">CDN chapter</a>.
 
 For further information, refer to:
-The WSGs 1.0 - SC 4.10.
+* The WSGs 1.0 - SC 4.10.
 
 #### Text compression
 Text compression is a crucial technique for reducing the size of transmitted data, playing a significant role in improving both website performance and sustainability. By compressing text-based resources such as HTML, CSS, and JavaScript before sending them over the network, we can substantially reduce data transfer and, consequently, energy consumption.
