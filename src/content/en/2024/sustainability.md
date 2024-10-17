@@ -3,12 +3,13 @@
 title: Sustainability
 description: Sustainability chapter of the 2024 Web Almanac covering environmental impacts of web pages, where they come from and how to reduce them
 authors: [ldevernay, burakguneli, ines-akrap, AlexDawsonUK, mgifford, timfrick]
-reviewers: [mgifford, airbr]
+reviewers: [mgifford, lebreRafael]
 editors: [cqueern]
 analysts: [Falafelqueen, burakguneli, mgifford]
 translators: []
 results: https://docs.google.com/spreadsheets/d/1E6wPVck2-5NDUpFKWjbJXKJKNx0E9fWwIdeM9hUKl8c/edit#gid=806519964
 AlexDawsonUK_bio: Alexander Dawson is a Web Developer, Sustainability Researcher, and editor of the <a href="https://w3c.github.io/sustyweb/">Web Sustainability Guidelines</a>. You can find more details about him at <a href="https://alexanderdawson.com/">alexanderdawson.com</a>.
+lebreRafael_bio: Rafael Lebre is a Software Engineer who has been focused on Web Performance for the last 3 years and recently started to dig into the Web Sustainability work. He likes to contribute to open source projects and projects with social or environmental impact whenever he finds an opportunity. You can find him sharing some articles on twitter as <a href="https://twitter.com/lebreRafael">@lebreRafael</a> or contact him on <a href="https://www.linkedin.com/in/rafael-lebre-8a24b590/l">LinkedIn</a>
 featured_quote:
 featured_stat_1:
 featured_stat_label_1:
@@ -430,11 +431,11 @@ For further information, refer to:
 * The WSGs 1.0 - SC 3.3 and 3.4.
 
 #### Other technical optimizations
-Different resource types have different energy intensity levels and this should be taken into account when choosing what to include with your product or service. Syntax languages such as HTML and CSS are fairly simple but must render each component to the screen (creating emissions). 
+Different resource types have different energy intensity levels and this <a hreflang="en" href="https://greenspector.com/en/reduce-the-weight-of-a-web-page-which-elements-have-the-greatest-impact/">should be taken into account</a> when choosing what to include with your product or service. Syntax languages such as <a hreflang="en" href="https://websitesustainability.com/cache/files/research23.pdf">HTML and CSS [PDF]</a> are fairly simple but must render each component to the screen (creating emissions). 
 
 CSS has the added complexity of simple state-based interactions that can develop additional emissions (due to repainting) such as animations and transitions. JavaScript being a more technical language also has rendering requirements that can accumulate as the build complexity increases. It can also be used both on the client and server-side and can develop impacts while interacting with the page (due to its ability to manage state). 
 
-All server-side languages (such as PHP) will also have an impact on resource utilization and energy efficiency (based on performance). Images and media also have to be processed on the screen and due to their size and quality can be fairly impactful.
+All server-side languages (such as PHP) will also have an impact on resource utilization and <a hreflang="en" href="https://greenlab.di.uminho.pt/wp-content/uploads/2017/10/sleFinal.pdf">energy efficiency [PDF]</&> (based on <a hreflang="en" href="https://attractivechaos.github.io/plb/">performance</a>). <a hreflang="en" href="https://michaelandersen93.substack.com/p/greening-the-web-a-study-on-low-carbon">Images</a> and media also have to be processed on the screen and due to their size and quality can be fairly impactful.
   
 ### Optimizing your content
 Now that we've examined the environmental impact of websites, particularly focusing on unused CSS, JavaScript, and font usage, let's turn our attention to optimization. While removing unnecessary content and functionalities remains crucial, this year we're emphasizing the importance of efficiency in what remains.
@@ -442,7 +443,7 @@ Now that we've examined the environmental impact of websites, particularly focus
 In this section, we'll explore how to make your essential content as sustainable as possible. We'll delve into optimizing images, videos, animations, and fonts - elements that significantly contribute to a website's environmental footprint. By fine-tuning these components, we can substantially reduce resource consumption without compromising user experience. 
 
 For further information, refer to:
-The WSGs 1.0 - SC 2.8, 2.14, and 2.21.
+* The WSGs 1.0 - SC 2.8, 2.14, and 2.21.
 
 #### Mobile First
 Adopting a Mobile First approach not only enhances user experience but also offers significant sustainability benefits. By prioritizing essential content and functionality for mobile devices, we naturally create leaner, more efficient websites that consume less energy and bandwidth across all platforms.
@@ -451,10 +452,10 @@ This approach encourages developers to critically evaluate each element's necess
 
 When implemented thoughtfully, Mobile First design can lead to faster load times, lower energy consumption, and a smaller carbon footprint for your digital presence. It aligns well with other sustainability practices like minimizing unused code and optimizing assets.
 
-For more detailed insights on how Mobile First impacts website performance, refer to our Performance chapter.
+For more detailed insights on how Mobile First impacts website performance, refer to our <a hreflang="en" href="https://almanac.httparchive.org/en/2024/performance">Performance chapter</a>.
 
 For further information, refer to:
-The WSGs 1.0 - SC 3.14.
+* The WSGs 1.0 - SC 3.14.
 
 #### Image optimization
 
@@ -465,57 +466,79 @@ Reduced data transfer, lowering energy use in data centers and network infrastru
 Decreased processing requirements on user devices possibly result in lower energy consumption.
 Faster load times, potentially reducing user wait time and associated energy consumption.
 
-When implementing image optimization, balance file size reduction with maintaining necessary quality. Utilize modern formats, responsive loading techniques, and appropriate compression levels. For detailed performance implications and technical implementations of image optimization strategies, refer to our Performance chapter.
+When implementing image optimization, balance file size reduction with maintaining necessary quality. Utilize modern formats, responsive loading techniques, and appropriate compression levels. For detailed performance implications and technical implementations of image optimization strategies, refer to our <a hreflang="en" href="https://almanac.httparchive.org/en/2024/performance">Performance chapter</a>.
 
 For further information, refer to:
-The WSGs 1.0 - SC 2.15.
+* The WSGs 1.0 - SC 2.15.
 
 ##### Format (WebP/AVIF)
 The adoption of modern image formats continues to be a crucial factor in web sustainability. WebP, with its impressive compression and wide browser support, remains a go-to format for optimizing images. Meanwhile, AVIF is gaining traction, offering even better compression in many cases.
 Let's look at how the usage of these formats has changed from 2022 to 2024:
 
-
+{{ figure_markup(
+  image="image-format-adoption-2-year-change.png",
+  caption="Image format adoption, 2-year change",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=2128858223&format=interactive",
+  sheets_gid="1939630368",
+  sql_file=""
+) }}
 
 This data shows the evolving landscape of image format adoption. WebP has grown significantly, with a 34% increase in usage. Although AVIF shows an impressive 386% increase, it can be misleading since for desktop clients the usage of AVIF format is only at 1.40%, and for mobile clients 1.05%. Traditional formats like JPEG are seeing a decline, while PNG and GIF usage remains relatively stable. Current statistics for 2024 provide a clearer picture of where we stand:
 
-
+{{ figure_markup(
+  image="image-format-adoption.png",
+  caption="Image format adoption",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=1820261877&format=interactive",
+  sheets_gid="1939630368",
+  sql_file=""
+) }}
 
 Despite the clear benefits, many websites have yet to fully embrace these modern formats. The potential for reducing page weight and improving loading times remains significant. For optimal sustainability: 
-Use WebP as your primary format, falling back to JPEG or PNG for older browsers. 
-Consider implementing AVIF for browsers that support it (with a fallback), as it often provides superior compression.
-For icons and simple graphics, optimized SVG remains the best choice. Consider inlining frequently used SVGs directly in your HTML to reduce HTTP requests.
-For JPEG/WebP you can aim for 80-85% quality; adjust based on visual inspection.
-Use srcset and sizes attributes to serve appropriate image sizes.
-Lazy load non-critical images. Use loading="lazy" (native HTML attribute) for images below the fold.
-Strip metadata. Remove unnecessary EXIF data to reduce file size (thus also avoiding potential privacy issues).
-Implement a content negotiation strategy to serve the most efficient format based on browser capabilities.
-Periodically review and re-optimize images as new techniques emerge.
+1. Use WebP as your primary format, falling back to JPEG or PNG for older browsers. 
+2. Consider implementing AVIF for browsers that support it (with a fallback), as it often provides superior compression.
+3. For icons and simple graphics, optimized SVG remains the best choice. Consider inlining frequently used SVGs directly in your HTML to reduce HTTP requests.
+4. For JPEG/WebP you can aim for 80-85% quality; adjust based on visual inspection.
+5. Use srcset and sizes attributes to serve appropriate image sizes.
+6. Lazy load non-critical images. Use loading="lazy" (native HTML attribute) for images below the fold.
+7. Strip metadata. Remove unnecessary EXIF data to reduce file size (thus also avoiding potential privacy issues).
+8. Implement a content negotiation strategy to serve the most efficient format based on browser capabilities.
+9. Periodically review and re-optimize images as new techniques emerge.
 
 Remember, while adopting these formats can significantly reduce data transfer and processing requirements, it's crucial to balance compression with maintaining necessary image quality. Over-compression can lead to degraded user experience and potential re-uploads, negating some of the sustainability benefits.
 
-For more detailed information on implementing these formats and their performance implications, refer to our Performance chapter.
+For more detailed information on implementing these formats and their performance implications, refer to our <a hreflang="en" href="https://almanac.httparchive.org/en/2024/performance">Performance chapter</a>.
 
 ##### Responsiveness, size, and quality
 As the diversity of devices accessing the web continues to grow, delivering appropriately sized images remains crucial for both performance and sustainability. Responsive image techniques allow us to serve optimized images for each scenario, reducing unnecessary data transfer and processing.
 It's worth remembering that image quality doesn't always need to be at maximum.
 
-
+# TODO
+{{ figure_markup(
+  image="image-format-adoption.png",
+  caption="Image format adoption",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=1820261877&format=interactive",
+  sheets_gid="1939630368",
+  sql_file=""
+) }}
 
 The data shows encouraging progress in the adoption of responsive image techniques:
-Overall usage of the `srcset` attribute has increased significantly, from about 33-34% in 2022 to 42% in 2024 across both desktop and mobile.
-The use of `srcset` with the `sizes` attribute, which provides more precise control over image selection, has also grown from around 25-26% to 32%.
-There's a slight increase in the use of `srcset` without `sizes`, which, while not ideal, still offers some responsiveness benefits.
-Usage of the `<picture>` element has seen a modest increase from 8% to around 9.3% across both desktop and mobile. 
+1. Overall usage of the `srcset` attribute has increased significantly, from about 33-34% in 2022 to 42% in 2024 across both desktop and mobile.
+2. The use of `srcset` with the `sizes` attribute, which provides more precise control over image selection, has also grown from around 25-26% to 32%.
+3. There's a slight increase in the use of `srcset` without `sizes`, which, while not ideal, still offers some responsiveness benefits.
+4. Usage of the `<picture>` element has seen a modest increase from 8% to around 9.3% across both desktop and mobile. 
 
 This trend indicates a growing awareness among developers about the importance of responsive images. However, there's still considerable room for improvement, as less than half of websites are currently utilizing these techniques. 
 
 To optimize your images for sustainability: 
-Implement `srcset` and `sizes` attributes to serve appropriately sized images for different viewport sizes. 
-Use the `<picture>` element for art direction and to serve modern formats like WebP and AVIF with appropriate fallbacks.
-Optimize image quality, aiming for the sweet spot of size reduction without noticeable quality loss. 
-Consider implementing automated tools in your build process to generate and optimize responsive images. 
+1. Implement `srcset` and `sizes` attributes to serve appropriately sized images for different viewport sizes. 
+2. Use the `<picture>` element for art direction and to serve modern formats like WebP and AVIF with appropriate fallbacks.
+3. Optimize image quality, aiming for the sweet spot of size reduction without noticeable quality loss. 
+4. Consider implementing automated tools in your build process to generate and optimize responsive images. 
 
-While the trend is positive, there's still a long way to go before responsive images become ubiquitous. As web professionals, we should continue to advocate for and implement these techniques to create more sustainable and performant websites. For more detailed implementation strategies and performance impacts, refer to our Performance chapter and Media chapter.
+While the trend is positive, there's still a long way to go before responsive images become ubiquitous. As web professionals, we should continue to advocate for and implement these techniques to create more sustainable and performant websites. For more detailed implementation strategies and performance impacts, refer to our <a hreflang="en" href="https://almanac.httparchive.org/en/2024/performance">Performance chapter</a> and <a hreflang="en" href="https://almanac.httparchive.org/en/2024/media">Media chapter</a>.
 
 ##### Lazy-loading
 Lazy-loading remains a crucial technique for enhancing both performance and sustainability in web development. By loading images progressively we can significantly reduce initial page load times and unnecessary data transfer. This approach is particularly beneficial for sustainability, as it prevents the loading of images that users may never see, saving energy and resources.
