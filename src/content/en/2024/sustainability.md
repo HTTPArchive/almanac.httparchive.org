@@ -306,31 +306,38 @@ The not-so-nice surprise here is that most of the requests, around 70 in the 90t
   sql_file=""
 ) }}
 
-
 The size of retrieved Images is almost double the size of retrieved JavaScript in the 90th percentile, so the “old” pattern is still there. This leads us to the conclusion that sites are loading fewer images but slightly heavier and, in general, more JavaScript, which is not a good trend since that leads to the need for more processing power and can exclude users with aging devices from accessing sites.
 
 For further information, refer to:
-The WSGs 1.0 - SC 3.1 and 4.9.
+* The WSGs 1.0 - SC 3.1 and 4.9.
   
 ### More sustainable hosting
-One of the simplest ways to reduce your carbon footprint is by choosing a sustainable hosting provider. Navigating this world can be quite tricky as no provider will truly be 100% carbon neutral as emissions always exist in some form, however, how they power their equipment, maintain their hardware, and deal with waste and redundancy can significantly impact the amount of emissions created. Therefore picking the right supplier can have a considerable impact on your ability to mitigate the emissions you produce.
+One of the simplest ways to reduce your carbon footprint is by <a hreflang="en" href="https://dodonut.com/blog/how-to-choose-the-best-green-web-hosting-provider/">choosing a sustainable hosting provider</a>. Navigating this world can be quite tricky as no provider will truly be 100% carbon neutral as emissions always exist in some form, however, how they power their equipment, maintain their hardware, and deal with waste and redundancy can significantly impact the amount of emissions created. Therefore <a hreflang="en" href="https://www.thegreenwebfoundation.org/tools/directory/">picking the right supplier</a> can have a considerable impact on your ability to mitigate the emissions you produce.
 
 One of the most critical features of a sustainable host is how they get their energy requirements. Hosts may get their electricity supply from normal power companies which in turn (depending on where they are located) generate a significant proportion of their energy from carbon-emitting coal or gas. Having a hosting provider that generates its energy requirements from solar, wind, tidal, and other natural sources will be more beneficial to the planet.
 
 Other factors to consider are how the hosting provider cools its equipment. Many hosts require water cooling (and this can be an issue where freshwater can be a valuable limited resource), suppliers that use natural cooling in colder climates (for example) may be preferable.
 
-Hosts that allow you to monitor your energy requirements (PUE, WUE, CUE) and even the amount of energy you are utilizing (CPU, GPU, RAM) on an active and logged basis can help you scale your hosting to reduce waste. If the host also recovers, recycles, and upcycles equipment rather than has a throwaway culture, this can reduce e-waste (the same goes for keeping equipment as long as possible).
+Hosts that allow you to monitor your energy requirements (<a hreflang="en" href="https://submer.com/blog/pue-cue-and-wue-what-do-these-three-metrics-represent-and-which-is-one-is-the-most-important/">PUE, WUE, CUE</a>) and even the amount of energy you are utilizing (CPU, GPU, RAM) on an active and logged basis can help you scale your hosting to reduce waste. If the host also <a hreflang="en" href="https://www.scientificamerican.com/article/reduce-reuse-recycle-why-all-3-rs-are-critical-to-a-circular-economy/">recovers, recycles, and upcycles</a> equipment rather than has a throwaway culture, this can reduce e-waste (the same goes for keeping equipment as long as possible).
 
 Compensating for emissions at the server-side can be a complex task and transparency with hosting providers can also be a bit of a minefield, but providers are gradually becoming more sustainably minded and with specialist providers out there who can help you reduce your carbon footprint, taking steps to house your product or service in a greener space can be relatively straight forward.
 
-Note: You may be able to use APIs and infrastructure to model your website or application based on the environmental situation at that time. Carbon-aware computing is a relatively new concept but it has some interesting viewpoints.
+Note: You may be able to use APIs and infrastructure to model your website or application based on the environmental situation at that time. <a hreflang="en" href="https://hackernoon.com/carbon-aware-computing-next-green-breakthrough-or-new-greenwashing">Carbon-aware computing</a> is a relatively new concept but it has some interesting viewpoints.
 
 For further information, refer to:
-The WSGs 1.0 - Section 4.
+* The WSGs 1.0 - Section 4.
   
 #### How many of the sites listed in the HTTP Archive run on green hosting?
-To help organizations and individuals choose “greener” hosting, the Green Web Foundation maintains a dataset of providers matching the “green” criteria. With the list expanding and updating regularly it is not easy to track this metric, however, let’s see what is its current state. 
+To help organizations and individuals choose “greener” hosting, <a hreflang="en" href="https://www.thegreenwebfoundation.org/">the Green Web Foundation</a> maintains a dataset of providers matching the <a hreflang="en" href="https://www.thegreenwebfoundation.org/what-we-accept-as-evidence-of-green-power/">“green” criteria</a>. With the list expanding and updating regularly it is not easy to track this metric, however, let’s see what is its current state. 
 
+{{ figure_markup(
+  image="percent_green_hosting.png",
+  caption="% Green hosting",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=377132080&format=interactive",
+  sheets_gid="1680950752",
+  sql_file=""
+) }}
 
 We can see that only 14% of mobile sites, and slightly more desktop ones from the HTTP Archive are hosted using “green hosting” providers. That is a slight increase from 2022, when this number was 10%, however, it shows us that progress in this area is extremely slow and that there is still a long way to go in both aspects: encouraging website owners to switch to “greener” hosting provides, as well as more providers offering “greener” hosting.
 
@@ -340,7 +347,7 @@ There is a significant difference in top-ranked sites, showing that 55% of sites
 Understanding the environmental impact of websites is only the first step; action is crucial. With our updated insights into website footprints, particularly regarding unused code and font usage, we can now explore more targeted and effective strategies for mitigation. Let's examine how to translate this knowledge into tangible, sustainable web practices.
 
 For further information, refer to:
-The WSGs 1.0 - Sections 2, 3, 4, and 5.
+* The WSGs 1.0 - Sections 2, 3, 4, and 5.
 
 ### Avoiding waste
 Avoiding waste remains one of the most effective ways to reduce the environmental impact of websites. 
@@ -351,32 +358,40 @@ Avoiding waste remains one of the most effective ways to reduce the environmenta
 * Implement smart loading strategies: Use techniques like lazy loading, code splitting, and conditional loading to ensure that assets are only delivered when they're needed. This approach can significantly reduce unnecessary data transfer and processing.
   
 #### Loading unused assets
-You should only load assets that are essential for displaying the current view of the page. This can be achieved through techniques like lazy-loading, critical CSS extraction, and patterns such as Import on Interaction and Import on Visibility. It's also crucial to load assets, particularly images and fonts, at the appropriate size for each client device. In this section, we'll focus primarily on minimizing unused code and optimizing font loading, as our data shows these remain significant contributors to unnecessary page weight.
+You should only load assets that are essential for displaying the current view of the page. This can be achieved through techniques like lazy-loading, critical CSS extraction, and patterns such as <a hreflang="en" href="https://www.patterns.dev/vanilla/import-on-interaction">Import on Interaction</a> and <a hreflang="en" href="https://www.patterns.dev/vanilla/import-on-visibility">Import on Visibility</a>. It's also crucial to load assets, particularly images and fonts, at the appropriate size for each client device. In this section, we'll focus primarily on minimizing unused code and optimizing font loading, as our data shows these remain significant contributors to unnecessary page weight.
 
 For further information, refer to:
 The WSGs 1.0 - SC 2.7, 2.15-9, 2.23, 3.7, 3.18, and 3.19.
 
 ##### Fonts
 
-For optimal sustainability, system fonts remain the best choice, requiring no additional downloads. When custom fonts are necessary, consider these strategies to minimize environmental impact:
-Use the WOFF2 format for superior compression and broad support.
-Implement variable fonts to replace multiple font files with a single, versatile one.
-It would be nice to also use subsets or use a tool such as subfont.
-For custom fonts, use analysis tools to remove unnecessary glyphs or features.
-If using third-party font services, leverage their optimization options, but consider self-hosting for better control.
+For optimal sustainability, <a hreflang="en" href="https://www.smashingmagazine.com/2015/11/using-system-ui-fonts-practical-guide/">system fonts</a> remain the best choice, requiring no additional downloads. When custom fonts are necessary, consider these strategies to minimize environmental impact:
+* Use the WOFF2 format for superior compression and broad support.
+* Implement <a hreflang="en" href="https://the-sustainable.dev/reduce-the-weight-of-your-typography-with-variable-fonts/">variable fonts</a> to replace multiple font files with a single, versatile one.
+* It would be nice to also use <a hreflang="en" href="https://everythingfonts.com/subsetter">subsets</a> or use a tool such as <a hreflang="en" href="https://github.com/Munter/subfont">subfont</a>.
+* For custom fonts, use analysis tools to remove unnecessary glyphs or features.
+* If using third-party font services, leverage their optimization options, but consider self-hosting for better control.
 
 Remember, each additional font weight or style increases payload. Balance aesthetic needs with sustainability goals. For icons, consider Scalar Vector Graphics (SVG) instead of icon fonts for better efficiency and accessibility.
 
 By thoughtfully approaching typography, we can create visually appealing websites while reducing data transfer and energy consumption.
 
-For more detailed information, refer to our dedicated Fonts chapter and stay updated with the latest web font optimization practices.
+For more detailed information, refer to our dedicated <a hreflang="en" href="https://almanac.httparchive.org/en/2024/fonts">Fonts chapter</a> and stay updated with the latest web font optimization practices.
 
 For further information, refer to:
-The WSGs 1.0 - SC 2.18 and 2.19.
+* The WSGs 1.0 - SC 2.18 and 2.19.
 
 ##### Unused CSS
-The environmental impact of excess code extends beyond mere inefficiency. It directly translates to increased energy consumption and a larger carbon footprint for both servers and user devices. While CSS frameworks boost development efficiency, they often introduce substantial amounts of unused styles. This bloat not only affects page load times but also unnecessarily increases data transfer and processing requirements. In an era of ever-growing global internet usage, the cumulative effect of this excess code on energy consumption is significant. Modern development tools have made identifying and eliminating unused CSS more accessible. Features like Chrome DevTools' Coverage analysis offer powerful analysis to trim stylesheets. However, the practice of loading all CSS upfront for caching purposes presents a nuanced challenge. While it can reduce server requests and improve performance for returning visitors, it potentially increases the initial carbon cost of page loads. As web applications grow in complexity, striking a balance between comprehensive styling and sustainable practices becomes increasingly crucial. Unused CSS not only impacts user experience through slower initial loads but also contributes to increased energy usage in rendering and processing. Addressing unused CSS stands out as a tangible step developers can take to reduce the digital ecosystem's environmental impact.
+The environmental impact of excess code extends beyond mere inefficiency. It directly translates to increased energy consumption and a larger carbon footprint for both servers and user devices. While CSS frameworks boost development efficiency, they often introduce substantial amounts of unused styles. This bloat not only affects page load times but also unnecessarily increases data transfer and processing requirements. In an era of ever-growing global internet usage, the cumulative effect of this excess code on energy consumption is significant. Modern development tools have made identifying and eliminating unused CSS more accessible. Features like <a hreflang="en" href="https://developer.chrome.com/docs/devtools/coverage/">Chrome DevTools' Coverage analysis</a> offer powerful analysis to trim stylesheets. However, the practice of loading all CSS upfront for caching purposes presents a nuanced challenge. While it can reduce server requests and improve performance for returning visitors, it potentially increases the initial carbon cost of page loads. As web applications grow in complexity, striking a balance between comprehensive styling and sustainable practices becomes increasingly crucial. Unused CSS not only impacts user experience through slower initial loads but also contributes to increased energy usage in rendering and processing. Addressing unused CSS stands out as a tangible step developers can take to reduce the digital ecosystem's environmental impact.
 
+{{ figure_markup(
+  image="unused_css.png",
+  caption="Unused CSS",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1281422688&format=interactive",
+  sheets_gid="558117867",
+  sql_file=""
+) }}
 
 Comparing the data from 2022 and 2024, we see some subtle changes. The 10th percentile remains unchanged, with no unnecessary CSS loaded, which is a positive sign but there's a slight increase in unused CSS across the remaining other percentiles.
 
@@ -385,16 +400,25 @@ These changes, while small, suggest a general trend towards slightly larger CSS 
 Despite these small increases, the overall picture hasn't changed dramatically since 2022. This suggests that while there have been some efforts to optimize CSS usage, there's still considerable room for improvement, especially for websites with higher percentiles.
 
 For further information, refer to:
-The WSGs 1.0 - SC 3.4.
+* The WSGs 1.0 - SC 3.4.
   
 ##### Unused JavaScript
 Unused JavaScript significantly impacts energy consumption and carbon footprints of both servers and user devices. While JavaScript frameworks enhance development efficiency, they often introduce substantial unused code, affecting page load times and increasing data transfer unnecessarily.
 
 Modern techniques like tree shaking and code splitting are crucial for optimizing JavaScript. The following steps will most probably help you to decrease your unused Javascript:
-Tree shaking eliminates dead code from the final bundle, particularly effective with ES6 modules.
-Code splitting breaks code into smaller chunks, loading only what's necessary for the current functionality.
-Carefully evaluating the JavaScript libraries and frameworks.
-Regularly doing code audits and refactoring to get bundle sizes smaller.
+* Tree shaking eliminates dead code from the final bundle, particularly effective with ES6 modules.
+* Code splitting breaks code into smaller chunks, loading only what's necessary for the current functionality.
+* Carefully evaluating the JavaScript libraries and frameworks.
+* Regularly doing code audits and refactoring to get bundle sizes smaller.
+
+{{ figure_markup(
+  image="unused_js.png",
+  caption="Unused JS",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=904835139&format=interactive",
+  sheets_gid="1021078155",
+  sql_file=""
+) }}
 
 Comparing 2022 and 2024 data reveals significant increases across all percentiles.
 
@@ -403,7 +427,7 @@ By the 90th percentile, websites now load over 900KB of unused JavaScript for de
 The substantial increase in unused JavaScript between 2022 and 2024 underscores the urgent need for the web development community to adopt these optimization techniques for improved performance and sustainability.
 
 For further information, refer to:
-The WSGs 1.0 - SC 3.3 and 3.4.
+* The WSGs 1.0 - SC 3.3 and 3.4.
 
 #### Other technical optimizations
 Different resource types have different energy intensity levels and this should be taken into account when choosing what to include with your product or service. Syntax languages such as HTML and CSS are fairly simple but must render each component to the screen (creating emissions). 
