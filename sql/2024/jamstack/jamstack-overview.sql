@@ -60,6 +60,11 @@ CREATE TEMPORARY FUNCTION IS_HTTPS(url STRING) RETURNS BOOL AS (
   LOWER(SUBSTR(url, 1, 5)) = 'https'
 );
 
+-- Temporary function that checks if a CWV is good
+CREATE TEMP FUNCTION IS_GOOD (good FLOAT64, needs_improvement FLOAT64, poor FLOAT64) RETURNS BOOL AS (
+  SAFE_DIVIDE(good, (good + needs_improvement + poor)) >= 0.75
+);
+
 WITH potential_jamstack_sites AS (
     SELECT DISTINCT
         p.date,
@@ -163,11 +168,13 @@ total_sites AS (
     p.req_revalidation,
     p.cache_score,
     p.dynamic_penalty,
+    (
+      IS_GOOD(c.fast_inp, c.avg_inp, c.slow_inp) IS NOT FALSE AND
+      IS_GOOD(c.fast_lcp, c.avg_lcp, c.slow_lcp) AND
+      IS_GOOD(c.small_cls, c.medium_cls, c.large_cls)) as cwv_ok,
     c.p75_lcp,
     c.p75_cls,
     c.p75_inp,
-    (c.p75_lcp <= 2500 AND c.p75_inp <= 200 AND c.p75_cls <= 0.100) as cwv_ok,
-    c.p75_ttfb,
     
     -- Calculate Total_Score as the sum of Cache_Score, TTFB_Score, SSG_Score, and paas_score, minus dynamic penalties
     (
@@ -214,6 +221,8 @@ SELECT
 FROM 
   total_sites
 GROUP BY
-  date, client, is_jamstack
+  date, 
+  client, 
+  is_jamstack
 ORDER BY
   date ASC
