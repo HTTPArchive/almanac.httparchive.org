@@ -222,26 +222,43 @@ Based on the SWD V4 model, carbon emissions for web pages in 2024 are as follows
   sql_file=""
 ) }}
 
-Even if the results are quite similar to those from 2022, we notice a slight increase in carbon emissions, which is even more significant for the 75 and 90 percentile. This is bad news as we should focus on reducing all our carbon emissions. This is not surprising since page weight has been globally on the rise for many years. More on this in the Page Weight chapter. The goal of the Sustainability chapter is precisely to raise awareness on this but also to provide recommendations to improve things. 
+Even if the results are quite similar to those from 2022, we notice a slight increase in carbon emissions, which is even more significant for the 75 and 90 percentile. This is bad news as we should focus on reducing all our carbon emissions. This is not surprising since page weight has been globally on the rise for many years. More on this in the <a hreflang="fr" href="https://almanac.httparchive.org/en/2024/page-weight">Page Weight chapter</a>. The goal of the Sustainability chapter is precisely to raise awareness on this but also to provide recommendations to improve things. 
 
-We can also take a look at the share of emissions for different resources (HTML/JS/CSS/images/fonts), distinguishing mobile and desktop: 
+We can also take a look at the share of emissions for different resources (HTML/JS/CSS/images/fonts), distinguishing mobile and desktop:
 
+{{ figure_markup(
+  image="emissions-by-percentile-by-type-desktop.png",
+  caption="Emissions by percentile by type for 2024 (desktop)",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1793089209&format=interactive",
+  sheets_gid="1113829605",
+  sql_file=""
+) }}
+
+{{ figure_markup(
+  image="emissions-by-percentile-by-type-mobile.png",
+  caption="Emissions by percentile by type for 2024 (mobile)",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=89199497&format=interactive",
+  sheets_gid="1113829605",
+  sql_file=""
+) }}
 
 This looks quite similar to what we found in 2022, leading to the same conclusions. We should however insist on the fact that images are usually easier to process than JS and CSS. Here, JS is a major offender regarding transferred data but is usually quite impactful on memory, CPU, and GPU, which then leads to additional environmental impacts that are not yet considered in the SWD model. For instance, soliciting more CPU/GPU/memory could have an impact on the battery discharge of your smartphone, thus forcing you to change the battery or device sooner than expected and possibly making the website less performant on older devices.
   
 #### Some “meta” considerations
 Somewhere along writing this chapter, someone in the team wondered what would be the total carbon emissions related to the HTTP Archive monthly crawl. Each month, data is collected from millions of web pages to monitor the state of the web. For instance, the Web Almanac is based on this data. 
-Find more about the methodology.
+Find more about <a hreflang="fr" href="https://almanac.httparchive.org/en/2024/methodology">the methodology</a>.
 
-Read other reports from the HTTP Archive.
+Read <a hreflang="fr" href="https://httparchive.org/reports">other reports from the HTTP Archive</a>.
 
-We ran a query on the data collected for the 2024 Web Almanac and found that the total amount of transferred data would be around 201,66 TB. Using the SWD model, this would amount to 27,7 T CO2. Based on a CO2 converter, this is approximately as many carbon emissions as a thermal car driving for 127 298 km (going around the Earth for more than 3 times) or manufacturing 323 smartphones. 
+We ran a query on the data collected for the 2024 Web Almanac and found that the total amount of transferred data would be around 201,66 TB. Using the SWD model, this would amount to 27,7 T CO2. Based on <a hreflang="fr" href="https://impactco2.fr/outils/comparateur">a CO2 converter</a>, this is approximately as many carbon emissions as a thermal car driving for 127 298 km (going around the Earth for more than 3 times) or manufacturing 323 smartphones. 
 Things only add up when considering this crawl is done monthly. 
 
 But you should also keep in mind that: 
-This is a necessity to have updated data.
-Some of these pages gather millions of visits each month.
-That does not prevent us from thinking about ways to reduce these impacts (and I hope that will be considered soon).
+* This is a necessity to have updated data.
+* Some of these pages gather millions of visits each month.
+* That does not prevent us from thinking about ways to reduce these impacts (and I hope that will be considered soon).
   
 #### Going further
 
@@ -250,20 +267,44 @@ It should be noted that while many assume sustainability to be a task primarily 
 Carbon emissions can ultimately be measured through the amount of energy (electricity) consumed through the act of processing actions (such as how many objects are rendered to the screen and the energy intensity of CPU, GPU, and RAM required for this activity), and as such, it can be more easily calculated, and any reductions made where beneficial. However, other natural resources are consumed by Internet infrastructure or devices connected to the web such as water (for cooling equipment), materials and chemicals (e.g. printing), and e-waste (old devices being thrown away). The sustainability impact of these issues must also be accounted for in the lifecycle chain of a product or service.
 
 For further information, refer to:
-The WSGs 1.0 - SC 4.1 and 5.5.
+* The WSGs 1.0 - SC 4.1 and 5.5.
 
 ### Number of requests
 Requests are generated whenever a file is needed to load a page, providing insight into the page's impact on the network and servers. They are even used to calculate environmental impact. Analyzing these requests helps us uncover opportunities for optimization, which will be valuable as we explore different types of assets and external requests.
 
 It's essential to minimize the number of requests. Setting an initial cap of 25 is a positive step, but it's often challenging to meet this target due to the presence of trackers and similar elements.
 
-
+{{ figure_markup(
+  image="number-of-requests-by-percentile.png",
+  caption="Number of requests by percentile",
+  description="A column chat showing that on the 90th percentile there are 182 requests per page on desktop and 177 requests on mobile. On the 75th percentile there are 120 requests on desktop and 114 on mobile. On the 50th percentile it drops at 74 requests on desktop and 70 on mobile. On the 25th percentile there are 43 requests on desktop and 40 on mobile. Finally on the 10th percentile we see a total of 23 requests on desktop and 21 on mobile.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1890346358&format=interactive",
+  sheets_gid="495251827",
+  sql_file=""
+) }}
 
 From the extracted data, we can see that the number of requests is quite similar for mobile and desktop pages, which is not ideal. To respect mobile networks as well as plan limitations, it would be great to see fewer resources being loaded on mobile, which would result in fewer requests.
 The amount of requests, in general, is quite high, so let’s see what resources these requests are calling for.
 
+{{ figure_markup(
+  image="number-of-requests-by-percentile-and-type-mobile.png",
+  caption="Number of requests per percentile and resource type (mobile)",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1059345541&format=interactive",
+  sheets_gid="495251827",
+  sql_file=""
+) }}
 
 The not-so-nice surprise here is that most of the requests, around 70 in the 90th percentile, are retrieving JS files, followed by over 50 for images. We can see that the pattern repeats itself across all the percentiles. This is very interesting since, in the report from 2022, the number of requests retrieving images was bigger than the ones retrieving JS. The follow-up question is whether the change in the number of requests also impacts the size of the retrieved assets. So, let’s check that. 
+
+{{ figure_markup(
+  image="kilobytes-by-percentile-by-type-mobile-.png",
+  caption="Kilobytes by percentile by type (mobile)",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=426612772&format=interactive",
+  sheets_gid="123069751",
+  sql_file=""
+) }}
 
 
 The size of retrieved Images is almost double the size of retrieved JavaScript in the 90th percentile, so the “old” pattern is still there. This leads us to the conclusion that sites are loading fewer images but slightly heavier and, in general, more JavaScript, which is not a good trend since that leads to the need for more processing power and can exclude users with aging devices from accessing sites.
