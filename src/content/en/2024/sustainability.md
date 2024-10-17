@@ -8,6 +8,7 @@ editors: [cqueern]
 analysts: [Falafelqueen, burakguneli, mgifford]
 translators: []
 results: https://docs.google.com/spreadsheets/d/1E6wPVck2-5NDUpFKWjbJXKJKNx0E9fWwIdeM9hUKl8c/edit#gid=806519964
+AlexDawsonUK_bio: Alexander Dawson is a Web Developer, Sustainability Researcher, and editor of the <a href="https://w3c.github.io/sustyweb/">Web Sustainability Guidelines</a>. You can find more details about him at <a href="https://alexanderdawson.com/">alexanderdawson.com</a>.
 featured_quote:
 featured_stat_1:
 featured_stat_label_1:
@@ -34,38 +35,38 @@ But first, here’s a quick recap of what happened in the sustainability field s
 
 ### What’s new in web sustainability?
 Since 2022, we have seen a steep increase in awareness of web sustainability. Along the way, a lot has happened.
-The Software Carbon Intensity (SCI) Specification has become an ISO standard. Based on the rate of carbon emissions, this specification is a way to track the environmental efficiency of a digital service. This could be a good starting point. However, it could be important to go further through additional ecological factors (depletion of abiotic resources, water usage, etc) and consider all steps of the lifecycle of a project to reach for frugality and moderation. 
-This quest for efficiency saw some other achievements such as carbon-aware code and major cloud providers aiming for a reduction of their environmental impacts, mostly based on carbon emissions. Sustainability also met some drawbacks because of the rise of artificial intelligence, which in itself gets massive media coverage but not necessarily for its environmental impacts. This emergence hindered the efforts of some major cloud providers to reach for the reduction of environmental impacts. This helps illustrate that efficiency is not enough and frugality should be our top priority. It also highlights that widely adopting new technologies without considering their environmental (and social) impacts should be avoided.
+The <a hreflang="en" href="https://sci.greensoftware.foundation/">Software Carbon Intensity (SCI) Specification</a> has become an <a hreflang="en" href="https://greensoftware.foundation/articles/sci-specification-achieves-iso-standard-status">ISO standard</a>. Based on the rate of carbon emissions, this specification is a way to track the environmental efficiency of a digital service. This could be a good starting point. However, it could be important to go further through additional ecological factors (depletion of abiotic resources, water usage, etc) and consider all steps of the lifecycle of a project to reach for frugality and moderation. 
+This quest for efficiency saw some other achievements such as <a hreflang="en" href="https://hackernoon.com/carbon-aware-computing-next-green-breakthrough-or-new-greenwashing">carbon-aware code</a> and major cloud providers aiming for a reduction of their environmental impacts, mostly based on carbon emissions. Sustainability also <a hreflang="en" href="https://thenewstack.io/sustainability-how-did-amazon-azure-google-perform-in-2023/">met some drawbacks</a> because of the rise of artificial intelligence, which in itself gets massive media coverage but not necessarily for its environmental impacts. This emergence hindered the efforts of some major cloud providers to reach for the reduction of environmental impacts. This helps illustrate that efficiency is not enough and frugality should be our top priority. It also highlights that widely adopting new technologies without considering their environmental (and social) impacts should be avoided.
 This is where we should mention new repositories for best practices:
-The W3C (World Wide Web Consortium) Sustainable Web Community Group published the Web Sustainability Guidelines (WSG) 1.0 These offer a higher perspective on web sustainability and should help teams adopt sustainability on a larger scale (more on this later in this chapter).
-France institutions also released the General policy framework for the ecodesign of digital services. The purpose here is to offer a framework for sustainable digital services and to aim for a wider adoption of these best practices. 
-An ISO standard for Digital Services Ecodesign is also on the way. 
+* The W3C (World Wide Web Consortium) Sustainable Web Community Group published the <a hreflang="en" href="https://w3c.github.io/sustyweb/">Web Sustainability Guidelines (WSG) 1.0</a>. These offer a higher perspective on web sustainability and should help teams adopt sustainability on a larger scale (more on this later in this chapter).
+* France institutions also released the <a hreflang="en" href="https://en.arcep.fr/news/press-releases/view/n/environment-rgesn-170524.html">General policy framework for the ecodesign of digital services</a>. The purpose here is to offer a framework for sustainable digital services and to aim for a wider adoption of these best practices. 
+* <a hreflang="en" href="https://www.iso.org/standard/86105.html">An ISO standard for Digital Services Ecodesign</a> is also on the way. 
 
-More and more books are also being published, such as Building Green Software by Anne Currie. 
+More and more <a hreflang="en" href="https://w3c.github.io/sustyweb/intro.html#books">books</a> are also being published, such as <a hreflang="en" href="https://www.oreilly.com/library/view/building-green-software/9781098150617/">Building Green Software</a> by Anne Currie. 
 
-In addition to this, tools for estimating the environmental impacts of the web are still evolving and new ones keep appearing. Some existing tools (such as Screaming Frog SEO and Webpagetest) are adding features to estimate environmental impacts. As such, the Sustainable Web Design Model is often used. However, accurately estimating impacts is still an important topic and no consensus has been reached yet. As is often the case with environmental considerations, the topic remains complex.
+In addition to this, tools for estimating the environmental impacts of the web are still evolving and new ones keep appearing. Some existing tools (such as Screaming Frog SEO and Webpagetest) are adding features to estimate environmental impacts. As such, the <a hreflang="en" href="https://sustainablewebdesign.org/estimating-digital-emissions/">Sustainable Web Design Model</a> is often used. However, accurately estimating impacts is still an important topic and no consensus has been reached yet. As is often the case with environmental considerations, the topic remains complex.
 
-To give more context to all these breakthroughs, more general studies about the environmental impacts of digital should be conducted worldwide, as is already the case in France. Such a large perspective would help estimate the benefits of all the ongoing efforts but also give insights on where more focus is needed.
+To give more context to all these breakthroughs, more general studies about the environmental impacts of digital should be conducted worldwide, <a hreflang="en" href="https://en.arcep.fr/news/press-releases/view/n/the-environement-210324.html">as is already the case in France</a>. Such a large perspective would help estimate the benefits of all the ongoing efforts but also give insights on where more focus is needed.
 
 ### Limitations and hypothesis
 There are many ways to assess environmental impacts, but there are a few things to keep in mind: 
-Most free tools only rely on transferred data, the number of HTTP requests, and DOM size. This is insufficient to capture the overconsumption related to animations, heavy calculations (especially using JS) but also benefits from dark mode. To achieve this, other metrics are needed, such as CPU/GPU, Energy, and RAM/memory usage should be measured. 
-Tools usually stick to page loading and sometimes scrolling. This is not always relevant to real usage and often misses some obvious things, such as accepting cookies, client-side cache, playing videos, etc. Real user journeys should be measured, based on analytics and user feedback.
-GHG is often used as a proxy for environmental impacts, but this is not enough. To avoid impact transfers and greenwashing, other indicators should be used, as stated by the ADEME (PDF, French, 980 kB).
+* Most free tools only rely on transferred data, the number of HTTP requests, and DOM size. This is insufficient to capture the overconsumption related to animations, heavy calculations (especially using JS) but also benefits from dark mode. To achieve this, other metrics are needed, such as CPU/GPU, Energy, and RAM/memory usage should be measured. 
+* Tools usually stick to page loading and sometimes scrolling. This is not always relevant to real usage and often misses some obvious things, such as accepting cookies, client-side cache, playing videos, etc. Real user journeys should be measured, based on analytics and user feedback.
+* GHG is often used as a proxy for environmental impacts, but this is not enough. To avoid impact transfers and greenwashing, other indicators should be used, as <a hreflang="en" href="https://librairie.ademe.fr/ged/7595/R__f__rentiel_rcp_services_num__riques.pdf">stated by the ADEME</a> (PDF, French, 980 kB).
 
-These notions are detailed in this article about the environmental impacts of web elements: https://greenspector.com/en/reduce-the-weight-of-a-web-page-which-elements-have-the-greatest-impact/ 
+These notions are detailed in this article about the environmental impacts of web elements: <a hreflang="en" href="https://greenspector.com/en/reduce-the-weight-of-a-web-page-which-elements-have-the-greatest-impact/">https://greenspector.com/en/reduce-the-weight-of-a-web-page-which-elements-have-the-greatest-impact/ </a>
 
-Embedded environmental impact needs to be factored into our calculations. The web should not require users to update their devices every 2-3 years. We need to ensure that the lifespans of our digital infrastructure are extended.
+*Embedded environmental impact needs to be factored into our calculations. The web should not require users to update their devices every 2-3 years. We need to ensure that the lifespans of our digital infrastructure are extended.*
 
 ### Intersectional environmental issues
-Sustainability ultimately involves people, as the planet will ultimately take care of itself. Building a just society that supports the needs of its people within the boundaries of its population is key. Throughout our lives, all of us require accommodation. Our ability to navigate the physical and digital world changes, and a sustainable economy supports that. One in five people has a permanent disability, and everyone will have both temporary and situational disabilities throughout their life. For more on this, you should read the Accessibility chapter.
+Sustainability ultimately involves people, as the planet will ultimately take care of itself. Building a just society that supports the needs of its people within the boundaries of its population is key. Throughout our lives, all of us require accommodation. Our ability to navigate the physical and digital world changes, and a sustainable economy supports that. One in five people has a permanent disability, and everyone will have both temporary and situational disabilities throughout their life. For more on this, you should read <a hreflang="en" href="https://almanac.httparchive.org/en/2024/accessibility">the Accessibility chapter</a>.
 
 In building sustainable digital interfaces, we must consider the user, including those with disabilities.  Sustainable digital interfaces allow users to quickly navigate to accomplish their tasks. An inaccessible interface may ultimately require a user to take a less sustainable path to accomplish their goals. 
 
 Similarly, one must consider human diversity. Race, class, gender, and sexual identity have been used to divide people. A sustainable web should promote climate justice. 
 
 For further information, refer to:
-The WSGs 1.0 - SC 3.5.
+* The WSGs 1.0 - SC 3.5.
 
 
 ### Legal obligations and reporting standards
@@ -104,69 +105,92 @@ The benefits of adopting sustainable practices from the offset extend beyond mer
 Organizations are beginning to add a /sustainability page to the footer of their webpage to allow them to report on their CO2 emissions as well as describe what they are doing to reduce emissions for their digital services.
 
 For further information on specific regulations and standards, refer to:
-
-WSG: Web Sustainability Laws & Policies
-WSG: Draft Sustainable Tooling And Reporting (STAR) 1.0
-GRI: Global Reporting Initiative
-GR491, The Handbook of sustainable design of digital services | ISIT
-Apolitical: Keeping tech sustainable 
+* <a hreflang="en" href="https://w3c.github.io/sustyweb/policies.html">WSG: Web Sustainability Laws & Policies</a>
+* <a hreflang="en" href="https://w3c.github.io/sustyweb/star.html">WSG: Draft Sustainable Tooling And Reporting (STAR) 1.0</a>
+* <a hreflang="en" href="https://www.globalreporting.org/how-to-use-the-gri-standards/gri-standards-english-language/">GRI: Global Reporting Initiative</a>
+* <a hreflang="en" href="https://gr491.isit-europe.org/en/">GR491, The Handbook of sustainable design of digital services | ISIT</a>
+* <a hreflang="en" href="https://apolitical.co/solution-articles/en/keeping-tech-sustainable">Apolitical: Keeping tech sustainable</a>
 
 ## Evaluating the environmental impact of websites
-Include some state-of-the-art environmental assessment tools, and mention SCI (and related ISO conformance).
 Evaluating the environmental impact of a website is everything but an easy task. It usually involves assessing the energy consumption and carbon footprint associated with its operation, from the servers that host it to the devices that access it. This evaluation considers various factors, including the efficiency of the hosting infrastructure, the amount of data transferred during page loads, the use of renewable versus non-renewable energy by data centers, and the overall optimization of the website’s code and assets. Websites that are heavy in images, videos, and other large files require more energy to load and transmit, contributing to higher carbon emissions. By understanding and optimizing these elements, website owners can reduce their digital carbon footprint, contributing to a more sustainable web and helping to minimize their environmental impact.
 
-It is very important to keep in mind that there is still no available tool that would allow for precise measurement of every single part of the system, allowing for a nice overall sum. Therefore, we can measure isolated parts of the systems our teams work on or resources to the use of the models that allow us to do an estimation based on specific inputs. One model that is currently used in many different website carbon calculators and is being worked on and improved is the Sustainable Web Design Model. This model can be a slightly controversial way of estimating, as well as any currently out there. However, it has been present for a while, allowing comparison over time, and simplifying this complex process allows for better understanding and, hopefully, recognition of the problem itself.
+It is very important to keep in mind that there is still no available tool that would allow for precise measurement of every single part of the system, allowing for a nice overall sum. Therefore, we can measure isolated parts of the systems our teams work on or resources to the use of the models that allow us to do an estimation based on specific inputs. One model that is currently used in many different website carbon calculators and is being worked on and improved is the <a hreflang="en" href="https://sustainablewebdesign.org/estimating-digital-emissions/">Sustainable Web Design Model</a>. This model can be a slightly controversial way of estimating, as well as any currently out there. However, it has been present for a while, allowing comparison over time, and simplifying this complex process allows for better understanding and, hopefully, recognition of the problem itself.
 
 Usually, we talk about CO2 but it would be more accurate to talk about eqCO2 or CO2e: values equivalent to CO2 emissions but rather applies to all kinds of greenhouse gasses (GHG). Also, other environmental impacts should be considered (as is the case in Life Cycle Assessment for instance) to avoid impact transfers (e.g. when reducing GHG emissions proves detrimental to water consumption) and debatable claims such as “carbon neutrality”.
 
 For further information, refer to:
-The WSGs 1.0 - SC 2.1, 2.25, and 5.5.
+* The WSGs 1.0 - SC 2.1, 2.25, and 5.5.
 
 ### A quick note on assessing environmental impacts
 The queries from last year have been updated to reflect the new data structure. For most, there has been no effective difference in the results.
 
-The update of the CO2 emissions calculations is reflected in the global page, SSG, CMS, and e-commerce emissions calculation. We have updated the calculations to the version 4 model of emissions calculation based on https://sustainablewebdesign.org/estimating-digital-emissions/ 
+The update of the CO2 emissions calculations is reflected in the global page, SSG, CMS, and e-commerce emissions calculation. We have updated the calculations to the version 4 model of emissions calculation based on <a hreflang="en" href="https://sustainablewebdesign.org/estimating-digital-emissions/">https://sustainablewebdesign.org/estimating-digital-emissions/</a> 
 
 Main differences:
-The global carbon intensity has changed from 442g/kWh to 494g/kWh.
-Previously the website CO2 per visit was a ‘simple’ equation considering the page weight (data transferred in GB), multiplied by the estimated energy usage of loading one GB (0,81) and multiplying it with the carbon intensity.
-In the updated formula segments the energy consumption by data centers, network, and energy consumed by user devices for greater insight.
-Each system segment is further broken down into two categories — operational and embodied emissions. 
-Operational: The emissions attributed to the use of the devices in a segment.
-Embodied: The emissions attributed to the production of the devices in a segment.
-Each segment is attributed a certain weight in the calculation reflecting its estimated contribution to the total emissions -> for example, each segment has its estimated carbon intensity for both operation and embodied energy consumption.
-At the end, this allows us to estimate this for each segment, and then sum the totals to get the total estimated emissions.
+* The global carbon intensity has changed from 442g/kWh to 494g/kWh.
+* Previously the website CO2 per visit was a ‘simple’ equation considering the page weight (data transferred in GB), multiplied by the estimated energy usage of loading one GB (0,81) and multiplying it with the carbon intensity.
+* In the updated formula segments the energy consumption by data centers, network, and energy consumed by user devices for greater insight.
+* Each system segment is further broken down into two categories — operational and embodied emissions. 
+    * <ins>Operational:</ins> The emissions attributed to the use of the devices in a segment.
+    * <ins>Embodied:</ins> The emissions attributed to the production of the devices in a segment.
+* Each segment is attributed a certain weight in the calculation reflecting its estimated contribution to the total emissions -> for example, each segment has its estimated carbon intensity for both operation and embodied energy consumption.
+* At the end, this allows us to estimate this for each segment, and then sum the totals to get the total estimated emissions.
 
 
 ### Page weight
 The Sustainable Web Design Model uses data transfer as a proxy. While we can debate whether this input gives us an accurate carbon emission estimate, it's clear that the increasing bloat of websites over the years is contributing to the problem. More data needs more servers to store them, more energy to deliver them, and more processing power to display them on-screen to end users. Over the years, there has been a visible upward trend, so let’s look at that data for 2024.
 
+{{ figure_markup(
+  image="number-of-kb-by-percentile.png",
+  caption="Number of kilobytes by percentile",
+  description="A column chart showing that on the 90th percentile web pages weight nearly 8 MB on desktop and right above 7 MB on mobile. On the 75th percentile the web pages get over 4 MB on desktop and around 3.5 MB on mobile, on the 50th percentile we found web pages weight a bit more than 2.5 MB on desktop and a bit less than 2 MB on mobile, on the 25th percentile it's over 1 MB on desktop and a bit less than 1 MB on mobile. Finally, on the 10th percentile we see pages weight a bit more than 0.5 MB on desktop and a bit less than 0.5 MB on mobile.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=188541594&format=interactive",
+  sheets_gid="997244814",
+  sql_file=""
+) }}
 
 
-Page weight represents the amount of data transferred to access the web page (based only on HTTP requests). It is recommended that this metric be kept as low as possible to ensure a fast load and good user experience for all users. On the 90th percentile, the average mobile site weighs around 7.2 MB, while desktop ones are around 8 MB. The good news is that these numbers are slightly lower than the ones in the 2022 Almanac. The bad news is that these numbers are still way too high. When we talk about sustainability, we usually touch upon inclusion, and to make sure the majority of Internet users can access the page and have a decent user experience, page weight should be kept below 1MB, ideally around 500KB.
+Page weight represents the amount of data transferred to access the web page (based only on HTTP requests). It is recommended that this metric be kept as low as possible to ensure a fast load and good user experience for all users. On the 90th percentile, the average mobile site weighs around 7.2 MB, while desktop ones are around 8 MB. The good news is that these numbers are slightly lower than the ones in <a hreflang="en" href="https://almanac.httparchive.org/en/2022/sustainability#page-weight">the 2022 Almanac</a>. The bad news is that these numbers are still way too high. When we talk about sustainability, we usually touch upon inclusion, and to make sure the majority of Internet users can access the page and have a decent user experience, <a hreflang="en" href="https://infrequently.org/2021/03/the-performance-inequality-gap/">page weight should be kept below 1MB, ideally around 500KB</a>.
 
 It is also important to emphasize that these numbers are coming for a so-called lab test, meaning that pages were accessed via script and not real users. With many websites these days implementing lazy loading strategies (request and load assets once they are needed, through native lazy-loading for images and iframes or progressive hydration for dynamic components), as well as loading and processing extra scripts once the user has given consent for it (and the script does not include any user interaction emulation), average page weight is sure to be an even bigger number.
 
 For further information, refer to:
-The WSGs 1.0 - SC 2.6 and 5.27.
+* The WSGs 1.0 - SC 2.6 and 5.27.
 
 #### Weight by content type
 With data showing that an average page weighs around 8MB, the next logical question is where all those kilobytes are coming from. Modern pages are composed of many different pieces, including basic building blocks such as HTML, CSS, and JS, as well as fonts and images to enhance visual presentation.
 
+{{ figure_markup(
+  image="kilobytes-per-type.png",
+  caption="Kilobytes per type",
+  description="A column chart showing for the 90th percentile that HTML weighs 146.45 kB on desktop, 145.40 on mobile. CSS weighs 268.78 kB on desktop, 260.40 on mobile. Fonts weigh 458.36 kB on desktop, 399.33 on mobile. JS weighs 1,834.30 kB on desktop, 1,732.17 on mobile. Images weigh 4,910.37 kB on desktop, 4,436.10 on mobile.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=296763237&format=interactive",
+  sheets_gid="123069751",
+  sql_file=""
+) }}
+
+{{ figure_markup(
+  image="kilobytes-by-percentile-by-type-mobile.png",
+  caption="Kilobytes by percentile by type (mobile)",
+  description="A column chart showing the Kilobytes per byte by percentile for mobile. The division per type remains roughly the same for each percentile but the weight of each increases with the percentiles. For the 10th percentile on mobile, HTML weighs 5.87 kB, JS 88.81 kB, CSS 7.55 kB, Images 42.71 kB and fonts 0 kB.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=426612772&format=interactive",
+  sheets_gid="123069751",
+  sql_file=""
+) }}
 
 
 From the 90th percentile of collected data, it is clear that the largest portion, more than half of the page's total weight, belongs to images. This is quite an expected result and one of the parts where small optimizations can have the biggest impact. Slightly surprising and worrying is that there is still a very small gap between desktop and mobile numbers, not only in images but across all types. This shows us that even though mobile-first became a concept over 15 years ago, most teams still don’t optimize their mobile sites to account for the limitations of mobile networks, phone plans, and smaller screens (for which smaller images are usually enough). In the end, it may look mobile-friendly, but the experience isn’t.
 
-It is also not surprising that the second largest portion is JavaScript code. Modern frameworks, dependencies, packages, as well as legacy code easily accumulate a larger amount of JavaScript code. The biggest problem is that script processing is part of the page loading that needs the most power from the CPU and consumes the most energy. Also, security should be a concern, check the Security chapter for more on this.
+It is also not surprising that the second largest portion is JavaScript code. Modern frameworks, dependencies, packages, as well as legacy code easily accumulate a larger amount of JavaScript code. The biggest problem is that script processing is part of the page loading that needs the most power from the CPU and consumes the most energy. Also, security should be a concern, check the <a hreflang="en" href="https://almanac.httparchive.org/en/2024/security">Security chapter</a> for more on this.
 
 Compared to images and JavaScript, the weight of CSS doesn’t look too large. However, the important question covered later in the chapter is how much of this code, both CSS and JS, is actually being used. In addition to these considerations, the processing cost of such code should be considered (CPU/Memory usage).
 
-The size of font files may look reasonable if we consider that a typical custom font file can be over 200 KB. This size, though, can be brought down significantly by subsetting font files to only characters that are needed for the site content. The median font file with an English-only subset of characters should be around 12 KB, which is 6% of the original 200 KB and could bring us closer to having a great-looking page that is below 1 MB. 
+The size of font files may look reasonable if we consider that <a hreflang="en" href="https://sustainablewebdesign.org/has-the-design-used-the-minimum-number-of-custom-fonts/">a typical custom font file can be over 200 KB</a>. This size, though, can be brought down significantly by subsetting font files to only characters that are needed for the site content. The median font file with an English-only subset of characters should be around <a hreflang="en" href="https://www.phpied.com/bytes-normal-web-font-study-google-fonts/">12 KB</a>, which is 6% of the original 200 KB and could bring us closer to having a great-looking page that is below 1 MB. 
 
-More about this topic can be found in the Fonts and Page Weight Chapter.
+More about this topic can be found in the <a hreflang="en" href="https://almanac.httparchive.org/en/2024/fonts">Fonts</a> and <a hreflang="en" href="https://almanac.httparchive.org/en/2024/page-weight">Page Weight</a> Chapter.
 
 For further information, refer to:
-The WSGs 1.0 - SC 2.6 and 5.27.
+* The WSGs 1.0 - SC 2.6 and 5.27.
   
 ### Carbon emissions
 As stated above, back in 2022, we used the Sustainable Web Design (SWD) model to estimate carbon emissions based on page weight. As we explained many times, this is inaccurate but constantly improving. As such a new version of the model was recently published. This has a considerable impact on the results so we decided to recalculate emissions from the 2022 data before proceeding with the 2024 data. 
@@ -175,10 +199,28 @@ In both cases, we exclude data from the 100 percentile, which is some kind of �
 #### Emissions for 2022
 Based on the V4 of the SWD model, we get these global results for emissions: 
 
-If you take a look at the results from the 2022 Sustainability chapter, you’ll notice that these new estimations are slightly lower. This is why we recalculated them. Otherwise, we could have been led to think that emissions from web pages diminished significantly between 2022 and 2024 (spoiler: this is not the case). With this in mind, we can now look at the data for 2024.
+{{ figure_markup(
+  image="carbon-emissions-by-percentile-2022.png",
+  caption="Carbon emissions (g) by percentile for 2022",
+  description="A column chart showing that on the 90th percentile, desktop web pages emit 1.29g of carbon and mobile pages emit 1.14g of carbon, on the 75th percentile desktop pages emit 0.66g of carbon and mobile pages emit 0.57g of carbon. On the 50th percentile it goes 0.33g of carbon on desktop and 0.29 on mobile. On the 25th percentile it's 0.16g of carbon for desktop pages and 0.14g of carbon on mobile pages. Lastly, on the 10th percentile desktop pages emit 0.08g of carbon and mobile pages emit 0.06g of carbon.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=188699126&format=interactive",
+  sheets_gid="1113829605",
+  sql_file=""
+) }}
+
+If you take a look at the results from the <a hreflang="fr" href="https://almanac.httparchive.org/en/2022/sustainability#carbon-emissions">2022 Sustainability chapter</a>, you’ll notice that these new estimations are slightly lower. This is why we recalculated them. Otherwise, we could have been led to think that emissions from web pages diminished significantly between 2022 and 2024 (spoiler: this is not the case). With this in mind, we can now look at the data for 2024.
   
 #### Emissions for 2024
 Based on the SWD V4 model, carbon emissions for web pages in 2024 are as follows: 
+
+{{ figure_markup(
+  image="carbon-emissions-by-percentile-2024.png",
+  caption="Carbon emissions (g) by percentile for 2024",
+  description="A column chart showing that on the 90th percentile, desktop web pages emit 1.47g of carbon and mobile pages emit 1.36g of carbon, on the 75th percentile desktop pages emit 0.74g of carbon and mobile pages emit 0.66g of carbon. On the 50th percentile it goes 0.37g of carbon on desktop and 0.33 on mobile. On the 25th percentile it's 0.19g of carbon for desktop pages and 0.0.16g of carbon on mobile pages. Lastly, on the 10th percentile desktop pages emit 0.08g of carbon and mobile pages emit 0.07g of carbon.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=70239542&format=interactive",
+  sheets_gid="1113829605",
+  sql_file=""
+) }}
 
 Even if the results are quite similar to those from 2022, we notice a slight increase in carbon emissions, which is even more significant for the 75 and 90 percentile. This is bad news as we should focus on reducing all our carbon emissions. This is not surprising since page weight has been globally on the rise for many years. More on this in the Page Weight chapter. The goal of the Sustainability chapter is precisely to raise awareness on this but also to provide recommendations to improve things. 
 
