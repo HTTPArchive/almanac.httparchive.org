@@ -1023,46 +1023,131 @@ With digital sustainability, scaling is what matters most. A byte here or there 
 
 The accompanying charts present the median page weight across the top five most popular eCommerce platforms, CMS tools, and site generator tools. These comparisons are to highlight the collective impact of the tools we use. 
 
-
-
+{{ figure_markup(
+  image="median-kilobytes-by-cms.png",
+  caption="Median kB by CMS",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1792712710&format=interactive",
+  sheets_gid="790675238",
+  sql_file=""
+) }}
 
 Notably, all report a median mobile page weight above the overall median of 2 MB. Comparing these values to their 2022 median size demonstrates that most websites built with each CMS are heavier than they were 2 years ago, which confirms a tendency that we noticed on global emissions for all pages. The more significant growth is for Squarespace websites on desktop and Drupal still seems to fare better than others (even if there is room for improvement).
-
 
 Another point of interest across the segments is a noticeable difference in page size between desktop and mobile versions, which often stems from enhanced image optimization on mobile platforms. For instance, within the CMS segment, Wix and Squarespace display a substantial discrepancy in page size between desktop and mobile versions compared to other leading platforms.
 
 As noted above, the model we use for calculating carbon emissions changed between 2022 and 2024. Based on SWD model V4, we recalculated emissions based on 2022 data for more relevant comparison with 2024 data. Here are both : 
 
+{{ figure_markup(
+  image="median-emissions-by-cms-2024.png",
+  caption="Median emissions by CMS - 2024",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=654101809&format=interactive",
+  sheets_gid="790675238",
+  sql_file=""
+) }}
 
 For comparison reasons, here are the emissions data from 2022, calculated with the SWD V4 model : 
 
+{{ figure_markup(
+  image="median-emissions-by-cms-2022.png",
+  caption="Median emissions by CMS - 2022",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1732727443&format=interactive",
+  sheets_gid="1972006215",
+  sql_file=""
+) }}
 
 The 2024 scan included around 5 million instances of WordPress, 500,000 instances of Wix, 250,000 instances of Squarespace, 250,000 instances of Joomla, and 200,000 instances of Drupal. That’s over 6 million unique instances of these five CMS. So, even just generating this report does have a measurable climate impact. 
 
 The average of the median emissions in the chart above is about 0.3 grams of carbon. To run these queries on seven million URLs would produce about 2125 kg of CO2. That’s just from sampling the top five CMS. We know that this is just a small sampling of the CO2 produced through the use of these websites. 
 
+{{ figure_markup(
+  image="median-kilobytes-by-cms-and-resource-type.png",
+  caption="Median kB by CMS and resource type",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1162097291&format=interactive",
+  sheets_gid="790675238",
+  sql_file=""
+) }}
+
 Note : in diagrams displaying resource types, we only take into account HTML+Javascript+CSS+Images+Fonts, omitting other requests such as video, audio and some “unidentified” 3rd-party services.
 
 Of the five CMS, it is good to see that image sizes went down across the board. Squarespace is still the biggest with an average of 1.3 Mb of images on mobile devices. It is unfortunate to see JavaScript generally increase. Wix now has the largest JavaScript footprint in 2024 at 1.3 Mb. With most of the CMS, HTML is the smallest resource type. The charts above show that Wix seems to implement significantly more aggressive image optimizations on their platform. 
 
+{{ figure_markup(
+  image="median-emissions-by-cms-and-resource-type.png",
+  caption="Median emissions by CMS and resource type",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1895711546&format=interactive",
+  sheets_gid="790675238",
+  sql_file=""
+) }}
 
-It is useful to break down this information between resource types because it also indicates where there is waste. From a CO2 perspective, it is hard to beat a simple and static HTML/CSS website. We are expecting richer, more interactive, and visual content on the web, but it wasn’t always this way.  Web fonts became a part of the web only in 2009. In 2024 they are pretty much expected, seeing just how much custom fonts have become part of CMS implementations. The sites may look a bit more unique, but it comes at the cost of web performance and of course sustainability. 
+It is useful to break down this information between resource types because it also indicates where there is waste. From a CO2 perspective, it is hard to beat a simple and static HTML/CSS website. We are expecting richer, more interactive, and visual content on the web, but it wasn’t always this way.  <a hreflang="en" href="https://thehistoryoftheweb.com/web-fonts/">Web fonts</a> became a part of the web only in 2009. In 2024 they are pretty much expected, seeing just how much custom fonts have become part of CMS implementations. The sites may look a bit more unique, but it comes at the cost of web performance and of course sustainability. 
 
-CMS also has a strong role to play in shifting the definition of quality work. Wagtail CMS is a leader in this as they have provided a release that focuses on reducing their carbon footprint. WordPress, Drupal, and Joomla have all made some sustainability initiatives. These communities can have a large impact on what is considered a good product. Through organizations like the Open Web Alliance, there may be even greater collaboration to help implement best practices.
+CMS also has a strong role to play in shifting the definition of quality work. <a hreflang="en" href="https://wagtail.org/blog/wagtail-greener-and-leaner/">Wagtail CMS is a leader</a> in this as they have provided a release that focuses on reducing their carbon footprint. <a hreflang="en" href="https://make.wordpress.org/sustainability/">WordPress</a>, <a hreflang="en" href="https://www.drupal.org/about/sustainability">Drupal</a>, and <a hreflang="en" href="https://magazine.joomla.org/all-issues/april-2024/green-websites-help-to-keep-your-feet-dry">Joomla</a> have all made some sustainability initiatives. These communities can have a large impact on what is considered a good product. Through organizations like the <a hreflang="en" href="https://www.drupal.org/association/blog/drupal-association-co-founds-the-open-website-alliance">Open Web Alliance</a>, there may be even greater collaboration to help implement best practices.
 
+{{ figure_markup(
+  image="median-kilobytes-by-ecommerce.png",
+  caption="Median kB by ecommerce",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=510790990&format=interactive",
+  sheets_gid="2021180834",
+  sql_file=""
+) }}
 
+{{ figure_markup(
+  image="median-emissions-by-ecommerce-2024.png",
+  caption="Median emissions by ecommerce - 2024",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1542686246&format=interactive",
+  sheets_gid="2021180834",
+  sql_file=""
+) }}
 
 For comparison reasons, here are the emissions data from 2022, calculated with the SWD V4 model : 
 
+{{ figure_markup(
+  image="median-emissions-by-ecommerce-2022.png",
+  caption="Median emissions by ecommerce - 2022",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1732727443&format=interactive",
+  sheets_gid="1972006215",
+  sql_file=""
+) }}
 
 It is clear comparing the ecommerce platforms with other CMS platforms, that they are substantially heavier in their page-load size and their environmental impact. Since these figures mostly relate to homepages, we can only guess that this could be due to more products or less optimized content. However, this shows that there is still room for improvement. 
-The Sustainable eCommerce Handbook could be a great starting point. In any case, you should keep in mind that most of the environmental impacts for eCommerce occur outside of websites (manufacturing, shipping, usage, and end-of-life of sold products, for instance). 
+<a hreflang="en" href="https://theecommmanager.com/sustainable-ecommerce-handbook/">The Sustainable eCommerce Handbook</a> could be a great starting point. In any case, you should keep in mind that most of the environmental impacts for eCommerce occur outside of websites (manufacturing, shipping, usage, and end-of-life of sold products, for instance). 
 
+{{ figure_markup(
+  image="median-kilobytes-by-ssg.png",
+  caption="Median kB by static site generator",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=2054864060&format=interactive",
+  sheets_gid="1941515647",
+  sql_file=""
+) }}
 
-
+{{ figure_markup(
+  image="median-emissions-by-ssg-2024.png",
+  caption="Median emissions by static site generator - 2024",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=437135521&format=interactive",
+  sheets_gid="1941515647",
+  sql_file=""
+) }}
 
 For comparison reasons, here are the emissions data from 2022, calculated with the SWD V4 model : 
 
+{{ figure_markup(
+  image="median-emissions-by-ssg-2022.png",
+  caption="Median emissions by static site generator - 2022",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1021559874&format=interactive",
+  sheets_gid="1333464158",
+  sql_file=""
+) }}
 
 It appears evident that site generators have prioritized optimization as part of their builds. Astro, Hugo, and Jekyll all have emissions substantially lower than all the CMS that have been categorized. 
 
@@ -1071,7 +1156,7 @@ These insights underscore the significant role that platforms and frameworks pla
 These exceptions belong to the static site generator category, particularly Hugo and Jekyll, which typically support sites focused on blogs and text-heavy content with minimal JavaScript usage. Static site generators are also often chosen for their performance benefits, suggesting a greater likelihood of optimization beyond the norms of standard CMS-driven sites.
 
 For further information, refer to:
-The WSGs 1.0 - SC 3.7, 3.21, and 5.28.
+* The WSGs 1.0 - SC 3.7, 3.21, and 5.28.
 
 ## Conclusion
 Sustainability is a rapidly evolving and firmly established field that will increasingly have a seat at the table for those creating products and services for the Web. As with accessibility, legislation is helping to drive the need for conformance and the benefits it can bring to both people and the planet. By considering how you create websites and applications, the ethical decisions behind design and development, taking into account industry best practices, and tackling the digital variables that can have real-world impacts, each one of us can become sustainability advocates.
