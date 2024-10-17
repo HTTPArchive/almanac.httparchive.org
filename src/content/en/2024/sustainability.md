@@ -895,13 +895,21 @@ For further information, refer to:
 Text compression is a crucial technique for reducing the size of transmitted data, playing a significant role in improving both website performance and sustainability. By compressing text-based resources such as HTML, CSS, and JavaScript before sending them over the network, we can substantially reduce data transfer and, consequently, energy consumption.
 
 Common text compression methods include:
-Gzip: Widely supported and effective for most text-based content, typically achieving 60-80% compression ratios.
-Brotli: A newer algorithm that often outperforms Gzip, especially for smaller files, with potential compression improvements of 15-25% over Gzip.
-Zopfli: A Gzip-compatible algorithm that can achieve better compression ratios but at the cost of longer compression times, making it suitable for static content.
-Zstandard (zstd) is also a serious contender that shows great performance for both compression and decoding. 
+* <a hreflang="en" href="https://www.gnu.org/software/gzip/">Gzip</a>: Widely supported and effective for most text-based content, typically achieving 60-80% compression ratios.
+* <a hreflang="en" href="https://github.com/google/brotli">Brotli</a>: A newer algorithm that often outperforms Gzip, especially for smaller files, with potential compression improvements of 15-25% over Gzip.
+* <a hreflang="en" href="https://github.com/google/zopfli">Zopfli</a>: A Gzip-compatible algorithm that can achieve better compression ratios but at the cost of longer compression times, making it suitable for static content.
+* <a hreflang="en" href="https://facebook.github.io/zstd/">Zstandard (zstd)</a> is also a serious contender that shows great performance for both compression and decoding. 
 
-More on this in this article from Paul Calvano.
+More on this in this article from <a hreflang="en" href="https://paulcalvano.com/2024-03-19-choosing-between-gzip-brotli-and-zstandard-compression/">Paul Calvano</a>.
 
+{{ figure_markup(
+  image="text-compression.png",
+  caption="Compression used on text resources",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=962026195&format=interactive",
+  sheets_gid="1229329467",
+  sql_file=""
+) }}
 
 The data shows that over half of websites are not using any form of text compression, with 53.47% of desktop sites and 51.38% of mobile sites sending uncompressed content. This represents a significant missed opportunity for reducing data transfer and, consequently, energy consumption.
 
@@ -912,34 +920,40 @@ Given that text compression can significantly reduce data transfer volumes, the 
 As we move towards a more sustainable web, text compression remains a key tool in our optimization toolkit, offering a relatively simple yet highly effective way to reduce our digital carbon footprint.
 
 For further information, refer to:
-The WSGs 1.0 - SC 4.3.
+* The WSGs 1.0 - SC 4.3.
 
 #### Caching
 Caching is a crucial technique in web optimization that significantly contributes to sustainability efforts. By reducing the need for repeated data transfers and server processing, caching plays a vital role in minimizing the energy consumption associated with web operations.
 
 From a sustainability perspective, effective caching offers several key benefits:
-Reduced Data Transfer: By storing resources closer to the user, caching dramatically decreases the amount of data transmitted over networks. This directly translates to lower energy consumption across the web infrastructure.
-Decreased Server Load: With fewer requests reaching origin servers, the overall energy usage in data centers can be significantly reduced.
-Cumulative Environmental Impact: For frequently accessed resources, the energy savings compound with each cache hit, potentially leading to substantial reductions in overall carbon footprint over time. 
+* Reduced Data Transfer: By storing resources closer to the user, caching dramatically decreases the amount of data transmitted over networks. This directly translates to lower energy consumption across the web infrastructure.
+* Decreased Server Load: With fewer requests reaching origin servers, the overall energy usage in data centers can be significantly reduced.
+* Cumulative Environmental Impact: For frequently accessed resources, the energy savings compound with each cache hit, potentially leading to substantial reductions in overall carbon footprint over time. 
 
-
+{{ figure_markup(
+  image="cache-control-header-usage.png",
+  caption="Cache control header usage",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=834455986&format=interactive",
+  sheets_gid="1192354424",
+  sql_file=""
+) }}
 
 An analysis of cache header usage between 2022 and 2024 reveals subtle shifts in caching practices:
-
-The use of both Cache-Control and Expires headers has slightly decreased, from 51% to 48.08% on desktop and 48.57% on mobile. Conversely, the use of Cache-Control only has increased from 23% to 26.65% on desktop and from 22% to 25.92% on mobile.
-The percentage of sites using neither caching header has remained relatively stable, with a marginal decrease from 25% to 24.89% on desktop and a slight decrease from 26% to 25.13% on mobile.
+* The use of both Cache-Control and Expires headers has slightly decreased, from 51% to 48.08% on desktop and 48.57% on mobile. Conversely, the use of Cache-Control only has increased from 23% to 26.65% on desktop and from 22% to 25.92% on mobile.
+* The percentage of sites using neither caching header has remained relatively stable, with a marginal decrease from 25% to 24.89% on desktop and a slight decrease from 26% to 25.13% on mobile.
 
 While these changes are modest, they indicate a trend toward more focused use of Cache-Control headers. From a sustainability perspective, the persistent quarter of websites using no caching headers represents a significant opportunity for improving resource efficiency and reducing unnecessary data transfers.
 
 The shift towards Cache-Control only usage suggests a growing awareness of modern caching best practices, as Cache-Control offers more granular control over caching behavior. However, the overall slight decrease in caching header usage underscores the ongoing need to emphasize the importance of effective caching strategies in creating a more sustainable web ecosystem.
 
-For more detailed information on caching techniques, implementation strategies, and performance implications, please refer to our comprehensive Performance Chapter.
+For more detailed information on caching techniques, implementation strategies, and performance implications, please refer to our comprehensive <a hreflang="en" href="https://almanac.httparchive.org/en/2024/performance">Performance Chapter</a>.
 
 For further information, refer to:
-The WSGs 1.0 - SC 4.2.
+* The WSGs 1.0 - SC 4.2.
 
 ## SEO and sustainability
-The advent of Search Generative Experiences in 2024 brings new sustainability concerns to light regarding Search Engine Optimization (SEO). The energy and water requirements to power these AI-enabled searches are significant. By some estimates, a single AI-powered search can use as much as 30 times more energy than a traditional search. 
+The advent of Search Generative Experiences in 2024 brings new sustainability concerns to light regarding Search Engine Optimization (SEO). The <a hreflang="en" href="https://mashable.com/article/ai-environment-energy">energy and water requirements</a> to power these AI-enabled searches are significant. By some estimates, a single AI-powered search can use <a hreflang="en" href="https://www.scientificamerican.com/article/what-do-googles-ai-answers-cost-the-environment/">as much as 30 times more energy</a> than a traditional search. 
 
 As with most web sustainability concerns, challenges are directly proportional to volume. We conduct billions of searches every day. Plus, Search Generative Experiences have been known to produce misleading, inaccurate, or false results. This increases misinformation risk as well as environmental impact when billions of searchers must rethink and re-run their queries to produce more accurate results. 
 
@@ -947,60 +961,59 @@ What’s more, there’s currently no way to opt out of using these features. We
 
 To make SEO efforts more sustainable, marketers will also need to tackle important questions such as:
 
-Can AI and other emerging technologies help us execute search campaigns more efficiently or are the social and environmental impacts simply not worth the effort? 
-How should we balance the need to consistently produce good content with limitations imposed by organizational resources and our stated climate goals?
-Are our content marketing efforts reaching the right audience and helping them to make better decisions and more sustainable choices? 
+* Can AI and other emerging technologies help us execute search campaigns more efficiently or are the social and environmental impacts simply not worth the effort? 
+* How should we balance the need to consistently produce good content with limitations imposed by organizational resources and our stated climate goals?
+* Are our content marketing efforts reaching the right audience and helping them to make better decisions and more sustainable choices? 
 What should we do with old or otherwise outdated content to maintain relevance?
-Do we need to hold onto search and analytics data from seven years ago? Or even three?
+* Do we need to hold onto search and analytics data from seven years ago? Or even three?
 
-With this in mind, here are seven ways to bring more sustainable SEO strategies into your search marketing efforts: 
+With this in mind, here are seven ways to bring more <a hreflang="en" href="https://www.mightybytes.com/blog/sustainable-seo/">sustainable SEO strategies</a> into your search marketing efforts: 
 
-Provide measurable benefits to the people and communities you target, helping them find the information they need quickly and without barriers.
-Utilize E-E-A-T—Experience, Expertise, Authoritativeness, and Trustworthiness—to focus on quality over quantity in search marketing efforts. 
-Create search marketing processes that can be realistically measured and maintained over time through continuous improvement. Include sustainability metrics in these efforts, doing more of what works and less of what doesn’t.
-Reduce negative effects where possible to minimize search marketing’s impact on the planet.
-As with any web sustainability initiative, reduce the amount of data you transfer, collect, and store. 
-Well-structured metadata can convey critical information about your website that can be used to educate potential visitors. For many sites, their purpose can be satisfied without a user ever actually visiting their domain. 
-Finally, align your search marketing efforts with the W3C Web Sustainability Guidelines (WSGs) 1.0, particularly SC 2.6, 2.14, 2.15, 2.16, 2.19, 3.5, 3.12 and 4.4.
+1. Provide measurable benefits to the people and communities you target, helping them find the information they need quickly and without barriers.
+2. Utilize <a hreflang="en" href="https://developers.google.com/search/blog/2022/12/google-raters-guidelines-e-e-a-t">E-E-A-T—Experience</a>, Expertise, Authoritativeness, and Trustworthiness—to focus on quality over quantity in search marketing efforts. 
+3. Create search marketing processes that can be realistically measured and maintained over time through continuous improvement. Include sustainability metrics in these efforts, doing more of what works and less of what doesn’t.
+4. <a hreflang="en" href="https://bthechange.com/7-ways-to-align-climate-strategy-with-digital-marketing-strategy-9668a3a3bda">Reduce negative effects</a> where possible to minimize search marketing’s impact on the planet.
+5. As with any web sustainability initiative, reduce the amount of data you transfer, collect, and store. 
+6. Well-structured metadata can convey critical information about your website that can be used to educate potential visitors. For many sites, their purpose can be satisfied without a user ever actually visiting their domain. 
+7. Finally, align your search marketing efforts with the W3C Web Sustainability Guidelines (WSGs) 1.0, particularly SC 2.6, 2.14, 2.15, 2.16, 2.19, 3.5, 3.12 and 4.4.
 
-It is possible to redefine success by including stakeholder perspectives and needs in our marketing, making it an engine of well-being versus the more traditional engine of (often exploitative) growth. As part of these efforts, we also need search platforms to take ownership and action on their own roles in exacerbating the climate crisis.
+It is possible to <a hreflang="en" href="https://www.mightybytes.com/blog/sustainable-digital-marketing/">redefine success</a> by including stakeholder perspectives and needs in our marketing, making it an engine of well-being versus the more traditional engine of (often exploitative) growth. As part of these efforts, we also need search platforms to take ownership and action on their own roles in exacerbating the climate crisis.
 
 ## Sustainable data and content management
 Tech platform business models often depend on customers increasing data use over time. As part of their marketing strategies, platforms encourage customers to upgrade and purchase bigger data plans through conversion rate optimization, drip and marketing automation campaigns, notifications, and other means. To increase attractiveness, they regularly offer large amounts of data at relatively low costs. 
 
 Regrettably, this incentivizes sloppy data practices and proliferates the myth that data is immaterial or otherwise inconsequential when compared to the benefits of our data-fueled future. Reality, however, tells another story. 
 
-For example, the data center industry—currently valued at about $125.35 billion—is expected to grow 10% year over year between now and 2030. Unfortunately, data centers drive a variety of ecological problems, including noise and air pollution, e-waste, increased emissions and energy use, water use, and other impacts. The rapid rise of artificial intelligence is especially problematic in this regard.
+For example, the data center industry—<a hreflang="en" href="https://www.precedenceresearch.com/data-center-market">currently valued at about $125.35 billion</a>—is <a hreflang="en" href="https://www.psmarketresearch.com/market-analysis/data-center-market">expected to grow 10%</a> year over year between now and 2030. Unfortunately, data centers drive a <a hreflang="en" href="https://computing.mit.edu/news/the-staggering-ecological-impacts-of-computation-and-the-cloud/">variety of ecological problems</a>, including noise and air pollution, e-waste, increased emissions and energy use, water use, and other impacts. The rapid <a hreflang="en" href="https://humanrights.berkeley.edu/projects/climate-impact-of-ai-data-centers/">rise of artificial intelligence</a> is especially problematic in this regard.
 
-What’s more, up to 90% of collected data goes unused after about three months. Most of this data is never properly disposed of. Plus, poor data governance drives inequality, privacy, and security risks as well. 
+What’s more, up to <a hreflang="en" href="https://www.greenergydatacenters.com/eng/blog/90-of-data-sits-unused-how-to-get-rid-and-avoid-digital-waste">90% of collected data goes unused</a> after about three months. Most of this data is never <a hreflang="en" href="https://www.mightybytes.com/blog/what-is-your-data-disposal-strategy/">properly disposed of</a>. Plus, poor data governance <a hreflang="en" href="https://atmos.earth/inside-the-fight-for-indigenous-data-sovereignty/">drives inequality</a>, privacy, and security risks as well. 
 
 With all of this in mind, it’s easy to see why our collective thirst for low-cost, high-volume data solutions drives significant sustainability concerns. This is unfortunate considering that data and analytics literacy are also often strategic differentiators for many organizations. 
 
-To make more sustainable data practices the norm among those who create and manage digital products and services, organizations should redefine their relationships with data. For marketers and product teams, this can be accomplished by improving data governance and more effectively managing content across the products and services they create, subscribe to, or otherwise maintain. The annual Digital Cleanup Day can be a good way to raise awareness on this topic.
+To make more <a hreflang="en" href="https://www.mightybytes.com/blog/design-a-sustainable-data-strategy/">sustainable data practices</a> the norm among those who create and manage digital products and services, organizations should redefine their relationships with data. For marketers and product teams, this can be accomplished by improving data governance and more effectively managing content across the products and services they create, subscribe to, or otherwise maintain. The annual <a hreflang="en" href="https://cyberworldcleanupday.fr/welcome.html">Digital Cleanup Day</a> can be a good way to raise awareness on this topic.
 
 ### Data Governance and Sustainability
-Data sustainability requires effective long-term governance strategies. Good data governance is key for long-term digital governance to work across an organization’s teams and departments. In tandem with sustainability practices, these two disciplines can help organizations better manage web-based products and services over time while simultaneously improving how data is collected, managed, secured, and disposed of.
+Data sustainability requires effective long-term governance strategies. Good <a hreflang="en" href="https://www.mightybytes.com/blog/sustainable-data-governance-for-marketers/">data governance</a> is key for long-term <a hreflang="en" href="https://www.mightybytes.com/blog/building-capacity-with-digital-governance/">digital governance</a> to work across an organization’s teams and departments. In tandem with sustainability practices, these two disciplines can help organizations better manage web-based products and services over time while simultaneously improving how data is collected, managed, secured, and disposed of.
 
 Specific tactics to improve data governance include: 
-
-Devise long-term organizational data and digital governance strategies that are grounded in sustainability principles and continuous improvement. Define and track clear KPIs to measure progress over time.
-Train internal team members on data science to drive good governance. Appoint dedicated leaders to own digital and data governance within the organization. 
-Identify strategic partners in your digital supply chain that are aligned with the organization’s sustainability goals. 
-Regularly audit data and digital products and services to reduce risk and waste. 
-Think twice before you collect information and, when you do, document how long this information should be kept. 
-Finally, align data governance efforts with the W3C Web Sustainability Guidelines (WSG) 1.0, particularly SC: 2.1, 2.25, 4.12, 5.6, 5.12, and 5.20.
+1. Devise long-term organizational data and digital governance strategies that are grounded in sustainability principles and continuous improvement. Define and track clear KPIs to measure progress over time.
+2. Train internal team members on data science to drive good governance. Appoint dedicated leaders to own digital and data governance within the organization. 
+3. Identify <a hreflang="en" href="https://www.mightybytes.com/blog/sustainable-marketing-stack/">strategic partners</a> in your <a hreflang="en" href="https://www.mightybytes.com/blog/how-to-improve-your-digital-supply-chain/">digital supply chain</a> that are aligned with the organization’s sustainability goals. 
+4. Regularly audit data and digital products and services to reduce risk and waste. 
+5. Think twice before you collect information and, when you do, document how long this information should be kept. 
+6. Finally, align data governance efforts with the W3C Web Sustainability Guidelines (WSG) 1.0, particularly SC: 2.1, 2.25, 4.12, 5.6, 5.12, and 5.20.
 
 ### More Sustainable Content Management
-Similarly, content marketing often drives data collection for many organizations. Web forms, landing pages, blog posts, video tutorials, social media posts, and other forms of content all play important roles in an organization’s marketing, product management, content governance, and digital sustainability efforts. 
+Similarly, content marketing often drives data collection for many organizations. Web forms, landing pages, blog posts, video tutorials, social media posts, and other forms of content all play important roles in an organization’s marketing, product management, content governance, and <a hreflang="en" href="https://www.mightybytes.com/blog/digital-sustainability/">digital sustainability</a> efforts. 
 
 This offers opportunities for teams to support more sustainable content management within their organizations. Examples include:
 
-Align content strategy efforts with specific sustainability goals and your team’s capacity. 
-Publish accessible content that uses inclusive language, is easy for a fifth grader to understand, is as long as it needs to be, and is formatted to skim with short paragraphs, bulleted lists, clear headings, and so on.
-Regularly conduct content audits to ensure your content continues to provide value for stakeholders over time. Use this process to edit, delete, add, clarify, or otherwise revise content as needed.
-Manage content assets with sustainability in mind: compress, tag, and reuse assets as needed. Use heavy media assets like audio, video, or animation only when necessary. Also, use a digital asset management or design system to keep source files and other assets organized.
-Audit tools regularly to ensure your team has access to the features they need proportional to your resources. Train or upskill team members on new features or processes.
-Finally, align content management efforts with the W3C Web Sustainability Guidelines (WSG) 1.0, particularly SC: 2.6, 2.8, 2.14, 2.15, 2.16, 2.21, 2.23, 2.25, 3.5, 5.3, 5.4, and 5.12.
+1. Align <a hreflang="en" href="https://www.mightybytes.com/blog/create-a-content-strategy/">content strategy</a> efforts with specific sustainability goals and your team’s capacity. 
+2. Publish accessible content that uses <a hreflang="en" href="https://www.apa.org/about/apa/equity-diversity-inclusion/language-guidelines">inclusive language</a>, is easy for a fifth grader to understand, is as long as it needs to be, and is formatted to skim with short paragraphs, bulleted lists, clear headings, and so on.
+3. Regularly conduct <a hreflang="en" href="https://www.mightybytes.com/blog/how-to-run-a-content-audit/">content audits</a> to ensure your content continues to provide value for stakeholders over time. Use this process to edit, delete, add, clarify, or otherwise revise content as needed.
+4. Manage content assets with sustainability in mind: compress, tag, and reuse assets as needed. Use heavy media assets like audio, video, or animation only when necessary. Also, use a digital asset management or design system to keep source files and other assets organized.
+5. Audit tools regularly to ensure your team has access to the features they need proportional to your resources. Train or upskill team members on new features or processes.
+6. Finally, align content management efforts with the W3C Web Sustainability Guidelines (WSG) 1.0, particularly SC: 2.6, 2.8, 2.14, 2.15, 2.16, 2.21, 2.23, 2.25, 3.5, 5.3, 5.4, and 5.12.
 
 ## Popular frameworks, platforms, and CMSs
 
