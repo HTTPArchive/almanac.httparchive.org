@@ -90,11 +90,37 @@ CREATE TEMPORARY FUNCTION SERVICE(url STRING) AS (
   END
 );
 
+-- Extract the color formats from a formats payload and remove spurious entries
+-- via a table-sizes payload.
+--
+-- When nonempty, it is expected that
+--
+-- * `CBDT` is larger than 2 + 2 bytes,
+-- * `COLR` is larger than 2 + 2 + 4 + 4 + 2 (+ 4 + 4 + 4 + 4 + 4) bytes,
+-- * `SVG ` is larger than 2 + 4 + 4 + 2 bytes, and
+-- * `sbix` is larger than 2 + 2 + 4 + 4 bytes.
+--
+-- For simplicity, the threshold is set to 50 bytes.
+CREATE TEMPORARY FUNCTION COLOR_FORMATS_INNER(jsonFormats STRING, jsonSizes STRING)
+RETURNS ARRAY<STRING>
+LANGUAGE js AS '''
+try {
+  const formats = JSON.parse(jsonFormats);
+  const sizes = JSON.parse(jsonSizes);
+  return formats.filter((format) => {
+    const table = `${format}    `.slice(0, 4);
+    return sizes[table] > 50;
+  });
+} catch (e) {
+  return [];
+}
+''';
+
 -- Extract the color formats from a payload.
 CREATE TEMPORARY FUNCTION COLOR_FORMATS(payload STRING) AS (
-  REGEXP_EXTRACT_ALL(
+  COLOR_FORMATS_INNER(
     JSON_EXTRACT(payload, '$._font_details.color.formats'),
-    '(?i)(sbix|CBDT|COLRv0|COLRv1|SVG)'
+    JSON_EXTRACT(payload, '$._font_details.table_sizes')
   )
 );
 
