@@ -247,7 +247,7 @@ We can also take a look at the share of emissions for different resources (HTML/
 {{ figure_markup(
   image="emissions-by-percentile-by-type-desktop.png",
   caption="Emissions by percentile by type for 2024 (desktop)",
-  description="TODO",
+  description="A bar chart showing the percent of different content types on desktop in the total page carbon emissions by percentile. On the 90th percentile HTML content accounts for around 1.6% of the total carbon emissions, JavaScript is responsible for 20.2% of total carbon emissions, CSS is around 2.9%, images accounts for around 70.2% and fonts represent 5% of the total carbon emissions. On the 75th percentile, HTML represents 1.6%, JavaScript 26.5%, CSS around 3.4%, images around 62.7% and fonts around 5.8% of the total carbon emissions. On the 50th percentile, HTML represents 1.7%, JavaScript 32.1%, CSS around 4.1%, images almost 55.2% and fonts around 6.9% of the total carbon emissions. On the 25th percentile, HTML represents 1.9%, JavaScript 37.4%, CSS around 4.9%, images 48.9% and fonts around 6.9% of the total carbon emissions. On the 10th percentile, HTML represents 2.8%, JavaScript 49%, CSS around 4.1%, images 44.1% and fonts 0% of the total carbon emissions.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1793089209&format=interactive",
   sheets_gid="1113829605",
   sql_file=""
@@ -256,7 +256,7 @@ We can also take a look at the share of emissions for different resources (HTML/
 {{ figure_markup(
   image="emissions-by-percentile-by-type-mobile.png",
   caption="Emissions by percentile by type for 2024 (mobile)",
-  description="TODO",
+  description="A bar chart showing the percent of different content types on mobile in the total page carbon emissions by percentile. On the 90th percentile HTML content accounts for around 1.7% of the total carbon emissions, JavaScript is responsible for 20.8% of total carbon emissions, CSS is around 3.1%, images accounts for around 69.6% and fonts represent 4.8% of the total carbon emissions. On the 75th percentile, HTML represents 1.8%, JavaScript 27.4%, CSS around 3.6%, images around 61.7% and fonts around 5.6% of the total carbon emissions. On the 50th percentile, HTML represents 1.9%, JavaScript 33.3%, CSS around 4.4%, images almost 53.8% and fonts around 6.6% of the total carbon emissions. On the 25th percentile, HTML represents 2.2%, JavaScript 40.5%, CSS around 5.2%, images 45.5% and fonts around 6.6% of the total carbon emissions. On the 10th percentile, HTML represents 3.6%, JavaScript 52.2%, CSS around 3.5%, images 40.7% and fonts 0% of the total carbon emissions.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=89199497&format=interactive",
   sheets_gid="1113829605",
   sql_file=""
