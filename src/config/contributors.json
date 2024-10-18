@@ -1,38 +1,15 @@
 {
-  "25prathamesh": {
-    "avatar_url": "10120153",
-    "github": "25prathamesh",
-    "linkedin": "prathameshrasam",
-    "name": "Prathamesh Rasam",
+  "aarongustafson": {
+    "avatar_url": "75736",
+    "github": "aarongustafson",
+    "name": "Aaron Gustafson",
     "teams": {
       "2022": [
-        "analysts",
         "reviewers"
       ]
-    }
-  },
-  "4upz": {
-    "avatar_url": "26828838",
-    "github": "4upz",
-    "name": "Arik Smith",
-    "teams": {
-      "2022": [
-        "analysts"
-      ]
-    }
-  },
-  "AVGP": {
-    "avatar_url": "370246",
-    "github": "AVGP",
-    "name": "Martin Splitt",
-    "teams": {
-      "2019": [
-        "authors",
-        "brainstormers"
-      ]
     },
-    "twitter": "g33konaut",
-    "website": "http://geekonaut.de"
+    "twitter": "AaronGustafson",
+    "website": "https://www.aaron-gustafson.com"
   },
   "AbbyTsai": {
     "avatar_url": "44442451",
@@ -52,87 +29,17 @@
       ]
     }
   },
-  "AlexLakatos": {
-    "avatar_url": "690132",
-    "github": "AlexLakatos",
-    "name": "Alex Lakatos",
+  "burakguneli": {
+    "avatar_url": "7094425",
+    "github": "burakguneli",
+    "name": "Burak Güneli",
     "teams": {
-      "2021": [
+      "2024": [
+        "analysts",
         "authors"
       ]
     },
-    "twitter": "avolakatos",
-    "website": "http://alexlakatos.com/"
-  },
-  "ArvinH": {
-    "avatar_url": "286856",
-    "github": "ArvinH",
-    "name": "Huang Shuo-Han",
-    "teams": {
-      "2020": [
-        "translators"
-      ]
-    }
-  },
-  "AymenLoukil": {
-    "avatar_url": "5750656",
-    "github": "AymenLoukil",
-    "name": "Aymen Loukil",
-    "teams": {
-      "2019": [
-        "reviewers",
-        "developers"
-      ]
-    },
-    "twitter": "LoukilAymen",
-    "website": "http://www.aymen-loukil.com/en/"
-  },
-  "CSteele-gh": {
-    "avatar_url": "104934613",
-    "github": "CSteele-gh",
-    "name": "Chris Steele",
-    "teams": {
-      "2022": [
-        "reviewers"
-      ]
-    }
-  },
-  "ColinEberhardt": {
-    "avatar_url": "1098110",
-    "github": "ColinEberhardt",
-    "name": "Colin Eberhardt",
-    "teams": {
-      "2022": [
-        "authors"
-      ]
-    },
-    "twitter": "ColinEberhardt",
-    "website": "https://blog.scottlogic.com/ceberhardt/"
-  },
-  "DataBytzAI": {
-    "avatar_url": "422745",
-    "github": "DataBytzAI",
-    "linkedin": "allenoneill",
-    "name": "Allen ONeill",
-    "teams": {
-      "2022": [
-        "authors"
-      ]
-    },
-    "twitter": "DataBytesAI",
-    "website": "https://webdataworks.io/"
-  },
-  "Dawntraoz": {
-    "avatar_url": "36744484",
-    "github": "Dawntraoz",
-    "name": "Alba Silvente Fuentes",
-    "teams": {
-      "2021": [
-        "reviewers"
-      ]
-    },
-    "twitter": "dawntraoz",
-    "website": "https://www.dawntraoz.com/"
+    "twitter": "burakGuneli"
   },
   "DesignrKnight": {
     "avatar_url": "27865704",
@@ -146,635 +53,31 @@
     "twitter": "DesignrKnight",
     "website": "http://designrknight.com/"
   },
-  "AlexDawsonUK": {
-    "avatar_url": "93073603",
-    "github": "AlexDawsonUK",
-    "linkedin": "alexdawsonuk",
-    "mastodon": "https://mastodon.design/@AlexDawsonUK",
-    "name": "Alexander Dawson",
-    "teams": {
-      "2024": [
-        "authors"
-      ]
-    },
-    "twitter": "AlexDawsonUK",
-    "website": "https://alexanderdawson.com/"
-  },
-  "Djohn12": {
-    "avatar_url": "38497742",
-    "github": "Djohn12",
-    "name": "Edmond de Tournadre",
-    "teams": {
-      "2022": [
-        "reviewers"
-      ]
-    }
-  },
-  "GJFR": {
-    "avatar_url": "5749508",
-    "github": "GJFR",
-    "name": "Gertjan Franken",
-    "teams": {
-      "2022": [
-        "analysts"
-      ]
-    }
-  },
-  "GeekBoySupreme": {
-    "avatar_url": "15321738",
-    "github": "GeekBoySupreme",
-    "name": "Shuvam Manna",
-    "teams": {
-      "2021": [
-        "authors",
-        "designers"
-      ]
-    },
-    "twitter": "shuvam360",
-    "website": "https://shuvam.xyz"
-  },
-  "GiacomoPignoni": {
-    "avatar_url": "34923063",
-    "github": "GiacomoPignoni",
-    "name": "Giacomo Pignoni",
+  "kleinab": {
+    "avatar_url": "1319324",
+    "github": "kleinab",
+    "name": "Abigail Klein",
     "teams": {
       "2019": [
-        "developers"
-      ]
-    },
-    "twitter": "Pigna__"
-  },
-  "GigiRajani": {
-    "github": "GigiRajani",
-    "name": "Gigi Rajani",
-    "teams": {
-      "2021": [
-        "reviewers"
-      ]
-    }
-  },
-  "GregBrimble": {
-    "avatar_url": "8484333",
-    "github": "GregBrimble",
-    "name": "Greg Brimble",
-    "teams": {
-      "2020": [
-        "analysts"
-      ],
-      "2021": [
-        "analysts"
-      ]
-    },
-    "twitter": "gregbrimble",
-    "website": "https://gregbrimble.com/"
-  },
-  "HakaCode": {
-    "avatar_url": "33907565",
-    "github": "HakaCode",
-    "name": "William Sandres",
-    "teams": {
-      "2019": [
-        "translators"
-      ],
-      "2020": [
-        "translators"
-      ],
-      "2021": [
-        "translators"
-      ],
-      "2022": [
-        "translators"
-      ]
-    },
-    "twitter": "hakacode",
-    "website": "https://hakacode.github.io"
-  },
-  "JMPerez": {
-    "avatar_url": "416456",
-    "github": "JMPerez",
-    "name": "Jos\u00e9 M. P\u00e9rez",
-    "teams": {
-      "2019": [
-        "developers",
-        "reviewers",
-        "translators"
-      ]
-    },
-    "twitter": "jmperezperez",
-    "website": "https://jmperezperez.com"
-  },
-  "JamieWhitMac": {
-    "avatar_url": "27693707",
-    "github": "JamieWhitMac",
-    "name": "Jamie Macdonald",
-    "teams": {
-      "2022": [
-        "analysts"
-      ]
-    }
-  },
-  "JasmineDW": {
-    "avatar_url": "29200198",
-    "github": "JasmineDW",
-    "name": "Jasmine Drudge-Willson",
-    "teams": {
-      "2022": [
-        "editors"
-      ]
-    }
-  },
-  "JasmineDWillson": {
-    "avatar_url": "58438178",
-    "github": "JasmineDWillson",
-    "name": "Jasmine Drudge-Willson",
-    "teams": {
-      "2021": [
-        "editors"
-      ]
-    },
-    "twitter": "jasminedwillson"
-  },
-  "JustinyAhin": {
-    "avatar_url": "33403964",
-    "github": "JustinyAhin",
-    "name": "Justin Ahinon",
-    "teams": {
-      "2019": [
-        "translators"
-      ]
-    },
-    "twitter": "justinahinon1",
-    "website": "https://segbedji.com/"
-  },
-  "KJLarson": {
-    "avatar_url": "42503401",
-    "github": "KJLarson",
-    "name": "Kari Larson",
-    "teams": {
-      "2019": [
-        "developers"
-      ]
-    },
-    "twitter": "KaJLa47",
-    "website": "https://www.kjlarson.com"
-  },
-  "LPardue": {
-    "avatar_url": "6571445",
-    "github": "LPardue",
-    "name": "Lucas Pardue",
-    "teams": {
-      "2020": [
-        "reviewers"
-      ],
-      "2022": [
-        "reviewers"
-      ]
-    },
-    "twitter": "SimmerVigor",
-    "website": "https://lucaspardue.com"
-  },
-  "LeaVerou": {
-    "avatar_url": "175836",
-    "github": "LeaVerou",
-    "name": "Lea Verou",
-    "teams": {
-      "2020": [
-        "analysts",
-        "authors"
-      ],
-      "2021": [
-        "reviewers"
-      ]
-    },
-    "twitter": "leaverou",
-    "website": "https://lea.verou.me/"
-  },
-  "Levix": {
-    "avatar_url": "65117011",
-    "github": "Levix",
-    "name": "Zhiwei Li",
-    "teams": {
-      "2022": [
-        "translators"
-      ]
-    }
-  },
-  "MSakamaki": {
-    "avatar_url": "2183053",
-    "github": "MSakamaki",
-    "name": "M.Sakamaki",
-    "teams": {
-      "2019": [
-        "developers",
-        "translators"
-      ]
-    },
-    "twitter": "msakamaki2",
-    "website": "https://twitter.com/msakamaki2"
-  },
-  "MaedahBatool": {
-    "avatar_url": "12712988",
-    "github": "MaedahBatool",
-    "name": "Maedah Batool",
-    "teams": {
-      "2020": [
-        "reviewers"
-      ]
-    },
-    "twitter": "maedahbatool",
-    "website": "https://maedahbatool.com/"
-  },
-  "MeFoDy": {
-    "avatar_url": "1439919",
-    "github": "MeFoDy",
-    "name": "Nikita Dubko",
-    "teams": {
-      "2020": [
-        "translators"
-      ],
-      "2021": [
-        "translators"
-      ]
-    },
-    "twitter": "dark_mefody",
-    "website": "https://mefody.dev/"
-  },
-  "MichaelLewittes": {
-    "avatar_url": "96250205",
-    "github": "MichaelLewittes",
-    "name": "Michael Lewittes",
-    "teams": {
-      "2022": [
-        "editors"
-      ]
-    }
-  },
-  "MichaelSolati": {
-    "avatar_url": "11811422",
-    "github": "MichaelSolati",
-    "name": "Michael Solati",
-    "teams": {
-      "2022": [
-        "authors"
-      ]
-    },
-    "twitter": "MichaelSolati",
-    "website": "https://michaelsolati.com"
-  },
-  "MikeBishop": {
-    "avatar_url": "4273797",
-    "github": "MikeBishop",
-    "name": "Mike Bishop",
-    "teams": {
-      "2020": [
         "authors"
       ]
     }
   },
-  "mgifford": {
-    "avatar_url": "116832",
-    "github": "mgifford",
-    "linkedin": "mgifford",
-    "mastodon": "https://mastodon.social/@mgifford",
-    "name": "Mike Gifford",
-    "teams": {
-      "2024": [
-        "analysts",
-        "authors",
-        "reviewers"
-      ]
-    },
-    "website": "https://accessibility.civicactions.com/"
-  },
-  "Navaneeth-akam": {
-    "avatar_url": "69532755",
-    "github": "Navaneeth-akam",
-    "name": "Navaneeth Krishna",
-    "teams": {
-      "2020": [
-        "reviewers"
-      ],
-      "2021": [
-        "authors",
-        "reviewers"
-      ]
-    },
-    "twitter": "Navanee55755217"
-  },
-  "NishuGoel": {
-    "avatar_url": "26349046",
-    "github": "NishuGoel",
-    "name": "Nishu Goel",
-    "teams": {
-      "2021": [
-        "authors"
-      ],
-      "2022": [
-        "analysts",
-        "reviewers"
-      ]
-    },
-    "twitter": "TheNishuGoel",
-    "website": "https://unravelweb.dev/"
-  },
-  "Nithanaroy": {
-    "avatar_url": "670556",
-    "github": "Nithanaroy",
-    "linkedin": "nitinpasumarthy",
-    "name": "Nitin Pasumarthy",
-    "teams": {
-      "2021": [
-        "analysts"
-      ]
-    },
-    "website": "https://nithanaroy.medium.com/"
-  },
-  "Pavel-Evdokimov": {
-    "avatar_url": "6407114",
-    "github": "Pavel-Evdokimov",
-    "name": "Pavel Evdokimov",
-    "teams": {
-      "2019": [
-        "brainstormers"
-      ]
-    },
-    "twitter": "Pavel_Evdokimov"
-  },
-  "PraveenPal4232": {
-    "avatar_url": "34737190",
-    "github": "PraveenPal4232",
-    "name": "Praveen Pal",
-    "teams": {
-      "2019": [
-        "translators"
-      ],
-      "2020": [
-        "translators"
-      ]
-    },
-    "twitter": "PraveenPal4232",
-    "website": "https://praveenpal4232.github.io"
-  },
-  "RMHolmlund": {
-    "avatar_url": "61608378",
-    "github": "RMHolmlund",
-    "name": "Rebecca Holmlund",
-    "teams": {
-      "2021": [
-        "reviewers"
-      ]
-    }
-  },
-  "RReverser": {
-    "avatar_url": "557590",
-    "github": "RReverser",
-    "name": "Ingvar Stepanyan",
-    "teams": {
-      "2021": [
-        "analysts",
-        "authors"
-      ],
-      "2022": [
-        "reviewers"
-      ]
-    },
-    "twitter": "RReverser",
-    "website": "https://rreverser.com/"
-  },
-  "RoelN": {
-    "avatar_url": "4570664",
-    "github": "RoelN",
-    "name": "Roel Nieskens",
-    "teams": {
-      "2020": [
-        "reviewers"
-      ],
-      "2022": [
-        "reviewers"
-      ]
-    },
-    "twitter": "PixelAmbacht",
-    "website": "http://pixelambacht.nl"
-  },
-  "SaptakS": {
-    "avatar_url": "9530293",
-    "github": "SaptakS",
-    "name": "Saptak Sengupta",
-    "teams": {
-      "2022": [
-        "authors"
-      ]
-    },
-    "twitter": "Saptak013",
-    "website": "https://saptaks.website"
-  },
-  "Schweinepriester": {
-    "avatar_url": "2644614",
-    "github": "Schweinepriester",
-    "name": "Kai Hollberg",
-    "teams": {
-      "2021": [
-        "reviewers"
-      ],
-      "2022": [
-        "reviewers"
-      ]
-    },
-    "twitter": "schweinepriestr"
-  },
-  "ScottHelme": {
-    "avatar_url": "5352840",
-    "github": "ScottHelme",
-    "name": "Scott Helme",
+  "argyleink": {
+    "avatar_url": "1134620",
+    "github": "argyleink",
+    "name": "Adam Argyle",
     "teams": {
       "2019": [
         "brainstormers",
         "authors"
-      ]
-    },
-    "twitter": "Scott_Helme",
-    "website": "https://scotthelme.co.uk"
-  },
-  "SeoRobt": {
-    "avatar_url": "83400777",
-    "github": "SeoRobt",
-    "name": "Rob Teitelman",
-    "teams": {
-      "2021": [
-        "reviewers"
-      ],
-      "2022": [
-        "reviewers"
-      ]
-    },
-    "twitter": "teitelmanrob",
-    "website": "https://www.paulteitelman.com/"
-  },
-  "SilentJMA": {
-    "avatar_url": "16384750",
-    "github": "SilentJMA",
-    "name": "JABANE Mohamed Ayoub",
-    "teams": {
-      "2019": [
-        "translators"
-      ]
-    },
-    "twitter": "SilentJMA"
-  },
-  "SophieBrannon": {
-    "avatar_url": "103587838",
-    "github": "SophieBrannon",
-    "name": "Sophie Brannon",
-    "teams": {
-      "2022": [
-        "authors"
-      ]
-    },
-    "twitter": "SophieBrannon"
-  },
-  "Super-Fly": {
-    "avatar_url": "866229",
-    "github": "Super-Fly",
-    "name": "Lyubomir Angelov",
-    "teams": {
-      "2020": [
-        "developers"
-      ]
-    },
-    "twitter": "angelovcode"
-  },
-  "Suzzicks": {
-    "avatar_url": "72282209",
-    "github": "Suzzicks",
-    "name": "Cindy Krum",
-    "teams": {
-      "2022": [
-        "authors"
-      ]
-    },
-    "twitter": "suzzicks",
-    "website": "https://mobilemoxie.com/"
-  },
-  "Tiggerito": {
-    "avatar_url": "4947018",
-    "github": "Tiggerito",
-    "name": "Tony McCreath",
-    "teams": {
-      "2020": [
-        "analysts"
-      ]
-    },
-    "twitter": "TonyMcCreath",
-    "website": "https://websiteadvantage.com.au/"
-  },
-  "Tomek3c": {
-    "avatar_url": "37291453",
-    "github": "Tomek3c",
-    "name": "Tomek Rudzki",
-    "teams": {
-      "2021": [
-        "authors"
-      ]
-    },
-    "twitter": "TomekRudzki",
-    "website": "https://tomekseo.com/"
-  },
-  "TusharPol": {
-    "avatar_url": "104352788",
-    "github": "TusharPol",
-    "name": "Tushar Pol",
-    "teams": {
-      "2022": [
-        "reviewers"
-      ]
-    }
-  },
-  "VictorLeP": {
-    "avatar_url": "6874341",
-    "github": "VictorLeP",
-    "linkedin": "victor-le-pochat",
-    "name": "Victor Le Pochat",
-    "teams": {
-      "2022": [
-        "analysts"
-      ]
-    },
-    "twitter": "VictorLePochat",
-    "website": "https://lepoch.at"
-  },
-  "WilhelmWillie": {
-    "avatar_url": "4969041",
-    "github": "WilhelmWillie",
-    "name": "Wilhelm Willie",
-    "teams": {
-      "2021": [
-        "reviewers"
-      ]
-    }
-  },
-  "Xav83": {
-    "avatar_url": "6787157",
-    "github": "Xav83",
-    "linkedin": "xavier-jouvenot-98787794",
-    "name": "Xavier Jouvenot",
-    "teams": {
-      "2022": [
-        "translators"
-      ]
-    },
-    "twitter": "10xLearner",
-    "website": "https://10xlearner.com/"
-  },
-  "Zizzamia": {
-    "avatar_url": "829214",
-    "github": "Zizzamia",
-    "name": "Leonardo Zizzamia",
-    "teams": {
-      "2020": [
-        "authors",
-        "reviewers"
       ],
       "2021": [
-        "authors"
-      ]
-    },
-    "twitter": "Zizzamia",
-    "website": "https://twitter.com/zizzamia"
-  },
-  "Zuckjet": {
-    "avatar_url": "17976139",
-    "github": "Zuckjet",
-    "name": "Zuckjet",
-    "teams": {
-      "2020": [
-        "translators"
-      ]
-    },
-    "twitter": "Zuckjet"
-  },
-  "aardrian": {
-    "avatar_url": "1376607",
-    "github": "aardrian",
-    "name": "Adrian Roselli",
-    "teams": {
-      "2020": [
         "reviewers"
       ]
     },
-    "twitter": "aardrian",
-    "website": "https://adrianroselli.com/"
-  },
-  "aarongustafson": {
-    "avatar_url": "75736",
-    "github": "aarongustafson",
-    "name": "Aaron Gustafson",
-    "teams": {
-      "2022": [
-        "reviewers"
-      ]
-    },
-    "twitter": "AaronGustafson",
-    "website": "https://www.aaron-gustafson.com"
+    "twitter": "argyleink",
+    "website": "https://nerdy.dev"
   },
   "addyosmani": {
     "avatar_url": "110953",
@@ -802,6 +105,32 @@
       ]
     },
     "twitter": "adityapandey98"
+  },
+  "aardrian": {
+    "avatar_url": "1376607",
+    "github": "aardrian",
+    "name": "Adrian Roselli",
+    "teams": {
+      "2020": [
+        "reviewers"
+      ]
+    },
+    "twitter": "aardrian",
+    "website": "https://adrianroselli.com/"
+  },
+  "tropicadri": {
+    "avatar_url": "32825533",
+    "github": "tropicadri",
+    "name": "Adriana Jara",
+    "teams": {
+      "2021": [
+        "reviewers"
+      ],
+      "2022": [
+        "reviewers"
+      ]
+    },
+    "twitter": "tropicadri"
   },
   "ahmadawais": {
     "avatar_url": "960133",
@@ -841,7 +170,7 @@
   "alangdm": {
     "avatar_url": "6799159",
     "github": "alangdm",
-    "name": "Alan D\u00e1valos",
+    "name": "Alan Dávalos",
     "teams": {
       "2020": [
         "translators"
@@ -868,6 +197,59 @@
     "twitter": "akent99",
     "website": "https://alankent.me"
   },
+  "Dawntraoz": {
+    "avatar_url": "36744484",
+    "github": "Dawntraoz",
+    "name": "Alba Silvente Fuentes",
+    "teams": {
+      "2021": [
+        "reviewers"
+      ]
+    },
+    "twitter": "dawntraoz",
+    "website": "https://www.dawntraoz.com/"
+  },
+  "amedina": {
+    "avatar_url": "506089",
+    "github": "amedina",
+    "name": "Alberto Medina",
+    "teams": {
+      "2019": [
+        "brainstormers",
+        "authors"
+      ],
+      "2020": [
+        "reviewers"
+      ]
+    },
+    "twitter": "iAlbMedina"
+  },
+  "ghedo": {
+    "avatar_url": "117643",
+    "github": "ghedo",
+    "name": "Alessandro Ghedini",
+    "teams": {
+      "2019": [
+        "brainstormers",
+        "reviewers"
+      ]
+    },
+    "website": "https://ghedini.me/"
+  },
+  "AlexDawsonUK": {
+    "avatar_url": "93073603",
+    "github": "AlexDawsonUK",
+    "linkedin": "alexdawsonuk",
+    "mastodon": "https://mastodon.design/@AlexDawsonUK",
+    "name": "Alexander Dawson",
+    "teams": {
+      "2024": [
+        "authors"
+      ]
+    },
+    "twitter": "AlexDawsonUK",
+    "website": "https://alexanderdawson.com/"
+  },
   "alexdenning": {
     "avatar_url": "3109255",
     "github": "alexdenning",
@@ -883,6 +265,18 @@
     "twitter": "AlexDenning",
     "website": "https://getellipsis.com/"
   },
+  "AlexLakatos": {
+    "avatar_url": "690132",
+    "github": "AlexLakatos",
+    "name": "Alex Lakatos",
+    "teams": {
+      "2021": [
+        "authors"
+      ]
+    },
+    "twitter": "avolakatos",
+    "website": "http://alexlakatos.com/"
+  },
   "alexnj": {
     "avatar_url": "683500",
     "github": "alexnj",
@@ -895,6 +289,18 @@
     },
     "twitter": "4x13",
     "website": "https://alexnj.com"
+  },
+  "slightlyoff": {
+    "avatar_url": "97331",
+    "github": "slightlyoff",
+    "name": "Alex Russell",
+    "teams": {
+      "2019": [
+        "brainstormers"
+      ]
+    },
+    "twitter": "slightlylate",
+    "website": "http://infrequently.org"
   },
   "alextait1": {
     "avatar_url": "24625637",
@@ -911,6 +317,22 @@
     "twitter": "at_fresh_dev",
     "website": "https://atfreshsolutions.com"
   },
+  "lex111": {
+    "avatar_url": "4408379",
+    "github": "lex111",
+    "name": "Alexey Pyltsyn",
+    "teams": {
+      "2019": [
+        "translators"
+      ],
+      "2020": [
+        "translators",
+        "editors",
+        "developers"
+      ]
+    },
+    "website": "https://lex111.ru/"
+  },
   "aleyda": {
     "avatar_url": "469304",
     "github": "aleyda",
@@ -923,17 +345,18 @@
     "twitter": "aleyda",
     "website": "https://www.aleydasolis.com/en/"
   },
-  "allemas": {
-    "avatar_url": "3684740",
-    "github": "allemas",
-    "name": "S\u00e9bastien Allemand",
+  "DataBytzAI": {
+    "avatar_url": "422745",
+    "github": "DataBytzAI",
+    "linkedin": "allenoneill",
+    "name": "Allen ONeill",
     "teams": {
-      "2019": [
-        "translators"
+      "2022": [
+        "authors"
       ]
     },
-    "twitter": "allema_s",
-    "website": "https://sebastienallemand.fr/"
+    "twitter": "DataBytesAI",
+    "website": "https://webdataworks.io/"
   },
   "alonko": {
     "avatar_url": "7407047",
@@ -959,68 +382,46 @@
     },
     "twitter": "alonkochba"
   },
-  "amedina": {
-    "avatar_url": "506089",
-    "github": "amedina",
-    "name": "Alberto Medina",
+  "kripken": {
+    "avatar_url": "173661",
+    "github": "kripken",
+    "name": "Alon Zakai",
     "teams": {
-      "2019": [
-        "brainstormers",
+      "2021": [
+        "reviewers"
+      ]
+    },
+    "twitter": "kripken"
+  },
+  "cyberandy": {
+    "avatar_url": "837037",
+    "github": "cyberandy",
+    "name": "Andrea Volpini",
+    "teams": {
+      "2021": [
         "authors"
       ],
-      "2020": [
-        "reviewers"
+      "2022": [
+        "authors"
       ]
     },
-    "twitter": "iAlbMedina"
+    "twitter": "cyberandy",
+    "website": "https://wordlift.io/blog/en/entity/andrea-volpini"
   },
-  "andreban": {
-    "avatar_url": "1733592",
-    "github": "andreban",
-    "name": "Andr\u00e9 Cipriani Bandarra",
-    "teams": {
-      "2021": [
-        "reviewers"
-      ]
-    },
-    "twitter": "andreban"
-  },
-  "andreylipattsev": {
-    "avatar_url": "16627210",
-    "github": "andreylipattsev",
-    "name": "Andrey Lipattsev",
-    "teams": {
-      "2021": [
-        "reviewers"
-      ]
-    },
-    "twitter": "AndreyLipattsev"
-  },
-  "andy0130tw": {
-    "avatar_url": "5269414",
-    "github": "andy0130tw",
-    "name": "Andy Pan",
-    "teams": {
-      "2020": [
-        "translators"
-      ]
-    }
-  },
-  "andydavies": {
-    "avatar_url": "427052",
-    "github": "andydavies",
-    "name": "Andy Davies",
+  "dotjs": {
+    "avatar_url": "2914966",
+    "github": "dotjs",
+    "name": "Andrew Galloni",
     "teams": {
       "2019": [
-        "authors",
+        "analysts",
         "reviewers"
       ],
-      "2021": [
-        "reviewers"
+      "2020": [
+        "authors"
       ]
     },
-    "twitter": "AndyDavies",
-    "website": "http://andydavies.me/"
+    "twitter": "dot_js"
   },
   "andylimn": {
     "avatar_url": "38131750",
@@ -1044,6 +445,76 @@
       ]
     }
   },
+  "andreylipattsev": {
+    "avatar_url": "16627210",
+    "github": "andreylipattsev",
+    "name": "Andrey Lipattsev",
+    "teams": {
+      "2021": [
+        "reviewers"
+      ]
+    },
+    "twitter": "AndreyLipattsev"
+  },
+  "andreban": {
+    "avatar_url": "1733592",
+    "github": "andreban",
+    "name": "André Cipriani Bandarra",
+    "teams": {
+      "2021": [
+        "reviewers"
+      ]
+    },
+    "twitter": "andreban"
+  },
+  "ndrnmnn": {
+    "avatar_url": "22891577",
+    "github": "ndrnmnn",
+    "name": "André Naumann",
+    "teams": {
+      "2019": [
+        "brainstormers"
+      ]
+    }
+  },
+  "hankchizljaw": {
+    "avatar_url": "8672583",
+    "github": "hankchizljaw",
+    "name": "Andy Bell",
+    "teams": {
+      "2020": [
+        "reviewers"
+      ]
+    },
+    "twitter": "hankchizljaw",
+    "website": "https://hankchizljaw.com/"
+  },
+  "andydavies": {
+    "avatar_url": "427052",
+    "github": "andydavies",
+    "name": "Andy Davies",
+    "teams": {
+      "2019": [
+        "authors",
+        "reviewers"
+      ],
+      "2021": [
+        "reviewers"
+      ]
+    },
+    "twitter": "AndyDavies",
+    "website": "http://andydavies.me/"
+  },
+  "andy0130tw": {
+    "avatar_url": "5269414",
+    "github": "andy0130tw",
+    "name": "Andy Pan",
+    "teams": {
+      "2020": [
+        "translators"
+      ]
+    }
+  },
   "antoineeripret": {
     "avatar_url": "9512616",
     "github": "antoineeripret",
@@ -1054,21 +525,31 @@
       ]
     }
   },
-  "argyleink": {
-    "avatar_url": "1134620",
-    "github": "argyleink",
-    "name": "Adam Argyle",
+  "4upz": {
+    "avatar_url": "26828838",
+    "github": "4upz",
+    "name": "Arik Smith",
     "teams": {
-      "2019": [
-        "brainstormers",
-        "authors"
+      "2022": [
+        "analysts"
+      ]
+    }
+  },
+  "denar90": {
+    "avatar_url": "6231516",
+    "github": "denar90",
+    "name": "Artem Denysov",
+    "teams": {
+      "2020": [
+        "reviewers",
+        "analysts"
       ],
       "2021": [
-        "reviewers"
+        "authors",
+        "analysts"
       ]
     },
-    "twitter": "argyleink",
-    "website": "https://nerdy.dev"
+    "twitter": "denar90_"
   },
   "arigaud-ca": {
     "avatar_url": "50932885",
@@ -1103,37 +584,93 @@
       ]
     }
   },
-  "aszx87410": {
-    "avatar_url": "2755720",
-    "github": "aszx87410",
-    "name": "Huli",
-    "teams": {
-      "2020": [
-        "translators"
-      ]
-    }
-  },
-  "awareseven": {
-    "avatar_url": "53170037",
-    "github": "awareseven",
-    "name": "Matteo Gro\u00dfe-Kampmann",
-    "teams": {
-      "2021": [
-        "reviewers"
-      ]
-    }
-  },
-  "bagder": {
-    "avatar_url": "177011",
-    "github": "bagder",
-    "name": "Daniel Stenberg",
+  "AymenLoukil": {
+    "avatar_url": "5750656",
+    "github": "AymenLoukil",
+    "name": "Aymen Loukil",
     "teams": {
       "2019": [
+        "reviewers",
+        "developers"
+      ]
+    },
+    "twitter": "LoukilAymen",
+    "website": "http://www.aymen-loukil.com/en/"
+  },
+  "tunetheweb": {
+    "avatar_url": "10931297",
+    "github": "tunetheweb",
+    "linkedin": "tunetheweb",
+    "name": "Barry Pollard",
+    "teams": {
+      "2019": [
+        "brainstormers",
+        "authors",
+        "reviewers",
+        "editors",
+        "developers"
+      ],
+      "2020": [
+        "analysts",
+        "authors",
+        "developers",
+        "editors",
+        "leads",
+        "reviewers"
+      ],
+      "2021": [
+        "analysts",
+        "authors",
+        "developers",
+        "editors",
+        "leads",
+        "reviewers"
+      ],
+      "2022": [
+        "analysts",
+        "developers",
+        "editors",
+        "leads",
         "reviewers"
       ]
     },
-    "twitter": "bagder",
-    "website": "https://daniel.haxx.se/"
+    "twitter": "tunetheweb",
+    "website": "https://www.tunetheweb.com"
+  },
+  "ibelem": {
+    "avatar_url": "5017359",
+    "github": "ibelem",
+    "name": "Belem Zhang",
+    "teams": {
+      "2022": [
+        "translators"
+      ]
+    },
+    "twitter": "ibelem"
+  },
+  "bseymour": {
+    "avatar_url": "6849494",
+    "github": "bseymour",
+    "linkedin": "benseymour",
+    "name": "Ben Seymour",
+    "teams": {
+      "2020": [
+        "authors"
+      ]
+    },
+    "twitter": "bseymour",
+    "website": "https://benseymour.com"
+  },
+  "binji": {
+    "avatar_url": "1245315",
+    "github": "binji",
+    "name": "Ben Smith",
+    "teams": {
+      "2022": [
+        "reviewers"
+      ]
+    },
+    "website": "https://binji.github.io"
   },
   "beth-panx": {
     "avatar_url": "7429891",
@@ -1157,64 +694,6 @@
       ]
     },
     "website": "https://iambharat.me"
-  },
-  "binji": {
-    "avatar_url": "1245315",
-    "github": "binji",
-    "name": "Ben Smith",
-    "teams": {
-      "2022": [
-        "reviewers"
-      ]
-    },
-    "website": "https://binji.github.io"
-  },
-  "bkardell": {
-    "avatar_url": "870501",
-    "github": "bkardell",
-    "name": "Brian Kardell",
-    "teams": {
-      "2019": [
-        "brainstormers",
-        "authors",
-        "reviewers"
-      ],
-      "2020": [
-        "reviewers"
-      ],
-      "2021": [
-        "reviewers"
-      ],
-      "2022": [
-        "authors",
-        "reviewers"
-      ]
-    },
-    "twitter": "briankardell",
-    "website": "https://bkardell.com"
-  },
-  "bobbyshaw": {
-    "avatar_url": "553566",
-    "github": "bobbyshaw",
-    "linkedin": "tomrobertshaw",
-    "name": "Tom Robertshaw",
-    "teams": {
-      "2021": [
-        "authors"
-      ]
-    },
-    "twitter": "bobbyshaw",
-    "website": "https://www.space48.com"
-  },
-  "boosef": {
-    "avatar_url": "65818702",
-    "github": "boosef",
-    "name": "Shilpa Raghunathan",
-    "teams": {
-      "2021": [
-        "reviewers"
-      ]
-    }
   },
   "borisschapira": {
     "avatar_url": "284742",
@@ -1247,43 +726,73 @@
     "twitter": "bram_stein",
     "website": "http://www.bramstein.com/"
   },
-  "bseymour": {
-    "avatar_url": "6849494",
-    "github": "bseymour",
-    "linkedin": "benseymour",
-    "name": "Ben Seymour",
+  "clarkio": {
+    "avatar_url": "6265396",
+    "github": "clarkio",
+    "name": "Brian Clark",
     "teams": {
-      "2020": [
+      "2022": [
         "authors"
       ]
     },
-    "twitter": "bseymour",
-    "website": "https://benseymour.com"
+    "twitter": "_clarkio",
+    "website": "https://www.clarkio.com"
   },
-  "burakguneli": {
-    "avatar_url": "7094425",
-    "github": "burakguneli",
-    "name": "Burak Güneli",
-    "teams": {
-      "2024": [
-        "analysts",
-        "authors"
-      ]
-    },
-    "twitter": "burakGuneli"
-
-  },
-  "c-torres": {
-    "avatar_url": "6588246",
-    "github": "c-torres",
-    "name": "Carlos Torres",
+  "bkardell": {
+    "avatar_url": "870501",
+    "github": "bkardell",
+    "name": "Brian Kardell",
     "teams": {
       "2019": [
-        "developers",
-        "translators"
+        "brainstormers",
+        "authors",
+        "reviewers"
+      ],
+      "2020": [
+        "reviewers"
+      ],
+      "2021": [
+        "reviewers"
+      ],
+      "2022": [
+        "authors",
+        "reviewers"
       ]
     },
-    "twitter": "carlos_catb"
+    "twitter": "briankardell",
+    "website": "https://bkardell.com"
+  },
+  "remotesynth": {
+    "avatar_url": "216712",
+    "github": "remotesynth",
+    "name": "Brian Rinaldi",
+    "teams": {
+      "2020": [
+        "analysts"
+      ]
+    },
+    "twitter": "remotesynth",
+    "website": "https://remotesynthesis.com/"
+  },
+  "cqueern": {
+    "avatar_url": "1588185",
+    "github": "cqueern",
+    "name": "Caleb Queern",
+    "teams": {
+      "2020": [
+        "reviewers"
+      ],
+      "2021": [
+        "reviewers"
+      ],
+      "2022": [
+        "reviewers"
+      ],
+      "2024": [
+        "editors"
+      ]
+    },
+    "twitter": "httpsecheaders"
   },
   "camcash17": {
     "avatar_url": "32401001",
@@ -1294,6 +803,27 @@
         "analysts"
       ]
     }
+  },
+  "cdixon83": {
+    "avatar_url": "76669481",
+    "github": "cdixon83",
+    "name": "Carlie Dixon",
+    "teams": {
+      "2021": [
+        "reviewers"
+      ]
+    }
+  },
+  "carlopi": {
+    "avatar_url": "842657",
+    "github": "carlopi",
+    "name": "Carlo Piovesan",
+    "teams": {
+      "2021": [
+        "reviewers"
+      ]
+    },
+    "twitter": "carlop54002226"
   },
   "caraya": {
     "avatar_url": "409841",
@@ -1306,17 +836,6 @@
     },
     "twitter": "elrond25",
     "website": "http://publishing-project.rivendellweb.net/"
-  },
-  "carlopi": {
-    "avatar_url": "842657",
-    "github": "carlopi",
-    "name": "Carlo Piovesan",
-    "teams": {
-      "2021": [
-        "reviewers"
-      ]
-    },
-    "twitter": "carlop54002226"
   },
   "carloscastromx": {
     "avatar_url": "62315048",
@@ -1332,6 +851,29 @@
     },
     "twitter": "mxcarloscastro",
     "website": "https://carloscm.me/en/"
+  },
+  "c-torres": {
+    "avatar_url": "6588246",
+    "github": "c-torres",
+    "name": "Carlos Torres",
+    "teams": {
+      "2019": [
+        "developers",
+        "translators"
+      ]
+    },
+    "twitter": "carlos_catb"
+  },
+  "clottman": {
+    "avatar_url": "4480480",
+    "github": "clottman",
+    "name": "Cassey Lottman",
+    "teams": {
+      "2021": [
+        "reviewers"
+      ]
+    },
+    "website": "https://cassey.dev/"
   },
   "catalinred": {
     "avatar_url": "1867900",
@@ -1351,30 +893,17 @@
     "twitter": "catalinred",
     "website": "https://catalin.red/"
   },
-  "cdixon83": {
-    "avatar_url": "76669481",
-    "github": "cdixon83",
-    "name": "Carlie Dixon",
-    "teams": {
-      "2021": [
-        "reviewers"
-      ]
-    }
-  },
-  "chefleo": {
-    "avatar_url": "26022943",
-    "github": "chefleo",
-    "name": "Leonardo Digiorgio",
+  "huijing": {
+    "avatar_url": "1461498",
+    "github": "huijing",
+    "name": "Chen Hui Jing",
     "teams": {
       "2019": [
-        "translators"
-      ],
-      "2020": [
-        "translators"
+        "reviewers"
       ]
     },
-    "twitter": "simdigiorgio",
-    "website": "https://chefleo.dev/"
+    "twitter": "hj_chen",
+    "website": "https://www.chenhuijing.com"
   },
   "chengxicn": {
     "avatar_url": "30398527",
@@ -1389,11 +918,51 @@
       ]
     }
   },
+  "mrchrisadams": {
+    "avatar_url": "17906",
+    "github": "mrchrisadams",
+    "name": "Chris Adams",
+    "teams": {
+      "2022": [
+        "reviewers"
+      ]
+    },
+    "website": "https://chrisadams.me.uk"
+  },
+  "svgeesus": {
+    "avatar_url": "2506926",
+    "github": "svgeesus",
+    "name": "Chris Lilley",
+    "teams": {
+      "2020": [
+        "authors",
+        "reviewers"
+      ],
+      "2021": [
+        "reviewers"
+      ],
+      "2022": [
+        "reviewers"
+      ]
+    },
+    "twitter": "svgeesus",
+    "website": "https://svgees.us"
+  },
   "chrissater": {
     "linkedin": "christophersater",
     "name": "Chris Sater",
     "teams": {
       "2021": [
+        "reviewers"
+      ]
+    }
+  },
+  "CSteele-gh": {
+    "avatar_url": "104934613",
+    "github": "CSteele-gh",
+    "name": "Chris Steele",
+    "teams": {
+      "2022": [
         "reviewers"
       ]
     }
@@ -1416,39 +985,17 @@
     "twitter": "christianliebel",
     "website": "https://christianliebel.com"
   },
-  "clarkeclark": {
-    "avatar_url": "13718746",
-    "github": "clarkeclark",
-    "linkedin": "johnfox",
-    "name": "John Fox",
-    "teams": {
-      "2019": [
-        "reviewers"
-      ]
-    }
-  },
-  "clarkio": {
-    "avatar_url": "6265396",
-    "github": "clarkio",
-    "name": "Brian Clark",
+  "Suzzicks": {
+    "avatar_url": "72282209",
+    "github": "Suzzicks",
+    "name": "Cindy Krum",
     "teams": {
       "2022": [
         "authors"
       ]
     },
-    "twitter": "_clarkio",
-    "website": "https://www.clarkio.com"
-  },
-  "clottman": {
-    "avatar_url": "4480480",
-    "github": "clottman",
-    "name": "Cassey Lottman",
-    "teams": {
-      "2021": [
-        "reviewers"
-      ]
-    },
-    "website": "https://cassey.dev/"
+    "twitter": "suzzicks",
+    "website": "https://mobilemoxie.com/"
   },
   "colinbendell": {
     "avatar_url": "1622597",
@@ -1465,25 +1012,17 @@
     },
     "twitter": "colinbendell"
   },
-  "cqueern": {
-    "avatar_url": "1588185",
-    "github": "cqueern",
-    "name": "Caleb Queern",
+  "ColinEberhardt": {
+    "avatar_url": "1098110",
+    "github": "ColinEberhardt",
+    "name": "Colin Eberhardt",
     "teams": {
-      "2020": [
-        "reviewers"
-      ],
-      "2021": [
-        "reviewers"
-      ],
       "2022": [
-        "reviewers"
-      ],
-      "2024": [
-        "editors"
+        "authors"
       ]
     },
-    "twitter": "httpsecheaders"
+    "twitter": "ColinEberhardt",
+    "website": "https://blog.scottlogic.com/ceberhardt/"
   },
   "csliva": {
     "avatar_url": "4701180",
@@ -1496,43 +1035,41 @@
     },
     "twitter": "signorcolt"
   },
-  "csswizardry": {
-    "avatar_url": "751944",
-    "github": "csswizardry",
-    "name": "Harry Roberts",
+  "dknauss": {
+    "avatar_url": "273554",
+    "github": "dknauss",
+    "name": "Dan Knauss",
     "teams": {
-      "2021": [
+      "2022": [
+        "editors",
         "reviewers"
       ]
     },
-    "twitter": "csswizardry",
-    "website": "https://csswizardry.com/"
+    "website": "https://newlocalmedia.com"
   },
-  "cybai": {
-    "avatar_url": "6782666",
-    "github": "CYBAI",
-    "name": "cybai",
+  "bagder": {
+    "avatar_url": "177011",
+    "github": "bagder",
+    "name": "Daniel Stenberg",
     "teams": {
-      "2020": [
-        "translators"
+      "2019": [
+        "reviewers"
       ]
     },
-    "twitter": "_cybai"
+    "twitter": "bagder",
+    "website": "https://daniel.haxx.se/"
   },
-  "cyberandy": {
-    "avatar_url": "837037",
-    "github": "cyberandy",
-    "name": "Andrea Volpini",
+  "drohe": {
+    "avatar_url": "62556996",
+    "github": "drohe",
+    "name": "Danielle Rohe",
     "teams": {
-      "2021": [
-        "authors"
-      ],
       "2022": [
-        "authors"
+        "analysts"
       ]
     },
-    "twitter": "cyberandy",
-    "website": "https://wordlift.io/blog/en/entity/andrea-volpini"
+    "twitter": "d4ni_s",
+    "website": "https://www.digital-danielle.com"
   },
   "davelab6": {
     "avatar_url": "261579",
@@ -1548,187 +1085,6 @@
     },
     "twitter": "davelab6",
     "website": "https://fonts.google.com"
-  },
-  "decrecementofeliz": {
-    "avatar_url": "1857745",
-    "github": "decrecementofeliz",
-    "name": "Pilar Mera",
-    "teams": {
-      "2022": [
-        "translators"
-      ]
-    },
-    "twitter": "DecreceFeliz",
-    "website": "http://pi-comunicacion.com"
-  },
-  "demianrenzulli": {
-    "avatar_url": "15170359",
-    "github": "demianrenzulli",
-    "name": "Demian Renzulli",
-    "teams": {
-      "2021": [
-        "authors",
-        "analysts"
-      ]
-    },
-    "twitter": "drenzulli"
-  },
-  "denar90": {
-    "avatar_url": "6231516",
-    "github": "denar90",
-    "name": "Artem Denysov",
-    "teams": {
-      "2020": [
-        "reviewers",
-        "analysts"
-      ],
-      "2021": [
-        "authors",
-        "analysts"
-      ]
-    },
-    "twitter": "denar90_"
-  },
-  "dereknahman": {
-    "avatar_url": "44810431",
-    "github": "dereknahman",
-    "name": "Kirsty Simmonds",
-    "teams": {
-      "2022": [
-        "editors"
-      ]
-    },
-    "twitter": "keinegurke_",
-    "website": "https://kirsty.codes"
-  },
-  "derekperkins": {
-    "avatar_url": "3588778",
-    "github": "derekperkins",
-    "name": "Derek Perkins",
-    "teams": {
-      "2022": [
-        "analysts"
-      ]
-    },
-    "website": "http://derekperkins.com"
-  },
-  "diekus": {
-    "avatar_url": "73939538",
-    "github": "diekus",
-    "name": "Diego Gonzalez",
-    "teams": {
-      "2022": [
-        "authors"
-      ]
-    },
-    "twitter": "diekus",
-    "website": "https://diek.us"
-  },
-  "dknauss": {
-    "avatar_url": "273554",
-    "github": "dknauss",
-    "name": "Dan Knauss",
-    "teams": {
-      "2022": [
-        "editors",
-        "reviewers"
-      ]
-    },
-    "website": "https://newlocalmedia.com"
-  },
-  "dominiclovell": {
-    "avatar_url": "131131",
-    "linkedin": "dominiclovell",
-    "name": "Dominic Lovell",
-    "teams": {
-      "2021": [
-        "authors"
-      ]
-    },
-    "twitter": "dominiclovell"
-  },
-  "dooman87": {
-    "avatar_url": "124110",
-    "github": "dooman87",
-    "name": "Pokidov N. Dmitry",
-    "teams": {
-      "2020": [
-        "analysts"
-      ]
-    },
-    "twitter": "otherpunk",
-    "website": "https://pixboost.com"
-  },
-  "dotjs": {
-    "avatar_url": "2914966",
-    "github": "dotjs",
-    "name": "Andrew Galloni",
-    "teams": {
-      "2019": [
-        "analysts",
-        "reviewers"
-      ],
-      "2020": [
-        "authors"
-      ]
-    },
-    "twitter": "dot_js"
-  },
-  "dougsillars": {
-    "avatar_url": "1514288",
-    "github": "dougsillars",
-    "name": "Doug Sillars",
-    "teams": {
-      "2019": [
-        "brainstormers",
-        "authors",
-        "analysts"
-      ],
-      "2020": [
-        "reviewers"
-      ],
-      "2021": [
-        "authors",
-        "analysts"
-      ]
-    },
-    "twitter": "dougsillars",
-    "website": "https://dougsillars.com"
-  },
-  "drohe": {
-    "avatar_url": "62556996",
-    "github": "drohe",
-    "name": "Danielle Rohe",
-    "teams": {
-      "2022": [
-        "analysts"
-      ]
-    },
-    "twitter": "d4ni_s",
-    "website": "https://www.digital-danielle.com"
-  },
-  "dsadhanala": {
-    "avatar_url": "5795823",
-    "github": "dsadhanala",
-    "name": "Durga Prasad Sadhanala",
-    "teams": {
-      "2020": [
-        "developers"
-      ]
-    },
-    "twitter": "dsadhanala"
-  },
-  "dsottimano": {
-    "avatar_url": "3630989",
-    "github": "dsottimano",
-    "name": "Dave Sottimano",
-    "teams": {
-      "2020": [
-        "reviewers"
-      ]
-    },
-    "twitter": "dsottimano",
-    "website": "https://opensourceseo.org/"
   },
   "dwsmart": {
     "avatar_url": "11179452",
@@ -1749,263 +1105,17 @@
     "twitter": "davewsmart",
     "website": "https://tamethebots.com"
   },
-  "edmondwwchan": {
-    "avatar_url": "68361682",
-    "github": "edmondwwchan",
-    "name": "Edmond W. W. Chan",
-    "teams": {
-      "2020": [
-        "reviewers"
-      ],
-      "2021": [
-        "reviewers"
-      ]
-    },
-    "website": "https://edmondwwchan.github.io/"
-  },
-  "eduqg": {
-    "avatar_url": "17773211",
-    "github": "eduqg",
-    "name": "Eduardo Q. Gomes",
-    "teams": {
-      "2019": [
-        "translators"
-      ]
-    },
-    "website": "https://eduqg.github.io/"
-  },
-  "eeeps": {
-    "avatar_url": "3441390",
-    "github": "eeeps",
-    "name": "Eric Portis",
-    "teams": {
-      "2019": [
-        "reviewers"
-      ],
-      "2020": [
-        "authors"
-      ],
-      "2021": [
-        "authors",
-        "analysts"
-      ],
-      "2022": [
-        "analysts",
-        "authors"
-      ]
-    },
-    "twitter": "etportis",
-    "website": "https://ericportis.com"
-  },
-  "elaynelemos": {
-    "avatar_url": "24370436",
-    "github": "elaynelemos",
-    "linkedin": "elaynelemos",
-    "name": "Elayne Lemos",
-    "teams": {
-      "2019": [
-        "translators"
-      ]
-    }
-  },
-  "emanuelgsouza": {
-    "avatar_url": "20342656",
-    "github": "emanuelgsouza",
-    "linkedin": "emanuelgsouza",
-    "name": "Emanuel Gon\u00e7alves Santana de Souza",
-    "teams": {
-      "2020": [
-        "translators"
-      ]
-    },
-    "twitter": "emanuelgsouza",
-    "website": "https://emanuelgsouza.dev/"
-  },
-  "en3r0": {
-    "avatar_url": "7061425",
-    "github": "en3r0",
-    "name": "Dustin Montgomery",
+  "dsottimano": {
+    "avatar_url": "3630989",
+    "github": "dsottimano",
+    "name": "Dave Sottimano",
     "teams": {
       "2020": [
         "reviewers"
       ]
     },
-    "twitter": "DustinMontSEO",
-    "website": "https://dustinmontgomery.com/"
-  },
-  "enygren": {
-    "avatar_url": "6840678",
-    "github": "enygren",
-    "name": "Erik Nygren",
-    "teams": {
-      "2019": [
-        "brainstormers",
-        "reviewers"
-      ]
-    },
-    "twitter": "akanygren",
-    "website": "https://erik.nygren.org/"
-  },
-  "ericwbailey": {
-    "avatar_url": "634191",
-    "github": "ericwbailey",
-    "name": "Eric Bailey",
-    "teams": {
-      "2020": [
-        "reviewers"
-      ],
-      "2021": [
-        "reviewers"
-      ]
-    },
-    "twitter": "ericwbailey",
-    "website": "https://ericwbailey.design/"
-  },
-  "ernee": {
-    "avatar_url": "8108643",
-    "github": "ernee",
-    "name": "Renee Johnson",
-    "teams": {
-      "2019": [
-        "authors"
-      ],
-      "2020": [
-        "reviewers"
-      ]
-    },
-    "twitter": "reneesoffice",
-    "website": "https://reneesvirtualoffice.com"
-  },
-  "estelle": {
-    "avatar_url": "69888",
-    "github": "estelle",
-    "name": "Estelle Weyl",
-    "teams": {
-      "2020": [
-        "reviewers"
-      ],
-      "2021": [
-        "reviewers"
-      ],
-      "2022": [
-        "reviewers"
-      ]
-    },
-    "twitter": "estellevw",
-    "website": "http://standardista.com"
-  },
-  "eustas": {
-    "avatar_url": "203457",
-    "github": "eustas",
-    "name": "Eugene Kliuchnikov",
-    "teams": {
-      "2021": [
-        "reviewers"
-      ]
-    }
-  },
-  "exterkamp": {
-    "avatar_url": "6392995",
-    "github": "exterkamp",
-    "name": "Shane Exterkamp",
-    "teams": {
-      "2020": [
-        "editors",
-        "reviewers"
-      ]
-    },
-    "twitter": "Shane_Exterkamp"
-  },
-  "fantasai": {
-    "avatar_url": "725717",
-    "github": "fantasai",
-    "name": "Elika Etemad aka fantasai",
-    "teams": {
-      "2020": [
-        "reviewers"
-      ]
-    },
-    "twitter": "fantasai",
-    "website": "http://fantasai.inkedblade.net/"
-  },
-  "fatmabadri": {
-    "avatar_url": "10557131",
-    "github": "fatmabadri",
-    "linkedin": "fatmabadri",
-    "name": "Fatma Badri",
-    "teams": {
-      "2019": [
-        "translators"
-      ],
-      "2020": [
-        "translators"
-      ]
-    },
-    "website": "https://fatmabadri.github.io/"
-  },
-  "fellowhuman1101": {
-    "avatar_url": "52051775",
-    "github": "fellowhuman1101",
-    "name": "Jamie Indigo",
-    "teams": {
-      "2020": [
-        "authors"
-      ],
-      "2021": [
-        "authors",
-        "reviewers"
-      ],
-      "2022": [
-        "authors"
-      ]
-    },
-    "twitter": "Jammer_Volts",
-    "website": "https://not-a-robot.com"
-  },
-  "fershad": {
-    "avatar_url": "27988517",
-    "github": "fershad",
-    "name": "Fershad Irani",
-    "teams": {
-      "2022": [
-        "analysts"
-      ]
-    },
-    "twitter": "fershad",
-    "website": "https://www.fershad.com"
-  },
-  "fili": {
-    "avatar_url": "115263",
-    "github": "fili",
-    "linkedin": "filiwiese",
-    "name": "Fili Wiese",
-    "teams": {
-      "2021": [
-        "reviewers"
-      ]
-    },
-    "twitter": "filiwiese",
-    "website": "https://fili.com/"
-  },
-  "fischbacher": {
-    "github": "fischbacher",
-    "name": "Thomas Fischbacher",
-    "teams": {
-      "2021": [
-        "reviewers"
-      ]
-    }
-  },
-  "foolip": {
-    "avatar_url": "498917",
-    "github": "foolip",
-    "name": "Philip J\u00e4genstedt",
-    "teams": {
-      "2022": [
-        "reviewers"
-      ]
-    },
-    "website": "https://foolip.org/"
+    "twitter": "dsottimano",
+    "website": "https://opensourceseo.org/"
   },
   "foxdavidj": {
     "avatar_url": "684747",
@@ -2038,6 +1148,316 @@
     "twitter": "theobto",
     "website": "https://www.lookzook.com"
   },
+  "demianrenzulli": {
+    "avatar_url": "15170359",
+    "github": "demianrenzulli",
+    "name": "Demian Renzulli",
+    "teams": {
+      "2021": [
+        "authors",
+        "analysts"
+      ]
+    },
+    "twitter": "drenzulli"
+  },
+  "derekperkins": {
+    "avatar_url": "3588778",
+    "github": "derekperkins",
+    "name": "Derek Perkins",
+    "teams": {
+      "2022": [
+        "analysts"
+      ]
+    },
+    "website": "http://derekperkins.com"
+  },
+  "diekus": {
+    "avatar_url": "73939538",
+    "github": "diekus",
+    "name": "Diego Gonzalez",
+    "teams": {
+      "2022": [
+        "authors"
+      ]
+    },
+    "twitter": "diekus",
+    "website": "https://diek.us"
+  },
+  "dominiclovell": {
+    "avatar_url": "131131",
+    "linkedin": "dominiclovell",
+    "name": "Dominic Lovell",
+    "teams": {
+      "2021": [
+        "authors"
+      ]
+    },
+    "twitter": "dominiclovell"
+  },
+  "dougsillars": {
+    "avatar_url": "1514288",
+    "github": "dougsillars",
+    "name": "Doug Sillars",
+    "teams": {
+      "2019": [
+        "brainstormers",
+        "authors",
+        "analysts"
+      ],
+      "2020": [
+        "reviewers"
+      ],
+      "2021": [
+        "authors",
+        "analysts"
+      ]
+    },
+    "twitter": "dougsillars",
+    "website": "https://dougsillars.com"
+  },
+  "dsadhanala": {
+    "avatar_url": "5795823",
+    "github": "dsadhanala",
+    "name": "Durga Prasad Sadhanala",
+    "teams": {
+      "2020": [
+        "developers"
+      ]
+    },
+    "twitter": "dsadhanala"
+  },
+  "en3r0": {
+    "avatar_url": "7061425",
+    "github": "en3r0",
+    "name": "Dustin Montgomery",
+    "teams": {
+      "2020": [
+        "reviewers"
+      ]
+    },
+    "twitter": "DustinMontSEO",
+    "website": "https://dustinmontgomery.com/"
+  },
+  "edmondwwchan": {
+    "avatar_url": "68361682",
+    "github": "edmondwwchan",
+    "name": "Edmond W. W. Chan",
+    "teams": {
+      "2020": [
+        "reviewers"
+      ],
+      "2021": [
+        "reviewers"
+      ]
+    },
+    "website": "https://edmondwwchan.github.io/"
+  },
+  "Djohn12": {
+    "avatar_url": "38497742",
+    "github": "Djohn12",
+    "name": "Edmond de Tournadre",
+    "teams": {
+      "2022": [
+        "reviewers"
+      ]
+    }
+  },
+  "eduqg": {
+    "avatar_url": "17773211",
+    "github": "eduqg",
+    "name": "Eduardo Q. Gomes",
+    "teams": {
+      "2019": [
+        "translators"
+      ]
+    },
+    "website": "https://eduqg.github.io/"
+  },
+  "elaynelemos": {
+    "avatar_url": "24370436",
+    "github": "elaynelemos",
+    "linkedin": "elaynelemos",
+    "name": "Elayne Lemos",
+    "teams": {
+      "2019": [
+        "translators"
+      ]
+    }
+  },
+  "fantasai": {
+    "avatar_url": "725717",
+    "github": "fantasai",
+    "name": "Elika Etemad aka fantasai",
+    "teams": {
+      "2020": [
+        "reviewers"
+      ]
+    },
+    "twitter": "fantasai",
+    "website": "http://fantasai.inkedblade.net/"
+  },
+  "emanuelgsouza": {
+    "avatar_url": "20342656",
+    "github": "emanuelgsouza",
+    "linkedin": "emanuelgsouza",
+    "name": "Emanuel Gonçalves Santana de Souza",
+    "teams": {
+      "2020": [
+        "translators"
+      ]
+    },
+    "twitter": "emanuelgsouza",
+    "website": "https://emanuelgsouza.dev/"
+  },
+  "meyerweb": {
+    "avatar_url": "939727",
+    "github": "meyerweb",
+    "name": "Eric A. Meyer",
+    "teams": {
+      "2019": [
+        "reviewers"
+      ],
+      "2021": [
+        "authors"
+      ],
+      "2022": [
+        "reviewers"
+      ]
+    },
+    "twitter": "meyerweb",
+    "website": "http://meyerweb.com/"
+  },
+  "ericwbailey": {
+    "avatar_url": "634191",
+    "github": "ericwbailey",
+    "name": "Eric Bailey",
+    "teams": {
+      "2020": [
+        "reviewers"
+      ],
+      "2021": [
+        "reviewers"
+      ]
+    },
+    "twitter": "ericwbailey",
+    "website": "https://ericwbailey.design/"
+  },
+  "eeeps": {
+    "avatar_url": "3441390",
+    "github": "eeeps",
+    "name": "Eric Portis",
+    "teams": {
+      "2019": [
+        "reviewers"
+      ],
+      "2020": [
+        "authors"
+      ],
+      "2021": [
+        "authors",
+        "analysts"
+      ],
+      "2022": [
+        "analysts",
+        "authors"
+      ]
+    },
+    "twitter": "etportis",
+    "website": "https://ericportis.com"
+  },
+  "enygren": {
+    "avatar_url": "6840678",
+    "github": "enygren",
+    "name": "Erik Nygren",
+    "teams": {
+      "2019": [
+        "brainstormers",
+        "reviewers"
+      ]
+    },
+    "twitter": "akanygren",
+    "website": "https://erik.nygren.org/"
+  },
+  "estelle": {
+    "avatar_url": "69888",
+    "github": "estelle",
+    "name": "Estelle Weyl",
+    "teams": {
+      "2020": [
+        "reviewers"
+      ],
+      "2021": [
+        "reviewers"
+      ],
+      "2022": [
+        "reviewers"
+      ]
+    },
+    "twitter": "estellevw",
+    "website": "http://standardista.com"
+  },
+  "eustas": {
+    "avatar_url": "203457",
+    "github": "eustas",
+    "name": "Eugene Kliuchnikov",
+    "teams": {
+      "2021": [
+        "reviewers"
+      ]
+    }
+  },
+  "imeugenia": {
+    "avatar_url": "17236402",
+    "github": "imeugenia",
+    "name": "Eugenia Zigisova",
+    "teams": {
+      "2022": [
+        "authors"
+      ]
+    },
+    "twitter": "jevgeniazi",
+    "website": "https://github.com/imeugenia/speaking/blob/main/README.md"
+  },
+  "fatmabadri": {
+    "avatar_url": "10557131",
+    "github": "fatmabadri",
+    "linkedin": "fatmabadri",
+    "name": "Fatma Badri",
+    "teams": {
+      "2019": [
+        "translators"
+      ],
+      "2020": [
+        "translators"
+      ]
+    },
+    "website": "https://fatmabadri.github.io/"
+  },
+  "fershad": {
+    "avatar_url": "27988517",
+    "github": "fershad",
+    "name": "Fershad Irani",
+    "teams": {
+      "2022": [
+        "analysts"
+      ]
+    },
+    "twitter": "fershad",
+    "website": "https://www.fershad.com"
+  },
+  "fili": {
+    "avatar_url": "115263",
+    "github": "fili",
+    "linkedin": "filiwiese",
+    "name": "Fili Wiese",
+    "teams": {
+      "2021": [
+        "reviewers"
+      ]
+    },
+    "twitter": "filiwiese",
+    "website": "https://fili.com/"
+  },
   "gabriel-de-gennaro": {
     "name": "Gabriel De Gennaro",
     "teams": {
@@ -2046,6 +1466,15 @@
       ]
     },
     "website": "https://gabrieldegennaro.com"
+  },
+  "gwilhelm": {
+    "github": "gwilhelm",
+    "name": "Gary Wilhelm",
+    "teams": {
+      "2021": [
+        "authors"
+      ]
+    }
   },
   "gerrymcgovernireland": {
     "avatar_url": "67965551",
@@ -2057,17 +1486,46 @@
       ]
     }
   },
-  "ghedo": {
-    "avatar_url": "117643",
-    "github": "ghedo",
-    "name": "Alessandro Ghedini",
+  "GJFR": {
+    "avatar_url": "5749508",
+    "github": "GJFR",
+    "name": "Gertjan Franken",
     "teams": {
-      "2019": [
-        "brainstormers",
-        "reviewers"
+      "2022": [
+        "analysts"
+      ]
+    }
+  },
+  "gjfr": {
+    "avatar_url": "5749508",
+    "github": "gjfr",
+    "name": "Gertjan Franken",
+    "teams": {
+      "2021": [
+        "analysts"
       ]
     },
-    "website": "https://ghedini.me/"
+    "twitter": "GJFR_"
+  },
+  "GiacomoPignoni": {
+    "avatar_url": "34923063",
+    "github": "GiacomoPignoni",
+    "name": "Giacomo Pignoni",
+    "teams": {
+      "2019": [
+        "developers"
+      ]
+    },
+    "twitter": "Pigna__"
+  },
+  "GigiRajani": {
+    "github": "GigiRajani",
+    "name": "Gigi Rajani",
+    "teams": {
+      "2021": [
+        "reviewers"
+      ]
+    }
   },
   "giopunt": {
     "avatar_url": "1746646",
@@ -2081,16 +1539,17 @@
     },
     "twitter": "giovannipuntil"
   },
-  "gjfr": {
-    "avatar_url": "5749508",
-    "github": "gjfr",
-    "name": "Gertjan Franken",
+  "webmatter-it": {
+    "avatar_url": "6397771",
+    "github": "webmatter-it",
+    "name": "Giulia Laco",
     "teams": {
-      "2021": [
-        "analysts"
+      "2022": [
+        "translators"
       ]
     },
-    "twitter": "GJFR_"
+    "twitter": "webmatter_it",
+    "website": "https://www.webmatter.it/"
   },
   "gokulkrishh": {
     "avatar_url": "2944237",
@@ -2102,6 +1561,21 @@
       ]
     }
   },
+  "GregBrimble": {
+    "avatar_url": "8484333",
+    "github": "GregBrimble",
+    "name": "Greg Brimble",
+    "teams": {
+      "2020": [
+        "analysts"
+      ],
+      "2021": [
+        "analysts"
+      ]
+    },
+    "twitter": "gregbrimble",
+    "website": "https://gregbrimble.com/"
+  },
   "gregorywolf": {
     "avatar_url": "8494683",
     "github": "gregorywolf",
@@ -2112,27 +1586,6 @@
       ]
     }
   },
-  "gwilhelm": {
-    "github": "gwilhelm",
-    "name": "Gary Wilhelm",
-    "teams": {
-      "2021": [
-        "authors"
-      ]
-    }
-  },
-  "hankchizljaw": {
-    "avatar_url": "8672583",
-    "github": "hankchizljaw",
-    "name": "Andy Bell",
-    "teams": {
-      "2020": [
-        "reviewers"
-      ]
-    },
-    "twitter": "hankchizljaw",
-    "website": "https://hankchizljaw.com/"
-  },
   "harendra": {
     "github": "harendra",
     "name": "Haren Bhandari",
@@ -2142,6 +1595,18 @@
         "authors"
       ]
     }
+  },
+  "csswizardry": {
+    "avatar_url": "751944",
+    "github": "csswizardry",
+    "name": "Harry Roberts",
+    "teams": {
+      "2021": [
+        "reviewers"
+      ]
+    },
+    "twitter": "csswizardry",
+    "website": "https://csswizardry.com/"
   },
   "hemanth": {
     "avatar_url": "18315",
@@ -2160,6 +1625,18 @@
     },
     "twitter": "gnumanth",
     "website": "http://h3manth.com"
+  },
+  "tanhengyeow": {
+    "avatar_url": "25320782",
+    "github": "tanhengyeow",
+    "name": "Heng Yeow",
+    "teams": {
+      "2019": [
+        "developers"
+      ]
+    },
+    "twitter": "tanhengyeow",
+    "website": "https://tanhengyeow.github.io"
   },
   "henrihelvetica": {
     "avatar_url": "50970808",
@@ -2199,17 +1676,25 @@
     "twitter": "hdjirdeh",
     "website": "https://houssein.me"
   },
-  "huijing": {
-    "avatar_url": "1461498",
-    "github": "huijing",
-    "name": "Chen Hui Jing",
+  "ArvinH": {
+    "avatar_url": "286856",
+    "github": "ArvinH",
+    "name": "Huang Shuo-Han",
     "teams": {
-      "2019": [
-        "reviewers"
+      "2020": [
+        "translators"
       ]
-    },
-    "twitter": "hj_chen",
-    "website": "https://www.chenhuijing.com"
+    }
+  },
+  "aszx87410": {
+    "avatar_url": "2755720",
+    "github": "aszx87410",
+    "name": "Huli",
+    "teams": {
+      "2020": [
+        "translators"
+      ]
+    }
   },
   "iandevlin": {
     "avatar_url": "554326",
@@ -2223,41 +1708,33 @@
     "twitter": "iandevlin",
     "website": "https://iandevlin.com"
   },
-  "ibelem": {
-    "avatar_url": "5017359",
-    "github": "ibelem",
-    "name": "Belem Zhang",
+  "wrttnwrd": {
+    "avatar_url": "382649",
+    "github": "wrttnwrd",
+    "name": "Ian Lurie",
     "teams": {
-      "2022": [
-        "translators"
-      ]
-    },
-    "twitter": "ibelem"
-  },
-  "ibnesayeed": {
-    "avatar_url": "65147",
-    "github": "ibnesayeed",
-    "name": "Sawood Alam",
-    "teams": {
-      "2020": [
-        "developers",
-        "reviewers"
-      ]
-    },
-    "twitter": "ibnesayeed",
-    "website": "https://www.cs.odu.edu/~salam/"
-  },
-  "imeugenia": {
-    "avatar_url": "17236402",
-    "github": "imeugenia",
-    "name": "Eugenia Zigisova",
-    "teams": {
-      "2022": [
+      "2021": [
         "authors"
       ]
     },
-    "twitter": "jevgeniazi",
-    "website": "https://github.com/imeugenia/speaking/blob/main/README.md"
+    "twitter": "ianlurie",
+    "website": "https://www.ianlurie.com"
+  },
+  "RReverser": {
+    "avatar_url": "557590",
+    "github": "RReverser",
+    "name": "Ingvar Stepanyan",
+    "teams": {
+      "2021": [
+        "analysts",
+        "authors"
+      ],
+      "2022": [
+        "reviewers"
+      ]
+    },
+    "twitter": "RReverser",
+    "website": "https://rreverser.com/"
   },
   "ines-akrap": {
     "avatar_url": "5904064",
@@ -2270,18 +1747,6 @@
     },
     "twitter": "InesAkrap",
     "website": "https://inesakrap.com/"
-
-  },
-  "ipullrank": {
-    "avatar_url": "1043031",
-    "github": "ipullrank",
-    "name": "Michael King",
-    "teams": {
-      "2020": [
-        "authors"
-      ]
-    },
-    "twitter": "IPullRank"
   },
   "iskander-sanchez-rola": {
     "avatar_url": "26458054",
@@ -2309,13 +1774,177 @@
   "iulia-m-comsa": {
     "avatar_url": "14878188",
     "github": "iulia-m-comsa",
-    "name": "Iulia Com\u0219a",
+    "name": "Iulia Comșa",
     "teams": {
       "2021": [
         "reviewers"
       ]
     },
     "website": "https://sites.google.com/view/iuliacomsa/"
+  },
+  "SilentJMA": {
+    "avatar_url": "16384750",
+    "github": "SilentJMA",
+    "name": "JABANE Mohamed Ayoub",
+    "teams": {
+      "2019": [
+        "translators"
+      ]
+    },
+    "twitter": "SilentJMA"
+  },
+  "jroakes": {
+    "avatar_url": "10191545",
+    "github": "jroakes",
+    "name": "JR Oakes",
+    "teams": {
+      "2021": [
+        "analysts"
+      ],
+      "2022": [
+        "analysts"
+      ]
+    },
+    "twitter": "jroakes"
+  },
+  "jadjoubran": {
+    "avatar_url": "2265232",
+    "github": "jadjoubran",
+    "name": "Jad Joubran",
+    "teams": {
+      "2020": [
+        "reviewers"
+      ]
+    },
+    "twitter": "JoubranJad",
+    "website": "https://learnjavascript.online/"
+  },
+  "fellowhuman1101": {
+    "avatar_url": "52051775",
+    "github": "fellowhuman1101",
+    "name": "Jamie Indigo",
+    "teams": {
+      "2020": [
+        "authors"
+      ],
+      "2021": [
+        "authors",
+        "reviewers"
+      ],
+      "2022": [
+        "authors"
+      ]
+    },
+    "twitter": "Jammer_Volts",
+    "website": "https://not-a-robot.com"
+  },
+  "JamieWhitMac": {
+    "avatar_url": "27693707",
+    "github": "JamieWhitMac",
+    "name": "Jamie Macdonald",
+    "teams": {
+      "2022": [
+        "analysts"
+      ]
+    }
+  },
+  "jaredcwhite": {
+    "avatar_url": "658496",
+    "github": "jaredcwhite",
+    "name": "Jared White",
+    "teams": {
+      "2019": [
+        "brainstormers"
+      ]
+    },
+    "twitter": "jaredcwhite",
+    "website": "https://jaredwhite.com"
+  },
+  "jvandriel": {
+    "avatar_url": "7320889",
+    "github": "jvandriel",
+    "linkedin": "jarno-van-driel-36a47075",
+    "name": "Jarno van Driel",
+    "teams": {
+      "2021": [
+        "editors"
+      ]
+    },
+    "twitter": "JarnoVanDriel"
+  },
+  "jsoverson": {
+    "avatar_url": "842798",
+    "github": "jsoverson",
+    "name": "Jarrod Overson",
+    "teams": {
+      "2021": [
+        "reviewers"
+      ]
+    },
+    "website": "http://jarrodoverson.com/"
+  },
+  "JasmineDW": {
+    "avatar_url": "29200198",
+    "github": "JasmineDW",
+    "name": "Jasmine Drudge-Willson",
+    "teams": {
+      "2022": [
+        "editors"
+      ]
+    }
+  },
+  "JasmineDWillson": {
+    "avatar_url": "58438178",
+    "github": "JasmineDWillson",
+    "name": "Jasmine Drudge-Willson",
+    "teams": {
+      "2021": [
+        "editors"
+      ]
+    },
+    "twitter": "jasminedwillson"
+  },
+  "jrharalson": {
+    "avatar_url": "7421844",
+    "github": "jrharalson",
+    "name": "Jason Haralson",
+    "teams": {
+      "2019": [
+        "analysts"
+      ],
+      "2020": [
+        "authors",
+        "analysts"
+      ]
+    }
+  },
+  "jpamental": {
+    "avatar_url": "537413",
+    "github": "jpamental",
+    "name": "Jason Pamental",
+    "teams": {
+      "2020": [
+        "authors"
+      ]
+    },
+    "twitter": "jpamental",
+    "website": "https://rwt.io"
+  },
+  "jeffposnick": {
+    "avatar_url": "1749548",
+    "github": "jeffposnick",
+    "name": "Jeff Posnick",
+    "teams": {
+      "2019": [
+        "brainstormers",
+        "authors"
+      ],
+      "2021": [
+        "reviewers"
+      ]
+    },
+    "twitter": "jeffposnick",
+    "website": "https://jeffy.info"
   },
   "j9t": {
     "avatar_url": "1700772",
@@ -2337,57 +1966,29 @@
     "twitter": "j9t",
     "website": "https://meiert.com/en/"
   },
-  "jadjoubran": {
-    "avatar_url": "2265232",
-    "github": "jadjoubran",
-    "name": "Jad Joubran",
+  "malchata": {
+    "avatar_url": "1635238",
+    "github": "malchata",
+    "name": "Jeremy Wagner",
     "teams": {
-      "2020": [
-        "reviewers"
-      ]
-    },
-    "twitter": "JoubranJad",
-    "website": "https://learnjavascript.online/"
-  },
-  "jaredcwhite": {
-    "avatar_url": "658496",
-    "github": "jaredcwhite",
-    "name": "Jared White",
-    "teams": {
-      "2019": [
-        "brainstormers"
-      ]
-    },
-    "twitter": "jaredcwhite",
-    "website": "https://jaredwhite.com"
-  },
-  "jasti": {
-    "avatar_url": "2366341",
-    "github": "jasti",
-    "name": "Vamsee Jasti",
-    "teams": {
-      "2019": [
-        "reviewers"
-      ]
-    },
-    "twitter": "vamseejasti",
-    "website": "https://vamseejasti.com"
-  },
-  "jeffposnick": {
-    "avatar_url": "1749548",
-    "github": "jeffposnick",
-    "name": "Jeff Posnick",
-    "teams": {
-      "2019": [
-        "brainstormers",
+      "2022": [
         "authors"
-      ],
-      "2021": [
-        "reviewers"
       ]
     },
-    "twitter": "jeffposnick",
-    "website": "https://jeffy.info"
+    "twitter": "malchata",
+    "website": "https://jlwagner.net/"
+  },
+  "jessthebp": {
+    "avatar_url": "17071492",
+    "github": "jessthebp",
+    "name": "Jess Peck",
+    "teams": {
+      "2021": [
+        "analysts"
+      ]
+    },
+    "twitter": "jessthebp",
+    "website": "https://jessbpeck.com/"
   },
   "jessnicolet": {
     "avatar_url": "59629525",
@@ -2404,30 +2005,6 @@
     "twitter": "jessica_nicolet",
     "website": "https://www.jessicanicolet.com/"
   },
-  "jessthebp": {
-    "avatar_url": "17071492",
-    "github": "jessthebp",
-    "name": "Jess Peck",
-    "teams": {
-      "2021": [
-        "analysts"
-      ]
-    },
-    "twitter": "jessthebp",
-    "website": "https://jessbpeck.com/"
-  },
-  "jmsole": {
-    "avatar_url": "1424556",
-    "github": "jmsole",
-    "name": "Jos\u00e9 Sol\u00e9",
-    "teams": {
-      "2022": [
-        "reviewers"
-      ]
-    },
-    "twitter": "jmsoleb",
-    "website": "https://www.jmsole.cl/"
-  },
   "joeviggiano": {
     "github": "joeviggiano",
     "name": "Joe Viggiano",
@@ -2435,6 +2012,17 @@
       "2022": [
         "analysts",
         "authors"
+      ]
+    }
+  },
+  "clarkeclark": {
+    "avatar_url": "13718746",
+    "github": "clarkeclark",
+    "linkedin": "johnfox",
+    "name": "John Fox",
+    "teams": {
+      "2019": [
+        "reviewers"
       ]
     }
   },
@@ -2449,295 +2037,6 @@
     },
     "twitter": "johnmurch",
     "website": "http://www.johnmurch.com"
-  },
-  "jonoalderson": {
-    "avatar_url": "11629607",
-    "github": "jonoalderson",
-    "name": "Jono Alderson",
-    "teams": {
-      "2021": [
-        "authors"
-      ],
-      "2022": [
-        "reviewers"
-      ]
-    },
-    "twitter": "jonoalderson",
-    "website": "https://www.jonoalderson.com"
-  },
-  "jpamental": {
-    "avatar_url": "537413",
-    "github": "jpamental",
-    "name": "Jason Pamental",
-    "teams": {
-      "2020": [
-        "authors"
-      ]
-    },
-    "twitter": "jpamental",
-    "website": "https://rwt.io"
-  },
-  "jrharalson": {
-    "avatar_url": "7421844",
-    "github": "jrharalson",
-    "name": "Jason Haralson",
-    "teams": {
-      "2019": [
-        "analysts"
-      ],
-      "2020": [
-        "authors",
-        "analysts"
-      ]
-    }
-  },
-  "jroakes": {
-    "avatar_url": "10191545",
-    "github": "jroakes",
-    "name": "JR Oakes",
-    "teams": {
-      "2021": [
-        "analysts"
-      ],
-      "2022": [
-        "analysts"
-      ]
-    },
-    "twitter": "jroakes"
-  },
-  "jsoverson": {
-    "avatar_url": "842798",
-    "github": "jsoverson",
-    "name": "Jarrod Overson",
-    "teams": {
-      "2021": [
-        "reviewers"
-      ]
-    },
-    "website": "http://jarrodoverson.com/"
-  },
-  "jvandriel": {
-    "avatar_url": "7320889",
-    "github": "jvandriel",
-    "linkedin": "jarno-van-driel-36a47075",
-    "name": "Jarno van Driel",
-    "teams": {
-      "2021": [
-        "editors"
-      ]
-    },
-    "twitter": "JarnoVanDriel"
-  },
-  "jyrkialakuijala": {
-    "avatar_url": "9086028",
-    "github": "jyrkialakuijala",
-    "name": "Jyrki Alakuijala",
-    "teams": {
-      "2020": [
-        "authors"
-      ],
-      "2021": [
-        "authors"
-      ]
-    },
-    "twitter": "jyzg"
-  },
-  "jzyang": {
-    "avatar_url": "2634031",
-    "github": "jzyang",
-    "linkedin": "yangzhe",
-    "name": "Julia Yang",
-    "teams": {
-      "2020": [
-        "reviewers"
-      ],
-      "2021": [
-        "reviewers",
-        "editors"
-      ]
-    },
-    "twitter": "Jules_Yang"
-  },
-  "kachiden": {
-    "avatar_url": "54685625",
-    "github": "kachiden",
-    "name": "Katriel Paige",
-    "teams": {
-      "2021": [
-        "authors"
-      ]
-    },
-    "website": "https://www.flowerstorm.tech/"
-  },
-  "kartashovio": {
-    "avatar_url": "60577846",
-    "github": "kartashovio",
-    "linkedin": "kartashov-io",
-    "name": "Timur Kartashov",
-    "teams": {
-      "2021": [
-        "translators"
-      ]
-    },
-    "twitter": "krutoi_paren",
-    "website": "https://kartashov.io/"
-  },
-  "kevinfarrugia": {
-    "avatar_url": "8075326",
-    "github": "kevinfarrugia",
-    "name": "Kevin Farrugia",
-    "teams": {
-      "2021": [
-        "analysts",
-        "authors",
-        "reviewers"
-      ],
-      "2022": [
-        "analysts",
-        "reviewers"
-      ]
-    },
-    "twitter": "imkevdev",
-    "website": "https://imkev.dev"
-  },
-  "khempenius": {
-    "avatar_url": "6076184",
-    "github": "khempenius",
-    "name": "Katie Hempenius",
-    "teams": {
-      "2019": [
-        "brainstormers",
-        "authors",
-        "analysts"
-      ],
-      "2020": [
-        "analysts"
-      ]
-    },
-    "twitter": "katiehempenius"
-  },
-  "kleinab": {
-    "avatar_url": "1319324",
-    "github": "kleinab",
-    "name": "Abigail Klein",
-    "teams": {
-      "2019": [
-        "authors"
-      ]
-    }
-  },
-  "konfirmed": {
-    "avatar_url": "9829274",
-    "github": "konfirmed",
-    "name": "Kanmi Obasa",
-    "teams": {
-      "2022": [
-        "analysts",
-        "reviewers"
-      ]
-    },
-    "twitter": "kanmiobasa",
-    "website": "https://www.knfrmd.com"
-  },
-  "kripken": {
-    "avatar_url": "173661",
-    "github": "kripken",
-    "name": "Alon Zakai",
-    "teams": {
-      "2021": [
-        "reviewers"
-      ]
-    },
-    "twitter": "kripken"
-  },
-  "ksakae1216": {
-    "avatar_url": "1982567",
-    "github": "ksakae1216",
-    "name": "Sakae Kotaro",
-    "teams": {
-      "2019": [
-        "translators"
-      ],
-      "2020": [
-        "translators"
-      ],
-      "2021": [
-        "translators"
-      ],
-      "2022": [
-        "translators"
-      ]
-    },
-    "twitter": "beltway7",
-    "website": "https://ksakae1216.com/"
-  },
-  "kushaldas": {
-    "avatar_url": "272303",
-    "github": "kushaldas",
-    "name": "Kushal Das",
-    "teams": {
-      "2022": [
-        "reviewers"
-      ]
-    },
-    "twitter": "kushaldas",
-    "website": "https://kushaldas.in"
-  },
-  "ldevernay": {
-    "avatar_url": "23695083",
-    "github": "ldevernay",
-    "name": "Laurent Devernay",
-    "teams": {
-      "2020": [
-        "reviewers"
-      ],
-      "2022": [
-        "authors"
-      ],
-      "2024": [
-        "authors"
-      ]
-    },
-    "twitter": "ldevernay",
-    "website": "https://ldevernay.github.io/"
-  },
-  "lex111": {
-    "avatar_url": "4408379",
-    "github": "lex111",
-    "name": "Alexey Pyltsyn",
-    "teams": {
-      "2019": [
-        "translators"
-      ],
-      "2020": [
-        "translators",
-        "editors",
-        "developers"
-      ]
-    },
-    "website": "https://lex111.ru/"
-  },
-  "lirantal": {
-    "avatar_url": "316371",
-    "github": "lirantal",
-    "name": "Liran Tal",
-    "teams": {
-      "2022": [
-        "authors"
-      ]
-    },
-    "twitter": "liran_tal",
-    "website": "https://twitter.com/liran_tal"
-  },
-  "ljme": {
-    "avatar_url": "3392338",
-    "github": "ljme",
-    "name": "Laura Eberly",
-    "teams": {
-      "2019": [
-        "reviewers"
-      ]
-    }
   },
   "logicalphase": {
     "avatar_url": "25212653",
@@ -2757,14 +2056,403 @@
     "twitter": "jtteag",
     "website": "https://gemservers.com"
   },
+  "sirjonathan": {
+    "avatar_url": "104149",
+    "github": "sirjonathan",
+    "name": "Jonathan Wold",
+    "teams": {
+      "2019": [
+        "reviewers"
+      ],
+      "2020": [
+        "reviewers"
+      ],
+      "2022": [
+        "authors"
+      ]
+    },
+    "twitter": "sirjonathan",
+    "website": "https://jonathanwold.com"
+  },
+  "jonoalderson": {
+    "avatar_url": "11629607",
+    "github": "jonoalderson",
+    "name": "Jono Alderson",
+    "teams": {
+      "2021": [
+        "authors"
+      ],
+      "2022": [
+        "reviewers"
+      ]
+    },
+    "twitter": "jonoalderson",
+    "website": "https://www.jonoalderson.com"
+  },
+  "JMPerez": {
+    "avatar_url": "416456",
+    "github": "JMPerez",
+    "name": "José M. Pérez",
+    "teams": {
+      "2019": [
+        "developers",
+        "reviewers",
+        "translators"
+      ]
+    },
+    "twitter": "jmperezperez",
+    "website": "https://jmperezperez.com"
+  },
+  "jmsole": {
+    "avatar_url": "1424556",
+    "github": "jmsole",
+    "name": "José Solé",
+    "teams": {
+      "2022": [
+        "reviewers"
+      ]
+    },
+    "twitter": "jmsoleb",
+    "website": "https://www.jmsole.cl/"
+  },
+  "jzyang": {
+    "avatar_url": "2634031",
+    "github": "jzyang",
+    "linkedin": "yangzhe",
+    "name": "Julia Yang",
+    "teams": {
+      "2020": [
+        "reviewers"
+      ],
+      "2021": [
+        "reviewers",
+        "editors"
+      ]
+    },
+    "twitter": "Jules_Yang"
+  },
+  "JustinyAhin": {
+    "avatar_url": "33403964",
+    "github": "JustinyAhin",
+    "name": "Justin Ahinon",
+    "teams": {
+      "2019": [
+        "translators"
+      ]
+    },
+    "twitter": "justinahinon1",
+    "website": "https://segbedji.com/"
+  },
+  "welenofsky": {
+    "avatar_url": "3008677",
+    "github": "welenofsky",
+    "name": "Justin Welenofsky",
+    "teams": {
+      "2019": [
+        "developers"
+      ]
+    }
+  },
+  "jyrkialakuijala": {
+    "avatar_url": "9086028",
+    "github": "jyrkialakuijala",
+    "name": "Jyrki Alakuijala",
+    "teams": {
+      "2020": [
+        "authors"
+      ],
+      "2021": [
+        "authors"
+      ]
+    },
+    "twitter": "jyzg"
+  },
+  "Schweinepriester": {
+    "avatar_url": "2644614",
+    "github": "Schweinepriester",
+    "name": "Kai Hollberg",
+    "teams": {
+      "2021": [
+        "reviewers"
+      ],
+      "2022": [
+        "reviewers"
+      ]
+    },
+    "twitter": "schweinepriestr"
+  },
+  "konfirmed": {
+    "avatar_url": "9829274",
+    "github": "konfirmed",
+    "name": "Kanmi Obasa",
+    "teams": {
+      "2022": [
+        "analysts",
+        "reviewers"
+      ]
+    },
+    "twitter": "kanmiobasa",
+    "website": "https://www.knfrmd.com"
+  },
+  "KJLarson": {
+    "avatar_url": "42503401",
+    "github": "KJLarson",
+    "name": "Kari Larson",
+    "teams": {
+      "2019": [
+        "developers"
+      ]
+    },
+    "twitter": "KaJLa47",
+    "website": "https://www.kjlarson.com"
+  },
+  "thefoxis": {
+    "avatar_url": "375731",
+    "github": "thefoxis",
+    "name": "Karolina Szczur",
+    "teams": {
+      "2020": [
+        "authors"
+      ]
+    },
+    "twitter": "fox"
+  },
+  "tymosh": {
+    "avatar_url": "25080897",
+    "github": "tymosh",
+    "linkedin": "tymosh",
+    "name": "Kate Tymoshkina",
+    "teams": {
+      "2019": [
+        "translators"
+      ],
+      "2020": [
+        "translators"
+      ]
+    }
+  },
+  "khempenius": {
+    "avatar_url": "6076184",
+    "github": "khempenius",
+    "name": "Katie Hempenius",
+    "teams": {
+      "2019": [
+        "brainstormers",
+        "authors",
+        "analysts"
+      ],
+      "2020": [
+        "analysts"
+      ]
+    },
+    "twitter": "katiehempenius"
+  },
+  "kachiden": {
+    "avatar_url": "54685625",
+    "github": "kachiden",
+    "name": "Katriel Paige",
+    "teams": {
+      "2021": [
+        "authors"
+      ]
+    },
+    "website": "https://www.flowerstorm.tech/"
+  },
+  "kevinfarrugia": {
+    "avatar_url": "8075326",
+    "github": "kevinfarrugia",
+    "name": "Kevin Farrugia",
+    "teams": {
+      "2021": [
+        "analysts",
+        "authors",
+        "reviewers"
+      ],
+      "2022": [
+        "analysts",
+        "reviewers"
+      ]
+    },
+    "twitter": "imkevdev",
+    "website": "https://imkev.dev"
+  },
+  "dereknahman": {
+    "avatar_url": "44810431",
+    "github": "dereknahman",
+    "name": "Kirsty Simmonds",
+    "teams": {
+      "2022": [
+        "editors"
+      ]
+    },
+    "twitter": "keinegurke_",
+    "website": "https://kirsty.codes"
+  },
+  "vdwijngaert": {
+    "avatar_url": "772137",
+    "github": "vdwijngaert",
+    "name": "Koen Van den Wijngaert",
+    "teams": {
+      "2021": [
+        "reviewers"
+      ]
+    },
+    "twitter": "vdwijngaert",
+    "website": "https://www.neok.be/"
+  },
+  "kushaldas": {
+    "avatar_url": "272303",
+    "github": "kushaldas",
+    "name": "Kushal Das",
+    "teams": {
+      "2022": [
+        "reviewers"
+      ]
+    },
+    "twitter": "kushaldas",
+    "website": "https://kushaldas.in"
+  },
+  "ljme": {
+    "avatar_url": "3392338",
+    "github": "ljme",
+    "name": "Laura Eberly",
+    "teams": {
+      "2019": [
+        "reviewers"
+      ]
+    }
+  },
+  "ldevernay": {
+    "avatar_url": "23695083",
+    "github": "ldevernay",
+    "name": "Laurent Devernay",
+    "teams": {
+      "2020": [
+        "reviewers"
+      ],
+      "2022": [
+        "authors"
+      ],
+      "2024": [
+        "authors"
+      ]
+    },
+    "twitter": "ldevernay",
+    "website": "https://ldevernay.github.io/"
+  },
+  "seldo": {
+    "avatar_url": "185893",
+    "github": "seldo",
+    "name": "Laurie Voss",
+    "teams": {
+      "2022": [
+        "analysts",
+        "authors"
+      ]
+    },
+    "website": "http://seldo.com"
+  },
+  "LeaVerou": {
+    "avatar_url": "175836",
+    "github": "LeaVerou",
+    "name": "Lea Verou",
+    "teams": {
+      "2020": [
+        "analysts",
+        "authors"
+      ],
+      "2021": [
+        "reviewers"
+      ]
+    },
+    "twitter": "leaverou",
+    "website": "https://lea.verou.me/"
+  },
+  "chefleo": {
+    "avatar_url": "26022943",
+    "github": "chefleo",
+    "name": "Leonardo Digiorgio",
+    "teams": {
+      "2019": [
+        "translators"
+      ],
+      "2020": [
+        "translators"
+      ]
+    },
+    "twitter": "simdigiorgio",
+    "website": "https://chefleo.dev/"
+  },
+  "Zizzamia": {
+    "avatar_url": "829214",
+    "github": "Zizzamia",
+    "name": "Leonardo Zizzamia",
+    "teams": {
+      "2020": [
+        "authors",
+        "reviewers"
+      ],
+      "2021": [
+        "authors"
+      ]
+    },
+    "twitter": "Zizzamia",
+    "website": "https://twitter.com/zizzamia"
+  },
+  "lirantal": {
+    "avatar_url": "316371",
+    "github": "lirantal",
+    "name": "Liran Tal",
+    "teams": {
+      "2022": [
+        "authors"
+      ]
+    },
+    "twitter": "liran_tal",
+    "website": "https://twitter.com/liran_tal"
+  },
+  "lvandeve": {
+    "github": "lvandeve",
+    "name": "Lode Vandevenne",
+    "teams": {
+      "2021": [
+        "authors"
+      ]
+    }
+  },
+  "veluca93": {
+    "avatar_url": "1896483",
+    "github": "veluca93",
+    "name": "Luca Versari",
+    "teams": {
+      "2020": [
+        "authors"
+      ]
+    }
+  },
   "lucasbona05": {
     "github": "lucasbona05",
-    "name": "Lucas Gon\u00e7alves",
+    "name": "Lucas Gonçalves",
     "teams": {
       "2021": [
         "developers"
       ]
     }
+  },
+  "LPardue": {
+    "avatar_url": "6571445",
+    "github": "LPardue",
+    "name": "Lucas Pardue",
+    "teams": {
+      "2020": [
+        "reviewers"
+      ],
+      "2022": [
+        "reviewers"
+      ]
+    },
+    "twitter": "SimmerVigor",
+    "website": "https://lucaspardue.com"
   },
   "Falafelqueen": {
     "avatar_url": "79268979",
@@ -2776,35 +2464,41 @@
       ]
     }
   },
-  "luckybai": {
-    "github": "luckybai",
-    "name": "Zongchao Bai",
+  "Super-Fly": {
+    "avatar_url": "866229",
+    "github": "Super-Fly",
+    "name": "Lyubomir Angelov",
     "teams": {
-      "2022": [
-        "translators"
-      ]
-    }
-  },
-  "lvandeve": {
-    "github": "lvandeve",
-    "name": "Lode Vandevenne",
-    "teams": {
-      "2021": [
-        "authors"
-      ]
-    }
-  },
-  "malchata": {
-    "avatar_url": "1635238",
-    "github": "malchata",
-    "name": "Jeremy Wagner",
-    "teams": {
-      "2022": [
-        "authors"
+      "2020": [
+        "developers"
       ]
     },
-    "twitter": "malchata",
-    "website": "https://jlwagner.net/"
+    "twitter": "angelovcode"
+  },
+  "MSakamaki": {
+    "avatar_url": "2183053",
+    "github": "MSakamaki",
+    "name": "M.Sakamaki",
+    "teams": {
+      "2019": [
+        "developers",
+        "translators"
+      ]
+    },
+    "twitter": "msakamaki2",
+    "website": "https://twitter.com/msakamaki2"
+  },
+  "MaedahBatool": {
+    "avatar_url": "12712988",
+    "github": "MaedahBatool",
+    "name": "Maedah Batool",
+    "teams": {
+      "2020": [
+        "reviewers"
+      ]
+    },
+    "twitter": "maedahbatool",
+    "website": "https://maedahbatool.com/"
   },
   "mandymichael": {
     "avatar_url": "11938879",
@@ -2817,6 +2511,72 @@
     },
     "twitter": "Mandy_Kerr",
     "website": "https://mandymichael.com/"
+  },
+  "soulcorrosion": {
+    "avatar_url": "7148510",
+    "github": "soulcorrosion",
+    "linkedin": "manuel-garcia-12b6928",
+    "name": "Manuel Garcia",
+    "teams": {
+      "2019": [
+        "translators"
+      ],
+      "2021": [
+        "reviewers"
+      ]
+    },
+    "twitter": "corrosion_pt",
+    "website": "https://farfetchtechblog.com/en/blog/authors/manuel-garcia/"
+  },
+  "matuzo": {
+    "avatar_url": "1496761",
+    "github": "matuzo",
+    "name": "Manuel Matuzović",
+    "teams": {
+      "2020": [
+        "reviewers"
+      ]
+    },
+    "twitter": "mmatuzo",
+    "website": "https://www.matuzo.at/"
+  },
+  "mnot": {
+    "avatar_url": "74384",
+    "github": "mnot",
+    "name": "Mark Nottingham",
+    "teams": {
+      "2019": [
+        "brainstormers"
+      ]
+    },
+    "twitter": "mnot",
+    "website": "https://www.mnot.net/"
+  },
+  "zeman": {
+    "avatar_url": "204268",
+    "github": "zeman",
+    "name": "Mark Zeman",
+    "teams": {
+      "2019": [
+        "brainstormers",
+        "reviewers"
+      ]
+    },
+    "twitter": "MarkZeman",
+    "website": "https://speedcurve.com"
+  },
+  "AVGP": {
+    "avatar_url": "370246",
+    "github": "AVGP",
+    "name": "Martin Splitt",
+    "teams": {
+      "2019": [
+        "authors",
+        "brainstormers"
+      ]
+    },
+    "twitter": "g33konaut",
+    "website": "http://geekonaut.de"
   },
   "mathiasbynens": {
     "avatar_url": "81942",
@@ -2831,16 +2591,6 @@
     "twitter": "mathias",
     "website": "https://mathiasbynens.be/"
   },
-  "matthewp": {
-    "avatar_url": "361671",
-    "github": "matthewp",
-    "name": "Matthew Phillips",
-    "teams": {
-      "2019": [
-        "reviewers"
-      ]
-    }
-  },
   "mattludwig": {
     "github": "mattludwig",
     "name": "Matt Ludwig",
@@ -2850,17 +2600,25 @@
       ]
     }
   },
-  "matuzo": {
-    "avatar_url": "1496761",
-    "github": "matuzo",
-    "name": "Manuel Matuzovi\u0107",
+  "awareseven": {
+    "avatar_url": "53170037",
+    "github": "awareseven",
+    "name": "Matteo Große-Kampmann",
     "teams": {
-      "2020": [
+      "2021": [
         "reviewers"
       ]
-    },
-    "twitter": "mmatuzo",
-    "website": "https://www.matuzo.at/"
+    }
+  },
+  "matthewp": {
+    "avatar_url": "361671",
+    "github": "matthewp",
+    "name": "Matthew Phillips",
+    "teams": {
+      "2019": [
+        "reviewers"
+      ]
+    }
   },
   "maudnals": {
     "avatar_url": "9762897",
@@ -2891,27 +2649,20 @@
     "twitter": "themax_o",
     "website": "https://maxostapenko.com"
   },
-  "mcmd": {
-    "avatar_url": "868584",
-    "github": "mcmd",
-    "linkedin": "miguelcarlosmartinezdiaz",
-    "name": "Miguel Carlos Mart\u00ednez D\u00edaz",
+  "webmaxru": {
+    "avatar_url": "1560278",
+    "github": "webmaxru",
+    "name": "Maxim Salnikov",
     "teams": {
-      "2020": [
-        "translators"
+      "2021": [
+        "reviewers"
+      ],
+      "2022": [
+        "reviewers"
       ]
     },
-    "twitter": "mcmd"
-  },
-  "mdiblasio": {
-    "avatar_url": "17748781",
-    "github": "mdiblasio",
-    "name": "Michael DiBlasio",
-    "teams": {
-      "2020": [
-        "authors"
-      ]
-    }
+    "twitter": "webmaxru",
+    "website": "https://medium.com/@webmaxru"
   },
   "mel-ada": {
     "avatar_url": "5370850",
@@ -2925,23 +2676,111 @@
     },
     "twitter": "mel_melificent"
   },
-  "meyerweb": {
-    "avatar_url": "939727",
-    "github": "meyerweb",
-    "name": "Eric A. Meyer",
+  "mdiblasio": {
+    "avatar_url": "17748781",
+    "github": "mdiblasio",
+    "name": "Michael DiBlasio",
     "teams": {
-      "2019": [
-        "reviewers"
+      "2020": [
+        "authors"
+      ]
+    }
+  },
+  "ipullrank": {
+    "avatar_url": "1043031",
+    "github": "ipullrank",
+    "name": "Michael King",
+    "teams": {
+      "2020": [
+        "authors"
+      ]
+    },
+    "twitter": "IPullRank"
+  },
+  "MichaelLewittes": {
+    "avatar_url": "96250205",
+    "github": "MichaelLewittes",
+    "name": "Michael Lewittes",
+    "teams": {
+      "2022": [
+        "editors"
+      ]
+    }
+  },
+  "MichaelSolati": {
+    "avatar_url": "11811422",
+    "github": "MichaelSolati",
+    "name": "Michael Solati",
+    "teams": {
+      "2022": [
+        "authors"
+      ]
+    },
+    "twitter": "MichaelSolati",
+    "website": "https://michaelsolati.com"
+  },
+  "michelleoconnor": {
+    "name": "Michelle O'Connor",
+    "teams": {
+      "2020": [
+        "designers"
       ],
       "2021": [
-        "authors"
+        "designers"
       ],
       "2022": [
+        "designers"
+      ]
+    }
+  },
+  "mcmd": {
+    "avatar_url": "868584",
+    "github": "mcmd",
+    "linkedin": "miguelcarlosmartinezdiaz",
+    "name": "Miguel Carlos Martínez Díaz",
+    "teams": {
+      "2020": [
+        "translators"
+      ]
+    },
+    "twitter": "mcmd"
+  },
+  "MikeBishop": {
+    "avatar_url": "4273797",
+    "github": "MikeBishop",
+    "name": "Mike Bishop",
+    "teams": {
+      "2020": [
+        "authors"
+      ]
+    }
+  },
+  "mikegeyser": {
+    "avatar_url": "105242",
+    "github": "mikegeyser",
+    "name": "Mike Geyser",
+    "teams": {
+      "2019": [
+        "developers"
+      ]
+    },
+    "twitter": "mikegeyser",
+    "website": "https://mikerambl.es"
+  },
+  "mgifford": {
+    "avatar_url": "116832",
+    "github": "mgifford",
+    "linkedin": "mgifford",
+    "mastodon": "https://mastodon.social/@mgifford",
+    "name": "Mike Gifford",
+    "teams": {
+      "2024": [
+        "analysts",
+        "authors",
         "reviewers"
       ]
     },
-    "twitter": "meyerweb",
-    "website": "http://meyerweb.com/"
+    "website": "https://accessibility.civicactions.com/"
   },
   "mgechev": {
     "avatar_url": "455023",
@@ -2961,32 +2800,6 @@
     "twitter": "mgechev",
     "website": "https://blog.mgechev.com/"
   },
-  "michelleoconnor": {
-    "name": "Michelle O'Connor",
-    "teams": {
-      "2020": [
-        "designers"
-      ],
-      "2021": [
-        "designers"
-      ],
-      "2022": [
-        "designers"
-      ]
-    }
-  },
-  "mikegeyser": {
-    "avatar_url": "105242",
-    "github": "mikegeyser",
-    "name": "Mike Geyser",
-    "teams": {
-      "2019": [
-        "developers"
-      ]
-    },
-    "twitter": "mikegeyser",
-    "website": "https://mikerambl.es"
-  },
   "mirisuzanne": {
     "avatar_url": "104161",
     "github": "mirisuzanne",
@@ -2999,17 +2812,27 @@
     "twitter": "MiriSuzanne",
     "website": "https://miriamsuzanne.com/"
   },
-  "mnot": {
-    "avatar_url": "74384",
-    "github": "mnot",
-    "name": "Mark Nottingham",
+  "mobeenali97": {
+    "avatar_url": "20677785",
+    "github": "mobeenali97",
+    "name": "Mobeen Ali",
     "teams": {
-      "2019": [
-        "brainstormers"
+      "2022": [
+        "reviewers"
       ]
     },
-    "twitter": "mnot",
-    "website": "https://www.mnot.net/"
+    "twitter": "mobeenali97",
+    "website": "https://siffar.com"
+  },
+  "mordy-oberstein": {
+    "avatar_url": "104999516",
+    "github": "mordy-oberstein",
+    "name": "Mordy Oberstein",
+    "teams": {
+      "2022": [
+        "authors"
+      ]
+    }
   },
   "mo271": {
     "avatar_url": "3491627",
@@ -3025,18 +2848,6 @@
     },
     "website": "https://mo271.github.io/"
   },
-  "mobeenali97": {
-    "avatar_url": "20677785",
-    "github": "mobeenali97",
-    "name": "Mobeen Ali",
-    "teams": {
-      "2022": [
-        "reviewers"
-      ]
-    },
-    "twitter": "mobeenali97",
-    "website": "https://siffar.com"
-  },
   "mor10": {
     "avatar_url": "1132200",
     "github": "mor10",
@@ -3048,27 +2859,6 @@
     },
     "twitter": "mor10",
     "website": "http://mor10.com/"
-  },
-  "mordy-oberstein": {
-    "avatar_url": "104999516",
-    "github": "mordy-oberstein",
-    "name": "Mordy Oberstein",
-    "teams": {
-      "2022": [
-        "authors"
-      ]
-    }
-  },
-  "mrchrisadams": {
-    "avatar_url": "17906",
-    "github": "mrchrisadams",
-    "name": "Chris Adams",
-    "teams": {
-      "2022": [
-        "reviewers"
-      ]
-    },
-    "website": "https://chrisadams.me.uk"
   },
   "mukeshjat": {
     "avatar_url": "96608937",
@@ -3091,15 +2881,20 @@
     },
     "twitter": "seonate"
   },
-  "ndrnmnn": {
-    "avatar_url": "22891577",
-    "github": "ndrnmnn",
-    "name": "Andr\u00e9 Naumann",
+  "Navaneeth-akam": {
+    "avatar_url": "69532755",
+    "github": "Navaneeth-akam",
+    "name": "Navaneeth Krishna",
     "teams": {
-      "2019": [
-        "brainstormers"
+      "2020": [
+        "reviewers"
+      ],
+      "2021": [
+        "authors",
+        "reviewers"
       ]
-    }
+    },
+    "twitter": "Navanee55755217"
   },
   "nektarios-paisios": {
     "name": "Nektarios Paisios",
@@ -3108,6 +2903,30 @@
         "authors"
       ]
     }
+  },
+  "phacks": {
+    "avatar_url": "2587348",
+    "github": "phacks",
+    "name": "Nicolas Goutay",
+    "teams": {
+      "2020": [
+        "reviewers"
+      ]
+    },
+    "twitter": "Phacks",
+    "website": "https://phacks.dev/"
+  },
+  "nico3333fr": {
+    "avatar_url": "2578321",
+    "github": "nico3333fr",
+    "name": "Nicolas Hoffmann",
+    "teams": {
+      "2019": [
+        "translators"
+      ]
+    },
+    "twitter": "Nico3333fr",
+    "website": "https://www.nicolas-hoffmann.net/"
   },
   "nhoizey": {
     "avatar_url": "78213",
@@ -3124,17 +2943,59 @@
     "twitter": "nhoizey",
     "website": "https://nicolas-hoizey.com/"
   },
-  "nico3333fr": {
-    "avatar_url": "2578321",
-    "github": "nico3333fr",
-    "name": "Nicolas Hoffmann",
+  "MeFoDy": {
+    "avatar_url": "1439919",
+    "github": "MeFoDy",
+    "name": "Nikita Dubko",
     "teams": {
-      "2019": [
+      "2020": [
+        "translators"
+      ],
+      "2021": [
         "translators"
       ]
     },
-    "twitter": "Nico3333fr",
-    "website": "https://www.nicolas-hoffmann.net/"
+    "twitter": "dark_mefody",
+    "website": "https://mefody.dev/"
+  },
+  "NishuGoel": {
+    "avatar_url": "26349046",
+    "github": "NishuGoel",
+    "name": "Nishu Goel",
+    "teams": {
+      "2021": [
+        "authors"
+      ],
+      "2022": [
+        "analysts",
+        "reviewers"
+      ]
+    },
+    "twitter": "TheNishuGoel",
+    "website": "https://unravelweb.dev/"
+  },
+  "Nithanaroy": {
+    "avatar_url": "670556",
+    "github": "Nithanaroy",
+    "linkedin": "nitinpasumarthy",
+    "name": "Nitin Pasumarthy",
+    "teams": {
+      "2021": [
+        "analysts"
+      ]
+    },
+    "website": "https://nithanaroy.medium.com/"
+  },
+  "noahblon": {
+    "avatar_url": "561590",
+    "github": "noahblon",
+    "name": "Noah Blon",
+    "teams": {
+      "2019": [
+        "brainstormers"
+      ]
+    },
+    "twitter": "noahblon"
   },
   "noah-vdv": {
     "avatar_url": "46689362",
@@ -3150,17 +3011,6 @@
     },
     "twitter": "noah_aaron_vdv"
   },
-  "noahblon": {
-    "avatar_url": "561590",
-    "github": "noahblon",
-    "name": "Noah Blon",
-    "teams": {
-      "2019": [
-        "brainstormers"
-      ]
-    },
-    "twitter": "noahblon"
-  },
   "noamr": {
     "avatar_url": "88566",
     "github": "noamr",
@@ -3171,16 +3021,6 @@
       ]
     },
     "twitter": "nomsternom"
-  },
-  "notwillk": {
-    "avatar_url": "44582272",
-    "github": "notwillk",
-    "name": "notwillk",
-    "teams": {
-      "2020": [
-        "reviewers"
-      ]
-    }
   },
   "nrllh": {
     "avatar_url": "13475745",
@@ -3216,19 +3056,6 @@
     "twitter": "oluoluoxenfree",
     "website": "https://olu.online/"
   },
-  "paivaspol": {
-    "avatar_url": "1900571",
-    "github": "paivaspol",
-    "linkedin": "vaspol-ruamviboonsuk-7898b824",
-    "name": "Vaspol Ruamviboonsuk",
-    "teams": {
-      "2022": [
-        "analysts",
-        "authors"
-      ]
-    },
-    "twitter": "paivaspol"
-  },
   "pankajparkar": {
     "avatar_url": "5320044",
     "github": "pankajparkar",
@@ -3246,6 +3073,31 @@
     "twitter": "pankajparkar",
     "website": "https://pankajparkar.dev"
   },
+  "swissspidy": {
+    "avatar_url": "841956",
+    "github": "swissspidy",
+    "linkedin": "swissspidy",
+    "name": "Pascal Birchler",
+    "teams": {
+      "2020": [
+        "developers"
+      ]
+    },
+    "twitter": "swissspidy"
+  },
+  "thepassle": {
+    "avatar_url": "17054057",
+    "github": "thepassle",
+    "name": "Pascal Schilp",
+    "teams": {
+      "2020": [
+        "reviewers"
+      ],
+      "2021": [
+        "reviewers"
+      ]
+    }
+  },
   "patrickhulce": {
     "avatar_url": "2301202",
     "github": "patrickhulce",
@@ -3262,6 +3114,25 @@
     },
     "twitter": "patrickhulce",
     "website": "http://patrickhulce.com"
+  },
+  "pmeenan": {
+    "avatar_url": "444165",
+    "github": "pmeenan",
+    "name": "Patrick Meenan",
+    "teams": {
+      "2019": [
+        "brainstormers",
+        "reviewers"
+      ],
+      "2020": [
+        "reviewers"
+      ],
+      "2022": [
+        "reviewers"
+      ]
+    },
+    "twitter": "patmeenan",
+    "website": "https://www.webpagetest.org/"
   },
   "patrickstox": {
     "avatar_url": "32576994",
@@ -3307,6 +3178,17 @@
     "twitter": "paulcalvano",
     "website": "https://paulcalvano.com"
   },
+  "Pavel-Evdokimov": {
+    "avatar_url": "6407114",
+    "github": "Pavel-Evdokimov",
+    "name": "Pavel Evdokimov",
+    "teams": {
+      "2019": [
+        "brainstormers"
+      ]
+    },
+    "twitter": "Pavel_Evdokimov"
+  },
   "pearlbea": {
     "avatar_url": "1824908",
     "github": "pearlbea",
@@ -3317,18 +3199,6 @@
       ]
     },
     "twitter": "pblatteier"
-  },
-  "phacks": {
-    "avatar_url": "2587348",
-    "github": "phacks",
-    "name": "Nicolas Goutay",
-    "teams": {
-      "2020": [
-        "reviewers"
-      ]
-    },
-    "twitter": "Phacks",
-    "website": "https://phacks.dev/"
   },
   "philbarker": {
     "avatar_url": "658047",
@@ -3342,24 +3212,67 @@
     "twitter": "philbarker",
     "website": "https://blogs.pjjk.net/phil/"
   },
-  "pmeenan": {
-    "avatar_url": "444165",
-    "github": "pmeenan",
-    "name": "Patrick Meenan",
+  "foolip": {
+    "avatar_url": "498917",
+    "github": "foolip",
+    "name": "Philip Jägenstedt",
     "teams": {
-      "2019": [
-        "brainstormers",
-        "reviewers"
-      ],
-      "2020": [
-        "reviewers"
-      ],
       "2022": [
         "reviewers"
       ]
     },
-    "twitter": "patmeenan",
-    "website": "https://www.webpagetest.org/"
+    "website": "https://foolip.org/"
+  },
+  "decrecementofeliz": {
+    "avatar_url": "1857745",
+    "github": "decrecementofeliz",
+    "name": "Pilar Mera",
+    "teams": {
+      "2022": [
+        "translators"
+      ]
+    },
+    "twitter": "DecreceFeliz",
+    "website": "http://pi-comunicacion.com"
+  },
+  "dooman87": {
+    "avatar_url": "124110",
+    "github": "dooman87",
+    "name": "Pokidov N. Dmitry",
+    "teams": {
+      "2020": [
+        "analysts"
+      ]
+    },
+    "twitter": "otherpunk",
+    "website": "https://pixboost.com"
+  },
+  "25prathamesh": {
+    "avatar_url": "10120153",
+    "github": "25prathamesh",
+    "linkedin": "prathameshrasam",
+    "name": "Prathamesh Rasam",
+    "teams": {
+      "2022": [
+        "analysts",
+        "reviewers"
+      ]
+    }
+  },
+  "PraveenPal4232": {
+    "avatar_url": "34737190",
+    "github": "PraveenPal4232",
+    "name": "Praveen Pal",
+    "teams": {
+      "2019": [
+        "translators"
+      ],
+      "2020": [
+        "translators"
+      ]
+    },
+    "twitter": "PraveenPal4232",
+    "website": "https://praveenpal4232.github.io"
   },
   "rachelandrew": {
     "avatar_url": "2764898",
@@ -3400,6 +3313,20 @@
     },
     "twitter": "lebreRafael"
   },
+  "raghuramakrishnan71": {
+    "avatar_url": "24447527",
+    "github": "raghuramakrishnan71",
+    "name": "Raghu Ramakrishnan",
+    "teams": {
+      "2019": [
+        "analysts"
+      ],
+      "2020": [
+        "authors",
+        "analysts"
+      ]
+    }
+  },
   "raghav": {
     "avatar_url": "9475742",
     "github": "arsenicraghav",
@@ -3411,16 +3338,12 @@
     },
     "twitter": "mail_raghvendra"
   },
-  "raghuramakrishnan71": {
-    "avatar_url": "24447527",
-    "github": "raghuramakrishnan71",
-    "name": "Raghu Ramakrishnan",
+  "rrajiv": {
+    "github": "rrajiv",
+    "linkedin": "rajivramnath",
+    "name": "Rajiv Ramnath",
     "teams": {
-      "2019": [
-        "analysts"
-      ],
-      "2020": [
-        "authors",
+      "2021": [
         "analysts"
       ]
     }
@@ -3437,17 +3360,81 @@
     "twitter": "raphlinus",
     "website": "https://levien.com"
   },
-  "remotesynth": {
-    "avatar_url": "216712",
-    "github": "remotesynth",
-    "name": "Brian Rinaldi",
+  "RMHolmlund": {
+    "avatar_url": "61608378",
+    "github": "RMHolmlund",
+    "name": "Rebecca Holmlund",
     "teams": {
+      "2021": [
+        "reviewers"
+      ]
+    }
+  },
+  "ernee": {
+    "avatar_url": "8108643",
+    "github": "ernee",
+    "name": "Renee Johnson",
+    "teams": {
+      "2019": [
+        "authors"
+      ],
       "2020": [
-        "analysts"
+        "reviewers"
       ]
     },
-    "twitter": "remotesynth",
-    "website": "https://remotesynthesis.com/"
+    "twitter": "reneesoffice",
+    "website": "https://reneesvirtualoffice.com"
+  },
+  "rviscomi": {
+    "avatar_url": "1120896",
+    "github": "rviscomi",
+    "name": "Rick Viscomi",
+    "teams": {
+      "2019": [
+        "brainstormers",
+        "authors",
+        "reviewers",
+        "analysts",
+        "developers",
+        "editors"
+      ],
+      "2020": [
+        "analysts",
+        "developers",
+        "editors",
+        "leads",
+        "reviewers"
+      ],
+      "2021": [
+        "analysts",
+        "editors",
+        "leads",
+        "reviewers"
+      ],
+      "2022": [
+        "analysts",
+        "editors",
+        "leads",
+        "authors"
+      ]
+    },
+    "twitter": "rick_viscomi",
+    "website": "https://rviscomi.dev/"
+  },
+  "SeoRobt": {
+    "avatar_url": "83400777",
+    "github": "SeoRobt",
+    "name": "Rob Teitelman",
+    "teams": {
+      "2021": [
+        "reviewers"
+      ],
+      "2022": [
+        "reviewers"
+      ]
+    },
+    "twitter": "teitelmanrob",
+    "website": "https://www.paulteitelman.com/"
   },
   "rmarx": {
     "avatar_url": "2240689",
@@ -3486,6 +3473,30 @@
     },
     "twitter": "rnebhwani"
   },
+  "rsheeter": {
+    "github": "rsheeter",
+    "name": "Rod Sheeter",
+    "teams": {
+      "2020": [
+        "reviewers"
+      ]
+    }
+  },
+  "RoelN": {
+    "avatar_url": "4570664",
+    "github": "RoelN",
+    "name": "Roel Nieskens",
+    "teams": {
+      "2020": [
+        "reviewers"
+      ],
+      "2022": [
+        "reviewers"
+      ]
+    },
+    "twitter": "PixelAmbacht",
+    "website": "http://pixelambacht.nl"
+  },
   "rory-hewitt": {
     "name": "Rory Hewitt",
     "teams": {
@@ -3510,61 +3521,6 @@
     "twitter": "roryhewitt3",
     "website": "https://romche.com"
   },
-  "rrajiv": {
-    "github": "rrajiv",
-    "linkedin": "rajivramnath",
-    "name": "Rajiv Ramnath",
-    "teams": {
-      "2021": [
-        "analysts"
-      ]
-    }
-  },
-  "rsheeter": {
-    "github": "rsheeter",
-    "name": "Rod Sheeter",
-    "teams": {
-      "2020": [
-        "reviewers"
-      ]
-    }
-  },
-  "rviscomi": {
-    "avatar_url": "1120896",
-    "github": "rviscomi",
-    "name": "Rick Viscomi",
-    "teams": {
-      "2019": [
-        "brainstormers",
-        "authors",
-        "reviewers",
-        "analysts",
-        "developers",
-        "editors"
-      ],
-      "2020": [
-        "analysts",
-        "developers",
-        "editors",
-        "leads",
-        "reviewers"
-      ],
-      "2021": [
-        "analysts",
-        "editors",
-        "leads",
-        "reviewers"
-      ],
-      "2022": [
-        "analysts",
-        "editors",
-        "leads",
-        "authors"
-      ]
-    },
-    "twitter": "rick_viscomi",
-    "website": "https://rviscomi.dev/"
-  },
   "rvth": {
     "avatar_url": "62478401",
     "github": "rvth",
@@ -3576,15 +3532,38 @@
     },
     "twitter": "rvtheverett"
   },
-  "samarpanda": {
-    "avatar_url": "802163",
-    "github": "samarpanda",
-    "name": "Samar Panda",
+  "ksakae1216": {
+    "avatar_url": "1982567",
+    "github": "ksakae1216",
+    "name": "Sakae Kotaro",
     "teams": {
+      "2019": [
+        "translators"
+      ],
+      "2020": [
+        "translators"
+      ],
       "2021": [
-        "reviewers"
+        "translators"
+      ],
+      "2022": [
+        "translators"
       ]
-    }
+    },
+    "twitter": "beltway7",
+    "website": "https://ksakae1216.com/"
+  },
+  "whitep4nth3r": {
+    "avatar_url": "52798353",
+    "github": "whitep4nth3r",
+    "name": "Salma Alam-Naylor",
+    "teams": {
+      "2022": [
+        "authors"
+      ]
+    },
+    "twitter": "whitep4nth3r",
+    "website": "https://whitep4nth3r.com/"
   },
   "samdutton": {
     "avatar_url": "205226",
@@ -3598,6 +3577,38 @@
     },
     "twitter": "sw12",
     "website": "https://simpl.info"
+  },
+  "samarpanda": {
+    "avatar_url": "802163",
+    "github": "samarpanda",
+    "name": "Samar Panda",
+    "teams": {
+      "2021": [
+        "reviewers"
+      ]
+    }
+  },
+  "sboukortt": {
+    "avatar_url": "16757512",
+    "github": "sboukortt",
+    "name": "Sami Boukortt",
+    "teams": {
+      "2020": [
+        "authors"
+      ]
+    }
+  },
+  "SaptakS": {
+    "avatar_url": "9530293",
+    "github": "SaptakS",
+    "name": "Saptak Sengupta",
+    "teams": {
+      "2022": [
+        "authors"
+      ]
+    },
+    "twitter": "Saptak013",
+    "website": "https://saptaks.website"
   },
   "saptaks": {
     "avatar_url": "9530293",
@@ -3615,15 +3626,18 @@
     "twitter": "Saptak013",
     "website": "https://saptaks.website/"
   },
-  "sboukortt": {
-    "avatar_url": "16757512",
-    "github": "sboukortt",
-    "name": "Sami Boukortt",
+  "ibnesayeed": {
+    "avatar_url": "65147",
+    "github": "ibnesayeed",
+    "name": "Sawood Alam",
     "teams": {
       "2020": [
-        "authors"
+        "developers",
+        "reviewers"
       ]
-    }
+    },
+    "twitter": "ibnesayeed",
+    "website": "https://www.cs.odu.edu/~salam/"
   },
   "scottdavis99": {
     "avatar_url": "15577",
@@ -3640,17 +3654,18 @@
     "twitter": "scottdavis99",
     "website": "http://thirstyhead.com"
   },
-  "seldo": {
-    "avatar_url": "185893",
-    "github": "seldo",
-    "name": "Laurie Voss",
+  "ScottHelme": {
+    "avatar_url": "5352840",
+    "github": "ScottHelme",
+    "name": "Scott Helme",
     "teams": {
-      "2022": [
-        "analysts",
+      "2019": [
+        "brainstormers",
         "authors"
       ]
     },
-    "website": "http://seldo.com"
+    "twitter": "Scott_Helme",
+    "website": "https://scotthelme.co.uk"
   },
   "sergeychernyshev": {
     "avatar_url": "38076",
@@ -3680,6 +3695,52 @@
         "reviewers"
       ]
     }
+  },
+  "exterkamp": {
+    "avatar_url": "6392995",
+    "github": "exterkamp",
+    "name": "Shane Exterkamp",
+    "teams": {
+      "2020": [
+        "editors",
+        "reviewers"
+      ]
+    },
+    "twitter": "Shane_Exterkamp"
+  },
+  "boosef": {
+    "avatar_url": "65818702",
+    "github": "boosef",
+    "name": "Shilpa Raghunathan",
+    "teams": {
+      "2021": [
+        "reviewers"
+      ]
+    }
+  },
+  "spanicker": {
+    "avatar_url": "4945616",
+    "github": "spanicker",
+    "name": "Shubhie Panicker",
+    "teams": {
+      "2020": [
+        "authors"
+      ]
+    },
+    "twitter": "shubhie"
+  },
+  "GeekBoySupreme": {
+    "avatar_url": "15321738",
+    "github": "GeekBoySupreme",
+    "name": "Shuvam Manna",
+    "teams": {
+      "2021": [
+        "authors",
+        "designers"
+      ]
+    },
+    "twitter": "shuvam360",
+    "website": "https://shuvam.xyz"
   },
   "siakaramalegos": {
     "avatar_url": "4777393",
@@ -3715,23 +3776,23 @@
     "twitter": "simonhearne",
     "website": "https://simonhearne.com"
   },
-  "sirjonathan": {
-    "avatar_url": "104149",
-    "github": "sirjonathan",
-    "name": "Jonathan Wold",
+  "zcorpan": {
+    "avatar_url": "244772",
+    "github": "zcorpan",
+    "name": "Simon Pieters",
     "teams": {
       "2019": [
+        "brainstormers",
         "reviewers"
       ],
       "2020": [
         "reviewers"
       ],
       "2022": [
-        "authors"
+        "reviewers"
       ]
     },
-    "twitter": "sirjonathan",
-    "website": "https://jonathanwold.com"
+    "twitter": "zcorpan"
   },
   "siwinlo": {
     "avatar_url": "41877484",
@@ -3743,17 +3804,16 @@
       ]
     }
   },
-  "slightlyoff": {
-    "avatar_url": "97331",
-    "github": "slightlyoff",
-    "name": "Alex Russell",
+  "SophieBrannon": {
+    "avatar_url": "103587838",
+    "github": "SophieBrannon",
+    "name": "Sophie Brannon",
     "teams": {
-      "2019": [
-        "brainstormers"
+      "2022": [
+        "authors"
       ]
     },
-    "twitter": "slightlylate",
-    "website": "http://infrequently.org"
+    "twitter": "SophieBrannon"
   },
   "smatei": {
     "avatar_url": "17740806",
@@ -3766,33 +3826,6 @@
     },
     "twitter": "smatei",
     "website": "https://www.advancedwebranking.com/"
-  },
-  "soulcorrosion": {
-    "avatar_url": "7148510",
-    "github": "soulcorrosion",
-    "linkedin": "manuel-garcia-12b6928",
-    "name": "Manuel Garcia",
-    "teams": {
-      "2019": [
-        "translators"
-      ],
-      "2021": [
-        "reviewers"
-      ]
-    },
-    "twitter": "corrosion_pt",
-    "website": "https://farfetchtechblog.com/en/blog/authors/manuel-garcia/"
-  },
-  "spanicker": {
-    "avatar_url": "4945616",
-    "github": "spanicker",
-    "name": "Shubhie Panicker",
-    "teams": {
-      "2020": [
-        "authors"
-      ]
-    },
-    "twitter": "shubhie"
   },
   "sudheendrachari": {
     "avatar_url": "10291571",
@@ -3816,36 +3849,42 @@
     "twitter": "DataToViz",
     "website": "https://www.susielu.com/"
   },
-  "svgeesus": {
-    "avatar_url": "2506926",
-    "github": "svgeesus",
-    "name": "Chris Lilley",
+  "allemas": {
+    "avatar_url": "3684740",
+    "github": "allemas",
+    "name": "Sébastien Allemand",
+    "teams": {
+      "2019": [
+        "translators"
+      ]
+    },
+    "twitter": "allema_s",
+    "website": "https://sebastienallemand.fr/"
+  },
+  "tjmonsi": {
+    "avatar_url": "2645718",
+    "github": "tjmonsi",
+    "name": "TJ Monserrat",
+    "teams": {
+      "2019": [
+        "analysts"
+      ]
+    }
+  },
+  "tpiros": {
+    "avatar_url": "2042718",
+    "github": "tpiros",
+    "name": "Tamas Piros",
     "teams": {
       "2020": [
-        "authors",
-        "reviewers"
+        "authors"
       ],
       "2021": [
         "reviewers"
-      ],
-      "2022": [
-        "reviewers"
       ]
     },
-    "twitter": "svgeesus",
-    "website": "https://svgees.us"
-  },
-  "swissspidy": {
-    "avatar_url": "841956",
-    "github": "swissspidy",
-    "linkedin": "swissspidy",
-    "name": "Pascal Birchler",
-    "teams": {
-      "2020": [
-        "developers"
-      ]
-    },
-    "twitter": "swissspidy"
+    "twitter": "tpiros",
+    "website": "https://tamas.io"
   },
   "tammyeverts": {
     "avatar_url": "15661032",
@@ -3858,42 +3897,6 @@
     },
     "twitter": "tameverts",
     "website": "https://speedcurve.com/"
-  },
-  "tanhengyeow": {
-    "avatar_url": "25320782",
-    "github": "tanhengyeow",
-    "name": "Heng Yeow",
-    "teams": {
-      "2019": [
-        "developers"
-      ]
-    },
-    "twitter": "tanhengyeow",
-    "website": "https://tanhengyeow.github.io"
-  },
-  "thefoxis": {
-    "avatar_url": "375731",
-    "github": "thefoxis",
-    "name": "Karolina Szczur",
-    "teams": {
-      "2020": [
-        "authors"
-      ]
-    },
-    "twitter": "fox"
-  },
-  "thepassle": {
-    "avatar_url": "17054057",
-    "github": "thepassle",
-    "name": "Pascal Schilp",
-    "teams": {
-      "2020": [
-        "reviewers"
-      ],
-      "2021": [
-        "reviewers"
-      ]
-    }
   },
   "thibaudcolas": {
     "avatar_url": "877585",
@@ -3920,42 +3923,14 @@
     "twitter": "thomkrupa",
     "website": "https://www.thomkrupa.com/"
   },
-  "timfrick": {
-    "avatar_url": "103747873",
-    "github": "timfrick",
-    "name": "Tim Frick",
+  "fischbacher": {
+    "github": "fischbacher",
+    "name": "Thomas Fischbacher",
     "teams": {
-      "2022": [
-        "authors"
-      ],
-      "2024": [
-        "authors"
-      ]
-    },
-    "twitter": "timfrick",
-    "website": "https://www.mightybytes.com/"
-  },
-  "tjmonsi": {
-    "avatar_url": "2645718",
-    "github": "tjmonsi",
-    "name": "TJ Monserrat",
-    "teams": {
-      "2019": [
-        "analysts"
+      "2021": [
+        "reviewers"
       ]
     }
-  },
-  "tkadlec": {
-    "avatar_url": "66536",
-    "github": "tkadlec",
-    "name": "Tim Kadlec",
-    "teams": {
-      "2020": [
-        "authors"
-      ]
-    },
-    "twitter": "tkadlec",
-    "website": "https://timkadlec.com/"
   },
   "tomayac": {
     "avatar_url": "145676",
@@ -3981,16 +3956,58 @@
     "twitter": "tomayac",
     "website": "https://blog.tomayac.com/"
   },
-  "tomhodgins": {
-    "avatar_url": "955601",
-    "github": "tomhodgins",
-    "name": "Tommy Hodgins",
+  "timfrick": {
+    "avatar_url": "103747873",
+    "github": "timfrick",
+    "name": "Tim Frick",
     "teams": {
-      "2019": [
-        "reviewers"
+      "2022": [
+        "authors"
+      ],
+      "2024": [
+        "authors"
       ]
     },
-    "website": "http://codepen.io/tomhodgins"
+    "twitter": "timfrick",
+    "website": "https://www.mightybytes.com/"
+  },
+  "tkadlec": {
+    "avatar_url": "66536",
+    "github": "tkadlec",
+    "name": "Tim Kadlec",
+    "teams": {
+      "2020": [
+        "authors"
+      ]
+    },
+    "twitter": "tkadlec",
+    "website": "https://timkadlec.com/"
+  },
+  "kartashovio": {
+    "avatar_url": "60577846",
+    "github": "kartashovio",
+    "linkedin": "kartashov-io",
+    "name": "Timur Kartashov",
+    "teams": {
+      "2021": [
+        "translators"
+      ]
+    },
+    "twitter": "krutoi_paren",
+    "website": "https://kartashov.io/"
+  },
+  "bobbyshaw": {
+    "avatar_url": "553566",
+    "github": "bobbyshaw",
+    "linkedin": "tomrobertshaw",
+    "name": "Tom Robertshaw",
+    "teams": {
+      "2021": [
+        "authors"
+      ]
+    },
+    "twitter": "bobbyshaw",
+    "website": "https://www.space48.com"
   },
   "tomvangoethem": {
     "avatar_url": "4355579",
@@ -4011,6 +4028,41 @@
     "twitter": "tomvangoethem",
     "website": "https://tom.vg/"
   },
+  "Tomek3c": {
+    "avatar_url": "37291453",
+    "github": "Tomek3c",
+    "name": "Tomek Rudzki",
+    "teams": {
+      "2021": [
+        "authors"
+      ]
+    },
+    "twitter": "TomekRudzki",
+    "website": "https://tomekseo.com/"
+  },
+  "tomhodgins": {
+    "avatar_url": "955601",
+    "github": "tomhodgins",
+    "name": "Tommy Hodgins",
+    "teams": {
+      "2019": [
+        "reviewers"
+      ]
+    },
+    "website": "http://codepen.io/tomhodgins"
+  },
+  "Tiggerito": {
+    "avatar_url": "4947018",
+    "github": "Tiggerito",
+    "name": "Tony McCreath",
+    "teams": {
+      "2020": [
+        "analysts"
+      ]
+    },
+    "twitter": "TonyMcCreath",
+    "website": "https://websiteadvantage.com.au/"
+  },
   "tosinarasi": {
     "github": "tosinarasi",
     "name": "Tosin Arasi",
@@ -4020,100 +4072,15 @@
       ]
     }
   },
-  "tpiros": {
-    "avatar_url": "2042718",
-    "github": "tpiros",
-    "name": "Tamas Piros",
+  "TusharPol": {
+    "avatar_url": "104352788",
+    "github": "TusharPol",
+    "name": "Tushar Pol",
     "teams": {
-      "2020": [
-        "authors"
-      ],
-      "2021": [
-        "reviewers"
-      ]
-    },
-    "twitter": "tpiros",
-    "website": "https://tamas.io"
-  },
-  "tropicadri": {
-    "avatar_url": "32825533",
-    "github": "tropicadri",
-    "name": "Adriana Jara",
-    "teams": {
-      "2021": [
-        "reviewers"
-      ],
       "2022": [
         "reviewers"
-      ]
-    },
-    "twitter": "tropicadri"
-  },
-  "tunetheweb": {
-    "avatar_url": "10931297",
-    "github": "tunetheweb",
-    "linkedin": "tunetheweb",
-    "name": "Barry Pollard",
-    "teams": {
-      "2019": [
-        "brainstormers",
-        "authors",
-        "reviewers",
-        "editors",
-        "developers"
-      ],
-      "2020": [
-        "analysts",
-        "authors",
-        "developers",
-        "editors",
-        "leads",
-        "reviewers"
-      ],
-      "2021": [
-        "analysts",
-        "authors",
-        "developers",
-        "editors",
-        "leads",
-        "reviewers"
-      ],
-      "2022": [
-        "analysts",
-        "developers",
-        "editors",
-        "leads",
-        "reviewers"
-      ]
-    },
-    "twitter": "tunetheweb",
-    "website": "https://www.tunetheweb.com"
-  },
-  "tymosh": {
-    "avatar_url": "25080897",
-    "github": "tymosh",
-    "linkedin": "tymosh",
-    "name": "Kate Tymoshkina",
-    "teams": {
-      "2019": [
-        "translators"
-      ],
-      "2020": [
-        "translators"
       ]
     }
-  },
-  "tyohan": {
-    "avatar_url": "106703",
-    "github": "tyohan",
-    "name": "Yohan Totting",
-    "teams": {
-      "2019": [
-        "developers"
-      ]
-    },
-    "twitter": "tyohan",
-    "website": "http://tyohan.me"
   },
   "una": {
     "avatar_url": "1693164",
@@ -4128,27 +4095,43 @@
     "twitter": "una",
     "website": "http://una.im"
   },
-  "vdwijngaert": {
-    "avatar_url": "772137",
-    "github": "vdwijngaert",
-    "name": "Koen Van den Wijngaert",
+  "jasti": {
+    "avatar_url": "2366341",
+    "github": "jasti",
+    "name": "Vamsee Jasti",
     "teams": {
-      "2021": [
+      "2019": [
         "reviewers"
       ]
     },
-    "twitter": "vdwijngaert",
-    "website": "https://www.neok.be/"
+    "twitter": "vamseejasti",
+    "website": "https://vamseejasti.com"
   },
-  "veluca93": {
-    "avatar_url": "1896483",
-    "github": "veluca93",
-    "name": "Luca Versari",
+  "paivaspol": {
+    "avatar_url": "1900571",
+    "github": "paivaspol",
+    "linkedin": "vaspol-ruamviboonsuk-7898b824",
+    "name": "Vaspol Ruamviboonsuk",
     "teams": {
-      "2020": [
+      "2022": [
+        "analysts",
         "authors"
       ]
-    }
+    },
+    "twitter": "paivaspol"
+  },
+  "VictorLeP": {
+    "avatar_url": "6874341",
+    "github": "VictorLeP",
+    "linkedin": "victor-le-pochat",
+    "name": "Victor Le Pochat",
+    "teams": {
+      "2022": [
+        "analysts"
+      ]
+    },
+    "twitter": "VictorLePochat",
+    "website": "https://lepoch.at"
   },
   "victorlep": {
     "avatar_url": "6874341",
@@ -4187,43 +4170,6 @@
     },
     "website": "https://data-seo.com"
   },
-  "webmatter-it": {
-    "avatar_url": "6397771",
-    "github": "webmatter-it",
-    "name": "Giulia Laco",
-    "teams": {
-      "2022": [
-        "translators"
-      ]
-    },
-    "twitter": "webmatter_it",
-    "website": "https://www.webmatter.it/"
-  },
-  "webmaxru": {
-    "avatar_url": "1560278",
-    "github": "webmaxru",
-    "name": "Maxim Salnikov",
-    "teams": {
-      "2021": [
-        "reviewers"
-      ],
-      "2022": [
-        "reviewers"
-      ]
-    },
-    "twitter": "webmaxru",
-    "website": "https://medium.com/@webmaxru"
-  },
-  "welenofsky": {
-    "avatar_url": "3008677",
-    "github": "welenofsky",
-    "name": "Justin Welenofsky",
-    "teams": {
-      "2019": [
-        "developers"
-      ]
-    }
-  },
   "westonruter": {
     "avatar_url": "134745",
     "github": "westonruter",
@@ -4239,29 +4185,49 @@
     "twitter": "westonruter",
     "website": "https://weston.ruter.net/"
   },
-  "whitep4nth3r": {
-    "avatar_url": "52798353",
-    "github": "whitep4nth3r",
-    "name": "Salma Alam-Naylor",
-    "teams": {
-      "2022": [
-        "authors"
-      ]
-    },
-    "twitter": "whitep4nth3r",
-    "website": "https://whitep4nth3r.com/"
-  },
-  "wrttnwrd": {
-    "avatar_url": "382649",
-    "github": "wrttnwrd",
-    "name": "Ian Lurie",
+  "WilhelmWillie": {
+    "avatar_url": "4969041",
+    "github": "WilhelmWillie",
+    "name": "Wilhelm Willie",
     "teams": {
       "2021": [
-        "authors"
+        "reviewers"
+      ]
+    }
+  },
+  "HakaCode": {
+    "avatar_url": "33907565",
+    "github": "HakaCode",
+    "name": "William Sandres",
+    "teams": {
+      "2019": [
+        "translators"
+      ],
+      "2020": [
+        "translators"
+      ],
+      "2021": [
+        "translators"
+      ],
+      "2022": [
+        "translators"
       ]
     },
-    "twitter": "ianlurie",
-    "website": "https://www.ianlurie.com"
+    "twitter": "hakacode",
+    "website": "https://hakacode.github.io"
+  },
+  "Xav83": {
+    "avatar_url": "6787157",
+    "github": "Xav83",
+    "linkedin": "xavier-jouvenot-98787794",
+    "name": "Xavier Jouvenot",
+    "teams": {
+      "2022": [
+        "translators"
+      ]
+    },
+    "twitter": "10xLearner",
+    "website": "https://10xlearner.com/"
   },
   "ydimova": {
     "avatar_url": "9135107",
@@ -4280,21 +4246,6 @@
       ]
     }
   },
-  "ymschaap": {
-    "avatar_url": "91795",
-    "github": "ymschaap",
-    "name": "Yvo Schaap",
-    "teams": {
-      "2019": [
-        "brainstormers",
-        "authors",
-        "analysts",
-        "developers"
-      ]
-    },
-    "twitter": "yvoschaap",
-    "website": "https://build.amsterdam/"
-  },
   "yoavweiss": {
     "avatar_url": "786187",
     "github": "yoavweiss",
@@ -4311,14 +4262,17 @@
     "twitter": "yoavweiss",
     "website": "https://blog.yoav.ws"
   },
-  "ytkoka": {
-    "github": "ytkoka",
-    "name": "Yutaka Oka",
+  "tyohan": {
+    "avatar_url": "106703",
+    "github": "tyohan",
+    "name": "Yohan Totting",
     "teams": {
-      "2022": [
-        "reviewers"
+      "2019": [
+        "developers"
       ]
-    }
+    },
+    "twitter": "tyohan",
+    "website": "http://tyohan.me"
   },
   "yuseyhan": {
     "avatar_url": "74974506",
@@ -4331,6 +4285,30 @@
     },
     "twitter": "yuseyhan",
     "website": "https://webpen.de/"
+  },
+  "ytkoka": {
+    "github": "ytkoka",
+    "name": "Yutaka Oka",
+    "teams": {
+      "2022": [
+        "reviewers"
+      ]
+    }
+  },
+  "ymschaap": {
+    "avatar_url": "91795",
+    "github": "ymschaap",
+    "name": "Yvo Schaap",
+    "teams": {
+      "2019": [
+        "brainstormers",
+        "authors",
+        "analysts",
+        "developers"
+      ]
+    },
+    "twitter": "yvoschaap",
+    "website": "https://build.amsterdam/"
   },
   "zachleat": {
     "avatar_url": "39355",
@@ -4345,43 +4323,63 @@
     "twitter": "zachleat",
     "website": "https://zachleat.com/"
   },
-  "zcorpan": {
-    "avatar_url": "244772",
-    "github": "zcorpan",
-    "name": "Simon Pieters",
+  "Levix": {
+    "avatar_url": "65117011",
+    "github": "Levix",
+    "name": "Zhiwei Li",
     "teams": {
-      "2019": [
-        "brainstormers",
-        "reviewers"
-      ],
-      "2020": [
-        "reviewers"
-      ],
       "2022": [
-        "reviewers"
+        "translators"
       ]
-    },
-    "twitter": "zcorpan"
-  },
-  "zeman": {
-    "avatar_url": "204268",
-    "github": "zeman",
-    "name": "Mark Zeman",
-    "teams": {
-      "2019": [
-        "brainstormers",
-        "reviewers"
-      ]
-    },
-    "twitter": "MarkZeman",
-    "website": "https://speedcurve.com"
+    }
   },
   "ziemek-bucko": {
     "avatar_url": "60089915",
     "github": "ziemek-bucko",
-    "name": "Ziemek Bu\u0107ko",
+    "name": "Ziemek Bućko",
     "teams": {
       "2021": [
+        "reviewers"
+      ]
+    }
+  },
+  "luckybai": {
+    "github": "luckybai",
+    "name": "Zongchao Bai",
+    "teams": {
+      "2022": [
+        "translators"
+      ]
+    }
+  },
+  "Zuckjet": {
+    "avatar_url": "17976139",
+    "github": "Zuckjet",
+    "name": "Zuckjet",
+    "teams": {
+      "2020": [
+        "translators"
+      ]
+    },
+    "twitter": "Zuckjet"
+  },
+  "cybai": {
+    "avatar_url": "6782666",
+    "github": "CYBAI",
+    "name": "cybai",
+    "teams": {
+      "2020": [
+        "translators"
+      ]
+    },
+    "twitter": "_cybai"
+  },
+  "notwillk": {
+    "avatar_url": "44582272",
+    "github": "notwillk",
+    "name": "notwillk",
+    "teams": {
+      "2020": [
         "reviewers"
       ]
     }
