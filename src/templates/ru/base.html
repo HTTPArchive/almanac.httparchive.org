@@ -112,6 +112,7 @@
 {% block mentionsAlt %}упоминания{% endblock %}
 
 {% macro onTwitter(twitterHandle) %}@{{twitterHandle}} на Twitter{% endmacro %}
+{% macro onMastodon(mastodonHandle) %}{{mastodonHandle}} on Mastodon{% endmacro %}
 {% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} на GitHub{% endmacro %}
 {% macro onLinkedIn(authorName) %}{{authorName}} на LinkedIn{% endmacro %}
 {% macro website(authorName) %}Сайт {{authorName}}{% endmacro %}
