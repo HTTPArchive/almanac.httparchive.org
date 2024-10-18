@@ -71,11 +71,14 @@ elif [ "${RUN_TYPE}" == "pull_request" ] && [ "${COMMIT_SHA}" != "" ]; then
     git checkout main
     # Then get the changes
     CHANGED_FILES=$(git diff --name-only "main...${COMMIT_SHA}" --diff-filter=d content templates | grep -v base.html | grep -v ejs | grep -v base_ | grep -v sitemap | grep -v error.html | grep -v stories | grep -v embed.html | grep -v "/embeds/" )
+    echo "Changed files: ${CHANGED_FILES}"
+
     # Then back to the pull request changes
     git checkout --progress --force "${COMMIT_SHA}"
 
     # Transform the files to http://127.0.0.1:8080 URLs
     LIGHTHOUSE_URLS=$(echo "${CHANGED_FILES}" | sed 's/src\/content/http:\/\/127.0.0.1:8080/g' | sed 's/\.md//g' | sed 's/\/base\//\/en\/2019\//g' | sed 's/src\/templates/http:\/\/127.0.0.1:8080/g' | sed 's/index\.html//g' | sed 's/\.html//g' | sed 's/_/-/g' | sed 's/\/2019\/accessibility-statement/\/accessibility-statement/g' | sed 's/\/2019\/search/\/search/g' | sed -E 's/(http:\/\/.*)$/\1?nowebmentions/g' )
+    echo "URLs to test: ${LIGHTHOUSE_URLS}"
 
     # Temporarily remove chapters failing in Lighthouse - TODO Try removing this on next Lighthouse upgrade
     # LIGHTHOUSE_URLS=$(echo "${LIGHTHOUSE_URLS}" | grep -v "/en/2021/cdn" | grep -v '/2021/ecommerce')
