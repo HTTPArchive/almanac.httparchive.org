@@ -406,7 +406,7 @@ Despite these small increases, the overall picture hasn't changed dramatically s
 For further information, refer to:
 * The WSGs 1.0 - SC 3.4.
   
-# Unused JavaScript
+##### Unused JavaScript
 Unused JavaScript significantly impacts energy consumption and carbon footprints of both servers and user devices. While JavaScript frameworks enhance development efficiency, they often introduce substantial unused code, affecting page load times and increasing data transfer unnecessarily.
 
 Modern techniques like tree shaking and code splitting are crucial for optimizing JavaScript. The following steps will most probably help you to decrease your unused Javascript:
