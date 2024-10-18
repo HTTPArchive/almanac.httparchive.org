@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Sustainability
 description: Sustainability chapter of the 2024 Web Almanac covering environmental impacts of web pages, where they come from and how to reduce them
+# TODO: Is mgifford an author or a reviewer? He shouldn't be both
 authors: [ldevernay, burakguneli, ines-akrap, AlexDawsonUK, mgifford, timfrick]
 reviewers: [mgifford, lebreRafael]
 editors: [cqueern]
@@ -27,7 +28,7 @@ featured_stat_label_3: Mobile websites not using cache at all
 
 In the current chapter, we will rely as much as possible on <a hreflang="en" href="../2022/sustainability">the 2022 Sustainability chapter</a>. If you haven't yet, you should read it right now. Yes, recycling/reusing is a major part of sustainability.
 
-Since the 2022 Almanac, the field of digital sustainability has advanced considerably. That said, it is very much in its infancy, as this is a complex problem. We cannot know, with absolute certainty, what the full effects of our digital lives are on our physical planet. What we can be confident in is that the full impacts are bigger than generally accounted for. Water, land, rare minerals, and electricity are all consumed by our “clean” digital interfaces, and toxic waste is often produced.
+Since the 2022 Almanac, the field of digital sustainability has advanced considerably. That said, it is very much in its infancy, as this is a complex problem. We cannot know, with absolute certainty, what the full effects of our digital lives are on our physical planet. What we can be confident in is that the full impacts are bigger than generally accounted for. Water, land, rare minerals, and electricity are all consumed by our "clean" digital interfaces, and toxic waste is often produced.
 
 In addition, it has been recognized by many working in sustainability that the impact of other primary fields such as web performance, accessibility, security, privacy, etc. can lead to emissions as a secondary consequence of poor planning and decision-making.
 
@@ -129,7 +130,7 @@ Evaluating the environmental impact of a website is everything but an easy task.
 
 It is very important to keep in mind that there is still no available tool that would allow for precise measurement of every single part of the system, allowing for a nice overall sum. Therefore, we can measure isolated parts of the systems our teams work on or resources to the use of the models that allow us to do an estimation based on specific inputs. One model that is currently used in many different website carbon calculators and is being worked on and improved is the <a hreflang="en" href="https://sustainablewebdesign.org/estimating-digital-emissions/">Sustainable Web Design Model</a>. This model can be a slightly controversial way of estimating, as well as any currently out there. However, it has been present for a while, allowing comparison over time, and simplifying this complex process allows for better understanding and, hopefully, recognition of the problem itself.
 
-Usually, we talk about CO2 but it would be more accurate to talk about eqCO2 or CO2e: values equivalent to CO2 emissions but rather applies to all kinds of greenhouse gasses (GHG). Also, other environmental impacts should be considered (as is the case in Life Cycle Assessment for instance) to avoid impact transfers (e.g. when reducing GHG emissions proves detrimental to water consumption) and debatable claims such as “carbon neutrality”.
+Usually, we talk about CO2 but it would be more accurate to talk about eqCO2 or CO2e: values equivalent to CO2 emissions but rather applies to all kinds of greenhouse gasses (GHG). Also, other environmental impacts should be considered (as is the case in Life Cycle Assessment for instance) to avoid impact transfers (e.g. when reducing GHG emissions proves detrimental to water consumption) and debatable claims such as "carbon neutrality".
 
 For further information, refer to:
 - The WSGs 1.0 - SC 2.1, 2.25, and 5.5.
@@ -209,7 +210,7 @@ For further information, refer to:
 ### Carbon emissions
 
 As stated above, back in 2022, we used the Sustainable Web Design (SWD) model to estimate carbon emissions based on page weight. As we explained many times, this is inaccurate but constantly improving. As such a new version of the model was recently published. This has a considerable impact on the results so we decided to recalculate emissions from the 2022 data before proceeding with the 2024 data.
-In both cases, we exclude data from the 100 percentile, which is some kind of “worst-case scenario” and way above other percentiles thus making the diagrams less readable.
+In both cases, we exclude data from the 100 percentile, which is some kind of "worst-case scenario" and way above other percentiles thus making the diagrams less readable.
 
 #### Emissions for 2022
 
@@ -263,7 +264,7 @@ We can also take a look at the share of emissions for different resources (HTML/
 
 This looks quite similar to what we found in 2022, leading to the same conclusions. We should however insist on the fact that images are usually easier to process than JS and CSS. Here, JS is a major offender regarding transferred data but is usually quite impactful on memory, CPU, and GPU, which then leads to additional environmental impacts that are not yet considered in the SWD model. For instance, soliciting more CPU/GPU/memory could have an impact on the battery discharge of your smartphone, thus forcing you to change the battery or device sooner than expected and possibly making the website less performant on older devices.
 
-#### Some “meta” considerations
+#### Some "meta" considerations
 
 Somewhere along writing this chapter, someone in the team wondered what would be the total carbon emissions related to the HTTP Archive monthly crawl. Each month, data is collected from millions of web pages to monitor the state of the web. For instance, the Web Almanac is based on this data.
 Find more about <a hreflang="en" href="./methodology">the methodology</a>.
@@ -325,7 +326,7 @@ The not-so-nice surprise here is that most of the requests, around 70 in the 90t
   sql_file=""
 ) }}
 
-The size of retrieved Images is almost double the size of retrieved JavaScript in the 90th percentile, so the “old” pattern is still there. This leads us to the conclusion that sites are loading fewer images but slightly heavier and, in general, more JavaScript, which is not a good trend since that leads to the need for more processing power and can exclude users with aging devices from accessing sites.
+The size of retrieved Images is almost double the size of retrieved JavaScript in the 90th percentile, so the "old" pattern is still there. This leads us to the conclusion that sites are loading fewer images but slightly heavier and, in general, more JavaScript, which is not a good trend since that leads to the need for more processing power and can exclude users with aging devices from accessing sites.
 
 For further information, refer to:
 - The WSGs 1.0 - SC 3.1 and 4.9.
@@ -349,7 +350,7 @@ For further information, refer to:
 
 #### How many of the sites listed in the HTTP Archive run on green hosting?
 
-To help organizations and individuals choose “greener” hosting, <a hreflang="en" href="https://www.thegreenwebfoundation.org/">the Green Web Foundation</a> maintains a dataset of providers matching the <a hreflang="en" href="https://www.thegreenwebfoundation.org/what-we-accept-as-evidence-of-green-power/">“green” criteria</a>. With the list expanding and updating regularly it is not easy to track this metric, however, let's see what is its current state.
+To help organizations and individuals choose "greener" hosting, <a hreflang="en" href="https://www.thegreenwebfoundation.org/">the Green Web Foundation</a> maintains a dataset of providers matching the <a hreflang="en" href="https://www.thegreenwebfoundation.org/what-we-accept-as-evidence-of-green-power/">"green" criteria</a>. With the list expanding and updating regularly it is not easy to track this metric, however, let's see what is its current state.
 
 {{ figure_markup(
   image="percent_green_hosting.png",
@@ -360,9 +361,9 @@ To help organizations and individuals choose “greener” hosting, <a hreflang=
   sql_file=""
 ) }}
 
-We can see that only 14% of mobile sites, and slightly more desktop ones from the HTTP Archive are hosted using “green hosting” providers. That is a slight increase from 2022, when this number was 10%, however, it shows us that progress in this area is extremely slow and that there is still a long way to go in both aspects: encouraging website owners to switch to “greener” hosting provides, as well as more providers offering “greener” hosting.
+We can see that only 14% of mobile sites, and slightly more desktop ones from the HTTP Archive are hosted using "green hosting" providers. That is a slight increase from 2022, when this number was 10%, however, it shows us that progress in this area is extremely slow and that there is still a long way to go in both aspects: encouraging website owners to switch to "greener" hosting provides, as well as more providers offering "greener" hosting.
 
-There is a significant difference in top-ranked sites, showing that 55% of sites ranked in the top 10000 are considered to be hosted green. This number also has a slightly better jump from 2022, when it was 48% for the top 10000 ranked sites. As good as this may sound it can easily be attributed to the fact that many bigger hosting providers such as Amazon and Google are considered to be “green”.
+There is a significant difference in top-ranked sites, showing that 55% of sites ranked in the top 10000 are considered to be hosted green. This number also has a slightly better jump from 2022, when it was 48% for the top 10000 ranked sites. As good as this may sound it can easily be attributed to the fact that many bigger hosting providers such as Amazon and Google are considered to be "green".
 
 ## Reducing the environmental impact of websites
 
@@ -731,7 +732,7 @@ For further information, refer to:
 
 #### Third parties
 
-Since third-party requests make up a large portion of requests on the web, it's interesting to make sure they come from “green” hosts. Back in 2022, we estimated that 91% of third-party requests came from “green” hosts. As of 2024, it has risen to a whopping 97%!
+Since third-party requests make up a large portion of requests on the web, it's interesting to make sure they come from "green" hosts. Back in 2022, we estimated that 91% of third-party requests came from "green" hosts. As of 2024, it has risen to a whopping 97%!
 
 {{ figure_markup(
   image="green-third-party-requests.png",
@@ -742,7 +743,7 @@ Since third-party requests make up a large portion of requests on the web, it's 
   sql_file=""
 ) }}
 
-This sure looks like really great news but you should keep in mind this is somewhat biased. Most third-parties originate from Google whose servers are considered “green”. More generally, many cloud providers are considered “green” but the truth might be slightly more complicated, as explained in our Green Hosting section.
+This sure looks like really great news but you should keep in mind this is somewhat biased. Most third-parties originate from Google whose servers are considered "green". More generally, many cloud providers are considered "green" but the truth might be slightly more complicated, as explained in our Green Hosting section.
 
 You should look at this year's <a hreflang="en" href="./third-parties">Third-parties chapter</a> for more on all this.
 
@@ -1127,7 +1128,7 @@ The average of the median emissions in the chart above is about 0.3 grams of car
   sql_file=""
 ) }}
 
-Note : in diagrams displaying resource types, we only take into account HTML+Javascript+CSS+Images+Fonts, omitting other requests such as video, audio and some “unidentified” 3rd-party services.
+Note : in diagrams displaying resource types, we only take into account HTML+Javascript+CSS+Images+Fonts, omitting other requests such as video, audio and some "unidentified" 3rd-party services.
 
 Of the five CMS, it is good to see that image sizes went down across the board. Squarespace is still the biggest with an average of 1.3 Mb of images on mobile devices. It is unfortunate to see JavaScript generally increase. Wix now has the largest JavaScript footprint in 2024 at 1.3 Mb. With most of the CMS, HTML is the smallest resource type. The charts above show that Wix seems to implement significantly more aggressive image optimizations on their platform.
 
