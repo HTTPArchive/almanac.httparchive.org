@@ -125,13 +125,6 @@
           SELECT "ALL" AS client, COUNT(DISTINCT root_page) AS num_sites FROM `httparchive.all.pages` where date = thedate
           UNION ALL
           SELECT  client, COUNT(DISTINCT root_page) FROM `httparchive.all.pages` where date = thedate group by client;
-
-          # Don't run this, but just note the BigQuery estimate
-          SELECT * FROM `httparchive.all.pages` WHERE date = thedate;
-          SELECT * FROM `httparchive.all.pages` WHERE date = thedate;
-          SELECT * FROM `chrome-ux-report.all.202406`;
-          SELECT * FROM `chrome-ux-report.materialized.metrics_summary`;
-          SELECT * FROM `chrome-ux-report.materialized.device_summary`;
         #}
         <p>
           There are 16,935,953 websites in the dataset. Among those, 16,130,357 are mobile websites and 12,740,973 are desktop websites. Most websites are included in both the mobile and desktop subsets.
@@ -208,13 +201,33 @@
             <td>Emulated Moto G4</td>
           </tr>
 
+          {# Use this SQL to get the most commonly used User Agent (check it's over 50%):
+
+            SELECT
+              client,
+              req_headers.value,
+              COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct_crawl
+            FROM
+              `httparchive.all.requests`,
+            UNNEST (request_headers) AS req_headers
+            WHERE
+              date = '2024-06-01' AND
+              is_root_page AND
+              is_main_document AND
+              LOWER(req_headers.name) = "user-agent"
+            GROUP BY
+              client,
+              req_headers.value
+            QUALIFY
+              COUNT(0) = MAX(COUNT(0)) OVER (PARTITION BY client);
+          #}
           <tr>
             <td>User Agent</td>
             <td>
-              Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.61 Safari/537.36 PTST/220609.133020
+              Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 PTST/240613.172707
             </td>
             <td>
-              Mozilla/5.0 (Linux; Android 8.1.0; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.115 Mobile Safari/537.36 PTST/220609.133020
+              Mozilla/5.0 (Linux; Android 8.1.0; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Mobile Safari/537.36 PTST/240613.172707
             </td>
           </tr>
 
