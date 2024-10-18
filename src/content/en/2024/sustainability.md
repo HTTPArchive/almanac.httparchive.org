@@ -8,17 +8,18 @@ editors: [cqueern]
 analysts: [Falafelqueen, burakguneli, mgifford]
 translators: []
 results: https://docs.google.com/spreadsheets/d/1E6wPVck2-5NDUpFKWjbJXKJKNx0E9fWwIdeM9hUKl8c/edit#gid=806519964
+ldevernay_bio: Laurent Devernay Satygraha is a Digital Sobriety Expert for <a hreflang="en" href="https://greenspector.com/en/home/">Greenspector</a>. You can find him blogging <a hreflang="en" href="https://ldevernay.github.io/">on his own</a> or <a hreflang="en" href="https://greenspector.com/fr/blog/">for this company</a> but almost always about web sustainability. Which makes him either an enthusiast or a monomaniac.  Connect with <a href="https://www.linkedin.com/in/laurent-devernay-satyagraha-2610b85/">Laurent on LinkedIn</a>.
 AlexDawsonUK_bio: Alexander Dawson is a Web Developer, Sustainability Researcher, and editor of the <a href="https://w3c.github.io/sustyweb/">Web Sustainability Guidelines</a>. You can find more details about him at <a href="https://alexanderdawson.com/">alexanderdawson.com</a>.
 lebreRafael_bio: Rafael Lebre is a Software Engineer who has been focused on Web Performance for the last 3 years and recently started to dig into the Web Sustainability work. He likes to contribute to open source projects and projects with social or environmental impact whenever he finds an opportunity. You can find him sharing some articles on twitter as <a href="https://twitter.com/lebreRafael">@lebreRafael</a> or contact him on <a href="https://www.linkedin.com/in/rafael-lebre-8a24b590/l">LinkedIn</a>  
 timfrick_bio: Tim Frick is President of <a href="https://mightybytes.com">Mightybytes</a>, a digital agency and Certified B Corp located in Chicago. A seasoned public speaker, he regularly presents on sustainable design, measuring impact, and problem solving in the digital economy. Tim is also the author of four books, including <a href="https://www.oreilly.com/library/view/designing-for-sustainability/9781491935767/">Designing for Sustainability, A Guide to Building Greener Digital Products and Services</a>, from O'Reilly Media. Connect with <a href="https://www.linkedin.com/in/timfrick/">Tim on LinkedIn</a>.
 
-featured_quote:
-featured_stat_1:
-featured_stat_label_1:
-featured_stat_2:
-featured_stat_label_2:
-featured_stat_3:
-featured_stat_label_3:
+featured_quote: This the second Web Almanac chapter about Sustainability and, guess what, climactic events didn't get any better. There are still a lot of opportunities to make digital more sustainable, starting with the web. We'll see that a lot happened since 2022 in the sustainability field and offer even more opportunities to make the web more resilient. 
+featured_stat_1: 14%
+featured_stat_label_1: Websites relying on more sustainable hosting
+featured_stat_2: 1.36
+featured_stat_label_2: GHG emissions (g eqCO2) for the 90th percentile web pages on mobile
+featured_stat_3: 25.13%
+featured_stat_label_3: Mobile websites not using cache at all
 ---
 
 ## Introduction
@@ -1162,11 +1163,11 @@ For further information, refer to:
 Sustainability is a rapidly evolving and firmly established field that will increasingly have a seat at the table for those creating products and services for the Web. As with accessibility, legislation is helping to drive the need for conformance and the benefits it can bring to both people and the planet. By considering how you create websites and applications, the ethical decisions behind design and development, taking into account industry best practices, and tackling the digital variables that can have real-world impacts, each one of us can become sustainability advocates.
 
 Starting from the 2022 chapter, we realized that things are moving really fast for web sustainability and we are faced with many challenges: 
-There is more and more information out there and it might get difficult to follow: new resources and tools, existing stuff being updated, etc. 
-It appears essential to keep an eye on emerging technologies (metaverse faded away as fast as it appeared, AI is everywhere), since all of them have environmental impacts (and possibly benefits too). Solutionism is a growing risk: 
-Offering digital solutions to fight climate change without considering their own impacts.
-Silver bullet offerings to reduce the environmental impacts of digital.
-Greenwashing is everywhere, even with the best intention in mind.
+* There is more and more information out there and it might get difficult to follow: new resources and tools, existing stuff being updated, etc. 
+* It appears essential to keep an eye on emerging technologies (metaverse faded away as fast as it appeared, AI is everywhere), since all of them have environmental impacts (and possibly benefits too). Solutionism is a growing risk: 
+  * Offering digital solutions to fight climate change without considering their own impacts.
+  * Silver bullet offerings to reduce the environmental impacts of digital.
+* Greenwashing is everywhere, even with the best intention in mind.
 
 In the end, we see a generally wider adoption of technical best practices but still an increase of emissions. Efficiency is mandatory but sobriety and frugality are the way to go.
 
@@ -1175,28 +1176,28 @@ In the end, we see a generally wider adoption of technical best practices but st
 One of the simplest steps you can take in rapidly evaluating your sustainability situation is using an automated measurement tool. As with accessibility tooling, these only tell part of the story and cannot account for aspects that can only be human-tested (rather than automated), and there are still many issues we do not have accurate data to measure against; but it's still a good place to dip your toes in the water.
 
 For further information, refer to:
-Ecograder
-Website Carbon
-Are My Third Parties Green?
+* <a hreflang="en" href="https://github.com/Munter/subfont">Ecograder</a>
+* <a hreflang="en" href="https://github.com/Munter/subfont">Website Carbon</a>
+* <a hreflang="en" href="https://github.com/Munter/subfont">Are My Third Parties Green?</a>
 
 #### Planning / Reporting
 Another step forward you can take beyond a rapid evaluation is to put forward some concrete plans or even better, start reporting on your sustainability journey. Measure what you can, document your efforts, and be as open with your findings and progress as you can be. Sustainability is a journey and progress is always beneficial over perfection. Having a sustainability statement will be a great place to provide such plans and successes you have achieved.
 
 For further information, refer to:
-Best Sustainability Statements
-Co2.js
-How to Write An Effective Sustainability Statement
-
+* <a hreflang="en" href="https://ecograder.com/">Best Sustainability Statements</a>
+* <a hreflang="en" href="https://www.websitecarbon.com/">Co2.js</a>
+* <a hreflang="en" href="https://aremythirdpartiesgreen.com/">How to Write An Effective Sustainability Statement</a>
+  
 #### WSGs
 The W3C Sustainable Web community group's Web Sustainability Guidelines are a hugely beneficial resource for anyone seeking to implement sustainability in their website or application. The specification they have produced is broken down into sections based on expertise (UX, Web Development, DevOps, and Business) and additional resources are available (linked to at the top of the specification) which can assist in your understanding of and implementation of sustainability within your product or service.
 
 For further information, refer to:
-Web Sustainability Guidelines
-Sustainable Tooling And Reporting (STAR)
-At-A-Glance Overview
-Introduction to Web Sustainability
-Web Sustainability Laws & Policies
-WSGs Quick Reference (Includes PDF)
+* <a hreflang="en" href="https://w3c.github.io/sustyweb/">Web Sustainability Guidelines</a>
+* <a hreflang="en" href="https://w3c.github.io/sustyweb/star.html">Sustainable Tooling And Reporting (STAR)</a>
+* <a hreflang="en" href="https://w3c.github.io/sustyweb/glance.html">At-A-Glance Overview</a>
+* <a hreflang="en" href="https://w3c.github.io/sustyweb/intro.html">Introduction to Web Sustainability</a>
+* <a hreflang="en" href="https://w3c.github.io/sustyweb/policies.html">Web Sustainability Laws & Policies</a>
+* <a hreflang="en" href="https://w3c.github.io/sustyweb/quickref.html">WSGs Quick Reference (Includes PDF)</a>
 
 #### Up-To-Date (Knowledge)
 As creators, keeping our knowledge current in an overwhelming industry is a challenge, and in sustainability which is a rapidly evolving field, this is no exception. Reading books, watching relevant videos, taking courses, looking at studies or papers, and keeping up-to-date with the latest standards and best practices are essential. You have taken the first step with this chapter of the Almanac, if you enjoyed it, see what else interests you to expand your experience further.
