@@ -406,7 +406,7 @@ Despite these small increases, the overall picture hasn't changed dramatically s
 For further information, refer to:
 * The WSGs 1.0 - SC 3.4.
   
-##### Unused JavaScript
+# Unused JavaScript
 Unused JavaScript significantly impacts energy consumption and carbon footprints of both servers and user devices. While JavaScript frameworks enhance development efficiency, they often introduce substantial unused code, affecting page load times and increasing data transfer unnecessarily.
 
 Modern techniques like tree shaking and code splitting are crucial for optimizing JavaScript. The following steps will most probably help you to decrease your unused Javascript:
@@ -517,7 +517,7 @@ For more detailed information on implementing these formats and their performanc
 As the diversity of devices accessing the web continues to grow, delivering appropriately sized images remains crucial for both performance and sustainability. Responsive image techniques allow us to serve optimized images for each scenario, reducing unnecessary data transfer and processing.
 It's worth remembering that image quality doesn't always need to be at maximum.
 
-# TODO
+TODO
 {{ figure_markup(
   image="image-format-adoption.png",
   caption="Responsive image types",
@@ -631,7 +631,7 @@ From a sustainability perspective, animations can be resource-intensive:
 
 Recent data on <a hreflang="en" href="https://web.dev/articles/stick-to-compositor-only-properties-and-manage-layer-count">non-composited animations</a> provides insight into their usage across websites:
 
-# TODO
+TODO
 {{ figure_markup(
   image="video-autoplay-usage.png",
   caption="Non-composited animations per page",
