@@ -85,21 +85,21 @@
         </p>
 
         <p>
-          For example, to understand the median number of bytes of JavaScript per desktop and mobile page, see <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/2024/javascript/bytes_2024.sql">bytes_2022.sql</a>:
+          For example, to understand the median number of bytes of JavaScript per desktop and mobile page, see <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/2024/javascript/bytes_2024.sql">bytes_2024.sql</a>:
         </p>
 
         <div class="code-block floating-card">
           {# To generate this markup temporarily add a ```sql code block to a chapter and generate that chapter and you&#8217;ll get the HTML #}
           {# Note extra attributes on pre tag to allow keyboard scroll so add them back in #}
-        {# TO update this with a relevant sample query
-          <pre role="region" aria-label="bytes_2022.sql" tabindex="0"><code class="sql language-sql"><span class="comment">#standardSQL</span>
-<span class="comment"># Sum of JS request bytes per page (2022)</span>
+          {# TODO - update this to new dataset #}
+          <pre class="hidden" role="region" aria-label="bytes_2022.sql" tabindex="0"><code class="sql language-sql"><span class="comment">#standardSQL</span>
+<span class="comment"># Sum of JS request bytes per page (2024)</span>
 <span class="keyword">SELECT</span>
   percentile,
   _TABLE_SUFFIX <span class="keyword">AS</span> client,
   <span class="function call">APPROX_QUANTILES</span>(bytesJs / <span class="constant numeric">1024</span>, <span class="constant numeric">1000</span>)[<span class="function call">OFFSET</span>(percentile <span class="keyword operator">*</span> <span class="constant numeric">10</span>)] <span class="keyword">AS</span> js_kilobytes
 <span class="keyword">FROM</span>
-  <span class="string">`httparchive.summary_pages.2022_06_01_*`</span>,
+  <span class="string">`httparchive.summary_pages.2024_06_01_*`</span>,
   <span class="function call">UNNEST</span>([<span class="constant numeric">10</span>, <span class="constant numeric">25</span>, <span class="constant numeric">50</span>, <span class="constant numeric">75</span>, <span class="constant numeric">90</span>, <span class="constant numeric">100</span>]) <span class="keyword">AS</span> percentile
 <span class="keyword">GROUP</span> <span class="keyword">BY</span>
   percentile,
@@ -107,7 +107,6 @@
 <span class="keyword">ORDER</span> <span class="keyword">BY</span>
   client,
   percentile</code></pre></div>
-        #}
 
         <p>
           Results for each metric are publicly viewable in chapter-specific spreadsheets, for example <a href="https://docs.google.com/spreadsheets/d/16isMe5_rvmRmJHtK5Je66AhwO8SowGgq0EFqXyjEXw8/edit?gid=1778117656#gid=1778117656">JavaScript results</a>. Links to the raw results and queries are available at the bottom of each chapter. Metric-specific results and queries are also linked directly from each figure.
@@ -365,7 +364,7 @@
       </p>
 
       <p>
-        You can learn more about the dataset in the <a hreflang="en" href="https://web.dev/chrome-ux-report-bigquery">Using the Chrome UX Report on BigQuery</a> guide on <a hreflang="en" href="https://web.dev/">web.dev</a>.
+        You can learn more about the dataset in the <a hreflang="en" href="https://developer.chrome.com/docs/crux/guides/bigquery">Using the Chrome UX Report on BigQuery</a> guide on <a hreflang="en" href="https://developer.chrome.com">developer.chrome.com</a>.
       </p>
     </section>
 
@@ -512,10 +511,9 @@
         The {{ year }} edition of the Web Almanac is the fifth in what is mostly an annual tradition (we took a break in 2023) in the web community of introspection and a commitment to positive change. Getting to this point has been a monumental effort thanks to many dedicated <a href="{{ url_for('contributors', year=year, lang=lang) }}">contributors</a> and we hope to leverage as much of this work as possible to make future editions even more streamlined.
       </p>
 
-      {# TODO - uncomment if we want to include this
-      <p>
+      {# TODO - uncomment if we want to include this #}
+      <p class="hidden">
         If you&#8217;re interested in contributing to the 2025 edition of the Web Almanac, please fill out our <a hreflang="en" href="https://forms.gle/??">interest form</a>. Let&#8217;s work together to track the state of the web!
       </p>
-      #}
     </section>
 {% endblock main_content %}
