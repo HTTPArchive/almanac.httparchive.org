@@ -577,7 +577,7 @@ Lazy-loading remains a crucial technique for enhancing both performance and sust
 
 {{ figure_markup(
   image="lazy-loading-adoption.png",
-  caption="Adoption of loading=lazy on <img>",
+  caption="Adoption of loading=lazy on `<img>`",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=1848380246&format=interactive",
   sheets_gid="228292115",
