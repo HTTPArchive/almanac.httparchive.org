@@ -146,6 +146,20 @@
     "twitter": "DesignrKnight",
     "website": "http://designrknight.com/"
   },
+  "AlexDawsonUK": {
+    "avatar_url": "93073603",
+    "github": "AlexDawsonUK",
+    "linkedin": "alexdawsonuk",
+    "mastodon": "https://mastodon.design/@AlexDawsonUK",
+    "name": "Alexander Dawson",
+    "teams": {
+      "2024": [
+        "authors"
+      ]
+    },
+    "twitter": "AlexDawsonUK",
+    "website": "https://alexanderdawson.com/"
+  },
   "Djohn12": {
     "avatar_url": "38497742",
     "github": "Djohn12",
@@ -416,6 +430,21 @@
         "authors"
       ]
     }
+  },
+  "mgifford": {
+    "avatar_url": "116832",
+    "github": "mgifford",
+    "linkedin": "mgifford",
+    "mastodon": "https://mastodon.social/@mgifford",
+    "name": "Mike Gifford",
+    "teams": {
+      "2024": [
+        "analysts",
+        "authors",
+        "reviewers"
+      ]
+    },
+    "website": "https://accessibility.civicactions.com/"
   },
   "Navaneeth-akam": {
     "avatar_url": "69532755",
@@ -1231,6 +1260,19 @@
     "twitter": "bseymour",
     "website": "https://benseymour.com"
   },
+  "burakguneli": {
+    "avatar_url": "7094425",
+    "github": "burakguneli",
+    "name": "Burak Güneli",
+    "teams": {
+      "2024": [
+        "analysts",
+        "authors"
+      ]
+    },
+    "twitter": "burakGuneli"
+
+  },
   "c-torres": {
     "avatar_url": "6588246",
     "github": "c-torres",
@@ -1436,6 +1478,9 @@
       ],
       "2022": [
         "reviewers"
+      ],
+      "2024": [
+        "editors"
       ]
     },
     "twitter": "httpsecheaders"
@@ -2214,6 +2259,19 @@
     "twitter": "jevgeniazi",
     "website": "https://github.com/imeugenia/speaking/blob/main/README.md"
   },
+  "ines-akrap": {
+    "avatar_url": "5904064",
+    "github": "ines-akrap",
+    "name": "Ines Akrap",
+    "teams": {
+      "2024": [
+        "authors"
+      ]
+    },
+    "twitter": "InesAkrap",
+    "website": "https://inesakrap.com/"
+
+  },
   "ipullrank": {
     "avatar_url": "1043031",
     "github": "ipullrank",
@@ -2635,6 +2693,9 @@
       ],
       "2022": [
         "authors"
+      ],
+      "2024": [
+        "authors"
       ]
     },
     "twitter": "ldevernay",
@@ -2702,6 +2763,16 @@
     "teams": {
       "2021": [
         "developers"
+      ]
+    }
+  },
+  "Falafelqueen": {
+    "avatar_url": "79268979",
+    "github": "Falafelqueen",
+    "name": "Lucia Harcegova",
+    "teams": {
+      "2024": [
+        "analysts"
       ]
     }
   },
@@ -3318,6 +3389,17 @@
     },
     "twitter": "rachellcostello"
   },
+  "lebreRafael": {
+    "avatar_url": "13899924",
+    "github": "lebreRafael",
+    "name": "Rafael Bonalume Lebre",
+    "teams": {
+      "2024": [
+        "reviewers"
+      ]
+    },
+    "twitter": "lebreRafael"
+  },
   "raghav": {
     "avatar_url": "9475742",
     "github": "arsenicraghav",
@@ -3844,6 +3926,9 @@
     "name": "Tim Frick",
     "teams": {
       "2022": [
+        "authors"
+      ],
+      "2024": [
         "authors"
       ]
     },
