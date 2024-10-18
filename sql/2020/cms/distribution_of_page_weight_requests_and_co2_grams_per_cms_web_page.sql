@@ -35,9 +35,10 @@ FROM (
     FROM
       `httparchive.technologies.2020_08_01_*`
     WHERE
-      category = 'CMS')
-  USING
-    (_TABLE_SUFFIX, url)),
+      category = 'CMS'
+  )
+  USING (_TABLE_SUFFIX, url)
+),
   UNNEST([10, 25, 50, 75, 90]) AS percentile
 GROUP BY
   percentile,

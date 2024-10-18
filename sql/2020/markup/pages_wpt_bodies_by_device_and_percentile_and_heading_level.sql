@@ -6,7 +6,7 @@ CREATE TEMPORARY FUNCTION get_heading_info(wpt_bodies_string STRING)
 RETURNS ARRAY<STRUCT<
   heading STRING,
   total INT64
-  >> LANGUAGE js AS '''
+>> LANGUAGE js AS '''
 var result = [];
 try {
     var wpt_bodies = JSON.parse(wpt_bodies_string);

@@ -11,4 +11,5 @@ FROM (
     JSON_EXTRACT_SCALAR(report, '$.audits.is-crawlable.score') = '1' AS is_crawlable,
     JSON_EXTRACT_SCALAR(report, '$.audits.canonical.score') = '1' AS is_canonical
   FROM
-    `httparchive.lighthouse.2019_07_01_mobile`)
+    `httparchive.lighthouse.2019_07_01_mobile`
+)

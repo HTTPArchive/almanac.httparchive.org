@@ -9,17 +9,16 @@ SELECT
   COUNT(0) AS occurrences,
   ROUND(COUNT(0) * 100 / total_using_control, 2) AS pct_of_control,
   ROUND(COUNT(0) * 100 / all_requests, 2) AS pct_all_requests
-FROM
-  (
-    SELECT
-      client,
-      IF(STRPOS(NET.HOST(url), REGEXP_EXTRACT(NET.REG_DOMAIN(page), r'([\w-]+)')) > 0, 1, 3) AS party,
-      resp_cache_control
-    FROM
-      `httparchive.almanac.requests`
-    WHERE
-      date = '2019-07-01'
-  ),
+FROM (
+  SELECT
+    client,
+    IF(STRPOS(NET.HOST(url), REGEXP_EXTRACT(NET.REG_DOMAIN(page), r'([\w-]+)')) > 0, 1, 3) AS party,
+    resp_cache_control
+  FROM
+    `httparchive.almanac.requests`
+  WHERE
+    date = '2019-07-01'
+),
   UNNEST(REGEXP_EXTRACT_ALL(LOWER(resp_cache_control), r'([a-z][^,\s="\']*)')) AS directive
 JOIN (
   SELECT

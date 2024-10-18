@@ -1,7 +1,7 @@
 #standardSQL
 #popular typeface by country
 CREATE TEMPORARY FUNCTION getFontFamilies(css STRING)
-RETURNS ARRAY < STRING > LANGUAGE js AS '''
+RETURNS ARRAY<STRING> LANGUAGE js AS '''
 try {
     var $ = JSON.parse(css);
     return $.stylesheet.rules.filter(rule => rule.type == 'font-face').map(rule => {
@@ -39,7 +39,8 @@ FROM (
     FROM
       `chrome-ux-report.materialized.country_summary`
     WHERE
-      yyyymm = 202008)
+      yyyymm = 202008
+  )
   ON
     CONCAT(origin, '/') = page AND
     IF(device = 'desktop', 'desktop', 'mobile') = client
@@ -50,6 +51,7 @@ FROM (
     country,
     font_family
   ORDER BY
-    client, country, freq DESC)
+    client, country, freq DESC
+)
 WHERE
   sort_row <= 1

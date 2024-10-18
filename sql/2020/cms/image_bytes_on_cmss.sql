@@ -9,8 +9,7 @@ FROM
   `httparchive.summary_pages.2020_08_01_*`
 JOIN
   `httparchive.technologies.2020_08_01_*`
-USING
-  (_TABLE_SUFFIX, url),
+USING (_TABLE_SUFFIX, url),
   UNNEST([10, 25, 50, 75, 90]) AS percentile
 WHERE
   category = 'CMS'

@@ -18,22 +18,21 @@ SELECT
   COUNT(0) AS hits,
   SUM(COUNT(0)) OVER (PARTITION BY client) AS totalHits,
   SAFE_DIVIDE(COUNT(0), SUM(COUNT(0)) OVER (PARTITION BY client)) AS hitsPct
-FROM
-  (
-    SELECT
-      client,
-      page,
-      url,
-      firstHtml,
-      respBodySize,
-      IFNULL(NULLIF(REGEXP_EXTRACT(_cdn_provider, r'^([^,]*).*'), ''), 'ORIGIN') AS cdn, # sometimes _cdn provider detection includes multiple entries. we bias for the DNS detected entry which is the first entry
-      NET.HOST(url) = NET.HOST(page) AS sameHost,
-      NET.HOST(url) = NET.HOST(page) OR NET.REG_DOMAIN(url) = NET.REG_DOMAIN(page) AS sameDomain # if toplevel reg_domain will return NULL so we group this as sameDomain
-    FROM
-      `httparchive.almanac.requests`
-    WHERE
-      date = '2021-07-01'
-  )
+FROM (
+  SELECT
+    client,
+    page,
+    url,
+    firstHtml,
+    respBodySize,
+    IFNULL(NULLIF(REGEXP_EXTRACT(_cdn_provider, r'^([^,]*).*'), ''), 'ORIGIN') AS cdn, # sometimes _cdn provider detection includes multiple entries. we bias for the DNS detected entry which is the first entry
+    NET.HOST(url) = NET.HOST(page) AS sameHost,
+    NET.HOST(url) = NET.HOST(page) OR NET.REG_DOMAIN(url) = NET.REG_DOMAIN(page) AS sameDomain # if toplevel reg_domain will return NULL so we group this as sameDomain
+  FROM
+    `httparchive.almanac.requests`
+  WHERE
+    date = '2021-07-01'
+)
 GROUP BY
   client,
   cdn

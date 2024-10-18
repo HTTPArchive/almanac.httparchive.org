@@ -8,7 +8,8 @@ FROM (
   SELECT
     CAST(JSON_EXTRACT(report, '$.categories.accessibility.score') AS NUMERIC) AS score
   FROM
-    `httparchive.lighthouse.2019_07_01_mobile`),
+    `httparchive.lighthouse.2019_07_01_mobile`
+),
   UNNEST([10, 25, 50, 75, 90]) AS percentile
 GROUP BY
   date,
@@ -24,7 +25,8 @@ FROM (
   SELECT
     CAST(JSON_EXTRACT(report, '$.categories.accessibility.score') AS NUMERIC) AS score
   FROM
-    `httparchive.lighthouse.2020_08_01_mobile`),
+    `httparchive.lighthouse.2020_08_01_mobile`
+),
   UNNEST([10, 25, 50, 75, 90]) AS percentile
 GROUP BY
   date,
@@ -40,7 +42,8 @@ FROM (
   SELECT
     CAST(JSON_EXTRACT(report, '$.categories.accessibility.score') AS NUMERIC) AS score
   FROM
-    `httparchive.lighthouse.2021_07_01_mobile`),
+    `httparchive.lighthouse.2021_07_01_mobile`
+),
   UNNEST([10, 25, 50, 75, 90]) AS percentile
 GROUP BY
   date,

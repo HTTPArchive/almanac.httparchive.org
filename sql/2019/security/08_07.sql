@@ -10,7 +10,8 @@ FROM (
     _TABLE_SUFFIX,
     JSON_EXTRACT(payload, '$._securityDetails.cipher') AS cipher
   FROM
-    `httparchive.requests.2019_07_01_*`)
+    `httparchive.requests.2019_07_01_*`
+)
 WHERE
   cipher IS NOT NULL
 GROUP BY

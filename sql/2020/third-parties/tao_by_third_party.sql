@@ -68,7 +68,8 @@ base AS (
       page_origin = req_origin OR
       timing_allow_origin = '*, ' OR
       STRPOS(timing_allow_origin, CONCAT(page_origin, ', ')) > 0,
-      1, 0) AS timing_allowed
+      1, 0
+    ) AS timing_allowed
   FROM headers
 )
 

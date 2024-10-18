@@ -13,7 +13,8 @@ FROM (
     _TABLE_SUFFIX AS client,
     CAST(JSON_QUERY(JSON_VALUE(payload, '$._media'), '$.num_picture_img') AS INT64) AS picture
   FROM
-    `httparchive.pages.2022_06_01_*`),
+    `httparchive.pages.2022_06_01_*`
+),
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 GROUP BY
   percentile,

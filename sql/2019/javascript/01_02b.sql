@@ -17,7 +17,8 @@ FROM (
     type = 'script'
   GROUP BY
     client,
-    page),
+    page
+),
   UNNEST([10, 25, 50, 75, 90]) AS percentile
 GROUP BY
   percentile,

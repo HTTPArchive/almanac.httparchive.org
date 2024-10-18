@@ -12,31 +12,30 @@ SELECT
   COUNTIF(IFNULL(a.tlsVersion, b.tlsVersion) = 'TLS 1.2') / COUNT(0) AS tls12_pct,
   COUNTIF(IFNULL(a.tlsVersion, b.tlsVersion) = 'TLS 1.3') / COUNT(0) AS tls13_pct,
   COUNT(0) AS total
-FROM
-  (
-    SELECT
-      client,
-      page,
-      url,
-      firstHtml,
-      # WPT is inconsistent with protocol population.
-      UPPER(IFNULL(JSON_EXTRACT_SCALAR(payload, '$._protocol'), IFNULL(NULLIF(JSON_EXTRACT_SCALAR(payload, '$._tls_next_proto'), 'unknown'), NULLIF(CONCAT('TLS ', JSON_EXTRACT_SCALAR(payload, '$.response.httpVersion')), 'TLS ')))) AS protocol,
-      JSON_EXTRACT_SCALAR(payload, '$._tls_version') AS tlsVersion,
+FROM (
+  SELECT
+    client,
+    page,
+    url,
+    firstHtml,
+    # WPT is inconsistent with protocol population.
+    UPPER(IFNULL(JSON_EXTRACT_SCALAR(payload, '$._protocol'), IFNULL(NULLIF(JSON_EXTRACT_SCALAR(payload, '$._tls_next_proto'), 'unknown'), NULLIF(CONCAT('TLS ', JSON_EXTRACT_SCALAR(payload, '$.response.httpVersion')), 'TLS ')))) AS protocol,
+    JSON_EXTRACT_SCALAR(payload, '$._tls_version') AS tlsVersion,
 
-      # WPT joins CDN detection but we bias to the DNS detection which is the first entry
-      IFNULL(NULLIF(REGEXP_EXTRACT(_cdn_provider, r'^([^,]*).*'), ''), 'ORIGIN') AS cdn,
-      CAST(JSON_EXTRACT(payload, '$.timings.ssl') AS INT64) AS tlstime,
+    # WPT joins CDN detection but we bias to the DNS detection which is the first entry
+    IFNULL(NULLIF(REGEXP_EXTRACT(_cdn_provider, r'^([^,]*).*'), ''), 'ORIGIN') AS cdn,
+    CAST(JSON_EXTRACT(payload, '$.timings.ssl') AS INT64) AS tlstime,
 
-      # isSecure reports what the browser thought it was going to use, but it can get upgraded with STS OR UpgradeInsecure: 1
-      IF(STARTS_WITH(url, 'https') OR JSON_EXTRACT_SCALAR(payload, '$._tls_version') IS NOT NULL OR CAST(JSON_EXTRACT(payload, '$._is_secure') AS INT64) = 1, TRUE, FALSE) AS isSecure,
-      CAST(JSON_EXTRACT(payload, '$._socket') AS INT64) AS socket
-    FROM
-      `httparchive.almanac.requests`
-    WHERE
-      # WPT changes the response fields based on a redirect (url becomes the Location path instead of the original) causing insonsistencies in the counts, so we ignore them
-      resp_location = '' OR resp_location IS NULL AND
-      date = '2021-07-01'
-  ) a
+    # isSecure reports what the browser thought it was going to use, but it can get upgraded with STS OR UpgradeInsecure: 1
+    IF(STARTS_WITH(url, 'https') OR JSON_EXTRACT_SCALAR(payload, '$._tls_version') IS NOT NULL OR CAST(JSON_EXTRACT(payload, '$._is_secure') AS INT64) = 1, TRUE, FALSE) AS isSecure,
+    CAST(JSON_EXTRACT(payload, '$._socket') AS INT64) AS socket
+  FROM
+    `httparchive.almanac.requests`
+  WHERE
+    # WPT changes the response fields based on a redirect (url becomes the Location path instead of the original) causing insonsistencies in the counts, so we ignore them
+    resp_location = '' OR resp_location IS NULL AND
+    date = '2021-07-01'
+) a
 LEFT JOIN (
   SELECT
     client,

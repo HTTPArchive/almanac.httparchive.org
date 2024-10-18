@@ -11,7 +11,8 @@ FROM (
   FROM
     `chrome-ux-report.materialized.country_summary`
   WHERE
-    yyyymm = 202206)
+    yyyymm = 202206
+)
 JOIN
   `httparchive.summary_pages.2022_06_01_*`
 ON
