@@ -77,7 +77,7 @@ elif [ "${RUN_TYPE}" == "pull_request" ] && [ "${COMMIT_SHA}" != "" ]; then
     echo "Changed files: ${CHANGED_FILES}"
 
     # Transform the files to http://127.0.0.1:8080 URLs
-    LIGHTHOUSE_URLS=$(echo "${CHANGED_FILES}" | sed 's/src\/content/http:\/\/127.0.0.1:8080/g' | sed 's/\.md//g' | sed 's/\/base\//\/en\/2019\//g' | sed 's/src\/templates/http:\/\/127.0.0.1:8080/g' | sed 's/index\.html//g' | sed 's/\.html//g' | sed 's/_/-/g' | sed 's/\/2019\/accessibility-statement/\/accessibility-statement/g' | sed 's/\/2019\/search/\/search/g' | sed 's/(http://.*)$/\1?nowebmentions/g' )
+    LIGHTHOUSE_URLS=$(echo "${CHANGED_FILES}" | sed 's/src\/content/http:\/\/127.0.0.1:8080/g' | sed 's/\.md//g' | sed 's/\/base\//\/en\/2019\//g' | sed 's/src\/templates/http:\/\/127.0.0.1:8080/g' | sed 's/index\.html//g' | sed 's/\.html//g' | sed 's/_/-/g' | sed 's/\/2019\/accessibility-statement/\/accessibility-statement/g' | sed 's/\/2019\/search/\/search/g' | sed 's/(http:\/\/.*)$/\1?nowebmentions/g' )
 
     # Temporarily remove chapters failing in Lighthouse - TODO Try removing this on next Lighthouse upgrade
     # LIGHTHOUSE_URLS=$(echo "${LIGHTHOUSE_URLS}" | grep -v "/en/2021/cdn" | grep -v '/2021/ecommerce')
