@@ -575,6 +575,7 @@
     "avatar_url": "10931297",
     "github": "tunetheweb",
     "linkedin": "tunetheweb",
+    "mastodon": "https://webperf.social/@tunetheweb",
     "name": "Barry Pollard",
     "teams": {
       "2019": [
@@ -606,6 +607,9 @@
         "editors",
         "leads",
         "reviewers"
+      ],
+      "2024": [
+        "developers"
       ]
     },
     "twitter": "tunetheweb",

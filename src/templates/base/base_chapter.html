@@ -266,9 +266,18 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
                     @{{ authordata.twitter }}
                   </a>
                   {% endif %}
+                  {% if authordata.mastodon %}
+                  <a class="mastodon" href="{{ authordata.mastodon }}" aria-labelledby="author-{{ author }}-mastodon">
+                    <svg width="22" height="22" role="img">
+                      <title id="author-{{ author }}-mastodon">{{ onMastodon(authordata.mastodon) }}</title>
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#mastodon-logo"></use>
+                    </svg>
+                    @{{ authordata.mastodon }}
+                  </a>
+                  {% endif %}
                   {% if authordata.github %}
                   <a class="github" href="https://github.com/{{ authordata.github }}" aria-labelledby="author-{{ author }}-github">
-                    <svg width="22" height="22">
+                    <svg width="22" height="20">
                       <title id="author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
                       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github-logo"></use>
                     </svg>

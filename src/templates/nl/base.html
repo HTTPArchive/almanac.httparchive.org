@@ -112,6 +112,7 @@
 {% block mentionsAlt %}{% endblock %}
 
 {% macro onTwitter(twitterHandle) %}@{{twitterHandle}} op Twitter{% endmacro %}
+{% macro onMastodon(mastodonHandle) %}{{mastodonHandle}} op Mastodon{% endmacro %}
 {% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} op GitHub{% endmacro %}
 {% macro onLinkedIn(authorName) %}{{authorName}} op LinkedIn{% endmacro %}
 {% macro website(authorName) %}website van {{authorName}} {% endmacro %}
