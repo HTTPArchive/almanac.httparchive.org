@@ -1493,6 +1493,19 @@
     },
     "twitter": "Pigna__"
   },
+  "mgifford": {
+    "github": "mgifford",
+    "linkedin": "mgifford",
+    "mastodon": "https://mastodon.social/@mgifford",
+    "name": "Mike Gifford",
+    "teams": {
+      "2024": [
+        "reviewers"
+        "authors",
+        "analysts"
+      ]
+    },
+  },
   "GigiRajani": {
     "github": "GigiRajani",
     "name": "Gigi Rajani",
