@@ -508,7 +508,7 @@ Let's look at how the usage of these formats has changed from 2022 to 2024:
 {{ figure_markup(
   image="image-format-adoption-2-year-change.png",
   caption="Image format adoption, 2-year change",
-  description="TODO",
+  description="A bar chart showing the comparison of image formats adoption between 2022 and 2024. It shows that the jpg adoption is 20% less in 2024, while png increased 1%, gif is up by 6%, webp is 34% more, svg also increased with 36% more, ico is 17% less and avif is 386% more.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=2128858223&format=interactive",
   sheets_gid="1939630368",
   sql_file=""
@@ -519,7 +519,7 @@ This data shows the evolving landscape of image format adoption. WebP has grown 
 {{ figure_markup(
   image="image-format-adoption.png",
   caption="Image format adoption",
-  description="TODO",
+  description="A pie chart showing that overall, jpg represents the image format of 32.3% of all images. png is used in 28.4% of the images. Gif is used on 16.8% of the images. WebP is used on 12% of the images, Svg accounts for 6.4% of the images format. Ico represents the format used on 1.3% of all images and lastly, avif is the format of 1% of the images.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=1820261877&format=interactive",
   sheets_gid="1939630368",
   sql_file=""
