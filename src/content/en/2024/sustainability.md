@@ -578,7 +578,7 @@ Lazy-loading remains a crucial technique for enhancing both performance and sust
 {{ figure_markup(
   image="lazy-loading-adoption.png",
   caption="Adoption of loading=lazy on `<img>`",
-  description="TODO",
+  description="A timeseries chart showing the increase in the adoption of loading="lazy" attribute on image tags. In June 2022 it was used by 24% of the websites on mobile and 23% on desktop. On January 2023, 26% of the websites on mobile were using native lazy-loading and 25% of them were using it on desktop. On June the 1st, 2023, 27% of websites used native lazy-loading on wither desktop and mobile. On June 2024, 34% of websites used native lazy-loading on mobile and 33% on desktop.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=1848380246&format=interactive",
   sheets_gid="228292115",
   sql_file=""
