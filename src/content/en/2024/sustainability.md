@@ -413,7 +413,7 @@ The environmental impact of excess code extends beyond mere inefficiency. It dir
 {{ figure_markup(
   image="unused_css.png",
   caption="Unused CSS",
-  description="TODO",
+  description="A column chart showing that on the 90th percentile there is 225 KB of unused CSS on desktop and 212 KB on mobile, on the 75th percentile it’s 120 KB on desktop and 113 KB on mobile, on the 50th percentile 56 KB on desktop and 52 KB on mobile. On the 25th percentile we found 20 KB of unused CSS on desktop and 18 KB on mobile. Lastly, we saw 0 KB of unused CSS on the 10th percentile on either desktop and mobile",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1281422688&format=interactive",
   sheets_gid="558117867",
   sql_file=""
