@@ -441,7 +441,7 @@ Modern techniques like tree shaking and code splitting are crucial for optimizin
 {{ figure_markup(
   image="unused_js.png",
   caption="Unused JS",
-  description="TODO",
+  description="A column chart showing that on the 90th percentile there is 907 KB of unused JavaScript on desktop and 812 KB on mobile, on the 75th percentile it’s 508 KB on desktop and 456 KB on mobile, on the 50th percentile 239 KB on desktop and 215 KB on mobile. On the 25th percentile we found 90 KB of unused JavaScript on desktop and 78 KB on mobile. Lastly, we saw 22 KB of unused JavaScript on desktop and 20 KB on mobile on the 10th percentile",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=904835139&format=interactive",
   sheets_gid="1021078155",
   sql_file=""
