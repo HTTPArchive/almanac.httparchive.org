@@ -309,7 +309,7 @@ The amount of requests, in general, is quite high, so let's see what resources t
 {{ figure_markup(
   image="number-of-requests-by-percentile-and-type-mobile.png",
   caption="Number of requests per percentile and resource type (mobile)",
-  description="TODO",
+  description="A column chart showing that on mobile devices, on the 90th percentile we find 12 requests targeting HTML content, 68.5 requests for javascript resources, almost 26 requests for CSS, around 55 requests fetching images and 8.5 requests for fonts. On the 75th percentile, there are 5 HTML requests, 41 JavaScript requests, 15 CSS requests, 29.5 images requests and 5.5 Fonts requests. On the 50th percentile, we can see 2 HTML requests, 22 javascript requests, 7.5 CSS requests, 15.5 images and 3 fonts requests. On the 25th percentile, there are 1 HTML, 10.5 javascript, 3.5 CSS, 7.5 images and 1 font requests. On the 10h percentile, we find 1 Html, 4.5 javascript, 1.5 CSS, 4 images and 0 font requests.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1059345541&format=interactive",
   sheets_gid="495251827",
   sql_file=""
@@ -320,7 +320,7 @@ The not-so-nice surprise here is that most of the requests, around 70 in the 90t
 {{ figure_markup(
   image="kilobytes-by-percentile-by-type-mobile-.png",
   caption="Kilobytes by percentile by type (mobile)",
-  description="TODO",
+  description="A column chart showing that on mobile devices, on the 90th percentile we find 145.4 KB of HTML, around 1,732.17 KB of JavaScript, 260.4 KB of CSS, 4,436.1 KB of images and 399.33 KB of fonts. On the 75th percentile it goes down at 70.03 KB of HTML, 1,102.63 KB of JavaScript, 145.59 KB of CSS, 1,807.67 KB of images and 221.51 KB of fonts. On the 50th percentile we found 31.64 KB of HTML, 569.66 KB of JavaScript, 74.99 KB of CSS, 623.8 KB of images and 109.06 KB of fonts. On the 25th percentile there is 13.12 KB of HTML, 244.33 KB of JavaScript, 32.26 KB of CSS, 179.76 KB of images and 39.46 KB of fonts. On the 10th percentile there is 5.87 KB of HTML, 88.81 KB of JavaScript, 7.55 KB of CSS, 42.71 KB of images and 0 KB of fonts.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=426612772&format=interactive",
   sheets_gid="123069751",
   sql_file=""
