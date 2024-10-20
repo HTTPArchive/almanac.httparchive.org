@@ -355,7 +355,7 @@ To help organizations and individuals choose "greener" hosting, <a hreflang="en"
 {{ figure_markup(
   image="percent_green_hosting.png",
   caption="% Green hosting",
-  description="TODO",
+  description="A column chart showing that on the top 1,000 sites, on desktop, 56% of them relied on green web hosting and it drops at 55% on mobile. On the top 10,000 sites it’s 58% on desktop and 55% on mobile, on the top 100,000 it’s 49% on desktop and 44% on mobile, on the top million it’s 32% for desktops and 30% on mobile. On all measured websites globally, only 16% rely on green web hosting for desktop and 14% for mobile",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=377132080&format=interactive",
   sheets_gid="1680950752",
   sql_file=""
