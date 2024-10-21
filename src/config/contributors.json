@@ -3672,6 +3672,7 @@
     "avatar_url": "4777393",
     "github": "siakaramalegos",
     "linkedin": "karamalegos",
+    "mastodon": "https://front-end.social/@sia",
     "name": "Sia Karamalegos",
     "teams": {
       "2021": [
@@ -3682,13 +3683,8 @@
       "2022": [
         "analysts",
         "leads"
-      ],
-      ,
-      "2024": [
-        "reviewers"
       ]
-    },
-    "mastodon": "https://front-end.social/@sia",
+    }
     "website": "https://sia.codes"
   },
   "simonhearne": {
