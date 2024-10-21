@@ -1,6 +1,6 @@
 -- Section: Development
 -- Question: Which axes are used in CSS?
--- Normalization: Sites (variable only)
+-- Normalization: Websites (variable only)
 
 CREATE TEMPORARY FUNCTION PROPERTIES(json STRING)
 RETURNS ARRAY<STRING>
@@ -29,7 +29,7 @@ try {
 ''';
 
 WITH
-sites AS (
+websites AS (
   SELECT
     client,
     page,
@@ -57,7 +57,7 @@ SELECT
   total,
   COUNT(0) / total AS proportion
 FROM
-  sites
+  websites
 GROUP BY
   client,
   axis,

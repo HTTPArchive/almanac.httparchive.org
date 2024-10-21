@@ -1,6 +1,6 @@
 -- Section: Development
 -- Question: Which features are used via font-variant in CSS?
--- Normalization: Sites
+-- Normalization: Websites
 
 CREATE TEMPORARY FUNCTION PROPERTIES(json STRING)
 RETURNS ARRAY<STRING>
@@ -46,7 +46,7 @@ properties AS (
     client,
     property
 ),
-sites AS (
+websites AS (
   SELECT
     client,
     COUNT(DISTINCT page) AS total
@@ -68,7 +68,7 @@ SELECT
 FROM
   properties
 JOIN
-  sites USING (client)
+  websites USING (client)
 ORDER BY
   client,
   proportion DESC

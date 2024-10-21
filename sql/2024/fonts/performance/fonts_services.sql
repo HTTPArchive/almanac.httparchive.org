@@ -1,6 +1,6 @@
 -- Section: Performance
 -- Question: Which service combinations are popular?
--- Normalization: Sites
+-- Normalization: Websites
 
 -- INCLUDE https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/2024/fonts/common.sql
 
@@ -35,7 +35,7 @@ services_2 AS (
     client,
     services
 ),
-sites AS (
+websites AS (
   SELECT
     date,
     client,
@@ -60,7 +60,7 @@ SELECT
 FROM
   services_2
 JOIN
-  sites USING (date, client)
+  websites USING (date, client)
 ORDER BY
   date,
   client,

@@ -1,11 +1,11 @@
 -- Section: Development
 -- Question: Who is serving variable fonts?
--- Normalization: Links (variable only) and fonts (variable only)
+-- Normalization: Requests (variable only) and fonts (variable only)
 
 -- INCLUDE https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/2024/fonts/common.sql
 
 WITH
-links AS (
+requests AS (
   SELECT
     date,
     client,
@@ -33,7 +33,7 @@ SELECT
   COUNT(0) / total AS proportion,
   COUNT(DISTINCT url) / total_secondary AS proportion_secondary
 FROM
-  links
+  requests
 GROUP BY
   date,
   client,

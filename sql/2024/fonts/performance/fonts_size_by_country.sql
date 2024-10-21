@@ -1,6 +1,6 @@
 -- Section: Performance
 -- Question: What is the distribution of the file size broken down by country?
--- Normalization: Links (parsed only)
+-- Normalization: Requests (parsed only)
 
 -- INCLUDE https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/2024/fonts/common.sql
 
@@ -19,7 +19,7 @@ countries AS (
     domain,
     country
 ),
-links AS (
+requests AS (
   SELECT
     client,
     NET.HOST(page) AS domain,
@@ -39,7 +39,7 @@ SELECT
   COUNT(0) AS count,
   ROUND(APPROX_QUANTILES(size, 1000)[OFFSET(500)]) AS size
 FROM
-  links
+  requests
 INNER JOIN
   countries USING (client, domain)
 GROUP BY

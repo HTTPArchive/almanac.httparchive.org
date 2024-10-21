@@ -1,6 +1,6 @@
 -- Section: Design
 -- Question: Which families are popular in CSS?
--- Normalization: Sites
+-- Normalization: Websites
 
 -- INCLUDE https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/2024/fonts/common.sql
 
@@ -43,7 +43,7 @@ families AS (
   QUALIFY
     rank <= 100
 ),
-sites AS (
+websites AS (
   SELECT
     client,
     COUNT(DISTINCT page) AS total
@@ -65,7 +65,7 @@ SELECT
 FROM
   families
 JOIN
-  sites USING (client)
+  websites USING (client)
 ORDER BY
   client,
   proportion DESC
