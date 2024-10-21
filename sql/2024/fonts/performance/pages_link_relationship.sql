@@ -34,6 +34,7 @@ try {
 WITH
 hints AS (
   SELECT
+    pages.date,
     pages.client,
     hint.name AS hint,
     COUNT(DISTINCT pages.page) AS count
@@ -43,13 +44,13 @@ hints AS (
   LEFT JOIN
     `httparchive.all.requests` AS requests
   ON
-    requests.date = '2024-07-01' AND
+    requests.date IN ('2022-06-01', '2022-07-01', '2023-07-01', '2024-07-01') AND
     requests.type = 'font' AND
     requests.is_root_page AND
     pages.page = requests.page AND
     hint.url = requests.url
   WHERE
-    pages.date = '2024-07-01' AND
+    pages.date IN ('2022-06-01', '2022-07-01', '2023-07-01', '2024-07-01') AND
     pages.is_root_page AND
     (
       requests.url IS NOT NULL OR
@@ -57,23 +58,27 @@ hints AS (
       SERVICE(hint.url) != 'self-hosted'
     )
   GROUP BY
+    date,
     client,
     hint
 ),
 sites AS (
   SELECT
+    date,
     client,
     COUNT(DISTINCT page) AS total
   FROM
     `httparchive.all.pages`
   WHERE
-    date = '2024-07-01' AND
+    date IN ('2022-06-01', '2022-07-01', '2023-07-01', '2024-07-01') AND
     is_root_page
   GROUP BY
+    date,
     client
 )
 
 SELECT
+  date,
   client,
   hint,
   count,
@@ -82,7 +87,8 @@ SELECT
 FROM
   hints
 LEFT JOIN
-  sites USING (client)
+  sites USING (date, client)
 ORDER BY
+  date,
   client,
   proportion DESC
