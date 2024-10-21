@@ -719,6 +719,7 @@
   "bkardell": {
     "avatar_url": "870501",
     "github": "bkardell",
+    "mastodon": "https://toot.cafe/@bkardell",
     "name": "Brian Kardell",
     "teams": {
       "2019": [
@@ -738,8 +739,7 @@
       ]
     },
     "twitter": "briankardell",
-    "website": "https://bkardell.com",
-    "mastodon": "https://toot.cafe/@bkardell"
+    "website": "https://bkardell.com"
   },
   "remotesynth": {
     "avatar_url": "216712",
