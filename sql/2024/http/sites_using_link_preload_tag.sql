@@ -3,7 +3,7 @@
 # Number of <link rel="preload">.
 
 CREATE TEMPORARY FUNCTION getNumLinkRelPreload(almanac_custom_metric STRING)
-RETURNS INT LANGUAGE js AS """
+RETURNS INT LANGUAGE js AS '''
 try {
   const almanac = JSON.parse(almanac_custom_metric);
   const link_preload_nodes = almanac['link-nodes']['nodes'].filter(link_node => link_node['rel'] === 'preload')
@@ -11,7 +11,7 @@ try {
 } catch (e) {
   return -1;
 }
-""";
+''';
 
 SELECT
   client,

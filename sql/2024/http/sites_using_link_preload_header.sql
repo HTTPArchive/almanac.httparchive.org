@@ -3,7 +3,7 @@
 # Number of <link rel="preload">.
 
 CREATE TEMPORARY FUNCTION getNumLinkRelPreloadRespHeader(linkHeader STRING)
-RETURNS INT64 LANGUAGE js AS """
+RETURNS INT64 LANGUAGE js AS '''
 try {
   let numPreload = 0;
 
@@ -20,7 +20,7 @@ try {
 } catch (e) {
   return 0;
 }
-""";
+''';
 
 SELECT
   client,

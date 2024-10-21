@@ -1,5 +1,5 @@
 CREATE TEMPORARY FUNCTION getEarlyHints(early_hints_header STRING)
-RETURNS STRUCT<preconnects INT64, preloads INT64, asTypes ARRAY<STRUCT<key STRING, value INT64>>> LANGUAGE js AS """
+RETURNS STRUCT<preconnects INT64, preloads INT64, asTypes ARRAY<STRUCT<key STRING, value INT64>>> LANGUAGE js AS '''
 try {
   var preconnects = 0;
   var preloads = 0;
@@ -24,10 +24,10 @@ try {
           fetchType=attribute.trim().slice(3).replaceAll('"', '').replaceAll("'", '');
         }
       });
-      if (hintType === "preconnect") {
+      if (hintType === 'preconnect') {
         preconnects++;
       }
-      if (hintType === "preload") {
+      if (hintType === 'preload') {
         preloads++;
         as[fetchType] = as[fetchType] ? as[fetchType] + 1 : 1;
       }
@@ -45,7 +45,7 @@ try {
 } catch (e) {
   return {};
 }
-""";
+''';
 
 WITH totals AS (
   SELECT

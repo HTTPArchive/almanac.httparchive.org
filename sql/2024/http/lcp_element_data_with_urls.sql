@@ -1,44 +1,44 @@
 CREATE TEMP FUNCTION getLoadingAttr(attributes STRING) RETURNS STRING LANGUAGE js AS '''
   try {
     const data = JSON.parse(attributes);
-    const loadingAttr = data.find(attr => attr["name"] === "loading")
+    const loadingAttr = data.find(attr => attr['name'] === 'loading')
     return loadingAttr.value
   } catch (e) {
-    return "";
+    return '';
   }
 ''';
 
 CREATE TEMP FUNCTION getDecodingAttr(attributes STRING) RETURNS STRING LANGUAGE js AS '''
   try {
     const data = JSON.parse(attributes);
-    const decodingAttr = data.find(attr => attr["name"] === "decoding")
+    const decodingAttr = data.find(attr => attr['name'] === 'decoding')
     return decodingAttr.value
   } catch (e) {
-    return "";
+    return '';
   }
 ''';
 
 CREATE TEMP FUNCTION getFetchPriorityAttr(attributes STRING) RETURNS STRING LANGUAGE js AS '''
   try {
     const data = JSON.parse(attributes);
-    const fetchPriorityAttr = data.find(attr => attr["name"] === "fetchpriority")
+    const fetchPriorityAttr = data.find(attr => attr['name'] === 'fetchpriority')
     return fetchPriorityAttr.value
   } catch (e) {
-    return "";
+    return '';
   }
 ''';
 
 CREATE TEMP FUNCTION getLoadingClasses(attributes STRING) RETURNS STRING LANGUAGE js AS '''
   try {
     const data = JSON.parse(attributes);
-    const classes = data.find(attr => attr["name"] === "class").value
+    const classes = data.find(attr => attr['name'] === 'class').value
     if (classes.indexOf('lazyload') !== -1) {
         return classes
     } else {
-        return ""
+        return ''
     }
   } catch (e) {
-    return "";
+    return '';
   }
 ''';
 
@@ -84,7 +84,7 @@ WITH lcp_stats AS (
     date = '2024-06-01' AND
     is_root_page AND
     JSON_EXTRACT_SCALAR(custom_metrics, '$.performance.lcp_elem_stats.url') IS NOT NULL AND
-    JSON_EXTRACT_SCALAR(custom_metrics, '$.performance.lcp_elem_stats.url') != ""
+    JSON_EXTRACT_SCALAR(custom_metrics, '$.performance.lcp_elem_stats.url') != ''
 )
 
 SELECT

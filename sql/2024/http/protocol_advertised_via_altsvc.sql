@@ -2,20 +2,20 @@
 # Protocol advertised via alt-svc breakdown
 
 CREATE TEMPORARY FUNCTION extractHTTPHeader(altsvcHeaderValue STRING)
-RETURNS ARRAY<STRING> LANGUAGE js AS """
+RETURNS ARRAY<STRING> LANGUAGE js AS '''
 try {
   const result = [];
-  const splittedAltSvcHeaderValue = altsvcHeaderValue.split(",");
+  const splittedAltSvcHeaderValue = altsvcHeaderValue.split(',');
   for (let altsvcToken of splittedAltSvcHeaderValue) {
-    const protocolPortToken = altsvcToken.trim().split(";")[0];
-    const protocolToken = protocolPortToken.split("=")[0];
+    const protocolPortToken = altsvcToken.trim().split(';')[0];
+    const protocolToken = protocolPortToken.split('=')[0];
     result.push(protocolToken);
   }
   return result;
 } catch (e) {
   return [];
 }
-""";
+''';
 
 WITH altsvcTable AS (
   SELECT

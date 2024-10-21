@@ -3,7 +3,7 @@
 # Distribution of number of early hints resources
 
 CREATE TEMPORARY FUNCTION getNumEarlyHints(early_hints_header STRING)
-RETURNS STRUCT<num_hints INT, num_resources_hinted INT> LANGUAGE js AS """
+RETURNS STRUCT<num_hints INT, num_resources_hinted INT> LANGUAGE js AS '''
 try {
 
   var num_hints = 0;
@@ -30,7 +30,7 @@ try {
     num_resources_hinted: 0
   };
 }
-""";
+''';
 
 SELECT
   client,
