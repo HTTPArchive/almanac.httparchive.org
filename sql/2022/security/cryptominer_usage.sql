@@ -6,7 +6,8 @@ SELECT
   COUNT(DISTINCT url) AS total_pages,
   COUNT(DISTINCT IF(category = 'Cryptominers' OR category = 'Cryptominer', url, NULL)) / COUNT(DISTINCT url) AS pct
 FROM
-  `httparchive.technologies.*` JOIN `httparchive.summary_pages.*` USING (_TABLE_SUFFIX, url)
+  `httparchive.technologies.*`
+JOIN `httparchive.summary_pages.*` USING (_TABLE_SUFFIX, url)
 GROUP BY
   _TABLE_SUFFIX
 ORDER BY

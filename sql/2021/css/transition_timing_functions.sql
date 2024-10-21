@@ -119,10 +119,12 @@ FROM (
     WHERE
       date = '2021-07-01' AND
       # Limit the size of the CSS to avoid OOM crashes.
-      LENGTH(css) < 0.1 * 1024 * 1024)
+      LENGTH(css) < 0.1 * 1024 * 1024
+  )
   GROUP BY
     client,
-    fn)
+    fn
+)
 WHERE
   pct >= 0.01
 ORDER BY

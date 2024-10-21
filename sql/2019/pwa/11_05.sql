@@ -7,8 +7,7 @@ SELECT
   ROUND(COUNT(DISTINCT page) * 100 / total, 2) AS pct
 FROM
   `httparchive.almanac.service_workers` sw
-JOIN
-  (SELECT date, client, COUNT(DISTINCT page) AS total FROM `httparchive.almanac.service_workers` WHERE date = '2019-07-01' GROUP BY client)
+JOIN (SELECT date, client, COUNT(DISTINCT page) AS total FROM `httparchive.almanac.service_workers` WHERE date = '2019-07-01' GROUP BY client)
 USING (date, client),
   UNNEST(REGEXP_EXTRACT_ALL(body, r'new Workbox|new workbox|workbox\.precaching\.|workbox\.strategies\.')) AS occurrence
 WHERE

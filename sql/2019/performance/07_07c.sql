@@ -19,6 +19,7 @@ FROM (
     fast_ttfb + avg_ttfb + slow_ttfb > 0 AND
     device = 'phone'
   ORDER BY
-    fast DESC)
+    fast DESC
+)
 WHERE
   MOD(row, CAST(FLOOR(n / 1000) AS INT64)) = 0

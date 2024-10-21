@@ -46,7 +46,8 @@ FROM (
   GROUP BY
     client,
     page,
-    statement)
+    statement
+)
 GROUP BY
   client,
   statement

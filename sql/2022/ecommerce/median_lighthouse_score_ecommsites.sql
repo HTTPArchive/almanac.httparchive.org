@@ -13,11 +13,9 @@ FROM
   `httparchive.lighthouse.2022_06_01_*`
 JOIN
   `httparchive.technologies.2022_06_01_*`
-USING
-  (url, _TABLE_SUFFIX)
+USING (url, _TABLE_SUFFIX)
 WHERE
-  category = 'Ecommerce' AND
-  (
+  category = 'Ecommerce' AND (
     app != 'Cart Functionality' AND
     app != 'Google Analytics Enhanced eCommerce'
   )

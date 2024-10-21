@@ -12,11 +12,9 @@ FROM
   `httparchive.lighthouse.2021_07_01_mobile`
 JOIN
   `httparchive.technologies.2021_07_01_mobile`
-USING
-  (url)
+USING (url)
 WHERE
-  category = 'Ecommerce' AND
-  (
+  category = 'Ecommerce' AND (
     app != 'Cart Functionality' AND
     app != 'Google Analytics Enhanced eCommerce'
   )

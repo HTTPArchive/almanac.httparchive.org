@@ -28,11 +28,9 @@ WHERE
   status = 200 AND
 
   # we are trying to catch images. WPO populates the format for media but it uses a file extension guess.
-  #So we exclude mimetypes that aren't image or where the format couldn't be guessed by WPO
-  (format != '' OR mimetype LIKE 'image%') AND
+  #So we exclude mimetypes that aren't image or where the format couldn't be guessed by WPO  (format != '' OR mimetype LIKE 'image%') AND
 
-  # many image/gifs are really beacons with 1x1 pixel, but svgs can get caught in the mix
-  (respSize > 1500 OR REGEXP_CONTAINS(mimetype, r'svg')) AND
+  # many image/gifs are really beacons with 1x1 pixel, but svgs can get caught in the mix  (respSize > 1500 OR REGEXP_CONTAINS(mimetype, r'svg')) AND
 
   # strip favicon requests
   format != 'ico' AND

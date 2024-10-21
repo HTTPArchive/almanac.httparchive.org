@@ -26,7 +26,8 @@ FROM (
     url,
     countElements(payload) AS elements
   FROM
-    `httparchive.pages.2019_07_01_*`),
+    `httparchive.pages.2019_07_01_*`
+),
   UNNEST([10, 25, 50, 75, 90]) AS percentile
 GROUP BY
   percentile,

@@ -86,7 +86,7 @@ WITH totals AS (
     _TABLE_SUFFIX AS client,
     COUNT(0) AS total_pages
   FROM
-    `httparchive.summary_pages.2022_07_01_*` -- noqa: L062
+    `httparchive.summary_pages.2022_07_01_*` -- noqa: CV09
   GROUP BY
     client
 )
@@ -107,12 +107,12 @@ FROM (
     custom_properties.depth,
     custom_properties.freq
   FROM
-    `httparchive.pages.2022_07_01_*`, -- noqa: L062
-    UNNEST(getCustomPropertyLengths(payload)) AS custom_properties)
+    `httparchive.pages.2022_07_01_*`, -- noqa: CV09
+    UNNEST(getCustomPropertyLengths(payload)) AS custom_properties
+)
 JOIN
   totals
-USING
-  (client)
+USING (client)
 GROUP BY
   client,
   depth

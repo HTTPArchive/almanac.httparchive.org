@@ -3,7 +3,7 @@
 # Note: this query only reports if an attribute was ever used on a page. It is not a per iframe report.
 
 # helper to create percent fields
-CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
+CREATE TEMP FUNCTION AS_PERCENT(freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
   ROUND(SAFE_DIVIDE(freq, total), 4)
 );
 
@@ -53,16 +53,16 @@ FROM (
   FROM
     `httparchive.pages.2020_08_01_*`
   JOIN (
-      SELECT
-        _TABLE_SUFFIX,
-        COUNT(0) AS total
-      FROM
-        `httparchive.pages.2020_08_01_*`
-      GROUP BY
-        _TABLE_SUFFIX) # to get an accurate total of pages per device. also seems fast
-  USING
-    (_TABLE_SUFFIX)
+    SELECT
+      _TABLE_SUFFIX,
+      COUNT(0) AS total
+    FROM
+      `httparchive.pages.2020_08_01_*`
+    GROUP BY
+      _TABLE_SUFFIX
+  ) # to get an accurate total of pages per device. also seems fast
+  USING (_TABLE_SUFFIX)
 ),
-UNNEST(markup_info.loading) AS loading
+  UNNEST(markup_info.loading) AS loading
 GROUP BY
   total, loading, client

@@ -34,21 +34,21 @@ WITH altsvcTable AS (
     date = '2022-06-01' AND
     firstHtml
 )
+
 SELECT
   client,
   protocol,
   COUNT(0) AS protocol_count,
   SUM(COUNT(0)) OVER (PARTITION BY client) AS total_advertised,
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct_advertised
-FROM
-  (
-    SELECT
-      client,
-      url,
-      flattened_protocol AS protocol
-    FROM
-      altsvcTable, altsvcTable.protocol AS flattened_protocol
-  )
+FROM (
+  SELECT
+    client,
+    url,
+    flattened_protocol AS protocol
+  FROM
+    altsvcTable, altsvcTable.protocol AS flattened_protocol
+)
 GROUP BY
   client,
   protocol

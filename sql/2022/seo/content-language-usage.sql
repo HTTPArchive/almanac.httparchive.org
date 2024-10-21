@@ -29,25 +29,23 @@ SELECT
   content_language,
   COUNT(0) AS count,
   SAFE_DIVIDE(COUNT(0), total) AS pct
-FROM
-  (
-    SELECT
-      _TABLE_SUFFIX AS client,
-      total,
-      getContentLanguagesAlmanac(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS content_languages
+FROM (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    total,
+    getContentLanguagesAlmanac(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS content_languages
+  FROM
+    `httparchive.pages.2022_07_01_*` -- noqa: CV09
+  JOIN (
+
+    SELECT _TABLE_SUFFIX, COUNT(0) AS total
     FROM
-      `httparchive.pages.2022_07_01_*` -- noqa: L062
-    JOIN
-      (
+      `httparchive.pages.2022_07_01_*` -- noqa: CV09
 
-        SELECT _TABLE_SUFFIX, COUNT(0) AS total
-        FROM
-          `httparchive.pages.2022_07_01_*` -- noqa: L062
-
-        GROUP BY _TABLE_SUFFIX
-      )
-    USING (_TABLE_SUFFIX)
-  ),
+    GROUP BY _TABLE_SUFFIX
+  )
+  USING (_TABLE_SUFFIX)
+),
   UNNEST(content_languages) AS content_language
 GROUP BY
   total,

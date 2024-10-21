@@ -38,7 +38,6 @@ JOIN (
     date = '2019-07-01' AND
     firstHtml
 )
-USING
-  (client, page)
+USING (client, page)
 GROUP BY
   client

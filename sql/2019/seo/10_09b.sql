@@ -8,4 +8,5 @@ FROM (
   SELECT
     JSON_EXTRACT_SCALAR(report, '$.audits.image-alt.score') = '1' AS img_alt
   FROM
-    `httparchive.lighthouse.2019_07_01_mobile`)
+    `httparchive.lighthouse.2019_07_01_mobile`
+)
