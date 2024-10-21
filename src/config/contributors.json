@@ -3682,9 +3682,13 @@
       "2022": [
         "analysts",
         "leads"
+      ],
+      ,
+      "2024": [
+        "reviewers"
       ]
     },
-    "twitter": "TheGreenGreek",
+    "mastodon": "https://front-end.social/@sia",
     "website": "https://sia.codes"
   },
   "simonhearne": {
