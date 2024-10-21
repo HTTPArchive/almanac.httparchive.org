@@ -1,11 +1,11 @@
 -- Section: Performance
 -- Question: Which file formats are used?
--- Normalization: Links and fonts
+-- Normalization: Requests and fonts
 
 -- INCLUDE https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/2024/fonts/common.sql
 
 WITH
-links AS (
+requests AS (
   SELECT
     client,
     url,
@@ -34,7 +34,7 @@ SELECT
   COUNT(DISTINCT url) / total_secondary AS proportion_secondary,
   ROW_NUMBER() OVER (PARTITION BY client ORDER BY COUNT(0) DESC) AS rank
 FROM
-  links
+  requests
 GROUP BY
   client,
   format,

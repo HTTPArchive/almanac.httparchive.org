@@ -20,7 +20,7 @@ CREATE TEMPORARY FUNCTION IS_AUTOHINTED(payload STRING) AS (
 );
 
 WITH
-sites AS (
+websites AS (
   SELECT
     client,
     COUNT(DISTINCT page) AS total
@@ -42,7 +42,7 @@ SELECT
 FROM
   `httparchive.all.requests`
 INNER JOIN
-  sites USING (client)
+  websites USING (client)
 WHERE
   date = '2024-07-01' AND
   type = 'font' AND

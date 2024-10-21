@@ -1,6 +1,6 @@
 -- Section: Performance
 -- Question: What is the font usage over time?
--- Normalization: Sites
+-- Normalization: Websites
 
 SELECT
   date,

@@ -1,11 +1,11 @@
 -- Section: Development
 -- Question: Which variable families are used?
--- Normalization: Links (variable only)
+-- Normalization: Requests (variable only)
 
 -- INCLUDE https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/2024/fonts/common.sql
 
 WITH
-links AS (
+requests AS (
   SELECT
     client,
     FAMILY(payload) AS family,
@@ -27,7 +27,7 @@ SELECT
   COUNT(0) / total AS proportion,
   ROW_NUMBER() OVER (PARTITION BY client ORDER BY COUNT(0) DESC) AS rank
 FROM
-  links
+  requests
 GROUP BY
   client,
   family,

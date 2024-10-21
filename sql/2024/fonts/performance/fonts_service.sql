@@ -1,11 +1,11 @@
 -- Section: Performance
 -- Question: Which services are popular?
--- Normalization: Sites
+-- Normalization: Websites
 
 -- INCLUDE https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/2024/fonts/common.sql
 
 WITH
-sites AS (
+websites AS (
   SELECT
     date,
     client,
@@ -30,7 +30,7 @@ SELECT
 FROM
   `httparchive.all.requests`
 INNER JOIN
-  sites USING (date, client)
+  websites USING (date, client)
 WHERE
   date IN ('2022-07-01', '2023-07-01', '2024-07-01') AND
   type = 'font' AND

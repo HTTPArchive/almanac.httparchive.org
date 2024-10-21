@@ -1,11 +1,11 @@
 -- Section: Performance
 -- Question: Which families are used broken down by service?
--- Normalization: Links (parsed only)
+-- Normalization: Requests (parsed only)
 
 -- INCLUDE https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/2024/fonts/common.sql
 
 WITH
-links AS (
+requests AS (
   SELECT
     client,
     SERVICE(url) AS service,
@@ -29,7 +29,7 @@ SELECT
   COUNT(0) / total AS proportion,
   ROW_NUMBER() OVER (PARTITION BY client, service ORDER BY COUNT(0) DESC) AS rank
 FROM
-  links
+  requests
 GROUP BY
   client,
   service,

@@ -1,6 +1,6 @@
 -- Section: Performance
 -- Question: What is the usage of font-display in CSS broken down by family?
--- Normalization: Sites
+-- Normalization: Websites
 
 -- INCLUDE https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/2024/fonts/common.sql
 
@@ -64,7 +64,7 @@ properties AS (
   QUALIFY
     rank <= 10
 ),
-sites AS (
+websites AS (
   SELECT
     client,
     COUNT(DISTINCT page) AS total
@@ -87,7 +87,7 @@ SELECT
 FROM
   properties
 JOIN
-  sites USING (client)
+  websites USING (client)
 ORDER BY
   client,
   property,

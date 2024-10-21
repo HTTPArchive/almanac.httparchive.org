@@ -1,6 +1,6 @@
 -- Section: Performance
 -- Question: What is the usage of FontFace in JavaScript?
--- Normalization: Sites
+-- Normalization: Websites
 
 WITH
 scripts AS (
@@ -19,7 +19,7 @@ scripts AS (
     date,
     client
 ),
-sites AS (
+websites AS (
   SELECT
     date,
     client,
@@ -43,7 +43,7 @@ SELECT
 FROM
   scripts
 JOIN
-  sites USING (date, client)
+  websites USING (date, client)
 ORDER BY
   date,
   client
