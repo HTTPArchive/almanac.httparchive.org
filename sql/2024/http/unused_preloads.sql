@@ -29,8 +29,6 @@ GROUP BY
   client,
   is_root_page,
   unused_preloads
-HAVING
-  SUM(COUNT(0)) OVER (PARTITION BY client, is_root_page) >
 ORDER BY
   client,
   is_root_page,
