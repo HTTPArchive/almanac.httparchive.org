@@ -735,10 +735,14 @@
       "2022": [
         "authors",
         "reviewers"
+      ],
+      "2024": [
+        "reviewers"
       ]
     },
     "twitter": "briankardell",
-    "website": "https://bkardell.com"
+    "website": "https://bkardell.com",
+    "mastodon": "https://toot.cafe/@bkardell"
   },
   "remotesynth": {
     "avatar_url": "216712",
