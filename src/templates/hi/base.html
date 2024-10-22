@@ -112,6 +112,7 @@
 {% block mentionsAlt %}{% endblock %}
 
 {% macro onTwitter(twitterHandle) %}@{{twitterHandle}} Twitter पर{% endmacro %}
+{% macro onMastodon(mastodonHandle) %}{{mastodonHandle}}Mastodonपर{% endmacro %}
 {% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} GitHub पर{% endmacro %}
 {% macro onLinkedIn(authorName) %}{{authorName}} LinkedIn पर{% endmacro %}
 {% macro website(authorName) %}{{authorName}} वेबसाइट{% endmacro %}
