@@ -619,7 +619,7 @@ Automatically preloading videos is a concern for web sustainability. This practi
 {{ figure_markup(
   image="video-preload-usage.png",
   caption="Video preload usage",
-  description="TODO",
+  description="A column chart showing the preload attribute is not used on 54.9% of desktop videos and 56.3% of mobile videos. The preload attribute can be found with the none value on 18.2% of desktop videos and 15.9% of mobile videos. The auto value is used on 15.1% of desktop videos 14.5% of mobile videos. The metadata value is used on 9.5% of desktop videos and 11.2% of mobile videos. The preload attribute is empty on 1.4% of both desktop and mobile videos. The preload attribute has a value TRUE on 0.3% of both desktop and mobile videos. The preload attribute has a value of FALSE, preload or yes on 0.1% of both desktop and mobile videos. Lastly, it has the value of undefined on 0.05% of the videos on both desktop and mobile",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1517696872&format=interactive",
   sheets_gid="1377676306",
   sql_file=""
@@ -642,7 +642,7 @@ It's important to note that the autoplay attribute can override preload settings
 {{ figure_markup(
   image="video-autoplay-usage.png",
   caption="Video autoplay usage",
-  description="TODO",
+  description="A column chart showing that the autoplay attribute has empty value on 47.2% of videos on desktop and 45.7% on mobile. The autoplay attribute is not used on respectively 44.5% and 44.9% of desktop and mobile videos. It is used with an ’autoplay’ value on 5.8% of desktop videos and 5.7% of mobile videos. It is used with an value ’TRUE’ on 2% of desktop videos and 3.2% of mobile videos. It is used with an value ’1’ on 0.3% of both desktop and mobile videos. It is used with an value ’FALSE’ on 0.2% of desktop and mobile videos. It is used with an value ’yes’ on 0.01% of desktop and mobile videos.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1761138794&format=interactive",
   sheets_gid="215678116",
   sql_file=""
