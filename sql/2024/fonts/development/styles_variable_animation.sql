@@ -1,6 +1,6 @@
 -- Section: Development
 -- Question: How popular is variable-font animimation in CSS?
--- Normalization: Websites
+-- Normalization: Pages
 
 CREATE TEMPORARY FUNCTION HAS_ANIMATION(json STRING)
 RETURNS BOOLEAN
@@ -51,7 +51,7 @@ properties AS (
   GROUP BY
     client
 ),
-websites AS (
+pages AS (
   SELECT
     client,
     COUNT(DISTINCT page) AS total
@@ -72,7 +72,7 @@ SELECT
 FROM
   properties
 JOIN
-  websites USING (client)
+  pages USING (client)
 ORDER BY
   client,
   proportion DESC

@@ -1,6 +1,6 @@
 -- Section: Design
 -- Question: Which licenses are used?
--- Normalization: Websites
+-- Normalization: Pages
 
 -- INCLUDE https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/2024/fonts/common.sql
 
@@ -16,7 +16,7 @@ CREATE TEMPORARY FUNCTION LICENSE(value STRING) AS (
 );
 
 WITH
-websites AS (
+pages AS (
   SELECT
     client,
     COUNT(DISTINCT page) AS total
@@ -39,7 +39,7 @@ SELECT
 FROM
   `httparchive.all.requests`
 INNER JOIN
-  websites USING (client)
+  pages USING (client)
 WHERE
   date = '2024-07-01' AND
   type = 'font' AND

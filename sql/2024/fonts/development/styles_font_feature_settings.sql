@@ -1,6 +1,6 @@
 -- Section: Development
 -- Question: Which features are used via font-feature-settings in CSS?
--- Normalization: Websites
+-- Normalization: Pages
 
 CREATE TEMPORARY FUNCTION FEATURES(json STRING)
 RETURNS ARRAY<STRING>
@@ -53,7 +53,7 @@ features AS (
     client,
     feature
 ),
-websites AS (
+pages AS (
   SELECT
     client,
     COUNT(DISTINCT page) AS total
@@ -75,7 +75,7 @@ SELECT
 FROM
   features
 JOIN
-  websites USING (client)
+  pages USING (client)
 ORDER BY
   client,
   proportion DESC

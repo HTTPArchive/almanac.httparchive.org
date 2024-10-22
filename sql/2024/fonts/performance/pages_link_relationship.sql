@@ -1,6 +1,6 @@
 -- Section: Performance
 -- Question: What is the usage of link relationship in HTML?
--- Normalization: Websites
+-- Normalization: Pages
 
 -- INCLUDE https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/2024/fonts/common.sql
 
@@ -62,7 +62,7 @@ hints AS (
     client,
     hint
 ),
-websites AS (
+pages AS (
   SELECT
     date,
     client,
@@ -87,7 +87,7 @@ SELECT
 FROM
   hints
 LEFT JOIN
-  websites USING (date, client)
+  pages USING (date, client)
 ORDER BY
   date,
   client,

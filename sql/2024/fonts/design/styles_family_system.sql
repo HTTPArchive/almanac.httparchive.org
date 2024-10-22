@@ -1,6 +1,6 @@
 -- Section: Design
 -- Question: Which system families are popular?
--- Normalization: Websites
+-- Normalization: Pages
 
 CREATE TEMPORARY FUNCTION FAMILIES(json STRING)
 RETURNS ARRAY<STRING>
@@ -64,7 +64,7 @@ families AS (
     client,
     family
 ),
-websites AS (
+pages AS (
   SELECT
     client,
     COUNT(DISTINCT page) AS total
@@ -86,7 +86,7 @@ SELECT
 FROM
   families
 JOIN
-  websites USING (client)
+  pages USING (client)
 ORDER BY
   client,
   proportion DESC

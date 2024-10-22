@@ -1,6 +1,6 @@
 -- Section: Design
 -- Question: Which foundries are popular?
--- Normalization: Websites
+-- Normalization: Pages
 
 -- INCLUDE https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/2024/fonts/common.sql
 
@@ -24,7 +24,7 @@ foundries AS (
   QUALIFY
     rank <= 100
 ),
-websites AS (
+pages AS (
   SELECT
     client,
     COUNT(DISTINCT page) AS total
@@ -46,7 +46,7 @@ SELECT
 FROM
   foundries
 JOIN
-  websites USING (client)
+  pages USING (client)
 ORDER BY
   client,
   proportion DESC

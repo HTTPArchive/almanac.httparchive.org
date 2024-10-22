@@ -1,6 +1,6 @@
 -- Section: Development
 -- Question: How popular are color fonts?
--- Normalization: Websites
+-- Normalization: Pages
 
 -- INCLUDE https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/2024/fonts/common.sql
 
@@ -21,7 +21,7 @@ fonts AS (
     date,
     client
 ),
-websites AS (
+pages AS (
   SELECT
     date,
     client,
@@ -45,7 +45,7 @@ SELECT
 FROM
   fonts
 JOIN
-  websites USING (date, client)
+  pages USING (date, client)
 ORDER BY
   date,
   proportion DESC

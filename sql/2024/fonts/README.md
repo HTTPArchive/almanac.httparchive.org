@@ -34,7 +34,7 @@ normalization type:
 ```sql
 -- Section: Performance
 -- Question: What is the distribution of the file size broken down by table?
--- Normalization: Websites
+-- Normalization: Pages
 ```
 
 Many queries rely on temporary functions for convenience and clarity. The

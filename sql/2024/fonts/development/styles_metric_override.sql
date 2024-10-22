@@ -1,6 +1,6 @@
 -- Section: Development
 -- Question: How and how often is metrics override used in CSS?
--- Normalization: Websites
+-- Normalization: Pages
 
 CREATE TEMPORARY FUNCTION PROPERTIES(json STRING)
 RETURNS ARRAY<STRING>
@@ -38,7 +38,7 @@ properties AS (
     client,
     property
 ),
-websites AS (
+pages AS (
   SELECT
     client,
     COUNT(DISTINCT page) AS total
@@ -60,7 +60,7 @@ SELECT
 FROM
   properties
 JOIN
-  websites USING (client)
+  pages USING (client)
 ORDER BY
   client,
   proportion DESC
