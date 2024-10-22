@@ -785,7 +785,7 @@ Optimizing JavaScript through minification, tree shaking, and code splitting rem
 {{ figure_markup(
   image="unminified-js-savings.png",
   caption="Unminified Javascript savings",
-  description="TODO",
+  description="A column chart showing that on the 90th percentile 41 KB of JavaScript could be saved on desktop and 37 KB on mobile if using JS minifying. On the 75th percentile 10 KB of JavaScript could be saved on desktop and 8 KB on mobile. On the 50th, 25th and 10th percentile we see no KB savings, this is explained by the usage of JavaScript minifying already in place on those websites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=260477538&format=interactive",
   sheets_gid="619269903",
   sql_file=""
@@ -820,7 +820,7 @@ While minification for JavaScript is a common practice (as mentioned earlier in 
 {{ figure_markup(
   image="unminified-css-savings.png",
   caption="Unminified CSS savings",
-  description="TODO",
+  description="A column chart showing that on the 90th percentile 14 KB of CSS could be saved on desktop and 13 KB on mobile if using CSS minifying. On the 75th percentile 4 KB of CSS could be saved on both desktop and mobile. On the 50th, 25th and 10th percentile we see no KB savings, this is explained by the usage of CSS minifying already in place on those websites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1448481615&format=interactive",
   sheets_gid="1866069863",
   sql_file=""
@@ -873,7 +873,7 @@ For further information, refer to:
 {{ figure_markup(
   image="style-usage.png",
   caption="Style usage",
-  description="TODO",
+  description="A bar chart showing that on desktop, 30.8% of CSS is inline and the other 69.2% comes from external stylesheets. On mobile the inline CSS goes up to 32.35% while 67.65% comes from external stylesheets",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=812833828&format=interactive",
   sheets_gid="109015092",
   sql_file=""
@@ -919,7 +919,7 @@ Content Delivery Networks (CDNs) play a crucial role in optimizing web performan
 {{ figure_markup(
   image="cdn-usage.png",
   caption="CDN usage on the web",
-  description="TODO",
+  description="A column chart showing that 66.9% of the pages analyzed do not use any CDN on desktop and 67.2% on mobile, 18.3% of them use Cloudflare on desktop and 18.2% on mobile, 7.4% of them use Google on desktop and 7.9% on mobile, 2.3% use Amazon Cloudfront on desktop and 2% on mobile, 2.2% use Fastly on desktop and 1.9% on mobile, 0.6% use Automattic on desktop and 0.7% on mobile, 0.6% use Akamai on desktop and 0.5% on mobile, 0.8% use Vercel on desktop and 0% on mobile, 0% use Sucuri Firewall on desktop and 0.7% on mobile. Netlify and Incapsula are both used on 0.3% of the page tested on desktop and 0.2% on mobile. Microsoft Azure is used on 0.2% of the pages on desktop and 0.1% on mobile.Lastly, we see Azion used on 0% of the pages on desktop and 0.2% on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1471666916&format=interactive",
   sheets_gid="232665838",
   sql_file=""
@@ -957,7 +957,7 @@ More on this in this article from <a hreflang="en" href="https://paulcalvano.com
 {{ figure_markup(
   image="text-compression.png",
   caption="Compression used on text resources",
-  description="TODO",
+  description="A bar chart showing that on desktop 21.6% of text resources are compressed using Brotli format, 24% of them where compressed in Gzip and 53.5% are not compressed, while 0.9% are using other compression format. On mobile, 23% of text resources are compressed using Brotli format, 24.6% of them where compressed in Gzip and 51.4% are not compressed at all, while 0.9% were compressed with other formats.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=962026195&format=interactive",
   sheets_gid="1229329467",
   sql_file=""
@@ -986,7 +986,7 @@ From a sustainability perspective, effective caching offers several key benefits
 {{ figure_markup(
   image="cache-control-header-usage.png",
   caption="Cache control header usage",
-  description="TODO",
+  description="A bar chart showing that on desktop 26.6% of websites use Cache Control Only, 0.4% of them use Expiries only and 48.1% of them use both. 24.9% of the websites do not use any caching on desktop. On mobile 25.9% of websites use Cache Control Only, 0.4% of them use Expiries only and 48.6% of them use both. 25.1% of the websites do not use any caching on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=834455986&format=interactive",
   sheets_gid="1192354424",
   sql_file=""
@@ -1083,7 +1083,7 @@ The accompanying charts present the median page weight across the top five most 
 {{ figure_markup(
   image="median-kilobytes-by-cms.png",
   caption="Median kB by CMS",
-  description="TODO",
+  description="A bar chart showing that the median weight for Wordpress pages is 2,967 KB on desktop and 2,684 KB on mobile. For Wix it’s 3,161 KB on desktop and 2,471 KB on mobile. For Squarespace it’s 4,012 KB on desktop and 3,562 KB on mobile. For Joomla it’s 2,990 KB on desktop and 2,776 KB on mobile. For Drupal it’s 2,514 KB on desktop and 2,329 KB on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1792712710&format=interactive",
   sheets_gid="790675238",
   sql_file=""
@@ -1098,7 +1098,7 @@ As noted above, the model we use for calculating carbon emissions changed betwee
 {{ figure_markup(
   image="median-emissions-by-cms-2024.png",
   caption="Median emissions by CMS - 2024",
-  description="TODO",
+  description="A bar chart showing that the median emissions for Wordpress pages is 0.42 grams of carbon on desktop and 0.38 on mobile. For Wix it’s 0.45 on desktop and 0.35 on mobile. For Squarespace it’s 0.57 on desktop and 0.5 on mobile. For Joomla it’s 0.42 on desktop and 0.39 on mobile. For Drupal it’s 0.36 on desktop and 0.33 on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=654101809&format=interactive",
   sheets_gid="790675238",
   sql_file=""
@@ -1109,7 +1109,7 @@ For comparison reasons, here are the emissions data from 2022, calculated with t
 {{ figure_markup(
   image="median-emissions-by-cms-2022.png",
   caption="Median emissions by CMS - 2022",
-  description="TODO",
+  description="A bar chart showing that the median emissions for Wordpress pages is 0.37 grams of carbon on desktop and 0.34 on mobile. For Joomla it’s 0.38 on desktop and 0.35 on mobile. For Wix it’s 0.44 on desktop and 0.31 on mobile. For Drupal it’s 0.33 on desktop and 0.30 on mobile. For Squarespace it’s 0.48 on desktop and 0.5 on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1732727443&format=interactive",
   sheets_gid="1972006215",
   sql_file=""
