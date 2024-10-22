@@ -737,7 +737,7 @@ Since third-party requests make up a large portion of requests on the web, it's 
 {{ figure_markup(
   image="green-third-party-requests.png",
   caption="% green third-party requests",
-  description="TODO",
+  description="A column chart showing that on the top 1,000 websites 72% of third party requests relied on green hosting on desktop and 70% on mobile devices. On the top 10,000 websites it’s 78% on both desktop and mobile. For the top 100,000 sites it’s 88% on both desktop and mobile. On the top million, it’s 94% on desktop and 93% on mobile. Overall, we see that 97% of third party requests rely on green hosting on both desktop and mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1139458989&format=interactive",
   sheets_gid="176951784",
   sql_file=""
