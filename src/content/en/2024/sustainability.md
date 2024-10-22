@@ -669,7 +669,7 @@ TODO
 {{ figure_markup(
   image="video-autoplay-usage.png",
   caption="Non-composited animations per page",
-  description="TODO",
+  description="A column chart showing that on the 90th percentile there are 12 non-composited animation on desktop and 11 on mobile. On the 75th percentile it goes down to 3 on desktop and 2 on mobile. On the 50th, the 25th and the 10th percentile there are 0 non-composited animations on both desktop and mobile",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1761138794&format=interactive",
   sheets_gid="215678116",
   sql_file=""
