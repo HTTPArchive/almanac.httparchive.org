@@ -745,6 +745,7 @@
   "bkardell": {
     "avatar_url": "870501",
     "github": "bkardell",
+    "mastodon": "https://toot.cafe/@bkardell",
     "name": "Brian Kardell",
     "teams": {
       "2019": [
@@ -974,6 +975,8 @@
   "christianliebel": {
     "avatar_url": "6698344",
     "github": "christianliebel",
+    "linkedin": "christianliebel",
+    "mastodon": "https://mastodon.cloud/@christianliebel",
     "name": "Christian Liebel",
     "teams": {
       "2020": [
@@ -3750,6 +3753,7 @@
     "avatar_url": "4777393",
     "github": "siakaramalegos",
     "linkedin": "karamalegos",
+    "mastodon": "https://front-end.social/@sia",
     "name": "Sia Karamalegos",
     "teams": {
       "2021": [
@@ -3762,7 +3766,6 @@
         "leads"
       ]
     },
-    "twitter": "TheGreenGreek",
     "website": "https://sia.codes"
   },
   "simonhearne": {
