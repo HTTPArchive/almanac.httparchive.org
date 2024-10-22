@@ -713,7 +713,7 @@ These formats, when properly implemented, minimize data transfer, reduce storage
 {{ figure_markup(
   image="favicon-usage.png",
   caption="Favicon usage",
-  description="TODO",
+  description="A bar chart showing that png is the format used for favicons on 41.9% of pages on both desktop and mobile. ico format is used by 28.3% on desktop and 27.2% on mobile. Favicon is missing in 17.2% on desktop and 17.9% on mobile. jpg is the format used by 6.2% on desktop and 6.5% on mobile. Svg is used by 1.4% on both desktop and mobile. NO_EXTENSION, webp, NO_DATA, gif, jpeg and NO_HREF repersent less than 1% each, on desktop and mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1102352877&format=interactive",
   sheets_gid="1918305009",
   sql_file=""
