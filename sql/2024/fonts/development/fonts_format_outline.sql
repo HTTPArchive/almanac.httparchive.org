@@ -1,4 +1,4 @@
--- Section: Performance
+-- Section: Development
 -- Question: Which outline formats are used?
 -- Normalization: Fonts (parsed only)
 
