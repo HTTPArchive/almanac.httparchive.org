@@ -1122,7 +1122,7 @@ The average of the median emissions in the chart above is about 0.3 grams of car
 {{ figure_markup(
   image="median-kilobytes-by-cms-and-resource-type.png",
   caption="Median kB by CMS and resource type",
-  description="TODO",
+  description="A bar chart showing the median Kilobytes of different content types on desktop by CMS. For WordPress, HTML content has a median of 42 KB, JavaScript has 572 KB, CSS is 122 KB, images have a median of 1,358 KB and fonts 191 Kb. For Wix, HTML has 147 KB, JavaScript 1,526 KB, CSS 16 KB, images 466 KB and fonts 170 KB. For Squarespace, HTML has 28 KB, JavaScript 1,321 KB, CSS 133 KB, images 1,689 KB and fonts 184 KB out of total page weight. For Joomla, HTML has 21 KB, JavaScript 431 KB, CSS 92 KB, images 1,711 KB and fonts 123 KB. For Drupal, HTML has 22 KB, JavaScript 497 KB, CSS around 73 KB, images 1,225 KB and fonts 126 KB.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1162097291&format=interactive",
   sheets_gid="790675238",
   sql_file=""
@@ -1135,7 +1135,7 @@ Of the five CMS, it is good to see that image sizes went down across the board. 
 {{ figure_markup(
   image="median-emissions-by-cms-and-resource-type.png",
   caption="Median emissions by CMS and resource type",
-  description="TODO",
+  description="A bar chart showing the median emissions of different content types on desktop by CMS. For WordPress, HTML content has a median of 0.01 grams of carbon, JavaScript has 0.08, CSS is 0.02, images have a median of 0.19 and fonts 0.03. For Wix, HTML has 0.02, JavaScript 0.22, CSS 0, images 0.07 and fonts 0.02. For Squarespace, HTML has 0, JavaScript 0.19, CSS 0.02, images 0.24 KB and fonts 0.03 out of total page emissions. For Joomla, HTML has 0, JavaScript 0.06, CSS 0.01, images 0.24 and fonts 0.02. For Drupal, HTML has 0, JavaScript 0.07, CSS around 0.01, images 0.17 and fonts 0.02.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1895711546&format=interactive",
   sheets_gid="790675238",
   sql_file=""
@@ -1148,7 +1148,7 @@ CMS also has a strong role to play in shifting the definition of quality work. <
 {{ figure_markup(
   image="median-kilobytes-by-ecommerce.png",
   caption="Median kB by ecommerce",
-  description="TODO",
+  description="A bar chart showing that the median weight for WooCommerce pages is 3,275 KB on desktop and 3,036 KB on mobile. For Shopify it’s 2,876 KB on desktop and 2,657 KB on mobile. For Squerspace Commerce it’s 4,012 KB on desktop and 2,756 KB on mobile. For Wix eCommerce it is 3,530 KB on desktop and 3,562 KB on mobile. For PrestaShop it’s 3,078 KB on desktop and 2,730 KB on mobile. For 1C-Bitrix it is 3,305 KB on desktop and 3,788 KB on mobile. For Magento it’s 3,505 KB on desktop and 4,209 KB on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=510790990&format=interactive",
   sheets_gid="2021180834",
   sql_file=""
@@ -1157,7 +1157,7 @@ CMS also has a strong role to play in shifting the definition of quality work. <
 {{ figure_markup(
   image="median-emissions-by-ecommerce-2024.png",
   caption="Median emissions by ecommerce - 2024",
-  description="TODO",
+  description="A bar chart showing that the median emission for WooCommerce pages is 0.46 grams of carbon on desktop and 0.43 on mobile. For Shopify it’s 0.41 on desktop and 0.38 on mobile. For Squerspace Commerce it’s 0.57 on desktop and 0.39 on mobile. For Wix eCommerce it is 0.5 on both desktop and mobile. For PrestaShop it’s 0.44 on desktop and 0.39 KB on mobile. For 1C-Bitrix it is 0.47 on desktop and 0.54 on mobile. For Magento it’s 0.5 on desktop and 0.59 on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1542686246&format=interactive",
   sheets_gid="2021180834",
   sql_file=""
@@ -1168,7 +1168,7 @@ For comparison reasons, here are the emissions data from 2022, calculated with t
 {{ figure_markup(
   image="median-emissions-by-ecommerce-2022.png",
   caption="Median emissions by ecommerce - 2022",
-  description="TODO",
+  description="A bar chart showing that the median emission for WooCommerce pages in 2022 was 0.28 grams of carbon on desktop and 0.26 on mobile. For Shopify it’s 0.20 on desktop and 0.18 on mobile. For Squerspace Commerce it’s 0.31 on desktop and 0.32 on mobile. For PrestaShop it’s 0.26 on desktop and 0.23 KB on mobile. For Wix eCommerce it is 0.32 on desktop and 0.22 on mobile. For Magento it’s 0.3 on desktop and 0.28 on mobile. For 1C-Bitrix it is 0.34 on desktop and 0.3 on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1732727443&format=interactive",
   sheets_gid="1972006215",
   sql_file=""
@@ -1181,7 +1181,7 @@ It is clear comparing the ecommerce platforms with other CMS platforms, that the
 {{ figure_markup(
   image="median-kilobytes-by-ssg.png",
   caption="Median kB by static site generator",
-  description="TODO",
+  description="A bar chart showing that the median weight for Next.js pages is 2,396 KB on desktop and 2,214 KB on mobile. For Nuxt.js it’s 3,107 KB on desktop and 2,677 KB on mobile. For Gatsby it’s 2,229 KB on desktop and 1,833 KB on mobile. For Hugo it’s 1,112 KB on desktop and 1,216 KB on mobile. For Astro it’s 1,125 KB on desktop and 1,149 KB on mobile. For Jekyll it’s 792 KB on desktop and 854 KB on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=2054864060&format=interactive",
   sheets_gid="1941515647",
   sql_file=""
@@ -1190,7 +1190,7 @@ It is clear comparing the ecommerce platforms with other CMS platforms, that the
 {{ figure_markup(
   image="median-emissions-by-ssg-2024.png",
   caption="Median emissions by static site generator - 2024",
-  description="TODO",
+  description="A bar chart showing that the median emission for Next.js pages is 0.34 grams of carbon on desktop and 0.31 on mobile. For Nuxt.js it’s 0.44 on desktop and 0.38 on mobile. For Gatsby it’s 0.32 on desktop and 0.26 on mobile. For Hugo it’s 0.16 on desktop and 0.17 on mobile. For Astro it’s 0.16 on both desktop and mobile. For Jekyll it’s 0.11 on desktop and 0.12 on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=437135521&format=interactive",
   sheets_gid="1941515647",
   sql_file=""
@@ -1201,7 +1201,7 @@ For comparison reasons, here are the emissions data from 2022, calculated with t
 {{ figure_markup(
   image="median-emissions-by-ssg-2022.png",
   caption="Median emissions by static site generator - 2022",
-  description="TODO",
+  description="A bar chart showing that the median emission for Next.js pages is 0.22 grams of carbon on desktop and 0.20 on mobile. For Nuxt.js it’s 0.26 on desktop and 0.21 on mobile. For Gatsby it’s 0.19 on desktop and 0.16 on mobile. For Hugo it’s 0.09 on desktop and 0.1 on mobile. For Jekyll it’s 0.06 on both desktop and mobile. For Docusaurus it’s 0.07 on desktop and 0.08 on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1021559874&format=interactive",
   sheets_gid="1333464158",
   sql_file=""
