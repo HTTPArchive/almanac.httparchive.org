@@ -8,14 +8,14 @@ WITH script_data AS (
     CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT(JSON_EXTRACT_SCALAR(payload, '$._javascript'), '$.script_tags'), '$.inline') AS INT64) AS inline_scripts,
     CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT(JSON_EXTRACT_SCALAR(payload, '$._javascript'), '$.script_tags'), '$.src') AS INT64) AS external_scripts,
     SAFE_DIVIDE(CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT(JSON_EXTRACT_SCALAR(payload, '$._javascript'), '$.script_tags'), '$.inline') AS INT64),
-                CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT(JSON_EXTRACT_SCALAR(payload, '$._javascript'), '$.script_tags'), '$.total') AS INT64)) AS pct_inline_script,
+      CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT(JSON_EXTRACT_SCALAR(payload, '$._javascript'), '$.script_tags'), '$.total') AS INT64)) AS pct_inline_script,
     SAFE_DIVIDE(CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT(JSON_EXTRACT_SCALAR(payload, '$._javascript'), '$.script_tags'), '$.src') AS INT64),
-                CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT(JSON_EXTRACT_SCALAR(payload, '$._javascript'), '$.script_tags'), '$.total') AS INT64)) AS pct_external_script
+      CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT(JSON_EXTRACT_SCALAR(payload, '$._javascript'), '$.script_tags'), '$.total') AS INT64)) AS pct_external_script
   FROM
     `httparchive.all.pages` TABLESAMPLE SYSTEM (0.01 PERCENT)
   WHERE
-    date = '2024-06-01'
-    AND JSON_EXTRACT_SCALAR(JSON_EXTRACT(JSON_EXTRACT_SCALAR(payload, '$._javascript'), '$.script_tags'), '$.total') IS NOT NULL
+    date = '2024-06-01' AND
+    JSON_EXTRACT_SCALAR(JSON_EXTRACT(JSON_EXTRACT_SCALAR(payload, '$._javascript'), '$.script_tags'), '$.total') IS NOT NULL
 )
 
 SELECT

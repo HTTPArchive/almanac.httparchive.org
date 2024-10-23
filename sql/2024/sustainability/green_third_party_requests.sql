@@ -30,7 +30,7 @@ pages AS (
   FROM
     `httparchive.all.pages`
   WHERE
-   date = '2024-06-01'
+    date = '2024-06-01'
 ),
 
 third_party AS (
