@@ -45,15 +45,13 @@ Core Web Vitals (CWV) are user-centric metrics designed to measure the different
 
 Starting this year, INP has officially replaced First Input Delay (FID) and became a part of the CWV. While INP measures the full delay of all interactions experienced by a user, FID only focuses on the input delay of the first interaction. This wider scope makes INP a better reflection of the full user experience.
 
-![][image2]
-
-{{ figure\_markup(  
+{{ figure_markup(  
   image="good-core-web-vitals-fid-devices-years.png",  
   caption: "The percent of websites having good CWV using FID and INP, segmented by year."  
   description="Bar chart showing the percentage of websites with good Core Web Vitals (CWV) on mobile, comparing CWV with FID (First Input Delay) and CWV with INP (Interaction to Next Paint) over time. In 2022, 39% of websites had good CWV with FID, while 31% had good CWV with INP. In 2023, the percentage increased to 43% for CWV with FID and 37% for CWV with INP. In 2024, 48% of websites had good CWV with FID, and 43% had good CWV with INP.",  
-chart\_url="[https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=1908072353\&format=interactive](https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=1908072353&format=interactive)",  
- sheets\_gid="1535582002",  
-  sql\_file="web\_vitals\_by\_device.sql"  
+chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=1908072353&format=interactive",
+ sheets_gid="1535582002",  
+  sql_file="web_vitals_by_device.sql"
   )  
 }}
 
@@ -61,28 +59,25 @@ The replacement of the FID with the INP metric significantly impacted the percen
 
 In the period from 2020 to 2022, we saw that mobile web performance measured by CWV with FID was improving faster than desktop one, and the gap between them was closing, reaching just 5% in 2022\. As CWV with INP chart shows, in 2024, the websites on the desktop performed 11% better than on mobile, so the introduction of the INP shows that the gap is much bigger.
 
-![][image3]  
-{{ figure\_markup(  
-  image="XXX.png",  
-  caption: "*The percent of websites having good CWV, segmented by rank and desktop vs mobile*."  
+{{ figure_markup(  
+  image="good-core-web-vitals-inp-devices-years.png",  
+  caption: "The percent of websites having good CWV, segmented by rank and desktop vs mobile."  
   description="Bar chart showing the percentage of websites with good CWV (Core Web Vitals) performance by rank for desktop and mobile. For the top 1,000 websites, 40% of mobile websites have good CWV, compared to 54% of desktop websites. In the top 10,000, 33% of mobile websites have good CWV, while 46% of desktop websites do. In the top 100,000, 31% of mobile websites and 43% of desktop websites have good CWV. In the top 1,000,000, 36% of mobile websites have good CWV, compared to 48% of desktop websites. For websites ranked 10,000,000 and beyond, 44% of mobile websites and 43% of desktop websites achieve good CWV.",  
-chart\_url="[https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=1814767865\&format=interactive](https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=1814767865&format=interactive)",  
- sheets\_gid="355582610",  
-  sql\_file="web\_vitals\_by\_rank\_and\_device.sql"  
+chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=1814767865&format=interactive",  
+ sheets_gid="355582610",  
+  sql_file="web_vitals_by_rank_and_device.sql"  
   )  
 }}
 
 CWV with INP shows a new tendency when analyzing websites by rank. Previously, the most popular websites [tended to have the best CWV experience](https://almanac.httparchive.org/en/2022/performance#fig-2), however, this year's statistics shows the opposite: 40% of 1000 most popular websites on mobile have good CWV which is lower than total website CWV of 43%. 
 
-![][image4]
-
-{{ figure\_markup(  
-  image="XXX.png",  
-  caption: "*Percent point change of websites having good CWV from FID to INP, by technology*."  
-  description="Bar chart showing the percentage points of websites with new mobile CWV failures due to INP across various platforms and technologies. 1C-Bitrix has the highest percentage of new failures at \-19%, followed by Next.js at \-10%, and Emotion at \-8%. Other platforms such as WordPress, React, Vue.js, and Drupal show smaller decreases, ranging from \-2% to \-5%. The chart also displays a range of smaller decreases for various technologies, including Handlebars, Backbone.js, Squarespace, and Angular, all seeing decreases of around \-2% to \-5%.",  
-chart\_url="[https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=655066315\&format=interactive](https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=655066315&format=interactive)",  
- sheets\_gid="869409419",  
-  sql\_file="web\_vitals\_by\_technology.sql"  
+{{ figure_markup(  
+  image="good-core-web-vitals-fid-vs-inp.png",
+  caption: "Percent point change of websites having good CWV from FID to INP, by technology."  
+  description="Bar chart showing the percentage points of websites with new mobile CWV failures due to INP across various platforms and technologies. 1C-Bitrix has the highest percentage of new failures at 19%, followed by Next.js at 10%, and Emotion at 8%. Other platforms such as WordPress, React, Vue.js, and Drupal show smaller decreases, ranging from 2% to 5%. The chart also displays a range of smaller decreases for various technologies, including Handlebars, Backbone.js, Squarespace, and Angular, all seeing decreases of around 2% to 5%.",  
+chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=655066315&format=interactive",  
+ sheets_gid="869409419",  
+  sql_file="web_vitals_by_technology.sql"
   )  
 }}
 
@@ -92,15 +87,13 @@ Several technologies were significantly impacted, including a 19% drop for 1C-Bi
    
 As of this year, secondary pages are available to compare with homepage data.
 
-![][image5]
-
-{{ figure\_markup(  
-  image="XXX.png",  
-  caption: "*The percent of websites having good CWV, segmented by page type*"  
+{{ figure_markup(  
+  image="good-core-web-vitals-home-secondary-page.png",  
+  caption: "The percent of websites having good CWV, segmented by page type."  
   description="Bar chart showing the percentage of pages with good CWV (Core Web Vitals) for home pages and secondary pages on desktop and mobile. For home pages, 45% of desktop pages have good CWV, while 38% of mobile pages achieve good CWV. For secondary pages, 61% of desktop pages have good CWV, compared to 51% of mobile pages.",  
-chart\_url="[https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=1034225442\&format=interactive](https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=1034225442&format=interactive)",  
- sheets\_gid="1159394005",  
-  sql\_file="web\_vitals\_by\_device\_secondary\_pages.sql"  
+chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=1034225442&format=interactive",  
+ sheets_gid="1159394005",  
+  sql_file="web_vitals_by_device_secondary_pages.sql"  
   )  
 }}
 
@@ -114,33 +107,29 @@ People often refer to website loading speed as a single metric, but in fact, the
 
 [Time to First Byte](https://web.dev/articles/ttfb) (TTFB) measures the time from when a user initiates loading a page until the browser receives the first byte of the response. It includes phases like redirect time, DNS lookup, connection and TLS negotiation, and request processing. Reducing latency in connection and server response time can improve TTFB. 800ms is considered the threshold for good TTFB.
 
-![][image6]
-
-{{ figure\_markup(  
-  image="XXX.png",  
-  caption: "*The percent of websites having good TTFB, segmented by device and year.*"  
+{{ figure_markup(  
+  image="good-time-to-first-byte.png",  
+  caption: "The percent of websites having good TTFB, segmented by device and year."  
   description="Stacked bar chart showing TTFB (Time to First Byte) performance for mobile websites from 2020 to 2024, categorized as good, needs improvement, and poor. In 2024, 42% of mobile websites had good TTFB, 40% needed improvement, and 19% were poor. In 2023, 41% were good, 41% needed improvement, and 19% were poor. In 2022, 40% of websites had good TTFB, 41% needed improvement, and 19% were poor. In 2021, 39% were good, 42% needed improvement, and 18% were poor. In 2020, 41% of mobile websites had good TTFB, 41% needed improvement, and 18% were poor.",  
-chart\_url="[https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=1925312055\&format=interactive](https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=1925312055&format=interactive)",  
- sheets\_gid="1535582002",  
-  sql\_file="web\_vitals\_by\_device.sql"  
-  )  
+chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=1925312055&format=interactive",  
+ sheets_gid="1535582002",  
+ sql_file="web_vitals_by_device.sql"  
+  )
 }}
 
-Over the past five years, the percentage of mobile web pages with good TTFB has remained stable, from 41% in 2021 to 42% in 2024\. The percentage of pages that need TTFB improvements has decreased by 1%, and unfortunately, the percentage of pages with poor TTFB remains the same. Since this metric has not changed significantly, we can conclude that there have been no major improvements in connection speed or backend latency.
+Over the past five years, the percentage of mobile web pages with good TTFB has remained stable, from 41% in 2021 to 42% in 2024. The percentage of pages that need TTFB improvements has decreased by 1%, and unfortunately, the percentage of pages with poor TTFB remains the same. Since this metric has not changed significantly, we can conclude that there have been no major improvements in connection speed or backend latency.
 
 ### First Contentful Paint (FCP) {#first-contentful-paint-(fcp)}
 
 First Contentful Paint (FCP) is a performance metric that helps indicate how quickly users can start seeing content. It measures the time from when a user first requests a page until the first piece of content is rendered on the screen. A good FCP should be under 1.8 seconds.
 
-![][image7]
-
-{{ figure\_markup(  
-  image="XXX.png",  
-  caption: "*The percent of websites having good FCP, segmented by device and year.*"  
+{{ figure_markup(  
+  image="good-first-contentful-paint.png",  
+  caption: The percent of websites having good FCP, segmented by device and year."  
   description="Bar chart showing the percentage of websites with good FCP (First Contentful Paint) performance by device over time. In July 2021, 60% of desktop websites had good FCP, compared to 38% of mobile websites. By June 2022, 64% of desktop websites and 49% of mobile websites had good FCP. In September 2023, 63% of desktop websites had good FCP, while 47% of mobile websites did. By June 2024, the percentage increased to 68% for desktop websites and 51% for mobile websites.",  
-chart\_url="[https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=1058680176\&format=interactive](https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=1058680176&format=interactive)",  
- sheets\_gid="1535582002",  
-  sql\_file="web\_vitals\_by\_device.sql"  
+chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=1058680176&format=interactive",  
+ sheets_gid="1535582002",  
+  sql_file="web_vitals_by_device.sql"  
   )  
 }}
 
@@ -152,29 +141,26 @@ Interestingly, website performance is not the only factor that influences FCP. I
 
 LCP is an important metric as it indicates how quickly the largest element in the viewport is loaded. A best practice is to ensure the LCP resource starts loading as early as possible. A good LCP should be under 2.5 seconds.
 
-![][image8]
-
-{{ figure\_markup(  
-  image="XXX.png",  
-  caption: "*The percent of websites having good, need improvements and poor LCP, segmented by device*"  
+{{ figure_markup(  
+  image="largest-contentful-paint-scores-2024.png",  
+  caption: "The percent of websites having good, need improvements and poor LCP, segmented by device"  
   description="Stacked bar chart showing LCP performance by device, categorized as good (under 2.5 seconds), needs improvement (2.5–4 seconds), and poor (over 4 seconds). For desktop, 72% of websites have good LCP, 20% need improvement, and 8% perform poorly. For phones, 59% of websites have good LCP, 27% need improvement, and 14% perform poorly.",  
-chart\_url="[https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=2074458485\&format=interactive](https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=2074458485&format=interactive)",  
- sheets\_gid="1535582002",  
-  sql\_file="web\_vitals\_by\_device.sql"  
+chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=2074458485&format=interactive",  
+ sheets_gid="1535582002",  
+  sql_file="web_vitals_by_device.sql"
   )  
 }}
 
-LCP has also improved in recent years (from 44% of pages with good LCP in 2022 to 54% in 2024\) following the overall positive tendency in CWV. In 2024, 59% of mobile pages achieved a good LCP score. However, there is still a significant gap compared to desktop sites, where 74% have good LCP. This firmly established trend is explained by differences in device processing power and network quality. However, it also highlights that many web pages are still not optimized for mobile use.
+LCP has also improved in recent years (from 44% of pages with good LCP in 2022 to 54% in 2024) following the overall positive tendency in CWV. In 2024, 59% of mobile pages achieved a good LCP score. However, there is still a significant gap compared to desktop sites, where 74% have good LCP. This firmly established trend is explained by differences in device processing power and network quality. However, it also highlights that many web pages are still not optimized for mobile use.
 
-![][image9]  
-{{ figure\_markup(  
-  image="XXX.png",  
-  caption: "*The percent of websites having good LCP, segmented by device and page type.*"  
-  description="Bar chart showing the percentage of pages with good LCP for home pages and secondary pages on desktop and mobile. For home pages, 63% of desktop pages have good LCP, while 53% of mobile pages achieve the same. For secondary pages, 82% of desktop pages have good LCP, compared to 72% of mobile pages.  
+{{ figure_markup(  
+  image="good-larges-contentful-paint-primary-secondary-pages.png",  
+  caption: "The percent of websites having good LCP, segmented by device and page type."  
+  description="Bar chart showing the percentage of pages with good LCP for home pages and secondary pages on desktop and mobile. For home pages, 63% of desktop pages have good LCP, while 53% of mobile pages achieve the same. For secondary pages, 82% of desktop pages have good LCP, compared to 72% of mobile pages.
 ",  
-chart\_url="[https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=1404370023\&format=interactive](https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=1404370023&format=interactive)",  
- sheets\_gid="1159394005",  
-  sql\_file="web\_vitals\_by\_device\_secondary\_pages.sql"  
+chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=1404370023&format=interactive",  
+ sheets_gid="1159394005",  
+  sql_file="web_vitals_by_device_secondary_pages.sql"  
   )  
 }}
 
@@ -182,15 +168,13 @@ The comparison between home pages and secondary pages reveals an interesting tre
 
 #### LCP content types
 
-#### ![][image10]
-
-{{ figure\_markup(  
-  image="XXX.png",  
-  caption: "*Top three LCP content types segmented by device.*"  
+{{ figure_markup(  
+  image="largest-contentful-paint-content-types.png",
+  caption: "Top three LCP content types segmented by device."  
   description="Bar chart showing the top LCP content types for desktop and mobile in 2024\. For desktop, 83.3% of pages have images as the LCP content type, while 73.3% of mobile pages have images as their LCP content. Text accounts for 16.3% of LCP content on desktop and 26.3% on mobile. Inline images are rare, making up 0.3% of LCP content on desktop and 0.4% on mobile.",  
-chart\_url="[https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=1134330296\&format=interactive](https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=1134330296&format=interactive)",  
- sheets\_gid="1760287339",  
-  sql\_file="lcp\_resource\_type.sql"  
+chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=1134330296&format=interactive",  
+ sheets_gid="1760287339",  
+  sql_file="lcp_resource_type.sql"  
   )  
 }}
 
@@ -207,13 +191,11 @@ Several stages of processing must occur before the LCP element can be fully rend
 
 In the article "[Common Misconceptions About How to Optimize LCP](https://web.dev/blog/common-misconceptions-lcp#lcp_sub-part_breakdown)," Brendan Kenny analyzed a breakdown of LCP sub-parts using recent CruX data. 
 
-![][image11]
-
-{{ figure\_markup(  
-  image="XXX.png",  
+{{ figure_markup(  
+  image="median-subpart-p75s.png", 
   caption: "Time spent in each LCP subpart, grouped into LCP buckets of good, needs improvement, and poor."  
   description="Bar chart showing the medians of origin p75 LCP sub-parts for good, needs improvement, and poor p75 LCP in July 2024, across mobile and desktop. For good p75 LCP, TTFB is 600 ms, image load delay is 350 ms, image load duration is 160 ms, and render delay is 230 ms. For needs improvement p75 LCP, TTFB is 1360 ms, image load delay is 720 ms, image load duration is 270 ms, and render delay is 310 ms. For poor p75 LCP, TTFB is 2270 ms, image load delay is 1290 ms, image load duration is 350 ms, and render delay is 360 ms.",  
-chart\_url="https://web.dev/static/blog/common-misconceptions-lcp/images/median-subpart-p75s.png",  
+chart_url="https://web.dev/static/blog/common-misconceptions-lcp/images/median-subpart-p75s.png",  
   )  
 }}
 
@@ -225,14 +207,12 @@ Surprisingly, websites spend more time on resource load delay than on load durat
 
 This year, we analyzed LCP sub-part data from another source: RUMvision. Although RUMvision has a different population of websites, it's interesting to compare it with the larger CruX website population. We assume that websites using performance monitoring tools like RUMvision should have more insights into performance optimization opportunities than the average website represented in CruX. Naturally, the LCP sub-part results from two different datasets show some differences.
 
-![][image12]
-
-{{ figure\_markup(  
-  image="",  
-  caption="Time spent in each LCP subpart by percentile ",  
+{{ figure_markup(  
+  image="largest-contentful-paint-subparts.png",  
+  caption="Time spent in each LCP subpart by percentile. Source: RUMvision",  
   description="Bar chart showing the distribution of LCP subparts in milliseconds (ms) across different percentiles. At the 10th percentile, all subparts have minimal values. At the 25th percentile, resource TTFB and load delay remain under 100 ms. At the 50th percentile, resource TTFB increases to around 200 ms, with small increases in load delay, load duration, and render delay. At the 75th percentile, resource TTFB exceeds 500 ms, and render delay also shows an increase. At the 90th percentile, resource TTFB is over 1500 ms, and render delay rises to over 600 ms, with load delay and load duration also increasing.",  
-  chart\_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=249678580\&format=interactive",  
-  sheets\_gid="1987931132"  
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=249678580\&format=interactive",  
+  sheets_gid="1987931132"  
   )  
 }}
 
@@ -248,14 +228,12 @@ One of the ways to optimize the LCP resource load delay is to ensure the resourc
 
 Overall, lazy-loading images is a helpful performance technique that should be used to postpone loading of non-critical resources until they are near the viewport. However, using lazy-loading on the LCP image will delay the browser from loading it quickly. That is why lazy-loading should not be used on LCP elements. In this section, we explore how many sites use this performance anti-pattern. 
 
-15.7%
-
-{{ figure\_markup(  
-  caption="*The percent of mobile pages having image-based LCP that use native or custom lazy-loading on it*",  
+{{ figure_markup(  
+  caption="The percent of mobile pages having image-based LCP that use native or custom lazy-loading on it",  
   content="15.7%",  
   classes="big-number",  
-  sheets\_gid="XX",  
-  sql\_file=”lcp\_lazy.sql"  
+  sheets_gid="1048885241",
+  sql_file=”lcp_lazy.sql"  
 )  
 }}
 
@@ -263,15 +241,13 @@ The good news is that in 2024, fewer websites are using this performance anti-pa
 
 #### CSS background images
 
-![][image13]
-
-{{ figure\_markup(  
-  image="",  
-  caption="*The percent of pages whose LCP is not statically discoverable and initiated from a given resource.* ",  
+{{ figure_markup(  
+  image="largest-contentful-paint-non-discoverable.png",  
+  caption="The percent of pages whose LCP is not statically discoverable and initiated from a given resource.",  
   description="Bar chart showing the initiators of undiscoverable LCP (Largest Contentful Paint) for desktop and mobile, categorized by resource type. For desktop, 38% of pages have HTML as the initiator of undiscoverable LCP, while for mobile, this figure is 33%. CSS is responsible for 11% of undiscoverable LCP on desktop pages and 9% on mobile. An unknown resource type accounts for 5% of undiscoverable LCP on desktop and 4% on mobile.",  
-  chart\_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=427707611\&format=interactive",  
-  sheets\_gid="1131647963",  
-  sql\_file="lcp\_initiator\_type.sql"  
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=427707611\&format=interactive",  
+  sheets_gid="1131647963",  
+  sql_file="lcp_initiator_type.sql"  
   )  
 }}
 
@@ -283,15 +259,13 @@ One more common reason for non-discoverable LCP elements is dynamically added im
 
 The chart below illustrates the distribution of client-side generated content. It compares the initial HTML with the final HTML (after JavaScript runs) and measures the difference. It displays how the percentage of websites with good LCP changes as the percentage of client-side generated content increases.
 
-![][image14]
-
-{{ figure\_markup(  
-  image="",  
-  caption="*The percent of websites with good LCP vs percentage of client-side generated content on a page*",  
+{{ figure_markup(  
+  image="good-largest-contentful-paint-client-side-generated-content.png",  
+  caption="The percent of websites with good LCP vs percentage of client-side generated content on a page",  
   description="Line chart showing the percentage of origins with good LCP compared to the percentage of client-side generated HTML for both desktop and mobile. For desktop, the percentage of origins with good LCP starts around 75% for pages with 0-10% client-side generated HTML and remains relatively stable, peaking slightly around 40-50% client-side HTML usage, before gradually declining to about 65% at the 90-100% range. For mobile, the percentage of good LCP starts lower, around 60% for the 0-10% range, and follows a similar trend, peaking slightly in the 30-40% range before declining more sharply to about 45% at the 90-100% client-side HTML usage.",  
-  chart\_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=750231640\&format=interactive",  
-  sheets\_gid="829333856",  
-  sql\_file=”inp\_long\_tasks.sql"  
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=750231640\&format=interactive",  
+  sheets_gid="829333856",  
+  sql_file=”inp_long_tasks.sql"  
   )  
 }}
 
@@ -301,48 +275,45 @@ The percentage of pages with good LCP stays at approximately 60% for mobile devi
 
 The [CruX and RUMvision data on LCP sub-parts](#lcp-sub-parts) showed that resource load duration is rarely the main bottleneck for a slow LCP. However, it is still valuable to analyze the key optimization factors, such as the size and format of the LCP resource. 
 
-![][image15]  
-{{ figure\_markup(  
-  image="",  
-  caption="*Distribution of LCP image sizes, segmented by device type*",  
+{{ figure_markup(  
+  image="largest-contentful-paint-image-sizes.png",  
+  caption="Distribution of LCP image sizes, segmented by device type.",  
   description="Histogram showing the distribution of LCP image sizes for desktop and mobile pages, measured in kilobytes (KB). For mobile, 48% of pages have LCP image sizes between 100 and 200 KB, while 18% of desktop pages fall into this range. For desktop, 30% of pages have LCP images between 0 and 100 KB, compared to 1% for mobile. In the 200 to 300 KB range, 9% of desktop pages and 5% of mobile pages have LCP images. The percentages gradually decrease as image size increases, with only a small portion of pages having LCP images larger than 700 KB. At the highest range, 8% of both desktop and mobile pages have LCP images over 1000 KB.",  
-  chart\_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=164375992\&format=interactive",  
-  sheets\_gid="1329122831",  
-  sql\_file="lcp\_bytes\_histogram.sql"  
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=164375992\&format=interactive",  
+  sheets_gid="1329122831",  
+  sql_file="lcp_bytes_histogram.sql"  
   )  
 }}
 
 In 2024, 48% of mobile websites used an LCP image that was 100KB or less. Though, for 8% of the mobile pages the LCP element size is more than 1000KB.
 
 This aligns with the [Lighthouse audit on unoptimized images](https://github.com/GoogleChrome/lighthouse/blob/main/core/audits/byte-efficiency/uses-optimized-images.js), which also reports the amount of wasted kilobytes that could be saved by image optimization.   
-![][image16]  
-{{ figure\_markup(  
-  image="",  
-  caption="*Distribution of wasted kilobytes on LCP image*",  
+ 
+{{ figure_markup(  
+  image="largest-contentful-paint-images-wasted-kb.png",  
+  caption="Distribution of wasted kilobytes on LCP image",  
   description="Bar chart showing the distribution of wasted kilobytes on LCP images for desktop and mobile across percentiles. At the 10th, 25th, and 50th percentiles, both desktop and mobile pages have 0 wasted kilobytes. At the 75th percentile, desktop pages waste 20 kilobytes, while mobile pages waste 10 kilobytes. At the 90th percentile, desktop pages waste 190 kilobytes, and mobile pages waste 128 kilobytes.",  
-  chart\_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=321466279\&format=interactive",  
-  sheets\_gid="1984265626",  
-  sql\_file="lcp\_wasted\_bytes.sql"  
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=321466279\&format=interactive",  
+  sheets_gid="1984265626",  
+  sql_file="lcp_wasted_bytes.sql"  
   )  
 }}
 
 The audit results indicate that the median website wastes 0 KB on LCP images, i.e. serves optimized images. This leads to the conclusion that many sites are optimizing their LCP resources effectively, although some still need to improve.
 
 You can reduce image sizes through resizing dimensions and increasing compression. Another way to reduce image sizes is by using new image formats like Webp and AVIF, which have better compression algorithms. 
-
-![][image17]  
-{{ figure\_markup(  
-  image="",  
-  caption="*The percent of pages that use a given image file format for their LCP images*",  
+ 
+{{ figure_markup(  
+  image="largest-contentful-paint-image-file-format.png",  
+  caption="The percent of pages that use a given image file format for their LCP images",  
   description="Bar chart showing the distribution of LCP (Largest Contentful Paint) image formats for desktop and mobile. JPG is the most common format, used by 60.7% of desktop pages and a similar percentage of mobile pages. PNG is the second most common format, used by 25.9% of pages. WebP follows with 7.3%, while other formats such as MP4, SVG, GIF, and AVIF are used by less than 2% of pages. ICO, HEIC, and HEIF formats are barely used, with their percentages rounding to 0% for both desktop and mobile.",  
-  chart\_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=2086275423\&format=interactive",  
-  sheets\_gid="240287365",  
-  sql\_file="lcp\_format.sql"  
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=2086275423\&format=interactive",  
+  sheets_gid="240287365",  
+  sql_file="lcp_format.sql"  
   )  
 }}
 
-JPG and PNG still have the highest proportion of adoption at 86.6% combined, however WEBP and AVIF formats are both increasing in adoption. In comparison to 2022, WEBP image format usage increased from [4%](https://almanac.httparchive.org/en/2022/performance#lcp-format)  to 7.3%. Also, AVIF usage increased slightly from 0.1% to 0.3%. According to [Baseline](https://webstatus.dev/?q=avif), AVIF format is newly available across major browsers, so we expect to see higher adoption in the future.  
-~~![][image18]~~
+JPG and PNG still have the highest proportion of adoption at 86.6% combined, however WEBP and AVIF formats are both increasing in adoption. In comparison to 2022, WEBP image format usage increased from [4%](https://almanac.httparchive.org/en/2022/performance#lcp-format)  to 7.3%. Also, AVIF usage increased slightly from 0.1% to 0.3%. According to [Baseline](https://webstatus.dev/?q=avif), AVIF format is newly available across major browsers, so we expect to see higher adoption in the future.
 
 ### Loading Speed Conclusions {#loading-speed-conclusions}
 
@@ -362,15 +333,13 @@ INP measures the time between a user interaction and the next frame render. It i
 
 For an origin to receive a “good” INP score, at least 75% of all sessions need an INP score of 200ms or less. The INP score is the slowest or near-slowest interaction time for all interactions on the page. See [Details on how INP is calculated](https://web.dev/articles/inp#good-score) for more information.
 
-*![][image19]*
-
-{{ figure\_markup(  
-  image="",  
-  caption="*Distribution of INP performance by device.*",  
+{{ figure_markup(  
+  image="interaction-to-next-paint",  
+  caption="Distribution of INP performance by device.",  
   description="Stacked bar chart showing INP performance by device, with desktop and phone categorized into good (under 200 ms), needs improvement (200–500 ms), and poor (over 500 ms). For desktop, 97% of websites have good INP, 2% need improvement, and less than 1% perform poorly. For phones, 74% of websites have good INP, 24% need improvement, and 2% perform poorly.",  
-  chart\_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=667078190\&format=interactive",  
-  sheets\_gid="1535582002",  
-  sql\_file="web\_vitals\_by\_device.sql"  
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=667078190\&format=interactive",  
+  sheets_gid="1535582002",  
+  sql_file="web_vitals_by_device.sql"  
   )  
 }}
 
@@ -378,16 +347,14 @@ In 2024, 74% of mobile and 97% of desktop websites had good INP. Interestingly, 
 
 The primary reason for weaker performance on mobile is its lower processing power and frequently poor network connections. Alex Russell’s article "[The Performance Inequality Gap](https://infrequently.org/2022/12/performance-baseline-2023/)" (2023) raises the issue of the growing performance inequality gap caused by the affordance of high-end vs low-end devices. As the prices of high-end devices rise, fewer users can afford them, widening the inequality gap.
 
-![][image20]
-
-{{ figure\_markup(  
-  image="",  
-  caption="*Good INP score by device.*",  
+{{ figure_markup(  
+  image="good-interaction-to-next-paint.png",  
+  caption="Good INP score by device.", 
   description="Bar chart showing the percentage of websites with good INP performance by device (desktop and mobile) across three years. In 2022, 95% of desktop websites had good INP, while 55% of mobile websites achieved good INP. In 2023, the percentage of websites with good INP improved to 97% for desktop and 64% for mobile. By 2024, 97% of desktop websites maintained good INP performance, while mobile improved further to 74%.  
 ",  
-  chart\_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=416359271\&format=interactive",  
-  sheets\_gid="1535582002",  
-  sql\_file="web\_vitals\_by\_device.sql"  
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=416359271\&format=interactive",  
+  sheets_gid="1535582002",  
+  sql_file="web_vitals_by_device.sql"  
   )  
 }}
 
@@ -397,17 +364,13 @@ The percentage of mobile pages having good INP increased from 55% in 2022 to 74%
 
 Mobile INP metric by rank reveals an interesting trend. [In the 2022 chapter](https://almanac.httparchive.org/en/2022/performance#inp-by-rank), we assumed that the more popular a website is, the more performance optimizations it would have, leading to better performance. However, when it comes to INP, the opposite seems to be true.
 
-![][image21]  
-{{ figure\_markup(  
-  image="",  
-  caption="*INP performance on mobile devices segmented by rank.*",  
-  description="Stacked bar chart showing mobile INP performance by website rank, categorized into good (under 200 ms), needs improvement (200–500 ms), and poor (over 500 ms).
-
-For the top 1,000 websites, 53% have good INP, 41% need improvement, and 6% perform poorly. For the top 10,000 websites, 49% are in the good range, 44% need improvement, and 7% are poor. In the top 100,000, 51% are good, 43% need improvement, and 6% are poor. For the top 1,000,000 websites, 61% have good INP, 35% need improvement, and 4% are poor. As the rank increases to the top 10,000,000 websites, 73% are good, 24% need improvement, and 3% are poor. Finally, for the top 100,000,000 websites, 74% have good INP, 24% need improvement, and 2% are poor.  
-",  
-  chart\_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=296559964\&format=interactive",  
-  sheets\_gid="355582610",  
-  sql\_file="web\_vitals\_by\_rank\_and\_device.sql"  
+{{ figure_markup(  
+  image="interaction-to-next-paint-score-mobile-2024.png",  
+  caption="INP performance on mobile devices segmented by rank.",  
+  description="Stacked bar chart showing mobile INP performance by website rank, categorized into good (under 200 ms), needs improvement (200–500 ms), and poor (over 500 ms).For the top 1,000 websites, 53% have good INP, 41% need improvement, and 6% perform poorly. For the top 10,000 websites, 49% are in the good range, 44% need improvement, and 7% are poor. In the top 100,000, 51% are good, 43% need improvement, and 6% are poor. For the top 1,000,000 websites, 61% have good INP, 35% need improvement, and 4% are poor. As the rank increases to the top 10,000,000 websites, 73% are good, 24% need improvement, and 3% are poor. Finally, for the top 100,000,000 websites, 74% have good INP, 24% need improvement, and 2% are poor.",  
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=296559964\&format=interactive",  
+  sheets_gid="355582610",  
+  sql_file="web_vitals_by_rank_and_device.sql"  
   )  
 }}
 
@@ -415,15 +378,13 @@ Fewer websites in the top 1,000 rank have good INP compared to the results for a
 
 This could be because the most visited websites often have more user interactions and complex functionality. Logically, the INP for an interactive e-commerce site would differ from a simple, static blog.
 
-![][image22]
-
-{{ figure\_markup(  
-  image="",  
-  caption="Good *INP performance on Home and Secondary page by device.*",  
+{{ figure_markup(  
+  image="good-interaction-to-next-paint-home-secondary-page.png",  
+  caption="Good INP performance on Home and Secondary page by device.",  
   description="Bar chart showing the percentage of pages with good INP for home pages and secondary pages, separated by desktop and mobile performance. For home pages, 96% of desktop pages have a good INP, while 73% of mobile pages achieve a good INP. For secondary pages, 96% of desktop pages also have a good INP, with 72% of mobile pages reaching this performance level.",  
-  chart\_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=1483510539\&format=interactive",  
-  sheets\_gid="1159394005",  
-  sql\_file="web\_vitals\_by\_device\_secondary\_pages.sql"  
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=1483510539\&format=interactive",  
+  sheets_gid="1159394005",  
+  sql_file="web_vitals_by_device_secondary_pages.sql"  
   )  
 }}
 
@@ -439,14 +400,12 @@ An INP score can be broken down into three sub-parts:
 
 To optimize your website’s interactivity, it’s important to identify the duration of every sub-part.
 
-![][image23]
-
-{{ figure\_markup(  
-  image="",  
-  caption="*INP Subparts by percentile, Source: RUMvision*",  
+{{ figure_markup(  
+  image="interaction-to-next-paint-subparts.ong",  
+  caption="INP Subparts by percentile, Source: RUMvision",  
   description="Bar chart showing the distribution of INP subparts in milliseconds (ms) by percentile. At the 10th percentile, all subparts (input delay, processing time, and presentation delay) are minimal. At the 25th percentile, the values slightly increase but remain below 10 ms. At the 50th percentile, input delay and processing time stay modest, while presentation delay reaches around 20 ms. At the 75th percentile, input delay increases to around 50 ms, with processing time and presentation delay also rising. At the 90th percentile, input delay reaches around 150 ms, and both processing time and presentation delay exceed 100 ms.",  
-  chart\_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=226800794\&format=interactive",  
-  sheets\_gid="731456372",  
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=226800794\&format=interactive",  
+  sheets_gid="731456372",  
   )  
 }}
 
@@ -458,25 +417,23 @@ One of the sub-parts of INP is input delay, which can be longer than it should d
 
 In the diagram below, we analyzed a representative sample of 1,000 websites to see whether there is a correlation between INP and the number of long tasks on both desktop and mobile platforms. It is important to keep in mind that INP scores come from field (real-user) data, while long task measures come from lab measurements.
 
-![][image24]  
-{{ figure\_markup(  
-  image="",  
+{{ figure_markup(  
+  image="interaction-to-next-paint-long-task-desktop.png",  
   caption="Relationship between the INP and the sum of long tasks on desktop",  
   description="Scatter plot showing the relationship between the 75th percentile of INP (Interaction to Next Paint) and the sum of long tasks in milliseconds (ms) for desktop devices. Most data points cluster around lower INP values (below 500 ms) and long task sums under 1000 ms, but as INP increases beyond 500 ms, the sum of long tasks tends to rise, with some reaching up to 10,000 ms",  
-  chart\_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=1166159546\&format=interactive",  
-  sheets\_gid="317913638",  
-  sql\_file="inp\_long\_tasks.sql"  
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=1166159546\&format=interactive",  
+  sheets_gid="317913638",  
+  sql_file="inp_long_tasks.sql"  
   )  
 }}
-
-![][image25]  
-{{ figure\_markup(  
-  image="xyz.png",  
-  caption: "Relationship between the INP and the sum of long tasks on mobile"  
-  description="Scatter plot showing the relationship between the 75th percentile of INP (Interaction to Next Paint) and the sum of long tasks in milliseconds (ms) for mobile devices. The majority of data points cluster around lower INP values (below 500 ms), but there is a spread of data showing higher INP values (up to 5000 ms) associated with a broader range of long task durations. ",  
-chart\_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=175079544\&format=interactive",  
-sheets\_gid="317913638",  
-  sql\_file="inp\_long\_tasks.sql"  
+ 
+{{ figure_markup(  
+  image="interaction-to-next-paint-long-task-mobile.png",  
+  caption: "Relationship between the INP and the sum of long tasks on mobile",
+  description="Scatter plot showing the relationship between the 75th percentile of INP (Interaction to Next Paint) and the sum of long tasks in milliseconds (ms) for mobile devices. The majority of data points cluster around lower INP values (below 500 ms), but there is a spread of data showing higher INP values (up to 5000 ms) associated with a broader range of long task durations.",  
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=175079544\&format=interactive",  
+  sheets_gid="317913638",  
+  sql_file="inp_long_tasks.sql"  
   )  
 }}
 
@@ -484,14 +441,12 @@ Although long tasks are often the first focus for optimizing INP, the correlatio
 
 However, it's still interesting to explore the Long Task duration data from RUMvision.
 
-![][image26]
-
-{{ figure\_markup(  
-  image="xyz.png",  
-  caption: "Task duration."  
+{{ figure_markup(  
+  image="long-task-duration.png",
+  caption: "Task duration.",
   description="Bar chart showing the distribution of task duration in milliseconds (ms) by percentile. At the 25th percentile, the task duration is 68 ms. At the 50th percentile, it increases to 103 ms. At the 75th percentile, task duration is 181 ms, and at the 90th percentile, it reaches 373 ms. This distribution shows that task durations grow significantly as we move from the 25th to the 90th percentile.",  
-chart\_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=658363928\&format=interactive",  
-sheets\_gid="1272522211"  
+chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=658363928\&format=interactive",  
+sheets_gid="1272522211"  
   )  
 }}
 
@@ -502,23 +457,22 @@ The Long Tasks API provides some useful data about performance issues, but it ha
 #### Long Animations Frames
 
 Long Animation Frames (LoAF) are a performance timeline entry for identifying sluggishness and poor INP by tracking when work and rendering block the main thread. LoAF tracks animation frames instead of individual tasks like the Long Tasks API. A long animation frame is when a rendering update is delayed beyond 50 milliseconds (the same as the threshold for the Long Tasks API). It helps to find scripts that cause INP performance bottlenecks. With this data, we can analyze INP performance based on the categories of scripts responsible for LoAF.  
-
-![][image27]  
-{{ figure\_markup(  
-  image="xyz.png",  
-  caption: "Distribution of INP performance segmented by script categories on desktop*.*"  
+ 
+{{ figure_markup(  
+  image="interaction-to-next-paint-script-categories-desktop.png",  
+  caption: "Distribution of INP performance segmented by script categories on desktop.", 
   description="Stacked bar chart showing the distribution of INP across LOAF script categories for desktop, measured in milliseconds (ms). User Review, SMS & Email, and Analytics scripts perform best, with most of their INP in the good range. Tag Manager and Consent Provider scripts have more mid-range INP, with some falling into the poor category. Advertising, Others, and User Behaviour scripts perform worse, with the majority of INP falling into the poor range.",  
-chart\_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=1975914925\&format=interactive",  
-sheets\_gid="947269170",  
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=1975914925\&format=interactive",  
+  sheets_gid="947269170",  
   )  
 }}  
-![][image28]  
-{{ figure\_markup(  
-  image="xyz.png",  
-  caption: "Distribution of INP performance segmented by script categories on mobile."  
+
+{{ figure_markup(  
+  image="interaction-to-next-paint-script-categories-desktop.png",  
+  caption: "Distribution of INP performance segmented by script categories on mobile.",
   description="Stacked bar chart showing the distribution of INP across LOAF script categories for mobile, measured in milliseconds (ms). For Social scripts, most are in the good range, with few in the poor range. Video and Tag Manager scripts also have a majority in the good range but with a larger portion in the mid-range. Site Search and Advertising scripts have a more even distribution, with a significant part in the mid-range and some in the poor range. Developer Utilities, Others, and User Behaviour scripts perform worse, with most falling in the poor range.",  
-chart\_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=1978447282\&format=interactive",  
-sheets\_gid="947269170",  
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=1978447282\&format=interactive",  
+  sheets_gid="947269170",  
   )  
 }}
 
@@ -534,15 +488,13 @@ It is worth noting that the monitoring category, which also includes performance
 
 [Total Blocking Time](https://web.dev/tbt/) (TBT) measures the total amount of time after First Contentful Paint (FCP) where the main thread was blocked for long enough to prevent input responsiveness.
 
-![][image29]
-
-{{ figure\_markup(  
-  image="xyz.png",  
-  caption: "TBT per page by percentile."  
+{{ figure_markup(  
+  image="total-blocking-time.png",  
+  caption: "TBT per page by percentile.",
   description="Bar chart showing the distribution of Total Blocking Time (TBT) per page in milliseconds (ms) by percentile. At the 10th percentile, both desktop and mobile TBT are near 0 ms. At the 25th percentile, desktop TBT is 84 ms, while mobile is 417 ms. At the 50th percentile, desktop has 67 ms of TBT, and mobile rises significantly to 1,209 ms. At the 75th percentile, desktop reaches 282 ms, with mobile at 2,990 ms. Finally, at the 90th percentile, desktop TBT is 718 ms, and mobile climbs to 5,955 ms",  
-chart\_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=1525715716\&format=interactive",  
-sheets\_gid="89045350",  
-  sql\_file="js\_bytes\_rank.sql"  
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=1525715716\&format=interactive",  
+  sheets_gid="89045350",  
+  sql_file="js_bytes_rank.sql"  
   )  
 }}
 
@@ -568,30 +520,29 @@ Visual stability on a website refers to the consistency and predictability of vi
 A CLS score of 0.1 or less is considered good, meaning the page offers a visually stable experience, while scores between 0.1 and 0.25 indicate the need for improvement, and scores above 0.25 are considered poor, indicating that users may experience disruptive, unexpected layout shifts.
 
 ![][image30]  
-{{ figure\_markup(  
+{{ figure_markup(  
   image="good-cls-by-device-2024.png",  
-  caption: "CLS performance by device for 2024."  
+  caption: "CLS performance by device for 2024.", 
   description="Stacked bar chart showing CLS performance for 2024 by device. For desktop sites, 72% of sites had good CLS score, 18% need improvement, and 11% are considered poor. For mobile sites, 79% of sites have a good score, 12% need improvement, and 9% have a poor score.",  
-chart\_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=1271338928\&format=interactive",  
-  sheets\_gid="1535582002",  
-  sql\_file="web\_vitals\_by\_device.sql"  
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=1271338928\&format=interactive",  
+  sheets_gid="1535582002",  
+  sql_file="web_vitals_by_device.sql"  
   )  
 }}
 
 In 2024, 72% of websites achieved good CLS scores, while 11% had poor ones. We can also see that websites on mobile devices provide a better user experience when it comes to site stability than desktop sites.
-
-![][image31]  
-{{ figure\_markup(  
+ 
+{{ figure_markup(  
   image="good-cls-by-device.png",  
-  caption: "The percent of websites having good CLS, segmented by device and year."  
-  description="Bar chart showing the number of websites with good CLS segmented by device and years. The percentage of mobile sites having good CLS was 60% for year 2020., 62% for 2021, 74% for 2022, 76% for 2023, and 79% for 2024\. For desktop sites, 54% had good CLS in 2020, 62% in 2021, 65% in 2022, 68% in 2023, and 72% in 2024.",  
-chart\_url="[https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=1974391374\&format=interactive](https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=1974391374&format=interactive)",  
-sheets\_gid="1535582002",  
-  sql\_file="web\_vitals\_by\_device.sql"  
+  caption: "The percent of websites having good CLS, segmented by device and year.", 
+  description="Bar chart showing the number of websites with good CLS segmented by device and years. The percentage of mobile sites having good CLS was 60% for year 2020., 62% for 2021, 74% for 2022, 76% for 2023, and 79% for 2024. For desktop sites, 54% had good CLS in 2020, 62% in 2021, 65% in 2022, 68% in 2023, and 72% in 2024.",  
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=1974391374&format=interactive",  
+  sheets_gid="1535582002",  
+  sql_file="web_vitals_by_device.sql"  
   )  
 }}
 
-Looking at the metrics over time, we can see a nice upward trend. There is an increase from 60% of websites with good visual stability in 2020 to almost 80% in 2024\. A visible jump in mobile data is already addressed in detail and attributed to the introduction of bfcache in [the 2022 Chapter](https://almanac.httparchive.org/en/2022/performance#cumulative-layout-shift-cls). There is still a visible difference from 2022, so we will look in detail at some of the aspects that possibly contributed to it.
+Looking at the metrics over time, we can see a nice upward trend. There is an increase from 60% of websites with good visual stability in 2020 to almost 80% in 2024. A visible jump in mobile data is already addressed in detail and attributed to the introduction of bfcache in [the 2022 Chapter](https://almanac.httparchive.org/en/2022/performance#cumulative-layout-shift-cls). There is still a visible difference from 2022, so we will look in detail at some of the aspects that possibly contributed to it.
 
 ### Bfcache
 
@@ -600,14 +551,14 @@ Looking at the metrics over time, we can see a nice upward trend. There is an in
 Let’s look deeper by checking a few eligibility criteria that are quite a common cause and easily measurable using lab data.
 
 One of the “usual suspects” is the `unload` event that is triggered when a user navigates away from a page. Due to its unreliable behaviour and its incompatibility with how bfcache preserves a page’s stage, `unload` event makes the page ineligible for bfcache. Important to note here is that this feature is specific for browsers on desktops. Mobile sites ignore the `unload` event. This behavior could explain CLS improvement over the years gap between mobile and desktop numbers from  Figure xxx: *The percent of websites having good CLS, segmented by device and year.*  
-![][image32]  
-{{ figure\_markup(  
-  image="xyz.png",  
-  caption: " *Usage of unload by site rank.*"  
+
+{{ figure_markup(  
+  image="unload-usage.png",  
+  caption: "Usage of unload by site rank.",  
   description="Bar chart showing the percentage of pages ineligible for bfcache (back-forward cache) due to unload handlers, by rank, for desktop and mobile devices. For the top 1,000 websites, 32% of desktop pages and 30% of mobile pages are ineligible. For the top 10,000, 30% of desktop and 26% of mobile pages are ineligible. In the top 100,000, 26% of desktop and mobile pages are ineligible. At the 1,000,000 rank, 20% of desktop pages and 19% of mobile pages are ineligible. At the 10,000,000 rank, 17% of desktop and 16% of mobile pages are ineligible, while for all ranks, 16% of desktop and mobile pages are ineligible.",  
-chart\_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=1163433950\&format=interactive",  
-sheets\_gid="1706831462",  
-  sql\_file="bfcache\_unload.sql"  
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=1163433950\&format=interactive",  
+  sheets_gid="1706831462",  
+  sql_file="bfcache_unload.sql"  
   )  
 }}
 
@@ -617,14 +568,12 @@ It is expected to see this decrease in the use of unload events with major brows
 
 Another common reason for websites to fall in the bfcache ineligibility category is the use of the `cache-control: no-store` directive. This cache control header instructs the browser (and any intermediate caches) not to store a copy of the resource, ensuring that the content is fetched from the server on every request.
 
-21.20%
-
-{{ figure\_markup(  
-  caption="*Percentage of mobile sites using cache-control:no-store*",  
+{{ figure_markup(  
+  caption="Percentage of mobile sites using cache-control:no-store",  
   content="21.20%",  
   classes="big-number",  
-  sheets\_gid="XX",  
-  sql\_file=""  
+  sheets_gid="389603749",
+  sql_file=""  
 )  
 }}
 
@@ -640,27 +589,24 @@ Unload event, as well as cache-control:no-store, do not directly affect the page
 
 One of the most common reasons for unexpected layout shifts is not preserving space for assets or incoming dynamic content. For example, adding `width` and `height` attributes on images is one of the easiest ways to preserve space and avoid shifts.
 
-![][image33]
-
-{{ figure\_markup(  
-  image="xyz.png",  
-  caption: "*The number of unsized images per page*"  
+{{ figure_markup(  
+  image="unsized-images.png",  
+  caption: "The number of unsized images per page"  
   description="Bar chart showing the number of unsized images per page by percentile for desktop and mobile devices. At the 10th and 25th percentiles, both desktop and mobile pages have 0 unsized images. At the 50th percentile, both desktop and mobile pages have 2 unsized images. At the 75th percentile, desktop pages have 10 unsized images, while mobile pages have 9\. At the 90th percentile, desktop pages have 26 unsized images, and mobile pages have 23.",  
-chart\_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=603112996\&format=interactive",  
-sheets\_gid="1674162543",  
-  sql\_file="cls\_unsized\_images.sql"  
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=603112996\&format=interactive",  
+  sheets_gid="1674162543",  
+  sql_file="cls_unsized_images.sql"  
   )  
 }}
 
 The median number of unsized images per web page is two. When we shift to the 90th percentile, that number jumps to 26 for desktop sites and 23 for mobile. Having unsized images on the page can be a risk for layout shift; however, an important aspect to look at is if images are affecting the viewport and if yes, how much.
-
-![][image34]  
-{{ figure\_markup(  
+ 
+{{ figure_markup(  
   image="unsized-images.png",  
   caption="Distribution of the heights of unsized images.",  
   description="Bar chart showing the 10, 25, 50, 75, and 90th percentile height of unsized images. The values for mobile are 16, 38, 100, 200, and 297px tall, respectively. The values for the desktop are larger: 16, 40, 110, 241, and 403.",  
-  chart\_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=603112996\&format=interactive",  
-  sql\_file="cls\_unsized\_image\_height.sql"  
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=603112996\&format=interactive",  
+  sql_file="cls_unsized_image_height.sql"  
   )  
 }}
 
@@ -672,27 +618,23 @@ As expected, image heights on desktop pages are larger, with the size on the med
 
 Fonts can directly impact CLS. When web fonts are loaded asynchronously, a delay occurs between the initial rendering of the page and the time when the custom fonts are applied. During this delay, browsers often display text using a fallback font, which can have different dimensions (width, height, letter spacing) compared to the web font. When the web font finally loads, the text may shift to accommodate the new dimensions, causing a visible layout shift and contributing to a higher CLS score.
 
-85%  
-\<The percent of mobile pages that use web fonts.\>
-
-{{ figure\_markup(  
+{{ figure_markup(  
   caption="The percent of mobile pages that use web fonts.",  
   content="85%",  
   classes="big-number",  
-  sheets\_gid="XX",  
-  sql\_file="font\_usage\_mobile.sql"  
+  sheets_gid="344191137",
+  sql_file="font_usage_mobile.sql"  
 )  
 }}
 
 Using system fonts is one way to fix this issue. However, with 85% of mobile pages using web fonts it is not very likely that they will stop being used any time soon. A way to control the visual stability of a site that uses web fonts is to use the `font-display` property in CSS to control how fonts are loaded and displayed. [Different `font-display` strategies can be used depending on the team's decision about the tradeoff between performance and aesthetics](https://web.dev/articles/font-best-practices#choose_an_appropriate_font-display_strategy).
 
-![][image35]  
-{{ figure\_markup(  
+{{ figure_markup(  
   image="font-display-usage.png",  
   caption="Usage of font-display.",  
   description="Bar chart showing the percent of pages that use the various font-display values. 45% of mobile pages use swap, 23% block, 9% auto, 3% fallback, and 1% use optional. The values for desktop are similar.",  
-  chart\_url="",  
-  sql\_file=""  
+  chart_url="TODO: get from fonts",  
+  sql_file="TODO: get from fonts"  
   )  
 }}
 
@@ -702,14 +644,12 @@ Compared to the 2022 data, there is a visible increase in the use of all `font-d
 
 Since most `font-display` strategies can contribute to CLS, we need to look at other strategies for minimizing potential issues. One of those is using resource hints to ensure third-party fonts are discovered and loaded as soon as possible.
 
-![][image36]
-
-{{ figure\_markup(  
+{{ figure_markup(  
   image="fonts-resource-hints.png",  
   caption="Adoption of resource hints for font resources.",  
   description="Bar chart showing the percent of pages that use each type of resource hint on web fonts. 18% of mobile pages use preconnect, 16% dns-prefetch, 11% preload, and less than 1% prefetch. The values for desktop are almost the same.",  
-  chart\_url="",  
-  sql\_file="font\_resource\_hints\_usage.sql"  
+  chart_url="TODO: get from fonts",  
+  sql_file="font_resource_hints_usage.sql"  
   )  
 }}
 
@@ -721,16 +661,16 @@ Around 11% of all tested mobile and desktop pages are preloading their web fonts
 
 Another cause of unexpected shifts can be [non-composited](https://developer.chrome.com/docs/lighthouse/performance/non-composited-animations) CSS animations. These animations involve changes to properties that impact the layout or appearance of multiple elements, which forces the browser to go through more performance-intensive steps like recalculating styles, reflowing the document, and repainting pixels on the screen. The best practice is to use CSS properties such as `transform` and `opacity` instead.
 
-{{ figure\_markup(  
+{{ figure_markup(  
   content="39%",  
   caption="The percent of mobile pages that have non-composited animations.",  
   classes="big-number",  
-  sheets\_gid="https://docs.google.com/spreadsheets/d/15038wEIoqY53Y\_kR8U6QWM-PBO31ZySQGi147ABTNBc/edit?gid=293393420\#gid=293393420",  
-  sql\_file="cls\_animations.sql",  
+  sheets_gid="https://docs.google.com/spreadsheets/d/15038wEIoqY53Y\_kR8U6QWM-PBO31ZySQGi147ABTNBc/edit?gid=293393420\#gid=293393420",  
+  sql_file="cls_animations.sql",  
   )  
 }}
 
-39% of mobile pages and 42% of desktop pages still use non-composited animations, which is a very slight increase from 38% for mobile and 41% for desktop in the analysis from 2022\.
+39% of mobile pages and 42% of desktop pages still use non-composited animations, which is a very slight increase from 38% for mobile and 41% for desktop in the analysis from 2022.
 
 ### Visual Stability Conclusion {#visual-stability-conclusion}
 
