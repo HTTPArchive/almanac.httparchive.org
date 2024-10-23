@@ -25,7 +25,7 @@ WITH request_data AS (
 compression_data AS (
   SELECT
     client,
-    CASE 
+    CASE
       WHEN resp_content_encoding = 'gzip' THEN 'Gzip'
       WHEN resp_content_encoding = 'br' THEN 'Brotli'
       WHEN resp_content_encoding IS NULL THEN 'no text compression'

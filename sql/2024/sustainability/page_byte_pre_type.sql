@@ -19,8 +19,8 @@ CREATE TEMP FUNCTION calculate_emissions(
   grid_intensity FLOAT64
 ) RETURNS FLOAT64 AS (
   (bytes / 1024 / 1024 / 1024) *  -- Convert bytes to GB
-  (kw_per_GB) *                   
-  grid_intensity                  
+  (kw_per_GB) *
+  grid_intensity
 );
 
 WITH page_data AS (
@@ -35,10 +35,9 @@ WITH page_data AS (
     CAST(JSON_VALUE(summary, '$.bytesHtmlDoc') AS INT64) AS bytesHtmlDoc,
     CAST(JSON_VALUE(summary, '$.bytesFont') AS INT64) AS bytesFont
   FROM
-    httparchive.all.pages
+    `httparchive.all.pages`
   WHERE
-    date = '2024-06-01'  
-    AND is_root_page     
+    date = '2024-06-01' AND is_root_page
 )
 
 SELECT

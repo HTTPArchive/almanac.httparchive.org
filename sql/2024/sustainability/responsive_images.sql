@@ -28,8 +28,7 @@ WITH page_data AS (
   FROM
     `httparchive.all.pages`
   WHERE
-    date = '2024-06-01'
-    AND is_root_page
+    date = '2024-06-01' AND is_root_page
 )
 
 SELECT
