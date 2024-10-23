@@ -30,7 +30,8 @@ SELECT
   family,
   COUNT(0) AS count,
   total,
-  COUNT(0) / total AS proportion
+  COUNT(0) / total AS proportion,
+  ANY_VALUE(url) AS example
 FROM
   fonts,
   UNNEST(formats) AS format
