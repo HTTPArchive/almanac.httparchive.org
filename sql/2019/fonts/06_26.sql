@@ -26,10 +26,8 @@ SELECT
   ROUND(COUNT(DISTINCT page) * 100 / total, 2) AS pct
 FROM
   `httparchive.almanac.parsed_css`
-JOIN
-  (SELECT _TABLE_SUFFIX AS client, COUNT(0) AS total FROM `httparchive.summary_pages.2019_07_01_*` GROUP BY client)
-USING
-  (client)
+JOIN (SELECT _TABLE_SUFFIX AS client, COUNT(0) AS total FROM `httparchive.summary_pages.2019_07_01_*` GROUP BY client)
+USING (client)
 WHERE
   date = '2019-07-01' AND
   ARRAY_LENGTH(usesFontStretch(css)) > 0

@@ -30,16 +30,15 @@ base AS (
       year,
       page,
       third_party_domains.domain AS domain
-    FROM
-      (
-        SELECT
-          '2022' AS year,
-          NET.HOST(data.url) AS domain,
-          lighthouse.url AS page
-        FROM
-          `httparchive.lighthouse.2022_06_01_mobile` AS lighthouse,
-          UNNEST(getUrls(JSON_EXTRACT(report, "$.audits['legacy-javascript']"))) AS data
-      ) AS potential_third_parties
+    FROM (
+      SELECT
+        '2022' AS year,
+        NET.HOST(data.url) AS domain,
+        lighthouse.url AS page
+      FROM
+        `httparchive.lighthouse.2022_06_01_mobile` AS lighthouse,
+        UNNEST(getUrls(JSON_EXTRACT(report, "$.audits['legacy-javascript']"))) AS data
+    ) AS potential_third_parties
     INNER JOIN
       third_party_domains
     ON
@@ -58,8 +57,7 @@ base AS (
     GROUP BY
       year
   )
-  USING
-    (year)
+  USING (year)
   UNION ALL
   SELECT
     year,
@@ -71,16 +69,15 @@ base AS (
       year,
       page,
       third_party_domains.domain AS domain
-    FROM
-      (
-        SELECT
-          '2021' AS year,
-          NET.HOST(data.url) AS domain,
-          lighthouse.url AS page
-        FROM
-          `httparchive.lighthouse.2021_07_01_mobile` AS lighthouse,
-          UNNEST(getUrls(JSON_EXTRACT(report, "$.audits['legacy-javascript']"))) AS data
-      ) AS potential_third_parties
+    FROM (
+      SELECT
+        '2021' AS year,
+        NET.HOST(data.url) AS domain,
+        lighthouse.url AS page
+      FROM
+        `httparchive.lighthouse.2021_07_01_mobile` AS lighthouse,
+        UNNEST(getUrls(JSON_EXTRACT(report, "$.audits['legacy-javascript']"))) AS data
+    ) AS potential_third_parties
     INNER JOIN
       third_party_domains
     ON
@@ -99,8 +96,7 @@ base AS (
     GROUP BY
       year
   )
-  USING
-    (year)
+  USING (year)
   UNION ALL
   SELECT
     year,
@@ -112,16 +108,15 @@ base AS (
       year,
       page,
       third_party_domains.domain AS domain
-    FROM
-      (
-        SELECT
-          '2020' AS year,
-          NET.HOST(data.url) AS domain,
-          lighthouse.url AS page
-        FROM
-          `httparchive.lighthouse.2020_08_01_mobile` AS lighthouse,
-          UNNEST(getUrls(JSON_EXTRACT(report, "$.audits['legacy-javascript']"))) AS data
-      ) AS potential_third_parties
+    FROM (
+      SELECT
+        '2020' AS year,
+        NET.HOST(data.url) AS domain,
+        lighthouse.url AS page
+      FROM
+        `httparchive.lighthouse.2020_08_01_mobile` AS lighthouse,
+        UNNEST(getUrls(JSON_EXTRACT(report, "$.audits['legacy-javascript']"))) AS data
+    ) AS potential_third_parties
     INNER JOIN
       third_party_domains
     ON
@@ -140,8 +135,7 @@ base AS (
     GROUP BY
       year
   )
-  USING
-    (year)
+  USING (year)
 )
 
 SELECT

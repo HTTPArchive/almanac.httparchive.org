@@ -15,17 +15,16 @@ SELECT
   COUNT(0) AS total_req,
   COUNTIF(diff < 0) AS req_too_short_cache,
   ROUND(COUNTIF(diff < 0) * 100 / COUNT(0), 2) AS perc_req_too_short_cache
-FROM
-  (
-    SELECT
-      client,
-      expAge - (startedDateTime - toTimestamp(resp_last_modified)) AS diff
-    FROM
-      `httparchive.almanac.requests`
-    WHERE
-      date = '2019-07-01' AND
-      resp_last_modified != '' AND
-      expAge > 0
-  )
+FROM (
+  SELECT
+    client,
+    expAge - (startedDateTime - toTimestamp(resp_last_modified)) AS diff
+  FROM
+    `httparchive.almanac.requests`
+  WHERE
+    date = '2019-07-01' AND
+    resp_last_modified != '' AND
+    expAge > 0
+)
 GROUP BY
   client

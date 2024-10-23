@@ -13,8 +13,7 @@ FROM
   `httparchive.lighthouse.2020_08_01_mobile`
 JOIN
   `httparchive.technologies.2020_08_01_mobile`
-USING
-  (url)
+USING (url)
 WHERE
   category = 'CMS'
 GROUP BY

@@ -16,16 +16,11 @@ SELECT
   COUNT(DISTINCT page) AS freq,
   total,
   ROUND(COUNT(DISTINCT page) * 100 / total, 2) AS pct
-FROM
-  (SELECT _TABLE_SUFFIX AS client, url AS page, payload FROM `httparchive.pages.2019_07_01_*`)
-JOIN
-  (SELECT client, page, url FROM `httparchive.almanac.requests` WHERE date = '2019-07-01' AND type = 'font')
-USING
-  (client, page)
-JOIN
-  (SELECT _TABLE_SUFFIX AS client, COUNT(0) AS total FROM `httparchive.summary_pages.2019_07_01_*` GROUP BY _TABLE_SUFFIX)
-USING
-  (client),
+FROM (SELECT _TABLE_SUFFIX AS client, url AS page, payload FROM `httparchive.pages.2019_07_01_*`)
+JOIN (SELECT client, page, url FROM `httparchive.almanac.requests` WHERE date = '2019-07-01' AND type = 'font')
+USING (client, page)
+JOIN (SELECT _TABLE_SUFFIX AS client, COUNT(0) AS total FROM `httparchive.summary_pages.2019_07_01_*` GROUP BY _TABLE_SUFFIX)
+USING (client),
   UNNEST(getPreconnectUrls(payload)) AS preconnect_url
 WHERE
   # hosts match

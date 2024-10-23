@@ -5,10 +5,7 @@ WITH lcp_only AS (
     COUNT(DISTINCT(origin)) AS urls
   FROM
     `chrome-ux-report.materialized.device_summary`
-  WHERE
-    (device = 'phone' AND p75_lcp <= 2400)
-    OR
-    (device = 'desktop' AND p75_lcp <= 2000)
+  WHERE (device = 'phone' AND p75_lcp <= 2400) OR (device = 'desktop' AND p75_lcp <= 2000)
   GROUP BY
     client,
     date
@@ -21,10 +18,7 @@ cls_only AS (
     COUNT(DISTINCT(origin)) AS urls
   FROM
     `chrome-ux-report.materialized.device_summary`
-  WHERE
-    (device = 'phone' AND p75_cls < 0.05)
-    OR
-    (device = 'desktop' AND p75_cls < 0.05) AND
+  WHERE (device = 'phone' AND p75_cls < 0.05) OR (device = 'desktop' AND p75_cls < 0.05) AND
     device IN ('phone', 'desktop')
   GROUP BY
     client,
@@ -39,22 +33,18 @@ cacheable AS (
   FROM
     `httparchive.almanac.requests`
   WHERE
-    firstHtml AND
-    (
-      (
-        resp_age IS NOT NULL AND
-        resp_age != '' AND
-        safe_cast(resp_age AS NUMERIC) > 0
-      )
-      OR
-      (
-        resp_cache_control IS NOT NULL AND
-        resp_cache_control != '' AND
-        expAge IS NOT NULL AND
-        resp_cache_control NOT LIKE 'no-store' AND
-        resp_cache_control NOT LIKE 'no-cache' AND
-        expAge > 0
-      )
+    firstHtml AND ((
+      resp_age IS NOT NULL AND
+      resp_age != '' AND
+      safe_cast(resp_age AS NUMERIC) > 0
+    ) OR (
+      resp_cache_control IS NOT NULL AND
+      resp_cache_control != '' AND
+      expAge IS NOT NULL AND
+      resp_cache_control NOT LIKE 'no-store' AND
+      resp_cache_control NOT LIKE 'no-cache' AND
+      expAge > 0
+    )
     )
   GROUP BY
     client,

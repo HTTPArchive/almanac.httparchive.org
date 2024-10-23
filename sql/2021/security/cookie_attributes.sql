@@ -31,8 +31,8 @@ SELECT
   COUNTIF(REGEXP_CONTAINS(cookie_value, r'(?i);.*max-age\s*=\s*.+')) / COUNT(0) AS pct_max_age,
   COUNTIF(REGEXP_CONTAINS(cookie_value, r'(?i);.*expires\s*=\s*.+')) AS count_expires,
   COUNTIF(REGEXP_CONTAINS(cookie_value, r'(?i);.*expires\s*=\s*.+')) / COUNT(0) AS pct_expires,
-  COUNTIF(NOT(REGEXP_CONTAINS(cookie_value, r'(?i);.*max-age\s*=\s*.+') OR REGEXP_CONTAINS(cookie_value, r'(?i);.*expires\s*=\s*.+'))) AS count_session,
-  COUNTIF(NOT(REGEXP_CONTAINS(cookie_value, r'(?i);.*max-age\s*=\s*.+') OR REGEXP_CONTAINS(cookie_value, r'(?i);.*expires\s*=\s*.+'))) / COUNT(0) AS pct_session,
+  COUNTIF(NOT (REGEXP_CONTAINS(cookie_value, r'(?i);.*max-age\s*=\s*.+') OR REGEXP_CONTAINS(cookie_value, r'(?i);.*expires\s*=\s*.+'))) AS count_session,
+  COUNTIF(NOT (REGEXP_CONTAINS(cookie_value, r'(?i);.*max-age\s*=\s*.+') OR REGEXP_CONTAINS(cookie_value, r'(?i);.*expires\s*=\s*.+'))) / COUNT(0) AS pct_session,
   COUNTIF(REGEXP_CONTAINS(cookie_value, r'(?i)^\s*__Secure-')) AS count_secure_prefix,
   COUNTIF(REGEXP_CONTAINS(cookie_value, r'(?i)^\s*__Secure-')) / COUNT(0) AS pct_secure_prefix,
   COUNTIF(REGEXP_CONTAINS(cookie_value, r'(?i)^\s*__Host-')) AS count_host_prefix,
@@ -47,7 +47,7 @@ FROM (
   WHERE
     date = '2021-07-01'
 ),
-UNNEST(cookie_values) AS cookie_value
+  UNNEST(cookie_values) AS cookie_value
 GROUP BY
   client,
   party

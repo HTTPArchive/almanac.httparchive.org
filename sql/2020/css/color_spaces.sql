@@ -175,7 +175,8 @@ FROM (
     `httparchive.almanac.parsed_css`,
     UNNEST(getColorSpaces(css)) AS color_space
   WHERE
-    date = '2020-08-01')
+    date = '2020-08-01'
+)
 GROUP BY
   client,
   color_space

@@ -23,10 +23,8 @@ SELECT
   COUNT(DISTINCT page) / total_page AS pct_ficon
 FROM
   `httparchive.almanac.parsed_css`
-JOIN
-  (SELECT _TABLE_SUFFIX AS client, COUNT(0) AS total_page FROM `httparchive.summary_pages.2020_08_01_*` GROUP BY _TABLE_SUFFIX)
-USING
-  (client)
+JOIN (SELECT _TABLE_SUFFIX AS client, COUNT(0) AS total_page FROM `httparchive.summary_pages.2020_08_01_*` GROUP BY _TABLE_SUFFIX)
+USING (client)
 WHERE
   ARRAY_LENGTH(checksSupports(css)) > 0 AND date = '2020-08-01' OR url LIKE '%fontawesome%' OR url LIKE '%icomoon%' OR url LIKE '%fontello%' OR url LIKE '%iconic%'
 GROUP BY

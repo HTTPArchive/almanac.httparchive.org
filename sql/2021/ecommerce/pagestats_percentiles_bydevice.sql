@@ -17,14 +17,15 @@ FROM (
       _TABLE_SUFFIX AS client,
       url AS page
     FROM `httparchive.technologies.2021_07_01_*`
-    WHERE category = 'Ecommerce' AND (app != 'Cart Functionality' AND app != 'Google Analytics Enhanced eCommerce'))
-  USING
-    (client, page)
+    WHERE category = 'Ecommerce' AND (app != 'Cart Functionality' AND app != 'Google Analytics Enhanced eCommerce')
+  )
+  USING (client, page)
   WHERE
     date = '2021-07-01'
   GROUP BY
     client,
-    page),
+    page
+),
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 GROUP BY
   percentile,

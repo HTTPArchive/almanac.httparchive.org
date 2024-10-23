@@ -62,7 +62,7 @@ WITH totals AS (
     _TABLE_SUFFIX AS client,
     COUNT(0) AS total_pages
   FROM
-    `httparchive.summary_pages.2022_07_01_*` -- noqa: L062
+    `httparchive.summary_pages.2022_07_01_*` -- noqa: CV09
   GROUP BY
     client
 )
@@ -83,24 +83,25 @@ FROM (
     COUNT(DISTINCT page) / ANY_VALUE(total_pages) AS pct_pages,
     APPROX_TOP_COUNT(class_prefix, 200) AS class_prefixes
   FROM (
-      SELECT DISTINCT
-        client,
-        page,
-        IF(REGEXP_CONTAINS(class, r'^(wp|fa)-.+'), REGEXP_REPLACE(class, r'^([^-]+).*', r'\1-*'), class) AS class_prefix
-      FROM
-        `httparchive.almanac.parsed_css`
-      LEFT JOIN
-        UNNEST(getSelectorParts(css).class) AS class
-      WHERE
-        date = '2022-07-01' AND
-        # Limit the size of the CSS to avoid OOM crashes.
-        LENGTH(css) < 0.1 * 1024 * 1024)
+    SELECT DISTINCT
+      client,
+      page,
+      IF(REGEXP_CONTAINS(class, r'^(wp|fa)-.+'), REGEXP_REPLACE(class, r'^([^-]+).*', r'\1-*'), class) AS class_prefix
+    FROM
+      `httparchive.almanac.parsed_css`
+    LEFT JOIN
+      UNNEST(getSelectorParts(css).class) AS class
+    WHERE
+      date = '2022-07-01' AND
+      # Limit the size of the CSS to avoid OOM crashes.
+      LENGTH(css) < 0.1 * 1024 * 1024
+  )
   JOIN
     totals
-  USING
-    (client)
+  USING (client)
   GROUP BY
-    client),
+    client
+),
   UNNEST(class_prefixes) AS class_prefix
 WHERE
   class_prefix.value IS NOT NULL

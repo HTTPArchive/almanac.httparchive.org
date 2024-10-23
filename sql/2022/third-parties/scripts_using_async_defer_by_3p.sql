@@ -39,18 +39,17 @@ base AS (
     third_party_domains.domain AS domain,
     COUNTIF(isAsync) AS async_count,
     COUNTIF(isDefer) AS defer_count
-  FROM
-    (
-      SELECT
-        _TABLE_SUFFIX AS client,
-        NET.HOST(data.src) AS domain,
-        data.isAsync AS isAsync,
-        data.isDefer AS isDefer,
-        pages.url AS page
-      FROM
-        `httparchive.pages.2022_06_01_*` AS pages,
-        UNNEST(getScripts(JSON_EXTRACT_SCALAR(payload, '$._almanac'))) AS data
-    ) AS potential_third_parties
+  FROM (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      NET.HOST(data.src) AS domain,
+      data.isAsync AS isAsync,
+      data.isDefer AS isDefer,
+      pages.url AS page
+    FROM
+      `httparchive.pages.2022_06_01_*` AS pages,
+      UNNEST(getScripts(JSON_EXTRACT_SCALAR(payload, '$._almanac'))) AS data
+  ) AS potential_third_parties
   INNER JOIN
     third_party_domains
   ON

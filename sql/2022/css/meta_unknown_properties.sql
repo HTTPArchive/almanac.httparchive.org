@@ -45,10 +45,10 @@ FROM (
     client,
     property,
     COUNT(DISTINCT page) OVER (PARTITION BY client, property) AS pages,
-    COUNT(DISTINCT page) OVER (PARTITION BY client) AS total,
+    COUNT(DISTINCT page) OVER (PARTITION BY client) AS total_pages,
     COUNT(DISTINCT page) OVER (PARTITION BY client, property) / COUNT(DISTINCT page) OVER (PARTITION BY client) AS pct_pages,
     SUM(freq) OVER (PARTITION BY client, property) AS freq,
-    SUM(freq) OVER (PARTITION BY client) AS total,
+    SUM(freq) OVER (PARTITION BY client) AS total_freq,
     SUM(freq) OVER (PARTITION BY client, property) / SUM(freq) OVER (PARTITION BY client) AS pct
   FROM (
     SELECT
@@ -63,7 +63,9 @@ FROM (
       date = '2022-07-01' AND
       LENGTH(property.property) > 1 AND
       # Limit the size of the CSS to avoid OOM crashes.
-      LENGTH(css) < 0.1 * 1024 * 1024))
+      LENGTH(css) < 0.1 * 1024 * 1024
+  )
+)
 WHERE
   pct_pages >= 0.01
 ORDER BY

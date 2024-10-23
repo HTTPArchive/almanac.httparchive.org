@@ -1,5 +1,5 @@
 CREATE TEMPORARY FUNCTION getTableSizes(json STRING)
-RETURNS ARRAY<STRUCT <key STRING, value INT64>>
+RETURNS ARRAY<STRUCT<key STRING, value INT64>>
 LANGUAGE js AS '''
 if (json === null) {
   return [];
@@ -45,7 +45,8 @@ FROM (
   FROM
     fonts,
     UNNEST(getTableSizes(payload)) AS table,
-    UNNEST([10, 25, 50, 75, 90, 100]) AS percentile)
+    UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
+)
 GROUP BY
   client,
   table,

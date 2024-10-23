@@ -23,16 +23,15 @@ SELECT
 FROM
   `httparchive.almanac.requests`,
   UNNEST(extractHTTPHeaders(response_headers)) AS header
-JOIN
-  (
-    SELECT
-      client,
-      COUNT(0) AS total
-    FROM
-      `httparchive.almanac.requests`
-    GROUP BY
-      client
-  )
+JOIN (
+  SELECT
+    client,
+    COUNT(0) AS total
+  FROM
+    `httparchive.almanac.requests`
+  GROUP BY
+    client
+)
 USING (client)
 WHERE
   date = '2021-07-01'

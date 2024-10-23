@@ -12,7 +12,8 @@ FROM (
     url,
     CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._almanac'), "$['seo-anchor-elements'].navigateHash") AS INT64) > 0 AS navigate_hash
   FROM
-    `httparchive.pages.2019_07_01_*`)
+    `httparchive.pages.2019_07_01_*`
+)
 JOIN
   `httparchive.technologies.2019_07_01_*`
 USING (_TABLE_SUFFIX, url)

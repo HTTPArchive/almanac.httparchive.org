@@ -51,23 +51,21 @@ SELECT
   SAFE_DIVIDE(SUM(data.noimageindex), COUNT(0)) AS noimageindex,
   SAFE_DIVIDE(SUM(data.nocache), COUNT(0)) AS nocache,
   SAFE_DIVIDE(SUM(data.indexifembedded), COUNT(0)) AS indexifembedded
-FROM
-  (
-    SELECT
-      _TABLE_SUFFIX AS client,
-      total,
-      JSON_EXTRACT(payload, '$._robots_meta') AS robots_meta_json
+FROM (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    total,
+    JSON_EXTRACT(payload, '$._robots_meta') AS robots_meta_json
+  FROM
+    `httparchive.pages.2022_07_01_*` -- noqa: CV09
+  JOIN (
+    SELECT _TABLE_SUFFIX, COUNT(0) AS total
     FROM
-      `httparchive.pages.2022_07_01_*` -- noqa: L062
-    JOIN
-      (
-        SELECT _TABLE_SUFFIX, COUNT(0) AS total
-        FROM
-          `httparchive.pages.2022_07_01_*` -- noqa: L062
-        GROUP BY _TABLE_SUFFIX
-      )
-    USING (_TABLE_SUFFIX)
-  ),
+      `httparchive.pages.2022_07_01_*` -- noqa: CV09
+    GROUP BY _TABLE_SUFFIX
+  )
+  USING (_TABLE_SUFFIX)
+),
   UNNEST(parseRobotsMeta(robots_meta_json)) AS data
 
 GROUP BY

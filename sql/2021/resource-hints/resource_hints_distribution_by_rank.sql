@@ -38,17 +38,16 @@ FROM (
   FROM
     `httparchive.pages.2021_07_01_*`
 ),
-UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
+  UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 JOIN (
-    SELECT
-      _TABLE_SUFFIX AS client,
-      url AS page,
-      rank AS _rank
-    FROM
-      `httparchive.summary_pages.2021_07_01_*`
+  SELECT
+    _TABLE_SUFFIX AS client,
+    url AS page,
+    rank AS _rank
+  FROM
+    `httparchive.summary_pages.2021_07_01_*`
 )
-USING
-  (client, page),
+USING (client, page),
   UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank
 WHERE
   _rank <= rank
