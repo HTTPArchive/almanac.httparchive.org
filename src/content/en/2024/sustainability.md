@@ -815,7 +815,7 @@ Let's focus on some quick wins, some of which will be familiar to you from the J
 
 ##### Minification
 
-While minification for JavaScript is a common practice (as mentioned earlier in this chapter), it's also important to recognize the value of minifying other <a hreflang="en" href="https://web.dev/articles/optimizing-content-efficiency-optimize-encoding-and-transfer?hl=en">static text assets</> such as CSS files due to the data savings that can be obtained. Tools within IDEs can help automate and streamline this process to increase efficiency.
+While minification for JavaScript is a common practice (as mentioned earlier in this chapter), it's also important to recognize the value of minifying other <a hreflang="en" href="https://web.dev/articles/optimizing-content-efficiency-optimize-encoding-and-transfer?hl=en">static text assets</a> such as CSS files due to the data savings that can be obtained. Tools within IDEs can help automate and streamline this process to increase efficiency.
 
 {{ figure_markup(
   image="unminified-css-savings.png",
