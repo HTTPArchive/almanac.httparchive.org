@@ -193,8 +193,7 @@
           "part": "IV",
           "chapter_number": "23",
           "title": "HTTP",
-          "slug": "http",
-          "todo": true
+          "slug": "http"
         },
         {
           "part": "IV",
