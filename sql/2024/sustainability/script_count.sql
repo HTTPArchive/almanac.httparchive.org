@@ -12,7 +12,7 @@ WITH script_data AS (
     SAFE_DIVIDE(CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT(JSON_EXTRACT_SCALAR(payload, '$._javascript'), '$.script_tags'), '$.src') AS INT64),
       CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT(JSON_EXTRACT_SCALAR(payload, '$._javascript'), '$.script_tags'), '$.total') AS INT64)) AS pct_external_script
   FROM
-    `httparchive.all.pages` TABLESAMPLE SYSTEM (0.01 PERCENT)
+    `httparchive.all.pages`
   WHERE
     date = '2024-06-01' AND
     JSON_EXTRACT_SCALAR(JSON_EXTRACT(JSON_EXTRACT_SCALAR(payload, '$._javascript'), '$.script_tags'), '$.total') IS NOT NULL
