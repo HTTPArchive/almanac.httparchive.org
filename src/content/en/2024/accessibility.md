@@ -110,8 +110,14 @@ How font sizes are defined also affects the readability, as pixels are not as fl
 
 Identifying language with the lang attribute enhances screen reader support and facilitates automatic browser translations. This feature benefits all users. For instance, without the lang attribute, Chrome's automatic translation feature may produce inaccurate translations. Manuel Matuzović provides an example of [how missing lang attributes can lead to translation errors](https://www.matuzo.at/blog/lang-attribute/). The lang attribute is also helpful when [styling web pages for different languages and reading directions](https://chenhuijing.com/blog/css-for-i18n/), as Chen Hui-Jing points out.
 
-**86.2%**  
-*Mobile sites have a valid lang attribute.*
+{{ figure_markup(
+  caption="Mobile sites have a valid lang attribute..",
+  content="86.2%",
+  classes="big-number",
+  sheets_gid="559595084",
+  sql_file="valid_html_lang.sql"
+)
+}}
 
 It's promising to note that in 2022, 83% of mobile websites included a lang attribute, and two years later it is at 86.2%. However, since this is a Level A conformance issue under WCAG, there is still room for improvement. To meet this criterion, the lang attribute should be added to the \<html\> tag with a recognized [primary language tag](https://www.w3.org/WAI/standards-guidelines/act/rules/bf051a/#known-primary-language-tag). This global attribute can also be applied to other tags if the page contains multiple languages. Properly defining the language is crucial. Sometimes, when a template is copied to create a new website, discrepancies can arise between the language of the content and the language attribute (lang="en") in the code.
 
@@ -197,8 +203,14 @@ Headings are crucial for all users, including those with assistive technologies,
 
 Sadly the heading hierarchy has gotten worse over the last two years. Lighthouse tracks properly ordered headings and it has dropped just over 1% to: 
 
-**56.6%**  
-*Mobile sites passing the Lighthouse audit for properly ordered headings.*
+{{ figure_markup(
+  caption="Mobile sites passing the Lighthouse audit for properly ordered heading.",
+  content="56.6%",
+  classes="big-number",
+  sheets_gid="1279863228",
+  sql_file="lighthouse_a11y_audits.sql"
+)
+}}
 
 Headings often have various styles and are frequently misused to visually style a website or mark specific sections rather than structure the content. This misuse negatively impacts both user experience and accessibility tools as well as search engines. CSS should be used to style elements, not heading tags. 
 
@@ -210,8 +222,14 @@ Currently, 21.3% of mobile websites and 21.9% of desktop websites include a sear
 
 Skip links enable users who rely on keyboard or switch control devices to bypass various sections of a webpage without having to navigate through every focusable element. A common use is to skip over the primary navigation and move directly to the \<main\> content, particularly on sites with extensive interactive navigation menus. This can dramatically increase the user experience for keyboard-only users. 
 
-**24%**  
-*Mobile and desktop pages likely featuring a skip link*
+{{ figure_markup(
+  caption="Mobile and desktop pages likely featuring a skip link.",
+  content="24%",
+  classes="big-number",
+  sheets_gid="756398875",
+  sql_file="skip_links.sql"
+)
+}}
 
 We discovered that 24% of both desktop and mobile pages likely include a skip link, helping users to avoid unnecessary parts of the page. This percentage may actually be higher, as our analysis only detects skip links positioned near the top of the page (such as those for bypassing navigation). Skip links can also be used to skip other sections of the page, like described above with the SkipTo script.
 
