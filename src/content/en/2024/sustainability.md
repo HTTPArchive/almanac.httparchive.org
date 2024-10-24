@@ -663,14 +663,13 @@ From a sustainability perspective, animations can be resource-intensive:
 
 Recent data on <a hreflang="en" href="https://web.dev/articles/stick-to-compositor-only-properties-and-manage-layer-count">non-composited animations</a> provides insight into their usage across websites:
 
-TODO
 {{ figure_markup(
-  image="video-autoplay-usage.png",
+  image="non-composited-animations-per-page.png",
   caption="Non-composited animations per page",
   description="A column chart showing that on the 90th percentile there are 12 non-composited animation on desktop and 11 on mobile. On the 75th percentile it goes down to 3 on desktop and 2 on mobile. On the 50th, the 25th and the 10th percentile there are 0 non-composited animations on both desktop and mobile",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1761138794&format=interactive",
-  sheets_gid="215678116",
-  sql_file="TODO get from Performance chapter"
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1367877831&format=interactive",
+  sheets_gid="1335370570",
+  sql_file="../performance/cls_animations.sql"
 ) }}
 
 This data reveals:
