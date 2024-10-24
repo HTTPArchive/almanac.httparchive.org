@@ -6,8 +6,8 @@ WITH video_data AS (
     `httparchive.all.pages`,
     UNNEST(JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._almanac'), '$.videos.nodes')) AS video_nodes
   WHERE
-    date = '2024-06-01'  -- Updated date
-    AND is_root_page
+    date = '2024-06-01' AND  -- Updated date
+    is_root_page
   LIMIT 10000  -- Limit the number of rows processed for faster testing
 )
 

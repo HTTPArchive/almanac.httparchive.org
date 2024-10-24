@@ -7,8 +7,8 @@ WITH video_data AS (
     `httparchive.all.pages`,
     UNNEST(JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._almanac'), '$.videos.nodes')) AS video_nodes
   WHERE
-    date IN ('2024-06-01', '2023-07-01')  -- Updated dates
-    AND is_root_page
+    date IN ('2024-06-01', '2023-07-01') AND  -- Updated dates
+    is_root_page
 )
 
 SELECT
