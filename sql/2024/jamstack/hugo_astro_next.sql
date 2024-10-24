@@ -201,9 +201,6 @@ filtered_sites AS (
       SELECT 1
       FROM 
         UNNEST(tech.categories) AS category
-      WHERE 
-        category = 'JavaScript frameworks' OR
-        category = 'Static site generator'
     ) AND
     is_jamstack IN ('jamstack')
   GROUP BY

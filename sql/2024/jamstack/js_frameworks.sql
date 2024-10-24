@@ -135,7 +135,9 @@ WITH potential_jamstack_sites AS (
     LEFT JOIN
         `httparchive.all.requests` r
     ON
-        p.date = r.date AND p.client = r.client AND p.page = r.page
+        p.date = r.date AND 
+        p.client = r.client AND 
+        p.page = r.page
     WHERE
         p.date IN ('2022-06-01', '2023-06-01', '2024-06-01') AND
         p.client = 'mobile' AND
@@ -143,8 +145,14 @@ WITH potential_jamstack_sites AS (
         r.is_root_page AND
         r.is_main_document
     GROUP BY
-        p.date, p.client, p.page, p.technologies, r.response_headers, p.summary
+        p.date, 
+        p.client, 
+        p.page, 
+        p.technologies, 
+        r.response_headers, 
+        p.summary
 ),
+
 -- Combine all the information and calculate total_score
 total_sites AS (
   SELECT
@@ -164,7 +172,7 @@ total_sites AS (
     p.req_revalidation,
     p.cache_score,
     p.dynamic_penalty,
-
+    
     -- Calculate Total_Score as the sum of Cache_Score, TTFB_Score, SSG_Score, and paas_score, minus dynamic penalties
     (
         p.cache_score + p.ttfb_score + p.ssg_score + p.paas_score + p.dynamic_penalty
@@ -188,32 +196,26 @@ filtered_sites AS (
     date, 
     url,
     tech.technology AS technology,
-    is_jamstack,
-    bytes_js,
-    bytes_css,
-    bytes_total,
-    total_requests
+    is_jamstack
   FROM
     total_sites,
-    UNNEST(technologies) AS tech 
+    UNNEST(technologies) AS tech
   WHERE
-    EXISTS (
-      SELECT 1
-      FROM 
-        UNNEST(tech.categories) AS category
-      WHERE 
-        category = 'JavaScript frameworks'
-    ) AND
-    is_jamstack IN ('jamstack', 'jamstacky')
+    (
+      EXISTS (
+        SELECT 1
+        FROM UNNEST(tech.categories) AS category
+        WHERE category = 'JavaScript frameworks'
+      )
+      OR 
+      tech.technology = 'Next.js'
+    ) 
+    AND is_jamstack IN ('jamstack', 'jamstacky')
   GROUP BY
     date, 
-    url, 
+    url,
     is_jamstack, 
-    technology,
-    bytes_js,
-    bytes_css,
-    bytes_total,
-    total_requests
+    tech.technology
   ORDER BY
     date ASC
 )
@@ -234,3 +236,4 @@ HAVING
 ORDER BY
   date ASC, 
   pages DESC
+  
