@@ -421,12 +421,13 @@ Pages with live region ARIA roles, and their implicit aria-live value
 
 For more details on live region variants and their usage, check the [MDN live region documentation](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/ARIA_Live_Regions) or explore with this [live demo by Deque](https://dequeuniversity.com/library/aria/liveregion-playground).
 
-## **User Personalization Widgets and Automatic Remediation (apps and overlays)**
+## **User Personalization Widgets and Overlay Remediation**
 
-Users are increasingly used to seeing accessibility widgets on websites. These allow them to access accessibility features that improve their experience. Accessibility Overlays are one type of these and usually include two types of technology: 
+Users are increasingly used to seeing accessibility widgets on websites. These allow them to access accessibility features that improve their experience. Accessibility Overlays are one type of these and usually include two types of technology: a personalization widget and an JavaScript overlay. Overlays can be either generic or custom: 
 
 * **user personalization** – tools that enable the site visitor to make changes to the appearance of the site via an on-site menu — changes like font or color contrast adjustments, and   
-* **automated remediation** – technology that scans for and attempts to remediate many common WCAG issues to the front-end code, often with JavaScript. 
+* **automated overlay remediation** – a generic technology that automatically scans for and attempts to remediate many common WCAG issues which affect the user interface, with complex algorithms and/or Artificial Intelligence.  
+* **custom overlay remediation** \- site specific code written by expert developer(s) to address specific conformance needs, and verified by accessibility experts in context, to avoid conflict with assistive technology.
 
 Browsers have great built-in tools for personalization, but many users do not know how to use them.  Some sites add **personalization widgets** that often provide a range of accessibility features to make customization easier. Often this includes font size, spacing, and contrast, which is [included in the browser](https://mcmw.abilitynet.org.uk/). This may also include tools like [text to speech](https://en.wikipedia.org/wiki/Speech_synthesis), which is [included in Edge](https://www.microsoft.com/en-us/edge/features/read-aloud?form=MA13FJ). This can be useful for a range of users, but especially for those that do not have their own assistive technology available in that environment. These widgets can be helpful for users who are not actively using assistive technology or already maximizing their browser’s built-in accessibility features. 
 
@@ -434,15 +435,15 @@ If used, it is important that these tools do not interfere with the UX including
 
 “Users of assistive technology already have their devices and browsers configured to their preferred settings. The overlay technology can interfere with the user’s assistive technology and override user settings, forcing people to use the overlay instead. This makes the website less accessible to some user groups and may prevent access to content.”
 
-**Automated remediation** is the second type of technology often found in an overlay product. Automated remediation continuously finds and tries to address common WCAG issues as the page is being rendered in the browser. 
+**Overlay remediations** are the second type of technology often found in an overlay product. Automated overlay remediation continuously tries to find and address common WCAG issues as the page is being rendered in the browser. Custom overlay remediations can also be written in JavaScript to overcome accessibility barriers, especially when there is legacy code which can no longer be updated.  With good manual testing, especially with users with disabilities, a custom overlay can be an effective solution. 
 
-There are many documented reports of popular overlays making a product less accessible for some users. 
+There are many documented reports of popular automated overlays making a product less accessible for some users. 
 
-This technology can address some common barriers for some users, making the site more accessible. Automated remediation can also advance an organization’s accessibility progress and path to compliance by freeing development teams to focus on more complex issues that can only be resolved by addressing the design or source code. 
+This technology can address some common barriers for some users, making the site more accessible. Automated overlays can also advance an organization’s accessibility progress and path to compliance by freeing development teams to focus on more complex issues that can only be resolved by addressing the design or source code. 
 
 Unfortunately, many teams simply stop investing in accessibility after investing in an overlay. 
 
-This technology does not replace the need for good accessibility practices. Accessibility needs to be included in all stages of the product life cycle. Automated remediation is always going to have more usability, security and performance problems than simply fixing the errors at the source. It is important to remember that no automated tool can make a website fully accessible or WCAG compliant. 
+This technology does not replace the need for good accessibility practices. Accessibility needs to be included in all stages of the product life cycle. Overlays are always going to have more usability, security and performance problems than simply fixing the errors at the source. It is important to remember that no automated tool can make a website fully accessible or WCAG compliant. 
 
 ![][image21]  
 
@@ -466,7 +467,7 @@ It is important to clearly understand the capabilities and limitations of any to
 
 Neither the EU Commission or US Department of Justice (DOJ) state how web accessibility standards have to be met—just that they must be met. From the [DOJ ADA Title II rulemaking](https://www.federalregister.gov/documents/2024/04/24/2024-07758/nondiscrimination-on-the-basis-of-disability-accessibility-of-web-information-and-services-of-state) The rule “does not address the internal policies or procedures that public entities might implement to conform to the technical standard under this rule.” 
 
-In some instances, a combination of automated remediation tools and manual expertise has the potential to accelerate accessibility improvements. 
+In some instances, a combination of overlays and manual expertise has the potential to accelerate accessibility improvements. 
 
 ## **Sectors and accessibility**
 
