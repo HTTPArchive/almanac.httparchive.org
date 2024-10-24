@@ -544,13 +544,12 @@ For more detailed information on implementing these formats and their performanc
 As the diversity of devices accessing the web continues to grow, delivering appropriately sized images remains crucial for both performance and sustainability. Responsive image techniques allow us to serve optimized images for each scenario, reducing unnecessary data transfer and processing.
 It's worth remembering that image quality doesn't always need to be at maximum.
 
-TODO
 {{ figure_markup(
-  image="image-format-adoption.png",
+  image="responsive-image-types.png",
   caption="Responsive image types",
-  description="TODO",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=1820261877&format=interactive",
-  sheets_gid="1939630368",
+  description="A column chart showing that around 42.4% of websites use the srcset attribute on both desktop and mobile, 32.4% of them used it with sizes on desktop and 31.8% on mobile, 10% of them used the srcset attribute w/o sizes on desktop and 10.6% on mobile. 9.3% of the websites use the picture element on desktop and 9.2% of them on mobile",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1114669918&format=interactive",
+  sheets_gid="987814873",
   sql_file=""
 ) }}
 
