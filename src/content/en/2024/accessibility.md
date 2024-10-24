@@ -111,7 +111,7 @@ How font sizes are defined also affects the readability, as pixels are not as fl
 Identifying language with the lang attribute enhances screen reader support and facilitates automatic browser translations. This feature benefits all users. For instance, without the lang attribute, Chrome's automatic translation feature may produce inaccurate translations. Manuel Matuzović provides an example of [how missing lang attributes can lead to translation errors](https://www.matuzo.at/blog/lang-attribute/). The lang attribute is also helpful when [styling web pages for different languages and reading directions](https://chenhuijing.com/blog/css-for-i18n/), as Chen Hui-Jing points out.
 
 {{ figure_markup(
-  caption="Mobile sites have a valid lang attribute..",
+  caption="Mobile sites have a valid lang attribute.",
   content="86.2%",
   classes="big-number",
   sheets_gid="559595084",
@@ -297,8 +297,14 @@ Currently, 64.9% of mobile sites (down from 67% in 2022\) use the required attri
 
 Websites often use CAPTCHAs to verify that a visitor is human and not a bot. CAPTCHAs, which stands for “Completely Automated Public Turing Test to Tell Computers and Humans Apart,” are commonly used to prevent malicious software. 
 
-**16%**  
-Mobile sites implementing one of the two detectable CAPTCHA types. 
+{{ figure_markup(
+  caption="Mobile sites implementing one of the two detectable CAPTCHA types.",
+  content="16%",
+  classes="big-number",
+  sheets_gid="590408963",
+  sql_file="captcha_usage.sql"
+)
+}}
 
 These tests can be challenging for everyone, especially for those with low vision or reading disabilities, and may become problematic under future WCAG guidelines. The W3C has suggested alternatives to visual CAPTCHAs, which are worth exploring.
 
@@ -314,8 +320,15 @@ A media player is often embedded in the page to allow a user to play the audio o
 
 Images can have an alt attribute that provides a text description for screen readers. 68.9% (up from 59% in 2022\) of images passed the Google Lighthouse [audit for images with alt text](https://dequeuniversity.com/rules/axe/4.7/image-alt). Which is a notable increase, especially because the number only increased about 1% from 2021 to 2022\.
 
-**69%**  
-*Pass the Lighthouse audit for images with alt text.*
+{{ figure_markup(
+  caption="Pass the Lighthouse audit for images with alt text.",
+  content="69%",
+  classes="big-number",
+  sheets_gid="1279863228",
+  sql_file="lighthouse_a11y_audits.sql"
+)
+}}
+
 
 The alt text should reflect the image’s context. For decorative images, alt="" is appropriate, while meaningful images require detailed descriptions. It's also important to avoid using file names as alt text, as it almost never provides relevant information. Currently 7.5% of mobile and 7.2% of desktop sites currently do.
 
@@ -337,8 +350,14 @@ One promising approach is from Mike Feranda in Drupal who has incorporated AI in
 
 The \<track\> element is used to provide timed text for \<audio\> and \<video\> elements, such as captions (sometimes referred to as subtitles) and descriptions. This helps users with hearing loss or visual impairments understand the content. 
 
-**0.1%**  
-*Sites with \<audio\> elements include a \<track\> element.* 
+{{ figure_markup(
+  caption="Sites with \<audio\> elements include a \<track\> element.",
+  content="0.1%",
+  classes="big-number",
+  sheets_gid="546746158",
+  sql_file="audio_track_usage.sql"
+)
+}}
 
 For \<video\> elements, the figure is slightly higher at 0.5% for both desktops and 0.65% for mobile sites. These statistics do not cover audio or video embedded via \<iframe\>, where third-party services often offer text alternatives. Our industry can do a lot better. 
 
@@ -358,8 +377,14 @@ HTML5 introduced numerous native elements with built-in semantics and roles. For
 
 We observed that over 50% of mobile sites (up from 33% in 2022, and 29% in 2021 and 25% in 2020\) had homepages with at least one element assigned the role="button". This increase is concerning, as it suggests websites may be using \<div\> or \<span\> elements as custom buttons or redundantly applying roles to \<button\> elements. Both practices are problematic and violate the fundamental ARIA principle of using native HTML elements—such as \<button\>—whenever possible.
 
-**18%**   
-*Websites with at least one anchor with an href with a role="button".* 
+{{ figure_markup(
+  caption='Websites with at least one anchor with an href with a role="button".',
+  content="18%",
+  classes="big-number",
+  sheets_gid="172806090",
+  sql_file="anchors_with_role_button.sql"
+)
+}}
 
 18% of websites have at least one link with role=”button” (slightly down from 21% in 2022). While adding an ARIA role can inform assistive technologies about an element's purpose, it doesn’t make the element function like its native counterpart. This discrepancy can lead to issues with keyboard navigation since links and buttons have different behaviors. For example, links are not activated by the space key, whereas buttons are.
 
@@ -369,8 +394,15 @@ When an element is assigned the role="presentation", it loses its inherent seman
 
 Removing semantics with role="presentation" means the element only has visual presence and its structure is not recognized by assistive technologies, making it difficult for screen readers to convey the information.
 
-**40.2%**  
-*Of desktop sites and 39.3% of mobile sites have at least one role=”presentation”*
+
+{{ figure_markup(
+  caption='Of desktop sites and 39.3% of mobile sites have at least one role=”presentation".',
+  content="40.2%",
+  classes="big-number",
+  sheets_gid="514880281",
+  sql_file="common_aria_role.sql"
+)
+}}
 
 This is concerning as in 2022 it was already high at 25% of desktop sites and 24% of mobile sites.
 
@@ -400,8 +432,14 @@ In some cases, aria-label is useful, such as when multiple buttons have the same
 
 Sometimes, visual interfaces include redundant elements that aren't beneficial for users of assistive technologies. In these cases, aria-hidden="true" can be used to [hide elements from screen readers](https://niquette.ca/articles/hiding-elements/). However, this approach should not be used if removing the element would result in less information for screen reader users compared to what is presented visually. Hiding content from assistive technologies should not be a way to bypass content that is difficult to make accessible.
 
-**63%**  
-Had at least one element with the aria-hidden attribute. 
+{{ figure_markup(
+  caption="Had at least one element with the aria-hidden attribute.",
+  content="63%",
+  classes="big-number",
+  sheets_gid="514880281",
+  sql_file="common_aria_role.sql"
+)
+}}
 
 Using this attribute to hide and show semantic content. It is a common practice in modern interfaces when they want to indicate if content is hidden to the accessibility API. 
 
@@ -413,8 +451,14 @@ For instance, disclosure widgets should use the aria-expanded attribute to signa
 
 A common approach developers use to provide extra information for screen reader users involves hiding text visually with CSS while keeping it accessible to screen readers. This CSS technique ensures that the text is included in the accessibility tree but remains hidden from sight.
 
-**16%**  
-Desktop websites with a sr-only or visually-hidden class
+{{ figure_markup(
+  caption="Desktop websites with a sr-only or visually-hidden class.",
+  content="16%",
+  classes="big-number",
+  sheets_gid="538059940",
+  sql_file="sr_only_classes.sql"
+)
+}}
 
 The sr-only and visually-hidden class names are frequently used by developers and UI frameworks to create text that is only accessible to screen readers. For instance, Bootstrap and Tailwind include sr-only classes for this purpose. We found that 16% of desktop pages and 15% of mobile pages used one or both of these CSS classes (Each up a percentage point from 2022). It's important to note that not all screen reader users are completely visually impaired, so relying too heavily on screen reader-only solutions should be avoided.
 
@@ -422,8 +466,14 @@ The sr-only and visually-hidden class names are frequently used by developers an
 
 Sometimes, it's necessary to inform screen readers about new or updated content in the DOM. For example, form validation errors should be communicated, while a lazy-loaded image might not need to be announced. Updates to the DOM should be made in a non-disruptive manner.
 
-**28.8%**   
-Desktop pages with live regions using aria-live
+{{ figure_markup(
+  caption="Desktop pages with live regions using aria-live.",
+  content="28.8%",
+  classes="big-number",
+  sheets_gid="514880281",
+  sql_file="common_aria_role.sql"
+)
+}}
 
 ARIA live regions enable screen readers to announce changes in the DOM. We found that 28.8% of desktop pages (up from 23% in 2022\) and 28.1 of mobile pages (up from 22% in 2022\) use live regions with the aria-live attribute. Additionally, pages use ARIA live region roles with implicit aria-live values:
 
