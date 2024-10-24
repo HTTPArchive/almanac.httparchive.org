@@ -8,13 +8,13 @@ editors: [Cherry]
 analysts: [kevinfarrugia, guaca]
 translators: []
 results: https://docs.google.com/spreadsheets/d/15038wEIoqY53Y_kR8U6QWM-PBO31ZySQGi147ABTNBc/edit#gid=1778117656
-featured_quote:
-featured_stat_1:
-featured_stat_label_1:
-featured_stat_2:
-featured_stat_label_2:
-featured_stat_3:
-featured_stat_label_3:
+featured_quote: Web performance is improving across loading times, interactivity, and visual stability. However, the gap between mobile and desktop experiences remains significant.
+featured_stat_1: 43%
+featured_stat_label_1: of mobile websites have good CWV scores when measured with INP, which is 5% lower than when measured with FID.
+featured_stat_2: 15%
+featured_stat_label_2: of websites still use unnecessary lazy-loading on LCP elements.
+featured_stat_3: 13%
+featured_stat_label_3: the percentage by which good CWV scores are higher on secondary pages compared to homepages for mobile websites.
 ---
 
 ## Introduction {#introduction}
