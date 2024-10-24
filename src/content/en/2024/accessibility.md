@@ -52,8 +52,6 @@ Despite ongoing challenges, there has been noticeable improvement in web accessi
 
 Accessibility scores are an important tool, but people familiar with [Goodhart's Law](https://en.wikipedia.org/wiki/Goodhart%27s_law) will know the danger of a measure becoming a target. We must also acknowledge that automated tests [can only address a portion](https://www.smashingmagazine.com/2022/11/automated-test-results-improve-accessibility/#automate-it) of the WCAG Success Criteria, and that [a perfect score does not guarantee an accessible site](https://www.matuzo.at/blog/building-the-most-inaccessible-site-possible-with-a-perfect-lighthouse-score).  
 
-![Median Lighthouse Accessibility Scores - graph showing general improvements over time][image3]
-
 {{ figure_markup(
   image="",
   caption="Median Lighthouse Accessibility Scores.",
