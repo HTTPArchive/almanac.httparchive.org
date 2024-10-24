@@ -2,9 +2,8 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Sustainability
 description: Sustainability chapter of the 2024 Web Almanac covering environmental impacts of web pages, where they come from and how to reduce them
-# TODO: Is mgifford an author or a reviewer? He shouldn't be both
 authors: [ldevernay, burakguneli, ines-akrap, AlexDawsonUK, mgifford, timfrick]
-reviewers: [mgifford, lebreRafael]
+reviewers: [lebreRafael]
 editors: [cqueern]
 analysts: [Falafelqueen, burakguneli, mgifford]
 translators: []
@@ -13,7 +12,7 @@ ldevernay_bio: Laurent Devernay Satygraha is a Digital Sobriety Expert for <a hr
 burakguneli_bio: Burak is Frontend Software Engineer who strive to understand how things work under the hood to unravel their mysteries, especially in Javascript. He is based in Berlin and if you're also living in Berlin, there's a good chance you might bump into each other at an indoor cycling class.
 ines-akrap: Ines Akrap is a Frontend Software Engineer passionate about optimizing websites to be fast, sustainable, and provide the best user experience for every user. She works in Storyblok as a Solutions Engineer. She enjoys sharing her knowledge through talks, podcasts, workshops, and courses.
 AlexDawsonUK_bio: Alexander Dawson is a Web Developer, Sustainability Researcher, and editor of the <a href="https://w3c.github.io/sustyweb/">Web Sustainability Guidelines</a>. You can find more details about him at <a href="https://alexanderdawson.com/">alexanderdawson.com</a>.
-mgifford: TODO
+mgifford_bio: Mike Gifford is CivicActions’ Open Standards & Practices Lead. He is also a thought leader on open government, digital accessibility and sustainability. He has served as a Drupal Core Accessibility Maintainer and also a W3C Invited Expert. He is a recognized authoring tool accessibility expert and contributor to the W3C's Draft Web Sustainability Guidelines (WSG) 1.0.
 timfrick_bio: Tim Frick is President of <a href="https://mightybytes.com">Mightybytes</a>, a digital agency and Certified B Corp located in Chicago. A seasoned public speaker, he regularly presents on sustainable design, measuring impact, and problem solving in the digital economy. Tim is also the author of four books, including <a href="https://www.oreilly.com/library/view/designing-for-sustainability/9781491935767/">Designing for Sustainability, A Guide to Building Greener Digital Products and Services</a>, from O'Reilly Media. Connect with <a href="https://www.linkedin.com/in/timfrick/">Tim on LinkedIn</a>.
 featured_quote: This is the second Web Almanac chapter about Sustainability and, guess what, climactic events didn't get any better. There are still a lot of opportunities to make digital more sustainable, starting with the web. We'll see that a lot happened since 2022 in the sustainability field and offer even more opportunities to make the web more resilient.
 featured_stat_1: 14%
@@ -66,7 +65,7 @@ There are many ways to assess environmental impacts, but there are a few things 
 - Tools usually stick to page loading and sometimes scrolling. This is not always relevant to real usage and often misses some obvious things, such as accepting cookies, client-side cache, playing videos, etc. Real user journeys should be measured, based on analytics and user feedback.
 - GHG is often used as a proxy for environmental impacts, but this is not enough. To avoid impact transfers and greenwashing, other indicators should be used, as <a hreflang="en" href="https://librairie.ademe.fr/ged/7595/R__f__rentiel_rcp_services_num__riques.pdf">stated by the ADEME</a> (PDF, French, 980 kB).
 
-These notions are detailed in this article about the environmental impacts of web elements: <a hreflang="en" href="https://greenspector.com/en/reduce-the-weight-of-a-web-page-which-elements-have-the-greatest-impact/">https://greenspector.com/en/reduce-the-weight-of-a-web-page-which-elements-have-the-greatest-impact/ </a>
+These notions are detailed in this <a hreflang="en" href="https://greenspector.com/en/reduce-the-weight-of-a-web-page-which-elements-have-the-greatest-impact/">article about the environmental impacts of web elements</a>
 
 _Embedded environmental impact needs to be factored into our calculations. The web should not require users to update their devices every 2-3 years. We need to ensure that the lifespans of our digital infrastructure are extended._
 
