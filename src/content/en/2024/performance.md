@@ -7,6 +7,8 @@ reviewers: [rviscomi, siakaramalegos]
 editors: [Cherry]
 analysts: [kevinfarrugia, guaca]
 translators: []
+ines-akrap_bio: TODO
+imeugenia_bio: Jevgenija is a frontend engineer and tech event oranizer who is passionate about web performance and developer experience. She works at <a hreflang="en" href="https://www.limehome.com/en/">Limehome</a>—a digital first hotel brand. She ran a Google Developer Group in Latvia and Berlin for several years.
 results: https://docs.google.com/spreadsheets/d/15038wEIoqY53Y_kR8U6QWM-PBO31ZySQGi147ABTNBc/edit#gid=1778117656
 featured_quote: Web performance is improving across loading times, interactivity, and visual stability. However, the gap between mobile and desktop experiences remains significant.
 featured_stat_1: 43%
