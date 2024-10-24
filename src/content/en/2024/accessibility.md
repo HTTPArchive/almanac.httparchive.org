@@ -20,8 +20,7 @@ featured_stat_label_3:
 ---
 
 # Accessibility (Web Almanac 2024\)
-
-![][image1]  
+  
 **Authors:** Mike Gifford
 **Reviewers:** Beatriz Gonzalez, Hidde de Vries  
 **Analysts:** Mike Gifford  
@@ -54,6 +53,16 @@ Despite ongoing challenges, there has been noticeable improvement in web accessi
 Accessibility scores are an important tool, but people familiar with [Goodhart's Law](https://en.wikipedia.org/wiki/Goodhart%27s_law) will know the danger of a measure becoming a target. We must also acknowledge that automated tests [can only address a portion](https://www.smashingmagazine.com/2022/11/automated-test-results-improve-accessibility/#automate-it) of the WCAG Success Criteria, and that [a perfect score does not guarantee an accessible site](https://www.matuzo.at/blog/building-the-most-inaccessible-site-possible-with-a-perfect-lighthouse-score).  
 
 ![Median Lighthouse Accessibility Scores - graph showing general improvements over time][image3]
+
+{{ figure_markup(
+  image="",
+  caption="Median Lighthouse Accessibility Scores.",
+  description="Bar chart showing the showing general improvements over time in the Google Lighthouse accessibility score.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=837866368&format=interactive",
+  sheets_gid="255848343",
+  sql_file="lighthouse_a11y_score.sql"
+  )
+}}
 
 We can similarly see an increase in the median Lighthouse score by page rank with an increase in the percentage of pages. It is a smaller improvement than it was between 2020 and 2021 and the 2023 Web Almanac wasn’t produced, so there is a 1% increase for two years. However, it is also worth noting that the Lighthouse score is leveraging axe, which has increased its tests to align more with [WCAG 2.2](https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/). 
 
