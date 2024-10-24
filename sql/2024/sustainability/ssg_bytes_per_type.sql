@@ -59,7 +59,7 @@ WITH ssg_data AS (
     CAST(JSON_VALUE(summary, '$.bytesFont') AS INT64) / CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64) AS font_proportion,
 
     -- Resource-specific emissions calculations
-    (SAFE_DIVIDE(CAST(JSON_VALUE(summary, '$.bytesHtml') AS INT64),CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64)) * (
+    (SAFE_DIVIDE(CAST(JSON_VALUE(summary, '$.bytesHtml') AS INT64), CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64)) * (
       (CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64) / 1024 / 1024 / 1024) * (
         operational_emissions_data_centers * grid_intensity +
         operational_emissions_network * grid_intensity +
@@ -70,7 +70,7 @@ WITH ssg_data AS (
       )
     )) AS total_html_emissions,
 
-    (SAFE_DIVIDE(CAST(JSON_VALUE(summary, '$.bytesJS') AS INT64),CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64)) * (
+    (SAFE_DIVIDE(CAST(JSON_VALUE(summary, '$.bytesJS') AS INT64), CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64)) * (
       (CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64) / 1024 / 1024 / 1024) * (
         operational_emissions_data_centers * grid_intensity +
         operational_emissions_network * grid_intensity +
@@ -81,7 +81,7 @@ WITH ssg_data AS (
       )
     )) AS total_js_emissions,
 
-    (SAFE_DIVIDE(CAST(JSON_VALUE(summary, '$.bytesCss') AS INT64),CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64)) * (
+    (SAFE_DIVIDE(CAST(JSON_VALUE(summary, '$.bytesCss') AS INT64), CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64)) * (
       (CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64) / 1024 / 1024 / 1024) * (
         operational_emissions_data_centers * grid_intensity +
         operational_emissions_network * grid_intensity +
@@ -92,7 +92,7 @@ WITH ssg_data AS (
       )
     )) AS total_css_emissions,
 
-    (SAFE_DIVIDE(CAST(JSON_VALUE(summary, '$.bytesImg') AS INT64),CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64)) * (
+    (SAFE_DIVIDE(CAST(JSON_VALUE(summary, '$.bytesImg') AS INT64), CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64)) * (
       (CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64) / 1024 / 1024 / 1024) * (
         operational_emissions_data_centers * grid_intensity +
         operational_emissions_network * grid_intensity +
@@ -103,7 +103,7 @@ WITH ssg_data AS (
       )
     )) AS total_img_emissions,
 
-    (SAFE_DIVIDE(CAST(JSON_VALUE(summary, '$.bytesFont') AS INT64),CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64)) * (
+    (SAFE_DIVIDE(CAST(JSON_VALUE(summary, '$.bytesFont') AS INT64), CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64)) * (
       (CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64) / 1024 / 1024 / 1024) * (
         operational_emissions_data_centers * grid_intensity +
         operational_emissions_network * grid_intensity +
@@ -130,8 +130,8 @@ WITH ssg_data AS (
     EXISTS (
       SELECT 1
       FROM UNNEST(tech.categories) AS category
-      WHERE LOWER(category) = 'static site generator'
-      OR tech.technology IN ('Next.js', 'Nuxt.js')
+      WHERE LOWER(category) = 'static site generator' OR
+        tech.technology IN ('Next.js', 'Nuxt.js')
     )
 )
 

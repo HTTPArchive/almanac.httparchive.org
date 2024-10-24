@@ -21,8 +21,8 @@ WITH stylesheet_data AS (
   WHERE
     date = '2024-06-01'
     AND
-    is_root_page = TRUE
-    AND JSON_EXTRACT_SCALAR(JSON_EXTRACT(JSON_EXTRACT_SCALAR(payload, '$._javascript'), '$.document'), '$.stylesheets') IS NOT NULL
+    is_root_page = TRUE AND
+    JSON_EXTRACT_SCALAR(JSON_EXTRACT(JSON_EXTRACT_SCALAR(payload, '$._javascript'), '$.document'), '$.stylesheets') IS NOT NULL
 )
 
 SELECT
