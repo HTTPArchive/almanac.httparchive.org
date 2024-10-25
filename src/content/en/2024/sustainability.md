@@ -980,12 +980,11 @@ From a sustainability perspective, effective caching offers several key benefits
 - Decreased Server Load: With fewer requests reaching origin servers, the overall energy usage in data centers can be significantly reduced.
 - Cumulative Environmental Impact: For frequently accessed resources, the energy savings compound with each cache hit, potentially leading to substantial reductions in overall carbon footprint over time.
 
-TODO: looks like the chart_url is wrong, and for some reason the image is failing to load
 {{ figure_markup(
   image="cache-control-header-usage.png",
   caption="Cache control header usage",
   description="A bar chart showing that on desktop 26.6% of websites use Cache Control Only, 0.4% of them use Expiries only and 48.1% of them use both. 24.9% of the websites do not use any caching on desktop. On mobile 25.9% of websites use Cache Control Only, 0.4% of them use Expiries only and 48.6% of them use both. 25.1% of the websites do not use any caching on mobile.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=834455986&format=interactive",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=584352189&format=interactive",
   sheets_gid="1192354424",
   sql_file="cache_header_usage.sql"
 ) }}
