@@ -1235,7 +1235,7 @@ In the end, we see a generally wider adoption of technical best practices but st
 
 ### Actions you can take
 
-{# TODO - add intro paragraph #}
+Creating sustainable websites requires a combination of understanding, planning, and action. While the challenge may seem daunting, there are numerous practical steps you can take today to begin or advance your sustainability journey. From quick assessment tools to comprehensive guidelines, and from planning frameworks to continuous learning resources, this section outlines key approaches that can help you make meaningful progress. Remember that sustainability is not about achieving perfection immediately, but rather about making consistent improvements and informed decisions that collectively reduce our environmental impact.
 
 #### Quick Checks
 
