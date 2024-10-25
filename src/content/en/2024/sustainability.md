@@ -299,7 +299,7 @@ It's essential to minimize the number of requests. Setting an initial cap of 25 
   description="A column chat showing that on the 90th percentile there are 182 requests per page on desktop and 177 requests on mobile. On the 75th percentile there are 120 requests on desktop and 114 on mobile. On the 50th percentile it drops at 74 requests on desktop and 70 on mobile. On the 25th percentile there are 43 requests on desktop and 40 on mobile. Finally on the 10th percentile we see a total of 23 requests on desktop and 21 on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1890346358&format=interactive",
   sheets_gid="495251827",
-  sql_file="TODO"
+  sql_file="../page-weight/request_type_distribution.sql"
 ) }}
 
 From the extracted data, we can see that the number of requests is quite similar for mobile and desktop pages, which is not ideal. To respect mobile networks as well as plan limitations, it would be great to see fewer resources being loaded on mobile, which would result in fewer requests.
@@ -311,7 +311,7 @@ The amount of requests, in general, is quite high, so let's see what resources t
   description="A column chart showing that on mobile devices, on the 90th percentile we find 12 requests targeting HTML content, 68.5 requests for javascript resources, almost 26 requests for CSS, around 55 requests fetching images and 8.5 requests for fonts. On the 75th percentile, there are 5 HTML requests, 41 JavaScript requests, 15 CSS requests, 29.5 images requests and 5.5 Fonts requests. On the 50th percentile, we can see 2 HTML requests, 22 javascript requests, 7.5 CSS requests, 15.5 images and 3 fonts requests. On the 25th percentile, there are 1 HTML, 10.5 javascript, 3.5 CSS, 7.5 images and 1 font requests. On the 10h percentile, we find 1 Html, 4.5 javascript, 1.5 CSS, 4 images and 0 font requests.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1059345541&format=interactive",
   sheets_gid="495251827",
-  sql_file="TODO"
+  sql_file="../page-weight/request_type_distribution.sql"
 ) }}
 
 The not-so-nice surprise here is that most of the requests, around 70 in the 90th percentile, are retrieving JS files, followed by over 50 for images. We can see that the pattern repeats itself across all the percentiles. This is very interesting since, in the report from 2022, the number of requests retrieving images was bigger than the ones retrieving JS. The follow-up question is whether the change in the number of requests also impacts the size of the retrieved assets. So, let's check that.
@@ -510,7 +510,7 @@ Let's look at how the usage of these formats has changed from 2022 to 2024:
   description="A bar chart showing the comparison of image formats adoption between 2022 and 2024. It shows that the jpg adoption is 20% less in 2024, while png increased 1%, gif is up by 6%, webp is 34% more, svg also increased with 36% more, ico is 17% less and avif is 386% more.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=2128858223&format=interactive",
   sheets_gid="1939630368",
-  sql_file="TODO get from Media chapter"
+  sql_file=""
 ) }}
 
 This data shows the evolving landscape of image format adoption. WebP has grown significantly, with a 34% increase in usage. Although AVIF shows an impressive 386% increase, it can be misleading since for desktop clients the usage of AVIF format is only at 1.40%, and for mobile clients 1.05%. Traditional formats like JPEG are seeing a decline, while PNG and GIF usage remains relatively stable. Current statistics for 2024 provide a clearer picture of where we stand:
@@ -521,7 +521,7 @@ This data shows the evolving landscape of image format adoption. WebP has grown 
   description="A pie chart showing that overall, jpg represents the image format of 32.3% of all images. png is used in 28.4% of the images. Gif is used on 16.8% of the images. WebP is used on 12% of the images, Svg accounts for 6.4% of the images format. Ico represents the format used on 1.3% of all images and lastly, avif is the format of 1% of the images.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=1820261877&format=interactive",
   sheets_gid="1939630368",
-  sql_file="TODO get from Media chapter"
+  sql_file="../media/media_formats.sql"
 ) }}
 
 Despite the clear benefits, many websites have yet to fully embrace these modern formats. The potential for reducing page weight and improving loading times remains significant. For optimal sustainability:
@@ -579,7 +579,7 @@ Lazy-loading remains a crucial technique for enhancing both performance and sust
   description="A timeseries chart showing the increase in the adoption of loading=\"lazy\" attribute on image tags. In June 2022 it was used by 24% of the websites on mobile and 23% on desktop. On January 2023, 26% of the websites on mobile were using native lazy-loading and 25% of them were using it on desktop. On June the 1st, 2023, 27% of websites used native lazy-loading on wither desktop and mobile. On June 2024, 34% of websites used native lazy-loading on mobile and 33% on desktop.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=1848380246&format=interactive",
   sheets_gid="228292115",
-  sql_file="TODO get from Media chapter"
+  sql_file="../media/lazy_loading_adoption_over_time.sql"
 ) }}
 
 The past two year's data reflects a growing awareness of the importance of optimized image loading. However, there's still considerable room for improvement, as a significant portion of websites have yet to implement any form of lazy-loading. Regarding iframes, the advice remains largely unchanged:
