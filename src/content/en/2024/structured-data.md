@@ -371,11 +371,29 @@ Open Graph continues to be one of the most widely implemented structured data fo
 
 A key development in 2024 is Google's update to its search documentation, now including the **`og:title` meta tag** as a source for generating **title links** in search results. This update allows Google to consider the `og:title` tag alongside traditional sources, such as the HTML `<title>` tag, when determining how clickable titles are displayed in search results. As a result, the `og:title` tag has gained renewed significance, not only for **social media visibility** but also for **SEO**.
 
-![A year on year comparison of Open Graph usage on desktop pages][image15]
+{{ figure_markup(
+  image="open-graph-usage-by-year-desktop.png",
+  caption="Open Graph usage by year (desktop)",
+  description="Bar chart showing usage of different Open Graph properties on desktop pages in 2022 and 2024. In 2024, og:image was used on 48% of pages, og:image:width and og:image:height on 23.86%, og:image:secure_url on 9.56%, og:image:type on 11.17%, and og:image:alt on 5.62%.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=759266480&format=interactive",
+  sheets_gid="759266480",
+  sql_file="open_graph_usage.sql",
+  width=600,
+  height=441
+)}}
 
 This dual role of Open Graph in **social sharing** and **search engine optimization** makes it a critical tool for webmasters looking to improve both **user engagement** on social platforms and **visibility** in search results.
 
-![A year on year comparison of Open Graph usage][image16]
+{{ figure_markup(
+  image="open-graph-usage-by-device.png",
+  caption="Open Graph usage by device",
+  description="Bar chart showing Open Graph usage by device (desktop and mobile) in 2024. og:image is used on nearly 50% of pages, og:image:width and og:image:height on 23.81% and 23.76% respectively, og:image:secure_url on 9.41%, og:image:type on 11.26%, and og:image:alt on 5.78%.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=876659711&format=interactive",
+  sheets_gid="876659711",
+  sql_file="open_graph_usage_by_device.sql",
+  width=600,
+  height=441
+)}}
 
 **Security and type-related properties** have also gained traction. The `og:image:secure_url` property, which ensures image URLs are served over **secure HTTPS connections**, has increased to **9.41% on mobile** and **9.56% on desktop**. Similarly, `og:image:type`, which specifies the MIME type of the image, has grown to **11.26% on mobile** and **11.17% on desktop**. These properties help ensure consistent and secure media delivery across devices and platforms.
 
@@ -383,12 +401,40 @@ This dual role of Open Graph in **social sharing** and **search engine optimizat
 
 Despite the platform's transition to **new ownership** and its rebranding as **X**, Twitter’s meta tags remain a vital part of the **structured data landscape**, particularly in the realm of **social media optimization**. The `twitter:card` tag continues to dominate, showing significant growth across mobile and desktop pages, as it plays a key role in defining how content is displayed when shared on the platform.
 
-## ![A year on year comparison of Twitter meta tag usage on mobile pages][image17]
+{{ figure_markup(
+  image="twitter-meta-tag-usage-by-year.png",
+  caption="Twitter meta tag usage by year",
+  description="Bar chart showing Twitter meta tag usage on mobile pages in 2022 and 2024. In 2024, the twitter:card tag is used on 44.15% of pages, twitter:title on 26.40%, twitter:description on 24.53%, twitter:image on 18.63%, and other tags such as twitter:site and twitter:label1 show usage rates between 9.67% and 13.36%.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=455664170&format=interactive",
+  sheets_gid="455664170",
+  sql_file="twitter_meta_tag_usage.sql",
+  width=600,
+  height=441
+)}}
 
 Core descriptive tags like `twitter:title` and `twitter:description` have also seen widespread adoption, appearing on approximately **26% of mobile pages** and **24% of desktop pages**. These tags are essential for **content previews**, enhancing how web pages appear when shared on **social media**, and ensuring key information is highlighted.
 
-![A year on year comparison of Twitter meta tag usage on desktop pages][image18]
-**![A year on year comparison of twitter meta tag usage][image19]**
+{{ figure_markup(
+  image="twitter-meta-tag-usage-by-year-desktop.png",
+  caption="Twitter meta tag usage by year (desktop)",
+  description="Bar chart showing Twitter meta tag usage on desktop pages in 2022 and 2024. In 2024, the twitter:card tag is used on 44.15% of pages, twitter:title on 26.40%, twitter:description on 24.53%, twitter:image on 18.63%, and other tags such as twitter:site and twitter:label1 show usage rates between 9.67% and 13.36%.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=410054248&format=interactive",
+  sheets_gid="410054248",
+  sql_file="twitter_meta_tag_usage_desktop.sql",
+  width=600,
+  height=441
+)}}
+
+{{ figure_markup(
+  image="twitter-meta-tag-usage-by-device.png",
+  caption="Twitter meta tag usage by device",
+  description="Bar chart showing Twitter meta tag usage by device (desktop and mobile) in 2024. On mobile, the twitter:card tag is used on 44.15% of pages, twitter:title on 26.40%, twitter:description on 24.53%, and other tags such as twitter:image and twitter:data1 show usage rates between 9.67% and 13.36%.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=1804770953&format=interactive",
+  sheets_gid="1804770953",
+  sql_file="twitter_meta_tag_usage_by_device.sql",
+  width=600,
+  height=441
+)}}
 
 The platform's **enhanced metadata** properties, such as `twitter:data1` and `twitter:label1`, which support **rich card features**, have seen coordinated growth, now appearing on **13.36% of mobile pages**. This indicates the increasing use of **Twitter Cards** for more detailed content representations, such as for **product listings** or **event details**.
 
