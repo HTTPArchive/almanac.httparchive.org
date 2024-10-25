@@ -725,7 +725,14 @@ For further information, refer to:
 
 ### Optimizing external content
 
-{# TODO - add intro paragraph #}
+One of the strengths of web development is the ease of integrating external content: from frameworks and libraries to third-party widgets and media. However, this convenience shouldn't override considerations of necessity and efficiency. The environmental impact of external content is twofold: the immediate cost of transferring and processing the content, and the ongoing energy consumption from regular updates and continuous connections.
+
+For each external element you consider adding, evaluate:
+- Energy footprint: Consider both the operational energy (transfer, processing) and embodied energy (storage, infrastructure) costs
+- Resource necessity: Could the functionality be achieved with a lighter, more energy-efficient solution?
+- Cache efficiency: How frequently does the resource need to update, and could longer cache times reduce repeated transfers?
+- Network impact: Will this resource require maintaining persistent connections or trigger frequent background requests?
+
 
 #### Third parties
 
