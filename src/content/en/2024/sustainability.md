@@ -221,7 +221,7 @@ Based on the V4 of the SWD model, we get these global results for emissions:
   description="A column chart showing that on the 90th percentile, desktop web pages emit 1.29g of carbon and mobile pages emit 1.14g of carbon, on the 75th percentile desktop pages emit 0.66g of carbon and mobile pages emit 0.57g of carbon. On the 50th percentile it goes 0.33g of carbon on desktop and 0.29 on mobile. On the 25th percentile it's 0.16g of carbon for desktop pages and 0.14g of carbon on mobile pages. Lastly, on the 10th percentile desktop pages emit 0.08g of carbon and mobile pages emit 0.06g of carbon.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=188699126&format=interactive",
   sheets_gid="1113829605",
-  sql_file="TODO 2022 query"
+  sql_file="global_emissions_per_page_2022.sql"
 ) }}
 
 If you take a look at the results from the <a hreflang="en" href="../2022/sustainability#carbon-emissions">2022 Sustainability chapter</a>, you'll notice that these new estimations are slightly lower. This is why we recalculated them. Otherwise, we could have been led to think that emissions from web pages diminished significantly between 2022 and 2024 (spoiler: this is not the case). With this in mind, we can now look at the data for 2024.
@@ -1110,7 +1110,7 @@ For comparison reasons, here are the emissions data from 2022, calculated with t
   description="A bar chart showing that the median emissions for Wordpress pages is 0.37 grams of carbon on desktop and 0.34 on mobile. For Joomla it’s 0.38 on desktop and 0.35 on mobile. For Wix it’s 0.44 on desktop and 0.31 on mobile. For Drupal it’s 0.33 on desktop and 0.30 on mobile. For Squarespace it’s 0.48 on desktop and 0.5 on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1732727443&format=interactive",
   sheets_gid="1972006215",
-  sql_file="TODO 2022 query"
+  sql_file="cms_bytes_per_type_2022.sql"
 ) }}
 
 The 2024 scan included around 5 million instances of WordPress, 500,000 instances of Wix, 250,000 instances of Squarespace, 250,000 instances of Joomla, and 200,000 instances of Drupal. That's over 6 million unique instances of these five CMS. So, even just generating this report does have a measurable climate impact.
@@ -1169,7 +1169,7 @@ For comparison reasons, here are the emissions data from 2022, calculated with t
   description="A bar chart showing that the median emission for WooCommerce pages in 2022 was 0.28 grams of carbon on desktop and 0.26 on mobile. For Shopify it’s 0.20 on desktop and 0.18 on mobile. For Squerspace Commerce it’s 0.31 on desktop and 0.32 on mobile. For PrestaShop it’s 0.26 on desktop and 0.23 KB on mobile. For Wix eCommerce it is 0.32 on desktop and 0.22 on mobile. For Magento it’s 0.3 on desktop and 0.28 on mobile. For 1C-Bitrix it is 0.34 on desktop and 0.3 on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1732727443&format=interactive",
   sheets_gid="1972006215",
-  sql_file="TODO 2022 query"
+  sql_file="ecommerce_bytes_per_type_2022.sql"
 ) }}
 
 It is clear comparing the ecommerce platforms with other CMS platforms, that they are substantially heavier in their page-load size and their environmental impact. Since these figures mostly relate to homepages, we can only guess that this could be due to more products or less optimized content. However, this shows that there is still room for improvement.
@@ -1202,7 +1202,7 @@ For comparison reasons, here are the emissions data from 2022, calculated with t
   description="A bar chart showing that the median emission for Next.js pages is 0.22 grams of carbon on desktop and 0.20 on mobile. For Nuxt.js it’s 0.26 on desktop and 0.21 on mobile. For Gatsby it’s 0.19 on desktop and 0.16 on mobile. For Hugo it’s 0.09 on desktop and 0.1 on mobile. For Jekyll it’s 0.06 on both desktop and mobile. For Docusaurus it’s 0.07 on desktop and 0.08 on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1021559874&format=interactive",
   sheets_gid="1333464158",
-  sql_file="TODO 2022 query"
+  sql_file="ssg_bytes_per_type_2022.sql"
 ) }}
 
 It appears evident that site generators have prioritized optimization as part of their builds. Astro, Hugo, and Jekyll all have emissions substantially lower than all the CMS that have been categorized.
