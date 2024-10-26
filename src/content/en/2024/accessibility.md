@@ -38,7 +38,7 @@ Good accessibility is beneficial to everyone, not just those with disabilities. 
 
 [Microsoft Inclusive Design Guidelines](https://inclusive.microsoft.design/) goes beyond permanent disability scenarios and extend them to temporary or situational limitations. Human abilities vary. No matter if a person has lost an arm (permanent), or is wearing a cast because of an accident (temporary) or holding a baby (situational limitation), being able to use the computer or phone with one hand or voice interaction benefits them all.
 
-[![Touch disability - permanent (one arm), temporary (arm injury) and situational (new parent)][image2]]
+[![Microsoft's Inclusive Design illustration focusing on disability ass - permanent (one arm), temporary (arm injury) and situational (new parent)][image2]]
 
 This image and approach is courtesy of their [Inclusive 101 Guidebook](https://inclusive.microsoft.design/tools-and-activities/Inclusive101Guidebook.pdf). 
 
@@ -53,9 +53,9 @@ Despite ongoing challenges, there has been noticeable improvement in web accessi
 Accessibility scores are an important tool, but people familiar with [Goodhart's Law](https://en.wikipedia.org/wiki/Goodhart%27s_law) will know the danger of a measure becoming a target. We must also acknowledge that automated tests [can only address a portion](https://www.smashingmagazine.com/2022/11/automated-test-results-improve-accessibility/#automate-it) of the WCAG Success Criteria, and that [a perfect score does not guarantee an accessible site](https://www.matuzo.at/blog/building-the-most-inaccessible-site-possible-with-a-perfect-lighthouse-score).  
 
 {{ figure_markup(
-  image="",
-  caption="Median Lighthouse Accessibility Scores.",
-  description="Bar chart showing the showing general improvements over time in the Google Lighthouse accessibility score.",
+  image="lighthouse-audit-median-score-yoy.png",
+  caption="Lighthouse audit improvements year-over-year.",
+  description="A bar chart showing the average increase in accessibility over time for five years the Median Gogole Lighthouse score for accessibility. Values increase slowly year by year, as follows: 2019 (83%), 2020 (80%), 2021 (82%), 2022 (83%) and 2024 (84%)."
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=837866368&format=interactive",
   sheets_gid="255848343",
   sql_file="lighthouse_a11y_score.sql"
@@ -66,7 +66,16 @@ We can similarly see an increase in the median Lighthouse score by page rank wit
 
 Looking at the most common errors with most improved Lighthouse Tests, it is possible to see which parts of the Lighthouse audit improved the most. Although far from perfect, we are seeing advancements. 
 
-![Lighthouse Audit Improvements - Biggest gains in aria-allowed-attr, aria-input-field-naname, aria-progressbar-name, color-contrast, frame-title][image4]
+{{ figure_markup(
+  image="lighthouse-audit-markup-improvements.png",
+  caption="Most improved Lighthouse accessibility tests (axe).",
+  description="A bar chart showing how many sites pass 5 specific Lighthouse audits, in 2022 and 2024. aria-allowed-attr passes on 82% of sites in 2022, and 95% in 2024.
+aria-input-field-name passes on 14% of sites in 2022, and 21% in 2024. aria-progressbar-name passes on 3% of sites in 2022, and 14% in 2024. color-contrast passes on 23% of sites in 2022, and 29% in 2024. frame-title passes on 36% of sites in 2022, and 51% in 2024."
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=899104036&format=interactive",
+  sheets_gid="1279863228",
+  sql_file="lighthouse_a11y_audits.sq"
+  )
+}}
 
 Google Lighthouse now contains [57 different audit tests](https://developer.chrome.com/docs/lighthouse/accessibility/scoring) which they use for their scoring. These are all based on Deque’s [open source axe-core](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md), which is widely adopted in a range of accessibility products and services. With the exception of 7 audits (aria-meter-name, aria-toggle-field-name, aria-tooltip-name, document-title, duplicate-id-active, html-lang-valid, and object-alt) there have been improvements across the board. Both object-alt and aria-tooltip-name were called out for their improvements in 2022, but sadly this improvement was not repeated in 2024\. 
 
@@ -88,6 +97,16 @@ The Lighthouse test determined that 29.2% of mobile sites and 27.7% of desktop s
 
 ![Gradual progress on Sites with sufficient color contrast annual reviews since 2019 with the exception of 2023][image5]
 
+{{ figure_markup(
+  image="",
+  caption="",
+  description=""
+  chart_url="",
+  sheets_gid="",
+  sql_file=".sql"
+  )
+}}
+
 Color contrast becomes more [important as we age](https://www.nia.nih.gov/health/vision-and-vision-loss/aging-and-your-eyes). It is also something which regularly is an issue for [temporary and situational disabilities](https://inclusive.microsoft.design/), such as when people don’t have their reading glasses or need to read content outside.  Achieving appropriate contrast is becoming more challenging as browsers and operating systems have implemented support for light, dark, and high-contrast modes. These are well supported by browsers and operating systems, but not yet well supported by most websites. There is a growing demand for sites to follow a user’s set preference, and multiple types of disabilities can benefit from giving users this control. See the User preferences section below for more information. 
 
 ### Zooming and scaling
@@ -103,6 +122,16 @@ We are happy to say that we are seeing a reduction in sites which are disabling 
 To check if your site has disabled or limited zoom look at the source of the page and search for \<meta name="viewport"\> if it is tagged with a maximum-scale, minimum-scale, user-scalable=no, or user-scalable=0. Ideally, there wouldn’t be any restrictions for content resizing, but WCAG only specifies the need for [200% magnification](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-scale.html#:~:text=Content%20satisfies%20the%20Success%20Criterion%20if%20it%20can,more%20extreme%2C%20adaptive%20layouts%20may%20introduce%20usability%20problems.).   
 
 ![][image7]
+
+{{ figure_markup(
+  image="l",
+  caption="",
+  description=""
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=837866368&format=interactive",
+  sheets_gid=",
+  sql_file=""
+  )
+}}
 
 How font sizes are defined also affects the readability, as pixels are not as flexible as other units. Pixel (px) use is only 65% in desktop or 66% in mobile. The use of em has increased to 9% from 6% in 2022\. rem was at 6% in 2022 then, and has reduced to 4%. There is not a significant increase in the use of em or rem since 2022, even though it often [gives the user a better experience](https://www.freecodecamp.org/news/css-units-when-to-use-each-one/) when they increase or decrease their fonts in their browser settings.  
 
@@ -128,6 +157,16 @@ Also, keep in mind that there is the page language, but pages often contain mult
 Modern CSS includes [Level 5 Media Queries](https://www.w3.org/TR/mediaqueries-5), which include [User Preference Media Queries](https://12daysofweb.dev/2021/preference-queries/).  User Preference Media Queries enhance accessibility by allowing users to select configurations that work for them. Choices like color schemes or contrast modes that suit individual preferences, such as dark mode. Users can also choose to minimize animations on a page, which is beneficial for users with vestibular disorders.  
 
 ![][image8]
+
+{{ figure_markup(
+  image="",
+  caption="",
+  description=""
+  chart_url="",
+  sheets_gid="",
+  sql_file=".sql"
+  )
+}}
 
 We discovered that over 50% of mobile sites include the prefers-reduced-motion media query, up from 34% in 2022\. This is important because [digital animations can harm individuals with vestibular disorders](https://kb.iu.edu/d/bizw); using this query allows for adapting or removing such animations to improve accessibility. Mozilla’s Developer community has some good resources on [building motion-sensitive sites](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion). 
 
@@ -162,6 +201,16 @@ WCAG mandates a visible focus indicator for all interactive content to ensure us
 
 ![][image9]
 
+{{ figure_markup(
+  image="",
+  caption="",
+  description=""
+  chart_url="",
+  sheets_gid="",
+  sql_file=".sql"
+  )
+}}
+
 We discovered that 53% (in 2022 it was 86%) of websites apply :focus {outline: 0}, which removes the default outline provided by browsers for focused interactive elements. Although some websites implement custom styles to override this, it's not always the case, making it challenging for users to identify the currently focused element and impeding navigation. Sara Soueidan offers valuable guidance on [designing WCAG-compliant focus indicators](https://www.sarasoueidan.com/blog/focus-indicators/). On a positive note, 12% (over 9% in 2022 and 0.6% in 2021\) of websites now use :focus-visible, which is a pseudo class which uses browser heuristics to determine when to show the focus indicator. This is a significant improvement in accessibility practices.
 
 ### tabindex
@@ -177,6 +226,16 @@ Our analysis shows that 62.9% of mobile websites and 64.1% of desktop websites (
 It's important to avoid placing non-interactive elements in the keyboard focus order, as this can be confusing for low-vision users.  
 
 ![][image10]
+
+{{ figure_markup(
+  image="",
+  caption="",
+  description=""
+  chart_url="",
+  sheets_gid="",
+  sql_file=".sql"
+  )
+}}
 
 Of all websites using the tabindex attribute, 4% employ positive values (down from 7% in 2022). Using positive tabindex values is generally considered poor practice as it disrupts the natural tab order. Karl Groves provides an [insightful article on this topic](https://karlgroves.com/2018/11/13/why-using-tabindex-values-greater-than-0-is-bad).
 
@@ -194,6 +253,16 @@ Although ARIA landmarks have traditionally been only visible to screen reader us
 | footer | 65.4% | 10.4% | 66.6% |
 
 ![][image11]
+
+{{ figure_markup(
+  image="",
+  caption="",
+  description=""
+  chart_url="",
+  sheets_gid="",
+  sql_file=".sql"
+  )
+}}
 
 The most commonly expected landmarks for most web pages include \<main\>, \<header\>, \<nav\>, and \<footer\>. Our findings reveal that only 37% of all pages use the native HTML \<main\> element, while 17% of all pages have an element with role="main" 43% are using either one of them, this is up from 35% in 2021\. Scott O'Hara’s [article on landmarks](https://www.scottohara.me/blog/2018/03/03/landmarks.html) provides valuable insights for enhancing accessibility.
 
@@ -239,6 +308,16 @@ Descriptive page titles are important for navigating between pages, tabs, and wi
 
 ![][image12]
 
+{{ figure_markup(
+  image="",
+  caption="",
+  description=""
+  chart_url="",
+  sheets_gid="",
+  sql_file=".sql"
+  )
+}}
+
 While 97% of mobile websites include a document title, only 69% have titles that are more than four words long. Since our analysis is limited to the homepage and a secondary, we have limited insights about the inner pages. We did find however that secondary pages were 8% more likely to have descriptive titles of more than four words (78% on average in 2024). Ideally, a title should include both a brief description of the page’s content to enhance navigation and the website’s name.
 
 The titles changed on render value is derived from a comparison of the initial HTML title and the final value of the page after JavaScript has loaded. The data indicates that 7% of desktops sites scanned are dynamically changing the content of the title. Secondary pages are slightly less likely to change the title than the homepage. 
@@ -272,6 +351,16 @@ For example:
 
 ![][image13]
 
+{{ figure_markup(
+  image="",
+  caption="",
+  description=""
+  chart_url="",
+  sheets_gid="",
+  sql_file=".sql"
+  )
+}}
+
 Unfortunately, 12.6% of mobile inputs lack accessible names (a significant improvement from 38% in 2022). Also only 14.6% of mobile sites use \<label\> (which is down from 19% in 2022), which can hinder users relying on screen readers or voice-to-text tools. An accessible name always needs to be used and sites should support assistive technology beyond just screen readers. WCAG 2.1 added 2.5.3 Label in Name (Level A) to help ensure that technologies like Voice Control would be better supported.  Use of aria-label and aria-labelledby should only be used if an HTML \<label\> cannot be used. 
 
 ### placeholder attribute
@@ -279,6 +368,16 @@ Unfortunately, 12.6% of mobile inputs lack accessible names (a significant impro
 The placeholder attribute provides example input formats. It should not replace a \<label\> as a way to provide an accessible name. When placeholders are the only way of providing a visible label, that reference point disappears when the user starts typing. It is not a new concern that [browsers by default do not give placeholder text sufficient contrast](https://www.w3.org/WAI/GL/low-vision-a11y-tf/wiki/Placeholder_Research) to meet WCAG. Furthermore, they are [not always supported by screen readers](https://www.digitala11y.com/anatomy-of-accessible-forms-placeholder-is-a-mirage/).
 
 ![][image14]
+
+{{ figure_markup(
+  image="",
+  caption="",
+  description=""
+  chart_url="",
+  sheets_gid="",
+  sql_file=".sql"
+  )
+}}
 
 57% of mobile sites and 55% of desktop sites use placeholders alone, which can lead to accessibility issues. As per HTML5 guidelines, placeholders should not replace labels for accessibility.
 
@@ -290,6 +389,16 @@ The placeholder attribute provides example input formats. It should not replace 
 Indicating required fields is crucial for forms. Before HTML5, an asterisk (\*) was commonly used, but it’s only a visual cue and doesn’t provide validation for assistive technologies. In addition, a required attribute in HTML5 and aria-required attribute can improve the semantics for  indicating mandatory fields.   
 
 ![][image15]
+
+{{ figure_markup(
+  image="",
+  caption="",
+  description=""
+  chart_url="",
+  sheets_gid="",
+  sql_file=".sql"
+  )
+}}
 
 Currently, 64.9% of mobile sites (down from 67% in 2022\) use the required attribute, and 40.1% use aria-required (up from 32% in 2022), but 19% still rely only on an asterisk (which is down from 22% in 2022). This should be avoided unless supplemented by required and aria-required.
 
@@ -334,9 +443,29 @@ The alt text should reflect the image’s context. For decorative images, alt=""
 
 ![][image16]
 
+{{ figure_markup(
+  image="",
+  caption="",
+  description=""
+  chart_url="",
+  sheets_gid="",
+  sql_file=".sql"
+  )
+}}
+
 The most common file extensions found in alt text values (for sites with non-empty alt attributes) are jpg (and jpeg), png, ico, and svg. This likely indicates that CMS or other content management systems either automatically generate alt text or require content editors to provide it. However, if the CMS merely includes the image filename in the alt attribute, it typically offers no benefit to users. Therefore, it’s crucial to use meaningful text descriptions. 
 
 ![][image17]
+
+{{ figure_markup(
+  image="",
+  caption="",
+  description=""
+  chart_url="",
+  sheets_gid="",
+  sql_file=".sql"
+  )
+}}
 
 We discovered that 18% of alt text attributes on both desktop and mobile sites are empty, down significantly from 27% in 2022\. An empty alt attribute should be used only for images that are purely decorative and do not need to be described by screen readers or other assistive technologies. Most images contribute to the page content, so they should generally [include a meaningful description](https://www.craigabbott.co.uk/blog/how-to-write-good-alt-text-for-screen-readers/). 
 
@@ -374,6 +503,16 @@ For instance, [tabbed interfaces](https://inclusive-components.design/tabbed-int
 HTML5 introduced numerous native elements with built-in semantics and roles. For example, the \<nav\> element inherently has a role="navigation", making it unnecessary to explicitly add this role with ARIA.  
 
 ![][image18] 
+
+{{ figure_markup(
+  image="",
+  caption="",
+  description=""
+  chart_url="",
+  sheets_gid="",
+  sql_file=".sql"
+  )
+}}
 
 We observed that over 50% of mobile sites (up from 33% in 2022, and 29% in 2021 and 25% in 2020\) had homepages with at least one element assigned the role="button". This increase is concerning, as it suggests websites may be using \<div\> or \<span\> elements as custom buttons or redundantly applying roles to \<button\> elements. Both practices are problematic and violate the fundamental ARIA principle of using native HTML elements—such as \<button\>—whenever possible.
 
@@ -418,11 +557,31 @@ An element's accessible name can come from its content (e.g., button text), attr
 
 ![][image19]
 
+{{ figure_markup(
+  image="",
+  caption="",
+  description=""
+  chart_url="",
+  sheets_gid="",
+  sql_file=".sql"
+  )
+}}
+
 Two ARIA attributes that aid in assigning accessible names are aria-label and aria-labelledby. These attributes are given precedence over natively derived accessible names and should be used sparingly and only when necessary. Testing accessible names with screen readers and involving individuals with disabilities is crucial to ensure that the names are helpful and do not hinder accessibility.
 
 We observed that almost 66% of pages evaluated featured at least one element with the aria-label attribute (up from 58% for desktop and 57% in mobile in 2022), making it the most frequently used ARIA attribute for accessible names. Additionally, 26.7% of desktop pages and 25.5% of mobile pages had at least one element with the aria-labelledby attribute (both are up 2% from 2022 data). This trend suggests that while more elements are being assigned accessible names, it might also indicate a rise in elements lacking visual labels. This can be challenging for users with cognitive disabilities and voice input users.
 
 ![][image20]  
+
+{{ figure_markup(
+  image="",
+  caption="",
+  description=""
+  chart_url="",
+  sheets_gid="",
+  sql_file=".sql"
+  )
+}}
 
 Buttons typically receive their accessible names from their content or ARIA attributes. According to [ARIA guidelines](https://www.w3.org/WAI/ARIA/apg/patterns/button/), it's preferable for an element to derive its accessible name from its content rather than an ARIA attribute if possible. We found that 59.1% of buttons on desktop obtain their accessible names from their text content, a slight drop from 2022 when it was 61%. Use of the aria-label attribute is up slightly to 23.9% on desktop sites and use the aria-label attribute for their accessible names, up from 20% in 2022\.
 
@@ -515,13 +674,43 @@ This technology does not replace the need for good accessibility practices. Acce
 
 ![][image21]  
 
+{{ figure_markup(
+  image="",
+  caption="",
+  description=""
+  chart_url="",
+  sheets_gid="",
+  sql_file=".sql"
+  )
+}}
+
 In 2024, we observed that almost 2% of desktop websites utilize known accessibility apps. While not all of these products are accessibility overlays, the detectable overlays show a similar growth trend.
 
 ![][image22]  
 
+{{ figure_markup(
+  image="",
+  caption="",
+  description=""
+  chart_url="",
+  sheets_gid="",
+  sql_file=".sql"
+  )
+}}
+
 UserWay is the most widely used overlay in our dataset.  
 
 ![][image23]  
+
+{{ figure_markup(
+  image="",
+  caption="",
+  description=""
+  chart_url="",
+  sheets_gid="",
+  sql_file=".sql"
+  )
+}}
 
 These solutions are generally used less for high-traffic websites. For sites ranked in the top 1,000 by visits, only 0.2%, use an overlay.
 
@@ -547,15 +736,45 @@ There are two means by which we can identify country information, first by the G
 
 ![][image24]  
 
+{{ figure_markup(
+  image="",
+  caption="",
+  description=""
+  chart_url="",
+  sheets_gid="",
+  sql_file=".sql"
+  )
+}}
+
 It is worth noting that many sites that operate in the USA are subject to the Section 508 guidelines on accessibility. Organizations are being sued in the USA, under ADA Title III, for not having accessible websites. It is not surprising that the USA is the most accessible country. Other jurisdictions are beginning to penalize companies that sell inside their geography or to their citizens. Increasingly people are looking at the [European Accessibility Act](https://en.wikipedia.org/wiki/European_Accessibility_Act), and preparing for the new requirements which are introduced in 2025\. 
 
 The following map shows the average desktop accessibility score by country top level domain (TLD).
 
 ![][image25]
 
+{{ figure_markup(
+  image="",
+  caption="",
+  description=""
+  chart_url="",
+  sheets_gid="",
+  sql_file=".sql"
+  )
+}}
+
 But it is a bit easier to see the TLD ranked and including the non-country codes as well.   
 
 ![][image26]  
+
+{{ figure_markup(
+  image="",
+  caption="",
+  description=""
+  chart_url="",
+  sheets_gid="",
+  sql_file=".sql"
+  )
+}}
 
 As with the prior chart .edu and .gov domains are the most accessible. The US Government under Section 508 and [Section 504](https://www.levelaccess.com/compliance-overview/section-504-compliance/), have had this as part of their mandate for more than two decades. Early accessibility legislation and [active lawsuits](https://www.accessibility.com/digital-lawsuits) have driven accessibility adoption in the United States. Countries outside of the USA started providing legislation and  enforcement measures for WCAG conformance later. Lainey Feingold maintains a great list of [global law and policy](https://www.lflegal.com/global-law-and-policy/). 
 
@@ -565,9 +784,29 @@ Not all government domains follow consistent accessibility rules, however we wer
 
 ![][image27]  
 
+{{ figure_markup(
+  image="",
+  caption="",
+  description=""
+  chart_url="",
+  sheets_gid="",
+  sql_file=".sql"
+  )
+}}
+
 Most governments around the world have committed to similar levels of accessibility. It is clear from these results that the implementation of these policies isn’t being equally delivered. This is particularly important when looking into accessibility within the European Union where each member state needs to implement legislation based on the [Web Accessibility Directive](https://digital-strategy.ec.europa.eu/en/policies/web-accessibility-directive-standards-and-harmonisation). It should be possible to compare the 3 year [EU member state reports](https://digital-strategy.ec.europa.eu/en/library/web-accessibility-directive-monitoring-reports) with the values provided here and in future Web Almanacs. 
 
 ![][image28]
+
+{{ figure_markup(
+  image="",
+  caption="",
+  description=""
+  chart_url="",
+  sheets_gid="",
+  sql_file=".sql"
+  )
+}}
 
 The Netherlands (97.5%) are firmly in the lead, followed by Luxembourg (95.7%) and Finland (93.8). The [United Kingdom](https://design-system.service.gov.uk) and the [Netherlands](https://github.com/nl-design-system) both have a standardized design system which is built for accessibility.  What contributes to Luxembourg and Finland’s success? Considering that most accessibility content is available only in English, has this impacted adoption?
 
@@ -576,7 +815,27 @@ Government domains were largely found based on domain name pattern matching. The
 We can also review the accessibility of various states.  
 ![][image29]
 
+{{ figure_markup(
+  image="",
+  caption="",
+  description=""
+  chart_url="",
+  sheets_gid="",
+  sql_file=".sql"
+  )
+}}
+
 ![][image30]
+
+{{ figure_markup(
+  image="",
+  caption="",
+  description=""
+  chart_url="",
+  sheets_gid="",
+  sql_file=".sql"
+  )
+}}
 
 Again, Colorado and Vermont are much further ahead than other states. The state of Georgia has a [central Drupal installation](https://digital.georgia.gov/services/govhub) managed through a central agency, does this explain why it is in the top 5? Colorado has established a centralized [digital service organization](https://oit.colorado.gov/colorado-digital-service), [new accessibility legislation](https://oit.colorado.gov/accessibility-law) and now has an average of 94.8%. Pennsylvania’s state average is much lower at 82.2% but they also have a [digital experience team](https://code.oa.pa.gov/). 
 
@@ -589,6 +848,16 @@ The [WebAim Million](https://webaim.org/projects/million/) study reviewed CMS da
 When most folks think about CMS, they think about the ones that you can download and install yourself. This is predominantly made up of open source tools, but not exclusively. AEM, Contentful and Sitecore were the most accessible three in this list of top 10\. A possible explanation for this is that closed-source software like AEM is more likely to be used by larger corporations, which have more resources to address accessibility issues. Additionally, open-source software gives website owners a lot of freedom, which in some cases can lead to worse accessibility.  
 
 ![][image31]
+
+{{ figure_markup(
+  image="",
+  caption="",
+  description=""
+  chart_url="",
+  sheets_gid="",
+  sql_file=".sql"
+  )
+}}
 
 Website platforms in general performed better than the Traditional CMS with Wix, Squarespace and Google Sites being significantly better. 
 
@@ -607,6 +876,16 @@ The different CMS do have a lot of commonalities in the top errors that they hav
 There are many tools which can be used to help authors evaluate the accessibility of a page. Institutions that control the browser configurations of their staff, could choose to simply install the open source [Accessibility Insights](https://accessibilityinsights.io/docs/web/getstarted/assessment/) browser plugin for all of their browsers. This would make errors much more visible to administrators. For many of the CMS above though, the best solution might be to install a tool like [Sa11y](https://sa11y.netlify.app/) or [Editoria11y](https://editoria11y.princeton.edu/) which is geared to help authors. Since Joomla 4.1 [Sa11y is included by default](https://sa11y.netlify.app/joomla/), so all authors benefit. 
 
 ![][image32]
+
+{{ figure_markup(
+  image="",
+  caption="",
+  description=""
+  chart_url="",
+  sheets_gid="",
+  sql_file=".sql"
+  )
+}}
 
 Looking at audits of these CMS Platforms, the top five Lighthouse issues have less in the priority if issues but still have lots of similarities. Alternative text, link name, heading order and color contrast are all still issues, but just with greater/lesser rates of occurrence. 
 
@@ -630,9 +909,29 @@ The differences are showing that it is possible for CMSs to make an impact on Ac
 
 ![][image33]
 
+{{ figure_markup(
+  image="",
+  caption="",
+  description=""
+  chart_url="",
+  sheets_gid="",
+  sql_file=".sql"
+  )
+}}
+
 Stimulus, Remix and Qwik are several percent more accessible on average than React, Svelte or Ember.js.  
 
 ![][image34]  
+
+{{ figure_markup(
+  image="",
+  caption="",
+  description=""
+  chart_url="",
+  sheets_gid="",
+  sql_file=".sql"
+  )
+}}
 
 RedwoodJS is clearly the most accessible, followed by Remix and Astro.
 
