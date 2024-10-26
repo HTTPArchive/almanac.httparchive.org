@@ -78,7 +78,7 @@ In building sustainable digital interfaces, we must consider the user, including
 Similarly, one must consider human diversity. Race, class, gender, and sexual identity have been used to divide people. A sustainable web should promote climate justice.
 
 For further information, refer to:
-- <a href="#wsgs">The WSGs 1.0 - SC 3.5</a>.
+- <a href="#wsg">The WSG 1.0 - SC 3.5</a>.
 
 ### Legal obligations and reporting standards
 
@@ -132,7 +132,7 @@ It is very important to keep in mind that there is still no available tool that 
 Usually, we talk about CO2 but it would be more accurate to talk about eqCO2 or CO2e: values equivalent to CO2 emissions but rather applies to all kinds of greenhouse gasses (GHG). Also, other environmental impacts should be considered (as is the case in Life Cycle Assessment for instance) to avoid impact transfers (e.g. when reducing GHG emissions proves detrimental to water consumption) and debatable claims such as "carbon neutrality".
 
 For further information, refer to:
-- <a href="#wsgs">The WSGs 1.0 - SC 2.1, 2.25, and 5.5</a>.
+- <a href="#wsg">The WSG 1.0 - SC 2.1, 2.25, and 5.5</a>.
 
 ### A quick note on assessing environmental impacts
 
@@ -168,7 +168,7 @@ Page weight represents the amount of data transferred to access the web page (ba
 It is also important to emphasize that these numbers are coming for a so-called lab test, meaning that pages were accessed via script and not real users. With many websites these days implementing lazy loading strategies (request and load assets once they are needed, through native lazy-loading for images and iframes or progressive hydration for dynamic components), as well as loading and processing extra scripts once the user has given consent for it (and the script does not include any user interaction emulation), average page weight is sure to be an even bigger number.
 
 For further information, refer to:
-- <a href="#wsgs">The WSGs 1.0 - SC 2.6 and 5.27</a>.
+- <a href="#wsg">The WSG 1.0 - SC 2.6 and 5.27</a>.
 
 #### Weight by content type
 
@@ -204,7 +204,7 @@ The size of font files may look reasonable if we consider that <a hreflang="en" 
 More about this topic can be found in the <a hreflang="en" href="./fonts">Fonts</a> and <a hreflang="en" href="./page-weight">Page Weight</a> Chapter.
 
 For further information, refer to:
-- <a href="#wsgs">The WSGs 1.0 - SC 2.6 and 5.27</a>.
+- <a href="#wsg">The WSG 1.0 - SC 2.6 and 5.27</a>.
 
 ### Carbon emissions
 
@@ -285,7 +285,7 @@ It should be noted that while many assume sustainability to be a task primarily 
 Carbon emissions can ultimately be measured through the amount of energy (electricity) consumed through the act of processing actions (such as how many objects are rendered to the screen and the energy intensity of CPU, GPU, and RAM required for this activity), and as such, it can be more easily calculated, and any reductions made where beneficial. However, other natural resources are consumed by Internet infrastructure or devices connected to the web such as water (for cooling equipment), materials and chemicals (e.g. printing), and e-waste (old devices being thrown away). The sustainability impact of these issues must also be accounted for in the lifecycle chain of a product or service.
 
 For further information, refer to:
-- <a href="#wsgs">The WSGs 1.0 - SC 4.1 and 5.5</a>.
+- <a href="#wsg">The WSG 1.0 - SC 4.1 and 5.5</a>.
 
 ### Number of requests
 
@@ -328,7 +328,7 @@ The not-so-nice surprise here is that most of the requests, around 70 in the 90t
 The size of retrieved Images is almost double the size of retrieved JavaScript in the 90th percentile, so the "old" pattern is still there. This leads us to the conclusion that sites are loading fewer images but slightly heavier and, in general, more JavaScript, which is not a good trend since that leads to the need for more processing power and can exclude users with aging devices from accessing sites.
 
 For further information, refer to:
-- <a href="#wsgs">The WSGs 1.0 - SC 3.1 and 4.9</a>.
+- <a href="#wsg">The WSG 1.0 - SC 3.1 and 4.9</a>.
 
 ### More sustainable hosting
 
@@ -345,7 +345,7 @@ Compensating for emissions at the server-side can be a complex task and transpar
 Note: You may be able to use APIs and infrastructure to model your website or application based on the environmental situation at that time. <a hreflang="en" href="https://hackernoon.com/carbon-aware-computing-next-green-breakthrough-or-new-greenwashing">Carbon-aware computing</a> is a relatively new concept but it has some interesting viewpoints.
 
 For further information, refer to:
-- <a href="#wsgs">The WSGs 1.0 - Section 4</a>.
+- <a href="#wsg">The WSG 1.0 - Section 4</a>.
 
 #### How many of the sites listed in the HTTP Archive run on green hosting?
 
@@ -369,7 +369,7 @@ There is a significant difference in top-ranked sites, showing that 55% of sites
 Understanding the environmental impact of websites is only the first step; action is crucial. With our updated insights into website footprints, particularly regarding unused code and font usage, we can now explore more targeted and effective strategies for mitigation. Let's examine how to translate this knowledge into tangible, sustainable web practices.
 
 For further information, refer to:
-- <a href="#wsgs">The WSGs 1.0 - Sections 2, 3, 4, and 5</a>.
+- <a href="#wsg">The WSG 1.0 - Sections 2, 3, 4, and 5</a>.
 
 ### Avoiding waste
 
@@ -385,7 +385,7 @@ Avoiding waste remains one of the most effective ways to reduce the environmenta
 You should only load assets that are essential for displaying the current view of the page. This can be achieved through techniques like lazy-loading, critical CSS extraction, and patterns such as <a hreflang="en" href="https://www.patterns.dev/vanilla/import-on-interaction">Import on Interaction</a> and <a hreflang="en" href="https://www.patterns.dev/vanilla/import-on-visibility">Import on Visibility</a>. It's also crucial to load assets, particularly images and fonts, at the appropriate size for each client device. In this section, we'll focus primarily on minimizing unused code and optimizing font loading, as our data shows these remain significant contributors to unnecessary page weight.
 
 For further information, refer to:
-- <a href="#wsgs">The WSGs 1.0 - SC 2.7, 2.15-9, 2.23, 3.7, 3.18, and 3.19</a>.
+- <a href="#wsg">The WSG 1.0 - SC 2.7, 2.15-9, 2.23, 3.7, 3.18, and 3.19</a>.
 
 ##### Fonts
 
@@ -403,7 +403,7 @@ By thoughtfully approaching typography, we can create visually appealing website
 For more detailed information, refer to our dedicated <a hreflang="en" href="./fonts">Fonts chapter</a> and stay updated with the latest web font optimization practices.
 
 For further information, refer to:
-- <a href="#wsgs">The WSGs 1.0 - SC 2.18 and 2.19</a>.
+- <a href="#wsg">The WSG 1.0 - SC 2.18 and 2.19</a>.
 
 ##### Unused CSS
 
@@ -425,7 +425,7 @@ These changes, while small, suggest a general trend towards slightly larger CSS 
 Despite these small increases, the overall picture hasn't changed dramatically since 2022. This suggests that while there have been some efforts to optimize CSS usage, there's still considerable room for improvement, especially for websites with higher percentiles.
 
 For further information, refer to:
-- <a href="#wsgs">The WSGs 1.0 - SC 3.4</a>.
+- <a href="#wsg">The WSG 1.0 - SC 3.4</a>.
 
 ##### Unused JavaScript
 
@@ -453,7 +453,7 @@ By the 90th percentile, websites now load over 900KB of unused JavaScript for de
 The substantial increase in unused JavaScript between 2022 and 2024 underscores the urgent need for the web development community to adopt these optimization techniques for improved performance and sustainability.
 
 For further information, refer to:
-- <a href="#wsgs">The WSGs 1.0 - SC 3.3 and 3.4</a>.
+- <a href="#wsg">The WSG 1.0 - SC 3.3 and 3.4</a>.
 
 #### Other technical optimizations
 
@@ -470,7 +470,7 @@ Now that we've examined the environmental impact of websites, particularly focus
 In this section, we'll explore how to make your essential content as sustainable as possible. We'll delve into optimizing images, videos, animations, and fonts - elements that significantly contribute to a website's environmental footprint. By fine-tuning these components, we can substantially reduce resource consumption without compromising user experience.
 
 For further information, refer to:
-- <a href="#wsgs">The WSGs 1.0 - SC 2.8, 2.14, and 2.21</a>.
+- <a href="#wsg">The WSG 1.0 - SC 2.8, 2.14, and 2.21</a>.
 
 #### Mobile First
 
@@ -483,7 +483,7 @@ When implemented thoughtfully, Mobile First design can lead to faster load times
 For more detailed insights on how Mobile First impacts website performance, refer to our <a hreflang="en" href="./performance">Performance chapter</a>.
 
 For further information, refer to:
-- <a href="#wsgs">The WSGs 1.0 - SC 3.14</a>.
+- <a href="#wsg">The WSG 1.0 - SC 3.14</a>.
 
 #### Image optimization
 
@@ -497,7 +497,7 @@ Faster load times, potentially reducing user wait time and associated energy con
 When implementing image optimization, balance file size reduction with maintaining necessary quality. Utilize modern formats, responsive loading techniques, and appropriate compression levels. For detailed performance implications and technical implementations of image optimization strategies, refer to our <a hreflang="en" href="./performance">Performance chapter</a>.
 
 For further information, refer to:
-- <a href="#wsgs">The WSGs 1.0 - SC 2.15</a>.
+- <a href="#wsg">The WSG 1.0 - SC 2.15</a>.
 
 ##### Format (WebP/AVIF)
 
@@ -608,7 +608,7 @@ Additionally, configure your videos thoughtfully:
 Remember, every optimization in video delivery can lead to substantial energy savings given the large file sizes involved. Balancing video quality with sustainability goals is key to creating engaging yet environmentally responsible web experiences.
 
 For further information, refer to:
-- <a href="#wsgs">The WSGs 1.0 - SC 2.16</a>.
+- <a href="#wsg">The WSG 1.0 - SC 2.16</a>.
 
 ##### Preload
 
@@ -688,7 +688,7 @@ If animations are necessary for your design:
 - Lazy-load animations that are not immediately visible on page load.
 
 For further information, refer to:
-- <a href="#wsgs">The WSGs 1.0 - SC 2.17</a>.
+- <a href="#wsg">The WSG 1.0 - SC 2.17</a>.
 
 #### Favicon and error pages
 
@@ -721,7 +721,7 @@ When we compare the 2024 data to <a hreflang="en" href="../2021/markup#favicons"
 While there's still room for improvement, particularly in further adopting highly efficient formats like SVG and WebP, the overall trend suggests that developers are increasingly considering the sustainability implications of even small elements like favicons.
 
 For further information, refer to:
-- <a href="#wsgs">The WSGs 1.0 - SC 3.18 and 4.4</a>.
+- <a href="#wsg">The WSG 1.0 - SC 3.18 and 4.4</a>.
 
 ### Optimizing external content
 
@@ -770,7 +770,7 @@ When evaluating libraries and frameworks, opt for performant alternatives that a
 By carefully managing third-party integrations and prioritizing user preferences, we can significantly reduce the ecological footprint of our digital products while maintaining functionality and user experience. This is also usually beneficial to performance, security, privacy, and accessibility.
 
 For further information, refer to:
-- <a href="#wsgs">The WSGs 1.0 - SC 3.7</a>.
+- <a href="#wsg">The WSG 1.0 - SC 3.7</a>.
 
 For more detailed information on analyzing and optimizing third-party usage, refer to the <a hreflang="en" href="https://developer.chrome.com/docs/lighthouse/performance/third-party-summary">Chrome Developers documentation</a>.
 
@@ -807,7 +807,7 @@ As developers, we can make our apps & websites more sustainable by:
 For a deeper dive into JavaScript's pros and cons, check out our comprehensive <a hreflang="en" href="./javascript">JavaScript chapter</a>.
 
 For further information, refer to:
-- <a href="#wsgs">The WSGs 1.0 - SC 3.2</a>.
+- <a href="#wsg">The WSG 1.0 - SC 3.2</a>.
 
 #### CSS
 
@@ -837,7 +837,7 @@ As developers, we can make our apps & websites more sustainable by:
 - Implement critical CSS techniques to inline essential styles and defer the loading of non-critical CSS.
 
 For further information, refer to:
-- <a href="#wsgs">The WSGs 1.0 - SC 3.2-4</a>.
+- <a href="#wsg">The WSG 1.0 - SC 3.2-4</a>.
 
 ##### Print stylesheet
 
@@ -848,7 +848,7 @@ Having a <a hreflang="en" href="https://www.smashingmagazine.com/2018/05/print-s
 When creating a print-friendly stylesheet, be considerate of the user preference towards color or monochrome output, the color of paper used in the printer tray, the size of paper provided for printing, and the orientation of paper (responsive design of a sort that exists in print).
 
 For further information, refer to:
-- <a href="#wsgs">The WSGs 1.0 - SC 2.23 and 3.13</a>.
+- <a href="#wsg">The WSG 1.0 - SC 2.23 and 3.13</a>.
 
 ##### User Preferences (Dark mode)
 
@@ -861,7 +861,7 @@ Dark mode itself can be a real benefit for sustainability on OLED screens due to
 There are several other user-preference <a hreflang="en" href="https://polypane.app/blog/the-complete-guide-to-css-media-queries/">media queries</a> available to CSS that may (depending on usage) have sustainability benefits for your visitors such as monochrome (to default printing to a single cartridge type), prefers-reduced-motion (to reduce processor-intensive animated effects), and the upcoming <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-data">prefers-reduced-data</a> (that allows designing around low bandwidth devices).
 
 For further information, refer to:
-- <a href="#wsgs">The WSGs 1.0 - SC 3.13</a>.
+- <a href="#wsg">The WSG 1.0 - SC 3.13</a>.
 
 For a deeper dive into CSS's pros and cons, check out our comprehensive <a hreflang="en" href="./css">CSS chapter</a>.
 
@@ -872,7 +872,7 @@ The practice of inlining JavaScript and CSS directly in HTML can bloat HTML file
 The importance of the <a hreflang="en" href="https://meiert.com/en/blog/what-happened-to-separation-of-concerns/">separation of concerns</a> (HTML, CSS, and JavaScript) cannot be understated as also touched upon earlier in this chapter. While CSS can't defer or asynchronously load assets like JavaScript that would be render-blocking (without reliance on JavaScript itself), it still retains the same key benefit of being able to cache such assets. In doing so, a large library of CSS styles can be re-used among many pages without having to be re-downloaded.
 
 For further information, refer to:
-- <a href="#wsgs">The WSGs 1.0 - SC 3.17</a>.
+- <a href="#wsg">The WSG 1.0 - SC 3.17</a>.
 
 {{ figure_markup(
   image="style-usage.png",
@@ -914,7 +914,7 @@ From a sustainability perspective, obsolete code is problematic for several reas
 4. Security: Obsolete code is much more likely to have known security issues that could put users at risk.
 
 For further information, refer to:
-- <a href="#wsgs">The WSGs 1.0 - SC 2.29 and 3.20</a>.
+- <a href="#wsg">The WSG 1.0 - SC 2.29 and 3.20</a>.
 
 #### CDN
 
@@ -944,7 +944,7 @@ From a sustainability perspective, the increased adoption of CDNs is a positive 
 For a deeper dive into CDNs, check out our comprehensive  <a hreflang="en" href="https://developer.chrome.com/docs/devtools/coverage">CDN chapter</a>.
 
 For further information, refer to:
-- <a href="#wsgs">The WSGs 1.0 - SC 4.10</a>.
+- <a href="#wsg">The WSG 1.0 - SC 4.10</a>.
 
 #### Text compression
 
@@ -976,7 +976,7 @@ Given that text compression can significantly reduce data transfer volumes, the 
 As we move towards a more sustainable web, text compression remains a key tool in our optimization toolkit, offering a relatively simple yet highly effective way to reduce our digital carbon footprint.
 
 For further information, refer to:
-- <a href="#wsgs">The WSGs 1.0 - SC 4.3</a>.
+- <a href="#wsg">The WSG 1.0 - SC 4.3</a>.
 
 #### Caching
 
@@ -1007,7 +1007,7 @@ The shift towards Cache-Control only usage suggests a growing awareness of moder
 For more detailed information on caching techniques, implementation strategies, and performance implications, please refer to our comprehensive <a hreflang="en" href="./performance">Performance Chapter</a>.
 
 For further information, refer to:
-- <a href="#wsgs">The WSGs 1.0 - SC 4.2</a>.
+- <a href="#wsg">The WSG 1.0 - SC 4.2</a>.
 
 ## SEO and sustainability
 
@@ -1033,7 +1033,7 @@ With this in mind, here are seven ways to bring more <a hreflang="en" href="http
 4. <a hreflang="en" href="https://bthechange.com/7-ways-to-align-climate-strategy-with-digital-marketing-strategy-9668a3a3bda">Reduce negative effects</a> where possible to minimize search marketing's impact on the planet.
 5. As with any web sustainability initiative, reduce the amount of data you transfer, collect, and store.
 6. Well-structured metadata can convey critical information about your website that can be used to educate potential visitors. For many sites, their purpose can be satisfied without a user ever actually visiting their domain.
-7. Finally, align your search marketing efforts with the W3C Web Sustainability Guidelines (WSGs) 1.0, particularly <a href="#wsgs">SC 2.6, 2.14, 2.15, 2.16, 2.19, 3.5, 3.12 and 4.4</a>.
+7. Finally, align your search marketing efforts with the W3C Web Sustainability Guidelines (WSG) 1.0, particularly <a href="#wsg">SC 2.6, 2.14, 2.15, 2.16, 2.19, 3.5, 3.12 and 4.4</a>.
 
 It is possible to <a hreflang="en" href="https://www.mightybytes.com/blog/sustainable-digital-marketing/">redefine success</a> by including stakeholder perspectives and needs in our marketing, making it an engine of well-being versus the more traditional engine of (often exploitative) growth. As part of these efforts, we also need search platforms to take ownership and action on their own roles in exacerbating the climate crisis.
 
@@ -1061,7 +1061,7 @@ Specific tactics to improve data governance include:
 3. Identify <a hreflang="en" href="https://www.mightybytes.com/blog/sustainable-marketing-stack/">strategic partners</a> in your <a hreflang="en" href="https://www.mightybytes.com/blog/how-to-improve-your-digital-supply-chain/">digital supply chain</a> that are aligned with the organization's sustainability goals.
 4. Regularly audit data and digital products and services to reduce risk and waste.
 5. Think twice before you collect information and, when you do, document how long this information should be kept.
-6. Finally, align data governance efforts with the W3C Web Sustainability Guidelines (WSGs) 1.0, particularly SC: 2.1, 2.25, 4.12, 5.6, 5.12, and 5.20.
+6. Finally, align data governance efforts with the W3C Web Sustainability Guidelines (WSG) 1.0, particularly SC: 2.1, 2.25, 4.12, 5.6, 5.12, and 5.20.
 
 ### More Sustainable Content Management
 
@@ -1074,7 +1074,7 @@ This offers opportunities for teams to support more sustainable content manageme
 3. Regularly conduct <a hreflang="en" href="https://www.mightybytes.com/blog/how-to-run-a-content-audit/">content audits</a> to ensure your content continues to provide value for stakeholders over time. Use this process to edit, delete, add, clarify, or otherwise revise content as needed.
 4. Manage content assets with sustainability in mind: compress, tag, and reuse assets as needed. Use heavy media assets like audio, video, or animation only when necessary. Also, use a digital asset management or design system to keep source files and other assets organized.
 5. Audit tools regularly to ensure your team has access to the features they need proportional to your resources. Train or upskill team members on new features or processes.
-6. Finally, align content management efforts with the W3C Web Sustainability Guidelines (WSGs) 1.0, particularly SC: 2.6, 2.8, 2.14, 2.15, 2.16, 2.21, 2.23, 2.25, 3.5, 5.3, 5.4, and 5.12.
+6. Finally, align content management efforts with the W3C Web Sustainability Guidelines (WSG) 1.0, particularly SC: 2.6, 2.8, 2.14, 2.15, 2.16, 2.21, 2.23, 2.25, 3.5, 5.3, 5.4, and 5.12.
 
 ## Popular frameworks, platforms, and CMSs
 
@@ -1218,7 +1218,7 @@ These insights underscore the significant role that platforms and frameworks pla
 These exceptions belong to the static site generator category, particularly Hugo and Jekyll, which typically support sites focused on blogs and text-heavy content with minimal JavaScript usage. Static site generators are also often chosen for their performance benefits, suggesting a greater likelihood of optimization beyond the norms of standard CMS-driven sites.
 
 For further information, refer to:
-- <a href="#wsgs">The WSGs 1.0 - SC 3.7, 3.21, and 5.28</a>.
+- <a href="#wsg">The WSG 1.0 - SC 3.7, 3.21, and 5.28</a>.
 
 ## Conclusion
 
@@ -1255,7 +1255,7 @@ For further information, refer to:
 - <a hreflang="en" href="https://www.websitecarbon.com/">Co2.js</a>
 - <a hreflang="en" href="https://aremythirdpartiesgreen.com/">How to Write An Effective Sustainability Statement</a>
 
-#### WSGs
+#### WSG
 
 The W3C Sustainable Web community group's Web Sustainability Guidelines are a hugely beneficial resource for anyone seeking to implement sustainability in their website or application. The specification they have produced is broken down into sections based on expertise (UX, Web Development, DevOps, and Business) and additional resources are available (linked to at the top of the specification) which can assist in your understanding of and implementation of sustainability within your product or service.
 
@@ -1265,7 +1265,7 @@ For further information, refer to:
 - <a hreflang="en" href="https://w3c.github.io/sustyweb/glance.html">At-A-Glance Overview</a>
 - <a hreflang="en" href="https://w3c.github.io/sustyweb/intro.html">Introduction to Web Sustainability</a>
 - <a hreflang="en" href="https://w3c.github.io/sustyweb/policies.html">Web Sustainability Laws & Policies</a>
-- <a hreflang="en" href="https://w3c.github.io/sustyweb/quickref.html">WSGs Quick Reference (Includes PDF)</a>
+- <a hreflang="en" href="https://w3c.github.io/sustyweb/quickref.html">WSG Quick Reference (Includes PDF)</a>
 
 #### Up-To-Date (Knowledge)
 
