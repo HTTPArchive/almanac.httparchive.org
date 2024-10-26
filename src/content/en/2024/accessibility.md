@@ -95,15 +95,13 @@ Google Lighthouse can easily test for most but not all color contrast issues. Th
 
 The Lighthouse test determined that 29.2% of mobile sites and 27.7% of desktop sites have sufficient text color contrast. This is a moderate improvement over previous years, but it is still far below what is required for basic readability. 
 
-![Gradual progress on Sites with sufficient color contrast annual reviews since 2019 with the exception of 2023][image5]
-
 {{ figure_markup(
-  image="",
-  caption="",
-  description=""
-  chart_url="",
-  sheets_gid="",
-  sql_file=".sql"
+  image="color-contrast-2019-2020-2021-2022-2024.png",
+  caption="Sites with sufficient color contrast.",
+  description="A bar chart showing gradual progress in color contrast. 22.0% of mobile sites had sufficient color contrast in 2019, dipping slightly to 21.1% in 2020 and increasing slightly to 22.2% for 2020, increasing more to 22.9% in 2022, 2024 saw a bign jump to 29.2 for mobile. Desktop sites in 2022 were at 22.7% and in 2024 rose to 27.7%."
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=476448992&format=interactive",
+  sheets_gid="985048008",
+  sql_file="color_contrast.sql"
   )
 }}
 
@@ -117,19 +115,27 @@ We're revisiting [Adrian Roselli's post](https://adrianroselli.com/2015/10/dont-
 
 ![Graph of Pages with zooming and scaling disabled - Generally mobile is 2-3% higher than desktop][image6]
 
+{{ figure_markup(
+  image="pages-zooming-scaling-disabled.png",
+  caption="Pages with zooming and scaling disabled.",
+  description="A bar chart showing data on disabled zooming for desktop and mobile. 14% of desktop sites and 16% of mobile sites disable scaling, 18% and 20% respectively set a max scale of 1 and 20% and 23% use either."
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=1480116719&format=interactive",
+  sheets_gid="1937244738",
+  sql_file="viewport_zoom_scale.sql"
+  )
+}}
+
 We are happy to say that we are seeing a reduction in sites which are disabling zooming and scaling.  Compared with 2022’s data for mobile users there are 2% less sites who have disabled scaling and 4% that have disabled a max scale of 1\. The desktop average both went down by 2% compared to the last report. Users can configure their browsers to override this setting, but some defaults still respect the author’s preferences. 
 
 To check if your site has disabled or limited zoom look at the source of the page and search for \<meta name="viewport"\> if it is tagged with a maximum-scale, minimum-scale, user-scalable=no, or user-scalable=0. Ideally, there wouldn’t be any restrictions for content resizing, but WCAG only specifies the need for [200% magnification](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-scale.html#:~:text=Content%20satisfies%20the%20Success%20Criterion%20if%20it%20can,more%20extreme%2C%20adaptive%20layouts%20may%20introduce%20usability%20problems.).   
 
-![][image7]
-
 {{ figure_markup(
-  image="l",
-  caption="",
-  description=""
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=837866368&format=interactive",
-  sheets_gid=",
-  sql_file=""
+  image="font-unit-usage.png",
+  caption="Font unit usage.",
+  description="A bar chart showing px is used for font sizes on 65% of desktop and 66% of mobiles pages. em on 9% on both. rem on 4% of both, % on 4% of desktop and 5% of mobile, <number> on 2% of both, and finally pt on 15% on desktop and 14% on mobile."
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=655410508&format=interactive",
+  sheets_gid="806505055",
+  sql_file="units_properties.sql"
   )
 }}
 
@@ -156,15 +162,13 @@ Also, keep in mind that there is the page language, but pages often contain mult
 
 Modern CSS includes [Level 5 Media Queries](https://www.w3.org/TR/mediaqueries-5), which include [User Preference Media Queries](https://12daysofweb.dev/2021/preference-queries/).  User Preference Media Queries enhance accessibility by allowing users to select configurations that work for them. Choices like color schemes or contrast modes that suit individual preferences, such as dark mode. Users can also choose to minimize animations on a page, which is beneficial for users with vestibular disorders.  
 
-![][image8]
-
 {{ figure_markup(
-  image="",
-  caption="",
-  description=""
-  chart_url="",
-  sheets_gid="",
-  sql_file=".sql"
+  image="userpreference-media-queries.png",
+  caption="User preference media queries.",
+  description="A bar chart showing that 48.8% of desktop sites and 50.4% of mobile sites use the prefers-reduced-motion media query, 12.1% of sites use prefers-color-scheme, and prefers-contrast is used by just under 1% of desktop and mobile sites."
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=570596768&format=interactive",
+  sheets_gid="1665700473",
+  sql_file="media_query_features.sql"
   )
 }}
 
