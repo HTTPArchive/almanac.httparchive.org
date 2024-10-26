@@ -52,7 +52,7 @@ Starting this year, INP has officially replaced First Input Delay (FID) and beca
   caption: "The percent of websites having good CWV using FID and INP, segmented by year.", 
   description="Bar chart showing the percentage of websites with good Core Web Vitals (CWV) on mobile, comparing CWV with FID (First Input Delay) and CWV with INP (Interaction to Next Paint) over time. In 2022, 39% of websites had good CWV with FID, while 31% had good CWV with INP. In 2023, the percentage increased to 43% for CWV with FID and 37% for CWV with INP. In 2024, 48% of websites had good CWV with FID, and 43% had good CWV with INP.",  
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=1908072353&format=interactive",
-  sheets_gid="1535582002",  
+  sheets_gid="1535582002",
   sql_file="web_vitals_by_device.sql"
   )  
 }}
@@ -66,7 +66,7 @@ In the period from 2020 to 2022, we saw that mobile web performance measured by 
   caption: "The percent of websites having good CWV, segmented by rank and desktop vs mobile.", 
   description="Bar chart showing the percentage of websites with good CWV (Core Web Vitals) performance by rank for desktop and mobile. For the top 1,000 websites, 40% of mobile websites have good CWV, compared to 54% of desktop websites. In the top 10,000, 33% of mobile websites have good CWV, while 46% of desktop websites do. In the top 100,000, 31% of mobile websites and 43% of desktop websites have good CWV. In the top 1,000,000, 36% of mobile websites have good CWV, compared to 48% of desktop websites. For websites ranked 10,000,000 and beyond, 44% of mobile websites and 43% of desktop websites achieve good CWV.",  
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=1814767865&format=interactive",  
-  sheets_gid="355582610",  
+  sheets_gid="355582610",
   sql_file="web_vitals_by_rank_and_device.sql"  
   )  
 }}
@@ -212,7 +212,7 @@ This year, we analyzed LCP sub-part data from another source: RUMvision. Althoug
   image="largest-contentful-paint-subparts.png",  
   caption="Time spent in each LCP subpart by percentile. Source: RUMvision",  
   description="Bar chart showing the distribution of LCP subparts in milliseconds (ms) across different percentiles. At the 10th percentile, all subparts have minimal values. At the 25th percentile, resource TTFB and load delay remain under 100 ms. At the 50th percentile, resource TTFB increases to around 200 ms, with small increases in load delay, load duration, and render delay. At the 75th percentile, resource TTFB exceeds 500 ms, and render delay also shows an increase. At the 90th percentile, resource TTFB is over 1500 ms, and render delay rises to over 600 ms, with load delay and load duration also increasing.",  
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=249678580\&format=interactive",  
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=249678580&format=interactive",  
   sheets_gid="1987931132"  
   )  
 }}
@@ -246,7 +246,7 @@ The good news is that in 2024, fewer websites are using this performance anti-pa
   image="largest-contentful-paint-non-discoverable.png",  
   caption="The percent of pages whose LCP is not statically discoverable and initiated from a given resource.",  
   description="Bar chart showing the initiators of undiscoverable LCP (Largest Contentful Paint) for desktop and mobile, categorized by resource type. For desktop, 38% of pages have HTML as the initiator of undiscoverable LCP, while for mobile, this figure is 33%. CSS is responsible for 11% of undiscoverable LCP on desktop pages and 9% on mobile. An unknown resource type accounts for 5% of undiscoverable LCP on desktop and 4% on mobile.",  
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=427707611\&format=interactive",  
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=427707611&format=interactive",  
   sheets_gid="1131647963",  
   sql_file="lcp_initiator_type.sql"  
   )  
