@@ -203,15 +203,13 @@ Most automated tests do not test for focus order or keyboard traps. Lighthouse c
 
 WCAG mandates a visible focus indicator for all interactive content to ensure users can identify which element is currently focused as they move through a page.   
 
-![][image9]
-
 {{ figure_markup(
-  image="",
-  caption="",
-  description=""
-  chart_url="",
-  sheets_gid="",
-  sql_file=".sql"
+  image="pages-overriding-focus-styles.png",
+  caption="Pages overriding browser focus styles.",
+  description="A bar chart showing 82% websites sites use a :focus pseudo class, and 53% of sites using the :focus pseudo class to set the outline to 0 or none. 14% of desktop sites and 12% of mobile sites use the :focus-visible pseudo class."
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=1264001671&format=interactive",
+  sheets_gid="1799906695",
+  sql_file="focus_outline_0.sql"
   )
 }}
 
@@ -229,15 +227,13 @@ Our analysis shows that 62.9% of mobile websites and 64.1% of desktop websites (
 
 It's important to avoid placing non-interactive elements in the keyboard focus order, as this can be confusing for low-vision users.  
 
-![][image10]
-
 {{ figure_markup(
-  image="",
-  caption="",
-  description=""
-  chart_url="",
-  sheets_gid="",
-  sql_file=".sql"
+  image="tabindex-usage-and-values.png",
+  caption="tabindex usage.",
+  description="Bar chart showing that of pages that use tabindex, a tabindex of 0 is used on 49% of those pages for desktop and 47% of those pages for mobile, a negative tabindex is used on 48% for desktop and 47% for mobile, and finally a positive tabindex is used on 4% for all sites surveyed."
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=1092084835&format=interactive",
+  sheets_gid="2010133634",
+  sql_file="tabindex_usage_and_values.sql"
   )
 }}
 
@@ -256,15 +252,13 @@ Although ARIA landmarks have traditionally been only visible to screen reader us
 | nav | 66.4% | 19.0% | 69.7% |
 | footer | 65.4% | 10.4% | 66.6% |
 
-![][image11]
-
 {{ figure_markup(
-  image="",
-  caption="",
-  description=""
-  chart_url="",
-  sheets_gid="",
-  sql_file=".sql"
+  image="pages-with-element-role-yty.png",
+  caption="Yearly growth in pages with element role.",
+  description="A line graph with the roles identified in the table above. There is a gradual growth in the footer, header and nav lements and nearly 9% increase in the use of the main role."
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=1090856027&format=interactive",
+  sheets_gid="1224962143",
+  sql_file="landmark_elements_and_roles.sql"
   )
 }}
 
@@ -310,15 +304,13 @@ We discovered that 24% of both desktop and mobile pages likely include a skip li
 
 Descriptive page titles are important for navigating between pages, tabs, and windows. Assistive technologies, such as screen readers,read these titles aloud, helping users keep track of their location.  
 
-![][image12]
-
 {{ figure_markup(
-  image="",
-  caption="",
-  description=""
-  chart_url="",
-  sheets_gid="",
-  sql_file=".sql"
+  image="page_title-information.png",
+  caption="Title element statistics.",
+  description="A bar chart showing 97% of desktop and mobile sites use the <title> element, 69% of sites of those titles have four or more words, and 7% of desktops and 6% of mobile titles are changed on render."
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=1921322394&format=interactive",
+  sheets_gid="1803785019",
+  sql_file="page_title.sql"
   )
 }}
 
@@ -353,15 +345,13 @@ For example:
 <input type="email" id="emailaddress">
 ```
 
-![][image13]
-
 {{ figure_markup(
-  image="",
-  caption="",
-  description=""
-  chart_url="",
-  sheets_gid="",
-  sql_file=".sql"
+  image="form-input-name-sources.png"",
+  caption="Where inputs get their accessible names from.",
+  description="A bar chart showing the source of the accessible name for the label element. 27% of sites had no accessible name. 32% now get get their accessible name from a label element. 24% of desktops inputs get their accessible names from the placeholder and 25% for mobile. Aria-label is responsible for 9%. The value attrabute contributs 3%. A title attribute contributes to 3% of the desktop and 2% of the mobile sites surveyed."
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=2076905999&format=interactive",
+  sheets_gid="1902508631",
+  sql_file="form_input_name_sources.sql"
   )
 }}
 
@@ -371,15 +361,13 @@ Unfortunately, 12.6% of mobile inputs lack accessible names (a significant impro
 
 The placeholder attribute provides example input formats. It should not replace a \<label\> as a way to provide an accessible name. When placeholders are the only way of providing a visible label, that reference point disappears when the user starts typing. It is not a new concern that [browsers by default do not give placeholder text sufficient contrast](https://www.w3.org/WAI/GL/low-vision-a11y-tf/wiki/Placeholder_Research) to meet WCAG. Furthermore, they are [not always supported by screen readers](https://www.digitala11y.com/anatomy-of-accessible-forms-placeholder-is-a-mirage/).
 
-![][image14]
-
 {{ figure_markup(
-  image="",
-  caption="",
-  description=""
-  chart_url="",
-  sheets_gid="",
-  sql_file=".sql"
+  image="placeholder-but-no-label.png",
+  caption="Use of placeholders on inputs.",
+  description="A bar chart showing 55% of desktop sites and 54% of mobile sites use placeholders. 59% of desktop sites and 61% of mobile sites have inputs with no label. 55% of desktop sites and 57% of mobile sites have placeholders and also inputs with no labels."
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=186177069&format=interactive",
+  sheets_gid="615941327",
+  sql_file="placeholder_but_no_label.sql"
   )
 }}
 
