@@ -5,12 +5,14 @@
 SELECT
   client,
   is_root_page,
-  SUM(COUNT(0)) OVER (PARTITION BY client) AS total_images,
-  SUM(COUNTIF(alt_length_clipped >= 0)) OVER (PARTITION BY client) AS total_alt_tags,
+  SUM(COUNT(0)) OVER (PARTITION BY client, is_root_page) AS total_images,
+  SUM(COUNTIF(alt_length_clipped >= 0)) OVER (PARTITION BY client, is_root_page) AS total_alt_tags,
 
   alt_length_clipped AS alt_length,
   COUNT(0) AS occurrences,
-  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct_all_occurrences
+  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client, is_root_page) AS pct_all_occurrences,
+  COUNT(0) / NULLIF(SUM(COUNTIF(alt_length_clipped >= 0)) OVER (PARTITION BY client, is_root_page), 0) AS pct_of_alt_tags
+
 FROM (
   SELECT
     client,
@@ -30,11 +32,12 @@ FROM (
   )
   WHERE
     date = '2024-06-01' AND
-    alt_length IS NOT NULL
+    alt_length IS NOT NULL AND
+    is_root_page IS TRUE
 )
 GROUP BY
   client,
   is_root_page,
   alt_length
 ORDER BY
-  alt_length ASC;
+  client, is_root_page, alt_length ASC;
