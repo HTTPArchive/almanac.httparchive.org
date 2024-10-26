@@ -431,8 +431,6 @@ Images can have an alt attribute that provides a text description for screen rea
 
 The alt text should reflect the image’s context. For decorative images, alt="" is appropriate, while meaningful images require detailed descriptions. It's also important to avoid using file names as alt text, as it almost never provides relevant information. Currently 7.5% of mobile and 7.2% of desktop sites currently do.
 
-![][image16]
-
 {{ figure_markup(
   image="common-file-extensions-in-alt-text.png",
   caption="Most common file extensions in alt text.",
@@ -490,15 +488,13 @@ For instance, [tabbed interfaces](https://inclusive-components.design/tabbed-int
 
 HTML5 introduced numerous native elements with built-in semantics and roles. For example, the \<nav\> element inherently has a role="navigation", making it unnecessary to explicitly add this role with ARIA.  
 
-![][image18] 
-
 {{ figure_markup(
-  image="",
-  caption="",
-  description=""
-  chart_url="",
-  sheets_gid="",
-  sql_file=".sql"
+  image="top-10-aria-roles.png",
+  caption="Top 10 most common ARIA roles.",
+  description="Bar chart showing button is used by 49% of desktop sites and 50% of mobile sites, presentation by 40% and 39% respectively, dialog by 31%, navigation by 26% and 25%, search by 25%, main by 23%, image by 20%, banner by 16%, contentinfo by 14%, and finally region by 14%."
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=176303741&format=interactive",
+  sheets_gid="514880281",
+  sql_file="common_aria_role.sql"
   )
 }}
 
@@ -543,15 +539,13 @@ In addition to the DOM, browsers have an [accessibility tree](https://developer.
 
 An element's accessible name can come from its content (e.g., button text), attributes (e.g., image alt attribute), or associated elements (e.g., a label linked to a form control). There is a hierarchy used to determine the source of the accessible name when multiple sources are available. For further reading on accessible names, Léonie Watson’s article, ["What is an accessible name?"](https://developer.paciellogroup.com/blog/2017/04/what-is-an-accessible-name/) is a valuable resource.
 
-![][image19]
-
 {{ figure_markup(
-  image="",
-  caption="",
-  description=""
-  chart_url="",
-  sheets_gid="",
-  sql_file=".sql"
+  image="top10-aria-attributes.png",
+  caption="Top 10 ARIA attributes.",
+  description="A bar chart showing aria-label is used by 65% of sites, aria-hidden by 63%, aria-expanded by 35% and 34%, aria-live by 29% and 28%, aria-controls by 29% and 28%, aria-labelledby by 27% and 26%, aria-current by 25% and 26%, aria-haspopup by 25% and 23%, aria-describedby by 18% and 16%, and finally aria-atomic by 15% and 14%."
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=859350702&format=interactive",
+  sheets_gid="941417225",
+  sql_file="common_element_attributes.sql"
   )
 }}
 
@@ -559,19 +553,17 @@ Two ARIA attributes that aid in assigning accessible names are aria-label and ar
 
 We observed that almost 66% of pages evaluated featured at least one element with the aria-label attribute (up from 58% for desktop and 57% in mobile in 2022), making it the most frequently used ARIA attribute for accessible names. Additionally, 26.7% of desktop pages and 25.5% of mobile pages had at least one element with the aria-labelledby attribute (both are up 2% from 2022 data). This trend suggests that while more elements are being assigned accessible names, it might also indicate a rise in elements lacking visual labels. This can be challenging for users with cognitive disabilities and voice input users.
 
-![][image20]  
-
 {{ figure_markup(
-  image="",
-  caption="",
-  description=""
-  chart_url="",
-  sheets_gid="",
-  sql_file=".sql"
+  image="button-name-sources.png",
+  caption="Button accessible name source.",
+  description="A bar chart showing the contents are used for 59% of desktop buttons and 57% of mobile buttons, aria-label attribute is used for 24%, there is no accessible name for 10% and 12%, the value attribute is used for 6% and 5%, title attribute is used for 1% on both."
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=1222426699&format=interactive",
+  sheets_gid="883063802",
+  sql_file="button_name_sources.sql"
   )
 }}
 
-Buttons typically receive their accessible names from their content or ARIA attributes. According to [ARIA guidelines](https://www.w3.org/WAI/ARIA/apg/patterns/button/), it's preferable for an element to derive its accessible name from its content rather than an ARIA attribute if possible. We found that 59.1% of buttons on desktop obtain their accessible names from their text content, a slight drop from 2022 when it was 61%. Use of the aria-label attribute is up slightly to 23.9% on desktop sites and use the aria-label attribute for their accessible names, up from 20% in 2022\.
+Buttons typically receive their accessible names from their content or ARIA attributes. According to [ARIA guidelines](https://www.w3.org/WAI/ARIA/apg/patterns/button/), it's preferable for an element to derive its accessible name from its content rather than an ARIA attribute if possible. We found that 59% of buttons on desktop obtain their accessible names from their text content, a slight drop from 2022 when it was 61%. Use of the aria-label attribute is up slightly to 24% on desktop sites and use the aria-label attribute for their accessible names, up from 20% in 2022.
 
 In some cases, aria-label is useful, such as when multiple buttons have the same content but different functions, or when a button contains only an image or icon.
 
@@ -642,7 +634,7 @@ Users are increasingly used to seeing accessibility widgets on websites. These a
 
 * **user personalization** – tools that enable the site visitor to make changes to the appearance of the site via an on-site menu — changes like font or color contrast adjustments, and   
 * **automated overlay remediation** – a generic technology that automatically scans for and attempts to remediate many common WCAG issues which affect the user interface, with complex algorithms and/or Artificial Intelligence.  
-* **custom overlay remediation** \- site specific code written by expert developer(s) to address specific conformance needs, and verified by accessibility experts in context, to avoid conflict with assistive technology.
+* **custom overlay remediation** - site specific code written by expert developer(s) to address specific conformance needs, and verified by accessibility experts in context, to avoid conflict with assistive technology.
 
 Browsers have great built-in tools for personalization, but many users do not know how to use them.  Some sites add **personalization widgets** that often provide a range of accessibility features to make customization easier. Often this includes font size, spacing, and contrast, which is [included in the browser](https://mcmw.abilitynet.org.uk/). This may also include tools like [text to speech](https://en.wikipedia.org/wiki/Speech_synthesis), which is [included in Edge](https://www.microsoft.com/en-us/edge/features/read-aloud?form=MA13FJ). This can be useful for a range of users, but especially for those that do not have their own assistive technology available in that environment. These widgets can be helpful for users who are not actively using assistive technology or already maximizing their browser’s built-in accessibility features. 
 
@@ -660,43 +652,37 @@ Unfortunately, many teams simply stop investing in accessibility after investing
 
 This technology does not replace the need for good accessibility practices. Accessibility needs to be included in all stages of the product life cycle. Overlays are always going to have more usability, security and performance problems than simply fixing the errors at the source. It is important to remember that no automated tool can make a website fully accessible or WCAG compliant. 
 
-![][image21]  
-
 {{ figure_markup(
-  image="",
-  caption="",
-  description=""
-  chart_url="",
-  sheets_gid="",
-  sql_file=".sql"
+  image="pages-using-a11y-apps.png",
+  caption="Pages using accessibility apps (overlays).",
+  description="A bar chart showing 2024 data with almost 2% of desktop sites and almost 1.7% of mobile sites use an accessibility app. The chart also compares 2022 and 2021 data on this. There is almost a doubling in desktop use of overlays compared to 2021, when it was just under 1% for desktops and .8% for mobile. 2022 data for desktop and mobile is 1.6% and 1.2%, so inline with the growth observed."
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=924673292&format=interactive",
+  sheets_gid="1139100212",
+  sql_file="a11y_technology_usage.sql"
   )
 }}
 
 In 2024, we observed that almost 2% of desktop websites utilize known accessibility apps. While not all of these products are accessibility overlays, the detectable overlays show a similar growth trend.
 
-![][image22]  
-
 {{ figure_markup(
-  image="",
-  caption="",
-  description=""
-  chart_url="",
-  sheets_gid="",
-  sql_file=".sql"
+  image="a11y-app-usage-by-rank.png",
+  caption="Accessibility app usage by rank.",
+  description="A bar chart showing that for the 4 most commonly used overlay brands and the percentile in a grouping rank of the top 1000, 10000, 100000, 1000000, 10000000, 100000000. UserWay is the most popular, followed by AccessiBe, AudioEye and EqualWeb. For comparison, just looking at the top 10 million pages, we see Userway with 0.71%, Accessiby with 0.49%, AudioEye with 0.45% and EqualWeb with 0.04%. AccessiBe seems to outperform compared with other values in the top million sites. AudioEye seems to be popular in the top 10,000 sites."
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=1842351478&format=interactive",
+  sheets_gid="251539385",
+  sql_file="a11y_technology_usage_by_domain_rank.sql"
   )
 }}
 
 UserWay is the most widely used overlay in our dataset.  
 
-![][image23]  
-
 {{ figure_markup(
-  image="",
-  caption="",
-  description=""
-  chart_url="",
-  sheets_gid="",
-  sql_file=".sql"
+  image="pages-using-a11y-apps-by-rank.png",
+  caption="Pages using accessibility apps by rank.",
+  description="A bar chart showing that for the top 1,000 sites, 0.3% on desktop and 0.2% on mobile use and accessibility app, for the top 10,000 it's 0.5% and 0.4% respectively, for the top 100,000 it's 0.8% and 0.7%, for the top million it's 1.1% and 1.0%, for the top 10 million it's 1.2% and 1.0%, for the top 100 million it's 1.0% and 0.9%."
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=2030664465&format=interactive",
+  sheets_gid="300879270",
+  sql_file="a11y_overall_tech_usage_by_domain_rank.sql"
   )
 }}
 
@@ -722,15 +708,13 @@ This year we are providing a series of new data comparisons. We want to highligh
 
 There are two means by which we can identify country information, first by the GeoID of the server, and the second by the Top Level Domain. Because of the price of hosting in different countries, some are much better represented by GeoID than others. Likewise, given that many domains can operate independently of the country like the .ai or .io domain, we can’t assume that all .ca, .es, or .fi domains are located in Canada, Spain or Finland.
 
-![][image24]  
-
 {{ figure_markup(
-  image="",
-  caption="",
-  description=""
-  chart_url="",
-  sheets_gid="",
-  sql_file=".sql"
+  image="country-by-geoid.png",
+  caption="Most accessibile countries by GeoID.",
+  description="Using the GeoID, the country with the highest average for accessibility is the USA with a value of 84.3%. There is a drop of less a perscent as we move to Canada, UK, Australia, Germany, Netherlands, France, Mexico, Italy, Spain, Argentina, Indonesia, India, Poland, Brazil, Japan, Turkey, Vietnam, China and finally the Republic of Korea with 77.7%. These were for countries that hosted more than 100000 domains."
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=421126157&format=interactive",
+  sheets_gid="260430925",
+  sql_file="lighthouse_score_by_country.sql"
   )
 }}
 
@@ -738,29 +722,25 @@ It is worth noting that many sites that operate in the USA are subject to the Se
 
 The following map shows the average desktop accessibility score by country top level domain (TLD).
 
-![][image25]
-
 {{ figure_markup(
-  image="",
-  caption="",
-  description=""
-  chart_url="",
-  sheets_gid="",
-  sql_file=".sql"
+  image="country-by-tld-globe.png",
+  caption="Map of the accessibile countries by Top Level Domain (TLD).",
+  description="In looking at Top Level Domains with more than 45000 domains, we learn about accessibility. Displayed visually in a world map the most accessible countries are Norway, Filand, Canada, USA, UK, Sweden, Ireland, Australia, New Zealand, Austria, Belgium, Switzerland, Denmark, and South Africa. China is the least accessible by Top Level Domain. "
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=783736776&format=interactive",
+  sheets_gid="1209052596",
+  sql_file="lighthouse_score_by_tld"
   )
 }}
 
 But it is a bit easier to see the TLD ranked and including the non-country codes as well.   
 
-![][image26]  
-
 {{ figure_markup(
-  image="",
-  caption="",
-  description=""
-  chart_url="",
-  sheets_gid="",
-  sql_file=".sql"
+  image="country-by-tld.png",
+  caption="Accessibile countries by Top Level Domain (TLD).",
+  description="In looking at Top Level Domains with more than 45000 domains, we learn about accessibility. Displayed as a bar chart with the accessible domains .edu (Education), .gov (US Government), Norway, Filand, .io, Canada, USA, .app, UK, Sweden, Ireland, Australia, New Zealand, .co, Austria, Belgium, Switzerland, Denmark, and South Africa, .org."
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=783736776&format=interactive",
+  sheets_gid="1209052596",
+  sql_file="lighthouse_score_by_tld"
   )
 }}
 
@@ -770,29 +750,25 @@ As with the prior chart .edu and .gov domains are the most accessible. The US Go
 
 Not all government domains follow consistent accessibility rules, however we were able to isolate many countries' government sites. Not all countries follow regular consistent rules around government sites, so there will be exceptions which are not covered. We have collected averages for most government agencies around the world.
 
-![][image27]  
-
 {{ figure_markup(
-  image="",
-  caption="",
-  description=""
-  chart_url="",
-  sheets_gid="",
-  sql_file=".sql"
+  image="accessible-governments.png",
+  caption="Most accessible government websites.",
+  description="The most accessible governments were the Netherlands (97.6%), Luxembourg (95.7%), Finland (93.8%), UK (92.3%), European Union (91.5%), Norway (91.2%), Jersey (91.2%), Singapore (91.1%), Belgium (90.9%), Germany (90.8%),  France (90.0%), Australia (89.3%), New Zealand (88.9%), Dnmark (88.9%). "
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=415917251&format=interactive",
+  sheets_gid="720509689",
+  sql_file="lighthouse_score_by_government.sql"
   )
 }}
 
-Most governments around the world have committed to similar levels of accessibility. It is clear from these results that the implementation of these policies isn’t being equally delivered. This is particularly important when looking into accessibility within the European Union where each member state needs to implement legislation based on the [Web Accessibility Directive](https://digital-strategy.ec.europa.eu/en/policies/web-accessibility-directive-standards-and-harmonisation). It should be possible to compare the 3 year [EU member state reports](https://digital-strategy.ec.europa.eu/en/library/web-accessibility-directive-monitoring-reports) with the values provided here and in future Web Almanacs. 
-
-![][image28]
+Most governments around the world have committed to similar levels of accessibility. It is clear from these results that the implementation of these policies isn’t being equally delivered. This is particularly important when looking into accessibility within the European Union where each member state needs to implement legislation based on the [Web Accessibility Directive](https://digital-strategy.ec.europa.eu/en/policies/web-accessibility-directive-standards-and-harmonisation). It should be possible to compare the 3 year [EU member state reports](https://digital-strategy.ec.europa.eu/en/library/web-accessibility-directive-monitoring-reports) with the values provided here and in future Web Almanacs. It is worth noting that the average for the United States is 87.3%. 
 
 {{ figure_markup(
-  image="",
-  caption="",
-  description=""
-  chart_url="",
-  sheets_gid="",
-  sql_file=".sql"
+  image="accessible-governments-world.png",
+  caption="Map of the accessibility of global government websites.",
+  description="The map simply illustrates visually the table above. Scandinavian countries stand out as do many in Europe. Australia and New Zealand are highlighted in the Pacific. Canada is slightly darker than the United States."
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=1696489298&format=interactive",
+  sheets_gid="720509689",
+  sql_file="lighthouse_score_by_government.sql"
   )
 }}
 
@@ -801,7 +777,6 @@ The Netherlands (97.5%) are firmly in the lead, followed by Luxembourg (95.7%) a
 Government domains were largely found based on domain name pattern matching. There are a lot of inconsistencies in how governments use domain names, but there is enough information here to provide comparisons. It is worth noting that .gov covers all levels of the US government, so we have tried to filter out those state specific sub domains. In this report, we could not filter out municipal or regional .gov sites. When looking at the TLD .gov domain chart above the average was 86.5%. 
 
 We can also review the accessibility of various states.  
-![][image29]
 
 {{ figure_markup(
   image="",
