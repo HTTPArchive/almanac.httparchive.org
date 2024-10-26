@@ -264,7 +264,7 @@ The chart below illustrates the distribution of client-side generated content. I
   image="good-largest-contentful-paint-client-side-generated-content.png",  
   caption="The percent of websites with good LCP vs percentage of client-side generated content on a page",  
   description="Line chart showing the percentage of origins with good LCP compared to the percentage of client-side generated HTML for both desktop and mobile. For desktop, the percentage of origins with good LCP starts around 75% for pages with 0-10% client-side generated HTML and remains relatively stable, peaking slightly around 40-50% client-side HTML usage, before gradually declining to about 65% at the 90-100% range. For mobile, the percentage of good LCP starts lower, around 60% for the 0-10% range, and follows a similar trend, peaking slightly in the 30-40% range before declining more sharply to about 45% at the 90-100% client-side HTML usage.",  
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=750231640\&format=interactive",  
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=750231640&format=interactive",  
   sheets_gid="829333856",  
   sql_file=”inp_long_tasks.sql"  
   )  
@@ -280,7 +280,7 @@ The [CruX and RUMvision data on LCP sub-parts](#lcp-sub-parts) showed that resou
   image="largest-contentful-paint-image-sizes.png",  
   caption="Distribution of LCP image sizes, segmented by device type.",  
   description="Histogram showing the distribution of LCP image sizes for desktop and mobile pages, measured in kilobytes (KB). For mobile, 48% of pages have LCP image sizes between 100 and 200 KB, while 18% of desktop pages fall into this range. For desktop, 30% of pages have LCP images between 0 and 100 KB, compared to 1% for mobile. In the 200 to 300 KB range, 9% of desktop pages and 5% of mobile pages have LCP images. The percentages gradually decrease as image size increases, with only a small portion of pages having LCP images larger than 700 KB. At the highest range, 8% of both desktop and mobile pages have LCP images over 1000 KB.",  
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=164375992\&format=interactive",  
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=164375992&format=interactive", 
   sheets_gid="1329122831",  
   sql_file="lcp_bytes_histogram.sql"  
   )  
@@ -294,7 +294,7 @@ This aligns with the <a hreflang="en" href="https://github.com/GoogleChrome/ligh
   image="largest-contentful-paint-images-wasted-kb.png",  
   caption="Distribution of wasted kilobytes on LCP image",  
   description="Bar chart showing the distribution of wasted kilobytes on LCP images for desktop and mobile across percentiles. At the 10th, 25th, and 50th percentiles, both desktop and mobile pages have 0 wasted kilobytes. At the 75th percentile, desktop pages waste 20 kilobytes, while mobile pages waste 10 kilobytes. At the 90th percentile, desktop pages waste 190 kilobytes, and mobile pages waste 128 kilobytes.",  
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=321466279\&format=interactive",  
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=321466279&format=interactive",  
   sheets_gid="1984265626",  
   sql_file="lcp_wasted_bytes.sql"  
   )  
@@ -308,7 +308,7 @@ You can reduce image sizes through resizing dimensions and increasing compressio
   image="largest-contentful-paint-image-file-format.png",  
   caption="The percent of pages that use a given image file format for their LCP images",  
   description="Bar chart showing the distribution of LCP (Largest Contentful Paint) image formats for desktop and mobile. JPG is the most common format, used by 60.7% of desktop pages and a similar percentage of mobile pages. PNG is the second most common format, used by 25.9% of pages. WebP follows with 7.3%, while other formats such as MP4, SVG, GIF, and AVIF are used by less than 2% of pages. ICO, HEIC, and HEIF formats are barely used, with their percentages rounding to 0% for both desktop and mobile.",  
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=2086275423\&format=interactive",  
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=2086275423&format=interactive",  
   sheets_gid="240287365",  
   sql_file="lcp_format.sql"  
   )  
@@ -338,7 +338,7 @@ For an origin to receive a “good” INP score, at least 75% of all sessions ne
   image="interaction-to-next-paint",  
   caption="Distribution of INP performance by device.",  
   description="Stacked bar chart showing INP performance by device, with desktop and phone categorized into good (under 200 ms), needs improvement (200–500 ms), and poor (over 500 ms). For desktop, 97% of websites have good INP, 2% need improvement, and less than 1% perform poorly. For phones, 74% of websites have good INP, 24% need improvement, and 2% perform poorly.",  
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=667078190\&format=interactive",  
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=667078190&format=interactive",  
   sheets_gid="1535582002",  
   sql_file="web_vitals_by_device.sql"  
   )  
@@ -352,7 +352,7 @@ The primary reason for weaker performance on mobile is its lower processing powe
   image="good-interaction-to-next-paint.png",  
   caption="Good INP score by device.", 
   description="Bar chart showing the percentage of websites with good INP performance by device (desktop and mobile) across three years. In 2022, 95% of desktop websites had good INP, while 55% of mobile websites achieved good INP. In 2023, the percentage of websites with good INP improved to 97% for desktop and 64% for mobile. By 2024, 97% of desktop websites maintained good INP performance, while mobile improved further to 74%.",  
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=416359271\&format=interactive",  
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=416359271&format=interactive",  
   sheets_gid="1535582002",  
   sql_file="web_vitals_by_device.sql"  
   )  
@@ -368,7 +368,7 @@ Mobile INP metric by rank reveals an interesting trend. <a hreflang="en" href="h
   image="interaction-to-next-paint-score-mobile-2024.png",  
   caption="INP performance on mobile devices segmented by rank.",  
   description="Stacked bar chart showing mobile INP performance by website rank, categorized into good (under 200 ms), needs improvement (200–500 ms), and poor (over 500 ms).For the top 1,000 websites, 53% have good INP, 41% need improvement, and 6% perform poorly. For the top 10,000 websites, 49% are in the good range, 44% need improvement, and 7% are poor. In the top 100,000, 51% are good, 43% need improvement, and 6% are poor. For the top 1,000,000 websites, 61% have good INP, 35% need improvement, and 4% are poor. As the rank increases to the top 10,000,000 websites, 73% are good, 24% need improvement, and 3% are poor. Finally, for the top 100,000,000 websites, 74% have good INP, 24% need improvement, and 2% are poor.",  
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=296559964\&format=interactive",  
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=296559964&format=interactive",  
   sheets_gid="355582610",  
   sql_file="web_vitals_by_rank_and_device.sql"  
   )  
@@ -382,7 +382,7 @@ This could be because the most visited websites often have more user interaction
   image="good-interaction-to-next-paint-home-secondary-page.png",  
   caption="Good INP performance on Home and Secondary page by device.",  
   description="Bar chart showing the percentage of pages with good INP for home pages and secondary pages, separated by desktop and mobile performance. For home pages, 96% of desktop pages have a good INP, while 73% of mobile pages achieve a good INP. For secondary pages, 96% of desktop pages also have a good INP, with 72% of mobile pages reaching this performance level.",  
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=1483510539\&format=interactive",  
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=1483510539&format=interactive",  
   sheets_gid="1159394005",  
   sql_file="web_vitals_by_device_secondary_pages.sql"  
   )  
@@ -404,7 +404,7 @@ To optimize your website’s interactivity, it’s important to identify the dur
   image="interaction-to-next-paint-subparts.ong",  
   caption="INP Subparts by percentile, Source: RUMvision",  
   description="Bar chart showing the distribution of INP subparts in milliseconds (ms) by percentile. At the 10th percentile, all subparts (input delay, processing time, and presentation delay) are minimal. At the 25th percentile, the values slightly increase but remain below 10 ms. At the 50th percentile, input delay and processing time stay modest, while presentation delay reaches around 20 ms. At the 75th percentile, input delay increases to around 50 ms, with processing time and presentation delay also rising. At the 90th percentile, input delay reaches around 150 ms, and both processing time and presentation delay exceed 100 ms.",  
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=226800794\&format=interactive",  
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=226800794&format=interactive",  
   sheets_gid="731456372",  
   )  
 }}
@@ -421,7 +421,7 @@ In the diagram below, we analyzed a representative sample of 1,000 websites to s
   image="interaction-to-next-paint-long-task-desktop.png",  
   caption="Relationship between the INP and the sum of long tasks on desktop",  
   description="Scatter plot showing the relationship between the 75th percentile of INP (Interaction to Next Paint) and the sum of long tasks in milliseconds (ms) for desktop devices. Most data points cluster around lower INP values (below 500 ms) and long task sums under 1000 ms, but as INP increases beyond 500 ms, the sum of long tasks tends to rise, with some reaching up to 10,000 ms",  
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=1166159546\&format=interactive",  
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=1166159546&format=interactive",  
   sheets_gid="317913638",  
   sql_file="inp_long_tasks.sql"  
   )  
@@ -431,7 +431,7 @@ In the diagram below, we analyzed a representative sample of 1,000 websites to s
   image="interaction-to-next-paint-long-task-mobile.png",  
   caption: "Relationship between the INP and the sum of long tasks on mobile",
   description="Scatter plot showing the relationship between the 75th percentile of INP (Interaction to Next Paint) and the sum of long tasks in milliseconds (ms) for mobile devices. The majority of data points cluster around lower INP values (below 500 ms), but there is a spread of data showing higher INP values (up to 5000 ms) associated with a broader range of long task durations.",  
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=175079544\&format=interactive",  
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=175079544&format=interactive",  
   sheets_gid="317913638",  
   sql_file="inp_long_tasks.sql"  
   )  
@@ -445,7 +445,7 @@ However, it's still interesting to explore the Long Task duration data from RUMv
   image="long-task-duration.png",
   caption: "Long task duration.",
   description="Bar chart showing the distribution of task duration in milliseconds (ms) by percentile. At the 25th percentile, the task duration is 68 ms. At the 50th percentile, it increases to 103 ms. At the 75th percentile, task duration is 181 ms, and at the 90th percentile, it reaches 373 ms. This distribution shows that task durations grow significantly as we move from the 25th to the 90th percentile.",  
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=658363928\&format=interactive",  
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=658363928&format=interactive",  
   sheets_gid="1272522211"  
   )  
 }}
@@ -462,7 +462,7 @@ Long Animation Frames (LoAF) are a performance timeline entry for identifying sl
   image="interaction-to-next-paint-script-categories-desktop.png",  
   caption: "Distribution of INP performance segmented by script categories on desktop.", 
   description="Stacked bar chart showing the distribution of INP across LOAF script categories for desktop, measured in milliseconds (ms). User Review, SMS & Email, and Analytics scripts perform best, with most of their INP in the good range. Tag Manager and Consent Provider scripts have more mid-range INP, with some falling into the poor category. Advertising, Others, and User Behaviour scripts perform worse, with the majority of INP falling into the poor range.",  
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=1975914925\&format=interactive",  
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=1975914925&format=interactive",  
   sheets_gid="947269170",  
   )  
 }}  
@@ -471,7 +471,7 @@ Long Animation Frames (LoAF) are a performance timeline entry for identifying sl
   image="interaction-to-next-paint-script-categories-desktop.png",  
   caption: "Distribution of INP performance segmented by script categories on mobile.",
   description="Stacked bar chart showing the distribution of INP across LOAF script categories for mobile, measured in milliseconds (ms). For Social scripts, most are in the good range, with few in the poor range. Video and Tag Manager scripts also have a majority in the good range but with a larger portion in the mid-range. Site Search and Advertising scripts have a more even distribution, with a significant part in the mid-range and some in the poor range. Developer Utilities, Others, and User Behaviour scripts perform worse, with most falling in the poor range.",  
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=1978447282\&format=interactive",  
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=1978447282&format=interactive",  
   sheets_gid="947269170",  
   )  
 }}
@@ -492,7 +492,7 @@ It is worth noting that the monitoring category, which also includes performance
   image="total-blocking-time.png",  
   caption: "TBT per page by percentile.",
   description="Bar chart showing the distribution of Total Blocking Time (TBT) per page in milliseconds (ms) by percentile. At the 10th percentile, both desktop and mobile TBT are near 0 ms. At the 25th percentile, desktop TBT is 84 ms, while mobile is 417 ms. At the 50th percentile, desktop has 67 ms of TBT, and mobile rises significantly to 1,209 ms. At the 75th percentile, desktop reaches 282 ms, with mobile at 2,990 ms. Finally, at the 90th percentile, desktop TBT is 718 ms, and mobile climbs to 5,955 ms",  
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=1525715716\&format=interactive",  
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=1525715716&format=interactive",  
   sheets_gid="89045350",  
   sql_file="js_bytes_rank.sql"  
   )  
@@ -523,7 +523,7 @@ A CLS score of 0.1 or less is considered good, meaning the page offers a visuall
   image="good-cls-by-device-2024.png",  
   caption: "CLS performance by device for 2024.", 
   description="Stacked bar chart showing CLS performance for 2024 by device. For desktop sites, 72% of sites had good CLS score, 18% need improvement, and 11% are considered poor. For mobile sites, 79% of sites have a good score, 12% need improvement, and 9% have a poor score.",  
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=1271338928\&format=interactive",  
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=1271338928&format=interactive",  
   sheets_gid="1535582002",  
   sql_file="web_vitals_by_device.sql"  
   )  
@@ -555,7 +555,7 @@ One of the “usual suspects” is the `unload` event that is triggered when a u
   image="unload-usage.png",  
   caption: "Usage of unload by site rank.",  
   description="Bar chart showing the percentage of pages ineligible for bfcache (back-forward cache) due to unload handlers, by rank, for desktop and mobile devices. For the top 1,000 websites, 32% of desktop pages and 30% of mobile pages are ineligible. For the top 10,000, 30% of desktop and 26% of mobile pages are ineligible. In the top 100,000, 26% of desktop and mobile pages are ineligible. At the 1,000,000 rank, 20% of desktop pages and 19% of mobile pages are ineligible. At the 10,000,000 rank, 17% of desktop and 16% of mobile pages are ineligible, while for all ranks, 16% of desktop and mobile pages are ineligible.",  
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=1163433950\&format=interactive",  
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=1163433950&format=interactive",  
   sheets_gid="1706831462",  
   sql_file="bfcache_unload.sql"  
   )  
@@ -592,7 +592,7 @@ One of the most common reasons for unexpected layout shifts is not preserving sp
   image="unsized-images.png",  
   caption: "The number of unsized images per page",
   description="Bar chart showing the number of unsized images per page by percentile for desktop and mobile devices. At the 10th and 25th percentiles, both desktop and mobile pages have 0 unsized images. At the 50th percentile, both desktop and mobile pages have 2 unsized images. At the 75th percentile, desktop pages have 10 unsized images, while mobile pages have 9\. At the 90th percentile, desktop pages have 26 unsized images, and mobile pages have 23.",  
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=603112996\&format=interactive",  
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=603112996&format=interactive",  
   sheets_gid="1674162543",  
   sql_file="cls_unsized_images.sql"  
   )  
@@ -604,7 +604,7 @@ The median number of unsized images per web page is two. When we shift to the 90
   image="unsized-images.png",  
   caption="Distribution of the heights of unsized images.",  
   description="Bar chart showing the 10, 25, 50, 75, and 90th percentile height of unsized images. The values for mobile are 16, 38, 100, 200, and 297px tall, respectively. The values for the desktop are larger: 16, 40, 110, 241, and 403.",  
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx\_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=603112996\&format=interactive",  
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=603112996&format=interactive",  
   sql_file="cls_unsized_image_height.sql"  
   )  
 }}
@@ -664,7 +664,7 @@ Another cause of unexpected shifts can be <a hreflang="en" href="https://develop
   content="39%",  
   caption="The percent of mobile pages that have non-composited animations.",  
   classes="big-number",  
-  sheets_gid="https://docs.google.com/spreadsheets/d/15038wEIoqY53Y\_kR8U6QWM-PBO31ZySQGi147ABTNBc/edit?gid=293393420\#gid=293393420",  
+  sheets_gid="293393420",  
   sql_file="cls_animations.sql",  
   )  
 }}
