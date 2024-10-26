@@ -380,15 +380,13 @@ The placeholder attribute provides example input formats. It should not replace 
 
 Indicating required fields is crucial for forms. Before HTML5, an asterisk (\*) was commonly used, but it’s only a visual cue and doesn’t provide validation for assistive technologies. In addition, a required attribute in HTML5 and aria-required attribute can improve the semantics for  indicating mandatory fields.   
 
-![][image15]
-
 {{ figure_markup(
-  image="",
-  caption="",
-  description=""
-  chart_url="",
-  sheets_gid="",
-  sql_file=".sql"
+  image="form-required-controls.png",
+  caption="How required inputs are specified.",
+  description="A bar chart showing the required attribute is used on 64% of desktop sites and 65% of mobile sites, aria-required is used by 41% and 40%, asterisk is used by 20% and 19%, 2 of 3 of these implemnted 14% and 13%, and all three are used by 2% on desktop and 1% on mobile."
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=285790110&format=interactive",
+  sheets_gid="1192677260",
+  sql_file="form_required_controls.sql"
   )
 }}
 
@@ -436,32 +434,30 @@ The alt text should reflect the image’s context. For decorative images, alt=""
 ![][image16]
 
 {{ figure_markup(
-  image="",
-  caption="",
-  description=""
-  chart_url="",
-  sheets_gid="",
-  sql_file=".sql"
+  image="common-file-extensions-in-alt-text.png",
+  caption="Most common file extensions in alt text.",
+  description="A bar chart showing of all extensions used in alt jpg is used 53% of the time on desktop sites and 52% for mobile, png is 33% on both, jpeg is 5% and 5%, ico is 4%, svg is 2%, gif is 1%, webp is 2%, and finally tif is 0%."
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=283728620&format=interactive",
+  sheets_gid="942056773",
+  sql_file="alt_ending_in_image_extension.sql"
   )
 }}
 
 The most common file extensions found in alt text values (for sites with non-empty alt attributes) are jpg (and jpeg), png, ico, and svg. This likely indicates that CMS or other content management systems either automatically generate alt text or require content editors to provide it. However, if the CMS merely includes the image filename in the alt attribute, it typically offers no benefit to users. Therefore, it’s crucial to use meaningful text descriptions. 
 
-![][image17]
-
 {{ figure_markup(
-  image="",
-  caption="",
-  description=""
-  chart_url="",
-  sheets_gid="",
-  sql_file=".sql"
+  image="alt-attribute-lengths.png",
+  caption="alt attribute lengths.",
+  description="A bar chart comparing the length of text alternatives for images for desktop sites. Showing no alt is set on 15%, it is set to empty on 30%, it is 10 characters or less on 17%, 20 characters or less on 15%, 30 characters or less on 8% , 100 characters or less on 15%, and it is greater than 100 characters on 1%."
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=580789543&format=interactive",
+  sheets_gid="1040825973",
+  sql_file="common_alt_text_length.sql"
   )
 }}
 
-We discovered that 18% of alt text attributes on both desktop and mobile sites are empty, down significantly from 27% in 2022\. An empty alt attribute should be used only for images that are purely decorative and do not need to be described by screen readers or other assistive technologies. Most images contribute to the page content, so they should generally [include a meaningful description](https://www.craigabbott.co.uk/blog/how-to-write-good-alt-text-for-screen-readers/). 
+There is a slight decline in images with no alt text, it is 15%, down 3% from the 2022 values. We discovered that 30% of alt text attributes on both desktop and mobile sites are empty, up from 27% in 2022. An empty alt attribute should be used only for images that are purely decorative and do not need to be described by screen readers or other assistive technologies. Most images contribute to the page content, so they should generally [include a meaningful description](https://www.craigabbott.co.uk/blog/how-to-write-good-alt-text-for-screen-readers/). 
 
-Unfortunately, 9% of alt attributes contain 10 or fewer characters, this is also lower than in 2022, These unusually brief descriptions suggest inadequate information to describe the image appropriately. While some of these may be used to label links, which is acceptable, [many lack sufficient descriptive content](https://adrianroselli.com/2024/05/my-approach-to-alt-text.html).
+Unfortunately, 17% of alt attributes contain 10 or fewer characters, this is down a percent from 2022, These unusually brief descriptions suggest inadequate information to describe the image appropriately. While some of these may be used to label links, which is acceptable, [many lack sufficient descriptive content](https://adrianroselli.com/2024/05/my-approach-to-alt-text.html).
 
 There is certainly more that can be done to change these stats. Very few content tools support authors through better documentation and validation as suggested in [Authoring Tools Accessibility Guidelines (ATAG) 2.0](https://www.w3.org/TR/ATAG20/). Increasingly people are looking at Artificial Intelligence to create the alt text, usually on the client side. Brian Teeman wrote an interesting critique of the [AI generation of Alt Text](https://magazine.joomla.org/all-issues/june-2024/ai-generated-alt-text). 
 
