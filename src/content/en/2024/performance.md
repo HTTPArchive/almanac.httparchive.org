@@ -126,7 +126,7 @@ Over the past five years, the percentage of mobile web pages with good TTFB has 
 First Contentful Paint (FCP) is a performance metric that helps indicate how quickly users can start seeing content. It measures the time from when a user first requests a page until the first piece of content is rendered on the screen. A good FCP should be under 1.8 seconds.
 
 {{ figure_markup(
-  image="good-first-contentful-paint.png",
+  image="good-first-contentful-paint-2024.png",
   caption: The percent of websites having good FCP, segmented by device and year.",
   description="Bar chart showing the percentage of websites with good FCP (First Contentful Paint) performance by device over time. In July 2021, 60% of desktop websites had good FCP, compared to 38% of mobile websites. By June 2022, 64% of desktop websites and 49% of mobile websites had good FCP. In September 2023, 63% of desktop websites had good FCP, while 47% of mobile websites did. By June 2024, the percentage increased to 68% for desktop websites and 51% for mobile websites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=1058680176&format=interactive",
@@ -335,7 +335,7 @@ INP measures the time between a user interaction and the next frame render. It i
 For an origin to receive a “good” INP score, at least 75% of all sessions need an INP score of 200ms or less. The INP score is the slowest or near-slowest interaction time for all interactions on the page. See <a hreflang="en" href="https://web.dev/articles/inp#good-score">Details on how INP is calculated</a> for more information.
 
 {{ figure_markup(
-  image="interaction-to-next-paint",
+  image="interaction-to-next-paint-2024.png",
   caption="Distribution of INP performance by device.",
   description="Stacked bar chart showing INP performance by device, with desktop and phone categorized into good (under 200 ms), needs improvement (200–500 ms), and poor (over 500 ms). For desktop, 97% of websites have good INP, 2% need improvement, and less than 1% perform poorly. For phones, 74% of websites have good INP, 24% need improvement, and 2% perform poorly.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=667078190&format=interactive",
@@ -401,7 +401,7 @@ An INP score can be broken down into three sub-parts:
 To optimize your website’s interactivity, it’s important to identify the duration of every sub-part.
 
 {{ figure_markup(
-  image="interaction-to-next-paint-subparts.ong",
+  image="interaction-to-next-paint-subparts.png",
   caption="INP Subparts by percentile, Source: RUMvision",
   description="Bar chart showing the distribution of INP subparts in milliseconds (ms) by percentile. At the 10th percentile, all subparts (input delay, processing time, and presentation delay) are minimal. At the 25th percentile, the values slightly increase but remain below 10 ms. At the 50th percentile, input delay and processing time stay modest, while presentation delay reaches around 20 ms. At the 75th percentile, input delay increases to around 50 ms, with processing time and presentation delay also rising. At the 90th percentile, input delay reaches around 150 ms, and both processing time and presentation delay exceed 100 ms.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=226800794&format=interactive",
