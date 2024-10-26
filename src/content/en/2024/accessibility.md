@@ -711,7 +711,7 @@ There are two means by which we can identify country information, first by the G
 {{ figure_markup(
   image="country-by-geoid.png",
   caption="Most accessibile countries by GeoID.",
-  description="Using the GeoID, the country with the highest average for accessibility is the USA with a value of 84.3%. There is a drop of less a perscent as we move to Canada, UK, Australia, Germany, Netherlands, France, Mexico, Italy, Spain, Argentina, Indonesia, India, Poland, Brazil, Japan, Turkey, Vietnam, China and finally the Republic of Korea with 77.7%. These were for countries that hosted more than 100000 domains."
+  description="A bar cart with the GeoID, the country with the highest average for accessibility is the USA with a value of 84.3%. There is a drop of less a perscent as we move to Canada, UK, Australia, Germany, Netherlands, France, Mexico, Italy, Spain, Argentina, Indonesia, India, Poland, Brazil, Japan, Turkey, Vietnam, China and finally the Republic of Korea with 77.7%. These were for countries that hosted more than 100000 domains."
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=421126157&format=interactive",
   sheets_gid="260430925",
   sql_file="lighthouse_score_by_country.sql"
@@ -737,7 +737,7 @@ But it is a bit easier to see the TLD ranked and including the non-country codes
 {{ figure_markup(
   image="country-by-tld.png",
   caption="Accessibile countries by Top Level Domain (TLD).",
-  description="In looking at Top Level Domains with more than 45000 domains, we learn about accessibility. Displayed as a bar chart with the accessible domains .edu (Education), .gov (US Government), Norway, Filand, .io, Canada, USA, .app, UK, Sweden, Ireland, Australia, New Zealand, .co, Austria, Belgium, Switzerland, Denmark, and South Africa, .org."
+  description="A bar cart with looking at Top Level Domains with more than 45000 domains, we learn about accessibility. Displayed as a bar chart with the accessible domains .edu (Education), .gov (US Government), Norway, Filand, .io, Canada, USA, .app, UK, Sweden, Ireland, Australia, New Zealand, .co, Austria, Belgium, Switzerland, Denmark, and South Africa, .org."
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=783736776&format=interactive",
   sheets_gid="1209052596",
   sql_file="lighthouse_score_by_tld"
@@ -753,7 +753,7 @@ Not all government domains follow consistent accessibility rules, however we wer
 {{ figure_markup(
   image="accessible-governments.png",
   caption="Most accessible government websites.",
-  description="The most accessible governments were the Netherlands (97.6%), Luxembourg (95.7%), Finland (93.8%), UK (92.3%), European Union (91.5%), Norway (91.2%), Jersey (91.2%), Singapore (91.1%), Belgium (90.9%), Germany (90.8%),  France (90.0%), Australia (89.3%), New Zealand (88.9%), Dnmark (88.9%). "
+  description="A bar cart with with the most accessible global governments. The Netherlands (97.6%), Luxembourg (95.7%), Finland (93.8%), UK (92.3%), European Union (91.5%), Norway (91.2%), Jersey (91.2%), Singapore (91.1%), Belgium (90.9%), Germany (90.8%),  France (90.0%), Australia (89.3%), New Zealand (88.9%), Dnmark (88.9%). "
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=415917251&format=interactive",
   sheets_gid="720509689",
   sql_file="lighthouse_score_by_government.sql"
@@ -779,24 +779,23 @@ Government domains were largely found based on domain name pattern matching. The
 We can also review the accessibility of various states.  
 
 {{ figure_markup(
-  image="",
-  caption="",
-  description=""
-  chart_url="",
-  sheets_gid="",
-  sql_file=".sql"
+  image="US-state-governments.png",
+  caption="The most accessible US state governments.",
+  description="A bar cart with with the most accessible states in the US.  Colorado (96.2%), Vermont (94.0%), Nevada (92.5%), South Carolina (90.6%), Georgia (90.6%), North Carolina (90.5%), Kansas (90.1%), Maine (90.0%), California (89.8%), New York (89.8%), Hawaii (89.1%), DC (89.1%), Rhode Island (89.1%), Missouri (89.1%), Massachusettes (89.0%), New Hampshire (88.9%), Minnesota (88.6%), Michigan (88.5%), Oregon (88.4%), Iowa (88.0%)."
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=174949843&format=interactive",
+  sheets_gid="720509689",
+  sql_file="lighthouse_score_by_government.sql"
   )
 }}
 
-![][image30]
 
 {{ figure_markup(
-  image="",
-  caption="",
-  description=""
-  chart_url="",
-  sheets_gid="",
-  sql_file=".sql"
+  image="US-state-governments-map.png",
+  caption="Map of the most accessible US state governments.",
+  description="Visualization of the data above with a US state specific map."
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=1855786285&format=interactive",
+  sheets_gid="720509689",
+  sql_file="lighthouse_score_by_government.sql"
   )
 }}
 
@@ -810,15 +809,13 @@ The [WebAim Million](https://webaim.org/projects/million/) study reviewed CMS da
 
 When most folks think about CMS, they think about the ones that you can download and install yourself. This is predominantly made up of open source tools, but not exclusively. AEM, Contentful and Sitecore were the most accessible three in this list of top 10\. A possible explanation for this is that closed-source software like AEM is more likely to be used by larger corporations, which have more resources to address accessibility issues. Additionally, open-source software gives website owners a lot of freedom, which in some cases can lead to worse accessibility.  
 
-![][image31]
-
 {{ figure_markup(
-  image="",
-  caption="",
-  description=""
-  chart_url="",
-  sheets_gid="",
-  sql_file=".sql"
+  image="traditional-cms.png",
+  caption="A bar cart with the accessible traditional Content Management Systems (CMS).",
+  description="The most accessible CMS with over 10,000 instances are AEM (86.8%), Contentful (86.7%), Sitecore (85.0%), WordPress (84.5%), Craft CMS (84.0%), Contao (84.0%), Drupal (83.7%), Liferay (83.4%), TypoCMS (82.7%), DNN (81.6%)."
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=174688785&format=interactive",
+  sheets_gid="686463338",
+  sql_file="lighthouse_score_by_cms.sql"
   )
 }}
 
@@ -838,15 +835,13 @@ The different CMS do have a lot of commonalities in the top errors that they hav
 
 There are many tools which can be used to help authors evaluate the accessibility of a page. Institutions that control the browser configurations of their staff, could choose to simply install the open source [Accessibility Insights](https://accessibilityinsights.io/docs/web/getstarted/assessment/) browser plugin for all of their browsers. This would make errors much more visible to administrators. For many of the CMS above though, the best solution might be to install a tool like [Sa11y](https://sa11y.netlify.app/) or [Editoria11y](https://editoria11y.princeton.edu/) which is geared to help authors. Since Joomla 4.1 [Sa11y is included by default](https://sa11y.netlify.app/joomla/), so all authors benefit. 
 
-![][image32]
-
 {{ figure_markup(
-  image="",
-  caption="",
-  description=""
-  chart_url="",
-  sheets_gid="",
-  sql_file=".sql"
+  image="platform-cms.png",
+  caption="A bar cart with the most accessible Website Platform Content Management Systems (CMS).",
+  description="A bar graph with with the most accessible CMS: Wix (93.6%), Squarespace (92.4%), Google Sites (90.1%), Duda (87.4%), HubSpot CMS (87.4%), Pixnet (85.8%), Weebly (85.7%), GoDaddy Website Builder (84.5%), WebNode (84.1%), Tilda (82.9%)."
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=1383581431&format=interactive",
+  sheets_gid="686463338",
+  sql_file="lighthouse_score_by_cms.sql"
   )
 }}
 
@@ -870,29 +865,25 @@ The differences are showing that it is possible for CMSs to make an impact on Ac
 
 [WebAim Million](https://webaim.org/projects/million/#frameworks) also looks at the impact of JavaScript frameworks and libraries. Again it is possible to see patterns in the data based on the libraries used. We have worked with the definitions from the [State of JavaScript 2023](https://2023.stateofjs.com/).
 
-![][image33]
-
 {{ figure_markup(
-  image="",
-  caption="",
-  description=""
-  chart_url="",
-  sheets_gid="",
-  sql_file=".sql"
+  image="javascript-frontend-ui.png",
+  caption="Most Accessible JavaScript Frontend UI Frameworks",
+  description="A bar cart with ranked with Stimulus (90.6%), Remix (89.4%), Owik (89.2%), Astro (88.7%), OpenUI5 (88.7%), Next.js (86.9%), React (86.8%), AlpineJS (85.7%), Htmx (84.6%), Svelte (84.8%), Ember.js (84.6%)."
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=1864888468&format=interactive",
+  sheets_gid="1029816121",
+  sql_file="lighthouse_score_by_frontend.sql"
   )
 }}
 
 Stimulus, Remix and Qwik are several percent more accessible on average than React, Svelte or Ember.js.  
 
-![][image34]  
-
 {{ figure_markup(
-  image="",
-  caption="",
-  description=""
-  chart_url="",
-  sheets_gid="",
-  sql_file=".sql"
+  image="javascript-meta-frameworks.png",
+  caption="Most Accessible JavaScript Meta-frameworks",
+  description="A bar cart with meta-frameworks are in the following order RedwoodJS (92.1%), Remix (89.4%), Astro(88.7%), SolidStart(88.1%), Gatsby (87.9%), Next.js (86.9%), Nuxt.js (84.5%), AdonisJS (82.2%), Quasar (81.5%), Meteor (72.9%)."
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=506578618&format=interactive",
+  sheets_gid="1029816121",
+  sql_file="lighthouse_score_by_frontend.sql"
   )
 }}
 
