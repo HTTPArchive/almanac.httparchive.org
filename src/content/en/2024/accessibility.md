@@ -37,7 +37,7 @@ Governments worldwide recognize that digital accessibility is not only a moral o
 
 Legislation like EN 301 549 and [Section 508](https://www.section508.gov/manage/laws-and-policies/) is based on the Web Content Accessibility Guidelines, and only partly covered by the automated accessibility tests used in this report. Our tests leverage the open source tool, [Google Lighthouse](https://developer.chrome.com/docs/lighthouse/accessibility/scoring), which in turn uses [Deque’s open source axe-core](https://github.com/dequelabs/axe-core).
 
-There is a lot of updated information on our [report from previous years](https://almanac.httparchive.org/en/2022/accessibility). It is useful to track changes over time, and note where change occurs. We also wanted to introduce a new section about different sectors and web accessibility. Through our analysis we can track CMS’s, JavaScript frameworks, and evaluate the average accessibility of different technologies. We can also evaluate countries and governments to determine how their accessibility compares and tracks over time. 
+There is a lot of updated information on our [report from previous years](https://almanac.httparchive.org/en/2022/accessibility). It is useful to track changes over time, and note where change occurs. We also wanted to introduce a new section about different sectors and web accessibility. Through our analysis we can track CMS’s, JavaScript frameworks, and evaluate the average accessibility of different technologies. We can also evaluate countries and governments to determine how their accessibility compares and tracks over time.
 
 Despite ongoing challenges, there has been noticeable improvement in web accessibility. The median score for Lighthouse Accessibility audits rose to 84% over the past two years. In WCAG 2.2, the 4.1.1 Success criteria was removed. [Deque therefore removed duplicate-id and duplicate-id-active from axe](https://www.deque.com/blog/wcag-2-2-removes-4-1-1-parsing-and-how-axe-core-is-impacted/?_gl=1*1yzu5tn*_up*MQ..*_ga*MTY0NDE2MjY4LjE3MjY3NTI0NTg.*_ga_C9H6VN9QY1*MTcyNjc1MjQ1Ny4xLjAuMTcyNjc1MjQ1Ny4wLjAuMA..), and so this was no longer included in our scan. These depreciated axe rules impacted millions of sites surveyed in our 2022 report. There were also [new Success Criteria added in 2.2](https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/) added with corresponding tests being [added to axe-core](https://www.deque.com/blog/axe-core-4-5-first-wcag-2-2-support-and-more/).
 
@@ -68,7 +68,7 @@ aria-input-field-name passes on 14% of sites in 2022, and 21% in 2024. aria-prog
   )
 }}
 
-Google Lighthouse now contains [57 different audit tests](https://developer.chrome.com/docs/lighthouse/accessibility/scoring) which they use for their scoring. These are all based on Deque’s [open source axe-core](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md), which is widely adopted in a range of accessibility products and services. With the exception of 7 audits (aria-meter-name, aria-toggle-field-name, aria-tooltip-name, document-title, duplicate-id-active, html-lang-valid, and object-alt) there have been improvements across the board. Both object-alt and aria-tooltip-name were called out for their improvements in 2022, but sadly this improvement was not repeated in 2024\. 
+Google Lighthouse now contains [57 different audit tests](https://developer.chrome.com/docs/lighthouse/accessibility/scoring) which they use for their scoring. These are all based on Deque’s [open source axe-core](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md), which is widely adopted in a range of accessibility products and services. With the exception of 7 audits (aria-meter-name, aria-toggle-field-name, aria-tooltip-name, document-title, duplicate-id-active, html-lang-valid, and object-alt) there have been improvements across the board. Both object-alt and aria-tooltip-name were called out for their improvements in 2022, but sadly this improvement was not repeated in 2024.
 
 Throughout this chapter, we have included actionable links and solutions that readers can apply and follow in their own accessibility initiatives. For the sake of consistency, we opted to use the person-first language “people with disabilities” throughout, though we recognize that the identity-first term “disabled people” is also widely used. Our terminology choice is not intended to suggest which term is more appropriate.
 
@@ -114,7 +114,7 @@ We're revisiting [Adrian Roselli's post](https://adrianroselli.com/2015/10/dont-
   )
 }}
 
-We are happy to say that we are seeing a reduction in sites which are disabling zooming and scaling.  Compared with 2022’s data for mobile users there are 2% less sites who have disabled scaling and 4% that have disabled a max scale of 1\. The desktop average both went down by 2% compared to the last report. Users can configure their browsers to override this setting, but some defaults still respect the author’s preferences.
+We are happy to say that we are seeing a reduction in sites which are disabling zooming and scaling.  Compared with 2022’s data for mobile users there are 2% less sites who have disabled scaling and 4% that have disabled a max scale of 1. The desktop average both went down by 2% compared to the last report. Users can configure their browsers to override this setting, but some defaults still respect the author’s preferences.
 
 To check if your site has disabled or limited zoom look at the source of the page and search for \<meta name="viewport"\> if it is tagged with a maximum-scale, minimum-scale, user-scalable=no, or user-scalable=0. Ideally, there wouldn’t be any restrictions for content resizing, but WCAG only specifies the need for [200% magnification](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-scale.html#:~:text=Content%20satisfies%20the%20Success%20Criterion%20if%20it%20can,more%20extreme%2C%20adaptive%20layouts%20may%20introduce%20usability%20problems.).
 
@@ -128,7 +128,7 @@ To check if your site has disabled or limited zoom look at the source of the pag
   )
 }}
 
-How font sizes are defined also affects the readability, as pixels are not as flexible as other units. Pixel (px) use is only 65% in desktop or 66% in mobile. The use of em has increased to 9% from 6% in 2022\. rem was at 6% in 2022 then, and has reduced to 4%. There is not a significant increase in the use of em or rem since 2022, even though it often [gives the user a better experience](https://www.freecodecamp.org/news/css-units-when-to-use-each-one/) when they increase or decrease their fonts in their browser settings.
+How font sizes are defined also affects the readability, as pixels are not as flexible as other units. Pixel (px) use is only 65% in desktop or 66% in mobile. The use of em has increased to 9% from 6% in 2022. rem was at 6% in 2022 then, and has reduced to 4%. There is not a significant increase in the use of em or rem since 2022, even though it often [gives the user a better experience](https://www.freecodecamp.org/news/css-units-when-to-use-each-one/) when they increase or decrease their fonts in their browser settings.
 
 ### Language identification
 
@@ -145,7 +145,7 @@ Identifying language with the lang attribute enhances screen reader support and 
 
 It's promising to note that in 2022, 83% of mobile websites included a lang attribute, and two years later it is at 86.2%. However, since this is a Level A conformance issue under WCAG, there is still room for improvement. To meet this criterion, the lang attribute should be added to the \<html\> tag with a recognized [primary language tag](https://www.w3.org/WAI/standards-guidelines/act/rules/bf051a/#known-primary-language-tag). This global attribute can also be applied to other tags if the page contains multiple languages. Properly defining the language is crucial. Sometimes, when a template is copied to create a new website, discrepancies can arise between the language of the content and the language attribute (lang="en") in the code.
 
-Also, keep in mind that there is the page language, but pages often contain multiple languages within them. The W3C has good documentation on [how to address the Language of Parts](https://www.w3.org/WAI/WCAG21/Understanding/language-of-parts.html). 
+Also, keep in mind that there is the page language, but pages often contain multiple languages within them. The W3C has good documentation on [how to address the Language of Parts](https://www.w3.org/WAI/WCAG21/Understanding/language-of-parts.html).
 
 ### User preference
 
@@ -161,11 +161,11 @@ Modern CSS includes [Level 5 Media Queries](https://www.w3.org/TR/mediaqueries-5
   )
 }}
 
-We discovered that over 50% of mobile sites include the prefers-reduced-motion media query, up from 34% in 2022\. This is important because [digital animations can harm individuals with vestibular disorders](https://kb.iu.edu/d/bizw); using this query allows for adapting or removing such animations to improve accessibility. Mozilla’s Developer community has some good resources on [building motion-sensitive sites](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion).
+We discovered that over 50% of mobile sites include the prefers-reduced-motion media query, up from 34% in 2022. This is important because [digital animations can harm individuals with vestibular disorders](https://kb.iu.edu/d/bizw); using this query allows for adapting or removing such animations to improve accessibility. Mozilla’s Developer community has some good resources on [building motion-sensitive sites](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion).
 
 The [Sustainability chapter](https://almanac.httparchive.org/en/2024/sustainability) has some great statistics on the rise in the use of animations, and the impact on digital sustainability.
 
-For contrast, only 12% of desktop and mobile websites utilize the prefers-color-scheme media query, which is up from 8% in 2022\. To enhance content readability it is a good practice to allow your users to adjust display modes. The prefers-color-scheme query enables browsers to detect the user's preferred color scheme, supporting light and dark modes. The prefers-contrast query is valuable for users with low vision or photosensitivity by enabling high contrast modes.
+For contrast, only 12% of desktop and mobile websites utilize the prefers-color-scheme media query, which is up from 8% in 2022. To enhance content readability it is a good practice to allow your users to adjust display modes. The prefers-color-scheme query enables browsers to detect the user's preferred color scheme, supporting light and dark modes. The prefers-contrast query is valuable for users with low vision or photosensitivity by enabling high contrast modes.
 
 Support for [forced-contrast](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/forced-colors) increased about 4% in 2024 to about 14% for desktop. Forced Colors Mode is an accessibility feature designed to enhance text readability through improved color contrast. When activated, the user’s operating system takes control of most color-related styles, overriding website color settings. This mode disables common patterns like background images to ensure more predictable text-to-background contrast. The most well-known implementation is Windows' High Contrast Mode, now called [Contrast Themes](https://support.microsoft.com/en-us/topic/fedc744c-90ac-69df-aed5-c8a90125e696). These themes offer alternative color palettes with low and high contrast options, and allow users to customize the system colors to their preference. Use of \-ms-high-contrast has decreased slightly in 2024 to about 23%.
 
@@ -181,9 +181,9 @@ Focus indication is crucial for users who navigate websites primarily using a ke
 
 Most automated tests do not test for focus order or keyboard traps. Lighthouse can not tell you that your site is keyboard navigable, all it can do is tell you that it isn’t, in case your site fails some basic tests which are essential. Lighthouse uses [Deques’ axe rules](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md) to evaluate best practices. Even with a perfect score for focus indication, you need to test your pages manually. Lighthouse recommends testing for:
 
-* [focus traps](https://developer.chrome.com/docs/lighthouse/accessibility/focus-traps)  
-* [interactive controls are keyboard focusable](https://developer.chrome.com/docs/lighthouse/accessibility/focusable-controls)  
-* [Logical tab order](https://developer.chrome.com/docs/lighthouse/accessibility/logical-tab-order)  
+* [focus traps](https://developer.chrome.com/docs/lighthouse/accessibility/focus-traps)
+* [interactive controls are keyboard focusable](https://developer.chrome.com/docs/lighthouse/accessibility/focusable-controls)
+* [Logical tab order](https://developer.chrome.com/docs/lighthouse/accessibility/logical-tab-order)
 * [Focus directed to new content on a page](https://developer.chrome.com/docs/lighthouse/accessibility/managed-focus)
 
 [Accessibility Insights](https://accessibilityinsights.io/docs/web/overview/) is a great open source tool that leverages Deque’s axe. This [Chrome/Edge extension](https://accessibilityinsights.io/downloads/) can help with keyboard-only testing and guide developers through other tests. The Tab Stops feature is a great visual indicator of a keyboard-only user's progress through a website.
@@ -210,9 +210,9 @@ Generally, HTML will have focus order set without having to set the tabindex. CS
 
 Our analysis shows that 62.9% of mobile websites and 64.1% of desktop websites (up from 60% and 62% respectively) utilize tabindex. This attribute serves several purposes, which can affect accessibility:
 
-* tabindex="0" places an element in the sequential keyboard focus order. Custom interactive elements and widgets should have tabindex="0" to ensure they are included in the focus sequence.  
-* tabindex="-1" removes the element from the keyboard focus order but allows it to be focused programmatically via JavaScript.  
-* A positive tabindex value overrides the default keyboard focus order, often leading to issues with [WCAG 2.4.3 \- Focus Order](https://www.w3.org/WAI/WCAG21/Understanding/focus-order.html). 
+* tabindex="0" places an element in the sequential keyboard focus order. Custom interactive elements and widgets should have tabindex="0" to ensure they are included in the focus sequence.
+* tabindex="-1" removes the element from the keyboard focus order but allows it to be focused programmatically via JavaScript.
+* A positive tabindex value overrides the default keyboard focus order, often leading to issues with [WCAG 2.4.3 \- Focus Order](https://www.w3.org/WAI/WCAG21/Understanding/focus-order.html).
 
 It's important to avoid placing non-interactive elements in the keyboard focus order, as this can be confusing for low-vision users.
 
@@ -251,13 +251,13 @@ Although ARIA landmarks have traditionally been only visible to screen reader us
   )
 }}
 
-The most commonly expected landmarks for most web pages include \<main\>, \<header\>, \<nav\>, and \<footer\>. Our findings reveal that only 37% of all pages use the native HTML \<main\> element, while 17% of all pages have an element with role="main" 43% are using either one of them, this is up from 35% in 2021\. Scott O'Hara’s [article on landmarks](https://www.scottohara.me/blog/2018/03/03/landmarks.html) provides valuable insights for enhancing accessibility.
+The most commonly expected landmarks for most web pages include \<main\>, \<header\>, \<nav\>, and \<footer\>. Our findings reveal that only 37% of all pages use the native HTML \<main\> element, while 17% of all pages have an element with role="main" 43% are using either one of them, this is up from 35% in 2021. Scott O'Hara’s [article on landmarks](https://www.scottohara.me/blog/2018/03/03/landmarks.html) provides valuable insights for enhancing accessibility.
 
 ### Heading hierarchy
 
 Headings are crucial for all users, including those with assistive technologies, as they aid in navigating a website. Assistive technologies enable users to jump to specific sections of interest. As highlighted in Marcy Sutton’s [article on headings and semantic structure](https://marcysutton.com/how-i-audit-a-website-for-accessibility#Headings-and-Semantic-Structure), headings function like a table of contents, allowing users and search engines to navigate to particular content areas efficiently.
 
-Sadly the heading hierarchy has gotten worse over the last two years. Lighthouse tracks properly ordered headings and it has dropped just over 1% to: 
+Sadly the heading hierarchy has gotten worse over the last two years. Lighthouse tracks properly ordered headings and it has dropped just over 1% to:
 
 {{ figure_markup(
   caption="Mobile sites passing the Lighthouse audit for properly ordered heading.",
@@ -327,7 +327,7 @@ Forms are essential for user interactions, such as logging in or making purchase
 
 The \<label\> element is the preferred way for [linking input fields with their accessible names](https://developer.mozilla.org/docs/Learn/Forms/Basic_native_form_controls). Using the for attribute to match the id of an input ensures proper programmatic association, improving form usability. Furthermore, when the label element is used properly it allows users to click or tap on the label to focus the form field.
 
-For example: 
+For example:
 
 ```
 <label for="emailaddress">Email</label>
@@ -362,7 +362,7 @@ The placeholder attribute provides example input formats. It should not replace 
 
 57% of mobile sites and 55% of desktop sites use placeholders alone, which can lead to accessibility issues. As per HTML5 guidelines, placeholders should not replace labels for accessibility.
 
-*Use of the placeholder attribute as a replacement for a label can reduce the accessibility and usability of the control for a range of users including older users and users with cognitive, mobility, fine motor skill or vision impairments.*  
+*Use of the placeholder attribute as a replacement for a label can reduce the accessibility and usability of the control for a range of users including older users and users with cognitive, mobility, fine motor skill or vision impairments.*
 *— [The W3C’s Placeholder Research](https://www.w3.org/WAI/GL/low-vision-a11y-tf/wiki/Placeholder_Research)*
 
 ### Requiring information
@@ -518,7 +518,7 @@ Removing semantics with role="presentation" means the element only has visual pr
 
 This is concerning as in 2022 it was already high at 25% of desktop sites and 24% of mobile sites.
 
-Similarly, using role="none" also removes the element's semantics. This year, 5% of sites used role="none", down from 11% in 2022\. While it may be useful in rare cases, such as when a \<table\> is used purely for layout, it generally should be used cautiously as it can be detrimental to accessibility.
+Similarly, using role="none" also removes the element's semantics. This year, 5% of sites used role="none", down from 11% in 2022. While it may be useful in rare cases, such as when a \<table\> is used purely for layout, it generally should be used cautiously as it can be detrimental to accessibility.
 
 Most browsers disregard role="presentation" and role="none" when exposing a role in the accessibility tree for focusable elements, including links and inputs, or elements with a tabindex attribute. However, if an element with these roles includes global ARIA states or properties (such as aria-describedby), the role may be ignored.
 
@@ -621,7 +621,7 @@ For more details on live region variants and their usage, check the [MDN live re
 
 Users are increasingly used to seeing accessibility widgets on websites. These allow them to access accessibility features that improve their experience. Accessibility Overlays are one type of these and usually include two types of technology: a personalization widget and an JavaScript overlay. Overlays can be either generic or custom:
 
-* **user personalization** – tools that enable the site visitor to make changes to the appearance of the site via an on-site menu — changes like font or color contrast adjustments, and   
+* **user personalization** – tools that enable the site visitor to make changes to the appearance of the site via an on-site menu — changes like font or color contrast adjustments, and
 * **automated overlay remediation** – a generic technology that automatically scans for and attempts to remediate many common WCAG issues which affect the user interface, with complex algorithms and/or Artificial Intelligence.
 * **custom overlay remediation** - site specific code written by expert developer(s) to address specific conformance needs, and verified by accessibility experts in context, to avoid conflict with assistive technology.
 
@@ -790,13 +790,13 @@ We can also review the accessibility of various states.
 
 Again, Colorado and Vermont are much further ahead than other states. The state of Georgia has a [central Drupal installation](https://digital.georgia.gov/services/govhub) managed through a central agency, does this explain why it is in the top 5? Colorado has established a centralized [digital service organization](https://oit.colorado.gov/colorado-digital-service), [new accessibility legislation](https://oit.colorado.gov/accessibility-law) and now has an average of 94.8%. Pennsylvania’s state average is much lower at 82.2% but they also have a [digital experience team](https://code.oa.pa.gov/).
 
-Earlier this year, the US Department of Justice [updated its regulations for Title II of the Americans with Disabilities Act (ADA)](https://www.ada.gov/resources/2024-03-08-web-rule/). US state and local governments will now all be required to be fully WCAG 2.1 AA compliant. The compliance date depends on size but will be either April 2026 or April 2027\. It will be important to measure how US states comply with this new regulation. We should see improvements in these numbers.
+Earlier this year, the US Department of Justice [updated its regulations for Title II of the Americans with Disabilities Act (ADA)](https://www.ada.gov/resources/2024-03-08-web-rule/). US state and local governments will now all be required to be fully WCAG 2.1 AA compliant. The compliance date depends on size but will be either April 2026 or April 2027. It will be important to measure how US states comply with this new regulation. We should see improvements in these numbers.
 
 ### Content Management Systems (CMS)
 
 The [WebAim Million](https://webaim.org/projects/million/) study reviewed CMS data, and we are able to provide comparable results through the Web Almanac. The Web Almanac uses a customized version of a fork of Wappalyzer, from when it was open source. With this the report can identify which CMS is used and compare results. It is clear that Typo3 had better results in WebAim than when using Google Lighthouse data. Both studies clearly indicated that the choice of CMS had an impact on accessibility.
 
-When most folks think about CMS, they think about the ones that you can download and install yourself. This is predominantly made up of open source tools, but not exclusively. AEM, Contentful and Sitecore were the most accessible three in this list of top 10\. A possible explanation for this is that closed-source software like AEM is more likely to be used by larger corporations, which have more resources to address accessibility issues. Additionally, open-source software gives website owners a lot of freedom, which in some cases can lead to worse accessibility.
+When most folks think about CMS, they think about the ones that you can download and install yourself. This is predominantly made up of open source tools, but not exclusively. AEM, Contentful and Sitecore were the most accessible three in this list of top 10. A possible explanation for this is that closed-source software like AEM is more likely to be used by larger corporations, which have more resources to address accessibility issues. Additionally, open-source software gives website owners a lot of freedom, which in some cases can lead to worse accessibility.
 
 {{ figure_markup(
   image="traditional-cms.png",
