@@ -2708,6 +2708,19 @@
       ]
     }
   },
+  "mgifford": {
+    "github": "mgifford",
+    "linkedin": "mgifford",
+    "mastodon": "https://mastodon.social/@mgifford",
+    "name": "Mike Gifford",
+    "teams": {
+      "2024": [
+        "reviewers"
+        "authors",
+        "analysts"
+      ]
+    },
+  },
   "mikegeyser": {
     "avatar_url": "105242",
     "github": "mikegeyser",
