@@ -82,25 +82,25 @@ This chapter offers a data-driven analysis of structured data trends in 2023-202
 
 This chapter provides a comprehensive view of structured data’s impact on SEO, AI, and e-commerce, with actionable insights for developers and marketers.
 
-# Key Concepts
+## Key Concepts
 
 As structured data evolves in complexity, exploring and explaining key concepts is crucial before diving into a deeper analysis. This section outlines fundamental ideas and recent developments in the field.
 
-## Linked Data and the Semantic Web
+### Linked Data and the Semantic Web
 
 Linked data remains a cornerstone of structured data. We create an interconnected web of information by adding structured data to web pages and providing URI links to referenced entities. This contributes to the semantic web, where data is linked through the Resource Description Framework (RDF), enabling machines to treat web pages as databases.
 
 The concept of semantic triples (subject-predicate-object) continues to be fundamental in expressing relationships between entities. While [SPARQL](https://en.wikipedia.org/wiki/SPARQL) remains helpful for querying RDF data, the focus has shifted towards more accessible ways of leveraging this linked data structure, such as [GraphQL](https://en.wikipedia.org/wiki/GraphQL).
 
-### Open Data and the 5 Stars Model
+#### Open Data and the 5 Stars Model
 
 Tim Berners-Lee's 5 stars of the open data model remain relevant. It emphasizes the importance of web-available, structured, non-proprietary, URI-identified, and interlinked data. Structured data plays a crucial role in achieving higher levels of this model, contributing to a more open and interconnected web ecosystem.
 
-## AI-Powered Search, Voice Assistants, and Digital Assistants
+### AI-Powered Search, Voice Assistants, and Digital Assistants
 
 The landscape of search and digital assistance has dramatically evolved with the integration of AI, LLMs, and advanced natural language processing. This convergence has blurred the lines between traditional search engines, voice-activated systems, and AI-powered digital assistants.
 
-### Semantic Search Engines and AI-Powered Search
+#### Semantic Search Engines and AI-Powered Search
 
 Semantic search has progressed beyond traditional keyword matching to include sophisticated AI-powered experiences. These systems leverage structured data to provide more accurate, contextual, and often conversational search results. Key developments include:
 
@@ -209,7 +209,7 @@ For example, organizations such as EssilorLuxottica, Shiseido and others are usi
 
 Investing in semantic SEO and maintaining high-quality structured data not only enhances search visibility but also lays a foundation for future-proofing content for AI-driven discovery.​
 
-# A Year In Review
+## A Year In Review
 
 ## Structured Data
 
@@ -272,7 +272,7 @@ In contrast, traditional RDFa types like `foaf:image` and `foaf:document` have s
   description="Bar chart showing RDFa usage across mobile pages in 2022 and 2024. Foaf:image stayed consistent at 0.49%, foaf:document dropped from 0.23% to 0.16%, sioc:item and schema:webpage remained steady at 0.16% and 0.10%, respectively. Significant growth was seen for listitem and webpage, both increasing to 0.82% in 2024 from lower levels in 2022, while breadcrumblist usage increased to 0.45%. Other properties like v:breadcrumb and sioc:useraccount had minimal usage below 0.05%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=408467656&format=interactive",
   sheets_gid="560419533",
-  sql_file="rdfa_usage.sql",
+  sql_file="present_types.sql",
   width=600,
   height=550
   )
@@ -284,7 +284,7 @@ In contrast, traditional RDFa types like `foaf:image` and `foaf:document` have s
   description="Bar chart showing RDFa usage across desktop pages in 2022 and 2024. Foaf:image remained the most used, with 1.22% of desktop pages in 2022 and 2024. Foaf:document usage decreased slightly from 0.40% to 0.38%, while other types like sioc:item and schema:webpage showed minimal fluctuations. Notably, listitem usage grew significantly from 0.39% in 2022 to 0.60% in 2024, and webpage usage also rose to 0.70% in 2024. Other types like breadcrumblist and v:breadcrumb remained below 0.50%, while sioc:useraccount showed minimal adoption.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=1587094037&format=interactive",
   sheets_gid="560419533",
-  sql_file="rdfa_usage_desktop.sql",
+  sql_file="present_types.sql",
   width=600,
   height=441
   )
@@ -298,7 +298,7 @@ The data suggests that while RDFa remains a valuable tool, its dominance is grad
   description="Bar chart comparing RDFa usage across desktop and mobile pages in 2024. Foaf:image shows higher usage on desktop (1.22%) compared to mobile (0.49%). Foaf:document and sioc:item also show higher adoption on desktop, while mobile usage leads for listitem and webpage types, both reaching 0.82%. Breadcrumblist, v:breadcrumb, and sioc:useraccount remain below 0.50% across both devices.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=780422567&format=interactive",
   sheets_gid="560419533",
-  sql_file="rdfa_usage_device.sql",
+  sql_file="present_types.sql",
   width=600,
   height=493
   )
@@ -312,7 +312,7 @@ The data suggests that while RDFa remains a valuable tool, its dominance is grad
   description="Bar chart showing Dublin Core usage across mobile pages in 2022 and 2024. The usage of dc:title remained the highest, with notable increases in dc.language and dc.description in 2024. Fields like dc.source and dcterms.title also saw growth, while others like dc.publisher and dc.identifier remained relatively consistent. Specialized fields like dcterms.rightsholder and dcterms.identifier had minimal usage across both years, under 0.002%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=151920898&format=interactive",
   sheets_gid="560419533",
-  sql_file="dublin_core_usage.sql",
+  sql_file="present_types.sql",
   width=600,
   height=493
   )
@@ -324,7 +324,7 @@ The data suggests that while RDFa remains a valuable tool, its dominance is grad
   description="Bar chart showing Dublin Core usage across desktop pages in 2022 and 2024. The usage of dc:title remained the highest across both years, with increases in dc.language and dc.description in 2024. Fields like dc.source, dc.creator, and dc.publisher also saw moderate increases, while more specialized fields like dcterms.identifier and dcterms.rightsholder had minimal adoption, remaining below 0.002%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=1992172544&format=interactive",
   sheets_gid="560419533",
-  sql_file="dublin_core_usage_desktop.sql",
+  sql_file="present_types.sql",
   width=600,
   height=493
   )
@@ -339,7 +339,7 @@ Dublin Core remains a stable but less frequently used format for metadata, espec
   description="Bar chart comparing Dublin Core usage across desktop and mobile pages in 2024. Dc:title shows the highest adoption, with 0.7% on desktop and 0.5% on mobile. Other fields such as dc.language and dc.description also have higher usage on desktop. Meanwhile, dc.relation shows a higher percentage on mobile at 0.3%, with other fields like dc.identifier and dc.subject maintaining consistent usage across both devices.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=257359995&format=interactive",
   sheets_gid="560419533",
-  sql_file="dublin_core_usage_device.sql",
+  sql_file="present_types.sql",
   width=600,
   height=493
   )
@@ -363,7 +363,7 @@ Open Graph continues to be one of the most widely implemented structured data fo
   description="Bar chart showing Open Graph usage on mobile pages between 2022 and 2024. The usage of og:image remained the highest. Og:image:width and og:image:height saw significant increases, both around 23.8%. Og:image:secure_url also increased to 9.41%, while og:image:type rose to 11.26%. Og:image:alt, important for accessibility, grew to 5.78% in 2024.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=513866594&format=interactive",
   sheets_gid="560419533",
-  sql_file="open_graph_usage_year.sql",
+  sql_file="present_types.sql",
   width=600,
   height=493
   )
@@ -376,8 +376,8 @@ A key development in 2024 is Google's update to its search documentation, now in
   caption="Open Graph usage by year (desktop)",
   description="Bar chart showing usage of different Open Graph properties on desktop pages in 2022 and 2024. In 2024, og:image was used on 48% of pages, og:image:width and og:image:height on 23.86%, og:image:secure_url on 9.56%, og:image:type on 11.17%, and og:image:alt on 5.62%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=759266480&format=interactive",
-  sheets_gid="759266480",
-  sql_file="open_graph_usage.sql",
+  sheets_gid="560419533",
+  sql_file="present_types.sql",
   width=600,
   height=441
 )}}
@@ -389,8 +389,8 @@ This dual role of Open Graph in **social sharing** and **search engine optimizat
   caption="Open Graph usage by device",
   description="Bar chart showing Open Graph usage by device (desktop and mobile) in 2024. og:image is used on nearly 50% of pages, og:image:width and og:image:height on 23.81% and 23.76% respectively, og:image:secure_url on 9.41%, og:image:type on 11.26%, and og:image:alt on 5.78%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=876659711&format=interactive",
-  sheets_gid="876659711",
-  sql_file="open_graph_usage_by_device.sql",
+  sheets_gid="560419533",
+  sql_file="present_types.sql",
   width=600,
   height=441
 )}}
@@ -406,8 +406,8 @@ Despite the platform's transition to **new ownership** and its rebranding as **X
   caption="Twitter meta tag usage by year",
   description="Bar chart showing Twitter meta tag usage on mobile pages in 2022 and 2024. In 2024, the twitter:card tag is used on 44.15% of pages, twitter:title on 26.40%, twitter:description on 24.53%, twitter:image on 18.63%, and other tags such as twitter:site and twitter:label1 show usage rates between 9.67% and 13.36%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=455664170&format=interactive",
-  sheets_gid="455664170",
-  sql_file="twitter_meta_tag_usage.sql",
+  sheets_gid="560419533",
+  sql_file="present_types.sql",
   width=600,
   height=441
 )}}
@@ -419,8 +419,8 @@ Core descriptive tags like `twitter:title` and `twitter:description` have also s
   caption="Twitter meta tag usage by year (desktop)",
   description="Bar chart showing Twitter meta tag usage on desktop pages in 2022 and 2024. In 2024, the twitter:card tag is used on 44.15% of pages, twitter:title on 26.40%, twitter:description on 24.53%, twitter:image on 18.63%, and other tags such as twitter:site and twitter:label1 show usage rates between 9.67% and 13.36%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=410054248&format=interactive",
-  sheets_gid="410054248",
-  sql_file="twitter_meta_tag_usage_desktop.sql",
+  sheets_gid="560419533",
+  sql_file="present_types.sql",
   width=600,
   height=441
 )}}
@@ -430,8 +430,8 @@ Core descriptive tags like `twitter:title` and `twitter:description` have also s
   caption="Twitter meta tag usage by device",
   description="Bar chart showing Twitter meta tag usage by device (desktop and mobile) in 2024. On mobile, the twitter:card tag is used on 44.15% of pages, twitter:title on 26.40%, twitter:description on 24.53%, and other tags such as twitter:image and twitter:data1 show usage rates between 9.67% and 13.36%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=1804770953&format=interactive",
-  sheets_gid="1804770953",
-  sql_file="twitter_meta_tag_usage_by_device.sql",
+  sheets_gid="560419533",
+  sql_file="present_types.sql",
   width=600,
   height=441
 )}}
@@ -444,15 +444,42 @@ While **X** has undergone major branding changes, the **metadata architecture** 
 
 Facebook-specific meta tags have seen a marked decline in usage between 2022 and 2024, reflecting the broader industry shift toward **Open Graph** as the preferred format for **social sharing metadata**. The `fb:app_id` tag, once widely used to integrate apps with the Facebook platform, now appears on only **4.9% of mobile pages**, down from previous years. Similarly, administrative tags like `fb:admins` have dropped to just **2.4%**, serving primarily for backend management rather than enhancing content visibility.
 
-![A year on year comparison of Facebook meta tag usage on mobile pages][image20]
+{{ figure_markup(
+  image="facebook-meta-tag-usage-by-year-mobile.png",
+  caption="Facebook meta tag usage by year (mobile)",
+  description="Bar chart showing Facebook meta tag usage on mobile from 2022 to 2024. In 2024, fb:app_id appears on 4.9% of pages, fb:admins on 2.4%, and fb:pages on 0.6%, with minimal or zero usage for other tags.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=778075778&format=interactive",
+  sheets_gid="560419533",
+  sql_file="present_types.sql",
+  width=600,
+  height=441
+)}}
 
 This decline underscores a strategic move by developers and webmasters to adopt **Open Graph**, which originated with Facebook but has since become the **standard for social media sharing** across platforms. The **Open Graph format** offers greater flexibility and interoperability, making it the go-to choice for content optimization on Facebook as well as other social networks.
 
-![A year on year comparison of Facebook meta tag usage on desktop pages][image21]
+{{ figure_markup(
+  image="facebook-meta-tag-usage-by-year-desktop.png",
+  caption="Facebook meta tag usage by year (desktop)",
+  description="Bar chart showing Facebook meta tag usage on desktop from 2022 to 2024. In 2024, fb:app_id appears on the highest percentage of pages at 4.9%, fb:admins on 2.4%, and fb:pages on 0.6%, with minimal or zero usage for other tags.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=977720399&format=interactive",
+  sheets_gid="560419533",
+  sql_file="present_types.sql",
+  width=600,
+  height=441
+)}}
 
 Despite the decreasing adoption of Facebook-specific tags, **Facebook** itself remains a key player in the **social media landscape**, with Open Graph handling most of its metadata needs. This trend reflects the consolidation of social sharing standards, where **platform-agnostic tags** provide greater reach and functionality.
 
-![A year on year comparison of facebook meta tag usage][image22]
+{{ figure_markup(
+  image="facebook-meta-tag-usage-by-device.png",
+  caption="Facebook meta tag usage by device",
+  description="Bar chart showing Facebook meta tag usage by device for desktop and mobile in 2024. The fb:app_id tag appears on the highest percentage of pages, with mobile usage at 4.9% and desktop at a similar level. The fb:admins tag is used on 2.4% of mobile pages and 0.6% on desktop, while other tags show minimal or zero usage.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=343986403&format=interactive",
+  sheets_gid="560419533",
+  sql_file="present_types.sql",
+  width=600,
+  height=441
+)}}
 
 ## Microformats and Microformats2
 
@@ -572,7 +599,7 @@ As we analyze current trends, we also cast our gaze forward to emerging developm
 
 By examining these aspects, we aim to provide a comprehensive overview of the state of structured data in 2024, its recent evolution, and its future trajectory. Whether you're a seasoned SEO professional, a web developer, an eCommerce strategist, or simply interested in the evolution of the web, this chapter offers valuable insights into how structured data is reshaping our digital world and paving the way for a more connected, transparent, and intelligent online experience.
 
-# Conclusion
+## Conclusion
 
 The analysis of structured data in 2024 highlights a clear shift from its SEO roots toward a broader, more strategic role in AI and semantic metadata. The dominance of RDFa and Open Graph on over 60% of pages, combined with JSON-LD’s growth (now on 41% of pages, particularly in eCommerce), points to a maturing technology. But the true impact lies in how structured data is transforming AI discovery and enhancing machine understanding.
 
