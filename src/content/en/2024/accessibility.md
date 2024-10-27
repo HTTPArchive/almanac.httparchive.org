@@ -3,9 +3,9 @@
 title: Accessibility
 description: Accessibility chapter of the 2024 Web Almanac covering ease of reading, navigation, forms, media, ARIA, and accessibility apps.
 authors: [mgifford]
-reviewers: []
+reviewers: [hdv, b_atish]
 analysts: [mgifford]
-editors: [hdv, ]
+editors: [JonathanPagel, JonathanAvila, shantsis]
 translators: []
 discuss:
 results: https://docs.google.com/spreadsheets/d/1btB1r9QpdgTyToPhn7glcGAdMFs7eq4UcQSVIHBqiYQ/edit?gid=705305625#gid=705305625
@@ -18,15 +18,6 @@ featured_stat_label_2: Sites with <audio> elements include a <track> element.
 featured_stat_3: 56.6%
 featured_stat_label_3: Mobile sites passing the Lighthouse audit for properly ordered headings.
 ---
-
-# Accessibility (Web Almanac 2024\)
-
-**Authors:** Mike Gifford
-**Reviewers:** Beatriz Gonzalez, Hidde de Vries
-**Analysts:** Mike Gifford
-**Editor:**  Jonathan Avila, Shaina Hantsis, Jonathan Pagel
-
-##
 
 ## **Introduction**
 
@@ -112,8 +103,6 @@ Color contrast becomes more [important as we age](https://www.nia.nih.gov/health
 More than ever, users are engaging with websites with a variety of technologies from super-wide curved screens to mobile phones and even watches. Disabling scaling takes away user agency to define what works best for them. [WCAG requires](https://www.w3.org/WAI/WCAG22/Understanding/resize-text) that text in a website must be resizable up to at least 200% without any loss in content or functionality.
 
 We're revisiting [Adrian Roselli's post](https://adrianroselli.com/2015/10/dont-disable-zoom.html), which we previously highlighted in 2022, to emphasize the importance of not disabling zoom functionality, as many still don’t fully understand the reasons behind it.
-
-![Graph of Pages with zooming and scaling disabled - Generally mobile is 2-3% higher than desktop][image6]
 
 {{ figure_markup(
   image="pages-zooming-scaling-disabled.png",
