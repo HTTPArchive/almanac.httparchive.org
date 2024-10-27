@@ -46,7 +46,7 @@ Accessibility scores are an important tool, but people familiar with [Goodhart's
 {{ figure_markup(
   image="lighthouse-audit-median-score-yoy.png",
   caption="Lighthouse audit improvements year-over-year.",
-  description="A bar chart showing the average increase in accessibility over time for five years the Median Gogole Lighthouse score for accessibility. Values increase slowly year by year, as follows: 2019 (83%), 2020 (80%), 2021 (82%), 2022 (83%) and 2024 (84%)."
+  description="A bar chart showing the average increase in accessibility over time for five years the Median Google Lighthouse score for accessibility. Values increase slowly year by year, as follows: 2019 (83%), 2020 (80%), 2021 (82%), 2022 (83%) and 2024 (84%)."
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=837866368&format=interactive",
   sheets_gid="255848343",
   sql_file="lighthouse_a11y_score.sql"
@@ -64,7 +64,7 @@ Looking at the most common errors with most improved Lighthouse Tests, it is pos
 aria-input-field-name passes on 14% of sites in 2022, and 21% in 2024. aria-progressbar-name passes on 3% of sites in 2022, and 14% in 2024. color-contrast passes on 23% of sites in 2022, and 29% in 2024. frame-title passes on 36% of sites in 2022, and 51% in 2024."
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=899104036&format=interactive",
   sheets_gid="1279863228",
-  sql_file="lighthouse_a11y_audits.sq"
+  sql_file="lighthouse_a11y_audits.sql"
   )
 }}
 
@@ -89,7 +89,7 @@ The Lighthouse test determined that 29.2% of mobile sites and 27.7% of desktop s
 {{ figure_markup(
   image="color-contrast-2019-2020-2021-2022-2024.png",
   caption="Sites with sufficient color contrast.",
-  description="A bar chart showing gradual progress in color contrast. 22.0% of mobile sites had sufficient color contrast in 2019, dipping slightly to 21.1% in 2020 and increasing slightly to 22.2% for 2020, increasing more to 22.9% in 2022, 2024 saw a bign jump to 29.2 for mobile. Desktop sites in 2022 were at 22.7% and in 2024 rose to 27.7%."
+  description="A bar chart showing gradual progress in color contrast. 22.0% of mobile sites had sufficient color contrast in 2019, dipping slightly to 21.1% in 2020 and increasing slightly to 22.2% for 2020, increasing more to 22.9% in 2022, 2024 saw a bign jump to 29.2% for mobile. Desktop sites in 2022 were at 22.7% and in 2024 rose to 27.7%."
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=476448992&format=interactive",
   sheets_gid="985048008",
   sql_file="color_contrast.sql"
@@ -335,7 +335,7 @@ For example:
 ```
 
 {{ figure_markup(
-  image="form-input-name-sources.png"",
+  image="form-input-name-sources.png",
   caption="Where inputs get their accessible names from.",
   description="A bar chart showing the source of the accessible name for the label element. 27% of sites had no accessible name. 32% now get get their accessible name from a label element. 24% of desktops inputs get their accessible names from the placeholder and 25% for mobile. Aria-label is responsible for 9%. The value attrabute contributs 3%. A title attribute contributes to 3% of the desktop and 2% of the mobile sites surveyed."
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=2076905999&format=interactive",
