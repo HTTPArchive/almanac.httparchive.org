@@ -10,13 +10,13 @@ translators: []
 discuss: 
 results: https://docs.google.com/spreadsheets/d/1btB1r9QpdgTyToPhn7glcGAdMFs7eq4UcQSVIHBqiYQ/edit?gid=705305625#gid=705305625
 mgifford_bio: Mike Gifford is CivicActions’ Open Standards & Practices Lead. He is also a thought leader on open government, digital accessibility and sustainability. He has served as a Drupal Core Accessibility Maintainer and also a W3C Invited Expert. He is a recognized authoring tool accessibility expert and contributor to the W3C's Draft Web Sustainability Guidelines (WSG) 1.0.
-featured_quote: 
-featured_stat_1: 
-featured_stat_label_1:
-featured_stat_2: 
-featured_stat_label_2: 
-featured_stat_3: 
-featured_stat_label_3: 
+featured_quote: Most modern governments have committed to either WCAG 2.0 AA or WCAG 2.1 AA. It is clear that the implementation of these policies isn’t being equally delivered. 
+featured_stat_1: 40.2%
+featured_stat_label_1: Of desktop sites and 39.3% of mobile sites have at least one role=”presentation”
+featured_stat_2: 0.1%
+featured_stat_label_2: Sites with <audio> elements include a <track> element. 
+featured_stat_3: 56.6%
+featured_stat_label_3: Mobile sites passing the Lighthouse audit for properly ordered headings.
 ---
 
 # Accessibility (Web Almanac 2024\)
@@ -748,7 +748,7 @@ As with the prior chart .edu and .gov domains are the most accessible. The US Go
 
 ### Government
 
-Not all government domains follow consistent accessibility rules, however we were able to isolate many countries' government sites. Not all countries follow regular consistent rules around government sites, so there will be exceptions which are not covered. We have collected averages for most government agencies around the world.
+Not all government domains follow consistent accessibility rules, however we were able to isolate many countries' government sites. Some countries are inconsistent around naming government sites, so there will be exceptions which are not covered. We have collected averages for most government agencies around the world. 
 
 {{ figure_markup(
   image="accessible-governments.png",
@@ -760,7 +760,7 @@ Not all government domains follow consistent accessibility rules, however we wer
   )
 }}
 
-Most governments around the world have committed to similar levels of accessibility. It is clear from these results that the implementation of these policies isn’t being equally delivered. This is particularly important when looking into accessibility within the European Union where each member state needs to implement legislation based on the [Web Accessibility Directive](https://digital-strategy.ec.europa.eu/en/policies/web-accessibility-directive-standards-and-harmonisation). It should be possible to compare the 3 year [EU member state reports](https://digital-strategy.ec.europa.eu/en/library/web-accessibility-directive-monitoring-reports) with the values provided here and in future Web Almanacs. It is worth noting that the average for the United States is 87.3%. 
+Most modern governments have committed to either WCAG 2.0 AA or WCAG 2.1 AA. It is clear that the implementation of these policies isn’t being equally delivered. This is particularly important when looking into accessibility within the European Union where each member state needs to implement legislation based on the [Web Accessibility Directive](https://digital-strategy.ec.europa.eu/en/policies/web-accessibility-directive-standards-and-harmonisation). It should be possible to compare the 3 year [EU member state reports](https://digital-strategy.ec.europa.eu/en/library/web-accessibility-directive-monitoring-reports) with the values provided here and in future Web Almanacs. It is worth noting that the average for the United States is 87.3%. 
 
 {{ figure_markup(
   image="accessible-governments-world.png",
