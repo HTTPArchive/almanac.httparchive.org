@@ -181,7 +181,7 @@ The comparison between home pages and secondary pages reveals an interesting tre
 
 Most LCP elements, or 73% of mobile pages, are images. Interestingly, this percentage is 10% higher on desktop pages. The situation is reversed for text content. Compared to desktop, 10% more mobile webpages use text as their LCP element. This difference is likely because desktop websites can accommodate more visual content due to larger viewport sizes and generally higher performance.
 
-#### <a id="lcp-sub-parts"></a>LCP sub-parts
+#### LCP sub-parts {#lcp-sub-parts}
 
 Several stages of processing must occur before the LCP element can be fully rendered:
 
