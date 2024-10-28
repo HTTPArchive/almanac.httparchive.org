@@ -8,13 +8,13 @@ analysts: [mgifford]
 editors: [JonathanPagel, JonathanAvila, shantsis]
 translators: []
 discuss:
-results: https://docs.google.com/spreadsheets/d/1btB1r9QpdgTyToPhn7glcGAdMFs7eq4UcQSVIHBqiYQ/edit?gid=705305625#gid=705305625
+results: https://docs.google.com/spreadsheets/d/1btB1r9QpdgTyToPhn7glcGAdMFs7eq4UcQSVIHBqiYQ/
 mgifford_bio: Mike Gifford is CivicActions’ Open Standards & Practices Lead. He is also a thought leader on open government, digital accessibility and sustainability. He has served as a Drupal Core Accessibility Maintainer and also a W3C Invited Expert. He is a recognized authoring tool accessibility expert and contributor to the W3C's Draft Web Sustainability Guidelines (WSG) 1.0.
 featured_quote: Most modern governments have committed to either WCAG 2.0 AA or WCAG 2.1 AA. It is clear that the implementation of these policies isn’t being equally delivered.
 featured_stat_1: 40.2%
 featured_stat_label_1: Of desktop sites and 39.3% of mobile sites have at least one role=”presentation”
 featured_stat_2: 0.1%
-featured_stat_label_2: Sites with <audio> elements include a <track> element.
+featured_stat_label_2: Sites with `<audio>` elements include a `<track>` element.
 featured_stat_3: 56.6%
 featured_stat_label_3: Mobile sites passing the Lighthouse audit for properly ordered headings.
 ---
@@ -115,12 +115,12 @@ We're revisiting [Adrian Roselli's post](https://adrianroselli.com/2015/10/dont-
 
 We are happy to say that we are seeing a reduction in sites which are disabling zooming and scaling.  Compared with 2022’s data for mobile users there are 2% less sites who have disabled scaling and 4% that have disabled a max scale of 1. The desktop average both went down by 2% compared to the last report. Users can configure their browsers to override this setting, but some defaults still respect the author’s preferences.
 
-To check if your site has disabled or limited zoom look at the source of the page and search for \<meta name="viewport"\> if it is tagged with a maximum-scale, minimum-scale, user-scalable=no, or user-scalable=0. Ideally, there wouldn’t be any restrictions for content resizing, but WCAG only specifies the need for [200% magnification](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-scale.html#:~:text=Content%20satisfies%20the%20Success%20Criterion%20if%20it%20can,more%20extreme%2C%20adaptive%20layouts%20may%20introduce%20usability%20problems.).
+To check if your site has disabled or limited zoom look at the source of the page and search for `<meta name="viewport">` if it is tagged with a maximum-scale, minimum-scale, user-scalable=no, or user-scalable=0. Ideally, there wouldn’t be any restrictions for content resizing, but WCAG only specifies the need for [200% magnification](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-scale.html#:~:text=Content%20satisfies%20the%20Success%20Criterion%20if%20it%20can,more%20extreme%2C%20adaptive%20layouts%20may%20introduce%20usability%20problems.).
 
 {{ figure_markup(
   image="font-unit-usage.png",
   caption="Font unit usage.",
-  description="A bar chart showing px is used for font sizes on 65% of desktop and 66% of mobiles pages. em on 9% on both. rem on 4% of both, % on 4% of desktop and 5% of mobile, <number> on 2% of both, and finally pt on 15% on desktop and 14% on mobile.",
+  description="A bar chart showing px is used for font sizes on 65% of desktop and 66% of mobiles pages. em on 9% on both. rem on 4% of both, % on 4% of desktop and 5% of mobile, `<number>` on 2% of both, and finally pt on 15% on desktop and 14% on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=655410508&format=interactive",
   sheets_gid="806505055",
   sql_file="units_properties.sql"
@@ -142,7 +142,7 @@ Identifying language with the lang attribute enhances screen reader support and 
 )
 }}
 
-It's promising to note that in 2022, 83% of mobile websites included a lang attribute, and two years later it is at 86.2%. However, since this is a Level A conformance issue under WCAG, there is still room for improvement. To meet this criterion, the lang attribute should be added to the \<html\> tag with a recognized [primary language tag](https://www.w3.org/WAI/standards-guidelines/act/rules/bf051a/#known-primary-language-tag). This global attribute can also be applied to other tags if the page contains multiple languages. Properly defining the language is crucial. Sometimes, when a template is copied to create a new website, discrepancies can arise between the language of the content and the language attribute (lang="en") in the code.
+It's promising to note that in 2022, 83% of mobile websites included a lang attribute, and two years later it is at 86.2%. However, since this is a Level A conformance issue under WCAG, there is still room for improvement. To meet this criterion, the lang attribute should be added to the `<html>` tag with a recognized [primary language tag](https://www.w3.org/WAI/standards-guidelines/act/rules/bf051a/#known-primary-language-tag). This global attribute can also be applied to other tags if the page contains multiple languages. Properly defining the language is crucial. Sometimes, when a template is copied to create a new website, discrepancies can arise between the language of the content and the language attribute (lang="en") in the code.
 
 Also, keep in mind that there is the page language, but pages often contain multiple languages within them. The W3C has good documentation on [how to address the Language of Parts](https://www.w3.org/WAI/WCAG21/Understanding/language-of-parts.html).
 
@@ -229,7 +229,7 @@ Of all websites using the tabindex attribute, 4% employ positive values (down fr
 
 ### Landmarks
 
-Landmarks help structure a web page into distinct thematic regions, facilitating easier navigation for users of assistive technologies. For instance, a [rotor menu](https://www.afb.org/blindness-and-low-vision/using-technology/cell-phones-tablets-mobile/apple-ios-iphone-and-ipad-2) can help navigate between different page landmarks, while [skip links](https://webaim.org/techniques/skipnav/) can direct users to specific landmarks, such as \<main\>. Landmarks can be defined using various HTML5 elements. This semantic structure can also be applied with Web Accessibility Initiative – Accessible Rich Internet Applications (ARIA)’s [landmark roles](https://www.w3.org/TR/WCAG20-TECHS/ARIA11.html). However, it's best to use native HTML5 elements whenever possible, in line with [ARIA's first rule](https://www.a11y-collective.com/blog/the-first-rule-for-using-aria/).
+Landmarks help structure a web page into distinct thematic regions, facilitating easier navigation for users of assistive technologies. For instance, a [rotor menu](https://www.afb.org/blindness-and-low-vision/using-technology/cell-phones-tablets-mobile/apple-ios-iphone-and-ipad-2) can help navigate between different page landmarks, while [skip links](https://webaim.org/techniques/skipnav/) can direct users to specific landmarks, such as `<main>`. Landmarks can be defined using various HTML5 elements. This semantic structure can also be applied with Web Accessibility Initiative – Accessible Rich Internet Applications (ARIA)’s [landmark roles](https://www.w3.org/TR/WCAG20-TECHS/ARIA11.html). However, it's best to use native HTML5 elements whenever possible, in line with [ARIA's first rule](https://www.a11y-collective.com/blog/the-first-rule-for-using-aria/).
 
 Although ARIA landmarks have traditionally been only visible to screen reader users, some sites are beginning to use tools like this [open source SkipTo script](https://github.com/paypal/skipto) which aggregates headings, and landmarks into a page-specific table of contents. Exposing the document structure to the user helps everyone’s comprehension. SkipTo delivers what really should be basic browser functionality. This goes beyond the skip links that are discussed in a later section.
 
@@ -250,7 +250,7 @@ Although ARIA landmarks have traditionally been only visible to screen reader us
   )
 }}
 
-The most commonly expected landmarks for most web pages include \<main\>, \<header\>, \<nav\>, and \<footer\>. Our findings reveal that only 37% of all pages use the native HTML \<main\> element, while 17% of all pages have an element with role="main" 43% are using either one of them, this is up from 35% in 2021. Scott O'Hara’s [article on landmarks](https://www.scottohara.me/blog/2018/03/03/landmarks.html) provides valuable insights for enhancing accessibility.
+The most commonly expected landmarks for most web pages include `<main>`, `<header>`, `<nav>`, and `<footer>`. Our findings reveal that only 37% of all pages use the native HTML `<main>` element, while 17% of all pages have an element with role="main" 43% are using either one of them, this is up from 35% in 2021. Scott O'Hara’s [article on landmarks](https://www.scottohara.me/blog/2018/03/03/landmarks.html) provides valuable insights for enhancing accessibility.
 
 ### Heading hierarchy
 
@@ -275,7 +275,7 @@ Currently, 21.3% of mobile websites and 21.9% of desktop websites include a sear
 
 ### Skip links
 
-Skip links enable users who rely on keyboard or switch control devices to bypass various sections of a webpage without having to navigate through every focusable element. A common use is to skip over the primary navigation and move directly to the \<main\> content, particularly on sites with extensive interactive navigation menus. This can dramatically increase the user experience for keyboard-only users.
+Skip links enable users who rely on keyboard or switch control devices to bypass various sections of a webpage without having to navigate through every focusable element. A common use is to skip over the primary navigation and move directly to the `<main>` content, particularly on sites with extensive interactive navigation menus. This can dramatically increase the user experience for keyboard-only users.
 
 {{ figure_markup(
   caption="Mobile and desktop pages likely featuring a skip link.",
@@ -295,7 +295,7 @@ Descriptive page titles are important for navigating between pages, tabs, and wi
 {{ figure_markup(
   image="page_title-information.png",
   caption="Title element statistics.",
-  description="A bar chart showing 97% of desktop and mobile sites use the <title> element, 69% of sites of those titles have four or more words, and 7% of desktops and 6% of mobile titles are changed on render.",
+  description="A bar chart showing 97% of desktop and mobile sites use the `<title>` element, 69% of sites of those titles have four or more words, and 7% of desktops and 6% of mobile titles are changed on render.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=1921322394&format=interactive",
   sheets_gid="1803785019",
   sql_file="page_title.sql"
@@ -308,7 +308,7 @@ The titles changed on render value is derived from a comparison of the initial H
 
 ### Tables
 
-Tables present data and relationships using two dimensions. For accessibility, tables need a well-structured format with elements like captions, headers, and header cells to help users with assistive technologies understand and navigate the data. A caption, using the \<caption\> element, is especially important as it provides context for screen readers. Currently, 1.6% of desktop sites use a \<caption\> (slightly up from 1.3 in 2022), but this is a crucial aspect for making tables more accessible.
+Tables present data and relationships using two dimensions. For accessibility, tables need a well-structured format with elements like captions, headers, and header cells to help users with assistive technologies understand and navigate the data. A caption, using the `<caption>` element, is especially important as it provides context for screen readers. Currently, 1.6% of desktop sites use a `<caption>` (slightly up from 1.3 in 2022), but this is a crucial aspect for making tables more accessible.
 
 |  | Table Sites |  | All Sites |  |
 | :---- | ----- | ----- | ----- | ----- |
@@ -322,9 +322,9 @@ Tables should not be used for page layout, thanks to CSS Flexbox and Grid. If ne
 
 Forms are essential for user interactions, such as logging in or making purchases. For users with disabilities, accessible forms are crucial for completing tasks and achieving equal functionality. Forms are also often much more complicated for developers to build than static HTML pages.
 
-### \<label\> element
+### `<label>` element
 
-The \<label\> element is the preferred way for [linking input fields with their accessible names](https://developer.mozilla.org/docs/Learn/Forms/Basic_native_form_controls). Using the for attribute to match the id of an input ensures proper programmatic association, improving form usability. Furthermore, when the label element is used properly it allows users to click or tap on the label to focus the form field.
+The `<label>` element is the preferred way for [linking input fields with their accessible names](https://developer.mozilla.org/docs/Learn/Forms/Basic_native_form_controls). Using the for attribute to match the id of an input ensures proper programmatic association, improving form usability. Furthermore, when the label element is used properly it allows users to click or tap on the label to focus the form field.
 
 For example:
 
@@ -343,11 +343,11 @@ For example:
   )
 }}
 
-Unfortunately, 12.6% of mobile inputs lack accessible names (a significant improvement from 38% in 2022). Also only 14.6% of mobile sites use \<label\> (which is down from 19% in 2022), which can hinder users relying on screen readers or voice-to-text tools. An accessible name always needs to be used and sites should support assistive technology beyond just screen readers. WCAG 2.1 added 2.5.3 Label in Name (Level A) to help ensure that technologies like Voice Control would be better supported.  Use of aria-label and aria-labelledby should only be used if an HTML \<label\> cannot be used.
+Unfortunately, 12.6% of mobile inputs lack accessible names (a significant improvement from 38% in 2022). Also only 14.6% of mobile sites use `<label>` (which is down from 19% in 2022), which can hinder users relying on screen readers or voice-to-text tools. An accessible name always needs to be used and sites should support assistive technology beyond just screen readers. WCAG 2.1 added 2.5.3 Label in Name (Level A) to help ensure that technologies like Voice Control would be better supported.  Use of aria-label and aria-labelledby should only be used if an HTML `<label>` cannot be used.
 
 ### placeholder attribute
 
-The placeholder attribute provides example input formats. It should not replace a \<label\> as a way to provide an accessible name. When placeholders are the only way of providing a visible label, that reference point disappears when the user starts typing. It is not a new concern that [browsers by default do not give placeholder text sufficient contrast](https://www.w3.org/WAI/GL/low-vision-a11y-tf/wiki/Placeholder_Research) to meet WCAG. Furthermore, they are [not always supported by screen readers](https://www.digitala11y.com/anatomy-of-accessible-forms-placeholder-is-a-mirage/).
+The placeholder attribute provides example input formats. It should not replace a `<label>` as a way to provide an accessible name. When placeholders are the only way of providing a visible label, that reference point disappears when the user starts typing. It is not a new concern that [browsers by default do not give placeholder text sufficient contrast](https://www.w3.org/WAI/GL/low-vision-a11y-tf/wiki/Placeholder_Research) to meet WCAG. Furthermore, they are [not always supported by screen readers](https://www.digitala11y.com/anatomy-of-accessible-forms-placeholder-is-a-mirage/).
 
 {{ figure_markup(
   image="placeholder-but-no-label.png",
@@ -451,10 +451,10 @@ One promising approach is from Mike Feranda in Drupal who has incorporated AI in
 
 ### Audio and video
 
-The \<track\> element is used to provide timed text for \<audio\> and \<video\> elements, such as captions (sometimes referred to as subtitles) and descriptions. This helps users with hearing loss or visual impairments understand the content.
+The `<track>` element is used to provide timed text for `<audio>` and `<video>` elements, such as captions (sometimes referred to as subtitles) and descriptions. This helps users with hearing loss or visual impairments understand the content.
 
 {{ figure_markup(
-  caption="Sites with \<audio\> elements include a \<track\> element.",
+  caption="Sites with `<audio>` elements include a `<track>` element.",
   content="0.1%",
   classes="big-number",
   sheets_gid="546746158",
@@ -462,7 +462,7 @@ The \<track\> element is used to provide timed text for \<audio\> and \<video\> 
 )
 }}
 
-For \<video\> elements, the figure is slightly higher at 0.5% for both desktops and 0.65% for mobile sites. These statistics do not cover audio or video embedded via \<iframe\>, where third-party services often offer text alternatives. Our industry can do a lot better.
+For `<video>` elements, the figure is slightly higher at 0.5% for both desktops and 0.65% for mobile sites. These statistics do not cover audio or video embedded via `<iframe>`, where third-party services often offer text alternatives. Our industry can do a lot better.
 
 ## **Assistive technology with ARIA**
 
@@ -474,7 +474,7 @@ When assistive technologies interact with an element, the element’s role helps
 
 For instance, [tabbed interfaces](https://inclusive-components.design/tabbed-interfaces/) often require specific ARIA roles to accurately represent their structure. The [WAI-ARIA Authoring Practices Design Patterns](https://www.w3.org/TR/wai-aria-practices-1.1/#tabpanel) outline how to create an accessible tabbed interface, suggesting that a tablist role be assigned to the container element due to the absence of a native HTML equivalent.
 
-HTML5 introduced numerous native elements with built-in semantics and roles. For example, the \<nav\> element inherently has a role="navigation", making it unnecessary to explicitly add this role with ARIA.
+HTML5 introduced numerous native elements with built-in semantics and roles. For example, the `<nav>` element inherently has a role="navigation", making it unnecessary to explicitly add this role with ARIA.
 
 {{ figure_markup(
   image="top-10-aria-roles.png",
@@ -486,7 +486,7 @@ HTML5 introduced numerous native elements with built-in semantics and roles. For
   )
 }}
 
-We observed that over 50% of mobile sites (up from 33% in 2022, and 29% in 2021 and 25% in 2020\) had homepages with at least one element assigned the role="button". This increase is concerning, as it suggests websites may be using \<div\> or \<span\> elements as custom buttons or redundantly applying roles to \<button\> elements. Both practices are problematic and violate the fundamental ARIA principle of using native HTML elements—such as \<button\>—whenever possible.
+We observed that over 50% of mobile sites (up from 33% in 2022, and 29% in 2021 and 25% in 2020\) had homepages with at least one element assigned the role="button". This increase is concerning, as it suggests websites may be using `<div>` or `<span>` elements as custom buttons or redundantly applying roles to `<button>` elements. Both practices are problematic and violate the fundamental ARIA principle of using native HTML elements—such as `<button>`—whenever possible.
 
 {{ figure_markup(
   caption='Websites with at least one anchor with an href with a role="button".',
@@ -501,7 +501,7 @@ We observed that over 50% of mobile sites (up from 33% in 2022, and 29% in 2021 
 
 ### Using the presentation role
 
-When an element is assigned the role="presentation", it loses its inherent semantics, along with those of its required child elements (e.g., list items within a \<ul\>, or rows and cells within a table). For instance, applying role="presentation" to a parent \<table\> or \<ul\> element will propagate this role to its child elements, causing them to lose their table or list semantics.
+When an element is assigned the role="presentation", it loses its inherent semantics, along with those of its required child elements (e.g., list items within a `<ul>`, or rows and cells within a table). For instance, applying role="presentation" to a parent `<table>` or `<ul>` element will propagate this role to its child elements, causing them to lose their table or list semantics.
 
 Removing semantics with role="presentation" means the element only has visual presence and its structure is not recognized by assistive technologies, making it difficult for screen readers to convey the information.
 
@@ -517,7 +517,7 @@ Removing semantics with role="presentation" means the element only has visual pr
 
 This is concerning as in 2022 it was already high at 25% of desktop sites and 24% of mobile sites.
 
-Similarly, using role="none" also removes the element's semantics. This year, 5% of sites used role="none", down from 11% in 2022. While it may be useful in rare cases, such as when a \<table\> is used purely for layout, it generally should be used cautiously as it can be detrimental to accessibility.
+Similarly, using role="none" also removes the element's semantics. This year, 5% of sites used role="none", down from 11% in 2022. While it may be useful in rare cases, such as when a `<table>` is used purely for layout, it generally should be used cautiously as it can be detrimental to accessibility.
 
 Most browsers disregard role="presentation" and role="none" when exposing a role in the accessibility tree for focusable elements, including links and inputs, or elements with a tabindex attribute. However, if an element with these roles includes global ARIA states or properties (such as aria-describedby), the role may be ignored.
 
