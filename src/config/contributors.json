@@ -736,6 +736,9 @@
       "2022": [
         "authors",
         "reviewers"
+      ],
+      "2024": [
+        "reviewers"
       ]
     },
     "twitter": "briankardell",
@@ -1356,6 +1359,18 @@
     "twitter": "akanygren",
     "website": "https://erik.nygren.org/"
   },
+  "guaca": {
+    "avatar_url": "7644895",
+    "github": "guaca",
+    "name": "Estela Franco",
+    "teams": {
+      "2024": [
+        "analysts"
+      ]
+    },
+    "twitter": "guaca",
+    "website": "https://estelafranco.com/"
+  },
   "estelle": {
     "avatar_url": "69888",
     "github": "estelle",
@@ -1926,6 +1941,9 @@
       ],
       "2022": [
         "authors",
+        "reviewers"
+      ],
+      "2024": [
         "reviewers"
       ]
     },
@@ -3716,6 +3734,9 @@
         "reviewers"
       ],
       "2022": [
+        "reviewers"
+      ],
+      "2024": [
         "reviewers"
       ]
     },

@@ -8,7 +8,7 @@ analysts: [guaca]
 editors: []
 translators: []
 guaca_bio: Estela Franco is a web performance and technical SEO specialist at Schneider Electric. But apart from that, she loves being connected to the community. That is why she is an international conference speaker, a Google Developer Expert in Web Technologies, a Storyblok ambassador, co-organizer of the Barcelona Web Performance Meetup, and co-founder of the Mujeres en SEO community.
-results: https://docs.google.com/spreadsheets/d/1TtOMr_w58HvqNBv4RIWX021Lxm6m5ajYOcRykrPdAJc/edit#gid=1778117656
+results: https://docs.google.com/spreadsheets/d/1TtOMr_w58HvqNBv4RIWX021Lxm6m5ajYOcRykrPdAJc/
 featured_quote: Every website, every web application, and every online interaction starts with HTML at its core, making it one of the most essential web standards.
 featured_stat_1: 93%
 featured_stat_label_1: Documents using the HTML doctype
@@ -348,7 +348,7 @@ The list remains largely consistent with previous years, but some shifts have oc
 `<div>` remains by far the most dominant element. So "divitis" is still a thing, and it doesn't look like it's going to change in the next few years.
 
 {{ figure_markup(
-  image="elements_per_page.png",
+  image="top_elements.png",
   caption="Frequency of top HTML elements",
   description="Bar chart showing the frquency of top 15 HTML elements. `div` is the most used (28.7% on mobile), followed by `a` (12.6%), `span` (11.2%), `li` (7.7%) and `script` (3.9%). The rest of the top 15 elements are `img`, `p`, `link`, `path`, `meta`, `i`, `option`, `ul`, `br`, and `td`, with values ranging from 3.3% to 1.3%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQTldh1hYi8-zIRgmK_v6IhpKuUOPTAhBxStogg3rt1L6isaX6v8dgODs7WiJ_udh7ZvHnvrTZLlXkW/pubchart?oid=1080941706&format=interactive",
@@ -366,7 +366,7 @@ Another notable shift is the emergence of `<path`\>, which entered the top 10 in
 The adoption of top HTML elements across both desktop and mobile platforms remains consistently high, reflecting their foundational role in modern web development. The `<html>`, `<head>,` and `<body>` elements are nearly ubiquitous, appearing on over 99.7% of both desktop and mobile pages.
 
 {{ figure_markup(
-  image="elements_per_page.png",
+  image="popularity_of_top_elements.png",
   caption="Popularity of top HTML elements",
   description="Bar chart showing that `html` and `head` tags are used on 99.8% of mobile pages, `body` on 99.7%, `meta` on 99.2%, and `title` on 99.1%. `div`, `link`, `a`, `script`, `img`, `span`, `p`, `li`, `ul`, and `style` are the rest of the top 15 HTML elements, with values ranging from 98.8% to 86.2%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQTldh1hYi8-zIRgmK_v6IhpKuUOPTAhBxStogg3rt1L6isaX6v8dgODs7WiJ_udh7ZvHnvrTZLlXkW/pubchart?oid=1748599287&format=interactive",
@@ -464,7 +464,7 @@ For another year, the most used attribute by far is `class`, with 48 billion occ
 And when we look at the attributes used per page, we find the following used on almost all of them:
 
 {{ figure_markup(
-  image="attribute_usage.png",
+  image="popularity_attribute_usage.png",
   caption="Popularity of top attributes",
   description="Bar chart showing the usage of the top 10 HTML attributes. `href` is the most used (present on 99.2% of mobile pages), followed by `src` (98.9% on mobile), `content` (99% on mobile), `name` (98.8% on mobile) and `class` (98.7% on mobile). The rest of the top 10 are `type`, `rel`, `id`, `style` and `alt`, with values ranging from 98.4% to 91.7%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQTldh1hYi8-zIRgmK_v6IhpKuUOPTAhBxStogg3rt1L6isaX6v8dgODs7WiJ_udh7ZvHnvrTZLlXkW/pubchart?oid=1479935889&format=interactive",
@@ -600,9 +600,9 @@ Here's a closer look at the breakdown:
 Apart from buttons, certain `input` elements are also rendered and used as buttons.
 
 {{ figure_markup(
-  image="buttons.png",
+  image="input_buttons.png",
   caption="Popularity of buttons using input types",
-  description="Bar chart showing the popularity of input types used as buttons. `<input type="submit">` is the most used (present on 25.2% of mobile pages in our data set), followed by `<input type="button">` (2.8% on mobile), and `<input type="image">` (1.1% on mobile).",
+  description="Bar chart showing the popularity of input types used as buttons. `<input type=\"submit\">` is the most used (present on 25.2% of mobile pages in our data set), followed by `<input type=\"button\">` (2.8% on mobile), and `<input type=\"image\">` (1.1% on mobile).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQTldh1hYi8-zIRgmK_v6IhpKuUOPTAhBxStogg3rt1L6isaX6v8dgODs7WiJ_udh7ZvHnvrTZLlXkW/pubchart?oid=1616034217&format=interactive",
   sheets_gid="1115291405",
   sql_file="buttons.sql"
