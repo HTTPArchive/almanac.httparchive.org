@@ -3349,6 +3349,9 @@
         "editors",
         "leads",
         "authors"
+      ],
+      "2024": [
+        "reviewers"
       ]
     },
     "twitter": "rick_viscomi",
