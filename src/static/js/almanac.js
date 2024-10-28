@@ -389,6 +389,10 @@ function googleSheetsPixelNotLoaded() {
 //Check for support and switch out images if supported
 function upgradeInteractiveFigures() {
 
+  // Temporarily disable charts since embedding is currently broken in Sheets
+  // See: https://github.com/HTTPArchive/almanac.httparchive.org/issues/3803
+  return;
+
   try {
     if (!isInPrintMode() && bigEnoughForInteractiveFigures() && !dataSaverEnabled() && highBandwidthConnection() && highResolutionCanvasSupported()) {
 

@@ -379,7 +379,7 @@ Many features users expect to belong to platform-specific applications also exis
 
 Project Fugu comprises Microsoft, Intel, Samsung, Google, and many other groups and individuals.
 
-Check out <a hreflang="en" href="https://developer.chrome.com/blog/fugu-status/">this post</a> on the Chrome Developers blog to learn more about the Capabilities Project.
+Check out <a hreflang="en" href="https://developer.chrome.com/blog/fugu-status">this post</a> on the Chrome Developers blog to learn more about the Capabilities Project.
 
 ## Conclusion
 

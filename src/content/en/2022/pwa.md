@@ -262,7 +262,7 @@ PWAs need to generate different icon sizes to accommodate the range of surfaces 
 
 #### Installation and discoverability properties
 
-A web app manifest file can contain data that is useful in describing of the application. These properties can be used by stores or other distribution mechanisms to promote the application. An increased growth of <a hreflang="en" href="https://developer.chrome.com/blog/richer-pwa-installation/">rich browser-based installation dialogs</a> is also utilizing these fields more prominently. Relevant fields, which can be found as part of the Application Information supplement to the Manifest file are listed below:
+A web app manifest file can contain data that is useful in describing of the application. These properties can be used by stores or other distribution mechanisms to promote the application. An increased growth of <a hreflang="en" href="https://developer.chrome.com/blog/richer-pwa-installation">rich browser-based installation dialogs</a> is also utilizing these fields more prominently. Relevant fields, which can be found as part of the Application Information supplement to the Manifest file are listed below:
 
 * `description`: This property exists in 36% of desktop and 34% of mobile web app manifests. The description is important since it explains what the application does. It's commonly used to provide information about the app for a store. Currently around a third of installable PWAs would offer this information.
 * `screenshots`: This property provides the URLs of one or more screenshots for use in app stores and in-browser install prompts. PWAs with manifests that take advantage of this feature total 1.12% for desktop and 1.19% for mobiles devices.
@@ -326,6 +326,7 @@ There is a property in the manifest that specifies if applications listed in the
 ## Fugu APIs
 
 PWAs go hand in hand with advanced web capabilities. These capabilities are generally part of project Fugu which is the codename for a collection of new web platform features incubating within the Chromium project.
+
 {{ figure_markup(
   caption="Most used Fugu API (desktop)",
   content="8.8%",
@@ -382,7 +383,7 @@ We won't delve into these much more as we have a separate [Capabilities](./capab
 
 ## PWA insights from Lighthouse
 
-<a hreflang="en" href="https://developer.chrome.com/docs/lighthouse/">Lighthouse</a> is an open-source, automated tool for improving the quality of web pages. It can be used to run a number of audits on a website and has a dedicated category for PWA audits. The available data sheds some light on interesting facts about the state of PWAs these past 12 months.
+<a hreflang="en" href="https://developer.chrome.com/docs/lighthouse">Lighthouse</a> is an open-source, automated tool for improving the quality of web pages. It can be used to run a number of audits on a website and has a dedicated category for PWA audits. The available data sheds some light on interesting facts about the state of PWAs these past 12 months.
 
 ### Lighthouse audits
 
@@ -398,7 +399,6 @@ We won't delve into these much more as we have a separate [Capabilities](./capab
 
 It is not surprising to see PWA sites passing the PWA audits much more frequently than the general web, though some audits such as the presence of a <a hreflang="en" href="https://web.dev/viewport/#how-to-add-a-viewport-meta-tag">viewport meta tag</a> and the <a hreflang="en" href="https://web.dev/apple-touch-icon/#how-the-lighthouse-apple-touch-icon-audit-fails">apple-touch-icon</a> meta tag are also often applicable—and used–by non-PWA sites.
 
-
 {{ figure_markup(
   image="lighthouse-pwa-audits-mobile.png",
   caption="Lighthouse PWA Audits for mobile.",
@@ -409,7 +409,7 @@ It is not surprising to see PWA sites passing the PWA audits much more frequentl
   )
 }}
 
-Looking at the Lighthouse data on mobile sites we see similar stats, but the mobile-only <a hreflang="en" href="https://developer.chrome.com/docs/lighthouse/pwa/content-width/">content-width meta tag</a> shows here and is pleasingly passed by both.
+Looking at the Lighthouse data on mobile sites we see similar stats, but the mobile-only <a hreflang="en" href="https://developer.chrome.com/docs/lighthouse/pwa/content-width">content-width meta tag</a> shows here and is pleasingly passed by both.
 
 The presence of a viewport meta tag is relevant because it removes a 300-350ms delay that waits for a double-tap back when that was the way to zoom in. It has the additional benefit on mobile devices of optimizing the app for the device's screen size. It is not surprising that almost all websites, PWA or not, include this.
 
@@ -441,7 +441,7 @@ To conclude the Lighthouse insights section, we take a look at the overall Light
   )
 }}
 
-As expected, PWA sites tend to have considerably higher PWA audit scores. These audits look into speed, reliability, installability and other PWA requirements, as detailed in their <a hreflang="en" href="https://developer.chrome.com/docs/lighthouse/pwa/">documentation</a>.
+As expected, PWA sites tend to have considerably higher PWA audit scores. These audits look into speed, reliability, installability and other PWA requirements, as detailed in their <a hreflang="en" href="https://developer.chrome.com/docs/lighthouse/pwa">documentation</a>.
 
 What's also notable is the range of audit scores in PWA sites (50-100) representing the difference in PWAs out there. In contrast the rest of the web has a fairly consistent range of scores (20-40) reflecting the two main audits relevant for most sites discussed previously-viewport and icons.
 
@@ -451,7 +451,7 @@ Service workers are really powerful tools, their API allows developers to create
 
 ### Workbox usage
 
-<a hreflang="en" href="https://developer.chrome.com/workbox/">Workbox</a> is a set of libraries that was born to ease the usage of service workers for developers. It includes a set of libraries that go from the basics that are reused in other Workbox libraries with <a hreflang="en" href="https://developer.chrome.com/docs/workbox/modules/workbox-core/">workbox-core</a> to more specific tasks like <a hreflang="en" href="https://developer.chrome.com/docs/workbox/modules/workbox-strategies/">caching strategies</a>, <a hreflang="en" href="https://developer.chrome.com/docs/workbox/modules/workbox-background-sync/">background sync</a>, <a hreflang="en" href="https://developer.chrome.com/docs/workbox/modules/workbox-precaching/">precaching</a> and <a hreflang="en" href="https://developer.chrome.com/docs/workbox/modules/">many more</a>.
+<a hreflang="en" href="https://developer.chrome.com/workbox/">Workbox</a> is a set of libraries that was born to ease the usage of service workers for developers. It includes a set of libraries that go from the basics that are reused in other Workbox libraries with <a hreflang="en" href="https://developer.chrome.com/docs/workbox/modules/workbox-core">workbox-core</a> to more specific tasks like <a hreflang="en" href="https://developer.chrome.com/docs/workbox/modules/workbox-strategies">caching strategies</a>, <a hreflang="en" href="https://developer.chrome.com/docs/workbox/modules/workbox-background-sync">background sync</a>, <a hreflang="en" href="https://developer.chrome.com/docs/workbox/modules/workbox-precaching">precaching</a> and <a hreflang="en" href="https://developer.chrome.com/docs/workbox/modules">many more</a>.
 
 {{ figure_markup(
   image="workbox-usage.png",

@@ -67,7 +67,7 @@ Deze algemene veranderingen zijn niet onverwacht, gezien een groot aantal wijzig
 
 ## <span lang="en"> Core Web Vitals: Largest Contentful Paint</span> {core-web-vitals-largest-contentful-paint}
 
-<span lang="en">Largest Contentful Paint</span> (LCP) is een op timing gebaseerde statistiek van een mijlpaal die de tijd rapporteert waarop het grootste <a hreflang="en" href="https://web.dev/lcp/#what-elements-are-considered">boven-de-vouw-element</a> was weergegeven.
+<span lang="en">Largest Contentful Paint</span> (LCP) is een op timing gebaseerde statistiek van een mijlpaal die de tijd rapporteert waarop het grootste <a hreflang="en" href="https://web.dev/articles/lcp#what-elements-are-considered">boven-de-vouw-element</a> was weergegeven.
 
 ### LCP per apparaat
 
@@ -115,7 +115,7 @@ India blijft de laatste in onze reeks gegevens, met slechts 16% goede ervaringen
 
 Aangezien LCP een timing is die laat zien wanneer het grootste boven-de-vouw-element is gerenderd (inclusief beelden, video's of blokniveau-elementen die tekst bevatten), is het niet verrassend dat hoe langzamer het netwerk, hoe groter het deel van de metingen slecht is.
 
-Er is een duidelijke correlatie tussen netwerksnelheid en betere LCP-prestaties, maar zelfs op 4G wordt slechts 48% van de resultaten als goed gecategoriseerd, waardoor de helft van de metingen moet worden verbeterd. Het automatiseren van media-optimalisatie, het bedienen van de juiste afmetingen en formaten, en het optimaliseren voor Low Data Mode, zou kunnen helpen om de naald te verplaatsen. Lees meer over <a hreflang="en" href="https://web.dev/optimize-lcp/">LCP optimaliseren in deze gids</a>.
+Er is een duidelijke correlatie tussen netwerksnelheid en betere LCP-prestaties, maar zelfs op 4G wordt slechts 48% van de resultaten als goed gecategoriseerd, waardoor de helft van de metingen moet worden verbeterd. Het automatiseren van media-optimalisatie, het bedienen van de juiste afmetingen en formaten, en het optimaliseren voor Low Data Mode, zou kunnen helpen om de naald te verplaatsen. Lees meer over <a hreflang="en" href="https://web.dev/articles/optimize-lcp">LCP optimaliseren in deze gids</a>.
 
 ## <span lang="en">Core Web Vitals: Cumulative Layout Shift</span> {core-web-vitals-cumulative-layout-shift}
 
@@ -153,7 +153,7 @@ Volgens gegevens van CrUX, zowel in het geval van desktop als mobiele apparaten,
 
 De CLS-prestaties in verschillende geografische regio's zijn voornamelijk goed, met minstens 56% van de sites met een goede beoordeling. Dit is uitstekend nieuws voor de waargenomen visuele stabiliteit. We kunnen vergelijkbare landen zien die voorop lopen in de geografische distributie van het LCP: Republiek Korea, Japan, Tsjechië, Duitsland, Polen.
 
-Visuele stabiliteit wordt minder beïnvloed door geografie en latentie voor andere statistieken, zoals LCP. Het verschil in percentage goede scores tussen het bovenste en onderste land is 61% voor LCP en slechts 13% voor CLS. Het percentage websites met matige beoordelingen is over de hele linie relatief laag en maakt plaats voor 19% -29% van de slechte ervaringen over de hele linie. Er zijn tal van factoren die kunnen bijdragen aan slechte CLS - leer hoe u ze aanpakt in de <a hreflang="en" href="https://web.dev/optimize-cls/">Gids voor Cumulatieve Layoutverschuiving Optimaliseren</a>.
+Visuele stabiliteit wordt minder beïnvloed door geografie en latentie voor andere statistieken, zoals LCP. Het verschil in percentage goede scores tussen het bovenste en onderste land is 61% voor LCP en slechts 13% voor CLS. Het percentage websites met matige beoordelingen is over de hele linie relatief laag en maakt plaats voor 19% -29% van de slechte ervaringen over de hele linie. Er zijn tal van factoren die kunnen bijdragen aan slechte CLS - leer hoe u ze aanpakt in de <a hreflang="en" href="https://web.dev/articles/optimize-cls">Gids voor Cumulatieve Layoutverschuiving Optimaliseren</a>.
 
 ### CLS per verbindingstype
 

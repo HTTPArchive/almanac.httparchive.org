@@ -98,7 +98,7 @@
   align-items: center;
   border-radius: 15px;
   box-shadow: 0 0 16px 0 rgba(78, 85, 100, 0.2);
-  padding: 24px 24px;
+  padding: 20px 18px;
   width: 250px;
   min-width: 250px;
   margin: 10px;
@@ -327,9 +327,16 @@
             </svg>
           </a>
           {% endif %}
+          {% if contributor.mastodon %}
+          <a href="https://mastodon.com/{{ contributor.mastodon }}" aria-label="{{ onMastodon(contributor.mastodon) }}">
+            <svg width="22" height="22" role="img">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#mastodon-logo"></use>
+            </svg>
+          </a>
+          {% endif %}
           {% if contributor.github %}
           <a href="https://github.com/{{ contributor.github }}" aria-label="{{ onGitHub(contributor.github) }}">
-            <svg width="22" height="22" role="img">
+            <svg width="22" height="20" role="img">
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github-logo"></use>
             </svg>
           </a>

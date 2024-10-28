@@ -278,7 +278,7 @@ We zien een aanzienlijke toename in het gebruik van verzoeken en bytes van derde
 
 ## E-commerce gebruikerservaring
 
-Bij e-commerce draait alles om het converteren van klanten en om dat te doen is een snel presterende website van het grootste belang. In deze sectie proberen we licht te werpen op de echte gebruikerservaring van e-commerce websites. Om dit te bereiken, richten we onze analyse op enkele door de gebruiker waargenomen prestatiestatistieken, die zijn vastgelegd in de drie <a hreflang="en" href="https://web.dev/vitals/">Core Web Vitals</a> statistieken.
+Bij e-commerce draait alles om het converteren van klanten en om dat te doen is een snel presterende website van het grootste belang. In deze sectie proberen we licht te werpen op de echte gebruikerservaring van e-commerce websites. Om dit te bereiken, richten we onze analyse op enkele door de gebruiker waargenomen prestatiestatistieken, die zijn vastgelegd in de drie <a hreflang="en" href="https://web.dev/articles/vitals">Core Web Vitals</a> statistieken.
 
 ### Chrome User Experience Report
 
