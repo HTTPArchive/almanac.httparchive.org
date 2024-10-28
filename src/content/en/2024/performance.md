@@ -170,7 +170,7 @@ The comparison between home pages and secondary pages reveals an interesting tre
 #### LCP content types
 
 {{ figure_markup(
-  image="largest-contentful-paint-content-types.png",
+  image="largest-contentful-paint-top-content-types.png",
   caption: "Top three LCP content types segmented by device.",
   description="Bar chart showing the top LCP content types for desktop and mobile in 2024\. For desktop, 83.3% of pages have images as the LCP content type, while 73.3% of mobile pages have images as their LCP content. Text accounts for 16.3% of LCP content on desktop and 26.3% on mobile. Inline images are rare, making up 0.3% of LCP content on desktop and 0.4% on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=1134330296&format=interactive",
@@ -307,7 +307,7 @@ You can reduce image sizes through resizing dimensions and increasing compressio
 {{ figure_markup(
   image="largest-contentful-paint-image-file-format.png",
   caption="The percent of pages that use a given image file format for their LCP images",
-  description="Bar chart showing the distribution of LCP (Largest Contentful Paint) image formats for desktop and mobile. JPG is the most common format, used by 60.7% of desktop pages and a similar percentage of mobile pages. PNG is the second most common format, used by 25.9% of pages. WebP follows with 7.3%, while other formats such as MP4, SVG, GIF, and AVIF are used by less than 2% of pages. ICO, HEIC, and HEIF formats are barely used, with their percentages rounding to 0% for both desktop and mobile.",
+  description="Bar chart showing the distribution of LCP (Largest Contentful Paint) image formats for desktop and mobile. JPG is the most common format, used by 61% of desktop pages and a similar percentage of mobile pages. PNG is the second most common format, used by 26% of pages. WebP follows with 7%, while other formats such as MP4, SVG, GIF, and AVIF are used by less than 2% of pages. ICO, HEIC, and HEIF formats are barely used, with their percentages rounding to 0% for both desktop and mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=2086275423&format=interactive",
   sheets_gid="240287365",
   sql_file="lcp_format.sql"
@@ -401,7 +401,7 @@ An INP score can be broken down into three sub-parts:
 To optimize your website’s interactivity, it’s important to identify the duration of every sub-part.
 
 {{ figure_markup(
-  image="interaction-to-next-paint-subparts.png",
+  image="interaction-to-next-paint-subparts-rum-vision.png",
   caption="INP Subparts by percentile, Source: RUMvision",
   description="Bar chart showing the distribution of INP subparts in milliseconds (ms) by percentile. At the 10th percentile, all subparts (input delay, processing time, and presentation delay) are minimal. At the 25th percentile, the values slightly increase but remain below 10 ms. At the 50th percentile, input delay and processing time stay modest, while presentation delay reaches around 20 ms. At the 75th percentile, input delay increases to around 50 ms, with processing time and presentation delay also rising. At the 90th percentile, input delay reaches around 150 ms, and both processing time and presentation delay exceed 100 ms.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=226800794&format=interactive",
@@ -459,7 +459,7 @@ The Long Tasks API provides some useful data about performance issues, but it ha
 Long Animation Frames (LoAF) are a performance timeline entry for identifying sluggishness and poor INP by tracking when work and rendering block the main thread. LoAF tracks animation frames instead of individual tasks like the Long Tasks API. A long animation frame is when a rendering update is delayed beyond 50 milliseconds (the same as the threshold for the Long Tasks API). It helps to find scripts that cause INP performance bottlenecks. With this data, we can analyze INP performance based on the categories of scripts responsible for LoAF.
 
 {{ figure_markup(
-  image="interaction-to-next-paint-script-categories-desktop.png",
+  image="interaction-to-next-paint-script-categories-desktop-rum-vision.png",
   caption: "Distribution of INP performance segmented by script categories on desktop.",
   description="Stacked bar chart showing the distribution of INP across LOAF script categories for desktop, measured in milliseconds (ms). User Review, SMS & Email, and Analytics scripts perform best, with most of their INP in the good range. Tag Manager and Consent Provider scripts have more mid-range INP, with some falling into the poor category. Advertising, Others, and User Behaviour scripts perform worse, with the majority of INP falling into the poor range.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=1975914925&format=interactive",
@@ -468,7 +468,7 @@ Long Animation Frames (LoAF) are a performance timeline entry for identifying sl
 }}
 
 {{ figure_markup(
-  image="interaction-to-next-paint-script-categories-desktop.png",
+  image="interaction-to-next-paint-script-categories-mobile-rum-vision.png",
   caption: "Distribution of INP performance segmented by script categories on mobile.",
   description="Stacked bar chart showing the distribution of INP across LOAF script categories for mobile, measured in milliseconds (ms). For Social scripts, most are in the good range, with few in the poor range. Video and Tag Manager scripts also have a majority in the good range but with a larger portion in the mid-range. Site Search and Advertising scripts have a more even distribution, with a significant part in the mid-range and some in the poor range. Developer Utilities, Others, and User Behaviour scripts perform worse, with most falling in the poor range.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=1978447282&format=interactive",
@@ -489,7 +489,7 @@ It is worth noting that the monitoring category, which also includes performance
 <a hreflang="en" href="https://web.dev/tbt/">Total Blocking Time</a> (TBT) measures the total amount of time after First Contentful Paint (FCP) where the main thread was blocked for long enough to prevent input responsiveness.
 
 {{ figure_markup(
-  image="total-blocking-time.png",
+  image="total-blocking-time-2024.png",
   caption: "TBT per page by percentile.",
   description="Bar chart showing the distribution of Total Blocking Time (TBT) per page in milliseconds (ms) by percentile. At the 10th percentile, both desktop and mobile TBT are near 0 ms. At the 25th percentile, desktop TBT is 84 ms, while mobile is 417 ms. At the 50th percentile, desktop has 67 ms of TBT, and mobile rises significantly to 1,209 ms. At the 75th percentile, desktop reaches 282 ms, with mobile at 2,990 ms. Finally, at the 90th percentile, desktop TBT is 718 ms, and mobile climbs to 5,955 ms",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=1525715716&format=interactive",
@@ -589,9 +589,9 @@ Unload event, as well as cache-control:no-store, do not directly affect the page
 One of the most common reasons for unexpected layout shifts is not preserving space for assets or incoming dynamic content. For example, adding `width` and `height` attributes on images is one of the easiest ways to preserve space and avoid shifts.
 
 {{ figure_markup(
-  image="unsized-images.png",
+  image="unsized-images-amount.png",
   caption: "The number of unsized images per page",
-  description="Bar chart showing the number of unsized images per page by percentile for desktop and mobile devices. At the 10th and 25th percentiles, both desktop and mobile pages have 0 unsized images. At the 50th percentile, both desktop and mobile pages have 2 unsized images. At the 75th percentile, desktop pages have 10 unsized images, while mobile pages have 9\. At the 90th percentile, desktop pages have 26 unsized images, and mobile pages have 23.",
+  description="Bar chart showing the number of unsized images per page by percentile for desktop and mobile devices. At the 10th and 25th percentiles, both desktop and mobile pages have 0 unsized images. At the 50th percentile, both desktop and mobile pages have 2 unsized images. At the 75th percentile, desktop pages have 10 unsized images, while mobile pages have 9. At the 90th percentile, desktop pages have 26 unsized images, and mobile pages have 23.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=603112996&format=interactive",
   sheets_gid="1674162543",
   sql_file="cls_unsized_images.sql"
@@ -601,10 +601,10 @@ One of the most common reasons for unexpected layout shifts is not preserving sp
 The median number of unsized images per web page is two. When we shift to the 90th percentile, that number jumps to 26 for desktop sites and 23 for mobile. Having unsized images on the page can be a risk for layout shift; however, an important aspect to look at is if images are affecting the viewport and if yes, how much.
 
 {{ figure_markup(
-  image="unsized-images.png",
+  image="unsized-images-height.png",
   caption="Distribution of the heights of unsized images.",
   description="Bar chart showing the 10, 25, 50, 75, and 90th percentile height of unsized images. The values for mobile are 16, 38, 100, 200, and 297px tall, respectively. The values for the desktop are larger: 16, 40, 110, 241, and 403.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=603112996&format=interactive",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=1462566122&format=interactive",
   sql_file="cls_unsized_image_height.sql"
   )
 }}
@@ -632,7 +632,8 @@ Using system fonts is one way to fix this issue. However, with 85% of mobile pag
   image="font-display-usage.png",
   caption="Usage of font-display.",
   description="Bar chart showing the percent of pages that use the various font-display values. 45% of mobile pages use swap, 23% block, 9% auto, 3% fallback, and 1% use optional. The values for desktop are similar.",
-  chart_url="TODO: get from fonts",
+  chart_url="https://docs.google.com/spreadsheets/u/1/d/e/2PACX-1vTHmcrit1gMzxfZNeFp9LrA4NQSMEh140fapD4CFQ89knpy6LvEKz7VafGaFGlxCAxTdpLZXaVaq8Pg/pubchart?oid=1458420916&format=interactive",
+  sheets_gid="455989674",
   sql_file="TODO: get from fonts"
   )
 }}
@@ -647,7 +648,8 @@ Since most `font-display` strategies can contribute to CLS, we need to look at o
   image="fonts-resource-hints.png",
   caption="Adoption of resource hints for font resources.",
   description="Bar chart showing the percent of pages that use each type of resource hint on web fonts. 18% of mobile pages use preconnect, 16% dns-prefetch, 11% preload, and less than 1% prefetch. The values for desktop are almost the same.",
-  chart_url="TODO: get from fonts",
+  chart_url="https://docs.google.com/spreadsheets/u/1/d/e/2PACX-1vTHmcrit1gMzxfZNeFp9LrA4NQSMEh140fapD4CFQ89knpy6LvEKz7VafGaFGlxCAxTdpLZXaVaq8Pg/pubchart?oid=769711215&format=interactive",
+  sheets_gid="405563602",
   sql_file="font_resource_hints_usage.sql"
   )
 }}
