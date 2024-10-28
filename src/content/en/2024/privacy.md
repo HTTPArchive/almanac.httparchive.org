@@ -5,7 +5,7 @@ description: Privacy chapter of the 2024 Web Almanac covers the adoption and imp
 authors: [bgstandaert]
 reviewers: []
 editors: []
-analysts: [bgstandaert]
+analysts: [bgstandaert, max-ostapenko]
 translators: []
 results: https://docs.google.com/spreadsheets/d/18r8cT6x9lPdM-rXvXjsqx84W7ZDdTDYGD59xr0UGOwg/edit#gid=1778117656
 featured_quote:
