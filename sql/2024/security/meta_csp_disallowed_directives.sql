@@ -8,7 +8,7 @@ SELECT
   COUNT(CASE WHEN REGEXP_CONTAINS(LOWER(JSON_VALUE(meta_node, '$.content')), r'(?i)frame-ancestors') THEN page END) AS count_frame_ancestors,
   COUNT(CASE WHEN REGEXP_CONTAINS(LOWER(JSON_VALUE(meta_node, '$.content')), r'(?i)frame-ancestors') THEN page END) / COUNT(DISTINCT page) AS pct_frame_ancestors,
   COUNT(CASE WHEN REGEXP_CONTAINS(LOWER(JSON_VALUE(meta_node, '$.content')), r'(?i)sandbox( allow-[a-z]+)*;') THEN page END) AS count_sandbox,
-  COUNT(CASE WHEN REGEXP_CONTAINS(LOWER(JSON_VALUE(meta_node, '$.content')), r'(?i)sandbox( allow-[a-z]+)*;') THEN page END) / COUNT(DISTINCT page) AS pct_sandbox,
+  COUNT(CASE WHEN REGEXP_CONTAINS(LOWER(JSON_VALUE(meta_node, '$.content')), r'(?i)sandbox( allow-[a-z]+)*;') THEN page END) / COUNT(DISTINCT page) AS pct_sandbox
 FROM (
   SELECT
     client,
