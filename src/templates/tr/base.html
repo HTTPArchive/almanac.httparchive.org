@@ -24,7 +24,7 @@ Misyonumuz, HTTP Archive&#8217;ın ham istatistiklerini ve eğilimlerini web top
 </p>
 {% endblock %}
 
-{% block read_last_years_almanac %} {{ year | int - 1 }} Web Almanac&#8217;ı Oku{% endblock %}
+{% block read_last_years_almanac %} {{ previous_year }} Web Almanac&#8217;ı Oku{% endblock %}
 
 {% block http_archive_link %}HTTP Archive Ana Sayfa{% endblock %}
 
@@ -112,6 +112,7 @@ Misyonumuz, HTTP Archive&#8217;ın ham istatistiklerini ve eğilimlerini web top
 {% block mentionsAlt %}{% endblock %}
 
 {% macro onTwitter(twitterHandle) %}@{{twitterHandle}}Twitter üzerinde{% endmacro %}
+{% macro onMastodon(mastodonHandle) %}{{mastodonHandle}}Mastodon üzerinde{% endmacro %}
 {% macro onGitHub(gitHubHandle) %}{{gitHubHandle}}GitHub üzerinde {% endmacro %}
 {% macro onLinkedIn(authorName) %}{{authorName}} LinkedIn üzerinde {% endmacro %}
 {% macro website(authorName) %}{{authorName}} website{% endmacro %}
@@ -124,14 +125,14 @@ Misyonumuz, HTTP Archive&#8217;ın ham istatistiklerini ve eğilimlerini web top
 {% block rss_feed %}RSS Feed{% endblock %}
 
 {% block featured_chapter %}Öne Çıkan Bölüm{% endblock %}
-{% block featured_chapter_last_year %}{{ year|int -1 }} Web Almanac'tan <br>Öne Çıkan Bölüm{% endblock %}
+{% block featured_chapter_last_year %}{{ previous_year }} Web Almanac'tan <br>Öne Çıkan Bölüm{% endblock %}
 
 {# Check if read_chapter already defined in child template as macros can't be overridden #}
 {% if not read_chapter %}
 {% macro read_chapter(chapter) %}<span class="featured-chapter-name">{{ chapter }}</span> Bölümünü Okuyun{% endmacro %}
 {% endif %}
 {% if not read_last_years_chapter %}
-{% macro read_last_years_chapter(chapter) %} {{ year|int-1 }} <span class="featured-chapter-name">{{ chapter }}</span> Bölümünü Okuyun{% endmacro %}
+{% macro read_last_years_chapter(chapter) %} {{ previous_year }} <span class="featured-chapter-name">{{ chapter }}</span> Bölümünü Okuyun{% endmacro %}
 {% endif %}
 
 {% block contributors_description %}

@@ -764,17 +764,17 @@ Avere un sito Web veloce è fondamentale per fornire un'ottima esperienza di ric
 
 As announced in November 2020, three performance metrics known as <a hreflang="en" href="https://webmasters.googleblog.com/2020/05/evaluating-page-experience.html">Core Web Vitals</a> are on track to be a ranking factor as part of the "page experience" signals in May 2021. Core Web Vitals consist of:
 
-**<a hreflang="en" href="https://web.dev/lcp/">Largest Contentful Paint</a> (LCP)**
+**<a hreflang="en" href="https://web.dev/articles/lcp">Largest Contentful Paint</a> (LCP)**
 - Rappresenta: esperienza di caricamento percepita dall'utente
 - Misurazione: il punto nella sequenza temporale di caricamento della pagina in cui l'immagine o il blocco di testo più grande della pagina è visibile all'interno della visualizzazione
 - Obiettivo: <2,5 secondi
 
-**<a hreflang="en" href="https://web.dev/fid/">First Input Delay</a> (FID)**
+**<a hreflang="en" href="https://web.dev/articles/fid">First Input Delay</a> (FID)**
 - Rappresenta: reattività all'input dell'utente
 - Misurazione: il tempo da quando un utente interagisce per la prima volta con una pagina al momento in cui il browser è effettivamente in grado di iniziare a elaborare i gestori di eventi in risposta a tale interazione
 - Obiettivo: <300 millisecondi
 
-**<a hreflang="en" href="https://web.dev/cls/">Cumulative Layout Shift</a> (CLS)**
+**<a hreflang="en" href="https://web.dev/articles/cls">Cumulative Layout Shift</a> (CLS)**
 - Rappresenta: stabilità visiva
 - Misurazione: la somma del numero di _punti di spostamento del layout_ che si avvicina alla percentuale del viewport che si è spostato
 - Obiettivo: <0.10

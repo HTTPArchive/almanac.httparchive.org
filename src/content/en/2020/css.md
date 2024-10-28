@@ -936,7 +936,7 @@ Compatibility, right? You don't want things to break? No. In the stylesheets we 
 
 {{ figure_markup(
   image="p3-chromaticity-big.svg",
-  object="p3-chromaticity-big.svg",
+  iframe="p3-chromaticity-big.svg",
   caption="uv chromaticity of specified display-p3 colors and their fallbacks.",
   description="This 1976 u'v' diagram shows the chromaticity of colors (flattened to 2D, so lightness is not shown). The outer curved shape represents the spectrum of pure single wavelengths; there are no visible colors outside this. The straight line is purple, a mixture of red and violet. The smaller, grey, triangle is the sRGB gamut while the larger, darker triangle is the display-p3 gamut. The 23 unique display-p3 colors actually in use on the web in 2020 are shown; for each pair of colors the larger circle is the sRGB fallback while the smaller circle is the display-p3 color. If it is inside the sRGB gamut, those circles show the correct color. Otherwise, a white circle with a red edge indicates out of sRGB-gamut colors.",
   width=600,

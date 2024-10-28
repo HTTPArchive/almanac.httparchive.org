@@ -75,7 +75,7 @@ According to [Lighthouse](./methodology#lighthouse), the median mobile page load
   )
 }}
 
-To put it another way, 36.2% of JavaScript bytes on the median mobile page go unused. Given the impact JavaScript can have on the <a hreflang="en" href="https://web.dev/optimize-lcp/">Largest Contentful Paint</a> (LCP) of the page, especially for mobile users with limited device capabilities and data plans, this is such a significant figure to be consuming CPU cycles with other important resources just to go to waste. Such wastefulness could be the result of a lot of unused boilerplate code that gets shipped with large frameworks or libraries.
+To put it another way, 36.2% of JavaScript bytes on the median mobile page go unused. Given the impact JavaScript can have on the <a hreflang="en" href="https://web.dev/articles/optimize-lcp">Largest Contentful Paint</a> (LCP) of the page, especially for mobile users with limited device capabilities and data plans, this is such a significant figure to be consuming CPU cycles with other important resources just to go to waste. Such wastefulness could be the result of a lot of unused boilerplate code that gets shipped with large frameworks or libraries.
 
 Site owners could reduce the percentage of wasted JavaScript bytes by using Lighthouse to check for <a hreflang="en" href="https://web.dev/unused-javascript/">unused JavaScript</a> and follow best practices to <a hreflang="en" href="https://web.dev/remove-unused-code/">remove unused code</a>.
 

@@ -262,7 +262,7 @@ PWA 需要生成不同的图标大小，以适应推广和显示应用的需要�
 
 #### 安装和可被发现成员
 
-Web 应用 manifest 文件包含描述应用有用的数据。应用商店或其他分发机制可以使用这些属性来推广应用。<a hreflang="en" href="https://developer.chrome.com/blog/richer-pwa-installation/">基于浏览器的富安装对话框</a>的增长也在更多地利用这些字段。下面列出了manifest 文件中作为补充应用信息的一部分的相关字段：
+Web 应用 manifest 文件包含描述应用有用的数据。应用商店或其他分发机制可以使用这些属性来推广应用。<a hreflang="en" href="https://developer.chrome.com/blog/richer-pwa-installation">基于浏览器的富安装对话框</a>的增长也在更多地利用这些字段。下面列出了manifest 文件中作为补充应用信息的一部分的相关字段：
 
 * `description`：此成员存在于 36% 的桌面应用和 34% 的移动 Web 应用的 manifest 中。`description` 很重要，因为它解释了应用的功能。它通常用于为商店提供有关应用的信息。目前大约有 1/3 的可安装 PWA 提供这些信息。
 * `screenshots`：此成员提供一个或多个屏幕截图的 URL，以在应用商店或浏览器的安装提示中使用。具有此功能的 manifest 的 PWA 在桌面端占 1.12%，在移动设备中占 1.19%。
@@ -383,7 +383,7 @@ Web 平台的新能力越来越多，这些是 Web 中可用于 PWA 的使用最
 
 ## 来自 Lighthouse 的 PWA 洞察
 
-<a hreflang="en" href="https://developer.chrome.com/docs/lighthouse/">Lighthouse</a> 是一个开源的自动化工具，用于提升网页质量。 它可在网站中运行很多检测，特别是专用于 PWA 类别的审计。 已有数据阐明了过去 12 个月关于 PWA 的一些有趣的事实。
+<a hreflang="en" href="https://developer.chrome.com/docs/lighthouse">Lighthouse</a> 是一个开源的自动化工具，用于提升网页质量。 它可在网站中运行很多检测，特别是专用于 PWA 类别的审计。 已有数据阐明了过去 12 个月关于 PWA 的一些有趣的事实。
 
 ### Lighthouse 审计
 
@@ -409,7 +409,7 @@ Web 平台的新能力越来越多，这些是 Web 中可用于 PWA 的使用最
   )
 }}
 
-我们看到 Lighthouse 关于移动网站一些类似的统计数据，仅用于移动端的 <a hreflang="en" href="https://developer.chrome.com/docs/lighthouse/pwa/content-width/">content-width</a> 元标签都通过了。
+我们看到 Lighthouse 关于移动网站一些类似的统计数据，仅用于移动端的 <a hreflang="en" href="https://developer.chrome.com/docs/lighthouse/pwa/content-width">content-width</a> 元标签都通过了。
 
 Viewport 元标签的存在很重要，因为它在以重新缩放的方式等待双击时移除了 300-350ms 的延迟。在移动设备上，它还具有为屏幕尺寸优化应用的额外好处 。几乎所有 PWA 的网站都包含这个标签毫不奇怪。
 
@@ -441,7 +441,7 @@ Viewport 元标签的存在很重要，因为它在以重新缩放的方式等�
   )
 }}
 
-正如预期的那样，PWA 网站的 PWA 审计分数往往要高得多。 这些审核会检测速度、可靠性、可安装性和其他的 PWA 需求，详见他们的<a hreflang="en" href="https://developer.chrome.com/docs/lighthouse/pwa/">文档</a>。
+正如预期的那样，PWA 网站的 PWA 审计分数往往要高得多。 这些审核会检测速度、可靠性、可安装性和其他的 PWA 需求，详见他们的<a hreflang="en" href="https://developer.chrome.com/docs/lighthouse/pwa">文档</a>。
 
 同样值得注意的是 PWA 站点中的审计分数范围（50-100）代表了 PWA 的差异。 相比之下，其余网站的分数范围相当一致（20-40），这反映了之前讨论的大多数网站相关的两个主要审计内容：viewport 和图标 icons。
 
@@ -451,7 +451,7 @@ Service Workers 非常强大，这些 API 允许开发人员创建以前不可�
 
 ### Workbox 的使用
 
-<a hreflang="en" href="https://developer.chrome.com/workbox/">Workbox</a> 是一组库，旨在简化开发人员对 Service Worker 的使用。这些库包含在其他 Workbox 库中重用的带有 <a hreflang="en" href="https://developer.chrome.com/docs/workbox/modules/workbox-core/">workbox-core</a>的基础知识，到更具体的任务，如<a hreflang="en" href="https://developer.chrome.com/docs/workbox/modules/workbox-strategies/">缓存策略</a>、<a hreflang="en" href="https://developer.chrome.com/docs/workbox/modules/workbox-background-sync/">后台同步</a>、<a hreflang="en" href="https://developer.chrome.com/docs/workbox/modules/workbox-precaching/">预缓存</a> 以及<a hreflang="en" href="https://developer.chrome.com/docs/workbox/modules/">更多</a>。
+<a hreflang="en" href="https://developer.chrome.com/workbox/">Workbox</a> 是一组库，旨在简化开发人员对 Service Worker 的使用。这些库包含在其他 Workbox 库中重用的带有 <a hreflang="en" href="https://developer.chrome.com/docs/workbox/modules/workbox-core">workbox-core</a>的基础知识，到更具体的任务，如<a hreflang="en" href="https://developer.chrome.com/docs/workbox/modules/workbox-strategies">缓存策略</a>、<a hreflang="en" href="https://developer.chrome.com/docs/workbox/modules/workbox-background-sync">后台同步</a>、<a hreflang="en" href="https://developer.chrome.com/docs/workbox/modules/workbox-precaching">预缓存</a> 以及<a hreflang="en" href="https://developer.chrome.com/docs/workbox/modules">更多</a>。
 
 {{ figure_markup(
   image="workbox-usage.png",

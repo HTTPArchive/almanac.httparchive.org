@@ -36,10 +36,10 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: '20'
-    - name: Set up Python 3.8
-      uses: actions/setup-python@v5.1.1
+    - name: Set up Python 3.12
+      uses: actions/setup-python@v5.3.0
       with:
-        python-version: '3.8'
+        python-version: '3.12'
     - name: Install Asian Fonts
       if: ${{ github.event.inputs.ebooks == 'true' }}
       run: |
@@ -79,7 +79,7 @@ jobs:
         npm run timestamps
     - name: Create Pull Request
       id: cpr
-      uses: peter-evans/create-pull-request@v6
+      uses: peter-evans/create-pull-request@v7
       with:
         title: Pre-deploy Updates
         branch-suffix: timestamp

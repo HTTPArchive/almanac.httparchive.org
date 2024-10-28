@@ -379,7 +379,7 @@ Muitos recursos que os usuários esperam encontrar em aplicativos específicos d
 
 O Projeto Fugu inclui a participação da Microsoft, Intel, Samsung, Google e muitos outros grupos e indivíduos.
 
-Confira <a hreflang="en" href="https://developer.chrome.com/docs/capabilities/status?hl=pt-br">este post</a> o blog dos desenvolvedores do Chrome para saber mais sobre o Projeto Fugu.
+Confira <a hreflang="en" href="https://developer.chrome.com/docs/capabilitiesstatus?hl=pt-br">este post</a> o blog dos desenvolvedores do Chrome para saber mais sobre o Projeto Fugu.
 
 ## Conclusão
 

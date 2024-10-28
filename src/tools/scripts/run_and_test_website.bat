@@ -6,7 +6,7 @@ rem # This script installs all the required dependencies needed to run the
 rem # Web Almanac website providing you have python and node installed.
 rem #
 rem # It 's a simplified version of run_and_test_website.sh for windows users
-rem # It depends on Python 3.8, pip and nodejs 12 being installed already
+rem # It depends on Python 3.12, pip and nodejs 20 being installed already
 rem #
 
 echo "Kill any existing instances of the webserver"

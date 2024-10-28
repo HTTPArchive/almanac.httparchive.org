@@ -278,7 +278,7 @@ We see a significant increase in the use of third-party requests and bytes [comp
 
 ## Ecommerce user experience
 
-Ecommerce is all about converting customers and in order to do that a fast performing website is paramount. In this section, we try to shed light on real-world user experience of ecommerce websites. To achieve this, we turn our analysis towards some user-perceived performance metrics, which are captured in the three <a hreflang="en" href="https://web.dev/vitals/">Core Web Vitals</a> metrics.
+Ecommerce is all about converting customers and in order to do that a fast performing website is paramount. In this section, we try to shed light on real-world user experience of ecommerce websites. To achieve this, we turn our analysis towards some user-perceived performance metrics, which are captured in the three <a hreflang="en" href="https://web.dev/articles/vitals">Core Web Vitals</a> metrics.
 
 ### Chrome User Experience Report
 

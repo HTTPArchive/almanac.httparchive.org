@@ -936,7 +936,7 @@ HSLは<a hreflang="en" href="https://drafts.csswg.org/css-color-4/#the-hsl-notat
 
 {{ figure_markup(
   image="p3-chromaticity-big.svg",
-  object="p3-chromaticity-big.svg",
+  iframe="p3-chromaticity-big.svg",
   caption="指定されたdisplay-p3色のUV色度とそのフォールバック。",
   description="この1976年のu'v'図は、色の色度を示しています（2Dにフラット化しているので、明るさは表示されていません）。外側の曲線は純粋な単一波長のスペクトルを表しています。直線は紫で、赤と紫が混ざっています。小さくて灰色の三角形がsRGBの色域で、大きくて暗い三角形がdisplay-p3の色域です。2020年にWeb上で実際に使用される23色のディスプレイp3固有の色を示しています。各色のペアについて、大きな円がsRGBの色域、小さな円がディスプレイp3の色域です。sRGBの色域内であれば、これらの円が正しい色を示しています。そうでない場合は、白い丸に赤い縁がついているものがsRGB域外の色を示しています。",
   width=600,

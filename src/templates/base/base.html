@@ -453,7 +453,7 @@
                     </li>
                     <li>
                       <a href="https://github.com/HTTPArchive/almanac.httparchive.org" aria-labelledby="github-logo-mobile">
-                        <svg width="20" height="20" role="img">
+                        <svg width="22" height="20" role="img">
                           <title id="github-logo-mobile">GitHub</title>
                           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github-logo"></use>
                         </svg>
@@ -552,7 +552,7 @@
             </li>
             <li>
               <a href="https://github.com/HTTPArchive/almanac.httparchive.org" rel="me" aria-labelledby="github-logo-footer-mobile">
-                <svg width="20" height="20" role="img">
+                <svg width="22" height="20" role="img">
                   <title id="github-logo-footer-mobile">GitHub</title>
                   <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github-logo"></use>
                 </svg>
@@ -585,7 +585,7 @@
           </li>
           <li>
             <a href="https://github.com/HTTPArchive/almanac.httparchive.org" rel="me" aria-labelledby="github-logo-footer">
-              <svg width="20" height="20" role="img">
+              <svg width="22" height="20" role="img">
                 <title id="github-logo-footer">GitHub</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github-logo"></use>
               </svg>
@@ -741,7 +741,7 @@
   link="",
   video="",
   gif="",
-  object="",
+  iframe="",
   caption="",
   alt=caption,
   description="",
@@ -798,10 +798,8 @@
     <a href="{{ link }}"  class="{{ anchor_class }}">
       {%- if chart_url != "" %}
       <img src="{{ image }}" alt="{{ caption|striptags }}" aria-labelledby="{{ anchor }}-caption" aria-describedby="{{ anchor }}-description" width="{{ width }}" height="{{ height }}" data-width="{{ data_width }}" data-height="{{ data_height }}" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="{{ chart_url|safe }}" loading="lazy">
-      {%- elif not ebook and object != "" %}
-      <object type="image/svg+xml" width="{{ width }}" height="{{ height }}" data="{{ image }}" role="img" aria-labelledby="{{ anchor }}-caption" aria-describedby="{{ anchor }}-description">
-        {{ caption }}
-      </object>
+      {%- elif not ebook and iframe != "" %}
+      <iframe class="fig-mobile fig-desktop fig-iframe" seamless frameborder="0" src="{{ image }}" width="{{ width }}" height="{{ height }}" aria-labelledby="{{ anchor }}-caption" aria-describedby="{{ anchor }}-description"></iframe>
       {% else %}
       <img src="{{ image }}" class="{{ classes }}" alt="{{ caption|striptags }}" aria-labelledby="{{ anchor }}-caption" aria-describedby="{{ anchor }}-description" width="{{ width }}" height="{{ height }}" loading="lazy">
       {%- endif %}

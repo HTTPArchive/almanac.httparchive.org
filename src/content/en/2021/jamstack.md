@@ -298,7 +298,7 @@ Looking at mobile results, Jekyll and Hugo have the best results over SSGs—34.
 
 ### Largest Contentful Paint
 
-The <a hreflang="en" href="https://web.dev/lcp/">Largest Contentful Paint</a> (LCP) metric reports the render time of the largest image or text block visible within the viewport, relative to when the page first started loading.
+The <a hreflang="en" href="https://web.dev/articles/lcp">Largest Contentful Paint</a> (LCP) metric reports the render time of the largest image or text block visible within the viewport, relative to when the page first started loading.
 
 {{ figure_markup(
   image="cwv-lcp.png",
@@ -324,7 +324,7 @@ GitHub tops the stats when measuring on CDN level, likely reflecting the simpler
 
 ### First Input Delay
 
-<a hreflang="en" href="https://web.dev/fid/">First Input Delay</a> (FID) measures the time from when a user first interacts with a page (i.e. when they click a link, tap on a button, or use a custom, JavaScript-powered control) to the time when the browser is actually able to begin processing event handlers in response to that interaction.
+<a hreflang="en" href="https://web.dev/articles/fid">First Input Delay</a> (FID) measures the time from when a user first interacts with a page (i.e. when they click a link, tap on a button, or use a custom, JavaScript-powered control) to the time when the browser is actually able to begin processing event handlers in response to that interaction.
 
 {{ figure_markup(
   image="cwv-fid.png",
@@ -350,7 +350,7 @@ All CDNs deliver Jamstack sites with 88% good FID or above, though interesting t
 
 ### Cumulative Layout Shift
 
-<a hreflang="en" href="https://web.dev/cls/">Cumulative Layout Shift</a> (CLF) is a measure of the largest burst of _layout shift scores_ for every unexpected layout shift that occurs during the entire lifespan of a page.
+<a hreflang="en" href="https://web.dev/articles/cls">Cumulative Layout Shift</a> (CLF) is a measure of the largest burst of _layout shift scores_ for every unexpected layout shift that occurs during the entire lifespan of a page.
 
 {{ figure_markup(
   image="cwv-cls.png",

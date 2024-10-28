@@ -155,7 +155,7 @@ WCAGは、ウェブサイト内のテキストを最低でも200％までリサ�
 ) }}
 
 他のユーザー好みのメディアクエリと同様に、多くのウェブサイトが強制色モードに基づいて調整を行っています。モバイルサイトの8%とデスクトップサイトの9%が `forced-colors` メディアクエリを使用してスタイルを変更していますが、古いIE11専用の `-ms-high-contrast` メディアクエリの使用率はモバイルとデスクトップの両方で20%以上です。
-これによってサイトがどの程度強制色モードをサポートしているかは分かりませんが、`forced-colors` メディアクエリが主要なブラウザでサポートされているのは[2020年から](https://caniuse.com/mdn-css_at-rules_media_forced-colors)であり、Windows以外のデバイスで[強制色モードのエミュレート](https://developer.chrome.com/docs/devtools/rendering/emulate-css?hl=ja)をサポートするのは2022年2月からであることを考えると、データはそれでもなお励みになります。
+これによってサイトがどの程度強制色モードをサポートしているかは分かりませんが、`forced-colors` メディアクエリが主要なブラウザでサポートされているのは[2020年から](https://caniuse.com/mdn-css_at-rules_media_forced-colors)であり、Windows以外のデバイスで[強制色モードのエミュレート](https://developer.chrome.com/docs/devtools/renderingemulate-css?hl=ja)をサポートするのは2022年2月からであることを考えると、データはそれでもなお励みになります。
 
 ## ナビゲーション
 

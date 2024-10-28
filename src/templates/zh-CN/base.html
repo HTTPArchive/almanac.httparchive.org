@@ -24,7 +24,7 @@
 </p>
 {% endblock %}
 
-{% block read_last_years_almanac %}阅读 {{ year | int - 1 }} Web Almanac{% endblock %}
+{% block read_last_years_almanac %}阅读 {{ previous_year }} Web Almanac{% endblock %}
 
 {% block http_archive_link %}HTTP Archive主页{% endblock %}
 
@@ -112,6 +112,7 @@
 {% block mentionsAlt %}{% endblock %}
 
 {% macro onTwitter(twitterHandle) %}@{{twitterHandle}} 在 Twitter{% endmacro %}
+{% macro onMastodon(mastodonHandle) %}{{mastodonHandle}} 在 Mastodon{% endmacro %}
 {% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} 在 GitHub{% endmacro %}
 {% macro onLinkedIn(authorName) %}{{authorName}} 在 LinkedIn{% endmacro %}
 {% macro website(authorName) %}{{authorName}} 网站{% endmacro %}
@@ -124,14 +125,14 @@
 {% block rss_feed %}RSS Feed{% endblock %}
 
 {% block featured_chapter %}章节精选{% endblock %}
-{% block featured_chapter_last_year %}{{ year|int -1 }} Web Almanac<br>章节精选{% endblock %}
+{% block featured_chapter_last_year %}{{ previous_year }} Web Almanac<br>章节精选{% endblock %}
 
 {# Check if read_chapter already defined in child template as macros can't be overridden #}
 {% if not read_chapter %}
 {% macro read_chapter(chapter) %}阅读 <span class="featured-chapter-name">{{ chapter }}</span> 章节{% endmacro %}
 {% endif %}
 {% if not read_last_years_chapter %}
-{% macro read_last_years_chapter(chapter) %}阅读 {{ year|int -1 }} <span class="featured-chapter-name">{{ chapter }}</span> 章节{% endmacro %}
+{% macro read_last_years_chapter(chapter) %}阅读 {{ previous_year }} <span class="featured-chapter-name">{{ chapter }}</span> 章节{% endmacro %}
 {% endif %}
 
 {% block contributors_description %}

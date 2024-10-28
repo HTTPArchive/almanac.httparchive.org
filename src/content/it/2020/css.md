@@ -936,7 +936,7 @@ E ci stiamo ancora perdendo. Nonostante sia stato <a hreflang="en" href="https:/
 
 {{ figure_markup(
   image="p3-chromaticity-big.svg",
-  object="p3-chromaticity-big.svg",
+  iframe="p3-chromaticity-big.svg",
   caption="Cromaticità UV dei colori display-p3 specificati e i loro fallback.",
   description="Questo diagramma u'v del 1976 mostra la cromaticità dei colori (appiattita in 2D, quindi la luminosità non viene mostrata). La forma curva esterna rappresenta lo spettro delle lunghezze d'onda singole pure; non ci sono colori visibili al di fuori di questo. La linea retta è porpora, una miscela di rosso e viola. Il triangolo più piccolo, grigio, è la gamma sRGB, mentre il triangolo più grande e più scuro è la gamma display-p3. Vengono mostrati i 23 colori unici del display-p3 attualmente in uso sul web nel 2020; per ogni coppia di colori il cerchio più grande è il fallback sRGB mentre il cerchio più piccolo è il colore del display-p3. Se è all'interno della gamma sRGB, quei cerchi mostrano il colore corretto. In caso contrario, un cerchio bianco con un bordo rosso indica colori fuori gamma sRGB.",
   width=600,

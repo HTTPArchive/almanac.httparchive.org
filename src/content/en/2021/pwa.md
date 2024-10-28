@@ -528,7 +528,7 @@ An important aspect of a PWA is that it allows users to access the web experienc
 Ways to distribute this installable experience include:
 
 - Prompting the user to install the PWA via the [add to home screen](https://developer.mozilla.org/docs/Web/Progressive_web_apps/Add_to_home_screen) functionality.
-- Uploading the PWA to App Stores by packaging it with <a hreflang="en" href="https://developer.chrome.com/docs/android/trusted-web-activity/">Trusted Web Activity (TWA)</a> (currently available in any Android app store, including Google Play and Microsoft Store).
+- Uploading the PWA to App Stores by packaging it with <a hreflang="en" href="https://developer.chrome.com/docs/android/trusted-web-activity">Trusted Web Activity (TWA)</a> (currently available in any Android app store, including Google Play and Microsoft Store).
 
 Next, we'll share some stats related to these techniques, to have an idea of the usage and growth of these trends.
 
@@ -573,7 +573,7 @@ WebView-based apps may look similar to native apps, but certainly there are some
 
 TWAs allow you to package your PWA into a native application shell and upload it to some App Stores. Unlike WebView-based solutions, a TWA is not just a rendering engine; it's the full browser running in fullscreen mode. For that reason, it's feature-complete and evergreen, meaning that it's always up to date and will give you access to the latest web APIs.
 
-Developers can package their PWAs into native apps with TWA directly, <a hreflang="en" href="https://developer.chrome.com/docs/android/trusted-web-activity/integration-guide/">by using Android Studio</a>, but there are several tools that make this task much easier. Next, we'll analyze two of them: PWA Builder and Bubblewrap.
+Developers can package their PWAs into native apps with TWA directly, <a hreflang="en" href="https://developer.chrome.com/docs/android/trusted-web-activity/integration-guide">by using Android Studio</a>, but there are several tools that make this task much easier. Next, we'll analyze two of them: PWA Builder and Bubblewrap.
 
 #### PWA Builder
 
