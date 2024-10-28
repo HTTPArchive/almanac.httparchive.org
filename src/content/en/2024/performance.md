@@ -29,9 +29,9 @@ In the performance chapter, we focus on Core Web Vitals, as they are key user-ce
 
 What's new this year?
 
-* <a hreflang="en" href="https://web.dev/blog/inp-cwv-march-12">Interaction to Next Paint (INP) has officially replaced First Input Delay (FID)</a> as part of Core Web Vitals. INP helps to evaluate overall interactivity performance more accurately.
-* <a hreflang="en" href="https://developer.chrome.com/docs/web-platform/long-animation-frames">Long Animation Frames (LoAF)</a> data is available for the first time, providing new insights into the reasons for poor INP.
-* As of this year, the Performance chapter also includes an analysis of the data for secondary pages in addition to home pages. This allows us to compare the home page with the secondary page performance.
+- <a hreflang="en" href="https://web.dev/blog/inp-cwv-march-12">Interaction to Next Paint (INP) has officially replaced First Input Delay (FID)</a> as part of Core Web Vitals. INP helps to evaluate overall interactivity performance more accurately.
+- <a hreflang="en" href="https://developer.chrome.com/docs/web-platform/long-animation-frames">Long Animation Frames (LoAF)</a> data is available for the first time, providing new insights into the reasons for poor INP.
+- As of this year, the Performance chapter also includes an analysis of the data for secondary pages in addition to home pages. This allows us to compare the home page with the secondary page performance.
 
 ### Notes on Data Sources
 
@@ -185,10 +185,10 @@ Most LCP elements, or 73% of mobile pages, are images. Interestingly, this perce
 
 Several stages of processing must occur before the LCP element can be fully rendered:
 
-* **Time to First Byte** (TTFB) — the time it takes the server to begin responding to the initial request.
-* **Resource Load Delay**, which is how long after TTFB the browser begins loading the LCP resource. The LCP elements that originate as inline resources, such as text-based elements or inline images (data URIs), will have a 0 ms load delay. Those that require another asset to be downloaded, like an external image, might experience a load delay.
-* **Resource Load Duration** which measures how long it takes to load the LCP resource; this stage is also 0 ms if no resource is needed.
-* **Element Render Delay** which is the time between when the resource finished loading and the LCP element finished rendering.
+- **Time to First Byte** (TTFB) — the time it takes the server to begin responding to the initial request.
+- **Resource Load Delay**, which is how long after TTFB the browser begins loading the LCP resource. The LCP elements that originate as inline resources, such as text-based elements or inline images (data URIs), will have a 0 ms load delay. Those that require another asset to be downloaded, like an external image, might experience a load delay.
+- **Resource Load Duration** which measures how long it takes to load the LCP resource; this stage is also 0 ms if no resource is needed.
+- **Element Render Delay** which is the time between when the resource finished loading and the LCP element finished rendering.
 
 In the article "<a hreflang="en" href="https://web.dev/blog/common-misconceptions-lcp#lcp_sub-part_breakdown">Common Misconceptions About How to Optimize LCP</a>", Brendan Kenny analyzed a breakdown of LCP sub-parts using recent CruX data.
 
@@ -318,9 +318,9 @@ JPG and PNG still have the highest proportion of adoption at 86.6% combined, how
 
 ### Loading Speed Conclusions {#loading-speed-conclusions}
 
-* The percentage of websites with good FCP and LCP has improved, though TTFB showed no significant change.
-* One cause for slow LCP is lazy-loading the LCP element. Usage of this antipattern has decreased, but 15% of websites still fail this test and could benefit from removing lazy-loading for their LCP elements.
-* Adoption of modern image formats like AVIF and WEBP is growing for LCP elements.
+- The percentage of websites with good FCP and LCP has improved, though TTFB showed no significant change.
+- One cause for slow LCP is lazy-loading the LCP element. Usage of this antipattern has decreased, but 15% of websites still fail this test and could benefit from removing lazy-loading for their LCP elements.
+- Adoption of modern image formats like AVIF and WEBP is growing for LCP elements.
 
 ## Interactivity {#interactivity}
 
@@ -394,9 +394,9 @@ Unlike other performance metrics like FCP and LCP, the percentage of secondary p
 
 An INP score can be broken down into three sub-parts:
 
-* **Input Delay**: the time spent to finish processing the tasks that were already in the queue at the moment of the interaction
-* **Processing Time**: the time spent processing the event handlers attached to the element which the user interacted with
-* **Presentation Delay**: the time spent figuring out the new layout, if changed, and painting the new pixels on the screen
+- **Input Delay**: the time spent to finish processing the tasks that were already in the queue at the moment of the interaction
+- **Processing Time**: the time spent processing the event handlers attached to the element which the user interacted with
+- **Presentation Delay**: the time spent figuring out the new layout, if changed, and painting the new pixels on the screen
 
 To optimize your website's interactivity, it's important to identify the duration of every sub-part.
 
@@ -504,10 +504,10 @@ TBT is a lab metric and is often used as a proxy for field-based responsiveness 
 
 The main takeaways of the interactivity results are:
 
-* Despite the improvement in INP each year, a significant gap between desktop (97% good INP) and mobile (74% good INP) performance still exists.
-* The top visited websites show poorer INP results compared to less popular ones.
-* INP can be divided into three sub-parts—Input Delay, Processing Time, and Presentation Delay, and Presentation Delay has the biggest share of the median INP.
-* Scripts from user behavior tracking, consent provider, and CDN categories are the main contributors to poor INP scores.
+- Despite the improvement in INP each year, a significant gap between desktop (97% good INP) and mobile (74% good INP) performance still exists.
+- The top visited websites show poorer INP results compared to less popular ones.
+- INP can be divided into three sub-parts—Input Delay, Processing Time, and Presentation Delay, and Presentation Delay has the biggest share of the median INP.
+- Scripts from user behavior tracking, consent provider, and CDN categories are the main contributors to poor INP scores.
 
 ## Visual Stability {#visual-stability}
 
