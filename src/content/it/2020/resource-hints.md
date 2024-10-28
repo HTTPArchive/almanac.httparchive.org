@@ -72,7 +72,7 @@ L'hint <a hreflang="en" href="https://web.dev/uses-rel-preload/">preload</a> avv
 <link rel="preload" href="main.js" as="script">
 ```
 
-Sii consapevole quando andrai ad utilizzare `preload`, perché può ritardare il download di altre risorse, quindi usalo solo per ciò che è più critico per aiutarti a migliorare il Largest Contentful Paint (<a hreflang="en" href="https://web.dev/lcp/">LCP</a>). Inoltre, se utilizzato su Chrome, tende a dare priorità alle risorse di "preload" e potenzialmente invia preloads prima di altre risorse critiche.
+Sii consapevole quando andrai ad utilizzare `preload`, perché può ritardare il download di altre risorse, quindi usalo solo per ciò che è più critico per aiutarti a migliorare il Largest Contentful Paint (<a hreflang="en" href="https://web.dev/articles/lcp">LCP</a>). Inoltre, se utilizzato su Chrome, tende a dare priorità alle risorse di "preload" e potenzialmente invia preloads prima di altre risorse critiche.
 
 Infine, se usati in un header di risposta HTTP, alcuni CDN trasformeranno automaticamente un "preload" in un <a hreflang="en" href="#http2-push">HTTP/2 push</a> che può sovraccaricare le risorse memorizzate nella cache.
 
@@ -174,7 +174,7 @@ Con `preload` possono essere precaricati molti diversi tipi di contenuto e la <a
   sql_file="as_attribute_by_year.sql"
 ) }}
 
-Rispetto alla tendenza in <a href="../2019/resource-hints#the-as-attribute">2019</a>, abbiamo visto una rapida crescita nell'utilizzo di font e style con l'attributo `as`. Ciò è probabilmente correlato agli sviluppatori che aumentano la priorità dei CSS critici e combinano anche i font `preload` con `display:optional` per <a hreflang="en" href="https://web.dev/optimize-cls/#web-fonts-causing-foutfoit">migliorare</a> Cumulative Layout Shift (<a hreflang="en" href="https://web.dev/cls/">CLS</a>).
+Rispetto alla tendenza in <a href="../2019/resource-hints#the-as-attribute">2019</a>, abbiamo visto una rapida crescita nell'utilizzo di font e style con l'attributo `as`. Ciò è probabilmente correlato agli sviluppatori che aumentano la priorità dei CSS critici e combinano anche i font `preload` con `display:optional` per <a hreflang="en" href="https://web.dev/articles/optimize-cls#web-fonts-causing-foutfoit">migliorare</a> Cumulative Layout Shift (<a hreflang="en" href="https://web.dev/articles/cls">CLS</a>).
 
 Tieni presente che omettere l'attributo `as` o avere un valore non valido renderà più difficile per il browser determinare la priorità corretta e in alcuni casi, come gli script, può anche causare il fetch della risorsa due volte.
 

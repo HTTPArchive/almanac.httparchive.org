@@ -35,7 +35,7 @@ New generations are getting involved in social media and have earlier access to 
 
 ### Traffic from mobile versus desktop
 
-In keeping with the [Methodology](./methodology), the primary data source for this report is the HTTP Archive and the Chrome UX Report (CrUX). In cases where tablet data was included as a separate measurement from any data source, it was omitted, since it does not neatly fit in the primary mobile or desktop classifications and can add confusion and complexity when interpreting or contrasting mobile and desktop information that is more neatly segmented out. Refer to the <a hreflang="en" href="https://developer.chrome.com/docs/crux/methodology/#user-eligibility">CrUX documentation</a> for more information about eligible mobile platforms.
+In keeping with the [Methodology](./methodology), the primary data source for this report is the HTTP Archive and the Chrome UX Report (CrUX). In cases where tablet data was included as a separate measurement from any data source, it was omitted, since it does not neatly fit in the primary mobile or desktop classifications and can add confusion and complexity when interpreting or contrasting mobile and desktop information that is more neatly segmented out. Refer to the <a hreflang="en" href="https://developer.chrome.com/docs/crux/methodology#user-eligibility">CrUX documentation</a> for more information about eligible mobile platforms.
 
 {{ figure_markup(
     image="pct-mobile-traffic-rank.png",
@@ -241,7 +241,7 @@ One of the most complex problems that site owners have to address on the mobile 
 
 ### Core Web Vitals
 
-<a hreflang="en" href="https://web.dev/vitals/">Core Web Vitals</a> is a collection of performance metrics that Google compiles to evaluate different websites, and specifically, different <a hreflang="en" href="https://support.google.com/webmasters/answer/9205520#page_groups">page groups</a> on websites to describe how they perform in both mobile and desktop page settings. The elements of Core Web Vitals include loading, interactivity, and layout stability.
+<a hreflang="en" href="https://web.dev/articles/vitals">Core Web Vitals</a> is a collection of performance metrics that Google compiles to evaluate different websites, and specifically, different <a hreflang="en" href="https://support.google.com/webmasters/answer/9205520#page_groups">page groups</a> on websites to describe how they perform in both mobile and desktop page settings. The elements of Core Web Vitals include loading, interactivity, and layout stability.
 
 All three are aspects of how users perceive the performance of a page that can help or hinder the loading experience for users. This type of evaluation began in May of 2020, and these metrics are taken into account in Google’s ranking algorithm specifically as an aspect of the <a hreflang="en" href="https://developers.google.com/search/docs/advanced/experience/page-experience">page experience</a> evaluation, and thus, the metrics are organized around thresholds of performance that are either considered “good”, “needs improvement”, or “poor”. For a site to be considered “good”, 75% of visits must meet the prescribed thresholds for each of the Core Web Vitals metrics.
 
@@ -265,7 +265,7 @@ Load time on the mobile web is measured in the same way that it is measured in a
 
 #### Time to First Byte (TTFB)
 
-<a hreflang="en" href="https://web.dev/ttfb/">Time to First Byte</a>, which is often abbreviated as TTFB, is the measurement of the amount of time that elapses from the start of the navigation to the first byte of data received in response to the request. TTFB describes the responsiveness of the server and other network resources that are needed to begin building a page.
+<a hreflang="en" href="https://web.dev/articles/ttfb">Time to First Byte</a>, which is often abbreviated as TTFB, is the measurement of the amount of time that elapses from the start of the navigation to the first byte of data received in response to the request. TTFB describes the responsiveness of the server and other network resources that are needed to begin building a page.
 
 TTFB is not a Core Web Vitals metric itself, but it has a direct impact on all loading performance metrics, and thus, is often discussed as part of the optimization of all Core Web Vitals elements and general site performance, especially Largest Contentful Paint.
 
@@ -284,7 +284,7 @@ As you can see above, there are only minor fluctuations in the percent of mobile
 
 #### Largest Contentful Paint (LCP)
 
-<a hreflang="en" href="https://web.dev/lcp/">Largest Contentful Paint</a>, or LCP, is a metric that describes how long it takes for a website to load the largest portion of the page content that is first displayed to a user with meaningful content; it is often a function of the size and performance of a header image or design. The LCP is important because it signals to a user when the page is ready to start consuming.
+<a hreflang="en" href="https://web.dev/articles/lcp">Largest Contentful Paint</a>, or LCP, is a metric that describes how long it takes for a website to load the largest portion of the page content that is first displayed to a user with meaningful content; it is often a function of the size and performance of a header image or design. The LCP is important because it signals to a user when the page is ready to start consuming.
 
 {{ figure_markup(
     image="good-lcp.png",
@@ -357,7 +357,7 @@ Lazy-loading is the process of assigning different loading priority levels to el
   )
 }}
 
-<a hreflang="en" href="https://web.dev/browser-level-image-lazy-loading/">Native lazy-loading</a> has been available since 2019, which allows browsers to do the complex calculations in the most efficient way possible, and only requires that site owners tag images with either `lazy` or `eager`. This simple tagging can be a great boon for page and site performance, and can also save a lot of time and effort associated with maintaining your own lazy-loading code. As long as you don’t <a hreflang="en" href="https://web.dev/lcp-lazy-loading/">inadvertently lazy-load your LCP image</a> at the top of the page, it is an easy win, but we found that only 25% of sites are currently using the `loading=lazy` attribute for their images.
+<a hreflang="en" href="https://web.dev/browser-level-image-lazy-loading/">Native lazy-loading</a> has been available since 2019, which allows browsers to do the complex calculations in the most efficient way possible, and only requires that site owners tag images with either `lazy` or `eager`. This simple tagging can be a great boon for page and site performance, and can also save a lot of time and effort associated with maintaining your own lazy-loading code. As long as you don’t <a hreflang="en" href="https://web.dev/articles/lcp-lazy-loading">inadvertently lazy-load your LCP image</a> at the top of the page, it is an easy win, but we found that only 25% of sites are currently using the `loading=lazy` attribute for their images.
 
 
 ### Layout stability
@@ -369,13 +369,13 @@ Since the loading order of content can be different under different conditions, 
 
 #### Cumulative Layout Shift (CLS)
 
-<a hreflang="en" href="https://web.dev/cls/">Cumulative Layout Shift</a>, which is often abbreviated as CLS, is a representation of the stability of a page while it is in use.
+<a hreflang="en" href="https://web.dev/articles/cls">Cumulative Layout Shift</a>, which is often abbreviated as CLS, is a representation of the stability of a page while it is in use.
 
 A low CLS represents a visually stable layout, which makes the experience less frustrating to users. Pages with a high CLS often experience movement when images begin to load and text must be rendered to fit, or wrap around the image. This can also happen when font files load and the page has to be painted to accommodate differences caused by the font, sometimes described as reflow, or when a large header image loads and moves all the content on the page—occurrences that had been colloquially described as _jank_.
 
 The screen size of the device requesting the page can have a significant impact on the way elements are laid out, and how much they move when shift-causing elements are loaded.
 
-CLS is measured as a score, and the highest instance of movement in any session window during the page lifespan is what is measured. This <a hreflang="en" href="https://web.dev/cls-web-tooling/">changed</a> in 2021, when CLS was previously measured as the sum of all individual shift scores on a page. Google considers scores of 0.1 or less as “good” and scores over 0.25 to be “poor”.
+CLS is measured as a score, and the highest instance of movement in any session window during the page lifespan is what is measured. This <a hreflang="en" href="https://web.dev/articles/cls-web-tooling">changed</a> in 2021, when CLS was previously measured as the sum of all individual shift scores on a page. Google considers scores of 0.1 or less as “good” and scores over 0.25 to be “poor”.
 
 {{ figure_markup(
     image="good-cls.png",
@@ -397,7 +397,7 @@ Responsiveness is always good in a mobile scenario, but it can have a layered me
 
 #### First Input Delay (FID)
 
-<a hreflang="en" href="https://web.dev/fid/">First Input Delay</a> (FID) describes the responsiveness of a site, especially related to how long it takes for a site to respond after a user first clicks on a page element. A low FID is desirable, especially on mobile web interactions, where the responsiveness of a mobile site should ideally rival the responsiveness of a comparable native app, to make the interactions feel equally fluid and satisfying. Google considers a site to have “good” FID if at least 75% of experiences are under 100 ms.
+<a hreflang="en" href="https://web.dev/articles/fid">First Input Delay</a> (FID) describes the responsiveness of a site, especially related to how long it takes for a site to respond after a user first clicks on a page element. A low FID is desirable, especially on mobile web interactions, where the responsiveness of a mobile site should ideally rival the responsiveness of a comparable native app, to make the interactions feel equally fluid and satisfying. Google considers a site to have “good” FID if at least 75% of experiences are under 100 ms.
 
 {{ figure_markup(
     image="good-fid.png",
@@ -414,7 +414,7 @@ There has been a consistent growth in the percent of mobile sites that have “g
 
 #### Interaction to Next Paint (INP)
 
-<a hreflang="en" href="https://web.dev/inp/">Interaction to Next Paint</a> (INP) is an experimental metric from Google that is used to measure responsiveness and response time on a page when a user interacts with it. A low INP is desirable because it means that the page was able to respond quickly to user interactions without substantial delays waiting for content to paint after it is requested. A “good” INP is 200 ms or less, and a poor one is anything over 500 ms. Eventually, INP could be added to the official Core Web Vitals metrics, but for now it is still being tested to make sure that it is a reliable and consistent metric that site owners will find useful.
+<a hreflang="en" href="https://web.dev/articles/inp">Interaction to Next Paint</a> (INP) is an experimental metric from Google that is used to measure responsiveness and response time on a page when a user interacts with it. A low INP is desirable because it means that the page was able to respond quickly to user interactions without substantial delays waiting for content to paint after it is requested. A “good” INP is 200 ms or less, and a poor one is anything over 500 ms. Eventually, INP could be added to the official Core Web Vitals metrics, but for now it is still being tested to make sure that it is a reliable and consistent metric that site owners will find useful.
 
 {{ figure_markup(
     caption="Percent of websites that have good INP on mobile.",
