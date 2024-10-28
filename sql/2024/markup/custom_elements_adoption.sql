@@ -14,7 +14,7 @@ SELECT
   client,
   COUNT(0) AS total,
   COUNTIF(has_custom_elements) AS freq,
-  COUNTIF(has_custom_elements) / COUNT(0) AS pct_custom_elements,
+  COUNTIF(has_custom_elements) / COUNT(0) AS pct_custom_elements
 FROM
   custom_elements
 GROUP BY

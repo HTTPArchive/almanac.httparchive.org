@@ -46,7 +46,7 @@ JOIN
 USING (client),
   UNNEST(get_markup_inputs_info(JSON_EXTRACT(custom_metrics, '$.markup'))) AS markup_input_info
 WHERE
-    date = '2024-06-01'
+  date = '2024-06-01'
 GROUP BY
   client,
   input_type

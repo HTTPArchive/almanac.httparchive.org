@@ -6,9 +6,9 @@ CREATE TEMPORARY FUNCTION EXTRACT_DOCTYPE(summary STRING) RETURNS STRING AS (
 SELECT
   client,
   LOWER(REGEXP_REPLACE(TRIM(EXTRACT_DOCTYPE(summary)), r' +', ' ')) AS doctype, # remove extra spaces and make lower case
-  COUNT(*) AS pages,
-  SUM(COUNT(*)) OVER (PARTITION BY client) AS total,
-  COUNT(*) / SUM(COUNT(*)) OVER (PARTITION BY client) AS pct_pages
+  COUNT(0) AS pages,
+  SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
+  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct_pages
 FROM
   `httparchive.all.pages`
 WHERE

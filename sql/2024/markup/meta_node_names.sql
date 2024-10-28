@@ -19,7 +19,7 @@ WITH totals AS (
     date = '2024-06-01'
   GROUP BY
     client
-), 
+),
 
 meta AS (
   SELECT

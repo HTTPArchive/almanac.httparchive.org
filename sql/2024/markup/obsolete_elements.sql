@@ -15,7 +15,7 @@ try {
 ''';
 
 CREATE TEMPORARY FUNCTION is_obsolete(element STRING) AS (
-    element IN ('applet', 'acronym', 'basefont', 'bgsound', 'big', 'blink', 'center', 'dir', 'font', 'frame', 'frameset', 'isindex', 'keygen', 'listing', 'marquee', 'menuitem', 'multicol', 'nextid', 'nobr', 'noembed', 'noframes', 'param', 'plaintext', 'rb', 'rtc', 'spacer', 'strike', 'tt', 'xmp')
+  element IN ('applet', 'acronym', 'basefont', 'bgsound', 'big', 'blink', 'center', 'dir', 'font', 'frame', 'frameset', 'isindex', 'keygen', 'listing', 'marquee', 'menuitem', 'multicol', 'nextid', 'nobr', 'noembed', 'noframes', 'param', 'plaintext', 'rb', 'rtc', 'spacer', 'strike', 'tt', 'xmp')
 );
 
 WITH totals AS (

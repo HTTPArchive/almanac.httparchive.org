@@ -1,12 +1,12 @@
 -- Temporary function to extract content-encoding
-CREATE TEMPORARY FUNCTION GET_CONTENT_ENCODING(response_headers ARRAY<STRUCT<name STRING, value STRING>>) 
+CREATE TEMPORARY FUNCTION GET_CONTENT_ENCODING(response_headers ARRAY<STRUCT<name STRING, value STRING>>)
 RETURNS STRING AS (
   (
-    SELECT 
+    SELECT
       value
-    FROM 
+    FROM
       UNNEST(response_headers) AS header
-    WHERE 
+    WHERE
       LOWER(header.name) = 'content-encoding'
     LIMIT 1
   )
