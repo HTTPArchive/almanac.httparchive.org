@@ -7,7 +7,7 @@ reviewers: [lebreRafael]
 editors: [cqueern]
 analysts: [Falafelqueen, burakguneli, mgifford]
 translators: []
-results: https://docs.google.com/spreadsheets/d/1E6wPVck2-5NDUpFKWjbJXKJKNx0E9fWwIdeM9hUKl8c/edit#gid=806519964
+results: https://docs.google.com/spreadsheets/d/1E6wPVck2-5NDUpFKWjbJXKJKNx0E9fWwIdeM9hUKl8c/
 ldevernay_bio: Laurent Devernay Satygraha is a Digital Sobriety Expert for <a hreflang="en" href="https://greenspector.com/en/home/">Greenspector</a>. You can find him blogging <a hreflang="en" href="https://ldevernay.github.io/">on his own</a> or <a hreflang="en" href="https://greenspector.com/fr/blog/">for this company</a> but almost always about web sustainability. Which makes him either an enthusiast or a monomaniac.  Connect with <a href="https://www.linkedin.com/in/laurent-devernay-satyagraha-2610b85/">Laurent on LinkedIn</a>.
 burakguneli_bio: Burak is Frontend Software Engineer who strive to understand how things work under the hood to unravel their mysteries, especially in Javascript. He is based in Berlin and if you're also living in Berlin, there's a good chance you might bump into each other at an indoor cycling class.
 ines-akrap_bio: Ines Akrap is a Frontend Software Engineer passionate about optimizing websites to be fast, sustainable, and provide the best user experience for every user. She works in Storyblok as a Solutions Engineer. She enjoys sharing her knowledge through talks, podcasts, workshops, and courses.
