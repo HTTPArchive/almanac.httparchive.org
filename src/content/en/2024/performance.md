@@ -23,11 +23,11 @@ featured_stat_label_3: the percentage by which good CWV scores are higher on sec
 
 No one ever complained about a fast website, but a slow-loading and sluggish website quickly frustrates users. Website speed and overall performance directly impact user experience and the success of a website. Moreover, if a website is slow, it becomes less accessible to users, which is against the fundamental goal of the web — to provide universal access to the universe of information.
 
-In recent years, Core Web Vitals performance metrics have improved, showing positive trends across many performance metrics. However, some inconsistencies can be observed. For example, the gap between high-end and low-end devices is widening, especially in mobile web performance, as highlighted in Alex Russell’s research in <a hreflang="en" href="https://infrequently.org/2024/01/performance-inequality-gap-2024/">The Performance Inequality Gap</a>. Web performance is tied to what devices and networks people can afford. Fortunately, more developers are aware of these challenges and are actively working to improve performance.
+In recent years, Core Web Vitals performance metrics have improved, showing positive trends across many performance metrics. However, some inconsistencies can be observed. For example, the gap between high-end and low-end devices is widening, especially in mobile web performance, as highlighted in Alex Russell's research in <a hreflang="en" href="https://infrequently.org/2024/01/performance-inequality-gap-2024/">The Performance Inequality Gap</a>. Web performance is tied to what devices and networks people can afford. Fortunately, more developers are aware of these challenges and are actively working to improve performance.
 
 In the performance chapter, we focus on Core Web Vitals, as they are key user-centric metrics for assessing web performance. However, we also analyze the web performance from a broader perspective: loading, interactivity, and visual stability, adding supportive metrics like First Contentful Paint. This allows us to explore other performance and user experience-related metrics to get a more comprehensive picture of how websites performed in 2024\.
 
-What’s new this year?
+What's new this year?
 
 * <a hreflang="en" href="https://web.dev/blog/inp-cwv-march-12">Interaction to Next Paint (INP) has officially replaced First Input Delay (FID)</a> as part of Core Web Vitals. INP helps to evaluate overall interactivity performance more accurately.
 * <a hreflang="en" href="https://developer.chrome.com/docs/web-platform/long-animation-frames">Long Animation Frames (LoAF)</a> data is available for the first time, providing new insights into the reasons for poor INP.
@@ -37,9 +37,9 @@ What’s new this year?
 
 The HTTPArchive contains only lab performance data. In other words, it is data from a single website load event. This is useful but limited if we want to understand how users experience performance.
 
-Thus, in addition to the data HTTP Archive, most of this report is based on real user data from the <a hreflang="en" href="https://developer.chrome.com/docs/crux">Chrome User Experience Report (CrUX)</a>. Note that while Chrome is the most widely used browser worldwide, it doesn’t reflect performance across all browsers and all regions of the world.
+Thus, in addition to the data HTTP Archive, most of this report is based on real user data from the <a hreflang="en" href="https://developer.chrome.com/docs/crux">Chrome User Experience Report (CrUX)</a>. Note that while Chrome is the most widely used browser worldwide, it doesn't reflect performance across all browsers and all regions of the world.
 
-CrUX is a great source of data, but it doesn’t contain certain metrics like LCP and INP sub-parts, as well as Long Animation Frames. Luckily, the performance monitoring platform <a hreflang="en" href="https://www.rumvision.com/">RUMvision</a> has provided us with this data for the period starting from 1st January 2024\. RUMvision has a smaller population of websites compared to HTTP archive, which is why the results for the same metrics might be different.
+CrUX is a great source of data, but it doesn't contain certain metrics like LCP and INP sub-parts, as well as Long Animation Frames. Luckily, the performance monitoring platform <a hreflang="en" href="https://www.rumvision.com/">RUMvision</a> has provided us with this data for the period starting from 1st January 2024\. RUMvision has a smaller population of websites compared to HTTP archive, which is why the results for the same metrics might be different.
 
 ## Core Web Vitals {#core-web-vitals}
 
@@ -57,7 +57,7 @@ Starting this year, INP has officially replaced First Input Delay (FID) and beca
   )
 }}
 
-The replacement of the FID with the INP metric significantly impacted the percentage of websites with good CWV on mobile. This doesn’t mean the user experience has worsened. The change reflects that the new metric reflects the user experience more accurately. If we still used FID as a measure of interactivity, 48% of the websites would have good CWV on mobile devices. However, with the INP metric, this figure drops to 43%. Interestingly, performance on desktop devices stays the same regardless of which responsiveness metric we use, i.e., 54%.
+The replacement of the FID with the INP metric significantly impacted the percentage of websites with good CWV on mobile. This doesn't mean the user experience has worsened. The change reflects that the new metric reflects the user experience more accurately. If we still used FID as a measure of interactivity, 48% of the websites would have good CWV on mobile devices. However, with the INP metric, this figure drops to 43%. Interestingly, performance on desktop devices stays the same regardless of which responsiveness metric we use, i.e., 54%.
 
 In the period from 2020 to 2022, we saw that mobile web performance measured by CWV with FID was improving faster than desktop one, and the gap between them was closing, reaching just 5% in 2022\. As CWV with INP chart shows, in 2024, the websites on the desktop performed 11% better than on mobile, so the introduction of the INP shows that the gap is much bigger.
 
@@ -200,9 +200,9 @@ In the article "<a hreflang="en" href="https://web.dev/blog/common-misconception
   )
 }}
 
-The study showed that image load duration has the least impact on LCP time, taking only 350 ms at the 75th percentile for websites with poor LCP. Although resource load duration optimization techniques like image size reduction are often recommended, they don’t offer as much time savings as other LCP sub-parts, even for sites with poor LCP.
+The study showed that image load duration has the least impact on LCP time, taking only 350 ms at the 75th percentile for websites with poor LCP. Although resource load duration optimization techniques like image size reduction are often recommended, they don't offer as much time savings as other LCP sub-parts, even for sites with poor LCP.
 
-TTFB is the largest part among all LCP sub-parts due to the network requests for external resources. Websites with poor LCP spend 2.27 seconds on TTFB alone, which is almost as long as the threshold for a good LCP (2.5 seconds). As we saw in the TTFB section, there hasn’t been much improvement in the percentage of websites with good TTFB, indicating that this metric offers significant opportunities for LCP optimization.
+TTFB is the largest part among all LCP sub-parts due to the network requests for external resources. Websites with poor LCP spend 2.27 seconds on TTFB alone, which is almost as long as the threshold for a good LCP (2.5 seconds). As we saw in the TTFB section, there hasn't been much improvement in the percentage of websites with good TTFB, indicating that this metric offers significant opportunities for LCP optimization.
 
 Surprisingly, websites spend more time on resource load delay than on load duration, regardless of their LCP status. This makes load delay a good candidate for optimization efforts. One way to improve load delay is by ensuring that the LCP element starts loading as early as possible, which will be explored in detail in the section on LCP statical discoverability.
 
@@ -219,9 +219,9 @@ This year, we analyzed LCP sub-part data from another source: RUMvision. Althoug
 
 According to RUMvision data, TTFB is also the largest contributor to the LCP time in comparison to the other LCP sub-parts. However, the results of other sub-parts vary. Render delay is the second largest contributor to LCP, taking 184 ms. At the 75th percentile, render delay grows to 443 ms. This reflects a tendency that is different from the CruX dataset, where LCP load delay is the second largest sub-part.
 
-Typically, LCP element rendering takes a long time if the LCP element hasn’t been added to the DOM yet—a common issue with client-side generated content that we explore in the next section. Also, the main thread blocked by long tasks can contribute to the delay. In addition, render-blocking resources like stylesheets or synchronous scripts in the \<head\> can delay rendering.
+Typically, LCP element rendering takes a long time if the LCP element hasn't been added to the DOM yet—a common issue with client-side generated content that we explore in the next section. Also, the main thread blocked by long tasks can contribute to the delay. In addition, render-blocking resources like stylesheets or synchronous scripts in the \<head\> can delay rendering.
 
-It’s interesting to observe the different LCP challenges that websites across various datasets face. While an average website from the CruX dataset struggles with image load delay, websites from the RUMvision dataset often face rendering delay issues. Nevertheless, all websites can benefit from using performance monitoring tools with Real User Monitoring (RUM), as these tools provide deeper insights into the performance issues experienced by real users.
+It's interesting to observe the different LCP challenges that websites across various datasets face. While an average website from the CruX dataset struggles with image load delay, websites from the RUMvision dataset often face rendering delay issues. Nevertheless, all websites can benefit from using performance monitoring tools with Real User Monitoring (RUM), as these tools provide deeper insights into the performance issues experienced by real users.
 
 #### LCP lazy-loading
 
@@ -234,7 +234,7 @@ Overall, lazy-loading images is a helpful performance technique that should be u
   content="15.7%",
   classes="big-number",
   sheets_gid="1048885241",
-  sql_file=”lcp_lazy.sql"
+  sql_file="lcp_lazy.sql"
 )
 }}
 
@@ -266,7 +266,7 @@ The chart below illustrates the distribution of client-side generated content. I
   description="Line chart showing the percentage of origins with good LCP compared to the percentage of client-side generated HTML for both desktop and mobile. For desktop, the percentage of origins with good LCP starts around 75% for pages with 0-10% client-side generated HTML and remains relatively stable, peaking slightly around 40-50% client-side HTML usage, before gradually declining to about 65% at the 90-100% range. For mobile, the percentage of good LCP starts lower, around 60% for the 0-10% range, and follows a similar trend, peaking slightly in the 30-40% range before declining more sharply to about 45% at the 90-100% client-side HTML usage.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=750231640&format=interactive",
   sheets_gid="829333856",
-  sql_file=”inp_long_tasks.sql"
+  sql_file="inp_long_tasks.sql"
   )
 }}
 
@@ -332,7 +332,7 @@ INP  can only be collected using real user monitoring, which comes from CrUX and
 
 INP measures the time between a user interaction and the next frame render. It is important to emphasize that the next frame render refers to the render opportunity rather than actual visual UI changes.
 
-For an origin to receive a “good” INP score, at least 75% of all sessions need an INP score of 200ms or less. The INP score is the slowest or near-slowest interaction time for all interactions on the page. See <a hreflang="en" href="https://web.dev/articles/inp#good-score">Details on how INP is calculated</a> for more information.
+For an origin to receive a "good" INP score, at least 75% of all sessions need an INP score of 200ms or less. The INP score is the slowest or near-slowest interaction time for all interactions on the page. See <a hreflang="en" href="https://web.dev/articles/inp#good-score">Details on how INP is calculated</a> for more information.
 
 {{ figure_markup(
   image="interaction-to-next-paint-2024.png",
@@ -346,7 +346,7 @@ For an origin to receive a “good” INP score, at least 75% of all sessions ne
 
 In 2024, 74% of mobile and 97% of desktop websites had good INP. Interestingly, the gap between mobile and desktop is huge, i.e. more than 20%.
 
-The primary reason for weaker performance on mobile is its lower processing power and frequently poor network connections. Alex Russell’s article "<a hreflang="en" href="https://infrequently.org/2022/12/performance-baseline-2023/">The Performance Inequality Gap</a>" (2023) raises the issue of the growing performance inequality gap caused by the affordance of high-end vs low-end devices. As the prices of high-end devices rise, fewer users can afford them, widening the inequality gap.
+The primary reason for weaker performance on mobile is its lower processing power and frequently poor network connections. Alex Russell's article "<a hreflang="en" href="https://infrequently.org/2022/12/performance-baseline-2023/">The Performance Inequality Gap</a>" (2023) raises the issue of the growing performance inequality gap caused by the affordance of high-end vs low-end devices. As the prices of high-end devices rise, fewer users can afford them, widening the inequality gap.
 
 {{ figure_markup(
   image="good-interaction-to-next-paint.png",
@@ -360,7 +360,7 @@ The primary reason for weaker performance on mobile is its lower processing powe
 
 Although the INP metric displays worse results than the FID, there has been a positive tendency over the past three years.
 ￼
-The percentage of mobile pages having good INP increased from 55% in 2022 to 74% in 2024\. This is a significant increase, and even though we can’t be exactly sure what to attribute it to, we can think of a few potential drivers for this change. The biggest one could be awareness. With the introduction of the INP and the announcement that it will replace FID, many teams realized the impact that could have on their overall CWV score and search ranking. That could have encouraged them to actively work towards fixing parts of the sites that contributed to low INP scores. The second driver could be just a regular advancement in technology. With the above-displayed INP data coming from real users, we can also assume that users' devices and network connections could have slightly improved over the years, providing them with better site interactivity.
+The percentage of mobile pages having good INP increased from 55% in 2022 to 74% in 2024\. This is a significant increase, and even though we can't be exactly sure what to attribute it to, we can think of a few potential drivers for this change. The biggest one could be awareness. With the introduction of the INP and the announcement that it will replace FID, many teams realized the impact that could have on their overall CWV score and search ranking. That could have encouraged them to actively work towards fixing parts of the sites that contributed to low INP scores. The second driver could be just a regular advancement in technology. With the above-displayed INP data coming from real users, we can also assume that users' devices and network connections could have slightly improved over the years, providing them with better site interactivity.
 
 Mobile INP metric by rank reveals an interesting trend. <a hreflang="en" href="https://almanac.httparchive.org/en/2022/performance#inp-by-rank">In the 2022 chapter</a>, we assumed that the more popular a website is, the more performance optimizations it would have, leading to better performance. However, when it comes to INP, the opposite seems to be true.
 
@@ -388,7 +388,7 @@ This could be because the most visited websites often have more user interaction
   )
 }}
 
-Unlike other performance metrics like FCP and LCP, the percentage of secondary pages with good INP does not differ from the home page results. This is likely because INP isn’t as impacted by caching as loading speed is.
+Unlike other performance metrics like FCP and LCP, the percentage of secondary pages with good INP does not differ from the home page results. This is likely because INP isn't as impacted by caching as loading speed is.
 
 #### INP Subparts
 
@@ -398,7 +398,7 @@ An INP score can be broken down into three sub-parts:
 * **Processing Time**: the time spent processing the event handlers attached to the element which the user interacted with
 * **Presentation Delay**: the time spent figuring out the new layout, if changed, and painting the new pixels on the screen
 
-To optimize your website’s interactivity, it’s important to identify the duration of every sub-part.
+To optimize your website's interactivity, it's important to identify the duration of every sub-part.
 
 {{ figure_markup(
   image="interaction-to-next-paint-subparts-rum-vision.png",
@@ -478,7 +478,7 @@ Long Animation Frames (LoAF) are a performance timeline entry for identifying sl
 
 The top two categories contributing the most to slow INP scores on mobile and desktop devices are User Behavior (37% of mobile and 60% of desktop pages with good INP) and CDN/Hosting (50% of mobile and 65% of desktop pages with good INP).
 
-User Behavior includes scripts from hosts like "script.hotjar.com", “smartlook.com”, “newrelic.com”, etc. While these tools provide valuable insights about users, our data shows that they can significantly degrade user experience by slowing down website interactions. CDN and Hosting script category examples come from domains like “cdn.jsdelivr.net”, "ajax.cloudflare.com", "cdnjs.cloudflare.com", "cdn.shopify.com", "sdk.awswaf.com", "cloudfront.net", "s3.amazonaws.com" and others. Having CDNs among the categories with the poorest INP results seems controversial because CDNs are usually recommended as a performance optimization technique that reduces server load and delivers content faster to users. However, the CDNs included in this category usually deliver first- or third-party JavaScript resources, which contribute to LoAF and negatively impact interactivity.
+User Behavior includes scripts from hosts like "script.hotjar.com", "smartlook.com", "newrelic.com", etc. While these tools provide valuable insights about users, our data shows that they can significantly degrade user experience by slowing down website interactions. CDN and Hosting script category examples come from domains like "cdn.jsdelivr.net", "ajax.cloudflare.com", "cdnjs.cloudflare.com", "cdn.shopify.com", "sdk.awswaf.com", "cloudfront.net", "s3.amazonaws.com" and others. Having CDNs among the categories with the poorest INP results seems controversial because CDNs are usually recommended as a performance optimization technique that reduces server load and delivers content faster to users. However, the CDNs included in this category usually deliver first- or third-party JavaScript resources, which contribute to LoAF and negatively impact interactivity.
 
 On mobile devices, Consent Providers seem to have a significant impact on INP, resulting in only 53% of mobile pages having good INP when using one. This category consists of providers like "consentframework.com", "cookiepro.com", "cookiebot.com", "privacy-mgmt.com", "usercentrics.eu", and many others. On desktop devices, Consent Provider scripts show much better results, i.e. 76% of pages with good INP. This difference is likely due to the more powerful processors on desktop devices.
 
@@ -547,9 +547,9 @@ Looking at the metrics over time, we can see a nice upward trend. There is an in
 
 <a hreflang="en" href="https://web.dev/articles/bfcache">The back/forward cache (bfcache)</a> is a browser optimization feature that improves the speed and efficiency of navigating between web pages by caching a fully interactive snapshot of a page in memory when a user navigates away from it. However, not all sites are eligible for bfcache. With an <a hreflang="en" href="https://html.spec.whatwg.org/multipage/nav-history-apis.html#nrr-details-reason">extensive eligibility criteria</a>, the easiest way to check if the site is eligible is to <a hreflang="en" href="https://developer.chrome.com/docs/devtools/application/back-forward-cache">test it in Chrome DevTools</a>.
 
-Let’s look deeper by checking a few eligibility criteria that are quite a common cause and easily measurable using lab data.
+Let's look deeper by checking a few eligibility criteria that are quite a common cause and easily measurable using lab data.
 
-One of the “usual suspects” is the `unload` event that is triggered when a user navigates away from a page. Due to its unreliable behaviour and its incompatibility with how bfcache preserves a page’s stage, `unload` event makes the page ineligible for bfcache. Important to note here is that this feature is specific for browsers on desktops. Mobile sites ignore the `unload` event. This behavior could explain CLS improvement over the years gap between mobile and desktop numbers from  Figure xxx: *The percent of websites having good CLS, segmented by device and year.*
+One of the "usual suspects" is the `unload` event that is triggered when a user navigates away from a page. Due to its unreliable behaviour and its incompatibility with how bfcache preserves a page's stage, `unload` event makes the page ineligible for bfcache. Important to note here is that this feature is specific for browsers on desktops. Mobile sites ignore the `unload` event. This behavior could explain CLS improvement over the years gap between mobile and desktop numbers from  Figure xxx: *The percent of websites having good CLS, segmented by device and year.*
 
 {{ figure_markup(
   image="unload-usage.png",
@@ -563,7 +563,7 @@ One of the “usual suspects” is the `unload` event that is triggered when a u
 
 From the above chart showing `unload` events from pages displayed on desktop devices, we can see a few interesting things. Overall event usage is quite low, 16%. However, it increases drastically for the top 1000 sites, to 32%, indicating that more popular sites probably use quite some more 3rd party services that often use this specific event.
 
-It is expected to see this decrease in the use of unload events with major browsers like Google Chrome and Firefox moving towards its deprecation since around 2020 and encouraging the use of alternative events like `pagehide` and `visibilitychange`. These events are more reliable, do not block the browser’s navigation, and are compatible with bfcache, allowing pages to be preserved in memory and restored instantly when users navigate back or forward.
+It is expected to see this decrease in the use of unload events with major browsers like Google Chrome and Firefox moving towards its deprecation since around 2020 and encouraging the use of alternative events like `pagehide` and `visibilitychange`. These events are more reliable, do not block the browser's navigation, and are compatible with bfcache, allowing pages to be preserved in memory and restored instantly when users navigate back or forward.
 
 Another common reason for websites to fall in the bfcache ineligibility category is the use of the `cache-control: no-store` directive. This cache control header instructs the browser (and any intermediate caches) not to store a copy of the resource, ensuring that the content is fetched from the server on every request.
 
@@ -580,7 +580,7 @@ Another common reason for websites to fall in the bfcache ineligibility category
 
 When bfcache was first introduced, it brought noticeable improvements to Core Web Vitals. Based on that, Chrome is gradually bringing bfcache to more sites that were previously ineligible due to the use of the Cache-Control: no-store header. This change aims to further improve site performance.
 
-Unload event, as well as cache-control:no-store, do not directly affect the page's visual stability. As already mentioned, the concept of bfcache load as a side-effect has this positive impact by eliminating some potential issues affecting metrics directly, such as unsized images or dynamic content. To continue exploring the visual stability aspect of the web, let’s check some of the practices that directly impact the CLS.
+Unload event, as well as cache-control:no-store, do not directly affect the page's visual stability. As already mentioned, the concept of bfcache load as a side-effect has this positive impact by eliminating some potential issues affecting metrics directly, such as unsized images or dynamic content. To continue exploring the visual stability aspect of the web, let's check some of the practices that directly impact the CLS.
 
 ### CLS best practices
 
@@ -654,7 +654,7 @@ Since most `font-display` strategies can contribute to CLS, we need to look at o
   )
 }}
 
-Around 11% of all tested mobile and desktop pages are preloading their web fonts, indicating to the browser that they should download these files, hopefully early enough to avoid shifts due to late font arrival. Note that using preload incorrectly can harm performance instead of helping it. To avoid this, we need to make sure that the preloaded font will be used and that we don’t preload too many assets. Preloading too many assets can end up delaying other, more important resources.
+Around 11% of all tested mobile and desktop pages are preloading their web fonts, indicating to the browser that they should download these files, hopefully early enough to avoid shifts due to late font arrival. Note that using preload incorrectly can harm performance instead of helping it. To avoid this, we need to make sure that the preloaded font will be used and that we don't preload too many assets. Preloading too many assets can end up delaying other, more important resources.
 
 18% of sites are using `preconnect` to establish an early connection to a third-party origin. Like with `preload` it is important to use this resource hint carefully and not to overdo it.
 
