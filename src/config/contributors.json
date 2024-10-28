@@ -572,8 +572,6 @@
     "website": "http://www.aymen-loukil.com/en/"
   },
   "b_atish": {
-    "avatar_url": "",
-    "github": "",
     "name": "Beatriz González Mellídez",
     "teams": {
       "2024": [
@@ -1650,7 +1648,7 @@
     },
     "twitter": "HenriHelvetica"
   },
-  "hdv": {
+  "hidde": {
     "avatar_url": "178782",
     "github": "hidde",
     "name": "Hidde de Vries",
@@ -2062,12 +2060,12 @@
     "github": "jcmpagel",
     "linkedin": "jonathan-pagel",
     "name": "Jonathan Pagel",
-    "website": "https://jonathanpagel.com",
     "teams": {
       "2024": [
         "editors"
       ]
-    }
+    },
+    "website": "https://jonathanpagel.com"
   },
   "sirjonathan": {
     "avatar_url": "104149",
@@ -2763,7 +2761,6 @@
     "name": "Mike Gifford",
     "teams": {
       "2024": [
-        "reviewers"
         "authors",
         "analysts"
       ]

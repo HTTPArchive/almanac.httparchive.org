@@ -3,7 +3,7 @@
 title: Accessibility
 description: Accessibility chapter of the 2024 Web Almanac covering ease of reading, navigation, forms, media, ARIA, and accessibility apps.
 authors: [mgifford]
-reviewers: [hdv, b_atish]
+reviewers: [hidde, b_atish]
 analysts: [mgifford]
 editors: [JonathanPagel, JonathanAvila, shantsis]
 translators: []
@@ -46,7 +46,7 @@ Accessibility scores are an important tool, but people familiar with [Goodhart's
 {{ figure_markup(
   image="lighthouse-audit-median-score-yoy.png",
   caption="Lighthouse audit improvements year-over-year.",
-  description="A bar chart showing the average increase in accessibility over time for five years the Median Google Lighthouse score for accessibility. Values increase slowly year by year, as follows: 2019 (83%), 2020 (80%), 2021 (82%), 2022 (83%) and 2024 (84%)."
+  description="A bar chart showing the average increase in accessibility over time for five years the Median Google Lighthouse score for accessibility. Values increase slowly year by year, as follows: 2019 (83%), 2020 (80%), 2021 (82%), 2022 (83%) and 2024 (84%).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=837866368&format=interactive",
   sheets_gid="255848343",
   sql_file="lighthouse_a11y_score.sql"
@@ -60,8 +60,7 @@ Looking at the most common errors with most improved Lighthouse Tests, it is pos
 {{ figure_markup(
   image="lighthouse-audit-markup-improvements.png",
   caption="Most improved Lighthouse accessibility tests (axe).",
-  description="A bar chart showing how many sites pass 5 specific Lighthouse audits, in 2022 and 2024. aria-allowed-attr passes on 82% of sites in 2022, and 95% in 2024.
-aria-input-field-name passes on 14% of sites in 2022, and 21% in 2024. aria-progressbar-name passes on 3% of sites in 2022, and 14% in 2024. color-contrast passes on 23% of sites in 2022, and 29% in 2024. frame-title passes on 36% of sites in 2022, and 51% in 2024."
+  description="A bar chart showing how many sites pass 5 specific Lighthouse audits, in 2022 and 2024. `aria-allowed-attr` passes on 82% of sites in 2022, and 95% in 2024. `aria-input-field-name` passes on 14% of sites in 2022, and 21% in 2024. `aria-progressbar-name` passes on 3% of sites in 2022, and 14% in 2024. `color-contrast` passes on 23% of sites in 2022, and 29% in 2024. `frame-title` passes on 36% of sites in 2022, and 51% in 2024.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=899104036&format=interactive",
   sheets_gid="1279863228",
   sql_file="lighthouse_a11y_audits.sql"
@@ -89,7 +88,7 @@ The Lighthouse test determined that 29.2% of mobile sites and 27.7% of desktop s
 {{ figure_markup(
   image="color-contrast-2019-2020-2021-2022-2024.png",
   caption="Sites with sufficient color contrast.",
-  description="A bar chart showing gradual progress in color contrast. 22.0% of mobile sites had sufficient color contrast in 2019, dipping slightly to 21.1% in 2020 and increasing slightly to 22.2% for 2020, increasing more to 22.9% in 2022, 2024 saw a bign jump to 29.2% for mobile. Desktop sites in 2022 were at 22.7% and in 2024 rose to 27.7%."
+  description="A bar chart showing gradual progress in color contrast. 22.0% of mobile sites had sufficient color contrast in 2019, dipping slightly to 21.1% in 2020 and increasing slightly to 22.2% for 2020, increasing more to 22.9% in 2022, 2024 saw a bign jump to 29.2% for mobile. Desktop sites in 2022 were at 22.7% and in 2024 rose to 27.7%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=476448992&format=interactive",
   sheets_gid="985048008",
   sql_file="color_contrast.sql"
@@ -107,7 +106,7 @@ We're revisiting [Adrian Roselli's post](https://adrianroselli.com/2015/10/dont-
 {{ figure_markup(
   image="pages-zooming-scaling-disabled.png",
   caption="Pages with zooming and scaling disabled.",
-  description="A bar chart showing data on disabled zooming for desktop and mobile. 14% of desktop sites and 16% of mobile sites disable scaling, 18% and 20% respectively set a max scale of 1 and 20% and 23% use either."
+  description="A bar chart showing data on disabled zooming for desktop and mobile. 14% of desktop sites and 16% of mobile sites disable scaling, 18% and 20% respectively set a max scale of 1 and 20% and 23% use either.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=1480116719&format=interactive",
   sheets_gid="1937244738",
   sql_file="viewport_zoom_scale.sql"
@@ -121,7 +120,7 @@ To check if your site has disabled or limited zoom look at the source of the pag
 {{ figure_markup(
   image="font-unit-usage.png",
   caption="Font unit usage.",
-  description="A bar chart showing px is used for font sizes on 65% of desktop and 66% of mobiles pages. em on 9% on both. rem on 4% of both, % on 4% of desktop and 5% of mobile, <number> on 2% of both, and finally pt on 15% on desktop and 14% on mobile."
+  description="A bar chart showing px is used for font sizes on 65% of desktop and 66% of mobiles pages. em on 9% on both. rem on 4% of both, % on 4% of desktop and 5% of mobile, <number> on 2% of both, and finally pt on 15% on desktop and 14% on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=655410508&format=interactive",
   sheets_gid="806505055",
   sql_file="units_properties.sql"
@@ -154,7 +153,7 @@ Modern CSS includes [Level 5 Media Queries](https://www.w3.org/TR/mediaqueries-5
 {{ figure_markup(
   image="userpreference-media-queries.png",
   caption="User preference media queries.",
-  description="A bar chart showing that 48.8% of desktop sites and 50.4% of mobile sites use the prefers-reduced-motion media query, 12.1% of sites use prefers-color-scheme, and prefers-contrast is used by just under 1% of desktop and mobile sites."
+  description="A bar chart showing that 48.8% of desktop sites and 50.4% of mobile sites use the prefers-reduced-motion media query, 12.1% of sites use prefers-color-scheme, and prefers-contrast is used by just under 1% of desktop and mobile sites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=570596768&format=interactive",
   sheets_gid="1665700473",
   sql_file="media_query_features.sql"
@@ -195,7 +194,7 @@ WCAG mandates a visible focus indicator for all interactive content to ensure us
 {{ figure_markup(
   image="pages-overriding-focus-styles.png",
   caption="Pages overriding browser focus styles.",
-  description="A bar chart showing 82% websites sites use a :focus pseudo class, and 53% of sites using the :focus pseudo class to set the outline to 0 or none. 14% of desktop sites and 12% of mobile sites use the :focus-visible pseudo class."
+  description="A bar chart showing 82% websites sites use a :focus pseudo class, and 53% of sites using the :focus pseudo class to set the outline to 0 or none. 14% of desktop sites and 12% of mobile sites use the :focus-visible pseudo class.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=1264001671&format=interactive",
   sheets_gid="1799906695",
   sql_file="focus_outline_0.sql"
@@ -219,7 +218,7 @@ It's important to avoid placing non-interactive elements in the keyboard focus o
 {{ figure_markup(
   image="tabindex-usage-and-values.png",
   caption="tabindex usage.",
-  description="Bar chart showing that of pages that use tabindex, a tabindex of 0 is used on 49% of those pages for desktop and 47% of those pages for mobile, a negative tabindex is used on 48% for desktop and 47% for mobile, and finally a positive tabindex is used on 4% for all sites surveyed."
+  description="Bar chart showing that of pages that use tabindex, a tabindex of 0 is used on 49% of those pages for desktop and 47% of those pages for mobile, a negative tabindex is used on 48% for desktop and 47% for mobile, and finally a positive tabindex is used on 4% for all sites surveyed.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=1092084835&format=interactive",
   sheets_gid="2010133634",
   sql_file="tabindex_usage_and_values.sql"
@@ -244,7 +243,7 @@ Although ARIA landmarks have traditionally been only visible to screen reader us
 {{ figure_markup(
   image="pages-with-element-role-yty.png",
   caption="Yearly growth in pages with element role.",
-  description="A line graph with the roles identified in the table above. There is a gradual growth in the footer, header and nav lements and nearly 9% increase in the use of the main role."
+  description="A line graph with the roles identified in the table above. There is a gradual growth in the footer, header and nav lements and nearly 9% increase in the use of the main role.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=1090856027&format=interactive",
   sheets_gid="1224962143",
   sql_file="landmark_elements_and_roles.sql"
@@ -296,7 +295,7 @@ Descriptive page titles are important for navigating between pages, tabs, and wi
 {{ figure_markup(
   image="page_title-information.png",
   caption="Title element statistics.",
-  description="A bar chart showing 97% of desktop and mobile sites use the <title> element, 69% of sites of those titles have four or more words, and 7% of desktops and 6% of mobile titles are changed on render."
+  description="A bar chart showing 97% of desktop and mobile sites use the <title> element, 69% of sites of those titles have four or more words, and 7% of desktops and 6% of mobile titles are changed on render.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=1921322394&format=interactive",
   sheets_gid="1803785019",
   sql_file="page_title.sql"
@@ -337,7 +336,7 @@ For example:
 {{ figure_markup(
   image="form-input-name-sources.png",
   caption="Where inputs get their accessible names from.",
-  description="A bar chart showing the source of the accessible name for the label element. 27% of sites had no accessible name. 32% now get get their accessible name from a label element. 24% of desktops inputs get their accessible names from the placeholder and 25% for mobile. Aria-label is responsible for 9%. The value attrabute contributs 3%. A title attribute contributes to 3% of the desktop and 2% of the mobile sites surveyed."
+  description="A bar chart showing the source of the accessible name for the label element. 27% of sites had no accessible name. 32% now get get their accessible name from a label element. 24% of desktops inputs get their accessible names from the placeholder and 25% for mobile. Aria-label is responsible for 9%. The value attrabute contributs 3%. A title attribute contributes to 3% of the desktop and 2% of the mobile sites surveyed.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=2076905999&format=interactive",
   sheets_gid="1902508631",
   sql_file="form_input_name_sources.sql"
@@ -353,7 +352,7 @@ The placeholder attribute provides example input formats. It should not replace 
 {{ figure_markup(
   image="placeholder-but-no-label.png",
   caption="Use of placeholders on inputs.",
-  description="A bar chart showing 55% of desktop sites and 54% of mobile sites use placeholders. 59% of desktop sites and 61% of mobile sites have inputs with no label. 55% of desktop sites and 57% of mobile sites have placeholders and also inputs with no labels."
+  description="A bar chart showing 55% of desktop sites and 54% of mobile sites use placeholders. 59% of desktop sites and 61% of mobile sites have inputs with no label. 55% of desktop sites and 57% of mobile sites have placeholders and also inputs with no labels.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=186177069&format=interactive",
   sheets_gid="615941327",
   sql_file="placeholder_but_no_label.sql"
@@ -372,7 +371,7 @@ Indicating required fields is crucial for forms. Before HTML5, an asterisk (\*) 
 {{ figure_markup(
   image="form-required-controls.png",
   caption="How required inputs are specified.",
-  description="A bar chart showing the required attribute is used on 64% of desktop sites and 65% of mobile sites, aria-required is used by 41% and 40%, asterisk is used by 20% and 19%, 2 of 3 of these implemnted 14% and 13%, and all three are used by 2% on desktop and 1% on mobile."
+  description="A bar chart showing the required attribute is used on 64% of desktop sites and 65% of mobile sites, aria-required is used by 41% and 40%, asterisk is used by 20% and 19%, 2 of 3 of these implemnted 14% and 13%, and all three are used by 2% on desktop and 1% on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=285790110&format=interactive",
   sheets_gid="1192677260",
   sql_file="form_required_controls.sql"
@@ -423,7 +422,7 @@ The alt text should reflect the image’s context. For decorative images, alt=""
 {{ figure_markup(
   image="common-file-extensions-in-alt-text.png",
   caption="Most common file extensions in alt text.",
-  description="A bar chart showing of all extensions used in alt jpg is used 53% of the time on desktop sites and 52% for mobile, png is 33% on both, jpeg is 5% and 5%, ico is 4%, svg is 2%, gif is 1%, webp is 2%, and finally tif is 0%."
+  description="A bar chart showing of all extensions used in alt jpg is used 53% of the time on desktop sites and 52% for mobile, png is 33% on both, jpeg is 5% and 5%, ico is 4%, svg is 2%, gif is 1%, webp is 2%, and finally tif is 0%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=283728620&format=interactive",
   sheets_gid="942056773",
   sql_file="alt_ending_in_image_extension.sql"
@@ -435,7 +434,7 @@ The most common file extensions found in alt text values (for sites with non-emp
 {{ figure_markup(
   image="alt-attribute-lengths.png",
   caption="alt attribute lengths.",
-  description="A bar chart comparing the length of text alternatives for images for desktop sites. Showing no alt is set on 15%, it is set to empty on 30%, it is 10 characters or less on 17%, 20 characters or less on 15%, 30 characters or less on 8% , 100 characters or less on 15%, and it is greater than 100 characters on 1%."
+  description="A bar chart comparing the length of text alternatives for images for desktop sites. Showing no alt is set on 15%, it is set to empty on 30%, it is 10 characters or less on 17%, 20 characters or less on 15%, 30 characters or less on 8% , 100 characters or less on 15%, and it is greater than 100 characters on 1%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=580789543&format=interactive",
   sheets_gid="1040825973",
   sql_file="common_alt_text_length.sql"
@@ -480,7 +479,7 @@ HTML5 introduced numerous native elements with built-in semantics and roles. For
 {{ figure_markup(
   image="top-10-aria-roles.png",
   caption="Top 10 most common ARIA roles.",
-  description="Bar chart showing button is used by 49% of desktop sites and 50% of mobile sites, presentation by 40% and 39% respectively, dialog by 31%, navigation by 26% and 25%, search by 25%, main by 23%, image by 20%, banner by 16%, contentinfo by 14%, and finally region by 14%."
+  description="Bar chart showing button is used by 49% of desktop sites and 50% of mobile sites, presentation by 40% and 39% respectively, dialog by 31%, navigation by 26% and 25%, search by 25%, main by 23%, image by 20%, banner by 16%, contentinfo by 14%, and finally region by 14%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=176303741&format=interactive",
   sheets_gid="514880281",
   sql_file="common_aria_role.sql"
@@ -531,7 +530,7 @@ An element's accessible name can come from its content (e.g., button text), attr
 {{ figure_markup(
   image="top10-aria-attributes.png",
   caption="Top 10 ARIA attributes.",
-  description="A bar chart showing aria-label is used by 65% of sites, aria-hidden by 63%, aria-expanded by 35% and 34%, aria-live by 29% and 28%, aria-controls by 29% and 28%, aria-labelledby by 27% and 26%, aria-current by 25% and 26%, aria-haspopup by 25% and 23%, aria-describedby by 18% and 16%, and finally aria-atomic by 15% and 14%."
+  description="A bar chart showing aria-label is used by 65% of sites, aria-hidden by 63%, aria-expanded by 35% and 34%, aria-live by 29% and 28%, aria-controls by 29% and 28%, aria-labelledby by 27% and 26%, aria-current by 25% and 26%, aria-haspopup by 25% and 23%, aria-describedby by 18% and 16%, and finally aria-atomic by 15% and 14%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=859350702&format=interactive",
   sheets_gid="941417225",
   sql_file="common_element_attributes.sql"
@@ -545,7 +544,7 @@ We observed that almost 66% of pages evaluated featured at least one element wit
 {{ figure_markup(
   image="button-name-sources.png",
   caption="Button accessible name source.",
-  description="A bar chart showing the contents are used for 59% of desktop buttons and 57% of mobile buttons, aria-label attribute is used for 24%, there is no accessible name for 10% and 12%, the value attribute is used for 6% and 5%, title attribute is used for 1% on both."
+  description="A bar chart showing the contents are used for 59% of desktop buttons and 57% of mobile buttons, aria-label attribute is used for 24%, there is no accessible name for 10% and 12%, the value attribute is used for 6% and 5%, title attribute is used for 1% on both.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=1222426699&format=interactive",
   sheets_gid="883063802",
   sql_file="button_name_sources.sql"
@@ -644,7 +643,7 @@ This technology does not replace the need for good accessibility practices. Acce
 {{ figure_markup(
   image="pages-using-a11y-apps.png",
   caption="Pages using accessibility apps (overlays).",
-  description="A bar chart showing 2024 data with almost 2% of desktop sites and almost 1.7% of mobile sites use an accessibility app. The chart also compares 2022 and 2021 data on this. There is almost a doubling in desktop use of overlays compared to 2021, when it was just under 1% for desktops and .8% for mobile. 2022 data for desktop and mobile is 1.6% and 1.2%, so inline with the growth observed."
+  description="A bar chart showing 2024 data with almost 2% of desktop sites and almost 1.7% of mobile sites use an accessibility app. The chart also compares 2022 and 2021 data on this. There is almost a doubling in desktop use of overlays compared to 2021, when it was just under 1% for desktops and .8% for mobile. 2022 data for desktop and mobile is 1.6% and 1.2%, so inline with the growth observed.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=924673292&format=interactive",
   sheets_gid="1139100212",
   sql_file="a11y_technology_usage.sql"
@@ -656,7 +655,7 @@ In 2024, we observed that almost 2% of desktop websites utilize known accessibil
 {{ figure_markup(
   image="a11y-app-usage-by-rank.png",
   caption="Accessibility app usage by rank.",
-  description="A bar chart showing that for the 4 most commonly used overlay brands and the percentile in a grouping rank of the top 1000, 10000, 100000, 1000000, 10000000, 100000000. UserWay is the most popular, followed by AccessiBe, AudioEye and EqualWeb. For comparison, just looking at the top 10 million pages, we see Userway with 0.71%, Accessiby with 0.49%, AudioEye with 0.45% and EqualWeb with 0.04%. AccessiBe seems to outperform compared with other values in the top million sites. AudioEye seems to be popular in the top 10,000 sites."
+  description="A bar chart showing that for the 4 most commonly used overlay brands and the percentile in a grouping rank of the top 1000, 10000, 100000, 1000000, 10000000, 100000000. UserWay is the most popular, followed by AccessiBe, AudioEye and EqualWeb. For comparison, just looking at the top 10 million pages, we see Userway with 0.71%, Accessiby with 0.49%, AudioEye with 0.45% and EqualWeb with 0.04%. AccessiBe seems to outperform compared with other values in the top million sites. AudioEye seems to be popular in the top 10,000 sites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=1842351478&format=interactive",
   sheets_gid="251539385",
   sql_file="a11y_technology_usage_by_domain_rank.sql"
@@ -668,7 +667,7 @@ UserWay is the most widely used overlay in our dataset.
 {{ figure_markup(
   image="pages-using-a11y-apps-by-rank.png",
   caption="Pages using accessibility apps by rank.",
-  description="A bar chart showing that for the top 1,000 sites, 0.3% on desktop and 0.2% on mobile use and accessibility app, for the top 10,000 it's 0.5% and 0.4% respectively, for the top 100,000 it's 0.8% and 0.7%, for the top million it's 1.1% and 1.0%, for the top 10 million it's 1.2% and 1.0%, for the top 100 million it's 1.0% and 0.9%."
+  description="A bar chart showing that for the top 1,000 sites, 0.3% on desktop and 0.2% on mobile use and accessibility app, for the top 10,000 it's 0.5% and 0.4% respectively, for the top 100,000 it's 0.8% and 0.7%, for the top million it's 1.1% and 1.0%, for the top 10 million it's 1.2% and 1.0%, for the top 100 million it's 1.0% and 0.9%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=2030664465&format=interactive",
   sheets_gid="300879270",
   sql_file="a11y_overall_tech_usage_by_domain_rank.sql"
@@ -700,7 +699,7 @@ There are two means by which we can identify country information, first by the G
 {{ figure_markup(
   image="country-by-geoid.png",
   caption="Most accessibile countries by GeoID.",
-  description="A bar cart with the GeoID, the country with the highest average for accessibility is the USA with a value of 84.3%. There is a drop of less a perscent as we move to Canada, UK, Australia, Germany, Netherlands, France, Mexico, Italy, Spain, Argentina, Indonesia, India, Poland, Brazil, Japan, Turkey, Vietnam, China and finally the Republic of Korea with 77.7%. These were for countries that hosted more than 100000 domains."
+  description="A bar cart with the GeoID, the country with the highest average for accessibility is the USA with a value of 84.3%. There is a drop of less a perscent as we move to Canada, UK, Australia, Germany, Netherlands, France, Mexico, Italy, Spain, Argentina, Indonesia, India, Poland, Brazil, Japan, Turkey, Vietnam, China and finally the Republic of Korea with 77.7%. These were for countries that hosted more than 100000 domains.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=421126157&format=interactive",
   sheets_gid="260430925",
   sql_file="lighthouse_score_by_country.sql"
@@ -714,7 +713,7 @@ The following map shows the average desktop accessibility score by country top l
 {{ figure_markup(
   image="country-by-tld-globe.png",
   caption="Map of the accessibile countries by Top Level Domain (TLD).",
-  description="In looking at Top Level Domains with more than 45000 domains, we learn about accessibility. Displayed visually in a world map the most accessible countries are Norway, Filand, Canada, USA, UK, Sweden, Ireland, Australia, New Zealand, Austria, Belgium, Switzerland, Denmark, and South Africa. China is the least accessible by Top Level Domain. "
+  description="In looking at Top Level Domains with more than 45000 domains, we learn about accessibility. Displayed visually in a world map the most accessible countries are Norway, Filand, Canada, USA, UK, Sweden, Ireland, Australia, New Zealand, Austria, Belgium, Switzerland, Denmark, and South Africa. China is the least accessible by Top Level Domain. ",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=783736776&format=interactive",
   sheets_gid="1209052596",
   sql_file="lighthouse_score_by_tld"
@@ -726,7 +725,7 @@ But it is a bit easier to see the TLD ranked and including the non-country codes
 {{ figure_markup(
   image="country-by-tld.png",
   caption="Accessibile countries by Top Level Domain (TLD).",
-  description="A bar cart with looking at Top Level Domains with more than 45000 domains, we learn about accessibility. Displayed as a bar chart with the accessible domains .edu (Education), .gov (US Government), Norway, Filand, .io, Canada, USA, .app, UK, Sweden, Ireland, Australia, New Zealand, .co, Austria, Belgium, Switzerland, Denmark, and South Africa, .org."
+  description="A bar cart with looking at Top Level Domains with more than 45000 domains, we learn about accessibility. Displayed as a bar chart with the accessible domains .edu (Education), .gov (US Government), Norway, Filand, .io, Canada, USA, .app, UK, Sweden, Ireland, Australia, New Zealand, .co, Austria, Belgium, Switzerland, Denmark, and South Africa, .org.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=783736776&format=interactive",
   sheets_gid="1209052596",
   sql_file="lighthouse_score_by_tld"
@@ -742,7 +741,7 @@ Not all government domains follow consistent accessibility rules, however we wer
 {{ figure_markup(
   image="accessible-governments.png",
   caption="Most accessible government websites.",
-  description="A bar cart with with the most accessible global governments. The Netherlands (97.6%), Luxembourg (95.7%), Finland (93.8%), UK (92.3%), European Union (91.5%), Norway (91.2%), Jersey (91.2%), Singapore (91.1%), Belgium (90.9%), Germany (90.8%),  France (90.0%), Australia (89.3%), New Zealand (88.9%), Dnmark (88.9%). "
+  description="A bar cart with with the most accessible global governments. The Netherlands (97.6%), Luxembourg (95.7%), Finland (93.8%), UK (92.3%), European Union (91.5%), Norway (91.2%), Jersey (91.2%), Singapore (91.1%), Belgium (90.9%), Germany (90.8%),  France (90.0%), Australia (89.3%), New Zealand (88.9%), Dnmark (88.9%). ",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=415917251&format=interactive",
   sheets_gid="720509689",
   sql_file="lighthouse_score_by_government.sql"
@@ -754,7 +753,7 @@ Most modern governments have committed to either WCAG 2.0 AA or WCAG 2.1 AA. It 
 {{ figure_markup(
   image="accessible-governments-world.png",
   caption="Map of the accessibility of global government websites.",
-  description="The map simply illustrates visually the table above. Scandinavian countries stand out as do many in Europe. Australia and New Zealand are highlighted in the Pacific. Canada is slightly darker than the United States."
+  description="The map simply illustrates visually the table above. Scandinavian countries stand out as do many in Europe. Australia and New Zealand are highlighted in the Pacific. Canada is slightly darker than the United States.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=1696489298&format=interactive",
   sheets_gid="720509689",
   sql_file="lighthouse_score_by_government.sql"
@@ -770,7 +769,7 @@ We can also review the accessibility of various states.
 {{ figure_markup(
   image="US-state-governments.png",
   caption="The most accessible US state governments.",
-  description="A bar cart with with the most accessible states in the US.  Colorado (96.2%), Vermont (94.0%), Nevada (92.5%), South Carolina (90.6%), Georgia (90.6%), North Carolina (90.5%), Kansas (90.1%), Maine (90.0%), California (89.8%), New York (89.8%), Hawaii (89.1%), DC (89.1%), Rhode Island (89.1%), Missouri (89.1%), Massachusettes (89.0%), New Hampshire (88.9%), Minnesota (88.6%), Michigan (88.5%), Oregon (88.4%), Iowa (88.0%)."
+  description="A bar cart with with the most accessible states in the US.  Colorado (96.2%), Vermont (94.0%), Nevada (92.5%), South Carolina (90.6%), Georgia (90.6%), North Carolina (90.5%), Kansas (90.1%), Maine (90.0%), California (89.8%), New York (89.8%), Hawaii (89.1%), DC (89.1%), Rhode Island (89.1%), Missouri (89.1%), Massachusettes (89.0%), New Hampshire (88.9%), Minnesota (88.6%), Michigan (88.5%), Oregon (88.4%), Iowa (88.0%).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=174949843&format=interactive",
   sheets_gid="720509689",
   sql_file="lighthouse_score_by_government.sql"
@@ -781,7 +780,7 @@ We can also review the accessibility of various states.
 {{ figure_markup(
   image="US-state-governments-map.png",
   caption="Map of the most accessible US state governments.",
-  description="Visualization of the data above with a US state specific map."
+  description="Visualization of the data above with a US state specific map.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=1855786285&format=interactive",
   sheets_gid="720509689",
   sql_file="lighthouse_score_by_government.sql"
@@ -801,7 +800,7 @@ When most folks think about CMS, they think about the ones that you can download
 {{ figure_markup(
   image="traditional-cms.png",
   caption="A bar cart with the accessible traditional Content Management Systems (CMS).",
-  description="The most accessible CMS with over 10,000 instances are AEM (86.8%), Contentful (86.7%), Sitecore (85.0%), WordPress (84.5%), Craft CMS (84.0%), Contao (84.0%), Drupal (83.7%), Liferay (83.4%), TypoCMS (82.7%), DNN (81.6%)."
+  description="The most accessible CMS with over 10,000 instances are AEM (86.8%), Contentful (86.7%), Sitecore (85.0%), WordPress (84.5%), Craft CMS (84.0%), Contao (84.0%), Drupal (83.7%), Liferay (83.4%), TypoCMS (82.7%), DNN (81.6%).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=174688785&format=interactive",
   sheets_gid="686463338",
   sql_file="lighthouse_score_by_cms.sql"
@@ -827,7 +826,7 @@ There are many tools which can be used to help authors evaluate the accessibilit
 {{ figure_markup(
   image="platform-cms.png",
   caption="A bar cart with the most accessible Website Platform Content Management Systems (CMS).",
-  description="A bar graph with with the most accessible CMS: Wix (93.6%), Squarespace (92.4%), Google Sites (90.1%), Duda (87.4%), HubSpot CMS (87.4%), Pixnet (85.8%), Weebly (85.7%), GoDaddy Website Builder (84.5%), WebNode (84.1%), Tilda (82.9%)."
+  description="A bar graph with with the most accessible CMS: Wix (93.6%), Squarespace (92.4%), Google Sites (90.1%), Duda (87.4%), HubSpot CMS (87.4%), Pixnet (85.8%), Weebly (85.7%), GoDaddy Website Builder (84.5%), WebNode (84.1%), Tilda (82.9%).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=1383581431&format=interactive",
   sheets_gid="686463338",
   sql_file="lighthouse_score_by_cms.sql"
@@ -857,7 +856,7 @@ The differences are showing that it is possible for CMSs to make an impact on Ac
 {{ figure_markup(
   image="javascript-frontend-ui.png",
   caption="Most Accessible JavaScript Frontend UI Frameworks",
-  description="A bar cart with ranked with Stimulus (90.6%), Remix (89.4%), Owik (89.2%), Astro (88.7%), OpenUI5 (88.7%), Next.js (86.9%), React (86.8%), AlpineJS (85.7%), Htmx (84.6%), Svelte (84.8%), Ember.js (84.6%)."
+  description="A bar cart with ranked with Stimulus (90.6%), Remix (89.4%), Owik (89.2%), Astro (88.7%), OpenUI5 (88.7%), Next.js (86.9%), React (86.8%), AlpineJS (85.7%), Htmx (84.6%), Svelte (84.8%), Ember.js (84.6%).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=1864888468&format=interactive",
   sheets_gid="1029816121",
   sql_file="lighthouse_score_by_frontend.sql"
@@ -869,7 +868,7 @@ Stimulus, Remix and Qwik are several percent more accessible on average than Rea
 {{ figure_markup(
   image="javascript-meta-frameworks.png",
   caption="Most Accessible JavaScript Meta-frameworks",
-  description="A bar cart with meta-frameworks are in the following order RedwoodJS (92.1%), Remix (89.4%), Astro(88.7%), SolidStart(88.1%), Gatsby (87.9%), Next.js (86.9%), Nuxt.js (84.5%), AdonisJS (82.2%), Quasar (81.5%), Meteor (72.9%)."
+  description="A bar cart with meta-frameworks are in the following order RedwoodJS (92.1%), Remix (89.4%), Astro(88.7%), SolidStart(88.1%), Gatsby (87.9%), Next.js (86.9%), Nuxt.js (84.5%), AdonisJS (82.2%), Quasar (81.5%), Meteor (72.9%).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=506578618&format=interactive",
   sheets_gid="1029816121",
   sql_file="lighthouse_score_by_frontend.sql"
