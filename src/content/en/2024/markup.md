@@ -28,7 +28,7 @@ We encourage readers to dive deeper into the data, explore their own insights, a
 
 ## General
 
-Let's start with some of the more general aspects of a markup document. In this section we're covering the document types, the size of the documents, language and compression. 
+Let's start with some of the more general aspects of a markup document. In this section we're covering the document types, the size of the documents, language and compression.
 
 ### Doctypes
 
@@ -90,7 +90,7 @@ Let's start with some of the more general aspects of a markup document. In this 
   </figcaption>
 </figure>
 
-93% of all  mobile pages use the standard HTML doctype. That is, `<!DOCTYPE html>`.  
+93% of all  mobile pages use the standard HTML doctype. That is, `<!DOCTYPE html>`.
 
 {{ figure_markup(
   content="93%",
@@ -104,7 +104,7 @@ This is 3 percentage points higher than [the 2022 data](https://almanac.httparch
 
 ### Document size
 
-A page's document size is the amount of HTML bytes transferred over the network, including compression. 
+A page's document size is the amount of HTML bytes transferred over the network, including compression.
 
 {{ figure_markup(
   image="document_trends.png",
@@ -116,7 +116,7 @@ A page's document size is the amount of HTML bytes transferred over the network,
   )
 }}
 
-After a slight decrease in 2023, the HTML transfer size increased this year compared to 2022 and 2023\. 
+After a slight decrease in 2023, the HTML transfer size increased this year compared to 2022 and 2023\.
 
 Although the median looks like something reasonable, let's take a closer look at the other percentiles.
 
@@ -134,7 +134,7 @@ The percentile distribution reveals that at the 10th percentile, HTML files are 
 
 ### Compression
 
-In the context of analyzing HTML document files, compression continues to play a crucial role in improving load times and overall performance. 
+In the context of analyzing HTML document files, compression continues to play a crucial role in improving load times and overall performance.
 
 {{ figure_markup(
   image="content_encoding.png",
@@ -148,7 +148,7 @@ In the context of analyzing HTML document files, compression continues to play a
 
 One notable trend is the increasing popularity of the Brotli (`br`) compression format. In 2024, Brotli is used on 37% of mobile pages, a steady increase from 28% in 2023\.
 
-While `gzip` remains the most widely used compression method (52% on mobile), its usage has slightly declined from previous year as `br` gains traction (58% in 2022). 
+While `gzip` remains the most widely used compression method (52% on mobile), its usage has slightly declined from previous year as `br` gains traction (58% in 2022).
 
 Despite these improvements, a small percentage of HTML files (10.5% on mobile) are still served without any compression, presenting missed opportunities for optimization.
 
@@ -162,9 +162,9 @@ Despite these improvements, a small percentage of HTML files (10.5% on mobile) a
   sql_file="distinct_lang.sql",
 ) }}
 
-In our analysis, we've encountered 5,625 unique instances of the `lang` attribute on the `html` element on mobile. 
+In our analysis, we've encountered 5,625 unique instances of the `lang` attribute on the `html` element on mobile.
 
-The HTML `lang` attribute plays an important role in helping screen readers and search engines understand the language of a webpage's content. However, interestingly, Google Search ignores the lang attribute when determining the language of a page because [they've identified that “it is almost always wrong”](https://www.youtube.com/watch?v=isW-Ke-AJJU&t=3354s). This may explain why `en` remains dominant in the dataset, with 44.2% of desktop and 40.5% of mobile pages using it as the primary language attribute, even though the actual language of the content might differ. 
+The HTML `lang` attribute plays an important role in helping screen readers and search engines understand the language of a webpage's content. However, interestingly, Google Search ignores the lang attribute when determining the language of a page because [they've identified that "it is almost always wrong"](https://www.youtube.com/watch?v=isW-Ke-AJJU&t=3354s). This may explain why `en` remains dominant in the dataset, with 44.2% of desktop and 40.5% of mobile pages using it as the primary language attribute, even though the actual language of the content might differ.
 
 {{ figure_markup(
   image="popular_lang.png",
@@ -178,11 +178,11 @@ The HTML `lang` attribute plays an important role in helping screen readers and 
 
 Additionally, 13.4% of desktop and 12.9% of mobile pages have no `lang` attribute set at all, showing that many websites fail to provide this indicator.
 
-If we aggregate the percentages of non-English and non-"not set" `lang` values, we still capture around 46% of the total pages, reflecting the truly global nature of web content. However, as mentioned above, it's important to remember that the high proportion of `en` values doesn't always mean the content is in English, given the frequent misconfiguration of the `lang` attribute. 
+If we aggregate the percentages of non-English and non-"not set" `lang` values, we still capture around 46% of the total pages, reflecting the truly global nature of web content. However, as mentioned above, it's important to remember that the high proportion of `en` values doesn't always mean the content is in English, given the frequent misconfiguration of the `lang` attribute.
 
 In terms of non-English languages, `ja` (Japanese) and `es` (Spanish) stand out as some of the most popular choices, used on approximately 5-6% of pages.
 
-The most common regional variant, `en-us`, appears on 16.7% of desktop and 14.9% of mobile pages. 
+The most common regional variant, `en-us`, appears on 16.7% of desktop and 14.9% of mobile pages.
 
 {{ figure_markup(
   image="popular_regional_lang.png",
@@ -194,11 +194,11 @@ The most common regional variant, `en-us`, appears on 16.7% of desktop and 14.9%
   )
 }}
 
-Despite the issues with incorrect lang attribute values, the attribute still plays a vital role in improving accessibility. For users with screen readers, setting the `lang` attribute correctly remains an essential practice in modern web development. 
+Despite the issues with incorrect lang attribute values, the attribute still plays a vital role in improving accessibility. For users with screen readers, setting the `lang` attribute correctly remains an essential practice in modern web development.
 
 ### Comments
 
-HTML comments are snippets of text that developers include within their code to leave notes or explanations without affecting the visual display of the webpage. These comments are enclosed in `<!-- -->` tags and are not rendered by browsers, meaning users will never see them. While useful during the development process, HTML comments are not necessary in production code, as they can slightly increase the file size without any benefit to end users.  
+HTML comments are snippets of text that developers include within their code to leave notes or explanations without affecting the visual display of the webpage. These comments are enclosed in `<!-- -->` tags and are not rendered by browsers, meaning users will never see them. While useful during the development process, HTML comments are not necessary in production code, as they can slightly increase the file size without any benefit to end users.
 
 {{ figure_markup(
   content="86%",
@@ -208,15 +208,15 @@ HTML comments are snippets of text that developers include within their code to 
   sql_file="comments.sql",
 ) }}
 
-According to our analysis, 86% of mobile pages still contain at least one comment. 
+According to our analysis, 86% of mobile pages still contain at least one comment.
 
 In addition to regular comments, there's a specific type known as **conditional comments**. These were once used extensively to target specific versions of Internet Explorer (IE), allowing developers to provide custom styles or scripts that only older IE browsers would process.
 
-`<!--[if IE]>`  
-`<link rel="stylesheet" href="ie-only-styles.css">`   
+`<!--[if IE]>`
+`<link rel="stylesheet" href="ie-only-styles.css">`
 `<![endif]-->`
 
-With modern browsers and the retirement of Internet Explorer, conditional comments have become obsolete. Despite this, **26%** of mobile pages still contain conditional comments, likely due to legacy code that was never cleaned up, or because some sites continue to support older versions of Internet Explorer for compatibility reasons. 
+With modern browsers and the retirement of Internet Explorer, conditional comments have become obsolete. Despite this, **26%** of mobile pages still contain conditional comments, likely due to legacy code that was never cleaned up, or because some sites continue to support older versions of Internet Explorer for compatibility reasons.
 
 ## Elements
 
@@ -357,13 +357,13 @@ The list remains largely consistent with previous years, but some shifts have oc
   )
 }}
 
-Following `<div>`, the `<a>` element remains a key player, consistently in second place. As the backbone of hyperlinking, it plays a critical role in navigation, anchoring user journeys across sites. 
+Following `<div>`, the `<a>` element remains a key player, consistently in second place. As the backbone of hyperlinking, it plays a critical role in navigation, anchoring user journeys across sites.
 
 One of the notable shifts in recent years has been the increased usage of `<script>`. In 2023, it surpassed `<img>` in popularity, reflecting the growing reliance on JavaScript for dynamic content, interactivity, front-end logic, and trace marketing campaigns . The trend has continued in 2024, solidifying `<script>` as the fifth most-used element.
 
 Another notable shift is the emergence of `<path`\>, which entered the top 10 in 2023\. In 2024, it has surpassed `<meta>`, reflecting the increasing use of Scalable Vector Graphics (SVG) for icons, illustrations, and graphical elements.
 
-The adoption of top HTML elements across both desktop and mobile platforms remains consistently high, reflecting their foundational role in modern web development. The `<html>`, `<head>,` and `<body>` elements are nearly ubiquitous, appearing on over 99.7% of both desktop and mobile pages. 
+The adoption of top HTML elements across both desktop and mobile platforms remains consistently high, reflecting their foundational role in modern web development. The `<html>`, `<head>,` and `<body>` elements are nearly ubiquitous, appearing on over 99.7% of both desktop and mobile pages.
 
 {{ figure_markup(
   image="elements_per_page.png",
@@ -375,13 +375,13 @@ The adoption of top HTML elements across both desktop and mobile platforms remai
   )
 }}
 
-A notable observation is that 0.9% of mobile pages are missing the `<title>` tag, similar to the [2022 data](https://almanac.httparchive.org/en/2022/markup#top-elements) (1%). 
+A notable observation is that 0.9% of mobile pages are missing the `<title>` tag, similar to the [2022 data](https://almanac.httparchive.org/en/2022/markup#top-elements) (1%).
 
-The next elements, `<link>`, `<a>`, `<script>`, and `<img>`, also have strong adoption rates. It's also interesting to see the increasing use of SVG (Scalable Vector Graphics), even though this tag is not part of the top 15 elements. `<svg>` adoption on mobile has grown from 45.5% in 2022 to 51.6% in 2024, marking a significant shift towards more scalable, resolution-independent graphics on the web. 
+The next elements, `<link>`, `<a>`, `<script>`, and `<img>`, also have strong adoption rates. It's also interesting to see the increasing use of SVG (Scalable Vector Graphics), even though this tag is not part of the top 15 elements. `<svg>` adoption on mobile has grown from 45.5% in 2022 to 51.6% in 2024, marking a significant shift towards more scalable, resolution-independent graphics on the web.
 
 ### Custom elements
 
-Custom elements, easily recognized by their hyphenated names, have once again made their mark in our analysis this year, showcasing their continued importance in extending HTML's native functionality. 
+Custom elements, easily recognized by their hyphenated names, have once again made their mark in our analysis this year, showcasing their continued importance in extending HTML's native functionality.
 
 {{ figure_markup(
   image="custom_elements_adoption.png",
@@ -421,13 +421,13 @@ Let's now take a closer look at the top 10 custom elements:
   )
 }}
 
-As in the [2022 edition](https://almanac.httparchive.org/en/2022/markup#custom-elements), most of the top 10 custom elements are dominated by `rs-*` elements from [Slider Revolution](https://www.sliderrevolution.com/). However, this year we see a new (and surprising) winner: `wow-image` element, which is used by the [@wix/image package](https://www.npmjs.com/package/@wix/image) on Wix sites.  
+As in the [2022 edition](https://almanac.httparchive.org/en/2022/markup#custom-elements), most of the top 10 custom elements are dominated by `rs-*` elements from [Slider Revolution](https://www.sliderrevolution.com/). However, this year we see a new (and surprising) winner: `wow-image` element, which is used by the [@wix/image package](https://www.npmjs.com/package/@wix/image) on Wix sites.
 
 The last of this year's top 10 list is also a newcomer: `predictive-search` , a Shopify component that shows suggested results as you type.
 
 ### Obsolete elements
 
-There are currently [29 obsolete and deprecated elements](https://html.spec.whatwg.org/multipage/obsolete.html#non-conforming-features) according to HTML specification. And except from keygen, all of them still appear in some (or many) pages of this year's dataset.  
+There are currently [29 obsolete and deprecated elements](https://html.spec.whatwg.org/multipage/obsolete.html#non-conforming-features) according to HTML specification. And except from keygen, all of them still appear in some (or many) pages of this year's dataset.
 
 {{ figure_markup(
   image="obsolete_elements.png",
@@ -497,7 +497,7 @@ The overall data shows that 90% of the analyzed documents use at least one `data
   )
 }}
 
-Analyzing the popularity of `data-*` attributes from 2022 to 2024 reveals some interesting shifts in their usage. This year, `data-id` is the most popular, used on 24% of mobile pages, a significant increase from 19% in 2022\. This increase also marked a significant jump from fifth place in 2022 to first place this year. 
+Analyzing the popularity of `data-*` attributes from 2022 to 2024 reveals some interesting shifts in their usage. This year, `data-id` is the most popular, used on 24% of mobile pages, a significant increase from 19% in 2022\. This increase also marked a significant jump from fifth place in 2022 to first place this year.
 
 Another notable change is the appearance of new elements in the list: `data-load-time` and `data-tagging-id` appear on 20% of pages in 2024, occupying the second and third position of the ranking. These attributes were not part of the `data-*` attributes identified in 2022, indicating that performance tracking and tagging have become more important in modern web development.
 
@@ -525,12 +525,12 @@ Social markup refers to the set of meta tags embedded within HTML documents that
   )
 }}
 
-According to 2024 data, the most frequently used Open Graph meta tags are `og:title` (used by 61% of mobile pages) and `og:url` (58%). These tags define the title and canonical URL of the shared content, followed closely by `og:type` (56%) and `og:description` (53%), which offer insights into the content type and a brief summary.   
+According to 2024 data, the most frequently used Open Graph meta tags are `og:title` (used by 61% of mobile pages) and `og:url` (58%). These tags define the title and canonical URL of the shared content, followed closely by `og:type` (56%) and `og:description` (53%), which offer insights into the content type and a brief summary.
 Twitter-specific meta tags like `twitter:card` (45%) and `twitter:description` (24%) are also still widely used, even though the platform is now branded as "X," illustrating a lag in terminology updates across the platform.
 
 ## Miscellaneous
 
-In the preceding sections, we have provided an overview of HTML in general, as well as the adoption of the most commonly used elements and attributes. In this section, we will undertake a deeper analysis of some special cases, including viewports, favicons, buttons, inputs, and links. 
+In the preceding sections, we have provided an overview of HTML in general, as well as the adoption of the most commonly used elements and attributes. In this section, we will undertake a deeper analysis of some special cases, including viewports, favicons, buttons, inputs, and links.
 
 ### `viewport` specifications
 
@@ -546,7 +546,7 @@ The `viewport` meta tag specifies how the content should be scaled on various de
   )
 }}
 
-In terms of current usage, the most common configuration is `width=device-width,initial-scale=1`, present on 50% of mobile pages. Interestingly, 5.4% of the pages analyzed on mobile have no viewport tag. So, these pages are not designed for mobile experiences. Other configurations include variations like `width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0`, which disables user scaling, found on 4.4% of mobile pages. 
+In terms of current usage, the most common configuration is `width=device-width,initial-scale=1`, present on 50% of mobile pages. Interestingly, 5.4% of the pages analyzed on mobile have no viewport tag. So, these pages are not designed for mobile experiences. Other configurations include variations like `width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0`, which disables user scaling, found on 4.4% of mobile pages.
 
 ### Favicons
 
@@ -562,7 +562,7 @@ Favicons, those small icons associated with websites, play an important role in 
   )
 }}
 
-As of 2024, `.png` is the most commonly used format for favicons informed by `<link rel=”icon”>` tags, appearing on 42% of mobile pages, up from 35% in 2021\. In contrast, the use of `.ico` files has decreased from 33% in 2021 to 27%, likely due to developers moving away from this format in favor of other options like .`png` and .`svg`. However, it’s interesting to highlight that .`svg` favicons [are not supported on Safari](https://caniuse.com/link-icon-svg).
+As of 2024, `.png` is the most commonly used format for favicons informed by `<link rel="icon">` tags, appearing on 42% of mobile pages, up from 35% in 2021\. In contrast, the use of `.ico` files has decreased from 33% in 2021 to 27%, likely due to developers moving away from this format in favor of other options like .`png` and .`svg`. However, it's interesting to highlight that .`svg` favicons [are not supported on Safari](https://caniuse.com/link-icon-svg).
 
 Interestingly, about 18% of pages still lack a favicon, showing a slight improvement from the 22% that had no favicon in 2021\.
 
@@ -578,7 +578,7 @@ Buttons in web development have been a source of frequent debate due to their du
   sql_file="element_popularity.sql",
 ) }}
 
-73% of mobile pages use at least one `<button`\> element on them,  a significant increase from [65.5% in 2021](https://almanac.httparchive.org/en/2021/markup#button-and-input-types). Like in 2021,  we didn’t run a query for input\-typed buttons, but the Accessibility chapter has more very interesting information about buttons. You should read it too\!
+73% of mobile pages use at least one `<button`\> element on them,  a significant increase from [65.5% in 2021](https://almanac.httparchive.org/en/2021/markup#button-and-input-types). Like in 2021,  we didn't run a query for input\-typed buttons, but the Accessibility chapter has more very interesting information about buttons. You should read it too\!
 
 {{ figure_markup(
   image="buttons.png",
@@ -592,12 +592,12 @@ Buttons in web development have been a source of frequent debate due to their du
 
 Here's a closer look at the breakdown:
 
-* The generic `<button>` element appears on 46.5% of mobile pages. The button has no default behavior so it can have client-side scripts listen to the element's events.  
-* 44.7% of mobile pages use `<button type="button">`, which is typically employed for actions not associated with form submissions (e.g., triggering JavaScript functions).  
-* The `<button type="submit">` variant, used specifically for form submission, is present on 34.1% of mobile pages.   
+* The generic `<button>` element appears on 46.5% of mobile pages. The button has no default behavior so it can have client-side scripts listen to the element's events.
+* 44.7% of mobile pages use `<button type="button">`, which is typically employed for actions not associated with form submissions (e.g., triggering JavaScript functions).
+* The `<button type="submit">` variant, used specifically for form submission, is present on 34.1% of mobile pages.
 * `<button type="reset"`\> is relatively rare, seen on just 1.4% of mobile pages, indicating that resetting forms is less common or developers opt for custom solutions.
 
-Apart from buttons, certain `input` elements are also rendered and used as buttons. 
+Apart from buttons, certain `input` elements are also rendered and used as buttons.
 
 {{ figure_markup(
   image="buttons.png",
@@ -609,7 +609,7 @@ Apart from buttons, certain `input` elements are also rendered and used as butto
   )
 }}
 
-Data shows that 25.2% of mobile pages in our data set have at least one `<input type=”submit”>` element, 2.8% have at least one `<input type=”button”>` element, and 1.1% have at least one `<input type=”image”>` element. 
+Data shows that 25.2% of mobile pages in our data set have at least one `<input type="submit">` element, 2.8% have at least one `<input type="button">` element, and 1.1% have at least one `<input type="image">` element.
 
 
 ### Link targets
@@ -672,17 +672,17 @@ In modern browsers, this security issue has been resolved: now, when `target="_b
   ) }}</figcaption>
 </figure>
 
-Looking at the data, 81% of pages use `target="_blank"`. Interestingly, 76% of pages include at least one `target="_blank"` link with `noopener` and `noreferrer` while 67% have `target="_blank"` without `noopener` and `noreferrer`. Additionally, 24% of mobile pages always use `target="_blank"` links with `noopener` and `noreferrer`. 
+Looking at the data, 81% of pages use `target="_blank"`. Interestingly, 76% of pages include at least one `target="_blank"` link with `noopener` and `noreferrer` while 67% have `target="_blank"` without `noopener` and `noreferrer`. Additionally, 24% of mobile pages always use `target="_blank"` links with `noopener` and `noreferrer`.
 
 ## Conclusion
 
-The analysis of HTML usage in 2024 reveals significant trends and insights that underscore its evolution and the ongoing relevance of this foundational language in web development. 
+The analysis of HTML usage in 2024 reveals significant trends and insights that underscore its evolution and the ongoing relevance of this foundational language in web development.
 
 One of the most notable findings is the increasing standardization around the HTML doctype, with 93% of mobile pages now using the standard `<!DOCTYPE html>`. This reflects a positive shift towards compliance with web standards, though XHTML remains present.
 
 Document size has seen a slight increase, indicating a trend towards more complex pages, yet the use of compression—especially Brotli—has become more prevalent, which enhances load performance. However, the continued absence of compression in about 10% of HTML files suggests that there are still optimization opportunities for many developers.
 
-The rise of custom elements usage, which has increased from 3.6% to 7.9%, indicates a growing trend for building richer, more interactive web experiences. The presence of obsolete items, while decreasing, still indicates the need for ongoing code maintenance and adoption of modern standards.  
+The rise of custom elements usage, which has increased from 3.6% to 7.9%, indicates a growing trend for building richer, more interactive web experiences. The presence of obsolete items, while decreasing, still indicates the need for ongoing code maintenance and adoption of modern standards.
 
 Surprisingly, the top `data-*` attribute list shows significant changes, with a completely different top 3 attributes in it. `data-id`, `data-load-time`, and `data-tagging-id` usage suggests that performance tracking and tagging have become more important in current web development.
 
