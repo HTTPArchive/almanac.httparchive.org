@@ -375,9 +375,7 @@ The adoption of top HTML elements across both desktop and mobile platforms remai
   )
 }}
 
-However, the elements analyzed here are part of the Document Object Model (DOM), and key structural tags like `<html>`, `<head>`, and `<body>` are automatically inserted by the browser when missing from the source code. On mobile (99.8% for `<html>` and `<head>`, and 99.7% for `<body>`), the small percentage of missing tags is likely due to JavaScript APIs overriding or dynamically altering the DOM, which can result in some pages lacking these fundamental elements.
-
-Another notable observation is that 0.9% of mobile pages are missing the `<title>` tag, despite it being a required element in HTML documents. The absence of a `<title>` tag can negatively affect a page's SEO performance, user experience, and accessibility, as it plays a critical role in displaying the page name in search engine results and browser tabs, and it's read by screen readers when opening a page. 
+A notable observation is that 0.9% of mobile pages are missing the `<title>` tag, similar to the [2022 data](https://almanac.httparchive.org/en/2022/markup#top-elements) (1%). 
 
 The next elements, `<link>`, `<a>`, `<script>`, and `<img>`, also have strong adoption rates. It's also interesting to see the increasing use of SVG (Scalable Vector Graphics), even though this tag is not part of the top 15 elements. `<svg>` adoption on mobile has grown from 45.5% in 2022 to 51.6% in 2024, marking a significant shift towards more scalable, resolution-independent graphics on the web. 
 
