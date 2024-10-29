@@ -29,9 +29,15 @@ Good accessibility is beneficial to everyone, not just those with disabilities. 
 
 [Microsoft Inclusive Design Guidelines](https://inclusive.microsoft.design/) goes beyond permanent disability scenarios and extend them to temporary or situational limitations. Human abilities vary. No matter if a person has lost an arm (permanent), or is wearing a cast because of an accident (temporary) or holding a baby (situational limitation), being able to use the computer or phone with one hand or voice interaction benefits them all.
 
-[![Microsoft's Inclusive Design illustration focusing on disability ass - permanent (one arm), temporary (arm injury) and situational (new parent)][image2]]
-
-This image and approach is courtesy of their [Inclusive 101 Guidebook](https://inclusive.microsoft.design/tools-and-activities/Inclusive101Guidebook.pdf).
+{{ figure_markup(
+  image="microsoft-inclusivity-gudelines.png",
+  alt="Microsoft's Inclusive Design illustration.",
+  caption='Microsoft\'s Inclusive Design illustration.<br>This image and approach is courtesy of their <a hreflang="en" href="https://inclusive.microsoft.design/tools-and-activities/Inclusive101Guidebook.pdf">Inclusive 101 Guidebook</a>.',
+  description="Microsoft's Inclusive Design illustration focusing on disability scenarios—permanent (one arm), temporary (arm injury) and situational (new parent).",
+  width=404,
+  height=658
+  )
+}}
 
 Governments worldwide recognize that digital accessibility is not only a moral obligation but also in many instances legally required. Accessibility is also great for commerce and democracy. For example, the European Union mandates that by June 2025, websites in a wide range of sectors must adhere to the  [Web Content Accessibility Guidelines (WCAG)](https://www.w3.org/WAI/standards-guidelines/wcag/) principles (via the [EN 301 549](https://en.wikipedia.org/wiki/EN_301_549) standard). This will ultimately allow more people to buy and sell services in the economy. Other countries passed similar laws, which increase the pressure on organizations to make their virtual offerings more accessible.
 
