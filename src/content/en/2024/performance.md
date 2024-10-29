@@ -195,8 +195,7 @@ In the article "<a hreflang="en" href="https://web.dev/blog/common-misconception
 {{ figure_markup(
   image="median-subpart-p75s.png",
   caption="Time spent in each LCP subpart, grouped into LCP buckets of good, needs improvement, and poor.",
-  description="Bar chart showing the medians of origin p75 LCP sub-parts for good, needs improvement, and poor p75 LCP in July 2024, across mobile and desktop. For good p75 LCP, TTFB is 600 ms, image load delay is 350 ms, image load duration is 160 ms, and render delay is 230 ms. For needs improvement p75 LCP, TTFB is 1360 ms, image load delay is 720 ms, image load duration is 270 ms, and render delay is 310 ms. For poor p75 LCP, TTFB is 2270 ms, image load delay is 1290 ms, image load duration is 350 ms, and render delay is 360 ms.",
-  chart_url="https://web.dev/static/blog/common-misconceptions-lcp/images/median-subpart-p75s.png",
+  description="Bar chart showing the medians of origin p75 LCP sub-parts for good, needs improvement, and poor p75 LCP in July 2024, across mobile and desktop. For good p75 LCP, TTFB is 600 ms, image load delay is 350 ms, image load duration is 160 ms, and render delay is 230 ms. For needs improvement p75 LCP, TTFB is 1360 ms, image load delay is 720 ms, image load duration is 270 ms, and render delay is 310 ms. For poor p75 LCP, TTFB is 2270 ms, image load delay is 1290 ms, image load duration is 350 ms, and render delay is 360 ms."
   )
 }}
 
