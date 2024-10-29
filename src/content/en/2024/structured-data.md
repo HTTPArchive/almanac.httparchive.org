@@ -218,7 +218,7 @@ The landscape of structured data implementation continues to evolve, with RDFa a
 Microdata appears on 26% of pages, showing steady usage despite being a less popular format nowadays. The lower tier of implementations includes Facebook meta tags at 7%, while Dublin Core and Microformats maintain minimal presence at around 1% of pages. Notably, microformats2 shows the lowest adoption at less than 1%, despite its previous growth spikes in earlier years.
 
 {{ figure_markup(
-  image="structured-data-usage-by-year.png",
+  image="structured-data-usage-by-year-mobile.png",
   caption="Structured data usage by year on mobile",
   description="Bar chart showing RDFa was used on 61% of mobile pages in 2021 and 62% in 2022, Open Graph on 57% and 59% respectively, Twitter on 37% and 40%, JSON-LD on 34% and 37%, Microdata on 25% and 25%, Facebook on 8% and 8%, Dublin Core and Microformats on 1% in both years, and finally microformats2 on 0% in both years.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=1720156114&format=interactive",
@@ -230,7 +230,7 @@ Microdata appears on 26% of pages, showing steady usage despite being a less pop
 }}
 
 {{ figure_markup(
-  image="structured-data-usage-by-year.png",
+  image="structured-data-usage-by-year-esktop.png",
   caption="Structured data usage by year on desktop",
   description="Bar chart showing structured data usage across desktop pages in 2022 and 2024. RDFa was used on approximately 60% of desktop pages in 2022 and 62% in 2024, Open Graph on 57% in 2022 and 59% in 2024, Twitter on 37% in 2022 and 40% in 2024, JSON-LD on 34% in 2022 and 37% in 2024, Microdata remained steady at 25%, Facebook dropped slightly from 8% to 7%, while Dublin Core, Microformats, and Microformats2 showed minimal usage, all under 1% across both years.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=1466312390&format=interactive",
