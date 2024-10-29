@@ -19,7 +19,7 @@ featured_stat_3: 56.6%
 featured_stat_label_3: Mobile sites passing the Lighthouse audit for properly ordered headings.
 ---
 
-## **Introduction**
+## Introduction
 
 The web is continuing to change. Voice assistants like Siri, Alexa, and Cortana often provide responses by reading from web pages using screen reader technology. Similar methods have been around since the <a hreflang="en" href="https://www.theverge.com/23203911/screen-readers-history-blind-henter-curran-teh-nvda">early days of personal computing</a>. Subtitles for the deaf are increasingly <a hreflang="en" href="https://en.wikipedia.org/wiki/Subtitles#Use_by_hearing_people_for_convenience">used for convenience</a> by everyone, and the vibration mode of the smartphone is now a standard feature.  Other groups that enjoy using subtitles include individuals with ADHD, who use them to maintain focus, non-native speakers, who rely on them to enhance language comprehension, and people in noisy environments, where spoken content might be easily missed.
 
@@ -743,9 +743,9 @@ For more details on live region variants and their usage, check the <a hreflang=
 
 Users are increasingly used to seeing accessibility widgets on websites. These allow them to access accessibility features that improve their experience. Accessibility Overlays are one type of these and usually include two types of technology: a personalization widget and an JavaScript overlay. Overlays can be either generic or custom:
 
-- **user personalization** – tools that enable the site visitor to make changes to the appearance of the site via an on-site menu — changes like font or color contrast adjustments, and
-- **automated overlay remediation** – a generic technology that automatically scans for and attempts to remediate many common WCAG issues which affect the user interface, with complex algorithms and/or Artificial Intelligence.
-- **custom overlay remediation** - site specific code written by expert developer(s) to address specific conformance needs, and verified by accessibility experts in context, to avoid conflict with assistive technology.
+- **user personalization**: tools that enable the site visitor to make changes to the appearance of the site via an on-site menu — changes like font or color contrast adjustments, and
+- **automated overlay remediation**: a generic technology that automatically scans for and attempts to remediate many common WCAG issues which affect the user interface, with complex algorithms and/or Artificial Intelligence.
+- **custom overlay remediation**: site specific code written by expert developer(s) to address specific conformance needs, and verified by accessibility experts in context, to avoid conflict with assistive technology.
 
 Browsers have great built-in tools for personalization, but many users do not know how to use them.  Some sites add **personalization widgets** that often provide a range of accessibility features to make customization easier. Often this includes font size, spacing, and contrast, which is <a hreflang="en" href="https://mcmw.abilitynet.org.uk/">included in the browser</a>. This may also include tools like <a hreflang="en" href="https://en.wikipedia.org/wiki/Speech_synthesis">text to speech</a>, which is <a hreflang="en" href="https://www.microsoft.com/en-us/edge/features/read-aloud?form=MA13FJ">included in Edge</a>. This can be useful for a range of users, but especially for those that do not have their own assistive technology available in that environment. These widgets can be helpful for users who are not actively using assistive technology or already maximizing their browser's built-in accessibility features.
 
