@@ -7,7 +7,7 @@ reviewers: []
 editors: []
 analysts: []
 translators: []
-results: https://docs.google.com/spreadsheets/d/1wKswSnp8TuN4aZb63ir7hE5eCikIu8zEdQYPp4Xo6O0/edit#gid=807625051
+results: https://docs.google.com/spreadsheets/d/1wKswSnp8TuN4aZb63ir7hE5eCikIu8zEdQYPp4Xo6O0/
 featured_quote:
 featured_stat_1:
 featured_stat_label_1:
