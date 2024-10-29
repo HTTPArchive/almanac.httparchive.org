@@ -77,7 +77,7 @@ Google Lighthouse now contains <a href="https://developer.chrome.com/docs/lighth
 
 Throughout this chapter, we have included actionable links and solutions that readers can apply and follow in their own accessibility initiatives. For the sake of consistency, we opted to use the person-first language "people with disabilities" throughout, though we recognize that the identity-first term "disabled people" is also widely used. Our terminology choice is not intended to suggest which term is more appropriate.
 
-## **Ease of Reading**
+## Ease of Reading
 
 Readability of information and content on the web is crucial. There are different factors in a website that contribute to the content's readability. Taking these aspects into account ensures that everyone on the internet can easily and safely consume the content. This report covers those things which can be measured, and although plain language is critical to readability, it is not easy to measure. There are fairly straightforward mathematical readability scores, like <a hreflang="en" href="https://en.wikipedia.org/wiki/Flesch%E2%80%93Kincaid_readability_tests">Flesch–Kincaid</a>. Some people use it to <a hreflang="en" href="https://en.wikipedia.org/wiki/Readability">determine readability</a> in English, but the web is global. Language is difficult, and there is no agreed-to standard for automated plain language testing that can be applied even across the most popular languages.
 
@@ -176,7 +176,7 @@ Support for <a href="https://developer.mozilla.org/docs/Web/CSS/@media/forced-co
 
 This can be emulated in <a hreflang="en" href="https://blogs.windows.com/msedgedev/2024/04/29/deprecating-ms-high-contrast/">Edge</a> and <a href="https://developer.chrome.com/docs/devtools/rendering/emulate-css/">Chrome</a>, so it is now easier to test.
 
-## **Navigation**
+## Navigation
 
 When discussing website navigation, it's crucial to recognize that users may employ a range of methods and input devices. Some might use a mouse to scroll, while others may rely on a keyboard, switch control device, or screen reader to navigate through headings. When designing a website, it's essential to ensure it functions effectively for all users, regardless of the device or assistive technology they use. Wide-screen TV's and voice interfaces (like Siri and Amazon Alexa) both place challenges on how we design our navigation. Building a good semantic structure into a site helps screen reader users navigate a site, but also helps so many other types of technology.
 
@@ -186,10 +186,10 @@ Focus indication is crucial for users who navigate websites primarily using a ke
 
 Most automated tests do not test for focus order or keyboard traps. Lighthouse can not tell you that your site is keyboard navigable, all it can do is tell you that it isn't, in case your site fails some basic tests which are essential. Lighthouse uses <a hreflang="en" href="https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md">Deques' axe rules</a> to evaluate best practices. Even with a perfect score for focus indication, you need to test your pages manually. Lighthouse recommends testing for:
 
-* <a href="https://developer.chrome.com/docs/lighthouse/accessibility/focus-traps">focus traps</a>
-* <a href="https://developer.chrome.com/docs/lighthouse/accessibility/focusable-controls">interactive controls are keyboard focusable</a>
-* <a href="https://developer.chrome.com/docs/lighthouse/accessibility/logical-tab-order">Logical tab order</a>
-* <a href="https://developer.chrome.com/docs/lighthouse/accessibility/managed-focus">Focus directed to new content on a page</a>
+- <a href="https://developer.chrome.com/docs/lighthouse/accessibility/focus-traps">focus traps</a>
+- <a href="https://developer.chrome.com/docs/lighthouse/accessibility/focusable-controls">interactive controls are keyboard focusable</a>
+- <a href="https://developer.chrome.com/docs/lighthouse/accessibility/logical-tab-order">Logical tab order</a>
+- <a href="https://developer.chrome.com/docs/lighthouse/accessibility/managed-focus">Focus directed to new content on a page</a>
 
 <a hreflang="en" href="https://accessibilityinsights.io/docs/web/overview/">Accessibility Insights</a> is a great open source tool that leverages Deque's axe. This <a hreflang="en" href="https://accessibilityinsights.io/downloads/">Chrome/Edge extension</a> can help with keyboard-only testing and guide developers through other tests. The Tab Stops feature is a great visual indicator of a keyboard-only user's progress through a website.
 
@@ -209,15 +209,15 @@ WCAG mandates a visible focus indicator for all interactive content to ensure us
 
 We discovered that 53% (in 2022 it was 86%) of websites apply :focus {outline: 0}, which removes the default outline provided by browsers for focused interactive elements. Although some websites implement custom styles to override this, it's not always the case, making it challenging for users to identify the currently focused element and impeding navigation. Sara Soueidan offers valuable guidance on <a hreflang="en" href="https://www.sarasoueidan.com/blog/focus-indicators/">designing WCAG-compliant focus indicators</a>. On a positive note, 12% (over 9% in 2022 and 0.6% in 2021\) of websites now use :focus-visible, which is a pseudo class which uses browser heuristics to determine when to show the focus indicator. This is a significant improvement in accessibility practices.
 
-### tabindex
+### `tabindex`
 
 Generally, HTML will have focus order set without having to set the tabindex. CSS & JavaScript often causes changes to both the order of the HTML as it is presented in the DOM. The tabindex attribute controls whether an element can receive focus and determines its position in the keyboard focus or "tab" order.
 
 Our analysis shows that 62.9% of mobile websites and 64.1% of desktop websites (up from 60% and 62% respectively) utilize tabindex. This attribute serves several purposes, which can affect accessibility:
 
-* tabindex="0" places an element in the sequential keyboard focus order. Custom interactive elements and widgets should have tabindex="0" to ensure they are included in the focus sequence.
-* tabindex="-1" removes the element from the keyboard focus order but allows it to be focused programmatically via JavaScript.
-* A positive tabindex value overrides the default keyboard focus order, often leading to issues with <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Understanding/focus-order.html">WCAG 2.4.3 \- Focus Order</a>.
+- `tabindex="0"` places an element in the sequential keyboard focus order. Custom interactive elements and widgets should have tabindex="0" to ensure they are included in the focus sequence.
+- `tabindex="-1"` removes the element from the keyboard focus order but allows it to be focused programmatically via JavaScript.
+- A positive tabindex value overrides the default keyboard focus order, often leading to issues with <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Understanding/focus-order.html">WCAG 2.4.3 - Focus Order</a>.
 
 It's important to avoid placing non-interactive elements in the keyboard focus order, as this can be confusing for low-vision users.
 
@@ -399,7 +399,7 @@ Tables present data and relationships using two dimensions. For accessibility, t
 
 Tables should not be used for page layout, thanks to CSS Flexbox and Grid. If necessary, tables can use role="presentation" to explicitly remove semantics and thereby avoid confusion when they are used for layout purposes. We see that 4% of mobile tables use this workaround (vs 1% in 2022).
 
-## **Forms**
+## Forms
 
 Forms are essential for user interactions, such as logging in or making purchases. For users with disabilities, accessible forms are crucial for completing tasks and achieving equal functionality. Forms are also often much more complicated for developers to build than static HTML pages.
 
@@ -476,7 +476,7 @@ Websites often use CAPTCHAs to verify that a visitor is human and not a bot. CAP
 
 These tests can be challenging for everyone, especially for those with low vision or reading disabilities, and may become problematic under future WCAG guidelines. The W3C has suggested alternatives to visual CAPTCHAs, which are worth exploring.
 
-## **Media on the web**
+## Media on the web
 
 Accessibility of media is crucial. People with disabilities need alternative methods to understand and interact with media content. For example, blind users require audio descriptions for images or videos, while those who are deaf or hard of hearing  need captions.
 
@@ -484,7 +484,7 @@ Transcripts are needed for audio only and video only. Non-text content such as i
 
 A media player is often embedded in the page to allow a user to play the audio or video content directly inline. If this is the case, it is important that an accessible player, such as the open source <a hreflang="en" href="https://ableplayer.github.io/ableplayer/">Able Player</a>, is used.
 
-## **Images**
+## Images
 
 Images can have an alt attribute that provides a text description for screen readers. 68.9% (up from 59% in 2022\) of images passed the Google Lighthouse <a hreflang="en" href="https://dequeuniversity.com/rules/axe/4.7/image-alt">audit for images with alt text</a>. Which is a notable increase, especially because the number only increased about 1% from 2021 to 2022.
 
@@ -545,7 +545,7 @@ The `<track>` element is used to provide timed text for `<audio>` and `<video>` 
 
 For `<video>` elements, the figure is slightly higher at 0.5% for both desktops and 0.65% for mobile sites. These statistics do not cover audio or video embedded via `<iframe>`, where third-party services often offer text alternatives. Our industry can do a lot better.
 
-## **Assistive technology with ARIA**
+## Assistive technology with ARIA
 
 <a hreflang="en" href="https://www.w3.org/TR/using-aria/">Accessible Rich Internet Applications (ARIA)</a> provides a set of attributes for HTML5 elements designed to enhance web accessibility for individuals with disabilities. However, excessive use of ARIA attributes can sometimes create more problems than it solves. ARIA should be employed only when native HTML5 elements are inadequate for ensuring a fully accessible experience and should not replace or be used excessively beyond what is necessary.
 
@@ -636,7 +636,7 @@ Buttons typically receive their accessible names from their content or ARIA attr
 
 In some cases, aria-label is useful, such as when multiple buttons have the same content but different functions, or when a button contains only an image or icon.
 
-## **Hiding content**
+## Hiding content
 
 Sometimes, visual interfaces include redundant elements that aren't beneficial for users of assistive technologies. In these cases, aria-hidden="true" can be used to <a hreflang="en" href="https://niquette.ca/articles/hiding-elements/">hide elements from screen readers</a>. However, this approach should not be used if removing the element would result in less information for screen reader users compared to what is presented visually. Hiding content from assistive technologies should not be a way to bypass content that is difficult to make accessible.
 
@@ -655,7 +655,7 @@ ARIA can have a huge impact on accessibility and needs to be used cautiously. <a
 
 For instance, disclosure widgets should use the aria-expanded attribute to signal to assistive technologies when an element is revealed or hidden by expanding or collapsing. We observed that 34% of mobile pages had at least one element with the aria-expanded attribute, which is up almost 5% from 2022.
 
-## **Screen reader-only text**
+## Screen reader-only text
 
 A common approach developers use to provide extra information for screen reader users involves hiding text visually with CSS while keeping it accessible to screen readers. This CSS technique ensures that the text is included in the accessibility tree but remains hidden from sight.
 
@@ -670,7 +670,7 @@ A common approach developers use to provide extra information for screen reader 
 
 The sr-only and visually-hidden class names are frequently used by developers and UI frameworks to create text that is only accessible to screen readers. For instance, Bootstrap and Tailwind include sr-only classes for this purpose. We found that 16% of desktop pages and 15% of mobile pages used one or both of these CSS classes (Each up a percentage point from 2022). It's important to note that not all screen reader users are completely visually impaired, so relying too heavily on screen reader-only solutions should be avoided.
 
-## **Dynamically-rendered content**
+## Dynamically-rendered content
 
 Sometimes, it's necessary to inform screen readers about new or updated content in the DOM. For example, form validation errors should be communicated, while a lazy-loaded image might not need to be announced. Updates to the DOM should be made in a non-disruptive manner.
 
@@ -739,13 +739,13 @@ ARIA live regions enable screen readers to announce changes in the DOM. We found
 
 For more details on live region variants and their usage, check the <a hreflang="en" href="https://developer.mozilla.org/docs/Web/Accessibility/ARIA/ARIA_Live_Regions">MDN live region documentation</a> or explore with this <a hreflang="en" href="https://dequeuniversity.com/library/aria/liveregion-playground">live demo by Deque</a>.
 
-## **User Personalization Widgets and Overlay Remediation**
+## User Personalization Widgets and Overlay Remediation
 
 Users are increasingly used to seeing accessibility widgets on websites. These allow them to access accessibility features that improve their experience. Accessibility Overlays are one type of these and usually include two types of technology: a personalization widget and an JavaScript overlay. Overlays can be either generic or custom:
 
-* **user personalization** – tools that enable the site visitor to make changes to the appearance of the site via an on-site menu — changes like font or color contrast adjustments, and
-* **automated overlay remediation** – a generic technology that automatically scans for and attempts to remediate many common WCAG issues which affect the user interface, with complex algorithms and/or Artificial Intelligence.
-* **custom overlay remediation** - site specific code written by expert developer(s) to address specific conformance needs, and verified by accessibility experts in context, to avoid conflict with assistive technology.
+- **user personalization** – tools that enable the site visitor to make changes to the appearance of the site via an on-site menu — changes like font or color contrast adjustments, and
+- **automated overlay remediation** – a generic technology that automatically scans for and attempts to remediate many common WCAG issues which affect the user interface, with complex algorithms and/or Artificial Intelligence.
+- **custom overlay remediation** - site specific code written by expert developer(s) to address specific conformance needs, and verified by accessibility experts in context, to avoid conflict with assistive technology.
 
 Browsers have great built-in tools for personalization, but many users do not know how to use them.  Some sites add **personalization widgets** that often provide a range of accessibility features to make customization easier. Often this includes font size, spacing, and contrast, which is <a hreflang="en" href="https://mcmw.abilitynet.org.uk/">included in the browser</a>. This may also include tools like <a hreflang="en" href="https://en.wikipedia.org/wiki/Speech_synthesis">text to speech</a>, which is <a hreflang="en" href="https://www.microsoft.com/en-us/edge/features/read-aloud?form=MA13FJ">included in Edge</a>. This can be useful for a range of users, but especially for those that do not have their own assistive technology available in that environment. These widgets can be helpful for users who are not actively using assistive technology or already maximizing their browser's built-in accessibility features.
 
@@ -811,7 +811,7 @@ Neither the EU Commission or US Department of Justice (DOJ) state how web access
 
 In some instances, a combination of overlays and manual expertise has the potential to accelerate accessibility improvements.
 
-## **Sectors and accessibility**
+## Sectors and accessibility
 
 This year we are providing a series of new data comparisons. We want to highlight that there are discernible differences in how different communities have handled accessibility. Whether it is based on good governance, or good defaults, it is possible to see differences in accessibility that are significant. It is the hope of the authors of this section that this will prompt a review of how the various communities treat accessibility.
 
@@ -1100,7 +1100,7 @@ Stimulus, Remix and Qwik are several percent more accessible on average than Rea
 
 RedwoodJS is clearly the most accessible, followed by Remix and Astro.
 
-## **Conclusion**
+## Conclusion
 
 Our analysis indicates that there hasn't been a significant change in web accessibility. While there have been some improvements, many straightforward issues remain unresolved. Improving color contrast and use of image alt attributes could have a substantial impact if addressed. CMS systems and JavaScript frameworks have a huge responsibility and positive examples prove that they can have real impact on accessibility.
 
