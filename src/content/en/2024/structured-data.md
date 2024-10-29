@@ -8,7 +8,7 @@ analysts: [nrllh]
 editors: [capjamesg]
 translators: []
 cyberandy_bio: Andrea Volpini, CEO of WordLift, is pioneering advancements at the intersection of SEO and neuro-symbolic artificial intelligence, driving innovation in semantic technologies and AI-driven content discovery.
-results: https://docs.google.com/spreadsheets/d/1GWniSGupK6KgME7urV7ff0iWStzopGXqnQvJ3_-ynD4/edit#gid=1778117656
+results: https://docs.google.com/spreadsheets/d/1GWniSGupK6KgME7urV7ff0iWStzopGXqnQvJ3_-ynD4/
 featured_quote: The future of the web is structured, semantic, and increasingly intelligent. Organizations that invest in structured data today won't just improve their search visibility – they are building the foundation for success in AI Discovery.
 featured_stat_1: 7%
 featured_stat_label_1: JSON-LD growth in adoption from 2022 to 2024
