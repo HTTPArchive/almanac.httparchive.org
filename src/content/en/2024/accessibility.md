@@ -233,12 +233,51 @@ Landmarks help structure a web page into distinct thematic regions, facilitating
 
 Although ARIA landmarks have traditionally been only visible to screen reader users, some sites are beginning to use tools like this [open source SkipTo script](https://github.com/paypal/skipto) which aggregates headings, and landmarks into a page-specific table of contents. Exposing the document structure to the user helps everyone's comprehension. SkipTo delivers what really should be basic browser functionality. This goes beyond the skip links that are discussed in a later section.
 
-| *element\_type* | SUM of element\_pct | SUM of role\_pct | SUM of both\_pct |
-| :---- | ----- | ----- | ----- |
-| main | 37.0% | 17.4% | 43.6% |
-| header | 65.1% | 11.7% | 66.5% |
-| nav | 66.4% | 19.0% | 69.7% |
-| footer | 65.4% | 10.4% | 66.6% |
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Element type</th>
+        <th>% of element</th>
+        <th>% of role</th>
+        <th>% of both</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>main</code></td>
+        <td class="numeric">37.0%</td>
+        <td class="numeric">17.4%</td>
+        <td class="numeric">43.6%</td>
+      </tr>
+      <tr>
+        <td><code>header</code></td>
+        <td class="numeric">65.1%</td>
+        <td class="numeric">11.7%</td>
+        <td class="numeric">66.5%</td>
+      </tr>
+      <tr>
+        <td><code>nav</code></td>
+        <td class="numeric">66.4%</td>
+        <td class="numeric">19.0%</td>
+        <td class="numeric">69.7%</td>
+      </tr>
+      <tr>
+        <td><code>footer</code></td>
+        <td class="numeric">65.4%</td>
+        <td class="numeric">10.4%</td>
+        <td class="numeric">66.6%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>
+    {{ figure_link(
+      caption="Landmark element and `role` usage (desktop).",
+      sheets_gid="1224962143",
+      sql_file="llandmark_elements_and_roles.sql",
+    ) }}
+  </figcaption>
+</figure>
 
 {{ figure_markup(
   image="pages-with-element-role-yty.png",
@@ -310,11 +349,47 @@ The titles changed on render value is derived from a comparison of the initial H
 
 Tables present data and relationships using two dimensions. For accessibility, tables need a well-structured format with elements like captions, headers, and header cells to help users with assistive technologies understand and navigate the data. A caption, using the `<caption>` element, is especially important as it provides context for screen readers. Currently, 1.6% of desktop sites use a `<caption>` (slightly up from 1.3 in 2022), but this is a crucial aspect for making tables more accessible.
 
-|  | Table Sites |  | All Sites |  |
-| :---- | ----- | ----- | ----- | ----- |
-|  | **desktop** | **mobile** | **desktop** | **mobile** |
-| Captioned tables | 5.5% | 4.8% | 1.6% | 1.5% |
-| Presentational table | 4.4% | 5.0% | 3.1% | 4.2% |
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <td></td>
+        <th scope="colgroup" colspan=2>Table Sites</th>
+        <th scope="colgroup" colspan=2>All Sites</th>
+      </tr>
+      <tr>
+        <th></th>
+        <th scope="col">desktop</th>
+        <th scope="col">mobile</th>
+        <th scope="col">desktop</th>
+        <th scope="col">mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Captioned tables</th>
+        <td class="numeric">5.5%</td>
+        <td class="numeric">4.8%</td>
+        <td class="numeric">1.6%</td>
+        <td class="numeric">1.5%</td>
+      </tr>
+      <tr>
+        <th scope="row">Presentational table</th>
+        <td class="numeric">4.4%</td>
+        <td class="numeric">5.0%</td>
+        <td class="numeric">3.1%</td>
+        <td class="numeric">4.2%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>
+    {{ figure_link(
+      caption="Table usage.",
+      sheets_gid="1512848123",
+      sql_file="table_stats.sql",
+    ) }}
+  </figcaption>
+</figure>
 
 Tables should not be used for page layout, thanks to CSS Flexbox and Grid. If necessary, tables can use role="presentation" to explicitly remove semantics and thereby avoid confusion when they are used for layout purposes. We see that 4% of mobile tables use this workaround (vs 1% in 2022).
 
@@ -604,15 +679,57 @@ Sometimes, it's necessary to inform screen readers about new or updated content 
 
 ARIA live regions enable screen readers to announce changes in the DOM. We found that 28.8% of desktop pages (up from 23% in 2022\) and 28.1 of mobile pages (up from 22% in 2022\) use live regions with the aria-live attribute. Additionally, pages use ARIA live region roles with implicit aria-live values:
 
-| *role* | desktop | mobile | Implicit aria-live value |
-| :---- | ----- | ----- | :---- |
-| status | 9.19% | 8.68% | polite |
-| alert | 6.94% | 6.72% | assertive |
-| timer | 0.84% | 0.79% | off |
-| log | 0.59% | 0.57% | polite |
-| marquee | 0.06% | 0.07% | off |
-
-Pages with live region ARIA roles, and their implicit aria-live value
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>role</th>
+        <th>desktop</th>
+        <th>mobile</th>
+        <th>Implicit <code>aria-live</code> value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>status</code></td>
+        <td class="numeric">9.19%</td>
+        <td class="numeric">8.68%</td>
+        <td><code>polite</code></td>
+      </tr>
+      <tr>
+        <td><code>alert</code></td>
+        <td class="numeric">6.94%</td>
+        <td class="numeric">6.72%</td>
+        <td><code>assertive</code></td>
+      </tr>
+      <tr>
+        <td><code>time`r</code></td>
+        <td class="numeric">0.84%</td>
+        <td class="numeric">0.79%</td>
+        <td><code>off</code></td>
+      </tr>
+      <tr>
+        <td><code>log</code></td>
+        <td class="numeric">0.59%</td>
+        <td class="numeric">0.57%</td>
+        <td><code>polite</code></td>
+      </tr>
+      <tr>
+        <td><code>marquee</code></td>
+        <td class="numeric">0.06%</td>
+        <td class="numeric">0.07%</td>
+        <td><code>off</code></td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>
+    {{ figure_link(
+      caption="Pages with live region ARIA roles, and their implicit `aria-live` value.",
+      sheets_gid="514880281",
+      sql_file="common_aria_role.sql",
+    ) }}
+  </figcaption>
+</figure>
 
 For more details on live region variants and their usage, check the [MDN live region documentation](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/ARIA_Live_Regions) or explore with this [live demo by Deque](https://dequeuniversity.com/library/aria/liveregion-playground).
 
@@ -811,13 +928,63 @@ Website platforms in general performed better than the Traditional CMS with Wix,
 
 Looking at audits of these Traditional CMS, the top five Lighthouse issues have a great deal of consistency. Color contrast, link name, heading order and alt text are regular problems across these CMS, those issues are mainly related to the user since a CMS can not be responsible for the chosen colors or the naming of the links.
 
-| Traditional CMS | Most popular | 2nd most | 3rd most | 4th most |
-| :---- | :---- | :---- | :---- | :---- |
-| Adobe Experience Manager | color-contrast | link-name | heading-order | label-content-name-mismatch |
-| Contentful | color-contrast | link-name | heading-order | image-alt |
-| Sitecore | color-contrast | link-name | heading-order | image-alt |
-| WordPress | color-contrast | link-name | heading-order | target-size |
-| Craft CMS | color-contrast | link-name | heading-order | image-alt |
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Traditional CMS</th>
+        <th>Most popular</th>
+        <th>2nd most</th>
+        <th>3rd most</th>
+        <th>4th most</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Adobe Experience Manager</td>
+        <td><code>color-contrast</code></td>
+        <td><code>link-name</code></td>
+        <td><code>heading-order</code></td>
+        <td><code>label-content-name-mismatch</code></td>
+      </tr>
+      <tr>
+        <td>Contentful</td>
+        <td><code>color-contrast</code></td>
+        <td><code>link-name</code></td>
+        <td><code>heading-order</code></td>
+        <td><code>image-alt</code></td>
+      </tr>
+      <tr>
+        <td>Sitecore</td>
+        <td><code>color-contrast</code></td>
+        <td><code>link-name</code></td>
+        <td><code>heading-order</code></td>
+        <td><code>image-alt</code></td>
+      </tr>
+      <tr>
+        <td>WordPress</td>
+        <td><code>color-contrast</code></td>
+        <td><code>link-name</code></td>
+        <td><code>heading-order</code></td>
+        <td><code>target-size</code></td>
+      </tr>
+      <tr>
+        <td>Craft CMS</td>
+        <td><code>color-contrast</code></td>
+        <td><code>link-name</code></td>
+        <td><code>heading-order</code></td>
+        <td><code>image-alt</code></td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>
+    {{ figure_link(
+      caption="Top accessibilty audit issues for popular CMS'.",
+      sheets_gid="653243391",
+      sql_file="lighthouse_a11y_audits_by_cms.sql",
+    ) }}
+  </figcaption>
+</figure>
 
 The different CMS do have a lot of commonalities in the top errors that they have. They mostly have to do with content issues, which is something that ATAG 2.0 was written to support. It is hoped that the best practices of ATAG will be brought into WCAG 3.0. This scan is only for publicly available websites, so authoring interfaces are not evaluated. It is worth noting that authors have disabilities, and authors should be able to expect an accessible interface. Authors also need support in creating accessible content. To help facilitate greater focus on authoring tools, the W3C produced a [ATAG Report Tool](https://www.w3.org/WAI/atag/report-tool/).
 
@@ -835,13 +1002,63 @@ There are many tools which can be used to help authors evaluate the accessibilit
 
 Looking at audits of these CMS Platforms, the top five Lighthouse issues have less in the priority if issues but still have lots of similarities. Alternative text, link name, heading order and color contrast are all still issues, but just with greater/lesser rates of occurrence.
 
-| Platform CMS | Most popular | 2nd most | 3rd most | 4th most |
-| :---- | :---- | :---- | :---- | :---- |
-| Wix | heading-order | link-name | button-name | color-contrast |
-| Google Sites | image-alt | link-name | aria-allowed-attr | heading-order |
-| Duda | link-name | color-contrast | image-alt | heading-order |
-| HubSpot CMS | color-contrast | heading-order | link-name | target-size |
-| Pixnet | heading-order | link-name | color-contrast | frame-title |
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Platform CMS</th>
+        <th>Most popular</th>
+        <th>2nd most</th>
+        <th>3rd most</th>
+        <th>4th most</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Wix</td>
+        <td><code>heading-order</code></td>
+        <td><code>link-name</code></td>
+        <td><code>button-name</code></td>
+        <td><code>color-contrast</code></td>
+      </tr>
+      <tr>
+        <td>Google Sites</td>
+        <td><code>image-alt</code></td>
+        <td><code>link-name</code></td>
+        <td><code>aria-allowed-attr</code></td>
+        <td><code>heading-order</code></td>
+      </tr>
+      <tr>
+        <td>Duda</td>
+        <td><code>link-name</code></td>
+        <td><code>color-contrast</code></td>
+        <td><code>image-alt</code></td>
+        <td><code>heading-order</code></td>
+      </tr>
+      <tr>
+        <td>HubSpot CMS</td>
+        <td><code>color-contrast</code></td>
+        <td><code>heading-order</code></td>
+        <td><code>link-name</code></td>
+        <td><code>target-size</code></td>
+      </tr>
+      <tr>
+        <td>Pixnet</td>
+        <td><code>heading-order</code></td>
+        <td><code>link-name</code></td>
+        <td><code>color-contrast</code></td>
+        <td><code>frame-title</code></td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>
+    {{ figure_link(
+      caption="Top accessibilty audit issues for popular CMS platforms.",
+      sheets_gid="653243391",
+      sql_file="lighthouse_a11y_audits_by_cms.sql",
+    ) }}
+  </figcaption>
+</figure>
 
 Different CMS platforms have varying strengths and weaknesses. For example, it's clear that ARIA components must have accessible names, yet 36% of websites built with GoDaddy Website Builder fail this test, while the median failure rate for all CMS platforms with more than 100,000 occurrences in our dataset is just 1%. GoDaddy is also an outlier in the area of dialog names, with 14% of tests failing compared to a mean failure rate of 1.3%.
 
