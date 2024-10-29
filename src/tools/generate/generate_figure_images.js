@@ -19,7 +19,9 @@ const take_single_screenshot = async (graphUrl, filename) => {
     waitUntil: 'networkidle2',
   });
 
-  let el = sheets_chart ? await page.$('#embed_chart, #c div div') : await page.$('main');
+
+  // Charts are in #embed_chart, maps are in #c div div
+  const el = sheets_chart ? await page.$('#embed_chart, #c div div') : await page.$('main');
   await el.screenshot({ path: filename });
   await browser.close();
 }
