@@ -7,8 +7,7 @@ const take_single_screenshot = async (graphUrl, filename) => {
 
   const sheets_chart = graphUrl.startsWith('https://docs.google.com/spreadsheets') ? true :  false;
 
-  // Temporarily replace `&format=interactive` with `&format=image`
-  const chartUrl = sheets_chart ? graphUrl.replaceAll('&format=interactive', '&format=image') : 'http://localhost:8080/' + graphUrl;
+  const chartUrl = sheets_chart ? graphUrl : 'http://localhost:8080/' + graphUrl;
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
   await page.setViewport({
@@ -20,10 +19,7 @@ const take_single_screenshot = async (graphUrl, filename) => {
     waitUntil: 'networkidle2',
   });
 
-
-  // Temporarily handle `&format=image` instead of `&format=interactive`
-  // const el = sheets_chart ? await page.$('#embed_chart') : await page.$('main');
-  const el = sheets_chart ? await page.$('img') : await page.$('main');
+  const el = sheets_chart ? await page.$('#embed_chart') : await page.$('main');
   await el.screenshot({ path: filename });
   await browser.close();
 }
