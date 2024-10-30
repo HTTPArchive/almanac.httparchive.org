@@ -1,5 +1,3 @@
-# TODO: resource load delay is defined as lcp_req_time - ttfb
-
 WITH pages AS (
   SELECT
     client,

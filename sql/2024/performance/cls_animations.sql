@@ -1,6 +1,3 @@
-# TODO: Research Lighthouse audits.non-composited-animations.details.items
-# TODO: What is the meaning of pages and total columns
-
 WITH lh AS (
   SELECT
     client,

@@ -1,5 +1,3 @@
-# TODO: is_lcp_statically_discoverable seems exaggeratedly high. Check if it's a bug in the query.
-
 WITH lcp AS (
   SELECT
     client,

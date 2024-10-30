@@ -1,5 +1,3 @@
-# TODO: Check definition of Lighthouse's uses-responsive-images.details.items
-
 CREATE TEMP FUNCTION checkResponsiveImages(responsivelist STRING, lcpImgUrl STRING, nodePath STRING) RETURNS BOOLEAN LANGUAGE js AS '''
   try {
     //we will check lcp elment is img

@@ -1,4 +1,4 @@
-# TODO: LCP resource could also be a video
+# We are unable to track LCP for video elements: https://issues.chromium.org/issues/364860066
 
 WITH lcp AS (
   SELECT
@@ -7,7 +7,7 @@ WITH lcp AS (
     # Parse anchors out of LCP URLs.
     REGEXP_EXTRACT(JSON_VALUE(custom_metrics, '$.performance.lcp_elem_stats.url'), r'([^#]*)') AS url
   FROM
-    `httparchive.all.pages`
+    `httparchive.all.pages` TABLESAMPLE SYSTEM (0.01 PERCENT)
   WHERE
     date = '2024-06-01' AND
     is_root_page
