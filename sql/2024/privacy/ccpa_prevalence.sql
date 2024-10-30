@@ -6,9 +6,9 @@ WITH pages AS (
     JSON_VALUE(custom_metrics, '$.privacy.ccpa_link.hasCCPALink') AS has_ccpa_link
   FROM `httparchive.all.pages`, --    TABLESAMPLE SYSTEM (0.0025 PERCENT)
     UNNEST([1000, 10000, 100000, 1000000, 10000000, 100000000]) AS rank_grouping
-  WHERE date = '2024-06-01'
-    AND is_root_page = true
-    AND rank <= rank_grouping
+  WHERE date = '2024-06-01' AND
+    is_root_page = true AND
+    rank <= rank_grouping
 )
 
 SELECT

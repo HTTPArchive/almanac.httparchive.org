@@ -7,10 +7,10 @@ WITH pages_with_phrase AS (
     JSON_QUERY_ARRAY(custom_metrics, '$.privacy.ccpa_link.CCPALinkPhrases') AS ccpa_link_phrases
   FROM `httparchive.all.pages`, --TABLESAMPLE SYSTEM (0.01 PERCENT)
     UNNEST([1000, 10000, 100000, 1000000, 10000000, 100000000]) AS rank_grouping
-  WHERE date = '2024-06-01'
-    AND is_root_page = true
-    AND rank <= rank_grouping
-    AND array_length(JSON_QUERY_ARRAY(custom_metrics, '$.privacy.ccpa_link.CCPALinkPhrases')) > 0
+  WHERE date = '2024-06-01' AND
+    is_root_page = true AND
+    rank <= rank_grouping AND
+    array_length(JSON_QUERY_ARRAY(custom_metrics, '$.privacy.ccpa_link.CCPALinkPhrases')) > 0
 )
 
 SELECT
