@@ -1,6 +1,6 @@
 WITH RECURSIVE pages AS (
   SELECT DISTINCT
-    CASE page -- Publisher websites may redirect to an SSP domain, and need to use redirected domain instead of page domain. CASE needs to be replaced with a more robust solution.
+    CASE page -- Publisher websites may redirect to an SSP domain, and need to use redirected domain instead of page domain. CASE needs to be replaced with a more robust solution from HTTPArchive/custom-metrics#136.
       WHEN 'https://www.chunkbase.com/' THEN 'cafemedia.com'
       ELSE NET.REG_DOMAIN(page)
     END AS page,
