@@ -12,10 +12,6 @@ import pandas
 import requests
 from bq_writer import write_to_bq, bigquery
 
-
-# get current year
-year = DateTime.now().year
-
 # Retrieve and extract trackers as identified by WhoTracks.me.
 # https://github.com/ghostery/whotracks.me/blob/master/blog/generating_adblocker_filters.md#loading-the-data
 tracker_db = requests.get(
@@ -23,7 +19,7 @@ tracker_db = requests.get(
     timeout=10,
 ).text
 
-trackers_query = f"""
+trackers_query = """
     SELECT
         '2024-06-01' AS date,
         categories.name as category,
