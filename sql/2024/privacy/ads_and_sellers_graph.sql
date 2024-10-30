@@ -1,13 +1,12 @@
 WITH RECURSIVE pages AS (
-  SELECT
-    CASE page -- publisher websites may redirect to an SSP domain, and need to use redirected domain instead of page domain
+  SELECT DISTINCT
+    CASE page -- Publisher websites may redirect to an SSP domain, and need to use redirected domain instead of page domain. CASE needs to be replaced with a more robust solution.
       WHEN 'https://www.chunkbase.com/' THEN 'cafemedia.com'
       ELSE NET.REG_DOMAIN(page)
     END AS page,
     custom_metrics
   FROM `httparchive.all.pages`
   WHERE date = '2024-06-01' AND
-    client = 'mobile' AND
     is_root_page = TRUE
 ), ads AS (
   SELECT
