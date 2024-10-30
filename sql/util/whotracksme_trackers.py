@@ -3,9 +3,6 @@ This module retrieves and extracts trackers as identified by WhoTracks.me
 and appends them to the httparchive.almanac.whotracksme BigQuery table.
 """
 
-# pylint: disable=import-error
-
-from datetime import datetime as DateTime
 import sqlite3
 
 import pandas
@@ -19,7 +16,7 @@ tracker_db = requests.get(
     timeout=10,
 ).text
 
-trackers_query = """
+TRACKERS_QUERY = """
     SELECT
         '2024-06-01' AS date,
         categories.name as category,
@@ -36,7 +33,7 @@ trackers_query = """
 """
 connection = sqlite3.connect(":memory:")
 connection.executescript(tracker_db)
-trackers_df = pandas.read_sql(trackers_query, connection)
+trackers_df = pandas.read_sql(TRACKERS_QUERY, connection)
 connection.close()
 
 # Append to almanac.whotracksme BQ table
