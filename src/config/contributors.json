@@ -2611,7 +2611,8 @@
         "analysts"
       ],
       "2024": [
-        "analysts"
+        "analysts",
+        "contributors"
       ]
     },
     "twitter": "themax_o",
@@ -4182,6 +4183,9 @@
       ],
       "2022": [
         "analysts"
+      ],
+      "2024": [
+        "authors"
       ]
     }
   },

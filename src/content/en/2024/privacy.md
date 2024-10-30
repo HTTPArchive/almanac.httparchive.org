@@ -2,8 +2,8 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Privacy
 description: Privacy chapter of the 2024 Web Almanac covers the adoption and impact of online tracking, privacy preference signals, and browser initiatives for a privacy-friendlier web.
-authors: [bgstandaert]
-reviewers: []
+authors: [bgstandaert, ydimova]
+reviewers: [max-ostapenko]
 editors: []
 analysts: [bgstandaert, max-ostapenko]
 translators: []
@@ -30,7 +30,7 @@ Google-owned domains dominate the tracking landscape, with googleapis.com and gs
 {{ figure_markup(
   image="top-whotracksme-trackers.png",
   caption="Top WhoTracksMe trackers.",
-  description="A bar chart showing the most-common trackers form the WhoTracksMe dataset, sorted by the percent of pages on which they appear. The top trackers are googleapis.com (69% desktop; 68% mobile), gstatic (67% desktop; 61% mobile), google_tag (60% desktop; 57% mobile), google_analytics (55% desktop; 52% mobile); google (48% desktop; 47% mobile), doubleclick (40% desktop; 38% mobile), facebook (25% desktop; 23% mobile), cloudflare (17% desktop; 17% mobile), youtube (11% desktop; 11% mobile)."
+  description="A bar chart showing the most-common trackers form the WhoTracksMe dataset, sorted by the percent of pages on which they appear. The top trackers are googleapis.com (69% desktop; 68% mobile), gstatic (67% desktop; 61% mobile), google_tag (60% desktop; 57% mobile), google_analytics (55% desktop; 52% mobile); google (48% desktop; 47% mobile), doubleclick (40% desktop; 38% mobile), facebook (25% desktop; 23% mobile), cloudflare (17% desktop; 17% mobile), youtube (11% desktop; 11% mobile).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=307091186&format=interactive",
   sheets_gid="1429146110",
   sql_file="number_of_websites_with_whotracksme_trackers.sql"
@@ -42,7 +42,7 @@ Google-owned domains dominate the tracking landscape, with googleapis.com and gs
 {{ figure_markup(
   image="top-third-party-cookie-origins.png",
   caption="Top Third-Party Cookie Origins.",
-  description="A bar chart showing the most-common origins for third-party cookies, by the percent of pages on which they appear. Displayed values are doubleclick.net (27% desktop; 26% mobile), youtube.com (7% desktop; 6% mobile), google.com (5% desktop; 4% mobile), www.google.com (5% desktop; 4% mobile), linkedin.com (4% desktop; 4% mobile), bing.com (4% desktop; 3% mobile), yandex.ru (3% desktop; 5% mobile), adnxs.com (3% desktop; 3% mobile), mc.yandex.ru (3% desktop; 4% mobile), c.bing.com (3% desktop; 3% mobile), yandex.com (3% desktop; 4% mobile), mc.yandex.com (3% desktop; 4% mobile), adsrvr.org (3% desktop; 3% mobile), googleadservices.com (3% desktop; 3% mobile), yahoo.com (3% desktop; 3% mobile)."
+  description="A bar chart showing the most-common origins for third-party cookies, by the percent of pages on which they appear. Displayed values are doubleclick.net (27% desktop; 26% mobile), youtube.com (7% desktop; 6% mobile), google.com (5% desktop; 4% mobile), `www.google.com` (5% desktop; 4% mobile), linkedin.com (4% desktop; 4% mobile), bing.com (4% desktop; 3% mobile), yandex.ru (3% desktop; 5% mobile), adnxs.com (3% desktop; 3% mobile), mc.yandex.ru (3% desktop; 4% mobile), c.bing.com (3% desktop; 3% mobile), yandex.com (3% desktop; 4% mobile), mc.yandex.com (3% desktop; 4% mobile), adsrvr.org (3% desktop; 3% mobile), googleadservices.com (3% desktop; 3% mobile), yahoo.com (3% desktop; 3% mobile).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=542106842&format=interactive",
   sheets_gid="1230745383",
   sql_file="cookies_top_third_party_domains.sql"
@@ -58,7 +58,7 @@ Cloudflare’s cookie, `__cf_bm``, is used to ["identify and mitigate automated 
 {{ figure_markup(
   image="top-third-party-cookie-names.png",
   caption="Top Third-Party Cookie Names.",
-  description="A bar chart showing the most-common names for third-party cookies, by the percent of pages on which they appear. Displayed values are test_cookie (17% desktop; 16% mobile), IDE (14% desktop; 13% mobile), YSC (11% desktop; 9% mobile), VISITOR_INFO1_LIVE (11% desktop; 9% mobile), __cf_bm (8% desktop; 7% mobile), receive-cookie-deprecation (8% desktop; 6% mobile), NID (8% desktop; 7% mobile), uid (6% desktop; 8% mobile), i (6% desktop; 8% mobile), ar_debug (6% desktop; 6% mobile), c (5% desktop; 7% mobile), _GRECAPTCHA (5% desktop; 5% mobile), bcookie (4% desktop; 5% mobile), lidc (4% desktop; 5% mobile), MUID (4% desktop; 4% mobile)."
+  description="A bar chart showing the most-common names for third-party cookies, by the percent of pages on which they appear. Displayed values are test_cookie (17% desktop; 16% mobile), IDE (14% desktop; 13% mobile), YSC (11% desktop; 9% mobile), VISITOR_INFO1_LIVE (11% desktop; 9% mobile), __cf_bm (8% desktop; 7% mobile), receive-cookie-deprecation (8% desktop; 6% mobile), NID (8% desktop; 7% mobile), uid (6% desktop; 8% mobile), i (6% desktop; 8% mobile), ar_debug (6% desktop; 6% mobile), c (5% desktop; 7% mobile), _GRECAPTCHA (5% desktop; 5% mobile), bcookie (4% desktop; 5% mobile), lidc (4% desktop; 5% mobile), MUID (4% desktop; 4% mobile).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=1978360808&format=interactive",
   sheets_gid="766149659",
   sql_file="cookies_top_third_party_names.sql"
@@ -70,7 +70,7 @@ Cloudflare’s cookie, `__cf_bm``, is used to ["identify and mitigate automated 
 {{ figure_markup(
   image="top-first-party-cookie-names.png",
   caption="Top First-Party Cookie Names.",
-  description="A bar chart showing the most-common names for first-party cookies, by the percent of pages on which they appear. Displayed values are _ga (49% desktop; 47% mobile), _gid (29% desktop; 27% mobile), _fbp (15% desktop; 14% mobile), _gcl_au (14% desktop; 13% mobile), PHPSESSID (13% desktop; 13% mobile), _gat (10% desktop; 9% mobile), XSRF-TOKEN (5% desktop; 5% mobile), __eoi (5% desktop; 5% mobile), __gads (5% desktop; 5% mobile), __gpi (5% desktop; 5% mobile), sbjs_current (4% desktop; 4% mobile), sbjs_session (4% desktop; 4% mobile), sbjs_udata (4% desktop; 4% mobile), sbjs_first (4% desktop; 4% mobile), sbjs_first_add (4% desktop; 4% mobile)"
+  description="A bar chart showing the most-common names for first-party cookies, by the percent of pages on which they appear. Displayed values are _ga (49% desktop; 47% mobile), _gid (29% desktop; 27% mobile), _fbp (15% desktop; 14% mobile), _gcl_au (14% desktop; 13% mobile), PHPSESSID (13% desktop; 13% mobile), _gat (10% desktop; 9% mobile), XSRF-TOKEN (5% desktop; 5% mobile), __eoi (5% desktop; 5% mobile), __gads (5% desktop; 5% mobile), __gpi (5% desktop; 5% mobile), sbjs_current (4% desktop; 4% mobile), sbjs_session (4% desktop; 4% mobile), sbjs_udata (4% desktop; 4% mobile), sbjs_first (4% desktop; 4% mobile), sbjs_first_add (4% desktop; 4% mobile)",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=132012980&format=interactive",
   sheets_gid="452718378",
   sql_file="cookies_top_first_party_names.sql"
@@ -90,7 +90,7 @@ Detecting fingerprinting is difficult, as the APIs used in fingerprinting can al
 {{ figure_markup(
   image="top-potential-fingerprinting-scripts.png",
   caption="Top Scripts with Usages of Fingerprinting APIs.",
-  description="A bar chart showing scripts with usages of APIs commonly used for fingerprinting, ordered by the percentage of pages on which they appear. Each script is identified by its file name followed by the name of its associated company or product. Displayed values are recaptcha__en.js (Google Recaptcha) (10% desktop; 10% mobile), aframe (Google Recaptcha) (6% desktop; 6% mobile), common.js (Google Maps API) (5% desktop; 5% mobile), www-embed-player.js (Youtube) (4% desktop; 4% mobile), base.js (Youtube) (4% desktop; 4% mobile), adsbygoogle.js (Google) (3% desktop; 3% mobile), wix-perf-measure.umd.min.js (Wix) (3% desktop; 3% mobile), modules.db8890ba82a7e392473f.js (Hotjar) (2% desktop; 2% mobile), group_5.2de88a07.chunk.min.js (Wix) (2% desktop; 3% mobile), group_3.b26b356a.chunk.min.js (Wix) (2% desktop; 3% mobile), tpaCommons.1b788520.chunk.min.js (Wix) (2% desktop; 3% mobile), Qj-BdKDLI_z.js (Facebook) (2% desktop; 2% mobile), tag.js (Yandex Metrika) (2% desktop; 3% mobile), main.cd290f82.bundle.min.js (Wix) (2% desktop; 3% mobile), thunderbolt-commons.35876736.bundle.min.js (Wix) (2% desktop; 2% mobile)"
+  description="A bar chart showing scripts with usages of APIs commonly used for fingerprinting, ordered by the percentage of pages on which they appear. Each script is identified by its file name followed by the name of its associated company or product. Displayed values are recaptcha__en.js (Google Recaptcha) (10% desktop; 10% mobile), aframe (Google Recaptcha) (6% desktop; 6% mobile), common.js (Google Maps API) (5% desktop; 5% mobile), www-embed-player.js (Youtube) (4% desktop; 4% mobile), base.js (Youtube) (4% desktop; 4% mobile), adsbygoogle.js (Google) (3% desktop; 3% mobile), wix-perf-measure.umd.min.js (Wix) (3% desktop; 3% mobile), modules.db8890ba82a7e392473f.js (Hotjar) (2% desktop; 2% mobile), group_5.2de88a07.chunk.min.js (Wix) (2% desktop; 3% mobile), group_3.b26b356a.chunk.min.js (Wix) (2% desktop; 3% mobile), tpaCommons.1b788520.chunk.min.js (Wix) (2% desktop; 3% mobile), Qj-BdKDLI_z.js (Facebook) (2% desktop; 2% mobile), tag.js (Yandex Metrika) (2% desktop; 3% mobile), main.cd290f82.bundle.min.js (Wix) (2% desktop; 3% mobile), thunderbolt-commons.35876736.bundle.min.js (Wix) (2% desktop; 2% mobile)",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=928442588&format=interactive",
   sheets_gid="772204378",
   sql_file="fingerprinting_most_common_scripts.sql"
@@ -105,9 +105,9 @@ Websites employ various covert techniques to track users across the web, often b
 
 #### CNAME tracking
 
-Traditional blocklist-based tracking protection, like ad blockers, often rely on blocking third-party requests based on their domain. To circumvent these tools, some trackers employ CNAME cloaking (or CNAME tracking). This technique leverages CNAME records at the DNS level to connect a first-party subdomain (e.g., `subdomain.example.com` on `www.example.com`) to the actual third-party tracker (e.g., `example.tracker.com`).  Because the request appears to originate from the first-party domain, ad blockers are less likely to intervene, and cookies are set in a first-party context.
+Traditional blocklist-based tracking protection, like ad blockers, often rely on blocking third-party requests based on their domain. To circumvent these tools, some trackers employ CNAME cloaking (or CNAME tracking). This technique leverages CNAME records at the DNS level to connect a first-party subdomain (e.g., `subdomain.example.com` on `www.example.com`) to the actual third-party tracker (e.g., `example.tracker.com`). Because the request appears to originate from the first-party domain, ad blockers are less likely to intervene, and cookies are set in a first-party context.
 
-Our analysis of DNS data identifies CNAME records pointing to domains different from the website's primary domain.  While CNAME records are legitimately used by hosting services like CDNs, they can also be exploited for tracking.  To focus on tracking-specific usage, we cross-referenced identified domains with tracker lists from [Ghostery](https://github.com/ghostery/trackerdb) and [AdGuard](https://github.com/AdguardTeam/cname-trackers), filtering out primarily hosting-related domains.
+Our analysis of DNS data identifies CNAME records pointing to domains different from the website's primary domain. While CNAME records are legitimately used by hosting services like CDNs, they can also be exploited for tracking. To focus on tracking-specific usage, we cross-referenced identified domains with tracker lists from [Ghostery](https://github.com/ghostery/trackerdb) and [AdGuard](https://github.com/AdguardTeam/cname-trackers), filtering out primarily hosting-related domains.
 
 {{ figure_markup(
   image="most-common-cname-domains.png",
@@ -119,21 +119,17 @@ Our analysis of DNS data identifies CNAME records pointing to domains different 
   )
 }}
 
-The chart highlights the top 10 CNAME tracking domains categorized by [Ghostery](https://www.ghostery.com/blog/how-ghostery-categorizes-trackers) as used for analytics and/or advertising.  `wordpress.com`, used for website usage insights, is the most prevalent.  Adobe's `omtrdc.net` and `2o7.net` follow closely.
+The chart highlights the top 10 CNAME tracking domains categorized by [Ghostery](https://www.ghostery.com/blog/how-ghostery-categorizes-trackers) as used for analytics and/or advertising. `wordpress.com`, used for website usage insights, is the most prevalent. Adobe's `omtrdc.net` and `2o7.net` follow closely.
 
-The number of request domains associated with each CNAME domain is also shown. The distribution of request domains mirrors the page prevalence, reflecting the typical one-CNAME-per-tracker-per-website pattern. However, third-party origins also exist, such as Adobe's CNAME from `smetrics.ford.com` to `ford.com.ssl.sc.omtrdc.net` that exists on multiple pages.
+The number of request domains associated with each CNAME domain is also shown. The distribution of request domains mirrors the page prevalence, reflecting the typical one-CNAME-per-tracker-per-website pattern. However, third-party origins also exist, such as Adobe's CNAME from `smetrics.ford.com` to `ford.com.ssl.sc.omtrdc.net` that exists on multiple pages. `salesforce.com` utilizes the highest number of different CNAME domains, often mixing first and third-party usage (e.g., third-party `bpd.my.salesforce-sites.com` vs. first-party `kundportal.lidl.se` pointing to Salesforce domains).
 
-`salesforce.com` utilizes the highest number of different CNAME domains, often mixing first and third-party usage (e.g., third-party `bpd.my.salesforce-sites.com` vs. first-party `kundportal.lidl.se` pointing to Salesforce domains).
+While our chart shows the top 10, we identified 13 CNAME trackers classified for advertising/analytics and present on at least 100 pages. In summary, CNAMEs are being used for tracking in practice. Not only do they use first-party subdomains, but even when cloaking the tracking domain under a different third-party domain, the trackers can still circumvent blocklists.
 
-While our chart shows the top 10, we identified 13 CNAME trackers classified for advertising/analytics and present on at least 100 pages.
-
-In summary, CNAMEs are being used for tracking in practice. Not only do they use first-party subdomains, but even when cloaking the tracking domain under a different third-party domain, the trackers can still circumvent blocklists.
-
-To combat CNAME tracking, browser vendors and privacy extensions are developing countermeasures.  Brave, for example, uses DNS resolution to uncover and block CNAME trackers, while Safari's ITP limits cookie lifetimes.
+To combat CNAME tracking, browser vendors and privacy extensions are developing countermeasures. Brave, for example, uses DNS resolution to uncover and block CNAME trackers, while Safari's ITP limits cookie lifetimes.
 
 #### Bounce tracking
 
-With increasing browser restrictions on third-party cookies, bounce tracking has emerged as a bypass technique. It exploits a vulnerability in browsers like Safari, which [restrict cookie setting](https://webkit.org/tracking-prevention/#the-default-cookie-policy) unless a domain has been directly visited. Bounce tracking momentarily tricks the browser into visiting the tracking domain as a first-party site, allowing it to set a cookie that can be accessed later as a third-party. This way trackers become able to read/write cookies across sites, rendering third-party cookie blocking ineffective. The user is then redirected back to the original or intended page. While used for legitimate purposes like federated authentication (e.g., OAuth), bounce tracking is also employed for cross-site tracking and ad campaign measurement.
+With increasing browser restrictions on third-party cookies, bounce tracking has emerged as a bypass technique. It exploits a vulnerability in browsers like Safari, which [restrict cookie setting](https://webkit.org/tracking-prevention/#the-default-cookie-policy) unless a domain has been directly visited. Bounce tracking momentarily tricks the browser into visiting the tracking domain as a first-party site, allowing it to set a cookie that can be accessed later as a third-party. This way trackers become able to read/write cookies across sites, rendering third-party cookie blocking ineffective. The user is then redirected back to the original or intended page. While used for legitimate purposes like federated authentication (e.g., OAuth), bounce tracking is also employed for cross-site tracking and ad campaign measurement. [Chrome](https://developers.google.com/privacy-sandbox/protections/bounce-tracking-mitigations), [Safari](https://webkit.org/tracking-prevention/#:~:text=to%20as%20bounce-,tracking,-.%20ITP%20counts%20the), [Brave](https://brave.com/glossary/bounce-tracking/) and other browsers actively block bounce tracking.
 
 Given the constrained nature of the crawl, limited to the loading of a specific set of pages, our analysis of redirections encompassed only those returning to the originating page. We identify bounce tracking by detecting instantaneous redirects to a third-party tracker that sets a first-party cookie before returning the user to the original page.
 
@@ -150,5 +146,3 @@ Given the constrained nature of the crawl, limited to the loading of a specific 
 The chart shows prevalent bounce tracking hostnames, with `daemon.indapass.hu` (422 pages) and `medium.com` (364 pages) leading.
 
 Our analysis, limited to crawlable pages, isn't exhaustive, and not all identified domains necessarily exhibit privacy-intrusive behavior. Legitimate uses, like SSO (e.g., `login.szn.cz`), can often be distinguished from tracking by the presence of user interaction on the bounce domain.
-
-[Chrome](https://developers.google.com/privacy-sandbox/protections/bounce-tracking-mitigations), [Safari](https://webkit.org/tracking-prevention/#:~:text=to%20as%20bounce-,tracking,-.%20ITP%20counts%20the), [Brave](https://brave.com/glossary/bounce-tracking/) and other browsers actively block bounce tracking.
