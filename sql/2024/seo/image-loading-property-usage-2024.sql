@@ -30,32 +30,32 @@ return result;
 ''';
 
 WITH image_loading AS (
-    SELECT
-        client,
-        root_page,
-        is_root_page,
-        page,
-        getLoadingPropertyMarkupInfo(JSON_EXTRACT_SCALAR(payload, '$._markup')) AS loading_property_markup_info
-    FROM
-        `httparchive.all.pages` TABLESAMPLE SYSTEM (0.01 PERCENT)
-    WHERE
-        date = "2024-06-01"
+  SELECT
+    client,
+    root_page,
+    is_root_page,
+    page,
+    getLoadingPropertyMarkupInfo(JSON_EXTRACT_SCALAR(payload, '$._markup')) AS loading_property_markup_info
+  FROM
+    `httparchive.all.pages` TABLESAMPLE SYSTEM (0.01 PERCENT)
+  WHERE
+    date = '2024-06-01'
 )
 SELECT
-    client,
-    loading,
-    COUNT(DISTINCT root_page) AS sites,
-    COUNT(DISTINCT page) AS total_pages,
-    COUNTIF(is_root_page = TRUE) AS count_homepage,
-    COUNTIF(is_root_page = FALSE) AS count_secondarypage,
-    COUNTIF(is_root_page = TRUE) / COUNT(DISTINCT page) AS homepage_pct,
-    COUNTIF(is_root_page = FALSE) / COUNT(DISTINCT page) AS secondary_pct
+  client,
+  loading,
+  COUNT(DISTINCT root_page) AS sites,
+  COUNT(DISTINCT page) AS total_pages,
+  COUNTIF(is_root_page = TRUE) AS count_homepage,
+  COUNTIF(is_root_page = FALSE) AS count_secondarypage,
+  COUNTIF(is_root_page = TRUE) / COUNT(DISTINCT page) AS homepage_pct,
+  COUNTIF(is_root_page = FALSE) / COUNT(DISTINCT page) AS secondary_pct
 FROM
-    image_loading,
-    UNNEST(loading_property_markup_info.loading) AS loading
+  image_loading,
+  UNNEST(loading_property_markup_info.loading) AS loading
 GROUP BY
-    client,
-    loading
+  client,
+  loading
 ORDER BY
-    client,
-    loading;
+  client,
+  loading;

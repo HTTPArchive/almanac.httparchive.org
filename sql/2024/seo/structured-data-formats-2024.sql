@@ -40,25 +40,25 @@ WITH structured_data AS (
     client,
     root_page,
     CASE
-        WHEN is_root_page = FALSE THEN 'Secondarypage'
-        WHEN is_root_page = TRUE THEN 'Homepage'
-        ELSE 'No Assigned Page'
-    END AS  is_root_page,
-    page
+      WHEN is_root_page = FALSE THEN 'Secondarypage'
+      WHEN is_root_page = TRUE THEN 'Homepage'
+      ELSE 'No Assigned Page'
+    END AS is_root_page,
+    page,
     getStructuredDataWptBodies(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS structured_data_wpt_bodies_info,
     COUNT(DISTINCT root_page) OVER (PARTITION BY client) AS total_sites
   FROM
     `httparchive.all.pages`
   WHERE
-      date = '2024-06-01'
-    )   
+    date = '2024-06-01'
+)
 
 SELECT
-    client,
-    is_root_page,
-    format,
-    COUNT(DISTINCT root_page) AS sites,
-    COUNT(DISTINCT root_page) / ANY_VALUE(total_sites) AS pct
+  client,
+  is_root_page,
+  format,
+  COUNT(DISTINCT root_page) AS sites,
+  COUNT(DISTINCT root_page) / ANY_VALUE(total_sites) AS pct
 FROM
   structured_data,
   UNNEST(structured_data_wpt_bodies_info.items_by_format) AS format

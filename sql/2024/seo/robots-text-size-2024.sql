@@ -40,7 +40,7 @@ FROM (
     `httparchive.all.pages` TABLESAMPLE SYSTEM (0.01 PERCENT)
   WHERE
     DATE = '2024-06-01'
-    )
+)
 GROUP BY
   client
 ORDER BY

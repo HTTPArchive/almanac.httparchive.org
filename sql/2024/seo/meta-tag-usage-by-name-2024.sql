@@ -40,7 +40,7 @@ total_pages AS (
     client
 )
 
-SELECT 
+SELECT
   page_almanac_info.client,
   meta_tag_name,
   total_pages.total,

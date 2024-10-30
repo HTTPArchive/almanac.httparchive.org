@@ -38,7 +38,7 @@ total_pages AS (
   FROM
     page_almanac_info
   GROUP BY
-    client  
+    client
 )
 
 SELECT
@@ -51,7 +51,7 @@ FROM
   page_almanac_info,
   UNNEST(page_almanac_info.meta_tag_almanac_info) AS meta_tag_property,
   total_pages
-WHERE 
+WHERE
   page_almanac_info.client = total_pages.client
 GROUP BY
   total_pages.total,

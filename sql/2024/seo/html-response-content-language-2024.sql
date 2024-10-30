@@ -3,15 +3,15 @@ WITH subquery AS (
     client,
     page,
     request_headers,
-    CASE  
+    CASE
       WHEN is_root_page = FALSE THEN 'Secondarypage'
       WHEN is_root_page = TRUE THEN 'Homepage'
       ELSE 'No Assigned Page'
     END AS is_root_page
   FROM
-    `httparchive.all.requests` 
+    `httparchive.all.requests`
   WHERE
-    date = "2024-06-01"
+    date = '2024-06-01'
 )
 
 SELECT

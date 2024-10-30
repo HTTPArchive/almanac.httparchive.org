@@ -28,8 +28,8 @@ WITH structured_data AS (
       WHEN is_root_page = FALSE THEN 'Secondarypage'
       WHEN is_root_page = TRUE THEN 'Homepage'
       ELSE 'No Assigned Page'
-    END AS  is_root_page,
-    getStructuredSchemaWptBodies(JSON_EXTRACT_SCALAR(payload,'$._wpt_bodies')) AS structured_schema_wpt_bodies_info,
+    END AS is_root_page,
+    getStructuredSchemaWptBodies(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS structured_schema_wpt_bodies_info,
     COUNT(DISTINCT root_page) OVER (PARTITION BY client) AS total_sites
   FROM
     `httparchive.all.pages`

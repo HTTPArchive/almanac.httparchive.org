@@ -34,36 +34,36 @@ return result;
 ''';
 
 WITH iframe_loading_table AS (
-    SELECT
-      client,
-      root_page,
-      page,
-      CASE
-          WHEN is_root_page = FALSE THEN 'Secondarypage'
-          WHEN is_root_page = TRUE THEN 'Homepage'
-          ELSE 'No Assigned Page'
-      END AS  is_root_page,
-      getIframeMarkupInfo(JSON_EXTRACT_SCALAR(payload, '$._markup')) AS iframe_markup_info
-    FROM
-      `httparchive.all.pages` 
-    WHERE 
-      date = "2024-06-01"
+  SELECT
+    client,
+    root_page,
+    page,
+    CASE
+      WHEN is_root_page = FALSE THEN 'Secondarypage'
+      WHEN is_root_page = TRUE THEN 'Homepage'
+      ELSE 'No Assigned Page'
+    END AS is_root_page,
+    getIframeMarkupInfo(JSON_EXTRACT_SCALAR(payload, '$._markup')) AS iframe_markup_info
+  FROM
+    `httparchive.all.pages`
+  WHERE
+    date = '2024-06-01'
 )
 
 SELECT
-    client,
-    is_root_page,
-    iframe_markup_info,
-    COUNT(DISTINCT page) AS sites,
-    SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client, is_root_page) AS total,
-    COUNT(0) / SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client, is_root_page) AS pct
+  client,
+  is_root_page,
+  iframe_markup_info,
+  COUNT(DISTINCT page) AS sites,
+  SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client, is_root_page) AS total,
+  COUNT(0) / SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client, is_root_page) AS pct
 FROM
-    iframe_loading_table,
-    UNNEST(iframe_markup_info.loading) AS loading
+  iframe_loading_table,
+  UNNEST(iframe_markup_info.loading) AS loading
 GROUP BY
-    client,
-    is_root_page,
-    iframe_markup_info
+  client,
+  is_root_page,
+  iframe_markup_info
 ORDER BY
-    client,
-    is_root_page
+  client,
+  is_root_page

@@ -29,16 +29,16 @@ WITH link_tag AS (
     root_page,
     page,
     CASE
-        WHEN is_root_page = FALSE THEN 'Secondarypage'
-        WHEN is_root_page = TRUE THEN 'Homepage'
-        ELSE 'No Assigned Page'
-    END AS  is_root_page,
+      WHEN is_root_page = FALSE THEN 'Secondarypage'
+      WHEN is_root_page = TRUE THEN 'Homepage'
+      ELSE 'No Assigned Page'
+    END AS is_root_page,
     getHreflangWptBodies(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS hreflang_wpt_bodies_info
   FROM
-    `httparchive.all.pages` 
-  WHERE 
-    date = "2024-06-01"
-) 
+    `httparchive.all.pages`
+  WHERE
+    date = '2024-06-01'
+)
 SELECT
   client,
   is_root_page,

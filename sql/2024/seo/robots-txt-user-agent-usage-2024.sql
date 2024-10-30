@@ -25,10 +25,10 @@ WITH robots AS (
     root_page,
     getRobotsTxtUserAgents(JSON_EXTRACT_SCALAR(payload, '$._robots_txt')) AS robots_txt_user_agent_info,
     COUNT(DISTINCT root_page) OVER (PARTITION BY client) AS total_sites
-    FROM
-      `httparchive.all.pages` 
-    WHERE
-      date = '2024-06-01'
+  FROM
+    `httparchive.all.pages`
+  WHERE
+    date = '2024-06-01'
 )
 
 SELECT

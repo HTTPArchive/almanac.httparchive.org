@@ -18,9 +18,8 @@ FROM (
     page,
     rank
   FROM
-    FROM
     `httparchive.all.pages`
-    WHERE date = "2024-06-01" 
+  WHERE date = '2024-06-01'
   )
 
 LEFT JOIN (
@@ -29,9 +28,9 @@ LEFT JOIN (
     page,
     SAFE_DIVIDE(CAST(JSON_EXTRACT_SCALAR(report, '$.audits.unused-javascript.details.overallSavingsBytes') AS INT64), 1024) AS unused_javascript,
     SAFE_DIVIDE(CAST(JSON_EXTRACT_SCALAR(report, '$.audits.unused-css-rules.details.overallSavingsBytes') AS INT64), 1024) AS unused_css_rules
-    FROM
+  FROM
     `httparchive.all.pages`
-    WHERE date = "2024-06-01" ) -- noqa: L062
+  WHERE date = '2024-06-01')
 
 USING
   (client, page),

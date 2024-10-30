@@ -43,15 +43,15 @@ WITH processed_data AS (
     root_page,
     page,
     CASE
-        WHEN is_root_page = FALSE THEN 'Secondarypage'
-        WHEN is_root_page = TRUE THEN 'Homepage'
-        ELSE 'No Assigned Page'
-    END AS  is_root_page,
+      WHEN is_root_page = FALSE THEN 'Secondarypage'
+      WHEN is_root_page = TRUE THEN 'Homepage'
+      ELSE 'No Assigned Page'
+    END AS is_root_page,
     get_markup_info(JSON_EXTRACT_SCALAR(payload, '$._markup')) AS markup_info
   FROM
-    `httparchive.all.pages` 
-  WHERE 
-    date = "2024-06-01"
+    `httparchive.all.pages`
+  WHERE
+    date = '2024-06-01'
 )
 
 SELECT
@@ -80,7 +80,7 @@ SELECT
   APPROX_QUANTILES(markup_info.images_with_alt_missing, 1000)[OFFSET(percentile * 10)] AS images_with_alt_missing,
   COUNT(DISTINCT page) AS sites,
   SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client, is_root_page) AS total,
-  COUNT(0) / SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client, is_root_page) AS pct,
+  COUNT(0) / SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client, is_root_page) AS pct
 FROM
   processed_data,
   UNNEST([10, 25, 50, 75, 90]) AS percentile

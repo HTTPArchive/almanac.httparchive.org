@@ -39,7 +39,7 @@ WITH page_metrics AS (
     getOutgoingLinkMetrics(payload) AS outgoing_link_metrics,
     JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies'), '$.is_root_page') AS is_root_page
   FROM
-    `httparchive.all.pages` 
+    `httparchive.all.pages`
   WHERE
     DATE = '2024-06-01'
 )
@@ -60,7 +60,7 @@ SELECT
   APPROX_QUANTILES(outgoing_link_metrics.same_site, 1000)[OFFSET(percentile * 10)] AS outgoing_links_same_site,
   APPROX_QUANTILES(outgoing_link_metrics.same_property, 1000)[OFFSET(percentile * 10)] AS outgoing_links_same_property,
   APPROX_QUANTILES(outgoing_link_metrics.other_property, 1000)[OFFSET(percentile * 10)] AS outgoing_links_other_property
-FROM 
+FROM
   page_metrics,
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile,
   UNNEST([1000, 10000, 100000, 1000000, 10000000, 100000000]) AS rank_grouping

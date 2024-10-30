@@ -19,20 +19,20 @@ return results;
 ''';
 
 WITH lighthouse_extraction AS (
-    SELECT
-        client,  
-        CASE
-          WHEN is_root_page = FALSE THEN 'Secondarypage'
-          WHEN is_root_page = TRUE THEN 'Homepage'
-          ELSE 'No Assigned Page'
-        END
-        AS  is_root_page,
-        page,
-        lighthouse as report
-    FROM
-        `httparchive.all.pages` 
-    WHERE
-        date = "2024-06-01"
+  SELECT
+    client,
+    CASE
+      WHEN is_root_page = FALSE THEN 'Secondarypage'
+      WHEN is_root_page = TRUE THEN 'Homepage'
+      ELSE 'No Assigned Page'
+    END
+    AS is_root_page,
+    page,
+    lighthouse AS report
+  FROM
+    `httparchive.all.pages`
+  WHERE
+    date = '2024-06-01'
 )
 SELECT
   client,
@@ -47,8 +47,8 @@ SELECT
   MAX(audits.description) AS description,
   SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client, is_root_page) AS total
 FROM
-    lighthouse_extraction,
-    UNNEST(getAudits(JSON_EXTRACT(report, '$.audits'))) AS audits
+  lighthouse_extraction,
+  UNNEST(getAudits(JSON_EXTRACT(report, '$.audits'))) AS audits
 GROUP BY
   client,
   is_root_page,

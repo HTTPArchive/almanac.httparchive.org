@@ -8,15 +8,15 @@ WITH totals AS (
       WHEN is_root_page = TRUE THEN 'Homepage'
       ELSE 'No Assigned Page'
     END
-    AS  is_root_page,
+    AS is_root_page,
     payload,
     page,
     JSON_QUERY(payload, '$._valid-head.invalidHead') AS invalidHead,
     ARRAY_LENGTH(JSON_EXTRACT_ARRAY(payload, '$._valid-head.invalidElements')) AS invalidCount
-    FROM
-        `httparchive.all.pages` 
-    WHERE
-        date = "2024-06-01"
+  FROM
+    `httparchive.all.pages`
+  WHERE
+    date = '2024-06-01'
   GROUP BY
     client,
     page,

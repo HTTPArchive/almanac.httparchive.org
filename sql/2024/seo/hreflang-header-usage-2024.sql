@@ -24,36 +24,36 @@ return result;
 ''';
 
 WITH hreflang_usage AS (
-    SELECT
-        client,
-        root_page,
-        page,
-        CASE
-            WHEN is_root_page = FALSE THEN 'Secondarypage'
-            WHEN is_root_page = TRUE THEN 'Homepage'
-            ELSE 'No Assigned Page'
-        END AS  is_root_page,
-        getHreflangWptBodies(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS hreflang_wpt_bodies_info
-    FROM
-        `httparchive.all.pages` 
-    WHERE 
-        date = "2024-06-01"
-        
+  SELECT
+    client,
+    root_page,
+    page,
+    CASE
+      WHEN is_root_page = FALSE THEN 'Secondarypage'
+      WHEN is_root_page = TRUE THEN 'Homepage'
+      ELSE 'No Assigned Page'
+    END AS is_root_page,
+    getHreflangWptBodies(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS hreflang_wpt_bodies_info
+  FROM
+    `httparchive.all.pages`
+  WHERE
+    date = '2024-06-01'
+
 )
 SELECT
-    client,
-    is_root_page,
-    NORMALIZE_AND_CASEFOLD(hreflang) AS hreflang,
-    COUNT(DISTINCT page) AS sites,
-    SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client, is_root_page) AS total,
-    COUNT(0) / SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client, is_root_page) AS pct
+  client,
+  is_root_page,
+  NORMALIZE_AND_CASEFOLD(hreflang) AS hreflang,
+  COUNT(DISTINCT page) AS sites,
+  SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client, is_root_page) AS total,
+  COUNT(0) / SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client, is_root_page) AS pct
 FROM
-    hreflang_usage,
-    UNNEST(hreflang_wpt_bodies_info.hreflangs) AS hreflang
+  hreflang_usage,
+  UNNEST(hreflang_wpt_bodies_info.hreflangs) AS hreflang
 GROUP BY
-    hreflang,
-    client,
-    is_root_page
+  hreflang,
+  client,
+  is_root_page
 ORDER BY
-    sites DESC,
-    client DESC;
+  sites DESC,
+  client DESC;

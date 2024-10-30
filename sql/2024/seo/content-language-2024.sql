@@ -18,35 +18,35 @@ try {
 return result;
 ''';
 WITH content_language_usage AS (
-    SELECT
-        client,
-        root_page,
-        page,
-        CASE
-            WHEN is_root_page = FALSE THEN 'Secondarypage'
-            WHEN is_root_page = TRUE THEN 'Homepage'
-            ELSE 'No Assigned Page'
-        END AS  is_root_page,
-        getContentLanguagesAlmanac(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS content_languages
-    FROM
-        `httparchive.all.pages` 
-    WHERE 
-        date = "2024-06-01"
+  SELECT
+    client,
+    root_page,
+    page,
+    CASE
+      WHEN is_root_page = FALSE THEN 'Secondarypage'
+      WHEN is_root_page = TRUE THEN 'Homepage'
+      ELSE 'No Assigned Page'
+    END AS is_root_page,
+    getContentLanguagesAlmanac(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS content_languages
+  FROM
+    `httparchive.all.pages`
+  WHERE
+    date = '2024-06-01'
 )
 SELECT
-    client,
-    is_root_page,
-    content_language,
-    COUNT(DISTINCT page) AS sites,
-    SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client, is_root_page) AS total,
-    COUNT(0) / SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client, is_root_page) AS pct
+  client,
+  is_root_page,
+  content_language,
+  COUNT(DISTINCT page) AS sites,
+  SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client, is_root_page) AS total,
+  COUNT(0) / SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client, is_root_page) AS pct
 FROM
-    content_language_usage,
-    UNNEST(content_languages) AS content_language
+  content_language_usage,
+  UNNEST(content_languages) AS content_language
 GROUP BY
-    client,
-    is_root_page,
-    content_language
+  client,
+  is_root_page,
+  content_language
 ORDER BY
-    sites DESC,
-    client DESC;
+  sites DESC,
+  client DESC;

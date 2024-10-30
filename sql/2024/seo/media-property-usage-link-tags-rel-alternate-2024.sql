@@ -41,7 +41,7 @@ total_pages AS (
     client
 )
 
-SELECT 
+SELECT
   page_almanac_info.client,
   media,
   total_pages.total,

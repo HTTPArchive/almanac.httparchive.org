@@ -164,9 +164,9 @@ FROM (
     client AS client,
     getCanonicalMetrics(payload) AS canonical_metrics
   FROM
-    `httparchive.all.pages` 
-    WHERE 
-      date = '2024-06-01')
+    `httparchive.all.pages`
+  WHERE
+    date = '2024-06-01')
 WHERE
   canonical_metrics.has_wpt_bodies
 GROUP BY

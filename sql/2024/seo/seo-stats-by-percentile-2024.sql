@@ -1,4 +1,3 @@
-
 #standardSQL
 # SEO stats by percentile
 
@@ -140,15 +139,15 @@ FROM (
       WHEN is_root_page = TRUE THEN 'Homepage'
       ELSE 'No Assigned Page'
     END
-    AS  is_root_page,
+    AS is_root_page,
     percentile,
     page,
     get_wpt_bodies_info(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS wpt_bodies_info
   FROM
-    `httparchive.all.pages` ,
+    `httparchive.all.pages`,
     UNNEST([10, 25, 50, 75, 90]) AS percentile
-    WHERE
-        date = '2024-06-01'
+  WHERE
+    date = '2024-06-01'
 )
 WHERE
   wpt_bodies_info.valid_data

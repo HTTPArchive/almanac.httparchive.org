@@ -60,12 +60,12 @@ WITH markup_extraction AS (
       WHEN is_root_page = TRUE THEN 'Homepage'
       ELSE 'No Assigned Page'
     END
-    AS  is_root_page,
+    AS is_root_page,
     page,
     getMarkupStatsInfo(JSON_EXTRACT_SCALAR(payload, '$._markup')) AS markup_info
   FROM
     `httparchive.all.pages`
-    WHERE date = "2024-06-01" 
+  WHERE date = '2024-06-01'
 )
 
 SELECT
@@ -93,9 +93,9 @@ SELECT
   SAFE_DIVIDE(COUNTIF(markup_info.has_html_amp_emoji_attribute OR markup_info.has_html_amp_attribute), COUNT(0)) AS pct_has_html_amp_or_emoji_attribute,
 
   # Pages with rel=amphtml
-  SAFE_DIVIDE(COUNTIF(markup_info.has_rel_amphtml_tag), COUNT(0)) AS pct_has_rel_amphtml_tag,
+  SAFE_DIVIDE(COUNTIF(markup_info.has_rel_amphtml_tag), COUNT(0)) AS pct_has_rel_amphtml_tag
 FROM
-    markup_extraction
+  markup_extraction
 GROUP BY
   client,
   is_root_page

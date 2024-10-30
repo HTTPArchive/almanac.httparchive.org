@@ -31,7 +31,7 @@ FROM (
   FROM
     `httparchive.all.pages`
   WHERE date = '2024-06-01'
-    ) -- noqa: L062
+) -- noqa: L062
 GROUP BY
   client
 ORDER BY

@@ -36,9 +36,9 @@ FROM
       client AS client,
       getVideosAlmanacInfo(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS videos_almanac_info
     FROM
-      `httparchive.all.pages` 
-      WHERE
-        date = '2024-06-01'
+      `httparchive.all.pages`
+    WHERE
+      date = '2024-06-01'
   )
 GROUP BY
   client
