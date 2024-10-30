@@ -1,14 +1,14 @@
 WITH RECURSIVE pages AS (
   SELECT
-    CASE page -- publisher websites may redirect to an SSP domain, and need to use redirected domain instead of page domain
+    CASE page -- Publisher websites may redirect to an SSP domain, and need to use redirected domain instead of page domain. CASE needs to be replaced with a more robust solution from HTTPArchive/custom-metrics#136.
       WHEN 'https://www.chunkbase.com/' THEN 'cafemedia.com'
       ELSE NET.REG_DOMAIN(page)
     END AS page,
-    JSON_QUERY(custom_metrics, '$.ads') AS ads_metrics
+    JSON_QUERY(ANY_VALUE(custom_metrics), '$.ads') AS ads_metrics
   FROM `httparchive.all.pages`
   WHERE date = '2024-06-01' AND
-    client = 'mobile' AND
     is_root_page = TRUE
+  GROUP BY 1
 ), ads AS (
   SELECT
     page,

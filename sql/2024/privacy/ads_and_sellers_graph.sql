@@ -1,27 +1,28 @@
 WITH RECURSIVE pages AS (
-  SELECT DISTINCT
+  SELECT
     CASE page -- Publisher websites may redirect to an SSP domain, and need to use redirected domain instead of page domain. CASE needs to be replaced with a more robust solution from HTTPArchive/custom-metrics#136.
       WHEN 'https://www.chunkbase.com/' THEN 'cafemedia.com'
       ELSE NET.REG_DOMAIN(page)
     END AS page,
-    custom_metrics
+    JSON_QUERY(ANY_VALUE(custom_metrics), '$.ads') AS ads_metrics
   FROM `httparchive.all.pages`
   WHERE date = '2024-06-01' AND
     is_root_page = TRUE
+  GROUP BY 1
 ), ads AS (
   SELECT
     page,
-    JSON_QUERY(custom_metrics, '$.ads.ads.account_types') AS ad_accounts
+    JSON_QUERY(ads_metrics, '$.ads.account_types') AS ad_accounts
   FROM pages
   WHERE
-    CAST(JSON_VALUE(custom_metrics, '$.ads.ads.account_count') AS INT64) > 0
+    CAST(JSON_VALUE(ads_metrics, '$.ads.account_count') AS INT64) > 0
 ), sellers AS (
   SELECT
     page,
-    JSON_QUERY(custom_metrics, '$.ads.sellers.seller_types') AS ad_sellers
+    JSON_QUERY(ads_metrics, '$.sellers.seller_types') AS ad_sellers
   FROM pages
   WHERE
-    CAST(JSON_VALUE(custom_metrics, '$.ads.sellers.seller_count') AS INT64) > 0
+    CAST(JSON_VALUE(ads_metrics, '$.sellers.seller_count') AS INT64) > 0
 ), relationships_web AS (
   SELECT
     NET.REG_DOMAIN(REGEXP_EXTRACT(NORMALIZE_AND_CASEFOLD(domain), r'\b[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}\b')) AS demand,
