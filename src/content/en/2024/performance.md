@@ -553,14 +553,14 @@ One of the "usual suspects" is the `unload` event that is triggered when a user 
 {{ figure_markup(
   image="unload-usage.png",
   caption="Usage of unload by site rank.",
-  description="Bar chart showing the percentage of pages ineligible for bfcache (back-forward cache) due to unload handlers, by rank, for desktop and mobile devices. For the top 1,000 websites, 32% of desktop pages and 30% of mobile pages are ineligible. For the top 10,000, 30% of desktop and 26% of mobile pages are ineligible. In the top 100,000, 26% of desktop and mobile pages are ineligible. At the 1,000,000 rank, 20% of desktop pages and 19% of mobile pages are ineligible. At the 10,000,000 rank, 17% of desktop and 16% of mobile pages are ineligible, while for all ranks, 16% of desktop and mobile pages are ineligible.",
+  description="Bar chart showing the percentage of pages ineligible for bfcache (back-forward cache) due to unload handlers, by rank, for desktop and mobile devices. For the top 1,000 websites, 35% of desktop pages are ineligible. For the top 10,000, 34% of desktop are ineligible. In the top 100,000, 29% of desktop are ineligible. At the 1,000,000 rank, 21% of desktop pages are ineligible. At the 10,000,000 rank, 17% of desktop are ineligible, while for all ranks, 16% of desktop pages are ineligible.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=1163433950&format=interactive",
   sheets_gid="1706831462",
   sql_file="bfcache_unload.sql"
   )
 }}
 
-From the above chart showing `unload` events from pages displayed on desktop devices, we can see a few interesting things. Overall event usage is quite low, 16%. However, it increases drastically for the top 1000 sites, to 32%, indicating that more popular sites probably use quite some more 3rd party services that often use this specific event.
+From the above chart showing `unload` events from pages displayed on desktop devices, we can see a few interesting things. Overall event usage is quite low, 16%. However, it increases drastically for the top 1000 sites, to 35%, indicating that more popular sites probably use quite some more 3rd party services that often use this specific event.
 
 It is expected to see this decrease in the use of unload events with major browsers like Google Chrome and Firefox moving towards its deprecation since around 2020 and encouraging the use of alternative events like `pagehide` and `visibilitychange`. These events are more reliable, do not block the browser's navigation, and are compatible with bfcache, allowing pages to be preserved in memory and restored instantly when users navigate back or forward.
 
