@@ -2,7 +2,7 @@
 This module retrieves and extracts trackers as identified by WhoTracks.me
 and appends them to the httparchive.almanac.whotracksme BigQuery table.
 """
-
+# pylint: disable=import-error
 import sqlite3
 
 import pandas
