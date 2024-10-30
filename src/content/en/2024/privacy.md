@@ -119,7 +119,7 @@ Our analysis of DNS data identifies CNAME records pointing to domains different 
   )
 }}
 
-The graph highlights the top 10 CNAME tracking domains categorized by [Ghostery](https://www.ghostery.com/blog/how-ghostery-categorizes-trackers) as used for analytics and/or advertising.  `wordpress.com`, used for website usage insights, is the most prevalent.  Adobe's `omtrdc.net` and `2o7.net` follow closely.
+The chart highlights the top 10 CNAME tracking domains categorized by [Ghostery](https://www.ghostery.com/blog/how-ghostery-categorizes-trackers) as used for analytics and/or advertising.  `wordpress.com`, used for website usage insights, is the most prevalent.  Adobe's `omtrdc.net` and `2o7.net` follow closely.
 
 The number of request domains associated with each CNAME domain is also shown. The distribution of request domains mirrors the page prevalence, reflecting the typical one-CNAME-per-tracker-per-website pattern. However, third-party origins also exist, such as Adobe's CNAME from `smetrics.ford.com` to `ford.com.ssl.sc.omtrdc.net` that exists on multiple pages.
 
