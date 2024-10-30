@@ -98,3 +98,57 @@ Detecting fingerprinting is difficult, as the APIs used in fingerprinting can al
 }}
 
 Through this, we find a mixture of scripts that are primarily used for tracking, and scripts that also have a non-tracking purpose. Recaptcha, the most common script, is known to use fingerprinting to separate humans from bots. Google Ads and Yandex Metrika are also primarily tracking scripts. However, other scripts, such as the Google Maps API and Youtube embed API, also have a non-tracking purpose, and so their usage of these APIs may have purposes other than fingerprinting. Further manual analysis is required to confirm whether these scripts are actually performing fingerprinting.
+
+### Covert Cross-site Tracking
+
+Websites employ various covert techniques to track users across the web, often bypassing privacy protections like ad blockers and third-party cookie restrictions. These methods exploit vulnerabilities in browser functionality and DNS configurations, enabling persistent tracking even as privacy measures become more stringent. We examined two prominent covert tracking practices: CNAME tracking and bounce tracking, and looked into how browsers are trying to reduce such pervasive covert tracking and maintain user privacy by default.
+
+#### CNAME tracking
+
+Traditional blocklist-based tracking protection, like ad blockers, often rely on blocking third-party requests based on their domain. To circumvent these tools, some trackers employ CNAME cloaking (or CNAME tracking). This technique leverages CNAME records at the DNS level to connect a first-party subdomain (e.g., `subdomain.example.com` on `www.example.com`) to the actual third-party tracker (e.g., `example.tracker.com`).  Because the request appears to originate from the first-party domain, ad blockers are less likely to intervene, and cookies are set in a first-party context.
+
+Our analysis of DNS data identifies CNAME records pointing to domains different from the website's primary domain.  While CNAME records are legitimately used by hosting services like CDNs, they can also be exploited for tracking.  To focus on tracking-specific usage, we cross-referenced identified domains with tracker lists from [Ghostery](https://github.com/ghostery/trackerdb) and [AdGuard](https://github.com/AdguardTeam/cname-trackers), filtering out primarily hosting-related domains.
+
+{{ figure_markup(
+  image="most-common-cname-domains.png",
+  caption="Most common CNAME tracking domains by the percentage of pages and their count of related requests domains.",
+  description="While `wordpress.com` appears on a larger percentage of pages, the number of request domains associated with `salesforce.com`, `omtrdc.net` and `eloqua.com` suggests SalesForce, Adobe and Oracle correspondingly are the major players in CNAME tracking.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=1893938121&format=interactive",
+  sheets_gid="1426844224",
+  sql_file="most_common_cname_domains.sql"
+  )
+}}
+
+The graph highlights the top 10 CNAME tracking domains categorized by [Ghostery](https://www.ghostery.com/blog/how-ghostery-categorizes-trackers) as used for analytics and/or advertising.  `wordpress.com`, used for website usage insights, is the most prevalent.  Adobe's `omtrdc.net` and `2o7.net` follow closely.
+
+The number of request domains associated with each CNAME domain is also shown. The distribution of request domains mirrors the page prevalence, reflecting the typical one-CNAME-per-tracker-per-website pattern. However, third-party origins also exist, such as Adobe's CNAME from `smetrics.ford.com` to `ford.com.ssl.sc.omtrdc.net` that exists on multiple pages.
+
+`salesforce.com` utilizes the highest number of different CNAME domains, often mixing first and third-party usage (e.g., third-party `bpd.my.salesforce-sites.com` vs. first-party `kundportal.lidl.se` pointing to Salesforce domains).
+
+While our chart shows the top 10, we identified 13 CNAME trackers classified for advertising/analytics and present on at least 100 pages.
+
+In summary, CNAMEs are being used for tracking in practice. Not only do they use first-party subdomains, but even when cloaking the tracking domain under a different third-party domain, the trackers can still circumvent blocklists.
+
+To combat CNAME tracking, browser vendors and privacy extensions are developing countermeasures.  Brave, for example, uses DNS resolution to uncover and block CNAME trackers, while Safari's ITP limits cookie lifetimes.
+
+#### Bounce tracking
+
+With increasing browser restrictions on third-party cookies, bounce tracking has emerged as a bypass technique. It exploits a vulnerability in browsers like Safari, which [restrict cookie setting](https://webkit.org/tracking-prevention/#the-default-cookie-policy) unless a domain has been directly visited. Bounce tracking momentarily tricks the browser into visiting the tracking domain as a first-party site, allowing it to set a cookie that can be accessed later as a third-party. This way trackers become able to read/write cookies across sites, rendering third-party cookie blocking ineffective. The user is then redirected back to the original or intended page. While used for legitimate purposes like federated authentication (e.g., OAuth), bounce tracking is also employed for cross-site tracking and ad campaign measurement.
+
+Given the constrained nature of the crawl, limited to the loading of a specific set of pages, our analysis of redirections encompassed only those returning to the originating page. We identify bounce tracking by detecting instantaneous redirects to a third-party tracker that sets a first-party cookie before returning the user to the original page.
+
+{{ figure_markup(
+  image="number-of-websites-with-bounce-tracking.png",
+  caption="Most common bounce tracking domains by number of pages.",
+  description="`daemon.indapass.hu` is the most prevalent, appearing on 422 pages in the dataset, followed by `medium.com` (364 pages) and `api.action-media.ru` (155 pages). The remaining domains appear on significantly fewer pages, ranging from 83 down to 23.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=1199006042&format=interactive",
+  sheets_gid="1426844224",
+  sql_file="number_of_websites_with_bounce_tracking.sql"
+  )
+}}
+
+The chart shows prevalent bounce tracking hostnames, with `daemon.indapass.hu` (422 pages) and `medium.com` (364 pages) leading.
+
+Our analysis, limited to crawlable pages, isn't exhaustive, and not all identified domains necessarily exhibit privacy-intrusive behavior. Legitimate uses, like SSO (e.g., `login.szn.cz`), can often be distinguished from tracking by the presence of user interaction on the bounce domain.
+
+[Chrome](https://developers.google.com/privacy-sandbox/protections/bounce-tracking-mitigations), [Safari](https://webkit.org/tracking-prevention/#:~:text=to%20as%20bounce-,tracking,-.%20ITP%20counts%20the), [Brave](https://brave.com/glossary/bounce-tracking/) and other browsers actively block bounce tracking.
