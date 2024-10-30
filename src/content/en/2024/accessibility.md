@@ -11,11 +11,11 @@ discuss:
 results: https://docs.google.com/spreadsheets/d/1btB1r9QpdgTyToPhn7glcGAdMFs7eq4UcQSVIHBqiYQ/
 mgifford_bio: Mike Gifford is CivicActions' Open Standards & Practices Lead. He is also a thought leader on open government, digital accessibility and sustainability. He has served as a Drupal Core Accessibility Maintainer and also a W3C Invited Expert. He is a recognized authoring tool accessibility expert and contributor to the W3C's Draft Web Sustainability Guidelines (WSG) 1.0.
 featured_quote: Most modern governments have committed to either WCAG 2.0 AA or WCAG 2.1 AA. It is clear that the implementation of these policies isn't being equally delivered.
-featured_stat_1: 40.2%
-featured_stat_label_1: Of desktop sites and 39.3% of mobile sites have at least one `role="presentation"`.
+featured_stat_1: 40%
+featured_stat_label_1: Of desktop sites and 39% of mobile sites have at least one `role="presentation"`.
 featured_stat_2: 0.1%
 featured_stat_label_2: Sites with `<audio>` elements include a `<track>` element.
-featured_stat_3: 56.6%
+featured_stat_3: 57%
 featured_stat_label_3: Mobile sites passing the Lighthouse audit for properly ordered headings.
 ---
 
@@ -89,12 +89,12 @@ The <a hreflang="en" href="https://www.w3.org/WAI/WCAG22/Understanding/contrast-
 
 Google Lighthouse can easily test for most but not all color contrast issues. There are a wide range of <a hreflang="en" href="https://accessibility.civicactions.com/guide/tools#color">open source tools for checking color combinations</a> which can be easily incorporated into anyone's workflow. It is important to note that the use of these tools is necessary, as you can't rely on your own perception of sufficient contrast when you have typical contrast sensitivity.
 
-The Lighthouse test determined that 29.2% of mobile sites and 27.7% of desktop sites have sufficient text color contrast. This is a moderate improvement over previous years, but it is still far below what is required for basic readability.
+The Lighthouse test determined that 29% of mobile sites and 28% of desktop sites have sufficient text color contrast. This is a moderate improvement over previous years, but it is still far below what is required for basic readability.
 
 {{ figure_markup(
   image="color-contrast-2019-2020-2021-2022-2024.png",
   caption="Sites with sufficient color contrast.",
-  description="A bar chart showing gradual progress in color contrast. 22.0% of mobile sites had sufficient color contrast in 2019, dipping slightly to 21.1% in 2020 and increasing slightly to 22.2% for 2020, increasing more to 22.9% in 2022, 2024 saw a bign jump to 29.2% for mobile. Desktop sites in 2022 were at 22.7% and in 2024 rose to 27.7%.",
+  description="A bar chart showing gradual progress in color contrast. 22% of mobile sites had sufficient color contrast in 2019, dipping slightly to 21% in 2020 and increasing slightly to 22% for 2020, increasing more to 23% in 2022, 2024 saw a big jump to 29% for mobile. Desktop sites in 2022 were at 23% and in 2024 rose to 28%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=476448992&format=interactive",
   sheets_gid="985048008",
   sql_file="color_contrast.sql"
@@ -141,14 +141,14 @@ Identifying language with the lang attribute enhances screen reader support and 
 
 {{ figure_markup(
   caption="Mobile sites have a valid lang attribute.",
-  content="86.2%",
+  content="86%",
   classes="big-number",
   sheets_gid="559595084",
   sql_file="valid_html_lang.sql"
 )
 }}
 
-It's promising to note that in 2022, 83% of mobile websites included a lang attribute, and two years later it is at 86.2%. However, since this is a Level A conformance issue under WCAG, there is still room for improvement. To meet this criterion, the lang attribute should be added to the `<html>` tag with a recognized <a hreflang="en" href="https://www.w3.org/WAI/standards-guidelines/act/rules/bf051a/#known-primary-language-tag">primary language tag</a>. This global attribute can also be applied to other tags if the page contains multiple languages. Properly defining the language is crucial. Sometimes, when a template is copied to create a new website, discrepancies can arise between the language of the content and the language attribute (lang="en") in the code.
+It's promising to note that in 2022, 83% of mobile websites included a lang attribute, and two years later it is at 86%. However, since this is a Level A conformance issue under WCAG, there is still room for improvement. To meet this criterion, the lang attribute should be added to the `<html>` tag with a recognized <a hreflang="en" href="https://www.w3.org/WAI/standards-guidelines/act/rules/bf051a/#known-primary-language-tag">primary language tag</a>. This global attribute can also be applied to other tags if the page contains multiple languages. Properly defining the language is crucial. Sometimes, when a template is copied to create a new website, discrepancies can arise between the language of the content and the language attribute (lang="en") in the code.
 
 Also, keep in mind that there is the page language, but pages often contain multiple languages within them. The W3C has good documentation on <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Understanding/language-of-parts.html">how to address the Language of Parts</a>.
 
@@ -213,7 +213,7 @@ We discovered that 53% (in 2022 it was 86%) of websites apply `:focus {outline: 
 
 Generally, HTML will have focus order set without having to set the tabindex. CSS & JavaScript often causes changes to both the order of the HTML as it is presented in the DOM. The tabindex attribute controls whether an element can receive focus and determines its position in the keyboard focus or "tab" order.
 
-Our analysis shows that 62.9% of mobile websites and 64.1% of desktop websites (up from 60% and 62% respectively) utilize tabindex. This attribute serves several purposes, which can affect accessibility:
+Our analysis shows that 63% of mobile websites and 64% of desktop websites (up from 60% and 62% respectively) utilize tabindex. This attribute serves several purposes, which can affect accessibility:
 
 - `tabindex="0"` places an element in the sequential keyboard focus order. Custom interactive elements and widgets should have `tabindex="0"` to ensure they are included in the focus sequence.
 - `tabindex="-1"` removes the element from the keyboard focus order but allows it to be focused programmatically via JavaScript.
@@ -424,7 +424,7 @@ For example:
   )
 }}
 
-Unfortunately, 12.6% of mobile inputs lack accessible names (a significant improvement from 38% in 2022). Also only 14.6% of mobile sites use `<label>` (which is down from 19% in 2022), which can hinder users relying on screen readers or voice-to-text tools. An accessible name always needs to be used and sites should support assistive technology beyond just screen readers. WCAG 2.1 added 2.5.3 Label in Name (Level A) to help ensure that technologies like Voice Control would be better supported.  Use of `aria-label` and `aria-labelledby` should only be used if an HTML `<label>` cannot be used.
+Unfortunately, 13% of mobile inputs lack accessible names (a significant improvement from 38% in 2022). Also only 15% of mobile sites use `<label>` (which is down from 19% in 2022), which can hinder users relying on screen readers or voice-to-text tools. An accessible name always needs to be used and sites should support assistive technology beyond just screen readers. WCAG 2.1 added 2.5.3 Label in Name (Level A) to help ensure that technologies like Voice Control would be better supported.  Use of `aria-label` and `aria-labelledby` should only be used if an HTML `<label>` cannot be used.
 
 ### `placeholder` attribute
 
@@ -464,7 +464,7 @@ Indicating required fields is crucial for forms. Before HTML5, an asterisk (*) w
   )
 }}
 
-Currently, 64.9% of mobile sites (down from 67% in 2022) use the required attribute, and 40.1% use `aria-required` (up from 32% in 2022), but 19% still rely only on an asterisk (which is down from 22% in 2022). This should be avoided unless supplemented by required and `aria-required`.
+Currently, 65% of mobile sites (down from 67% in 2022) use the required attribute, and 40% use `aria-required` (up from 32% in 2022), but 19% still rely only on an asterisk (which is down from 22% in 2022). This should be avoided unless supplemented by required and `aria-required`.
 
 ### Captchas
 
@@ -625,7 +625,7 @@ An element's accessible name can come from its content (e.g., button text), attr
 
 Two ARIA attributes that aid in assigning accessible names are `aria-label` and `aria-labelledby`. These attributes are given precedence over natively derived accessible names and should be used sparingly and only when necessary. Testing accessible names with screen readers and involving individuals with disabilities is crucial to ensure that the names are helpful and do not hinder accessibility.
 
-We observed that almost 66% of pages evaluated featured at least one element with the `aria-label` attribute (up from 58% for desktop and 57% in mobile in 2022), making it the most frequently used ARIA attribute for accessible names. Additionally, 26.7% of desktop pages and 25.5% of mobile pages had at least one element with the `aria-labelledby` attribute (both are up 2% from 2022 data). This trend suggests that while more elements are being assigned accessible names, it might also indicate a rise in elements lacking visual labels. This can be challenging for users with cognitive disabilities and voice input users.
+We observed that almost 66% of pages evaluated featured at least one element with the `aria-label` attribute (up from 58% for desktop and 57% in mobile in 2022), making it the most frequently used ARIA attribute for accessible names. Additionally, 27% of desktop pages and 25% of mobile pages had at least one element with the `aria-labelledby` attribute (both are up 2% from 2022 data). This trend suggests that while more elements are being assigned accessible names, it might also indicate a rise in elements lacking visual labels. This can be challenging for users with cognitive disabilities and voice input users.
 
 {{ figure_markup(
   image="button-name-sources.png",
@@ -827,7 +827,7 @@ There are two means by which we can identify country information, first by the G
 {{ figure_markup(
   image="country-by-geoid.png",
   caption="Most accessibile countries by GeoID.",
-  description="A bar cart with the GeoID, the country with the highest average for accessibility is the USA with a value of 84.3%. There is a drop of less a perscent as we move to Canada, UK, Australia, Germany, Netherlands, France, Mexico, Italy, Spain, Argentina, Indonesia, India, Poland, Brazil, Japan, Turkey, Vietnam, China and finally the Republic of Korea with 77.7%. These were for countries that hosted more than 100000 domains.",
+  description="A bar cart with the GeoID, the country with the highest average for accessibility is the USA with a value of 84%. There is a drop of less a perscent as we move to Canada, UK, Australia, Germany, Netherlands, France, Mexico, Italy, Spain, Argentina, Indonesia, India, Poland, Brazil, Japan, Turkey, Vietnam, China and finally the Republic of Korea with 78%. These were for countries that hosted more than 100000 domains.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=421126157&format=interactive",
   sheets_gid="260430925",
   sql_file="lighthouse_score_by_country.sql",
@@ -871,14 +871,14 @@ Not all government domains follow consistent accessibility rules, however we wer
 {{ figure_markup(
   image="accessible-governments.png",
   caption="Most accessible government websites.",
-  description="A bar cart with with the most accessible global governments. The Netherlands (98%), Luxembourg (96%), Finland (94%), UK (92%), European Union (91%), Norway (91%), Jersey (91%), Singapore (92%), Belgium (90.9%), Germany (91%),  France (90%), Australia (89%), New Zealand (89%), Dnmark (89%). ",
+  description="A bar cart with with the most accessible global governments. The Netherlands (98%), Luxembourg (96%), Finland (94%), UK (92%), European Union (91%), Norway (91%), Jersey (91%), Singapore (92%), Belgium (91%), Germany (91%),  France (90%), Australia (89%), New Zealand (89%), Dnmark (89%). ",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=415917251&format=interactive",
   sheets_gid="720509689",
   sql_file="lighthouse_score_by_government.sql"
   )
 }}
 
-Most modern governments have committed to either WCAG 2.0 AA or WCAG 2.1 AA. It is clear that the implementation of these policies isn't being equally delivered. This is particularly important when looking into accessibility within the European Union where each member state needs to implement legislation based on the <a hreflang="en" href="https://digital-strategy.ec.europa.eu/en/policies/web-accessibility-directive-standards-and-harmonisation">Web Accessibility Directive</a>. It should be possible to compare the 3 year <a hreflang="en" href="https://digital-strategy.ec.europa.eu/en/library/web-accessibility-directive-monitoring-reports">EU member state reports</a> with the values provided here and in future Web Almanacs. It is worth noting that the average for the United States is 87.3%.
+Most modern governments have committed to either WCAG 2.0 AA or WCAG 2.1 AA. It is clear that the implementation of these policies isn't being equally delivered. This is particularly important when looking into accessibility within the European Union where each member state needs to implement legislation based on the <a hreflang="en" href="https://digital-strategy.ec.europa.eu/en/policies/web-accessibility-directive-standards-and-harmonisation">Web Accessibility Directive</a>. It should be possible to compare the 3 year <a hreflang="en" href="https://digital-strategy.ec.europa.eu/en/library/web-accessibility-directive-monitoring-reports">EU member state reports</a> with the values provided here and in future Web Almanacs. It is worth noting that the average for the United States is 87%.
 
 {{ figure_markup(
   image="accessible-governments-world.png",
@@ -890,9 +890,9 @@ Most modern governments have committed to either WCAG 2.0 AA or WCAG 2.1 AA. It 
   )
 }}
 
-The Netherlands (97.5%) are firmly in the lead, followed by Luxembourg (95.7%) and Finland (93.8). The <a hreflang="en" href="https://design-system.service.gov.uk">United Kingdom</a> and the <a hreflang="en" href="https://github.com/nl-design-system">Netherlands</a> both have a standardized design system which is built for accessibility.  What contributes to Luxembourg and Finland's success? Considering that most accessibility content is available only in English, has this impacted adoption?
+The Netherlands (98%) are firmly in the lead, followed by Luxembourg (96%) and Finland (94%). The <a hreflang="en" href="https://design-system.service.gov.uk">United Kingdom</a> and the <a hreflang="en" href="https://github.com/nl-design-system">Netherlands</a> both have a standardized design system which is built for accessibility.  What contributes to Luxembourg and Finland's success? Considering that most accessibility content is available only in English, has this impacted adoption?
 
-Government domains were largely found based on domain name pattern matching. There are a lot of inconsistencies in how governments use domain names, but there is enough information here to provide comparisons. It is worth noting that `.gov` covers all levels of the US government, so we have tried to filter out those state specific sub domains. In this report, we could not filter out municipal or regional .gov sites. When looking at the TLD .gov domain chart above the average was 86.5%.
+Government domains were largely found based on domain name pattern matching. There are a lot of inconsistencies in how governments use domain names, but there is enough information here to provide comparisons. It is worth noting that `.gov` covers all levels of the US government, so we have tried to filter out those state specific sub domains. In this report, we could not filter out municipal or regional `.gov` sites. When looking at the TLD `.gov` domain chart above the average was 87%.
 
 We can also review the accessibility of various states.
 
@@ -919,7 +919,7 @@ We can also review the accessibility of various states.
   )
 }}
 
-Again, Colorado and Vermont are much further ahead than other states. The state of Georgia has a <a hreflang="en" href="https://digital.georgia.gov/services/govhub">central Drupal installation</a> managed through a central agency, does this explain why it is in the top 5? Colorado has established a centralized <a hreflang="en" href="https://oit.colorado.gov/colorado-digital-service">digital service organization</a>, <a hreflang="en" href="https://oit.colorado.gov/accessibility-law">new accessibility legislation</a> and now has an average of 94.8%. Pennsylvania's state average is much lower at 82.2% but they also have a <a hreflang="en" href="https://code.oa.pa.gov/">digital experience team</a>.
+Again, Colorado and Vermont are much further ahead than other states. The state of Georgia has a <a hreflang="en" href="https://digital.georgia.gov/services/govhub">central Drupal installation</a> managed through a central agency, does this explain why it is in the top 5? Colorado has established a centralized <a hreflang="en" href="https://oit.colorado.gov/colorado-digital-service">digital service organization</a>, <a hreflang="en" href="https://oit.colorado.gov/accessibility-law">new accessibility legislation</a> and now has an average of 95%. Pennsylvania's state average is much lower at 82% but they also have a <a hreflang="en" href="https://code.oa.pa.gov/">digital experience team</a>.
 
 Earlier this year, the US Department of Justice <a hreflang="en" href="https://www.ada.gov/resources/2024-03-08-web-rule/">updated its regulations for Title II of the Americans with Disabilities Act (ADA)</a>. US state and local governments will now all be required to be fully WCAG 2.1 AA compliant. The compliance date depends on size but will be either April 2026 or April 2027. It will be important to measure how US states comply with this new regulation. We should see improvements in these numbers.
 
@@ -1077,7 +1077,7 @@ Looking at audits of these CMS Platforms, the top five Lighthouse issues have le
 
 Different CMS platforms have varying strengths and weaknesses. For example, it's clear that ARIA components must have accessible names, yet 36% of websites built with GoDaddy Website Builder fail this test, while the median failure rate for all CMS platforms with more than 100,000 occurrences in our dataset is just 1%. GoDaddy is also an outlier in the area of dialog names, with 14% of tests failing compared to a mean failure rate of 1.3%.
 
-On the positive side, Duda stands out for button names, where only 2.6% of its websites fail the test, compared to a median of 13.3%. Even more impressive is Wix only 20% of Wix websites fail the Lighthouse test for color contrast, while the median failure rate among the most-used CMS platforms is 70%. Similarly, Wix performs exceptionally well regarding alternative text for images, with only 1.3% failing, compared to a median of 33.5%.
+On the positive side, Duda stands out for button names, where only 3% of its websites fail the test, compared to a median of 13%. Even more impressive is Wix only 20% of Wix websites fail the Lighthouse test for color contrast, while the median failure rate among the most-used CMS platforms is 70%. Similarly, Wix performs exceptionally well regarding alternative text for images, with only 1% failing, compared to a median of 34%.
 
 The differences are showing that it is possible for CMSs to make an impact on Accessibility even when the user needs to take the last step.
 
