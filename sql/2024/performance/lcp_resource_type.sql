@@ -7,7 +7,7 @@ WITH lcp AS (
     # Parse anchors out of LCP URLs.
     REGEXP_EXTRACT(JSON_VALUE(custom_metrics, '$.performance.lcp_elem_stats.url'), r'([^#]*)') AS url
   FROM
-    `httparchive.all.pages` TABLESAMPLE SYSTEM (0.01 PERCENT)
+    `httparchive.all.pages`
   WHERE
     date = '2024-06-01' AND
     is_root_page
