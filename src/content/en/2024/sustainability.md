@@ -25,7 +25,7 @@ featured_stat_label_3: Mobile websites not using cache at all
 
 ## Introduction
 
-In the current chapter, we will rely as much as possible on <a hreflang="en" href="../2022/sustainability">the 2022 Sustainability chapter</a>. If you haven't yet, you should read it right now. Yes, recycling/reusing is a major part of sustainability.
+In the current chapter, we will rely as much as possible on [the 2022 Sustainability chapter](./../2022/sustainability). If you haven't yet, you should read it right now. Yes, recycling/reusing is a major part of sustainability.
 
 Since the 2022 Almanac, the field of digital sustainability has advanced considerably. That said, it is very much in its infancy, as this is a complex problem. We cannot know, with absolute certainty, what the full effects of our digital lives are on our physical planet. What we can be confident in is that the full impacts are bigger than generally accounted for. Water, land, rare minerals, and electricity are all consumed by our "clean" digital interfaces, and toxic waste is often produced.
 
@@ -71,7 +71,7 @@ _Embedded environmental impact needs to be factored into our calculations. The w
 
 ### Intersectional environmental issues
 
-Sustainability ultimately involves people, as the planet will ultimately take care of itself. Building a just society that supports the needs of its people within the boundaries of its population is key. Throughout our lives, all of us require accommodation. Our ability to navigate the physical and digital world changes, and a sustainable economy supports that. One in five people has a permanent disability, and everyone will have both temporary and situational disabilities throughout their life. For more on this, you should read <a hreflang="en" href="./accessibility">the Accessibility chapter</a>.
+Sustainability ultimately involves people, as the planet will ultimately take care of itself. Building a just society that supports the needs of its people within the boundaries of its population is key. Throughout our lives, all of us require accommodation. Our ability to navigate the physical and digital world changes, and a sustainable economy supports that. One in five people has a permanent disability, and everyone will have both temporary and situational disabilities throughout their life. For more on this, you should read [the Accessibility chapter](./accessibility).
 
 In building sustainable digital interfaces, we must consider the user, including those with disabilities.  Sustainable digital interfaces allow users to quickly navigate to accomplish their tasks. An inaccessible interface may ultimately require a user to take a less sustainable path to accomplish their goals.
 
@@ -156,14 +156,14 @@ The Sustainable Web Design Model uses data transfer as a proxy. While we can deb
 
 {{ figure_markup(
   image="number-of-kb-by-percentile.png",
-  caption="Number of kilobytes by percentile",
+  caption="Page weight",
   description="A column chart showing that on the 90th percentile web pages weight nearly 8 MB on desktop and right above 7 MB on mobile. On the 75th percentile the web pages get over 4 MB on desktop and around 3.5 MB on mobile, on the 50th percentile we found web pages weight a bit more than 2.5 MB on desktop and a bit less than 2 MB on mobile, on the 25th percentile it's over 1 MB on desktop and a bit less than 1 MB on mobile. Finally, on the 10th percentile we see pages weight a bit more than 0.5 MB on desktop and a bit less than 0.5 MB on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=188541594&format=interactive",
   sheets_gid="997244814",
   sql_file="page_byte_pre_type.sql"
 ) }}
 
-Page weight represents the amount of data transferred to access the web page (based only on HTTP requests). It is recommended that this metric be kept as low as possible to ensure a fast load and good user experience for all users. On the 90th percentile, the average mobile site weighs around 7.2 MB, while desktop ones are around 8 MB. The good news is that these numbers are slightly lower than the ones in <a hreflang="en" href="../2022/sustainability#page-weight">the 2022 Almanac</a>. The bad news is that these numbers are still way too high. When we talk about sustainability, we usually touch upon inclusion, and to make sure the majority of Internet users can access the page and have a decent user experience, <a hreflang="en" href="https://infrequently.org/2021/03/the-performance-inequality-gap/">page weight should be kept below 1MB, ideally around 500KB</a>.
+Page weight represents the amount of data transferred to access the web page (based only on HTTP requests). It is recommended that this metric be kept as low as possible to ensure a fast load and good user experience for all users. On the 90th percentile, the average mobile site weighs around 7.2 MB, while desktop ones are around 8 MB. The good news is that these numbers are slightly lower than the ones in [page weight should be kept below 1MB, ideally around 500KB](./../2022/sustainability#page-weight">the 2022 Almanac</a>. The bad news is that these numbers are still way too high. When we talk about sustainability, we usually touch upon inclusion, and to make sure the majority of Internet users can access the page and have a decent user experience, <a hreflang="en" href="https://infrequently.org/2021/03/the-performance-inequality-gap/).
 
 It is also important to emphasize that these numbers are coming for a so-called lab test, meaning that pages were accessed via script and not real users. With many websites these days implementing lazy loading strategies (request and load assets once they are needed, through native lazy-loading for images and iframes or progressive hydration for dynamic components), as well as loading and processing extra scripts once the user has given consent for it (and the script does not include any user interaction emulation), average page weight is sure to be an even bigger number.
 
@@ -195,13 +195,13 @@ With data showing that an average page weighs around 8MB, the next logical quest
 
 From the 90th percentile of collected data, it is clear that the largest portion, more than half of the page's total weight, belongs to images. This is quite an expected result and one of the parts where small optimizations can have the biggest impact. Slightly surprising and worrying is that there is still a very small gap between desktop and mobile numbers, not only in images but across all types. This shows us that even though mobile-first became a concept over 15 years ago, most teams still don't optimize their mobile sites to account for the limitations of mobile networks, phone plans, and smaller screens (for which smaller images are usually enough). In the end, it may look mobile-friendly, but the experience isn't.
 
-It is also not surprising that the second largest portion is JavaScript code. Modern frameworks, dependencies, packages, as well as legacy code easily accumulate a larger amount of JavaScript code. The biggest problem is that script processing is part of the page loading that needs the most power from the CPU and consumes the most energy. Also, security should be a concern, check the <a hreflang="en" href="./security">Security chapter</a> for more on this.
+It is also not surprising that the second largest portion is JavaScript code. Modern frameworks, dependencies, packages, as well as legacy code easily accumulate a larger amount of JavaScript code. The biggest problem is that script processing is part of the page loading that needs the most power from the CPU and consumes the most energy. Also, security should be a concern, check the [Security chapter](./security) for more on this.
 
 Compared to images and JavaScript, the weight of CSS doesn't look too large. However, the important question covered later in the chapter is how much of this code, both CSS and JS, is actually being used. In addition to these considerations, the processing cost of such code should be considered (CPU/Memory usage).
 
 The size of font files may look reasonable if we consider that <a hreflang="en" href="https://sustainablewebdesign.org/has-the-design-used-the-minimum-number-of-custom-fonts/">a typical custom font file can be over 200 KB</a>. This size, though, can be brought down significantly by subsetting font files to only characters that are needed for the site content. The median font file with an English-only subset of characters should be around <a hreflang="en" href="https://www.phpied.com/bytes-normal-web-font-study-google-fonts/">12 KB</a>, which is 6% of the original 200 KB and could bring us closer to having a great-looking page that is below 1 MB.
 
-More about this topic can be found in the <a hreflang="en" href="./fonts">Fonts</a> and <a hreflang="en" href="./page-weight">Page Weight</a> Chapter.
+More about this topic can be found in the [Fonts](./fonts) and [Page Weight](./page-weight) Chapter.
 
 For further information, refer to:
 - <a href="#wsg">The WSG 1.0 - SC 2.6 and 5.27</a>.
@@ -224,7 +224,7 @@ Based on the V4 of the SWD model, we get these global results for emissions:
   sql_file="global_emissions_per_page_2022.sql"
 ) }}
 
-If you take a look at the results from the <a hreflang="en" href="../2022/sustainability#carbon-emissions">2022 Sustainability chapter</a>, you'll notice that these new estimations are slightly lower. This is why we recalculated them. Otherwise, we could have been led to think that emissions from web pages diminished significantly between 2022 and 2024 (spoiler: this is not the case). With this in mind, we can now look at the data for 2024.
+If you take a look at the results from the [2022 Sustainability chapter](../2022/sustainability#carbon-emissions), you'll notice that these new estimations are slightly lower. This is why we recalculated them. Otherwise, we could have been led to think that emissions from web pages diminished significantly between 2022 and 2024 (spoiler: this is not the case). With this in mind, we can now look at the data for 2024.
 
 #### Emissions for 2024
 
@@ -239,7 +239,7 @@ Based on the SWD V4 model, carbon emissions for web pages in 2024 are as follows
   sql_file="global_emissions_per_page.sql"
 ) }}
 
-Even if the results are quite similar to those from 2022, we notice a slight increase in carbon emissions, which is even more significant for the 75 and 90 percentile. This is bad news as we should focus on reducing all our carbon emissions. This is not surprising since page weight has been globally on the rise for many years. More on this in the <a hreflang="en" href="./page-weight">Page Weight chapter</a>. The goal of the Sustainability chapter is precisely to raise awareness on this but also to provide recommendations to improve things.
+Even if the results are quite similar to those from 2022, we notice a slight increase in carbon emissions, which is even more significant for the 75 and 90 percentile. This is bad news as we should focus on reducing all our carbon emissions. This is not surprising since page weight has been globally on the rise for many years. More on this in the [Page Weight chapter](./page-weight). The goal of the Sustainability chapter is precisely to raise awareness on this but also to provide recommendations to improve things.
 
 We can also take a look at the share of emissions for different resources (HTML/JS/CSS/images/fonts), distinguishing mobile and desktop:
 
@@ -266,7 +266,7 @@ This looks quite similar to what we found in 2022, leading to the same conclusio
 #### Some "meta" considerations
 
 Somewhere along writing this chapter, someone in the team wondered what would be the total carbon emissions related to the HTTP Archive monthly crawl. Each month, data is collected from millions of web pages to monitor the state of the web. For instance, the Web Almanac is based on this data.
-Find more about <a hreflang="en" href="./methodology">the methodology</a>.
+Find more about [the methodology](./methodology).
 
 Read <a hreflang="en" href="https://httparchive.org/reports">other reports from the HTTP Archive</a>.
 
@@ -400,7 +400,7 @@ Remember, each additional font weight or style increases payload. Balance aesthe
 
 By thoughtfully approaching typography, we can create visually appealing websites while reducing data transfer and energy consumption.
 
-For more detailed information, refer to our dedicated <a hreflang="en" href="./fonts">Fonts chapter</a> and stay updated with the latest web font optimization practices.
+For more detailed information, refer to our dedicated [Fonts chapter](./fonts) and stay updated with the latest web font optimization practices.
 
 For further information, refer to:
 - <a href="#wsg">The WSG 1.0 - SC 2.18 and 2.19</a>.
@@ -480,7 +480,7 @@ This approach encourages developers to critically evaluate each element's necess
 
 When implemented thoughtfully, Mobile First design can lead to faster load times, lower energy consumption, and a smaller carbon footprint for your digital presence. It aligns well with other sustainability practices like minimizing unused code and optimizing assets.
 
-For more detailed insights on how Mobile First impacts website performance, refer to our <a hreflang="en" href="./performance">Performance chapter</a>.
+For more detailed insights on how Mobile First impacts website performance, refer to our [Performance chapter](./performance).
 
 For further information, refer to:
 - <a href="#wsg">The WSG 1.0 - SC 3.14</a>.
@@ -494,7 +494,7 @@ Reduced data transfer, lowering energy use in data centers and network infrastru
 Decreased processing requirements on user devices possibly result in lower energy consumption.
 Faster load times, potentially reducing user wait time and associated energy consumption.
 
-When implementing image optimization, balance file size reduction with maintaining necessary quality. Utilize modern formats, responsive loading techniques, and appropriate compression levels. For detailed performance implications and technical implementations of image optimization strategies, refer to our <a hreflang="en" href="./performance">Performance chapter</a>.
+When implementing image optimization, balance file size reduction with maintaining necessary quality. Utilize modern formats, responsive loading techniques, and appropriate compression levels. For detailed performance implications and technical implementations of image optimization strategies, refer to our [Performance chapter](./performance).
 
 For further information, refer to:
 - <a href="#wsg">The WSG 1.0 - SC 2.15</a>.
@@ -537,7 +537,7 @@ Despite the clear benefits, many websites have yet to fully embrace these modern
 
 Remember, while adopting these formats can significantly reduce data transfer and processing requirements, it's crucial to balance compression with maintaining necessary image quality. Over-compression can lead to degraded user experience and potential re-uploads, negating some of the sustainability benefits.
 
-For more detailed information on implementing these formats and their performance implications, refer to our <a hreflang="en" href="./performance">Performance chapter</a>.
+For more detailed information on implementing these formats and their performance implications, refer to our [Performance chapter](./performance).
 
 ##### Responsiveness, size, and quality
 
@@ -567,7 +567,7 @@ To optimize your images for sustainability:
 3. Optimize image quality, aiming for the sweet spot of size reduction without noticeable quality loss.
 4. Consider implementing automated tools in your build process to generate and optimize responsive images.
 
-While the trend is positive, there's still a long way to go before responsive images become ubiquitous. As web professionals, we should continue to advocate for and implement these techniques to create more sustainable and performant websites. For more detailed implementation strategies and performance impacts, refer to our <a hreflang="en" href="./performance">Performance chapter</a> and <a hreflang="en" href="./media">Media chapter</a>.
+While the trend is positive, there's still a long way to go before responsive images become ubiquitous. As web professionals, we should continue to advocate for and implement these techniques to create more sustainable and performant websites. For more detailed implementation strategies and performance impacts, refer to our [Performance chapter](./performance) and [Media chapter](./media).
 
 ##### Lazy-loading
 
@@ -587,7 +587,7 @@ The past two year's data reflects a growing awareness of the importance of optim
 2. However, for optimal sustainability, consider avoiding iframes altogether when possible. Usage of iframes can lead to unnecessary resource consumption if overused or if embedded content isn't controlled or optimized (e.g., third-party trackers or ads).
 3. The <a hreflang="en" href="https://developer.chrome.com/docs/lighthouse/performance/third-party-facades">facade pattern</a> remains a preferred approach for integrating external content like embedded videos or interactive maps.
 
-For deeper insights & analysis, refer to our <a hreflang="en" href="./performance">Performance chapter</a> and <a hreflang="en" href="./media">Media chapter</a>.
+For deeper insights & analysis, refer to our [Performance chapter](./performance) and [Media chapter](./media).
 
 ##### Efficiently encoding images
 
@@ -597,7 +597,7 @@ The cumulative effect of efficient image encoding across billions of web pages c
 
 #### Video
 
-Videos remain among the most resource-intensive elements on websites, significantly impacting sustainability. For more detailed information, refer to our <a hreflang="en" href="./media">Media chapter</a>. When incorporating third-party videos, utilizing facades is still the recommended approach.
+Videos remain among the most resource-intensive elements on websites, significantly impacting sustainability. For more detailed information, refer to our [Media chapter](./media). When incorporating third-party videos, utilizing facades is still the recommended approach.
 
 Additionally, configure your videos thoughtfully:
 1. Avoid preloading and autoplay to reduce unnecessary data transfer.
@@ -623,7 +623,7 @@ Automatically preloading videos is a concern for web sustainability. This practi
   sql_file="video_preload_values.sql"
 ) }}
 
-Comparing the usage of the preload attribute between <a hreflang="en" href="../2022/sustainability">2022</a> and 2024, we observe some changes. The percentage of websites not using preload has slightly decreased, from 57.6% to 54.94% on desktop and from 59.5% to 56.27% on mobile. This shift suggests a small increase in the use of preload attributes, which could have implications for sustainability.
+Comparing the usage of the preload attribute between [2022](./../2022/sustainability) and 2024, we observe some changes. The percentage of websites not using preload has slightly decreased, from 57.6% to 54.94% on desktop and from 59.5% to 56.27% on mobile. This shift suggests a small increase in the use of preload attributes, which could have implications for sustainability.
 
 It's important to remember that the preload attribute only has three valid values: none, auto, and metadata (default). Using the preload attribute with no value or an incorrect value may be interpreted as 'metadata', which can still involve loading up to 3% of the video to retrieve metadata. From a sustainability standpoint, 'none' remains the most environmentally friendly option.
 
@@ -646,7 +646,7 @@ It's important to note that the autoplay attribute can override preload settings
   sql_file="video_autoplay_values.sql"
 ) }}
 
-Comparing the usage of autoplay between <a hreflang="en" href="../2022/sustainability">2022</a> and 2024, we see some notable changes. The percentage of websites explicitly not using autoplay has decreased, from 53.1% to 44.54% on desktop and from 52.6% to 44.88% on mobile. This could be a concern for sustainability efforts. Also, we notice a slight increase for websites using an empty value for this attribute, which also triggers autoplay (and is bad for sustainability).
+Comparing the usage of autoplay between [2022](./../2022/sustainability) and 2024, we see some notable changes. The percentage of websites explicitly not using autoplay has decreased, from 53.1% to 44.54% on desktop and from 52.6% to 44.88% on mobile. This could be a concern for sustainability efforts. Also, we notice a slight increase for websites using an empty value for this attribute, which also triggers autoplay (and is bad for sustainability).
 
 It's crucial to remember that autoplay is a Boolean attribute, meaning its presence, even with an empty value, triggers autoplay behavior. The combined percentage of explicit autoplay usage (including 'autoplay', 'TRUE', '1', and 'yes' values) has remained relatively stable, around 8% for both desktop and mobile.
 
@@ -654,7 +654,7 @@ Given the sustainability implications, the trend towards more potential autoplay
 
 #### Animations
 
-Animations continue to be a double-edged sword in web design. While they can enhance user experience, they pose challenges for both accessibility (more on this in the <a hreflang="en" href="./accessibility">Accessibility chapter</a>) and sustainability.
+Animations continue to be a double-edged sword in web design. While they can enhance user experience, they pose challenges for both accessibility (more on this in the [Accessibility chapter](./accessibility)) and sustainability.
 
 From a sustainability perspective, animations can be resource-intensive:
 - They increase battery consumption and CPU/GPU usage, potentially reducing device longevity, especially on mobile devices.
@@ -749,7 +749,7 @@ Since third-party requests make up a large portion of requests on the web, it's 
 
 This sure looks like really great news but you should keep in mind this is somewhat biased. Most third-parties originate from Google whose servers are considered "green". More generally, many cloud providers are considered "green" but the truth might be slightly more complicated, as explained in our Green Hosting section.
 
-You should look at this year's <a hreflang="en" href="./third-parties">Third-parties chapter</a> for more on all this.
+You should look at this year's [Third-parties chapter](./third-parties) for more on all this.
 
 Third-party resources, while often essential for modern web functionality, can significantly impact a website's sustainability and performance. These external assets, ranging from scripts to stylesheets, can increase page weight and create performance bottlenecks. All of these factors contribute to higher data transfer and energy consumption.
 
@@ -780,7 +780,7 @@ Historically, web performance introduced a lot of recommendations that contribut
 
 #### JavaScript
 
-JavaScript has been an important language in the web's growth, enabling dynamic and interactive experiences. However, when not optimized, it can also impact performance and energy consumption. Let's focus on some quick wins: optimizations that are easy to implement and great for sustainability. These tweaks can significantly improve your site's efficiency without sacrificing functionality. For a deeper dive into JavaScript's pros and cons, check out our comprehensive <a hreflang="en" href="./javascript">JavaScript chapter</a>.
+JavaScript has been an important language in the web's growth, enabling dynamic and interactive experiences. However, when not optimized, it can also impact performance and energy consumption. Let's focus on some quick wins: optimizations that are easy to implement and great for sustainability. These tweaks can significantly improve your site's efficiency without sacrificing functionality. For a deeper dive into JavaScript's pros and cons, check out our comprehensive [JavaScript chapter](./javascript).
 
 ##### Minification, Tree Shaking & Code Splitting
 
@@ -804,7 +804,7 @@ As developers, we can make our apps & websites more sustainable by:
 - Use code-splitting to load JavaScript on demand, reducing initial payload sizes.
 
 
-For a deeper dive into JavaScript's pros and cons, check out our comprehensive <a hreflang="en" href="./javascript">JavaScript chapter</a>.
+For a deeper dive into JavaScript's pros and cons, check out our comprehensive [JavaScript chapter](./javascript).
 
 For further information, refer to:
 - <a href="#wsg">The WSG 1.0 - SC 3.2</a>.
@@ -863,7 +863,7 @@ There are several other user-preference <a hreflang="en" href="https://polypane.
 For further information, refer to:
 - <a href="#wsg">The WSG 1.0 - SC 3.13</a>.
 
-For a deeper dive into CSS's pros and cons, check out our comprehensive <a hreflang="en" href="./css">CSS chapter</a>.
+For a deeper dive into CSS's pros and cons, check out our comprehensive [CSS chapter](./css).
 
 #### Including as little code as possible directly in HTML
 
@@ -883,7 +883,7 @@ For further information, refer to:
   sql_file="stylesheet_count.sql"
 ) }}
 
-When we compare this year's data to <a hreflang="en" href="../2022/sustainability">2022 data</a> we can see the following:
+When we compare this year's data to [2022 data](./../2022/sustainability) we can see the following:
 1. Increase in inline stylesheet usage:
     - Desktop: from 25% in 2022 to 30.77% in 2024.
     - Mobile: from 25% in 2022 to 32.35% in 2024.
@@ -1004,7 +1004,7 @@ While these changes are modest, they indicate a trend toward more focused use of
 
 The shift towards Cache-Control only usage suggests a growing awareness of modern caching best practices, as Cache-Control offers more granular control over caching behavior. However, the overall slight decrease in caching header usage underscores the ongoing need to emphasize the importance of effective caching strategies in creating a more sustainable web ecosystem.
 
-For more detailed information on caching techniques, implementation strategies, and performance implications, please refer to our comprehensive <a hreflang="en" href="./performance">Performance Chapter</a>.
+For more detailed information on caching techniques, implementation strategies, and performance implications, please refer to our comprehensive [Performance Chapter](./performance).
 
 For further information, refer to:
 - <a href="#wsg">The WSG 1.0 - SC 4.2</a>.
@@ -1269,5 +1269,5 @@ For further information, refer to:
 
 #### Up-To-Date (Knowledge)
 
-As creators, keeping our knowledge current in an overwhelming industry is a challenge, and in sustainability which is a rapidly evolving field, this is no exception. Reading books, watching relevant videos, taking courses, looking at studies or papers, and keeping up-to-date with the latest standards and best practices are essential. You have taken the first step with this chapter of the Almanac, if you enjoyed it, see what else interests you to expand your experience further.
+As creators, keeping our knowledge current in an overwhelming industry is a challenge, and in sustainability which is a rapidly evolving field, this is no exception. Reading books, watching relevant videos, taking courses, looking at studies or papers, and keeping up-to-date with the latest standards and best practices are essential. You have taken the first step with this chapter of the Web Almanac, if you enjoyed it, see what else interests you to expand your experience further.
 
