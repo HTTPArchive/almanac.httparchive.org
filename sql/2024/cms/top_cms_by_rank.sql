@@ -29,7 +29,7 @@ JOIN (
     rank_magnitude AS rank
   FROM
     `httparchive.all.pages`,
-    UNNEST([1e3, 1e4, 1e5, 1e6, 1e7]) AS rank_magnitude
+    UNNEST([1e3, 1e4, 1e5, 1e6, 1e7, 1e8]) AS rank_magnitude
   WHERE
     rank <= rank_magnitude AND
     date = '2024-06-01' AND
@@ -43,7 +43,7 @@ JOIN (
     COUNT(0) AS total
   FROM
     `httparchive.all.pages`,
-    UNNEST([1e3, 1e4, 1e5, 1e6, 1e7]) AS rank_magnitude
+    UNNEST([1e3, 1e4, 1e5, 1e6, 1e7, 1e8]) AS rank_magnitude
   WHERE
     rank <= rank_magnitude AND
     date = '2024-06-01' AND
