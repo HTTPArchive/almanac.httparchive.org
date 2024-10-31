@@ -12,7 +12,7 @@ ldevernay_bio: Laurent Devernay Satygraha is a Digital Sobriety Expert for <a hr
 burakguneli_bio: Burak is Frontend Software Engineer who strive to understand how things work under the hood to unravel their mysteries, especially in Javascript. He is based in Berlin and if you're also living in Berlin, there's a good chance you might bump into each other at an indoor cycling class.
 ines-akrap_bio: Ines Akrap is a Frontend Software Engineer passionate about optimizing websites to be fast, sustainable, and provide the best user experience for every user. She works in Storyblok as a Solutions Engineer. She enjoys sharing her knowledge through talks, podcasts, workshops, and courses.
 AlexDawsonUK_bio: Alexander Dawson is a Web Developer, Sustainability Researcher, and editor of the <a href="https://w3c.github.io/sustyweb/">Web Sustainability Guidelines</a>. You can find more details about him at <a href="https://alexanderdawson.com/">alexanderdawson.com</a>.
-mgifford_bio: Mike Gifford is CivicActions’ Open Standards & Practices Lead. He is also a thought leader on open government, digital accessibility and sustainability. He has served as a Drupal Core Accessibility Maintainer and also a W3C Invited Expert. He is a recognized authoring tool accessibility expert and contributor to the W3C's Draft Web Sustainability Guidelines (WSG) 1.0.
+mgifford_bio: Mike Gifford is CivicActions' Open Standards & Practices Lead. He is also a thought leader on open government, digital accessibility and sustainability. He has served as a Drupal Core Accessibility Maintainer and also a W3C Invited Expert. He is a recognized authoring tool accessibility expert and contributor to the W3C's Draft Web Sustainability Guidelines (WSG) 1.0.
 timfrick_bio: Tim Frick is President of <a href="https://mightybytes.com">Mightybytes</a>, a digital agency and Certified B Corp located in Chicago. A seasoned public speaker, he regularly presents on sustainable design, measuring impact, and problem solving in the digital economy. Tim is also the author of four books, including <a href="https://www.oreilly.com/library/view/designing-for-sustainability/9781491935767/">Designing for Sustainability, A Guide to Building Greener Digital Products and Services</a>, from O'Reilly Media. Connect with <a href="https://www.linkedin.com/in/timfrick/">Tim on LinkedIn</a>.
 featured_quote: This is the second Web Almanac chapter about Sustainability and, guess what, climactic events didn't get any better. There are still a lot of opportunities to make digital more sustainable, starting with the web. We'll see that a lot happened since 2022 in the sustainability field and offer even more opportunities to make the web more resilient.
 featured_stat_1: 14%
@@ -354,7 +354,7 @@ To help organizations and individuals choose "greener" hosting, <a hreflang="en"
 {{ figure_markup(
   image="percent_green_hosting.png",
   caption="% Green hosting",
-  description="A column chart showing that on the top 1,000 sites, on desktop, 56% of them relied on green web hosting and it drops at 55% on mobile. On the top 10,000 sites it’s 58% on desktop and 55% on mobile, on the top 100,000 it’s 49% on desktop and 44% on mobile, on the top million it’s 32% for desktops and 30% on mobile, on the top 10 million is 16% for desktop and 14% for mobile. For all measured websites globally, only 12% rely on green web hosting for desktop and 10% for mobile",
+  description="A column chart showing that on the top 1,000 sites, on desktop, 56% of them relied on green web hosting and it drops at 55% on mobile. On the top 10,000 sites it's 58% on desktop and 55% on mobile, on the top 100,000 it's 49% on desktop and 44% on mobile, on the top million it's 32% for desktops and 30% on mobile, on the top 10 million is 16% for desktop and 14% for mobile. For all measured websites globally, only 12% rely on green web hosting for desktop and 10% for mobile",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=377132080&format=interactive",
   sheets_gid="1680950752",
   sql_file="green_web_hosting.sql"
@@ -412,7 +412,7 @@ The environmental impact of excess code extends beyond mere inefficiency. It dir
 {{ figure_markup(
   image="unused_css.png",
   caption="Unused CSS",
-  description="A column chart showing that on the 90th percentile there is 225 KB of unused CSS on desktop and 212 KB on mobile, on the 75th percentile it’s 120 KB on desktop and 113 KB on mobile, on the 50th percentile 56 KB on desktop and 52 KB on mobile. On the 25th percentile we found 20 KB of unused CSS on desktop and 18 KB on mobile. Lastly, we saw 0 KB of unused CSS on the 10th percentile on either desktop and mobile",
+  description="A column chart showing that on the 90th percentile there is 225 KB of unused CSS on desktop and 212 KB on mobile, on the 75th percentile it's 120 KB on desktop and 113 KB on mobile, on the 50th percentile 56 KB on desktop and 52 KB on mobile. On the 25th percentile we found 20 KB of unused CSS on desktop and 18 KB on mobile. Lastly, we saw 0 KB of unused CSS on the 10th percentile on either desktop and mobile",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1281422688&format=interactive",
   sheets_gid="558117867",
   sql_file="unused_css_bytes.sql"
@@ -440,7 +440,7 @@ Modern techniques like tree shaking and code splitting are crucial for optimizin
 {{ figure_markup(
   image="unused_js.png",
   caption="Unused JS",
-  description="A column chart showing that on the 90th percentile there is 907 KB of unused JavaScript on desktop and 812 KB on mobile, on the 75th percentile it’s 508 KB on desktop and 456 KB on mobile, on the 50th percentile 239 KB on desktop and 215 KB on mobile. On the 25th percentile we found 90 KB of unused JavaScript on desktop and 78 KB on mobile. Lastly, we saw 22 KB of unused JavaScript on desktop and 20 KB on mobile on the 10th percentile",
+  description="A column chart showing that on the 90th percentile there is 907 KB of unused JavaScript on desktop and 812 KB on mobile, on the 75th percentile it's 508 KB on desktop and 456 KB on mobile, on the 50th percentile 239 KB on desktop and 215 KB on mobile. On the 25th percentile we found 90 KB of unused JavaScript on desktop and 78 KB on mobile. Lastly, we saw 22 KB of unused JavaScript on desktop and 20 KB on mobile on the 10th percentile",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=904835139&format=interactive",
   sheets_gid="1021078155",
   sql_file="unused_js_bytes.sql"
@@ -640,7 +640,7 @@ It's important to note that the autoplay attribute can override preload settings
 {{ figure_markup(
   image="video-autoplay-usage.png",
   caption="Video autoplay usage",
-  description="A column chart showing that the autoplay attribute has empty value on 47.2% of videos on desktop and 45.7% on mobile. The autoplay attribute is not used on respectively 44.5% and 44.9% of desktop and mobile videos. It is used with an ’autoplay’ value on 5.8% of desktop videos and 5.7% of mobile videos. It is used with an value ’TRUE’ on 2% of desktop videos and 3.2% of mobile videos. It is used with an value ’1’ on 0.3% of both desktop and mobile videos. It is used with an value ’FALSE’ on 0.2% of desktop and mobile videos. It is used with an value ’yes’ on 0.01% of desktop and mobile videos.",
+  description="A column chart showing that the autoplay attribute has empty value on 47.2% of videos on desktop and 45.7% on mobile. The autoplay attribute is not used on respectively 44.5% and 44.9% of desktop and mobile videos. It is used with an 'autoplay' value on 5.8% of desktop videos and 5.7% of mobile videos. It is used with an value 'TRUE' on 2% of desktop videos and 3.2% of mobile videos. It is used with an value '1' on 0.3% of both desktop and mobile videos. It is used with an value 'FALSE' on 0.2% of desktop and mobile videos. It is used with an value 'yes' on 0.01% of desktop and mobile videos.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1761138794&format=interactive",
   sheets_gid="215678116",
   sql_file="video_autoplay_values.sql"
@@ -741,7 +741,7 @@ Since third-party requests make up a large portion of requests on the web, it's 
 {{ figure_markup(
   image="green-third-party-requests.png",
   caption="% green third-party requests",
-  description="A column chart showing that on the top 1,000 websites 72% of third party requests relied on green hosting on desktop and 70% on mobile devices. On the top 10,000 websites it’s 78% on both desktop and mobile. For the top 100,000 sites it’s 88% on both desktop and mobile. On the top million, it’s 94% on desktop and 93% on mobile. Overall, we see that 97% of third party requests rely on green hosting on both desktop and mobile.",
+  description="A column chart showing that on the top 1,000 websites 72% of third party requests relied on green hosting on desktop and 70% on mobile devices. On the top 10,000 websites it's 78% on both desktop and mobile. For the top 100,000 sites it's 88% on both desktop and mobile. On the top million, it's 94% on desktop and 93% on mobile. On the top 10 million, it's 97% on desktop and 97% on mobile. Overall, we see that 98% of third party requests rely on green hosting on both desktop and mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1139458989&format=interactive",
   sheets_gid="176951784",
   sql_file="green_third_party_requests.sql"
@@ -1087,7 +1087,7 @@ The accompanying charts present the median page weight across the top five most 
 {{ figure_markup(
   image="median-kilobytes-by-cms.png",
   caption="Median kB by CMS",
-  description="A bar chart showing that the median weight for Wordpress pages is 2,967 KB on desktop and 2,684 KB on mobile. For Wix it’s 3,161 KB on desktop and 2,471 KB on mobile. For Squarespace it’s 4,012 KB on desktop and 3,562 KB on mobile. For Joomla it’s 2,990 KB on desktop and 2,776 KB on mobile. For Drupal it’s 2,514 KB on desktop and 2,329 KB on mobile.",
+  description="A bar chart showing that the median weight for Wordpress pages is 2,967 KB on desktop and 2,684 KB on mobile. For Wix it's 3,161 KB on desktop and 2,471 KB on mobile. For Squarespace it's 4,012 KB on desktop and 3,562 KB on mobile. For Joomla it's 2,990 KB on desktop and 2,776 KB on mobile. For Drupal it's 2,514 KB on desktop and 2,329 KB on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1792712710&format=interactive",
   sheets_gid="790675238",
   sql_file="cms_bytes_per_type.sql"
@@ -1102,7 +1102,7 @@ As noted above, the model we use for calculating carbon emissions changed betwee
 {{ figure_markup(
   image="median-emissions-by-cms-2024.png",
   caption="Median emissions by CMS - 2024",
-  description="A bar chart showing that the median emissions for Wordpress pages is 0.42 grams of carbon on desktop and 0.38 on mobile. For Wix it’s 0.45 on desktop and 0.35 on mobile. For Squarespace it’s 0.57 on desktop and 0.5 on mobile. For Joomla it’s 0.42 on desktop and 0.39 on mobile. For Drupal it’s 0.36 on desktop and 0.33 on mobile.",
+  description="A bar chart showing that the median emissions for Wordpress pages is 0.42 grams of carbon on desktop and 0.38 on mobile. For Wix it's 0.45 on desktop and 0.35 on mobile. For Squarespace it's 0.57 on desktop and 0.5 on mobile. For Joomla it's 0.42 on desktop and 0.39 on mobile. For Drupal it's 0.36 on desktop and 0.33 on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=654101809&format=interactive",
   sheets_gid="790675238",
   sql_file="cms_bytes_per_type.sql"
@@ -1113,7 +1113,7 @@ For comparison reasons, here are the emissions data from 2022, calculated with t
 {{ figure_markup(
   image="median-emissions-by-cms-2022.png",
   caption="Median emissions by CMS - 2022",
-  description="A bar chart showing that the median emissions for Wordpress pages is 0.37 grams of carbon on desktop and 0.34 on mobile. For Joomla it’s 0.38 on desktop and 0.35 on mobile. For Wix it’s 0.44 on desktop and 0.31 on mobile. For Drupal it’s 0.33 on desktop and 0.30 on mobile. For Squarespace it’s 0.48 on desktop and 0.5 on mobile.",
+  description="A bar chart showing that the median emissions for Wordpress pages is 0.37 grams of carbon on desktop and 0.34 on mobile. For Joomla it's 0.38 on desktop and 0.35 on mobile. For Wix it's 0.44 on desktop and 0.31 on mobile. For Drupal it's 0.33 on desktop and 0.30 on mobile. For Squarespace it's 0.48 on desktop and 0.5 on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1732727443&format=interactive",
   sheets_gid="1972006215",
   sql_file="cms_bytes_per_type_2022.sql"
@@ -1152,7 +1152,7 @@ CMS also has a strong role to play in shifting the definition of quality work. <
 {{ figure_markup(
   image="median-kilobytes-by-ecommerce.png",
   caption="Median kB by ecommerce",
-  description="A bar chart showing that the median weight for WooCommerce pages is 3,275 KB on desktop and 3,036 KB on mobile. For Shopify it’s 2,876 KB on desktop and 2,657 KB on mobile. For Squerspace Commerce it’s 4,012 KB on desktop and 2,756 KB on mobile. For Wix eCommerce it is 3,530 KB on desktop and 3,562 KB on mobile. For PrestaShop it’s 3,078 KB on desktop and 2,730 KB on mobile. For 1C-Bitrix it is 3,305 KB on desktop and 3,788 KB on mobile. For Magento it’s 3,505 KB on desktop and 4,209 KB on mobile.",
+  description="A bar chart showing that the median weight for WooCommerce pages is 3,275 KB on desktop and 3,036 KB on mobile. For Shopify it's 2,876 KB on desktop and 2,657 KB on mobile. For Squerspace Commerce it's 4,012 KB on desktop and 2,756 KB on mobile. For Wix eCommerce it is 3,530 KB on desktop and 3,562 KB on mobile. For PrestaShop it's 3,078 KB on desktop and 2,730 KB on mobile. For 1C-Bitrix it is 3,305 KB on desktop and 3,788 KB on mobile. For Magento it's 3,505 KB on desktop and 4,209 KB on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=510790990&format=interactive",
   sheets_gid="2021180834",
   sql_file="ecommerce_bytes_per_type.sql"
@@ -1161,7 +1161,7 @@ CMS also has a strong role to play in shifting the definition of quality work. <
 {{ figure_markup(
   image="median-emissions-by-ecommerce-2024.png",
   caption="Median emissions by ecommerce - 2024",
-  description="A bar chart showing that the median emission for WooCommerce pages is 0.46 grams of carbon on desktop and 0.43 on mobile. For Shopify it’s 0.41 on desktop and 0.38 on mobile. For Squerspace Commerce it’s 0.57 on desktop and 0.39 on mobile. For Wix eCommerce it is 0.5 on both desktop and mobile. For PrestaShop it’s 0.44 on desktop and 0.39 KB on mobile. For 1C-Bitrix it is 0.47 on desktop and 0.54 on mobile. For Magento it’s 0.5 on desktop and 0.59 on mobile.",
+  description="A bar chart showing that the median emission for WooCommerce pages is 0.46 grams of carbon on desktop and 0.43 on mobile. For Shopify it's 0.41 on desktop and 0.38 on mobile. For Squerspace Commerce it's 0.57 on desktop and 0.39 on mobile. For Wix eCommerce it is 0.5 on both desktop and mobile. For PrestaShop it's 0.44 on desktop and 0.39 KB on mobile. For 1C-Bitrix it is 0.47 on desktop and 0.54 on mobile. For Magento it's 0.5 on desktop and 0.59 on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1542686246&format=interactive",
   sheets_gid="2021180834",
   sql_file="ecommerce_bytes_per_type.sql"
@@ -1172,7 +1172,7 @@ For comparison reasons, here are the emissions data from 2022, calculated with t
 {{ figure_markup(
   image="median-emissions-by-ecommerce-2022.png",
   caption="Median emissions by ecommerce - 2022",
-  description="A bar chart showing that the median emission for WooCommerce pages in 2022 was 0.28 grams of carbon on desktop and 0.26 on mobile. For Shopify it’s 0.20 on desktop and 0.18 on mobile. For Squerspace Commerce it’s 0.31 on desktop and 0.32 on mobile. For PrestaShop it’s 0.26 on desktop and 0.23 KB on mobile. For Wix eCommerce it is 0.32 on desktop and 0.22 on mobile. For Magento it’s 0.3 on desktop and 0.28 on mobile. For 1C-Bitrix it is 0.34 on desktop and 0.3 on mobile.",
+  description="A bar chart showing that the median emission for WooCommerce pages in 2022 was 0.28 grams of carbon on desktop and 0.26 on mobile. For Shopify it's 0.20 on desktop and 0.18 on mobile. For Squerspace Commerce it's 0.31 on desktop and 0.32 on mobile. For PrestaShop it's 0.26 on desktop and 0.23 KB on mobile. For Wix eCommerce it is 0.32 on desktop and 0.22 on mobile. For Magento it's 0.3 on desktop and 0.28 on mobile. For 1C-Bitrix it is 0.34 on desktop and 0.3 on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1732727443&format=interactive",
   sheets_gid="1972006215",
   sql_file="ecommerce_bytes_per_type_2022.sql"
@@ -1185,7 +1185,7 @@ It is clear comparing the ecommerce platforms with other CMS platforms, that the
 {{ figure_markup(
   image="median-kilobytes-by-ssg.png",
   caption="Median kB by static site generator",
-  description="A bar chart showing that the median weight for Next.js pages is 2,396 KB on desktop and 2,214 KB on mobile. For Nuxt.js it’s 3,107 KB on desktop and 2,677 KB on mobile. For Gatsby it’s 2,229 KB on desktop and 1,833 KB on mobile. For Hugo it’s 1,112 KB on desktop and 1,216 KB on mobile. For Astro it’s 1,125 KB on desktop and 1,149 KB on mobile. For Jekyll it’s 792 KB on desktop and 854 KB on mobile.",
+  description="A bar chart showing that the median weight for Next.js pages is 2,396 KB on desktop and 2,214 KB on mobile. For Nuxt.js it's 3,107 KB on desktop and 2,677 KB on mobile. For Gatsby it's 2,229 KB on desktop and 1,833 KB on mobile. For Hugo it's 1,112 KB on desktop and 1,216 KB on mobile. For Astro it's 1,125 KB on desktop and 1,149 KB on mobile. For Jekyll it's 792 KB on desktop and 854 KB on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=2054864060&format=interactive",
   sheets_gid="1941515647",
   sql_file="ssg_bytes_per_type.sql"
@@ -1194,7 +1194,7 @@ It is clear comparing the ecommerce platforms with other CMS platforms, that the
 {{ figure_markup(
   image="median-emissions-by-ssg-2024.png",
   caption="Median emissions by static site generator - 2024",
-  description="A bar chart showing that the median emission for Next.js pages is 0.34 grams of carbon on desktop and 0.31 on mobile. For Nuxt.js it’s 0.44 on desktop and 0.38 on mobile. For Gatsby it’s 0.32 on desktop and 0.26 on mobile. For Hugo it’s 0.16 on desktop and 0.17 on mobile. For Astro it’s 0.16 on both desktop and mobile. For Jekyll it’s 0.11 on desktop and 0.12 on mobile.",
+  description="A bar chart showing that the median emission for Next.js pages is 0.34 grams of carbon on desktop and 0.31 on mobile. For Nuxt.js it's 0.44 on desktop and 0.38 on mobile. For Gatsby it's 0.32 on desktop and 0.26 on mobile. For Hugo it's 0.16 on desktop and 0.17 on mobile. For Astro it's 0.16 on both desktop and mobile. For Jekyll it's 0.11 on desktop and 0.12 on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=437135521&format=interactive",
   sheets_gid="1941515647",
   sql_file="ssg_bytes_per_type.sql"
@@ -1205,7 +1205,7 @@ For comparison reasons, here are the emissions data from 2022, calculated with t
 {{ figure_markup(
   image="median-emissions-by-ssg-2022.png",
   caption="Median emissions by static site generator - 2022",
-  description="A bar chart showing that the median emission for Next.js pages is 0.22 grams of carbon on desktop and 0.20 on mobile. For Nuxt.js it’s 0.26 on desktop and 0.21 on mobile. For Gatsby it’s 0.19 on desktop and 0.16 on mobile. For Hugo it’s 0.09 on desktop and 0.1 on mobile. For Jekyll it’s 0.06 on both desktop and mobile. For Docusaurus it’s 0.07 on desktop and 0.08 on mobile.",
+  description="A bar chart showing that the median emission for Next.js pages is 0.22 grams of carbon on desktop and 0.20 on mobile. For Nuxt.js it's 0.26 on desktop and 0.21 on mobile. For Gatsby it's 0.19 on desktop and 0.16 on mobile. For Hugo it's 0.09 on desktop and 0.1 on mobile. For Jekyll it's 0.06 on both desktop and mobile. For Docusaurus it's 0.07 on desktop and 0.08 on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1021559874&format=interactive",
   sheets_gid="1333464158",
   sql_file="ssg_bytes_per_type_2022.sql"
