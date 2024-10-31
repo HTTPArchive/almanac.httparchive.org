@@ -8,7 +8,7 @@ editors: [cqueern]
 analysts: [Falafelqueen, burakguneli, mgifford]
 translators: []
 results: https://docs.google.com/spreadsheets/d/1E6wPVck2-5NDUpFKWjbJXKJKNx0E9fWwIdeM9hUKl8c/
-ldevernay_bio: Laurent Devernay Satygraha is a Digital Sobriety Expert for <a hreflang="en" href="https://greenspector.com/en/home/">Greenspector</a>. You can find him blogging <a hreflang="en" href="https://ldevernay.github.io/">on his own</a> or <a hreflang="en" href="https://greenspector.com/fr/blog/">for this company</a> but almost always about web sustainability. Which makes him either an enthusiast or a monomaniac.  Connect with <a href="https://www.linkedin.com/in/laurent-devernay-satyagraha-2610b85/">Laurent on LinkedIn</a>.
+ldevernay_bio: Laurent Devernay Satygraha is a Digital Sobriety Expert for <a hreflang="en" href="https://greenspector.com/en/home/">Greenspector</a>. You can find him blogging <a hreflang="en" href="https://ldevernay.github.io/">on his own</a> or <a hreflang="fr" href="https://greenspector.com/fr/blog/">for this company</a> but almost always about web sustainability. Which makes him either an enthusiast or a monomaniac.  Connect with <a href="https://www.linkedin.com/in/laurent-devernay-satyagraha-2610b85/">Laurent on LinkedIn</a>.
 burakguneli_bio: Burak is Frontend Software Engineer who strive to understand how things work under the hood to unravel their mysteries, especially in Javascript. He is based in Berlin and if you're also living in Berlin, there's a good chance you might bump into each other at an indoor cycling class.
 ines-akrap_bio: Ines Akrap is a Frontend Software Engineer passionate about optimizing websites to be fast, sustainable, and provide the best user experience for every user. She works in Storyblok as a Solutions Engineer. She enjoys sharing her knowledge through talks, podcasts, workshops, and courses.
 AlexDawsonUK_bio: Alexander Dawson is a Web Developer, Sustainability Researcher, and editor of the <a href="https://w3c.github.io/sustyweb/">Web Sustainability Guidelines</a>. You can find more details about him at <a href="https://alexanderdawson.com/">alexanderdawson.com</a>.
@@ -49,21 +49,21 @@ This quest for efficiency saw some other achievements such as <a hreflang="en" h
 
 This is where we should mention new repositories for best practices:
 - The W3C (World Wide Web Consortium) Sustainable Web Community Group published the <a hreflang="en" href="https://w3c.github.io/sustyweb/">Web Sustainability Guidelines (WSG) 1.0</a>. These offer a higher perspective on web sustainability and should help teams adopt sustainability on a larger scale (more on this later in this chapter).
-- France institutions also released the <a hreflang="en" href="https://en.arcep.fr/news/press-releases/view/n/environment-rgesn-170524.html">General policy framework for the ecodesign of digital services</a>. The purpose here is to offer a framework for sustainable digital services and to aim for a wider adoption of these best practices.
+- France institutions also released the <a hreflang="fr" href="https://en.arcep.fr/news/press-releases/view/n/environment-rgesn-170524.html">General policy framework for the ecodesign of digital services</a>. The purpose here is to offer a framework for sustainable digital services and to aim for a wider adoption of these best practices.
 - <a hreflang="en" href="https://www.iso.org/standard/86105.html">An ISO standard for Digital Services Ecodesign</a> is also on the way.
 
 More and more <a hreflang="en" href="https://w3c.github.io/sustyweb/intro.html#books">books</a> are also being published, such as <a hreflang="en" href="https://www.oreilly.com/library/view/building-green-software/9781098150617/">Building Green Software</a> by Anne Currie.
 
 In addition to this, tools for estimating the environmental impacts of the web are still evolving and new ones keep appearing. Some existing tools (such as Screaming Frog SEO and Webpagetest) are adding features to estimate environmental impacts. As such, the <a hreflang="en" href="https://sustainablewebdesign.org/estimating-digital-emissions/">Sustainable Web Design Model</a> is often used. However, accurately estimating impacts is still an important topic and no consensus has been reached yet. As is often the case with environmental considerations, the topic remains complex.
 
-To give more context to all these breakthroughs, more general studies about the environmental impacts of digital should be conducted worldwide, <a hreflang="en" href="https://en.arcep.fr/news/press-releases/view/n/the-environement-210324.html">as is already the case in France</a>. Such a large perspective would help estimate the benefits of all the ongoing efforts but also give insights on where more focus is needed.
+To give more context to all these breakthroughs, more general studies about the environmental impacts of digital should be conducted worldwide, <a hreflang="fr" href="https://en.arcep.fr/news/press-releases/view/n/the-environement-210324.html">as is already the case in France</a>. Such a large perspective would help estimate the benefits of all the ongoing efforts but also give insights on where more focus is needed.
 
 ### Limitations and hypothesis
 
 There are many ways to assess environmental impacts, but there are a few things to keep in mind:
 - Most free tools only rely on transferred data, the number of HTTP requests, and DOM size. This is insufficient to capture the overconsumption related to animations, heavy calculations (especially using JS) but also benefits from dark mode. To achieve this, other metrics are needed, such as CPU/GPU, Energy, and RAM/memory usage should be measured.
 - Tools usually stick to page loading and sometimes scrolling. This is not always relevant to real usage and often misses some obvious things, such as accepting cookies, client-side cache, playing videos, etc. Real user journeys should be measured, based on analytics and user feedback.
-- GHG is often used as a proxy for environmental impacts, but this is not enough. To avoid impact transfers and greenwashing, other indicators should be used, as <a hreflang="en" href="https://librairie.ademe.fr/ged/7595/R__f__rentiel_rcp_services_num__riques.pdf">stated by the ADEME</a> (PDF, French, 980 kB).
+- GHG is often used as a proxy for environmental impacts, but this is not enough. To avoid impact transfers and greenwashing, other indicators should be used, as <a hreflang="fr" href="https://librairie.ademe.fr/ged/7595/R__f__rentiel_rcp_services_num__riques.pdf">stated by the ADEME</a> (PDF, French, 980 kB).
 
 These notions are detailed in this <a hreflang="en" href="https://greenspector.com/en/reduce-the-weight-of-a-web-page-which-elements-have-the-greatest-impact/">article about the environmental impacts of web elements</a>
 
@@ -520,7 +520,7 @@ This data shows the evolving landscape of image format adoption. WebP has grown 
   image="image-format-adoption.png",
   caption="Image format adoption",
   description="A pie chart showing that overall, jpg represents the image format of 32.3% of all images. png is used in 28.4% of the images. Gif is used on 16.8% of the images. WebP is used on 12% of the images, Svg accounts for 6.4% of the images format. Ico represents the format used on 1.3% of all images and lastly, avif is the format of 1% of the images.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=1820261877&format=interactive",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=424926454&format=interactive",
   sheets_gid="https://docs.google.com/spreadsheets/d/1Q2ITOe6ZMIXGKHtIxqK9XmUA1eQBX9CLQkxarQOJFCk/edit?gid=1939630368#gid=1939630368",
   sql_file="../media/media_formats.sql"
 ) }}
@@ -531,7 +531,7 @@ Despite the clear benefits, many websites have yet to fully embrace these modern
 3. For icons and simple graphics, optimized SVG remains the best choice. Consider inlining frequently used SVGs directly in your HTML to reduce HTTP requests.
 4. For JPEG/WebP you can aim for 80-85% quality; adjust based on visual inspection.
 5. Use srcset and sizes attributes to serve appropriate image sizes.
-6. Lazy load non-critical images. Use loading="lazy" (native HTML attribute) for images below the fold.
+6. Lazy load non-critical images. Use `loading="lazy"` (native HTML attribute) for images below the fold.
 7. Strip metadata. Remove unnecessary EXIF data to reduce file size (thus also avoiding potential privacy issues).
 8. Implement a content negotiation strategy to serve the most efficient format based on browser capabilities.
 9. Periodically review and re-optimize images as new techniques emerge.
@@ -618,13 +618,13 @@ Automatically preloading videos is a concern for web sustainability. This practi
 {{ figure_markup(
   image="video-preload-usage.png",
   caption="Video preload usage",
-  description="A column chart showing the preload attribute is not used on 54.9% of desktop videos and 56.3% of mobile videos. The preload attribute can be found with the none value on 18.2% of desktop videos and 15.9% of mobile videos. The auto value is used on 15.1% of desktop videos 14.5% of mobile videos. The metadata value is used on 9.5% of desktop videos and 11.2% of mobile videos. The preload attribute is empty on 1.4% of both desktop and mobile videos. The preload attribute has a value TRUE on 0.3% of both desktop and mobile videos. The preload attribute has a value of FALSE, preload or yes on 0.1% of both desktop and mobile videos. Lastly, it has the value of undefined on 0.05% of the videos on both desktop and mobile",
+  description="A column chart showing the preload attribute is not used on 55% of desktop videos and 56% of mobile videos. The preload attribute can be found with the none value on 18% of desktop videos and 16% of mobile videos. The auto value is used on 15% of desktop videos 15% of mobile videos. The metadata value is used on 10% of desktop videos and 11% of mobile videos. The preload attribute is empty on 1% of both desktop and mobile videos.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1517696872&format=interactive",
   sheets_gid="1377676306",
   sql_file="video_preload_values.sql"
 ) }}
 
-Comparing the usage of the preload attribute between [2022](./../2022/sustainability) and 2024, we observe some changes. The percentage of websites not using preload has slightly decreased, from 57.6% to 54.94% on desktop and from 59.5% to 56.27% on mobile. This shift suggests a small increase in the use of preload attributes, which could have implications for sustainability.
+Comparing the usage of the preload attribute between [2022](./../2022/sustainability) and 2024, we observe some changes. The percentage of websites not using preload has slightly decreased, from 58% to 55% on desktop and from 60% to 56% on mobile. This shift suggests a small increase in the use of preload attributes, which could have implications for sustainability.
 
 It's important to remember that the preload attribute only has three valid values: none, auto, and metadata (default). Using the preload attribute with no value or an incorrect value may be interpreted as 'metadata', which can still involve loading up to 3% of the video to retrieve metadata. From a sustainability standpoint, 'none' remains the most environmentally friendly option.
 
@@ -641,15 +641,15 @@ It's important to note that the autoplay attribute can override preload settings
 {{ figure_markup(
   image="video-autoplay-usage.png",
   caption="Video autoplay usage",
-  description="A column chart showing that the autoplay attribute has empty value on 47.2% of videos on desktop and 45.7% on mobile. The autoplay attribute is not used on respectively 44.5% and 44.9% of desktop and mobile videos. It is used with an 'autoplay' value on 5.8% of desktop videos and 5.7% of mobile videos. It is used with an value 'TRUE' on 2% of desktop videos and 3.2% of mobile videos. It is used with an value '1' on 0.3% of both desktop and mobile videos. It is used with an value 'FALSE' on 0.2% of desktop and mobile videos. It is used with an value 'yes' on 0.01% of desktop and mobile videos.",
+  description="A column chart showing that the autoplay attribute has empty value on 47% of videos on desktop and 46% on mobile. The autoplay attribute is not used on respectively 45% and 45% of desktop and mobile videos. It is used with an `autoplay` value on 6% of desktop videos and 6% of mobile videos. It is used with an value `TRUE` on 2% of desktop videos and 3% of mobile videos.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1761138794&format=interactive",
   sheets_gid="215678116",
   sql_file="video_autoplay_values.sql"
 ) }}
 
-Comparing the usage of autoplay between [2022](./../2022/sustainability) and 2024, we see some notable changes. The percentage of websites explicitly not using autoplay has decreased, from 53.1% to 44.54% on desktop and from 52.6% to 44.88% on mobile. This could be a concern for sustainability efforts. Also, we notice a slight increase for websites using an empty value for this attribute, which also triggers autoplay (and is bad for sustainability).
+Comparing the usage of autoplay between [2022](./../2022/sustainability) and 2024, we see some notable changes. The percentage of websites explicitly not using autoplay has decreased, from 53% to 45% on desktop and from 53% to 45% on mobile. This could be a concern for sustainability efforts. Also, we notice a slight increase for websites using an empty value for this attribute, which also triggers autoplay (and is bad for sustainability).
 
-It's crucial to remember that autoplay is a Boolean attribute, meaning its presence, even with an empty value, triggers autoplay behavior. The combined percentage of explicit autoplay usage (including 'autoplay', 'TRUE', '1', and 'yes' values) has remained relatively stable, around 8% for both desktop and mobile.
+It's crucial to remember that autoplay is a Boolean attribute, meaning its presence, even with an empty value, triggers autoplay behavior. The combined percentage of explicit autoplay usage (including `autoplay`, `TRUE` and other values) has remained relatively stable, around 8% for both desktop and mobile.
 
 Given the sustainability implications, the trend towards more potential autoplay usage (through empty values) is worrying. Developers should be cautious about including the autoplay attribute, even if unintentionally, as it can lead to unnecessary data consumption and energy use. From a sustainability perspective, avoiding autoplay remains a recommended practice in most cases to reduce unnecessary data transfer and processing.
 
@@ -878,7 +878,7 @@ For further information, refer to:
 {{ figure_markup(
   image="style-usage.png",
   caption="Style usage",
-  description="A bar chart showing that on desktop, 30.8% of CSS is inline and the other 69.2% comes from external stylesheets. On mobile the inline CSS goes up to 32.35% while 67.65% comes from external stylesheets",
+  description="A bar chart showing that on desktop, 31% of CSS is inline and the other 69% comes from external stylesheets. On mobile the inline CSS goes up to 32% while 68% comes from external stylesheets",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=812833828&format=interactive",
   sheets_gid="109015092",
   sql_file="stylesheet_count.sql"
@@ -886,11 +886,11 @@ For further information, refer to:
 
 When we compare this year's data to [2022 data](./../2022/sustainability) we can see the following:
 1. Increase in inline stylesheet usage:
-    - Desktop: from 25% in 2022 to 30.77% in 2024.
-    - Mobile: from 25% in 2022 to 32.35% in 2024.
+    - Desktop: from 25% in 2022 to 31% in 2024.
+    - Mobile: from 25% in 2022 to 32% in 2024.
 2. A corresponding decrease in external stylesheet usage:
-    - Desktop: from 75% in 2022 to 69.23% in 2024.
-    - Mobile: from 75% in 2022 to 67.65% in 2024.
+    - Desktop: from 75% in 2022 to 69% in 2024.
+    - Mobile: from 75% in 2022 to 68% in 2024.
 
 This trend shows a clear shift towards more inlining of CSS, particularly on mobile devices. While this approach can improve initial render times by reducing HTTP requests, it also presents challenges:
 - Increased HTML file sizes, potentially slowing down initial page loads.
@@ -1050,7 +1050,7 @@ What's more, up to <a hreflang="en" href="https://www.greenergydatacenters.com/e
 
 With all of this in mind, it's easy to see why our collective thirst for low-cost, high-volume data solutions drives significant sustainability concerns. This is unfortunate considering that data and analytics literacy are also often strategic differentiators for many organizations.
 
-To make more <a hreflang="en" href="https://www.mightybytes.com/blog/design-a-sustainable-data-strategy/">sustainable data practices</a> the norm among those who create and manage digital products and services, organizations should redefine their relationships with data. For marketers and product teams, this can be accomplished by improving data governance and more effectively managing content across the products and services they create, subscribe to, or otherwise maintain. The annual <a hreflang="en" href="https://cyberworldcleanupday.fr/welcome.html">Digital Cleanup Day</a> can be a good way to raise awareness on this topic.
+To make more <a hreflang="en" href="https://www.mightybytes.com/blog/design-a-sustainable-data-strategy/">sustainable data practices</a> the norm among those who create and manage digital products and services, organizations should redefine their relationships with data. For marketers and product teams, this can be accomplished by improving data governance and more effectively managing content across the products and services they create, subscribe to, or otherwise maintain. The annual <a hreflang="fr" href="https://cyberworldcleanupday.fr/welcome.html">Digital Cleanup Day</a> can be a good way to raise awareness on this topic.
 
 ### Data Governance and Sustainability
 
