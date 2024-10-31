@@ -3,22 +3,22 @@ WITH RECURSIVE pages AS (
     CASE page -- Publisher websites may redirect to an SSP domain, and need to use redirected domain instead of page domain. CASE needs to be replaced with a more robust solution from HTTPArchive/custom-metrics#136.
       WHEN 'https://www.chunkbase.com/' THEN 'cafemedia.com'
       ELSE NET.REG_DOMAIN(page)
-    END AS page,
+    END AS page_domain,
     JSON_QUERY(ANY_VALUE(custom_metrics), '$.ads') AS ads_metrics
   FROM `httparchive.all.pages`
   WHERE date = '2024-06-01' AND
     is_root_page = TRUE
-  GROUP BY 1
+  GROUP BY page_domain
 ), ads AS (
   SELECT
-    page,
+    page_domain,
     JSON_QUERY(ads_metrics, '$.ads.account_types') AS ad_accounts
   FROM pages
   WHERE
     CAST(JSON_VALUE(ads_metrics, '$.ads.account_count') AS INT64) > 0
 ), sellers AS (
   SELECT
-    page,
+    page_domain,
     JSON_QUERY(ads_metrics, '$.sellers.seller_types') AS ad_sellers
   FROM pages
   WHERE
@@ -28,38 +28,38 @@ WITH RECURSIVE pages AS (
     NET.REG_DOMAIN(REGEXP_EXTRACT(NORMALIZE_AND_CASEFOLD(domain), r'\b[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}\b')) AS demand,
     'Web' AS supply,
     'direct' AS relationship,
-    page AS publisher
+    page_domain AS publisher
   FROM ads, UNNEST(JSON_VALUE_ARRAY(ad_accounts, '$.direct.domains')) AS domain
   UNION ALL
   SELECT
     NET.REG_DOMAIN(REGEXP_EXTRACT(NORMALIZE_AND_CASEFOLD(domain), r'\b[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}\b')) AS demand,
     'Web' AS supply,
     'indirect' AS relationship,
-    page AS publisher
+    page_domain AS publisher
   FROM ads, UNNEST(JSON_VALUE_ARRAY(ad_accounts, '$.reseller.domains')) AS domain
   UNION ALL
   SELECT
-    page AS demand,
+    page_domain AS demand,
     'Web' AS supply,
     'direct' AS relationship,
     NET.REG_DOMAIN(REGEXP_EXTRACT(NORMALIZE_AND_CASEFOLD(domain), r'\b[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}\b')) AS publisher
   FROM sellers, UNNEST(JSON_VALUE_ARRAY(ad_sellers, '$.publisher.domains')) AS domain
   UNION ALL
   SELECT
-    page AS demand,
+    page_domain AS demand,
     'Web' AS supply,
     'direct' AS relationship,
     NET.REG_DOMAIN(REGEXP_EXTRACT(NORMALIZE_AND_CASEFOLD(domain), r'\b[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}\b')) AS publisher
   FROM sellers, UNNEST(JSON_VALUE_ARRAY(ad_sellers, '$.both.domains')) AS domain
 ), relationships_adtech AS (
   SELECT
-    page AS demand,
+    page_domain AS demand,
     NET.REG_DOMAIN(REGEXP_EXTRACT(NORMALIZE_AND_CASEFOLD(domain), r'\b[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}\b')) AS supply,
     'indirect' AS relationship
   FROM sellers, UNNEST(JSON_VALUE_ARRAY(ad_sellers, '$.intermediary.domains')) AS domain
   UNION ALL
   SELECT
-    page AS demand,
+    page_domain AS demand,
     NET.REG_DOMAIN(REGEXP_EXTRACT(NORMALIZE_AND_CASEFOLD(domain), r'\b[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}\b')) AS supply,
     'indirect' AS relationship
   FROM sellers, UNNEST(JSON_VALUE_ARRAY(ad_sellers, '$.both.domains')) AS domain
