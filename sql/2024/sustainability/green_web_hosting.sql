@@ -29,7 +29,7 @@ SELECT
   rank_grouping,
   CASE
     WHEN rank_grouping = 0 THEN ''
-    WHEN rank_grouping = 10000000 THEN 'all'
+    WHEN rank_grouping = 100000000 THEN 'all'
     ELSE FORMAT("%'d", rank_grouping)
   END AS ranking,
   COUNTIF(is_green) AS total_green,
@@ -49,7 +49,7 @@ FROM (
   USING
     (host)
 ),
-UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
+UNNEST([1000, 10000, 100000, 1000000, 10000000, 100000000]) AS rank_grouping
 WHERE
   rank <= rank_grouping
 GROUP BY

@@ -43,7 +43,7 @@ third_party AS (
     requests r
   ON NET.HOST(r.url) = NET.HOST(tp.domain)
   WHERE
-    date = '2024-07-01' AND
+    date = '2024-06-01' AND
     category NOT IN ('hosting')
   GROUP BY
     domain
@@ -60,7 +60,7 @@ green_tp AS (
     green g
   ON NET.HOST(g.host) = NET.HOST(tp.domain)
   WHERE
-    date = '2024-07-01' AND
+    date = '2024-06-01' AND
     category NOT IN ('hosting')
   GROUP BY
     domain
@@ -115,7 +115,7 @@ SELECT
   rank_grouping,
   CASE
     WHEN rank_grouping = 0 THEN ''
-    WHEN rank_grouping = 10000000 THEN 'all'
+    WHEN rank_grouping = 100000000 THEN 'all'
     ELSE FORMAT("%'d", rank_grouping)
   END AS ranking,
   APPROX_QUANTILES(third_parties_per_page, 1000)[OFFSET(500)] AS p50_third_parties_per_page,
@@ -123,7 +123,7 @@ SELECT
   APPROX_QUANTILES(SAFE_DIVIDE(green_third_parties_per_page, third_parties_per_page), 1000)[OFFSET(500)] AS pct_green
 FROM
   base,
-  UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
+  UNNEST([1000, 10000, 100000, 1000000, 10000000, 100000000]) AS rank_grouping
 JOIN
   base_green
 USING (client, page, rank)
