@@ -13,6 +13,7 @@ WITH geo_summary AS (
   WHERE
     yyyymm = 202406
 )
+
 SELECT
   *
 FROM (
