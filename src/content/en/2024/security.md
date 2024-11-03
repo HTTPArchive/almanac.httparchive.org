@@ -1088,7 +1088,7 @@ The CORP header is primarily used to allow access to the served resource from an
 
 Nearly half of all observed COOP headers employ the strictest setting, `same-origin`.
 
-### Preventing attacks using Clear-Site-Data
+### Preventing attacks using `Clear-Site-Data`
 
 The [`Clear-Site-Data` header](https://developer.mozilla.org/docs/Web/HTTP/Headers/Clear-Site-Data) allows websites to easily clear browsing data associated with them, including cookies, storage, and cache. This is particularly useful as a security measure when a user logs out, ensuring that authentication tokens and other sensitive information are removed and cannot be abused. The header's value specifies what types of data the website requests the browser to clear.
 
@@ -1529,7 +1529,7 @@ Additionally, only 0.26% of observed COOP headers were set to `cross-origin` and
 
 In addition to cases where valid values intended for one header were mistakenly used for another, we identified several minor instances of syntactical errors across various headers. However, each of these errors accounted for less than 1% of the total observed headers, suggesting that while such mistakes exist, they are relatively infrequent.
 
-### Timing-Allow-Origin Wildcards
+### `Timing-Allow-Origin` wildcards
 
 Timing-Allow-Origin is a response header that allows a server to specify a list of origins that are allowed to see values of attributes obtained through features of the [Resource Timing API](https://developer.mozilla.org/docs/Web/API/Performance_API/Resource_timing). This means that an origin listed in this header can access detailed timestamps regarding the connection that is being made to the server, such as the time at the start of the TCP connection, start of the request and start of the response.
 
@@ -1650,7 +1650,7 @@ We find that server-timing is used by 6.4% of internet hosts. Over 60% of those 
 
 <a hreflang="en" href="https://datatracker.ietf.org/doc/html/rfc8615">.well-known URIs</a> are used as a way to designate specific locations to data or services related to the overall website. A well-known URI is a URI whose path component begins with the characters `/.well-known/`.
 
-### Security.txt
+### `security.txt`
 
 <a hreflang="en" href="https://datatracker.ietf.org/doc/html/rfc9116"><code>security.txt</code></a> is a file format that can be used by websites to communicate information regarding vulnerability reporting in a standard way. Website developers can provide contact details, PGP key, policy, and other information in this file. White hat hackers and penetration testers can then use this information to report potential vulnerabilities they find during their security analyses. Our analysis shows that 1% of websites currently use a security.txt file, showing that they are actively working on improving their site's security.
 
@@ -1666,7 +1666,7 @@ We find that server-timing is used by 6.4% of internet hosts. Over 60% of those 
 
 Most of the security.txt files include contact information (88.8%) and a preferred language (56.0%). This year, 47.9% of security.txt files define an expiry, which is a giant jump compared to the 2022 2.3%. This can largely be explained by an update to the methodology, as the analysis only includes text files this year instead of simply all responses with code 200, thereby significantly lowering the false positive rate. It does mean that less than half of the sites that use security.txt are following the standard that (among other requirements) defines the expires property as required. Interestingly, only 39% of the security.txt files define a policy, which is the space developers can indicate what steps a white hat hacker that found a vulnerability should take to report the vulnerability.
 
-### Change-password
+### `change-password`
 
 The <a hreflang="en" href="https://w3c.github.io/webappsec-change-password-url/"><code>change-password</code></a> well-known URI is a W3C specification in the editor's draft state, which is the same state it was in in 2022. This specific well-known URI was suggested as a way for users and softwares to easily identify the link to be used for changing passwords, which means external resources can easily link to that page.
 
