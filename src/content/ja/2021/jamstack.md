@@ -7,7 +7,7 @@ reviewers: [Dawntraoz, thomkrupa, tunetheweb]
 analysts: [denar90, tunetheweb, rviscomi]
 editors: [tunetheweb, shantsis]
 translators: [ksakae1216]
-denar90_bio: Artem Denysov は、ソフトウェアエンジニア、オープンソースの貢献者、Mozillians のメンバー、講演者、そして執筆者です。Webperfとツールで、開発者とユーザーの生活をより快適にします。[Stackbit](https://stackbit.com) で、開発者が Jamstack ウェブサイトを簡単に構築できるようにするために働いています。[Twitter](https://twitter.com/denar90_) と <a hreflang="en" href="https://www.linkedin.com/in/denar90/">Linkedin</a> でご覧いただけます。
+denar90_bio: Artem Denysov は、ソフトウェアエンジニア、オープンソースの貢献者、Mozillians のメンバー、講演者、そして執筆者です。Webperfとツールで、開発者とユーザーの生活をより快適にします。[Stackbit](https://stackbit.com) で、開発者が Jamstack ウェブサイトを簡単に構築できるようにするために働いています。[Twitter](https://x.com/denar90_) と <a hreflang="en" href="https://www.linkedin.com/in/denar90/">Linkedin</a> でご覧いただけます。
 results: https://docs.google.com/spreadsheets/d/1anlgeaBH2Yui2kFWuRGxHU2QdMiCKOgDrn4WyXkt5ro/
 featured_quote: Jamstackは、モダンなWebサイトを構築するための、若く、急成長しているテクノロジーです。これは、人々が言うことであり、数字で証明されています。
 featured_stat_1: 1.1%

@@ -22,7 +22,7 @@ featured_stat_label_3: Elementi HTML che sono `div`.
 
 Come diceva il [capitolo del 2020](../2020/markup#introduction), senza l'HTML non ci possono essere pagine web, siti web, app web. Si può dire che senza HTML non ci sarebbe il Web. Ciò rende l'HTML uno degli standard web più importanti, se non il più importante standard web.
 
-Di conseguenza, come ogni anno, abbiamo utilizzato i milioni di pagine nel nostro set di dati (7,9 milioni nel set di pagine per dispositivi mobili, 5,4 milioni nel set di paginne desktop, con sovrapposizione) per esaminare anche l'HTML. Questo capitolo non copre "tutto" sull'HTML, quindi siete caldamente invitati ad [analizzare anche i dati raccolti](https://docs.google.com/spreadsheets/d/1grkd2_1xSV3jvNK6ucRQ0OL1HmGTsScHuwA8GZuRLHU/edit) e a condividere le vostre riflessioni e, nel caso, a taggarle: [#htmlalmanac](https://twitter.com/hashtag/htmlalmanac).
+Di conseguenza, come ogni anno, abbiamo utilizzato i milioni di pagine nel nostro set di dati (7,9 milioni nel set di pagine per dispositivi mobili, 5,4 milioni nel set di paginne desktop, con sovrapposizione) per esaminare anche l'HTML. Questo capitolo non copre "tutto" sull'HTML, quindi siete caldamente invitati ad [analizzare anche i dati raccolti](https://docs.google.com/spreadsheets/d/1grkd2_1xSV3jvNK6ucRQ0OL1HmGTsScHuwA8GZuRLHU/edit) e a condividere le vostre riflessioni e, nel caso, a taggarle: [#htmlalmanac](https://x.com/hashtag/htmlalmanac).
 
 ## Dati del documento
 

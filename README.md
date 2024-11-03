@@ -40,7 +40,7 @@ We do almost all of our project planning here on GitHub. Browse the open [issues
 
 We also have a [`#web-almanac`](https://join.slack.com/t/httparchive/shared_invite/zt-45sgwmnb-eDEatOhqssqNAKxxOSLAaA) channel on the HTTP Archive Slack where we chat about project updates.
 
-For news and announcements, follow [@HTTPArchive](https://twitter.com/HTTPArchive) on Twitter.
+For news and announcements, follow [@HTTPArchive](https://x.com/HTTPArchive) on Twitter.
 
 ## [License](https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/LICENSE)
 

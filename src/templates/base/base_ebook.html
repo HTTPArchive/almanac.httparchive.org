@@ -356,16 +356,18 @@
     <ul class="contributors">
     {% for id, contributor in config.contributors.items() %}
       <li class="contributor" id="contributors-{{ id }}">
-        {% if contributor.avatar_url|int != 0 %}
-        <img class="contributor-avatar" src="https://avatars.githubusercontent.com/u/{{ contributor.avatar_url }}?v=4&s=100" height="100" width="100" alt="{{ contributor.name }} avatar">
-        {% else %}
-        <img class="contributor-avatar" src="{{ contributor.avatar_url }}" height="100" width="100" alt="{{ contributor.name }} avatar">
-        {% endif %}
+        <div class="contributor-avatars">
+          {% if contributor.avatar_url|int != 0 %}
+          <img class="contributor-avatar" src="https://avatars.githubusercontent.com/u/{{ contributor.avatar_url }}?v=4&s=100" height="100" width="100" alt="{{ contributor.name }} avatar">
+          {% else %}
+          <img class="contributor-avatar" src="{{ contributor.avatar_url }}" height="100" width="100" alt="{{ contributor.name }} avatar">
+          {% endif %}
+        </div>
         <div>
           <div class="contributor-name">{{ contributor.name }}</div>
           {% if contributor.twitter %}
           <div class="contributor-social">
-            <a href="https://twitter.com/{{ contributor.twitter }}" aria-labelledby="contributors-{{ id }}-twitter">
+            <a href="https://x.com/{{ contributor.twitter }}" aria-labelledby="contributors-{{ id }}-twitter">
               <svg role="img">
                 <title id="contributors-{{ id }}-twitter">{{ onTwitter(contributor.twitter) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter-logo"></use>
@@ -382,6 +384,17 @@
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#mastodon-logo"></use>
               </svg>
               {{ contributor.mastodon }}
+            </a>
+          </div>
+          {% endif %}
+          {% if contributor.bluesky %}
+          <div class="contributor-social">
+            <a href="https://bsky.app/{{ contributor.bluesky }}" aria-labelledby="contributors-{{ id }}-bluesky">
+              <svg role="img">
+                <title id="contributors-{{ id }}-bluesky">{{ onBluesky(contributor.bluesky) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bluesky-logo"></use>
+              </svg>
+              {{ contributor.bluesky }}
             </a>
           </div>
           {% endif %}

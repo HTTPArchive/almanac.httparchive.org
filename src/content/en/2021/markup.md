@@ -7,7 +7,7 @@ reviewers: [j9t, bkardell, shantsis, tunetheweb, rviscomi]
 analysts: [kevinfarrugia]
 editors: [rviscomi]
 translators: []
-AlexLakatos_bio: Alex Lakatos has spent the past decade working on the Open Web within Browser, Communications, and FinTech organizations. With a background in web technologies and developer advocacy, he's helping the <a hreflang="en" href="https://interledger.org/">Interledger Foundation</a> build developer-friendly products while engaging with the developer community at large. You can [reach out to him on Twitter](https://twitter.com/avolakatos).
+AlexLakatos_bio: Alex Lakatos has spent the past decade working on the Open Web within Browser, Communications, and FinTech organizations. With a background in web technologies and developer advocacy, he's helping the <a hreflang="en" href="https://interledger.org/">Interledger Foundation</a> build developer-friendly products while engaging with the developer community at large. You can [reach out to him on Twitter](https://x.com/avolakatos).
 results: https://docs.google.com/spreadsheets/d/1Ta5Ck7y3W6LCn2CeGtW7dAdLF6Lh5wV2UBQJZTz3W5Q/
 featured_quote: Be part of the people who increase adoption of new standards every year. Start with something new you've learned today, one of the many standards we've covered not only in this chapter but in the whole Web Almanac.
 featured_stat_1: 35.3%

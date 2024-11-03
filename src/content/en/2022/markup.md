@@ -22,7 +22,7 @@ featured_stat_label_3: Elements which are `div`s.
 
 As the [2020 chapter said](../2020/markup#introduction), without HTML there are no web pages, no web sites, no web apps. You can say that without HTML, there's no Web. That makes HTML one of the most important web standards, if not the most important web standard.
 
-Accordingly, like every year, we used the millions of pages in our data set—7.9 million in the mobile set, 5.4 million in the desktop set, with overlap—to also look at HTML. This chapter doesn't cover "everything" there is about HTML, so we explicitly encourage you to [also analyze the data we gathered](https://docs.google.com/spreadsheets/d/1grkd2_1xSV3jvNK6ucRQ0OL1HmGTsScHuwA8GZuRLHU/edit) and to share your own conclusions—and when you do, tag them: [#htmlalmanac](https://twitter.com/hashtag/htmlalmanac).
+Accordingly, like every year, we used the millions of pages in our data set—7.9 million in the mobile set, 5.4 million in the desktop set, with overlap—to also look at HTML. This chapter doesn't cover "everything" there is about HTML, so we explicitly encourage you to [also analyze the data we gathered](https://docs.google.com/spreadsheets/d/1grkd2_1xSV3jvNK6ucRQ0OL1HmGTsScHuwA8GZuRLHU/edit) and to share your own conclusions—and when you do, tag them: [#htmlalmanac](https://x.com/hashtag/htmlalmanac).
 
 ## Document data
 

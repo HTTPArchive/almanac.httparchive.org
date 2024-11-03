@@ -29,7 +29,7 @@ Web accessibility is about achieving feature and information parity and giving c
 
 The <a hreflang="en" href="https://www.w3.org/WAI/standards-guidelines/wcag/">Web Content Accessibility Guidelines</a>, or WCAG, is an internationally recognized set of standards that needs to be met in all websites and applications that utilize the Internet. They are not laws, but <a hreflang="en" href="https://www.w3.org/WAI/policies/">many laws point to WCAG as their basis</a>.
 
-These guidelines have had multiple releases over the years and the current standard is WCAG 2.1, with WCAG 2.2 currently being vetted as a <a hreflang="en" href="https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/">working draft</a>. Some regional laws point to WCAG 2.0 as the requirement, but as [Adrian Roselli](https://twitter.com/aardrian) covers in his article <a hreflang="en" href="https://adrianroselli.com/2020/09/wcag-2-1-is-the-current-standard-not-wcag-2-0-and-wcag-2-2-is-coming.html">WCAG 2.1 is the Current Standard, Not WCAG 2.0 - and WCAG 2.2 is Coming</a> we need to be meeting WCAG 2.1 standards and considering the new criteria coming in WCAG 2.2 as well.
+These guidelines have had multiple releases over the years and the current standard is WCAG 2.1, with WCAG 2.2 currently being vetted as a <a hreflang="en" href="https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/">working draft</a>. Some regional laws point to WCAG 2.0 as the requirement, but as [Adrian Roselli](https://x.com/aardrian) covers in his article <a hreflang="en" href="https://adrianroselli.com/2020/09/wcag-2-1-is-the-current-standard-not-wcag-2-0-and-wcag-2-2-is-coming.html">WCAG 2.1 is the Current Standard, Not WCAG 2.0 - and WCAG 2.2 is Coming</a> we need to be meeting WCAG 2.1 standards and considering the new criteria coming in WCAG 2.2 as well.
 
 A dangerous trend that has seen more exposure than ever in 2020 is the use of "accessibility overlays". These widgets promise one step accessibility compliance and more often than not introduce new barriers and make the experience for a disabled user quite challenging. It is important that digital practitioners take ownership over designing and implementing usable interfaces and not try to subvert this process with a quick fix. For more information see Lainey Feingold's article, <a hreflang="en" href="https://www.lflegal.com/2020/08/quick-fix/">Honor the ADA: Avoid Web Accessibility Quick Fix Overlays</a>.
 
@@ -191,7 +191,7 @@ The `title` attribute which generates a tooltip that displays text is often mist
 
 > "Relying on the `title` attribute is currently discouraged as many user agents do not expose the attribute in an accessible manner as required by this specification"
 
-Tooltips also introduce a host of other accessibility barriers such as information only being revealed on hover/mouseover, information not being properly communicated to assistive technology, lack of keyboard support, and general poor usability. The history of tooltips and their barriers  are well described by [Sarah Higley](https://twitter.com/codingchaos) in her blog post <a hreflang="en" href="https://sarahmhigley.com/writing/tooltips-in-wcag-21/">Tooltips in the time of WCAG 2.1</a>.
+Tooltips also introduce a host of other accessibility barriers such as information only being revealed on hover/mouseover, information not being properly communicated to assistive technology, lack of keyboard support, and general poor usability. The history of tooltips and their barriers  are well described by [Sarah Higley](https://x.com/codingchaos) in her blog post <a hreflang="en" href="https://sarahmhigley.com/writing/tooltips-in-wcag-21/">Tooltips in the time of WCAG 2.1</a>.
 
 We found that 16.95% of all `alt` attributes also contain a `title` attribute. Of these instances 73.56% of desktop sites and 72.80% of mobile sites had matching values for both the `alt` and `title` attributes.
 
@@ -404,7 +404,7 @@ We found that 22.06% of desktop pages and 21.76% of mobile pages have at least o
 
 #### Dialog modals
 
-There are many potential accessibility barriers associated with dialog modals. We recommend reading [Scott O'Hara](https://twitter.com/scottohara)'s article <a hreflang="en" href="https://www.scottohara.me/blog/2019/03/05/open-dialog.html">Having an Open Dialog</a> for more context.
+There are many potential accessibility barriers associated with dialog modals. We recommend reading [Scott O'Hara](https://x.com/scottohara)'s article <a hreflang="en" href="https://www.scottohara.me/blog/2019/03/05/open-dialog.html">Having an Open Dialog</a> for more context.
 
 We are pleased to report that 19.01% of desktop pages and 18.21% of mobile pages have at least one occurrence of `role="dialog"` which is up from about 8% in 2019. It is worth noting some of the increase is probably due to changes in how this metric was measured. This could also suggest that more developers are considering accessibility when building dialogs and potentially that frameworks and associated packages may be implementing more accessible dialog patterns as well. However, making a dialog modal accessible requires a lot more than using the `dialog` role. Focus management, proper keyboard support, and screen reader exposure all need to be addressed.
 
@@ -536,7 +536,7 @@ Of the sites that have form controls with placeholder text, 73.89% of them have 
 
 ## Conclusion
 
-This chapter is fittingly included in the User Experience section of this Almanac. As accessibility advocate [Billy Gregory once said](https://twitter.com/thebillygregory/status/552466012713783297?s=20), "when UX doesn't consider ALL users, shouldn't it be known as SOME User Experience, or SUX". Too often accessibility work is seen as an addition, an edge case, or even comparable to technical debt and not core to the success of a website or product as it should be.
+This chapter is fittingly included in the User Experience section of this Almanac. As accessibility advocate [Billy Gregory once said](https://x.com/thebillygregory/status/552466012713783297?s=20), "when UX doesn't consider ALL users, shouldn't it be known as SOME User Experience, or SUX". Too often accessibility work is seen as an addition, an edge case, or even comparable to technical debt and not core to the success of a website or product as it should be.
 
 Accessibility is not the sole responsibility of developers to implement. The entire product team and organization have to have it as part of their accountabilities in order to succeed. Accessibility work needs to shift left in the product cycle, meaning it needs to be baked into the research, ideation and design stages before it is developed.
 
