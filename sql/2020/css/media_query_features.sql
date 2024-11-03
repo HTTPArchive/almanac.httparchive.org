@@ -50,7 +50,8 @@ FROM (
     UNNEST(getMediaQueryFeatures(css)) AS feature
   WHERE
     date = '2020-08-01' AND
-    feature IS NOT NULL)
+    feature IS NOT NULL
+)
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -58,9 +59,9 @@ JOIN (
   FROM
     `httparchive.summary_pages.2020_08_01_*`
   GROUP BY
-    client)
-USING
-  (client)
+    client
+)
+USING (client)
 GROUP BY
   client,
   total,

@@ -15,7 +15,8 @@ FROM (
     url,
     JSON_EXTRACT(report, '$.categories') AS categories
   FROM
-    `httparchive.lighthouse.2022_06_01_*`)
+    `httparchive.lighthouse.2022_06_01_*`
+)
 JOIN (
   SELECT DISTINCT
     _TABLE_SUFFIX AS client,
@@ -24,9 +25,9 @@ JOIN (
   FROM
     `httparchive.technologies.2022_06_01_*`
   WHERE
-    category = 'CMS')
-USING
-  (url, client)
+    category = 'CMS'
+)
+USING (url, client)
 GROUP BY
   client,
   cms

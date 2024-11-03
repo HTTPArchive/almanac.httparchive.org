@@ -64,7 +64,6 @@ FROM
   counts_per_client_and_aspect_ratio
 LEFT JOIN
   counts_per_client
-USING
-  (client)
+USING (client)
 ORDER BY
   percentOfImages DESC

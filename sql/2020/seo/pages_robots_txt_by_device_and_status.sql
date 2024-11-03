@@ -2,7 +2,7 @@
 # page robots_txt metrics grouped by device and status code
 
 # helper to create percent fields
-CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
+CREATE TEMP FUNCTION AS_PERCENT(freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
   ROUND(SAFE_DIVIDE(freq, total), 4)
 );
 
@@ -33,14 +33,13 @@ SELECT
 
   AS_PERCENT(COUNT(0), SUM(COUNT(0)) OVER (PARTITION BY client)) AS pct
 
-FROM
-  (
-    SELECT
-      _TABLE_SUFFIX AS client,
-      get_robots_txt_info(JSON_EXTRACT_SCALAR(payload, '$._robots_txt')) AS robots_txt_info
-    FROM
-      `httparchive.pages.2020_08_01_*`
-  )
+FROM (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    get_robots_txt_info(JSON_EXTRACT_SCALAR(payload, '$._robots_txt')) AS robots_txt_info
+  FROM
+    `httparchive.pages.2020_08_01_*`
+)
 GROUP BY
   client,
   status_code

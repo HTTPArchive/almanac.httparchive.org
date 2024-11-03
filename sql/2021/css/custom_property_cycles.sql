@@ -101,7 +101,8 @@ FROM (
     `httparchive.pages.2021_07_01_*`
   GROUP BY
     client,
-    url)
+    url
+)
 WHERE
   cycles IS NOT NULL
 GROUP BY

@@ -18,7 +18,8 @@ FROM (
     `httparchive.almanac.requests`
   WHERE
     date = '2019-07-01' AND
-    _cdn_provider != '')
+    _cdn_provider != ''
+)
 GROUP BY
   client,
   cdn

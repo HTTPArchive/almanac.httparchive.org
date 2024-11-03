@@ -14,7 +14,7 @@ FROM (
     `httparchive.almanac.requests`
   WHERE
     date = '2021-07-01'
-  )
+)
 WHERE
   protocol IS NOT NULL
 GROUP BY

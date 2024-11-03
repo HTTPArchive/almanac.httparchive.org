@@ -27,8 +27,7 @@ FROM
   pages
 JOIN
   requests
-USING
-  (client, pageid, url)
+USING (client, pageid, url)
 GROUP BY
   client,
   format

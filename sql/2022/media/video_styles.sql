@@ -20,7 +20,7 @@ WITH videonotes AS (
       JSON_QUERY_ARRAY(JSON_VALUE(payload, '$._media'), '$.video_source_format_type') AS video_source_format_type
     FROM
       `httparchive.pages.2022_06_01_*`
-    )
+  )
   CROSS JOIN
     UNNEST(video_display_style) AS styles
 ),

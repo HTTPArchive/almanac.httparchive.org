@@ -36,7 +36,8 @@ FROM (
     url,
     get_meta_og_info(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS almanac_info
   FROM
-    `httparchive.pages.2020_08_01_*`)
+    `httparchive.pages.2020_08_01_*`
+)
 GROUP BY
   client
 ORDER BY

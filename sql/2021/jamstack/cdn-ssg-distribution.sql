@@ -31,7 +31,8 @@ FROM (
     `httparchive.almanac.requests`
   WHERE
     date = '2021-07-01' AND
-    firstHtml)
+    firstHtml
+)
 JOIN (
   SELECT DISTINCT
     _TABLE_SUFFIX AS client,
@@ -43,7 +44,7 @@ JOIN (
     LOWER(category) = 'static site generator' OR
     app = 'Next.js' OR
     app = 'Nuxt.js'
-  )
+)
 USING (client, url)
 WHERE
   CDN IS NOT NULL

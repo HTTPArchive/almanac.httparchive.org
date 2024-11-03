@@ -19,7 +19,9 @@ FROM (
       `httparchive.summary_pages.2019_07_01_*`
     GROUP BY
       bin,
-      client))
+      client
+  )
+)
 ORDER BY
   bin,
   client

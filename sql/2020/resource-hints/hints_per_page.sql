@@ -34,7 +34,8 @@ FROM (
     _TABLE_SUFFIX AS client,
     getResourceHints(payload) AS hints
   FROM
-    `httparchive.pages.2020_08_01_*`),
+    `httparchive.pages.2020_08_01_*`
+),
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 GROUP BY
   percentile,

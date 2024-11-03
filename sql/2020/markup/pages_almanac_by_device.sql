@@ -10,7 +10,7 @@
 # Estimate about twice the speed of the original code. But should scale up far better as the custom metrics are only parsed once.
 
 # helper to create percent fields
-CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
+CREATE TEMP FUNCTION AS_PERCENT(freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
   ROUND(SAFE_DIVIDE(freq, total), 4)
 );
 
@@ -97,13 +97,12 @@ SELECT
   # pages with no html lang attribute M404
   AS_PERCENT(COUNTIF(almanac_info.html_node_lang IS NULL OR LENGTH(almanac_info.html_node_lang) = 0), COUNT(0)) AS pct_no_html_lang_m404
 
-FROM
-  (
-    SELECT
-      _TABLE_SUFFIX AS client,
-      get_almanac_info(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS almanac_info
-    FROM
-      `httparchive.pages.2020_08_01_*`
-  )
+FROM (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    get_almanac_info(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS almanac_info
+  FROM
+    `httparchive.pages.2020_08_01_*`
+)
 GROUP BY
   client

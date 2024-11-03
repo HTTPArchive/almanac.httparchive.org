@@ -63,9 +63,8 @@ FROM (
     GROUP BY
       _TABLE_SUFFIX
   )
-  USING
-    (_TABLE_SUFFIX)
-  )
+  USING (_TABLE_SUFFIX)
+)
 GROUP BY
   client,
   links_same_site,
