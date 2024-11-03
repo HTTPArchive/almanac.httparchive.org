@@ -1372,39 +1372,39 @@ Many sites on the current web are made using large CMS systems. These may enable
     <tbody>
       <tr>
         <td>Wix</td>
-        <td>Strict-Transport-Security (99.9%),<br>X-Content-Type-Options (99.9%)</td>
+        <td><code>Strict-Transport-Security</code> (99.9%),<br><code>X-Content-Type-Options</code> (99.9%)</td>
       </tr>
       <tr>
         <td>Blogger</td>
-        <td>X-Content-Type-Options (99.8%),<br>X-XSS-Protection (99.8%)</td>
+        <td><code>X-Content-Type-Options</code> (99.8%),<br><code>X-XSS-Protection</code> (99.8%)</td>
       </tr>
       <tr>
         <td>Squarespace</td>
-        <td>Strict-Transport-Security (98.9%),<br>X-Content-Type-Options (99.1%)</td>
+        <td><code>Strict-Transport-Security</code> (98.9%),<br><code>X-Content-Type-Options</code> (99.1%)</td>
       </tr>
       <tr>
         <td>Drupal</td>
-        <td>X-Content-Type-Options (90.3%),<br>X-Frame-Options (87.9%)</td>
+        <td><code>X-Content-Type-Options</code> (90.3%),<br><code>X-Frame-Options</code> (87.9%)</td>
       </tr>
       <tr>
         <td>Google Sites</td>
-        <td>Content-Security-Policy (99.9%),<br>Cross-Origin-Opener-Policy (99.8%),<br>Cross-Origin-Resource-Policy (99.8%),<br>Referrer-Policy (99.8%),<br>X-Content-Type-Options (99.9%),<br>X-Frame-Options (99.9%),<br>X-XSS-Protection (99.9%)</td>
+        <td><code>Content-Security-Policy</code> (99.9%),<br><code>Cross-Origin-Opener-Policy</code> (99.8%),<br><code>Cross-Origin-Resource-Policy</code> (99.8%),<br><code>Referrer-Policy</code> (99.8%),<br><code>X-Content-Type-Options</code> (99.9%),<br><code>X-Frame-Options</code> (99.9%),<br><code>X-XSS-Protection</code> (99.9%)</td>
       </tr>
       <tr>
         <td>Medium</td>
-        <td>Content-Security-Policy (99.2%),<br>Strict-Transport-Security (96.4%),<br>X-Content-Type-Options (99.1%)</td>
+        <td><code>Content-Security-Policy</code> (99.2%),<br><code>Strict-Transport-Security</code> (96.4%),<br><code><code>X-Content-Type-Options</code> (99.1%)</td>
       </tr>
       <tr>
         <td>Substack</td>
-        <td>Strict-Transport-Security (100%),<br>X-Frame-Options (100%)</td>
+        <td><code>Strict-Transport-Security (100%),<br><code>X-Frame-Options</code> (100%)</td>
       </tr>
       <tr>
         <td>Wagtail</td>
-        <td>Referrer-Policy (55.2%),<br>X-Content-Type-Options (61.7%),<br>X-Frame-Options (72.1%)</td>
+        <td><code>Referrer-Policy</code> (55.2%),<br><code>X-Content-Type-Options</code> (61.7%),<br><code>X-Frame-Options</code> (72.1%)</td>
       </tr>
       <tr>
         <td>Plone</td>
-        <td>Strict-Transport-Security (57.1%),<br>X-Frame-Options (75.2%)</td>
+        <td><code>Strict-Transport-Security</code> (57.1%),<br><code>X-Frame-Options</code> (75.2%)</td>
       </tr>
     </tbody>
   </table>
@@ -1431,7 +1431,7 @@ Large websites often have a high number of visitors and registered users, of whi
   )
 }}
 
-We find that most headers, including the most popular ones: `X-Frame-Options`, `Strict-Transport-Security`, `X-Content-Type-Options`, `X-XSS-Protection` and `Content-Security-Policy`, always have higher adoptions for more popular sites on mobile. 64.3% of the top 1000 sites on mobile have HSTS enabled. This means the top 1000 websites are more invested in only sending traffic over HTTPS. Less popular sites can still have HTTPS enabled, but don't add a Strict-Transport-Security header as often, which may lead users to repeatedly visit the site over plain HTTP.
+We find that most headers, including the most popular ones: `X-Frame-Options`, `Strict-Transport-Security`, `X-Content-Type-Options`, `X-XSS-Protection` and `Content-Security-Policy`, always have higher adoptions for more popular sites on mobile. 64.3% of the top 1000 sites on mobile have HSTS enabled. This means the top 1000 websites are more invested in only sending traffic over HTTPS. Less popular sites can still have HTTPS enabled, but don't add a <code>Strict-Transport-Security</code> header as often, which may lead users to repeatedly visit the site over plain HTTP.
 
 ### Website category
 
@@ -1712,7 +1712,7 @@ Finally, we check whether or not robots.txt includes possibly sensitive endpoint
   )
 }}
 
-We see that around 4.3% of websites include at least one `admin` file in their `robots.txt` file.
+We see that around 4.3% of websites include at least one `admin` entry in their `robots.txt` file.
 
 This may be used to find an admin-only section of the website, which would otherwise be hidden and finding it would rely on attempting to visit specific subpages under that url. `login`, `signin`, `auth`, `sso` and `account` point to the existence of a mechanism where users can log in using an account they created or received. Each of these endpoints are included in the robots.txt of a number of sites (some of which may be overlapping), with `account` being the more popular one at 2.9% of websites.
 
