@@ -402,57 +402,57 @@ The top three directives also make up the building blocks of the most prevalent 
     </thead>
     <tbody>
       <tr>
-        <td>upgrade-insecure-requests</td>
+        <td><code>upgrade-insecure-requests</code></td>
         <td class="numeric">-1.3</td>
         <td class="numeric">-0.5</td>
       </tr>
       <tr>
-        <td>frame-ancestors</td>
+        <td><code>frame-ancestors</code></td>
         <td class="numeric">5.1%</td>
         <td class="numeric">2.6%</td>
       </tr>
       <tr>
-        <td>block-all-mixed-content</td>
+        <td><code>block-all-mixed-content</code></td>
         <td class="numeric">-8.8</td>
         <td class="numeric">-12.7</td>
       </tr>
       <tr>
-        <td>default-src</td>
+        <td><code>default-src</code></td>
         <td class="numeric">-9.1</td>
         <td class="numeric">-6.3</td>
       </tr>
       <tr>
-        <td>script-src</td>
+        <td><code>script-src</code></td>
         <td class="numeric">-3.0</td>
         <td class="numeric">-1.8</td>
       </tr>
       <tr>
-        <td>style-src</td>
+        <td><code>style-src</code></td>
         <td class="numeric">-8.4</td>
         <td class="numeric">-2.3</td>
       </tr>
       <tr>
-        <td>img-src</td>
+        <td><code>img-src</code></td>
         <td class="numeric">-2.8</td>
         <td class="numeric">9.3%</td>
       </tr>
       <tr>
-        <td>font-src</td>
+        <td><code>font-src</code></td>
         <td class="numeric">-3.5</td>
         <td class="numeric">8.1%</td>
       </tr>
       <tr>
-        <td>connect-src</td>
+        <td><code>connect-src</code></td>
         <td class="numeric">3.1%</td>
         <td class="numeric">16.8%</td>
       </tr>
       <tr>
-        <td>frame-src</td>
+        <td><code>frame-src</code></td>
         <td class="numeric">3.9%</td>
         <td class="numeric">16.1%</td>
       </tr>
       <tr>
-        <td>object-src</td>
+        <td><code>object-src</code></td>
         <td class="numeric">15.9%</td>
         <td class="numeric">16.8%</td>
       </tr>
@@ -492,22 +492,22 @@ The `unsafe-inline` and `unsafe-eval` directives can significantly reduce the se
     </thead>
     <tbody>
       <tr>
-        <td>nonce-</td>
+        <td><code>nonce-</code></td>
         <td class="numeric">61.8%</td>
         <td class="numeric">39.4%</td>
       </tr>
       <tr>
-        <td>strict-dynamic</td>
+        <td><code>strict-dynamic</code></td>
         <td class="numeric">61.3%</td>
         <td class="numeric">88.3%</td>
       </tr>
       <tr>
-        <td>unsafe-inline</td>
+        <td><code>unsafe-inline</code></td>
         <td class="numeric">-3.2</td>
         <td class="numeric">-3.4</td>
       </tr>
       <tr>
-        <td>unsafe-eval</td>
+        <td><code>unsafe-eval</code></td>
         <td class="numeric">-2.6</td>
         <td class="numeric">-0.3</td>
       </tr>
