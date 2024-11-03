@@ -86,19 +86,17 @@
             {% endif %}
                 {% set authordata = config.contributors[author] if author in config.contributors else None %}
                 <li>
-                    <div class="contributor-avatars">
-                      {% if authordata.avatar_url|int != 0 %}
-                      <a class="avatar-link" href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="https://avatars.githubusercontent.com/u/{{ authordata.avatar_url }}?v=4&s=200" height="200" width="200"></a>
-                      {% else %}
-                      <a class="avatar-link" href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200"></a>
-                      {% endif %}
-                    </div>
+                    {% if authordata.avatar_url|int != 0 %}
+                    <a class="avatar-link" href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="https://avatars.githubusercontent.com/u/{{ authordata.avatar_url }}?v=4&s=200" height="200" width="200"></a>
+                    {% else %}
+                    <a class="avatar-link" href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200"></a>
+                    {% endif %}
                     <div class="info">
                         <a href="#contributors-{{ author }}"><span class="name">{{ authordata.name }}</span></a>
                         {% if authordata.twitter or authordata.github or authordata.linkedin or authordata.website %}
                             <div class="social">
                                 {% if authordata.twitter %}
-                                <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">
+                                <a class="twitter" href="https://x.com/{{ authordata.twitter }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">
                                     <svg aria-hidden="true">
                                         <title id="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">{{ onTwitter(authordata.twitter) }}</title>
                                         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter-logo"></use>

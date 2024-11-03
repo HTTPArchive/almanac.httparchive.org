@@ -208,7 +208,7 @@ canonicalタグをHTMLページの`<head>`に実装することは、`Link`ヘ�
 
 #### canonicalタグの矛盾
 
-ページには、複数のcanonicalタグを含むことがあります。このように相反するシグナルがある場合、検索エンジンはそれを把握しなければなりません。GoogleのSearch Advocateの一人である[Martin Splitt](https://twitter.com/g33konaut)は、かつて<a hreflang="en" href="https://www.youtube.com/watch?v=bAE3L1E1Fmk&amp;t=772s">Google側で未定義の動作を引き起こす</a>と発言しています。
+ページには、複数のcanonicalタグを含むことがあります。このように相反するシグナルがある場合、検索エンジンはそれを把握しなければなりません。GoogleのSearch Advocateの一人である[Martin Splitt](https://x.com/g33konaut)は、かつて<a hreflang="en" href="https://www.youtube.com/watch?v=bAE3L1E1Fmk&amp;t=772s">Google側で未定義の動作を引き起こす</a>と発言しています。
 
 先ほどの図では、1.3%ものモバイルページが、最初のHTMLとレンダリングバージョンで異なるcanonicalタグを持っていることが示されています。
 
@@ -708,7 +708,7 @@ Core Web Vitalsは、Googleのページ体験シグナルの一部である新�
   <figcaption>— <cite><a hreflang="en" href="https://developers.google.com/search/docs/advanced/crawling/localized-versions">Google SEOのドキュメント</a></cite></figcaption>
 </figure>
 
-検索エンジンにローカライズされたページを知らせるには、`hreflang`タグを使用します。`hreflang`属性は、<a hreflang="en" href="https://yandex.com/support/webmaster/yandex-indexing/locale-pages.html">Yandex</a> やBing（[ある程度](https://twitter.com/facan/status/1304120691172601856)）でも使用されています。
+検索エンジンにローカライズされたページを知らせるには、`hreflang`タグを使用します。`hreflang`属性は、<a hreflang="en" href="https://yandex.com/support/webmaster/yandex-indexing/locale-pages.html">Yandex</a> やBing（[ある程度](https://x.com/facan/status/1304120691172601856)）でも使用されています。
 
 {{ figure_markup(
   image="hreflang-usage.png",
@@ -730,7 +730,7 @@ hreflang属性でもっとも利用されているのは、`"en"`（英語版）
 
 `x-default`（フォールバック版とも呼ばれる）は、モバイルでは2.56%のケースで使用されています。`hreflang` 属性で指定されるその他の一般的な言語は、フランス語とスペイン語です。
 
-Bingにとって、[`hreflang` は `content-language` ヘッダーよりも「はるかに弱い信号」です](https://twitter.com/facan/status/1304120691172601856)。
+Bingにとって、[`hreflang` は `content-language` ヘッダーよりも「はるかに弱い信号」です](https://x.com/facan/status/1304120691172601856)。
 
 他の多くのSEOパラメーターと同様に、[`content-language`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Language)には、以下のような複数の実装方法があります。
 

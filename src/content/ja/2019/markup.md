@@ -258,7 +258,7 @@ featured_stat_label_3: カルーセルのバリエーションが見つかりま
 
 測定したほとんどの要素は単一のWebページでのみ使用されると思われるかもしれませんが、実際には5,048個の要素すべてが複数のページに出現しています。データセット中、最も出現数が少ない要素は15ページに存在しています。そして、約5分の1は100ページ以上に存在します。約7％は1,000ページ以上に存在します。
 
-データ分析を支援するために<a hreflang="en" href="https://rainy-periwinkle.glitch.me">Glitchで小さなツール</a>を共同で作りました。このツールはあなたも使うことができます。そして、あなたの観測した内容をパーマリンクと共に[@HTTPArchive](https://twitter.com/HTTPArchive)へシェアしてください。（Tommy Hodginsは、同じように洞察に使える<a hreflang="en" href="https://github.com/tomhodgins/hade">CLIツール</a>を作成しています。）
+データ分析を支援するために<a hreflang="en" href="https://rainy-periwinkle.glitch.me">Glitchで小さなツール</a>を共同で作りました。このツールはあなたも使うことができます。そして、あなたの観測した内容をパーマリンクと共に[@HTTPArchive](https://x.com/HTTPArchive)へシェアしてください。（Tommy Hodginsは、同じように洞察に使える<a hreflang="en" href="https://github.com/tomhodgins/hade">CLIツール</a>を作成しています。）
 
 それでは、いくつかのデータを見ていきましょう。
 
