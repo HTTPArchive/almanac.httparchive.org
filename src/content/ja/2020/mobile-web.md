@@ -56,7 +56,7 @@ perficient.comで公開されている<a hreflang="en" href="https://www.perfici
 
 オリジンへのトラフィックを人気度別に見ると、ユーザーが特定のオリジンにどのくらいの頻度でアクセスしているか、それによってウェブ上の世界的な分布がどうなっているかがわかります。
 
-Rick Byersが1年前にこの分布を[ツィート](https://twitter.com/RickByers/status/1195342331588706306)していたので、最新のデータを見てみました。このグラフは、オリジンの人気度による全体的な分布を、Chromeでのページロード（％）への貢献度で示したものです。
+Rick Byersが1年前にこの分布を[ツィート](https://x.com/RickByers/status/1195342331588706306)していたので、最新のデータを見てみました。このグラフは、オリジンの人気度による全体的な分布を、Chromeでのページロード（％）への貢献度で示したものです。
 
 {{ figure_markup(
   image="page-loads-across-origins-ranked-by-popularity.png",

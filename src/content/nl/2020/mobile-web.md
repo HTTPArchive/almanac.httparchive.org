@@ -56,7 +56,7 @@ Merk op dat deze sectie verwijst naar statistieken die specifiek voor dit hoofds
 
 We keken naar het verkeer naar de herkomst op populariteit: hoe vaak bezoeken gebruikers een bepaalde herkomst, en wat zegt dat ons over de wereldwijde verspreiding op internet?
 
-Rick Byers [tweette](https://twitter.com/RickByers/status/1195342331588706306) deze distributie een jaar geleden, we keken naar de laatste gegevens. De grafiek toont ons de algehele verdeling over de herkomst op basis van hun populariteit, vastgelegd door hun bijdrage aan het percentage pagina's dat wordt geladen in Chrome.
+Rick Byers [tweette](https://x.com/RickByers/status/1195342331588706306) deze distributie een jaar geleden, we keken naar de laatste gegevens. De grafiek toont ons de algehele verdeling over de herkomst op basis van hun populariteit, vastgelegd door hun bijdrage aan het percentage pagina's dat wordt geladen in Chrome.
 
 {{ figure_markup(
   image="page-loads-across-origins-ranked-by-popularity.png",

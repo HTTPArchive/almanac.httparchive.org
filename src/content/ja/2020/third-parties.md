@@ -7,7 +7,7 @@ reviewers: [jzyang, exterkamp]
 analysts: [max-ostapenko, paulcalvano]
 editors: [tunetheweb]
 translators: [ksakae1216]
-simonhearne_bio: Simonはウェブパフォーマンスアーキテクトです。彼は、より速く、よりアクセスしやすいウェブを提供することに情熱を注いでいます。<a href="https://twitter.com/simonhearne">@SimonHearne</a>でツイートしたり、<a hreflang="en" href="https://simonhearne.com">simonhearne.com</a>でブログを書いています。
+simonhearne_bio: Simonはウェブパフォーマンスアーキテクトです。彼は、より速く、よりアクセスしやすいウェブを提供することに情熱を注いでいます。<a href="https://x.com/simonhearne">@SimonHearne</a>でツイートしたり、<a hreflang="en" href="https://simonhearne.com">simonhearne.com</a>でブログを書いています。
 discuss: 2042
 results: https://docs.google.com/spreadsheets/d/1uW4SMkC45b4EbC4JV1xKAUhwGN2K8j0qFy_jSIYnHhI/
 featured_quote: サードパーティコンテンツはかつてないほど普及しており、94%のページに少なくとも1つのサードパーティリソースがあり、ページの中央値では24個のサードパーティリソースがあります。この章では、サードパーティコンテンツの普及率、ページの重さとブラウザのCPUへの影響をレビューした後、サードパーティコンテンツがページパフォーマンスに与える影響を軽減する方法を提案します。

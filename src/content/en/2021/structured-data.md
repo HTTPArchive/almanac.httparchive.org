@@ -602,7 +602,7 @@ The `sameAs` property accounts for 1.60% of all JSON-LD markup and is present on
 
 We can see that the most common values of the `sameAs` property (normalizing from _URLs_ to _hostnames_) are social media platforms (e.g., facebook.com, instagram.com), and official sources (e.g., wikipedia.org, yelp.com)—with the sum of the former accounting for ~75% of usage.
 
-It's clear that this property is primarily used to identify the social media accounts of websites and businesses; likely motivated by Google's historical reliance on this data as an input for managing _knowledge panels_ in their search results. Given that this requirement was <a hreflang="en" href="https://twitter.com/googlesearchc/status/1143558928439005184">deprecated in 2019</a>, we might expect this data set to gradually alter in coming years.
+It's clear that this property is primarily used to identify the social media accounts of websites and businesses; likely motivated by Google's historical reliance on this data as an input for managing _knowledge panels_ in their search results. Given that this requirement was <a hreflang="en" href="https://x.com/googlesearchc/status/1143558928439005184">deprecated in 2019</a>, we might expect this data set to gradually alter in coming years.
 
 ## Conclusion
 
