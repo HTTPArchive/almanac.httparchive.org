@@ -1684,7 +1684,7 @@ The adoption remains very low. At 0.27% for both mobile and desktop sites it sli
 
 ### Detecting status code reliability
 
-In a specification that is also still an <a hreflang="en" href="https://w3c.github.io/webappsec-change-password-url/response-code-reliability.html">editor's draft</a>, like in 2022, a particular well-known URI is defined to determine the reliability of a website's HTTP response status code. The idea behind this well-known URI is that it should never exist in any website, which in turn means navigating to this well-known URI should never result in a response with an <a hreflang="en" href="https://fetch.spec.whatwg.org/#ok-status">ok-status</a>. If it redirects and returns an "ok-status", that means the website's status codes are not reliable. This could be the case when a redirect to a specific '404 not found' error page occurs, but that page is served with an ok status.
+In a specification that is also still an <a hreflang="en" href="https://w3c.github.io/webappsec-change-password-url/response-code-reliability.html">editor's draft</a>, like in 2022, a particular well-known URI is defined to determine the reliability of a website's HTTP response status code. The idea behind this well-known URI is that it should never exist in any website, which in turn means navigating to this well-known URI should never result in a response with an <a hreflang="en" href="https://fetch.spec.whatwg.org/#ok-status"><code>ok-status</code></a>. If it redirects and returns an "ok-status", that means the website's status codes are not reliable. This could be the case when a redirect to a specific '404 not found' error page occurs, but that page is served with an ok status.
 
 {{ figure_markup(
   image="well-known-responses.png",
@@ -1712,7 +1712,7 @@ Finally, we check whether or not robots.txt includes possibly sensitive endpoint
   )
 }}
 
-We see that around 4.3% of websites include at least one `/admin/...` in their robot.txt file.
+We see that around 4.3% of websites include at least one `admin` file in their `robots.txt` file.
 
 This may be used to find an admin-only section of the website, which would otherwise be hidden and finding it would rely on attempting to visit specific subpages under that url. `login`, `signin`, `auth`, `sso` and `account` point to the existence of a mechanism where users can log in using an account they created or received. Each of these endpoints are included in the robots.txt of a number of sites (some of which may be overlapping), with `account` being the more popular one at 2.9% of websites.
 
