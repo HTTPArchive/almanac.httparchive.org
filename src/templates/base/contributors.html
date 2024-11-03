@@ -137,7 +137,7 @@
 }
 
 .contributor-teams {
-  margin-top: 5px;
+  margin: 5px 0;
   text-align: center;
   color: #757575;
   font-size: 14px;
@@ -321,7 +321,7 @@
 
         <div class="contributor-social">
           {% if contributor.twitter %}
-          <a href="https://twitter.com/{{ contributor.twitter }}" aria-label="{{ onTwitter(contributor.twitter) }}">
+          <a href="https://x.com/{{ contributor.twitter }}" aria-label="{{ onTwitter(contributor.twitter) }}">
             <svg width="22" height="22" role="img">
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter-logo"></use>
             </svg>
@@ -334,9 +334,16 @@
             </svg>
           </a>
           {% endif %}
+          {% if contributor.bluesky %}
+          <a href="https://bsky.app/{{ contributor.bluesky }}" aria-label="{{ onBluesky(contributor.bluesky) }}">
+            <svg width="22" height="22" role="img">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bluesky-logo"></use>
+            </svg>
+          </a>
+          {% endif %}
           {% if contributor.github %}
           <a href="https://github.com/{{ contributor.github }}" aria-label="{{ onGitHub(contributor.github) }}">
-            <svg width="22" height="20" role="img">
+            <svg width="24" height="22" role="img">
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github-logo"></use>
             </svg>
           </a>
@@ -355,11 +362,6 @@
             </svg>
           </a>
           {% endif %}
-          <a href="/{{ lang }}/search?q={{ contributor.name | urlencode }}" aria-label="{{ self.search_title() }} {{ contributor.name }}">
-            <svg width="22" height="22" role="img">
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search-logo"></use>
-            </svg>
-          </a>
         </div>
 
         <div class="contributor-teams">
@@ -367,6 +369,14 @@
           <span class="contributor-team team-{{ id }}">{{ localizedTeamRole[id] if localizedTeamRole[id]|length else team.name }}</span>{% if loop.length > 2 %}{{ self.comma() if loop.index < loop.length - 1 }}{{ self.oxford_comma() if loop.index == loop.length - 1 }}{% endif %}
           {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %}
           {% endfor %}
+        </div>
+
+        <div class="contributor-search">
+          <a href="/{{ lang }}/search?q={{ contributor.name | urlencode }}" aria-label="{{ self.search_title() }} {{ contributor.name }}">
+            <svg width="22" height="22" role="img">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search-logo"></use>
+            </svg>
+          </a>
         </div>
       </li>
     {% endfor %}

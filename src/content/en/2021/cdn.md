@@ -8,7 +8,7 @@ analysts: [paulcalvano]
 editors: [jzyang, shantsis]
 translators: []
 results: https://docs.google.com/spreadsheets/d/1DL7Pn1vbBwYmQZ5JPAjD69oCOvUidbuoNvdrw%2D%2Dj00U/
-Navaneeth-akam_bio: Navaneeth Krishna is a Web Performance Architect at <a hreflang="en" href="https://www.akamai.com/">Akamai</a>, a leading CDN provider. With over a decade of experience in the CDN industry, he believes the CDN will be an integral part to the growth of internet in the years to come and it will be a space to watch out for. You can find him tweeting [@Navanee55755217](https://twitter.com/Navanee55755217).
+Navaneeth-akam_bio: Navaneeth Krishna is a Web Performance Architect at <a hreflang="en" href="https://www.akamai.com/">Akamai</a>, a leading CDN provider. With over a decade of experience in the CDN industry, he believes the CDN will be an integral part to the growth of internet in the years to come and it will be a space to watch out for. You can find him tweeting [@Navanee55755217](https://x.com/Navanee55755217).
 featured_quote: CDNs have been in existence for over two decades. With the exponential rise in internet traffic, contributed by online video consumption, online shopping, and increased video conferencing due to COVID-19, CDNs are required more than ever before.
 featured_stat_1: 62.3%
 featured_stat_label_1: Top 1,000 popular sites using a CDN

@@ -388,7 +388,6 @@ function googleSheetsPixelNotLoaded() {
 //We use Google Sheets for detailed visualisations
 //Check for support and switch out images if supported
 function upgradeInteractiveFigures() {
-
   try {
     if (!isInPrintMode() && bigEnoughForInteractiveFigures() && !dataSaverEnabled() && highBandwidthConnection() && highResolutionCanvasSupported()) {
 
