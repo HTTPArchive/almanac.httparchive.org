@@ -22,7 +22,7 @@ featured_stat_label_3: `div`となる要素。
 
 [2020年版の章](../2020/markup#序章)にあるように、HTMLがなければ、WebページもWebサイトもWebアプリもありません。HTMLがなければ、Webは存在しないと言ってもよいでしょう。そのため、HTMLはもっとも重要なWeb標準の1つ、とは言えないまでも、もっとも重要なWeb標準の1つであると言えます。
 
-そこで、例年通り、数百万ページのデータセットを使って、モバイルセットで790万ページ、デスクトップセットで540万ページ（重複あり）を対象に、HTMLの調査も実施しました。この章では、HTMLに関する「すべて」をカバーしているわけではありません。したがって、[私たちが集めたデータを分析し](https://docs.google.com/spreadsheets/d/1grkd2_1xSV3jvNK6ucRQ0OL1HmGTsScHuwA8GZuRLHU/edit) 、あなた自身の結論を共有することを明確に推奨します。その際には、[#htmlalmanac](https://twitter.com/hashtag/htmlalmanac)のタグを付けてください。
+そこで、例年通り、数百万ページのデータセットを使って、モバイルセットで790万ページ、デスクトップセットで540万ページ（重複あり）を対象に、HTMLの調査も実施しました。この章では、HTMLに関する「すべて」をカバーしているわけではありません。したがって、[私たちが集めたデータを分析し](https://docs.google.com/spreadsheets/d/1grkd2_1xSV3jvNK6ucRQ0OL1HmGTsScHuwA8GZuRLHU/edit) 、あなた自身の結論を共有することを明確に推奨します。その際には、[#htmlalmanac](https://x.com/hashtag/htmlalmanac)のタグを付けてください。
 
 ## ドキュメントデータ
 

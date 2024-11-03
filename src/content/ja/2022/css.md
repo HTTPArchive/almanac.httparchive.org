@@ -7,7 +7,7 @@ reviewers: [svgeesus, j9t]
 analysts: [rviscomi]
 editors: [rviscomi]
 translators: [ksakae1216]
-rachelandrew_bio: Rachel Andrew はテクニカルライターとして Google に勤務し、<a hreflang="en" href="https://web.dev">web.dev</a> や <a hreflang="en" href="https://developer.chrome.com/">Chrome Developers site</a> に携わっています。フロントエンドおよびバックエンドのウェブ開発者、著者、講演者であり、<a hreflang="en" href="https://abookapart.com/products/the-new-css-layout">The New CSS Layout</a>など22冊の本の著者または共著者、オンとオフラインの両方で数多くの出版物の常連寄稿者でもあります。CSSワーキンググループのメンバーであるレイチェルは、Twitterで[@rachelandrew](https://twitter.com/rachelandrew)として愛猫の写真を投稿しているのを見ることができます。
+rachelandrew_bio: Rachel Andrew はテクニカルライターとして Google に勤務し、<a hreflang="en" href="https://web.dev">web.dev</a> や <a hreflang="en" href="https://developer.chrome.com/">Chrome Developers site</a> に携わっています。フロントエンドおよびバックエンドのウェブ開発者、著者、講演者であり、<a hreflang="en" href="https://abookapart.com/products/the-new-css-layout">The New CSS Layout</a>など22冊の本の著者または共著者、オンとオフラインの両方で数多くの出版物の常連寄稿者でもあります。CSSワーキンググループのメンバーであるレイチェルは、Twitterで[@rachelandrew](https://x.com/rachelandrew)として愛猫の写真を投稿しているのを見ることができます。
 results: https://docs.google.com/spreadsheets/d/1OU8ahxC5oYU8VRryQs9BzHToaXcOntVlh6KUHjm15G4/
 featured_quote: ここ数年、CSSの新機能が続々と登場しています。その多くは、開発者がすでにJavaScriptやプリプロセッサで行っていたことにヒントを得たものですが、一方で、数年前には不可能だったことを可能にする方法を提供するものもあります。しかし、実際に開発者はその機能をWebページやアプリケーションで使っているのでしょうか？
 featured_stat_1: 43%

@@ -811,4 +811,4 @@ Making your websites more sustainable is part of continuous improvement. Not eve
 
 Some of your users would love to know that your website is more sustainable and how you achieved it. And all of them would benefit from this.
 
-_With special thanks to <a hreflang="en" href="https://www.wholegraindigital.com/team/tom-greenwood/">Tom Greenwood</a>, [Hannah Smith](https://twitter.com/hanopcan), [Eugenia Zigisova](https://twitter.com/jevgeniazi), [Rick Viscomi](https://twitter.com/rick_viscomi) and all the other wonderful people who made this chapter possible._
+_With special thanks to <a hreflang="en" href="https://www.wholegraindigital.com/team/tom-greenwood/">Tom Greenwood</a>, [Hannah Smith](https://x.com/hanopcan), [Eugenia Zigisova](https://x.com/jevgeniazi), [Rick Viscomi](https://x.com/rick_viscomi) and all the other wonderful people who made this chapter possible._
