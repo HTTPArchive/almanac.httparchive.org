@@ -2,20 +2,21 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Security
 description: Security chapter of the 2024 Web Almanac covering Transport Layer Security, content inclusion (CSP, Feature Policy, SRI), web defense mechanisms (tackling XSS, XS-Leaks), and drivers of security mechanism adoptions.
-authors: []
-reviewers: []
-editors: []
-analysts: []
+authors: [GJFR, vikvanderlinden]
+reviewers: [lord-r3, SaptakS, AlbertoFDR, clarkio]
+editors: [cqueern, joeleonjr]
+analysts: [JannisBush]
 translators: []
 results: https://docs.google.com/spreadsheets/d/1b9IEGbfQjKCEaTBmcv_zyCyWEsq35StCa-dVOe6V1Cs/
-featured_quote:
-featured_stat_1:
-featured_stat_label_1:
-featured_stat_2:
-featured_stat_label_2:
-featured_stat_3:
-featured_stat_label_3:
+featured_quote: TODO
+featured_stat_1: TODO
+featured_stat_label_1: TODO
+featured_stat_2: TODO
+featured_stat_label_2: TODO
+featured_stat_3: TODO
+featured_stat_label_3: TODO
 ---
+
 ## Introduction
 
 With how much of our lives happen online these days - whether it’s staying in touch, following the news, buying, or even selling products online - web security has never been more important. Unfortunately, the more we rely on these online services, the more appealing they become to malicious actors. As we've seen time and time again, even a single weak spot in the systems we depend on can lead to disrupted services, stolen personal data, or worse. The past two years have been no exception, with a rise in [Denial-of-Service (DoS) attacks](https://blog.cloudflare.com/ddos-threat-report-for-2024-q2/), [bad bots](https://www.imperva.com/resources/resource-library/reports/2024-bad-bot-report/), and [supply-chain attacks targeting the Web](https://www.darkreading.com/vulnerabilities-threats/rising-tide-of-software-supply-chain-attacks) like never before.

@@ -197,6 +197,19 @@
     "twitter": "dawntraoz",
     "website": "https://www.dawntraoz.com/"
   },
+  "AlbertoFDR": {
+    "avatar_url": "21290259",
+    "github": "AlbertoFDR",
+    "linkedin": "albertofdr",
+    "name": "Alberto Fernandez-de-Retana",
+    "teams": {
+      "2024": [
+        "reviewers"
+      ]
+    },
+    "twitter": "alberto_fdr",
+    "website": "https://albertofdr.github.io/"
+  },
   "amedina": {
     "avatar_url": "506089",
     "github": "amedina",
@@ -723,6 +736,9 @@
     "teams": {
       "2022": [
         "authors"
+      ],
+      "2024": [
+        "reviewers"
       ]
     },
     "twitter": "_clarkio",
@@ -778,6 +794,9 @@
       ],
       "2022": [
         "reviewers"
+      ],
+      "2024": [
+        "editors"
       ]
     },
     "twitter": "httpsecheaders"
@@ -1483,6 +1502,9 @@
     "teams": {
       "2022": [
         "analysts"
+      ],
+      "2024": [
+        "authors"
       ]
     }
   },
@@ -1838,6 +1860,18 @@
       ]
     }
   },
+  "JannisBush": {
+    "avatar_url": "33023300",
+    "github": "JannisBush",
+    "name": "Jannis Rautenstrauch",
+    "teams": {
+      "2024": [
+        "analysts"
+      ]
+    },
+    "twitter": "jannis_r",
+    "website": "https://cispa.de/en/people/c01jara"
+  },
   "jaredcwhite": {
     "avatar_url": "658496",
     "github": "jaredcwhite",
@@ -1994,6 +2028,16 @@
     },
     "twitter": "jessica_nicolet",
     "website": "https://www.jessicanicolet.com/"
+  },
+  "joeleonjr": {
+    "github": "joeleonjr",
+    "name": "Joe Leon",
+    "teams": {
+      "2024": [
+        "editors"
+      ]
+    },
+    "twitter": "joeleonjr"
   },
   "joeviggiano": {
     "github": "joeviggiano",
@@ -2597,15 +2641,20 @@
       ]
     }
   },
-  "awareseven": {
-    "avatar_url": "53170037",
-    "github": "awareseven",
+  "lord-r3": {
+    "avatar_url": "83113194",
+    "github": "lord-r3",
     "name": "Matteo Große-Kampmann",
     "teams": {
       "2021": [
         "reviewers"
+      ],
+      "2024": [
+        "reviewers"
       ]
-    }
+    },
+    "twitter": "pizzahax",
+    "website": "https://lord-r3.github.io/"
   },
   "matthewp": {
     "avatar_url": "361671",
@@ -3589,6 +3638,10 @@
     "teams": {
       "2022": [
         "authors"
+      ],
+      "2024": [
+        "developers",
+        "reviewers"
       ]
     },
     "twitter": "Saptak013",
@@ -4139,6 +4192,9 @@
     "teams": {
       "2022": [
         "analysts"
+      ],
+      "2024": [
+        "authors"
       ]
     }
   },
