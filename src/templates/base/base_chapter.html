@@ -275,6 +275,15 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
                     @{{ authordata.mastodon }}
                   </a>
                   {% endif %}
+                  {% if authordata.bluesky %}
+                  <a class="bluesky" href="https://bsky.app/{{ authordata.bluesky }}" aria-labelledby="author-{{ author }}-bluesky">
+                    <svg width="22" height="22" role="img">
+                      <title id="author-{{ author }}-bluesky">{{ onBluesky(authordata.bluesky) }}</title>
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bluesky-logo"></use>
+                    </svg>
+                    @{{ authordata.bluesky }}
+                  </a>
+                  {% endif %}
                   {% if authordata.github %}
                   <a class="github" href="https://github.com/{{ authordata.github }}" aria-labelledby="author-{{ author }}-github">
                     <svg width="22" height="20">
