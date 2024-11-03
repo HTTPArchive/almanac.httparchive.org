@@ -207,7 +207,7 @@ Com 25% dos sites incluindo `<link rel="preload">` na resposta da página, há u
 
 ## HTTP/3
 
-No restante desta seção, focaremos no HTTP/3, pois ele representa o futuro do protocolo HTTP e foi <a hreflang="en" href="https://www.rfc-editor.org/rfc/rfc9114.html">padronizado em junho de 2022</a>. Em particular, exploraremos as melhorias do HTTP/3 em relação às suas versões anteriores e o nível de suporte que ele possui atualmente. Para uma explicação mais detalhada sobre o HTTP/3, você pode consultar <a hreflang="en" href="https://www.smashingmagazine.com/2021/08/http3-core-concepts-part1/">esta excelente série de artigos</a> de [Robin Marx](https://twitter.com/programmingart), que também ajudou a revisar este capítulo.
+No restante desta seção, focaremos no HTTP/3, pois ele representa o futuro do protocolo HTTP e foi <a hreflang="en" href="https://www.rfc-editor.org/rfc/rfc9114.html">padronizado em junho de 2022</a>. Em particular, exploraremos as melhorias do HTTP/3 em relação às suas versões anteriores e o nível de suporte que ele possui atualmente. Para uma explicação mais detalhada sobre o HTTP/3, você pode consultar <a hreflang="en" href="https://www.smashingmagazine.com/2021/08/http3-core-concepts-part1/">esta excelente série de artigos</a> de [Robin Marx](https://x.com/programmingart), que também ajudou a revisar este capítulo.
 
 ### Benefícios do HTTP/3
 

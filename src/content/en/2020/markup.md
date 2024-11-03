@@ -4,7 +4,7 @@ title: Markup
 description: Markup chapter of the 2020 Web Almanac covering general observations, the use of elements and attributes, as well as trivia and trends.
 authors: [j9t, catalinred, iandevlin]
 j9t_bio: Jens Oliver Meiert is a web developer and author (<a hreflang="en" href="https://leanpub.com/css-optimization-basics"><cite>CSS Optimization Basics</cite></a>, <a hreflang="en" href="https://leanpub.com/web-development-glossary"><cite>The Web Development Glossary</cite></a>), who works as an engineering manager at <a hreflang="en" href="https://www.jimdo.com/">Jimdo</a>. He's an expert on web development specializing in HTML and CSS optimization. Jens contributes to technical standards and regularly writes about his work and research, particularly on his website, <a hreflang="en" href="https://meiert.com/en/">meiert.com</a>.
-catalinred_bio: Catalin Rosu is a front-end developer at <a hreflang="en" href="https://www.caphyon.com/">Caphyon</a> and currently works on <a hreflang="en" href="https://www.wattspeed.com/">Wattspeed</a>. He has a passion for web standards and a keen eye for great UX & UI, things he <a href="https://twitter.com/catalinred">tweets</a> and writes about on <a hreflang="en" href="https://catalin.red/">his website</a>.
+catalinred_bio: Catalin Rosu is a front-end developer at <a hreflang="en" href="https://www.caphyon.com/">Caphyon</a> and currently works on <a hreflang="en" href="https://www.wattspeed.com/">Wattspeed</a>. He has a passion for web standards and a keen eye for great UX & UI, things he <a href="https://x.com/catalinred">tweets</a> and writes about on <a hreflang="en" href="https://catalin.red/">his website</a>.
 iandevlin_bio: Ian Devlin is a web developer who advocates for good, semantic HTML, as well as accessibility. He once wrote a book about <a hreflang="en" href="https://www.peachpit.com/store/html5-multimedia-develop-and-design-9780321793935">HTML5 Multimedia</a>, and sporadically writes on <a hreflang="en" href="https://iandevlin.com/">his website</a> about the Web and other things. He currently works as a Senior Frontend Engineer at <a hreflang="de" href="https://www.real-digital.de/">real.digital</a> in Germany.
 reviewers: [zcorpan, matuzo, bkardell]
 analysts: [Tiggerito]
@@ -329,7 +329,7 @@ Here's a simple example showing the use of a `summary` in a `details` element:
 </details>
 ```
 
-A while ago, Steve Faulkner [pointed out](https://twitter.com/stevefaulkner/status/806474286592561152) how these two elements were used inadequately in the wild. As you can tell from the example above, for each `details` element you'd need a `summary` element that may only be used as the [first child](https://developer.mozilla.org/docs/Web/HTML/Element/summary#Usage_notes) of `details`.
+A while ago, Steve Faulkner [pointed out](https://x.com/stevefaulkner/status/806474286592561152) how these two elements were used inadequately in the wild. As you can tell from the example above, for each `details` element you'd need a `summary` element that may only be used as the [first child](https://developer.mozilla.org/docs/Web/HTML/Element/summary#Usage_notes) of `details`.
 
 Accordingly, we looked at the number of `details` and `summary` elements and it seems that they do continue to be misused. The count of `summary` elements is higher on both mobile and desktop, with a ratio of 1.11 `summary` elements for every `details` element on mobile, and 1.19 on desktop, respectively:
 
@@ -957,7 +957,7 @@ The two most popular ones stand out because they are almost twice as popular tha
 
 Attributes like `data-type`, `data-id`, and `data-src` can have multiple generic uses although `data-src` is used a lot with lazy image loading via JavaScript (e.g., Bootstrap 4). <a hreflang="en" href="https://getbootstrap.com/">Bootstrap</a> again explains the presence of `data-toggle`, where it's used as a state styling hook on toggle buttons. The <a hreflang="en" href="https://kenwheeler.github.io/slick/">Slick carousel plugin</a> is the source of `data-slick-index`, whereas `data-element_type` is part of <a hreflang="en" href="https://elementor.com/">Elementor's WordPress website builder</a>. Both `data-requiremodule` and `data-requirecontext`, then, are part of <a hreflang="en" href="https://requirejs.org/">RequireJS</a>.
 
-Interestingly, the use of native lazy loading on images is similar to that of `data-src`. <a hreflang="en" href="https://docs.google.com/spreadsheets/d/1ram47FshAjzvbQVJbAQPgxZN7PPOPCKIK67VJZCo92c/edit#gid=2109061092">3.86% of pages</a> use `loading="lazy"` on `<img>` elements. This appears to be growing very fast, as back in February, this number was about [0.8%](https://twitter.com/zcorpan/status/1237016679667970050). It's possible that these are being used together for a <a hreflang="en" href="https://addyosmani.com/blog/lazy-loading/">cross-browser solution</a>.
+Interestingly, the use of native lazy loading on images is similar to that of `data-src`. <a hreflang="en" href="https://docs.google.com/spreadsheets/d/1ram47FshAjzvbQVJbAQPgxZN7PPOPCKIK67VJZCo92c/edit#gid=2109061092">3.86% of pages</a> use `loading="lazy"` on `<img>` elements. This appears to be growing very fast, as back in February, this number was about [0.8%](https://x.com/zcorpan/status/1237016679667970050). It's possible that these are being used together for a <a hreflang="en" href="https://addyosmani.com/blog/lazy-loading/">cross-browser solution</a>.
 
 ## Miscellaneous
 
@@ -1319,7 +1319,7 @@ We've touched on some observations throughout the chapter, but as a reflection o
   sql_file="summary_pages_by_device_and_doctype.sql"
 ) }}
 
-Fewer pages land in quirks mode. In 2016, that number was at <a hreflang="en" href="https://discuss.httparchive.org/t/how-many-and-which-pages-are-in-quirks-mode/777">around 7.4%</a>. At the end of 2019, we observed [4.85%](https://twitter.com/zcorpan/status/1205242913908838400). And now, we're at about 3.97%. This trend, to paraphrase [Simon Pieters](./contributors#zcorpan) in his review of this chapter, seems clear and encouraging.
+Fewer pages land in quirks mode. In 2016, that number was at <a hreflang="en" href="https://discuss.httparchive.org/t/how-many-and-which-pages-are-in-quirks-mode/777">around 7.4%</a>. At the end of 2019, we observed [4.85%](https://x.com/zcorpan/status/1205242913908838400). And now, we're at about 3.97%. This trend, to paraphrase [Simon Pieters](./contributors#zcorpan) in his review of this chapter, seems clear and encouraging.
 
 Although we lack historic data to draw the full development picture, "meaningless" `div`, `span`, and `i` markup has pretty much [replaced](#top-elements) the `table` markup we've observed in the 1990s and early 2000s. While one may question whether `div` and `span` elements are always used without there being a semantically more appropriate alternative, these elements are still preferable to `table` markup, though, as during the heyday of the old web, these were seemingly used for everything but tabular data.
 

@@ -8,7 +8,7 @@ analysts: [tunetheweb]
 editors: [rviscomi]
 translators: [ksakae1216]
 results: https://docs.google.com/spreadsheets/d/1tf4RMF8SYr6he9tbqt61yuFJ_QK-F-i7XPxaPkpKSDI/
-tunetheweb_bio: Barry Pollard はソフトウェア開発者であり、Munning の本 <a hreflang="en" href="https://www.manning.com/books/http2-in-action">HTTP/2 in Action</a> の著者です。彼は、ウェブは素晴らしいが、それをさらに良くしたいと思っている。ツイッターは<a href="https://twitter.com/tunetheweb">@tunetheweb</a> 、ブログは<a hreflang="en" href="https://www.tunetheweb.com">www.tunetheweb.com</a> でご覧いただけます。
+tunetheweb_bio: Barry Pollard はソフトウェア開発者であり、Munning の本 <a hreflang="en" href="https://www.manning.com/books/http2-in-action">HTTP/2 in Action</a> の著者です。彼は、ウェブは素晴らしいが、それをさらに良くしたいと思っている。ツイッターは<a href="https://x.com/tunetheweb">@tunetheweb</a> 、ブログは<a hreflang="en" href="https://www.tunetheweb.com">www.tunetheweb.com</a> でご覧いただけます。
 featured_quote: サードパーティはウェブに不可欠な存在です。サードパーティーの普及がなければ、ウェブサイトを構築するのは難しく、機能も充実していないでしょう。
 featured_stat_1: 94.4%
 featured_stat_label_1: サードパーティを利用したサイト
@@ -51,7 +51,7 @@ featured_stat_label_3: サードパーティのリクエスト
 
 ### サードパーティーのカテゴリー
 
-今年も、サードパーティを特定し分類するために、<a hreflang="en" href="https://twitter.com/patrickhulce">Patrick Hulce</a> による <a hreflang="en" href="https://github.com/patrickhulce/third-party-web/blob/master/data/entities.js">third-party-web</a> リポジトリを大いに利用する予定です。このリポジトリでは、よく使われるサードパーティのURLを以下のように分類しています。
+今年も、サードパーティを特定し分類するために、<a hreflang="en" href="https://x.com/patrickhulce">Patrick Hulce</a> による <a hreflang="en" href="https://github.com/patrickhulce/third-party-web/blob/master/data/entities.js">third-party-web</a> リポジトリを大いに利用する予定です。このリポジトリでは、よく使われるサードパーティのURLを以下のように分類しています。
 - **Ad** - これらのスクリプトは、広告ネットワークの一部であり、配信または測定を行っています。
 - **Analytics** - ユーザーとその行動を測定または追跡するスクリプトです。何を追跡するかによって、さまざまな影響があります。
 - **CDN** - これらは、一般にホストされているオープンソースライブラリ（例：jQuery）が、さまざまなパブリックCDNやプライベートCDNで提供されているものです。
@@ -240,7 +240,7 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkT-CF5-NB7Oatd6XZq_
 
 リクエスト数ではなく、バイト数で見ると、JavaScriptの多さがさらに気になります。ここでもモバイルを示しましたが、デスクトップの場合に大きな違いはありません。
 
-<a hreflang="en" href="https://twitter.com/addyosmani">Addy Osmani</a>（同じ文章で2回！）の<a hreflang="en" href="https://medium.com/@addyosmani/the-cost-of-javascript-in-2018-7d8950fbb5d4">"Cost of JavaScript"</a> 投稿を引用すると、「バイト単位でみるとJavaScriptは今でも私たちが送信するもっとも高価なリソース」、そして「200KBのスクリプトと200KBの画像にはまったく異なるコスト」だそうです。Analytics、Consent Provider、Tag ManagerなどのカテゴリはかなりJavaScriptが多く、AdやCustomer Successなどのカテゴリも遠くおよびません。サードパーティーリソースの使用によるパフォーマンスへの影響については、JavaScriptの使用によるコスト高が、原因であることが多いので、また後日ご紹介します。
+<a hreflang="en" href="https://x.com/addyosmani">Addy Osmani</a>（同じ文章で2回！）の<a hreflang="en" href="https://medium.com/@addyosmani/the-cost-of-javascript-in-2018-7d8950fbb5d4">"Cost of JavaScript"</a> 投稿を引用すると、「バイト単位でみるとJavaScriptは今でも私たちが送信するもっとも高価なリソース」、そして「200KBのスクリプトと200KBの画像にはまったく異なるコスト」だそうです。Analytics、Consent Provider、Tag ManagerなどのカテゴリはかなりJavaScriptが多く、AdやCustomer Successなどのカテゴリも遠くおよびません。サードパーティーリソースの使用によるパフォーマンスへの影響については、JavaScriptの使用によるコスト高が、原因であることが多いので、また後日ご紹介します。
 
 ## サードパーティードメイン
 
@@ -277,13 +277,13 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkT-CF5-NB7Oatd6XZq_
 
 ほとんどのサードパーティがグローバルに分散した高性能のCDNを使用しているにもかかわらず、他のドメインに接続するには明確なコストがかかります。多くのウェブパフォーマンス支持者（この著者を含む！）は、このペナルティを避けるために可能な限りセルフホスティングを推奨しています。これは、すべての主要なブラウザがオリジン間でキャッシュを共有しないようになった今、とくに重要なことです。したがって、あるサイトがそのリソースをダウンロードしたら、訪問した他のサイトもその恩恵を受けることができるという主張は、もはや真実ではありません。とはいえ、ライブラリのバージョン数やHTTPキャッシュの制限を考えると、昔もこの主張には疑問があったのですが。
 
-とはいえ、思うようにいかないのが現実で、場合によっては、セルフホストはかえってパフォーマンスを低下させることもあります。筆者は以前、<a hreflang="en" href="https://www.tunetheweb.com/blog/should-you-self-host-google-fonts/">Googleフォントをセルフホスティングするかどうか</a>という問題は、見た目ほど明確ではなく、パフォーマンス面でGoogleフォントが行っていることをすべて再現するためには、ある程度の専門知識が必要だということを書きました。その手間を省くには、ホストされたバージョンを使用すればよく、<a hreflang="en" href="https://twitter.com/csswizardry">Harry Roberts</a> が <a hreflang="en" href="https://csswizardry.com/2020/05/the-fastest-google-fonts/">The Fastest Google Fonts</a> という投稿で述べたように、パフォーマンスの影響をできる限り軽減していることを確認できます。
+とはいえ、思うようにいかないのが現実で、場合によっては、セルフホストはかえってパフォーマンスを低下させることもあります。筆者は以前、<a hreflang="en" href="https://www.tunetheweb.com/blog/should-you-self-host-google-fonts/">Googleフォントをセルフホスティングするかどうか</a>という問題は、見た目ほど明確ではなく、パフォーマンス面でGoogleフォントが行っていることをすべて再現するためには、ある程度の専門知識が必要だということを書きました。その手間を省くには、ホストされたバージョンを使用すればよく、<a hreflang="en" href="https://x.com/csswizardry">Harry Roberts</a> が <a hreflang="en" href="https://csswizardry.com/2020/05/the-fastest-google-fonts/">The Fastest Google Fonts</a> という投稿で述べたように、パフォーマンスの影響をできる限り軽減していることを確認できます。
 
 同様に画像CDNはほとんどのファーストパーティよりもメディアを最適化することができ、さらに重要なことは必然的に省略されたり、時に間違って行われたりする手動ステップを必要とせずに、自動的にこれを行うことができます。
 
 ### 人気のサードパーティの埋め込みとそのパフォーマンスへの影響
 
-サードパーティーのパフォーマンスへの影響を理解するために、もっとも人気のあるサードパーティーの埋め込みをいくつか見ていきます。これらの中には、Webパフォーマンス界で悪名高いものもあるので、その悪評が本当にふさわしいかどうか見てみましょう。そのために、2つの[Lighthouse](./methodology#lighthouse)監査を活用することにします。<a hreflang="en" href="https://web.dev/render-blocking-resources/">レンダーブロッキングリソースの排除</a> と <a hreflang="en" href="https://web.dev/third-party-summary/">サードパーティーコードの影響を軽減</a>を基にした<a hreflang="en" href="https://twitter.com/hdjirdeh">Houssein Djirdeh</a>による<a hreflang="en" href="https://docs.google.com/spreadsheets/d/1Td-4qFjuBzxp8af_if5iBC0Lkqm_OROb7_2OcbxrU_g/edit?usp=sharing&resourcekey=0-ZCfve5cngWxF0-sv5pLRzg">同様の研究</a>があります。
+サードパーティーのパフォーマンスへの影響を理解するために、もっとも人気のあるサードパーティーの埋め込みをいくつか見ていきます。これらの中には、Webパフォーマンス界で悪名高いものもあるので、その悪評が本当にふさわしいかどうか見てみましょう。そのために、2つの[Lighthouse](./methodology#lighthouse)監査を活用することにします。<a hreflang="en" href="https://web.dev/render-blocking-resources/">レンダーブロッキングリソースの排除</a> と <a hreflang="en" href="https://web.dev/third-party-summary/">サードパーティーコードの影響を軽減</a>を基にした<a hreflang="en" href="https://x.com/hdjirdeh">Houssein Djirdeh</a>による<a hreflang="en" href="https://docs.google.com/spreadsheets/d/1Td-4qFjuBzxp8af_if5iBC0Lkqm_OROb7_2OcbxrU_g/edit?usp=sharing&resourcekey=0-ZCfve5cngWxF0-sv5pLRzg">同様の研究</a>があります。
 
 #### 人気のあるサードパーティとレンダーへの影響
 
@@ -303,7 +303,7 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkT-CF5-NB7Oatd6XZq_
 
 もっとも人気のあるサードパーティーの上位15位は、ページの初期レンダリング時にブロックされるリソースの割合とともに、上に表示されています。
 
-全体として、これは肯定的な話です。ほとんどはレンダリングをブロックせず、ブロックするのはレイアウトに関連する一般的なライブラリ (例: bootstrap) や、おそらく最初のレンダリングをブロックすべきフォント (<a hreflang="en" href="https://twitter.com/tunetheweb/status/1364278446311043073">この作者は `font-display: swap` や `optional` を使うことが良いことだとは思っていない</a>) のためです。
+全体として、これは肯定的な話です。ほとんどはレンダリングをブロックせず、ブロックするのはレイアウトに関連する一般的なライブラリ (例: bootstrap) や、おそらく最初のレンダリングをブロックすべきフォント (<a hreflang="en" href="https://x.com/tunetheweb/status/1364278446311043073">この作者は `font-display: swap` や `optional` を使うことが良いことだとは思っていない</a>) のためです。
 
 多くの場合、サードパーティの組み込みはレンダリングのブロックを避けるために `async` や `defer` を使用するように助言していますし、その多くがそうであるように見えます。
 
@@ -427,7 +427,7 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkT-CF5-NB7Oatd6XZq_
   )
 }}
 
-サードパーティとしてのTwitterは、リターゲティング広告のトラッカーとして、またツイートを埋め込む方法として、2つの方法で利用できます。ページへのツイートの埋め込みは、他のソーシャルネットワークよりも人気があります。しかし、<a href="https://twitter.com/TheRealNooshu">Matt Hobbs</a> の <a hreflang="en" href="https://nooshu.com/blog/2021/02/06/using-puppeteer-and-squoosh-to-fix-twitter-embeds/">PuppeteerとSquooshを使って埋め込みツイートのWebパフォーマンスを修正する</a> という投稿を含め、ウェブパフォーマンスのコミュニティの多くからページに過度の影響を与えるとして指摘されています。とくに、上記のグラフにあるようなトラッキングのユースケース（おそらくより軽量なもの）は希薄になるため、我々の分析はそれを裏付けるものです。
+サードパーティとしてのTwitterは、リターゲティング広告のトラッカーとして、またツイートを埋め込む方法として、2つの方法で利用できます。ページへのツイートの埋め込みは、他のソーシャルネットワークよりも人気があります。しかし、<a href="https://x.com/TheRealNooshu">Matt Hobbs</a> の <a hreflang="en" href="https://nooshu.com/blog/2021/02/06/using-puppeteer-and-squoosh-to-fix-twitter-embeds/">PuppeteerとSquooshを使って埋め込みツイートのWebパフォーマンスを修正する</a> という投稿を含め、ウェブパフォーマンスのコミュニティの多くからページに過度の影響を与えるとして指摘されています。とくに、上記のグラフにあるようなトラッキングのユースケース（おそらくより軽量なもの）は希薄になるため、我々の分析はそれを裏付けるものです。
 
 上記の例の中には、良くも悪くもなるものがありますが、ウェブサイトのパフォーマンスに本当に影響を与えるのは、これらの累積効果であることを忘れてはなりません。地図と埋め込みTweetのあるページにGoogle Analytics、Facebook、TwitterのトラッキングをロードするGTMを追加すると、膨大な量になります。スマホがときどき熱くて手に負えなくなったり、ネットサーフィンをしているだけでPCのファンが回りだしたりするのは、当然といえば当然ですよね。
 

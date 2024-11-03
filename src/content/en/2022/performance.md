@@ -22,7 +22,7 @@ featured_stat_label_3: Top 1k websites that would have good CWV with INP
 
 Web performance is crucial to user experience. We've all bounced from a site due to slow load times, or worse, have not been able to access important information. Additionally, numerous <a hreflang="en" href="https://wpostats.com/">case studies</a> have demonstrated that an improvement in web performance results in an improvement in conversion and engagement for businesses. Surprisingly, the industry spotlight is quite elusive for web performance—why is this? Some may say web performance is tough to define and even more challenging to measure.
 
-How do we measure something that is hard to define in the first place? As [Sergey Chernyshev](https://twitter.com/sergeyche), creator of <a hreflang="en" href="https://github.com/ux-capture/ux-capture">UX Capture</a>, says, "_The best way to measure performance is to be embedded into the user's brain to understand exactly what they're thinking as they use the site_".  We can't—and shouldn't in case that was unclear—do this, so what are our options?
+How do we measure something that is hard to define in the first place? As [Sergey Chernyshev](https://x.com/sergeyche), creator of <a hreflang="en" href="https://github.com/ux-capture/ux-capture">UX Capture</a>, says, "_The best way to measure performance is to be embedded into the user's brain to understand exactly what they're thinking as they use the site_".  We can't—and shouldn't in case that was unclear—do this, so what are our options?
 
 Thankfully, there's a way to measure some aspects of performance automatically! We know the browser is in charge of loading a page, and it goes through a checklist of steps each time. Depending on which step the browser is on, we can tell how far along the site is in the page load process. Conveniently, a [number of performance timeline APIs](https://developer.mozilla.org/docs/Web/API/Performance) are used to fire off timestamps when the browser gets to certain page load steps.
 
@@ -203,7 +203,7 @@ Images are not loaded at high priority by default, but thanks to the new <a href
 
 0.03% of pages use `fetchpriority=high` on their LCP elements. Counterproductively, a handful of pages actually _lower_ the priority over their LCP images: 77 pages on mobile and 104 on desktop.
 
-`fetchpriority` is still very new and not supported everywhere, but there's little to no reason why it shouldn't be in every developer's toolbox. [Patrick Meenan](https://twitter.com/patmeenan), who helped develop the API, [describes it](https://twitter.com/patmeenan/status/1460276602479251457) as a "cheat code" given how easy it is to implement relative to the potential improvements.
+`fetchpriority` is still very new and not supported everywhere, but there's little to no reason why it shouldn't be in every developer's toolbox. [Patrick Meenan](https://x.com/patmeenan), who helped develop the API, [describes it](https://x.com/patmeenan/status/1460276602479251457) as a "cheat code" given how easy it is to implement relative to the potential improvements.
 
 #### LCP static discoverability
 
@@ -800,7 +800,7 @@ When we look at the amount of JavaScript that the median mobile page loads for e
 
 #### INP as a hypothetical CWV metric
 
-INP is not an official CWV metric, but [Annie Sullivan](https://twitter.com/anniesullie), who is the Tech Lead for the CWV program at Google, has [commented](https://twitter.com/anniesullie/status/1535208365374185474) about its intended future, saying "_INP is still experimental! Not a Core Web Vital yet, but we hope it can replace FID._"
+INP is not an official CWV metric, but [Annie Sullivan](https://x.com/anniesullie), who is the Tech Lead for the CWV program at Google, has [commented](https://x.com/anniesullie/status/1535208365374185474) about its intended future, saying "_INP is still experimental! Not a Core Web Vital yet, but we hope it can replace FID._"
 
 This raises an interesting question: hypothetically, if INP were to be a CWV metric today, how different would the pass rates be?
 
@@ -895,7 +895,7 @@ The Kendall and Spearman coefficients of correlation for this distribution are 0
   <p>First, is INP correlated with TBT? Is it more correlated with TBT than FID? Yes and yes!</p>
   <p>But they are both correlated with TBT; is INP catching more problems with main thread blocking JavaScript? We can break down the percent of sites meeting the "good" threshold: yes it is!</p>
   </blockquote>
-  <figcaption>—Annie Sullivan on <a href="https://twitter.com/anniesullie/status/1525161893450727425">Twitter</a></figcaption>
+  <figcaption>—Annie Sullivan on <a href="https://x.com/anniesullie/status/1525161893450727425">Twitter</a></figcaption>
 </figure>
 
 As Annie notes, both metrics are correlated with TBT, but she concludes that INP is more strongly correlated, making it a better responsiveness metric.

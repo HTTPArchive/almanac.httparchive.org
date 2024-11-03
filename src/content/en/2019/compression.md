@@ -9,7 +9,7 @@ editors: [tunetheweb]
 translators: []
 discuss: 1770
 results: https://docs.google.com/spreadsheets/d/1IK9kaScQr_sJUwZnWMiJcmHEYJV292C9DwCfXH6a50o/
-paulcalvano_bio: Paul Calvano is a Web Performance Architect at <a hreflang="en" href="https://www.akamai.com/">Akamai</a>, where he helps businesses improve the performance of their websites. He's also a co-maintainer of the HTTP Archive project. You can find him tweeting at <a href="https://twitter.com/paulcalvano">@paulcalvano</a>, blogging at <a hreflang="en" href="https://paulcalvano.com">http://paulcalvano.com</a> and sharing HTTP Archive research at <a hreflang="en" href="https://discuss.httparchive.org">https://discuss.httparchive.org</a>.
+paulcalvano_bio: Paul Calvano is a Web Performance Architect at <a hreflang="en" href="https://www.akamai.com/">Akamai</a>, where he helps businesses improve the performance of their websites. He's also a co-maintainer of the HTTP Archive project. You can find him tweeting at <a href="https://x.com/paulcalvano">@paulcalvano</a>, blogging at <a hreflang="en" href="https://paulcalvano.com">http://paulcalvano.com</a> and sharing HTTP Archive research at <a hreflang="en" href="https://discuss.httparchive.org">https://discuss.httparchive.org</a>.
 featured_quote: HTTP compression is a technique that allows you to encode information using fewer bits than the original representation. When used for delivering web content, it enables web servers to reduce the amount of data transmitted to clients. This increases the efficiency of the client's available bandwidth, reduces page weight, and improves web performance.
 featured_stat_1: 38%
 featured_stat_label_1: HTTP responses using text-based compression

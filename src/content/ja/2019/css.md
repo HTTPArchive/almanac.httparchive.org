@@ -9,8 +9,8 @@ editors: [rachellcostello]
 translators: [ksakae1216]
 discuss: 1757
 results: https://docs.google.com/spreadsheets/d/1uFlkuSRetjBNEhGKWpkrXo4eEIsgYelxY-qR9Pd7QpM/
-una_bio: Una Kravetsは、ブルックリンを拠点とする国際的な講演者であり、テクニカルライターであり、Googleのマテリアルデザインの開発提唱者でもあります。Unaは、<a hreflang="en" href="https://www.youtube.com/watch?v=YK8GZBx3hpg">Designing the Browser</a> のウェブシリーズと <a hreflang="en" href="https://spec.fm/podcasts/toolsday">Toolsday</a> の開発者向けポッドキャストを主催しています。<a href="https://twitter.com/una">Twitter</a> で彼女をフォローして、クリエイティブなCSS、ユーザー体験、ウェブ開発のベストプラクティスについての彼女の考察を見つけてください。
-argyleink_bio: Adam ArgyleはGoogle Chrome開発者リレーションズのメンバーで、CSSを中心に活動しています。優れたUX & UIを求める飽くなき欲望を持つウェブ中毒者です。<a href="https://twitter.com/argyleink">@argyleink</a> or checkout his website <a hreflang="en" href="https://nerdy.dev">https://nerdy.dev</a>。
+una_bio: Una Kravetsは、ブルックリンを拠点とする国際的な講演者であり、テクニカルライターであり、Googleのマテリアルデザインの開発提唱者でもあります。Unaは、<a hreflang="en" href="https://www.youtube.com/watch?v=YK8GZBx3hpg">Designing the Browser</a> のウェブシリーズと <a hreflang="en" href="https://spec.fm/podcasts/toolsday">Toolsday</a> の開発者向けポッドキャストを主催しています。<a href="https://x.com/una">Twitter</a> で彼女をフォローして、クリエイティブなCSS、ユーザー体験、ウェブ開発のベストプラクティスについての彼女の考察を見つけてください。
+argyleink_bio: Adam ArgyleはGoogle Chrome開発者リレーションズのメンバーで、CSSを中心に活動しています。優れたUX & UIを求める飽くなき欲望を持つウェブ中毒者です。<a href="https://x.com/argyleink">@argyleink</a> or checkout his website <a hreflang="en" href="https://nerdy.dev">https://nerdy.dev</a>。
 featured_quote: Cascading Style Sheets (CSS) は、Web ページのペイント、フォーマット、レイアウトに使用されます。その機能は、テキストの色から3Dパースペクティブと、シンプルな概念にまで及びます。また、さまざまな画面サイズ、表示コンテキスト、および印刷を処理するために開発者に力を与えるフックを持っています。CSS は、開発者がコンテンツを調整し、ユーザーに適切に適応することを確認するのに役立ちます。
 featured_stat_1: 5%
 featured_stat_label_1: カスタムプロパティを使用したページ
@@ -736,4 +736,4 @@ CSS `@supports`は、ブラウザが特定のプロパティと値の組み合�
 どの結果が最も驚くべきものでしたか？
 どの結果を使用して、コードベースにすばやくクエリを移動しますか？
 
-これらの結果からの最大のポイントは、スタイルシートのパフォーマンス、乾燥、スケーラビリティの点で、カスタムプロパティが予算に見合った価値を提供することだと感じました。インターネットのスタイルシートを再度スクラブし、新しいデータムと挑発的なチャートの扱いを探しています。クエリ、質問、アサーションを含むコメントで[@una](https://twitter.com/una)または[@argyleink](https://twitter.com/argyleink)に連絡してください。私たちはそれらを聞きたいです！
+これらの結果からの最大のポイントは、スタイルシートのパフォーマンス、乾燥、スケーラビリティの点で、カスタムプロパティが予算に見合った価値を提供することだと感じました。インターネットのスタイルシートを再度スクラブし、新しいデータムと挑発的なチャートの扱いを探しています。クエリ、質問、アサーションを含むコメントで[@una](https://x.com/una)または[@argyleink](https://x.com/argyleink)に連絡してください。私たちはそれらを聞きたいです！
