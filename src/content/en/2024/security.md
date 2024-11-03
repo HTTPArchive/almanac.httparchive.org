@@ -1212,52 +1212,52 @@ Developers sometimes also try to enable other security features by using the `me
     </thead>
     <tbody>
       <tr>
-        <td>CryptoGetRandomValues</td>
+        <td><code>CryptoGetRandomValues</code></td>
         <td class="numeric">55.92%</td>
         <td class="numeric">53.24%</td>
       </tr>
       <tr>
-        <td>SubtleCryptoDigest</td>
+        <td><code>SubtleCryptoDigest</code></td>
         <td class="numeric">1.92%</td>
         <td class="numeric">1.74%</td>
       </tr>
       <tr>
-        <td>SubtleCryptoImportKey</td>
+        <td><code>SubtleCryptoImportKey</code></td>
         <td class="numeric">1.69%</td>
         <td class="numeric">1.60%</td>
       </tr>
       <tr>
-        <td>CryptoAlgorithmSha256</td>
+        <td><code>CryptoAlgorithmSha256</code></td>
         <td class="numeric">1.58%</td>
         <td class="numeric">1.30%</td>
       </tr>
       <tr>
-        <td>CryptoAlgorithmEcdh</td>
+        <td><code>CryptoAlgorithmEcdh</code></td>
         <td class="numeric">1.32%</td>
         <td class="numeric">1.34%</td>
       </tr>
       <tr>
-        <td>CryptoAlgorithmSha512</td>
+        <td><code>CryptoAlgorithmSha512</code></td>
         <td class="numeric">0.24%</td>
         <td class="numeric">0.24%</td>
       </tr>
       <tr>
-        <td>CryptoAlgorithmAesCbc</td>
+        <td><code>CryptoAlgorithmAesCbc</code></td>
         <td class="numeric">0.23%</td>
         <td class="numeric">0.13%</td>
       </tr>
       <tr>
-        <td>CryptoAlgorithmSha1</td>
+        <td><code>CryptoAlgorithmSha1</code></td>
         <td class="numeric">0.22%</td>
         <td class="numeric">0.21%</td>
       </tr>
       <tr>
-        <td>SubtleCryptoEncrypt</td>
+        <td><code>SubtleCryptoEncrypt</code></td>
         <td class="numeric">0.15%</td>
         <td class="numeric">0.13%</td>
       </tr>
       <tr>
-        <td>SubtleCryptoSign</td>
+        <td><code>SubtleCryptoSign</code></td>
         <td class="numeric">0.13%</td>
         <td class="numeric">0.12%</td>
       </tr>
