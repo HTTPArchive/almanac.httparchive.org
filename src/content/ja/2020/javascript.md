@@ -7,7 +7,7 @@ reviewers: [ibnesayeed, denar90]
 analysts: [rviscomi, paulcalvano]
 editors: [rviscomi]
 translators: [ksakae1216]
-tkadlec_bio: Timは、誰もが使えるWebを構築することに焦点を当てたWebパフォーマンスコンサルタントであり、トレーナーです。著書に『High Performance Images』（O'Reilly, 2016）、『Implementing Responsive Design』（New Riders, 2012）があります。彼は<a hreflang="en" href="https://timkadlec.com/">timkadlec.com</a>でウェブ全般について書いています。<a href="https://twitter.com/tkadlec">@tkadlec</a>で、彼の考えを簡潔にまとめてTwitterで紹介しています。
+tkadlec_bio: Timは、誰もが使えるWebを構築することに焦点を当てたWebパフォーマンスコンサルタントであり、トレーナーです。著書に『High Performance Images』（O'Reilly, 2016）、『Implementing Responsive Design』（New Riders, 2012）があります。彼は<a hreflang="en" href="https://timkadlec.com/">timkadlec.com</a>でウェブ全般について書いています。<a href="https://x.com/tkadlec">@tkadlec</a>で、彼の考えを簡潔にまとめてTwitterで紹介しています。
 discuss: 2038
 results: https://docs.google.com/spreadsheets/d/1cgXJrFH02SHPKDGD0AelaXAdB3UI7PIb5dlS0dxVtfY/
 featured_quote: JavaScriptは、CSS、HTMLと並んでウェブの3つの礎となる最後の礎として、その謙虚な起源から長い道のりを歩んできました。今日では、JavaScriptは技術スタックの幅広い範囲に浸透し始めています。JavaScriptはもはやクライアントサイドに限定されたものではなく、ビルドツールやサーバーサイドのスクリプティングのための選択肢として、ますます人気が高まっています。エッジコンピューティングソリューションのおかげで、JavaScriptはCDNレイヤーにも浸透してきています。
@@ -231,7 +231,7 @@ IE8とIE9のサポートが一般的だった頃は、`async`と`defer`属性の
 
 しかし、ここには心強い話があります。
 
-Harry Robertsが[Twitterでアンチパターンについてつぶやいていた](https://twitter.com/csswizardry/status/1331721659498319873)ということで、野生でどれくらいの頻度で発生しているのかを確認するように促されました。[Rick Viscomiが調べてみた](https://twitter.com/rick_viscomi/status/1331735748060524551)で、「stats.wp.com」が最も多くの違反者を出していたことが判明しました。Automatticの@Kraftさんから返信があり、パターンは現在[削除済です](https://twitter.com/Kraft/status/1336772912414601224)。
+Harry Robertsが[Twitterでアンチパターンについてつぶやいていた](https://x.com/csswizardry/status/1331721659498319873)ということで、野生でどれくらいの頻度で発生しているのかを確認するように促されました。[Rick Viscomiが調べてみた](https://x.com/rick_viscomi/status/1331735748060524551)で、「stats.wp.com」が最も多くの違反者を出していたことが判明しました。Automatticの@Kraftさんから返信があり、パターンは現在[削除済です](https://x.com/Kraft/status/1336772912414601224)。
 
 ウェブのオープン性についての素晴らしい点の1つは、1つの観察がいかに意味のある変化につながるかということであり、それはまさにここで起こったことです。
 

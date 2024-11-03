@@ -10,7 +10,7 @@ translators: [HakaCode]
 discuss: 1768
 results: https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/
 samdutton_bio: Sam Dutton trabalha com a equipe do Google Chrome como Defensor do desenvolvedor desde 2011. Ele organizou e apresentou em uma série de eventos, criou e ministrou vários cursos de desenvolvimento da web e trabalhou em uma variedade de vídeos, codelabs e orientações escritas sobre PWA, desempenho, mídia, imagem e iniciativas de 'Próximo Bilhão de Usuários'. Ele mantém <a hreflang="en" href="https://simpl.info">simpl.info</a>, que fornece os exemplos mais simples possíveis de HTML, CSS e JavaScript. Sam cresceu na Austrália do Sul, foi para a universidade em Sydney e mora desde 1986 em Londres.
-alankent_bio: Alan Kent é um Developer Advocate do Google com foco em e-commerce e ecossistemas de conteúdo. Ele bloga em <a hreflang="en" href="https://alankent.me">alankent.me</a> e tweeta como <a href="https://twitter.com/akent99">@akent99</a>.
+alankent_bio: Alan Kent é um Developer Advocate do Google com foco em e-commerce e ecossistemas de conteúdo. Ele bloga em <a hreflang="en" href="https://alankent.me">alankent.me</a> e tweeta como <a href="https://x.com/akent99">@akent99</a>.
 featured_quote: Quase 10% das home pages neste estudo foram encontradas em uma plataforma de comércio eletrônico. Uma "plataforma de comércio eletrônico" é um conjunto de software ou serviços que permite criar e operar uma loja online, incluindo serviços pagos como Shopify, plataformas de software como Magento Open Source e plataformas hospedadas como Magento Commerce.
 featured_stat_1: 3.98%
 featured_stat_label_1: Sites que usam WooCommerce, a plataforma de comércio eletrônico mais popular
@@ -552,7 +552,7 @@ Precisamos fazer mais pesquisas sobre por que muitos sites (aparentemente) não 
 
 ## Solicitações de terceiros e bytes
 
-Muitos sites - especialmente lojas online - carregam uma quantidade significativa de código e conteúdo de terceiros: para análises, testes A / B, rastreamento do comportamento do cliente, publicidade e suporte de mídia social. O conteúdo de terceiros pode ter um <a hreflang="en" href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript">impacto significativo no desempenho</a>. [Patrick Hulce](https://twitter.com/patrickhulce)'s <a hreflang="en" href="https://github.com/patrickhulce/third-party-web">third-party-web tool</a> é usado para determinar os pedidos de terceiros para este relatório, e isso é discutido mais no [Terceiros](./third-parties) capítulo.
+Muitos sites - especialmente lojas online - carregam uma quantidade significativa de código e conteúdo de terceiros: para análises, testes A / B, rastreamento do comportamento do cliente, publicidade e suporte de mídia social. O conteúdo de terceiros pode ter um <a hreflang="en" href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript">impacto significativo no desempenho</a>. [Patrick Hulce](https://x.com/patrickhulce)'s <a hreflang="en" href="https://github.com/patrickhulce/third-party-web">third-party-web tool</a> é usado para determinar os pedidos de terceiros para este relatório, e isso é discutido mais no [Terceiros](./third-parties) capítulo.
 
 {{ figure_markup(
   image="fig17.png",

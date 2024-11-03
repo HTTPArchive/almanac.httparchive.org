@@ -73,7 +73,7 @@ It's a good idea to select a color scheme that passes color contrast requirement
 
 ### Zooming and scaling
 
-Zooming is another feature that users with low vision often use to view the text in a website better. There are system settings in the browser, as well as some magnifying tools that allow a user to zoom and scale a website. [Adrian Roselli](https://twitter.com/aardrian) talks in detail about the <a hreflang="en" href="https://adrianroselli.com/2015/10/dont-disable-zoom.html">different reasons you should not disable zoom</a>.
+Zooming is another feature that users with low vision often use to view the text in a website better. There are system settings in the browser, as well as some magnifying tools that allow a user to zoom and scale a website. [Adrian Roselli](https://x.com/aardrian) talks in detail about the <a hreflang="en" href="https://adrianroselli.com/2015/10/dont-disable-zoom.html">different reasons you should not disable zoom</a>.
 
 {{ figure_markup(
   image="pages-zooming-scaling-disabled.png",
@@ -97,7 +97,7 @@ The method by which a developer disabled zoom is by adding a `<meta name="viewpo
   sql_file="viewport_zoom_scale_by_domain_rank.sql",
 ) }}
 
-Of the top 1,000 most visited sites, 21% of desktop sites and 40% of mobile sites are built using code that attempts to disable user zooming or scaling. This means that the percentage of sites with zooming disabled is almost double on mobile compared to desktop. It's really important to not disable zooming on any device. To combat this, browsers have begun to override developers' attempts to disable zoom. [Manuel Matuzović](https://twitter.com/mmatuzo) wrote an article talking about the <a hreflang="en" href="https://www.matuzo.at/blog/2022/please-stop-disabling-zoom/">concerns with disabling zoom and user settings in browsers</a>.
+Of the top 1,000 most visited sites, 21% of desktop sites and 40% of mobile sites are built using code that attempts to disable user zooming or scaling. This means that the percentage of sites with zooming disabled is almost double on mobile compared to desktop. It's really important to not disable zooming on any device. To combat this, browsers have begun to override developers' attempts to disable zoom. [Manuel Matuzović](https://x.com/mmatuzo) wrote an article talking about the <a hreflang="en" href="https://www.matuzo.at/blog/2022/please-stop-disabling-zoom/">concerns with disabling zoom and user settings in browsers</a>.
 
 {{ figure_markup(
   image="font-unit-usage.png",
@@ -178,7 +178,7 @@ The WCAG requires a visible focus indicator for all interactive content to help 
   sql_file="focus_outline_0.sql",
 ) }}
 
-We found that 86% of websites add `:focus {outline: 0}`. This removes the default outline that browsers use for the focused interactive element. In some cases, they are overridden using some custom styling, but not always. This makes it impossible for users to determine which element has focus which in turn hinders navigation. [Sara Soueidan](https://twitter.com/SaraSoueidan) has a great article on how to <a hreflang="en" href="https://www.sarasoueidan.com/blog/focus-indicators/">design WCAG-compliant focus indicators</a>. However, it's exciting to see that 9% of websites have `:focus-visible` compared to only 0.6% last year. This is definitely a step in the right direction.
+We found that 86% of websites add `:focus {outline: 0}`. This removes the default outline that browsers use for the focused interactive element. In some cases, they are overridden using some custom styling, but not always. This makes it impossible for users to determine which element has focus which in turn hinders navigation. [Sara Soueidan](https://x.com/SaraSoueidan) has a great article on how to <a hreflang="en" href="https://www.sarasoueidan.com/blog/focus-indicators/">design WCAG-compliant focus indicators</a>. However, it's exciting to see that 9% of websites have `:focus-visible` compared to only 0.6% last year. This is definitely a step in the right direction.
 
 #### `tabindex`
 
@@ -201,7 +201,7 @@ It's important to remember that placing non-interactive elements in the keyboard
   sql_file="tabindex_usage_and_values.sql",
 ) }}
 
-Out of all websites with `tabindex` attribute, 7% have `tabindex` with a positive value. Using positive values for `tabindex` is generally bad practice since it disrupts the normal navigation. [Karl Groves](https://twitter.com/karlgroves) has a <a hreflang="en" href="https://karlgroves.com/2018/11/13/why-using-tabindex-values-greater-than-0-is-bad">great article</a> that explains this concept further.
+Out of all websites with `tabindex` attribute, 7% have `tabindex` with a positive value. Using positive values for `tabindex` is generally bad practice since it disrupts the normal navigation. [Karl Groves](https://x.com/karlgroves) has a <a hreflang="en" href="https://karlgroves.com/2018/11/13/why-using-tabindex-values-greater-than-0-is-bad">great article</a> that explains this concept further.
 
 ### Landmarks
 
@@ -258,11 +258,11 @@ Landmarks help divide a web page into thematic regions that makes it easier for 
   </figcaption>
 </figure>
 
-The most commonly expected landmarks that the majority of web pages should have are `<main>`, `<header>`, `<nav>` and `<footer>`. We found that only 31% of desktop and mobile pages have a native HTML `<main>` element, while 17% of desktop pages have an element with a `role="main"`, and 38% of pages have either `<main>` or `role="main"`. It's good to see the use of native elements increase. [Scott O' Hara](https://twitter.com/scottohara)'s <a hreflang="en" href="https://www.scottohara.me/blog/2018/03/03/landmarks.html">article on landmarks</a> covers all the details that one should keep in mind to ensure better accessibility.
+The most commonly expected landmarks that the majority of web pages should have are `<main>`, `<header>`, `<nav>` and `<footer>`. We found that only 31% of desktop and mobile pages have a native HTML `<main>` element, while 17% of desktop pages have an element with a `role="main"`, and 38% of pages have either `<main>` or `role="main"`. It's good to see the use of native elements increase. [Scott O' Hara](https://x.com/scottohara)'s <a hreflang="en" href="https://www.scottohara.me/blog/2018/03/03/landmarks.html">article on landmarks</a> covers all the details that one should keep in mind to ensure better accessibility.
 
 ### Heading hierarchy
 
-Headings help all users, including those using assistive technologies, to navigate through the website. Users with assistive technologies can navigate to the exact sections that they are interested in. As mentioned in [Marcy Sutton](https://twitter.com/marcysutton)'s <a hreflang="en" href="https://marcysutton.com/how-i-audit-a-website-for-accessibility#Headings-and-Semantic-Structure">article on headings and semantic structure</a> , headings can be thought of as a table of contents that one can navigate through to go to a particular content area.
+Headings help all users, including those using assistive technologies, to navigate through the website. Users with assistive technologies can navigate to the exact sections that they are interested in. As mentioned in [Marcy Sutton](https://x.com/marcysutton)'s <a hreflang="en" href="https://marcysutton.com/how-i-audit-a-website-for-accessibility#Headings-and-Semantic-Structure">article on headings and semantic structure</a> , headings can be thought of as a table of contents that one can navigate through to go to a particular content area.
 
 {{ figure_markup(
   content="58%",
@@ -272,7 +272,7 @@ Headings help all users, including those using assistive technologies, to naviga
   sql_file="lighthouse_a11y_audits.sql",
 ) }}
 
-58% of websites pass the test for properly ordered headings that do not skip levels, which is the same as last year. Hopefully this number will increase next year since the <a hreflang="en" href="https://github.com/whatwg/html/pull/7829">document outline example in WHATWG standards have been updated</a>. A very important thing to remember is that heading levels don't have to represent the actual style (or importance) of a particular element. Headings are to be used primarily for hierarchy purposes, while CSS can be used for the styling of the element. A very good article on how to structure headings in your page is by [Steve Faulkner](https://twitter.com/stevefaulkner) titled, <a hreflang="en" href="https://stevefaulkner.github.io/Articles/How%20to%20mark%20up%20subheadings,%20subtitles,%20alternative%20titles%20and%20taglines.html">"How to mark up subheadings, subtitles, alternative titles and taglines"</a>.
+58% of websites pass the test for properly ordered headings that do not skip levels, which is the same as last year. Hopefully this number will increase next year since the <a hreflang="en" href="https://github.com/whatwg/html/pull/7829">document outline example in WHATWG standards have been updated</a>. A very important thing to remember is that heading levels don't have to represent the actual style (or importance) of a particular element. Headings are to be used primarily for hierarchy purposes, while CSS can be used for the styling of the element. A very good article on how to structure headings in your page is by [Steve Faulkner](https://x.com/stevefaulkner) titled, <a hreflang="en" href="https://stevefaulkner.github.io/Articles/How%20to%20mark%20up%20subheadings,%20subtitles,%20alternative%20titles%20and%20taglines.html">"How to mark up subheadings, subtitles, alternative titles and taglines"</a>.
 
 ### Secondary navigation
 
@@ -593,7 +593,7 @@ Most browsers ignore `role="presentation"` and `role="none"` on focusable elemen
 
 Parallel to the DOM there is a similar browser structure called the accessibility tree. It contains information about HTML elements including accessible names, descriptions, roles and states. This information is conveyed to assistive technologies through accessibility APIs.
 
-The accessible name can be derived from an element's content (such as button text), an attribute (such as an image `alt` attribute value), or an associated element (such as a programmatically associated label for a form control). There is a specificity ranking that is used to determine where the element gets its accessible name from if there are multiple potential sources. [Léonie Watson](https://twitter.com/LeonieWatson)'s article, <a hreflang="en" href="https://developer.paciellogroup.com/blog/2017/04/what-is-an-accessible-name/">What is an accessible name?</a> is a great source to learn more about accessible names.
+The accessible name can be derived from an element's content (such as button text), an attribute (such as an image `alt` attribute value), or an associated element (such as a programmatically associated label for a form control). There is a specificity ranking that is used to determine where the element gets its accessible name from if there are multiple potential sources. [Léonie Watson](https://x.com/LeonieWatson)'s article, <a hreflang="en" href="https://developer.paciellogroup.com/blog/2017/04/what-is-an-accessible-name/">What is an accessible name?</a> is a great source to learn more about accessible names.
 
 {{ figure_markup(
   image="top10-aria-attributes.png",
@@ -788,4 +788,4 @@ Our analysis shows that there hasn't been much of a substantial change in the ac
 
 We see that there are often a lot of misuse of features that may give an illusion of things being more accessible but in reality it often degrades the experience. For example, we see 20% of websites have an anchor tag with `role=button`. Also, we see that 2.2% of `alt` attributes across websites have a file extension in them, which almost certainly doesn't help in conveying the meaning of the image.
 
-A lot of the accessibility issues that we see in our analysis can be avoided if designers and developers start thinking about web accessibility from the very beginning and not as an enhancement at the end. Like [Anna E. Cook once said](https://twitter.com/annaecook/status/1404615552883060737), there's "no MVP without accessibility". The web community needs to realize that a website only has a great User Experience when that User Experience works for everyone, irrespective of the device and assistive technology used. We have tried to focus on key metrics that can be easily addressed in the hope that in 2023 we see the numbers improve.
+A lot of the accessibility issues that we see in our analysis can be avoided if designers and developers start thinking about web accessibility from the very beginning and not as an enhancement at the end. Like [Anna E. Cook once said](https://x.com/annaecook/status/1404615552883060737), there's "no MVP without accessibility". The web community needs to realize that a website only has a great User Experience when that User Experience works for everyone, irrespective of the device and assistive technology used. We have tried to focus on key metrics that can be easily addressed in the hope that in 2023 we see the numbers improve.

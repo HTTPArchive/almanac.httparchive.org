@@ -56,7 +56,7 @@ Note that this section references stats that have been made available specifical
 
 We looked at traffic to origins by popularity—how often are users visiting certain origins, and what does that tell us about the global distribution across the web.
 
-Rick Byers [tweeted](https://twitter.com/RickByers/status/1195342331588706306) this distribution a year ago, we looked at the latest data. The chart shows us the overall distribution across origins by their popularity, captured by their contribution to % page loads in Chrome.
+Rick Byers [tweeted](https://x.com/RickByers/status/1195342331588706306) this distribution a year ago, we looked at the latest data. The chart shows us the overall distribution across origins by their popularity, captured by their contribution to % page loads in Chrome.
 
 {{ figure_markup(
   image="page-loads-across-origins-ranked-by-popularity.png",

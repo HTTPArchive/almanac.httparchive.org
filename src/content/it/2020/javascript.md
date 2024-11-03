@@ -7,7 +7,7 @@ reviewers: [ibnesayeed, denar90]
 analysts: [rviscomi, paulcalvano]
 editors: [rviscomi]
 translators: [chefleo]
-tkadlec_bio: Tim è un consulente e formatore di prestazioni web focalizzato sulla creazione di un web che tutti possano utilizzare. È autore di High Performance Images (O'Reilly, 2016) e Implementing Responsive Design (New Riders, 2012). Scrive di tutto ciò che riguarda il Web su <a hreflang="en" href="https://timkadlec.com/">timkadlec.com</a>. Puoi trovarlo mentre condivide i suoi pensieri in un formato più breve su Twitter <a href="https://twitter.com/tkadlec">@tkadlec</a>.
+tkadlec_bio: Tim è un consulente e formatore di prestazioni web focalizzato sulla creazione di un web che tutti possano utilizzare. È autore di High Performance Images (O'Reilly, 2016) e Implementing Responsive Design (New Riders, 2012). Scrive di tutto ciò che riguarda il Web su <a hreflang="en" href="https://timkadlec.com/">timkadlec.com</a>. Puoi trovarlo mentre condivide i suoi pensieri in un formato più breve su Twitter <a href="https://x.com/tkadlec">@tkadlec</a>.
 discuss: 2038
 results: https://docs.google.com/spreadsheets/d/1cgXJrFH02SHPKDGD0AelaXAdB3UI7PIb5dlS0dxVtfY/
 featured_quote: JavaScript ha fatto molta strada dalle sue umili origini come l'ultimo dei tre capisaldi del web, insieme a CSS e HTML. Oggi JavaScript ha iniziato a infiltrarsi in un ampio spettro dello stack tecnico. Non è più limitato al lato client ed è una scelta sempre più popolare per gli strumenti di compilazione e lo scripting lato server. JavaScript si sta facendo strada anche nel livello CDN grazie alle soluzioni di edge computing.
@@ -231,7 +231,7 @@ Al giorno d'oggi, il pattern non è necessario per la stragrande maggioranza dei
 
 C'è una storia incoraggiante qui, però.
 
-Harry Roberts [ha twittato sull'antipattern su Twitter](https://twitter.com/csswizardry/status/1331721659498319873), che è ciò che ci ha spinto a controllare per vedere quanto spesso ciò si verificava in natura. [Rick Viscomi ha controllato per vedere chi erano i principali colpevoli](https://twitter.com/rick_viscomi/status/1331735748060524551), e si è scoperto che "stats.wp.com" era la fonte dei criminali più comuni. @Kraft di Automattic ha risposto e il pattern verrà ora [rimosso in futuro](https://twitter.com/Kraft/status/1336772912414601224).
+Harry Roberts [ha twittato sull'antipattern su Twitter](https://x.com/csswizardry/status/1331721659498319873), che è ciò che ci ha spinto a controllare per vedere quanto spesso ciò si verificava in natura. [Rick Viscomi ha controllato per vedere chi erano i principali colpevoli](https://x.com/rick_viscomi/status/1331735748060524551), e si è scoperto che "stats.wp.com" era la fonte dei criminali più comuni. @Kraft di Automattic ha risposto e il pattern verrà ora [rimosso in futuro](https://x.com/Kraft/status/1336772912414601224).
 
 Una delle grandi cose dell'apertura del web è come un'osservazione può portare a cambiamenti significativi ed è esattamente quello che è successo qui.
 

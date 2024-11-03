@@ -9,7 +9,7 @@ editors: [rachellcostello]
 translators: [MSakamaki]
 discuss: 1762
 results: https://docs.google.com/spreadsheets/d/1zWzFSQ_ygb-gGr1H1BsJCfB7Z89zSIf7GX0UayVEte4/
-rviscomi_bio: Rick ViscomiはGoogle のシニア開発プログラムエンジニアで、HTTP ArchiveやChrome UX Reportなどのウェブ透過性プロジェクトに携わり、ウェブサイトの構築方法と体験の交差点を研究しています。Rickは、<a hreflang="en" href="https://www.youtube.com/playlist?list=PLNYkxOF6rcIBGvYSYO-VxOsaYQDw5rifJ">The State of the Web</a>のホストを務めており、専門家がウェブのトレンドについて議論しています。Rickは、ウェブのパフォーマンスをテストするためのガイドである <a hreflang="en" href="https://usingwpt.com">Using WebPageTest</a> の共著者であり、<a hreflang="en" href="https://dev.to/rick_viscomi">dev.to</a> でウェブについて頻繁に執筆していますし、<a href="https://twitter.com/rick_viscomi">@rick_viscomi </a> の Twitter でもウェブについて書いています。
+rviscomi_bio: Rick ViscomiはGoogle のシニア開発プログラムエンジニアで、HTTP ArchiveやChrome UX Reportなどのウェブ透過性プロジェクトに携わり、ウェブサイトの構築方法と体験の交差点を研究しています。Rickは、<a hreflang="en" href="https://www.youtube.com/playlist?list=PLNYkxOF6rcIBGvYSYO-VxOsaYQDw5rifJ">The State of the Web</a>のホストを務めており、専門家がウェブのトレンドについて議論しています。Rickは、ウェブのパフォーマンスをテストするためのガイドである <a hreflang="en" href="https://usingwpt.com">Using WebPageTest</a> の共著者であり、<a hreflang="en" href="https://dev.to/rick_viscomi">dev.to</a> でウェブについて頻繁に執筆していますし、<a href="https://x.com/rick_viscomi">@rick_viscomi </a> の Twitter でもウェブについて書いています。
 featured_quote: パフォーマンスはユーザー体験の内臓的な部分です。多くのウェブサイトでは、ページの読み込み時間を高速化してユーザー体験を向上させることは、コンバージョン率の向上につながります。逆に、パフォーマンスが悪いと、ユーザーは頻繁にコンバージョンしないし、不満でページを激怒してクリックしてしまうことさえ観察されています。
 featured_stat_1: 13%
 featured_stat_label_1: FCPが速いサイト

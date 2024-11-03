@@ -77,7 +77,7 @@ Webアクセシビリティの重要な要素として、コンテンツを可�
 
 弱視の方は、ページの内容（とくに文字）を見るために、システム設定や画面拡大・縮小ソフトに頼ることがあります。Web Content Accessibility Guidelinesでは、とくにテキストは<a hreflang="en" href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-scale.html">少なくとも200%</a>までリサイズできることが求められています。
 
-[Adrian Roselli](https://twitter.com/aardrian) は、<a hreflang="en" href="https://adrianroselli.com/2015/10/dont-disable-zoom.html">ユーザーに対してズームが有効でない場合に生じるさまざまな害について、包括的な記事</a>を書きました。現在、多くのブラウザは開発者がズームコントロールを上書きすることを防いでいますが、世界規模でブラウザやOSの使用範囲が広いことを考慮すると、すべてのブラウザがこの動作を上書きしているとは言い切れないため、コードレベルで回避する必要があります。
+[Adrian Roselli](https://x.com/aardrian) は、<a hreflang="en" href="https://adrianroselli.com/2015/10/dont-disable-zoom.html">ユーザーに対してズームが有効でない場合に生じるさまざまな害について、包括的な記事</a>を書きました。現在、多くのブラウザは開発者がズームコントロールを上書きすることを防いでいますが、世界規模でブラウザやOSの使用範囲が広いことを考慮すると、すべてのブラウザがこの動作を上書きしているとは言い切れないため、コードレベルで回避する必要があります。
 
 {{ figure_markup(
   image="pages-zooming-scaling-disabled.png",
@@ -144,7 +144,7 @@ HTMLの `lang` 属性を設定することで、ページの翻訳が容易に�
 
 ボタンやフォームコントロール、リンクなどのインタラクティブなコンテンツでは、CSSプロパティ `:focus { outline: none; }` や `:focus { outline: 0; }` を用いて、時には `:focus-within` や `:focus-visible` と共に、デフォルトのフォーカス表示を解除することがよくあります。デスクトップページの91%に`:focus { outline: 0; }`が宣言されていることがわかりました。場合によっては、より効果的なカスタムスタイルを適用できるように、この宣言は削除されます。残念ながら、多くの場合、単に削除されただけで置き換えられることはなく、キーボード・ユーザーにとって使い勝手の悪いページになってしまいます。
 
-ブラウザのデフォルトのフォーカススタイルのいくつかの制限を含む、アクセシブルなフォーカス表示を実現する方法の詳細については、[Sara Soueidan](https://twitter.com/SaraSoueidan) の記事、<a hreflang="en" href="https://www.sarasoueidan.com/blog/focus-indicators/">"A guide to designing accessible, WCAG-compliant focus indicators"</a> がオススメです。
+ブラウザのデフォルトのフォーカススタイルのいくつかの制限を含む、アクセシブルなフォーカス表示を実現する方法の詳細については、[Sara Soueidan](https://x.com/SaraSoueidan) の記事、<a hreflang="en" href="https://www.sarasoueidan.com/blog/focus-indicators/">"A guide to designing accessible, WCAG-compliant focus indicators"</a> がオススメです。
 
 ### ユーザー嗜好のメディアクエリ、ハイコントラストへの対応
 
@@ -230,7 +230,7 @@ HTML5導入以前は、これを実現するためにARIAのランドマーク�
 
 ウェブページの大半が持つべきランドマークとして、もっとも一般的に期待されているのは、`<main>`、`<header>`、`<nav>`、`<footer>`です。デスクトップページの28%だけがネイティブなHTMLの `<main>` 要素を持ち、17%が `role="main"` の要素を持ち、35%がどちらかの要素を持つことがわかりました。
 
-たとえば、プライマリーサイトナビゲーションとパンくずセカンダリーナビゲーションなど、1つのページに同じランドマークが複数ある場合、それぞれに一意のアクセス可能な名前を付けることが重要です。これにより、支援技術を必要とする障害者は、どのナビゲーションランドマークに遭遇したかをよりよく理解できるようになります。これを実現するためのテクニックは、<a hreflang="en" href="https://www.scottohara.me/blog/2018/03/03/landmarks.html">さまざまなランドマークと、異なるスクリーン リーダーのナビゲーション方法</a>に関する [Scott O'Hara](https://twitter.com/scottohara) の総合記事に網羅されています。
+たとえば、プライマリーサイトナビゲーションとパンくずセカンダリーナビゲーションなど、1つのページに同じランドマークが複数ある場合、それぞれに一意のアクセス可能な名前を付けることが重要です。これにより、支援技術を必要とする障害者は、どのナビゲーションランドマークに遭遇したかをよりよく理解できるようになります。これを実現するためのテクニックは、<a hreflang="en" href="https://www.scottohara.me/blog/2018/03/03/landmarks.html">さまざまなランドマークと、異なるスクリーン リーダーのナビゲーション方法</a>に関する [Scott O'Hara](https://x.com/scottohara) の総合記事に網羅されています。
 
 ### ドキュメントタイトル
 
@@ -261,7 +261,7 @@ HTML5導入以前は、これを実現するためにARIAのランドマーク�
 
 インタラクティブでキーボードフォーカスの順番を意図したカスタム要素やウィジェットは、明示的に `tabindex="0"` を割り当てる必要があり、そうしないとキーボードで使用できなくなります。
 
-もしある要素がフォーカス可能であるべきだが、キーボードフォーカスの順番にない場合、 `tabindex`値の`-1`（あるいは任意の負の整数）をフックとして使うことで、キーボードフォーカスの順番に加えずJavaScriptでプログラム的にその要素にフォーカスできるようにできます。これは、フォーカスを割り当てたい場合に便利です。たとえば、[Marcy Sutton](https://twitter.com/marcysutton) が <a hreflang="en" href="https://www.gatsbyjs.com/blog/2019-07-11-user-testing-accessible-client-routing/">post on accessible client-side routing techniques</a> で取り上げた、単一ページのアプリケーションで新しいページに移動するとき見出しへフォーカスを当てるような場合などです。キーボードのフォーカス順に非インタラクティブ要素を配置すると、視覚障害者が混乱するため、避けるべきです。
+もしある要素がフォーカス可能であるべきだが、キーボードフォーカスの順番にない場合、 `tabindex`値の`-1`（あるいは任意の負の整数）をフックとして使うことで、キーボードフォーカスの順番に加えずJavaScriptでプログラム的にその要素にフォーカスできるようにできます。これは、フォーカスを割り当てたい場合に便利です。たとえば、[Marcy Sutton](https://x.com/marcysutton) が <a hreflang="en" href="https://www.gatsbyjs.com/blog/2019-07-11-user-testing-accessible-client-routing/">post on accessible client-side routing techniques</a> で取り上げた、単一ページのアプリケーションで新しいページに移動するとき見出しへフォーカスを当てるような場合などです。キーボードのフォーカス順に非インタラクティブ要素を配置すると、視覚障害者が混乱するため、避けるべきです。
 
 ページのフォーカス順序は、常にドキュメントフロー、つまりドキュメント内のHTML要素の順序で決定されるべきです。`tabindex`に正の整数を設定すると、ページの自然な順序が上書きされ、しばしば<a hreflang="en" href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-focus-order.html">WCAG 2.4.3 - Focus Order</a>の失敗を招きます。一般に、ページの自然なフォーカス順序を尊重することは、キーボードのフォーカス順序を過剰に操作するよりも、よりアクセシブルな体験につながります。
 
@@ -282,7 +282,7 @@ HTML5導入以前は、これを実現するためにARIAのランドマーク�
 * 68.2%が負の整数を使用、つまりキーボードのフォーカス順から明示的に要素を削除
 * 8.7%は正の整数値であり、ウェブ制作者がDOM構造に任せるのではなく、フォーカスの順番をコントロールしようとしていることを意味します。
 
-`tabindex`属性には有効な宣言がありますが、これらのテクニックに誤って手を出すと、多くのキーボードや支援技術を必要とする障害者にとって共通のアクセシビリティの障害になります。正の整数を `tabindex` に使うことの落とし穴については、 [Karl Groves](https://twitter.com/karlgroves) の記事、 <a hreflang="en" href="https://karlgroves.com/2018/11/13/why-using-tabindex-values-greater-than-0-is-bad">"0以上の`tabindex`値を使用することが悪い理由"</a> がオススメです。
+`tabindex`属性には有効な宣言がありますが、これらのテクニックに誤って手を出すと、多くのキーボードや支援技術を必要とする障害者にとって共通のアクセシビリティの障害になります。正の整数を `tabindex` に使うことの落とし穴については、 [Karl Groves](https://x.com/karlgroves) の記事、 <a hreflang="en" href="https://karlgroves.com/2018/11/13/why-using-tabindex-values-greater-than-0-is-bad">"0以上の`tabindex`値を使用することが悪い理由"</a> がオススメです。
 
 ### リンクをスキップする
 
@@ -651,7 +651,7 @@ DOMと平行して、[アクセシビリティツリー](https://developer.mozil
 
 アクセス可能な名前は、要素のコンテンツ（ボタンのテキストなど）、属性（画像の `alt` テキスト値など）、関連付けられた要素（プログラム的に関連付けられた [フォームコントロールの `label`](#label-要素) など）から得ることができます。複数の候補がある場合、アクセス可能な名前にどの値を割り当てるかを決定するために起こる特異性の順位付けがあります。
 
-アクセシブルネームについての詳細は、[Léonie Watson](https://twitter.com/LeonieWatson) の記事、<a hreflang="en" href="https://developer.paciellogroup.com/blog/2017/04/what-is-an-accessible-name/">アクセシブルネームとは何ですか？</a> をご覧ください。
+アクセシブルネームについての詳細は、[Léonie Watson](https://x.com/LeonieWatson) の記事、<a hreflang="en" href="https://developer.paciellogroup.com/blog/2017/04/what-is-an-accessible-name/">アクセシブルネームとは何ですか？</a> をご覧ください。
 
 また、ARIAを利用して、要素にアクセシブルな名前を付けることも可能です。これを実現するARIA属性は、<a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA14.html">`aria-label`</a> と <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA16.html">`aria-labelledby`</a> の2つがあります。これらの属性のいずれかが、アクセス可能な名前の計算に「勝ち」、ネイティブに派生したアクセス可能な名前を上書きします。この2つの属性は注意して使用することが重要で、必ずスクリーンリーダーでテストするか、アクセシビリティツリーを見て、アクセシブルな名前がユーザーの期待するものであることを確認するようにしてください。ARIAを使って要素に名前を付けるとき、<a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Understanding/label-in-name.html">WCAG 2.5.3、名前にラベルをつける</a> 基準に違反していないことを確認することが重要で、可視ラベルは少なくともそのアクセス可能な名前の一部であると期待します。
 
@@ -778,7 +778,7 @@ _ARIAライブリージョン_は、DOMの変更を監視し、スクリーン�
 
 これらのツールはしばしば支援技術を妨害し、実際に多くの人にとってウェブサイトをアクセスしにくくします。これに関して、<a hreflang="en" href="https://www.vice.com/en/article/m7az74/people-with-disabilities-say-this-ai-tool-is-making-the-web-worse-for-them">「障害者はこのAIツールがウェブを悪化させていると言う」という適切なタイトルのViceの記事で調査されています</a>。<a hreflang="en" href="https://www.accessibyebye.org/">accessiByeBye</a> というオープンソースの拡張機能もあります。これは、支援技術ユーザーがサードパーティのオーバーレイ製品を使用しているWebサイトの使用を妨げられないよう、オーバーレイをブロックするために特別に開発されたものです。
 
-市民権弁護士の[Haben Girma](https://twitter.com/HabenGirma)が<a hreflang="en" href="https://www.youtube.com/watch?v=R12Z1Sp-u4U">アクセシビリティオーバーレイに関するこの動画</a>で説明しているように、「AIはツールであり、今のところアクセシビリティに対してできることが極めて限られている」のです。さらに、自動生成された自分の名前のキャプションが、「Haben Girma」を「happen grandma」と誤訳したこと、このような情報の誤伝達が聴覚障害者のユーザーに与える影響について説明します。
+市民権弁護士の[Haben Girma](https://x.com/HabenGirma)が<a hreflang="en" href="https://www.youtube.com/watch?v=R12Z1Sp-u4U">アクセシビリティオーバーレイに関するこの動画</a>で説明しているように、「AIはツールであり、今のところアクセシビリティに対してできることが極めて限られている」のです。さらに、自動生成された自分の名前のキャプションが、「Haben Girma」を「happen grandma」と誤訳したこと、このような情報の誤伝達が聴覚障害者のユーザーに与える影響について説明します。
 
 このようなオーバーレイ会社と、彼らが奉仕すると称している障害者コミュニティとの間には、緊張関係が存在する。たとえば、全米盲人連合は、<a hreflang="en" href="https://www.forbes.com/sites/gusalexiou/2021/06/26/largest-us-blind-advocacy-group-bans-web-accessibility-overlay-giant-accessibe/?sh=16621ec55a15">アクセシービーをその全国大会から追放し</a>、<a hreflang="en" href="https://nfb.org/about-us/press-room/national-convention-sponsorship-statement-regarding-accessibe">同社による被害についてこのように発表しています</a>。
 
@@ -804,7 +804,7 @@ _ARIAライブリージョン_は、DOMの変更を監視し、スクリーン�
 
 これらのウィジェットは、それを使用する企業に対して多くのアクセシビリティ訴訟の一部として名指しされています。<a hreflang="en" href="https://info.usablenet.com/2020-report-on-digital-accessibility-lawsuits">UsableNetの2020年デジタルアクセシビリティ訴訟に関するレポート</a>によると、「訴えられた250社以上がアクセシビリティウィジェットやオーバーレイに投資していた」そうです。<a hreflang="en" href="https://sheribyrnehaber.com/technology-doesnt-make-accessibility-hard-people-who-dont-care-do/">アクセシビリティ専門家のSherri Byrne-Haberは</a>、「2020年末に起こされるアクセシビリティ訴訟の10％は、プラグイン、オーバーレイ、ウィジェットをインストールした企業に対して、それらがADA訴訟の防弾になると考えてのものだ」と引用しています。アクセシビリティに関する法律は、「障害を持つアメリカ人法」に限らず、<a hreflang="en" href="https://www.3playmedia.com/blog/countries-that-have-adopted-wcag-standards-map/">WCAGを指した法律を持つ国々が世界中に存在することは注目に値します</a>。
 
-これらのオーバーレイを使用する際の法的な影響については、こちらをご覧ください。[Lainey Feingold](https://twitter.com/LFLegal)の記事<a hreflang="en" href="https://www.lflegal.com/2020/08/quick-fix/">Honor the ADAを参照してください。Avoid Web Accessibility Quick-Fix Overlays</a>とAdrian Roselliの記事<a hreflang="en" href="https://adrianroselli.com/2020/06/accessibe-will-get-you-sued.html">#accessiBe Will Get You Suedを参照してください</a>。
+これらのオーバーレイを使用する際の法的な影響については、こちらをご覧ください。[Lainey Feingold](https://x.com/LFLegal)の記事<a hreflang="en" href="https://www.lflegal.com/2020/08/quick-fix/">Honor the ADAを参照してください。Avoid Web Accessibility Quick-Fix Overlays</a>とAdrian Roselliの記事<a hreflang="en" href="https://adrianroselli.com/2020/06/accessibe-will-get-you-sued.html">#accessiBe Will Get You Suedを参照してください</a>。
 
 ### なぜオーバーレイを使う企業があるのですか？
 
@@ -827,7 +827,7 @@ _ARIAライブリージョン_は、DOMの変更を監視し、スクリーン�
 
 ## 結論
 
-アクセシビリティの提唱者である<a href="https://twitter.com/thebillygregory/status/552466012713783297?s=20">Billy Gregoryがかつて言ったように</a>、「UXがすべてのユーザーを考慮しないとき、それはSOMEユーザーエクスペリエンス、またはSUXとして知られるべきでは」ないでしょうか。アクセシビリティの作業は、追加事項、エッジケース、あるいは技術的負債と同等とみなされ、ウェブサイトや製品の成功の中核となるべきものではないことがあまりに多くあります。
+アクセシビリティの提唱者である<a href="https://x.com/thebillygregory/status/552466012713783297?s=20">Billy Gregoryがかつて言ったように</a>、「UXがすべてのユーザーを考慮しないとき、それはSOMEユーザーエクスペリエンス、またはSUXとして知られるべきでは」ないでしょうか。アクセシビリティの作業は、追加事項、エッジケース、あるいは技術的負債と同等とみなされ、ウェブサイトや製品の成功の中核となるべきものではないことがあまりに多くあります。
 
 成功するためには、製品チームと組織全体が、アクセシビリティを責務の一部として、C-suiteに至るまで優先させる必要があります。アクセシビリティの作業は、<a hreflang="en" href="https://feather.ca/shift-left/">製品サイクルの左側にシフトする必要があります</a>。つまり、開発前の研究、構想、設計段階に焼き付ける必要があるのです。そして、もっとも重要なことは、障害者がこのプロセスに参加する必要があることです。
 

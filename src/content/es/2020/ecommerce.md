@@ -7,7 +7,7 @@ reviewers: [alankent]
 analysts: [jrharalson, rockeynebhwani]
 editors: [tunetheweb]
 translators: [carloscastromx]
-rockeynebhwani_bio: Rockey Nebhwani es un consultor independiente que ha trabjado en ventas al por menor y comercio electrónico desde 2001 y tiene amplia experiencia en la industria al trabajar con empresas como Amazon, Wal-Mart, Tesco, M&S, Safeway, etc. a lo largo de Estados Unidos y el Reino Unido. Rockey es un conferenciante ocasional en eventos de comercio electrónico y twitea en <a href="https://twitter.com/rnebhwani">@rnebhwani</a>.
+rockeynebhwani_bio: Rockey Nebhwani es un consultor independiente que ha trabjado en ventas al por menor y comercio electrónico desde 2001 y tiene amplia experiencia en la industria al trabajar con empresas como Amazon, Wal-Mart, Tesco, M&S, Safeway, etc. a lo largo de Estados Unidos y el Reino Unido. Rockey es un conferenciante ocasional en eventos de comercio electrónico y twitea en <a href="https://x.com/rnebhwani">@rnebhwani</a>.
 #jrharalson_bio: TODO
 discuss: 2052
 results: https://docs.google.com/spreadsheets/d/1Hvsh_ZBKg2vWhouJ8vIzLmp0nLIMzrT2mr6RQbIkxqY/
@@ -227,7 +227,7 @@ Ahora, miremos a cómo se usan las imágenes en los sitios de comercio electrón
 
 Las imágenes anteriores muestran que la página de comercio electrónico promedio tiene 34 imágenes y una descarga de imágenes de 1,208 en móvil, 37 imágenes y 1,271 KB en escritorio. 10% de las páginas de inicio tienen 90 o más imágenes y una descarga de imágenes de casi 5.5 MB en móvil y 5.8 MB en escritorio.
 
-[Comparado con el 2019](../2019/ecommerce#image-stats), tanto el promedio de peticiones de imágenes y el tamaño promedio de la descarga de imágenes sufrieron una reducción. Las peticiones de imágenes promedio disminuyeron en 3 tanto para móvil como para escritorio. El tamaño promedio de la descarga de imágenes también disminuyo en aproximadamente 200KB-250KB tanto en móvil como escritorio. Esta disminución puede ser causada por sitios que han adoptado técnicas de lazy loading como el uso del atributo `loading="lazy"` que ahora es <a hreflang="en" href="https://caniuse.com/loading-lazy-attr">soportado por más navegadores</a>. El capítulo de [Marcado](./markup#data--attributes) de este año hace una observación sobre el uso nativo de lazy loading que parece estar en aumento ya que cerca del 3.86% de las páginas usan esto en Agosto-2020 y esto ha sido un aumento constante (como se puede ver en [este tweet](https://twitter.com/rick_viscomi/status/1344380340153016321?s=20)).
+[Comparado con el 2019](../2019/ecommerce#image-stats), tanto el promedio de peticiones de imágenes y el tamaño promedio de la descarga de imágenes sufrieron una reducción. Las peticiones de imágenes promedio disminuyeron en 3 tanto para móvil como para escritorio. El tamaño promedio de la descarga de imágenes también disminuyo en aproximadamente 200KB-250KB tanto en móvil como escritorio. Esta disminución puede ser causada por sitios que han adoptado técnicas de lazy loading como el uso del atributo `loading="lazy"` que ahora es <a hreflang="en" href="https://caniuse.com/loading-lazy-attr">soportado por más navegadores</a>. El capítulo de [Marcado](./markup#data--attributes) de este año hace una observación sobre el uso nativo de lazy loading que parece estar en aumento ya que cerca del 3.86% de las páginas usan esto en Agosto-2020 y esto ha sido un aumento constante (como se puede ver en [este tweet](https://x.com/rick_viscomi/status/1344380340153016321?s=20)).
 
 #### Formatos de imágenes populares
 
