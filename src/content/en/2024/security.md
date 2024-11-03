@@ -332,16 +332,16 @@ Websites can exert greater control over their embedded content by deploying a [C
 In addition to vetting included content, CSP can serve other purposes as well, such as enforcing the use of encrypted channels with the `upgrade-insecure-requests` directive and controlling where the site can be embedded to protect against clickjacking attacks using the `frame-ancestors` directive.
 
 {{ figure_markup(
-  content="+27.4%",
+  content="+27%",
   caption="Relative increase in adoption for Content-Security-Policy header from 2022.",
   classes="big-number",
   sheets_gid="TODO",
   sql_file="TODO.sql",
 ) }}
 
-The adoption rate of CSP headers increased from 14.5% of all hosts in 2022 to 18.5% this year. This amounts to a relative increase of 27.4%.  Over these two years, the relative increase was 12.1% between 2022 and 2023, and 13.6% between 2023 and 2024.
+The adoption rate of CSP headers increased from 15% of all hosts in 2022 to 19% this year. This amounts to a relative increase of 27%.  Over these two years, the relative increase was 12% between 2022 and 2023, and 14% between 2023 and 2024.
 
-Looking back, overall CSP adoption was only at 11.9% of hosts in 2021, so it's encouraging to see that growth has remained steady. If this trend continues, projections suggest that CSP adoption will surpass the 20% mark in next year's Web Almanac.
+Looking back, overall CSP adoption was only at 12% of hosts in 2021, so it's encouraging to see that growth has remained steady. If this trend continues, projections suggest that CSP adoption will surpass the 20% mark in next year's Web Almanac.
 
 #### Directives
 
@@ -403,8 +403,8 @@ The top three directives also make up the building blocks of the most prevalent 
     <tbody>
       <tr>
         <td>upgrade-insecure-requests</td>
-        <td>-1.3%</td>
-        <td>-0.5%</td>
+        <td class="numeric">-1.3</td>
+        <td class="numeric">-0.5</td>
       </tr>
       <tr>
         <td>frame-ancestors</td>
@@ -413,32 +413,32 @@ The top three directives also make up the building blocks of the most prevalent 
       </tr>
       <tr>
         <td>block-all-mixed-content</td>
-        <td>-8.8%</td>
-        <td>-12.7%</td>
+        <td class="numeric">-8.8</td>
+        <td class="numeric">-12.7</td>
       </tr>
       <tr>
         <td>default-src</td>
-        <td>-9.1%</td>
-        <td>-6.3%</td>
+        <td class="numeric">-9.1</td>
+        <td class="numeric">-6.3</td>
       </tr>
       <tr>
         <td>script-src</td>
-        <td>-3.0%</td>
-        <td>-1.8%</td>
+        <td class="numeric">-3.0</td>
+        <td class="numeric">-1.8</td>
       </tr>
       <tr>
         <td>style-src</td>
-        <td>-8.4%</td>
-        <td>-2.3%</td>
+        <td class="numeric">-8.4</td>
+        <td class="numeric">-2.3</td>
       </tr>
       <tr>
         <td>img-src</td>
-        <td>-2.8%</td>
+        <td class="numeric">-2.8</td>
         <td class="numeric">9.3%</td>
       </tr>
       <tr>
         <td>font-src</td>
-        <td>-3.5%</td>
+        <td class="numeric">-3.5</td>
         <td class="numeric">8.1%</td>
       </tr>
       <tr>
@@ -503,13 +503,13 @@ The `unsafe-inline` and `unsafe-eval` directives can significantly reduce the se
       </tr>
       <tr>
         <td>unsafe-inline</td>
-        <td>-3.2%</td>
-        <td>-3.4%</td>
+        <td class="numeric">-3.2</td>
+        <td class="numeric">-3.4</td>
       </tr>
       <tr>
         <td>unsafe-eval</td>
-        <td>-2.6%</td>
-        <td>-0.3%</td>
+        <td class="numeric">-2.6</td>
+        <td class="numeric">-0.3</td>
       </tr>
     </tbody>
   </table>
@@ -1018,7 +1018,7 @@ The majority of websites that set the `Cross-Origin-Embedder-Policy` header indi
 
 #### Cross Origin Resource Policy
 
-Conversely, websites that serve resources can use the[ `Cross-Origin-Resource-Policy` response header](https://developer.mozilla.org/docs/Web/HTTP/Cross-Origin_Resource_Policy) to grant explicit permission for other websites to render the served resource. This header can take one of three values: `same-site`, allowing only requests from the same site to receive the resource; `same-origin`, restricting access to requests from the same origin; and `cross-origin`, permitting any origin to access the resource. Beyond mitigating side-channel attacks, CORP can also protect against Cross-Site Script Inclusion (XSSI). For instance, by disallowing a dynamic JavaScript resource from being served to cross-origin websites, CORP helps prevent the leaking of scripts with sensitive info.
+Conversely, websites that serve resources can use the [`Cross-Origin-Resource-Policy` response header](https://developer.mozilla.org/docs/Web/HTTP/Cross-Origin_Resource_Policy) to grant explicit permission for other websites to render the served resource. This header can take one of three values: `same-site`, allowing only requests from the same site to receive the resource; `same-origin`, restricting access to requests from the same origin; and `cross-origin`, permitting any origin to access the resource. Beyond mitigating side-channel attacks, CORP can also protect against Cross-Site Script Inclusion (XSSI). For instance, by disallowing a dynamic JavaScript resource from being served to cross-origin websites, CORP helps prevent the leaking of scripts with sensitive info.
 
 <figure>
   <table>
@@ -1451,7 +1451,7 @@ In some industries, developers might keep more up to date with security features
 
 We find that there is a subtle difference in the average number of security headers used depending on the categorization of the website. This number does not directly show the overall security of these sites, but might give an insight into which categories of industry are inclined to implement more security features. We see that shopping and finance lead the list, both industries that deal with sensitive information and high amounts of monetary transactions, which may be reasons to invest in security. At the bottom of the list we see news and travel & transportation. Both are categories in which a lot of sites will host content relating to their respective topics, but may not handle much sensitive data compared to sites in the top categories on the list. In general, this trend seems to be weak.
 
-## Malpractices on the Web [Vik]
+## Malpractices on the Web
 
 Although cryptocurrencies remain popular, the number of cryptominers on the web has continued to decrease over the past two years, with no notable spikes in usage anymore as was described in the 2022 edition of the Web Almanac.
 
@@ -1529,7 +1529,7 @@ Additionally, only 0.26% of observed COOP headers were set to `cross-origin` and
 
 In addition to cases where valid values intended for one header were mistakenly used for another, we identified several minor instances of syntactical errors across various headers. However, each of these errors accounted for less than 1% of the total observed headers, suggesting that while such mistakes exist, they are relatively infrequent.
 
-### Timing-Allow-Origin Wildcards [Vik]
+### Timing-Allow-Origin Wildcards
 
 Timing-Allow-Origin is a response header that allows a server to specify a list of origins that are allowed to see values of attributes obtained through features of the [Resource Timing API](https://developer.mozilla.org/docs/Web/API/Performance_API/Resource_timing). This means that an origin listed in this header can access detailed timestamps regarding the connection that is being made to the server, such as the time at the start of the TCP connection, start of the request and start of the response.
 
