@@ -1630,7 +1630,7 @@ The most commonly exposed header is the `Server` header, which reveals the softw
 
 Examining the most common values for the `Server` and `X-Powered-By` headers, we found that especially the `X-Powered-By` header specifies versions, with the top 10 values revealing specific PHP versions. For both desktop and mobile, at least 25% of `X-Powered-By` headers contain this information. This header is likely enabled by default on the observed web servers. While it can be useful for analytics, the header's benefits are limited, and thus it warrants to be disabled by default. However, disabling this header alone does not address the security risks of outdated servers; regularly updating the server remains crucial.
 
-### Missing suppression of `Server-Timing header`
+### Missing suppression of `Server-Timing` header
 
 The Server-Timing header is defined in a <a hreflang="en" href="https://w3c.github.io/server-timing/">W3C Editor's Draft</a> as a header that can be used to communicate about server performance metrics. A developer can send metrics containing zero or more properties. One of the specified properties is the `dur` property, that can be used to communicate millisecond-accurate timings that contain the duration of a specific action on the server.
 
@@ -1646,9 +1646,9 @@ We find that server-timing is used by 6.4% of internet hosts. Over 60% of those 
   )
 }}
 
-## Well-known URIs
+## `.well-known` URIs
 
-<a hreflang="en" href="https://datatracker.ietf.org/doc/html/rfc8615">Well-known URIs</a> are used as a way to designate specific locations to data or services related to the overall website. A well-known URI is a URI whose path component begins with the characters `/.well-known/`.
+<a hreflang="en" href="https://datatracker.ietf.org/doc/html/rfc8615">.well-known URIs</a> are used as a way to designate specific locations to data or services related to the overall website. A well-known URI is a URI whose path component begins with the characters `/.well-known/`.
 
 ### Security.txt
 
@@ -1668,7 +1668,7 @@ Most of the security.txt files include contact information (88.8%) and a preferr
 
 ### Change-password
 
-The <a hreflang="en" href="https://w3c.github.io/webappsec-change-password-url/">change-password</a> well-known URI is a W3C specification in the editor's draft state, which is the same state it was in in 2022. This specific well-known URI was suggested as a way for users and softwares to easily identify the link to be used for changing passwords, which means external resources can easily link to that page.
+The <a hreflang="en" href="https://w3c.github.io/webappsec-change-password-url/"><code>change-password</code></a> well-known URI is a W3C specification in the editor's draft state, which is the same state it was in in 2022. This specific well-known URI was suggested as a way for users and softwares to easily identify the link to be used for changing passwords, which means external resources can easily link to that page.
 
 {{ figure_markup(
   image="change-password-usage.png",
@@ -1698,7 +1698,7 @@ In a specification that is also still an <a hreflang="en" href="https://w3c.gith
 
 We find a similar distribution as in 2022, where 83.6% of pages respond with a not-ok status, which is the expected outcome. Again, one reason that these figures may not change much is the fact that the standard is stuck in the editor's draft status and the standardization is slow.
 
-### Sensitive endpoints in robots.txt
+### Sensitive endpoints in `robots.txt`
 
 Finally, we check whether or not robots.txt includes possibly sensitive endpoints. By using this information, hackers may be able to select websites or endpoints to target based on the exclusion in robots.txt.
 
