@@ -7,7 +7,7 @@ reviewers: []
 editors: []
 analysts: [bgstandaert, max-ostapenko]
 translators: []
-results: https://docs.google.com/spreadsheets/d/18r8cT6x9lPdM-rXvXjsqx84W7ZDdTDYGD59xr0UGOwg/edit#gid=1778117656
+results: https://docs.google.com/spreadsheets/d/18r8cT6x9lPdM-rXvXjsqx84W7ZDdTDYGD59xr0UGOwg/
 featured_quote:
 featured_stat_1:
 featured_stat_label_1:
