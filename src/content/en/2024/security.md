@@ -809,7 +809,7 @@ All other observed policies with at least 2% of hosts implementing them, are aim
 The Permissions Policy can also be defined individually for each embedded `<iframe>` through its `allow` attribute. For example, an `<iframe>` can be permitted to use the geolocation and camera permissions by setting the attribute as follows:
 
 ```html
-<iframe src="<a hreflang="en" href="https://example.com">https://example.com</a>" allow="geolocation 'self'; camera *;"></iframe>
+<iframe src="https://example.com" allow="geolocation 'self'; camera *;"></iframe>
 ```
 
 Out of the 21.4 million `<iframe>` elements observed in the crawl, half included the `allow` attribute. This marks a significant increase compared to **even just the previous month**, when only 21% of `<iframe>` elements had the allow attribute - indicating that its usage has more than doubled in just one month. A plausible explanation for this rapid change is that one or several widely-used third-party services have propagated this update across their `<iframe>` elements. Given the ad-specific directives we now observe (displayed in the table below, row 1 and 3) - none of which were present in 2022 - it is likely that an ad service is responsible for this shift.
@@ -1433,7 +1433,7 @@ Large websites often have a high number of visitors and registered users, of whi
 
 We find that most headers, including the most popular ones: `X-Frame-Options`, `Strict-Transport-Security`, `X-Content-Type-Options`, `X-XSS-Protection` and `Content-Security-Policy`, always have higher adoptions for more popular sites on mobile. 64.3% of the top 1000 sites on mobile have HSTS enabled. This means the top 1000 websites are more invested in only sending traffic over HTTPS. Less popular sites can still have HTTPS enabled, but don't add a Strict-Transport-Security header as often, which may lead users to repeatedly visit the site over plain HTTP.
 
-### Website category (<span style="text-decoration:underline;">new analyses</span>)
+### Website category
 
 In some industries, developers might keep more up to date with security features they may be able to use to better secure their sites.
 
