@@ -888,7 +888,7 @@ Embedding third-party websites within `<iframe>` elements always carries risks, 
 These risks can be curbed by employing the `sandbox` attribute on `<iframe>` elements. Doing this, the content loaded within is restricted to rules defined by the attribute, and can be used to prevent the embedded content from abusing capabilities. When provided with an empty string as value, the policy is strictest. However, this policy can be relaxed by adding specific directives, of which each has their own specific relaxation rules. For example, the following `<iframe>` would allow the embedded webpage to run scripts:
 
 ```html
-<iframe src="<a hreflang="en" href="https://example.com">https://example.com</a>" sandbox="allow-scripts"></iframe>
+<iframe src="https://example.com" sandbox="allow-scripts"></iframe>
 ```
 
 The `sandbox` attribute was observed in 28.4% and 27.5% of `<iframe>` elements for desktop and mobile respectively, a considerable drop from the 35.2% and 32% reported in 2022. Much like the sudden spike in `allow` attribute usage mentioned in the previous section, this decline could be attributed to a change in the modus operandi of an embedded service, where the `sandbox` attribute was omitted from the template `<iframe>`.
