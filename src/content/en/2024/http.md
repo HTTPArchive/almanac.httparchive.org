@@ -103,7 +103,7 @@ As discussed above, if the browser hasn't connected to a domain before, it will 
 {{ figure_markup(
   image="alt-svc-example.jpg",
   caption="`alt-svc` response header example.",
-  description="Screenshot showing the `alt-svc` HTTP response header supporting HTTP/3 on UDP port 443 with ALPN value `HTTP/3` and `max-age` of 26 hours for `www.akamai.com`",
+  description="Screenshot showing the `alt-svc` HTTP response header supporting HTTP/3 on UDP port 443 with ALPN value `h3` and `max-age` of 26 hours for `www.akamai.com`",
   width=716,
   height=419
   )
@@ -208,9 +208,9 @@ A full discussion on SVCB would take too much time here however, so we will focu
   )
 }}
 
-As we can see, `blog.cloudflare.com` indicates support for both HTTP/3 and HTTP/2 (in order of preference!) via the `alpn="h3,h2"` part of the response. ALPN stands for [Application Layer Protocol Negotiation](https://developer.mozilla.org/docs/Glossary/ALPN) which was/is originally a TLS (Transport Layer Security protocol) extension to indicate which application protocols and versions a server supports, to for example allow the graceful fallback from HTTP/2 to HTTP/1.1 discussed above. The general approach (and name) is reused for the DNS HTTPS record as well. Additionally, the example shows the optional `ipv4hint` and `ipv6hint` entries, which allow steering of users to specific endpoints for specific services—for example if not every single machine in the deployment actually supports HTTP/3 yet, say in a multi-CDN setup. In conclusion, if a browser queries the DNS for the HTTPS records (which is typically done in parallel or even before A and AAAA queries), and subsequently sees `HTTP/3` in the ALPN list, it is allowed/encouraged to also try HTTP/3 for its first connection to the server, bypassing the `alt-svc` overhead.
+As we can see, `blog.cloudflare.com` indicates support for both HTTP/3 and HTTP/2 (in order of preference!) via the `alpn="h3,h2"` part of the response. ALPN stands for [Application Layer Protocol Negotiation](https://developer.mozilla.org/docs/Glossary/ALPN) which was/is originally a TLS (Transport Layer Security protocol) extension to indicate which application protocols and versions a server supports, to for example allow the graceful fallback from HTTP/2 to HTTP/1.1 discussed above. The general approach (and name) is reused for the DNS HTTPS record as well. Additionally, the example shows the optional `ipv4hint` and `ipv6hint` entries, which allow steering of users to specific endpoints for specific services—for example if not every single machine in the deployment actually supports HTTP/3 yet, say in a multi-CDN setup. In conclusion, if a browser queries the DNS for the HTTPS records (which is typically done in parallel or even before A and AAAA queries), and subsequently sees `h3` in the ALPN list, it is allowed/encouraged to also try HTTP/3 for its first connection to the server, bypassing the `alt-svc` overhead.
 
-Let's now take a look at how much we've seen the new DNS records being used in the wild in the Web Almanac dataset. Looking at the general use, we see that around 12% of both mobile and desktop pages have an HTTPS record of some kind defined. Not all of those include the `HTTP/3` option in their `alpn` section however: that's slightly lower at 9% (desktop) and 10% (mobile):
+Let's now take a look at how much we've seen the new DNS records being used in the wild in the Web Almanac dataset. Looking at the general use, we see that around 12% of both mobile and desktop pages have an HTTPS record of some kind defined. Not all of those include the `h3` option in their `alpn` section however: that's slightly lower at 9% (desktop) and 10% (mobile):
 
 {{ figure_markup(
   image="dns-https-alpn-h3.png",
