@@ -123,7 +123,7 @@ Let's now look purely at how HTTP/3 support is being announced via `alt-svc` to 
 
 {{ figure_markup(
   image="http3-support-per-origin.png",
-  caption="HTTP/3 support (via alt-svc) has increased steadily since 2022.",
+  caption="HTTP/3 support (via `alt-svc`) has increased steadily since 2022.",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQhHn7aWiJiMSVu3o872Lxr45NNZkG7jKa_MyL7aPwdga8gul19txh36PL2Ep4GRcaSYzpvLc-oc_xg/pubchart?oid=458096579&format=interactive",
   sheets_gid="1569509568",
@@ -151,7 +151,7 @@ One important remark to make here is that not all CDNs show equally high HTTP/3 
   <table>
     <thead>
       <tr>
-        <th class="no-wrap">HTTP/3 alt-svc</th>
+        <th class="no-wrap">HTTP/3 <code>alt-svc</code></th>
         <th>CDN</th>
       </tr>
     </thead>
@@ -178,7 +178,7 @@ One important remark to make here is that not all CDNs show equally high HTTP/3 
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Percentage of HTTP/3 alt-svc responses for all requests served by first-party CDNs (with considerable traffic share).", sheets_gid="1667058296", sql_file="HTTP/3_support_each_cdn_breakdown.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Percentage of HTTP/3 `alt-svc` responses for all requests served by first-party CDNs (with considerable traffic share).", sheets_gid="1667058296", sql_file="HTTP/3_support_each_cdn_breakdown.sql") }}</figcaption>
 </figure>
 
 Firstly, we see that some companies go all-in on HTTP/3, with for example Facebook indicating HTTP/3 support on 99.86% of responses! This is in stark contrast to other large companies like Twitter/X, that don't send `alt-svc` at all. Secondly, even CDNs that clearly support HTTP/3 rarely reach high percentages, with Cloudflare leading the pack at 78% and Akamai tagging along at just 7%. This most likely has to do with how exactly the CDNs enable the new protocol. For example, Cloudflare has enabled it by default for their free plans, leading to high (though not universal) use. In contrast, Akamai requires its customers to manually enable the feature in their configuration, which many seem slow/unwilling to do. As such, the amount of HTTP/3 support on the Web _could_ be much higher than around 28% if all CDN customers would allow it. Finally, it is somewhat surprising that some more specialized deployments, like Automattic, heavily lean into HTTP/3 (99.92%) while others like Vercel and Netlify show near-zero HTTP/3 support. I can only speculate on the reasons for the latter, but assume it is mostly due to the complexity of setting up and maintaining the new protocol at scale, while these newer up-and-coming companies prefer to focus on other parts of their stacks first.
