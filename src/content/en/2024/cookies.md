@@ -289,63 +289,7 @@ Two [cookie prefixes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#
   )
 }}
 
-We measure that 0.032% and 0.030% of the first-party cookies observed on desktop have the "__Host-" and "__Secure-" prefix set, respectively. These numbers are 0.001% for third-party cookies. These results show the v<figure>
-  <table>
-    <thead>
-      <tr>
-        <th>Age of cookies (desktop top 1M) in bytes </th>
-        <th>First-party</th>
-        <th>Third-party</th>
-        <th>All</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>min</td>
-        <td class="numeric">0</td>
-        <td class="numeric">0</td>
-        <td class="numeric">0</td>
-      </tr>
-      <tr>
-        <td>p25</td>
-        <td class="numeric">1</td>
-        <td class="numeric">30</td>
-        <td class="numeric">30</td>
-      </tr>
-      <tr>
-        <td>median</td>
-        <td class="numeric">183</td>
-        <td class="numeric">365</td>
-        <td class="numeric">365</td>
-      </tr>
-      <tr>
-        <td>p75</td>
-        <td class="numeric">396</td>
-        <td class="numeric">365</td>
-        <td class="numeric">396</td>
-      </tr>
-      <tr>
-        <td>p90</td>
-        <td class="numeric">400</td>
-        <td class="numeric">400</td>
-        <td class="numeric">400</td>
-      </tr>
-      <tr>
-        <td>p95</td>
-        <td class="numeric">400</td>
-        <td class="numeric">400</td>
-        <td class="numeric">400</td>
-      </tr>
-      <tr>
-        <td>max</td>
-        <td class="numeric">400</td>
-        <td class="numeric">400</td>
-        <td class="numeric">400</td>
-      </tr>
-    </tbody>
-  </table>
-  <figcaption>{{ figure_link(caption="Statistics for age of cookies set on desktop pages.") }}</figcaption>
-</figure>ery low adoption of these prefixes and the associated defense-in-depth measure since they were first [introduced](https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-rfc6265bis#section-4.1.3.1) at the end of 2015.
+We measure that 0.032% and 0.030% of the first-party cookies observed on desktop have the "__Host-" and "__Secure-" prefix set, respectively. These numbers are 0.001% for third-party cookies. These results show the very low adoption of these prefixes and the associated defense-in-depth measure since they were first [introduced](https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-rfc6265bis#section-4.1.3.1) at the end of 2015.
 
 ## Top first and third-party cookies and domains setting them
 
