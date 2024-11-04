@@ -207,7 +207,7 @@ Early Hintsの採用がユーザー体験を向上させることを示す研究
 
 ## HTTP/3
 
-このセクションの残りでは、HTTPの未来であり、<a hreflang="en" href="https://www.rfc-editor.org/rfc/rfc9114.html">2022年6月に標準化された</a>HTTP/3に焦点を当てます。とくに、HTTP/3がその前身よりもどのように改善されたか、そして現在どれだけのサポートがあるかを探ります。HTTP/3についての詳細な説明については、この章のレビューにも協力してくれた[Robin Marx](https://twitter.com/programmingart)が書いた<a hreflang="en" href="https://www.smashingmagazine.com/2021/08/http3-core-concepts-part1/">素晴らしい一連の投稿</a>を参照してください。
+このセクションの残りでは、HTTPの未来であり、<a hreflang="en" href="https://www.rfc-editor.org/rfc/rfc9114.html">2022年6月に標準化された</a>HTTP/3に焦点を当てます。とくに、HTTP/3がその前身よりもどのように改善されたか、そして現在どれだけのサポートがあるかを探ります。HTTP/3についての詳細な説明については、この章のレビューにも協力してくれた[Robin Marx](https://x.com/programmingart)が書いた<a hreflang="en" href="https://www.smashingmagazine.com/2021/08/http3-core-concepts-part1/">素晴らしい一連の投稿</a>を参照してください。
 
 ### HTTP/3の利点
 

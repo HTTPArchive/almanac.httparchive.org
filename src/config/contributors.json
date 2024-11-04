@@ -571,8 +571,20 @@
     "twitter": "LoukilAymen",
     "website": "http://www.aymen-loukil.com/en/"
   },
+  "b_atish": {
+    "name": "Beatriz González Mellídez",
+    "teams": {
+      "2024": [
+        "reviewers"
+      ]
+    },
+    "twitter": "b_atish",
+    "linkedin": "beatrizgonzalezm",
+    "website": "https://medium.com/@b_atish"
+  },
   "tunetheweb": {
     "avatar_url": "10931297",
+    "bluesky": "tunetheweb.com",
     "github": "tunetheweb",
     "linkedin": "tunetheweb",
     "mastodon": "https://webperf.social/@tunetheweb",
@@ -1650,6 +1662,18 @@
     },
     "twitter": "HenriHelvetica"
   },
+  "hidde": {
+    "avatar_url": "178782",
+    "github": "hidde",
+    "name": "Hidde de Vries",
+    "teams": {
+      "2024": [
+        "reviewers"
+      ]
+    },
+    "mastodon": "@hdv@front-end.social",
+    "website": "https://hidde.blog/"
+  },
   "housseindjirdeh": {
     "avatar_url": "12476932",
     "github": "housseindjirdeh",
@@ -2034,6 +2058,29 @@
     "twitter": "jtteag",
     "website": "https://gemservers.com"
   },
+  "JonathanAvila": {
+    "avatar_url": "5640755",
+    "github": "mraccess77",
+    "name": "Jonathan Avila",
+    "linkedin": "jonathan-avila-cpwa-2a964a7",
+    "teams": {
+      "2024": [
+        "editors"
+      ]
+    }
+  },
+  "JonathanPagel": {
+    "avatar_url": "63317370",
+    "github": "jcmpagel",
+    "linkedin": "jonathan-pagel",
+    "name": "Jonathan Pagel",
+    "teams": {
+      "2024": [
+        "editors"
+      ]
+    },
+    "website": "https://jonathanpagel.com"
+  },
   "sirjonathan": {
     "avatar_url": "104149",
     "github": "sirjonathan",
@@ -2371,8 +2418,7 @@
         "authors"
       ]
     },
-    "twitter": "Zizzamia",
-    "website": "https://twitter.com/zizzamia"
+    "twitter": "Zizzamia"
   },
   "lirantal": {
     "avatar_url": "316371",
@@ -2383,8 +2429,7 @@
         "authors"
       ]
     },
-    "twitter": "liran_tal",
-    "website": "https://twitter.com/liran_tal"
+    "twitter": "liran_tal"
   },
   "lvandeve": {
     "github": "lvandeve",
@@ -2450,8 +2495,7 @@
         "translators"
       ]
     },
-    "twitter": "msakamaki2",
-    "website": "https://twitter.com/msakamaki2"
+    "twitter": "msakamaki2"
   },
   "MaedahBatool": {
     "avatar_url": "12712988",
@@ -2720,6 +2764,19 @@
     "teams": {
       "2020": [
         "authors"
+      ]
+    }
+  },
+  "mgifford": {
+    "avatar_url": "116832",
+    "github": "mgifford",
+    "linkedin": "mgifford",
+    "mastodon": "https://mastodon.social/@mgifford",
+    "name": "Mike Gifford",
+    "teams": {
+      "2024": [
+        "authors",
+        "analysts"
       ]
     }
   },
@@ -3635,6 +3692,9 @@
         "designers",
         "editors",
         "reviewers"
+      ],
+      "2024": [
+        "editors"
       ]
     }
   },

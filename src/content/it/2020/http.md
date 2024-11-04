@@ -417,7 +417,7 @@ Questa <a hreflang="en" href="https://github.com/andydavies/http2-prioritization
   <figcaption>{{ figure_link(caption="Supporto per prioritizzazione HTTP/2 nei CDN comuni.", sheets_gid="1152953475", sql_file="percentage_of_h2_and_h3_sites_affected_by_cdn_prioritization.sql") }}</figcaption>
 </figure>
 
-Per chi non utilizza CDN, ci aspettiamo che il numero di server che applicano correttamente la priorità HTTP/2 sia notevolmente inferiore. Ad esempio, l'implementazione HTTP/2 di NodeJS [non supporta l'assegnazione di priorità](https://twitter.com/jasnell/status/1245410283582918657).
+Per chi non utilizza CDN, ci aspettiamo che il numero di server che applicano correttamente la priorità HTTP/2 sia notevolmente inferiore. Ad esempio, l'implementazione HTTP/2 di NodeJS [non supporta l'assegnazione di priorità](https://x.com/jasnell/status/1245410283582918657).
 
 ### Addio server push?
 

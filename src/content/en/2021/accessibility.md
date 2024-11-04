@@ -77,7 +77,7 @@ This year we found that only 22% of sites have passing color contrast scores in 
 
 Users with low vision may rely on zooming and scaling the page using system settings or screen magnifying software in order to view its content, especially text. The Web Content Accessibility Guidelines require that text in particular can be <a hreflang="en" href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-scale.html">resized up to at least 200%</a>.
 
-[Adrian Roselli](https://twitter.com/aardrian) wrote a <a hreflang="en" href="https://adrianroselli.com/2015/10/dont-disable-zoom.html">comprehensive article about the various harms caused when zooming is not enabled for users</a>. Many browsers now prevent developers from overriding zoom controls, but it must be avoided at the code-level, as we cannot count on every browser overriding this behavior when we consider the wide range of browser and OS usage on a global scale.
+[Adrian Roselli](https://x.com/aardrian) wrote a <a hreflang="en" href="https://adrianroselli.com/2015/10/dont-disable-zoom.html">comprehensive article about the various harms caused when zooming is not enabled for users</a>. Many browsers now prevent developers from overriding zoom controls, but it must be avoided at the code-level, as we cannot count on every browser overriding this behavior when we consider the wide range of browser and OS usage on a global scale.
 
 {{ figure_markup(
   image="pages-zooming-scaling-disabled.png",
@@ -144,7 +144,7 @@ Visible focus styles are helpful for everyone but are necessary for sighted keyb
 
 Often times, default focus indication is removed from interactive content such as buttons, form controls, and links using the CSS property `:focus { outline: none; }` or `:focus { outline: 0; }`, sometimes in conjunction with `:focus-within` and/or `:focus-visible`. We found that 91% of desktop pages have `:focus { outline: 0; }` declared. In some cases, it is removed so that a more effective custom style can be applied. Unfortunately, in many cases it is simply removed and never replaced, which can render a page unusable for keyboard users.
 
-For more information about how to achieve accessible focus indication including some limitations of browser default focus styles, we recommend [Sara Soueidan](https://twitter.com/SaraSoueidan)'s article, <a hreflang="en" href="https://www.sarasoueidan.com/blog/focus-indicators/">"A guide to designing accessible, WCAG-compliant focus indicators"</a>.
+For more information about how to achieve accessible focus indication including some limitations of browser default focus styles, we recommend [Sara Soueidan](https://x.com/SaraSoueidan)'s article, <a hreflang="en" href="https://www.sarasoueidan.com/blog/focus-indicators/">"A guide to designing accessible, WCAG-compliant focus indicators"</a>.
 
 ### User preference media queries and high contrast support
 
@@ -230,7 +230,7 @@ Before the introduction of HTML5, ARIA landmark roles were needed to accomplish 
 
 The most commonly expected landmarks that the majority of web pages should have, are `<main>`, `<header>`, `<nav>` and `<footer>`. We found that only 28% of desktop pages have a native HTML `<main>` element, 17% of desktop pages have an element with a `role="main"`, and 35% of pages have either.
 
-When a page has multiple instances of the same landmark, for example, a primary site navigation and a breadcrumb secondary navigation, it is important that they each have a unique accessible name. This will help an assistive technology user to better understand which navigation landmark they have encountered. Techniques for accomplishing this are covered in [Scott O'Hara](https://twitter.com/scottohara)'s comprehensive article about the <a hreflang="en" href="https://www.scottohara.me/blog/2018/03/03/landmarks.html">various landmarks and how different screen readers navigate them</a>.
+When a page has multiple instances of the same landmark, for example, a primary site navigation and a breadcrumb secondary navigation, it is important that they each have a unique accessible name. This will help an assistive technology user to better understand which navigation landmark they have encountered. Techniques for accomplishing this are covered in [Scott O'Hara](https://x.com/scottohara)'s comprehensive article about the <a hreflang="en" href="https://www.scottohara.me/blog/2018/03/03/landmarks.html">various landmarks and how different screen readers navigate them</a>.
 
 ### Document titles
 
@@ -261,7 +261,7 @@ A `tabindex` value of `0` allows for an element to be programmatically focusable
 
 Custom elements and widgets that are intended to be interactive and in the keyboard focus order need an explicitly assigned `tabindex="0"`, or they will not be usable by keyboard.
 
-If an element should be focusable but not in the keyboard focus order a `tabindex` value of `-1` (or any negative integer) can be used as a hook to enable programmatically setting focus on the element with JavaScript without adding it to the keyboard focus order. This can be helpful for cases where you'd like to assign focus, such as focusing a heading when navigating to new page within a single page application as covered by [Marcy Sutton](https://twitter.com/marcysutton) in her <a hreflang="en" href="https://www.gatsbyjs.com/blog/2019-07-11-user-testing-accessible-client-routing/">post on accessible client-side routing techniques</a>. Placing non-interactive elements in keyboard focus order creates a confusing experience for blind and low vision users and should be avoided.
+If an element should be focusable but not in the keyboard focus order a `tabindex` value of `-1` (or any negative integer) can be used as a hook to enable programmatically setting focus on the element with JavaScript without adding it to the keyboard focus order. This can be helpful for cases where you'd like to assign focus, such as focusing a heading when navigating to new page within a single page application as covered by [Marcy Sutton](https://x.com/marcysutton) in her <a hreflang="en" href="https://www.gatsbyjs.com/blog/2019-07-11-user-testing-accessible-client-routing/">post on accessible client-side routing techniques</a>. Placing non-interactive elements in keyboard focus order creates a confusing experience for blind and low vision users and should be avoided.
 
 The focus order of the page should always be determined by the document flow meaning the order of the HTML elements in the document. Setting the `tabindex` to a positive integer value overrides the natural order of the page, often leading to failures of <a hreflang="en" href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-focus-order.html">WCAG 2.4.3 - Focus Order</a>. Respecting the natural focus order of a page generally leads to a more accessible experience than over-engineering the keyboard focus order.
 
@@ -282,7 +282,7 @@ When we look at desktop pages that have at least one instance of the `tabindex` 
 * 68.2% use a negative integer, meaning elements are explicitly removed from the keyboard focus order
 * 8.7% have a positive integer value, meaning the web author is trying to control the focus order rather than allowing the DOM structure to do so
 
-While there are valid declarations for the `tabindex` attribute, incorrectly reaching for these techniques leads to common accessibility barriers for many keyboard and assistive technology users. For more information about the pitfalls of using a positive integer for `tabindex` we recommend [Karl Groves](https://twitter.com/karlgroves)' article, <a hreflang="en" href="https://karlgroves.com/2018/11/13/why-using-tabindex-values-greater-than-0-is-bad">"Why using `tabindex` values greater than "0" is bad"</a>.
+While there are valid declarations for the `tabindex` attribute, incorrectly reaching for these techniques leads to common accessibility barriers for many keyboard and assistive technology users. For more information about the pitfalls of using a positive integer for `tabindex` we recommend [Karl Groves](https://x.com/karlgroves)' article, <a hreflang="en" href="https://karlgroves.com/2018/11/13/why-using-tabindex-values-greater-than-0-is-bad">"Why using `tabindex` values greater than "0" is bad"</a>.
 
 ### Skip links
 
@@ -651,7 +651,7 @@ The accessibility tree has a computation system that assigns the accessible name
 
 The accessible name can be derived from an element's content (such as button text), an attribute (such as an image `alt` text value), or an associated element (such as a programmatically associated [`label` for a form control](#the-label-element)). There is a specificity ranking that happens to determine which value is assigned to the accessible name if there are multiple potential sources.
 
-For more information about accessible names visit [Léonie Watson](https://twitter.com/LeonieWatson)'s article, <a hreflang="en" href="https://developer.paciellogroup.com/blog/2017/04/what-is-an-accessible-name/">What is an accessible name?</a>
+For more information about accessible names visit [Léonie Watson](https://x.com/LeonieWatson)'s article, <a hreflang="en" href="https://developer.paciellogroup.com/blog/2017/04/what-is-an-accessible-name/">What is an accessible name?</a>
 
 We can also use ARIA to provide accessible names for elements. There are two ARIA attributes that accomplish this, <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA14.html">`aria-label`</a> and <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA16.html">`aria-labelledby`</a>. Either of these attributes will "win" the accessible name computation and override the natively derived accessible name. It is important to use these two attributes with caution and be sure to test with a screen reader or look at the accessibility tree to confirm that the accessible name is what your users will expect. When using ARIA to name an element, it is important to ensure that the <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Understanding/label-in-name.html">WCAG 2.5.3, Label in Name</a> criterion has not been violated, which expects visible labels to be at least a part of its accessible name.
 
@@ -778,7 +778,7 @@ When considering domain rank, the top 1,000 websites have a lower percentage —
 
 These tools often interfere with assistive technologies and actually make websites less accessible for many, as is explored by a <a hreflang="en" href="https://www.vice.com/en/article/m7az74/people-with-disabilities-say-this-ai-tool-is-making-the-web-worse-for-them">Vice article aptly titled "People with Disabilities Say This AI Tool is Making the Web Worse for Them"</a>. There is even an open-source extension called <a hreflang="en" href="https://www.accessibyebye.org/">accessiByeBye</a> that was specifically developed to block overlays so that assistive technology users are not disrupted in their use of websites use a third-party overlay product.
 
-As civil rights lawyer [Haben Girma](https://twitter.com/HabenGirma) explains in <a hreflang="en" href="https://www.youtube.com/watch?v=R12Z1Sp-u4U">this video about accessibility overlays</a>, "AI is a tool and right now it is extremely limited in what it can do for accessibility". She goes on to explain how auto-generated captions of her name misinterpreted "Haben Girma" as "happen grandma" and how this type of miscommunicated information can impact deaf users.
+As civil rights lawyer [Haben Girma](https://x.com/HabenGirma) explains in <a hreflang="en" href="https://www.youtube.com/watch?v=R12Z1Sp-u4U">this video about accessibility overlays</a>, "AI is a tool and right now it is extremely limited in what it can do for accessibility". She goes on to explain how auto-generated captions of her name misinterpreted "Haben Girma" as "happen grandma" and how this type of miscommunicated information can impact deaf users.
 
 There have been tensions between some of these overlay companies and the disabled communities they purport to serve. For example, The National Federation of the Blind <a hreflang="en" href="https://www.forbes.com/sites/gusalexiou/2021/06/26/largest-us-blind-advocacy-group-bans-web-accessibility-overlay-giant-accessibe/?sh=16621ec55a15">banned accessiBe from their national convention</a> and released a <a hreflang="en" href="https://nfb.org/about-us/press-room/national-convention-sponsorship-statement-regarding-accessibe">this statement about the harm caused by the company</a>.
 
@@ -804,7 +804,7 @@ This <a hreflang="en" href="https://tink.uk/accessibe-and-data-protection/">arti
 
 These widgets have been named as part of many accessibility lawsuits against companies who use them. According to the <a hreflang="en" href="https://info.usablenet.com/2020-report-on-digital-accessibility-lawsuits">UsableNet's 2020 report on Digital Accessibility Lawsuits</a>, "Over 250 companies sued had invested in accessibility widgets or overlays". <a hreflang="en" href="https://sheribyrnehaber.com/technology-doesnt-make-accessibility-hard-people-who-dont-care-do/">Accessibility expert Sherri Byrne-Haber cites</a>, "Ten percent of accessibility lawsuits filed at the end of 2020 were against companies who have installed plugins, overlays, or widgets, thinking they would make them bulletproof to ADA litigation". It's worth noting that accessibility laws are not limited to the Americans with Disabilities Act, there are <a hreflang="en" href="https://www.3playmedia.com/blog/countries-that-have-adopted-wcag-standards-map/">countries all over the world with laws pointing to the WCAG</a>.
 
-For more information about the legal implications of using these overlays, refer to [Lainey Feingold](https://twitter.com/LFLegal)'s article <a hreflang="en" href="https://www.lflegal.com/2020/08/quick-fix/">Honor the ADA: Avoid Web Accessibility Quick-Fix Overlays</a> and Adrian Roselli's article <a hreflang="en" href="https://adrianroselli.com/2020/06/accessibe-will-get-you-sued.html">#accessiBe Will Get You Sued</a>.
+For more information about the legal implications of using these overlays, refer to [Lainey Feingold](https://x.com/LFLegal)'s article <a hreflang="en" href="https://www.lflegal.com/2020/08/quick-fix/">Honor the ADA: Avoid Web Accessibility Quick-Fix Overlays</a> and Adrian Roselli's article <a hreflang="en" href="https://adrianroselli.com/2020/06/accessibe-will-get-you-sued.html">#accessiBe Will Get You Sued</a>.
 
 ### Why do some companies use overlays?
 
@@ -827,7 +827,7 @@ There is no quick fix—the onus is on organizations and digital practitioners t
 
 ## Conclusion
 
-As accessibility advocate <a href="https://twitter.com/thebillygregory/status/552466012713783297?s=20">Billy Gregory once said</a>, "when UX doesn't consider ALL users, shouldn't it be known as SOME User Experience, or SUX". Too often accessibility work is seen as an addition, an edge case, or even comparable to technical debt and not core to the success of a website or product as it should be.
+As accessibility advocate <a href="https://x.com/thebillygregory/status/552466012713783297?s=20">Billy Gregory once said</a>, "when UX doesn't consider ALL users, shouldn't it be known as SOME User Experience, or SUX". Too often accessibility work is seen as an addition, an edge case, or even comparable to technical debt and not core to the success of a website or product as it should be.
 
 The entire product team and organization have to prioritize accessibility as part of their accountabilities in order to succeed, all the way up to the C-suite. Accessibility work needs to <a hreflang="en" href="https://feather.ca/shift-left/">shift left in the product cycle</a>, meaning it needs to be baked into the research, ideation and design stages before it is developed. And most importantly, people with disabilities need to be included in this process.
 

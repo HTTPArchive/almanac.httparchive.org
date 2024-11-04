@@ -20,7 +20,7 @@ featured_stat_label_3: Percentage of mobile sites with service workers that use 
 
 ## Introduction
 
-Six years have passed since [Frances Berriman](https://twitter.com/phae) and [Alex Russell](https://twitter.com/slightlylate) coined the term <a hreflang="en" href="https://infrequently.org/2015/06/progressive-apps-escaping-tabs-without-losing-our-soul/">"Progressive Web App" (PWA)</a>, which represented their vision for web apps that can be just as immersive as native apps.
+Six years have passed since [Frances Berriman](https://x.com/phae) and [Alex Russell](https://x.com/slightlylate) coined the term <a hreflang="en" href="https://infrequently.org/2015/06/progressive-apps-escaping-tabs-without-losing-our-soul/">"Progressive Web App" (PWA)</a>, which represented their vision for web apps that can be just as immersive as native apps.
 The following attributes were listed to distinguish these types of experiences from traditional websites:
 
 - Responsive
@@ -579,7 +579,7 @@ Developers can package their PWAs into native apps with TWA directly, <a hreflan
 
 <a hreflang="en" href="https://www.pwabuilder.com/">PWA Builder</a> is an open-source project that can help web developers to build Progressive Web Apps and package them for app stores like the Microsoft Store and Google Play Store. It starts by reviewing a provided URL to check for an available manifest, service worker, and SSL.
 
-[PWA Builder reviewed 200k URLs over a 3-month timeslot](https://twitter.com/pwabuilder/status/1454250060326318082?s=21) and discovered that:
+[PWA Builder reviewed 200k URLs over a 3-month timeslot](https://x.com/pwabuilder/status/1454250060326318082?s=21) and discovered that:
 
 - 75% had a manifest detected
 - 11.5% had a service worker detected

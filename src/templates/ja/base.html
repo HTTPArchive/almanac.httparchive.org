@@ -111,8 +111,9 @@
 {% block repliesAlt %}{% endblock %}
 {% block mentionsAlt %}{% endblock %}
 
-{% macro onTwitter(twitterHandle) %}Twitterの@{{twitterHandle}}{% endmacro %}
+{% macro onTwitter(twitterHandle) %}Twitter/Xの@{{twitterHandle}}{% endmacro %}
 {% macro onMastodon(mastodonHandle) %}Mastodonの{{mastodonHandle}}{% endmacro %}
+{% macro onBluesky(blueskyHandle) %}Blueskyの{{blueskyHandle}}{% endmacro %}
 {% macro onGitHub(gitHubHandle) %}GitHubの{{gitHubHandle}}{% endmacro %}
 {% macro onLinkedIn(authorName) %}LinkedInの{{authorName}}{% endmacro %}
 {% macro website(authorName) %}{{authorName}} ウェブサイト{% endmacro %}
