@@ -8,13 +8,13 @@ editors: []
 analysts: [bgstandaert, max-ostapenko]
 translators: []
 results: https://docs.google.com/spreadsheets/d/18r8cT6x9lPdM-rXvXjsqx84W7ZDdTDYGD59xr0UGOwg/
-featured_quote:
-featured_stat_1:
-featured_stat_label_1:
-featured_stat_2:
-featured_stat_label_2:
-featured_stat_3:
-featured_stat_label_3:
+featured_quote: TODO
+featured_stat_1: TODO
+featured_stat_label_1: TODO
+featured_stat_2: TODO
+featured_stat_label_2: TODO
+featured_stat_3: TODO
+featured_stat_label_3: TODO
 ---
 
 ## Stateful Tracking
