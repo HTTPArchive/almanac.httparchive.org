@@ -9,7 +9,7 @@ editors: [foxdavidj]
 translators: [ksakae1216]
 discuss: 1756
 results: https://docs.google.com/spreadsheets/d/1kBTglETN_V9UjKqK_EFmFjRexJnQOmLLr-I2Tkotvic/
-housseindjirdeh_bio: HousseinはGoogleの開発提唱者で、スピード、パフォーマンス、ウェブフレームワークのエコシステムに取り組んでいます。彼は <a href="https://twitter.com/hdjirdeh">@hdjirdeh</a> でツイートし、<a hreflang="en" href="https://houssein.me/">https://houssein.me/</a> でブログを書いています。
+housseindjirdeh_bio: HousseinはGoogleの開発提唱者で、スピード、パフォーマンス、ウェブフレームワークのエコシステムに取り組んでいます。彼は <a href="https://x.com/hdjirdeh">@hdjirdeh</a> でツイートし、<a hreflang="en" href="https://houssein.me/">https://houssein.me/</a> でブログを書いています。
 featured_quote: JavaScript はブラウザに送信するリソースの中で最もコストのかかるもので、ダウンロード、解析、コンパイル、そして最終的に実行されます。ブラウザはスクリプトの解析とコンパイルにかかる時間を大幅に短縮しましたが、ダウンロードと実行は、JavaScriptがWebページで処理される際に最もコストのかかる段階となっています。
 featured_stat_1: 89%
 featured_stat_label_1: ファーストパーティよりもサードパーティのコードが多いサイト

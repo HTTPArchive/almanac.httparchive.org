@@ -111,8 +111,9 @@
 {% block repliesAlt %}відповіді{% endblock %}
 {% block mentionsAlt %}згадки{% endblock %}
 
-{% macro onTwitter(twitterHandle) %}@{{twitterHandle}} у Twitter{% endmacro %}
+{% macro onTwitter(twitterHandle) %}@{{twitterHandle}} у Twitter/X{% endmacro %}
 {% macro onMastodon(mastodonHandle) %}{{mastodonHandle}} у Mastodon{% endmacro %}
+{% macro onBluesky(blueskyHandle) %}{{blueskyHandle}} у Bluesky{% endmacro %}
 {% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} на GitHub{% endmacro %}
 {% macro onLinkedIn(authorName) %}{{authorName}} у LinkedIn{% endmacro %}
 {% macro website(authorName) %}вебсайт {{authorName}}{% endmacro %}

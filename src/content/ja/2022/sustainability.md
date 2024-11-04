@@ -811,4 +811,4 @@ CDNの実装は、ウェブサイトをより持続可能にするのに役立�
 
 あなたのユーザーの中には、あなたのウェブサイトがより持続可能であること、およびそれをどのように達成したかを知りたいと思う人もいます。そして、それはすべての人にとって利益になります。
 
-_特別な感謝を込めて<a hreflang="en" href="https://www.wholegraindigital.com/team/tom-greenwood/">Tom Greenwood</a>、[Hannah Smith](https://twitter.com/hanopcan)、[Eugenia Zigisova](https://twitter.com/jevgeniazi)、[Rick Viscomi](https://twitter.com/rick_viscomi)およびこの章を可能にした他の素晴らしい人々全員に。_
+_特別な感謝を込めて<a hreflang="en" href="https://www.wholegraindigital.com/team/tom-greenwood/">Tom Greenwood</a>、[Hannah Smith](https://x.com/hanopcan)、[Eugenia Zigisova](https://x.com/jevgeniazi)、[Rick Viscomi](https://x.com/rick_viscomi)およびこの章を可能にした他の素晴らしい人々全員に。_

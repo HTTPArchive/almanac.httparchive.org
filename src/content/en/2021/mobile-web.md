@@ -40,7 +40,7 @@ We've used a few different data sources in this chapter:
 * HTTP Archive
 * Lighthouse
 * Wappalyzer
-* <a hreflang="en" href="https://twitter.com/paulcalvano/status/1454866401781587969">Akamai</a>
+* <a hreflang="en" href="https://x.com/paulcalvano/status/1454866401781587969">Akamai</a>
 
 It is worth noting that HTTP Archive and Lighthouse data is limited to the data identified from websites' home pages only, and not site-wide. Learn more in our [Methodology](./methodology) page.
 
@@ -884,7 +884,7 @@ Looking at the HTTP Archive's <a hreflang="en" href="https://httparchive.org/rep
   )
 }}
 
-A driving factor in this growth can be attributed to the prevalence of WordPress (source: <a hreflang="en" href="https://twitter.com/rick_viscomi/status/1344380340153016321?s=20">Rick Viscomi on Twitter</a>). WordPress added <a hreflang="en" href="https://make.wordpress.org/core/2020/07/14/lazy-loading-images-in-5-5/">support for native lazy-loading in version 5.5</a> which rolled out to the public on August 11th, 2020.
+A driving factor in this growth can be attributed to the prevalence of WordPress (source: <a hreflang="en" href="https://x.com/rick_viscomi/status/1344380340153016321?s=20">Rick Viscomi on Twitter</a>). WordPress added <a hreflang="en" href="https://make.wordpress.org/core/2020/07/14/lazy-loading-images-in-5-5/">support for native lazy-loading in version 5.5</a> which rolled out to the public on August 11th, 2020.
 
 It's also worth mentioning that incorrectly used, <a hreflang="en" href="https://web.dev/articles/lcp-lazy-loading">Lazy Loading LCP Candidates</a> can harm performance. Making sure to apply `loading="lazy"` only to images below the fold is best practice.
 

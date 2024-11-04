@@ -357,7 +357,7 @@ Een "goed" LCP wordt beschouwd als minder dan 2,5 seconden. De gemiddelde websit
   )
 }}
 
-Hoewel we graag zouden zien dat CMS'en hier veel beter presteren, zijn er nog steeds enkele positieve punten uit deze resultaten. Ten eerste valt het feit dat 61% van de Drupal-websites een goede LCP heeft, vooral op omdat het veel beter is dan de wereldwijde distributie van 48% van de websites met een goede LCP, volgens het [Chrome UX Report](https://twitter.com/ChromeUXReport/status/1293306510509039616). Dat 1 op de 3 of 4 WordPress-websites een goede LCP heeft, is ook best verbazingwekkend, gezien de enorme omvang van het aantal WordPress-websites. Wix heeft wel wat in te halen, maar het is bemoedigend om te zien dat de technici van Wix [actief](https://twitter.com/DanShappir/status/1308043752712343552) bezig zijn met het oplossen van prestatieproblemen, dus dit is iets om door de jaren heen in de gaten te houden.
+Hoewel we graag zouden zien dat CMS'en hier veel beter presteren, zijn er nog steeds enkele positieve punten uit deze resultaten. Ten eerste valt het feit dat 61% van de Drupal-websites een goede LCP heeft, vooral op omdat het veel beter is dan de wereldwijde distributie van 48% van de websites met een goede LCP, volgens het [Chrome UX Report](https://x.com/ChromeUXReport/status/1293306510509039616). Dat 1 op de 3 of 4 WordPress-websites een goede LCP heeft, is ook best verbazingwekkend, gezien de enorme omvang van het aantal WordPress-websites. Wix heeft wel wat in te halen, maar het is bemoedigend om te zien dat de technici van Wix [actief](https://x.com/DanShappir/status/1308043752712343552) bezig zijn met het oplossen van prestatieproblemen, dus dit is iets om door de jaren heen in de gaten te houden.
 
 #### First Input Delay
 

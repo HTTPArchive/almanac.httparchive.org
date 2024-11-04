@@ -8,7 +8,7 @@ analysts: [siakaramalegos, rviscomi, Nithanaroy]
 editors: [jzyang]
 translators: []
 results: https://docs.google.com/spreadsheets/d/13xhPx6o2Nowz_3b3_5ojiF_mY3Lhs25auBKM6eqGZmo/
-siakaramalegos_bio: Sia Karamalegos is a web developer, international conference speaker, and writer. She is a Google Developer Expert in Web Technologies, a Cloudinary Media Developer Expert, a Stripe Community Expert, and co-organizes the Eleventy Meetup. Check out her writing, speaking, and newsletter on <a hreflang="en" href="https://sia.codes/">sia.codes</a> or find her on <a hreflang="en" href="https://twitter.com/thegreengreek">Twitter</a>.
+siakaramalegos_bio: Sia Karamalegos is a web developer, international conference speaker, and writer. She is a Google Developer Expert in Web Technologies, a Cloudinary Media Developer Expert, a Stripe Community Expert, and co-organizes the Eleventy Meetup. Check out her writing, speaking, and newsletter on <a hreflang="en" href="https://sia.codes/">sia.codes</a> or find her on <a hreflang="en" href="https://x.com/thegreengreek">Twitter</a>.
 featured_quote: The more we can set up smart defaults for performance at the framework level, the better we can make the web while also make developers' jobs easier.
 featured_stat_1: 37%
 featured_stat_label_1: Percent of top 1,000 websites passing Core Web Vitals
@@ -506,4 +506,4 @@ Third, continue to optimize for both FID (field/real-user data) and TBT (lab dat
 
 Finally, we saw that WordPress can impact the performance of the top 10M websites, and maybe more. This is a lesson that every CMS and framework should heed. The more we can set up smart defaults for performance at the framework level, the better we can make the web while also make developers' jobs easier.
 
-What did you find most interesting or surprising? Share your thoughts with us on Twitter ([@HTTPArchive](https://twitter.com/HTTPArchive))!
+What did you find most interesting or surprising? Share your thoughts with us on Twitter ([@HTTPArchive](https://x.com/HTTPArchive))!

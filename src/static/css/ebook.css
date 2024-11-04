@@ -133,14 +133,16 @@ tbody tr:nth-child(even) {
   display: flex;
 }
 
+.contributor-avatars {
+  min-width: 5rem;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+}
+
 .contributor-avatar {
   border-radius: 50px;
   background-color: #f7f779;
-  margin-bottom: 1rem;
-  margin-right: 1rem;
   width: 5rem;
-  max-width: 5rem;
-  height: auto;
   transition-duration: 0.3s;
   flex: 1;
 }
