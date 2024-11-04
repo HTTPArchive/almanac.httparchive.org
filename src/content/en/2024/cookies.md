@@ -305,18 +305,62 @@ Among the ten most common domains that set cookies on the web, we only find doma
 
 ## Number of cookies set by websites 
 
-<figure markdown>
-| Number of cookies (desktop top 1M) | First-party | Third-party | All |
-| :---: | :---: | :---: | :---: |
-| "min" |  1 | 1 | 1 |
-| "p25" |  3 | 2 | 4 |
-| "median" |  7 | 5 | 10 |
-| "p75" |  13 | 17 | 24 |
-| "p90" |  22 | 66 | 51 |
-| "p99" | 46 | 331 | 323 |
-| "max" |  160 | 632 | 662 |
-  
-<figcaption>{{ figure_link(caption="Statistics for number of cookies set on desktop pages.", sheets_gid="1448286433", sql_file="nb_cookies_quantiles.sql") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Number of cookies (desktop top 1M) </th>
+        <th>First-party</th>
+        <th>Third-party</th>
+        <th>All</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>min</td>
+        <td class="numeric">1</td>
+        <td class="numeric">1</td>
+        <td class="numeric">1</td>
+      </tr>
+      <tr>
+        <td>p25</td>
+        <td class="numeric">3</td>
+        <td class="numeric">2</td>
+        <td class="numeric">4</td>
+      </tr>
+      <tr>
+        <td>median</td>
+        <td class="numeric">7</td>
+        <td class="numeric">5</td>
+        <td class="numeric">10</td>
+      </tr>
+      <tr>
+        <td>p75</td>
+        <td class="numeric">13</td>
+        <td class="numeric">17</td>
+        <td class="numeric">24</td>
+      </tr>
+      <tr>
+        <td>p90</td>
+        <td class="numeric">22</td>
+        <td class="numeric">66</td>
+        <td class="numeric">51</td>
+      </tr>
+      <tr>
+        <td>p95</td>
+        <td class="numeric">46</td>
+        <td class="numeric">331</td>
+        <td class="numeric">323</td>
+      </tr>
+      <tr>
+        <td>max</td>
+        <td class="numeric">160</td>
+        <td class="numeric">632</td>
+        <td class="numeric">662</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="HTTP version usage for home pages.") }}</figcaption>
 </figure>
 
 <figure markdown>
