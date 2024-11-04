@@ -3,9 +3,9 @@
 title: HTTP
 description: The HTTP chapter of the 2024 Web Almanac covers data on historical versions of HTTP used across the web, as well as the uptick in adoption of HTTP/2 and HTTP/3. Additionally, it looks at higher level features that impact HTTP behaviour, such as resource hints, 103 Early Hints and FetchPriority.
 authors: [rmarx]
-reviewers: [tunetheweb,boetgerr]
+reviewers: [tunetheweb,ChrisBeeti]
 analysts: [tunetheweb]
-editors: [tunetheweb,boetgerr]
+editors: [tunetheweb]
 translators: []
 rmarx_bio: TODO
 results: https://docs.google.com/spreadsheets/d/1PfTZkbmgyLA3NmEICeCyxpMWgP7cKY7EsZl9RciE5S4/

@@ -621,7 +621,10 @@
         "reviewers"
       ],
       "2024": [
-        "developers"
+        "analysts",
+        "developers",
+        "editors",
+        "reviewers"
       ]
     },
     "twitter": "tunetheweb",
@@ -916,6 +919,16 @@
       ]
     },
     "website": "https://chrisadams.me.uk"
+  },
+  "ChrisBeeti": {
+    "avatar_url": "32492572",
+    "github": "ChrisBeeti",
+    "name": "Christian Böttger",
+    "teams": {
+      "2024": [
+        "reviewers"
+      ]
+    }
   },
   "svgeesus": {
     "avatar_url": "2506926",
@@ -3436,6 +3449,9 @@
       ],
       "2022": [
         "reviewers"
+      ],
+      "2024": [
+        "authors"
       ]
     },
     "twitter": "programmingart",
