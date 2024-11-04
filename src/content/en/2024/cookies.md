@@ -48,18 +48,52 @@ Cookies are set by a web server and there are two types of cookies: **first-part
 Third-party cookies may be from a third party, or from a different site or service belonging to the same "first party" as the top-level site. **Third-party cookies** are really **cross-site cookies**. 
 
 **Example**: imagine that the owner of the domain "example.com" also owns "example.net" and that the following cookies are set for a user visiting "https://www.example.com":
-
-<figure markdown>
-| Cookie Name | Set by | Type of Cookie | Reason |
-| :---: | :---: | :---: | :---: |
-| "cookie_a" |  "www.example.com" | First-party | Same domain as visited website |
-| "cookie_b" | "cart.example.com" | First-party | Same domain as visited website: subdomains do not matter |
-| "cookie_c" | "www.example.edu" | Third-party | Different domain than visited website |
-| "cookie_d" | "tracking.example.org" | Third-party | Different domain than visited website |
-| "cookie_e" | "login.example.net" | Third-party | Different domain than visited website even if owned by the same owner in this example (cross-site cookie from the same "first party" at the top-level site) |
-  
-<figcaption>{{ figure_link(caption="Cookie context") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Cookie Name </th>
+        <th>Set by</th>
+        <th>Type of cookie</th>
+        <th>Reason</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>cookie_a</td>
+        <td>www.example.com</td>
+        <td> First-party</td>
+        <td>Same domain as visited website</td>
+      </tr>
+      <tr>
+        <td>cookie_b</td>
+        <td>cart.example.com</td>
+        <td>First-party</td>
+        <td>Same domain as visited website: subdomains do not matter</td>
+      </tr>
+      <tr>
+        <td>cookie_c</td>
+        <td>www.example.edu</td>
+        <td>Third-party</td>
+        <td>Different domain than visited website</td>
+      </tr>
+      <tr>
+        <td>cookie_d</td>
+        <td>tracking.example.org</td>
+        <td>Third-party</td>
+        <td>Different domain than visited website</td>
+      </tr>
+      <tr>
+        <td>cookie_e</td>
+        <td>login.example.net</td>
+        <td>Third-party</td>
+        <td>Different domain than visited website even if owned by the same owner in this example (cross-site cookie from the same "first party" at the top-level site)</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Cookie Context") }}</figcaption>
 </figure>
+
 
 ### Privacy & security risks 
 **Web tracking.** Cookies are used by third parties to track users across websites and record their browsing behavior and interests. In targeted advertising, this data is leveraged to show users advertisements aligned with their interest. This tracking usually takes place the following way; third-party code embedded on a site can set a cookie that identifies a user. Then, the same third-party can record user activity by obtaining that cookie back when the user visits other websites where it is embedded as well  (see also the [privacy](https://almanac.httparchive.org/en/2024/privacy) chapter) We note that first-party cookies can also be used for online tracking, methods such as cookie syncing allow to bypass the limitation of third-party cookies and track users [across different websites](https://dl.acm.org/doi/abs/10.1145/3442381.3449837). 
@@ -99,9 +133,7 @@ First-party cookies are set by the same domain as the website that the user is v
 }}
 
   
-On the top one million (top 1M) most visited websites, about 39% of the cookies are first-party and 61% are third-party cookies. Thus, a majority of the cookies set on the Web are third-party cookies.
-
-We also observe that this distribution is very similar whether these websites are accessed through a desktop or a mobile client. This indicates that overall there is little to no behavior change based on the type of client used. However, some websites may still behave differently and/or use other tracking methods such as fingerprinting depending on the type of client (see the [privacy](https://almanac.httparchive.org/en/2024/privacy) chapter for more).
+On the top one million (top 1M) most visited websites, about 39% of the cookies are first-party and 61% are third-party cookies. Thus, a majority of the cookies set on the Web are third-party cookies. We also observe that this distribution is very similar whether these websites are accessed through a desktop or a mobile client. This indicates that overall there is little to no behavior change based on the type of client used. However, some websites may still behave differently and/or use other tracking methods such as fingerprinting depending on the type of client (see the [privacy](https://almanac.httparchive.org/en/2024/privacy) chapter for more).
 
 {{ figure_markup(
   image="first-and-third-party-prevalence-by-rank-desktop.png",
@@ -257,7 +289,63 @@ Two [cookie prefixes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#
   )
 }}
 
-We measure that 0.032% and 0.030% of the first-party cookies observed on desktop have the "__Host-" and "__Secure-" prefix set, respectively. These numbers are 0.001% for third-party cookies. These results show the very low adoption of these prefixes and the associated defense-in-depth measure since they were first [introduced](https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-rfc6265bis#section-4.1.3.1) at the end of 2015.
+We measure that 0.032% and 0.030% of the first-party cookies observed on desktop have the "__Host-" and "__Secure-" prefix set, respectively. These numbers are 0.001% for third-party cookies. These results show the v<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Age of cookies (desktop top 1M) in bytes </th>
+        <th>First-party</th>
+        <th>Third-party</th>
+        <th>All</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>min</td>
+        <td class="numeric">0</td>
+        <td class="numeric">0</td>
+        <td class="numeric">0</td>
+      </tr>
+      <tr>
+        <td>p25</td>
+        <td class="numeric">1</td>
+        <td class="numeric">30</td>
+        <td class="numeric">30</td>
+      </tr>
+      <tr>
+        <td>median</td>
+        <td class="numeric">183</td>
+        <td class="numeric">365</td>
+        <td class="numeric">365</td>
+      </tr>
+      <tr>
+        <td>p75</td>
+        <td class="numeric">396</td>
+        <td class="numeric">365</td>
+        <td class="numeric">396</td>
+      </tr>
+      <tr>
+        <td>p90</td>
+        <td class="numeric">400</td>
+        <td class="numeric">400</td>
+        <td class="numeric">400</td>
+      </tr>
+      <tr>
+        <td>p95</td>
+        <td class="numeric">400</td>
+        <td class="numeric">400</td>
+        <td class="numeric">400</td>
+      </tr>
+      <tr>
+        <td>max</td>
+        <td class="numeric">400</td>
+        <td class="numeric">400</td>
+        <td class="numeric">400</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Statistics for age of cookies set on desktop pages.") }}</figcaption>
+</figure>ery low adoption of these prefixes and the associated defense-in-depth measure since they were first [introduced](https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-rfc6265bis#section-4.1.3.1) at the end of 2015.
 
 ## Top first and third-party cookies and domains setting them
 
@@ -360,22 +448,67 @@ Among the ten most common domains that set cookies on the web, we only find doma
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="HTTP version usage for home pages.") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Statistics for number of cookies set on desktop pages.") }}</figcaption>
 </figure>
 
-<figure markdown>
-| Number of cookies (mobile top 1M) | First-party | Third-party | All |
-| :---: | :---: | :---: | :---: |
-| "min" |  1 | 1 | 1 |
-| "p25" |  3 | 2 | 4 |
-| "median" |  7 | 4 | 9 |
-| "p75" |  12 | 18 | 24 |
-| "p90" |  21 | 64 | 52 |
-| "p99" | 45 | 327 | 316 |
-| "max" |  168 | 604 | 645 |
-  
-<figcaption>{{ figure_link(caption="Statistics for number of cookies set on mobile pages.", sheets_gid="1448286433", sql_file="nb_cookies_quantiles.sql") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Number of cookies (mobile top 1M) </th>
+        <th>First-party</th>
+        <th>Third-party</th>
+        <th>All</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>min</td>
+        <td class="numeric">1</td>
+        <td class="numeric">1</td>
+        <td class="numeric">1</td>
+      </tr>
+      <tr>
+        <td>p25</td>
+        <td class="numeric">3</td>
+        <td class="numeric">2</td>
+        <td class="numeric">4</td>
+      </tr>
+      <tr>
+        <td>median</td>
+        <td class="numeric">7</td>
+        <td class="numeric">4</td>
+        <td class="numeric">9</td>
+      </tr>
+      <tr>
+        <td>p75</td>
+        <td class="numeric">12</td>
+        <td class="numeric">18</td>
+        <td class="numeric">24</td>
+      </tr>
+      <tr>
+        <td>p90</td>
+        <td class="numeric">21</td>
+        <td class="numeric">64</td>
+        <td class="numeric">52</td>
+      </tr>
+      <tr>
+        <td>p95</td>
+        <td class="numeric">45</td>
+        <td class="numeric">327</td>
+        <td class="numeric">316</td>
+      </tr>
+      <tr>
+        <td>max</td>
+        <td class="numeric">168</td>
+        <td class="numeric">604</td>
+        <td class="numeric">645</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Statistics for number of cookies set on mobile pages.") }}</figcaption>
 </figure>
+
 
 
 
@@ -407,32 +540,121 @@ We see that more websites have a number of first-party cookies that is closer to
 
 ## Size of cookies
 
-<figure markdown>
-| Size of cookies (desktop top 1M) in bytes | First-party | Third-party | All |
-| :---: | :---: | :---: | :---: |
-| "min" |  1 | 1 | 1 |
-| "p25" |  26 | 22 | 23 |
-| "median" |  39 | 36 | 37 |
-| "p75" |  59 | 58 | 58 |
-| "p90" |  148 | 114 | 128 |
-| "p99" | 380 | 274 | 348 |
-| "max" |  4087 | 4094 | 4094 |
-  
-<figcaption>{{ figure_link(caption="Statistics for size of cookies set on desktop pages.", sheets_gid="1882828646", sql_file="size_cookies_quantiles.sql") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Size of cookies (desktop top 1M) in bytes </th>
+        <th>First-party</th>
+        <th>Third-party</th>
+        <th>All</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>min</td>
+        <td class="numeric">1</td>
+        <td class="numeric">1</td>
+        <td class="numeric">1</td>
+      </tr>
+      <tr>
+        <td>p25</td>
+        <td class="numeric">26</td>
+        <td class="numeric">22</td>
+        <td class="numeric">23</td>
+      </tr>
+      <tr>
+        <td>median</td>
+        <td class="numeric">39</td>
+        <td class="numeric">36</td>
+        <td class="numeric">37</td>
+      </tr>
+      <tr>
+        <td>p75</td>
+        <td class="numeric">59</td>
+        <td class="numeric">58</td>
+        <td class="numeric">58</td>
+      </tr>
+      <tr>
+        <td>p90</td>
+        <td class="numeric">148</td>
+        <td class="numeric">114</td>
+        <td class="numeric">128</td>
+      </tr>
+      <tr>
+        <td>p95</td>
+        <td class="numeric">380</td>
+        <td class="numeric">274</td>
+        <td class="numeric">348</td>
+      </tr>
+      <tr>
+        <td>max</td>
+        <td class="numeric">4087</td>
+        <td class="numeric">4094</td>
+        <td class="numeric">4094</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Statistics for size of cookies set on desktop pages.") }}</figcaption>
 </figure>
 
-<figure markdown>
-| Size of cookies (mobile top 1M) in bytes | First-party | Third-party | All |
-| :---: | :---: | :---: | :---: |
-| "min" |  1 | 1 | 1 |
-| "p25" |  26 | 22 | 23 |
-| "median" |  39 | 37 | 38 |
-| "p75" |  59 | 59 | 59 |
-| "p90" |  149 | 114 | 130 |
-| "p99" | 382 | 278 | 352 |
-| "max" |  4086 | 4093 | 4093 |
-  
-<figcaption>{{ figure_link(caption="Statistics for size of cookies set on mobile pages.", sheets_gid="1882828646", sql_file="size_cookies_quantiles.sql") }}</figcaption>
+
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Size of cookies (mobile top 1M) in bytes </th>
+        <th>First-party</th>
+        <th>Third-party</th>
+        <th>All</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>min</td>
+        <td class="numeric">1</td>
+        <td class="numeric">1</td>
+        <td class="numeric">1</td>
+      </tr>
+      <tr>
+        <td>p25</td>
+        <td class="numeric">26</td>
+        <td class="numeric">22</td>
+        <td class="numeric">23</td>
+      </tr>
+      <tr>
+        <td>median</td>
+        <td class="numeric">39</td>
+        <td class="numeric">37</td>
+        <td class="numeric">38</td>
+      </tr>
+      <tr>
+        <td>p75</td>
+        <td class="numeric">59</td>
+        <td class="numeric">59</td>
+        <td class="numeric">59</td>
+      </tr>
+      <tr>
+        <td>p90</td>
+        <td class="numeric">149</td>
+        <td class="numeric">114</td>
+        <td class="numeric">130</td>
+      </tr>
+      <tr>
+        <td>p95</td>
+        <td class="numeric">382</td>
+        <td class="numeric">278</td>
+        <td class="numeric">352</td>
+      </tr>
+      <tr>
+        <td>max</td>
+        <td class="numeric">4086</td>
+        <td class="numeric">4093</td>
+        <td class="numeric">4093</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Statistics for size of cookies set on mobile pages.") }}</figcaption>
 </figure>
 
 This section focuses on the actual size of these cookies. We find that the median size across all cookies observed on desktop during the HTTP Archive crawl of June 2024 is 37 bytes. This median value is consistent across first and third-party cookies as well as clients. The maximal size that we obtain is at about 4K bytes which is consistent with the limits defined in [RFC 6265](https://datatracker.ietf.org/doc/html/rfc6265#section-6.1). Note that because of the way the HTTP Archive tools work and collect the cookies, if websites try to set cookies larger than the limit of 4K bytes this information would be missing from the data analyzed in this chapter. 
@@ -462,33 +684,176 @@ Most cookies used for tracking have a size greater than [35 bytes](https://link.
 
 
 ## Persistence (expiration)
-
-<figure markdown>
-| Age of cookies (desktop top 1M) in bytes | First-party | Third-party | All |
-| :---: | :---: | :---: | :---: |
-| "min" |  0 | 0 | 0 |
-| "p25" |  1 | 30 | 30 |
-| "median" |  183 | 365 | 365 |
-| "p75" |  396 | 365 | 390 |
-| "p90" |  400 | 400 | 400 |
-| "p99" | 400 | 400 | 400 |
-| "max" |  400 | 400 | 400 |
-  
-<figcaption>{{ figure_link(caption="Statistics for age of cookies set on desktop pages.", sheets_gid="135614941", sql_file="age_expire_cookies_quantiles.sql") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Age of cookies (desktop top 1M) in bytes </th>
+        <th>First-party</th>
+        <th>Third-party</th>
+        <th>All</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>min</td>
+        <td class="numeric">0</td>
+        <td class="numeric">0</td>
+        <td class="numeric">0</td>
+      </tr>
+      <tr>
+        <td>p25</td>
+        <td class="numeric">1</td>
+        <td class="numeric">30</td>
+        <td class="numeric">30</td>
+      </tr>
+      <tr>
+        <td>median</td>
+        <td class="numeric">183</td>
+        <td class="numeric">365</td>
+        <td class="numeric">365</td>
+      </tr>
+      <tr>
+        <td>p75</td>
+        <td class="numeric">396</td>
+        <td class="numeric">365</td>
+        <td class="numeric">396</td>
+      </tr>
+      <tr>
+        <td>p90</td>
+        <td class="numeric">400</td>
+        <td class="numeric">400</td>
+        <td class="numeric">400</td>
+      </tr>
+      <tr>
+        <td>p95</td>
+        <td class="numeric">400</td>
+        <td class="numeric">400</td>
+        <td class="numeric">400</td>
+      </tr>
+      <tr>
+        <td>max</td>
+        <td class="numeric">400</td>
+        <td class="numeric">400</td>
+        <td class="numeric">400</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Statistics for age of cookies set on desktop pages.") }}</figcaption>
 </figure>
 
-<figure markdown>
-| Age of cookies (mobile top 1M) in bytes | First-party | Third-party | All |
-| :---: | :---: | :---: | :---: |
-| "min" |  0 | 0 | 0 |
-| "p25" |  1 | 30 | 30 |
-| "median" |  183 | 365 | 365 |
-| "p75" |  396 | 365 | 390 |
-| "p90" |  400 | 400 | 400 |
-| "p99" | 400 | 400 | 400 |
-| "max" |  400 | 400 | 400 |
-  
-<figcaption>{{ figure_link(caption="Statistics for age of cookies set on mobile pages.", sheets_gid="135614941", sql_file="age_expire_cookies_quantiles.sql") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Age of cookies (desktop top 1M) in bytes </th>
+        <th>First-party</th>
+        <th>Third-party</th>
+        <th>All</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>min</td>
+        <td class="numeric">0</td>
+        <td class="numeric">0</td>
+        <td class="numeric">0</td>
+      </tr>
+      <tr>
+        <td>p25</td>
+        <td class="numeric">1</td>
+        <td class="numeric">30</td>
+        <td class="numeric">30</td>
+      </tr>
+      <tr>
+        <td>median</td>
+        <td class="numeric">183</td>
+        <td class="numeric">365</td>
+        <td class="numeric">365</td>
+      </tr>
+      <tr>
+        <td>p75</td>
+        <td class="numeric">396</td>
+        <td class="numeric">365</td>
+        <td class="numeric">396</td>
+      </tr>
+      <tr>
+        <td>p90</td>
+        <td class="numeric">400</td>
+        <td class="numeric">400</td>
+        <td class="numeric">400</td>
+      </tr>
+      <tr>
+        <td>p95</td>
+        <td class="numeric">400</td>
+        <td class="numeric">400</td>
+        <td class="numeric">400</td>
+      </tr><figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Age of cookies (mobile top 1M) in bytes </th>
+        <th>First-party</th>
+        <th>Third-party</th>
+        <th>All</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>min</td>
+        <td class="numeric">0</td>
+        <td class="numeric">0</td>
+        <td class="numeric">0</td>
+      </tr>
+      <tr>
+        <td>p25</td>
+        <td class="numeric">1</td>
+        <td class="numeric">30</td>
+        <td class="numeric">30</td>
+      </tr>
+      <tr>
+        <td>median</td>
+        <td class="numeric">183</td>
+        <td class="numeric">365</td>
+        <td class="numeric">365</td>
+      </tr>
+      <tr>
+        <td>p75</td>
+        <td class="numeric">396</td>
+        <td class="numeric">365</td>
+        <td class="numeric">396</td>
+      </tr>
+      <tr>
+        <td>p90</td>
+        <td class="numeric">400</td>
+        <td class="numeric">400</td>
+        <td class="numeric">400</td>
+      </tr>
+      <tr>
+        <td>p95</td>
+        <td class="numeric">400</td>
+        <td class="numeric">400</td>
+        <td class="numeric">400</td>
+      </tr>
+      <tr>
+        <td>max</td>
+        <td class="numeric">400</td>
+        <td class="numeric">400</td>
+        <td class="numeric">400</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Statistics for age of cookies set on desktop pages.") }}</figcaption>
+</figure>
+      <tr>
+        <td>max</td>
+        <td class="numeric">400</td>
+        <td class="numeric">400</td>
+        <td class="numeric">400</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Statistics for age of cookies set on mobile pages.") }}</figcaption>
 </figure>
 
 After looking into cookie size, let's now dive into cookie age. Cookies are set to an expiration date when they are created. Recall that session cookies expire immediately after the session is over ([see above](#first-and-third-party-cookies-first-and-third-party-cookies)). The median age of first-party cookies is at about 183 days or roughly 6 months, while the median age of third-party cookies is a full year. After less than one day and thirty days, 25% of first-party and third-party cookies expire, respectively. The maximum age among the cookies that we can observe with the instrumentation and collection of the HTTP Archive Tools is of 400 days, this is aligned with the [hard limits](https://developer.chrome.com/blog/cookie-max-age-expires) that Chrome imposes on cookie "Expires" and "Max-Age" attribute. Below, are the cumulative distribution functions (cdf) of the age of the cookies set on the top 1M websites whether it is on a desktop or mobile client.
