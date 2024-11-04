@@ -160,7 +160,8 @@ Additionally,  the prevalence of each cookie type across the ranks is quite simi
 
 Next, we discuss the distribution of different cookie [attributes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie). Furthermore, we zoom into the use of the "SameSite" cookie attribute. The following two figures show the proportion of first and third-party cookies set on the top 1M websites for each client that have one of the following attributes set: "Partitioned", "Session", "HttpOnly", "Secure", "SameSite". Before diving into more details for each attribute, let's observe here again the similarity of the distribution of the different attributes between  desktop or mobile clients.
 
-{{ figure_markup(https://docs.google.com/spreadsheets/d/e/2PACX-1vTLO9Te80QewkuPKnz6eJ7OFcU5q3fZMsdqv7cEncBKrL5zcsIN9sMMg5HQT7ndKze8JJNe-V1IkB-9/pubchart?oid=2023103422&format=interactive
+{{ figure_markup(
+  image="cookies-attributes-overview-desktop.png",
   description="This figures gives an overview of how cookie attributes are used for desktop clients for both first- and third-party cookies. 100% of third-party cookies include the SameSite and Secure attributes. Only 1% of first-party cookies and 6% of third-party cookies use partioned. 16% of first-party cookies set their Session attribute, while this is the case for only 4% of third-party cookies. Finally, 12% of first-party cookies and 19% of third-party cookies use the HttpOnly attribute.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLO9Te80QewkuPKnz6eJ7OFcU5q3fZMsdqv7cEncBKrL5zcsIN9sMMg5HQT7ndKze8JJNe-V1IkB-9/pubchart?oid=2023103422&format=interactive",
   sheets_gid="1700493344"
@@ -300,7 +301,7 @@ In the following section, we report for each client (desktop and mobile) the top
 {{ figure_markup(
   image="top-first-party-cookies-set.png",
   caption="Top first-party cookies set",
-  description="The chart shows the most widely-set first-party cookies. Google analytics sets the "_ga" and "_gid" cookies, which are used for website statistics and analytics reports, on more than 61% of websites fot both mobile and desktop clients." ,
+  description="The chart shows the most widely-set first-party cookies. Google analytics sets the `_ga` and `_gid` cookies, which are used for website statistics and analytics reports, on more than 61% of websites fot both mobile and desktop clients." ,  
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLO9Te80QewkuPKnz6eJ7OFcU5q3fZMsdqv7cEncBKrL5zcsIN9sMMg5HQT7ndKze8JJNe-V1IkB-9/pubchart?oid=380182537&format=interactive",
   sheets_gid="1236728722",
   sql_file = 'top_20_first_party_cookies.sql'
@@ -810,9 +811,9 @@ See the [Privacy chapter](https://almanac.httparchive.org/en/2024/privacy) for s
 
 {{ figure_markup(
   caption="Number of related primary website sets.",
-  content= 64 related primary website sets validated by Google at the moment",
+  content= "64 related primary website sets validated by Google at the moment",
   classes="really-big-number",
-  sheets_gid="199073475""
+  sheets_gid="199073475"
 )
 }}
 
@@ -823,9 +824,10 @@ Chrome ships with a pre-loaded file containing related website sets validated by
 {{ figure_markup(
   image="secondary-domains.png",
   caption="Secondary domains per primary domain.",
-  description="The graph shows secondary domains associated to primary domains for Related Website Sets, which is part of Google's Privacy Sandbox. We observe that if a majority of the primary domains are associated with 5 or less secondary domains, "https://journaldesfemmes.com", "https://ya.ru", and "https://mercadolibre.com" are linked to 8, 17, and 39 secondary domains among which third party requests are handled as if they were all from the first party, respectively." ,
+  description="The graph shows secondary domains associated to primary domains for Related Website Sets, which is part of Google's Privacy Sandbox. We observe that if a majority of the primary domains are associated with 5 or less secondary domains, `https://journaldesfemmes.com`, `https://ya.ru`, and `https://mercadolibre.com` are linked to 8, 17, and 39 secondary domains among which third party requests are handled as if they were all from the first party, respectively.",  
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLO9Te80QewkuPKnz6eJ7OFcU5q3fZMsdqv7cEncBKrL5zcsIN9sMMg5HQT7ndKze8JJNe-V1IkB-9/pubchart?oid=627102878&format=interactive",
-  sheets_gid="199073475"  )
+  sheets_gid="199073475" 
+  )
 }}
 
  
