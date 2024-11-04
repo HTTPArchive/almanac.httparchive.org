@@ -2,19 +2,12 @@
 This module retrieves and extracts trackers as identified by WhoTracks.me
 and appends them to the httparchive.almanac.whotracksme BigQuery table.
 """
-
 # pylint: disable=import-error
-
-from datetime import datetime as DateTime
 import sqlite3
 
 import pandas
 import requests
 from bq_writer import write_to_bq, bigquery
-
-
-# get current year
-year = DateTime.now().year
 
 # Retrieve and extract trackers as identified by WhoTracks.me.
 # https://github.com/ghostery/whotracks.me/blob/master/blog/generating_adblocker_filters.md#loading-the-data
@@ -23,9 +16,9 @@ tracker_db = requests.get(
     timeout=10,
 ).text
 
-trackers_query = f"""
+TRACKERS_QUERY = """
     SELECT
-        '{year}-06-01' AS date,
+        '2024-06-01' AS date,
         categories.name as category,
         tracker,
         domain
@@ -40,7 +33,7 @@ trackers_query = f"""
 """
 connection = sqlite3.connect(":memory:")
 connection.executescript(tracker_db)
-trackers_df = pandas.read_sql(trackers_query, connection)
+trackers_df = pandas.read_sql(TRACKERS_QUERY, connection)
 connection.close()
 
 # Append to almanac.whotracksme BQ table
