@@ -22,7 +22,7 @@ featured_stat_label_3: Third-party cookies are partitioned (CHIPS)
 ---
 
 
-## Introduction {#introduction}
+## Introduction 
 
 The following chapter of the Web Almanac 2024 is focused on cookies. Cookies have multiple functionalities and are to some extent essential for the web e.g., for authentication, fraud prevention and security. However, some cookies can track users across websites and are utilized to build behavior profiles.
 In this chapter, we measure the prevalence and structure of web cookies encountered while visiting the top one million websites during the HTTP Archive crawl of June 2024. 
@@ -37,7 +37,7 @@ Our results indicate both first-party and third-party tracking are common. We sh
 
 ## Definitions
 
-### HTTP cookie {#http-cookie}
+### HTTP cookie 
 
 When a user visits a website, they interact with a web server that can request the user's web browser to set and save an [HTTP cookie](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies). This cookie corresponds to data saved in a text string on the user's device, and is sent with subsequent HTTP requests to the web server. Cookies are used to persist stateful information about users across multiple HTTP requests, which can allow authentication, session management, and tracking. Cookies are also associated with privacy and security risks.
 
@@ -57,16 +57,16 @@ Third-party cookies may be from a third party, or from a different site or servi
 | "cookie_c" | "www.example.edu" | Third-party | Different domain than visited website |
 | "cookie_d" | "tracking.example.org" | Third-party | Different domain than visited website |
 | "cookie_e" | "login.example.net" | Third-party | Different domain than visited website even if owned by the same owner in this example (cross-site cookie from the same "first party" at the top-level site) |
+  
 <figcaption>{{ figure_link(caption="Cookie context") }}</figcaption>
 </figure>
 
-### Privacy & security risks {#privacy-security-risks}
-
+### Privacy & security risks 
 **Web tracking.** Cookies are used by third parties to track users across websites and record their browsing behavior and interests. In targeted advertising, this data is leveraged to show users advertisements aligned with their interest. This tracking usually takes place the following way; third-party code embedded on a site can set a cookie that identifies a user. Then, the same third-party can record user activity by obtaining that cookie back when the user visits other websites where it is embedded as well  (see also the [privacy](https://almanac.httparchive.org/en/2024/privacy) chapter) We note that first-party cookies can also be used for online tracking, methods such as cookie syncing allow to bypass the limitation of third-party cookies and track users [across different websites](https://dl.acm.org/doi/abs/10.1145/3442381.3449837). 
 
 **Cookie theft and session hijacking.** Cookies are used to store session information such as credentials (session token) for authentication purposes across several HTTP requests. However, if these cookies were to be obtained by a malicious actor, they could use them to authenticate to the corresponding web servers. If cookies are not properly set by web servers, they could be prone to cross-site vulnerabilities such as [session hijacking](https://developer.mozilla.org/en-US/docs/Glossary/Session_Hijacking), cross-site request forgery ([CSRF](https://developer.mozilla.org/en-US/docs/Web/Security/Practical_implementation_guides/CSRF_prevention)), cross-site script inclusion ([XSS](https://developer.mozilla.org/en-US/docs/Glossary/Cross-site_scripting)), and others (see also the [security](https://almanac.httparchive.org/en/2024/security) chapter).
 
-### Caveats {#caveats}
+### Caveats
 
 You can learn more about the methodology applied by the HTTP Archive for the Web Almanac in 2024 on the [methodology page](https://almanac.httparchive.org/en/2024/methodology). There are limitations to that methodology which may impact the results in this chapter:
 - Data is collected by automatically visiting websites in a non-interactive way; user interaction could modify the way websites set and use cookies in practice. For example, HTTP Archive's tools do not interact with cookie banners (if any) and so cookies that would be set after interaction with these banners are not observed by our study.
@@ -76,15 +76,15 @@ You can learn more about the methodology applied by the HTTP Archive for the Web
 - The cookies collected for the analysis in this chapter were obtained at the end of the visit of each website page by extracting all cookies stored by the web browser in its cookie jar. As a result, the collected data only contains cookies that are deemed valid by the web browser and successfully set. Thus, if websites attempt to set invalid cookies (too large, attributes mismatch, etc.) they would be missing from our analysis.
 
 
-### Notes {#notes}
+### Notes
 
 The figures plotted in this chapter indicate in their subtitle (a) the type of client device (**desktop** or **mobile**) that was used to access the websites for the plotted data and (b) the top number of websites visited (according to their [CrUX rank](https://developer.chrome.com/blog/crux-rank-magnitude)). If the information is not specified, it must be on one of the axes of the graph.
 
-## Prevalence and structure of cookies {#prevalence-and-structure}
+## Prevalence and structure of cookies
 
 In this section, we report on the prevalence of cookies, their type, and their attributes on the web. 
 
-### First and third-party prevalence {#first-and-third-party-prevalence}
+### First and third-party prevalence
 
 First-party cookies are set by the same domain as the website that the user is visiting, while third-party cookies are set by a different domain [see Definitions](#definitions). In this analysis, we examine the percentage of cookies set on websites that are first- and third-party across clients (desktop or mobile) and CrUX ranks.
 
@@ -124,7 +124,7 @@ We also observe that this distribution is very similar whether these websites ar
 Looking at the prevalence of the type of cookies across website rankings, we observe that more popular websites have a higher proportion of third-party cookies than the ones visited less often. For instance, in comparison to the results reported on the top 1M websites, 23% and 77% of the cookies are first and third-party on the top one thousand (top 1k) websites, respectively. This is likely due to the fact that websites that are the most visited by users embed more third-party code (that in turn sets more third-party cookies) than less visited ones.  
 Additionally,  the prevalence of each cookie type across the ranks is quite similar between desktop and mobile clients; we observe that previous remarks made on the top 1M websites also hold across CrUX ranks. 
 
-### Cookie attributes {#cookie-attributes}
+### Cookie attributes
 
 Next, we discuss the distribution of different cookie [attributes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie). Furthermore, we zoom into the use of the "SameSite" cookie attribute. The following two figures show the proportion of first and third-party cookies set on the top 1M websites for each client that have one of the following attributes set: "Partitioned", "Session", "HttpOnly", "Secure", "SameSite". Before diving into more details for each attribute, let's observe here again the similarity of the distribution of the different attributes between  desktop or mobile clients.
 
@@ -144,7 +144,7 @@ Next, we discuss the distribution of different cookie [attributes](https://devel
 }}
 
 
-#### Partitioned {#partitioned}
+#### Partitioned
 
 Partitioned cookies are stored by [compatible browsers](https://developer.mozilla.org/en-US/docs/Web/Privacy/Privacy_sandbox/Partitioned_cookies#browser_compatibility) using partitioned storage. Cookies that have the "Partitioned" attribute set can only be accessed by the same third party and from the same top-level site where they were created in the first place. In other words, partitioned cookies can not be used for third-party tracking across websites and allow for the legitimate use of third-party cookies on a top-level site. For more details see: [Cookies Having Independent Partitioned State (CHIPS)](https://developer.mozilla.org/en-US/docs/Web/Privacy/Privacy_sandbox/Partitioned_cookies).
  
@@ -177,8 +177,7 @@ Perhaps a bit surprising, 1% of all the first-party cookies that are set on the 
 }}
 
 
-#### Session {#session}
-
+#### Session 
 Session cookies are cookies that are only valid for a single user session. In other words, session cookies are temporary and expire once the user quits the corresponding website they were set on, or closes their web browser, whichever happens first. However, note that some web browsers allow users to restore  a previous session on startup, in that case the session cookies set in that previous session are also restored. 
 
 The results from our analysis on the top 1M websites in June 2024 show that 16% of first-party cookies and only 4% of third-party cookies are session cookies (on both desktop and mobile clients). 
@@ -190,14 +189,14 @@ The ["HttpOnly"](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-C
 Only 12% of first-party cookies have the "HttpOnly" attribute set, while for third-party cookies 19% on desktop and 18% on mobile do. 
 
 
-#### Secure {#secure}
+#### Secure
 
 Cookies with the ["Secure"](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie#secure) attribute are only sent to requests made through HTTPs. This prevents [man-in-the-middle](https://developer.mozilla.org/en-US/docs/Glossary/MitM) attacks.
 
 For first-party cookies, 23% on desktop and 22% on mobile s have the "Secure" attribute and virtually all third-party cookies observed have the "Secure" attribute. Indeed, these third-party cookies also have the "SameSite=None" attribute that requires "Secure" to be set (see below).
 
 
-#### SameSite {#samesite}
+#### SameSite
 
    
 The ["SameSite"](https://developer.mozilla.org/docs/Web/HTTP/Cookies#controlling_third-party_cookies_with_samesite) cookie attribute allows sites to specify when cookies are included with cross-site requests:
@@ -260,7 +259,7 @@ Two [cookie prefixes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#
 
 We measure that 0.032% and 0.030% of the first-party cookies observed on desktop have the "__Host-" and "__Secure-" prefix set, respectively. These numbers are 0.001% for third-party cookies. These results show the very low adoption of these prefixes and the associated defense-in-depth measure since they were first [introduced](https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-rfc6265bis#section-4.1.3.1) at the end of 2015.
 
-## Top first and third-party cookies and domains setting them {#top-first-and-third-party-cookies-and-domains-setting-them}
+## Top first and third-party cookies and domains setting them
 
 In the following section, we report for each client (desktop and mobile) the top ten first-party cookies, third-party cookies, as well as domains that set them. We comment on a few of them using results from [Cookiepedia](https://cookiepedia.co.uk/) and invite curious readers to refer to this resource for more.
 
@@ -304,7 +303,7 @@ The "IDE" and "test_cookie" cookies are set by doubleclick.net (owned by Google)
 
 Among the ten most common domains that set cookies on the web, we only find domains involved in search, targeting, and advertising services. This result outlines the coverage that some third-parties have of the web, for example: Google's owned advertising platform DoubleClick sets cookies on more than 44% of the top 1M websites while others are at about 8% to 12%. 
 
-## Number of cookies set by websites {#number-of-cookies-set-by-websites}
+## Number of cookies set by websites 
 
 <figure markdown>
 | Number of cookies (desktop top 1M) | First-party | Third-party | All |
@@ -316,6 +315,7 @@ Among the ten most common domains that set cookies on the web, we only find doma
 | "p90" |  22 | 66 | 51 |
 | "p99" | 46 | 331 | 323 |
 | "max" |  160 | 632 | 662 |
+  
 <figcaption>{{ figure_link(caption="Statistics for number of cookies set on desktop pages.", sheets_gid="1448286433", sql_file="nb_cookies_quantiles.sql") }}</figcaption>
 </figure>
 
@@ -329,6 +329,7 @@ Among the ten most common domains that set cookies on the web, we only find doma
 | "p90" |  21 | 64 | 52 |
 | "p99" | 45 | 327 | 316 |
 | "max" |  168 | 604 | 645 |
+  
 <figcaption>{{ figure_link(caption="Statistics for number of cookies set on mobile pages.", sheets_gid="1448286433", sql_file="nb_cookies_quantiles.sql") }}</figcaption>
 </figure>
 
@@ -372,6 +373,7 @@ We see that more websites have a number of first-party cookies that is closer to
 | "p90" |  148 | 114 | 128 |
 | "p99" | 380 | 274 | 348 |
 | "max" |  4087 | 4094 | 4094 |
+  
 <figcaption>{{ figure_link(caption="Statistics for size of cookies set on desktop pages.", sheets_gid="1882828646", sql_file="size_cookies_quantiles.sql") }}</figcaption>
 </figure>
 
@@ -385,6 +387,7 @@ We see that more websites have a number of first-party cookies that is closer to
 | "p90" |  149 | 114 | 130 |
 | "p99" | 382 | 278 | 352 |
 | "max" |  4086 | 4093 | 4093 |
+  
 <figcaption>{{ figure_link(caption="Statistics for size of cookies set on mobile pages.", sheets_gid="1882828646", sql_file="size_cookies_quantiles.sql") }}</figcaption>
 </figure>
 
@@ -426,6 +429,7 @@ Most cookies used for tracking have a size greater than [35 bytes](https://link.
 | "p90" |  400 | 400 | 400 |
 | "p99" | 400 | 400 | 400 |
 | "max" |  400 | 400 | 400 |
+  
 <figcaption>{{ figure_link(caption="Statistics for age of cookies set on desktop pages.", sheets_gid="135614941", sql_file="age_expire_cookies_quantiles.sql") }}</figcaption>
 </figure>
 
@@ -439,6 +443,7 @@ Most cookies used for tracking have a size greater than [35 bytes](https://link.
 | "p90" |  400 | 400 | 400 |
 | "p99" | 400 | 400 | 400 |
 | "max" |  400 | 400 | 400 |
+  
 <figcaption>{{ figure_link(caption="Statistics for age of cookies set on mobile pages.", sheets_gid="135614941", sql_file="age_expire_cookies_quantiles.sql") }}</figcaption>
 </figure>
 
@@ -466,9 +471,9 @@ After looking into cookie size, let's now dive into cookie age. Cookies are set 
 
 From the graph, we deduce that about 45 % of cookies expire after 90 days. We find the same results for both mobile and desktop clients. Additionally, 75% of cookies have a lifespan of maximum 1 year, while the other half remain stored in the browser for longer than a year. In theory, the longer the lifespan of the cookies, the longer that they can re-identify a recurring user. For this reason, most tracking cookies are typically stored in the browser for a longer time. 
 
-## Privacy Sandbox initiative {#privacy-sandbox-initiative}
+## Privacy Sandbox initiative 
 
-### What is the Privacy Sandbox initiative? {#what-is-the-privacy-sandbox-initiative?}
+### What is the Privacy Sandbox initiative?
 
 In [2019](https://blog.google/products/chrome/building-a-more-private-web/), Google announced the launch of the [Privacy Sandbox](https://developers.google.com/privacy-sandbox) initiative to reduce cross-site (Web) and cross-app (Android) tracking while retaining utility for advertising and other use cases that historically have relied on third-party cookies and other tracking mechanisms . The Privacy Sandbox is composed of more than [20 different proposals](https://privacysandbox.com) that aim to diminish the use of unique identifiers, limiting covert tracking, fighting spam and fraud, showing relevant ads to users, and measuring ad conversions.
 
@@ -500,7 +505,7 @@ See the [Privacy chapter](https://almanac.httparchive.org/en/2024/privacy) for s
 [Cookies Having Independent Partitioned State (CHIPS)
 ](https://developers.google.com/privacy-sandbox/cookies/chips) allow web developers to specify that they would like the cookies that they are setting to be saved in a partitioned storage, i.e., in a separate cookie jar per top-level site. CHIPS cookies correspond to the partitioned cookies discussed previously in this chapter, see [here](#partitioned-partitioned).
 
-### Related Website Sets {#related-website-sets}
+### Related Website Sets
 
 [Related Website Sets](https://developers.google.com/privacy-sandbox/cookies/related-website-sets) allow websites from the same owner to share cookies among themselves.The creation and submission of a Related Website Set is done at the moment through opening a pull request on a [GitHub repository](https://github.com/GoogleChrome/related-website-sets) that Google employees check and merge if deemed valid. Websites that belong to the same related website set must also indicate it by placing a corresponding file at the [.well-known URI](https://www.iana.org/assignments/well-known-uris/well-known-uris.xhtml) "/.well-known/related-website-set.json".
 
@@ -526,7 +531,7 @@ Chrome ships with a pre-loaded file containing related website sets validated by
 
  
 
-### Attestation file {#attestation-file}
+### Attestation file
 
 In order to use some of the Privacy Sandbox APIs, API callers have to go through an [enrollment](https://developers.google.com/privacy-sandbox/private-advertising/enrollment) process to declare that they will not abuse these APIs for cross-site re-identification, but only for their intended use cases. The legal implications of this commitment if not respected is quite unclear, but this allows these callers to obtain an attestation file that must be placed at the .well-known URI "/.well-know/privacy-sandbox-attestations.json" on the domain they registered to call these APIs from.
 
@@ -542,7 +547,7 @@ We used a [custom crawler](https://github.com/privacysandstorm/well-known-crawle
   sheets_gid="2119972682"  )
 }}
 
-## Conclusion {#conclusion}
+## Conclusion
 
 In this chapter, we report on the use of cookies on the web. Our analysis allows us to answer multiple questions: 
 
