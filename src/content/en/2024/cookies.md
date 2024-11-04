@@ -733,60 +733,6 @@ Most cookies used for tracking have a size greater than [35 bytes](https://link.
         <td class="numeric">400</td>
         <td class="numeric">400</td>
       </tr><figure>
-  <table>
-    <thead>
-      <tr>
-        <th>Age of cookies (mobile top 1M) in bytes </th>
-        <th>First-party</th>
-        <th>Third-party</th>
-        <th>All</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>min</td>
-        <td class="numeric">0</td>
-        <td class="numeric">0</td>
-        <td class="numeric">0</td>
-      </tr>
-      <tr>
-        <td>p25</td>
-        <td class="numeric">1</td>
-        <td class="numeric">30</td>
-        <td class="numeric">30</td>
-      </tr>
-      <tr>
-        <td>median</td>
-        <td class="numeric">183</td>
-        <td class="numeric">365</td>
-        <td class="numeric">365</td>
-      </tr>
-      <tr>
-        <td>p75</td>
-        <td class="numeric">396</td>
-        <td class="numeric">365</td>
-        <td class="numeric">396</td>
-      </tr>
-      <tr>
-        <td>p90</td>
-        <td class="numeric">400</td>
-        <td class="numeric">400</td>
-        <td class="numeric">400</td>
-      </tr>
-      <tr>
-        <td>p95</td>
-        <td class="numeric">400</td>
-        <td class="numeric">400</td>
-        <td class="numeric">400</td>
-      </tr>
-      <tr>
-        <td>max</td>
-        <td class="numeric">400</td>
-        <td class="numeric">400</td>
-        <td class="numeric">400</td>
-      </tr>
-    </tbody>
-  </table>
   <figcaption>{{ figure_link(caption="Statistics for age of cookies set on desktop pages.") }}</figcaption>
 </figure>
       <tr>
