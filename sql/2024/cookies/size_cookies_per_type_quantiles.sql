@@ -12,8 +12,8 @@ SELECT
   MAX(CAST(size AS INT)) AS max
 FROM `httparchive.almanac.cookies`
 WHERE
-  date = "2024-06-01" AND
-  client = "desktop" AND
+  date = '2024-06-01' AND
+  client = 'desktop' AND
   rank <= 1000000 AND --2024 results were mainly extracted for top 1M cookies, feel free to remove this and expand in future
   firstPartyCookie IS NOT NULL
 GROUP BY firstPartyCookie

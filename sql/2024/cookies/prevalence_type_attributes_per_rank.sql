@@ -19,8 +19,8 @@ FROM `httparchive.almanac.cookies`,
   UNNEST([1000, 10000, 100000, 1000000, 10000000, 100000000]) AS rank_grouping
 WHERE
   rank <= rank_grouping AND
-  date = "2024-06-01" AND
-  client = "desktop" AND
+  date = '2024-06-01' AND
+  client = 'desktop' AND
   firstPartyCookie IS NOT NULL -- just in case
 GROUP BY
   rank_grouping
