@@ -126,7 +126,7 @@ Let's now look purely at how HTTP/3 support is being announced via `alt-svc` to 
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQhHn7aWiJiMSVu3o872Lxr45NNZkG7jKa_MyL7aPwdga8gul19txh36PL2Ep4GRcaSYzpvLc-oc_xg/pubchart?oid=458096579&format=interactive",
   sheets_gid="1569509568",
-  sql_file="HTTP/3_usage_site.sql"
+  sql_file="h3_usage_site.sql"
 ) }}
 
 When we [last looked at HTTP/3 support](../2022/http#http3-support) in June 2022, the protocol wasn't even fully standardized yet. Still, due to early deployments from some large players, around 18% of sites in the HTTP Archive dataset indicated they had support for HTTP/3. Now, two years later, we can see that support for the new protocol has steadily risen, up to 26% (desktop) to 28% (mobile), a near 10% overall increase. If that still seems low, it's actually quite similar to HTTP/2's evolution, which equally saw <a hreflang="en" href="https://httparchive.org/reports/state-of-the-web#h2">around 30% uptake in its second year</a> after standardization (2017).
@@ -139,7 +139,7 @@ It is somewhat interesting to see that mobile home pages advertise a little bett
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQhHn7aWiJiMSVu3o872Lxr45NNZkG7jKa_MyL7aPwdga8gul19txh36PL2Ep4GRcaSYzpvLc-oc_xg/pubchart?oid=340546380&format=interactive",
   sheets_gid="880813564",
-  sql_file="HTTP/3_support_from_cdn.sql"
+  sql_file="h3_support_from_cdn.sql"
 ) }}
 
 Similar to HTTP/2+ above, the support for HTTP/3 comes mainly from the CDNs, but in an quite extreme form in my opinion: around 85% of all HTTP/3 responses seen in our dataset came from a CDN. This compares to around 55% of all HTTP/2+ requests. This indicates that today very few website owners are self-deploying HTTP/3 at their origin and re-emphasizes my point from above that fast adoption of new technologies might (sadly) become a large-company-only thing. This is not entirely unexpected however; a lot of the popular "off the shelf" web servers do not have stable, mature, on-by-default HTTP/3 support yet including projects like NodeJS, Apache and nginx. Running a scalable HTTP/3 deployment that uses some of the protocol's advanced features—like connection migration and 0-RTT—is far from easy. Still, I hope to see more people self-hosting HTTP/3 in the (near) future.
@@ -177,7 +177,7 @@ One important remark to make here is that not all CDNs show equally high HTTP/3 
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Percentage of HTTP/3 `alt-svc` responses for all requests served by first-party CDNs (with considerable traffic share).", sheets_gid="1667058296", sql_file="HTTP/3_support_each_cdn_breakdown.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Percentage of HTTP/3 `alt-svc` responses for all requests served by first-party CDNs (with considerable traffic share).", sheets_gid="1667058296", sql_file="h3_support_each_cdn_breakdown.sql") }}</figcaption>
 </figure>
 
 Firstly, we see that some companies go all-in on HTTP/3, with for example Facebook indicating HTTP/3 support on 99.86% of responses! This is in stark contrast to other large companies like Twitter/X, that don't send `alt-svc` at all. Secondly, even CDNs that clearly support HTTP/3 rarely reach high percentages, with Cloudflare leading the pack at 78% and Akamai tagging along at just 7%. This most likely has to do with how exactly the CDNs enable the new protocol. For example, Cloudflare has enabled it by default for their free plans, leading to high (though not universal) use. In contrast, Akamai requires its customers to manually enable the feature in their configuration, which many seem slow/unwilling to do. As such, the amount of HTTP/3 support on the Web _could_ be much higher than around 28% if all CDN customers would allow it. Finally, it is somewhat surprising that some more specialized deployments, like Automattic, heavily lean into HTTP/3 (99.92%) while others like Vercel and Netlify show near-zero HTTP/3 support. I can only speculate on the reasons for the latter, but assume it is mostly due to the complexity of setting up and maintaining the new protocol at scale, while these newer up-and-coming companies prefer to focus on other parts of their stacks first.
