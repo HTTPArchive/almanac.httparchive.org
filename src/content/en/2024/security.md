@@ -740,7 +740,7 @@ Most of the hosts from which resources are fetched and protected by SRI are CDNs
 
 ### Permissions Policy
 
-The [Permissions Policy](https://developer.mozilla.org/docs/Web/HTTP/Permissions_Policy) (formerly known as the Feature Policy) is similar to the Content Security Policy but focuses on controlling access to features rather than resources. Websites can request access to various features from the browser, such as geolocation, webcam, microphone, and more. By employing the Permissions Policy, websites can restrict which features can be accessed by the main site and all embedded `<iframe>` elements, enhancing security and user privacy.
+The [Permissions Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/Permissions_Policy) (formerly known as the Feature Policy) is a set of mechanisms that allow websites to control which browser features can be accessed on a webpage, such as geolocation, webcam, microphone, and more. By using the Permissions Policy, websites can restrict feature access for both the main site and any embedded content, enhancing security and protecting user privacy. This is configured through the `Permissions-Policy` response header for the main site and all its embedded `<iframe>` elements,. Additionally, web administrators can set individual policies for specific `<iframe>` elements using their `allow` attribute.
 
 {{ figure_markup(
   content="+1.3%",
@@ -750,7 +750,7 @@ The [Permissions Policy](https://developer.mozilla.org/docs/Web/HTTP/Permissions
   sql_file="TODO.sql",
 ) }}
 
-In 2022, the adoption of the Permissions Policy saw a significant relative increase of 85%. However, from 2022 to this year, the growth rate has drastically slowed to just 1.3%. This is expected, as the Permissions Policy was only introduced in 2021 in Chromium-based browsers under its current name, leading to an initial spike in adoption.
+In 2022, the adoption of the `Permissions Policy` header saw a significant relative increase of 85%. However, from 2022 to this year, the growth rate has drastically slowed to just 1.3%. This is expected, as the Permissions Policy header was only introduced in 2021 and still solely supported by Chromium-based browsers under its current name, leading to an initial spike in adoption.
 
 <figure>
   <table>
@@ -802,9 +802,9 @@ In 2022, the adoption of the Permissions Policy saw a significant relative incre
   <figcaption>{{ figure_link(caption="Most prevalent Permission Policies", sheets_gid="2018859098", sql_file="TODO.sql") }}</figcaption>
 </figure>
 
-Only 2.8% of desktop hosts and 2.5% of mobile hosts set the policy using the `Permissions-Policy` response header. The policy is primarily used to exclusively opt out of Google's <a hreflang="en" href="https://privacysandbox.com/intl/en_us/proposals/floc/">Federated Learning of Cohorts (FLoC)</a>; 21.3% of hosts that implement the Permissions Policy set the policy as `interest-cohort=()`. This usage is partly due to the controversy that FLoC sparked during its trial period. Although FLoC was ultimately replaced by the [Topics API](https://developer.mozilla.org/docs/Web/API/Topics_API),  the continued use of the `interest-cohort` directive highlights how specific concerns can shape the adoption of web policies.
+Only 2.8% of desktop hosts and 2.5% of mobile hosts set the policy using the `Permissions-Policy` response header. The policy is primarily used to exclusively opt out of Google’s Federated Learning of Cohorts (FLoC); 21.3% of hosts that implement the `Permissions Policy` header set the policy as `interest-cohort=()`. This usage is partly due to the controversy that FLoC sparked during its trial period. Although FLoC was ultimately replaced by the Topics API,  the continued use of the `interest-cohort` directive highlights how specific concerns can shape the adoption of web policies.
 
-All other observed policies with at least 2% of hosts implementing them, are aimed at restricting the permission capabilities of the website itself and/or its embedded `<iframe>` elements. Similar to the Content Security Policy, the Permissions Policy is *"open by default"* instead of *"secure by default"*; absence of the policy entails absence of protection. This approach aims to avoid breaking website functionality when introducing new policies. Notably, 0.28% of sites explicitly use the `*` wildcard policy, allowing the website and all embedded `<iframe>` elements to request any permission - though this is the default behavior when the Permissions Policy is not set.
+All other observed headers with at least 2% of hosts implementing them, are aimed at restricting the permission capabilities of the website itself and/or its embedded `<iframe>` elements. Similar to the Content Security Policy, the Permissions Policy is “open by default” instead of “secure by default”; absence of the policy entails absence of protection. This approach aims to avoid breaking website functionality when introducing new policies. Notably, 0.28% of sites explicitly use the `*` wildcard policy, allowing the website and all embedded `<iframe>` elements (where no more restrictive `allow` attribute is present) to request any permission - though this is the default behavior when the Permissions Policy is not set.
 
 The Permissions Policy can also be defined individually for each embedded `<iframe>` through its `allow` attribute. For example, an `<iframe>` can be permitted to use the geolocation and camera permissions by setting the attribute as follows:
 
@@ -812,7 +812,7 @@ The Permissions Policy can also be defined individually for each embedded `<ifra
 <iframe src="https://example.com" allow="geolocation 'self'; camera *;"></iframe>
 ```
 
-Out of the 21.4 million `<iframe>` elements observed in the crawl, half included the `allow` attribute. This marks a significant increase compared to **even just the previous month**, when only 21% of `<iframe>` elements had the allow attribute - indicating that its usage has more than doubled in just one month. A plausible explanation for this rapid change is that one or several widely-used third-party services have propagated this update across their `<iframe>` elements. Given the ad-specific directives we now observe (displayed in the table below, row 1 and 3) - none of which were present in 2022 - it is likely that an ad service is responsible for this shift.
+Out of the 21.4 million `<iframe>` elements observed in the crawl, half included the `allow` attribute. This marks a significant increase compared to **even just the previous month**, when only 21% of `<iframe>` elements had the `allow` attribute - indicating that its usage has more than doubled in just one month. A plausible explanation for this rapid change is that one or several widely-used third-party services have propagated this update across their `<iframe>` elements. Given the ad-specific directives we now observe (displayed in the table below, row 1 and 3) - none of which were present in 2022 - it is likely that an ad service is responsible for this shift.
 
 <figure>
   <table>
@@ -879,7 +879,7 @@ Out of the 21.4 million `<iframe>` elements observed in the crawl, half included
   <figcaption>{{ figure_link(caption="Most prevalent allow attribute values", sheets_gid="1497012339", sql_file="TODO.sql") }}</figcaption>
 </figure>
 
-Compared to 2022, the top 10 most common directives are now led by three newly introduced directives: `join-ad-interest-group`, `attribution-reporting` and `run-ad-auction`. The first and third directives are specific to Google's Privacy Sandbox. All observed `<iframe>` elements with the allow attribute present use these directives without any arguments (e.g., `'none'` or a specific origin), meaning the loaded page is allowed to request the indicated permission regardless of its origin. This permissive setting suggests that the introduction of these directives may have contributed to the increased use of the `allow` attribute in `<iframe>` elements.
+Compared to 2022, the top 10 most common directives are now led by three newly introduced directives: `join-ad-interest-group`, `attribution-reporting` and `run-ad-auction`. The first and third directives are specific to Google’s Privacy Sandbox. For all observed directives in the top 10, almost none were used in combination with an origin or keyword (i.e.., `'src'`, `'self'`, and `'none'`, ), meaning the loaded page is allowed to request the indicated permission regardless of its origin.
 
 ### Iframe sandbox
 
@@ -1715,6 +1715,20 @@ Finally, we check whether or not robots.txt includes possibly sensitive endpoint
 We see that around 4.3% of websites include at least one `admin` entry in their `robots.txt` file.
 
 This may be used to find an admin-only section of the website, which would otherwise be hidden and finding it would rely on attempting to visit specific subpages under that url. `login`, `signin`, `auth`, `sso` and `account` point to the existence of a mechanism where users can log in using an account they created or received. Each of these endpoints are included in the robots.txt of a number of sites (some of which may be overlapping), with `account` being the more popular one at 2.9% of websites.
+
+### Indirect resellers in `ads.txt`
+
+The [`ads.txt`](https://iabtechlab.com/ads-txt/) file is a standardized format that allows websites to specify which companies are authorized to sell or resell their digital ad space within the complex landscape of programmatic advertising. Companies can be listed as either direct sellers or indirect resellers. Indirect resellers, however, can leave publishers - sites hosting the ads.txt file - more vulnerable to ad fraud because they offer less control over who purchases ad space. This vulnerability was exploited in 2019 by the so-called [404bot scam](https://www.fraud0.com/resources/ads-txt/), resulting in millions of dollars in lost revenue.
+
+{{ figure_markup(
+  content="77.2%",
+  caption="The percentage of desktop ad publishers that entirely avoid indirect resellers.",
+  classes="big-number",
+  sheets_gid="TODO",
+  sql_file="TODO.sql",
+) }}
+
+By refraining from listing indirect sellers, website owners help prevent unauthorized reselling and reduce ad fraud, thereby enhancing the security and integrity of their ad transactions. Among publishers that host an ads.txt file, 77.2% for desktop and 42.4% for mobile avoid resellers entirely, curbing potential fraud.
 
 ## Conclusion
 
