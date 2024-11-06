@@ -336,6 +336,112 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
 </ul>
 {% endmacro %}
 
+{% macro render_analysts() %}
+  {% for analyst in metadata.get('analysts') %}
+    {% if loop.index == 1 %}
+    <h2 id="analysts">
+      <a href="#analysts" class="anchor-link">
+      {% if loop.length == 1 %}{{ self.analyst() }}{% endif -%}
+      {% if loop.length > 1 and loop.index == 1 %}{{ self.analysts() }}{% endif %}
+      </a>
+    </h2>
+    <ul>
+    {% endif %}
+      {% set analystdata = config.contributors[analyst] if analyst in config.contributors else None %}
+      {% if analystdata %}
+      <li>
+          <div aria-hidden="true">
+            <a href="{{ url_for('contributors', year=year, lang=lang, _anchor=analyst) }}" tabindex="-1">
+              {% if analystdata.avatar_url|int != 0 %}
+              <img class="avatar" alt="{{ analystdata.name }} avatar" src="https://avatars.githubusercontent.com/u/{{ analystdata.avatar_url }}?v=4&s=200" height="200" width="200" loading="lazy">
+              {% else %}
+              <img class="avatar" alt="{{ analystdata.name }} avatar" src="{{ analystdata.avatar_url }}" height="200" width="200" loading="lazy">
+              {% endif %}
+            </a>
+          </div>
+          <div class="info">
+            <a href="{{ url_for('contributors', year=year, lang=lang, _anchor=analyst) }}"><span class="name">{{ analystdata.name if analystdata.name else analyst }}</span></a>
+              {% if analystdata.twitter or analystdata.github or analystdata.linkedin or analystdata.website %}
+                <div class="social">
+                  {% if analystdata.twitter %}
+                  <a class="twitter" href="https://x.com/{{ analystdata.twitter }}" aria-labelledby="analyst-{{ analyst }}-twitter">
+                    <svg width="22" height="22" role="img">
+                      <title id="analyst-{{ analyst }}-twitter">{{ onTwitter(analystdata.twitter) }}</title>
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter-logo"></use>
+                    </svg>
+                    @{{ analystdata.twitter }}
+                  </a>
+                  {% endif %}
+                  {% if analystdata.mastodon %}
+                  <a class="mastodon" href="{{ analystdata.mastodon }}" aria-labelledby="analyst-{{ analyst }}-mastodon">
+                    <svg width="22" height="22" role="img">
+                      <title id="analyst-{{ analyst }}-mastodon">{{ onMastodon(analystdata.mastodon) }}</title>
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#mastodon-logo"></use>
+                    </svg>
+                    @{{ analystdata.mastodon }}
+                  </a>
+                  {% endif %}
+                  {% if analystdata.bluesky %}
+                  <a class="bluesky" href="https://bsky.app/{{ analystdata.bluesky }}" aria-labelledby="analyst-{{ analyst }}-bluesky">
+                    <svg width="22" height="22" role="img">
+                      <title id="analyst-{{ analyst }}-bluesky">{{ onBluesky(analystdata.bluesky) }}</title>
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bluesky-logo"></use>
+                    </svg>
+                    @{{ analystdata.bluesky }}
+                  </a>
+                  {% endif %}
+                  {% if analystdata.github %}
+                  <a class="github" href="https://github.com/{{ analystdata.github }}" aria-labelledby="analyst-{{ analyst }}-github">
+                    <svg width="22" height="20">
+                      <title id="analyst-{{ analyst }}-github">{{ onGitHub(analystdata.github) }}</title>
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github-logo"></use>
+                    </svg>
+                    {{ analystdata.github }}
+                  </a>
+                  {% endif %}
+                  {% if analystdata.linkedin %}
+                  <a class="linkedin" href="https://www.linkedin.com/in/{{ analystdata.linkedin }}/" aria-labelledby="analyst-{{ analyst }}-linkedin">
+                    <svg width="22" height="22">
+                      <title id="analyst-{{ analyst }}-linkedin">{{ onLinkedIn(analystdata.name) }}</title>
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin-logo"></use>
+                    </svg>
+                    {{ analystdata.linkedin }}
+                  </a>
+                  {% endif %}
+                  {% if analystdata.website %}
+                  <a class="website" href="{{ analystdata.website }}" aria-labelledby="analyst-{{ analyst }}-website">
+                    <svg width="22" height="22">
+                      <title id="analyst-{{ analyst }}-website">{{ website(analystdata.name) }}</title>
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe-logo"></use>
+                    </svg>
+                    {{ analystdata.website }}
+                  </a>
+                  {% endif %}
+                </div>
+              {% endif %}
+              {% if analystdata.tagline %}
+                <div class="tagline">
+                    {{ analystdata.tagline }}
+                </div>
+              {% endif %}
+              {% if metadata.get(analyst + '_bio') %}
+                <div class="bio">
+                  {{ metadata.get(analyst + '_bio') | replace('&quot;','"') | replace('&amp;','&') | safe }}
+                </div>
+              {% endif %}
+          </div>
+      </li>
+    {% else %}
+      <li>
+          <div class="info">
+            <span class="name">{{ analyst }}</span>
+          </div>
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>
+{% endmacro %}
+
 {% macro render_prevnext() %}
   {% if prev_chapter %}
     {% if chapter_lang_exists(lang, year, prev_chapter['slug']) %}
@@ -441,6 +547,9 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
         {% endif %}
         <section class="authors">
             {{ render_authors() }}
+        </section>
+        <section class="authors">
+            {{ render_analysts() }}
         </section>
         <div id="cta-container" class="invisible">
           {% if metadata.get('discuss') %}
