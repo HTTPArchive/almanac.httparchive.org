@@ -141,14 +141,16 @@ A potentially correlated trend is the adoption of "headless" CMSs and the move t
 Among all websites that use an identifiable CMS, WordPress sites account for the majority of the relative market share—with over 35% adoption on mobile in 2024—followed by Wix (2.8%), Joomla (1.5%), Squarespace (1.5%), and Drupal (1.2%).
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
+  image="top-cms-yoy.png",
+  caption="Top 5 CMSs Year on Year.",
   description="TODO",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODO.sql"
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYh0RHAqp768faimbvZpvS71yJwCaOAFR0AzgotkEphtxphBKR1kt-pqgxA8Uxj4FSii1RQWwgG6rk/pubchart?oid=1804381043&format=interactive",
+  sheets_gid="738765206",
+  sql_file="top_cms_yoy.sql"
   )
 }}
+
+{# TODO find above SQL #}
 
 Comparing YoY, Drupal and Joomla continue to decline in market share while Squarespace and Wix grow (0.5% and 0.8%, respectively). WordPress continues its ascent, increasing 0.6% on mobile over 2023-2024 This represents a slower pace of growth than in previous years.
 
@@ -157,14 +159,16 @@ Comparing YoY, Drupal and Joomla continue to decline in market share while Squar
 This year's chapter includes a new addition where we analyze CMS market share.
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
+  image="cms-adoption-share.png",
+  caption="CMS adoption share.",
   description="TODO",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODO.sql"
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYh0RHAqp768faimbvZpvS71yJwCaOAFR0AzgotkEphtxphBKR1kt-pqgxA8Uxj4FSii1RQWwgG6rk/pubchart?oid=538227468&format=interactive",
+  sheets_gid="738765206",
+  sql_file="top_cms_yoy.sql"
   )
 }}
+
+{# TODO find above SQL (same as above) #}
 
 Staying consistent with existing trends and reports, WordPress remains the most popular CMS in the world, with as much as 71.9% of mobile websites leveraging the open-source platform. Next come the proprietary drag-and-drop CMSs Wix and Squarespace (5.7% and 3.1%, respectively), followed by Joomla at 3%.
 
@@ -199,12 +203,14 @@ There are 200+ known CMS platforms, but we narrowed our list to the top 10 most 
 Below is the percentage of sites on each platform that score "good" (LCP under 2.5s; INP under 200ms; CLS below 0.1) for all three Core Web Vitals:
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
+  image="core-web-vitals-yoy.png",
+  caption="Mobile year-over-year Core Web Vitals performance per CMS.",
   description="TODO",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODO.sql"
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYh0RHAqp768faimbvZpvS71yJwCaOAFR0AzgotkEphtxphBKR1kt-pqgxA8Uxj4FSii1RQWwgG6rk/pubchart?oid=867117364&format=interactive",
+  sheets_gid="216688098",
+  sql_file="core_web_vitals_yoy.sql",
+  width=500,
+  height=559
   )
 }}
 
@@ -240,12 +246,14 @@ The reason why LCP is such a challenging metric is that there are a lot of movin
 However, the top 10 CMSs showed some impressive results when it comes to their YoY LCP improvements and overall scores:
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
+  image="lcp-yoy.png",
+  caption="Mobile year-over-year CMS LCP performance.",
   description="TODO",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODO.sql"
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYh0RHAqp768faimbvZpvS71yJwCaOAFR0AzgotkEphtxphBKR1kt-pqgxA8Uxj4FSii1RQWwgG6rk/pubchart?oid=1116621071&format=interactive",
+  sheets_gid="216688098",
+  sql_file="core_web_vitals_yoy.sql",
+  width=600,
+  height=559
   )
 }}
 
@@ -260,12 +268,14 @@ Cumulative Layout Shift (CLS) is a metric used to measure layout stability. It r
 A website is considered to have good CLS if at least 75% of all site visits score 0.1 or lower.
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
+  image="cls-yoy.png",
+  caption="Mobile year-over-year CMS CLS performance.",
   description="TODO",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODO.sql"
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYh0RHAqp768faimbvZpvS71yJwCaOAFR0AzgotkEphtxphBKR1kt-pqgxA8Uxj4FSii1RQWwgG6rk/pubchart?oid=1756885568&format=interactive",
+  sheets_gid="216688098",
+  sql_file="core_web_vitals_yoy.sql",
+  width=600,
+  height=559
   )
 }}
 
@@ -288,12 +298,14 @@ That said, the YoY improvement and overall CWV pass rate demonstrated by the top
 When it comes to their INP score, the majority of platforms achieve a pass rate of 80% or above:
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
+  image="inp-yoy.png",
+  caption="Mobile year-over-year CMS INP performance.",
   description="TODO",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODO.sql"
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYh0RHAqp768faimbvZpvS71yJwCaOAFR0AzgotkEphtxphBKR1kt-pqgxA8Uxj4FSii1RQWwgG6rk/pubchart?oid=670977052&format=interactive",
+  sheets_gid="216688098",
+  sql_file="core_web_vitals_yoy.sql",
+  width=600,
+  height=559
   )
 }}
 
@@ -317,14 +329,14 @@ In contrast, INP evaluates the responsiveness of the entire page throughout the 
 
 <a hrefland="en" href="https://developers.google.com/web/tools/lighthouse/">Lighthouse</a> is an open-source, automated tool designed to improve the quality of web pages by providing a set of audits that evaluate website:
 
-- performance,
-- accessibility,
+- Performance,
+- Accessibility,
 - SEO,
-- best practices
+- Best Practices
 
 Lighthouse generates reports with lab data that offer developers actionable suggestions for enhancing website performance. However, it's important to note that Lighthouse scores do not directly impact the real-world field data collected by <a hrefland="en" href="https://developers.google.com/web/tools/chrome-user-experience-report">CrUX</a>. You can further explore how Lighthouse <a hrefland="en" href="https://web.dev/lab-and-field-data-differences/">lab scores and field data relate</a>.
 
-The HTTP Archive runs Lighthouse on mobile and desktop web pages, simulating a [slow 4G connection with throttled CPU performance](../2022/methodology#lighthouse).
+The HTTP Archive runs Lighthouse on mobile and desktop web pages, simulating a [slow 4G connection with throttled CPU performance](./methodology#lighthouse).
 
 By analyzing this data, we can gain a different perspective on CMS performance through synthetic tests, which also capture metrics not monitored by CrUX.
 
@@ -333,12 +345,14 @@ By analyzing this data, we can gain a different perspective on CMS performance t
 The Lighthouse <a hrefland="en" href="https://web.dev/performance-scoring/">performance score</a> is a weighted average of several scored metrics.
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
+  image="lighthouse-performance-score.png",
+  caption="Median Lighthouse performance score.",
   description="TODO",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODO.sql"
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYh0RHAqp768faimbvZpvS71yJwCaOAFR0AzgotkEphtxphBKR1kt-pqgxA8Uxj4FSii1RQWwgG6rk/pubchart?oid=2144802411&format=interactive",
+  sheets_gid="14177383",
+  sql_file="lighthouse_scores_per_cms.sql",
+  width=600,
+  height=559
   )
 }}
 
@@ -352,15 +366,17 @@ The major increase shown by proprietary platforms such as Wix and Duda is partly
 
 As we've concluded in previous years, the lower mobile scores are an opportunity for smarter solutions, and optimizations focused on low-end devices with unstable network connections similar to those Lighthouse attempts to emulate. Moreover, it's inherent for mobile devices to fall behind their desktop counterparts, given the faster CPUs and networks available. Nonetheless, the 2024 results are encouraging, and we'll continue to track how CMS platforms fare regarding Lighthouse performance metrics.
 
-#### Year-over-year performance trends
+##### Year-over-year performance trends
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
+  image="lighthouse-mobile-perf-yoy.png",
+  caption="Median Lighthouse mobile performance score.",
   description="TODO",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODO.sql"
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYh0RHAqp768faimbvZpvS71yJwCaOAFR0AzgotkEphtxphBKR1kt-pqgxA8Uxj4FSii1RQWwgG6rk/pubchart?oid=270170798&format=interactive",
+  sheets_gid="1754565121",
+  sql_file="lighthouse_scores_per-cms_yoy.sql",
+  width=600,
+  height=559
   )
 }}
 
@@ -373,26 +389,30 @@ Search Engine Optimization (or SEO) is the practice of improving the quality and
 A CMS and content on it is generally set up to serve as much information to search engine crawlers as possible to make it as easy as possible for them to index site content appropriately in search engine results. Compared to a custom-built website, one might expect a CMS to provide good SEO capabilities, and the Lighthouse scores in this category remain appropriately high.
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
+  image="lighthouse-seo-score.png",
+  caption="Median Lighthouse SEO score.",
   description="TODO",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODO.sql"
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYh0RHAqp768faimbvZpvS71yJwCaOAFR0AzgotkEphtxphBKR1kt-pqgxA8Uxj4FSii1RQWwgG6rk/pubchart?oid=1386400078&format=interactive",
+  sheets_gid="14177383",
+  sql_file="lighthouse_scores_per-cms.sql",
+  width=600,
+  height=559
   )
 }}
 
 The median SEO scores in the top 10 platforms range from 85-100, an impressive increase [from 82-92 in 2022](../2022/cms#seo-score). Given the high median performance scores, it is no surprise Wix takes the lead in SEO as well, scoring a perfect 100 for both mobile and desktop. With median scores as high as 92 for mobile and desktop, the runner-ups provide users with robust SEO best practices.
 
-#### Year-over-year SEO trends
+##### Year-over-year SEO trends
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
+  image="lighthouse-mobile-seo-yoy.png",
+  caption="Median Lighthouse mobile SEO score.",
   description="TODO",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODO.sql"
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYh0RHAqp768faimbvZpvS71yJwCaOAFR0AzgotkEphtxphBKR1kt-pqgxA8Uxj4FSii1RQWwgG6rk/pubchart?oid=61098748&format=interactive",
+  sheets_gid="1754565121",
+  sql_file="lighthouse_scores_per-cms_yoy.sql",
+  width=600,
+  height=559
   )
 }}
 
@@ -407,26 +427,30 @@ Lighthouse provides a set of accessibility audits and returns a weighted average
 Each accessibility audit is either a pass or a fail, but unlike other Lighthouse audits, a page doesn't get points for partially passing an accessibility audit. For example, if some elements have screen reader-friendly names but others don't, that page gets a zero for the screen reader-friendly names audit.
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
+  image="lighthouse-a11y-score.png",
+  caption="Median Lighthouse mobile accessibility score.",
   description="TODO",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODO.sql"
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYh0RHAqp768faimbvZpvS71yJwCaOAFR0AzgotkEphtxphBKR1kt-pqgxA8Uxj4FSii1RQWwgG6rk/pubchart?oid=476143776&format=interactive",
+  sheets_gid="14177383",
+  sql_file="lighthouse_scores_per-cms.sql",
+  width=600,
+  height=559
   )
 }}
 
 In 2024, the median Lighthouse accessibility score for the top 10 CMSs ranges between 74 and 95, [a slight improvement from 77 to 91 in 2022](../2022/cms#accessibility-score). Squarespace has lost the top space by a fraction to Wix, which hits the 94 and 95 marks for mobile and desktop, respectively. 1C-Bitrix had the lowest accessibility scores in 2024 and shows a slight decrease of 2 points for both desktop and mobile, perhaps reflecting that the same sites are delivered to both desktop and mobile devices.
 
-#### Year-over-year accessibility trends
+##### Year-over-year accessibility trends
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
+  image="lighthouse-mobile-a11y-yoy.png",
+  caption="Median Lighthouse mobile accessibility score.",
   description="TODO",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODO.sql"
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYh0RHAqp768faimbvZpvS71yJwCaOAFR0AzgotkEphtxphBKR1kt-pqgxA8Uxj4FSii1RQWwgG6rk/pubchart?oid=476143776&format=interactive",
+  sheets_gid="1754565121",
+  sql_file="lighthouse_scores_per-cms_yoy.sql",
+  width=600,
+  height=559
   )
 }}
 
@@ -446,12 +470,14 @@ Lighthouse's <a hrefland="en" href="https://web.dev/lighthouse-best-practices/">
 By following these best practices, developers can enhance both the functionality and user experience of their websites, ensuring a more secure, stable, and reliable performance across different browsers and devices.
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
+  image="lighthouse-best-practices-score.png",
+  caption="Median Lighthouse best practices score.",
   description="TODO",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODO.sql"
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYh0RHAqp768faimbvZpvS71yJwCaOAFR0AzgotkEphtxphBKR1kt-pqgxA8Uxj4FSii1RQWwgG6rk/pubchart?oid=1321714408&format=interactive",
+  sheets_gid="14177383",
+  sql_file="lighthouse_scores_per-cms.sql",
+  width=600,
+  height=559
   )
 }}
 
@@ -459,15 +485,17 @@ Our 2024 analysis shows significant changes across the board compared to the res
 
 While most other CMSs show worse numbers in the best practices audits, TYPO3 CMS claims the second place with a 96-median score for both mobile and desktop, compared to 83 and 92 (mobile and desktop, respectively) in 2022.
 
-#### Year-over-year Best Practices Trends
+##### Year-over-year Best Practices Trends
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
+  image="lighthouse-mobile-best-practices-yoy.png",
+  caption="Median Lighthouse mobile best practices score.",
   description="TODO",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODO.sql"
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYh0RHAqp768faimbvZpvS71yJwCaOAFR0AzgotkEphtxphBKR1kt-pqgxA8Uxj4FSii1RQWwgG6rk/pubchart?oid=10302778&format=interactive",
+  sheets_gid="1754565121",
+  sql_file="lighthouse_scores_per-cms_yoy.sql",
+  width=600,
+  height=559
   )
 }}
 
@@ -480,24 +508,24 @@ We leveraged HTTP Archive data to analyze the resource weight across various CMS
 Fewer bytes mean lower bandwidth costs, reduced carbon emissions, and faster performance—particularly for users on slower connections. This analysis sheds light on areas where resource optimization can have a meaningful impact on both user experience and sustainability. Read the [Page Weight chapter](../2022/page-weight) for a more detailed analysis.
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
+  image="median-cms-page-weight.png",
+  caption="Median CMS page weight.",
   description="TODO",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODO.sql"
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYh0RHAqp768faimbvZpvS71yJwCaOAFR0AzgotkEphtxphBKR1kt-pqgxA8Uxj4FSii1RQWwgG6rk/pubchart?oid=255848791&format=interactive",
+  sheets_gid="1442275519",
+  sql_file="resource_weights.sql"
   )
 }}
 
 Although we observed a steady trend in increasing page weight over the past several years, in 2024, almost all top five CMSs show notable improvements. Drupal's median page weight has dropped to ~1.7 MB compared to ~2.1 MB in 2022. WordPress and Joomla now hover closely to ~2 MB compared to ~2.3 MB in 2022. Wix is the only CMS on the board that shows a slight increase in median page weight—2.2 MB compared to 2.1MB in 2022. Squarespace continues to deliver the heaviest median page weight of ~3 MB compared to ~3.5MB in 2022.
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
+  image="cms-page-weight-distribution.png",
+  caption="Distribution of CMS page weight.",
   description="TODO",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODO.sql"
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYh0RHAqp768faimbvZpvS71yJwCaOAFR0AzgotkEphtxphBKR1kt-pqgxA8Uxj4FSii1RQWwgG6rk/pubchart?oid=1457951957&format=interactive",
+  sheets_gid="2016584461",
+  sql_file="page_weight_distribution.sql"
   )
 }}
 
@@ -516,12 +544,12 @@ Below, we analyze and compare the resource weight across different CMS platforms
 Images are a significant resource on most websites, often accounting for the largest portion of page weight. In CMS platforms, where visuals are heavily relied upon for design and engagement, image optimization is essential. High-resolution images can slow down page load times if not properly compressed or served in modern formats like WebP. Read more in our [Media subchapter](../2022/media).
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
+  image="cms-size-of-images.png",
+  caption="Median CMS size of images.",
   description="TODO",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODO.sql"
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYh0RHAqp768faimbvZpvS71yJwCaOAFR0AzgotkEphtxphBKR1kt-pqgxA8Uxj4FSii1RQWwgG6rk/pubchart?oid=1544422290&format=interactive",
+  sheets_gid="1442275519",
+  sql_file="resource_weights.sql"
   )
 }}
 
@@ -532,12 +560,14 @@ Advanced image formats greatly improve compression, enabling resource savings an
 We can examine the usage of the different image formats across the top CMSs:
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
+  image="image-format-popularity-by-cms.png",
+  caption="Image format popularity by CMS.",
   description="TODO",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODO.sql"
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYh0RHAqp768faimbvZpvS71yJwCaOAFR0AzgotkEphtxphBKR1kt-pqgxA8Uxj4FSii1RQWwgG6rk/pubchart?oid=1032342538&format=interactive",
+  sheets_gid="809952267",
+  sql_file="image_format_popularity.sql",
+  width=600,
+  height=556
   )
 }}
 
@@ -552,12 +582,12 @@ As of WordPress 6.1, the WebP format conversion is automatic for all WordPress w
 JavaScript powers much of the interactive functionality on modern websites. CMS platforms frequently use various JS libraries and frameworks to enable features like dynamic content loading, form validation, and user engagement tools. However, excessive or poorly optimized JavaScript can negatively impact performance. Find more detailed information in our [JavaScript subchapter](../2022/javascript).
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
+  image="cms-size-of-js.png",
+  caption="Median CMS size of JS.",
   description="TODO",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODO.sql"
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYh0RHAqp768faimbvZpvS71yJwCaOAFR0AzgotkEphtxphBKR1kt-pqgxA8Uxj4FSii1RQWwgG6rk/pubchart?oid=1698213507&format=interactive",
+  sheets_gid="1442275519",
+  sql_file="resource_weights.sql"
   )
 }}
 
@@ -568,12 +598,12 @@ In 2024, we observe rising JavaScript usage across the board. Almost all top fiv
 HTML forms the structural backbone of any web page, defining the layout and content. CMS platforms automatically generate much of the HTML code, sometimes leading to bloated and inefficient markup. While HTML is typically lightweight compared to other resources, unoptimized or overly complex HTML structures can still affect render time and user experience. Find more detailed information in the [Markup subchapter](../2022/markup).
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
+  image="cms-size-of-html.png",
+  caption="Median CMS size of HTML.",
   description="TODO",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODO.sql"
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYh0RHAqp768faimbvZpvS71yJwCaOAFR0AzgotkEphtxphBKR1kt-pqgxA8Uxj4FSii1RQWwgG6rk/pubchart?oid=417293866&format=interactive",
+  sheets_gid="1442275519",
+  sql_file="resource_weights.sql"
   )
 }}
 
@@ -584,12 +614,12 @@ Examining the HTML document sizes, we can see that most of the top CMSs deliver 
 CSS controls the visual styling of a website, dictating elements like layout, colors, and fonts. On CMS platforms, themes and templates often come with extensive CSS files that may include unused or redundant styles. Large CSS files can increase page weight and slow down rendering times. Read more in the [CSS subchapter](../2022/css).
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
+  image="cms-size-of-css.png",
+  caption="Median CMS size of CSS.",
   description="TODO",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODO.sql"
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYh0RHAqp768faimbvZpvS71yJwCaOAFR0AzgotkEphtxphBKR1kt-pqgxA8Uxj4FSii1RQWwgG6rk/pubchart?oid=2059559160&format=interactive",
+  sheets_gid="1442275519",
+  sql_file="resource_weights.sql"
   )
 }}
 
@@ -600,12 +630,12 @@ In 2024, we see a different distribution between platforms that strengthens the 
 CMS-based websites frequently offer a variety of fonts to enhance branding and visual appeal. However, fonts can introduce additional weight to a page, especially when multiple font families or variations are loaded. Unoptimized font loading can delay text rendering and impact the user experience. Explore the [Fonts subchapter](../2022/fonts) for a detailed breakdown.
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
+  image="cms-size-of-fonts.png",
+  caption="Median CMS size of fonts.",
   description="TODO",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODO.sql"
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYh0RHAqp768faimbvZpvS71yJwCaOAFR0AzgotkEphtxphBKR1kt-pqgxA8Uxj4FSii1RQWwgG6rk/pubchart?oid=655172650&format=interactive",
+  sheets_gid="1442275519",
+  sql_file="resource_weights.sql"
   )
 }}
 
@@ -633,12 +663,12 @@ In the following section, we review page builder adoption,along with improvement
 ### Page builders
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
+  image="top-5-page-builders.png",
+  caption="Top 5 page builders.",
   description="TODO",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODO.sql"
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYh0RHAqp768faimbvZpvS71yJwCaOAFR0AzgotkEphtxphBKR1kt-pqgxA8Uxj4FSii1RQWwgG6rk/pubchart?oid=1601231589&format=interactive",
+  sheets_gid="1497515207",
+  sql_file="wordpress_page_builders.sql"
   )
 }}
 
