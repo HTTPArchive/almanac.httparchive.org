@@ -17,15 +17,15 @@ FROM (
     rank_grouping
   FROM
     `httparchive.all.pages`,
-    UNNEST (technologies) AS tech,
-    UNNEST (tech.categories) AS category,
+    UNNEST(technologies) AS tech,
+    UNNEST(tech.categories) AS category,
     UNNEST([1e3, 1e4, 1e5, 1e6, 1e7, 1e8]) AS rank_grouping
   WHERE
     date = '2024-06-01' AND
     rank <= rank_grouping AND
     is_root_page AND
     category = 'CMS'
-    )
+)
 JOIN (
   SELECT
     client,
