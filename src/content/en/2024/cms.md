@@ -12,8 +12,8 @@ LoraRaykova_bio: Lora is a Content Manager at NitroPack with 8+ years of experie
 niko-kaleev_bio: Niko is a Content Writer at NitroPack with 5+ years of experience in dissecting nuanced topics like hosting, Core Web Vitals, web performance metrics and optimizations.
 results: https://docs.google.com/spreadsheets/d/118lwQV_GwFYqIxXvsm57oeadJdjAJEOMCRq1PsTqhfs/
 featured_quote: TODO
-featured_stat_1: TODO
-featured_stat_label_1: TODO
+featured_stat_1: 35.6%
+featured_stat_label_1: Percentage of mobile sites using WordPress.
 featured_stat_2: TODO
 featured_stat_label_2: TODO
 featured_stat_3: TODO
@@ -47,12 +47,12 @@ The CMS landscape is a diverse and interconnected ecosystem, with platforms that
 Our analysis covers both desktop and mobile websites. While most URLs appeared in both datasets, some were accessed exclusively by desktop or mobile devices. We analyzed desktop and mobile results separately to account for these differences and avoid discrepancies.
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
+  image="cms-adoption.png",
+  caption="CMS adoption.",
   description="TODO",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODO.sql"
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYh0RHAqp768faimbvZpvS71yJwCaOAFR0AzgotkEphtxphBKR1kt-pqgxA8Uxj4FSii1RQWwgG6rk/pubchart?oid=2013113638&format=interactive",
+  sheets_gid="310746911",
+  sql_file="cms_adoption.sql"
   )
 }}
 
@@ -69,12 +69,14 @@ For instance, as mentioned earlier, Wappalyzer uses a more strict definition of 
 As of June 2024, CMS adoption worldwide has grown steadily, matching our dataset's increased number of tracked URLs.
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
+  image="cms-adoption-by-geo.png",
+  caption="CMS adoption by geo.",
   description="TODO",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODO.sql"
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYh0RHAqp768faimbvZpvS71yJwCaOAFR0AzgotkEphtxphBKR1kt-pqgxA8Uxj4FSii1RQWwgG6rk/pubchart?oid=2018893523&format=interactive",
+  sheets_gid="708001576",
+  sql_file="cms_adoption_by_geo.sql",
+  width=600,
+  height=538
   )
 }}
 
@@ -84,27 +86,27 @@ CMS adoption is highest in Italy and Spain, where 46% to 44% (40% to 41% in 2022
 
 The year-over-year (YoY) analysis for mobile results shows consistent growth across countries, putting to rest some of our [2022 speculations](../2022/cms#cms-adoption-by-geography) for a wholesale drop in CMS adoption.
 
-For those who noticed the sudden disappearance of the USA from our analysis, let's explore what the CMS adoption rate by region reveals.
+Let's explore what the CMS adoption rate by region reveals.
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
+  image="cms-adoption-by-region.png",
+  caption="CMS adoption by region.",
   description="TODO",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODO.sql"
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYh0RHAqp768faimbvZpvS71yJwCaOAFR0AzgotkEphtxphBKR1kt-pqgxA8Uxj4FSii1RQWwgG6rk/pubchart?oid=996685882&format=interactive",
+  sheets_gid="729753765",
+  sql_file="cms_adoption_by_region.sql"
   )
 }}
 
 Following the trends in the country breakdown, Europe takes the lead with 46% for mobile results in CMS adoption rates. There are no discrepancies in the generated numbers followed by Oceania and the Americas. (44% and 42%, respectively.). It's important to note that North America has a 44% rate of mobile CMS adoption across 1.5 million site pages, as shown in our CMS adoption by subregion graph below.
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
+  image="cms-adoption-by-subregion.png",
+  caption="CMS adoption by subregion.",
   description="TODO",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODO.sql"
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYh0RHAqp768faimbvZpvS71yJwCaOAFR0AzgotkEphtxphBKR1kt-pqgxA8Uxj4FSii1RQWwgG6rk/pubchart?oid=976092675&format=interactive",
+  sheets_gid="855626423",
+  sql_file="cms_adoption_by_subregion.sql"
   )
 }}
 
@@ -113,12 +115,12 @@ Following the trends in the country breakdown, Europe takes the lead with 46% fo
 We examined CMS adoption by the estimated rank of the sites included within the dataset.
 
 {{ figure_markup(
-  image="TODO.png",
+  image="top-cms-by-rank.png",
   caption="TODO.",
   description="TODO",
   chart_url="TODO",
   sheets_gid="TODO",
-  sql_file="TODO.sql"
+  sql_file="top-cms-by-rank.sql"
   )
 }}
 
@@ -329,8 +331,6 @@ By analyzing this data, we can gain a different perspective on CMS performance t
 #### Performance score
 
 The Lighthouse <a hrefland="en" href="https://web.dev/performance-scoring/">performance score</a> is a weighted average of several scored metrics.
-
-####
 
 {{ figure_markup(
   image="TODO.png",
@@ -613,7 +613,16 @@ This year, all top five CMSs show changes in the amount of font bytes delivered.
 
 ## WordPress in 2024
 
-Of the 16,129,455 mobile sites in this year's crawl, WordPress is used by 5,734,742 sites for a total of 35.6% market share. By comparison, the next closest CMS is Wix, with 456,253 sites or 2.8% market share.
+{{ figure_markup(
+  caption="Percentage of mobile sites using WordPress.",
+  content="35.6%",
+  classes="big-number",
+  sheets_gid="1621293918",
+  sql_file="top-cms-by-geo.sql"
+)
+}}
+
+Of the over 16 million mobile sites in this year's crawl, WordPress is used by 5.7 millions sites for a total of 35.6% of sites. By comparison, the next closest CMS is Wix, with 456,253 sites or 2.8% of sites.
 
 WordPress's global dominance stems from two main factors—a community that maintains and improves the functionality of the open-source project, and the CMS's flexibility in serving a wide range of websites and users.
 
