@@ -14,8 +14,8 @@ results: https://docs.google.com/spreadsheets/d/118lwQV_GwFYqIxXvsm57oeadJdjAJEO
 featured_quote: TODO
 featured_stat_1: 35.6%
 featured_stat_label_1: Percentage of mobile sites using WordPress.
-featured_stat_2: TODO
-featured_stat_label_2: TODO
+featured_stat_2: 49%
+featured_stat_label_2: Percentage of mobile sites using a CMS.
 featured_stat_3: TODO
 featured_stat_label_3: TODO
 ---
@@ -116,15 +116,15 @@ We examined CMS adoption by the estimated rank of the sites included within the 
 
 {{ figure_markup(
   image="top-cms-by-rank.png",
-  caption="TODO.",
+  caption="CMS usage by rank.",
   description="TODO",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="top-cms-by-rank.sql"
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYh0RHAqp768faimbvZpvS71yJwCaOAFR0AzgotkEphtxphBKR1kt-pqgxA8Uxj4FSii1RQWwgG6rk/pubchart?oid=337512055&format=interactive",
+  sheets_gid="1821067375",
+  sql_file="cms_adoption_by_rank_all.sql"
   )
 }}
 
-According to the dataset, CMSs are used by fewer than 7% of the top 1,000 websites for both desktop and mobile, even though 51% of all mobile sites in the dataset use a CMS.
+According to the dataset, CMSs are used by approximately 8% of the top 1,000 websites for both desktop and mobile, even though 49% of all mobile sites in the dataset use a CMS.
 
 This has been an ongoing trend for the past few years, most likely attributed to business's size relative to its web development needs. Smaller businesses (represented by a large chunk of our dataset here) tend to use popular CMSs for their affordability and usability. In these cases, it's often easy to identify their CMS.
 
@@ -136,7 +136,9 @@ A potentially correlated trend is the adoption of "headless" CMSs and the move t
 
 ## Most popular CMSs
 
-### Top 5 CMS adoption growth (2020-2024)
+{# TODO - add an intro paragraph #}
+
+### Top 5 CMS adoption growth
 
 Among all websites that use an identifiable CMS, WordPress sites account for the majority of the relative market share—with over 35% adoption on mobile in 2024—followed by Wix (2.8%), Joomla (1.5%), Squarespace (1.5%), and Drupal (1.2%).
 
