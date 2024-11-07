@@ -11,7 +11,7 @@ for (var auditId in auditsObj) {
       weight: audit.weight || 0,
       title: audit.title || '',
       description: audit.description || '',
-      score: audit.score || null
+      score: audit.score ?? null
     });
   }
 }
