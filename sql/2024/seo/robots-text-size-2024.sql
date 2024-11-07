@@ -37,7 +37,7 @@ FROM (
     page AS site,
     getRobotsSize(payload) AS robots_size
   FROM
-    `httparchive.all.pages` TABLESAMPLE SYSTEM (0.01 PERCENT)
+    `httparchive.all.pages`
   WHERE
     DATE = '2024-06-01'
 )
