@@ -36,7 +36,7 @@ CMSs vary significantly in their approach to site creation. Some offer ready-mad
 
 In this chapter of the Web Almanac, we explore the entire ecosystem surrounding CMS platforms for 2023 and 2024, respectively. When we refer to a CMS, we mean the platform itself and the associated services and tools that form its ecosystem.
 
-Based on <a hrefland="en" href="https://www.wappalyzer.com/technologies/cms">Wappalyzer's CMS definition</a>, our dataset identifies 249 individual CMS platforms.
+Based on <a hreflang="en" href="https://www.wappalyzer.com/technologies/cms">Wappalyzer's CMS definition</a>, our dataset identifies 249 individual CMS platforms.
 
 Some CMSs are open source, like WordPress and Joomla, while others are proprietary, such as Wix and Squarespace. These platforms offer hosting options, from free and self-hosted plans to premium, enterprise-level services.
 
@@ -80,7 +80,7 @@ As of June 2024, CMS adoption worldwide has grown steadily, matching our dataset
   )
 }}
 
-This year, unlike our analysis in 2022, we differentiate between countries and regions to offer better insights into geographical CMS usage. \
+This year, unlike our analysis in 2022, we differentiate between countries and regions to offer better insights into geographical CMS usage.
 
 CMS adoption is highest in Italy and Spain, where 46% to 44% (40% to 41% in 2022) of mobile sites are built with a CMS. Brazil and Indonesia have the lowest adoption rates, with only 32% and 24%, respectively. Japan is seeing steady growth in mobile CMS adoption—39% in 2024 compared to 32% in 2022. Conversely, India shows a slight decrease in adoption (2% since June 2022). This can be attributed to the growing dataset and tracked URL increase, which helps us better understand the Indian web development market.
 
@@ -126,7 +126,7 @@ We examined CMS adoption by the estimated rank of the sites included within the 
 
 According to the dataset, CMSs are used by fewer than 7% of the top 1,000 websites for both desktop and mobile, even though 51% of all mobile sites in the dataset use a CMS.
 
-This has been an ongoing trend for the past few years, most likely attributed to business's size relative to its web development needs. Smaller businesses (represented by a large chunk of our dataset here) tend to use popular CMSs for their affordability and usability. In these cases, it's often easy to identify their CMS. \
+This has been an ongoing trend for the past few years, most likely attributed to business's size relative to its web development needs. Smaller businesses (represented by a large chunk of our dataset here) tend to use popular CMSs for their affordability and usability. In these cases, it's often easy to identify their CMS.
 
 In contrast, larger businesses with higher-ranking websites often use custom-built CMS solutions that we can't readily identify. They are also more likely to obfuscate the identity of their CMS. It is improbable that more than 90% of the top 1,000 would forgo a CMS entirely.It's much more likely that they don't appear in our dataset.
 
@@ -178,11 +178,11 @@ While the flexibility, community-driven development, and extensive ecosystem of 
 
 With the introduction of Core Web Vitals four years ago, user experience has become a priority. That said, while users were mainly comparing CMS platforms based on ease of use, number of plugins/extensions, and themes available, they added one additional criterion—the default user experience offered by a particular platform.
 
-To examine these experiences, we gathered data from the <a hrefland="en" href="https://developer.chrome.com/docs/crux">Chrome User Experience Report (CrUX)</a> and interrogated three specific metrics:
+To examine these experiences, we gathered data from the <a hreflang="en" href="https://developer.chrome.com/docs/crux">Chrome User Experience Report (CrUX)</a> and interrogated three specific metrics:
 
 - Core Web Vitals
 - Lighthouse scores
-- Resource weights \
+- Resource weights
 
 ### Core Web Vitals
 
@@ -198,7 +198,7 @@ If you're interested in how websites perform against the Core Web Vitals on a la
 
 In this section, we are interested in looking at the Core Web Vitals specifically in the context of CMS platforms.
 
-There are 200+ known CMS platforms, but we narrowed our list to the top 10 most used CMSs, considering they have more than 85% market share. We used the <a hrefland="en" href="https://lookerstudio.google.com/reporting/55bc8fad-44c2-4280-aa0b-5f3f0cd3d2be/page/M6ZPC">Core Web Vitals Technology Report</a>, which provides a global overview of how different technologies perform in relation to Google's Core Web Vitals.
+There are 200+ known CMS platforms, but we narrowed our list to the top 10 most used CMSs, considering they have more than 85% market share. We used the <a hreflang="en" href="https://lookerstudio.google.com/reporting/55bc8fad-44c2-4280-aa0b-5f3f0cd3d2be/page/M6ZPC">Core Web Vitals Technology Report</a>, which provides a global overview of how different technologies perform in relation to Google's Core Web Vitals.
 
 Below is the percentage of sites on each platform that score "good" (LCP under 2.5s; INP under 200ms; CLS below 0.1) for all three Core Web Vitals:
 
@@ -291,7 +291,7 @@ Simply put, the newest Core Web Vital measures the time from the interaction (fo
 
 An INP below or at 200 milliseconds means a page has good responsiveness.
 
-Considering the whole interaction latency, including input delay, processing time, and presentation delay, the introduction of INP led to a global drop in the Core Web Vitals pass rate.  \
+Considering the whole interaction latency, including input delay, processing time, and presentation delay, the introduction of INP led to a global drop in the Core Web Vitals pass rate.
 
 That said, the YoY improvement and overall CWV pass rate demonstrated by the top 10 CMSs is even more impressive, considering the big changes INP introduced.
 
@@ -327,14 +327,14 @@ In contrast, INP evaluates the responsiveness of the entire page throughout the 
 
 ### Lighthouse
 
-<a hrefland="en" href="https://developers.google.com/web/tools/lighthouse/">Lighthouse</a> is an open-source, automated tool designed to improve the quality of web pages by providing a set of audits that evaluate website:
+<a hreflang="en" href="https://developers.google.com/web/tools/lighthouse/">Lighthouse</a> is an open-source, automated tool designed to improve the quality of web pages by providing a set of audits that evaluate website:
 
 - Performance,
 - Accessibility,
 - SEO,
 - Best Practices
 
-Lighthouse generates reports with lab data that offer developers actionable suggestions for enhancing website performance. However, it's important to note that Lighthouse scores do not directly impact the real-world field data collected by <a hrefland="en" href="https://developers.google.com/web/tools/chrome-user-experience-report">CrUX</a>. You can further explore how Lighthouse <a hrefland="en" href="https://web.dev/lab-and-field-data-differences/">lab scores and field data relate</a>.
+Lighthouse generates reports with lab data that offer developers actionable suggestions for enhancing website performance. However, it's important to note that Lighthouse scores do not directly impact the real-world field data collected by <a hreflang="en" href="https://developers.google.com/web/tools/chrome-user-experience-report">CrUX</a>. You can further explore how Lighthouse <a hreflang="en" href="https://web.dev/lab-and-field-data-differences/">lab scores and field data relate</a>.
 
 The HTTP Archive runs Lighthouse on mobile and desktop web pages, simulating a [slow 4G connection with throttled CPU performance](./methodology#lighthouse).
 
@@ -342,7 +342,7 @@ By analyzing this data, we can gain a different perspective on CMS performance t
 
 #### Performance score
 
-The Lighthouse <a hrefland="en" href="https://web.dev/performance-scoring/">performance score</a> is a weighted average of several scored metrics.
+The Lighthouse <a hreflang="en" href="https://web.dev/performance-scoring/">performance score</a> is a weighted average of several scored metrics.
 
 {{ figure_markup(
   image="lighthouse-performance-score.png",
@@ -380,7 +380,7 @@ As we've concluded in previous years, the lower mobile scores are an opportunity
   )
 }}
 
-The YoY performance data from 2023 to 2024 reveals an encouraging trend of incremental improvements among top CMS platforms. Duda and Wix continue to lead in mobile performance, with Duda improving from a median Lighthouse score of 56 to 59 and Wix rising from 50 to 55. WordPress also shows improvement, increasing from 33 to 38, alongside Joomla and Drupal, which moved from 35 to 39 and 36 to 40, respectively. These results reflect a broader industry focus on optimizing mobile performance, although some platforms, such as Squarespace and Weebly, showed only minor gains. These varied improvements highlight the ongoing challenges and priorities across CMS platforms as they work toward enhanced user experiences on mobile devices. \
+The YoY performance data from 2023 to 2024 reveals an encouraging trend of incremental improvements among top CMS platforms. Duda and Wix continue to lead in mobile performance, with Duda improving from a median Lighthouse score of 56 to 59 and Wix rising from 50 to 55. WordPress also shows improvement, increasing from 33 to 38, alongside Joomla and Drupal, which moved from 35 to 39 and 36 to 40, respectively. These results reflect a broader industry focus on optimizing mobile performance, although some platforms, such as Squarespace and Weebly, showed only minor gains. These varied improvements highlight the ongoing challenges and priorities across CMS platforms as they work toward enhanced user experiences on mobile devices.
 
 #### SEO score
 
@@ -422,7 +422,7 @@ The year-over-year comparison from 2023 to 2024 reveals consistently high SEO sc
 
 An accessible website is a site designed and developed so that people with disabilities can use them. Web accessibility also benefits people without disabilities, such as those on slow internet connections. Read more in our [Accessibility chapter](../2022/accessibility).
 
-Lighthouse provides a set of accessibility audits and returns a weighted average of all of them. See <a hrefland="en" href="https://web.dev/accessibility-scoring/">scoring details</a> for a full list of how each audit is weighted.
+Lighthouse provides a set of accessibility audits and returns a weighted average of all of them. See <a hreflang="en" href="https://web.dev/accessibility-scoring/">scoring details</a> for a full list of how each audit is weighted.
 
 Each accessibility audit is either a pass or a fail, but unlike other Lighthouse audits, a page doesn't get points for partially passing an accessibility audit. For example, if some elements have screen reader-friendly names but others don't, that page gets a zero for the screen reader-friendly names audit.
 
@@ -458,7 +458,7 @@ The 2023 to 2024 comparison reveals largely stable accessibility scores across t
 
 #### Best practices
 
-Lighthouse's <a hrefland="en" href="https://web.dev/lighthouse-best-practices/">best practices</a> audit evaluates whether web pages adhere to widely accepted web standards across various metrics. These include critical factors such as:
+Lighthouse's <a hreflang="en" href="https://web.dev/lighthouse-best-practices/">best practices</a> audit evaluates whether web pages adhere to widely accepted web standards across various metrics. These include critical factors such as:
 
 - HTTPS support,
 - console error elimination,
@@ -481,7 +481,7 @@ By following these best practices, developers can enhance both the functionality
   )
 }}
 
-Our 2024 analysis shows significant changes across the board compared to the results in 2022. Squarespace takes the lead from Wix, with the highest median best practices score of 100, while many of the other top 10 platforms share a score of 78 (a slight improvement since 2022). \
+Our 2024 analysis shows significant changes across the board compared to the results in 2022. Squarespace takes the lead from Wix, with the highest median best practices score of 100, while many of the other top 10 platforms share a score of 78 (a slight improvement since 2022).
 
 While most other CMSs show worse numbers in the best practices audits, TYPO3 CMS claims the second place with a 96-median score for both mobile and desktop, compared to 83 and 92 (mobile and desktop, respectively) in 2022.
 
@@ -535,7 +535,7 @@ This year, Drupal only sends 524 KB for their 10th percentile of visits, while J
 
 ### Page weight breakdown
 
-Page weight refers to the total size, measured in kilobytes, of all the resources loaded on a web page. These resources—such as images, JavaScript, CSS, HTML, and fonts—collectively influence the page's performance. \
+Page weight refers to the total size, measured in kilobytes, of all the resources loaded on a web page. These resources—such as images, JavaScript, CSS, HTML, and fonts—collectively influence the page's performance.
 
 Below, we analyze and compare the resource weight across different CMS platforms, providing insights into how each CMS contributes to the overall page weight.
 
@@ -700,12 +700,12 @@ Furthermore, since they first kicked off the project in November 2021, WordPress
 
 These are some of the enhancements that led to these results:
 
-- **WordPress 6.0**: Improvements to the <a hrefland="en" href="https://make.wordpress.org/core/2022/04/29/caching-improvements-in-wordpress-6-0/">WordPress Caching API</a>, <a hrefland="en" href="https://make.wordpress.org/core/2022/04/28/taxonomy-performance-improvements-in-wordpress-6-0/">taxonomy term queries</a>, and performance increase for sites with <a hrefland="en" href="https://make.wordpress.org/core/2022/05/02/performance-increase-for-sites-with-large-user-counts-now-also-available-on-single-site/">large user counts</a>
-- **WordPress 6.3**: More than <a hrefland="en" href="https://make.wordpress.org/core/2023/08/07/wordpress-6-3-performance-improvements/">170 performance updates</a> merged into the core, improvements in LCP and TTFB for block and classic themes, added support for the *<a hrefland="en" href="https://make.wordpress.org/core/2023/07/13/image-performance-enhancements-in-wordpress-6-3/">fetchpriority="high"</a>* attribute on images, introduced script loading strategies, which adds support for loading scripts with defer or async.
-- **WordPress 6.4:** Merged over 100 performance updates and implemented <a hrefland="en" href="https://make.wordpress.org/core/2023/10/17/script-loading-changes-in-wordpress-6-4/">script loading strategies</a> for frontend scripts in core and bundled themes.
-- **WordPress 6.5: **Introduced <a hrefland="en" href="https://make.wordpress.org/core/2024/04/23/wordpress-6-5-performance-improvements/">multiple performance improvements</a>, including support for the AVIF image format and a faster localization system.
+- **WordPress 6.0**: Improvements to the <a hreflang="en" href="https://make.wordpress.org/core/2022/04/29/caching-improvements-in-wordpress-6-0/">WordPress Caching API</a>, <a hreflang="en" href="https://make.wordpress.org/core/2022/04/28/taxonomy-performance-improvements-in-wordpress-6-0/">taxonomy term queries</a>, and performance increase for sites with <a hreflang="en" href="https://make.wordpress.org/core/2022/05/02/performance-increase-for-sites-with-large-user-counts-now-also-available-on-single-site/">large user counts</a>
+- **WordPress 6.3**: More than <a hreflang="en" href="https://make.wordpress.org/core/2023/08/07/wordpress-6-3-performance-improvements/">170 performance updates</a> merged into the core, improvements in LCP and TTFB for block and classic themes, added support for the *<a hreflang="en" href="https://make.wordpress.org/core/2023/07/13/image-performance-enhancements-in-wordpress-6-3/">fetchpriority="high"</a>* attribute on images, introduced script loading strategies, which adds support for loading scripts with defer or async.
+- **WordPress 6.4:** Merged over 100 performance updates and implemented <a hreflang="en" href="https://make.wordpress.org/core/2023/10/17/script-loading-changes-in-wordpress-6-4/">script loading strategies</a> for frontend scripts in core and bundled themes.
+- **WordPress 6.5: **Introduced <a hreflang="en" href="https://make.wordpress.org/core/2024/04/23/wordpress-6-5-performance-improvements/">multiple performance improvements</a>, including support for the AVIF image format and a faster localization system.
 
-The team also released the <a hrefland="en" href="https://wordpress.org/plugins/performance-lab/">Performance Lab</a> plugin, which is a collection of performance-related "feature projects" that may eventually be merged into the WordPress core software:
+The team also released the <a hreflang="en" href="https://wordpress.org/plugins/performance-lab/">Performance Lab</a> plugin, which is a collection of performance-related "feature projects" that may eventually be merged into the WordPress core software:
 
 - Image Placeholders
 - Modern Image Formats
@@ -714,7 +714,7 @@ The team also released the <a hrefland="en" href="https://wordpress.org/plugins/
 - Enhanced Responsive Images (experimental)
 - Image Prioritizer (experimental)
 
-<a hrefland="en" href="https://wordpress.org/plugins/speculation-rules/">Speculative Loading</a> is another plugin that is part of the Performance Lab and has been recently made available. This plugin enables support for the [Speculation Rules API](https://developer.mozilla.org/docs/Web/API/Speculation_Rules_API), allowing the definition of rules to dynamically prefetch or prerender specific URLs based on user interactions. We discuss this [API more in the next section](#speculation-rules-api). By default, it is set to prerender WordPress frontend URLs when a user hovers over a relevant link, allowing users to experience instant page load times.
+<a hreflang="en" href="https://wordpress.org/plugins/speculation-rules/">Speculative Loading</a> is another plugin that is part of the Performance Lab and has been recently made available. This plugin enables support for the [Speculation Rules API](https://developer.mozilla.org/docs/Web/API/Speculation_Rules_API), allowing the definition of rules to dynamically prefetch or prerender specific URLs based on user interactions. We discuss this [API more in the next section](#speculation-rules-api). By default, it is set to prerender WordPress frontend URLs when a user hovers over a relevant link, allowing users to experience instant page load times.
 
 Since its release, the plugin's adoption has steadily grown, reaching over 30,000 active installations as of this chapter's writing.
 
@@ -755,13 +755,13 @@ Instead of measuring individual tasks, LoAF focuses on long animation frames, de
 
 Artificial Intelligence (AI) is reshaping how users build, manage, and optimize websites. AI-driven tools and plugins are becoming more prevalent, enabling automation, personalization, and enhanced user experiences.
 
-Regarding the WordPress ecosystem, it seems like the community has yet to fully embrace the AI trend. In a <a hrefland="en" href="https://make.wordpress.org/core/2023/05/02/lets-talk-wordpress-core-artificial-intelligence/">thread</a> from May 2023, the core WordPress team and contributors exchanged opinions about the role of AI in the CMS.
+Regarding the WordPress ecosystem, it seems like the community has yet to fully embrace the AI trend. In a <a hreflang="en" href="https://make.wordpress.org/core/2023/05/02/lets-talk-wordpress-core-artificial-intelligence/">thread</a> from May 2023, the core WordPress team and contributors exchanged opinions about the role of AI in the CMS.
 
 Following the discussion, several highlights stand out:
 
 - **AI should remain in the plugin space:** Since AI integrations currently rely on third-party systems and pricing, it's more likely to be adopted through plugins rather than Core—at least until AI models are fast enough to run directly on servers.
 - **Developer Experience (DX) as a focus for innovation:** Some suggest that addressing current DX limitations, especially in the block editor, should be a priority. Enhancing extensibility could allow plugins more freedom to experiment with AI integrations.
-- **AI for collaboration:** Others propose using AI to enhance collaboration and workflows, such as adding AI chatbots as a new user type as part of Phase 3 of the <a hrefland="en" href="https://en-au.wordpress.org/about/roadmap/">Gutenberg roadmap</a>. A bolder idea is integrating a personal AI assistant into the admin panel for business support.
+- **AI for collaboration:** Others propose using AI to enhance collaboration and workflows, such as adding AI chatbots as a new user type as part of Phase 3 of the <a hreflang="en" href="https://en-au.wordpress.org/about/roadmap/">Gutenberg roadmap</a>. A bolder idea is integrating a personal AI assistant into the admin panel for business support.
 
 WordPress core aside, AI has been adopted by numerous plugins that offer content generation, personalization, chatbots, and more. So, it's safe to say that AI has already started changing the WordPress ecosystem.
 
