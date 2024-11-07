@@ -750,7 +750,7 @@ The [Permissions Policy](https://developer.mozilla.org/docs/Web/HTTP/Permissions
   sql_file="TODO.sql",
 ) }}
 
-In 2022, the adoption of the `Permissions Policy` header saw a significant relative increase of 85%. However, from 2022 to this year, the growth rate has drastically slowed to just 1.3%. This is expected, as the Feature Policy was renamed to Permissions Policy at the end of 2020, resulting in an initial peak. In the following years, growth has remained very low since the header is still supported exclusively by Chromium-based browsers.
+In 2022, the adoption of the `Permissions-Policy` header saw a significant relative increase of 85%. However, from 2022 to this year, the growth rate has drastically slowed to just 1.3%. This is expected, as the Feature Policy was renamed to Permissions Policy at the end of 2020, resulting in an initial peak. In the following years, growth has remained very low since the header is still supported exclusively by Chromium-based browsers.
 
 <figure>
   <table>
