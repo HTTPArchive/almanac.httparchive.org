@@ -235,7 +235,7 @@ The three cookie attributes outlined below enhance the security of authenticatio
 {{ figure_markup(
   image="cookie-attributes-desktop.png",
   caption="Cookie attributes (desktop).",
-  description="TODO.",
+  description="Bar chart of cookie attributes used on desktop sites divided by first and third-party cookies. For first-party `HttpOnly` is used by 42%, `Secure` by 44%, and `SameSite` by 59%, while for third-party `HttpOnly` is used by 20%, `Secure` by 96%, and `SameSite` by 94%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxTTMlFFSMT3mZgw2awA0wl3F68gzU1OLuyMaZXscSFq-Pa5ev_qTXx8ZaGEOl_ox_aHsraAGMXZ9Y/pubchart?oid=827181104&format=interactive",
   sheets_gid="1849762871",
   sql_file="cookie_attributes.sql"
@@ -263,7 +263,7 @@ The attribute can be set to one of three values: `Strict`, `Lax`, or `None`. Coo
 {{ figure_markup(
   image="same-site-cookie-attributes-desktop.png",
   caption="SameSite cookie attributes (desktop).",
-  description="TODO.",
+  description="Bar chart of SameSite cookie attributes divided by first and third-party. For first-party `SameSite=lax` is used by 34%, `SameSite=strict` by 2%, `SameSite=none` by 23% and 41% had no SameSite attribute, while for third-party `SameSite=lax` is used by 0.4%, `SameSite=none` by 94% and 6% had no SameSite attribute.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxTTMlFFSMT3mZgw2awA0wl3F68gzU1OLuyMaZXscSFq-Pa5ev_qTXx8ZaGEOl_ox_aHsraAGMXZ9Y/pubchart?oid=1988555622&format=interactive",
   sheets_gid="1849762871",
   sql_file="cookie_attributes.sql"
@@ -312,7 +312,7 @@ Websites can control how long browsers store a cookie by setting its lifespan. B
 {{ figure_markup(
   image="cookie-age-desktop.png",
   caption="Cookie age in days (desktop).",
-  description="TODO.",
+  description="Column chart showing the use of cookie ages in days at various percentiles. At the 10th percentile, a `Max-Age`, `Expires` and real age of 1 day. At the 25th percentile a value of 90 days and 60 days for `Max-Age` and `Expires` respectively, the real age is 60 days. At the 50th percentile a value of 365 days for `Max-Age`, `Expires` and 364 for the real age. At the 75th percentile a value of 365 days for `Max-Age`, `Expires` and the real age. At the 90th percentile a value of 730 days for `Max-Age`, `Expires` and the real age.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxTTMlFFSMT3mZgw2awA0wl3F68gzU1OLuyMaZXscSFq-Pa5ev_qTXx8ZaGEOl_ox_aHsraAGMXZ9Y/pubchart?oid=675218634&format=interactive",
   sheets_gid="1897777778",
   sql_file="cookie_age_percentiles.sql"
@@ -733,7 +733,7 @@ The adoption of Subresource Integrity seems to be stagnating, with the median pe
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Most common hosts from which SRI-protected scripts are included", sheets_gid="1612151810", sql_file="TODO.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Most common hosts from which SRI-protected scripts are included", sheets_gid="1612151810", sql_file="sri_popular_hosts.sql") }}</figcaption>
 </figure>
 
 Most of the hosts from which resources are fetched and protected by SRI are CDNs. A notable difference from 2022's data is the absence of `cdn.shopify.com` from the top hosts list (previously 22% on desktop and 23% on mobile). This is due to Shopify having dropped SRI in favor of similar functionality provided by the `integrity` attribute of `importmap`, which they explain in a <a hreflang="en" href="https://shopify.engineering/shipping-support-for-module-script-integrity-in-chrome-safari#">blogpost</a>.
@@ -744,10 +744,10 @@ The [Permissions Policy](https://developer.mozilla.org/docs/Web/HTTP/Permissions
 
 {{ figure_markup(
   content="+1.3%",
-  caption="Relative increase in adoption of `Permissions-Policy` from 2022..",
+  caption="Relative increase in adoption of the `Permissions-Policy` header from 2022.",
   classes="big-number",
-  sheets_gid="TODO",
-  sql_file="TODO.sql",
+  sheets_gid="238539331",
+  sql_file="security_headers_prevalence.sql",
 ) }}
 
 In 2022, the adoption of the `Permissions-Policy` header saw a significant relative increase of 85%. However, from 2022 to this year, the growth rate has drastically slowed to just 1.3%. This is expected, as the Feature Policy was renamed to Permissions Policy at the end of 2020, resulting in an initial peak. In the following years, growth has remained very low since the header is still supported exclusively by Chromium-based browsers.
@@ -799,7 +799,7 @@ In 2022, the adoption of the `Permissions-Policy` header saw a significant relat
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Most prevalent Permission Policies", sheets_gid="2018859098", sql_file="TODO.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Most prevalent Permission Policies", sheets_gid="2018859098", sql_file="pp_header_prevalence.sql") }}</figcaption>
 </figure>
 
 Only 2.8% of desktop hosts and 2.5% of mobile hosts set the policy using the `Permissions-Policy` response header. The policy is primarily used to exclusively opt out of Google’s Federated Learning of Cohorts (FLoC); 21.3% of hosts that implement the `Permissions-Policy` header set the policy as `interest-cohort=()`. This usage is partly due to the controversy that FLoC sparked during its trial period. Although FLoC was ultimately replaced by the Topics API,  the continued use of the `interest-cohort` directive highlights how specific concerns can shape the adoption of web policies.
@@ -876,7 +876,7 @@ Out of the 21.4 million `<iframe>` elements observed in the crawl, half included
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Most prevalent allow attribute values", sheets_gid="1497012339", sql_file="TODO.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Most prevalent `allow` attribute directives.", sheets_gid="1497012339", sql_file="iframe_allow_directives.sql") }}</figcaption>
 </figure>
 
 Compared to 2022, the top 10 most common directives are now led by three newly introduced directives: `join-ad-interest-group`, `attribution-reporting` and `run-ad-auction`. The first and third directives are specific to Google’s Privacy Sandbox. For all observed directives in the top 10, almost none were used in combination with an origin or keyword (i.e.., `'src'`, `'self'`, and `'none'`, ), meaning the loaded page is allowed to request the indicated permission regardless of its origin.
@@ -895,11 +895,11 @@ The `sandbox` attribute was observed in 28.4% and 27.5% of `<iframe>` elements f
 
 {{ figure_markup(
   image="iframe-sandbox-directives.png",
-  caption="Prevalence of sandbox directives on frames.",
-  description="TODO.",
+  caption="Prevalence of sandbox directives on iframes.",
+  description="Bar chart showing prevalence of sandbox directives in iframes. `allow-scripts` was found in 98.32% of iframes with sandbox attribute for desktop and 98.60% for mobile, `allow-same-origin` in 90.93% for desktop and 91.21% for mobile, `allow-forms` in 81.85% for desktop and 79.53% for mobile, `allow-popups` in 74.69% for desktop and 73.15% for mobile, `allow-popups-to-escape-sandbox` in 73.61% for desktop and 71.78% for mobile, `allow-top-navigation-by-user-activation` in 45.81% for desktop and 44.66% for mobile, `allow-storage-access-by-user-activation` in 26.88% for desktop and 25.80% for mobile, and `allow-top-navigation` in 26.72% for desktop and 25,62% for mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxTTMlFFSMT3mZgw2awA0wl3F68gzU1OLuyMaZXscSFq-Pa5ev_qTXx8ZaGEOl_ox_aHsraAGMXZ9Y/pubchart?oid=22462766&format=interactive",
   sheets_gid="873346022",
-  sql_file="TODO.sql"
+  sql_file="iframe_sandbox_directives.sql"
   )
 }}
 
@@ -916,10 +916,10 @@ Most security policies are configured through response headers, which instruct t
 {{ figure_markup(
   image="security-headers-desktop.png",
   caption="Adoption of security headers for site requests in desktop pages.",
-  description="TODO.",
+  description="Column chart showing the prevalence for security headers in requests for the years 2022, 2023 and 2024. `X-Content-Type-Options` was found 43.50%, 45.75% and 48.43% respectively, `X-Frame-Options was` found in 35.3%, 33.80% and 36.60% respectively, `Strict-Transport-Security` was found in 28.22%, 30.76% and 33.55% respectively, `X-XSS-Protection` was found in 22.61%, 22.78% and 23.48% respectively, `Content-Security-Policy` was found in 14.30%, 16.00% and 18.50% respectively, `Referrer-Policy` was found in 14.46%, 15.09% and 16.98% respectively, `Report-To` was found in 11.33%, 13.11% and 14.17% respectively, `Permissions-Policy` was found in 2.82%, 2.45% and 2.82% respectively, `Content-Security-Policy-Report-Only` was found in 2.13%, 1.58% and 1.83% respectively, `Cross-Origin-Resource-Policy` was found in 1.03%, 1.31% and 1.52% respectively, `Cross-Origin-Opener-Policy` was found in 0.23%, 0.68% and 1.07% respectively, `Expect-CT` was found in 17.33%, 0.65% and 0.71%, `Feature-Policy` was found in 0.77%, 0.65% and 0.65% respectively, `Cross-Origin-Embedder-Policy` was found in 0.04%, 0.22% and 0.35% respectively, `Clear-Site-Data` was found in 0.01%, 0.01% and 0.02% respectively.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxTTMlFFSMT3mZgw2awA0wl3F68gzU1OLuyMaZXscSFq-Pa5ev_qTXx8ZaGEOl_ox_aHsraAGMXZ9Y/pubchart?oid=1591831239&format=interactive",
   sheets_gid="238539331",
-  sql_file="TODO.sql",
+  sql_file="security_headers_prevalence.sql",
   height=496,
   width=600
   )
@@ -957,7 +957,7 @@ Another measure against clickjacking is the [`X-Frame-Options` (XFO](https://dev
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="`X-Frame-Options` header values", sheets_gid="609220671", sql_file="TODO.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="`X-Frame-Options` header values", sheets_gid="609220671", sql_file="xfo_header_prevalence.sql") }}</figcaption>
 </figure>
 
 Although deprecated, 0.6% of observed `X-Frame-Options` headers on desktop and 0.7% on mobile still use the `ALLOW-FROM` directive, which functions similarly to the `frame-ancestors` directive by specifying trusted origins that can embed the page. However, since modern browsers ignore `X-Frame-Options` headers containing the `ALLOW-FROM` directive, this could create gaps in the website's clickjacking defenses. However, this practice may be intended for backward compatibility, where the deprecated header is used alongside a supported Content Security Policy that includes the `frame-ancestors` directive.
@@ -971,10 +971,10 @@ This demand led to the introduction of several new security headers collectively
 {{ figure_markup(
   image="cross-origin-headers-trend.png",
   caption="Usage of Cross-Origin headers in 2022, 2023 and 2024.",
-  description="TODO.",
+  description="Column chart showing the prevalence for `Cross-Origin-` headers in requests for the years 2022, 2023 and 2024. `Cross-Origin-Resource-Policy` was found in 1.03%, 1.31% and 1.52% respectively, `Cross-Origin-Opener-Policy` was found in 0.23%, 0.68% and 1.07% respectively, `Cross-Origin-Embedder-Policy` was found in 0.04%, 0.22% and 0.35% respectively, `Clear-Site-Data` was found in 0.01%, 0.01% and 0.02% respectively.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxTTMlFFSMT3mZgw2awA0wl3F68gzU1OLuyMaZXscSFq-Pa5ev_qTXx8ZaGEOl_ox_aHsraAGMXZ9Y/pubchart?oid=114530565&format=interactive",
   sheets_gid="238539331",
-  sql_file="TODO.sql",
+  sql_file="security_headers_prevalence.sql",
   width=600,
   height=401
   )
@@ -1011,7 +1011,7 @@ The [Cross Origin Embedder Policy](https://developer.mozilla.org/docs/Web/HTTP/H
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Prevalence of COEP header values", sheets_gid="TODO", sql_file="TODO.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Prevalence of COEP header values", sheets_gid="906872096", sql_file="coep_header_prevalence.sql") }}</figcaption>
 </figure>
 
 The majority of websites that set the `Cross-Origin-Embedder-Policy` header indicate that they do not require access to the powerful features mentioned above (`unsafe-none`). This behavior is also the default if the COEP header is absent, meaning that websites will automatically operate under restricted access to cross-origin resources unless explicitly configured otherwise.
@@ -1047,7 +1047,7 @@ Conversely, websites that serve resources can use the [`Cross-Origin-Resource-Po
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Prevalence of CORP header values", sheets_gid="TODO", sql_file="TODO.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Prevalence of CORP header values", sheets_gid="1177421176", sql_file="corp_header_prevalence.sql") }}</figcaption>
 </figure>
 
 The CORP header is primarily used to allow access to the served resource from any origin, with the `cross-origin` value being the most commonly set. In fewer cases, the header restricts access: less than 5% of websites limit resources to the same origin, and less than 4% restrict them to the same site.
@@ -1083,7 +1083,7 @@ The CORP header is primarily used to allow access to the served resource from an
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Prevalence of COOP header values", sheets_gid="TODO", sql_file="TODO.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Prevalence of COOP header values", sheets_gid="300698248", sql_file="coop_header_prevalence.sql") }}</figcaption>
 </figure>
 
 Nearly half of all observed COOP headers employ the strictest setting, `same-origin`.
@@ -1156,7 +1156,7 @@ Adoption of the `Clear-Site-Data` header remains limited; our observations indic
       </tr>
     <tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Prevalence of `Clear-Site-Data` headers", sheets_gid="910609664", sql_file="TODO.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Prevalence of `Clear-Site-Data` headers", sheets_gid="910609664", sql_file="clear-site-data_value_prevalence.sql") }}</figcaption>
 </figure>
 
 Current usage data shows that the `Clear-Site-Data header` is predominantly used to clear cache. It's important to note that the values in this header must be enclosed in quotation marks; for instance, `cache` is incorrect and should be written as `"cache"`. Interestingly, there has been significant improvement in adherence to this syntax rule: in 2022, 65% of desktop and 63% of mobile websites were found using the incorrect `cache` value. However, these numbers have now dropped to 22% and 23% for desktop and mobile, respectively.
@@ -1520,7 +1520,7 @@ Due to their similar naming and purpose, the COEP, CORP and COOP are sometimes d
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Prevalence of invalid COEP header values", sheets_gid="TODO", sql_file="TODO.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Prevalence of invalid COEP header values", sheets_gid="906872096", sql_file="coep_header_prevalence.sql") }}</figcaption>
 </figure>
 
 For instance, around 3% of observed COEP headers mistakenly use the unsupported value `same-origin`. When this occurs, browsers revert to the default behavior of allowing any cross-origin resource to be embedded, while restricting access to features like `SharedArrayBuffer` and unthrottled use of `Performance.now()`. This fallback does not inherently reduce security unless the site administrator intended to set `same-origin` for CORP or COOP, where it is a valid value.
@@ -1724,7 +1724,7 @@ The <a hreflang="en" href="https://iabtechlab.com/ads-txt/">`ads.txt`</a> file i
   content="77.2%",
   caption="The percentage of desktop ad publishers that entirely avoid indirect resellers.",
   classes="big-number",
-  sheets_gid="TODO",
+  sheets_gid="741686775",
   sql_file="TODO.sql",
 ) }}
 
