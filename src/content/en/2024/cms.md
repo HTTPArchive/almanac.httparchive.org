@@ -691,12 +691,11 @@ Fast forward to 2024, and it's safe to say the team has exceeded expectations, m
 Furthermore, since they first kicked off the project in November 2021, WordPress's overall Core Web Vitals pass rate has surged by 12%.
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
+  image="wordpress-cwv-pass-trend.png",
+  caption="Trend of WordPress Core Web Vitals pass rates",
   description="TODO",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODO.sql"
+  width=1752,
+  height=888
   )
 }}
 
