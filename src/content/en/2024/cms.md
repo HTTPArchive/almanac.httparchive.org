@@ -209,7 +209,7 @@ Below is the percentage of sites on each platform that score "good" (LCP under 2
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYh0RHAqp768faimbvZpvS71yJwCaOAFR0AzgotkEphtxphBKR1kt-pqgxA8Uxj4FSii1RQWwgG6rk/pubchart?oid=867117364&format=interactive",
   sheets_gid="216688098",
   sql_file="core_web_vitals_yoy.sql",
-  width=500,
+  width=600,
   height=559
   )
 }}
