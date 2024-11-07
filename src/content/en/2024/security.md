@@ -740,7 +740,7 @@ Most of the hosts from which resources are fetched and protected by SRI are CDNs
 
 ### Permissions Policy
 
-The [Permissions Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/Permissions_Policy) (formerly known as the Feature Policy) is a set of mechanisms that allow websites to control which browser features can be accessed on a webpage, such as geolocation, webcam, microphone, and more. By using the Permissions Policy, websites can restrict feature access for both the main site and any embedded content, enhancing security and protecting user privacy. This is configured through the `Permissions-Policy` response header for the main site and all its embedded `<iframe>` elements,. Additionally, web administrators can set individual policies for specific `<iframe>` elements using their `allow` attribute.
+The [Permissions Policy](https://developer.mozilla.org/docs/Web/HTTP/Permissions_Policy) (formerly known as the Feature Policy) is a set of mechanisms that allow websites to control which browser features can be accessed on a webpage, such as geolocation, webcam, microphone, and more. By using the Permissions Policy, websites can restrict feature access for both the main site and any embedded content, enhancing security and protecting user privacy. This is configured through the `Permissions-Policy` response header for the main site and all its embedded `<iframe>` elements,. Additionally, web administrators can set individual policies for specific `<iframe>` elements using their `allow` attribute.
 
 {{ figure_markup(
   content="+1.3%",
@@ -802,7 +802,7 @@ In 2022, the adoption of the `Permissions Policy` header saw a significant relat
   <figcaption>{{ figure_link(caption="Most prevalent Permission Policies", sheets_gid="2018859098", sql_file="TODO.sql") }}</figcaption>
 </figure>
 
-Only 2.8% of desktop hosts and 2.5% of mobile hosts set the policy using the `Permissions-Policy` response header. The policy is primarily used to exclusively opt out of Google’s Federated Learning of Cohorts (FLoC); 21.3% of hosts that implement the `Permissions Policy` header set the policy as `interest-cohort=()`. This usage is partly due to the controversy that FLoC sparked during its trial period. Although FLoC was ultimately replaced by the Topics API,  the continued use of the `interest-cohort` directive highlights how specific concerns can shape the adoption of web policies.
+Only 2.8% of desktop hosts and 2.5% of mobile hosts set the policy using the `Permissions-Policy` response header. The policy is primarily used to exclusively opt out of Google’s Federated Learning of Cohorts (FLoC); 21.3% of hosts that implement the `Permissions-Policy` header set the policy as `interest-cohort=()`. This usage is partly due to the controversy that FLoC sparked during its trial period. Although FLoC was ultimately replaced by the Topics API,  the continued use of the `interest-cohort` directive highlights how specific concerns can shape the adoption of web policies.
 
 All other observed headers with at least 2% of hosts implementing them, are aimed at restricting the permission capabilities of the website itself and/or its embedded `<iframe>` elements. Similar to the Content Security Policy, the Permissions Policy is “open by default” instead of “secure by default”; absence of the policy entails absence of protection. This approach aims to avoid breaking website functionality when introducing new policies. Notably, 0.28% of sites explicitly use the `*` wildcard policy, allowing the website and all embedded `<iframe>` elements (where no more restrictive `allow` attribute is present) to request any permission - though this is the default behavior when the Permissions Policy is not set.
 
@@ -1718,7 +1718,7 @@ This may be used to find an admin-only section of the website, which would other
 
 ### Indirect resellers in `ads.txt`
 
-The [`ads.txt`](https://iabtechlab.com/ads-txt/) file is a standardized format that allows websites to specify which companies are authorized to sell or resell their digital ad space within the complex landscape of programmatic advertising. Companies can be listed as either direct sellers or indirect resellers. Indirect resellers, however, can leave publishers - sites hosting the ads.txt file - more vulnerable to ad fraud because they offer less control over who purchases ad space. This vulnerability was exploited in 2019 by the so-called [404bot scam](https://www.fraud0.com/resources/ads-txt/), resulting in millions of dollars in lost revenue.
+The <a hreflang="en" href="https://iabtechlab.com/ads-txt/">`ads.txt`</a> file is a standardized format that allows websites to specify which companies are authorized to sell or resell their digital ad space within the complex landscape of programmatic advertising. Companies can be listed as either direct sellers or indirect resellers. Indirect resellers, however, can leave publishers - sites hosting the ads.txt file - more vulnerable to ad fraud because they offer less control over who purchases ad space. This vulnerability was exploited in 2019 by the so-called <a hreflang="en" href="https://www.fraud0.com/resources/ads-txt/">404bot scam</a>, resulting in millions of dollars in lost revenue.
 
 {{ figure_markup(
   content="77.2%",
