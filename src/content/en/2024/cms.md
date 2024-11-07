@@ -194,7 +194,7 @@ Google's Core Web Vitals are a set of three user-centric performance metrics tha
 
 Since their introduction in 2020 and becoming a ranking signal in 2021, CWV are now recognized as essential to delivering a good user experience across the web.
 
-If you're interested in how websites perform against the Core Web Vitals on a larger scale, the <span style="text-decoration:underline;">Performance</span> chapter covers this topic in greater detail.
+If you're interested in how websites perform against the Core Web Vitals on a larger scale, the [Performance](./performance) chapter covers this topic in greater detail.
 
 In this section, we are interested in looking at the Core Web Vitals specifically in the context of CMS platforms.
 
