@@ -238,7 +238,7 @@ The three cookie attributes outlined below enhance the security of authenticatio
   description="TODO.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxTTMlFFSMT3mZgw2awA0wl3F68gzU1OLuyMaZXscSFq-Pa5ev_qTXx8ZaGEOl_ox_aHsraAGMXZ9Y/pubchart?oid=827181104&format=interactive",
   sheets_gid="1849762871",
-  sql_file="TODO.sql"
+  sql_file="cookie_attributes.sql"
   )
 }}
 
@@ -266,7 +266,7 @@ The attribute can be set to one of three values: `Strict`, `Lax`, or `None`. Coo
   description="TODO.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxTTMlFFSMT3mZgw2awA0wl3F68gzU1OLuyMaZXscSFq-Pa5ev_qTXx8ZaGEOl_ox_aHsraAGMXZ9Y/pubchart?oid=1988555622&format=interactive",
   sheets_gid="1849762871",
-  sql_file="TODO.sql"
+  sql_file="cookie_attributes.sql"
   )
 }}
 
@@ -300,7 +300,7 @@ It's important to note that all cookies without a `SameSite` attribute are treat
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="`__Secure-` and `__Host-` prefixes (desktop)", sheets_gid="TODO", sql_file="TODO.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="`__Secure-` and `__Host-` prefixes (desktop)", sheets_gid="1849762871", sql_file="cookie_attributes.sql") }}</figcaption>
 </figure>
 
 The adoption of cookie prefixes remains low, with less than 1% of cookies using these prefixes on both desktop and mobile platforms. This is particularly surprising given the high adoption rate of cookies with the `Secure` attribute, the only prerequisite for cookies prefixed with `__Secure-`. However, changing a cookie's name can require significant refactoring, which is presumably a reason why developers tend to avoid this.
@@ -315,7 +315,7 @@ Websites can control how long browsers store a cookie by setting its lifespan. B
   description="TODO.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxTTMlFFSMT3mZgw2awA0wl3F68gzU1OLuyMaZXscSFq-Pa5ev_qTXx8ZaGEOl_ox_aHsraAGMXZ9Y/pubchart?oid=675218634&format=interactive",
   sheets_gid="1897777778",
-  sql_file="TODO.sql"
+  sql_file="cookie_age_percentiles.sql"
   )
 }}
 
@@ -335,8 +335,8 @@ In addition to vetting included content, CSP can serve other purposes as well, s
   content="+27%",
   caption="Relative increase in adoption for Content-Security-Policy header from 2022.",
   classes="big-number",
-  sheets_gid="TODO",
-  sql_file="TODO.sql",
+  sheets_gid="238539331",
+  sql_file="security_headers_prevalence.sql",
 ) }}
 
 The adoption rate of CSP headers increased from 15% of all hosts in 2022 to 19% this year. This amounts to a relative increase of 27%.  Over these two years, the relative increase was 12% between 2022 and 2023, and 14% between 2023 and 2024.
@@ -350,10 +350,10 @@ Most websites utilize CSP for purposes beyond controlling embedded resources, wi
 {{ figure_markup(
   image="csp-directives.png",
   caption="Most common directives used in CSP.",
-  description="TODO.",
+  description="Bar chart showing usage of most common CSP directives. `frame-ancestors` is the most common with 56% in desktop and 55% in mobile, followed by `upgrade-insecure-requests` which is 54% in desktop and 56% in mobile. `block-all-mixed-content` is 24% in desktop and 24% in mobile, `default-src` is 17% in desktop and 15% in mobile, `script-src` is 17% in desktop and 15% in mobile, `style-src` is 13% in desktop and 12% in mobile, `img-src` is 13% in desktop and 12% in mobile, `font-src` is 11% in desktop and 10% in mobile, `connect-src` is 10% in desktop and 9% in mobile, `frame-src` is 10% in desktop and 9% in mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxTTMlFFSMT3mZgw2awA0wl3F68gzU1OLuyMaZXscSFq-Pa5ev_qTXx8ZaGEOl_ox_aHsraAGMXZ9Y/pubchart?oid=123403022&format=interactive",
   sheets_gid="1796954328",
-  sql_file="TODO.sql"
+  sql_file="csp_directives_usage.sql"
   )
 }}
 
@@ -386,7 +386,7 @@ The `block-all-mixed-content` directive, which has been deprecated in favor of `
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Most prevalent CSP headers", sheets_gid="TODO", sql_file="TODO.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Most prevalent CSP headers", sheets_gid="176994530", sql_file="csp_most_common_header.sql") }}</figcaption>
 </figure>
 
 The top three directives also make up the building blocks of the most prevalent CSP definitions. The second most commonly used CSP definition includes both `block-all-mixed-content` and `upgrade-insecure-requests`. This suggests that many websites use `block-all-mixed-content` for backward compatibility, as newer browsers will ignore this directive if `upgrade-insecure-requests` is present.
@@ -458,7 +458,7 @@ The top three directives also make up the building blocks of the most prevalent 
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Relative usage change of CSP directives", sheets_gid="TODO", sql_file="TODO.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Relative usage change of CSP directives", sheets_gid="1796954328", sql_file="csp_directives_usage.sql") }}</figcaption>
 </figure>
 
 All other directives shown in the graph above are used for content inclusion control. Overall, usage has remained relatively stable. However, a notable change is the increased use of the `object-src` directive, which has surpassed `connect-src` and `frame-src`. Since 2022, the usage of `object-src` has risen by 15.9% for desktop and 16.8% for mobile.
@@ -472,10 +472,10 @@ One of the most important directives of CSP is `script-src`, as curbing the scri
 {{ figure_markup(
   image="csp-script-src-keywords.png",
   caption="Prevalence of CSP `script-src` keywords.",
-  description="TODO.",
+  description="Column chart showing usage of `nonce-`, `strict-dynamic`, `unsafe-inline` and `unsafe-eval` in the CSP `script-src` directive. `nonce-` is used by 20% of websites with a CSP for desktop and mobile. `strict-dynamic` is used by 10% of websites with a CSP for desktop and 9% for mobile. `unsafe-inline` is used by 91% of websites with a CSP for desktop and 92% for mobile. `unsafe-eval` is used by 78% of websites with a CSP for desktop and mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxTTMlFFSMT3mZgw2awA0wl3F68gzU1OLuyMaZXscSFq-Pa5ev_qTXx8ZaGEOl_ox_aHsraAGMXZ9Y/pubchart?oid=1661557245&format=interactive",
   sheets_gid="2075772620",
-  sql_file="TODO.sql"
+  sql_file="csp_script_source_list_keywords.sql"
   )
 }}
 
@@ -513,7 +513,7 @@ The `unsafe-inline` and `unsafe-eval` directives can significantly reduce the se
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Relative usage change of CSP `script-src` keywords", sheets_gid="TODO", sql_file="TODO.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Relative usage change of CSP `script-src` keywords", sheets_gid="2075772620", sql_file="csp_script_source_list_keywords.sql") }}</figcaption>
 </figure>
 
 However, the increasing adoption of the `nonce-` and `strict-dynamic` keywords is a positive development. By using the `nonce-` keyword, a secret nonce can be defined, allowing only inline scripts with the correct nonce to execute. This approach is a secure alternative to the unsafe-inline directive for permitting inline scripts. When used in combination with the `strict-dynamic` keyword, nonced scripts are permitted to import additional scripts from any origin. This approach simplifies secure script loading for developers, as it allows them to trust a single nonced script, which can then securely load other necessary resources.
@@ -525,10 +525,10 @@ CSP is often regarded as one of the more complex security policies, partly due t
 {{ figure_markup(
   image="csp-header-length.png",
   caption="CSP header length.",
-  description="TODO.",
+  description="Column chart showing percentiles of the length of the CSP header in bytes. At 10th percentile desktop is 22 bytes and mobile is 23 bytes, at 25th percentile both are 25 bytes, at 50th percentile desktop is 55 bytes and mobile is 48 bytes, at 75th percentile both are 75 bytes and at 90th percentile desktop is 504 bytes and mobile is 368 bytes.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxTTMlFFSMT3mZgw2awA0wl3F68gzU1OLuyMaZXscSFq-Pa5ev_qTXx8ZaGEOl_ox_aHsraAGMXZ9Y/pubchart?oid=1260468464&format=interactive",
   sheets_gid="1351027608",
-  sql_file="TODO.sql"
+  sql_file="csp_number_of_allowed_hosts.sql"
   )
 }}
 
@@ -606,7 +606,7 @@ The most common HTTPS origins included in CSP headers are used for loading fonts
       </tr>
     <tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Most frequently allowed HTTP(S) hosts in CSP policies", sheets_gid="180799456", sql_file="TODO.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Most frequently allowed HTTP(S) hosts in CSP policies", sheets_gid="180799456", sql_file="csp_allowed_host_frequency.sql") }}</figcaption>
 </figure>
 
 As for WSS origins, used for allowing WebSockets connections to certain origins, the following were found the most common:
@@ -648,7 +648,7 @@ As for WSS origins, used for allowing WebSockets connections to certain origins,
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Most frequently allowed WS(S) hosts in CSP policies", sheets_gid="1790517281", sql_file="TODO.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Most frequently allowed WS(S) hosts in CSP policies", sheets_gid="1790517281", sql_file="csp_allowed_host_frequency_wss.sql") }}</figcaption>
 </figure>
 
 Two of these origins are related to customer service and ticketing (`intercom.io`, `zopim.com`), one is used for website analytics (`hotjar.com`), and two are associated with social media (`www.livejournal.com`, `quora.com`). For four out of the five websites, we found specific instructions on how to add the origin to the website's content security policy. This is considered good practice, as it discourages website administrators from using wildcards to allow third-party resources, which would reduce security by allowing broader access than necessary.
@@ -663,8 +663,8 @@ While CSP is a powerful tool for ensuring that resources are only loaded from tr
   content="23%",
   caption="Desktop sites using SRI.",
   classes="big-number",
-  sheets_gid="TODO",
-  sql_file="TODO.sql",
+  sheets_gid="1943101379",
+  sql_file="sri_usage.sql",
 ) }}
 
 SRI is used by 23.2% and 21.3% of all observed pages for desktop and mobile respectively. This amounts to a relative change in adoption of 13.3% and 18.4% respectively.
@@ -672,10 +672,10 @@ SRI is used by 23.2% and 21.3% of all observed pages for desktop and mobile resp
 {{ figure_markup(
   image="sri-coverage.png",
   caption="SRI coverage per page.",
-  description="TODO.",
+  description="Column chart showing percentiles of the fraction of scripts covered by SRI per page. At 10th percentile desktop and mobile are both 1.4%, at 25th percentile desktop is 2.0% and mobile is 2.1%, at 50th percentile desktop and mobile are both 3.2%, at 75th percentile desktop is 5.7% and mobile is 5.9%, at 90th percentile desktop and mobile are both 12.5%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxTTMlFFSMT3mZgw2awA0wl3F68gzU1OLuyMaZXscSFq-Pa5ev_qTXx8ZaGEOl_ox_aHsraAGMXZ9Y/pubchart?oid=13429035&format=interactive",
   sheets_gid="359913254",
-  sql_file="TODO.sql"
+  sql_file="sri_coverage_per_page.sql"
   )
 }}
 
