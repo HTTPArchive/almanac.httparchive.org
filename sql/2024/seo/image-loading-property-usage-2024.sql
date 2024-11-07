@@ -37,7 +37,7 @@ WITH image_loading AS (
     page,
     getLoadingPropertyMarkupInfo(JSON_EXTRACT_SCALAR(payload, '$._markup')) AS loading_property_markup_info
   FROM
-    `httparchive.all.pages` TABLESAMPLE SYSTEM (0.01 PERCENT)
+    `httparchive.all.pages`
   WHERE
     date = '2024-06-01'
 )
