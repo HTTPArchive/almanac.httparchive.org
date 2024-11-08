@@ -9,7 +9,7 @@ editors: [rachellcostello]
 translators: []
 discuss: 1762
 results: https://docs.google.com/spreadsheets/d/1zWzFSQ_ygb-gGr1H1BsJCfB7Z89zSIf7GX0UayVEte4/
-rviscomi_bio: Rick Viscomi is a Senior Developer Programs Engineer at Google, working on web transparency projects like the HTTP Archive and Chrome UX Report, and studying the intersection of how websites are built and experienced. Rick is the host of <a hreflang="en" href="https://www.youtube.com/playlist?list=PLNYkxOF6rcIBGvYSYO-VxOsaYQDw5rifJ">The State of the Web</a> in which experts discuss how the web is trending. Rick is the coauthor of <a hreflang="en" href="https://usingwpt.com">Using WebPageTest</a>, a guide for testing web performance, and writes frequently about the web on <a hreflang="en" href="https://dev.to/rick_viscomi">dev.to</a> and on Twitter at <a href="https://twitter.com/rick_viscomi">@rick_viscomi</a>.
+rviscomi_bio: Rick Viscomi is a Senior Developer Programs Engineer at Google, working on web transparency projects like the HTTP Archive and Chrome UX Report, and studying the intersection of how websites are built and experienced. Rick is the host of <a hreflang="en" href="https://www.youtube.com/playlist?list=PLNYkxOF6rcIBGvYSYO-VxOsaYQDw5rifJ">The State of the Web</a> in which experts discuss how the web is trending. Rick is the coauthor of <a hreflang="en" href="https://usingwpt.com">Using WebPageTest</a>, a guide for testing web performance, and writes frequently about the web on <a hreflang="en" href="https://dev.to/rick_viscomi">dev.to</a> and on Twitter at <a href="https://x.com/rick_viscomi">@rick_viscomi</a>.
 featured_quote: Performance is a visceral part of the user experience. For many websites, an improvement to the user experience by speeding up the page load time aligns with an improvement to conversion rates. Conversely, when performance is poor, users don't convert as often and have even been observed to be rage clicking on the page in frustration.
 featured_stat_1: 13%
 featured_stat_label_1: Sites with fast FCP
@@ -139,7 +139,7 @@ Other APAC geos tell a different story. Thailand, Vietnam, Indonesia, and India 
 
 ### Time to First Byte (TTFB)
 
-<a hreflang="en" href="https://web.dev/time-to-first-byte">Time to First Byte</a> (TTFB) is a measure of how long the web page took from the time of the user's navigation until they received the first byte of the response.
+<a hreflang="en" href="https://web.dev/articles/ttfb">Time to First Byte</a> (TTFB) is a measure of how long the web page took from the time of the user's navigation until they received the first byte of the response.
 
 {{ figure_markup(
   image="nav-timing.png",
@@ -289,6 +289,6 @@ Quantifying how fast a web page loads is an imperfect science that can't be repr
 
 The data presented in this chapter showed that there is still a lot of work to do to meet the goals set for fast websites. Certain form factors, effective connection types, and geos do correlate with better user experiences, but we can't forget about the combinations of demographics with poor performance. In many cases, the web platform is used for business; making more money from improving conversion rates can be a huge motivator for speeding up a website. Ultimately, for all websites, performance is about delivering positive experiences to users in a way that doesn't impede, frustrate, or enrage them.
 
-As the web gets another year older and our ability to measure how users experience it improves incrementally, I'm looking forward to developers having access to metrics that capture more of the holistic user experience. FCP is very early on the timeline of showing useful content to users, and newer metrics like <a hreflang="en" href="https://web.dev/largest-contentful-paint">Largest Contentful Paint</a> (LCP) are emerging to improve our visibility into how page loads are perceived. The <a hreflang="en" href="https://web.dev/layout-instability-api">Layout Instability API</a> has also given us a novel glimpse into the frustration users experience beyond page load.
+As the web gets another year older and our ability to measure how users experience it improves incrementally, I'm looking forward to developers having access to metrics that capture more of the holistic user experience. FCP is very early on the timeline of showing useful content to users, and newer metrics like <a hreflang="en" href="https://web.dev/articles/lcp">Largest Contentful Paint</a> (LCP) are emerging to improve our visibility into how page loads are perceived. The <a hreflang="en" href="https://web.dev/articles/cls">Layout Instability API</a> has also given us a novel glimpse into the frustration users experience beyond page load.
 
 Equipped with these new metrics, the web in 2020 will become even more transparent, better understood, and give developers an advantage to make more meaningful progress to improve performance and contribute to positive user experiences.

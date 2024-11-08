@@ -7,7 +7,7 @@ reviewers: [jzyang, exterkamp]
 analysts: [max-ostapenko, paulcalvano]
 editors: [tunetheweb]
 translators: []
-simonhearne_bio: Simon is a web performance architect. He is passionate about helping deliver a faster and more accessible web. You can find him tweeting <a href="https://twitter.com/simonhearne">@SimonHearne</a> and blogging at <a hreflang="en" href="https://simonhearne.com">simonhearne.com</a>.
+simonhearne_bio: Simon is a web performance architect. He is passionate about helping deliver a faster and more accessible web. You can find him tweeting <a href="https://x.com/simonhearne">@SimonHearne</a> and blogging at <a hreflang="en" href="https://simonhearne.com">simonhearne.com</a>.
 discuss: 2042
 results: https://docs.google.com/spreadsheets/d/1uW4SMkC45b4EbC4JV1xKAUhwGN2K8j0qFy_jSIYnHhI/
 featured_quote: Third-party content is more prevalent than ever, 94% of pages have at least one third-party resource and the median page has 24. In this chapter we review the prevalence of third-party content, the impact on page weight and browser CPU, then suggest methods to reduce the impact of third-party content on page performance.

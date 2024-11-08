@@ -67,7 +67,7 @@ Ces changements globaux ne sont pas inattendus compte tenu d’une multitude de 
 
 ## <span lang="en">Core Web Vitals</span> : le <span lang="en">Largest Contentful Paint</span> {core-web-vitals-le-largest-contentful-paint}
 
-Le <span lang="en">Largest Contentful Paint</span> (LCP) est une mesure temporelle de référence qui indique le moment où le plus grand élément <a hreflang="en" href="https://web.dev/lcp/#what-elements-are-considered">au-dessus du pli</a> (<a href="https://www.fasterize.com/fr/blog/core-web-vitals-google-quest-ce-que-le-largest-contentful-paint-lcp/">traduction française</a>) a été affiché.
+Le <span lang="en">Largest Contentful Paint</span> (LCP) est une mesure temporelle de référence qui indique le moment où le plus grand élément <a hreflang="en" href="https://web.dev/articles/lcp#what-elements-are-considered">au-dessus du pli</a> (<a href="https://www.fasterize.com/fr/blog/core-web-vitals-google-quest-ce-que-le-largest-contentful-paint-lcp/">traduction française</a>) a été affiché.
 
 ### LCP par matériel
 
@@ -115,7 +115,7 @@ L’Inde reste la dernière de notre série de données, avec seulement 16 % de
 
 Comme le LCP est un indicateur permettant de voir quand le plus grand élément au-dessus du pli a été affiché (y compris les images, les vidéos ou les éléments de type bloc contenant du texte), il n’est pas surprenant que les mesures soient médiocres lorsque le réseau est lent.
 
-Il existe une corrélation évidente entre la vitesse du réseau et de meilleures performances du LCP, mais même sur la 4G, seuls 48 % des résultats sont classés comme bons, ce qui laisse la moitié des analyses dans la cas « à améliorer ». L’automatisation de l’optimisation des médias, la transmission des bonnes dimensions et des bons formats, ainsi que l’optimisation pour le mode  « <span lang="en">Low Data</span> », pourraient aider à faire bouger les choses. Apprenez-en plus sur <a hreflang="en" href="https://web.dev/optimize-lcp/">l’optimisation du LCP dans ce guide</a> (<a href="https://www.fasterize.com/fr/blog/core-web-vitals-google-comment-optimiser-le-largest-contentful-paint-lcp/">traduction française</a>).
+Il existe une corrélation évidente entre la vitesse du réseau et de meilleures performances du LCP, mais même sur la 4G, seuls 48 % des résultats sont classés comme bons, ce qui laisse la moitié des analyses dans la cas « à améliorer ». L’automatisation de l’optimisation des médias, la transmission des bonnes dimensions et des bons formats, ainsi que l’optimisation pour le mode  « <span lang="en">Low Data</span> », pourraient aider à faire bouger les choses. Apprenez-en plus sur <a hreflang="en" href="https://web.dev/articles/optimize-lcp">l’optimisation du LCP dans ce guide</a> (<a href="https://www.fasterize.com/fr/blog/core-web-vitals-google-comment-optimiser-le-largest-contentful-paint-lcp/">traduction française</a>).
 
 ## <span lang="en">Core Web Vitals</span> : le <span lang="en">Cumulative Layout Shift</span> {core-web-vitals-cumulatice-layout-shift}
 
@@ -153,7 +153,7 @@ Selon les données du CrUX, tant pour les appareils de bureau que pour les appar
 
 Les performances du CLS dans les différentes régions géographiques sont majoritairement bonnes, avec au moins 56 % des sites ayant une bonne note. C’est une excellente nouvelle pour la stabilité visuelle perçue. Nous pouvons observer les mêmes pays en tête, comme nous l’avons vu dans la répartition géographique du LCP - République de Corée, Japon, Tchéquie, Allemagne, Pologne.
 
-La stabilité visuelle est moins affectée par la géographie et la latence que d’autres mesures, comme le LCP. La différence de pourcentage de bonnes notes entre le pays en tête et le pays en queue de peloton est de 61 % pour le LCP et de seulement 13 % pour le CLS. Le pourcentage de sites web ayant obtenu une note modérée est relativement faible dans l’ensemble, laissant place à 19 à 29 % de mauvaises expériences dans l’ensemble. Il existe de nombreux facteurs qui peuvent contribuer à un mauvais CLS - apprenez comment les traiter dans le <a hreflang="en" href="https://web.dev/optimize-cls/">guide d’optimisation du <span lang="en">Cumulative Layout Shift</span></a> (<a href="https://www.fasterize.com/fr/blog/core-web-vitals-google-comment-optimiser-le-cumulative-layout-shift-cls/">traduction française</a>).
+La stabilité visuelle est moins affectée par la géographie et la latence que d’autres mesures, comme le LCP. La différence de pourcentage de bonnes notes entre le pays en tête et le pays en queue de peloton est de 61 % pour le LCP et de seulement 13 % pour le CLS. Le pourcentage de sites web ayant obtenu une note modérée est relativement faible dans l’ensemble, laissant place à 19 à 29 % de mauvaises expériences dans l’ensemble. Il existe de nombreux facteurs qui peuvent contribuer à un mauvais CLS - apprenez comment les traiter dans le <a hreflang="en" href="https://web.dev/articles/optimize-cls">guide d’optimisation du <span lang="en">Cumulative Layout Shift</span></a> (<a href="https://www.fasterize.com/fr/blog/core-web-vitals-google-comment-optimiser-le-cumulative-layout-shift-cls/">traduction française</a>).
 
 ### CLS par type de connexion
 

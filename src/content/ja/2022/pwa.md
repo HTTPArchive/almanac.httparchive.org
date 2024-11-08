@@ -262,7 +262,7 @@ PWAは、アプリが広告されたり配置されるさまざまな場所に�
 
 #### インストールと発見性のプロパティ
 
-Webアプリマニフェストファイルには、アプリケーションの説明に役立つデータが含まれている場合があります。これらのプロパティは、アプリケーションを促進するためにストアやその他の配布メカニズムによって使用されることがあります。<a hreflang="en" href="https://developer.chrome.com/blog/richer-pwa-installation/">より豊かなブラウザベースのインストールダイアログ</a>の成長もこれらのフィールドをより顕著に利用しています。マニフェストファイルのアプリケーション情報サプリメントの一部として見つかる関連フィールドは以下の通りです：
+Webアプリマニフェストファイルには、アプリケーションの説明に役立つデータが含まれている場合があります。これらのプロパティは、アプリケーションを促進するためにストアやその他の配布メカニズムによって使用されることがあります。<a hreflang="en" href="https://developer.chrome.com/blog/richer-pwa-installation">より豊かなブラウザベースのインストールダイアログ</a>の成長もこれらのフィールドをより顕著に利用しています。マニフェストファイルのアプリケーション情報サプリメントの一部として見つかる関連フィールドは以下の通りです：
 
 * `description`: このプロパティは、デスクトップの36%とモバイルの34%のWebアプリマニフェストに存在します。説明はアプリケーションの機能を説明するために重要であり、通常はストア向けにアプリに関する情報を提供するために使用されます。現在、インストール可能なPWAの約3分の1がこの情報を提供しています。
 * `screenshots`: このプロパティは、アプリストアやブラウザのインストールプロンプトで使用する1つ以上のスクリーンショットのURLを提供します。この機能を利用するマニフェストを持つPWAは、デスクトップで1.12%、モバイルデバイスで1.19%です。
@@ -383,7 +383,7 @@ PWAは高度なウェブ機能と密接に関連しています。これらの�
 
 ## LighthouseによるPWAの洞察
 
-<a hreflang="en" href="https://developer.chrome.com/docs/lighthouse/">Lighthouse</a>はオープンソースで自動化されたツールで、Webページの品質を向上させるために使用されます。ウェブサイトに対して多数の監査を実行でき、PWA監査の専用カテゴリがあります。利用可能なデータからは、過去12か月間のPWAの状況について興味深い事実が明らかにされています。
+<a hreflang="en" href="https://developer.chrome.com/docs/lighthouse">Lighthouse</a>はオープンソースで自動化されたツールで、Webページの品質を向上させるために使用されます。ウェブサイトに対して多数の監査を実行でき、PWA監査の専用カテゴリがあります。利用可能なデータからは、過去12か月間のPWAの状況について興味深い事実が明らかにされています。
 
 ### Lighthouse監査
 
@@ -409,7 +409,7 @@ PWAは高度なウェブ機能と密接に関連しています。これらの�
   )
 }}
 
-モバイルサイトのLighthouseデータを見ると、似たような統計が見られますが、モバイルのみの<a hreflang="ja" href="https://developer.chrome.com/docs/lighthouse/pwa/content-width?hl=ja">content-widthメタタグ</a>もここに表示され、両方によってうれしいことに合格されています。
+モバイルサイトのLighthouseデータを見ると、似たような統計が見られますが、モバイルのみの<a hreflang="ja" href="https://developer.chrome.com/docs/lighthouse/pwacontent-width?hl=ja">content-widthメタタグ</a>もここに表示され、両方によってうれしいことに合格されています。
 
 viewportメタタグの存在は重要であり、ダブルタップでズームインするために300-350msの遅延を取り除くために役立ちます。さらに、モバイルデバイスでの利点として、アプリをデバイスの画面サイズに最適化します。ほぼすべてのウェブサイト（PWAかどうかにかかわらず）がこれを含んでいるのは驚くことではありません。
 
@@ -441,7 +441,7 @@ Lighthouseインサイトセクションを締めくくるために、監査に�
   )
 }}
 
-予想通り、PWAサイトはPWA監査のスコアがかなり高くなっています。これらの監査は、<a hreflang="en" href="https://developer.chrome.com/docs/lighthouse/pwa/">ドキュメント</a>で詳細に説明されているように、速度、信頼性、インストール可能性、その他のPWA要件を調べます。
+予想通り、PWAサイトはPWA監査のスコアがかなり高くなっています。これらの監査は、<a hreflang="en" href="https://developer.chrome.com/docs/lighthouse/pwa">ドキュメント</a>で詳細に説明されているように、速度、信頼性、インストール可能性、その他のPWA要件を調べます。
 
 また注目すべきは、PWAサイトの監査スコアの範囲（50-100）で、これは存在するPWAの違いを表しています。対照的に、他のウェブの範囲は比較的一貫しており（20-40）、これは以前に議論されたほとんどのサイトに関連する主要な2つの監査（ビューポートとアイコン）を反映しています。
 
@@ -451,7 +451,7 @@ Lighthouseインサイトセクションを締めくくるために、監査に�
 
 ### Workboxの使用
 
-<a hreflang="en" href="https://developer.chrome.com/workbox/">Workbox</a>は、開発者がサービスワーカーの使用を容易にするために作られたライブラリセットです。基本から他のWorkboxライブラリで再利用される<a hreflang="en" href="https://developer.chrome.com/docs/workbox/modules/workbox-core/">workbox-core</a>まで、キャッシング戦略、バックグラウンド同期、プリキャッシングなど、より具体的なタスクまで幅広いライブラリが含まれています。
+<a hreflang="en" href="https://developer.chrome.com/workbox/">Workbox</a>は、開発者がサービスワーカーの使用を容易にするために作られたライブラリセットです。基本から他のWorkboxライブラリで再利用される<a hreflang="en" href="https://developer.chrome.com/docs/workbox/modules/workbox-core">workbox-core</a>まで、キャッシング戦略、バックグラウンド同期、プリキャッシングなど、より具体的なタスクまで幅広いライブラリが含まれています。
 
 {{ figure_markup(
   image="workbox-usage.png",

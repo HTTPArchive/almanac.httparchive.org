@@ -10,7 +10,7 @@ translators: [ksakae1216]
 discuss: 1768
 results: https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/
 samdutton_bio: Sam Duttonは2011年からDeveloper AdvocateとしてGoogle Chromeチームで働いています。数々のイベントを企画して発表し、いくつかのウェブ開発コースを作成して教え、PWA、パフォーマンス、メディア、イメージ、「Next Billion Users」イニシアティブをカバーする様々なビデオ、コードラボ、文書化されたガイダンスに取り組んできました。彼は<a hreflang="en" href="https://simpl.info">simpl.info</a>を管理しており、HTML、CSS、JavaScriptの最もシンプルな例を提供しています。南オーストラリアで育ち、シドニーの大学に進学し、1986年からロンドンに住んでいます。
-alankent_bio: Alan KentはGoogleのDeveloper Advocateで、Eコマースとコンテンツエコシステムに焦点を当てています。彼は <a hreflang="en" href="https://alankent.me">alankent.me</a> でブログを書いており、<a href="https://twitter.com/akent99">@akent99</a> としてツイートしています。
+alankent_bio: Alan KentはGoogleのDeveloper Advocateで、Eコマースとコンテンツエコシステムに焦点を当てています。彼は <a hreflang="en" href="https://alankent.me">alankent.me</a> でブログを書いており、<a href="https://x.com/akent99">@akent99</a> としてツイートしています。
 featured_quote: この調査では、ホームページの10%近くがeコマース・プラットフォーム上にあることが判明しました。<em>eコマースプラットフォーム</em> は、オンラインストアを作成して運営することを可能にするソフトウェア ソフトウェアまたはサービスのセットです。Shopifyなどの有料サービス、Magentoオープンソースなどのソフトウェアプラットフォーム、およびMagento Commerceなどのホスト型プラットフォームなどが含まれます。
 featured_stat_1: 3.98%
 featured_stat_label_1: WooCommerceを使用してサイト最も人気のあるEコマースプラットフォーム
@@ -552,7 +552,7 @@ Eコマースページで要求された画像の中央値（「中間値」）�
 
 ## サードパーティからのリクエストとバイト
 
-多くのウェブサイト、特にオンラインストアでは、分析、A/Bテスト、顧客行動追跡、広告、ソーシャルメディアのサポートなどのためにサードパーティのコードやコンテンツを大量にロードしています。サードパーティのコンテンツは、<a hreflang="en" href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript">パフォーマンスに大きな影響を与える</a>ことがあります。 [Patrick Hulce](https://twitter.com/patrickhulce)の<a hreflang="en" href="https://github.com/patrickhulce/third-party-web">サードパーティウェブツール</a>は、本レポートのサードパーティのリクエストを判断するために使用されており、これについては[サードパーティ](./third-parties)の章で詳しく説明しています。
+多くのウェブサイト、特にオンラインストアでは、分析、A/Bテスト、顧客行動追跡、広告、ソーシャルメディアのサポートなどのためにサードパーティのコードやコンテンツを大量にロードしています。サードパーティのコンテンツは、<a hreflang="en" href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript">パフォーマンスに大きな影響を与える</a>ことがあります。 [Patrick Hulce](https://x.com/patrickhulce)の<a hreflang="en" href="https://github.com/patrickhulce/third-party-web">サードパーティウェブツール</a>は、本レポートのサードパーティのリクエストを判断するために使用されており、これについては[サードパーティ](./third-parties)の章で詳しく説明しています。
 
 {{ figure_markup(
   image="fig17.png",

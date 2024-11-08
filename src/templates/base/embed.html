@@ -24,7 +24,7 @@
         "@type": "Person",
           "sameAs": [
             "https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"
-            {% if authordata.twitter %},"https://twitter.com/{{ authordata.twitter }}"{% endif %}
+            {% if authordata.twitter %},"https://x.com/{{ authordata.twitter }}"{% endif %}
             {% if authordata.github %},"https://github.com/{{ authordata.github }}"{% endif %}
             {% if authordata.linkedin %},"https://www.linkedin.com/in/{{ authordata.linkedin }}/"{% endif %}
             ],

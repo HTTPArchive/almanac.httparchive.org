@@ -8,7 +8,7 @@ analysts: [siakaramalegos, rviscomi, Nithanaroy]
 editors: [jzyang]
 translators: [ksakae1216]
 results: https://docs.google.com/spreadsheets/d/13xhPx6o2Nowz_3b3_5ojiF_mY3Lhs25auBKM6eqGZmo/
-siakaramalegos_bio: Sia Karamalegosはウェブ開発者、国際会議のスピーカー、ライターです。Googleデベロッパー ウェブテクノロジーの専門家、Cloudinaryメディア開発者エキスパート、Stripeコミュニティエキスパートであり、Eleventy Meetupを共同開催しています。<a hreflang="en" href="https://sia.codes/">sia.codes</a> や<a hreflang="en" href="https://twitter.com/thegreengreek">Twitter</a> で、彼女の執筆、講演、ニュースレターをチェックしてください。
+siakaramalegos_bio: Sia Karamalegosはウェブ開発者、国際会議のスピーカー、ライターです。Googleデベロッパー ウェブテクノロジーの専門家、Cloudinaryメディア開発者エキスパート、Stripeコミュニティエキスパートであり、Eleventy Meetupを共同開催しています。<a hreflang="en" href="https://sia.codes/">sia.codes</a> や<a hreflang="en" href="https://x.com/thegreengreek">Twitter</a> で、彼女の執筆、講演、ニュースレターをチェックしてください。
 featured_quote: フレームワークレベルでパフォーマンスに関するスマートなデフォルトを設定できれば、より良いウェブを作ることができ、同時に開発者の仕事を楽にすることができます。
 featured_stat_1: 37%
 featured_stat_label_1: 上位1,000サイトのうちCore Web Vitalsを通過したサイトの割合
@@ -41,8 +41,8 @@ CrUX RUMのデータをHTTP ArchiveのWebPageTestのラボデータで補完し�
 
 パフォーマンスを前年比で比較する場合、以下の点に留意してください。
 
-- 2020年から<a hreflang="en" href="https://web.dev/cls-web-tooling/">累積レイアウトシフト（CLS）</a>の計算が変更されました。
-- 2020年から<a hreflang="en" href="https://web.dev/cls-web-tooling/#additional-updates">コンテンツの初回ペイント（FCP）の基準値（「良い」、「改善が必要」、「悪い」）が変更</a>されました。
+- 2020年から<a hreflang="en" href="https://web.dev/articles/cls-web-tooling">累積レイアウトシフト（CLS）</a>の計算が変更されました。
+- 2020年から<a hreflang="en" href="https://web.dev/articles/cls-web-tooling#additional-updates">コンテンツの初回ペイント（FCP）の基準値（「良い」、「改善が必要」、「悪い」）が変更</a>されました。
 - 昨年は2020年8月のデータをもとに、今年は2021年7月の実行をもとに報告しました。
 
 詳しくはWeb Almanacの[方法論](./methodology)をお読みください。
@@ -147,7 +147,7 @@ Core Web Vitalsでは、上位1,000サイトが他を大きく引き離してい
 
 ### 最初のバイトまでの時間（TTFB）
 
-<a hreflang="en" href="https://web.dev/ttfb/">最初のバイトまでの時間</a> (TTFB) は、ブラウザがページを要求してから、サーバーから最初のバイトの情報を受け取るまでの時間です。ウェブサイトのロードに関する連鎖の最初の指標となるものです。TTFBが悪いと、連鎖的にFCPやLCPに影響を与えることになります。それが、私たちが最初にこの指標について話す理由です。
+<a hreflang="en" href="https://web.dev/articles/ttfb">最初のバイトまでの時間</a> (TTFB) は、ブラウザがページを要求してから、サーバーから最初のバイトの情報を受け取るまでの時間です。ウェブサイトのロードに関する連鎖の最初の指標となるものです。TTFBが悪いと、連鎖的にFCPやLCPに影響を与えることになります。それが、私たちが最初にこの指標について話す理由です。
 
 {{ figure_markup(
   image="performance-TTFB-by-device.png",
@@ -357,7 +357,7 @@ HTMLノードに関係なく、71-79%のページでLCP要素が、画像であ�
 
 すべてのブラウザがネイティブの遅延ローディングに対応しているわけではありません。一般的な遅延ロードのポリフィルは、画像要素に「lazyload」クラスがあると検出します。このように、"lazyload "クラスを持つ画像を集計に加えることで、より遅延ロードの可能性が高い画像を特定できます。LCPの`<img>`要素を遅延ロードしていると思われるサイトの割合は、モバイルでは16.5%に跳ね上がります。
 
-LCP要素を遅延ローディングすると、パフォーマンスが低下します。 *やめてくれ！* WordPressはネイティブの遅延ローディングを早くから採用しています。初期の方法は、すべての画像に遅延ロードを適用する素朴なソリューションで、結果は <a hreflang="en" href="https://web.dev/lcp-lazy-loading/"> 負の性能相関</a>を示しました。このデータをもとに、より良いパフォーマンスを発揮するために、よりニュアンスの異なるアプローチを実施することができたのです。
+LCP要素を遅延ローディングすると、パフォーマンスが低下します。 *やめてくれ！* WordPressはネイティブの遅延ローディングを早くから採用しています。初期の方法は、すべての画像に遅延ロードを適用する素朴なソリューションで、結果は <a hreflang="en" href="https://web.dev/articles/lcp-lazy-loading"> 負の性能相関</a>を示しました。このデータをもとに、より良いパフォーマンスを発揮するために、よりニュアンスの異なるアプローチを実施することができたのです。
 
 画像の<a hreflang="en" href="https://developer.mozilla.org/docs/Web/HTML/Element/img#attr-decoding">`decode`属性</a>は、比較的新しいものです。`async`に設定することで、読み込みやスクロールのパフォーマンスを向上させることができます。現在、0.4%のサイトがLCP画像に非同期デコード指令を使用しています。非同期デコードがLCP画像に与える悪影響は、現在のところ不明です。したがって、LCPイメージに `decode="async"` を設定する場合は、設定前と設定後にサイトをテストしてください。
 
@@ -506,4 +506,4 @@ FIDのランク別実績は横ばい。
 
 最後に、WordPressは上位1000万のウェブサイト、あるいはそれ以上のパフォーマンスに影響を与える可能性があることを確認しました。これは、すべてのCMSとフレームワークが留意すべき教訓です。フレームワークレベルでパフォーマンスに関するスマートなデフォルトを設定することができれば、より良いウェブを作ることができ、同時に開発者の仕事を容易にできます。
 
-あなたがもっとも興味を持ったこと、驚いたことは何ですか？あなたの感想をTwitter（[@HTTPArchive](https://twitter.com/HTTPArchive)）でシェアしてください。
+あなたがもっとも興味を持ったこと、驚いたことは何ですか？あなたの感想をTwitter（[@HTTPArchive](https://x.com/HTTPArchive)）でシェアしてください。

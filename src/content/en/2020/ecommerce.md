@@ -7,7 +7,7 @@ reviewers: [alankent]
 analysts: [jrharalson, rockeynebhwani]
 editors: [tunetheweb]
 translators: []
-rockeynebhwani_bio: Rockey Nebhwani is an independent consultant who has worked in retail and ecommerce since 2001 and has extensive experience in the industry working with retailers like Amazon, Wal-Mart, Tesco, M&S, Safeway etc. across US and UK. Rockey is an occasional speaker at ecommerce events and also tweets at <a href="https://twitter.com/rnebhwani">@rnebhwani</a>.
+rockeynebhwani_bio: Rockey Nebhwani is an independent consultant who has worked in retail and ecommerce since 2001 and has extensive experience in the industry working with retailers like Amazon, Wal-Mart, Tesco, M&S, Safeway etc. across US and UK. Rockey is an occasional speaker at ecommerce events and also tweets at <a href="https://x.com/rnebhwani">@rnebhwani</a>.
 #jrharalson_bio: TODO
 discuss: 2052
 results: https://docs.google.com/spreadsheets/d/1Hvsh_ZBKg2vWhouJ8vIzLmp0nLIMzrT2mr6RQbIkxqY/
@@ -227,7 +227,7 @@ Next, let's look at how images are used on ecommerce sites. Note that because ou
 
 The figures above show that the median ecommerce page has 34 images and an image payload of 1,208 KB on mobile, 37 images and 1,271 KB on desktop. 10% of home pages have 90 or more images and an image payload of nearly between 5.5 MB on mobile and 5.8MB on desktop.
 
-[Compared to 2019](../2019/ecommerce#image-stats), both median image requests and median image payloads have seen a drop. Median image requests dropped by 3 for both mobile and desktop. Median image payload also dropped by approximately 200kb-250kb across mobile and desktop. This drop may be driven by sites adopting lazy loading techniques such as usage of the `loading="lazy"` attribute which is now <a hreflang="en" href="https://caniuse.com/loading-lazy-attr">supported by more and more browsers</a>. This year's [Markup](./markup#data--attributes) chapter makes an observation usage for native lazy loading appears to be on the increase and around 3.86% of the pages use this in Aug-2020 and this has been on constant rise (as seen in [this tweet](https://twitter.com/rick_viscomi/status/1344380340153016321?s=20)).
+[Compared to 2019](../2019/ecommerce#image-stats), both median image requests and median image payloads have seen a drop. Median image requests dropped by 3 for both mobile and desktop. Median image payload also dropped by approximately 200kb-250kb across mobile and desktop. This drop may be driven by sites adopting lazy loading techniques such as usage of the `loading="lazy"` attribute which is now <a hreflang="en" href="https://caniuse.com/loading-lazy-attr">supported by more and more browsers</a>. This year's [Markup](./markup#data--attributes) chapter makes an observation usage for native lazy loading appears to be on the increase and around 3.86% of the pages use this in Aug-2020 and this has been on constant rise (as seen in [this tweet](https://x.com/rick_viscomi/status/1344380340153016321?s=20)).
 
 #### Popular image formats
 
@@ -278,7 +278,7 @@ We see a significant increase in the use of third-party requests and bytes [comp
 
 ## Ecommerce user experience
 
-Ecommerce is all about converting customers and in order to do that a fast performing website is paramount. In this section, we try to shed light on real-world user experience of ecommerce websites. To achieve this, we turn our analysis towards some user-perceived performance metrics, which are captured in the three <a hreflang="en" href="https://web.dev/vitals/">Core Web Vitals</a> metrics.
+Ecommerce is all about converting customers and in order to do that a fast performing website is paramount. In this section, we try to shed light on real-world user experience of ecommerce websites. To achieve this, we turn our analysis towards some user-perceived performance metrics, which are captured in the three <a hreflang="en" href="https://web.dev/articles/vitals">Core Web Vitals</a> metrics.
 
 ### Chrome User Experience Report
 

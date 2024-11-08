@@ -258,7 +258,7 @@ En gardant à l’esprit cette perspective sur l’utilisation des fonctionnalit
 
 Vous pourriez vous attendre à ce que beaucoup des éléments que nous avons analysés ne soient utilisés que sur une seule page web. En fait, les 5 048 éléments apparaissent tous sur plus d’une page. Le nombre de pages sur lesquelles un élément de notre ensemble de données apparaît est de 15 au minimum. Environ un cinquième d’entre eux apparaissent sur plus de 100 pages. Environ 7 % d’entre eux apparaissent sur plus de 1 000 pages.
 
-Pour aider à analyser les données, j’ai bidouillé un <a hreflang="en" href="https://rainy-periwinkle.glitch.me">petit outil avec Glitch</a>. Vous pouvez utiliser cet outil vous-même et envoyer un lien permanent à [@HTTPArchive](https://twitter.com/HTTPArchive) avec vos observations. (Tommy Hodgins a également construit un <a hreflang="en" href="https://github.com/tomhodgins/hade">outil CLI similaire</a> que vous pouvez utiliser pour explorer les données).
+Pour aider à analyser les données, j’ai bidouillé un <a hreflang="en" href="https://rainy-periwinkle.glitch.me">petit outil avec Glitch</a>. Vous pouvez utiliser cet outil vous-même et envoyer un lien permanent à [@HTTPArchive](https://x.com/HTTPArchive) avec vos observations. (Tommy Hodgins a également construit un <a hreflang="en" href="https://github.com/tomhodgins/hade">outil CLI similaire</a> que vous pouvez utiliser pour explorer les données).
 
 Jetons un coup d’oeil à quelques données.
 

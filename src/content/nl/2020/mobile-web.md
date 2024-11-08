@@ -56,7 +56,7 @@ Merk op dat deze sectie verwijst naar statistieken die specifiek voor dit hoofds
 
 We keken naar het verkeer naar de herkomst op populariteit: hoe vaak bezoeken gebruikers een bepaalde herkomst, en wat zegt dat ons over de wereldwijde verspreiding op internet?
 
-Rick Byers [tweette](https://twitter.com/RickByers/status/1195342331588706306) deze distributie een jaar geleden, we keken naar de laatste gegevens. De grafiek toont ons de algehele verdeling over de herkomst op basis van hun populariteit, vastgelegd door hun bijdrage aan het percentage pagina's dat wordt geladen in Chrome.
+Rick Byers [tweette](https://x.com/RickByers/status/1195342331588706306) deze distributie een jaar geleden, we keken naar de laatste gegevens. De grafiek toont ons de algehele verdeling over de herkomst op basis van hun populariteit, vastgelegd door hun bijdrage aan het percentage pagina's dat wordt geladen in Chrome.
 
 {{ figure_markup(
   image="page-loads-across-origins-ranked-by-popularity.png",
@@ -159,7 +159,7 @@ Het laden van prestaties is een veelomvattend onderwerp, dus hebben we een aanta
 
 Een belangrijk aspect van de laadervaring is hoe snel de hoofdinhoud van een webpagina wordt geladen en zichtbaar is voor gebruikers. Dit was moeilijk te meten, in het verleden heeft Google prestatiestatistieken aanbevolen, zoals <a hreflang="en" href="https://web.dev/first-meaningful-paint/">First Meaningful Paint</a> (FMP) om dit vast te leggen, maar het was moeilijk uit te leggen en vaak niet in staat om vast te stellen wanneer de hoofdinhoud van de pagina zichtbaar was.
 
-Soms is eenvoudiger beter. Meer recentelijk is ontdekt dat een nauwkeurigere manier om te meten wanneer de hoofdinhoud van een pagina is geladen, is door simpelweg te kijken naar wanneer het grootste element is weergegeven. <a hreflang="en" href="https://web.dev/largest-contentful-paint">Largest Contentful Paint</a> (LCP) is een op timing gebaseerde statistiek die dit vastlegt: het tijdstip waarop de grootste element boven de vouw is weergegeven.
+Soms is eenvoudiger beter. Meer recentelijk is ontdekt dat een nauwkeurigere manier om te meten wanneer de hoofdinhoud van een pagina is geladen, is door simpelweg te kijken naar wanneer het grootste element is weergegeven. <a hreflang="en" href="https://web.dev/articles/lcp">Largest Contentful Paint</a> (LCP) is een op timing gebaseerde statistiek die dit vastlegt: het tijdstip waarop de grootste element boven de vouw is weergegeven.
 
 Een goede LCP-score is 2,5s op p75. We ontdekten dat het gemiddelde LCP op p75 2,6s op mobiel en 2,3s op desktop is. Vooral mobiel internet mist het doel op LCP.
 
@@ -211,9 +211,9 @@ Dit is vooral belangrijk voor mobiel internet, omdat verschuivende inhoud meer o
 
 ##### Cumulative Layout Shift
 
-<a hreflang="en" href="https://web.dev/cls/">Cumulative Layout Shift</a> (CLS) is een metriek die kwantificeert hoeveel inhoud in de viewport verschuift tijdens het bezoek van de gebruiker.
+<a hreflang="en" href="https://web.dev/articles/cls">Cumulative Layout Shift</a> (CLS) is een metriek die kwantificeert hoeveel inhoud in de viewport verschuift tijdens het bezoek van de gebruiker.
 
-De <a hreflang="en" href="https://web.dev/optimize-cls/">meest voorkomende oorzaken van een slechte CLS</a> zijn:
+De <a hreflang="en" href="https://web.dev/articles/optimize-cls">meest voorkomende oorzaken van een slechte CLS</a> zijn:
 
 * Afbeeldingen zonder afmetingen.
 * Advertenties, embeds en iframes zonder afmetingen.

@@ -304,13 +304,13 @@ Wix Ecommerceは、ライトハウスのベストプラクティススコアの�
 
 2020年、Googleはコアウェブ・バイタル（CWV）という名称で、ウェブサイトの所有者と開発者が、優れたユーザー体験のために重要な3つのパフォーマンス指標に集中できるよう取り組みを開始しました。これらの指標は次のとおりです。
 
-**<a hreflang="en" href="https://web.dev/lcp/">最大のコンテントフルペイント</a> (LCP)**
+**<a hreflang="en" href="https://web.dev/articles/lcp">最大のコンテントフルペイント</a> (LCP)**
 * _ローディング_のパフォーマンスを測定します。良いユーザー体験を提供するために、LCPはページが最初にロードされ始めてから2.5秒以内に発生する必要があります。
 
-**<a hreflang="en" href="https://web.dev/fid/">最初の入力までの遅延</a> (FID)**
+**<a hreflang="en" href="https://web.dev/articles/fid">最初の入力までの遅延</a> (FID)**
 * _インタラクティビティ_を測定します。良いユーザー体験を提供するために、ページのFIDは100ミリ秒以下であるべきです。
 
-**<a hreflang="en" href="https://web.dev/cls/">累積レイアウトシフト</a> (CLS)**
+**<a hreflang="en" href="https://web.dev/articles/cls">累積レイアウトシフト</a> (CLS)**
 * _視覚的_な安定性を測定します。良いユーザー体験を提供するために、ページのCLSは0.1以下を維持する必要があります。
 
 コアウェブバイタルが<a hreflang="en" href="https://developers.google.com/search/blog/2020/05/evaluating-page-experience">Googleの検索アルゴリズムにおけるランキング要因</a>となったことで、eコマース事業者からの注目度が高まっています。

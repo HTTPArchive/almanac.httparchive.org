@@ -22,13 +22,13 @@ featured_stat_label_3: Top 1k websites that would have good CWV with INP
 
 Web performance is crucial to user experience. We've all bounced from a site due to slow load times, or worse, have not been able to access important information. Additionally, numerous <a hreflang="en" href="https://wpostats.com/">case studies</a> have demonstrated that an improvement in web performance results in an improvement in conversion and engagement for businesses. Surprisingly, the industry spotlight is quite elusive for web performance—why is this? Some may say web performance is tough to define and even more challenging to measure.
 
-How do we measure something that is hard to define in the first place? As [Sergey Chernyshev](https://twitter.com/sergeyche), creator of <a hreflang="en" href="https://github.com/ux-capture/ux-capture">UX Capture</a>, says, "_The best way to measure performance is to be embedded into the user's brain to understand exactly what they're thinking as they use the site_".  We can't—and shouldn't in case that was unclear—do this, so what are our options?
+How do we measure something that is hard to define in the first place? As [Sergey Chernyshev](https://x.com/sergeyche), creator of <a hreflang="en" href="https://github.com/ux-capture/ux-capture">UX Capture</a>, says, "_The best way to measure performance is to be embedded into the user's brain to understand exactly what they're thinking as they use the site_".  We can't—and shouldn't in case that was unclear—do this, so what are our options?
 
 Thankfully, there's a way to measure some aspects of performance automatically! We know the browser is in charge of loading a page, and it goes through a checklist of steps each time. Depending on which step the browser is on, we can tell how far along the site is in the page load process. Conveniently, a [number of performance timeline APIs](https://developer.mozilla.org/docs/Web/API/Performance) are used to fire off timestamps when the browser gets to certain page load steps.
 
 It's important to note that these metrics are only our best guess at how to gauge user experience. For example, just because the browser fired an event that an element has been painted onto the screen, does that always mean it was visible to the user at that time? Additionally, as the industry grew, more and more metrics showed up while some became deprecated. It can be complicated to know where to start and understand what performance metrics are telling us about our users, especially for folks newer to the field.
 
-This chapter focuses on Google's solution to the problem: <a hreflang="en" href="https://web.dev/vitals/">Core Web Vitals</a> (CWV), web performance metrics introduced in 2020 and made <a hreflang="en" href="https://developers.google.com/search/blog/2020/11/timing-for-page-experience">a signal in search ranking</a> during 2021. Each of the three metrics covers an important area of user experience: loading, interactivity, and visual stability. The public <a hreflang="en" href="https://developer.chrome.com/docs/crux/">Chrome UX Report</a> (CrUX) dataset is Chrome's view of how websites are performing on CWV. There's zero setup on the developer's part; Chrome automatically collects and publishes data from <a hreflang="en" href="https://developer.chrome.com/docs/crux/methodology/#eligibility">eligible websites</a>, for users who have opted in. Using this dataset, we're able to get insights into the web's performance over time.
+This chapter focuses on Google's solution to the problem: <a hreflang="en" href="https://web.dev/articles/vitals">Core Web Vitals</a> (CWV), web performance metrics introduced in 2020 and made <a hreflang="en" href="https://developers.google.com/search/blog/2020/11/timing-for-page-experience">a signal in search ranking</a> during 2021. Each of the three metrics covers an important area of user experience: loading, interactivity, and visual stability. The public <a hreflang="en" href="https://developer.chrome.com/docs/crux">Chrome UX Report</a> (CrUX) dataset is Chrome's view of how websites are performing on CWV. There's zero setup on the developer's part; Chrome automatically collects and publishes data from <a hreflang="en" href="https://developer.chrome.com/docs/crux/methodology#eligibility">eligible websites</a>, for users who have opted in. Using this dataset, we're able to get insights into the web's performance over time.
 
 Although the spotlight of this chapter, it's important to note that CWV are relatively new to the field and not the only way to measure web performance. We chose to focus on these metrics because the search ranking influence was effective almost exactly one year ago, and this year's data gives us insights on how the web is adjusting to this major shift in the industry and where room for opportunity might still exist. CWV are a common baseline that allows performance to be loosely comparable across sites, but it's up to site owners to determine which metrics and strategies are best for their sites. As much as we wish otherwise, there's no way to fit the entire history of the industry or all the different ways to evaluate performance in one chapter.
 
@@ -74,7 +74,7 @@ To better understand why mobile experiences have gotten so much better this year
 
 ## Largest Contentful Paint (LCP)
 
-<a hreflang="en" href="https://web.dev/lcp/">Largest Contentful Paint</a> (LCP) is the time from the start of the navigation until the largest block of content is visible in the viewport. This metric represents how quickly users are able to see what is likely the most meaningful content.
+<a hreflang="en" href="https://web.dev/articles/lcp">Largest Contentful Paint</a> (LCP) is the time from the start of the navigation until the largest block of content is visible in the viewport. This metric represents how quickly users are able to see what is likely the most meaningful content.
 
 We say that a website has good LCP if at least 75 percent of all page views are faster than 2,500 ms. Of the three CWV metrics, LCP pass rates are the lowest, often making it the bottleneck to achieving good CWV assessments.
 
@@ -94,7 +94,7 @@ Why did LCP improve so much this year? To help answer that, let's explore a coup
 
 ### Time to First Byte (TTFB)
 
-<a hreflang="en" href="https://web.dev/ttfb/">Time to First Byte</a> (TTFB) is the time from the start of the navigation to the first byte of data returned to the client. It's our first step in the web performance checklist, representing the backend component of LCP performance, particularly network connection speeds and server response times.
+<a hreflang="en" href="https://web.dev/articles/ttfb">Time to First Byte</a> (TTFB) is the time from the start of the navigation to the first byte of data returned to the client. It's our first step in the web performance checklist, representing the backend component of LCP performance, particularly network connection speeds and server response times.
 
 {{ figure_markup(
   image="good-ttfb-by-device.png",
@@ -106,15 +106,15 @@ Why did LCP improve so much this year? To help answer that, let's explore a coup
   )
 }}
 
-As an aside, note that earlier this year Chrome <a hreflang="en" href="https://developer.chrome.com/docs/crux/release-notes/#202204">changed</a> the threshold for "good" TTFB from 500 ms to 800 ms. In the chart above, all historical data is using this new threshold for comparison purposes.
+As an aside, note that earlier this year Chrome <a hreflang="en" href="https://developer.chrome.com/docs/crux/release-notes#202204">changed</a> the threshold for "good" TTFB from 500 ms to 800 ms. In the chart above, all historical data is using this new threshold for comparison purposes.
 
 With that in mind, the percentage of websites having good TTFB has not actually improved very much. In the past year, websites' desktop and mobile experiences have gotten one percentage point better, which is nice but doesn't account for the gains observed to LCP. While this doesn't rule out improvements to the "needs improvement" and "poor" ends of the TTFB distribution, the "good" end is what matters most.
 
-Another complication is that TTFB is still considered to be an <a hreflang="en" href="https://developer.chrome.com/docs/crux/methodology/#experimental-metrics">experimental</a> metric in CrUX. According to the CrUX documentation, TTFB _does not_ factor in more advanced navigation types like pre-rendered and back/forward navigations. This is somewhat of a blind spot, so if there were improvements in these areas, they wouldn't necessarily affect the TTFB results.
+Another complication is that TTFB is still considered to be an <a hreflang="en" href="https://developer.chrome.com/docs/crux/methodology#experimental-metrics">experimental</a> metric in CrUX. According to the CrUX documentation, TTFB _does not_ factor in more advanced navigation types like pre-rendered and back/forward navigations. This is somewhat of a blind spot, so if there were improvements in these areas, they wouldn't necessarily affect the TTFB results.
 
 ### First Contentful Paint (FCP)
 
-<a hreflang="en" href="https://web.dev/fcp/">First Contentful Paint</a> (FCP) is the time from the start of the request to the first meaningful content painted to the screen. In addition to TTFB, this metric can be affected by render-blocking content. The threshold for "good" FCP is 1,800 ms.
+<a hreflang="en" href="https://web.dev/articles/fcp">First Contentful Paint</a> (FCP) is the time from the start of the request to the first meaningful content painted to the screen. In addition to TTFB, this metric can be affected by render-blocking content. The threshold for "good" FCP is 1,800 ms.
 
 {{ figure_markup(
   image="good-fcp-by-device.png",
@@ -190,7 +190,7 @@ We see that 72% of mobile pages and 82% of desktop pages have images as their LC
 
 After the HTML document is loaded, there are two major factors that affect how quickly the LCP resource itself can be loaded: discoverability and prioritization. We'll explore [LCP discoverability](#lcp-static-discoverability) later, but first let's look at how LCP images are prioritized.
 
-Images are not loaded at high priority by default, but thanks to the new <a hreflang="en" href="https://web.dev/priority-hints/">Priority Hints</a> API, developers can explicitly set their LCP images to load at high priority to take precedence over non-essential resources.
+Images are not loaded at high priority by default, but thanks to the new <a hreflang="en" href="https://web.dev/articles/fetch-priority">Priority Hints</a> API, developers can explicitly set their LCP images to load at high priority to take precedence over non-essential resources.
 
 {{ figure_markup(
   content="0.03%",
@@ -203,7 +203,7 @@ Images are not loaded at high priority by default, but thanks to the new <a href
 
 0.03% of pages use `fetchpriority=high` on their LCP elements. Counterproductively, a handful of pages actually _lower_ the priority over their LCP images: 77 pages on mobile and 104 on desktop.
 
-`fetchpriority` is still very new and not supported everywhere, but there's little to no reason why it shouldn't be in every developer's toolbox. [Patrick Meenan](https://twitter.com/patmeenan), who helped develop the API, [describes it](https://twitter.com/patmeenan/status/1460276602479251457) as a "cheat code" given how easy it is to implement relative to the potential improvements.
+`fetchpriority` is still very new and not supported everywhere, but there's little to no reason why it shouldn't be in every developer's toolbox. [Patrick Meenan](https://x.com/patmeenan), who helped develop the API, [describes it](https://x.com/patmeenan/status/1460276602479251457) as a "cheat code" given how easy it is to implement relative to the potential improvements.
 
 #### LCP static discoverability
 
@@ -453,7 +453,7 @@ The six percentage point improvement to LCP this year can only happen when hundr
 
 ## Cumulative Layout Shift (CLS)
 
-<a hreflang="en" href="https://web.dev/cls/">Cumulative Layout Shift</a> (CLS) is a layout stability metric that represents the amount that content unexpectedly moves around on the screen. We say that a website has good CLS if at least 75% of all navigations across the site have a score of 0.1 or less.
+<a hreflang="en" href="https://web.dev/articles/cls">Cumulative Layout Shift</a> (CLS) is a layout stability metric that represents the amount that content unexpectedly moves around on the screen. We say that a website has good CLS if at least 75% of all navigations across the site have a score of 0.1 or less.
 
 {{ figure_markup(
   image="good-cls-by-device.png",
@@ -530,7 +530,7 @@ Having any unsized images on the page can be a liability for CLS, but perhaps a 
   )
 }}
 
-The median unsized image on mobile has a height of 99px. Given that our [test devices](./methodology#webpagetest) have a mobile viewport height of 512px, that's about 20% of the viewport area that would shift down, assuming full-width content. Depending on where that image is in the viewport when it loads, it could cause a <a hreflang="en" href="https://web.dev/cls/#layout-shift-score">layout shift score</a> of at most 0.2, which more than exceeds the 0.1 threshold for "good" CLS.
+The median unsized image on mobile has a height of 99px. Given that our [test devices](./methodology#webpagetest) have a mobile viewport height of 512px, that's about 20% of the viewport area that would shift down, assuming full-width content. Depending on where that image is in the viewport when it loads, it could cause a <a hreflang="en" href="https://web.dev/articles/cls#layout-shift-score">layout shift score</a> of at most 0.2, which more than exceeds the 0.1 threshold for "good" CLS.
 
 Desktop pages tend to have larger unsized images. The median unsized image on desktop is 113px tall and the 90th percentile has a height of 410px.
 
@@ -547,7 +547,7 @@ In what we can only hope is either a measurement error or a seriously mistaken w
 
 #### Animations
 
-Some <a hreflang="en" href="https://web.dev/non-composited-animations/">non-composited</a> CSS animations can affect the layout of the page and contribute to CLS. The <a hreflang="en" href="https://web.dev/optimize-cls/#animations-%F0%9F%8F%83%E2%80%8D%E2%99%80%EF%B8%8F">best practice</a> is to use `transform` animations instead.
+Some <a hreflang="en" href="https://web.dev/non-composited-animations/">non-composited</a> CSS animations can affect the layout of the page and contribute to CLS. The <a hreflang="en" href="https://web.dev/articles/optimize-cls#animations-%F0%9F%8F%83%E2%80%8D%E2%99%80%EF%B8%8F">best practice</a> is to use `transform` animations instead.
 
 {{ figure_markup(
   content="38%",
@@ -661,7 +661,7 @@ There are other, more direct ways site owners can improve their CLS. Setting `he
 
 ## First Input Delay (FID)
 
-<a hreflang="en" href="https://web.dev/fid/">First Input Delay</a> (FID) measures the time from the first user interaction like a click or tap to the time at which the browser begins processing the corresponding event handlers. A website has "good" FID if at least 75 percent of all navigations across the site are faster than 100 ms.
+<a hreflang="en" href="https://web.dev/articles/fid">First Input Delay</a> (FID) measures the time from the first user interaction like a click or tap to the time at which the browser begins processing the corresponding event handlers. A website has "good" FID if at least 75 percent of all navigations across the site are faster than 100 ms.
 
 {{ figure_markup(
   image="good-fid-by-device.png",
@@ -683,7 +683,7 @@ Let's dig deeper into the ways that responsiveness can be improved across the we
 
 #### Disabling double-tap to zoom
 
-Some mobile browsers, including Chrome, wait at least 250 ms before handling tap inputs to make sure users aren't attempting to <a hreflang="en" href="https://developer.chrome.com/blog/300ms-tap-delay-gone-away/">double-tap to zoom</a>. Given that the threshold for "good" FID is 100 ms, this behavior makes it impossible to pass the assessment.
+Some mobile browsers, including Chrome, wait at least 250 ms before handling tap inputs to make sure users aren't attempting to <a hreflang="en" href="https://developer.chrome.com/blog/300ms-tap-delay-gone-away">double-tap to zoom</a>. Given that the threshold for "good" FID is 100 ms, this behavior makes it impossible to pass the assessment.
 
 ```html
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -706,7 +706,7 @@ This is one of the quickest, easiest, and least intrusive ways to meaningfully i
 
 #### Total Blocking Time (TBT)
 
-<a hreflang="en" href="https://web.dev/tbt/">Total Blocking Time</a> (TBT) is the time between the <a hreflang="en" href="https://web.dev/fcp/">First Contentful Paint</a> (FCP) and <a hreflang="en" href="https://web.dev/tti/">Time to Interactive</a> (TTI), representing the total amount of time that the main thread was blocked and unable to respond to user inputs.
+<a hreflang="en" href="https://web.dev/tbt/">Total Blocking Time</a> (TBT) is the time between the <a hreflang="en" href="https://web.dev/articles/fcp">First Contentful Paint</a> (FCP) and <a hreflang="en" href="https://web.dev/tti/">Time to Interactive</a> (TTI), representing the total amount of time that the main thread was blocked and unable to respond to user inputs.
 
 TBT is often used as a lab-based proxy for FID, due to the challenges of realistically simulating user interactions in synthetic tests.
 
@@ -748,9 +748,9 @@ It's also worth noting that these results are significantly higher than the dist
 
 ### Interaction to Next Paint (INP)
 
-<a hreflang="en" href="https://web.dev/inp/">Interaction to Next Paint</a> (INP) measures the amount of time it takes for the browser to complete the next paint in response to a user interaction. This metric was created after Google <a hreflang="en" href="https://web.dev/responsiveness/">requested feedback</a> on a proposal to improve how we measure responsiveness. Many readers may be hearing about this metric for the first time, so it's worth going into a bit more detail about how it works.
+<a hreflang="en" href="https://web.dev/articles/inp">Interaction to Next Paint</a> (INP) measures the amount of time it takes for the browser to complete the next paint in response to a user interaction. This metric was created after Google <a hreflang="en" href="https://web.dev/responsiveness/">requested feedback</a> on a proposal to improve how we measure responsiveness. Many readers may be hearing about this metric for the first time, so it's worth going into a bit more detail about how it works.
 
-An _interaction_ in this context refers to the user experience of providing an input to a web application and waiting for the next frame of visual feedback to be painted on the screen. The only inputs that are considered for INP are clicks, taps, and key presses. The INP value itself is taken from one of the worst interaction latencies on the page. Refer to the <a hreflang="en" href="https://web.dev/inp/#what-is-inp">INP documentation</a> for more info on how it's calculated.
+An _interaction_ in this context refers to the user experience of providing an input to a web application and waiting for the next frame of visual feedback to be painted on the screen. The only inputs that are considered for INP are clicks, taps, and key presses. The INP value itself is taken from one of the worst interaction latencies on the page. Refer to the <a hreflang="en" href="https://web.dev/articles/inp#what-is-inp">INP documentation</a> for more info on how it's calculated.
 
 Unlike FID, INP is a measure of all interactions on the page, not just the first one. It also measures the entire time until the next frame is painted, unlike FID which only measures the time until the event handler starts processing. In these ways, INP is a much more representative metric of the holistic user experience on the page.
 
@@ -800,7 +800,7 @@ When we look at the amount of JavaScript that the median mobile page loads for e
 
 #### INP as a hypothetical CWV metric
 
-INP is not an official CWV metric, but [Annie Sullivan](https://twitter.com/anniesullie), who is the Tech Lead for the CWV program at Google, has [commented](https://twitter.com/anniesullie/status/1535208365374185474) about its intended future, saying "_INP is still experimental! Not a Core Web Vital yet, but we hope it can replace FID._"
+INP is not an official CWV metric, but [Annie Sullivan](https://x.com/anniesullie), who is the Tech Lead for the CWV program at Google, has [commented](https://x.com/anniesullie/status/1535208365374185474) about its intended future, saying "_INP is still experimental! Not a Core Web Vital yet, but we hope it can replace FID._"
 
 This raises an interesting question: hypothetically, if INP were to be a CWV metric today, how different would the pass rates be?
 
@@ -873,7 +873,7 @@ This chart shows the relationship between pages' FID and TBT responsiveness. The
 
 The most notable attribute of this chart is the dense area in the bottom left corner, which appears to be smeared out across the TBT axis. The length of this smear represents pages having high TBT and low FID, which illustrates the low degree of correlation between FID and TBT.
 
-There's also a patch of pages that have low TBT and a FID of about 250 ms. This area represents pages that have <a hreflang="en" href="https://developer.chrome.com/blog/300ms-tap-delay-gone-away/">tap delay</a> issues due to missing a `<meta name=viewport>` tag. These are outliers that can be safely ignored for this analysis's purposes.
+There's also a patch of pages that have low TBT and a FID of about 250 ms. This area represents pages that have <a hreflang="en" href="https://developer.chrome.com/blog/300ms-tap-delay-gone-away">tap delay</a> issues due to missing a `<meta name=viewport>` tag. These are outliers that can be safely ignored for this analysis's purposes.
 
 The <a hreflang="en" href="https://en.wikipedia.org/wiki/Kendall_rank_correlation_coefficient">Kendall</a> and <a hreflang="en" href="https://en.wikipedia.org/wiki/Spearman%27s_rank_correlation_coefficient">Spearman</a> coefficients of correlation for this distribution are 0.29 and 0.40, respectively.
 
@@ -895,7 +895,7 @@ The Kendall and Spearman coefficients of correlation for this distribution are 0
   <p>First, is INP correlated with TBT? Is it more correlated with TBT than FID? Yes and yes!</p>
   <p>But they are both correlated with TBT; is INP catching more problems with main thread blocking JavaScript? We can break down the percent of sites meeting the "good" threshold: yes it is!</p>
   </blockquote>
-  <figcaption>—Annie Sullivan on <a href="https://twitter.com/anniesullie/status/1525161893450727425">Twitter</a></figcaption>
+  <figcaption>—Annie Sullivan on <a href="https://x.com/anniesullie/status/1525161893450727425">Twitter</a></figcaption>
 </figure>
 
 As Annie notes, both metrics are correlated with TBT, but she concludes that INP is more strongly correlated, making it a better responsiveness metric.
