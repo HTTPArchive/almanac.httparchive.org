@@ -61,7 +61,7 @@ CREATE TEMPORARY FUNCTION IS_HTTPS(url STRING) RETURNS BOOL AS (
 );
 
 WITH potential_jamstack_sites AS (
-  SELECT DISTINCT
+  SELECT
     p.date,
     p.client,
     p.page AS url,

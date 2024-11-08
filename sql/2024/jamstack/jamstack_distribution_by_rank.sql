@@ -56,7 +56,7 @@ CREATE TEMPORARY FUNCTION HAS_ETAG(response_headers ARRAY<STRUCT<name STRING, va
 );
 
 WITH potential_jamstack_sites AS (
-  SELECT DISTINCT
+  SELECT
     p.date,
     p.client,
     p.rank,

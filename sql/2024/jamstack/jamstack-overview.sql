@@ -66,7 +66,7 @@ CREATE TEMP FUNCTION IS_GOOD (good FLOAT64, needs_improvement FLOAT64, poor FLOA
 );
 
 WITH potential_jamstack_sites AS (
-  SELECT DISTINCT
+  SELECT
     p.date,
     p.client,
     p.page AS url,
