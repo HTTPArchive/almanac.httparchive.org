@@ -15,6 +15,7 @@ featured_stat_2: 3x
 featured_stat_label_2: Growth for Astro for Pre-rendered sites in 2024
 featured_stat_3: 42%
 featured_stat_label_3: smaller JavaScript size for pre-rendered sites compared to dynamically rendered
+mikeneu_bio: Mike Neumegen passionate about building a web that’s accessible, fast, simple, and secure and grounded in strong fundamentals. He's the co-founder of <a hreflang="en" href="https://cloudcannon.com/">CloudCannon</a>, a content management platform that brings Git-based workflows to content editors.
 ---
 
 ## Introduction
