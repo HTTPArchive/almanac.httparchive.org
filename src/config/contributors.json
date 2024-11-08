@@ -1138,6 +1138,19 @@
     "twitter": "theobto",
     "website": "https://www.lookzook.com"
   },
+  "avidlarge": {
+    "avatar_url": "87678248",
+    "github": "David-Large",
+    "linkedin": "david-large-4875b81b2",
+    "mastodon": "https://fosstodon.org/@avidlarge",
+    "name": "David Large",
+    "teams": {
+      "2024": [
+        "editors"
+      ]
+    },
+    "twitter": "avidlarge"
+  },
   "demianrenzulli": {
     "avatar_url": "15170359",
     "github": "demianrenzulli",
@@ -1367,6 +1380,20 @@
     },
     "twitter": "akanygren",
     "website": "https://erik.nygren.org/"
+  },
+  "guaca": {
+    "avatar_url": "7644895",
+    "github": "guaca",
+    "linkedin": "estelafranco",
+    "mastodon": "https://toot.cafe/@guaca",
+    "name": "Estela Franco",
+    "teams": {
+      "2024": [
+        "analysts"
+      ]
+    },
+    "twitter": "guaca",
+    "website": "https://estelafranco.com/"
   },
   "estelle": {
     "avatar_url": "69888",
@@ -2777,6 +2804,20 @@
     "twitter": "mikegeyser",
     "website": "https://mikerambl.es"
   },
+  "mikeneu": {
+    "avatar_url": "312386",
+    "github": "mneumegen",
+    "linkedin": "mneumegen",
+    "mastodon": "https://fosstodon.org/@mikeneu",
+    "name": "Mike Neumegen",
+    "teams": {
+      "2024": [
+        "authors"
+      ]
+    },
+    "twitter": "mikeneumegen",
+    "website": "https://mikeneumegen.com/"
+  },
   "mgechev": {
     "avatar_url": "455023",
     "github": "mgechev",
@@ -3905,6 +3946,9 @@
     "name": "Thom Krupa",
     "teams": {
       "2021": [
+        "reviewers"
+      ],
+      "2024": [
         "reviewers"
       ]
     },
