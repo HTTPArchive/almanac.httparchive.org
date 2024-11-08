@@ -548,7 +548,7 @@ Looking at the metrics over time, we can see a nice upward trend. There is an in
 
 Let's look deeper by checking a few eligibility criteria that are quite a common cause and easily measurable using lab data.
 
-One of the "usual suspects" is the `unload` event that is triggered when a user navigates away from a page. Due to its unreliable behaviour and its incompatibility with how bfcache preserves a page's stage, `unload` event makes the page ineligible for bfcache. Important to note here is that this feature is specific for browsers on desktops. Mobile sites ignore the `unload` event. This behavior could explain CLS improvement over the years gap between mobile and desktop numbers from  Figure xxx: *The percent of websites having good CLS, segmented by device and year.*
+One of the "usual suspects" is the `unload` event that is triggered when a user navigates away from a page. Due to its unreliable behaviour and its incompatibility with how bfcache preserves a page's stage, `unload` event makes the page ineligible for bfcache. Important to note here is that this feature is specific for browsers on desktops. Mobile sites ignore the `unload` event. This behavior could explain CLS improvement over the years gap between mobile and desktop numbers from  [Figure 11.30: *The percent of websites having good CLS, segmented by device and year.*](#fig-30)
 
 {{ figure_markup(
   image="unload-usage.png",
