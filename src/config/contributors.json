@@ -1373,7 +1373,10 @@
   },
   "guaca": {
     "avatar_url": "7644895",
+    "bluesky": "guaca.bsky.social",
     "github": "guaca",
+    "linkedin": "estelafranco",
+    "mastodon": "https://toot.cafe/@guaca",
     "name": "Estela Franco",
     "teams": {
       "2024": [
@@ -1381,7 +1384,6 @@
         "analysts"
       ]
     },
-    "twitter": "guaca",
     "website": "https://estelafranco.com/"
   },
   "estelle": {
