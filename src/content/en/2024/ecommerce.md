@@ -1,20 +1,15 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
-title: Accessibility
-description: Accessibility chapter of the 2024 Web Almanac covering ease of reading, navigation, forms, media, ARIA, and accessibility apps.
+title: Ecommerce
+description: This chapter explores trends in the e-commerce ecosystem, examining platform popularity, performance metrics, and regional differences. Covering Core Web Vitals, Lighthouse scores, and accessibility, it highlights how platforms like WooCommerce and Shopify dominate, while newer players gain traction in specific regions and niches.
 authors: [JonathanPagel]
-reviewers: [nrllh, b_atish]
+reviewers: [nrllh, ToDo]
 analysts: [JonathanPagel]
 editors: [nrllh, ToDo]
 translators: []
-discuss:
 results: https://docs.google.com/spreadsheets/d/1LABlisQFCLjOyEd43tdUb-Hxs6pGuboTresntMk71Lc/edit?gid=1075995078#gid=1075995078
-featured_stat_1: 40%
-featured_stat_label_1: Of desktop sites and 39% of mobile sites have at least one `role="presentation"`.
-featured_stat_2: 0.1%
-featured_stat_label_2: Sites with `<audio>` elements include a `<track>` element.
-featured_stat_3: 57%
-featured_stat_label_3: Mobile sites passing the Lighthouse audit for properly ordered headings.
+featured_stat_1: 37%
+featured_stat_label_1: Of websites using e-commerce platforms, 37% are built with WooCommerce, the most popular platform.
 ---
 
 
@@ -287,21 +282,20 @@ The data reveals that PayPal is the most commonly detected payment method on mob
 
 Apple Pay ranks second, being detected more frequently than Google Pay, which shows its growing presence in mobile eCommerce. Meanwhile, Shop Pay, a payment solution provided by Shopify, secures third place in the rankings.
 
-![][image13]
-
-## **Live Chat**
-
-To replicate the real-world shopping experience, many e-commerce sites are using live chats to assist their customers. These can be either automated chatbots or real humans answering questions and helping to sell products. The number of e-commerce pages using live chats has slightly increased over the last few years.![][image14]  
-The most commonly detected live chat is WhatsApp Business Chat, followed by Zendesk and Facebook. While WhatsApp is growing in popularity, Facebook and Zendesk have seen a slight decline.  
-![][image15]  
-When looking at a pie chart of the detected chat options, it's clear how dominant WhatsApp is in the market compared to other solutions, accounting for more than 50% of all detected tools.  
-![][image16]  
-  
+{{ figure_markup(
+  image="mobile-payment-provider-distribution.png",
+  caption="Mobile year-over-year payment provider distribution.",
+  description="Bar chart showing the distribution of payment providers used on mobile e-commerce sites from 2022 to 2024. PayPal remains the most popular payment provider, followed by Apple Pay, Shop Pay, and Visa. The chart indicates a gradual increase in adoption for most providers over the years.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTQYSD_rO7eGM-ViE3WD7wQOV0itRwjmNy1lkKOyeF7L_b5EDvDlHjAgIzKBnVwExUzC_PSbg0t-3k5/pubchart?oid=611186794&format=interactive",
+  sheets_gid="1631427419",
+  sql_file="top_payment_yoy.sql"
+  )
+}}
 
 ## Conclusion
 
 E-commerce is still evolving, with platform preferences varying by region and website size. While WooCommerce remains the go-to platform for many, Shopify has steadily gained ground, especially among higher-traffic websites. Interestingly, platforms like Wix eCommerce perform well in terms of user experience metrics despite being more popular with smaller sites. Overall, we can observe improvements in most metrics, from performance to accessibility, over the past few years, benefiting everyone.
 
-While e-commerce platforms are diverse and well distributed among different providers, a few key players dominate technologies like payment systems and live chat services. It will be interesting to see how this landscape continues to evolve in the coming years.  
+While e-commerce platforms are diverse and well distributed among different providers, a few key players dominate technologies like payment systems. It will be interesting to see how this landscape continues to evolve in the coming years.  
 
 
