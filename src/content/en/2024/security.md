@@ -35,8 +35,8 @@ We also investigate the factors driving security practices, analyzing whether el
   content="98%",
   caption="The percentage of requests that use HTTPS.",
   classes="big-number",
-  sheets_gid="TODO",
-  sql_file="TODO.sql",
+  sheets_gid="1492186909",
+  sql_file="https_request_over_time.sql",
 ) }}
 
 The number of requests served using TLS climbed another 4% to 98.12% on mobile since the last Almanac in 2022.
@@ -176,8 +176,8 @@ Along with the rise in the number of Let's Encrypt issued certificates, other cu
   content="56%",
   caption="The percentage of pages that use a Let's Encrypt issued certificate on mobile.",
   classes="big-number",
-  sheets_gid="TODO",
-  sql_file="TODO.sql",
+  sheets_gid="1458082974",
+  sql_file="tls_ca_issuers_pages.sql",
 ) }}
 
 When we sum together the use of all certificates of Let's Encrypt, we find that they issue over 56% of the certificates currently in use.
@@ -190,8 +190,8 @@ When we sum together the use of all certificates of Let's Encrypt, we find that 
   content="30%",
   caption="The percentage of requests that have a HSTS header on mobile.",
   classes="big-number",
-  sheets_gid="TODO",
-  sql_file="TODO.sql",
+  sheets_gid="1943916698",
+  sql_file="hsts_attributes.sql",
 ) }}
 
 Currently, 30% of responses on mobile have a HSTS header, which is a 5% increase compared to 2022. Users of the header can communicate directives to the browser by adding them to the header value. The `max-age` directive is obligated. It indicates to the browser the time it should continue to only visit the page over HTTPS in seconds.
@@ -1408,7 +1408,7 @@ Many sites on the current web are made using large CMS systems. These may enable
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Security features in use by selected CMS systems", sheets_gid="TODO", sql_file="TODO.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Security features in use by selected CMS systems", sheets_gid="225805401", sql_file="feature_adoption_by_technology.sql") }}</figcaption>
 </figure>
 
 It's clear that many major CMS's that are hosted by the providing company and where only content is created by users, such as Wix, SquareSpace, Google Sites, Medium and Substack, roll out security protections widely, showing adoption of HSTS, X-Content-Type-Options or X-XSS-Protection in the upper 99% adoption rates. Google sites continues to be the CMS that has the highest number of security features in place.
@@ -1541,8 +1541,8 @@ Allowing different origins access to this information should be done with care, 
   content="82.5%",
   caption="The percentage of Timing-Allow-Origin that are set to the wildcard (`*`) value.",
   classes="big-number",
-  sheets_gid="TODO",
-  sql_file="TODO.sql",
+  sheets_gid="955021492",
+  sql_file="tao_header_prevalence.sql",
 ) }}
 
 ### Missing suppression of server information headers
@@ -1557,7 +1557,7 @@ This information is usually reported in headers such as [`Server`](https://devel
   description="TODO.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxTTMlFFSMT3mZgw2awA0wl3F68gzU1OLuyMaZXscSFq-Pa5ev_qTXx8ZaGEOl_ox_aHsraAGMXZ9Y/pubchart?oid=1009281320&format=interactive",
   sheets_gid="2032567932",
-  sql_file="TODO.sql"
+  sql_file="server_information_header_prevalence.sql"
   )
 }}
 
@@ -1625,7 +1625,7 @@ The most commonly exposed header is the `Server` header, which reveals the softw
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Most prevalent `X-Powered-By` header values with specific framework version", sheets_gid="895726728", sql_file="TODO.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Most prevalent `X-Powered-By` header values with specific framework version", sheets_gid="895726728", sql_file="server_header_value_prevalence.sql") }}</figcaption>
 </figure>
 
 Examining the most common values for the `Server` and `X-Powered-By` headers, we found that especially the `X-Powered-By` header specifies versions, with the top 10 values revealing specific PHP versions. For both desktop and mobile, at least 25% of `X-Powered-By` headers contain this information. This header is likely enabled by default on the observed web servers. While it can be useful for analytics, the header's benefits are limited, and thus it warrants to be disabled by default. However, disabling this header alone does not address the security risks of outdated servers; regularly updating the server remains crucial.
@@ -1642,7 +1642,7 @@ We find that server-timing is used by 6.4% of internet hosts. Over 60% of those 
   description="TODO.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxTTMlFFSMT3mZgw2awA0wl3F68gzU1OLuyMaZXscSFq-Pa5ev_qTXx8ZaGEOl_ox_aHsraAGMXZ9Y/pubchart?oid=753463357&format=interactive",
   sheets_gid="1339089790",
-  sql_file="TODO.sql"
+  sql_file="server_timing_usage_values.sql"
   )
 }}
 
