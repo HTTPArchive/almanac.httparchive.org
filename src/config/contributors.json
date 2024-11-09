@@ -774,6 +774,9 @@
       "2022": [
         "authors",
         "reviewers"
+      ],
+      "2024": [
+        "reviewers"
       ]
     },
     "twitter": "briankardell",
@@ -1412,12 +1415,14 @@
   },
   "guaca": {
     "avatar_url": "7644895",
+    "bluesky": "guaca.bsky.social",
     "github": "guaca",
     "linkedin": "estelafranco",
     "mastodon": "https://toot.cafe/@guaca",
     "name": "Estela Franco",
     "teams": {
       "2024": [
+        "authors",
         "analysts"
       ]
     },
@@ -2018,6 +2023,9 @@
       ],
       "2022": [
         "authors",
+        "reviewers"
+      ],
+      "2024": [
         "reviewers"
       ]
     },
@@ -3884,6 +3892,9 @@
         "reviewers"
       ],
       "2022": [
+        "reviewers"
+      ],
+      "2024": [
         "reviewers"
       ]
     },
