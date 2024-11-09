@@ -8,6 +8,7 @@ analysts: [JonathanPagel]
 editors: [nrllh, ToDo]
 translators: []
 results: https://docs.google.com/spreadsheets/d/1LABlisQFCLjOyEd43tdUb-Hxs6pGuboTresntMk71Lc/edit?gid=1075995078#gid=1075995078
+JonathanPagel_bio: Jonathan Pagel studied E-Commerce in his bachelor's degree and has since been interested in the field, particularly in the areas of speed optimization and accessibility for shops and websites. Currently, he is freelancing in this field and pursuing a Master’s in AI and Society.
 featured_stat_1: 37%
 featured_stat_label_1: Of websites using e-commerce platforms, 37% are built with WooCommerce, the most popular platform.
 ---
