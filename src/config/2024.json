@@ -149,8 +149,7 @@
           "chapter_number": "18",
           "title": "Jamstack",
           "slug": "jamstack",
-          "hero_dir": "2020",
-          "todo": true
+          "hero_dir": "2020"
         },
         {
           "part": "III",
