@@ -27,10 +27,10 @@ FROM (
     `httparchive.all.requests` CROSS JOIN UNNEST(response_headers) AS r
   WHERE
     # WPT changes the response fields based on a redirect (url becomes the Location path instead of the original) causing insonsistencies in the counts, so we ignore them
-    date = '2024-06-01' AND 
-    r.name = 'location' AND 
-    (r.value='' OR r.value IS NULL)
-    ) AS a
+    date = '2024-06-01' AND
+    r.name = 'location' AND
+    (r.value = '' OR r.value IS NULL)
+) AS a
 LEFT JOIN (
   SELECT
     client,

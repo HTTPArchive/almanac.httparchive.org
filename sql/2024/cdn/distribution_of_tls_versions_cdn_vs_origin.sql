@@ -24,14 +24,14 @@ FROM
       JSON_EXTRACT_SCALAR(payload, '$._tls_version') AS tlsVersion,
 
       # WPT joins CDN detection but we bias to the DNS detection which is the first entry
-      IFNULL(NULLIF(REGEXP_EXTRACT(JSON_EXTRACT_SCALAR(summary,'$._cdn_provider'), r'^([^,]*).*'), ''), 'ORIGIN') AS cdn,
+      IFNULL(NULLIF(REGEXP_EXTRACT(JSON_EXTRACT_SCALAR(summary, '$._cdn_provider'), r'^([^,]*).*'), ''), 'ORIGIN') AS cdn,
       CAST(JSON_EXTRACT(payload, '$.timings.ssl') AS INT64) AS tlstime,
 
       # isSecure reports what the browser thought it was going to use, but it can get upgraded with STS OR UpgradeInsecure: 1
       IF(STARTS_WITH(url, 'https') OR JSON_EXTRACT_SCALAR(payload, '$._tls_version') IS NOT NULL OR CAST(JSON_EXTRACT(payload, '$._is_secure') AS INT64) = 1, TRUE, FALSE) AS isSecure,
       CAST(JSON_EXTRACT(payload, '$._socket') AS INT64) AS socket
     FROM
-      `httparchive.all.requests` 
+      `httparchive.all.requests`
     WHERE
       # WPT changes the response fields based on a redirect (url becomes the Location path instead of the original) causing insonsistencies in the counts, so we ignore them
       date = '2024-06-01'

@@ -14,11 +14,11 @@ FROM (
     SELECT
       client,
       -- requestid,
-      JSON_EXTRACT_SCALAR(summary,'$.requestid') as requestid,
+      JSON_EXTRACT_SCALAR(summary, '$.requestid') AS requestid,
       page,
       url,
       is_main_document,
-      IFNULL(NULLIF(REGEXP_EXTRACT(JSON_EXTRACT_SCALAR(summary,'$._cdn_provider'), r'^([^,]*).*'), ''), 'ORIGIN') AS cdn, # sometimes _cdn provider detection includes multiple entries. we bias for the DNS detected entry which is the first entry
+      IFNULL(NULLIF(REGEXP_EXTRACT(JSON_EXTRACT_SCALAR(summary, '$._cdn_provider'), r'^([^,]*).*'), ''), 'ORIGIN') AS cdn, # sometimes _cdn provider detection includes multiple entries. we bias for the DNS detected entry which is the first entry
       CAST(JSON_EXTRACT(payload, '$.timings.ssl') AS INT64) AS tlstime,
       ARRAY_LENGTH(split(JSON_EXTRACT(payload, '$._securityDetails.sanList'), '')) AS sanLength,
       IF(NET.HOST(url) = NET.HOST(page), TRUE, FALSE) AS sameHost,

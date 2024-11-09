@@ -11,10 +11,10 @@ WITH requests AS (
   FROM
     --`httparchive.almanac.requests` -- OLD table
     `httparchive.all.requests` AS resp -- NEW table
-    -- `httparchive.sample_data.requests_1k` AS resp -- SAMPLE table (quicker)
+  -- `httparchive.sample_data.requests_1k` AS resp -- SAMPLE table (quicker)
   INNER JOIN
-    `httparchive.all.pages` AS pages -- NEW pages table
-    -- `httparchive.sample_data.pages_1k` AS pages -- SAMPLE pages table (quicker)
+    `httparchive.all.pages` -- NEW pages table
+  -- `httparchive.sample_data.pages_1k` AS pages -- SAMPLE pages table (quicker)
   USING (page, client, date)
   WHERE
     date = '2024-06-01' AND -- Uncomment this when running on full table

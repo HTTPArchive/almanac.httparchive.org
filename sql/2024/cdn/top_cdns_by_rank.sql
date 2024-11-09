@@ -4,7 +4,7 @@
 WITH requests AS (
   SELECT
     client,
-    is_main_document as firstHtml,
+    is_main_document AS firstHtml,
     page,
     url,
     rank,
@@ -16,8 +16,8 @@ WITH requests AS (
   FROM
     `httparchive.all.requests` AS resp -- NEW table
   INNER JOIN
-    `httparchive.all.pages` AS pages -- NEW pages table
-    -- `httparchive.sample_data.pages_1k` AS pages -- SAMPLE pages table (quicker)
+    `httparchive.all.pages` -- NEW pages table
+  -- `httparchive.sample_data.pages_1k` AS pages -- SAMPLE pages table (quicker)
   USING (page, client, date)
   WHERE
     date = '2024-06-01' AND -- Uncomment this when running on full table

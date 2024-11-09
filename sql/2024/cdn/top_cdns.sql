@@ -76,13 +76,13 @@ FROM
       `httparchive.almanac.requests`
     WHERE
       date = '2022-06-01'
-   UNION ALL
+    UNION ALL
     SELECT
       '2024' AS year,
       client,
       page,
       url,
-      is_main_document as firstHtml,
+      is_main_document AS firstHtml,
       IFNULL(NULLIF(REGEXP_EXTRACT(JSON_EXTRACT_SCALAR(summary, '$._cdn_provider'), r'^([^,]*).*'), ''), 'ORIGIN') AS cdn, # sometimes _cdn provider detection includes multiple entries. we bias for the DNS detected entry which is the first entry
       NET.HOST(url) = NET.HOST(page) AS sameHost,
       NET.HOST(url) = NET.HOST(page) OR NET.REG_DOMAIN(url) = NET.REG_DOMAIN(page) AS sameDomain # if toplevel reg_domain will return NULL so we group this as sameDomain

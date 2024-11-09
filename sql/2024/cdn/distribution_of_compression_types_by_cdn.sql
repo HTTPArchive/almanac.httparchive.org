@@ -19,11 +19,11 @@ FROM (
       ELSE 'other'
     END AS compression_type
   FROM
-    `httparchive.all.requests` CROSS JOIN UNNEST(response_headers) AS a 
+    `httparchive.all.requests` CROSS JOIN UNNEST(response_headers) AS a
   WHERE
     date = '2024-06-01' AND
-    a.name='content-encoding'
-    -- resp_content_encoding != ''
+    a.name = 'content-encoding'
+  -- resp_content_encoding != ''
   )
 GROUP BY
   client,
