@@ -3,20 +3,20 @@
 title: Security
 description: Security chapter of the 2024 Web Almanac covering Transport Layer Security, content inclusion (CSP, Feature Policy, SRI), web defense mechanisms (tackling XSS, XS-Leaks), and drivers of security mechanism adoptions.
 authors: [GJFR, vikvanderlinden]
-reviewers: [lord-r3, SaptakS, AlbertoFDR, clarkio]
-editors: [cqueern, joeleonjr]
+reviewers: [lord-r3, AlbertoFDR, clarkio]
+editors: [cqueern]
 analysts: [JannisBush]
 translators: []
-GJFR_bio: TODO
+GJFR_bio: Gertjan Franken is a postdoctoral researcher with the <a hreflang="en" href="https://distrinet.cs.kuleuven.be/">DistriNet Research Group</a> at KU Leuven. His research spans various aspects of web security and privacy, with a primary focus on the automated analysis of browser security policies. As part of this research, he maintains the open-source tool <a hreflang="en" href="https://github.com/DistriNet/BugHog">BugHog</a> for pinpointing bug lifecycles.
 vikvanderlinden_bio: TODO
 results: https://docs.google.com/spreadsheets/d/1b9IEGbfQjKCEaTBmcv_zyCyWEsq35StCa-dVOe6V1Cs/
-featured_quote: TODO
-featured_stat_1: TODO
-featured_stat_label_1: TODO
-featured_stat_2: TODO
-featured_stat_label_2: TODO
-featured_stat_3: TODO
-featured_stat_label_3: TODO
+featured_quote: Although new attacks will undoubtedly emerge in the future, demanding new protections, the openness of the security community plays a crucial role in developing sound solutions.
+featured_stat_1: 98%
+featured_stat_label_1: Percentage of requests that use HTTPS
+featured_stat_2: +27%
+featured_stat_label_2: Increase in the adoption of the Content-Security-Policy header
+featured_stat_3: 23%
+featured_stat_label_3: Percentage of desktop sites using Subresource Integrity
 ---
 
 ## Introduction
@@ -463,7 +463,7 @@ The top three directives also make up the building blocks of the most prevalent 
 
 All other directives shown in the graph above are used for content inclusion control. Overall, usage has remained relatively stable. However, a notable change is the increased use of the `object-src` directive, which has surpassed `connect-src` and `frame-src`. Since 2022, the usage of `object-src` has risen by 15.9% for desktop and 16.8% for mobile.
 
-Among the most notable decreases in usage is `default-src`, the catch-all directive. This decline could be explained by the increasing use of CSP for purposes beyond content inclusion, such as enforcing HTTP upgrades to HTTPS or controlling the embedding of the current page – situations where `default-src` is not applicable, as these directives don't fallback to it. This change in CSP purpose is confirmed by the most prevalent CSP headers listed in Table [TODO 1], which all have seen an increase in usage since 2022. However, directives like `upgrade-insecure-requests` and `block-all-mixed-content`, while part of these most common CSP headers, are being used less overall, as seen in Table [TODO 2].
+Among the most notable decreases in usage is `default-src`, the catch-all directive. This decline could be explained by the increasing use of CSP for purposes beyond content inclusion, such as enforcing HTTP upgrades to HTTPS or controlling the embedding of the current page – situations where `default-src` is not applicable, as these directives don't fallback to it. This change in CSP purpose is confirmed by the most prevalent CSP headers listed in [Figure 17](#fig-17), which all have seen an increase in usage since 2022. However, directives like `upgrade-insecure-requests` and `block-all-mixed-content`, while part of these most common CSP headers, are being used less overall, as seen in [Figure 18](#fig-18).
 
 #### Keywords for `script-src`
 
@@ -532,7 +532,7 @@ CSP is often regarded as one of the more complex security policies, partly due t
   )
 }}
 
-Reviewing the observed CSP header lengths, we find that 75% of all headers are 75 bytes or shorter. For context, the longest policy among the [Most Prevalent CSP Definitions] Table is also 75 bytes. At the 90th percentile, desktop policies reach 504 bytes and mobile policies 368 bytes, indicating that many websites find it necessary to implement relatively lengthy Content Security Policies. However, when analyzing the distribution of unique allowed hosts across all policies, the 90th percentile shows just 2 unique hosts.
+Reviewing the observed CSP header lengths, we find that 75% of all headers are 75 bytes or shorter. For context, the longest policy shown in [Figure 17](#fig-17) is also 75 bytes. At the 90th percentile, desktop policies reach 504 bytes and mobile policies 368 bytes, indicating that many websites find it necessary to implement relatively lengthy Content Security Policies. However, when analyzing the distribution of unique allowed hosts across all policies, the 90th percentile shows just 2 unique hosts.
 
 The highest number of unique allowed hosts in a policy was 1,020, while the longest Content Security Policy header reached 65,535 bytes. However, this latter header is inflated by a large number of repeated `,` characters for unknown reasons. The second longest CSP header, which is valid, spans 33,123 bytes. This unusually large size is due to hundreds of occurrences of the `adservice.google` domain, each with variations in the top-level domain. Excerpt:
 
@@ -931,9 +931,9 @@ The strongest absolute risers since 2022 are `Strict-Transport-Security` (+5.3%)
 
 ### Preventing clickjacking with CSP and `X-Frame-Options`
 
-As discussed in Section [TODO: ref], one of the primary uses of the Content Security Policy (CSP) is to prevent clickjacking attacks. This is achieved through the `frame-ancestors` directive, which allows websites to specify which origins are permitted to embed their pages within a frame. As shown in Table [TODO: ref], this directive is commonly used to either completely prohibit embedding or restrict it to the same origin.
+As discussed previously, one of the primary uses of the [Content Security Policy](#content-security-policy) is to prevent clickjacking attacks. This is achieved through the `frame-ancestors` directive, which allows websites to specify which origins are permitted to embed their pages within a frame. There, we saw that this directive is commonly used to either completely prohibit embedding or restrict it to the same origin ([Figure 17](#fig-17)).
 
-Another measure against clickjacking is the [`X-Frame-Options` (XFO](https://developer.mozilla.org/docs/Web/HTTP/Headers/X-Frame-Options)) header, though it provides less granular control compared to CSP. The XFO header can be set to `SAMEORIGIN`, allowing the page to be embedded only by other pages from the same origin, or `DENY`, which completely blocks any embedding of the page. As shown in the table below, most headers are configured to relax the policy by allowing same-origin websites to embed the page.
+Another measure against clickjacking is the [`X-Frame-Options` (XFO)](https://developer.mozilla.org/docs/Web/HTTP/Headers/X-Frame-Options) header, though it provides less granular control compared to CSP. The XFO header can be set to `SAMEORIGIN`, allowing the page to be embedded only by other pages from the same origin, or `DENY`, which completely blocks any embedding of the page. As shown in the table below, most headers are configured to relax the policy by allowing same-origin websites to embed the page.
 
 <figure>
   <table>
@@ -1092,7 +1092,7 @@ Nearly half of all observed COOP headers employ the strictest setting, `same-ori
 
 The [`Clear-Site-Data` header](https://developer.mozilla.org/docs/Web/HTTP/Headers/Clear-Site-Data) allows websites to easily clear browsing data associated with them, including cookies, storage, and cache. This is particularly useful as a security measure when a user logs out, ensuring that authentication tokens and other sensitive information are removed and cannot be abused. The header's value specifies what types of data the website requests the browser to clear.
 
-Adoption of the `Clear-Site-Data` header remains limited; our observations indicate that only 2,071 hosts (0.02% of all hosts) use this header. However, this functionality is primarily useful on logout pages, which the crawler does not capture. To investigate logout pages, the crawler would need to be extended to detect and interact with account registration, login, and logout functionality – an undertaking that would require quite some effort. Some progress has already been made in this area by security and privacy researchers, such as automating logins to web pages [ref to <a hreflang="en" href="https://www.ndss-symposium.org/wp-content/uploads/2020/02/23008-paper.pdf">Shepherd: a Generic Approach to Automating Website Login</a>], and automating registering [ref to <a hreflang="en" href="https://dl.acm.org/doi/pdf/10.1145/3589334.3645709">Automating Website Registration for Studying GDPR Compliance</a>].
+Adoption of the `Clear-Site-Data` header remains limited; our observations indicate that only 2,071 hosts (0.02% of all hosts) use this header. However, this functionality is primarily useful on logout pages, which the crawler does not capture. To investigate logout pages, the crawler would need to be extended to detect and interact with account registration, login, and logout functionality – an undertaking that would require quite some effort. Some progress has already been made in this area by security and privacy researchers, such as <a hreflang="en" href="https://www.ndss-symposium.org/wp-content/uploads/2020/02/23008-paper.pdf">automating logins to web pages</a>, and <a hreflang="en" href="https://dl.acm.org/doi/pdf/10.1145/3589334.3645709">automating registering</a>.
 
 <figure>
   <table>
@@ -1725,7 +1725,7 @@ The <a hreflang="en" href="https://iabtechlab.com/ads-txt/">`ads.txt`</a> file i
   caption="The percentage of desktop ad publishers that entirely avoid indirect resellers.",
   classes="big-number",
   sheets_gid="741686775",
-  sql_file="TODO.sql",
+  sql_file="../privacy/ads_accounts_distribution.sql",
 ) }}
 
 By refraining from listing indirect sellers, website owners help prevent unauthorized reselling and reduce ad fraud, thereby enhancing the security and integrity of their ad transactions. Among publishers that host an ads.txt file, 77.2% for desktop and 42.4% for mobile avoid resellers entirely, curbing potential fraud.
@@ -1738,4 +1738,4 @@ However, attention must also be given to poor configurations or even misconfigur
 
 As the number of security policies grows, it's essential for policymakers to focus on reducing complexity. Reducing implementation friction will make adoption easier and minimize common mistakes. For example, the introduction of cross-origin headers designed to prevent cross-site leaks and microarchitectural attacks has already caused confusion, with directives from one policy mistakenly applied to another.
 
-Although new attacks will undoubtedly emerge in the future, demanding new protections, the openness of the security community plays a crucial role in developing sound solutions. As we've seen, the adoption of new measures may take time, but progress is being made. Each step  forward brings us closer to a more resilient and secure Web for everyone.
+Although new attacks will undoubtedly emerge in the future, demanding new protections, the openness of the security community plays a crucial role in developing sound solutions. As we've seen, the adoption of new measures may take time, but progress is being made. Each step forward brings us closer to a more resilient and secure Web for everyone.
