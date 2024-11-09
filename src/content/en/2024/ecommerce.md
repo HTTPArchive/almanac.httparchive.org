@@ -43,9 +43,9 @@ Our methodology has some limitations that may affect its accuracy.
 
 Firstly, there are some limitations to our ability to recognize an ecommerce site:
 
-* Wappalyzer must have detected an ecommerce platform.
-* If the ecommerce platform is hosted within a subdirectory of the website, it cannot be detected since only home pages are analyzed.
-* A headless implementation reduces our ability to detect the platform in use. One of the primary methods to identify an ecommerce platform is by recognizing standard HTML or JavaScript components. Therefore, a headless website that does not use the ecommerce platform front end makes it challenging to detect.
+- Wappalyzer must have detected an ecommerce platform.
+- for this analysis we only analyzed home pages.  If the ecommerce platform is hosted within a subdirectory it may be excluded from this analysis.
+- A headless implementation reduces our ability to detect the platform in use. One of the primary methods to identify an ecommerce platform is by recognizing standard HTML or JavaScript components. Therefore, a headless website that does not use the ecommerce platform front end makes it challenging to detect.
 
 ### Accuracy of metrics and commentary
 
@@ -344,7 +344,7 @@ Squarespace is leading by far among platforms with more than 50,000 pages in our
 
 ## Payment providers
 
-The detection of payment providers is not as advanced or precise as the detection of different ecommerce platforms. This may be because we only analyze the home page rather than the entire website, which might not provide clear indications of the payment providers used. You can refer to the <a hreflang="en" href="https://github.com/HTTPArchive/wappalyzer">checkpoint on the Wappalyzer GitHub</a> profile to understand how different payment providers are detected. Multiple payment providers can be used on the same website. In such cases, the website is counted for each payment provider detected.
+The detection of payment providers is not as advanced or precise as the detection of different ecommerce platforms. This may be because we only analyzed the home page rather than the entire website, which might not provide clear indications of the payment providers used. You can refer to the <a hreflang="en" href="https://github.com/HTTPArchive/wappalyzer">checkpoint on the Wappalyzer GitHub</a> profile to understand how different payment providers are detected. Multiple payment providers can be used on the same website. In such cases, the website is counted for each payment provider detected.
 
 The following section focuses on each website with detected payment providers, even if no ecommerce system was identified.
 
