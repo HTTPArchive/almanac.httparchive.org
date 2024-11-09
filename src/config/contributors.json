@@ -659,7 +659,8 @@
       ],
       "2024": [
         "developers",
-        "editors"
+        "editors",
+        "leads"
       ]
     },
     "twitter": "tunetheweb",
@@ -821,7 +822,8 @@
         "reviewers"
       ],
       "2024": [
-        "editors"
+        "editors",
+        "leads"
       ]
     },
     "twitter": "httpsecheaders"
@@ -971,6 +973,15 @@
       ]
     },
     "website": "https://chrisadams.me.uk"
+  },
+  "ChrisBeeti": {
+    "github": "ChrisBeeti",
+    "name": "Chris Beeti",
+    "teams": {
+      "2024": [
+        "leads"
+      ]
+    }
   },
   "svgeesus": {
     "avatar_url": "2506926",
@@ -1660,6 +1671,17 @@
       ]
     }
   },
+  "gunesacar": {
+    "avatar_url": "5788790",
+    "github": "gunesacar",
+    "name": "Gunes Acar",
+    "teams": {
+      "2024": [
+        "leads"
+      ]
+    },
+    "website": "https://gunesacar.net/"
+  },
   "harendra": {
     "github": "harendra",
     "name": "Haren Bhandari",
@@ -1719,6 +1741,9 @@
     "teams": {
       "2020": [
         "authors"
+      ],
+      "2024": [
+        "leads"
       ]
     },
     "twitter": "HenriHelvetica"
@@ -2770,6 +2795,9 @@
       ],
       "2022": [
         "analysts"
+      ],
+      "2024": [
+        "developers"
       ]
     },
     "twitter": "themax_o",
@@ -2938,6 +2966,15 @@
     },
     "twitter": "mgechev",
     "website": "https://blog.mgechev.com/"
+  },
+  "MiriamNaß": {
+    "github": "MiriamNaß",
+    "name": "Miriam Naß",
+    "teams": {
+      "2024": [
+        "leads"
+      ]
+    }
   },
   "mirisuzanne": {
     "avatar_url": "104161",
@@ -3177,6 +3214,7 @@
         "authors"
       ],
       "2024": [
+        "leads",
         "reviewers"
       ]
     },
@@ -3746,7 +3784,9 @@
     "name": "Saptak Sengupta",
     "teams": {
       "2022": [
-        "authors"
+        "authors",
+        "developers",
+        "leads"
       ]
     },
     "twitter": "Saptak013",
@@ -4148,6 +4188,15 @@
     "twitter": "krutoi_paren",
     "website": "https://kartashov.io/"
   },
+  "turban1988": {
+    "github": "turban1988",
+    "name": "Tobias Urban",
+    "teams": {
+      "2024": [
+        "leads"
+      ]
+    }
+  },
   "bobbyshaw": {
     "avatar_url": "553566",
     "github": "bobbyshaw",
@@ -4175,6 +4224,9 @@
       ],
       "2022": [
         "authors"
+      ],
+      "2024": [
+        "leads"
       ]
     },
     "twitter": "tomvangoethem",
