@@ -8,15 +8,15 @@ LANGUAGE js AS '''
 var result = [];
 try {
     var almanac = JSON.parse(almanac_string);
-    
+
     if (Array.isArray(almanac) || typeof almanac != 'object') return [];
-    
+
     if (almanac && almanac["meta-nodes"] && almanac["meta-nodes"].nodes) {
       result = almanac["meta-nodes"].nodes
         .map(am => am["name"].toLowerCase().trim()) // array of meta tag names
         .filter((v, i, a) => a.indexOf(v) === i); // remove duplicates
     }
-    
+
 } catch (e) {} // results show some issues with the validity of the payload
 return result;
 ''';

@@ -8,7 +8,6 @@ LANGUAGE js AS '''
 var result = [];
 try {
     var almanac = JSON.parse(almanac_string);
-    
     if (Array.isArray(almanac) || typeof almanac != 'object') return [];
 
     if (almanac && almanac["meta-nodes"] && almanac["meta-nodes"].nodes && almanac["meta-nodes"].nodes.filter) {
@@ -17,7 +16,7 @@ try {
         .map(am => am["property"].toLowerCase().trim()) // array of the property values
         .filter((v, i, a) => a.indexOf(v) === i); // remove duplicates
     }
-    
+
 } catch (e) {} // results show some issues with the validity of the payload
 return result;
 ''';
