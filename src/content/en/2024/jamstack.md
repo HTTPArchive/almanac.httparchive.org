@@ -337,7 +337,7 @@ SSGs are the technology that performs the pre-rendering, which makes them a natu
 {{ figure_markup(
   image="pre-rendered-static-site-generators.png",
   caption="Static Site Generator usage for Pre-rendered sites.",
-  description="Bar chart showing the static site generator usage for pre-rendered sites. In 2024, Hugo is used by 17.9% of mobile pages, Next.js is used by 13.4% and Astro is used by 4.71%",
+  description="Bar chart showing the static site generator usage for pre-rendered sites. In 2024, Hugo is used by 18% of mobile pages, Next.js is used by 13% and Astro is used by 5%",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTzPcqcOjo0RTaHjgSQCXZYJRyquXzzd6qOsD6PysgZZdGXlR8pP5i2Reoa_WJwJLjFHniXA2DWwDq1/pubchart?oid=1868506505&format=interactive",
   sheets_gid="1131487846",
   sql_file="ssg.sql"
@@ -359,7 +359,7 @@ Let's take a look at the Hybrid category:
 {{ figure_markup(
   image="hybrid-static-site-generators.png",
   caption="Static Site Generator usage for Hybrid sites.",
-  description="Bar chart showing the static site generator usage for Hybrid sites. In 2024, Next.js is used by 22.9% of mobile pages, Nuxt is used by 8.8% and Astro is used by 1.45%",
+  description="Bar chart showing the static site generator usage for Hybrid sites. In 2024, Next.js is used by 23% of mobile pages, Nuxt is used by 9% and Astro is used by 1%",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTzPcqcOjo0RTaHjgSQCXZYJRyquXzzd6qOsD6PysgZZdGXlR8pP5i2Reoa_WJwJLjFHniXA2DWwDq1/pubchart?oid=633489729&format=interactive",
   sheets_gid="1131487846",
   sql_file="ssg.sql"
