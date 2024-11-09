@@ -463,6 +463,7 @@ The top three directives also make up the building blocks of the most prevalent 
 
 All other directives shown in the graph above are used for content inclusion control. Overall, usage has remained relatively stable. However, a notable change is the increased use of the `object-src` directive, which has surpassed `connect-src` and `frame-src`. Since 2022, the usage of `object-src` has risen by 15.9% for desktop and 16.8% for mobile.
 
+<!-- markdownlint-disable-next-line MD051 -->
 Among the most notable decreases in usage is `default-src`, the catch-all directive. This decline could be explained by the increasing use of CSP for purposes beyond content inclusion, such as enforcing HTTP upgrades to HTTPS or controlling the embedding of the current page – situations where `default-src` is not applicable, as these directives don't fallback to it. This change in CSP purpose is confirmed by the most prevalent CSP headers listed in [Figure 17](#fig-17), which all have seen an increase in usage since 2022. However, directives like `upgrade-insecure-requests` and `block-all-mixed-content`, while part of these most common CSP headers, are being used less overall, as seen in [Figure 18](#fig-18).
 
 #### Keywords for `script-src`
@@ -532,6 +533,7 @@ CSP is often regarded as one of the more complex security policies, partly due t
   )
 }}
 
+<!-- markdownlint-disable-next-line MD051 -->
 Reviewing the observed CSP header lengths, we find that 75% of all headers are 75 bytes or shorter. For context, the longest policy shown in [Figure 17](#fig-17) is also 75 bytes. At the 90th percentile, desktop policies reach 504 bytes and mobile policies 368 bytes, indicating that many websites find it necessary to implement relatively lengthy Content Security Policies. However, when analyzing the distribution of unique allowed hosts across all policies, the 90th percentile shows just 2 unique hosts.
 
 The highest number of unique allowed hosts in a policy was 1,020, while the longest Content Security Policy header reached 65,535 bytes. However, this latter header is inflated by a large number of repeated `,` characters for unknown reasons. The second longest CSP header, which is valid, spans 33,123 bytes. This unusually large size is due to hundreds of occurrences of the `adservice.google` domain, each with variations in the top-level domain. Excerpt:
@@ -931,6 +933,7 @@ The strongest absolute risers since 2022 are `Strict-Transport-Security` (+5.3%)
 
 ### Preventing clickjacking with CSP and `X-Frame-Options`
 
+<!-- markdownlint-disable-next-line MD051 -->
 As discussed previously, one of the primary uses of the [Content Security Policy](#content-security-policy) is to prevent clickjacking attacks. This is achieved through the `frame-ancestors` directive, which allows websites to specify which origins are permitted to embed their pages within a frame. There, we saw that this directive is commonly used to either completely prohibit embedding or restrict it to the same origin ([Figure 17](#fig-17)).
 
 Another measure against clickjacking is the [`X-Frame-Options` (XFO)](https://developer.mozilla.org/docs/Web/HTTP/Headers/X-Frame-Options) header, though it provides less granular control compared to CSP. The XFO header can be set to `SAMEORIGIN`, allowing the page to be embedded only by other pages from the same origin, or `DENY`, which completely blocks any embedding of the page. As shown in the table below, most headers are configured to relax the policy by allowing same-origin websites to embed the page.
