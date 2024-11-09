@@ -504,7 +504,6 @@ For further information, refer to:
 The adoption of modern image formats continues to be a crucial factor in web sustainability. WebP, with its impressive compression and wide browser support, remains a go-to format for optimizing images. Meanwhile, AVIF is gaining traction, offering even better compression in many cases.
 Let's look at how the usage of these formats has changed from 2022 to 2024:
 
-{# TODO - fill in SQL #}
 {{ figure_markup(
   image="image-format-adoption-2-year-change.png",
   caption="Image format adoption, 2-year change",
@@ -586,7 +585,7 @@ Lazy-loading remains a crucial technique for enhancing both performance and sust
 The past two year's data reflects a growing awareness of the importance of optimized image loading. However, there's still considerable room for improvement, as a significant portion of websites have yet to implement any form of lazy-loading. Regarding iframes, the advice remains largely unchanged:
 1. Native lazy-loading can be applied to iframes, offering similar benefits as with images.
 2. However, for optimal sustainability, consider avoiding iframes altogether when possible. Usage of iframes can lead to unnecessary resource consumption if overused or if embedded content isn't controlled or optimized (e.g., third-party trackers or ads).
-3. The <a hreflang="en" href="https://developer.chrome.com/docs/lighthouse/performance/third-party-facades">facade pattern</a> remains a preferred approach for integrating external content like embedded videos or interactive maps.
+3. The [facade pattern](https://developer.chrome.com/docs/lighthouse/performance/third-party-facades) remains a preferred approach for integrating external content like embedded videos or interactive maps.
 
 For deeper insights & analysis, refer to our [Performance](./performance) chapter and [Media](./media) chapter.
 
@@ -630,7 +629,7 @@ It's important to remember that the preload attribute only has three valid value
 
 The slight increase in the use of 'metadata' and the decrease in non-use of preload suggest that more attention needs to be paid to video preloading practices to enhance web sustainability.
 
-For more detailed information on this topic, refer to <a hreflang="en" href="https://www.stevesouders.com/blog/2013/04/12/html5-video-preload/">Steve Souders' 2013 article</a> and <a hreflang="en" href="https://web.dev/articles/fast-playback-with-preload">the web.dev 2017 article</a> on video preloading strategies.
+For more detailed information on this topic, refer to <a hreflang="en" href="https://www.stevesouders.com/blog/2013/04/12/html5-video-preload/">Steve Souders' 2013 article</a> and the web.dev 2017 article on [video preloading strategies](https://web.dev/articles/fast-playback-with-preload).
 
 ##### Autoplay
 
@@ -662,7 +661,7 @@ From a sustainability perspective, animations can be resource-intensive:
 - Animations often require additional code, which can delay rendering and increase page weight.
 - Poorly optimized animations can lead to unnecessary repaints and reflows, further taxing device resources.
 
-Recent data on <a hreflang="en" href="https://web.dev/articles/stick-to-compositor-only-properties-and-manage-layer-count">non-composited animations</a> provides insight into their usage across websites:
+Recent data on [non-composited animations](https://web.dev/articles/stick-to-compositor-only-properties-and-manage-layer-count) provides insight into their usage across websites:
 
 {{ figure_markup(
   image="non-composited-animations-per-page.png",
@@ -773,7 +772,7 @@ By carefully managing third-party integrations and prioritizing user preferences
 For further information, refer to:
 - <a href="#wsg">The WSG 1.0 - SC 3.7</a>.
 
-For more detailed information on analyzing and optimizing third-party usage, refer to the <a hreflang="en" href="https://developer.chrome.com/docs/lighthouse/performance/third-party-summary">Chrome Developers documentation</a>.
+For more detailed information on analyzing and optimizing third-party usage, refer to the [Chrome Developers documentation](https://developer.chrome.com/docs/lighthouse/performance/third-party-summary").
 
 ### Implementing technical optimizations
 
@@ -820,7 +819,7 @@ Let's focus on some quick wins, some of which will be familiar to you from the J
 
 ##### Minification
 
-While minification for JavaScript is a common practice (as mentioned earlier in this chapter), it's also important to recognize the value of minifying other <a hreflang="en" href="https://web.dev/articles/optimizing-content-efficiency-optimize-encoding-and-transfer?hl=en">static text assets</a> such as CSS files due to the data savings that can be obtained. Tools within IDEs can help automate and streamline this process to increase efficiency.
+While minification for JavaScript is a common practice (as mentioned earlier in this chapter), it's also important to recognize the value of minifying other [static text assets](https://web.dev/articles/optimizing-content-efficiency-optimize-encoding-and-transfer) such as CSS files due to the data savings that can be obtained. Tools within IDEs can help automate and streamline this process to increase efficiency.
 
 {{ figure_markup(
   image="unminified-css-savings.png",
@@ -859,7 +858,7 @@ Before we get into the sustainability benefits, it is worth quickly discussing t
 
 Dark mode itself can be a real benefit for sustainability on OLED screens due to the use of <a hreflang="en" href="https://www.youtube.com/watch?v=N_6sPd0Jd3g">dimmed pixels</a> (blacks and <a hreflang="en" href="https://greentheweb.com/energy-efficient-color-palette-ideas/">low colors</a>). Studies have shown that on such devices the <a hreflang="en" href="https://engineering.purdue.edu/ECE/News/2021/dark-mode-may-not-save-your-phones-battery-life-as-much-as-you-think-but-there-are-a-few-silver-linings">reduction of energy use</a> can vary but it does make a <a hreflang="en" href="https://www.businessinsider.com/guides/tech/does-dark-mode-save-battery?r=US&IR=T">real difference</a> (and as the screen is the primary energy emitter for handheld devices, this is important).
 
-There are several other user-preference <a hreflang="en" href="https://polypane.app/blog/the-complete-guide-to-css-media-queries/">media queries</a> available to CSS that may (depending on usage) have sustainability benefits for your visitors such as monochrome (to default printing to a single cartridge type), prefers-reduced-motion (to reduce processor-intensive animated effects), and the upcoming <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-data">prefers-reduced-data</a> (that allows designing around low bandwidth devices).
+There are several other user-preference <a hreflang="en" href="https://polypane.app/blog/the-complete-guide-to-css-media-queries/">media queries</a> available to CSS that may (depending on usage) have sustainability benefits for your visitors such as monochrome (to default printing to a single cartridge type), prefers-reduced-motion (to reduce processor-intensive animated effects), and the upcoming [`prefers-reduced-data`](https://developer.mozilla.org/docs/Web/CSS/@media/prefers-reduced-data) (that allows designing around low bandwidth devices).
 
 For further information, refer to:
 - <a href="#wsg">The WSG 1.0 - SC 3.13</a>.
@@ -868,7 +867,7 @@ For a deeper dive into CSS's pros and cons, check out our comprehensive [CSS](./
 
 #### Including as little code as possible directly in HTML
 
-The practice of inlining JavaScript and CSS directly in HTML can bloat HTML files and potentially harm overall performance and sustainability, as well as security. This issue is particularly prevalent in websites built with Content Management Systems (CMS) and those implementing the <a hreflang="en" href="https://web.dev/articles/extract-critical-css">Critical CSS method</a>.
+The practice of inlining JavaScript and CSS directly in HTML can bloat HTML files and potentially harm overall performance and sustainability, as well as security. This issue is particularly prevalent in websites built with Content Management Systems (CMS) and those implementing the [Critical CSS method](https://web.dev/articles/extract-critical-css).
 
 The importance of the <a hreflang="en" href="https://meiert.com/en/blog/what-happened-to-separation-of-concerns/">separation of concerns</a> (HTML, CSS, and JavaScript) cannot be understated as also touched upon earlier in this chapter. While CSS can't defer or asynchronously load assets like JavaScript that would be render-blocking (without reliance on JavaScript itself), it still retains the same key benefit of being able to cache such assets. In doing so, a large library of CSS styles can be re-used among many pages without having to be re-downloaded.
 
@@ -930,7 +929,7 @@ Content Delivery Networks (CDNs) play a crucial role in optimizing web performan
   sql_file="cdn_adoption.sql"
 ) }}
 
-Comparing this data to  <a hreflang="en" href="https://developer.chrome.com/docs/devtools/coverage">2022 data</a>, we observe several notable trends:
+Comparing this data to [2022 data](../2022/sustainability), we observe several notable trends:
 - Increased CDN Adoption: The percentage of websites not using a CDN has decreased from 69.7% to 66.88% for desktop and from 71.2% to 67.20% for mobile. This indicates a growing recognition of CDN benefits.
 - Cloudflare's Growth: Cloudflare has solidified its position as the leading CDN provider, increasing its market share from 16.9% to 18.28% on desktop and from 15.1% to 18.16% on mobile.
 - Google's Expansion: Google's CDN usage has seen significant growth, rising from 5.2% to 7.40% on desktop and from 6.5% to 7.95% on mobile.
@@ -942,7 +941,7 @@ From a sustainability perspective, the increased adoption of CDNs is a positive 
 - Load Balancing: By distributing traffic across multiple servers, CDNs can help prevent server overload, potentially reducing energy consumption during traffic spikes.
 - Edge Computing: Many modern CDNs offer edge computing capabilities, allowing for data processing closer to the end-user, which can further reduce energy consumption.
 
-For a deeper dive into CDNs, check out our comprehensive  <a hreflang="en" href="https://developer.chrome.com/docs/devtools/coverage">CDN chapter</a>.
+For a deeper dive into CDNs, check out our comprehensive [CDN](./cdn) chapter.
 
 For further information, refer to:
 - <a href="#wsg">The WSG 1.0 - SC 4.10</a>.
