@@ -3,7 +3,7 @@
 title: Accessibility
 description: Accessibility chapter of the 2024 Web Almanac covering ease of reading, navigation, forms, media, ARIA, and accessibility apps.
 authors: [mgifford]
-reviewers: [hidde, b_atish]
+reviewers: [hidde, b_atish, katekalcevich]
 analysts: [mgifford]
 editors: [JonathanPagel, JonathanAvila, shantsis]
 translators: []
@@ -172,7 +172,7 @@ The [Sustainability](./sustainability) chapter has some great statistics on the 
 
 For contrast, only 12% of desktop and mobile websites utilize the `prefers-color-scheme` media query, which is up from 8% in 2022. To enhance content readability it is a good practice to allow your users to adjust display modes. The prefers-color-scheme query enables browsers to detect the user's preferred color scheme, supporting light and dark modes. The `prefers-contrast` query is valuable for users with low vision or photosensitivity by enabling high contrast modes.
 
-Support for <a href="https://developer.mozilla.org/docs/Web/CSS/@media/forced-colors"><code>forced-contrast</code></a> increased about 4% in 2024 to 14% for desktop. Forced Colors Mode is an accessibility feature designed to enhance text readability through improved color contrast. When activated, the user's operating system takes control of most color-related styles, overriding website color settings. This mode disables common patterns like background images to ensure more predictable text-to-background contrast. 
+Support for <a href="https://developer.mozilla.org/docs/Web/CSS/@media/forced-colors"><code>forced-contrast</code></a> increased about 4% in 2024 to 14% for desktop. Forced Colors Mode is an accessibility feature designed to enhance text readability through improved color contrast. When activated, the user's operating system takes control of most color-related styles, overriding website color settings. This mode disables common patterns like background images to ensure more predictable text-to-background contrast.
 
 The most well-known implementation is Windows' High Contrast Mode, now called <a hreflang="en" href="https://support.microsoft.com/en-us/topic/fedc744c-90ac-69df-aed5-c8a90125e696">Contrast Themes</a>. These themes offer alternative color palettes with low and high contrast options, and allow users to customize the system colors to their preference. Use of `-ms-high-contrast` has decreased slightly in 2024 to about 23%. This can be emulated in <a hreflang="en" href="https://blogs.windows.com/msedgedev/2024/04/29/deprecating-ms-high-contrast/">Edge</a> and <a href="https://developer.chrome.com/docs/devtools/rendering/emulate-css/">Chrome</a>, so it is now easier to test.
 
@@ -296,7 +296,7 @@ Although ARIA landmarks have traditionally been only visible to screen reader us
 }}
 
 The most commonly expected landmarks for most web pages include `<main>`, `<header>`, `<nav>`, and `<footer>`. Our findings reveal that:
-- only 37% of all pages use the native HTML `<main>` element, 
+- only 37% of all pages use the native HTML `<main>` element,
 - 17% of all pages have an element with `role="main"`, and
 - 43% are using either one of them (up from 35% in 2021).
 
@@ -470,9 +470,9 @@ Indicating required fields is crucial for forms. Before HTML5, an asterisk (*) w
 }}
 
 Currently,
-* 65% of mobile sites use the required attribute (down from 67% in 2022), and 
-* 40% use `aria-required` (up from 32% in 2022), but 
-* 19% still rely only on an asterisk (which is down from 22% in 2022). 
+* 65% of mobile sites use the required attribute (down from 67% in 2022), and
+* 40% use `aria-required` (up from 32% in 2022), but
+* 19% still rely only on an asterisk (which is down from 22% in 2022).
 
 This should be avoided unless supplemented by required and `aria-required`.
 
