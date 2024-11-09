@@ -8,13 +8,13 @@ editors: [avidlarge]
 analysts: [guaca]
 translators: []
 results: https://docs.google.com/spreadsheets/d/1wKswSnp8TuN4aZb63ir7hE5eCikIu8zEdQYPp4Xo6O0/
-featured_quote: The standout this year is the combined 67% growth of Pre-rendered and Hybrid architectures in the top 10k high-traffic websites in 2024. Given how much of the web is inherently static, this trend is promising.
-featured_stat_1: 41%
-featured_stat_label_1: smaller JavaScript size helps pre-rendered sites outperform dynamic ones
+featured_quote: The standout this year is the combined 67% growth of prerendered and hybrid architectures in the top 10k high-traffic websites in 2024. Given how much of the web is inherently static, this trend is promising.
+featured_stat_1: 43%
+featured_stat_label_1: Percentage smaller Prerendered sites are than Dyanmic sites.
 featured_stat_2: 3x
-featured_stat_label_2: Growth for Astro for Pre-rendered sites in 2024
+featured_stat_label_2: Growth of Astro for Prerendered sites in 2024
 featured_stat_3: 42%
-featured_stat_label_3: smaller JavaScript size for pre-rendered sites compared to dynamically rendered
+featured_stat_label_3: Percentage less JavaScript Prerendered sites are than Dyanmic sites.
 mikeneu_bio: Mike Neumegen passionate about building a web that's accessible, fast, simple, and secure and grounded in strong fundamentals. He's the co-founder of <a hreflang="en" href="https://cloudcannon.com/">CloudCannon</a>, a content management platform that brings Git-based workflows to content editors.
 ---
 
@@ -22,13 +22,13 @@ mikeneu_bio: Mike Neumegen passionate about building a web that's accessible, fa
 
 Remember Jamstack? While the term itself may not be widely used anymore, the core concepts remain as relevant as ever.
 
-At its heart, Jamstack is a delivery architecture that promotes pre-rendering pages whenever possible. For the 2024 Web Almanac Jamstack report, we'll explore the three main delivery architectures commonly used today:
+At its heart, Jamstack is a delivery architecture that promotes prerendering pages whenever possible. For the 2024 Web Almanac Jamstack report, we'll explore the three main delivery architectures commonly used today:
 
-1. **Pre-rendered** – Build pages ahead of time and serve them as static files.
+1. **Prerendered** – Build pages ahead of time and serve them as static files.
 2. **Hybrid** – A mix of static and dynamic pages, using technologies like Incremental Static Regeneration (ISR) and Edge Functions to blur the lines between them.
 3. **Dynamic** – Pages are generated on the server for each request.
 
-It's become more common to take a **Static-first** approach as the more static a website is, the faster, more scalable, secure, and eco-friendly it tends to be. Pre-rendering, hybrid, and dynamic approaches are valuable tools in a web developer's toolkit and are each suited to different situations. Let's see how these categories are evolving.
+It's become more common to take a **Static-first** approach as the more static a website is, the faster, more scalable, secure, and eco-friendly it tends to be. Prerendering, hybrid, and dynamic approaches are valuable tools in a web developer's toolkit and are each suited to different situations. Let's see how these categories are evolving.
 
 ## Defining the dataset
 
@@ -36,17 +36,17 @@ So, how do we determine which delivery approach a site is taking? It would be id
 
 Previous Jamstack Almanac reports have taken two approaches:
 
-1. Focus on websites with a detectable Static Site Generator. This gave us an accurate picture as we could be sure these sites were using targeted technologies. The problem is that many Static Site Generators don't leave a fingerprint by default, so the dataset skews toward frameworks like Next.js and Nuxt that do. To complicate things further, these heavier JavaScript frameworks are capable of both pre-rendering pages and dynamically rendering them, so which category do we put them in?
+1. Focus on websites with a detectable Static Site Generator. This gave us an accurate picture as we could be sure these sites were using targeted technologies. The problem is that many Static Site Generators don't leave a fingerprint by default, so the dataset skews toward frameworks like Next.js and Nuxt that do. To complicate things further, these heavier JavaScript frameworks are capable of both prerendering pages and dynamically rendering them, so which category do we put them in?
 
-2. The second approach used thresholds for Largest Contentful Paint, Cumulative Layout Shift, and Caching to build the dataset. This approach broadens the dataset by including more pre-rendered sites that don't have a clear Static Site Generator fingerprint. The downside is that it blurs the definition of pre-rendering by focusing on frontend performance. Pre-rendering will often improve delivery speed, but that's where the scope ends in our view. What happens after delivery like a faster LCP is a happy byproduct.
+2. The second approach used thresholds for Largest Contentful Paint, Cumulative Layout Shift, and Caching to build the dataset. This approach broadens the dataset by including more prerendered sites that don't have a clear Static Site Generator fingerprint. The downside is that it blurs the definition of prerendering by focusing on frontend performance. Prerendering will often improve delivery speed, but that's where the scope ends in our view. What happens after delivery like a faster LCP is a happy byproduct.
 
-Both approaches have merit: the first uses data that clearly defines a pre-rendered site, while the second relies on indicators. This year, we're combining the two with a scoring system to get the best of both worlds. We developed this scoring system to reflect our confidence level in whether a site is pre-rendered. Strong indicators, like being generated by 11ty or hosted on GitHub Pages, earn 100 points, while softer signals, such as a fast Time to First Byte (TTFB), receive lower points—50 in this case.
+Both approaches have merit: the first uses data that clearly defines a prerendered site, while the second relies on indicators. This year, we're combining the two with a scoring system to get the best of both worlds. We developed this scoring system to reflect our confidence level in whether a site is prerendered. Strong indicators, like being generated by 11ty or hosted on GitHub Pages, earn 100 points, while softer signals, such as a fast Time to First Byte (TTFB), receive lower points—50 in this case.
 
 We then total up the points and put them in one of the following categories:
 
-### Pre-rendered
+### Prerendered
 
-If a site scores 100 points or over, we call it Pre-rendered. It means the site is statically generated or shows multiple signs of being decoupled. This is a high bar and contains \~0.5% of total sites in 2024\.
+If a site scores 100 points or over, we call it Prerendered. It means the site is statically generated or shows multiple signs of being decoupled. This is a high bar and contains \~0.5% of total sites in 2024\.
 
 ### Hybrid
 
@@ -62,7 +62,7 @@ Let's dive into how scoring works.
 
 ### Detectable Static Site Generator
 
-This is a huge tell. Based on the SSG, we can give a score on how likely the website is pre-rendered. These are ballparks so while we can't confidently say that 30% of Next.js sites are purely static, it's one data point that when combined with others, gives us confidence.
+This is a huge tell. Based on the SSG, we can give a score on how likely the website is prerendered. These are ballparks so while we can't confidently say that 30% of Next.js sites are purely static, it's one data point that when combined with others, gives us confidence.
 
 <figure>
   <table>
@@ -157,7 +157,7 @@ This is a huge tell. Based on the SSG, we can give a score on how likely the web
 
 ### Hosting Providers
 
-GitHub Pages can only serve static content so we know if it's hosted on that platform, it must be pre-rendered. Netlify and Vercel both have many static websites, but also have dynamic functionality. We've tried to account for this in the scoring.
+GitHub Pages can only serve static content so we know if it's hosted on that platform, it must be prerendered. Netlify and Vercel both have many static websites, but also have dynamic functionality. We've tried to account for this in the scoring.
 
 <figure>
   <table>
@@ -324,7 +324,7 @@ A Set-Cookie header nudges toward dynamic behavior. It typically means the serve
 
 It's worth reiterating, this segmentation is hard. These are rough estimates based on the data available and some miscategorization is inevitable. It's also the first year we've used this scoring method and is something we can refine in years to come.
 
-To minimize this, we've set a high bar for what qualifies as Pre-rendered and Hybrid. It's likely these categories are larger than represented in this report.
+To minimize this, we've set a high bar for what qualifies as Prerendered and Hybrid. It's likely these categories are larger than represented in this report.
 
 ## Analysis
 
@@ -332,27 +332,27 @@ Now that our categories are defined, let's see how they're trending in 2024.
 
 ### Static Site Generators
 
-SSGs are the technology that performs the pre-rendering, which makes them a natural starting point for our analysis. Keep in mind not all Static Site Generators leave a fingerprint. Tools like 11ty, for example, don't leave any trace by default, so they aren't reflected in this dataset.
+SSGs are the technology that performs the prerendering, which makes them a natural starting point for our analysis. Keep in mind not all Static Site Generators leave a fingerprint. Tools like 11ty, for example, don't leave any trace by default, so they aren't reflected in this dataset.
 
 {{ figure_markup(
-  image="pre-rendered-static-site-generators.png",
-  caption="Static Site Generator usage for Pre-rendered sites.",
-  description="Bar chart showing the static site generator usage for pre-rendered sites. In 2024, Hugo is used by 18% of mobile pages, Next.js is used by 13% and Astro is used by 5%",
+  image="prerendered-static-site-generators.png",
+  caption="Static Site Generator usage for Prerendered sites.",
+  description="Bar chart showing the static site generator usage for prerendered sites. In 2024, Hugo is used by 18% of mobile pages, Next.js is used by 13% and Astro is used by 5%",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTzPcqcOjo0RTaHjgSQCXZYJRyquXzzd6qOsD6PysgZZdGXlR8pP5i2Reoa_WJwJLjFHniXA2DWwDq1/pubchart?oid=1868506505&format=interactive",
   sheets_gid="1131487846",
   sql_file="ssg.sql"
   )
 }}
 
-We see Hugo leading the Pre-rendering category by a sizable margin for the past 3 years. Hugo is known for being a fast and flexible SSG with a community that values performance so it's not surprising to see it at the top of the list.
+We see Hugo leading the Prerendering category by a sizable margin for the past 3 years. Hugo is known for being a fast and flexible SSG with a community that values performance so it's not surprising to see it at the top of the list.
 
-Next.js continues its dominance on the web and is steadily closing the gap on Hugo in the Pre-rendering category. It's worth noting that with our scoring, we're considering almost all known Hugo sites as Pre-rendered, whereas Next.js needs multiple indicators to be considered Pre-rendered.
+Next.js continues its dominance on the web and is steadily closing the gap on Hugo in the Prerendering category. It's worth noting that with our scoring, we're considering almost all known Hugo sites as Prerendered, whereas Next.js needs multiple indicators to be considered Prerendered.
 
-Meanwhile, Jekyll, Gatsby, and Hexo have seen stable or declining usage in the Pre-rendered category, which reflects the reduced development going into these frameworks.
+Meanwhile, Jekyll, Gatsby, and Hexo have seen stable or declining usage in the Prerendered category, which reflects the reduced development going into these frameworks.
 
 Docusaurus is on a steady rise which is impressive considering it's only used for documentation.
 
-The real stand out here is Astro though which grew 3x in 2024\! It's now a major player in the Pre-rendered category and could become the dominant framework if this trend continues.
+The real stand out here is Astro though which grew 3x in 2024\! It's now a major player in the Prerendered category and could become the dominant framework if this trend continues.
 
 Let's take a look at the Hybrid category:
 
@@ -366,29 +366,29 @@ Let's take a look at the Hybrid category:
   )
 }}
 
-We see Next.js extending its lead in the Hybrid category with a 39% increase in the past year. Next.js is a highly flexible framework capable of Pre-rendering, Dynamic Rendering, and Incremental Static Regeneration (updating specific static pages on-demand without requiring a full site rebuild). Its versatility for everything from an information website to a fully-fledged web application is one of the big reasons we're seeing its growing usage.
+We see Next.js extending its lead in the Hybrid category with a 39% increase in the past year. Next.js is a highly flexible framework capable of Prerendering, Dynamic Rendering, and Incremental Static Regeneration (updating specific static pages on-demand without requiring a full site rebuild). Its versatility for everything from an information website to a fully-fledged web application is one of the big reasons we're seeing its growing usage.
 
 Nuxt continued to grow steadily within the Hybrid category, while Astro saw rapid growth in 2024\.
 
 ### Performance
 
-Pre-rendered sites are known for their performance because the server can respond instantly rather than dynamically rendering a response for each request. This results in faster load times and less strain on the server. Let's see how that plays out in our analysis.
+Prerendered sites are known for their performance because the server can respond instantly rather than dynamically rendering a response for each request. This results in faster load times and less strain on the server. Let's see how that plays out in our analysis.
 
 The median site page transfer size is an interesting place to start as we would expect it to be a significant factor in overall site performance.
 
 {{ figure_markup(
   image="page-transfer-size.png",
   caption="Transfer size by year.",
-  description="Column chart showing a break down of transfer sizes by year for each category - Pre-rendered, Hybrid, and Dynamic. In 2024, Pre-rendered sites have a median of 1,427 KB, Hybrid sites have a median of 2,083 KB, and Dynamic sites have a median of 2,434 KB.",
+  description="Column chart showing a break down of transfer sizes by year for each category - Prerendered, Hybrid, and Dynamic. In 2024, Prerendered sites have a median of 1,427 KB, Hybrid sites have a median of 2,083 KB, and Dynamic sites have a median of 2,434 KB.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTzPcqcOjo0RTaHjgSQCXZYJRyquXzzd6qOsD6PysgZZdGXlR8pP5i2Reoa_WJwJLjFHniXA2DWwDq1/pubchart?oid=1985928033&format=interactive",
   sheets_gid="1131487846",
   sql_file="jamstack-overview.sql"
   )
 }}
 
-On average, Pre-rendered sites have much smaller transfer sizes coming in at 43% of the Dynamic sites.
+On average, Prerendered sites have much smaller transfer sizes coming in at 43% of the Dynamic sites.
 
-The jump between Pre-rendered and Hybrid sites likely reflects their different use cases with Pre-rendered sites more likely to be static, informational sites, while Hybrid sites might lean more into eCommerce and web applications which can lead to larger transfer sizes.
+The jump between Prerendered and Hybrid sites likely reflects their different use cases with Prerendered sites more likely to be static, informational sites, while Hybrid sites might lean more into eCommerce and web applications which can lead to larger transfer sizes.
 
 
 Let's break down where this extra weight is coming from.
@@ -396,31 +396,31 @@ Let's break down where this extra weight is coming from.
 {{ figure_markup(
   image="total-requests.png",
   caption="Total requests by year.",
-  description="Column chart showing the number of requests per year for each category - Pre-rendered, Hybrid, and Dynamic. In 2024, Pre-rendered sites have a median of 42, Hybrid sites have a median of 65, and Dynamic sites have a median of 72.",
+  description="Column chart showing the number of requests per year for each category - Prerendered, Hybrid, and Dynamic. In 2024, Prerendered sites have a median of 42, Hybrid sites have a median of 65, and Dynamic sites have a median of 72.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTzPcqcOjo0RTaHjgSQCXZYJRyquXzzd6qOsD6PysgZZdGXlR8pP5i2Reoa_WJwJLjFHniXA2DWwDq1/pubchart?oid=136070557&format=interactive",
   sheets_gid="1131487846",
   sql_file="jamstack-overview.sql"
   )
 }}
 
-Looking at the total number of requests could explain some of the differences in total page weight between categories. From 2022 to 2024 we see the total requests stay about the same for Pre-rendered sites, a slight increase with Dynamic, and the largest increase in the Hybrid category (16% in 2024).
+Looking at the total number of requests could explain some of the differences in total page weight between categories. From 2022 to 2024 we see the total requests stay about the same for Prerendered sites, a slight increase with Dynamic, and the largest increase in the Hybrid category (16% in 2024).
 
 {{ figure_markup(
   image="css-size.png",
   caption="CSS size by year.",
-  description="Column chart showing the median size of CSS per year for each category - Pre-rendered, Hybrid, and Dynamic. In 2024, Pre-rendered sites have a median of 26 KB, Hybrid sites have a median of 41 KB, and Dynamic sites have a median of 77 KB.",
+  description="Column chart showing the median size of CSS per year for each category - Prerendered, Hybrid, and Dynamic. In 2024, Prerendered sites have a median of 26 KB, Hybrid sites have a median of 41 KB, and Dynamic sites have a median of 77 KB.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTzPcqcOjo0RTaHjgSQCXZYJRyquXzzd6qOsD6PysgZZdGXlR8pP5i2Reoa_WJwJLjFHniXA2DWwDq1/pubchart?oid=2011541229&format=interactive",
   sheets_gid="1131487846",
   sql_file="jamstack-overview.sql"
   )
 }}
 
-The total transfer of CSS provides another perspective and shows a slight upward trend across all categories. The notable jump between Hybrid and Dynamic sites stands out. While further analysis is needed to pinpoint the exact cause, a likely explanation is that Pre-rendered and Hybrid sites tend to be hand-crafted by web developers. In contrast, Dynamic sites often rely on themes, website builders, and plugins which are notorious for having bloated web assets.
+The total transfer of CSS provides another perspective and shows a slight upward trend across all categories. The notable jump between Hybrid and Dynamic sites stands out. While further analysis is needed to pinpoint the exact cause, a likely explanation is that Prerendered and Hybrid sites tend to be hand-crafted by web developers. In contrast, Dynamic sites often rely on themes, website builders, and plugins which are notorious for having bloated web assets.
 
 {{ figure_markup(
   image="javascript-size.png",
   caption="JavaScript size by year.",
-  description="Column chart showing the median size of JavaScript per year for each category - Pre-rendered, Hybrid, and Dynamic. In 2024, Pre-rendered sites have a median of 330 KB, Hybrid sites have a median of 674 KB, and Dynamic sites have a median of 574 KB.",
+  description="Column chart showing the median size of JavaScript per year for each category - Prerendered, Hybrid, and Dynamic. In 2024, Prerendered sites have a median of 330 KB, Hybrid sites have a median of 674 KB, and Dynamic sites have a median of 574 KB.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTzPcqcOjo0RTaHjgSQCXZYJRyquXzzd6qOsD6PysgZZdGXlR8pP5i2Reoa_WJwJLjFHniXA2DWwDq1/pubchart?oid=1540077714&format=interactive",
   sheets_gid="1131487846",
   sql_file="jamstack-overview.sql"
@@ -431,20 +431,20 @@ The total transfer of JavaScript offers one of the most interesting insights wit
 
 {{ figure_markup(
   image="javascript-frameworks.png",
-  caption="JavaScript Frameworks used by Pre-rendered and Hybrid sites",
-  description="Bar chart showing the most common JavaScript frameworks used by Pre-rendered and Hybrid sites in 2024.React is the most popular with 23% of pre-rendered sites and 39% of Hybrid, Vue.js comes in next with 8% of Pre-rendered and 13% of Hybrid.",
+  caption="JavaScript Frameworks used by Prerendered and Hybrid sites",
+  description="Bar chart showing the most common JavaScript frameworks used by Prerendered and Hybrid sites in 2024.React is the most popular with 23% of prerendered sites and 39% of Hybrid, Vue.js comes in next with 8% of Prerendered and 13% of Hybrid.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTzPcqcOjo0RTaHjgSQCXZYJRyquXzzd6qOsD6PysgZZdGXlR8pP5i2Reoa_WJwJLjFHniXA2DWwDq1/pubchart?oid=1961429073&format=interactive",
   sheets_gid="1131487846",
   sql_file="js_frameworks.sql"
   )
 }}
 
-When we break down the JavaScript frameworks used by Pre-rendered and Hybrid websites, we see heavier frameworks like React are more commonly used in the Hybrid category.
+When we break down the JavaScript frameworks used by Prerendered and Hybrid websites, we see heavier frameworks like React are more commonly used in the Hybrid category.
 
 {{ figure_markup(
   image="transfer-excluding-css-js.png",
   caption="Transfer size excluding CSS and JavaScript by year",
-  description="Column chart showing the median size of Non JavaScript and CSS transfer size per year for each category - Pre-rendered, Hybrid, and Dynamic. In 2024, Pre-rendered sites have a median of 1,071 KB, Hybrid sites have a median of 1,368 KB, and Dynamic sites have a median of 1,783 KB.",
+  description="Column chart showing the median size of Non JavaScript and CSS transfer size per year for each category - Prerendered, Hybrid, and Dynamic. In 2024, Prerendered sites have a median of 1,071 KB, Hybrid sites have a median of 1,368 KB, and Dynamic sites have a median of 1,783 KB.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTzPcqcOjo0RTaHjgSQCXZYJRyquXzzd6qOsD6PysgZZdGXlR8pP5i2Reoa_WJwJLjFHniXA2DWwDq1/pubchart?oid=919021609&format=interactive",
   sheets_gid="1131487846",
   sql_file="jamstack-overview.sql"
@@ -456,14 +456,14 @@ If we remove CSS and JavaScript from the total transfer size, we're left with HT
 {{ figure_markup(
   image="astro-hugo-next-transfer-size.png",
   caption="Astro vs Hugo vs Next.js: Transfer size by year",
-  description="Column chart showing the median total transfer size of Astro, Hugo, and Next.js sites in the pre-rendered category per year. In 2024, Astro sites have a median of 889 KB, Hugo sites have a median of 1,174 KB, and Next.js have a median of 1,659 KB.",
+  description="Column chart showing the median total transfer size of Astro, Hugo, and Next.js sites in the prerendered category per year. In 2024, Astro sites have a median of 889 KB, Hugo sites have a median of 1,174 KB, and Next.js have a median of 1,659 KB.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTzPcqcOjo0RTaHjgSQCXZYJRyquXzzd6qOsD6PysgZZdGXlR8pP5i2Reoa_WJwJLjFHniXA2DWwDq1/pubchart?oid=1751742689&format=interactive",
   sheets_gid="1131487846",
   sql_file="hugo_astro_next.sql"
   )
 }}
 
-Focusing on the three standout Static Site Generators in the Pre-rendered category—Astro, Hugo, and Next.js—gives us another lens to analyze page weight. Note: this analysis only includes sites in the Pre-rendered category to keep the comparison fair.
+Focusing on the three standout Static Site Generators in the Prerendered category—Astro, Hugo, and Next.js—gives us another lens to analyze page weight. Note: this analysis only includes sites in the Prerendered category to keep the comparison fair.
 
 Astro takes numerous steps to ship only the minimal data required, from Astro Islands and zero JavaScript by default to an asset optimization pipeline. It's great to see its dedication to performance reflected in the data.
 
@@ -474,7 +474,7 @@ Next.js shows a sizable increase in page weight. Next.js ships with its bundled 
 {{ figure_markup(
   image="astro-hugo-next-js-size.png",
   caption="Astro vs Hugo vs Next.js: JavaScript size by year",
-  description="Column chart showing the median JavaScript transfer size of Astro, Hugo, and Next.js sites in the pre-rendered category per year. In 2024, Astro sites have a median of 164 KB, Hugo sites have a median of 210 KB, and Next.js have a median of 583 KB.",
+  description="Column chart showing the median JavaScript transfer size of Astro, Hugo, and Next.js sites in the prerendered category per year. In 2024, Astro sites have a median of 164 KB, Hugo sites have a median of 210 KB, and Next.js have a median of 583 KB.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTzPcqcOjo0RTaHjgSQCXZYJRyquXzzd6qOsD6PysgZZdGXlR8pP5i2Reoa_WJwJLjFHniXA2DWwDq1/pubchart?oid=823335659&format=interactive",
   sheets_gid="1131487846",
   sql_file="hugo_astro_next.sql"
@@ -486,7 +486,7 @@ Breaking this down to purely the JavaScript shipped, we can see how heavy the Ja
 {{ figure_markup(
   image="core-web-vitals.png",
   caption="Sites with Good Core Web Vitals by year",
-  description="Column chart showing the percentage of sites in each category that have a good Core Web Vitals score for each year. In 2024, 41% of Pre-rendered sites, 31% of Hybrid, and 33% of Dynamic sites have a good Core Web Vitals score.",
+  description="Column chart showing the percentage of sites in each category that have a good Core Web Vitals score for each year. In 2024, 41% of Prerendered sites, 31% of Hybrid, and 33% of Dynamic sites have a good Core Web Vitals score.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTzPcqcOjo0RTaHjgSQCXZYJRyquXzzd6qOsD6PysgZZdGXlR8pP5i2Reoa_WJwJLjFHniXA2DWwDq1/pubchart?oid=275245520&format=interactive",
   sheets_gid="1131487846",
   sql_file="jamstack-overview.sql"
@@ -499,7 +499,7 @@ Let's see how the delivery approaches impact Core Web Vitals. We use Google's de
 * **Cumulative Layout Shift**  (CLS) less than 0.1 for 75% of users
 * **Interaction to Next Paint** (INP) under 200 milliseconds for 75% of users
 
-Pre-rendering typically results in a faster Time to First Byte (TTFB), which will naturally improve LCP: the faster the browser receives the HTML, the sooner it can start fetching assets and render the page. These sites also tend to receive more attention to details like CLS, as they are often handcrafted by developers. Hybrid has a heavy use of JavaScript frameworks and largest JavaScript payloads, which likely explains it having the lowest percentage of Good Core Web Vitals.
+Prerendering typically results in a faster Time to First Byte (TTFB), which will naturally improve LCP: the faster the browser receives the HTML, the sooner it can start fetching assets and render the page. These sites also tend to receive more attention to details like CLS, as they are often handcrafted by developers. Hybrid has a heavy use of JavaScript frameworks and largest JavaScript payloads, which likely explains it having the lowest percentage of Good Core Web Vitals.
 
 ### Growth
 
@@ -507,29 +507,29 @@ So, how are these architectures being adopted across the web?
 
 {{ figure_markup(
   image="global-adoption.png",
-  caption="Global Growth of Pre-rendered and Hybrid sites",
-  description="Column chart showing the percentage of total sites that a pre-rendered and hybrid by year. In 2024, .5% of sites are Pre-rendered and 5% are Hybrid",
+  caption="Global Growth of Prerendered and Hybrid sites",
+  description="Column chart showing the percentage of total sites that a prerendered and hybrid by year. In 2024, .5% of sites are Prerendered and 5% are Hybrid",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTzPcqcOjo0RTaHjgSQCXZYJRyquXzzd6qOsD6PysgZZdGXlR8pP5i2Reoa_WJwJLjFHniXA2DWwDq1/pubchart?oid=1749178863&format=interactive",
   sheets_gid="1131487846",
   sql_file="jamstack-overview.sql"
   )
 }}
 
-Looking at the full dataset, we see that while Pre-rendered and Hybrid architectures are on the rise, they're still relatively niche compared to the rest of the web. This makes sense, as most websites rely on website builders or GUIs, rather than the developer-focused tools common in the Pre-rendered and Hybrid categories.
+Looking at the full dataset, we see that while Prerendered and Hybrid architectures are on the rise, they're still relatively niche compared to the rest of the web. This makes sense, as most websites rely on website builders or GUIs, rather than the developer-focused tools common in the Prerendered and Hybrid categories.
 
 We see more growth if we zoom into the sites with the most traffic:
 
 {{ figure_markup(
-  image="pre-rendered-high-traffic-adoption.png",
-  caption="Pre-rendered Adoption Among High-traffic Websites",
-  description="Column chart showing the percentage of the most high traffic websites that are pre-rendered by year. In 2024, .8% of the most popular 1k and 10k sites were pre-rendered, along with .6% of the top 100k sites.",
+  image="prerendered-high-traffic-adoption.png",
+  caption="Prerendered Adoption Among High-traffic Websites",
+  description="Column chart showing the percentage of the most high traffic websites that are prerendered by year. In 2024, .8% of the most popular 1k and 10k sites were prerendered, along with .6% of the top 100k sites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTzPcqcOjo0RTaHjgSQCXZYJRyquXzzd6qOsD6PysgZZdGXlR8pP5i2Reoa_WJwJLjFHniXA2DWwDq1/pubchart?oid=959672300&format=interactive",
   sheets_gid="1131487846",
   sql_file="jamstack_distribution_by_rank.sql"
   )
 }}
 
-There's been significant growth in Pre-rendered adoption among the top 1k and 10k most popular sites with growth leveling off at the 1M mark and beyond. These high-traffic sites care a great deal about performance, SEO, security, and stability, principles that align perfectly with the Pre-rendered approach.
+There's been significant growth in Prerendered adoption among the top 1k and 10k most popular sites with growth leveling off at the 1M mark and beyond. These high-traffic sites care a great deal about performance, SEO, security, and stability, principles that align perfectly with the Prerendered approach.
 
 {{ figure_markup(
   image="hybrid-high-traffic-adoption.png",
@@ -545,12 +545,12 @@ It's a similar story with Hybrid which now powers over 12% of the most popular 1
 
 ## Conclusion
 
-The standout this year is the combined 67% growth of Pre-rendered and Hybrid architectures in the top 10k high-traffic websites in 2024—over 12% of these popular sites now use these approaches. While Pre-rendering and Hybrid delivery remains niche in the context of the entire web, it's rapidly gaining traction where its benefits are most valued.
+The standout this year is the combined 67% growth of Prerendered and Hybrid architectures in the top 10k high-traffic websites in 2024—over 12% of these popular sites now use these approaches. While Prerendering and Hybrid delivery remains niche in the context of the entire web, it's rapidly gaining traction where its benefits are most valued.
 
 Given how much of the web is inherently static, this trend is promising. By adopting a static-first model and limiting dynamic rendering to dynamic content, the web could not only be faster, and lighter weight, but also significantly more environmentally friendly.
 
-Hugo continues to lead as the top Static Site Generator in the Pre-rendering space, with Next.js gaining ground. Astro saw the largest growth of any Pre-rendering framework in 2024, an impressive feat considering it's one of the newest frameworks in this space.
+Hugo continues to lead as the top Static Site Generator in the Prerendering space, with Next.js gaining ground. Astro saw the largest growth of any Prerendering framework in 2024, an impressive feat considering it's one of the newest frameworks in this space.
 
-The growing presence of Next.js and Astro in both Pre-rendered and Hybrid categories signals a shift toward hybrid architectures that give developers more control over static and dynamic content generation. Astro's focus on improving performance and reducing page weight looks to be paying off and has made serious inroads in catching up on Next.js.
+The growing presence of Next.js and Astro in both Prerendered and Hybrid categories signals a shift toward hybrid architectures that give developers more control over static and dynamic content generation. Astro's focus on improving performance and reducing page weight looks to be paying off and has made serious inroads in catching up on Next.js.
 
 While the term Jamstack may no longer be widely used, its evolution continues to shape the future in powering top-tier websites, paving the way for a faster, more stable, secure, and eco-friendly web.
