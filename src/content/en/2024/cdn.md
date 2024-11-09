@@ -366,7 +366,7 @@ Most CDNs can automatically detect the user's browser capabilities and serve the
 
 As of 2024,  data reveals that while traditional formats like JPEG and PNG still dominate, there's a clear trend towards adopting more efficient and mobile-friendly formats like WebP and SVG. The mobile ecosystem generally shows higher numbers for most formats, reflecting the growing importance of mobile web usage. The presence of newer formats like AVIF suggests an industry push towards more efficient image delivery, which is crucial for improving web performance and user experience across all devices.
 
-## Client hints
+## Client Hints
 
 First proposed as a way to reduce information from the User-Agent string, Client Hints allows a web server to proactively request data from the client and are sent as part of the HTTP headers. Client Hints are divided into four categories: device, user-agent preferences,  user preference media features, and networking. This further is broken down into high and low entropy hints. High entropy hints may provide the ability for the CDN or other entities to fingerprint and thus are typically gated by user permissions or other policies driven by the browser. Low entropy hints are less likely to be provide the ability for the client to be fingerprinted. Low entropy hints may be provided by default depending on user or browser settings.
 
@@ -377,7 +377,7 @@ The CDN, origin servers, and client browser must all support Client Hints to be 
 {{ figure_markup(
   image="cdn-client-hints-mobile.png",
   caption="Client Hints Comparison (mobile).",
-  description="This bar chart shows the usage of Client Hints in CDNs. Currently only 3.8% of the requests have client hints",
+  description="This bar chart shows the usage of Client Hints in CDNs. Currently only 4% of the requests have Client Hints",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRaKSyCfdyk5Qva05DCIxB4NPUI6VZASRpDfEIV9QsihS0nuKSEzWGh569LoaOnTW5NgHKTufv8ydlL/pubchart?oid=1795720470&format=interactive",
   sheets_gid="2034431888",
   sql_file="client_hints_cdn_vs_origin.sql"
@@ -386,7 +386,7 @@ The CDN, origin servers, and client browser must all support Client Hints to be 
 
 In 2022, Client Hints adoption was at less than 1% for mobile requests. While the 2024 result was an increase with less than 4% of the requests for mobile devices indicating the presence of Client Hints, adoption of this capability remains low relative to the overall amount of requests observed. Though not explored in this year's chapter, if Client Hints adoption continues to grow we may in future chapters measure how CDNs are using the Accept-CH header to vary on for caching purposes and a more personalized experience.
 
-## Early hints
+## Early Hints
 
 Early Hints is the [HTTP 103 status code](https://datatracker.ietf.org/doc/html/rfc8297#section-2) that allows servers to send preliminary HTTP headers to browsers before the main response is ready. This is particularly valuable for preloading critical resources like stylesheet, JavaScript, and fonts.
 
@@ -395,7 +395,7 @@ While major browsers support Early Hints, we found hardly any adoption across th
 {{ figure_markup(
   image="cdn-early-hints-mobile.png",
   caption="Early Hints Comparison (mobile).",
-  description="This bar chart shows the usage of Early Hints in CDNs. Currently only 0.086% of the requests have client hints",
+  description="This bar chart shows the usage of Early Hints in CDNs. Currently only 0.01% of the requests have Early Hints",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRaKSyCfdyk5Qva05DCIxB4NPUI6VZASRpDfEIV9QsihS0nuKSEzWGh569LoaOnTW5NgHKTufv8ydlL/pubchart?oid=609256029&format=interactive",
   sheets_gid="954411290",
   sql_file="early_hints_cdn_vs_origin.sql"
