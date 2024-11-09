@@ -29,8 +29,7 @@
           "part": "I",
           "chapter_number": "3",
           "title": "Markup",
-          "slug": "markup",
-          "todo": true
+          "slug": "markup"
         },
         {
           "part": "I",
@@ -156,16 +155,14 @@
           "chapter_number": "19",
           "title": "Jamstack",
           "slug": "jamstack",
-          "hero_dir": "2020",
-          "todo": true
+          "hero_dir": "2020"
         },
         {
           "part": "III",
           "chapter_number": "20",
           "title": "Sustainability",
           "slug": "sustainability",
-          "hero_dir": "2022",
-          "todo": true
+          "hero_dir": "2022"
         }
       ]
     },
