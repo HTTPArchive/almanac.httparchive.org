@@ -7,7 +7,7 @@ reviewers: [ibnesayeed, denar90]
 analysts: [rviscomi, paulcalvano]
 editors: [rviscomi]
 translators: [alangdm]
-tkadlec_bio: Tim es un consultor y entrenador sobre desempeño web enfocado en crear una web que todos podamos usar. El es autor de <i lang="en">High Performance Images</i> (O'Reilly, 2016) y <i lang="en">Implementing Responsive Design</i> (New Riders, 2012). Él escribe sobre la web en general en <a hreflang="en" href="https://timkadlec.com/">timkadlec.com</a>. Puedes encontrarlo compartiendo sus opiniones en un formato más breve en Twitter con el usuario <a href="https://twitter.com/tkadlec">@tkadlec</a>.
+tkadlec_bio: Tim es un consultor y entrenador sobre desempeño web enfocado en crear una web que todos podamos usar. El es autor de <i lang="en">High Performance Images</i> (O'Reilly, 2016) y <i lang="en">Implementing Responsive Design</i> (New Riders, 2012). Él escribe sobre la web en general en <a hreflang="en" href="https://timkadlec.com/">timkadlec.com</a>. Puedes encontrarlo compartiendo sus opiniones en un formato más breve en Twitter con el usuario <a href="https://x.com/tkadlec">@tkadlec</a>.
 discuss: 2038
 results: https://docs.google.com/spreadsheets/d/1cgXJrFH02SHPKDGD0AelaXAdB3UI7PIb5dlS0dxVtfY/
 featured_quote: JavaScript ha avanzado mucho desde su origen humilde hasta ser considerado el tercer pilar de la web junto con CSS y HTML. Hoy en día, JavaScript ha comenzado a invadir un amplio espectro del <i lang="en">stack</i> técnico. JavaScript ya no se encuentra limitado al lado del cliente y se ha convertido en una elección cada vez más popular para crear herramientas de construcción y <i lang="en">scripting</i> del lado del servidor. JavaScript también se ha adentrado en la capa de CDN gracias a soluciones de <i lang="en">edge computing</i>.
@@ -231,7 +231,7 @@ En días recientes, este patrón no es necesario para la mayoría de los sitios 
 
 Pero hay una historia alentadora sobre esto.
 
-Harry Roberts [hizo un _tweet_ sobre este antipatrón en Twitter](https://twitter.com/csswizardry/status/1331721659498319873), lo cual fue lo que nos motivó a medir que tan frecuentemente ocurre en realidad. [Rick Viscomi revisó quiénes eran culpables de esto con mayor frecuencia](https://twitter.com/rick_viscomi/status/1331735748060524551), y resultó que "stats.wp.com" era la fuente de los culpables más frecuentes. @Kraft de Automattic respondió y el patrón será [removido de ahora en adelante](https://twitter.com/Kraft/status/1336772912414601224).
+Harry Roberts [hizo un _tweet_ sobre este antipatrón en Twitter](https://x.com/csswizardry/status/1331721659498319873), lo cual fue lo que nos motivó a medir que tan frecuentemente ocurre en realidad. [Rick Viscomi revisó quiénes eran culpables de esto con mayor frecuencia](https://x.com/rick_viscomi/status/1331735748060524551), y resultó que "stats.wp.com" era la fuente de los culpables más frecuentes. @Kraft de Automattic respondió y el patrón será [removido de ahora en adelante](https://x.com/Kraft/status/1336772912414601224).
 
 Una de las grandes ventajas sobre lo abierta que es la web es que una observación puede llevar a un cambio significativo como el que vimos aquí.
 

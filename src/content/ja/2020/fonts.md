@@ -130,7 +130,7 @@ Adobe（`use.typekit.net`）やMonotype（`fast.fonts.com`）などの商用サ�
 
 #### ローカルが必ずしも良いとは限らない
 
-サイトのサーバーでフォントを自前でホストする方法の他に、システムにインストールされているフォントを、クライアントでも`font-face`宣言で`local`を使用して使用する方法があります。`local`の使用は、バイト数を節約できるため、<a hreflang="en" href="https://bramstein.com/writing/web-font-anti-patterns-local-fonts.html">議論の的</a>となっていますが、ローカルにインストールされたフォントのバージョンが古い場合には悪い結果になることもあります。[2020年11月](https://twitter.com/googlefonts/status/1328761547041148929?s=19)現在、Google Fontsはモバイルプラットフォーム上のRobotoに対してのみ`local`を使用するように移行しており、それ以外の場合は常にネットワーク経由でフォントを取得しています。
+サイトのサーバーでフォントを自前でホストする方法の他に、システムにインストールされているフォントを、クライアントでも`font-face`宣言で`local`を使用して使用する方法があります。`local`の使用は、バイト数を節約できるため、<a hreflang="en" href="https://bramstein.com/writing/web-font-anti-patterns-local-fonts.html">議論の的</a>となっていますが、ローカルにインストールされたフォントのバージョンが古い場合には悪い結果になることもあります。[2020年11月](https://x.com/googlefonts/status/1328761547041148929?s=19)現在、Google Fontsはモバイルプラットフォーム上のRobotoに対してのみ`local`を使用するように移行しており、それ以外の場合は常にネットワーク経由でフォントを取得しています。
 
 ## ファーストペイントへの挑戦
 

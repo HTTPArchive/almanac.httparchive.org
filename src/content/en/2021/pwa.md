@@ -20,7 +20,7 @@ featured_stat_label_3: Percentage of mobile sites with service workers that use 
 
 ## Introduction
 
-Six years have passed since [Frances Berriman](https://twitter.com/phae) and [Alex Russell](https://twitter.com/slightlylate) coined the term <a hreflang="en" href="https://infrequently.org/2015/06/progressive-apps-escaping-tabs-without-losing-our-soul/">"Progressive Web App" (PWA)</a>, which represented their vision for web apps that can be just as immersive as native apps.
+Six years have passed since [Frances Berriman](https://x.com/phae) and [Alex Russell](https://x.com/slightlylate) coined the term <a hreflang="en" href="https://infrequently.org/2015/06/progressive-apps-escaping-tabs-without-losing-our-soul/">"Progressive Web App" (PWA)</a>, which represented their vision for web apps that can be just as immersive as native apps.
 The following attributes were listed to distinguish these types of experiences from traditional websites:
 
 - Responsive
@@ -528,7 +528,7 @@ An important aspect of a PWA is that it allows users to access the web experienc
 Ways to distribute this installable experience include:
 
 - Prompting the user to install the PWA via the [add to home screen](https://developer.mozilla.org/docs/Web/Progressive_web_apps/Add_to_home_screen) functionality.
-- Uploading the PWA to App Stores by packaging it with <a hreflang="en" href="https://developer.chrome.com/docs/android/trusted-web-activity/">Trusted Web Activity (TWA)</a> (currently available in any Android app store, including Google Play and Microsoft Store).
+- Uploading the PWA to App Stores by packaging it with <a hreflang="en" href="https://developer.chrome.com/docs/android/trusted-web-activity">Trusted Web Activity (TWA)</a> (currently available in any Android app store, including Google Play and Microsoft Store).
 
 Next, we'll share some stats related to these techniques, to have an idea of the usage and growth of these trends.
 
@@ -573,13 +573,13 @@ WebView-based apps may look similar to native apps, but certainly there are some
 
 TWAs allow you to package your PWA into a native application shell and upload it to some App Stores. Unlike WebView-based solutions, a TWA is not just a rendering engine; it's the full browser running in fullscreen mode. For that reason, it's feature-complete and evergreen, meaning that it's always up to date and will give you access to the latest web APIs.
 
-Developers can package their PWAs into native apps with TWA directly, <a hreflang="en" href="https://developer.chrome.com/docs/android/trusted-web-activity/integration-guide/">by using Android Studio</a>, but there are several tools that make this task much easier. Next, we'll analyze two of them: PWA Builder and Bubblewrap.
+Developers can package their PWAs into native apps with TWA directly, <a hreflang="en" href="https://developer.chrome.com/docs/android/trusted-web-activity/integration-guide">by using Android Studio</a>, but there are several tools that make this task much easier. Next, we'll analyze two of them: PWA Builder and Bubblewrap.
 
 #### PWA Builder
 
 <a hreflang="en" href="https://www.pwabuilder.com/">PWA Builder</a> is an open-source project that can help web developers to build Progressive Web Apps and package them for app stores like the Microsoft Store and Google Play Store. It starts by reviewing a provided URL to check for an available manifest, service worker, and SSL.
 
-[PWA Builder reviewed 200k URLs over a 3-month timeslot](https://twitter.com/pwabuilder/status/1454250060326318082?s=21) and discovered that:
+[PWA Builder reviewed 200k URLs over a 3-month timeslot](https://x.com/pwabuilder/status/1454250060326318082?s=21) and discovered that:
 
 - 75% had a manifest detected
 - 11.5% had a service worker detected

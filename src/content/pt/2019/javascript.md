@@ -9,7 +9,7 @@ editors: [foxdavidj]
 translators: [HakaCode]
 discuss: 1756
 results: https://docs.google.com/spreadsheets/d/1kBTglETN_V9UjKqK_EFmFjRexJnQOmLLr-I2Tkotvic/
-housseindjirdeh_bio: Houssein é um advogado do desenvolvedor do Google que trabalha com velocidade, desempenho e no ecossistema da estrutura da web. Ele os tweets em <a href="https://twitter.com/hdjirdeh">@hdjirdeh</a> e bloga em <a hreflang="en" href="https://houssein.me/">https://houssein.me/</a>.
+housseindjirdeh_bio: Houssein é um advogado do desenvolvedor do Google que trabalha com velocidade, desempenho e no ecossistema da estrutura da web. Ele os tweets em <a href="https://x.com/hdjirdeh">@hdjirdeh</a> e bloga em <a hreflang="en" href="https://houssein.me/">https://houssein.me/</a>.
 featured_quote: JavaScript é o recurso mais caro que enviamos aos navegadores; tendo que ser baixado, analisado, compilado e finalmente executado. Embora os navegadores tenham diminuído significativamente o tempo que leva para analisar e compilar scripts, download e execução tornaram as etapas mais caras quando o JavaScript é processado por uma página da web.
 featured_stat_1: 89%
 featured_stat_label_1: Sites com mais código de terceiros do que de origem

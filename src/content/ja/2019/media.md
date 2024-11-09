@@ -9,8 +9,8 @@ editors: [tunetheweb]
 translators: [ksakae1216]
 discuss: 1759
 results: https://docs.google.com/spreadsheets/d/1hj9bY6JJZfV9yrXHsoCRYuG8t8bR-CHuuD98zXV7BBQ/
-colinbendell_bio: Colinは、<a hreflang="en" href="https://cloudinary.com/">Cloudinary</a>のCTOオフィスの一員であり、オライリーの本<a hreflang="en" href="https://www.oreilly.com/library/view/high-performance-images/9781491925799/">High Performance Images</a>の共著者でもあります。彼は、大容量データ、メディア、ブラウザ、標準の交差点で多くの時間を過ごしています。<a href="https://twitter.com/colinbendell">@colinbendell</a> や <a hreflang="en" href="https://bendell.ca/">https://bendell.ca</a> のブログで彼を見つけることができます。
-dougsillars_bio: Doug Sillarsはフリーランスのデジタルノマドで、パフォーマンスとメディアの交差点で活動しています。彼は<a href="https://twitter.com/dougsillars">@dougsillars</a>をツイートし、<a hreflang="en" href="https://dougsillars.com">dougsillars.com</a>で定期的にブログを更新しています。
+colinbendell_bio: Colinは、<a hreflang="en" href="https://cloudinary.com/">Cloudinary</a>のCTOオフィスの一員であり、オライリーの本<a hreflang="en" href="https://www.oreilly.com/library/view/high-performance-images/9781491925799/">High Performance Images</a>の共著者でもあります。彼は、大容量データ、メディア、ブラウザ、標準の交差点で多くの時間を過ごしています。<a href="https://x.com/colinbendell">@colinbendell</a> や <a hreflang="en" href="https://bendell.ca/">https://bendell.ca</a> のブログで彼を見つけることができます。
+dougsillars_bio: Doug Sillarsはフリーランスのデジタルノマドで、パフォーマンスとメディアの交差点で活動しています。彼は<a href="https://x.com/dougsillars">@dougsillars</a>をツイートし、<a hreflang="en" href="https://dougsillars.com">dougsillars.com</a>で定期的にブログを更新しています。
 featured_quote: 画像、アニメーション、動画はウェブ体験の重要な一部です。それらが重要な理由はたくさんあります。ストーリーを伝えたり、視聴者の関心を引きつけたり、他のウェブ技術では簡単には作れないような芸術的な表現を提供したりするのに役立ちます。これらのメディアリソースの重要性は、2つの方法で示すことができます。1つは、1ページのダウンロードに必要なバイト数の多さ、もう1つは、メディアで描かれたピクセル数の多さです。
 featured_stat_1: 1 MB
 featured_stat_label_1: ホームページのサイズの中央値
@@ -37,7 +37,7 @@ featured_stat_label_3: `<picture>`要素の使用
 
 まず、これらのバイトをダウンロードするために必要なネットワークのオーバーヘッドは大きく、携帯電話や低速ネットワーク環境（コーヒーショップやUberに乗っているときのテザリングのような）では劇的にページの[パフォーマンス](./performance)を遅くできます。画像はブラウザによる優先度の低いリクエストですが、ダウンロード中のCSSやJavaScriptを簡単にブロックできます。これ自体がページのレンダリングを遅らせることになります。しかし、画像コンテンツは、ページの準備ができたことをユーザーに視覚的に伝える手がかりとなります。そのため、画像コンテンツの転送が遅いと、ウェブページが遅いという印象を与えることがあります。
 
-2つ目の影響は、ユーザーへの金銭的なコストです。これはウェブサイトの所有者の負担ではなく、エンドユーザーの負担となるため、しばしば無視されがちな側面です。逸話として、[日本のような](https://twitter.com/yoavweiss/status/1195036487538003968?s=20)という市場では、データの上限に達した月末近くは学生の購買意欲が低下し、ユーザーはビジュアルコンテンツを見ることができなくなるということが伝えられています。
+2つ目の影響は、ユーザーへの金銭的なコストです。これはウェブサイトの所有者の負担ではなく、エンドユーザーの負担となるため、しばしば無視されがちな側面です。逸話として、[日本のような](https://x.com/yoavweiss/status/1195036487538003968?s=20)という市場では、データの上限に達した月末近くは学生の購買意欲が低下し、ユーザーはビジュアルコンテンツを見ることができなくなるということが伝えられています。
 
 さらに、世界のさまざまな地域でこれらのウェブサイトを訪問するための金銭的コストは不釣り合いです。中央値と90パーセンタイルでは、画像のバイト数はそれぞれ1MBと1.9MBです。<a hreflang="en" href="https://whatdoesmysitecost.com/#gniCost">WhatDoesMySiteCost.com</a>を使用すると、マダガスカルのユーザーの一人当たりの国民総所得（GNI）コストは90パーセンタイルでウェブページを1回読み込んだだけで、一日の総所得の2.6％になることがわかります。対照的に、ドイツでは、これは1日の総所得の0.3％になります。
 

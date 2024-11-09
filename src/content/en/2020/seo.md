@@ -7,9 +7,9 @@ reviewers: [natedame, catalinred, dsottimano, dwsmart, en3r0, ibnesayeed, tuneth
 analysts: [Tiggerito, antoineeripret]
 editors: [rviscomi]
 translators: []
-aleyda_bio: SEO consultant, author, speaker and entrepreneur. Founder of <a hreflang="en" href="https://www.orainti.com/">Orainti</a> (a boutique SEO consultancy working with some of the top Web properties and brands, from SaaS to marketplaces) and co-founder of <a hreflang="en" href="https://remoters.net/">Remoters.net</a> (a free remote work hub, featuring remote jobs, tools, events, guides, and more to facilitate remote work). Aleyda enjoys sharing about SEO through her <a hreflang="en" href="https://www.aleydasolis.com/en/blog/">blog</a>, the <a hreflang="en" href="https://www.aleydasolis.com/en/seo-tips/">#SEOFOMO newsletter</a>, the <a hreflang="en" href="https://www.aleydasolis.com/en/crawling-mondays-videos/">Crawling Mondays</a> video and podcast series and over <a href="https://twitter.com/aleyda">Twitter</a>.
-ipullrank_bio: An artist and a technologist, all rolled into one, Michael King is the founder of enterprise digital marketing agency, <a hreflang="en" href="https://ipullrank.com">iPullRank</a> and founder of Natural Language Generation app <a hreflang="en" href="https://www.copyscience.io">CopyScience</a>. Effortlessly leaning on his background as an independent hip-hop musician, Mr. King is a compelling content creator and an award-winning dynamic speaker who is called upon to contribute to technology and marketing conferences and blogs all over the world. You can find Mike talking trash on <a href="https://twitter.com/ipullrank">Twitter</a>
-fellowhuman1101_bio: 100% human & totally not a robot, Jamie Indigo untangles technologies to help humans access useful information and businesses provide valuable digital experiences. She founded <a hreflang="en" href="https://not-a-robot.com">Not a Robot</a> to consult with a focus on the human aspects of technical SEO including ethics & inclusion in technology and the search industry.  She can be found learning in public on <a href="https://twitter.com/Jammer_Volts">Twitter</a>.
+aleyda_bio: SEO consultant, author, speaker and entrepreneur. Founder of <a hreflang="en" href="https://www.orainti.com/">Orainti</a> (a boutique SEO consultancy working with some of the top Web properties and brands, from SaaS to marketplaces) and co-founder of <a hreflang="en" href="https://remoters.net/">Remoters.net</a> (a free remote work hub, featuring remote jobs, tools, events, guides, and more to facilitate remote work). Aleyda enjoys sharing about SEO through her <a hreflang="en" href="https://www.aleydasolis.com/en/blog/">blog</a>, the <a hreflang="en" href="https://www.aleydasolis.com/en/seo-tips/">#SEOFOMO newsletter</a>, the <a hreflang="en" href="https://www.aleydasolis.com/en/crawling-mondays-videos/">Crawling Mondays</a> video and podcast series and over <a href="https://x.com/aleyda">Twitter</a>.
+ipullrank_bio: An artist and a technologist, all rolled into one, Michael King is the founder of enterprise digital marketing agency, <a hreflang="en" href="https://ipullrank.com">iPullRank</a> and founder of Natural Language Generation app <a hreflang="en" href="https://www.copyscience.io">CopyScience</a>. Effortlessly leaning on his background as an independent hip-hop musician, Mr. King is a compelling content creator and an award-winning dynamic speaker who is called upon to contribute to technology and marketing conferences and blogs all over the world. You can find Mike talking trash on <a href="https://x.com/ipullrank">Twitter</a>
+fellowhuman1101_bio: 100% human & totally not a robot, Jamie Indigo untangles technologies to help humans access useful information and businesses provide valuable digital experiences. She founded <a hreflang="en" href="https://not-a-robot.com">Not a Robot</a> to consult with a focus on the human aspects of technical SEO including ethics & inclusion in technology and the search industry.  She can be found learning in public on <a href="https://x.com/Jammer_Volts">Twitter</a>.
 discuss: 2043
 results: https://docs.google.com/spreadsheets/d/1ram47FshAjzvbQVJbAQPgxZN7PPOPCKIK67VJZCo92c/
 featured_quote: Despite the growing use of mobile devices and Google's move to a Mobile first index, non-trivial disparities were found across mobile versus desktop pages, like the one between mobile and desktop links.
@@ -764,17 +764,17 @@ Having a fast-loading website is fundamental to provide a great user search expe
 
 As announced in November 2020, three performance metrics known as <a hreflang="en" href="https://webmasters.googleblog.com/2020/05/evaluating-page-experience.html">Core Web Vitals</a> are on track to be a ranking factor as part of the "page experience" signals in May 2021. Core Web Vitals consist of:
 
-**<a hreflang="en" href="https://web.dev/lcp/">Largest Contentful Paint</a> (LCP)**
+**<a hreflang="en" href="https://web.dev/articles/lcp">Largest Contentful Paint</a> (LCP)**
 - Represents: user-perceived loading experience
 - Measurement: the point in the page load timeline when the page's largest image or text block is visible within the viewport
 - Goal: <2.5 seconds
 
-**<a hreflang="en" href="https://web.dev/fid/">First Input Delay</a> (FID)**
+**<a hreflang="en" href="https://web.dev/articles/fid">First Input Delay</a> (FID)**
 - Represents: responsiveness to user input
 - Measurement: the time from when a user first interacts with a page to the time when the browser is actually able to begin processing event handlers in response to that interaction
 - Goal: <300 milliseconds
 
-**<a hreflang="en" href="https://web.dev/cls/">Cumulative Layout Shift</a> (CLS)**
+**<a hreflang="en" href="https://web.dev/articles/cls">Cumulative Layout Shift</a> (CLS)**
 - Represents: visual stability
 - Measurement: the sum of the number of _layout shift scores_ approximating the percent of the viewport that shifted
 - Goal: <0.10
