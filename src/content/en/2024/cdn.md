@@ -166,11 +166,11 @@ The above figure shows the top CDN providers for base HTML requests. The leading
   )
 }}
 
-For the subdomain requests, we saw an increase in the share of Amazon Cloudfront (from 21% to 29%). 
+For the subdomain requests, we saw an increase in the share of Amazon Cloudfront (from 19% to 27%).
 
 This is driven by many users having their content on cloud service providers that come with a CDN offering. Utilizing compute and other services alongside the cloud service provider CDN helps users scale their applications and increase performance of delivering services to end users.
 
-The leading vendors in this category are Cloudflare (41%), Amazon (29%), Google (9%), Akamai (4%), and Fastly (3%).
+The leading vendors in this category are Cloudflare (43%), Amazon CloudFront (27%), Google (8%), and Akamai (3%).
 
 {{ figure_markup(
   image="top-cdns-3p.png",
@@ -286,11 +286,9 @@ Brotli usage is prevalent on Cloudflare and Google CDNs while Gzip remains the m
 
 ### TLS 1.3 adoption
 
-It's good news that both CDN and origin requests have largely moved away from serving older, less secure TLS versions 1.0 and 1.1. This means that clients are now using more modern and secure protocols. 
+It's good news that both CDN and origin requests have largely moved away from serving older, less secure TLS versions 1.0 and 1.1. This means that clients are now using more modern and secure protocols.
 
-When it comes to the newer versions (TLS versions 1.2 and 1.3), there's a noticeable difference between CDN and origin requests. Direct to origin requests are taking a more cautious approach, with about 63.23% of their connections still using TLS 1.2 and the rest using TLS 1.3. This slower adoption rate might be due to longer infrastructure update cycles and application owners need to ensure they can still communicate with a wide range of clients, including those that might not support the newest version.
-
-On the other hand, CDNs have embraced TLS 1.3, with 88.56% of requests using this latest version. This is great for developers because TLS 1.3 is faster at establishing secure connections, which means websites load more quickly. CDNs are at the forefront of adopting new technologies to  optimize content delivery and security and by fronting your application with a CDN, you automatically reap those benefits with minimal efforts.
+CDNs have embraced TLS 1.3, with 98% of requests using this latest version. This is great for developers because TLS 1.3 is faster at establishing secure connections, which means websites load more quickly. CDNs are at the forefront of adopting new technologies to  optimize content delivery and security and by fronting your application with a CDN, you automatically reap those benefits with minimal efforts.
 
 {{ figure_markup(
   image="tls-version-mobile.png",
