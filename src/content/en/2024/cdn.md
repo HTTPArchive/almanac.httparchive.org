@@ -190,7 +190,7 @@ Third-party providers like Google and Facebook might wholly optimize and purpose
 
 ## HTTP/3 (HTTP/2+) adoption
 
-Published in June of 2022 by IETF, [HTTP/3](https://datatracker.ietf.org/doc/html/rfc9114) is a major revision of the HTTP network protocol, succeeding HTTP/2.
+Published in June of 2022 by IETF, <a hreflang="en" href="https://datatracker.ietf.org/doc/html/rfc9114">HTTP/3</a> is a major revision of the HTTP network protocol, succeeding HTTP/2.
 
 The most notable difference in HTTP/3 is that it uses a protocol called QUIC over UDP instead of the traditional TCP. This change improves performance by reducing latency, allowing faster data transmission, especially in environments with high packet loss or network congestion. TLS v1.3 was an improvement in reducing the number of TCP + TLS network protocol handshakes and round trips from the client to server, but QUIC reduces this further without sacrificing security. Another key improvement is the elimination of head-of-line blocking, meaning if one resource experiences delivery issues, other resources can still load independently. With this enhanced multiplexing and robust encryption, QUIC contributes to a more secure and efficient browsing experience.
 
