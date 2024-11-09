@@ -19,7 +19,7 @@ featured_stat_1: 14%
 featured_stat_label_1: Websites relying on more sustainable hosting
 featured_stat_2: 1.36
 featured_stat_label_2: GHG emissions (g eqCO2) for the 90th percentile web pages on mobile
-featured_stat_3: 25.13%
+featured_stat_3: 25%
 featured_stat_label_3: Mobile websites not using cache at all
 ---
 
@@ -138,7 +138,7 @@ For further information, refer to:
 
 The queries from last year have been updated to reflect the new data structure. For most, there has been no effective difference in the results.
 
-The update of the CO2 emissions calculations is reflected in the global page, SSG, CMS, and e-commerce emissions calculation. We have updated the calculations to the version 4 model of emissions calculation based on <a hreflang="en" href="https://sustainablewebdesign.org/estimating-digital-emissions/">https://sustainablewebdesign.org/estimating-digital-emissions/</a>
+The update of the CO2 emissions calculations is reflected in the global page, SSG, CMS, and e-commerce emissions calculation. We have updated the calculations to the version 4 model of emissions calculation based on <a hreflang="en" href="https://sustainablewebdesign.org/estimating-digital-emissions/">Sustainable Web Design Model</a>.
 
 Main differences:
 - The global carbon intensity has changed from 442g/kWh to 494g/kWh.
@@ -407,7 +407,11 @@ For further information, refer to:
 
 ##### Unused CSS
 
-The environmental impact of excess code extends beyond mere inefficiency. It directly translates to increased energy consumption and a larger carbon footprint for both servers and user devices. While CSS frameworks boost development efficiency, they often introduce substantial amounts of unused styles. This bloat not only affects page load times but also unnecessarily increases data transfer and processing requirements. In an era of ever-growing global internet usage, the cumulative effect of this excess code on energy consumption is significant. Modern development tools have made identifying and eliminating unused CSS more accessible. Features like <a hreflang="en" href="https://developer.chrome.com/docs/devtools/coverage/">Chrome DevTools' Coverage analysis</a> offer powerful analysis to trim stylesheets. However, the practice of loading all CSS upfront for caching purposes presents a nuanced challenge. While it can reduce server requests and improve performance for returning visitors, it potentially increases the initial carbon cost of page loads. As web applications grow in complexity, striking a balance between comprehensive styling and sustainable practices becomes increasingly crucial. Unused CSS not only impacts user experience through slower initial loads but also contributes to increased energy usage in rendering and processing. Addressing unused CSS stands out as a tangible step developers can take to reduce the digital ecosystem's environmental impact.
+The environmental impact of excess code extends beyond mere inefficiency. It directly translates to increased energy consumption and a larger carbon footprint for both servers and user devices. While CSS frameworks boost development efficiency, they often introduce substantial amounts of unused styles. This bloat not only affects page load times but also unnecessarily increases data transfer and processing requirements. In an era of ever-growing global internet usage, the cumulative effect of this excess code on energy consumption is significant.
+
+Modern development tools have made identifying and eliminating unused CSS more accessible. Features like <a hreflang="en" href="https://developer.chrome.com/docs/devtools/coverage/">Chrome DevTools' Coverage analysis</a> offer powerful analysis to trim stylesheets. However, the practice of loading all CSS upfront for caching purposes presents a nuanced challenge. While it can reduce server requests and improve performance for returning visitors, it potentially increases the initial carbon cost of page loads.
+
+As web applications grow in complexity, striking a balance between comprehensive styling and sustainable practices becomes increasingly crucial. Unused CSS not only impacts user experience through slower initial loads but also contributes to increased energy usage in rendering and processing. Addressing unused CSS stands out as a tangible step developers can take to reduce the digital ecosystem's environmental impact.
 
 {{ figure_markup(
   image="unused_css.png",
@@ -472,15 +476,15 @@ In this section, we'll explore how to make your essential content as sustainable
 For further information, refer to:
 - <a href="#wsg">The WSG 1.0 - SC 2.8, 2.14, and 2.21</a>.
 
-#### Mobile First
+#### Mobile-first design
 
-Adopting a Mobile First approach not only enhances user experience but also offers significant sustainability benefits. By prioritizing essential content and functionality for mobile devices, we naturally create leaner, more efficient websites that consume less energy and bandwidth across all platforms.
+Adopting a mobile-first approach not only enhances user experience but also offers significant sustainability benefits. By prioritizing essential content and functionality for mobile devices, we naturally create leaner, more efficient websites that consume less energy and bandwidth across all platforms.
 
 This approach encourages developers to critically evaluate each element's necessity, leading to reduced data transfer and processing requirements. However, it's crucial to ensure that this doesn't result in multiple, device-specific versions of your site, which could potentially increase overall resource consumption.
 
-When implemented thoughtfully, Mobile First design can lead to faster load times, lower energy consumption, and a smaller carbon footprint for your digital presence. It aligns well with other sustainability practices like minimizing unused code and optimizing assets.
+When implemented thoughtfully, mobile-first design can lead to faster load times, lower energy consumption, and a smaller carbon footprint for your digital presence. It aligns well with other sustainability practices like minimizing unused code and optimizing assets.
 
-For more detailed insights on how Mobile First impacts website performance, refer to our [Performance](./performance) chapter.
+For more detailed insights on how mobile-first impacts website performance, refer to our [Performance](./performance) chapter.
 
 For further information, refer to:
 - <a href="#wsg">The WSG 1.0 - SC 3.14</a>.
@@ -577,8 +581,8 @@ Lazy-loading remains a crucial technique for enhancing both performance and sust
   image="lazy-loading-adoption.png",
   caption="Adoption of loading=lazy on `<img>`",
   description="A timeseries chart showing the increase in the adoption of loading=\"lazy\" attribute on image tags. In June 2022 it was used by 24% of the websites on mobile and 23% on desktop. On January 2023, 26% of the websites on mobile were using native lazy-loading and 25% of them were using it on desktop. On June the 1st, 2023, 27% of websites used native lazy-loading on wither desktop and mobile. On June 2024, 34% of websites used native lazy-loading on mobile and 33% on desktop.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=1848380246&format=interactive",
-  sheets_gid="228292115",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=1997305111&format=interactive",
+  sheets_gid="https://docs.google.com/spreadsheets/d/1Q2ITOe6ZMIXGKHtIxqK9XmUA1eQBX9CLQkxarQOJFCk/edit?gid=228292115#gid=228292115",
   sql_file="../media/lazy_loading_adoption_over_time.sql"
 ) }}
 
@@ -772,7 +776,7 @@ By carefully managing third-party integrations and prioritizing user preferences
 For further information, refer to:
 - <a href="#wsg">The WSG 1.0 - SC 3.7</a>.
 
-For more detailed information on analyzing and optimizing third-party usage, refer to the [Chrome Developers documentation](https://developer.chrome.com/docs/lighthouse/performance/third-party-summary").
+For more detailed information on analyzing and optimizing third-party usage, refer to the [Chrome Developers documentation](https://developer.chrome.com/docs/lighthouse/performance/third-party-summary).
 
 ### Implementing technical optimizations
 
@@ -782,7 +786,7 @@ Historically, web performance introduced a lot of recommendations that contribut
 
 JavaScript has been an important language in the web's growth, enabling dynamic and interactive experiences. However, when not optimized, it can also impact performance and energy consumption. Let's focus on some quick wins: optimizations that are easy to implement and great for sustainability. These tweaks can significantly improve your site's efficiency without sacrificing functionality. For a deeper dive into JavaScript's pros and cons, check out our comprehensive [JavaScript](./javascript) chapter.
 
-##### Minification, Tree Shaking & Code Splitting
+##### Minification, tree shaking & code splitting
 
 Optimizing JavaScript through minification, tree shaking, and code splitting remains crucial for improving website performance and sustainability. By focusing on these optimization techniques, we can significantly reduce data transfer, improve load times, and ultimately decrease the energy consumption associated with web browsing. Remember, even small savings per site can lead to substantial cumulative benefits across billions of page views.
 
@@ -850,7 +854,7 @@ When creating a print-friendly stylesheet, be considerate of the user preference
 For further information, refer to:
 - <a href="#wsg">The WSG 1.0 - SC 2.23 and 3.13</a>.
 
-##### User Preferences (Dark mode)
+##### User preferences (dark mode)
 
 Visitors have their preferred way of browsing websites, and one of the most common preferences is "lights on or off" otherwise known as the use of dark mode. While this may outwardly appear to be a visual or stylistic choice, there are some sustainability and accessibility considerations to take into account with this choice.
 
@@ -1051,7 +1055,7 @@ With all of this in mind, it's easy to see why our collective thirst for low-cos
 
 To make more <a hreflang="en" href="https://www.mightybytes.com/blog/design-a-sustainable-data-strategy/">sustainable data practices</a> the norm among those who create and manage digital products and services, organizations should redefine their relationships with data. For marketers and product teams, this can be accomplished by improving data governance and more effectively managing content across the products and services they create, subscribe to, or otherwise maintain. The annual <a hreflang="fr" href="https://cyberworldcleanupday.fr/welcome.html">Digital Cleanup Day</a> can be a good way to raise awareness on this topic.
 
-### Data Governance and Sustainability
+### Data governance and sustainability
 
 Data sustainability requires effective long-term governance strategies. Good <a hreflang="en" href="https://www.mightybytes.com/blog/sustainable-data-governance-for-marketers/">data governance</a> is key for long-term <a hreflang="en" href="https://www.mightybytes.com/blog/building-capacity-with-digital-governance/">digital governance</a> to work across an organization's teams and departments. In tandem with sustainability practices, these two disciplines can help organizations better manage web-based products and services over time while simultaneously improving how data is collected, managed, secured, and disposed of.
 
@@ -1063,7 +1067,7 @@ Specific tactics to improve data governance include:
 5. Think twice before you collect information and, when you do, document how long this information should be kept.
 6. Finally, align data governance efforts with the W3C Web Sustainability Guidelines (WSG) 1.0, particularly SC: 2.1, 2.25, 4.12, 5.6, 5.12, and 5.20.
 
-### More Sustainable Content Management
+### More sustainable content management
 
 Similarly, content marketing often drives data collection for many organizations. Web forms, landing pages, blog posts, video tutorials, social media posts, and other forms of content all play important roles in an organization's marketing, product management, content governance, and <a hreflang="en" href="https://www.mightybytes.com/blog/digital-sustainability/">digital sustainability</a> efforts.
 
@@ -1237,7 +1241,7 @@ In the end, we see a generally wider adoption of technical best practices but st
 
 Creating sustainable websites requires a combination of understanding, planning, and action. While the challenge may seem daunting, there are numerous practical steps you can take today to begin or advance your sustainability journey. From quick assessment tools to comprehensive guidelines, and from planning frameworks to continuous learning resources, this section outlines key approaches that can help you make meaningful progress. Remember that sustainability is not about achieving perfection immediately, but rather about making consistent improvements and informed decisions that collectively reduce our environmental impact.
 
-#### Quick Checks
+#### Quick checks
 
 One of the simplest steps you can take in rapidly evaluating your sustainability situation is using an automated measurement tool. As with accessibility tooling, these only tell part of the story and cannot account for aspects that can only be human-tested (rather than automated), and there are still many issues we do not have accurate data to measure against; but it's still a good place to dip your toes in the water.
 
@@ -1246,7 +1250,7 @@ For further information, refer to:
 - <a hreflang="en" href="https://github.com/Munter/subfont">Website Carbon</a>
 - <a hreflang="en" href="https://github.com/Munter/subfont">Are My Third Parties Green?</a>
 
-#### Planning / Reporting
+#### Planning and reporting
 
 Another step forward you can take beyond a rapid evaluation is to put forward some concrete plans or even better, start reporting on your sustainability journey. Measure what you can, document your efforts, and be as open with your findings and progress as you can be. Sustainability is a journey and progress is always beneficial over perfection. Having a sustainability statement will be a great place to provide such plans and successes you have achieved.
 
@@ -1267,7 +1271,7 @@ For further information, refer to:
 - <a hreflang="en" href="https://w3c.github.io/sustyweb/policies.html">Web Sustainability Laws & Policies</a>
 - <a hreflang="en" href="https://w3c.github.io/sustyweb/quickref.html">WSG Quick Reference (Includes PDF)</a>
 
-#### Up-To-Date (Knowledge)
+#### Up-to-date knowledge
 
 As creators, keeping our knowledge current in an overwhelming industry is a challenge, and in sustainability which is a rapidly evolving field, this is no exception. Reading books, watching relevant videos, taking courses, looking at studies or papers, and keeping up-to-date with the latest standards and best practices are essential. You have taken the first step with this chapter of the Web Almanac, if you enjoyed it, see what else interests you to expand your experience further.
 
