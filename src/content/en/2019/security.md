@@ -9,8 +9,8 @@ editors: [tunetheweb]
 translators: []
 discuss: 1763
 results: https://docs.google.com/spreadsheets/d/1Zq2tQhPE06YZUcbzryRrBE6rdZgHHlqEp2XcgS37cm8/
-ScottHelme_bio: Scott Helme is a Security Researcher and founder of <a hreflang="en" href="https://report-uri.com">report-uri.com</a> and <a hreflang="en" href="https://securityheaders.com">securityheaders.com</a>. You can find him talking about security on Twitter <a href="https://twitter.com/Scott_Helme">@Scott_Helme</a> and blogging at <a hreflang="en" href="https://scotthelme.co.uk">scotthelme.co.uk</a>.
-arturjanc_bio: Artur Janc is an Information Security Engineer at Google, working on designing and adopting web platform security mechanisms across Google and the web at large. He argues with people on the internet as <a href="https://twitter.com/arturjanc">@arturjanc on Twitter</a>.
+ScottHelme_bio: Scott Helme is a Security Researcher and founder of <a hreflang="en" href="https://report-uri.com">report-uri.com</a> and <a hreflang="en" href="https://securityheaders.com">securityheaders.com</a>. You can find him talking about security on Twitter <a href="https://x.com/Scott_Helme">@Scott_Helme</a> and blogging at <a hreflang="en" href="https://scotthelme.co.uk">scotthelme.co.uk</a>.
+arturjanc_bio: Artur Janc is an Information Security Engineer at Google, working on designing and adopting web platform security mechanisms across Google and the web at large. He argues with people on the internet as <a href="https://x.com/arturjanc">@arturjanc on Twitter</a>.
 featured_quote: As the web grows in capabilities and allows access to more and more sensitive data, it becomes increasingly important for developers to adopt web security features to protect their applications. The security features reviewed in this chapter are defenses built into the web platform itself, available to every web author.
 featured_stat_1: 79%
 featured_stat_label_1: Sites using HTTPS

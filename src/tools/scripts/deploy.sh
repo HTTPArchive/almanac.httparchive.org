@@ -102,7 +102,7 @@ git pull origin main
 
 if [ "$(pgrep -if 'python main.py')" ]; then
   echo "Killing existing server to run a fresh version"
-  pkill -9 python main.py
+  pkill -9 -if "python main.py"
 fi
 
 #Remove generated chapters and e-books (in case new one from other branch in there)
@@ -190,7 +190,7 @@ git checkout main
 
 if [ "$(pgrep -if 'python main.py')" ]; then
   echo "Killing server so backgrounded version isn't left there"
-  pkill -9 -f "python main.py"
+  pkill -9 -if "python main.py"
 fi
 
 echo

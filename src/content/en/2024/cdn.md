@@ -7,7 +7,7 @@ reviewers: [carolinescholles]
 editors: [carolinescholles]
 analysts: [pgjaiganesh, alexmoening]
 translators: []
-results: https://docs.google.com/spreadsheets/d/15YXQQjyoQ0Bnfw9KNSz_YuGDiCfW978_WKEHvDXjdm4/edit#gid=745368492
+results: https://docs.google.com/spreadsheets/d/15YXQQjyoQ0Bnfw9KNSz_YuGDiCfW978_WKEHvDXjdm4/
 joeviggiano_bio: Joe Viggiano is a Principal Solutions Architect at Amazon Web Services helping Media & Entertainment customers deliver media content at scale.
 pgjaiganesh_bio: Jaiganesh Girinathan is a Principal Edge Solutions Architect at Amazon Web Services.
 alexmoening_bio: Alex Moening is a Senior Edge Solutions Architect at Amazon Web Services.
@@ -26,7 +26,7 @@ This chapter examines the evolving landscape of Content Delivery Networks (CDNs)
 
 A key focus of this chapter is the pivotal role CDNs play in driving the adoption of web standards, protocols, and emerging technologies like HTTP/3 and the Quick UDP Internet Connections (QUIC) protocol. We also explore how CDNs are at the forefront of implementing and popularizing performance optimization techniques.
 
-We believe that in 2024, CDNs continue to not only facilitate performant content delivery, but also serve as comprehensive platforms that integrate first and third-party security solutions. 
+We believe that in 2024, CDNs continue to not only facilitate performant content delivery, but also serve as comprehensive platforms that integrate first and third-party security solutions.
 
 ## What is a CDN?
 
@@ -252,7 +252,7 @@ CDNs are leading in Brotli adoption, with over 55% of CDN served content using B
 
 ### Zstandard (Zstd) adoption
 
-Zstandard (Zstd) is a compression algorithm developed by Facebook and released in 2016. It aims to provide a good balance between compression ratio and speed, making it a potential alternative to established algorithms like Gzip and Brotli in web content delivery scenarios. 
+Zstandard (Zstd) is a compression algorithm developed by Facebook and released in 2016. It aims to provide a good balance between compression ratio and speed, making it a potential alternative to established algorithms like Gzip and Brotli in web content delivery scenarios.
 
 As of 2024, browser support for Zstandard in web content delivery has improved considerably:
 

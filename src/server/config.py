@@ -8,7 +8,7 @@ TEMPLATES_DIR = ROOT_DIR + "/templates"
 STATIC_DIR = ROOT_DIR + "/static"
 
 SUPPORTED_YEARS = []
-DEFAULT_YEAR = "2022"
+DEFAULT_YEAR = "2024"
 
 DEFAULT_AVATAR_FOLDER_PATH = "/static/images/avatars/"
 AVATAR_SIZE = 200
@@ -89,6 +89,9 @@ def update_config():
                     contributors = json.load(config_file)
             elif ".json" in file:
                 config_files.append(file[0:4])
+
+    # Sort the config files so read in year order
+    config_files.sort()
 
     for year in config_files:
         config_filename = "config/%s.json" % year

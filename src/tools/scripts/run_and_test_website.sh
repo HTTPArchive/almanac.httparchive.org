@@ -53,12 +53,12 @@ fi
 
 if [ "$(pgrep -if 'python main.py')" ]; then
   echo "Killing existing server to run a fresh version"
-  pkill -9 -f "python main.py"
+  pkill -9 -if "python main.py"
 fi
 
 if [ "$(pgrep -if 'node ./tools/generate/chapter_watcher')" ]; then
   echo "Killing existing watcher to run a fresh version"
-  pkill -9 -f "node ./tools/generate/chapter_watcher"
+  pkill -9 -if "node ./tools/generate/chapter_watcher"
 fi
 
 echo "Installing and testing python environment"
@@ -105,7 +105,7 @@ if [ "${debug}" == "1" ]; then
 
   if [ "$(pgrep -if 'python main.py')" ]; then
     echo "Killing server to run a fresh version in debug mode"
-    pkill -9 -f "python main.py"
+    pkill -9 -if "python main.py"
   fi
 
   echo "Starting website in foreground mode so it reloads on file changes"

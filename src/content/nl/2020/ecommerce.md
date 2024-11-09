@@ -7,7 +7,7 @@ reviewers: [alankent]
 analysts: [jrharalson, rockeynebhwani]
 editors: [tunetheweb]
 translators: [noah-vdv]
-rockeynebhwani_bio: Rockey Nebhwani is een onafhankelijke consultant die sinds 2001 in retail en e-commerce heeft gewerkt en uitgebreide ervaring heeft in de branche door samen te werken met retailers zoals Amazon, Wal-Mart, Tesco, M&S, Safeway enz. in de VS en het VK. Rockey is een occasionele spreker op e-commerce evenementen en tweet ook op <a href="https://twitter.com/rnebhwani">@rnebhwani</a>.
+rockeynebhwani_bio: Rockey Nebhwani is een onafhankelijke consultant die sinds 2001 in retail en e-commerce heeft gewerkt en uitgebreide ervaring heeft in de branche door samen te werken met retailers zoals Amazon, Wal-Mart, Tesco, M&S, Safeway enz. in de VS en het VK. Rockey is een occasionele spreker op e-commerce evenementen en tweet ook op <a href="https://x.com/rnebhwani">@rnebhwani</a>.
 #jrharalson_bio: TODO
 discuss: 2052
 results: https://docs.google.com/spreadsheets/d/1Hvsh_ZBKg2vWhouJ8vIzLmp0nLIMzrT2mr6RQbIkxqY/
@@ -227,7 +227,7 @@ Laten we vervolgens kijken hoe afbeeldingen worden gebruikt op e-commercesites. 
 
 De bovenstaande cijfers laten zien dat de gemiddelde e-commercepagina 34 afbeeldingen heeft en een afbeeldingspayload van 1.208 KB op mobiel, 37 afbeeldingen en 1.271 KB op desktop. 10% van de homepagina's heeft 90 of meer afbeeldingen en een afbeeldingsbelasting van bijna 5,5 MB op mobiele apparaten en 5,8 MB op desktopcomputers.
 
-[Vergeleken met 2019](../2019/ecommerce#image-stats) zijn zowel de mediaan beeldverzoeken als de mediane payloads voor afbeeldingen gedaald. Mediane afbeeldingsverzoeken zijn met 3 gedaald voor zowel mobiel als desktop. De mediane payload van afbeeldingen daalde ook met ongeveer 200 kb-250 kb op mobiel en desktop. Deze daling kan worden veroorzaakt door sites die luie laadtechnieken toepassen, zoals het gebruik van het attribuut `loading="lazy"` dat nu <a hreflang="en" href="https://caniuse.com/loading-lazy-attr"> ondersteund is door steeds meer browsers</a>. In het [Opmaak](./markup#data--attributen) hoofdstuk van dit jaar blijkt dat het gebruik van observaties voor native lui laden lijkt toe te nemen en ongeveer 3,86% van de pagina's gebruikt dit in aug-2020 en dit is constant gestegen (zoals te zien in [deze tweet](https://twitter.com/rick_viscomi/status/1344380340153016321?s=20)).
+[Vergeleken met 2019](../2019/ecommerce#image-stats) zijn zowel de mediaan beeldverzoeken als de mediane payloads voor afbeeldingen gedaald. Mediane afbeeldingsverzoeken zijn met 3 gedaald voor zowel mobiel als desktop. De mediane payload van afbeeldingen daalde ook met ongeveer 200 kb-250 kb op mobiel en desktop. Deze daling kan worden veroorzaakt door sites die luie laadtechnieken toepassen, zoals het gebruik van het attribuut `loading="lazy"` dat nu <a hreflang="en" href="https://caniuse.com/loading-lazy-attr"> ondersteund is door steeds meer browsers</a>. In het [Opmaak](./markup#data--attributen) hoofdstuk van dit jaar blijkt dat het gebruik van observaties voor native lui laden lijkt toe te nemen en ongeveer 3,86% van de pagina's gebruikt dit in aug-2020 en dit is constant gestegen (zoals te zien in [deze tweet](https://x.com/rick_viscomi/status/1344380340153016321?s=20)).
 
 #### Populaire afbeeldingsformaten
 
@@ -278,7 +278,7 @@ We zien een aanzienlijke toename in het gebruik van verzoeken en bytes van derde
 
 ## E-commerce gebruikerservaring
 
-Bij e-commerce draait alles om het converteren van klanten en om dat te doen is een snel presterende website van het grootste belang. In deze sectie proberen we licht te werpen op de echte gebruikerservaring van e-commerce websites. Om dit te bereiken, richten we onze analyse op enkele door de gebruiker waargenomen prestatiestatistieken, die zijn vastgelegd in de drie <a hreflang="en" href="https://web.dev/vitals/">Core Web Vitals</a> statistieken.
+Bij e-commerce draait alles om het converteren van klanten en om dat te doen is een snel presterende website van het grootste belang. In deze sectie proberen we licht te werpen op de echte gebruikerservaring van e-commerce websites. Om dit te bereiken, richten we onze analyse op enkele door de gebruiker waargenomen prestatiestatistieken, die zijn vastgelegd in de drie <a hreflang="en" href="https://web.dev/articles/vitals">Core Web Vitals</a> statistieken.
 
 ### Chrome User Experience Report
 

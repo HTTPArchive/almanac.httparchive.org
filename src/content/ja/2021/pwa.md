@@ -20,7 +20,7 @@ featured_stat_label_3: サービスワーカーがいるモバイルサイトの
 
 ## 序章
 
-[Frances Berriman](https://twitter.com/phae) と [Alex Russell](https://twitter.com/slightlylate) が、ネイティブアプリと同じように没入できるウェブアプリのビジョンを示す <a hreflang="en" href="https://infrequently.org/2015/06/progressive-apps-escaping-tabs-without-losing-our-soul/">"プログレッシブ・ウェブ・アプリ" (PWA)</a> という言葉を作ってから6年が経ちます。
+[Frances Berriman](https://x.com/phae) と [Alex Russell](https://x.com/slightlylate) が、ネイティブアプリと同じように没入できるウェブアプリのビジョンを示す <a hreflang="en" href="https://infrequently.org/2015/06/progressive-apps-escaping-tabs-without-losing-our-soul/">"プログレッシブ・ウェブ・アプリ" (PWA)</a> という言葉を作ってから6年が経ちます。
 このような体験が従来のWebサイトと異なる点として、次のような属性が挙げられた。
 
 - レスポンシブ
@@ -528,7 +528,7 @@ PWAの重要な点は、ユーザーがブラウザのURLバーへURLを入力�
 このインストール可能な体験を配布する方法は、以下の通りです。
 
 - [ホーム画面に追加](https://developer.mozilla.org/docs/Web/Progressive_web_apps/Add_to_home_screen)機能により、ユーザーにPWAのインストールを促す。
-- <a hreflang="en" href="https://developer.chrome.com/docs/android/trusted-web-activity/">Trusted Web Activity (TWA)</a>（現在、Google PlayやMicrosoft Storeなど、あらゆるAndroidアプリストアで利用可能）でパッケージ化し、PWAをApp Storeにアップロードする。
+- <a hreflang="en" href="https://developer.chrome.com/docs/android/trusted-web-activity">Trusted Web Activity (TWA)</a>（現在、Google PlayやMicrosoft Storeなど、あらゆるAndroidアプリストアで利用可能）でパッケージ化し、PWAをApp Storeにアップロードする。
 
 次に、これらの技術に関連する統計データを紹介し、これらのトレンドの使用率と成長率を把握します。
 
@@ -573,13 +573,13 @@ WebViewベースのアプリはネイティブアプリと似ているように�
 
 TWAを使えば、PWAをネイティブアプリケーションのシェルにパッケージ化し、いくつかのApp Storeにアップロードできます。WebViewベースのソリューションとは異なり、TWAは単なるレンダリングエンジンではなく、フルスクリーンモードで動作する完全なブラウザーとなります。そのため、機能が完全であり、常に最新であり、最新のウェブAPIにアクセスできることを意味します。
 
-開発者はPWAをTWAで直接ネイティブ アプリにパッケージ化し、<a hreflang="en" href="https://developer.chrome.com/docs/android/trusted-web-activity/integration-guide/">Android Studioを使用</a> できますが、このタスクをはるかに容易にするツールがいくつかあります。次に、そのうちの2つを分析します。PWA BuilderとBubblewrapです。
+開発者はPWAをTWAで直接ネイティブ アプリにパッケージ化し、<a hreflang="en" href="https://developer.chrome.com/docs/android/trusted-web-activity/integration-guide">Android Studioを使用</a> できますが、このタスクをはるかに容易にするツールがいくつかあります。次に、そのうちの2つを分析します。PWA BuilderとBubblewrapです。
 
 #### PWAビルダー
 
 <a hreflang="en" href="https://www.pwabuilder.com/">PWAビルダー</a>は、Web開発者がProgressive Web Appsを構築し、Microsoft StoreやGoogle Play Storeなどのアプリストア向けにパッケージ化することを支援するオープンソースプロジェクトです。提供されたURLを確認し、利用可能なマニフェスト、サービスワーカー、およびSSLをチェックすることから始まります。
 
-[PWA Builderは3ヶ月のタイムスロットで200kのURLをレビューしました](https://twitter.com/pwabuilder/status/1454250060326318082?s=21)と発見されたのです。
+[PWA Builderは3ヶ月のタイムスロットで200kのURLをレビューしました](https://x.com/pwabuilder/status/1454250060326318082?s=21)と発見されたのです。
 
 - 75%はマニフェストが検出された
 - 11.5%にサービス要員が検出された
