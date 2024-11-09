@@ -57,7 +57,7 @@ These are the limits to our testing methodology:
 - **Cache effectiveness:** Each CDN uses proprietary technology and many, for security reasons, do not expose cache performance or depth of cache.
 - **Localization and internationalization:** Just like geographic distribution, the effects of language and geo-specific domains are also opaque to these tests.
 - **CDN detection:** This is primarily done through DNS resolution and HTTP headers. Most CDNs use a DNS CNAME to map a user to an optimal data center. However, some CDNs use Anycast IPs or direct A+AAAA responses from a delegated domain which hide the DNS chain. In other cases, websites use multiple CDNs to balance between vendors, which is hidden from the single-request pass of our crawler.
-- **IPv6 detection:** Whether or not a CDN is configured to use IPv6 can be inferred if the DNS entry for the domain name contains a AAAA entry and accepts a connection over IPv6. The 2024 test run did not include this capability, however we’ve ensured this data can be collected for the 2025 Web Almanac.
+- **IPv6 detection:** Whether or not a CDN is configured to use IPv6 can be inferred if the DNS entry for the domain name contains a AAAA entry and accepts a connection over IPv6. The 2024 test run did not include this capability, however we've ensured this data can be collected for the 2025 Web Almanac.
 
 All of this influences our measurements. These results reflect the support of specific features (for example TLSv1.3, HTTP/2+, Zstandard) per site, but do not reflect actual traffic usage.
 
@@ -67,7 +67,7 @@ With this in mind, here are a few statistics that were intentionally not measure
 * Time To Last Byte (TTLB)
 * CDN Round Trip Time
 * Core Web Vitals
-* “Cache hit” versus “cache miss” performance
+* "Cache hit" versus "cache miss" performance
 
 While some of these could be measured with HTTP Archive dataset, and others by using the CrUX dataset, the limitations of our methodology and the use of multiple CDNs by some sites, will be difficult to measure and so could be incorrectly attributed. For these reasons, we have decided not to measure these statistics in this chapter.
 
@@ -91,7 +91,7 @@ A web page is composed of following key components:
 
 The chart above shows the breakdown of requests for different types of content (HTML, Subdomain, and Third-party), showing the share of content served by CDN versus origin on mobile devices (identical figures are observed for desktop).
 
-CDNs are often utilized for delivering static content such as fonts, image files, stylesheet, and Javascript.. This kind of content doesn’t change frequently, making it a good candidate for caching on CDNs proxy servers. We still see CDNs are used more frequently for this type of resource–especially for third-party content, with 75% being served via CDN.
+CDNs are often utilized for delivering static content such as fonts, image files, stylesheet, and Javascript.. This kind of content doesn't change frequently, making it a good candidate for caching on CDNs proxy servers. We still see CDNs are used more frequently for this type of resource–especially for third-party content, with 75% being served via CDN.
 
 CDNs can provide better performance for delivering non-static content as well as they often optimize the routes and use most efficient transport mechanisms.  However, we see that the usage of CDNs for serving HTML still lags considerably behind the other two types of content, with only 33% served via CDN and 77% still being served from the origin.
 
@@ -125,7 +125,7 @@ These are likely some of the reasons behind this continued trajectory:
   )
 }}
 
-The share of CDN usage has increased over the years, particularly among the most popular websites according to Google Chrome’s UX Report (CrUX) classification. As the graph shows, the top 1,000 websites have the highest CDN usage at 70%, followed by the top 10,000 at 69%, and the top 100,000 at 60%. Compared to our latest results, CDN usage among the top 1,000 to 10,000 most popular websites increased by 6%, while CDN usage among the top 100,000 websites rose by 8%.
+The share of CDN usage has increased over the years, particularly among the most popular websites according to Google Chrome's UX Report (CrUX) classification. As the graph shows, the top 1,000 websites have the highest CDN usage at 70%, followed by the top 10,000 at 69%, and the top 100,000 at 60%. Compared to our latest results, CDN usage among the top 1,000 to 10,000 most popular websites increased by 6%, while CDN usage among the top 100,000 websites rose by 8%.
 
 As mentioned in previous editions, the increase in CDN usage among smaller sites can be attributed to the rise of free and affordable CDN options. Additionally, many hosting solutions now bundle CDNs with their services, making it easier and more cost-effective for websites to leverage this technology.
 
@@ -196,7 +196,7 @@ The most notable difference in HTTP/3 is that it uses a protocol called QUIC ove
 
 For website operators, CDNs handle all the complex implementation details while providing automatic fallback to HTTP/2 when needed. This experience enabled by CDNs is a simple configuration change without requiring significant technical investment on the operator's part.
 
-Due to the way HTTP/3 works (see the [HTTP](./http) chapter for more information), HTTP/3 is often not used for first connections which is why we are instead measuring “HTTP/2+”, since many of those HTTP/2 connections may actually be HTTP/3 for repeat visitors (we have assumed that no servers implement HTTP/3 without HTTP/3).
+Due to the way HTTP/3 works (see the [HTTP](./http) chapter for more information), HTTP/3 is often not used for first connections which is why we are instead measuring "HTTP/2+", since many of those HTTP/2 connections may actually be HTTP/3 for repeat visitors (we have assumed that no servers implement HTTP/3 without HTTP/3).
 
 {{ figure_markup(
   image="cdn-http-versions-mobile.png",
@@ -234,7 +234,7 @@ Within the web ecosystem we observed several commonly used compression algorithm
 * Brotli
 * Zstandard (Zstd)
 
-While media files such as JPEG images are already compressed, textual assets such as HTML, stylesheets, javascript, and manifest files can be compressed to optimize performance. Created in 1992, [Gzip](https://en.wikipedia.org/wiki/Gzip) is the longest standing compression widely used, however as we’ll see in this chapter [Brotli](https://en.wikipedia.org/wiki/Brotli) has become the de facto algorithm for compressing textual data over the web ecosystem. In 2024, we also see the emergence of Zstandard which was developed by Facebook. Each of these algorithms has its strengths and use cases, and their adoption rates vary across the web.
+While media files such as JPEG images are already compressed, textual assets such as HTML, stylesheets, javascript, and manifest files can be compressed to optimize performance. Created in 1992, [Gzip](https://en.wikipedia.org/wiki/Gzip) is the longest standing compression widely used, however as we'll see in this chapter [Brotli](https://en.wikipedia.org/wiki/Brotli) has become the de facto algorithm for compressing textual data over the web ecosystem. In 2024, we also see the emergence of Zstandard which was developed by Facebook. Each of these algorithms has its strengths and use cases, and their adoption rates vary across the web.
 
 Below is the analysis of compression types used by CDNs and origin servers in the Web Almanac 2024 reveals trends in how web content is optimized for delivery.
 
@@ -273,14 +273,14 @@ While Zstd offers benefits, the real-world performance improvements over Brotli 
 {{ figure_markup(
   image="cdn-types-compression-mobile.png",
   caption="Distribution of compressions across CDNs (mobile).",
-  description="Brotli usage is prevalent on Cloudflare and Google CDNs while Gzip remains the majority across Akamai, Amazon CloudFront, and Fastly. However, when compared to 2022 Brotli continues its broad trend towards more adoption with larger CDN providers. The outlier in our dataset was Facebook which had over 60% adoption of Zstandard. Facebook’s strategy has been to optimize content delivery using their own compression algorithm so this result is expected",
+  description="Brotli usage is prevalent on Cloudflare and Google CDNs while Gzip remains the majority across Akamai, Amazon CloudFront, and Fastly. However, when compared to 2022 Brotli continues its broad trend towards more adoption with larger CDN providers. The outlier in our dataset was Facebook which had over 60% adoption of Zstandard. Facebook's strategy has been to optimize content delivery using their own compression algorithm so this result is expected",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRaKSyCfdyk5Qva05DCIxB4NPUI6VZASRpDfEIV9QsihS0nuKSEzWGh569LoaOnTW5NgHKTufv8ydlL/pubchart?oid=168908770&format=interactive",
   sheets_gid="1455879080",
   sql_file="distribution_of_compression_types_by_cdn.sql"
   )
 }}
 
-Brotli usage is prevalent on Cloudflare and Google CDNs while Gzip remains the majority across Akamai, Amazon CloudFront, and Fastly. However, when compared to 2022 Brotli continues its broad trend towards more adoption with larger CDN providers. The outlier in our dataset was Facebook which had over 60% adoption of Zstandard. Facebook’s strategy has been to optimize content delivery using their own compression algorithm so this result is expected.
+Brotli usage is prevalent on Cloudflare and Google CDNs while Gzip remains the majority across Akamai, Amazon CloudFront, and Fastly. However, when compared to 2022 Brotli continues its broad trend towards more adoption with larger CDN providers. The outlier in our dataset was Facebook which had over 60% adoption of Zstandard. Facebook's strategy has been to optimize content delivery using their own compression algorithm so this result is expected.
 
 ## TLS usage
 
@@ -390,7 +390,7 @@ In 2022, Client Hints adoption was at less than 1% for mobile requests. While th
 
 Early Hints is the [HTTP 103 status code](https://datatracker.ietf.org/doc/html/rfc8297#section-2) that allows servers to send preliminary HTTP headers to browsers before the main response is ready. This is particularly valuable for preloading critical resources like stylesheet, JavaScript, and fonts.
 
-While major browsers support Early Hints, we found hardly any adoption across the dataset. However, as seen with other newer and emerging features such as TLSv1.3, CDN’s continue to lead the way in driving adoption compared to support going directly to web servers. Even still, we only observed CloudFlare and Fastly support Early Hints in any significant number compared to the rest of the CDN community.
+While major browsers support Early Hints, we found hardly any adoption across the dataset. However, as seen with other newer and emerging features such as TLSv1.3, CDN's continue to lead the way in driving adoption compared to support going directly to web servers. Even still, we only observed CloudFlare and Fastly support Early Hints in any significant number compared to the rest of the CDN community.
 
 {{ figure_markup(
   image="cdn-early-hints-mobile.png",
