@@ -3,7 +3,7 @@
 title: Ecommerce
 description: This chapter explores trends in the e-commerce ecosystem, examining platform popularity, performance metrics, and regional differences. Covering Core Web Vitals, Lighthouse scores, and accessibility, it highlights how platforms like WooCommerce and Shopify dominate, while newer players gain traction in specific regions and niches.
 authors: [JonathanPagel]
-reviewers: [nrllh, ToDo]
+reviewers: [nrllh, tunetheweb]
 analysts: [JonathanPagel]
 editors: [nrllh, ToDo]
 translators: []
