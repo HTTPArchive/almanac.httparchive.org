@@ -2029,16 +2029,6 @@
     "twitter": "jessica_nicolet",
     "website": "https://www.jessicanicolet.com/"
   },
-  "joeleonjr": {
-    "github": "joeleonjr",
-    "name": "Joe Leon",
-    "teams": {
-      "2024": [
-        "editors"
-      ]
-    },
-    "twitter": "joeleonjr"
-  },
   "joeviggiano": {
     "github": "joeviggiano",
     "name": "Joe Viggiano",
@@ -3640,8 +3630,7 @@
         "authors"
       ],
       "2024": [
-        "developers",
-        "reviewers"
+        "developers"
       ]
     },
     "twitter": "Saptak013",
