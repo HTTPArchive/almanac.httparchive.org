@@ -3,27 +3,31 @@
 title: Ecommerce
 description: This chapter explores trends in the e-commerce ecosystem, examining platform popularity, performance metrics, and regional differences. Covering Core Web Vitals, Lighthouse scores, and accessibility, it highlights how platforms like WooCommerce and Shopify dominate, while newer players gain traction in specific regions and niches.
 authors: [JonathanPagel]
-reviewers: [nrllh, tunetheweb]
+reviewers: [nrllh]
 analysts: [JonathanPagel]
-editors: [nrllh, ToDo]
+editors: [tunetheweb]
 translators: []
 results: https://docs.google.com/spreadsheets/d/1LABlisQFCLjOyEd43tdUb-Hxs6pGuboTresntMk71Lc/edit?gid=1075995078#gid=1075995078
 JonathanPagel_bio: Jonathan Pagel studied E-Commerce in his bachelor's degree and has since been interested in the field, particularly in the areas of speed optimization and accessibility for shops and websites. Currently, he is freelancing in this field and pursuing a Master’s in AI and Society.
+featured_quote: TODO
 featured_stat_1: 37%
 featured_stat_label_1: Of websites using e-commerce platforms, 37% are built with WooCommerce, the most popular platform.
+featured_stat_2: TODO
+featured_stat_label_2: TODO
+featured_stat_3: TODO
+featured_stat_label_3: TODO
 ---
-
 
 ## **Introduction**
 
 In this chapter, we review the state of e-commerce on the web. An eCommerce website is an "online store" that sells physical or digital products. When building your online store, there are several types of platforms to choose from:
 
-1. **Software-as-a-Service (SaaS)** platforms like Shopify minimize the technical knowledge required to open and manage an online store. They do this by restricting access to the codebase and removing the need to worry about hosting.  
-2. **Platform-as-a-Service (PaaS)** solutions, such as Adobe Commerce (Magento), provide an optimized technology stack and hosting environment while allowing full codebase access.  
-3. **Self-hosted platforms**, such as WooCommerce.  
+1. **Software-as-a-Service (SaaS)** platforms like Shopify minimize the technical knowledge required to open and manage an online store. They do this by restricting access to the codebase and removing the need to worry about hosting.
+2. **Platform-as-a-Service (PaaS)** solutions, such as Adobe Commerce (Magento), provide an optimized technology stack and hosting environment while allowing full codebase access.
+3. **Self-hosted platforms**, such as WooCommerce.
 4. **Headless platforms**, like CommerceTools, that are "API-as-a-service." They provide the e-commerce backend as a SaaS, while the retailer is responsible for building and hosting the frontend experience.
 
-Note that some platforms may fall into more than one of these categories. For example, Shopware offers SaaS, PaaS, and self-hosted options. 
+Note that some platforms may fall into more than one of these categories. For example, Shopware offers SaaS, PaaS, and self-hosted options.
 
 Our goal is to give an overview of the current state of the e-commerce ecosystem as well as its development in the last year. The first part focuses on ranking the platforms based on their usage and Core Web Vitals/Lighthouse performance results. The second part is more experimental. We checked different eCom technologies and how they have evolved over time.
 
@@ -39,16 +43,16 @@ Our methodology has some limitations that may affect its accuracy.
 
 Firstly, there are some limitations to our ability to recognize an e-commerce site:
 
-* Wappalyzer must have detected an e-commerce platform.  
-* If the e-commerce platform is hosted within a subdirectory of the website, it cannot be detected since only home pages are analyzed.  
+* Wappalyzer must have detected an e-commerce platform.
+* If the e-commerce platform is hosted within a subdirectory of the website, it cannot be detected since only home pages are analyzed.
 * A headless implementation reduces our ability to detect the platform in use. One of the primary methods to identify an e-commerce platform is by recognizing standard HTML or JavaScript components. Therefore, a headless website that does not use the e-commerce platform front end makes it challenging to detect.
 
 ### **Accuracy of Metrics and Commentary**
 
 The accuracy of metrics and commentary may also be affected by the following limitations:
 
-* Trends observed may be influenced by changes in detection accuracy rather than reflecting industry trends. For example, an e-commerce platform may appear to become more popular simply because the detection method has improved.  
-* All website requests were made from the United States. If a website redirects based on geographic location, the final version analyzed will be the U.S.-specific one.  
+* Trends observed may be influenced by changes in detection accuracy rather than reflecting industry trends. For example, an e-commerce platform may appear to become more popular simply because the detection method has improved.
+* All website requests were made from the United States. If a website redirects based on geographic location, the final version analyzed will be the U.S.-specific one.
 * We used the [Chrome UX Report](https://developer.chrome.com/docs/crux) dataset, which includes only data from real-world Chrome sessions, not representing the user experience across all browsers.
 
 ## **Top E-Commerce Platforms Over The Years**
@@ -68,7 +72,7 @@ WooCommerce (38%) and Shopify (18%) dominate the e-commerce platform landscape. 
 }}
 
 
-Over the years, the top five platforms have remained relatively consistent. However, Wix eCommerce surpassed PrestaShop in 2023, moving from 5th to 4th place. Trends indicate that the open-source project WooCommerce is slightly losing market share, decreasing from 37.3% in 2022 to 35.8% in 2024, while its commercial competitor, Shopify, is gaining market share in the same period (increasing from 17.7% to 19.6%).  
+Over the years, the top five platforms have remained relatively consistent. However, Wix eCommerce surpassed PrestaShop in 2023, moving from 5th to 4th place. Trends indicate that the open-source project WooCommerce is slightly losing market share, decreasing from 37.3% in 2022 to 35.8% in 2024, while its commercial competitor, Shopify, is gaining market share in the same period (increasing from 17.7% to 19.6%).
 {{ figure_markup(
   image="top-5-platforms-2021-2024.png",
   caption="Top 5 Ecommerce Platforms from 2021 until 2024.",
@@ -81,7 +85,7 @@ Over the years, the top five platforms have remained relatively consistent. Howe
 
 ## **Top E-Commerce Platforms By Website Popularity**
 
-Using the Chrome User Experience Report data, we looked at how popular individual websites are. Our data shows that only a few e-commerce platforms are represented in the top 1,000 websites, while about 20% of the top 10 million websites use an e-commerce platform. This difference could be because the top 1,000 sites often use custom solutions.  
+Using the Chrome User Experience Report data, we looked at how popular individual websites are. Our data shows that only a few e-commerce platforms are represented in the top 1,000 websites, while about 20% of the top 10 million websites use an e-commerce platform. This difference could be because the top 1,000 sites often use custom solutions.
 {{ figure_markup(
   image="platform-adoption-by-rank.png",
   caption="Platform adoption by rank for desktop and mobile.",
@@ -105,7 +109,7 @@ In the top 100,000 websites, Salesforce Commerce Cloud and Amazon Webstore emerg
 
 ## **Top E-Commerce Platform By Country**
 
-There are quite a few differences in preferences between countries. We used additional data from the CrUX dataset, which categorizes the most visited websites per country. For example, google.com, while an American website, is also one of the most visited websites by all German internet users. We can see that three leading platforms take the top spot in each country: WooCommerce (violet), Shopify (green), and 1C-Bitrix (red). The following map visualizes only these three due to the limitations of Google Sheets.  
+There are quite a few differences in preferences between countries. We used additional data from the CrUX dataset, which categorizes the most visited websites per country. For example, google.com, while an American website, is also one of the most visited websites by all German internet users. We can see that three leading platforms take the top spot in each country: WooCommerce (violet), Shopify (green), and 1C-Bitrix (red). The following map visualizes only these three due to the limitations of Google Sheets.
 {{ figure_markup(
   image="top-ecommerce-platform-by-country.png",
   caption="Top E-Commerce Platform by Country.",
@@ -119,13 +123,13 @@ There are quite a few differences in preferences between countries. We used addi
 
 ## **Core Web Vitals in E-Commerce**
 
-Google's Core Web Vitals are three key performance metrics designed to evaluate crucial aspects of user experience, focusing on loading speed, interactivity, and visual stability.   
+Google's Core Web Vitals are three key performance metrics designed to evaluate crucial aspects of user experience, focusing on loading speed, interactivity, and visual stability.
 Introduced in 2020 and adopted as a ranking signal in 2021, those metrics, among many others, determine how high a page is ranking in the Google search results.
 
 Here's the percentage of sites on each platform that achieve a "good" score, meaning they meet the performance thresholds for all three Core Web Vitals: LCP (Largest Contentful Paint) under 2.5 seconds, INP (Interaction to Next Paint) under 200 milliseconds, and CLS (Cumulative Layout Shift) below 0.1.
 
-* **LCP under 2.5 seconds**: This measures how long it takes for the largest visible element on the page to load. Achieving this threshold ensures users can view the main content quickly without excessive delays.  
-* **INP under 200 milliseconds**: This measures the time from a user's interaction (such as a click or tap) to the browser updating (or painting) the screen. A score under 200 milliseconds means the page is highly responsive and provides a smooth user experience.  
+* **LCP under 2.5 seconds**: This measures how long it takes for the largest visible element on the page to load. Achieving this threshold ensures users can view the main content quickly without excessive delays.
+* **INP under 200 milliseconds**: This measures the time from a user's interaction (such as a click or tap) to the browser updating (or painting) the screen. A score under 200 milliseconds means the page is highly responsive and provides a smooth user experience.
 * **CLS below 0.1**: This tracks the visual stability of the page by measuring how much elements move unexpectedly as they load. A score below 0.1 indicates minimal shifts, ensuring a more stable visual experience for use.
 
 {{ figure_markup(
@@ -254,7 +258,7 @@ The Lighthouse SEO score shows how well a website is set up to be found by searc
   sql_file="median_lighthouse_score_ecommsites.sql"
   )
 }}
- 
+
 The importance of SEO is reflected in the lighthouse results since most platforms score really well, led by Wix, which has a perfect median score of 100\.
 
 ### Best practices
@@ -297,6 +301,6 @@ Apple Pay ranks second, being detected more frequently than Google Pay, which sh
 
 E-commerce is still evolving, with platform preferences varying by region and website size. While WooCommerce remains the go-to platform for many, Shopify has steadily gained ground, especially among higher-traffic websites. Interestingly, platforms like Wix eCommerce perform well in terms of user experience metrics despite being more popular with smaller sites. Overall, we can observe improvements in most metrics, from performance to accessibility, over the past few years, benefiting everyone.
 
-While e-commerce platforms are diverse and well distributed among different providers, a few key players dominate technologies like payment systems. It will be interesting to see how this landscape continues to evolve in the coming years.  
+While e-commerce platforms are diverse and well distributed among different providers, a few key players dominate technologies like payment systems. It will be interesting to see how this landscape continues to evolve in the coming years.
 
 

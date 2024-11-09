@@ -148,6 +148,12 @@
         {
           "part": "III",
           "chapter_number": "18",
+          "title": "Ecommerce",
+          "slug": "ecommerce"
+        },
+        {
+          "part": "III",
+          "chapter_number": "19",
           "title": "Jamstack",
           "slug": "jamstack",
           "hero_dir": "2020",
@@ -155,7 +161,7 @@
         },
         {
           "part": "III",
-          "chapter_number": "19",
+          "chapter_number": "20",
           "title": "Sustainability",
           "slug": "sustainability",
           "hero_dir": "2022",
@@ -169,35 +175,35 @@
       "chapters": [
         {
           "part": "IV",
-          "chapter_number": "20",
+          "chapter_number": "21",
           "title": "Page Weight",
           "slug": "page-weight",
           "todo": true
         },
         {
           "part": "IV",
-          "chapter_number": "21",
+          "chapter_number": "22",
           "title": "CDN",
           "slug": "cdn",
           "todo": true
         },
         {
           "part": "IV",
-          "chapter_number": "22",
+          "chapter_number": "23",
           "title": "Compression",
           "slug": "compression",
           "todo": true
         },
         {
           "part": "IV",
-          "chapter_number": "23",
+          "chapter_number": "24",
           "title": "HTTP",
           "slug": "http",
           "todo": true
         },
         {
           "part": "IV",
-          "chapter_number": "24",
+          "chapter_number": "25",
           "title": "Cookies",
           "slug": "cookies",
           "todo": true
