@@ -296,9 +296,9 @@ Although ARIA landmarks have traditionally been only visible to screen reader us
 }}
 
 The most commonly expected landmarks for most web pages include `<main>`, `<header>`, `<nav>`, and `<footer>`. Our findings reveal that:
-* only 37% of all pages use the native HTML `<main>` element, 
-* 17% of all pages have an element with `role="main"`, and
-* 43% are using either one of them (up from 35% in 2021).
+- only 37% of all pages use the native HTML `<main>` element, 
+- 17% of all pages have an element with `role="main"`, and
+- 43% are using either one of them (up from 35% in 2021).
 
 Scott O'Hara's <a hreflang="en" href="https://www.scottohara.me/blog/2018/03/03/landmarks.html">article on landmarks</a> provides valuable insights for enhancing accessibility.
 
