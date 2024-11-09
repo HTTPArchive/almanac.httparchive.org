@@ -19,7 +19,7 @@ featured_stat_3: 13%
 featured_stat_label_3: the percentage by which good CWV scores are higher on secondary pages compared to homepages for mobile websites.
 ---
 
-## Introduction {#introduction}
+## Introduction
 
 No one ever complained about a fast website, but a slow-loading and sluggish website quickly frustrates users. Website speed and overall performance directly impact user experience and the success of a website. Moreover, if a website is slow, it becomes less accessible to users, which is against the fundamental goal of the web — to provide universal access to the universe of information.
 
@@ -29,19 +29,19 @@ In the performance chapter, we focus on Core Web Vitals, as they are key user-ce
 
 What's new this year?
 
-- <a hreflang="en" href="https://web.dev/blog/inp-cwv-march-12">Interaction to Next Paint (INP) has officially replaced First Input Delay (FID)</a> as part of Core Web Vitals. INP helps to evaluate overall interactivity performance more accurately.
-- <a hreflang="en" href="https://developer.chrome.com/docs/web-platform/long-animation-frames">Long Animation Frames (LoAF)</a> data is available for the first time, providing new insights into the reasons for poor INP.
+- [Interaction to Next Paint (INP) has officially replaced First Input Delay (FID)](https://web.dev/blog/inp-cwv-march-12) as part of Core Web Vitals. INP helps to evaluate overall interactivity performance more accurately.
+- [Long Animation Frames (LoAF)](https://developer.chrome.com/docs/web-platform/long-animation-frames) data is available for the first time, providing new insights into the reasons for poor INP.
 - As of this year, the Performance chapter also includes an analysis of the data for secondary pages in addition to home pages. This allows us to compare the home page with the secondary page performance.
 
 ### Notes on Data Sources
 
 The HTTPArchive contains only lab performance data. In other words, it is data from a single website load event. This is useful but limited if we want to understand how users experience performance.
 
-Thus, in addition to the data HTTP Archive, most of this report is based on real user data from the <a hreflang="en" href="https://developer.chrome.com/docs/crux">Chrome User Experience Report (CrUX)</a>. Note that while Chrome is the most widely used browser worldwide, it doesn't reflect performance across all browsers and all regions of the world.
+Thus, in addition to the data HTTP Archive, most of this report is based on real user data from the [Chrome User Experience Report (CrUX)](https://developer.chrome.com/docs/crux). Note that while Chrome is the most widely used browser worldwide, it doesn't reflect performance across all browsers and all regions of the world.
 
 CrUX is a great source of data, but it doesn't contain certain metrics like LCP and INP sub-parts, as well as Long Animation Frames. Luckily, the performance monitoring platform <a hreflang="en" href="https://www.rumvision.com/">RUMvision</a> has provided us with this data for the period starting from 1st January 2024\. RUMvision has a smaller population of websites compared to HTTP archive, which is why the results for the same metrics might be different.
 
-## Core Web Vitals {#core-web-vitals}
+## Core Web Vitals
 
 Core Web Vitals (CWV) are user-centric metrics designed to measure the different aspects of web performance. These include the Largest Contentful Paint (LCP), which tracks loading performance, Interaction to Next Paint (INP), which measures interactivity, and Cumulative Layout Shift (CLS), which assesses visual stability.
 
@@ -79,7 +79,9 @@ CWV with INP shows a new tendency when analyzing websites by rank. Previously, t
   description="Bar chart showing the percentage points of websites with new mobile CWV failures due to INP across various platforms and technologies. 1C-Bitrix has the highest percentage of new failures at 19%, followed by Next.js at 10%, and Emotion at 8%. Other platforms such as WordPress, React, Vue.js, and Drupal show smaller decreases, ranging from 2% to 5%. The chart also displays a range of smaller decreases for various technologies, including Handlebars, Backbone.js, Squarespace, and Angular, all seeing decreases of around 2% to 5%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=655066315&format=interactive",
   sheets_gid="869409419",
-  sql_file="web_vitals_by_technology.sql"
+  sql_file="web_vitals_by_technology.sql",
+  width=600,
+  height=632
   )
 }}
 
@@ -101,13 +103,13 @@ As of this year, secondary pages are available to compare with homepage data.
 
 Secondary pages demonstrate significantly better CWV results than home pages. The percentage of the desktop secondary pages with good CWV is by 14 percentage points better than for home pages. For mobile websites, the difference is 13 percentage points. By looking at CWV data only, it is hard to identify what kind of performance experience is better. We will explore these aspects—layout shift, loading, and interactivity—in the corresponding sections.
 
-## Loading Speed {#loading-speed}
+## Loading Speed
 
 People often refer to website loading speed as a single metric, but in fact, the loading experience is a multi-stage process. No single metric fully captures it. Every stage has an impact on the speed of a website.
 
-### Time to First Byte (TTFB) {#time-to-first-byte-(ttfb)}
+### Time to First Byte (TTFB)
 
-<a hreflang="en" href="https://web.dev/articles/ttfb">Time to First Byte</a> (TTFB) measures the time from when a user initiates loading a page until the browser receives the first byte of the response. It includes phases like redirect time, DNS lookup, connection and TLS negotiation, and request processing. Reducing latency in connection and server response time can improve TTFB. 800ms is considered the threshold for good TTFB.
+[Time to First Byte](https://web.dev/articles/ttfb) (TTFB) measures the time from when a user initiates loading a page until the browser receives the first byte of the response. It includes phases like redirect time, DNS lookup, connection and TLS negotiation, and request processing. Reducing latency in connection and server response time can improve TTFB. 800ms is considered the threshold for good TTFB.
 
 {{ figure_markup(
   image="good-time-to-first-byte.png",
@@ -121,7 +123,7 @@ People often refer to website loading speed as a single metric, but in fact, the
 
 Over the past five years, the percentage of mobile web pages with good TTFB has remained stable, from 41% in 2021 to 42% in 2024. The percentage of pages that need TTFB improvements has decreased by 1%, and unfortunately, the percentage of pages with poor TTFB remains the same. Since this metric has not changed significantly, we can conclude that there have been no major improvements in connection speed or backend latency.
 
-### First Contentful Paint (FCP) {#first-contentful-paint-(fcp)}
+### First Contentful Paint (FCP)
 
 First Contentful Paint (FCP) is a performance metric that helps indicate how quickly users can start seeing content. It measures the time from when a user first requests a page until the first piece of content is rendered on the screen. A good FCP should be under 1.8 seconds.
 
@@ -139,7 +141,7 @@ FCP has shown improvements over the past few years. Although there was a slight 
 
 Interestingly, website performance is not the only factor that influences FCP. In the research "<a hreflang="en" href="https://www.debugbear.com/blog/chrome-extension-performance-2021#impact-on-page-rendering-times">How Do Chrome Extensions Impact Browser Performance?</a>" Matt Zeunert found that browser extensions can significantly affect page loading times. Many extensions start running their code as soon as a page starts loading, delaying the first contentful paint. For instance, some extensions can increase FCP from 100ms to 250ms.
 
-### Largest Contentful Paint (LCP) {#largest-contentful-paint-(lcp)}
+### Largest Contentful Paint (LCP)
 
 LCP is an important metric as it indicates how quickly the largest element in the viewport is loaded. A best practice is to ensure the LCP resource starts loading as early as possible. A good LCP should be under 2.5 seconds.
 
@@ -190,7 +192,7 @@ Several stages of processing must occur before the LCP element can be fully rend
 - **Resource Load Duration** which measures how long it takes to load the LCP resource; this stage is also 0 ms if no resource is needed.
 - **Element Render Delay** which is the time between when the resource finished loading and the LCP element finished rendering.
 
-In the article "<a hreflang="en" href="https://web.dev/blog/common-misconceptions-lcp#lcp_sub-part_breakdown">Common Misconceptions About How to Optimize LCP</a>", Brendan Kenny analyzed a breakdown of LCP sub-parts using recent CruX data.
+In the article "[Common Misconceptions About How to Optimize LCP](https://web.dev/blog/common-misconceptions-lcp#lcp_sub-part_breakdown)", Brendan Kenny analyzed a breakdown of LCP sub-parts using recent CruX data.
 
 {{ figure_markup(
   image="median-subpart-p75s.png",
@@ -230,14 +232,14 @@ Overall, lazy-loading images is a helpful performance technique that should be u
 
 {{ figure_markup(
   caption="The percent of mobile pages having image-based LCP that use native or custom lazy-loading on it",
-  content="15.7%",
+  content="16%",
   classes="big-number",
   sheets_gid="1048885241",
   sql_file="lcp_lazy.sql"
 )
 }}
 
-The good news is that in 2024, fewer websites are using this performance anti-pattern. In 2022, 18% of mobile websites were lazy-loading their LCP images. By 2024, this decreased to 15.7%.
+The good news is that in 2024, fewer websites are using this performance anti-pattern. In 2022, 18% of mobile websites were lazy-loading their LCP images. By 2024, this decreased to 16%.
 
 #### CSS background images
 
@@ -315,23 +317,23 @@ You can reduce image sizes through resizing dimensions and increasing compressio
 
 JPG and PNG still have the highest proportion of adoption at 86.6% combined, however WEBP and AVIF formats are both increasing in adoption. In comparison to 2022, WEBP image format usage increased from <a hreflang="en" href="https://almanac.httparchive.org/en/2022/performance#lcp-format">4%</a> to 7.3%. Also, AVIF usage increased slightly from 0.1% to 0.3%. According to <a hreflang="en" href="https://webstatus.dev/?q=avif">Baseline</a>, AVIF format is newly available across major browsers, so we expect to see higher adoption in the future.
 
-### Loading Speed Conclusions {#loading-speed-conclusions}
+### Loading Speed Conclusions
 
 - The percentage of websites with good FCP and LCP has improved, though TTFB showed no significant change.
 - One cause for slow LCP is lazy-loading the LCP element. Usage of this antipattern has decreased, but 15% of websites still fail this test and could benefit from removing lazy-loading for their LCP elements.
 - Adoption of modern image formats like AVIF and WEBP is growing for LCP elements.
 
-## Interactivity {#interactivity}
+## Interactivity
 
 Interactivity on a website refers to the degree to which users can engage with and respond to content, features, or elements on the page. Measuring interactivity involves assessing the performance for a range of user interactions, such as clicks, taps, and scrolls, as well as more complex actions like form submissions, video plays, or drag-and-drop functions.
 
 INP  can only be collected using real user monitoring, which comes from CrUX and RUMvision. Total Blocking Time (TBT) is a lab metric correlated to INP, which can be measured in WebPageTest and thus comes from the HTTP Archive data set.
 
-### Interaction to Next Paint (INP) {#interaction-to-next-paint-(inp)}
+### Interaction to Next Paint (INP)
 
 INP measures the time between a user interaction and the next frame render. It is important to emphasize that the next frame render refers to the render opportunity rather than actual visual UI changes.
 
-For an origin to receive a "good" INP score, at least 75% of all sessions need an INP score of 200ms or less. The INP score is the slowest or near-slowest interaction time for all interactions on the page. See <a hreflang="en" href="https://web.dev/articles/inp#good-score">Details on how INP is calculated</a> for more information.
+For an origin to receive a "good" INP score, at least 75% of all sessions need an INP score of 200ms or less. The INP score is the slowest or near-slowest interaction time for all interactions on the page. See [Details on how INP is calculated](https://web.dev/articles/inp#good-score) for more information.
 
 {{ figure_markup(
   image="interaction-to-next-paint-2024.png",
@@ -412,7 +414,7 @@ The INP sub-part duration distribution data from RUMvision shows that presentati
 
 ### Long Tasks
 
-One of the sub-parts of INP is input delay, which can be longer than it should due to various factors, including long tasks. <a hreflang="en" href="https://web.dev/articles/optimize-long-tasks#what-is-task">A task</a> is a discrete unit of work that the browser executes, and JavaScript is often the largest source of tasks. When a task exceeds 50 milliseconds, it is considered a long task. These long tasks can cause delays in responding to user interactions, directly affecting interactivity performance.
+One of the sub-parts of INP is input delay, which can be longer than it should due to various factors, including long tasks. [A task](https://web.dev/articles/optimize-long-tasks#what-is-task) is a discrete unit of work that the browser executes, and JavaScript is often the largest source of tasks. When a task exceeds 50 milliseconds, it is considered a long task. These long tasks can cause delays in responding to user interactions, directly affecting interactivity performance.
 
 In the diagram below, we analyzed a representative sample of 1,000 websites to see whether there is a correlation between INP and the number of long tasks on both desktop and mobile platforms. It is important to keep in mind that INP scores come from field (real-user) data, while long task measures come from lab measurements.
 
@@ -483,9 +485,9 @@ On mobile devices, Consent Providers seem to have a significant impact on INP, r
 
 It is worth noting that the monitoring category, which also includes performance monitoring tools, has one of the least impacts on poor INP results. This is a good argument in favor of using web performance monitoring tools, as they help with valuable web performance insights without significantly affecting interactivity performance.
 
-### Total Blocking Time (TBT) {#total-blocking-time-(tbt)}
+### Total Blocking Time (TBT)
 
-<a hreflang="en" href="https://web.dev/tbt/">Total Blocking Time</a> (TBT) measures the total amount of time after First Contentful Paint (FCP) where the main thread was blocked for long enough to prevent input responsiveness.
+[Total Blocking Time](https://web.dev/tbt/) (TBT) measures the total amount of time after First Contentful Paint (FCP) where the main thread was blocked for long enough to prevent input responsiveness.
 
 {{ figure_markup(
   image="total-blocking-time-2024.png",
@@ -499,7 +501,7 @@ It is worth noting that the monitoring category, which also includes performance
 
 TBT is a lab metric and is often used as a proxy for field-based responsiveness metrics, such as INP. <a hreflang="en" href="https://colab.research.google.com/drive/12lJmAABgyVjaUbmWvrbzj9BkkTxw6ay2">Lab-based TBT and field-based INP</a> are correlated, meaning TBT results generally reflect INP trends. A TBT below 200ms is considered good, but most mobile websites exceed this target significantly. The median TBT is 1209 ms, which is 6 times higher than the best practice. In contrast, desktop websites show much better performance, with a median TBT of just 67ms. It is valuable to note that the lab results use an emulated low-power device and a slow network, which may not reflect the real user data, as actual device and network conditions can vary.
 
-### Interactivity Conclusion {#interactivity-conclusion}
+### Interactivity Conclusion
 
 The main takeaways of the interactivity results are:
 
@@ -508,13 +510,13 @@ The main takeaways of the interactivity results are:
 - INP can be divided into three sub-parts—Input Delay, Processing Time, and Presentation Delay, and Presentation Delay has the biggest share of the median INP.
 - Scripts from user behavior tracking, consent provider, and CDN categories are the main contributors to poor INP scores.
 
-## Visual Stability {#visual-stability}
+## Visual Stability
 
-Visual stability on a website refers to the consistency and predictability of visual elements as the page loads and users interact with it. A visually stable website ensures that content does not unexpectedly shift, move, or change layout, which can disrupt the user experience. These shifts often happen due to assets without specified dimensions (images and videos), third-party ads, heavy fonts, etc. The primary metric for measuring visual stability is <a hreflang="en" href="https://web.dev/cls/">Cumulative Layout Shift</a> (CLS).
+Visual stability on a website refers to the consistency and predictability of visual elements as the page loads and users interact with it. A visually stable website ensures that content does not unexpectedly shift, move, or change layout, which can disrupt the user experience. These shifts often happen due to assets without specified dimensions (images and videos), third-party ads, heavy fonts, etc. The primary metric for measuring visual stability is [Cumulative Layout Shift](https://web.dev/cls/) (CLS).
 
-### Cumulative Layout Shift (CLS) {#cumulative-layout-shift-(cls)}
+### Cumulative Layout Shift (CLS)
 
-<a hreflang="en" href="https://web.dev/articles/cls">CLS</a> measures the biggest burst of layout shift scores for any unexpected layout shifts that happen while a page is open. Layout shifts occur when a visible element changes its position from one place to another.
+CLS measures the biggest burst of layout shift scores for any unexpected layout shifts that happen while a page is open. Layout shifts occur when a visible element changes its position from one place to another.
 
 A CLS score of 0.1 or less is considered good, meaning the page offers a visually stable experience, while scores between 0.1 and 0.25 indicate the need for improvement, and scores above 0.25 are considered poor, indicating that users may experience disruptive, unexpected layout shifts.
 
@@ -544,7 +546,7 @@ Looking at the metrics over time, we can see a nice upward trend. There is an in
 
 ### Bfcache
 
-<a hreflang="en" href="https://web.dev/articles/bfcache">The back/forward cache (bfcache)</a> is a browser optimization feature that improves the speed and efficiency of navigating between web pages by caching a fully interactive snapshot of a page in memory when a user navigates away from it. However, not all sites are eligible for bfcache. With an <a hreflang="en" href="https://html.spec.whatwg.org/multipage/nav-history-apis.html#nrr-details-reason">extensive eligibility criteria</a>, the easiest way to check if the site is eligible is to <a hreflang="en" href="https://developer.chrome.com/docs/devtools/application/back-forward-cache">test it in Chrome DevTools</a>.
+[The back/forward cache (bfcache)](https://web.dev/articles/bfcache) is a browser optimization feature that improves the speed and efficiency of navigating between web pages by caching a fully interactive snapshot of a page in memory when a user navigates away from it. However, not all sites are eligible for bfcache. With an <a hreflang="en" href="https://html.spec.whatwg.org/multipage/nav-history-apis.html#nrr-details-reason">extensive eligibility criteria</a>, the easiest way to check if the site is eligible is to [test it in Chrome DevTools](https://developer.chrome.com/docs/devtools/application/back-forward-cache).
 
 Let's look deeper by checking a few eligibility criteria that are quite a common cause and easily measurable using lab data.
 
@@ -571,7 +573,7 @@ Another common reason for websites to fall in the bfcache ineligibility category
   content="21.20%",
   classes="big-number",
   sheets_gid="389603749",
-  sql_file=""
+  sql_file="cls_animations.sql"
 )
 }}
 
@@ -582,6 +584,8 @@ When bfcache was first introduced, it brought noticeable improvements to Core We
 Unload event, as well as cache-control:no-store, do not directly affect the page's visual stability. As already mentioned, the concept of bfcache load as a side-effect has this positive impact by eliminating some potential issues affecting metrics directly, such as unsized images or dynamic content. To continue exploring the visual stability aspect of the web, let's check some of the practices that directly impact the CLS.
 
 ### CLS best practices
+
+The following best practices allow you to reduce, or even completely avoid CLS.
 
 #### Explicit dimensions
 
@@ -625,15 +629,15 @@ Fonts can directly impact CLS. When web fonts are loaded asynchronously, a delay
 )
 }}
 
-Using system fonts is one way to fix this issue. However, with 85% of mobile pages using web fonts it is not very likely that they will stop being used any time soon. A way to control the visual stability of a site that uses web fonts is to use the `font-display` property in CSS to control how fonts are loaded and displayed. <a hreflang="en" href="https://web.dev/articles/font-best-practices#choose_an_appropriate_font-display_strategy">Different `font-display` strategies can be used depending on the team's decision about the tradeoff between performance and aesthetics</a>.
+Using system fonts is one way to fix this issue. However, with 85% of mobile pages using web fonts it is not very likely that they will stop being used any time soon. A way to control the visual stability of a site that uses web fonts is to use the `font-display` property in CSS to control how fonts are loaded and displayed. [Different `font-display` strategies can be used depending on the team's decision about the tradeoff between performance and aesthetics](https://web.dev/articles/font-best-practices#choose_an_appropriate_font-display_strategy).
 
 {{ figure_markup(
   image="font-display-usage.png",
   caption="Usage of font-display.",
   description="Bar chart showing the percent of pages that use the various font-display values. 45% of mobile pages use swap, 23% block, 9% auto, 3% fallback, and 1% use optional. The values for desktop are similar.",
   chart_url="https://docs.google.com/spreadsheets/u/1/d/e/2PACX-1vTHmcrit1gMzxfZNeFp9LrA4NQSMEh140fapD4CFQ89knpy6LvEKz7VafGaFGlxCAxTdpLZXaVaq8Pg/pubchart?oid=1458420916&format=interactive",
-  sheets_gid="455989674",
-  sql_file="TODO: get from fonts"
+  sheets_gid="https://docs.google.com/spreadsheets/d/1EkdvJ8e0B9Rr42evC2Ds5Ekwq6gF9oLBW0BA5cmSUT4/edit?gid=455989674#gid=455989674",
+  sql_file="../fonts/performance/styles_font_display.sql"
   )
 }}
 
@@ -659,7 +663,7 @@ Around 11% of all tested mobile and desktop pages are preloading their web fonts
 
 #### Animations
 
-Another cause of unexpected shifts can be <a hreflang="en" href="https://developer.chrome.com/docs/lighthouse/performance/non-composited-animations">non-composited</a> CSS animations. These animations involve changes to properties that impact the layout or appearance of multiple elements, which forces the browser to go through more performance-intensive steps like recalculating styles, reflowing the document, and repainting pixels on the screen. The best practice is to use CSS properties such as `transform` and `opacity` instead.
+Another cause of unexpected shifts can be [non-composited](https://developer.chrome.com/docs/lighthouse/performance/non-composited-animations) CSS animations. These animations involve changes to properties that impact the layout or appearance of multiple elements, which forces the browser to go through more performance-intensive steps like recalculating styles, reflowing the document, and repainting pixels on the screen. The best practice is to use CSS properties such as `transform` and `opacity` instead.
 
 {{ figure_markup(
   content="39%",
@@ -672,11 +676,11 @@ Another cause of unexpected shifts can be <a hreflang="en" href="https://develop
 
 39% of mobile pages and 42% of desktop pages still use non-composited animations, which is a very slight increase from 38% for mobile and 41% for desktop in the analysis from 2022.
 
-### Visual Stability Conclusion {#visual-stability-conclusion}
+### Visual Stability Conclusion
 
 Visual stability of the site can have a big influence on the user experience of the page. Having text shifting around while reading or a button we were just about to click disappear from the viewport can lead to user frustration. The good news is that  Cumulative Layout Shift(CLS) continued to improve in 2024\. That indicates that more and more website owners are adopting good practices such as sizing images and preserving space for dynamic content, as well as optimizing for bfcache eligibility to benefit from this browser feature.
 
-## Conclusion {#conclusion}
+## Conclusion
 
 Web performance continued to improve in 2024, with positive trends across many key metrics. We now have a more comprehensive metric to assess website interactivity—INP—which hopefully should lead to even greater performance optimizations.
 
