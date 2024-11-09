@@ -118,7 +118,7 @@ These are likely some of the reasons behind this continued trajectory:
 {{ figure_markup(
   image="cdn-usage-ranking-mobile.png",
   caption="CDN usage by site popularity on mobile.",
-  description="This bar chart provides a view of CDN usage for mobile sites broken up for top 1,000, 10,000, 100,000, 1 million and 10 million popular sites as per Google CRUX data. For Top 1000, 10,000 sites the CDN adoption is over 60%. The adoption shows decline for lower popularity sites.",
+  description="This bar chart provides a view of CDN usage for mobile sites broken up for top 1,000, 10,000, 100,000, 1 million, 10 million popular sites and all sites usiing rankings given by Google CRUX data. For the top 1,000 and 10,000 sites the CDN adoption is over 60%. The adoption shows decline for lower popularity sites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRaKSyCfdyk5Qva05DCIxB4NPUI6VZASRpDfEIV9QsihS0nuKSEzWGh569LoaOnTW5NgHKTufv8ydlL/pubchart?oid=1083160290&format=interactive",
   sheets_gid="217214696",
   sql_file="cdn_usage_by_site_rank.sql"

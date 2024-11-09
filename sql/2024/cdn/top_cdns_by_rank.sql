@@ -28,7 +28,7 @@ SELECT
   client,
   rank_grouping,
   CASE
-    WHEN rank_grouping = 10000000 THEN 'all'
+    WHEN rank_grouping = 100000000 THEN 'all'
     ELSE FORMAT("%'d", rank_grouping)
   END AS ranking,
   cdn,
