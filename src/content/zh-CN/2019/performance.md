@@ -9,7 +9,7 @@ editors: [rachellcostello]
 translators: [chengxicn]
 discuss: 1762
 results: https://docs.google.com/spreadsheets/d/1zWzFSQ_ygb-gGr1H1BsJCfB7Z89zSIf7GX0UayVEte4/
-rviscomi_bio: Rick Viscomi 是谷歌的高级开发者项目工程师，从事网络透明度的工作，例如 HTTP Archive 和 Chrome UX Report, 并研究网站建设和体验的交集。Rick 是 <a hreflang="en" href="https://www.youtube.com/playlist?list=PLNYkxOF6rcIBGvYSYO-VxOsaYQDw5rifJ">The State of the Web</a>的播主，专家们在其中讨论网络的发展趋势。 Rick 也是网站性能测试指南<a hreflang="en" href="https://usingwpt.com">Using WebPageTest</a>的合著者, 他也经常在 <a hreflang="en" href="https://dev.to/rick_viscomi">dev.to</a>发表关于Web的文章，他的推特是 <a href="https://twitter.com/rick_viscomi">@rick_viscomi</a>.
+rviscomi_bio: Rick Viscomi 是谷歌的高级开发者项目工程师，从事网络透明度的工作，例如 HTTP Archive 和 Chrome UX Report, 并研究网站建设和体验的交集。Rick 是 <a hreflang="en" href="https://www.youtube.com/playlist?list=PLNYkxOF6rcIBGvYSYO-VxOsaYQDw5rifJ">The State of the Web</a>的播主，专家们在其中讨论网络的发展趋势。 Rick 也是网站性能测试指南<a hreflang="en" href="https://usingwpt.com">Using WebPageTest</a>的合著者, 他也经常在 <a hreflang="en" href="https://dev.to/rick_viscomi">dev.to</a>发表关于Web的文章，他的推特是 <a href="https://x.com/rick_viscomi">@rick_viscomi</a>.
 featured_quote: 性能是用户体验的重要组成部分。对于许多网站来说，通过降低页面加载时间来改善用户体验与转化率的提高是一致的。相反，当性能不佳时，用户的转化率就不会像往常那样高，甚至还会在导致沮丧的页面观察到愤怒点击。
 featured_stat_1: 13%
 featured_stat_label_1: 有快速FCP的站点

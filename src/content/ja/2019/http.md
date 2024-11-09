@@ -9,7 +9,7 @@ editors: [rachellcostello]
 translators: [ksakae1216]
 discuss: 1775
 results: https://docs.google.com/spreadsheets/d/1z1gdS3YVpe8J9K3g2UdrtdSPhRywVQRBz5kgBeqCnbw/
-tunetheweb_bio: Barry Pollardはソフトウェア開発者であり、Manningの本 <a hreflang="en" href="https://www.manning.com/books/http2-in-action">HTTP/2 in Action</a> の著者でもあります。彼はウェブは素晴らしいと思っていますが、それをさらに良くしたいと思っています。<a href="https://twitter.com/tunetheweb">@tunetheweb</a> でツイートしたり、<a hreflang="en" href="https://www.tunetheweb.com">www.tunetheweb.com</a> でブログを書いたりしています。
+tunetheweb_bio: Barry Pollardはソフトウェア開発者であり、Manningの本 <a hreflang="en" href="https://www.manning.com/books/http2-in-action">HTTP/2 in Action</a> の著者でもあります。彼はウェブは素晴らしいと思っていますが、それをさらに良くしたいと思っています。<a href="https://x.com/tunetheweb">@tunetheweb</a> でツイートしたり、<a hreflang="en" href="https://www.tunetheweb.com">www.tunetheweb.com</a> でブログを書いたりしています。
 featured_quote: HTTP/2は、ほぼ20年ぶりになるWebのメイン送信プロトコルの初となるメジャーアップデートでした。それは多くの期待を持って到来し、欠点なしで無料のパフォーマンス向上を約束しました。それ以上に、HTTP/1.1が非効率なため強制されていたすべてのハックや回避策をやめることができました。デフォルトでパフォーマンスが向上するため、ドメインのバンドル、分割、インライン化、さらにはシャーディングなどはすべてHTTP/2の世界でアンチパターンになります。
 featured_stat_1: 95%
 featured_stat_label_1: HTTP/2を使用できるグローバルユーザーの割合。
@@ -445,7 +445,7 @@ Linuxディストリビューションの最新バージョン（RHELおよびCe
 
 ApacheとIISがインストールベースのHTTP/2サポートで1​​8％、14％と遅れを取っていることは明らかです。これは（少なくとも部分的に）アップグレードがより困難であるためです。多くのサーバーがこのサポートを簡単に取得するには、多くの場合、OSの完全なアップグレードが必要です。新しいバージョンのOSが標準になると、これが簡単になることを願っています。
 
-ここで、HTTP/2実装に関するコメントはありません（[Apacheが最高の実装の1つであると思います](https://twitter.com/tunetheweb/status/988196156697169920?s=20)）が、これらの各サーバーでHTTP/2を有効にすることの容易さ、またはその欠如に関する詳細です。
+ここで、HTTP/2実装に関するコメントはありません（[Apacheが最高の実装の1つであると思います](https://x.com/tunetheweb/status/988196156697169920?s=20)）が、これらの各サーバーでHTTP/2を有効にすることの容易さ、またはその欠如に関する詳細です。
 
 ## HTTP/2の影響
 HTTP/2の影響は、特にHTTP Archive[方法論](./methodology)を使用して測定するのがはるかに困難です。理想的には、サイトをHTTP/1.1とHTTP/2の両方でクロールし、その差を測定する必要がありますがここで調査している統計では不可能です。さらに、平均的なHTTP/2サイトが平均的なHTTP/1.1サイトよりも高速であるかどうかを測定すると、ここで説明するよりも徹底的な調査を必要とする他の変数が多くなりすぎます。
@@ -576,7 +576,7 @@ HTTP/2の問題の原因の1つは、HTTP/2の優先順位付けの不十分な�
 
 HTTP/2には複雑な優先順位付けモデルがあります（非常に複雑すぎるため、なぜHTTP/3で再検討されているのでしょう！）が、それを適切に尊重するサーバーはほとんどありません。これはHTTP/2の実装がスクラッチになっていないか、サーバーがより高い優先度の要求であることを認識する前に応答は既に送信されている、いわゆる*バッファブロート*が原因である可能性も考えられます。サーバー、TCPスタック、および場所の性質が異なるため、ほとんどのサイトでこれを測定することは困難ですがCDNを使用する場合はこれをより一貫させる必要があります。
 
-[Patrick Meenan](https://twitter.com/patmeenan)は、優先度の高いオンスクリーンイメージを要求する前に、優先度の低いオフスクリーンイメージのロードを意図的にダウンロードしようとする<a hreflang="en" href="https://github.com/pmeenan/http2priorities/tree/master/stand-alone">サンプルテストページ</a>を作成しました。優れたHTTP/2サーバーはこれを認識し、優先度の低い画像を犠牲にして、要求後すぐに優先度の高い画像を送信できるはずです。貧弱なHTTP/2サーバーはリクエストの順番で応答し、優先順位のシグナルを無視します。 [Andy Davies](./contributors#andydavies)には、<a hreflang="en" href="https://github.com/andydavies/http2-prioritization-issues">Patrickのテスト用にさまざまなCDNのステータスを追跡するページ</a>があります。 HTTP Archiveは、クロールの一部としてCDNが使用されるタイミングを識別しこれら2つのデータセットをマージすると、合格または失敗したCDNを使用しているページの割合を知ることができます。
+[Patrick Meenan](https://x.com/patmeenan)は、優先度の高いオンスクリーンイメージを要求する前に、優先度の低いオフスクリーンイメージのロードを意図的にダウンロードしようとする<a hreflang="en" href="https://github.com/pmeenan/http2priorities/tree/master/stand-alone">サンプルテストページ</a>を作成しました。優れたHTTP/2サーバーはこれを認識し、優先度の低い画像を犠牲にして、要求後すぐに優先度の高い画像を送信できるはずです。貧弱なHTTP/2サーバーはリクエストの順番で応答し、優先順位のシグナルを無視します。 [Andy Davies](./contributors#andydavies)には、<a hreflang="en" href="https://github.com/andydavies/http2-prioritization-issues">Patrickのテスト用にさまざまなCDNのステータスを追跡するページ</a>があります。 HTTP Archiveは、クロールの一部としてCDNが使用されるタイミングを識別しこれら2つのデータセットをマージすると、合格または失敗したCDNを使用しているページの割合を知ることができます。
 
 <figure>
   <table>

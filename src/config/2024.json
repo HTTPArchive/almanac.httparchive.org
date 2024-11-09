@@ -1,8 +1,8 @@
 {
   "settings": [
     {
-      "is_live": false,
-      "supported_languages": ["en"],
+      "is_live": true,
+      "supported_languages": ["en","es","fr","hi","it","ja","nl","pt","ru","tr","uk","zh-CN","zh-TW"],
       "ebook_languages": []
     }
   ],
@@ -86,8 +86,7 @@
           "part": "II",
           "chapter_number": "10",
           "title": "Accessibility",
-          "slug": "accessibility",
-          "todo": true
+          "slug": "accessibility"
         },
         {
           "part": "II",

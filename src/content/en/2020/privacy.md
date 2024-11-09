@@ -25,7 +25,7 @@ This chapter of the Web Almanac gives an overview of the current state of privac
 
 ## Online tracking
 
-Third-party trackers collect user data to build up profiles of the user's behavior to be monetized for advertising purposes. This raises privacy concerns with users on the web, which resulted in the emergence of various tracking protections. However, as we will see in this section, online tracking is still widely used. Not only does it have a negative impact on privacy, online tracking has a <a hreflang="en" href="https://gerrymcgovern.com/calculating-the-pollution-cost-of-website-analytics-part-1/">huge impact on the environment</a> and avoiding it can lead to [better performance](https://twitter.com/fr3ino/status/1000166112615714816).
+Third-party trackers collect user data to build up profiles of the user's behavior to be monetized for advertising purposes. This raises privacy concerns with users on the web, which resulted in the emergence of various tracking protections. However, as we will see in this section, online tracking is still widely used. Not only does it have a negative impact on privacy, online tracking has a <a hreflang="en" href="https://gerrymcgovern.com/calculating-the-pollution-cost-of-website-analytics-part-1/">huge impact on the environment</a> and avoiding it can lead to [better performance](https://x.com/fr3ino/status/1000166112615714816).
 
 We examine the prominence of the most common types of [third-party](./third-party) tracking, namely by means of third-party cookies and the use of fingerprinting. Online tracking is not limited to just these two techniques, new ones keep arising to circumvent existing countermeasures.
 

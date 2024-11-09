@@ -258,7 +258,7 @@ With this perspective in mind about what use of native/standard features looks l
 
 You might expect that many of the elements we measured are used only on a single web page, but in fact all of the 5,048 elements appear on more than one page.  The fewest pages an element in our dataset appears on is 15.  About a fifth of them occur on more than 100 pages.  About 7% occur on more than 1,000 pages.
 
-To help analyze the data, I hacked together a <a hreflang="en" href="https://rainy-periwinkle.glitch.me">little tool with Glitch</a>.  You can use this tool yourself, and please share a permalink back with the [@HTTPArchive](https://twitter.com/HTTPArchive) along with your observations. (Tommy Hodgins has also built a similar <a hreflang="en" href="https://github.com/tomhodgins/hade">CLI tool</a> which you can use to explore.)
+To help analyze the data, I hacked together a <a hreflang="en" href="https://rainy-periwinkle.glitch.me">little tool with Glitch</a>.  You can use this tool yourself, and please share a permalink back with the [@HTTPArchive](https://x.com/HTTPArchive) along with your observations. (Tommy Hodgins has also built a similar <a hreflang="en" href="https://github.com/tomhodgins/hade">CLI tool</a> which you can use to explore.)
 
 Let's look at some data.
 
