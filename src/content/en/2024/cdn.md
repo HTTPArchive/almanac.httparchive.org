@@ -2,15 +2,15 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: CDN
 description: CDN chapter of the 2024 Web Almanac covering adoption of CDNs, top CDN players, the impact of CDNs on TLS, HTTP/2+, Zstandard, Brotli, Early Hints, and Client Hints adoption
-authors: [joeviggiano, pgjaiganesh, alexmoening]
+authors: [joeviggiano, pgjaiganesh, AlexMoening]
 reviewers: [carolinescholles]
 editors: [carolinescholles]
-analysts: [pgjaiganesh, alexmoening]
+analysts: [pgjaiganesh, AlexMoening]
 translators: []
 results: https://docs.google.com/spreadsheets/d/15YXQQjyoQ0Bnfw9KNSz_YuGDiCfW978_WKEHvDXjdm4/
 joeviggiano_bio: Joe Viggiano is a Principal Solutions Architect at Amazon Web Services helping Media & Entertainment customers deliver media content at scale.
 pgjaiganesh_bio: Jaiganesh Girinathan is a Principal Edge Solutions Architect at Amazon Web Services.
-alexmoening_bio: Alex Moening is a Senior Edge Solutions Architect at Amazon Web Services.
+AlexMoening_bio: Alex Moening is a Senior Edge Solutions Architect at Amazon Web Services.
 featured_quote: The benefits of utilizing CDNs have expanded beyond simple performance improvements. In 2024, CDNs play a crucial role in enabling global scalability, enhancing security postures, and facilitating the deployment of complex, distributed applications. By pushing more logic to the edge, businesses can create more responsive and personalized user experiences while reducing the load on origin servers.
 featured_stat_1: 70%
 featured_stat_label_1: Sites in top 1,000 using a CDN
@@ -304,7 +304,6 @@ When we look closely at how TLS is being used by different device types (Mobile 
 
 While origin servers have begun to catch up with adoption of TLS 1.3, this further shows how CDNs drive newer features quicker than when web server operators have to perform software and hardware upgrades for the same new features.
 
-
 {{ figure_markup(
   image="tls-version-mobile-3p.png",
   caption="Distribution of TLS version for third-party requests (mobile).",
@@ -418,6 +417,3 @@ Content Delivery Networks are becoming increasingly vital to the internet's infr
 We recommend readers visit the [HTTP](./http) and [Security](./security) chapters of the 2024 Web Almanac where several topics in this chapter are expanded on and provide data through a different lens.
 
 Join us again in 2025 as we collect and analyze more data to see what new insights we can share with our readers.
-
-
-

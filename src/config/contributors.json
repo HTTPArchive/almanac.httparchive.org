@@ -251,6 +251,17 @@
     "twitter": "avolakatos",
     "website": "http://alexlakatos.com/"
   },
+  "AlexMoening": {
+    "avatar_url": "166733339",
+    "github": "AlexMoening",
+    "name": "Alex Moening",
+    "teams": {
+      "2024": [
+        "analysts",
+        "authors"
+      ]
+    }
+  },
   "alexnj": {
     "avatar_url": "683500",
     "github": "alexnj",
@@ -851,6 +862,17 @@
       ]
     },
     "twitter": "carlos_catb"
+  },
+  "carolinescholles": {
+    "avatar_url": "112904072",
+    "github": "carolinescholles",
+    "name": "Caroline Scholles",
+    "teams": {
+      "2024": [
+        "reviewers",
+        "editors"
+      ]
+    }
   },
   "clottman": {
     "avatar_url": "4480480",
@@ -1783,6 +1805,18 @@
     },
     "twitter": "SilentJMA"
   },
+  "pgjaiganesh": {
+    "avatar_url": "1788195",
+    "github": "pgjaiganesh",
+    "name": "Jaiganesh Girinatha",
+    "teams": {
+      "2024": [
+        "analysts",
+        "authors"
+      ]
+    },
+    "twitter": "SilentJMA"
+  },
   "jroakes": {
     "avatar_url": "10191545",
     "github": "jroakes",
@@ -2001,6 +2035,9 @@
     "teams": {
       "2022": [
         "analysts",
+        "authors"
+      ],
+      "2024": [
         "authors"
       ]
     }
