@@ -1,65 +1,65 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Ecommerce
-description: This chapter explores trends in the e-commerce ecosystem, examining platform popularity, performance metrics, and regional differences. Covering Core Web Vitals, Lighthouse scores, and accessibility, it highlights how platforms like WooCommerce and Shopify dominate, while newer players gain traction in specific regions and niches.
+description: This chapter explores trends in the ecommerce ecosystem, examining platform popularity, performance metrics, and regional differences. Covering Core Web Vitals, Lighthouse scores, and accessibility, it highlights how platforms like WooCommerce and Shopify dominate, while newer players gain traction in specific regions and niches.
 authors: [JonathanPagel]
 reviewers: [nrllh]
 analysts: [JonathanPagel]
 editors: [tunetheweb]
 translators: []
 results: https://docs.google.com/spreadsheets/d/1LABlisQFCLjOyEd43tdUb-Hxs6pGuboTresntMk71Lc/edit?gid=1075995078#gid=1075995078
-JonathanPagel_bio: Jonathan Pagel studied E-Commerce in his bachelor's degree and has since been interested in the field, particularly in the areas of speed optimization and accessibility for shops and websites. Currently, he is freelancing in this field and pursuing a Master’s in AI and Society.
+JonathanPagel_bio: Jonathan Pagel studied ecommerce in his bachelor's degree and has since been interested in the field, particularly in the areas of speed optimization and accessibility for shops and websites. Currently, he is freelancing in this field and pursuing a Master’s in AI and Society.
 featured_quote: TODO
 featured_stat_1: 37%
-featured_stat_label_1: Of websites using e-commerce platforms, 37% are built with WooCommerce, the most popular platform.
+featured_stat_label_1: Of websites using ecommerce platforms, 37% are built with WooCommerce, the most popular platform.
 featured_stat_2: TODO
 featured_stat_label_2: TODO
 featured_stat_3: TODO
 featured_stat_label_3: TODO
 ---
 
-## **Introduction**
+## Introduction
 
-In this chapter, we review the state of e-commerce on the web. An eCommerce website is an "online store" that sells physical or digital products. When building your online store, there are several types of platforms to choose from:
+In this chapter, we review the state of ecommerce on the web. An eCommerce website is an "online store" that sells physical or digital products. When building your online store, there are several types of platforms to choose from:
 
 1. **Software-as-a-Service (SaaS)** platforms like Shopify minimize the technical knowledge required to open and manage an online store. They do this by restricting access to the codebase and removing the need to worry about hosting.
 2. **Platform-as-a-Service (PaaS)** solutions, such as Adobe Commerce (Magento), provide an optimized technology stack and hosting environment while allowing full codebase access.
 3. **Self-hosted platforms**, such as WooCommerce.
-4. **Headless platforms**, like CommerceTools, that are "API-as-a-service." They provide the e-commerce backend as a SaaS, while the retailer is responsible for building and hosting the frontend experience.
+4. **Headless platforms**, like CommerceTools, that are "API-as-a-service." They provide the ecommerce backend as a SaaS, while the retailer is responsible for building and hosting the frontend experience.
 
 Note that some platforms may fall into more than one of these categories. For example, Shopware offers SaaS, PaaS, and self-hosted options.
 
-Our goal is to give an overview of the current state of the e-commerce ecosystem as well as its development in the last year. The first part focuses on ranking the platforms based on their usage and Core Web Vitals/Lighthouse performance results. The second part is more experimental. We checked different eCom technologies and how they have evolved over time.
+Our goal is to give an overview of the current state of the ecommerce ecosystem as well as its development in the last year. The first part focuses on ranking the platforms based on their usage and Core Web Vitals/Lighthouse performance results. The second part is more experimental. We checked different eCom technologies and how they have evolved over time.
 
-## **Platform Detection**
+## Platform Detection
 
-We used an open-source tool called [Wappalyzer](https://www.wappalyzer.com/) to detect technologies used by websites. Wappalyzer can identify content management systems, e-commerce platforms, JavaScript frameworks and libraries, and more.
+We used an open-source tool called [Wappalyzer](https://www.wappalyzer.com/) to detect technologies used by websites. Wappalyzer can identify content management systems, ecommerce platforms, JavaScript frameworks and libraries, and more.
 
-## **Limitations**
+## Limitations
 
 Our methodology has some limitations that may affect its accuracy.
 
-### **Limitations in Recognizing E-commerce Sites**
+### Limitations in Recognizing ecommerce Sites
 
-Firstly, there are some limitations to our ability to recognize an e-commerce site:
+Firstly, there are some limitations to our ability to recognize an ecommerce site:
 
-* Wappalyzer must have detected an e-commerce platform.
-* If the e-commerce platform is hosted within a subdirectory of the website, it cannot be detected since only home pages are analyzed.
-* A headless implementation reduces our ability to detect the platform in use. One of the primary methods to identify an e-commerce platform is by recognizing standard HTML or JavaScript components. Therefore, a headless website that does not use the e-commerce platform front end makes it challenging to detect.
+* Wappalyzer must have detected an ecommerce platform.
+* If the ecommerce platform is hosted within a subdirectory of the website, it cannot be detected since only home pages are analyzed.
+* A headless implementation reduces our ability to detect the platform in use. One of the primary methods to identify an ecommerce platform is by recognizing standard HTML or JavaScript components. Therefore, a headless website that does not use the ecommerce platform front end makes it challenging to detect.
 
-### **Accuracy of Metrics and Commentary**
+### Accuracy of Metrics and Commentary
 
 The accuracy of metrics and commentary may also be affected by the following limitations:
 
-* Trends observed may be influenced by changes in detection accuracy rather than reflecting industry trends. For example, an e-commerce platform may appear to become more popular simply because the detection method has improved.
+* Trends observed may be influenced by changes in detection accuracy rather than reflecting industry trends. For example, an ecommerce platform may appear to become more popular simply because the detection method has improved.
 * All website requests were made from the United States. If a website redirects based on geographic location, the final version analyzed will be the U.S.-specific one.
 * We used the [Chrome UX Report](https://developer.chrome.com/docs/crux) dataset, which includes only data from real-world Chrome sessions, not representing the user experience across all browsers.
 
-## **Top E-Commerce Platforms Over The Years**
+## Top ecommerce Platforms Over The Years
 
-In total, we detected nearly 2.5 million websites built on e-commerce platforms in 2024, representing approximately 20% of all the websites analyzed. The most widely used e-commerce platform is WooCommerce, followed by Shopify and Squarespace.
+In total, we detected nearly 2.5 million websites built on ecommerce platforms in 2024, representing approximately 20% of all the websites analyzed. The most widely used ecommerce platform is WooCommerce, followed by Shopify and Squarespace.
 
-WooCommerce (38%) and Shopify (18%) dominate the e-commerce platform landscape. OpenCart is the last of the 362 detected shop systems that manage to secure a share above 1% of the market.
+WooCommerce (38%) and Shopify (18%) dominate the ecommerce platform landscape. OpenCart is the last of the 362 detected shop systems that manage to secure a share above 1% of the market.
 
 {{ figure_markup(
   image="ecommerce-platforms-distribution.png",
@@ -70,7 +70,6 @@ WooCommerce (38%) and Shopify (18%) dominate the e-commerce platform landscape. 
   sql_file="top_ecommerce.sql"
   )
 }}
-
 
 Over the years, the top five platforms have remained relatively consistent. However, Wix eCommerce surpassed PrestaShop in 2023, moving from 5th to 4th place. Trends indicate that the open-source project WooCommerce is slightly losing market share, decreasing from 37.3% in 2022 to 35.8% in 2024, while its commercial competitor, Shopify, is gaining market share in the same period (increasing from 17.7% to 19.6%).
 {{ figure_markup(
@@ -83,9 +82,9 @@ Over the years, the top five platforms have remained relatively consistent. Howe
   )
 }}
 
-## **Top E-Commerce Platforms By Website Popularity**
+## Top ecommerce platforms by popularity
 
-Using the Chrome User Experience Report data, we looked at how popular individual websites are. Our data shows that only a few e-commerce platforms are represented in the top 1,000 websites, while about 20% of the top 10 million websites use an e-commerce platform. This difference could be because the top 1,000 sites often use custom solutions.
+Using the Chrome User Experience Report data, we looked at how popular individual websites are. Our data shows that only a few ecommerce platforms are represented in the top 1,000 websites, while about 20% of the top 10 million websites use an ecommerce platform. This difference could be because the top 1,000 sites often use custom solutions.
 {{ figure_markup(
   image="platform-adoption-by-rank.png",
   caption="Platform adoption by rank for desktop and mobile.",
@@ -107,21 +106,20 @@ In the top 100,000 websites, Salesforce Commerce Cloud and Amazon Webstore emerg
 | 4 | Magento | WooCommerce | PrestaShop | PrestaShop |
 | 5 | SAP Commerce Cloud | Amazon Webstore | 1C-Bitrix | Magento |
 
-## **Top E-Commerce Platform By Country**
+## Top ecommerce platform by country
 
 There are quite a few differences in preferences between countries. We used additional data from the CrUX dataset, which categorizes the most visited websites per country. For example, google.com, while an American website, is also one of the most visited websites by all German internet users. We can see that three leading platforms take the top spot in each country: WooCommerce (violet), Shopify (green), and 1C-Bitrix (red). The following map visualizes only these three due to the limitations of Google Sheets.
 {{ figure_markup(
   image="top-ecommerce-platform-by-country.png",
-  caption="Top E-Commerce Platform by Country.",
-  description="Map showing the top e-commerce platforms by country based on popularity. The map highlights three platforms: WooCommerce (in violet), Shopify (in green), and 1C-Bitrix (in red). The data, sourced from the CrUX dataset, reveals regional preferences, with WooCommerce leading in the Americas and parts of Europe, Shopify popular in a few regions, and 1C-Bitrix dominating in Russia and nearby countries.",
+  caption="Top ecommerce Platform by Country.",
+  description="Map showing the top ecommerce platforms by country based on popularity. The map highlights three platforms: WooCommerce (in violet), Shopify (in green), and 1C-Bitrix (in red). The data, sourced from the CrUX dataset, reveals regional preferences, with WooCommerce leading in the Americas and parts of Europe, Shopify popular in a few regions, and 1C-Bitrix dominating in Russia and nearby countries.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTQYSD_rO7eGM-ViE3WD7wQOV0itRwjmNy1lkKOyeF7L_b5EDvDlHjAgIzKBnVwExUzC_PSbg0t-3k5/pubchart?oid=826337660&format=interactive",
   sheets_gid="1132201023",
   sql_file="top_shopsystem_by_geo.sql"
   )
 }}
 
-
-## **Core Web Vitals in E-Commerce**
+## Core Web Vitals in ecommerce
 
 Google's Core Web Vitals are three key performance metrics designed to evaluate crucial aspects of user experience, focusing on loading speed, interactivity, and visual stability.
 Introduced in 2020 and adopted as a ranking signal in 2021, those metrics, among many others, determine how high a page is ranking in the Google search results.
@@ -135,7 +133,7 @@ Here's the percentage of sites on each platform that achieve a "good" score, mea
 {{ figure_markup(
   image="mobile-core-web-vitals-performance.png",
   caption="Mobile year-over-year Core Web Vitals performance per platform.",
-  description="Bar chart illustrating the year-over-year performance of Core Web Vitals for mobile across various e-commerce platforms from 2022 to 2024. The chart highlights improvement trends across platforms such as WooCommerce, Shopify, Squarespace Commerce, and others, with increasing percentages of mobile websites meeting good Core Web Vitals standards over the years.",
+  description="Bar chart illustrating the year-over-year performance of Core Web Vitals for mobile across various ecommerce platforms from 2022 to 2024. The chart highlights improvement trends across platforms such as WooCommerce, Shopify, Squarespace Commerce, and others, with increasing percentages of mobile websites meeting good Core Web Vitals standards over the years.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTQYSD_rO7eGM-ViE3WD7wQOV0itRwjmNy1lkKOyeF7L_b5EDvDlHjAgIzKBnVwExUzC_PSbg0t-3k5/pubchart?oid=218915083&format=interactive",
   sheets_gid="871753253",
   sql_file="core_web_vitals_yoy.sql"
@@ -144,7 +142,7 @@ Here's the percentage of sites on each platform that achieve a "good" score, mea
 
 Some platforms made impressive improvements, like Squarespace, which increased from 33% good scores in 2022 to 60% in 2024\. Other platforms, like Magento and WooCommerce, are still struggling with real-world user experiences. This chart, and the other charts of this section, consider mobile performance only since most web traffic comes from mobile, and it’s more challenging to reach top scores.
 
-#### **Largest Contentful Paint (LCP)**
+#### Largest Contentful Paint (LCP)
 
 Largest Contentful Paint (LCP) measures how long it takes for the main content of a webpage to load and become visible to users. It specifically tracks the loading time of the largest element on the screen, like a big image or a block of text, which makes it a good indicator of how quickly users can see something meaningful on your page.
 
@@ -155,57 +153,54 @@ Despite these challenges, the top 10 eCommerce platforms have shown significant 
 {{ figure_markup(
   image="mobile-lcp-performance.png",
   caption="Mobile year-over-year Platform LCP performance.",
-  description="Bar chart displaying the year-over-year performance for Largest Contentful Paint (LCP) on mobile devices across various e-commerce platforms from 2022 to 2024. The chart illustrates progressive improvement in the percentage of mobile websites achieving good LCP scores for platforms including WooCommerce, Shopify, Squarespace Commerce, and others, indicating enhanced load performance over the years.",
+  description="Bar chart displaying the year-over-year performance for Largest Contentful Paint (LCP) on mobile devices across various ecommerce platforms from 2022 to 2024. The chart illustrates progressive improvement in the percentage of mobile websites achieving good LCP scores for platforms including WooCommerce, Shopify, Squarespace Commerce, and others, indicating enhanced load performance over the years.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTQYSD_rO7eGM-ViE3WD7wQOV0itRwjmNy1lkKOyeF7L_b5EDvDlHjAgIzKBnVwExUzC_PSbg0t-3k5/pubchart?oid=523370223&format=interactive",
   sheets_gid="871753253",
   sql_file="core_web_vitals_yoy.sql"
   )
 }}
 
-
-#### **Cumulative Layout Shift (CLS)**
+#### Cumulative Layout Shift (CLS)
 
 Cumulative Layout Shift (CLS) measures how stable the layout of a page is by tracking how much content unexpectedly shifts as the page loads. A good CLS score means that 75% or more of a website's visits register a score of 0.1 or lower, indicating a stable, user-friendly experience.
 
 {{ figure_markup(
   image="mobile-cls-performance.png",
   caption="Mobile year-over-year Platform CLS performance.",
-  description="Bar chart showcasing the year-over-year performance for Cumulative Layout Shift (CLS) on mobile across various e-commerce platforms from 2022 to 2024. This chart highlights improvement trends in the percentage of mobile websites meeting good CLS scores for platforms such as WooCommerce, Shopify, Squarespace Commerce, Wix eCommerce, and others, reflecting increased stability and reduced layout shifts over time.",
+  description="Bar chart showcasing the year-over-year performance for Cumulative Layout Shift (CLS) on mobile across various ecommerce platforms from 2022 to 2024. This chart highlights improvement trends in the percentage of mobile websites meeting good CLS scores for platforms such as WooCommerce, Shopify, Squarespace Commerce, Wix eCommerce, and others, reflecting increased stability and reduced layout shifts over time.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTQYSD_rO7eGM-ViE3WD7wQOV0itRwjmNy1lkKOyeF7L_b5EDvDlHjAgIzKBnVwExUzC_PSbg0t-3k5/pubchart?oid=1657299227&format=interactive",
   sheets_gid="871753253",
   sql_file="core_web_vitals_yoy.sql"
   )
 }}
 
-
 In comparison to LCP, improvements in CLS have been less dramatic. Many platforms have only made modest progress, with Magento struggling more than others. WooCommerce, while facing challenges in other metrics, performs exceptionally well in CLS, similar to many other platforms.
 
-#### **Interaction to Next Paint (INP)**
+#### Interaction to Next Paint (INP)
 
 INP captures the time taken from the moment a user interacts with a page (e.g., clicking a button) to when the browser visually responds to that interaction. A good [INP score is 200 milliseconds or less](https://web.dev/articles/inp), which ensures a smooth and responsive experience.
 
 {{ figure_markup(
   image="mobile-inp-performance.png",
   caption="Mobile year-over-year Platform INP performance.",
-  description="Bar chart illustrating the year-over-year performance for Interaction to Next Paint (INP) on mobile across various e-commerce platforms from 2022 to 2024. The chart shows improvement trends in the percentage of mobile websites achieving good INP scores for platforms including WooCommerce, Shopify, Squarespace Commerce, and others, reflecting enhanced interactivity and response times over time.",
+  description="Bar chart illustrating the year-over-year performance for Interaction to Next Paint (INP) on mobile across various ecommerce platforms from 2022 to 2024. The chart shows improvement trends in the percentage of mobile websites achieving good INP scores for platforms including WooCommerce, Shopify, Squarespace Commerce, and others, reflecting enhanced interactivity and response times over time.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTQYSD_rO7eGM-ViE3WD7wQOV0itRwjmNy1lkKOyeF7L_b5EDvDlHjAgIzKBnVwExUzC_PSbg0t-3k5/pubchart?oid=596833810&format=interactive",
   sheets_gid="871753253",
   sql_file="core_web_vitals_yoy.sql"
   )
 }}
 
-
 While most platforms have improved their INP scores, some still lag behind, including Magento and BigCommerce, with pass rates of 49% and 67%, respectively. However, most platforms have a pass rate above 75%, indicating substantial progress across the industry.
 
-## **Lighthouse**
+## Lighthouse
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) is an open-source, automated tool for auditing web page quality. It provides metrics and reports on aspects like performance, accessibility, best practices, and search engine optimization (SEO).
 
 It generates reports with lab data that offer developers actionable suggestions for enhancing websites. However, it's important to note that Lighthouse scores do not directly impact the real-world field data collected by [CrUX](https://developers.google.com/web/tools/chrome-user-experience-report).  The HTTP Archive runs Lighthouse on mobile and desktop web pages, simulating a [slow 4G connection with throttled CPU performance](https://almanac.httparchive.org/en/2022/methodology#lighthouse). Lighthouse Performance is a lab-based assessment of website performance tailored to specific test profiles for desktop and mobile users. To better understand the differences between both metrics, refer t[o this article](https://web.dev/articles/lab-and-field-data-differences).
 
-While Core Web Vitals offer real-world data, they provide a limited set of metrics. Lighthouse, on the other hand, gives us lab data for a wide variety of metrics. You can also run a Lighthouse test for this page using Chrome DevTools. In the following section, we focus on e-commerce systems that were detected more than 50,000 times to emphasize the systems people commonly use and recognize in our charts. However, the complete data is available in the sheets, and for exceptional cases, we also mention smaller shop systems.
+While Core Web Vitals offer real-world data, they provide a limited set of metrics. Lighthouse, on the other hand, gives us lab data for a wide variety of metrics. You can also run a Lighthouse test for this page using Chrome DevTools. In the following section, we focus on ecommerce systems that were detected more than 50,000 times to emphasize the systems people commonly use and recognize in our charts. However, the complete data is available in the sheets, and for exceptional cases, we also mention smaller shop systems.
 
-### Performance score
+### Performance
 
 The Lighthouse [performance score](https://web.dev/performance-scoring/) is a metric that summarizes the overall performance of a web page, mainly focusing on how quickly and smoothly it loads and becomes usable for visitors. This score ranges from 0 to 100, where higher scores indicate better performance.
 
@@ -215,8 +210,8 @@ We can see that Wix eCommerce performs very well on both desktop and mobile comp
 
 {{ figure_markup(
   image="median-lighthouse-performance-score.png",
-  caption="Median Lighthouse performance score for various e-commerce platforms on desktop and mobile.",
-  description="Bar chart comparing the median Lighthouse performance scores across different e-commerce platforms for desktop and mobile devices in 2024.",
+  caption="Median Lighthouse performance score for various ecommerce platforms on desktop and mobile.",
+  description="Bar chart comparing the median Lighthouse performance scores across different ecommerce platforms for desktop and mobile devices in 2024.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTQYSD_rO7eGM-ViE3WD7wQOV0itRwjmNy1lkKOyeF7L_b5EDvDlHjAgIzKBnVwExUzC_PSbg0t-3k5/pubchart?oid=31552374&format=interactive",
   sheets_gid="1875368844",
   sql_file="median_lighthouse_score_ecommsites.sql"
@@ -225,7 +220,7 @@ We can see that Wix eCommerce performs very well on both desktop and mobile comp
 
 If we lower the threshold to platforms that appear at least 5,000 times instead of 50,000 times, Gumroad scores very well, with a median score of 87 on desktop and 59 on mobile. Additionally, Argentina's most popular shop system, Tiendanube, also scores well, with 74 on desktop and 58 on mobile.
 
-### Accessibility score
+### Accessibility
 
 Accessibility is an increasingly important topic, not just for moral reasons but also for legal reasons. Lighthouse uses the [Axe framework](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md) to determine the accessibility score. The accessibility score shows how easy it is for everyone, including people with disabilities, to use your website. The score ranges from 0 to 100, with a higher number meaning the website is easier for more people to use.
 
@@ -235,8 +230,8 @@ It's important to note that a good accessibility score does not necessarily mean
 
 {{ figure_markup(
   image="median-lighthouse-accessibility-score.png",
-  caption="Median Lighthouse accessibility score for various e-commerce platforms on desktop and mobile.",
-  description="Bar chart showing median Lighthouse accessibility scores across e-commerce platforms on desktop and mobile in 2024. Squarespace Commerce, Wix eCommerce, and WooCommerce have high scores, indicating strong accessibility efforts. Shopify also scores well, while PrestaShop, Magento, and 1C-Bitrix have slightly lower scores, but still perform reasonably.",
+  caption="Median Lighthouse accessibility score for various ecommerce platforms on desktop and mobile.",
+  description="Bar chart showing median Lighthouse accessibility scores across ecommerce platforms on desktop and mobile in 2024. Squarespace Commerce, Wix eCommerce, and WooCommerce have high scores, indicating strong accessibility efforts. Shopify also scores well, while PrestaShop, Magento, and 1C-Bitrix have slightly lower scores, but still perform reasonably.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTQYSD_rO7eGM-ViE3WD7wQOV0itRwjmNy1lkKOyeF7L_b5EDvDlHjAgIzKBnVwExUzC_PSbg0t-3k5/pubchart?oid=1033635068&format=interactive",
   sheets_gid="1875368844",
   sql_file="median_lighthouse_score_ecommsites.sql"
@@ -251,8 +246,8 @@ The Lighthouse SEO score shows how well a website is set up to be found by searc
 
 {{ figure_markup(
   image="median-lighthouse-seo-score.png",
-  caption="Median Lighthouse SEO score for various e-commerce platforms on desktop and mobile.",
-  description="Bar chart displaying median Lighthouse SEO scores across e-commerce platforms on both desktop and mobile devices in 2024. Most platforms, including Squarespace Commerce, WooCommerce, and Shopify, consistently achieve high SEO scores, reflecting strong SEO practices across the industry. Wix eCommerce scores a perfect 100 for mobile and desktop.",
+  caption="Median Lighthouse SEO score for various ecommerce platforms on desktop and mobile.",
+  description="Bar chart displaying median Lighthouse SEO scores across ecommerce platforms on both desktop and mobile devices in 2024. Most platforms, including Squarespace Commerce, WooCommerce, and Shopify, consistently achieve high SEO scores, reflecting strong SEO practices across the industry. Wix eCommerce scores a perfect 100 for mobile and desktop.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTQYSD_rO7eGM-ViE3WD7wQOV0itRwjmNy1lkKOyeF7L_b5EDvDlHjAgIzKBnVwExUzC_PSbg0t-3k5/pubchart?oid=2064035544&format=interactive",
   sheets_gid="1875368844",
   sql_file="median_lighthouse_score_ecommsites.sql"
@@ -267,8 +262,8 @@ The Best practices score shows how well your website follows general rules for g
 
 {{ figure_markup(
   image="median-lighthouse-best-practices-score.png",
-  caption="Median Lighthouse best practices score for various e-commerce platforms on desktop and mobile.",
-  description="Bar chart showing median Lighthouse best practices scores for e-commerce platforms on desktop and mobile in 2024. Squarespace Commerce leads with high scores, achieving a perfect 100 on desktop and 96 on mobile. WooCommerce, Wix eCommerce, Shopify, and PrestaShop maintain consistent scores around 78–79, while 1C-Bitrix has the lowest scores, showing potential room for improvement in best practices compliance.",
+  caption="Median Lighthouse best practices score for various ecommerce platforms on desktop and mobile.",
+  description="Bar chart showing median Lighthouse best practices scores for ecommerce platforms on desktop and mobile in 2024. Squarespace Commerce leads with high scores, achieving a perfect 100 on desktop and 96 on mobile. WooCommerce, Wix eCommerce, Shopify, and PrestaShop maintain consistent scores around 78–79, while 1C-Bitrix has the lowest scores, showing potential room for improvement in best practices compliance.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTQYSD_rO7eGM-ViE3WD7wQOV0itRwjmNy1lkKOyeF7L_b5EDvDlHjAgIzKBnVwExUzC_PSbg0t-3k5/pubchart?oid=1049035792&format=interactive",
   sheets_gid="1875368844",
   sql_file="median_lighthouse_score_ecommsites.sql"
@@ -277,11 +272,11 @@ The Best practices score shows how well your website follows general rules for g
 
 Squarespace is leading by far among platforms with more than 50,000 pages in our dataset, with a 22-point difference over the second place, WooCommerce.
 
-## **Payment providers**
+## Payment providers
 
-The detection of payment providers is not as advanced or precise as the detection of different e-commerce platforms. This may be because we only analyze the home page rather than the entire website, which might not provide clear indications of the payment providers used. You can refer to the [checkpoint on the Wappalyzer GitHub](https://github.com/HTTPArchive/wappalyzer) profile to understand how different payment providers are detected. Multiple payment providers can be used on the same website. In such cases, the website is counted for each payment provider detected.
+The detection of payment providers is not as advanced or precise as the detection of different ecommerce platforms. This may be because we only analyze the home page rather than the entire website, which might not provide clear indications of the payment providers used. You can refer to the [checkpoint on the Wappalyzer GitHub](https://github.com/HTTPArchive/wappalyzer) profile to understand how different payment providers are detected. Multiple payment providers can be used on the same website. In such cases, the website is counted for each payment provider detected.
 
-The following section focuses on each website with detected payment providers, even if no e-commerce system was identified.
+The following section focuses on each website with detected payment providers, even if no ecommerce system was identified.
 
 The data reveals that PayPal is the most commonly detected payment method on mobile websites, appearing on 3.48% of all pages in the dataset. This means PayPal was found on approximately 560,000 mobile pages out of more than 16 million analyzed.
 
@@ -290,7 +285,7 @@ Apple Pay ranks second, being detected more frequently than Google Pay, which sh
 {{ figure_markup(
   image="mobile-payment-provider-distribution.png",
   caption="Mobile year-over-year payment provider distribution.",
-  description="Bar chart showing the distribution of payment providers used on mobile e-commerce sites from 2022 to 2024. PayPal remains the most popular payment provider, followed by Apple Pay, Shop Pay, and Visa. The chart indicates a gradual increase in adoption for most providers over the years.",
+  description="Bar chart showing the distribution of payment providers used on mobile ecommerce sites from 2022 to 2024. PayPal remains the most popular payment provider, followed by Apple Pay, Shop Pay, and Visa. The chart indicates a gradual increase in adoption for most providers over the years.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTQYSD_rO7eGM-ViE3WD7wQOV0itRwjmNy1lkKOyeF7L_b5EDvDlHjAgIzKBnVwExUzC_PSbg0t-3k5/pubchart?oid=611186794&format=interactive",
   sheets_gid="1631427419",
   sql_file="top_payment_yoy.sql"
@@ -299,8 +294,7 @@ Apple Pay ranks second, being detected more frequently than Google Pay, which sh
 
 ## Conclusion
 
-E-commerce is still evolving, with platform preferences varying by region and website size. While WooCommerce remains the go-to platform for many, Shopify has steadily gained ground, especially among higher-traffic websites. Interestingly, platforms like Wix eCommerce perform well in terms of user experience metrics despite being more popular with smaller sites. Overall, we can observe improvements in most metrics, from performance to accessibility, over the past few years, benefiting everyone.
+ecommerce is still evolving, with platform preferences varying by region and website size. While WooCommerce remains the go-to platform for many, Shopify has steadily gained ground, especially among higher-traffic websites. Interestingly, platforms like Wix eCommerce perform well in terms of user experience metrics despite being more popular with smaller sites. Overall, we can observe improvements in most metrics, from performance to accessibility, over the past few years, benefiting everyone.
 
-While e-commerce platforms are diverse and well distributed among different providers, a few key players dominate technologies like payment systems. It will be interesting to see how this landscape continues to evolve in the coming years.
-
+While ecommerce platforms are diverse and well distributed among different providers, a few key players dominate technologies like payment systems. It will be interesting to see how this landscape continues to evolve in the coming years.
 
