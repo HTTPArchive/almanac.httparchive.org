@@ -9,7 +9,7 @@ WITH requests AS (
     url,
     rank,
     -- _cdn_provider is now in requests.summary table
-    -- Also it returns empty string ('')rather than 'ORIGIN' when no CDN 
+    -- Also it returns empty string ('')rather than 'ORIGIN' when no CDN
     IF(IFNULL(NULLIF(REGEXP_EXTRACT(JSON_EXTRACT_SCALAR(resp.summary, '$._cdn_provider'), r'^([^,]*).*'), ''), '') = '', 'ORIGIN', 'CDN') AS cdn,
     NET.HOST(url) = NET.HOST(page) AS sameHost,
     NET.HOST(url) = NET.HOST(page) OR NET.REG_DOMAIN(url) = NET.REG_DOMAIN(page) AS sameDomain # if toplevel reg_domain will return NULL so we group this as sameDomain

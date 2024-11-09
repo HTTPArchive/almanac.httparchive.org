@@ -6,7 +6,7 @@ WITH requests AS (
     client,
     rank,
     -- _cdn_provider is now in requests.summary table
-    -- Also it returns empty string ('')rather than 'ORIGIN' when no CDN 
+    -- Also it returns empty string ('')rather than 'ORIGIN' when no CDN
     IF(IFNULL(NULLIF(REGEXP_EXTRACT(JSON_EXTRACT_SCALAR(resp.summary, '$._cdn_provider'), r'^([^,]*).*'), ''), '') = '', 'ORIGIN', 'CDN') AS cdn
   FROM
     --`httparchive.almanac.requests` -- OLD table
