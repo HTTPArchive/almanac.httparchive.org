@@ -142,7 +142,7 @@ Here's the percentage of sites on each platform that achieve a "good" score, mea
 
 Some platforms made impressive improvements, like Squarespace, which increased from 33% good scores in 2022 to 60% in 2024\. Other platforms, like Magento and WooCommerce, are still struggling with real-world user experiences. This chart, and the other charts of this section, consider mobile performance only since most web traffic comes from mobile, and it’s more challenging to reach top scores.
 
-#### Largest Contentful Paint (LCP)
+### Largest Contentful Paint (LCP)
 
 Largest Contentful Paint (LCP) measures how long it takes for the main content of a webpage to load and become visible to users. It specifically tracks the loading time of the largest element on the screen, like a big image or a block of text, which makes it a good indicator of how quickly users can see something meaningful on your page.
 
@@ -160,7 +160,7 @@ Despite these challenges, the top 10 eCommerce platforms have shown significant 
   )
 }}
 
-#### Cumulative Layout Shift (CLS)
+### Cumulative Layout Shift (CLS)
 
 Cumulative Layout Shift (CLS) measures how stable the layout of a page is by tracking how much content unexpectedly shifts as the page loads. A good CLS score means that 75% or more of a website's visits register a score of 0.1 or lower, indicating a stable, user-friendly experience.
 
@@ -176,7 +176,7 @@ Cumulative Layout Shift (CLS) measures how stable the layout of a page is by tra
 
 In comparison to LCP, improvements in CLS have been less dramatic. Many platforms have only made modest progress, with Magento struggling more than others. WooCommerce, while facing challenges in other metrics, performs exceptionally well in CLS, similar to many other platforms.
 
-#### Interaction to Next Paint (INP)
+### Interaction to Next Paint (INP)
 
 INP captures the time taken from the moment a user interacts with a page (e.g., clicking a button) to when the browser visually responds to that interaction. A good [INP score is 200 milliseconds or less](https://web.dev/articles/inp), which ensures a smooth and responsive experience.
 
