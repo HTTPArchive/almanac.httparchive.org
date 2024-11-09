@@ -24,7 +24,7 @@
 </p>
 {% endblock %}
 
-{% block read_last_years_almanac %}{{ year | int - 1 }} Web Almanac को पढ़िए{% endblock %}
+{% block read_last_years_almanac %}{{ previous_year }} Web Almanac को पढ़िए{% endblock %}
 
 {% block http_archive_link %}HTTP Archive होम{% endblock %}
 
@@ -111,7 +111,9 @@
 {% block repliesAlt %}{% endblock %}
 {% block mentionsAlt %}{% endblock %}
 
-{% macro onTwitter(twitterHandle) %}@{{twitterHandle}} Twitter पर{% endmacro %}
+{% macro onTwitter(twitterHandle) %}@{{twitterHandle}} Twitter/X पर{% endmacro %}
+{% macro onMastodon(mastodonHandle) %}{{mastodonHandle}}Mastodonपर{% endmacro %}
+{% macro onBluesky(blueskyHandle) %}{{blueskyHandle}}Blueskyपर{% endmacro %}
 {% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} GitHub पर{% endmacro %}
 {% macro onLinkedIn(authorName) %}{{authorName}} LinkedIn पर{% endmacro %}
 {% macro website(authorName) %}{{authorName}} वेबसाइट{% endmacro %}
@@ -124,14 +126,14 @@
 {% block rss_feed %}RSS Feed{% endblock %}
 
 {% block featured_chapter %}विशेष अध्याय{% endblock %}
-{% block featured_chapter_last_year %}विशेष अध्याय<br>{{ year|int -1 }} Web Almanac से {% endblock %}
+{% block featured_chapter_last_year %}विशेष अध्याय<br>{{ previous_year }} Web Almanac से {% endblock %}
 
 {# Check if read_chapter already defined in child template as macros can't be overridden #}
 {% if not read_chapter %}
 {% macro read_chapter(chapter) %}अध्याय <span class="featured-chapter-name">{{ chapter }}</span> पढ़ें{% endmacro %}
 {% endif %}
 {% if not read_last_years_chapter %}
-{% macro read_last_years_chapter(chapter) %}अध्याय {{ year|int-1 }} <span class="featured-chapter-name">{{ chapter }}</span> पढ़ें{% endmacro %}
+{% macro read_last_years_chapter(chapter) %}अध्याय {{ previous_year }} <span class="featured-chapter-name">{{ chapter }}</span> पढ़ें{% endmacro %}
 {% endif %}
 
 {% block contributors_description %}

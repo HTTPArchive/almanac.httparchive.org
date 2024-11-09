@@ -356,16 +356,18 @@
     <ul class="contributors">
     {% for id, contributor in config.contributors.items() %}
       <li class="contributor" id="contributors-{{ id }}">
-        {% if contributor.avatar_url|int != 0 %}
-        <img class="contributor-avatar" src="https://avatars.githubusercontent.com/u/{{ contributor.avatar_url }}?v=4&s=100" height="100" width="100" alt="{{ contributor.name }} avatar">
-        {% else %}
-        <img class="contributor-avatar" src="{{ contributor.avatar_url }}" height="100" width="100" alt="{{ contributor.name }} avatar">
-        {% endif %}
+        <div class="contributor-avatars">
+          {% if contributor.avatar_url|int != 0 %}
+          <img class="contributor-avatar" src="https://avatars.githubusercontent.com/u/{{ contributor.avatar_url }}?v=4&s=100" height="100" width="100" alt="{{ contributor.name }} avatar">
+          {% else %}
+          <img class="contributor-avatar" src="{{ contributor.avatar_url }}" height="100" width="100" alt="{{ contributor.name }} avatar">
+          {% endif %}
+        </div>
         <div>
           <div class="contributor-name">{{ contributor.name }}</div>
           {% if contributor.twitter %}
           <div class="contributor-social">
-            <a href="https://twitter.com/{{ contributor.twitter }}" aria-labelledby="contributors-{{ id }}-twitter">
+            <a href="https://x.com/{{ contributor.twitter }}" aria-labelledby="contributors-{{ id }}-twitter">
               <svg role="img">
                 <title id="contributors-{{ id }}-twitter">{{ onTwitter(contributor.twitter) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter-logo"></use>
@@ -374,11 +376,33 @@
             </a>
           </div>
           {% endif %}
+          {% if contributor.mastodon %}
+          <div class="contributor-social">
+            <a href="{{ contributor.mastodon }}" aria-labelledby="contributors-{{ id }}-mastodon">
+              <svg role="img">
+                <title id="contributors-{{ id }}-mastodon">{{ onMastodon(contributor.mastodon) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#mastodon-logo"></use>
+              </svg>
+              {{ contributor.mastodon }}
+            </a>
+          </div>
+          {% endif %}
+          {% if contributor.bluesky %}
+          <div class="contributor-social">
+            <a href="https://bsky.app/{{ contributor.bluesky }}" aria-labelledby="contributors-{{ id }}-bluesky">
+              <svg role="img">
+                <title id="contributors-{{ id }}-bluesky">{{ onBluesky(contributor.bluesky) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bluesky-logo"></use>
+              </svg>
+              {{ contributor.bluesky }}
+            </a>
+          </div>
+          {% endif %}
           {% if contributor.github %}
           <div class="contributor-social">
             <a href="https://github.com/{{ contributor.github }}" aria-labelledby="contributors-{{ id }}-github">
               <svg role="img">
-                <title id="contributors-{{ id }}-github">{{ onTwitter(contributor.github) }}</title>
+                <title id="contributors-{{ id }}-github">{{ onGitHub(contributor.github) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github-logo"></use>
               </svg>
               {{ contributor.github }}
@@ -389,7 +413,7 @@
           <div class="contributor-social">
             <a href="https://www.linkedin.com/in/{{ contributor.twitter }}" aria-labelledby="contributors-{{ id }}-linkedin">
               <svg role="img">
-                <title id="contributors-{{ id }}-linkedin">{{ onTwitter(contributor.linkedin) }}</title>
+                <title id="contributors-{{ id }}-linkedin">{{ onLinkedIn(contributor.linkedin) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin-logo"></use>
               </svg>
               {{ contributor.linkedin }}
