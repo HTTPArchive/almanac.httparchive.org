@@ -511,7 +511,7 @@ Let's look at how the usage of these formats has changed from 2022 to 2024:
   description="A bar chart showing the comparison of image formats adoption between 2022 and 2024. It shows that the jpg adoption is 20% less in 2024, while png increased 1%, gif is up by 6%, webp is 34% more, svg also increased with 36% more, ico is 17% less and avif is 386% more.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=2128858223&format=interactive",
   sheets_gid="https://docs.google.com/spreadsheets/d/1Q2ITOe6ZMIXGKHtIxqK9XmUA1eQBX9CLQkxarQOJFCk/edit?gid=1939630368#gid=1939630368",
-  sql_file=""
+  sql_file="../media/media_formats.sql"
 ) }}
 
 This data shows the evolving landscape of image format adoption. WebP has grown significantly, with a 34% increase in usage. Although AVIF shows an impressive 386% increase, it can be misleading since for desktop clients the usage of AVIF format is only at 1.40%, and for mobile clients 1.05%. Traditional formats like JPEG are seeing a decline, while PNG and GIF usage remains relatively stable. Current statistics for 2024 provide a clearer picture of where we stand:
