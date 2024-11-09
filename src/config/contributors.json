@@ -647,7 +647,8 @@
         "reviewers"
       ],
       "2024": [
-        "developers"
+        "developers",
+        "editors"
       ]
     },
     "twitter": "tunetheweb",
@@ -2140,6 +2141,8 @@
     "name": "Jonathan Pagel",
     "teams": {
       "2024": [
+        "analysts",
+        "authors",
         "editors"
       ]
     },
@@ -3135,6 +3138,9 @@
       ],
       "2022": [
         "authors"
+      ],
+      "2024": [
+        "reviewers"
       ]
     },
     "twitter": "nrllah",
