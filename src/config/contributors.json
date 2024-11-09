@@ -2064,9 +2064,11 @@
     "name": "Jonathan Pagel",
     "teams": {
       "2024": [
+        "authors",
+        "analysts",
         "editors"
       ]
-    },
+    }
     "website": "https://jonathanpagel.com"
   },
   "sirjonathan": {
