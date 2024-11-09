@@ -15,32 +15,32 @@ featured_stat_2: 3x
 featured_stat_label_2: Growth for Astro for Pre-rendered sites in 2024
 featured_stat_3: 42%
 featured_stat_label_3: smaller JavaScript size for pre-rendered sites compared to dynamically rendered
-mikeneu_bio: Mike Neumegen passionate about building a web that’s accessible, fast, simple, and secure and grounded in strong fundamentals. He's the co-founder of <a hreflang="en" href="https://cloudcannon.com/">CloudCannon</a>, a content management platform that brings Git-based workflows to content editors.
+mikeneu_bio: Mike Neumegen passionate about building a web that's accessible, fast, simple, and secure and grounded in strong fundamentals. He's the co-founder of <a hreflang="en" href="https://cloudcannon.com/">CloudCannon</a>, a content management platform that brings Git-based workflows to content editors.
 ---
 
 ## Introduction
 
 Remember Jamstack? While the term itself may not be widely used anymore, the core concepts remain as relevant as ever.
 
-At its heart, Jamstack is a delivery architecture that promotes pre-rendering pages whenever possible. For the 2024 Web Almanac Jamstack report, we’ll explore the three main delivery architectures commonly used today:
+At its heart, Jamstack is a delivery architecture that promotes pre-rendering pages whenever possible. For the 2024 Web Almanac Jamstack report, we'll explore the three main delivery architectures commonly used today:
 
 1. **Pre-rendered** – Build pages ahead of time and serve them as static files.
 2. **Hybrid** – A mix of static and dynamic pages, using technologies like Incremental Static Regeneration (ISR) and Edge Functions to blur the lines between them.
 3. **Dynamic** – Pages are generated on the server for each request.
 
-It’s become more common to take a **Static-first** approach as the more static a website is, the faster, more scalable, secure, and eco-friendly it tends to be. Pre-rendering, hybrid, and dynamic approaches are valuable tools in a web developer's toolkit and are each suited to different situations. Let’s see how these categories are evolving.
+It's become more common to take a **Static-first** approach as the more static a website is, the faster, more scalable, secure, and eco-friendly it tends to be. Pre-rendering, hybrid, and dynamic approaches are valuable tools in a web developer's toolkit and are each suited to different situations. Let's see how these categories are evolving.
 
 ## Defining the dataset
 
-So, how do we determine which delivery approach a site is taking? It would be ideal if there were a clear marker to neatly classify every site in one of our categories. Unfortunately, there is no such marker and it’s one of the biggest challenges of reporting on these architectures.
+So, how do we determine which delivery approach a site is taking? It would be ideal if there were a clear marker to neatly classify every site in one of our categories. Unfortunately, there is no such marker and it's one of the biggest challenges of reporting on these architectures.
 
 Previous Jamstack Almanac reports have taken two approaches:
 
-1. Focus on websites with a detectable Static Site Generator. This gave us an accurate picture as we could be sure these sites were using targeted technologies. The problem is that many Static Site Generators don’t leave a fingerprint by default, so the dataset skews toward frameworks like Next.js and Nuxt that do. To complicate things further, these heavier JavaScript frameworks are capable of both pre-rendering pages and dynamically rendering them, so which category do we put them in?
+1. Focus on websites with a detectable Static Site Generator. This gave us an accurate picture as we could be sure these sites were using targeted technologies. The problem is that many Static Site Generators don't leave a fingerprint by default, so the dataset skews toward frameworks like Next.js and Nuxt that do. To complicate things further, these heavier JavaScript frameworks are capable of both pre-rendering pages and dynamically rendering them, so which category do we put them in?
 
-2. The second approach used thresholds for Largest Contentful Paint, Cumulative Layout Shift, and Caching to build the dataset. This approach broadens the dataset by including more pre-rendered sites that don’t have a clear Static Site Generator fingerprint. The downside is that it blurs the definition of pre-rendering by focusing on frontend performance. Pre-rendering will often improve delivery speed, but that's where the scope ends in our view. What happens after delivery like a faster LCP is a happy byproduct.
+2. The second approach used thresholds for Largest Contentful Paint, Cumulative Layout Shift, and Caching to build the dataset. This approach broadens the dataset by including more pre-rendered sites that don't have a clear Static Site Generator fingerprint. The downside is that it blurs the definition of pre-rendering by focusing on frontend performance. Pre-rendering will often improve delivery speed, but that's where the scope ends in our view. What happens after delivery like a faster LCP is a happy byproduct.
 
-Both approaches have merit: the first uses data that clearly defines a pre-rendered site, while the second relies on indicators. This year, we’re combining the two with a scoring system to get the best of both worlds. We developed this scoring system to reflect our confidence level in whether a site is pre-rendered. Strong indicators, like being generated by 11ty or hosted on GitHub Pages, earn 100 points, while softer signals, such as a fast Time to First Byte (TTFB), receive lower points—50 in this case.
+Both approaches have merit: the first uses data that clearly defines a pre-rendered site, while the second relies on indicators. This year, we're combining the two with a scoring system to get the best of both worlds. We developed this scoring system to reflect our confidence level in whether a site is pre-rendered. Strong indicators, like being generated by 11ty or hosted on GitHub Pages, earn 100 points, while softer signals, such as a fast Time to First Byte (TTFB), receive lower points—50 in this case.
 
 We then total up the points and put them in one of the following categories:
 
@@ -50,26 +50,26 @@ If a site scores 100 points or over, we call it Pre-rendered. It means the site 
 
 ### Hybrid
 
-If a site scores between 50 and 99 points, we put it in the Hybrid category. These are websites that might be static but don’t have enough fingerprints for us to tell, or they may not be purely static but share some shared approaches and philosophies. For example, a Nuxt site hosted on Netlify or a Gatsby site with fast TTFB. While Hybrid is a more lenient category, it’s still a high bar representing \~5% of sites in the data set in 2024\.
+If a site scores between 50 and 99 points, we put it in the Hybrid category. These are websites that might be static but don't have enough fingerprints for us to tell, or they may not be purely static but share some shared approaches and philosophies. For example, a Nuxt site hosted on Netlify or a Gatsby site with fast TTFB. While Hybrid is a more lenient category, it's still a high bar representing \~5% of sites in the data set in 2024\.
 
 ### Dynamic
 
-Anything scoring below 50 points falls into the Dynamic category. These sites either rely on server-side rendering or don’t have enough fingerprints to put in the other categories. Dynamic represents the majority of the web and \~94.5% of the dataset.
+Anything scoring below 50 points falls into the Dynamic category. These sites either rely on server-side rendering or don't have enough fingerprints to put in the other categories. Dynamic represents the majority of the web and \~94.5% of the dataset.
 
 ## Scoring
 
-Let’s dive into how scoring works.
+Let's dive into how scoring works.
 
 ### Detectable Static Site Generator
 
-This is a huge tell. Based on the SSG, we can give a score on how likely the website is pre-rendered. These are ballparks so while we can’t confidently say that 30% of Next.js sites are purely static, it’s one data point that when combined with others, gives us confidence.
+This is a huge tell. Based on the SSG, we can give a score on how likely the website is pre-rendered. These are ballparks so while we can't confidently say that 30% of Next.js sites are purely static, it's one data point that when combined with others, gives us confidence.
 
 <figure>
   <table>
     <thead>
       <tr>
-        <th scope="col">SSG</th>
-        <th scope="col">Points</th>
+        <th>SSG</th>
+        <th>Points</th>
       </tr>
     </thead>
     <tbody>
@@ -157,14 +157,14 @@ This is a huge tell. Based on the SSG, we can give a score on how likely the web
 
 ### Hosting Providers
 
-GitHub Pages can only serve static content so we know if it’s hosted on that platform, it must be pre-rendered. Netlify and Vercel both have many static websites, but also have dynamic functionality. We’ve tried to account for this in the scoring.
+GitHub Pages can only serve static content so we know if it's hosted on that platform, it must be pre-rendered. Netlify and Vercel both have many static websites, but also have dynamic functionality. We've tried to account for this in the scoring.
 
 <figure>
   <table>
     <thead>
       <tr>
-        <th scope="col">Hosting Provider</th>
-        <th scope="col">Points</th>
+        <th>Hosting Provider</th>
+        <th>Points</th>
       </tr>
     </thead>
     <tbody>
@@ -195,14 +195,14 @@ GitHub Pages can only serve static content so we know if it’s hosted on that p
 
 ### TTFB
 
-Time to First Byte is how long the server took to return anything to the browser. Our thinking behind using this metric is that if all the server needs to do is return a static file, the TTFB will be very fast, whereas if the server needs to do dynamic processing to generate the page, it will take longer. Of course TTFB can be gamed if the server sends *something* while it takes its time generating the page, which is why we’re giving a good TTFB a score of 50 and not 100\.
+Time to First Byte is how long the server took to return anything to the browser. Our thinking behind using this metric is that if all the server needs to do is return a static file, the TTFB will be very fast, whereas if the server needs to do dynamic processing to generate the page, it will take longer. Of course TTFB can be gamed if the server sends *something* while it takes its time generating the page, which is why we're giving a good TTFB a score of 50 and not 100\.
 
 <figure>
   <table>
     <thead>
       <tr>
-        <th scope="col">Server Response Time</th>
-        <th scope="col">Points</th>
+        <th>Server Response Time</th>
+        <th>Points</th>
       </tr>
     </thead>
     <tbody>
@@ -230,14 +230,14 @@ Time to First Byte is how long the server took to return anything to the browser
 
 ### Caching
 
-Caching gives us a good sense of how static a site might be. If a site uses aggressive caching headers, it’s a strong sign that the server is doing minimal work, which feels very static-like. On the other hand, sites with long but less aggressive headers still suggest a static approach, but with less certainty.
+Caching gives us a good sense of how static a site might be. If a site uses aggressive caching headers, it's a strong sign that the server is doing minimal work, which feels very static-like. On the other hand, sites with long but less aggressive headers still suggest a static approach, but with less certainty.
 
 <figure>
   <table>
     <thead>
       <tr>
-        <th scope="col">Cache header</th>
-        <th scope="col">Points</th>
+        <th>Cache header</th>
+        <th>Points</th>
       </tr>
     </thead>
     <tbody>
@@ -267,8 +267,8 @@ ETags help with cache validation by letting the browser check if a resource has 
   <table>
     <thead>
       <tr>
-        <th scope="col">Etag</th>
-        <th scope="col">Points</th>
+        <th>Etag</th>
+        <th>Points</th>
       </tr>
     </thead>
     <tbody>
@@ -292,14 +292,14 @@ ETags help with cache validation by letting the browser check if a resource has 
 
 ### Set-Cookie
 
-A Set-Cookie header nudges toward dynamic behavior. It typically means the server is handling things like sessions which suggests the content isn’t purely static.
+A Set-Cookie header nudges toward dynamic behavior. It typically means the server is handling things like sessions which suggests the content isn't purely static.
 
 <figure>
   <table>
     <thead>
       <tr>
-        <th scope="col">Set Cookie</th>
-        <th scope="col">Points</th>
+        <th>Set Cookie</th>
+        <th>Points</th>
       </tr>
     </thead>
     <tbody>
@@ -322,13 +322,13 @@ A Set-Cookie header nudges toward dynamic behavior. It typically means the serve
 
 ### Limitations in the dataset
 
-It’s worth reiterating, this segmentation is hard. These are rough estimates based on the data available and some miscategorization is inevitable. It’s also the first year we’ve used this scoring method and is something we can refine in years to come.
+It's worth reiterating, this segmentation is hard. These are rough estimates based on the data available and some miscategorization is inevitable. It's also the first year we've used this scoring method and is something we can refine in years to come.
 
-To minimize this, we've set a high bar for what qualifies as Pre-rendered and Hybrid. It’s likely these categories are larger than represented in this report.
+To minimize this, we've set a high bar for what qualifies as Pre-rendered and Hybrid. It's likely these categories are larger than represented in this report.
 
 ## Analysis
 
-Now that our categories are defined, let’s see how they’re trending in 2024.
+Now that our categories are defined, let's see how they're trending in 2024.
 
 ### Static Site Generators
 
@@ -344,17 +344,17 @@ SSGs are the technology that performs the pre-rendering, which makes them a natu
   )
 }}
 
-We see Hugo leading the Pre-rendering category by a sizable margin for the past 3 years. Hugo is known for being a fast and flexible SSG with a community that values performance so it’s not surprising to see it at the top of the list.
+We see Hugo leading the Pre-rendering category by a sizable margin for the past 3 years. Hugo is known for being a fast and flexible SSG with a community that values performance so it's not surprising to see it at the top of the list.
 
-Next.js continues its dominance on the web and is steadily closing the gap on Hugo in the Pre-rendering category. It’s worth noting that with our scoring, we’re considering almost all known Hugo sites as Pre-rendered, whereas Next.js needs multiple indicators to be considered Pre-rendered.
+Next.js continues its dominance on the web and is steadily closing the gap on Hugo in the Pre-rendering category. It's worth noting that with our scoring, we're considering almost all known Hugo sites as Pre-rendered, whereas Next.js needs multiple indicators to be considered Pre-rendered.
 
 Meanwhile, Jekyll, Gatsby, and Hexo have seen stable or declining usage in the Pre-rendered category, which reflects the reduced development going into these frameworks.
 
-Docusaurus is on a steady rise which is impressive considering it’s only used for documentation.
+Docusaurus is on a steady rise which is impressive considering it's only used for documentation.
 
-The real stand out here is Astro though which grew 3x in 2024\! It’s now a major player in the Pre-rendered category and could become the dominant framework if this trend continues.
+The real stand out here is Astro though which grew 3x in 2024\! It's now a major player in the Pre-rendered category and could become the dominant framework if this trend continues.
 
-Let’s take a look at the Hybrid category:
+Let's take a look at the Hybrid category:
 
 {{ figure_markup(
   image="hybrid-static-site-generators.png",
@@ -366,13 +366,13 @@ Let’s take a look at the Hybrid category:
   )
 }}
 
-We see Next.js extending its lead in the Hybrid category with a 39% increase in the past year. Next.js is a highly flexible framework capable of Pre-rendering, Dynamic Rendering, and Incremental Static Regeneration (updating specific static pages on-demand without requiring a full site rebuild). Its versatility for everything from an information website to a fully-fledged web application is one of the big reasons we’re seeing its growing usage.
+We see Next.js extending its lead in the Hybrid category with a 39% increase in the past year. Next.js is a highly flexible framework capable of Pre-rendering, Dynamic Rendering, and Incremental Static Regeneration (updating specific static pages on-demand without requiring a full site rebuild). Its versatility for everything from an information website to a fully-fledged web application is one of the big reasons we're seeing its growing usage.
 
 Nuxt continued to grow steadily within the Hybrid category, while Astro saw rapid growth in 2024\.
 
 ### Performance
 
-Pre-rendered sites are known for their performance because the server can respond instantly rather than dynamically rendering a response for each request. This results in faster load times and less strain on the server. Let’s see how that plays out in our analysis.
+Pre-rendered sites are known for their performance because the server can respond instantly rather than dynamically rendering a response for each request. This results in faster load times and less strain on the server. Let's see how that plays out in our analysis.
 
 The median site page transfer size is an interesting place to start as we would expect it to be a significant factor in overall site performance.
 
@@ -391,7 +391,7 @@ On average, Pre-rendered sites have much smaller transfer sizes coming in at 43%
 The jump between Pre-rendered and Hybrid sites likely reflects their different use cases with Pre-rendered sites more likely to be static, informational sites, while Hybrid sites might lean more into eCommerce and web applications which can lead to larger transfer sizes.
 
 
-Let’s break down where this extra weight is coming from.
+Let's break down where this extra weight is coming from.
 
 {{ figure_markup(
   image="total-requests.png",
@@ -451,7 +451,7 @@ When we break down the JavaScript frameworks used by Pre-rendered and Hybrid web
   )
 }}
 
-If we remove CSS and JavaScript from the total transfer size, we're left with HTML, images, fonts, and other media. When we compare this filtered total median transfer size, there’s still a noticeable gap between each category. This corresponds to the total number of requests made in each category, which likely reflects a higher usage of images and fonts in those categories.
+If we remove CSS and JavaScript from the total transfer size, we're left with HTML, images, fonts, and other media. When we compare this filtered total median transfer size, there's still a noticeable gap between each category. This corresponds to the total number of requests made in each category, which likely reflects a higher usage of images and fonts in those categories.
 
 {{ figure_markup(
   image="astro-hugo-next-transfer-size.png",
@@ -465,7 +465,7 @@ If we remove CSS and JavaScript from the total transfer size, we're left with HT
 
 Focusing on the three standout Static Site Generators in the Pre-rendered category—Astro, Hugo, and Next.js—gives us another lens to analyze page weight. Note: this analysis only includes sites in the Pre-rendered category to keep the comparison fair.
 
-Astro takes numerous steps to ship only the minimal data required, from Astro Islands and zero JavaScript by default to an asset optimization pipeline. It’s great to see its dedication to performance reflected in the data.
+Astro takes numerous steps to ship only the minimal data required, from Astro Islands and zero JavaScript by default to an asset optimization pipeline. It's great to see its dedication to performance reflected in the data.
 
 Hugo sees a step up from Astro in page weight. Hugo has many of the same types of asset optimization pipeline as Astro, though the Astro pipeline is more deeply integrated into the framework, which could explain the difference.
 
@@ -481,7 +481,7 @@ Next.js shows a sizable increase in page weight. Next.js ships with its bundled 
   )
 }}
 
-Breaking this down to purely the JavaScript shipped, we can see how heavy the JavaScript bundle is for Next.js coming in at 3.5x larger than Astro’s.
+Breaking this down to purely the JavaScript shipped, we can see how heavy the JavaScript bundle is for Next.js coming in at 3.5x larger than Astro's.
 
 {{ figure_markup(
   image="core-web-vitals.png",
@@ -493,7 +493,7 @@ Breaking this down to purely the JavaScript shipped, we can see how heavy the Ja
   )
 }}
 
-Let’s see how the delivery approaches impact Core Web Vitals. We use Google’s definition of having Good Core Web Vital where a site has:
+Let's see how the delivery approaches impact Core Web Vitals. We use Google's definition of having Good Core Web Vital where a site has:
 
 * **Largest Contentful Paint** (LCP) under 2.5 seconds for 75% of users
 * **Cumulative Layout Shift**  (CLS) less than 0.1 for 75% of users
@@ -515,7 +515,7 @@ So, how are these architectures being adopted across the web?
   )
 }}
 
-Looking at the full dataset, we see that while Pre-rendered and Hybrid architectures are on the rise, they’re still relatively niche compared to the rest of the web. This makes sense, as most websites rely on website builders or GUIs, rather than the developer-focused tools common in the Pre-rendered and Hybrid categories.
+Looking at the full dataset, we see that while Pre-rendered and Hybrid architectures are on the rise, they're still relatively niche compared to the rest of the web. This makes sense, as most websites rely on website builders or GUIs, rather than the developer-focused tools common in the Pre-rendered and Hybrid categories.
 
 We see more growth if we zoom into the sites with the most traffic:
 
@@ -529,7 +529,7 @@ We see more growth if we zoom into the sites with the most traffic:
   )
 }}
 
-There’s been significant growth in Pre-rendered adoption among the top 1k and 10k most popular sites with growth leveling off at the 1M mark and beyond. These high-traffic sites care a great deal about performance, SEO, security, and stability, principles that align perfectly with the Pre-rendered approach.
+There's been significant growth in Pre-rendered adoption among the top 1k and 10k most popular sites with growth leveling off at the 1M mark and beyond. These high-traffic sites care a great deal about performance, SEO, security, and stability, principles that align perfectly with the Pre-rendered approach.
 
 {{ figure_markup(
   image="hybrid-high-traffic-adoption.png",
@@ -541,16 +541,16 @@ There’s been significant growth in Pre-rendered adoption among the top 1k and 
   )
 }}
 
-It’s a similar story with Hybrid which now powers over 12% of the most popular 10k websites.
+It's a similar story with Hybrid which now powers over 12% of the most popular 10k websites.
 
 ## Conclusion
 
-The standout this year is the combined 67% growth of Pre-rendered and Hybrid architectures in the top 10k high-traffic websites in 2024—over 12% of these popular sites now use these approaches. While Pre-rendering and Hybrid delivery remains niche in the context of the entire web, it’s rapidly gaining traction where its benefits are most valued.
+The standout this year is the combined 67% growth of Pre-rendered and Hybrid architectures in the top 10k high-traffic websites in 2024—over 12% of these popular sites now use these approaches. While Pre-rendering and Hybrid delivery remains niche in the context of the entire web, it's rapidly gaining traction where its benefits are most valued.
 
 Given how much of the web is inherently static, this trend is promising. By adopting a static-first model and limiting dynamic rendering to dynamic content, the web could not only be faster, and lighter weight, but also significantly more environmentally friendly.
 
-Hugo continues to lead as the top Static Site Generator in the Pre-rendering space, with Next.js gaining ground. Astro saw the largest growth of any Pre-rendering framework in 2024, an impressive feat considering it’s one of the newest frameworks in this space.
+Hugo continues to lead as the top Static Site Generator in the Pre-rendering space, with Next.js gaining ground. Astro saw the largest growth of any Pre-rendering framework in 2024, an impressive feat considering it's one of the newest frameworks in this space.
 
-The growing presence of Next.js and Astro in both Pre-rendered and Hybrid categories signals a shift toward hybrid architectures that give developers more control over static and dynamic content generation. Astro’s focus on improving performance and reducing page weight looks to be paying off and has made serious inroads in catching up on Next.js.
+The growing presence of Next.js and Astro in both Pre-rendered and Hybrid categories signals a shift toward hybrid architectures that give developers more control over static and dynamic content generation. Astro's focus on improving performance and reducing page weight looks to be paying off and has made serious inroads in catching up on Next.js.
 
 While the term Jamstack may no longer be widely used, its evolution continues to shape the future in powering top-tier websites, paving the way for a faster, more stable, secure, and eco-friendly web.
