@@ -71,7 +71,7 @@ In the period from 2020 to 2022, we saw that mobile web performance measured by 
   )
 }}
 
-CWV with INP shows a new tendency when analyzing websites by rank. Previously, the most popular websites <a hreflang="en" href="https://almanac.httparchive.org/en/2022/performance#fig-2">tended to have the best CWV experience</a>, however, this year's statistics shows the opposite: 40% of 1000 most popular websites on mobile have good CWV which is lower than total website CWV of 43%.
+CWV with INP shows a new tendency when analyzing websites by rank. Previously, the most popular websites [tended to have the best CWV experience](../2022/performance#fig-2), however, this year's statistics shows the opposite: 40% of 1000 most popular websites on mobile have good CWV which is lower than total website CWV of 43%.
 
 {{ figure_markup(
   image="good-core-web-vitals-fid-vs-inp.png",
@@ -315,7 +315,7 @@ You can reduce image sizes through resizing dimensions and increasing compressio
   )
 }}
 
-JPG and PNG still have the highest proportion of adoption at 86.6% combined, however WEBP and AVIF formats are both increasing in adoption. In comparison to 2022, WEBP image format usage increased from <a hreflang="en" href="https://almanac.httparchive.org/en/2022/performance#lcp-format">4%</a> to 7.3%. Also, AVIF usage increased slightly from 0.1% to 0.3%. According to <a hreflang="en" href="https://webstatus.dev/?q=avif">Baseline</a>, AVIF format is newly available across major browsers, so we expect to see higher adoption in the future.
+JPG and PNG still have the highest proportion of adoption at 87% combined, however WEBP and AVIF formats are both increasing in adoption. In comparison to 2022, WEBP image format usage increased from [4%](../2022/performance#lcp-format) to 7%. Also, AVIF usage increased slightly from 0.1% to 0.3%. According to <a hreflang="en" href="https://webstatus.dev/?q=avif">Baseline</a>, AVIF format is newly available across major browsers, so we expect to see higher adoption in the future.
 
 ### Loading Speed Conclusions
 
@@ -363,7 +363,7 @@ Although the INP metric displays worse results than the FID, there has been a po
 ￼
 The percentage of mobile pages having good INP increased from 55% in 2022 to 74% in 2024\. This is a significant increase, and even though we can't be exactly sure what to attribute it to, we can think of a few potential drivers for this change. The biggest one could be awareness. With the introduction of the INP and the announcement that it will replace FID, many teams realized the impact that could have on their overall CWV score and search ranking. That could have encouraged them to actively work towards fixing parts of the sites that contributed to low INP scores. The second driver could be just a regular advancement in technology. With the above-displayed INP data coming from real users, we can also assume that users' devices and network connections could have slightly improved over the years, providing them with better site interactivity.
 
-Mobile INP metric by rank reveals an interesting trend. <a hreflang="en" href="https://almanac.httparchive.org/en/2022/performance#inp-by-rank">In the 2022 chapter</a>, we assumed that the more popular a website is, the more performance optimizations it would have, leading to better performance. However, when it comes to INP, the opposite seems to be true.
+Mobile INP metric by rank reveals an interesting trend. In [the 2022 chapter](../2022/performance#inp-by-rank), we assumed that the more popular a website is, the more performance optimizations it would have, leading to better performance. However, when it comes to INP, the opposite seems to be true.
 
 {{ figure_markup(
   image="interaction-to-next-paint-score-mobile-2024.png",
@@ -542,7 +542,7 @@ In 2024, 72% of websites achieved good CLS scores, while 11% had poor ones. We c
   )
 }}
 
-Looking at the metrics over time, we can see a nice upward trend. There is an increase from 60% of websites with good visual stability in 2020 to almost 80% in 2024. A visible jump in mobile data is already addressed in detail and attributed to the introduction of bfcache in <a hreflang="en" href="https://almanac.httparchive.org/en/2022/performance#cumulative-layout-shift-cls">the 2022 Chapter</a>. There is still a visible difference from 2022, so we will look in detail at some of the aspects that possibly contributed to it.
+Looking at the metrics over time, we can see a nice upward trend. There is an increase from 60% of websites with good visual stability in 2020 to almost 80% in 2024. A visible jump in mobile data is already addressed in detail and attributed to the introduction of bfcache in [the 2022 chapter](../2022/performance#cumulative-layout-shift-cls). There is still a visible difference from 2022, so we will look in detail at some of the aspects that possibly contributed to it.
 
 ### Bfcache
 
@@ -569,15 +569,15 @@ It is expected to see this decrease in the use of unload events with major brows
 Another common reason for websites to fall in the bfcache ineligibility category is the use of the `cache-control: no-store` directive. This cache control header instructs the browser (and any intermediate caches) not to store a copy of the resource, ensuring that the content is fetched from the server on every request.
 
 {{ figure_markup(
-  caption="Percentage of mobile sites using cache-control:no-store",
-  content="21.20%",
+  caption="Percentage of sites using cache-control:no-store",
+  content="21%",
   classes="big-number",
   sheets_gid="389603749",
   sql_file="cls_animations.sql"
 )
 }}
 
-21.20% of mobile sites and 21.29% of desktop sites are using `cache-control:no-store`. That is a slight decrease from the 2022 report when this measure was about 22%.
+21% of sites are using `cache-control:no-store`. That is a slight decrease from the 2022 report when this measure was about 22%.
 
 When bfcache was first introduced, it brought noticeable improvements to Core Web Vitals. Based on that, Chrome is gradually bringing bfcache to more sites that were previously ineligible due to the use of the Cache-Control: no-store header. This change aims to further improve site performance.
 
