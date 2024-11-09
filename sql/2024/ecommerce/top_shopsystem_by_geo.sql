@@ -46,11 +46,11 @@ FROM (
       client,
       cats,
       technologies.technology AS app,
-      page as url
+      page AS url
     FROM
       `httparchive.all.pages`,
-      UNNEST (technologies) AS technologies,
-      UNNEST(technologies.categories) AS cats 
+      UNNEST(technologies) AS technologies,
+      UNNEST(technologies.categories) AS cats
     WHERE
       technologies.technology IS NOT NULL AND
       cats = 'Ecommerce' AND

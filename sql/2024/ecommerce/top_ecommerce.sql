@@ -10,7 +10,7 @@ SELECT
   COUNT(DISTINCT page) / total AS pct
 FROM
   `httparchive.all.pages`,
-  UNNEST (technologies) AS technologies,
+  UNNEST(technologies) AS technologies,
   UNNEST(technologies.categories) AS cats
 JOIN (
   SELECT
@@ -18,7 +18,7 @@ JOIN (
     COUNT(0) AS total
   FROM
     `httparchive.all.pages`
-  WHERE 
+  WHERE
     date = '2024-06-01' AND
     is_root_page
   GROUP BY
@@ -33,7 +33,7 @@ WHERE
 GROUP BY
   client,
   total,
-  ecommerce 
+  ecommerce
 UNION ALL
 SELECT
   client,
@@ -44,7 +44,7 @@ SELECT
   COUNT(DISTINCT page) / total AS pct
 FROM
   `httparchive.all.pages`,
-  UNNEST (technologies) AS technologies,
+  UNNEST(technologies) AS technologies,
   UNNEST(technologies.categories) AS cats
 JOIN (
   SELECT
@@ -52,7 +52,7 @@ JOIN (
     COUNT(0) AS total
   FROM
     `httparchive.all.pages`
-  WHERE 
+  WHERE
     date = '2023-06-01' AND
     is_root_page
   GROUP BY
@@ -67,7 +67,7 @@ WHERE
 GROUP BY
   client,
   total,
-  ecommerce 
+  ecommerce
 UNION ALL
 SELECT
   client,
@@ -78,7 +78,7 @@ SELECT
   COUNT(DISTINCT page) / total AS pct
 FROM
   `httparchive.all.pages`,
-  UNNEST (technologies) AS technologies,
+  UNNEST(technologies) AS technologies,
   UNNEST(technologies.categories) AS cats
 JOIN (
   SELECT
@@ -86,7 +86,7 @@ JOIN (
     COUNT(0) AS total
   FROM
     `httparchive.all.pages`
-  WHERE 
+  WHERE
     date = '2022-08-01' AND
     is_root_page
   GROUP BY
@@ -101,7 +101,7 @@ WHERE
 GROUP BY
   client,
   total,
-  ecommerce 
+  ecommerce
 UNION ALL
 SELECT
   client,
@@ -112,7 +112,7 @@ SELECT
   COUNT(DISTINCT page) / total AS pct
 FROM
   `httparchive.all.pages`,
-  UNNEST (technologies) AS technologies,
+  UNNEST(technologies) AS technologies,
   UNNEST(technologies.categories) AS cats
 JOIN (
   SELECT
@@ -120,7 +120,7 @@ JOIN (
     COUNT(0) AS total
   FROM
     `httparchive.all.pages`
-  WHERE 
+  WHERE
     date = '2021-07-01' AND
     is_root_page
   GROUP BY

@@ -21,12 +21,12 @@ FROM (
   WHERE
     cats = 'Ecommerce' AND
     date = '2024-06-01' AND
-    is_root_page
-    AND technologies.technology NOT IN ('Cart Functionality', 'Google Analytics Enhanced eCommerce'))
+    is_root_page AND
+    technologies.technology NOT IN ('Cart Functionality', 'Google Analytics Enhanced eCommerce'))
 JOIN (
   SELECT
     client,
-    page as url,
+    page AS url,
     rank_magnitude AS rank
   FROM
     `httparchive.all.pages`,
