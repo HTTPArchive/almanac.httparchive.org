@@ -79,7 +79,15 @@ A web page is composed of following key components:
 2. Embedded first-party content such as images, css, fonts and javascript files on the main domain (`www.example.com`) and the subdomains (for example, `images.example.com`, or `assets.example.com`).
 3. Third-party content (for example, Google Analytics, advertisements) served from third-party domains.
 
-[IMAGE]
+{{ figure_markup(
+  image="cdn-usage-hosted.png",
+  caption="CDN usage vs hosted resources on mobile.",
+  description="Bar chart of CDN usage versus hosted resource split by origin and CDN. For HTML content, 67% of requests are from the origin and 33% from CDNs. For subdomain content, 52% origin and 48% CDN. And for third-party content, 25% origin and 75% CDN.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRaKSyCfdyk5Qva05DCIxB4NPUI6VZASRpDfEIV9QsihS0nuKSEzWGh569LoaOnTW5NgHKTufv8ydlL/pubchart?oid=1624864055&format=interactive",
+  sheets_gid="551654600",
+  sql_file="top_cdns.sql"
+  )
+}}
 
 The chart above shows the breakdown of requests for different types of content (HTML, Subdomain, and Third-party), showing the share of content served by CDN versus origin on mobile devices (identical figures are observed for desktop).
 
@@ -87,7 +95,15 @@ CDNs are often utilized for delivering static content such as fonts, image files
 
 CDNs can provide better performance for delivering non-static content as well as they often optimize the routes and use most efficient transport mechanisms.  However, we see that the usage of CDNs for serving HTML still lags considerably behind the other two types of content, with only 33% served via CDN and 77% still being served from the origin.
 
-[IMAGE]
+{{ figure_markup(
+  image="cdn-usage-hosted-comparison.png",
+  caption="Trends for content served from CDN for mobile",
+  description="This chart shows the trends for content served from CDN for last few years. The general trend is that the CDN usage is increasing. For the contents served from subdomains we see bigger increase.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRaKSyCfdyk5Qva05DCIxB4NPUI6VZASRpDfEIV9QsihS0nuKSEzWGh569LoaOnTW5NgHKTufv8ydlL/pubchart?oid=776498107&format=interactive",
+  sheets_gid="551654600",
+  sql_file="top_cdns.sql"
+  )
+}}
 
 The above figure shows the evolution of different content types served from CDNs over the years.
 
@@ -99,7 +115,15 @@ These are likely some of the reasons behind this continued trajectory:
 * Growing security threats led more companies to value CDNs' built-in scalable protections like DDoS mitigation and WAF capabilities.
 * Improvements in edge computing enabled more rich personalized experiences while reducing infrastructure compute costs.
 
-[IMAGE]
+{{ figure_markup(
+  image="cdn-usage-ranking-mobile.png",
+  caption="CDN usage by site popularity on mobile.",
+  description="This bar chart provides a view of CDN usage for mobile sites broken up for top 1,000, 10,000, 100,000, 1 million and 10 million popular sites as per Google CRUX data. For Top 1000, 10,000 sites the CDN adoption is over 60%. The adoption shows decline for lower popularity sites.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRaKSyCfdyk5Qva05DCIxB4NPUI6VZASRpDfEIV9QsihS0nuKSEzWGh569LoaOnTW5NgHKTufv8ydlL/pubchart?oid=1083160290&format=interactive",
+  sheets_gid="217214696",
+  sql_file="cdn_usage_by_site_rank.sql"
+  )
+}}
 
 The share of CDN usage has increased over the years, particularly among the most popular websites according to Google Chrome’s UX Report (CrUX) classification. As the graph shows, the top 1,000 websites have the highest CDN usage at 70%, followed by the top 10,000 at 69%, and the top 100,000 at 60%. Compared to our latest results, CDN usage among the top 1,000 to 10,000 most popular websites increased by 6%, while CDN usage among the top 100,000 websites rose by 8%.
 
@@ -120,18 +144,43 @@ Generic CDNs address broad market needs with offerings that include:
 
 These capabilities appeal to a wide range of industries, which is reflected in the data.
 
-[IMAGE]
+{{ figure_markup(
+  image="top-cdns-html.png",
+  caption="Top CDNs for HTML requests on mobile.",
+  description="Box plot showing the top CDN providers serving HTML requests. Cloudflare tops the list by serving 55% of the HTML requests followed by Google at 23%, CloudFront 6% Fastly at 5%, and Akamai at 2%.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRaKSyCfdyk5Qva05DCIxB4NPUI6VZASRpDfEIV9QsihS0nuKSEzWGh569LoaOnTW5NgHKTufv8ydlL/pubchart?oid=1061770688&format=interactive",
+  sheets_gid="551654600",
+  sql_file="top_cdns.sql"
+  )
+}}
 
 The above figure shows the top CDN providers for base HTML requests. The leading vendors in this category are Cloudflare, with a 55% share, followed by Google (23%), Amazon CloudFront (6%), Fastly (6%), Akamai (2%), and Automattic and Vercel, each with a 1% share.
 
-[IMAGE]
+{{ figure_markup(
+  image="top-cdns-subdomain.png",
+  caption="Top CDNs for subdomain requests on mobile.",
+  description="Box plot showing the top CDN providers serving subdomain requests. Cloudflare tops the list by serving 43% of the subdomain requests followed by CloudFront at 27%, Google at 8%",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRaKSyCfdyk5Qva05DCIxB4NPUI6VZASRpDfEIV9QsihS0nuKSEzWGh569LoaOnTW5NgHKTufv8ydlL/pubchart?oid=316214799&format=interactive",
+  sheets_gid="551654600",
+  sql_file="top_cdns.sql"
+  )
+}}
+
 For the subdomain requests, we saw an increase in the share of Amazon Cloudfront (from 21% to 29%). 
 
 This is driven by many users having their content on cloud service providers that come with a CDN offering. Utilizing compute and other services alongside the cloud service provider CDN helps users scale their applications and increase performance of delivering services to end users.
 
 The leading vendors in this category are Cloudflare (41%), Amazon (29%), Google (9%), Akamai (4%), and Fastly (3%).
 
-[IMAGE]
+{{ figure_markup(
+  image="top-cdns-3p.png",
+  caption="Top CDNs for third-party requests on mobile.",
+  description="Box plot showing the top CDN providers serving third-party requests. Google tops the list by serving 54% of the third-party requests followed by Cloudlare at 14%, CloudFront at 10%, Akamai at 5%, and Fastly at 4%.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRaKSyCfdyk5Qva05DCIxB4NPUI6VZASRpDfEIV9QsihS0nuKSEzWGh569LoaOnTW5NgHKTufv8ydlL/pubchart?oid=418936134&format=interactive",
+  sheets_gid="551654600",
+  sql_file="top_cdns.sql"
+  )
+}}
 
 The above figure highlights third-party domain usage, with Google leading the list at 54% market share, followed by well-known CDN providers such as Cloudflare (14%), Amazon CloudFront (10%), Akamai (5%), and Fastly (4%). Notably, Facebook also appears prominently in the rankings, holding a 4% share.
 
@@ -149,11 +198,27 @@ For website operators, CDNs handle all the complex implementation details while 
 
 Due to the way HTTP/3 works (see the [HTTP](./http) chapter for more information), HTTP/3 is often not used for first connections which is why we are instead measuring “HTTP/2+”, since many of those HTTP/2 connections may actually be HTTP/3 for repeat visitors (we have assumed that no servers implement HTTP/3 without HTTP/3).
 
-[IMAGE]
+{{ figure_markup(
+  image="cdn-http-versions-mobile.png",
+  caption="Distribution of HTTP versions for HTML (mobile).",
+  description="This bar chart shows the HTTP version adoption across CDN and origin in mobile HTML requests. For mobile HTML requests served from CDN, 98% were served on HTTP/2 or better protocol while requests served from origin had 71% requests served on HTTP/2 or better protocol.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRZQqyyKiQWgICD_a0WaEAmfZyFN_Zi3wVuQnZxsXqwZ_1JQg2x7GpRw4CTkX4gKvurzoCQ6YokkdpM/pubchart?oid=1385171364&format=interactive",
+  sheets_gid="456632996",
+  sql_file="distribution_of_http_versions_cdn_vs_origin.sql"
+  )
+}}
 
 In 2022, we observed a stark contrast of HTTP/2+ usage between CDN and origin servers. While a gap persists whereby CDN usage of HTTP/2+ is higher 98% compared to 71%, the origin usage of HTTP/2+ continues to grow in adoption which we can see with 42% in 2022 to 71% in 2024.
 
-[IMAGE]
+{{ figure_markup(
+  image="cdn-http-versions-mobile-3p.png",
+  caption="Distribution of HTTP versions for third-party requests (mobile).",
+  description="This bar chart shows the HTTP version adoption across CDN and origin for third-party requests on mobile. For these third-party requests served from CDN, 96% were served on HTTP/2 or better protocol while requests served from origin had 71% requests served on HTTP/2 or better protocol.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRaKSyCfdyk5Qva05DCIxB4NPUI6VZASRpDfEIV9QsihS0nuKSEzWGh569LoaOnTW5NgHKTufv8ydlL/pubchart?oid=1384687606&format=interactive",
+  sheets_gid="456632996",
+  sql_file="distribution_of_http_versions_cdn_vs_origin.sql"
+  )
+}}
 
 The trend for HTTP/2+ adoption in third-party domains follows the same as for HTML above. Compared to 2022, HTTP/2+ CDN usage increased from 88% to 96% while origin increased from 47% to 71%.
 
@@ -173,7 +238,15 @@ While media files such as JPEG images are already compressed, textual assets suc
 
 Below is the analysis of compression types used by CDNs and origin servers in the Web Almanac 2024 reveals trends in how web content is optimized for delivery.
 
-[IMAGE]
+{{ figure_markup(
+  image="cdn-compression-mobile.png",
+  caption="Distribution of compression types (mobile).",
+  description="This bar chart shows the Brotli adoption across CDN and origin on mobile requests. CDNs served 55.89% of requests in Brotli compressed format and 41.38% of requests in gzip compressed format. Origin on the other hand served 41.83% of requests in Brotli compressed format and 57.40% of requests in gzip compressed format.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRaKSyCfdyk5Qva05DCIxB4NPUI6VZASRpDfEIV9QsihS0nuKSEzWGh569LoaOnTW5NgHKTufv8ydlL/pubchart?oid=1837507742&format=interactive",
+  sheets_gid="1383966713",
+  sql_file="distribution_of_compression_types_cdn_vs_origin.sql"
+  )
+}}
 
 CDNs are leading in Brotli adoption, with over 55% of CDN served content using Brotli compression up from 47% in 2022. In contrast, less than 42% of content served directly from origin servers uses Brotli, however this is up from 25% from 2022. While Gzip remains the majority compression algorithm used by origin servers, Brotli continues its upward adoption trajectory.
 
@@ -197,7 +270,15 @@ While Zstd offers benefits, the real-world performance improvements over Brotli 
 
 ### Distribution of compression types
 
-[IMAGE]
+{{ figure_markup(
+  image="cdn-types-compression-mobile.png",
+  caption="Distribution of compressions across CDNs (mobile).",
+  description="Brotli usage is prevalent on Cloudflare and Google CDNs while Gzip remains the majority across Akamai, Amazon CloudFront, and Fastly. However, when compared to 2022 Brotli continues its broad trend towards more adoption with larger CDN providers. The outlier in our dataset was Facebook which had over 60% adoption of Zstandard. Facebook’s strategy has been to optimize content delivery using their own compression algorithm so this result is expected",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRaKSyCfdyk5Qva05DCIxB4NPUI6VZASRpDfEIV9QsihS0nuKSEzWGh569LoaOnTW5NgHKTufv8ydlL/pubchart?oid=168908770&format=interactive",
+  sheets_gid="1455879080",
+  sql_file="distribution_of_compression_types_by_cdn.sql"
+  )
+}}
 
 Brotli usage is prevalent on Cloudflare and Google CDNs while Gzip remains the majority across Akamai, Amazon CloudFront, and Fastly. However, when compared to 2022 Brotli continues its broad trend towards more adoption with larger CDN providers. The outlier in our dataset was Facebook which had over 60% adoption of Zstandard. Facebook’s strategy has been to optimize content delivery using their own compression algorithm so this result is expected.
 
@@ -211,15 +292,32 @@ When it comes to the newer versions (TLS versions 1.2 and 1.3), there's a notice
 
 On the other hand, CDNs have embraced TLS 1.3, with 88.56% of requests using this latest version. This is great for developers because TLS 1.3 is faster at establishing secure connections, which means websites load more quickly. CDNs are at the forefront of adopting new technologies to  optimize content delivery and security and by fronting your application with a CDN, you automatically reap those benefits with minimal efforts.
 
-[IMAGE]
+{{ figure_markup(
+  image="tls-version-mobile.png",
+  caption="Distribution of TLS version for HTML (mobile).",
+  description="Bar chart of TLS version usage in mobile requests served by CDN and origin. We find identical results where both mobile and desktop have 98% adoption of TLS 1.3 over CDNs. Mobile vs desktop directly to origin servers were nearly identical as well with mobile at 73% and desktop 71%.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRaKSyCfdyk5Qva05DCIxB4NPUI6VZASRpDfEIV9QsihS0nuKSEzWGh569LoaOnTW5NgHKTufv8ydlL/pubchart?oid=121226278&format=interactive",
+  sheets_gid="1400986662",
+  sql_file="distribution_of_tls_versions_cdn_vs_origin.sql"
+  )
+}}
 
-When we look closely at how TLS is being used by different device types (Mobile vs Desktop), we find that desktops lead the way with 85.10% adopting the newest version, TLS 1.3. On the other hand, mobile devices are a bit lagging at 79.84%.
+When we look closely at how TLS is being used by different device types (Mobile vs Desktop), we find identical results where both mobile and desktop have 98% adoption of TLS 1.3 over CDNs. Mobile vs desktop directly to origin servers were nearly identical as well with mobile at 73% and desktop 71%. This represents a significant increase in TLS 1.3 adoption when compared to 2022. Mobile CDN TLS 1.3 traffic represented 87% in 2022 compared to 98% in 2024 and through origin servers from 42% now to 73%.
 
-The higher use of TLS 1.2 in mobile could be due to various factors such as older devices still in use, longer app update cycles, or specific mobile network configurations.
+While origin servers have begun to catch up with adoption of TLS 1.3, this further shows how CDNs drive newer features quicker than when web server operators have to perform software and hardware upgrades for the same new features.
 
-Desktops on the other hand tend to update their browsers more frequently and automatically. This helps them stay current with the latest security measures like TLS 1.3.
 
-[IMAGE]
+{{ figure_markup(
+  image="tls-version-mobile-3p.png",
+  caption="Distribution of TLS version for third-party requests (mobile).",
+  description="Bar chart of TLS version usage in third-party requests on desktop, served by CDN and origin. CDNs have served 93% of the third-party requests using TLS 1.3 and 7% of the requests in TLS 1.2. Origin on the other served 68% of the requests over TLS 1.3 and 32% of the requests on TLS 1.2.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRaKSyCfdyk5Qva05DCIxB4NPUI6VZASRpDfEIV9QsihS0nuKSEzWGh569LoaOnTW5NgHKTufv8ydlL/pubchart?oid=125141741&format=interactive",
+  sheets_gid="1400986662",
+  sql_file="distribution_of_tls_versions_cdn_vs_origin.sql"
+  )
+}}
+
+We find a similar story with third-party TLS 1.3 adoption with CDNs at 93% and origins at 68%. There was a small increase from 2022 for CDNs TLS 1.3 from 88% to 93% but as with our other results, the origin server increased significantly with 2022 at 26% to now 68%.
 
 ### TLS performance impact
 
@@ -227,11 +325,27 @@ TLS negotiation times reveal significant differences between CDN and Origin serv
 
 For desktop users, CDN performance is notably faster than Origin servers across all percentiles. The median (p50) TLS negotiation time for CDN is 70 milliseconds, compared to 183 milliseconds for Origin server. This trend is consistent across other percentiles, with CDN outperforming Origin at every level. For instance, at the 90th percentile (p90), CDN negotiation times are 108 milliseconds, while Origin servers take 289 milliseconds - more than 2.5 times longer.
 
-[IMAGE]
+{{ figure_markup(
+  image="tls-negotiation-desktop.png",
+  caption="HTML TLS negotiation - CDN vs origin (desktop)",
+  description="This bar chart provides insight into TLS connection time (in milliseconds) across 10th, 25th, 50th, 75th and 90th percentile for CDN and origin. As it can be seen from the chart the TLS negotiation time is generally faster for CDNs.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRaKSyCfdyk5Qva05DCIxB4NPUI6VZASRpDfEIV9QsihS0nuKSEzWGh569LoaOnTW5NgHKTufv8ydlL/pubchart?oid=1820997303&format=interactive",
+  sheets_gid="846467421",
+  sql_file="distribution_of_tls_time_cdn_vs_origin.sql"
+  )
+}}
 
 Mobile devices show a similar pattern, with CDN performing better than Origin servers, but the overall negotiation times are higher compared to desktop. The median TLS negotiation time for mobile CDN is 196 milliseconds, while for Origin servers it's 316 milliseconds. At the 90th percentile, mobile CDN takes 256 milliseconds, whereas Origin servers require 451 milliseconds.
 
-[IMAGE]
+{{ figure_markup(
+  image="tls-negotiation-mobile.png",
+  caption="HTML TLS negotiation - CDN vs origin (mobile)",
+  description="This bar chart provides insight into TLS connection time (in milliseconds) across 10th, 25th, 50th, 75th and 90th percentile for CDN and origin. As it can be seen from the chart the TLS negotiation time is generally faster for CDNs.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRaKSyCfdyk5Qva05DCIxB4NPUI6VZASRpDfEIV9QsihS0nuKSEzWGh569LoaOnTW5NgHKTufv8ydlL/pubchart?oid=899797304&format=interactive",
+  sheets_gid="846467421",
+  sql_file="distribution_of_tls_time_cdn_vs_origin.sql"
+  )
+}}
 
 Comparing desktop and mobile TLS negotiation times, we observe that mobile devices consistently have longer TLS negotiation times regardless of whether request is served from CDN or Origin server. For example, the median negotiation time for mobile CDN (196 ms) is nearly three times that of desktop CDN (70 ms). This difference is less pronounced for Origin servers, but still significant, with mobile median times (316 ms) being about 1.7 times longer than desktop (183 ms).
 
@@ -243,7 +357,15 @@ Image formats play a crucial role in Content Delivery Networks (CDNs) and can si
 
 Most CDNs can automatically detect the user's browser capabilities and serve the most appropriate image format. For example: AVIF to Chrome browsers, WebP to Edge browsers, JPEG to older browsers. They can further resize and cache images on the fly to handle responsive design requirements. This allows site operators to upload a single high resolution image and not having to maintain all its variations as site layout evolves.
 
-[IMAGE]
+{{ figure_markup(
+  image="cdn-image-formats-mobile.png",
+  caption="Distribution of Image Formats (mobile).",
+  description="This pie chart shows the breakdown of image formats observed across mobile devices.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRaKSyCfdyk5Qva05DCIxB4NPUI6VZASRpDfEIV9QsihS0nuKSEzWGh569LoaOnTW5NgHKTufv8ydlL/pubchart?oid=247539166&format=interactive",
+  sheets_gid="918737048",
+    sql_file="image_formats.sql"
+  )
+}}
 
 As of 2024,  data reveals that while traditional formats like JPEG and PNG still dominate, there's a clear trend towards adopting more efficient and mobile-friendly formats like WebP and SVG. The mobile ecosystem generally shows higher numbers for most formats, reflecting the growing importance of mobile web usage. The presence of newer formats like AVIF suggests an industry push towards more efficient image delivery, which is crucial for improving web performance and user experience across all devices.
 
@@ -255,7 +377,15 @@ Based on the provided information, the server can determine the most optimal res
 
 The CDN, origin servers, and client browser must all support Client Hints to be utilized properly. As part of the flow, the CDN can present the Accept-CH HTTP header to the client in order to request which Client Hints a client should include in subsequent requests. We measured clients responses where the CDN provided this header inside the request and measured it across all CDN requests recorded as part of our testing.
 
-[IMAGE]
+{{ figure_markup(
+  image="cdn-client-hints-mobile.png",
+  caption="Client Hints Comparison (mobile).",
+  description="This bar chart shows the usage of Client Hints in CDNs. Currently only 3.8% of the requests have client hints",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRaKSyCfdyk5Qva05DCIxB4NPUI6VZASRpDfEIV9QsihS0nuKSEzWGh569LoaOnTW5NgHKTufv8ydlL/pubchart?oid=1795720470&format=interactive",
+  sheets_gid="2034431888",
+  sql_file="client_hints_cdn_vs_origin.sql"
+  )
+}}
 
 In 2022, Client Hints adoption was at less than 1% for mobile requests. While the 2024 result was an increase with less than 4% of the requests for mobile devices indicating the presence of Client Hints, adoption of this capability remains low relative to the overall amount of requests observed. Though not explored in this year's chapter, if Client Hints adoption continues to grow we may in future chapters measure how CDNs are using the Accept-CH header to vary on for caching purposes and a more personalized experience.
 
@@ -265,7 +395,15 @@ Early Hints is the [HTTP 103 status code](https://datatracker.ietf.org/doc/html/
 
 While major browsers support Early Hints, we found hardly any adoption across the dataset. However, as seen with other newer and emerging features such as TLSv1.3, CDN’s continue to lead the way in driving adoption compared to support going directly to web servers. Even still, we only observed CloudFlare and Fastly support Early Hints in any significant number compared to the rest of the CDN community.
 
-[IMAGE]
+{{ figure_markup(
+  image="cdn-early-hints-mobile.png",
+  caption="Early Hints Comparison (mobile).",
+  description="This bar chart shows the usage of Early Hints in CDNs. Currently only 0.086% of the requests have client hints",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRaKSyCfdyk5Qva05DCIxB4NPUI6VZASRpDfEIV9QsihS0nuKSEzWGh569LoaOnTW5NgHKTufv8ydlL/pubchart?oid=609256029&format=interactive",
+  sheets_gid="954411290",
+  sql_file="early_hints_cdn_vs_origin.sql"
+  )
+}}
 
 As adoption of Early Hints increases we look forward to exploring more the performance implications that hints may provide. In future chapters we hope to observe more CDNs implement Early Hints and be able to show more granular statistics.
 

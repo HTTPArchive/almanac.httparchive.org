@@ -31,12 +31,10 @@ FROM
       IF(STARTS_WITH(url, 'https') OR JSON_EXTRACT_SCALAR(payload, '$._tls_version') IS NOT NULL OR CAST(JSON_EXTRACT(payload, '$._is_secure') AS INT64) = 1, TRUE, FALSE) AS isSecure,
       CAST(JSON_EXTRACT(payload, '$._socket') AS INT64) AS socket
     FROM
-      `httparchive.all.requests` CROSS JOIN UNNEST(response_headers) AS r
+      `httparchive.all.requests` 
     WHERE
       # WPT changes the response fields based on a redirect (url becomes the Location path instead of the original) causing insonsistencies in the counts, so we ignore them
-      date = '2024-06-01' AND 
-        r.name = 'location' AND 
-        (r.value='' OR r.value IS NULL)
+      date = '2024-06-01'
   ) a
 LEFT JOIN (
   SELECT
