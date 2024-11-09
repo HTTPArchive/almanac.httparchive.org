@@ -495,7 +495,7 @@ It is worth noting that the monitoring category, which also includes performance
   description="Bar chart showing the distribution of Total Blocking Time (TBT) per page in milliseconds (ms) by percentile. At the 10th percentile, both desktop and mobile TBT are near 0 ms. At the 25th percentile, desktop TBT is 84 ms, while mobile is 417 ms. At the 50th percentile, desktop has 67 ms of TBT, and mobile rises significantly to 1,209 ms. At the 75th percentile, desktop reaches 282 ms, with mobile at 2,990 ms. Finally, at the 90th percentile, desktop TBT is 718 ms, and mobile climbs to 5,955 ms",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=1525715716&format=interactive",
   sheets_gid="89045350",
-  sql_file="js_bytes_rank.sql"
+  sql_file="inp_tbt.sql"
   )
 }}
 
@@ -550,7 +550,7 @@ Looking at the metrics over time, we can see a nice upward trend. There is an in
 
 Let's look deeper by checking a few eligibility criteria that are quite a common cause and easily measurable using lab data.
 
-One of the "usual suspects" is the `unload` event that is triggered when a user navigates away from a page. Due to its unreliable behaviour and its incompatibility with how bfcache preserves a page's stage, `unload` event makes the page ineligible for bfcache. Important to note here is that this feature is specific for browsers on desktops. Mobile sites ignore the `unload` event. This behavior could explain CLS improvement over the years gap between mobile and desktop numbers from  Figure xxx: *The percent of websites having good CLS, segmented by device and year.*
+One of the "usual suspects" is the `unload` event that is triggered when a user navigates away from a page. Due to its unreliable behaviour and its incompatibility with how bfcache preserves a page's stage, `unload` event makes the page ineligible for bfcache. Important to note here is that this feature is specific for browsers on desktops. Mobile sites ignore the `unload` event. This behavior could explain CLS improvement over the years gap between mobile and desktop numbers from  [Figure 11.30: *The percent of websites having good CLS, segmented by device and year.*](#fig-30)
 
 {{ figure_markup(
   image="unload-usage.png",
