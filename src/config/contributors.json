@@ -977,20 +977,13 @@
     "website": "https://chrisadams.me.uk"
   },
   "ChrisBeeti": {
-<<<<<<< HEAD
     "avatar_url": "32492572",
     "github": "ChrisBeeti",
     "name": "Christian Böttger",
     "teams": {
       "2024": [
+        "leads",
         "reviewers"
-=======
-    "github": "ChrisBeeti",
-    "name": "Chris Beeti",
-    "teams": {
-      "2024": [
-        "leads"
->>>>>>> main
       ]
     }
   },
