@@ -11,13 +11,13 @@ sirjonathan_bio: Jonathan Wold is an Open Web advocate with more than 18 years f
 LoraRaykova_bio: Lora is a Content Manager at NitroPack with 8+ years of experience developing in-depth, specialized content for SaaS companies in the CEE region.
 niko-kaleev_bio: Niko is a Content Writer at NitroPack with 5+ years of experience in dissecting nuanced topics like hosting, Core Web Vitals, web performance metrics and optimizations.
 results: https://docs.google.com/spreadsheets/d/118lwQV_GwFYqIxXvsm57oeadJdjAJEOMCRq1PsTqhfs/
-featured_quote: TODO
+featured_quote: This year, the industry-wide focus on performance and user experience has deepened, with CMS platforms showing steady improvements across Core Web Vitals and Lighthouse scores. Many CMSs have embraced optimization strategies that enhance loading speed, interactivity, and accessibility, reflecting a shared commitment to a user-first web.
 featured_stat_1: 35.6%
-featured_stat_label_1: Percentage of mobile sites using WordPress.
+featured_stat_label_1: Percent of mobile sites using WordPress.
 featured_stat_2: 49%
-featured_stat_label_2: Percentage of mobile sites using a CMS.
-featured_stat_3: TODO
-featured_stat_label_3: TODO
+featured_stat_label_2: Percent of mobile sites using a CMS.
+featured_stat_3: 71.9%
+featured_stat_label_3: Percent of CMS market share that is WordPress
 ---
 
 In this chapter, we interpret the evolving landscape of the Content Management System (CMS) and its increasing influence on how users experience content on the web. We aim to explore both the broader CMS ecosystem and the unique characteristics of web pages created through these platforms.
@@ -49,7 +49,7 @@ Our analysis covers both desktop and mobile websites. While most URLs appeared i
 {{ figure_markup(
   image="cms-adoption.png",
   caption="CMS adoption.",
-  description="TODO",
+  description="A chart of CMS adoption from 2022 to 2024 trending upwards. For desktop CMS's are used by 46% of sites in 2022, 49%	of sites in 2023, and 51% of sites in 2024. For mobile it's 48%, 49%, and 51% respectively.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYh0RHAqp768faimbvZpvS71yJwCaOAFR0AzgotkEphtxphBKR1kt-pqgxA8Uxj4FSii1RQWwgG6rk/pubchart?oid=2013113638&format=interactive",
   sheets_gid="310746911",
   sql_file="cms_adoption.sql"
@@ -71,7 +71,7 @@ As of June 2024, CMS adoption worldwide has grown steadily, matching our dataset
 {{ figure_markup(
   image="cms-adoption-by-geo.png",
   caption="CMS adoption by geo.",
-  description="TODO",
+  description="United States of America CMS's are used on 40% of desktop and 44% of mobile sites. For India it's 30% and 33% respectively, For Japan 39% and 39%, Germany 33% and 43%, Brazil 31% and 32%, United Kingdom of Great Britain and Northern Ireland 36% and 42%, France 36% and 40%, Russian Federation 37% and 39%, Indonesia 27% and 24% and finally for Italy it's 41% on desktop and 46% on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYh0RHAqp768faimbvZpvS71yJwCaOAFR0AzgotkEphtxphBKR1kt-pqgxA8Uxj4FSii1RQWwgG6rk/pubchart?oid=2018893523&format=interactive",
   sheets_gid="708001576",
   sql_file="cms_adoption_by_geo.sql",
@@ -91,7 +91,7 @@ Let's explore what the CMS adoption rate by region reveals.
 {{ figure_markup(
   image="cms-adoption-by-region.png",
   caption="CMS adoption by region.",
-  description="TODO",
+  description="In Europe CMS's are used on 41% of desktop sites and 46% of mobile sites. For Americas it's 40% and 42% respectively. For Asia it's 34% and 33%, Oceania 37% and 44%, and finally for Africa it's 35% of desktop and 39% of mobile sites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYh0RHAqp768faimbvZpvS71yJwCaOAFR0AzgotkEphtxphBKR1kt-pqgxA8Uxj4FSii1RQWwgG6rk/pubchart?oid=996685882&format=interactive",
   sheets_gid="729753765",
   sql_file="cms_adoption_by_region.sql"
@@ -103,10 +103,12 @@ Following the trends in the country breakdown, Europe takes the lead with 46% fo
 {{ figure_markup(
   image="cms-adoption-by-subregion.png",
   caption="CMS adoption by subregion.",
-  description="TODO",
+  description="In Northern America CMS's are used by 41% of desktop sites and 44% of mobile sites. In Western Europe it's 39% and 46% respectively, Southern Europe 43% and 49%, Eastern Europe 35% and 39%, Eastern Asia 36% and 37%, Northern Europe 38% and 44%, South America 34% and 35%, Southern Asia 30% and 31%, South-Eastern Asia 31% and 29%, Western Asia 29% and 32%, Australia and New Zealand 37% and 44%, Central America 37% and 39%, Southern Africa 37% and 43%, Northern Africa 27% and 31%, Western Africa 27% and 36%, Eastern Africa 32% and 37%, Central Asia 25% and 33%, Caribbean 30% and 37%, Middle Africa 24% and 33%, for Melanesia it's 29% of mobile sites (no desktop data available), and finally for Polynesia it's 27% of mobile sites (again no desktop data available).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYh0RHAqp768faimbvZpvS71yJwCaOAFR0AzgotkEphtxphBKR1kt-pqgxA8Uxj4FSii1RQWwgG6rk/pubchart?oid=976092675&format=interactive",
   sheets_gid="855626423",
-  sql_file="cms_adoption_by_subregion.sql"
+  sql_file="cms_adoption_by_subregion.sql",
+  width=600,
+  height=701
   )
 }}
 
@@ -117,7 +119,7 @@ We examined CMS adoption by the estimated rank of the sites included within the 
 {{ figure_markup(
   image="top-cms-by-rank.png",
   caption="CMS usage by rank.",
-  description="TODO",
+  description="For the top 1,000 of sites CMS's are used by 7% of desktop and 8% of mobile sites. For the top 10,000 it's 16% and 17% respectively. For 100,000 it's 21% and 21%, 1,000,000 it's 28% and 27%, 10,000,000 it's 45% and 45%, and finally for all site's its 49% for both desktop and mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYh0RHAqp768faimbvZpvS71yJwCaOAFR0AzgotkEphtxphBKR1kt-pqgxA8Uxj4FSii1RQWwgG6rk/pubchart?oid=337512055&format=interactive",
   sheets_gid="1821067375",
   sql_file="cms_adoption_by_rank_all.sql"
@@ -136,7 +138,7 @@ A potentially correlated trend is the adoption of "headless" CMSs and the move t
 
 ## Most popular CMSs
 
-{# TODO - add an intro paragraph #}
+Let's look a little more into the top CMS's.
 
 ### Top 5 CMS adoption growth
 
@@ -145,14 +147,12 @@ Among all websites that use an identifiable CMS, WordPress sites account for the
 {{ figure_markup(
   image="top-cms-yoy.png",
   caption="Top 5 CMSs Year on Year.",
-  description="TODO",
+  description="WordPres was used on 35.1% in 2022, 34.9% in 2023, and 35.6% in 2024. Wix was used on 2.4%, 2.6%, and 2.8% respectively. Joomla was 1.9%, 1.7%, and 1.5%. Squarespace was 1.3%, 1.4%, and 1.5%, and finally Drupal was 1.4%, 1.3%, and 1.2%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYh0RHAqp768faimbvZpvS71yJwCaOAFR0AzgotkEphtxphBKR1kt-pqgxA8Uxj4FSii1RQWwgG6rk/pubchart?oid=1804381043&format=interactive",
   sheets_gid="738765206",
-  sql_file="top_cms_yoy.sql"
+  sql_file="cms_adoption.sql"
   )
 }}
-
-{# TODO find above SQL #}
 
 Comparing YoY, Drupal and Joomla continue to decline in market share while Squarespace and Wix grow (0.5% and 0.8%, respectively). WordPress continues its ascent, increasing 0.6% on mobile over 2023-2024 This represents a slower pace of growth than in previous years.
 
@@ -163,14 +163,12 @@ This year's chapter includes a new addition where we analyze CMS market share.
 {{ figure_markup(
   image="cms-adoption-share.png",
   caption="CMS adoption share.",
-  description="TODO",
+  description="WordPress is 71.9% of the CMS market on mobile, Wix is 5.7%, Squarespace 3.1%, Joomla 3.0%, Drupal 2.3%, Duda 1.2%, 1C-Bitrix 1.1%, Tilda 1.1%, and following those there is a proliferation of smaller segments.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYh0RHAqp768faimbvZpvS71yJwCaOAFR0AzgotkEphtxphBKR1kt-pqgxA8Uxj4FSii1RQWwgG6rk/pubchart?oid=538227468&format=interactive",
   sheets_gid="738765206",
-  sql_file="top_cms_yoy.sql"
+  sql_file="cms_adoption.sql"
   )
 }}
-
-{# TODO find above SQL (same as above) #}
 
 Staying consistent with existing trends and reports, WordPress remains the most popular CMS in the world, with as much as 71.9% of mobile websites leveraging the open-source platform. Next come the proprietary drag-and-drop CMSs Wix and Squarespace (5.7% and 3.1%, respectively), followed by Joomla at 3%.
 
@@ -207,7 +205,7 @@ Below is the percentage of sites on each platform that score "good" (LCP under 2
 {{ figure_markup(
   image="core-web-vitals-yoy.png",
   caption="Mobile year-over-year Core Web Vitals performance per CMS.",
-  description="TODO",
+  description="WordPress had a 28% pass rate in 2023 and 40% in 2024, Wix had 40% and 57% respectively, Joomla 37% and 45%, Drupal 46% and 56%, Squarespace 33% and 60%, 1C-Bitrix 30% and 45%, Duda 62% and 73%, TYPO3 CMS 63% and 71%, Tilda 28% and 39%, and finally Weebly 40% and 49%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYh0RHAqp768faimbvZpvS71yJwCaOAFR0AzgotkEphtxphBKR1kt-pqgxA8Uxj4FSii1RQWwgG6rk/pubchart?oid=867117364&format=interactive",
   sheets_gid="216688098",
   sql_file="core_web_vitals_yoy.sql",
