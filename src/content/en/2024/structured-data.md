@@ -45,40 +45,40 @@ As the structured data ecosystem matures, we're witnessing a diversification in 
 
 The rise of generative AI and advanced machine learning has further underscored the importance of structured data:
 
-* **Fact Validation**: Structured data provides a reliable source for AI systems to verify information and combat misinformation.
-* **Enhanced Search Understanding**: It enables a more nuanced interpretation of content by search engines and AI-powered systems.
-* **Training Data**: Well-structured data is high-quality training material for machine learning models.
+- **Fact Validation**: Structured data provides a reliable source for AI systems to verify information and combat misinformation.
+- **Enhanced Search Understanding**: It enables a more nuanced interpretation of content by search engines and AI-powered systems.
+- **Training Data**: Well-structured data is high-quality training material for machine learning models.
 
 ## What This Chapter Provides
 
 This chapter offers a data-driven analysis of structured data trends in 2023-2024, highlighting key developments and best practices:
 
 1. **Evolution of the Landscape**:
-   * Key shifts in structured data, especially with the rise of **AI-powered search** like **Google AI Overview** and **Bing Chat**.
-   * Changes in **Google** and **Bing** structured data policies, and their impact on SEO.
+   - Key shifts in structured data, especially with the rise of **AI-powered search** like **Google AI Overview** and **Bing Chat**.
+   - Changes in **Google** and **Bing** structured data policies, and their impact on SEO.
 2. **Prevalence and Growth**:
-   * Trends in popular formats like **JSON-LD**, **Microdata**, and **RDFa**.
-   * Adoption rates by schema types such as **Product**, **Organization**, and **Article**.
+   - Trends in popular formats like **JSON-LD**, **Microdata**, and **RDFa**.
+   - Adoption rates by schema types such as **Product**, **Organization**, and **Article**.
 3. **Implementation and Best Practices**:
-   * Best practices for structured data, including **JSON-LD** usage.
-   * Common mistakes and how to avoid them.
+   - Best practices for structured data, including **JSON-LD** usage.
+   - Common mistakes and how to avoid them.
 4. **Rich Results & SERP Features**:
-   * Effects of deprecated features like **FAQ** and **HowTo**.
-   * Introduction of **carousels** and **Product Knowledge Panels**.
+   - Effects of deprecated features like **FAQ** and **HowTo**.
+   - Introduction of **carousels** and **Product Knowledge Panels**.
 5. **AI-Powered Search**:
-   * The role of structured data in **AI-driven search** and **voice assistants**.
-   * Trends in **AI-powered content discovery**.
+   - The role of structured data in **AI-driven search** and **voice assistants**.
+   - Trends in **AI-powered content discovery**.
 6. **E-commerce Innovations**:
-   * Growth of **Digital Product Passports** and **GS1 Digital Links**.
-   * Structured data’s role in **e-commerce** and new rich result types.
+   - Growth of **Digital Product Passports** and **GS1 Digital Links**.
+   - Structured data’s role in **e-commerce** and new rich result types.
 7. **Knowledge Graphs & Graph RAG**:
-   * The rising importance of **knowledge graphs** and **Graph RAG** for enhancing AI outputs.
+   - The rising importance of **knowledge graphs** and **Graph RAG** for enhancing AI outputs.
 8. **Quality & Data Integrity**:
-   * Best practices for maintaining high-quality structured data.
+   - Best practices for maintaining high-quality structured data.
 9. **Emerging Schemas & Use Cases**:
-   * Innovations in schema types and their application in **SEO** and **e-commerce**.
+   - Innovations in schema types and their application in **SEO** and **e-commerce**.
 10. **Future Outlook**:
-    * The evolving role of structured data in **AI**, **semantic SEO**, and **content discovery**.
+    - The evolving role of structured data in **AI**, **semantic SEO**, and **content discovery**.
 
 This chapter provides a comprehensive view of structured data’s impact on SEO, AI, and e-commerce, with actionable insights for developers and marketers.
 
@@ -104,12 +104,12 @@ The landscape of search and digital assistance has dramatically evolved with the
 
 Semantic search has progressed beyond traditional keyword matching to include sophisticated AI-powered experiences. These systems leverage structured data to provide more accurate, contextual, and often conversational search results. Key developments include:
 
-* Google AI Overview: A feature that provides comprehensive (sometimes misleading) AI-generated summaries on complex topics.
-* Microsoft Bing Chat: Integrates chat-based AI interactions directly into Bing search results.
-* Meta AI: Meta’s AI assistant is integrated across platforms like Facebook, Messenger, Instagram, and WhatsApp.
-* SearchGPT (and ChatGPT): OpenAI’s AI search engine that integrates search results into conversational responses.
-* Perplexity.ai: An AI-powered search engine that provides detailed, sourced answers to queries.
-* You.com: Offers AI-summarized search results and a chat interface for more interactive searching.
+- Google AI Overview: A feature that provides comprehensive (sometimes misleading) AI-generated summaries on complex topics.
+- Microsoft Bing Chat: Integrates chat-based AI interactions directly into Bing search results.
+- Meta AI: Meta’s AI assistant is integrated across platforms like Facebook, Messenger, Instagram, and WhatsApp.
+- SearchGPT (and ChatGPT): OpenAI’s AI search engine that integrates search results into conversational responses.
+- Perplexity.ai: An AI-powered search engine that provides detailed, sourced answers to queries.
+- You.com: Offers AI-summarized search results and a chat interface for more interactive searching.
 
 These platforms demonstrate an enhanced ability to understand user intent and context, significantly improving search accuracy and user experience. They often combine traditional web indexing with real-time information retrieval and natural language generation.
 
@@ -125,48 +125,79 @@ Structured data plays a crucial role in these AI-powered systems by:
 
 While it is still challenging to assess the impact of structured data on Generative AI and AI search engines, in some cases, such as geo-referencing queries, we can observe the early emergence of entities in the user experience of Perplexity.ai and You.com.
 
-| ![Perplexity][image1] | ![You.com][image2] |
-| :---: | :---: |
+{{ figure_markup(
+  image="structured-data-perplexity.png",
+  caption="Perplexity",
+  description="TODO.",
+  width=1600,
+  height=1033
+  )
+}}
+
+{{ figure_markup(
+  image="structured-data-you-com.png",
+  caption="Bing Copilot",
+  description="TODO.",
+  width=1600,
+  height=816
+  )
+}}
 
 This is way more consistent when interacting with Bing Copilot or Gemini by Google.
 
-| ![Google Gemini][image3] | ![Bing Copilot][image4] |
-| :---- | :---- |
+{{ figure_markup(
+  image="structured-data-google-gemini.png",
+  caption="Google Gemini",
+  description="TODO.",
+  width=1544,
+  height=1340
+  )
+}}
 
-[image1]: /static/images/2024/structured-data/structured-data-perplexity.png
-[image2]: /static/images/2024/structured-data/structured-data-you-com.png
-[image3]: /static/images/2024/structured-data/structured-data-google-gemini.png
-[image4]: /static/images/2024/structured-data/structured-data-via-culinaria-bing.png
+{{ figure_markup(
+  image="structured-data-via-culinaria-bing.png",
+  caption="Bing Copilot",
+  description="TODO.",
+  width=1600,
+  height=1182
+  )
+}}
 
 Empirically, AI-powered search systems, as seen above, are sourcing data from a variety of established knowledge bases and authoritative platforms:
 
-* Map services: Google Maps and Bing Maps serve as crucial data sources for location-based information.
-* Authoritative websites: Platforms rich in structured data markup, such as TripAdvisor, contribute significantly to the knowledge base of AI search systems.
-* Vertical-specific databases: Industry-specific databases and platforms provide specialized information for AI-powered search in various sectors.
+- Map services: Google Maps and Bing Maps serve as crucial data sources for location-based information.
+- Authoritative websites: Platforms rich in structured data markup, such as TripAdvisor, contribute significantly to the knowledge base of AI search systems.
+- Vertical-specific databases: Industry-specific databases and platforms provide specialized information for AI-powered search in various sectors.
 
 ### The Shift to AI-Powered Search and Its Implications
 
 This transition from traditional search to AI-powered search demands a broader, more nuanced approach to optimization:
 
 1. **Multi-platform visibility**: SEO strategies must now account for visibility across a diverse array of AI surfaces and platforms, including:
-   * Traditional search engines (Google, Bing)
-   * AI chatbots (ChatGPT, Google's Gemini, Perplexity, Anthropic's Claude)
-   * Integrated assistants (Microsoft Copilot, potential Apple-ChatGPT integration)
-   * Ecosystem-specific tools (Google Workspace, Microsoft 365\)
-   * Browser and device-level integrations
+   - Traditional search engines (Google, Bing)
+   - AI chatbots (ChatGPT, Google's Gemini, Perplexity, Anthropic's Claude)
+   - Integrated assistants (Microsoft Copilot, potential Apple-ChatGPT integration)
+   - Ecosystem-specific tools (Google Workspace, Microsoft 365\)
+   - Browser and device-level integrations
 2. **Beyond conventional optimization**: Success in this landscape goes beyond optimizing for specific features like Google's AI Overview. It requires a holistic approach to making content discoverable and comprehensible across all emerging search interfaces.
 3. **Leveraging structured data strategically**: The key to improved visibility lies not just in publishing structured data using schema markup but in facilitating access to structured information about entities that matter to your business or content. This involves:
-   * Ensuring clear, structured information is available and easily interpretable by various AI systems.
-   * Ensuring that the metadata used to describe the webpage for bots is consistent with the content presented to human readers.
-   * Directly feeding accurate information to relevant platforms and marketplaces (e.g., Google Merchant, Amazon) for products and services.
+   - Ensuring clear, structured information is available and easily interpretable by various AI systems.
+   - Ensuring that the metadata used to describe the webpage for bots is consistent with the content presented to human readers.
+   - Directly feeding accurate information to relevant platforms and marketplaces (e.g., Google Merchant, Amazon) for products and services.
 
 ## Rich Results and Knowledge Panels
 
 **Rich results and knowledge panels**, powered by structured data, are essential features of search engine results pages (SERPs). These enhanced displays offer users immediate and relevant information, significantly boosting click-through rates and user engagement. As rich results become more diverse and sophisticated, they present new opportunities for content visibility. A recent example from Google is the introduction of a structured data carousel for listicle pages related to local businesses (including subtypes like restaurants, hotels, vacation rentals), products, and events.
 
-![Structured Data Carousel on Google](src/static/images/2024/structured-data/structured-data-image-carousel.png)
-
-*An example of the new beta carousel rich result.*
+{{ figure_markup(
+  image="structured-data-image-carousel.png",
+  alt="Structured Data Carousel on Google",
+  caption="An example of the new beta carousel rich result",
+  description="TODO.",
+  width=1600,
+  height=604
+  )
+}}
 
 Another notable example, while not directly influenced by structured data, is the new **Google Merchant Knowledge Panel**, which extends the functionality of the **Product Knowledge Graph Panel**. Structured data acts as a signal that contributes to entity disambiguation, helping search engines accurately identify businesses and their attributes, which can lead to the appearance of these panels. This feature helps businesses, both small and large, build trust with users by displaying key information about the merchant directly on Google's search results page.
 
@@ -192,9 +223,9 @@ In the e-commerce and supply chain sectors, [Digital Product Passports](https://
 
 The synergy between structured data and AI/ML has deepened. Structured data is crucial in training machine learning models, providing consistent, machine-readable labels. It's particularly important in areas such as:
 
-* **Large Language Models (LLMs)**: Fine-tuning with structured data for improved performance in specific domains.
-* **Explainable AI**: Using knowledge graphs to trace and explain AI decision-making processes.
-* **Multimodal AI**: Linking different data types (text, images, video) in AI systems.
+- **Large Language Models (LLMs)**: Fine-tuning with structured data for improved performance in specific domains.
+- **Explainable AI**: Using knowledge graphs to trace and explain AI decision-making processes.
+- **Multimodal AI**: Linking different data types (text, images, video) in AI systems.
 
 ## Semantic SEO and Data Quality
 
