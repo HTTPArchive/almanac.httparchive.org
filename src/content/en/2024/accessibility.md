@@ -829,7 +829,7 @@ In some instances, a combination of overlays and manual expertise has the potent
 
 This year we are providing a series of new data comparisons. We want to highlight that there are discernible differences in how different communities have handled accessibility. Whether it is based on good governance, or good defaults, it is possible to see differences in accessibility that are significant. It is the hope of the authors of this section that this will prompt a review of how the various communities treat accessibility.
 
-We also asessed the accessibility of websites in this section using the open source tool, <a href="https://developer.chrome.com/docs/lighthouse/accessibility/scoring">Google Lighthouse</a>.
+We also asessed the accessibility of websites in this section using the open source tool, [Google Lighthouse](https://developer.chrome.com/docs/lighthouse/accessibility/scoring).
 
 ### Country
 
@@ -847,7 +847,7 @@ There are two means by which we can identify country information, first by the G
   )
 }}
 
-It is worth noting that many sites that operate in the USA are subject to the Section 508 guidelines on accessibility. Organizations are being sued in the USA, under ADA Title III, for not having accessible websites. It is not surprising that the USA is the most accessible country. Other jurisdictions are beginning to penalize companies that sell inside their geography or to their citizens. Increasingly people are looking at the <a hreflang="en" href="https://en.wikipedia.org/wiki/European_Accessibility_Act">European Accessibility Act</a>, and preparing for the new requirements that will be introduced in 2025.
+It is worth noting that many sites that operate in the USA are subject to the Section 508 guidelines on accessibility. Organizations are being sued in the USA, under ADA Title III, for not having accessible websites. It is not surprising that the USA is the most accessible country. Other jurisdictions are beginning to penalize companies that sell inside their geography or to their citizens. Increasingly people are looking at the [European Accessibility Act](https://wikipedia.org/wiki/European_Accessibility_Act) and preparing for the new requirements that will be introduced in 2025.
 
 The following map shows the average desktop accessibility score by country top level domain (TLD).
 
