@@ -277,6 +277,17 @@
     "twitter": "avolakatos",
     "website": "http://alexlakatos.com/"
   },
+  "AlexMoening": {
+    "avatar_url": "166733339",
+    "github": "AlexMoening",
+    "name": "Alex Moening",
+    "teams": {
+      "2024": [
+        "analysts",
+        "authors"
+      ]
+    }
+  },
   "alexnj": {
     "avatar_url": "683500",
     "github": "alexnj",
@@ -648,7 +659,8 @@
       ],
       "2024": [
         "developers",
-        "editors"
+        "editors",
+        "leads"
       ]
     },
     "twitter": "tunetheweb",
@@ -810,7 +822,8 @@
         "reviewers"
       ],
       "2024": [
-        "editors"
+        "editors",
+        "leads"
       ]
     },
     "twitter": "httpsecheaders"
@@ -885,6 +898,17 @@
     },
     "twitter": "carlos_catb"
   },
+  "carolinescholles": {
+    "avatar_url": "112904072",
+    "github": "carolinescholles",
+    "name": "Caroline Scholles",
+    "teams": {
+      "2024": [
+        "reviewers",
+        "editors"
+      ]
+    }
+  },
   "clottman": {
     "avatar_url": "4480480",
     "github": "clottman",
@@ -949,6 +973,15 @@
       ]
     },
     "website": "https://chrisadams.me.uk"
+  },
+  "ChrisBeeti": {
+    "github": "ChrisBeeti",
+    "name": "Chris Beeti",
+    "teams": {
+      "2024": [
+        "leads"
+      ]
+    }
   },
   "svgeesus": {
     "avatar_url": "2506926",
@@ -1638,6 +1671,17 @@
       ]
     }
   },
+  "gunesacar": {
+    "avatar_url": "5788790",
+    "github": "gunesacar",
+    "name": "Gunes Acar",
+    "teams": {
+      "2024": [
+        "leads"
+      ]
+    },
+    "website": "https://gunesacar.net/"
+  },
   "harendra": {
     "github": "harendra",
     "name": "Haren Bhandari",
@@ -1697,6 +1741,9 @@
     "teams": {
       "2020": [
         "authors"
+      ],
+      "2024": [
+        "leads"
       ]
     },
     "twitter": "HenriHelvetica"
@@ -1853,6 +1900,18 @@
     "teams": {
       "2019": [
         "translators"
+      ]
+    },
+    "twitter": "SilentJMA"
+  },
+  "pgjaiganesh": {
+    "avatar_url": "1788195",
+    "github": "pgjaiganesh",
+    "name": "Jaiganesh Girinatha",
+    "teams": {
+      "2024": [
+        "analysts",
+        "authors"
       ]
     },
     "twitter": "SilentJMA"
@@ -2079,6 +2138,9 @@
       "2022": [
         "analysts",
         "authors"
+      ],
+      "2024": [
+        "authors"
       ]
     }
   },
@@ -2141,6 +2203,8 @@
     "name": "Jonathan Pagel",
     "teams": {
       "2024": [
+        "analysts",
+        "authors",
         "editors"
       ]
     },
@@ -2310,6 +2374,17 @@
       ]
     },
     "twitter": "fox"
+  },
+  "katekalcevich": {
+    "avatar_url": "1416158",
+    "github": "katekalcevich",
+    "linkedin": "katekalcevich",
+    "name": "Kate Kalcevich ",
+    "teams": {
+      "2024": [
+        "reviewers"
+      ]
+    }
   },
   "tymosh": {
     "avatar_url": "25080897",
@@ -2746,6 +2821,9 @@
       ],
       "2022": [
         "analysts"
+      ],
+      "2024": [
+        "developers"
       ]
     },
     "twitter": "themax_o",
@@ -2914,6 +2992,15 @@
     },
     "twitter": "mgechev",
     "website": "https://blog.mgechev.com/"
+  },
+  "MiriamNaß": {
+    "github": "MiriamNaß",
+    "name": "Miriam Naß",
+    "teams": {
+      "2024": [
+        "leads"
+      ]
+    }
   },
   "mirisuzanne": {
     "avatar_url": "104161",
@@ -3164,7 +3251,9 @@
         "authors"
       ],
       "2024": [
-        "analysts"
+        "analysts",
+        "leads",
+        "reviewers"
       ]
     },
     "twitter": "nrllah",
@@ -3743,7 +3832,9 @@
     "name": "Saptak Sengupta",
     "teams": {
       "2022": [
-        "authors"
+        "authors",
+        "developers",
+        "leads"
       ]
     },
     "twitter": "Saptak013",
@@ -4157,6 +4248,15 @@
     "twitter": "krutoi_paren",
     "website": "https://kartashov.io/"
   },
+  "turban1988": {
+    "github": "turban1988",
+    "name": "Tobias Urban",
+    "teams": {
+      "2024": [
+        "leads"
+      ]
+    }
+  },
   "bobbyshaw": {
     "avatar_url": "553566",
     "github": "bobbyshaw",
@@ -4184,6 +4284,9 @@
       ],
       "2022": [
         "authors"
+      ],
+      "2024": [
+        "leads"
       ]
     },
     "twitter": "tomvangoethem",
