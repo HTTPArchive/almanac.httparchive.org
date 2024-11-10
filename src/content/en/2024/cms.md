@@ -3,11 +3,11 @@
 title: CMS
 description: CMS chapter of the 2024 Web Almanac covering CMS adoption, user experience of websites running on CMS platforms, and CMS resource weights.
 authors: [sirjonathan, LoraRaykova, niko-kaleev]
-reviewers: [raewrites, karmatosed]
-editors: [tunetheweb]
-analysts: [sirjonathan, nrllh]
+reviewers: [raewrites, dknauss]
+editors: [tunetheweb, raewrites]
+analysts: [nrllh, sirjonathan]
 translators: []
-sirjonathan_bio: Jonathan Wold is an Open Web advocate with more than 18 years focused on the WordPress ecosystem. Beyond his love for WordPress, he enjoys reading widely, playing strategy games, acting, rock climbing, and occasionally writing in third-person.
+sirjonathan_bio: Jonathan Wold is an Open Web advocate with more than 20 years focused on the WordPress ecosystem. Beyond his love for WordPress and the Open Web, he enjoys reading widely, strategy games, acting, rock climbing, and occasionally writing in third-person.
 LoraRaykova_bio: Lora is a Content Manager at NitroPack with 8+ years of experience developing in-depth, specialized content for SaaS companies in the CEE region.
 niko-kaleev_bio: Niko is a Content Writer at NitroPack with 5+ years of experience in dissecting nuanced topics like hosting, Core Web Vitals, web performance metrics and optimizations.
 results: https://docs.google.com/spreadsheets/d/118lwQV_GwFYqIxXvsm57oeadJdjAJEOMCRq1PsTqhfs/
