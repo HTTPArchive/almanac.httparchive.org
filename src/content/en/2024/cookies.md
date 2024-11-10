@@ -15,7 +15,7 @@ ydimova_bio: Yana Dimova is a PhD student at DistriNet, KU Leuven, focusing on t
 featured_quote: Our results indicate both first-party and third-party tracking are common. We show that online tracking by means of cookies is still predominant on the web.
 featured_stat_1: 61%
 featured_stat_label_1: Cookies are third-party
-featured_stat_2: 10.78%
+featured_stat_2: 10.8%
 featured_stat_label_2: First-party desktop cookies have SameSite=None
 featured_stat_3: 6%
 featured_stat_label_3: Third-party cookies are partitioned (CHIPS)
@@ -29,7 +29,7 @@ Additionally, we discuss and measure the adoption of alternative mechanisms to t
 
 We find that 61% of cookies are set in a third-party context. Generally, third-party cookies can be used for online tracking and targeted advertising. For this reason, Google proposed to phase out all third-party cookies and introduce more privacy-friendly options to replace their functionality with the Privacy Sandbox.
 On the other hand, not all third-party cookies are used for online tracking. Browsers such as Chrome include a number of ways to limit the way that third-party cookies are used. For example, cookies that are partitioned (CHIPS) cannot be accessed across different top-level sites from the one the cookies are set on originally, which makes it impossible to track users across websites. Nonetheless, we find that the most prevalent partitioned cookies are set by domains related to advertising. Another example is the `SameSite` cookies attribute, which ensures that (first-party) cookies are not included in cross-site requests by default. Trackers can disable this setting by explicitly setting the value of the `SameSite` attribute to `None`. Therefore, in practice, we find that for 11% of observed first-party cookies, `SameSite` is set to `None`.  Additionally, we observe that the most widely set third-party cookies are used for advertising and analytics, with Google being prevalent on the largest percentage of websites.
-First-party cookies can also be used to track recurring users. From our analysis, we conclude that the most prevalent first-party cookies are used for analytics. In theory, because of the same-origin policy, these cookies cannot be used for cross-site tracking. However, by using advanced tracking methods such as cookie syncing and CNAME tracking, trackers can bypass this limitation. We refer to the [privacy chapter](https://almanac.httparchive.org/en/2024/privacy) for more details on online tracking methods.
+First-party cookies can also be used to track recurring users. From our analysis, we conclude that the most prevalent first-party cookies are used for analytics. In theory, because of the same-origin policy, these cookies cannot be used for cross-site tracking. However, by using advanced tracking methods such as cookie syncing and CNAME tracking, trackers can bypass this limitation. We refer to the [Privacy](./privacy) chapter for more details on online tracking methods.
 
 Our results indicate both first-party and third-party tracking are common. We show that online tracking by means of cookies is still predominant on the web.
 
@@ -94,13 +94,13 @@ Third-party cookies may be from a third party, or from a different site or servi
 </figure>
 
 ### Privacy & security risks
-**Web tracking.** Cookies are used by third parties to track users across websites and record their browsing behavior and interests. In targeted advertising, this data is leveraged to show users advertisements aligned with their interest. This tracking usually takes place the following way; third-party code embedded on a site can set a cookie that identifies a user. Then, the same third-party can record user activity by obtaining that cookie back when the user visits other websites where it is embedded as well (see also the [privacy](https://almanac.httparchive.org/en/2024/privacy) chapter) We note that first-party cookies can also be used for online tracking, methods such as cookie syncing allow to bypass the limitation of third-party cookies and track users [across different websites](https://dl.acm.org/doi/abs/10.1145/3442381.3449837).
+**Web tracking.** Cookies are used by third parties to track users across websites and record their browsing behavior and interests. In targeted advertising, this data is leveraged to show users advertisements aligned with their interest. This tracking usually takes place the following way; third-party code embedded on a site can set a cookie that identifies a user. Then, the same third-party can record user activity by obtaining that cookie back when the user visits other websites where it is embedded as well (see also the [Privacy](./privacy) chapter). We note that first-party cookies can also be used for online tracking, methods such as cookie syncing allow to bypass the limitation of third-party cookies and track users [across different websites](https://dl.acm.org/doi/abs/10.1145/3442381.3449837).
 
-**Cookie theft and session hijacking.** Cookies are used to store session information such as credentials (session token) for authentication purposes across several HTTP requests. However, if these cookies were to be obtained by a malicious actor, they could use them to authenticate to the corresponding web servers. If cookies are not properly set by web servers, they could be prone to cross-site vulnerabilities such as [session hijacking](https://developer.mozilla.org/en-US/docs/Glossary/Session_Hijacking), cross-site request forgery ([CSRF](https://developer.mozilla.org/en-US/docs/Web/Security/Practical_implementation_guides/CSRF_prevention)), cross-site script inclusion ([XSS](https://developer.mozilla.org/en-US/docs/Glossary/Cross-site_scripting)), and others (see also the [security](https://almanac.httparchive.org/en/2024/security) chapter).
+**Cookie theft and session hijacking.** Cookies are used to store session information such as credentials (session token) for authentication purposes across several HTTP requests. However, if these cookies were to be obtained by a malicious actor, they could use them to authenticate to the corresponding web servers. If cookies are not properly set by web servers, they could be prone to cross-site vulnerabilities such as [session hijacking](https://developer.mozilla.org/en-US/docs/Glossary/Session_Hijacking), cross-site request forgery ([CSRF](https://developer.mozilla.org/en-US/docs/Web/Security/Practical_implementation_guides/CSRF_prevention)), cross-site script inclusion ([XSS](https://developer.mozilla.org/en-US/docs/Glossary/Cross-site_scripting)), and others (see also the [Security](./security) chapter).
 
 ### Caveats
 
-You can learn more about the methodology applied by the HTTP Archive for the Web Almanac in 2024 on the [methodology page](https://almanac.httparchive.org/en/2024/methodology). There are limitations to that methodology which may impact the results in this chapter:
+You can learn more about the methodology applied by the HTTP Archive for the Web Almanac in 2024 on the [Methodology](./methodology) page. There are limitations to that methodology which may impact the results in this chapter:
 - Data is collected by automatically visiting websites in a non-interactive way; user interaction could modify the way websites set and use cookies in practice. For example, HTTP Archive's tools do not interact with cookie banners (if any) and so cookies that would be set after interaction with these banners are not observed by our study.
 - Websites are visited from servers located in the US that have no cookie set when each independent website visit starts; this is quite different from a user accumulating and saving web cookies while browsing the web. The location from which visits are performed can impact cookie behavior due to regulation and legislation such as [GDPR](https://gdpr-info.eu/).
 - For each website, the home page is visited as well as one other page from the same website.
@@ -129,7 +129,7 @@ First-party cookies are set by the same domain as the website that the user is v
   )
 }}
 
-On the top one million (top 1M) most visited websites, about 39% of the cookies are first-party and 61% are third-party cookies. Thus, a majority of the cookies set on the Web are third-party cookies. We also observe that this distribution is very similar whether these websites are accessed through a desktop or a mobile client. This indicates that overall there is little to no behavior change based on the type of client used. However, some websites may still behave differently and/or use other tracking methods such as fingerprinting depending on the type of client (see the [privacy chapter](https://almanac.httparchive.org/en/2024/privacy) for more).
+On the top one million (top 1M) most visited websites, about 39% of the cookies are first-party and 61% are third-party cookies. Thus, a majority of the cookies set on the Web are third-party cookies. We also observe that this distribution is very similar whether these websites are accessed through a desktop or a mobile client. This indicates that overall there is little to no behavior change based on the type of client used. However, some websites may still behave differently and/or use other tracking methods such as fingerprinting depending on the type of client (see the [Privacy](./privacy) chapter for more).
 
 {{ figure_markup(
   image="first-and-third-party-prevalence-by-rank-desktop.png",
@@ -738,25 +738,25 @@ In [2019](https://blog.google/products/chrome/building-a-more-private-web/), Goo
 
 Part of Google's initial plan with the Privacy Sandbox was to deprecate third-party cookies, but in [recent updates](https://privacysandbox.com/news/privacy-sandbox-update) Google announced that this was not their intention anymore and that they would rather introduce a "new experience in Chrome that lets people make an informed choice that applies across their web browsing". At the same time, Google will "continue to make the Privacy Sandbox APIs available and invest in them to further improve privacy and utility".
 
-We partnered with the [Privacy chapter](https://almanac.httparchive.org/en/2024/privacy) of the Web Almanac 2024 to measure adoption of the Privacy Sandbox APIs on the websites visited by the HTTP Archive crawl and will defer interested readers to their chapter for the analysis of the results. Next, we present an overview of the proposed mechanisms that are part of the Privacy Sandbox and aim at replacing a capability provided by cookies so far.
+We partnered with the [Privacy](./privacy) chapter of the Web Almanac 2024 to measure adoption of the Privacy Sandbox APIs on the websites visited by the HTTP Archive crawl and will defer interested readers to their chapter for the analysis of the results. Next, we present an overview of the proposed mechanisms that are part of the Privacy Sandbox and aim at replacing a capability provided by cookies so far.
 
 ### Topics API
 
 The [Topics API](https://developers.google.com/privacy-sandbox/private-advertising/topics/web) enables interest-based advertising, without using third-party cookies. The API allows callers (such as ad tech platforms) to access topics of interest that they have observed for a user, but without revealing additional information about the user's activity.
 
-See the [Privacy chapter](https://almanac.httparchive.org/en/2024/privacy) for some results about the adoption of the Topics API.
+See the [Privacy](./privacy) chapter for some results about the adoption of the Topics API.
 
 ### Protected Audience
 
 The [Protected Audience API](https://developers.google.com/privacy-sandbox/private-advertising/protected-audience) enables on-device ad auctions to serve remarketing and custom audiences, without cross-site third-party tracking. Advertisers can add users to interest groups that are saved by the browser while users are navigating on the web. This allows advertisers to perform retargeted advertising by bidding on the available interest groups the user is part of when they visit a website where an ad auction is performed.
 
-See the [Privacy chapter](https://almanac.httparchive.org/en/2024/privacy) for some results about the adoption of the Protected Audience API.
+See the [Privacy](./privacy) chapter for some results about the adoption of the Protected Audience API.
 
 ### Attribution Reporting API
 
 The [Attribution Reporting API](https://developers.google.com/privacy-sandbox/private-advertising/attribution-reporting) allows websites and third parties to measure ad conversion, i.e., when a view or a click on an advertisement leads later for example to a purchase. The Attribution Reporting API aims to enable measurement of ad conversion but without the use of cross-site identifiers and cookies.
 
-See the [Privacy chapter](https://almanac.httparchive.org/en/2024/privacy) for some results about the adoption of the Attribution Reporting  API.
+See the [Privacy](./privacy) chapter for some results about the adoption of the Attribution Reporting  API.
 
 ### CHIPS
 
@@ -816,4 +816,4 @@ Furthermore, for 100% of third-party cookies the `SameSite` attribute is explici
 The top first-party cookies are mainly used for analytics. Google Analytics, whose primary function is to report on the use of websites by users i.e, first-party analytics, is prevalent on at least 60% of websites. Meta follows its footsteps, by setting first-party cookies on 25% websites.
 Third-party cookies also predominantly set by Google: `doubleclick.net` sets a cookie on 44% of websites. Other top trackers have a considerably smaller reach of 8-12% of websites. In general, the most popular third-party cookies belong predominantly to the targeted advertising category.
 
-We conclude the chapter with an overview of the Privacy Sandbox, which aims to replace third-party cookies altogether, and refer to the [Privacy chapter](https://almanac.httparchive.org/en/2024/privacy) for more results.
+We conclude the chapter with an overview of the Privacy Sandbox, which aims to replace third-party cookies altogether, and refer to the [Privacy](./privacy) chapter for more results.
