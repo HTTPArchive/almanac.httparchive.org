@@ -70,7 +70,7 @@ As of June 2024, CMS adoption worldwide has grown steadily, matching our dataset
 
 {{ figure_markup(
   image="cms-adoption-by-geo.png",
-  caption="CMS adoption by geo.",
+  caption="CMS adoption by geography.",
   description="A barchart showing United States of America CMS's are used on 40% of desktop and 44% of mobile sites. For India it's 30% and 33% respectively, For Japan 39% and 39%, Germany 33% and 43%, Brazil 31% and 32%, United Kingdom of Great Britain and Northern Ireland 36% and 42%, France 36% and 40%, Russian Federation 37% and 39%, Indonesia 27% and 24% and finally for Italy it's 41% on desktop and 46% on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYh0RHAqp768faimbvZpvS71yJwCaOAFR0AzgotkEphtxphBKR1kt-pqgxA8Uxj4FSii1RQWwgG6rk/pubchart?oid=2018893523&format=interactive",
   sheets_gid="708001576",
