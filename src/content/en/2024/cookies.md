@@ -230,7 +230,7 @@ Only 12% of first-party cookies have the `HttpOnly` attribute set, while for thi
 
 Cookies with the [`Secure`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie#secure) attribute are only sent to requests made through HTTPs. This prevents [man-in-the-middle](https://developer.mozilla.org/en-US/docs/Glossary/MitM) attacks.
 
-For first-party cookies, 23% on desktop and 22% on mobile have the `Secure` attribute and all third-party cookies observed have the `Secure` attribute. Indeed, these third-party cookies also have the `SameSite=None` attribute that requires `Secure` to be set (see [below](#samesite)).
+For first-party cookies, 23% on desktop and 22% on mobile have the `Secure` attribute and all third-party cookies observed have the `Secure` attribute. Indeed, these third-party cookies also have the `SameSite=None` attribute that requires `Secure` to be set (see the next section).
 
 
 #### SameSite {#samesite}
@@ -805,7 +805,7 @@ See the [Privacy chapter](https://almanac.httparchive.org/en/2024/privacy) for s
 ### CHIPS
 
 [Cookies Having Independent Partitioned State (CHIPS)
-](https://developers.google.com/privacy-sandbox/cookies/chips) allow web developers to specify that they would like the cookies that they are setting to be saved in a partitioned storage, i.e., in a separate cookie jar per top-level site. CHIPS cookies correspond to the partitioned cookies discussed previously in this chapter, see [here](#partitioned).
+](https://developers.google.com/privacy-sandbox/cookies/chips) allow web developers to specify that they would like the cookies that they are setting to be saved in a partitioned storage, i.e., in a separate cookie jar per top-level site. CHIPS cookies correspond to the partitioned cookies discussed previously in this chapter, in the [partitioned](#partitioned) section.
 
 ### Related Website Sets
 
