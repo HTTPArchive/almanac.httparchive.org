@@ -12,11 +12,11 @@ LoraRaykova_bio: Lora is a Content Manager at NitroPack with 8+ years of experie
 niko-kaleev_bio: Niko is a Content Writer at NitroPack with 5+ years of experience in dissecting nuanced topics like hosting, Core Web Vitals, web performance metrics and optimizations.
 results: https://docs.google.com/spreadsheets/d/118lwQV_GwFYqIxXvsm57oeadJdjAJEOMCRq1PsTqhfs/
 featured_quote: This year, the industry-wide focus on performance and user experience has deepened, with CMS platforms showing steady improvements across Core Web Vitals and Lighthouse scores. Many CMSs have embraced optimization strategies that enhance loading speed, interactivity, and accessibility, reflecting a shared commitment to a user-first web.
-featured_stat_1: 35.6%
+featured_stat_1: 36%
 featured_stat_label_1: Percent of mobile sites using WordPress.
 featured_stat_2: 49%
 featured_stat_label_2: Percent of mobile sites using a CMS.
-featured_stat_3: 71.9%
+featured_stat_3: 72%
 featured_stat_label_3: Percent of CMS market share that is WordPress
 ---
 
@@ -645,14 +645,14 @@ This year, all top five CMSs show changes in the amount of font bytes delivered.
 
 {{ figure_markup(
   caption="Percentage of mobile sites using WordPress.",
-  content="35.6%",
+  content="36%",
   classes="big-number",
   sheets_gid="1621293918",
   sql_file="top-cms-by-geo.sql"
 )
 }}
 
-Of the over 16 million mobile sites in this year's crawl, WordPress is used by 5.7 millions sites for a total of 35.6% of sites. By comparison, the next closest CMS is Wix, with 456,253 sites or 2.8% of sites.
+Of the over 16 million mobile sites in this year's crawl, WordPress is used by 5.7 millions sites for a total of 36% of sites. By comparison, the next closest CMS is Wix, with 456,253 sites or 3% of sites.
 
 WordPress's global dominance stems from two main factors—a community that maintains and improves the functionality of the open-source project, and the CMS's flexibility in serving a wide range of websites and users.
 
