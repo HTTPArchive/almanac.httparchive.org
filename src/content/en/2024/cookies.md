@@ -261,29 +261,29 @@ For first-party cookies, about 87% of them have the `SameSite=Lax` (20% explicit
 
 ### Cookie prefixes
 
-Two [cookie prefixes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#cookie_prefixes) "__Host-" and "__Secure-" can be used in the cookie name to indicate that they can only be set or modified by a secure HTTPS origin. This is to defend against [session fixation](https://developer.mozilla.org/en-US/docs/Web/Security/Types_of_attacks#session_fixation) attacks. Cookies with both prefixes must be set by a secure HTTPs origin and have the "Secure" attribute set. Additionally, "__Host-" cookies must not contain a "Domain" attribute and have their "Path" set to "/", thus "__Host-" cookies are only sent back to the exact host they were set on, and so not to any parent domain.
+Two [cookie prefixes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#cookie_prefixes) `__Host-` and `__Secure-` can be used in the cookie name to indicate that they can only be set or modified by a secure HTTPS origin. This is to defend against [session fixation](https://developer.mozilla.org/en-US/docs/Web/Security/Types_of_attacks#session_fixation) attacks. Cookies with both prefixes must be set by a secure HTTPs origin and have the `Secure` attribute set. Additionally, `__Host-` cookies must not contain a `Domain` attribute and have their `Path` set to `/`, thus `__Host-` cookies are only sent back to the exact host they were set on, and so not to any parent domain.
 
 {{ figure_markup(
   image="cookie-prefixes-desktop.png",
   caption="Cookie prefixes observed on desktop pages",
-  description="Shows the observed cookies prefixes used on desktop pages. We see that 0.032% of first-party cookies and only 0.001% of third-party cookies include '__Host-'. Similarly, 0.03% of first-party cookies and 0.001% of third-party cookies include '__Secure-'. ",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLO9Te80QewkuPKnz6eJ7OFcU5q3fZMsdqv7cEncBKrL5zcsIN9sMMg5HQT7ndKze8JJNe-V1IkB-9/pubchart?oid=1811649614&format=interactive",
+  description="Shows the observed cookies prefixes used on desktop pages. We see that 0.032% of first-party cookies and only 0.001% of third-party cookies include `__Host-`. Similarly, 0.03% of first-party cookies and 0.001% of third-party cookies include `__Secure-`. ",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLO9Te80QewkuPKnz6eJ7OFcU5q3fZMsdqv7cEncBKrL5zcsIN9sMMg5HQT7ndKze8JJNe-V1IkB-9/pubchart?oid=1005258943&format=interactive",
   sheets_gid="1700493344",
-  sql_file = 'prevalence_attributes_per_type.sql'
+  sql_file="prevalence_attributes_per_type.sql"
   )
 }}
 
 {{ figure_markup(
   image="cookie-prefixes-mobile.png",
   caption="Cookie prefixes observed on mobile pages",
-  description="Shows the observed cookies prefixes used on mobile pages. We observe very similar results to the cookies prefixes used on desktop pages. We see that 0.031% of first-party cookies and only 0.001% of third-party cookies include '__Host-'. Similarly, 0.03% of first-party cookies and 0.001% of third-party cookies include '__Secure-'. ",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLO9Te80QewkuPKnz6eJ7OFcU5q3fZMsdqv7cEncBKrL5zcsIN9sMMg5HQT7ndKze8JJNe-V1IkB-9/pubchart?oid=1019127638&format=interactive",
+  description="Shows the observed cookies prefixes used on mobile pages. We observe very similar results to the cookies prefixes used on desktop pages. We see that 0.031% of first-party cookies and only 0.001% of third-party cookies include `__Host-`. Similarly, 0.03% of first-party cookies and 0.001% of third-party cookies include `__Secure-`. ",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLO9Te80QewkuPKnz6eJ7OFcU5q3fZMsdqv7cEncBKrL5zcsIN9sMMg5HQT7ndKze8JJNe-V1IkB-9/pubchart?oid=747475408&format=interactive",
   sheets_gid="1700493344",
-  sql_file = 'prevalence_attributes_per_type.sql'
+  sql_file="prevalence_attributes_per_type.sql"
   )
 }}
 
-We measure that 0.032% and 0.030% of the first-party cookies observed on desktop have the "__Host-" and "__Secure-" prefix set, respectively. These numbers are 0.001% for third-party cookies. These results show the very low adoption of these prefixes and the associated defense-in-depth measure since they were first [introduced](https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-rfc6265bis#section-4.1.3.1) at the end of 2015.
+We measure that 0.032% and 0.030% of the first-party cookies observed on desktop have the `__Host-` and `__Secure-` prefix set, respectively. These numbers are 0.001% for third-party cookies. These results show the very low adoption of these prefixes and the associated defense-in-depth measure since they were first [introduced](https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-rfc6265bis#section-4.1.3.1) at the end of 2015.
 
 ## Top first and third-party cookies and domains setting them
 
@@ -292,35 +292,34 @@ In the following section, we report for each client (desktop and mobile) the top
 {{ figure_markup(
   image="top-first-party-cookies-set.png",
   caption="Top first-party cookies set",
-  description="The chart shows the most widely-set first-party cookies. Google analytics sets the `_ga` and `_gid` cookies, which are used for website statistics and analytics reports, on more than 61% of websites fot both mobile and desktop clients." ,
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLO9Te80QewkuPKnz6eJ7OFcU5q3fZMsdqv7cEncBKrL5zcsIN9sMMg5HQT7ndKze8JJNe-V1IkB-9/pubchart?oid=380182537&format=interactive",
+  description="The chart shows the most widely-set first-party cookies. Google Analytics sets the `_ga` and `_gid` cookies, which are used for website statistics and analytics reports, on more than 61% of websites for both mobile and desktop clients.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLO9Te80QewkuPKnz6eJ7OFcU5q3fZMsdqv7cEncBKrL5zcsIN9sMMg5HQT7ndKze8JJNe-V1IkB-9/pubchart?oid=1305664900&format=interactive",
   sheets_gid="1236728722",
-  sql_file = 'top_20_first_party_cookies.sql'
+  sql_file="top_20_first_party_cookies.sql"
   )
 }}
 
-The first two first-party cookies "_ga" and "_gid" are set by [Google Analytics](https://business.safety.google/adscookies/) to store client identifiers and statistics for site analytics reports, a majority of websites use Google Analytics (more than 60% and 35%, respectively).
-The third one "_fbp" is set by Facebook and used for targeted advertising on 25% of the websites.
+The first two first-party cookies `_ga` and `_gid` are set by [Google Analytics](https://business.safety.google/adscookies/) to store client identifiers and statistics for site analytics reports, a majority of websites use Google Analytics (more than 60% and 35%, respectively). The third one `_fbp` is set by Facebook and used for targeted advertising on 25% of the websites.
 
 {{ figure_markup(
   image="top-third-party-cookies-set.png",
   caption="Top third-party cookies and domains that set them",
-  description="The chart shows the most widely-set third-party cookies. Doubliclick sets third-party advertising cookies on 28.9% websites and 26.7% of mobile websites. Microsoft also sets advertising cookies on 12.4% of desktop and 11.3% of mobile pages. Most of the top domains setting third-party cookies are related to tracking and advertising." ,
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLO9Te80QewkuPKnz6eJ7OFcU5q3fZMsdqv7cEncBKrL5zcsIN9sMMg5HQT7ndKze8JJNe-V1IkB-9/pubchart?oid=1907061819&format=interactive",
+  description="The chart shows the most widely-set third-party cookies. DoubleClick sets third-party advertising cookies on 28.9% websites and 26.7% of mobile websites. Microsoft also sets advertising cookies on 12.4% of desktop and 11.3% of mobile pages. Most of the top domains setting third-party cookies are related to tracking and advertising.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLO9Te80QewkuPKnz6eJ7OFcU5q3fZMsdqv7cEncBKrL5zcsIN9sMMg5HQT7ndKze8JJNe-V1IkB-9/pubchart?oid=219338324&format=interactive",
   sheets_gid="1236728722",
-  sql_file = 'top_20_third_party_cookies.sql'
+  sql_file="top_20_third_party_cookies.sql"
   )
 }}
 
-The "IDE" and "test_cookie" cookies are set by doubleclick.net (owned by Google) and are the most common third-party cookies observed on the top 1M websites; they are used for targeted advertising. DoubleClick checks if a user's web browser supports third-party cookies by trying to set "test_cookie". "MUID" from Microsoft comes next and is also used in targeted advertising to store the user's unique identifier for cross-site tracking.
+The `IDE` and `test_cookie` cookies are set by `doubleclick.net` (owned by Google) and are the most common third-party cookies observed on the top 1M websites; they are used for targeted advertising. DoubleClick checks if a user's web browser supports third-party cookies by trying to set `test_cookie`. `MUID` from Microsoft comes next and is also used in targeted advertising to store the user's unique identifier for cross-site tracking.
 
 {{ figure_markup(
   image="top-cookie-domains.png",
   caption="Top registrable domains setting cookies.",
-  description="The chart shows the most common domains that set cookies on the web. Google's owned advertising platform DoubleClick sets cookies on more than 44% of the top 1M websites while others are at about 8% to 12%." ,
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLO9Te80QewkuPKnz6eJ7OFcU5q3fZMsdqv7cEncBKrL5zcsIN9sMMg5HQT7ndKze8JJNe-V1IkB-9/pubchart?oid=1700710012&format=interactive",
+  description="The chart shows the most common domains that set cookies on the web. Google's owned advertising platform DoubleClick sets cookies on more than 44% of the top 1M websites while others are at about 8% to 12%.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLO9Te80QewkuPKnz6eJ7OFcU5q3fZMsdqv7cEncBKrL5zcsIN9sMMg5HQT7ndKze8JJNe-V1IkB-9/pubchart?oid=418361658&format=interactive",
   sheets_gid="1236728722",
-  sql_file = 'top_20_domains_setting_cookies.sql'
+  sql_file="top_20_domains_setting_cookies.sql"
   )
 }}
 
@@ -449,20 +448,20 @@ Websites set a median of nine or ten cookies of any type overall, seven first-pa
 {{ figure_markup(
   image="number-cookies-cdf-desktop.png",
   caption="Number of cookies per website (cdf) for desktop pages.",
-  description="The graph shows the cumulative distribution function for the number of cookies set on desktop pages. We see that more websites have a number of first-party cookies that is closer to the maximum of first-party cookies observed, than for third-party cookies." ,
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLO9Te80QewkuPKnz6eJ7OFcU5q3fZMsdqv7cEncBKrL5zcsIN9sMMg5HQT7ndKze8JJNe-V1IkB-9/pubchart?oid=250423340&format=interactive",
+  description="The graph shows the cumulative distribution function for the number of cookies set on desktop pages. We see that more websites have a number of first-party cookies that is closer to the maximum of first-party cookies observed, than for third-party cookies.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLO9Te80QewkuPKnz6eJ7OFcU5q3fZMsdqv7cEncBKrL5zcsIN9sMMg5HQT7ndKze8JJNe-V1IkB-9/pubchart?oid=1693604543&format=interactive",
   sheets_gid="1448286433",
-  sql_file = 'nb_cookies_cdf.sql'
+  sql_file="nb_cookies_cdf.sql"
   )
 }}
 
 {{ figure_markup(
   image="number-cookies-cdf-mobile.png",
   caption="Number of cookies per website (cdf) for mobile pages.",
-  description="The graph shows the cumulative distribution function for the number of cookies set on mobile pages. We see that more websites have a number of first-party cookies that is closer to the maximum of first-party cookies observed, than for third-party cookies. Additionally, we observe very simililar results for both desktop and mobile websites." ,
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLO9Te80QewkuPKnz6eJ7OFcU5q3fZMsdqv7cEncBKrL5zcsIN9sMMg5HQT7ndKze8JJNe-V1IkB-9/pubchart?oid=2118660652&format=interactive",
+  description="The graph shows the cumulative distribution function for the number of cookies set on mobile pages. We see that more websites have a number of first-party cookies that is closer to the maximum of first-party cookies observed, than for third-party cookies. Additionally, we observe very similar results for both desktop and mobile websites.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLO9Te80QewkuPKnz6eJ7OFcU5q3fZMsdqv7cEncBKrL5zcsIN9sMMg5HQT7ndKze8JJNe-V1IkB-9/pubchart?oid=832068018&format=interactive",
   sheets_gid="1448286433",
-  sql_file = 'nb_cookies_cdf.sql'
+  sql_file="nb_cookies_cdf.sql"
   )
 }}
 
@@ -587,24 +586,14 @@ We see that more websites have a number of first-party cookies that is closer to
 </figure>
 
 This section focuses on the actual size of these cookies. We find that the median size across all cookies observed on desktop during the HTTP Archive crawl of June 2024 is 37 bytes. This median value is consistent across first and third-party cookies as well as clients. The maximal size that we obtain is at about 4K bytes which is consistent with the limits defined in [RFC 6265](https://datatracker.ietf.org/doc/html/rfc6265#section-6.1). Note that because of the way the HTTP Archive tools work and collect the cookies, if websites try to set cookies larger than the limit of 4K bytes this information would be missing from the data analyzed in this chapter.
-The smallest cookies that we observe are of a single byte in size, they are likely set by error by empty "Set-Cookie" headers. Additionally, we also report the cumulative distribution function (cdf) of the size of all the cookies seen on the top 1M websites for each client.
+The smallest cookies that we observe are of a single byte in size, they are likely set by error by empty `Set-Cookie` headers. Additionally, we also report the cumulative distribution function (cdf) of the size of all the cookies seen on the top 1M websites for each client.
 Most cookies used for tracking have a size greater than [35 bytes](https://link.springer.com/chapter/10.1007/978-3-319-15509-8_21). The reason for this is that size is related to the tracking capability of cookies: trackers assign identifiers randomly to users in order to be able to re-identify them. So the larger the size (number of bytes) for the identifier, the more unique users they can be assigned to.
 
 {{ figure_markup(
-  image="size-cookies-cdf-desktop.png",
-  caption="Size of cookies per website (cdf) for desktop pages.",
-  description="The graph shows the cumulative distribution function for the number of cookies set on desktop pages. We see a very similar distribution for cookies sizes for both desktop and mobile clients." ,
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLO9Te80QewkuPKnz6eJ7OFcU5q3fZMsdqv7cEncBKrL5zcsIN9sMMg5HQT7ndKze8JJNe-V1IkB-9/pubchart?oid=164030978&format=interactive",
-  sheets_gid="1882828646",
-  sql_file = 'size_cookies_cdf.sql'
-  )
-}}
-
-{{ figure_markup(
-  image="size-cookies-cdf-mobile.png",
-  caption="Size of cookies per website (cdf) for mobile pages.",
-  description="The graph shows the cumulative distribution function for the number of cookies set on mobile pages. We see a very similar distribution for cookies sizes for both desktop and mobile clients." ,
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLO9Te80QewkuPKnz6eJ7OFcU5q3fZMsdqv7cEncBKrL5zcsIN9sMMg5HQT7ndKze8JJNe-V1IkB-9/pubchart?oid=771938257&format=interactive",
+  image="size-cookies-cdf-desktop-mobile.png",
+  caption="Size of cookies per website (cdf) for desktop and mobile pages.",
+  description="The graph shows the cumulative distribution function for the number of cookies set on desktop and mobile pages. We see a very similar distribution for cookies sizes for both desktop and mobile clients.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLO9Te80QewkuPKnz6eJ7OFcU5q3fZMsdqv7cEncBKrL5zcsIN9sMMg5HQT7ndKze8JJNe-V1IkB-9/pubchart?oid=2005425406&format=interactive",
   sheets_gid="1882828646",
   sql_file = 'size_cookies_cdf.sql'
   )
@@ -615,7 +604,7 @@ Most cookies used for tracking have a size greater than [35 bytes](https://link.
   <table>
     <thead>
       <tr>
-        <th>Age of cookies (desktop top 1M) in bytes </th>
+        <th>Age of cookies (desktop top 1M) in days </th>
         <th>First-party</th>
         <th>Third-party</th>
         <th>All</th>
@@ -673,7 +662,7 @@ Most cookies used for tracking have a size greater than [35 bytes](https://link.
   <table>
     <thead>
       <tr>
-        <th>Age of cookies (desktop top 1M) in bytes </th>
+        <th>Age of cookies (mobile top 1M) in days </th>
         <th>First-party</th>
         <th>Third-party</th>
         <th>All</th>
@@ -702,7 +691,7 @@ Most cookies used for tracking have a size greater than [35 bytes](https://link.
         <td>p75</td>
         <td class="numeric">396</td>
         <td class="numeric">365</td>
-        <td class="numeric">396</td>
+        <td class="numeric">390</td>
       </tr>
       <tr>
         <td>p90</td>
@@ -715,9 +704,7 @@ Most cookies used for tracking have a size greater than [35 bytes](https://link.
         <td class="numeric">400</td>
         <td class="numeric">400</td>
         <td class="numeric">400</td>
-      </tr><figure>
-  <figcaption>{{ figure_link(caption="Statistics for age of cookies set on desktop pages.") }}</figcaption>
-</figure>
+      </tr>
       <tr>
         <td>max</td>
         <td class="numeric">400</td>
@@ -729,25 +716,15 @@ Most cookies used for tracking have a size greater than [35 bytes](https://link.
   <figcaption>{{ figure_link(caption="Statistics for age of cookies set on mobile pages.") }}</figcaption>
 </figure>
 
-After looking into cookie size, let's now dive into cookie age. Cookies are set to an expiration date when they are created. Recall that session cookies expire immediately after the session is over ([see previous section](#session)). The median age of first-party cookies is at about 183 days or roughly 6 months, while the median age of third-party cookies is a full year. After less than one day and thirty days, 25% of first-party and third-party cookies expire, respectively. The maximum age among the cookies that we can observe with the instrumentation and collection of the HTTP Archive Tools is of 400 days, this is aligned with the [hard limits](https://developer.chrome.com/blog/cookie-max-age-expires) that Chrome imposes on cookie "Expires" and "Max-Age" attribute. Below, are the cumulative distribution functions (cdf) of the age of the cookies set on the top 1M websites whether it is on a desktop or mobile client.
+After looking into cookie size, let's now dive into cookie age. Cookies are set to an expiration date when they are created. Recall that session cookies expire immediately after the session is over ([see previous section](#session)). The median age of first-party cookies is at about 183 days or roughly 6 months, while the median age of third-party cookies is a full year. After less than one day and thirty days, 25% of first-party and third-party cookies expire, respectively. The maximum age among the cookies that we can observe with the instrumentation and collection of the HTTP Archive Tools is of 400 days, this is aligned with the [hard limits](https://developer.chrome.com/blog/cookie-max-age-expires) that Chrome imposes on cookie `Expires` and `Max-Age` attribute. Below, are the cumulative distribution functions (cdf) of the age of the cookies set on the top 1M websites whether it is on a desktop or mobile client.
 
 {{ figure_markup(
-  image="age-cookies-cdf-desktop.png",
-  caption="Age of cookies per website (cdf) for desktop pages.",
-  description="The graph shows the cumulative distribution function for the age of cookies set on desktop pages. About 45% of cookies expire after 90 days. We find the same results for both mobile and desktop clients. Additionally, 75% of cookies have a lifespan of maximum 1 year, while the other half remain stored in the browser for longer than a year. We see a very similar distribution for cookies sizes for both desktop and mobile clients." ,
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLO9Te80QewkuPKnz6eJ7OFcU5q3fZMsdqv7cEncBKrL5zcsIN9sMMg5HQT7ndKze8JJNe-V1IkB-9/pubchart?oid=1838066617&format=interactive",
+  image="age-cookies-cdf-desktop-mobile.png",
+  caption="Age of cookies per website (cdf) for desktop and mobile pages.",
+  description="The graph shows the cumulative distribution function for the age of cookies set on desktop and mobile pages. About 45% of cookies expire after 90 days. We find the same results for both mobile and desktop clients. Additionally, 75% of cookies have a lifespan of maximum 1 year, while the other half remain stored in the browser for longer than a year. We see a very similar distribution for cookies sizes for both desktop and mobile clients.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLO9Te80QewkuPKnz6eJ7OFcU5q3fZMsdqv7cEncBKrL5zcsIN9sMMg5HQT7ndKze8JJNe-V1IkB-9/pubchart?oid=147680119&format=interactive",
   sheets_gid="135614941",
-  sql_file = 'age_expires_cookies_cdf.sql'
-  )
-}}
-
-{{ figure_markup(
-  image="age-cookies-cdf-mobile.png",
-  caption="Age of cookies per website (cdf) for mobile pages.",
-  description="The graph shows the cumulative distribution function for the age of cookies set on mobile pages. About 45% of cookies expire after 90 days. We find the same results for both mobile and desktop clients. Additionally, 75% of cookies have a lifespan of maximum 1 year, while the other half remain stored in the browser for longer than a year. We see a very similar distribution for cookies sizes for both desktop and mobile clients." ,
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLO9Te80QewkuPKnz6eJ7OFcU5q3fZMsdqv7cEncBKrL5zcsIN9sMMg5HQT7ndKze8JJNe-V1IkB-9/pubchart?oid=702122056&format=interactive",
-  sheets_gid="135614941",
-  sql_file = 'age_expires_cookies_cdf.sql'
+  sql_file="age_expires_cookies_cdf.sql"
   )
 }}
 
@@ -757,7 +734,7 @@ From the graph, we deduce that about 45 % of cookies expire after 90 days. We fi
 
 ### What is the Privacy Sandbox initiative?
 
-In [2019](https://blog.google/products/chrome/building-a-more-private-web/), Google announced the launch of the [Privacy Sandbox](https://developers.google.com/privacy-sandbox) initiative to reduce cross-site (Web) and cross-app (Android) tracking while retaining utility for advertising and other use cases that historically have relied on third-party cookies and other tracking mechanisms . The Privacy Sandbox is composed of more than [20 different proposals](https://privacysandbox.com) that aim to diminish the use of unique identifiers, limiting covert tracking, fighting spam and fraud, showing relevant ads to users, and measuring ad conversions.
+In [2019](https://blog.google/products/chrome/building-a-more-private-web/), Google announced the launch of the [Privacy Sandbox](https://developers.google.com/privacy-sandbox) initiative to reduce cross-site (Web) and cross-app (Android) tracking while retaining utility for advertising and other use cases that historically have relied on third-party cookies and other tracking mechanisms. The Privacy Sandbox is composed of more than [20 different proposals](https://privacysandbox.com) that aim to diminish the use of unique identifiers, limiting covert tracking, fighting spam and fraud, showing relevant ads to users, and measuring ad conversions.
 
 Part of Google's initial plan with the Privacy Sandbox was to deprecate third-party cookies, but in [recent updates](https://privacysandbox.com/news/privacy-sandbox-update) Google announced that this was not their intention anymore and that they would rather introduce a "new experience in Chrome that lets people make an informed choice that applies across their web browsing". At the same time, Google will "continue to make the Privacy Sandbox APIs available and invest in them to further improve privacy and utility".
 
@@ -765,7 +742,7 @@ We partnered with the [Privacy chapter](https://almanac.httparchive.org/en/2024/
 
 ### Topics API
 
-The [Topics AP I](https://developers.google.com/privacy-sandbox/private-advertising/topics/web) enables interest-based advertising, without using third-party cookies. The API allows callers (such as ad tech platforms) to access topics of interest that they have observed for a user, but without revealing additional information about the user's activity.
+The [Topics API](https://developers.google.com/privacy-sandbox/private-advertising/topics/web) enables interest-based advertising, without using third-party cookies. The API allows callers (such as ad tech platforms) to access topics of interest that they have observed for a user, but without revealing additional information about the user's activity.
 
 See the [Privacy chapter](https://almanac.httparchive.org/en/2024/privacy) for some results about the adoption of the Topics API.
 
@@ -783,12 +760,11 @@ See the [Privacy chapter](https://almanac.httparchive.org/en/2024/privacy) for s
 
 ### CHIPS
 
-[Cookies Having Independent Partitioned State (CHIPS)
-](https://developers.google.com/privacy-sandbox/cookies/chips) allow web developers to specify that they would like the cookies that they are setting to be saved in a partitioned storage, i.e., in a separate cookie jar per top-level site. CHIPS cookies correspond to the partitioned cookies discussed previously in this chapter, in the [partitioned](#partitioned) section.
+[Cookies Having Independent Partitioned State (CHIPS)](https://developers.google.com/privacy-sandbox/cookies/chips) allow web developers to specify that they would like the cookies that they are setting to be saved in a partitioned storage, i.e., in a separate cookie jar per top-level site. CHIPS cookies correspond to the partitioned cookies discussed previously in this chapter, in the [partitioned](#partitioned) section.
 
 ### Related Website Sets
 
-[Related Website Sets](https://developers.google.com/privacy-sandbox/cookies/related-website-sets) allow websites from the same owner to share cookies among themselves.The creation and submission of a Related Website Set is done at the moment through opening a pull request on a [GitHub repository](https://github.com/GoogleChrome/related-website-sets) that Google employees check and merge if deemed valid. Websites that belong to the same related website set must also indicate it by placing a corresponding file at the [.well-known URI](https://www.iana.org/assignments/well-known-uris/well-known-uris.xhtml) "/.well-known/related-website-set.json".
+[Related Website Sets](https://developers.google.com/privacy-sandbox/cookies/related-website-sets) allow websites from the same owner to share cookies among themselves. The creation and submission of a Related Website Set is done at the moment through opening a pull request on a [GitHub repository](https://github.com/GoogleChrome/related-website-sets) that Google employees check and merge if deemed valid. Websites that belong to the same related website set must also indicate it by placing a corresponding file at the [.well-known URI](https://www.iana.org/assignments/well-known-uris/well-known-uris.xhtml) `/.well-known/related-website-set.json`.
 
 {{ figure_markup(
   caption="Number of related primary website sets.",
@@ -798,30 +774,31 @@ See the [Privacy chapter](https://almanac.httparchive.org/en/2024/privacy) for s
 )
 }}
 
-Chrome ships with a pre-loaded file containing related website sets validated by the Chrome team; at the moment of writing (version "2024.8.10.0"), there are 64 distinct related website sets. Each related website set contains a primary domain and a list of other domains related to the primary one below one of the following attributes: "associatedSites", "servicesSites", and/or "ccTLDs". These 64 primary domains are each associated with secondary domains as part of their set: 60 sets contain "associatedSites", 11 "servicesSites", and 7 "ccTLDs". We report on the following figure the number of secondary domains for each set. We observe that if a majority of the primary domains are associated with 5 or less secondary domains, "https://journaldesfemmes.com", "https://ya.ru", and "https://mercadolibre.com" are linked to 8, 17, and 39 secondary domains among which third party requests are handled as if they were all from the first party, respectively.
+Chrome ships with a preloaded file containing related website sets validated by the Chrome team; at the moment of writing (version `2024.8.10.0`), there are 64 distinct related website sets. Each related website set contains a primary domain and a list of other domains related to the primary one below one of the following attributes: `associatedSites`, `servicesSites`, and/or `ccTLDs`. These 64 primary domains are each associated with secondary domains as part of their set: 60 sets contain `associatedSites`, 11 `servicesSites`, and 7 `ccTLDs`. We report on the following figure the number of secondary domains for each set. We observe that if a majority of the primary domains are associated with 5 or less secondary domains, `https://journaldesfemmes.com`, `https://ya.ru`, and `https://mercadolibre.com` are linked to 8, 17, and 39 secondary domains among which third party requests are handled as if they were all from the first party, respectively.
 
 {{ figure_markup(
   image="secondary-domains.png",
   caption="Secondary domains per primary domain.",
   description="The graph shows secondary domains associated to primary domains for Related Website Sets, which is part of Google's Privacy Sandbox. We observe that if a majority of the primary domains are associated with 5 or less secondary domains, `https://journaldesfemmes.com`, `https://ya.ru`, and `https://mercadolibre.com` are linked to 8, 17, and 39 secondary domains among which third party requests are handled as if they were all from the first party, respectively.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLO9Te80QewkuPKnz6eJ7OFcU5q3fZMsdqv7cEncBKrL5zcsIN9sMMg5HQT7ndKze8JJNe-V1IkB-9/pubchart?oid=627102878&format=interactive",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLO9Te80QewkuPKnz6eJ7OFcU5q3fZMsdqv7cEncBKrL5zcsIN9sMMg5HQT7ndKze8JJNe-V1IkB-9/pubchart?oid=914391662&format=interactive",
   sheets_gid="199073475"
   )
 }}
 
 ### Attestation file
 
-In order to use some of the Privacy Sandbox APIs, API callers have to go through an [enrollment](https://developers.google.com/privacy-sandbox/private-advertising/enrollment) process to declare that they will not abuse these APIs for cross-site re-identification, but only for their intended use cases. The legal implications of this commitment if not respected is quite unclear, but this allows these callers to obtain an attestation file that must be placed at the .well-known URI "/.well-know/privacy-sandbox-attestations.json" on the domain they registered to call these APIs from.
+In order to use some of the Privacy Sandbox APIs, API callers have to go through an [enrollment](https://developers.google.com/privacy-sandbox/private-advertising/enrollment) process to declare that they will not abuse these APIs for cross-site re-identification, but only for their intended use cases. The legal implications of this commitment if not respected is quite unclear, but this allows these callers to obtain an attestation file that must be placed at the `.well-known` URI `/.well-know/privacy-sandbox-attestations.json` on the domain they registered to call these APIs from.
 
-Chrome ships with a pre-loaded file containing a list of domains that have an attestation file registered. Currently, this list contains 257 distinct domains (version "2024.10.7.0") that have enrolled to call the following APIs: Attribution Reporting, Protected App Signals (Android only), Private Aggregation (Chrome only), Protected Audience (FLEDGE), Shared Storage (Chrome only), and Topics.
-We used a [custom crawler](https://github.com/privacysandstorm/well-known-crawler) separate from the HTTP Archive tools to obtain and parse these attestation files. We successfully retrieved attestation files for 232 distinct domains with that crawler (some attestation files may be available but not obtained by this crawler due to networking issues for example). We report next the proportion of domains that are enrolled for each API on Chrome and Android. We observe that the majority of these origins are enrolled to call one of the five Chrome APIs requiring an attestation while the proportion is way less for the Android APIs.
+Chrome ships with a preloaded file containing a list of domains that have an attestation file registered. Currently, this list contains 257 distinct domains (version `2024.10.7.0`) that have enrolled to call the following APIs: Attribution Reporting, Protected App Signals (Android only), Private Aggregation (Chrome only), Protected Audience, Shared Storage (Chrome only), and Topics.
+We used a [custom crawler](https://github.com/privacysandstorm/well-known-crawler) separate from the HTTP Archive tools to obtain and parse these attestation files. We successfully retrieved attestation files for 232 distinct domains with that crawler (some attestation files may be available but not obtained by this crawler due to networking issues for example). Next, we report the proportion of domains that are enrolled for each API on Chrome and Android. We observe that the majority of these origins are enrolled to call one of the five Chrome APIs requiring an attestation while the proportion is way less for the Android APIs.
 
 {{ figure_markup(
   image="attestation-files.png",
   caption="Enrollment from Privacy Sandbox APIs attestation files.",
-  description="257 domains have already enrolled for Google's Privacy Sandbox and are part of the attestation file. The graph shows the  proportion of domains that are enrolled for each API on Chrome and Android. We observe that the majority of these origins are enrolled to call one of the five Chrome APIs requiring an attestation while the proportion is way less for the Android APIs." ,
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLO9Te80QewkuPKnz6eJ7OFcU5q3fZMsdqv7cEncBKrL5zcsIN9sMMg5HQT7ndKze8JJNe-V1IkB-9/pubchart?oid=1937515788&format=interactive",
-  sheets_gid="2119972682"  )
+  description="257 domains have already enrolled for Google's Privacy Sandbox and are part of the attestation file. The graph shows the proportion of domains that are enrolled for each API on Chrome and Android. We observe that the majority of these origins are enrolled to call one of the five Chrome APIs requiring an attestation while the proportion is way less for the Android APIs." ,
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLO9Te80QewkuPKnz6eJ7OFcU5q3fZMsdqv7cEncBKrL5zcsIN9sMMg5HQT7ndKze8JJNe-V1IkB-9/pubchart?oid=1570607827&format=interactive",
+  sheets_gid="2119972682"
+  )
 }}
 
 ## Conclusion
@@ -837,6 +814,6 @@ Furthermore, for 100% of third-party cookies the `SameSite` attribute is explici
 
 **Who sets cookies and what are they used for?**
 The top first-party cookies are mainly used for analytics. Google Analytics, whose primary function is to report on the use of websites by users i.e, first-party analytics, is prevalent on at least 60% of websites. Meta follows its footsteps, by setting first-party cookies on 25% websites.
-Third-party cookies also predominantly set by Google: doubleclick.net sets a cookie on 44% of websites. Other top trackers have a considerably smaller reach of 8-12% of websites. In general, the most popular third-party cookies belong predominantly to the targeted advertising category.
+Third-party cookies also predominantly set by Google: `doubleclick.net` sets a cookie on 44% of websites. Other top trackers have a considerably smaller reach of 8-12% of websites. In general, the most popular third-party cookies belong predominantly to the targeted advertising category.
 
 We conclude the chapter with an overview of the Privacy Sandbox, which aims to replace third-party cookies altogether, and refer to the [Privacy chapter](https://almanac.httparchive.org/en/2024/privacy) for more results.
