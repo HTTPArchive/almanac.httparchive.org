@@ -510,7 +510,7 @@ Fewer bytes mean lower bandwidth costs, reduced carbon emissions, and faster per
 {{ figure_markup(
   image="median-cms-page-weight.png",
   caption="Median CMS page weight.",
-  description="TODO",
+  description="Bar chart showing median page weight for popular CMSs. WordPress has a median of 2,252 KB on desktop and 2,047 KB on mobile, Wix 2,560 and 2,215, Squarespace 3,323 and 3,015, Joomla 2,133 and 2,035, and finally Drupal is 1,903 KB on desktop and 1,762 KB on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYh0RHAqp768faimbvZpvS71yJwCaOAFR0AzgotkEphtxphBKR1kt-pqgxA8Uxj4FSii1RQWwgG6rk/pubchart?oid=255848791&format=interactive",
   sheets_gid="1442275519",
   sql_file="resource_weights.sql"
@@ -522,7 +522,7 @@ Although we observed a steady trend in increasing page weight over the past seve
 {{ figure_markup(
   image="cms-page-weight-distribution.png",
   caption="Distribution of CMS page weight.",
-  description="TODO",
+  description="Bar chart showing page weight in Killobyes (KB) at various percentiles. WordPress is 598 KB at 10th percentile, 1,101 KB at 25th percentile, 2,047 KB at 50th percentile, 3,959 KB at 75th percentile, and 7,826 KB at 90th percentile. Wix is 1,217 KB, 1,565 KB, 2,215 KB, 3,322 KB, and 6,369 KB respectively. Squarespace is 1,594 KB, 2,076 KB, 3,015 KB, 5,013 KB, 9,404 KB. Joomla is 561 KB, 1,021 KB, 2,034 KB, 4,303 KB, 9,052 KB. Drupal is 524 KB, 937 KB, 1,762 KB, 3,500 KB, 7,160 KB.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYh0RHAqp768faimbvZpvS71yJwCaOAFR0AzgotkEphtxphBKR1kt-pqgxA8Uxj4FSii1RQWwgG6rk/pubchart?oid=1457951957&format=interactive",
   sheets_gid="2016584461",
   sql_file="page_weight_distribution.sql"
@@ -546,7 +546,7 @@ Images are a significant resource on most websites, often accounting for the lar
 {{ figure_markup(
   image="cms-size-of-images.png",
   caption="Median CMS size of images.",
-  description="TODO",
+  description="Bar chart showing median image weight for popular CMSs. WordPress has a median of 833 KB on desktop and 725 KB on mobile, Wix 312 and 152 respectively, Squarespace 1,226 and 921, Joomla 1,035 and 988, and finally Drupal is 741 KB on desktop and 653 KB on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYh0RHAqp768faimbvZpvS71yJwCaOAFR0AzgotkEphtxphBKR1kt-pqgxA8Uxj4FSii1RQWwgG6rk/pubchart?oid=1544422290&format=interactive",
   sheets_gid="1442275519",
   sql_file="resource_weights.sql"
@@ -561,8 +561,8 @@ We can examine the usage of the different image formats across the top CMSs:
 
 {{ figure_markup(
   image="image-format-popularity-by-cms.png",
-  caption="Image format popularity by CMS.",
-  description="TODO",
+  caption="Image format popularity by CMS for mobile.",
+  description="Stacked bar chart of image format popularity across various CMSs. Most have 30-50% jpg, with 30% png, 10-20% gif, and less than 10% for webp, svg, ico, and avif. The exceptions are Wix with a large amount (70%) of webp, and Duda simialr with 46% webp.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYh0RHAqp768faimbvZpvS71yJwCaOAFR0AzgotkEphtxphBKR1kt-pqgxA8Uxj4FSii1RQWwgG6rk/pubchart?oid=1032342538&format=interactive",
   sheets_gid="809952267",
   sql_file="image_format_popularity.sql",
@@ -584,7 +584,7 @@ JavaScript powers much of the interactive functionality on modern websites. CMS 
 {{ figure_markup(
   image="cms-size-of-js.png",
   caption="Median CMS size of JS.",
-  description="TODO",
+  description="Bar chart showing median JavaScript weight for popular CMSs. WordPress has a median of 565 KB on desktop and 528 KB on mobile, Wix 1,461 and 1,462 respectively, Squarespace 1,309 and 1,314, Joomla 409 and 386, and finally Drupal is 479 KB on desktop and 471 KB on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYh0RHAqp768faimbvZpvS71yJwCaOAFR0AzgotkEphtxphBKR1kt-pqgxA8Uxj4FSii1RQWwgG6rk/pubchart?oid=1698213507&format=interactive",
   sheets_gid="1442275519",
   sql_file="resource_weights.sql"
@@ -600,7 +600,7 @@ HTML forms the structural backbone of any web page, defining the layout and cont
 {{ figure_markup(
   image="cms-size-of-html.png",
   caption="Median CMS size of HTML.",
-  description="TODO",
+  description="Bar chart showing median html weight for popular CMSs. WordPress has a median of 40 KB on desktop and 38 KB on mobile, Wix 142 and 143 respectively, Squarespace 25 and 25, Joomla 19 and 18, and finally Drupal is 20 KB and 20 KB.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYh0RHAqp768faimbvZpvS71yJwCaOAFR0AzgotkEphtxphBKR1kt-pqgxA8Uxj4FSii1RQWwgG6rk/pubchart?oid=417293866&format=interactive",
   sheets_gid="1442275519",
   sql_file="resource_weights.sql"
@@ -616,7 +616,7 @@ CSS controls the visual styling of a website, dictating elements like layout, co
 {{ figure_markup(
   image="cms-size-of-css.png",
   caption="Median CMS size of CSS.",
-  description="TODO",
+  description="Bar chart showing median CSS weight for popular CMSs. WordPress has a median of 121 KB on desktop and 118 KB on mobile, Wix 12 and 5 respectively, Squarespace 133 and 133, Joomla 89 and 86, and finally Drupal is 72 KB on desktop and 70 KB on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYh0RHAqp768faimbvZpvS71yJwCaOAFR0AzgotkEphtxphBKR1kt-pqgxA8Uxj4FSii1RQWwgG6rk/pubchart?oid=2059559160&format=interactive",
   sheets_gid="1442275519",
   sql_file="resource_weights.sql"
@@ -632,7 +632,7 @@ CMS-based websites frequently offer a variety of fonts to enhance branding and v
 {{ figure_markup(
   image="cms-size-of-fonts.png",
   caption="Median CMS size of fonts.",
-  description="TODO",
+  description="Bar chart showing median font weight for popular CMSs. WordPress has a median of 182 KB on desktop and 152 KB on mobile, Wix 154 and 125 respectively,Squarespace 184 and 169, Joomla 120 and 100, and finally Drupal is 123 KB on desktop and 104 KB on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYh0RHAqp768faimbvZpvS71yJwCaOAFR0AzgotkEphtxphBKR1kt-pqgxA8Uxj4FSii1RQWwgG6rk/pubchart?oid=655172650&format=interactive",
   sheets_gid="1442275519",
   sql_file="resource_weights.sql"
@@ -665,7 +665,7 @@ In the following section, we review page builder adoption,along with improvement
 {{ figure_markup(
   image="top-5-page-builders.png",
   caption="Top 5 page builders.",
-  description="TODO",
+  description="Bar chart showing the top 5 page builders used on sites. Elementor is used on 54% of desktop sites and 56% on mobile, wpBakery is 21% and 21% for both, Divi 14% for both, SiteOrigin Page Builder is 2% for both, and finally Oxygen is 1% for both desktop and mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYh0RHAqp768faimbvZpvS71yJwCaOAFR0AzgotkEphtxphBKR1kt-pqgxA8Uxj4FSii1RQWwgG6rk/pubchart?oid=1601231589&format=interactive",
   sheets_gid="1497515207",
   sql_file="wordpress_page_builders.sql"
@@ -691,7 +691,7 @@ Furthermore, since they first kicked off the project in November 2021, WordPress
 {{ figure_markup(
   image="wordpress-cwv-pass-trend.png",
   caption="Trend of WordPress Core Web Vitals pass rates",
-  description="TODO",
+  description="Line graph showing the increase of WordPress origins passing Core Web Vitals from less than 15% in January 2020 and increasing fairly steadily up to 41% in July 2024.",
   width=1752,
   height=888
   )
