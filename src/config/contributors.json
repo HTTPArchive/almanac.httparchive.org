@@ -1099,6 +1099,9 @@
       "2022": [
         "editors",
         "reviewers"
+      ],
+      "2024": [
+        "reviewers"
       ]
     },
     "website": "https://newlocalmedia.com"
@@ -3526,6 +3529,7 @@
     "name": "Raelene Morey",
     "teams": {
       "2024": [
+        "editors",
         "reviewers"
       ]
     }
@@ -4122,18 +4126,6 @@
     },
     "twitter": "tpiros",
     "website": "https://tamas.io"
-  },
-  "karmatosed": {
-    "avatar_url": "253067",
-    "github": "karmatosed",
-    "name": "Tammie Lister",
-    "teams": {
-      "2024": [
-        "reviewers"
-      ]
-    },
-    "twitter": "karmatosed",
-    "website": "https://tammielister.com/"
   },
   "tammyeverts": {
     "avatar_url": "15661032",
