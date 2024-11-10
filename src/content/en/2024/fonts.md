@@ -235,53 +235,53 @@ Digging down even further, we can take a look at the individual table sizes used
     <tbody>
       <tr>
         <td>glyf</td>
-        <td class="numeric">76.55%</td>
-        <td class="numeric">77.92%</td>
+        <td class="numeric">77%</td>
+        <td class="numeric">78%</td>
       </tr>
       <tr>
         <td>GPOS</td>
-        <td class="numeric">6.38%</td>
-        <td class="numeric">5.80%</td>
+        <td class="numeric">6%</td>
+        <td class="numeric">6%</td>
       </tr>
       <tr>
         <td>CFF</td>
-        <td class="numeric">5.08%</td>
-        <td class="numeric">4.44%</td>
+        <td class="numeric">5%</td>
+        <td class="numeric">4%</td>
       </tr>
       <tr>
         <td>hmtx</td>
-        <td class="numeric">2.68%</td>
-        <td class="numeric">2.63%</td>
+        <td class="numeric">3%</td>
+        <td class="numeric">3%</td>
       </tr>
       <tr>
         <td>post</td>
-        <td class="numeric">2.09%</td>
-        <td class="numeric">2.18%</td>
+        <td class="numeric">2%</td>
+        <td class="numeric">2%</td>
       </tr>
       <tr>
         <td>name</td>
-        <td class="numeric">1.40%</td>
-        <td class="numeric">1.33%</td>
+        <td class="numeric">1%</td>
+        <td class="numeric">1%</td>
       </tr>
       <tr>
         <td>cmap</td>
-        <td class="numeric">1.36%</td>
-        <td class="numeric">1.31%</td>
+        <td class="numeric">1%</td>
+        <td class="numeric">1%</td>
       </tr>
       <tr>
         <td>gvar</td>
-        <td class="numeric">1.14%</td>
-        <td class="numeric">1.14%</td>
+        <td class="numeric">1%</td>
+        <td class="numeric">1%</td>
       </tr>
       <tr>
         <td>fpgm</td>
-        <td class="numeric">1.07%</td>
-        <td class="numeric">1.13%</td>
+        <td class="numeric">1%</td>
+        <td class="numeric">1%</td>
       </tr>
       <tr>
         <td>GSUB</td>
-        <td class="numeric">0.66%</td>
-        <td class="numeric">0.62%</td>
+        <td class="numeric">1%</td>
+        <td class="numeric">1%</td>
       </tr>
     </tbody>
   </table>
@@ -392,53 +392,53 @@ We think the rise of `block` usage is concerning so we decided to investigate a 
     <tbody>
       <tr>
         <td>Font Awesome</td>
-        <td class="numeric">15.49%</td>
-        <td class="numeric">16.12%</td>
+        <td class="numeric">15.5%</td>
+        <td class="numeric">16.1%</td>
       </tr>
       <tr>
         <td>ETmodules</td>
-        <td class="numeric">1.71%</td>
-        <td class="numeric">1.71%</td>
+        <td class="numeric">1.7%</td>
+        <td class="numeric">1.7%</td>
       </tr>
       <tr>
         <td>TablePress</td>
-        <td class="numeric">1.12%</td>
-        <td class="numeric">1.06%</td>
+        <td class="numeric">1.1%</td>
+        <td class="numeric">1.1%</td>
       </tr>
       <tr>
         <td>icomoon</td>
-        <td class="numeric">1.02%</td>
-        <td class="numeric">1.05%</td>
+        <td class="numeric">1.0%</td>
+        <td class="numeric">1.1%</td>
       </tr>
       <tr>
         <td>vcpb-plugin-icons</td>
-        <td class="numeric">0.77%</td>
-        <td class="numeric">0.74%</td>
+        <td class="numeric">0.8%</td>
+        <td class="numeric">0.7%</td>
       </tr>
       <tr>
         <td>fl-icons</td>
-        <td class="numeric">0.60%</td>
-        <td class="numeric">0.62%</td>
+        <td class="numeric">0.6%</td>
+        <td class="numeric">0.6%</td>
       </tr>
       <tr>
         <td>dm-social-font</td>
-        <td class="numeric">0.46%</td>
-        <td class="numeric">0.52%</td>
+        <td class="numeric">0.5%</td>
+        <td class="numeric">0.5%</td>
       </tr>
       <tr>
         <td>dm-font</td>
-        <td class="numeric">0.46%</td>
-        <td class="numeric">0.52%</td>
+        <td class="numeric">0.5%</td>
+        <td class="numeric">0.5%</td>
       </tr>
       <tr>
         <td>dm-social-icons</td>
         <td class="numeric">0%</td>
-        <td class="numeric">0.51%</td>
+        <td class="numeric">0.5%</td>
       </tr>
       <tr>
         <td>dm-common-icons</td>
         <td class="numeric">0%</td>
-        <td class="numeric">0.51%</td>
+        <td class="numeric">0.5%</td>
       </tr>
     </tbody>
   </table>
@@ -598,53 +598,53 @@ Looking at foundries, the main surprise is the rise of Adobe Fonts as a foundry.
     <tbody>
       <tr>
         <td>Google Fonts</td>
-        <td class="numeric">33.77%</td>
-        <td class="numeric">18.50%</td>
+        <td class="numeric">34%</td>
+        <td class="numeric">19%</td>
       </tr>
       <tr>
         <td>Adobe Fonts</td>
-        <td class="numeric">14.39%</td>
-        <td class="numeric">14.71%</td>
+        <td class="numeric">14%</td>
+        <td class="numeric">15%</td>
       </tr>
       <tr>
         <td>Font Awesome</td>
-        <td class="numeric">14.37%</td>
-        <td class="numeric">18.86%</td>
+        <td class="numeric">14%</td>
+        <td class="numeric">19%</td>
       </tr>
       <tr>
         <td>Indian Type Foundry</td>
-        <td class="numeric">7.21%</td>
-        <td class="numeric">9.74%</td>
+        <td class="numeric">7%</td>
+        <td class="numeric">10%</td>
       </tr>
       <tr>
         <td>Łukasz Dziedzic</td>
-        <td class="numeric">4.81%</td>
-        <td class="numeric">6.38%</td>
+        <td class="numeric">5%</td>
+        <td class="numeric">6%</td>
       </tr>
       <tr>
         <td>Julieta Ulanovsky</td>
-        <td class="numeric">4.75%</td>
-        <td class="numeric">6.14%</td>
+        <td class="numeric">5%</td>
+        <td class="numeric">6%</td>
       </tr>
       <tr>
         <td>Mark Simonson Studio</td>
-        <td class="numeric">2.03%</td>
-        <td class="numeric">2.23%</td>
+        <td class="numeric">2%</td>
+        <td class="numeric">2%</td>
       </tr>
       <tr>
         <td>Ascender Corporation</td>
-        <td class="numeric">1.75%</td>
-        <td class="numeric">2.24%</td>
+        <td class="numeric">2%</td>
+        <td class="numeric">2%</td>
       </tr>
       <tr>
         <td>Paratype</td>
-        <td class="numeric">1.64%</td>
-        <td class="numeric">2.08%</td>
+        <td class="numeric">2%</td>
+        <td class="numeric">2%</td>
       </tr>
       <tr>
         <td>Linotype</td>
-        <td class="numeric">1.46%</td>
-        <td class="numeric">1.97%</td>
+        <td class="numeric">1%</td>
+        <td class="numeric">2%</td>
       </tr>
     </tbody>
   </table>
@@ -858,10 +858,12 @@ To give a sense of where these increases have been most consequential, it helps 
 {{ figure_markup(
   image="writing-systems.png",
   caption="Writing systems supported by fonts.",
-  description="Bar chart showing the writing systems supported by fonts. Cyrillic is at 13% for both desktop and mobile, Greek is at 8% for desktop and 7.5% for mobile, Emoji are at 1.6% for both desktop and mobile, Katakana is at 1.2% for desktop and 0.95% for mobile, Hiragana is at 1.2% for desktop and 0.95% for mobile, Hebrew is at 1.1% for both desktop and mobile, Hangul is at 0.9% for desktop and 0.5% for mobile, Devanagari is at 0.9% for desktop and 0.8% for mobile, Arabic is at 0.7% for desktop and 1% for mobile, Thai is at 0.5% for both desktop and mobile, finally Han is at 0.35% for desktop and 0.3% for mobile. Omitted the Latin script at 47% for desktop and 46% for mobile to give better insight into the support for other scripts.",
+  description="Bar chart showing the writing systems supported by fonts. Cyrillic is at 13% for both desktop and mobile, Greek is at 8% for desktop and 7.5% for mobile, Emoji are at 1.6% for both desktop and mobile, Katakana is at 1.2% for desktop and 0.9% for mobile, Hiragana is at 1.2% for desktop and 0.95% for mobile, Hebrew is at 1.1% for both desktop and mobile, Hangul is at 0.9% for desktop and 0.5% for mobile, Devanagari is at 0.9% for desktop and 0.8% for mobile, Arabic is at 0.7% for desktop and 1% for mobile, Thai is at 0.5% for both desktop and mobile, finally Han is at 0.4% for desktop and 0.3% for mobile. Omitted the Latin script at 47% for desktop and 46% for mobile to give better insight into the support for other scripts.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTHmcrit1gMzxfZNeFp9LrA4NQSMEh140fapD4CFQ89knpy6LvEKz7VafGaFGlxCAxTdpLZXaVaq8Pg/pubchart?oid=1521239630&format=interactive",
   sheets_gid="1749442653",
-  sql_file="performance/styles_font_display.sql"
+  sql_file="performance/styles_font_display.sql",
+  width=600,
+  height=486
   )
 }}
 
@@ -1240,7 +1242,7 @@ This point is driven home if we take a look at the features used in combination 
 {{ figure_markup(
   image="popular-font-feature-settings-values.png",
   caption="Most popular `font-feature-settings` values.",
-  description="Bar chart showing the most popular `font-feature-settings` values. The `kern` feature tag is at 2.6% of desktop and mobile pages, the `liga` feature tag is used on 2.35% of desktop pages and 2.25% of mobile pages, the `tnum` feature tag is used on 0.77% of desktop and 0.67% of mobile pages, the `palt` feature tag is used on 0.66% of desktop pages and 0.6% of mobile pages, the `pnum` feature tag is used on 0.41% of desktop pages and 0.39% of mobile pages, the `lnum` feature tag is used at 0.35% of both mobile and desktop pages, and finally the `calt` feature tag is used at 0.2% of desktop pages and 0.17% of mobile pages.",
+  description="Bar chart showing the most popular `font-feature-settings` values. The `kern` feature tag is at 2.6% of desktop and mobile pages, the `liga` feature tag is used on 2.3% of desktop pages and 2.2% of mobile pages, the `tnum` feature tag is used on 0.8% of desktop and 0.7% of mobile pages, the `palt` feature tag is used on 0.7% of desktop pages and 0.6% of mobile pages, the `pnum` feature tag is used on 0.41% of desktop pages and 0.39% of mobile pages, the `lnum` feature tag is used at 0.4% of mobile and 0.3% of desktop pages, and finally the `calt` feature tag is used at 0.2% of both desktop and mobile pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTHmcrit1gMzxfZNeFp9LrA4NQSMEh140fapD4CFQ89knpy6LvEKz7VafGaFGlxCAxTdpLZXaVaq8Pg/pubchart?oid=133823749&format=interactive",
   sheets_gid="666056788",
   sql_file="development/styles_font_feature_settings.sql"
@@ -1283,53 +1285,53 @@ As an aside, usage doesn’t necessarily imply that a web developer chose to use
     <tbody>
       <tr>
         <td>Noto Sans JP</td>
-        <td class="numerical">26.80%</td>
-        <td class="numerical">23.37%</td>
+        <td class="numerical">27%</td>
+        <td class="numerical">23%</td>
       </tr>
       <tr>
         <td>Open Sans</td>
-        <td class="numerical">15.87%</td>
-        <td class="numerical">17.68%</td>
+        <td class="numerical">16%</td>
+        <td class="numerical">18%</td>
       </tr>
       <tr>
         <td>Montserrat</td>
-        <td class="numerical">9.01%</td>
-        <td class="numerical">10.19%</td>
+        <td class="numerical">9%</td>
+        <td class="numerical">10%</td>
       </tr>
       <tr>
         <td>Noto Sans KR</td>
-        <td class="numerical">7.29%</td>
-        <td class="numerical">3.79%</td>
+        <td class="numerical">7%</td>
+        <td class="numerical">4%</td>
       </tr>
       <tr>
         <td>Noto Serif JP</td>
-        <td class="numerical">4.89%</td>
-        <td class="numerical">4.95%</td>
+        <td class="numerical">5%</td>
+        <td class="numerical">5%</td>
       </tr>
       <tr>
         <td>Raleway</td>
-        <td class="numerical">3.66%</td>
-        <td class="numerical">4.03%</td>
+        <td class="numerical">3%</td>
+        <td class="numerical">4%</td>
       </tr>
       <tr>
         <td>Inter</td>
-        <td class="numerical">2.69%</td>
-        <td class="numerical">2.81%</td>
+        <td class="numerical">3%</td>
+        <td class="numerical">3%</td>
       </tr>
       <tr>
         <td>Noto Sans TC</td>
-        <td class="numerical">2.40%</td>
-        <td class="numerical">1.98%</td>
+        <td class="numerical">2%</td>
+        <td class="numerical">2%</td>
       </tr>
       <tr>
         <td>Google Sans 18pt</td>
-        <td class="numerical">1.69%</td>
-        <td class="numerical">2.31%</td>
+        <td class="numerical">2%</td>
+        <td class="numerical">2%</td>
       </tr>
       <tr>
         <td>Oswald</td>
-        <td class="numerical">1.66%</td>
-        <td class="numerical">1.90%</td>
+        <td class="numerical">2%</td>
+        <td class="numerical">2%</td>
       </tr>
     </tbody>
   </table>
@@ -1349,7 +1351,7 @@ Open Sans was the second most popular variable font this year, being found on 16
 {{ figure_markup(
   image="variable-font-usage-by-service.png",
   caption="Popular hosts for serving variable fonts over time.",
-  description="Column chart showing hosts for serving variable fonts over time. In 2022 Google Fonts served 97% of all variable fonts, this decreased only slightly in 2023 (96.8%) and dropped to 92% in 2024. In 2022 variable fonts were self-hosted on 2.8% of pages, 3.1% in 2023, and 8% in 2024.",
+  description="Column chart showing hosts for serving variable fonts over time. In 2022 Google Fonts served 97% of all variable fonts, this decreased only slightly in 2023 (97%) and dropped to 92% in 2024. In 2022 variable fonts were self-hosted on 3% of pages, 3% in 2023, and 8% in 2024.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTHmcrit1gMzxfZNeFp9LrA4NQSMEh140fapD4CFQ89knpy6LvEKz7VafGaFGlxCAxTdpLZXaVaq8Pg/pubchart?oid=906487759&format=interactive",
   sheets_gid="1090790567",
   sql_file="development/fonts_variable_service.sql"
@@ -1361,7 +1363,7 @@ In terms of serving variable fonts, the vast majority of users choose between tw
 Like color fonts, variable fonts also have two competing outline formats: the variable extensions of the `glyf` format and Compact Font Format 2 (`CFF2`). The main technical differences between the `glyf` format and `CFF2` are the types of Bézier curves, more automated hinting, and (perhaps most importantly) the companies backing them. `CFF2` is backed by Adobe and `glyf` by all other major contributors to the OpenType specification (Google, Microsoft, and Apple).
 
 {{ figure_markup(
-  content="99.4%",
+  content="99%",
   caption="Variable fonts using the `glyf` outline format.",
   classes="big-number",
   sheets_gid="1116222836",
@@ -1537,9 +1539,9 @@ Although emoji offered a major impetus for the initial development and support o
 It’s worth noting a point of complexity in the data gathered on color fonts. Our analysis considers a font with a single color glyph a color font. That is a rather broad definition and also includes many fonts which are primarily used for their non-color glyphs. If we remove fonts with only a small percentage of color glyphs from the equation, the use of color font technology looks very different. For example, the top three fonts using `SVG`, 貂明朝 (Ten Mincho), 貂明朝テキスト (Ten Mincho Text), and Source Code Pro make up a combined 41% of `SVG` total usage, while having only a handful of color glyphs. Removing all “color” fonts with less than 5% of their codepoints mapped to color glyphs from the calculation would reduce the share of `SVG` to roughly 5%! While the `COLR` formats also have some fonts with a low percentage of color glyphs, that percentage is much lower at 3-4%, reducing the `COLRv0` share to 25.1% and 7.2% for `COLRv1`. This would make `COLR` the most popular format by far!
 
 {{ figure_markup(
-  image="color-font-format-usage.png",
+  image="color-font-formats.png",
   caption="Most popular color formats after removing fonts with only a handful of color glyphs.",
-  description="Column chart showing color font usage by color format for fonts with more than 5% of color glyphs. The `COLRv0` format is at 25%, the `sbix` format is at 12%, the `COLRv1` format at 7%, the `SVG` format is at 5%, and the `CBDT` format is at 2.5%.",
+  description="Column chart showing color font usage by color format for fonts with more than 5% of color glyphs. The `COLRv0` format is at 25%, the `sbix` format is at 12%, the `COLRv1` format at 7%, the `SVG` format is at 5%, and the `CBDT` format is at 3%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTHmcrit1gMzxfZNeFp9LrA4NQSMEh140fapD4CFQ89knpy6LvEKz7VafGaFGlxCAxTdpLZXaVaq8Pg/pubchart?oid=892501065&format=interactive",
   sheets_gid="463077022",
   sql_file="development/fonts_color_format_by_family.sql"
@@ -1577,7 +1579,7 @@ While system font families are not ideal from a design perspective, as universal
 {{ figure_markup(
   image="generic-family-name-usage.png",
   caption="Usage of generic `font-family` names.",
-  description="Column chart showing usage of the generic `font-family` names. The `sans-serif` generic family name is used on 89% of desktop and mobile pages, the `monospace` generic family names is used on 65% of desktop pages and 64% of mobile pages, the `serif` generic family name is used on 50% of desktop pages and 51% of mobile pages, the `system-ui` generic family name is used on 7.3% of desktop pages and 7.2% of mobile pages, the `cursive` generic family name is used on 3.4% of desktop pages and 3.5% of mobile pages, the `ui-monospace` generic family name is used on 2.6% of desktop pages and 2.4% of mobile pages, the `ui-sans-serif` generic family name is used on 2.4% of desktop pages and 2.3% of mobile pages.",
+  description="Column chart showing usage of the generic `font-family` names. The `sans-serif` generic family name is used on 89% of desktop and mobile pages, the `monospace` generic family names is used on 65% of desktop pages and 64% of mobile pages, the `serif` generic family name is used on 50% of desktop pages and 51% of mobile pages, the `system-ui` generic family name is used on 7% of desktop pages and 7% of mobile pages, the `cursive` generic family name is used on 3% of both desktop and mobile pages, the `ui-monospace` generic family name is used on 3% of desktop pages and 2% of mobile pages, the `ui-sans-serif` generic family name is used on 2% of both desktop and mobile pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTHmcrit1gMzxfZNeFp9LrA4NQSMEh140fapD4CFQ89knpy6LvEKz7VafGaFGlxCAxTdpLZXaVaq8Pg/pubchart?oid=1077237634&format=interactive",
   sheets_gid="1543061572",
   sql_file="development/styles_family_system.sql"
