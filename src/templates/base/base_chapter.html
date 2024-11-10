@@ -351,7 +351,7 @@ author = "{% for author in metadata.get('authors') -%}
     {%- set full_name = author.split(' ') -%}
     {{ full_name[-1] }}, {{ full_name[0] }}{% if full_name|length > 2 %} {{ full_name[1:-1]|join(' ') }}{% endif %}{% if not loop.last %} and {% endif %}
   {%- endif %}
-{%- endfor %}", 
+{%- endfor %}",
 title = "{{ metadata.get('title') }}",
 booktitle = "The {{ year }} Web Almanac",
 chapter = {{ chapter_config.chapter_number }},
@@ -467,7 +467,7 @@ url = "https://almanac.httparchive.org/en/{{ year }}/{{ metadata.get('chapter') 
         <section class="authors">
             {{ render_authors() }}
         </section><section class="citation-box">
-            {{ render_bibtex() }} 
+            {{ render_bibtex() }}
         </section>
         <div id="cta-container" class="invisible">
           {% if metadata.get('discuss') %}
