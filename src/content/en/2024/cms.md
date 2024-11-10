@@ -49,7 +49,7 @@ Our analysis covers both desktop and mobile websites. While most URLs appeared i
 {{ figure_markup(
   image="cms-adoption.png",
   caption="CMS adoption.",
-  description="A chart of CMS adoption from 2022 to 2024 trending upwards. For desktop CMS's are used by 46% of sites in 2022, 49%	of sites in 2023, and 51% of sites in 2024. For mobile it's 48%, 49%, and 51% respectively.",
+  description="A chart of CMS adoption from 2022 to 2024 trending upwards. For desktop CMS's are used by 46% of sites in 2022, 49% of sites in 2023, and 51% of sites in 2024. For mobile it's 48%, 49%, and 51% respectively.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYh0RHAqp768faimbvZpvS71yJwCaOAFR0AzgotkEphtxphBKR1kt-pqgxA8Uxj4FSii1RQWwgG6rk/pubchart?oid=2013113638&format=interactive",
   sheets_gid="310746911",
   sql_file="cms_adoption.sql"
