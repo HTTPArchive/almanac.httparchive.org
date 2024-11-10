@@ -711,9 +711,13 @@
       "2022": [
         "analysts",
         "authors"
+      ],
+      "2024": [
+        "authors"
       ]
     },
-    "twitter": "bram_stein",
+    "mastodon": "https://typo.social/@bram",
+    "linkedin": "bramstein",
     "website": "http://www.bramstein.com/"
   },
   "clarkio": {
@@ -881,6 +885,17 @@
     "twitter": "catalinred",
     "website": "https://catalin.red/"
   },
+  "charlesberret": {
+    "avatar_url": "3780812",
+    "name": "Charles Berret",
+    "github": "cberret",
+    "teams": {
+      "2024": [
+        "authors",
+        "editors"
+      ]
+    }
+  },
   "huijing": {
     "avatar_url": "1461498",
     "github": "huijing",
@@ -930,6 +945,9 @@
         "reviewers"
       ],
       "2022": [
+        "reviewers"
+      ],
+      "2024": [
         "reviewers"
       ]
     },
@@ -1183,6 +1201,16 @@
       ]
     },
     "twitter": "dominiclovell"
+  },
+  "drott": {
+    "avatar_url": "1021784",
+    "github": "drott",
+    "name": "Dominik Röttsches",
+    "teams": {
+      "2024": [
+        "reviewers"
+      ]
+    }
   },
   "dougsillars": {
     "avatar_url": "1514288",
@@ -1772,6 +1800,17 @@
     },
     "website": "https://sites.google.com/view/iuliacomsa/"
   },
+  "ivanukhov": {
+    "avatar_url": "57440",
+    "github": "IvanUkhov",
+    "name": "Ivan Ukhov",
+    "teams": {
+      "2024": [
+        "analysts",
+        "reviewers"
+      ]
+    }
+  },
   "SilentJMA": {
     "avatar_url": "16384750",
     "github": "SilentJMA",
@@ -2123,6 +2162,9 @@
     "teams": {
       "2022": [
         "reviewers"
+      ],
+      "2024": [
+        "reviewers"
       ]
     },
     "twitter": "jmsoleb",
@@ -2408,6 +2450,16 @@
     },
     "twitter": "Zizzamia"
   },
+  "liamquin": {
+    "avatar_url": "8258535",
+    "github": "liamquin",
+    "name": "Liam Quin",
+    "teams": {
+      "2024": [
+        "reviewers"
+      ]
+    }
+  },
   "lirantal": {
     "avatar_url": "316371",
     "github": "lirantal",
@@ -2503,6 +2555,9 @@
     "name": "Mandy Michael",
     "teams": {
       "2020": [
+        "reviewers"
+      ],
+      "2024": [
         "reviewers"
       ]
     },
@@ -3339,6 +3394,9 @@
     "teams": {
       "2020": [
         "authors"
+      ],
+      "2024": [
+        "reviewers"
       ]
     },
     "twitter": "raphlinus",
