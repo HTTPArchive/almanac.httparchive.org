@@ -562,7 +562,7 @@ For `<video>` elements, the figure is slightly higher at 0.5% for both desktops 
 
 ## Assistive technology with ARIA
 
-<a hreflang="en" href="https://www.w3.org/TR/using-aria/">Accessible Rich Internet Applications (ARIA)</a> provides a set of attributes for HTML5 elements designed to enhance web accessibility for individuals with disabilities. However, excessive use of ARIA attributes can sometimes create more problems than it solves. ARIA should be employed only when native HTML5 elements are inadequate for ensuring a fully accessible experience and should not replace or be used excessively beyond what is necessary.
+<a hreflang="en" href="https://www.w3.org/TR/using-aria/">Accessible Rich Internet Applications (ARIA)</a> provides a set of attributes for HTML5 elements designed to enhance web accessibility for individuals with disabilities. However, excessive use of ARIA attributes can sometimes create more problems than it solves. ARIA should be employed only when native HTML5 elements are inadequate for ensuring a fully accessible experience and should not replace or be used beyond what is necessary.
 
 ### ARIA roles
 
@@ -582,7 +582,7 @@ HTML5 introduced numerous native elements with built-in semantics and roles. For
   )
 }}
 
-We observed that over 50% of mobile sites (up from 33% in 2022, and 29% in 2021 and 25% in 2020) had homepages with at least one element assigned the `role="button"`. This increase is concerning, as it suggests websites may be using `<div>` or `<span>` elements as custom buttons or redundantly applying roles to `<button>` elements. Both practices are problematic and violate the fundamental ARIA principle of using native HTML elements—such as `<button>`—whenever possible.
+We observed that over 50% of mobile sites had homepages with at least one element assigned the `role="button"` (up from 33% in 2022, and 29% in 2021 and 25% in 2020). This increase is concerning, as it suggests websites may be using `<div>` or `<span>` elements as custom buttons or redundantly applying roles to `<button>` elements. Both practices are problematic and violate the fundamental ARIA principle of using native HTML elements—such as `<button>`—whenever possible.
 
 {{ figure_markup(
   caption='Websites with at least one anchor with an href with a `role="button"`.',
@@ -599,8 +599,7 @@ We observed that over 50% of mobile sites (up from 33% in 2022, and 29% in 2021 
 
 When an element is assigned the `role="presentation"`, it loses its inherent semantics, along with those of its required child elements (e.g., list items within a `<ul>`, or rows and cells within a table). For instance, applying `role="presentation"` to a parent `<table>` or `<ul>` element will propagate this role to its child elements, causing them to lose their table or list semantics.
 
-Removing semantics with `role="presentation"` means the element only has visual presence and its structure is not recognized by assistive technologies, making it difficult for screen readers to convey the information.
-
+Removing semantics with `role="presentation"` means the element only has visual presence and its structure is not recognized by assistive technologies. The element’s content will be read by a screen reader, but no information about the semantics will be provided.
 
 {{ figure_markup(
   caption='Of desktop sites and 39% of mobile sites have at least one `role="presentation"`.',
@@ -615,11 +614,11 @@ This is concerning as in 2022 it was already high at 25% of desktop sites and 24
 
 Similarly, using `role="none"` also removes the element's semantics. This year, 5% of sites used `role="none"`, down from 11% in 2022. While it may be useful in rare cases, such as when a `<table>` is used purely for layout, it generally should be used cautiously as it can be detrimental to accessibility.
 
-Most browsers disregard `role="presentation"` and `role="none"` when exposing a role in the accessibility tree for focusable elements, including links and inputs, or elements with a tabindex attribute. However, if an element with these roles includes global ARIA states or properties (such as `aria-describedby`), the role may be ignored.
+Most browsers disregard `role="presentation"` and `role="none"` when exposing a role in the accessibility tree for focusable elements, including links and inputs, or elements with a tabindex attribute. Similarly, if an element with these roles includes global ARIA states or properties (such as `aria-describedby`), the `presentation` and `none` roles may be ignored.
 
 ### Labeling elements with ARIA
 
-In addition to the DOM, browsers have an <a href="https://developer.mozilla.org/docs/Glossary/Accessibility_tree">accessibility tree</a> that represents it, containing details about HTML elements such as accessible names, descriptions, roles, and states. This information is communicated to assistive technologies through accessibility APIs.
+In addition to the DOM, browsers have an <a href="https://developer.mozilla.org/docs/Glossary/Accessibility_tree">accessibility tree</a>, containing details about HTML elements such as accessible names, descriptions, roles, and states. This information is communicated to assistive technologies through accessibility APIs.
 
 An element's accessible name can come from its content (e.g., button text), attributes (e.g., image `alt` attribute), or associated elements (e.g., a label linked to a form control). There is a hierarchy used to determine the source of the accessible name when multiple sources are available. For further reading on accessible names, Léonie Watson's article, <a hreflang="en" href="https://developer.paciellogroup.com/blog/2017/04/what-is-an-accessible-name/">"What is an accessible name?"</a> is a valuable resource.
 
@@ -635,7 +634,7 @@ An element's accessible name can come from its content (e.g., button text), attr
 
 Two ARIA attributes that aid in assigning accessible names are `aria-label` and `aria-labelledby`. These attributes are given precedence over natively derived accessible names and should be used sparingly and only when necessary. Testing accessible names with screen readers and involving individuals with disabilities is crucial to ensure that the names are helpful and do not hinder accessibility.
 
-We observed that almost 66% of pages evaluated featured at least one element with the `aria-label` attribute (up from 58% for desktop and 57% in mobile in 2022), making it the most frequently used ARIA attribute for accessible names. Additionally, 27% of desktop pages and 25% of mobile pages had at least one element with the `aria-labelledby` attribute (both are up 2% from 2022 data). This trend suggests that while more elements are being assigned accessible names, it might also indicate a rise in elements lacking visual labels. This can be challenging for users with cognitive disabilities and voice input users.
+We observed that almost 66% of pages evaluated featured at least one element with the `aria-label` attribute (up from 58% for desktop and 57% on mobile in 2022), making it the most frequently used ARIA attribute for accessible names. Additionally, 27% of desktop pages and 25% of mobile pages had at least one element with the `aria-labelledby` attribute (both are up 2% from 2022 data). This trend suggests that while more elements are being assigned accessible names, it might also indicate a rise in elements lacking visual labels. This can be challenging for users with cognitive disabilities and voice input users.
 
 {{ figure_markup(
   image="button-name-sources.png",
@@ -647,7 +646,7 @@ We observed that almost 66% of pages evaluated featured at least one element wit
   )
 }}
 
-Buttons typically receive their accessible names from their content or ARIA attributes. According to <a hreflang="en" href="https://www.w3.org/WAI/ARIA/apg/patterns/button/">ARIA guidelines</a>, it's preferable for an element to derive its accessible name from its content rather than an ARIA attribute if possible. We found that 59% of buttons on desktop obtain their accessible names from their text content, a slight drop from 2022 when it was 61%. Use of the `aria-label` attribute is up slightly to 24% on desktop sites and use the `aria-label` attribute for their accessible names, up from 20% in 2022.
+Buttons typically receive their accessible names from their content or ARIA attributes. According to <a hreflang="en" href="https://www.w3.org/WAI/ARIA/apg/patterns/button/">ARIA guidelines</a>, it's preferable for an element to derive its accessible name from its content rather than an ARIA attribute if possible. We found that 59% of buttons on desktop obtain their accessible names from their text content, a slight drop from 2022 when it was 61%. Use of the `aria-label` attribute is up slightly to 23.9% on desktop (from 20% in 2022) meaning more sites are using the `aria-label` attribute for their accessible names.
 
 In some cases, `aria-label` is useful, such as when multiple buttons have the same content but different functions, or when a button contains only an image or icon.
 
@@ -664,7 +663,7 @@ Sometimes, visual interfaces include redundant elements that aren't beneficial f
 )
 }}
 
-Using this attribute to hide and show semantic content. It is a common practice in modern interfaces when they want to indicate if content is hidden to the accessibility API.
+Using this attribute to hide and show semantic content is a common practice in modern interfaces in order to indicate when content is hidden to the accessibility API. . An example of this is a accordion component where content under a list of headings is hidden until a user selects one of the headings to show the related content.
 
 ARIA can have a huge impact on accessibility and needs to be used cautiously. <a hreflang="en" href="https://blog.pope.tech/2022/07/12/what-you-need-to-know-about-aria-and-how-to-fix-common-mistakes/">It's crucial to apply ARIA correctly</a> to convey the right message.
 
@@ -683,7 +682,7 @@ A common approach developers use to provide extra information for screen reader 
 )
 }}
 
-The sr-only and visually-hidden class names are frequently used by developers and UI frameworks to create text that is only accessible to screen readers. For instance, Bootstrap and Tailwind include sr-only classes for this purpose. We found that 16% of desktop pages and 15% of mobile pages used one or both of these CSS classes (Each up a percentage point from 2022). It's important to note that not all screen reader users are completely visually impaired, so relying too heavily on screen reader-only solutions should be avoided.
+The sr-only and visually-hidden class names are frequently used by developers and UI frameworks to create text that is only accessible to screen readers. For instance, Bootstrap and Tailwind include sr-only classes for this purpose. We found that 16% of desktop pages and 15% of mobile pages used one or both of these CSS classes (each up a percentage point from 2022). It's important to note that not all screen reader users are visually impaired, so relying too heavily on screen reader-only solutions should be avoided. When this technique is used with an interactive element’s accessible name, it can make it difficult for people who use their voice to control their computer to know what command to give to interact with the element.
 
 ## Dynamically-rendered content
 
@@ -698,7 +697,7 @@ Sometimes, it's necessary to inform screen readers about new or updated content 
 )
 }}
 
-ARIA live regions enable screen readers to announce changes in the DOM. We found that 29% of desktop pages (up from 23% in 2022) and 28 of mobile pages (up from 22% in 2022) use live regions with the `aria-live` attribute. Additionally, pages use ARIA live region roles with implicit `aria-live` values:
+ARIA live regions enable screen readers to announce changes in the DOM. We found that 29% of desktop pages use live regions with the `aria-live` attribute (up from 23% in 2022) and 28% of mobile pages use `aria-live` (up from 22% in 2022). Additionally, pages use ARIA live region roles with implicit `aria-live` values:
 
 <figure>
   <table>
@@ -752,19 +751,19 @@ ARIA live regions enable screen readers to announce changes in the DOM. We found
   </figcaption>
 </figure>
 
-For more details on live region variants and their usage, check the <a hreflang="en" href="https://developer.mozilla.org/docs/Web/Accessibility/ARIA/ARIA_Live_Regions">MDN live region documentation</a> or explore with this <a hreflang="en" href="https://dequeuniversity.com/library/aria/liveregion-playground">live demo by Deque</a>.
+For more details on live region variants and their usage, check the <a hreflang="en" href="https://developer.mozilla.org/docs/Web/Accessibility/ARIA/ARIA_Live_Regions">MDN live region documentation</a> or explore this <a hreflang="en" href="https://dequeuniversity.com/library/aria/liveregion-playground">live demo by Deque</a>.
 
 ## User Personalization Widgets and Overlay Remediation
 
-Users are increasingly used to seeing accessibility widgets on websites. These allow them to access accessibility features that improve their experience. Accessibility Overlays are one type of these and usually include two types of technology: a personalization widget and an JavaScript overlay. Overlays can be either generic or custom:
+Users are increasingly used to seeing accessibility widgets on websites. These allow them to access accessibility features that improve their experience. Accessibility Overlays are one type of these and usually include two types of technology: a personalization widget and a JavaScript overlay. Overlays can be either generic or custom:
 
 - **User personalization**: tools that enable the site visitor to make changes to the appearance of the site via an on-site menu — changes like font or color contrast adjustments, and
 - **Automated overlay remediation**: a generic technology that automatically scans for and attempts to remediate many common WCAG issues which affect the user interface, with complex algorithms and/or Artificial Intelligence.
 - **Custom overlay remediation**: site specific code written by expert developer(s) to address specific conformance needs, and verified by accessibility experts in context, to avoid conflict with assistive technology.
 
-Browsers have great built-in tools for personalization, but many users do not know how to use them.  Some sites add **personalization widgets** that often provide a range of accessibility features to make customization easier. Often this includes font size, spacing, and contrast, which is <a hreflang="en" href="https://mcmw.abilitynet.org.uk/">included in the browser</a>. This may also include tools like <a hreflang="en" href="https://en.wikipedia.org/wiki/Speech_synthesis">text to speech</a>, which is <a hreflang="en" href="https://www.microsoft.com/en-us/edge/features/read-aloud?form=MA13FJ">included in Edge</a>. This can be useful for a range of users, but especially for those that do not have their own assistive technology available in that environment. These widgets can be helpful for users who are not actively using assistive technology or already maximizing their browser's built-in accessibility features.
+Browsers have great built-in tools for personalization, but many users do not know about them.  Some sites add **personalization widgets** that often provide a range of accessibility features to make customization easier. Often this includes font size, spacing, and contrast, which is <a hreflang="en" href="https://mcmw.abilitynet.org.uk/">included in the browser</a>. This may also include tools like <a hreflang="en" href="https://en.wikipedia.org/wiki/Speech_synthesis">text to speech</a>, which is <a hreflang="en" href="https://www.microsoft.com/en-us/edge/features/read-aloud?form=MA13FJ">included in Edge</a>. This can be useful for a range of users, but especially for those that do not have their own assistive technology available in that environment. These widgets can be helpful for users who are not actively using assistive technology or already maximizing their browser's built-in accessibility features.
 
-If used, it is important that these tools do not interfere with the UX including that of assistive technology users. For that reason, the European Disability Forum (EDF) published a report clearly stating that <a hreflang="en" href="https://www.edf-feph.org/accessibility-overlays-dont-guarantee-compliance-with-european-legislation">Accessibility overlays don't guarantee compliance with European legislation</a>:
+If used, it is important that these tools do not interfere with the user experience (UX) including that of assistive technology users. For that reason, the European Disability Forum (EDF) published a report clearly stating that <a hreflang="en" href="https://www.edf-feph.org/accessibility-overlays-dont-guarantee-compliance-with-european-legislation">Accessibility overlays don't guarantee compliance with European legislation</a>:
 
 "Users of assistive technology already have their devices and browsers configured to their preferred settings. The overlay technology can interfere with the user's assistive technology and override user settings, forcing people to use the overlay instead. This makes the website less accessible to some user groups and may prevent access to content."
 
@@ -816,19 +815,21 @@ These solutions are generally used less for high-traffic websites. For sites ran
 
 ### Confusion on Overlays
 
-<a hreflang="en" href="https://www.accessibilityassociation.org/">The International Association of Accessibility Professionals (IAAP)</a> published a position paper on <a hreflang="en" href="https://www.accessibilityassociation.org/s/overlay-position-and-recommendations">Accessibility Overlay Position and Recommendations</a>. In it, IAAP stresses that overlay technology must never impede a user's access. Furthermore, it states that IAAP members must not support claims that imply a website or application can be made fully accessible with overlay technology.
+<a hreflang="en" href="https://www.accessibilityassociation.org/">The International Association of Accessibility Professionals (IAAP)</a> published a paper outlining its <a hreflang="en" href="https://www.accessibilityassociation.org/s/overlay-position-and-recommendations">Accessibility Overlay Position and Recommendations</a>. In it, IAAP stresses that overlay technology must never impede a user's access. Furthermore, it states that IAAP members must not support claims that imply a website or application can be made fully accessible with overlay technology.
 
 False advertising claims made by many overlay providers have prompted outcry from accessibility advocates: <a hreflang="en" href="https://adrianroselli.com/2020/06/accessiBe-will-get-you-sued.html">Adrian Roselli's #accessiBe Will Get You Sued</a> initially published in 2020 but actively updated as the case evolved; Lainey Feingold's <a hreflang="en" href="https://www.lflegal.com/2023/07/adrian-roselli-slapp-lawsuit/">American legal perspective</a>.
 
-It is important to clearly understand the capabilities and limitations of any tool or technology used to advance accessibility. False claims by companies about their abilities have confused many clients. Organizations are responsible to do appropriate research to ensure they meet applicable accessibility requirements and provide the best experience to visitors.
+It is important to clearly understand the capabilities and limitations of any tool or technology used to advance accessibility. False claims by companies about their abilities have confused many clients. Organizations are responsible for doing appropriate research to ensure they meet applicable accessibility requirements and provide the best experience to visitors.
 
-Neither the EU Commission or US Department of Justice (DOJ) state how web accessibility standards have to be met—just that they must be met. From the <a hreflang="en" href="https://www.federalregister.gov/documents/2024/04/24/2024-07758/nondiscrimination-on-the-basis-of-disability-accessibility-of-web-information-and-services-of-state">DOJ ADA Title II rulemaking</a> the rule "does not address the internal policies or procedures that public entities might implement to conform to the technical standard under this rule."
+Neither the EU Commission or the US Department of Justice (DOJ) state how web accessibility standards have to be met—just that they must be met. From the <a hreflang="en" href="https://www.federalregister.gov/documents/2024/04/24/2024-07758/nondiscrimination-on-the-basis-of-disability-accessibility-of-web-information-and-services-of-state">DOJ ADA Title II rulemaking</a> the rule "does not address the internal policies or procedures that public entities might implement to conform to the technical standard under this rule."
 
 In some instances, a combination of overlays and manual expertise has the potential to accelerate accessibility improvements.
 
 ## Sectors and accessibility
 
 This year we are providing a series of new data comparisons. We want to highlight that there are discernible differences in how different communities have handled accessibility. Whether it is based on good governance, or good defaults, it is possible to see differences in accessibility that are significant. It is the hope of the authors of this section that this will prompt a review of how the various communities treat accessibility.
+
+We also asessed the accessibility of websites in this section using the open source tool, [Google Lighthouse](https://developer.chrome.com/docs/lighthouse/accessibility/scoring).
 
 ### Country
 
@@ -846,7 +847,7 @@ There are two means by which we can identify country information, first by the G
   )
 }}
 
-It is worth noting that many sites that operate in the USA are subject to the Section 508 guidelines on accessibility. Organizations are being sued in the USA, under ADA Title III, for not having accessible websites. It is not surprising that the USA is the most accessible country. Other jurisdictions are beginning to penalize companies that sell inside their geography or to their citizens. Increasingly people are looking at the <a hreflang="en" href="https://en.wikipedia.org/wiki/European_Accessibility_Act">European Accessibility Act</a>, and preparing for the new requirements which are introduced in 2025.
+It is worth noting that many sites that operate in the USA are subject to the Section 508 guidelines on accessibility. Organizations are being sued in the USA, under ADA Title III, for not having accessible websites. It is not surprising that the USA is the most accessible country. Other jurisdictions are beginning to penalize companies that sell inside their geography or to their citizens. Increasingly people are looking at the [European Accessibility Act](https://wikipedia.org/wiki/European_Accessibility_Act) and preparing for the new requirements that will be introduced in 2025.
 
 The following map shows the average desktop accessibility score by country top level domain (TLD).
 
@@ -872,11 +873,11 @@ But it is a bit easier to see the TLD ranked and including the non-country codes
   )
 }}
 
-As with the prior chart `.edu` and `.gov` domains are the most accessible. The US Government under Section 508 and <a hreflang="en" href="https://www.levelaccess.com/compliance-overview/section-504-compliance/">Section 504</a>, have had this as part of their mandate for more than two decades. Early accessibility legislation and <a hreflang="en" href="https://www.accessibility.com/digital-lawsuits">active lawsuits</a> have driven accessibility adoption in the United States. Countries outside of the USA started providing legislation and  enforcement measures for WCAG conformance later. Lainey Feingold maintains a great list of <a hreflang="en" href="https://www.lflegal.com/global-law-and-policy/">global law and policy</a>.
+As with the prior chart `.edu` and `.gov` domains are the most accessible. The US Government under Section 508 and <a hreflang="en" href="https://www.levelaccess.com/compliance-overview/section-504-compliance/">Section 504</a>, have had this as part of their mandate for more than two decades. Early accessibility legislation and <a hreflang="en" href="https://www.accessibility.com/digital-lawsuits">active lawsuits</a> have driven accessibility adoption in the United States. Countries outside the USA started providing legislation and enforcement measures for WCAG conformance later. Lainey Feingold maintains a great list of <a hreflang="en" href="https://www.lflegal.com/global-law-and-policy/">global law and policy</a>.
 
 ### Government
 
-Not all government domains follow consistent accessibility rules, however we were able to isolate many countries' government sites. Some countries are inconsistent around naming government sites, so there will be exceptions which are not covered. We have collected averages for most government agencies around the world.
+Not all government domains follow consistent accessibility rules, however we were able to isolate many countries' government sites. Some countries are inconsistent about naming government sites, so there will be exceptions which are not covered. We have collected averages for most government agencies around the world.
 
 {{ figure_markup(
   image="accessible-governments.png",
@@ -888,7 +889,7 @@ Not all government domains follow consistent accessibility rules, however we wer
   )
 }}
 
-Most modern governments have committed to either WCAG 2.0 AA or WCAG 2.1 AA. It is clear that the implementation of these policies isn't being equally delivered. This is particularly important when looking into accessibility within the European Union where each member state needs to implement legislation based on the <a hreflang="en" href="https://digital-strategy.ec.europa.eu/en/policies/web-accessibility-directive-standards-and-harmonisation">Web Accessibility Directive</a>. It should be possible to compare the 3 year <a hreflang="en" href="https://digital-strategy.ec.europa.eu/en/library/web-accessibility-directive-monitoring-reports">EU member state reports</a> with the values provided here and in future Web Almanacs. It is worth noting that the average for the United States is 87%.
+Most modern governments have committed to either WCAG 2.0 AA or WCAG 2.1 AA. It is clear that the implementation of these policies isn't being equally delivered. This is particularly important when looking into accessibility within the European Union where each member state needs to implement legislation based on the <a hreflang="en" href="https://digital-strategy.ec.europa.eu/en/policies/web-accessibility-directive-standards-and-harmonisation">Web Accessibility Directive</a>. It should be possible to compare the 3-year <a hreflang="en" href="https://digital-strategy.ec.europa.eu/en/library/web-accessibility-directive-monitoring-reports">EU member state reports</a> with the values provided here and in future Web Almanacs. It is worth noting that the average for the United States is 87%.
 
 {{ figure_markup(
   image="accessible-governments-world.png",
@@ -900,9 +901,9 @@ Most modern governments have committed to either WCAG 2.0 AA or WCAG 2.1 AA. It 
   )
 }}
 
-The Netherlands (98%) are firmly in the lead, followed by Luxembourg (96%) and Finland (94%). The <a hreflang="en" href="https://design-system.service.gov.uk">United Kingdom</a> and the <a hreflang="en" href="https://github.com/nl-design-system">Netherlands</a> both have a standardized design system which is built for accessibility.  What contributes to Luxembourg and Finland's success? Considering that most accessibility content is available only in English, has this impacted adoption?
+The Netherlands (98%) are firmly in the lead, followed by Luxembourg (96%) and Finland (94%). The <a hreflang="en" href="https://design-system.service.gov.uk">United Kingdom</a> and the <a hreflang="en" href="https://github.com/nl-design-system">Netherlands</a> both have a standardized design system which is prioritizes accessibility.  What contributes to Luxembourg and Finland's success? Considering that most accessibility content is available only in English, has this reduced adoption by some governments?
 
-Government domains were largely found based on domain name pattern matching. There are a lot of inconsistencies in how governments use domain names, but there is enough information here to provide comparisons. It is worth noting that `.gov` covers all levels of the US government, so we have tried to filter out those state specific sub domains. In this report, we could not filter out municipal or regional `.gov` sites. When looking at the TLD `.gov` domain chart above the average was 87%.
+Government domains were largely found based on domain name pattern matching. There are a lot of inconsistencies in how governments use domain names, but there is enough information here to provide comparisons. It is worth noting that `.gov` covers all levels of the US government, so we have tried to filter out those state specific sub domains except in the state specific reporting. In this report, we could not filter out municipal or regional `.gov` sites. When looking at the TLD `.gov` domain chart above the average was 87%.
 
 We can also review the accessibility of various states.
 
@@ -929,15 +930,15 @@ We can also review the accessibility of various states.
   )
 }}
 
-Again, Colorado and Vermont are much further ahead than other states. The state of Georgia has a <a hreflang="en" href="https://digital.georgia.gov/services/govhub">central Drupal installation</a> managed through a central agency, does this explain why it is in the top 5? Colorado has established a centralized <a hreflang="en" href="https://oit.colorado.gov/colorado-digital-service">digital service organization</a>, <a hreflang="en" href="https://oit.colorado.gov/accessibility-law">new accessibility legislation</a> and now has an average of 95%. Pennsylvania's state average is much lower at 82% but they also have a <a hreflang="en" href="https://code.oa.pa.gov/">digital experience team</a>.
+Again, Colorado and Vermont are much further ahead than other states. The state of Georgia has a <a hreflang="en" href="https://digital.georgia.gov/services/govhub">central Drupal installation</a> managed through a central agency, does this explain why it is in the top 5? Colorado has established a centralized <a hreflang="en" href="https://oit.colorado.gov/colorado-digital-service">digital service organization</a>, <a hreflang="en" href="https://oit.colorado.gov/accessibility-law">new accessibility legislation</a> and now has an average of 95%. Pennsylvania's state average is much lower at 82% but they also have a new <a hreflang="en" href="https://code.oa.pa.gov/">digital experience team</a> established in 2023.
 
-Earlier this year, the US Department of Justice <a hreflang="en" href="https://www.ada.gov/resources/2024-03-08-web-rule/">updated its regulations for Title II of the Americans with Disabilities Act (ADA)</a>. US state and local governments will now all be required to be fully WCAG 2.1 AA compliant. The compliance date depends on size but will be either April 2026 or April 2027. It will be important to measure how US states comply with this new regulation. We should see improvements in these numbers.
+Earlier this year, the US Department of Justice <a hreflang="en" href="https://www.ada.gov/resources/2024-03-08-web-rule/">updated its regulations for Title II of the Americans with Disabilities Act (ADA)</a>. US state and local governments will now all be required to be fully WCAG 2.1 AA compliant. The compliance date depends on the size of their population but will be either April 2026 or April 2027. It will be important to measure how US states comply with this new regulation. We should see improvements in these numbers.
 
 ### Content Management Systems (CMS)
 
 The <a hreflang="en" href="https://webaim.org/projects/million/">WebAim Million</a> study reviewed CMS data, and we are able to provide comparable results through the Web Almanac. The Web Almanac uses a customized version of a fork of Wappalyzer, from when it was open source. With this the report can identify which CMS is used and compare results. It is clear that Typo3 had better results in WebAim than when using Google Lighthouse data. Both studies clearly indicated that the choice of CMS had an impact on accessibility.
 
-When most folks think about CMS, they think about the ones that you can download and install yourself. This is predominantly made up of open source tools, but not exclusively. AEM, Contentful and Sitecore were the most accessible three in this list of top 10. A possible explanation for this is that closed-source software like AEM is more likely to be used by larger corporations, which have more resources to address accessibility issues. Additionally, open-source software gives website owners a lot of freedom, which in some cases can lead to worse accessibility.
+When most folks think about CMS, they think about the ones that you can download and install yourself. This is predominantly made up of open source tools, but not exclusively. Adobe Experience Manager (AEM), Contentful and Sitecore were the most accessible three in this list of top 10. A possible explanation for this is that closed-source software like AEM is more likely to be used by larger corporations, which have more resources to address accessibility issues. Additionally, open-source software gives website owners a lot of freedom, which in some cases can lead to worse accessibility.
 
 {{ figure_markup(
   image="traditional-cms.png",
@@ -949,9 +950,7 @@ When most folks think about CMS, they think about the ones that you can download
   )
 }}
 
-Website platforms in general performed better than the Traditional CMS with Wix, Squarespace and Google Sites being significantly better.
-
-Looking at audits of these Traditional CMS, the top five Lighthouse issues have a great deal of consistency. Color contrast, link name, heading order and alt text are regular problems across these CMS, those issues are mainly related to the user since a CMS can not be responsible for the chosen colors or the naming of the links.
+Looking at audits of these Traditional CMS, the top four Lighthouse issues have a great deal of consistency. Color contrast, link name, heading order and alt text are regular problems across these CMS, those issues are mainly related to the user since a CMS can not be responsible for the chosen colors or the naming of the links.
 
 <figure>
   <table>
@@ -1013,7 +1012,9 @@ Looking at audits of these Traditional CMS, the top five Lighthouse issues have 
 
 The different CMS do have a lot of commonalities in the top errors that they have. They mostly have to do with content issues, which is something that ATAG 2.0 was written to support. It is hoped that the best practices of ATAG will be brought into WCAG 3.0. This scan is only for publicly available websites, so authoring interfaces are not evaluated. It is worth noting that authors have disabilities, and authors should be able to expect an accessible interface. Authors also need support in creating accessible content. To help facilitate greater focus on authoring tools, the W3C produced a <a hreflang="en" href="https://www.w3.org/WAI/atag/report-tool/">ATAG Report Tool</a>.
 
-There are many tools which can be used to help authors evaluate the accessibility of a page. Institutions that control the browser configurations of their staff, could choose to simply install the open source <a hreflang="en" href="https://accessibilityinsights.io/docs/web/getstarted/assessment/">Accessibility Insights</a> browser plugin for all of their browsers. This would make errors much more visible to administrators. For many of the CMS above though, the best solution might be to install a tool like <a hreflang="en" href="https://sa11y.netlify.app/">Sa11y</a> or <a hreflang="en" href="https://editoria11y.princeton.edu/">Editoria11y</a> which is geared to help authors. Since Joomla 4.1 <a hreflang="en" href="https://sa11y.netlify.app/joomla/">Sa11y is included by default</a>, so all authors benefit.
+There are many tools which can be used to help authors evaluate the accessibility of a page. Institutions that control the browser configurations of their staff, could choose to simply install the open source <a hreflang="en" href="https://accessibilityinsights.io/docs/web/getstarted/assessment/">Accessibility Insights</a> browser plugin for all of their browsers. This would make errors much more visible to administrators. For many of the CMS above though, the best solution might be to install a tool like <a hreflang="en" href="https://sa11y.netlify.app/">Sa11y</a> or <a hreflang="en" href="https://editoria11y.princeton.edu/">Editoria11y</a> which is geared to help authors. From Joomla version 4.1 onwards <a hreflang="en" href="https://sa11y.netlify.app/joomla/">Sa11y is included by default</a>, so all authors benefit.
+
+Website platforms in general performed better than the tTraditional CMS with Wix, Squarespace and Google Sites being significantly better.
 
 {{ figure_markup(
   image="platform-cms.png",
@@ -1025,7 +1026,7 @@ There are many tools which can be used to help authors evaluate the accessibilit
   )
 }}
 
-Looking at audits of these CMS Platforms, the top five Lighthouse issues have less in the priority if issues but still have lots of similarities. Alternative text, link name, heading order and color contrast are all still issues, but just with greater/lesser rates of occurrence.
+Looking at audits of these CMS Platforms, the top four Lighthouse issues have less consistency in the frewquency of issues but still have lots of similarities. Alternative text, link name, heading order and color contrast are all still issues, but just with different rates of occurrence.
 
 <figure>
   <table>
@@ -1089,7 +1090,7 @@ Different CMS platforms have varying strengths and weaknesses. For example, it's
 
 On the positive side, Duda stands out for button names, where only 3% of its websites fail the test, compared to a median of 13%. Even more impressive is Wix only 20% of Wix websites fail the Lighthouse test for color contrast, while the median failure rate among the most-used CMS platforms is 70%. Similarly, Wix performs exceptionally well regarding alternative text for images, with only 1% failing, compared to a median of 34%.
 
-The differences are showing that it is possible for CMSs to make an impact on Accessibility even when the user needs to take the last step.
+The differences show that it is possible for CMS to make an impact on accessibility even when the author needs to take the last step to make content accessible.
 
 ### JavaScript Frontend Frameworks
 
@@ -1121,8 +1122,8 @@ RedwoodJS is clearly the most accessible, followed by Remix and Astro.
 
 ## Conclusion
 
-Our analysis indicates that there hasn't been a significant change in web accessibility. While there have been some improvements, many straightforward issues remain unresolved. Improving color contrast and use of image `alt` attributes could have a substantial impact if addressed. CMS systems and JavaScript frameworks have a huge responsibility and positive examples prove that they can have real impact on accessibility.
+Our analysis indicates that there hasn't been a significant change in web accessibility. While there have been some improvements, many straightforward issues remain unresolved. Improving color contrast and use of image `alt` attributes could have a substantial impact if addressed. CMS systems and JavaScript frameworks have a huge responsibility and examples prove that they can have real positive impact on accessibility.
 
-We often observe that features intended to enhance accessibility can sometimes create a false sense of improvement, while actually degrading the user experience. Many of these accessibility problems could be avoided if designers and developers integrated accessibility considerations from the start rather than treating them as an afterthought.
+We often observe that features intended to enhance accessibility can sometimes create a false sense of improvement, while actually degrading the user experience. Many of these accessibility problems could be avoided if designers and developers integrated accessibility considerations from the start rather than treating them as an afterthought. Organizations must prioritize accessibility training, operations, and budgets to enable the development of more accessible user experiences. Some governments have demonstrated how effective that approach is.
 
-The web community must understand that a website only offers excellent User Experience when it accommodates everyone. In 2024 we should not be discriminating against people based on the device, browser or assistive technology used. We have focused on key metrics that are straightforward to address and are hoping to see more improvements in 2025.
+The web community must understand that a website only offers an excellent customer experience when it accommodates everyone. In 2024 we should not be discriminating against people based on the device, browser or assistive technology used. We have focused on key metrics that are straightforward to address and are hoping to see more improvements in 2025.
