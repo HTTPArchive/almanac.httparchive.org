@@ -463,6 +463,8 @@ It is worth noting that the monitoring category, which also includes performance
 
 [Total Blocking Time](https://web.dev/tbt/) (TBT) measures the total amount of time after First Contentful Paint (FCP) where the main thread was blocked for long enough to prevent input responsiveness.
 
+TBT is a lab metric and is often used as a proxy for field-based responsiveness metrics, such as INP, which can only be collected using real user monitoring, such as CrUX and RUMvision. <a hreflang="en" href="https://colab.research.google.com/drive/12lJmAABgyVjaUbmWvrbzj9BkkTxw6ay2">Lab-based TBT and field-based INP</a> are correlated, meaning TBT results generally reflect INP trends. A TBT below 200ms is considered good, but most mobile websites exceed this target significantly.
+
 {{ figure_markup(
   image="total-blocking-time-2024.png",
   caption="TBT per page by percentile.",
@@ -473,9 +475,10 @@ It is worth noting that the monitoring category, which also includes performance
   )
 }}
 
-TBT is a lab metric and is often used as a proxy for field-based responsiveness metrics, such as INP, which can only be collected using real user monitoring, such as CrUX and RUMvision. <a hreflang="en" href="https://colab.research.google.com/drive/12lJmAABgyVjaUbmWvrbzj9BkkTxw6ay2">Lab-based TBT and field-based INP</a> are correlated, meaning TBT results generally reflect INP trends.
+The median TBT on mobile is 1209 ms, which is 6 times higher than the best practice. In contrast, desktop websites show much better performance, with a median TBT of just 67ms. It is important to emphasize that the lab results use an emulated low-power device and a slow network, which may not reflect the real user data, as actual device and network conditions can vary. However, even with that in mind, these results still show that in the 90th percentile, user on mobile device will need to wait almost 6 seconds before the site becomes interactive.
 
-A TBT below 200ms is considered good, but most mobile websites exceed this target significantly. The median TBT is 1209 ms, which is 6 times higher than the best practice. In contrast, desktop websites show much better performance, with a median TBT of just 67ms. It is valuable to note that the lab results use an emulated low-power device and a slow network, which may not reflect the real user data, as actual device and network conditions can vary.
+With TBT being caused by long tasks it is not surprising to notice the same trend per pecentiles as well as similar trend in gap between mobile and desktop in the two metrics results. It is also important to note that high TBT can be contributing to the input delay part of the INP, negatively imacting the overall INP score.
+
 
 ### Interactivity Conclusion
 
