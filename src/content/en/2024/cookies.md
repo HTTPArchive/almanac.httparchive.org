@@ -45,7 +45,7 @@ Cookies are set by a web server and there are two types of cookies: **first-part
 
 Third-party cookies may be from a third party, or from a different site or service belonging to the same "first party" as the top-level site. **Third-party cookies** are really **cross-site cookies**.
 
-**Example**: imagine that the owner of the domain "example.com" also owns "example.net" and that the following cookies are set for a user visiting "https://www.example.com":
+**Example**: imagine that the owner of the domain `example.com` also owns `example.net` and that the following cookies are set for a user visiting `https://www.example.com`:
 
 <figure>
   <table>
@@ -90,7 +90,7 @@ Third-party cookies may be from a third party, or from a different site or servi
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Cookie Context") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Cookie Context.") }}</figcaption>
 </figure>
 
 ### Privacy & security risks
@@ -121,7 +121,7 @@ First-party cookies are set by the same domain as the website that the user is v
 
 {{ figure_markup(
   image="first-and-third-party-prevalence.png",
-  caption="First- and third-party prevalence",
+  caption="First- and third-party prevalence.",
   description="Bar chart showing the prevalence of first- and third-party cookies on desktop and mobile clients. For both clients, we see the same distribution on the top 1M websites: 39% of cookies are first-party and 61% of cookies set are third-party.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLO9Te80QewkuPKnz6eJ7OFcU5q3fZMsdqv7cEncBKrL5zcsIN9sMMg5HQT7ndKze8JJNe-V1IkB-9/pubchart?oid=627993125&format=interactive",
   sheets_gid="1700493344",
@@ -133,7 +133,7 @@ On the top one million (top 1M) most visited websites, about 39% of the cookies 
 
 {{ figure_markup(
   image="first-and-third-party-prevalence-by-rank-desktop.png",
-  caption="First- and third-party prevalence of cookies by rank on desktop clients",
+  caption="First- and third-party prevalence of cookies by rank on desktop clients.",
   description="Bar chart showing the prevalence of first- and third-party cookies on desktop clients according to the popularity of the website (we used Chrome User Experience report to determine the popularity of websites). We see that more popular websites set significantly more third-party cookies. For the top 1k most popular websites on desktop clients, 77% of cookies set are third-party, while for the top 1M websites, 61% of cookies are third-party. One explanation for this difference is that more popular websites tend to include more third-party content that sets cookies.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLO9Te80QewkuPKnz6eJ7OFcU5q3fZMsdqv7cEncBKrL5zcsIN9sMMg5HQT7ndKze8JJNe-V1IkB-9/pubchart?oid=1327011561&format=interactive",
   sheets_gid="1700493344",
@@ -143,7 +143,7 @@ On the top one million (top 1M) most visited websites, about 39% of the cookies 
 
 {{ figure_markup(
   image="first-and-third-party-prevalence.png-by-rank-mobile.png",
-  caption="First- and third-party prevalence of cookies by rank on mobile clients",
+  caption="First- and third-party prevalence of cookies by rank on mobile clients.",
   description="Bar chart showing the prevalence of first- and third-party cookies on mobile clients according to the popularity of the website (we used Chrome User Experience report to determine the popularity of websites). We see that more popular websites set significantly more third-party cookies. For the top 1k most popular websites on desktop clients, 77% of cookies set are third-party, while for the top 1M websites, 61% of cookies are third-party. One explanation for this difference is that more popular websites tend to include more third-party content that sets cookies. We see the same results for both mobile and desktop clients.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLO9Te80QewkuPKnz6eJ7OFcU5q3fZMsdqv7cEncBKrL5zcsIN9sMMg5HQT7ndKze8JJNe-V1IkB-9/pubchart?oid=1792338085&format=interactive",
   sheets_gid="1700493344",
@@ -160,6 +160,7 @@ Next, we discuss the distribution of different cookie [attributes](https://devel
 
 {{ figure_markup(
   image="cookies-attributes-overview-desktop.png",
+  caption="An overview of cookie attributes for desktop clients.",
   description="This figures gives an overview of how cookie attributes are used for desktop clients for both first- and third-party cookies. 100% of third-party cookies include the `SameSite` and `Secure` attributes. Only 1% of first-party cookies and 6% of third-party cookies use `Partioned`. 16% of first-party cookies set their `Session` attribute, while this is the case for only 4% of third-party cookies. Finally, 12% of first-party cookies and 19% of third-party cookies use the `HttpOnly` attribute.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLO9Te80QewkuPKnz6eJ7OFcU5q3fZMsdqv7cEncBKrL5zcsIN9sMMg5HQT7ndKze8JJNe-V1IkB-9/pubchart?oid=69067153&format=interactive",
   sheets_gid="1700493344",
@@ -168,7 +169,7 @@ Next, we discuss the distribution of different cookie [attributes](https://devel
 }}
 {{ figure_markup(
   image="cookies-attributes-overview-mobile.png",
-  caption="An overview of cookie attributes for mobile clients",
+  caption="An overview of cookie attributes for mobile clients.",
   description="This figures gives an overview of how cookie attributes are used for mobile clients for both first- and third-party cookies. We observe the exact same results as for desktop clients. 100% of third-party cookies include the `SameSite` and `Secure` attributes. Only 1% of first-party cookies and 6% of third-party cookies use `Partioned`. 16% of first-party cookies set their `Session` attribute, while this is the case for only 4% of third-party cookies. Finally, 12% of first-party cookies and 19% of third-party cookies use the `HttpOnly` attribute.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLO9Te80QewkuPKnz6eJ7OFcU5q3fZMsdqv7cEncBKrL5zcsIN9sMMg5HQT7ndKze8JJNe-V1IkB-9/pubchart?oid=2109248653&format=interactive",
   sheets_gid="1700493344",
@@ -186,7 +187,7 @@ Most of the cookies listed in the graph are set by advertising domains e.g., `ad
 
 {{ figure_markup(
   image="top-third-party-CHIPS.png",
-  caption="Top partitioned cookies (CHIPS) in third-party context",
+  caption="Top partitioned cookies (CHIPS) in third-party context.",
   description="A chart showing the top third-party domains setting partitioned cookies. The top two partitioned cookies set are Google-owned. `YSC` and `VISITOR_INFO1_LIVE` are set by `youtube.com` on 9.88% of desktop websites and 8.89% of mobile websites. Most of the top domains using CHIPS belong to the advertising or analytics category.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLO9Te80QewkuPKnz6eJ7OFcU5q3fZMsdqv7cEncBKrL5zcsIN9sMMg5HQT7ndKze8JJNe-V1IkB-9/pubchart?oid=1075137054&format=interactive",
   sheets_gid="1597405066",
@@ -198,7 +199,7 @@ Perhaps a bit surprising, 1% of all the first-party cookies that are set on the 
 
 {{ figure_markup(
   image="top-first-party-CHIPS.png",
-  caption="Top partitioned cookies (CHIPS) in first-party context",
+  caption="Top partitioned cookies (CHIPS) in first-party context.",
   description="A chart showing the top first-party partitioned cookies. The top cookie `receive-cookie-deprecation` is part of the Privacy Sandbox's testing phase. The second most widely set first-party partitioned cookie is set by Cloudflare on 4.21% of desktop sites and 4.13% of mobile pages, and indicates that the user has successfully completed bot detection.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLO9Te80QewkuPKnz6eJ7OFcU5q3fZMsdqv7cEncBKrL5zcsIN9sMMg5HQT7ndKze8JJNe-V1IkB-9/pubchart?oid=1330654598&format=interactive",
   sheets_gid="1597405066",
@@ -239,7 +240,7 @@ To learn more about the `SameSite` attribute, see the following references:
 
 {{ figure_markup(
   image="same-site-desktop.png",
-  caption="`SameSite` attribute for cookies on desktop client",
+  caption="`SameSite` attribute for cookies on desktop client.",
   description="Shows the prevalence of the `SameSite` attribute and its value for both first-party and third-party cookies on desktop clients. 2.16% of first-party cookies set the `SameSite` attribute to `Strict`, 20.17% use `SameSite=Lax` (which is the default), 10.78% set the value to `None` and 66.89% do not specify the value of `SameSite`. Nearly 100% of third-party cookies set the `SameSite` attribute to `None`, in order for these cookies to be sent in a cross-site context.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLO9Te80QewkuPKnz6eJ7OFcU5q3fZMsdqv7cEncBKrL5zcsIN9sMMg5HQT7ndKze8JJNe-V1IkB-9/pubchart?oid=797398172&format=interactive",
   sheets_gid="1700493344",
@@ -248,7 +249,7 @@ To learn more about the `SameSite` attribute, see the following references:
 }}
 {{ figure_markup(
   image="same-site-mobile.png",
-  caption="`SameSite` attribute for cookies on mobile client",
+  caption="`SameSite` attribute for cookies on mobile client.",
   description="Shows the prevalence of the `SameSite` attribute and its value for both first-party and third-party cookies on mobile clients. We see very similar results as for desktop clients. 2.21% of first-party cookies set the `SameSite` attribute to `Strict`, 20% use `SameSite=Lax` (which is the default), 10.63% set the value to None and 67.16% do not specify the value of `SameSite`. Nearly 100% of third-party cookies set the `SameSite` attribute to `None`, in order for these cookies to be sent in a cross-site context.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLO9Te80QewkuPKnz6eJ7OFcU5q3fZMsdqv7cEncBKrL5zcsIN9sMMg5HQT7ndKze8JJNe-V1IkB-9/pubchart?oid=2030447900&format=interactive",
   sheets_gid="1700493344",
@@ -265,7 +266,7 @@ Two [cookie prefixes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#
 
 {{ figure_markup(
   image="cookie-prefixes-desktop.png",
-  caption="Cookie prefixes observed on desktop pages",
+  caption="Cookie prefixes observed on desktop pages.",
   description="Shows the observed cookies prefixes used on desktop pages. We see that 0.032% of first-party cookies and only 0.001% of third-party cookies include `__Host-`. Similarly, 0.03% of first-party cookies and 0.001% of third-party cookies include `__Secure-`. ",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLO9Te80QewkuPKnz6eJ7OFcU5q3fZMsdqv7cEncBKrL5zcsIN9sMMg5HQT7ndKze8JJNe-V1IkB-9/pubchart?oid=1005258943&format=interactive",
   sheets_gid="1700493344",
@@ -275,7 +276,7 @@ Two [cookie prefixes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#
 
 {{ figure_markup(
   image="cookie-prefixes-mobile.png",
-  caption="Cookie prefixes observed on mobile pages",
+  caption="Cookie prefixes observed on mobile pages.",
   description="Shows the observed cookies prefixes used on mobile pages. We observe very similar results to the cookies prefixes used on desktop pages. We see that 0.031% of first-party cookies and only 0.001% of third-party cookies include `__Host-`. Similarly, 0.03% of first-party cookies and 0.001% of third-party cookies include `__Secure-`. ",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLO9Te80QewkuPKnz6eJ7OFcU5q3fZMsdqv7cEncBKrL5zcsIN9sMMg5HQT7ndKze8JJNe-V1IkB-9/pubchart?oid=747475408&format=interactive",
   sheets_gid="1700493344",
@@ -291,7 +292,7 @@ In the following section, we report for each client (desktop and mobile) the top
 
 {{ figure_markup(
   image="top-first-party-cookies-set.png",
-  caption="Top first-party cookies set",
+  caption="Top first-party cookies set.",
   description="The chart shows the most widely-set first-party cookies. Google Analytics sets the `_ga` and `_gid` cookies, which are used for website statistics and analytics reports, on more than 61% of websites for both mobile and desktop clients.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLO9Te80QewkuPKnz6eJ7OFcU5q3fZMsdqv7cEncBKrL5zcsIN9sMMg5HQT7ndKze8JJNe-V1IkB-9/pubchart?oid=1305664900&format=interactive",
   sheets_gid="1236728722",
@@ -303,7 +304,7 @@ The first two first-party cookies `_ga` and `_gid` are set by [Google Analytics]
 
 {{ figure_markup(
   image="top-third-party-cookies-set.png",
-  caption="Top third-party cookies and domains that set them",
+  caption="Top third-party cookies and domains that set them.",
   description="The chart shows the most widely-set third-party cookies. DoubleClick sets third-party advertising cookies on 28.9% websites and 26.7% of mobile websites. Microsoft also sets advertising cookies on 12.4% of desktop and 11.3% of mobile pages. Most of the top domains setting third-party cookies are related to tracking and advertising.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLO9Te80QewkuPKnz6eJ7OFcU5q3fZMsdqv7cEncBKrL5zcsIN9sMMg5HQT7ndKze8JJNe-V1IkB-9/pubchart?oid=219338324&format=interactive",
   sheets_gid="1236728722",
