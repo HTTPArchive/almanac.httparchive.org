@@ -357,6 +357,9 @@ booktitle = "The {{ year }} Web Almanac",
 chapter = {{ chapter_config.chapter_number }},
 publisher = "HTTP Archive",
 year = "{{ year }}",
+language = "{{ language }}",
+{%- if metadata.get('doi') %}
+doi = "{{ metadata.get('doi')}}",{%- endif %}
 url = "https://almanac.httparchive.org/en/{{ year }}/{{ metadata.get('chapter') }}"
 }</pre>
 {% endmacro %}
