@@ -1590,6 +1590,7 @@
   "GJFR": {
     "avatar_url": "5749508",
     "github": "GJFR",
+    "linkedin": "gertjan-franken",
     "name": "Gertjan Franken",
     "teams": {
       "2022": [
@@ -1598,7 +1599,9 @@
       "2024": [
         "authors"
       ]
-    }
+    },
+    "twitter": "GJFR_",
+    "website": "https://gjfr.dev"
   },
   "gjfr": {
     "avatar_url": "5749508",
