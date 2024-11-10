@@ -459,7 +459,7 @@ Emoji fonts do not suffer from this problem as emoji are encoded in Unicode so t
 
 Which font families were most popular this year, and which foundries made them? Taking a look at the top 20 there are few surprises in the first ten entries compared to 2022. Roboto still leads the pack, with a small increase in use*. Font Awesome use has remained fairly stable, and so has Noto usage (unlike 2022, Noto is now split into script specific items). The only surprise is the decline of Lato, which has been overtaken by Poppins and Montserrat.
 
-<p class="note">* As noted in 2022 the discrepancy between desktop and mobile use of Roboto is mostly likely due to the use of `local()` which loads a locally installed version of Roboto; due to it being the system font on Android, usage on mobile is low.</p>
+<p class="note">\* As noted in 2022 the discrepancy between desktop and mobile use of Roboto is mostly likely due to the use of `local()` which loads a locally installed version of Roboto; due to it being the system font on Android, usage on mobile is low.</p>
 
 Looking at the remainder of the top 20, Proxima Nova usage has increased slightly to reach about 1% of websites. As the only commercial, non-icon font in the top 20, this level of popularity is extremely impressive. Like in 2022, icon fonts make up about 18% of web fonts in 2024. The meteoric rise of Inter should also not go unnoticed, as it also stands around 1%. Due to its prominence in frameworks and libraries, we expect Inter to rise into the top 10 within the next few years.
 
