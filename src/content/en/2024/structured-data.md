@@ -78,7 +78,7 @@ This chapter offers a data-driven analysis of structured data trends in 2023-202
 9. **Emerging Schemas & Use Cases**:
   - Innovations in schema types and their application in **SEO** and **e-commerce**.
 10. **Future Outlook**:
-   - The evolving role of structured data in **AI**, **semantic SEO**, and **content discovery**.
+  - The evolving role of structured data in **AI**, **semantic SEO**, and **content discovery**.
 
 This chapter provides a comprehensive view of structured data’s impact on SEO, AI, and e-commerce, with actionable insights for developers and marketers.
 
