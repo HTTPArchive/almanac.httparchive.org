@@ -54,31 +54,31 @@ The rise of generative AI and advanced machine learning has further underscored 
 This chapter offers a data-driven analysis of structured data trends in 2023-2024, highlighting key developments and best practices:
 
 1. **Evolution of the Landscape**:
-   - Key shifts in structured data, especially with the rise of **AI-powered search** like **Google AI Overview** and **Bing Chat**.
-   - Changes in **Google** and **Bing** structured data policies, and their impact on SEO.
+  - Key shifts in structured data, especially with the rise of **AI-powered search** like **Google AI Overview** and **Bing Chat**.
+  - Changes in **Google** and **Bing** structured data policies, and their impact on SEO.
 2. **Prevalence and Growth**:
-   - Trends in popular formats like **JSON-LD**, **Microdata**, and **RDFa**.
-   - Adoption rates by schema types such as **Product**, **Organization**, and **Article**.
+  - Trends in popular formats like **JSON-LD**, **Microdata**, and **RDFa**.
+  - Adoption rates by schema types such as **Product**, **Organization**, and **Article**.
 3. **Implementation and Best Practices**:
-   - Best practices for structured data, including **JSON-LD** usage.
-   - Common mistakes and how to avoid them.
+  - Best practices for structured data, including **JSON-LD** usage.
+  - Common mistakes and how to avoid them.
 4. **Rich Results & SERP Features**:
-   - Effects of deprecated features like **FAQ** and **HowTo**.
-   - Introduction of **carousels** and **Product Knowledge Panels**.
+  - Effects of deprecated features like **FAQ** and **HowTo**.
+  - Introduction of **carousels** and **Product Knowledge Panels**.
 5. **AI-Powered Search**:
-   - The role of structured data in **AI-driven search** and **voice assistants**.
-   - Trends in **AI-powered content discovery**.
+  - The role of structured data in **AI-driven search** and **voice assistants**.
+  - Trends in **AI-powered content discovery**.
 6. **E-commerce Innovations**:
-   - Growth of **Digital Product Passports** and **GS1 Digital Links**.
-   - Structured data’s role in **e-commerce** and new rich result types.
+  - Growth of **Digital Product Passports** and **GS1 Digital Links**.
+  - Structured data’s role in **e-commerce** and new rich result types.
 7. **Knowledge Graphs & Graph RAG**:
-   - The rising importance of **knowledge graphs** and **Graph RAG** for enhancing AI outputs.
+  - The rising importance of **knowledge graphs** and **Graph RAG** for enhancing AI outputs.
 8. **Quality & Data Integrity**:
-   - Best practices for maintaining high-quality structured data.
+  - Best practices for maintaining high-quality structured data.
 9. **Emerging Schemas & Use Cases**:
-   - Innovations in schema types and their application in **SEO** and **e-commerce**.
+  - Innovations in schema types and their application in **SEO** and **e-commerce**.
 10. **Future Outlook**:
-    - The evolving role of structured data in **AI**, **semantic SEO**, and **content discovery**.
+   - The evolving role of structured data in **AI**, **semantic SEO**, and **content discovery**.
 
 This chapter provides a comprehensive view of structured data’s impact on SEO, AI, and e-commerce, with actionable insights for developers and marketers.
 
@@ -174,16 +174,16 @@ Empirically, AI-powered search systems, as seen above, are sourcing data from a 
 This transition from traditional search to AI-powered search demands a broader, more nuanced approach to optimization:
 
 1. **Multi-platform visibility**: SEO strategies must now account for visibility across a diverse array of AI surfaces and platforms, including:
-   - Traditional search engines (Google, Bing)
-   - AI chatbots (ChatGPT, Google's Gemini, Perplexity, Anthropic's Claude)
-   - Integrated assistants (Microsoft Copilot, potential Apple-ChatGPT integration)
-   - Ecosystem-specific tools (Google Workspace, Microsoft 365\)
-   - Browser and device-level integrations
+  - Traditional search engines (Google, Bing)
+  - AI chatbots (ChatGPT, Google's Gemini, Perplexity, Anthropic's Claude)
+  - Integrated assistants (Microsoft Copilot, potential Apple-ChatGPT integration)
+  - Ecosystem-specific tools (Google Workspace, Microsoft 365\)
+  - Browser and device-level integrations
 2. **Beyond conventional optimization**: Success in this landscape goes beyond optimizing for specific features like Google's AI Overview. It requires a holistic approach to making content discoverable and comprehensible across all emerging search interfaces.
 3. **Leveraging structured data strategically**: The key to improved visibility lies not just in publishing structured data using schema markup but in facilitating access to structured information about entities that matter to your business or content. This involves:
-   - Ensuring clear, structured information is available and easily interpretable by various AI systems.
-   - Ensuring that the metadata used to describe the webpage for bots is consistent with the content presented to human readers.
-   - Directly feeding accurate information to relevant platforms and marketplaces (e.g., Google Merchant, Amazon) for products and services.
+  - Ensuring clear, structured information is available and easily interpretable by various AI systems.
+  - Ensuring that the metadata used to describe the webpage for bots is consistent with the content presented to human readers.
+  - Directly feeding accurate information to relevant platforms and marketplaces (e.g., Google Merchant, Amazon) for products and services.
 
 ## Rich Results and Knowledge Panels
 
