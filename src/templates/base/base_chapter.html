@@ -338,22 +338,24 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
 
 {% macro render_bibtex() %}
 <h2 id="cite">
-  <a href="#cite" class="anchor-link">BibTeX</a>
+  <a href="#cite" class="anchor-link">{{ self.citation() }}</a>
 </h2>
-    <pre id="bibtex-citation">
+<details>
+  <summary>BibTeX</summary>
+  <pre id="bibtex-citation">
 @inbook{WebAlmanac.{{ year }}.{{ metadata.get('title').replace(' ', '') }},
 author = "{% for author in metadata.get('authors') -%}
   {%- set authordata = config.contributors.get(author, None) -%}
   {%- if authordata %}
     {%- set full_name = authordata.name.split(' ') -%}
-    {{ full_name[-1] }}, {{ full_name[0] }}{% if full_name|length > 2 %} {{ full_name[1:-1]|join(' ') }}{% endif %}{% if not loop.last %} and {% endif %}
+    {{ full_name[-1] }}{{ self.comma() }}{{ full_name[0] }}{% if full_name|length > 2 %} {{ full_name[1:-1]|join(' ') }}{% endif %}{% if not loop.last %}{{ self.and() }}{% endif %}
   {%- else %}
     {%- set full_name = author.split(' ') -%}
-    {{ full_name[-1] }}, {{ full_name[0] }}{% if full_name|length > 2 %} {{ full_name[1:-1]|join(' ') }}{% endif %}{% if not loop.last %} and {% endif %}
+    {{ full_name[-1] }}{{ self.comma() }}{{ full_name[0] }}{% if full_name|length > 2 %} {{ full_name[1:-1]|join(' ') }}{% endif %}{% if not loop.last %}{{ self.and() }}{% endif %}
   {%- endif %}
 {%- endfor %}",
 title = "{{ metadata.get('title') }}",
-booktitle = "The {{ year }} Web Almanac",
+booktitle = "{{ self.citation_journal_title() }}",
 chapter = {{ chapter_config.chapter_number }},
 publisher = "HTTP Archive",
 year = "{{ year }}",
@@ -362,6 +364,7 @@ language = "{{ language }}",
 doi = "{{ metadata.get('doi')}}",{%- endif %}
 url = "https://almanac.httparchive.org/en/{{ year }}/{{ metadata.get('chapter') }}"
 }</pre>
+</details>
 {% endmacro %}
 
 {% macro render_prevnext() %}
