@@ -2240,6 +2240,10 @@
       ],
       "2022": [
         "authors"
+      ],
+      "2024": [
+        "analysts",
+        "authors"
       ]
     },
     "twitter": "sirjonathan",
@@ -2596,6 +2600,17 @@
     "name": "Lode Vandevenne",
     "teams": {
       "2021": [
+        "authors"
+      ]
+    }
+  },
+  "LoraRaykova": {
+    "avatar_url": "166594702",
+    "github": "LoraRaykova",
+    "linkedin": "lraykova",
+    "name": "Lora Raykova",
+    "teams": {
+      "2024": [
         "authors"
       ]
     }
@@ -3162,6 +3177,17 @@
     "twitter": "dark_mefody",
     "website": "https://mefody.dev/"
   },
+  "niko-kaleev": {
+    "avatar_url": "163424699",
+    "github": "niko-kaleev",
+    "linkedin": "niko-kaleev-8760a9131",
+    "name": "Niko Kaleev",
+    "teams": {
+      "2024": [
+        "authors"
+      ]
+    }
+  },
   "NishuGoel": {
     "avatar_url": "26349046",
     "github": "NishuGoel",
@@ -3510,6 +3536,16 @@
       ]
     },
     "twitter": "rachellcostello"
+  },
+  "raewrites": {
+    "avatar_url": "7201324",
+    "github": "raewrites",
+    "name": "Raelene Morey",
+    "teams": {
+      "2024": [
+        "reviewers"
+      ]
+    }
   },
   "lebreRafael": {
     "avatar_url": "13899924",
@@ -4114,6 +4150,18 @@
     },
     "twitter": "tpiros",
     "website": "https://tamas.io"
+  },
+  "karmatosed": {
+    "avatar_url": "253067",
+    "github": "karmatosed",
+    "name": "Tammie Lister",
+    "teams": {
+      "2024": [
+        "reviewers"
+      ]
+    },
+    "twitter": "karmatosed",
+    "website": "https://tammielister.com/"
   },
   "tammyeverts": {
     "avatar_url": "15661032",
