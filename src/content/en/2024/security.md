@@ -23,9 +23,9 @@ featured_stat_label_3: Percentage of desktop sites using Subresource Integrity
 
 With how much of our lives happen online these days - whether it's staying in touch, following the news, buying, or even selling products online - web security has never been more important. Unfortunately, the more we rely on these online services, the more appealing they become to malicious actors. As we've seen time and time again, even a single weak spot in the systems we depend on can lead to disrupted services, stolen personal data, or worse. The past two years have been no exception, with a rise in <a hreflang="en" href="https://blog.cloudflare.com/ddos-threat-report-for-2024-q2/">Denial-of-Service (DoS) attacks</a>, <a hreflang="en" href="https://www.imperva.com/resources/resource-library/reports/2024-bad-bot-report/">bad bots</a>, and <a hreflang="en" href="https://www.darkreading.com/vulnerabilities-threats/rising-tide-of-software-supply-chain-attacks">supply-chain attacks targeting the Web</a> like never before.
 
-In this chapter, we take a closer look at the current state of web security by analyzing the protections and security practices used by websites today. We explore key areas like Transport Layer Security (TLS), cookie protection mechanisms, and safeguards against third-party content inclusion. We'll discuss how these security measures help prevent attacks, as well as highlight common misconfigurations that can undermine them. Additionally, we examine some of the harmful practices still present on the web, such as the widespread use of cryptominers.
+In this chapter, we take a closer look at the current state of web security by analyzing the protections and security practices used by websites today. We explore key areas like [Transport Layer Security (TLS)](#transport-security), [cookie protection mechanisms](#cookies), and safeguards against third-party [content inclusion](#content-inclusion). We'll discuss how security measures like these help prevent attacks, as well as highlight [misconfigurations](#security-misconfigurations-and-oversights) that can undermine them. Additionally, we examine the prevalence of harmful [cryptominers](#malpractices-on-the-web) and the usage of [`security.txt`](#securitytxt).
 
-We also investigate the factors driving security practices, analyzing whether elements like country, website category, or technology stack influence the security measures in place. By comparing this year's findings with those from the [2022 Web Almanac](../2022/security), we highlight key changes and assess long-term trends. This allows us to provide a broader perspective on the evolution of web security practices and the progress made over the years.
+We also investigate the [factors driving security practices](#drivers-of-security-mechanism-adoption), analyzing whether elements like country, website category, or technology stack influence the security measures in place. By comparing this year's findings with those from the [2022 Web Almanac](../2022/security), we highlight key changes and assess long-term trends. This allows us to provide a broader perspective on the evolution of web security practices and the progress made over the years.
 
 ## Transport security
 
@@ -327,7 +327,7 @@ Content inclusion is a foundational aspect of the Web, allowing resources like C
 
 ### Content Security Policy
 
-Websites can exert greater control over their embedded content by deploying a [Content Security Policy (CSP)](https://developer.mozilla.org/docs/Web/HTTP/CSP) through either the `Content-Security-Policy` response header or by defining the policy in a `<meta>` html tag. The wide range of directives available in CSP allows websites to specify, in a fine-grained manner, which resources can be fetched and from which origins.
+Websites can exert greater control over their embedded content by deploying a [Content Security Policy (CSP)](https://developer.mozilla.org/docs/Web/HTTP/CSP) through either the `Content-Security-Policy` response header or by defining the policy in a `<meta>` tag. The wide range of directives available in CSP allows websites to specify, in a fine-grained manner, which resources can be fetched and from which origins.
 
 In addition to vetting included content, CSP can serve other purposes as well, such as enforcing the use of encrypted channels with the `upgrade-insecure-requests` directive and controlling where the site can be embedded to protect against clickjacking attacks using the `frame-ancestors` directive.
 
@@ -357,7 +357,7 @@ Most websites utilize CSP for purposes beyond controlling embedded resources, wi
   )
 }}
 
-The `block-all-mixed-content` directive, which has been deprecated in favor of `upgrade-insecure-requests`, is the third most used directive. Although we observed a relative decrease of 12.5% and 13.8% in its usage between 2020 and 2021, the decline has since slowed to an average yearly decrease of 4.4% for desktop and 6.4% for mobile since 2022.
+The `block-all-mixed-content` directive, which has been deprecated in favor of `upgrade-insecure-requests`, is the third most used directive. Although we observed a relative decrease of 12.5% for desktop and 13.8% for mobile in its usage between 2020 and 2021, the decline has since slowed to an average yearly decrease of 4.4% for desktop and 6.4% for mobile since 2022.
 
 <figure>
   <table>
@@ -461,14 +461,14 @@ The top three directives also make up the building blocks of the most prevalent 
   <figcaption>{{ figure_link(caption="Relative usage change of CSP directives", sheets_gid="1796954328", sql_file="csp_directives_usage.sql") }}</figcaption>
 </figure>
 
-All other directives shown in the graph above are used for content inclusion control. Overall, usage has remained relatively stable. However, a notable change is the increased use of the `object-src` directive, which has surpassed `connect-src` and `frame-src`. Since 2022, the usage of `object-src` has risen by 15.9% for desktop and 16.8% for mobile.
+All other directives shown in the table above are used for content inclusion control. Overall, usage has remained relatively stable. However, a notable change is the increased use of the `object-src` directive, which has surpassed `connect-src` and `frame-src`. Since 2022, the usage of `object-src` has risen by 15.9% for desktop and 16.8% for mobile.
 
 <!-- markdownlint-disable-next-line MD051 -->
 Among the most notable decreases in usage is `default-src`, the catch-all directive. This decline could be explained by the increasing use of CSP for purposes beyond content inclusion, such as enforcing HTTP upgrades to HTTPS or controlling the embedding of the current page – situations where `default-src` is not applicable, as these directives don't fallback to it. This change in CSP purpose is confirmed by the most prevalent CSP headers listed in [Figure 17](#fig-17), which all have seen an increase in usage since 2022. However, directives like `upgrade-insecure-requests` and `block-all-mixed-content`, while part of these most common CSP headers, are being used less overall, as seen in [Figure 18](#fig-18).
 
 #### Keywords for `script-src`
 
-One of the most important directives of CSP is `script-src`, as curbing the scripts that can be embedded in the website hinders potential adversaries greatly. This directive can be used with several attribute keywords.
+One of the most important directives of CSP is `script-src`, as curbing scripts loaded by the website hinders potential adversaries greatly. This directive can be used with several attribute keywords.
 
 {{ figure_markup(
   image="csp-script-src-keywords.png",
@@ -517,7 +517,7 @@ The `unsafe-inline` and `unsafe-eval` directives can significantly reduce the se
   <figcaption>{{ figure_link(caption="Relative usage change of CSP `script-src` keywords", sheets_gid="2075772620", sql_file="csp_script_source_list_keywords.sql") }}</figcaption>
 </figure>
 
-However, the increasing adoption of the `nonce-` and `strict-dynamic` keywords is a positive development. By using the `nonce-` keyword, a secret nonce can be defined, allowing only inline scripts with the correct nonce to execute. This approach is a secure alternative to the unsafe-inline directive for permitting inline scripts. When used in combination with the `strict-dynamic` keyword, nonced scripts are permitted to import additional scripts from any origin. This approach simplifies secure script loading for developers, as it allows them to trust a single nonced script, which can then securely load other necessary resources.
+However, the increasing adoption of the `nonce-` and `strict-dynamic` keywords is a positive development. By using the `nonce-` keyword, a secret nonce can be defined, allowing only inline scripts with the correct nonce to execute. This approach is a secure alternative to the `unsafe-inline` directive for permitting inline scripts. When used in combination with the `strict-dynamic` keyword, nonced scripts are permitted to import additional scripts from any origin. This approach simplifies secure script loading for developers, as it allows them to trust a single nonced script, which can then securely load other necessary resources.
 
 #### Allowed hosts
 
@@ -542,7 +542,7 @@ The highest number of unique allowed hosts in a policy was 1,020, while the long
 adservice.google.com adservice.google.ad adservice.google.ae …
 ```
 
-This suggests that the long tail of excessively large CSP headers is likely caused by computer-generated exhaustive lists of origins. Although this may seem like a specific edge case, it highlights a limitation of CSP: the lack of regex functionality, which could otherwise provide a more efficient and elegant solution to handle such cases. However, depending on the websites implementation, this issue could also be solved by employing the `strict-dynamic`and `nonce-` keyword in the `script-src` directive, which enables the allowed script with nonce to load additional scripts.
+This suggests that the long tail of excessively large CSP headers is likely caused by computer-generated exhaustive lists of origins. Although this may seem like a specific edge case, it highlights a limitation of CSP: the lack of regex functionality, which could otherwise provide a more efficient and elegant solution to handle such cases. However, depending on the websites implementation, this issue could also be solved by employing the `strict-dynamic` and `nonce-` keyword in the `script-src` directive, which enables the allowed script with nonce to load additional scripts.
 
 The most common HTTPS origins included in CSP headers are used for loading fonts, ads and other media fetched from CDNs:
 
@@ -611,7 +611,7 @@ The most common HTTPS origins included in CSP headers are used for loading fonts
   <figcaption>{{ figure_link(caption="Most frequently allowed HTTP(S) hosts in CSP policies", sheets_gid="180799456", sql_file="csp_allowed_host_frequency.sql") }}</figcaption>
 </figure>
 
-As for WSS origins, used for allowing WebSockets connections to certain origins, the following were found the most common:
+As for WSS origins, used for allowing WebSocket connections to certain origins, the following were found the most common:
 
 <figure>
   <table>
@@ -653,7 +653,7 @@ As for WSS origins, used for allowing WebSockets connections to certain origins,
   <figcaption>{{ figure_link(caption="Most frequently allowed WS(S) hosts in CSP policies", sheets_gid="1790517281", sql_file="csp_allowed_host_frequency_wss.sql") }}</figcaption>
 </figure>
 
-Two of these origins are related to customer service and ticketing (`intercom.io`, `zopim.com`), one is used for website analytics (`hotjar.com`), and two are associated with social media (`www.livejournal.com`, `quora.com`). For four out of the five websites, we found specific instructions on how to add the origin to the website's content security policy. This is considered good practice, as it discourages website administrators from using wildcards to allow third-party resources, which would reduce security by allowing broader access than necessary.
+Two of these origins are related to customer service and ticketing (`intercom.io`, `zopim.com`), one is used for website analytics (`hotjar.com`), and two are associated with social media (`www.livejournal.com`, `quora.com`). For four out of these five websites, we found specific instructions on how to add the origin to the website's content security policy. This is considered good practice, as it discourages website administrators from using wildcards to allow third-party resources, which would reduce security by allowing broader access than necessary.
 
 ### Subresource Integrity
 
@@ -681,7 +681,7 @@ SRI is used by 23.2% and 21.3% of all observed pages for desktop and mobile resp
   )
 }}
 
-The adoption of Subresource Integrity seems to be stagnating, with the median percentage of scripts checked against a hash remaining at 3.23% for both desktop and mobile. This figure has remained virtually unchanged since 2022.
+The adoption of Subresource Integrity seems to be stagnating, with the median percentage of scripts per page checked against a hash remaining at 3.23% for both desktop and mobile. This figure has remained virtually unchanged since 2022.
 
 <figure>
   <table>
@@ -881,7 +881,7 @@ Out of the 21.4 million `<iframe>` elements observed in the crawl, half included
   <figcaption>{{ figure_link(caption="Most prevalent `allow` attribute directives.", sheets_gid="1497012339", sql_file="iframe_allow_directives.sql") }}</figcaption>
 </figure>
 
-Compared to 2022, the top 10 most common directives are now led by three newly introduced directives: `join-ad-interest-group`, `attribution-reporting` and `run-ad-auction`. The first and third directives are specific to Google’s Privacy Sandbox. For all observed directives in the top 10, almost none were used in combination with an origin or keyword (i.e.., `'src'`, `'self'`, and `'none'`, ), meaning the loaded page is allowed to request the indicated permission regardless of its origin.
+Compared to 2022, the top 10 most common directives are now led by three newly introduced directives: `join-ad-interest-group`, `attribution-reporting` and `run-ad-auction`. The first and third directives are specific to Google’s Privacy Sandbox. For all observed directives in the top 10, almost none were used in combination with an origin or keyword (i.e., `'src'`, `'self'`, and `'none'`), meaning the loaded page is allowed to request the indicated permission regardless of its origin.
 
 ### Iframe sandbox
 
@@ -1468,7 +1468,7 @@ Although cryptocurrencies remain popular, the number of cryptominers on the web 
   )
 }}
 
-When looking at the cryptominer share, we see that part of the Coinimp share has been overtaken by JSEcoin, while other miners have remained relatively stable, seeing only minor changes.
+When looking at the cryptominer share, we see that part of the Coinimp share has been overtaken by JSEcoin, while other miners have remained relatively stable, seeing only minor changes. With the low number of cryptominers found on the web, these relative changes are still quite minor.
 
 {{ figure_markup(
   image="cryptominers-market-share.png",
@@ -1480,7 +1480,7 @@ When looking at the cryptominer share, we see that part of the Coinimp share has
   )
 }}
 
-With the low number of cryptominers found on the web, these relative changes are still quite minor.
+One should note that the results shown here may be a underrepresentation of the actual state of the websites infected with cryptominers. Since our crawler is run once a month, not all websites that run a cryptominer can be discovered. For example, if a website is only infected for several days, it might not be detected.
 
 ## Security misconfigurations and oversights
 
