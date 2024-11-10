@@ -7,16 +7,16 @@ reviewers: [drott, svgeesus, ivanukhov, jmsole, liamquin, mandymichael, raphlinu
 editors: [charlesberret]
 analysts: [ivanukhov]
 translators: []
-bramstein: TODO
-charlesberret: TODO
+bramstein_bio: Bram Stein is CTO at <a hreflang="en" href="https://thetypefounders.com">The Type Founders</a>. Before that he was Head of Webfonts at <a hreflang="en" href="https://fonts.adobe.com">Adobe Fonts</a>. He is the author of the <a hreflang="en" href="https://abookapart.com/products/webfont-handbook">Webfont Handbook</a> and speaks about typography and web performance at conferences around the world.
+charlesberret_bio: Charles Berret is a writer, interdisciplinary researcher, and data journalist who studies the history and philosophy of media and information technologies.
 results: https://docs.google.com/spreadsheets/d/1EkdvJ8e0B9Rr42evC2Ds5Ekwq6gF9oLBW0BA5cmSUT4/
-featured_quote: TODO
-featured_stat_1: TODO
-featured_stat_label_1: TODO
-featured_stat_2: TODO
-featured_stat_label_2: TODO
-featured_stat_3: TODO
-featured_stat_label_3: TODO
+featured_quote: Overall, the trend is clear&colon; more and more people prefer to self-host their web fonts. This is a great choice in many cases because self-hosting avoids external dependencies for something as critical to rendering as fonts are.
+featured_stat_1: 11%
+featured_stat_label_1: Percentage of pages using resource hints to preload fonts.
+featured_stat_2: 55%
+featured_stat_label_2: Fonts supporting OpenType features.
+featured_stat_3: 34%
+featured_stat_label_3: Percentage of pages using variable fonts.
 ---
 
 ## Introduction
