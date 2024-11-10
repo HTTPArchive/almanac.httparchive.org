@@ -321,17 +321,15 @@ JPG and PNG still have the highest proportion of adoption at 87% combined, howev
 
 - The percentage of websites with good FCP and LCP has improved, though TTFB showed no significant change.
 - One cause for slow LCP is lazy-loading the LCP element. Usage of this antipattern has decreased, but 15% of websites still fail this test and could benefit from removing lazy-loading for their LCP elements.
-- Adoption of modern image formats like AVIF and WebP is growing for LCP elements.
+- The adoption of modern image formats like AVIF and WebP is growing for LCP elements.
 
 ## Interactivity
 
 Interactivity on a website refers to the degree to which users can engage with and respond to content, features, or elements on the page. Measuring interactivity involves assessing the performance for a range of user interactions, such as clicks, taps, and scrolls, as well as more complex actions like form submissions, video plays, or drag-and-drop functions.
 
-INP data can only be collected using real user monitoring, such as CrUX and RUMvision. Total Blocking Time (TBT) is a lab metric correlated to INP, which can be measured in WebPageTest and thus comes from the HTTP Archive data set.
-
 ### Interaction to Next Paint (INP)
 
-[INP](https://web.dev/articles/inp) is calculated by observing all the interactions made with a page during the session and reporting the worse latency (for most sites). An interaction's latency consists of the single longest duration of a group of event handlers that drive the interaction, from the time the user begins the interaction to the moment the browser is next able to paint a frame.
+[Interaction to Next Paint (INP)](https://web.dev/articles/inp) is calculated by observing all the interactions made with a page during the session and reporting the worse latency (for most sites). An interaction's latency consists of the single longest duration of a group of event handlers that drive the interaction, from the time the user begins the interaction to the moment the browser is next able to paint a frame.
 
 For an origin to receive a "good" INP score, at least 75% of all sessions need an INP score of 200ms or less. The INP score is the slowest or near-slowest interaction time for all interactions on the page. See [Details on how INP is calculated](https://web.dev/articles/inp#good-score) for more information.
 
@@ -359,9 +357,7 @@ The primary reason for weaker performance on mobile is its lower processing powe
   )
 }}
 
-Although the INP metric displays worse results than the FID, there has been a positive tendency over the past three years.
-￼
-The percentage of mobile pages having good INP increased from 55% in 2022 to 74% in 2024\. This is a significant increase, and even though we can't be exactly sure what to attribute it to, we can think of a few potential drivers for this change. The biggest one could be awareness. With the introduction of the INP and the announcement that it will replace FID, many teams realized the impact that could have on their overall CWV score and search ranking. That could have encouraged them to actively work towards fixing parts of the sites that contributed to low INP scores. The second driver could be just a regular advancement in technology. With the above-displayed INP data coming from real users, we can also assume that users' devices and network connections could have slightly improved over the years, providing them with better site interactivity.
+Although the INP metric displays worse results than the FID, there has been a positive tendency over the past three years. The percentage of mobile pages having good INP increased from 55% in 2022 to 74% in 2024\. This is a significant increase, and even though we can't be exactly sure what to attribute it to, we can think of a few potential drivers for this change. The biggest one could be awareness. With the introduction of the INP and the announcement that it will replace FID, many teams realized the impact that could have on their overall CWV score and search ranking. That could have encouraged them to actively work towards fixing parts of the sites that contributed to low INP scores. The second driver could be just a regular advancement in technology. With the above-displayed INP data coming from real users, we can also assume that users' devices and network connections could have slightly improved over the years, providing them with better site interactivity.
 
 Mobile INP metric by rank reveals an interesting trend. In [the 2022 chapter](../2022/performance#inp-by-rank), we assumed that the more popular a website is, the more performance optimizations it would have, leading to better performance. However, when it comes to INP, the opposite seems to be true.
 
@@ -393,7 +389,7 @@ Unlike other performance metrics like FCP and LCP, the percentage of secondary p
 
 #### INP Subparts
 
-An INP score can be broken down into three sub-parts:
+Interaction to Next Paint metric can be broken down into three key sub-parts:
 
 - **Input Delay**: the time spent to finish processing the tasks that were already in the queue at the moment of the interaction
 - **Processing Time**: the time spent processing the event handlers attached to the element which the user interacted with
@@ -403,7 +399,7 @@ To optimize your website's interactivity, it's important to identify the duratio
 
 {{ figure_markup(
   image="interaction-to-next-paint-subparts-rum-vision.png",
-  caption="INP Subparts by percentile, Source: RUMvision",
+  caption="INP Subparts by percentile.",
   description="Bar chart showing the distribution of INP subparts in milliseconds (ms) by percentile. At the 10th percentile, all subparts (input delay, processing time, and presentation delay) are minimal. At the 25th percentile, the values slightly increase but remain below 10 ms. At the 50th percentile, input delay and processing time stay modest, while presentation delay reaches around 20 ms. At the 75th percentile, input delay increases to around 50 ms, with processing time and presentation delay also rising. At the 90th percentile, input delay reaches around 150 ms, and both processing time and presentation delay exceed 100 ms.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=226800794&format=interactive",
   sheets_gid="731456372",
@@ -414,33 +410,11 @@ The INP sub-part duration distribution data from RUMvision shows that presentati
 
 ### Long Tasks
 
-One of the sub-parts of INP is input delay, which can be longer than it should due to various factors, including long tasks. [A task](https://web.dev/articles/optimize-long-tasks#what-is-task) is a discrete unit of work that the browser executes, and JavaScript is often the largest source of tasks. When a task exceeds 50 milliseconds, it is considered a long task. These long tasks can cause delays in responding to user interactions, directly affecting interactivity performance.
+One of the sub-parts of INP is input delay, which can be longer than it should be due to various factors, including long tasks. [A task](https://web.dev/articles/optimize-long-tasks#what-is-task) is a discrete unit of work that the browser executes, and JavaScript is often the largest source of tasks. When a task exceeds 50 milliseconds, it is considered a long task. These long tasks can cause delays in responding to user interactions, directly affecting interactivity performance.
 
-In the diagram below, we analyzed a representative sample of 1,000 websites to see whether there is a correlation between INP and the number of long tasks on both desktop and mobile platforms. It is important to keep in mind that INP scores come from field (real-user) data, while long task measures come from lab measurements.
+Due to the lack of same-source data for long tasks and INP, we decided not to correlate them.
 
-{{ figure_markup(
-  image="interaction-to-next-paint-long-task-desktop.png",
-  caption="Relationship between the INP and the sum of long tasks on desktop",
-  description="Scatter plot showing the relationship between the 75th percentile of INP (Interaction to Next Paint) and the sum of long tasks in milliseconds (ms) for desktop devices. Most data points cluster around lower INP values (below 500 ms) and long task sums under 1000 ms, but as INP increases beyond 500 ms, the sum of long tasks tends to rise, with some reaching up to 10,000 ms",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=1166159546&format=interactive",
-  sheets_gid="317913638",
-  sql_file="inp_long_tasks.sql"
-  )
-}}
-
-{{ figure_markup(
-  image="interaction-to-next-paint-long-task-mobile.png",
-  caption="Relationship between the INP and the sum of long tasks on mobile",
-  description="Scatter plot showing the relationship between the 75th percentile of INP (Interaction to Next Paint) and the sum of long tasks in milliseconds (ms) for mobile devices. The majority of data points cluster around lower INP values (below 500 ms), but there is a spread of data showing higher INP values (up to 5000 ms) associated with a broader range of long task durations.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=175079544&format=interactive",
-  sheets_gid="317913638",
-  sql_file="inp_long_tasks.sql"
-  )
-}}
-
-Although long tasks are often the first focus for optimizing INP, the correlation between the duration of long tasks and INP is weak. In our analysis, the Pearson correlation coefficient for mobile websites is 0.20, and for desktop sites, it is 0.21, indicating a weak relationship between the two. This suggests that while long tasks do contribute to input delay, there should be other factors that have a greater impact on INP.
-
-However, it's still interesting to explore the Long Task duration data from RUMvision.
+We will, however, explore the average  Long Task duration using data from RUMvision.
 
 {{ figure_markup(
   image="long-task-duration.png",
@@ -453,11 +427,11 @@ However, it's still interesting to explore the Long Task duration data from RUMv
 
 The task duration distribution shows a median task duration of 102ms, which is twice more than the best practice recommendation of under 50ms. Overall, less than 25% of websites have an optimal task duration below 50ms.
 
-The Long Tasks API provides some useful data about performance issues, but it has limitations when it comes to accurately measuring sluggishness. It only identifies when a long task occurs and how long it lasts. It might overlook important tasks such as rendering. Due to these limitations, we will explore the Long Animation Frames API in the next section, which offers more detailed insights.
+The Long Tasks API provides some useful data about performance issues, but it has limitations when it comes to accurately measuring sluggishness. It only identifies when a long task occurs and how long it lasts. It might overlook essential tasks such as rendering. Due to these limitations, we will explore the Long Animation Frames API in the next section, which offers more detailed insights.
 
 #### Long Animations Frames
 
-Long Animation Frames (LoAF) are a performance timeline entry for identifying sluggishness and poor INP by tracking when work and rendering block the main thread. LoAF tracks animation frames instead of individual tasks like the Long Tasks API. A long animation frame is when a rendering update is delayed beyond 50 milliseconds (the same as the threshold for the Long Tasks API). It helps to find scripts that cause INP performance bottlenecks. With this data, we can analyze INP performance based on the categories of scripts responsible for LoAF.
+[Long Animation Frames (LoAF)](https://developer.chrome.com/docs/web-platform/long-animation-frames) are a performance timeline entry for identifying sluggishness and poor INP by tracking when work and rendering block the main thread. LoAF tracks animation frames instead of individual tasks like the [Long Tasks API](https://www.w3.org/TR/longtasks-1/). A long animation frame is when a rendering update is delayed beyond 50 milliseconds (the same as the threshold for the Long Tasks API). It helps to find scripts that cause INP performance bottlenecks. With this data, we can analyze INP performance based on the categories of scripts responsible for LoAF.
 
 {{ figure_markup(
   image="interaction-to-next-paint-script-categories-desktop-rum-vision.png",
@@ -499,7 +473,9 @@ It is worth noting that the monitoring category, which also includes performance
   )
 }}
 
-TBT is a lab metric and is often used as a proxy for field-based responsiveness metrics, such as INP. <a hreflang="en" href="https://colab.research.google.com/drive/12lJmAABgyVjaUbmWvrbzj9BkkTxw6ay2">Lab-based TBT and field-based INP</a> are correlated, meaning TBT results generally reflect INP trends. A TBT below 200ms is considered good, but most mobile websites exceed this target significantly. The median TBT is 1209 ms, which is 6 times higher than the best practice. In contrast, desktop websites show much better performance, with a median TBT of just 67ms. It is valuable to note that the lab results use an emulated low-power device and a slow network, which may not reflect the real user data, as actual device and network conditions can vary.
+TBT is a lab metric and is often used as a proxy for field-based responsiveness metrics, such as INP, which can only be collected using real user monitoring, such as CrUX and RUMvision. <a hreflang="en" href="https://colab.research.google.com/drive/12lJmAABgyVjaUbmWvrbzj9BkkTxw6ay2">Lab-based TBT and field-based INP</a> are correlated, meaning TBT results generally reflect INP trends.
+
+A TBT below 200ms is considered good, but most mobile websites exceed this target significantly. The median TBT is 1209 ms, which is 6 times higher than the best practice. In contrast, desktop websites show much better performance, with a median TBT of just 67ms. It is valuable to note that the lab results use an emulated low-power device and a slow network, which may not reflect the real user data, as actual device and network conditions can vary.
 
 ### Interactivity Conclusion
 
@@ -507,7 +483,7 @@ The main takeaways of the interactivity results are:
 
 - Despite the improvement in INP each year, a significant gap between desktop (97% good INP) and mobile (74% good INP) performance still exists.
 - The top visited websites show poorer INP results compared to less popular ones.
-- INP can be divided into three sub-parts—Input Delay, Processing Time, and Presentation Delay, and Presentation Delay has the biggest share of the median INP.
+- INP can be divided into three sub-parts: Input Delay, Processing Time, and Presentation Delay. Presentation Delay has the biggest share of the median INP.
 - Scripts from user behavior tracking, consent provider, and CDN categories are the main contributors to poor INP scores.
 
 ## Visual Stability
