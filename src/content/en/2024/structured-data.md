@@ -125,7 +125,6 @@ Structured data plays a crucial role in these AI-powered systems by:
 
 While it is still challenging to assess the impact of structured data on Generative AI and AI search engines, in some cases, such as geo-referencing queries, we can observe the early emergence of entities in the user experience of Perplexity.ai and You.com.
 
-
 | ![Perplexity][image1] | ![You.com][image2] |
 | :---: | :---: |
 
@@ -134,10 +133,10 @@ This is way more consistent when interacting with Bing Copilot or Gemini by Goog
 | ![Google Gemini][image3] | ![Bing Copilot][image4] |
 | :---- | :---- |
 
-[image1]: src/static/images/2024/structured-data/structured-data-perplexity.png
-[image2]: src/static/images/2024/structured-data/structured-data-you-com.png
-[image3]: src/static/images/2024/structured-data/structured-data-google-gemini.png
-[image4]: src/static/images/2024/structured-data/structured-data-via-culinaria-bing.png
+[image1]: /static/images/2024/structured-data/structured-data-perplexity.png
+[image2]: /static/images/2024/structured-data/structured-data-you-com.png
+[image3]: /static/images/2024/structured-data/structured-data-google-gemini.png
+[image4]: /static/images/2024/structured-data/structured-data-via-culinaria-bing.png
 
 Empirically, AI-powered search systems, as seen above, are sourcing data from a variety of established knowledge bases and authoritative platforms:
 
@@ -254,9 +253,9 @@ These trends reflect the industry's growing maturity in structured data implemen
 
 The three main structured data formats show distinctly different adoption patterns:
 
-| JSON-LD | RDFa  | Microdata |
-| ----- | ----- | ----- |
-| Present on 41% of pages (up from 34% in 2022\) Growing fastest among the three formats Preferred by Google and gaining wider developer adoption Most commonly used for: Organization data Local business information Product listings Articles and creative works  | Highest adoption at 66% of pages Most prevalent on legacy CMS platforms Common implementations: Navigation elements (breadcrumbs) Basic page structure Image and document metadata List items | Present on 26% of pages Showing steady but slower growth Primarily used for: Webpage structure (8.34% of pages) Site navigation (6.42%) Headers and footers (5.97% and 5.33%) Organization information (4.87%) |
+- **JSON-LD**: Present on 41% of pages (up from 34% in 2022\) Growing fastest among the three formats Preferred by Google and gaining wider developer adoption Most commonly used for: Organization data Local business information Product listings Articles and creative works
+- **RDFa**: Highest adoption at 66% of pages Most prevalent on legacy CMS platforms Common implementations: Navigation elements (breadcrumbs) Basic page structure Image and document metadata List items
+- **Microdata**: Present on 26% of pages Showing steady but slower growth Primarily used for: Webpage structure (8.34% of pages) Site navigation (6.42%) Headers and footers (5.97% and 5.33%) Organization information (4.87%) |
 
 Let’s analyze now more in detail each type.
 
@@ -487,29 +486,91 @@ Microformats continue to show **limited adoption**, primarily in niche use cases
 
 **Microformats2**, while still relatively niche, has seen slightly higher adoption than its predecessor. Tags like `h-entry` and `h-card`, which are used for blogging and personal identity data, now appear on **0.22% of mobile pages** and **0.15% of desktop pages**. These tags continue to serve specific needs, particularly for **address data** and **simple content structures**.
 
-![A year on year comparison of Microformats2 usage on mobile pages][image23]
-![A year on year comparison of Microformats2 usage on desktop pages][image24]
-![A year on year comparison of microformats2 usage][image25]
+{{ figure_markup(
+  image="microformats2-mobile-year-on-year.png",
+  caption="A year on year comparison of Microformats2 usage on mobile pages.",
+  description="TODO.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=1365169350&format=interactive",
+  sheets_gid="560419533",
+  sql_file="TODO.sql"
+)}}
 
-![A year on year comparison of Microformats usage on mobile pages][image26]
+{{ figure_markup(
+  image="microformats2-desktop-year-on-year.png",
+  caption="A year on year comparison of Microformats2 usage on desktop pages.",
+  description="TODO.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=1211736202&format=interactive",
+  sheets_gid="560419533",
+  sql_file="TODO.sql"
+)}}
 
-![A year on year comparison of Microformats usage on desktop pages][image27]
+{{ figure_markup(
+  image="microformats2-by-device.png",
+  caption="Microformats2 usage by device.",
+  description="TODO.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=955978151&format=interactive",
+  sheets_gid="560419533",
+  sql_file="TODO.sql"
+)}}
+
+{{ figure_markup(
+  image="microformats-mobile-year-on-year.png",
+  caption="Microformats usage by year (mobile).",
+  description="TODO.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=931431512&format=interactive",
+  sheets_gid="560419533",
+  sql_file="TODO.sql"
+)}}
+
+{{ figure_markup(
+  image="microformats-desktop-year-on-year.png",
+  caption="Microformats usage by year (desktop).",
+  description="TODO.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=977720399&format=interactive",
+  sheets_gid="560419533",
+  sql_file="TODO.sql"
+)}}
 
 Cross-device implementation remains relatively consistent, though with some variation between mobile and desktop. The data shows a **general decline in traditional Microformats usage** from 2022 to 2024, particularly in **review-related properties** like `hReview` and `hReview-aggregate`. This decline reflects the **industry’s shift toward more modern structured data formats** like JSON-LD and RDFa, which offer **broader functionality** and better **integration with current web standards**.
 
 Despite this decline, **Microformats** and **Microformats2** remain useful in specific contexts where lightweight, human-readable semantic data is needed. However, their overall presence continues to be eclipsed by more versatile formats like JSON-LD, which dominate the structured data landscape.
 
-![A year on year comparison of Microformats usage on desktop pages][image28]
+{{ figure_markup(
+  image="microformats-usage-desktop.png",
+  caption="A year on year comparison of Microformats usage on desktop pages.",
+  description="TODO.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=242585504&format=interactive",
+  sheets_gid="560419533",
+  sql_file="TODO.sql"
+)}}
 
 ## Microdata
 
 **Microdata** continues to be widely used for **structural elements** and **navigation data**, particularly within legacy platforms and sites where simpler, static page structures are required. The most frequently implemented types include `schema.org/webpage` (appearing on **8.34% of mobile pages**) and `schema.org/sitenavigationelement` (used on **6.42% of mobile pages**), indicating the format’s enduring relevance for **webpage structure** and **site navigation**.
 
-![A year on year comparison of Microdata usage on mobile pages][image29]
+{{ figure_markup(
+  image="microdata-year-on-year-mobile.png",
+  caption="A year on year comparison of Microdata usage on mobile pages.",
+  description="TODO.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=584764017&format=interactive",
+  sheets_gid="560419533",
+  sql_file="TODO.sql",
+  width=600,
+  height=582
+)}}
 
 **Navigation-related types** like `listitem` and `breadcrumblist` have also seen steady growth, reflecting the need for more organized and structured navigation data, particularly on mobile devices. However, **content-specific types** such as `schema.org/article` and `schema.org/product` remain less common, with adoption rates of **1.77%** and **1.50%** respectively, as developers increasingly turn to JSON-LD for more flexible and scalable implementations.
 
-![A year on year comparison of microdata usage][image30]
+{{ figure_markup(
+  image="microdata-by-device.png",
+  caption="A comparison of microdata usage by device.",
+  description="TODO.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=804256393&format=interactive",
+  sheets_gid="560419533",
+  sql_file="TODO.sql",
+  width=600,
+  height=614
+)}}
 
 While **Microdata** remains a significant format for **fundamental webpage structure**, its use in **dynamic content** and **e-commerce** applications has been gradually overtaken by more modern formats like **JSON-LD**, which offer broader support for content enrichment and structured data scaling across large websites.
 
@@ -523,10 +584,29 @@ Specialized business types such as **Restaurant** (**0.19%**), **AutoDealer** (*
 
 **ItemList** schema shows healthy adoption at **2.44%**, suggesting increased use of **structured listing data**. The overall distribution of **JSON-LD types** reflects a maturing ecosystem where **fundamental entity types** dominate, while specialized schemas serve specific **business and content needs**.
 
-![A year on year comparison of JSON-LD usage on mobile pages][image31]
+{{ figure_markup(
+  image="jsonld-year-on-year-mobile.png",
+  caption="A year on year comparison of JSON-LD usage on mobile pages.",
+  description="TODO.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=2099227544&format=interactive",
+  sheets_gid="560419533",
+  sql_file="TODO.sql",
+  width=600,
+  height=572
+)}}
 
 The consistency in implementation across devices indicates a mature approach to structured data deployment, where developers are ensuring uniform markup regardless of the target platform. This alignment between mobile and desktop implementations suggests that organizations are following best practices for responsive design while maintaining consistent structured data across all user experiences.
-![A year on year comparison of JSON-LD usage][image32]
+
+{{ figure_markup(
+  image="jsonld-by-device.png",
+  caption="A comparison of JSON-LD usage by device.",
+  description="TODO.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=1732530777&format=interactive",
+  sheets_gid="560419533",
+  sql_file="TODO.sql",
+  width=600,
+  height=572
+)}}
 
 ### JSON-LD Relationships
 
@@ -540,9 +620,23 @@ Let’s review the most critical patterns from the JSON-LD relationship analysis
 
 Most notably, these patterns indicate that **structured data implementation is moving beyond simple SEO markup toward creating true knowledge graphs** that can support AI-powered search experiences and rich data integrations.
 
-![][image33]
+{{ figure_markup(
+  image="structured-data-json-ld-relationships-2.png",
+  caption="TODO.",
+  description='Sankey diagram showing TODO.',
+  width=1000,
+  height=1000
+  )
+}}
 
-![][image34]
+{{ figure_markup(
+  image="structured-data-json-ld-relationships-1.png",
+  caption="TODO.",
+  description='Sankey diagram showing TODO.',
+  width=598,
+  height=1000
+  )
+}}
 
 As seen also in the previous chart the most frequent JSON-LD property relationships reveal several critical implementation patterns across websites. PotentialAction emerges as a dominant property, showing strong connections to SearchAction and WebSite, indicating **widespread implementation of site search functionality** (we expect this to decrease as Google is removing support for this feature snippet). **Image-related properties** form another major cluster, with ImageObject frequently connected to Organization and WebPage entities, demonstrating the importance of visual content attribution. The publisher and logo properties frequently link to Organization entities, establishing clear brand identity.
 
@@ -556,10 +650,30 @@ The sameAs property plays a crucial role in **entity disambiguation and knowledg
 
 When properly implemented, sameAs serves as a powerful tool for entity disambiguation, particularly for organizations and persons. By linking to authoritative sources like Wikidata (0.17%) and Wikipedia (0.13%), brands can establish unambiguous entity identification. This creates what we might call a "*entity fingerprint*" that helps search engines confidently associate various online presences with the correct entity.
 
-![A year on year comparison of SameAs usage on mobile pages][image35]
+{{ figure_markup(
+  image="sameas-year-on-year-mobile.png",
+  caption="A year on year comparison of SameAs usage on mobile pages.",
+  description="TODO.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=315508282&format=interactive",
+  sheets_gid="560419533",
+  sql_file="TODO.sql",
+  height=600,
+  width=561
+)}}
+
 For personal entities (executives, authors, experts), sameAs similarly helps establish authority and credibility by connecting professional profiles (LinkedIn at 1.11%) with other authentic entity markers. This becomes particularly valuable for E-E-A-T signals and knowledge panel generation.
 
-![A year on year comparison of SameAs usage][image36]
+{{ figure_markup(
+  image="sameas-year-on-year-by-device.png",
+  caption="A comparison of SameAs usage by device.",
+  description="TODO.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=785630631&format=interactive",
+  sheets_gid="560419533",
+  sql_file="TODO.sql",
+  height=600,
+  width=555
+)}}
+
 This parity between mobile and desktop implementations represents a significant advancement in structured data deployment. It suggests that organizations are increasingly using consistent templating systems or automated solutions to manage their structured data, rather than maintaining separate implementations for different devices.
 
 ### JSON-LD Context
@@ -580,19 +694,19 @@ The data shows a clear shift toward more specialized implementation patterns, pa
 
 As we analyze current trends, we also cast our gaze forward to emerging developments:
 
-* ### **AI and Structured Data Symbiosis**
+- **AI and Structured Data Symbiosis**
 
   The growing interdependence between **AI systems** and **structured data** is becoming crucial for delivering **grounded, hallucination-free content generation** and enhancing **conversational search experiences**. As AI relies increasingly on structured data for accurate and context-rich information, this symbiosis is redefining how **AI-powered tools** interact with content across the web.
 
-* ### **Data Commons and Knowledge Graph Integration**
+- **Data Commons and Knowledge Graph Integration**
 
   The expansion of open data initiatives, such as **Google's Data Commons**, which leverages **Schema.org** for structuring and linking public datasets, is further fueling the evolution of **knowledge graph-based systems**. These initiatives provide a rich, unified foundation for **AI-driven data enrichment** and **exploration**, creating new possibilities for scalable and reliable data integration across platforms.
 
-* ### **SEOntology and Specialized Vocabularies**
+- **SEOntology and Specialized Vocabularies**
 
   In parallel, the development of [**SEOntology**](https://www.searchenginejournal.com/introducing-seontology-the-future-of-seo-in-the-age-of-ai/524773/) and other specialized vocabularies is addressing the need for **SEO-specific structured data** that can improve **content discoverability** and **search engine optimization**. By creating vocabularies tailored to the unique requirements of SEO, we can further enhance the alignment between structured data and AI, driving more targeted and efficient search experiences.
 
-* ### **Regulatory Impacts**
+- **Regulatory Impacts**
 
   Finally, regulations such as the **EU’s Digital Product Passport** are poised to reshape future structured data standards. These initiatives will likely influence how structured data is applied, especially in domains like **e-commerce** and **product traceability**, encouraging more structured and transparent data practices.
 
