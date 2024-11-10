@@ -39,7 +39,7 @@ The HTTPArchive contains only lab performance data. In other words, it is data f
 
 Thus, in addition to the data HTTP Archive, most of this report is based on real user data from the [Chrome User Experience Report (CrUX)](https://developer.chrome.com/docs/crux). Note that while Chrome is the most widely used browser worldwide, it doesn't reflect performance across all browsers and all regions of the world.
 
-CrUX is a great source of data, but it doesn't contain certain metrics like LCP and INP sub-parts, as well as Long Animation Frames. Luckily, the performance monitoring platform <a hreflang="en" href="https://www.rumvision.com/">RUMvision</a> has provided us with this data for the period starting from 1st January 2024\. RUMvision has a smaller population of websites compared to HTTP archive, which is why the results for the same metrics might be different.
+CrUX is a great source of data, but it doesn't contain certain metrics like LCP and INP sub-parts, as well as Long Animation Frames. Luckily, the performance monitoring platform <a hreflang="en" href="https://www.rumvision.com/">RUMvision</a> has provided us with this data for the period from 1st January to 6th October 2024. Compared to HTTP archive, RUMvision tests a smaller amount of websites, which is why the results for the same metrics might be slightly different.
 
 ## Core Web Vitals
 
