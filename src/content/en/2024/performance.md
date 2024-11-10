@@ -414,24 +414,24 @@ One of the sub-parts of INP is input delay, which can be longer than it should b
 
 Due to the lack of same-source data for long tasks and INP, we decided not to correlate them.
 
-We will, however, explore the average  Long Task duration using data from RUMvision.
+We will, however, explore the average Long Task duration using data from RUMvision.
 
 {{ figure_markup(
   image="long-task-duration.png",
-  caption="Long task duration.",
-  description="Bar chart showing the distribution of task duration in milliseconds (ms) by percentile. At the 25th percentile, the task duration is 68 ms. At the 50th percentile, it increases to 103 ms. At the 75th percentile, task duration is 181 ms, and at the 90th percentile, it reaches 373 ms. This distribution shows that task durations grow significantly as we move from the 25th to the 90th percentile.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=658363928&format=interactive",
+  caption="Task duration, segmented by device.",
+  description="Bar chart showing the distribution of task duration in milliseconds (ms) by percentile and device type. At the 25th percentile, the task duration is 61ms for desktop and 71 for mobile. At the 50th percentile, it increases to 90ms for desktop and 108ms for mobile. At the 75th percentile, task duration is 161ms for desktop and 187ms for mobile; at the 90th percentile, it reaches 331ms for desktop and 377 for mobile. This distribution shows that task durations grow significantly as we move from the 25th to the 90th percentile.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=688921860&format=interactive",
   sheets_gid="1272522211"
   )
 }}
 
-The task duration distribution shows a median task duration of 102ms, which is twice more than the best practice recommendation of under 50ms. Overall, less than 25% of websites have an optimal task duration below 50ms.
+The task duration distribution shows a median task duration of 90ms for desktop and 108ms for mobile, which is twice more than the best practice recommendation of under 50ms. Less than 25% of websites have an optimal task duration below 50ms. We can also see that in every percentile, task duration on mobile sites is longer than on desktop sites, with the gap increasing as the percentile increases. On the 90th percentile, there is a 46ms difference between the average task duration between device types. This correlates well with INP scores that show better results on desktop compared to mobile.
 
-The Long Tasks API provides some useful data about performance issues, but it has limitations when it comes to accurately measuring sluggishness. It only identifies when a long task occurs and how long it lasts. It might overlook essential tasks such as rendering. Due to these limitations, we will explore the Long Animation Frames API in the next section, which offers more detailed insights.
+Task duration data was retrieved using the Long Tasks API, which provides some useful data about performance issues, but it has limitations when it comes to accurately measuring sluggishness. It only identifies when a long task occurs and how long it lasts. It might overlook essential tasks such as rendering. Due to these limitations, we will explore the Long Animation Frames API in the next section, which offers more detailed insights.
 
 #### Long Animations Frames
 
-[Long Animation Frames (LoAF)](https://developer.chrome.com/docs/web-platform/long-animation-frames) are a performance timeline entry for identifying sluggishness and poor INP by tracking when work and rendering block the main thread. LoAF tracks animation frames instead of individual tasks like the [Long Tasks API](https://www.w3.org/TR/longtasks-1/). A long animation frame is when a rendering update is delayed beyond 50 milliseconds (the same as the threshold for the Long Tasks API). It helps to find scripts that cause INP performance bottlenecks. With this data, we can analyze INP performance based on the categories of scripts responsible for LoAF.
+[Long Animation Frames (LoAF)](https://developer.chrome.com/docs/web-platform/long-animation-frames) are a performance timeline entry for identifying sluggishness and poor INP by tracking when work and rendering block the main thread. LoAF tracks animation frames instead of individual tasks like the [Long Tasks API](https://www.w3.org/TR/longtasks-1/). A long animation frame is when a rendering update is delayed beyond 50 milliseconds (the same as the threshold for the Long Tasks API). It helps to find scripts that cause INP performance bottlenecks.  This data allows us to analyze INP performance based on the categories of scripts responsible for LoAF.
 
 {{ figure_markup(
   image="interaction-to-next-paint-script-categories-desktop-rum-vision.png",
