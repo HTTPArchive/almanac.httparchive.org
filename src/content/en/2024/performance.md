@@ -327,11 +327,11 @@ JPG and PNG still have the highest proportion of adoption at 87% combined, howev
 
 Interactivity on a website refers to the degree to which users can engage with and respond to content, features, or elements on the page. Measuring interactivity involves assessing the performance for a range of user interactions, such as clicks, taps, and scrolls, as well as more complex actions like form submissions, video plays, or drag-and-drop functions.
 
-INP  can only be collected using real user monitoring, which comes from CrUX and RUMvision. Total Blocking Time (TBT) is a lab metric correlated to INP, which can be measured in WebPageTest and thus comes from the HTTP Archive data set.
+INP data can only be collected using real user monitoring, such as CrUX and RUMvision. Total Blocking Time (TBT) is a lab metric correlated to INP, which can be measured in WebPageTest and thus comes from the HTTP Archive data set.
 
 ### Interaction to Next Paint (INP)
 
-INP measures the time between a user interaction and the next frame render. It is important to emphasize that the next frame render refers to the render opportunity rather than actual visual UI changes.
+[INP](https://web.dev/articles/inp) is calculated by observing all the interactions made with a page during the session and reporting the worse latency (for most sites). An interaction's latency consists of the single longest duration of a group of event handlers that drive the interaction, from the time the user begins the interaction to the moment the browser is next able to paint a frame.
 
 For an origin to receive a "good" INP score, at least 75% of all sessions need an INP score of 200ms or less. The INP score is the slowest or near-slowest interaction time for all interactions on the page. See [Details on how INP is calculated](https://web.dev/articles/inp#good-score) for more information.
 
