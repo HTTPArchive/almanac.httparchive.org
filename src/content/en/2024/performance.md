@@ -57,9 +57,9 @@ Starting this year, INP has officially replaced First Input Delay (FID) and beca
   )
 }}
 
-The replacement of the FID with the INP metric significantly impacted the percentage of websites with good CWV on mobile. This doesn't mean the user experience has worsened. The change reflects that the new metric reflects the user experience more accurately. If we still used FID as a measure of interactivity, 48% of the websites would have good CWV on mobile devices. However, with the INP metric, this figure drops to 43%. Interestingly, performance on desktop devices stays the same regardless of which responsiveness metric we use, i.e., 54%.
+The replacement of the FID with the INP metric significantly impacted the percentage of websites with good CWV on mobile. This doesn't mean the user experience has worsened, just that is now reflected more accurately due to the metric update. If we still used FID as a measure of interactivity, 48% of the websites would have good CWV on mobile devices. However, with the INP metric, this figure drops to 43%. Interestingly, performance on desktop devices stays the same regardless of which responsiveness metric we use, i.e., 54%.
 
-In the period from 2020 to 2022, we saw that mobile web performance measured by CWV with FID was improving faster than desktop one, and the gap between them was closing, reaching just 5% in 2022\. As CWV with INP chart shows, in 2024, the websites on the desktop performed 11% better than on mobile, so the introduction of the INP shows that the gap is much bigger.
+In the period from 2020 to 2022, we saw that mobile web performance measured by CWV with FID was improving faster than desktop one, and the gap between them was closing, reaching just 5% in 2022. As CWV with INP chart shows, in 2024, the websites on the desktop performed 11% better than on mobile, so the introduction of the INP shows that the gap is much bigger.
 
 {{ figure_markup(
   image="good-core-web-vitals-inp-devices-years.png",
