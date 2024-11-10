@@ -181,7 +181,7 @@ Next, we discuss the distribution of different cookie [attributes](https://devel
 }}
 
 
-#### Partitioned
+#### Partitioned {#partitioned}
 
 Partitioned cookies are stored by [compatible browsers](https://developer.mozilla.org/en-US/docs/Web/Privacy/Privacy_sandbox/Partitioned_cookies#browser_compatibility) using partitioned storage. Cookies that have the `Partitioned` attribute set can only be accessed by the same third party and from the same top-level site where they were created in the first place. In other words, partitioned cookies can not be used for third-party tracking across websites and allow for the legitimate use of third-party cookies on a top-level site. For more details see: [Cookies Having Independent Partitioned State (CHIPS)](https://developer.mozilla.org/en-US/docs/Web/Privacy/Privacy_sandbox/Partitioned_cookies).
 
@@ -230,7 +230,7 @@ Only 12% of first-party cookies have the `HttpOnly` attribute set, while for thi
 
 Cookies with the [`Secure`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie#secure) attribute are only sent to requests made through HTTPs. This prevents [man-in-the-middle](https://developer.mozilla.org/en-US/docs/Glossary/MitM) attacks.
 
-For first-party cookies, 23% on desktop and 22% on mobile have the `Secure` attribute and all third-party cookies observed have the `Secure` attribute. Indeed, these third-party cookies also have the `SameSite=None` attribute that requires `Secure` to be set (see below).
+For first-party cookies, 23% on desktop and 22% on mobile have the `Secure` attribute and all third-party cookies observed have the `Secure` attribute. Indeed, these third-party cookies also have the `SameSite=None` attribute that requires `Secure` to be set (see [below](#samesite)).
 
 
 #### SameSite {#samesite}
@@ -248,25 +248,25 @@ To learn more about the `SameSite` attribute, see the following references:
 
 {{ figure_markup(
   image="same-site-desktop.png",
-  caption="SameSite attribute for cookies on desktop client",
-  description="Shows the prevalence of the SameSite attribute and its value for both first-party and third-party cookies on desktop clients. 2.16% of first-party cookies set the SameSite attribute to Strict, 20.17% use SameSite=Lax (which is the default), 10.78% set the value to None and 66.89% do not specify the value of SameSite. Nearly 100% of third-party cookies set the SameSite attribute to None, in order for these cookies to be sent in a cross-site context.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLO9Te80QewkuPKnz6eJ7OFcU5q3fZMsdqv7cEncBKrL5zcsIN9sMMg5HQT7ndKze8JJNe-V1IkB-9/pubchart?oid=622174723&format=interactive",
+  caption="`SameSite` attribute for cookies on desktop client",
+  description="Shows the prevalence of the `SameSite` attribute and its value for both first-party and third-party cookies on desktop clients. 2.16% of first-party cookies set the `SameSite` attribute to `Strict`, 20.17% use `SameSite=Lax` (which is the default), 10.78% set the value to `None` and 66.89% do not specify the value of `SameSite`. Nearly 100% of third-party cookies set the `SameSite` attribute to `None`, in order for these cookies to be sent in a cross-site context.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLO9Te80QewkuPKnz6eJ7OFcU5q3fZMsdqv7cEncBKrL5zcsIN9sMMg5HQT7ndKze8JJNe-V1IkB-9/pubchart?oid=797398172&format=interactive",
   sheets_gid="1700493344",
-  sql_file = 'prevalence_attributes_per_type.sql'
+  sql_file="prevalence_attributes_per_type.sql"
   )
 }}
 {{ figure_markup(
   image="same-site-mobile.png",
-  caption="SameSite attribute for cookies on mobile client",
-  description="Shows the prevalence of the SameSite attribute and its value for both first-party and third-party cookies on mobile clients. We see very similar results as for desktop clients. 2.21% of first-party cookies set the SameSite attribute to Strict, 20% use SameSite=Lax (which is the default), 10.63% set the value to None and 67.16% do not specify the value of SameSite. Nearly 100% of third-party cookies set the SameSite attribute to None, in order for these cookies to be sent in a cross-site context.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLO9Te80QewkuPKnz6eJ7OFcU5q3fZMsdqv7cEncBKrL5zcsIN9sMMg5HQT7ndKze8JJNe-V1IkB-9/pubchart?oid=1811649614&format=interactive",
+  caption="`SameSite` attribute for cookies on mobile client",
+  description="Shows the prevalence of the `SameSite` attribute and its value for both first-party and third-party cookies on mobile clients. We see very similar results as for desktop clients. 2.21% of first-party cookies set the `SameSite` attribute to `Strict`, 20% use `SameSite=Lax` (which is the default), 10.63% set the value to None and 67.16% do not specify the value of `SameSite`. Nearly 100% of third-party cookies set the `SameSite` attribute to `None`, in order for these cookies to be sent in a cross-site context.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLO9Te80QewkuPKnz6eJ7OFcU5q3fZMsdqv7cEncBKrL5zcsIN9sMMg5HQT7ndKze8JJNe-V1IkB-9/pubchart?oid=2030447900&format=interactive",
   sheets_gid="1700493344",
-  sql_file = 'prevalence_attributes_per_type.sql'
+  sql_file="prevalence_attributes_per_type.sql"
   )
 }}
 
-We observe that for each client about 33% of the first-party cookies and nearly 100% third-party cookies seen on the top 1M websites have a "SameSite" attribute that is explicitly set when they are created (reminder: "SameSite" defaults to "Lax" if not specified). The two bar charts above represent the distribution of this "SameSite" attribute for first and third-party cookies across clients. We observe that the differences in results across clients is here again somewhat negligible. Nearly 100% of third-party cookies have "SameSite=None", and so are sent on cross-site requests.
-For first-party cookies, about 87% of them have the "SameSite=Lax" (20% explicitly set the attribute, and the remaining 67% are concerned by the default behavior when "SameSite" is not set). 11% of cookies have their SameSite attributes explicitly set to have the value "None". It's hard to determine the exact purpose for which cookies are set, but it is likely that a fraction of these cookies are used to track users in a first-party context. Only  2% of cookies  have "SameSite" set to "Strict".
+We observe that for each client about 33% of the first-party cookies and nearly 100% third-party cookies seen on the top 1M websites have a `SameSite` attribute that is explicitly set when they are created (reminder: `SameSite` defaults to `Lax` if not specified). The two bar charts above represent the distribution of this `SameSite` attribute for first and third-party cookies across clients. We observe that the differences in results across clients is here again somewhat negligible. Nearly 100% of third-party cookies have `SameSite=None`, and so are sent on cross-site requests.
+For first-party cookies, about 87% of them have the `SameSite=Lax` (20% explicitly set the attribute, and the remaining 67% are concerned by the default behavior when `SameSite` is not set). 11% of cookies have their `SameSite` attributes explicitly set to have the value `None`. It's hard to determine the exact purpose for which cookies are set, but it is likely that a fraction of these cookies are used to track users in a first-party context. Only 2% of cookies have `SameSite` set to `Strict`.
 
 
 ### Cookie prefixes
@@ -276,7 +276,7 @@ Two [cookie prefixes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#
 {{ figure_markup(
   image="cookie-prefixes-desktop.png",
   caption="Cookie prefixes observed on desktop pages",
-  description="Shows the observed cookies prefixes used on dekstop pages. We see that 0.032% of first-party cookies and only 0.001% of third-party cookies include '__Host-'. Similarly, 0.03% of first-party cookies and 0.001% of third-party cookies include '__Secure-'. ",
+  description="Shows the observed cookies prefixes used on desktop pages. We see that 0.032% of first-party cookies and only 0.001% of third-party cookies include '__Host-'. Similarly, 0.03% of first-party cookies and 0.001% of third-party cookies include '__Secure-'. ",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLO9Te80QewkuPKnz6eJ7OFcU5q3fZMsdqv7cEncBKrL5zcsIN9sMMg5HQT7ndKze8JJNe-V1IkB-9/pubchart?oid=1811649614&format=interactive",
   sheets_gid="1700493344",
   sql_file = 'prevalence_attributes_per_type.sql'
@@ -474,7 +474,7 @@ Websites set a median of nine or ten cookies of any type overall, seven first-pa
 {{ figure_markup(
   image="number-cookies-cdf-mobile.png",
   caption="Number of cookies per website (cdf) for mobile pages.",
-  description="The graph shows the cumulative distribution function for the number of cookies set on mobile pages. We see that more websites have a number of first-party cookies that is closer to the maximum of first-party cookies observed, than for third-party cookies. Additionally, we observe very simililar results for both dekstop and mobile websites." ,
+  description="The graph shows the cumulative distribution function for the number of cookies set on mobile pages. We see that more websites have a number of first-party cookies that is closer to the maximum of first-party cookies observed, than for third-party cookies. Additionally, we observe very simililar results for both desktop and mobile websites." ,
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLO9Te80QewkuPKnz6eJ7OFcU5q3fZMsdqv7cEncBKrL5zcsIN9sMMg5HQT7ndKze8JJNe-V1IkB-9/pubchart?oid=2118660652&format=interactive",
   sheets_gid="1448286433",
   sql_file = 'nb_cookies_cdf.sql'
@@ -622,7 +622,7 @@ Most cookies used for tracking have a size greater than [35 bytes](https://link.
 {{ figure_markup(
   image="size-cookies-cdf-mobile.png",
   caption="Size of cookies per website (cdf) for mobile pages.",
-   description="The graph shows the cumulative distribution function for the number of cookies set on mobile pages. We see a very similar distribution for cookies sizes for both desktop and mobile clients." ,
+  description="The graph shows the cumulative distribution function for the number of cookies set on mobile pages. We see a very similar distribution for cookies sizes for both desktop and mobile clients." ,
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLO9Te80QewkuPKnz6eJ7OFcU5q3fZMsdqv7cEncBKrL5zcsIN9sMMg5HQT7ndKze8JJNe-V1IkB-9/pubchart?oid=771938257&format=interactive",
   sheets_gid="1882828646",
   sql_file = 'size_cookies_cdf.sql'
@@ -805,7 +805,7 @@ See the [Privacy chapter](https://almanac.httparchive.org/en/2024/privacy) for s
 ### CHIPS
 
 [Cookies Having Independent Partitioned State (CHIPS)
-](https://developers.google.com/privacy-sandbox/cookies/chips) allow web developers to specify that they would like the cookies that they are setting to be saved in a partitioned storage, i.e., in a separate cookie jar per top-level site. CHIPS cookies correspond to the partitioned cookies discussed previously in this chapter, see [here](#partitioned-partitioned).
+](https://developers.google.com/privacy-sandbox/cookies/chips) allow web developers to specify that they would like the cookies that they are setting to be saved in a partitioned storage, i.e., in a separate cookie jar per top-level site. CHIPS cookies correspond to the partitioned cookies discussed previously in this chapter, see [here](#partitioned).
 
 ### Related Website Sets
 
