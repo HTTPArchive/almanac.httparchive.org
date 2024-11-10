@@ -24,13 +24,13 @@ simpleConverter.setOption('ghMentions', false);
 
 const convertSimpleMarkdown = (text) => {
   // Showdown replaces & with &amp; so convert those back to avoid escape issues
-  let convertedText = text.replace(/&amp;/g,'&');
+  let convertedText = text?.replace(/&amp;/g,'&');
   convertedText = simpleConverter.makeHtml(convertedText);
   // As we've converted again, need to convert back &amp; again
-  convertedText = convertedText.replace(/&amp;/g,'&');
+  convertedText = convertedText?.replace(/&amp;/g,'&');
   // Strip paragraph tags from beginning and end
-  convertedText = convertedText.replace(/^<p>/,'');
-  convertedText = convertedText.replace(/<\/p>$/,'');
+  convertedText = convertedText?.replace(/^<p>/,'');
+  convertedText = convertedText?.replace(/<\/p>$/,'');
   return convertedText;
 };
 

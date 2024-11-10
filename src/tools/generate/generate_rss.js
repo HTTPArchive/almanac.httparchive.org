@@ -33,7 +33,7 @@ const generate_rss = async (configs, rss_chapters, rss_languages) => {
     const updatedate = get_update_date(`${language}/${year}/chapters/${chapter}.html`);
     const url = convert_file_name(`${language}/${year}/${chapter}`);
     title = `${title} (${year})`;
-    authors = authors.map(author => configs[year].contributors[author].name.replace(/\\/g, '\\\\').replace(/"/g, '\\"'));
+    authors = authors.map(author => configs[year].contributors[author]?.name?.replace(/\\/g, '\\\\')?.replace(/"/g, '\\"'));
     authors = '"' + authors.join('","') + '"';
 
     // Capture the latest updated date as the overall rss updated date
