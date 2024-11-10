@@ -1014,7 +1014,7 @@ The different CMS do have a lot of commonalities in the top errors that they hav
 
 There are many tools which can be used to help authors evaluate the accessibility of a page. Institutions that control the browser configurations of their staff, could choose to simply install the open source <a hreflang="en" href="https://accessibilityinsights.io/docs/web/getstarted/assessment/">Accessibility Insights</a> browser plugin for all of their browsers. This would make errors much more visible to administrators. For many of the CMS above though, the best solution might be to install a tool like <a hreflang="en" href="https://sa11y.netlify.app/">Sa11y</a> or <a hreflang="en" href="https://editoria11y.princeton.edu/">Editoria11y</a> which is geared to help authors. From Joomla version 4.1 onwards <a hreflang="en" href="https://sa11y.netlify.app/joomla/">Sa11y is included by default</a>, so all authors benefit.
 
-Website platforms in general performed better than the tTraditional CMS with Wix, Squarespace and Google Sites being significantly better. 
+Website platforms in general performed better than the tTraditional CMS with Wix, Squarespace and Google Sites being significantly better.
 
 {{ figure_markup(
   image="platform-cms.png",
