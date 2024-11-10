@@ -125,7 +125,7 @@ Over the past five years, the percentage of mobile web pages with good TTFB has 
 
 ### First Contentful Paint (FCP)
 
-First Contentful Paint (FCP) is a performance metric that helps indicate how quickly users can start seeing content. It measures the time from when a user first requests a page until the first piece of content is rendered on the screen. A good FCP should be under 1.8 seconds.
+[First Contentful Paint (FCP)](https://web.dev/articles/fcp) is a performance metric that helps indicate how quickly users can start seeing content. It measures the time from when a user first requests a page until the first piece of content is rendered on the screen. A good FCP should be under 1.8 seconds.
 
 {{ figure_markup(
   image="good-first-contentful-paint-2024.png",
@@ -143,7 +143,7 @@ Interestingly, website performance is not the only factor that influences FCP. I
 
 ### Largest Contentful Paint (LCP)
 
-LCP is an important metric as it indicates how quickly the largest element in the viewport is loaded. A best practice is to ensure the LCP resource starts loading as early as possible. A good LCP should be under 2.5 seconds.
+[Largest Contentful Paint (LCP)](https://web.dev/articles/lcp) is an important metric as it indicates how quickly the largest element in the viewport is loaded. A best practice is to ensure the LCP resource starts loading as early as possible. A good LCP should be under 2.5 seconds.
 
 {{ figure_markup(
   image="largest-contentful-paint-scores-2024.png",
@@ -207,22 +207,22 @@ TTFB is the largest part among all LCP sub-parts due to the network requests for
 
 Surprisingly, websites spend more time on resource load delay than on load duration, regardless of their LCP status. This makes load delay a good candidate for optimization efforts. One way to improve load delay is by ensuring that the LCP element starts loading as early as possible, which will be explored in detail in the section on LCP statical discoverability.
 
-This year, we analyzed LCP sub-part data from another source: RUMvision. Although RUMvision has a different population of websites, it's interesting to compare it with the larger CruX website population. We assume that websites using performance monitoring tools like RUMvision should have more insights into performance optimization opportunities than the average website represented in CruX. Naturally, the LCP sub-part results from two different datasets show some differences.
+This year, we analyzed LCP sub-part data from another real user monitoring source: RUMvision. Although RUMvision has a different population of websites, it's interesting to compare it with the larger CrUX website population. We assume that websites using performance monitoring tools like RUMvision should have more insights into performance optimization opportunities than the average website represented in CrUX. Naturally, the LCP sub-part results from two different datasets show some differences.
 
 {{ figure_markup(
   image="largest-contentful-paint-subparts.png",
-  caption="Time spent in each LCP subpart by percentile. Source: RUMvision",
+  caption="Time spent in each LCP subpart by percentile.",
   description="Bar chart showing the distribution of LCP subparts in milliseconds (ms) across different percentiles. At the 10th percentile, all subparts have minimal values. At the 25th percentile, resource TTFB and load delay remain under 100 ms. At the 50th percentile, resource TTFB increases to around 200 ms, with small increases in load delay, load duration, and render delay. At the 75th percentile, resource TTFB exceeds 500 ms, and render delay also shows an increase. At the 90th percentile, resource TTFB is over 1500 ms, and render delay rises to over 600 ms, with load delay and load duration also increasing.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=249678580&format=interactive",
   sheets_gid="1987931132"
   )
 }}
 
-According to RUMvision data, TTFB is also the largest contributor to the LCP time in comparison to the other LCP sub-parts. However, the results of other sub-parts vary. Render delay is the second largest contributor to LCP, taking 184 ms. At the 75th percentile, render delay grows to 443 ms. This reflects a tendency that is different from the CruX dataset, where LCP load delay is the second largest sub-part.
+According to RUMvision data, TTFB is also the largest contributor to the LCP time in comparison to the other LCP sub-parts. However, the results of other sub-parts vary. Render delay is the second largest contributor to LCP, taking 184 ms. At the 75th percentile, render delay grows to 443 ms. This reflects a tendency that is different from the CrUX dataset, where LCP load delay is the second largest sub-part.
 
-Typically, LCP element rendering takes a long time if the LCP element hasn't been added to the DOM yet—a common issue with client-side generated content that we explore in the next section. Also, the main thread blocked by long tasks can contribute to the delay. In addition, render-blocking resources like stylesheets or synchronous scripts in the \<head\> can delay rendering.
+Typically, LCP element rendering takes a long time if the LCP element hasn't been added to the DOM yet—a common issue with client-side generated content that we explore in the next section. Also, the main thread blocked by long tasks can contribute to the delay. In addition, render-blocking resources like stylesheets or synchronous scripts in the `<head>` can delay rendering.
 
-It's interesting to observe the different LCP challenges that websites across various datasets face. While an average website from the CruX dataset struggles with image load delay, websites from the RUMvision dataset often face rendering delay issues. Nevertheless, all websites can benefit from using performance monitoring tools with Real User Monitoring (RUM), as these tools provide deeper insights into the performance issues experienced by real users.
+It's interesting to observe the different LCP challenges that websites across various datasets face. While an average website from the CrUX dataset struggles with image load delay, websites from the RUMvision dataset often face rendering delay issues. Nevertheless, all websites can benefit from using performance monitoring tools with Real User Monitoring (RUM), as these tools provide deeper insights into the performance issues experienced by real users.
 
 #### LCP lazy-loading
 
@@ -275,7 +275,7 @@ The percentage of pages with good LCP stays at approximately 60% for mobile devi
 
 #### LCP size
 
-The [CruX and RUMvision data on LCP sub-parts](#lcp-sub-parts) showed that resource load duration is rarely the main bottleneck for a slow LCP. However, it is still valuable to analyze the key optimization factors, such as the size and format of the LCP resource.
+The [CrUX and RUMvision data on LCP sub-parts](#lcp-sub-parts) showed that resource load duration is rarely the main bottleneck for a slow LCP. However, it is still valuable to analyze the key optimization factors, such as the size and format of the LCP resource.
 
 {{ figure_markup(
   image="largest-contentful-paint-image-sizes.png",
@@ -303,7 +303,7 @@ This aligns with the <a hreflang="en" href="https://github.com/GoogleChrome/ligh
 
 The audit results indicate that the median website wastes 0 KB on LCP images, i.e. serves optimized images. This leads to the conclusion that many sites are optimizing their LCP resources effectively, although some still need to improve.
 
-You can reduce image sizes through resizing dimensions and increasing compression. Another way to reduce image sizes is by using new image formats like Webp and AVIF, which have better compression algorithms.
+You can reduce image sizes through resizing dimensions and increasing compression. Another way to reduce image sizes is by using new image formats like WebP and AVIF, which have better compression algorithms.
 
 {{ figure_markup(
   image="largest-contentful-paint-image-file-format.png",
@@ -315,13 +315,13 @@ You can reduce image sizes through resizing dimensions and increasing compressio
   )
 }}
 
-JPG and PNG still have the highest proportion of adoption at 87% combined, however WEBP and AVIF formats are both increasing in adoption. In comparison to 2022, WEBP image format usage increased from [4%](../2022/performance#lcp-format) to 7%. Also, AVIF usage increased slightly from 0.1% to 0.3%. According to <a hreflang="en" href="https://webstatus.dev/?q=avif">Baseline</a>, AVIF format is newly available across major browsers, so we expect to see higher adoption in the future.
+JPG and PNG still have the highest proportion of adoption at 87% combined, however WebP and AVIF formats are both increasing in adoption. In comparison to 2022, WebP image format usage increased from [4%](../2022/performance#lcp-format) to 7%. Also, AVIF usage increased slightly from 0.1% to 0.3%. According to <a hreflang="en" href="https://webstatus.dev/?q=avif">Baseline</a>, AVIF format is newly available across major browsers, so we expect to see higher adoption in the future.
 
 ### Loading Speed Conclusions
 
 - The percentage of websites with good FCP and LCP has improved, though TTFB showed no significant change.
 - One cause for slow LCP is lazy-loading the LCP element. Usage of this antipattern has decreased, but 15% of websites still fail this test and could benefit from removing lazy-loading for their LCP elements.
-- Adoption of modern image formats like AVIF and WEBP is growing for LCP elements.
+- Adoption of modern image formats like AVIF and WebP is growing for LCP elements.
 
 ## Interactivity
 
