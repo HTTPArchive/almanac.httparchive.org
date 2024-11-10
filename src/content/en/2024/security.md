@@ -44,7 +44,7 @@ The number of requests served using TLS climbed another 4% to 98.12% on mobile s
 {{ figure_markup(
   image="https-usage.png",
   caption="The percentage of hosts that use HTTPS.",
-  description="TODO.",
+  description="Stacked bar chart showing 96% of desktop sites are using HTTPS, with the remaining 4% using HTTP, while 96% of mobile sites are using HTTPS and the remaining 4% using HTTP.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxTTMlFFSMT3mZgw2awA0wl3F68gzU1OLuyMaZXscSFq-Pa5ev_qTXx8ZaGEOl_ox_aHsraAGMXZ9Y/pubchart?oid=305355771&format=interactive",
   sheets_gid="715077736",
   sql_file="home_page_https_usage.sql"
@@ -60,7 +60,7 @@ Over the years, multiple new versions of TLS have been created. In order to rema
 {{ figure_markup(
   image="tls-versions.png",
   caption="The distribution of TLS versions in use.",
-  description="TODO.",
+  description="Stacked bar chart showing that on desktop 73% of sites use `TLSv1.3`, while 19% use `TLSv1.2` and 8% use `QUIC`. On mobile the figures are 72%, 18% and 10% respectively.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxTTMlFFSMT3mZgw2awA0wl3F68gzU1OLuyMaZXscSFq-Pa5ev_qTXx8ZaGEOl_ox_aHsraAGMXZ9Y/pubchart?oid=1913163011&format=interactive",
   sheets_gid="18287010",
   sql_file="tls_versions_pages.sql"
@@ -78,7 +78,7 @@ Before client and server can communicate, they have to agree upon the cryptograp
 {{ figure_markup(
   image="cipher-suites.png",
   caption="The distribution of cipher suites in use.",
-  description="TODO.",
+  description="Stacked bar chart showing the cipher suites used by device, with `AES_128_GCM` being the most common and used by 79% of desktop and 79% of mobile sites, `AES_256_GCM` is used by 20% of desktop and 20% of mobile sites, `AES_256_CBC` is used by 1% of desktop sites and 1% of mobile sites, `CHACHA20_POLY1305` is used by 0% and 0% of sites respectively, `AES_128_CBC` is used by 0% and 0% respectively.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxTTMlFFSMT3mZgw2awA0wl3F68gzU1OLuyMaZXscSFq-Pa5ev_qTXx8ZaGEOl_ox_aHsraAGMXZ9Y/pubchart?oid=783511328&format=interactive",
   sheets_gid="251336291",
   sql_file="tls_cipher_suite.sql"
@@ -90,7 +90,7 @@ TLS1.3 makes <a hreflang="en" href="https://en.wikipedia.org/wiki/Forward_secrec
 {{ figure_markup(
   image="forward-secrecy.png",
   caption="The percentage of requests supporting forward secrecy.",
-  description="TODO.",
+  description="Stacked bar chart showing forward secrecy being used by 95% requests in both mobile and desktop.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxTTMlFFSMT3mZgw2awA0wl3F68gzU1OLuyMaZXscSFq-Pa5ev_qTXx8ZaGEOl_ox_aHsraAGMXZ9Y/pubchart?oid=1563776541&format=interactive",
   sheets_gid="849531701",
   sql_file="tls_forward_secrecy.sql"
@@ -199,7 +199,7 @@ Currently, 30% of responses on mobile have a HSTS header, which is a 5% increase
 {{ figure_markup(
   image="hsts-directives.png",
   caption="The usage of specified HSTS directives.",
-  description="TODO.",
+  description="Column chart of relative usage of different HSTS directives. `Zero max-age` is used in 5% of websites in both desktop and mobile. `Valid max-age` is used in 95% of websites in both desktop and mobile. `includeSubdomains` is used in 37% of websites in desktop and 35% of websites in mobile. `preload` is used in 18% of websites in both mobile and desktop.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxTTMlFFSMT3mZgw2awA0wl3F68gzU1OLuyMaZXscSFq-Pa5ev_qTXx8ZaGEOl_ox_aHsraAGMXZ9Y/pubchart?oid=1511073784&format=interactive",
   sheets_gid="1943916698",
   sql_file="hsts_attributes.sql"
@@ -211,7 +211,7 @@ The share of requests with a valid `max-age` has remained unchanged at 95%. The 
 {{ figure_markup(
   image="hsts-max-age.png",
   caption="The distribution of HSTS max-age values by percentile.",
-  description="TODO.",
+  description="Column chart of percentiles of values in the max-age attribute, converted to days. In the 10th percentile for both desktop and mobile are 30 days, in the 25th percentile for desktop are 183 days and for mobile 182 days, in the 50th percentile both are 365 days, int the 75th percentile both are 365 as well, and in the 90th percentile both are 730 days.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxTTMlFFSMT3mZgw2awA0wl3F68gzU1OLuyMaZXscSFq-Pa5ev_qTXx8ZaGEOl_ox_aHsraAGMXZ9Y/pubchart?oid=897035311&format=interactive",
   sheets_gid="1216364866",
   sql_file="hsts_max_age_percentiles.sql"
@@ -1195,7 +1195,7 @@ Some security mechanisms on the web can be configured through `meta` tags in the
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="The percentage of hosts enabling different policies using a meta tag", sheets_gid="1466205888", sql_file="TODO.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="The percentage of hosts enabling different policies using a meta tag", sheets_gid="1466205888", sql_file="meta_policies_allowed_vs_disallowed.sql") }}</figcaption>
 </figure>
 
 Developers sometimes also try to enable other security features by using the `meta` tag, which is not allowed and will thus be ignored. Using the same example as in 2022, `4976` pages try to set the `X-Frame-Options` using a `meta` tag, which will be ignored by the browser. This is an absolute increase compared to 2022, but only because there were more than twice as many pages included in the data set. Relatively, there is a slight decrease from 0.04% to 0.03% on  mobile pages and 0.05% to 0.03% on desktop pages.
@@ -1278,7 +1278,7 @@ Because bad bots remain a significant issue on the modern web, we see that the a
 {{ figure_markup(
   image="bot-protection.png",
   caption="The distribution of bot protection services in use.",
-  description="TODO.",
+  description="Stacked bar chart showing usage of bot protection services. reCaptcha is used by 16.7% of websites on desktop and 15.9% of websites on mobile. Cloudflare bot management is used by 8.9% of websites on desktop and 7.9% of websites on mobile. Akamai Bot Manager is used by 0.4% of websites on desktop and 0.4% of websites on mobile. DDoS-Guard is used by 0.3% of websites on desktop and 0.5% of websites on mobile. Sucuri is used by 0.4% of websites on desktop and 0.3% of websites on mobile. Other bot protection services are used by 1.4% of websites on desktop and 1.3% of websites on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxTTMlFFSMT3mZgw2awA0wl3F68gzU1OLuyMaZXscSFq-Pa5ev_qTXx8ZaGEOl_ox_aHsraAGMXZ9Y/pubchart?oid=1013362582&format=interactive",
   sheets_gid="894893633",
   sql_file="bot_detection.sql"
@@ -1335,7 +1335,7 @@ The location where a website  is hosted or its developers are based can often ha
 {{ figure_markup(
   image="https-by-country.png",
   caption="The adoption of HTTPS per country; top and bottom 10 countries.",
-  description="TODO.",
+  description="Bar chart showing percentage of sites with HTTPS enabled, for sites related to different countries. New Zealand, Zwitserland, Kenya, Australia, Norway, Nigeria, United Arab Emirates, South Africa, Netherlands and Sweden are the top in order all showing 99%. At the other end Honh Kong, Viet Nam, Belarus, Iran, Russia, Poland, Thailand, Taiwan, Korea and Japan are at 96% to 91%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxTTMlFFSMT3mZgw2awA0wl3F68gzU1OLuyMaZXscSFq-Pa5ev_qTXx8ZaGEOl_ox_aHsraAGMXZ9Y/pubchart?oid=1581226643&format=interactive",
   sheets_gid="1565826362",
   sql_file="feature_adoption_by_country.sql",
@@ -1349,7 +1349,7 @@ New Zealand continues to lead in the adoption of HTTPS websites, however, many c
 {{ figure_markup(
   image="csp-xfo-by-country.png",
   caption="The adoption of CSP and XFO per country; top and bottom 5 countries.",
-  description="TODO.",
+  description="Bar chart showing New Zealand has 28% of sites using CSP and 43% using XFO, Australia has 27% for CSP and 40% for XFO, USA has 25% for CSP and 35% for XFO, Canada has 25% for CSP and 36% for XFO, and India has 24% for CSP and 28% for XFO. At the bottom end Ukraine has 9% for CSP and 25% for XFO, Korea has 9% for CSP and 19% for XFO, Japan has 9% for CSP and 19% for XFO, Belarus has 8% for CSP and 23% for XFO, and Russia has 8% for CSP and 25% for XFO.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxTTMlFFSMT3mZgw2awA0wl3F68gzU1OLuyMaZXscSFq-Pa5ev_qTXx8ZaGEOl_ox_aHsraAGMXZ9Y/pubchart?oid=970684068&format=interactive",
   sheets_gid="1565826362",
   sql_file="feature_adoption_by_country.sql",
@@ -1425,7 +1425,7 @@ Large websites often have a high number of visitors and registered users, of whi
 {{ figure_markup(
   image="security-headeers-by-rank.png",
   caption="Security header adoption by website rank according to the April 2024 CrUX.",
-  description="TODO.",
+  description="Bar chart showing in top 1,000 sites, 64.33% have XFO, 60.31% have HSTS and 56.29% have X-Content-Type-Options headers. In top 10,000, 53.65% have XFO, 46.15% have HSTS and 53.67% have X-Content-Type-Options headers. In top 100,000, 50.64% have XFO, 41.73% have HSTS and 50.14% have X-Content-Type-Options headers. In top 1,000,000, 45.29% have XFO, 36.42% have HSTS and 47.30% have X-Content-Type-Options headers. Among all sites, 29.20% have XFO, 30.58% have HSTS and 42.69% have X-Content-Type-Options.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxTTMlFFSMT3mZgw2awA0wl3F68gzU1OLuyMaZXscSFq-Pa5ev_qTXx8ZaGEOl_ox_aHsraAGMXZ9Y/pubchart?oid=256464807&format=interactive",
   sheets_gid="434545590",
   sql_file="header_use_by_rank.sql",
@@ -1443,7 +1443,7 @@ In some industries, developers might keep more up to date with security features
 {{ figure_markup(
   image="avg-security-headers-per-site.png",
   caption="The average number of security headers by website category; top and bottom 5 categories.",
-  description="TODO.",
+  description="Bar chart showing the top 5 and bottom 5 of the average number of security headers per category. Shopping has an average of 1.80 security headers, Finance has 1.71, Beauty & Fitness has 1.70, Home & Garden has 1.66, and Computers & Electronics has 1.65. People and Society has an average of 1.48 security headers, Books & Literature has 1.45, Real Estate has 1.40, News has 1.38, and Travel & Transportation has 1.34.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxTTMlFFSMT3mZgw2awA0wl3F68gzU1OLuyMaZXscSFq-Pa5ev_qTXx8ZaGEOl_ox_aHsraAGMXZ9Y/pubchart?oid=139345565&format=interactive",
   sheets_gid="1042348266",
   sql_file="feature_adoption_all_party_by_category.sql",
@@ -1461,7 +1461,7 @@ Although cryptocurrencies remain popular, the number of cryptominers on the web 
 {{ figure_markup(
   image="cryptominers-trend.png",
   caption="The number of cryptominers in use over time; from May 2022 to Jul 2024.",
-  description="TODO.",
+  description="Time series chart showing the evolution of the number of sites with cryptojacking scripts from May 2022 until July 2024. There is an steep decline from 105 desktop sites and 249 mobile sites in July 2022 to 61 sites on desktop and 127 sites on mobile at August 2022, and then a downward trend for the remainder with 31 sites on desktop and 46 sites on mobile at July 2024.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxTTMlFFSMT3mZgw2awA0wl3F68gzU1OLuyMaZXscSFq-Pa5ev_qTXx8ZaGEOl_ox_aHsraAGMXZ9Y/pubchart?oid=2077124907&format=interactive",
   sheets_gid="2083415086",
   sql_file="cryptominer_usage.sql"
@@ -1473,7 +1473,7 @@ When looking at the cryptominer share, we see that part of the Coinimp share has
 {{ figure_markup(
   image="cryptominers-market-share.png",
   caption="The cryptominer market shares.",
-  description="TODO.",
+  description="Pie chart showing CoinImp has 37.7% of market share, JSECoin has 18.9%, Coinhive has 15.1%, Minero has 11.3%, CoinHive Captcha has 9.4%, deepMiner has 3.8% and Crypto-Loot has 3.8%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxTTMlFFSMT3mZgw2awA0wl3F68gzU1OLuyMaZXscSFq-Pa5ev_qTXx8ZaGEOl_ox_aHsraAGMXZ9Y/pubchart?oid=686409320&format=interactive",
   sheets_gid="1261018954",
   sql_file="cryptominer_share.sql"
@@ -1557,7 +1557,7 @@ This information is usually reported in headers such as [`Server`](https://devel
 {{ figure_markup(
   image="server-headers.png",
   caption="Prevalence of headers used to convey information about the server.",
-  description="TODO.",
+  description="Column chart showing the prevalence of hosts where a information-sensitive server header is found, over three years. For the `Server` header this is 92%, 92% and 92% for years 2022, 2023, 2024 respectively. For the `X-Powered-By` this is 25%, 25% and 24% respectively. For the `X-Aspnet-Version` header this is 3%, 2% and 2% respectively. For the `X-Server` header this is 0%, 0% and 0% respectively. For the `X-Backend-Server` this is 0%, 0% and 0% respectively.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxTTMlFFSMT3mZgw2awA0wl3F68gzU1OLuyMaZXscSFq-Pa5ev_qTXx8ZaGEOl_ox_aHsraAGMXZ9Y/pubchart?oid=1009281320&format=interactive",
   sheets_gid="2032567932",
   sql_file="server_information_header_prevalence.sql"
@@ -1642,7 +1642,7 @@ We find that server-timing is used by 6.4% of internet hosts. Over 60% of those 
 {{ figure_markup(
   image="server-timing-headers.png",
   caption="The usage of the server-timing header and relative usage of `dur` properties.",
-  description="TODO.",
+  description="Column chart showing the usage of the server-timing header and usage of `dur` properties. Percentage of responses with server-timing header is 13% for desktop and 12% for mobile. Percentage of hosts with server-timing header is 6% for both desktop and mobile. Percentage of hosts with server-timing header with at least one `dur` property is 65% for desktop and 61% for mobile. Percentage of hosts with server-timing header with more than two `dur` properties is 59% for desktop and 55% for mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxTTMlFFSMT3mZgw2awA0wl3F68gzU1OLuyMaZXscSFq-Pa5ev_qTXx8ZaGEOl_ox_aHsraAGMXZ9Y/pubchart?oid=753463357&format=interactive",
   sheets_gid="1339089790",
   sql_file="server_timing_usage_values.sql"
@@ -1660,7 +1660,7 @@ We find that server-timing is used by 6.4% of internet hosts. Over 60% of those 
 {{ figure_markup(
   image="security-text-usage.png",
   caption="The usage of security.txt properties.",
-  description="TODO.",
+  description="Column chart showing the prevalence of properties of security.txt. `signed` is used in 4% of files for both desktop and mobile, `contact` is used in 92% of files for desktop and 89% for mobile. `expires` is used in 51% of files for desktop and 48% for mobile, `encryption` is used in 14% of files for desktop and 13% for mobile, `acks` is used in 26% of files for desktop and 25% for mobile, `preferred language` is used for 55% of files for desktop and 56% for mobile, `canonical` is used for 32% of files for desktop and 30% for mobile, `policy` is used in 39% files for both desktop and mobile, and `csaf` is used in 0% of files for both desktop and mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxTTMlFFSMT3mZgw2awA0wl3F68gzU1OLuyMaZXscSFq-Pa5ev_qTXx8ZaGEOl_ox_aHsraAGMXZ9Y/pubchart?oid=884497197&format=interactive",
   sheets_gid="2060862418",
   sql_file="well-known_security.sql"
@@ -1676,7 +1676,7 @@ The <a hreflang="en" href="https://w3c.github.io/webappsec-change-password-url/"
 {{ figure_markup(
   image="change-password-usage.png",
   caption="The usages of the change-password .well-known endpoint.",
-  description="TODO.",
+  description="Column chart showing 0.27% websites on desktop and 0.27% websites on mobile use change-password endpoint.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxTTMlFFSMT3mZgw2awA0wl3F68gzU1OLuyMaZXscSFq-Pa5ev_qTXx8ZaGEOl_ox_aHsraAGMXZ9Y/pubchart?oid=68129914&format=interactive",
   sheets_gid="512072624",
   sql_file="well-known_change-password.sql"
@@ -1692,7 +1692,7 @@ In a specification that is also still an <a hreflang="en" href="https://w3c.gith
 {{ figure_markup(
   image="well-known-responses.png",
   caption="The distribution of statuses returned for the `.well-known` endpoint to assess status code reliability.",
-  description="TODO.",
+  description="Stacked bar chart showing response status returned by resource-that-should-not-exist-whose-status-code-should-not-be-200 endpoint. Among websites on both desktop and mobile, 9% return 200, 84% return not-ok status and 7% return 201-299 status codes.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxTTMlFFSMT3mZgw2awA0wl3F68gzU1OLuyMaZXscSFq-Pa5ev_qTXx8ZaGEOl_ox_aHsraAGMXZ9Y/pubchart?oid=1669404844&format=interactive",
   sheets_gid="210322568",
   sql_file="well-known_resource-not-be-200.sql"
@@ -1708,7 +1708,7 @@ Finally, we check whether or not robots.txt includes possibly sensitive endpoint
 {{ figure_markup(
   image="robots-text-endpoints.png",
   caption="The percentage of sites including specified endpoints in their robots.txt.",
-  description="TODO.",
+  description="Column chart showing that `admin` was found in a disallow rule for 4.7% of hosts on desktop and 4.4% on mobile, `login` for 2.0% on desktop and 1.9% on mobile, `signin` for 0.0% on both desktop and mobile, `auth` for 0.4% on both desktop and mobile, `account` for 3.2% on desktop and 2.9% on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxTTMlFFSMT3mZgw2awA0wl3F68gzU1OLuyMaZXscSFq-Pa5ev_qTXx8ZaGEOl_ox_aHsraAGMXZ9Y/pubchart?oid=1873866251&format=interactive",
   sheets_gid="707878693",
   sql_file="robot-txt_sensitive_disallow.sql"
