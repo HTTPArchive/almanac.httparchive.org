@@ -156,24 +156,6 @@ Among all websites that use an identifiable CMS, WordPress sites account for the
 
 Comparing YoY, Drupal and Joomla continue to decline in market share while Squarespace and Wix grow (0.5% and 0.8%, respectively). WordPress continues its ascent, increasing 0.6% on mobile over 2023-2024 This represents a slower pace of growth than in previous years.
 
-### CMS adoption share
-
-This year's chapter includes a new addition where we analyze CMS market share.
-
-{{ figure_markup(
-  image="cms-adoption-share.png",
-  caption="CMS adoption share.",
-  description="A bar chart showing WordPress is 71.9% of the CMS market on mobile, Wix is 5.7%, Squarespace 3.1%, Joomla 3.0%, Drupal 2.3%, Duda 1.2%, 1C-Bitrix 1.1%, Tilda 1.1%, and following those there is a proliferation of smaller segments.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYh0RHAqp768faimbvZpvS71yJwCaOAFR0AzgotkEphtxphBKR1kt-pqgxA8Uxj4FSii1RQWwgG6rk/pubchart?oid=538227468&format=interactive",
-  sheets_gid="738765206",
-  sql_file="cms_adoption.sql"
-  )
-}}
-
-Staying consistent with existing trends and reports, WordPress remains the most popular CMS in the world, with as much as 71.9% of mobile websites leveraging the open-source platform. Next come the proprietary drag-and-drop CMSs Wix and Squarespace (5.7% and 3.1%, respectively), followed by Joomla at 3%.
-
-While the flexibility, community-driven development, and extensive ecosystem of an open-source CMS such as WordPress contribute to its popularity, it will be interesting to see how proprietary platforms influence adoption numbers in the future—especially given the slower pace of WordPress adoption observed over the past two years.
-
 ## CMS user experience
 
 With the introduction of Core Web Vitals four years ago, user experience has become a priority. That said, while users were mainly comparing CMS platforms based on ease of use, number of plugins/extensions, and themes available, they added one additional criterion—the default user experience offered by a particular platform.
@@ -772,4 +754,4 @@ This year, the industry-wide focus on performance and user experience has deepen
 
 Challenges persist, however. As CMSs expand their capabilities and adopt new technologies, balancing added functionality with performance remains crucial. Issues such as page weight and JavaScript load continue to impact some platforms, especially on mobile, underscoring the importance of ongoing optimization and adherence to best practices.
 
-Looking ahead, we're excited to see how CMSs will continue to evolve, with emerging technologies like AI transforming content creation and speculative loading improving performance. Although they're still in their early stages of development, these new technologies have the potential to redefine web performance and engagement. As we expand our datasets and refine our methodologies, we'll aim to provide an even clearer picture of the state of the web — and the CMS. Here's to a faster, more accessible, and user-friendly web—let's keep making it better together.
+Looking ahead, we're excited to see how CMSs will continue to evolve, with emerging technologies like AI transforming content creation and speculative loading improving performance. Although they’re still in their early stages of development, these new technologies have the potential to redefine web performance and engagement. As we expand our datasets and refine our methodologies, we'll aim to provide an even clearer picture of the state of the web — and the CMS. Here's to a faster, more accessible, and user-friendly web—let's keep making it better together.
