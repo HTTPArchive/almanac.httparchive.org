@@ -246,7 +246,7 @@ The key to improved visibility lies not just in publishing structured data using
 
 ## Rich results and knowledge panels
 
-**Rich results and knowledge panels**, powered by structured data, are essential features of search engine results pages (SERPs). These enhanced displays offer users immediate and relevant information, significantly boosting click-through rates and user engagement. As rich results become more diverse and sophisticated, they present new opportunities for content visibility. A recent example from Google is the introduction of a structured data carousel for listicle pages related to local businesses (including subtypes like restaurants, hotels, vacation rentals), products, and events.
+Rich results and knowledge panels, powered by structured data, are essential features of search engine results pages (SERPs). These enhanced displays offer users immediate and relevant information, significantly boosting click-through rates and user engagement. As rich results become more diverse and sophisticated, they present new opportunities for content visibility. A recent example from Google is the introduction of a structured data carousel for listicle pages related to local businesses (including subtypes like restaurants, hotels, vacation rentals), products, and events.
 
 {{ figure_markup(
   image="structured-data-image-carousel.png",
@@ -739,11 +739,11 @@ Most notably, these patterns indicate that **structured data implementation is m
 Here is the updated markdown for the uploaded images:
 
 {{ figure_markup(
-  image="structured-data-json-ld-relationships-1.png",
+  image="structured-data-json-ld-relationships-1.svg",
   caption="Sankey diagram showing relationships between structured data types and their connections.",
   description='A Sankey diagram illustrating relationships between structured data entities, highlighting frequently used properties like potentialAction, itemListElement, and isPartOf connecting to various schemas.',
-  width=598,
-  height=1000
+  width=596,
+  height=993
   )
 }}
 
