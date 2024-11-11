@@ -6,6 +6,7 @@
 {% block dataset %}2019年7{% endblock %}
 
 {% block foreword %}
+<div>
   <p>
     开放的网络是一个复杂的、不断发展的技术网络。整个行业和职业都建立在网络之上，并依赖其充满活力的生态系统取得成功。和网络本身一样重要的是，要理解它是如何运作总是出乎意料难以捉摸。自2010年以来，HTTP Archive项目的任务就是跟踪网络是如何构建的，它在这方面做得非常出色。然而，存在一个特别具有挑战性的缺口:使HTTP Archive项目收集的数据具有意义，并使社区能够容易地理解网络是如何执行的。这就是Web Almanac网络年鉴的用兵之处。
   </p>
@@ -23,4 +24,5 @@
   </p>
 
   <p>— <em><a href="{{ url_for('contributors', year=year, lang=lang, _anchor='rviscomi') }}">Rick Viscomi</a>, Web Almanac网络年鉴的创建者</em></p>
+</div>
 {% endblock %}
