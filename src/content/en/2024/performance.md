@@ -17,6 +17,7 @@ featured_stat_2: 15%
 featured_stat_label_2: of websites still use unnecessary lazy-loading on LCP elements.
 featured_stat_3: 13%
 featured_stat_label_3: the percentage by which good CWV scores are higher on secondary pages compared to homepages for mobile websites.
+doi: 10.5281/zenodo.14065738
 ---
 
 ## Introduction

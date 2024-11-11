@@ -17,6 +17,7 @@ featured_stat_2: 0.1%
 featured_stat_label_2: Sites with `<audio>` elements include a `<track>` element.
 featured_stat_3: 57%
 featured_stat_label_3: Mobile sites passing the Lighthouse audit for properly ordered headings.
+doi: 10.5281/zenodo.14063775
 ---
 
 ## Introduction

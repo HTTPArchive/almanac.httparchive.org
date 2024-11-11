@@ -18,6 +18,7 @@ featured_stat_2: 3x
 featured_stat_label_2: Faster TLS negotiation with CDN at p90
 featured_stat_3: 56s%
 featured_stat_label_3: Domains using Brotli via CDNs
+doi: 10.5281/zenodo.14065633
 ---
 
 ## Introduction
