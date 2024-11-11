@@ -600,7 +600,7 @@ We observed that over 50% of mobile sites had homepages with at least one elemen
 
 When an element is assigned the `role="presentation"`, it loses its inherent semantics, along with those of its required child elements (e.g., list items within a `<ul>`, or rows and cells within a table). For instance, applying `role="presentation"` to a parent `<table>` or `<ul>` element will propagate this role to its child elements, causing them to lose their table or list semantics.
 
-Removing semantics with `role="presentation"` means the element only has visual presence and its structure is not recognized by assistive technologies. The element’s content will be read by a screen reader, but no information about the semantics will be provided.
+Removing semantics with `role="presentation"` means the element only has visual presence and its structure is not recognized by assistive technologies. The element's content will be read by a screen reader, but no information about the semantics will be provided.
 
 {{ figure_markup(
   caption='Of desktop sites and 39% of mobile sites have at least one `role="presentation"`.',
@@ -683,7 +683,7 @@ A common approach developers use to provide extra information for screen reader 
 )
 }}
 
-The sr-only and visually-hidden class names are frequently used by developers and UI frameworks to create text that is only accessible to screen readers. For instance, Bootstrap and Tailwind include sr-only classes for this purpose. We found that 16% of desktop pages and 15% of mobile pages used one or both of these CSS classes (each up a percentage point from 2022). It's important to note that not all screen reader users are visually impaired, so relying too heavily on screen reader-only solutions should be avoided. When this technique is used with an interactive element’s accessible name, it can make it difficult for people who use their voice to control their computer to know what command to give to interact with the element.
+The sr-only and visually-hidden class names are frequently used by developers and UI frameworks to create text that is only accessible to screen readers. For instance, Bootstrap and Tailwind include sr-only classes for this purpose. We found that 16% of desktop pages and 15% of mobile pages used one or both of these CSS classes (each up a percentage point from 2022). It's important to note that not all screen reader users are visually impaired, so relying too heavily on screen reader-only solutions should be avoided. When this technique is used with an interactive element's accessible name, it can make it difficult for people who use their voice to control their computer to know what command to give to interact with the element.
 
 ## Dynamically-rendered content
 

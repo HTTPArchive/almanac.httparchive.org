@@ -500,9 +500,9 @@ These increases are enough to make JSON-LD types have the 2nd biggest positive c
 
 When evaluating JSON-LD, we can focus on the most recurring patterns of relationships among the different classes. More than with other syntaxes, JSON-LD expresses the value of graphs in structured data. An `Article`, for example, is frequently characterized by a linked `image` and the entity type `Person` to represent its _author_. Quite similarly, we would see that `BlogPosting` is also connected with image but as a frequent relationship with the `Organization` that serves as `Publisher`.
 
-Some types are purely syntactic like `BreadcrumbList` that is used exclusively to connect different items (`itemListElement`) of a site navigation’s system or a `Question` that is typically linked with its answer (`acceptedAnswer`). Other elements deal with meanings: a `LocalBusiness` typically is linked to an `address` and to the opening hours (`openingHoursSpecification`).
+Some types are purely syntactic like `BreadcrumbList` that is used exclusively to connect different items (`itemListElement`) of a site navigation's system or a `Question` that is typically linked with its answer (`acceptedAnswer`). Other elements deal with meanings: a `LocalBusiness` typically is linked to an `address` and to the opening hours (`openingHoursSpecification`).
 
-With this analysis we want to share a birds-eye overview of the most common types of relationships between entities and the subtle differences between let’s say `Article` and `BlogPosting`.
+With this analysis we want to share a birds-eye overview of the most common types of relationships between entities and the subtle differences between let's say `Article` and `BlogPosting`.
 
 Here below we can see the common links between the different types, based on how frequently they occur within all structure/relationship values. Some of these structures are typically part of larger relationship chains.
 
