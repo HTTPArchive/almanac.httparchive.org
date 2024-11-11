@@ -35,13 +35,13 @@ Over the past 18 months, there have been significant changes in the structured d
 
 3. **Structured data carousels**: The beta launch of structured data carousels, combining `ItemList` with other types, opens new content presentation possibilities on Google’s SERP ([source](https://developers.google.com/search/blog/2023/05/carousels-beta)).
 
-4. **GS1 integrations**: There has been increased support for GS1 standards such as the [GS1 Digital Link](https://www.gs1.org/standards/gs1-digital-link), which aims to bridge the gap between physical and digital product information. This technology enables manufacturers and retailers to connect physical products to their digital identities through QR codes. When scanned, these codes provide access to comprehensive product information, enhancing transparency and customer engagement. Also, the `gs1:CertificationDetails` property has been officially adopted by Google as `schema:Certification`, demonstrating how industry-specific extensions can successfully influence and integrate with schema.org standards.
+4. **GS1 integrations**: There has been increased support for GS1 standards such as the <a hreflang="en" href="https://www.gs1.org/standards/gs1-digital-link">GS1 Digital Link</a>, which aims to bridge the gap between physical and digital product information. This technology enables manufacturers and retailers to connect physical products to their digital identities through QR codes. When scanned, these codes provide access to comprehensive product information, enhancing transparency and customer engagement. Also, the `gs1:CertificationDetails` property has been officially adopted by Google as `schema:Certification`, demonstrating how industry-specific extensions can successfully influence and integrate with schema.org standards.
 
 5. **Semantic data beyond search applications**: Structured data is now being leveraged beyond traditional search engines, playing a pivotal role in social web applications. For instance:
 
-- **Identity verification**: Platforms like Mastodon use `rel=me` links for two-way identity verification ([source](https://docs.joinmastodon.org/user/profile/#verification)).
-- **Federated social networks**: The use of `rel=me` allows Mastodon users to verify their accounts with third-party websites (e.g., Ghost), strengthening cross-platform identity ([discussion on rel=me with Ghost](https://forum.ghost.org/t/verifying-mastodon-account-with-rel-me/34227)).
-- **New journalism features**: Mastodon recently introduced the `fediverse:creator` attribute to support content verification for journalists and publishers ([source](https://blog.joinmastodon.org/2024/07/highlighting-journalism-on-mastodon/)).
+- **Identity verification**: Platforms like Mastodon use `rel=me` links for two-way identity verification (<a hreflang="en" href="https://docs.joinmastodon.org/user/profile/#verification">source</a>).
+- **Federated social networks**: The use of `rel=me` allows Mastodon users to verify their accounts with third-party websites (e.g., Ghost), strengthening cross-platform identity (<a hreflang="en" href="https://forum.ghost.org/t/verifying-mastodon-account-with-rel-me/34227">discussion on rel=me with Ghost</a>).
+- **New journalism features**: Mastodon recently introduced the `fediverse:creator` attribute to support content verification for journalists and publishers (<a hreflang="en" href="https://blog.joinmastodon.org/2024/07/highlighting-journalism-on-mastodon/">source</a>).
 
 ## Beyond traditional implementation
 
@@ -50,22 +50,22 @@ As the structured data ecosystem matures, we're witnessing a diversification in 
 1. **Schema.org as markup**: The traditional method of embedding structured data directly into webpages continues to be a cornerstone of modern SEO practices.
 
 2. **Schema.org as a data standard**:
-  Beyond its use in HTML, Schema.org is increasingly employed to standardize data shared via APIs or feeds. For example, Google’s [Data Commons](https://datacommons.org/) initiative uses an extended Schema.org vocabulary to integrate datasets from hundreds of organizations globally. This standardization supports tasks like dataset discovery and relationship mapping, crucial for understanding provenance, subsets, and derivations of datasets in AI-driven environments ([source](https://research.google/blog/relationships-are-complicated-an-analysis-of-relationships-between-datasets-on-the-web/)).
+  Beyond its use in HTML, Schema.org is increasingly employed to standardize data shared via APIs or feeds. For example, Google’s <a hreflang="en" href="https://datacommons.org/">Data Commons</a> initiative uses an extended Schema.org vocabulary to integrate datasets from hundreds of organizations globally. This standardization supports tasks like dataset discovery and relationship mapping, crucial for understanding provenance, subsets, and derivations of datasets in AI-driven environments (<a hreflang="en" href="https://research.google/blog/relationships-are-complicated-an-analysis-of-relationships-between-datasets-on-the-web/">source</a>).
 
 3. **Semantic data in social web applications**:
 
-- Platforms like **Mastodon** leverage structured data for identity verification. The `rel=me` attribute allows users to verify accounts across federated networks ([source](https://docs.joinmastodon.org/user/profile/#verification)).
-- Features like `fediverse:creator` are being used to validate content and authorship, enhancing trust in the decentralized social web ([source](https://blog.joinmastodon.org/2024/07/highlighting-journalism-on-mastodon/)).
+- Platforms like **Mastodon** leverage structured data for identity verification. The `rel=me` attribute allows users to verify accounts across federated networks (<a hreflang="en" href="https://docs.joinmastodon.org/user/profile/#verification">source</a>).
+- Features like `fediverse:creator` are being used to validate content and authorship, enhancing trust in the decentralized social web (<a hreflang="en" href="https://blog.joinmastodon.org/2024/07/highlighting-journalism-on-mastodon/">source</a>).
 
 4. **Digital Product Passports (DPPs)**:
 
-Structured data plays a key role in emerging regulatory requirements like the EU’s [Digital Product Passports](https://wordlift.io/blog/en/digital-product-passport-implementation/), designed to enhance transparency and sustainability in eCommerce. These passports leverage GS1 Digital Links to provide comprehensive product information through QR codes.
+Structured data plays a key role in emerging regulatory requirements like the EU’s <a hreflang="en" href="https://wordlift.io/blog/en/digital-product-passport-implementation/">Digital Product Passports</a>, designed to enhance transparency and sustainability in eCommerce. These passports leverage GS1 Digital Links to provide comprehensive product information through QR codes.
 
 5. **Structured data for AI-powered Ddscovery**:
 
 As AI-powered search engines, chatbots, and conversational assistants continue to expand their reach, structured data plays a pivotal role in enhancing content discoverability and contextual understanding across these platforms. Key examples include:
 
-- **AI Search Engines**: Platforms like **Bing Chat** and **Google AI Overview** utilize structured data not only to train their language models but also to deliver contextually rich and accurate responses. By leveraging structured data, these systems can interpret complex relationships between datasets, improve search relevance, and enable users to seamlessly navigate interconnected datasets ([source](https://research.google/blog/relationships-are-complicated-an-analysis-of-relationships-between-datasets-on-the-web/)).
+- **AI Search Engines**: Platforms like **Bing Chat** and **Google AI Overview** utilize structured data not only to train their language models but also to deliver contextually rich and accurate responses. By leveraging structured data, these systems can interpret complex relationships between datasets, improve search relevance, and enable users to seamlessly navigate interconnected datasets (<a hreflang="en" href="https://research.google/blog/relationships-are-complicated-an-analysis-of-relationships-between-datasets-on-the-web/">source</a>).
 
 These capabilities demonstrate structured data's evolving role in not only improving discoverability but also in enhancing AI systems’ ability to interpret and act on relationships between data, thereby creating richer and more useful user experiences.
 
@@ -142,7 +142,7 @@ As structured data evolves in complexity, exploring and explaining key concepts 
 
 Linked data remains a cornerstone of structured data. By adding structured data to web pages and providing URI links to referenced entities, we create an interconnected web of information. This contributes to the semantic web, where data is linked through the Resource Description Framework (RDF), enabling machines to treat web pages as databases.
 
-The concept of semantic triples (subject-predicate-object) continues to be fundamental in expressing relationships between entities. While [SPARQL](https://en.wikipedia.org/wiki/SPARQL) is a query language specifically designed for querying graph data and RDF triples, [GraphQL](https://en.wikipedia.org/wiki/GraphQL) serves as a flexible API query language for retrieving structured data from diverse backends, including databases and microservices. These tools complement each other: SPARQL excels in querying RDF datasets for semantic web applications, while GraphQL simplifies access to structured data for web and mobile applications.
+The concept of semantic triples (subject-predicate-object) continues to be fundamental in expressing relationships between entities. While [SPARQL](https://wikipedia.org/wiki/SPARQL) is a query language specifically designed for querying graph data and RDF triples, [GraphQL](https://wikipedia.org/wiki/GraphQL) serves as a flexible API query language for retrieving structured data from diverse backends, including databases and microservices. These tools complement each other: SPARQL excels in querying RDF datasets for semantic web applications, while GraphQL simplifies access to structured data for web and mobile applications.
 
 #### Open data and the 5 stars model
 
@@ -262,7 +262,7 @@ Another notable example, while not directly influenced by structured data, is th
 
 ## Knowledge graphs and Graph RAG
 
-Knowledge graphs have become increasingly central to structured data applications. They provide a powerful way to represent and query complex relationships between entities. The emergence of [Graph RAG](https://microsoft.github.io/graphrag/) (Retrieval-Augmented Generation) represents a significant advancement, combining knowledge graphs with large language models to enhance AI-generated responses with factual, structured information.
+Knowledge graphs have become increasingly central to structured data applications. They provide a powerful way to represent and query complex relationships between entities. The emergence of <a hreflang="en" href="https://microsoft.github.io/graphrag/">Graph RAG</a> (Retrieval-Augmented Generation) represents a significant advancement, combining knowledge graphs with large language models to enhance AI-generated responses with factual, structured information.
 
 ### Difference between Labeled Property Graphs and RDF graphs
 
@@ -272,11 +272,11 @@ The importance of structured data in creating knowledge graphs cannot be oversta
 
 ## Data Commons
 
-[**Data Commons**](https://datacommons.org/) is an open-source and open-data initiative by Google that organizes public datasets from various global sources, such as the United Nations and national census bureaus, to make them universally accessible. The platform provides over 250 billion data points and 2.5 trillion triples, encompassing a wide range of statistical variables. Schema.org is utilized to encode structured data in Data Commons, creating a unified knowledge graph that standardizes and normalizes diverse datasets, enabling easier access and exploration through a common framework. This structured approach helps to integrate vast amounts of data into a coherent, searchable system.
+<a hreflang="en" href="https://datacommons.org/">**Data Commons**</a> is an open-source and open-data initiative by Google that organizes public datasets from various global sources, such as the United Nations and national census bureaus, to make them universally accessible. The platform provides over 250 billion data points and 2.5 trillion triples, encompassing a wide range of statistical variables. Schema.org is utilized to encode structured data in Data Commons, creating a unified knowledge graph that standardizes and normalizes diverse datasets, enabling easier access and exploration through a common framework. This structured approach helps to integrate vast amounts of data into a coherent, searchable system.
 
 ## Digital Product Passports and GS1 Digital Link
 
-In the e-commerce and supply chain sectors, [Digital Product Passports](https://wordlift.io/blog/en/digital-product-passport-implementation/) (DPPs) and the [GS1 Digital Link standard](https://www.gs1.org/standards/gs1-digital-link) are revolutionizing how product information is shared and accessed. These technologies leverage structured data to create comprehensive, easily accessible digital representations of physical products, enhancing traceability, sustainability efforts, and consumer information access.
+In the e-commerce and supply chain sectors, <a hreflang="en" href="https://wordlift.io/blog/en/digital-product-passport-implementation/">Digital Product Passports</a> (DPPs) and the <a hreflang="en" href="https://www.gs1.org/standards/gs1-digital-link">GS1 Digital Link standard</a> are revolutionizing how product information is shared and accessed. These technologies leverage structured data to create comprehensive, easily accessible digital representations of physical products, enhancing traceability, sustainability efforts, and consumer information access.
 
 ## AI, machine learning, and structured data
 
@@ -822,7 +822,7 @@ As we analyze current trends, we also cast our gaze forward to emerging developm
 
 - **SEOntology and specialized vocabularies**
 
-  In parallel, the development of [**SEOntology**](https://www.searchenginejournal.com/introducing-seontology-the-future-of-seo-in-the-age-of-ai/524773/) and other specialized vocabularies is addressing the need for **SEO-specific structured data** that can improve **content discoverability** and **search engine optimization**. By creating vocabularies tailored to the unique requirements of SEO, we can further enhance the alignment between structured data and AI, driving more targeted and efficient search experiences.
+  In parallel, the development of <a hreflang="en" href="https://www.searchenginejournal.com/introducing-seontology-the-future-of-seo-in-the-age-of-ai/524773/">**SEOntology**</a> and other specialized vocabularies is addressing the need for **SEO-specific structured data** that can improve **content discoverability** and **search engine optimization**. By creating vocabularies tailored to the unique requirements of SEO, we can further enhance the alignment between structured data and AI, driving more targeted and efficient search experiences.
 
 - **Regulatory impacts**
 
