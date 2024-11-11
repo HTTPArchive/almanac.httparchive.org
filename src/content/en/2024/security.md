@@ -4,8 +4,8 @@ title: Security
 description: Security chapter of the 2024 Web Almanac covering Transport Layer Security, content inclusion (CSP, Feature Policy, SRI), web defense mechanisms (tackling XSS, XS-Leaks), and drivers of security mechanism adoptions.
 authors: [GJFR, vikvanderlinden]
 reviewers: [lord-r3, AlbertoFDR, clarkio]
-editors: [cqueern]
 analysts: [JannisBush]
+editors: [cqueern]
 translators: []
 GJFR_bio: Gertjan Franken is a postdoctoral researcher with the <a hreflang="en" href="https://distrinet.cs.kuleuven.be/">DistriNet Research Group</a> at KU Leuven. His research spans various aspects of web security and privacy, with a primary focus on the automated analysis of browser security policies. As part of this research, he maintains the open-source tool <a hreflang="en" href="https://github.com/DistriNet/BugHog">BugHog</a> for pinpointing bug lifecycles.
 vikvanderlinden_bio: Vik Vanderlinden is a PhD candidate in Computer Science at the <a hreflang="en" href="https://distrinet.cs.kuleuven.be/">DistriNet Research Group</a> at KU Leuven. His research focuses on web and network security, primarily focusing on timing leaks in web applications and protocols.
@@ -40,7 +40,7 @@ We also investigate the [factors driving security practices](#drivers-of-securit
   sql_file="https_request_over_time.sql",
 ) }}
 
-The number of requests served using TLS climbed another 4% to 98.12% on mobile since the last Almanac in 2022.
+The number of requests served using TLS climbed another 4% to 98% on mobile since the last Almanac in 2022.
 
 {{ figure_markup(
   image="https-usage.png",
@@ -86,7 +86,7 @@ Before client and server can communicate, they have to agree upon the cryptograp
   )
 }}
 
-TLS1.3 makes <a hreflang="en" href="https://en.wikipedia.org/wiki/Forward_secrecy">forward secrecy</a> required, which means it is highly supported on the web. Forward Secrecy is a feature that assures that in case a key in use is leaked, it cannot be used to decrypt future or past messages sent over a connection. This is important to ensure that adversaries storing long-term traffic cannot decrypt the entire conversation as soon as they are able to leak a key. Interestingly, the use of forward secrecy dropped by almost 2% this year, to 95.38%.
+TLS1.3 makes <a hreflang="en" href="https://en.wikipedia.org/wiki/Forward_secrecy">forward secrecy</a> required, which means it is highly supported on the web. Forward Secrecy is a feature that assures that in case a key in use is leaked, it cannot be used to decrypt future or past messages sent over a connection. This is important to ensure that adversaries storing long-term traffic cannot decrypt the entire conversation as soon as they are able to leak a key. Interestingly, the use of forward secrecy dropped by almost 2% this year, to 95%.
 
 {{ figure_markup(
   image="forward-secrecy.png",
@@ -114,53 +114,53 @@ In order to use TLS, servers must first get a certificate they can host, which i
     <tbody>
       <tr>
         <td>R3</td>
-        <td class="numeric">44.32%</td>
-        <td class="numeric">45.05%</td>
+        <td class="numeric">44.3%</td>
+        <td class="numeric">45.1%</td>
       </tr>
       <tr>
         <td>GTS CA 1P5</td>
-        <td class="numeric">6.13%</td>
-        <td class="numeric">6.63%</td>
+        <td class="numeric">6.1%</td>
+        <td class="numeric">6.6%</td>
       </tr>
       <tr>
         <td>E1</td>
-        <td class="numeric">4.19%</td>
-        <td class="numeric">4.26%</td>
+        <td class="numeric">4.2%</td>
+        <td class="numeric">4.3%</td>
       </tr>
       <tr>
         <td>Sectigo RSA Domain Validation Secure Server CA</td>
-        <td class="numeric">3.34%</td>
-        <td class="numeric">3.09%</td>
+        <td class="numeric">3.3%</td>
+        <td class="numeric">3.1%</td>
       </tr>
       <tr>
         <td>R10</td>
-        <td class="numeric">2.59%</td>
-        <td class="numeric">2.83%</td>
+        <td class="numeric">2.6%</td>
+        <td class="numeric">2.8%</td>
       </tr>
       <tr>
         <td>R11</td>
-        <td class="numeric">2.59%</td>
-        <td class="numeric">2.81%</td>
+        <td class="numeric">2.6%</td>
+        <td class="numeric">2.8%</td>
       </tr>
       <tr>
         <td>Go Daddy Secure Certificate Authority - G2</td>
-        <td class="numeric">1.96%</td>
-        <td class="numeric">1.74%</td>
+        <td class="numeric">2.0%</td>
+        <td class="numeric">1.7%</td>
       </tr>
       <tr>
         <td>cPanel, Inc. Certification Authority</td>
-        <td class="numeric">1.74%</td>
-        <td class="numeric">1.78%</td>
+        <td class="numeric">1.7%</td>
+        <td class="numeric">1.8%</td>
       </tr>
       <tr>
         <td>Cloudflare Inc ECC CA-3</td>
-        <td class="numeric">1.52%</td>
-        <td class="numeric">1.30%</td>
+        <td class="numeric">1.5%</td>
+        <td class="numeric">1.3%</td>
       </tr>
       <tr>
         <td>Amazon RSA 2048 M02</td>
-        <td class="numeric">1.39%</td>
-        <td class="numeric">1.27%</td>
+        <td class="numeric">1.4%</td>
+        <td class="numeric">1.3%</td>
       </tr>
     </tbody>
   </table>
@@ -372,18 +372,18 @@ The `block-all-mixed-content` directive, which has been deprecated in favor of `
     <tbody>
       <tr>
       <td>upgrade-insecure-requests;</td>
-      <td class="numeric">27.1%</td>
-      <td class="numeric">30.0%</td>
+      <td class="numeric">27%</td>
+      <td class="numeric">30%</td>
       </tr>
       <tr>
       <td>block-all-mixed-content; frame-ancestors 'none'; upgrade-insecure-requests;</td>
-      <td class="numeric">21.8%</td>
-      <td class="numeric">21.9%</td>
+      <td class="numeric">22%</td>
+      <td class="numeric">22%</td>
       </tr>
       <tr>
       <td>frame-ancestors 'self';</td>
-      <td class="numeric">10.8%</td>
-      <td class="numeric">10.2%</td>
+      <td class="numeric">11%</td>
+      <td class="numeric">10%</td>
       </tr>
     </tbody>
   </table>
@@ -404,58 +404,58 @@ The top three directives also make up the building blocks of the most prevalent 
     <tbody>
       <tr>
         <td><code>upgrade-insecure-requests</code></td>
-        <td class="numeric">-1.3</td>
-        <td class="numeric">-0.5</td>
+        <td class="numeric">-1%</td>
+        <td class="numeric">0%</td>
       </tr>
       <tr>
         <td><code>frame-ancestors</code></td>
-        <td class="numeric">5.1%</td>
-        <td class="numeric">2.6%</td>
+        <td class="numeric">5%</td>
+        <td class="numeric">3%</td>
       </tr>
       <tr>
         <td><code>block-all-mixed-content</code></td>
-        <td class="numeric">-8.8</td>
-        <td class="numeric">-12.7</td>
+        <td class="numeric">-9%</td>
+        <td class="numeric">-13%</td>
       </tr>
       <tr>
         <td><code>default-src</code></td>
-        <td class="numeric">-9.1</td>
-        <td class="numeric">-6.3</td>
+        <td class="numeric">-9%</td>
+        <td class="numeric">-6%</td>
       </tr>
       <tr>
         <td><code>script-src</code></td>
-        <td class="numeric">-3.0</td>
-        <td class="numeric">-1.8</td>
+        <td class="numeric">-3%</td>
+        <td class="numeric">-2%</td>
       </tr>
       <tr>
         <td><code>style-src</code></td>
-        <td class="numeric">-8.4</td>
-        <td class="numeric">-2.3</td>
+        <td class="numeric">-8%</td>
+        <td class="numeric">-2%</td>
       </tr>
       <tr>
         <td><code>img-src</code></td>
-        <td class="numeric">-2.8</td>
-        <td class="numeric">9.3%</td>
+        <td class="numeric">-3%</td>
+        <td class="numeric">9%</td>
       </tr>
       <tr>
         <td><code>font-src</code></td>
-        <td class="numeric">-3.5</td>
-        <td class="numeric">8.1%</td>
+        <td class="numeric">-4%</td>
+        <td class="numeric">8%</td>
       </tr>
       <tr>
         <td><code>connect-src</code></td>
-        <td class="numeric">3.1%</td>
-        <td class="numeric">16.8%</td>
+        <td class="numeric">3%</td>
+        <td class="numeric">17%</td>
       </tr>
       <tr>
         <td><code>frame-src</code></td>
-        <td class="numeric">3.9%</td>
-        <td class="numeric">16.1%</td>
+        <td class="numeric">4%</td>
+        <td class="numeric">16%</td>
       </tr>
       <tr>
         <td><code>object-src</code></td>
-        <td class="numeric">15.9%</td>
-        <td class="numeric">16.8%</td>
+        <td class="numeric">16%</td>
+        <td class="numeric">17%</td>
       </tr>
     </tbody>
   </table>
@@ -495,23 +495,23 @@ The `unsafe-inline` and `unsafe-eval` directives can significantly reduce the se
     <tbody>
       <tr>
         <td><code>nonce-</code></td>
-        <td class="numeric">61.8%</td>
-        <td class="numeric">39.4%</td>
+        <td class="numeric">62%</td>
+        <td class="numeric">39%</td>
       </tr>
       <tr>
         <td><code>strict-dynamic</code></td>
-        <td class="numeric">61.3%</td>
-        <td class="numeric">88.3%</td>
+        <td class="numeric">61%</td>
+        <td class="numeric">88%</td>
       </tr>
       <tr>
         <td><code>unsafe-inline</code></td>
-        <td class="numeric">-3.2</td>
-        <td class="numeric">-3.4</td>
+        <td class="numeric">-3%</td>
+        <td class="numeric">-3%</td>
       </tr>
       <tr>
         <td><code>unsafe-eval</code></td>
-        <td class="numeric">-2.6</td>
-        <td class="numeric">-0.3</td>
+        <td class="numeric">-3%</td>
+        <td class="numeric">0%</td>
       </tr>
     </tbody>
   </table>
@@ -696,43 +696,43 @@ The adoption of Subresource Integrity seems to be stagnating, with the median pe
     <tbody>
       <tr>
         <td><code>www.gstatic.com</code></td>
-        <td class="numeric">35.27%</td>
-        <td class="numeric">35.43%</td>
+        <td class="numeric">35%</td>
+        <td class="numeric">35%</td>
       </tr>
       <tr>
         <td><code>cdnjs.cloudflare.com</code></td>
-        <td class="numeric">7.31%</td>
-        <td class="numeric">7.35%</td>
+        <td class="numeric">7%</td>
+        <td class="numeric">7%</td>
       </tr>
       <tr>
         <td><code>cdn.userway.org</code></td>
-        <td class="numeric">6.20%</td>
-        <td class="numeric">5.69%</td>
+        <td class="numeric">6%</td>
+        <td class="numeric">6%</td>
       </tr>
       <tr>
         <td><code>static.cloudflareinsights.com</code></td>
-        <td class="numeric">6.07%</td>
-        <td class="numeric">5.97%</td>
+        <td class="numeric">6%</td>
+        <td class="numeric">6%</td>
       </tr>
       <tr>
         <td><code>code.jquery.com</code></td>
-        <td class="numeric">5.36%</td>
-        <td class="numeric">5.58%</td>
+        <td class="numeric">5%</td>
+        <td class="numeric">6%</td>
       </tr>
       <tr>
         <td><code>cdn.jsdelivr.net</code></td>
-        <td class="numeric">3.92%</td>
-        <td class="numeric">4.27%</td>
+        <td class="numeric">4%</td>
+        <td class="numeric">4%</td>
       </tr>
       <tr>
         <td><code>d3e54v103j8qbb.cloudfront.net</code></td>
-        <td class="numeric">2.15%</td>
-        <td class="numeric">1.88%</td>
+        <td class="numeric">2%</td>
+        <td class="numeric">2%</td>
       </tr>
       <tr>
         <td><code>t1.daumcdn.net</code></td>
-        <td class="numeric">1.82%</td>
-        <td class="numeric">1.14%</td>
+        <td class="numeric">2%</td>
+        <td class="numeric">1%</td>
       </tr>
     </tbody>
   </table>
@@ -767,45 +767,45 @@ In 2022, the adoption of the `Permissions-Policy` header saw a significant relat
     <tbody>
       <tr>
         <td><code>interest-cohort=()</code></td>
-        <td class="numeric">21.28%</td>
-        <td class="numeric">21.05%</td>
+        <td class="numeric">21%</td>
+        <td class="numeric">21%</td>
       </tr>
       <tr>
         <td><code>geolocation=(),midi=(),sync-xhr=(),microphone=(),camera=(),magnetometer=(),gyroscope=(),fullscreen=(self),payment=()</code></td>
-        <td class="numeric">5.44%</td>
-        <td class="numeric">5.54%</td>
+        <td class="numeric">5%</td>
+        <td class="numeric">6%</td>
       </tr>
       <tr>
         <td><code>accelerometer=(), autoplay=(), camera=(), cross-origin-isolated=(), display-capture=(self), encrypted-media=(), fullscreen=*, geolocation=(self), gyroscope=(), keyboard-map=(), magnetometer=(), microphone=(), midi=(), payment=*, picture-in-picture=(), publickey-credentials-get=(), screen-wake-lock=(), sync-xhr=(), usb=(), xr-spatial-tracking=(), gamepad=(), serial=()</code></td>
-        <td class="numeric">3.92%</td>
-        <td class="numeric">4.01%</td>
+        <td class="numeric">4%</td>
+        <td class="numeric">4%</td>
       </tr>
       <tr>
         <td><code>accelerometer=(self), autoplay=(self), camera=(self), encrypted-media=(self), fullscreen=(self), geolocation=(self), gyroscope=(self), magnetometer=(self), microphone=(self), midi=(self), payment=(self), usb=(self)</code></td>
-        <td class="numeric">2.81%</td>
-        <td class="numeric">2.92%</td>
+        <td class="numeric">3%</td>
+        <td class="numeric">3%</td>
       </tr>
       <tr>
         <td><code>accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()</code></td>
-        <td class="numeric">2.73%</td>
-        <td class="numeric">2.55%</td>
+        <td class="numeric">3%</td>
+        <td class="numeric">3%</td>
       </tr>
       <tr>
         <td><code>browsing-topics=()</code></td>
-        <td class="numeric">2.61%</td>
-        <td class="numeric">3.40%</td>
+        <td class="numeric">3%</td>
+        <td class="numeric">3%</td>
       </tr>
       <tr>
         <td><code>geolocation=self</code></td>
-        <td class="numeric">2.23%</td>
-        <td class="numeric">2.37%</td>
+        <td class="numeric">2%</td>
+        <td class="numeric">2%</td>
       </tr>
     </tbody>
   </table>
   <figcaption>{{ figure_link(caption="Most prevalent Permission Policies", sheets_gid="2018859098", sql_file="pp_header_prevalence.sql") }}</figcaption>
 </figure>
 
-Only 2.8% of desktop hosts and 2.5% of mobile hosts set the policy using the `Permissions-Policy` response header. The policy is primarily used to exclusively opt out of Google’s Federated Learning of Cohorts (FLoC); 21.3% of hosts that implement the `Permissions-Policy` header set the policy as `interest-cohort=()`. This usage is partly due to the controversy that FLoC sparked during its trial period. Although FLoC was ultimately replaced by the Topics API,  the continued use of the `interest-cohort` directive highlights how specific concerns can shape the adoption of web policies.
+Only 2.8% of desktop hosts and 2.5% of mobile hosts set the policy using the `Permissions-Policy` response header. The policy is primarily used to exclusively opt out of Google’s Federated Learning of Cohorts (FLoC); 21% of hosts that implement the `Permissions-Policy` header set the policy as `interest-cohort=()`. This usage is partly due to the controversy that FLoC sparked during its trial period. Although FLoC was ultimately replaced by the Topics API,  the continued use of the `interest-cohort` directive highlights how specific concerns can shape the adoption of web policies.
 
 All other observed headers with at least 2% of hosts implementing them, are aimed at restricting the permission capabilities of the website itself and/or its embedded `<iframe>` elements. Similar to the Content Security Policy, the Permissions Policy is “open by default” instead of “secure by default”; absence of the policy entails absence of protection. This approach aims to avoid breaking website functionality when introducing new policies. Notably, 0.28% of sites explicitly use the `*` wildcard policy, allowing the website and all embedded `<iframe>` elements (where no more restrictive `allow` attribute is present) to request any permission - though this is the default behavior when the Permissions Policy is not set.
 
@@ -829,53 +829,53 @@ Out of the 21.4 million `<iframe>` elements observed in the crawl, half included
     <tbody>
       <tr>
         <td><code>join-ad-interest-group</code></td>
-        <td class="numeric">43.05%</td>
-        <td class="numeric">43.57%</td>
+        <td class="numeric">43%</td>
+        <td class="numeric">44%</td>
       </tr>
       <tr>
         <td><code>attribution-reporting</code></td>
-        <td class="numeric">27.51%</td>
-        <td class="numeric">28.50%</td>
+        <td class="numeric">28%</td>
+        <td class="numeric">280%</td>
       </tr>
       <tr>
         <td><code>run-ad-auction</code></td>
-        <td class="numeric">24.58%</td>
-        <td class="numeric">24.24%</td>
+        <td class="numeric">25%</td>
+        <td class="numeric">24%</td>
       </tr>
       <tr>
         <td><code>encrypted-media</code></td>
-        <td class="numeric">19.26%</td>
-        <td class="numeric">18.29%</td>
+        <td class="numeric">19%</td>
+        <td class="numeric">18%</td>
       </tr>
       <tr>
         <td><code>autoplay</code></td>
-        <td class="numeric">17.70%</td>
-        <td class="numeric">17.66%</td>
+        <td class="numeric">18%</td>
+        <td class="numeric">18%</td>
       </tr>
       <tr>
         <td><code>picture-in-picture</code></td>
-        <td class="numeric">11.54%</td>
-        <td class="numeric">11.52%</td>
+        <td class="numeric">12%</td>
+        <td class="numeric">12%</td>
       </tr>
       <tr>
         <td><code>clipboard-write</code></td>
-        <td class="numeric">10.16%</td>
-        <td class="numeric">10.12%</td>
+        <td class="numeric">10%</td>
+        <td class="numeric">10%</td>
       </tr>
       <tr>
         <td><code>gyroscope</code></td>
-        <td class="numeric">9.31%</td>
-        <td class="numeric">9.89%</td>
+        <td class="numeric">9%</td>
+        <td class="numeric">10%</td>
       </tr>
       <tr>
         <td><code>accelerometer</code></td>
-        <td class="numeric">9.19%</td>
-        <td class="numeric">9.78%</td>
+        <td class="numeric">9%</td>
+        <td class="numeric">10%</td>
       </tr>
       <tr>
         <td><code>web-share</code></td>
-        <td class="numeric">6.89%</td>
-        <td class="numeric">6.60%</td>
+        <td class="numeric">7%</td>
+        <td class="numeric">7%</td>
       </tr>
     </tbody>
   </table>
@@ -1072,18 +1072,18 @@ The CORP header is primarily used to allow access to the served resource from an
     <tbody>
       <tr>
         <td><code>same-origin</code></td>
-        <td class="numeric">49.18%</td>
-        <td class="numeric">47.59%</td>
+        <td class="numeric">49%</td>
+        <td class="numeric">48%</td>
       </tr>
       <tr>
         <td><code>unsafe-none</code></td>
-        <td class="numeric">35.25%</td>
-        <td class="numeric">36.91%</td>
+        <td class="numeric">35%</td>
+        <td class="numeric">37%</td>
       </tr>
       <tr>
         <td><code>same-origin-allow-popups</code></td>
-        <td class="numeric">14.19%</td>
-        <td class="numeric">14.25%</td>
+        <td class="numeric">14%</td>
+        <td class="numeric">14%</td>
       </tr>
     </tbody>
   </table>
@@ -1110,53 +1110,53 @@ Adoption of the `Clear-Site-Data` header remains limited; our observations indic
     <tbody>
       <tr>
         <td><code>"cache"</code></td>
-        <td class="numeric">35.99%</td>
-        <td class="numeric">33.69%</td>
+        <td class="numeric">36%</td>
+        <td class="numeric">34%</td>
       </tr>
       <tr>
         <td><code>cache</code></td>
-        <td class="numeric">22.43%</td>
-        <td class="numeric">22.98%</td>
+        <td class="numeric">22%</td>
+        <td class="numeric">23%</td>
       </tr>
       <tr>
         <td><code>*</code></td>
-        <td class="numeric">12.41%</td>
-        <td class="numeric">13.26%</td>
+        <td class="numeric">12%</td>
+        <td class="numeric">13%</td>
       </tr>
       <tr>
         <td><code>cookies</code></td>
-        <td class="numeric">4.49%</td>
-        <td class="numeric">5.56%</td>
+        <td class="numeric">4%</td>
+        <td class="numeric">6%</td>
       </tr>
       <tr>
         <td><code>"cache", "storage", "executionContexts"</code></td>
-        <td class="numeric">2.91%</td>
-        <td class="numeric">4.35%</td>
+        <td class="numeric">3%</td>
+        <td class="numeric">4%</td>
       </tr>
       <tr>
         <td><code>"cookies"</code></td>
-        <td class="numeric">1.96%</td>
-        <td class="numeric">1.61%</td>
+        <td class="numeric">2%</td>
+        <td class="numeric">2%</td>
       </tr>
       <tr>
         <td><code>"cache", "cookies", "storage", "executionContexts"</code></td>
-        <td class="numeric">1.96%</td>
-        <td class="numeric">2.46%</td>
+        <td class="numeric">2%</td>
+        <td class="numeric">2%</td>
       </tr>
       <tr>
         <td><code>"storage"</code></td>
-        <td class="numeric">1.86%</td>
-        <td class="numeric">1.57%</td>
+        <td class="numeric">2%</td>
+        <td class="numeric">2%</td>
       </tr>
       <tr>
         <td><code>"cache", "storage"</code></td>
-        <td class="numeric">1.34%</td>
-        <td class="numeric">0.99%</td>
+        <td class="numeric">1%</td>
+        <td class="numeric">1%</td>
       </tr>
       <tr>
         <td><code>cache, cookies, storage</code></td>
-        <td class="numeric">1.29%</td>
-        <td class="numeric">1.16%</td>
+        <td class="numeric">1%</td>
+        <td class="numeric">1%</td>
       </tr>
     <tbody>
   </table>
@@ -1181,18 +1181,18 @@ Some security mechanisms on the web can be configured through `meta` tags in the
     <tbody>
       <tr>
         <td>includes <code>Referrer-policy</code></td>
-        <td class="numeric">2.73%</td>
-        <td class="numeric">2.53%</td>
+        <td class="numeric">2.7%</td>
+        <td class="numeric">2.5%</td>
       </tr>
       <tr>
         <td>includes CSP</td>
-        <td class="numeric">0.56%</td>
-        <td class="numeric">0.61%</td>
+        <td class="numeric">0.6%</td>
+        <td class="numeric">0.6%</td>
       </tr>
       <tr>
         <td>includes <code>not-allowed policy</code></td>
-        <td class="numeric">0.09%</td>
-        <td class="numeric">0.07%</td>
+        <td class="numeric">0.1%</td>
+        <td class="numeric">0.1%</td>
       </tr>
     </tbody>
   </table>
@@ -1217,53 +1217,53 @@ Developers sometimes also try to enable other security features by using the `me
     <tbody>
       <tr>
         <td><code>CryptoGetRandomValues</code></td>
-        <td class="numeric">55.92%</td>
-        <td class="numeric">53.24%</td>
+        <td class="numeric">56.9%</td>
+        <td class="numeric">53.2%</td>
       </tr>
       <tr>
         <td><code>SubtleCryptoDigest</code></td>
-        <td class="numeric">1.92%</td>
-        <td class="numeric">1.74%</td>
+        <td class="numeric">1.9%</td>
+        <td class="numeric">1.7%</td>
       </tr>
       <tr>
         <td><code>SubtleCryptoImportKey</code></td>
-        <td class="numeric">1.69%</td>
-        <td class="numeric">1.60%</td>
+        <td class="numeric">1.7%</td>
+        <td class="numeric">1.6%</td>
       </tr>
       <tr>
         <td><code>CryptoAlgorithmSha256</code></td>
-        <td class="numeric">1.58%</td>
-        <td class="numeric">1.30%</td>
+        <td class="numeric">1.6%</td>
+        <td class="numeric">1.3%</td>
       </tr>
       <tr>
         <td><code>CryptoAlgorithmEcdh</code></td>
-        <td class="numeric">1.32%</td>
-        <td class="numeric">1.34%</td>
+        <td class="numeric">1.3%</td>
+        <td class="numeric">1.3%</td>
       </tr>
       <tr>
         <td><code>CryptoAlgorithmSha512</code></td>
-        <td class="numeric">0.24%</td>
-        <td class="numeric">0.24%</td>
+        <td class="numeric">0.2%</td>
+        <td class="numeric">0.2%</td>
       </tr>
       <tr>
         <td><code>CryptoAlgorithmAesCbc</code></td>
-        <td class="numeric">0.23%</td>
-        <td class="numeric">0.13%</td>
+        <td class="numeric">0.2%</td>
+        <td class="numeric">0.1%</td>
       </tr>
       <tr>
         <td><code>CryptoAlgorithmSha1</code></td>
-        <td class="numeric">0.22%</td>
-        <td class="numeric">0.21%</td>
+        <td class="numeric">0.2%</td>
+        <td class="numeric">0.2%</td>
       </tr>
       <tr>
         <td><code>SubtleCryptoEncrypt</code></td>
-        <td class="numeric">0.15%</td>
-        <td class="numeric">0.13%</td>
+        <td class="numeric">0.2%</td>
+        <td class="numeric">0.1%</td>
       </tr>
       <tr>
         <td><code>SubtleCryptoSign</code></td>
-        <td class="numeric">0.13%</td>
-        <td class="numeric">0.12%</td>
+        <td class="numeric">0.1%</td>
+        <td class="numeric">0.1%</td>
       </tr>
     </tbody>
   </table>
@@ -1539,11 +1539,11 @@ Timing-Allow-Origin is a response header that allows a server to specify a list 
 
 When CORS is in effect, many of these timings (including the ones listed above) are returned as 0 to prevent cross-origin leaks. By listing an origin in the Timing-Allow-Origin header this restriction is lifted.
 
-Allowing different origins access to this information should be done with care, because using this information the site loading the resource can potentially execute timing attacks. In our analysis we find that out of all responses with a Timing-Allow-Origin header present, 82.5% percent of Timing-Allow-Origin headers contain the wildcard value, thereby allowing any origin to access the fine grained timing information.
+Allowing different origins access to this information should be done with care, because using this information the site loading the resource can potentially execute timing attacks. In our analysis we find that out of all responses with a Timing-Allow-Origin header present, 83% percent of `Timing-Allow-Origin` headers contain the wildcard value, thereby allowing any origin to access the fine grained timing information.
 
 {{ figure_markup(
-  content="82.5%",
-  caption="The percentage of Timing-Allow-Origin that are set to the wildcard (`*`) value.",
+  content="83%",
+  caption="The percentage of `Timing-Allow-Origin` that are set to the wildcard (`*`) value.",
   classes="big-number",
   sheets_gid="955021492",
   sql_file="tao_header_prevalence.sql",
@@ -1579,53 +1579,53 @@ The most commonly exposed header is the `Server` header, which reveals the softw
     <tbody>
       <tr>
         <td><code>PHP/7.4.33</code></td>
-        <td class="numeric">9.11%</td>
-        <td class="numeric">9.45%</td>
+        <td class="numeric">9.1%</td>
+        <td class="numeric">9.4%</td>
       </tr>
       <tr>
         <td><code>PHP/7.3.33</code></td>
-        <td class="numeric">4.64%</td>
-        <td class="numeric">5.43%</td>
+        <td class="numeric">4.6%</td>
+        <td class="numeric">5.4%</td>
       </tr>
       <tr>
         <td><code>PHP/5.3.3</code></td>
-        <td class="numeric">2.65%</td>
-        <td class="numeric">2.76%</td>
+        <td class="numeric">2.6%</td>
+        <td class="numeric">2.8%</td>
       </tr>
       <tr>
         <td><code>PHP/5.6.40</code></td>
-        <td class="numeric">2.49%</td>
-        <td class="numeric">2.64%</td>
+        <td class="numeric">2.5%</td>
+        <td class="numeric">2.6%</td>
       </tr>
       <tr>
         <td><code>PHP/7.4.29</code></td>
-        <td class="numeric">1.73%</td>
-        <td class="numeric">2.16%</td>
+        <td class="numeric">1.7%</td>
+        <td class="numeric">2.2%</td>
       </tr>
       <tr>
         <td><code>PHP/7.2.34</code></td>
-        <td class="numeric">1.65%</td>
-        <td class="numeric">1.81%</td>
+        <td class="numeric">1.7%</td>
+        <td class="numeric">1.8%</td>
       </tr>
       <tr>
         <td><code>PHP/8.0.30</code></td>
-        <td class="numeric">1.29%</td>
-        <td class="numeric">1.40%</td>
+        <td class="numeric">1.3%</td>
+        <td class="numeric">1.4%</td>
       </tr>
       <tr>
         <td><code>PHP/8.1.28</code></td>
-        <td class="numeric">1.09%</td>
-        <td class="numeric">1.09%</td>
+        <td class="numeric">1.1%</td>
+        <td class="numeric">1.1%</td>
       </tr>
       <tr>
         <td><code>PHP/8.1.27</code></td>
-        <td class="numeric">1.01%</td>
-        <td class="numeric">1.15%</td>
+        <td class="numeric">1.0%</td>
+        <td class="numeric">1.1%</td>
       </tr>
       <tr>
         <td><code>PHP/7.1.33</code></td>
-        <td class="numeric">0.95%</td>
-        <td class="numeric">0.98%</td>
+        <td class="numeric">1.0%</td>
+        <td class="numeric">1.0%</td>
       </tr>
     </tbody>
   </table>
@@ -1725,14 +1725,14 @@ This may be used to find an admin-only section of the website, which would other
 The <a hreflang="en" href="https://iabtechlab.com/ads-txt/">`ads.txt`</a> file is a standardized format that allows websites to specify which companies are authorized to sell or resell their digital ad space within the complex landscape of programmatic advertising. Companies can be listed as either direct sellers or indirect resellers. Indirect resellers, however, can leave publishers - sites hosting the ads.txt file - more vulnerable to ad fraud because they offer less control over who purchases ad space. This vulnerability was exploited in 2019 by the so-called <a hreflang="en" href="https://www.fraud0.com/resources/ads-txt/">404bot scam</a>, resulting in millions of dollars in lost revenue.
 
 {{ figure_markup(
-  content="77.2%",
+  content="77%",
   caption="The percentage of desktop ad publishers that entirely avoid indirect resellers.",
   classes="big-number",
   sheets_gid="741686775",
   sql_file="../privacy/ads_accounts_distribution.sql",
 ) }}
 
-By refraining from listing indirect sellers, website owners help prevent unauthorized reselling and reduce ad fraud, thereby enhancing the security and integrity of their ad transactions. Among publishers that host an ads.txt file, 77.2% for desktop and 42.4% for mobile avoid resellers entirely, curbing potential fraud.
+By refraining from listing indirect sellers, website owners help prevent unauthorized reselling and reduce ad fraud, thereby enhancing the security and integrity of their ad transactions. Among publishers that host an ads.txt file, 77% for desktop and 42.4% for mobile avoid resellers entirely, curbing potential fraud.
 
 ## Conclusion
 
