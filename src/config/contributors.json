@@ -1524,14 +1524,17 @@
   "imeugenia": {
     "avatar_url": "17236402",
     "github": "imeugenia",
-    "name": "Eugenia Zigisova",
+    "name": "Jevgenija Zigisova",
     "teams": {
       "2022": [
+        "authors"
+      ],
+      "2024": [
         "authors"
       ]
     },
     "twitter": "jevgeniazi",
-    "website": "https://github.com/imeugenia/speaking/blob/main/README.md"
+    "linkedin": "imeugenia"
   },
   "fatmabadri": {
     "avatar_url": "10557131",
@@ -1861,6 +1864,18 @@
     "twitter": "ianlurie",
     "website": "https://www.ianlurie.com"
   },
+  "ines-akrap": {
+    "avatar_url": "5904064",
+    "github": "ines-akrap",
+    "name": "Ines Akrap",
+    "teams": {
+      "2024": [
+        "authors"
+      ]
+    },
+    "twitter": "InesAkrap",
+    "website": "https://inesakrap.com/"
+  },
   "RReverser": {
     "avatar_url": "557590",
     "github": "RReverser",
@@ -1876,18 +1891,6 @@
     },
     "twitter": "RReverser",
     "website": "https://rreverser.com/"
-  },
-  "ines-akrap": {
-    "avatar_url": "5904064",
-    "github": "ines-akrap",
-    "name": "Ines Akrap",
-    "teams": {
-      "2024": [
-        "authors"
-      ]
-    },
-    "twitter": "InesAkrap",
-    "website": "https://inesakrap.com/"
   },
   "iskander-sanchez-rola": {
     "avatar_url": "26458054",
@@ -1982,6 +1985,19 @@
     },
     "twitter": "JoubranJad",
     "website": "https://learnjavascript.online/"
+  },
+  "Cherry": {
+    "avatar_url": "856748",
+    "github": "Cherry",
+    "linkedin": "jamesross134",
+    "name": "James Ross",
+    "teams": {
+      "2024": [
+        "editors"
+      ]
+    },
+    "twitter": "CherryJimbo",
+    "website": "https://jross.me/"
   },
   "fellowhuman1101": {
     "avatar_url": "52051775",
@@ -2474,6 +2490,8 @@
   "kevinfarrugia": {
     "avatar_url": "8075326",
     "github": "kevinfarrugia",
+    "linkedin": "imkevdev",
+    "mastodon": "https://webperf.social/@kevinfarrugia",
     "name": "Kevin Farrugia",
     "teams": {
       "2021": [
@@ -2484,6 +2502,9 @@
       "2022": [
         "analysts",
         "reviewers"
+      ],
+      "2024": [
+        "analysts"
       ]
     },
     "twitter": "imkevdev",
@@ -3705,6 +3726,9 @@
         "editors",
         "leads",
         "authors"
+      ],
+      "2024": [
+        "reviewers"
       ]
     },
     "twitter": "rick_viscomi",
@@ -4054,6 +4078,9 @@
       "2022": [
         "analysts",
         "leads"
+      ],
+      "2024": [
+        "reviewers"
       ]
     },
     "website": "https://sia.codes"
