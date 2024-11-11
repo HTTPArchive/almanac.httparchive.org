@@ -6,6 +6,7 @@
 {% block dataset %}juillet 2019{% endblock %}
 
 {% block foreword %}
+<div>
   <p>
     Le Web ouvert est un réseau de technologies étonnamment complexe et évolutif. Des industries et des carrières entières sont bâties sur le Web et dépendent de son écosystème dynamique pour réussir. Aussi crucial que soit le Web, il a été étonnamment difficile de comprendre comment il fonctionne. Depuis 2010, la mission du projet HTTP Archive est de suivre comment le web est construit, et un travail incroyable a été accompli dans ce domaine. Cependant, une lacune s’est révélée particulièrement difficile à combler : donner un sens aux données que le projet HTTP Archive a collectées et permettre à la communauté de comprendre facilement les performances du Web. C’est là qu’intervient le Web Almanac.
   </p>
@@ -23,4 +24,5 @@
   </p>
 
   <p>— <em><a href="{{ url_for('contributors', year=year, lang=lang, _anchor='rviscomi') }}">Rick Viscomi</a>, créateur du Web Almanac</em></p>
+</div>
 {% endblock %}
