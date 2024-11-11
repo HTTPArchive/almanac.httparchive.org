@@ -317,6 +317,7 @@ def test_accentless_sort():
         "developers": "Développement",
         "editors": "Édition",
         "leads": "Gestion de projet",
+        "organizing-committee": "Comité d'organisation",
         "reviewers": "Relecture",
         "translators": "Traduction",
     }
@@ -326,6 +327,7 @@ def test_accentless_sort():
         ("developers", "Développement"),
         ("editors", "Édition"),
         ("leads", "Gestion de projet"),
+        ("organizing-committee": "Comité d'organisation"),
         ("authors", "Rédaction"),
         ("brainstormers", "Réflexion"),
         ("reviewers", "Relecture"),

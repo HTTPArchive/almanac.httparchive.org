@@ -660,7 +660,7 @@
       "2024": [
         "developers",
         "editors",
-        "leads"
+        "organizing-committee"
       ]
     },
     "twitter": "tunetheweb",
@@ -827,7 +827,8 @@
       ],
       "2024": [
         "editors",
-        "leads"
+        "leads",
+        "organizing-committee"
       ]
     },
     "twitter": "httpsecheaders"
@@ -995,7 +996,7 @@
     "name": "Chris Beeti",
     "teams": {
       "2024": [
-        "leads"
+        "organizing-committee"
       ]
     }
   },
@@ -1706,7 +1707,7 @@
     "name": "Gunes Acar",
     "teams": {
       "2024": [
-        "leads"
+        "organizing-committee"
       ]
     },
     "website": "https://gunesacar.net/"
@@ -1772,7 +1773,7 @@
         "authors"
       ],
       "2024": [
-        "leads"
+        "organizing-committee"
       ]
     },
     "twitter": "HenriHelvetica"
@@ -3054,7 +3055,7 @@
     "name": "Miriam Naß",
     "teams": {
       "2024": [
-        "leads"
+        "organizing-committee"
       ]
     }
   },
@@ -3309,6 +3310,7 @@
       "2024": [
         "analysts",
         "leads",
+        "organizing-committee",
         "reviewers"
       ]
     },
@@ -3895,7 +3897,7 @@
       ],
       "2024": [
         "developers",
-        "leads"
+        "organizing-committee"
       ]
     },
     "twitter": "Saptak013",
@@ -4314,7 +4316,7 @@
     "name": "Tobias Urban",
     "teams": {
       "2024": [
-        "leads"
+        "organizing-committee"
       ]
     }
   },
@@ -4347,7 +4349,7 @@
         "authors"
       ],
       "2024": [
-        "leads"
+        "organizing-committee"
       ]
     },
     "twitter": "tomvangoethem",
