@@ -317,11 +317,13 @@ def test_accentless_sort():
         "developers": "Développement",
         "editors": "Édition",
         "leads": "Gestion de projet",
+        "committee": "Comité d'organisation",
         "reviewers": "Relecture",
         "translators": "Traduction",
     }
     sorted_french_teams_list = [
         ("analysts", "Analyse"),
+        ("committee", "Comité d'organisation"),
         ("designers", "Design"),
         ("developers", "Développement"),
         ("editors", "Édition"),
