@@ -17,6 +17,7 @@ featured_stat_2: +27%
 featured_stat_label_2: Increase in the adoption of the Content-Security-Policy header
 featured_stat_3: 23%
 featured_stat_label_3: Percentage of desktop sites using Subresource Integrity
+doi: 10.5281/zenodo.14065805
 ---
 
 ## Introduction

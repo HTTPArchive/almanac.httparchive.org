@@ -21,6 +21,7 @@ featured_stat_2: 1.36
 featured_stat_label_2: GHG emissions (g eqCO2) for the 90th percentile web pages on mobile
 featured_stat_3: 25%
 featured_stat_label_3: Mobile websites not using cache at all
+doi: 10.5281/zenodo.14065377
 ---
 
 ## Introduction

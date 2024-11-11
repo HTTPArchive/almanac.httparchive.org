@@ -17,6 +17,7 @@ featured_stat_2: 55%
 featured_stat_label_2: Fonts supporting OpenType features.
 featured_stat_3: 34%
 featured_stat_label_3: Percentage of pages using variable fonts.
+doi: 10.5281/zenodo.14065682
 ---
 
 ## Introduction

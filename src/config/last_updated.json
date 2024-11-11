@@ -754,22 +754,22 @@
   "en/2024/chapters/accessibility.html": {
     "date_published": "2024-11-11T00:00:00.000Z",
     "date_modified": "2024-11-11T00:00:00.000Z",
-    "hash": "92834a33d14c02227127a71ef2444a67"
+    "hash": "8ad966915429881813271d6c09e2342b"
   },
   "en/2024/chapters/cdn.html": {
     "date_published": "2024-11-11T00:00:00.000Z",
     "date_modified": "2024-11-11T00:00:00.000Z",
-    "hash": "fd8a3c9227f306960b9bcbdc30fa4f8c"
+    "hash": "f2fe245243607ac9db40d76e42f3d498"
   },
   "en/2024/chapters/cms.html": {
     "date_published": "2024-11-11T00:00:00.000Z",
     "date_modified": "2024-11-11T00:00:00.000Z",
-    "hash": "c1822c857a7d89ff99ce9acbe4f94feb"
+    "hash": "43e576c5549a25c129f969eefeb3a846"
   },
   "en/2024/chapters/cookies.html": {
     "date_published": "2024-11-11T00:00:00.000Z",
     "date_modified": "2024-11-11T00:00:00.000Z",
-    "hash": "61035fdae8a7d0634b16bdc99d9c6699"
+    "hash": "871a62b97261e05d8e6b9276ea799f48"
   },
   "en/2024/chapters/css.html": {
     "date_published": "2024-11-11T00:00:00.000Z",
@@ -779,22 +779,22 @@
   "en/2024/chapters/ecommerce.html": {
     "date_published": "2024-11-11T00:00:00.000Z",
     "date_modified": "2024-11-11T00:00:00.000Z",
-    "hash": "7f127258daa7bfd86934e1620200cef9"
+    "hash": "d5915e740ecb59a322dcd6fdc6d2fcbc"
   },
   "en/2024/chapters/fonts.html": {
     "date_published": "2024-11-11T00:00:00.000Z",
     "date_modified": "2024-11-11T00:00:00.000Z",
-    "hash": "7e591ad54d7a887274c701b06bdfaca5"
+    "hash": "2e86d7ccf6eeda856b7f6e559978c458"
   },
   "en/2024/chapters/http.html": {
     "date_published": "2024-11-11T00:00:00.000Z",
     "date_modified": "2024-11-11T00:00:00.000Z",
-    "hash": "ab4ceac43ef78578c68572db840aa0ad"
+    "hash": "76f8a3d67872080da26d78506013d98a"
   },
   "en/2024/chapters/jamstack.html": {
     "date_published": "2024-11-11T00:00:00.000Z",
     "date_modified": "2024-11-11T00:00:00.000Z",
-    "hash": "4ef06e2ee87d70cdb4c5ce4ec90882d3"
+    "hash": "53d8e184605ad3267eb8ee534de436f8"
   },
   "en/2024/chapters/javascript.html": {
     "date_published": "2024-11-11T00:00:00.000Z",
@@ -804,7 +804,7 @@
   "en/2024/chapters/markup.html": {
     "date_published": "2024-11-11T00:00:00.000Z",
     "date_modified": "2024-11-11T00:00:00.000Z",
-    "hash": "0e69e8e0e36e8962d527fcc599fd851f"
+    "hash": "3da3e8a701e6efb45dde7f3f22587d5f"
   },
   "en/2024/chapters/media.html": {
     "date_published": "2024-11-11T00:00:00.000Z",
@@ -824,7 +824,7 @@
   "en/2024/chapters/performance.html": {
     "date_published": "2024-11-11T00:00:00.000Z",
     "date_modified": "2024-11-11T00:00:00.000Z",
-    "hash": "29cd37e317c8e9ff340313a56b2d5c8c"
+    "hash": "efe893e4771f62d519e05f77742f726d"
   },
   "en/2024/chapters/privacy.html": {
     "date_published": "2024-11-11T00:00:00.000Z",
@@ -834,7 +834,7 @@
   "en/2024/chapters/security.html": {
     "date_published": "2024-11-11T00:00:00.000Z",
     "date_modified": "2024-11-11T00:00:00.000Z",
-    "hash": "4766b45c98de8476e1c33cf8f163086c"
+    "hash": "5c3a5e8c9eefc2f2e0ad23f1256f0e6c"
   },
   "en/2024/chapters/seo.html": {
     "date_published": "2024-11-11T00:00:00.000Z",
@@ -844,12 +844,12 @@
   "en/2024/chapters/structured-data.html": {
     "date_published": "2024-11-11T00:00:00.000Z",
     "date_modified": "2024-11-11T00:00:00.000Z",
-    "hash": "d84ce31c9e1bfe7d7b0407b3afa7772c"
+    "hash": "57fde492aa546c2c6e203018c76a0054"
   },
   "en/2024/chapters/sustainability.html": {
     "date_published": "2024-11-11T00:00:00.000Z",
     "date_modified": "2024-11-11T00:00:00.000Z",
-    "hash": "e6c7e0c2cb6c71a8b045af5d20af0604"
+    "hash": "7325edc6c9bef2da3568cbcbd1fb2584"
   },
   "en/2024/chapters/third-parties.html": {
     "date_published": "2024-11-11T00:00:00.000Z",
@@ -874,7 +874,7 @@
   "en/2024/methodology.html": {
     "date_published": "2024-11-11T00:00:00.000Z",
     "date_modified": "2024-11-11T00:00:00.000Z",
-    "hash": "a8d969a16757fcc95c63ef808d65eb79"
+    "hash": "80e8c8d8c0ba9586e37a8edf902360f4"
   },
   "en/2024/table_of_contents.html": {
     "date_published": "2024-11-11T00:00:00.000Z",
