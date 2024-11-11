@@ -181,8 +181,8 @@ While it is still challenging to assess the impact of structured data on Generat
   image="structured-data-perplexity.png",
   caption="Search results in Perplexity, showcasing a map view with listings of local restaurants.",
   description="A user interface from Perplexity displaying local restaurant search results, including star ratings, addresses, and a map.",
-  width=1600,
-  height=1033
+  width=400,
+  height=258
   )
 }}
 
@@ -190,8 +190,8 @@ While it is still challenging to assess the impact of structured data on Generat
   image="structured-data-you-com.png",
   caption="Search results in You.com with a map and restaurant listings.",
   description="The You.com interface showing restaurant search results in Mariapfarr, including ratings and map locations.",
-  width=1600,
-  height=816
+  width=400,
+  height=204
   )
 }}
 
@@ -201,8 +201,8 @@ This is way more consistent when interacting with Bing Copilot or Gemini by Goog
   image="structured-data-google-gemini.png",
   caption="Google Gemini",
   description="Screenshot of Google Gemini providing restaurant recommendations with images, ratings, and map integration.",
-  width=1544,
-  height=1340
+  width=386,
+  height=335
   )
 }}
 
@@ -210,8 +210,8 @@ This is way more consistent when interacting with Bing Copilot or Gemini by Goog
   image="structured-data-via-culinaria-bing.png",
   caption="Bing Copilot",
   description="Screenshot of Bing Copilot showing local restaurant information with map integration, ratings, and TripAdvisor reviews.",
-  width=1600,
-  height=1182
+  width=400,
+  height=296
   )
 }}
 
@@ -251,12 +251,14 @@ The key to improved visibility lies not just in publishing structured data using
 {{ figure_markup(
   image="structured-data-image-carousel.png",
   alt="Structured data Carousel on Google",
-  caption="An example of the new beta carousel rich result. This carousel format enhances the display of structured data for listicle pages, offering users quick access to multiple options, such as local businesses or products, directly on the SERP.",
+  caption="An example of the new beta carousel rich result.",
   description="The image shows a structured data carousel on Google.",
   width=1600,
   height=604
   )
 }}
+
+This carousel format enhances the display of structured data for listicle pages, offering users quick access to multiple options, such as local businesses or products, directly on the SERP.
 
 Another notable example, while not directly influenced by structured data, is the new **Google Merchant Knowledge Panel**, which extends the functionality of the **Product Knowledge Graph Panel**. Structured data acts as a signal that contributes to entity disambiguation, helping search engines accurately identify businesses and their attributes, which can lead to the appearance of these panels. This feature helps businesses, both small and large, build trust with users by displaying key information about the merchant directly on Google's search results page.
 
