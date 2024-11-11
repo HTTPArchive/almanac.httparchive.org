@@ -68,7 +68,7 @@ Over the years, multiple new versions of TLS have been created. In order to rema
   )
 }}
 
-We find that TLS1.3 is supported and used by 73.03% of web pages. The use of TLS1.3 overall has grown, even though QUIC has gained significant use compared to 2022, moving from 0% to almost 10% of mobile pages. The use of TLS1.2 continues to decrease as expected. Compared to the last Almanac it decreased by more than 12% for mobile pages, while TLS1.3 has increased by a bit over 2%. It is expected that the adoption of QUIC will continue to rise, as the use of TLS1.2 will continue to decrease.
+We find that TLS1.3 is supported and used by 73% of web pages. The use of TLS1.3 overall has grown, even though QUIC has gained significant use compared to 2022, moving from 0% to almost 10% of mobile pages. The use of TLS1.2 continues to decrease as expected. Compared to the last Almanac it decreased by more than 12% for mobile pages, while TLS1.3 has increased by a bit over 2%. It is expected that the adoption of QUIC will continue to rise, as the use of TLS1.2 will continue to decrease.
 
 We assume most websites don't move from TLS1.2 directly to QUIC, but rather that most sites using QUIC migrated from TLS1.3 and others moved from TLS1.2 to TLS1.3, thereby giving the appearance of limited growth of TLS1.3.
 
@@ -899,7 +899,7 @@ The `sandbox` attribute was observed in 28.4% and 27.5% of `<iframe>` elements f
 {{ figure_markup(
   image="iframe-sandbox-directives.png",
   caption="Prevalence of sandbox directives on iframes.",
-  description="Bar chart showing prevalence of sandbox directives in iframes. `allow-scripts` was found in 98.32% of iframes with sandbox attribute for desktop and 98.60% for mobile, `allow-same-origin` in 90.93% for desktop and 91.21% for mobile, `allow-forms` in 81.85% for desktop and 79.53% for mobile, `allow-popups` in 74.69% for desktop and 73.15% for mobile, `allow-popups-to-escape-sandbox` in 73.61% for desktop and 71.78% for mobile, `allow-top-navigation-by-user-activation` in 45.81% for desktop and 44.66% for mobile, `allow-storage-access-by-user-activation` in 26.88% for desktop and 25.80% for mobile, and `allow-top-navigation` in 26.72% for desktop and 25,62% for mobile.",
+  description="Bar chart showing prevalence of sandbox directives in iframes. `allow-scripts` was found in 98% of iframes with sandbox attribute for desktop and 99% for mobile, `allow-same-origin` in 91% for desktop and 91% for mobile, `allow-forms` in 82% for desktop and 80% for mobile, `allow-popups` in 75% for desktop and 73% for mobile, `allow-popups-to-escape-sandbox` in 74% for desktop and 72% for mobile, `allow-top-navigation-by-user-activation` in 46% for desktop and 45% for mobile, `allow-storage-access-by-user-activation` in 27% for desktop and 26% for mobile, and `allow-top-navigation` in 27% for desktop and 25,62% for mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxTTMlFFSMT3mZgw2awA0wl3F68gzU1OLuyMaZXscSFq-Pa5ev_qTXx8ZaGEOl_ox_aHsraAGMXZ9Y/pubchart?oid=22462766&format=interactive",
   sheets_gid="873346022",
   sql_file="iframe_sandbox_directives.sql"
@@ -919,7 +919,7 @@ Most security policies are configured through response headers, which instruct t
 {{ figure_markup(
   image="security-headers-desktop.png",
   caption="Adoption of security headers for site requests in desktop pages.",
-  description="Column chart showing the prevalence for security headers in requests for the years 2022, 2023 and 2024. `X-Content-Type-Options` was found 43.50%, 45.75% and 48.43% respectively, `X-Frame-Options was` found in 35.3%, 33.80% and 36.60% respectively, `Strict-Transport-Security` was found in 28.22%, 30.76% and 33.55% respectively, `X-XSS-Protection` was found in 22.61%, 22.78% and 23.48% respectively, `Content-Security-Policy` was found in 14.30%, 16.00% and 18.50% respectively, `Referrer-Policy` was found in 14.46%, 15.09% and 16.98% respectively, `Report-To` was found in 11.33%, 13.11% and 14.17% respectively, `Permissions-Policy` was found in 2.82%, 2.45% and 2.82% respectively, `Content-Security-Policy-Report-Only` was found in 2.13%, 1.58% and 1.83% respectively, `Cross-Origin-Resource-Policy` was found in 1.03%, 1.31% and 1.52% respectively, `Cross-Origin-Opener-Policy` was found in 0.23%, 0.68% and 1.07% respectively, `Expect-CT` was found in 17.33%, 0.65% and 0.71%, `Feature-Policy` was found in 0.77%, 0.65% and 0.65% respectively, `Cross-Origin-Embedder-Policy` was found in 0.04%, 0.22% and 0.35% respectively, `Clear-Site-Data` was found in 0.01%, 0.01% and 0.02% respectively.",
+  description="Column chart showing the prevalence for security headers in requests for the years 2022, 2023 and 2024. `X-Content-Type-Options` was found 43%, 46% and 48% respectively, `X-Frame-Options was` found in 35.3%, 34% and 37% respectively, `Strict-Transport-Security` was found in 28%, 31% and 34% respectively, `X-XSS-Protection` was found in 23%, 23% and 23% respectively, `Content-Security-Policy` was found in 14%, 16% and 19% respectively, `Referrer-Policy` was found in 14%, 15% and 17% respectively, `Report-To` was found in 11%, 13% and 14% respectively, `Permissions-Policy` was found in 2.82%, 2.45% and 2.82% respectively, `Content-Security-Policy-Report-Only` was found in 2.13%, 1.58% and 1.83% respectively, `Cross-Origin-Resource-Policy` was found in 1.03%, 1.31% and 1.52% respectively, `Cross-Origin-Opener-Policy` was found in 0.23%, 0.68% and 1.07% respectively, `Expect-CT` was found in 17%, 0.65% and 0.71%, `Feature-Policy` was found in 0.77%, 0.65% and 0.65% respectively, `Cross-Origin-Embedder-Policy` was found in 0.04%, 0.22% and 0.35% respectively, `Clear-Site-Data` was found in 0.01%, 0.01% and 0.02% respectively.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxTTMlFFSMT3mZgw2awA0wl3F68gzU1OLuyMaZXscSFq-Pa5ev_qTXx8ZaGEOl_ox_aHsraAGMXZ9Y/pubchart?oid=1591831239&format=interactive",
   sheets_gid="238539331",
   sql_file="security_headers_prevalence.sql",
@@ -951,13 +951,13 @@ Another measure against clickjacking is the [`X-Frame-Options` (XFO)](https://de
     <tbody>
       <tr>
         <td><code>SAMEORIGIN</code></td>
-        <td class="numeric">73.12%</td>
-        <td class="numeric">72.62%</td>
+        <td class="numeric">73%</td>
+        <td class="numeric">73%</td>
       </tr>
       <tr>
         <td><code>DENY</code></td>
-        <td class="numeric">23.42%</td>
-        <td class="numeric">23.82%</td>
+        <td class="numeric">23%</td>
+        <td class="numeric">24%</td>
       </tr>
     </tbody>
   </table>
@@ -1000,18 +1000,18 @@ The [Cross Origin Embedder Policy](https://developer.mozilla.org/docs/Web/HTTP/H
     <tbody>
       <tr>
         <td><code>unsafe-none</code></td>
-        <td class="numeric">85.53%</td>
-        <td class="numeric">88.30%</td>
+        <td class="numeric">86%</td>
+        <td class="numeric">88%</td>
       </tr>
       <tr>
         <td><code>require-corp</code></td>
-        <td class="numeric">6.54%</td>
-        <td class="numeric">4.78%</td>
+        <td class="numeric">7%</td>
+        <td class="numeric">5%</td>
       </tr>
       <tr>
         <td><code>credentialless</code></td>
-        <td class="numeric">2.06%</td>
-        <td class="numeric">1.56%</td>
+        <td class="numeric">2%</td>
+        <td class="numeric">2%</td>
       </tr>
     </tbody>
   </table>
@@ -1036,18 +1036,18 @@ Conversely, websites that serve resources can use the [`Cross-Origin-Resource-Po
     <tbody>
       <tr>
         <td><code>cross-origin</code></td>
-        <td class="numeric">91.12%</td>
-        <td class="numeric">91.43%</td>
+        <td class="numeric">91%</td>
+        <td class="numeric">91%</td>
       </tr>
       <tr>
         <td><code>same-origin</code></td>
-        <td class="numeric">4.99%</td>
-        <td class="numeric">4.57%</td>
+        <td class="numeric">5%</td>
+        <td class="numeric">5%</td>
       </tr>
       <tr>
         <td><code>same-site</code></td>
-        <td class="numeric">3.67%</td>
-        <td class="numeric">3.81%</td>
+        <td class="numeric">4%</td>
+        <td class="numeric">4%</td>
       </tr>
     </tbody>
   </table>
@@ -1426,7 +1426,7 @@ Large websites often have a high number of visitors and registered users, of whi
 {{ figure_markup(
   image="security-headeers-by-rank.png",
   caption="Security header adoption by website rank according to the April 2024 CrUX.",
-  description="Bar chart showing in top 1,000 sites, 64.33% have XFO, 60.31% have HSTS and 56.29% have X-Content-Type-Options headers. In top 10,000, 53.65% have XFO, 46.15% have HSTS and 53.67% have X-Content-Type-Options headers. In top 100,000, 50.64% have XFO, 41.73% have HSTS and 50.14% have X-Content-Type-Options headers. In top 1,000,000, 45.29% have XFO, 36.42% have HSTS and 47.30% have X-Content-Type-Options headers. Among all sites, 29.20% have XFO, 30.58% have HSTS and 42.69% have X-Content-Type-Options.",
+  description="Bar chart showing in top 1,000 sites, 64% have XFO, 60% have HSTS and 56% have X-Content-Type-Options headers. In top 10,000, 54% have XFO, 46% have HSTS and 54% have X-Content-Type-Options headers. In top 100,000, 51% have XFO, 42% have HSTS and 50% have X-Content-Type-Options headers. In top 1,000,000, 45% have XFO, 36% have HSTS and 47% have X-Content-Type-Options headers. Among all sites, 29% have XFO, 31% have HSTS and 43% have X-Content-Type-Options.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxTTMlFFSMT3mZgw2awA0wl3F68gzU1OLuyMaZXscSFq-Pa5ev_qTXx8ZaGEOl_ox_aHsraAGMXZ9Y/pubchart?oid=256464807&format=interactive",
   sheets_gid="434545590",
   sql_file="header_use_by_rank.sql",
