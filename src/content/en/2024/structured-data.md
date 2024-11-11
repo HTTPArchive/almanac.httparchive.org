@@ -346,9 +346,7 @@ The data reveals notable trends in both syntax and vocabulary usage:
   description="Bar chart showing structured data usage across desktop pages in 2022 and 2024. RDFa was used on approximately 60% of desktop pages in 2022 and 62% in 2024, Open Graph on 57% in 2022 and 59% in 2024, Twitter on 37% in 2022 and 40% in 2024, JSON-LD on 34% in 2022 and 37% in 2024, Microdata remained steady at 25%, Facebook dropped slightly from 8% to 7%, while Dublin Core, Microformats, and Microformats2 showed minimal usage, all under 1% across both years.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=1466312390&format=interactive",
   sheets_gid="560419533",
-  sql_file="present_types.sql",
-  width=600,
-  height=441
+  sql_file="present_types.sql"
   )
 }}
 
@@ -444,7 +442,7 @@ Dublin Core remains a stable but less frequently used format for metadata, espec
   sheets_gid="560419533",
   sql_file="present_types.sql",
   width=600,
-  height=493
+  height=555
   )
 }}
 
@@ -466,9 +464,7 @@ Open Graph continues to be one of the most widely implemented structured data fo
   description="Bar chart showing Open Graph usage on mobile pages between 2022 and 2024. The usage of og:image remained the highest. Og:image:width and og:image:height saw significant increases, both around 23.8%. Og:image:secure_url also increased to 9.41%, while og:image:type rose to 11.26%. Og:image:alt, important for accessibility, grew to 5.78% in 2024.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=513866594&format=interactive",
   sheets_gid="560419533",
-  sql_file="present_types.sql",
-  width=600,
-  height=493
+  sql_file="present_types.sql"
   )
 }}
 
@@ -480,9 +476,7 @@ A key development in 2024 is Google's update to its search documentation, now in
   description="Bar chart showing usage of different Open Graph properties on desktop pages in 2022 and 2024. In 2024, og:image was used on 48% of pages, og:image:width and og:image:height on 23.86%, og:image:secure_url on 9.56%, og:image:type on 11.17%, and og:image:alt on 5.62%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=759266480&format=interactive",
   sheets_gid="560419533",
-  sql_file="present_types.sql",
-  width=600,
-  height=441
+  sql_file="present_types.sql"
 )}}
 
 This dual role of Open Graph in social sharing and search engine optimization makes it a critical tool for webmasters looking to improve both user engagement on social platforms and visibility in search results.
@@ -493,9 +487,7 @@ This dual role of Open Graph in social sharing and search engine optimization ma
   description="Bar chart showing Open Graph usage by device (desktop and mobile) in 2024. og:image is used on nearly 50% of pages, og:image:width and og:image:height on 23.81% and 23.76% respectively, og:image:secure_url on 9.41%, og:image:type on 11.26%, and og:image:alt on 5.78%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=876659711&format=interactive",
   sheets_gid="560419533",
-  sql_file="present_types.sql",
-  width=600,
-  height=441
+  sql_file="present_types.sql"
 )}}
 
 Security and type-related properties have also gained traction. The `og:image:secure_url` property, which ensures image URLs are served over secure HTTPS connections, has increased to 9.41% on mobile and 9.56% on desktop. Similarly, `og:image:type`, which specifies the MIME type of the image, has grown to 11.26% on mobile and 11.17% on desktop. These properties help ensure consistent and secure media delivery across devices and platforms.
@@ -506,13 +498,13 @@ Despite the platform's transition to new ownership and its rebranding as X, Twit
 
 {{ figure_markup(
   image="twitter-meta-tag-usage-by-year.png",
-  caption="Twitter meta tag usage by year",
+  caption="Twitter meta tag usage by year (mobile)",
   description="Bar chart showing Twitter meta tag usage on mobile pages in 2022 and 2024. In 2024, the twitter:card tag is used on 44.15% of pages, twitter:title on 26.40%, twitter:description on 24.53%, twitter:image on 18.63%, and other tags such as twitter:site and twitter:label1 show usage rates between 9.67% and 13.36%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=455664170&format=interactive",
   sheets_gid="560419533",
   sql_file="present_types.sql",
   width=600,
-  height=441
+  height=504
 )}}
 
 Core descriptive tags like `twitter:title` and `twitter:description` have also seen widespread adoption, appearing on approximately 26% of mobile pages and 24% of desktop pages. These tags are essential for content previews, enhancing how web pages appear when shared on social media, and ensuring key information is highlighted.
@@ -525,7 +517,7 @@ Core descriptive tags like `twitter:title` and `twitter:description` have also s
   sheets_gid="560419533",
   sql_file="present_types.sql",
   width=600,
-  height=441
+  height=504
 )}}
 
 {{ figure_markup(
@@ -536,7 +528,7 @@ Core descriptive tags like `twitter:title` and `twitter:description` have also s
   sheets_gid="560419533",
   sql_file="present_types.sql",
   width=600,
-  height=441
+  height=546
 )}}
 
 The platform's enhanced metadata properties, such as `twitter:data1` and `twitter:label1`, which support rich card features, have seen coordinated growth, now appearing on 13.36% of mobile pages. This indicates the increasing use of Twitter Cards for more detailed content representations, such as for product listings or event details.
@@ -553,9 +545,7 @@ Facebook-specific meta tags have seen a marked decline in usage between 2022 and
   description="Bar chart showing Facebook meta tag usage on mobile from 2022 to 2024. In 2024, fb:app_id appears on 4.9% of pages, fb:admins on 2.4%, and fb:pages on 0.6%, with minimal or zero usage for other tags.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=778075778&format=interactive",
   sheets_gid="560419533",
-  sql_file="present_types.sql",
-  width=600,
-  height=441
+  sql_file="present_types.sql"
 )}}
 
 This decline underscores a strategic move by developers and webmasters to adopt Open Graph, which originated with Facebook but has since become the standard for social media sharing across platforms. The Open Graph format offers greater flexibility and interoperability, making it the go-to choice for content optimization on Facebook as well as other social networks.
@@ -566,9 +556,7 @@ This decline underscores a strategic move by developers and webmasters to adopt 
   description="Bar chart showing Facebook meta tag usage on desktop from 2022 to 2024. In 2024, fb:app_id appears on the highest percentage of pages at 4.9%, fb:admins on 2.4%, and fb:pages on 0.6%, with minimal or zero usage for other tags.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=977720399&format=interactive",
   sheets_gid="560419533",
-  sql_file="present_types.sql",
-  width=600,
-  height=441
+  sql_file="present_types.sql"
 )}}
 
 Despite the decreasing adoption of Facebook-specific tags, Facebook itself remains a key player in the social media landscape, with Open Graph handling most of its metadata needs. This trend reflects the consolidation of social sharing standards, where platform-agnostic tags provide greater reach and functionality.
@@ -579,9 +567,7 @@ Despite the decreasing adoption of Facebook-specific tags, Facebook itself remai
   description="Bar chart showing Facebook meta tag usage by device for desktop and mobile in 2024. The fb:app_id tag appears on the highest percentage of pages, with mobile usage at 4.9% and desktop at a similar level. The fb:admins tag is used on 2.4% of mobile pages and 0.6% on desktop, while other tags show minimal or zero usage.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=343986403&format=interactive",
   sheets_gid="560419533",
-  sql_file="present_types.sql",
-  width=600,
-  height=441
+  sql_file="present_types.sql"
 )}}
 
 ## Microformats and Microformats2
@@ -773,8 +759,8 @@ When properly implemented, sameAs serves as a powerful tool for entity disambigu
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=315508282&format=interactive",
   sheets_gid="560419533",
   sql_file="present_types.sql",
-  height=600,
-  width=561
+  width=600,
+  height=561
 )}}
 
 For personal entities (executives, authors, experts), sameAs similarly helps establish authority and credibility by connecting professional profiles (LinkedIn at 1.11%) with other authentic entity markers. This becomes particularly valuable for E-E-A-T signals and knowledge panel generation.
@@ -786,8 +772,8 @@ For personal entities (executives, authors, experts), sameAs similarly helps est
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=785630631&format=interactive",
   sheets_gid="560419533",
   sql_file="present_types.sql",
-  height=600,
-  width=555
+  width=600,
+  height=555
 )}}
 
 This parity between mobile and desktop implementations represents a significant advancement in structured data deployment. It suggests that organizations are increasingly using consistent templating systems or automated solutions to manage their structured data, rather than maintaining separate implementations for different devices.
