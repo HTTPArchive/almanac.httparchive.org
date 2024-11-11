@@ -427,6 +427,9 @@
       ],
       "2022": [
         "authors"
+      ],
+      "2024": [
+        "authors"
       ]
     },
     "twitter": "cyberandy",
@@ -2012,6 +2015,17 @@
     "twitter": "JoubranJad",
     "website": "https://learnjavascript.online/"
   },
+  "capjamesg": {
+    "avatar_url": "37276661",
+    "github": "capjamesg",
+    "name": "James Gallagher",
+    "website": "https://jamesg.blog/",
+    "teams": {
+      "2024": [
+        "editors"
+      ]
+    }
+  },
   "Cherry": {
     "avatar_url": "856748",
     "github": "Cherry",
@@ -2086,6 +2100,9 @@
     "teams": {
       "2021": [
         "editors"
+      ],
+      "2024": [
+        "reviewers"
       ]
     },
     "twitter": "JarnoVanDriel"
@@ -3904,6 +3921,17 @@
       ]
     },
     "twitter": "rvtheverett"
+  },
+  "rrlevering": {
+    "avatar_url": "449051",
+    "github": "rrlevering",
+    "name": "Ryan Levering",
+    "teams": {
+      "2024": [
+        "reviewers"
+      ]
+    },
+    "twitter": "rrlevering"
   },
   "ksakae1216": {
     "avatar_url": "1982567",
