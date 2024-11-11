@@ -768,8 +768,8 @@ footer .container {
     'home-logo nav-items nav-items nav-items'
     'hr hr hr hr'
     'copyright copyright ha-logo social-media';
-  grid-template-columns: 280px 1fr 1fr 120px 0 0;
-  grid-template-columns: 17.5rem 1fr 1fr 7.5rem 0 0;
+  grid-template-columns: 280px 1fr 1fr 150px 0 0;
+  grid-template-columns: 17.5rem 1fr 1fr 9.375rem 0 0;
 }
 
 footer .home-logo {
@@ -854,8 +854,12 @@ p.copyright a {
   padding: 0 20px;
 }
 
-.social-media li:first-child a {
+.social-media li a {
   margin-right: 30px;
+}
+
+.social-media li:last-child a {
+  margin-right: 0;
 }
 
 .social-media li {
@@ -915,7 +919,7 @@ p.copyright a {
       'nav-items nav-items nav-items nav-items'
       'hr-last hr-last hr-last hr-last'
       'copyright copyright ha-logo social-media';
-    grid-template-columns: 3fr 1fr 1fr 120px 0 0;
+    grid-template-columns: 3fr 1fr 1fr 150px 0 0;
     grid-template-rows: 60px auto auto;
   }
 
