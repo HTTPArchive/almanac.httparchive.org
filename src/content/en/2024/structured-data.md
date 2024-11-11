@@ -49,7 +49,7 @@ As the structured data ecosystem matures, we're witnessing a diversification in 
 1. **Schema.org as Markup**: The traditional method of embedding structured data directly into webpages continues to be a cornerstone of modern SEO practices.
 
 2. **Schema.org as a Data Standard**:
-   Beyond its use in HTML, Schema.org is increasingly employed to standardize data shared via APIs or feeds. For example, Google’s [Data Commons](https://datacommons.org/) initiative uses an extended Schema.org vocabulary to integrate datasets from hundreds of organizations globally. This standardization supports tasks like dataset discovery and relationship mapping, crucial for understanding provenance, subsets, and derivations of datasets in AI-driven environments ([source](https://research.google/blog/relationships-are-complicated-an-analysis-of-relationships-between-datasets-on-the-web/)).
+  Beyond its use in HTML, Schema.org is increasingly employed to standardize data shared via APIs or feeds. For example, Google’s [Data Commons](https://datacommons.org/) initiative uses an extended Schema.org vocabulary to integrate datasets from hundreds of organizations globally. This standardization supports tasks like dataset discovery and relationship mapping, crucial for understanding provenance, subsets, and derivations of datasets in AI-driven environments ([source](https://research.google/blog/relationships-are-complicated-an-analysis-of-relationships-between-datasets-on-the-web/)).
 
 3. **Semantic Data in Social Web Applications**:
    - Platforms like **Mastodon** leverage structured data for identity verification. The `rel=me` attribute allows users to verify accounts across federated networks ([source](https://docs.joinmastodon.org/user/profile/#verification)).
@@ -174,8 +174,8 @@ While it is still challenging to assess the impact of structured data on Generat
 
 {{ figure_markup(
   image="structured-data-perplexity.png",
-  caption="Perplexity",
-  description="TODO.",
+  caption="Search results in Perplexity, showcasing a map view with listings of local restaurants.",
+  description="A user interface from Perplexity displaying local restaurant search results, including star ratings, addresses, and a map.",
   width=1600,
   height=1033
   )
@@ -183,8 +183,8 @@ While it is still challenging to assess the impact of structured data on Generat
 
 {{ figure_markup(
   image="structured-data-you-com.png",
-  caption="Bing Copilot",
-  description="TODO.",
+  caption="Search results in You.com with a map and restaurant listings.",
+  description="The You.com interface showing restaurant search results in Mariapfarr, including ratings and map locations.",
   width=1600,
   height=816
   )
@@ -195,7 +195,7 @@ This is way more consistent when interacting with Bing Copilot or Gemini by Goog
 {{ figure_markup(
   image="structured-data-google-gemini.png",
   caption="Google Gemini",
-  description="TODO.",
+  description="Screenshot of Google Gemini providing restaurant recommendations with images, ratings, and map integration.",
   width=1544,
   height=1340
   )
@@ -204,7 +204,7 @@ This is way more consistent when interacting with Bing Copilot or Gemini by Goog
 {{ figure_markup(
   image="structured-data-via-culinaria-bing.png",
   caption="Bing Copilot",
-  description="TODO.",
+  description="Screenshot of Bing Copilot showing local restaurant information with map integration, ratings, and TripAdvisor reviews.",
   width=1600,
   height=1182
   )
@@ -246,8 +246,8 @@ This transition from traditional search to AI-powered search demands a broader, 
 {{ figure_markup(
   image="structured-data-image-carousel.png",
   alt="Structured Data Carousel on Google",
-  caption="An example of the new beta carousel rich result",
-  description="TODO.",
+  caption="An example of the new beta carousel rich result. This carousel format enhances the display of structured data for listicle pages, offering users quick access to multiple options, such as local businesses or products, directly on the SERP.",
+  description="The image shows a structured data carousel on Google.",
   width=1600,
   height=604
   )
@@ -729,20 +729,22 @@ Let’s review the most critical patterns from the JSON-LD relationship analysis
 
 Most notably, these patterns indicate that **structured data implementation is moving beyond simple SEO markup toward creating true knowledge graphs** that can support AI-powered search experiences and rich data integrations.
 
+Here is the updated markdown for the uploaded images:
+
 {{ figure_markup(
-  image="structured-data-json-ld-relationships-2.png",
-  caption="TODO.",
-  description='Sankey diagram showing TODO.',
-  width=1000,
+  image="structured-data-json-ld-relationships-1.png",
+  caption="Sankey diagram showing relationships between structured data types and their connections.",
+  description='A Sankey diagram illustrating relationships between structured data entities, highlighting frequently used properties like potentialAction, itemListElement, and isPartOf connecting to various schemas.',
+  width=598,
   height=1000
   )
 }}
 
 {{ figure_markup(
-  image="structured-data-json-ld-relationships-1.png",
-  caption="TODO.",
-  description='Sankey diagram showing TODO.',
-  width=598,
+  image="structured-data-json-ld-relationships-2.png",
+  caption="Detailed Sankey diagram of dataset relationships in JSON-LD.",
+  description='This Sankey diagram provides a comprehensive view of how structured data entities and their properties interact in JSON-LD, showcasing key connections like WebSite, SearchAction, and Organization.',
+  width=1000,
   height=1000
   )
 }}
