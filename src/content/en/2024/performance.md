@@ -109,7 +109,7 @@ People often refer to website loading speed as a single metric, but in fact, the
 
 ### Time to First Byte (TTFB)
 
-[Time to First Byte](https://web.dev/articles/ttfb) (TTFB) measures the time from when a user initiates loading a page until the browser receives the first byte of the response. It includes phases like redirect time, DNS lookup, connection and TLS negotiation, and request processing. Reducing latency in connection and server response time can improve TTFB. 800 milliseconds is considered the threshold for good TTFB—with [some caveats!](https://web.dev/articles/ttfb#good-ttfb-score))
+[Time to First Byte](https://web.dev/articles/ttfb) (TTFB) measures the time from when a user initiates loading a page until the browser receives the first byte of the response. It includes phases like redirect time, DNS lookup, connection and TLS negotiation, and request processing. Reducing latency in connection and server response time can improve TTFB. 800 milliseconds is considered the threshold for good TTFB—with [some caveats!](https://web.dev/articles/ttfb#good-ttfb-score)
 
 {{ figure_markup(
   image="good-time-to-first-byte.png",
@@ -427,7 +427,7 @@ Due to the lack of same-source data for long tasks and INP, we decided not to co
 
 The task duration distribution shows a median task duration of 90 milliseconds for desktop and 108 milliseconds for mobile, which is twice more than the best practice recommendation of under 50 milliseconds. Less than 25% of websites have an optimal task duration below 50 milliseconds. We can also see that in every percentile, task duration on mobile sites is longer than on desktop sites, with the gap increasing as the percentile increases. On the 90th percentile, there is a 46 millisecond difference between the average task duration between device types. This correlates well with INP scores that show better results on desktop compared to mobile.
 
-Task duration data was retrieved using the [Long Tasks API](https://www.w3.org/TR/longtasks-1/), which provides some useful data about performance issues, but it has limitations when it comes to accurately measuring sluggishness. It only identifies when a long task occurs and how long it lasts. It might overlook essential tasks such as rendering. Due to these limitations, we will explore the Long Animation Frames API in the next section, which offers more detailed insights.
+Task duration data was retrieved using the <a hreflang="en" href="https://www.w3.org/TR/longtasks-1/">Long Tasks API</a>, which provides some useful data about performance issues, but it has limitations when it comes to accurately measuring sluggishness. It only identifies when a long task occurs and how long it lasts. It might overlook essential tasks such as rendering. Due to these limitations, we will explore the Long Animation Frames API in the next section, which offers more detailed insights.
 
 #### Long Animations Frames
 
