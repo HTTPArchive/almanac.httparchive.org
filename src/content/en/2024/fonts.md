@@ -288,7 +288,7 @@ Digging down even further, we can take a look at the individual table sizes used
   </table>
   <figcaption>
     {{ figure_link(
-      caption="The top 10 OpenType tables measured by \."impact\".",
+      caption="The top 10 OpenType tables measured by \"impact\".",
       sheets_gid="1322494859",
       sql_file="performance/fonts_size_by_table.sql",
     ) }}
