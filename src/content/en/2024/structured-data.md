@@ -24,28 +24,55 @@ We find ourselves at a critical moment in the evolution of the semantic web. AI 
 
 ## The Expanding Landscape of Structured Data
 
-Over the past 18 months, there have been significant changes in the structured data landscape. In 2023, Google deprecated rich results for FAQs and HowTos from its search engine results pages (SERP). In November 2024 Google will also remove the Sitelinks Search Box from search results starting. However, in parallel, there has been a new wave of innovation and expansion in using structured data from both Google and Bing.
+Over the past 18 months, there have been significant changes in the structured data landscape. In 2023, Google deprecated rich results for **FAQs** and **HowTos** from its search engine results pages (SERP) ([source](https://developers.google.com/search/blog/2023/08/howto-faq-changes)). In November 2024, Google will also remove the **Sitelinks Search Box** from search results ([source](https://developers.google.com/search/docs/appearance/structured-data/sitelinks-searchbox)). However, in parallel, there has been a new wave of innovation and expansion in using structured data from both Google and Bing.
 
 ### **Key Developments in 2023-2024:**
 
-1. **New Structured Data Types**: Google introduced several new types, including Vehicle listings, Course info, Vacation Rentals, and 3D Models for products. Also on the eCommerce space Google has integrated loyalty programs into its structured data offerings, particularly through the Merchant Center and schema.org.
+1. **New Structured Data Types**: Google introduced several new types, including Vehicle listings, Course info, Vacation Rentals, and 3D Models for products. Also, in the eCommerce space, Google has integrated loyalty programs into its structured data offerings, particularly through the Merchant Center and schema.org.
+
 2. **Enhanced Existing Types**: Improvements to organization data, product variants, and the introduction of discount-rich results.
-3. **Structured Data Carousels**: The beta launch of structured data carousels, combining ItemList with other types, opens new content presentation possibilities on Google’s SERP.
-4. **GS1 Integrations**: There has been increased support for GS1 standards such as the GS1 Digital Link, which aims to bridge the gap between physical and digital product information. This technology enables manufacturers and retailers to connect physical products to their digital identities through QR codes. When scanned, these codes provide access to comprehensive product information, enhancing transparency and customer engagement. Also the gs1:CertificationDetails property has been officially adopted by Google as schema:Certification, demonstrating how industry-specific extensions can successfully influence and integrate with schema.org standards.
+
+3. **Structured Data Carousels**: The beta launch of structured data carousels, combining `ItemList` with other types, opens new content presentation possibilities on Google’s SERP ([source](https://developers.google.com/search/blog/2023/05/carousels-beta)).
+
+4. **GS1 Integrations**: There has been increased support for GS1 standards such as the [GS1 Digital Link](https://www.gs1.org/standards/gs1-digital-link), which aims to bridge the gap between physical and digital product information. This technology enables manufacturers and retailers to connect physical products to their digital identities through QR codes. When scanned, these codes provide access to comprehensive product information, enhancing transparency and customer engagement. Also, the `gs1:CertificationDetails` property has been officially adopted by Google as `schema:Certification`, demonstrating how industry-specific extensions can successfully influence and integrate with schema.org standards.
+
+5. **Semantic Data Beyond Search Applications**: Structured data is now being leveraged beyond traditional search engines, playing a pivotal role in social web applications. For instance:
+   - **Identity Verification**: Platforms like Mastodon use `rel=me` links for two-way identity verification ([source](https://docs.joinmastodon.org/user/profile/#verification)).
+   - **Federated Social Networks**: The use of `rel=me` allows Mastodon users to verify their accounts with third-party websites (e.g., Ghost), strengthening cross-platform identity ([discussion on rel=me with Ghost](https://forum.ghost.org/t/verifying-mastodon-account-with-rel-me/34227)).
+   - **New Journalism Features**: Mastodon recently introduced the `fediverse:creator` attribute to support content verification for journalists and publishers ([source](https://blog.joinmastodon.org/2024/07/highlighting-journalism-on-mastodon/)).
 
 ## Beyond Traditional Implementation
 
-As the structured data ecosystem matures, we're witnessing a diversification in implementation strategies:
+As the structured data ecosystem matures, we're witnessing a diversification in implementation strategies. While search engines remain a primary consumer of structured data, its applications are expanding significantly:
 
-1. **Schema.org as Markup**: The traditional method of embedding structured data directly into webpages remains a cornerstone of modern SEO practices.
-2. **Schema.org as a Data Standard**: Beyond markup, Schema.org is increasingly used to standardize data sent via APIs or feeds, enabling more dynamic and scalable implementations. For instance, Google’s Data Commons initiative leverages a superset of Schema.org entities to represent data from hundreds of organizations around the world in its knowledge graph.
-3. **Digital Product Passports (DPPs)**: The rise of DPPs, especially in Europe, is transforming how product information is structured and shared. This development is expected to accelerate the adoption of eCommerce platforms in the coming years.
+1. **Schema.org as Markup**: The traditional method of embedding structured data directly into webpages continues to be a cornerstone of modern SEO practices.
+
+2. **Schema.org as a Data Standard**:
+   Beyond its use in HTML, Schema.org is increasingly employed to standardize data shared via APIs or feeds. For example, Google’s [Data Commons](https://datacommons.org/) initiative uses an extended Schema.org vocabulary to integrate datasets from hundreds of organizations globally. This standardization supports tasks like dataset discovery and relationship mapping, crucial for understanding provenance, subsets, and derivations of datasets in AI-driven environments ([source](https://research.google/blog/relationships-are-complicated-an-analysis-of-relationships-between-datasets-on-the-web/)).
+
+3. **Semantic Data in Social Web Applications**:
+   - Platforms like **Mastodon** leverage structured data for identity verification. The `rel=me` attribute allows users to verify accounts across federated networks ([source](https://docs.joinmastodon.org/user/profile/#verification)).
+   - Features like `fediverse:creator` are being used to validate content and authorship, enhancing trust in the decentralized social web ([source](https://blog.joinmastodon.org/2024/07/highlighting-journalism-on-mastodon/)).
+
+4. **Digital Product Passports (DPPs)**: Structured data plays a key role in emerging regulatory requirements like the EU’s [Digital Product Passports](https://wordlift.io/blog/en/digital-product-passport-implementation/), designed to enhance transparency and sustainability in eCommerce. These passports leverage GS1 Digital Links to provide comprehensive product information through QR codes.
+
+5. **Structured Data for AI-Powered Discovery**:
+   As AI-powered search engines, chatbots, and conversational assistants continue to expand their reach, structured data plays a pivotal role in enhancing content discoverability and contextual understanding across these platforms. Key examples include:
+
+   - **AI Search Engines**: Platforms like **Bing Chat** and **Google AI Overview** utilize structured data not only to train their language models but also to deliver contextually rich and accurate responses. By leveraging structured data, these systems can interpret complex relationships between datasets, improve search relevance, and enable users to seamlessly navigate interconnected datasets ([source](https://research.google/blog/relationships-are-complicated-an-analysis-of-relationships-between-datasets-on-the-web/)).
+
+These capabilities demonstrate structured data's evolving role in not only improving discoverability but also in enhancing AI systems’ ability to interpret and act on relationships between data, thereby creating richer and more useful user experiences.
+
+This diversification highlights structured data's growing role in facilitating **data interoperability**, **social trust**, **regulatory compliance**, and **AI-driven content discovery**. By enabling systems to understand and act on complex relationships between data, structured data lays the foundation for richer, more intelligent digital experiences.
 
 ## Structured Data in the Age of AI and Machine Learning
 
 The rise of generative AI and advanced machine learning has further underscored the importance of structured data:
 
-- **Fact Validation**: Structured data provides a reliable source for AI systems to verify information and combat misinformation.
+- **Fact Validation**: Structured data provides a **parsable** source for AI systems, enabling them to efficiently extract, interpret, and validate information. This helps:
+    - **Combat misinformation**: AI can cross-reference structured data with other trusted sources to validate facts.
+    - **Improve content understanding**: By offering clear entity definitions and relationships, structured data supports nuanced interpretation of complex topics.
+    - **Enhance user experiences**: Structured data allows AI systems, such as chatbots and voice assistants, to deliver accurate and context-rich responses to user queries.
 - **Enhanced Search Understanding**: It enables a more nuanced interpretation of content by search engines and AI-powered systems.
 - **Training Data**: Well-structured data is high-quality training material for machine learning models.
 
@@ -88,9 +115,9 @@ As structured data evolves in complexity, exploring and explaining key concepts 
 
 ### Linked Data and the Semantic Web
 
-Linked data remains a cornerstone of structured data. We create an interconnected web of information by adding structured data to web pages and providing URI links to referenced entities. This contributes to the semantic web, where data is linked through the Resource Description Framework (RDF), enabling machines to treat web pages as databases.
+Linked data remains a cornerstone of structured data. By adding structured data to web pages and providing URI links to referenced entities, we create an interconnected web of information. This contributes to the semantic web, where data is linked through the Resource Description Framework (RDF), enabling machines to treat web pages as databases.
 
-The concept of semantic triples (subject-predicate-object) continues to be fundamental in expressing relationships between entities. While [SPARQL](https://en.wikipedia.org/wiki/SPARQL) remains helpful for querying RDF data, the focus has shifted towards more accessible ways of leveraging this linked data structure, such as [GraphQL](https://en.wikipedia.org/wiki/GraphQL).
+The concept of semantic triples (subject-predicate-object) continues to be fundamental in expressing relationships between entities. While [SPARQL](https://en.wikipedia.org/wiki/SPARQL) is a query language specifically designed for querying graph data and RDF triples, [GraphQL](https://en.wikipedia.org/wiki/GraphQL) serves as a flexible API query language for retrieving structured data from diverse backends, including databases and microservices. These tools complement each other: SPARQL excels in querying RDF datasets for semantic web applications, while GraphQL simplifies access to structured data for web and mobile applications.
 
 #### Open Data and the 5 Stars Model
 
@@ -607,7 +634,12 @@ While **Microdata** remains a significant format for **fundamental webpage struc
 
 ## JSON-LD
 
-**JSON-LD types** continue to show diverse implementation patterns across websites, with the **WebSite** schema leading adoption at **12.73%** of mobile pages, significantly higher than other types. **Organization** and **LocalBusiness** types maintain a strong presence at **7.16%** and **3.97%**, respectively, reflecting their importance in establishing **entity identity**.
+**JSON-LD types** continue to be widely implemented across websites, with varied types of data used depending on the purpose of the site. The **WebSite** schema leads adoption, appearing on **12.73%** of mobile pages, followed by **Organization** and **LocalBusiness** types at **7.16%** and **3.97%**, respectively. These types are crucial for establishing **entity identity** and providing contextual information to search engines.
+
+The diversity in implementation patterns reflects how different industries and website types prioritize specific structured data. For instance:
+- **E-commerce sites** frequently implement **Product**, **Offer**, and **Review** schemas.
+- **Local businesses** prioritize **LocalBusiness**, **GeoCoordinates**, and **OpeningHoursSpecification** to enhance local search visibility.
+- **Content publishers** often utilize **Article** and **BlogPosting** schemas to structure written content effectively.
 
 **BreadcrumbList** implementation has seen notable growth, appearing on **5.66%** of pages, suggesting an increased focus on **structured navigation data**. The **WebPage** schema shows steady adoption at **1.49%**, while the **Product** schema appears on **0.77%** of pages. Content-specific types like **BlogPosting** (**1.40%**) and **Article** (**0.18%**) maintain consistent presence, though at lower levels.
 
@@ -627,6 +659,10 @@ Specialized business types such as **Restaurant** (**0.19%**), **AutoDealer** (*
 )}}
 
 The consistency in implementation across devices indicates a mature approach to structured data deployment, where developers are ensuring uniform markup regardless of the target platform. This alignment between mobile and desktop implementations suggests that organizations are following best practices for responsive design while maintaining consistent structured data across all user experiences.
+
+Despite Google's deprecation of **FAQ** and **HowTo** rich results in August 2023 ([source](https://developers.google.com/search/blog/2023/08/howto-faq-changes)), we see limited impact on their adoption rates. **HowTo** schema adoption has historically been low due to its complexity, with implementation rates below **1%** for both desktop and mobile. **FAQPage**, on the other hand, has not only maintained its adoption but even shows a slight increase on desktop, rising from **0.2%** in 2022 to **0.6%** in 2024. This trend suggests that webmasters may still find value in implementing FAQPage for additional search engine visibility besides rich results.
+
+These observations highlight the *resilience of certain structured data types* despite changes in Google’s support. It also points to the importance of monitoring how structured data evolves across various platforms, as its utility often extends beyond immediate search result enhancements.
 
 {{ figure_markup(
   image="jsonld-by-device.png",
@@ -719,7 +755,9 @@ The vast gap between Schema.org and other contexts underscores its critical role
 
 The structured data landscape is rapidly evolving, marked by Google's introduction of specialized schemas for vehicles, courses, and 3D product models, alongside increased support for Digital Product Passports through GS1 Digital Link. The growing adoption of JSON-LD (now at 41% of pages) and sophisticated entity relationships through sameAs properties indicates a maturing ecosystem focused on comprehensive knowledge graph development.
 
-The data shows a clear shift toward more specialized implementation patterns, particularly in e-commerce and local business contexts. Entity disambiguation has become increasingly critical, with organizations leveraging structured data to establish clear digital identities across platforms and knowledge bases.
+The data shows a clear shift toward more specialized implementation patterns, particularly in e-commerce and local business contexts. For instance, structured data types like **Product**, **Offer**, and **Review** have become more prevalent in e-commerce, while **LocalBusiness** and **GeoCoordinates** are increasingly used to improve local search visibility.
+
+This shift can be partially attributed to Google’s policy changes, which encouraged webmasters to focus on more domain-specific schemas. Entity disambiguation has also become increasingly critical, with organizations leveraging structured data like **sameAs** and **Organization** to establish clear digital identities across platforms and knowledge bases.
 
 ## Looking Ahead: The Future of Structured Data
 
