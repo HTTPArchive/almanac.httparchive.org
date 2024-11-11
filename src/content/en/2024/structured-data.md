@@ -591,47 +591,47 @@ Microformats continue to show **limited adoption**, primarily in niche use cases
 
 {{ figure_markup(
   image="microformats2-mobile-year-on-year.png",
-  caption="A year on year comparison of Microformats2 usage on mobile pages.",
-  description="TODO.",
+  caption="Year-on-year comparison of Microformats2 usage on mobile pages in 2022 and 2024.",
+  description="Bar chart showing the usage of various Microformats2 types, including h-entry, h-card, and h-feed, on mobile pages in 2022 and 2024. The chart highlights the growth in adoption of these types, with h-entry increasing to 0.22% in 2024.",
   chart_url="<https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=1365169350&format=interactive>",
   sheets_gid="560419533",
-  sql_file="TODO.sql"
+  sql_file="present_types.sql",
 )}}
 
 {{ figure_markup(
   image="microformats2-desktop-year-on-year.png",
-  caption="A year on year comparison of Microformats2 usage on desktop pages.",
-  description="TODO.",
+  caption="Year-on-year comparison of Microformats2 usage on desktop pages in 2022 and 2024.",
+  description="Bar chart showing the usage of various Microformats2 types, including h-entry, h-card, h-feed, and h-adr, on desktop pages in 2022 and 2024. The chart highlights growth in adoption, with h-entry reaching 0.12% and h-adr increasing to 0.06% in 2024.",
   chart_url="<https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=1211736202&format=interactive>",
   sheets_gid="560419533",
-  sql_file="TODO.sql"
+  sql_file="present_types.sql",
 )}}
 
 {{ figure_markup(
   image="microformats2-by-device.png",
-  caption="Microformats2 usage by device.",
-  description="TODO.",
+  caption="Microformats2 usage by device in 2024, comparing desktop and mobile implementations.",
+  description="Bar chart showing the usage of Microformats2 types on both desktop and mobile pages in 2024. The chart highlights higher usage of h-entry and h-card on mobile.",
   chart_url="<https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=955978151&format=interactive>",
   sheets_gid="560419533",
-  sql_file="TODO.sql"
+  sql_file="present_types.sql",
 )}}
 
 {{ figure_markup(
   image="microformats-mobile-year-on-year.png",
-  caption="Microformats usage by year (mobile).",
-  description="TODO.",
+  caption="A year-on-year comparison of Microformats usage on mobile pages in 2022 and 2024.",
+  description="Bar chart comparing the usage of various Microformats types on mobile pages in 2022 and 2024. The chart highlights a notable increase in the usage of the adr type in 2024.",
   chart_url="<https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=931431512&format=interactive>",
   sheets_gid="560419533",
-  sql_file="TODO.sql"
+  sql_file="present_types.sql"
 )}}
 
 {{ figure_markup(
   image="microformats-desktop-year-on-year.png",
   caption="Microformats usage by year (desktop).",
-  description="TODO.",
-  chart_url="<https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=977720399&format=interactive>",
+  description="Bar chart comparing the usage of Microformats types on desktop pages in 2022 and 2024.",
+  chart_url="<https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=242585504&format=interactive>",
   sheets_gid="560419533",
-  sql_file="TODO.sql"
+  sql_file="present_types.sql"
 )}}
 
 Cross-device implementation remains relatively consistent, though with some variation between mobile and desktop. The data shows a **general decline in traditional Microformats usage** from 2022 to 2024, particularly in **review-related properties** like `hReview` and `hReview-aggregate`. This decline reflects the **industry’s shift toward more modern structured data formats** like JSON-LD and RDFa, which offer **broader functionality** and better **integration with current web standards**.
@@ -640,11 +640,11 @@ Despite this decline, **Microformats** and **Microformats2** remain useful in sp
 
 {{ figure_markup(
   image="microformats-usage-desktop.png",
-  caption="A year on year comparison of Microformats usage on desktop pages.",
-  description="TODO.",
+  caption="Microformats usage by year on desktop pages.",
+  description="Bar chart comparing the usage of Microformats types on desktop pages in 2022 and 2024.",
   chart_url="<https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=242585504&format=interactive>",
   sheets_gid="560419533",
-  sql_file="TODO.sql"
+  sql_file="present_types.sql"
 )}}
 
 ## Microdata
@@ -653,11 +653,11 @@ Despite this decline, **Microformats** and **Microformats2** remain useful in sp
 
 {{ figure_markup(
   image="microdata-year-on-year-mobile.png",
-  caption="A year on year comparison of Microdata usage on mobile pages.",
-  description="TODO.",
+  caption="A year-on-year comparison of Microdata usage on mobile pages.",
+  description="Bar chart showing the usage of various Microdata types on mobile pages in 2022 and 2024.",
   chart_url="<https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=584764017&format=interactive>",
   sheets_gid="560419533",
-  sql_file="TODO.sql",
+  sql_file="present_types.sql"
   width=600,
   height=582
 )}}
@@ -666,11 +666,11 @@ Despite this decline, **Microformats** and **Microformats2** remain useful in sp
 
 {{ figure_markup(
   image="microdata-by-device.png",
-  caption="A comparison of microdata usage by device.",
-  description="TODO.",
+  caption="A comparison of Microdata usage by device.",
+  description="Bar chart showing the usage of various Microdata types on desktop and mobile devices in 2024.",
   chart_url="<https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=804256393&format=interactive>",
   sheets_gid="560419533",
-  sql_file="TODO.sql",
+  sql_file="present_types.sql"
   width=600,
   height=614
 )}}
@@ -695,11 +695,11 @@ Specialized business types such as **Restaurant** (**0.19%**), **AutoDealer** (*
 
 {{ figure_markup(
   image="jsonld-year-on-year-mobile.png",
-  caption="A year on year comparison of JSON-LD usage on mobile pages.",
-  description="TODO.",
+  caption="A year-on-year comparison of JSON-LD usage on mobile pages.",
+  description="Bar chart comparing JSON-LD type usage in 2022 and 2024 on mobile devices. Types include WebSite, Organization, LocalBusiness, BreadcrumbList, and others.",
   chart_url="<https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=2099227544&format=interactive>",
   sheets_gid="560419533",
-  sql_file="TODO.sql",
+  sql_file="present_types.sql"
   width=600,
   height=572
 )}}
@@ -713,10 +713,10 @@ These observations highlight the *resilience of certain structured data types* d
 {{ figure_markup(
   image="jsonld-by-device.png",
   caption="A comparison of JSON-LD usage by device.",
-  description="TODO.",
+  description="Bar chart comparing JSON-LD type usage on desktop and mobile devices, including WebSite, Organization, LocalBusiness, and more.",
   chart_url="<https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=1732530777&format=interactive>",
   sheets_gid="560419533",
-  sql_file="TODO.sql",
+  sql_file="present_types.sql"
   width=600,
   height=572
 )}}
@@ -767,11 +767,11 @@ When properly implemented, sameAs serves as a powerful tool for entity disambigu
 
 {{ figure_markup(
   image="sameas-year-on-year-mobile.png",
-  caption="A year on year comparison of SameAs usage on mobile pages.",
-  description="TODO.",
+  caption="Year-on-year comparison of SameAs usage on mobile pages in 2022 and 2024.",
+  description="Bar chart comparing the usage of SameAs links by type for mobile pages in 2022 and 2024. The chart shows Facebook.com leading with 4.5% in 2024, followed by Instagram.com with 3.7%. Other platforms include Twitter.com, YouTube.com, and LinkedIn.com, highlighting usage trends over two years.",
   chart_url="<https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=315508282&format=interactive>",
   sheets_gid="560419533",
-  sql_file="TODO.sql",
+  sql_file="present_types.sql",
   height=600,
   width=561
 )}}
@@ -780,11 +780,11 @@ For personal entities (executives, authors, experts), sameAs similarly helps est
 
 {{ figure_markup(
   image="sameas-year-on-year-by-device.png",
-  caption="A comparison of SameAs usage by device.",
-  description="TODO.",
+  caption="SameAs usage by device on mobile and desktop for various platforms.",
+  description="A bar chart comparing the usage of SameAs links by device type (desktop and mobile). Facebook.com leads with 4.5% on desktop and 3.7% on mobile, followed by Instagram.com, Twitter.com, and others. The data highlights differences in usage patterns across platforms.",
   chart_url="<https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=785630631&format=interactive>",
   sheets_gid="560419533",
-  sql_file="TODO.sql",
+  sql_file="present_types.sql",
   height=600,
   width=555
 )}}
