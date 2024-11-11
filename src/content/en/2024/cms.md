@@ -3,11 +3,11 @@
 title: CMS
 description: CMS chapter of the 2024 Web Almanac covering CMS adoption, user experience of websites running on CMS platforms, and CMS resource weights.
 authors: [sirjonathan, LoraRaykova, niko-kaleev]
-reviewers: [raewrites, karmatosed]
-editors: [tunetheweb]
-analysts: [sirjonathan, nrllh]
+reviewers: [raewrites, dknauss]
+editors: [tunetheweb, raewrites]
+analysts: [nrllh, sirjonathan]
 translators: []
-sirjonathan_bio: Jonathan Wold is an Open Web advocate with more than 18 years focused on the WordPress ecosystem. Beyond his love for WordPress, he enjoys reading widely, playing strategy games, acting, rock climbing, and occasionally writing in third-person.
+sirjonathan_bio: Jonathan Wold is an Open Web advocate with more than 20 years focused on the WordPress ecosystem. Beyond his love for WordPress and the Open Web, he enjoys reading widely, strategy games, acting, rock climbing, and occasionally writing in third-person.
 LoraRaykova_bio: Lora is a Content Manager at NitroPack with 8+ years of experience developing in-depth, specialized content for SaaS companies in the CEE region.
 niko-kaleev_bio: Niko is a Content Writer at NitroPack with 5+ years of experience in dissecting nuanced topics like hosting, Core Web Vitals, web performance metrics and optimizations.
 results: https://docs.google.com/spreadsheets/d/118lwQV_GwFYqIxXvsm57oeadJdjAJEOMCRq1PsTqhfs/
@@ -71,7 +71,7 @@ As of June 2024, CMS adoption worldwide has grown steadily, matching our dataset
 
 {{ figure_markup(
   image="cms-adoption-by-geo.png",
-  caption="CMS adoption by geo.",
+  caption="CMS adoption by geography.",
   description="A barchart showing United States of America CMS's are used on 40% of desktop and 44% of mobile sites. For India it's 30% and 33% respectively, For Japan 39% and 39%, Germany 33% and 43%, Brazil 31% and 32%, United Kingdom of Great Britain and Northern Ireland 36% and 42%, France 36% and 40%, Russian Federation 37% and 39%, Indonesia 27% and 24% and finally for Italy it's 41% on desktop and 46% on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYh0RHAqp768faimbvZpvS71yJwCaOAFR0AzgotkEphtxphBKR1kt-pqgxA8Uxj4FSii1RQWwgG6rk/pubchart?oid=2018893523&format=interactive",
   sheets_gid="708001576",
@@ -156,24 +156,6 @@ Among all websites that use an identifiable CMS, WordPress sites account for the
 }}
 
 Comparing YoY, Drupal and Joomla continue to decline in market share while Squarespace and Wix grow (0.5% and 0.8%, respectively). WordPress continues its ascent, increasing 0.6% on mobile over 2023-2024 This represents a slower pace of growth than in previous years.
-
-### CMS adoption share
-
-This year's chapter includes a new addition where we analyze CMS market share.
-
-{{ figure_markup(
-  image="cms-adoption-share.png",
-  caption="CMS adoption share.",
-  description="A bar chart showing WordPress is 71.9% of the CMS market on mobile, Wix is 5.7%, Squarespace 3.1%, Joomla 3.0%, Drupal 2.3%, Duda 1.2%, 1C-Bitrix 1.1%, Tilda 1.1%, and following those there is a proliferation of smaller segments.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYh0RHAqp768faimbvZpvS71yJwCaOAFR0AzgotkEphtxphBKR1kt-pqgxA8Uxj4FSii1RQWwgG6rk/pubchart?oid=538227468&format=interactive",
-  sheets_gid="738765206",
-  sql_file="cms_adoption.sql"
-  )
-}}
-
-Staying consistent with existing trends and reports, WordPress remains the most popular CMS in the world, with as much as 71.9% of mobile websites leveraging the open-source platform. Next come the proprietary drag-and-drop CMSs Wix and Squarespace (5.7% and 3.1%, respectively), followed by Joomla at 3%.
-
-While the flexibility, community-driven development, and extensive ecosystem of an open-source CMS such as WordPress contribute to its popularity, it will be interesting to see how proprietary platforms influence adoption numbers in the future—especially given the slower pace of WordPress adoption observed over the past two years.
 
 ## CMS user experience
 
