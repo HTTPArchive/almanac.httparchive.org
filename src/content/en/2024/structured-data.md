@@ -1,7 +1,7 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
-title: Structured Data
-description: Structured Data chapter of the 2024 Web Almanac covering adoption and year on year change of RDFa, Opne Graph, Twitter, JSON-LD, Microdata, Facebook, Dublin Core, Microformats and microformats2 structured data.
+title: Structured data
+description: Structured data chapter of the 2024 Web Almanac covering adoption and year on year change of RDFa, Opne Graph, Twitter, JSON-LD, Microdata, Facebook, Dublin Core, Microformats and microformats2 structured data.
 authors: [cyberandy]
 reviewers: [jvandriel, rrlevering]
 analysts: [nrllh]
@@ -23,36 +23,36 @@ doi: 10.5281/zenodo.14065771
 
 We find ourselves at a critical moment in the evolution of the semantic web. AI is becoming widely accessible and integrated into many of our day-to-day applications. Now, in its third year, this chapter provides a unique opportunity to analyze the past year's trends and examine the rapid developments occurring over time. Looking at the previous editions, we can offer a comprehensive view of where structured data stands today and where it's headed.
 
-## The Expanding Landscape of Structured Data
+## The expanding landscape of structured data
 
 Over the past 18 months, there have been significant changes in the structured data landscape. In 2023, Google deprecated rich results for **FAQs** and **HowTos** from its search engine results pages (SERP) ([source](https://developers.google.com/search/blog/2023/08/howto-faq-changes)). In November 2024, Google will also remove the **Sitelinks Search Box** from search results ([source](https://developers.google.com/search/docs/appearance/structured-data/sitelinks-searchbox)). However, in parallel, there has been a new wave of innovation and expansion in using structured data from both Google and Bing.
 
-### **Key Developments in 2023-2024:**
+### **Key developments in 2023-2024:**
 
-1. **New Structured Data Types**: Google introduced several new types, including Vehicle listings, Course info, Vacation Rentals, and 3D Models for products. Also, in the eCommerce space, Google has integrated loyalty programs into its structured data offerings, particularly through the Merchant Center and schema.org.
+1. **New structured data types**: Google introduced several new types, including Vehicle listings, Course info, Vacation Rentals, and 3D Models for products. Also, in the eCommerce space, Google has integrated loyalty programs into its structured data offerings, particularly through the Merchant Center and schema.org.
 
-2. **Enhanced Existing Types**: Improvements to organization data, product variants, and the introduction of discount-rich results.
+2. **Enhanced existing types**: Improvements to organization data, product variants, and the introduction of discount-rich results.
 
-3. **Structured Data Carousels**: The beta launch of structured data carousels, combining `ItemList` with other types, opens new content presentation possibilities on Google’s SERP ([source](https://developers.google.com/search/blog/2023/05/carousels-beta)).
+3. **Structured data carousels**: The beta launch of structured data carousels, combining `ItemList` with other types, opens new content presentation possibilities on Google’s SERP ([source](https://developers.google.com/search/blog/2023/05/carousels-beta)).
 
-4. **GS1 Integrations**: There has been increased support for GS1 standards such as the [GS1 Digital Link](https://www.gs1.org/standards/gs1-digital-link), which aims to bridge the gap between physical and digital product information. This technology enables manufacturers and retailers to connect physical products to their digital identities through QR codes. When scanned, these codes provide access to comprehensive product information, enhancing transparency and customer engagement. Also, the `gs1:CertificationDetails` property has been officially adopted by Google as `schema:Certification`, demonstrating how industry-specific extensions can successfully influence and integrate with schema.org standards.
+4. **GS1 integrations**: There has been increased support for GS1 standards such as the [GS1 Digital Link](https://www.gs1.org/standards/gs1-digital-link), which aims to bridge the gap between physical and digital product information. This technology enables manufacturers and retailers to connect physical products to their digital identities through QR codes. When scanned, these codes provide access to comprehensive product information, enhancing transparency and customer engagement. Also, the `gs1:CertificationDetails` property has been officially adopted by Google as `schema:Certification`, demonstrating how industry-specific extensions can successfully influence and integrate with schema.org standards.
 
-5. **Semantic Data Beyond Search Applications**: Structured data is now being leveraged beyond traditional search engines, playing a pivotal role in social web applications. For instance:
+5. **Semantic data beyond search applications**: Structured data is now being leveraged beyond traditional search engines, playing a pivotal role in social web applications. For instance:
 
-- **Identity Verification**: Platforms like Mastodon use `rel=me` links for two-way identity verification ([source](https://docs.joinmastodon.org/user/profile/#verification)).
-- **Federated Social Networks**: The use of `rel=me` allows Mastodon users to verify their accounts with third-party websites (e.g., Ghost), strengthening cross-platform identity ([discussion on rel=me with Ghost](https://forum.ghost.org/t/verifying-mastodon-account-with-rel-me/34227)).
-- **New Journalism Features**: Mastodon recently introduced the `fediverse:creator` attribute to support content verification for journalists and publishers ([source](https://blog.joinmastodon.org/2024/07/highlighting-journalism-on-mastodon/)).
+- **Identity verification**: Platforms like Mastodon use `rel=me` links for two-way identity verification ([source](https://docs.joinmastodon.org/user/profile/#verification)).
+- **Federated social networks**: The use of `rel=me` allows Mastodon users to verify their accounts with third-party websites (e.g., Ghost), strengthening cross-platform identity ([discussion on rel=me with Ghost](https://forum.ghost.org/t/verifying-mastodon-account-with-rel-me/34227)).
+- **New journalism features**: Mastodon recently introduced the `fediverse:creator` attribute to support content verification for journalists and publishers ([source](https://blog.joinmastodon.org/2024/07/highlighting-journalism-on-mastodon/)).
 
-## Beyond Traditional Implementation
+## Beyond traditional implementation
 
 As the structured data ecosystem matures, we're witnessing a diversification in implementation strategies. While search engines remain a primary consumer of structured data, its applications are expanding significantly:
 
-1. **Schema.org as Markup**: The traditional method of embedding structured data directly into webpages continues to be a cornerstone of modern SEO practices.
+1. **Schema.org as markup**: The traditional method of embedding structured data directly into webpages continues to be a cornerstone of modern SEO practices.
 
-2. **Schema.org as a Data Standard**:
+2. **Schema.org as a data standard**:
   Beyond its use in HTML, Schema.org is increasingly employed to standardize data shared via APIs or feeds. For example, Google’s [Data Commons](https://datacommons.org/) initiative uses an extended Schema.org vocabulary to integrate datasets from hundreds of organizations globally. This standardization supports tasks like dataset discovery and relationship mapping, crucial for understanding provenance, subsets, and derivations of datasets in AI-driven environments ([source](https://research.google/blog/relationships-are-complicated-an-analysis-of-relationships-between-datasets-on-the-web/)).
 
-3. **Semantic Data in Social Web Applications**:
+3. **Semantic data in social web applications**:
 
 - Platforms like **Mastodon** leverage structured data for identity verification. The `rel=me` attribute allows users to verify accounts across federated networks ([source](https://docs.joinmastodon.org/user/profile/#verification)).
 - Features like `fediverse:creator` are being used to validate content and authorship, enhancing trust in the decentralized social web ([source](https://blog.joinmastodon.org/2024/07/highlighting-journalism-on-mastodon/)).
@@ -61,7 +61,7 @@ As the structured data ecosystem matures, we're witnessing a diversification in 
 
 Structured data plays a key role in emerging regulatory requirements like the EU’s [Digital Product Passports](https://wordlift.io/blog/en/digital-product-passport-implementation/), designed to enhance transparency and sustainability in eCommerce. These passports leverage GS1 Digital Links to provide comprehensive product information through QR codes.
 
-5. **Structured Data for AI-Powered Discovery**:
+5. **Structured data for AI-powered Ddscovery**:
 
 As AI-powered search engines, chatbots, and conversational assistants continue to expand their reach, structured data plays a pivotal role in enhancing content discoverability and contextual understanding across these platforms. Key examples include:
 
@@ -71,88 +71,88 @@ These capabilities demonstrate structured data's evolving role in not only impro
 
 This diversification highlights structured data's growing role in facilitating **data interoperability**, **social trust**, **regulatory compliance**, and **AI-driven content discovery**. By enabling systems to understand and act on complex relationships between data, structured data lays the foundation for richer, more intelligent digital experiences.
 
-## Structured Data in the Age of AI and Machine Learning
+## Structured data in the age of AI and machine learning
 
 The rise of generative AI and advanced machine learning has further underscored the importance of structured data:
 
-- **Fact Validation**: Structured data provides a **parsable** source for AI systems, enabling them to efficiently extract, interpret, and validate information. This helps:
+- **Fact validation**: Structured data provides a **parsable** source for AI systems, enabling them to efficiently extract, interpret, and validate information. This helps:
   - **Combat misinformation**: AI can cross-reference structured data with other trusted sources to validate facts.
   - **Improve content understanding**: By offering clear entity definitions and relationships, structured data supports nuanced interpretation of complex topics.
   - **Enhance user experiences**: Structured data allows AI systems, such as chatbots and voice assistants, to deliver accurate and context-rich responses to user queries.
-- **Enhanced Search Understanding**: It enables a more nuanced interpretation of content by search engines and AI-powered systems.
-- **Training Data**: Well-structured data is high-quality training material for machine learning models.
+- **Enhanced search understanding**: It enables a more nuanced interpretation of content by search engines and AI-powered systems.
+- **Training data**: Well-structured data is high-quality training material for machine learning models.
 
-## What This Chapter Provides
+## What this chapter provides
 
 This chapter offers a data-driven analysis of structured data trends in 2023-2024, highlighting key developments and best practices:
 
-1. **Evolution of the Landscape**:
+1. **Evolution of the landscape**:
 
 - Key shifts in structured data, especially with the rise of **AI-powered search** like **Google AI Overview** and **Bing Chat**.
 - Changes in **Google** and **Bing** structured data policies, and their impact on SEO.
 
-2. **Prevalence and Growth**:
+2. **Prevalence and growth**:
 
 - Trends in popular formats like **JSON-LD**, **Microdata**, and **RDFa**.
 - Adoption rates by schema types such as **Product**, **Organization**, and **Article**.
 
-3. **Implementation and Best Practices**:
+3. **Implementation and best practices**:
 
 - Best practices for structured data, including **JSON-LD** usage.
 - Common mistakes and how to avoid them.
 
-4. **Rich Results & SERP Features**:
+4. **Rich results & SERP features**:
 
 - Effects of deprecated features like **FAQ** and **HowTo**.
 - Introduction of **carousels** and **Product Knowledge Panels**.
 
-5. **AI-Powered Search**:
+5. **AI-Powered search**:
 
 - The role of structured data in **AI-driven search** and **voice assistants**.
 - Trends in **AI-powered content discovery**.
 
-6. **E-commerce Innovations**:
+6. **E-commerce innovations**:
 
 - Growth of **Digital Product Passports** and **GS1 Digital Links**.
 - Structured data’s role in **e-commerce** and new rich result types.
 
-7. **Knowledge Graphs & Graph RAG**:
+7. **Knowledge graphs & Graph RAG**:
 
 - The rising importance of **knowledge graphs** and **Graph RAG** for enhancing AI outputs.
 
-8. **Quality & Data Integrity**:
+8. **Quality & data integrity**:
 
 - Best practices for maintaining high-quality structured data.
 
-9. **Emerging Schemas & Use Cases**:
+9. **Emerging schemas & use cases**:
 
 - Innovations in schema types and their application in **SEO** and **e-commerce**.
 
-10. **Future Outlook**:
+10. **Future outlook**:
 
 - The evolving role of structured data in **AI**, **semantic SEO**, and **content discovery**.
 
 This chapter provides a comprehensive view of structured data’s impact on SEO, AI, and e-commerce, with actionable insights for developers and marketers.
 
-## Key Concepts
+## Key concepts
 
 As structured data evolves in complexity, exploring and explaining key concepts is crucial before diving into a deeper analysis. This section outlines fundamental ideas and recent developments in the field.
 
-### Linked Data and the Semantic Web
+### Linked data and the semantic web
 
 Linked data remains a cornerstone of structured data. By adding structured data to web pages and providing URI links to referenced entities, we create an interconnected web of information. This contributes to the semantic web, where data is linked through the Resource Description Framework (RDF), enabling machines to treat web pages as databases.
 
 The concept of semantic triples (subject-predicate-object) continues to be fundamental in expressing relationships between entities. While [SPARQL](https://en.wikipedia.org/wiki/SPARQL) is a query language specifically designed for querying graph data and RDF triples, [GraphQL](https://en.wikipedia.org/wiki/GraphQL) serves as a flexible API query language for retrieving structured data from diverse backends, including databases and microservices. These tools complement each other: SPARQL excels in querying RDF datasets for semantic web applications, while GraphQL simplifies access to structured data for web and mobile applications.
 
-#### Open Data and the 5 Stars Model
+#### Open data and the 5 stars model
 
 Tim Berners-Lee's 5 stars of the open data model remain relevant. It emphasizes the importance of web-available, structured, non-proprietary, URI-identified, and interlinked data. Structured data plays a crucial role in achieving higher levels of this model, contributing to a more open and interconnected web ecosystem.
 
-### AI-Powered Search, Voice Assistants, and Digital Assistants
+### AI-Powered search, voice assistants, and digital assistants
 
 The landscape of search and digital assistance has dramatically evolved with the integration of AI, LLMs, and advanced natural language processing. This convergence has blurred the lines between traditional search engines, voice-activated systems, and AI-powered digital assistants.
 
-#### Semantic Search Engines and AI-Powered Search
+#### Semantic search engines and AI-powered search
 
 Semantic search has progressed beyond traditional keyword matching to include sophisticated AI-powered experiences. These systems leverage structured data to provide more accurate, contextual, and often conversational search results. Key developments include:
 
@@ -165,15 +165,15 @@ Semantic search has progressed beyond traditional keyword matching to include so
 
 These platforms demonstrate an enhanced ability to understand user intent and context, significantly improving search accuracy and user experience. They often combine traditional web indexing with real-time information retrieval and natural language generation.
 
-### The Role of Structured Data
+### The role of structured data
 
 Structured data plays a crucial role in these AI-powered systems by:
 
-1. **Enhancing Entity Recognition**: Helping systems accurately identify and disambiguate entities mentioned in queries.
-2. **Providing Context**: Offering additional information about entities and their relationships, improving response accuracy.
-3. **Facilitating Knowledge Graph Integration**: Allowing these systems to tap into vast, interconnected information databases.
-4. **Enabling Rich Responses**: Supporting the generation of detailed, multi-faceted answers that often include visual elements or interactive features.
-5. **Improving Voice Query Interpretation**: Assisting in understanding the intent behind spoken queries, which can be more ambiguous than text-based searches.
+1. **Enhancing rntity recognition**: Helping systems accurately identify and disambiguate entities mentioned in queries.
+2. **Providing context**: Offering additional information about entities and their relationships, improving response accuracy.
+3. **Facilitating knowledge graph integration**: Allowing these systems to tap into vast, interconnected information databases.
+4. **Enabling rich responses**: Supporting the generation of detailed, multi-faceted answers that often include visual elements or interactive features.
+5. **Improving voice query interpretation**: Assisting in understanding the intent behind spoken queries, which can be more ambiguous than text-based searches.
 
 While it is still challenging to assess the impact of structured data on Generative AI and AI search engines, in some cases, such as geo-referencing queries, we can observe the early emergence of entities in the user experience of Perplexity.ai and You.com.
 
@@ -221,7 +221,7 @@ Empirically, AI-powered search systems, as seen above, are sourcing data from a 
 - Authoritative websites: Platforms rich in structured data markup, such as TripAdvisor, contribute significantly to the knowledge base of AI search systems.
 - Vertical-specific databases: Industry-specific databases and platforms provide specialized information for AI-powered search in various sectors.
 
-### The Shift to AI-Powered Search and Its Implications
+### The shift to AI-powered search and its implications
 
 This transition from traditional search to AI-powered search demands a broader, more nuanced approach to optimization:
 
@@ -244,13 +244,13 @@ The key to improved visibility lies not just in publishing structured data using
 - Ensuring that the metadata used to describe the webpage for bots is consistent with the content presented to human readers.
 - Directly feeding accurate information to relevant platforms and marketplaces (e.g., Google Merchant, Amazon) for products and services.
 
-## Rich Results and Knowledge Panels
+## Rich results and knowledge panels
 
 **Rich results and knowledge panels**, powered by structured data, are essential features of search engine results pages (SERPs). These enhanced displays offer users immediate and relevant information, significantly boosting click-through rates and user engagement. As rich results become more diverse and sophisticated, they present new opportunities for content visibility. A recent example from Google is the introduction of a structured data carousel for listicle pages related to local businesses (including subtypes like restaurants, hotels, vacation rentals), products, and events.
 
 {{ figure_markup(
   image="structured-data-image-carousel.png",
-  alt="Structured Data Carousel on Google",
+  alt="Structured data Carousel on Google",
   caption="An example of the new beta carousel rich result. This carousel format enhances the display of structured data for listicle pages, offering users quick access to multiple options, such as local businesses or products, directly on the SERP.",
   description="The image shows a structured data carousel on Google.",
   width=1600,
@@ -260,11 +260,11 @@ The key to improved visibility lies not just in publishing structured data using
 
 Another notable example, while not directly influenced by structured data, is the new **Google Merchant Knowledge Panel**, which extends the functionality of the **Product Knowledge Graph Panel**. Structured data acts as a signal that contributes to entity disambiguation, helping search engines accurately identify businesses and their attributes, which can lead to the appearance of these panels. This feature helps businesses, both small and large, build trust with users by displaying key information about the merchant directly on Google's search results page.
 
-## Knowledge Graphs and Graph RAG
+## Knowledge graphs and Graph RAG
 
 Knowledge graphs have become increasingly central to structured data applications. They provide a powerful way to represent and query complex relationships between entities. The emergence of [Graph RAG](https://microsoft.github.io/graphrag/) (Retrieval-Augmented Generation) represents a significant advancement, combining knowledge graphs with large language models to enhance AI-generated responses with factual, structured information.
 
-### Difference Between Labeled Property Graphs and RDF Graphs
+### Difference between Labeled Property Graphs and RDF graphs
 
 Labeled Property Graphs (LPGs) and Resource Description Framework (RDF) graphs are two distinct approaches to organizing and representing data. LPGs, commonly used in databases like Neo4j, structure data with nodes and relationships, each carrying labels and properties. This allows for a flexible and intuitive way to model complex data relationships. On the other hand, RDF graphs, which are foundational to the Semantic Web, use a triple-based structure (subject-predicate-object) to represent data. RDF emphasizes interoperability and standardization, making it ideal for linking data across different systems and domains. While LPGs offer ease of use and performance for certain applications, RDF provides a robust framework for semantic data integration and reasoning.
 
@@ -278,7 +278,7 @@ The importance of structured data in creating knowledge graphs cannot be oversta
 
 In the e-commerce and supply chain sectors, [Digital Product Passports](https://wordlift.io/blog/en/digital-product-passport-implementation/) (DPPs) and the [GS1 Digital Link standard](https://www.gs1.org/standards/gs1-digital-link) are revolutionizing how product information is shared and accessed. These technologies leverage structured data to create comprehensive, easily accessible digital representations of physical products, enhancing traceability, sustainability efforts, and consumer information access.
 
-## AI, Machine Learning, and Structured Data
+## AI, machine learning, and structured data
 
 The synergy between structured data and AI/ML has deepened. Structured data is crucial in training machine learning models, providing consistent, machine-readable labels. It's particularly important in areas such as:
 
@@ -286,7 +286,7 @@ The synergy between structured data and AI/ML has deepened. Structured data is c
 - **Explainable AI**: Using knowledge graphs to trace and explain AI decision-making processes.
 - **Multimodal AI**: Linking different data types (text, images, video) in AI systems.
 
-## Semantic SEO and Data Quality
+## Semantic SEO and data quality
 
 Semantic SEO has evolved from focusing purely on keyword matching to leveraging structured data for deeper contextual understanding, which is now essential for search engines to provide more accurate and relevant results. It allows websites to build thematic depth and meaning into their content by using entities and structured metadata, enhancing the ability of search engines like Google and Bing to grasp the intent behind queries rather than just focusing on keyword frequency.
 
@@ -298,41 +298,41 @@ For example, organizations such as EssilorLuxottica, Shiseido and others are usi
 
 Investing in semantic SEO and maintaining high-quality structured data not only enhances search visibility but also lays a foundation for future-proofing content for AI-driven discovery.​
 
-## A Year In Review
+## A year in review
 
-## Structured Data
+## Structured data
 
 The landscape of structured data implementation continues to evolve. To better understand this landscape, it’s essential to distinguish between **syntax/encoding** and **vocabularies**:
 
-- **Syntax/Encodings**: These define how structured data is embedded into webpages:
+- **Syntax/encodings**: These define how structured data is embedded into webpages:
   - **RDFa**: Maintains a strong presence, used on 66% of pages.
   - **JSON-LD**: Growing in popularity, implemented on 41% of pages.
   - **Microdata**: Steady usage, appearing on 26% of pages.
-  - **HEAD Data**: Includes non-RDFa meta tags like Twitter Cards.
+  - **HEAD data**: Includes non-RDFa meta tags like Twitter Cards.
 
 - **Vocabularies**: These define the meaning and semantics of the data:
   - **Open Graph Protocol (OGP)**: Widely used vocabulary, often encoded as RDFa (64% of pages).
-  - **Twitter Meta Tags**: Expanding rapidly, appearing on 45% of pages.
+  - **Twitter meta tags**: Expanding rapidly, appearing on 45% of pages.
   - **Schema.org**: Flexible vocabulary used across multiple syntaxes.
   - **Dublin Core**: Niche use cases, typically encoded as RDFa.
   - **Microformats**: Primarily implemented using class-based metadata.
 
-### Structured Data Usage Trends (2022-2024)
+### Structured data usage trends (2022-2024)
 
 The data reveals notable trends in both syntax and vocabulary usage:
 
 - **RDFa and Open Graph**: Dominant, with adoption on 66% and 64% of pages, respectively.
 - **JSON-LD**: Continues its upward trajectory, increasing from 34% in 2022 to 41% in 2024.
-- **Twitter Meta Tags (HEAD data)**: Significant growth, now at 45%.
+- **Twitter meta tags (HEAD data)**: Significant growth, now at 45%.
 - **Microdata**: Steady at 26%, primarily used in legacy contexts.
-- **Facebook Meta Tags**: Declined to 7%, reflecting a shift to Open Graph.
+- **Facebook meta tags**: Declined to 7%, reflecting a shift to Open Graph.
 - **Dublin Core and Microformats**: Minimal usage, each below 1%.
 
 {{ figure_markup(
   image="structured-data-usage-by-year-mobile.png",
   caption="Structured data usage by year on mobile",
   description="Bar chart showing RDFa was used on 61% of mobile pages in 2021 and 62% in 2022, Open Graph on 57% and 59% respectively, Twitter on 37% and 40%, JSON-LD on 34% and 37%, Microdata on 25% and 25%, Facebook on 8% and 8%, Dublin Core and Microformats on 1% in both years, and finally microformats2 on 0% in both years.",
-  chart_url="<https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=1720156114&format=interactive>",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=1720156114&format=interactive",
   sheets_gid="560419533",
   sql_file="present_types.sql",
   width=600,
@@ -341,10 +341,10 @@ The data reveals notable trends in both syntax and vocabulary usage:
 }}
 
 {{ figure_markup(
-  image="structured-data-usage-by-year-esktop.png",
+  image="structured-data-usage-by-year-desktop.png",
   caption="Structured data usage by year on desktop",
   description="Bar chart showing structured data usage across desktop pages in 2022 and 2024. RDFa was used on approximately 60% of desktop pages in 2022 and 62% in 2024, Open Graph on 57% in 2022 and 59% in 2024, Twitter on 37% in 2022 and 40% in 2024, JSON-LD on 34% in 2022 and 37% in 2024, Microdata remained steady at 25%, Facebook dropped slightly from 8% to 7%, while Dublin Core, Microformats, and Microformats2 showed minimal usage, all under 1% across both years.",
-  chart_url="<https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=1466312390&format=interactive>",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=1466312390&format=interactive",
   sheets_gid="560419533",
   sql_file="present_types.sql",
   width=600,
@@ -374,7 +374,7 @@ In contrast, traditional RDFa types like `foaf:image` and `foaf:document` have s
   image="rdfa-usage-by-year.png",
   caption="RDFa usage by year on mobile",
   description="Bar chart showing RDFa usage across mobile pages in 2022 and 2024. Foaf:image stayed consistent at 0.49%, foaf:document dropped from 0.23% to 0.16%, sioc:item and schema:webpage remained steady at 0.16% and 0.10%, respectively. Significant growth was seen for listitem and webpage, both increasing to 0.82% in 2024 from lower levels in 2022, while breadcrumblist usage increased to 0.45%. Other properties like v:breadcrumb and sioc:useraccount had minimal usage below 0.05%.",
-  chart_url="<https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=408467656&format=interactive>",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=408467656&format=interactive",
   sheets_gid="560419533",
   sql_file="present_types.sql",
   width=600,
@@ -386,7 +386,7 @@ In contrast, traditional RDFa types like `foaf:image` and `foaf:document` have s
   image="rdfa-usage-by-year-desktop.png",
   caption="RDFa usage by year on desktop",
   description="Bar chart showing RDFa usage across desktop pages in 2022 and 2024. Foaf:image remained the most used, with 1.22% of desktop pages in 2022 and 2024. Foaf:document usage decreased slightly from 0.40% to 0.38%, while other types like sioc:item and schema:webpage showed minimal fluctuations. Notably, listitem usage grew significantly from 0.39% in 2022 to 0.60% in 2024, and webpage usage also rose to 0.70% in 2024. Other types like breadcrumblist and v:breadcrumb remained below 0.50%, while sioc:useraccount showed minimal adoption.",
-  chart_url="<https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=1587094037&format=interactive>",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=1587094037&format=interactive",
   sheets_gid="560419533",
   sql_file="present_types.sql",
   width=600,
@@ -400,7 +400,7 @@ The data suggests that while RDFa remains a valuable tool, its dominance is grad
   image="rdfa-usage-by-device.png",
   caption="RDFa usage by device (desktop vs mobile)",
   description="Bar chart comparing RDFa usage across desktop and mobile pages in 2024. Foaf:image shows higher usage on desktop (1.22%) compared to mobile (0.49%). Foaf:document and sioc:item also show higher adoption on desktop, while mobile usage leads for listitem and webpage types, both reaching 0.82%. Breadcrumblist, v:breadcrumb, and sioc:useraccount remain below 0.50% across both devices.",
-  chart_url="<https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=780422567&format=interactive>",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=780422567&format=interactive",
   sheets_gid="560419533",
   sql_file="present_types.sql",
   width=600,
@@ -414,7 +414,7 @@ The data suggests that while RDFa remains a valuable tool, its dominance is grad
   image="dublin-core-usage-by-year.png",
   caption="Dublin Core usage by year on mobile",
   description="Bar chart showing Dublin Core usage across mobile pages in 2022 and 2024. The usage of dc:title remained the highest, with notable increases in dc.language and dc.description in 2024. Fields like dc.source and dcterms.title also saw growth, while others like dc.publisher and dc.identifier remained relatively consistent. Specialized fields like dcterms.rightsholder and dcterms.identifier had minimal usage across both years, under 0.002%.",
-  chart_url="<https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=151920898&format=interactive>",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=151920898&format=interactive",
   sheets_gid="560419533",
   sql_file="present_types.sql",
   width=600,
@@ -426,7 +426,7 @@ The data suggests that while RDFa remains a valuable tool, its dominance is grad
   image="dublin-core-usage-by-year-desktop.png",
   caption="Dublin Core usage by year on desktop",
   description="Bar chart showing Dublin Core usage across desktop pages in 2022 and 2024. The usage of dc:title remained the highest across both years, with increases in dc.language and dc.description in 2024. Fields like dc.source, dc.creator, and dc.publisher also saw moderate increases, while more specialized fields like dcterms.identifier and dcterms.rightsholder had minimal adoption, remaining below 0.002%.",
-  chart_url="<https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=1992172544&format=interactive>",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=1992172544&format=interactive",
   sheets_gid="560419533",
   sql_file="present_types.sql",
   width=600,
@@ -440,7 +440,7 @@ Dublin Core remains a stable but less frequently used format for metadata, espec
   image="dublin-core-usage-by-device.png",
   caption="Dublin Core usage by device (desktop vs mobile)",
   description="Bar chart comparing Dublin Core usage across desktop and mobile pages in 2024. Dc:title shows the highest adoption, with 0.7% on desktop and 0.5% on mobile. Other fields such as dc.language and dc.description also have higher usage on desktop. Meanwhile, dc.relation shows a higher percentage on mobile at 0.3%, with other fields like dc.identifier and dc.subject maintaining consistent usage across both devices.",
-  chart_url="<https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=257359995&format=interactive>",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=257359995&format=interactive",
   sheets_gid="560419533",
   sql_file="present_types.sql",
   width=600,
@@ -464,7 +464,7 @@ Open Graph continues to be one of the most widely implemented structured data fo
   image="open-graph-usage-by-year.png",
   caption="Open Graph usage by year on mobile",
   description="Bar chart showing Open Graph usage on mobile pages between 2022 and 2024. The usage of og:image remained the highest. Og:image:width and og:image:height saw significant increases, both around 23.8%. Og:image:secure_url also increased to 9.41%, while og:image:type rose to 11.26%. Og:image:alt, important for accessibility, grew to 5.78% in 2024.",
-  chart_url="<https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=513866594&format=interactive>",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=513866594&format=interactive",
   sheets_gid="560419533",
   sql_file="present_types.sql",
   width=600,
@@ -478,7 +478,7 @@ A key development in 2024 is Google's update to its search documentation, now in
   image="open-graph-usage-by-year-desktop.png",
   caption="Open Graph usage by year (desktop)",
   description="Bar chart showing usage of different Open Graph properties on desktop pages in 2022 and 2024. In 2024, og:image was used on 48% of pages, og:image:width and og:image:height on 23.86%, og:image:secure_url on 9.56%, og:image:type on 11.17%, and og:image:alt on 5.62%.",
-  chart_url="<https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=759266480&format=interactive>",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=759266480&format=interactive",
   sheets_gid="560419533",
   sql_file="present_types.sql",
   width=600,
@@ -491,7 +491,7 @@ This dual role of Open Graph in **social sharing** and **search engine optimizat
   image="open-graph-usage-by-device.png",
   caption="Open Graph usage by device",
   description="Bar chart showing Open Graph usage by device (desktop and mobile) in 2024. og:image is used on nearly 50% of pages, og:image:width and og:image:height on 23.81% and 23.76% respectively, og:image:secure_url on 9.41%, og:image:type on 11.26%, and og:image:alt on 5.78%.",
-  chart_url="<https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=876659711&format=interactive>",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=876659711&format=interactive",
   sheets_gid="560419533",
   sql_file="present_types.sql",
   width=600,
@@ -508,7 +508,7 @@ Despite the platform's transition to **new ownership** and its rebranding as **X
   image="twitter-meta-tag-usage-by-year.png",
   caption="Twitter meta tag usage by year",
   description="Bar chart showing Twitter meta tag usage on mobile pages in 2022 and 2024. In 2024, the twitter:card tag is used on 44.15% of pages, twitter:title on 26.40%, twitter:description on 24.53%, twitter:image on 18.63%, and other tags such as twitter:site and twitter:label1 show usage rates between 9.67% and 13.36%.",
-  chart_url="<https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=455664170&format=interactive>",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=455664170&format=interactive",
   sheets_gid="560419533",
   sql_file="present_types.sql",
   width=600,
@@ -521,7 +521,7 @@ Core descriptive tags like `twitter:title` and `twitter:description` have also s
   image="twitter-meta-tag-usage-by-year-desktop.png",
   caption="Twitter meta tag usage by year (desktop)",
   description="Bar chart showing Twitter meta tag usage on desktop pages in 2022 and 2024. In 2024, the twitter:card tag is used on 44.15% of pages, twitter:title on 26.40%, twitter:description on 24.53%, twitter:image on 18.63%, and other tags such as twitter:site and twitter:label1 show usage rates between 9.67% and 13.36%.",
-  chart_url="<https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=410054248&format=interactive>",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=410054248&format=interactive",
   sheets_gid="560419533",
   sql_file="present_types.sql",
   width=600,
@@ -532,7 +532,7 @@ Core descriptive tags like `twitter:title` and `twitter:description` have also s
   image="twitter-meta-tag-usage-by-device.png",
   caption="Twitter meta tag usage by device",
   description="Bar chart showing Twitter meta tag usage by device (desktop and mobile) in 2024. On mobile, the twitter:card tag is used on 44.15% of pages, twitter:title on 26.40%, twitter:description on 24.53%, and other tags such as twitter:image and twitter:data1 show usage rates between 9.67% and 13.36%.",
-  chart_url="<https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=1804770953&format=interactive>",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=1804770953&format=interactive",
   sheets_gid="560419533",
   sql_file="present_types.sql",
   width=600,
@@ -551,7 +551,7 @@ Facebook-specific meta tags have seen a marked decline in usage between 2022 and
   image="facebook-meta-tag-usage-by-year-mobile.png",
   caption="Facebook meta tag usage by year (mobile)",
   description="Bar chart showing Facebook meta tag usage on mobile from 2022 to 2024. In 2024, fb:app_id appears on 4.9% of pages, fb:admins on 2.4%, and fb:pages on 0.6%, with minimal or zero usage for other tags.",
-  chart_url="<https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=778075778&format=interactive>",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=778075778&format=interactive",
   sheets_gid="560419533",
   sql_file="present_types.sql",
   width=600,
@@ -564,7 +564,7 @@ This decline underscores a strategic move by developers and webmasters to adopt 
   image="facebook-meta-tag-usage-by-year-desktop.png",
   caption="Facebook meta tag usage by year (desktop)",
   description="Bar chart showing Facebook meta tag usage on desktop from 2022 to 2024. In 2024, fb:app_id appears on the highest percentage of pages at 4.9%, fb:admins on 2.4%, and fb:pages on 0.6%, with minimal or zero usage for other tags.",
-  chart_url="<https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=977720399&format=interactive>",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=977720399&format=interactive",
   sheets_gid="560419533",
   sql_file="present_types.sql",
   width=600,
@@ -577,7 +577,7 @@ Despite the decreasing adoption of Facebook-specific tags, **Facebook** itself r
   image="facebook-meta-tag-usage-by-device.png",
   caption="Facebook meta tag usage by device",
   description="Bar chart showing Facebook meta tag usage by device for desktop and mobile in 2024. The fb:app_id tag appears on the highest percentage of pages, with mobile usage at 4.9% and desktop at a similar level. The fb:admins tag is used on 2.4% of mobile pages and 0.6% on desktop, while other tags show minimal or zero usage.",
-  chart_url="<https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=343986403&format=interactive>",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=343986403&format=interactive",
   sheets_gid="560419533",
   sql_file="present_types.sql",
   width=600,
@@ -594,7 +594,7 @@ Microformats continue to show **limited adoption**, primarily in niche use cases
   image="microformats2-mobile-year-on-year.png",
   caption="Year-on-year comparison of Microformats2 usage on mobile pages in 2022 and 2024.",
   description="Bar chart showing the usage of various Microformats2 types, including h-entry, h-card, and h-feed, on mobile pages in 2022 and 2024. The chart highlights the growth in adoption of these types, with h-entry increasing to 0.22% in 2024.",
-  chart_url="<https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=1365169350&format=interactive>",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=1365169350&format=interactive",
   sheets_gid="560419533",
   sql_file="present_types.sql",
 )}}
@@ -603,7 +603,7 @@ Microformats continue to show **limited adoption**, primarily in niche use cases
   image="microformats2-desktop-year-on-year.png",
   caption="Year-on-year comparison of Microformats2 usage on desktop pages in 2022 and 2024.",
   description="Bar chart showing the usage of various Microformats2 types, including h-entry, h-card, h-feed, and h-adr, on desktop pages in 2022 and 2024. The chart highlights growth in adoption, with h-entry reaching 0.12% and h-adr increasing to 0.06% in 2024.",
-  chart_url="<https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=1211736202&format=interactive>",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=1211736202&format=interactive",
   sheets_gid="560419533",
   sql_file="present_types.sql",
 )}}
@@ -612,7 +612,7 @@ Microformats continue to show **limited adoption**, primarily in niche use cases
   image="microformats2-by-device.png",
   caption="Microformats2 usage by device in 2024, comparing desktop and mobile implementations.",
   description="Bar chart showing the usage of Microformats2 types on both desktop and mobile pages in 2024. The chart highlights higher usage of h-entry and h-card on mobile.",
-  chart_url="<https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=955978151&format=interactive>",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=955978151&format=interactive",
   sheets_gid="560419533",
   sql_file="present_types.sql",
 )}}
@@ -621,7 +621,7 @@ Microformats continue to show **limited adoption**, primarily in niche use cases
   image="microformats-mobile-year-on-year.png",
   caption="A year-on-year comparison of Microformats usage on mobile pages in 2022 and 2024.",
   description="Bar chart comparing the usage of various Microformats types on mobile pages in 2022 and 2024. The chart highlights a notable increase in the usage of the adr type in 2024.",
-  chart_url="<https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=931431512&format=interactive>",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=931431512&format=interactive",
   sheets_gid="560419533",
   sql_file="present_types.sql"
 )}}
@@ -630,7 +630,7 @@ Microformats continue to show **limited adoption**, primarily in niche use cases
   image="microformats-desktop-year-on-year.png",
   caption="Microformats usage by year (desktop).",
   description="Bar chart comparing the usage of Microformats types on desktop pages in 2022 and 2024.",
-  chart_url="<https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=242585504&format=interactive>",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=242585504&format=interactive",
   sheets_gid="560419533",
   sql_file="present_types.sql"
 )}}
@@ -643,7 +643,7 @@ Despite this decline, **Microformats** and **Microformats2** remain useful in sp
   image="microformats-usage-desktop.png",
   caption="Microformats usage by year on desktop pages.",
   description="Bar chart comparing the usage of Microformats types on desktop pages in 2022 and 2024.",
-  chart_url="<https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=242585504&format=interactive>",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=242585504&format=interactive",
   sheets_gid="560419533",
   sql_file="present_types.sql"
 )}}
@@ -656,9 +656,9 @@ Despite this decline, **Microformats** and **Microformats2** remain useful in sp
   image="microdata-year-on-year-mobile.png",
   caption="A year-on-year comparison of Microdata usage on mobile pages.",
   description="Bar chart showing the usage of various Microdata types on mobile pages in 2022 and 2024.",
-  chart_url="<https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=584764017&format=interactive>",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=584764017&format=interactive",
   sheets_gid="560419533",
-  sql_file="present_types.sql"
+  sql_file="present_types.sql",
   width=600,
   height=582
 )}}
@@ -669,9 +669,9 @@ Despite this decline, **Microformats** and **Microformats2** remain useful in sp
   image="microdata-by-device.png",
   caption="A comparison of Microdata usage by device.",
   description="Bar chart showing the usage of various Microdata types on desktop and mobile devices in 2024.",
-  chart_url="<https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=804256393&format=interactive>",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=804256393&format=interactive",
   sheets_gid="560419533",
-  sql_file="present_types.sql"
+  sql_file="present_types.sql",
   width=600,
   height=614
 )}}
@@ -698,9 +698,9 @@ Specialized business types such as **Restaurant** (**0.19%**), **AutoDealer** (*
   image="jsonld-year-on-year-mobile.png",
   caption="A year-on-year comparison of JSON-LD usage on mobile pages.",
   description="Bar chart comparing JSON-LD type usage in 2022 and 2024 on mobile devices. Types include WebSite, Organization, LocalBusiness, BreadcrumbList, and others.",
-  chart_url="<https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=2099227544&format=interactive>",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=2099227544&format=interactive",
   sheets_gid="560419533",
-  sql_file="present_types.sql"
+  sql_file="present_types.sql",
   width=600,
   height=572
 )}}
@@ -715,14 +715,14 @@ These observations highlight the *resilience of certain structured data types* d
   image="jsonld-by-device.png",
   caption="A comparison of JSON-LD usage by device.",
   description="Bar chart comparing JSON-LD type usage on desktop and mobile devices, including WebSite, Organization, LocalBusiness, and more.",
-  chart_url="<https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=1732530777&format=interactive>",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=1732530777&format=interactive",
   sheets_gid="560419533",
-  sql_file="present_types.sql"
+  sql_file="present_types.sql",
   width=600,
   height=572
 )}}
 
-### JSON-LD Relationships
+### JSON-LD relationships
 
 When evaluating JSON-LD relationships in structured data implementations, several key patterns emerge in how entities are connected in a graph. These relationship patterns reflect how structured data is used to **create comprehensive, interconnected entity descriptions** that help search engines better understand content context and relationships. The most successful implementations leverage these connections to provide rich, detailed information while maintaining logical content relationships.
 
@@ -760,7 +760,7 @@ As seen also in the previous chart the most frequent JSON-LD property relationsh
 
 Particularly noteworthy is the consistent implementation of **contact and location information**, with PostalAddress, ContactPoint, and GeoCoordinates forming a well-defined cluster. This suggests businesses are prioritizing local presence markup. The presence of review-related properties (reviewRating, rating) connected to various entities indicates strong focus on reputation management through structured data.
 
-### sameAs
+### `sameAs`
 
 The sameAs property plays a crucial role in **entity disambiguation and knowledge graph development**, extending far beyond simple social media profile linking. While our data shows strong implementation for major platforms (Facebook at 4.53%, Instagram at 3.67%), the true strategic value lies in how sameAs helps search engines understand and validate entity relationships.
 
@@ -770,7 +770,7 @@ When properly implemented, sameAs serves as a powerful tool for entity disambigu
   image="sameas-year-on-year-mobile.png",
   caption="Year-on-year comparison of SameAs usage on mobile pages in 2022 and 2024.",
   description="Bar chart comparing the usage of SameAs links by type for mobile pages in 2022 and 2024. The chart shows Facebook.com leading with 4.5% in 2024, followed by Instagram.com with 3.7%. Other platforms include Twitter.com, YouTube.com, and LinkedIn.com, highlighting usage trends over two years.",
-  chart_url="<https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=315508282&format=interactive>",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=315508282&format=interactive",
   sheets_gid="560419533",
   sql_file="present_types.sql",
   height=600,
@@ -783,7 +783,7 @@ For personal entities (executives, authors, experts), sameAs similarly helps est
   image="sameas-year-on-year-by-device.png",
   caption="SameAs usage by device on mobile and desktop for various platforms.",
   description="A bar chart comparing the usage of SameAs links by device type (desktop and mobile). Facebook.com leads with 4.5% on desktop and 3.7% on mobile, followed by Instagram.com, Twitter.com, and others. The data highlights differences in usage patterns across platforms.",
-  chart_url="<https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=785630631&format=interactive>",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=785630631&format=interactive",
   sheets_gid="560419533",
   sql_file="present_types.sql",
   height=600,
@@ -792,7 +792,7 @@ For personal entities (executives, authors, experts), sameAs similarly helps est
 
 This parity between mobile and desktop implementations represents a significant advancement in structured data deployment. It suggests that organizations are increasingly using consistent templating systems or automated solutions to manage their structured data, rather than maintaining separate implementations for different devices.
 
-### JSON-LD Context
+### JSON-LD context
 
 Schema.org remains the dominant force in JSON-LD context implementation with over 20 million instances, far exceeding all other contexts. This dominance (20,960,693 implementations versus the next highest at 11,973) reflects its position as the industry standard for structured data markup.
 
@@ -800,7 +800,7 @@ Among secondary implementations, contao.org leads with 11,973 instances, primari
 
 The vast gap between Schema.org and other contexts underscores its critical role in structured data standardization and reflects strong alignment with search engine requirements.
 
-## Emerging Trends and Future Outlook
+## Emerging trends and future outlook
 
 The structured data landscape is rapidly evolving, marked by Google's introduction of specialized schemas for vehicles, courses, and 3D product models, alongside increased support for Digital Product Passports through GS1 Digital Link. The growing adoption of JSON-LD (now at 41% of pages) and sophisticated entity relationships through sameAs properties indicates a maturing ecosystem focused on comprehensive knowledge graph development.
 
@@ -808,23 +808,23 @@ The data shows a clear shift toward more specialized implementation patterns, pa
 
 This shift can be partially attributed to Google’s policy changes, which encouraged webmasters to focus on more domain-specific schemas. Entity disambiguation has also become increasingly critical, with organizations leveraging structured data like **sameAs** and **Organization** to establish clear digital identities across platforms and knowledge bases.
 
-## Looking Ahead: The Future of Structured Data
+## Looking ahead: the future of structured data
 
 As we analyze current trends, we also cast our gaze forward to emerging developments:
 
-- **AI and Structured Data Symbiosis**
+- **AI and structured data symbiosis**
 
   The growing interdependence between **AI systems** and **structured data** is becoming crucial for delivering **grounded, hallucination-free content generation** and enhancing **conversational search experiences**. As AI relies increasingly on structured data for accurate and context-rich information, this symbiosis is redefining how **AI-powered tools** interact with content across the web.
 
-- **Data Commons and Knowledge Graph Integration**
+- **Data Commons and knowledge graph integration**
 
   The expansion of open data initiatives, such as **Google's Data Commons**, which leverages **Schema.org** for structuring and linking public datasets, is further fueling the evolution of **knowledge graph-based systems**. These initiatives provide a rich, unified foundation for **AI-driven data enrichment** and **exploration**, creating new possibilities for scalable and reliable data integration across platforms.
 
-- **SEOntology and Specialized Vocabularies**
+- **SEOntology and specialized vocabularies**
 
   In parallel, the development of [**SEOntology**](https://www.searchenginejournal.com/introducing-seontology-the-future-of-seo-in-the-age-of-ai/524773/) and other specialized vocabularies is addressing the need for **SEO-specific structured data** that can improve **content discoverability** and **search engine optimization**. By creating vocabularies tailored to the unique requirements of SEO, we can further enhance the alignment between structured data and AI, driving more targeted and efficient search experiences.
 
-- **Regulatory Impacts**
+- **Regulatory impacts**
 
   Finally, regulations such as the **EU’s Digital Product Passport** are poised to reshape future structured data standards. These initiatives will likely influence how structured data is applied, especially in domains like **e-commerce** and **product traceability**, encouraging more structured and transparent data practices.
 
