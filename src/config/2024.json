@@ -42,8 +42,7 @@
           "part": "I",
           "chapter_number": "5",
           "title": "Fonts",
-          "slug": "fonts",
-          "todo": true
+          "slug": "fonts"
         },
         {
           "part": "I",
@@ -90,8 +89,7 @@
           "part": "II",
           "chapter_number": "11",
           "title": "Performance",
-          "slug": "performance",
-          "todo": true
+          "slug": "performance"
         },
         {
           "part": "II",
@@ -105,8 +103,7 @@
           "part": "II",
           "chapter_number": "13",
           "title": "Security",
-          "slug": "security",
-          "todo": true
+          "slug": "security"
         }
       ]
     },
@@ -171,7 +168,7 @@
           "chapter_number": "21",
           "title": "Cookies",
           "slug": "cookies",
-          "todo": true
+          "hero_dir": "2024"
         }
       ]
     }
@@ -194,6 +191,9 @@
     },
     "leads": {
       "name": "Leads"
+    },
+    "committee": {
+      "name": "Organizing Commmittee"
     },
     "reviewers": {
       "name": "Reviewers"

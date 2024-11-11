@@ -91,22 +91,31 @@
         <div class="code-block floating-card">
           {# To generate this markup temporarily add a ```sql code block to a chapter and generate that chapter and you&#8217;ll get the HTML #}
           {# Note extra attributes on pre tag to allow keyboard scroll so add them back in #}
-          {# TODO - update this to new dataset #}
-          <pre class="hidden" role="region" aria-label="bytes_2022.sql" tabindex="0"><code class="sql language-sql"><span class="comment">#standardSQL</span>
-<span class="comment"># Sum of JS request bytes per page (2024)</span>
-<span class="keyword">SELECT</span>
-  percentile,
-  _TABLE_SUFFIX <span class="keyword">AS</span> client,
-  <span class="function call">APPROX_QUANTILES</span>(bytesJs / <span class="constant numeric">1024</span>, <span class="constant numeric">1000</span>)[<span class="function call">OFFSET</span>(percentile <span class="keyword operator">*</span> <span class="constant numeric">10</span>)] <span class="keyword">AS</span> js_kilobytes
-<span class="keyword">FROM</span>
-  <span class="string">`httparchive.summary_pages.2024_06_01_*`</span>,
-  <span class="function call">UNNEST</span>([<span class="constant numeric">10</span>, <span class="constant numeric">25</span>, <span class="constant numeric">50</span>, <span class="constant numeric">75</span>, <span class="constant numeric">90</span>, <span class="constant numeric">100</span>]) <span class="keyword">AS</span> percentile
+          <pre role="region" aria-label="color-contrast.sql" tabindex="0"><code class="sql language-sql"><span class="keyword">SELECT</span>
+  client,
+  is_root_page,
+  <span class="function call">COUNTIF</span>(color_contrast_score <span class="keyword">IS</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span>) <span class="keyword">AS</span> total_applicable,
+  <span class="function call">COUNTIF</span>(<span class="function call">CAST</span>(color_contrast_score <span class="keyword">AS</span> <span class="keyword">NUMERIC</span>) <span class="keyword operator">=</span> <span class="constant numeric">1</span>) <span class="keyword">AS</span> total_good_contrast,
+  <span class="function call">COUNTIF</span>(<span class="function call">CAST</span>(color_contrast_score <span class="keyword">AS</span> <span class="keyword">NUMERIC</span>) <span class="keyword operator">=</span> <span class="constant numeric">1</span>) / <span class="function call">COUNTIF</span>(color_contrast_score <span class="keyword">IS</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span>) <span class="keyword">AS</span> perc_good_contrast
+<span class="keyword">FROM</span> (
+  <span class="keyword">SELECT</span>
+    client,
+    is_root_page,
+    <span class="keyword">date</span>,
+    <span class="function call">JSON_VALUE</span>(lighthouse, <span class="string">'$.audits.color-contrast.score'</span>) <span class="keyword">AS</span> color_contrast_score
+  <span class="keyword">FROM</span>
+    <span class="string">`httparchive.all.pages`</span>
+  <span class="keyword">WHERE</span>
+    <span class="keyword">date</span> <span class="keyword operator">=</span> <span class="string">'2024-06-01'</span>
+)
 <span class="keyword">GROUP</span> <span class="keyword">BY</span>
-  percentile,
-  client
+  client,
+  is_root_page,
+  <span class="keyword">date</span>
 <span class="keyword">ORDER</span> <span class="keyword">BY</span>
   client,
-  percentile</code></pre></div>
+  is_root_page;</code></pre>
+        </div>
 
         <p>
           Results for each metric are publicly viewable in chapter-specific spreadsheets, for example <a href="https://docs.google.com/spreadsheets/d/16isMe5_rvmRmJHtK5Je66AhwO8SowGgq0EFqXyjEXw8/edit?gid=1778117656#gid=1778117656">JavaScript results</a>. Links to the raw results and queries are available at the bottom of each chapter. Metric-specific results and queries are also linked directly from each figure.

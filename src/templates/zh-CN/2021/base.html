@@ -6,7 +6,8 @@
 {% block dataset %}2021年7{% endblock %}
 
 {% block foreword %}
-{# TODO - translate  <p>
+{# TODO - translate #}<div lang="en">
+  <p>
     Three years ago I wondered to myself, <em>plenty of tools can tell me how well-built my website is, but where would I go to see the state of the web as a whole</em>? As sophisticated as the HTTP Archive dataset is, the answers it gives us can only be as useful as the questions we ask it. I’m a web developer, but I’m not an expert in all areas of web development—no one is expected to be! But collectively, we all have our own areas of expertise. Get enough of us together, and we can start to ask the right questions about the state of the web that the HTTP Archive can answer in really meaningful ways. That was the original idea behind the Web Almanac.
   </p>
 
@@ -18,5 +19,6 @@
     The 2021 edition consists of a comprehensive lineup of 24 chapters, including two that we’re excited to cover for the first time: <a href="{{ url_for('chapter', year=year, lang=lang, chapter='structured-data') }}">Structured Data</a> and <a href="{{ url_for('chapter', year=year, lang=lang, chapter='webassembly') }}">WebAssembly</a>. These new chapters help us expand the scope of the Web Almanac, which educates our reader base about a more diverse range of topics and equips even more specialized groups with actionable data. Ultimately, that’s why we do it: we hope that our research can be utilized by the web community as a shared source of truth to meaningfully improve the ecosystem. If you find this resource as valuable as we do, we’d love it if you shared it with other people who are interested in the state of the web. Together, let’s use this data as a forcing function for positive change.
   </p>
 
-  <p>— <em><a href="{{ url_for('contributors', year=year, lang=lang, _anchor='rviscomi') }}">Rick Viscomi</a>, Web Almanac Editor-in-Chief</em></p>#}
+  <p>— <em><a href="{{ url_for('contributors', year=year, lang=lang, _anchor='rviscomi') }}">Rick Viscomi</a>, Web Almanac Editor-in-Chief</em></p>
+</div>
 {% endblock %}

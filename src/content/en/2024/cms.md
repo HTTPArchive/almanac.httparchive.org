@@ -18,6 +18,7 @@ featured_stat_2: 49%
 featured_stat_label_2: Percent of mobile sites using a CMS.
 featured_stat_3: 72%
 featured_stat_label_3: Percent of CMS market share that is WordPress
+doi: 10.5281/zenodo.14065528
 ---
 
 In this chapter, we interpret the evolving landscape of the Content Management System (CMS) and its increasing influence on how users experience content on the web. We aim to explore both the broader CMS ecosystem and the unique characteristics of web pages created through these platforms.

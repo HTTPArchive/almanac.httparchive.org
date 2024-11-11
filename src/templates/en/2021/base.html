@@ -6,6 +6,7 @@
 {% block dataset %}July 2021{% endblock %}
 
 {% block foreword %}
+<div>
   <p>
     Three years ago I wondered to myself, <em>plenty of tools can tell me how well-built my website is, but where would I go to see the state of the web as a whole</em>? As sophisticated as the HTTP Archive dataset is, the answers it gives us can only be as useful as the questions we ask it. I’m a web developer, but I’m not an expert in all areas of web development—no one is expected to be! But collectively, we all have our own areas of expertise. Get enough of us together, and we can start to ask the right questions about the state of the web that the HTTP Archive can answer in really meaningful ways. That was the original idea behind the Web Almanac.
   </p>
@@ -19,4 +20,5 @@
   </p>
 
   <p>— <em><a href="{{ url_for('contributors', year=year, lang=lang, _anchor='rviscomi') }}">Rick Viscomi</a>, Web Almanac Editor-in-Chief</em></p>
+</div>
 {% endblock %}
