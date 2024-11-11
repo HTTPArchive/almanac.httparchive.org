@@ -3,7 +3,7 @@
 title: セキュリティ
 description: 2021年版Web Almanacのセキュリティの章では、トランスポートレイヤーセキュリティ、コンテンツインクルージョン（CSP、フィーチャーポリシー、SRI）、Web防御機構（XSS、XS-Leaksへの取り組み）、セキュリティ機構採用の促進要因について解説しています。
 authors: [saptaks, tomvangoethem, nrllh]
-reviewers: [cqueern, edmondwwchan, awareseven]
+reviewers: [cqueern, edmondwwchan, lord-r3]
 analysts: [gjfr]
 editors: [tunetheweb]
 translators: [ksakae1216]

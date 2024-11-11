@@ -16,6 +16,7 @@ featured_stat_label_2: Growth of Astro for Prerendered sites in 2024
 featured_stat_3: 42%
 featured_stat_label_3: Percentage less JavaScript Prerendered sites use than Dyanmic sites.
 mikeneu_bio: Mike Neumegen passionate about building a web that's accessible, fast, simple, and secure and grounded in strong fundamentals. He's the co-founder of <a hreflang="en" href="https://cloudcannon.com/">CloudCannon</a>, a content management platform that brings Git-based workflows to content editors.
+doi: 10.5281/zenodo.14065579
 ---
 
 ## Introduction

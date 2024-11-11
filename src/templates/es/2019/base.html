@@ -6,6 +6,7 @@
 {% block dataset %}Julio de 2019{% endblock %}
 
 {% block foreword %}
+<div>
   <p>
     La web abierta es una red de tecnologías increíblemente compleja y en evolución. Industrias y carreras enteras se crean en la web y dependen de su vibrante ecosistema para tener éxito. Tan importante como es la web, comprender cómo está funcionando ha sido sorprendentemente difícil de alcanzar. Desde 2010, la misión del proyecto HTTP Archive ha sido rastrear cómo se construye la web, y ha estado haciendo un trabajo increíble. Sin embargo, ha habido una brecha que ha sido especialmente difícil de cerrar: dar sentido a los datos que el proyecto de HTTP Archive ha estado recopilando y permitir a la comunidad comprender fácilmente el rendimiento de la web. Ahí es donde entra el Web Almanac.
   </p>
@@ -23,4 +24,5 @@
   </p>
 
   <p>— <em><a href="{{ url_for('contributors', year=year, lang=lang, _anchor='rviscomi') }}">Rick Viscomi</a>, creador del Web Almanac</em></p>
+</div>
 {% endblock %}
