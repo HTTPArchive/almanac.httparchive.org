@@ -57,7 +57,7 @@
 {% block open_the_index %}目次を開く{% endblock %}
 {% block close_the_index %}目次を閉じる{% endblock %}
 
-{% block and %} と {% endblock %}
+{% block and %}と{% endblock %}
 {% block comma %}、{% endblock %}
 {% block oxford_comma %}{% endblock %}
 
@@ -111,11 +111,14 @@
 {% block repliesAlt %}{% endblock %}
 {% block mentionsAlt %}{% endblock %}
 
-{% macro onTwitter(twitterHandle) %}Twitterの@{{twitterHandle}}{% endmacro %}
+{% macro onTwitter(twitterHandle) %}Twitter/Xの@{{twitterHandle}}{% endmacro %}
 {% macro onMastodon(mastodonHandle) %}Mastodonの{{mastodonHandle}}{% endmacro %}
+{% macro onBluesky(blueskyHandle) %}Blueskyの{{blueskyHandle}}{% endmacro %}
 {% macro onGitHub(gitHubHandle) %}GitHubの{{gitHubHandle}}{% endmacro %}
 {% macro onLinkedIn(authorName) %}LinkedInの{{authorName}}{% endmacro %}
 {% macro website(authorName) %}{{authorName}} ウェブサイト{% endmacro %}
+
+{% block citation %}引用{% endblock %}
 
 {% macro edition(year) %}{{ year }} 版{% endmacro %}
 
@@ -213,6 +216,7 @@ Web Almanacは、ウェブ・コミュニティの努力によって実現して
   "developers": "開発者",
   "editors": "編集者",
   "leads": "リーダー",
+  "committee": "組織委員会",
   "reviewers": "レビュワー",
   "translators": "翻訳者",
   }
@@ -226,6 +230,7 @@ Web Almanacは、ウェブ・コミュニティの努力によって実現して
   "developers": "開発者",
   "editors": "編集者",
   "leads": "リーダー",
+  "committee": "組織委員会",
   "reviewers": "レビュワー",
   "translators": "翻訳者",
   }

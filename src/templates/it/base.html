@@ -57,7 +57,7 @@ La nostra missione è combinare le statistiche grezze e le tendenze del HTTP Arc
 {% block open_the_index %}Apri sommario{% endblock %}
 {% block close_the_index %}Chiudi sommario{% endblock %}
 
-{% block and %}e{% endblock %}
+{% block and %} e {% endblock %}
 {% block comma %}, {% endblock %}
 {% block oxford_comma %}{% endblock %}
 
@@ -111,11 +111,14 @@ La nostra missione è combinare le statistiche grezze e le tendenze del HTTP Arc
 {% block repliesAlt %}{% endblock %}
 {% block mentionsAlt %}{% endblock %}
 
-{% macro onTwitter(twitterHandle) %}@{{twitterHandle}} su Twitter{% endmacro %}
+{% macro onTwitter(twitterHandle) %}@{{twitterHandle}} su Twitter/X{% endmacro %}
 {% macro onMastodon(mastodonHandle) %}{{mastodonHandle}} su Mastodon{% endmacro %}
+{% macro onBluesky(blueskyHandle) %}{{blueskyHandle}} su Bluesky{% endmacro %}
 {% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} su GitHub{% endmacro %}
 {% macro onLinkedIn(authorName) %}{{authorName}} su LinkedIn{% endmacro %}
 {% macro website(authorName) %}{{authorName}} sito web{% endmacro %}
+
+{% block citation %}Citazione{% endblock %}
 
 {% macro edition(year) %}Edizione {{ year }}{% endmacro %}
 
@@ -213,6 +216,7 @@ Se non diversamente specificato, le metriche in tutti i {{ supported_chapters | 
   "developers": "Sviluppatori",
   "editors": "Editori",
   "leads": "Responsabili del progetto",
+  "committee": "Comitato Organizzativo",
   "reviewers": "Revisori",
   "translators": "Traduttori",
   }
@@ -226,6 +230,7 @@ Se non diversamente specificato, le metriche in tutti i {{ supported_chapters | 
   "developers": "Sviluppatore",
   "editors": "Editor",
   "leads": "Responsabili del progetto",
+  "committee": "Comitato Organizzativo",
   "reviewers": "Revisore",
   "translators": "Traduttore",
   }

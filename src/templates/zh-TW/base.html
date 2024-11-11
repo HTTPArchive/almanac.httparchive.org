@@ -111,11 +111,14 @@
 {% block repliesAlt %}{% endblock %}
 {% block mentionsAlt %}{% endblock %}
 
-{% macro onTwitter(twitterHandle) %}@{{twitterHandle}} Twitter{% endmacro %}
+{% macro onTwitter(twitterHandle) %}@{{twitterHandle}} Twitter/X{% endmacro %}
 {% macro onMastodon(mastodonHandle) %}{{mastodonHandle}} Mastodon{% endmacro %}
+{% macro onBluesky(blueskyHandle) %}{{blueskyHandle}} Bluesky{% endmacro %}
 {% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} GitHub{% endmacro %}
 {% macro onLinkedIn(authorName) %}{{authorName}} LinkedIn{% endmacro %}
 {% macro website(authorName) %}{{authorName}} 網站{% endmacro %}
+
+{% block citation %}引文{% endblock %}
 
 {% macro edition(year) %}{{ year }} 版{% endmacro %}
 
@@ -213,6 +216,7 @@ Web Almanac 網路年鑑是被熱情的網路社群擁抱而茁壯。 {{ self.co
   "developers": "開發者",
   "editors": "審稿者",
   "leads": "專案主導者",
+  "committee": "大會",
   "reviewers": "審稿者",
   "translators": "翻譯者",
   }
@@ -226,6 +230,7 @@ Web Almanac 網路年鑑是被熱情的網路社群擁抱而茁壯。 {{ self.co
   "developers": "開發者",
   "editors": "審稿者",
   "leads": "專案主導者",
+  "committee": "大會",
   "reviewers": "審稿者",
   "translators": "翻譯者",
   }

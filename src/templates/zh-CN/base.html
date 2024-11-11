@@ -111,11 +111,14 @@
 {% block repliesAlt %}{% endblock %}
 {% block mentionsAlt %}{% endblock %}
 
-{% macro onTwitter(twitterHandle) %}@{{twitterHandle}} 在 Twitter{% endmacro %}
+{% macro onTwitter(twitterHandle) %}@{{twitterHandle}} 在 Twitter/X{% endmacro %}
 {% macro onMastodon(mastodonHandle) %}{{mastodonHandle}} 在 Mastodon{% endmacro %}
+{% macro onBluesky(blueskyHandle) %}{{blueskyHandle}} 在 Bluesky{% endmacro %}
 {% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} 在 GitHub{% endmacro %}
 {% macro onLinkedIn(authorName) %}{{authorName}} 在 LinkedIn{% endmacro %}
 {% macro website(authorName) %}{{authorName}} 网站{% endmacro %}
+
+{% block citation %}引用{% endblock %}
 
 {% macro edition(year) %}{{ year }} 版{% endmacro %}
 
@@ -213,6 +216,7 @@
   "developers": "开发者",
   "editors": "编辑",
   "leads": "领导者",
+  "committee": "组织委员会",
   "reviewers": "审稿者",
   "translators": "翻译者",
   }
@@ -226,6 +230,7 @@
   "developers": "开发者",
   "editors": "编辑",
   "leads": "领导者",
+  "committee": "组织委员会",
   "reviewers": "审稿者",
   "translators": "翻译者",
   }

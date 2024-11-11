@@ -57,7 +57,7 @@
 {% block open_the_index %}विषय सूची को खोलें{% endblock %}
 {% block close_the_index %}विषय सूची को बंद करें{% endblock %}
 
-{% block and %}और{% endblock %}
+{% block and %} और {% endblock %}
 {% block comma %}, {% endblock %}
 {% block oxford_comma %}{% endblock %}
 
@@ -111,11 +111,14 @@
 {% block repliesAlt %}{% endblock %}
 {% block mentionsAlt %}{% endblock %}
 
-{% macro onTwitter(twitterHandle) %}@{{twitterHandle}} Twitter पर{% endmacro %}
+{% macro onTwitter(twitterHandle) %}@{{twitterHandle}} Twitter/X पर{% endmacro %}
 {% macro onMastodon(mastodonHandle) %}{{mastodonHandle}}Mastodonपर{% endmacro %}
+{% macro onBluesky(blueskyHandle) %}{{blueskyHandle}}Blueskyपर{% endmacro %}
 {% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} GitHub पर{% endmacro %}
 {% macro onLinkedIn(authorName) %}{{authorName}} LinkedIn पर{% endmacro %}
 {% macro website(authorName) %}{{authorName}} वेबसाइट{% endmacro %}
+
+{% block citation %}उद्धरण{% endblock %}
 
 {% macro edition(year) %}{{ year }} संस्करण{% endmacro %}
 
@@ -213,6 +216,7 @@ Web Almanac वेब समुदाय की मेहनत से संभ
   "developers": "डेवलपर",
   "editors": "संपादक",
   "leads": "प्रोजेक्ट लीड्स",
+  "committee": "आयोजन समिति",
   "reviewers": "समीक्षक",
   "translators": "अनुवादक",
   }
@@ -226,6 +230,7 @@ Web Almanac वेब समुदाय की मेहनत से संभ
   "developers": "डेवलपर",
   "editors": "संपादक",
   "leads": "प्रोजेक्ट लीड्स",
+  "committee": "आयोजन समिति",
   "reviewers": "समीक्षक",
   "translators": "अनुवादक",
   }

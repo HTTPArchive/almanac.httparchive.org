@@ -44,7 +44,7 @@ featured_stat_label_3: LighthouseのレガシーJavaScript監査は、サード�
 
 ### サードパーティーのカテゴリー
 
-私たちは、サードパーティを特定し分類するために、[Patrick Hulce](https://twitter.com/patrickhulce) の <a hreflang="en" href="https://github.com/patrickhulce/third-party-web/#third-parties-by-category">third-party-web</a> レポジトリに依存しています。このリポジトリでは、サードパーティを以下のカテゴリーに分類しています。
+私たちは、サードパーティを特定し分類するために、[Patrick Hulce](https://x.com/patrickhulce) の <a hreflang="en" href="https://github.com/patrickhulce/third-party-web/#third-parties-by-category">third-party-web</a> レポジトリに依存しています。このリポジトリでは、サードパーティを以下のカテゴリーに分類しています。
 
 - **Ad** - これらのスクリプトは、広告ネットワークの一部であり、配信または測定を行っています。
 - **Analytics** - ユーザーとその行動を測定または追跡するスクリプトです。何を追跡するかによって、ここでの影響は大きく異なります。
@@ -189,7 +189,7 @@ YouTubeは、もっとも多く利用されているサードパーティーの�
 
 Lighthouseは、サードパーティーのサイズが非常に小さく、レンダリングブロッキング時間に明確な影響を与えない場合でも、レンダリングブロッキングの可能性があるとしてマークする場合があります。これは、GoogleフォントやGoogle/Doubleclick Adsのように、レンダリングブロッキング時間の中央値が0ミリ秒であるサードパーティが該当します。
 
-メインスレッドがブロックされると、[最初の入力までの遅延(FID)](https://web.dev/i18n/ja/fid/) と [次のペイントへのインタラクション(INP)](https://web.dev/articles/inp/) の性能指標に大きな影響を及ぼします。Webページの応答性を高めるためには、FIDは100ms以下、INPは200ms以下であることが望ましいとされています。モバイル機器における<a hreflang="en" href="https://github.com/GoogleChromeLabs/chrome-http-archive-analysis/blob/main/notebooks/HTTP_Archive_TBT_and_INP.ipynb">総ブロッキング時間と次のペイントへのインタラクション</a>の相関関係については、[Annie Sullivan](https://twitter.com/anniesullie)による研究があります。それによると、メインスレッドのブロック時間が小さいほど、サイトが良好なINPとFIDの閾値を満たす可能性が高いことがわかります。このことから、YouTubeの事例のように、サード パーティがメイン スレッドを長時間ブロックしている場合、良好なコアWebパフォーマンス指標を達成することが難しくなるという結論に達します。さらに、他のサードパーティやファーストパーティの資産も、レンダーブロッキング効果の一因となる可能性があります。しかし、サードパーティによるレンダリングブロックを最小限に抑える方法は数多くあります。これについては、次のセクションでさらに検討します。
+メインスレッドがブロックされると、[最初の入力までの遅延(FID)](https://web.dev/i18n/ja/fid/) と [次のペイントへのインタラクション(INP)](https://web.dev/articles/inp/) の性能指標に大きな影響を及ぼします。Webページの応答性を高めるためには、FIDは100ms以下、INPは200ms以下であることが望ましいとされています。モバイル機器における<a hreflang="en" href="https://github.com/GoogleChromeLabs/chrome-http-archive-analysis/blob/main/notebooks/HTTP_Archive_TBT_and_INP.ipynb">総ブロッキング時間と次のペイントへのインタラクション</a>の相関関係については、[Annie Sullivan](https://x.com/anniesullie)による研究があります。それによると、メインスレッドのブロック時間が小さいほど、サイトが良好なINPとFIDの閾値を満たす可能性が高いことがわかります。このことから、YouTubeの事例のように、サード パーティがメイン スレッドを長時間ブロックしている場合、良好なコアWebパフォーマンス指標を達成することが難しくなるという結論に達します。さらに、他のサードパーティやファーストパーティの資産も、レンダーブロッキング効果の一因となる可能性があります。しかし、サードパーティによるレンダリングブロックを最小限に抑える方法は数多くあります。これについては、次のセクションでさらに検討します。
 
 ## ウェブパフォーマンスのベストプラクティス
 

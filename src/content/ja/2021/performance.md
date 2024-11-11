@@ -8,7 +8,7 @@ analysts: [siakaramalegos, rviscomi, Nithanaroy]
 editors: [jzyang]
 translators: [ksakae1216]
 results: https://docs.google.com/spreadsheets/d/13xhPx6o2Nowz_3b3_5ojiF_mY3Lhs25auBKM6eqGZmo/
-siakaramalegos_bio: Sia Karamalegosはウェブ開発者、国際会議のスピーカー、ライターです。Googleデベロッパー ウェブテクノロジーの専門家、Cloudinaryメディア開発者エキスパート、Stripeコミュニティエキスパートであり、Eleventy Meetupを共同開催しています。<a hreflang="en" href="https://sia.codes/">sia.codes</a> や<a hreflang="en" href="https://twitter.com/thegreengreek">Twitter</a> で、彼女の執筆、講演、ニュースレターをチェックしてください。
+siakaramalegos_bio: Sia Karamalegosはウェブ開発者、国際会議のスピーカー、ライターです。Googleデベロッパー ウェブテクノロジーの専門家、Cloudinaryメディア開発者エキスパート、Stripeコミュニティエキスパートであり、Eleventy Meetupを共同開催しています。<a hreflang="en" href="https://sia.codes/">sia.codes</a> や<a hreflang="en" href="https://x.com/thegreengreek">Twitter</a> で、彼女の執筆、講演、ニュースレターをチェックしてください。
 featured_quote: フレームワークレベルでパフォーマンスに関するスマートなデフォルトを設定できれば、より良いウェブを作ることができ、同時に開発者の仕事を楽にすることができます。
 featured_stat_1: 37%
 featured_stat_label_1: 上位1,000サイトのうちCore Web Vitalsを通過したサイトの割合
@@ -506,4 +506,4 @@ FIDのランク別実績は横ばい。
 
 最後に、WordPressは上位1000万のウェブサイト、あるいはそれ以上のパフォーマンスに影響を与える可能性があることを確認しました。これは、すべてのCMSとフレームワークが留意すべき教訓です。フレームワークレベルでパフォーマンスに関するスマートなデフォルトを設定することができれば、より良いウェブを作ることができ、同時に開発者の仕事を容易にできます。
 
-あなたがもっとも興味を持ったこと、驚いたことは何ですか？あなたの感想をTwitter（[@HTTPArchive](https://twitter.com/HTTPArchive)）でシェアしてください。
+あなたがもっとも興味を持ったこと、驚いたことは何ですか？あなたの感想をTwitter（[@HTTPArchive](https://x.com/HTTPArchive)）でシェアしてください。

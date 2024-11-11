@@ -208,7 +208,7 @@ We also saw a slight change (< 1%) in canonical between the raw HTML delivered, 
 
 #### Conflicting canonical tags
 
-Sometimes pages contain more than one canonical tag. When there are conflicting signals like this, search engines will have to figure it out. One of Google's Search Advocates, [Martin Splitt](https://twitter.com/g33konaut), once said <a hreflang="en" href="https://www.youtube.com/watch?v=bAE3L1E1Fmk&amp;t=772s">it causes undefined behavior</a> on Google's end.
+Sometimes pages contain more than one canonical tag. When there are conflicting signals like this, search engines will have to figure it out. One of Google's Search Advocates, [Martin Splitt](https://x.com/g33konaut), once said <a hreflang="en" href="https://www.youtube.com/watch?v=bAE3L1E1Fmk&amp;t=772s">it causes undefined behavior</a> on Google's end.
 
 The previous figure shows as many as 1.3% of mobile pages have different canonical tags in the initial HTML and the rendered version.
 
@@ -708,7 +708,7 @@ However, AMP adoption continued to increase in 2021. 0.09% of desktop pages now 
   <figcaption>— <cite><a hreflang="en" href="https://developers.google.com/search/docs/advanced/crawling/localized-versions">Google SEO documentation</a></cite></figcaption>
 </figure>
 
-To let search engines know about localized versions of your pages, use `hreflang` tags. `hreflang` attributes are also used by <a hreflang="en" href="https://yandex.com/support/webmaster/yandex-indexing/locale-pages.html">Yandex</a> and Bing ([to some extent](https://twitter.com/facan/status/1304120691172601856)).
+To let search engines know about localized versions of your pages, use `hreflang` tags. `hreflang` attributes are also used by <a hreflang="en" href="https://yandex.com/support/webmaster/yandex-indexing/locale-pages.html">Yandex</a> and Bing ([to some extent](https://x.com/facan/status/1304120691172601856)).
 
 {{ figure_markup(
   image="hreflang-usage.png",
@@ -730,7 +730,7 @@ The most popular hreflang attribute is `"en"` (English version). 4.75% of mobile
 
 `x-default` (also called the fallback version) is used in 2.56% of cases on mobile. Other popular languages addressed by `hreflang` attributes are French and Spanish.
 
-For Bing, [`hreflang` is a "far weaker signal" than the `content-language` header](https://twitter.com/facan/status/1304120691172601856).
+For Bing, [`hreflang` is a "far weaker signal" than the `content-language` header](https://x.com/facan/status/1304120691172601856).
 
 As with many other SEO parameters, [`content-language`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Language) has multiple implementation methods including:
 

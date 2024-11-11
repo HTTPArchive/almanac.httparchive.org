@@ -57,7 +57,7 @@
 {% block open_the_index %}Відкрити зміст{% endblock %}
 {% block close_the_index %}Закрити зміст{% endblock %}
 
-{% block and %}і{% endblock %}
+{% block and %} і {% endblock %}
 {% block comma %}, {% endblock %}
 {% block oxford_comma %}{% endblock %}
 
@@ -111,11 +111,14 @@
 {% block repliesAlt %}відповіді{% endblock %}
 {% block mentionsAlt %}згадки{% endblock %}
 
-{% macro onTwitter(twitterHandle) %}@{{twitterHandle}} у Twitter{% endmacro %}
+{% macro onTwitter(twitterHandle) %}@{{twitterHandle}} у Twitter/X{% endmacro %}
 {% macro onMastodon(mastodonHandle) %}{{mastodonHandle}} у Mastodon{% endmacro %}
+{% macro onBluesky(blueskyHandle) %}{{blueskyHandle}} у Bluesky{% endmacro %}
 {% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} на GitHub{% endmacro %}
 {% macro onLinkedIn(authorName) %}{{authorName}} у LinkedIn{% endmacro %}
 {% macro website(authorName) %}вебсайт {{authorName}}{% endmacro %}
+
+{% block citation %}Цитування{% endblock %}
 
 {% macro edition(year) %}Видання {{ year }} року{% endmacro %}
 
@@ -213,6 +216,7 @@
   "developers": "Розробники",
   "editors": "Редактори",
   "leads": "Керівники проєкту",
+  "committee": "Оргкомітет",
   "reviewers": "Рецензенти",
   "translators": "Перекладачі"
   }
@@ -226,6 +230,7 @@
   "developers": "Розробник",
   "editors": "Редактор",
   "leads": "Керівник проєкту",
+  "committee": "Оргкомітет",
   "reviewers": "Рецензент",
   "translators": "Перекладач"
   }

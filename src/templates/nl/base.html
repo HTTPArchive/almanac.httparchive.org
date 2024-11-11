@@ -57,7 +57,7 @@
 {% block open_the_index %}Open de Inhoudsopgave{% endblock %}
 {% block close_the_index %}Sluit de Inhoudsopgave{% endblock %}
 
-{% block and %}en{% endblock %}
+{% block and %} en {% endblock %}
 {% block comma %}, {% endblock %}
 {% block oxford_comma %}{% endblock %}
 
@@ -111,11 +111,14 @@
 {% block repliesAlt %}{% endblock %}
 {% block mentionsAlt %}{% endblock %}
 
-{% macro onTwitter(twitterHandle) %}@{{twitterHandle}} op Twitter{% endmacro %}
+{% macro onTwitter(twitterHandle) %}@{{twitterHandle}} op Twitter/X{% endmacro %}
 {% macro onMastodon(mastodonHandle) %}{{mastodonHandle}} op Mastodon{% endmacro %}
+{% macro onBluesky(blueskyHandle) %}{{blueskyHandle}} op Bluesky{% endmacro %}
 {% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} op GitHub{% endmacro %}
 {% macro onLinkedIn(authorName) %}{{authorName}} op LinkedIn{% endmacro %}
 {% macro website(authorName) %}website van {{authorName}} {% endmacro %}
+
+{% block citation %}Citaat{% endblock %}
 
 {% macro edition(year) %}{{ year }} Editie{% endmacro %}
 
@@ -213,6 +216,7 @@ Tenzij anders vermeld, zijn de statistieken in alle {{ supported_chapters | leng
   "developers": "Ontwikkelaars",
   "editors": "Redacteurs",
   "leads": "Projectleiders",
+  "committee": "Organisatiecomité",
   "reviewers": "Nalezers",
   "translators": "Vertalers",
   }
@@ -226,6 +230,7 @@ Tenzij anders vermeld, zijn de statistieken in alle {{ supported_chapters | leng
   "developers": "Ontwikkelaar",
   "editors": "Redacteur",
   "leads": "Projectleider",
+  "committee": "Organisatiecomité",
   "reviewers": "Nalezer",
   "translators": "Vertaler",
   }

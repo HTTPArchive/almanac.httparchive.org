@@ -9,7 +9,7 @@ editors: [foxdavidj]
 translators: [borisschapira]
 discuss: 1756
 results: https://docs.google.com/spreadsheets/d/1kBTglETN_V9UjKqK_EFmFjRexJnQOmLLr-I2Tkotvic/
-housseindjirdeh_bio: Houssein est <i lang="en">Developer Advocate</i> chez Google. Il travaille sur la vitesse, la performance et l’écosystème des frameworks web. Il tweete sur <a href="https://twitter.com/hdjirdeh">@hdjirdeh</a> et blogue sur <a hreflang="en" href="https://houssein.me/">https://houssein.me/</a>.
+housseindjirdeh_bio: Houssein est <i lang="en">Developer Advocate</i> chez Google. Il travaille sur la vitesse, la performance et l’écosystème des frameworks web. Il tweete sur <a href="https://x.com/hdjirdeh">@hdjirdeh</a> et blogue sur <a hreflang="en" href="https://houssein.me/">https://houssein.me/</a>.
 featured_quote: JavaScript est la ressource la plus consommatrice que nous envoyons aux navigateurs&nbsp;; il doit être téléchargé, analysé, compilé et enfin exécuté. Bien que les navigateurs aient considérablement réduit le temps nécessaire pour analyser et compiler les scripts, le téléchargement et l’exécution sont devenus les étapes les plus coûteuses lorsque JavaScript est traité par une page web.
 featured_stat_1: 89 %
 featured_stat_label_1: des sites ont plus de code tiers que de code maison
