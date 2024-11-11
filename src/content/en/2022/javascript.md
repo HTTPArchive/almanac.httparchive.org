@@ -8,7 +8,7 @@ reviewers: [mgechev, pankajparkar, NishuGoel, housseindjirdeh, kevinfarrugia, tu
 analysts: [NishuGoel, kevinfarrugia]
 editors: [DesignrKnight, rviscomi]
 translators: []
-malchata_bio: Jeremy Wagner is a technical writer for Google on performance and Core Web Vitals. He has also written for A List Apart, CSS-Tricks, and Smashing Magazine. Jeremy will someday relocate to the remote wilderness where sand has not yet been taught to think. Until then, he continues to reside in Minnesota’s Twin Cities with his wife and stepdaughters, bemoaning the existence of strip malls.
+malchata_bio: Jeremy Wagner is a technical writer for Google on performance and Core Web Vitals. He has also written for A List Apart, CSS-Tricks, and Smashing Magazine. Jeremy will someday relocate to the remote wilderness where sand has not yet been taught to think. Until then, he continues to reside in Minnesota's Twin Cities with his wife and stepdaughters, bemoaning the existence of strip malls.
 results: https://docs.google.com/spreadsheets/d/1vOeFUyfEtWRen3Xj57ZsWav40n5tlcJoV0HmAxmNE_I/
 featured_quote: The state of JavaScript is a constantly evolving phenomenon. It's clear that we have an increased reliance on it more than ever, but that spells trouble for the collective user experience of the web. We need to do all we can—and more—to stem the tide of how much JavaScript we ship on production websites.
 featured_stat_1: 26%

@@ -28,7 +28,7 @@ This chapter will outline the state of the web in 2022 when it is accessed from 
 
 ## Worldwide connectivity
 
-As seems to always be the case, we are living in a more connected world this year than the world has ever experienced. The evolution of mobile technology and mobile web has been fueled not only by more than two years of even more digital-focused commerce caused by the COVID-19 pandemic, but also the growth and evolution of 5G communication networks, cloud and hybrid-cloud computing environments, and the growing adoption of digital and voice assistants, “casting” technology, and IoT.
+As seems to always be the case, we are living in a more connected world this year than the world has ever experienced. The evolution of mobile technology and mobile web has been fueled not only by more than two years of even more digital-focused commerce caused by the COVID-19 pandemic, but also the growth and evolution of 5G communication networks, cloud and hybrid-cloud computing environments, and the growing adoption of digital and voice assistants, "casting" technology, and IoT.
 
 New generations are getting involved in social media and have earlier access to mobile technology, and it is more readily socially acceptable than ever before. So, the growth of connectivity marches on, with no end in sight, and children, teens, and young adults of today—colloquially referred to as _digital natives_ because they were born into the digitally connected world—are sure to push the evolution of mobile technology, mobile web, and connectivity to new highs. All this progress makes the newest technology of today look foundational and fundamental for technologies of the future.
 
@@ -59,7 +59,7 @@ The value of the mobile web is largely in its ability to seamlessly connect peop
 
 ### Alternative protocol links
 
-Being that mobile devices are so critical in people’s daily communication, it can be interesting to evaluate the most common types of link formatting that is present in the mobile web, something called _alternative protocol links_. Rather than linking one page on a website to another page on a website, these alternative protocols link to a type of activity other than web browsing.
+Being that mobile devices are so critical in people's daily communication, it can be interesting to evaluate the most common types of link formatting that is present in the mobile web, something called _alternative protocol links_. Rather than linking one page on a website to another page on a website, these alternative protocols link to a type of activity other than web browsing.
 
 {{ figure_markup(
     image="alt-protocols.png",
@@ -127,11 +127,11 @@ Of pages with at least one input, 47% of them use one or more advanced input typ
 
 In general, the use of specialized input fields and protocols can help make visitor interactions more engaging, useful, and efficient. It is unfortunate that it is still quite common for input fields and related functionality to be so often overlooked on the mobile web, but it is not entirely disheartening. These types of mobile controls have been around for many years, but they may be growing outdated or may now be executed by web app functionality and JavaScript, rather than by the traditional methods of coding that are expected in this type of analysis.
 
-Similarly, with the evolution of deep links, which can open and directly navigate to a deep screen within a native app, specialized input fields might not be as necessary. In some cases, brands may try to push visitors from a website to an app, if they believe that it will provide users with a better experience or have better overall conversion statistics than the website. This is especially true when apps are the main focus of the company, or when the apps are being more actively updated and maintained than the website. This is rarely technically necessary, since both websites and apps can basically complete all of the necessary tasks, so it is mostly about the brand’s preference, or their own internal success metrics.
+Similarly, with the evolution of deep links, which can open and directly navigate to a deep screen within a native app, specialized input fields might not be as necessary. In some cases, brands may try to push visitors from a website to an app, if they believe that it will provide users with a better experience or have better overall conversion statistics than the website. This is especially true when apps are the main focus of the company, or when the apps are being more actively updated and maintained than the website. This is rarely technically necessary, since both websites and apps can basically complete all of the necessary tasks, so it is mostly about the brand's preference, or their own internal success metrics.
 
 The variations on input fields are generally included to make web interaction more profitable for the company and more efficient for the user. They are often associated with digital checkout processes, and thus, can directly impact the bottom line. For some brands, the importance of the functionality may make it more likely that developers push users to a native app to complete a purchase, in order to streamline the processing, leverage saved user loyalty information, or speed up the completion of the transaction. This perception that native apps are better for this kind of interaction seems misguided though. Now, most consumers expect to have a smooth and seamless experience wherever they begin their encounter, rather than being forced to transition from web to app or vice versa. Whenever possible, parity between app and web functionality should be a top priority and advanced input methods can help with this, especially for things that impact the bottom line, like checkout processes.
 
-It is possible that traditional input fields—whether they are link protocols, input types, or advanced input types—may just be handled by deep links to apps, and these are handled differently. The protocols for linking to apps that may be replacing some web functionality is broadly called deep linking, or _Universal Links_ on iOS and _Android App Links_ on Android. In code, these links look just like a regular web link, and the launching of the app is handled by a web app manifest file hosted in the `/well-known` directory at the root of the website. That said, it is hard to make assumptions about what changes and variations in these numbers mean in a practical interpretation, because we don’t know if losses and gains are absolute, or if there is just a transitioning of technology and norms in these aspects of the mobile web.
+It is possible that traditional input fields—whether they are link protocols, input types, or advanced input types—may just be handled by deep links to apps, and these are handled differently. The protocols for linking to apps that may be replacing some web functionality is broadly called deep linking, or _Universal Links_ on iOS and _Android App Links_ on Android. In code, these links look just like a regular web link, and the launching of the app is handled by a web app manifest file hosted in the `/well-known` directory at the root of the website. That said, it is hard to make assumptions about what changes and variations in these numbers mean in a practical interpretation, because we don't know if losses and gains are absolute, or if there is just a transitioning of technology and norms in these aspects of the mobile web.
 
 Looking at this topic in another light, it may also be too high of an expectation that developers specifically code the input types and variations for everything on their site. It may be possible for mobile browsers to do more of the heavy lifting in determining what the right action or keyboard layout is for a particular link or input field, based on obvious clues from the code or previous user interactions. Browsers may even be able to leverage this very research to optimize experiences like that.
 
@@ -140,7 +140,7 @@ For example, if every user that clicks on a particular input field switches to t
 
 ## Accessibility on the mobile web
 
-Mobile devices are cheaper, lighter, and more portable than computers, so they house a lot of potential to help populations that have historically been ignored or marginalized by technology, often with only minor tweaks to a site’s accessibility. <a hreflang="en" href="https://web.dev/accessibility/#what-is-accessibility">According to Google</a>, true accessibility on the web means that “the site's content is available, and its functionality can be operated by literally anyone.” In a more detailed explanation, Google offers that:
+Mobile devices are cheaper, lighter, and more portable than computers, so they house a lot of potential to help populations that have historically been ignored or marginalized by technology, often with only minor tweaks to a site's accessibility. <a hreflang="en" href="https://web.dev/accessibility/#what-is-accessibility">According to Google</a>, true accessibility on the web means that "the site's content is available, and its functionality can be operated by literally anyone." In a more detailed explanation, Google offers that:
 
 <blockquote>
   Accessibility, then, refers to the experience of users who might be outside the narrow range of the "typical" user, who might access or interact with things differently than you expect. Specifically, it concerns users who are experiencing some type of impairment or disability - and bear in mind that that experience might be non-physical or temporary.
@@ -161,7 +161,7 @@ Color contrast is an important aspect of mobile web accessibility for a large va
 
 Even people with perfect vision can sometimes struggle to consume mobile web content on a screen when the screen is dirty, has a lot of glare, or the user is in bright sunlight. A high contrast ratio between the colors of a mobile site can help make it easier to use and appreciate, even in bad conditions and even for people with perfect vision.
 
-That said, many people don’t have perfect vision and use glasses or contact lenses to help them see. People with perfect vision can expect their vision to eventually degrade as they age, at least to some degree, so this accessibility standard is one that we can expect to impact everyone, albeit eventually.
+That said, many people don't have perfect vision and use glasses or contact lenses to help them see. People with perfect vision can expect their vision to eventually degrade as they age, at least to some degree, so this accessibility standard is one that we can expect to impact everyone, albeit eventually.
 
 {{ figure_markup(
     caption="Percent of mobile pages with sufficient color contrast.",
@@ -174,7 +174,7 @@ That said, many people don’t have perfect vision and use glasses or contact le
 
 Given the stakes, it is sad that only 23% of mobile sites this year actually have adequate color contrast. This is only one  full percentage point up from the 2021 statistic (22%), so it is an improvement,  but not a substantial improvement. When we look back further, this statistic has actually been 22% since 2019, so there has been almost no improvement in 4 years - Disappointing for something that is widely  considered the most impactful accessibility standard on the web.
 
-According to the <a hreflang="en" href="https://accessibility.digital.gov/visual-design/color-and-contrast/">US General Services Administration</a>, site owners should “make sure the contrast between the text and background is greater than or equal to 4.5:1 for small text and 3:1 for large text.” The <a hreflang="en" href="https://www.w3.org/TR/mobile-accessibility-mapping/#h-contrast">W3C</a> backs this ratio and also adds an enhanced guideline that calls for “a contrast of at least 7:1 (or 4.5:1 for large-scale text).” Obviously there are  more mobile sites that miss the mark for _enhanced accessibility,_ making that statistic likely far below the 23% that meet the basic requirements for color contrast on mobile sites.
+According to the <a hreflang="en" href="https://accessibility.digital.gov/visual-design/color-and-contrast/">US General Services Administration</a>, site owners should "make sure the contrast between the text and background is greater than or equal to 4.5:1 for small text and 3:1 for large text." The <a hreflang="en" href="https://www.w3.org/TR/mobile-accessibility-mapping/#h-contrast">W3C</a> backs this ratio and also adds an enhanced guideline that calls for "a contrast of at least 7:1 (or 4.5:1 for large-scale text)." Obviously there are  more mobile sites that miss the mark for _enhanced accessibility,_ making that statistic likely far below the 23% that meet the basic requirements for color contrast on mobile sites.
 
 If enhancing the perceivability of a site by improving the color contrast and making it actually usable is not enough of an incentive, having a minimum level of contrast between text and background colors has long been an important element for ranking in Google searches as well. It started as a means of preventing spammers from including hidden text on websites, which was often white text on a white background. Later, Google moved it over to be part of the original <a hreflang="en" href="https://developers.google.com/search/mobile-sites/get-started">Mobile Friendly</a> guidelines, and now is simply included as part of their general guidelines for designing websites that are good for users.
 
@@ -196,7 +196,7 @@ Having appropriately sized tap targets makes it less likely that a user will err
   )
 }}
 
-The minimum size for a tap target is generally considered to be no smaller than 48 pixels by 48 pixels, which is a rough estimation of the size of a finger being used on a touchscreen. Tap targets are also expected to be a minimum of 8 pixels apart from each other in order to pass any of Google’s evaluations. In our research, 42% of mobile sites had sufficient tap targets, which is disappointing as less than half of the sites manage to universally have appropriately sized tap targets.
+The minimum size for a tap target is generally considered to be no smaller than 48 pixels by 48 pixels, which is a rough estimation of the size of a finger being used on a touchscreen. Tap targets are also expected to be a minimum of 8 pixels apart from each other in order to pass any of Google's evaluations. In our research, 42% of mobile sites had sufficient tap targets, which is disappointing as less than half of the sites manage to universally have appropriately sized tap targets.
 
 {{ figure_markup(
     image="tap-target-failures.png",
@@ -213,9 +213,9 @@ Pages that fail the audit generally have more than one failing link. The median 
 
 ### Zooming and scaling
 
-Mobile devices have become a big part of daily life for most people, and the expectation is that interaction with mobile web content should be quick and easy. How websites handle zooming and scaling can go a long way to improving interactions on mobile. There are different takes on this, and while most will agree that you need to set a proper initial scale in the viewport for mobile users (`&lt;meta name="viewport" content="width=device-width, initial-scale=1">`), there is not universal agreement about the second part of a viewport setting, which controls if you should or shouldn’t disable scaling and zooming (`…user-scalable=no">` or perhaps `…user-scalable=yes">`). Most authorities, <a hreflang="en" href="https://www.w3.org/WAI/standards-guidelines/act/rules/b4f0c3/proposed/">including the W3C</a>, suggest that restricting scaling and zooming can create a bad user experience and adversely impact accessibility, so it should be avoided. Settings for `minimum-scale` and `maximum-scale` can also be set, and these are often safer limits, if a developer believes that limits are needed.
+Mobile devices have become a big part of daily life for most people, and the expectation is that interaction with mobile web content should be quick and easy. How websites handle zooming and scaling can go a long way to improving interactions on mobile. There are different takes on this, and while most will agree that you need to set a proper initial scale in the viewport for mobile users (`&lt;meta name="viewport" content="width=device-width, initial-scale=1">`), there is not universal agreement about the second part of a viewport setting, which controls if you should or shouldn't disable scaling and zooming (`…user-scalable=no">` or perhaps `…user-scalable=yes">`). Most authorities, <a hreflang="en" href="https://www.w3.org/WAI/standards-guidelines/act/rules/b4f0c3/proposed/">including the W3C</a>, suggest that restricting scaling and zooming can create a bad user experience and adversely impact accessibility, so it should be avoided. Settings for `minimum-scale` and `maximum-scale` can also be set, and these are often safer limits, if a developer believes that limits are needed.
 
-Zooming can be a good workaround for a user who is visually impaired, or anyone who just doesn’t have their reading glasses handy when they need them. On the other hand, it can be hard to build sites that universally scale well on mobile. There are many different font size settings that would need to be accommodated, and getting it wrong can make the site much harder to interact with. This is why some designers prefer to prevent scaling and zooming, to ensure that the page renders in a highly predictable way that is not impacted by scaling and zooming. While this is true, disabling zooming and scaling impedes the usability of a mobile site, and thus, should be avoided for the sake of accessibility.
+Zooming can be a good workaround for a user who is visually impaired, or anyone who just doesn't have their reading glasses handy when they need them. On the other hand, it can be hard to build sites that universally scale well on mobile. There are many different font size settings that would need to be accommodated, and getting it wrong can make the site much harder to interact with. This is why some designers prefer to prevent scaling and zooming, to ensure that the page renders in a highly predictable way that is not impacted by scaling and zooming. While this is true, disabling zooming and scaling impedes the usability of a mobile site, and thus, should be avoided for the sake of accessibility.
 
 {{ figure_markup(
     image="zoom-scale-rank.png",
@@ -229,7 +229,7 @@ Zooming can be a good workaround for a user who is visually impaired, or anyone 
 
 Of the mobile websites in the top 1,000 rank, 40% of them had disabled zooming and scaling, down from about 45% in 2021. When you look at the top 10,000, 36% of mobile sites had disabled scaling and zooming, and this is down from about 41% in 2021. Looking at the other end of the scale, the widest ranking group, which includes all the sites in the data set, 28% of sites prevented zooming and scaling, down from about 29% in 2021. Overall, what we can see here is that the prevalence of this accessibility-limiting setting is on the decline, especially for the most popular sites, which is good news, but the fact that more than half of the sites are still using this type of limiting setting is disappointing.
 
-As a whole, we know that accessibility concerns are not going to go away, and as time progresses, meeting accessibility standards will become a basic expectation—especially on mobile devices. As is often the case, the use cases for mobile interactivity are more broad-ranging compared to desktop, so users’ expectations are higher, even though the development constraints for web mobile content make it more difficult to actually achieve. Nevertheless, accessibility is becoming a critical component of good web design, and should be embraced to create a more inclusive mobile web. It is good to see that there is increasing adherence to basic accessibility guidelines, but there is still considerable room for improvement.
+As a whole, we know that accessibility concerns are not going to go away, and as time progresses, meeting accessibility standards will become a basic expectation—especially on mobile devices. As is often the case, the use cases for mobile interactivity are more broad-ranging compared to desktop, so users' expectations are higher, even though the development constraints for web mobile content make it more difficult to actually achieve. Nevertheless, accessibility is becoming a critical component of good web design, and should be embraced to create a more inclusive mobile web. It is good to see that there is increasing adherence to basic accessibility guidelines, but there is still considerable room for improvement.
 
 For many years, Google has created a positive impact on the web by rewarding websites that meet certain basic requirements with better rankings. They have done it for load time, performance, security and mobile-friendliness, but not yet for accessibility. Google does write and support a lot of advancements for web accessibility in their official communications, but there is an opportunity to do more. While many accessibility updates do naturally have a positive impact on website rankings, it may be time for Google to explicitly incentivize some level of compliance to basic accessibility standards with better rankings—not just because they can enhance the semantic understanding of a website, but also because they simply make the web a better place for everyone.
 
@@ -243,7 +243,7 @@ One of the most complex problems that site owners have to address on the mobile 
 
 <a hreflang="en" href="https://web.dev/articles/vitals">Core Web Vitals</a> is a collection of performance metrics that Google compiles to evaluate different websites, and specifically, different <a hreflang="en" href="https://support.google.com/webmasters/answer/9205520#page_groups">page groups</a> on websites to describe how they perform in both mobile and desktop page settings. The elements of Core Web Vitals include loading, interactivity, and layout stability.
 
-All three are aspects of how users perceive the performance of a page that can help or hinder the loading experience for users. This type of evaluation began in May of 2020, and these metrics are taken into account in Google’s ranking algorithm specifically as an aspect of the <a hreflang="en" href="https://developers.google.com/search/docs/advanced/experience/page-experience">page experience</a> evaluation, and thus, the metrics are organized around thresholds of performance that are either considered “good”, “needs improvement”, or “poor”. For a site to be considered “good”, 75% of visits must meet the prescribed thresholds for each of the Core Web Vitals metrics.
+All three are aspects of how users perceive the performance of a page that can help or hinder the loading experience for users. This type of evaluation began in May of 2020, and these metrics are taken into account in Google's ranking algorithm specifically as an aspect of the <a hreflang="en" href="https://developers.google.com/search/docs/advanced/experience/page-experience">page experience</a> evaluation, and thus, the metrics are organized around thresholds of performance that are either considered "good", "needs improvement", or "poor". For a site to be considered "good", 75% of visits must meet the prescribed thresholds for each of the Core Web Vitals metrics.
 
 {{ figure_markup(
     image="good-cwv.png",
@@ -279,7 +279,7 @@ TTFB is not a Core Web Vitals metric itself, but it has a direct impact on all l
   )
 }}
 
-As you can see above, there are only minor fluctuations in the percent of mobile sites that are considered “good” from 2020 to 2022, going from 41% in 2020 down to 39% in 2021, then back up to 40% in 2022.
+As you can see above, there are only minor fluctuations in the percent of mobile sites that are considered "good" from 2020 to 2022, going from 41% in 2020 down to 39% in 2021, then back up to 40% in 2022.
 
 
 #### Largest Contentful Paint (LCP)
@@ -296,7 +296,7 @@ As you can see above, there are only minor fluctuations in the percent of mobile
   )
 }}
 
-LCP performance is improving. In 2020, 43% of mobile sites had a LCP assessed as “good”. In 2021, this number improved to 45% of mobile sites. There was a significant jump in 2022 in which 51% of mobile sites had good LCP performance. The [Performance](./performance) chapter explores some possible explanations for why this may have happened.
+LCP performance is improving. In 2020, 43% of mobile sites had a LCP assessed as "good". In 2021, this number improved to 45% of mobile sites. There was a significant jump in 2022 in which 51% of mobile sites had good LCP performance. The [Performance](./performance) chapter explores some possible explanations for why this may have happened.
 
 
 ### Images
@@ -306,7 +306,7 @@ Images can contribute a lot to providing a good mobile experience, but they can 
 
 #### Appropriately sized images
 
-Using images that are sized properly for a mobile device has long been one of the easiest ways that anyone could improve mobile load time. In the early days of the mobile web, site owners would often simply send the same images to desktop users as they would for mobile users, because ultimately, mobile browsers would scale and resize the images to fit in the mobile rendering of the page. Unfortunately, this didn’t work well, because it ended up requiring a lot of extra data to send rich, high-quality images that were better suited for a desktop viewing experience.
+Using images that are sized properly for a mobile device has long been one of the easiest ways that anyone could improve mobile load time. In the early days of the mobile web, site owners would often simply send the same images to desktop users as they would for mobile users, because ultimately, mobile browsers would scale and resize the images to fit in the mobile rendering of the page. Unfortunately, this didn't work well, because it ended up requiring a lot of extra data to send rich, high-quality images that were better suited for a desktop viewing experience.
 
 {{ figure_markup(
     image="appropriately-sized-images.png",
@@ -318,7 +318,7 @@ Using images that are sized properly for a mobile device has long been one of th
   )
 }}
 
-Given Google’s increased focus on rewarding good performance with their Core Web Vitals program, you would expect that more sites would be optimizing their images. However, it’s interesting to see that sites are actually having fewer optimized images over time. The figure above shows that there is a decrease in the percentage of pages with properly sized images since [2020](../2020/mobile-web#images), when 59% of sites had properly sized images. But in 2022, that number is down to only 54%.
+Given Google's increased focus on rewarding good performance with their Core Web Vitals program, you would expect that more sites would be optimizing their images. However, it's interesting to see that sites are actually having fewer optimized images over time. The figure above shows that there is a decrease in the percentage of pages with properly sized images since [2020](../2020/mobile-web#images), when 59% of sites had properly sized images. But in 2022, that number is down to only 54%.
 
 
 #### Responsive images
@@ -357,12 +357,12 @@ Lazy-loading is the process of assigning different loading priority levels to el
   )
 }}
 
-<a hreflang="en" href="https://web.dev/browser-level-image-lazy-loading/">Native lazy-loading</a> has been available since 2019, which allows browsers to do the complex calculations in the most efficient way possible, and only requires that site owners tag images with either `lazy` or `eager`. This simple tagging can be a great boon for page and site performance, and can also save a lot of time and effort associated with maintaining your own lazy-loading code. As long as you don’t <a hreflang="en" href="https://web.dev/articles/lcp-lazy-loading">inadvertently lazy-load your LCP image</a> at the top of the page, it is an easy win, but we found that only 25% of sites are currently using the `loading=lazy` attribute for their images.
+<a hreflang="en" href="https://web.dev/browser-level-image-lazy-loading/">Native lazy-loading</a> has been available since 2019, which allows browsers to do the complex calculations in the most efficient way possible, and only requires that site owners tag images with either `lazy` or `eager`. This simple tagging can be a great boon for page and site performance, and can also save a lot of time and effort associated with maintaining your own lazy-loading code. As long as you don't <a hreflang="en" href="https://web.dev/articles/lcp-lazy-loading">inadvertently lazy-load your LCP image</a> at the top of the page, it is an easy win, but we found that only 25% of sites are currently using the `loading=lazy` attribute for their images.
 
 
 ### Layout stability
 
-Layout stability is an important part of performance that has recently been pushed to the fore with Google’s introduction of Core Web Vitals. Elements of Core Web Vitals are designed to measure and assess the loading experience of a page, and layout stability of a page is an important part of that. If a page is constantly moving and re-painting while it is being loaded, this makes it seem like the page is taking much longer to load than it otherwise could if the experience were more predictable and once things load, they remain exactly in the place where they have loaded.
+Layout stability is an important part of performance that has recently been pushed to the fore with Google's introduction of Core Web Vitals. Elements of Core Web Vitals are designed to measure and assess the loading experience of a page, and layout stability of a page is an important part of that. If a page is constantly moving and re-painting while it is being loaded, this makes it seem like the page is taking much longer to load than it otherwise could if the experience were more predictable and once things load, they remain exactly in the place where they have loaded.
 
 Since the loading order of content can be different under different conditions, or in different browsers, building and planning around layout stability is a good way to ensure a smooth loading experience regardless of the circumstances. The most relevant metrics for evaluating layout stability is Cumulative Layout Shift (CLS) but other aspects of performance like image sizing and lazy loading can also impact layout stability.
 
@@ -375,7 +375,7 @@ A low CLS represents a visually stable layout, which makes the experience less f
 
 The screen size of the device requesting the page can have a significant impact on the way elements are laid out, and how much they move when shift-causing elements are loaded.
 
-CLS is measured as a score, and the highest instance of movement in any session window during the page lifespan is what is measured. This <a hreflang="en" href="https://web.dev/articles/cls-web-tooling">changed</a> in 2021, when CLS was previously measured as the sum of all individual shift scores on a page. Google considers scores of 0.1 or less as “good” and scores over 0.25 to be “poor”.
+CLS is measured as a score, and the highest instance of movement in any session window during the page lifespan is what is measured. This <a hreflang="en" href="https://web.dev/articles/cls-web-tooling">changed</a> in 2021, when CLS was previously measured as the sum of all individual shift scores on a page. Google considers scores of 0.1 or less as "good" and scores over 0.25 to be "poor".
 
 {{ figure_markup(
     image="good-cls.png",
@@ -387,7 +387,7 @@ CLS is measured as a score, and the highest instance of movement in any session 
   )
 }}
 
-The percentage of websites with “good” CLS on mobile has improved significantly to 74%, up from 62% last year.
+The percentage of websites with "good" CLS on mobile has improved significantly to 74%, up from 62% last year.
 
 
 ### Responsiveness
@@ -397,7 +397,7 @@ Responsiveness is always good in a mobile scenario, but it can have a layered me
 
 #### First Input Delay (FID)
 
-<a hreflang="en" href="https://web.dev/articles/fid">First Input Delay</a> (FID) describes the responsiveness of a site, especially related to how long it takes for a site to respond after a user first clicks on a page element. A low FID is desirable, especially on mobile web interactions, where the responsiveness of a mobile site should ideally rival the responsiveness of a comparable native app, to make the interactions feel equally fluid and satisfying. Google considers a site to have “good” FID if at least 75% of experiences are under 100 ms.
+<a hreflang="en" href="https://web.dev/articles/fid">First Input Delay</a> (FID) describes the responsiveness of a site, especially related to how long it takes for a site to respond after a user first clicks on a page element. A low FID is desirable, especially on mobile web interactions, where the responsiveness of a mobile site should ideally rival the responsiveness of a comparable native app, to make the interactions feel equally fluid and satisfying. Google considers a site to have "good" FID if at least 75% of experiences are under 100 ms.
 
 {{ figure_markup(
     image="good-fid.png",
@@ -409,12 +409,12 @@ Responsiveness is always good in a mobile scenario, but it can have a layered me
   )
 }}
 
-There has been a consistent growth in the percent of mobile sites that have “good” FID in the past three years, going from only 80% in 2020 to 90% in 2021, and reaching 92% in 2022.
+There has been a consistent growth in the percent of mobile sites that have "good" FID in the past three years, going from only 80% in 2020 to 90% in 2021, and reaching 92% in 2022.
 
 
 #### Interaction to Next Paint (INP)
 
-<a hreflang="en" href="https://web.dev/articles/inp">Interaction to Next Paint</a> (INP) is an experimental metric from Google that is used to measure responsiveness and response time on a page when a user interacts with it. A low INP is desirable because it means that the page was able to respond quickly to user interactions without substantial delays waiting for content to paint after it is requested. A “good” INP is 200 ms or less, and a poor one is anything over 500 ms. Eventually, INP could be added to the official Core Web Vitals metrics, but for now it is still being tested to make sure that it is a reliable and consistent metric that site owners will find useful.
+<a hreflang="en" href="https://web.dev/articles/inp">Interaction to Next Paint</a> (INP) is an experimental metric from Google that is used to measure responsiveness and response time on a page when a user interacts with it. A low INP is desirable because it means that the page was able to respond quickly to user interactions without substantial delays waiting for content to paint after it is requested. A "good" INP is 200 ms or less, and a poor one is anything over 500 ms. Eventually, INP could be added to the official Core Web Vitals metrics, but for now it is still being tested to make sure that it is a reliable and consistent metric that site owners will find useful.
 
 {{ figure_markup(
     caption="Percent of websites that have good INP on mobile.",
@@ -425,7 +425,7 @@ There has been a consistent growth in the percent of mobile sites that have “g
   )
 }}
 
-This is the first year that INP data is available to us, so we don’t have any historical context, but what we see is that 55% of websites have good INP on mobile. This is especially interesting because of how much worse the mobile web performs on INP compared to FID. If INP does end up replacing FID as a Core Web Vital, responsiveness will become a much more prevalent issue.
+This is the first year that INP data is available to us, so we don't have any historical context, but what we see is that 55% of websites have good INP on mobile. This is especially interesting because of how much worse the mobile web performs on INP compared to FID. If INP does end up replacing FID as a Core Web Vital, responsiveness will become a much more prevalent issue.
 
 
 ## Conclusion
