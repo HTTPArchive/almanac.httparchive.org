@@ -60,6 +60,7 @@ As the structured data ecosystem matures, we're witnessing a diversification in 
 
 5. **Structured Data for AI-Powered Discovery**:
    As AI-powered search engines, chatbots, and conversational assistants continue to expand their reach, structured data plays a pivotal role in enhancing content discoverability and contextual understanding across these platforms. Key examples include:
+
    - **AI Search Engines**: Platforms like **Bing Chat** and **Google AI Overview** utilize structured data not only to train their language models but also to deliver contextually rich and accurate responses. By leveraging structured data, these systems can interpret complex relationships between datasets, improve search relevance, and enable users to seamlessly navigate interconnected datasets ([source](https://research.google/blog/relationships-are-complicated-an-analysis-of-relationships-between-datasets-on-the-web/)).
 
 These capabilities demonstrate structured data's evolving role in not only improving discoverability but also in enhancing AI systems’ ability to interpret and act on relationships between data, thereby creating richer and more useful user experiences.
