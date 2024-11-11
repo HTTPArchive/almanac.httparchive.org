@@ -37,9 +37,10 @@ Over the past 18 months, there have been significant changes in the structured d
 4. **GS1 Integrations**: There has been increased support for GS1 standards such as the [GS1 Digital Link](https://www.gs1.org/standards/gs1-digital-link), which aims to bridge the gap between physical and digital product information. This technology enables manufacturers and retailers to connect physical products to their digital identities through QR codes. When scanned, these codes provide access to comprehensive product information, enhancing transparency and customer engagement. Also, the `gs1:CertificationDetails` property has been officially adopted by Google as `schema:Certification`, demonstrating how industry-specific extensions can successfully influence and integrate with schema.org standards.
 
 5. **Semantic Data Beyond Search Applications**: Structured data is now being leveraged beyond traditional search engines, playing a pivotal role in social web applications. For instance:
-   - **Identity Verification**: Platforms like Mastodon use `rel=me` links for two-way identity verification ([source](https://docs.joinmastodon.org/user/profile/#verification)).
-   - **Federated Social Networks**: The use of `rel=me` allows Mastodon users to verify their accounts with third-party websites (e.g., Ghost), strengthening cross-platform identity ([discussion on rel=me with Ghost](https://forum.ghost.org/t/verifying-mastodon-account-with-rel-me/34227)).
-   - **New Journalism Features**: Mastodon recently introduced the `fediverse:creator` attribute to support content verification for journalists and publishers ([source](https://blog.joinmastodon.org/2024/07/highlighting-journalism-on-mastodon/)).
+
+- **Identity Verification**: Platforms like Mastodon use `rel=me` links for two-way identity verification ([source](https://docs.joinmastodon.org/user/profile/#verification)).
+- **Federated Social Networks**: The use of `rel=me` allows Mastodon users to verify their accounts with third-party websites (e.g., Ghost), strengthening cross-platform identity ([discussion on rel=me with Ghost](https://forum.ghost.org/t/verifying-mastodon-account-with-rel-me/34227)).
+- **New Journalism Features**: Mastodon recently introduced the `fediverse:creator` attribute to support content verification for journalists and publishers ([source](https://blog.joinmastodon.org/2024/07/highlighting-journalism-on-mastodon/)).
 
 ## Beyond Traditional Implementation
 
@@ -54,11 +55,11 @@ As the structured data ecosystem matures, we're witnessing a diversification in 
    - Platforms like **Mastodon** leverage structured data for identity verification. The `rel=me` attribute allows users to verify accounts across federated networks ([source](https://docs.joinmastodon.org/user/profile/#verification)).
    - Features like `fediverse:creator` are being used to validate content and authorship, enhancing trust in the decentralized social web ([source](https://blog.joinmastodon.org/2024/07/highlighting-journalism-on-mastodon/)).
 
-4. **Digital Product Passports (DPPs)**: Structured data plays a key role in emerging regulatory requirements like the EU’s [Digital Product Passports](https://wordlift.io/blog/en/digital-product-passport-implementation/), designed to enhance transparency and sustainability in eCommerce. These passports leverage GS1 Digital Links to provide comprehensive product information through QR codes.
+4. **Digital Product Passports (DPPs)**:
+   Structured data plays a key role in emerging regulatory requirements like the EU’s [Digital Product Passports](https://wordlift.io/blog/en/digital-product-passport-implementation/), designed to enhance transparency and sustainability in eCommerce. These passports leverage GS1 Digital Links to provide comprehensive product information through QR codes.
 
 5. **Structured Data for AI-Powered Discovery**:
    As AI-powered search engines, chatbots, and conversational assistants continue to expand their reach, structured data plays a pivotal role in enhancing content discoverability and contextual understanding across these platforms. Key examples include:
-
    - **AI Search Engines**: Platforms like **Bing Chat** and **Google AI Overview** utilize structured data not only to train their language models but also to deliver contextually rich and accurate responses. By leveraging structured data, these systems can interpret complex relationships between datasets, improve search relevance, and enable users to seamlessly navigate interconnected datasets ([source](https://research.google/blog/relationships-are-complicated-an-analysis-of-relationships-between-datasets-on-the-web/)).
 
 These capabilities demonstrate structured data's evolving role in not only improving discoverability but also in enhancing AI systems’ ability to interpret and act on relationships between data, thereby creating richer and more useful user experiences.
@@ -124,7 +125,7 @@ This chapter offers a data-driven analysis of structured data trends in 2023-202
 
 10. **Future Outlook**:
 
-- The evolving role of structured data in **AI**, **semantic SEO**, and **content discovery**.
+    - The evolving role of structured data in **AI**, **semantic SEO**, and **content discovery**.
 
 This chapter provides a comprehensive view of structured data’s impact on SEO, AI, and e-commerce, with actionable insights for developers and marketers.
 
@@ -219,7 +220,8 @@ Empirically, AI-powered search systems, as seen above, are sourcing data from a 
 
 This transition from traditional search to AI-powered search demands a broader, more nuanced approach to optimization:
 
-1. **Multi-platform visibility**: SEO strategies must now account for visibility across a diverse array of AI surfaces and platforms, including:
+1. **Multi-platform visibility**:
+   SEO strategies must now account for visibility across a diverse array of AI surfaces and platforms, including:
 
    - Traditional search engines (Google, Bing)
    - AI chatbots (ChatGPT, Google's Gemini, Perplexity, Anthropic's Claude)
@@ -227,13 +229,15 @@ This transition from traditional search to AI-powered search demands a broader, 
    - Ecosystem-specific tools (Google Workspace, Microsoft 365)
    - Browser and device-level integrations
 
-2. **Beyond conventional optimization**: Success in this landscape goes beyond optimizing for specific features like Google's AI Overview. It requires a holistic approach to making content discoverable and comprehensible across all emerging search interfaces.
+2. **Beyond conventional optimization**:
+   Success in this landscape goes beyond optimizing for specific features like Google's AI Overview. It requires a holistic approach to making content discoverable and comprehensible across all emerging search interfaces.
 
-3. **Leveraging structured data strategically**: The key to improved visibility lies not just in publishing structured data using schema markup but in facilitating access to structured information about entities that matter to your business or content. This involves:
+3. **Leveraging structured data strategically**:
+   The key to improved visibility lies not just in publishing structured data using schema markup but in facilitating access to structured information about entities that matter to your business or content. This involves:
 
    - Ensuring clear, structured information is available and easily interpretable by various AI systems.
    - Ensuring that the metadata used to describe the webpage for bots is consistent with the content presented to human readers.
-   - Directly feeding accurate information to relevant p
+   - Directly feeding accurate information to relevant platforms and marketplaces (e.g., Google Merchant, Amazon) for products and services.
 
 ## Rich Results and Knowledge Panels
 
