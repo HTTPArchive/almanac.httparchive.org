@@ -746,7 +746,7 @@ Here is the updated markdown for the uploaded images:
 }}
 
 {{ figure_markup(
-  image="structured-data-json-ld-relationships-2.png",
+  image="structured-data-json-ld-relationships-2.svg",
   caption="Detailed Sankey diagram of dataset relationships in JSON-LD.",
   description='This Sankey diagram provides a comprehensive view of how structured data entities and their properties interact in JSON-LD, showcasing key connections like WebSite, SearchAction, and Organization.',
   width=1000,
