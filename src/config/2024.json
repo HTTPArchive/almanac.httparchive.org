@@ -195,6 +195,9 @@
     "leads": {
       "name": "Leads"
     },
+    "committee": {
+      "name": "Organizing Commmittee"
+    },
     "reviewers": {
       "name": "Reviewers"
     },
