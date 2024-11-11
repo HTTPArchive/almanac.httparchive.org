@@ -302,8 +302,6 @@ Investing in semantic SEO and maintaining high-quality structured data not only 
 
 ## A year in review
 
-## Structured data
-
 The landscape of structured data implementation continues to evolve. To better understand this landscape, it’s essential to distinguish between _syntax/encoding_ and _vocabularies_:
 
 - **Syntax/encodings**: These define how structured data is embedded into webpages:
