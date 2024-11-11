@@ -660,7 +660,7 @@
       "2024": [
         "developers",
         "editors",
-        "leads"
+        "committee"
       ]
     },
     "twitter": "tunetheweb",
@@ -827,7 +827,8 @@
       ],
       "2024": [
         "editors",
-        "leads"
+        "leads",
+        "committee"
       ]
     },
     "twitter": "httpsecheaders"
@@ -995,7 +996,7 @@
     "name": "Chris Beeti",
     "teams": {
       "2024": [
-        "leads"
+        "committee"
       ]
     }
   },
@@ -1706,10 +1707,10 @@
   "gunesacar": {
     "avatar_url": "5788790",
     "github": "gunesacar",
-    "name": "Gunes Acar",
+    "name": "Günes Acar",
     "teams": {
       "2024": [
-        "leads"
+        "committee"
       ]
     },
     "website": "https://gunesacar.net/"
@@ -1775,7 +1776,7 @@
         "authors"
       ],
       "2024": [
-        "leads"
+        "committee"
       ]
     },
     "twitter": "HenriHelvetica"
@@ -3075,7 +3076,7 @@
     "name": "Miriam Naß",
     "teams": {
       "2024": [
-        "leads"
+        "committee"
       ]
     }
   },
@@ -3330,11 +3331,12 @@
       "2024": [
         "analysts",
         "leads",
+        "committee",
         "reviewers"
       ]
     },
     "twitter": "nrllah",
-    "website": "https://www.internet-sicherheit.de/team/demir-nurullah.html"
+    "website": "https://ndemir.com"
   },
   "oluoluoxenfree": {
     "avatar_url": "3077443",
@@ -3915,9 +3917,11 @@
     "name": "Saptak Sengupta",
     "teams": {
       "2022": [
-        "authors",
+        "authors"
+      ],
+      "2024": [
         "developers",
-        "leads"
+        "committee"
       ]
     },
     "twitter": "Saptak013",
@@ -4339,7 +4343,7 @@
     "name": "Tobias Urban",
     "teams": {
       "2024": [
-        "leads"
+        "committee"
       ]
     }
   },
@@ -4370,9 +4374,6 @@
       ],
       "2022": [
         "authors"
-      ],
-      "2024": [
-        "leads"
       ]
     },
     "twitter": "tomvangoethem",

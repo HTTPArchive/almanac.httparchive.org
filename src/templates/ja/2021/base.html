@@ -6,6 +6,7 @@
 {% block dataset %}2021年7{% endblock %}
 
 {% block foreword %}
+<div>
   <p>
     3年前、私はこう考えました。<em>自分のウェブサイトがどれだけよくできているかは、たくさんのツールで知ることができるが、ウェブ全体の状態を見るにはどこに行けばいいのだろう</em>？HTTP Archiveのデータセットが洗練されているのと同様に、それが与えてくれる答えは、私たちがそれに尋ねる質問と同じくらい有用である可能性があります。私はWeb開発者ですが、Web開発のすべての分野の専門家ではありませんし、誰もそうなることを期待していません。しかし、私たちは皆、それぞれの専門分野を持っています。多くの人が集まれば、ウェブの現状について適切な質問をすることができ、HTTP Archiveが本当に意味のある形でそれに答えることができるようになるのです。これがWeb Almanacの最初のアイデアでした。
   </p>
@@ -18,5 +19,6 @@
     2021年版は、今回はじめて取り上げる2つの章を含む、全24章の充実したラインナップで構成されています。<a href="{{ url_for('chapter', year=year, lang=lang, chapter='structured-data') }}">Structured Data</a>と<a href="{{ url_for('chapter', year=year, lang=lang, chapter='webassembly') }}">WebAssembly</a> の2つです。これらの新しい章は、Web Almanacの範囲を拡大し、より多様なトピックについて読者ベースを教育し、さらに多くの専門グループに実用的なデータを提供するのに役立っています。最終的には、私たちの研究がウェブコミュニティによって真実の共有ソースとして活用され、エコシステムを有意義に改善できることを望んでいるからです。もしあなたがこのリソースを私たちと同じように価値あるものと感じてくださるなら、ウェブの現状に関心を持つ他の人たちと共有してくださるとうれしいです。一緒に、このデータを前向きな変化のための強制力として使っていきましょう。
   </p>
 
-  <p>— <em><a href="{{ url_for('contributors', year=year, lang=lang, _anchor='rviscomi') }}">Rick Viscomi</a>、Web Almanac編集長</em></p>#}
+  <p>— <em><a href="{{ url_for('contributors', year=year, lang=lang, _anchor='rviscomi') }}">Rick Viscomi</a>、Web Almanac編集長</em></p>
+</div>
 {% endblock %}
