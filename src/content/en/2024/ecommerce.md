@@ -16,6 +16,7 @@ featured_stat_2: 37%
 featured_stat_label_2: Percent of ecommerce sites built with WooCommerce.
 featured_stat_3: 3.5%
 featured_stat_label_3: Percent of sites offering PayPal as payment method
+doi: 10.5281/zenodo.14065664
 ---
 
 ## Introduction

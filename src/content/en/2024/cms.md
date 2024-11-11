@@ -18,6 +18,7 @@ featured_stat_2: 49%
 featured_stat_label_2: Percent of mobile sites using a CMS.
 featured_stat_3: 72%
 featured_stat_label_3: Percent of CMS market share that is WordPress
+doi: 10.5281/zenodo.14065528
 ---
 
 In this chapter, we interpret the evolving landscape of the Content Management System (CMS) and its increasing influence on how users experience content on the web. We aim to explore both the broader CMS ecosystem and the unique characteristics of web pages created through these platforms.
@@ -575,7 +576,7 @@ In 2024, Wix and Duda continue to make the most use of WebP, at ~75% and ~60% ad
 
 Although WebP is now widely supported, we still observe that platforms are underutilizing the format. With the growing support of WebP, it seems all platforms have work to do to reduce the usage of the older JPEG and PNG formats without compromising on image quality.
 
-As of WordPress 6.1, the WebP format conversion is automatic for all WordPress websites. However, the popularity of the format seems to have plateaued compared to the 2022 data. This can be explained by the more holistic approach the core Performance team at WordPress has chosen toward general performance improvements on the platform. Read more in the section [WordPress in 2024](#wordpress-in-2024).
+As of WordPress 5.8, WordPress supports the WebP format and can be set to automatically convert uploaded images to WebP. However, the popularity of the format seems to have plateaued compared to the 2022 data. This can be explained by the more holistic approach the core Performance team at WordPress has chosen toward general performance improvements on the platform. Read more in the section [WordPress in 2024](#wordpress-in-2024).
 
 #### JavaScript
 

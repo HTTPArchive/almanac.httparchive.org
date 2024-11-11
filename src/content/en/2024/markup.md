@@ -16,6 +16,7 @@ featured_stat_2: 32 MB
 featured_stat_label_2: Median HTML document transfer size
 featured_stat_3: 29%
 featured_stat_label_3: Elements that are `div`s
+doi: 10.5281/zenodo.14065478
 ---
 
 ## Introduction
