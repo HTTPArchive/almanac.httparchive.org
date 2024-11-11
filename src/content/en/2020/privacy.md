@@ -35,7 +35,7 @@ We use <a hreflang="en" href="https://whotracks.me/">WhoTracksMe</a>'s tracker l
 
 {{ figure_markup(
   image="privacy-websites-that-load-trackers.png",
-  caption="Websites including at least one potential tracker",
+  caption="Websites including at least one potential tracker.",
   description="Bar chart showing that 92.94% of desktop websites and 92.97% of mobile websites load trackers.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQJMtHv0Y1JcQJkcVyrqBk9dsujZeDtOZEv7uvE0xM2VrQSuTUDFya41TeRlTZDDe2rWmHwDghW3Dev/pubchart?oid=1325818112&format=interactive",
   sheets_gid="1591448294"
@@ -46,7 +46,7 @@ We examined the most widely used trackers and plot the prevalence of the 10 most
 
 {{ figure_markup(
   image="privacy-biggest-third-party-potential-trackers.png",
-  caption="Top 10 Potential Trackers",
+  caption="Top 10 Potential Trackers.",
   description="Bar chart showing the prevalence of the 10 most popular potential trackers used on mobile and desktop clients. There is little difference between desktop and mobile and mobile has 65.5% for google_analytics, 65.9% for googleapis.com, 63.3% for gstatic, 58.3% for google_fonts, 50.0% for doubleclick, 47.6% for google, 42.4% for google_tag_manager, 30.9% for facebook, 19.2% for google_adservices, and 12.7% for cloudflare.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQJMtHv0Y1JcQJkcVyrqBk9dsujZeDtOZEv7uvE0xM2VrQSuTUDFya41TeRlTZDDe2rWmHwDghW3Dev/pubchart?oid=850649042&format=interactive",
   sheets_gid="1677398038"
@@ -59,7 +59,7 @@ WhoTracksMe's tracker list also defines categories that the trackers belong to. 
 
 {{ figure_markup(
   image="privacy-biggest-third-party-trackers.png",
-  caption="Top 10 Trackers",
+  caption="Top 10 Trackers.",
   description="Bar chart showing the prevalence of the 10 most popular trackers used on mobile and desktop clients. There is little difference between desktop and mobile and mobile has 65.5% for google_analytics, 50.0% for doubleclick, 47.6% for google, 42.4% for google_tag_manager, 30.9% for facebook, 19.2% for google_adservices, 12.7% for youtube, 19.2% for google_syndication, and 6.5% for both twitter and wordpress_stats.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQJMtHv0Y1JcQJkcVyrqBk9dsujZeDtOZEv7uvE0xM2VrQSuTUDFya41TeRlTZDDe2rWmHwDghW3Dev/pubchart?oid=1831606887&format=interactive",
   sheets_gid="1677398038"
@@ -70,7 +70,7 @@ Here Google still makes up seven out of the top 10 domains. The following figure
 
 {{ figure_markup(
   image="privacy-tracker-categories.png",
-  caption="Categories of the 100 most popular potential trackers",
+  caption="Categories of the 100 most popular potential trackers.",
   description="Bar chart showing distribution of the top 100 potential trackers on the web with 56 for advertising, 11 for cdn, 9 for site_analytics, 6 for both social media and misc, 3 for both essential and customer_help, 2 for both audio and video and 1 for both comments and undefined.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQJMtHv0Y1JcQJkcVyrqBk9dsujZeDtOZEv7uvE0xM2VrQSuTUDFya41TeRlTZDDe2rWmHwDghW3Dev/pubchart?oid=1117413918&format=interactive",
   sheets_gid="1431872451",
@@ -145,7 +145,7 @@ We looked into the most popular cookies being set on websites in HTTP's response
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Top cookies on desktop sites", sheets_gid="732942035", sql_file="top100_cookies_set_from_header.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Top cookies on desktop sites.", sheets_gid="732942035", sql_file="top100_cookies_set_from_header.sql") }}</figcaption>
 </figure>
 
 <figure>
@@ -210,7 +210,7 @@ We looked into the most popular cookies being set on websites in HTTP's response
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Top cookies on mobile sites", sheets_gid="732942035", sql_file="top100_cookies_set_from_header.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Top cookies on mobile sites.", sheets_gid="732942035", sql_file="top100_cookies_set_from_header.sql") }}</figcaption>
 </figure>
 
 As you can see, Google's tracking domain "doubleclick.net" sets cookies on roughly a quarter of websites on a mobile client and a third of all websites on a desktop client. Again, nine out of the ten most popular cookies on desktop client and seven out of ten on mobile are set by a Google domain. This is a lower bound for the number of websites the cookie is set on, since we are only counting cookies set via an HTTP header–a large number of tracking cookies are set by using third-party scripts.
@@ -221,7 +221,7 @@ Another widely-used tracking technique is fingerprinting. This consists of colle
 
 {{ figure_markup(
   image="privacy-websites-with-fingerprintjs-library.png",
-  caption="Websites using FingerprintJS",
+  caption="Websites using FingerprintJS.",
   description="Barchart showing 0.17% of desktop sites and 0.18% of mobile sites use FingerprintJS.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQJMtHv0Y1JcQJkcVyrqBk9dsujZeDtOZEv7uvE0xM2VrQSuTUDFya41TeRlTZDDe2rWmHwDghW3Dev/pubchart?oid=1556252953&format=interactive",
   sheets_gid="222110824",
@@ -237,7 +237,7 @@ Cookie consent banners have become common now. They increase transparency toward
 
 {{ figure_markup(
   image="privacy-websites-with-consent-management-platform.png",
-  caption="Websites using a consent management platform",
+  caption="Websites using a consent management platform.",
   description="Bar chart showing 4.4% of desktop sites and 4.0% of mobile sites use a Consent Management Platform.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQJMtHv0Y1JcQJkcVyrqBk9dsujZeDtOZEv7uvE0xM2VrQSuTUDFya41TeRlTZDDe2rWmHwDghW3Dev/pubchart?oid=2025542332&format=interactive",
   sheets_gid="1910033502",
@@ -247,7 +247,7 @@ Cookie consent banners have become common now. They increase transparency toward
 
 {{ figure_markup(
   image="privacy-consent-management-platform-popularity.png",
-  caption="Popularity of consent management platform",
+  caption="Popularity of consent management platform.",
   description="Bar chart showing popular consent management platforms from Osano at 1.6%, Quantcast Choice at 1.0%, Cookiebot and OneTrust at 0.4%, Iubenda at 0.3%, Crownpeak, Didomi, and TrustArc all at 0.1%, CIVIC, Cookie Script, CookieHub, Termly, Uniconsent, CookieYes, eucookie.eu, Seers, and Metomic all at approximately 0.0%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQJMtHv0Y1JcQJkcVyrqBk9dsujZeDtOZEv7uvE0xM2VrQSuTUDFya41TeRlTZDDe2rWmHwDghW3Dev/pubchart?oid=341496718&format=interactive",
   sheets_gid="1104760876",
@@ -263,7 +263,7 @@ IAB Europe, the Interactive Advertising Bureau, is a European association for di
 
 {{ figure_markup(
   image="privacy-adoption-of-the-tcf-banner.png",
-  caption="Adoption rate of TCF banner",
+  caption="Adoption rate of TCF banner.",
   description="Bar chart showing that 1.5% of desktop sites and 1.4% of mobile sites have implemented IAB Europe's TCF banner.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQJMtHv0Y1JcQJkcVyrqBk9dsujZeDtOZEv7uvE0xM2VrQSuTUDFya41TeRlTZDDe2rWmHwDghW3Dev/pubchart?oid=341275612&format=interactive",
   sheets_gid="2077755325",
@@ -279,7 +279,7 @@ Privacy policies are widely used by websites to meet legal obligations and incre
 
 {{ figure_markup(
   image="privacy-websites-with-privacy-link.png",
-  caption="Websites that have a privacy policy",
+  caption="Websites that have a privacy policy.",
   description="Bar chart showing that 44.8% of desktop sites and 42.3% of mobile sites have a privacy link.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQJMtHv0Y1JcQJkcVyrqBk9dsujZeDtOZEv7uvE0xM2VrQSuTUDFya41TeRlTZDDe2rWmHwDghW3Dev/pubchart?oid=329249623&format=interactive",
   sheets_gid="495362514",

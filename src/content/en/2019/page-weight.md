@@ -219,7 +219,7 @@ Roughly speaking, mobile sites are about 10% smaller than their desktop counterp
       <td>4</td>
     </tr>
   </table>
-  <figcaption>{{ figure_link(caption="Page weight on desktop broken down by resource type") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Page weight on desktop broken down by resource type.") }}</figcaption>
 </figure>
 
 ### Page weight over time

@@ -328,7 +328,7 @@
           </a>
           {% endif %}
           {% if contributor.mastodon %}
-          <a href="https://mastodon.com/{{ contributor.mastodon }}" aria-label="{{ onMastodon(contributor.mastodon) }}">
+          <a href="{{ contributor.mastodon }}" aria-label="{{ onMastodon(contributor.mastodon) }}">
             <svg width="22" height="22" role="img">
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#mastodon-logo"></use>
             </svg>

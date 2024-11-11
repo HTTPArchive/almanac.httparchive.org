@@ -119,7 +119,7 @@ Fortunately, there are a few other sources. <a href="./contributors#paulcalvano"
   )
 }}
 
-Weekend days show a greater proportion of mobile traffic, climbing somewhere around 10% from around 55 - 56% to 65 - 67%. Globally, not every country has Monday to Friday work weeks -  Sunday to Thursday is also <a hreflang="en" href="https://en.wikipedia.org/wiki/Workweek_and_weekend">another common pattern</a>, something that can be seen with a slight ramp up on Fridays, leading to a bigger jump in mobile usage on Saturdays and Sundays.
+Weekend days show a greater proportion of mobile traffic, climbing somewhere around 10% from around 55 - 56% to 65 - 67%. Globally, not every country has Monday to Friday work weeks -  Sunday to Thursday is also [another common pattern](https://wikipedia.org/wiki/Workweek_and_weekend), something that can be seen with a slight ramp up on Fridays, leading to a bigger jump in mobile usage on Saturdays and Sundays.
 
 ##### Not all times are equal
 
@@ -830,7 +830,7 @@ Too often an approach to responsive web design is to supply an image whose nativ
 #### Appropriately sized images
 
 {{ figure_markup(
-    caption="Percent of mobile page loads that had appropriately sized images",
+    caption="Percent of mobile page loads that had appropriately sized images.",
     content="56.6%",
     classes="big-number",
     sheets_gid="1754517886",

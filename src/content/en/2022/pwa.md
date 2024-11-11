@@ -313,7 +313,7 @@ As these are lesser-use, more advanced, capabilities they do not show on [our pr
 #### Manifest preferring native
 
 {{ figure_markup(
-  caption="Manifest files with a related_applications field on mobile",
+  caption="Manifest files with a related_applications field on mobile.",
   content="2.0%",
   classes="big-number",
   sheets_gid="228985826",
@@ -328,7 +328,7 @@ There is a property in the manifest that specifies if applications listed in the
 PWAs go hand in hand with advanced web capabilities. These capabilities are generally part of project Fugu which is the codename for a collection of new web platform features incubating within the Chromium project.
 
 {{ figure_markup(
-  caption="Most used Fugu API (desktop)",
+  caption="Most used Fugu API (desktop).",
   content="8.8%",
   classes="big-number",
   sheets_gid="1110821491",

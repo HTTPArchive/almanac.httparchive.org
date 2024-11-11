@@ -1313,7 +1313,7 @@ Moving down the list, we took a look at margin and padding properties. Much as w
 
 {{ figure_markup(
   image="usage-of-font-shorthand-vs-longhands.png",
-  caption="The most commonly used font properties",
+  caption="The most commonly used font properties.",
   description="A chart with all values given for mobile (desktop is almost always within a percent or two). The results are as follows. `font-size` 95%, `font-family` 94%, `font-weight` 92%, `font-style` 86%, `font` 82% with desktop at 57%, `font-variant` 23% with desktop at 12%, `font-stretch` 5%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=1034544520&format=interactive",
   sheets_gid="886194727",

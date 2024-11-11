@@ -127,7 +127,7 @@ Because a website can pull fonts from multiple sources, the popularity of differ
   </table>
   <figcaption>
       {{ figure_link(
-      caption="The top 5 most popular web font hosting combinations",
+      caption="The top 5 most popular web font hosting combinations.",
       sheets_gid="1014103088",
       sql_file="performance/fonts_services.sql",
     ) }}

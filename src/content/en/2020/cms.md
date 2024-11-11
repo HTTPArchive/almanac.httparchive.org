@@ -278,7 +278,7 @@ The 0.1 to 1% adoption share category sees significantly more movement. These ac
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Relative % adoption of smaller CMSs (0.1% - 1% adoption share)", sheets_gid="1594044364", sql_file="top_cmss_yoy_all_clients.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Relative % adoption of smaller CMSs (0.1% - 1% adoption share).", sheets_gid="1594044364", sql_file="top_cmss_yoy_all_clients.sql") }}</figcaption>
 </figure>
 
 We see three new entrants here: Duda, GoDaddy Website Builder, and MyWebsite. Two, Tilda and Kentico CMS, have seen an adoption share change of over 100% in the last year. This "long tail" of CMSs cover a mix of open source and proprietary platforms and include everything from consumer-friendly to industry-specific. An incredible strength of the CMS platforms as a whole is one can get specialized software which powers every conceivable type of website.
