@@ -1,5 +1,5 @@
 ARG     PYVER=3.12
-FROM    python:${PYVER} as base
+FROM    python:${PYVER} AS base
 
 # Enable unbuffered STDOUT logging
 ENV     PYTHONUNBUFFERED=1

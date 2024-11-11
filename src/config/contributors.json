@@ -3873,6 +3873,20 @@
     "twitter": "roryhewitt3",
     "website": "https://romche.com"
   },
+  "rowan-m": {
+    "avatar_url": "108052",
+    "github": "rowan-m",
+    "linkedin": "rowanmerewood",
+    "name": "Rowan Merewood",
+    "teams": {
+      "2024": [
+        "reviewers"
+      ]
+    },
+    "twitter": "rowan_m",
+    "mastodon": "https://mastodon.social/@rowan_m",
+    "website": "https://merewood.org/"
+  },
   "rvth": {
     "avatar_url": "62478401",
     "github": "rvth",
@@ -3924,6 +3938,10 @@
     "teams": {
       "2019": [
         "brainstormers",
+        "authors"
+      ],
+      "2024": [
+        "reviewers",
         "authors"
       ]
     },
@@ -4626,7 +4644,6 @@
     "website": "https://10xlearner.com/"
   },
   "ydimova": {
-    "avatar_url": "9135107",
     "github": "ydimova",
     "name": "Yana Dimova",
     "teams": {
@@ -4639,6 +4656,9 @@
       ],
       "2022": [
         "analysts"
+      ],
+      "2024": [
+        "authors"
       ]
     }
   },
@@ -4657,6 +4677,18 @@
     },
     "twitter": "yoavweiss",
     "website": "https://blog.yoav.ws"
+  },
+  "yohhaan": {
+    "avatar_url": "32905060",
+    "github": "yohhaan",
+    "name": "Yohan Beugin",
+    "teams": {
+      "2024": [
+        "authors",
+        "analysts"
+      ]
+    },
+    "website": "https://yohan.beugin.org"
   },
   "tyohan": {
     "avatar_url": "106703",
