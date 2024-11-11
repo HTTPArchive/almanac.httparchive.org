@@ -25,7 +25,7 @@ We find ourselves at a critical moment in the evolution of the semantic web. AI 
 
 ## The expanding landscape of structured data
 
-Over the past 18 months, there have been significant changes in the structured data landscape. In 2023, Google deprecated rich results for **FAQs** and **HowTos** from its search engine results pages (SERP) ([source](https://developers.google.com/search/blog/2023/08/howto-faq-changes)). In November 2024, Google will also remove the **Sitelinks Search Box** from search results ([source](https://developers.google.com/search/docs/appearance/structured-data/sitelinks-searchbox)). However, in parallel, there has been a new wave of innovation and expansion in using structured data from both Google and Bing.
+Over the past 18 months, there have been significant changes in the structured data landscape. In 2023, Google deprecated rich results for `FAQs` and `HowTos` from its search engine results pages (SERP) ([source](https://developers.google.com/search/blog/2023/08/howto-faq-changes)). In November 2024, Google will also remove the sitelinks search box from search results ([source](https://developers.google.com/search/docs/appearance/structured-data/sitelinks-searchbox)). However, in parallel, there has been a new wave of innovation and expansion in using structured data from both Google and Bing.
 
 ### **Key developments in 2023-2024:**
 
@@ -54,7 +54,7 @@ As the structured data ecosystem matures, we're witnessing a diversification in 
 
 3. **Semantic data in social web applications**:
 
-- Platforms like **Mastodon** leverage structured data for identity verification. The `rel=me` attribute allows users to verify accounts across federated networks (<a hreflang="en" href="https://docs.joinmastodon.org/user/profile/#verification">source</a>).
+- Platforms like Mastodon leverage structured data for identity verification. The `rel=me` attribute allows users to verify accounts across federated networks (<a hreflang="en" href="https://docs.joinmastodon.org/user/profile/#verification">source</a>).
 - Features like `fediverse:creator` are being used to validate content and authorship, enhancing trust in the decentralized social web (<a hreflang="en" href="https://blog.joinmastodon.org/2024/07/highlighting-journalism-on-mastodon/">source</a>).
 
 4. **Digital Product Passports (DPPs)**:
@@ -370,7 +370,7 @@ Let’s analyze now more in detail each type.
 
 RDFa continues to play a significant role in structured data, particularly within legacy CMS platforms. However, there has been a noticeable shift towards using RDFa for navigation elements, such as `listitem` and `breadcrumblist`, which are now prevalent on a significant portion of web pages. This reflects an industry-wide emphasis on enhancing structured navigation data for better user experience, particularly on mobile platforms.
 
-In contrast, traditional RDFa types like `foaf:image` and `foaf:document` have seen declining usage, as newer formats like **JSON-LD** and **Open Graph** offer more flexible solutions for image and document metadata. The adoption of Schema.org types within RDFa, such as `schema:webpage`, has shown modest but stable growth, further indicating a shift towards Schema.org vocabularies.
+In contrast, traditional RDFa types like `foaf:image` and `foaf:document` have seen declining usage, as newer formats like JSON-LD and Open Graph offer more flexible solutions for image and document metadata. The adoption of Schema.org types within RDFa, such as `schema:webpage`, has shown modest but stable growth, further indicating a shift towards Schema.org vocabularies.
 
 {{ figure_markup(
   image="rdfa-usage-by-year.png",
@@ -450,17 +450,17 @@ Dublin Core remains a stable but less frequently used format for metadata, espec
   )
 }}
 
-Its key fields, such as `dc.title` and `dc.language`, show **minimal year-on-year changes**, maintaining a consistent presence primarily in **academic and legacy web projects**.
+Its key fields, such as `dc.title` and `dc.language`, show minimal year-on-year changes, maintaining a consistent presence primarily in academic and legacy web projects.
 
-An increase in the use of `dc.source` reflects a growing emphasis on **citing original sources**, while fields like `dc.identifier` continue to be crucial for **resource identification**. However, specialized fields such as `dcterms.identifier` have seen declining adoption, signaling that Dublin Core is less central in today's web environments.
+An increase in the use of `dc.source` reflects a growing emphasis on citing original sources, while fields like `dc.identifier` continue to be crucial for resource identification. However, specialized fields such as `dcterms.identifier` have seen declining adoption, signaling that Dublin Core is less central in today's web environments.
 
-Interestingly, **Dublin Core** retains relevance in **multilingual document management**, particularly through the `dc.language` field, which is essential for managing and categorizing content in multiple languages. This makes it a valuable tool in contexts where **document metadata** needs to support internationalization and localization efforts.
+Interestingly, Dublin Core retains relevance in multilingual document management, particularly through the `dc.language` field, which is essential for managing and categorizing content in multiple languages. This makes it a valuable tool in contexts where document metadata needs to support internationalization and localization efforts.
 
-Overall, while Dublin Core is being gradually outpaced by more versatile formats like JSON-LD, it continues to serve **niche needs** where **structured document metadata** and **multilingual support** are critical.
+Overall, while Dublin Core is being gradually outpaced by more versatile formats like JSON-LD, it continues to serve niche needs where structured document metadata and multilingual support are critical.
 
 ## Open Graph
 
-Open Graph continues to be one of the most widely implemented structured data formats, particularly in the context of **social media sharing**. The `og:image` tag remains the most frequently used property, reflecting the growing emphasis on **visual content optimization**. Other image-related tags, such as `og:image:width` and `og:image:height`, have also seen a steady increase in adoption as websites strive to enhance the **presentation of shared content** across platforms.
+Open Graph continues to be one of the most widely implemented structured data formats, particularly in the context of **social media sharing**. The `og:image` tag remains the most frequently used property, reflecting the growing emphasis on visual content optimization. Other image-related tags, such as `og:image:width` and `og:image:height`, have also seen a steady increase in adoption as websites strive to enhance the presentation of shared content across platforms.
 
 {{ figure_markup(
   image="open-graph-usage-by-year.png",
@@ -474,7 +474,7 @@ Open Graph continues to be one of the most widely implemented structured data fo
   )
 }}
 
-A key development in 2024 is Google's update to its search documentation, now including the **`og:title` meta tag** as a source for generating **title links** in search results. This update allows Google to consider the `og:title` tag alongside traditional sources, such as the HTML `<title>` tag, when determining how clickable titles are displayed in search results. As a result, the `og:title` tag has gained renewed significance, not only for **social media visibility** but also for **SEO**.
+A key development in 2024 is Google's update to its search documentation, now including the **`og:title` meta tag** as a source for generating title links in search results. This update allows Google to consider the `og:title` tag alongside traditional sources, such as the HTML `<title>` tag, when determining how clickable titles are displayed in search results. As a result, the `og:title` tag has gained renewed significance, not only for social media visibility but also for SEO.
 
 {{ figure_markup(
   image="open-graph-usage-by-year-desktop.png",
@@ -487,7 +487,7 @@ A key development in 2024 is Google's update to its search documentation, now in
   height=441
 )}}
 
-This dual role of Open Graph in **social sharing** and **search engine optimization** makes it a critical tool for webmasters looking to improve both **user engagement** on social platforms and **visibility** in search results.
+This dual role of Open Graph in social sharing and search engine optimization makes it a critical tool for webmasters looking to improve both user engagement on social platforms and visibility in search results.
 
 {{ figure_markup(
   image="open-graph-usage-by-device.png",
@@ -500,11 +500,11 @@ This dual role of Open Graph in **social sharing** and **search engine optimizat
   height=441
 )}}
 
-**Security and type-related properties** have also gained traction. The `og:image:secure_url` property, which ensures image URLs are served over **secure HTTPS connections**, has increased to **9.41% on mobile** and **9.56% on desktop**. Similarly, `og:image:type`, which specifies the MIME type of the image, has grown to **11.26% on mobile** and **11.17% on desktop**. These properties help ensure consistent and secure media delivery across devices and platforms.
+Security and type-related properties have also gained traction. The `og:image:secure_url` property, which ensures image URLs are served over secure HTTPS connections, has increased to 9.41% on mobile and 9.56% on desktop. Similarly, `og:image:type`, which specifies the MIME type of the image, has grown to 11.26% on mobile and 11.17% on desktop. These properties help ensure consistent and secure media delivery across devices and platforms.
 
 ## Twitter
 
-Despite the platform's transition to **new ownership** and its rebranding as **X**, Twitter’s meta tags remain a vital part of the **structured data landscape**, particularly in the realm of **social media optimization**. The `twitter:card` tag continues to dominate, showing significant growth across mobile and desktop pages, as it plays a key role in defining how content is displayed when shared on the platform.
+Despite the platform's transition to new ownership and its rebranding as X, Twitter’s meta tags remain a vital part of the structured data landscape, particularly in the realm of social media optimization. The `twitter:card` tag continues to dominate, showing significant growth across mobile and desktop pages, as it plays a key role in defining how content is displayed when shared on the platform.
 
 {{ figure_markup(
   image="twitter-meta-tag-usage-by-year.png",
@@ -517,7 +517,7 @@ Despite the platform's transition to **new ownership** and its rebranding as **X
   height=441
 )}}
 
-Core descriptive tags like `twitter:title` and `twitter:description` have also seen widespread adoption, appearing on approximately **26% of mobile pages** and **24% of desktop pages**. These tags are essential for **content previews**, enhancing how web pages appear when shared on **social media**, and ensuring key information is highlighted.
+Core descriptive tags like `twitter:title` and `twitter:description` have also seen widespread adoption, appearing on approximately 26% of mobile pages and 24% of desktop pages. These tags are essential for content previews, enhancing how web pages appear when shared on social media, and ensuring key information is highlighted.
 
 {{ figure_markup(
   image="twitter-meta-tag-usage-by-year-desktop.png",
@@ -541,13 +541,13 @@ Core descriptive tags like `twitter:title` and `twitter:description` have also s
   height=441
 )}}
 
-The platform's **enhanced metadata** properties, such as `twitter:data1` and `twitter:label1`, which support **rich card features**, have seen coordinated growth, now appearing on **13.36% of mobile pages**. This indicates the increasing use of **Twitter Cards** for more detailed content representations, such as for **product listings** or **event details**.
+The platform's enhanced metadata properties, such as `twitter:data1` and `twitter:label1`, which support rich card features, have seen coordinated growth, now appearing on 13.36% of mobile pages. This indicates the increasing use of Twitter Cards for more detailed content representations, such as for product listings or event details.
 
-While **X** has undergone major branding changes, the **metadata architecture** it introduced remains critical for webmasters and SEO professionals, ensuring content shared on social media is **engaging**, **informative**, and **optimized** for interaction. This highlights the platform's enduring importance in the **social media and metadata ecosystem**.
+While X has undergone major branding changes, the metadata architecture it introduced remains critical for webmasters and SEO professionals, ensuring content shared on social media is engaging, informative, and optimized for interaction. This highlights the platform's enduring importance in the social media and metadata ecosystem.
 
 ## Facebook
 
-Facebook-specific meta tags have seen a marked decline in usage between 2022 and 2024, reflecting the broader industry shift toward **Open Graph** as the preferred format for **social sharing metadata**. The `fb:app_id` tag, once widely used to integrate apps with the Facebook platform, now appears on only **4.9% of mobile pages**, down from previous years. Similarly, administrative tags like `fb:admins` have dropped to just **2.4%**, serving primarily for backend management rather than enhancing content visibility.
+Facebook-specific meta tags have seen a marked decline in usage between 2022 and 2024, reflecting the broader industry shift toward Open Graph as the preferred format for social sharing metadata. The `fb:app_id` tag, once widely used to integrate apps with the Facebook platform, now appears on only 4.9% of mobile pages, down from previous years. Similarly, administrative tags like `fb:admins` have dropped to just 2.4%, serving primarily for backend management rather than enhancing content visibility.
 
 {{ figure_markup(
   image="facebook-meta-tag-usage-by-year-mobile.png",
@@ -560,7 +560,7 @@ Facebook-specific meta tags have seen a marked decline in usage between 2022 and
   height=441
 )}}
 
-This decline underscores a strategic move by developers and webmasters to adopt **Open Graph**, which originated with Facebook but has since become the **standard for social media sharing** across platforms. The **Open Graph format** offers greater flexibility and interoperability, making it the go-to choice for content optimization on Facebook as well as other social networks.
+This decline underscores a strategic move by developers and webmasters to adopt Open Graph, which originated with Facebook but has since become the standard for social media sharing across platforms. The Open Graph format offers greater flexibility and interoperability, making it the go-to choice for content optimization on Facebook as well as other social networks.
 
 {{ figure_markup(
   image="facebook-meta-tag-usage-by-year-desktop.png",
@@ -573,7 +573,7 @@ This decline underscores a strategic move by developers and webmasters to adopt 
   height=441
 )}}
 
-Despite the decreasing adoption of Facebook-specific tags, **Facebook** itself remains a key player in the **social media landscape**, with Open Graph handling most of its metadata needs. This trend reflects the consolidation of social sharing standards, where **platform-agnostic tags** provide greater reach and functionality.
+Despite the decreasing adoption of Facebook-specific tags, Facebook itself remains a key player in the social media landscape, with Open Graph handling most of its metadata needs. This trend reflects the consolidation of social sharing standards, where platform-agnostic tags provide greater reach and functionality.
 
 {{ figure_markup(
   image="facebook-meta-tag-usage-by-device.png",
@@ -588,9 +588,9 @@ Despite the decreasing adoption of Facebook-specific tags, **Facebook** itself r
 
 ## Microformats and Microformats2
 
-Microformats continue to show **limited adoption**, primarily in niche use cases where simple, semantic data is required. The `adr` tag, used for address-related data, remains the most widely adopted Microformats type, appearing on approximately **0.4% of pages** across both mobile and desktop platforms. Other tags, such as `geo` and `hReview`, have minimal usage, as more sophisticated formats like JSON-LD and Open Graph have become more prevalent.
+Microformats continue to show limited adoption, primarily in niche use cases where simple, semantic data is required. The `adr` tag, used for address-related data, remains the most widely adopted Microformats type, appearing on approximately 0.4% of pages across both mobile and desktop platforms. Other tags, such as `geo` and `hReview`, have minimal usage, as more sophisticated formats like JSON-LD and Open Graph have become more prevalent.
 
-**Microformats2**, while still relatively niche, has seen slightly higher adoption than its predecessor. Tags like `h-entry` and `h-card`, which are used for blogging and personal identity data, now appear on **0.22% of mobile pages** and **0.15% of desktop pages**. These tags continue to serve specific needs, particularly for **address data** and **simple content structures**.
+Microformats2, while still relatively niche, has seen slightly higher adoption than its predecessor. Tags like `h-entry` and `h-card`, which are used for blogging and personal identity data, now appear on 0.22% of mobile pages and 0.15% of desktop pages. These tags continue to serve specific needs, particularly for address data and simple content structures.
 
 {{ figure_markup(
   image="microformats2-mobile-year-on-year.png",
@@ -637,9 +637,9 @@ Microformats continue to show **limited adoption**, primarily in niche use cases
   sql_file="present_types.sql"
 )}}
 
-Cross-device implementation remains relatively consistent, though with some variation between mobile and desktop. The data shows a **general decline in traditional Microformats usage** from 2022 to 2024, particularly in **review-related properties** like `hReview` and `hReview-aggregate`. This decline reflects the **industry’s shift toward more modern structured data formats** like JSON-LD and RDFa, which offer **broader functionality** and better **integration with current web standards**.
+Cross-device implementation remains relatively consistent, though with some variation between mobile and desktop. The data shows a general decline in traditional Microformats usage from 2022 to 2024, particularly in review-related properties like `hReview` and `hReview-aggregate`. This decline reflects the industry’s shift toward more modern structured data formats like JSON-LD and RDFa, which offer broader functionality and better integration with current web standards.
 
-Despite this decline, **Microformats** and **Microformats2** remain useful in specific contexts where lightweight, human-readable semantic data is needed. However, their overall presence continues to be eclipsed by more versatile formats like JSON-LD, which dominate the structured data landscape.
+Despite this decline, Microformats and Microformats2 remain useful in specific contexts where lightweight, human-readable semantic data is needed. However, their overall presence continues to be eclipsed by more versatile formats like JSON-LD, which dominate the structured data landscape.
 
 {{ figure_markup(
   image="microformats-usage-desktop.png",
@@ -652,7 +652,7 @@ Despite this decline, **Microformats** and **Microformats2** remain useful in sp
 
 ## Microdata
 
-**Microdata** continues to be widely used for **structural elements** and **navigation data**, particularly within legacy platforms and sites where simpler, static page structures are required. The most frequently implemented types include `schema.org/webpage` (appearing on **8.34% of mobile pages**) and `schema.org/sitenavigationelement` (used on **6.42% of mobile pages**), indicating the format’s enduring relevance for **webpage structure** and **site navigation**.
+Microdata continues to be widely used for structural elements and navigation data, particularly within legacy platforms and sites where simpler, static page structures are required. The most frequently implemented types include `schema.org/webpage` (appearing on 8.34% of mobile pages) and `schema.org/sitenavigationelement` (used on 6.42% of mobile pages), indicating the format’s enduring relevance for webpage structure and site navigation.
 
 {{ figure_markup(
   image="microdata-year-on-year-mobile.png",
@@ -665,7 +665,7 @@ Despite this decline, **Microformats** and **Microformats2** remain useful in sp
   height=582
 )}}
 
-**Navigation-related types** like `listitem` and `breadcrumblist` have also seen steady growth, reflecting the need for more organized and structured navigation data, particularly on mobile devices. However, **content-specific types** such as `schema.org/article` and `schema.org/product` remain less common, with adoption rates of **1.77%** and **1.50%** respectively, as developers increasingly turn to JSON-LD for more flexible and scalable implementations.
+Navigation-related types like `listitem` and `breadcrumblist` have also seen steady growth, reflecting the need for more organized and structured navigation data, particularly on mobile devices. However, content-specific types such as `schema.org/article` and `schema.org/product` remain less common, with adoption rates of 1.77% and 1.50% respectively, as developers increasingly turn to JSON-LD for more flexible and scalable implementations.
 
 {{ figure_markup(
   image="microdata-by-device.png",
@@ -678,23 +678,23 @@ Despite this decline, **Microformats** and **Microformats2** remain useful in sp
   height=614
 )}}
 
-While **Microdata** remains a significant format for **fundamental webpage structure**, its use in **dynamic content** and **ecommerce** applications has been gradually overtaken by more modern formats like **JSON-LD**, which offer broader support for content enrichment and structured data scaling across large websites.
+While Microdata remains a significant format for fundamental webpage structure, its use in dynamic content and ecommerce applications has been gradually overtaken by more modern formats like JSON-LD, which offer broader support for content enrichment and structured data scaling across large websites.
 
 ## JSON-LD
 
-**JSON-LD types** continue to be widely implemented across websites, with varied types of data used depending on the purpose of the site. The **WebSite** schema leads adoption, appearing on **12.73%** of mobile pages, followed by **Organization** and **LocalBusiness** types at **7.16%** and **3.97%**, respectively. These types are crucial for establishing **entity identity** and providing contextual information to search engines.
+JSON-LD types continue to be widely implemented across websites, with varied types of data used depending on the purpose of the site. The WebSite schema leads adoption, appearing on 12.73% of mobile pages, followed by Organization and LocalBusiness types at 7.16% and 3.97%, respectively. These types are crucial for establishing entity identity and providing contextual information to search engines.
 
 The diversity in implementation patterns reflects how different industries and website types prioritize specific structured data. For instance:
 
-- **ecommerce sites** frequently implement **Product**, **Offer**, and **Review** schemas.
-- **Local businesses** prioritize **LocalBusiness**, **GeoCoordinates**, and **OpeningHoursSpecification** to enhance local search visibility.
-- **Content publishers** often utilize **Article** and **BlogPosting** schemas to structure written content effectively.
+- ecommerce sites frequently implement `Product`, `Offer`, and `Review` schemas.
+- Local businesses prioritize `LocalBusiness`, `GeoCoordinates`, and `OpeningHoursSpecification` to enhance local search visibility.
+- Content publishers often utilize `Article` and `BlogPosting` schemas to structure written content effectively.
 
-**BreadcrumbList** implementation has seen notable growth, appearing on **5.66%** of pages, suggesting an increased focus on **structured navigation data**. The **WebPage** schema shows steady adoption at **1.49%**, while the **Product** schema appears on **0.77%** of pages. Content-specific types like **BlogPosting** (**1.40%**) and **Article** (**0.18%**) maintain consistent presence, though at lower levels.
+`BreadcrumbList` implementation has seen notable growth, appearing on 5.66% of pages, suggesting an increased focus on structured navigation data. The `WebPage` schema shows steady adoption at 1.49%, while the `Product` schema appears on 0.77% of pages. Content-specific types like `BlogPosting` (1.40%) and `Article` (0.18%) maintain consistent presence, though at lower levels.
 
-Specialized business types such as **Restaurant** (**0.19%**), **AutoDealer** (**1.09%**), and **Store** (**0.17%**) demonstrate the growing adoption of **industry-specific markup**, corresponding to **Google’s increased support** for these schemas. Supporting content types including **VideoObject**, **FAQPage**, and **Event** each appear on approximately **0.34%** of pages, indicating steady but modest implementation of **specialized content markup**.
+Specialized business types such as `Restaurant` (0.19%), `AutoDealer` (1.09%), and Store (0.17%) demonstrate the growing adoption of industry-specific markup, corresponding to Google’s increased support for these schemas. Supporting content types including `VideoObject`, `FAQPage`, and `Event` each appear on approximately 0.34% of pages, indicating steady but modest implementation of specialized content markup.
 
-**ItemList** schema shows healthy adoption at **2.44%**, suggesting increased use of **structured listing data**. The overall distribution of **JSON-LD types** reflects a maturing ecosystem where **fundamental entity types** dominate, while specialized schemas serve specific **business and content needs**.
+`ItemList` schema shows healthy adoption at 2.44%, suggesting increased use of structured listing data. The overall distribution of JSON-LD types reflects a maturing ecosystem where fundamental entity types dominate, while specialized schemas serve specific business and content needs.
 
 {{ figure_markup(
   image="jsonld-year-on-year-mobile.png",
@@ -709,7 +709,7 @@ Specialized business types such as **Restaurant** (**0.19%**), **AutoDealer** (*
 
 The consistency in implementation across devices indicates a mature approach to structured data deployment, where developers are ensuring uniform markup regardless of the target platform. This alignment between mobile and desktop implementations suggests that organizations are following best practices for responsive design while maintaining consistent structured data across all user experiences.
 
-Despite Google's deprecation of **FAQ** and **HowTo** rich results in August 2023 ([source](https://developers.google.com/search/blog/2023/08/howto-faq-changes)), we see limited impact on their adoption rates. **HowTo** schema adoption has historically been low due to its complexity, with implementation rates below **1%** for both desktop and mobile. **FAQPage**, on the other hand, has not only maintained its adoption but even shows a slight increase on desktop, rising from **0.2%** in 2022 to **0.6%** in 2024. This trend suggests that webmasters may still find value in implementing FAQPage for additional search engine visibility besides rich results.
+Despite Google's deprecation of `FAQ` and `HowTo` rich results in August 2023 ([source](https://developers.google.com/search/blog/2023/08/howto-faq-changes)), we see limited impact on their adoption rates. `HowTo` schema adoption has historically been low due to its complexity, with implementation rates below 1% for both desktop and mobile. `FAQPage`, on the other hand, has not only maintained its adoption but even shows a slight increase on desktop, rising from 0.2% in 2022 to 0.6% in 2024. This trend suggests that webmasters may still find value in implementing FAQPage for additional search engine visibility besides rich results.
 
 These observations highlight the *resilience of certain structured data types* despite changes in Google’s support. It also points to the importance of monitoring how structured data evolves across various platforms, as its utility often extends beyond immediate search result enhancements.
 
@@ -726,7 +726,7 @@ These observations highlight the *resilience of certain structured data types* d
 
 ### JSON-LD relationships
 
-When evaluating JSON-LD relationships in structured data implementations, several key patterns emerge in how entities are connected in a graph. These relationship patterns reflect how structured data is used to **create comprehensive, interconnected entity descriptions** that help search engines better understand content context and relationships. The most successful implementations leverage these connections to provide rich, detailed information while maintaining logical content relationships.
+When evaluating JSON-LD relationships in structured data implementations, several key patterns emerge in how entities are connected in a graph. These relationship patterns reflect how structured data is used to create comprehensive, interconnected entity descriptions that help search engines better understand content context and relationships. The most successful implementations leverage these connections to provide rich, detailed information while maintaining logical content relationships.
 
 Let’s review the most critical patterns from the JSON-LD relationship analysis:
 
@@ -734,7 +734,7 @@ Let’s review the most critical patterns from the JSON-LD relationship analysis
 2. **Content Organization.** Maturity There's a clear pattern of publishers implementing more sophisticated content structures. The relationships between Article, BlogPosting, and WebPage entities consistently link to ImageObject, author attributes, and publishing details. This isn't just about marking up individual pieces of content – it's about creating proper content graphs that establish clear relationships between content, creators, and organizational entities.
 3. **ecommerce Integration.** The product-related relationships show an interesting evolution. Beyond basic product markup, we're seeing more connections to ReviewRating, AggregateOffer, and PriceSpecification entities. This suggests ecommerce sites are building more comprehensive product knowledge graphs that can support advanced features like price tracking and inventory status.
 
-Most notably, these patterns indicate that **structured data implementation is moving beyond simple SEO markup toward creating true knowledge graphs** that can support AI-powered search experiences and rich data integrations.
+Most notably, these patterns indicate that structured data implementation is moving beyond simple SEO markup toward creating true knowledge graphs that can support AI-powered search experiences and rich data integrations.
 
 Here is the updated markdown for the uploaded images:
 
@@ -756,15 +756,15 @@ Here is the updated markdown for the uploaded images:
   )
 }}
 
-As seen also in the previous chart the most frequent JSON-LD property relationships reveal several critical implementation patterns across websites. PotentialAction emerges as a dominant property, showing strong connections to SearchAction and WebSite, indicating **widespread implementation of site search functionality** (we expect this to decrease as Google is removing support for this feature snippet). **Image-related properties** form another major cluster, with ImageObject frequently connected to Organization and WebPage entities, demonstrating the importance of visual content attribution. The publisher and logo properties frequently link to Organization entities, establishing clear brand identity.
+As seen also in the previous chart the most frequent JSON-LD property relationships reveal several critical implementation patterns across websites. PotentialAction emerges as a dominant property, showing strong connections to SearchAction and WebSite, indicating widespread implementation of site search functionality (we expect this to decrease as Google is removing support for this feature snippet). Image-related properties form another major cluster, with ImageObject frequently connected to Organization and WebPage entities, demonstrating the importance of visual content attribution. The publisher and logo properties frequently link to Organization entities, establishing clear brand identity.
 
-**Navigation structures** show clear patterns through BreadcrumbList and itemListElement properties, typically connecting to WebPage entities. Content relationships are evidenced by mainEntityOfPage connections, while business-specific information flows through address, openingHoursSpecification, and geo properties.
+Navigation structures show clear patterns through BreadcrumbList and itemListElement properties, typically connecting to WebPage entities. Content relationships are evidenced by mainEntityOfPage connections, while business-specific information flows through address, openingHoursSpecification, and geo properties.
 
-Particularly noteworthy is the consistent implementation of **contact and location information**, with PostalAddress, ContactPoint, and GeoCoordinates forming a well-defined cluster. This suggests businesses are prioritizing local presence markup. The presence of review-related properties (reviewRating, rating) connected to various entities indicates strong focus on reputation management through structured data.
+Particularly noteworthy is the consistent implementation of contact and location information, with PostalAddress, ContactPoint, and GeoCoordinates forming a well-defined cluster. This suggests businesses are prioritizing local presence markup. The presence of review-related properties (reviewRating, rating) connected to various entities indicates strong focus on reputation management through structured data.
 
 ### `sameAs`
 
-The sameAs property plays a crucial role in **entity disambiguation and knowledge graph development**, extending far beyond simple social media profile linking. While our data shows strong implementation for major platforms (Facebook at 4.53%, Instagram at 3.67%), the true strategic value lies in how sameAs helps search engines understand and validate entity relationships.
+The sameAs property plays a crucial role in entity disambiguation and knowledge graph development, extending far beyond simple social media profile linking. While our data shows strong implementation for major platforms (Facebook at 4.53%, Instagram at 3.67%), the true strategic value lies in how sameAs helps search engines understand and validate entity relationships.
 
 When properly implemented, sameAs serves as a powerful tool for entity disambiguation, particularly for organizations and persons. By linking to authoritative sources like Wikidata (0.17%) and Wikipedia (0.13%), brands can establish unambiguous entity identification. This creates what we might call a "*entity fingerprint*" that helps search engines confidently associate various online presences with the correct entity.
 
@@ -806,9 +806,9 @@ The vast gap between Schema.org and other contexts underscores its critical role
 
 The structured data landscape is rapidly evolving, marked by Google's introduction of specialized schemas for vehicles, courses, and 3D product models, alongside increased support for Digital Product Passports through GS1 Digital Link. The growing adoption of JSON-LD (now at 41% of pages) and sophisticated entity relationships through sameAs properties indicates a maturing ecosystem focused on comprehensive knowledge graph development.
 
-The data shows a clear shift toward more specialized implementation patterns, particularly in ecommerce and local business contexts. For instance, structured data types like **Product**, **Offer**, and **Review** have become more prevalent in ecommerce, while **LocalBusiness** and **GeoCoordinates** are increasingly used to improve local search visibility.
+The data shows a clear shift toward more specialized implementation patterns, particularly in ecommerce and local business contexts. For instance, structured data types like `Product`, `Offer`, and `Review` have become more prevalent in ecommerce, while `LocalBusiness` and `GeoCoordinates` are increasingly used to improve local search visibility.
 
-This shift can be partially attributed to Google’s policy changes, which encouraged webmasters to focus on more domain-specific schemas. Entity disambiguation has also become increasingly critical, with organizations leveraging structured data like **sameAs** and **Organization** to establish clear digital identities across platforms and knowledge bases.
+This shift can be partially attributed to Google’s policy changes, which encouraged webmasters to focus on more domain-specific schemas. Entity disambiguation has also become increasingly critical, with organizations leveraging structured data like `sameAs` and `Organization` to establish clear digital identities across platforms and knowledge bases.
 
 ## Looking ahead: the future of structured data
 
@@ -816,19 +816,19 @@ As we analyze current trends, we also cast our gaze forward to emerging developm
 
 - **AI and structured data symbiosis**
 
-  The growing interdependence between **AI systems** and **structured data** is becoming crucial for delivering **grounded, hallucination-free content generation** and enhancing **conversational search experiences**. As AI relies increasingly on structured data for accurate and context-rich information, this symbiosis is redefining how **AI-powered tools** interact with content across the web.
+  The growing interdependence between AI systems and structured data is becoming crucial for delivering grounded, hallucination-free content generation and enhancing conversational search experiences. As AI relies increasingly on structured data for accurate and context-rich information, this symbiosis is redefining how AI-powered tools interact with content across the web.
 
 - **Data Commons and knowledge graph integration**
 
-  The expansion of open data initiatives, such as **Google's Data Commons**, which leverages **Schema.org** for structuring and linking public datasets, is further fueling the evolution of **knowledge graph-based systems**. These initiatives provide a rich, unified foundation for **AI-driven data enrichment** and **exploration**, creating new possibilities for scalable and reliable data integration across platforms.
+  The expansion of open data initiatives, such as Google's Data Commons, which leverages Schema.org for structuring and linking public datasets, is further fueling the evolution of knowledge graph-based systems. These initiatives provide a rich, unified foundation for AI-driven data enrichment and exploration, creating new possibilities for scalable and reliable data integration across platforms.
 
 - **SEOntology and specialized vocabularies**
 
-  In parallel, the development of <a hreflang="en" href="https://www.searchenginejournal.com/introducing-seontology-the-future-of-seo-in-the-age-of-ai/524773/">**SEOntology**</a> and other specialized vocabularies is addressing the need for **SEO-specific structured data** that can improve **content discoverability** and **search engine optimization**. By creating vocabularies tailored to the unique requirements of SEO, we can further enhance the alignment between structured data and AI, driving more targeted and efficient search experiences.
+  In parallel, the development of <a hreflang="en" href="https://www.searchenginejournal.com/introducing-seontology-the-future-of-seo-in-the-age-of-ai/524773/">SEOntology</a> and other specialized vocabularies is addressing the need for SEO-specific structured data that can improve content discoverability and search engine optimization. By creating vocabularies tailored to the unique requirements of SEO, we can further enhance the alignment between structured data and AI, driving more targeted and efficient search experiences.
 
 - **Regulatory impacts**
 
-  Finally, regulations such as the **EU’s Digital Product Passport** are poised to reshape future structured data standards. These initiatives will likely influence how structured data is applied, especially in domains like **ecommerce** and **product traceability**, encouraging more structured and transparent data practices.
+  Finally, regulations such as the EU’s Digital Product Passport are poised to reshape future structured data standards. These initiatives will likely influence how structured data is applied, especially in domains like ecommerce and product traceability, encouraging more structured and transparent data practices.
 
 By examining these aspects, we aim to provide a comprehensive overview of the state of structured data in 2024, its recent evolution, and its future trajectory. Whether you're a seasoned SEO professional, a web developer, an eCommerce strategist, or simply interested in the evolution of the web, this chapter offers valuable insights into how structured data is reshaping our digital world and paving the way for a more connected, transparent, and intelligent online experience.
 
