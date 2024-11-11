@@ -64,7 +64,7 @@ One slight concern as we reach the end of this goal, is a noticeable "leveling o
 
 {{ figure_markup(
   image="security-https-usage-by-site.png",
-  caption="HTTPS usage for sites",
+  caption="HTTPS usage for sites.",
   description="Bar chart showing 77.44% of desktop sites are using HTTPS, with the remaining 22.56% using HTTP, while 73.22% of mobile sites are using HTTPS while the remaining 26.78% using HTTP.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTb4PkXuhnxNc-X_Jovx0970pV22ucCnNloa2g8KPMLJmp39E62oSE4XvBlAVSGL0oEEHZa71_bgsV4/pubchart?oid=103775737&format=interactive",
   sheets_gid="1558058913",
@@ -80,7 +80,7 @@ As HTTPS is now well and truly the norm, the challenge moves from having any sor
 
 {{ figure_markup(
   image="security-tls-version-by-site.png",
-  caption="TLS versions usage for sites",
+  caption="TLS versions usage for sites.",
   description="Bar chart showing that on desktop 55.98% of sites use TLSv1.2, while 43.23% use TLSv1.3. On mobile the figures are 53.82% and 45.37% respectively. TLSv1.0, TLSv1.1 barely register though there is a very small amount of QUIC usage (0.62% on desktop and 0.67% on mobile).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTb4PkXuhnxNc-X_Jovx0970pV22ucCnNloa2g8KPMLJmp39E62oSE4XvBlAVSGL0oEEHZa71_bgsV4/pubchart?oid=840326541&format=interactive",
   sheets_gid="1486844039",
@@ -115,7 +115,7 @@ For the widely used Advanced Encryption Standard (AES) key sizes of 128-bit and 
 
 {{ figure_markup(
   image="security-distribution-of-cipher-suites.png",
-  caption="Distribution of cipher suites",
+  caption="Distribution of cipher suites.",
   description="Bar chart showing the cipher suites used by device, with AES_128_GCM is the most common and is used by 78.4% of desktop and mobile sites, AES_256_GCM is used by 19.1% of desktop and 18.5% of mobile sites, AES_256_CBC used by 1.44% of desktop sites and 1.86% of mobile sites, CHACHA20_POLY1305 is used by 0.66% and 0.72% of sites respectively, AES_128_CBC is used by 0.43% and 0.44% respectively, and 3DES_EDE_CBC is used by 0.01% of desktop and approximately 0.0% of mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTb4PkXuhnxNc-X_Jovx0970pV22ucCnNloa2g8KPMLJmp39E62oSE4XvBlAVSGL0oEEHZa71_bgsV4/pubchart?oid=1464905386&format=interactive",
   sheets_gid="1919501829",
@@ -713,7 +713,7 @@ Some other security mechanisms are even required to prevent certain types of att
 
 {{ figure_markup(
   image="security-adoption-of-security-headers.png",
-  caption="Adoption of security headers",
+  caption="Adoption of security headers.",
   description="Bar chart showing the prevalence of different security headers, for mobile pages in 2019 and 2020. `Content-Security-Policy` is 5% on desktop and 11% on mobile, `Expect-CT` is 8% on desktop and 11% on mobile, `Feature-Policy` is 0% on desktop and 1% on mobile, `Referrer-Policy` is 6% on desktop and 7% on mobile, `Report-To` is 2% on desktop and 3% on mobile, `Strict-Transport-Security` is 13% on desktop and 17% on mobile, `X-Content-Type-Options` is 26% on desktop and 30% on mobile, `X-Frame-Options` is 24% on desktop and 27% on mobile, and `X-XSS-Protection` is 16% on desktop and 18% on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTb4PkXuhnxNc-X_Jovx0970pV22ucCnNloa2g8KPMLJmp39E62oSE4XvBlAVSGL0oEEHZa71_bgsV4/pubchart?oid=1262077475&format=interactive",
   sheets_gid="1613840789",
@@ -828,7 +828,7 @@ The <a hreflang="en" href="https://www.w3.org/TR/WebCryptoAPI/">Web Cryptography
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Top used cryptography APIs", sheets_gid="1256054098", sql_file="web_cryptography_api.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Top used cryptography APIs.", sheets_gid="1256054098", sql_file="web_cryptography_api.sql") }}</figcaption>
 </figure>
 
 Our results show that the  `Cypto.getRandomValues` function, which allows for generating a random number (in a secure, cryptographic manner) is by far the most widely used one (desktop: 70% and mobile: 68%). We believe Google Analytic's use of this function has a major effect on the usage measured. In general, we see that mobile websites perform slightly fewer cryptographic operations, although mobile browsers [fully support](https://developer.mozilla.org/docs/Web/API/Web_Crypto_API#Browser_compatibility) this API.
@@ -871,7 +871,7 @@ According to <a hreflang="en" href="https://www.imperva.com/blog/bad-bot-report-
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Usage of bot protection services by provider", sheets_gid="1787091453", sql_file="bot_detection.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Usage of bot protection services by provider.", sheets_gid="1787091453", sql_file="bot_detection.sql") }}</figcaption>
 </figure>
 
 The figure above shows the use of bot protection and also the market share based on our dataset. We see that nearly 10% of desktop pages and 9% of mobile pages use such services.
@@ -886,7 +886,7 @@ There can be many different factors that affect security at the level of a count
 
 {{ figure_markup(
   image="security-adoption-of-https-per-country.png",
-  caption="Adoption of HTTPS per country",
+  caption="Adoption of HTTPS per country.",
   description="Bar chart showing percentage of sites with HTTPS enabled, for sites related to different countries. Switzerland, New Zealand, Ireland, Nigeria and Australia are the top five in order at 95% to 94%. At the other end Thailand, Iran, South Korea, Taiwan, Japan are at 76% to 72%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTb4PkXuhnxNc-X_Jovx0970pV22ucCnNloa2g8KPMLJmp39E62oSE4XvBlAVSGL0oEEHZa71_bgsV4/pubchart?oid=286219881&format=interactive",
   sheets_gid="446153579",
@@ -916,7 +916,7 @@ With regard to security headers that secure content inclusion or that aim to thw
 
 {{ figure_markup(
   image="security-headers-as-drivers-of-adoption-of-other-headers.png",
-  caption="Security header as driver of adoption of other headers",
+  caption="Security header as driver of adoption of other headers.",
   description="Bar chart showing relative adoption rate of security mechanism based on the presence of different security headers. `Content-Security-Policy` has 357% for desktop and 368% for mobile, `Expect-CT` has 224% and 235% respectively, `Referrer-Policy` has 265% and 265%, `Strict-Transport-Security` has 275% and 284%, `X-Content-Type-Options` has 309% and 305%, and `X-Frame-Options` has 286% for desktop and 299% for mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTb4PkXuhnxNc-X_Jovx0970pV22ucCnNloa2g8KPMLJmp39E62oSE4XvBlAVSGL0oEEHZa71_bgsV4/pubchart?oid=1444988925&format=interactive",
   sheets_gid="1707889711",
@@ -948,7 +948,7 @@ As one of the most popular [Content Management Systems](./cms), WordPress is an 
 
 {{ figure_markup(
   image="security-evolution-of-wordpress-5-3and5-4-after-update.png",
-  caption="Evolution of WordPress 5.3 and 5.4 after update",
+  caption="Evolution of WordPress 5.3 and 5.4 after update.",
   description="Stacked bar chart showing the evolution of WordPress versions 5.3.2, 5.3.3, 5.4 and 5.4.1. We can see over time starting in March 2020 that 5.3.2 is the only one of those version being used and has 50.08% adoption, in April 5.4 comes in and takes up third thirds of the adoption of these versions which increases to 54.23% in total, in May 5.4.1 comes out and there is mixed usage of all three versions with a total of 58.78%, in June it has reduced by almost half to 32.76% and most of the remaining usage is 5.4.1, in July these versions are used on just 4.55% of sites, and reducing to 3.59% in August",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTb4PkXuhnxNc-X_Jovx0970pV22ucCnNloa2g8KPMLJmp39E62oSE4XvBlAVSGL0oEEHZa71_bgsV4/pubchart?oid=503316556&format=interactive",
   sheets_gid="155582197",

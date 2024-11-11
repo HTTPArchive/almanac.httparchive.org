@@ -166,7 +166,7 @@ The following two events are quite popular and frequently used in tandem:
 [`ServiceWorkerGlobalScope.skipWaiting()`](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/skipWaiting) is usually called at the beginning of the `install` event and allows a newly installed service worker to immediately move to the `active` state, even if there's another active service worker. Our analysis showed that it is used in 60.47% of desktop and 59.60% of mobile PWAs.
 
 {{ figure_markup(
-  caption="Percent of mobile sites with service workers that call `skipWaiting()`",
+  caption="Percent of mobile sites with service workers that call `skipWaiting()`.",
   content="59.60%",
   classes="big-number",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTHHnqNdpRUjoeTfsN9_irK57PvZn_Q2X842RLl-RL4ibWmZFvO-S1x35PjVE3-xUlHFS_Zurd22rOq/pubchart?oid=2101442063&format=interactive",
@@ -178,7 +178,7 @@ The following two events are quite popular and frequently used in tandem:
 [`Clients.claim()`](https://developer.mozilla.org/docs/Web/API/Clients/claim) is frequently used in combination with `skipWaiting()`, and it allows active service workers to "claim control" of all the clients under its scope. Appears in 48.98% of desktop pages and 47.14% of mobile.
 
 {{ figure_markup(
-  caption="Percent of mobile sites with service workers that call `clients.claim()`",
+  caption="Percent of mobile sites with service workers that call `clients.claim()`.",
   content="47.14%",
   classes="big-number",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTHHnqNdpRUjoeTfsN9_irK57PvZn_Q2X842RLl-RL4ibWmZFvO-S1x35PjVE3-xUlHFS_Zurd22rOq/pubchart?oid=2101442063&format=interactive",
@@ -194,7 +194,7 @@ Another interesting aspect to analyze are caching operations, which are frequent
 The [`ServiceWorkerGlobalScope.caches`](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/caches) property returns the [CacheStorage object](https://developer.mozilla.org/docs/Web/API/CacheStorage) associated with a service worker allowing access to the different [caches](https://developer.mozilla.org/docs/Web/API/Cache). We've found that it is used in 57.41% desktop and in 57.88% mobile sites that use service workers.
 
 {{ figure_markup(
-  caption="Percent of mobile sites with service workers that use the service worker cache",
+  caption="Percent of mobile sites with service workers that use the service worker cache.",
   content="57.88%",
   classes="big-number",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTHHnqNdpRUjoeTfsN9_irK57PvZn_Q2X842RLl-RL4ibWmZFvO-S1x35PjVE3-xUlHFS_Zurd22rOq/pubchart?oid=107056879&format=interactive",
@@ -208,7 +208,7 @@ Its high usage is not unexpected as caching allows for reliable and performant w
 Finally, it's worth taking a look at <a hreflang="en" href="https://developers.google.com/web/updates/2017/02/navigation-preload">Navigation Preloads</a>, which allows you to make the requests in parallel with the service worker boot-up time to avoid delaying the requests in those situations. The [`NavigationPreloadManager`](https://developer.mozilla.org/docs/Web/API/NavigationPreloadManager) interface provides a set of methods to implement this technique, and according to our analysis, it is currently used in 11.02% of desktop and 9.78% of mobile sites that use service workers.
 
 {{ figure_markup(
-  caption="Percent of mobile sites with use navigation preloads",
+  caption="Percent of mobile sites with use navigation preloads.",
   content="9.78%",
   classes="big-number",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTHHnqNdpRUjoeTfsN9_irK57PvZn_Q2X842RLl-RL4ibWmZFvO-S1x35PjVE3-xUlHFS_Zurd22rOq/pubchart?oid=1163792530&format=interactive",
@@ -485,7 +485,7 @@ Here are some usage stats for some most popular notification-related APIs:
 Pages subscribe to notifications via the [`PushManager`](https://developer.mozilla.org/docs/Web/API/PushManager) interface of the [Push API](https://developer.mozilla.org/docs/Web/API/Push_API), which is accessed via the `pushManager` property of the [`ServiceWorkerRegistration`](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration) interface. It's used by 44.14% of desktop and 45.09% of mobile PWAs.
 
 {{ figure_markup(
-  caption="Percent of mobile sites with service workers that used some method of the `pushManager` property",
+  caption="Percent of mobile sites with service workers that used some method of the `pushManager` property.",
   content="45.09%",
   classes="big-number",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTHHnqNdpRUjoeTfsN9_irK57PvZn_Q2X842RLl-RL4ibWmZFvO-S1x35PjVE3-xUlHFS_Zurd22rOq/pubchart?oid=1163792530&format=interactive",

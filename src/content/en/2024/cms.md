@@ -673,7 +673,7 @@ Furthermore, since they first kicked off the project in November 2021, WordPress
 
 {{ figure_markup(
   image="wordpress-cwv-pass-trend.png",
-  caption="Trend of WordPress Core Web Vitals pass rates",
+  caption="Trend of WordPress Core Web Vitals pass rates.",
   description="Line graph showing the increase of WordPress origins passing Core Web Vitals from less than 15% in January 2020 and increasing fairly steadily up to 41% in July 2024.",
   width=1752,
   height=888

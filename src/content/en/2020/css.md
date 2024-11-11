@@ -140,7 +140,7 @@ IDs can also be used to intentionally reduce or increase specificity. The <a hre
 Instead, the old, crude `!important` is still used a fair bit despite its <a hreflang="en" href="https://www.impressivewebs.com/everything-you-need-to-know-about-the-important-css-declaration/#post-475:~:text=Drawbacks,-to">well-known drawbacks</a>. The median page uses `!important` in nearly 2% of its declarations, or 1 in 50.
 
 {{ figure_markup(
-  caption="Mobile pages using `!important` in every single declaration!",
+  caption="Mobile pages using `!important` in every single declaration!.",
   content="2,138",
   classes="big-number",
   sheets_gid="1743048352",
@@ -440,7 +440,7 @@ Similarly, despite the much touted advantages of `rem` vs `em` for many use case
 
 {{ figure_markup(
   image="font-units.png",
-  caption="Relative share of font-relative units",
+  caption="Relative share of font-relative units.",
   description="Bar chart showing the relative popularity of different font-based units. `em` is used overwhelmingly on 87.3% of instances, followed by `rem` at 12.2, `ch` at 0.4%, and `ex` at 0.2% of instances on mobile pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=166603845&format=interactive",
   sheets_gid="1221511608",
@@ -1442,7 +1442,7 @@ It is no secret that Chrome and Safari have been way more prefix-happy, but it i
 Nearly all usage of prefixed functions (98%) is to specify gradients, even though <a hreflang="en" href="https://caniuse.com/css-gradients">this has not been necessary since 2014</a>. The most popular of these is `-webkit-linear-gradient()` used in over a quarter of pages examined. The remaining <2% is primarily for calc, <a hreflang="en" href="https://caniuse.com/calc">for which a prefix has not been necessary since 2013</a>.
 
 {{ figure_markup(
-  caption="Percent of gradient functions across all occurrences of vendor-prefixed functions in mobile pages",
+  caption="Percent of gradient functions across all occurrences of vendor-prefixed functions in mobile pages.",
   content="98.22%",
   classes="big-number",
   sheets_gid="1586213539",
