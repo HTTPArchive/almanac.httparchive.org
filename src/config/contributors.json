@@ -3891,7 +3891,9 @@
     "name": "Saptak Sengupta",
     "teams": {
       "2022": [
-        "authors",
+        "authors"
+      ],
+      "2024": [
         "developers",
         "leads"
       ]
