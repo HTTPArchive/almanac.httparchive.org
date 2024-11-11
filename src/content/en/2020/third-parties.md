@@ -82,7 +82,7 @@ A good starting point for this analysis is to confirm the statement that third-p
 {{ figure_markup(
   image="pages-with-thirdparties.png",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSNXusoFJKi8Z1i_yuG_5umUCJOZwBMaZaECq4T8lU5zIQuLR7UHfZOJmXsXzPWQTJFnFa3dcOEPJgy/pubchart?oid=1149547895&format=interactive",
-  caption="Pages with third-party content",
+  caption="Pages with third-party content.",
   description="Third party content prevalence has grown slightly since 2019. In 2019 93.6% of mobile pages had third-party content, in 2020 this was 94.1%. In 2019 93.6% of desktop pages had third-party content, in 2020 this was 93.9%.",
   width=600,
   height=371,
@@ -114,7 +114,7 @@ We can break down third-party requests by their content type. This is the report
 {{ figure_markup(
   image="thirdparty-by-content-types.png",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSNXusoFJKi8Z1i_yuG_5umUCJOZwBMaZaECq4T8lU5zIQuLR7UHfZOJmXsXzPWQTJFnFa3dcOEPJgy/pubchart?oid=258155228&format=interactive",
-  caption="Third-party content by type",
+  caption="Third-party content by type.",
   description="Images and JavaScript account for the majority (60%) of third-party content: 37.1% of third-party content is images, 21.9% is JavaScript, 16.1% is unknown or other, 15.4% is HTML",
   width=600,
   height=371,
@@ -212,7 +212,7 @@ Many third-parties result in redirect responses, i.e. HTTP status codes 3XX. The
 
 {{ figure_markup(
   image="redirects-body-size.png",
-  caption="Distribution of third-party 3XX body size",
+  caption="Distribution of third-party 3XX body size.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSNXusoFJKi8Z1i_yuG_5umUCJOZwBMaZaECq4T8lU5zIQuLR7UHfZOJmXsXzPWQTJFnFa3dcOEPJgy/pubchart?oid=1145900631&format=interactive",
   description="Distribution of redirect body sizes showing 90% are under 420 B, 1% are over 30 kB and 0.1% are over 100 kB.",
   width=600,

@@ -164,7 +164,7 @@ In order to use TLS, servers must first get a certificate they can host, which i
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="The percentage of sites using a certificate issued by a specific issuer", sheets_gid="1458082974", sql_file="tls_ca_issuers_pages.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="The percentage of sites using a certificate issued by a specific issuer.", sheets_gid="1458082974", sql_file="tls_ca_issuers_pages.sql") }}</figcaption>
 </figure>
 
 R3 (an intermediate certificate from <a hreflang="en" href="https://letsencrypt.org/">Let's Encrypt</a>) still leads the charts, although usage dropped compared to last year. Also from Let's Encrypt are the E1, R10 and R11 intermediary certificates that are rising in percentage of websites using them.
@@ -301,7 +301,7 @@ It's important to note that all cookies without a `SameSite` attribute are treat
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="`__Secure-` and `__Host-` prefixes (desktop)", sheets_gid="1849762871", sql_file="cookie_attributes.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="`__Secure-` and `__Host-` prefixes (desktop).", sheets_gid="1849762871", sql_file="cookie_attributes.sql") }}</figcaption>
 </figure>
 
 The adoption of cookie prefixes remains low, with less than 1% of cookies using these prefixes on both desktop and mobile platforms. This is particularly surprising given the high adoption rate of cookies with the `Secure` attribute, the only prerequisite for cookies prefixed with `__Secure-`. However, changing a cookie's name can require significant refactoring, which is presumably a reason why developers tend to avoid this.
@@ -387,7 +387,7 @@ The `block-all-mixed-content` directive, which has been deprecated in favor of `
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Most prevalent CSP headers", sheets_gid="176994530", sql_file="csp_most_common_header.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Most prevalent CSP headers.", sheets_gid="176994530", sql_file="csp_most_common_header.sql") }}</figcaption>
 </figure>
 
 The top three directives also make up the building blocks of the most prevalent CSP definitions. The second most commonly used CSP definition includes both `block-all-mixed-content` and `upgrade-insecure-requests`. This suggests that many websites use `block-all-mixed-content` for backward compatibility, as newer browsers will ignore this directive if `upgrade-insecure-requests` is present.
@@ -459,7 +459,7 @@ The top three directives also make up the building blocks of the most prevalent 
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Relative usage change of CSP directives", sheets_gid="1796954328", sql_file="csp_directives_usage.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Relative usage change of CSP directives.", sheets_gid="1796954328", sql_file="csp_directives_usage.sql") }}</figcaption>
 </figure>
 
 All other directives shown in the table above are used for content inclusion control. Overall, usage has remained relatively stable. However, a notable change is the increased use of the `object-src` directive, which has surpassed `connect-src` and `frame-src`. Since 2022, the usage of `object-src` has risen by 15.9% for desktop and 16.8% for mobile.
@@ -515,7 +515,7 @@ The `unsafe-inline` and `unsafe-eval` directives can significantly reduce the se
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Relative usage change of CSP `script-src` keywords", sheets_gid="2075772620", sql_file="csp_script_source_list_keywords.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Relative usage change of CSP `script-src` keywords.", sheets_gid="2075772620", sql_file="csp_script_source_list_keywords.sql") }}</figcaption>
 </figure>
 
 However, the increasing adoption of the `nonce-` and `strict-dynamic` keywords is a positive development. By using the `nonce-` keyword, a secret nonce can be defined, allowing only inline scripts with the correct nonce to execute. This approach is a secure alternative to the `unsafe-inline` directive for permitting inline scripts. When used in combination with the `strict-dynamic` keyword, nonced scripts are permitted to import additional scripts from any origin. This approach simplifies secure script loading for developers, as it allows them to trust a single nonced script, which can then securely load other necessary resources.
@@ -609,7 +609,7 @@ The most common HTTPS origins included in CSP headers are used for loading fonts
       </tr>
     <tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Most frequently allowed HTTP(S) hosts in CSP policies", sheets_gid="180799456", sql_file="csp_allowed_host_frequency.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Most frequently allowed HTTP(S) hosts in CSP policies.", sheets_gid="180799456", sql_file="csp_allowed_host_frequency.sql") }}</figcaption>
 </figure>
 
 As for WSS origins, used for allowing WebSocket connections to certain origins, the following were found the most common:
@@ -651,7 +651,7 @@ As for WSS origins, used for allowing WebSocket connections to certain origins, 
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Most frequently allowed WS(S) hosts in CSP policies", sheets_gid="1790517281", sql_file="csp_allowed_host_frequency_wss.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Most frequently allowed WS(S) hosts in CSP policies.", sheets_gid="1790517281", sql_file="csp_allowed_host_frequency_wss.sql") }}</figcaption>
 </figure>
 
 Two of these origins are related to customer service and ticketing (`intercom.io`, `zopim.com`), one is used for website analytics (`hotjar.com`), and two are associated with social media (`www.livejournal.com`, `quora.com`). For four out of these five websites, we found specific instructions on how to add the origin to the website's content security policy. This is considered good practice, as it discourages website administrators from using wildcards to allow third-party resources, which would reduce security by allowing broader access than necessary.
@@ -736,7 +736,7 @@ The adoption of Subresource Integrity seems to be stagnating, with the median pe
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Most common hosts from which SRI-protected scripts are included", sheets_gid="1612151810", sql_file="sri_popular_hosts.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Most common hosts from which SRI-protected scripts are included.", sheets_gid="1612151810", sql_file="sri_popular_hosts.sql") }}</figcaption>
 </figure>
 
 Most of the hosts from which resources are fetched and protected by SRI are CDNs. A notable difference from 2022's data is the absence of `cdn.shopify.com` from the top hosts list (previously 22% on desktop and 23% on mobile). This is due to Shopify having dropped SRI in favor of similar functionality provided by the `integrity` attribute of `importmap`, which they explain in a <a hreflang="en" href="https://shopify.engineering/shipping-support-for-module-script-integrity-in-chrome-safari#">blogpost</a>.
@@ -802,7 +802,7 @@ In 2022, the adoption of the `Permissions-Policy` header saw a significant relat
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Most prevalent Permission Policies", sheets_gid="2018859098", sql_file="pp_header_prevalence.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Most prevalent Permission Policies.", sheets_gid="2018859098", sql_file="pp_header_prevalence.sql") }}</figcaption>
 </figure>
 
 Only 2.8% of desktop hosts and 2.5% of mobile hosts set the policy using the `Permissions-Policy` response header. The policy is primarily used to exclusively opt out of Google’s Federated Learning of Cohorts (FLoC); 21% of hosts that implement the `Permissions-Policy` header set the policy as `interest-cohort=()`. This usage is partly due to the controversy that FLoC sparked during its trial period. Although FLoC was ultimately replaced by the Topics API,  the continued use of the `interest-cohort` directive highlights how specific concerns can shape the adoption of web policies.
@@ -961,7 +961,7 @@ Another measure against clickjacking is the [`X-Frame-Options` (XFO)](https://de
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="`X-Frame-Options` header values", sheets_gid="609220671", sql_file="xfo_header_prevalence.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="`X-Frame-Options` header values.", sheets_gid="609220671", sql_file="xfo_header_prevalence.sql") }}</figcaption>
 </figure>
 
 Although deprecated, 0.6% of observed `X-Frame-Options` headers on desktop and 0.7% on mobile still use the `ALLOW-FROM` directive, which functions similarly to the `frame-ancestors` directive by specifying trusted origins that can embed the page. However, since modern browsers ignore `X-Frame-Options` headers containing the `ALLOW-FROM` directive, this could create gaps in the website's clickjacking defenses. However, this practice may be intended for backward compatibility, where the deprecated header is used alongside a supported Content Security Policy that includes the `frame-ancestors` directive.
@@ -1015,7 +1015,7 @@ The [Cross Origin Embedder Policy](https://developer.mozilla.org/docs/Web/HTTP/H
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Prevalence of COEP header values", sheets_gid="906872096", sql_file="coep_header_prevalence.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Prevalence of COEP header values.", sheets_gid="906872096", sql_file="coep_header_prevalence.sql") }}</figcaption>
 </figure>
 
 The majority of websites that set the `Cross-Origin-Embedder-Policy` header indicate that they do not require access to the powerful features mentioned above (`unsafe-none`). This behavior is also the default if the COEP header is absent, meaning that websites will automatically operate under restricted access to cross-origin resources unless explicitly configured otherwise.
@@ -1051,7 +1051,7 @@ Conversely, websites that serve resources can use the [`Cross-Origin-Resource-Po
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Prevalence of CORP header values", sheets_gid="1177421176", sql_file="corp_header_prevalence.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Prevalence of CORP header values.", sheets_gid="1177421176", sql_file="corp_header_prevalence.sql") }}</figcaption>
 </figure>
 
 The CORP header is primarily used to allow access to the served resource from any origin, with the `cross-origin` value being the most commonly set. In fewer cases, the header restricts access: less than 5% of websites limit resources to the same origin, and less than 4% restrict them to the same site.
@@ -1087,7 +1087,7 @@ The CORP header is primarily used to allow access to the served resource from an
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Prevalence of COOP header values", sheets_gid="300698248", sql_file="coop_header_prevalence.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Prevalence of COOP header values.", sheets_gid="300698248", sql_file="coop_header_prevalence.sql") }}</figcaption>
 </figure>
 
 Nearly half of all observed COOP headers employ the strictest setting, `same-origin`.
@@ -1160,7 +1160,7 @@ Adoption of the `Clear-Site-Data` header remains limited; our observations indic
       </tr>
     <tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Prevalence of `Clear-Site-Data` headers", sheets_gid="910609664", sql_file="clear-site-data_value_prevalence.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Prevalence of `Clear-Site-Data` headers.", sheets_gid="910609664", sql_file="clear-site-data_value_prevalence.sql") }}</figcaption>
 </figure>
 
 Current usage data shows that the `Clear-Site-Data header` is predominantly used to clear cache. It's important to note that the values in this header must be enclosed in quotation marks; for instance, `cache` is incorrect and should be written as `"cache"`. Interestingly, there has been significant improvement in adherence to this syntax rule: in 2022, 65% of desktop and 63% of mobile websites were found using the incorrect `cache` value. However, these numbers have now dropped to 22% and 23% for desktop and mobile, respectively.
@@ -1196,7 +1196,7 @@ Some security mechanisms on the web can be configured through `meta` tags in the
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="The percentage of hosts enabling different policies using a meta tag", sheets_gid="1466205888", sql_file="meta_policies_allowed_vs_disallowed.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="The percentage of hosts enabling different policies using a meta tag.", sheets_gid="1466205888", sql_file="meta_policies_allowed_vs_disallowed.sql") }}</figcaption>
 </figure>
 
 Developers sometimes also try to enable other security features by using the `meta` tag, which is not allowed and will thus be ignored. Using the same example as in 2022, `4976` pages try to set the `X-Frame-Options` using a `meta` tag, which will be ignored by the browser. This is an absolute increase compared to 2022, but only because there were more than twice as many pages included in the data set. Relatively, there is a slight decrease from 0.04% to 0.03% on  mobile pages and 0.05% to 0.03% on desktop pages.
@@ -1267,7 +1267,7 @@ Developers sometimes also try to enable other security features by using the `me
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="The usages of features of the Web Cryptography API", sheets_gid="527224984", sql_file="web_cryptography_api.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="The usages of features of the Web Cryptography API.", sheets_gid="527224984", sql_file="web_cryptography_api.sql") }}</figcaption>
 </figure>
 
 In comparison to the last Almanac, the CryptoGetRandomValues continued to drop and it did so at a much higher rate in the past two years, dropping down to 53%. Despite that drop, it clearly continues to be the most adopted feature, far ahead of the other features. After CryptoGeRandomValues, the next five most used features have become more widely adopted, rising from under 0.7% to adoption rates between 1.3% and 2%.
@@ -1316,7 +1316,7 @@ When using these APIs, developers must be careful to only pass already safe valu
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="The number of pages using HTML sanitization APIs", sheets_gid="351726153", sql_file="html_sanitization_usage.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="The number of pages using HTML sanitization APIs.", sheets_gid="351726153", sql_file="html_sanitization_usage.sql") }}</figcaption>
 </figure>
 
 These APIs are new, so low adoption is to be expected. We found only 6 pages in total using `parseHTMLUnsafe` and 2 using `setHTMLUnsafe`, which is an extremely small number relative to the number of pages visited.
@@ -1412,7 +1412,7 @@ Many sites on the current web are made using large CMS systems. These may enable
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Security features in use by selected CMS systems", sheets_gid="225805401", sql_file="feature_adoption_by_technology.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Security features in use by selected CMS systems.", sheets_gid="225805401", sql_file="feature_adoption_by_technology.sql") }}</figcaption>
 </figure>
 
 It's clear that many major CMS's that are hosted by the providing company and where only content is created by users, such as Wix, SquareSpace, Google Sites, Medium and Substack, roll out security protections widely, showing adoption of HSTS, X-Content-Type-Options or X-XSS-Protection in the upper 99% adoption rates. Google sites continues to be the CMS that has the highest number of security features in place.
@@ -1524,7 +1524,7 @@ Due to their similar naming and purpose, the COEP, CORP and COOP are sometimes d
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Prevalence of invalid COEP header values", sheets_gid="906872096", sql_file="coep_header_prevalence.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Prevalence of invalid COEP header values.", sheets_gid="906872096", sql_file="coep_header_prevalence.sql") }}</figcaption>
 </figure>
 
 For instance, around 3% of observed COEP headers mistakenly use the unsupported value `same-origin`. When this occurs, browsers revert to the default behavior of allowing any cross-origin resource to be embedded, while restricting access to features like `SharedArrayBuffer` and unthrottled use of `Performance.now()`. This fallback does not inherently reduce security unless the site administrator intended to set `same-origin` for CORP or COOP, where it is a valid value.
@@ -1629,7 +1629,7 @@ The most commonly exposed header is the `Server` header, which reveals the softw
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Most prevalent `X-Powered-By` header values with specific framework version", sheets_gid="895726728", sql_file="server_header_value_prevalence.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Most prevalent `X-Powered-By` header values with specific framework version.", sheets_gid="895726728", sql_file="server_header_value_prevalence.sql") }}</figcaption>
 </figure>
 
 Examining the most common values for the `Server` and `X-Powered-By` headers, we found that especially the `X-Powered-By` header specifies versions, with the top 10 values revealing specific PHP versions. For both desktop and mobile, at least 25% of `X-Powered-By` headers contain this information. This header is likely enabled by default on the observed web servers. While it can be useful for analytics, the header's benefits are limited, and thus it warrants to be disabled by default. However, disabling this header alone does not address the security risks of outdated servers; regularly updating the server remains crucial.

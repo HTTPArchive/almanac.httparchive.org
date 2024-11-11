@@ -199,7 +199,7 @@ This is way more consistent when interacting with Bing Copilot or Gemini by Goog
 
 {{ figure_markup(
   image="structured-data-google-gemini.png",
-  caption="Google Gemini",
+  caption="Google Gemini.",
   description="Screenshot of Google Gemini providing restaurant recommendations with images, ratings, and map integration.",
   width=386,
   height=335
@@ -208,7 +208,7 @@ This is way more consistent when interacting with Bing Copilot or Gemini by Goog
 
 {{ figure_markup(
   image="structured-data-via-culinaria-bing.png",
-  caption="Bing Copilot",
+  caption="Bing Copilot.",
   description="Screenshot of Bing Copilot showing local restaurant information with map integration, ratings, and TripAdvisor reviews.",
   width=400,
   height=296
@@ -330,7 +330,7 @@ The data reveals notable trends in both syntax and vocabulary usage:
 
 {{ figure_markup(
   image="structured-data-usage-by-year-mobile.png",
-  caption="Structured data usage by year on mobile",
+  caption="Structured data usage by year on mobile.",
   description="Bar chart showing RDFa was used on 61% of mobile pages in 2021 and 62% in 2022, Open Graph on 57% and 59% respectively, Twitter on 37% and 40%, JSON-LD on 34% and 37%, Microdata on 25% and 25%, Facebook on 8% and 8%, Dublin Core and Microformats on 1% in both years, and finally microformats2 on 0% in both years.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=1720156114&format=interactive",
   sheets_gid="560419533",
@@ -342,7 +342,7 @@ The data reveals notable trends in both syntax and vocabulary usage:
 
 {{ figure_markup(
   image="structured-data-usage-by-year-desktop.png",
-  caption="Structured data usage by year on desktop",
+  caption="Structured data usage by year on desktop.",
   description="Bar chart showing structured data usage across desktop pages in 2022 and 2024. RDFa was used on approximately 60% of desktop pages in 2022 and 62% in 2024, Open Graph on 57% in 2022 and 59% in 2024, Twitter on 37% in 2022 and 40% in 2024, JSON-LD on 34% in 2022 and 37% in 2024, Microdata remained steady at 25%, Facebook dropped slightly from 8% to 7%, while Dublin Core, Microformats, and Microformats2 showed minimal usage, all under 1% across both years.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=1466312390&format=interactive",
   sheets_gid="560419533",
@@ -370,7 +370,7 @@ In contrast, traditional RDFa types like `foaf:image` and `foaf:document` have s
 
 {{ figure_markup(
   image="rdfa-usage-by-year.png",
-  caption="RDFa usage by year on mobile",
+  caption="RDFa usage by year on mobile.",
   description="Bar chart showing RDFa usage across mobile pages in 2022 and 2024. Foaf:image stayed consistent at 0.49%, foaf:document dropped from 0.23% to 0.16%, sioc:item and schema:webpage remained steady at 0.16% and 0.10%, respectively. Significant growth was seen for listitem and webpage, both increasing to 0.82% in 2024 from lower levels in 2022, while breadcrumblist usage increased to 0.45%. Other properties like v:breadcrumb and sioc:useraccount had minimal usage below 0.05%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=408467656&format=interactive",
   sheets_gid="560419533",
@@ -382,7 +382,7 @@ In contrast, traditional RDFa types like `foaf:image` and `foaf:document` have s
 
 {{ figure_markup(
   image="rdfa-usage-by-year-desktop.png",
-  caption="RDFa usage by year on desktop",
+  caption="RDFa usage by year on desktop.",
   description="Bar chart showing RDFa usage across desktop pages in 2022 and 2024. Foaf:image remained the most used, with 1.22% of desktop pages in 2022 and 2024. Foaf:document usage decreased slightly from 0.40% to 0.38%, while other types like sioc:item and schema:webpage showed minimal fluctuations. Notably, listitem usage grew significantly from 0.39% in 2022 to 0.60% in 2024, and webpage usage also rose to 0.70% in 2024. Other types like breadcrumblist and v:breadcrumb remained below 0.50%, while sioc:useraccount showed minimal adoption.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=1587094037&format=interactive",
   sheets_gid="560419533",
@@ -396,7 +396,7 @@ The data suggests that while RDFa remains a valuable tool, its dominance is grad
 
 {{ figure_markup(
   image="rdfa-usage-by-device.png",
-  caption="RDFa usage by device (desktop vs mobile)",
+  caption="RDFa usage by device (desktop vs mobile).",
   description="Bar chart comparing RDFa usage across desktop and mobile pages in 2024. Foaf:image shows higher usage on desktop (1.22%) compared to mobile (0.49%). Foaf:document and sioc:item also show higher adoption on desktop, while mobile usage leads for listitem and webpage types, both reaching 0.82%. Breadcrumblist, v:breadcrumb, and sioc:useraccount remain below 0.50% across both devices.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=780422567&format=interactive",
   sheets_gid="560419533",
@@ -410,7 +410,7 @@ The data suggests that while RDFa remains a valuable tool, its dominance is grad
 
 {{ figure_markup(
   image="dublin-core-usage-by-year.png",
-  caption="Dublin Core usage by year on mobile",
+  caption="Dublin Core usage by year on mobile.",
   description="Bar chart showing Dublin Core usage across mobile pages in 2022 and 2024. The usage of dc:title remained the highest, with notable increases in dc.language and dc.description in 2024. Fields like dc.source and dcterms.title also saw growth, while others like dc.publisher and dc.identifier remained relatively consistent. Specialized fields like dcterms.rightsholder and dcterms.identifier had minimal usage across both years, under 0.002%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=151920898&format=interactive",
   sheets_gid="560419533",
@@ -422,7 +422,7 @@ The data suggests that while RDFa remains a valuable tool, its dominance is grad
 
 {{ figure_markup(
   image="dublin-core-usage-by-year-desktop.png",
-  caption="Dublin Core usage by year on desktop",
+  caption="Dublin Core usage by year on desktop.",
   description="Bar chart showing Dublin Core usage across desktop pages in 2022 and 2024. The usage of dc:title remained the highest across both years, with increases in dc.language and dc.description in 2024. Fields like dc.source, dc.creator, and dc.publisher also saw moderate increases, while more specialized fields like dcterms.identifier and dcterms.rightsholder had minimal adoption, remaining below 0.002%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=1992172544&format=interactive",
   sheets_gid="560419533",
@@ -436,7 +436,7 @@ Dublin Core remains a stable but less frequently used format for metadata, espec
 
 {{ figure_markup(
   image="dublin-core-usage-by-device.png",
-  caption="Dublin Core usage by device (desktop vs mobile)",
+  caption="Dublin Core usage by device (desktop vs mobile).",
   description="Bar chart comparing Dublin Core usage across desktop and mobile pages in 2024. Dc:title shows the highest adoption, with 0.7% on desktop and 0.5% on mobile. Other fields such as dc.language and dc.description also have higher usage on desktop. Meanwhile, dc.relation shows a higher percentage on mobile at 0.3%, with other fields like dc.identifier and dc.subject maintaining consistent usage across both devices.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=257359995&format=interactive",
   sheets_gid="560419533",
@@ -460,7 +460,7 @@ Open Graph continues to be one of the most widely implemented structured data fo
 
 {{ figure_markup(
   image="open-graph-usage-by-year.png",
-  caption="Open Graph usage by year on mobile",
+  caption="Open Graph usage by year on mobile.",
   description="Bar chart showing Open Graph usage on mobile pages between 2022 and 2024. The usage of og:image remained the highest. Og:image:width and og:image:height saw significant increases, both around 23.8%. Og:image:secure_url also increased to 9.41%, while og:image:type rose to 11.26%. Og:image:alt, important for accessibility, grew to 5.78% in 2024.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=513866594&format=interactive",
   sheets_gid="560419533",
@@ -472,7 +472,7 @@ A key development in 2024 is Google's update to its search documentation, now in
 
 {{ figure_markup(
   image="open-graph-usage-by-year-desktop.png",
-  caption="Open Graph usage by year (desktop)",
+  caption="Open Graph usage by year (desktop).",
   description="Bar chart showing usage of different Open Graph properties on desktop pages in 2022 and 2024. In 2024, og:image was used on 48% of pages, og:image:width and og:image:height on 23.86%, og:image:secure_url on 9.56%, og:image:type on 11.17%, and og:image:alt on 5.62%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=759266480&format=interactive",
   sheets_gid="560419533",
@@ -483,7 +483,7 @@ This dual role of Open Graph in social sharing and search engine optimization ma
 
 {{ figure_markup(
   image="open-graph-usage-by-device.png",
-  caption="Open Graph usage by device",
+  caption="Open Graph usage by device.",
   description="Bar chart showing Open Graph usage by device (desktop and mobile) in 2024. og:image is used on nearly 50% of pages, og:image:width and og:image:height on 23.81% and 23.76% respectively, og:image:secure_url on 9.41%, og:image:type on 11.26%, and og:image:alt on 5.78%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=876659711&format=interactive",
   sheets_gid="560419533",
@@ -498,7 +498,7 @@ Despite the platform's transition to new ownership and its rebranding as X, Twit
 
 {{ figure_markup(
   image="twitter-meta-tag-usage-by-year.png",
-  caption="Twitter meta tag usage by year (mobile)",
+  caption="Twitter meta tag usage by year (mobile).",
   description="Bar chart showing Twitter meta tag usage on mobile pages in 2022 and 2024. In 2024, the twitter:card tag is used on 44.15% of pages, twitter:title on 26.40%, twitter:description on 24.53%, twitter:image on 18.63%, and other tags such as twitter:site and twitter:label1 show usage rates between 9.67% and 13.36%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=455664170&format=interactive",
   sheets_gid="560419533",
@@ -511,7 +511,7 @@ Core descriptive tags like `twitter:title` and `twitter:description` have also s
 
 {{ figure_markup(
   image="twitter-meta-tag-usage-by-year-desktop.png",
-  caption="Twitter meta tag usage by year (desktop)",
+  caption="Twitter meta tag usage by year (desktop).",
   description="Bar chart showing Twitter meta tag usage on desktop pages in 2022 and 2024. In 2024, the twitter:card tag is used on 44.15% of pages, twitter:title on 26.40%, twitter:description on 24.53%, twitter:image on 18.63%, and other tags such as twitter:site and twitter:label1 show usage rates between 9.67% and 13.36%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=410054248&format=interactive",
   sheets_gid="560419533",
@@ -522,7 +522,7 @@ Core descriptive tags like `twitter:title` and `twitter:description` have also s
 
 {{ figure_markup(
   image="twitter-meta-tag-usage-by-device.png",
-  caption="Twitter meta tag usage by device",
+  caption="Twitter meta tag usage by device.",
   description="Bar chart showing Twitter meta tag usage by device (desktop and mobile) in 2024. On mobile, the twitter:card tag is used on 44.15% of pages, twitter:title on 26.40%, twitter:description on 24.53%, and other tags such as twitter:image and twitter:data1 show usage rates between 9.67% and 13.36%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=1804770953&format=interactive",
   sheets_gid="560419533",
@@ -541,7 +541,7 @@ Facebook-specific meta tags have seen a marked decline in usage between 2022 and
 
 {{ figure_markup(
   image="facebook-meta-tag-usage-by-year-mobile.png",
-  caption="Facebook meta tag usage by year (mobile)",
+  caption="Facebook meta tag usage by year (mobile).",
   description="Bar chart showing Facebook meta tag usage on mobile from 2022 to 2024. In 2024, fb:app_id appears on 4.9% of pages, fb:admins on 2.4%, and fb:pages on 0.6%, with minimal or zero usage for other tags.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=778075778&format=interactive",
   sheets_gid="560419533",
@@ -552,7 +552,7 @@ This decline underscores a strategic move by developers and webmasters to adopt 
 
 {{ figure_markup(
   image="facebook-meta-tag-usage-by-year-desktop.png",
-  caption="Facebook meta tag usage by year (desktop)",
+  caption="Facebook meta tag usage by year (desktop).",
   description="Bar chart showing Facebook meta tag usage on desktop from 2022 to 2024. In 2024, fb:app_id appears on the highest percentage of pages at 4.9%, fb:admins on 2.4%, and fb:pages on 0.6%, with minimal or zero usage for other tags.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=977720399&format=interactive",
   sheets_gid="560419533",
@@ -563,7 +563,7 @@ Despite the decreasing adoption of Facebook-specific tags, Facebook itself remai
 
 {{ figure_markup(
   image="facebook-meta-tag-usage-by-device.png",
-  caption="Facebook meta tag usage by device",
+  caption="Facebook meta tag usage by device.",
   description="Bar chart showing Facebook meta tag usage by device for desktop and mobile in 2024. The fb:app_id tag appears on the highest percentage of pages, with mobile usage at 4.9% and desktop at a similar level. The fb:admins tag is used on 2.4% of mobile pages and 0.6% on desktop, while other tags show minimal or zero usage.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=343986403&format=interactive",
   sheets_gid="560419533",

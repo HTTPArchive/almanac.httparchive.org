@@ -34,7 +34,7 @@ For most text-based assets, such as [HTML](./markup), [CSS](./css), [JavaScript]
 
 {{ figure_markup(
   image="compession-methods-by-content-type.png",
-  caption="Compression methods for different content types",
+  caption="Compression methods for different content types.",
   description="A stacked bar chart showing the usage rate of different compression algorithms broken down by the content type. The stacked bars divide up the use of Brotli, Gzip, and no compression. `text/html` is the only content type that is compressed less than 50% of the time. `application/json` and `image/svg+xml` are each approximately 64% compressed. `text/css` and `application/javascript` are each approximately 85% compressed. `application/x-javascript` and `text/javascript` are greater than 90% compressed.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxUj8-0vKTqPAblIXqekSbiRh1D1lEuA3gVD9w23qwGPtJRE8FbgrURfPAgfFZX2l0t84Wy5ZAGqzR/pubchart?oid=1658254159&format=interactive",
   sheets_gid="107138856",

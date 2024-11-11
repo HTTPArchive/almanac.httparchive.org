@@ -98,7 +98,7 @@ CDNs can provide better performance for delivering non-static content as well as
 
 {{ figure_markup(
   image="cdn-usage-hosted-comparison.png",
-  caption="Trends for content served from CDN for mobile",
+  caption="Trends for content served from CDN for mobile.",
   description="This chart shows the trends for content served from CDN for last few years. The general trend is that the CDN usage is increasing. For the contents served from subdomains we see bigger increase.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRaKSyCfdyk5Qva05DCIxB4NPUI6VZASRpDfEIV9QsihS0nuKSEzWGh569LoaOnTW5NgHKTufv8ydlL/pubchart?oid=776498107&format=interactive",
   sheets_gid="551654600",
@@ -235,7 +235,7 @@ Within the web ecosystem we observed several commonly used compression algorithm
 * Brotli
 * Zstandard (Zstd)
 
-While media files such as JPEG images are already compressed, textual assets such as HTML, stylesheets, javascript, and manifest files can be compressed to optimize performance. Created in 1992, [Gzip](https://en.wikipedia.org/wiki/Gzip) is the longest standing compression widely used, however as we'll see in this chapter [Brotli](https://en.wikipedia.org/wiki/Brotli) has become the de facto algorithm for compressing textual data over the web ecosystem. In 2024, we also see the emergence of Zstandard which was developed by Facebook. Each of these algorithms has its strengths and use cases, and their adoption rates vary across the web.
+While media files such as JPEG images are already compressed, textual assets such as HTML, stylesheets, javascript, and manifest files can be compressed to optimize performance. Created in 1992, [Gzip](https://wikipedia.org/wiki/Gzip) is the longest standing compression widely used, however as we'll see in this chapter [Brotli](https://wikipedia.org/wiki/Brotli) has become the de facto algorithm for compressing textual data over the web ecosystem. In 2024, we also see the emergence of Zstandard which was developed by Facebook. Each of these algorithms has its strengths and use cases, and their adoption rates vary across the web.
 
 Below is the analysis of compression types used by CDNs and origin servers in the Web Almanac 2024 reveals trends in how web content is optimized for delivery.
 
@@ -325,7 +325,7 @@ For desktop users, CDN performance is notably faster than Origin servers across 
 
 {{ figure_markup(
   image="tls-negotiation-desktop.png",
-  caption="HTML TLS negotiation - CDN vs origin (desktop)",
+  caption="HTML TLS negotiation - CDN vs origin (desktop).",
   description="This bar chart provides insight into TLS connection time (in milliseconds) across 10th, 25th, 50th, 75th and 90th percentile for CDN and origin. As it can be seen from the chart the TLS negotiation time is generally faster for CDNs.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRaKSyCfdyk5Qva05DCIxB4NPUI6VZASRpDfEIV9QsihS0nuKSEzWGh569LoaOnTW5NgHKTufv8ydlL/pubchart?oid=1820997303&format=interactive",
   sheets_gid="846467421",
@@ -337,7 +337,7 @@ Mobile devices show a similar pattern, with CDN performing better than Origin se
 
 {{ figure_markup(
   image="tls-negotiation-mobile.png",
-  caption="HTML TLS negotiation - CDN vs origin (mobile)",
+  caption="HTML TLS negotiation - CDN vs origin (mobile).",
   description="This bar chart provides insight into TLS connection time (in milliseconds) across 10th, 25th, 50th, 75th and 90th percentile for CDN and origin. As it can be seen from the chart the TLS negotiation time is generally faster for CDNs.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRaKSyCfdyk5Qva05DCIxB4NPUI6VZASRpDfEIV9QsihS0nuKSEzWGh569LoaOnTW5NgHKTufv8ydlL/pubchart?oid=899797304&format=interactive",
   sheets_gid="846467421",
