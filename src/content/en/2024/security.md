@@ -8,7 +8,7 @@ editors: [cqueern]
 analysts: [JannisBush]
 translators: []
 GJFR_bio: Gertjan Franken is a postdoctoral researcher with the <a hreflang="en" href="https://distrinet.cs.kuleuven.be/">DistriNet Research Group</a> at KU Leuven. His research spans various aspects of web security and privacy, with a primary focus on the automated analysis of browser security policies. As part of this research, he maintains the open-source tool <a hreflang="en" href="https://github.com/DistriNet/BugHog">BugHog</a> for pinpointing bug lifecycles.
-vikvanderlinden_bio: TODO
+vikvanderlinden_bio: Vik Vanderlinden is a PhD candidate in Computer Science at the <a hreflang="en" href="https://distrinet.cs.kuleuven.be/">DistriNet Research Group</a> at KU Leuven. His research focuses on web and network security, primarily focusing on timing leaks in web applications and protocols.
 results: https://docs.google.com/spreadsheets/d/1b9IEGbfQjKCEaTBmcv_zyCyWEsq35StCa-dVOe6V1Cs/
 featured_quote: Although new attacks will undoubtedly emerge in the future, demanding new protections, the openness of the security community plays a crucial role in developing sound solutions.
 featured_stat_1: 98%
