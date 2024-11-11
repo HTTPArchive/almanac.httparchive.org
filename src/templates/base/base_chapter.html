@@ -344,7 +344,17 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
   <summary>BibTeX</summary>
   <pre id="bibtex-citation">
 @inbook{WebAlmanac.{{ year }}.{{ metadata.get('title').replace(' ', '') }},
-author = "{% for author in metadata.get('authors') -%}
+author = "{% set contributors = metadata.get('authors') -%}
+  {%- if metadata.get('reviewers') and metadata.get('reviewers') | length >=1 -%}
+    {%- set contributors = contributors + metadata.get('reviewers') -%}
+  {%- endif -%}
+  {%- if metadata.get('analysts') and metadata.get('analysts') | length >=1 -%}
+    {%- set contributors = contributors + metadata.get('analysts') -%}
+  {%- endif -%}
+  {%- if metadata.get('editors') and metadata.get('editors') | length >=1 -%}
+    {%- set contributors = contributors + metadata.get('editors') -%}
+  {%- endif -%}
+  {%- for author in contributors|unique -%}
   {%- set authordata = config.contributors.get(author, None) -%}
   {%- if authordata %}
     {%- set full_name = authordata.name.split(' ') -%}

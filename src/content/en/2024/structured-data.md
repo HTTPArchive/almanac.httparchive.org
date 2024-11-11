@@ -15,4 +15,5 @@ featured_stat_2:
 featured_stat_label_2:
 featured_stat_3:
 featured_stat_label_3:
+doi: 10.5281/zenodo.14065771
 ---

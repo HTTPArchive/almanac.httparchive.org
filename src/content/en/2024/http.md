@@ -16,6 +16,7 @@ featured_stat_2: 1.5%
 featured_stat_label_2: TODO
 featured_stat_3: 50%
 featured_stat_label_3: TODO
+doi: 10.5281/zenodo.14065825
 ---
 
 ## Introduction
