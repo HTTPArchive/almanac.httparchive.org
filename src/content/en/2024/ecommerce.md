@@ -5,7 +5,7 @@ description: This chapter explores trends in the ecommerce ecosystem, examining 
 authors: [JonathanPagel]
 reviewers: [nrllh]
 analysts: [JonathanPagel]
-editors: [tunetheweb]
+editors: [niko-kaleev]
 translators: []
 results: https://docs.google.com/spreadsheets/d/1LABlisQFCLjOyEd43tdUb-Hxs6pGuboTresntMk71Lc/
 JonathanPagel_bio: Jonathan Pagel studied ecommerce in his bachelor's degree and has since been interested in the field, particularly in the areas of speed optimization and accessibility for shops and websites. Currently, he is freelancing in this field and pursuing a Master's in AI and Society.
