@@ -685,7 +685,7 @@ The case of carousels remains contentious: users, developers, and designers tend
 
 For arguments against using carousels, visit:
 - <a hreflang="en" href="https://shouldiuseacarousel.com/">Should I Use A Carousel</a>
-- <a hreflang="en" href="https://www.smashingmagazine.com/2023/08/designing-better-carousel-ux/">Usability Guidelines For Better Carousels UX</a>
+- <a hreflang="en" href="https://www.smashingmagazine.com/2022/04/designing-better-carousel-ux/">Usability Guidelines For Better Carousels UX</a>
 
 If animations are necessary for your design:
 - Use CSS animations where possible, as they're generally more performant than JavaScript-based animations.

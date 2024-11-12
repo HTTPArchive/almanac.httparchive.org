@@ -753,7 +753,7 @@ Abbiamo anche dato un'occhiata ad un paio di valori delle proprietà `flex` e `g
 
 Il valore del contenuto per la proprietà `flex-basis` è un'istruzione esplicita al browser di guardare alla dimensione del contenuto intrinseco dell'elemento, piuttosto che a qualsiasi larghezza impostata sull'elemento stesso. È un valore recente, al momento in cui scrivo non disponibile nella versione di rilascio di Safari. Attualmente, solo lo 0,5% dei siti mobili e lo 0,6% dei siti desktop utilizzano questo valore.
 
-Il valore `subgrid` per `grid-template-rows` e `grid-template-columns` è, al momento dell'indagine, supportato solo da Firefox. Forse non sorprende notare che compare solo in 211 pagine mobili e 212 desktop nell'intero set di dati. Dal momento che il valore fa parte del progetto [Interop 2022](./interoperabilità), sarà interessante vedere come crescerà il supporto una volta diventato interoperabile.
+Il valore `subgrid` per `grid-template-rows` e `grid-template-columns` è, al momento dell'indagine, supportato solo da Firefox. Forse non sorprende notare che compare solo in 211 pagine mobili e 212 desktop nell'intero set di dati. Dal momento che il valore fa parte del progetto [Interop 2022](./interoperability), sarà interessante vedere come crescerà il supporto una volta diventato interoperabile.
 
 ### `Box-sizing`
 

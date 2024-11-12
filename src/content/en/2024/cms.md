@@ -333,7 +333,7 @@ The Lighthouse <a hreflang="en" href="https://web.dev/performance-scoring/">perf
   description="Bar chart showing the median CMS Performance score for WordPress is 61 on desktop and 38 on mobile, Wix is 85 and 55 respectively, Squarespace 60 and 30, Joomla 58 and 39, Drupal 65 and 40, Duda 80 and 59, 1C-Bitrix 51 and 33, Weebly 71 and 33, TYPO3 CMS 65 and 47, and finally for Tistory it's 54 and 29.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYh0RHAqp768faimbvZpvS71yJwCaOAFR0AzgotkEphtxphBKR1kt-pqgxA8Uxj4FSii1RQWwgG6rk/pubchart?oid=2144802411&format=interactive",
   sheets_gid="14177383",
-  sql_file="lighthouse_scores_per_cms.sql",
+  sql_file="lighthouse_category_scores_per_cms.sql",
   width=600,
   height=559
   )
@@ -357,7 +357,7 @@ As we've concluded in previous years, the lower mobile scores are an opportunity
   description="Bar chart showing the year on year CMS Performance score over 2023 and 2024. WordPress was 33 in 2023 and 38 in 2024, Wix was 50 and 55, Squarespace 28 and 30, Joomla 35 and 39, Drupal 36 and 40, Duda 56 and 59, 1C-Bitrix 31 and 33, Tilda 36 and 37, TYPO3 CMS 42 and 47, Weebly 32 and 33",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYh0RHAqp768faimbvZpvS71yJwCaOAFR0AzgotkEphtxphBKR1kt-pqgxA8Uxj4FSii1RQWwgG6rk/pubchart?oid=270170798&format=interactive",
   sheets_gid="1754565121",
-  sql_file="lighthouse_scores_per-cms_yoy.sql",
+  sql_file="lighthouse_category_scores_per_cms_yoy.sql",
   width=600,
   height=559
   )
@@ -377,7 +377,7 @@ A CMS and content on it is generally set up to serve as much information to sear
   description="Bar chart showing the median CMS SEO score for WordPress is 92 on desktop and 92 on mobile, Wix is 100 and 100 respectively, Squarespace 92 and 92, Joomla 92 and 92, Drupal 85 and 85, Duda 92 and 92, 1C-Bitrix 92 and 92, Weebly 85 and 91, TYPO3 CMS 92 and 92, and finally for Tistory it's 92 and 85.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYh0RHAqp768faimbvZpvS71yJwCaOAFR0AzgotkEphtxphBKR1kt-pqgxA8Uxj4FSii1RQWwgG6rk/pubchart?oid=1386400078&format=interactive",
   sheets_gid="14177383",
-  sql_file="lighthouse_scores_per-cms.sql",
+  sql_file="lighthouse_category_scores_per_cms.sql",
   width=600,
   height=559
   )
@@ -393,7 +393,7 @@ The median SEO scores in the top 10 platforms range from 85-100, an impressive i
   description="Bar chart showing the year on year CMS SEO score over 2023 and 2024. WordPress was 90 in 2023 and 92 in 2024, Wix was 97 and 100, Squarespace 93 and 92, Joomla 88 and 92, Drupal 85 and 85, Duda 86 and 92, 1C-Bitrix 86 and 92, Tilda 91 and 100, TYPO3 CMS 89 and 92, and finally Weebly 85 and 91",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYh0RHAqp768faimbvZpvS71yJwCaOAFR0AzgotkEphtxphBKR1kt-pqgxA8Uxj4FSii1RQWwgG6rk/pubchart?oid=61098748&format=interactive",
   sheets_gid="1754565121",
-  sql_file="lighthouse_scores_per-cms_yoy.sql",
+  sql_file="lighthouse_category_scores_per_cms_yoy.sql",
   width=600,
   height=559
   )
@@ -415,7 +415,7 @@ Each accessibility audit is either a pass or a fail, but unlike other Lighthouse
   description="Bar chart showing the median CMS Accessibility score for WordPress is 86 on desktop and 86 on mobile, Wix is 95 and 94 respectively, Squarespace 93 and 94, Joomla 83 and 83, Drupal 86 and 85, Duda 89 and 88, 1C-Bitrix 75 and 75, Weebly 86 and 86, TYPO3 CMS 84 and 84, and finally for Tistory it's 78 and 74.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYh0RHAqp768faimbvZpvS71yJwCaOAFR0AzgotkEphtxphBKR1kt-pqgxA8Uxj4FSii1RQWwgG6rk/pubchart?oid=476143776&format=interactive",
   sheets_gid="14177383",
-  sql_file="lighthouse_scores_per-cms.sql",
+  sql_file="lighthouse_category_scores_per_cms.sql",
   width=600,
   height=559
   )
@@ -431,7 +431,7 @@ In 2024, the median Lighthouse accessibility score for the top 10 CMSs ranges be
   description="Bar chart showing the year on year CMS Accessibility score over 2023 and 2024. WordPress was 87 in 2023 and 86 in 2024, Wix was 94 and 94, Squarespace 92 and 94, Joomla 84 and 83, Drupal 87 and 85, Duda 88 and 88, 1C-Bitrix 77 and 75, Tilda 81 and 84, TYPO3 CMS 86 and 84, and finally Weebly 86 and 86.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYh0RHAqp768faimbvZpvS71yJwCaOAFR0AzgotkEphtxphBKR1kt-pqgxA8Uxj4FSii1RQWwgG6rk/pubchart?oid=476143776&format=interactive",
   sheets_gid="1754565121",
-  sql_file="lighthouse_scores_per-cms_yoy.sql",
+  sql_file="lighthouse_category_scores_per_cms_yoy.sql",
   width=600,
   height=559
   )
@@ -458,7 +458,7 @@ By following these best practices, developers can enhance both the functionality
   description="Bar chart showing the median CMS Best Practice score for WordPress is 78 on desktop and 79 on mobile, Wix is 78 and 79 respectively, Squarespace 100 and 96, Joomla 78 and 79, Drupal 78 and 79, Duda 78 and 79, 1C-Bitrix 56 and 57, Weebly 56 and 57, TYPO3 CMS 96 and 96, and finally for Tistory it's 74 and 79.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYh0RHAqp768faimbvZpvS71yJwCaOAFR0AzgotkEphtxphBKR1kt-pqgxA8Uxj4FSii1RQWwgG6rk/pubchart?oid=1321714408&format=interactive",
   sheets_gid="14177383",
-  sql_file="lighthouse_scores_per-cms.sql",
+  sql_file="lighthouse_category_scores_per_cms.sql",
   width=600,
   height=559
   )
@@ -476,7 +476,7 @@ While most other CMSs show worse numbers in the best practices audits, TYPO3 CMS
   description="Bar chart showing the year on year CMS Best Practice score over 2023 and 2024. WordPress was 92 in 2023 and 79 in 2024, Wix was 92 and 79, Squarespace 92 and 96, Joomla 83 and 79, Drupal 83 and 79, Duda 92 and 79, 1C-Bitrix 75 and 57, Tilda 83 and 79, TYPO3 CMS 92 and 96, and finally Weebly was 83 and 57.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYh0RHAqp768faimbvZpvS71yJwCaOAFR0AzgotkEphtxphBKR1kt-pqgxA8Uxj4FSii1RQWwgG6rk/pubchart?oid=10302778&format=interactive",
   sheets_gid="1754565121",
-  sql_file="lighthouse_scores_per-cms_yoy.sql",
+  sql_file="lighthouse_category_scores_per_cms_yoy.sql",
   width=600,
   height=559
   )
