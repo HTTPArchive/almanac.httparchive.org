@@ -61,7 +61,7 @@ As the structured data ecosystem matures, we're witnessing a diversification in 
 
 Structured data plays a key role in emerging regulatory requirements like the EU's <a hreflang="en" href="https://wordlift.io/blog/en/digital-product-passport-implementation/">Digital Product Passports</a>, designed to enhance transparency and sustainability in ecommerce. These passports leverage GS1 Digital Links to provide comprehensive product information through QR codes.
 
-5. **Structured data for AI-powered Ddscovery**:
+5. **Structured data for AI-powered Discovery**:
 
 As AI-powered search engines, chatbots, and conversational assistants continue to expand their reach, structured data plays a pivotal role in enhancing content discoverability and contextual understanding across these platforms. Key examples include:
 
