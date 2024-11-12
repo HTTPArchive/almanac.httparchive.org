@@ -169,7 +169,7 @@ These platforms demonstrate an enhanced ability to understand user intent and co
 
 Structured data plays a crucial role in these AI-powered systems by:
 
-1. **Enhancing rntity recognition**: Helping systems accurately identify and disambiguate entities mentioned in queries.
+1. **Enhancing entity recognition**: Helping systems accurately identify and disambiguate entities mentioned in queries.
 2. **Providing context**: Offering additional information about entities and their relationships, improving response accuracy.
 3. **Facilitating knowledge graph integration**: Allowing these systems to tap into vast, interconnected information databases.
 4. **Enabling rich responses**: Supporting the generation of detailed, multi-faceted answers that often include visual elements or interactive features.
