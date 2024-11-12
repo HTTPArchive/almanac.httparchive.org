@@ -626,11 +626,13 @@
   },
   "b_atish": {
     "name": "Beatriz González Mellídez",
+    "avatar_url": "756480",
     "teams": {
       "2024": [
         "reviewers"
       ]
     },
+    "github": "bgonzalez",
     "twitter": "b_atish",
     "linkedin": "beatrizgonzalezm",
     "website": "https://medium.com/@b_atish"
@@ -3088,6 +3090,7 @@
     "avatar_url": "116832",
     "github": "mgifford",
     "linkedin": "mgifford",
+    "bluesky": "mgifford.bsky.social",
     "mastodon": "https://mastodon.social/@mgifford",
     "name": "Mike Gifford",
     "teams": {
