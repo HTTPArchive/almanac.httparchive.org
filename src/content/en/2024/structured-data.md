@@ -33,7 +33,7 @@ Over the past 18 months, there have been significant changes in the structured d
 
 2. **Enhanced existing types**: Improvements to organization data, product variants, and the introduction of discount-rich results.
 
-3. **Structured data carousels**: The beta launch of structured data carousels, combining `ItemList` with other types, opens new content presentation possibilities on Google's SERP ([source](https://developers.google.com/search/blog/2023/05/carousels-beta)).
+3. **Structured data carousels**: The beta launch of structured data carousels, combining `ItemList` with other types, opens new content presentation possibilities on Google's SERP ([source](https://developers.google.com/search/docs/appearance/structured-data/carousels-beta)).
 
 4. **GS1 integrations**: There has been increased support for GS1 standards such as the <a hreflang="en" href="https://www.gs1.org/standards/gs1-digital-link">GS1 Digital Link</a>, which aims to bridge the gap between physical and digital product information. This technology enables manufacturers and retailers to connect physical products to their digital identities through QR codes. When scanned, these codes provide access to comprehensive product information, enhancing transparency and customer engagement. Also, the `gs1:CertificationDetails` property has been officially adopted by Google as `schema:Certification`, demonstrating how industry-specific extensions can successfully influence and integrate with Schema.org standards.
 
@@ -50,7 +50,7 @@ As the structured data ecosystem matures, we're witnessing a diversification in 
 1. **Schema.org as markup**: The traditional method of embedding structured data directly into webpages continues to be a cornerstone of modern SEO practices.
 
 2. **Schema.org as a data standard**:
-  Beyond its use in HTML, Schema.org is increasingly employed to standardize data shared via APIs or feeds. For example, Google's <a hreflang="en" href="https://datacommons.org/">Data Commons</a> initiative uses an extended Schema.org vocabulary to integrate datasets from hundreds of organizations globally. This standardization supports tasks like dataset discovery and relationship mapping, crucial for understanding provenance, subsets, and derivations of datasets in AI-driven environments (<a hreflang="en" href="https://research.google/blog/relationships-arecomplicated-an-analysis-of-relationships-between-datasets-on-the-web/">source</a>).
+  Beyond its use in HTML, Schema.org is increasingly employed to standardize data shared via APIs or feeds. For example, Google's <a hreflang="en" href="https://datacommons.org/">Data Commons</a> initiative uses an extended Schema.org vocabulary to integrate datasets from hundreds of organizations globally. This standardization supports tasks like dataset discovery and relationship mapping, crucial for understanding provenance, subsets, and derivations of datasets in AI-driven environments (<a hreflang="en" href="https://research.google/blog/relationships-are-complicated-an-analysis-of-relationships-between-datasets-on-the-web/">source</a>).
 
 3. **Semantic data in social web applications**:
 
@@ -65,7 +65,7 @@ Structured data plays a key role in emerging regulatory requirements like the EU
 
 As AI-powered search engines, chatbots, and conversational assistants continue to expand their reach, structured data plays a pivotal role in enhancing content discoverability and contextual understanding across these platforms. Key examples include:
 
-  - **AI Search Engines**: Platforms like Bing Chat and Google AI Overview utilize structured data not only to train their language models but also to deliver contextually rich and accurate responses. By leveraging structured data, these systems can interpret complex relationships between datasets, improve search relevance, and enable users to seamlessly navigate interconnected datasets (<a hreflang="en" href="https://research.google/blog/relationships-arecomplicated-an-analysis-of-relationships-between-datasets-on-the-web/">source</a>).
+  - **AI Search Engines**: Platforms like Bing Chat and Google AI Overview utilize structured data not only to train their language models but also to deliver contextually rich and accurate responses. By leveraging structured data, these systems can interpret complex relationships between datasets, improve search relevance, and enable users to seamlessly navigate interconnected datasets (<a hreflang="en" href="https://research.google/blog/relationships-are-complicated-an-analysis-of-relationships-between-datasets-on-the-web/">source</a>).
 
 These capabilities demonstrate structured data's evolving role in not only improving discoverability but also in enhancing AI systems' ability to interpret and act on relationships between data, thereby creating richer and more useful user experiences.
 

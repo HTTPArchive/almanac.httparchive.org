@@ -281,7 +281,7 @@ Although ARIA landmarks have traditionally been only visible to screen reader us
     {{ figure_link(
       caption="Landmark element and `role` usage (desktop).",
       sheets_gid="1224962143",
-      sql_file="llandmark_elements_and_roles.sql",
+      sql_file="landmark_elements_and_roles.sql",
     ) }}
   </figcaption>
 </figure>
@@ -858,7 +858,7 @@ The following map shows the average desktop accessibility score by country top l
   description="In looking at Top Level Domains with more than 45,000 domains, we learn about accessibility. Displayed visually in a world map the most accessible countries are Norway, Filand, Canada, USA, UK, Sweden, Ireland, Australia, New Zealand, Austria, Belgium, Switzerland, Denmark, and South Africa. China is the least accessible by Top Level Domain. ",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=783736776&format=interactive",
   sheets_gid="1209052596",
-  sql_file="lighthouse_score_by_tld"
+  sql_file="lighthouse_score_by_tld.sql"
   )
 }}
 
@@ -870,7 +870,7 @@ But it is a bit easier to see the TLD ranked and including the non-country codes
   description="A bar cart with looking at Top Level Domains with more than 45,000 domains, we learn about accessibility. Displayed as a bar chart with the accessible domains .edu (Education), .gov (US Government), Norway, Filand, .io, Canada, USA, .app, UK, Sweden, Ireland, Australia, New Zealand, .co, Austria, Belgium, Switzerland, Denmark, and South Africa, .org.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=783736776&format=interactive",
   sheets_gid="1209052596",
-  sql_file="lighthouse_score_by_tld"
+  sql_file="lighthouse_score_by_tld.sql"
   )
 }}
 
