@@ -1429,7 +1429,7 @@ Large websites often have a high number of visitors and registered users, of whi
   description="Bar chart showing in top 1,000 sites, 64% have XFO, 60% have HSTS and 56% have X-Content-Type-Options headers. In top 10,000, 54% have XFO, 46% have HSTS and 54% have X-Content-Type-Options headers. In top 100,000, 51% have XFO, 42% have HSTS and 50% have X-Content-Type-Options headers. In top 1,000,000, 45% have XFO, 36% have HSTS and 47% have X-Content-Type-Options headers. Among all sites, 29% have XFO, 31% have HSTS and 43% have X-Content-Type-Options.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxTTMlFFSMT3mZgw2awA0wl3F68gzU1OLuyMaZXscSFq-Pa5ev_qTXx8ZaGEOl_ox_aHsraAGMXZ9Y/pubchart?oid=256464807&format=interactive",
   sheets_gid="434545590",
-  sql_file="header_use_by_rank.sql",
+  sql_file="security_adoption_by_rank.sql",
   width=600,
   height=505
   )
@@ -1447,7 +1447,7 @@ In some industries, developers might keep more up to date with security features
   description="Bar chart showing the top 5 and bottom 5 of the average number of security headers per category. Shopping has an average of 1.80 security headers, Finance has 1.71, Beauty & Fitness has 1.70, Home & Garden has 1.66, and Computers & Electronics has 1.65. People and Society has an average of 1.48 security headers, Books & Literature has 1.45, Real Estate has 1.40, News has 1.38, and Travel & Transportation has 1.34.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxTTMlFFSMT3mZgw2awA0wl3F68gzU1OLuyMaZXscSFq-Pa5ev_qTXx8ZaGEOl_ox_aHsraAGMXZ9Y/pubchart?oid=139345565&format=interactive",
   sheets_gid="1042348266",
-  sql_file="feature_adoption_all_party_by_category.sql",
+  sql_file="feature_adoption_by_category.sql",
   width=600,
   height=617
   )
