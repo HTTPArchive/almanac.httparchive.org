@@ -53,7 +53,7 @@ This is where we should mention new repositories for best practices:
 - France institutions also released the <a hreflang="fr" href="https://en.arcep.fr/news/press-releases/view/n/environment-rgesn-170524.html">General policy framework for the ecodesign of digital services</a>. The purpose here is to offer a framework for sustainable digital services and to aim for a wider adoption of these best practices.
 - <a hreflang="en" href="https://www.iso.org/standard/86105.html">An ISO standard for Digital Services Ecodesign</a> is also on the way.
 
-More and more <a hreflang="en" href="https://w3c.github.io/sustyweb/intro.html#books">books</a> are also being published, such as <a hreflang="en" href="https://www.oreilly.com/library/view/building-green-software/9781098150617/">Building Green Software</a> by Anne Currie.
+More and more <a hreflang="en" href="https://w3c.github.io/sustyweb/intro.html#books">books</a> are also being published, such as <a hreflang="en" href="https://www.oreilly.com/library/view/building-green-software/9781098150617/">Building Green Software</a> by Anne Currie, Sarah Hsu and Sara Bergman.
 
 In addition to this, tools for estimating the environmental impacts of the web are still evolving and new ones keep appearing. Some existing tools (such as Screaming Frog SEO and Webpagetest) are adding features to estimate environmental impacts. As such, the <a hreflang="en" href="https://sustainablewebdesign.org/estimating-digital-emissions/">Sustainable Web Design Model</a> is often used. However, accurately estimating impacts is still an important topic and no consensus has been reached yet. As is often the case with environmental considerations, the topic remains complex.
 
