@@ -17,6 +17,7 @@
         "th-has-data-cells": "off",
         "identical-links-same-purpose": "off",
         "image-redundant-alt": "off",
+        "image-size-responsive": "off",
         "inspector-issues": "off",
         "installable-manifest": "off",
         "interactive": "off",

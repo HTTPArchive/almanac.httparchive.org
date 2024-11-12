@@ -22,7 +22,7 @@ csp = {
         "ssl.gstatic.com",
         "data:",
     ],
-    "frame-src": ["'self'", "cse.google.com"],
+    "frame-src": ["'self'", "cse.google.com", "www.googletagmanager.com"],
     "object-src": ["'none'"],
     "base-uri": ["'none'"],
 }
