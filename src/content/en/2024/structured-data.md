@@ -666,7 +666,7 @@ While Microdata remains a significant format for fundamental webpage structure, 
 
 ## JSON-LD
 
-JSON-LD types continue to be widely implemented across websites, with varied types of data used depending on the purpose of the site. The WebSite schema leads adoption, appearing on 12.73% of mobile pages, followed by Organization and LocalBusiness types at 7.16% and 3.97%, respectively. These types are crucial for establishing entity identity and providing contextual information to search engines.
+JSON-LD types continue to be widely implemented across websites, with varied types of data used depending on the purpose of the site. The `WebSite` schema leads adoption, appearing on 12.73% of mobile pages, followed by `Organization` and `LocalBusiness` types at 7.16% and 3.97%, respectively. These types are crucial for establishing entity identity and providing contextual information to search engines.
 
 The diversity in implementation patterns reflects how different industries and website types prioritize specific structured data. For instance:
 
@@ -700,7 +700,7 @@ These observations highlight the *resilience of certain structured data types* d
 {{ figure_markup(
   image="jsonld-by-device.png",
   caption="A comparison of JSON-LD usage by device.",
-  description="Bar chart comparing JSON-LD type usage on desktop and mobile devices, including WebSite, Organization, LocalBusiness, and more.",
+  description="Bar chart comparing JSON-LD type usage on desktop and mobile devices, including `WebSite`, `Organization`, `LocalBusiness`, and more.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=1732530777&format=interactive",
   sheets_gid="560419533",
   sql_file="present_types.sql",
@@ -723,7 +723,7 @@ Most notably, these patterns indicate that structured data implementation is mov
 {{ figure_markup(
   image="structured-data-json-ld-relationships-1.svg",
   caption="Sankey diagram showing relationships between structured data types and their connections.",
-  description='A Sankey diagram illustrating relationships between structured data entities, highlighting frequently used properties like potentialAction, itemListElement, and isPartOf connecting to various schemas.',
+  description='A Sankey diagram illustrating relationships between structured data entities, highlighting frequently used properties like `potentialAction`, `itemListElement`, and `isPartOf` connecting to various schemas.',
   width=596,
   height=993
   )
@@ -732,13 +732,13 @@ Most notably, these patterns indicate that structured data implementation is mov
 {{ figure_markup(
   image="structured-data-json-ld-relationships-2.svg",
   caption="Detailed Sankey diagram of dataset relationships in JSON-LD.",
-  description='This Sankey diagram provides a comprehensive view of how structured data entities and their properties interact in JSON-LD, showcasing key connections like WebSite, SearchAction, and Organization.',
+  description='This Sankey diagram provides a comprehensive view of how structured data entities and their properties interact in JSON-LD, showcasing key connections like `WebSite`, `SearchAction`, and `Organization`.',
   width=1000,
   height=1000
   )
 }}
 
-As seen also in the previous chart the most frequent JSON-LD property relationships reveal several critical implementation patterns across websites. `PotentialAction` emerges as a dominant property, showing strong connections to `SearchAction` and WebSite, indicating widespread implementation of site search functionality (we expect this to decrease as Google is removing support for this feature snippet). Image-related properties form another major cluster, with `ImageObject` frequently connected to `Organization` and `WebPage` entities, demonstrating the importance of visual content attribution. The `publisher` and `logo` properties frequently link to `Organization` entities, establishing clear brand identity.
+As seen also in the previous chart the most frequent JSON-LD property relationships reveal several critical implementation patterns across websites. `PotentialAction` emerges as a dominant property, showing strong connections to `SearchAction` and `WebSite`, indicating widespread implementation of site search functionality (we expect this to decrease as Google is removing support for this feature snippet). Image-related properties form another major cluster, with `ImageObject` frequently connected to `Organization` and `WebPage` entities, demonstrating the importance of visual content attribution. The `publisher` and `logo` properties frequently link to `Organization` entities, establishing clear brand identity.
 
 Navigation structures show clear patterns through `BreadcrumbList` and `itemListElement` properties, typically connecting to `WebPage` entities. Content relationships are evidenced by `mainEntityOfPage` connections, while business-specific information flows through address, `openingHoursSpecification`, and geo properties.
 
@@ -746,14 +746,14 @@ Particularly noteworthy is the consistent implementation of contact and location
 
 ### `sameAs`
 
-The sameAs property plays a crucial role in entity disambiguation and knowledge graph development, extending far beyond simple social media profile linking. While our data shows strong implementation for major platforms (Facebook at 4.53%, Instagram at 3.67%), the true strategic value lies in how sameAs helps search engines understand and validate entity relationships.
+The `sameAs` property plays a crucial role in entity disambiguation and knowledge graph development, extending far beyond simple social media profile linking. While our data shows strong implementation for major platforms (Facebook at 4.53%, Instagram at 3.67%), the true strategic value lies in how `sameAs` helps search engines understand and validate entity relationships.
 
-When properly implemented, sameAs serves as a powerful tool for entity disambiguation, particularly for organizations and persons. By linking to authoritative sources like Wikidata (0.17%) and Wikipedia (0.13%), brands can establish unambiguous entity identification. This creates what we might call a "_entity fingerprint_" that helps search engines confidently associate various online presences with the correct entity.
+When properly implemented, `sameAs` serves as a powerful tool for entity disambiguation, particularly for organizations and persons. By linking to authoritative sources like Wikidata (0.17%) and Wikipedia (0.13%), brands can establish unambiguous entity identification. This creates what we might call a "_entity fingerprint_" that helps search engines confidently associate various online presences with the correct entity.
 
 {{ figure_markup(
   image="sameas-year-on-year-mobile.png",
-  caption="Year-on-year comparison of SameAs usage on mobile pages in 2022 and 2024.",
-  description="Bar chart comparing the usage of SameAs links by type for mobile pages in 2022 and 2024. The chart shows Facebook.com leading with 4.5% in 2024, followed by Instagram.com with 3.7%. Other platforms include Twitter.com, YouTube.com, and LinkedIn.com, highlighting usage trends over two years.",
+  caption="Year-on-year comparison of `sameAs` usage on mobile pages in 2022 and 2024.",
+  description="Bar chart comparing the usage of `sameAs` links by type for mobile pages in 2022 and 2024. The chart shows Facebook.com leading with 4.5% in 2024, followed by Instagram.com with 3.7%. Other platforms include Twitter.com, YouTube.com, and LinkedIn.com, highlighting usage trends over two years.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=315508282&format=interactive",
   sheets_gid="560419533",
   sql_file="present_types.sql",
@@ -761,12 +761,12 @@ When properly implemented, sameAs serves as a powerful tool for entity disambigu
   height=561
 )}}
 
-For personal entities (executives, authors, experts), sameAs similarly helps establish authority and credibility by connecting professional profiles (LinkedIn at 1.11%) with other authentic entity markers. This becomes particularly valuable for E-E-A-T signals and knowledge panel generation.
+For personal entities (executives, authors, experts), `sameAs` similarly helps establish authority and credibility by connecting professional profiles (LinkedIn at 1.11%) with other authentic entity markers. This becomes particularly valuable for E-E-A-T signals and knowledge panel generation.
 
 {{ figure_markup(
   image="sameas-year-on-year-by-device.png",
-  caption="SameAs usage by device on mobile and desktop for various platforms.",
-  description="A bar chart comparing the usage of SameAs links by device type (desktop and mobile). Facebook.com leads with 4.5% on desktop and 3.7% on mobile, followed by Instagram.com, Twitter.com, and others. The data highlights differences in usage patterns across platforms.",
+  caption="`sameAs` usage by device on mobile and desktop for various platforms.",
+  description="A bar chart comparing the usage of `sameAs` links by device type (desktop and mobile). Facebook.com leads with 4.5% on desktop and 3.7% on mobile, followed by Instagram.com, Twitter.com, and others. The data highlights differences in usage patterns across platforms.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTE7UqINKaCzsmdVSUPZhQjlm2Az5T9wcbk4ZMZyJu-Rp8JWXtn9YRfXnAajUqQYLTCnSA2O5FEP6YF/pubchart?oid=785630631&format=interactive",
   sheets_gid="560419533",
   sql_file="present_types.sql",
@@ -786,7 +786,7 @@ The vast gap between Schema.org and other contexts underscores its critical role
 
 ## Emerging trends and future outlook
 
-The structured data landscape is rapidly evolving, marked by Google's introduction of specialized schemas for vehicles, courses, and 3D product models, alongside increased support for Digital Product Passports through GS1 Digital Link. The growing adoption of JSON-LD (now at 41% of pages) and sophisticated entity relationships through sameAs properties indicates a maturing ecosystem focused on comprehensive knowledge graph development.
+The structured data landscape is rapidly evolving, marked by Google's introduction of specialized schemas for vehicles, courses, and 3D product models, alongside increased support for Digital Product Passports through GS1 Digital Link. The growing adoption of JSON-LD (now at 41% of pages) and sophisticated entity relationships through `sameAs` properties indicates a maturing ecosystem focused on comprehensive knowledge graph development.
 
 The data shows a clear shift toward more specialized implementation patterns, particularly in ecommerce and local business contexts. For instance, structured data types like `Product`, `Offer`, and `Review` have become more prevalent in ecommerce, while `LocalBusiness` and `GeoCoordinates` are increasingly used to improve local search visibility.
 
@@ -818,7 +818,7 @@ By examining these aspects, we aim to provide a comprehensive overview of the st
 
 The analysis of structured data in 2024 highlights a clear shift from its SEO roots toward a broader, more strategic role in AI and semantic metadata. The dominance of RDFa and Open Graph on over 60% of pages, combined with JSON-LD's growth (now on 41% of pages, particularly in ecommerce), points to a maturing technology. But the true impact lies in how structured data is transforming AI discovery and enhancing machine understanding.
 
-This year, we've seen significant changes in how search engines handle structured data. While Google has deprecated certain rich results, such as FAQs, HowTos, and SiteLinks, they've simultaneously introduced new types for vehicles, courses, 3D product models, loyalty cards, and certifications, expanding the scope of structured data. Even more importantly, structured data is now essential for AI systems, supporting tasks from fact-checking to improved search capabilities and training large language models (LLMs).
+This year, we've seen significant changes in how search engines handle structured data. While Google has deprecated certain rich results, such as `FAQ`s, `HowTo`s, and `SiteLink`s, they've simultaneously introduced new types for vehicles, courses, 3D product models, loyalty cards, and certifications, expanding the scope of structured data. Even more importantly, structured data is now essential for AI systems, supporting tasks from fact-checking to improved search capabilities and training large language models (LLMs).
 
 The advent of Digital Product Passports and increased adoption of GS1 standards underlines the growing importance of structured data in commerce and regulatory compliance. As AI-driven search becomes the norm, businesses are realizing that structured data is no longer just about search visibility—it's key to ensuring content is machine-readable and future-proof.
 
