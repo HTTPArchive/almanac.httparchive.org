@@ -18,8 +18,8 @@ SELECT
   COUNT(DISTINCT page) / total_websites AS percent_of_websites
 FROM httparchive.crawl.pages
 JOIN totals USING (client),
-UNNEST (technologies) AS technology,
-UNNEST (technology.categories) AS category
+  UNNEST(technologies) AS technology,
+  UNNEST(technology.categories) AS category
 WHERE
   date = '2024-06-01' AND
   category = 'Browser fingerprinting'
