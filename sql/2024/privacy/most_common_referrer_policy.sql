@@ -15,8 +15,9 @@ referrer_policy_custom_metrics AS (
   SELECT
     client,
     page,
-    JSON_VALUE(custom_metrics, '$.privacy.referrerPolicy.entire_document_policy') AS policy_meta
-  FROM `httparchive.all.pages`
+    LOWER(TRIM(policy_meta)) AS policy_meta
+  FROM `httparchive.all.pages`,
+    UNNEST(SPLIT(JSON_VALUE(custom_metrics, '$.privacy.referrerPolicy.entire_document_policy'), ',')) AS policy_meta
   WHERE
     date = '2024-06-01' AND
     is_root_page = TRUE
@@ -39,8 +40,9 @@ referrer_policy_headers AS (
   SELECT
     client,
     page,
-    value AS policy_header
-  FROM response_headers
+    TRIM(policy_header) AS policy_header
+  FROM response_headers,
+    UNNEST(SPLIT(value, ',')) AS policy_header
   WHERE
     name = 'referrer-policy'
 )
