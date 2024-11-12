@@ -432,7 +432,7 @@ The total transfer of JavaScript offers one of the most interesting insights wit
 
 {{ figure_markup(
   image="javascript-frameworks.png",
-  caption="JavaScript Frameworks used by Prerendered and Hybrid sites",
+  caption="JavaScript Frameworks used by Prerendered and Hybrid sites.",
   description="Bar chart showing the most common JavaScript frameworks used by Prerendered and Hybrid sites in 2024.React is the most popular with 23% of prerendered sites and 39% of Hybrid, Vue.js comes in next with 8% of Prerendered and 13% of Hybrid.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTzPcqcOjo0RTaHjgSQCXZYJRyquXzzd6qOsD6PysgZZdGXlR8pP5i2Reoa_WJwJLjFHniXA2DWwDq1/pubchart?oid=1961429073&format=interactive",
   sheets_gid="1131487846",
@@ -444,7 +444,7 @@ When we break down the JavaScript frameworks used by Prerendered and Hybrid webs
 
 {{ figure_markup(
   image="transfer-excluding-css-js.png",
-  caption="Transfer size excluding CSS and JavaScript by year",
+  caption="Transfer size excluding CSS and JavaScript by year.",
   description="Column chart showing the median size of Non JavaScript and CSS transfer size per year for each category - Prerendered, Hybrid, and Dynamic. In 2024, Prerendered sites have a median of 1,071 KB, Hybrid sites have a median of 1,368 KB, and Dynamic sites have a median of 1,783 KB.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTzPcqcOjo0RTaHjgSQCXZYJRyquXzzd6qOsD6PysgZZdGXlR8pP5i2Reoa_WJwJLjFHniXA2DWwDq1/pubchart?oid=919021609&format=interactive",
   sheets_gid="1131487846",
@@ -456,7 +456,7 @@ If we remove CSS and JavaScript from the total transfer size, we're left with HT
 
 {{ figure_markup(
   image="astro-hugo-next-transfer-size.png",
-  caption="Astro vs Hugo vs Next.js: Transfer size by year",
+  caption="Astro vs Hugo vs Next.js: Transfer size by year.",
   description="Column chart showing the median total transfer size of Astro, Hugo, and Next.js sites in the prerendered category per year. In 2024, Astro sites have a median of 889 KB, Hugo sites have a median of 1,174 KB, and Next.js have a median of 1,659 KB.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTzPcqcOjo0RTaHjgSQCXZYJRyquXzzd6qOsD6PysgZZdGXlR8pP5i2Reoa_WJwJLjFHniXA2DWwDq1/pubchart?oid=1751742689&format=interactive",
   sheets_gid="1131487846",
@@ -474,7 +474,7 @@ Next.js shows a sizable increase in page weight. Next.js ships with its bundled 
 
 {{ figure_markup(
   image="astro-hugo-next-js-size.png",
-  caption="Astro vs Hugo vs Next.js: JavaScript size by year",
+  caption="Astro vs Hugo vs Next.js: JavaScript size by year.",
   description="Column chart showing the median JavaScript transfer size of Astro, Hugo, and Next.js sites in the prerendered category per year. In 2024, Astro sites have a median of 164 KB, Hugo sites have a median of 210 KB, and Next.js have a median of 583 KB.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTzPcqcOjo0RTaHjgSQCXZYJRyquXzzd6qOsD6PysgZZdGXlR8pP5i2Reoa_WJwJLjFHniXA2DWwDq1/pubchart?oid=823335659&format=interactive",
   sheets_gid="1131487846",
@@ -486,7 +486,7 @@ Breaking this down to purely the JavaScript shipped, we can see how heavy the Ja
 
 {{ figure_markup(
   image="core-web-vitals.png",
-  caption="Sites with Good Core Web Vitals by year",
+  caption="Sites with Good Core Web Vitals by year.",
   description="Column chart showing the percentage of sites in each category that have a good Core Web Vitals score for each year. In 2024, 41% of Prerendered sites, 31% of Hybrid, and 33% of Dynamic sites have a good Core Web Vitals score.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTzPcqcOjo0RTaHjgSQCXZYJRyquXzzd6qOsD6PysgZZdGXlR8pP5i2Reoa_WJwJLjFHniXA2DWwDq1/pubchart?oid=275245520&format=interactive",
   sheets_gid="1131487846",
@@ -508,7 +508,7 @@ So, how are these architectures being adopted across the web?
 
 {{ figure_markup(
   image="global-adoption.png",
-  caption="Global Growth of Prerendered and Hybrid sites",
+  caption="Global Growth of Prerendered and Hybrid sites.",
   description="Column chart showing the percentage of total sites that a prerendered and hybrid by year. In 2024, .5% of sites are Prerendered and 5% are Hybrid",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTzPcqcOjo0RTaHjgSQCXZYJRyquXzzd6qOsD6PysgZZdGXlR8pP5i2Reoa_WJwJLjFHniXA2DWwDq1/pubchart?oid=1749178863&format=interactive",
   sheets_gid="1131487846",
@@ -522,7 +522,7 @@ We see more growth if we zoom into the sites with the most traffic:
 
 {{ figure_markup(
   image="prerendered-high-traffic-adoption.png",
-  caption="Prerendered Adoption Among High-traffic Websites",
+  caption="Prerendered Adoption Among High-traffic Websites.",
   description="Column chart showing the percentage of the most high traffic websites that are prerendered by year. In 2024, .8% of the most popular 1k and 10k sites were prerendered, along with .6% of the top 100k sites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTzPcqcOjo0RTaHjgSQCXZYJRyquXzzd6qOsD6PysgZZdGXlR8pP5i2Reoa_WJwJLjFHniXA2DWwDq1/pubchart?oid=959672300&format=interactive",
   sheets_gid="1131487846",
@@ -534,7 +534,7 @@ There's been significant growth in Prerendered adoption among the top 1k and 10k
 
 {{ figure_markup(
   image="hybrid-high-traffic-adoption.png",
-  caption="Hybrid Adoption Among High-traffic Websites",
+  caption="Hybrid Adoption Among High-traffic Websites.",
   description="Column chart showing the percentage of the most high traffic websites that are hybrid by year. In 2024, 11.7% of the most popular 1k sites were Hybrid, 12.7% of the top 10k, 6.1% of the top 100k, and 4.4% of the top 1M.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTzPcqcOjo0RTaHjgSQCXZYJRyquXzzd6qOsD6PysgZZdGXlR8pP5i2Reoa_WJwJLjFHniXA2DWwDq1/pubchart?oid=214828640&format=interactive",
   sheets_gid="1131487846",

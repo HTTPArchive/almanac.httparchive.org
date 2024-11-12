@@ -53,11 +53,11 @@ As structured data is a rich and complex area, it is important to explore and ex
 
 ### Linked data
 
-By adding structured data to web pages, and providing URI links to the entities the pages contain/reference, we create <a hreflang="en" href="https://en.wikipedia.org/wiki/Linked_data">_linked data_</a>. This structured data is then interlinked, making it more useful through semantic queries.
+By adding structured data to web pages, and providing URI links to the entities the pages contain/reference, we create [_linked data_](https://wikipedia.org/wiki/Linked_data). This structured data is then interlinked, making it more useful through semantic queries.
 
-Adding linked data to describe web page content enables machines to treat web pages as databases. At a large scale, this contributes to the <a hreflang="en" href="https://en.wikipedia.org/wiki/Semantic_Web">semantic web</a>. The semantic web links data together through The _Resource Description Framework (RDF)_. This is a framework for representing information on the web using URIs to define entities and the relationships between them.
+Adding linked data to describe web page content enables machines to treat web pages as databases. At a large scale, this contributes to the [semantic web](https://wikipedia.org/wiki/Semantic_Web). The semantic web links data together through The _Resource Description Framework (RDF)_. This is a framework for representing information on the web using URIs to define entities and the relationships between them.
 
-A relationship between entities in the RDF data model is known as a _semantic triple_. With a <a hreflang="en" href="https://en.wikipedia.org/wiki/Semantic_triple">semantic triple</a> (or just _triple_), we can codify a statement about data. These expressions follow the form of subject–predicate–object (e.g., "Allen knows John").
+A relationship between entities in the RDF data model is known as a _semantic triple_. With a [semantic triple](https://wikipedia.org/wiki/Semantic_triple) (or just _triple_), we can codify a statement about data. These expressions follow the form of subject–predicate–object (e.g., "Allen knows John").
 
 To be able to retrieve and manipulate RDF data, we can use an RDF Query Language such as <a hreflang="en" href="https://www.w3.org/TR/sparql11-query/">SPARQL</a>, the standard RDF query language.
 
@@ -65,7 +65,7 @@ As will be discussed later, this semantic web creates many opportunities for bus
 
 ### Open data
 
-Linked data may also be <a hreflang="en" href="https://en.wikipedia.org/wiki/Open_data">_open data_</a>, described as _Linked Open Data_. Open data, as the name implies, is data that is openly accessible to anyone for any purpose. This data is licensed under an open license.
+Linked data may also be [_open data_](https://wikipedia.org/wiki/Open_data), described as _Linked Open Data_. Open data, as the name implies, is data that is openly accessible to anyone for any purpose. This data is licensed under an open license.
 
 Open data is the first of the <a hreflang="en" href="https://5stardata.info/en/">5 stars of open data</a>, a deployment scheme suggested by Tim Berners-Lee. According to the <a hreflang="en" href="https://opendatahandbook.org/">open data handbook</a>, to score the maximum five stars, data must (1) Be available on the Web under an open license, (2) Be in the form of structured data, (3) Be in a non-proprietary file format, (4) Use URIs as its identifiers, (5) Include links to other data sources (see [data linking](#data-linking)).
 
@@ -73,7 +73,7 @@ While structured data is the second star in the 5 star open data plan, linked da
 
 ### Semantic search engines, rich results and beyond
 
-A semantic search engine is one which performs <a hreflang="en" href="https://en.wikipedia.org/wiki/Semantic_search">semantic search</a>. This is different from lexical search where search engines look for exact or close matches to words or strings of text. Semantic search aims to understand the user's intent and the context of the search terms in order to improve the accuracy of search. An example would be a structured data entity of "local business: hairdresser" versus "TG Locks n Lashes"; the latter is a business name, and while it tells the creative name of the hair salon as a key-word, it does little to help the search engine to understand what the business does. By using structured data, the website can better help the search engine understand the context of its information, and thus enable the engine to offer better search results in the context of the query asked by the search user. Google and Bing are excellent examples of semantic search engines.
+A semantic search engine is one which performs [semantic search](https://wikipedia.org/wiki/Semantic_search). This is different from lexical search where search engines look for exact or close matches to words or strings of text. Semantic search aims to understand the user's intent and the context of the search terms in order to improve the accuracy of search. An example would be a structured data entity of "local business: hairdresser" versus "TG Locks n Lashes"; the latter is a business name, and while it tells the creative name of the hair salon as a key-word, it does little to help the search engine to understand what the business does. By using structured data, the website can better help the search engine understand the context of its information, and thus enable the engine to offer better search results in the context of the query asked by the search user. Google and Bing are excellent examples of semantic search engines.
 
 Google uses semantic search technologies to serve relevant information from the <a hreflang="en" href="https://blog.google/products/search/introducing-knowledge-graph-things-not/">Google Knowledge Graph</a> which is a knowledge base used to serve search results in an infobox. This infobox is known as a <a hreflang="en" href="https://support.google.com/knowledgepanel/answer/9163198">knowledge panel</a>, and can be seen in many results. This knowledge box can be enabled or enhanced by structured data.
 
@@ -172,7 +172,7 @@ Structured data is underpinned by formats and standards that describe a meta-lev
 
 {{ figure_markup(
   image="structured-data-types.png",
-  caption="Structured data types",
+  caption="Structured data types.",
   description="Bar chart showing RDFa is used on 62% of desktop and mobile pages, Open Graph on 59% of each, Twitter on 41% and 40% respectively, JSON-LD on 37% and 37%, Microdata on 23% and 25%, Facebook on 7% and 8%, Dublin Core and Microformats on 1% of both, and finally microformats2 on 0% of both desktop and mobile pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr8oRb8NNs5MbpPpDi7QSsTUTPQL_vxQtQvmn52qGk97gpNhJIHa8VF0x5ZJtWXAFuEbDFZQB6TIuN/pubchart?oid=1295789309&format=interactive",
   sheets_gid="138285863",
@@ -184,7 +184,7 @@ RDFa and Open Graph remain in the majority with 62% and 57% of mobile pages, res
 
 {{ figure_markup(
   image="structured-data-usage-by-year.png",
-  caption="Structured data usage by year on mobile",
+  caption="Structured data usage by year on mobile.",
   description="Bar chart showing RDFa was used on 61% of mobile pages in 2021 and 62% in 2022, Open Graph on 57% and 59% respectively, Twitter on 37% and 40%, JSON-LD on 34% and 37%, Microdata on 25% and 25%, Facebook on 8% and 8%, Dublin Core and Microformats on 1% in both years, and finally microformats2 on 0% in both years.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr8oRb8NNs5MbpPpDi7QSsTUTPQL_vxQtQvmn52qGk97gpNhJIHa8VF0x5ZJtWXAFuEbDFZQB6TIuN/pubchart?oid=1841491057&format=interactive",
   sheets_gid="1452747230",
@@ -246,7 +246,7 @@ Let's delve a little deeper into each type.
 
 {{ figure_markup(
   image="rdfa-usage-by-year-mobile.png",
-  caption="RDFa usage by year on mobile",
+  caption="RDFa usage by year on mobile.",
   description="Bar chart showing `foaf:image` on was used on 0.86% of pages in 2021 and 0.81% in 2022, `foaf:document` on 0.36% and 0.30% respectively, `sioc:item` on 0.24% and 0.20%, `schema:webpage` on 0.11% and 0.12%, `image` on 0.09% and 0.10%, `og:website` on 0.06% and 0.08%, `listitem` on 0.08% and 0.08%, `breadcrumblist` on 0.07% and 0.07%, `webpage` on 0.04% and 0.04%, `person` on 0.03% and 0.03%, `schema:article` on 0.03% and 0.03%, `skos:concept` on 0.04% and 0.03%, `v:breadcrumb` on 0.04% and 0.03%, and finally `sioc:useraccount` was used on 0.03% of pages in 2021 and 0.02% in 2022.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr8oRb8NNs5MbpPpDi7QSsTUTPQL_vxQtQvmn52qGk97gpNhJIHa8VF0x5ZJtWXAFuEbDFZQB6TIuN/pubchart?oid=1434267711&format=interactive",
   sheets_gid="1452747230",
@@ -260,7 +260,7 @@ When evaluating the types of RDFa, `foaf:image` remains present on more pages th
 
 {{ figure_markup(
   image="rdfa-usage-by-device.png",
-  caption="RDFa usage by device",
+  caption="RDFa usage by device.",
   description="Bar chart showing `foaf:image` was used on 1.05% of desktop and 0.81% of mobile pages, `foaf:document` on 0.38% and 0.30% respectively, `sioc:item` on 0.25% and 0.20%, `schema:webpage` on 0.16% and 0.12%, `image` on 0.13% and 0.10%, `og:website` on 0.07% and 0.08%, `listitem` on 0.09% and 0.08%, `breadcrumblist` on 0.08% and 0.07%, `webpage` on 0.05% and 0.04%, `person` on 0.03% and 0.03%, `schema:article` on 0.04% and 0.03%, `skos:concept` on 0.04% and 0.03%, `v:breadcrumb` on 0.03% and 0.03%, and finally `sioc:useraccount` on 0.02% of both desktop and mobile pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr8oRb8NNs5MbpPpDi7QSsTUTPQL_vxQtQvmn52qGk97gpNhJIHa8VF0x5ZJtWXAFuEbDFZQB6TIuN/pubchart?oid=193330933&format=interactive",
   sheets_gid="1452747230",
@@ -276,7 +276,7 @@ RDFa remains more prominent on desktop with `foaf:image` appearing on 1% of desk
 
 {{ figure_markup(
   image="dublin-core-usage-by-year-mobile.png",
-  caption="Dublin Core usage by year (mobile)",
+  caption="Dublin Core usage by year (mobile).",
   description="Bar chart showing `dc.title` was used on 0.71% of mobile pages in 2021 and 0.70% in 2022, `dc.language` on 0.50% and 0.49% respectively, `dc.description` on 0.46% and 0.44%, `dc.publisher` on 0.21% and 0.22%, `dc.creator` on 0.21% and 0.21%, `dc.subject` on 0.20% and 0.20%, `dc.source` on 0.22% and 0.19%, `dc.identifier` on 0.18% and 0.17%, `dc.relation` on 0.19% and 0.16%, `dcterms.title` on 0.13% and 0.15%, `dc.format` on 0.15% and 0.15%, `dc.type` on 0.14% and 0.14%, `dcterms.rightsholder` on 0.13% and 0.12%, and finally `dcterms.identifier` on 0.18% of mobile pages in 2021 and 0.11% in 2022.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr8oRb8NNs5MbpPpDi7QSsTUTPQL_vxQtQvmn52qGk97gpNhJIHa8VF0x5ZJtWXAFuEbDFZQB6TIuN/pubchart?oid=1093040433&format=interactive",
   sheets_gid="1452747230",
@@ -290,7 +290,7 @@ Dublin Core attribute type usage remains very similar across the most prominent 
 
 {{ figure_markup(
   image="dublin-core-usage-by-device.png",
-  caption="Dublin Core usage by device",
+  caption="Dublin Core usage by device.",
   description="Bar chart showing `dc.title` was used on 0.74% of desktop and 0.70% of mobile pages, `dc.language` on 0.53% and 0.49% respectively, `dc.description` on 0.48% and 0.44%, `dc.publisher` on 0.22% and 0.22%, `dc.creator` on 0.22% and 0.21%, `dc.subject` on 0.20% and 0.20%, `dc.source` on 0.25% and 0.19%, `dc.identifier` on 0.18% and 0.17%, `dc.relation` on 0.21% and 0.16%, `dcterms.title` on 0.16% and 0.15%, `dc.format` on 0.16% and 0.15%, `dc.type` on 0.15% and 0.14%, `dcterms.rightsholder` on 0.14% and 0.12%, and finally `dcterms.identifier` on 0.18% of desktop and 0.11% of mobile pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr8oRb8NNs5MbpPpDi7QSsTUTPQL_vxQtQvmn52qGk97gpNhJIHa8VF0x5ZJtWXAFuEbDFZQB6TIuN/pubchart?oid=690445913&format=interactive",
   sheets_gid="1452747230",
@@ -306,7 +306,7 @@ Other than that, Dublin Core types are similar between mobile and desktop pages,
 
 {{ figure_markup(
   image="open-graph-usage-by-year-mobile.png",
-  caption="Open Graph usage by year (mobile)",
+  caption="Open Graph usage by year (mobile).",
   description="Bar chart showing `og:image` was used on 37% of mobile pages in 2021 and 39% in 2022, `og:image:width` on 13% and 14% respectively, `og:image:height` on 13% and 14%, `og:image:secure_url` on 6% and 6%, `og:image:type` on 2% and 5%, and finally `og:image:alt` on 2% of mobile pages in 2021 and 3% in 2022.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr8oRb8NNs5MbpPpDi7QSsTUTPQL_vxQtQvmn52qGk97gpNhJIHa8VF0x5ZJtWXAFuEbDFZQB6TIuN/pubchart?oid=1953710107&format=interactive",
   sheets_gid="1452747230",
@@ -318,7 +318,7 @@ Open Graph tags have seen a widespread increase in use. The most common of these
 
 {{ figure_markup(
   image="open-graph-usage-by-device.png",
-  caption="Open Graph usage by device",
+  caption="Open Graph usage by device.",
   description="Bar chart showing `og:image` was used on 40% of desktop and 39% of mobile pages, `og:image:width` on 15% and 14% respectively, `og:image:height` on 15% and 14%, `og:image:secure_url` on 6% and 6%, `og:image:type` on 5% of both, and finally `og:image:alt` was used on 3% of both desktop and mobile pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr8oRb8NNs5MbpPpDi7QSsTUTPQL_vxQtQvmn52qGk97gpNhJIHa8VF0x5ZJtWXAFuEbDFZQB6TIuN/pubchart?oid=1302475483&format=interactive",
   sheets_gid="1452747230",
@@ -332,7 +332,7 @@ We have seen an increase in use for each Open Graph type in the top 10 for both 
 
 {{ figure_markup(
   image="twitter-meta-tag-usage-by-year-mobile.png",
-  caption="Twitter meta tag usage by year (mobile)",
+  caption="Twitter meta tag usage by year (mobile).",
   description="Bar chart showing `twitter:card` was used on 35% of mobile pages in 2021 and 38% in 2022, `twitter:title` on 21% and 22% respectively, `twitter:description` on 19% and 20%, `twitter:image` on 11% and 12%, `twitter:site` on 11% and 11%, `twitter:label1` on 7% and 10%, `twitter:data1` on 7% and 10%, `twitter:creator` on 4% and 3%, `twitter:url` on 3% and 3%, `twitter:domain` on 2% and 2%, `twitter:image:src` on 1% and 1%, `twitter:text:title` on 1% and 1%, and finally `twitter:app:id:iphone` was used on 1% of mobile pages in 2021 and 0% in 2022.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr8oRb8NNs5MbpPpDi7QSsTUTPQL_vxQtQvmn52qGk97gpNhJIHa8VF0x5ZJtWXAFuEbDFZQB6TIuN/pubchart?oid=1993854314&format=interactive",
   sheets_gid="1452747230",
@@ -346,7 +346,7 @@ Twitter meta tags once again follow the pattern of a general increase in usage, 
 
 {{ figure_markup(
   image="twitter-meta-tag-usage-by-device.png",
-  caption="Twitter meta tag usage by device",
+  caption="Twitter meta tag usage by device.",
   description="Bar chart showing `twitter:card` was used on 39% of desktop and 38% of mobile pages, `twitter:title` on 22% and 22% respectively, `twitter:description` on 20% and 20%, `twitter:image` on 12% and 12%, `twitter:site` on 13% and 11%, `twitter:label1` on 10% and 10%, `twitter:data1` on 10% and 10%, `twitter:creator` on 4% and 3%, `twitter:url` on 4% and 3%, `twitter:domain` on 2% and 2%, `twitter:image:src` on 1% and 1%, `twitter:text:title` on 0% and 1%, and finally `twitter:app:id:iphone` was used on 0% of both desktop and mobile pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr8oRb8NNs5MbpPpDi7QSsTUTPQL_vxQtQvmn52qGk97gpNhJIHa8VF0x5ZJtWXAFuEbDFZQB6TIuN/pubchart?oid=270505823&format=interactive",
   sheets_gid="1452747230",
@@ -362,7 +362,7 @@ Twitter meta tags such as `twitter:site` and `twitter:image` have a larger prese
 
 {{ figure_markup(
   image="facebook-meta-tag-usage-by-year-mobile.png",
-  caption="Facebook meta tag usage by year (mobile)",
+  caption="Facebook meta tag usage by year (mobile).",
   description="Bar chart showing `fb:app_id` was used on 6.1% of mobile pages in 2021 and 5.8% in 2022, `fb:admins` on 2.6% and 2.6% respectively, `fb:pages` on 0.9% and 0.8%, `fb:page_id` and `fb:profile_id` on 0.1% in both years, and `fb:use_automatic_ad_placement` and `fb:article_style` on 0.0% in both years.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr8oRb8NNs5MbpPpDi7QSsTUTPQL_vxQtQvmn52qGk97gpNhJIHa8VF0x5ZJtWXAFuEbDFZQB6TIuN/pubchart?oid=978227692&format=interactive",
   sheets_gid="1452747230",
@@ -374,7 +374,7 @@ Out of all of the Facebook tags here, there are only three with significant numb
 
 {{ figure_markup(
   image="facebook-meta-tag-usage-by-device.png",
-  caption="Facebook meta tag usage by device",
+  caption="Facebook meta tag usage by device.",
   description="Bar chart showing `fb:app_id` was used on 5.6% of desktop and 5.8% of mobile pages, `fb:admins` on 2.2% and 2.6% respectively, `fb:pages` on 0.9% and 0.8%, `fb:page_id` on 0.2% and 0.1%, `fb:profile_id` on 0.1% on both, and `fb:use_automatic_ad_placement` and `fb:article_style` on 0.0% of both desktop and mobile pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr8oRb8NNs5MbpPpDi7QSsTUTPQL_vxQtQvmn52qGk97gpNhJIHa8VF0x5ZJtWXAFuEbDFZQB6TIuN/pubchart?oid=230494604&format=interactive",
   sheets_gid="1452747230",
@@ -388,7 +388,7 @@ This is true for desktop pages too, with the exception of `fb:pages` at a slight
 
 {{ figure_markup(
   image="microformats-usage-by-year-mobile.png",
-  caption="Microformats usage by year (mobile)",
+  caption="Microformats usage by year (mobile).",
   description="Bar chart showing `adr` was used on 0.50% of mobile pages in 2021 and 0.47% in 2022, `geo` on 0.10% and 0.10% respectively, `hReview` on 0.06% and 0.05%, `hReview-aggregate` on 0.05% and 0.03%, `hListing` and `hProduct` on 0.01% in both years, and finally `hCard` on 0.01% of mobile pages in 2021 and 0.00% in 2022.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr8oRb8NNs5MbpPpDi7QSsTUTPQL_vxQtQvmn52qGk97gpNhJIHa8VF0x5ZJtWXAFuEbDFZQB6TIuN/pubchart?oid=1161847910&format=interactive",
   sheets_gid="1452747230",
@@ -402,7 +402,7 @@ Microformats have remained very similar in usage numbers since 2021, with `adr` 
 
 {{ figure_markup(
   image="microformats-usage-by-device.png",
-  caption="Microformats usage by device",
+  caption="Microformats usage by device.",
   description="Bar chart showing `adr` was used on 0.56% of desktop and 0.47% of mobile pages, `geo` on 0.12% and 0.10% respectively, `hReview` on 0.04% and 0.05%, `hReview-aggregate` on 0.03% and 0.03%, `hListing` on 0.00% and 0.01%, `hProduct` on 0.01% and 0.01%, and finally `hCard` was used on 0.01% of desktop and 0.00% of mobile pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr8oRb8NNs5MbpPpDi7QSsTUTPQL_vxQtQvmn52qGk97gpNhJIHa8VF0x5ZJtWXAFuEbDFZQB6TIuN/pubchart?oid=1952037124&format=interactive",
   sheets_gid="1452747230",
@@ -414,7 +414,7 @@ Both mobile and desktop share a mix of increased and decreased usage between mic
 
 {{ figure_markup(
   image="microformats2-usage-by-year-mobile.png",
-  caption="Microformats2 usage by year",
+  caption="Microformats2 usage by year.",
   description="Bar chart showing `h-entry` was used on 0.08% of mobile pages in 2021 and 0.25% in 2022 `h-card` on 0.04% and 0.21% respectively, `h-feed` on 0.01% and 0.18%, `h-adr` on 0.02% and 0.02%, `h-event` on 0.00% and 0.00%, `h-product` on 0.00% and 0.00%, and finally `h-item` was used on 0.01% of mobile pages in 2021 and 0.00% in 2022.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr8oRb8NNs5MbpPpDi7QSsTUTPQL_vxQtQvmn52qGk97gpNhJIHa8VF0x5ZJtWXAFuEbDFZQB6TIuN/pubchart?oid=392054831&format=interactive",
   sheets_gid="1452747230",
@@ -426,7 +426,7 @@ Meanwhile, microformats2 attributes have skyrocketed since 2021. The properties 
 
 {{ figure_markup(
   image="microformats2-usage-by-device.png",
-  caption="Microformats2 usage by device",
+  caption="Microformats2 usage by device.",
   description="Bar chart showing `h-entry` was used on 0.12% of desktop and 0.25% of mobile pages, `h-card` on 0.09% and 0.21% respectively, `h-feed` on 0.05% and 0.18%, `h-adr` on 0.02% and 0.02%, and `h-event`, `h-product` and `h-item` on 0.00% of both desktop and mobile pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr8oRb8NNs5MbpPpDi7QSsTUTPQL_vxQtQvmn52qGk97gpNhJIHa8VF0x5ZJtWXAFuEbDFZQB6TIuN/pubchart?oid=1709601989&format=interactive",
   sheets_gid="1452747230",
@@ -440,7 +440,7 @@ This growth is seen more drastically on mobile pages, though desktop pages do fo
 
 {{ figure_markup(
   image="microdata-usage-by-year-mobile.png",
-  caption="Microdata usage by year (mobile)",
+  caption="Microdata usage by year (mobile).",
   description="Bar chart showing `schema.org/webpage` was used on 7.4% of mobile pages in 2021 and 7.9% in 2022, `schema.org/sitenavigationelement` on 5.6% and 6.1% respectively, `schema.org/wpheader` on 4.9% and 5.3%, `schema.org/wpfooter` on 4.6% and 4.9%, `schema.org/organization` on 4.0% and 4.3%, `schema.org/blog` on 3.7% and 3.4%, `schema.org/creativework` on 2.1% and 2.5%, `schema.org/imageobject` on 1.8% and 1.9%, `schema.org/person` on 1.4% and 1.4%, `schema.org/website` on 1.3% and 1.4%, `schema.org/postaladdress` on 1.3% and 1.3%, `schema.org/blogposting` on 1.3% and 1.2%, `schema.org/wpsidebar` on 1.4% and 1.2%, `schema.org/imagegallery` on 1.1% and 1.1%, `schema.org/product` on 1.2% and 1.1%, `schema.org/offer` on 1.1% and 1.0%, `schema.org/listitem` on 1.0% and 1.0%, `schema.org/breadcrumblist` on 1.0% and 1.0%, and finally `schema.org/article` on 0.9% of mobile pages in 2021 and 0.8% of mobile pages in 2022.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr8oRb8NNs5MbpPpDi7QSsTUTPQL_vxQtQvmn52qGk97gpNhJIHa8VF0x5ZJtWXAFuEbDFZQB6TIuN/pubchart?oid=1393933149&format=interactive",
   sheets_gid="1452747230",
@@ -454,7 +454,7 @@ Most of the properties for Microdata have not seen much change, with a slight in
 
 {{ figure_markup(
   image="microdata-usage-by-device.png",
-  caption="Microdata usage by device",
+  caption="Microdata usage by device.",
   description="Bar chart showing `schema.org/webpage` was used on 7.4% of desktop and 7.9% of mobile pages, `schema.org/sitenavigationelement` on 5.8% and 6.1% respectively, `schema.org/wpheader` on 4.9% and 5.3%, `schema.org/wpfooter` on 4.6% and 4.9%, `schema.org/organization` on 4.3% and 4.3%, `schema.org/blog` on 2.5% and 3.4%, `schema.org/creativework` on 2.4% and 2.5%, `schema.org/imageobject` on 1.7% and 1.9%, `schema.org/person` on 1.6% and 1.4%, `schema.org/website` on 1.4% and 1.4%, `schema.org/postaladdress` on 1.3% and 1.3%, `schema.org/blogposting` on 1.5% and 1.2%, `schema.org/wpsidebar` on 1.1% and 1.2%, `schema.org/imagegallery` on 0.9% and 1.1%, `schema.org/product` on 1.0% and 1.1%, `schema.org/offer` on 0.9% and 1.0%, `schema.org/listitem` on 0.9% and 1.0%, `schema.org/breadcrumblist` on 0.9% and 1.0%, and finally `schema.org/article` was used on 0.8% of both desktop and mobile pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr8oRb8NNs5MbpPpDi7QSsTUTPQL_vxQtQvmn52qGk97gpNhJIHa8VF0x5ZJtWXAFuEbDFZQB6TIuN/pubchart?oid=1132507895&format=interactive",
   sheets_gid="1452747230",
@@ -470,7 +470,7 @@ These increases are common for desktop as well, with slight decreases elsewhere 
 
 {{ figure_markup(
   image="json-ld-usage-by-year-mobile.png",
-  caption="JSON-LD usage by year (mobile)",
+  caption="JSON-LD usage by year (mobile).",
   description="Bar chart showing `WebSite` was used on 8.9% of mobile pages in 2021 and 8.8% in 2022, `Organization` on 6.0% and 6.2% respectively, `LocalBusiness` on 1.7% and 2.8%, `BreadcrumbList` on 1.5% and 1.6%, `WebPage` on 1.0% and 1.1%, `Product` on 0.6% and 0.7%, `ItemList` on 0.5% and 0.5%, `BlogPosting` on 0.5% and 0.4%, `Article` on 0.3% and 0.3%, `Restaurant` on 0.2% and 0.3%, `Person` on 0.3% and 0.3%, `AutoDealer` on 0.2% and 0.2%, `FAQPage` on 0.1% and 0.2%, `Corporation` on 0.2% and 0.2%, `Event` on 0.2% and 0.2%, `Store` on 0.2% and 0.2%, `VideoObject` on 0.2% and 0.1%, and finally `ApartmentComplex` on 0.1% on mobile pages in both 2021 and 2022.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr8oRb8NNs5MbpPpDi7QSsTUTPQL_vxQtQvmn52qGk97gpNhJIHa8VF0x5ZJtWXAFuEbDFZQB6TIuN/pubchart?oid=1634241816&format=interactive",
   sheets_gid="1452747230",
@@ -484,7 +484,7 @@ JSON-LD types continue to be mostly similar with a few notable increases over th
 
 {{ figure_markup(
   image="json-ld-usage-by-device.png",
-  caption="JSON-LD usage by device",
+  caption="JSON-LD usage by device.",
   description="Bar chart showing `WebSite` was used on 9.6% of desktop and 8.8% of mobile pages, `Organization` on 6.9% and 6.2% respectively, `LocalBusiness` on 2.3% and 2.8%, `BreadcrumbList` on 1.6% and 1.6%, `WebPage` on 1.0% and 1.1%, `Product` on 0.5% and 0.7%, `ItemList` on 0.6% and 0.5%, `BlogPosting` on 0.2% and 0.4%, `Article` on 0.3% and 0.3%, `Restaurant` on 0.1% and 0.3%, `Person` on 0.3% and 0.3%, `AutoDealer` on 0.3% and 0.2%, `FAQPage` on 0.2% and 0.2%, `Corporation` on 0.2% and 0.2%, `Event` on 0.2% and 0.2%, `Store` on 0.2% and 0.2%, `VideoObject` on 0.2% and 0.1%, and finally `ApartmentComplex` was used on 0.1% of both desktop and mobile pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr8oRb8NNs5MbpPpDi7QSsTUTPQL_vxQtQvmn52qGk97gpNhJIHa8VF0x5ZJtWXAFuEbDFZQB6TIuN/pubchart?oid=1274560821&format=interactive",
   sheets_gid="1452747230",
@@ -500,9 +500,9 @@ These increases are enough to make JSON-LD types have the 2nd biggest positive c
 
 When evaluating JSON-LD, we can focus on the most recurring patterns of relationships among the different classes. More than with other syntaxes, JSON-LD expresses the value of graphs in structured data. An `Article`, for example, is frequently characterized by a linked `image` and the entity type `Person` to represent its _author_. Quite similarly, we would see that `BlogPosting` is also connected with image but as a frequent relationship with the `Organization` that serves as `Publisher`.
 
-Some types are purely syntactic like `BreadcrumbList` that is used exclusively to connect different items (`itemListElement`) of a site navigation’s system or a `Question` that is typically linked with its answer (`acceptedAnswer`). Other elements deal with meanings: a `LocalBusiness` typically is linked to an `address` and to the opening hours (`openingHoursSpecification`).
+Some types are purely syntactic like `BreadcrumbList` that is used exclusively to connect different items (`itemListElement`) of a site navigation's system or a `Question` that is typically linked with its answer (`acceptedAnswer`). Other elements deal with meanings: a `LocalBusiness` typically is linked to an `address` and to the opening hours (`openingHoursSpecification`).
 
-With this analysis we want to share a birds-eye overview of the most common types of relationships between entities and the subtle differences between let’s say `Article` and `BlogPosting`.
+With this analysis we want to share a birds-eye overview of the most common types of relationships between entities and the subtle differences between let's say `Article` and `BlogPosting`.
 
 Here below we can see the common links between the different types, based on how frequently they occur within all structure/relationship values. Some of these structures are typically part of larger relationship chains.
 
@@ -537,7 +537,7 @@ The main limitation of this analysis is represented by the fact that we can eval
 
 {{ figure_markup(
   image="sameas-usage-by-year-mobile.png",
-  caption="`SameAs` usage by year (mobile)",
+  caption="`SameAs` usage by year (mobile).",
   description="Bar chart showing `WebSite` was used on 4.3% of mobile pages in both 2021 and 2022, `instagram.com` on 2.7% and 2.9% respectively, `twitter.com` on 2.5% and 2.3%, `youtube.com` on 1.8% and 1.8%, `linkedin.com` on 1.0% and 1.0%, `pinterest.com` on 0.6% and 0.6%, `google.com` on 0.5% and 0.4%, `wikipedia.org` on 0.1% and 0.1%, `wikidata.org` on 0.1% and 0.1%, `yelp.com` on 0.1% and 0.1%, `tumblr.com` on 0.1% and 0.1%, `uptodown.io` on 0.1% and 0.1%, `vk.com` on 0.1% and 0.1%, and `t.me`, `soundcloud.com`, `pinterest.co.uk`, `tripadvisor.com`, `flickr.com`, and `vimeo.com` all were used on 0.0% of mobile pages in both 2021 and 2022.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr8oRb8NNs5MbpPpDi7QSsTUTPQL_vxQtQvmn52qGk97gpNhJIHa8VF0x5ZJtWXAFuEbDFZQB6TIuN/pubchart?oid=1443969983&format=interactive",
   sheets_gid="1452747230",
@@ -551,7 +551,7 @@ As was the case in 2021, the most common values of the `sameAs` property are soc
 
 {{ figure_markup(
   image="sameas-usage-by-device.png",
-  caption="`SameAs` usage by device",
+  caption="`SameAs` usage by device.",
   description="Bar chart showing `facebook.com` was used on 4.9% of desktop and 4.3% of mobile pages, `instagram.com` on 3.3% and 2.9% respectively, `twitter.com` on 2.9% and 2.3%, `youtube.com` on 2.1% and 1.8%, `linkedin.com` on 1.4% and 1.0%, `pinterest.com` on 0.7% and 0.6%, `google.com` on 0.5% and 0.4%, `wikipedia.org` on 0.1% and 0.1%, `wikidata.org` on 0.1% and 0.1%, `yelp.com` on 0.1% and 0.1%, `tumblr.com` on 0.1% and 0.1%, `uptodown.io` on 0.1% and 0.1%, `vk.com` on 0.1% and 0.1%, and `t.me`, `soundcloud.com`, `pinterest.co.uk`, `tripadvisor.com`, `flickr.com`, and `vimeo.com` were all used on 0.0% of both desktop and mobile pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr8oRb8NNs5MbpPpDi7QSsTUTPQL_vxQtQvmn52qGk97gpNhJIHa8VF0x5ZJtWXAFuEbDFZQB6TIuN/pubchart?oid=30131405&format=interactive",
   sheets_gid="1452747230",
@@ -567,7 +567,7 @@ The rest of the list includes information sources such as wikipedia.org (at 0.13
 
 {{ figure_markup(
   image="sameas-relative-change.png",
-  caption="`SameAs` relative change",
+  caption="`SameAs` relative change.",
   description="Bar chart showing `tiktok.com` changed by 600% by both desktop and mobile pages, `spotify.com` by 100.00% on desktop and 200.00% on mobile, `pinterest.fr` by 200.00% and 200.00% respectively, `t.me` by 133.33% and 133.33%, `flickr.com` by 150.00% and 133.33%, `wikipedia.org` by 118.18% and 118.18%, `instagram.com` by 106.93% and 112.46%, `tumblr.com` by 112.50% and 111.11%, `yelp.com` by 110.00% and 108.33%, `facebook.com` by 101.41% and 107.39%, `snapchat.com` by 100.00% and 100.00%, `vimeo.com` by 100.00% and 100.00%, `tripadvisor.com` by 100.00% and 100.00%, `trello.com` by 100.00% and 100.00%, `xing.com` by 100.00% and 100.00%, `pinterest.co.uk` by 133.33% and 100.00%, `behance.net`, `crunchbase.com`, `myspace.com`, `pinterest.ca`, and `pinterest.com.au` all changed by 200.00% on desktop and 100.00% on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr8oRb8NNs5MbpPpDi7QSsTUTPQL_vxQtQvmn52qGk97gpNhJIHa8VF0x5ZJtWXAFuEbDFZQB6TIuN/pubchart?oid=1046677446&format=interactive",
   sheets_gid="1452747230",
@@ -581,7 +581,7 @@ It is insightful to look at the `SameAs` entries and how they change over time. 
 
 {{ figure_markup(
   image="sameas-domain-average-relative-change.png",
-  caption="`SameAs` domain average relative change",
+  caption="`SameAs` domain average relative change.",
   description="Bar chart showing `fr` changed by 200% by both desktop and mobile pages, `site` by 200.00% on desktop and 100.00% on mobile, `de` by 200% and 100% respectively, `com` by 125% and 118%, `me` by 117% and 117%, `org` by 103% and 106%, `net` by 100% and 200%, `ca` by 100% and 200%, `co` by 100% and 117%, and finally `it`, `page`, and `es` by 100% on both desktop and mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr8oRb8NNs5MbpPpDi7QSsTUTPQL_vxQtQvmn52qGk97gpNhJIHa8VF0x5ZJtWXAFuEbDFZQB6TIuN/pubchart?oid=1247757269&format=interactive",
   sheets_gid="1452747230",
@@ -595,7 +595,7 @@ Looking at the domain names of the `SameAs` entries, and how they change over ti
 
 {{ figure_markup(
   image="json-ld-contexts-relative-change.png",
-  caption="JSON-LD contexts relative change",
+  caption="JSON-LD contexts relative change.",
   description="Bar chart showing `contao.org` had a 819% increase on desktop and 701% on mobile, for `contao.org` it was 819% and 701% respectively, for `rich-snippets.io` 579% and 849%, for `inventorychanger.ru` 232% and 94%, for `itall.com` 232% and 94%, for `ftmo.com` 232% and 189%, for `drivealfaaromeo.com` 232% and 189%, for `congresopuebla.gob.mx` 232% and 189%, for `pompiers.brussels` 232% and 189%, for `urldefense.com` 232% and 252%, for `googleapis.com` 227% and 214%, and finally for `archive.org` there was a 174% increase on desktop and 157% on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr8oRb8NNs5MbpPpDi7QSsTUTPQL_vxQtQvmn52qGk97gpNhJIHa8VF0x5ZJtWXAFuEbDFZQB6TIuN/pubchart?oid=1092709727&format=interactive",
   sheets_gid="1452747230",

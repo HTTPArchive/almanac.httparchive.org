@@ -198,7 +198,7 @@ Looking at the year on year growth, we see that Next.js has increased its lead o
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Relative % adoption of Jamstack frameworks", sheets_gid="1474840498", sql_file="ssg_compared_to_2019.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Relative % adoption of Jamstack frameworks.", sheets_gid="1474840498", sql_file="ssg_compared_to_2019.sql") }}</figcaption>
 </figure>
 
 And concentrating on the top 5 Jamstacks further shows Next.js's lead:

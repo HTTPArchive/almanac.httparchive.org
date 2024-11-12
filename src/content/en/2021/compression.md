@@ -32,7 +32,7 @@ HTTP compression is recommended for text-based content, such as [HTML](./markup)
 
 {{ figure_markup(
   image="compession-methods-by-content-type.png",
-  caption="Compression methods for different content types",
+  caption="Compression methods for different content types.",
   description="A stacked bar chart showing the usage rate of different compression algorithms broken down by the content type. The stacked bars divide up the use of Brotli, Gzip, and no compression. `text/plain` and `text/html` are the only content types that are compressed less than 50% of the time. `application/json` is compressed approximately 68% of the time, `image/svg+xml` approximately 64%. `text/css` and `application/javascript` are each compressed over 85% of the time, and `application/x-javascript` and `text/javascript` are compressed more than 90% of the time.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQtfyTM9VEweN_Hli3IuxxqU1CRap4V5Q28baEs7aEBResoPRgk9Dwp1m_vdS9lzNlfO8J4hZN7GPT7/pubchart?oid=1292728213&format=interactive",
   sheets_gid="234112121",

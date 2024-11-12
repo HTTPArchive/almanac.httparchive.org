@@ -1142,6 +1142,9 @@
       "2022": [
         "editors",
         "reviewers"
+      ],
+      "2024": [
+        "reviewers"
       ]
     },
     "website": "https://newlocalmedia.com"
@@ -1830,7 +1833,7 @@
         "reviewers"
       ]
     },
-    "mastodon": "@hdv@front-end.social",
+    "mastodon": "https://front-end.social/@hdv",
     "website": "https://hidde.blog/"
   },
   "housseindjirdeh": {
@@ -3132,7 +3135,6 @@
     "website": "https://blog.mgechev.com/"
   },
   "MiriamNaß": {
-    "github": "MiriamNaß",
     "name": "Miriam Naß",
     "teams": {
       "2024": [
@@ -3305,7 +3307,8 @@
     "name": "Niko Kaleev",
     "teams": {
       "2024": [
-        "authors"
+        "authors",
+        "editors"
       ]
     }
   },
@@ -3665,6 +3668,7 @@
     "name": "Raelene Morey",
     "teams": {
       "2024": [
+        "editors",
         "reviewers"
       ]
     }
@@ -4304,18 +4308,6 @@
     },
     "twitter": "tpiros",
     "website": "https://tamas.io"
-  },
-  "karmatosed": {
-    "avatar_url": "253067",
-    "github": "karmatosed",
-    "name": "Tammie Lister",
-    "teams": {
-      "2024": [
-        "reviewers"
-      ]
-    },
-    "twitter": "karmatosed",
-    "website": "https://tammielister.com/"
   },
   "tammyeverts": {
     "avatar_url": "15661032",

@@ -240,7 +240,7 @@ For first-party cookies, 23% on desktop and 22% on mobile have the `Secure` attr
 
 #### `SameSite`
 
-The <a hreflang="en" href="https://developer.mozilla.org/docs/Web/HTTP/Cookies#controlling_third-party_cookies_with_samesite">`SameSite`</a> cookie attribute allows sites to specify when cookies are included with cross-site requests:
+The [`SameSite`](https://developer.mozilla.org/docs/Web/HTTP/Cookies#controlling_third-party_cookies_with_samesite) cookie attribute allows sites to specify when cookies are included with cross-site requests:
 - `SameSite=Strict`: a cookie is only sent in response to a request from the same site as the cookie's origin.
 - `SameSite=Lax`: same as `SameSite=Strict` except that the browser also sends the cookie on navigation to the cookie's origin site. This is the default value of `SameSite`.
 - `SameSite=None`: cookies are sent on same-site or cross-site requests.

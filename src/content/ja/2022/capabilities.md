@@ -139,7 +139,7 @@ Web Share APIは、デスクトップで2021年の9.00%から2022年には8.84%�
 
 ## ホームスクリーンへの追加
 
-昨年のCapabilitiesレポートでは取り上げなかった機能の一つに、デバイスのホームスクリーンにWebアプリケーションを追加する機能があります。どのサイトがこの機能を持っているかを計算するために、[`beforeinstallprompt`](https://developer.mozilla.org/en-US/docs/Web/API/Window/beforeinstallprompt_event)イベントのリスナーがあるかどうかをテストしました。
+昨年のCapabilitiesレポートでは取り上げなかった機能の一つに、デバイスのホームスクリーンにWebアプリケーションを追加する機能があります。どのサイトがこの機能を持っているかを計算するために、[`beforeinstallprompt`](https://developer.mozilla.org/docs/Web/API/Window/beforeinstallprompt_event)イベントのリスナーがあるかどうかをテストしました。
 
 `beforeinstallprompt`イベントはChromium専用のAPIであり、現在[WICG内でインキュベート中](https://wicg.github.io/manifest-incubations/index.html#installation-prompts)です。
 
