@@ -29,7 +29,7 @@ Over the past 18 months, there have been significant changes in the structured d
 
 ### **Key developments in 2023-2024:**
 
-1. **New structured data types**: Google introduced several new types, including Vehicle listings, Course info, Vacation Rentals, and 3D Models for products. Also, in the eCommerce space, Google has integrated loyalty programs into its structured data offerings, particularly through the Merchant Center and Schema.org.
+1. **New structured data types**: Google introduced several new types, including Vehicle listings, Course info, Vacation Rentals, and 3D Models for products. Also, in the ecommerce space, Google has integrated loyalty programs into its structured data offerings, particularly through the Merchant Center and Schema.org.
 
 2. **Enhanced existing types**: Improvements to organization data, product variants, and the introduction of discount-rich results.
 
@@ -59,7 +59,7 @@ As the structured data ecosystem matures, we're witnessing a diversification in 
 
 4. **Digital Product Passports (DPPs)**:
 
-  Structured data plays a key role in emerging regulatory requirements like the EU’s <a hreflang="en" href="https://wordlift.io/blog/en/  digital-product-passport-implementation/">Digital Product Passports</a>, designed to enhance transparency and sustainability in eCommerce. These passports leverage GS1 Digital Links to provide comprehensive product information through QR codes.
+  Structured data plays a key role in emerging regulatory requirements like the EU’s <a hreflang="en" href="https://wordlift.io/blog/en/  digital-product-passport-implementation/">Digital Product Passports</a>, designed to enhance transparency and sustainability in ecommerce. These passports leverage GS1 Digital Links to provide comprehensive product information through QR codes.
 
 5. **Structured data for AI-powered Ddscovery**:
 
@@ -114,7 +114,7 @@ This chapter offers a data-driven analysis of structured data trends in 2023-202
 6. **Ecommerce innovations**:
 
 - Growth of Digital Product Passports and GS1 Digital Links.
-- Structured data’s role in eCommerce and new rich result types.
+- Structured data’s role in ecommerce and new rich result types.
 
 7. **Knowledge graphs & Graph RAG**:
 
@@ -126,13 +126,13 @@ This chapter offers a data-driven analysis of structured data trends in 2023-202
 
 9. **Emerging schemas & use cases**:
 
-- Innovations in schema types and their application in SEO and eCommerce.
+- Innovations in schema types and their application in SEO and ecommerce.
 
 10. **Future outlook**:
 
 - The evolving role of structured data in AI, semantic SEO, and content discovery.
 
-This chapter provides a comprehensive view of structured data’s impact on SEO, AI, and eCommerce, with actionable insights for developers and marketers.
+This chapter provides a comprehensive view of structured data’s impact on SEO, AI, and ecommerce, with actionable insights for developers and marketers.
 
 ## Key concepts
 
@@ -278,7 +278,7 @@ The importance of structured data in creating knowledge graphs cannot be oversta
 
 ## Digital Product Passports and GS1 Digital Link
 
-In the eCommerce and supply chain sectors, <a hreflang="en" href="https://wordlift.io/blog/en/digital-product-passport-implementation/">Digital Product Passports</a> (DPPs) and the <a hreflang="en" href="https://www.gs1.org/standards/gs1-digital-link">GS1 Digital Link standard</a> are revolutionizing how product information is shared and accessed. These technologies leverage structured data to create comprehensive, easily accessible digital representations of physical products, enhancing traceability, sustainability efforts, and consumer information access.
+In the ecommerce and supply chain sectors, <a hreflang="en" href="https://wordlift.io/blog/en/digital-product-passport-implementation/">Digital Product Passports</a> (DPPs) and the <a hreflang="en" href="https://www.gs1.org/standards/gs1-digital-link">GS1 Digital Link standard</a> are revolutionizing how product information is shared and accessed. These technologies leverage structured data to create comprehensive, easily accessible digital representations of physical products, enhancing traceability, sustainability efforts, and consumer information access.
 
 ## AI, machine learning, and structured data
 
@@ -676,7 +676,7 @@ Navigation-related types like `listitem` and `breadcrumblist` have also seen ste
   height=614
 )}}
 
-While Microdata remains a significant format for fundamental webpage structure, its use in dynamic content and eCommerce applications has been gradually overtaken by more modern formats like JSON-LD, which offer broader support for content enrichment and structured data scaling across large websites.
+While Microdata remains a significant format for fundamental webpage structure, its use in dynamic content and ecommerce applications has been gradually overtaken by more modern formats like JSON-LD, which offer broader support for content enrichment and structured data scaling across large websites.
 
 ## JSON-LD
 
@@ -684,7 +684,7 @@ JSON-LD types continue to be widely implemented across websites, with varied typ
 
 The diversity in implementation patterns reflects how different industries and website types prioritize specific structured data. For instance:
 
-- eCommerce sites frequently implement `Product`, `Offer`, and `Review` schemas.
+- ecommerce sites frequently implement `Product`, `Offer`, and `Review` schemas.
 - Local businesses prioritize `LocalBusiness`, `GeoCoordinates`, and `OpeningHoursSpecification` to enhance local search visibility.
 - Content publishers often utilize `Article` and `BlogPosting` schemas to structure written content effectively.
 
@@ -730,7 +730,7 @@ Let’s review the most critical patterns from the JSON-LD relationship analysis
 
 1. **Local Business Ecosystem.** The most sophisticated structured data implementations are occurring in the local business sector, where we see rich interconnections between LocalBusiness, OpeningHoursSpecification, PostalAddress, and GeoCoordinates. This suggests businesses are creating comprehensive digital identities that go beyond basic location information to include detailed operational data. This aligns with Google's increasing focus on local search and the growing importance of location-based services.
 2. **Content Organization.** Maturity There's a clear pattern of publishers implementing more sophisticated content structures. The relationships between Article, BlogPosting, and WebPage entities consistently link to ImageObject, author attributes, and publishing details. This isn't just about marking up individual pieces of content – it's about creating proper content graphs that establish clear relationships between content, creators, and organizational entities.
-3. **eCommerce Integration.** The product-related relationships show an interesting evolution. Beyond basic product markup, we're seeing more connections to ReviewRating, AggregateOffer, and PriceSpecification entities. This suggests eCommerce sites are building more comprehensive product knowledge graphs that can support advanced features like price tracking and inventory status.
+3. **ecommerce Integration.** The product-related relationships show an interesting evolution. Beyond basic product markup, we're seeing more connections to ReviewRating, AggregateOffer, and PriceSpecification entities. This suggests ecommerce sites are building more comprehensive product knowledge graphs that can support advanced features like price tracking and inventory status.
 
 Most notably, these patterns indicate that structured data implementation is moving beyond simple SEO markup toward creating true knowledge graphs that can support AI-powered search experiences and rich data integrations.
 
@@ -802,7 +802,7 @@ The vast gap between Schema.org and other contexts underscores its critical role
 
 The structured data landscape is rapidly evolving, marked by Google's introduction of specialized schemas for vehicles, courses, and 3D product models, alongside increased support for Digital Product Passports through GS1 Digital Link. The growing adoption of JSON-LD (now at 41% of pages) and sophisticated entity relationships through sameAs properties indicates a maturing ecosystem focused on comprehensive knowledge graph development.
 
-The data shows a clear shift toward more specialized implementation patterns, particularly in eCommerce and local business contexts. For instance, structured data types like `Product`, `Offer`, and `Review` have become more prevalent in eCommerce, while `LocalBusiness` and `GeoCoordinates` are increasingly used to improve local search visibility.
+The data shows a clear shift toward more specialized implementation patterns, particularly in ecommerce and local business contexts. For instance, structured data types like `Product`, `Offer`, and `Review` have become more prevalent in ecommerce, while `LocalBusiness` and `GeoCoordinates` are increasingly used to improve local search visibility.
 
 This shift can be partially attributed to Google’s policy changes, which encouraged webmasters to focus on more domain-specific schemas. Entity disambiguation has also become increasingly critical, with organizations leveraging structured data like `sameAs` and `Organization` to establish clear digital identities across platforms and knowledge bases.
 
@@ -824,13 +824,13 @@ As we analyze current trends, we also cast our gaze forward to emerging developm
 
 - **Regulatory impacts**
 
-  Finally, regulations such as the EU’s Digital Product Passport are poised to reshape future structured data standards. These initiatives will likely influence how structured data is applied, especially in domains like eCommerce and product traceability, encouraging more structured and transparent data practices.
+  Finally, regulations such as the EU’s Digital Product Passport are poised to reshape future structured data standards. These initiatives will likely influence how structured data is applied, especially in domains like ecommerce and product traceability, encouraging more structured and transparent data practices.
 
-By examining these aspects, we aim to provide a comprehensive overview of the state of structured data in 2024, its recent evolution, and its future trajectory. Whether you're a seasoned SEO professional, a web developer, an eCommerce strategist, or simply interested in the evolution of the web, this chapter offers valuable insights into how structured data is reshaping our digital world and paving the way for a more connected, transparent, and intelligent online experience.
+By examining these aspects, we aim to provide a comprehensive overview of the state of structured data in 2024, its recent evolution, and its future trajectory. Whether you're a seasoned SEO professional, a web developer, an ecommerce strategist, or simply interested in the evolution of the web, this chapter offers valuable insights into how structured data is reshaping our digital world and paving the way for a more connected, transparent, and intelligent online experience.
 
 ## Conclusion
 
-The analysis of structured data in 2024 highlights a clear shift from its SEO roots toward a broader, more strategic role in AI and semantic metadata. The dominance of RDFa and Open Graph on over 60% of pages, combined with JSON-LD’s growth (now on 41% of pages, particularly in eCommerce), points to a maturing technology. But the true impact lies in how structured data is transforming AI discovery and enhancing machine understanding.
+The analysis of structured data in 2024 highlights a clear shift from its SEO roots toward a broader, more strategic role in AI and semantic metadata. The dominance of RDFa and Open Graph on over 60% of pages, combined with JSON-LD’s growth (now on 41% of pages, particularly in ecommerce), points to a maturing technology. But the true impact lies in how structured data is transforming AI discovery and enhancing machine understanding.
 
 This year, we’ve seen significant changes in how search engines handle structured data. While Google has deprecated certain rich results, such as FAQs, HowTos, and SiteLinks, they’ve simultaneously introduced new types for vehicles, courses, 3D product models, loyalty cards, and certifications, expanding the scope of structured data. Even more importantly, structured data is now essential for AI systems, supporting tasks from fact-checking to improved search capabilities and training large language models (LLMs).
 
