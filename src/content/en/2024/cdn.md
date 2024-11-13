@@ -9,7 +9,7 @@ analysts: [pgjaiganesh, AlexMoening]
 translators: []
 results: https://docs.google.com/spreadsheets/d/15YXQQjyoQ0Bnfw9KNSz_YuGDiCfW978_WKEHvDXjdm4/
 joeviggiano_bio: Joe Viggiano is a Principal Solutions Architect at Amazon Web Services helping Media & Entertainment customers deliver media content at scale.
-pgjaiganesh_bio: Jaiganesh Girinathan is a Principal Edge Solutions Architect at Amazon Web Services.
+pgjaiganesh_bio: Jaiganesh Girinathan is a Principal Solutions Architect at Amazon Web Services with the mission to help customers deliver a fast and secure digital experience.
 AlexMoening_bio: Alex Moening is a Senior Edge Solutions Architect at Amazon Web Services.
 featured_quote: The benefits of utilizing CDNs have expanded beyond simple performance improvements. In 2024, CDNs play a crucial role in enabling global scalability, enhancing security postures, and facilitating the deployment of complex, distributed applications. By pushing more logic to the edge, businesses can create more responsive and personalized user experiences while reducing the load on origin servers.
 featured_stat_1: 70%
