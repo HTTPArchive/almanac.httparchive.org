@@ -626,11 +626,13 @@
   },
   "b_atish": {
     "name": "Beatriz González Mellídez",
+    "avatar_url": "756480",
     "teams": {
       "2024": [
         "reviewers"
       ]
     },
+    "github": "bgonzalez",
     "twitter": "b_atish",
     "linkedin": "beatrizgonzalezm",
     "website": "https://medium.com/@b_atish"
@@ -1985,8 +1987,7 @@
         "analysts",
         "authors"
       ]
-    },
-    "twitter": "SilentJMA"
+    }
   },
   "jroakes": {
     "avatar_url": "10191545",
@@ -3047,6 +3048,9 @@
       ],
       "2022": [
         "designers"
+      ],
+      "2024": [
+        "designers"
       ]
     }
   },
@@ -3088,6 +3092,7 @@
     "avatar_url": "116832",
     "github": "mgifford",
     "linkedin": "mgifford",
+    "bluesky": "mgifford.bsky.social",
     "mastodon": "https://mastodon.social/@mgifford",
     "name": "Mike Gifford",
     "teams": {
