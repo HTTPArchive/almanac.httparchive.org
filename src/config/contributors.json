@@ -2183,8 +2183,13 @@
   },
   "j9t": {
     "avatar_url": "1700772",
-    "github": "j9t",
     "name": "Jens Oliver Meiert",
+    "github": "j9t",
+    "website": "https://meiert.com/en/",
+    "mastodon": "https://mas.to/@j9t",
+    "bluesky": "j9t.bsky.social",
+    "twitter": "j9t",
+    "linkedin": "meiert",
     "teams": {
       "2020": [
         "authors",
@@ -2200,9 +2205,7 @@
       "2024": [
         "reviewers"
       ]
-    },
-    "twitter": "j9t",
-    "website": "https://meiert.com/en/"
+    }
   },
   "malchata": {
     "avatar_url": "1635238",
