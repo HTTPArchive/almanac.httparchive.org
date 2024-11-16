@@ -2,7 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: マークアップ
 description: 2022年版Web Almanacのマークアップの章では、文書データ（doctypes、圧縮、言語、HTML conformance、文書サイズ）、HTML要素や属性の使用、データ属性、ソーシャルメディアについて解説しています。
-hero_alt: Hero image of Web Almanac chracters as dressed as constructor workers putting togehter a web page from HTML element blocks.
+hero_alt: Hero image of Web Almanac characters as dressed as constructor workers putting together a web page from HTML element blocks.
 authors: [j9t]
 reviewers: [bkardell, zcorpan]
 analysts: [rviscomi]

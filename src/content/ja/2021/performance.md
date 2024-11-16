@@ -2,7 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: パフォーマンス
 description: 2021年版Web Almanacのパフォーマンス編では、Core Web Vitals（最大コンテンツの描画、累積レイアウトシフト、初回入力遅延）に加え、コンテンツの初回ペイントと最初のバイトまでの時間をカバーしています。
-hero_alt: Hero image of Web Almanac chracters images to a web page, while another Web Almanac character times them with a stopwatch.
+hero_alt: Hero image of Web Almanac characters images to a web page, while another Web Almanac character times them with a stopwatch.
 authors: [siakaramalegos]
 reviewers: [rviscomi, kevinfarrugia, estelle, ziemek-bucko, jzyang, fili, tunetheweb, samarpanda, edmondwwchan]
 analysts: [siakaramalegos, rviscomi, Nithanaroy]

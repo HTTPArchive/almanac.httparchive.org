@@ -2,7 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Mise en cache
 description: Le chapitre sur la mise en cache de Web Almanac couvre la gestion de la mise en cache, sa validité, les TTLs, les headers Vary, les cookies, l'AppCache, les service workers et d'autres possibilités.
-hero_alt: Hero image of Web Almanac charactes and resources in parking slots in a car park with parking meters in from of them. The middle spot is labelled 304.
+hero_alt: Hero image of Web Almanac characters and resources in parking slots in a car park with parking meters in from of them. The middle spot is labelled 304.
 authors: [paulcalvano]
 reviewers: [foxdavidj, bkardell]
 analysts: [paulcalvano, foxdavidj]

@@ -2,7 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: HTTP
 description: 2021年版Web AlmanacのHTTPの章では、Web上で使用されているHTTPの歴史的バージョンや、HTTP/2やHTTP/3を含む新バージョンの増加に関するデータ、およびHTTPライフサイクルの一部である主要メトリクスを検証しています。
-hero_alt: Hero image of Web Almanac chracters driving vehicles in various lanes carrying script and images resources.
+hero_alt: Hero image of Web Almanac characters driving vehicles in various lanes carrying script and images resources.
 authors: [dominiclovell]
 reviewers: [tunetheweb, rmarx]
 analysts: [tunetheweb]

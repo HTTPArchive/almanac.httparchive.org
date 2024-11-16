@@ -2,7 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Third Parties
 description: Third Parties chapter of the 2022 Web Almanac covering data of what third parties are used on the web and a deep dive into preventing them causing negative performance impacts.
-hero_alt: Hero image of Web Almanac chracters plugging various things into a web page.
+hero_alt: Hero image of Web Almanac characters plugging various things into a web page.
 authors: [imeugenia]
 reviewers: [tunetheweb, kevinfarrugia, alexnj]
 analysts: [kevinfarrugia]

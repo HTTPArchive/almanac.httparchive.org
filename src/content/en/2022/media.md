@@ -2,7 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Media
 description: Media chapter of the 2022 Web Almanac covering how images and videos are currently being encoded, embedded, styled, and delivered on the web.
-hero_alt: Hero image of Web Almanac chracters projecting an image onto a screen while other Web Almanac characters walk to cinema seats with popcorn to watch the projection.
+hero_alt: Hero image of Web Almanac characters projecting an image onto a screen while other Web Almanac characters walk to cinema seats with popcorn to watch the projection.
 authors: [eeeps, akshay-ranganath]
 reviewers: [nhoizey, yoavweiss]
 analysts: [eeeps, akshay-ranganath]

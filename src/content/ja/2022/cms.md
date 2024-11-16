@@ -2,7 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: CMS
 description: 2022年のWeb AlmanacのCMS章では、CMSの採用状況、CMSプラットフォーム上で動作するウェブサイトのユーザーエクスペリエンス、およびCMSのリソース量について扱っています。
-hero_alt: Hero image of Web Almanac charactes on a type writer writing a web page.
+hero_alt: Hero image of Web Almanac characters on a type writer writing a web page.
 authors: [sirjonathan]
 reviewers: [alexdenning, alonkochba, dknauss]
 analysts: [csliva]
