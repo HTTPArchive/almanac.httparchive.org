@@ -2,7 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Resource Hints
 description: Resource Hints chapter of the 2019 Web Almanac covering usage of dns-prefetch, preconnect, preload, prefetch, priority hints, and native lazy loading.
-hero_alt: Hero image of Web Almanac charactes lining up to HTML, JavaScript, and image resources in a line on the way to a web page.
+hero_alt: Hero image of Web Almanac characters lining up to HTML, JavaScript, and image resources in a line on the way to a web page.
 authors: [khempenius]
 reviewers: [andydavies, tunetheweb, yoavweiss]
 analysts: [rviscomi]
