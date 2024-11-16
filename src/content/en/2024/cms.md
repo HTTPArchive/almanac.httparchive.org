@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: CMS
 description: CMS chapter of the 2024 Web Almanac covering CMS adoption, user experience of websites running on CMS platforms, and CMS resource weights.
+hero_alt: Hero image of Web Almanac charactes on a type writer writing a web page.
 authors: [sirjonathan, LoraRaykova, niko-kaleev]
 reviewers: [raewrites, dknauss]
 editors: [tunetheweb, raewrites]

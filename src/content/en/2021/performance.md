@@ -1,7 +1,8 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Performance
-description: Performance chapter of the 2021 Web Almanac covering Core Web Vitals (Largest Contentful Paint, Cumulative Layout Shift, First Input Delay) as well as First Contentful Paint and Time to First Byte
+description: Performance chapter of the 2021 Web Almanac covering Core Web Vitals (Largest Contentful Paint, Cumulative Layout Shift, First Input Delay) as well as First Contentful Paint and Time to First Byte.
+hero_alt: Hero image of Web Almanac chracters images to a web page, while another Web Almanac character times them with a stopwatch.
 authors: [siakaramalegos]
 reviewers: [rviscomi, kevinfarrugia, estelle, ziemek-bucko, jzyang, fili, tunetheweb, samarpanda, edmondwwchan]
 analysts: [siakaramalegos, rviscomi, Nithanaroy]

@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: PWA
 description: PWA chapter of the 2021 Web Almanac covering service workers (usage and features), Web App Manifests, Lighthouse insights, service worker libraries (including Workbox), Web Push notifications and distribution.
+hero_alt: Hero image of Web Almanac characters converting a web page to a mobile web app.
 authors: [demianrenzulli]
 reviewers: [tunetheweb, webmaxru, jeffposnick, andreban, Schweinepriester, hemanth, thepassle, tropicadri]
 analysts: [tunetheweb, demianrenzulli]

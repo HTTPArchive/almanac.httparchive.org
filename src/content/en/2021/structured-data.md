@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Structured Data
 description: Structured Data chapter of the 2021 Web Almanac covering adoption and impact of schema.org, RDFa, Microdata and more.
+hero_alt: Hero image of a Web Almanac chracter pulling an identification card out of a wallet and plugging it into a web page.
 authors: [jonoalderson, cyberandy]
 reviewers: [vdwijngaert, philbarker]
 analysts: [GregBrimble]

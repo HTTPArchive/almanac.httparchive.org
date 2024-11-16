@@ -1,7 +1,8 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Interoperability
-description: Interoperability chapter of the 2022 Web Almanac covering Compat 2021 (Gird and Flexbox) and Interop 2022 (Forms, Scrolling, Typography and encodings, dialog, containment, subgrid, color spaces, viewport units and cascade layers)
+description: Interoperability chapter of the 2022 Web Almanac covering Compat 2021 (Gird and Flexbox) and Interop 2022 (Forms, Scrolling, Typography and encodings, dialog, containment, subgrid, color spaces, viewport units and cascade layers).
+hero_alt: Hero image of Web Almanac characters on four web pages with hints of the branding of various browsers.
 authors: [bkardell]
 reviewers: [meyerweb, foolip]
 analysts: [rviscomi, kevinfarrugia]

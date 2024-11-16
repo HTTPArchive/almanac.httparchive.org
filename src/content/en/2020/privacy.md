@@ -1,7 +1,7 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Privacy
-description: Privacy chapter of the 2020 Web Almanac covering online tracking cookies, privacy enhancing technologies (PET) and privacy policies
+description: Privacy chapter of the 2020 Web Almanac covering online tracking cookies, privacy enhancing technologies (PET) and privacy policies.
 authors: [ydimova]
 reviewers: [ldevernay]
 analysts: [ydimova, max-ostapenko]

@@ -1,7 +1,8 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: CDN
-description: CDN chapter of the 2021 Web Almanac covering adoption of CDNs, top CDN players, the impact of CDNs on TLS, HTTP/2+, and Brotli adoption
+description: CDN chapter of the 2021 Web Almanac covering adoption of CDNs, top CDN players, the impact of CDNs on TLS, HTTP/2+, and Brotli adoption.
+hero_alt: Hero image of Web Almanac charactes extending a plug from a cloud into a web page.
 authors: [Navaneeth-akam]
 reviewers: [jzyang, boosef]
 analysts: [paulcalvano]
