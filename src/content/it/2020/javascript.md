@@ -2,7 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: JavaScript
 description: Capitolo JavaScript del Web Almanac 2020 che copre quanto JavaScript utilizziamo sul Web, compressione, librerie e framework, caricamento e mappe di origine.
-hero_alt: Hero image of the Web Almanac chracters cycling to power a website.
+hero_alt: Hero image of the Web Almanac characters cycling to power a website.
 authors: [tkadlec]
 reviewers: [ibnesayeed, denar90]
 analysts: [rviscomi, paulcalvano]

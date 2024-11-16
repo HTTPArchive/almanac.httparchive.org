@@ -2,7 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: WebAssembly
 description: WebAssembly chapter of the 2021 Web Almanac covering Wasm compression, section sizes, most popular instructions, and post-MVP proposals.
-hero_alt: Hero image of Web Almanac chracters performing scientific experiments on various code symbols resulting in 1's and 0's coming out the other end.
+hero_alt: Hero image of Web Almanac characters performing scientific experiments on various code symbols resulting in 1's and 0's coming out the other end.
 authors: [RReverser]
 reviewers: [jsoverson, carlopi, kripken, rviscomi, tunetheweb]
 analysts: [RReverser]

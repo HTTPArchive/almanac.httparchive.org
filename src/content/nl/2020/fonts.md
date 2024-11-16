@@ -2,7 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Lettertypen
 description: Hoofdstuk over lettertypen van de Web Almanac 2020 waarin wordt beschreven waar lettertypen worden geladen, lettertype-indelingen, laadprestaties voor lettertypen, variabele lettertypen en kleurlettertypen.
-hero_alt: Hero image of Web Almanac chracters on an assembly line preparing various F letters in various styles and shapes.
+hero_alt: Hero image of Web Almanac characters on an assembly line preparing various F letters in various styles and shapes.
 authors: [raphlinus, jpamental]
 reviewers: [RoelN, svgeesus, davelab6, rsheeter, mandymichael]
 analysts: [AbbyTsai]

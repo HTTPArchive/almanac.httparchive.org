@@ -2,7 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: マークアップ
 description: 2021年版Web Almanacのマークアップの章では、要素や属性の使用状況、文書の傾向、新しい規格の採用率などを取り上げています。
-hero_alt: Hero image of Web Almanac chracters as dressed as constructor workers putting togehter a web page from HTML element blocks.
+hero_alt: Hero image of Web Almanac characters as dressed as constructor workers putting together a web page from HTML element blocks.
 authors: [AlexLakatos]
 reviewers: [j9t, bkardell, shantsis, tunetheweb, rviscomi]
 analysts: [kevinfarrugia]

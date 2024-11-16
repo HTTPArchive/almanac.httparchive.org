@@ -2,7 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Opmaak
 description: Opmaakhoofdstuk van de Web Almanac 2020 met algemene observaties, het gebruik van elementen en attributen, maar ook trivia en trends.
-hero_alt: Hero image of Web Almanac chracters as dressed as constructor workers putting togehter a web page from HTML element blocks.
+hero_alt: Hero image of Web Almanac characters as dressed as constructor workers putting together a web page from HTML element blocks.
 authors: [j9t, catalinred, iandevlin]
 j9t_bio: Jens Oliver Meiert is een webontwikkelaar en auteur (<a hreflang="en" href="https://leanpub.com/css-optimization-basics"><cite>CSS Optimization Basics</cite></a>, <a hreflang="en" href="https://leanpub.com/web-development-glossary"><cite>The Web Development Glossary</cite></a>), die werkt als ingenieur manager bij <a hreflang="en" href="https://www.jimdo.com/">Jimdo</a>. Hij is een expert op het gebied van webontwikkeling, waar hij gespecialiseerd is in HTML- en CSS-optimalisatie. Jens draagt bij aan technische standaarden en schrijft regelmatig over zijn werk en onderzoek, met name op zijn website, <a hreflang="en" href="https://meiert.com/en/">meiert.com</a>.
 catalinred_bio: Catalin Rosu is een front-end ontwikkelaar bij <a hreflang="en" href="https://www.caphyon.com/">Caphyon</a> en werkt momenteel aan <a hreflang="en" href="https://www.wattspeed.com/">Wattspeed</a>. Hij heeft een passie voor webstandaarden en een scherp oog voor geweldige Gebruikerservaring en gebruikersinterface (UX & UI), dingen die hij <a href="https://x.com/catalinred">tweet</a> en waarover hij schrijft op <a hreflang="en" href="https://catalin.red/">zijn website</a>.

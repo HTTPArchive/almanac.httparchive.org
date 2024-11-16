@@ -2,7 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Marcado Web
 description: Capítulo sobre marcado del Web Almanac de 2019 que cubre elementos utilizados, elementos personalizados, valor, productos y casos de uso comunes.
-hero_alt: Hero image of Web Almanac chracters as dressed as constructor workers putting togehter a web page from HTML element blocks.
+hero_alt: Hero image of Web Almanac characters as dressed as constructor workers putting together a web page from HTML element blocks.
 authors: [bkardell]
 reviewers: [zcorpan, tomhodgins, matthewp]
 analysts: [rviscomi]

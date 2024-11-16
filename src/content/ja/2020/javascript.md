@@ -2,7 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: JavaScript
 description: 2020年Web Almanac「JavaScript」の章では、ウェブ上でどれだけJavaScriptを使用しているか、圧縮、ライブラリとフレームワーク、ロード、ソースマップを網羅しています。
-hero_alt: Hero image of the Web Almanac chracters cycling to power a website.
+hero_alt: Hero image of the Web Almanac characters cycling to power a website.
 authors: [tkadlec]
 reviewers: [ibnesayeed, denar90]
 analysts: [rviscomi, paulcalvano]

@@ -2,7 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Jamstack
 description: Le chapitre Jamstack de l'Almanach du Web 2022 couvre la quantification des sites Jamstack, la croissance de Jamstack, les frameworks de Jamstack et l'hébergement.
-hero_alt: Hero image of the Web Almanac chracters using a large gas cylinder with script markings on the front to inflate a web page.
+hero_alt: Hero image of the Web Almanac characters using a large gas cylinder with script markings on the front to inflate a web page.
 authors: [seldo, whitep4nth3r]
 reviewers: [tunetheweb]
 analysts: [seldo, tunetheweb]

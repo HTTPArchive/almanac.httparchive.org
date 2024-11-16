@@ -2,7 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: JavaScript
 description: JavaScript chapter of the 2024 Web Almanac covering the usage of JavaScript on the web, libraries and frameworks, compression, web components, and source maps.
-hero_alt: Hero image of the Web Almanac chracters cycling to power a website.
+hero_alt: Hero image of the Web Almanac characters cycling to power a website.
 authors: []
 reviewers: []
 editors: []
