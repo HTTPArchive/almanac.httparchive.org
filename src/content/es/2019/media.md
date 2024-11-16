@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Media
 description: Capítulo Multimedia del 2019 Web Almanac que cubre los tamaños y formatos de archivo de imagen, las imágenes adaptables (responsive), los client hints, el lazy loading, la accesibilidad y los vídeos.
+hero_alt: Hero image of Web Almanac chracters projecting an image onto a screen while other Web Almanac characters walk to cinema seats with popcorn to watch the projection.
 authors: [colinbendell, dougsillars]
 reviewers: [ahmadawais, eeeps]
 analysts: [dougsillars, rviscomi]

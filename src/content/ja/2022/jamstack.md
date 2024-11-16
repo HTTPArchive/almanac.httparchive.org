@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Jamstack
 description: 2022年のWeb AlmanacのJamstackの章は、Jamstackサイトの量的分析、Jamstackの成長、Jamstack的なフレームワークとホスティングについて扱っています。
+hero_alt: Hero image of the Web Almanac chracters using a large gas cylinder with script markings on the front to inflate a web page.
 authors: [seldo, whitep4nth3r]
 reviewers: [tunetheweb]
 analysts: [seldo, tunetheweb]

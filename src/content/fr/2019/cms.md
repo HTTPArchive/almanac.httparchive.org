@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: CMS
 description: Chapitre CMS de l'Almanach Web 2019 couvrant l'adoption des CMS, la façon dont les solutions CMS sont construites, l'expérience utilisateur des sites web propulsés par les CMS et l'innovation des CMS.
+hero_alt: Hero image of Web Almanac charactes on a type writer writing a web page.
 authors: [ernee, amedina]
 reviewers: [sirjonathan]
 analysts: [rviscomi]

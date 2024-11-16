@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: 相互運用性
 description: Compat 2021（GirdとFlexbox）とInterop 2022（フォーム、スクロール、タイポグラフィとエンコーディング、ダイアログ、コンテントメント、サブグリッド、カラースペース、ビューポートユニット、カスケードレイヤー）をカバーする2022 Web Almanacの相互運用性の章。
+hero_alt: Hero image of Web Almanac characters on four web pages with hints of the branding of various browsers.
 authors: [bkardell]
 reviewers: [meyerweb, foolip]
 analysts: [rviscomi, kevinfarrugia]

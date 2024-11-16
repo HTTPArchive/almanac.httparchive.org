@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: 无障碍可访问性
 description: 2019 Web Almanac 网络年鉴的无障碍易访问性章节，涵盖易阅读、媒体、易于导航和与辅助技术的兼容性。
+hero_alt: Hero image of a robot with a blue, human accessibility icon on its front scanning a web page, while Web Almanac characters check some labels.
 authors: [nektarios-paisios, foxdavidj, kleinab]
 reviewers: [ljme]
 analysts: [dougsillars, rviscomi, foxdavidj]

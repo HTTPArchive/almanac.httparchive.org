@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Возможности
 description: Глава "Возможности" издания Web Almanac за 2020 год посвящена совершенно новым, мощным API в веб-платформе.
+hero_alt: Hero image of Web Almanac charactes with superhero capes plugging various capabilities into a web page.
 authors: [christianliebel]
 reviewers: [tomayac]
 analysts: [tomayac]

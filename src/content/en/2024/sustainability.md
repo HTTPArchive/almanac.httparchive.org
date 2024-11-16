@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Sustainability
 description: Sustainability chapter of the 2024 Web Almanac covering environmental impacts of web pages, where they come from and how to reduce them.
+hero_alt: Hero image of Web Almanac characters installing solar panels on top of a web page.
 authors: [ldevernay, burakguneli, ines-akrap, AlexDawsonUK, mgifford, timfrick]
 reviewers: [lebreRafael]
 editors: [cqueern]

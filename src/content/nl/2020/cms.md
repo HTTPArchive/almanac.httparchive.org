@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: CMS
 description: CMS-hoofdstuk van de Web Almanac van 2020 over CMS-acceptatie, hoe CMS-suites worden gebouwd, gebruikerservaring van CMS-aangedreven websites en CMS-innovatie.
+hero_alt: Hero image of Web Almanac charactes on a type writer writing a web page.
 authors: [alexdenning]
 reviewers: [sirjonathan, ernee, amedina]
 analysts: [GregBrimble, rviscomi]

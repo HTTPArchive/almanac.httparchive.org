@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: リソースヒント
 description: 2021年版Web Almanacのリソースヒントの章では、リソースヒントの採用、その使い方、バッドプラクティス、パフォーマンスへの影響について説明しています。
+hero_alt: Hero image of Web Almanac charactes lining up to HTML, JavaScript, and image resources in a line on the way to a web page.
 authors: [kevinfarrugia]
 reviewers: [siakaramalegos, tunetheweb, andydavies, samarpanda, westonruter]
 analysts: [Nithanaroy]

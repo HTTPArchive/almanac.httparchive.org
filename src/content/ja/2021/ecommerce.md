@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Eコマース
 description: 2021 Web AlmanacのEコマースの章では、Eコマースプラットフォーム、ページ重量、画像、サードパーティ、コアウェブバイタルとlighthouseパフォーマンスメトリクス、SEO、PWAをカバーしています。
+hero_alt: Hero image of a Web Almanac character at a super market checkout loading items from a shopping basket onto the conveyor belt while another character payes with a credit card.
 authors: [bobbyshaw]
 reviewers: [rockeynebhwani, alankent, soulcorrosion, fili]
 analysts: [rrajiv]

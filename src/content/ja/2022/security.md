@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: セキュリティ
 description: 2022年のWeb Almanacのセキュリティ章は、トランスポート層セキュリティ、コンテンツの組み込み（CSP、Feature Policy、SRI）、Web防衛メカニズム（XSS、XS-Leaksの対策）、およびセキュリティメカニズムの採用を推進する要因について取り上げています。
+hero_alt: Hero image of Web Almanac characters padlocking a web page, while other Web Almanac characters subdue a masked thief who has a set of bolt cutters.
 authors: [SaptakS, lirantal, clarkio]
 reviewers: [kushaldas, tunetheweb]
 analysts: [VictorLeP, vikvanderlinden, GJFR]

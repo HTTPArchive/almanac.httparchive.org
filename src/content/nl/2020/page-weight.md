@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Paginagewicht
 description: Het hoofdstuk Paginagewicht van de Web Almanac 2020 behandelt waarom paginagewicht belangrijk is, bandbreedte, complexe pagina's, paginadruk in de loop van de tijd, paginaverzoeken en bestandsindelingen.
+hero_alt: Hero image of Web Almanac charactes using a set of scales to weigh a web page against variuos boxes labelled with various different kilobytes.
 authors: [henrihelvetica]
 reviewers: [paulcalvano]
 analysts: [paulcalvano]
