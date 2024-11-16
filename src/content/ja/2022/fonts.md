@@ -2,6 +2,7 @@
 ##See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: フォント
 description: 2022年版Web Almanacのフォントの章では、フォントの読み込み先、フォントフォーマット、フォントの読み込み性能、可変フォント、カラーフォントについて説明しています。
+hero_alt: Hero image of Web Almanac chracters on an assembly line preparing various F letters in various styles and shapes.
 authors: [bramstein]
 reviewers: [alexnj, jmsole, RoelN, svgeesus]
 analysts: [bramstein, konfirmed]

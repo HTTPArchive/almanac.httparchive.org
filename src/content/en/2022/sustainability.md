@@ -1,7 +1,8 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/
 title: Sustainability
-description: Sustainability chapter of the 2022 Web Almanac covering environmental impacts of web pages, where they come from and how to reduce them
+description: Sustainability chapter of the 2022 Web Almanac covering environmental impacts of web pages, where they come from and how to reduce them.
+hero_alt: Hero image of Web Almanac characters installing solar panels on top of a web page.
 authors: [ldevernay, gerrymcgovernireland, timfrick]
 reviewers: [mrchrisadams, cqueern, Djohn12]
 analysts: [fershad, camcash17, 4upz]

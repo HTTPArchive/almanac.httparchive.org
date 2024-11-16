@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: メディア
 description: 画像ファイルのサイズとフォーマット、レスポンシブ・イメージ、クライアント・ヒント、レイジー・ローディング、アクセシビリティ、ビデオなど、2020年版Web Almanacのメディアの章です。
+hero_alt: Hero image of Web Almanac chracters projecting an image onto a screen while other Web Almanac characters walk to cinema seats with popcorn to watch the projection.
 authors: [tpiros, bseymour, eeeps]
 reviewers: [nhoizey, colinbendell, dougsillars, Navaneeth-akam]
 analysts: [smatei]

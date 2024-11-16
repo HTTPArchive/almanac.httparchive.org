@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: セキュリティ
 description: 2020年版Web Almanacのセキュリティの章では、トランスポート層のセキュリティ、コンテンツセキュリティ（CSP、機能ポリシー、SRI）、Web防御メカニズム（XSS、XS-Leaksへの取り組み）、広く使用されている技術の更新方法をカバーしています。
+hero_alt: Hero image of Web Almanac characters padlocking a web page, while other Web Almanac characters subdue a masked thief who has a set of bolt cutters.
 authors: [tomvangoethem, nrllh, tunetheweb]
 reviewers: [cqueern, edmondwwchan]
 analysts: [tomvangoethem, nrllh]

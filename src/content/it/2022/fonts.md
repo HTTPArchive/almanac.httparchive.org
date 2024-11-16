@@ -2,6 +2,7 @@
 ##See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Font
 description: Capitolo sui font del Web Almanac 2022 che tratta i seguenti argomenti&colon; da dove vengono serviti i font, i formati di font, le prestazioni di caricamento dei font, i font variabili e i font a colori.
+hero_alt: Hero image of Web Almanac chracters on an assembly line preparing various F letters in various styles and shapes.
 authors: [bramstein]
 reviewers: [alexnj, jmsole, RoelN, svgeesus]
 analysts: [bramstein, konfirmed]

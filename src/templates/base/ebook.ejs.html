@@ -25,7 +25,7 @@
 
             <!-- Only use JPG for Ebook as not sure on support for other formats in PDFs -->
             <picture>
-                <img src="{{ chapter_hero_dir }}hero_lg.jpg" class="content-banner" alt="" width="866" height="433">
+                <img src="{{ chapter_hero_dir }}hero_lg.jpg" class="content-banner" alt="{{ metadata.get('hero_alt') or '' }}" width="866" height="433">
             </picture>
 
             <div class="byline">{{ self.written_by_before() }}
@@ -114,7 +114,7 @@
                                 </a>
                                 {% endif %}
                                 {% if authordata.bluesky %}
-                                <a class="bluesky" href="https://bsky.app/{{ authordata.bluesky }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-bluesky">
+                                <a class="bluesky" href="https://bsky.app/profile/{{ authordata.bluesky }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-bluesky">
                                     <svg aria-hidden="true">
                                         <title id="{{ metadata.get('chapter') }}-author-{{ author }}-bluesky">{{ onBluesky(authordata.bluesky) }}</title>
                                         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bluesky-logo"></use>

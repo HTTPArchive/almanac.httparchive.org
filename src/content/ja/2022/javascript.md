@@ -3,6 +3,7 @@
 title: JavaScript
 #TODO - Review and update chapter description
 description: 2022年版Web AlmanacのJavaScriptの章では、Web上でのJavaScriptの使用方法、ライブラリとフレームワーク、圧縮、Webコンポーネント、ソースマップをカバーしています。
+hero_alt: Hero image of the Web Almanac chracters cycling to power a website.
 authors: [malchata]
 reviewers: [mgechev, pankajparkar, NishuGoel, housseindjirdeh, kevinfarrugia, tunetheweb]
 analysts: [NishuGoel, kevinfarrugia]

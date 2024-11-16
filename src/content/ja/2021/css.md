@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: CSS
 description: 2021年版Web AlmanacのCSSの章では、Web上でのCSSの使用に関するトレンド、変化、パターンを取り上げています。
+hero_alt: Hero image of almanac chracters measuring and painting a web page.
 authors: [meyerweb, GeekBoySupreme]
 reviewers: [svgeesus, j9t, estelle, bkardell, argyleink, LeaVerou]
 analysts: [rviscomi]

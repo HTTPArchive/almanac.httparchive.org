@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: CDN
 description: 2021年版Web AlmanacのCDNの章では、CDNの採用、トップCDNプレーヤー、CDNがTLS、HTTP/2+、Brotliの採用に与える影響について解説しています。
+hero_alt: Hero image of Web Almanac charactes extending a plug from a cloud into a web page.
 authors: [Navaneeth-akam]
 reviewers: [jzyang, boosef]
 analysts: [paulcalvano]

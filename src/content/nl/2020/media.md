@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Media
 description: Mediahoofdstuk van de Web Almanac 2020 met betrekking tot bestandsgroottes en -indelingen van afbeeldingen, responsieve afbeeldingen, cliënthints, lazy loading, toegankelijkheid en video.
+hero_alt: Hero image of Web Almanac chracters projecting an image onto a screen while other Web Almanac characters walk to cinema seats with popcorn to watch the projection.
 authors: [tpiros, bseymour, eeeps]
 reviewers: [nhoizey, colinbendell, dougsillars, Navaneeth-akam]
 analysts: [smatei]

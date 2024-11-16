@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Mobile Web
 description: Mobile Web chapter of the 2021 Web Almanac covering page web vitals, images, technology adoption, accessibility and more.
+hero_alt: Hero image of Web Almanac characters squeezing a web page onto a mobile screen.
 authors: [fellowhuman1101, dwsmart, ashleyish]
 reviewers: [foxdavidj, fili]
 analysts: [rvth, foxdavidj]

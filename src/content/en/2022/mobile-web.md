@@ -3,6 +3,7 @@
 title: Mobile Web
 #TODO - Review and update chapter description
 description: Mobile Web chapter of the 2022 Web Almanac, focusing on accessibility and performance.
+hero_alt: Hero image of Web Almanac characters squeezing a web page onto a mobile screen.
 authors: [Suzzicks]
 reviewers: [dwsmart, foxdavidj, hemanth]
 analysts: [siakaramalegos, rviscomi]

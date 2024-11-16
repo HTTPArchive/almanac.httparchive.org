@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: 構造化データ
 description: schema.org、RDFa、Microdataなどの採用や影響について解説した2021年版Web Almanacの「構造化データ」の章です。
+hero_alt: Hero image of a Web Almanac chracter pulling an identification card out of a wallet and plugging it into a web page.
 authors: [jonoalderson, cyberandy]
 reviewers: [vdwijngaert, philbarker]
 analysts: [GregBrimble]

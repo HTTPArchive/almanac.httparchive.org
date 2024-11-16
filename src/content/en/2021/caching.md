@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Caching
 description: Caching chapter of the 2021 Web Almanac covering cache-control, expires, TTLs, validity, vary, set-cookies, service workers and opportunities.
+hero_alt: Hero image of Web Almanac charactes and resources in parking slots in a car park with parking meters in from of them. The middle spot is labelled 304.
 authors: [Zizzamia, jessnicolet]
 reviewers: [WilhelmWillie, roryhewitt]
 analysts: [rviscomi]

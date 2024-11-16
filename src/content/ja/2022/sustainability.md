@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/
 title: 持続可能性
 description: 2022年版Web Almanacの持続可能性の章では、ウェブページの環境への影響、その原因、そしてそれらをどのように削減するかについて説明しています。
+hero_alt: Hero image of Web Almanac characters installing solar panels on top of a web page.
 authors: [ldevernay, gerrymcgovernireland, timfrick]
 reviewers: [mrchrisadams, cqueern, Djohn12]
 analysts: [fershad, camcash17, 4upz]

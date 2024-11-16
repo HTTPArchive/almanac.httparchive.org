@@ -1,6 +1,7 @@
 ---
 title: Privacidad
 description: El capítulo sobre Privacidad del Web Almanac 2022 estudia la adopción y el impacto de los rastreadores online, las señales de preferencia de privacidad y las iniciativas de los navegadores para conseguir una web más respetuosa con la privacidad.
+hero_alt: Hero image of Web Almanac characters with cameras, phones, and microphones acting like paparazzi while another character pulls back a shower curtain to reveal a web page behind it.
 authors: [tomvangoethem, nrllh]
 reviewers: [iskander-sanchez-rola]
 analysts: [max-ostapenko, ydimova]
