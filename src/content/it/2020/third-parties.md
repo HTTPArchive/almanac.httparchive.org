@@ -2,7 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Third Parties
 description: Capitolo Terze parti del 2020 Web Almanac che copre i dati di cosa vengono utilizzate le terze parti, per cosa vengono utilizzate, impatti sulle prestazioni e impatti sulla privacy.
-hero_alt: Hero image of Web Almanac chracters plugging various things into a web page.
+hero_alt: Hero image of Web Almanac characters plugging various things into a web page.
 authors: [simonhearne]
 reviewers: [jzyang, exterkamp]
 analysts: [max-ostapenko, paulcalvano]

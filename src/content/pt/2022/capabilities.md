@@ -2,7 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Capacidades
 description: Capítulo "Capacidades" do Web Almanac de 2022 abordando APIs inovadoras e poderosas da plataforma web que proporcionam acesso a interfaces de hardware para aplicativos web, aprimoram aplicativos de produtividade baseados na web e muito mais.
-hero_alt: Hero image of Web Almanac charactes with superhero capes plugging various capabilities into a web page.
+hero_alt: Hero image of Web Almanac characters with superhero capes plugging various capabilities into a web page.
 authors: [MichaelSolati]
 reviewers: [tomayac, christianliebel]
 analysts: [tunetheweb]

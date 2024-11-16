@@ -2,7 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Compressie
 description: Het hoofdstuk over compressie van de Web Almanac van 2020 behandelt HTTP-compressie, algoritmen, inhoudstypen, compressie van de eerste partij en van derden en mogelijkheden.
-hero_alt: Hero image of Web Almanac charactes using a ray gun to shrink an HTML page to make it much smaller.
+hero_alt: Hero image of Web Almanac characters using a ray gun to shrink an HTML page to make it much smaller.
 authors: [mo271, veluca93, sboukortt, jyrkialakuijala]
 reviewers: [paulcalvano]
 analysts: [AbbyTsai]

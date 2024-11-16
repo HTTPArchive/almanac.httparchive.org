@@ -2,7 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: CMS
 description: 2019年版Web AlmanacCMS章では、CMSの採用、CMS組み合わせの構築方法、CMSを搭載したWebサイトのユーザーエクスペリエンス、CMSのイノベーションを取り上げています。
-hero_alt: Hero image of Web Almanac charactes on a type writer writing a web page.
+hero_alt: Hero image of Web Almanac characters on a type writer writing a web page.
 authors: [ernee, amedina]
 reviewers: [sirjonathan]
 analysts: [rviscomi]

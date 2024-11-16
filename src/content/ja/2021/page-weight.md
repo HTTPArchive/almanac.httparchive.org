@@ -2,7 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: ページの重さ
 description: 2021 Web Almanacのページの重さの章では、ページの重さが重要な理由、帯域幅、複雑なページ、時間の経過によるPage Weight、ページ要求、ファイル形式について説明しています。
-hero_alt: Hero image of Web Almanac charactes using a set of scales to weigh a web page against variuos boxes labelled with various different kilobytes.
+hero_alt: Hero image of Web Almanac characters using a set of scales to weigh a web page against variuos boxes labelled with various different kilobytes.
 authors: [logicalphase]
 reviewers: [siakaramalegos, RMHolmlund]
 analysts: [jessthebp]

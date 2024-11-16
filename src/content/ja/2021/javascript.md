@@ -2,7 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: JavaScript
 description: 2021年版Web AlmanacのJavaScriptの章では、Web上でのJavaScriptの使用方法、ライブラリとフレームワーク、圧縮、Webコンポーネント、ソースマップについて説明しています。
-hero_alt: Hero image of the Web Almanac chracters cycling to power a website.
+hero_alt: Hero image of the Web Almanac characters cycling to power a website.
 authors: [NishuGoel]
 reviewers: [soulcorrosion, mgechev, rviscomi, pankajparkar, tunetheweb]
 analysts: [pankajparkar, max-ostapenko, rviscomi]

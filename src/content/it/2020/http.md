@@ -2,7 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: HTTP/2
 description: Capitolo HTTP/2 del 2020 Web Almanac che copre l'adozione e l'impatto di HTTP/2, HTTP/2 Push, problemi HTTP/2 e HTTP/3.
-hero_alt: Hero image of Web Almanac chracters driving vehicles in various lanes carrying script and images resources.
+hero_alt: Hero image of Web Almanac characters driving vehicles in various lanes carrying script and images resources.
 authors: [dotjs, rmarx, MikeBishop]
 reviewers: [LPardue, tunetheweb, ibnesayeed]
 analysts: [gregorywolf]
