@@ -389,7 +389,7 @@
           {% endif %}
           {% if contributor.bluesky %}
           <div class="contributor-social">
-            <a href="https://bsky.app/{{ contributor.bluesky }}" aria-labelledby="contributors-{{ id }}-bluesky">
+            <a href="https://bsky.app/profile/{{ contributor.bluesky }}" aria-labelledby="contributors-{{ id }}-bluesky">
               <svg role="img">
                 <title id="contributors-{{ id }}-bluesky">{{ onBluesky(contributor.bluesky) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bluesky-logo"></use>
