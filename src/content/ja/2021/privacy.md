@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Privacy
 description: 2021年版Web Almanacのプライバシー章では、オンライントラッキングの導入と影響、プライバシー優先の信号、プライバシーに配慮したWebのためのブラウザの取り組みについて取り上げています。
+hero_alt: Hero image of Web Almanac characters with cameras, phones, and microphones acting like paparazzi while another character pulls back a shower curtain to reveal a web page behind it.
 authors: [ydimova, victorlep]
 reviewers: [maudnals]
 analysts: [victorlep, max-ostapenko]

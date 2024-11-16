@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: 效能
 description: 2020 Web Almanac 的效能章節涵蓋了 Core WebVitals、Lighthouse Performance Score、First Contentful Paint (FCP) 以及 Time to First Byte (TTFB)。
+hero_alt: Hero image of Web Almanac chracters images to a web page, while another Web Almanac character times them with a stopwatch.
 authors: [thefoxis]
 reviewers: [borisschapira, rviscomi, foxdavidj, noamr, Zizzamia, exterkamp]
 analysts: [max-ostapenko, dooman87]

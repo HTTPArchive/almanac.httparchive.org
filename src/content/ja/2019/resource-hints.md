@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: リソースヒント
 description: 2019年のWeb Almanacのリソースヒントの章では、dns-prefetch、preconnect、preload、prefetch、priority hints、ネイティブの遅延ローディングの使用法をカバーしています。
+hero_alt: Hero image of Web Almanac charactes lining up to HTML, JavaScript, and image resources in a line on the way to a web page.
 authors: [khempenius]
 reviewers: [andydavies, tunetheweb, yoavweiss]
 analysts: [rviscomi]

@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: サードパーティ
 description: 2021年版Web Almanacのサードパーティの章では、どのようなサードパーティが使用されているか、何のために使用されているかのデータ、パフォーマンスへの影響についての深堀、セキュリティやプライバシーへの影響についての考察をカバーしています。
+hero_alt: Hero image of Web Almanac chracters plugging various things into a web page.
 authors: [tunetheweb]
 reviewers: [patrickhulce, andydavies, simonhearne, csswizardry]
 analysts: [tunetheweb]

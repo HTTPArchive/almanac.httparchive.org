@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Jamstack
 description: 2021年版Web AlmanacのJamstackの章では、技術の採用状況、Jamstackで構築されたWebサイトのパフォーマンス、各種リソースの重み付けなどを取り上げています。
+hero_alt: Hero image of the Web Almanac chracters using a large gas cylinder with script markings on the front to inflate a web page.
 authors: [denar90]
 reviewers: [Dawntraoz, thomkrupa, tunetheweb]
 analysts: [denar90, tunetheweb, rviscomi]

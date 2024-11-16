@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Prestatie
 description: Prestatiehoofdstuk van de Web Almanac 2020 met betrekking tot Core Web Vitals, Lighthouse Performance Score, First Contentful Paint (FCP) en Time to First Byte (TTFB).
+hero_alt: Hero image of Web Almanac chracters images to a web page, while another Web Almanac character times them with a stopwatch.
 authors: [thefoxis]
 reviewers: [borisschapira, rviscomi, foxdavidj, noamr, Zizzamia, exterkamp]
 analysts: [max-ostapenko, dooman87]

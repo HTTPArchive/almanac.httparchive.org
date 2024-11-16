@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: モバイル・ウェブ
 description: 2020年版Web Almanacのモバイルウェブの章では、ページの読み込み、テキストコンテンツ、ズームとスケーリング、ボタンとリンク、フォームへの入力のしやすさなどを解説しています。
+hero_alt: Hero image of Web Almanac characters squeezing a web page onto a mobile screen.
 authors: [spanicker, mdiblasio]
 reviewers: [foxdavidj]
 analysts: [foxdavidj]

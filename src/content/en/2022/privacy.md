@@ -1,6 +1,7 @@
 ---
 title: Privacy
 description: Privacy chapter of the 2022 Web Almanac covers the adoption and impact of online tracking, privacy preference signals, and browser initiatives for a privacy-friendlier web.
+hero_alt: Hero image of Web Almanac characters with cameras, phones, and microphones acting like paparazzi while another character pulls back a shower curtain to reveal a web page behind it.
 authors: [tomvangoethem, nrllh]
 reviewers: [iskander-sanchez-rola]
 analysts: [max-ostapenko, ydimova]

@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Markup
 description: Capitolo Markup del Web Almanac 2020 che copre le osservazioni generali, l'uso di elementi e attributi, nonché curiosità e tendenze.
+hero_alt: Hero image of Web Almanac chracters as dressed as constructor workers putting togehter a web page from HTML element blocks.
 authors: [j9t, catalinred, iandevlin]
 j9t_bio: Jens Oliver Meiert è uno sviluppatore web e autore (<a hreflang="en" href="https://leanpub.com/css-optimization-basics"><cite>CSS Optimization Basics</cite></a>, <a hreflang="en" href="https://leanpub.com/web-development-glossary"><cite>The Web Development Glossary</cite></a>), che lavora come responsabile tecnico presso <a hreflang="en" href="https://www.jimdo.com/">Jimdo</a>. È un esperto di sviluppo web dove è specializzato in ottimizzazione HTML e CSS. Jens contribuisce agli standard tecnici e scrive regolarmente del suo lavoro e della sua ricerca, in particolare sul suo sito web, <a hreflang="en" href="https://meiert.com/en/">meiert.com</a>.
 catalinred_bio: Catalin Rosu è uno sviluppatore front-end di <a hreflang="en" href="https://www.caphyon.com/">Caphyon</a> e attualmente lavora su <a hreflang="en" href="https://www.wattspeed.com/">Wattspeed</a>. Ha una passione per gli standard web e un occhio attento per la grande UX e UI, cose di cui <a href="https://x.com/catalinred">twitta</a> e scrive sul suo <a hreflang="en" href="https://catalin.red/">sito web</a>.

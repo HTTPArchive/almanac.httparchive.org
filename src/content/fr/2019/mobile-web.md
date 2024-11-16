@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Web Mobile
 description: Chapitre sur les web mobile du Web Almanac 2019, couvrant le chargement des pages, du contenu textuel, du zoom et de la mise à l’échelle, des boutons et des liens, ainsi que de la facilité à remplir les formulaires.
+hero_alt: Hero image of Web Almanac characters squeezing a web page onto a mobile screen.
 authors: [foxdavidj]
 reviewers: [AymenLoukil, logicalphase]
 analysts: [ymschaap, rviscomi]

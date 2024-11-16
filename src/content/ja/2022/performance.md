@@ -1,6 +1,7 @@
 ---
 title: パフォーマンス
 description: 2022年版Web Almanacのパフォーマンス章では、コアWebバイタルを取り上げ、最大のコンテントフルペイント、累積レイアウトシフト、最初の入力までの遅延の各メトリクスとその診断について深く掘り下げています。
+hero_alt: Hero image of Web Almanac chracters images to a web page, while another Web Almanac character times them with a stopwatch.
 authors: [mel-ada, rviscomi]
 reviewers: [tunetheweb, pmeenan, 25prathamesh, estelle, konfirmed]
 analysts: [rviscomi, 25prathamesh, siakaramalegos, konfirmed]

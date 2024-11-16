@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Ecommerce
 description: This chapter explores trends in the ecommerce ecosystem, examining platform popularity, performance metrics, and regional differences. Covering Core Web Vitals, Lighthouse scores, and accessibility, it highlights how platforms like WooCommerce and Shopify dominate, while newer players gain traction in specific regions and niches.
+hero_alt: Hero image of a Web Almanac character at a super market checkout loading items from a shopping basket onto the conveyor belt while another character payes with a credit card.
 authors: [JonathanPagel]
 reviewers: [nrllh]
 analysts: [JonathanPagel]

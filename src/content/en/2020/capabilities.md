@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Capabilities
 description: Capabilities chapter of the 2020 Web Almanac covering brand-new, powerful web platform APIs.
+hero_alt: Hero image of Web Almanac charactes with superhero capes plugging various capabilities into a web page.
 authors: [christianliebel]
 reviewers: [tomayac]
 analysts: [tomayac]

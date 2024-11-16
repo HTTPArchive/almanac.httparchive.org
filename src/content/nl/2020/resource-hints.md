@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Bronhints
 description: Het hoofdstuk Bronhints van de Web Almanac 2020 behandelt het gebruik van dns-prefetch, preconnect, preload, prefetch, Priority Hints en native lazy loading.
+hero_alt: Hero image of Web Almanac charactes lining up to HTML, JavaScript, and image resources in a line on the way to a web page.
 authors: [Zizzamia]
 reviewers: [jessnicolet, pmeenan, giopunt, mgechev, notwillk]
 analysts: [khempenius]

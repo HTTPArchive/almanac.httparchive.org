@@ -467,7 +467,7 @@ url = "https://almanac.httparchive.org/en/{{ year }}/{{ metadata.get('chapter') 
               <source type="image/avif" srcset="{{ chapter_hero_dir }}hero_sm.avif 1x, {{ chapter_hero_dir }}hero_lg.avif 2x">
               <source type="image/webp" srcset="{{ chapter_hero_dir }}hero_sm.webp 1x, {{ chapter_hero_dir }}hero_lg.webp 2x">
               <source type="image/jpeg" srcset="{{ chapter_hero_dir }}hero_sm.jpg 1x, {{ chapter_hero_dir }}hero_lg.jpg 2x">
-              <img src="{{ chapter_hero_dir }}hero_lg.jpg" class="content-banner" alt="" width="866" height="433" fetchpriority="high">
+              <img src="{{ chapter_hero_dir }}hero_lg.jpg" class="content-banner" alt="{{ metadata.get('hero_alt') or '' }}" width="866" height="433" fetchpriority="high">
             </picture>
             {{ render_byline() }}
             {{ self.main_content() }}

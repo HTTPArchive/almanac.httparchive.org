@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: 圧縮
 description: 2020年版Web Almanacの圧縮の章では、HTTP圧縮、アルゴリズム、コンテンツタイプ、ファーストパーティおよびサードパーティによる圧縮とその機会について説明しています。
+hero_alt: Hero image of Web Almanac charactes using a ray gun to shrink an HTML page to make it much smaller.
 authors: [mo271, veluca93, sboukortt, jyrkialakuijala]
 reviewers: [paulcalvano]
 analysts: [AbbyTsai]
