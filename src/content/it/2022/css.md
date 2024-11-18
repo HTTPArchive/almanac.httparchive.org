@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: CSS
 description: Capitolo sui CSS del Web Almanac 2022 che tratta delle tendenza, dei cambiamenti e dei modelli nell'uso dei CSS nel web.
+hero_alt: Hero image of Web Almanac characters measuring and painting a web page.
 authors: [rachelandrew]
 reviewers: [svgeesus, j9t]
 analysts: [rviscomi]

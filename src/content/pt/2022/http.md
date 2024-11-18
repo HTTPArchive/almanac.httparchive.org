@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: HTTP
 description: O capítulo HTTP do Web Almanac de 2022 aborda dados sobre versões históricas do HTTP utilizadas na web, além do aumento das novas versões, incluindo HTTP/2 e HTTP/3, enquanto também examina métricas-chave como parte do ciclo de vida do HTTP.
+hero_alt: Hero image of Web Almanac characters driving vehicles in various lanes carrying script and images resources.
 authors: [paivaspol]
 reviewers: [tunetheweb, rmarx, LPardue]
 analysts: [paivaspol]

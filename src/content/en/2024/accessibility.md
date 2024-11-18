@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Accessibility
 description: Accessibility chapter of the 2024 Web Almanac covering ease of reading, navigation, forms, media, ARIA, and accessibility apps.
+hero_alt: Hero image of a robot with a blue, human accessibility icon on its front scanning a web page, while Web Almanac characters check some labels.
 authors: [mgifford]
 reviewers: [hidde, b_atish, katekalcevich]
 analysts: [mgifford]
@@ -838,7 +839,7 @@ There are two means by which we can identify country information, first by the G
 
 {{ figure_markup(
   image="country-by-geoid.png",
-  caption="Most accessibile countries by GeoID.",
+  caption="Most accessible countries by GeoID.",
   description="A bar cart with the GeoID, the country with the highest average for accessibility is the USA with a value of 84%. There is a drop of less a perscent as we move to Canada, UK, Australia, Germany, Netherlands, France, Mexico, Italy, Spain, Argentina, Indonesia, India, Poland, Brazil, Japan, Turkey, Vietnam, China and finally the Republic of Korea with 78%. These were for countries that hosted more than 100000 domains.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=421126157&format=interactive",
   sheets_gid="260430925",
@@ -854,9 +855,9 @@ The following map shows the average desktop accessibility score by country top l
 
 {{ figure_markup(
   image="country-by-tld-globe.png",
-  caption="Map of the accessibile countries by Top Level Domain (TLD).",
+  caption="Map of the accessible countries by Top Level Domain (TLD).",
   description="In looking at Top Level Domains with more than 45,000 domains, we learn about accessibility. Displayed visually in a world map the most accessible countries are Norway, Filand, Canada, USA, UK, Sweden, Ireland, Australia, New Zealand, Austria, Belgium, Switzerland, Denmark, and South Africa. China is the least accessible by Top Level Domain. ",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=783736776&format=interactive",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=1241724533&format=interactive",
   sheets_gid="1209052596",
   sql_file="lighthouse_score_by_tld.sql"
   )
@@ -866,7 +867,7 @@ But it is a bit easier to see the TLD ranked and including the non-country codes
 
 {{ figure_markup(
   image="country-by-tld.png",
-  caption="Accessibile countries by Top Level Domain (TLD).",
+  caption="Accessible countries by Top Level Domain (TLD).",
   description="A bar cart with looking at Top Level Domains with more than 45,000 domains, we learn about accessibility. Displayed as a bar chart with the accessible domains .edu (Education), .gov (US Government), Norway, Filand, .io, Canada, USA, .app, UK, Sweden, Ireland, Australia, New Zealand, .co, Austria, Belgium, Switzerland, Denmark, and South Africa, .org.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=783736776&format=interactive",
   sheets_gid="1209052596",

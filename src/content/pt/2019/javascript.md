@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: JavaScript
 description: Capítulo de JavaScript de 2019 Web Almanac que cobre quanto JavaScript usamos na web, compressão, bibliotecas e estruturas, carregamento e mapas de origem.
+hero_alt: Hero image of the Web Almanac characters cycling to power a website.
 authors: [housseindjirdeh]
 reviewers: [foxdavidj, paulcalvano, mathiasbynens, rviscomi]
 analysts: [rviscomi]

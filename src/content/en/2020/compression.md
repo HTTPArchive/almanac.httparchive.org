@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Compression
 description: Compression chapter of the 2020 Web Almanac covering HTTP compression, algorithms, content types, 1st party and 3rd party compression and opportunities.
+hero_alt: Hero image of Web Almanac characters using a ray gun to shrink an HTML page to make it much smaller.
 authors: [mo271, veluca93, sboukortt, jyrkialakuijala]
 reviewers: [paulcalvano]
 analysts: [AbbyTsai]

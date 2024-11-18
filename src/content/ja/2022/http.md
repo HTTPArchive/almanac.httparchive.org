@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: HTTP
 description: 2022年のWeb AlmanacのHTTP章では、ウェブ全体で使用されているHTTPの歴史的バージョンに関するデータと、HTTP/2やHTTP/3を含む新しいバージョンの増加について取り上げています。また、HTTPライフサイクルの重要な指標の検証も行っています。
+hero_alt: Hero image of Web Almanac characters driving vehicles in various lanes carrying script and images resources.
 authors: [paivaspol]
 reviewers: [tunetheweb, rmarx, LPardue]
 analysts: [paivaspol]

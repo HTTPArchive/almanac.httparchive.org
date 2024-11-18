@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Jamstack
 description: Jamstack-hoofdstuk van de 2020 Web Almanac over het gebruik van Jamstack, de prestaties van populaire Jamstack-frameworks en een analyse van de echte gebruikerservaring met behulp van de Core Web Vitals-metadata.
+hero_alt: Hero image of the Web Almanac characters using a large gas cylinder with script markings on the front to inflate a web page.
 authors: [ahmadawais]
 reviewers: [MaedahBatool, phacks]
 analysts: [denar90, remotesynth]

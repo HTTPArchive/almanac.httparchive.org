@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: CSS
 description: CSS chapter of the 2020 Web Almanac covering color, units, selectors, layout, animation, media queries, and Sass usage.
+hero_alt: Hero image of Web Almanac characters measuring and painting a web page.
 authors: [LeaVerou, svgeesus, rachelandrew]
 reviewers: [estelle, fantasai, j9t, mirisuzanne, catalinred, hankchizljaw]
 analysts: [rviscomi, LeaVerou, dooman87]

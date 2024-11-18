@@ -1,7 +1,8 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Sustainability
-description: Sustainability chapter of the 2024 Web Almanac covering environmental impacts of web pages, where they come from and how to reduce them
+description: Sustainability chapter of the 2024 Web Almanac covering environmental impacts of web pages, where they come from and how to reduce them.
+hero_alt: Hero image of Web Almanac characters installing solar panels on top of a web page.
 authors: [ldevernay, burakguneli, ines-akrap, AlexDawsonUK, mgifford, timfrick]
 reviewers: [lebreRafael]
 editors: [cqueern]
@@ -343,7 +344,7 @@ Hosts that allow you to monitor your energy requirements (<a hreflang="en" href=
 
 Compensating for emissions at the server-side can be a complex task and transparency with hosting providers can also be a bit of a minefield, but providers are gradually becoming more sustainably minded and with specialist providers out there who can help you reduce your carbon footprint, taking steps to house your product or service in a greener space can be relatively straight forward.
 
-Note: You may be able to use APIs and infrastructure to model your website or application based on the environmental situation at that time. <a hreflang="en" href="https://hackernoon.com/carbon-aware-computing-next-green-breakthrough-or-new-greenwashing">Carbon-aware computing</a> is a relatively new concept but it has some interesting viewpoints.
+<aside class="note">Note: You may be able to use APIs and infrastructure to model your website or application based on the environmental situation at that time. <a hreflang="en" href="https://hackernoon.com/carbon-aware-computing-next-green-breakthrough-or-new-greenwashing">Carbon-aware computing</a> is a relatively new concept but it has some interesting viewpoints.</aside>
 
 For further information, refer to:
 - <a href="#wsg">The WSG 1.0 - Section 4</a>.
@@ -1178,8 +1179,8 @@ For comparison reasons, here are the emissions data from 2022, calculated with t
   image="median-emissions-by-ecommerce-2022.png",
   caption="Median emissions by ecommerce - 2022.",
   description="A bar chart showing that the median emission for WooCommerce pages in 2022 was 0.28 grams of carbon on desktop and 0.26 on mobile. For Shopify it's 0.20 on desktop and 0.18 on mobile. For Squerspace Commerce it's 0.31 on desktop and 0.32 on mobile. For PrestaShop it's 0.26 on desktop and 0.23 KB on mobile. For Wix eCommerce it is 0.32 on desktop and 0.22 on mobile. For Magento it's 0.3 on desktop and 0.28 on mobile. For 1C-Bitrix it is 0.34 on desktop and 0.3 on mobile.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1732727443&format=interactive",
-  sheets_gid="1972006215",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1072562266&format=interactive",
+  sheets_gid="267715597",
   sql_file="ecommerce_bytes_per_type_2022.sql"
 ) }}
 

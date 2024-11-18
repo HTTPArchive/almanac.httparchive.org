@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: HTTP/2
 description: HTTP/2、HTTP/2プッシュ、HTTP/2の問題、およびHTTP/3の採用と影響をカバーするWeb Almanac 2019のHTTP/2章
+hero_alt: Hero image of Web Almanac characters driving vehicles in various lanes carrying script and images resources.
 authors: [tunetheweb]
 reviewers: [bagder, rmarx, dotjs]
 analysts: [paulcalvano]

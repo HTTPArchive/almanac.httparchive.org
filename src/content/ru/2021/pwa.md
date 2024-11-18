@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: PWA
 description: Глава «PWA» Веб-Альманаха 2021 года покрывает сервис-воркеры (применение и возможности), манифесты веб-приложений, инсайты про Lighthouse, библиотеки сервис-воркеров (включая Workbox), нотификации Web Push и их распространение.
+hero_alt: Hero image of Web Almanac characters converting a web page to a mobile web app.
 authors: [demianrenzulli]
 reviewers: [tunetheweb, webmaxru, jeffposnick, andreban, Schweinepriester, hemanth, thepassle, tropicadri]
 analysts: [tunetheweb, demianrenzulli]

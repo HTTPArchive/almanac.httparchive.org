@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: 性能
 description: 2019 Web Almanac网络年鉴的性能章节，包括 首次有内容的绘制 (FCP), 首包字节 (TTFB), 以及首次输入延迟 (FID)。
+hero_alt: Hero image of Web Almanac characters images to a web page, while another Web Almanac character times them with a stopwatch.
 authors: [rviscomi]
 reviewers: [JMPerez,foxdavidj,sergeychernyshev,zeman]
 analysts: [rviscomi, raghuramakrishnan71]

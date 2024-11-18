@@ -1,7 +1,8 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: CDN
-description: CDN chapter of the 2024 Web Almanac covering adoption of CDNs, top CDN players, the impact of CDNs on TLS, HTTP/2+, Zstandard, Brotli, Early Hints, and Client Hints adoption
+description: CDN chapter of the 2024 Web Almanac covering adoption of CDNs, top CDN players, the impact of CDNs on TLS, HTTP/2+, Zstandard, Brotli, Early Hints, and Client Hints adoption.
+hero_alt: Hero image of Web Almanac characters extending a plug from a cloud into a web page.
 authors: [joeviggiano, pgjaiganesh, AlexMoening]
 reviewers: [carolinescholles]
 editors: [carolinescholles]
@@ -9,7 +10,7 @@ analysts: [pgjaiganesh, AlexMoening]
 translators: []
 results: https://docs.google.com/spreadsheets/d/15YXQQjyoQ0Bnfw9KNSz_YuGDiCfW978_WKEHvDXjdm4/
 joeviggiano_bio: Joe Viggiano is a Principal Solutions Architect at Amazon Web Services helping Media & Entertainment customers deliver media content at scale.
-pgjaiganesh_bio: Jaiganesh Girinathan is a Principal Edge Solutions Architect at Amazon Web Services.
+pgjaiganesh_bio: Jaiganesh Girinathan is a Principal Solutions Architect at Amazon Web Services with the mission to help customers deliver a fast and secure digital experience.
 AlexMoening_bio: Alex Moening is a Senior Edge Solutions Architect at Amazon Web Services.
 featured_quote: The benefits of utilizing CDNs have expanded beyond simple performance improvements. In 2024, CDNs play a crucial role in enabling global scalability, enhancing security postures, and facilitating the deployment of complex, distributed applications. By pushing more logic to the edge, businesses can create more responsive and personalized user experiences while reducing the load on origin servers.
 featured_stat_1: 70%

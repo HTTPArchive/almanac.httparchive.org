@@ -2,6 +2,7 @@
 ##See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Dati strutturati
 description: Capitolo sui dati strutturati del Web Almanac 2022 che copre l'adozione e il cambiamento anno dopo anno dei dati strutturati RDFa, Open Graph, Twitter, JSON-LD, Microdati, Facebook, Dublin Core, Microformat e microformat2.
+hero_alt: Hero image of a Web Almanac chracter pulling an identification card out of a wallet and plugging it into a web page.
 authors: [cyberandy, DataBytzAI]
 reviewers: [SeoRobt, jonoalderson]
 analysts: [rviscomi]

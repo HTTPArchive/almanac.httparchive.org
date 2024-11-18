@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: 安全
 description: 2022年 Web 年鉴的安全章节，涵盖了传输层安全、内容包含（CSP、Feature Policy、SRI）、Web 防御机制（解决 XSS、XS-Leaks）以及安全机制采用的驱动因素。
+hero_alt: Hero image of Web Almanac characters padlocking a web page, while other Web Almanac characters subdue a masked thief who has a set of bolt cutters.
 authors: [SaptakS, lirantal, clarkio]
 reviewers: [kushaldas, tunetheweb]
 analysts: [VictorLeP, vikvanderlinden, GJFR]

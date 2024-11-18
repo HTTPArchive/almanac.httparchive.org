@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Page Weight
 description: Capitolo Page Weight (Peso della pagina) del Web Almanac 2020 che spiega perché il peso della pagina è importante, la larghezza di banda, le pagine complesse, il peso della pagina nel tempo, page requests e i formati di file.
+hero_alt: Hero image of Web Almanac characters using a set of scales to weigh a web page against variuos boxes labelled with various different kilobytes.
 authors: [henrihelvetica]
 reviewers: [paulcalvano]
 analysts: [paulcalvano]

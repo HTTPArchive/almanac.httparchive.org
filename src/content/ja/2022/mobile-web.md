@@ -3,6 +3,7 @@
 title: モバイルウェブ
 #TODO - Review and update chapter description
 description: 2022年のWeb Almanacのモバイルウェブチャプターで、アクセシビリティとパフォーマンスに焦点を当てています。
+hero_alt: Hero image of Web Almanac characters squeezing a web page onto a mobile screen.
 authors: [Suzzicks]
 reviewers: [dwsmart, foxdavidj, hemanth]
 analysts: [siakaramalegos, rviscomi]

@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Performance
 description: Performance chapter of the 2020 Web Almanac covering Core Web Vitals, Lighthouse Performance Score, First Contentful Paint (FCP) and Time to First Byte (TTFB).
+hero_alt: Hero image of Web Almanac characters images to a web page, while another Web Almanac character times them with a stopwatch.
 authors: [thefoxis]
 reviewers: [borisschapira, rviscomi, foxdavidj, noamr, Zizzamia, exterkamp]
 analysts: [max-ostapenko, dooman87]

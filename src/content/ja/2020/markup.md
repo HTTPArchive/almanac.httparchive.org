@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: マークアップ
 description: 2020年版Web Almanacのマークアップの章では、一般的な見解、要素や属性の使い方、トリビアやトレンドなどを紹介しています。
+hero_alt: Hero image of Web Almanac characters as dressed as constructor workers putting together a web page from HTML element blocks.
 authors: [j9t, catalinred, iandevlin]
 j9t_bio: Jens Oliver Meiert はウェブ開発者であり、著者(<a hreflang="en" href="https://leanpub.com/css-optimization-basics"><cite>CSS Optimization Basics</cite></a>, <a hreflang="en" href="https://leanpub.com/web-development-glossary"><cite>The Web Development Glossary</cite></a>)で、<a hreflang="en" href="https://www.jimdo.com/">Jimdo</a>でエンジニアリングマネージャーを務めています。彼は、HTMLとCSSの最適化を専門とするウェブ開発のエキスパートです。Jensは技術標準に貢献し、特に自身のウェブサイト<a hreflang="en" href="https://meiert.com/en/">meiert.com</a>では、仕事や研究について定期的に執筆しています。
 catalinred_bio: Catalin Rosuは、<a hreflang="en" href="https://www.caphyon.com/">Caphyon</a>のフロントエンド開発者で、現在は<a hreflang="en" href="https://www.wattspeed.com/">Wattspeed</a>に携わっています。ウェブ標準への情熱と、優れたUXとUIへの鋭い目を持ち、<a href="https://x.com/catalinred">ツイート</a>したり、<a hreflang="en" href="https://catalin.red/">自身のウェブサイト</a>で執筆したりしています。

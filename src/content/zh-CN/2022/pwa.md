@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: PWA
 description: 2022 Web 年鉴的 PWA 章节涵盖 Service Workers 的使用和功能、Web 应用程序清单、Lighthouse 的洞察、Service Worker 库（包括 Workbox）和 Web 推送通知。
+hero_alt: Hero image of Web Almanac characters converting a web page to a mobile web app.
 authors: [diekus]
 reviewers: [aarongustafson, tropicadri, webmaxru, Schweinepriester, beth-panx]
 analysts: [beth-panx]

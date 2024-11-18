@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: CDN
 description: 2022年のWeb AlmanacのCDN章では、CDNの採用、主要なCDNプレイヤー、CDNがTLS、HTTP/2+、Brotli、およびクライアントヒントの採用に与える影響について説明しています。
+hero_alt: Hero image of Web Almanac characters extending a plug from a cloud into a web page.
 authors: [harendra, joeviggiano]
 reviewers: [ytkoka]
 analysts: [harendra, joeviggiano]

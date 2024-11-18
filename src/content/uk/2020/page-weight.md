@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Розмір Сторінки
 description: Розділ "Розмір Сторінки" у 2020 Web Almanac розкриває, чому розмір сторінки важливий, пропускну здатність, складні сторінки, розмір сторінки з часом, запити сторінки та формати файлів.
+hero_alt: Hero image of Web Almanac characters using a set of scales to weigh a web page against variuos boxes labelled with various different kilobytes.
 authors: [henrihelvetica]
 reviewers: [paulcalvano]
 analysts: [paulcalvano]

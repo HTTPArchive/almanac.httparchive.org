@@ -1,6 +1,7 @@
 ---
 title: Performance
 description: Performance chapter of the 2022 Web Almanac covering Core Web Vitals, with deep dives into the Largest Contentful Paint, Cumulative Layout Shift, and First Input Delay metrics and their diagnostics.
+hero_alt: Hero image of Web Almanac characters images to a web page, while another Web Almanac character times them with a stopwatch.
 authors: [mel-ada, rviscomi]
 reviewers: [tunetheweb, pmeenan, 25prathamesh, estelle, konfirmed]
 analysts: [rviscomi, 25prathamesh, siakaramalegos, konfirmed]

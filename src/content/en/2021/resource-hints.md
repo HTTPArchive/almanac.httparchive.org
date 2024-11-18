@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Resource Hints
 description: Resource Hints chapter of the 2021 Web Almanac covering adoption of resource hints, their uses, bad practices, and their impact on performance.
+hero_alt: Hero image of Web Almanac characters lining up to HTML, JavaScript, and image resources in a line on the way to a web page.
 authors: [kevinfarrugia]
 reviewers: [siakaramalegos, tunetheweb, andydavies, samarpanda, westonruter]
 analysts: [Nithanaroy]

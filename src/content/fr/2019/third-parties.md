@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Tierces Parties
 description: Le chapitre sur les ressources tierces du Web Almanac 2019, qui aborde les tierces parties utilisées, pourquoi elles le sont et les répercussions de leur usage sur le rendu et la confidentialité.
+hero_alt: Hero image of Web Almanac characters plugging various things into a web page.
 authors: [patrickhulce]
 reviewers: [zcorpan, foxdavidj, jasti]
 analysts: [patrickhulce]

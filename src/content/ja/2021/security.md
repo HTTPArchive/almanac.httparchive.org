@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: セキュリティ
 description: 2021年版Web Almanacのセキュリティの章では、トランスポートレイヤーセキュリティ、コンテンツインクルージョン（CSP、フィーチャーポリシー、SRI）、Web防御機構（XSS、XS-Leaksへの取り組み）、セキュリティ機構採用の促進要因について解説しています。
+hero_alt: Hero image of Web Almanac characters padlocking a web page, while other Web Almanac characters subdue a masked thief who has a set of bolt cutters.
 authors: [saptaks, tomvangoethem, nrllh]
 reviewers: [cqueern, edmondwwchan, lord-r3]
 analysts: [gjfr]

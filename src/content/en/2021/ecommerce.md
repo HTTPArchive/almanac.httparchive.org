@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Ecommerce
 description: Ecommerce chapter of the 2021 Web Almanac covering ecommerce platforms, page weight, images, third-parties, core web vitals and lighthouse performance metrics, SEO, and PWAs.
+hero_alt: Hero image of a Web Almanac character at a super market checkout loading items from a shopping basket onto the conveyor belt while another character payes with a credit card.
 authors: [bobbyshaw]
 reviewers: [rockeynebhwani, alankent, soulcorrosion, fili]
 analysts: [rrajiv]

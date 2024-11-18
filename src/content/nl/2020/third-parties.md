@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Derden
 description: Hoofdstuk Derden van de Web Almanac 2020 met informatie over welke derden worden gebruikt, waarvoor ze worden gebruikt, impact op de prestaties en impact op de privacy.
+hero_alt: Hero image of Web Almanac characters plugging various things into a web page.
 authors: [simonhearne]
 reviewers: [jzyang, exterkamp]
 analysts: [max-ostapenko, paulcalvano]

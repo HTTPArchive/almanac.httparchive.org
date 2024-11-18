@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: PWA
 description: PWA chapter of the 2019 Web Almanac covering service workers (registations, installability, events and filesizes), Web App Manifests properties, and Workbox.
+hero_alt: Hero image of Web Almanac characters converting a web page to a mobile web app.
 authors: [tomayac, jeffposnick]
 reviewers: [logicalphase, ahmadawais]
 analysts: [jrharalson]

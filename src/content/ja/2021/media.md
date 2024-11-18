@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: メディア
 description: 2021年版Web Almanacのメディアの章では、現在Web上で画像や動画がどのようにエンコード、埋め込み、スタイリング、配信されているかを解説しています。
+hero_alt: Hero image of Web Almanac characters projecting an image onto a screen while other Web Almanac characters walk to cinema seats with popcorn to watch the projection.
 authors: [eeeps, dougsillars]
 reviewers: [Navaneeth-akam, tpiros, akshay-ranganath, addyosmani]
 analysts: [eeeps, dougsillars, akshay-ranganath]

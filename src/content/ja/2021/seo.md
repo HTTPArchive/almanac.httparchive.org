@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: SEO
 description: クローラビリティ、インデクサビリティ、ページエクスペリエンス、オンページSEO、リンク、AMP、国際化などを網羅した「2021 Web Almanac」のSEOの章です。
+hero_alt: Hero image of various web pages beneath a search field with Web Almanac characters shine a light on the pages and make various checks.
 authors: [patrickstox, Tomek3c, wrttnwrd]
 reviewers: [fili, SeoRobt, fellowhuman1101]
 analysts: [jroakes, rvth]

@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: HTTP
 description: The HTTP chapter of the 2024 Web Almanac covers data on historical versions of HTTP used across the web, as well as the uptick in adoption of HTTP/2 and HTTP/3. Additionally, it looks at higher level features that impact HTTP behaviour, such as resource hints, 103 Early Hints and FetchPriority.
+hero_alt: Hero image of Web Almanac characters driving vehicles in various lanes carrying script and images
 authors: [rmarx]
 reviewers: [tunetheweb,ChrisBeeti]
 analysts: [tunetheweb]

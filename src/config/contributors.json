@@ -626,11 +626,13 @@
   },
   "b_atish": {
     "name": "Beatriz González Mellídez",
+    "avatar_url": "756480",
     "teams": {
       "2024": [
         "reviewers"
       ]
     },
+    "github": "bgonzalez",
     "twitter": "b_atish",
     "linkedin": "beatrizgonzalezm",
     "website": "https://medium.com/@b_atish"
@@ -1989,8 +1991,7 @@
         "analysts",
         "authors"
       ]
-    },
-    "twitter": "SilentJMA"
+    }
   },
   "jroakes": {
     "avatar_url": "10191545",
@@ -2186,8 +2187,13 @@
   },
   "j9t": {
     "avatar_url": "1700772",
-    "github": "j9t",
     "name": "Jens Oliver Meiert",
+    "github": "j9t",
+    "website": "https://meiert.com/en/",
+    "mastodon": "https://mas.to/@j9t",
+    "bluesky": "meiert.com",
+    "twitter": "j9t",
+    "linkedin": "meiert",
     "teams": {
       "2020": [
         "authors",
@@ -2203,9 +2209,7 @@
       "2024": [
         "reviewers"
       ]
-    },
-    "twitter": "j9t",
-    "website": "https://meiert.com/en/"
+    }
   },
   "malchata": {
     "avatar_url": "1635238",
@@ -3051,6 +3055,9 @@
       ],
       "2022": [
         "designers"
+      ],
+      "2024": [
+        "designers"
       ]
     }
   },
@@ -3092,6 +3099,7 @@
     "avatar_url": "116832",
     "github": "mgifford",
     "linkedin": "mgifford",
+    "bluesky": "mgifford.bsky.social",
     "mastodon": "https://mastodon.social/@mgifford",
     "name": "Mike Gifford",
     "teams": {
