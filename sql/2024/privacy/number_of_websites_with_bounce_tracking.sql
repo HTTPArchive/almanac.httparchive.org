@@ -8,12 +8,12 @@ WITH redirect_requests AS (
     index,
     response_headers,
     page
-  FROM `httparchive.all.requests`
+  FROM `httparchive.crawl.requests`
   WHERE
     date = '2024-06-01' AND
     is_root_page = TRUE AND
     type NOT IN ('css', 'image', 'font', 'video', 'audio') AND
-    LEFT(JSON_VALUE(summary, '$.status'), 1) = '3' AND
+    ROUND(INT64(summary.status) / 100) = 3 AND
     index <= 2
 ), navigation_redirect AS (
   -- Find the first navigation redirect
