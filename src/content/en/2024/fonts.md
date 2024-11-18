@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Fonts
 description: Fonts chapter of the 2024 Web Almanac covering where fonts are loaded from, font formats, font loading performance, variable fonts, and color fonts.
+hero_alt: Hero image of Web Almanac characters on an assembly line preparing various F letters in various styles and shapes.
 authors: [bramstein, charlesberret]
 reviewers: [drott, svgeesus, ivanukhov, jmsole, liamquin, mandymichael, raphlinus]
 editors: [charlesberret]
@@ -64,7 +65,7 @@ To understand the font hosting choices made by web developers, we follow the met
   description="Column chart showing the percentage of pages making requests to hosts in 2024. Non-exclusive self-hosting is at 70% of pages for both mobile and desktop. Exclusive self-hosting is at 28% for desktop and 34% for mobile. Self-hosting with a service is at 43% for desktop and 36% for mobile. Non-exclusive service usage is at 60% for desktop and 51% for mobile. Pages using services exclusively is at 19% for desktop and 16% for mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTHmcrit1gMzxfZNeFp9LrA4NQSMEh140fapD4CFQ89knpy6LvEKz7VafGaFGlxCAxTdpLZXaVaq8Pg/pubchart?oid=835212931&format=interactive",
   sheets_gid="1014103088",
-  sql_file="performance/service.sql"
+  sql_file="performance/fonts_services.sql"
   )
 }}
 
@@ -127,7 +128,7 @@ Because a website can pull fonts from multiple sources, the popularity of differ
   </table>
   <figcaption>
       {{ figure_link(
-      caption="The top 5 most popular web font hosting combinations",
+      caption="The top 5 most popular web font hosting combinations.",
       sheets_gid="1014103088",
       sql_file="performance/fonts_services.sql",
     ) }}

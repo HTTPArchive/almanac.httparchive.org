@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: HTTP/2
 description: HTTP/2 chapter of the 2020 Web Almanac covering adoption and impact of HTTP/2, HTTP/2 Push, HTTP/2 Issues, and HTTP/3.
+hero_alt: Hero image of Web Almanac characters driving vehicles in various lanes carrying script and images resources.
 authors: [dotjs, rmarx, MikeBishop]
 reviewers: [LPardue, tunetheweb, ibnesayeed]
 analysts: [gregorywolf]
@@ -226,7 +227,7 @@ Unfortunately, the upgrade path for servers is more difficult, especially with t
 
 {{ figure_markup(
   image="http2-server-protocol-usage.png",
-  caption="Server usage by HTTP protocol on mobile",
+  caption="Server usage by HTTP protocol on mobile.",
   description="A bar chart showing the number of websites served by either HTTP/1.x or HTTP/2 for the most popular servers to mobile clients. Nginx serves 727,181 HTTP/1.1 and 1,023,575 HTTP/2 sites. Cloudflare 59,981 HTTP/1.1 and 679,616 HTTP/2. Apache 1,521,753 HTTP/1.1 and 585,096 HTTP/2. Litespeed 50,502 HTTP/1.1 and 166,721 HTTP/2. Microsoft-IIS 284,047 HTTP/1.1 and 81,490 HTTP/2.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSOkWXtrbMfTLdhlKbBGDjRU3zKbnCQi3iPhfuKaFs5mj4smEzInDCYEnk63gBdgsJ3GFk2gf4FOKCU/pubchart?oid=718663369&format=interactive",
   sheets_gid="306338094",
@@ -238,7 +239,7 @@ How has HTTP/2 adoption changed in the last year for each server? Figure 22.11 s
 
 {{ figure_markup(
   image="http2-h2-usage-by-server.png",
-  caption="Percentage of pages served over HTTP/2 by server",
+  caption="Percentage of pages served over HTTP/2 by server.",
   description="A bar chart comparing the percentage of websites served over HTTP/2 between 2019 and 2020. Cloudflare increased to 93.08% from 85.40%. Litespeed increased to 81.91% from 70.80%. Openresty increased to 66.24% from 51.40%. Nginx increased to 60.84% from 49.20%. Apache increased to 27.19% from 18.10% and MIcorsoft-IIS increased to 22.82% from 14.10%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSOkWXtrbMfTLdhlKbBGDjRU3zKbnCQi3iPhfuKaFs5mj4smEzInDCYEnk63gBdgsJ3GFk2gf4FOKCU/pubchart?oid=936321266&format=interactive",
   sheets_gid="306338094",
@@ -313,7 +314,7 @@ As discussed [earlier](#http10-to-http2), HTTP/1.1 only allows a single request 
 
 {{ figure_markup(
   image="http2-total-number-of-connections-per-page.png",
-  caption="Distribution of total number of connections per page",
+  caption="Distribution of total number of connections per page.",
   description="A percentile chart of total connections, comparing 2016 with 2020 on desktop. The median number of connections in 2016 is 23, in 2020 it is 13. At the 10th percentile, 6 connections in 2016, 5 in 2020. At the 25th percentile, 12 connections in 2016, 8 in 2020. At 75th percentile - 43 connections in 2016, 20 in 2020. At 90th percentile 76 connections in 2016 and 33 in 2020.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSOkWXtrbMfTLdhlKbBGDjRU3zKbnCQi3iPhfuKaFs5mj4smEzInDCYEnk63gBdgsJ3GFk2gf4FOKCU/pubchart?oid=17394219&format=interactive",
   sheets_gid="1432183252",
@@ -570,7 +571,7 @@ Looking at the frequency of push by content type in Figure 22.20, we see 90% of 
 
 {{ figure_markup(
   image="http2-pushed-content-types.png",
-  caption="Percentage of pages pushing specific content types",
+  caption="Percentage of pages pushing specific content types.",
   description="A bar chart showing for pages that push resources on desktop; 89.1% push scripts, 67.9% css, 6.1% images, 1.3% fonts, 0.7% other and 0.7% html. On mobile 90.29% push scripts, 56.08% css, 3.69% images, 0.97% fonts, 0.36% other and 0.39% html.", chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSOkWXtrbMfTLdhlKbBGDjRU3zKbnCQi3iPhfuKaFs5mj4smEzInDCYEnk63gBdgsJ3GFk2gf4FOKCU/pubchart?oid=1708672642&format=interactive",
   sheets_gid="238923402",
   sql_file="number_of_h2_and_h3_pushed_resources_and_bytes_by_content_type.sql"
@@ -618,7 +619,7 @@ This is reflected by the usage numbers in the HTTP Archive data, where no HTTP/3
 However, even the numbers for the older gQUIC are relatively modest, accounting for less than 2% of requests overall. This is expected, since gQUIC was mostly deployed by Google and Akamai; other parties were waiting for IETF QUIC. As such, gQUIC is expected to be replaced entirely by HTTP/3 soon.
 
 {{ figure_markup(
-  caption="The percentage of requests that use gQUIC on desktop and mobile",
+  caption="The percentage of requests that use gQUIC on desktop and mobile.",
   content="1.72%",
   classes="big-number",
   sheets_gid="2122693316",

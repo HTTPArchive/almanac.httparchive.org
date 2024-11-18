@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Third Parties
 description: Third Parties chapter of the 2022 Web Almanac covering data of what third parties are used on the web and a deep dive into preventing them causing negative performance impacts.
+hero_alt: Hero image of Web Almanac characters plugging various things into a web page.
 authors: [imeugenia]
 reviewers: [tunetheweb, kevinfarrugia, alexnj]
 analysts: [kevinfarrugia]
@@ -77,7 +78,7 @@ Learn more about our [Methodology](./methodology).
 ## Prevalence
 
 {{ figure_markup(
-  caption="Percent of mobile pages that use at least one third-party",
+  caption="Percent of mobile pages that use at least one third-party.",
   content="94%",
   classes="big-number",
   sheets_gid="1355951746",
@@ -114,7 +115,7 @@ When looking at the distribution of third parties by category and by rank, it be
 
 {{ figure_markup(
   image="top-third-parties-by-number-of-pages.png",
-  caption="Top 10 third parties by number of pages they are used on",
+  caption="Top 10 third parties by number of pages they are used on.",
   description="Bar chart showing the usage of top 10 most popular third parties. fonts.googleapis.com is used on 63% of mobile pages, google-analytics.com on 51%, accounts.google.com on 49%, adservice.google.com on 47%, and googletagmanager.com on 46%. The rest, i.e. ajax.googleapis.com, facebook.com, cdnjs.cloudflare.com, youtube.com and  maps.google.com are used on less than 30% of mobile pages. Desktop and mobile percentage is similar for all third parties.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSefmoEZjMhonz5fkMTxGIywJn-T7F8vYGAaj9wF9n5l8gApihCf3WCMZtrP3Syg-9E8RD8IKZg62U7/pubchart?oid=857401072&format=interactive",
   sheets_gid="756029157",
@@ -125,7 +126,7 @@ When looking at the distribution of third parties by category and by rank, it be
 Google services: fonts, analytics, account management, advertising, and tag management, are the most popular third parties across the entire web. 63% of all pages use Google Fonts which is over 4.9 million pages out of the 7.9 million mobile pages in our dataset!
 
 {{ figure_markup(
-  caption="Percentage of scripts of all third-party requests",
+  caption="Percentage of scripts of all third-party requests.",
   content="34%",
   classes="big-number",
   sheets_gid="811897794",
@@ -161,7 +162,7 @@ We inspected the <a hreflang="en" href="https://github.com/GoogleChrome/lighthou
 
 {{ figure_markup(
   image="third-parties-blocking-main-thread.png",
-  caption="Top 10 third parties blocking the main thread",
+  caption="Top 10 third parties blocking the main thread.",
   description="Bar chart showing the percentage of mobile pages that have main thread blocked by a third party by top 10 third parties. YouTube is blocking the main thread on 90% of mobile pages, Google Maps on 85%, Other Google APIs/SDKs on 84%, Facebook 82%, Google Dounbleclick Ads 81%, Google CDN 79%, Google Tag Manager 75%, Cloudfare CDN 71%, Google Analytics 70%, Google Fonts 63%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSefmoEZjMhonz5fkMTxGIywJn-T7F8vYGAaj9wF9n5l8gApihCf3WCMZtrP3Syg-9E8RD8IKZg62U7/pubchart?oid=1753375995&format=interactive",
   sheets_gid="1541263858",
@@ -228,7 +229,7 @@ The next figure displays the size of potential savings by a third-party. It is i
 The `code.jquery.com` CDN library for jQuery is the most popular JavaScript third-party library being used on 6% of all websites on desktop (note that jQuery is used on [far more websites](./javascript#library-usage), but not all uses are served from this CDN). On average 43 KB of data per page that has unminified jQuery could be saved by using the minified version of its resources, which are available on this CDN.
 
 {{ figure_markup(
-  caption="Percent of desktop pages with unminified jQuery from all pages using jQuery third-party",
+  caption="Percent of desktop pages with unminified jQuery from all pages using jQuery third-party.",
   content="17%",
   classes="big-number",
   sheets_gid="438030733",
@@ -242,7 +243,7 @@ This should serve as a reminder for web developers to check if the third-party s
 
 {{ figure_markup(
   image="average-potentially-saved-bytes-of-unminified-css.png",
-  caption="Percentage of average potentially saved bytes of unminified CSS by first and third party",
+  caption="Percentage of average potentially saved bytes of unminified CSS by first and third party.",
   description="Pie chart showing the distribution of the average potentially saved bytes of unminified CSS by resource origin type on mobile pages. 10.7% of unminified JavaScript is originated from third parties and 89.3% from a first party.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSefmoEZjMhonz5fkMTxGIywJn-T7F8vYGAaj9wF9n5l8gApihCf3WCMZtrP3Syg-9E8RD8IKZg62U7/pubchart?oid=417912172&format=interactive",
   sheets_gid="1857859997",
@@ -286,7 +287,7 @@ The rate of first-party scripts compressed via brotli almost tripled, increasing
 
 {{ figure_markup(
   image="third-party-content-encoding-by-year.png",
-  caption="Percentage of third-party script requests by content-encoding type and by year",
+  caption="Percentage of third-party script requests by content-encoding type and by year.",
   description="Bar chart showing first-party content-encoding trends for the period from 2020 to 2022. In 2020 12% of content has no compression, in 2021 11% and in 2022 12%.  In 2020 24% of content has brotli compression, in 2021 30% and in 2022 29%. In 2020 64% of content has gzip compression, in 2021 59% and in 2022 60%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSefmoEZjMhonz5fkMTxGIywJn-T7F8vYGAaj9wF9n5l8gApihCf3WCMZtrP3Syg-9E8RD8IKZg62U7/pubchart?oid=1920216281&format=interactive",
   sheets_gid="1568790776",
@@ -325,7 +326,7 @@ Which resources are critical and which could be deferred might be a tricky quest
 Despite JavaScript's rapid involvement, the prevalence of legacy code is still significant. We are using one of the Lighthouse audits to check how many third parties are <a hreflang="en" href="https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/legacy-javascript.js">serving legacy JavaScript to modern browsers</a>.
 
 {{ figure_markup(
-  caption="Percent of legacy JavaScript Lighthouse audit failure caused by third-party",
+  caption="Percent of legacy JavaScript Lighthouse audit failure caused by third-party.",
   content="59%",
   classes="big-number",
   sheets_gid="2078522493",
@@ -337,7 +338,7 @@ In general, third parties account for 59% of Lighthouse legacy JavaScript audit 
 
 {{ figure_markup(
   image="pages-with-third-parties-that-use-legacy-javascript.png",
-  caption="Percentage of websites using third parties that have legacy JavaScript",
+  caption="Percentage of websites using third parties that have legacy JavaScript.",
   description="Bar chart showing top 5 most-used third parties that serve legacy JavaScript. connect.facebook.net is used on 18.5% of mobile pages, apis.google.com on 3.3%, script.hotjar.com on 3.2%, cdn.shopify.com on 2.8% and static.xx.fbcdn.net on 2.4%. Data for desktop pages is very similar.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSefmoEZjMhonz5fkMTxGIywJn-T7F8vYGAaj9wF9n5l8gApihCf3WCMZtrP3Syg-9E8RD8IKZg62U7/pubchart?oid=2145007275&format=interactive",
   sheets_gid="596336022",
@@ -372,7 +373,7 @@ Some modern third-party loading and execution solutions have appeared in recent 
 The previous sections showed that the responsibility for third-party negative impact is split between first and third-party developers. However, <a hreflang="en" href="https://developer.chrome.com/blog/third-party-scripts#proposed-approach">browsers are also showing interest in optimizing the loading of third-party resources</a>. The proposals include better real user monitoring and developer tooling providing more data about the impact of third parties on their websites.
 
 {{ figure_markup(
-  caption="Percent of third-party requests with Timing-Allow-Origin header header",
+  caption="Percent of third-party requests with Timing-Allow-Origin header header.",
   content="25%",
   classes="big-number",
   sheets_gid="1045520136",

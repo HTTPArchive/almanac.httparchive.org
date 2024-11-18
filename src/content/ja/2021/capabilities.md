@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: ケイパビリティ
 description: 2021年版Web Almanacの「ケイパビリティ」の章では、Webアプリケーションにハードウェアインタフェースへのアクセスを提供し、Webベースの生産性アプリケーションを強化する、全く新しい強力なWebプラットフォームAPIをカバーしています。
+hero_alt: Hero image of Web Almanac characters with superhero capes plugging various capabilities into a web page.
 authors: [christianliebel]
 reviewers: [tomayac, hemanth]
 analysts: [tomayac]

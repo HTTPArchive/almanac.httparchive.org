@@ -626,11 +626,13 @@
   },
   "b_atish": {
     "name": "Beatriz González Mellídez",
+    "avatar_url": "756480",
     "teams": {
       "2024": [
         "reviewers"
       ]
     },
+    "github": "bgonzalez",
     "twitter": "b_atish",
     "linkedin": "beatrizgonzalezm",
     "website": "https://medium.com/@b_atish"
@@ -1149,6 +1151,9 @@
     "teams": {
       "2022": [
         "editors",
+        "reviewers"
+      ],
+      "2024": [
         "reviewers"
       ]
     },
@@ -1838,7 +1843,7 @@
         "reviewers"
       ]
     },
-    "mastodon": "@hdv@front-end.social",
+    "mastodon": "https://front-end.social/@hdv",
     "website": "https://hidde.blog/"
   },
   "housseindjirdeh": {
@@ -1994,8 +1999,7 @@
         "analysts",
         "authors"
       ]
-    },
-    "twitter": "SilentJMA"
+    }
   },
   "jroakes": {
     "avatar_url": "10191545",
@@ -2191,8 +2195,13 @@
   },
   "j9t": {
     "avatar_url": "1700772",
-    "github": "j9t",
     "name": "Jens Oliver Meiert",
+    "github": "j9t",
+    "website": "https://meiert.com/en/",
+    "mastodon": "https://mas.to/@j9t",
+    "bluesky": "meiert.com",
+    "twitter": "j9t",
+    "linkedin": "meiert",
     "teams": {
       "2020": [
         "authors",
@@ -2208,9 +2217,7 @@
       "2024": [
         "reviewers"
       ]
-    },
-    "twitter": "j9t",
-    "website": "https://meiert.com/en/"
+    }
   },
   "malchata": {
     "avatar_url": "1635238",
@@ -3057,6 +3064,9 @@
       ],
       "2022": [
         "designers"
+      ],
+      "2024": [
+        "designers"
       ]
     }
   },
@@ -3098,6 +3108,7 @@
     "avatar_url": "116832",
     "github": "mgifford",
     "linkedin": "mgifford",
+    "bluesky": "mgifford.bsky.social",
     "mastodon": "https://mastodon.social/@mgifford",
     "name": "Mike Gifford",
     "teams": {
@@ -3141,7 +3152,6 @@
     "website": "https://blog.mgechev.com/"
   },
   "MiriamNaß": {
-    "github": "MiriamNaß",
     "name": "Miriam Naß",
     "teams": {
       "2024": [
@@ -3314,7 +3324,8 @@
     "name": "Niko Kaleev",
     "teams": {
       "2024": [
-        "authors"
+        "authors",
+        "editors"
       ]
     }
   },
@@ -3674,6 +3685,7 @@
     "name": "Raelene Morey",
     "teams": {
       "2024": [
+        "editors",
         "reviewers"
       ]
     }
@@ -4310,18 +4322,6 @@
     },
     "twitter": "tpiros",
     "website": "https://tamas.io"
-  },
-  "karmatosed": {
-    "avatar_url": "253067",
-    "github": "karmatosed",
-    "name": "Tammie Lister",
-    "teams": {
-      "2024": [
-        "reviewers"
-      ]
-    },
-    "twitter": "karmatosed",
-    "website": "https://tammielister.com/"
   },
   "tammyeverts": {
     "avatar_url": "15661032",

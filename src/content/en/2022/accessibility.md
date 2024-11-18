@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Accessibility
 description: Accessibility chapter of the 2022 Web Almanac covering ease of reading, navigation, forms, media, ARIA, and accessibility apps.
+hero_alt: Hero image of a robot with a blue, human accessibility icon on its front scanning a web page, while Web Almanac characters check some labels.
 authors: [SaptakS, thibaudcolas, scottdavis99]
 reviewers: [shantsis]
 analysts: [thibaudcolas]
@@ -11,7 +12,7 @@ SaptakS_bio: Saptak S is a human rights centered web developer, focusing on usab
 scottdavis99_bio: Scott Davis is an author and Digital Accessibility Advocate with <a hreflang="en" href="https://www.thoughtworks.com/">Thoughtworks</a>, where he focuses on leading-edge / innovative / emerging / non-traditional aspects of web development. "Digital Accessibility is so much more than a compliance checkbox; Accessibility is a springboard for innovation."
 thibaudcolas_bio: Thibaud Colas is a web developer and open source contributor focusing on accessibility topics. He is a core contributor to the <a hreflang="en" href="https://wagtail.org/">Wagtail</a> CMS, and a member of the accessibility team for <a hreflang="en" href="https://www.djangoproject.com/">Django</a>.
 results: https://docs.google.com/spreadsheets/d/1ladaKh6RbtMKQwkccwxDJGQf85KyhfLrtlM_9e9sLH8/
-featured_quote: Good accessibility benefits everyone, not just those with disabilities. This is one of the core principles of Universal Design. After the COVID-19 pandemic started, more and more people have been reliant on the internet. Likewise,  accessibility needs to improve as well, or we risk alienating a lot of people. Although the state of web accessibility still leaves a lot to be desired, we did see an overall improvement in sites’ accessibility this year.
+featured_quote: Good accessibility benefits everyone, not just those with disabilities. This is one of the core principles of Universal Design. After the COVID-19 pandemic started, more and more people have been reliant on the internet. Likewise,  accessibility needs to improve as well, or we risk alienating a lot of people. Although the state of web accessibility still leaves a lot to be desired, we did see an overall improvement in sites' accessibility this year.
 featured_stat_1: 8%
 featured_stat_label_1: Sites using `prefers-color-scheme` to adjust styles based on light/dark mode
 featured_stat_2: 22.9%
@@ -26,7 +27,7 @@ featured_stat_label_3: Sites using `:focus-visible`, compared to only 0.6% last 
 
 When does a software feature cease being an "accessibility feature" and simply become a "feature" that we all use? Ask yourself that the next time you put your smartphone in silent/vibrate mode – especially if you're not a member of the Deaf/Hard of Hearing community.
 
-Good accessibility benefits everyone, not just those with disabilities. This is one of the core principles of <a hreflang="en" href="https://en.wikipedia.org/wiki/Universal_design">Universal Design</a>. Tim Berners-Lee said, "The power of the Web is in its universality. Access by everyone regardless of disability is an essential aspect." After the COVID-19 pandemic started, more and more people have been reliant on the internet. Likewise, accessibility needs to improve as well, or we risk alienating a lot of people.
+Good accessibility benefits everyone, not just those with disabilities. This is one of the core principles of [Universal Design](https://wikipedia.org/wiki/Universal_design). Tim Berners-Lee said, "The power of the Web is in its universality. Access by everyone regardless of disability is an essential aspect." After the COVID-19 pandemic started, more and more people have been reliant on the internet. Likewise, accessibility needs to improve as well, or we risk alienating a lot of people.
 
 The median overall site score for all Lighthouse Accessibility audit data rose from 80% in 2020 to 82% in 2021, then 83% in 2022. We hope that this increase represents a shift in the right direction.
 
@@ -286,7 +287,7 @@ Skip links allow keyboard or switch control device users to skip through differe
 
 {{ figure_markup(
   content="21%",
-  caption="Mobile and desktop pages which likely have a skip link",
+  caption="Mobile and desktop pages which likely have a skip link.",
   classes="big-number",
   sheets_gid="1778743357",
   sql_file="skip_links.sql",
@@ -436,7 +437,7 @@ Websites often want to verify that the visitor is a human and not a bot, which i
 
 {{ figure_markup(
   content="19%",
-  caption="Mobile sites using a CAPTCHA",
+  caption="Mobile sites using a CAPTCHA.",
   classes="big-number",
   sheets_gid="1615174635",
   sql_file="captcha_usage.sql",
@@ -452,7 +453,7 @@ Accessibility considerations become very crucial when it comes to media consumpt
 
 {{ figure_markup(
   content="59%",
-  caption="Mobile pages passing the Lighthouse image-alt audit for images with alt text",
+  caption="Mobile pages passing the Lighthouse image-alt audit for images with alt text.",
   classes="big-number",
   sheets_gid="1270834582",
   sql_file="lighthouse_a11y_audits.sql",
@@ -499,7 +500,7 @@ We found that 27% of alt text attributes in desktop and mobile websites were emp
 
 {{ figure_markup(
   content="0.06%",
-  caption="Desktop websites with an `<audio>` element have at least one accompanying `<track>` element",
+  caption="Desktop websites with an `<audio>` element have at least one accompanying `<track>` element.",
   classes="big-number",
   sheets_gid="201877037",
   sql_file="audio_track_usage.sql",
@@ -509,7 +510,7 @@ We found that 27% of alt text attributes in desktop and mobile websites were emp
 
 {{ figure_markup(
   content="0.71%",
-  caption="Desktop `<video>` elements with an accompanying `<track>` element",
+  caption="Desktop `<video>` elements with an accompanying `<track>` element.",
   classes="big-number",
   sheets_gid="345150659",
   sql_file="video_track_usage.sql",
@@ -555,7 +556,7 @@ We found that 33% (up from 29% in 2021, and 25% in 2020) of desktop and mobile s
 
 {{ figure_markup(
   content="21%",
-  caption="Desktop websites have at least one link with a `button` role",
+  caption="Desktop websites have at least one link with a `button` role.",
   classes="big-number",
   sheets_gid="751886683",
   sql_file="anchors_with_role_button.sql",
@@ -569,7 +570,7 @@ When an element has `role="presentation"` declared on it, its semantics are stri
 
 {{ figure_markup(
   content="24%",
-  caption="Mobile websites have at least one element with `role=presentation`",
+  caption="Mobile websites have at least one element with `role=presentation`.",
   classes="big-number",
   sheets_gid="283521996",
   sql_file="common_aria_role.sql",
@@ -579,7 +580,7 @@ Removing an element's semantics causes an element to lose its behavior. It becom
 
 {{ figure_markup(
   content="11%",
-  caption="Mobile websites have at least one element with `role=none`",
+  caption="Mobile websites have at least one element with `role=none`.",
   classes="big-number",
   sheets_gid="283521996",
   sql_file="common_aria_role.sql",
@@ -631,7 +632,7 @@ Sometimes the visual interface can contain some redundant elements that are unhe
 
 {{ figure_markup(
   content="58%",
-  caption="Desktop websites having at least one instance of the `aria-hidden` attribute",
+  caption="Desktop websites having at least one instance of the `aria-hidden` attribute.",
   classes="big-number",
   sheets_gid="711360879",
   sql_file="common_element_attributes.sql",
@@ -647,7 +648,7 @@ A common technique that developers employ to supply additional information for s
 
 {{ figure_markup(
   content="15%",
-  caption="Desktop websites with a `sr-only` or `visually-hidden` class",
+  caption="Desktop websites with a `sr-only` or `visually-hidden` class.",
   classes="big-number",
   sheets_gid="642136962",
   sql_file="sr_only_classes.sql",
@@ -661,7 +662,7 @@ The presence of new or updated content in the DOM sometimes needs to be communic
 
 {{ figure_markup(
   content="23%",
-  caption="Desktop pages with live regions using `aria-live`",
+  caption="Desktop pages with live regions using `aria-live`.",
   classes="big-number",
   sheets_gid="711360879",
   sql_file="common_element_attributes.sql",
@@ -714,7 +715,7 @@ ARIA live regions allow us to listen for changes in the DOM, such that the updat
   </table>
   <figcaption>
     {{ figure_link(
-      caption="Pages with live region ARIA roles, and their implicit `aria-live` value",
+      caption="Pages with live region ARIA roles, and their implicit `aria-live` value.",
       sheets_gid="283521996",
       sql_file="common_aria_role.sql",
     ) }}

@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Page Weight
 description: Page Weight chapter of the 2019 Web Almanac covering why page weight matters, bandwidth, complex pages, page weight over time, page requests, and file formats.
+hero_alt: Hero image of Web Almanac characters using a set of scales to weigh a web page against variuos boxes labelled with various different kilobytes.
 authors: [tammyeverts, khempenius]
 reviewers: [paulcalvano]
 analysts: [khempenius]
@@ -219,7 +220,7 @@ Roughly speaking, mobile sites are about 10% smaller than their desktop counterp
       <td>4</td>
     </tr>
   </table>
-  <figcaption>{{ figure_link(caption="Page weight on desktop broken down by resource type") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Page weight on desktop broken down by resource type.") }}</figcaption>
 </figure>
 
 ### Page weight over time

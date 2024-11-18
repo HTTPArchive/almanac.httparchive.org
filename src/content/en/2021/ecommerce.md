@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Ecommerce
 description: Ecommerce chapter of the 2021 Web Almanac covering ecommerce platforms, page weight, images, third-parties, core web vitals and lighthouse performance metrics, SEO, and PWAs.
+hero_alt: Hero image of a Web Almanac character at a super market checkout loading items from a shopping basket onto the conveyor belt while another character payes with a credit card.
 authors: [bobbyshaw]
 reviewers: [rockeynebhwani, alankent, soulcorrosion, fili]
 analysts: [rrajiv]
@@ -109,7 +110,7 @@ This year, the <a hreflang="en" href="https://developers.google.com/web/tools/ch
 
 {{ figure_markup(
   image="top-5-ecommerce-platforms-by-crux-rank.png",
-  caption="Top 5 ecommerce platforms share by CRUX rank",
+  caption="Top 5 ecommerce platforms share by CRUX rank.",
   description="A bar chart showing the usage of ecommerce platforms within top 10,000, top 100,000, top 1 million and all sites. In contrast to all sites, in the top 100,000 on mobile Magento has 1.21%, Shopify has 0.88%, WooCommerce has 0.56% share, PrestaShop has 0.33% and Wix eCommerce has 0%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT70VMNXb1X6Mnh69JGhQILb5ImqBkg6MtMpPiZnrNfYXQ7nngGWHO_kj87tAG5FkIyOvpNNYJmkLVY/pubchart?oid=211149833&format=interactive",
   sheets_gid="1491793974",
@@ -129,7 +130,7 @@ Another way to look at the results is to consider the most popular platforms wit
 
 {{ figure_markup(
   image="top-ecommerce-platforms-top-1m-sites.png",
-  caption="Top ecommerce platforms of 1 million sites",
+  caption="Top ecommerce platforms of 1 million sites.",
   description="A bar chart showing in descending order the usage of ecommerce platforms within the top 1 million sites. 3.49% on mobile are WooCommerce, 2.76% are Shopify, 1.48% are Magento, 1.17% are PrestaShop, 0.23% are Shopware, 0.22% are BigCommerce, 0.15% are Salesforce Commerce Cloud, 0.14% are VTEX, 0.10 are Shoper, and finally 0.10% are Tray. Desktop usage looks very similar.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT70VMNXb1X6Mnh69JGhQILb5ImqBkg6MtMpPiZnrNfYXQ7nngGWHO_kj87tAG5FkIyOvpNNYJmkLVY/pubchart?oid=86873602&format=interactive",
   sheets_gid="1491793974",
@@ -146,7 +147,7 @@ We also see Magento take the third spot over PrestaShop. Wix eCommerce and Squar
 
 {{ figure_markup(
   image="top-ecommerce-platforms-top-100k-sites.png",
-  caption="Top ecommerce platforms of top 100,000 sites",
+  caption="Top ecommerce platforms of top 100,000 sites.",
   description="A bar chart showing in descending order the usage of ecommerce platforms within the top 100,000 sites. On mobile 1.21% are Magento, 0.88% are Shopify, 0.63% are Salesforce Commerce Cloud, 0.56% are WooCommerce, 0.33% are PrestaShop, 0.30% are SAP Commerce Cloud, 0.28% are VTEX, 0.10% are HCL Commerce, 0.08% are Shopware, and finally 0.06% are Amazon Webstore. Desktop usage looks very similar.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT70VMNXb1X6Mnh69JGhQILb5ImqBkg6MtMpPiZnrNfYXQ7nngGWHO_kj87tAG5FkIyOvpNNYJmkLVY/pubchart?oid=942112971&format=interactive",
   sheets_gid="1491793974",
@@ -161,7 +162,7 @@ When we consider the top 100,000 sites by CrUX rank the picture changes quite dr
 
 {{ figure_markup(
   image="top-ecommerce-platforms-top-10k-sites.png",
-  caption="Top ecommerce platforms of top 10,000 sites",
+  caption="Top ecommerce platforms of top 10,000 sites.",
   description="A bar chart showing in descending order the usage of ecommerce platforms within the top 10,000 sites. On mobile 0.70% are SAP Commerce Cloud, 0.68% are Salesforce Commerce Cloud, 0.32% are Magento, 0.26% are HCL Commerce, 0.13% are Oracle Commerce, 0.12% are Shopify, 0.10% are WooCommerce, 0.10% are VTEX, 0.10% are Amazon Webstore, and 0.07% are SummerCart. Desktop usage looks very similar.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT70VMNXb1X6Mnh69JGhQILb5ImqBkg6MtMpPiZnrNfYXQ7nngGWHO_kj87tAG5FkIyOvpNNYJmkLVY/pubchart?oid=1147944186&format=interactive",
   sheets_gid="1491793974",
@@ -186,7 +187,7 @@ Fast-forward to 2021, people and businesses around the world have continued to a
 
 {{ figure_markup(
   image="ecommerce-vendor-growth-covid-19-impact.png",
-  caption="Ecommerce platform growth Covid-19 impact",
+  caption="Ecommerce platform growth Covid-19 impact.",
   description="A line chart showing the growth of five popular ecommerce platforms: WooCommerce, Shopify, PrestaShop, Magento, and Wix eCommerce. WooCommerce shows a steady growth with a noticeable bump in February 2020 and again in June and July. Shopify shows similar but for a smaller percentage and the other three show less of such an impact. Beyond Q3 2020 there are fewer notable increases.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT70VMNXb1X6Mnh69JGhQILb5ImqBkg6MtMpPiZnrNfYXQ7nngGWHO_kj87tAG5FkIyOvpNNYJmkLVY/pubchart?oid=1480107860&format=interactive",
   sheets_gid="1789671097",
@@ -223,7 +224,7 @@ One way of measuring the technical quality of a web page is with <a hreflang="en
 
 {{ figure_markup(
   image="median-lighthouse-scores-for-ecommerce-websites.png",
-  caption="Median Lighthouse scores for ecommerce websites",
+  caption="Median Lighthouse scores for ecommerce websites.",
   description="A bar chart showing the median Lighthouse scores for ecommerce websites. The median Performance score was 22 out of 100, the median Accessibility score was 83, the median PWA score was 42, the median SEO score was 90, and the median Best Practices score was 73.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT70VMNXb1X6Mnh69JGhQILb5ImqBkg6MtMpPiZnrNfYXQ7nngGWHO_kj87tAG5FkIyOvpNNYJmkLVY/pubchart?oid=401880767&format=interactive",
   sheets_gid="669431111",
@@ -250,7 +251,7 @@ The best results are likely to be found by those businesses that can find a bala
 
 {{ figure_markup(
   image="median-lighthouse-performance-scores-for-ecommerce-websites.png",
-  caption="Median Lighthouse performance scores for ecommerce websites",
+  caption="Median Lighthouse performance scores for ecommerce websites.",
   description="A bar chart showing the median Lighthouse performance scores for ecommerce websites by ecommerce platform in descending order of platform popularity. The median performance score on mobile for each platform is as follows: WooCommerce (20), Shopify (27), PrestaShop (22), Magento (18), Wix eCommerce (27), Squarespace Commerce (16), BigCommerce (25), and Shopware (20).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT70VMNXb1X6Mnh69JGhQILb5ImqBkg6MtMpPiZnrNfYXQ7nngGWHO_kj87tAG5FkIyOvpNNYJmkLVY/pubchart?oid=1706895252&format=interactive",
   sheets_gid="1379786622",
@@ -265,7 +266,7 @@ Shopify, to its credit, has recently <a hreflang="en" href="https://shopify.dev/
 
 {{ figure_markup(
   image="median-lighthouse-accessibility-scores-for-ecommerce-websites.png",
-  caption="Median Lighthouse accessibility scores for ecommerce websites",
+  caption="Median Lighthouse accessibility scores for ecommerce websites.",
   description="A bar chart showing the median Lighthouse accessibility scores for ecommerce websites by ecommerce platform in descending order of platform popularity. The median accessibility score on mobile for each platform is as follows: WooCommerce (85), Shopify (85), PrestaShop (75), Magento (80), Wix eCommerce (88), Squarespace Commerce (90), BigCommerce (78), and Shopware (85).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT70VMNXb1X6Mnh69JGhQILb5ImqBkg6MtMpPiZnrNfYXQ7nngGWHO_kj87tAG5FkIyOvpNNYJmkLVY/pubchart?oid=985330269&format=interactive",
   sheets_gid="1379786622",
@@ -291,7 +292,7 @@ It appears that PWA support is not a priority for all ecommerce businesses. We m
 
 {{ figure_markup(
   image="median-lighthouse-best-practices-scores-for-ecommerce-websites.png",
-  caption="Median Lighthouse best practices scores for ecommerce websites",
+  caption="Median Lighthouse best practices scores for ecommerce websites.",
   description="A bar chart showing the median Lighthouse best practices scores for ecommerce websites by ecommerce platform in descending order of platform popularity. The median best practices score on mobile for each platform is as follows: WooCommerce (80), Shopify (73), PrestaShop (73), Magento (73), Wix eCommerce (93), Squarespace Commerce (87), BigCommerce (73), and Shopware (87).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT70VMNXb1X6Mnh69JGhQILb5ImqBkg6MtMpPiZnrNfYXQ7nngGWHO_kj87tAG5FkIyOvpNNYJmkLVY/pubchart?oid=2076322933&format=interactive",
   sheets_gid="1379786622",
@@ -321,7 +322,7 @@ In this section, we will review sites that have reached a "good" threshold on al
 
 {{ figure_markup(
   image="ecommerce-real-user-core-web-vitals-experiences.png",
-  caption="Real-user Core Web Vitals experiences",
+  caption="Real-user Core Web Vitals experiences.",
   description="A bar chart showing the number of sites with good CWV experiences for the top 5 most popular ecommerce platforms. WooCommerce has 16.92% on desktop and 11.32% on mobile, Shopify has 43.22% on desktop and 32.64% on mobile, PrestaShop has 40.50% on desktop and 21.46% on mobile, Magento has 25.80% on desktop and 14.02% on mobile, Wix eCommerce has 29.86% on desktop and 21.57% on mobile, and Squarespace Commerce has 38.04% on desktop and 13.31% on mobile",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT70VMNXb1X6Mnh69JGhQILb5ImqBkg6MtMpPiZnrNfYXQ7nngGWHO_kj87tAG5FkIyOvpNNYJmkLVY/pubchart?oid=1634335022&format=interactive",
   sheets_gid="1963925384",
@@ -346,7 +347,7 @@ Firstly, there is the <a hreflang="en" href="https://web.dev/articles/lcp">Large
 
 {{ figure_markup(
   image="ecommerce-real-user-largest-contentful-paint-experiences.png",
-  caption="Real-user Largest Contentful Paint experiences",
+  caption="Real-user Largest Contentful Paint experiences.",
   description="A bar chart showing the number of sites with good LCP experiences for the top 5 most popular ecommerce platforms. WooCommerce has 28.07% on desktop and 17.53% on mobile, Shopify has 75.93% on desktop and 57.94% on mobile, PrestaShop has 61.54% on desktop and 39.85% on mobile, Magento has 45.20% on desktop and 30.03% on mobile, Wix eCommerce has 36.70% on desktop and 26.20% on mobile, and Squarespace Commerce has 39.63% on desktop and 24.37% on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT70VMNXb1X6Mnh69JGhQILb5ImqBkg6MtMpPiZnrNfYXQ7nngGWHO_kj87tAG5FkIyOvpNNYJmkLVY/pubchart?oid=949717130&format=interactive",
   sheets_gid="1963925384",
@@ -367,7 +368,7 @@ The second metric, <a hreflang="en" href="https://web.dev/articles/fid">First In
 
 {{ figure_markup(
   image="ecommerce-real-user-first-input-delay-experiences.png",
-  caption="Real-user First Input Delay experiences",
+  caption="Real-user First Input Delay experiences.",
   description="A bar chart showing the number of sites with good FID experiences for the top 5 most popular ecommerce platforms. For mobile WooCommerce has 97.44%, Shopify has 98.21%, PrestaShop has 97.19%, Magento has 96.61%, Wix eCommerce has 92.05%, and Squarespace Commerce has 98.23%. Desktop percentages look very similar.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT70VMNXb1X6Mnh69JGhQILb5ImqBkg6MtMpPiZnrNfYXQ7nngGWHO_kj87tAG5FkIyOvpNNYJmkLVY/pubchart?oid=411508866&format=interactive",
   sheets_gid="1963925384",
@@ -388,7 +389,7 @@ The final of the three CWV metrics is <a hreflang="en" href="https://web.dev/art
 
 {{ figure_markup(
   image="ecommerce-real-user-cumulative-layout-shift-experiences.png",
-  caption="Real-user Cumulative Layout Shift experiences",
+  caption="Real-user Cumulative Layout Shift experiences.",
   description="A bar chart showing the number of sites with good CLS experiences for the top 5 most popular ecommerce platforms on mobile. WooCommerce has 53.46% on desktop and 55.34% on mobile, Shopify has 55.97% on desktop and 52.58% on mobile, PrestaShop has 61.78% on desktop and 47.95% on mobile, Magento has 48.77% on desktop and 36.46% on mobile, Wix eCommerce has 74.15% on desktop and 76.26% on mobile, and Squarespace Commerce has 60.23% on desktop and 49.61% on mobile",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT70VMNXb1X6Mnh69JGhQILb5ImqBkg6MtMpPiZnrNfYXQ7nngGWHO_kj87tAG5FkIyOvpNNYJmkLVY/pubchart?oid=1602906686&format=interactive",
   sheets_gid="1963925384",
@@ -478,7 +479,7 @@ The HTML payload is the size of the document response. In addition to HTML, this
 
 {{ figure_markup(
   image="distribution-of-html-bytes-per-ecommerce-page.png",
-  caption="Distribution of HTML bytes per ecommerce page",
+  caption="Distribution of HTML bytes per ecommerce page.",
   description="A bar chart showing the number of HTML kilobytes, with the 10th percentile having 14 KB on desktop and on mobile, the 25th percentile having 22 and 21 respectively, 50th having 39 and 38, 75th having 75 and 76, and 90th percentile having 141 KB on desktop and 144 KB on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT70VMNXb1X6Mnh69JGhQILb5ImqBkg6MtMpPiZnrNfYXQ7nngGWHO_kj87tAG5FkIyOvpNNYJmkLVY/pubchart?oid=1110473821&format=interactive",
   sheets_gid="1110292504",
@@ -495,7 +496,7 @@ Images are the second most requested resource type as well as the second-largest
 
 {{ figure_markup(
   image="distribution-of-image-requests-for-ecommerce.png",
-  caption="Distribution of image requests for ecommerce",
+  caption="Distribution of image requests for ecommerce.",
   description="A bar chart showing the number of image requests, with the 10th percentile having 11 requests on desktop and 10 on mobile, the 25th percentile having 19 and 17 respectively, 50th having 31 and 28, 75th having 51 and 47, and 90th percentile having 84 requests on desktop and 76 on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT70VMNXb1X6Mnh69JGhQILb5ImqBkg6MtMpPiZnrNfYXQ7nngGWHO_kj87tAG5FkIyOvpNNYJmkLVY/pubchart?oid=1959478173&format=interactive",
   sheets_gid="1637609725",
@@ -508,7 +509,7 @@ Overall, there is a 10-20% reduction in the number of images requested. It is ha
 
 {{ figure_markup(
   image="distribution-of-image-bytes-for-ecommerce.png",
-  caption="Distribution of image bytes for ecommerce",
+  caption="Distribution of image bytes for ecommerce.",
   description="A bar chart showing the number of image kilobytes, with the 10th percentile having 266 KB on desktop and 219 KB on mobile, the 25th percentile having 577 and 522 respectively, 50th having 1,315 and 1,241, 75th having 2,952 and 2,803, and 90th percentile having 6,074 KB on desktop and 5,577 KB on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT70VMNXb1X6Mnh69JGhQILb5ImqBkg6MtMpPiZnrNfYXQ7nngGWHO_kj87tAG5FkIyOvpNNYJmkLVY/pubchart?oid=1732107846&format=interactive",
   sheets_gid="1637609725",
@@ -523,7 +524,7 @@ Given we have seen that the number of image requests is slightly down, the avera
 
 {{ figure_markup(
   image="poppular-image-formats-ecommerce.png",
-  caption="Popular images formats on ecommerce websites",
+  caption="Popular images formats on ecommerce websites.",
   description="A distribution chart showing the share of image type usage. JPG is 53% on desktop and 54% on mobile, PNG is 27% on both, GIF is 14% on both, SVG and WEBP are 2% on both, ICO is 1% on both and other is 0%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT70VMNXb1X6Mnh69JGhQILb5ImqBkg6MtMpPiZnrNfYXQ7nngGWHO_kj87tAG5FkIyOvpNNYJmkLVY/pubchart?oid=435186757&format=interactive",
   sheets_gid="797916311",
@@ -544,7 +545,7 @@ Ecommerce platforms and sites often make use of [third-party](./third-parties) c
 
 {{ figure_markup(
   image="distribution-of-third-party-requests.png",
-  caption="Distribution of third-party requests",
+  caption="Distribution of third-party requests.",
   description="A bar chart showing the number of third-party requests for ecommerce sites, with the 10th percentile having 8 requests on desktop and 7 on mobile, the 25th percentile having 17 and 15 respectively, 50th having 33 and 30, 75th having 60 and 56, and 90th percentile having 96 third-party requests on desktop and 91 on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT70VMNXb1X6Mnh69JGhQILb5ImqBkg6MtMpPiZnrNfYXQ7nngGWHO_kj87tAG5FkIyOvpNNYJmkLVY/pubchart?oid=1946741517&format=interactive",
   sheets_gid="681665784",
@@ -555,7 +556,7 @@ The median ecommerce site on mobile made 30 requests to third parties. While las
 
 {{ figure_markup(
   image="distribution-of-third-party-bytes.png",
-  caption="Distribution of third-party bytes",
+  caption="Distribution of third-party bytes.",
   description="A bar chart showing the number of third-party kilobytes for ecommerce sites, with the 10th percentile having 104 KB on desktop and 75 KB on mobile, the 25th percentile having 250 and 203 respectively, 50th having 569 and 495, 75th having 1,227 and 1,119, and 90th percentile having 2,527 KB on desktop and 2,306 KB on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT70VMNXb1X6Mnh69JGhQILb5ImqBkg6MtMpPiZnrNfYXQ7nngGWHO_kj87tAG5FkIyOvpNNYJmkLVY/pubchart?oid=52384863&format=interactive",
   sheets_gid="681665784",
@@ -578,7 +579,7 @@ Unfortunately, we are unable to make statements about the proliferation of headl
 
 {{ figure_markup(
   image="top-javascript-frameworks-ecommerce.png",
-  caption="Top JavaScript frameworks on ecommerce sites",
+  caption="Top JavaScript frameworks on ecommerce sites.",
   description="A bar chart showing the most popular JavaScript frameworks on ecommerce sites in descending order of popularity. GSAP has 15.07% share of mobile ecommerce sites, Require JS 7.22%, Handlebars has 6.09%, styled-components has 3.79%, Vue.js has 3.41%, Prototype have 2.66%, Stimulus has 2.47%, Backbone JS has 1.80%, Moustache has 1.54% and Angular JS has 0.71%. Desktop usage looks very similar.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT70VMNXb1X6Mnh69JGhQILb5ImqBkg6MtMpPiZnrNfYXQ7nngGWHO_kj87tAG5FkIyOvpNNYJmkLVY/pubchart?oid=532064877&format=interactive",
   sheets_gid="1754008320",
@@ -589,7 +590,7 @@ Unfortunately, we are unable to make statements about the proliferation of headl
 
 {{ figure_markup(
   image="top-javascript-libraries-ecommerce.png",
-  caption="Top JavaScript libraries on ecommerce sites",
+  caption="Top JavaScript libraries on ecommerce sites.",
   description="A bar chart showing the most popular JavaScript libraries on ecommerce sites in descending order of popularity. jQuery has 93.66% share of mobile ecommerce sites, jQuery Migrate has 39.74%, jQuery UI has 30.99%, Modernizr has 19.57%, Lodash has 16.60%, Boomerang has 13.53%, FancyBox has 12.48%, React has 11.82%, Underscore.js has 11.65%, and Slick has 9.90%. Desktop usage looks almost identical.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT70VMNXb1X6Mnh69JGhQILb5ImqBkg6MtMpPiZnrNfYXQ7nngGWHO_kj87tAG5FkIyOvpNNYJmkLVY/pubchart?oid=852523817&format=interactive",
   sheets_gid="2088662521",
@@ -610,7 +611,7 @@ One of the beauties of ecommerce is that you can measure how well you're doing b
 
 {{ figure_markup(
   image="top-analytics-ecommerce.png",
-  caption="Top analytics solutions on ecommerce sites",
+  caption="Top analytics solutions on ecommerce sites.",
   description="A bar chart showing the most popular analytics solutions libraries on ecommerce sites in descending order of popularity. Google Analytics has 74.19% share of mobile ecommerce sites, Google Analytics Enhanced Ecommerce has 13.38%, HotJar has 5.90%, Yandex Metrika has 6.31%, New Relic has 2.80%, Matomo Analytics has 2.21%, Site Kit has 1.65%, and Moat has 1.20%. Desktop usage looks very similar",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT70VMNXb1X6Mnh69JGhQILb5ImqBkg6MtMpPiZnrNfYXQ7nngGWHO_kj87tAG5FkIyOvpNNYJmkLVY/pubchart?oid=1380267770&format=interactive",
   sheets_gid="1942109850",
@@ -627,7 +628,7 @@ These tools provide ecommerce and marketing teams with reduced cycle time for la
 
 {{ figure_markup(
   image="top-tag-managers-ecommerce.png",
-  caption="Top tag managers on ecommerce sites",
+  caption="Top tag managers on ecommerce sites.",
   description="A bar chart showing the most popular tag managers on ecommerce sites in descending order of popularity. Google Tag Manager has 53.95% share of mobile ecommerce sites, Tealium has 0.26%, Adobe Experience Platform Launch has 0.20% and Adobe DTM has 0.08%. Desktop usage looks very similar.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT70VMNXb1X6Mnh69JGhQILb5ImqBkg6MtMpPiZnrNfYXQ7nngGWHO_kj87tAG5FkIyOvpNNYJmkLVY/pubchart?oid=1744266071&format=interactive",
   sheets_gid="1965630509",
@@ -642,7 +643,7 @@ In a similar vein to analytics, implementing an A/B testing solution enables hyp
 
 {{ figure_markup(
   image="top-ab-testing-ecommerce.png",
-  caption="Top A/B testing solutions on ecommerce sites",
+  caption="Top A/B testing solutions on ecommerce sites.",
   description="A bar chart showing the most popular A/B testing solutions on ecommerce sites in descending order of popularity. Google Optimize has 2.06% share of mobile ecommerce sites, VWO has 0.15%, Optimizely and Adobe Target both have 0.12%, SiteSpect has 0.10%, Oracle Maximiser 0.07%, and AB Tasty and Convert all have 0.05% share of mobile sites. Desktop usage looks very similar.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT70VMNXb1X6Mnh69JGhQILb5ImqBkg6MtMpPiZnrNfYXQ7nngGWHO_kj87tAG5FkIyOvpNNYJmkLVY/pubchart?oid=1079713389&format=interactive",
   sheets_gid="1562966266",
@@ -678,7 +679,7 @@ We may explain away the low usage statistics by saying that it is from a lack of
 
 {{ figure_markup(
   image="web-push-notification-acceptance-rates-ecommerce.png",
-  caption="Web Push Notification acceptance rates",
+  caption="Web Push Notification acceptance rates.",
   description="A bar chart showing the percentage acceptance rates of Web Push Notifications, with the 10th percentile having 4.92% on mobile, the 25th percentile having 9.67%, 50th having 14.23%, 75th having 19.91%, and 90th percentile having 29.80%. Desktop acceptance rates look near identical.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT70VMNXb1X6Mnh69JGhQILb5ImqBkg6MtMpPiZnrNfYXQ7nngGWHO_kj87tAG5FkIyOvpNNYJmkLVY/pubchart?oid=1221136912&format=interactive",
   sheets_gid="771576347",
@@ -763,7 +764,7 @@ A `hreflang` attribute is used to communicate the language that the page is targ
 
 {{ figure_markup(
   image="hreflang-links-ecommerce.png",
-  caption="Top `hreflang` links used on ecommerce sites",
+  caption="Top `hreflang` links used on ecommerce sites.",
   description="A bar chart showing the percentage of ecommerce sites where languages were specified in one or more `hreflang` links. In descending order of popularity on mobile, an `en` hreflang is on 8.07% of ecommerce sites, `de` on 3.28%, `fr` on 2.82%, `es` on 2.66%, `it` on 1.72%, `nl` on 1.21%, `ru` on 0.81%, `pl` and `pt` on 0.81%, and `be` on 0.67%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT70VMNXb1X6Mnh69JGhQILb5ImqBkg6MtMpPiZnrNfYXQ7nngGWHO_kj87tAG5FkIyOvpNNYJmkLVY/pubchart?oid=532818660&format=interactive",
   sheets_gid="682046615",

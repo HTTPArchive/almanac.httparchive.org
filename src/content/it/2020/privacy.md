@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Privacy
 description: Capitolo sulla privacy del Web Almanac 2020 che copre i cookie di tracciamento online, le tecnologie per il miglioramento della privacy (PET) e le politiche sulla privacy
+hero_alt: Hero image of Web Almanac characters with cameras, phones, and microphones acting like paparazzi while another character pulls back a shower curtain to reveal a web page behind it.
 authors: [ydimova]
 reviewers: [ldevernay]
 analysts: [ydimova, max-ostapenko]

@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Markup
 description: Markup chapter of the 2024 Web Almanac covering document data (doctypes, compression, languages, HTML conformance, document size), the use of HTML elements and attributes, data attributes and social media.
+hero_alt: Hero image of Web Almanac characters as dressed as constructor workers putting together a web page from HTML element blocks.
 authors: [guaca]
 reviewers: [bkardell, j9t, zcorpan]
 analysts: [guaca]
@@ -109,7 +110,7 @@ A page's document size is the amount of HTML bytes transferred over the network,
 
 {{ figure_markup(
   image="document_trends.png",
-  caption="Median transfer size of HTML document",
+  caption="Median transfer size of HTML document.",
   description="Bar chart showing the median transfer size of HTML document. In 2022, the median was 31 kB on desktop and 29 on mobile. In 2023, 30 kB on desktop and 29 kB on mobile. And in 2024, 33 kB on desktop and 32 kB on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQTldh1hYi8-zIRgmK_v6IhpKuUOPTAhBxStogg3rt1L6isaX6v8dgODs7WiJ_udh7ZvHnvrTZLlXkW/pubchart?oid=1823253654&format=interactive",
   sheets_gid="1730786160",
@@ -123,7 +124,7 @@ Although the median looks like something reasonable, let's take a closer look at
 
 {{ figure_markup(
   image="document_size_distribution.png",
-  caption="Distribution of the transfer size of HTML document",
+  caption="Distribution of the transfer size of HTML document.",
   description="Bar chart showing the 10, 25, 50, 75, and 90th percentile of transfer size. The values for mobile are 6, 13, 32, 71, 147 kB respectively. The values for desktop are 6, 14, 33, 73, 148 kB respectively.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQTldh1hYi8-zIRgmK_v6IhpKuUOPTAhBxStogg3rt1L6isaX6v8dgODs7WiJ_udh7ZvHnvrTZLlXkW/pubchart?oid=1780108383&format=interactive",
   sheets_gid="619373506",
@@ -139,7 +140,7 @@ In the context of analyzing HTML document files, compression continues to play a
 
 {{ figure_markup(
   image="content_encoding.png",
-  caption="HTML document content-encoding",
+  caption="HTML document content-encoding.",
   description="Stacked bar chart, showing 36% of desktop and 37% of mobile HTML documents are being compressed with Brotli, 53% of desktop and 52% of mobile documents are being compressed with Gzip, and 11% of desktop and mobile HTML documents are not being compressed at all.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQTldh1hYi8-zIRgmK_v6IhpKuUOPTAhBxStogg3rt1L6isaX6v8dgODs7WiJ_udh7ZvHnvrTZLlXkW/pubchart?oid=1114599297&format=interactive",
   sheets_gid="1573442294",
@@ -157,7 +158,7 @@ Despite these improvements, a small percentage of HTML files (10.5% on mobile) a
 
 {{ figure_markup(
   content="5,625",
-  caption="Unique lang attribute codes on mobile",
+  caption="Unique lang attribute codes on mobile.",
   classes="big-number",
   sheets_gid="134927112",
   sql_file="distinct_lang.sql",
@@ -169,7 +170,7 @@ The HTML `lang` attribute plays an important role in helping screen readers and 
 
 {{ figure_markup(
   image="popular_lang.png",
-  caption="Most popular HTML language codes, not including region",
+  caption="Most popular HTML language codes, not including region.",
   description="Bar chart showing the language usage, for the top ten languages in our data set. 40% use English, 13% are not set, with Spanish, Japanese, German, French, Portuguese, Russian, Italian and Dutch having various minor percentages of usage, from 6% to 2%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQTldh1hYi8-zIRgmK_v6IhpKuUOPTAhBxStogg3rt1L6isaX6v8dgODs7WiJ_udh7ZvHnvrTZLlXkW/pubchart?oid=1428231971&format=interactive",
   sheets_gid="546119077",
@@ -185,7 +186,7 @@ If we aggregate the percentages of non-English and non-"not set" `lang` values, 
 
 {{ figure_markup(
   image="popular_regional_lang.png",
-  caption="Most popular HTML language codes, including region",
+  caption="Most popular HTML language codes, including region.",
   description="Bar chart showing the language usage, including region, for the top ten languages in our data set. 22% use English, 15% American English, with Japanese, Spanish, Brazilian Portuguese, British English, German German, Russian and German having various minor percentages of usage, from 5% to 2%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQTldh1hYi8-zIRgmK_v6IhpKuUOPTAhBxStogg3rt1L6isaX6v8dgODs7WiJ_udh7ZvHnvrTZLlXkW/pubchart?oid=672282298&format=interactive",
   sheets_gid="546119077",
@@ -208,7 +209,7 @@ HTML comments are snippets of text that developers include within their code to 
 
 {{ figure_markup(
   content="86%",
-  caption="Mobile pages with at least one comment",
+  caption="Mobile pages with at least one comment.",
   classes="big-number",
   sheets_gid="1268900609",
   sql_file="comments.sql",
@@ -234,7 +235,7 @@ For both desktop and mobile pages, the data shows that the 10th percentile has 2
 
 {{ figure_markup(
   image="distinct_elements_per_page.png",
-  caption="Distribution of the number of distinct types of elements per page",
+  caption="Distribution of the number of distinct types of elements per page.",
   description="Bar chart showing the 10, 25, 50, 75, and 90th percentile of distinct elements per  page. The values for mobile are 22, 27, 32, 38 and 43 respectively. The values for desktop are 22, 27, 33, 38 and 44 respectively.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQTldh1hYi8-zIRgmK_v6IhpKuUOPTAhBxStogg3rt1L6isaX6v8dgODs7WiJ_udh7ZvHnvrTZLlXkW/pubchart?oid=1344861022&format=interactive",
   sheets_gid="1098213395",
@@ -246,7 +247,7 @@ However, there are some differences when checking the distribution of elements p
 
 {{ figure_markup(
   image="elements_per_page.png",
-  caption="Distribution of the number of elements per page",
+  caption="Distribution of the number of elements per page.",
   description="Bar chart showing the 10, 25, 50, 75, and 90th percentile of total elements per page. The values for mobile are 180, 342, 594, 1,010 and 1,716 respectively.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQTldh1hYi8-zIRgmK_v6IhpKuUOPTAhBxStogg3rt1L6isaX6v8dgODs7WiJ_udh7ZvHnvrTZLlXkW/pubchart?oid=1742977516&format=interactive",
   sheets_gid="1098213395",
@@ -345,7 +346,7 @@ The list remains largely consistent with previous years, but some shifts have oc
 
 {{ figure_markup(
   content="29%",
-  caption="Percentage of elements which are div elements",
+  caption="Percentage of elements which are div elements.",
   classes="big-number",
   sheets_gid="248650818",
   sql_file="element_frequency.sql",
@@ -355,7 +356,7 @@ The list remains largely consistent with previous years, but some shifts have oc
 
 {{ figure_markup(
   image="top_elements.png",
-  caption="Frequency of top HTML elements",
+  caption="Frequency of top HTML elements.",
   description="Bar chart showing the frquency of top 15 HTML elements. `div` is the most used (28.7% on mobile), followed by `a` (12.6%), `span` (11.2%), `li` (7.7%) and `script` (3.9%). The rest of the top 15 elements are `img`, `p`, `link`, `path`, `meta`, `i`, `option`, `ul`, `br`, and `td`, with values ranging from 3.3% to 1.3%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQTldh1hYi8-zIRgmK_v6IhpKuUOPTAhBxStogg3rt1L6isaX6v8dgODs7WiJ_udh7ZvHnvrTZLlXkW/pubchart?oid=1080941706&format=interactive",
   sheets_gid="248650818",
@@ -375,7 +376,7 @@ The adoption of top HTML elements across both desktop and mobile platforms remai
 
 {{ figure_markup(
   image="popularity_of_top_elements.png",
-  caption="Popularity of top HTML elements",
+  caption="Popularity of top HTML elements.",
   description="Bar chart showing that `html` and `head` tags are used on 99.8% of mobile pages, `body` on 99.7%, `meta` on 99.2%, and `title` on 99.1%. `div`, `link`, `a`, `script`, `img`, `span`, `p`, `li`, `ul`, and `style` are the rest of the top 15 HTML elements, with values ranging from 98.8% to 86.2%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQTldh1hYi8-zIRgmK_v6IhpKuUOPTAhBxStogg3rt1L6isaX6v8dgODs7WiJ_udh7ZvHnvrTZLlXkW/pubchart?oid=1748599287&format=interactive",
   sheets_gid="1606033584",
@@ -395,7 +396,7 @@ Custom elements, easily recognized by their hyphenated names, have once again ma
 
 {{ figure_markup(
   image="custom_elements_adoption.png",
-  caption="Custom elements usage by year",
+  caption="Custom elements usage by year.",
   description="Bar chart showing the evolution of the custom element usage. In 2022, 2.9% of desktop sites and 3.6% of mobile sites used custom elements. In 2023, 5.1% of desktop sites and 5.4% of mobile sites used custom elements. And in 2024, 7.7% of desktop sites and 7.9% of mobile sites use custom elements.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQTldh1hYi8-zIRgmK_v6IhpKuUOPTAhBxStogg3rt1L6isaX6v8dgODs7WiJ_udh7ZvHnvrTZLlXkW/pubchart?oid=1066623750&format=interactive",
   sheets_gid="1091925040",
@@ -409,7 +410,7 @@ However, custom elements typically need extra JavaScript to enable their functio
 
 {{ figure_markup(
   image="custom_elements_js_bytes_distribution.png",
-  caption="Distribution of kB of JS when using custom elements",
+  caption="Distribution of kB of JS when using custom elements.",
   description="Bar chart showing the distribution of kilobytes of JavaScript (JS) used on mobile pages that incorporate custom elements. The chart compares JavaScript usage at different percentiles (10th, 25th, 50th, 75th, and 90th) between pages with custom elements (labeled as 'TRUE') and pages without custom elements ('FALSE'). 10th percentile: 80 KB (FALSE) vs. 412 KB (TRUE), 25th percentile: 229 KB (FALSE) vs. 864 KB (TRUE), 50th percentile (median): 522 KB (FALSE) vs. 1,286 KB (TRUE), 75th percentile: 1,016 KB (FALSE) vs. 1,784 KB (TRUE), 90th percentile: 1,623 KB (FALSE) vs. 2,357 KB (TRUE). Overall, pages with custom elements tend to use significantly more JavaScript across all percentiles.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQTldh1hYi8-zIRgmK_v6IhpKuUOPTAhBxStogg3rt1L6isaX6v8dgODs7WiJ_udh7ZvHnvrTZLlXkW/pubchart?oid=1795165204&format=interactive",
   sheets_gid="1492660858",
@@ -423,7 +424,7 @@ Let's now take a closer look at the top 10 custom elements:
 
 {{ figure_markup(
   image="custom_element_popularity.png",
-  caption="Custom element popularity",
+  caption="Custom element popularity.",
   description="Horizontal bar chart showing the percentage of pages using each element as follows: `wow-image` (2.7% on mobile), `rs-module-wrap`, `rs-module`, `rs-slides` and `rs-slide` (1.6% on mobile), `rs-sbg-wrap`, `rs-sbg`, `rs-sbg-px` and `rs-progress` (1.% on mobile), and `predictive-search`(1.4% on mobile).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQTldh1hYi8-zIRgmK_v6IhpKuUOPTAhBxStogg3rt1L6isaX6v8dgODs7WiJ_udh7ZvHnvrTZLlXkW/pubchart?oid=300723169&format=interactive",
   sheets_gid="1606033584",
@@ -443,7 +444,7 @@ There are currently <a hreflang="en" href="https://html.spec.whatwg.org/multipag
 
 {{ figure_markup(
   image="obsolete_elements.png",
-  caption="Obsolete element popularity",
+  caption="Obsolete element popularity.",
   description="Bar chart showing the percentage of web pages that use specific obsolete HTML elements on desktop and mobile devices. `font` is the most used, found on 4.5% of mobile pages, followed by `center` (4.5% of mobile pages). The rest of the list includes `marquee`, `nobr`, `big`, `param`, `strike`, `frame`, `frameset`, and `noframes`, with values ranging from 0.9% to 0.1%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQTldh1hYi8-zIRgmK_v6IhpKuUOPTAhBxStogg3rt1L6isaX6v8dgODs7WiJ_udh7ZvHnvrTZLlXkW/pubchart?oid=496158499&format=interactive",
   sheets_gid="1523691472",
@@ -467,7 +468,7 @@ For another year, the most used attribute by far is `class`, with 48 billion occ
 
 {{ figure_markup(
   image="attribute_usage.png",
-  caption="Frequency of top attributes",
+  caption="Frequency of top attributes.",
   description="Bar chart showing the frequency of the top 10 HTML attributes. `class` is the most used (33% on mobile), followed by `href` (8% on mobile), `id` (6% on mobile), `style` (5% on mobile) and `src` (3% on mobile). The rest of the top 10 are `type`, `rel`, `title`, `alt` and `value`, with values ranging from 3% to 1%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQTldh1hYi8-zIRgmK_v6IhpKuUOPTAhBxStogg3rt1L6isaX6v8dgODs7WiJ_udh7ZvHnvrTZLlXkW/pubchart?oid=975284651&format=interactive",
   sheets_gid="927974312",
@@ -481,7 +482,7 @@ And when we look at the attributes used per page, we find the following used on 
 
 {{ figure_markup(
   image="popularity_attribute_usage.png",
-  caption="Popularity of top attributes",
+  caption="Popularity of top attributes.",
   description="Bar chart showing the usage of the top 10 HTML attributes. `href` is the most used (present on 99% of mobile pages), followed by `src` (99% on mobile), `content` (99% on mobile), `name` (99% on mobile) and `class` (99% on mobile). The rest of the top 10 are `type`, `rel`, `id`, `style` and `alt`, with values ranging from 98% to 92%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQTldh1hYi8-zIRgmK_v6IhpKuUOPTAhBxStogg3rt1L6isaX6v8dgODs7WiJ_udh7ZvHnvrTZLlXkW/pubchart?oid=1479935889&format=interactive",
   sheets_gid="927974312",
@@ -497,7 +498,7 @@ Let's now take a closer look to a subset of attributes: the `data-*` attributes.
 
 {{ figure_markup(
   content="90%",
-  caption="Pages with at least one `data-*` attribute",
+  caption="Pages with at least one `data-*` attribute.",
   classes="big-number",
   sheets_gid="156537288",
   sql_file="data_attribute_total.sql",
@@ -507,7 +508,7 @@ The overall data shows that 90% of the analyzed documents use at least one `data
 
 {{ figure_markup(
   image="data_attribute_popularity.png",
-  caption="Popularity of top data attributes",
+  caption="Popularity of top data attributes.",
   description="Bar chart showing the popularity of the top 10 HTML `data-*` attributes. `data-id` is the most used (present on 24% of mobile pages), followed by `data-load-time` (20% on mobile), `data-tagging-id` (20% on mobile), `data-src` (19% on mobile) and `data-toggle` (19% on mobile). The rest of the top 10 are `data-type`, `data-target`, `data-name`, `data-href` and `data-testid`, with values ranging from 17% to 10%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQTldh1hYi8-zIRgmK_v6IhpKuUOPTAhBxStogg3rt1L6isaX6v8dgODs7WiJ_udh7ZvHnvrTZLlXkW/pubchart?oid=1117739253&format=interactive",
   sheets_gid="1682300906",
@@ -523,7 +524,7 @@ Another notable change is the appearance of new elements in the list: `data-load
 
 {{ figure_markup(
   image="data_attribute_frequency.png",
-  caption="Frequency of top data attributes",
+  caption="Frequency of top data attributes.",
   description="Bar chart showing the frequency of the top 10 HTML `data-*` attributes. `data-id` is the most used (5.8% of total `data-*` attributes on mobile pages), followed by `data-element_type` (4.1% on mobile), `data-testid` (2.8% on mobile), `data-src` (2.2% on mobile) and `data-widget_type` (2.1% on mobile). The rest of the top 10 are `data-value`, `data-name`, `data-settings`, `data-type` and `data-toggle`, with values ranging from 1.4% to 0.9%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQTldh1hYi8-zIRgmK_v6IhpKuUOPTAhBxStogg3rt1L6isaX6v8dgODs7WiJ_udh7ZvHnvrTZLlXkW/pubchart?oid=1977102777&format=interactive",
   sheets_gid="1682300906",
@@ -539,7 +540,7 @@ Social markup refers to the set of meta tags embedded within HTML documents that
 
 {{ figure_markup(
   image="social_meta_nodes.png",
-  caption="Popularity of top social meta nodes",
+  caption="Popularity of top social meta nodes.",
   description="Bar chart showing the popularity of the top 10 HTML social meta nodes. `og:title` is the most used (present on 61% of mobile pages), followed by `og:url` (58% on mobile), `og:type` (56% on mobile), `og:description` (53% on mobile) and `og:site_name` (49% on mobile). The rest of the top 10 are `og:image`, `twitter:card`, `og:locale`, `twitter:title` and `twitter:description`, with values ranging from 46% to 24%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQTldh1hYi8-zIRgmK_v6IhpKuUOPTAhBxStogg3rt1L6isaX6v8dgODs7WiJ_udh7ZvHnvrTZLlXkW/pubchart?oid=1759203973&format=interactive",
   sheets_gid="1216284092",
@@ -562,7 +563,7 @@ The `viewport` meta tag specifies how the content should be scaled on various de
 
 {{ figure_markup(
   image="meta_viewports.png",
-  caption="Meta viewport specifications",
+  caption="Meta viewport specifications.",
   description="Bar chart showing the popularity of the top 10 HTML meta viewport. `width=device-width,initial-scale=1` is the most used (present on 50% of mobile pages in our data set), followed by `(empty)` (5% on mobile), `width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0` (4% on mobile), `width=device-width,initial-scale=1,shrink-to-fit=no` (4% on mobile) and `width=device-width,initial-scale=1,maximum-scale=1` (4% on mobile). The rest of the top 10 are `width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no`, `width=device-width`, `width=320,user-scalable=yes`, `width=device-width,initial-scale=1,minimum-scale=1` and `width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1`, with values ranging from 4% to 2%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQTldh1hYi8-zIRgmK_v6IhpKuUOPTAhBxStogg3rt1L6isaX6v8dgODs7WiJ_udh7ZvHnvrTZLlXkW/pubchart?oid=8726003&format=interactive",
   sheets_gid="1271081388",
@@ -580,7 +581,7 @@ Favicons, those small icons associated with websites, play an important role in 
 
 {{ figure_markup(
   image="favicons.png",
-  caption="Popularity of favicon types",
+  caption="Popularity of favicon types.",
   description="Bar chart showing the popularity of favicon types. `png` is the most used (present on 42% of mobile pages in our data set), followed by `ico` (27% on mobile), `NO_ICON` (18% on mobile), `jpg` (7% on mobile) and `svg` (1% on mobile).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQTldh1hYi8-zIRgmK_v6IhpKuUOPTAhBxStogg3rt1L6isaX6v8dgODs7WiJ_udh7ZvHnvrTZLlXkW/pubchart?oid=516732845&format=interactive",
   sheets_gid="1487566181",
@@ -608,7 +609,7 @@ Buttons in web development have been a source of frequent debate due to their du
 
 {{ figure_markup(
   image="buttons.png",
-  caption="Popularity of button types",
+  caption="Popularity of button types.",
   description="Bar chart showing the popularity of button types. The generic `<button>` is the most used (present on 47% of mobile pages in our data set), followed by `<button type=button>` (45% on mobile), `<button type=submit>` (34% on mobile), and `<button type=reset>` (1% on mobile). Desktop is slightly higher in most cases but within a percentage point.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQTldh1hYi8-zIRgmK_v6IhpKuUOPTAhBxStogg3rt1L6isaX6v8dgODs7WiJ_udh7ZvHnvrTZLlXkW/pubchart?oid=2146901303&format=interactive",
   sheets_gid="753312353",
@@ -627,7 +628,7 @@ Apart from buttons, certain `input` elements are also rendered and used as butto
 
 {{ figure_markup(
   image="input_buttons.png",
-  caption="Popularity of buttons using input types",
+  caption="Popularity of buttons using input types.",
   description="Bar chart showing the popularity of input types used as buttons. `<input type=\"submit\">` is the most used (present on 25% of mobile pages in our data set), followed by `<input type=\"button\">` (3% on mobile), and `<input type=\"image\">` (1% on mobile). Desktop is slightly higher in most cases but within a percentage point.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQTldh1hYi8-zIRgmK_v6IhpKuUOPTAhBxStogg3rt1L6isaX6v8dgODs7WiJ_udh7ZvHnvrTZLlXkW/pubchart?oid=1616034217&format=interactive",
   sheets_gid="1115291405",

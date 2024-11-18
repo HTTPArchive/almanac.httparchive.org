@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: マークアップ
 description: 使われている要素、カスタム要素、価値、製品、及び一般的なユースケースについて抑えてある 2019 Web Almanac マークアップの章
+hero_alt: Hero image of Web Almanac characters as dressed as constructor workers putting together a web page from HTML element blocks.
 authors: [bkardell]
 reviewers: [zcorpan, tomhodgins, matthewp]
 analysts: [rviscomi]

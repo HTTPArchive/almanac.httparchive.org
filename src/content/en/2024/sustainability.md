@@ -1,7 +1,8 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Sustainability
-description: Sustainability chapter of the 2024 Web Almanac covering environmental impacts of web pages, where they come from and how to reduce them
+description: Sustainability chapter of the 2024 Web Almanac covering environmental impacts of web pages, where they come from and how to reduce them.
+hero_alt: Hero image of Web Almanac characters installing solar panels on top of a web page.
 authors: [ldevernay, burakguneli, ines-akrap, AlexDawsonUK, mgifford, timfrick]
 reviewers: [lebreRafael]
 editors: [cqueern]
@@ -53,7 +54,7 @@ This is where we should mention new repositories for best practices:
 - France institutions also released the <a hreflang="fr" href="https://en.arcep.fr/news/press-releases/view/n/environment-rgesn-170524.html">General policy framework for the ecodesign of digital services</a>. The purpose here is to offer a framework for sustainable digital services and to aim for a wider adoption of these best practices.
 - <a hreflang="en" href="https://www.iso.org/standard/86105.html">An ISO standard for Digital Services Ecodesign</a> is also on the way.
 
-More and more <a hreflang="en" href="https://w3c.github.io/sustyweb/intro.html#books">books</a> are also being published, such as <a hreflang="en" href="https://www.oreilly.com/library/view/building-green-software/9781098150617/">Building Green Software</a> by Anne Currie.
+More and more <a hreflang="en" href="https://w3c.github.io/sustyweb/intro.html#books">books</a> are also being published, such as <a hreflang="en" href="https://www.oreilly.com/library/view/building-green-software/9781098150617/">Building Green Software</a> by Anne Currie, Sarah Hsu and Sara Bergman.
 
 In addition to this, tools for estimating the environmental impacts of the web are still evolving and new ones keep appearing. Some existing tools (such as Screaming Frog SEO and Webpagetest) are adding features to estimate environmental impacts. As such, the <a hreflang="en" href="https://sustainablewebdesign.org/estimating-digital-emissions/">Sustainable Web Design Model</a> is often used. However, accurately estimating impacts is still an important topic and no consensus has been reached yet. As is often the case with environmental considerations, the topic remains complex.
 
@@ -157,7 +158,7 @@ The Sustainable Web Design Model uses data transfer as a proxy. While we can deb
 
 {{ figure_markup(
   image="number-of-kb-by-percentile.png",
-  caption="Page weight",
+  caption="Page weight.",
   description="A column chart showing that on the 90th percentile web pages weight nearly 8 MB on desktop and right above 7 MB on mobile. On the 75th percentile the web pages get over 4 MB on desktop and around 3.5 MB on mobile, on the 50th percentile we found web pages weight a bit more than 2.5 MB on desktop and a bit less than 2 MB on mobile, on the 25th percentile it's over 1 MB on desktop and a bit less than 1 MB on mobile. Finally, on the 10th percentile we see pages weight a bit more than 0.5 MB on desktop and a bit less than 0.5 MB on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=188541594&format=interactive",
   sheets_gid="997244814",
@@ -177,7 +178,7 @@ With data showing that an average page weighs around 8MB, the next logical quest
 
 {{ figure_markup(
   image="kilobytes-per-type.png",
-  caption="Kilobytes per type",
+  caption="Kilobytes per type.",
   description="A column chart showing for the 90th percentile that HTML weighs 146.45 kB on desktop, 145.40 on mobile. CSS weighs 268.78 kB on desktop, 260.40 on mobile. Fonts weigh 458.36 kB on desktop, 399.33 on mobile. JS weighs 1,834.30 kB on desktop, 1,732.17 on mobile. Images weigh 4,910.37 kB on desktop, 4,436.10 on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=296763237&format=interactive",
   sheets_gid="123069751",
@@ -186,7 +187,7 @@ With data showing that an average page weighs around 8MB, the next logical quest
 
 {{ figure_markup(
   image="kilobytes-by-percentile-by-type-mobile.png",
-  caption="Kilobytes by percentile by type (mobile)",
+  caption="Kilobytes by percentile by type (mobile).",
   description="A column chart showing the Kilobytes per byte by percentile for mobile. The division per type remains roughly the same for each percentile but the weight of each increases with the percentiles. For the 10th percentile on mobile, HTML weighs 5.87 kB, JS 88.81 kB, CSS 7.55 kB, Images 42.71 kB and fonts 0 kB.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=426612772&format=interactive",
   sheets_gid="123069751",
@@ -218,7 +219,7 @@ Based on the V4 of the SWD model, we get these global results for emissions:
 
 {{ figure_markup(
   image="carbon-emissions-by-percentile-2022.png",
-  caption="Carbon emissions (g) by percentile for 2022",
+  caption="Carbon emissions (g) by percentile for 2022.",
   description="A column chart showing that on the 90th percentile, desktop web pages emit 1.29g of carbon and mobile pages emit 1.14g of carbon, on the 75th percentile desktop pages emit 0.66g of carbon and mobile pages emit 0.57g of carbon. On the 50th percentile it goes 0.33g of carbon on desktop and 0.29 on mobile. On the 25th percentile it's 0.16g of carbon for desktop pages and 0.14g of carbon on mobile pages. Lastly, on the 10th percentile desktop pages emit 0.08g of carbon and mobile pages emit 0.06g of carbon.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=188699126&format=interactive",
   sheets_gid="1113829605",
@@ -233,7 +234,7 @@ Based on the SWD V4 model, carbon emissions for web pages in 2024 are as follows
 
 {{ figure_markup(
   image="carbon-emissions-by-percentile-2024.png",
-  caption="Carbon emissions (g) by percentile for 2024",
+  caption="Carbon emissions (g) by percentile for 2024.",
   description="A column chart showing that on the 90th percentile, desktop web pages emit 1.47g of carbon and mobile pages emit 1.36g of carbon, on the 75th percentile desktop pages emit 0.74g of carbon and mobile pages emit 0.66g of carbon. On the 50th percentile it goes 0.37g of carbon on desktop and 0.33 on mobile. On the 25th percentile it's 0.19g of carbon for desktop pages and 0.0.16g of carbon on mobile pages. Lastly, on the 10th percentile desktop pages emit 0.08g of carbon and mobile pages emit 0.07g of carbon.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=70239542&format=interactive",
   sheets_gid="1113829605",
@@ -246,7 +247,7 @@ We can also take a look at the share of emissions for different resources (HTML/
 
 {{ figure_markup(
   image="emissions-by-percentile-by-type-desktop.png",
-  caption="Emissions by percentile by type for 2024 (desktop)",
+  caption="Emissions by percentile by type for 2024 (desktop).",
   description="A bar chart showing the percent of different content types on desktop in the total page carbon emissions by percentile. On the 90th percentile HTML content accounts for around 1.6% of the total carbon emissions, JavaScript is responsible for 20.2% of total carbon emissions, CSS is around 2.9%, images accounts for around 70.2% and fonts represent 5% of the total carbon emissions. On the 75th percentile, HTML represents 1.6%, JavaScript 26.5%, CSS around 3.4%, images around 62.7% and fonts around 5.8% of the total carbon emissions. On the 50th percentile, HTML represents 1.7%, JavaScript 32.1%, CSS around 4.1%, images almost 55.2% and fonts around 6.9% of the total carbon emissions. On the 25th percentile, HTML represents 1.9%, JavaScript 37.4%, CSS around 4.9%, images 48.9% and fonts around 6.9% of the total carbon emissions. On the 10th percentile, HTML represents 2.8%, JavaScript 49%, CSS around 4.1%, images 44.1% and fonts 0% of the total carbon emissions.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1793089209&format=interactive",
   sheets_gid="1113829605",
@@ -255,7 +256,7 @@ We can also take a look at the share of emissions for different resources (HTML/
 
 {{ figure_markup(
   image="emissions-by-percentile-by-type-mobile.png",
-  caption="Emissions by percentile by type for 2024 (mobile)",
+  caption="Emissions by percentile by type for 2024 (mobile).",
   description="A bar chart showing the percent of different content types on mobile in the total page carbon emissions by percentile. On the 90th percentile HTML content accounts for around 1.7% of the total carbon emissions, JavaScript is responsible for 20.8% of total carbon emissions, CSS is around 3.1%, images accounts for around 69.6% and fonts represent 4.8% of the total carbon emissions. On the 75th percentile, HTML represents 1.8%, JavaScript 27.4%, CSS around 3.6%, images around 61.7% and fonts around 5.6% of the total carbon emissions. On the 50th percentile, HTML represents 1.9%, JavaScript 33.3%, CSS around 4.4%, images almost 53.8% and fonts around 6.6% of the total carbon emissions. On the 25th percentile, HTML represents 2.2%, JavaScript 40.5%, CSS around 5.2%, images 45.5% and fonts around 6.6% of the total carbon emissions. On the 10th percentile, HTML represents 3.6%, JavaScript 52.2%, CSS around 3.5%, images 40.7% and fonts 0% of the total carbon emissions.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=89199497&format=interactive",
   sheets_gid="1113829605",
@@ -296,7 +297,7 @@ It's essential to minimize the number of requests. Setting an initial cap of 25 
 
 {{ figure_markup(
   image="number-of-requests-by-percentile.png",
-  caption="Number of requests by percentile",
+  caption="Number of requests by percentile.",
   description="A column chat showing that on the 90th percentile there are 182 requests per page on desktop and 177 requests on mobile. On the 75th percentile there are 120 requests on desktop and 114 on mobile. On the 50th percentile it drops at 74 requests on desktop and 70 on mobile. On the 25th percentile there are 43 requests on desktop and 40 on mobile. Finally on the 10th percentile we see a total of 23 requests on desktop and 21 on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1890346358&format=interactive",
   sheets_gid="495251827",
@@ -308,7 +309,7 @@ The amount of requests, in general, is quite high, so let's see what resources t
 
 {{ figure_markup(
   image="number-of-requests-by-percentile-and-type-mobile.png",
-  caption="Number of requests per percentile and resource type (mobile)",
+  caption="Number of requests per percentile and resource type (mobile).",
   description="A column chart showing that on mobile devices, on the 90th percentile we find 12 requests targeting HTML content, 68.5 requests for javascript resources, almost 26 requests for CSS, around 55 requests fetching images and 8.5 requests for fonts. On the 75th percentile, there are 5 HTML requests, 41 JavaScript requests, 15 CSS requests, 29.5 images requests and 5.5 Fonts requests. On the 50th percentile, we can see 2 HTML requests, 22 javascript requests, 7.5 CSS requests, 15.5 images and 3 fonts requests. On the 25th percentile, there are 1 HTML, 10.5 javascript, 3.5 CSS, 7.5 images and 1 font requests. On the 10h percentile, we find 1 Html, 4.5 javascript, 1.5 CSS, 4 images and 0 font requests.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1059345541&format=interactive",
   sheets_gid="495251827",
@@ -319,7 +320,7 @@ The not-so-nice surprise here is that most of the requests, around 70 in the 90t
 
 {{ figure_markup(
   image="kilobytes-by-percentile-by-type-mobile-.png",
-  caption="Kilobytes by percentile by type (mobile)",
+  caption="Kilobytes by percentile by type (mobile).",
   description="A column chart showing that on mobile devices, on the 90th percentile we find 145.4 KB of HTML, around 1,732.17 KB of JavaScript, 260.4 KB of CSS, 4,436.1 KB of images and 399.33 KB of fonts. On the 75th percentile it goes down at 70.03 KB of HTML, 1,102.63 KB of JavaScript, 145.59 KB of CSS, 1,807.67 KB of images and 221.51 KB of fonts. On the 50th percentile we found 31.64 KB of HTML, 569.66 KB of JavaScript, 74.99 KB of CSS, 623.8 KB of images and 109.06 KB of fonts. On the 25th percentile there is 13.12 KB of HTML, 244.33 KB of JavaScript, 32.26 KB of CSS, 179.76 KB of images and 39.46 KB of fonts. On the 10th percentile there is 5.87 KB of HTML, 88.81 KB of JavaScript, 7.55 KB of CSS, 42.71 KB of images and 0 KB of fonts.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=426612772&format=interactive",
   sheets_gid="123069751",
@@ -343,7 +344,7 @@ Hosts that allow you to monitor your energy requirements (<a hreflang="en" href=
 
 Compensating for emissions at the server-side can be a complex task and transparency with hosting providers can also be a bit of a minefield, but providers are gradually becoming more sustainably minded and with specialist providers out there who can help you reduce your carbon footprint, taking steps to house your product or service in a greener space can be relatively straight forward.
 
-Note: You may be able to use APIs and infrastructure to model your website or application based on the environmental situation at that time. <a hreflang="en" href="https://hackernoon.com/carbon-aware-computing-next-green-breakthrough-or-new-greenwashing">Carbon-aware computing</a> is a relatively new concept but it has some interesting viewpoints.
+<aside class="note">Note: You may be able to use APIs and infrastructure to model your website or application based on the environmental situation at that time. <a hreflang="en" href="https://hackernoon.com/carbon-aware-computing-next-green-breakthrough-or-new-greenwashing">Carbon-aware computing</a> is a relatively new concept but it has some interesting viewpoints.</aside>
 
 For further information, refer to:
 - <a href="#wsg">The WSG 1.0 - Section 4</a>.
@@ -354,7 +355,7 @@ To help organizations and individuals choose "greener" hosting, <a hreflang="en"
 
 {{ figure_markup(
   image="percent_green_hosting.png",
-  caption="% Green hosting",
+  caption="% Green hosting.",
   description="A column chart showing that on the top 1,000 sites, on desktop, 56% of them relied on green web hosting and it drops at 55% on mobile. On the top 10,000 sites it's 58% on desktop and 55% on mobile, on the top 100,000 it's 49% on desktop and 44% on mobile, on the top million it's 32% for desktops and 30% on mobile, on the top 10 million is 16% for desktop and 14% for mobile. For all measured websites globally, only 12% rely on green web hosting for desktop and 10% for mobile",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=377132080&format=interactive",
   sheets_gid="1680950752",
@@ -416,7 +417,7 @@ As web applications grow in complexity, striking a balance between comprehensive
 
 {{ figure_markup(
   image="unused_css.png",
-  caption="Unused CSS",
+  caption="Unused CSS.",
   description="A column chart showing that on the 90th percentile there is 225 KB of unused CSS on desktop and 212 KB on mobile, on the 75th percentile it's 120 KB on desktop and 113 KB on mobile, on the 50th percentile 56 KB on desktop and 52 KB on mobile. On the 25th percentile we found 20 KB of unused CSS on desktop and 18 KB on mobile. Lastly, we saw 0 KB of unused CSS on the 10th percentile on either desktop and mobile",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1281422688&format=interactive",
   sheets_gid="558117867",
@@ -444,7 +445,7 @@ Modern techniques like tree shaking and code splitting are crucial for optimizin
 
 {{ figure_markup(
   image="unused_js.png",
-  caption="Unused JS",
+  caption="Unused JS.",
   description="A column chart showing that on the 90th percentile there is 907 KB of unused JavaScript on desktop and 812 KB on mobile, on the 75th percentile it's 508 KB on desktop and 456 KB on mobile, on the 50th percentile 239 KB on desktop and 215 KB on mobile. On the 25th percentile we found 90 KB of unused JavaScript on desktop and 78 KB on mobile. Lastly, we saw 22 KB of unused JavaScript on desktop and 20 KB on mobile on the 10th percentile",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=904835139&format=interactive",
   sheets_gid="1021078155",
@@ -511,7 +512,7 @@ Let's look at how the usage of these formats has changed from 2022 to 2024:
 
 {{ figure_markup(
   image="image-format-adoption-2-year-change.png",
-  caption="Image format adoption, 2-year change",
+  caption="Image format adoption, 2-year change.",
   description="A bar chart showing the comparison of image formats adoption between 2022 and 2024. It shows that the jpg adoption is 20% less in 2024, while png increased 1%, gif is up by 6%, webp is 34% more, svg also increased with 36% more, ico is 17% less and avif is 386% more.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=2128858223&format=interactive",
   sheets_gid="https://docs.google.com/spreadsheets/d/1Q2ITOe6ZMIXGKHtIxqK9XmUA1eQBX9CLQkxarQOJFCk/edit?gid=1939630368#gid=1939630368",
@@ -522,7 +523,7 @@ This data shows the evolving landscape of image format adoption. WebP has grown 
 
 {{ figure_markup(
   image="image-format-adoption.png",
-  caption="Image format adoption",
+  caption="Image format adoption.",
   description="A pie chart showing that overall, jpg represents the image format of 32.3% of all images. png is used in 28.4% of the images. Gif is used on 16.8% of the images. WebP is used on 12% of the images, Svg accounts for 6.4% of the images format. Ico represents the format used on 1.3% of all images and lastly, avif is the format of 1% of the images.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=424926454&format=interactive",
   sheets_gid="https://docs.google.com/spreadsheets/d/1Q2ITOe6ZMIXGKHtIxqK9XmUA1eQBX9CLQkxarQOJFCk/edit?gid=1939630368#gid=1939630368",
@@ -551,7 +552,7 @@ It's worth remembering that image quality doesn't always need to be at maximum.
 
 {{ figure_markup(
   image="responsive-image-types.png",
-  caption="Responsive image types",
+  caption="Responsive image types.",
   description="A column chart showing that around 42.4% of websites use the srcset attribute on both desktop and mobile, 32.4% of them used it with sizes on desktop and 31.8% on mobile, 10% of them used the srcset attribute w/o sizes on desktop and 10.6% on mobile. 9.3% of the websites use the picture element on desktop and 9.2% of them on mobile",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1114669918&format=interactive",
   sheets_gid="987814873",
@@ -580,7 +581,7 @@ Lazy-loading remains a crucial technique for enhancing both performance and sust
 
 {{ figure_markup(
   image="lazy-loading-adoption.png",
-  caption="Adoption of loading=lazy on `<img>`",
+  caption="Adoption of loading=lazy on `<img>`.",
   description="A timeseries chart showing the increase in the adoption of loading=\"lazy\" attribute on image tags. In June 2022 it was used by 24% of the websites on mobile and 23% on desktop. On January 2023, 26% of the websites on mobile were using native lazy-loading and 25% of them were using it on desktop. On June the 1st, 2023, 27% of websites used native lazy-loading on wither desktop and mobile. On June 2024, 34% of websites used native lazy-loading on mobile and 33% on desktop.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=1997305111&format=interactive",
   sheets_gid="https://docs.google.com/spreadsheets/d/1Q2ITOe6ZMIXGKHtIxqK9XmUA1eQBX9CLQkxarQOJFCk/edit?gid=228292115#gid=228292115",
@@ -621,7 +622,7 @@ Automatically preloading videos is a concern for web sustainability. This practi
 
 {{ figure_markup(
   image="video-preload-usage.png",
-  caption="Video preload usage",
+  caption="Video preload usage.",
   description="A column chart showing the preload attribute is not used on 55% of desktop videos and 56% of mobile videos. The preload attribute can be found with the none value on 18% of desktop videos and 16% of mobile videos. The auto value is used on 15% of desktop videos 15% of mobile videos. The metadata value is used on 10% of desktop videos and 11% of mobile videos. The preload attribute is empty on 1% of both desktop and mobile videos.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1517696872&format=interactive",
   sheets_gid="1377676306",
@@ -644,7 +645,7 @@ It's important to note that the autoplay attribute can override preload settings
 
 {{ figure_markup(
   image="video-autoplay-usage.png",
-  caption="Video autoplay usage",
+  caption="Video autoplay usage.",
   description="A column chart showing that the autoplay attribute has empty value on 47% of videos on desktop and 46% on mobile. The autoplay attribute is not used on respectively 45% and 45% of desktop and mobile videos. It is used with an `autoplay` value on 6% of desktop videos and 6% of mobile videos. It is used with an value `TRUE` on 2% of desktop videos and 3% of mobile videos.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1761138794&format=interactive",
   sheets_gid="215678116",
@@ -670,7 +671,7 @@ Recent data on [non-composited animations](https://web.dev/articles/stick-to-com
 
 {{ figure_markup(
   image="non-composited-animations-per-page.png",
-  caption="Non-composited animations per page",
+  caption="Non-composited animations per page.",
   description="A column chart showing that on the 90th percentile there are 12 non-composited animation on desktop and 11 on mobile. On the 75th percentile it goes down to 3 on desktop and 2 on mobile. On the 50th, the 25th and the 10th percentile there are 0 non-composited animations on both desktop and mobile",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1367877831&format=interactive",
   sheets_gid="1335370570",
@@ -685,7 +686,7 @@ The case of carousels remains contentious: users, developers, and designers tend
 
 For arguments against using carousels, visit:
 - <a hreflang="en" href="https://shouldiuseacarousel.com/">Should I Use A Carousel</a>
-- <a hreflang="en" href="https://www.smashingmagazine.com/2023/08/designing-better-carousel-ux/">Usability Guidelines For Better Carousels UX</a>
+- <a hreflang="en" href="https://www.smashingmagazine.com/2022/04/designing-better-carousel-ux/">Usability Guidelines For Better Carousels UX</a>
 
 If animations are necessary for your design:
 - Use CSS animations where possible, as they're generally more performant than JavaScript-based animations.
@@ -714,7 +715,7 @@ These formats, when properly implemented, minimize data transfer, reduce storage
 
 {{ figure_markup(
   image="favicon-usage.png",
-  caption="Favicon usage",
+  caption="Favicon usage.",
   description="A bar chart showing that png is the format used for favicons on 41.9% of pages on both desktop and mobile. ico format is used by 28.3% on desktop and 27.2% on mobile. Favicon is missing in 17.2% on desktop and 17.9% on mobile. jpg is the format used by 6.2% on desktop and 6.5% on mobile. Svg is used by 1.4% on both desktop and mobile. NO_EXTENSION, webp, NO_DATA, gif, jpeg and NO_HREF repersent less than 1% each, on desktop and mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1102352877&format=interactive",
   sheets_gid="1918305009",
@@ -745,7 +746,7 @@ Since third-party requests make up a large portion of requests on the web, it's 
 
 {{ figure_markup(
   image="green-third-party-requests.png",
-  caption="% green third-party requests",
+  caption="% green third-party requests.",
   description="A column chart showing that on the top 1,000 websites 72% of third party requests relied on green hosting on desktop and 70% on mobile devices. On the top 10,000 websites it's 78% on both desktop and mobile. For the top 100,000 sites it's 88% on both desktop and mobile. On the top million, it's 94% on desktop and 93% on mobile. On the top 10 million, it's 97% on desktop and 97% on mobile. Overall, we see that 98% of third party requests rely on green hosting on both desktop and mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1139458989&format=interactive",
   sheets_gid="176951784",
@@ -793,7 +794,7 @@ Optimizing JavaScript through minification, tree shaking, and code splitting rem
 
 {{ figure_markup(
   image="unminified-js-savings.png",
-  caption="Unminified Javascript savings",
+  caption="Unminified Javascript savings.",
   description="A column chart showing that on the 90th percentile 41 KB of JavaScript could be saved on desktop and 37 KB on mobile if using JS minifying. On the 75th percentile 10 KB of JavaScript could be saved on desktop and 8 KB on mobile. On the 50th, 25th and 10th percentile we see no KB savings, this is explained by the usage of JavaScript minifying already in place on those websites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=260477538&format=interactive",
   sheets_gid="619269903",
@@ -828,7 +829,7 @@ While minification for JavaScript is a common practice (as mentioned earlier in 
 
 {{ figure_markup(
   image="unminified-css-savings.png",
-  caption="Unminified CSS savings",
+  caption="Unminified CSS savings.",
   description="A column chart showing that on the 90th percentile 14 KB of CSS could be saved on desktop and 13 KB on mobile if using CSS minifying. On the 75th percentile 4 KB of CSS could be saved on both desktop and mobile. On the 50th, 25th and 10th percentile we see no KB savings, this is explained by the usage of CSS minifying already in place on those websites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1448481615&format=interactive",
   sheets_gid="1866069863",
@@ -881,7 +882,7 @@ For further information, refer to:
 
 {{ figure_markup(
   image="style-usage.png",
-  caption="Style usage",
+  caption="Style usage.",
   description="A bar chart showing that on desktop, 31% of CSS is inline and the other 69% comes from external stylesheets. On mobile the inline CSS goes up to 32% while 68% comes from external stylesheets",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=812833828&format=interactive",
   sheets_gid="109015092",
@@ -927,7 +928,7 @@ Content Delivery Networks (CDNs) play a crucial role in optimizing web performan
 
 {{ figure_markup(
   image="cdn-usage.png",
-  caption="CDN usage on the web",
+  caption="CDN usage on the web.",
   description="A column chart showing that 66.9% of the pages analyzed do not use any CDN on desktop and 67.2% on mobile, 18.3% of them use Cloudflare on desktop and 18.2% on mobile, 7.4% of them use Google on desktop and 7.9% on mobile, 2.3% use Amazon Cloudfront on desktop and 2% on mobile, 2.2% use Fastly on desktop and 1.9% on mobile, 0.6% use Automattic on desktop and 0.7% on mobile, 0.6% use Akamai on desktop and 0.5% on mobile, 0.8% use Vercel on desktop and 0% on mobile, 0% use Sucuri Firewall on desktop and 0.7% on mobile. Netlify and Incapsula are both used on 0.3% of the page tested on desktop and 0.2% on mobile. Microsoft Azure is used on 0.2% of the pages on desktop and 0.1% on mobile.Lastly, we see Azion used on 0% of the pages on desktop and 0.2% on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1471666916&format=interactive",
   sheets_gid="232665838",
@@ -965,7 +966,7 @@ More on this in this article from <a hreflang="en" href="https://paulcalvano.com
 
 {{ figure_markup(
   image="text-compression.png",
-  caption="Compression used on text resources",
+  caption="Compression used on text resources.",
   description="A bar chart showing that on desktop 21.6% of text resources are compressed using Brotli format, 24% of them where compressed in Gzip and 53.5% are not compressed, while 0.9% are using other compression format. On mobile, 23% of text resources are compressed using Brotli format, 24.6% of them where compressed in Gzip and 51.4% are not compressed at all, while 0.9% were compressed with other formats.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=962026195&format=interactive",
   sheets_gid="1229329467",
@@ -994,7 +995,7 @@ From a sustainability perspective, effective caching offers several key benefits
 
 {{ figure_markup(
   image="cache-control-header-usage.png",
-  caption="Cache control header usage",
+  caption="Cache control header usage.",
   description="A bar chart showing that on desktop 26.6% of websites use Cache Control Only, 0.4% of them use Expiries only and 48.1% of them use both. 24.9% of the websites do not use any caching on desktop. On mobile 25.9% of websites use Cache Control Only, 0.4% of them use Expiries only and 48.6% of them use both. 25.1% of the websites do not use any caching on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=584352189&format=interactive",
   sheets_gid="1192354424",
@@ -1091,7 +1092,7 @@ The accompanying charts present the median page weight across the top five most 
 
 {{ figure_markup(
   image="median-kilobytes-by-cms.png",
-  caption="Median kB by CMS",
+  caption="Median kB by CMS.",
   description="A bar chart showing that the median weight for Wordpress pages is 2,967 KB on desktop and 2,684 KB on mobile. For Wix it's 3,161 KB on desktop and 2,471 KB on mobile. For Squarespace it's 4,012 KB on desktop and 3,562 KB on mobile. For Joomla it's 2,990 KB on desktop and 2,776 KB on mobile. For Drupal it's 2,514 KB on desktop and 2,329 KB on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1792712710&format=interactive",
   sheets_gid="790675238",
@@ -1106,7 +1107,7 @@ As noted above, the model we use for calculating carbon emissions changed betwee
 
 {{ figure_markup(
   image="median-emissions-by-cms-2024.png",
-  caption="Median emissions by CMS - 2024",
+  caption="Median emissions by CMS - 2024.",
   description="A bar chart showing that the median emissions for Wordpress pages is 0.42 grams of carbon on desktop and 0.38 on mobile. For Wix it's 0.45 on desktop and 0.35 on mobile. For Squarespace it's 0.57 on desktop and 0.5 on mobile. For Joomla it's 0.42 on desktop and 0.39 on mobile. For Drupal it's 0.36 on desktop and 0.33 on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=654101809&format=interactive",
   sheets_gid="790675238",
@@ -1117,7 +1118,7 @@ For comparison reasons, here are the emissions data from 2022, calculated with t
 
 {{ figure_markup(
   image="median-emissions-by-cms-2022.png",
-  caption="Median emissions by CMS - 2022",
+  caption="Median emissions by CMS - 2022.",
   description="A bar chart showing that the median emissions for Wordpress pages is 0.37 grams of carbon on desktop and 0.34 on mobile. For Joomla it's 0.38 on desktop and 0.35 on mobile. For Wix it's 0.44 on desktop and 0.31 on mobile. For Drupal it's 0.33 on desktop and 0.30 on mobile. For Squarespace it's 0.48 on desktop and 0.5 on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1732727443&format=interactive",
   sheets_gid="1972006215",
@@ -1130,7 +1131,7 @@ The average of the median emissions in the chart above is about 0.3 grams of car
 
 {{ figure_markup(
   image="median-kilobytes-by-cms-and-resource-type.png",
-  caption="Median kB by CMS and resource type",
+  caption="Median kB by CMS and resource type.",
   description="A bar chart showing the median Kilobytes of different content types on desktop by CMS. For WordPress, HTML content has a median of 42 KB, JavaScript has 572 KB, CSS is 122 KB, images have a median of 1,358 KB and fonts 191 Kb. For Wix, HTML has 147 KB, JavaScript 1,526 KB, CSS 16 KB, images 466 KB and fonts 170 KB. For Squarespace, HTML has 28 KB, JavaScript 1,321 KB, CSS 133 KB, images 1,689 KB and fonts 184 KB out of total page weight. For Joomla, HTML has 21 KB, JavaScript 431 KB, CSS 92 KB, images 1,711 KB and fonts 123 KB. For Drupal, HTML has 22 KB, JavaScript 497 KB, CSS around 73 KB, images 1,225 KB and fonts 126 KB.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1162097291&format=interactive",
   sheets_gid="790675238",
@@ -1143,7 +1144,7 @@ Of the five CMS, it is good to see that image sizes went down across the board. 
 
 {{ figure_markup(
   image="median-emissions-by-cms-and-resource-type.png",
-  caption="Median emissions by CMS and resource type",
+  caption="Median emissions by CMS and resource type.",
   description="A bar chart showing the median emissions of different content types on desktop by CMS. For WordPress, HTML content has a median of 0.01 grams of carbon, JavaScript has 0.08, CSS is 0.02, images have a median of 0.19 and fonts 0.03. For Wix, HTML has 0.02, JavaScript 0.22, CSS 0, images 0.07 and fonts 0.02. For Squarespace, HTML has 0, JavaScript 0.19, CSS 0.02, images 0.24 KB and fonts 0.03 out of total page emissions. For Joomla, HTML has 0, JavaScript 0.06, CSS 0.01, images 0.24 and fonts 0.02. For Drupal, HTML has 0, JavaScript 0.07, CSS around 0.01, images 0.17 and fonts 0.02.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1895711546&format=interactive",
   sheets_gid="790675238",
@@ -1156,7 +1157,7 @@ CMS also has a strong role to play in shifting the definition of quality work. <
 
 {{ figure_markup(
   image="median-kilobytes-by-ecommerce.png",
-  caption="Median kB by ecommerce",
+  caption="Median kB by ecommerce.",
   description="A bar chart showing that the median weight for WooCommerce pages is 3,275 KB on desktop and 3,036 KB on mobile. For Shopify it's 2,876 KB on desktop and 2,657 KB on mobile. For Squerspace Commerce it's 4,012 KB on desktop and 2,756 KB on mobile. For Wix eCommerce it is 3,530 KB on desktop and 3,562 KB on mobile. For PrestaShop it's 3,078 KB on desktop and 2,730 KB on mobile. For 1C-Bitrix it is 3,305 KB on desktop and 3,788 KB on mobile. For Magento it's 3,505 KB on desktop and 4,209 KB on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=510790990&format=interactive",
   sheets_gid="2021180834",
@@ -1165,7 +1166,7 @@ CMS also has a strong role to play in shifting the definition of quality work. <
 
 {{ figure_markup(
   image="median-emissions-by-ecommerce-2024.png",
-  caption="Median emissions by ecommerce - 2024",
+  caption="Median emissions by ecommerce - 2024.",
   description="A bar chart showing that the median emission for WooCommerce pages is 0.46 grams of carbon on desktop and 0.43 on mobile. For Shopify it's 0.41 on desktop and 0.38 on mobile. For Squerspace Commerce it's 0.57 on desktop and 0.39 on mobile. For Wix eCommerce it is 0.5 on both desktop and mobile. For PrestaShop it's 0.44 on desktop and 0.39 KB on mobile. For 1C-Bitrix it is 0.47 on desktop and 0.54 on mobile. For Magento it's 0.5 on desktop and 0.59 on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1542686246&format=interactive",
   sheets_gid="2021180834",
@@ -1176,10 +1177,10 @@ For comparison reasons, here are the emissions data from 2022, calculated with t
 
 {{ figure_markup(
   image="median-emissions-by-ecommerce-2022.png",
-  caption="Median emissions by ecommerce - 2022",
+  caption="Median emissions by ecommerce - 2022.",
   description="A bar chart showing that the median emission for WooCommerce pages in 2022 was 0.28 grams of carbon on desktop and 0.26 on mobile. For Shopify it's 0.20 on desktop and 0.18 on mobile. For Squerspace Commerce it's 0.31 on desktop and 0.32 on mobile. For PrestaShop it's 0.26 on desktop and 0.23 KB on mobile. For Wix eCommerce it is 0.32 on desktop and 0.22 on mobile. For Magento it's 0.3 on desktop and 0.28 on mobile. For 1C-Bitrix it is 0.34 on desktop and 0.3 on mobile.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1732727443&format=interactive",
-  sheets_gid="1972006215",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1072562266&format=interactive",
+  sheets_gid="267715597",
   sql_file="ecommerce_bytes_per_type_2022.sql"
 ) }}
 
@@ -1189,7 +1190,7 @@ It is clear comparing the ecommerce platforms with other CMS platforms, that the
 
 {{ figure_markup(
   image="median-kilobytes-by-ssg.png",
-  caption="Median kB by static site generator",
+  caption="Median kB by static site generator.",
   description="A bar chart showing that the median weight for Next.js pages is 2,396 KB on desktop and 2,214 KB on mobile. For Nuxt.js it's 3,107 KB on desktop and 2,677 KB on mobile. For Gatsby it's 2,229 KB on desktop and 1,833 KB on mobile. For Hugo it's 1,112 KB on desktop and 1,216 KB on mobile. For Astro it's 1,125 KB on desktop and 1,149 KB on mobile. For Jekyll it's 792 KB on desktop and 854 KB on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=2054864060&format=interactive",
   sheets_gid="1941515647",
@@ -1198,7 +1199,7 @@ It is clear comparing the ecommerce platforms with other CMS platforms, that the
 
 {{ figure_markup(
   image="median-emissions-by-ssg-2024.png",
-  caption="Median emissions by static site generator - 2024",
+  caption="Median emissions by static site generator - 2024.",
   description="A bar chart showing that the median emission for Next.js pages is 0.34 grams of carbon on desktop and 0.31 on mobile. For Nuxt.js it's 0.44 on desktop and 0.38 on mobile. For Gatsby it's 0.32 on desktop and 0.26 on mobile. For Hugo it's 0.16 on desktop and 0.17 on mobile. For Astro it's 0.16 on both desktop and mobile. For Jekyll it's 0.11 on desktop and 0.12 on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=437135521&format=interactive",
   sheets_gid="1941515647",
@@ -1209,7 +1210,7 @@ For comparison reasons, here are the emissions data from 2022, calculated with t
 
 {{ figure_markup(
   image="median-emissions-by-ssg-2022.png",
-  caption="Median emissions by static site generator - 2022",
+  caption="Median emissions by static site generator - 2022.",
   description="A bar chart showing that the median emission for Next.js pages is 0.22 grams of carbon on desktop and 0.20 on mobile. For Nuxt.js it's 0.26 on desktop and 0.21 on mobile. For Gatsby it's 0.19 on desktop and 0.16 on mobile. For Hugo it's 0.09 on desktop and 0.1 on mobile. For Jekyll it's 0.06 on both desktop and mobile. For Docusaurus it's 0.07 on desktop and 0.08 on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=1021559874&format=interactive",
   sheets_gid="1333464158",

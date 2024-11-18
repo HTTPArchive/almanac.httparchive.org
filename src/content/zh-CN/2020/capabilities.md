@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: 能力
 description: 2020年 Web Almanac网络年鉴中的能力篇，涵盖了全新的、强大的网络平台API。
+hero_alt: Hero image of Web Almanac characters with superhero capes plugging various capabilities into a web page.
 authors: [christianliebel]
 reviewers: [tomayac]
 analysts: [tomayac]

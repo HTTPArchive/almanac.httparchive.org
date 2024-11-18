@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Polices d'écriture
 description: Chapitre Polices d'écriture du web Almanac 2019 couvrant l'endroit d'où les polices sont chargées, les formats de police, la performance de leur chargement, les polices variables et les polices de couleur.
+hero_alt: Hero image of Web Almanac characters on an assembly line preparing various F letters in various styles and shapes.
 authors: [zachleat]
 reviewers: [logicalphase, AymenLoukil]
 analysts: [tjmonsi, rviscomi]

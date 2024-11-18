@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: CDN
 description: Capítulo sobre CDN do Web Almanac de 2022 cobrindo a adoção de CDNs, principais fornecedores de CDN, o impacto das CDNs no TLS, adoção de HTTP/2+, Brotli e Client Hints.
+hero_alt: Hero image of Web Almanac characters extending a plug from a cloud into a web page.
 authors: [harendra, joeviggiano]
 reviewers: [ytkoka]
 analysts: [harendra, joeviggiano]

@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Jamstack
 description: Jamstack chapter of the 2022 Web Almanac covers quantifying Jamstack sites, the growth of Jamstack, Jamstack-y frameworks and hosting.
+hero_alt: Hero image of the Web Almanac characters using a large gas cylinder with script markings on the front to inflate a web page.
 authors: [seldo, whitep4nth3r]
 reviewers: [tunetheweb]
 analysts: [seldo, tunetheweb]
@@ -77,7 +78,7 @@ We knew we wanted to measure: sites that load most of their content very quickly
 
 **Largest Contentful Paint (LCP)**: we got the distribution of all LCP times across all pages, picked the median of real-world user data from the <a hreflang="en" href="https://developer.chrome.com/docs/crux">Chrome UX Report</a>, and decided that any site equal or less to the median counted as "loaded most content quickly". This was 2.4 seconds on mobile devices, and 2.0 seconds on desktop devices.
 
-**Cumulative Layout Shift (CLS)**: we wanted to avoid sites that very quickly load a skeleton but then take a long time to load real content. The closest we could get to that is the <a hreflang="en" href="https://web.dev/articles/cls">Cumulative Layout Shift</a>, a measure of how much the page layout jumps around while loading. While there are ways to "game" CLS, we still believe it's a reasonable proxy for what we’re trying to measure. We liked this measure because we felt that a "jumpy" site also felt less "Jamstack-y", a word we were going to end up using a lot. Again, we picked the median of Chrome UX Report data.
+**Cumulative Layout Shift (CLS)**: we wanted to avoid sites that very quickly load a skeleton but then take a long time to load real content. The closest we could get to that is the <a hreflang="en" href="https://web.dev/articles/cls">Cumulative Layout Shift</a>, a measure of how much the page layout jumps around while loading. While there are ways to "game" CLS, we still believe it's a reasonable proxy for what we're trying to measure. We liked this measure because we felt that a "jumpy" site also felt less "Jamstack-y", a word we were going to end up using a lot. Again, we picked the median of Chrome UX Report data.
 
 <p class="note">Chrome UX report data rounds CLS data to the nearest 0.05, which is a shame, because the "real" median seems to be around 0.02-0.03, so on mobile it rounds down to zero and on desktop it rounds up to 0.05. Since 0 excludes huge numbers of pages, we decided to use 0.05 as the best available threshold for both mobile and desktop.</a>
 

@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Mobiel internet
 description: Het hoofdstuk over Mobiel Internet van de Web Almanac van 2020 behandelt het laden van pagina's, tekstuele inhoud, zoomen en schalen, knoppen en links en het gemak van het invullen van formulieren.
+hero_alt: Hero image of Web Almanac characters squeezing a web page onto a mobile screen.
 authors: [spanicker, mdiblasio]
 reviewers: [foxdavidj]
 analysts: [foxdavidj]

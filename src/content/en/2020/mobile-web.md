@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Mobile Web
 description: Mobile Web chapter of the 2020 Web Almanac covering page loading, textual content, zooming and scaling, buttons and links, and ease of filling out forms.
+hero_alt: Hero image of Web Almanac characters squeezing a web page onto a mobile screen.
 authors: [spanicker, mdiblasio]
 reviewers: [foxdavidj]
 analysts: [foxdavidj]
@@ -165,7 +166,7 @@ A good LCP score is 2.5s at p75. We found that the median LCP at p75 is 2.6s on 
 
 {{ figure_markup(
   image="median-p75-lcp-score.png",
-  caption="Median p75 LCP score",
+  caption="Median p75 LCP score.",
   description="A chart showing that the median LCP at p75 is 2.6s on mobile and 2.3s on desktop",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNyVui4x9yanLKpp8Zz92IJ9c2NKCN_2g7SH-vRoelqT3nABB_uTQnXXScCUo6D-Uis1_wDzwcdGzx/pubchart?oid=964425991&format=interactive",
   sheets_gid="872081120"
@@ -182,7 +183,7 @@ Improperly sized and unoptimized images are frequent sources for image performan
 
 {{ figure_markup(
   image="pages-with-properly-sized-images.png",
-  caption="Pages with properly sized images",
+  caption="Pages with properly sized images.",
   description="A chart showing that 41.20% of mobile pages have improperly sized images.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNyVui4x9yanLKpp8Zz92IJ9c2NKCN_2g7SH-vRoelqT3nABB_uTQnXXScCUo6D-Uis1_wDzwcdGzx/pubchart?oid=1030767824&format=interactive",
   sheets_gid="699494809"
@@ -202,7 +203,7 @@ This is especially important for mobile web, as shifting content is more noticea
 
 {{ figure_markup(
   image="example-of-a-site-shifting-content-while-it-loads-lookzook.gif",
-  caption="Example of shifting content distracting a reader. CLS total of 42.59%. Image courtesy of LookZook",
+  caption="Example of shifting content distracting a reader. CLS total of 42.59%. Image courtesy of LookZook.",
   description="A video showing a website progressively load. The text is displayed quickly, but as images continue to load the text gets shifted further and further down the page each time—making it very frustrating to read. The calculated CLS of this example is 42.59%. Image courtesy of LookZook",
   width=360,
   height=640

@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: SEO
 description: Capítulo sobre SEO del Web Almanac 2020 que cubre contenido, meta etiquetas, indexabilidad, enlazado, velocidad de carga, datos estructurados, internacionalización, SPAs, AMP y seguridad.
+hero_alt: Hero image of various web pages beneath a search field with Web Almanac characters shine a light on the pages and make various checks.
 authors: [aleyda, ipullrank, fellowhuman1101]
 reviewers: [natedame, catalinred, dsottimano, dwsmart, en3r0, ibnesayeed, tunetheweb]
 analysts: [Tiggerito, antoineeripret]

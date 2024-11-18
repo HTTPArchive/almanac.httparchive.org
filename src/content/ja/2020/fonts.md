@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: フォント
 description: 2020年版Web Almanacのフォントの章では、フォントがどこから読み込まれるか、フォントフォーマット、フォント読み込みのパフォーマンス、可変フォント、カラーフォントについて説明しています。
+hero_alt: Hero image of Web Almanac characters on an assembly line preparing various F letters in various styles and shapes.
 authors: [raphlinus, jpamental]
 reviewers: [RoelN, svgeesus, davelab6, rsheeter, mandymichael]
 analysts: [AbbyTsai]

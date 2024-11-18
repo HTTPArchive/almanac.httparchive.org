@@ -1,8 +1,8 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: ページの重さ
-#TODO - Review and update chapter description
 description: 2022年のWeb Almanacのページの重さの章は、ページの重さが重要である理由、帯域幅、複雑なページ、時間と共に変化するページの重さ、ページリクエスト、ファイル形式について説明しています。
+hero_alt: Hero image of Web Almanac characters using a set of scales to weigh a web page against variuos boxes labelled with various different kilobytes.
 authors: [fellowhuman1101, dwsmart]
 reviewers: [CSteele-gh]
 analysts: [drohe]

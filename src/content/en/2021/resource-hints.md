@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Resource Hints
 description: Resource Hints chapter of the 2021 Web Almanac covering adoption of resource hints, their uses, bad practices, and their impact on performance.
+hero_alt: Hero image of Web Almanac characters lining up to HTML, JavaScript, and image resources in a line on the way to a web page.
 authors: [kevinfarrugia]
 reviewers: [siakaramalegos, tunetheweb, andydavies, samarpanda, westonruter]
 analysts: [Nithanaroy]
@@ -269,7 +270,7 @@ With that being said, and the expectation that more websites will adopt `preload
 
 ### The `as` attribute
 
-The `as` attribute should be specified when using `rel="preload"` (or `rel="prefetch"`) to specify the type of resource being downloaded. Applying the correct `as` attribute allows the browser to prioritize the resource more accurately. For example, `preload as="script"` will get a low or medium priority, while `preload as="style"` would be assigned an internal request priority of _Highest_. The `as` attribute is required for caching the resource for future requests and applying the correct <a hreflang="en" href="https://developer.mozilla.org/docs/Web/HTTP/CSP">Content Security Policy</a>.
+The `as` attribute should be specified when using `rel="preload"` (or `rel="prefetch"`) to specify the type of resource being downloaded. Applying the correct `as` attribute allows the browser to prioritize the resource more accurately. For example, `preload as="script"` will get a low or medium priority, while `preload as="style"` would be assigned an internal request priority of _Highest_. The `as` attribute is required for caching the resource for future requests and applying the correct [Content Security Policy](https://developer.mozilla.org/docs/Web/HTTP/CSP).
 
 {{ figure_markup(
   image="preload-as-attribute-values.png",
@@ -338,7 +339,7 @@ The `crossorigin` attribute is used to indicate whether [Cross-Origin Resource S
 
 #### `anonymous`
 
-The default value when no value is specified is `anonymous` and this value will set the credentials flag to <a hreflang="en" href="https://developer.mozilla.org/docs/Web/Security/Same-origin_policy">`same-origin`</a>. It is required when downloading resources protected by CORS. It is also a <a hreflang="en" href="https://drafts.csswg.org/css-fonts/#font-fetching-requirements">requirement</a> when downloading font files—even if they are on the same origin! If you omit the `crossorigin` attribute when the eventual request for the preloaded resource uses CORS, you will end up with a duplicate request since it won't match in the preload cache.
+The default value when no value is specified is `anonymous` and this value will set the credentials flag to [`same-origin`](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy). It is required when downloading resources protected by CORS. It is also a <a hreflang="en" href="https://drafts.csswg.org/css-fonts/#font-fetching-requirements">requirement</a> when downloading font files—even if they are on the same origin! If you omit the `crossorigin` attribute when the eventual request for the preloaded resource uses CORS, you will end up with a duplicate request since it won't match in the preload cache.
 
 #### `use-credentials`
 

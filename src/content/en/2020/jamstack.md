@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Jamstack
 description: Jamstack chapter of the 2020 Web Almanac covering the use of Jamstack, the performance of popular Jamstack frameworks, as well as an analysis of real-user experience using the Core Web Vitals metadata.
+hero_alt: Hero image of the Web Almanac characters using a large gas cylinder with script markings on the front to inflate a web page.
 authors: [ahmadawais]
 reviewers: [MaedahBatool, phacks]
 analysts: [denar90, remotesynth]
@@ -198,7 +199,7 @@ Looking at the year on year growth, we see that Next.js has increased its lead o
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Relative % adoption of Jamstack frameworks", sheets_gid="1474840498", sql_file="ssg_compared_to_2019.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Relative % adoption of Jamstack frameworks.", sheets_gid="1474840498", sql_file="ssg_compared_to_2019.sql") }}</figcaption>
 </figure>
 
 And concentrating on the top 5 Jamstacks further shows Next.js's lead:

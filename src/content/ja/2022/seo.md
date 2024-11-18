@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: SEO
 description: クローラビリティ、インデクサビリティ、ページ体験、オンページSEO、リンク、AMP、国際化などをカバーする2022年版Web AlmanacのSEO章。
+hero_alt: Hero image of various web pages beneath a search field with Web Almanac characters shine a light on the pages and make various checks.
 authors: [SophieBrannon, itamarblauer, mordy-oberstein]
 reviewers: [patrickstox, TusharPol, mobeenali97, dwsmart, johnmurch]
 analysts: [csliva, jroakes, derekperkins]

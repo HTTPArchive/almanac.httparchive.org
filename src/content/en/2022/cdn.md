@@ -1,7 +1,8 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: CDN
-description: CDN chapter of the 2022 Web Almanac covering adoption of CDNs, top CDN players, the impact of CDNs on TLS, HTTP/2+, Brotli and Client Hints adoption
+description: CDN chapter of the 2022 Web Almanac covering adoption of CDNs, top CDN players, the impact of CDNs on TLS, HTTP/2+, Brotli and Client Hints adoption.
+hero_alt: Hero image of Web Almanac characters extending a plug from a cloud into a web page.
 authors: [harendra, joeviggiano]
 reviewers: [ytkoka]
 analysts: [harendra, joeviggiano]
@@ -105,7 +106,7 @@ CDNs can provide better performance for delivering non-static content as well as
 
 {{ figure_markup(
   image="cdn-usage-hosted-comparison.png",
-  caption="Trends for content served from CDN for mobile",
+  caption="Trends for content served from CDN for mobile.",
   description="This chart shows the trends for content served from CDN for last few years. The general trend is that the CDN usage is increasing. For the contents served from subdomains we see bigger increase.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRZQqyyKiQWgICD_a0WaEAmfZyFN_Zi3wVuQnZxsXqwZ_1JQg2x7GpRw4CTkX4gKvurzoCQ6YokkdpM/pubchart?oid=2141710369&format=interactive",
   sheets_gid="2085205637",
@@ -241,7 +242,7 @@ Common logic dictates that the fewer hops it takes for a HTTPS request-response 
 
 {{ figure_markup(
   image="tls-negotiation-desktop.png",
-  caption="HTML TLS negotiation - CDN vs origin (desktop)",
+  caption="HTML TLS negotiation - CDN vs origin (desktop).",
   description="This bar chart provides insight into TLS connection time (in milliseconds) across 10th, 25th, 50th, 75th and 90th percentile for CDN and origin. As it can be seen from the chart the TLS negotiation time is generally faster for CDNs.",
   chart_url="https://docs.google.com/spreadsheets/u/1/d/e/2PACX-1vRZQqyyKiQWgICD_a0WaEAmfZyFN_Zi3wVuQnZxsXqwZ_1JQg2x7GpRw4CTkX4gKvurzoCQ6YokkdpM/pubchart?oid=1669978107&format=interactive",
   sheets_gid="1644442668",
@@ -251,7 +252,7 @@ Common logic dictates that the fewer hops it takes for a HTTPS request-response 
 
 {{ figure_markup(
   image="tls-negotiation-mobile.png",
-  caption="HTML TLS negotiation - CDN vs origin (mobile)",
+  caption="HTML TLS negotiation - CDN vs origin (mobile).",
   description="This bar chart provides insight into TLS connection time (in milliseconds) across 10th, 25th, 50th, 75th and 90th percentile for CDN and origin. As it can be seen from the chart the TLS negotiation time is generally faster for CDNs.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRZQqyyKiQWgICD_a0WaEAmfZyFN_Zi3wVuQnZxsXqwZ_1JQg2x7GpRw4CTkX4gKvurzoCQ6YokkdpM/pubchart?oid=1577806460&format=interactive",
   sheets_gid="1644442668",

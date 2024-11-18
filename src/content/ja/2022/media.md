@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: メディア
 description: 2022年版Web Almanacのメディア章では、画像や動画がWeb上でどのようにエンコード、埋め込み、スタイリング、配信されているかを解説しています。
+hero_alt: Hero image of Web Almanac characters projecting an image onto a screen while other Web Almanac characters walk to cinema seats with popcorn to watch the projection.
 authors: [eeeps, akshay-ranganath]
 reviewers: [nhoizey, yoavweiss]
 analysts: [eeeps, akshay-ranganath]
@@ -83,7 +84,7 @@ featured_stat_label_3: 30秒以内の動画要素。
 
 不審なほど多くのものが1×1です。これらの `<img>` は、画像コンテンツをまったく含んでいません。レイアウト用（[スペーサーGIF](https://en.wikipedia.org/wiki/Spacer_GIF)）と[トラッキングビーコン](https://ja.wikipedia.org/wiki/%E3%82%A6%E3%82%A7%E3%83%96%E3%83%93%E3%83%BC%E3%82%B3%E3%83%B3)の2つの目的で使用されているのです。
 
-新しく作成されたウェブサイトは、レイアウトにCSSを使い、トラッキングに[ビーコンAPI](https://developer.mozilla.org/en-US/docs/Web/API/Beacon_API)を使うべきです。既存の多くのコンテンツは、トラッキングピクセルとスペーサーGIFを永遠に使い続けるだろうが、ここのデスクトップ数は[昨年](../2021/media#fig-5)から変わっておらず、モバイル数はほんの少ししか縮小していないことに落胆させられる。<a hreflang="en" href="https://developers.facebook.com/docs/meta-pixel/implementation/marketing-api#intialize-img">古い習慣</a> <a hreflang="en" href="https://spacergif.org/stats/">こごえる</a>！
+新しく作成されたウェブサイトは、レイアウトにCSSを使い、トラッキングに[ビーコンAPI](https://developer.mozilla.org/docs/Web/API/Beacon_API)を使うべきです。既存の多くのコンテンツは、トラッキングピクセルとスペーサーGIFを永遠に使い続けるだろうが、ここのデスクトップ数は[昨年](../2021/media#fig-5)から変わっておらず、モバイル数はほんの少ししか縮小していないことに落胆させられる。<a hreflang="en" href="https://developers.facebook.com/docs/meta-pixel/implementation/marketing-api#intialize-img">古い習慣</a> <a hreflang="en" href="https://spacergif.org/stats/">こごえる</a>！
 
 可能な限り、これらの実際には画像ではない`<img>`を分析から除外しました。
 

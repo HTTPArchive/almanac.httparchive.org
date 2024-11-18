@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Accessibility
 description: Accessibility chapter of the 2020 Web Almanac covering ease of reading, media, ease of navigation, and compatibility with assistive technologies.
+hero_alt: Hero image of a robot with a blue, human accessibility icon on its front scanning a web page, while Web Almanac characters check some labels.
 authors: [oluoluoxenfree, alextait1]
 reviewers: [aardrian, ericwbailey, foxdavidj]
 analysts: [foxdavidj]

@@ -1,6 +1,7 @@
 ---
 title: Performance
 description: Performance chapter of the 2022 Web Almanac covering Core Web Vitals, with deep dives into the Largest Contentful Paint, Cumulative Layout Shift, and First Input Delay metrics and their diagnostics.
+hero_alt: Hero image of Web Almanac characters images to a web page, while another Web Almanac character times them with a stopwatch.
 authors: [mel-ada, rviscomi]
 reviewers: [tunetheweb, pmeenan, 25prathamesh, estelle, konfirmed]
 analysts: [rviscomi, 25prathamesh, siakaramalegos, konfirmed]
@@ -431,7 +432,7 @@ However, LCP images may be loaded from other origins, like asset domains and ima
 
 {{ figure_markup(
   image="cross-hosted-lcp-images.png",
-  caption="Cross-hosted LCP images",
+  caption="Cross-hosted LCP images.",
   description="Bar chart showing same host is used for the LCP image for 55% of desktop and 48% of mobile pages, cross host for 23% and 21% respectively, and other content is the LCP element for 21% of desktop and 31% of mobile pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR-dJP3uphZoGE5A_luniNBFm5V2ww6irfOxANg0hrMid7gjgrtchsN_utOIDOvVZUjIwpmUBb27nHF/pubchart?oid=65223493&format=interactive",
   sheets_gid="139284544",
@@ -457,7 +458,7 @@ The six percentage point improvement to LCP this year can only happen when hundr
 
 {{ figure_markup(
   image="good-cls-by-device.png",
-  caption="Good CLS by device",
+  caption="Good CLS by device.",
   description="Bar chart showing the number of websites with good CLS increased from 54% in 2020 to 62% in 2021 to 65% in 2022. For sites visited on phones the it was 60% of sites achieving good CLS in 2020, 62% for 2021, increasing to 74% in 2022.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR-dJP3uphZoGE5A_luniNBFm5V2ww6irfOxANg0hrMid7gjgrtchsN_utOIDOvVZUjIwpmUBb27nHF/pubchart?oid=20373607&format=interactive",
   sheets_gid="555510064",
@@ -665,7 +666,7 @@ There are other, more direct ways site owners can improve their CLS. Setting `he
 
 {{ figure_markup(
   image="good-fid-by-device.png",
-  caption="Good FID by device",
+  caption="Good FID by device.",
   description="Bar chart showing 100% of websites had good FID in 2020, 2021, and 2022. For sites visited on phones this increased from 80% in 2020 to 90% in 2021 and then to 92% in 2022.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR-dJP3uphZoGE5A_luniNBFm5V2ww6irfOxANg0hrMid7gjgrtchsN_utOIDOvVZUjIwpmUBb27nHF/pubchart?oid=1546220733&format=interactive",
   sheets_gid="555510064",
@@ -875,7 +876,7 @@ The most notable attribute of this chart is the dense area in the bottom left co
 
 There's also a patch of pages that have low TBT and a FID of about 250 ms. This area represents pages that have <a hreflang="en" href="https://developer.chrome.com/blog/300ms-tap-delay-gone-away">tap delay</a> issues due to missing a `<meta name=viewport>` tag. These are outliers that can be safely ignored for this analysis's purposes.
 
-The <a hreflang="en" href="https://en.wikipedia.org/wiki/Kendall_rank_correlation_coefficient">Kendall</a> and <a hreflang="en" href="https://en.wikipedia.org/wiki/Spearman%27s_rank_correlation_coefficient">Spearman</a> coefficients of correlation for this distribution are 0.29 and 0.40, respectively.
+The [Kendall](https://wikipedia.org/wiki/Kendall_rank_correlation_coefficient) and [Spearman](https://wikipedia.org/wiki/Spearman%27s_rank_correlation_coefficient) coefficients of correlation for this distribution are 0.29 and 0.40, respectively.
 
 {{ figure_markup(
   image="tbt-inp.png",

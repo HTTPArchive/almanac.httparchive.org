@@ -3,12 +3,13 @@
 title: JavaScript
 #TODO - Review and update chapter description
 description: JavaScript chapter of the 2022 Web Almanac covering the usage of JavaScript on the web, libraries and frameworks, compression, web components, and source maps.
+hero_alt: Hero image of the Web Almanac characters cycling to power a website.
 authors: [malchata]
 reviewers: [mgechev, pankajparkar, NishuGoel, housseindjirdeh, kevinfarrugia, tunetheweb]
 analysts: [NishuGoel, kevinfarrugia]
 editors: [DesignrKnight, rviscomi]
 translators: []
-malchata_bio: Jeremy Wagner is a technical writer for Google on performance and Core Web Vitals. He has also written for A List Apart, CSS-Tricks, and Smashing Magazine. Jeremy will someday relocate to the remote wilderness where sand has not yet been taught to think. Until then, he continues to reside in Minnesota’s Twin Cities with his wife and stepdaughters, bemoaning the existence of strip malls.
+malchata_bio: Jeremy Wagner is a technical writer for Google on performance and Core Web Vitals. He has also written for A List Apart, CSS-Tricks, and Smashing Magazine. Jeremy will someday relocate to the remote wilderness where sand has not yet been taught to think. Until then, he continues to reside in Minnesota's Twin Cities with his wife and stepdaughters, bemoaning the existence of strip malls.
 results: https://docs.google.com/spreadsheets/d/1vOeFUyfEtWRen3Xj57ZsWav40n5tlcJoV0HmAxmNE_I/
 featured_quote: The state of JavaScript is a constantly evolving phenomenon. It's clear that we have an increased reliance on it more than ever, but that spells trouble for the collective user experience of the web. We need to do all we can—and more—to stem the tide of how much JavaScript we ship on production websites.
 featured_stat_1: 26%
@@ -466,7 +467,7 @@ A staggeringly low 0.34% of all observed mobile pages currently use dynamic `imp
 
 It's tricky, but a balance can be struck, and it involves gauging the user's intent. One way of deferring loading of JavaScript without delaying interactions is to [preload](https://developer.mozilla.org/docs/Web/HTML/Link_types/preload) that JavaScript when the user signals intent to make an interaction. One example of this could be to defer loading JavaScript for the validation of a form, and preload that JavaScript once the user has focused a field in that form. That way, when the JavaScript is requested, it will already be in the browser cache.
 
-Another way could be to use a service worker to precache JavaScript necessary for interactions when the service worker is installed. Installation should occur at a point in which the page has fully loaded in the page's <a hreflang="en" href="https://developer.mozilla.org/docs/Web/API/Window/load_event">`load` event</a>. That way, when the necessary functionality is requested, it can be retrieved from the service worker cache without startup costs.
+Another way could be to use a service worker to precache JavaScript necessary for interactions when the service worker is installed. Installation should occur at a point in which the page has fully loaded in the page's [`load` event](https://developer.mozilla.org/docs/Web/API/Window/load_event). That way, when the necessary functionality is requested, it can be retrieved from the service worker cache without startup costs.
 
 Dynamic `import()` is tricky to use, but more widespread adoption of it can help shift the performance cost of loading JavaScript from startup to a later point in the page lifecycle, presumably when there will be less network contention for resources. We hope to see increased adoption of dynamic `import()`, as the amount of JavaScript we see loaded during startup is only increasing.
 
@@ -609,7 +610,7 @@ Minification addresses one of the first principles of web performance: ship less
 
 ### Source maps
 
-<a hreflang="en" href="https://firefox-source-docs.mozilla.org/devtools-user/debugger/how_to/use_a_source_map/index.html">Source maps</a> are a tool that web developers use to map minified and uglified production code to their original sources. Source maps are used in production JavaScript files, and are a useful debugging tool. Source maps can be specified in a comment pointing to a source map file at the end of a resource, or as the <a hreflang="en" href="https://developer.mozilla.org/docs/Web/HTTP/Headers/SourceMap">`SourceMap`</a> HTTP response header.
+<a hreflang="en" href="https://firefox-source-docs.mozilla.org/devtools-user/debugger/how_to/use_a_source_map/index.html">Source maps</a> are a tool that web developers use to map minified and uglified production code to their original sources. Source maps are used in production JavaScript files, and are a useful debugging tool. Source maps can be specified in a comment pointing to a source map file at the end of a resource, or as the [`SourceMap`](https://developer.mozilla.org/docs/Web/HTTP/Headers/SourceMap) HTTP response header.
 
 {{ figure_markup(
     caption="The percentage of mobile pages specifying source map comments to publicly accessible source maps.",
@@ -756,9 +757,9 @@ Only 20 per million (0.002%) mobile pages are currently shipping JavaScript that
 
 ### Synchronous XHR
 
-AJAX—or usage of the <a hreflang="en" href="https://developer.mozilla.org/docs/Web/API/XMLHttpRequest">`XMLHttpRequest`</a> (XHR) method to asynchronously retrieve data and update information on the page without a navigation request—was a very popular method of creating dynamic user experiences. It has largely been replaced by the asynchronous [`fetch`](https://developer.mozilla.org/docs/Web/API/Fetch_API) method, but XHR is <a hreflang="en" href="https://caniuse.com/mdn-api_xmlhttprequest">still supported in all major browsers</a>.
+AJAX—or usage of the [`XMLHttpRequest`](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest) (XHR) method to asynchronously retrieve data and update information on the page without a navigation request—was a very popular method of creating dynamic user experiences. It has largely been replaced by the asynchronous [`fetch`](https://developer.mozilla.org/docs/Web/API/Fetch_API) method, but XHR is <a hreflang="en" href="https://caniuse.com/mdn-api_xmlhttprequest">still supported in all major browsers</a>.
 
-XHR has a flag that allows you to make synchronous requests. <a hreflang="en" href="https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/Synchronous_and_Asynchronous_Requests#synchronous_request">Synchronous XHR</a> is harmful for performance because the event loop and main thread is blocked until the request is finished, resulting in the page hanging until the data becomes available. `fetch` is a much more effective and efficient alternative with a simpler API, and has no support for synchronous fetching of data.
+XHR has a flag that allows you to make synchronous requests. [Synchronous XHR](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/Synchronous_and_Asynchronous_Requests#synchronous_request) is harmful for performance because the event loop and main thread is blocked until the request is finished, resulting in the page hanging until the data becomes available. `fetch` is a much more effective and efficient alternative with a simpler API, and has no support for synchronous fetching of data.
 
 {{ figure_markup(
     caption="The percentage of mobile pages using synchronous XHR.",
@@ -775,7 +776,7 @@ Avoid using synchronous XHR, and XHR in general. `fetch` is a much more ergonomi
 
 ### `document.write`
 
-Before the introduction of DOM insertion methods ([`appendChild`](https://developer.mozilla.org/docs/Web/API/Node/appendChild) and others, for example), <a hreflang="en" href="https://developer.mozilla.org/docs/Web/API/Document/write">`document.write`</a> was used to insert content at the position the `document.write` was made in the document.
+Before the introduction of DOM insertion methods ([`appendChild`](https://developer.mozilla.org/docs/Web/API/Node/appendChild) and others, for example), [`document.write`](https://developer.mozilla.org/docs/Web/API/Document/write) was used to insert content at the position the `document.write` was made in the document.
 
 `document.write` is very problematic. For one, it blocks the HTML parser, and is problematic for a number of other reasons <a hreflang="en" href="https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#document.write()">the HTML spec itself warns against its use</a>. On slow connections, blocking document parsing to append nodes in this way creates performance problems that are entirely avoidable.
 

@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Performance
 description: Performance chapter of the 2024 Web Almanac covering Core Web Vitals, with deep dives into the Largest Contentful Paint, Cumulative Layout Shift, and Interaction to Next Paint metrics and their diagnostics.
+hero_alt: Hero image of Web Almanac characters images to a web page, while another Web Almanac character times them with a stopwatch.
 authors: [imeugenia, ines-akrap]
 reviewers: [rviscomi, siakaramalegos]
 editors: [Cherry]
@@ -148,7 +149,7 @@ Interestingly, website performance is not the only factor that influences FCP. I
 
 {{ figure_markup(
   image="largest-contentful-paint-scores-2024.png",
-  caption="The percent of websites having good, need improvements and poor LCP, segmented by device",
+  caption="The percent of websites having good, need improvements and poor LCP, segmented by device.",
   description="Stacked bar chart showing LCP performance by device, categorized as good (under 2.5 seconds), needs improvement (2.5–4 seconds), and poor (over 4 seconds). For desktop, 72% of websites have good LCP, 20% need improvement, and 8% perform poorly. For phones, 59% of websites have good LCP, 27% need improvement, and 14% perform poorly.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=2074458485&format=interactive",
   sheets_gid="1535582002",
@@ -232,7 +233,7 @@ One of the ways to optimize the LCP resource load delay is to ensure the resourc
 Overall, lazy-loading images is a helpful performance technique that should be used to postpone loading of non-critical resources until they are near the viewport. However, using lazy-loading on the LCP image will delay the browser from loading it quickly. That is why lazy-loading should not be used on LCP elements. In this section, we explore how many sites use this performance anti-pattern.
 
 {{ figure_markup(
-  caption="The percent of mobile pages having image-based LCP that use native or custom lazy-loading on it",
+  caption="The percent of mobile pages having image-based LCP that use native or custom lazy-loading on it.",
   content="16%",
   classes="big-number",
   sheets_gid="1048885241",
@@ -264,7 +265,7 @@ The chart below illustrates the distribution of client-side generated content. I
 
 {{ figure_markup(
   image="good-largest-contentful-paint-client-side-generated-content.png",
-  caption="The percent of websites with good LCP vs percentage of client-side generated content on a page",
+  caption="The percent of websites with good LCP vs percentage of client-side generated content on a page.",
   description="Line chart showing the percentage of origins with good LCP compared to the percentage of client-side generated HTML for both desktop and mobile. For desktop, the percentage of origins with good LCP starts around 75% for pages with 0-10% client-side generated HTML and remains relatively stable, peaking slightly around 40-50% client-side HTML usage, before gradually declining to about 65% at the 90-100% range. For mobile, the percentage of good LCP starts lower, around 60% for the 0-10% range, and follows a similar trend, peaking slightly in the 30-40% range before declining more sharply to about 45% at the 90-100% client-side HTML usage.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=750231640&format=interactive",
   sheets_gid="829333856",
@@ -294,7 +295,7 @@ This aligns with the <a hreflang="en" href="https://github.com/GoogleChrome/ligh
 
 {{ figure_markup(
   image="largest-contentful-paint-images-wasted-kb.png",
-  caption="Distribution of wasted kilobytes on LCP image",
+  caption="Distribution of wasted kilobytes on LCP image.",
   description="Bar chart showing the distribution of wasted kilobytes on LCP images for desktop and mobile across percentiles. At the 10th, 25th, and 50th percentiles, both desktop and mobile pages have 0 wasted kilobytes. At the 75th percentile, desktop pages waste 20 kilobytes, while mobile pages waste 10 kilobytes. At the 90th percentile, desktop pages waste 190 kilobytes, and mobile pages waste 128 kilobytes.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=321466279&format=interactive",
   sheets_gid="1984265626",
@@ -308,7 +309,7 @@ You can reduce image sizes through resizing dimensions and increasing compressio
 
 {{ figure_markup(
   image="largest-contentful-paint-image-file-format.png",
-  caption="The percent of pages that use a given image file format for their LCP images",
+  caption="The percent of pages that use a given image file format for their LCP images.",
   description="Bar chart showing the distribution of LCP (Largest Contentful Paint) image formats for desktop and mobile. JPG is the most common format, used by 61% of desktop pages and a similar percentage of mobile pages. PNG is the second most common format, used by 26% of pages. WebP follows with 7%, while other formats such as MP4, SVG, GIF, and AVIF are used by less than 2% of pages. ICO, HEIC, and HEIF formats are barely used, with their percentages rounding to 0% for both desktop and mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=2086275423&format=interactive",
   sheets_gid="240287365",
@@ -551,7 +552,7 @@ It is expected to see this decrease in the use of unload events with major brows
 Another common reason for websites to fall in the bfcache ineligibility category is the use of the `cache-control: no-store` directive. This cache control header instructs the browser (and any intermediate caches) not to store a copy of the resource, ensuring that the content is fetched from the server on every request.
 
 {{ figure_markup(
-  caption="Percentage of sites using `Cache-Control: no-store`",
+  caption="Percentage of sites using `Cache-Control: no-store`.",
   content="21%",
   classes="big-number",
   sheets_gid="389603749",
@@ -575,7 +576,7 @@ One of the most common reasons for unexpected layout shifts is not preserving sp
 
 {{ figure_markup(
   image="unsized-images-amount.png",
-  caption="The number of unsized images per page",
+  caption="The number of unsized images per page.",
   description="Bar chart showing the number of unsized images per page by percentile for desktop and mobile devices. At the 10th and 25th percentiles, both desktop and mobile pages have 0 unsized images. At the 50th percentile, both desktop and mobile pages have 2 unsized images. At the 75th percentile, desktop pages have 10 unsized images, while mobile pages have 9. At the 90th percentile, desktop pages have 26 unsized images, and mobile pages have 23.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=603112996&format=interactive",
   sheets_gid="1674162543",

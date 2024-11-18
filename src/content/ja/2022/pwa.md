@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: PWA
 description: 2022年のWeb AlmanacのPWA章では、サービスワーカー（使用状況と機能）、Webアプリマニフェスト、Lighthouseの洞察、サービスワーカーのライブラリ（Workboxを含む）、そしてWebプッシュ通知について取り上げています。
+hero_alt: Hero image of Web Almanac characters converting a web page to a mobile web app.
 authors: [diekus]
 reviewers: [aarongustafson, tropicadri, webmaxru, Schweinepriester, beth-panx]
 analysts: [beth-panx]

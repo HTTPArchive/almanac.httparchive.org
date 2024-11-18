@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: SEO
 description: SEO chapter of the 2022 Web Almanac covering crawlability, indexability, page experience, on-page SEO, links, AMP, internationalization, and more.
+hero_alt: Hero image of various web pages beneath a search field with Web Almanac characters shine a light on the pages and make various checks.
 authors: [SophieBrannon, itamarblauer, mordy-oberstein]
 reviewers: [patrickstox, TusharPol, mobeenali97, dwsmart, johnmurch]
 analysts: [csliva, jroakes, derekperkins]
@@ -11,7 +12,7 @@ results: https://docs.google.com/spreadsheets/d/1qBQWxNKIAVJNOFwGlslT7AW0VAoK85M
 SophieBrannon_bio: Sophie is the Client Services Director at UK-based agency Absolute Digital Media and specializes in SEO strategy and content marketing in highly competitive industries such as health and finance. Sophie is a conference speaker and industry blogger, and has proven experience in strategizing and delivering award-winning campaigns on a local, national and international scale.
 itamarblauer_bio: Itamar Blauer is an SEO expert based in London. He has a proven track-record of increasing rankings with SEO that is UX-focused, data-backed, and creative.
 mordy-oberstein_bio: Mordy Oberstein is the Head of SEO Branding at Wix. He also serves as a consultant for SEMrush and sits behind the mic of multiple SEO podcasts, including the SERP's Up podcast.
-featured_quote: The implementation of structured data in the HTML of a page has continually increased. In 2021, 41.8% of desktop pages and 42.5% of mobile pages used structured data. In 2022, it’s risen to 44% of desktop pages and 45.1% of mobile pages that have structured data within their HTML.
+featured_quote: The implementation of structured data in the HTML of a page has continually increased. In 2021, 41.8% of desktop pages and 42.5% of mobile pages used structured data. In 2022, it's risen to 44% of desktop pages and 45.1% of mobile pages that have structured data within their HTML.
 featured_stat_1: 84.75%
 featured_stat_label_1: Sites adopting HTTPS
 featured_stat_2: 66%
@@ -22,7 +23,7 @@ featured_stat_label_3: Images using lazy loading image properties
 
 ## Introduction
 
-Search engine optimization (SEO) is a digital technique used to improve a website or page's visibility so that it organically ranks higher in search  engine results. It often combines technical configuration, content creation, and link acquisition, with the goal of improving relevance for a searcher’s query and intent. SEO has continued to grow in popularity and become one of the most popular digital marketing channels.
+Search engine optimization (SEO) is a digital technique used to improve a website or page's visibility so that it organically ranks higher in search  engine results. It often combines technical configuration, content creation, and link acquisition, with the goal of improving relevance for a searcher's query and intent. SEO has continued to grow in popularity and become one of the most popular digital marketing channels.
 
 {{ figure_markup(
   image="seo-term-trends.png",
@@ -33,7 +34,7 @@ Search engine optimization (SEO) is a digital technique used to improve a websit
   )
 }}
 
-With custom metrics that expose some new, never-before-seen insights, we have analyzed more than eight million homepages across the web, comparing our findings to those from [2021](../2021/seo) and, in some instances, from [2020](../2020/seo). Note: Our data, particularly from Lighthouse and the HTTP Archive, is limited to just websites’ homepages, not site wide crawls. Learn more about these limitations in our [Methodology](./methodology).
+With custom metrics that expose some new, never-before-seen insights, we have analyzed more than eight million homepages across the web, comparing our findings to those from [2021](../2021/seo) and, in some instances, from [2020](../2020/seo). Note: Our data, particularly from Lighthouse and the HTTP Archive, is limited to just websites' homepages, not site wide crawls. Learn more about these limitations in our [Methodology](./methodology).
 
 Read on for more about how search engine-friendly the web is.
 
@@ -42,11 +43,11 @@ Read on for more about how search engine-friendly the web is.
 
 Crawling and Indexing are the backbone of what Google and other search engines ultimately display on their search results pages. Without them, ranking simply cannot happen.
 
-The first step in the process is discovering web pages via crawling. While numerous pages are crawled, fewer of them are actually indexed, which is essentially stored and categorized in a search engine’s database. Based on a searcher’s query, matching indexed pages are then served.
+The first step in the process is discovering web pages via crawling. While numerous pages are crawled, fewer of them are actually indexed, which is essentially stored and categorized in a search engine's database. Based on a searcher's query, matching indexed pages are then served.
 
 This section deals with the state of the web, as it pertains to bots crawling and indexing websites. What directives are sites giving search engines bots? What are sites doing to ensure Google serves the right page and not a near duplicate in search results?
 
-Let’s explore the web and some of its facets that impact crawlability and indexability.
+Let's explore the web and some of its facets that impact crawlability and indexability.
 
 ### Robots.txt
 
@@ -67,11 +68,11 @@ The robots.txt file instructs bots, including search engine crawlers, as to wher
 
 There has been a nominal increase in the percentage of sites whose robots.txt files return a 200 status code in 2022 compared to 2021. In 2022,  81.5% of robots.txt files for desktop sites returned a 200 status code while 82.4% of mobile sites returned the same. This stands in comparison to 81% and 81.9% of robots.txt files on desktop and mobile sites, respectively, returning a 200 status code in 2021.
 
-Concurrently, there was just a small reduction in the percentage of robots.txt files returning a 404 status code in 2022 compared to 2021. Last year, 17.3% of robots.txt files for desktop sites returned a 404 while 16.5% of mobile sites’ robots.txt files returned that status code. In 2022, it’s just 16.5% for desktop and 15.8% for mobile sites’ robots.txt files that are returning a 404 status code.
+Concurrently, there was just a small reduction in the percentage of robots.txt files returning a 404 status code in 2022 compared to 2021. Last year, 17.3% of robots.txt files for desktop sites returned a 404 while 16.5% of mobile sites' robots.txt files returned that status code. In 2022, it's just 16.5% for desktop and 15.8% for mobile sites' robots.txt files that are returning a 404 status code.
 
 Like in 2021, the remaining status codes are associated with a minimal number of robots.txt files.
 
-Note: The above data does not indicate how well optimized a robots.txt file is. Even a file returning a 200 status code can contain directives that are perhaps not in the best interest of a site’s overall health.
+Note: The above data does not indicate how well optimized a robots.txt file is. Even a file returning a 200 status code can contain directives that are perhaps not in the best interest of a site's overall health.
 
 #### Robots.txt size
 
@@ -87,7 +88,7 @@ Note: The above data does not indicate how well optimized a robots.txt file is. 
 
 As expected, the overwhelming majority of robots.txt files were quite small, weighing between 0-100 KB.
 
-Google’s max limit for a robots.txt file is 500 KiB. Any directives found after the file reaches that limit are ignored by the search engine. A very small number of robots.txt files fall into that category. Specifically, just .005% of both desktop and mobile sites contain a robots.txt file that is above Google’s max limit (which is consistent with 2021’s data). In cases where the file size exceeds limits, <a hreflang="en" href="https://developers.google.com/search/docs/advanced/robots/robots_txt">Google recommends</a> consolidating directives.
+Google's max limit for a robots.txt file is 500 KiB. Any directives found after the file reaches that limit are ignored by the search engine. A very small number of robots.txt files fall into that category. Specifically, just .005% of both desktop and mobile sites contain a robots.txt file that is above Google's max limit (which is consistent with 2021's data). In cases where the file size exceeds limits, <a hreflang="en" href="https://developers.google.com/search/docs/advanced/robots/robots_txt">Google recommends</a> consolidating directives.
 
 #### Robots.txt user-agent usage
 
@@ -105,7 +106,7 @@ Google’s max limit for a robots.txt file is 500 KiB. Any directives found afte
 
 Most websites today (74.9% desktop and 76.1% mobile) do not indicate a specific user-agent within the robots.txt file, meaning the directives in the file apply to all user-agents. This is consistent with the data from 2020 when 74% of desktop robots.txt files and 75.2% of mobile robots.txt files did not specify a particular user-agent.
 
-Interestingly, Bingbot did not fall into the top 10 most specified user-agents. As for SEO tools, much like in 2021, both Majestic’s and Ahrefs’ bots were in the top 5 most specified user-agents, while Semrush’s bot rounded out the top 15 most specific user-agents.
+Interestingly, Bingbot did not fall into the top 10 most specified user-agents. As for SEO tools, much like in 2021, both Majestic's and Ahrefs' bots were in the top 5 most specified user-agents, while Semrush's bot rounded out the top 15 most specific user-agents.
 
 In terms of search engines, Googlebot leads the pack with 3.3% of robots.txt files specifying the user-agent while Bingbot comes in at 2.5%. Interestingly, there was nearly a full percentage point difference in 2021 between mobile site robots.txt files and desktop files specifying Bingbot. Such is not the case in 2022 where the data is essentially uniform.
 
@@ -115,7 +116,7 @@ Of note, Yandexbot was specified in just 0.5% of robots.txt files in 2021. By 20
 
 In January 2022, Google introduced a new robots tag called _indexifembedded_. The tag offers control over indexation when content is embedded in an iframe on a page, even when a noindex tag has been applied.
 
-Let’s start by determining the percentage of pages for which the new tag is possibly applicable.
+Let's start by determining the percentage of pages for which the new tag is possibly applicable.
 
 {{ figure_markup(
   image="pages-with-iframe.png",
@@ -145,9 +146,9 @@ Of the pages that have adopted the `indexifembedded` tag, 98.3% of them implemen
 
 ### Invalid head elements
 
-The `<head>` element serves as the container for a page’s metadata. From an SEO point of view, a page’s title tag and meta description reside within the `<head>` element, as do robots meta tags.
+The `<head>` element serves as the container for a page's metadata. From an SEO point of view, a page's title tag and meta description reside within the `<head>` element, as do robots meta tags.
 
-Not all elements, however, belong in the `<head>`. Should Google come across an invalid element in the page’s `<head>`, it assumes that it has reached the end of the `<head>` and <a hreflang="en" href="https://developers.google.com/search/docs/advanced/guidelines/valid-html">will not discover the rest of its contents</a>.
+Not all elements, however, belong in the `<head>`. Should Google come across an invalid element in the page's `<head>`, it assumes that it has reached the end of the `<head>` and <a hreflang="en" href="https://developers.google.com/search/docs/advanced/guidelines/valid-html">will not discover the rest of its contents</a>.
 
 Our data from 2022 shows 12.7% of desktop pages and 12.6% of mobile pages contain an invalid element in the `<head>`.
 
@@ -179,9 +180,9 @@ Canonical tags are traditionally used when defining duplicate content pages and 
   )
 }}
 
-We see from the data that canonical tags usage has increased over the years. In 2019, 48.3% of mobile pages used canonicals. In 2020, this grew to 53.6%. In 2021, this grew even further to 58.5%. And in 2022, it’s increased to 60.6%.
+We see from the data that canonical tags usage has increased over the years. In 2019, 48.3% of mobile pages used canonicals. In 2020, this grew to 53.6%. In 2021, this grew even further to 58.5%. And in 2022, it's increased to 60.6%.
 
-Mobile has a higher percentage of canonical attribution than desktop (60.6% vs. 58.7%), which is likely a direct result of single use URLs on mobile. Since the data set in this chapter is limited to home pages, it’s fair to assume that this is the reason for the higher canonical attribution on mobile. According to  <a hreflang="en" href="https://developers.google.com/search/mobile-sites/mobile-seo/separate-urls">Google’s guidelines</a>, having a separate mobile site is not recommended.
+Mobile has a higher percentage of canonical attribution than desktop (60.6% vs. 58.7%), which is likely a direct result of single use URLs on mobile. Since the data set in this chapter is limited to home pages, it's fair to assume that this is the reason for the higher canonical attribution on mobile. According to  <a hreflang="en" href="https://developers.google.com/search/mobile-sites/mobile-seo/separate-urls">Google's guidelines</a>, having a separate mobile site is not recommended.
 
 ### HTML vs. HTTP canonical usage
 
@@ -222,7 +223,7 @@ In this section of the chapter, we're looking at different elements of page expe
 
 ### HTTPS
 
-In 2021, there was an increased focus on site speed and page experience following Google’s introduction of the Core Web Vitals update, which had been publicized and pushed throughout 2020. While evidence of HTTPS being a ranking factor <a hreflang="en" href="https://developers.google.com/search/blog/2014/08/https-as-ranking-signal">dates back to 2014</a>, the overall focus on page experience since the Core Web Vitals announcement likely had an impact on the adoption of HTTPS across the web.
+In 2021, there was an increased focus on site speed and page experience following Google's introduction of the Core Web Vitals update, which had been publicized and pushed throughout 2020. While evidence of HTTPS being a ranking factor <a hreflang="en" href="https://developers.google.com/search/blog/2014/08/https-as-ranking-signal">dates back to 2014</a>, the overall focus on page experience since the Core Web Vitals announcement likely had an impact on the adoption of HTTPS across the web.
 
 {{ figure_markup(
   image="https-usage.png",
@@ -234,7 +235,7 @@ In 2021, there was an increased focus on site speed and page experience followin
   )
 }}
 
-We see from the data how more sites are using a secure certificate (HTTPS) at the time of the crawl (taking into account expirations of these certificates). In 2021, 84.3% of desktop pages used HTTPs, and it went up to 87.71% in 2022. On mobile, this increased from 81.2% in 2021 to 84.75% in 2022. Since the announcement of the Core Web Vitals update in 2020 to the present there’s been an increase of nearly 11% on mobile and 10% on desktop.
+We see from the data how more sites are using a secure certificate (HTTPS) at the time of the crawl (taking into account expirations of these certificates). In 2021, 84.3% of desktop pages used HTTPs, and it went up to 87.71% in 2022. On mobile, this increased from 81.2% in 2021 to 84.75% in 2022. Since the announcement of the Core Web Vitals update in 2020 to the present there's been an increase of nearly 11% on mobile and 10% on desktop.
 
 ### Mobile friendliness
 
@@ -271,7 +272,7 @@ Vary header usage has remained relatively unchanged for the past few years. In 2
 
 ### Legible font sizes
 
-In 2021, 13.5% of mobile pages were not using a legible font size. Thanks to Google’s focus on user experience across all devices, more pages than ever now use a legible font size. Only 11% of mobile pages are still not using a legible font size.
+In 2021, 13.5% of mobile pages were not using a legible font size. Thanks to Google's focus on user experience across all devices, more pages than ever now use a legible font size. Only 11% of mobile pages are still not using a legible font size.
 
 {{ figure_markup(
   caption="Sites not using a legible font size.",
@@ -288,7 +289,7 @@ Core Web Vitals was a hot topic in SEO throughout 2021 following Google announci
 
 Core Web Vitals are a series of standardized metrics that can help developers and SEOs to better understand how a user is experiencing a page. The main metrics are:
 
-* Largest Contentful Paint (LCP) measures how quickly a web page’s main content loads
+* Largest Contentful Paint (LCP) measures how quickly a web page's main content loads
 * First Input Delay (FID) measures how long it takes from when a user interacts with a web page (i.e. clicks a button) to when the browser is able to respond
 * Cumulative Layout Shift (CLS) measures the  visual stability and whether a page shifts within the viewport
 
@@ -358,7 +359,7 @@ For the second year in a row, 98.8% of desktop and mobile pages had `<title>` el
 
 #### `<title>` element
 
-The `<title>` element is an on-page ranking factor that provides a strong hint regarding page relevance and may appear on the SERP. In August 2021, <a hreflang="en" href="https://developers.google.com/search/blog/2021/08/update-to-generating-page-titles">Google started rewriting more websites’ titles in their search results</a>.
+The `<title>` element is an on-page ranking factor that provides a strong hint regarding page relevance and may appear on the SERP. In August 2021, <a hreflang="en" href="https://developers.google.com/search/blog/2021/08/update-to-generating-page-titles">Google started rewriting more websites' titles in their search results</a>.
 
 {{ figure_markup(
   image="title-words-percentile.png",
@@ -424,7 +425,7 @@ For the most part, these stats are relatively unchanged from last year.
 
 #### Header tags
 
-Heading elements  (`<h1>`, `<h2>`...) are important parts of a page’s structure since they help organize the content on the page. Heading elements are not a direct ranking factor, but they  can help Google better understand the content found on the page.
+Heading elements  (`<h1>`, `<h2>`...) are important parts of a page's structure since they help organize the content on the page. Heading elements are not a direct ranking factor, but they  can help Google better understand the content found on the page.
 
 {{ figure_markup(
   image="has-h-elements.png",
@@ -440,7 +441,7 @@ The trends around implementation of headings by type in 2022 closely match those
 
 Another trend that has carried over is the discrepancy in usage between the h1 and h2. While 72.7% of desktop pages implement an h2, only 65.8% use an h1 (with similar numbers reflected on mobile).
 
-Although there is no  definitive explanation for this, one possible reason is that the h1 is often placed above any content. It’s not essential for the natural flow of the content. However, without the h2, there could be a long flow of unstructured content.
+Although there is no  definitive explanation for this, one possible reason is that the h1 is often placed above any content. It's not essential for the natural flow of the content. However, without the h2, there could be a long flow of unstructured content.
 
 {{ figure_markup(
   image="nonempty-h-elements.png",
@@ -452,9 +453,9 @@ Although there is no  definitive explanation for this, one possible reason is th
   )
 }}
 
-Overall, much like 2021’s stats, there are relatively few empty H elements found on pages. Additionally, there is little discrepancy between the desktop and mobile data.
+Overall, much like 2021's stats, there are relatively few empty H elements found on pages. Additionally, there is little discrepancy between the desktop and mobile data.
 
-There is divergence, however, with the h1.  While 65.8% of pages contained an h1 element, 58.5% contained a non-empty h1 element. That’s a 7.3 percentage point difference. Contrast that with the h2, which has just a 1.5 percentage point difference.  As noted in the 2021 Web Almanac, this may be a result of the many websites that wrap logo-images in the h1 element on homepages.
+There is divergence, however, with the h1.  While 65.8% of pages contained an h1 element, 58.5% contained a non-empty h1 element. That's a 7.3 percentage point difference. Contrast that with the h2, which has just a 1.5 percentage point difference.  As noted in the 2021 Web Almanac, this may be a result of the many websites that wrap logo-images in the h1 element on homepages.
 
 ### Image attributes
 
@@ -492,7 +493,7 @@ The primary purpose of the alt attribute on the `<img>` element is accessibility
 
 What we found:
 
-- On the median desktop page, 56.25% of `<img>` tags have the alt attribute. This is a negligible decrease of just a quarter of a percentage point from 2021’s 56.5%.
+- On the median desktop page, 56.25% of `<img>` tags have the alt attribute. This is a negligible decrease of just a quarter of a percentage point from 2021's 56.5%.
 - On the median mobile page, 54.9% of `<img>` tags have the alt attribute. This is a marginal increase from the 54.6% of tags with the alt attribute in 2021.
 - There is a noticeable change in the median desktop and mobile pages containing `<img>` tags that have blank alt attributes compared to 2021. Last year, the median desktop and mobile pages, respectively had 10.5% and 11.8% `<img>` tags with blank `alt` attributes. In 2022, this figure rose to 12.1% and 12.5% on desktop and mobile, respectively.
 - The trend towards 0% of median desktop and mobile pages containing `<img>` tags missing the alt attribute continues. On the median desktop page in 2021, 1.4% of the `<img>` tags had blank attributes. It fell to 0% in 2022.
@@ -513,9 +514,9 @@ How user agents prioritize the rendering and displaying of images is affected by
 
 What we found:
 
-- There has been a significant reduction in the number of pages that do not use any image loading property. In 2021, 83.3% of desktop pages and 83.5% of mobile pages didn’t utilize any image loading property at all. It’s now 78.3% of desktop pages and 77.9% of mobile pages in 2022.
+- There has been a significant reduction in the number of pages that do not use any image loading property. In 2021, 83.3% of desktop pages and 83.5% of mobile pages didn't utilize any image loading property at all. It's now 78.3% of desktop pages and 77.9% of mobile pages in 2022.
 - Conversely, the implementation of loading="lazy" has increased. In 2021, both 15.6% of desktop and mobile pages implemented loading="lazy". This has increased to 19.8% (desktop) and 20.3% (mobile) in 2022.
-- The number of pages defaulting to the brower’s loading method has fallen in 2022. On desktop, .07% of pages use loading="auto" and .08% on mobile. In 2021, .01% of pages utilized loading="auto".
+- The number of pages defaulting to the brower's loading method has fallen in 2022. On desktop, .07% of pages use loading="auto" and .08% on mobile. In 2021, .01% of pages utilized loading="auto".
 
 ### Word count
 
@@ -523,7 +524,7 @@ While content length is not a ranking factor, it is still valuable to assess how
 
 #### Rendered word count
 
-Let’s begin with the number of words found on the page once it has been rendered.
+Let's begin with the number of words found on the page once it has been rendered.
 
 {{ figure_markup(
   image="visible-words-rendered.png",
@@ -541,7 +542,7 @@ Similarly, the median number of rendered words on mobile in 2022 contains 366 wo
 
 #### Raw word count
 
-Let’s now examine the number of words contained in a page’s source code prior to the browser executing any JavaScript code or other modifications in the DOM or CSSOM.
+Let's now examine the number of words contained in a page's source code prior to the browser executing any JavaScript code or other modifications in the DOM or CSSOM.
 
 {{ figure_markup(
   image="visible-words-raw.png",
@@ -553,9 +554,9 @@ Let’s now examine the number of words contained in a page’s source code prio
   )
 }}
 
-Much like the rendered word count, there is a minimal difference between the data in 2022 versus what was found in 2021. For example, the median desktop page’s raw word count was 369 in 2021 compared to 363 in 2022 and median mobile page’s raw word count was 318 which is slightly less than 2021 which saw 321 words as the median.
+Much like the rendered word count, there is a minimal difference between the data in 2022 versus what was found in 2021. For example, the median desktop page's raw word count was 369 in 2021 compared to 363 in 2022 and median mobile page's raw word count was 318 which is slightly less than 2021 which saw 321 words as the median.
 
-Here, too, mobile pages contain fewer words than desktop pages across the board. The median mobile page contains a raw word count that is 12.39% less than desktop. As noted above, this is significant because of Google’s mobile-first indexing.
+Here, too, mobile pages contain fewer words than desktop pages across the board. The median mobile page contains a raw word count that is 12.39% less than desktop. As noted above, this is significant because of Google's mobile-first indexing.
 
 ## Structured Data
 
@@ -571,11 +572,11 @@ Implementing Structured Data has come into increased focus as rich results on th
   )
 }}
 
-The implementation of structured data in the HTML of a page has continually increased. In 2021, 42% of desktop pages and 43% of mobile pages used structured data. In 2022, it’s risen to 44% of desktop pages and 45% of mobile pages that have structured data within their HTML.
+The implementation of structured data in the HTML of a page has continually increased. In 2021, 42% of desktop pages and 43% of mobile pages used structured data. In 2022, it's risen to 44% of desktop pages and 45% of mobile pages that have structured data within their HTML.
 
 This reflects 2 percentage point increases on both desktop and mobile pages. Two possible explanations for greater adoption could be that a number of Content Management Systems have added automatic structured data markup to their pages, as well as the aforementioned prominence that structured data has played in Google SERPs.
 
-There has also been a great reduction in both mobile and desktop pages that have structured data added via JavaScript where it was not contained within the initial HTML response. In 2021, 1.7% of mobile pages and 1.4% of desktop pages had structured data added via JavaScript where it was not contained within the initial HTML response. It’s now just .15% on desktop and .13% on mobile.
+There has also been a great reduction in both mobile and desktop pages that have structured data added via JavaScript where it was not contained within the initial HTML response. In 2021, 1.7% of mobile pages and 1.4% of desktop pages had structured data added via JavaScript where it was not contained within the initial HTML response. It's now just .15% on desktop and .13% on mobile.
 
 ### Most popular Structured Data formats
 
@@ -589,9 +590,9 @@ There has also been a great reduction in both mobile and desktop pages that have
   )
 }}
 
-Structured data can be implemented through various ways on a given page. However, JSON-LD, which aligns with Google’s own recommendation for implementation, is by far the most popular format.
+Structured data can be implemented through various ways on a given page. However, JSON-LD, which aligns with Google's own recommendation for implementation, is by far the most popular format.
 
-Compared to 2021’s figures, 2022’s data shows a nominal increase in implementation via JSON-LD and a slight decrease when implementing structured data with microdata. These numbers bear out in particular on mobile. In 2021, 60.5% of mobile pages used JSON-LD to implement structured data. The number of mobile pages in 2022 using JSON-LD for adding structured data is up 2.3% to 61.9%. Conversely, 36.9% of mobile pages in 2021 utilized structured data with microdata. That number fell 4.3% in 2022 to 35.3%.
+Compared to 2021's figures, 2022's data shows a nominal increase in implementation via JSON-LD and a slight decrease when implementing structured data with microdata. These numbers bear out in particular on mobile. In 2021, 60.5% of mobile pages used JSON-LD to implement structured data. The number of mobile pages in 2022 using JSON-LD for adding structured data is up 2.3% to 61.9%. Conversely, 36.9% of mobile pages in 2021 utilized structured data with microdata. That number fell 4.3% in 2022 to 35.3%.
 
 ### Most popular schema types
 
@@ -623,7 +624,7 @@ Search engines utilize links to discover new pages and to pass PageRank, which h
 
 ### Non-descriptive link text
 
-Anchor text, which is the clickable text used in a link, helps search engines to understand the content of the linked page. Lighthouse has a test to check if the anchor text used is useful and/or contextual, or if it’s generic and/or non-descriptive such as "learn more" or "click here." In 2022, 15% and 17% of the tested links on mobile and desktop, respectively, did not have descriptive anchor text, a missed opportunity from an SEO perspective and bad for accessibility.
+Anchor text, which is the clickable text used in a link, helps search engines to understand the content of the linked page. Lighthouse has a test to check if the anchor text used is useful and/or contextual, or if it's generic and/or non-descriptive such as "learn more" or "click here." In 2022, 15% and 17% of the tested links on mobile and desktop, respectively, did not have descriptive anchor text, a missed opportunity from an SEO perspective and bad for accessibility.
 
 ### Outgoing links
 
@@ -637,11 +638,11 @@ Anchor text, which is the clickable text used in a link, helps search engines to
   )
 }}
 
-Internal links are links to other pages on the same website. Much like last year, 2022’s figures suggest pages had fewer links on their mobile versions compared to their desktop counterparts.
+Internal links are links to other pages on the same website. Much like last year, 2022's figures suggest pages had fewer links on their mobile versions compared to their desktop counterparts.
 
-The median number of internal links is now 16% higher on desktop than mobile at 56% and 48%, respectively. It’s likely a result of developers minimizing the navigation menus and footers on mobile for ease of use on smaller screens.
+The median number of internal links is now 16% higher on desktop than mobile at 56% and 48%, respectively. It's likely a result of developers minimizing the navigation menus and footers on mobile for ease of use on smaller screens.
 
-According to CrUX data, the 1,000 most popular websites have more outgoing internal links than less popular sites, a total of 137 links on desktop versus 106 on mobile. That’s more than two times higher than the median. This may be attributed to the use of mega-menus on larger sites that generally have more pages.
+According to CrUX data, the 1,000 most popular websites have more outgoing internal links than less popular sites, a total of 137 links on desktop versus 106 on mobile. That's more than two times higher than the median. This may be attributed to the use of mega-menus on larger sites that generally have more pages.
 
 {{ figure_markup(
   image="median-external-links.png",
@@ -682,7 +683,7 @@ Not much has changed in terms of the adoption of the newer attributes, with `rel
 AMP has been a controversial topic since its launch in 2015, with SEOs debating whether or not it had a direct impact on rankings. Google later released this statement (below) in its documentation for additional clarification:
 
 <figure>
-  <blockquote>While AMP itself isn’t a ranking factor, speed is a ranking factor for Google Search. Google Search applies the same standard to all pages, regardless of the technology used to build the page.</blockquote>
+  <blockquote>While AMP itself isn't a ranking factor, speed is a ranking factor for Google Search. Google Search applies the same standard to all pages, regardless of the technology used to build the page.</blockquote>
   <figcaption>— <cite><a hreflang="en" href="https://developers.google.com/search/docs/advanced/experience/about-amp">Google Search Central</a></cite></figcaption>
 </figure>
 
@@ -749,12 +750,12 @@ While Google tends to use hreflang tags, other search engines such as Bing prefe
 
 In 2022, HTTP server response is the most popular implementation method of content-language, with 8.27% of mobile sites using this and 8.82% of desktop sites. However this has seen a decline in adoption on mobile compared to 2021 when 9.3% of mobile sites used it. Conversely, desktop has seen a slight increase compared to 2021 when 8.7% of sites used it.
 
-HTML, on the other hand, has 2.98% adoption on desktop in 2022 and 3.01% adoption on mobile. But again there’s  a decline in mobile usage compared to 2021 when 3.3% of mobile sites used the HTML tag.
+HTML, on the other hand, has 2.98% adoption on desktop in 2022 and 3.01% adoption on mobile. But again there's  a decline in mobile usage compared to 2021 when 3.3% of mobile sites used the HTML tag.
 
 ## Conclusion
 
 Much like patterns in our data from [2021](../2021/seo), [2020](../2020/seo), and [2019](../2019/seo), the majority of sites analyzed are showing small, yet consistent, improvement when it comes to various fundamentals of SEO, including having indexable and crawlable pages.
 
-We have also seen an increasing focus on performance elements such as Core Web Vitals, with 39% of sites now having passing scores compared to just 20% in 2020 when the update was first announced. This seems to indicate sites are now taking Google’s guidance more to heart. Still, more work needs to be done across the web.
+We have also seen an increasing focus on performance elements such as Core Web Vitals, with 39% of sites now having passing scores compared to just 20% in 2020 when the update was first announced. This seems to indicate sites are now taking Google's guidance more to heart. Still, more work needs to be done across the web.
 
 Newer introductions, such as the indexifembedded tag, are seeing slow pick-up. This underscores the continuous need for adoption of best practices and how much opportunity for growth there is in SEO, search engine friendliness, and the state of the web in general.

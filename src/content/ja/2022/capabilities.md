@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: ケイパビリティ
 description: 2022年のWeb Almanacのケイパビリティ章では、ハードウェアインターフェースへのアクセスをWebアプリに提供し、Webベースの生産性アプリを強化するなど、新しく強力なWebプラットフォームAPIについて説明しています。
+hero_alt: Hero image of Web Almanac characters with superhero capes plugging various capabilities into a web page.
 authors: [MichaelSolati]
 reviewers: [tomayac, christianliebel]
 analysts: [tunetheweb]
@@ -139,7 +140,7 @@ Web Share APIは、デスクトップで2021年の9.00%から2022年には8.84%�
 
 ## ホームスクリーンへの追加
 
-昨年のCapabilitiesレポートでは取り上げなかった機能の一つに、デバイスのホームスクリーンにWebアプリケーションを追加する機能があります。どのサイトがこの機能を持っているかを計算するために、[`beforeinstallprompt`](https://developer.mozilla.org/en-US/docs/Web/API/Window/beforeinstallprompt_event)イベントのリスナーがあるかどうかをテストしました。
+昨年のCapabilitiesレポートでは取り上げなかった機能の一つに、デバイスのホームスクリーンにWebアプリケーションを追加する機能があります。どのサイトがこの機能を持っているかを計算するために、[`beforeinstallprompt`](https://developer.mozilla.org/docs/Web/API/Window/beforeinstallprompt_event)イベントのリスナーがあるかどうかをテストしました。
 
 `beforeinstallprompt`イベントはChromium専用のAPIであり、現在[WICG内でインキュベート中](https://wicg.github.io/manifest-incubations/index.html#installation-prompts)です。
 

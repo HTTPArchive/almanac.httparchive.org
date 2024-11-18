@@ -1,8 +1,8 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Page Weight
-#TODO - Review and update chapter description
 description: Page Weight chapter of the 2022 Web Almanac covering why page weight matters, bandwidth, complex pages, page weight over time, page requests, and file formats.
+hero_alt: Hero image of Web Almanac characters using a set of scales to weigh a web page against variuos boxes labelled with various different kilobytes.
 authors: [fellowhuman1101, dwsmart]
 reviewers: [CSteele-gh]
 analysts: [drohe]
@@ -196,7 +196,7 @@ At the 50th percentile, desktop pages were over 2 MB, mobile pages just under th
 Overall page weight is remarkably close when looking at what is served desktop versus mobile user-agents, although the gap grows slightly in the higher percentile (larger) pages. Given that mobile devices tend to have fewer local resources and more constrained network capabilities, this is concerning.
 
 {{ figure_markup(
-  caption="The weight of the largest desktop page",
+  caption="The weight of the largest desktop page.",
   content="678 MB",
   classes="big-number",
   sheets_gid="1763112644",
@@ -223,7 +223,7 @@ Let's dig a little deeper into what is making up these large sizes.
 Looking at the median page weight over time, it remains clear that the trend remains disappointingly consistent, with the median weight only growing over time.
 
 {{ figure_markup(
-  caption="Growth in mobile page weight over 10 years",
+  caption="Growth in mobile page weight over 10 years.",
   content="594%",
   classes="big-number",
   sheets_gid="1472139207",
@@ -393,7 +393,7 @@ It's about tradeoffs and tackling the worst bottleneck, which is often the netwo
 
 ### Minification
 
-<a hreflang="en" href="https://en.wikipedia.org/wiki/Minification_(programming)">Minification</a> helps to reduce the overall size of text-based resources by removing unnecessary characters, like whitespace, code comments, and other things that play no part in how a browser interprets and uses these resources.
+[Minification](https://wikipedia.org/wiki/Minification_(programming)) helps to reduce the overall size of text-based resources by removing unnecessary characters, like whitespace, code comments, and other things that play no part in how a browser interprets and uses these resources.
 
 CSS and JavaScript are great candidates for minification, and we looked at both, using Lighthouse's test for these resources.
 

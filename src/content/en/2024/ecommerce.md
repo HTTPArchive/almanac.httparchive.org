@@ -2,13 +2,14 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Ecommerce
 description: This chapter explores trends in the ecommerce ecosystem, examining platform popularity, performance metrics, and regional differences. Covering Core Web Vitals, Lighthouse scores, and accessibility, it highlights how platforms like WooCommerce and Shopify dominate, while newer players gain traction in specific regions and niches.
+hero_alt: Hero image of a Web Almanac character at a super market checkout loading items from a shopping basket onto the conveyor belt while another character payes with a credit card.
 authors: [JonathanPagel]
 reviewers: [nrllh]
 analysts: [JonathanPagel]
-editors: [tunetheweb]
+editors: [niko-kaleev]
 translators: []
 results: https://docs.google.com/spreadsheets/d/1LABlisQFCLjOyEd43tdUb-Hxs6pGuboTresntMk71Lc/
-JonathanPagel_bio: Jonathan Pagel studied ecommerce in his bachelor's degree and has since been interested in the field, particularly in the areas of speed optimization and accessibility for shops and websites. Currently, he is freelancing in this field and pursuing a Master’s in AI and Society.
+JonathanPagel_bio: Jonathan Pagel studied ecommerce in his bachelor's degree and has since been interested in the field, particularly in the areas of speed optimization and accessibility for shops and websites. Currently, he is freelancing in this field and pursuing a Master's in AI and Society.
 featured_quote: While ecommerce platforms are diverse and well distributed among different providers, a few key players dominate technologies like payment systems.
 featured_stat_1: 21%
 featured_stat_label_1: Percent of ecommerce sites
@@ -197,7 +198,7 @@ Here's the percentage of sites on each platform that achieve a "good" score, mea
   )
 }}
 
-Some platforms made impressive improvements, like Squarespace, which increased from 33% good scores in 2022 to 60% in 2024. Other platforms, like Magento and WooCommerce, are still struggling with real-world user experiences. This chart, and the other charts of this section, consider mobile performance only since most web traffic comes from mobile, and it’s more challenging to reach top scores.
+Some platforms made impressive improvements, like Squarespace, which increased from 33% good scores in 2022 to 60% in 2024. Other platforms, like Magento and WooCommerce, are still struggling with real-world user experiences. This chart, and the other charts of this section, consider mobile performance only since most web traffic comes from mobile, and it's more challenging to reach top scores.
 
 ### Largest Contentful Paint (LCP)
 

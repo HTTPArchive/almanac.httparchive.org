@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Caching
 description: Caching chapter of the 2021 Web Almanac covering cache-control, expires, TTLs, validity, vary, set-cookies, service workers and opportunities.
+hero_alt: Hero image of Web Almanac characters and resources in parking slots in a car park with parking meters in from of them. The middle spot is labelled 304.
 authors: [Zizzamia, jessnicolet]
 reviewers: [WilhelmWillie, roryhewitt]
 analysts: [rviscomi]
@@ -174,7 +175,7 @@ The most misused `Cache-Control` directive continues to be `set-cookie`, used fo
 When we take a look when `no-cache`, `max-age=0` and `no-store` are used together, we also see a growing trend year after year, in which `no-store` is specified with either/both of `no-cache` and `max-age=0`, the `no-store` directive takes precedence, and the other directives are ignored. Driving more awareness around using these directives, for example during larger conferences, could help avoid accidentally wasted bytes.
 
 {{ figure_markup(
-  caption="Largest recorded value for `max-age`",
+  caption="Largest recorded value for `max-age`.",
   content="51 trillion years",
   classes="medium-number",
   sheets_gid="529870849",
@@ -351,7 +352,7 @@ When we compare the mobile data between 2020 and 2021, we notice a 5.1% increase
     </tbody>
   </table>
   <figcaption>{{ figure_link(
-    caption="Median TTL (in days)",
+    caption="Median TTL (in days).",
     sheets_gid="1792973510",
     sql_file="ttl_by_resource.sql"
   ) }}</figcaption>
@@ -410,7 +411,7 @@ This data shows us that first parties have prioritized refreshing HTML content, 
 Mobile resources with a cache TTL that was considered too short compared to its content age have seen an improvement since 2020. This data is exciting because it hints at the community's growing understanding of appropriately relative caching.
 
 {{ figure_markup(
-  caption="54% of mobile resources are older than their TTL",
+  caption="54% of mobile resources are older than their TTL.",
   content="54%",
   classes="big-number",
   sheets_gid="768623684",

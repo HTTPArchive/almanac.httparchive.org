@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Mobile Web
 description: Mobile Web chapter of the 2019 Web Almanac covering page loading, textual content, zooming and scaling, buttons and links, and ease of filling out forms.
+hero_alt: Hero image of Web Almanac characters squeezing a web page onto a mobile screen.
 authors: [foxdavidj]
 reviewers: [AymenLoukil, logicalphase]
 analysts: [ymschaap, rviscomi]
@@ -101,7 +102,7 @@ One of the most beautiful parts of the web is how web pages load progressively b
 
 {{ figure_markup(
   image="example-of-a-site-shifting-content-while-it-loads-lookzook.gif",
-  caption="Example of shifting content distracting a reader. CLS total of 42.59%. Image courtesy of LookZook",
+  caption="Example of shifting content distracting a reader. CLS total of 42.59%. Image courtesy of LookZook.",
   description="A video showing a website progressively load. The text is displayed quickly, but as images continue to load the text gets shifted further and further down the page each time—making it very frustrating to read. The calculated CLS of this example is 42.59%. Image courtesy of LookZook",
   width=360,
   height=640
@@ -207,7 +208,7 @@ Designing tap targets appropriately to mitigate this issue can be difficult beca
 
 {{ figure_markup(
   image="example-of-easy-to-hit-tap-targets-lookzook.png",
-  caption="Standards for sizing and spacing tap targets. Image courtesy of LookZook",
+  caption="Standards for sizing and spacing tap targets. Image courtesy of LookZook.",
   description="A diagram displaying two examples of difficult to tap buttons. The first example shows two buttons with no spacing between them; An example below it shows the same buttons but with the recommended amount of spacing between them (8px or 1-2mm). The second example shows a button far too small to tap; An example below it shows the same button enlarged to the recommended size of 40-48px (around 8mm). Image courtesy of LookZook",
   width=800,
   height=430
@@ -255,7 +256,7 @@ When analyzing sites containing an email input, 56.42% use `type="email"`. Simil
       <td class="numeric">833</td>
     </tr>
   </table>
-  <figcaption>{{ figure_link(caption="Most commonly used invalid input types") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Most commonly used invalid input types.") }}</figcaption>
 </figure>
 
 Make sure to educate yourself and others on the large amount of input types available and double-check that you don't have any typos like the most common ones in Figure 12.7 above.

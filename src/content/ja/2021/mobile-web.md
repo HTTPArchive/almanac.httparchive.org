@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: モバイルウェブ
 description: 2021年版Web AlmanacのモバイルWebの章では、Webページのバイタル、画像、技術採用、アクセシビリティなどをカバーしています。
+hero_alt: Hero image of Web Almanac characters squeezing a web page onto a mobile screen.
 authors: [fellowhuman1101, dwsmart, ashleyish]
 reviewers: [foxdavidj, fili]
 analysts: [rvth, foxdavidj]

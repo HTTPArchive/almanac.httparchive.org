@@ -2,12 +2,13 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: CMS
 description: CMS chapter of the 2024 Web Almanac covering CMS adoption, user experience of websites running on CMS platforms, and CMS resource weights.
+hero_alt: Hero image of Web Almanac characters on a type writer writing a web page.
 authors: [sirjonathan, LoraRaykova, niko-kaleev]
-reviewers: [raewrites, karmatosed]
-editors: [tunetheweb]
-analysts: [sirjonathan, nrllh]
+reviewers: [raewrites, dknauss]
+editors: [tunetheweb, raewrites]
+analysts: [nrllh, sirjonathan]
 translators: []
-sirjonathan_bio: Jonathan Wold is an Open Web advocate with more than 18 years focused on the WordPress ecosystem. Beyond his love for WordPress, he enjoys reading widely, playing strategy games, acting, rock climbing, and occasionally writing in third-person.
+sirjonathan_bio: Jonathan Wold is an Open Web advocate with more than 20 years focused on the WordPress ecosystem. Beyond his love for WordPress and the Open Web, he enjoys reading widely, strategy games, acting, rock climbing, and occasionally writing in third-person.
 LoraRaykova_bio: Lora is a Content Manager at NitroPack with 8+ years of experience developing in-depth, specialized content for SaaS companies in the CEE region.
 niko-kaleev_bio: Niko is a Content Writer at NitroPack with 5+ years of experience in dissecting nuanced topics like hosting, Core Web Vitals, web performance metrics and optimizations.
 results: https://docs.google.com/spreadsheets/d/118lwQV_GwFYqIxXvsm57oeadJdjAJEOMCRq1PsTqhfs/
@@ -71,7 +72,7 @@ As of June 2024, CMS adoption worldwide has grown steadily, matching our dataset
 
 {{ figure_markup(
   image="cms-adoption-by-geo.png",
-  caption="CMS adoption by geo.",
+  caption="CMS adoption by geography.",
   description="A barchart showing United States of America CMS's are used on 40% of desktop and 44% of mobile sites. For India it's 30% and 33% respectively, For Japan 39% and 39%, Germany 33% and 43%, Brazil 31% and 32%, United Kingdom of Great Britain and Northern Ireland 36% and 42%, France 36% and 40%, Russian Federation 37% and 39%, Indonesia 27% and 24% and finally for Italy it's 41% on desktop and 46% on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYh0RHAqp768faimbvZpvS71yJwCaOAFR0AzgotkEphtxphBKR1kt-pqgxA8Uxj4FSii1RQWwgG6rk/pubchart?oid=2018893523&format=interactive",
   sheets_gid="708001576",
@@ -156,24 +157,6 @@ Among all websites that use an identifiable CMS, WordPress sites account for the
 }}
 
 Comparing YoY, Drupal and Joomla continue to decline in market share while Squarespace and Wix grow (0.5% and 0.8%, respectively). WordPress continues its ascent, increasing 0.6% on mobile over 2023-2024 This represents a slower pace of growth than in previous years.
-
-### CMS adoption share
-
-This year's chapter includes a new addition where we analyze CMS market share.
-
-{{ figure_markup(
-  image="cms-adoption-share.png",
-  caption="CMS adoption share.",
-  description="A bar chart showing WordPress is 71.9% of the CMS market on mobile, Wix is 5.7%, Squarespace 3.1%, Joomla 3.0%, Drupal 2.3%, Duda 1.2%, 1C-Bitrix 1.1%, Tilda 1.1%, and following those there is a proliferation of smaller segments.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYh0RHAqp768faimbvZpvS71yJwCaOAFR0AzgotkEphtxphBKR1kt-pqgxA8Uxj4FSii1RQWwgG6rk/pubchart?oid=538227468&format=interactive",
-  sheets_gid="738765206",
-  sql_file="cms_adoption.sql"
-  )
-}}
-
-Staying consistent with existing trends and reports, WordPress remains the most popular CMS in the world, with as much as 71.9% of mobile websites leveraging the open-source platform. Next come the proprietary drag-and-drop CMSs Wix and Squarespace (5.7% and 3.1%, respectively), followed by Joomla at 3%.
-
-While the flexibility, community-driven development, and extensive ecosystem of an open-source CMS such as WordPress contribute to its popularity, it will be interesting to see how proprietary platforms influence adoption numbers in the future—especially given the slower pace of WordPress adoption observed over the past two years.
 
 ## CMS user experience
 
@@ -351,7 +334,7 @@ The Lighthouse <a hreflang="en" href="https://web.dev/performance-scoring/">perf
   description="Bar chart showing the median CMS Performance score for WordPress is 61 on desktop and 38 on mobile, Wix is 85 and 55 respectively, Squarespace 60 and 30, Joomla 58 and 39, Drupal 65 and 40, Duda 80 and 59, 1C-Bitrix 51 and 33, Weebly 71 and 33, TYPO3 CMS 65 and 47, and finally for Tistory it's 54 and 29.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYh0RHAqp768faimbvZpvS71yJwCaOAFR0AzgotkEphtxphBKR1kt-pqgxA8Uxj4FSii1RQWwgG6rk/pubchart?oid=2144802411&format=interactive",
   sheets_gid="14177383",
-  sql_file="lighthouse_scores_per_cms.sql",
+  sql_file="lighthouse_category_scores_per_cms.sql",
   width=600,
   height=559
   )
@@ -375,7 +358,7 @@ As we've concluded in previous years, the lower mobile scores are an opportunity
   description="Bar chart showing the year on year CMS Performance score over 2023 and 2024. WordPress was 33 in 2023 and 38 in 2024, Wix was 50 and 55, Squarespace 28 and 30, Joomla 35 and 39, Drupal 36 and 40, Duda 56 and 59, 1C-Bitrix 31 and 33, Tilda 36 and 37, TYPO3 CMS 42 and 47, Weebly 32 and 33",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYh0RHAqp768faimbvZpvS71yJwCaOAFR0AzgotkEphtxphBKR1kt-pqgxA8Uxj4FSii1RQWwgG6rk/pubchart?oid=270170798&format=interactive",
   sheets_gid="1754565121",
-  sql_file="lighthouse_scores_per-cms_yoy.sql",
+  sql_file="lighthouse_category_scores_per_cms_yoy.sql",
   width=600,
   height=559
   )
@@ -395,7 +378,7 @@ A CMS and content on it is generally set up to serve as much information to sear
   description="Bar chart showing the median CMS SEO score for WordPress is 92 on desktop and 92 on mobile, Wix is 100 and 100 respectively, Squarespace 92 and 92, Joomla 92 and 92, Drupal 85 and 85, Duda 92 and 92, 1C-Bitrix 92 and 92, Weebly 85 and 91, TYPO3 CMS 92 and 92, and finally for Tistory it's 92 and 85.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYh0RHAqp768faimbvZpvS71yJwCaOAFR0AzgotkEphtxphBKR1kt-pqgxA8Uxj4FSii1RQWwgG6rk/pubchart?oid=1386400078&format=interactive",
   sheets_gid="14177383",
-  sql_file="lighthouse_scores_per-cms.sql",
+  sql_file="lighthouse_category_scores_per_cms.sql",
   width=600,
   height=559
   )
@@ -411,7 +394,7 @@ The median SEO scores in the top 10 platforms range from 85-100, an impressive i
   description="Bar chart showing the year on year CMS SEO score over 2023 and 2024. WordPress was 90 in 2023 and 92 in 2024, Wix was 97 and 100, Squarespace 93 and 92, Joomla 88 and 92, Drupal 85 and 85, Duda 86 and 92, 1C-Bitrix 86 and 92, Tilda 91 and 100, TYPO3 CMS 89 and 92, and finally Weebly 85 and 91",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYh0RHAqp768faimbvZpvS71yJwCaOAFR0AzgotkEphtxphBKR1kt-pqgxA8Uxj4FSii1RQWwgG6rk/pubchart?oid=61098748&format=interactive",
   sheets_gid="1754565121",
-  sql_file="lighthouse_scores_per-cms_yoy.sql",
+  sql_file="lighthouse_category_scores_per_cms_yoy.sql",
   width=600,
   height=559
   )
@@ -433,7 +416,7 @@ Each accessibility audit is either a pass or a fail, but unlike other Lighthouse
   description="Bar chart showing the median CMS Accessibility score for WordPress is 86 on desktop and 86 on mobile, Wix is 95 and 94 respectively, Squarespace 93 and 94, Joomla 83 and 83, Drupal 86 and 85, Duda 89 and 88, 1C-Bitrix 75 and 75, Weebly 86 and 86, TYPO3 CMS 84 and 84, and finally for Tistory it's 78 and 74.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYh0RHAqp768faimbvZpvS71yJwCaOAFR0AzgotkEphtxphBKR1kt-pqgxA8Uxj4FSii1RQWwgG6rk/pubchart?oid=476143776&format=interactive",
   sheets_gid="14177383",
-  sql_file="lighthouse_scores_per-cms.sql",
+  sql_file="lighthouse_category_scores_per_cms.sql",
   width=600,
   height=559
   )
@@ -449,7 +432,7 @@ In 2024, the median Lighthouse accessibility score for the top 10 CMSs ranges be
   description="Bar chart showing the year on year CMS Accessibility score over 2023 and 2024. WordPress was 87 in 2023 and 86 in 2024, Wix was 94 and 94, Squarespace 92 and 94, Joomla 84 and 83, Drupal 87 and 85, Duda 88 and 88, 1C-Bitrix 77 and 75, Tilda 81 and 84, TYPO3 CMS 86 and 84, and finally Weebly 86 and 86.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYh0RHAqp768faimbvZpvS71yJwCaOAFR0AzgotkEphtxphBKR1kt-pqgxA8Uxj4FSii1RQWwgG6rk/pubchart?oid=476143776&format=interactive",
   sheets_gid="1754565121",
-  sql_file="lighthouse_scores_per-cms_yoy.sql",
+  sql_file="lighthouse_category_scores_per_cms_yoy.sql",
   width=600,
   height=559
   )
@@ -476,7 +459,7 @@ By following these best practices, developers can enhance both the functionality
   description="Bar chart showing the median CMS Best Practice score for WordPress is 78 on desktop and 79 on mobile, Wix is 78 and 79 respectively, Squarespace 100 and 96, Joomla 78 and 79, Drupal 78 and 79, Duda 78 and 79, 1C-Bitrix 56 and 57, Weebly 56 and 57, TYPO3 CMS 96 and 96, and finally for Tistory it's 74 and 79.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYh0RHAqp768faimbvZpvS71yJwCaOAFR0AzgotkEphtxphBKR1kt-pqgxA8Uxj4FSii1RQWwgG6rk/pubchart?oid=1321714408&format=interactive",
   sheets_gid="14177383",
-  sql_file="lighthouse_scores_per-cms.sql",
+  sql_file="lighthouse_category_scores_per_cms.sql",
   width=600,
   height=559
   )
@@ -494,7 +477,7 @@ While most other CMSs show worse numbers in the best practices audits, TYPO3 CMS
   description="Bar chart showing the year on year CMS Best Practice score over 2023 and 2024. WordPress was 92 in 2023 and 79 in 2024, Wix was 92 and 79, Squarespace 92 and 96, Joomla 83 and 79, Drupal 83 and 79, Duda 92 and 79, 1C-Bitrix 75 and 57, Tilda 83 and 79, TYPO3 CMS 92 and 96, and finally Weebly was 83 and 57.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYh0RHAqp768faimbvZpvS71yJwCaOAFR0AzgotkEphtxphBKR1kt-pqgxA8Uxj4FSii1RQWwgG6rk/pubchart?oid=10302778&format=interactive",
   sheets_gid="1754565121",
-  sql_file="lighthouse_scores_per-cms_yoy.sql",
+  sql_file="lighthouse_category_scores_per_cms_yoy.sql",
   width=600,
   height=559
   )
@@ -691,7 +674,7 @@ Furthermore, since they first kicked off the project in November 2021, WordPress
 
 {{ figure_markup(
   image="wordpress-cwv-pass-trend.png",
-  caption="Trend of WordPress Core Web Vitals pass rates",
+  caption="Trend of WordPress Core Web Vitals pass rates.",
   description="Line graph showing the increase of WordPress origins passing Core Web Vitals from less than 15% in January 2020 and increasing fairly steadily up to 41% in July 2024.",
   width=1752,
   height=888

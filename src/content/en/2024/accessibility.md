@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Accessibility
 description: Accessibility chapter of the 2024 Web Almanac covering ease of reading, navigation, forms, media, ARIA, and accessibility apps.
+hero_alt: Hero image of a robot with a blue, human accessibility icon on its front scanning a web page, while Web Almanac characters check some labels.
 authors: [mgifford]
 reviewers: [hidde, b_atish, katekalcevich]
 analysts: [mgifford]
@@ -22,7 +23,7 @@ doi: 10.5281/zenodo.14063775
 
 ## Introduction
 
-The web is continuing to change. Voice assistants like Siri, Alexa, and Cortana often provide responses by reading from web pages using screen reader technology. Similar methods have been around since the <a hreflang="en" href="https://www.theverge.com/23203911/screen-readers-history-blind-henter-curran-teh-nvda">early days of personal computing</a>. Captions (sometimes referred to as subtitles) were created for people who are hard of hearing, but are increasingly <a hreflang="en" href="https://en.wikipedia.org/wiki/Subtitles#Use_by_hearing_people_for_convenience">used for convenience</a> by everyone, and the vibration mode of the smartphone is now a standard feature.  Other groups that enjoy using captions include individuals with ADHD, who use them to maintain focus, non-native speakers, who rely on them to enhance language comprehension, and people in noisy environments, where spoken content might be easily missed.
+The web is continuing to change. Voice assistants like Siri, Alexa, and Cortana often provide responses by reading from web pages using screen reader technology. Similar methods have been around since the <a hreflang="en" href="https://www.theverge.com/23203911/screen-readers-history-blind-henter-curran-teh-nvda">early days of personal computing</a>. Captions (sometimes referred to as subtitles) were created for people who are hard of hearing, but are increasingly [used for convenience](https://wikipedia.org/wiki/Subtitles#Use_by_hearing_people_for_convenience) by everyone, and the vibration mode of the smartphone is now a standard feature.  Other groups that enjoy using captions include individuals with ADHD, who use them to maintain focus, non-native speakers, who rely on them to enhance language comprehension, and people in noisy environments, where spoken content might be easily missed.
 
 Modern devices and platforms offer many options for accessibility. These help to personalize the user experience for both people with disabilities as well as the general public. But not many people open the accessibility menu to try them out.
 
@@ -40,7 +41,7 @@ Good accessibility is beneficial to everyone, not just those with disabilities. 
   )
 }}
 
-Governments worldwide recognize that digital accessibility is not only a moral obligation but also in many instances legally required. Accessibility is also great for commerce and democracy. For example, the European Union (EU) mandates that by June 2025, websites in a wide range of sectors must adhere to the <a hreflang="en" href="https://www.w3.org/WAI/standards-guidelines/wcag/">Web Content Accessibility Guidelines (WCAG)</a> principles (via the <a hreflang="en" href="https://en.wikipedia.org/wiki/EN_301_549">EN 301 549</a> standard). This will ultimately allow more people to buy and sell services in the EU. Other countries passed similar laws, which increase the pressure on organizations to make their virtual offerings more accessible.
+Governments worldwide recognize that digital accessibility is not only a moral obligation but also in many instances legally required. Accessibility is also great for commerce and democracy. For example, the European Union (EU) mandates that by June 2025, websites in a wide range of sectors must adhere to the <a hreflang="en" href="https://www.w3.org/WAI/standards-guidelines/wcag/">Web Content Accessibility Guidelines (WCAG)</a> principles (via the [EN 301 549](https://wikipedia.org/wiki/EN_301_549) standard). This will ultimately allow more people to buy and sell services in the EU. Other countries passed similar laws, which increase the pressure on organizations to make their virtual offerings more accessible.
 
 Standards referenced in legislation like EN 301 549 and <a hreflang="en" href="https://www.section508.gov/manage/laws-and-policies/">Section 508</a> are based on the Web Content Accessibility Guidelines, and the automated accessibility tests used in this report can only test against some parts of the guidelines. Our tests leverage the open source tool, <a href="https://developer.chrome.com/docs/lighthouse/accessibility/scoring">Google Lighthouse</a>, which in turn uses <a hreflang="en" href="https://github.com/dequelabs/axe-core">Deque's open source axe-core</a>.
 
@@ -48,7 +49,7 @@ There is a lot of updated information on our [report from previous years](../202
 
 Despite ongoing challenges, there has been noticeable improvement in web accessibility. The median score for Lighthouse Accessibility audits rose to 84% over the past two years. In WCAG 2.2, the 4.1.1 Success criteria was removed. <a hreflang="en" href="https://www.deque.com/blog/wcag-2-2-removes-4-1-1-parsing-and-how-axe-core-is-impacted/?_gl=1*1yzu5tn*_up*MQ..*_ga*MTY0NDE2MjY4LjE3MjY3NTI0NTg.*_ga_C9H6VN9QY1*MTcyNjc1MjQ1Ny4xLjAuMTcyNjc1MjQ1Ny4wLjAuMA..">Deque therefore removed <code>duplicate-id</code> and <code>duplicate-id-active</code> audits from axe</a>, and so this was no longer included in our scan. These depreciated axe rules impacted millions of sites surveyed in our 2022 report. There were also <a hreflang="en" href="https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/">new Success Criteria added in 2.2</a> added with corresponding tests being <a hreflang="en" href="https://www.deque.com/blog/axe-core-4-5-first-wcag-2-2-support-and-more/">added to axe-core</a>.
 
-Accessibility scores are an important tool, but people familiar with <a hreflang="en" href="https://en.wikipedia.org/wiki/Goodhart%27s_law">Goodhart's Law</a> will know the danger of a measure becoming a target. We must also acknowledge that automated tests <a hreflang="en" href="https://www.smashingmagazine.com/2022/11/automated-test-results-improve-accessibility/#automate-it">can only address a portion</a> of the WCAG Success Criteria, and that <a hreflang="en" href="https://www.matuzo.at/blog/building-the-most-inaccessible-site-possible-with-a-perfect-lighthouse-score">a perfect score does not guarantee an accessible site</a>.
+Accessibility scores are an important tool, but people familiar with [Goodhart's Law](https://wikipedia.org/wiki/Goodhart%27s_law) will know the danger of a measure becoming a target. We must also acknowledge that automated tests <a hreflang="en" href="https://www.smashingmagazine.com/2022/11/automated-test-results-improve-accessibility/#automate-it">can only address a portion</a> of the WCAG Success Criteria, and that <a hreflang="en" href="https://www.matuzo.at/blog/building-the-most-inaccessible-site-possible-with-a-perfect-lighthouse-score">a perfect score does not guarantee an accessible site</a>.
 
 {{ figure_markup(
   image="lighthouse-audit-median-score-yoy.png",
@@ -80,7 +81,7 @@ Throughout this chapter, we have included actionable links and solutions that re
 
 ## Ease of Reading
 
-Readability of information and content on the web is crucial. There are different factors in a website that contribute to the content's readability. Taking these aspects into account ensures that everyone on the internet can easily consume the content. This report covers those things which can be measured, and although plain language is critical to readability, it is not easy to measure. There are fairly straightforward mathematical readability scores, like <a hreflang="en" href="https://en.wikipedia.org/wiki/Flesch%E2%80%93Kincaid_readability_tests">Flesch–Kincaid</a>. Some people use it to <a hreflang="en" href="https://en.wikipedia.org/wiki/Readability">determine readability</a> in English, but the web is global. Language is difficult, and there is no agreed-to standard for automated plain language testing that can be applied even across the most popular languages.
+Readability of information and content on the web is crucial. There are different factors in a website that contribute to the content's readability. Taking these aspects into account ensures that everyone on the internet can easily consume the content. This report covers those things which can be measured, and although plain language is critical to readability, it is not easy to measure. There are fairly straightforward mathematical readability scores, like [Flesch–Kincaid](https://wikipedia.org/wiki/Flesch%E2%80%93Kincaid_readability_tests). Some people use it to [determine readability](https://wikipedia.org/wiki/Readability) in English, but the web is global. Language is difficult, and there is no agreed-to standard for automated plain language testing that can be applied even across the most popular languages.
 
 ### Color Contrast
 
@@ -281,7 +282,7 @@ Although ARIA landmarks have traditionally been only visible to screen reader us
     {{ figure_link(
       caption="Landmark element and `role` usage (desktop).",
       sheets_gid="1224962143",
-      sql_file="llandmark_elements_and_roles.sql",
+      sql_file="landmark_elements_and_roles.sql",
     ) }}
   </figcaption>
 </figure>
@@ -411,7 +412,7 @@ Forms are essential for user interactions, such as logging in or making purchase
 
 ### `<label>` element
 
-The `<label>` element is the preferred way for <a hreflang="en" href="https://developer.mozilla.org/docs/Learn/Forms/Basic_native_form_controls">linking input fields with their accessible names</a>. Using the for attribute to match the id of an input ensures proper programmatic association, improving form usability. Furthermore, when the label element is used properly it allows users to click or tap on the label to focus the form field.
+The `<label>` element is the preferred way for [linking input fields with their accessible names](https://developer.mozilla.org/docs/Learn/Forms/Basic_native_form_controls). Using the for attribute to match the id of an input ensures proper programmatic association, improving form usability. Furthermore, when the label element is used properly it allows users to click or tap on the label to focus the form field.
 
 For example:
 
@@ -600,7 +601,7 @@ We observed that over 50% of mobile sites had homepages with at least one elemen
 
 When an element is assigned the `role="presentation"`, it loses its inherent semantics, along with those of its required child elements (e.g., list items within a `<ul>`, or rows and cells within a table). For instance, applying `role="presentation"` to a parent `<table>` or `<ul>` element will propagate this role to its child elements, causing them to lose their table or list semantics.
 
-Removing semantics with `role="presentation"` means the element only has visual presence and its structure is not recognized by assistive technologies. The element’s content will be read by a screen reader, but no information about the semantics will be provided.
+Removing semantics with `role="presentation"` means the element only has visual presence and its structure is not recognized by assistive technologies. The element's content will be read by a screen reader, but no information about the semantics will be provided.
 
 {{ figure_markup(
   caption='Of desktop sites and 39% of mobile sites have at least one `role="presentation"`.',
@@ -683,7 +684,7 @@ A common approach developers use to provide extra information for screen reader 
 )
 }}
 
-The sr-only and visually-hidden class names are frequently used by developers and UI frameworks to create text that is only accessible to screen readers. For instance, Bootstrap and Tailwind include sr-only classes for this purpose. We found that 16% of desktop pages and 15% of mobile pages used one or both of these CSS classes (each up a percentage point from 2022). It's important to note that not all screen reader users are visually impaired, so relying too heavily on screen reader-only solutions should be avoided. When this technique is used with an interactive element’s accessible name, it can make it difficult for people who use their voice to control their computer to know what command to give to interact with the element.
+The sr-only and visually-hidden class names are frequently used by developers and UI frameworks to create text that is only accessible to screen readers. For instance, Bootstrap and Tailwind include sr-only classes for this purpose. We found that 16% of desktop pages and 15% of mobile pages used one or both of these CSS classes (each up a percentage point from 2022). It's important to note that not all screen reader users are visually impaired, so relying too heavily on screen reader-only solutions should be avoided. When this technique is used with an interactive element's accessible name, it can make it difficult for people who use their voice to control their computer to know what command to give to interact with the element.
 
 ## Dynamically-rendered content
 
@@ -752,7 +753,7 @@ ARIA live regions enable screen readers to announce changes in the DOM. We found
   </figcaption>
 </figure>
 
-For more details on live region variants and their usage, check the <a hreflang="en" href="https://developer.mozilla.org/docs/Web/Accessibility/ARIA/ARIA_Live_Regions">MDN live region documentation</a> or explore this <a hreflang="en" href="https://dequeuniversity.com/library/aria/liveregion-playground">live demo by Deque</a>.
+For more details on live region variants and their usage, check the [MDN live region documentation](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/ARIA_Live_Regions) or explore this <a hreflang="en" href="https://dequeuniversity.com/library/aria/liveregion-playground">live demo by Deque</a>.
 
 ## User Personalization Widgets and Overlay Remediation
 
@@ -762,7 +763,7 @@ Users are increasingly used to seeing accessibility widgets on websites. These a
 - **Automated overlay remediation**: a generic technology that automatically scans for and attempts to remediate many common WCAG issues which affect the user interface, with complex algorithms and/or Artificial Intelligence.
 - **Custom overlay remediation**: site specific code written by expert developer(s) to address specific conformance needs, and verified by accessibility experts in context, to avoid conflict with assistive technology.
 
-Browsers have great built-in tools for personalization, but many users do not know about them.  Some sites add **personalization widgets** that often provide a range of accessibility features to make customization easier. Often this includes font size, spacing, and contrast, which is <a hreflang="en" href="https://mcmw.abilitynet.org.uk/">included in the browser</a>. This may also include tools like <a hreflang="en" href="https://en.wikipedia.org/wiki/Speech_synthesis">text to speech</a>, which is <a hreflang="en" href="https://www.microsoft.com/en-us/edge/features/read-aloud?form=MA13FJ">included in Edge</a>. This can be useful for a range of users, but especially for those that do not have their own assistive technology available in that environment. These widgets can be helpful for users who are not actively using assistive technology or already maximizing their browser's built-in accessibility features.
+Browsers have great built-in tools for personalization, but many users do not know about them.  Some sites add **personalization widgets** that often provide a range of accessibility features to make customization easier. Often this includes font size, spacing, and contrast, which is <a hreflang="en" href="https://mcmw.abilitynet.org.uk/">included in the browser</a>. This may also include tools like [text to speech](https://wikipedia.org/wiki/Speech_synthesis), which is <a hreflang="en" href="https://www.microsoft.com/en-us/edge/features/read-aloud?form=MA13FJ">included in Edge</a>. This can be useful for a range of users, but especially for those that do not have their own assistive technology available in that environment. These widgets can be helpful for users who are not actively using assistive technology or already maximizing their browser's built-in accessibility features.
 
 If used, it is important that these tools do not interfere with the user experience (UX) including that of assistive technology users. For that reason, the European Disability Forum (EDF) published a report clearly stating that <a hreflang="en" href="https://www.edf-feph.org/accessibility-overlays-dont-guarantee-compliance-with-european-legislation">Accessibility overlays don't guarantee compliance with European legislation</a>:
 
@@ -838,7 +839,7 @@ There are two means by which we can identify country information, first by the G
 
 {{ figure_markup(
   image="country-by-geoid.png",
-  caption="Most accessibile countries by GeoID.",
+  caption="Most accessible countries by GeoID.",
   description="A bar cart with the GeoID, the country with the highest average for accessibility is the USA with a value of 84%. There is a drop of less a perscent as we move to Canada, UK, Australia, Germany, Netherlands, France, Mexico, Italy, Spain, Argentina, Indonesia, India, Poland, Brazil, Japan, Turkey, Vietnam, China and finally the Republic of Korea with 78%. These were for countries that hosted more than 100000 domains.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=421126157&format=interactive",
   sheets_gid="260430925",
@@ -854,11 +855,11 @@ The following map shows the average desktop accessibility score by country top l
 
 {{ figure_markup(
   image="country-by-tld-globe.png",
-  caption="Map of the accessibile countries by Top Level Domain (TLD).",
+  caption="Map of the accessible countries by Top Level Domain (TLD).",
   description="In looking at Top Level Domains with more than 45,000 domains, we learn about accessibility. Displayed visually in a world map the most accessible countries are Norway, Filand, Canada, USA, UK, Sweden, Ireland, Australia, New Zealand, Austria, Belgium, Switzerland, Denmark, and South Africa. China is the least accessible by Top Level Domain. ",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=783736776&format=interactive",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=1241724533&format=interactive",
   sheets_gid="1209052596",
-  sql_file="lighthouse_score_by_tld"
+  sql_file="lighthouse_score_by_tld.sql"
   )
 }}
 
@@ -866,11 +867,11 @@ But it is a bit easier to see the TLD ranked and including the non-country codes
 
 {{ figure_markup(
   image="country-by-tld.png",
-  caption="Accessibile countries by Top Level Domain (TLD).",
+  caption="Accessible countries by Top Level Domain (TLD).",
   description="A bar cart with looking at Top Level Domains with more than 45,000 domains, we learn about accessibility. Displayed as a bar chart with the accessible domains .edu (Education), .gov (US Government), Norway, Filand, .io, Canada, USA, .app, UK, Sweden, Ireland, Australia, New Zealand, .co, Austria, Belgium, Switzerland, Denmark, and South Africa, .org.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=783736776&format=interactive",
   sheets_gid="1209052596",
-  sql_file="lighthouse_score_by_tld"
+  sql_file="lighthouse_score_by_tld.sql"
   )
 }}
 
@@ -1099,7 +1100,7 @@ The differences show that it is possible for CMS to make an impact on accessibil
 
 {{ figure_markup(
   image="javascript-frontend-ui.png",
-  caption="Most Accessible JavaScript Frontend UI Frameworks",
+  caption="Most Accessible JavaScript Frontend UI Frameworks.",
   description="A bar cart with ranked with Stimulus (91%), Remix (89%), Owik (89%), Astro (89%), OpenUI5 (89%), Next.js (87%), React (87%), AlpineJS (86%), Htmx (85%), Svelte (85%), Ember.js (85%).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=1864888468&format=interactive",
   sheets_gid="1029816121",
@@ -1111,7 +1112,7 @@ Stimulus, Remix and Qwik are several percent more accessible on average than Rea
 
 {{ figure_markup(
   image="javascript-meta-frameworks.png",
-  caption="Most Accessible JavaScript Meta-frameworks",
+  caption="Most Accessible JavaScript Meta-frameworks.",
   description="A bar cart with meta-frameworks are in the following order RedwoodJS (92%), Remix (89%), Astro (89%), SolidStart(88%), Gatsby (88%), Next.js (87%), Nuxt.js (84%), AdonisJS (82%), Quasar (82%), Meteor (73%).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=506578618&format=interactive",
   sheets_gid="1029816121",

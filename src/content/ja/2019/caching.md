@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: キャッシング
 description: 2019 Web Almanacのキャッシュの章は、キャッシュコントロール、有効期限、TTL、有効性、変化、Cookieの設定、アプリケーションキャッシュ、Service Worker、および機会について説明します。
+hero_alt: Hero image of Web Almanac characters and resources in parking slots in a car park with parking meters in from of them. The middle spot is labelled 304.
 authors: [paulcalvano]
 reviewers: [foxdavidj, bkardell]
 analysts: [paulcalvano, foxdavidj]

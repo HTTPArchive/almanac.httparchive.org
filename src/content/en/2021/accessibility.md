@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Accessibility
 description: Accessibility chapter of the 2021 Web Almanac covering ease of reading, media, ease of navigation, and compatibility with assistive technologies.
+hero_alt: Hero image of a robot with a blue, human accessibility icon on its front scanning a web page, while Web Almanac characters check some labels.
 authors: [alextait1, scottdavis99, oluoluoxenfree, gwilhelm, kachiden]
 reviewers: [ericwbailey, clottman, shantsis, estelle, GigiRajani, cdixon83]
 analysts: [foxdavidj]
@@ -165,7 +166,7 @@ The <a hreflang="en" href="https://www.w3.org/TR/mediaqueries-5">CSS Media Queri
 
 [`prefers-contrast`](https://developer.mozilla.org/docs/Web/CSS/@media/prefers-contrast) (`high` or `low`) suggests that the end user would prefer a [high-contrast or low-contrast](#color-contrast) contrast theme. This can help with reading comprehension and eye strain. We do not have data on the usage of this relatively new media query though we found that 25% of websites use [`ms-high-contrast`](https://developer.mozilla.org/docs/Web/CSS/@media/-ms-high-contrast) which is a Windows-specific approach to handling contrast preferences.
 
-[`prefers-color-scheme`](https://developer.mozilla.org/docs/Web/CSS/@media/prefers-color-scheme) (`light` or `dark`) allows a user to request light color on a dark background experience, or vice-versa. This was the earliest of the User Preference Media Queries to be introduced. This capability, commonly known as "dark mode" support, rose to prominence in 2019 after <a hreflang="en" href="https://en.wikipedia.org/wiki/Light-on-dark_color_scheme#History">Apple standardized it</a> in iOS 13 and iPadOS, though it had been a common accessibility feature for many years prior to that.
+[`prefers-color-scheme`](https://developer.mozilla.org/docs/Web/CSS/@media/prefers-color-scheme) (`light` or `dark`) allows a user to request light color on a dark background experience, or vice-versa. This was the earliest of the User Preference Media Queries to be introduced. This capability, commonly known as "dark mode" support, rose to prominence in 2019 after [Apple standardized it](https://wikipedia.org/wiki/Light-on-dark_color_scheme#History) in iOS 13 and iPadOS, though it had been a common accessibility feature for many years prior to that.
 
 While dark mode is recognized by many developers and designers as an accessibility affordance, it is important to note that dark mode may, in fact, reduce accessibility for certain users. Some people with <a hreflang="en" href="https://www.boia.org/blog/dark-mode-can-improve-text-readability-but-not-for-everyone">dyslexia or astigmatism might find light text on a dark background harder to read</a>, and might find that it exacerbates the halo effect. The important takeaway here is to let your user choose what works best for them. We found that 7% of websites use the `prefers-color-scheme` media query.
 
@@ -238,7 +239,7 @@ Descriptive page titles are helpful for context when moving between pages, tabs,
 
 {{ figure_markup(
   image="page_title-information.png",
-  caption="Title element statistics",
+  caption="Title element statistics.",
   description="A bar chart showing 98.2% of desktop sites and 98.1% of mobile sites use the `<title>` element, 68.5% and 69.3% of those titles have four or more words, and 4.1% on both desktop and mobile are changed on render.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQf4cxIC7ywDV-K2RpfaTeCYI4URyJE1air8BCAxoOw7VW9MjGRQfwHuILvhw-6UmcWnsrAJ0-1TTD_/pubchart?oid=467029485&format=interactive",
   sheets_gid="1437437016",
@@ -269,7 +270,7 @@ We found that 58% of desktop sites and 56% of mobile sites have some usage of th
 
 {{ figure_markup(
   image="tabindex-usage-and-values.png",
-  caption="`tabindex` usage",
+  caption="`tabindex` usage.",
   description="Bar chart showing that of pages that use `tabindex`, a negative or zero `tabindex` is used on 96.9% of those pages for desktop and 97.4% of those pages for mobile, a `tabindex` of 0 is used on 68.2% and 68.3% respectively, a negative `tabindex` is used on 74.2% and 73.3%, and finally a positive `tabindex` is used on 8.7% and 7.7%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQf4cxIC7ywDV-K2RpfaTeCYI4URyJE1air8BCAxoOw7VW9MjGRQfwHuILvhw-6UmcWnsrAJ0-1TTD_/pubchart?oid=632373616&format=interactive",
   sheets_gid="1330777562",
@@ -380,7 +381,7 @@ For example, The Web Almanac is created each year by sending out a similar kind 
 For cases where websites want to verify that the visitor is a human, one technique web authors sometimes use is putting up a test that a human can theoretically pass, and a computer cannot. These types of "human-only" tests are called a CAPTCHA—&nbsp;"Completely Automated Public Turing Test, to Tell Computers and Humans Apart".
 
 {{ figure_markup(
-  caption="Desktop sites using a CAPTCHA",
+  caption="Desktop sites using a CAPTCHA.",
   content="10.2%",
   classes="big-number",
   sheets_gid="1059643233",
@@ -470,7 +471,7 @@ There are two attributes that can be used to communicate the required state of a
 
 {{ figure_markup(
   image="form-required-controls.png",
-  caption="How required inputs are specified",
+  caption="How required inputs are specified.",
   description="A bar chart showing the `required` attribute is used on 64.3% of desktop sites and 65.7% of mobile sites, `aria-required` is used by 32.3% and 31.6%, asterisk is used by 21.9% and 22.3%, `required` and `aria-required` is used by 7.4% and 7.7%, asterisk and `aria-required` is used by 7.3% and 8.2%, asterisk and `required` us used by 7.1% and 6.3%, and all three are used by 0.8% of sites on both.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQf4cxIC7ywDV-K2RpfaTeCYI4URyJE1air8BCAxoOw7VW9MjGRQfwHuILvhw-6UmcWnsrAJ0-1TTD_/pubchart?oid=1608381516&format=interactive",
   sheets_gid="2064792791",
@@ -547,7 +548,7 @@ We found that 27% of `alt` text attributes were empty. In an ideal world this wo
 [`<track>`](https://developer.mozilla.org/docs/Web/HTML/Element/track) provides a way for a text equivalent to be provided for audio in `<audio>` and `<video>` elements. This allows people with permanent or temporary hearing loss to be able to understand audio content.
 
 {{ figure_markup(
-  caption="Desktop websites with an `<audio>` element have at least one accompanying `<track>` element",
+  caption="Desktop websites with an `<audio>` element have at least one accompanying `<track>` element.",
   content="0.02%",
   classes="big-number",
   sheets_gid="1198212185",
@@ -564,7 +565,7 @@ These data points do not include audio embedded via an `<iframe>` element, which
 The `<video>` element was only present on roughly 5% of the websites included in the 2021 Web Almanac.
 
 {{ figure_markup(
-  caption="Desktop websites with an `<video>` element have at least one accompanying `<track>` element",
+  caption="Desktop websites with an `<video>` element have at least one accompanying `<track>` element.",
   content="0.5%",
   classes="big-number",
   sheets_gid="1261793459",
@@ -625,7 +626,7 @@ If non-interactive elements such as `<div>`s and `<span>`s have been assigned a 
 When a button role is applied to an `<a>` element, it overrides the implicit link role that anchor elements come with. This can lead to a confusing user experience because the expected behavior for a button would be to trigger an in-page action, whereas a link would typically navigate somewhere. There would also be a violation <a hreflang="en" href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/keyboard-operation-keyboard-operable.html">WCAG 2.1.1, Keyboard</a> if the correct keyboard behavior has not been implemented (links are not activated with the space key, whereas buttons are). Additionally, when a button role is announced by a screen reader without the expected corresponding behavior, it can create a confusing and disorienting experience for an assistive technology user.
 
 {{ figure_markup(
-  caption="Desktop websites have at least one link with a button role",
+  caption="Desktop websites have at least one link with a button role.",
   content="18.6%",
   classes="big-number",
   sheets_gid="1014817325",
@@ -698,7 +699,7 @@ We found that 57% of buttons on both desktop and mobile sites get their accessib
 There are several ways to ensure that assistive technology will not discover content. We can leverage CSS `display: none;` to omit the elements from the accessibility tree. If an author wishes to hide content from screen readers specifically, they can use `aria-hidden="true"`. Note that unlike `display: none;` a declaration of `aria-hidden="true"` will not visibly remove an element and its children.
 
 {{ figure_markup(
-  caption="Desktop websites have at least one instance of the `aria-hidden` attribute",
+  caption="Desktop websites have at least one instance of the `aria-hidden` attribute.",
   content="53.8%",
   classes="big-number",
   sheets_gid="1763660541",
@@ -717,7 +718,7 @@ Hiding and showing content is a prevalent pattern in modern interfaces, and it c
 A common technique that developers employ to supply additional information for screen reader users is to use CSS to visually hide a passage of text but make it discoverable by a screen reader. Since `display: none;` prevents content from being present in the accessibility tree, there is a common pattern involving a specific set of declarations of CSS code.
 
 {{ figure_markup(
-  caption="Desktop websites with a `sr-only` or `visually-hidden` class",
+  caption="Desktop websites with a `sr-only` or `visually-hidden` class.",
   content="14.3%",
   classes="big-number",
   sheets_gid="960991314",
@@ -739,7 +740,7 @@ Accessibility overlays, sometimes referred to as accessibility plugins or overla
 
 Many of these products have deceptive marketing materials suggesting that one line of code can make websites accessible, or at least legally compliant from an accessibility standpoint.
 
-For example, <a hreflang="en" href="https://en.wikipedia.org/wiki/AccessiBe">accessiBe</a>, one of the most aggressive products in this space, explains their process as being able to make sites accessible and compliant within 48 hours by simply pasting their JavaScript installation code into production code.
+For example, [accessiBe](https://wikipedia.org/wiki/AccessiBe), one of the most aggressive products in this space, explains their process as being able to make sites accessible and compliant within 48 hours by simply pasting their JavaScript installation code into production code.
 
 Unfortunately, web accessibility is simply not possible to achieve with an out of the box solution like this. If it were, we would likely not see the sobering statistics throughout this chapter.
 

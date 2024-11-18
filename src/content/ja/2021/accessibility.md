@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: アクセシビリティ
 description: 読みやすさ、メディア、ナビゲーションのしやすさ、支援技術との互換性などを網羅した「2021 Web Almanac」のアクセシビリティの章です。
+hero_alt: Hero image of a robot with a blue, human accessibility icon on its front scanning a web page, while Web Almanac characters check some labels.
 authors: [alextait1, scottdavis99, oluoluoxenfree, gwilhelm, kachiden]
 reviewers: [ericwbailey, clottman, shantsis, estelle, GigiRajani, cdixon83]
 analysts: [foxdavidj]
