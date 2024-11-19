@@ -215,7 +215,7 @@ caption="Third-parties included by the Google Tag Manager (googletagmanager.com)
 description="Bar chart showing the median depth of URLs in the inclusion chain called from the Google Tag Manager.",
 chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSiKVwcJsvW7J6Kq7hxRDG84Z5-tq7N1fm1ytH7qKI5Ws6hzFmDF2G-UD5cDMjG_3QXihAXaZUMRJt9/pubchart?oid=496082761&format=interactive",
  		 sheets_gid="1091971377",
- 		 sql_file="inclusion_chain_by_category.sql"
+ 		 sql_file=".sql"
  	 )
 }}
 
