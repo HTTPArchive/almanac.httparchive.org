@@ -54,40 +54,38 @@ LANGUAGE js AS """
 """;
 
 
-with data as (
+WITH data AS (
   -- TP interact with other tps
   SELECT
-  *
+    *
   FROM (
-  SELECT
-    client,
-    NET.REG_DOMAIN(root_page) root_page,
-    NET.REG_DOMAIN(url) third_party,
-    NET.REG_DOMAIN(JSON_VALUE(payload, '$._initiator')) initiator_etld
-  FROM
-    httparchive.all.requests
-    #TABLESAMPLE SYSTEM (0.01 PERCENT)
-  WHERE
-    NET.REG_DOMAIN(root_page) != NET.REG_DOMAIN(url)
-    AND date = "2024-06-01")
-    WHERE third_party != initiator_etld
-    AND root_page != initiator_etld
-    group by client, root_page, third_party, initiator_etld
+    SELECT
+      client,
+      NET.REG_DOMAIN(root_page) AS root_page,
+      NET.REG_DOMAIN(url) AS third_party,
+      NET.REG_DOMAIN(JSON_VALUE(payload, '$._initiator')) AS initiator_etld
+    FROM
+      `httparchive.all.requests`
+    WHERE
+      NET.REG_DOMAIN(root_page) != NET.REG_DOMAIN(url) AND
+      date = '2024-06-01')
+  WHERE third_party != initiator_etld AND
+    root_page != initiator_etld
+  GROUP BY client, root_page, third_party, initiator_etld
 )
 
-SELECT client, next_elements_after_gtm, count(*) c FROM(
-SELECT
-  client,
-  result.mean_depth AS mean_depth_after_gtm,
-  result.next_elements AS next_elements_after_gtm
-FROM (
-SELECT
-  root_page,
-  client,
-    findAllInitiators(root_page, ARRAY_AGG(STRUCT(root_page, third_party, initiator_etld))) AS all_initiators
-FROM data
-group by root_page, client),
-UNNEST([mean_depth_and_next_element_after_gtm(all_initiators)]) AS result
-WHERE result.mean_depth is not null
-OrDER by mean_depth_after_gtm) group by client, next_elements_after_gtm order by c ;
-
+SELECT client, next_elements_after_gtm, count(0) AS c FROM(
+  SELECT
+    client,
+    result.mean_depth AS mean_depth_after_gtm,
+    result.next_elements AS next_elements_after_gtm
+  FROM (
+    SELECT
+      root_page,
+      client,
+      findAllInitiators(root_page, ARRAY_AGG(STRUCT(root_page, third_party, initiator_etld))) AS all_initiators
+    FROM data
+    GROUP BY root_page, client),
+    UNNEST([mean_depth_and_next_element_after_gtm(all_initiators)]) AS result
+  WHERE result.mean_depth IS NOT NULL
+  ORDER BY mean_depth_after_gtm) GROUP BY client, next_elements_after_gtm ORDER BY c;
