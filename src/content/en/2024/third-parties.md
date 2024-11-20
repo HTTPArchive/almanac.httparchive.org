@@ -20,7 +20,7 @@ featured_stat_2: 78
 featured_stat_label_2: The median number of third-party requests per web page
 featured_stat_3: 22
 featured_stat_label_3: The median number of third-parties per web page
-doi: TODO
+doi: 10.5281/zenodo.14193383
 ---
 
 ## Introduction
