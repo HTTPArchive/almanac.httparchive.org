@@ -5,7 +5,7 @@ description: Third Parties chapter of the 2024 Web Almanac covering data of what
 hero_alt: Hero image of Web Almanac characters plugging various things into a web page.
 authors: [turban1988, Yash-Vekaria, zubairshafiq, ChrisBeeti]
 reviewers: [tunetheweb]
-editors: [neriiavr]
+editors: [tunetheweb]
 analysts: [Yash-Vekaria, ChrisBeeti]
 translators: []
 turban1988_bio: TODO
