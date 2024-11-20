@@ -37,23 +37,23 @@ As discussed at the start, this widespread use of third parties on the web has p
 
 ### Sites and pages
 
-In this chapter, we use the term **site** to depict the registerable part of a given domain—often referred to as _extended Top Level Domain plus one_ (eTLD+1). For example, given the URL `https://www.bar.com/ `the eTLD+1 is `bar.com` and for the URL `https://foo.co.uk` the eTLD+1 is `foo.co.uk`. By **page** (or web page), we mean a unique URL or, more specifically, the document (e.g., HTML or JavaScript) located at the particular URL.
+In this chapter, we use the term **site** to depict the registerable part of a given domain—often referred to as _extended Top Level Domain plus one_ (eTLD+1). For example, given the URL `https://www.bar.com/ `the eTLD+1 is `bar.com` and for the URL `https://foo.co.uk` the eTLD+1 is `foo.co.uk`. By **page** (or web page), we mean a unique URL or, more specifically, the document (for example HTML or JavaScript) located at the particular URL.
 
 ### What is a third party?
 
 We stick to the aforementioned definition of a third party used in previous editions of the Web Almanac to allow for comparison between this and the previous editions.
 
-A **third party** is an entity different from the site owner (aka first party). It involves the aspects of the site not directly implemented and served by the site owner. More precisely, third-party content is loaded from a different site (i.e., the third party) rather than the one originally visited by the user. Assume that the user visits `example.com` (the first party) and `example.com` includes silly cat images from `awesome-cats.edu` (e.g., via a `<img>` tag). In that scenario, `awesome-cats.edu` is the third party, as it was not originally visited by the user. However, if the user directly visits `awesome-cats.edu`, `awesome-cats.edu` is the first party.
+A **third party** is an entity different from the site owner (aka first party). It involves the aspects of the site not directly implemented and served by the site owner. More precisely, third-party content is loaded from a different site (i.e., the third party) rather than the one originally visited by the user. Assume that the user visits `example.com` (the first party) and `example.com` includes silly cat images from `awesome-cats.edu` (for example using an `<img>` tag). In that scenario, `awesome-cats.edu` is the third party, as it was not originally visited by the user. However, if the user directly visits `awesome-cats.edu`, `awesome-cats.edu` is the first party.
 
 Only third parties originating from a domain whose resources can be found on at least 50 unique pages in the HTTP Archive dataset were included to match the definition. When third-party content is directly served from a first-party domain, it is counted as first-party content. For example, self-hosted CSS or fonts are counted as first-party content. Similarly, first-party content served from a third-party domain is counted as third-party content—assuming it passes the "more than 50 pages criteria." Some third parties serve content from different subdomains. However, regardless of the number of subdomains, they are counted as a single third party. Further, it is becoming increasingly common for third parties to be masqueraded as a first party, for example, through techniques like <a hreflang="en" href="https://ldklab.github.io/assets/papers/madweb21-cloaking.pdf">CNAME cloaking</a>. We consider them a first party in this analysis. Thus, our results present a lower bound on the prevalence of third parties on the web.
 
 ### Categories
 
-As previously indicated, third parties can be used for various use cases (e.g., to include videos, to serve ads, or to include content from social media sites). To categorize the observed third parties in our dataset, we rely on the <a hreflang="en" href="https://github.com/patrickhulce/third-party-web/#third-parties-by-category">third-party Web</a> repository from [Patrick Hulce](https://x.com/patrickhulce). The repository breaks down third parties along the following categories:
+As previously indicated, third parties can be used for various use cases—for example, to include videos, to serve ads, or to include content from social media sites. To categorize the observed third parties in our dataset, we rely on the <a hreflang="en" href="https://github.com/patrickhulce/third-party-web/#third-parties-by-category">third-party Web</a> repository from [Patrick Hulce](https://x.com/patrickhulce). The repository breaks down third parties along the following categories:
 
 - **Ad**: These scripts are part of advertising networks, either serving or measuring.
-- **Analytics** -These scripts measure or track users and their actions. There's a wide range of impact here, depending on what's being tracked.
-- **CDN**: These are a mixture of publicly hosted open source libraries (e.g., jQuery) served over different public CDNs and private CDN usage.
+- **Analytics**: These scripts measure or track users and their actions. There's a wide range of impact here, depending on what's being tracked.
+- **CDN**: These are a mixture of publicly hosted open source libraries (for example jQuery) served over different public CDNs and private CDN usage.
 - **Content**: These scripts are from content providers or publishing-specific affiliate tracking.
 - **Customer Success**: These scripts are from customer support/marketing providers that offer chat and contact solutions. These scripts are generally heavier in weight.
 - **Hosting***: These scripts are from web hosting platforms (WordPress, Wix, Squarespace, etc.).
@@ -65,7 +65,7 @@ As previously indicated, third parties can be used for various use cases (e.g., 
 - **Consent provider**: These scripts allow sites to manage the user consent (eg. for the [General Data Protection Regulation](https://wikipedia.org/wiki/General_Data_Protection_Regulation) compliance). They are also known as the 'Cookie Consent' popups and are usually loaded on the critical path.
 - **Other**: These are miscellaneous scripts delivered via a shared origin with no precise category or attribution.
 
-<p class="note">Note: The CDN category here includes providers that provide resources on public CDN domains (e.g., bootstrapcdn.com, cdnjs.cloudflare.com, etc.) and does not include resources that are simply served over a CDN. For example, putting Cloudflare in front of a page would not influence its first-party designation according to our criteria.</p>
+<p class="note">Note: The CDN category here includes providers that provide resources on public CDN domains (for example <code>bootstrapcdn.com</code>, <code>cdnjs.cloudflare.com</code>, etc.) and does not include resources that are simply served over a CDN. For example, putting Cloudflare in front of a page would not influence its first-party designation according to our criteria.</p>
 
 <p class="note">Similar to previous years, the Hosting category is removed from our analysis. For example, if you happen to use WordPress.com for your blog, or Shopify for your e-commerce platform, then we're going to ignore other requests for those domains by that site as not truly "third-party" as they are, in many ways, part of hosting on those platforms.</p>
 
@@ -86,7 +86,7 @@ figure_markup(
   )
 }}
 
-Figure 1 shows the percentage of pages that use one or more third parties. There is a slight decrease in the percentage of pages that use one or more third parties for low-ranked websites. Similar to 2021 and 2022, the percentage of pages with one or more third parties remains high at 92%.
+There is a slight decrease in the percentage of pages that use one or more third parties for low-ranked websites. Similar to 2021 and 2022, the percentage of pages with one or more third parties remains high at 92%.
 
 {{
 figure_markup(
@@ -99,7 +99,7 @@ figure_markup(
   )
 }}
 
-Figure 2 shows the distribution of the number of third parties by rank. We note a considerable decrease in the number of third parties for lower-ranked websites. The median number of third -parties is 66 for the top thousand websites and 27 for the top million websites. The number of third parties on the desktop is higher than that for mobile pages. The contrast between desktop and mobile is greater for higher-ranked websites.
+We note a considerable decrease in the number of third parties for lower-ranked websites. The median number of third-parties is 66 for the top thousand websites and 27 for the top million websites. The number of third parties on the desktop is higher than that for mobile pages. The contrast between desktop and mobile is greater for higher-ranked websites.
 
 {{
 figure_markup(
@@ -112,7 +112,7 @@ figure_markup(
   )
 }}
 
-Figure 3 shows the distribution of the number of third-party requests by rank. As compared to Figure 2, this analysis does not treat multiple requests to a third party as one. Again, we note that the number of third-party requests is higher for higher-ranked websites than lower-ranked websites. As compared to Figure 2, the difference between higher- and lower-ranked websites is less skewed in Figure 3.
+We note that the number of third-party requests is higher for higher-ranked websites than lower-ranked websites. When looking at requests, the difference between higher- and lower-ranked websites is less skewed than when looking at the number of third-parties in [figure 2](#fig-2).
 
 {{
 figure_markup(
@@ -125,7 +125,7 @@ figure_markup(
   )
 }}
 
-Figure 4 shows the distribution of third-party request categories across different website ranks. Excluding unknown, the top categories include consent provider, video, and customer success. The most popular consent provider domain is fundingchoicesmessages.google.com, the most popular video domain is www.youtube.com, and the most customer-success domain is embed.tawk.to.
+Excluding unknown, the top categories include consent provider, video, and customer success. The most popular consent provider domain is `fundingchoicesmessages.google.com`, the most popular video domain is `www.youtube.com`, and the most customer-success domain is `embed.tawk.to`.
 
 {{
 figure_markup(
@@ -138,7 +138,7 @@ figure_markup(
   )
 }}
 
-Figure 5 shows the distribution of third-party request types for desktop devices across the measurement. The top 3 types include `script`, `image`, and `other`. The most popular domain under these content-types is `fonts.googleapis.com`.
+The top 3 types include `script`, `image`, and `other`. The most popular domain under these content-types is `fonts.googleapis.com`.
 
 {{
 figure_markup(
@@ -153,7 +153,7 @@ figure_markup(
   )
 }}
 
-Figure 6 shows the distribution of top 10 third parties. The top 10 third party domains include several Google-owned domains such as `googleapis.com`, `googletagmanager.com`, `google-analytics.com`, `google.com`, and `youtube.com`. Meta's `facebook.com` is the only non-Google domain in the top 5.
+The top 10 third-party domains include several Google-owned domains such as `googleapis.com`, `googletagmanager.com`, `google-analytics.com`, `google.com`, and `youtube.com`. Meta's `facebook.com` is the only non-Google domain in the top 5.
 
 ## Inclusion
 
@@ -164,7 +164,7 @@ Such indirect inclusion of third parties on a page can be represented as a third
 {{
 figure_markup(
   image="median_depth_tp_inclusion_chains.png",
-  caption="Median depth of third-party inclusion chains",
+  caption="Median depth of third-party inclusion chains.",
   description="Bar chart showing the median depth from inclusion chain.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSiKVwcJsvW7J6Kq7hxRDG84Z5-tq7N1fm1ytH7qKI5Ws6hzFmDF2G-UD5cDMjG_3QXihAXaZUMRJt9/pubchart?oid=496285056&format=interactive",
   sheets_gid="868914926",
@@ -172,12 +172,12 @@ figure_markup(
   )
 }}
 
-Figure 7 provides the breakdown of the depth of the inclusion chain of the analyzed websites. The median depth of the inclusion chains is 3.4 of the inclusion chains are of length > 1, which means that they indirectly include at least one third party on the page. Notably, 14% of the inclusion chains are of length > 5. The inclusion chain with the highest depth has a length of 2,930.
+The median depth of the inclusion chains is 3.4 of the inclusion chains are of length > 1, which means that they indirectly include at least one third party on the page. Notably, 14% of the inclusion chains are of length > 5. The inclusion chain with the highest depth has a length of 2,930.
 
 {{
 figure_markup(
   image="median_depth_categories.png",
-  caption="Median depth of different categories of websites",
+  caption="Median depth of different categories of websites.",
   description="Bar chart showing the median depth of different categories and all.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSiKVwcJsvW7J6Kq7hxRDG84Z5-tq7N1fm1ytH7qKI5Ws6hzFmDF2G-UD5cDMjG_3QXihAXaZUMRJt9/pubchart?oid=186961190&format=interactive",
   sheets_gid="1274132728",
@@ -185,12 +185,12 @@ figure_markup(
   )
 }}
 
-Figure 8 provides the breakdown of the depth of the inclusion chain by different categories of websites. Across all categories, desktop pages have longer inclusion chains than mobile pages. We observe substantial differences across different website categories. The website category with the longest inclusion chains is `/Games`.
+Across all categories, desktop pages have longer inclusion chains than mobile pages. We observe substantial differences across different website categories. The website category with the longest inclusion chains is `/Games`.
 
 {{
 figure_markup(
   image="depth_of_gtm_called_urls.png",
-  caption="Third-parties included by the Google Tag Manager (googletagmanager.com)",
+  caption="Google Tag Manager inclusion chain URLs.",
   description="Bar chart showing the median depth of URLs in the inclusion chain called from the Google Tag Manager.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSiKVwcJsvW7J6Kq7hxRDG84Z5-tq7N1fm1ytH7qKI5Ws6hzFmDF2G-UD5cDMjG_3QXihAXaZUMRJt9/pubchart?oid=496082761&format=interactive",
   sheets_gid="1091971377",
@@ -198,7 +198,7 @@ figure_markup(
   )
 }}
 
-Figure 9 visualizes the top third-party domains that are included by `googletagmanager.com`, one of the top third-party domains in Figure 6. Note that it includes a number of other Google domains such `googleapis.com`, `google-analytics.com`, `google.com`, `gstatic.com`, `youtube.com`, `googlesyndication.com`, and `googleadservices.com`. Only three of the top 10 third-party domains included by `googletagmanager.com` are non-Google domains, which are `facebook.com` and `facebook.net` for Meta and `shopify.com` for Shopify.
+When we look specifically at `googletagmanager.com`, one of the top third-party domains. Note that it includes a number of other Google domains such `googleapis.com`, `google-analytics.com`, `google.com`, `gstatic.com`, `youtube.com`, `googlesyndication.com`, and `googleadservices.com`. Only three of the top 10 third-party domains included by `googletagmanager.com` are non-Google domains, which are `facebook.com` and `facebook.net` for Meta and `shopify.com` for Shopify.
 
 ## Conclusion
 
