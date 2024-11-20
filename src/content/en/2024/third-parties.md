@@ -37,7 +37,7 @@ As discussed at the start, this widespread use of third parties on the web has p
 
 ### Sites and pages
 
-In this chapter, we use the term **site** to depict the registerable part of a given domain—often referred to as _extended Top Level Domain plus one_ (eTLD+1). For example, given the URL `https://www.bar.com/ `the eTLD+1 is `bar.com` and for the URL `https://foo.co.uk` the eTLD+1 is `foo.co.uk`. By **page** (or web page), we mean a unique URL or, more specifically, the document (for example HTML or JavaScript) located at the particular URL.
+In this chapter, we use the term **site** to depict the registerable part of a given domain—often referred to as _extended Top Level Domain plus one_ (eTLD+1). For example, given the URL `https://www.bar.com/` the eTLD+1 is `bar.com` and for the URL `https://foo.co.uk` the eTLD+1 is `foo.co.uk`. By **page** (or web page), we mean a unique URL or, more specifically, the document (for example HTML or JavaScript) located at the particular URL.
 
 ### What is a third party?
 
