@@ -11,7 +11,7 @@ translators: []
 turban1988_bio: TODO
 Yash-Vekaria_bio: TODO
 zubairshafiq_bio: TODO
-ChrisBeeti_bio: TODO
+ChrisBeeti_bio: Chris Böttger is a PhD candidate in Computer Science at the [Westphalian University of Applied Science](https://www.en.w-hs.de/). His research focuses on web and network security, primarily focusing on user privacy and tracking technologies.
 results: https://docs.google.com/spreadsheets/d/18uTDBygSqgT_PNFldOz4guLSuXyMzDthRGnAG5if4sU/
 featured_quote: Google is the most popular third-parties on the web, with five of the top ten third-party domains being Google domains.
 featured_stat_1: 92%
