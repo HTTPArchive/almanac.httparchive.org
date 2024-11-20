@@ -110,6 +110,7 @@ figure_markup(
   )
 }}
 
+<!-- markdownlint-disable-next-line MD051 -->
 We note that the number of third-party requests is higher for higher-ranked websites than lower-ranked websites. When looking at requests, the difference between higher- and lower-ranked websites is less skewed than when looking at the number of third-parties in [figure 2](#fig-2).
 
 {{
@@ -204,4 +205,4 @@ Our findings show the ubiquitous and complex nature of third-parties on the web.
 
 We find that third parties are often not directly included by the first party. Nearly one-third of third parties on all web pages are used for advertising, analytics, and consent management. Google is the most popular third-parties on the web, with five of the top ten third-party domains being Google domains, such as `googleapis.com`, `googletagmanager.com`, `google.com`, `google-analytics.com`, and `youtube.com`.
 
- The inclusion of third-parties presents privacy, security, and performance implications that should be considered by web developers.
+The inclusion of third-parties presents privacy, security, and performance implications that should be considered by web developers.
