@@ -1014,9 +1014,11 @@
   },
   "ChrisBeeti": {
     "github": "ChrisBeeti",
-    "name": "Chris Beeti",
+    "name": "Chris Böttger",
     "teams": {
       "2024": [
+        "analysts",
+        "authors",
         "committee"
       ]
     }
@@ -3250,6 +3252,17 @@
       ]
     }
   },
+  "neriiavr": {
+    "avatar_url": "90536788",
+    "github": "neriiavr",
+    "name": "Neri",
+    "teams": {
+      "2024": [
+        "editors"
+      ]
+    },
+    "twitter": "neriiavr"
+  },
   "phacks": {
     "avatar_url": "2587348",
     "github": "phacks",
@@ -4428,6 +4441,7 @@
     "name": "Tobias Urban",
     "teams": {
       "2024": [
+        "authors",
         "committee"
       ]
     }
@@ -4690,6 +4704,19 @@
       ]
     }
   },
+  "Yash-Vekaria": {
+    "avatar_url": "30694521",
+    "github": "Yash-Vekaria",
+    "name": "Yash Vekaria",
+    "teams": {
+      "2024": [
+        "analysts",
+        "authors"
+      ]
+    },
+    "twitter": "vekariayash",
+    "website": "https://yash-vekaria.github.io"
+  },
   "yoavweiss": {
     "avatar_url": "786187",
     "github": "yoavweiss",
@@ -4810,6 +4837,17 @@
         "translators"
       ]
     }
+  },
+  "zubairshafiq": {
+    "github": "zubairshafiq",
+    "name": "Zubair Shafiq",
+    "teams": {
+      "2024": [
+        "authors"
+      ]
+    },
+    "twitter": "zubair_shafiq",
+    "website": "http://www.cs.ucdavis.edu/~zubair"
   },
   "Zuckjet": {
     "avatar_url": "17976139",
