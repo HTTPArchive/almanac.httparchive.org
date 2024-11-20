@@ -1,10 +1,10 @@
 ---
-##See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Third Parties
 description: Third Parties chapter of the 2024 Web Almanac covering data of what third parties are used on the web and a deep dive into preventing them causing negative performance impacts.
 hero_alt: Hero image of Web Almanac characters plugging various things into a web page.
 authors: [turban1988, Yash-Vekaria, zubairshafiq, ChrisBeeti]
-reviewers: []
+reviewers: [tunetheweb]
 editors: [neriiavr]
 analysts: [Yash-Vekaria, ChrisBeeti]
 translators: []
@@ -13,13 +13,13 @@ Yash-Vekaria_bio: TODO
 zubairshafiq_bio: TODO
 ChrisBeeti_bio: TODO
 results: https://docs.google.com/spreadsheets/d/18uTDBygSqgT_PNFldOz4guLSuXyMzDthRGnAG5if4sU/
-featured_quote: TODO
-featured_stat_1: TODO
-featured_stat_label_1: TODO
-featured_stat_2: TODO
-featured_stat_label_2: TODO
-featured_stat_3: TODO
-featured_stat_label_3: TODO
+featured_quote: Google is the most popular third-parties on the web, with five of the top ten third-party domains being Google domains.
+featured_stat_1: 92%
+featured_stat_label_1: Web pages including one or more third parties
+featured_stat_2: 78
+featured_stat_label_2: The median number of third-party requests per web page
+featured_stat_3: 22
+featured_stat_label_3: The median number of third-parties per web page
 doi: TODO
 ---
 
@@ -29,11 +29,9 @@ Website developers can use third parties to implement certain features such as a
 
 In this chapter, we conduct an empirical analysis to shed light on the practice of using third parties on the web. We find that nearly all websites contain one or more third parties. We provide a breakdown of the types of resources served by these third parties, such as images, JavaScript, fonts, etc. We provide a breakdown of different categories of third parties on the Web, such as ad, analytics, CDN, video, tag manager, etc. We also provide a breakdown of how different third parties are included—directly or indirectly—on web pages.
 
-We find that the use of third parties on the web is more common than ever before. 92% of the web pages include one or more third parties. The median web page includes 78 requests from 22 different third parties. 31% of the third-party requests are for scripts and 26% are for images. We find that third parties are often not directly included by the first party. Nearly one-third of third parties on all web pages are used for advertising, analytics, and consent management. Five of the top 10 third-party domains include Google domains, such as `googleapis.com`, `googletagmanager.com`, `google.com`, `google-analytics.com`, and `youtube.com`.
-
-As discussed at the start, this widespread use of third parties on the web has privacy, security, and performance implications. We point an interested reader to those chapters for their discussion.
-
 ## Definitions
+
+Before we start on our analysis, it helps to have some common definitions of what we will cover in this chapter.
 
 ### Sites and pages
 
@@ -202,4 +200,8 @@ When we look specifically at `googletagmanager.com`, one of the top third-party 
 
 ## Conclusion
 
-Our findings show the ubiquitous and complex nature of third-parties on the web. More than nine-in-ten web pages include one or more third-parties, often indirectly. Google is the most popular third-party on the web, with five of the top ten third-party domains being Google-owned. The inclusion of third-parties presents privacy, security, and performance implications that should be considered by web developers.
+Our findings show the ubiquitous and complex nature of third-parties on the web. We find that the use of third parties on the web is more common than ever before. More than nine-in-ten web pages include one or more third-parties, often indirectly.
+
+We find that third parties are often not directly included by the first party. Nearly one-third of third parties on all web pages are used for advertising, analytics, and consent management. Google is the most popular third-parties on the web, with five of the top ten third-party domains being Google domains, such as `googleapis.com`, `googletagmanager.com`, `google.com`, `google-analytics.com`, and `youtube.com`.
+
+ The inclusion of third-parties presents privacy, security, and performance implications that should be considered by web developers.
