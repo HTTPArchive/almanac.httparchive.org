@@ -73,8 +73,7 @@ We use the [`Content-Type`](https://developer.mozilla.org/docs/Web/HTTP/Headers/
 
 ## Prevalence
 
-{{
-figure_markup(
+{{ figure_markup(
   image="percent_pages_using_atleast_one_3p.png",
   caption="Percentage of pages that use one or more third parties.",
   description="Bar chart showing percentage of pages across different rank groups that are using at least one third-party. Around 92% pages use third-parties across different rank groups.",
@@ -86,8 +85,7 @@ figure_markup(
 
 There is a slight decrease in the percentage of pages that use one or more third parties for low-ranked websites. Similar to 2021 and 2022, the percentage of pages with one or more third parties remains high at 92%.
 
-{{
-figure_markup(
+{{ figure_markup(
   image="num_3p_by_rank.png",
   caption="Distribution of the number of third parties by rank.",
   description="Bar chart showing distribution of number of third parties by rank groups. Number of third parties decrease with increasing rank groups.",
@@ -99,8 +97,7 @@ figure_markup(
 
 We note a considerable decrease in the number of third parties for lower-ranked websites. The median number of third-parties is 66 for the top thousand websites and 27 for the top million websites. The number of third parties on the desktop is higher than that for mobile pages. The contrast between desktop and mobile is greater for higher-ranked websites.
 
-{{
-figure_markup(
+{{ figure_markup(
   image="num_3p_req_per_page_by_rank.png",
   caption="Distribution of the number of third party requests per page by rank.",
   description="Bar chart displaying the median number of third party requests per page by rank. Number of third party requests per page increases from top 1K to top 10K rank groups and then decreases for higher rank groups.",
@@ -113,8 +110,7 @@ figure_markup(
 <!-- markdownlint-disable-next-line MD051 -->
 We note that the number of third-party requests is higher for higher-ranked websites than lower-ranked websites. When looking at requests, the difference between higher- and lower-ranked websites is less skewed than when looking at the number of third-parties in [figure 2](#fig-2).
 
-{{
-figure_markup(
+{{ figure_markup(
   image="3p_req_categories_by_rank.png",
   caption="Distribution of the third party request categories by rank.",
   description="Bar chart showing distribution of third party categories by rank groups. Top categories are consent provider, video, and customer success.",
@@ -126,8 +122,7 @@ figure_markup(
 
 Excluding unknown, the top categories include consent provider, video, and customer success. The most popular consent provider domain is `fundingchoicesmessages.google.com`, the most popular video domain is `www.youtube.com`, and the most customer-success domain is `embed.tawk.to`.
 
-{{
-figure_markup(
+{{ figure_markup(
   image="3p_req_types_by_rank.png",
   caption="Distribution of the third party request types by rank.",
   description="Pie chart showing percentage distribution of third party requests by content type. The top 3 content types are `script` (30.5%), `image` (26.0%), and `html` (11.7%)",
@@ -139,14 +134,13 @@ figure_markup(
 
 The top 3 types include `script`, `image`, and `other`. The most popular domain under these content-types is `fonts.googleapis.com`.
 
-{{
-figure_markup(
+{{ figure_markup(
   image="top_3p_by_num_pages.png",
   caption="Top third parties by the number of pages.",
   description="Bar chart showing top third parties by the percentage of pages with their presence.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSiKVwcJsvW7J6Kq7hxRDG84Z5-tq7N1fm1ytH7qKI5Ws6hzFmDF2G-UD5cDMjG_3QXihAXaZUMRJt9/pubchart?oid=1091257032&format=interactive",
   sheets_gid="1109396463",
-  sql_file=" top100_third_parties_by_number_of_websites.sql",
+  sql_file="top100_third_parties_by_number_of_websites.sql",
   width=600,
   height=498
   )
@@ -160,8 +154,7 @@ Recall from our earlier example that `example.com` (a first party) can include a
 
 Such indirect inclusion of third parties on a page can be represented as a third-party inclusion chain. The inclusion chain can be constructed using the initiator information, identifying what triggered a particular request. We use the eTLD+1 of a third party as the node identifier in the inclusion chain. An inclusion chain might include multiple domains operated by the same company (for example: `example.com` → `googletagmanager.com` → `google-analytics.com` → `doubleclick.net`) or different companies (for example: `example.com` → `googletagmanager.com` → `facebook.com`).
 
-{{
-figure_markup(
+{{ figure_markup(
   image="median_depth_tp_inclusion_chains.png",
   caption="Median depth of third-party inclusion chains.",
   description="Bar chart showing the median depth from inclusion chain.",
@@ -173,8 +166,7 @@ figure_markup(
 
 The median depth of the inclusion chains is 3.4 of the inclusion chains are of length > 1, which means that they indirectly include at least one third party on the page. Notably, 14% of the inclusion chains are of length > 5. The inclusion chain with the highest depth has a length of 2,930.
 
-{{
-figure_markup(
+{{ figure_markup(
   image="median_depth_categories.png",
   caption="Median depth of different categories of websites.",
   description="Bar chart showing the median depth of different categories and all.",
@@ -186,8 +178,7 @@ figure_markup(
 
 Across all categories, desktop pages have longer inclusion chains than mobile pages. We observe substantial differences across different website categories. The website category with the longest inclusion chains is `/Games`.
 
-{{
-figure_markup(
+{{ figure_markup(
   image="depth_of_gtm_called_urls.png",
   caption="Google Tag Manager inclusion chain URLs.",
   description="Bar chart showing the median depth of URLs in the inclusion chain called from the Google Tag Manager.",
