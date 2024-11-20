@@ -8,7 +8,7 @@ reviewers: [tunetheweb]
 editors: [tunetheweb]
 analysts: [Yash-Vekaria, ChrisBeeti]
 translators: []
-turban1988_bio: TODO
+turban1988_bio: Prof. Dr.-Ing. Tobias Urban, Professor of Computer Science, specializing in Cybersecurity, at the <a hreflang="en" href="https://www.en.w-hs.de/">Westphalian University of Applied Sciences</a>. His research focuses on IT security, data protection, and the impact of the GDPR on the Internet.
 Yash-Vekaria_bio: TODO
 zubairshafiq_bio: TODO
 ChrisBeeti_bio: Chris Böttger is a PhD candidate in Computer Science at the <a hreflang="en" href="https://www.en.w-hs.de/">Westphalian University of Applied Science</a>. His research focuses on web and network security, primarily focusing on user privacy and tracking technologies.
