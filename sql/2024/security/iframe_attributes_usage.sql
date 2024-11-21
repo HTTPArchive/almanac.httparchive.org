@@ -2,16 +2,16 @@
 # Section: Content Inclusion - Iframe Sandbox/Permissions Policy
 # Question: How often are the allow and sandbox attributes used on iframes? Both per page (used in at least one iframe on a page) and over all iframe elements
 WITH total_iframe_count AS (
-SELECT
-  client,
-  date,
-  SUM(SAFE_CAST(JSON_EXTRACT(custom_metrics, '$.num_iframes') AS INT64)) AS total_iframes
+  SELECT
+    client,
+    date,
+    SUM(SAFE_CAST(JSON_EXTRACT(custom_metrics, '$.num_iframes') AS INT64)) AS total_iframes
   FROM
     `httparchive.all.pages`
   WHERE
     (date = '2022-06-01' OR date = '2023-06-01' OR date = '2023-12-01' OR date = '2024-03-01' OR date = '2024-04-01' OR date = '2024-05-01' OR date = '2024-06-01') AND
     is_root_page
-GROUP BY client, date
+  GROUP BY client, date
 )
 
 SELECT

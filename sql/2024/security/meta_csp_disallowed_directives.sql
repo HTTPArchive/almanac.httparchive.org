@@ -37,7 +37,7 @@ FROM (
 ),
 UNNEST(JSON_QUERY_ARRAY(metrics, '$.meta-nodes.nodes')) meta_node,
 UNNEST(['Content-Security-Policy']) AS policy
-JOIN totals using (client)
+JOIN totals USING (client)
 WHERE
   LOWER(JSON_VALUE(meta_node, '$.http-equiv')) = 'content-security-policy' OR LOWER(JSON_VALUE(meta_node, '$.name')) = 'content-security-policy'
 GROUP BY
