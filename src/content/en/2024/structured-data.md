@@ -17,7 +17,7 @@ featured_stat_2: 64%
 featured_stat_label_2: Pages implementing Open Graph structured data
 featured_stat_3: 45%
 featured_stat_label_3: Pages implementing Twitter (X) structured data
-doi: 10.5281/zenodo.14065771
+doi: 10.5281/zenodo.14193384
 ---
 
 ## Introduction
