@@ -1017,20 +1017,13 @@
   "ChrisBeeti": {
     "avatar_url": "32492572",
     "github": "ChrisBeeti",
-<<<<<<< HEAD
-    "name": "Christian Böttger",
-    "teams": {
-      "2024": [
-        "committee",
-        "reviewers"
-=======
     "name": "Chris Böttger",
     "teams": {
       "2024": [
         "analysts",
         "authors",
-        "committee"
->>>>>>> main
+        "committee",
+        "reviewers"
       ]
     }
   },
