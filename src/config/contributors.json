@@ -1017,11 +1017,20 @@
   "ChrisBeeti": {
     "avatar_url": "32492572",
     "github": "ChrisBeeti",
+<<<<<<< HEAD
     "name": "Christian Böttger",
     "teams": {
       "2024": [
         "committee",
         "reviewers"
+=======
+    "name": "Chris Böttger",
+    "teams": {
+      "2024": [
+        "analysts",
+        "authors",
+        "committee"
+>>>>>>> main
       ]
     }
   },
@@ -4435,9 +4444,11 @@
     "name": "Tobias Urban",
     "teams": {
       "2024": [
+        "authors",
         "committee"
       ]
-    }
+    },
+    "website": "https://internet-sicherheit.de/ueber-uns/team/alle-mitarbeiter/urban-tobias-2/"
   },
   "bobbyshaw": {
     "avatar_url": "553566",
@@ -4697,6 +4708,19 @@
       ]
     }
   },
+  "Yash-Vekaria": {
+    "avatar_url": "30694521",
+    "github": "Yash-Vekaria",
+    "name": "Yash Vekaria",
+    "teams": {
+      "2024": [
+        "analysts",
+        "authors"
+      ]
+    },
+    "twitter": "vekariayash",
+    "website": "https://yash-vekaria.github.io"
+  },
   "yoavweiss": {
     "avatar_url": "786187",
     "github": "yoavweiss",
@@ -4817,6 +4841,17 @@
         "translators"
       ]
     }
+  },
+  "zubairshafiq": {
+    "github": "zubairshafiq",
+    "name": "Zubair Shafiq",
+    "teams": {
+      "2024": [
+        "authors"
+      ]
+    },
+    "twitter": "zubair_shafiq",
+    "website": "http://www.cs.ucdavis.edu/~zubair"
   },
   "Zuckjet": {
     "avatar_url": "17976139",
