@@ -10,7 +10,7 @@ analysts: [Yash-Vekaria, ChrisBeeti]
 translators: []
 turban1988_bio: Doctor of Engineering Tobias Urban is a Professor of Computer Science, specializing in Cybersecurity, at the <a hreflang="en" href="https://www.en.w-hs.de/">Westphalian University of Applied Sciences</a>. His research focuses on IT security, data protection, and the impact of the GDPR on the Internet.
 Yash-Vekaria_bio: Yash Vekaria is a PhD candidate in Computer Science at <a hreflang="en" href="https://www.ucdavis.edu/">University of California, Davis</a>. He carries out web-based large-scale Internet measurements to study and improve the dynamics of web. Specifically, his research is focused at studying and bringing transparency to online tracking practices and user privacy issues.
-zubairshafiq_bio: TODO
+zubairshafiq_bio: Zubair Shafiq is a computer science professor at <a hreflang="en" href="https://www.ucdavis.edu/">University of California, Davis</a>. His research aims to make the Internet private, secure, and safe using empirically grounded measurement and modeling methods.
 ChrisBeeti_bio: Chris Böttger is a PhD candidate in Computer Science at the <a hreflang="en" href="https://www.en.w-hs.de/">Westphalian University of Applied Science</a>. His research focuses on web and network security, primarily focusing on user privacy and tracking technologies.
 results: https://docs.google.com/spreadsheets/d/18uTDBygSqgT_PNFldOz4guLSuXyMzDthRGnAG5if4sU/
 featured_quote: Google is the most popular third-parties on the web, with five of the top ten third-party domains being Google domains.
