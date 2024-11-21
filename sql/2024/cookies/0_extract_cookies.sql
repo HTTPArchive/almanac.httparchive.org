@@ -44,11 +44,11 @@ WITH intermediate_cookie AS (
     page,
     root_page,
     rank,
-    JSON_VALUE(summary, '$.startedDateTime') AS startedDateTime,
+    payload.startedDateTime AS startedDateTime,
     cookie
   FROM
-    `httparchive.all.pages`,
-    UNNEST(JSON_EXTRACT_ARRAY(custom_metrics, '$.cookies')) AS cookie
+    `httparchive.crawl.pages`,
+    UNNEST(JSON_EXTRACT_ARRAY(custom_metrics.cookies)) AS cookie
   WHERE
     date = '2024-06-01'
 )
