@@ -58,10 +58,8 @@ WITH redirect_requests AS (
   -- Combine the first and second navigation redirects
   SELECT
     nav.client,
-    nav.page,
-    nav.url AS navigation_url,
-    nav.navigation_redirect_location,
-    bounce.bounce_redirect_location
+    NET.HOST(navigation_redirect_location) AS bounce_hostname,
+    COUNT(DISTINCT nav.page) AS number_of_pages
   --ARRAY_AGG(bounce.bounce_tracking_cookies) AS bounce_tracking_cookies
   FROM navigation_redirect AS nav
   LEFT JOIN bounce_redirect_with_cookies AS bounce
@@ -72,19 +70,24 @@ WITH redirect_requests AS (
   WHERE bounce_redirect_location IS NOT NULL
   GROUP BY
     nav.client,
-    page,
-    navigation_url,
-    navigation_redirect_location,
-    bounce_redirect_location
+    bounce_hostname
+), pages_total AS (
+  SELECT
+    client,
+    COUNT(DISTINCT page) AS total_pages
+  FROM `httparchive.crawl.pages`
+  WHERE date = '2024-06-01'
+  GROUP BY client
 )
 
 -- Count the number of websites with bounce tracking per bounce hostname
 SELECT
   client,
-  NET.HOST(navigation_redirect_location) AS bounce_hostname,
-  COUNT(DISTINCT page) AS number_of_pages
---ARRAY_AGG(page LIMIT 2) AS page_examples
+  bounce_hostname,
+  number_of_pages,
+  number_of_pages / total_pages AS pct_pages
 FROM bounce_sequences
-GROUP BY client, bounce_hostname
+JOIN pages_total
+USING (client)
 ORDER BY number_of_pages DESC
 LIMIT 100
