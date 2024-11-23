@@ -194,6 +194,6 @@ When we look specifically at `googletagmanager.com`, one of the top third-party 
 
 Our findings show the ubiquitous and complex nature of third-parties on the web. We find that the use of third parties on the web is more common than ever before. More than nine-in-ten web pages include one or more third-parties, often indirectly.
 
-We find that third parties are often not directly included by the first party. Nearly one-third of third parties on all web pages are used for advertising, analytics, and consent management. Google is the most popular third party on the web, with five of the top ten third-party domains being Google domains, such as `googleapis.com`, `googletagmanager.com`, `google.com`, `google-analytics.com`, and `youtube.com`.
+We find that third parties are often not directly included by the first party. Nearly one-third of third parties on all web pages are used for advertising, analytics, and consent management. Google is the most popular third party on the web, with five of the top ten third-party domains being Google domains: `googleapis.com`, `googletagmanager.com`, `google.com`, `google-analytics.com`, and `youtube.com`.
 
 The inclusion of third-parties presents privacy, security, and performance implications that should be considered by web developers.
