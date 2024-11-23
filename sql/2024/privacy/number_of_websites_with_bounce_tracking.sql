@@ -63,8 +63,8 @@ WITH redirect_requests AS (
     client,
     COUNT(DISTINCT page) AS total_pages
   FROM `httparchive.crawl.pages`
-  WHERE date = '2024-06-01'
-    AND is_root_page
+  WHERE date = '2024-06-01' AND
+    is_root_page
   GROUP BY client
 )
 
