@@ -1191,7 +1191,10 @@
   },
   "dwsmart": {
     "avatar_url": "11179452",
+    "bluesky": "tamethebots.com",
     "github": "dwsmart",
+    "linkedin": "davewsmart",
+    "mastodon": "https://seocommunity.social/@dwsmart",
     "name": "Dave Smart",
     "teams": {
       "2020": [
@@ -1203,9 +1206,11 @@
       "2022": [
         "authors",
         "reviewers"
+      ],
+      "2024": [
+        "authors"
       ]
     },
-    "twitter": "davewsmart",
     "website": "https://tamethebots.com"
   },
   "dsottimano": {
@@ -2055,6 +2060,9 @@
         "reviewers"
       ],
       "2022": [
+        "authors"
+      ],
+      "2024": [
         "authors"
       ]
     },
@@ -3027,6 +3035,9 @@
     "name": "Michael Lewittes",
     "teams": {
       "2022": [
+        "editors"
+      ],
+      "2024": [
         "editors"
       ]
     }
@@ -4869,6 +4880,41 @@
     "teams": {
       "2020": [
         "reviewers"
+      ]
+    }
+  },
+  "mikaelaraujo": {
+    "avatar_url": "4764075",
+    "bluesky": "mikaelaraujo.bsky.social",
+    "github": "mikaelaraujo",
+    "linkedin": "mikael-araujo",
+    "name": "Mikael Araújo",
+    "teams": {
+      "2024": [
+        "authors"
+      ]
+    },
+    "threads": "@mikaelaraujo@threads.net",
+    "twitter": "miknaraujo",
+    "website": "https://www.mikaelaraujo.com"
+  },
+  "henryp25": {
+    "avatar_url": "62102954",
+    "github": "henryp25",
+    "name": "Henry Price",
+    "teams": {
+      "2024": [
+        "analysts"
+      ]
+    }
+  },
+  "cnichols013" :{
+    "avatar_url": "73146375",
+    "github": "cnichols013",
+    "name": "Chris Nichols",
+    "teams": {
+      "2024": [
+        "analysts"
       ]
     }
   }
