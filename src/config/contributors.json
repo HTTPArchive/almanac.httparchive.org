@@ -2049,7 +2049,9 @@
   },
   "fellowhuman1101": {
     "avatar_url": "52051775",
+    "bluesky": "jammervolts.bsky.social",
     "github": "fellowhuman1101",
+    "linkedin": "jamie-indigo",
     "name": "Jamie Indigo",
     "teams": {
       "2020": [
@@ -2063,7 +2065,8 @@
         "authors"
       ],
       "2024": [
-        "authors"
+        "authors",
+        "leads"
       ]
     },
     "twitter": "Jammer_Volts",
@@ -4912,6 +4915,7 @@
   "cnichols013" :{
     "avatar_url": "73146375",
     "github": "cnichols013",
+    "linkedin": "chris-nichols",
     "name": "Chris Nichols",
     "teams": {
       "2024": [
