@@ -180,3 +180,68 @@ In 2024, there were [24 valid values](https://developers.google.com/search/docs/
 
 For our study of directive rules, we relied on the rendered HTML.  
 
+{{ figure_markup(
+  image="robots-directive-rules.png",
+  caption="Robots directive rules",
+  description="A bar chart comparing the use of robots directive rules as seen in the rendered HTML of desktop and mobile pages. For desktop, 54.7% used `follow`, 53.4% used `index`, 4.7% used `nonindex`, 2.5% used `nofollow`, 1.6% used `max-image-preview`, 1.6% used `max-snippet`, 1.2% used `max-video-preview`, 0.5% used `noarchive`, 0.2% used `nosnippet`, 0.01% used `notranslate`, and 0.09% used `noimageindex`. Mobile rates were similar at 56.0%, 53.9%, 3.9%, 2.2%, 1.8%, 1.3%, 1.1%, 0.6%, 0.3%, 0.10%, and 0.01% respectively.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=2136589874&format=interactive",
+  sheets_gid="815806479",
+  sql_file="robots-meta-usage-2024.sql",
+  width=600,
+  height=690
+  )
+}}
+
+The most prominent rules in 2024 were `follow` (54.7% desktop; 56.0% mobile), `index` (53.4%; 53.9%), `noindex (4.7%; 3.9%), and `nofollow` (2.5%; 2.2%).
+
+The `name` value of the robots `meta` tag specifies to which crawler(s) the rule applies. For example,` meta name="robots"` applies to all bots whereas `meta name="googlebot"` applies to only to Google. To analyze the application of name attributes, we looked at rates which values were stated for the `follow` tag, as it is the most prevalent robots `meta` rule.
+
+{{ figure_markup(
+  image="name-attributes-in-follow-robots-meta-tag.png",
+  caption="Name attributes in `follow` robots meta tag.",
+  description="A bar chart comparing the most desktop and mobile name attributes in the `follow` robots `meta` tag. On mobile, the attribute named Googlebot-News on 62.3%, msnbot on 64.3%, robots on 60.2%, Googlebot on 50.9%, and bingbot on 34.6% of applicable pages.  Desktop was similar at 65.5%, 61.8%, 60.9%, 47.9%, and 18.2% respectively.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=1651546987&format=interactive",
+  sheets_gid="815806479",
+  sql_file="robots-meta-usage-2024.sql"
+  )
+}}
+
+The five most named crawlers in robots directives were the generic robots value, googlebot, Googlebot-News, msnbot, and bingbot. The name attributes used in `follow` robots `meta` tag show that sites with the tags are apt to tailor the rules to specific bots. The slight variance by devices is disrupted for bingbot who saw significantly more `follow` directives on mobile pages (34.6%) compared to desktop (18.2%).
+
+{{ figure_markup(
+  image="robots-directive-rules-by-name.png",
+  caption="Robots rules by name attribute values.",
+  description="A bar chart comparing robots directive rules by crawler named in robots directives for mobile pages.  The named bots are MSNBot, Googlebot-News, robots, Googlebot, and Bingbot.  The values were applied as follows: `follow`: 64.3%, 62.3%, ,  60.2%, 50.9%, and  34.6%. Index: 55.3%, 63.2%, 59%, 51.6% 33.7%. `index`: 0.5%, 21.2%, 4.6%, 3.9%, and 12.8%. `nofollow`: 0.5%, 6.1%, 1.8%, 2.2%, and 5.4%. `nosnippet`: 0.0%, 12.0%, 0.1%, 1.4%, and 0.7%. `max-snippet`: 0.0%, 0.4%, 39.9%, 2.3%, and 16.3%. `max-video-preview`: 0.0%, 0.1%, 39.9%, 2.1%, and 16.1%. `max-image-preview`: 0.0%, 1.2%, 69.2%, 2.3%, and 16.5%. `noarchive`: 0.4%, 0.0%, 0.8%, 18.7%, and 35.9%.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=240042110&format=interactive",
+  sheets_gid="815806479",
+  sql_file="robots-meta-usage-2024.sql",
+  width=600,
+  height=548
+  )
+}}
+
+When robots directive rules are viewed by their name attributes, we can see varied application rates whiching that the curation of directives by botname is readily adopted by SEOs.
+ 
+Noteworthy takeaways from analysis of rules by bot name include:
+The `noarchve` rule was applied overwhelmingly to bingbot at 35.9%.  This is likely due to the tags ability to [keep content out Bing chat answers](https://blogs.bing.com/webmaster/september-2023/Announcing-new-options-for-webmasters-to-control-usage-of-their-content-in-Bing-Chat).
+`​​max-snippet`, `max-video-preview`, and  `max-image-preview` are prominently stated for all robots at rates of 39.9%	, 39.9%, and 69.2% respectively.
+Googlebot-News was the most named for `index` (63.2%) and `nosnippet` (12.0%)
+MSNBot was the least likely to be given a `noindex` directive (0.5%). In comparison, the most likely was Googlebot-News at 21.2%.
+0.01% of sites provided a `noindex` rule but used the invalid crawler name: google.  Google has two valid crawler names for recognized in robots `meta` tags: googlebot and Googlebot-News.
+
+### IndexIfEmbedded tag
+In January 2022, Google introduced a [new robots tag](https://developers.google.com/search/blog/2022/01/robots-meta-tag-indexifembedded), `indexifembedded`. The tag is placed in the HTTP header and offers indexing control for resources used to build a page. A common use case for this tag is for controlling indexation when content is in an iframe on a page, even when a noindex tag has been applied.  
+
+The presence of an `<iframe>` provides a baseline for cases where the `indexifembedded` robots directive might be applicable. In 2024, 7.6% of mobile pages contained an `<iframe>` element. This is a noteworthy 85% increase from 2022's rate of 4.1%.
+
+{{ figure_markup(
+  image="pages-with-iframe.png",
+  caption="Mobile pages with `<iframe>`.",
+  description="A pie chart showing 7.6% of mobile pages utilized an iframe within the analyzed content, and 92.4% did not use an iframe.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=8221104&format=interactive",
+  sheets_gid="815806479",
+  sql_file="robots-meta-usage-2024.sql"
+  )
+}}
+
+Nearly all sites employing iframes also use the `indexifembedded` directive. When iframe headers from mobile pages were examined, 99.9% used `noindex` directives and 97.8% used `indexifembedded`.
