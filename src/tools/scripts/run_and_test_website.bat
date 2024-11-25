@@ -26,7 +26,7 @@ echo "Building website"
 call npm run generate
 
 echo "Starting website"
-start python main.py
+start python -Xutf8 main.py
 rem # Sleep for 5 seconds to make sure server is up
 timeout /t 5 /nobreak
 rem # Use sleep as well in case running in GitBash where above command fails
