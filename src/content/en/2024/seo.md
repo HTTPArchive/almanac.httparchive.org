@@ -9,7 +9,7 @@ editors: [MichaelLewittes]
 analysts: [henryp25, cnichols013]
 translators: []
 results: https://docs.google.com/spreadsheets/d/1lAQKcOF7l6xz9v7yvnI9I1F8yiSqcz3Xx6u-5ady1DQ/
-fellowhuman1101_bio: Jamie Indigo isn't a robot, but speaks bot. As a technical SEO at <a hreflang="en" href="https://www.deepcrawl.com">DeepCrawl</a>, they study how search engines crawl, render, and index the web. They love to tame wild JavaScript and optimize rendering strategies. When not working, Jamie likes horror movies, graphic novels, and Dungeons & Dragons.
+fellowhuman1101_bio: Jamie Indigo isn't a robot, but speaks bot. As director of technical SEO at <a hreflang="en" href="https://www.coxautoinc.com/">Cox Automotive</a>, they study how search engines crawl, render, and index the web. Jamie loves to tame wild JavaScript and optimize rendering strategies. When not working, they like horror movies, graphic novels, and terrorizing lawful good paladins in Dungeons & Dragons.
 dwsmart_bio: Dave Smart is a developer and technical search engine consultant at <a hreflang="en" href="https://tamethebots.com">Tame the Bots</a>. They love building tools and experimenting with the modern web, and can often be found at the front in a gig or two.
 featured_quote:
 featured_stat_1:
@@ -229,7 +229,7 @@ Googlebot-News was the most named for `index` (63.2%) and `nosnippet` (12.0%)
 MSNBot was the least likely to be given a `noindex` directive (0.5%). In comparison, the most likely was Googlebot-News at 21.2%.
 0.01% of sites provided a `noindex` rule but used the invalid crawler name: google.  Google has two valid crawler names for recognized in robots `meta` tags: googlebot and Googlebot-News.
 
-### IndexIfEmbedded tag
+### `IndexIfEmbedded` tag
 In January 2022, Google introduced a [new robots tag](https://developers.google.com/search/blog/2022/01/robots-meta-tag-indexifembedded), `indexifembedded`. The tag is placed in the HTTP header and offers indexing control for resources used to build a page. A common use case for this tag is for controlling indexation when content is in an iframe on a page, even when a noindex tag has been applied.  
 
 The presence of an `<iframe>` provides a baseline for cases where the `indexifembedded` robots directive might be applicable. In 2024, 7.6% of mobile pages contained an `<iframe>` element. This is a noteworthy 85% increase from 2022's rate of 4.1%.
@@ -245,3 +245,17 @@ The presence of an `<iframe>` provides a baseline for cases where the `indexifem
 }}
 
 Nearly all sites employing iframes also use the `indexifembedded` directive. When iframe headers from mobile pages were examined, 99.9% used `noindex` directives and 97.8% used `indexifembedded`.
+
+{{ figure_markup(
+  image="indexifembedded-user-agents.png",
+  caption="Indexifembedded user agents.",
+  description="A bar chart showing the majority of indexifembedded implementations use a robots header at 98.1% and target the Googlebot user agent.The generic robots user agent was stated 0.2%. The other three user agents (Googlebot-News, and Bingbot) show 0% usage.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=1844266050&format=interactive",
+  sheets_gid="815806479",
+  sql_file="robots-meta-usage-2024.sql"
+  )
+}}
+
+As we saw in 2022, `indexifembedded` directives continued to be almost exclusively used for Googlebot. Robots header use decreased slightly in 2022 from 98.3% to 97.2%, while adoption of the robots tag increased significantly from 66.3% to 98.2%.
+
+### Invalid head elements
