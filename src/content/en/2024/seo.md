@@ -256,6 +256,85 @@ Nearly all sites employing iframes also use the `indexifembedded` directive. Whe
   )
 }}
 
-As we saw in 2022, `indexifembedded` directives continued to be almost exclusively used for Googlebot. Robots header use decreased slightly in 2022 from 98.3% to 97.2%, while adoption of the robots tag increased significantly from 66.3% to 98.2%.
+As we saw in 2022, `indexifembedded` directives continued to be almost exclusively used for Googlebot. Robots header use decreased slightly in 2022 from 98.3% to 97.2% in 2024, while adoption of the robots tag increased significantly from 66.3% in 2022 to 98.2% in 2024.
 
-### Invalid head elements
+### Invalid `<head>` elements
+
+Search engine crawlers follow [HTML standard](https://html.spec.whatwg.org/multipage/), and when they encounter an invalid element in the <head>, they ignore any elements that occur after that invalid element. This can prevent important metadata from being discovered or incomplete renderings. 
+
+The impact of a prematurely closed `<head>` is often difficult to catch since the problematic tags’ position may change on every pageload. Broken `<head>` tags are frequently identified by reports on missing elements such as canonicals, hreflang tags, and title tags.
+
+{{ figure_markup(
+  image="pages-with-invalid-HTML-in-head.png",
+  caption="Invalid HTML in `<head>`",
+  description="A bar chart depicting 21.51% of desktop and 22.30% of mobile pages have invalid HTML elements in `<head>` of the page.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=792944292&format=interactive",
+  sheets_gid="1932961327",
+  sql_file="invalid-head-sites-2024.sql"
+  )
+}}
+
+In 2024, 22.3% of mobile pages had `<head>` breaking invalid HTML elements. That’s a 98% increase from 2022's rate of 12.6%. Similarly, desktop pages with invalid HTML in the `<head>` increased from 12.7% to 21.51%.
+
+{{ figure_markup(
+  caption="mobiles pages contained invalid HTML elements in the `<head>`",
+  content="22%",
+  classes="big-number",
+  sheets_gid="1932961327",
+  sql_file="invalid-head-sites-2024.sql"
+)
+}}
+
+{{ figure_markup(
+  image="invalid-HEAD-elements.png",
+  caption="Invalid `<head>` elements.",
+  description="A column chart showing the percentage of pages with various HTML elements that are invalid in the `<head>`. On Desktop img is used in the head on 28.57% of pages, div on 11.31%, a on 5.17%, p on 3.34%, span on 3.21%, iframe on 3.18%, br on 2.67%, input on 2.32%, li on 1.94%, and finally ul 1.93%. Mobile is very similar at 22.02%, 9.76%, 4.70%, 3.16%, 3.10%, 2.69%, 2.56%, 2.39%, 2.21%, and 2.20% respectively.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=1233734015&format=interactive",
+  sheets_gid="233496461",
+  sql_file="invalid-head-elements-2024.sql"
+  )
+}}
+
+The most prevalent `<head>` breaking tag is the `<img>` element, affecting 28.6% of desktop and 22% of mobile instances of the issue. Comparatively, the 2022 chapter found `<img>` tags misapplied on 9.7% of mobile pages and 9.9% of desktop pages. This likely comes from deprecated implementation methods for third-party tools and can easily be updated.  
+
+Misapplied `<div>` tags also substantially increased from 2022. In 2024, 11.3% of desktop and 9.8% of mobile pages had the `<div>` element in the `<head>`. That’s more than a three times increase from 2022 when the invalid `<head>` occurred on 3.5% of desktop pages and 3.9% of mobile pages.
+
+## Canonicalization
+
+Canonicalization is the process of identifying the “preferred” version of a document when multiple versions are available. This is often necessary when a website has the same content accessible through different URLs, such as with HTTP/HTTPS, www/non-www, trailing slashes, query parameters, and other variations. 
+
+Canonical tags are signals for search engines about which version of the content to return in search results. While they are not directives like meta robots, they do serve as "strong hints." They benefit SEO by mitigating duplicate content, consolidating signals such as links to page variations, and allowing webmasters to better manage content syndication. 
+
+Canonical tag usage was up slightly in 2024. In 2022, 60.6% of mobile and 58.7% of desktop pages used canonicals. In 2024, it was up to 64.5% of mobile and 68.8% of desktop pages.
+
+{{ figure_markup(
+  image="canonical-usage.png",
+  caption="Canonical usage.",
+  description="A column chart highlighting percentages of pages that have a canonical set or are canonicalized. Canonical adoption is at 64.5% on desktop and 64.8% on mobile, and is canonicalized at 6.1% on desktop and 8.2% on mobile.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=123125644&format=interactive",
+  sheets_gid="1684654343",
+  sql_file="pages-canonical-stats-2024.sql"
+  )
+}}
+
+### Canonical Implementation
+
+Canonical tags have three [implementation methods](https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls):
+
+1. In the HTTP headers (via the Link HTTP header)  
+2. In the HTML’s `<head>` section of a page  
+3. Via sitemap
+
+HTML `<head>` tag implementation can occur in two specific points:
+
+1. As a link in the raw HTML received in response from the server  
+2. As a link In the rendered HTML after scripts have been executed
+
+Each implementation has its own nuance. HTTP headers can be used on non-HTML documents like PDFs, whereas `rel="canonical"` cannot. Additionally, canonicals via sitemap may be easier to maintain but are a [weaker signal](https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls\#:\~:text=Less%20powerful%20signal%20to%20Google%20than%20the%20rel%3D%22canonical%22%20mapping%20technique.) than on-page declarations.
+
+Analyzing canonicals implemented via a sitemap requires determining the associated duplicate for any declared canonicals. As excited researchers, we adjusted our analysis accordingly to report on the three places where search crawlers would encounter canonicals. A canonical could first be found in the HTTP header, next in the raw HTML, and finally in the rendered DOM. 
+
+Only 0.6% of mobile pages currently use the HTTP header, down from 0.9% in 2022. This is likely due to its implementation requiring server configuration. Instead, 64.7% of mobile pages use a `rel="canonical"` nested in the `<head>`.
+
+Most sites using `<head>` canonicals implement them in the raw and rendered HTML. Fewer than 1% of mobile and desktop pages had a canonical element present in the raw HTML (but not in the rendered HTML). 
+
