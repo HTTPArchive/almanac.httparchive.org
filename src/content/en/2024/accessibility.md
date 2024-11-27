@@ -15,7 +15,7 @@ featured_quote: Most modern governments have committed to either WCAG 2.0 AA or 
 featured_stat_1: 40%
 featured_stat_label_1: Of desktop sites and 39% of mobile sites have at least one `role="presentation"`.
 featured_stat_2: 0.1%
-featured_stat_label_2: Sites with `<audio>` elements include a `<track>` element.
+featured_stat_label_2: Sites with `<audio>` elements that include a `<track>` element.
 featured_stat_3: 57%
 featured_stat_label_3: Mobile sites passing the Lighthouse audit for properly ordered headings.
 doi: 10.5281/zenodo.14063775
@@ -840,7 +840,7 @@ There are two means by which we can identify country information, first by the G
 {{ figure_markup(
   image="country-by-geoid.png",
   caption="Most accessible countries by GeoID.",
-  description="A bar cart with the GeoID, the country with the highest average for accessibility is the USA with a value of 84%. There is a drop of less a perscent as we move to Canada, UK, Australia, Germany, Netherlands, France, Mexico, Italy, Spain, Argentina, Indonesia, India, Poland, Brazil, Japan, Turkey, Vietnam, China and finally the Republic of Korea with 78%. These were for countries that hosted more than 100000 domains.",
+  description="A bar chart with the GeoID, the country with the highest average for accessibility is the USA with a value of 84%. There is a drop of less a perscent as we move to Canada, UK, Australia, Germany, Netherlands, France, Mexico, Italy, Spain, Argentina, Indonesia, India, Poland, Brazil, Japan, Turkey, Vietnam, China and finally the Republic of Korea with 78%. These were for countries that hosted more than 100000 domains.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=421126157&format=interactive",
   sheets_gid="260430925",
   sql_file="lighthouse_score_by_country.sql",
@@ -868,7 +868,7 @@ But it is a bit easier to see the TLD ranked and including the non-country codes
 {{ figure_markup(
   image="country-by-tld.png",
   caption="Accessible countries by Top Level Domain (TLD).",
-  description="A bar cart with looking at Top Level Domains with more than 45,000 domains, we learn about accessibility. Displayed as a bar chart with the accessible domains .edu (Education), .gov (US Government), Norway, Filand, .io, Canada, USA, .app, UK, Sweden, Ireland, Australia, New Zealand, .co, Austria, Belgium, Switzerland, Denmark, and South Africa, .org.",
+  description="A bar chart with looking at Top Level Domains with more than 45,000 domains, we learn about accessibility. Displayed as a bar chart with the accessible domains .edu (Education), .gov (US Government), Norway, Filand, .io, Canada, USA, .app, UK, Sweden, Ireland, Australia, New Zealand, .co, Austria, Belgium, Switzerland, Denmark, and South Africa, .org.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=783736776&format=interactive",
   sheets_gid="1209052596",
   sql_file="lighthouse_score_by_tld.sql"
@@ -884,7 +884,7 @@ Not all government domains follow consistent accessibility rules, however we wer
 {{ figure_markup(
   image="accessible-governments.png",
   caption="Most accessible government websites.",
-  description="A bar cart with with the most accessible global governments. The Netherlands (98%), Luxembourg (96%), Finland (94%), UK (92%), European Union (91%), Norway (91%), Jersey (91%), Singapore (92%), Belgium (91%), Germany (91%),  France (90%), Australia (89%), New Zealand (89%), Dnmark (89%). ",
+  description="A bar chart with with the most accessible global governments. The Netherlands (98%), Luxembourg (96%), Finland (94%), UK (92%), European Union (91%), Norway (91%), Jersey (91%), Singapore (92%), Belgium (91%), Germany (91%),  France (90%), Australia (89%), New Zealand (89%), Dnmark (89%). ",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=415917251&format=interactive",
   sheets_gid="720509689",
   sql_file="lighthouse_score_by_government.sql"
@@ -912,7 +912,7 @@ We can also review the accessibility of various states.
 {{ figure_markup(
   image="US-state-governments.png",
   caption="The most accessible US state governments.",
-  description="A bar cart with with the most accessible states in the US.  Colorado (96%), Vermont (94%), Nevada (93%), South Carolina (91%), Georgia (91%), North Carolina (91%), Kansas (90%), Maine (90%), California (90%), New York (90%), Hawaii (89%), DC (89%), Rhode Island (89%), Missouri (89%), Massachusettes (89%), New Hampshire (89%), Minnesota (89%), Michigan (88%), Oregon (88%), Iowa (88%).",
+  description="A bar chart with with the most accessible states in the US.  Colorado (96%), Vermont (94%), Nevada (93%), South Carolina (91%), Georgia (91%), North Carolina (91%), Kansas (90%), Maine (90%), California (90%), New York (90%), Hawaii (89%), DC (89%), Rhode Island (89%), Missouri (89%), Massachusettes (89%), New Hampshire (89%), Minnesota (89%), Michigan (88%), Oregon (88%), Iowa (88%).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=174949843&format=interactive",
   sheets_gid="720509689",
   sql_file="lighthouse_score_by_government.sql",
@@ -932,7 +932,7 @@ We can also review the accessibility of various states.
   )
 }}
 
-Again, Colorado and Vermont are much further ahead than other states. The state of Georgia has a <a hreflang="en" href="https://digital.georgia.gov/services/govhub">central Drupal installation</a> managed through a central agency, does this explain why it is in the top 5? Colorado has established a centralized <a hreflang="en" href="https://oit.colorado.gov/colorado-digital-service">digital service organization</a>, <a hreflang="en" href="https://oit.colorado.gov/accessibility-law">new accessibility legislation</a> and now has an average of 95%. Pennsylvania's state average is much lower at 82% but they also have a new <a hreflang="en" href="https://code.oa.pa.gov/">digital experience team</a> established in 2023.
+Again, Colorado and Vermont are much further ahead than other states. Colorado has established a centralized <a hreflang="en" href="https://sipa.colorado.gov/">Statewide Internet Portal Authority (SIPA)</a>, along with <a hreflang="en" href="https://oit.colorado.gov/accessibility-law">new accessibility legislation</a> and now has an average of 96%. The state of Georgia has a <a hreflang="en" href="https://digital.georgia.gov/services/govhub">central Drupal installation</a> managed through a central agency, does this explain why it is in the top 5? Pennsylvania's state average is much lower at 82% but they also have a new <a hreflang="en" href="https://code.oa.pa.gov/">digital experience team</a> established in 2023.
 
 Earlier this year, the US Department of Justice <a hreflang="en" href="https://www.ada.gov/resources/2024-03-08-web-rule/">updated its regulations for Title II of the Americans with Disabilities Act (ADA)</a>. US state and local governments will now all be required to be fully WCAG 2.1 AA compliant. The compliance date depends on the size of their population but will be either April 2026 or April 2027. It will be important to measure how US states comply with this new regulation. We should see improvements in these numbers.
 
@@ -944,7 +944,7 @@ When most folks think about CMS, they think about the ones that you can download
 
 {{ figure_markup(
   image="traditional-cms.png",
-  caption="A bar cart with the accessible traditional Content Management Systems (CMS).",
+  caption="A bar chart with the accessible traditional Content Management Systems (CMS).",
   description="The most accessible CMS with over 10,000 instances are AEM (87%), Contentful (87%), Sitecore (85%), WordPress (85%), Craft CMS (84%), Contao (84%), Drupal (84%), Liferay (83%), TypoCMS (83%), DNN (82%).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=174688785&format=interactive",
   sheets_gid="686463338",
@@ -1016,11 +1016,11 @@ The different CMS do have a lot of commonalities in the top errors that they hav
 
 There are many tools which can be used to help authors evaluate the accessibility of a page. Institutions that control the browser configurations of their staff, could choose to simply install the open source <a hreflang="en" href="https://accessibilityinsights.io/docs/web/getstarted/assessment/">Accessibility Insights</a> browser plugin for all of their browsers. This would make errors much more visible to administrators. For many of the CMS above though, the best solution might be to install a tool like <a hreflang="en" href="https://sa11y.netlify.app/">Sa11y</a> or <a hreflang="en" href="https://editoria11y.princeton.edu/">Editoria11y</a> which is geared to help authors. From Joomla version 4.1 onwards <a hreflang="en" href="https://sa11y.netlify.app/joomla/">Sa11y is included by default</a>, so all authors benefit.
 
-Website platforms in general performed better than the tTraditional CMS with Wix, Squarespace and Google Sites being significantly better.
+Website platforms in general performed better than the Traditional CMS with Wix, Squarespace and Google Sites being significantly better.
 
 {{ figure_markup(
   image="platform-cms.png",
-  caption="A bar cart with the most accessible Website Platform Content Management Systems (CMS).",
+  caption="A bar chart with the most accessible Website Platform Content Management Systems (CMS).",
   description="A bar graph with with the most accessible CMS: Wix (94%), Squarespace (92%), Google Sites (90%), Duda (87%), HubSpot CMS (87%), Pixnet (86%), Weebly (86%), GoDaddy Website Builder (85%), WebNode (84%), Tilda (83%).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=1383581431&format=interactive",
   sheets_gid="686463338",
@@ -1101,7 +1101,7 @@ The differences show that it is possible for CMS to make an impact on accessibil
 {{ figure_markup(
   image="javascript-frontend-ui.png",
   caption="Most Accessible JavaScript Frontend UI Frameworks.",
-  description="A bar cart with ranked with Stimulus (91%), Remix (89%), Owik (89%), Astro (89%), OpenUI5 (89%), Next.js (87%), React (87%), AlpineJS (86%), Htmx (85%), Svelte (85%), Ember.js (85%).",
+  description="A bar chart with ranked with Stimulus (91%), Remix (89%), Owik (89%), Astro (89%), OpenUI5 (89%), Next.js (87%), React (87%), AlpineJS (86%), Htmx (85%), Svelte (85%), Ember.js (85%).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=1864888468&format=interactive",
   sheets_gid="1029816121",
   sql_file="lighthouse_score_by_frontend.sql"
@@ -1113,7 +1113,7 @@ Stimulus, Remix and Qwik are several percent more accessible on average than Rea
 {{ figure_markup(
   image="javascript-meta-frameworks.png",
   caption="Most Accessible JavaScript Meta-frameworks.",
-  description="A bar cart with meta-frameworks are in the following order RedwoodJS (92%), Remix (89%), Astro (89%), SolidStart(88%), Gatsby (88%), Next.js (87%), Nuxt.js (84%), AdonisJS (82%), Quasar (82%), Meteor (73%).",
+  description="A bar chart with meta-frameworks are in the following order RedwoodJS (92%), Remix (89%), Astro (89%), SolidStart(88%), Gatsby (88%), Next.js (87%), Nuxt.js (84%), AdonisJS (82%), Quasar (82%), Meteor (73%).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=506578618&format=interactive",
   sheets_gid="1029816121",
   sql_file="lighthouse_score_by_frontend.sql"

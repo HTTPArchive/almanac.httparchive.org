@@ -61,19 +61,17 @@ The accuracy of metrics and commentary may also be affected by the following lim
 
 In total, we detected nearly 2.5 million websites built on ecommerce platforms in 2024, representing approximately 21% of all the websites analyzed. The most widely used ecommerce platform is WooCommerce, followed by Shopify and Squarespace.
 
-WooCommerce (38%) and Shopify (18%) dominate the ecommerce platform landscape. OpenCart is the last of the 362 detected shop systems that manage to secure a share above 1% of the market.
-
 {{ figure_markup(
   image="ecommerce-platforms-distribution.png",
   caption="Distribution of Ecommerce platforms.",
-  description="Pie chart showing the distribution of ecommerce platforms used in 2024. WooCommerce leads with 36.7%, followed by Shopify with 18.3%, Squarespace Commerce with 9.0%",
+  description="Pie chart showing the distribution of ecommerce platforms used in 2024. WooCommerce leads with 35.8%, followed by Shopify with 19.6%, Squarespace Commerce with 9.2%",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTQYSD_rO7eGM-ViE3WD7wQOV0itRwjmNy1lkKOyeF7L_b5EDvDlHjAgIzKBnVwExUzC_PSbg0t-3k5/pubchart?oid=2506095&format=interactive",
   sheets_gid="1000255969",
   sql_file="top_ecommerce.sql"
   )
 }}
 
-Over the years, the top five platforms have remained relatively consistent. However, Wix ecommerce surpassed PrestaShop in 2023, moving from 5th to 4th place. Trends indicate that the open-source project WooCommerce is slightly losing market share, decreasing from 37.3% in 2022 to 35.8% in 2024, while its commercial competitor, Shopify, is gaining market share in the same period (increasing from 17.7% to 19.6%).
+WooCommerce (36%) and Shopify (20%) dominate the ecommerce platform landscape. OpenCart is the last of the 362 detected shop systems that manage to secure a share above 1% of the market.
 
 {{ figure_markup(
   image="top-5-platforms-2021-2024.png",
@@ -85,9 +83,11 @@ Over the years, the top five platforms have remained relatively consistent. Howe
   )
 }}
 
+Over the years, the top five platforms have remained relatively consistent. However, Wix ecommerce surpassed PrestaShop in 2023, moving from 5th to 4th place. Trends indicate that the open-source project WooCommerce is slightly losing market share, decreasing from 37% in 2022 to 36% in 2024, while its commercial competitor, Shopify, is gaining market share in the same period (increasing from 18% to 20%).
+
 ## Top ecommerce platforms by rank
 
-Using the Chrome User Experience Report data, we looked at ecommerce platforms by rank. Our data shows that only a few ecommerce platforms are represented in the top 1,000 websites, while about 20% of the top 10 million websites use an ecommerce platform. This difference could be because the top 1,000 sites often use custom solutions.
+Using the Chrome User Experience Report data, we looked at ecommerce platforms by rank.
 
 {{ figure_markup(
   image="platform-adoption-by-rank.png",
@@ -99,9 +99,7 @@ Using the Chrome User Experience Report data, we looked at ecommerce platforms b
   )
 }}
 
-Compared to the overall web, there are noticeable differences in platform popularity among the top 10 million websites. For instance, Wix ecommerce loses its position in the top five platforms, while Magento joins the top five. In the top one million sites, Shopify overtakes WooCommerce as the most popular platform, while Squarespace and Wix ecommerce fall out of the top five and below the top 20.
-
-In the top 100,000 websites, Salesforce Commerce Cloud and Amazon Webstore emerge among the most used platforms, with Shopify still holding the number one spot. Finally, in the top 10,000 websites, none of the previously leading platforms are represented in the top five, which are instead dominated by commercial solutions such as Fourthwall, SAP, and Salesforce Commerce Cloud.
+Our data shows that only a few ecommerce platforms are represented in the top 1,000 websites, while about 20% of the top 10 million websites use an ecommerce platform. This difference could be because the top 1,000 sites often use custom solutions.
 
 <figure>
   <table>
@@ -161,9 +159,13 @@ In the top 100,000 websites, Salesforce Commerce Cloud and Amazon Webstore emerg
   </figcaption>
 </figure>
 
+Compared to the overall web, there are noticeable differences in platform popularity among the top 10 million websites. For instance, Wix ecommerce loses its position in the top five platforms, while Magento joins the top five. In the top one million sites, Shopify overtakes WooCommerce as the most popular platform, while Squarespace and Wix ecommerce fall out of the top five and below the top 20.
+
+In the top 100,000 websites, Salesforce Commerce Cloud and Amazon Webstore emerge among the most used platforms, with Shopify still holding the number one spot. Finally, in the top 10,000 websites, none of the previously leading platforms are represented in the top five, which are instead dominated by commercial solutions such as Fourthwall, SAP, and Salesforce Commerce Cloud.
+
 ## Top ecommerce platform by geography
 
-There are quite a few differences in preferences between geographies. We used additional data from the CrUX dataset, which categorizes the most visited websites per geogrpahical area. For example, `google.com`, while an American website, is also one of the most visited websites by all German internet users. We can see that three leading platforms take the top spot in each country: WooCommerce (violet), Shopify (green), and 1C-Bitrix (red). The following map visualizes only these three due to the limitations of Google Sheets.
+There are quite a few differences in preferences between geographies. We used additional data from the CrUX dataset, which categorizes the most visited websites per geographical area. For example, `google.com`, while an American website, is also one of the most visited websites by all German internet users.
 
 {{ figure_markup(
   image="top-ecommerce-platform-by-country.png",
@@ -174,6 +176,8 @@ There are quite a few differences in preferences between geographies. We used ad
   sql_file="top_shopsystem_by_geo.sql"
   )
 }}
+
+We can see that three leading platforms take the top spot in each country: WooCommerce (violet), Shopify (green), and 1C-Bitrix (red). The map visualizes only these three due to the limitations of Google Sheets.
 
 ## Core Web Vitals in ecommerce
 
@@ -206,8 +210,6 @@ Largest Contentful Paint (LCP) measures how long it takes for the main content o
 
 A good LCP time should be under 2.5 seconds. If it takes too long, it can make the website feel slow, and users might leave. To improve LCP, you can optimize images, make server responses faster, and minimize blocking scripts so that key content shows up more quickly.
 
-Despite these challenges, the top 10 ecommerce platforms have shown significant year-over-year improvements in their LCP scores. Platforms like Shopify, OpenCart, and Shopware have consistently had good LCP pass rates since 2022, while Tiendanube, a popular platform in Argentina, made impressive progress, increasing its pass rate from 28% in 2022 to 61% in 2024. On the other hand, WooCommerce lags behind with a pass rate of just 34%.
-
 {{ figure_markup(
   image="mobile-lcp-performance.png",
   caption="Mobile year-over-year Platform LCP performance.",
@@ -219,6 +221,8 @@ Despite these challenges, the top 10 ecommerce platforms have shown significant 
   height=644
   )
 }}
+
+Despite these challenges, the top 10 ecommerce platforms have shown significant year-over-year improvements in their LCP scores. Platforms like Shopify, OpenCart, and Shopware have consistently had good LCP pass rates since 2022, while Tiendanube, a popular platform in Argentina, made impressive progress, increasing its pass rate from 28% in 2022 to 61% in 2024. On the other hand, WooCommerce lags behind with a pass rate of just 34%.
 
 ### Cumulative Layout Shift (CLS)
 
@@ -270,8 +274,6 @@ The Lighthouse [performance score](https://developer.chrome.com/docs/lighthouse/
 
 The Lighthouse performance score is a weighted average of the five metric scores—First Contentful Paint (10%), Speed Index (10%), Largest Contentful Paint (25%), Total Blocking Time (30%), Cumulative Layout Shift (25%).
 
-We can see that Wix ecommerce performs very well on both desktop and mobile compared to other systems. This is surprising, as the ranking data shows that it is primarily used for websites outside the top 10 million, which are likely less professional stores. This performance could also be due to the limited customization options compared to open-source systems like WooCommerce.
-
 {{ figure_markup(
   image="median-lighthouse-performance-score.png",
   caption="Median Lighthouse performance score for various ecommerce platforms on desktop and mobile.",
@@ -283,6 +285,8 @@ We can see that Wix ecommerce performs very well on both desktop and mobile comp
   height=559
   )
 }}
+
+We can see that Wix ecommerce performs very well on both desktop and mobile compared to other systems. This is surprising, as the ranking data shows that it is primarily used for websites outside the top 10 million, which are likely less professional stores. This performance could also be due to the limited customization options compared to open-source systems like WooCommerce.
 
 If we lower the threshold to platforms that appear at least 5,000 times instead of 50,000 times, Gumroad scores very well, with a median score of 87 on desktop and 59 on mobile. Additionally, Argentina's most popular shop system, Tiendanube, also scores well, with 74 on desktop and 58 on mobile.
 
@@ -350,10 +354,6 @@ The detection of payment providers is not as advanced or precise as the detectio
 
 The following section focuses on each website with detected payment providers, even if no ecommerce system was identified.
 
-The data reveals that PayPal is the most commonly detected payment method on mobile websites, appearing on 3.5% of all pages in the dataset. This means PayPal was found on approximately 560,000 mobile pages out of more than 16 million analyzed.
-
-Apple Pay ranks second, being detected more frequently than Google Pay, which shows its growing presence in mobile ecommerce. Meanwhile, Shop Pay, a payment solution provided by Shopify, secures third place in the rankings.
-
 {{ figure_markup(
   image="mobile-payment-provider-distribution.png",
   caption="Mobile year-over-year payment provider distribution.",
@@ -366,9 +366,12 @@ Apple Pay ranks second, being detected more frequently than Google Pay, which sh
   )
 }}
 
+The data reveals that PayPal is the most commonly detected payment method on mobile websites, appearing on 3.5% of all pages in the dataset. This means PayPal was found on approximately 560,000 mobile pages out of more than 16 million analyzed.
+
+Apple Pay ranks second, being detected more frequently than Google Pay, which shows its growing presence in mobile ecommerce. Meanwhile, Shop Pay, a payment solution provided by Shopify, secures third place in the rankings.
+
 ## Conclusion
 
 Ecommerce is still evolving, with platform preferences varying by region and website size. While WooCommerce remains the go-to platform for many, Shopify has steadily gained ground, especially among higher-traffic websites. Interestingly, platforms like Wix ecommerce perform well in terms of user experience metrics despite being more popular with smaller sites. Overall, we can observe improvements in most metrics, from performance to accessibility, over the past few years, benefiting everyone.
 
 While ecommerce platforms are diverse and well distributed among different providers, a few key players dominate technologies like payment systems. It will be interesting to see how this landscape continues to evolve in the coming years.
-

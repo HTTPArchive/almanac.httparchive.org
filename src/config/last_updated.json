@@ -753,8 +753,8 @@
   },
   "en/2024/chapters/accessibility.html": {
     "date_published": "2024-11-11T00:00:00.000Z",
-    "date_modified": "2024-11-16T00:00:00.000Z",
-    "hash": "0bfc638d1bdf26254e1c83e01857a7fe"
+    "date_modified": "2024-11-22T00:00:00.000Z",
+    "hash": "db405edaff762e930358c9471d3fd358"
   },
   "en/2024/chapters/cdn.html": {
     "date_published": "2024-11-11T00:00:00.000Z",
@@ -778,8 +778,8 @@
   },
   "en/2024/chapters/ecommerce.html": {
     "date_published": "2024-11-11T00:00:00.000Z",
-    "date_modified": "2024-11-16T00:00:00.000Z",
-    "hash": "1197b631e967c9866d847221663d3054"
+    "date_modified": "2024-11-21T00:00:00.000Z",
+    "hash": "1d744116bde5acd029eba83f60cb5ce4"
   },
   "en/2024/chapters/fonts.html": {
     "date_published": "2024-11-11T00:00:00.000Z",
@@ -852,9 +852,9 @@
     "hash": "bb49d876d3e33811819746edc96ed447"
   },
   "en/2024/chapters/third-parties.html": {
-    "date_published": "2024-11-11T00:00:00.000Z",
-    "date_modified": "2024-11-16T00:00:00.000Z",
-    "hash": "124fe4e80189dd401c4f4d0bfeb361dd"
+    "date_published": "2024-11-21T00:00:00.000Z",
+    "date_modified": "2024-11-21T00:00:00.000Z",
+    "hash": "075bec99b73be68c6fa7b97b97808182"
   },
   "en/2024/chapters/webassembly.html": {
     "date_published": "2024-11-11T00:00:00.000Z",
