@@ -4885,5 +4885,16 @@
         "reviewers"
       ]
     }
+  },
+  "umariqbal": {
+    "github": "UmarIqbal",
+    "name": "Umar Iqbal",
+    "teams": {
+      "2024": [
+        "authors"
+      ]
+    },
+    "twitter": "umaarr6",
+    "website": "https://www.umariqbal.com"
   }
 }

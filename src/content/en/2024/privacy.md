@@ -3,11 +3,12 @@
 title: Privacy
 description: Privacy chapter of the 2024 Web Almanac covers the adoption and impact of online tracking, privacy preference signals, and browser initiatives for a privacy-friendlier web.
 hero_alt: Hero image of Web Almanac characters with cameras, phones, and microphones acting like paparazzi while another character pulls back a shower curtain to reveal a web page behind it.
-authors: [bgstandaert, ydimova, max-ostapenko]
+authors: [bgstandaert, ydimova, max-ostapenko, umariqbal]
 reviewers: []
 editors: []
 analysts: [bgstandaert, max-ostapenko]
 translators: []
+umariqbal_bio: Umar Iqbal is an assistant professor in the department of Computer Science and Engineering at the <a hreflang="en" href="https://wustl.edu/">Washington University in St. Louis</a>. His research focus on bringing transparency and control in computing systems to empower users, platforms, and regulators to improve user privacy and security.
 results: https://docs.google.com/spreadsheets/d/18r8cT6x9lPdM-rXvXjsqx84W7ZDdTDYGD59xr0UGOwg/
 featured_quote: TODO
 featured_stat_1: 3
