@@ -803,3 +803,255 @@ External links are links that point to other websites. The link count has remain
 Similarly, the more popular sites tend to have more external links, but again the difference is very slight.
 
 ### Anchor `rel` attribute use
+
+{{ figure_markup(
+  image="anchor-rel-attribute-usage.png",
+  caption="Anchor `rel` attribute usage.",
+  description="A column chart comparing rel `noopener`, `nofollow`, `noreferrer`, `dofollow`, `sponsored`, `ugc`, and `follow`. On desktop, `noopener` is used on 42.6% of sites, `nofollow` on 32.4% of sites, `noreferrer` on 24.5% of sites,`dofollow` on 0.4% of sites, `follow` on 0.4% of sites, `sponsored` on 0.4% of sites, and `ugc` on 0.4% of sites. Mobile is almost identical with 41.7%, 32.7%, 23.9%, 0.5%, 0.4%, 0.4% and 0.3% of sites, respectively.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=1055504477&format=interactive",
+  sheets_gid="1479524506",
+  sql_file="anchor-rel-attribute-usage-2024.sql"
+  )
+}}
+
+The [`rel` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/rel) dictates the relationship between the page and its linked target. For SEO, the primary use of the `rel` attribute is to inform search engines of its relationship with the page. Google terms this as [qualifying outbound links](https://developers.google.com/search/docs/crawling-indexing/qualify-outbound-links).
+
+The [`nofollow`](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/rel#nofollow) attribute, first introduced in 2005, is intended to inform search engines that you don’t want to be associated with the targeted site nor wish them to crawl it based on links on your page. In 2024, the attribute was present in 32.7% of pages, up from 29.5% of pages in 2022. 
+
+Some more specific attributes were introduced in 2019, including `sponsored`, which denotes a link to sponsored content and `ugc`, which denotes links to user-generated content added by users (rather than publishers). Adoption of these attributes remains low. In 2024, it was just 0.4% for `sponsored` and 0.3% for `ugc`. Both were less popular than or equal to `dofollow` and `follow`, which actually aren't even real attributes and are ignored by search engines.
+
+Interestingly, the most popular attribute is `noopener`, which is not related to SEO, and is just to prevent a page opened in a browser tab or window from accessing or having control over the original page. Additionally, `noreferrer`, which also has no effect on SEO, prevents the passing of the `Referrer` HTTP header, so the target site doesn’t know where the visitor came from, unless unique tracking parameters are present in the link.
+
+## Word Count
+
+Search engines do not rank sites based on word count; however, it is a useful metric for tracking how much text sites contain, as well as a proxy for seeing how much site owners are leaning on client-side rendering to display the content for which they want to be found.
+
+### Rendered word count
+
+#### Home Pages
+
+{{ figure_markup(
+  image="homepage-visible-words-rendered-by-percentile.png",
+  caption="Homepage Visible words rendered by percentile.",
+  description="A distribution of rendered and visible content word counts on homepages. The median number of words rendered is 400 words on desktop and 364 words on mobile. There is a similar, yet smaller, number of words on mobile at the other percentiles above and below the median. At the 10th percentile, it’s 76 words on desktop and 69 words on mobile. At the 25th percentile, it’s 192 words and 174 words, respectively. At the 75th percentile, it’s 734 words and 678 words, respectively. And at the 90th percentile, it’s 1,260 words and 1,174 words, respectively.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=1171813914&format=interactive",
+  sheets_gid="1745108356",
+  sql_file="seo-stats-by-percentile-2024.sql"
+  )
+}}
+
+Rendered word count is the amount of visible words on a page after JavaScript has been executed. The median mobile homepage in 2024 contained 364 words, while the median desktop page had slightly more at 400 words. This was a small drop from the data in 2022 when the median was 366 words for mobile homepages and 421 words for desktop. 
+
+Of note, the gap between mobile and desktop homepage word counts narrowed to just 36 words in 2024, compared to that of 55 words in 2022. This suggests a marginally closer parity to the content served to mobile users. Google has completed the process of moving to a mobile-first indexing strategy, in which it primarily crawls and indexes pages with a mobile user-agent. It’s reasonable to conclude that this helped push a few remaining sites to offer their full content to mobile visitors.
+
+#### Inner Pages
+
+{{ figure_markup(
+  image="inner-page-visible-words-rendered-by-percentile.png",
+  caption="Inner page Visible words rendered by percentile.",
+  description="A distribution of rendered and visible content word counts on homepages. The median number of words rendered is 333 words on desktop and 317 words on mobile. At the 10th percentile, it’s 76 words on desktop and 64 words on mobile. At the 25th percentile, it’s 159 words and 140 words, respectively. At the 75th percentile, it’s 659 words and 667words, respectively. And at the 90th percentile, it’s 1,219 words and 1,306 words, respectively.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=717477318&format=interactive",
+  sheets_gid="1745108356",
+  sql_file="seo-stats-by-percentile-2024.sql"
+  )
+}}
+
+Inner pages contain slightly fewer words overall. The median mobile inner page in 2024 had 317 visible words after rendering, while desktop inner pages had 333 words.
+
+One noticeable difference between homepages and inner pages is that while desktop pages generally have more words than mobile pages at the lower word counts, that gap narrows as the percentiles get higher. By the 75th percentile, for instance, mobile pages have more visible words on their inner pages than desktop’s inner pages.
+
+### Raw word count
+
+#### Home Pages
+
+{{ figure_markup(
+  image="homepage-visible-words-raw-by-percentile.png",
+  caption="Homepage Visible words raw by percentile.",
+  description="A distribution of raw content word counts on homepages. The median number of words rendered is 330 words on desktop and 311 words on mobile. There is a similar, yet smaller, number of words on mobile at the other percentiles above and below the median. At the 10th percentile, it’s 52 words on desktop and 51 words on mobile. At the 25th percentile, it’s 149 words and 142 words, respectively. At the 75th percentile, it’s 614 words and 584 words, respectively. And at the 90th percentile, it’s 1,061 words and 1,016 words, respectively.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=1250129544&format=interactive",
+  sheets_gid="1745108356",
+  sql_file="seo-stats-by-percentile-2024.sql"
+  )
+}}
+
+The raw word count represents the words contained in the initial HTML response from the server before JavaScript is executed and no other modifications have been made in the DOM or CSSOM.
+
+Much like the rendered word count, there’s similarly a small change in 2024 from 2022. The median page’s raw word count in 2024 was 311 words for mobile user-agents and 330 words for desktops. That’s a tiny drop from 2022 when the median page’s raw word count was 318 for mobile and 363 for desktop.
+
+#### Inner Pages
+
+{{ figure_markup(
+  image="inner-page-visible-words-raw-by-percentile.png",
+  caption="Inner Page Visible words raw by percentile.",
+  description="A distribution of raw content word counts on inner pages. The median number of words rendered is 284 words on desktop and 278 words on mobile. At the 10th percentile, it’s 55 words on desktop and 50 words on mobile. At the 25th percentile, it’s 126 words and 116 words, respectively. At the 75th percentile, it’s 586 words and 608 words, respectively. And at the 90th percentile, it’s 1,113 words and 1,220 words, respectively.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=1963447811&format=interactive",
+  sheets_gid="1745108356",
+  sql_file="seo-stats-by-percentile-2024.sql"
+  )
+}}
+
+Like homepages, the inner pages’ visible words raw count very much follows the rendered word count figures, including mobile pages containing more words than desktop pages at the 75th percentile and above.
+
+This pattern in both the raw word count and rendered word count pages suggests the trend is unrelated to infinite scrolling, which is a more popular choice for publishers on mobile layouts.
+
+### Rendered vs. Raw
+
+#### Homepages
+
+{{ figure_markup(
+  image="rendered-vs-raw-homepage-visible-words.png",
+  caption="Rendered vs Raw Homepage Visible Words.",
+  description="A distribution of raw versus rendered word counts on homepages. On desktop, there is a 31.6% difference between raw and rendered word counts at the 10th percentile, 22.4% difference at the 25th percentile, 17.5% difference at the median, 16.3% difference at the 75th percentile, and 15.8% difference at the 90th percentile. On mobile, the differences are 26.1%, 18.4%, 14.6%, 14%, and 13.5%, respectively.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=847900289&format=interactive",
+  sheets_gid="1745108356",
+  sql_file="seo-stats-by-percentile-2024.sql"
+  )
+}}
+
+When the rendered visible and raw word counts are compared on homepages, there’s a surprisingly small discrepancy, with the median showing a difference of 13.6% for mobile and 17.5% for desktop.
+
+Homepages served to desktop user-agents have a slightly higher percentage of words visible after rendering versus mobile. One possible factor is that mobile layouts often employ tabs or accordions where, even if the content is in the DOM, it's visually hidden, so it wouldn't show up as visible.
+
+There is an interesting trend in which the higher the word count there is, the smaller the difference between rendered and raw word count. This suggests perhaps that server-side rendered technologies are relatively more popular than client-side rendered ones for publishers of longer-form content.
+
+#### Inner Pages
+
+{{ figure_markup(
+  image="rendered-vs-raw-inner-page-visible-words.png",
+  caption="Rendered vs Raw Homepage Visible Words.",
+  description="A distribution of raw vs. rendered word counts on homepages. On desktop, there is a 27.6% difference between at the 10th percentile, 20.8% difference at the 25th percentile, 14.7% difference at the median, 11.1% difference at the 75th percentile, and 8.7% difference at the 90th percentile. On mobile, the differences are 21.9%, 17.1%, 12.3%, 8.8%, and 6.6%, respectively.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=660250521&format=interactive",
+  sheets_gid="1745108356",
+  sql_file="seo-stats-by-percentile-2024.sql"
+  )
+}}
+
+Somewhat surprisingly, there is an even narrower gap between rendered and raw word counts on inner pages, which suggests they’re less likely to contain significant amounts of client-side rendered content.
+
+Although the gap is narrower, it does follow the same pattern of the more words, the less they rely on client-side rendering.
+
+## Structured Data
+
+Structured data remains important for optimizing many sites. While it is not a ranking factor, *per se*, it often powers rich results, especially on Google.
+
+These enhanced listings often make a site or elements of one stand out. Additionally,  correctly implemented structured data can, for example, surface in other search engines.
+
+The addition of inner pages in this year’s crawl is particularly relevant for structured data, since many types are only applicable to specific pages.
+
+#### Homepages
+
+{{ figure_markup(
+  image="homepage-raw-vs-rendered-structured-data.png",
+  caption="Homepage Raw vs Rendered Structured Data.",
+  description="A column chart showing structured data changes based on raw versus rendered for homepages. On desktop pages, 47% of homepages have raw structured data while 48% have rendered structure data. Additionally, 2% of homepages only have structured data when a page is rendered, and on 6% of homepages the rendering changes the structured data. For mobile, it’s almost identical with 46%, 49%, 2% and 5%, respectively.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=361913740&format=interactive",
+  sheets_gid="144160625",
+  sql_file="seo-stats-2024.sql"
+  )
+}}
+
+Overall usage of structured data grew in 2024 to 49% of mobile homepages and 48% of desktop homepages. This was a slight increase from 2022 when 47% of crawled mobile homepages and 46% of crawled desktop homepages had structured data.
+
+The majority of sites provide structured data in the raw HTML, while only 2% of mobile and desktop crawls to homepages have structured data added via JavaScript.
+
+A few more homepages, 5% of mobile and 6% of desktop crawls, contained some structured data that had been altered or augmented by JavaScript.
+
+The trend appears to be that of providing structured data markup in the raw HTML, something [Google itself highlights](https://developers.google.com/search/updates#clarifying-dynamically-generated-product-markup) as, if not best practice, perhaps the simplest and most reliable way of implementing structured data.
+
+#### Inner Pages
+
+{{ figure_markup(
+  image="inner-page-raw-vs-rendered-structured-data.png",
+  caption="Inner page Raw vs Rendered Structured Data",
+  description="A column chart showing structured data changes based on raw versus rendered for inner pages. For inner pages, 50% of desktop pages have raw structured data, while 51% have rendered structure data. Additionally, 2% of inner pages only have structured data when a page is rendered, and on 6% of inner pages the rendering changes the structured data. For mobile, it’s almost identical with 50%, 52%, 2%, and 5%, respectively.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=361913740&format=interactive",
+  sheets_gid="144160625",
+  sql_file="seo-stats-2024.sql"
+  )
+}}
+
+Inner pages, such as product or event pages, are more likely to have structured data. In 2024, 53% of mobile and 51% of desktop inner pages had some structured data markup. And it dovetails with the fact that there are a number of Google developer documents that detail eligibility for rich results, based on structured data.
+
+Overall, the trend of providing the markup in the raw HTML carries across from what was seen on homepage crawls.
+
+{{ figure_markup(
+  image="homepage-structured-data-markup-formats.png",
+  caption="Homepage structured data markup formats.",
+  description="A column chart showing structured data types for homepages. JSON-LD is found on 40.5% of desktop pages and 40.4% of mobile pages. Microdata is found on 17.4% of desktop pages and 18.8% of mobile pages. RDFa is found on 0.9% of desktop pages and 0.8% of mobile pages, and Microformats2 is found on just 0.1% of desktop pages and 0.2% of mobile pages.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=542370994&format=interactive",
+  sheets_gid="1441645144",
+  sql_file="structured-data-formats-2024.sql"
+  )
+}}
+
+{{ figure_markup(
+  image="inner-page-structured-data-markup-formats.png",
+  caption="Inner page structured data markup formats.",
+  description="A column chart showing structured data types for inner pages. JSON-LD is found on 36.6% of desktop pages and 35% of mobile pages. Microdata is found on 20.1% of desktop pages and 20.2% of mobile pages. RDFa is found on 2.0% of desktop pages and 1.8% of mobile pages, and Microformats2 is found on 0.2% of desktop pages and 0.4% of mobile pages.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=542370994&format=interactive",
+  sheets_gid="1441645144",
+  sql_file="structured-data-formats-2024.sql"
+  )
+}}
+
+There are a number of different ways structured data can be implemented on a page, but JSON-LD is by far the most popular format for homepages. It accounts for 40.4% of mobile and 40.5% of desktop homepages crawled.
+
+It’s simply the easiest format to implement, and is done by adding `<script>` elements that are independent of the HTML structure. Other formats, such as Microdata, involve adding attributes to the HTML elements of the page. Since Google advises using JSON-LD as a preferred format, it is not surprising that this is the most popular implementation.
+
+For the most part, inner pages similarly utilize JSON-LD, but there is a slight increase in the use of structure data with Microdata for those pages.
+
+### Most Popular Structured Data Types
+
+#### Homepages
+
+{{ figure_markup(
+  image="most-popular-homepage-schema-types.png",
+  caption="Most popular Homepage schema types.",
+  description="A column chart showing the 15 most popular schema types for homepages. On desktop, pages schema.org/WebSite was found on 35%, schema.org/SearchAction on 29%, schema.org/WebPage on 25%, schema.org/Organization on 25%, schema.org/-UnknownType- on 24%, schema.org/ListItem on 20%, schema.org/BreadcrumbList on 20%, schema.org/ImageObject on 19%, schema.org/EntryPoint on 18%, schema.org/ReadAction on 14%, schema.org/PostalAddress on 8%, schema.org/SiteNavigationElement on 6%, schema.org/WPHeader on 6%, schema.org/Person on 5%, schema.org/WPFooter on 5%. For mobile, they were found on 35%, 28%, 25%, 24%, 23%, 20%, 20%, 20%, 18%, 14%, 8%, 7%, 6%, 5%, and 5% of pages, respectively.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=1774876613&format=interactive",
+  sheets_gid="1091913261",
+  sql_file="structured-data-schema-types-2024.sql",
+  width=600,
+  height=594
+  )
+}}
+
+Compared to 2022, there wasn't a big shift in 2024 in terms of the popularity of structured data types found on homepages. WebSite, SearchAction, and WebPage remained the three most popular schema types since they power the Sitelinks Search Box on Google.
+
+Interestingly, WebSite grew a little more in 2024 to 35% of mobile homepages from 30% in 2022 since Google recommends this as a way to influence a site name in the SERPs.
+
+As for implementing the most popular schema types, there were minor differences between the percentages of mobile and desktop structured data usage.
+
+#### Inner Pages
+
+{{ figure_markup(
+  image="most-popular-inner-page-schema-types.png",
+  caption="Most popular inner page schema types.",
+  description="A column chart showing the 15 most popular schema types for inner pages. On desktop, pages schema.org/ListItem was found on 31%, schema.org/BreadcrumbList on 30%, schema.org/WebSite on 29%, schema.org/WebPage on 27%, schema.org/-UnknownType- on 28%, schema.org/Organization on 27%, schema.org/ImageObject on 24%, schema.org/SearchAction on 19%, schema.org/EntryPoint on 16%, schema.org/ReadAction on 15%, schema.org/Person on 10%, schema.org/Article on 6%, schema.org/SiteNavigationElement on 7%, schema.org/WPHeader on 6%, schema.org/WPFooter on 5%. For mobile, they were found on 30%, 30%, 28%, 27%, 27%, 27%, 24%, 19%, 16%, 15%, 12%, 7%, 7%, 6% and 6% of pages, respectively.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=1786706905&format=interactive",
+  sheets_gid="1091913261",
+  sql_file="structured-data-schema-types-2024.sql",
+  width=600,
+  height=594
+  )
+}}
+
+In terms of the inner pages, ListItem was the most popular schema type in 2024, representing 30% of mobile and 31% of desktop URLs. It stands to reason there would be more listing pages than “leaf” pages, such as product, event, or article pages (although Article schema was the 12th most popular type).
+
+BreadcrumbList was the second most popular schema type. That was to be expected since one would be more likely to show a breadcrumb on an inner page.
+
+What is surprising is that WebSite structured data, which is, at least for Google, homepage specific, was the third most popular schema type on inner pages. A possible explanation is that particular structured data type is often implemented at a site template level and carried across the entire site.
+
+Outside of the more popular schema types, product structured data was found on 4% of mobile pages and 5% of desktop pages.
+
+For a deeper dive into structured data on the web, visit the [structured data chapter](https://almanac.httparchive.org/en/2024/structured-data).
+
+## AMP
+
+Accelerated Mobile Pages, known mostly by the acronym AMP, is a framework for building pages, particularly mobile pages, that offer solid performance. Though designed for mobile pages, it is entirely possible to build a website for all devices using AMP.
+
+It has been, however, a somewhat divisive technology, with many feeling the burden of maintaining a separate version of a page. Additionally, there are some limitations to AMP in performance with which publishers and site owners have grappled.
+
+While it is not a direct ranking factor, in the past certain features, including Top Stories in Google, were reliant on, or at least influenced by, having an AMP version.
+
+### Homepage Usage
