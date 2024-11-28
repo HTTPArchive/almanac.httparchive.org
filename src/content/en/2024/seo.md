@@ -637,3 +637,169 @@ In 2024:
 ### Header tags
 
 Header tags are used to establish the semantic structure of a page. They are important to a search engine's understanding of a page since they help organize the page’s content. They follow a hierarchical order with `<h1>` used to describe the overall on-page content and subheaders such as `<h2>`, `<h3>` and so on to describe sections and subsections.
+
+{{ figure_markup(
+  image="presence-of-h-elements.png",
+  caption="Presence of H elements.",
+  description="A column chart showing the usage of `<H1>` tags through `<H4>` tags. On desktop, 70% of pages have an `<H1>` tag, 71% have an `<H2>` tag, 59% have an `<H3>`  tag, and 37% have an `<H4>`tag. The percentages are slightly lower on mobile at 70%, 70%, 59%, and 36%, respectively.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=441005695&format=interactive",
+  sheets_gid="144160625",
+  sql_file="seo-stats-2024.sql"
+  )
+}}
+
+Header tags have been widely adopted because they’re easy to implement and help improve understanding for users and bots. For desktop pages in 2024, 70% had `<h1>` tags, 71% had `<h2>` tags , 59% had `<h3>` tags, and 37% had `<h4>` tags. Mobile pages were similar at 70%, 70%, 59%, and 36%, respectively.
+
+These numbers vary slightly from 2022. Notable shifts in 2024 include increased adoption of `<h1>` tags, which in 2022 was at 66%. The subsequent headers, however, saw decreased usage. The `<h2>`, which was 71% in 2024 , was previously at 73% in 2022 for both device types. Meanwhile, the  `<h3>` and `<h4>` tags, which were 59% and 37% in 2024, were  higher in 2022 at 62% and 38%, respectively.
+
+{{ figure_markup(
+  image="presence-of-non-empty-h-elements.png",
+  caption="Presence of non-empty H elements.",
+  description="A column chart showing the usage of non-empty `<H1>` tags through `<H4>` tags. On desktop, 70% of pages have an `<H1>` tag, 71% an `<H2>` tag, 59% an `<H3>` tag, and 37% an `<H4>` tag. The percentages are slightly lower on mobile at 70%, 70%, 59%, and 36%, respectively.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=2012049186&format=interactive",
+  sheets_gid="144160625",
+  sql_file="seo-stats-2024.sql"
+  )
+}}
+
+In a continued trend from prior years, relatively few header tags are left empty. The most common empty header tag is the desktop `<h1>` at 6%.
+
+### Images
+
+Images make the web a richer experience. The median page features 14.5 images (with marginal differences between device types). Image use is notably higher for homepages, which have an average of 18.5 images compared to 10.5 images on inner pages.
+
+{{ figure_markup(
+  caption="images on the median desktop homepage",
+  content="19",
+  classes="big-number",
+  sheets_gid="1239720340",
+  sql_file="image-alt-stats-2024.sql"
+)
+}}
+
+For more information on image use and weight, see the [Page Weight Chapter](https://almanac.httparchive.org/en/2024/page-weight).
+
+#### Alt attributes
+
+The image alt attribute provides information about the image for those who, for whatever reason, cannot view it. Its primary purpose is accessibility. Search engines also use the tag for indexing images since they can provide useful content. Therefore, alt tags are considered when serving and ranking images in search engine result pages.
+
+{{ figure_markup(
+  image="percentage-of-img-alt-attributes-present.png",
+  caption="Percentage of `<img>` with `alt` tags present.",
+  description="A distribution chart of pages with an `<img>` tag implementing `alt` attributes. The median usage of images with `alt` attributes is 58.3% on desktop and 57.8% on mobile. At the 10th percentile it’s 0% for both, at the 25th percentile it’s 16% and 15.5%, at the 75th percentile it’s 93.8% and 94.2% and at the 90th percentile it’s 100% for both.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=1763319897&format=interactive",
+  sheets_gid="1239720340",
+  sql_file="image-alt-stats-2024.sql"
+  )
+}}
+
+The median mobile site in 2024 had alt attributes on 57.8% of its images. That’s slightly up from 2022 when 54% of mobile pages used alt tags.
+
+{{ figure_markup(
+  image="percentage-of-img-with-blank-alt.png",
+  caption="Percentage of `<img>` with blank `alt` tags.",
+  description="A distribution chart of pages with an `<img>` element implementing empty `alt` attribute. At the median,14% of mobile and 14.2% of desktop have an `alt` attribute that is empty. At the 75th percentile, this rises to 57.1%,of mobile and 56.8% of mobile. At the 90th percentile, empty `alt` attributes appeared on 90.6% of mobile and 89.5% of desktop.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=308025880&format=interactive",
+  sheets_gid="1239720340",
+  sql_file="image-alt-stats-2024.sql"
+  )
+}}
+
+There was an increase in blank `alt` attributes in 2024. Two years ago, the median page had 0% blank `alt` attributes. Now the median is 14.2% of desktop pages and 14.0% of mobile that are left blank. At the 75th percentile, 56.8% of desktop and 57.1% of mobile pages saw blank `alt` attributes.
+
+{{ figure_markup(
+  image="percentage-of-img-missing-alt.png",
+  caption="Percentage of `<img>` with missing `alt` attributes.",
+  description="A distribution chart of page images missing alt attributes. The median of missing alt attributes on images is 12% on desktop and 13% on mobile sites. At the 10th and 25th percentiles, it’s 0% on both, but above the median (at the 75th percentile), it’s 51% on desktop and 53% on mobile. Finally, at the 75th percentile, it’s 86% of images on desktop and 87% on mobile.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=308025880&format=interactive",
+  sheets_gid="1239720340",
+  sql_file="image-alt-stats-2024.sql"
+  )
+}}
+
+In 2024, the median page saw no missing `alt` attributes on either mobile or desktop pages.  This is a noteworthy drop from 2022 where 12% of desktop and 13% of mobile were missing the attributes. At the 75th percentile, 15.5% of desktop and 15% of mobile did not include `alt` attributes. In 2022, this was 51% and 53% respectively.
+
+The decrease in missing `<img>` `alt` attributes combined with the increase in blank attributes suggests that more CMS instances may be including an `alt` attribute for each image.
+
+### Video
+
+Search engines and users love video. Search engines use videos to enrich SERP pages for traditional queries, video searches, and AI-enhanced summaries of queries.
+
+In 2024, video adoption on mobile and desktop pages was 5.40% and 4.81%, respectively. While a small percentage of pages integrate video, the experience is relatively consistent between device types, as well as on homepage versus inner pages.
+
+{{ figure_markup(
+  image="percentage-of-pages-with-video.png",
+  caption="Percentage of pages with video.",
+  description="5.4% of desktop sites and 4.8% of mobiles pages have video.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=1075984895&format=interactive",
+  sheets_gid="1725966837",
+  sql_file="pages-containing-a-video-element-2024.sql"
+  )
+}}
+
+Only 0.9% of pages had the VideoObject structured data markup in 2024. While this is more than double the 0.4% rate of 2022, it means there is still a significant gap between the percentage of pages that have video and those that have video and schema for it.
+
+## Links
+
+Links on a page are used by search engines in a number of important ways. 
+
+One of the methods that search engines employ to discover new URLs for crawling, for example, is by finding a link targeting it from a page that they’re already crawling and parsing.
+
+Search engines also use links for ranking. Links serve as a proxy for how important and relevant a particular URL might be, based on the links targeting it. This is the basis of PageRank, an algorithm on which Google was built.
+
+When it comes to links, it is not a simple case of more links equals better ranking. There’s a lot more nuance to it. These days, links are less of a factor when it comes to ranking. Search engines have evolved to better detect and rank great content, irrespective of links and, at the same time, to combat manipulation and [link spam.](https://developers.google.com/search/docs/essentials/spam-policies#link-spam)
+
+### Non-Descriptive Links
+
+{{ figure_markup(
+  image="pages-passing-links-have-descriptive-text.png",
+  caption="Pages passing links have descriptive text lighthouse test",
+  description="For homepages, 84% of desktop and 91% of mobile pages pass lighthouse's 'links descriptive text' test. For inner pages it's very similar at 86% of desktop pages and 92% of inner pages.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=1375761573&format=interactive",
+  sheets_gid="1219126486",
+  sql_file="lighthouse-seo-stats-2024.sql"
+  )
+}}
+
+The anchor text of a link, which is the hyperlinked text you click on, helps both users and search engines understand the content of the targeted linked page. Non-descriptive anchor text, such as 'More Info' or 'Click Here', doesn't have any inherent or contextual meaning, and is a lost opportunity from an SEO perspective. It is also bad for accessibility and those who use assistive technologies.
+
+Lighthouse can detect whether there are non-descriptive links on a page. In 2024, 84% of desktop and 91% of mobile pages passed this test. And for inner pages, it was 86% of desktop pages and 92% of mobile pages that passed.
+
+There was a small discrepancy between desktop and mobile, indicating perhaps that on mobile pages there may generally be less poorly indicated call to action links and 'click here' or 'read more' additional links to content, as they might be supplemental to other links on the page to the same target.
+
+### Outgoing Links
+
+Outgoing links are [`<a>` anchor elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a) that have an `href` attribute linking to a different page.
+
+{{ figure_markup(
+  image="median-links-to-same-site.png",
+  caption="Median number of links to same site.",
+  description="A rank distribution of the median count of internal links. On desktop, for the top 1,000 sites, it’s 129 links. For the top 10,000 sites, it’s 122 links. For the top 100,000 sites, it’s 86 links. For the top 1,000,000 sites, it’s 71 links. For the top 10 million sites, it’s 52 links, and for all sites it’s 41 links. For mobile, it’s slightly lower at 129, 122, 86, 71, 52 and 41 links, respectively.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=2081637553&format=interactive",
+  sheets_gid="2137900612",
+  sql_file="outgoing_links_by_rank -2024.sql"
+  )
+}}
+
+Internal links are links to other pages on the same website. The trend continues from 2022 in which desktop pages have more internal links than mobile pages do. This is most likely attributed to developers minimizing the navigation menus and footers on mobile for ease and to accommodate the smaller screens.
+
+
+Overall, the number of internal links on a page have grown, with pages in the top 1,000 sites now having 129 internal links on mobile compared to 106 internal links in 2022. There has been a similar level of growth across all rank groupings.
+
+According to CrUX ranking data, it's clear that the more popular sites have more outgoing internal links. This might simply be because the more visited sites are bigger entities with more useful internal links, as well as their investment in developing 'mega-menu' type navigation to help them handle more pages. 
+
+{{ figure_markup(
+  image="median-links-to-external-sites.png",
+  caption="Median number of links to external sites.",
+  description="A rank distribution of the median count of external links. On desktop, for the top 1,000 sites it’s 16 links. For the top 10,000 sites, it’s 14 links. For the top 100,000 sites, it’s 10 links. For the top 1,000,000 sites, it’s 8 links. For the top 10 million sites, it’s 7 links, and for all sites it’s 6 links. For mobile, it’s slightly lower at 11, 11, 8, 7,6, and 6 links, respectively.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=1915373603&format=interactive",
+  sheets_gid="2137900612",
+  sql_file="outgoing_links_by_rank -2024.sql"
+  )
+}}
+
+External links are links that point to other websites. The link count has remained remarkably similar to that in [2022's chapter](https://almanac.httparchive.org/en/2022/seo#fig-35). There is very slight growth, consisting of one or two links.
+
+Similarly, the more popular sites tend to have more external links, but again the difference is very slight.
+
+### Anchor `rel` attribute use
