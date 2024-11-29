@@ -28,8 +28,7 @@ Search Engine Optimization (SEO) is the practice of improving a website's techni
 
 The Web Almanac's SEO chapter focuses on the critical elements and configurations influencing a website's organic search visibility. The primary goal is to provide actionable insights that empower website owners to enhance their sites' crawlability, indexability, and overall search engine rankings. By conducting a comprehensive analysis of prevalent SEO factors, we hope that websites can uncover the most impactful strategies and techniques for optimizing a website's presence in search results. 
 
-This chapter combines data from [HTTP Archive](https://httparchive.org/), [Lighthouse]|
-(https://developer.chrome.com/docs/lighthouse/overview/), [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report), and custom metrics to document the state of SEO and its context in the digital landscape.
+This chapter combines data from [HTTP Archive](https://httparchive.org/), [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/), [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report), and custom metrics to document the state of SEO and its context in the digital landscape.
 
 
 ## Crawlability & indexability 
