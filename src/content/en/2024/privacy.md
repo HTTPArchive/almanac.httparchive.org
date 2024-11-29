@@ -1,24 +1,27 @@
 ---
-#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Privacy
 description: Privacy chapter of the 2024 Web Almanac covers the adoption and impact of online tracking, privacy preference signals, and browser initiatives for a privacy-friendlier web.
 hero_alt: Hero image of Web Almanac characters with cameras, phones, and microphones acting like paparazzi while another character pulls back a shower curtain to reveal a web page behind it.
-authors: [Benjamin Standaert, Yana Dimova, Max Ostapenko, Umar Iqbal, Chris Böttger, Tobias Urban]
-reviewers: [Matteo Große-Kampmann, AlbertoFDR]
-editors: [Caleb Queern]
-analysts: [Benjamin Standaert, Max Ostapenko, Yash Vekaria]
+
+authors: [bgstandaert, ydimova, max-ostapenko, umariqbal, ChrisBeeti, Yash-Vekaria]
+reviewers: [AlbertoFDR]
+editors: []
+analysts: [bgstandaert, max-ostapenko, Yash-Vekaria]
 translators: []
+
 umariqbal_bio: Umar Iqbal is an assistant professor in the department of Computer Science and Engineering at the <a hreflang="en" href="https://wustl.edu/">Washington University in St. Louis</a>. His research focus on bringing transparency and control in computing systems to empower users, platforms, and regulators to improve user privacy and security.
-chrisboettger_bio: Chris Böttger is a PhD candidate in Computer Science at the <a href="https://www.en.w-hs.de/">Westphalian University of Applied Science</a>. His research focuses on web and network security, primarily focusing on user privacy and tracking technologies.
+ChrisBeeti_bio: Chris Böttger is a PhD candidate in Computer Science at the <a href="https://www.en.w-hs.de/">Westphalian University of Applied Science</a>. His research focuses on web and network security, primarily focusing on user privacy and tracking technologies.
 tobiasurban_bio: Doctor of Engineering Tobias Urban is a Professor of Computer Science, specializing in Cybersecurity, at the <a href='https://www.en.w-hs.de/'>Westphalian University of Applied Sciences</a>. His research focuses on IT security, data protection, and the impact of the GDPR on the Internet.
+
 results: https://docs.google.com/spreadsheets/d/18r8cT6x9lPdM-rXvXjsqx84W7ZDdTDYGD59xr0UGOwg/
-featured_quote: TODO
+
+featured_quote: Facebook's tracking has gone undercover, shifting from third-party cookies to first-party ones, highlighting the shift to first-party tracking as a key trend in 2024.
 featured_stat_1: 3
 featured_stat_label_1: Most common number of trackers per page
-featured_stat_2: 39.6%
+featured_stat_2: 63%
 featured_stat_label_2: Protected Audience API presence across pages
-featured_stat_3: TODO
-featured_stat_label_3: TODO
+featured_stat_3: 14.3%
+featured_stat_label_3: Pages with the Facebook's first-party cookie
 ---
 
 ## Introduction
@@ -40,12 +43,11 @@ Unfortunately, trackers engage in an arms-race with privacy-enhancing technologi
   caption="Distribution of trackers per page.",
   description="A line graph showing the distribution of trackers per page.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=2035809959&format=interactive",
-  sheets_gid="936905739",
-  sql_file=""
+  sheets_gid="936905739"
   )
 }}
 
-We mostly leverage data from [WhoTracks.Me](http://WhoTracks.Me), a publicly available list that catalogs third-party trackers present across a wide range of websites. By utilizing this resource, we identify the most prevalent trackers on the websites. This helped us assess the dominance of certain tracking companies and better understand the overall landscape of third-party tracking.
+**Identifying trackers:**We mostly leverage data from [WhoTracks.Me](http://WhoTracks.Me), a publicly available list that catalogs third-party trackers present across a wide range of websites. By utilizing this resource, we identify the most prevalent trackers on the websites. This helped us assess the dominance of certain tracking companies and better understand the overall landscape of third-party tracking.It’s important to note that WhoTracks.Me identifies several trackers at the domain level. While a significant number of URLs associated with these domains engage in tracking, not all URLs from those domains necessarily do.
 
 Online tracking is a routine practice on the internet. A significant number of websites include specialized online services that record user activities within their website and across sites. Our findings from Figure 1 reveal that 95% of the desktop and 94% of the mobile websites include at least one tracker. We also note that more than a quarter of both desktop (i.e., 27%) and mobile (i.e., 26%) sites contain more than 10 trackers. These trackers enable companies to build detailed user profiles based on online behavior, which are regularly used for personalized advertising and to provide insights to website owners. In the following sections, we explore the various techniques trackers use to monitor user activity and examine how they attempt to bypass the privacy protections introduced by modern browsers.
 
@@ -57,7 +59,7 @@ When users visit the websites where such trackers are embedded, the cookies asso
 
 #### Third-party tracking services
 
-Figure 1 provides the distribution of prevalence of online tracking domains. We note that Google-owned domains dominate the tracking landscape, with googleapis.com and Google’s gstatic.com appearing on the highest percentage of pages — 68% and 61%, respectively. Other prominent trackers include google\_tag and google\_analytics, each seen on over 50% of pages, highlighting the significant reach of Google's tracking services. In addition to Google and its associated services, we also observe a notable presence of Facebook and Cloudflare.
+Figure 12.1 provides the distribution of prevalence of online tracking domains. We note that Google-owned domains dominate the tracking landscape, with googleapis.com and Google’s gstatic.com appearing on the highest percentage of pages — 68% and 61%, respectively. Other prominent trackers include google\_tag and google\_analytics, each seen on over 50% of pages, highlighting the significant reach of Google's tracking services. In addition to Google and its associated services, we also observe a notable presence of Facebook and Cloudflare.
 
 {{ figure_markup(
   image="top-whotracksme-trackers.png",
@@ -81,9 +83,9 @@ Figure 1 provides the distribution of prevalence of online tracking domains. We 
   )
 }}
 
-Third-party cookies are the main mechanism used to track users on the web. Our measurements reveal that Google’s doubleclick.com is the largest source of third-party cookies, with presence on more than a quarter of the crawled web pages (Figure 2). Compared to the [Privacy 2022 analysis](https://almanac.httparchive.org/en/2022/privacy), the top sources of third-party cookies have remained largely static, with the notable absence of Facebook, previously the second-largest source of third-party cookies. However, as shown in the next section, we instead see a significant number of cookies set by Facebook in the first-party context.
+Third-party cookies are the main mechanism used to track users on the web. Our measurements reveal that Google’s doubleclick.com is the largest source of third-party cookies, with presence on more than a quarter of the crawled web pages (Figure 12.2). Compared to the [Privacy 2022 analysis](https://almanac.httparchive.org/en/2022/privacy), the top sources of third-party cookies have remained largely static, with the notable absence of Facebook, previously the second-largest source of third-party cookies. However, as shown in the next section, we instead see a significant number of cookies set by Facebook in the first-party context.
 
-In order to identify trackers that share cookies across many domains, we also examine the most common names for third-party cookies (represented in Figure 3). We note that the top four cookie names correspond to cookies set by Google’s advertising products and Youtube, as described in [their documentation](https://business.safety.google/adscookies/), and the fifth most-common name corresponds to a cookie set by Cloudflare.
+In order to identify trackers that share cookies across many domains, we also examine the most common names for third-party cookies (represented in Figure 12.3). We note that the top four cookie names correspond to cookies set by Google’s advertising products and Youtube, as described in [their documentation](https://business.safety.google/adscookies/), and the fifth most-common name corresponds to a cookie set by Cloudflare.
 Cloudflare’s cookie, \_\_cf\_bm, is used to “[identify and mitigate automated traffic](https://developers.cloudflare.com/fundamentals/reference/policies-compliances/cloudflare-cookies/#__cf_bm-cookie-for-cloudflare-bot-products)”. As this cookie is set on the domains of Cloudflare’s individual customers, it is not captured in a per-domain ranking of cookies.
 
 {{ figure_markup(
@@ -95,8 +97,6 @@ Cloudflare’s cookie, \_\_cf\_bm, is used to “[identify and mitigate automate
   sql_file="cookies_top_third_party_names.sql"
   )
 }}
-
-#####
 
 ##### First-Party Cookies
 
@@ -110,13 +110,13 @@ Cloudflare’s cookie, \_\_cf\_bm, is used to “[identify and mitigate automate
   )
 }}
 
-When measuring common first-party cookies, we see extensive evidence of analytics and advertising services setting cookies in the first-party context (Figure 4). The top two cookies, \_ga and \_gid, are both part of Google Analytics. The next cookie, \_fbp, is a tracking cookie set by Meta. Since 2022, Meta’s cookie tracking appears to have moved primarily from the third-party context into the first-party context; the default setting for the Meta Pixel [now sets first-party cookies](https://www.facebook.com/business/help/471978536642445) . The majority of the remaining cookies match cookies set by Google, as described in their [documentation](https://business.safety.google/adscookies/). Only two of the top cookie names, PHPSESSID and XSRF-TOKEN, have a clear non-tracking purpose. PHPSESSID is the default cookie name used by the [PHP framework](https://www.php.net/manual/en/session.configuration.php#ini.session.name) to store the user’s session ID, and XSRF-TOKEN is a default name used by the [Angular framework](https://v17.angular.io/api/common/http/HttpClientXsrfModule).
+When measuring common first-party cookies, we see extensive evidence of analytics and advertising services setting cookies in the first-party context (Figure 12.4). The top two cookies, \_ga and \_gid, are both part of Google Analytics. The next cookie, \_fbp, is a tracking cookie set by Meta. Since 2022, Meta’s cookie tracking appears to have moved primarily from the third-party context into the first-party context; the default setting for the Meta Pixel [now sets first-party cookies](https://www.facebook.com/business/help/471978536642445) . The majority of the remaining cookies match cookies set by Google, as described in their [documentation](https://business.safety.google/adscookies/). First-party cookies can be used either to track activity on a single site or for cross-site tracking; we do not attempt to determine the exact purpose of these cookies. Only two of the top cookie names, PHPSESSID and XSRF-TOKEN, have a clear non-tracking purpose. PHPSESSID is the default cookie name used by the [PHP framework](https://www.php.net/manual/en/session.configuration.php#ini.session.name) to store the user’s session ID, and XSRF-TOKEN is a default name used by the [Angular framework](https://v17.angular.io/api/common/http/HttpClientXsrfModule).
 
 [Cookies chapter](https://almanac.httparchive.org/en/2024/cookies) further describes the details and usage trends of cookies.
 
 ### Stateless Tracking
 
-In contrast to stateful tracking, where identifiers are stored in the browser, in stateless tracking, identifiers are generated at runtime.
+In contrast to stateful tracking, where identifiers are stored in the browser, in stateless tracking, identifiers are generated at runtime. These identifiers often depend on unique characteristics of the user’s device or browser. Although this method may be less reliable than stateful tracking, it is typically more difficult to identify and block.
 
 #### Browser Fingerprinting
 
@@ -124,7 +124,7 @@ Browser fingerprinting is one of the most common stateless tracking techniques. 
 
 As browsers continue to expand the restrictions placed on cookies, fingerprinting has become an attractive alternative. [Prior studies](https://ieeexplore.ieee.org/abstract/document/9519502) have found that fingerprinting is now common and is increasing in prevalence. Here, we attempt to determine the most common sources of fingerprinting across the web.
 
-In our analysis, we first looked for the presence of ed for five different, well-known fingerprinting libraries. Wand we found that, among the libraries tested, the most prevalent library used on the web to perform fingerprinting is FingerprintJS ([FingerprintJS](https://github.com/fingerprintjs/fingerprintjs)), which we found on 0.57% of all websites. Most likely this is because the library is open source, and has a free version. Compared to [our measurements from 2022](https://almanac.httparchive.org/en/2022/privacy), we find that the use of these fingerprinting libraries has slightly decreased; however, it is important to note that this year we crawl roughly \~4 million extra webpages.
+In our analysis, we first looked for the presence of well-known fingerprinting libraries. We found that, among the libraries tested, the most prevalent library used on the web to perform fingerprinting is FingerprintJS ([FingerprintJS](https://github.com/fingerprintjs/fingerprintjs)), which we found on 0.57% of all websites. Most likely this is because the library is open source, and has a free version. Compared to [our measurements from 2022](https://almanac.httparchive.org/en/2022/privacy), we find that the use of these fingerprinting libraries has slightly decreased; however, it is important to note that this year we crawl roughly \~4 million extra webpages.
 
 {{ figure_markup(
   image="Fingerprinting-usage.png",
@@ -136,7 +136,7 @@ In our analysis, we first looked for the presence of ed for five different, well
   )
 }}
 
-While we detect the prevalence of well-knowntop fingerprinting vendors, there are several other services (including first-part scripts) that may engage in fingerprinting. To identify such potential sources of fingerprinting, we start by examining the source code of [FingerprintJS](https://github.com/fingerprintjs/fingerprintjs), a commonly-used fingerprinting library. We then compile a list of APIs used by the library, and search for the occurrences of these APIs in all of the crawled scripts. We mark any script with 5 or more usages as a *potential* fingerprinting script. We then rank the scripts by the number of pages on which they are loaded.
+While we detect the prevalence of well-known fingerprinting vendors, there are several other services (including first-part scripts) that may engage in fingerprinting. To identify such potential sources of fingerprinting, we start by examining the source code of [FingerprintJS](https://github.com/fingerprintjs/fingerprintjs), a commonly-used fingerprinting library. We then compile a list of APIs used by the library, and search for the occurrences of these APIs in all of the crawled scripts. We mark any script with 5 or more usages as a *potential* fingerprinting script. We then rank the scripts by the number of pages on which they are loaded.
 
 {{ figure_markup(
   image="top-potential-fingerprinting-scripts.png",
@@ -148,7 +148,7 @@ While we detect the prevalence of well-knowntop fingerprinting vendors, there ar
   )
 }}
 
-Figure 5 presents the distribution of commonly used fingerprinting scripts on websites. We find a mixture of scripts that are primarily used for tracking, and scripts that also have a non-tracking purpose. Recaptcha, the most common script, is known to use fingerprinting to separate humans from bots ([https://media.kasperskycontenthub.com/wp-content/uploads/sites/63/2017/11/21031220/asia-16-Sivakorn-Im-Not-a-Human-Breaking-the-Google-reCAPTCHA-wp.pdf](https://media.kasperskycontenthub.com/wp-content/uploads/sites/63/2017/11/21031220/asia-16-Sivakorn-Im-Not-a-Human-Breaking-the-Google-reCAPTCHA-wp.pdf)). Google Ads and Yandex Metrika are also primarily tracking scripts. However, other scripts, such as the Google Maps API and Youtube embed API, also have a non-tracking purpose, and so their usage of these APIs may have purposes other than fingerprinting. Further manual analysis is required to confirm whether these scripts are actually performing fingerprinting.
+Figure 12.5 presents the distribution of commonly used fingerprinting scripts on websites. We find a mixture of scripts that are primarily used for tracking, and scripts that also have a non-tracking purpose. Recaptcha, the most common script, is [known to use fingerprinting](https://media.kasperskycontenthub.com/wp-content/uploads/sites/63/2017/11/21031220/asia-16-Sivakorn-Im-Not-a-Human-Breaking-the-Google-reCAPTCHA-wp.pdf) to separate humans from bots. Google Ads and Yandex Metrika are also primarily tracking scripts. However, other scripts, such as the Google Maps API and Youtube embed API, also have a non-tracking purpose, and so their usage of these APIs may have purposes other than fingerprinting. Further manual analysis is required to confirm whether these scripts are actually performing fingerprinting.
 
 ## Evading Tracking Protections
 
@@ -156,7 +156,7 @@ As tracking protections are becoming common on web browsers, e.g., third-party b
 
 We examined two prominent tracking protection evasion practices: CNAME tracking and bounce tracking, and looked into how prevalent these are on the web and how browsers are trying to reduce these and maintain user privacy by default.
 
-### CNAME cloaking
+#### CNAME cloaking
 
 CNAME cloaking leverages the DNS CNAME record to mask third-party trackers as first-party entities. A CNAME record allows a subdomain to point to another domain. Trackers utilize this by setting up a CNAME record on a subdomain of the website they are embedded within. For example, `tracker.example.com` could point to `tracker.trackingcompany.com`. When the tracker sets a cookie, it appears to originate from `example.com`, effectively becoming a first-party cookie and bypassing many third-party cookie blocking mechanisms. This tactic is particularly effective because most tracking protection measures concentrate on restricting third-party access, while first-party cookies are generally allowed for essential website functionality.
 
@@ -174,9 +174,9 @@ In 2022, our analysis of CNAME cloaking relied on mapping first-party hostnames 
   )
 }}
 
-The 2024 Web Almanac data reveals a continuing trend of CNAME cloaking, with `omtrdc.net` and `adobedc.net`, both associated with Adobe Analytics, leading the site analytics category with appearances on over 0.031% (\~9000) and 0.015% (\~4500) desktop pages respectively. The prevalence of analytics-related domains suggests that CNAME cloaking is not solely confined to advertising, but is also utilized for broader data collection purposes. The presence of `actionsoftware.com` and other advertising-related domains further solidifies the use of this technique for targeted advertising. The data highlights that while overall CNAME usage remains relatively low compared to traditional tracking methods, its concentration on high-traffic websites presents a significant privacy concern for a large number of users.
+The 2024 Web Almanac data reveals a continuing trend of CNAME cloaking, with `omtrdc.net` and `adobedc.net`, both associated with Adobe Analytics, leading the site analytics category with appearances on over 0.031% (\~9000) and 0.015% (\~4500) mobile pages respectively. The prevalence of analytics-related domains suggests that CNAME cloaking is not solely confined to advertising, but is also utilized for broader data collection purposes. The presence of `actionsoftware.com` and other advertising-related domains further solidifies the use of this technique for targeted advertising. The data highlights that while overall CNAME usage remains relatively low compared to traditional tracking methods, its concentration on high-traffic websites presents a significant privacy concern for a large number of users.
 
-### Bounce tracking
+#### Bounce tracking
 
 Bounce tracking represents another sophisticated evasion technique that allows trackers to read cookies from their first-party context. More specifically, bounce tracking tricks the browser into visiting the tracking domain as a first-party site, allowing it to read and write cookies from its first-party storage. Instead of directly communicating with a tracking server, the browser is first redirected to an intermediary domain – the "bounce" domain ([demo](https://bounce-tracking-demo.glitch.me/)). Thus in case third-party cookies are blocked, trackers can read persistent identifiers from their first-party storage. This intermediary then redirects to the actual website.
 
@@ -194,19 +194,19 @@ Given the constrained nature of the crawl, limited to the loading of a specific 
   )
 }}
 
-Figure 7 represents the domains that engage in bounce tracking like patterns. We note that [`medium.com`](http://medium.com) (available on 0.009% or 1515 mobile and 0.013% or 1641 desktop pages) and `indapass.hu` ([IndaMedia](https://indamedia.hu/)) (0.012% or 1991 mobile pages) appear the most in bounce tracking like navigations. These companies use bounce tracking to manage a global identity of the visitors [to count visits and improve services](https://policy.medium.com/medium-privacy-policy-f03bf92035c9) (both Medium and IndaMedia are publishing companies)
+Figure 12.7 represents the domains that engage in bounce tracking like patterns. We note that [`medium.com`](http://medium.com) (available on 0.009% or 1515 mobile and 0.013% or 1641 desktop pages) and `indapass.hu` ([IndaMedia](https://indamedia.hu/)) (0.012% or 1991 mobile pages) appear the most in bounce tracking like navigations. These companies use bounce tracking to manage a global identity of the visitors [to count visits and improve services](https://policy.medium.com/medium-privacy-policy-f03bf92035c9) (both Medium and IndaMedia are publishing companies)
 
 Our analysis, limited to crawlable pages, is not exhaustive, and not all identified domains necessarily exhibit privacy-intrusive behavior. Legitimate uses, like SSO (e.g., login.taobao.com) and payment solutions can often be distinguished from tracking by the presence of user interaction on the bounce domain.
 
 ## Browser policies to improve privacy
 
-It is a common practice for websites to include content from third-party services, such as the advertising and social media platforms. Unfortunately, third-party services cannot be implicitly trusted, as more often than not, they directly harm user privacy, e.g., third-party tracking services (see [Third-party](https://almanac.httparchive.org/en/2024/third-parties) chapter for a more detailed analysis). Recently, web standards bodies and browser vendors have tried to step in and provide many controls to website developers that they can use to mitigate privacy threats posed by third-party services. We analyze the prevalence of such prominent browser-provided controls. Note that some of the browser policies, such as the Permissions Policy, have both security and privacy implications; we discuss such policies in the [Security chapter](https://almanac.httparchive.org/en/2024/security#permissions-policy).
+It is a common practice for websites to include content from third-party services, such as the advertising and social media platforms. Unfortunately, third-party services cannot be implicitly trusted, as more often than not, they directly harm user privacy, e.g., third-party tracking services (see [Third-party](https://almanac.httparchive.org/en/2024/third-parties) chapter for a more detailed analysis). Recently, web standards bodies and browser vendors have tried to step in and provide many controls to website developers that they can use to mitigate privacy threats posed by third-party services. We analyze the prevalence of such prominent browser-provided controls. Note that some of the browser policies, such as Permissions Policy, have both security and privacy implications; we discuss such policies in the [Security chapter](https://almanac.httparchive.org/en/2024/security#permissions-policy).
 
-### User-Agent Client Hints
+#### User-Agent Client Hints
 
 In an effort to minimize the amount of information exposed about the browsing environment, particularly through the User-Agent string, the User-Agent Client Hints mechanism is introduced by browsers and standards bodies.
 
-The key idea is that the websites that want to access certain information about the users’ browsing environment (browser version, operating system, screen resolution, etc.) have to set a header (Accept-CH) in the first response.
+The key idea is that the websites that want to access certain high entropy information about the users’ browsing environment have to set a header (Accept-CH) in the first response.
 
 {{ figure_markup(
   image="Percentage-of-pages-with-Client-Hints.png",
@@ -218,7 +218,7 @@ The key idea is that the websites that want to access certain information about 
   )
 }}
 
-Figure 8 presents the prevalence of Accept-CH header. We note that it is deployed by 16.18% of the top-1K and 5.22% of the top-10K websites. When we look at the adoption of sites that respond with the Accept-CH header in comparison with the results from [Privacy 2022 chapter](https://almanac.httparchive.org/en/2022/privacy#user-agent-client-hints)  (top 1K: 9.53%, top 10K: 3.14%), we see an increase in adoption by 6.65% for the 1K popular sites. We surmise that this increase in adoption is related to the fact that Chromium has been reducing the information that is shared in the User-Agent string (through the [User-Agent Reduction plan](https://www.chromium.org/updates/ua-reduction/)). For all websites, Accept-CH is deployed in 0.44% and 0.49% of all the crawled websites for desktop and mobile, respectively.
+Figure 12.8 presents the prevalence of Accept-CH header. We note that it is deployed by 15.8% of the top-1K and 5.1% of the top-10K mobile websites. When we look at the adoption of sites that respond with the Accept-CH header in comparison with the results from [Privacy 2022 chapter](https://almanac.httparchive.org/en/2022/privacy#user-agent-client-hints) (top 1K: 9.11%, top 10K: 3.12%), we see an increase in adoption by 6.69% for the 1K popular sites. We surmise that this increase in adoption is related to the fact that Chromium has been reducing the information that is shared in the User-Agent string (through the [User-Agent Reduction plan](https://www.chromium.org/updates/ua-reduction/)). For all websites, Accept-CH is deployed in 0.4% and 0.5% of all the crawled websites for desktop and mobile, respectively.
 
 #### Referrer Policy
 
@@ -236,7 +236,7 @@ By default, most user agents include a Referer header, which discloses to third 
 
 By making use of the [Referrer Policy](https://developer.mozilla.org/docs/Web/HTTP/Headers/Referrer-Policy), websites can limit the instances in which the Referrer header is included in requests and thus improve user privacy.
 
-Referrer policy can be included both at the document-level and also at the request-level. We find that referrer policy is deployed on 33.87% of the desktop web pages and 32% of the mobile web pages, overall. On 21.82% of such pages, refer policy is deployed at the request-level with the ref=noreferer HTML tag, and in 11.31% of the instances, the referrer policy is deployed at the document level.
+Referrer policy can be included both at the document-level and also at the request-level. We find that referrer policy is deployed on 33.87% of the desktop web pages and 32% of the mobile web pages, overall. On 21.82% of such pages, Referrer Policy is deployed at the request-level with the ref=noreferer HTML tag, and in 11.31% of the instances, the referrer policy is deployed at the document level.
 
 {{ figure_markup(
   image="Most-common-Referrer-Policy-values.png",
@@ -250,7 +250,7 @@ Referrer policy can be included both at the document-level and also at the reque
 
 While referrer policy allows to mitigate some tracking, not all of its options have the same effect. Thus we next measure the deployment of individual referrer policy options.
 
-Our analysis reveals that \`strict-origin-when-cross-origin\` is the most commonly used option of the Referrer Policy, with a deployment on 8% of the crawled web pages. We also note that its deployment has increased by nearly 3X as compared to [Privacy 2022 chapter](https://almanac.httparchive.org/en/2022/privacy#user-agent-client-hints)  when it was deployed on only 2.68% of the crawled web pages.
+Our analysis reveals that \`strict-origin-when-cross-origin\` is the most commonly used option of the Referrer Policy, with a deployment on 8% of the crawled web pages. We also note that its deployment has increased by nearly 3X as compared to [Privacy 2022 chapter](https://almanac.httparchive.org/en/2022/privacy#user-agent-client-hints) when it was deployed on only 2.68% of the crawled web pages.
 
 \`strict-origin-when-cross-origin\` is also the default option (i.e., if no policy is specified) and only shares the full url in the \`referer\` header to the same-origin requests. For cross-origin requests, the path and the query string parameters are stripped out.
 
@@ -258,7 +258,7 @@ The next most commonly deployed option is \`no-referrer-when-downgrade\`, which 
 
 #### Privacy-related Origins Trials
 
-Origin trials allow website developers to test new features released by web browsers, e.g., browser APIs. Once website developers register in origin trials, the new browser features are made available to all their users. Since web browsers are increasingly deploying privacy-enhancing features, such as eliminating third-party cookies, we next analyze whether website developers are participating in privacy-related origin trials to assess their readiness for the upcoming privacy-enhancing features in browsers.
+Origin trials allow website developers to test new features released by web browsers (e.i., Chrome or FireFox), e.g., browser APIs. Once website developers register in origin trials, the new browser features are made available to all their users. Since web browsers are increasingly deploying privacy-enhancing features, such as eliminating third-party cookies, we next analyze whether website developers are participating in privacy-related origin trials to assess their readiness for the upcoming privacy-enhancing features in browsers.
 
 {{ figure_markup(
   image="Privacy-focused-Origin-Trials.png",
@@ -270,20 +270,19 @@ Origin trials allow website developers to test new features released by web brow
   )
 }}
 
-Among the privacy-enhancing features, we note that \`disableThirdPartyStoragePartitioning\` is the most widely used control with deployment on 11.21% of the desktop websites.
-\`disableThirdPartyStoragePartitioning\` allows a top-level site to un-partition (temporarily remove isolation by top-level site) in storage, service workers, and communication APIs in third-party content embedded on its pages.
+Among the privacy-enhancing features, we note that \`disableThirdPartyStoragePartitioning\` is the most widely used control with deployment on 10.21% of the mobile websites. \`disableThirdPartyStoragePartitioning\` allows a top-level site to un-partition (temporarily remove isolation by top-level site) in storage, service workers, and communication APIs in third-party content embedded on its pages.
 
-It means that more than 11% of the websites are testing a feature that disables the benefits provided by the partitioning of third-party storage. Note that the [storage partitioning](https://developers.google.com/privacy-sandbox/cookies/storage-partitioning) applies to select storage related APIs that do not include cookies. The second most prevalent trial is [`FledgeBiddingAndAuctionServer`](https://chromestatus.com/feature/4649601971257344) with deployment over 6.4% of the desktop websites.
+It means that more than 10% of the websites are testing a feature that disables the benefits provided by the partitioning of third-party storage. Note that the [storage partitioning](https://developers.google.com/privacy-sandbox/cookies/storage-partitioning) applies to select storage related APIs that do not include cookies. The second most prevalent trial is [`FledgeBiddingAndAuctionServer`](https://chromestatus.com/feature/4649601971257344) with deployment over 6.62% of the mobile websites.
 
 ### Privacy Sandbox Proposals
 
-**Overview.** Privacy Sandbox, introduced by Google in 2019, contains several proposals that are aimed at curbing privacy-invasive practices on the web by aiming to strike a balance between user privacy and the continued viability of online advertising, which supports free content and services on the web. Among privacy sandbox proposals, Topics, Protected Audience, and Attribution Reporting have garnered significant attention because of their implications on targeted advertising, interest-based ad auctions, and privacy-preserving conversion tracking, respectively. In this section, we measure the adoption of these proposals to assess the readiness of websites and ad-tech (e.g., advertising platforms, tracking entities), in incorporating these proposals.
+**Overview.** Privacy Sandbox, introduced by Google in 2019, contains several proposals that are aimed at curbing privacy-invasive practices on the web by aiming to strike a balance between user privacy and the continued viability of online advertising, which supports free content and services on the web. Among privacy sandbox proposals, Topics, Protected Audience, and Attribution Reporting have garnered significant attention because of their implications on targeted advertising, interest-based ad auctions, and privacy-preserving conversion tracking, respectively. In this section, we measure the adoption of these proposals to assess the readiness of websites and ad-tech (e.g., advertising platforms, tracking entities), in incorporating these proposals. Note that some of these proposals are not solely limited to Chrome, they are tested by other browsers such as Microsoft Edge.
 
-We first provide the prevalence of these APIs. We note that Topics API, Protected Audience API (previously known as FLEDGE), and Attribution Reporting API have the highest presence across different advertising publishing technologies. These are respectively present on 36%, 65%, and 30% of top-1K websites. Amongst top-10M websites, the presence drops to 8%, 61%, and 24%, respectively. Note that the presence does not imply the adoption of these APIs by websites.
+We first provide the prevalence of these APIs. We note that Topics API, Protected Audience API (previously known as FLEDGE), and Attribution Reporting API have the highest presence across different advertising publishing technologies. These are respectively present on 33%, 63%, and 27% of top-1K websites. Amongst top-10M websites, the presence drops to 7%, 63%, and 24%, respectively. Note that the presence does not imply the adoption of these APIs by websites.
 
 #### **Topics API**
 
-Google’s Topics proposal works by assigning a small set of high-level topics to a user based on their recent browsing activity, such as "sports" or "technology". These topics are stored locally on the user's devices and shared with websites and advertisers to serve relevant ads. Users also have the ability to see and control the topics that are shared with advertisers. Since this API can be deployed both through the HTTP headers and JavaScript, we measure the adoption of **Topics API** across both of these axes. We observe JavaSscript-based presence (i.e., document.browsingTopics) (8% pages) to be more widespread than header-based presence (i.e., sec-browsing-topics) of Topics (\~4% pages).
+Google’s Topics proposal works by assigning a small set of high-level topics to a user based on their recent browsing activity, such as "sports" or "technology". These topics are stored locally on the user's devices and shared with websites and advertisers to serve relevant ads. Users also have the ability to see and control the topics that are shared with advertisers. Since this API can be deployed both through the HTTP headers and JavaScript, we measure the adoption of **Topics API** across both of these axes. We observe JavaScript-based presence (i.e., document.browsingTopics) 7% pages) to be more widespread than header-based presence (i.e., sec-browsing-topics) of Topics (\~4% pages).
 
 {{ figure_markup(
   image="Topics-API-Presence.png",
@@ -309,7 +308,7 @@ Surprisingly, we also note that the Federated Learning of Cohorts API (**FLoC**)
 
 #### **Protected Audience API**
 
-Protected Audience API enables on-device auctions by the browser, to choose relevant ads from websites the user has previously visited. It eliminates the need for privacy-invasive data collection and pervasive tracking practices that are otherwise employed for remarketing and targeted advertising. This ensures that advertisers can serve relevant ads without needing to track users across sites. Amongst different method calls available for the **Protected Audience API,** we note that navigator.joinAdInterestGroup() is used the most by third-party services – 61% of top-10M websites. This API provides an ability to a third-party service to direct the browser to add an interest group to the browser's membership list for the visiting user. Recent research ([Calderonio et al.](https://www.usenix.org/system/files/usenixsecurity24-calderonio.pdf), [Long and Evans](https://arxiv.org/pdf/2405.08102)) has discovered various privacy flaws with respect to the Protected Audience API. For example, third-party trackers can potentially link the interest groups of the users to an actual user using side-channels and track them across sites. Possibility of colluding entities further alleviate the associated privacy risk.
+Protected Audience API enables on-device auctions by the browser, to choose relevant ads from websites the user has previously visited. It eliminates the need for privacy-invasive data collection and pervasive tracking practices that are otherwise employed for remarketing and targeted advertising. This ensures that advertisers can serve relevant ads without needing to track users across sites. Amongst different method calls available for the **Protected Audience API,** we note that navigator.joinAdInterestGroup() is used the most by third-party services – 63% of top-10M websites. This API provides an ability to a third-party service to direct the browser to add an interest group to the browser's membership list for the visiting user. Recent research ([Calderonio et al.](https://www.usenix.org/system/files/usenixsecurity24-calderonio.pdf), [Long and Evans](https://arxiv.org/pdf/2405.08102)) has discovered various privacy flaws with respect to the Protected Audience API. For example, third-party trackers can potentially link the interest groups of the users to an actual user using side-channels and track them across sites. Possibility of colluding entities further alleviate the associated privacy risk.
 
 {{ figure_markup(
   image="Protected-Audience-(FLEDGE)-API-Presence.png",
@@ -353,13 +352,13 @@ Since most of the popular browsers are competing with each other in the space of
   )
 }}
 
-***Limitation**: Note that by “presence”, we refer to the mere presence of privacy sandbox API calls in the JavaSscript in this analysis. This does not mean that the APIs are guaranteed to be executed or used during the runtime.*
+***Limitation**: Note that by “presence”, we refer to the mere presence of privacy sandbox API calls in the JavaScript in this analysis. This does not mean that the APIs are guaranteed to be executed or used during the runtime.*
 
 #### **Related Websites Set**
 
 [Related Website Sets](https://developers.google.com/privacy-sandbox/cookies/related-website-sets) allow websites from the same owner to share cookies among themselves.The creation and submission of a Related Website Set is done at the moment through opening a pull request on a [GitHub repository](https://github.com/GoogleChrome/related-website-sets) that the Google project contributors check and merge if deemed valid. Websites that belong to the same related website set must also indicate it by placing a corresponding file at the [.well-known URI](https://www.iana.org/assignments/well-known-uris/well-known-uris.xhtml) `.well-known/related-website-set.json`.
 
-Chrome ships with a pre-loaded file containing related website sets validated by the Chrome team. At the moment of writing (version "2024.8.10.0"), there are 64 distinct related website sets. Each related website set contains a primary domain and a list of other domains related to the primary one under one of the following attributes: `associatedSites`, `servicesSites`, and/or `ccTLDs`. These 64 primary domains are each associated with secondary domains as part of their set: 60 sets contain `associatedSites`, 11 `servicesSites`, and 7 `ccTLDs` – see the [Cookies 2024 chapter](https://almanac.httparchive.org/en/2024/cookies) for more results.
+Chrome ships with a pre-loaded file containing related website sets validated by the Chrome team. At the moment of writing (version "2024.8.10.0"), there are 64 distinct related website sets. Each related website set contains a primary domain and a list of other domains related to the primary one under one of the following attributes: `associatedSites`, `servicesSites`, and/or `ccTLDs`. These 64 primary domains are each associated with secondary domains as part of their set: 60 sets contain `associatedSites`, 11 `servicesSites`, and 7 `ccTLDs` – see the [Cookies 2024 chapter](https://almanac.httparchive.org/en/2024/cookies#related-website-sets) for more results.
 
 ### Law and Policy
 
@@ -403,23 +402,11 @@ Finally, the shift from TCF v1 to TCF v2 is evident. While TCF v1 in 2022 had so
 
 Our analysis of Consent Management Platform (CMP) usage within the TCF v2 ecosystem shows that Automattic, Inc. leads in adoption, appearing on 0.67% of pages, followed by InMobi PTE Ltd at 0.25% and Didomi at 0.22%. This suggests that certain CMPs have become trusted for managing consent effectively, though the relatively low adoption rates imply that many sites may still depend on in-house solutions or less widely recognized CMPs.
 
-{{ figure_markup(
-  image="Top-countries-with-TCF-v2.png",
-  caption="Top countries with TCF v2.",
-  description="A bar chart showing the top countries with TCF v2 at percent of pages.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=1584460679&format=interactive",
-  sheets_gid="1418721328",
-  sql_file=""
-  )
-}}
-
-TCF v2 adoption is primarily concentrated in Europe, as it was developed by IAB Europe specifically to address GDPR compliance requirements. Country code representing ‘unknown’ country leads the adoption with 0.26%, followed by Germany at 0.03%, with smaller adoption rates in the European Union, United States, France, and the United Kingdom. This regional distribution underscores the influence of European privacy regulations on consent framework adoption, while lower rates in other regions suggest varying compliance pressures.
-
 #### Do Not Track
 
 Do Not Track (DNT) was a browser-based privacy initiative introduced in the early 2010s. It allowed users to set a browser preference indicating that they did not wish to be tracked by websites. However, DNT failed to gain widespread adoption, largely because it was voluntary and lacked enforcement mechanisms.
 
-While DNT was a pioneering idea in user privacy, it ultimately became obsolete as major advertisers and trackers chose to ignore DNT requests, and it was not enshrined in any legal frameworks. Despite being obsolete, our analysis shows that 13.7% of desktop websites, and 12.77% of mobile websites still support a DNT signal. It’s crucial to point out here that while these sites check for the DNT signal, how well these sites adhere to and comply with the signal is unclear.
+While DNT was a pioneering idea in user privacy, it ultimately became obsolete as major advertisers and trackers chose to ignore DNT requests, and it was not enshrined in any legal frameworks. Despite being obsolete, our analysis shows that 19.8% of desktop websites, and 18.4% of mobile websites still support a DNT signal (source: [SQL query](https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/2024/privacy/number_of_websites_with_dnt.sql)). It’s crucial to point out here that while these sites may check for the DNT signal, how well these sites adhere to and comply with the signal is unclear.
 
 #### Global Privacy Control
 
@@ -427,7 +414,7 @@ Global Privacy Control (GPC) is a more recent initiative designed to give users 
 
 GPC allows users to signal that they do not want their data to be sold or shared with third parties, and companies are legally obligated to respect this signal under certain laws. Major browsers and privacy-focused extensions support GPC, and it is gaining traction as a more effective tool for user privacy.
 
-Analysis shows that 55.84% of desktop sites and 54.9% of mobile sites consume the GPC signal through JavaScript, which is significantly higher than the DNT signal. Another optional requirement of GPC is a well-known URL which resides at the /.well-known/gpc.json endpoint (relative to the website’s origin server URL). This resource is meant to indicate that the website abides by GPC requests. While lack of this resource does not mean that the website does not respect GPC, it does complicate tracking compliance, across a large number of sites, a difficult chore. In our measurements, we find that only 0.27% of mobile sites and 0.26% of desktop sites have an accessible well-known endpoint.
+Analysis shows that on 55.84% of desktop sites and 54.9% of mobile sites the GPC signal can be accessed through JavaScript, which is significantly higher than the DNT signal. Another optional requirement of GPC is a well-known URL which resides at the /.well-known/gpc.json endpoint (relative to the website’s origin server URL). This resource is meant to indicate the website’s awareness and support of GPC, but at the same time it doesn’t guarantee that it abides by GPC. In our measurements, we find that only 0.27% of mobile sites and 0.26% of desktop sites have an accessible well-known endpoint.
 
 {{ figure_markup(
   image="Presence-of-Global-Privacy-Control.png",
@@ -451,7 +438,7 @@ The California Consumer Privacy Act (CCPA), enacted in 2018, is one of the most 
   description="A bar chart showing the prevalence of CCPA links on website homepages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=1672202318&format=interactive",
   sheets_gid="1223494608",
-  sql_file=""
+  sql_file="ccpa_prevalence.sql"
   )
 }}
 
@@ -461,7 +448,7 @@ However, the rate of links among the top-1K websites is only 7.19%, which is qui
 
 One limitation of our crawl is that it is geographically distributed, and as such we cannot accurately account for websites that dynamically show a CCPA link only to visitors in California. Therefore, our results likely underestimate the prevalence of these links. However, it is important to note that, as per [prior research](https://petsymposium.org/popets/2022/popets-2022-0030.pdf) conducted in 2022, only 17% of CCPA links were dynamically hidden.
 
-Finally, we examine which phrasing is most commonly used in CCPA links. The majority of sites use variants of the phrase recommended under CCPA required by the law, “do not sell my personal information”. However, a significant number of sites also contain links titled “your privacy choices”, whose implication is less clear. This may make it more difficult for users to opt-out on these sites.
+Finally, we examine which phrasing is most commonly used in CCPA links. The majority of sites use variants of the phrase recommended under CCPA , “do not sell my personal information”. However, a significant number of sites also contain links titled “your privacy choices”, whose implication is less clear. This may make it more difficult for users to opt-out on these sites.
 
 {{ figure_markup(
   image="Top-10-Phrases-in-CCPA-Links.png",
@@ -469,7 +456,7 @@ Finally, we examine which phrasing is most commonly used in CCPA links. The majo
   description="A bar chart showing the top 10 phrases in CCPA links.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=956353245&format=interactive",
   sheets_gid="1792311741",
-  sql_file=""
+  sql_file="ccpa_most_common_phrases.sql"
   )
 }}
 
