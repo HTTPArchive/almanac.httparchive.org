@@ -132,7 +132,7 @@ In our analysis, we first looked for the presence of well-known fingerprinting l
   description="A bar chat showing the tracker with the most usage of fingerprinting.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=1011732208&format=interactive",
   sheets_gid="219682214",
-  sql_file=""
+  sql_file="number_of_websites_using_each_fingerprinting.sql"
   )
 }}
 
@@ -156,7 +156,7 @@ As tracking protections are becoming common on web browsers, e.g., third-party b
 
 We examined two prominent tracking protection evasion practices: CNAME tracking and bounce tracking, and looked into how prevalent these are on the web and how browsers are trying to reduce these and maintain user privacy by default.
 
-#### CNAME cloaking
+### CNAME cloaking
 
 CNAME cloaking leverages the DNS CNAME record to mask third-party trackers as first-party entities. A CNAME record allows a subdomain to point to another domain. Trackers utilize this by setting up a CNAME record on a subdomain of the website they are embedded within. For example, `tracker.example.com` could point to `tracker.trackingcompany.com`. When the tracker sets a cookie, it appears to originate from `example.com`, effectively becoming a first-party cookie and bypassing many third-party cookie blocking mechanisms. This tactic is particularly effective because most tracking protection measures concentrate on restricting third-party access, while first-party cookies are generally allowed for essential website functionality.
 
@@ -176,7 +176,7 @@ In 2022, our analysis of CNAME cloaking relied on mapping first-party hostnames 
 
 The 2024 Web Almanac data reveals a continuing trend of CNAME cloaking, with `omtrdc.net` and `adobedc.net`, both associated with Adobe Analytics, leading the site analytics category with appearances on over 0.031% (\~9000) and 0.015% (\~4500) mobile pages respectively. The prevalence of analytics-related domains suggests that CNAME cloaking is not solely confined to advertising, but is also utilized for broader data collection purposes. The presence of `actionsoftware.com` and other advertising-related domains further solidifies the use of this technique for targeted advertising. The data highlights that while overall CNAME usage remains relatively low compared to traditional tracking methods, its concentration on high-traffic websites presents a significant privacy concern for a large number of users.
 
-#### Bounce tracking
+### Bounce tracking
 
 Bounce tracking represents another sophisticated evasion technique that allows trackers to read cookies from their first-party context. More specifically, bounce tracking tricks the browser into visiting the tracking domain as a first-party site, allowing it to read and write cookies from its first-party storage. Instead of directly communicating with a tracking server, the browser is first redirected to an intermediary domain – the "bounce" domain ([demo](https://bounce-tracking-demo.glitch.me/)). Thus in case third-party cookies are blocked, trackers can read persistent identifiers from their first-party storage. This intermediary then redirects to the actual website.
 
@@ -202,7 +202,7 @@ Our analysis, limited to crawlable pages, is not exhaustive, and not all identif
 
 It is a common practice for websites to include content from third-party services, such as the advertising and social media platforms. Unfortunately, third-party services cannot be implicitly trusted, as more often than not, they directly harm user privacy, e.g., third-party tracking services (see [Third-party](https://almanac.httparchive.org/en/2024/third-parties) chapter for a more detailed analysis). Recently, web standards bodies and browser vendors have tried to step in and provide many controls to website developers that they can use to mitigate privacy threats posed by third-party services. We analyze the prevalence of such prominent browser-provided controls. Note that some of the browser policies, such as Permissions Policy, have both security and privacy implications; we discuss such policies in the [Security chapter](https://almanac.httparchive.org/en/2024/security#permissions-policy).
 
-#### User-Agent Client Hints
+### User-Agent Client Hints
 
 In an effort to minimize the amount of information exposed about the browsing environment, particularly through the User-Agent string, the User-Agent Client Hints mechanism is introduced by browsers and standards bodies.
 
@@ -214,13 +214,13 @@ The key idea is that the websites that want to access certain high entropy infor
   description="A bar shart showing the percantage of pages with client hints by page ranking.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=1362669305&format=interactive",
   sheets_gid="210309462",
-  sql_file=""
+  sql_file="number_of_websites_with_client_hints.sql"
   )
 }}
 
 Figure 12.8 presents the prevalence of Accept-CH header. We note that it is deployed by 15.8% of the top-1K and 5.1% of the top-10K mobile websites. When we look at the adoption of sites that respond with the Accept-CH header in comparison with the results from [Privacy 2022 chapter](https://almanac.httparchive.org/en/2022/privacy#user-agent-client-hints) (top 1K: 9.11%, top 10K: 3.12%), we see an increase in adoption by 6.69% for the 1K popular sites. We surmise that this increase in adoption is related to the fact that Chromium has been reducing the information that is shared in the User-Agent string (through the [User-Agent Reduction plan](https://www.chromium.org/updates/ua-reduction/)). For all websites, Accept-CH is deployed in 0.4% and 0.5% of all the crawled websites for desktop and mobile, respectively.
 
-#### Referrer Policy
+### Referrer Policy
 
 By default, most user agents include a Referer header, which discloses to third parties the website—or even the specific page—from which a request originated. This occurs for any resource embedded within a webpage, as well as for requests triggered by a user clicking on a link. Consequently, third parties may gain insight into which website or page a particular user was visiting, leading to potential privacy concerns.
 
@@ -230,7 +230,7 @@ By default, most user agents include a Referer header, which discloses to third 
   description="A bar chart showing the implemented method to referrer policy.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=613754677&format=interactive",
   sheets_gid="1555566389",
-  sql_file=""
+  sql_file="number_of_websites_with_referrerpolicy.sql"
   )
 }}
 
@@ -244,7 +244,7 @@ Referrer policy can be included both at the document-level and also at the reque
   description="A bar chart showing the most common referrer policy values.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=944991454&format=interactive",
   sheets_gid="380345202",
-  sql_file=""
+  sql_file="most_common_referrer_policy.sql"
   )
 }}
 
@@ -256,7 +256,7 @@ Our analysis reveals that \`strict-origin-when-cross-origin\` is the most common
 
 The next most commonly deployed option is \`no-referrer-when-downgrade\`, which does not include the Referer header on downgrade requests, that is, HTTP requests initiated on an HTTPS-enabled page. Unfortunately, this still leaks the page that the user is visiting in most scenarios — in HTTPS-enabled requests.
 
-#### Privacy-related Origins Trials
+### Privacy-related Origins Trials
 
 Origin trials allow website developers to test new features released by web browsers (e.i., Chrome or FireFox), e.g., browser APIs. Once website developers register in origin trials, the new browser features are made available to all their users. Since web browsers are increasingly deploying privacy-enhancing features, such as eliminating third-party cookies, we next analyze whether website developers are participating in privacy-related origin trials to assess their readiness for the upcoming privacy-enhancing features in browsers.
 
@@ -266,7 +266,7 @@ Origin trials allow website developers to test new features released by web brow
   description="A bar chart showing the features of privacy focused origin trials.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=1221242964&format=interactive",
   sheets_gid="1174105425",
-  sql_file=""
+  sql_file="number_of_websites_with_related_origin_trials.sql"
   )
 }}
 
@@ -274,13 +274,13 @@ Among the privacy-enhancing features, we note that \`disableThirdPartyStoragePar
 
 It means that more than 10% of the websites are testing a feature that disables the benefits provided by the partitioning of third-party storage. Note that the [storage partitioning](https://developers.google.com/privacy-sandbox/cookies/storage-partitioning) applies to select storage related APIs that do not include cookies. The second most prevalent trial is [`FledgeBiddingAndAuctionServer`](https://chromestatus.com/feature/4649601971257344) with deployment over 6.62% of the mobile websites.
 
-### Privacy Sandbox Proposals
+## Privacy Sandbox Proposals
 
 **Overview.** Privacy Sandbox, introduced by Google in 2019, contains several proposals that are aimed at curbing privacy-invasive practices on the web by aiming to strike a balance between user privacy and the continued viability of online advertising, which supports free content and services on the web. Among privacy sandbox proposals, Topics, Protected Audience, and Attribution Reporting have garnered significant attention because of their implications on targeted advertising, interest-based ad auctions, and privacy-preserving conversion tracking, respectively. In this section, we measure the adoption of these proposals to assess the readiness of websites and ad-tech (e.g., advertising platforms, tracking entities), in incorporating these proposals. Note that some of these proposals are not solely limited to Chrome, they are tested by other browsers such as Microsoft Edge.
 
 We first provide the prevalence of these APIs. We note that Topics API, Protected Audience API (previously known as FLEDGE), and Attribution Reporting API have the highest presence across different advertising publishing technologies. These are respectively present on 33%, 63%, and 27% of top-1K websites. Amongst top-10M websites, the presence drops to 7%, 63%, and 24%, respectively. Note that the presence does not imply the adoption of these APIs by websites.
 
-#### **Topics API**
+### Topics API
 
 Google’s Topics proposal works by assigning a small set of high-level topics to a user based on their recent browsing activity, such as "sports" or "technology". These topics are stored locally on the user's devices and shared with websites and advertisers to serve relevant ads. Users also have the ability to see and control the topics that are shared with advertisers. Since this API can be deployed both through the HTTP headers and JavaScript, we measure the adoption of **Topics API** across both of these axes. We observe JavaScript-based presence (i.e., document.browsingTopics) 7% pages) to be more widespread than header-based presence (i.e., sec-browsing-topics) of Topics (\~4% pages).
 
@@ -290,7 +290,7 @@ Google’s Topics proposal works by assigning a small set of high-level topics t
   description="A bar chart showing the usage of topic API on pages by rank.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=1967446286&format=interactive",
   sheets_gid="2114689864",
-  sql_file=""
+  sql_file="privacy-sandbox-adoption-by-third-parties-by-publishers.sql"
   )
 }}
 
@@ -302,11 +302,11 @@ Surprisingly, we also note that the Federated Learning of Cohorts API (**FLoC**)
   description="A bar chart showing the usage of FLoC API on pages by rank.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=89328056&format=interactive",
   sheets_gid="2114689864",
-  sql_file=""
+  sql_file="privacy-sandbox-adoption-by-third-parties-by-publishers.sql"
   )
 }}
 
-#### **Protected Audience API**
+### **Protected Audience API**
 
 Protected Audience API enables on-device auctions by the browser, to choose relevant ads from websites the user has previously visited. It eliminates the need for privacy-invasive data collection and pervasive tracking practices that are otherwise employed for remarketing and targeted advertising. This ensures that advertisers can serve relevant ads without needing to track users across sites. Amongst different method calls available for the **Protected Audience API,** we note that navigator.joinAdInterestGroup() is used the most by third-party services – 63% of top-10M websites. This API provides an ability to a third-party service to direct the browser to add an interest group to the browser's membership list for the visiting user. Recent research ([Calderonio et al.](https://www.usenix.org/system/files/usenixsecurity24-calderonio.pdf), [Long and Evans](https://arxiv.org/pdf/2405.08102)) has discovered various privacy flaws with respect to the Protected Audience API. For example, third-party trackers can potentially link the interest groups of the users to an actual user using side-channels and track them across sites. Possibility of colluding entities further alleviate the associated privacy risk.
 
@@ -316,11 +316,11 @@ Protected Audience API enables on-device auctions by the browser, to choose rele
   description="A bar chart showing the protected audience API presence on pages by rank.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=616049578&format=interactive",
   sheets_gid="2114689864",
-  sql_file=""
+  sql_file="privacy-sandbox-adoption-by-third-parties-by-publishers.sql"
   )
 }}
 
-#### **Attribution Reporting API**
+### **Attribution Reporting API**
 
 [Attribution Reporting API](https://developers.google.com/privacy-sandbox/private-advertising/attribution-reporting) (ARA) introduces a privacy-preserving mechanism for measuring ad conversions in Google Chrome. Its purpose is to enable attribution measurement by providing a capability to register attribution source and trigger on publisher and advertiser websites, respectively. Chrome records every conversion, and generates a differentially private report that is sent to authorized sources with a delay, preventing cross-site linking of the users. This mechanism works through the use of specific HTTP headers:
 
@@ -336,7 +336,7 @@ From our analysis, we observe that twice as many third parties are registering t
   description="A bar chart showing the attribution reporting API presence on pages by rank.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=855872461&format=interactive",
   sheets_gid="2114689864",
-  sql_file=""
+  sql_file="top_ara_destinations_registered_by_most_publishers.sql"
   )
 }}
 
@@ -348,23 +348,23 @@ Since most of the popular browsers are competing with each other in the space of
   description="A bar chart showing the ARA destination registration on percentage of domains per rank.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=908490027&format=interactive",
   sheets_gid="618355658",
-  sql_file=""
+  sql_file="number_of_ara_destinations_registered_by_third_parties_and_publishers.sql"
   )
 }}
 
 ***Limitation**: Note that by “presence”, we refer to the mere presence of privacy sandbox API calls in the JavaScript in this analysis. This does not mean that the APIs are guaranteed to be executed or used during the runtime.*
 
-#### **Related Websites Set**
+### **Related Websites Set**
 
 [Related Website Sets](https://developers.google.com/privacy-sandbox/cookies/related-website-sets) allow websites from the same owner to share cookies among themselves.The creation and submission of a Related Website Set is done at the moment through opening a pull request on a [GitHub repository](https://github.com/GoogleChrome/related-website-sets) that the Google project contributors check and merge if deemed valid. Websites that belong to the same related website set must also indicate it by placing a corresponding file at the [.well-known URI](https://www.iana.org/assignments/well-known-uris/well-known-uris.xhtml) `.well-known/related-website-set.json`.
 
 Chrome ships with a pre-loaded file containing related website sets validated by the Chrome team. At the moment of writing (version "2024.8.10.0"), there are 64 distinct related website sets. Each related website set contains a primary domain and a list of other domains related to the primary one under one of the following attributes: `associatedSites`, `servicesSites`, and/or `ccTLDs`. These 64 primary domains are each associated with secondary domains as part of their set: 60 sets contain `associatedSites`, 11 `servicesSites`, and 7 `ccTLDs` – see the [Cookies 2024 chapter](https://almanac.httparchive.org/en/2024/cookies#related-website-sets) for more results.
 
-### Law and Policy
+## Law and Policy
 
 With increasing scrutiny against online tracking, there have been numerous new laws and regulations passed to make online advertisers and trackers more accountable. In this section we look at the impact these regulations have had on privacy.
 
-#### Consent Dialogs
+### Consent Dialogs
 
 With the introduction of privacy regulations like the [General Data Protection Regulation](https://gdpr-info.eu/) (GDPR) in the European Union and [California Consumer Privacy Act](https://leginfo.legislature.ca.gov/faces/codes_displayText.xhtml?division=3.&part=4.&lawCode=CIV&title=1.81.5) (CCPA), websites require user consent to collect, share, and process user data, e.g., collection and usage of third-party tracking cookies. This has led to the widespread use of cookie consent dialogs, which notify users about the data collection practices and allow them to accept, reject, or customize their consent.
 
@@ -380,7 +380,7 @@ The 2024 data reveals a shift in the privacy landscape compared [to 2022](https:
   description="A bar chart showing the presence of IAB privacy frameworks in percentage of pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=1902161831&format=interactive",
   sheets_gid="616126986",
-  sql_file=""
+  sql_file="number_of_websites_with_iab.sql"
   )
 }}
 
@@ -396,19 +396,19 @@ Finally, the shift from TCF v1 to TCF v2 is evident. While TCF v1 in 2022 had so
   description="A bar chart showing the top 10 TCF v2 compliant CMPs in percent of pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=1496134639&format=interactive",
   sheets_gid="1039725590",
-  sql_file=""
+  sql_file="most_common_cmps_for_iab_tcf_v2.sql"
   )
 }}
 
 Our analysis of Consent Management Platform (CMP) usage within the TCF v2 ecosystem shows that Automattic, Inc. leads in adoption, appearing on 0.67% of pages, followed by InMobi PTE Ltd at 0.25% and Didomi at 0.22%. This suggests that certain CMPs have become trusted for managing consent effectively, though the relatively low adoption rates imply that many sites may still depend on in-house solutions or less widely recognized CMPs.
 
-#### Do Not Track
+### Do Not Track
 
 Do Not Track (DNT) was a browser-based privacy initiative introduced in the early 2010s. It allowed users to set a browser preference indicating that they did not wish to be tracked by websites. However, DNT failed to gain widespread adoption, largely because it was voluntary and lacked enforcement mechanisms.
 
 While DNT was a pioneering idea in user privacy, it ultimately became obsolete as major advertisers and trackers chose to ignore DNT requests, and it was not enshrined in any legal frameworks. Despite being obsolete, our analysis shows that 19.8% of desktop websites, and 18.4% of mobile websites still support a DNT signal (source: [SQL query](https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/2024/privacy/number_of_websites_with_dnt.sql)). It’s crucial to point out here that while these sites may check for the DNT signal, how well these sites adhere to and comply with the signal is unclear.
 
-#### Global Privacy Control
+### Global Privacy Control
 
 Global Privacy Control (GPC) is a more recent initiative designed to give users a simple, browser-based mechanism to communicate their privacy preferences to websites, similar to DNT. However, unlike DNT, GPC is backed by legal regulations like the CCPA (California Consumer Privacy Act).
 
@@ -422,11 +422,11 @@ Analysis shows that on 55.84% of desktop sites and 54.9% of mobile sites the GPC
   description="A bar chart showing the presence of global privacy control.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=1177501662&format=interactive",
   sheets_gid="500113190",
-  sql_file=""
+  sql_file="number_of_websites_with_gpc.sql"
   )
 }}
 
-#### California Consumer Privacy Act
+### California Consumer Privacy Act
 
 The California Consumer Privacy Act (CCPA), enacted in 2018, is one of the most significant privacy laws passed in the United States. It grants California residents rights over their personal data, including the right to know what data is being collected, the right to request deletion of their data, and the right to opt out of the sale of their data. CCPA has had a profound impact on the web, as companies across the globe must comply if they collect or process data from California residents. This has led to the introduction of “Do Not Sell My Info” links on many websites and increased awareness around data privacy in the U.S.
 
