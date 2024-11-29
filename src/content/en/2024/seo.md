@@ -13,12 +13,13 @@ fellowhuman1101_bio: Jamie Indigo isn't a robot, but speaks bot. As director of 
 dwsmart_bio: Dave Smart is a developer and technical search engine consultant at <a hreflang="en" href="https://tamethebots.com">Tame the Bots</a>. They love building tools and experimenting with the modern web, and can often be found at the front in a gig or two.
 mikaelaraujo_bio: Mikael Araújo is an <a hreflang="en" href="https://www.mikaelaraujo.com">international SEO consultant</a>, speaker and marketing strategist. He has worked and works remotely for several companies based in Europe, China, Russia, the United States and Brazil. He is currently a Data Science student and loves spending his free time with his family.
 featured_quote:
-featured_stat_1:
-featured_stat_label_1:
-featured_stat_2:
-featured_stat_label_2:
-featured_stat_3:
-featured_stat_label_3:
+featured_stat_1: 2.7%
+featured_stat_label_1: Pages with `GPTBot` directives in `robots.txt` — the most common AI crawler found.
+featured_stat_2: 28%
+featured_stat_label_2: Desktop pages with invalid `<head>` element due to `<img>` elements.
+featured_stat_3: 70%
+featured_stat_label_3: Pages have `<h1>` elements.
+doi: 10.5281/zenodo.14245177
 ---
  
 ## Introduction
