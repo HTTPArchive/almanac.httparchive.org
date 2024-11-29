@@ -175,8 +175,8 @@ Either implementation method is valid and can be used in tandem. The meta tag im
 In 2024:
 
 - 0.4% of desktop and 0.3% of mobile pages saw the directives' values changed by rendering.  
-- Secondary pages were more likely to have robots directives. And 48% of secondary pages contained a meta robots tag compared to 43.9% of homepages.   
-- Rendering was more likely to change the robots directive of a homepage (0.4%) than that of a secondary page (0.3%).
+- Secondary pages were more likely to have robots directives. And 48% of secondary pages contained a meta robots tag compared to 43.9% of home pages.   
+- Rendering was more likely to change the robots directive of a home page (0.4%) than that of a secondary page (0.3%).
 
 
 
@@ -449,14 +449,14 @@ One of the basics of a good mobile experience is being able to easily read the o
 {{ figure_markup(
   image="legible-font-sizes.png",
   caption="Legible font sizes.",
-  description="A bar chart comparing legible font size use on homepages and secondary pages. 91.1% of homepages and 91.9% of secondary pages passed the audit for legible font sizes.",
+  description="A bar chart comparing legible font size use on home pages and secondary pages. 91.1% of home pages and 91.9% of secondary pages passed the audit for legible font sizes.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=1547833548&format=interactive",
   sheets_gid="1219126486",
   sql_file="lighthouse-seo-stats-2024.sql"
   )
 }}
 
-Lighthouse has a [legible font size audit](https://developer.chrome.com/docs/lighthouse/seo/font-size/) that was run in tandem with the 2024 Web Almanac crawl. The audit checked for pages that had 60% or more of its content using fonts greater than 12 pixels. The test, specific to mobile pages, saw 91.5% of eligible pages passing. This percentage was consistent for both homepages and inner or secondary pages.
+Lighthouse has a [legible font size audit](https://developer.chrome.com/docs/lighthouse/seo/font-size/) that was run in tandem with the 2024 Web Almanac crawl. The audit checked for pages that had 60% or more of its content using fonts greater than 12 pixels. The test, specific to mobile pages, saw 91.5% of eligible pages passing. This percentage was consistent for both home pages and inner or secondary pages.
 
 ### Core Web Vitals
 
@@ -572,7 +572,7 @@ In 2021, [Google started rewriting more websites’ title tags in their search r
   )
 }}
 
-In 2022, 98.8% of desktop and mobile pages used the title tag. Now in 2024, 98.0% of desktop pages have a title tag and 98.2% of mobile pages have one. Similarly, meta description usage dipped from 71% of desktop and mobile homepages in 2022 to 66.7% of desktop and 66.4% of mobile homepages in 2024.
+In 2022, 98.8% of desktop and mobile pages used the title tag. Now in 2024, 98.0% of desktop pages have a title tag and 98.2% of mobile pages have one. Similarly, meta description usage dipped from 71% of desktop and mobile home pages in 2022 to 66.7% of desktop and 66.4% of mobile home pages in 2024.
 
 ### `<title>` element 
 
@@ -665,7 +665,7 @@ In a continued trend from prior years, relatively few header tags are left empty
 
 ### Images
 
-Images make the web a richer experience. The median page features 14.5 images (with marginal differences between device types). Image use is notably higher for homepages, which have an average of 18.5 images compared to 10.5 images on inner pages.
+Images make the web a richer experience. The median page features 14.5 images (with marginal differences between device types). Image use is notably higher for home pages, which have an average of 18.5 images compared to 10.5 images on inner pages.
 
 {{ figure_markup(
   caption="images on the median desktop homepage",
@@ -724,7 +724,7 @@ The decrease in missing `<img>` `alt` attributes combined with the increase in b
 
 Search engines and users love video. Search engines use videos to enrich SERP pages for traditional queries, video searches, and AI-enhanced summaries of queries.
 
-In 2024, video adoption on mobile and desktop pages was 5.40% and 4.81%, respectively. While a small percentage of pages integrate video, the experience is relatively consistent between device types, as well as on homepage versus inner pages.
+In 2024, video adoption on mobile and desktop pages was 5.40% and 4.81%, respectively. While a small percentage of pages integrate video, the experience is relatively consistent between device types, as well as on home page versus inner pages.
 
 {{ figure_markup(
   image="percentage-of-pages-with-video.png",
@@ -753,7 +753,7 @@ When it comes to links, it is not a simple case of more links equals better rank
 {{ figure_markup(
   image="pages-passing-links-have-descriptive-text.png",
   caption="Pages passing links have descriptive text lighthouse test",
-  description="For homepages, 84% of desktop and 91% of mobile pages pass lighthouse's 'links descriptive text' test. For inner pages it's very similar at 86% of desktop pages and 92% of inner pages.",
+  description="For home pages, 84% of desktop and 91% of mobile pages pass lighthouse's 'links descriptive text' test. For inner pages it's very similar at 86% of desktop pages and 92% of inner pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=1375761573&format=interactive",
   sheets_gid="1219126486",
   sql_file="lighthouse-seo-stats-2024.sql"
@@ -831,24 +831,24 @@ Search engines do not rank sites based on word count; however, it is a useful me
 
 {{ figure_markup(
   image="homepage-visible-words-rendered-by-percentile.png",
-  caption="Homepage Visible words rendered by percentile.",
-  description="A distribution of rendered and visible content word counts on homepages. The median number of words rendered is 400 words on desktop and 364 words on mobile. There is a similar, yet smaller, number of words on mobile at the other percentiles above and below the median. At the 10th percentile, it’s 76 words on desktop and 69 words on mobile. At the 25th percentile, it’s 192 words and 174 words, respectively. At the 75th percentile, it’s 734 words and 678 words, respectively. And at the 90th percentile, it’s 1,260 words and 1,174 words, respectively.",
+  caption="Home page Visible words rendered by percentile.",
+  description="A distribution of rendered and visible content word counts on home pages. The median number of words rendered is 400 words on desktop and 364 words on mobile. There is a similar, yet smaller, number of words on mobile at the other percentiles above and below the median. At the 10th percentile, it’s 76 words on desktop and 69 words on mobile. At the 25th percentile, it’s 192 words and 174 words, respectively. At the 75th percentile, it’s 734 words and 678 words, respectively. And at the 90th percentile, it’s 1,260 words and 1,174 words, respectively.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=1171813914&format=interactive",
   sheets_gid="1745108356",
   sql_file="seo-stats-by-percentile-2024.sql"
   )
 }}
 
-Rendered word count is the amount of visible words on a page after JavaScript has been executed. The median mobile homepage in 2024 contained 364 words, while the median desktop page had slightly more at 400 words. This was a small drop from the data in 2022 when the median was 366 words for mobile homepages and 421 words for desktop. 
+Rendered word count is the amount of visible words on a page after JavaScript has been executed. The median mobile home page in 2024 contained 364 words, while the median desktop page had slightly more at 400 words. This was a small drop from the data in 2022 when the median was 366 words for mobile home pages and 421 words for desktop. 
 
-Of note, the gap between mobile and desktop homepage word counts narrowed to just 36 words in 2024, compared to that of 55 words in 2022. This suggests a marginally closer parity to the content served to mobile users. Google has completed the process of moving to a mobile-first indexing strategy, in which it primarily crawls and indexes pages with a mobile user-agent. It’s reasonable to conclude that this helped push a few remaining sites to offer their full content to mobile visitors.
+Of note, the gap between mobile and desktop home page word counts narrowed to just 36 words in 2024, compared to that of 55 words in 2022. This suggests a marginally closer parity to the content served to mobile users. Google has completed the process of moving to a mobile-first indexing strategy, in which it primarily crawls and indexes pages with a mobile user-agent. It’s reasonable to conclude that this helped push a few remaining sites to offer their full content to mobile visitors.
 
 #### Inner Pages
 
 {{ figure_markup(
   image="inner-page-visible-words-rendered-by-percentile.png",
   caption="Inner page Visible words rendered by percentile.",
-  description="A distribution of rendered and visible content word counts on homepages. The median number of words rendered is 333 words on desktop and 317 words on mobile. At the 10th percentile, it’s 76 words on desktop and 64 words on mobile. At the 25th percentile, it’s 159 words and 140 words, respectively. At the 75th percentile, it’s 659 words and 667words, respectively. And at the 90th percentile, it’s 1,219 words and 1,306 words, respectively.",
+  description="A distribution of rendered and visible content word counts on home pages. The median number of words rendered is 333 words on desktop and 317 words on mobile. At the 10th percentile, it’s 76 words on desktop and 64 words on mobile. At the 25th percentile, it’s 159 words and 140 words, respectively. At the 75th percentile, it’s 659 words and 667words, respectively. And at the 90th percentile, it’s 1,219 words and 1,306 words, respectively.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=717477318&format=interactive",
   sheets_gid="1745108356",
   sql_file="seo-stats-by-percentile-2024.sql"
@@ -857,7 +857,7 @@ Of note, the gap between mobile and desktop homepage word counts narrowed to jus
 
 Inner pages contain slightly fewer words overall. The median mobile inner page in 2024 had 317 visible words after rendering, while desktop inner pages had 333 words.
 
-One noticeable difference between homepages and inner pages is that while desktop pages generally have more words than mobile pages at the lower word counts, that gap narrows as the percentiles get higher. By the 75th percentile, for instance, mobile pages have more visible words on their inner pages than desktop’s inner pages.
+One noticeable difference between home pages and inner pages is that while desktop pages generally have more words than mobile pages at the lower word counts, that gap narrows as the percentiles get higher. By the 75th percentile, for instance, mobile pages have more visible words on their inner pages than desktop’s inner pages.
 
 ### Raw word count
 
@@ -865,8 +865,8 @@ One noticeable difference between homepages and inner pages is that while deskto
 
 {{ figure_markup(
   image="homepage-visible-words-raw-by-percentile.png",
-  caption="Homepage Visible words raw by percentile.",
-  description="A distribution of raw content word counts on homepages. The median number of words rendered is 330 words on desktop and 311 words on mobile. There is a similar, yet smaller, number of words on mobile at the other percentiles above and below the median. At the 10th percentile, it’s 52 words on desktop and 51 words on mobile. At the 25th percentile, it’s 149 words and 142 words, respectively. At the 75th percentile, it’s 614 words and 584 words, respectively. And at the 90th percentile, it’s 1,061 words and 1,016 words, respectively.",
+  caption="Home page Visible words raw by percentile.",
+  description="A distribution of raw content word counts on home pages. The median number of words rendered is 330 words on desktop and 311 words on mobile. There is a similar, yet smaller, number of words on mobile at the other percentiles above and below the median. At the 10th percentile, it’s 52 words on desktop and 51 words on mobile. At the 25th percentile, it’s 149 words and 142 words, respectively. At the 75th percentile, it’s 614 words and 584 words, respectively. And at the 90th percentile, it’s 1,061 words and 1,016 words, respectively.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=1250129544&format=interactive",
   sheets_gid="1745108356",
   sql_file="seo-stats-by-percentile-2024.sql"
@@ -889,27 +889,27 @@ Much like the rendered word count, there’s similarly a small change in 2024 fr
   )
 }}
 
-Like homepages, the inner pages’ visible words raw count very much follows the rendered word count figures, including mobile pages containing more words than desktop pages at the 75th percentile and above.
+Like home pages, the inner pages’ visible words raw count very much follows the rendered word count figures, including mobile pages containing more words than desktop pages at the 75th percentile and above.
 
 This pattern in both the raw word count and rendered word count pages suggests the trend is unrelated to infinite scrolling, which is a more popular choice for publishers on mobile layouts.
 
 ### Rendered vs. Raw
 
-#### Homepages
+#### Home pages
 
 {{ figure_markup(
   image="rendered-vs-raw-homepage-visible-words.png",
-  caption="Rendered vs Raw Homepage Visible Words.",
-  description="A distribution of raw versus rendered word counts on homepages. On desktop, there is a 31.6% difference between raw and rendered word counts at the 10th percentile, 22.4% difference at the 25th percentile, 17.5% difference at the median, 16.3% difference at the 75th percentile, and 15.8% difference at the 90th percentile. On mobile, the differences are 26.1%, 18.4%, 14.6%, 14%, and 13.5%, respectively.",
+  caption="Rendered vs Raw Home page Visible Words.",
+  description="A distribution of raw versus rendered word counts on home pages. On desktop, there is a 31.6% difference between raw and rendered word counts at the 10th percentile, 22.4% difference at the 25th percentile, 17.5% difference at the median, 16.3% difference at the 75th percentile, and 15.8% difference at the 90th percentile. On mobile, the differences are 26.1%, 18.4%, 14.6%, 14%, and 13.5%, respectively.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=847900289&format=interactive",
   sheets_gid="1745108356",
   sql_file="seo-stats-by-percentile-2024.sql"
   )
 }}
 
-When the rendered visible and raw word counts are compared on homepages, there’s a surprisingly small discrepancy, with the median showing a difference of 13.6% for mobile and 17.5% for desktop.
+When the rendered visible and raw word counts are compared on home pages, there’s a surprisingly small discrepancy, with the median showing a difference of 13.6% for mobile and 17.5% for desktop.
 
-Homepages served to desktop user-agents have a slightly higher percentage of words visible after rendering versus mobile. One possible factor is that mobile layouts often employ tabs or accordions where, even if the content is in the DOM, it's visually hidden, so it wouldn't show up as visible.
+Home pages served to desktop user-agents have a slightly higher percentage of words visible after rendering versus mobile. One possible factor is that mobile layouts often employ tabs or accordions where, even if the content is in the DOM, it's visually hidden, so it wouldn't show up as visible.
 
 There is an interesting trend in which the higher the word count there is, the smaller the difference between rendered and raw word count. This suggests perhaps that server-side rendered technologies are relatively more popular than client-side rendered ones for publishers of longer-form content.
 
@@ -917,8 +917,8 @@ There is an interesting trend in which the higher the word count there is, the s
 
 {{ figure_markup(
   image="rendered-vs-raw-inner-page-visible-words.png",
-  caption="Rendered vs Raw Homepage Visible Words.",
-  description="A distribution of raw vs. rendered word counts on homepages. On desktop, there is a 27.6% difference between at the 10th percentile, 20.8% difference at the 25th percentile, 14.7% difference at the median, 11.1% difference at the 75th percentile, and 8.7% difference at the 90th percentile. On mobile, the differences are 21.9%, 17.1%, 12.3%, 8.8%, and 6.6%, respectively.",
+  caption="Rendered vs Raw Home page Visible Words.",
+  description="A distribution of raw vs. rendered word counts on home pages. On desktop, there is a 27.6% difference between at the 10th percentile, 20.8% difference at the 25th percentile, 14.7% difference at the median, 11.1% difference at the 75th percentile, and 8.7% difference at the 90th percentile. On mobile, the differences are 21.9%, 17.1%, 12.3%, 8.8%, and 6.6%, respectively.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=660250521&format=interactive",
   sheets_gid="1745108356",
   sql_file="seo-stats-by-percentile-2024.sql"
@@ -937,23 +937,23 @@ These enhanced listings often make a site or elements of one stand out. Addition
 
 The addition of inner pages in this year’s crawl is particularly relevant for structured data, since many types are only applicable to specific pages.
 
-#### Homepages
+#### Home pages
 
 {{ figure_markup(
   image="homepage-raw-vs-rendered-structured-data.png",
-  caption="Homepage Raw vs Rendered Structured Data.",
-  description="A column chart showing structured data changes based on raw versus rendered for homepages. On desktop pages, 47% of homepages have raw structured data while 48% have rendered structure data. Additionally, 2% of homepages only have structured data when a page is rendered, and on 6% of homepages the rendering changes the structured data. For mobile, it’s almost identical with 46%, 49%, 2% and 5%, respectively.",
+  caption="Home page Raw vs Rendered Structured Data.",
+  description="A column chart showing structured data changes based on raw versus rendered for home pages. On desktop pages, 47% of home pages have raw structured data while 48% have rendered structure data. Additionally, 2% of home pages only have structured data when a page is rendered, and on 6% of home pages the rendering changes the structured data. For mobile, it’s almost identical with 46%, 49%, 2% and 5%, respectively.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=361913740&format=interactive",
   sheets_gid="144160625",
   sql_file="seo-stats-2024.sql"
   )
 }}
 
-Overall usage of structured data grew in 2024 to 49% of mobile homepages and 48% of desktop homepages. This was a slight increase from 2022 when 47% of crawled mobile homepages and 46% of crawled desktop homepages had structured data.
+Overall usage of structured data grew in 2024 to 49% of mobile home pages and 48% of desktop home pages. This was a slight increase from 2022 when 47% of crawled mobile home pages and 46% of crawled desktop home pages had structured data.
 
-The majority of sites provide structured data in the raw HTML, while only 2% of mobile and desktop crawls to homepages have structured data added via JavaScript.
+The majority of sites provide structured data in the raw HTML, while only 2% of mobile and desktop crawls to home pages have structured data added via JavaScript.
 
-A few more homepages, 5% of mobile and 6% of desktop crawls, contained some structured data that had been altered or augmented by JavaScript.
+A few more home pages, 5% of mobile and 6% of desktop crawls, contained some structured data that had been altered or augmented by JavaScript.
 
 The trend appears to be that of providing structured data markup in the raw HTML, something [Google itself highlights](https://developers.google.com/search/updates#clarifying-dynamically-generated-product-markup) as, if not best practice, perhaps the simplest and most reliable way of implementing structured data.
 
@@ -971,12 +971,12 @@ The trend appears to be that of providing structured data markup in the raw HTML
 
 Inner pages, such as product or event pages, are more likely to have structured data. In 2024, 53% of mobile and 51% of desktop inner pages had some structured data markup. And it dovetails with the fact that there are a number of Google developer documents that detail eligibility for rich results, based on structured data.
 
-Overall, the trend of providing the markup in the raw HTML carries across from what was seen on homepage crawls.
+Overall, the trend of providing the markup in the raw HTML carries across from what was seen on home page crawls.
 
 {{ figure_markup(
   image="homepage-structured-data-markup-formats.png",
-  caption="Homepage structured data markup formats.",
-  description="A column chart showing structured data types for homepages. JSON-LD is found on 40.5% of desktop pages and 40.4% of mobile pages. Microdata is found on 17.4% of desktop pages and 18.8% of mobile pages. RDFa is found on 0.9% of desktop pages and 0.8% of mobile pages, and Microformats2 is found on just 0.1% of desktop pages and 0.2% of mobile pages.",
+  caption="Home page structured data markup formats.",
+  description="A column chart showing structured data types for home pages. JSON-LD is found on 40.5% of desktop pages and 40.4% of mobile pages. Microdata is found on 17.4% of desktop pages and 18.8% of mobile pages. RDFa is found on 0.9% of desktop pages and 0.8% of mobile pages, and Microformats2 is found on just 0.1% of desktop pages and 0.2% of mobile pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=542370994&format=interactive",
   sheets_gid="1441645144",
   sql_file="structured-data-formats-2024.sql"
@@ -993,7 +993,7 @@ Overall, the trend of providing the markup in the raw HTML carries across from w
   )
 }}
 
-There are a number of different ways structured data can be implemented on a page, but JSON-LD is by far the most popular format for homepages. It accounts for 40.4% of mobile and 40.5% of desktop homepages crawled.
+There are a number of different ways structured data can be implemented on a page, but JSON-LD is by far the most popular format for home pages. It accounts for 40.4% of mobile and 40.5% of desktop home pages crawled.
 
 It’s simply the easiest format to implement, and is done by adding `<script>` elements that are independent of the HTML structure. Other formats, such as Microdata, involve adding attributes to the HTML elements of the page. Since Google advises using JSON-LD as a preferred format, it is not surprising that this is the most popular implementation.
 
@@ -1001,12 +1001,12 @@ For the most part, inner pages similarly utilize JSON-LD, but there is a slight 
 
 ### Most Popular Structured Data Types
 
-#### Homepages
+#### Home pages
 
 {{ figure_markup(
   image="most-popular-homepage-schema-types.png",
-  caption="Most popular Homepage schema types.",
-  description="A column chart showing the 15 most popular schema types for homepages. On desktop, pages schema.org/WebSite was found on 35%, schema.org/SearchAction on 29%, schema.org/WebPage on 25%, schema.org/Organization on 25%, schema.org/-UnknownType- on 24%, schema.org/ListItem on 20%, schema.org/BreadcrumbList on 20%, schema.org/ImageObject on 19%, schema.org/EntryPoint on 18%, schema.org/ReadAction on 14%, schema.org/PostalAddress on 8%, schema.org/SiteNavigationElement on 6%, schema.org/WPHeader on 6%, schema.org/Person on 5%, schema.org/WPFooter on 5%. For mobile, they were found on 35%, 28%, 25%, 24%, 23%, 20%, 20%, 20%, 18%, 14%, 8%, 7%, 6%, 5%, and 5% of pages, respectively.",
+  caption="Most popular Home page schema types.",
+  description="A column chart showing the 15 most popular schema types for home pages. On desktop, pages schema.org/WebSite was found on 35%, schema.org/SearchAction on 29%, schema.org/WebPage on 25%, schema.org/Organization on 25%, schema.org/-UnknownType- on 24%, schema.org/ListItem on 20%, schema.org/BreadcrumbList on 20%, schema.org/ImageObject on 19%, schema.org/EntryPoint on 18%, schema.org/ReadAction on 14%, schema.org/PostalAddress on 8%, schema.org/SiteNavigationElement on 6%, schema.org/WPHeader on 6%, schema.org/Person on 5%, schema.org/WPFooter on 5%. For mobile, they were found on 35%, 28%, 25%, 24%, 23%, 20%, 20%, 20%, 18%, 14%, 8%, 7%, 6%, 5%, and 5% of pages, respectively.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=1774876613&format=interactive",
   sheets_gid="1091913261",
   sql_file="structured-data-schema-types-2024.sql",
@@ -1015,9 +1015,9 @@ For the most part, inner pages similarly utilize JSON-LD, but there is a slight 
   )
 }}
 
-Compared to 2022, there wasn't a big shift in 2024 in terms of the popularity of structured data types found on homepages. WebSite, SearchAction, and WebPage remained the three most popular schema types since they power the Sitelinks Search Box on Google.
+Compared to 2022, there wasn't a big shift in 2024 in terms of the popularity of structured data types found on home pages. WebSite, SearchAction, and WebPage remained the three most popular schema types since they power the Sitelinks Search Box on Google.
 
-Interestingly, WebSite grew a little more in 2024 to 35% of mobile homepages from 30% in 2022 since Google recommends this as a way to influence a site name in the SERPs.
+Interestingly, WebSite grew a little more in 2024 to 35% of mobile home pages from 30% in 2022 since Google recommends this as a way to influence a site name in the SERPs.
 
 As for implementing the most popular schema types, there were minor differences between the percentages of mobile and desktop structured data usage.
 
@@ -1039,7 +1039,7 @@ In terms of the inner pages, ListItem was the most popular schema type in 2024, 
 
 BreadcrumbList was the second most popular schema type. That was to be expected since one would be more likely to show a breadcrumb on an inner page.
 
-What is surprising is that WebSite structured data, which is, at least for Google, homepage specific, was the third most popular schema type on inner pages. A possible explanation is that particular structured data type is often implemented at a site template level and carried across the entire site.
+What is surprising is that WebSite structured data, which is, at least for Google, home page specific, was the third most popular schema type on inner pages. A possible explanation is that particular structured data type is often implemented at a site template level and carried across the entire site.
 
 Outside of the more popular schema types, product structured data was found on 4% of mobile pages and 5% of desktop pages.
 
@@ -1053,12 +1053,12 @@ It has been, however, a somewhat divisive technology, with many feeling the burd
 
 While it is not a direct ranking factor, in the past certain features, including Top Stories in Google, were reliant on, or at least influenced by, having an AMP version.
 
-### Homepage Usage
+### Home page Usage
 
 {{ figure_markup(
-  image="amp-markup-desktop-vs-mobile-homepages.png",
-  caption="AMP markup Desktop vs. Mobile Homepages.",
-  description="A Column chart showing percentage of desktop and mobile homepage AMP markup attributes. HTML AMP Attribute is used on 0.04% of desktop pages. HTML AMP & Emoji Attribute is used on 0.01% of desktop pages, while HTML AMP or Emoji Attribute is used on 0.05% of desktop pages, and the Rel AMP HTML tag is used on 0.37% of desktop pages. On mobile, it was 0.27%, 0.06%, 0.33% and 0.63%, respectively.",
+  image="amp-markup-desktop-vs-mobile-home pages.png",
+  caption="AMP markup Desktop vs. Mobile Home pages.",
+  description="A Column chart showing percentage of desktop and mobile home page AMP markup attributes. HTML AMP Attribute is used on 0.04% of desktop pages. HTML AMP & Emoji Attribute is used on 0.01% of desktop pages, while HTML AMP or Emoji Attribute is used on 0.05% of desktop pages, and the Rel AMP HTML tag is used on 0.37% of desktop pages. On mobile, it was 0.27%, 0.06%, 0.33% and 0.63%, respectively.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=1013706420&format=interactive",
   sheets_gid="693330825",
   sql_file="mark-up-stats-2024.sql"
@@ -1071,19 +1071,19 @@ That’s why it’s a little surprising there was a slight uptick in the percent
 
 It's worth noting these figures are relatively tiny, so the changes might not be statistically relevant, but they do point to low adoption of the technology.
 
-### Homepages vs. Inner Pages
+### Home pages vs. Inner Pages
 
 {{ figure_markup(
   image="amp-markup-home-vs-inner-pages.png",
-  caption="AMP markup Homepages vs. Inner pages.",
-  description="A Column chart showing percentage of homepages and inner page AMP markup attributes. HTML AMP Attribute is used on 0.31% of homepages on desktop. HTML AMP & Emoji Attribute is used on 0.07%, while HTML AMP or Emoji Attribute is used on 0.38%, and the Rel AMP HTML tag is used on 1.01%. On mobile, it was 0.21%, 0.03%, 0.24% and 2.15%, respectively.",
+  caption="AMP markup Home pages vs. Inner pages.",
+  description="A Column chart showing percentage of home pages and inner page AMP markup attributes. HTML AMP Attribute is used on 0.31% of home pages on desktop. HTML AMP & Emoji Attribute is used on 0.07%, while HTML AMP or Emoji Attribute is used on 0.38%, and the Rel AMP HTML tag is used on 1.01%. On mobile, it was 0.21%, 0.03%, 0.24% and 2.15%, respectively.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=1013706420&format=interactive",
   sheets_gid="693330825",
   sql_file="mark-up-stats-2024.sql"
   )
 }}
 
-Homepages are more likely when crawled to be AMP pages than inner pages, with 0.31% of homepages across mobile and desktop, and only 0.21% of inner pages having the HTML AMP attribute.
+Home pages are more likely when crawled to be AMP pages than inner pages, with 0.31% of home pages across mobile and desktop, and only 0.21% of inner pages having the HTML AMP attribute.
 
 ## Internationalization
 
@@ -1119,7 +1119,7 @@ The discrepancy between the "raw" and "rendered" versions of the hreflang tag in
 
 Even when these discrepancies are considered minor, highly trafficked websites and/or those containing essential information for the public (such as from international institutions, research institutes, universities…) may experience significant losses in visibility with their intended audiences.
 
-### Homepage Hreflang Usage
+### Home page Hreflang Usage
 
 While search engines can often detect a page's language on its own, hreflang tags provide explicit signals to ensure content reaches its intended audience. These tags are typically used when a website has multiple language versions targeting different locales or regions.
 
@@ -1128,9 +1128,9 @@ Currently, 10% of desktop websites and 9% of mobile websites utilize hreflang. T
 The most popular hreflang value in 2024 remained “en” (English), with 8% usage on desktop and 8% on mobile. That particular tag experienced considerable growth from 2022 when usage was 5% on desktop and 5% on mobile.
 
 {{ figure_markup(
-  image="hreflang-link-usage-homepages.png",
-  caption="Hreflang Link Usage for Homepages.",
-  description="A horizontal bar chart showing hreflang links on homepages, broken down by language code and platform (desktop vs. mobile). The total values for each tag are: en (7.6%), fr (3.0%), de (3.0%), es (2.8%), en-us (2.4%), it (2.2%), ru (1.9%), en-gb (1.5%), and pt (1.4%).",
+  image="hreflang-link-usage-home pages.png",
+  caption="Hreflang Link Usage for Home pages.",
+  description="A horizontal bar chart showing hreflang links on home pages, broken down by language code and platform (desktop vs. mobile). The total values for each tag are: en (7.6%), fr (3.0%), de (3.0%), es (2.8%), en-us (2.4%), it (2.2%), ru (1.9%), en-gb (1.5%), and pt (1.4%).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=725111256&format=interactive",
   sheets_gid="1291250464",
   sql_file="hreflang-link-tag-usage-2024.sql",
@@ -1161,7 +1161,7 @@ The use of hreflang tags on secondary pages has x-default (7.3%) and en (English
 
 Desktop usage is slightly higher than mobile for most hreflang values on secondary pages. The differentials are quite small. With the exception of fr, the other hreflang values (de, es, en-us, it, ru, en-gb, pt) have usage below 3.0% and show a degree of concentration in the most common values.
 
-As for distribution, the use of hreflang tags on secondary pages is similar to that found on homepages. The x-default and en lead in adoption in both categories and underscores their global reach. Their percentages are lower on secondary pages, which implies that hreflang implementation is generally prioritized on homepages.
+As for distribution, the use of hreflang tags on secondary pages is similar to that found on home pages. The x-default and en lead in adoption in both categories and underscores their global reach. Their percentages are lower on secondary pages, which implies that hreflang implementation is generally prioritized on home pages.
 
 ### Content Language usage (HTML and HTTP header)
 
@@ -1182,11 +1182,11 @@ While search engines like [Google](https://developers.google.com/search/docs/spe
   )
 }}
 
-When examining language usage data for homepages and secondary pages (the latter of which were not discussed in 2022), English (en) appeared as the main element (homepage: 18.0% and secondary page: 18.4%), followed by pt-br (homepage: 8.7% and secondary page: 8.7%), en-us (homepage: 8.3% and secondary page: 8.3%), and ja (homepage: 5.9% and secondary page: 6.4%).
+When examining language usage data for home pages and secondary pages (the latter of which were not discussed in 2022), English (en) appeared as the main element (homepage: 18.0% and secondary page: 18.4%), followed by pt-br (homepage: 8.7% and secondary page: 8.7%), en-us (homepage: 8.3% and secondary page: 8.3%), and ja (homepage: 5.9% and secondary page: 6.4%).
 
 {{ figure_markup(
   image="home-vs-inner-page-language-usage-combined.png",
-  caption="Language usage (HTML and HTTP header) for Homepage and Secondary page.",
+  caption="Language usage (HTML and HTTP header) for Home page and Secondary page.",
   description="A bar chart showing language usage as a percentage of pages. For homepage, en was used on 18.0% of pages in our dataset, followed by pt-br on 8.7%, en-us on 8.3%, ja on 5.9%, fr on 4.7%, de on 3.8%, es on 3.7%, vi on 2.7%, ru on 2.5%, cs on 2.5%, tr on 2.4%, pl on 2.4%, zh-tw on 2.3%, th on 2.0%, it on 2.0%, and hu on 1.9%. For the secondary page, it was very similar at 18.4%, 8.7%, 8.3%, 6.4%, 4.6%, 4.0%, 3.2%, 2.8%, 2.6%, 2.7%, 2.5%, 1.7%, 2.5%, 2.2%, 2.0%, and 2.0%, respectively.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=218192895&format=interactive",
   sheets_gid="127817290",
