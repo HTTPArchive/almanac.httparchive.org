@@ -47,7 +47,7 @@ Unfortunately, trackers engage in an arms-race with privacy-enhancing technologi
   )
 }}
 
-**Identifying trackers:**We mostly leverage data from [WhoTracks.Me](http://WhoTracks.Me), a publicly available list that catalogs third-party trackers present across a wide range of websites. By utilizing this resource, we identify the most prevalent trackers on the websites. This helped us assess the dominance of certain tracking companies and better understand the overall landscape of third-party tracking.It’s important to note that WhoTracks.Me identifies several trackers at the domain level. While a significant number of URLs associated with these domains engage in tracking, not all URLs from those domains necessarily do.
+**Identifying trackers:** We mostly leverage data from [WhoTracks.Me](http://WhoTracks.Me), a publicly available list that catalogs third-party trackers present across a wide range of websites. By utilizing this resource, we identify the most prevalent trackers on the websites. This helped us assess the dominance of certain tracking companies and better understand the overall landscape of third-party tracking.It’s important to note that WhoTracks.Me identifies several trackers at the domain level. While a significant number of URLs associated with these domains engage in tracking, not all URLs from those domains necessarily do.
 
 Online tracking is a routine practice on the internet. A significant number of websites include specialized online services that record user activities within their website and across sites. Our findings from Figure 1 reveal that 95% of the desktop and 94% of the mobile websites include at least one tracker. We also note that more than a quarter of both desktop (i.e., 27%) and mobile (i.e., 26%) sites contain more than 10 trackers. These trackers enable companies to build detailed user profiles based on online behavior, which are regularly used for personalized advertising and to provide insights to website owners. In the following sections, we explore the various techniques trackers use to monitor user activity and examine how they attempt to bypass the privacy protections introduced by modern browsers.
 
@@ -129,7 +129,7 @@ In our analysis, we first looked for the presence of well-known fingerprinting l
 {{ figure_markup(
   image="Fingerprinting-usage.png",
   caption="Fingerprinting usage.",
-  description="A bar chat showing the tracker with the most usage of fingerprinting.",
+  description="FingerprintJS is by far the most commonly used script, appearing on 0.57% of mobile pages, significantly more than any other script. ClientJS is the second most prevalent, found on 0.03% of pages. MaxMind is present on 0.02% of pages, while TruValidate and ThreatMetrix are each found on just 0.01% of pages. In general, fingerprinting scripts appear to be more common on desktop than mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=1011732208&format=interactive",
   sheets_gid="219682214",
   sql_file="number_of_websites_using_each_fingerprinting.sql"
@@ -167,7 +167,7 @@ In 2022, our analysis of CNAME cloaking relied on mapping first-party hostnames 
 {{ figure_markup(
   image="most-common-cname-domains.png",
   caption="Top 10 CNAME cloaking domains.",
-  description="The top 10 CNAME cloaking domains, revealing how often they appear on desktop and mobile webpages, as measured by the percentage of pages they are present on. The domains are primarily used for site analytics and advertising purposes, with `omtrdc.net` and `adobedc.net` related to Adobe Analytics being the two most prevalent cloaking domains on both platforms.",
+  description="The top 10 CNAME cloaking domains, revealing how often they appear on desktop and mobile webpages, as measured by the percentage of pages they are present on. The domains are primarily used for site analytics and advertising purposes, with `omtrdc.net` and `adobedc.net` related to Adobe Analytics being the two most prevalent cloaking domains on both platforms. omtrdc.net used appears on 0.031% of mobile pages and 0.04% on desktop. adobedc.net ranks second with 0.015% prevalence on mobile. The remaining domains each account for 0.01% or less of pages. Generally, these CNAME cloaking domains are more common on desktop than mobile web pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=1893938121&format=interactive",
   sheets_gid="1426844224",
   sql_file="most_common_cname_domains.sql"
@@ -187,7 +187,7 @@ Given the constrained nature of the crawl, limited to the loading of a specific 
 {{ figure_markup(
   image="most-common-bounce-domains.png",
   caption="Top 10 stateful bounce domains.",
-  description="This chart presents the top 10 stateful bounce domains, indicating the frequency with which they appear on desktop and mobile websites, measured by the percentage of pages they are found on. These domains are used for various purposes including tracking and, interestingly, show a shift in prevalence between desktop and mobile, with `indapass.hu` being most common on mobile and `medium.com` being more common on desktop.",
+  description="This chart presents the top 10 stateful bounce domains, indicating the frequency with which they appear on desktop and mobile websites, measured by the percentage of pages they are found on. These domains are used for various purposes including tracking and, interestingly, show a shift in prevalence between desktop and mobile, with `indapass.hu` being most common on mobile and `medium.com` being more common on desktop. medium.com leads with 0.009% of mobile and 0.013% on desktop pages. `indapass.hu` follows at 0.012% primarily on mobile. note.com accounts for around 0.004% of pages. The remaining domains — queue-it.net, photoshelter.com, payhip.com, streamlit.io, elsevierhealth.com, mistore.jp, kcrwork.com, and imodules.com — each represent roughly 0.002% or less.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=1199006042&format=interactive",
   sheets_gid="1855869877",
   sql_file="most_common_bounce_domains.sql"
@@ -211,7 +211,7 @@ The key idea is that the websites that want to access certain high entropy infor
 {{ figure_markup(
   image="Percentage-of-pages-with-Client-Hints.png",
   caption="Percentage of pages with Client Hints.",
-  description="A bar shart showing the percantage of pages with client hints by page ranking.",
+  description="Client Hints usage is heavily concentrated among the most popular websites (rank 1,000). Approximately 16% of pages in this top rank bucket utilize Client Hints. Usage drops dramatically for websites with lower ranks - only 5% of pages in the rank 10,000 bucket use Client Hints. The trend continues for lower-ranked websites, with less than 1% of pages in the rank 1,000,000 bucket utilizing Client Hints. The distribution is relatively even between desktop and mobile devices.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=1362669305&format=interactive",
   sheets_gid="210309462",
   sql_file="number_of_websites_with_client_hints.sql"
@@ -263,7 +263,7 @@ Origin trials allow website developers to test new features released by web brow
 {{ figure_markup(
   image="Privacy-focused-Origin-Trials.png",
   caption="Privacy focused Origin Trials.",
-  description="A bar chart showing the features of privacy focused origin trials.",
+  description="The chart clearly shows that DisableThirdPartyStoragePartitioning has the highest adoption rate among both desktop and mobile users at slightly over 10%. `FledgeBiddingAndAuctionServer` follows with 6.62% adoption on mobile. `AttributionReportingCrossAppWeb` sees 2.1% usage. The remaining features — `Tpcd`, `SendFullUserAgentAfterReduction`, `PrivacySandboxAdsAPIs`, `DisableThirdPartySessionStoragePartitioning`, `InterestCohortAPI`, `UserAgentReduction`, and `TopLevelTpcd` — all show significantly lower adoption rates, ranging from 0.65% down to 0.01%. In general, participation in most of these privacy-focused Origin Trials is relatively low, suggesting they are still in early stages of experimentation and adoption. The higher usage of `DisableThirdPartyStoragePartitioning` and `FledgeBiddingAndAuctionServer` indicates potentially greater interest or maturity in those particular privacy-preserving technologies.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=1221242964&format=interactive",
   sheets_gid="1174105425",
   sql_file="number_of_websites_with_related_origin_trials.sql"
@@ -377,7 +377,7 @@ The 2024 data reveals a shift in the privacy landscape compared [to 2022](https:
 {{ figure_markup(
   image="Presence-of-IAB-privacy-frameworks.png",
   caption="Presence of IAB privacy frameworks.",
-  description="A bar chart showing the presence of IAB privacy frameworks in percentage of pages.",
+  description="The chart shows that a significant portion of pages, nearly 6%, implement either TCF or USP. When looking at TCF alone, about 4.2% of pages utilize a version of this framework. Specifically, TCF v2 is present on approximately 4% of pages, while USP is found on roughly 3.3%. Compliant implementations of TCF v2 and v1 are much less common, appearing on about 1.7% and 0.1% of pages, respectively. Basic TCF v1 usage is around 0.2%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=1902161831&format=interactive",
   sheets_gid="616126986",
   sql_file="number_of_websites_with_iab.sql"
@@ -393,7 +393,7 @@ Finally, the shift from TCF v1 to TCF v2 is evident. While TCF v1 in 2022 had so
 {{ figure_markup(
   image="Top-10-TCF-v2-compliant-CMPs.png",
   caption="Top 10 TCF v2 compliant CMPs.",
-  description="A bar chart showing the top 10 TCF v2 compliant CMPs in percent of pages.",
+  description="Automattic, Inc. is the leading CMP provider among those compliant with TCF v2, covering 0.67% of mobile pages. InMobi PTE Ltd and Didomi follow with approximately 0.25% and 0.22% prevalence, respectively. Wikia, Inc. ( FANDOM) accounts for about 0.14% of pages. The remaining CMPs – iubenda, SIRDATA, OneTrust LLC, AppConsent by SFBX®, Sourcepoint Technologies, Inc., and Objectis Ltd – each have a presence on less than 0.1% of mobile pages. Across all listed CMPs, mobile usage generally surpasses desktop implementation, with Automattic, Inc. showing the most pronounced difference between the two.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=1496134639&format=interactive",
   sheets_gid="1039725590",
   sql_file="most_common_cmps_for_iab_tcf_v2.sql"
@@ -419,7 +419,7 @@ Analysis shows that on 55.84% of desktop sites and 54.9% of mobile sites the GPC
 {{ figure_markup(
   image="Presence-of-Global-Privacy-Control.png",
   caption="Presence of Global Privacy Control.",
-  description="A bar chart showing the presence of global privacy control.",
+  description="`present in JS resources`: This indicates that GPC was detected within the JavaScript code executed by the web page, suggesting active implementation or recognition of the signal by the site. This method reveals a high prevalence of GPC, with about 55.84% on desktop and 54.9% on mobile. `.well-known available`: This refers to a specific resource being available at a particular origin, which means GPC is supported but not necessarily abided by. The prevalence using this method is significantly lower: around 0.27% for desktop and 0.26% for mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=1177501662&format=interactive",
   sheets_gid="500113190",
   sql_file="number_of_websites_with_gpc.sql"
