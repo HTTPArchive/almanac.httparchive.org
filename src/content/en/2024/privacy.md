@@ -3,10 +3,10 @@
 title: Privacy
 description: Privacy chapter of the 2024 Web Almanac covers the adoption and impact of online tracking, privacy preference signals, and browser initiatives for a privacy-friendlier web.
 hero_alt: Hero image of Web Almanac characters with cameras, phones, and microphones acting like paparazzi while another character pulls back a shower curtain to reveal a web page behind it.
-authors: []
+authors: [haddiamjad]
 reviewers: []
 editors: []
-analysts: []
+analysts: [haddiamjad]
 translators: []
 results: https://docs.google.com/spreadsheets/d/18r8cT6x9lPdM-rXvXjsqx84W7ZDdTDYGD59xr0UGOwg/
 featured_quote:
