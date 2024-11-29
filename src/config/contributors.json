@@ -3034,7 +3034,10 @@
   },
   "MichaelLewittes": {
     "avatar_url": "96250205",
+    "bluesky": "michaellewittes.bsky.social",
     "github": "MichaelLewittes",
+    "linkedin": "michael-lewittes-a22b831",
+    "mastodon": "https://seocommunity.social/@MichaelLewittes",
     "name": "Michael Lewittes",
     "teams": {
       "2022": [
@@ -3043,7 +3046,9 @@
       "2024": [
         "editors"
       ]
-    }
+    },
+    "twitter": "MichaelLewittes",
+    "website": "https://www.ranktify.com/team"
   },
   "MichaelSolati": {
     "avatar_url": "11811422",
