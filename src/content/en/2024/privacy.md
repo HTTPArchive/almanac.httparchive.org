@@ -3,12 +3,14 @@
 title: Privacy
 description: Privacy chapter of the 2024 Web Almanac covers the adoption and impact of online tracking, privacy preference signals, and browser initiatives for a privacy-friendlier web.
 hero_alt: Hero image of Web Almanac characters with cameras, phones, and microphones acting like paparazzi while another character pulls back a shower curtain to reveal a web page behind it.
-authors: [bgstandaert, ydimova, max-ostapenko, umariqbal]
-reviewers: []
-editors: []
-analysts: [bgstandaert, max-ostapenko]
+authors: [Benjamin Standaert, Yana Dimova, Max Ostapenko, Umar Iqbal, Chris Böttger, Tobias Urban]
+reviewers: [Matteo Große-Kampmann, AlbertoFDR]
+editors: [Caleb Queern]
+analysts: [Benjamin Standaert, Max Ostapenko, Yash Vekaria]
 translators: []
 umariqbal_bio: Umar Iqbal is an assistant professor in the department of Computer Science and Engineering at the <a hreflang="en" href="https://wustl.edu/">Washington University in St. Louis</a>. His research focus on bringing transparency and control in computing systems to empower users, platforms, and regulators to improve user privacy and security.
+chrisboettger_bio: Chris Böttger is a PhD candidate in Computer Science at the <a href="https://www.en.w-hs.de/">Westphalian University of Applied Science</a>. His research focuses on web and network security, primarily focusing on user privacy and tracking technologies.
+tobiasurban_bio: Doctor of Engineering Tobias Urban is a Professor of Computer Science, specializing in Cybersecurity, at the <a href='https://www.en.w-hs.de/'>Westphalian University of Applied Sciences</a>. His research focuses on IT security, data protection, and the impact of the GDPR on the Internet.
 results: https://docs.google.com/spreadsheets/d/18r8cT6x9lPdM-rXvXjsqx84W7ZDdTDYGD59xr0UGOwg/
 featured_quote: TODO
 featured_stat_1: 3
@@ -33,7 +35,15 @@ Unfortunately, trackers engage in an arms-race with privacy-enhancing technologi
 
 ## Online Tracking
 
-![][image1]
+{{ figure_markup(
+  image="Distribution-of-trackers-per-page.png",
+  caption="Distribution of trackers per page.",
+  description="A line graph showing the distribution of trackers per page.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=2035809959&format=interactive",
+  sheets_gid="936905739",
+  sql_file=""
+  )
+}}
 
 We mostly leverage data from [WhoTracks.Me](http://WhoTracks.Me), a publicly available list that catalogs third-party trackers present across a wide range of websites. By utilizing this resource, we identify the most prevalent trackers on the websites. This helped us assess the dominance of certain tracking companies and better understand the overall landscape of third-party tracking.
 
@@ -116,7 +126,15 @@ As browsers continue to expand the restrictions placed on cookies, fingerprintin
 
 In our analysis, we first looked for the presence of ed for five different, well-known fingerprinting libraries. Wand we found that, among the libraries tested, the most prevalent library used on the web to perform fingerprinting is FingerprintJS ([FingerprintJS](https://github.com/fingerprintjs/fingerprintjs)), which we found on 0.57% of all websites. Most likely this is because the library is open source, and has a free version. Compared to [our measurements from 2022](https://almanac.httparchive.org/en/2022/privacy), we find that the use of these fingerprinting libraries has slightly decreased; however, it is important to note that this year we crawl roughly \~4 million extra webpages.
 
-![][image6]
+{{ figure_markup(
+  image="Fingerprinting-usage.png",
+  caption="Fingerprinting usage.",
+  description="A bar chat showing the tracker with the most usage of fingerprinting.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=1011732208&format=interactive",
+  sheets_gid="219682214",
+  sql_file=""
+  )
+}}
 
 While we detect the prevalence of well-knowntop fingerprinting vendors, there are several other services (including first-part scripts) that may engage in fingerprinting. To identify such potential sources of fingerprinting, we start by examining the source code of [FingerprintJS](https://github.com/fingerprintjs/fingerprintjs), a commonly-used fingerprinting library. We then compile a list of APIs used by the library, and search for the occurrences of these APIs in all of the crawled scripts. We mark any script with 5 or more usages as a *potential* fingerprinting script. We then rank the scripts by the number of pages on which they are loaded.
 
@@ -190,7 +208,15 @@ In an effort to minimize the amount of information exposed about the browsing en
 
 The key idea is that the websites that want to access certain information about the users’ browsing environment (browser version, operating system, screen resolution, etc.) have to set a header (Accept-CH) in the first response.
 
-![][image10]
+{{ figure_markup(
+  image="Percentage-of-pages-with-Client-Hints.png",
+  caption="Percentage of pages with Client Hints.",
+  description="A bar shart showing the percantage of pages with client hints by page ranking.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=1362669305&format=interactive",
+  sheets_gid="210309462",
+  sql_file=""
+  )
+}}
 
 Figure 8 presents the prevalence of Accept-CH header. We note that it is deployed by 16.18% of the top-1K and 5.22% of the top-10K websites. When we look at the adoption of sites that respond with the Accept-CH header in comparison with the results from [Privacy 2022 chapter](https://almanac.httparchive.org/en/2022/privacy#user-agent-client-hints)  (top 1K: 9.53%, top 10K: 3.14%), we see an increase in adoption by 6.65% for the 1K popular sites. We surmise that this increase in adoption is related to the fact that Chromium has been reducing the information that is shared in the User-Agent string (through the [User-Agent Reduction plan](https://www.chromium.org/updates/ua-reduction/)). For all websites, Accept-CH is deployed in 0.44% and 0.49% of all the crawled websites for desktop and mobile, respectively.
 
@@ -198,13 +224,29 @@ Figure 8 presents the prevalence of Accept-CH header. We note that it is deploye
 
 By default, most user agents include a Referer header, which discloses to third parties the website—or even the specific page—from which a request originated. This occurs for any resource embedded within a webpage, as well as for requests triggered by a user clicking on a link. Consequently, third parties may gain insight into which website or page a particular user was visiting, leading to potential privacy concerns.
 
-![][image11]
+{{ figure_markup(
+  image="Referrer-policy-implementations.png",
+  caption="Referrer policy implementations.",
+  description="A bar chart showing the implemented method to referrer policy.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=613754677&format=interactive",
+  sheets_gid="1555566389",
+  sql_file=""
+  )
+}}
 
 By making use of the [Referrer Policy](https://developer.mozilla.org/docs/Web/HTTP/Headers/Referrer-Policy), websites can limit the instances in which the Referrer header is included in requests and thus improve user privacy.
 
 Referrer policy can be included both at the document-level and also at the request-level. We find that referrer policy is deployed on 33.87% of the desktop web pages and 32% of the mobile web pages, overall. On 21.82% of such pages, refer policy is deployed at the request-level with the ref=noreferer HTML tag, and in 11.31% of the instances, the referrer policy is deployed at the document level.
 
-![][image12]
+{{ figure_markup(
+  image="Most-common-Referrer-Policy-values.png",
+  caption="Most common Referrer Policy values.",
+  description="A bar chart showing the most common referrer policy values.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=944991454&format=interactive",
+  sheets_gid="380345202",
+  sql_file=""
+  )
+}}
 
 While referrer policy allows to mitigate some tracking, not all of its options have the same effect. Thus we next measure the deployment of individual referrer policy options.
 
@@ -218,7 +260,15 @@ The next most commonly deployed option is \`no-referrer-when-downgrade\`, which 
 
 Origin trials allow website developers to test new features released by web browsers, e.g., browser APIs. Once website developers register in origin trials, the new browser features are made available to all their users. Since web browsers are increasingly deploying privacy-enhancing features, such as eliminating third-party cookies, we next analyze whether website developers are participating in privacy-related origin trials to assess their readiness for the upcoming privacy-enhancing features in browsers.
 
-![][image13]
+{{ figure_markup(
+  image="Privacy-focused-Origin-Trials.png",
+  caption="Privacy focused Origin Trials.",
+  description="A bar chart showing the features of privacy focused origin trials.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=1221242964&format=interactive",
+  sheets_gid="1174105425",
+  sql_file=""
+  )
+}}
 
 Among the privacy-enhancing features, we note that \`disableThirdPartyStoragePartitioning\` is the most widely used control with deployment on 11.21% of the desktop websites.
 \`disableThirdPartyStoragePartitioning\` allows a top-level site to un-partition (temporarily remove isolation by top-level site) in storage, service workers, and communication APIs in third-party content embedded on its pages.
@@ -235,16 +285,41 @@ We first provide the prevalence of these APIs. We note that Topics API, Protecte
 
 Google’s Topics proposal works by assigning a small set of high-level topics to a user based on their recent browsing activity, such as "sports" or "technology". These topics are stored locally on the user's devices and shared with websites and advertisers to serve relevant ads. Users also have the ability to see and control the topics that are shared with advertisers. Since this API can be deployed both through the HTTP headers and JavaScript, we measure the adoption of **Topics API** across both of these axes. We observe JavaSscript-based presence (i.e., document.browsingTopics) (8% pages) to be more widespread than header-based presence (i.e., sec-browsing-topics) of Topics (\~4% pages).
 
-![][image14]
+{{ figure_markup(
+  image="Topics-API-Presence.png",
+  caption="Topics API Presence.",
+  description="A bar chart showing the usage of topic API on pages by rank.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=1967446286&format=interactive",
+  sheets_gid="2114689864",
+  sql_file=""
+  )
+}}
 
 Surprisingly, we also note that the Federated Learning of Cohorts API (**FLoC**) – a precursor proposal to Topics API, despite being deprecated due to several privacy issues, is still present on a considerable amount of pages. While Topics API improves the status quo, [prior research](https://petsymposium.org/popets/2024/popets-2024-0004.pdf) has shown that monitoring the topics returned by the user’s browser over a period of time can aid in reidentification of users.
 
-![][image15]
+{{ figure_markup(
+  image="FLoC-API-Presence.png",
+  caption="FLoC API Presence.",
+  description="A bar chart showing the usage of FLoC API on pages by rank.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=89328056&format=interactive",
+  sheets_gid="2114689864",
+  sql_file=""
+  )
+}}
 
 #### **Protected Audience API**
 
 Protected Audience API enables on-device auctions by the browser, to choose relevant ads from websites the user has previously visited. It eliminates the need for privacy-invasive data collection and pervasive tracking practices that are otherwise employed for remarketing and targeted advertising. This ensures that advertisers can serve relevant ads without needing to track users across sites. Amongst different method calls available for the **Protected Audience API,** we note that navigator.joinAdInterestGroup() is used the most by third-party services – 61% of top-10M websites. This API provides an ability to a third-party service to direct the browser to add an interest group to the browser's membership list for the visiting user. Recent research ([Calderonio et al.](https://www.usenix.org/system/files/usenixsecurity24-calderonio.pdf), [Long and Evans](https://arxiv.org/pdf/2405.08102)) has discovered various privacy flaws with respect to the Protected Audience API. For example, third-party trackers can potentially link the interest groups of the users to an actual user using side-channels and track them across sites. Possibility of colluding entities further alleviate the associated privacy risk.
-![][image16]
+
+{{ figure_markup(
+  image="Protected-Audience-(FLEDGE)-API-Presence.png",
+  caption="Protected Audience (FLEDGE) API Presence.",
+  description="A bar chart showing the protected audience API presence on pages by rank.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=616049578&format=interactive",
+  sheets_gid="2114689864",
+  sql_file=""
+  )
+}}
 
 #### **Attribution Reporting API**
 
@@ -256,11 +331,27 @@ Protected Audience API enables on-device auctions by the browser, to choose rele
 
 From our analysis, we observe that twice as many third parties are registering triggers compared to those registering sources. This trend indicates a higher focus on measuring conversions as compared to tracking the initial ad display events.
 
-![][image17]
+{{ figure_markup(
+  image="Attribution-Reporting-API-Presence.png",
+  caption="Attribution Reporting API Presence.",
+  description="A bar chart showing the attribution reporting API presence on pages by rank.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=855872461&format=interactive",
+  sheets_gid="2114689864",
+  sql_file=""
+  )
+}}
 
 Since most of the popular browsers are competing with each other in the space of privacy preserving attribution with proposals like ARA for Chrome, [Private Click Measurement](https://webkit.org/blog/11529/introducing-private-click-measurement-pcm/) (PCM) for Safari, and [Interoperable Private Attribution](https://github.com/patcg-individual-drafts/ipa) (IPA) by Mozilla and Meta, we analyze ARA in more detail. We look at registrations of advertising destinations on different websites. We observe that 14.6% distinct advertisers are using ARA to register themselves using attribution-reporting-register-trigger header on 8.8% distinct publishers on the top-1K websites. In total, we observe 1.6% (0.5%) distinct advertisers have adopted ARA across 5.1% (2.4%) publishers in top 1M (top 10M) websites. This shows that not many publishers have adopted ARA as compared to the advertiser adoption – preparing themselves for the post-cookie world where they will need to rely on ARA to attribute user conversions to ad clicks.
 
-![][image18]
+{{ figure_markup(
+  image="ARA-Destination-registration.png",
+  caption="ARA Destination registration.",
+  description="A bar chart showing the ARA destination registration on percentage of domains per rank.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=908490027&format=interactive",
+  sheets_gid="618355658",
+  sql_file=""
+  )
+}}
 
 ***Limitation**: Note that by “presence”, we refer to the mere presence of privacy sandbox API calls in the JavaSscript in this analysis. This does not mean that the APIs are guaranteed to be executed or used during the runtime.*
 
@@ -283,7 +374,16 @@ These consent dialogs have become a ubiquitous feature across the web, but their
 Our findings show that the TCF, along with other privacy frameworks, is widely implemented as publishers seek to comply with data protection laws like GDPR and CCPA. We would like to note here that our measurement is USA-based, and according to TCF, no consent banner is required for non-EU visits. Therefore, this can result in smaller than actual measurements of TCF usage.
 
 The 2024 data reveals a shift in the privacy landscape compared [to 2022](https://almanac.httparchive.org/en/2022/privacy#iab-consent-frameworks). Firstly, the overall prevalence of IAB frameworks has increased. In 2022, the broadest IAB presence ("IAB all") was found on 4.4% of pages (desktop and mobile combined). In 2024, any TCF or USP framework appears on 5.8% of homepages. This suggests wider adoption of privacy standards, potentially driven by increased regulatory scrutiny and user awareness.
-![][image19]
+
+{{ figure_markup(
+  image="Presence-of-IAB-privacy-frameworks.png",
+  caption="Presence of IAB privacy frameworks.",
+  description="A bar chart showing the presence of IAB privacy frameworks in percentage of pages.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=1902161831&format=interactive",
+  sheets_gid="616126986",
+  sql_file=""
+  )
+}}
 
 Examining individual frameworks, TCF usage (any version) appears on 4.2% of pages, while USP stands alone on 3.3% of pages. 4.0% of pages use the latest version of TCF \- v2, which also makes it the most prevalent version. TCF v2 with compliant setup (presence of vendor consent configuration) appears on a smaller subset, 1.7% of pages. The older TCF v1, which predates GDPR enforcement, is negligible at 0.2%.
 
@@ -291,11 +391,27 @@ Interestingly, while overall IAB framework usage is up, USP adoption has remaine
 
 Finally, the shift from TCF v1 to TCF v2 is evident. While TCF v1 in 2022 had some measurable presence (0.3% on mobile), it is nearly obsolete in 2024 at 0.2%. TCF v2 adoption has grown considerably (1.9% to 4%), further indicating a movement toward newer, GDPR-aligned consent mechanisms. However, full TCF v2 compliance remains relatively low, highlighting the ongoing challenge of implementing its complex requirements fully.
 
-![][image20]
+{{ figure_markup(
+  image="Top-10-TCF-v2-compliant-CMPs.png",
+  caption="Top 10 TCF v2 compliant CMPs.",
+  description="A bar chart showing the top 10 TCF v2 compliant CMPs in percent of pages.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=1496134639&format=interactive",
+  sheets_gid="1039725590",
+  sql_file=""
+  )
+}}
 
 Our analysis of Consent Management Platform (CMP) usage within the TCF v2 ecosystem shows that Automattic, Inc. leads in adoption, appearing on 0.67% of pages, followed by InMobi PTE Ltd at 0.25% and Didomi at 0.22%. This suggests that certain CMPs have become trusted for managing consent effectively, though the relatively low adoption rates imply that many sites may still depend on in-house solutions or less widely recognized CMPs.
 
-![][image21]
+{{ figure_markup(
+  image="Top-countries-with-TCF-v2.png",
+  caption="Top countries with TCF v2.",
+  description="A bar chart showing the top countries with TCF v2 at percent of pages.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=1584460679&format=interactive",
+  sheets_gid="1418721328",
+  sql_file=""
+  )
+}}
 
 TCF v2 adoption is primarily concentrated in Europe, as it was developed by IAB Europe specifically to address GDPR compliance requirements. Country code representing ‘unknown’ country leads the adoption with 0.26%, followed by Germany at 0.03%, with smaller adoption rates in the European Union, United States, France, and the United Kingdom. This regional distribution underscores the influence of European privacy regulations on consent framework adoption, while lower rates in other regions suggest varying compliance pressures.
 
@@ -313,14 +429,31 @@ GPC allows users to signal that they do not want their data to be sold or shared
 
 Analysis shows that 55.84% of desktop sites and 54.9% of mobile sites consume the GPC signal through JavaScript, which is significantly higher than the DNT signal. Another optional requirement of GPC is a well-known URL which resides at the /.well-known/gpc.json endpoint (relative to the website’s origin server URL). This resource is meant to indicate that the website abides by GPC requests. While lack of this resource does not mean that the website does not respect GPC, it does complicate tracking compliance, across a large number of sites, a difficult chore. In our measurements, we find that only 0.27% of mobile sites and 0.26% of desktop sites have an accessible well-known endpoint.
 
-![][image22]
+{{ figure_markup(
+  image="Presence-of-Global-Privacy-Control.png",
+  caption="Presence of Global Privacy Control.",
+  description="A bar chart showing the presence of global privacy control.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=1177501662&format=interactive",
+  sheets_gid="500113190",
+  sql_file=""
+  )
+}}
 
 #### California Consumer Privacy Act
 
 The California Consumer Privacy Act (CCPA), enacted in 2018, is one of the most significant privacy laws passed in the United States. It grants California residents rights over their personal data, including the right to know what data is being collected, the right to request deletion of their data, and the right to opt out of the sale of their data. CCPA has had a profound impact on the web, as companies across the globe must comply if they collect or process data from California residents. This has led to the introduction of “Do Not Sell My Info” links on many websites and increased awareness around data privacy in the U.S.
 
 [Under the law](https://www.oag.ca.gov/privacy/ccpa), any business that does business in California and meets certain size thresholds must provide a way for users to opt-out of the selling or sharing of their personal information. To comply with the law, the California Attorney General’s office [recommends](https://www.oag.ca.gov/privacy/ccpa/icons-download) placing a link on the business’ homepage with the text “Do Not Sell My Personal Information” and a standardized icon. Building on [prior work](https://petsymposium.org/popets/2022/popets-2022-0030.pdf) that identified a common set of CCPA link phrases, we conducted an analysis of the prevalence of these links across sites according to their popularity level.
-![][image23]
+
+{{ figure_markup(
+  image="Prevalence-of-CCPA-Links-on-Website-Homepages.png",
+  caption="Prevalence of CCPA Links on Website Homepages.",
+  description="A bar chart showing the prevalence of CCPA links on website homepages.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=1672202318&format=interactive",
+  sheets_gid="1223494608",
+  sql_file=""
+  )
+}}
 
 Overall, we note that only 0.96% of websites CCPA links. We also note that more websites with higher ranks include CCPA links, as compared to websites with lower ranks. Higher rank websites are more likely to have a CCPA link, either because they are more likely to meet the thresholds to be covered under the CCPA, or simply because they are more aware of the requirements.
 
@@ -330,7 +463,15 @@ One limitation of our crawl is that it is geographically distributed, and as suc
 
 Finally, we examine which phrasing is most commonly used in CCPA links. The majority of sites use variants of the phrase recommended under CCPA required by the law, “do not sell my personal information”. However, a significant number of sites also contain links titled “your privacy choices”, whose implication is less clear. This may make it more difficult for users to opt-out on these sites.
 
-![][image24]
+{{ figure_markup(
+  image="Top-10-Phrases-in-CCPA-Links.png",
+  caption="Top 10 Phrases in CCPA Links.",
+  description="A bar chart showing the top 10 phrases in CCPA links.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=956353245&format=interactive",
+  sheets_gid="1792311741",
+  sql_file=""
+  )
+}}
 
 ## Conclusion
 
