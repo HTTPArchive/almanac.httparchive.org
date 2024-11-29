@@ -226,7 +226,7 @@ The five most named crawlers in robots directives were the generic robots value,
   )
 }}
 
-When robots directive rules are viewed by their name attributes, we can see varied application rates.  This implies that SEOs are adopting directives by bot name to curate indexing and serving for individual search engines.  
+When robots directive rules are viewed by their name attributes, we can see varied application rates.  This implies that SEOs are adopting directives specifically by bot name to curate indexing and serving for individual search engines.
    
 Noteworthy takeaways from our analysis of the rules by bot name include:
 
