@@ -15,7 +15,7 @@ featured_quote: Most modern governments have committed to either WCAG 2.0 AA or 
 featured_stat_1: 40%
 featured_stat_label_1: Of desktop sites and 39% of mobile sites have at least one `role="presentation"`.
 featured_stat_2: 0.1%
-featured_stat_label_2: Sites with `<audio>` elements include a `<track>` element.
+featured_stat_label_2: Sites with `<audio>` elements that include a `<track>` element.
 featured_stat_3: 57%
 featured_stat_label_3: Mobile sites passing the Lighthouse audit for properly ordered headings.
 doi: 10.5281/zenodo.14063775
@@ -932,7 +932,7 @@ We can also review the accessibility of various states.
   )
 }}
 
-Again, Colorado and Vermont are much further ahead than other states. The state of Georgia has a <a hreflang="en" href="https://digital.georgia.gov/services/govhub">central Drupal installation</a> managed through a central agency, does this explain why it is in the top 5? Colorado has established a centralized <a hreflang="en" href="https://oit.colorado.gov/colorado-digital-service">digital service organization</a>, <a hreflang="en" href="https://oit.colorado.gov/accessibility-law">new accessibility legislation</a> and now has an average of 95%. Pennsylvania's state average is much lower at 82% but they also have a new <a hreflang="en" href="https://code.oa.pa.gov/">digital experience team</a> established in 2023.
+Again, Colorado and Vermont are much further ahead than other states. Colorado has established a centralized <a hreflang="en" href="https://sipa.colorado.gov/">Statewide Internet Portal Authority (SIPA)</a>, along with <a hreflang="en" href="https://oit.colorado.gov/accessibility-law">new accessibility legislation</a> and now has an average of 96%. The state of Georgia has a <a hreflang="en" href="https://digital.georgia.gov/services/govhub">central Drupal installation</a> managed through a central agency, does this explain why it is in the top 5? Pennsylvania's state average is much lower at 82% but they also have a new <a hreflang="en" href="https://code.oa.pa.gov/">digital experience team</a> established in 2023.
 
 Earlier this year, the US Department of Justice <a hreflang="en" href="https://www.ada.gov/resources/2024-03-08-web-rule/">updated its regulations for Title II of the Americans with Disabilities Act (ADA)</a>. US state and local governments will now all be required to be fully WCAG 2.1 AA compliant. The compliance date depends on the size of their population but will be either April 2026 or April 2027. It will be important to measure how US states comply with this new regulation. We should see improvements in these numbers.
 
