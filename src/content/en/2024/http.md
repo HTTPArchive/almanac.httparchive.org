@@ -281,3 +281,128 @@ _TODO: depends on if we add the previous section or not_
 Generally: we see HTTP/3 adoption evolve steadily over time, at a similar pace to HTTP/2. Like H2 though, probably will be a long time before it has huge adoption across the board for reasons XYZ. CDNs are both good and not-so-good (probably). New things are complex to deploy yourself; we need more documentation (like this post).
 
 Difficult to measure perf benefits of HTTP/3 vs H2 in this dataset due to the methodology, and you should take care to do it correctly yourself as well!
+ 
+
+## Resource Hints
+
+As we've seen in the first part of this chapter, the adoption of HTTP/2 and HTTP/3 are on the rise, and that's a good thing. These new protocols implement a lot of performance and security best practices that have tangible benefits for end users. For developers however, the protocols and their features often remain a black box, as there are very few ways to tune them directly. You basically just tick a box on your CDN or server configuration, and hope the browser and server get it right. 
+
+However, there are a few higher-level features (such as image lazy loading, async/defer javascript, resource hints, fetchpriority, etc.), that allow us to influence what happens on the network to an extent. Even though these are not technically always directly tied to HTTP as a protocol, they can have a major impact on how some protocol features (such as connection establishment and resource multiplexing) are used in practice, so we discuss some of them in this chapter. 
+
+Firstly, there are the "[Resource Hints](https://web.dev/learn/performance/resource-hints)", a group of directives that can be used to guide the browser in various network-related operations, from setting up (parts of) a network connection, over loading a single resource, to doing fetches of entire pages ahead of time. The main ones are `dns-prefetch`, `preconnect`, `preload`, `prefetch`, and `modulepreload` (with the original `prerender` having a bit of a hard time finding its place in the ecosystem, with that use case now moving mostly to the new [Speculation Rules API](https://developer.chrome.com/docs/web-platform/prerender-pages)). 
+
+{{ figure_markup(
+  image="resource_hint_usage.png",
+  caption="Resource Hint usage is quite high in our dataset, especially for dns-prefetch and preconnect.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQhHn7aWiJiMSVu3o872Lxr45NNZkG7jKa_MyL7aPwdga8gul19txh36PL2Ep4GRcaSYzpvLc-oc_xg/pubchart?oid=1911615919&format=interactive",
+  sheets_gid="1668151954",
+  sql_file="resource_hint_usage.sql"
+) }}
+
+These directives have found an impressive uptake over the years, with over 30% of all pages in our dataset using `dns-prefetch`, 28% utilizing `preconnect` and `preload` closing in on 20%. Personally, I find the high usage of `dns-prefetch` somewhat surprising, as in my opinion you should almost always use `preconnect` instead, as it does more (establishing the full connection including TCP+TLS or QUIC handshakes) with negligent overhead, and is also [very well supported](https://caniuse.com/link-rel-preconnect). Furthermore (though purely anecdotally), I often see developers use both `dns-prefetch` and `preconnect` right after each other for the same domain, which is completely useless, as `preconnect` automatically includes a DNS lookup as well. Still, a high use of these directives is good for overall performance, as it helps hide connection setup latency to subdomains or 3rd party domains that might host important assets, such as images or fonts. 
+
+Some (at least to me) unexpected yet good news is that very few pages seem to overuse these hints. In general, you should rely on the browser to get things right itself (through features like the [preload scanner](https://web.dev/articles/preload-scanner)) and only use the Resource Hints sparingly for those cases where you know the browser doesn't have enough information (for example when the 3rd party domain/resource is not mentioned in the HTML directly but only in a CSS/JS file). And this is exactly what most people have been doing (yay!): even at the 90th percentile, pages will only use 3 `dns-prefetch`, 2 `preconnect` and 2 `preload` directives, which is great! Specifically for `preload`, we also looked at how many resources are preloaded in vain (i.e., not actually used on the page), and the results were again very encouraging: less than 4% of desktop pages uselessly preload 1 or 2 resources, and less than 2% have 3 or more unused preloads!
+
+{{ figure_markup(
+  caption="The percentage of pages that preload 1 or 2 resources without actually using them.",
+  content="&lt;4%",
+  classes="big-number",
+  sheets_gid="1786847725",
+  sql_file="unused_preloads.sql"
+) }}
+
+Still, even though most pages seem to get it right, it's always fun to look at some of the worst offenders, as there will always be pages that include way to many hints, usually either due to misconfiguration or a misunderstanding of what the features are supposed to do. For example, one page had a whopping 3215 preloads! Looking more closely however, it was clear that they are preloading the exact same image over and over again, most likely due to a misconfiguration of their framework/bug in their code. The second worst offender took it easy with "just" 2583 preloads, all of different versions/subsets of various asian fonts from Google Fonts. Finally, one page preloads an amazing 1259 images, turning them into a "smooth" scrolling background animation; arguably, you could say here preload is actually used in a good way to improve the intended effect, though I wouldn't recommend it in general! Luckily as well, some of the worst problem cases in our dataset have been fixed since our June 2024 crawl, such as a "Sexy Pirate Poker" site going from 2095 to just 14 preloads (steady as she goes, mateys!). A final silver lining is that no pages had more than 1000 `dns-prefetch` or `preconnect` directives (the worst ones utilized a measly 590 and 441 domains respectively).
+
+### preload
+
+Let's take a deeper look at `preload` specifically, as it is one of the more powerful hints that is [widely supported](https://caniuse.com/link-rel-preload), and it can have a large impact on performance, both positively and negatively (if used incorrectly). Generally speaking, `preload` should mainly be used to inform the browser of resources that are not linked directly in the main HTML document (such as things loaded dynamically with JS `fetch()` or CSS `@import` and `url()`), but that you as a developer know will be important/needed later. Preloading them allows the browser to request them earlier from the server, which may improve performance (but also degrade it, if you try to preload too much). Good concrete examples include fonts (which are typically loaded via CSS _and_ only requested by the browser when it actually needs them to render text), JS submodules or components imported dynamically, and (Largest Contentful Paint) images that are loaded via CSS or JS (which you probably shouldn't do in the first place, but sometimes there's no other option).
+
+As we saw above, about 20% of all pages utilizes `preload`, and because you have to explicitly indicate which type of resource you're trying to preload with the `as` attribute, we can get some more information on how exactly people are using it.
+
+{{ figure_markup(
+  image="preload_as_values.png",
+  caption="Preload is typically used for fonts, stylesheets and scripts.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQhHn7aWiJiMSVu3o872Lxr45NNZkG7jKa_MyL7aPwdga8gul19txh36PL2Ep4GRcaSYzpvLc-oc_xg/pubchart?oid=1325658118&format=interactive",
+  sheets_gid="36366381",
+  sql_file="preload_as_values.sql"
+) }}
+
+As expected, fonts are the most popular target for preloads, occurring on about 8.6% of pages. Somewhat unexpected however was the high use of preload for stylesheets and scripts. While these could be useful (though that would mean over 7.5% of pages should [reduce their critical path depth](https://www.debugbear.com/blog/avoid-chaining-critical-requests)), in practice people often misuse the feature by preloading resources right before they're mentioned in the HTML; say by having a `<link rel=preload>` for `style.css` the line above the `<link rel=stylesheet>` for the same file, which doesn't really do anything. A worse problem I've seen is that people `preload` their `async` and `defer` JS files, often those that are loaded via a `<script>` tag at the bottom of the `<body>`. This is not as harmless as it might seem, as these preloads can end up actively delaying other resources (such as actual render blocking JS and important images). This is because the browser doesn't know these scripts will be tagged as async/defer when they're actually loaded, so [it defaults to loading them _as if they're render blocking scripts_ with a high priority!](https://youtu.be/MV034VqHv5Q?t=838). We didn't run the queries to see how many of the 7.5% of pages misuse `preload` like this, but from my personal experience, it's pretty widespread. 
+
+A positive note is that fewer than 4% of pages preload an image, which I had expected to be a lot higher. Similar to CSS and JS, preloading a dynamically loaded image (especially if it's the LCP element), can conceptually be a good thing. However, in my job I have come across many cases where pages unnecessarily preloaded the LCP image even if it was just present in the HTML directly (for example as an `img` or `picture` tag). This is somewhat of an anti-pattern, as firstly (like the CSS above) the browser typically discovers the image early enough even without preload (so it doesn't actually help). Secondly (like the async/defer JS case above), preloading images has enough rough edges that [it can become an easy footgun](https://youtu.be/p0lFyPuH8Zs?t=2038) causing other important resources to get delayed; nowadays, you're better off to just have your LCP in the HTML with `fetchpriority=high`, see below. Luckily, it seems like this anti-pattern was over-represented in the projects I encountered, and most pages in the wild rely on the normal browser heuristics to discover images. 
+
+As with the general resource hints, it's also interesting to look at outliers and obvious mistakes. For `preload` to function, you MUST set the `as` attribute, and it [can only be set to a select few types](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/rel/preload): `fetch, font, image, script, style, track`. Anything else will cause the preload to be in vain. As such, it's interesting to see over 17000 pages (about 0.11% overall) use an empty value, with 0.03% - 0.01% utilizing values like stylesheet, document, or video. Other (luckily much less frequent) values include: the fancy "Cormorant Garamond Bold", the cool "slick", the spicy "habanero" and the supercalifragilisticexpialidocious "Poppins". 
+
+Finally, it's worth mentioning that you need a special flavor of `preload` for the newer style JavaScript modules (`<script type=module>`), which is (predictably) called `modulepreload`. The reasons for this are [related to CORS](https://web.dev/articles/modulepreload) (yes that thing again) and not really worth getting into here. However, it's interesting that even though about 9.6% of all desktop pages already use JS modules (which I found impressively high), only about 13% of them (1.24% of all pages) also use `modulepreload`. I would have expected this to be a bit higher, since the JS modules mechanism has [extensive support for dynamically loading code](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules#dynamic_module_loading), which could work well together with clever `modulepreload` usage to improve performance. 
+
+
+<!-- Total pages with js type=module: [9.63%](https://docs.google.com/spreadsheets/d/16isMe5_rvmRmJHtK5Je66AhwO8SowGgq0EFqXyjEXw8/edit?gid=805470577#gid=805470577).
+  desktop had 2,326,372 out of 24,168,022 pages with module, which is 9.63%
+  for the HTTP data https://docs.google.com/spreadsheets/d/1PfTZkbmgyLA3NmEICeCyxpMWgP7cKY7EsZl9RciE5S4/edit?gid=1668151954#gid=1668151954,
+  we had a total of 137,228 + 162,835 = 300,063 of pages with modulepreload, which is 1.24% of total,
+  and 300,063 / 2,326,372 = 13% of all pages with type=module use modulepreload
+-->
+
+
+### 103 Early Hints
+
+_discuss that resource hints can be in HTML, but also as HTTP headers! Used very sparingly on HTML response headers though (just 5500 desktop sites, about 0.04% of our total dataset), BUT new feature 103 Early Hints allows you to send them earlier!_
+
+_EH usage also still very low, with just shopify taking the majority here. Somewhat surprising, since free feature on Cloudflare, BUT it does require manual configuration on the origin (which only Shopify seems to have taken much effort to do) + [has been disabled a few times](https://community.cloudflare.com/t/early-hints-and-encrypted-client-hello-ech-are-currently-disabled-globally/567730). Also: due to this done in June, before other big deployments like Akamai released them, difficult to estimate actual usage of Early Hints in November 2024. Would expect this to rise quite a bit for next year._
+
+_not much to tell for these low results, but preconnect is about 2 from p10 to p90 (preconnecting to https://cdn.shopify.com twice, once with and once without crossorigin), while preload is 1 at p75 and 2 at p90_
+_preload is mostly fonts with a little bit of script and style (see Early Hints usage "as" percentile), as you'd expect, BUT are also some images in there. Possible, but reminder that responsive images cannot be early hinted, see blogpost info, so you should only early hint images if they're not responsive!_
+
+## The Fetch Priority API
+
+_One of the main reasons to switch from HTTP/1.1 to HTTP/2 and HTTP/3 is because you need fewer connections: stuff gets multiplexed on a single connection, while on HTTP/1.1 you'd open multiple parallel connections. While difference now is less stark than a few years ago (TODO: image? + link to few years ago), it's still impactful._
+
+_INSERT IMAGE HERE_
+
+_Still, resources sharing a connection means we need to somehow decided what needs to be downloaded first, as we dont' have enough bandwidth to just download everthing in one big parallel flow. This is governed by the prioritization mechanism. Too complex to discuss in detail here, see blogpost + talks + paper + web.dev. In short: browsers indicate to the server which resources are most important (e.g., HTML, CSS in the <head>) and which are less critical (images in the <body>, javascript tagged as async/defer). The server then sends back resources in priority order (high to low)_ 
+
+_Browsers use heuristics to determine these priorities, but sometimes get it wrong. Additionally, browsers don't always know which individual resources will be most important. Good example is LCP image: impossible to know until it's loaded, and that's of course too late. For these reasons, we have the Fetch Priority API! Lets us tweak the browser heuristics with high(er) and low(er) values. Works on images, but also preload, script, style... quite powerful!_
+
+_So let's see what adoption has been like for this new powerful feature!_
+
+
+### preload again
+
+_fetchpriority: see below, basically: can use high and low to influence how the preload works (see WLS talk)._
+_TODO: discuss results from preload as values with fetchpriority -> lots of scripts with low, lots of images with high_
+
+
+## Conclusion
+
+
+
+
+
+Resource Hints and the FetchPriority API
+Introduction
+Preload 
+Overall adoption 2022 + average amount of preloads per page NEW
+Resource types NEW (grouped by “as” is probably enough? Maybe also include type and crossorigin?)
+Use of fetchpriority NEW (ideally also grouped by “as” to see if it’s mostly images or not. Also ideally split between high vs low)
+Amount of unused preloads NEW (both total amount seen in the entire dataset, as the “top 5 worst cases”. Like: 1 site had 200 preloads of which 170 were not used)
+Amount of preloaded LCP images NEW (if HTTP Archive tracks which image was eventually the LCP, we can see how many pages preload the LCP image. Would also be interesting to see how many pages use preloads but do NOT preload the LCP image)
+Preconnect
+Overall adoption NEW + average amount of preconnects per page NEW
+Amount of unused preconnects NEW (similar to above, though potentially harder to track? Not sure if chrome gives warning if preconnected domain isn’t used like with unused preloads?)
+FetchPriority
+Note: only as direct attribute on resource tags (not preload, tracked above)
+Overall adoption 2022
+Show how many resources change priority during page load (e.g., images being promoted from low/medium to high)  NEW (ideally split by resource type, should be mostly/only images?)
+Not sure if HTTP Archive tracks which image is eventually identified as LCP, but ideally we’d also extract how many LCP images are loaded as low vs medium vs high (with fetchprio) to get an idea of the “window of opportunity”)
+Show how many images were erroneously tagged with both loading=lazy and fetchpriority=high  NEW
+103 Early Hints 
+NOTE: i’ve for now split up Resource Hints and 103 Early Hints because I want to emphasize 103 as something new. Arguably though, you could put a “103 subsection” with each of the parts above as well and treat it like that… I like the separation more for now. 
+Introduction
+Overall adoption 2022 + amount of preloads/preconnects that are being sent NEW 
+Resource types in preload NEW (grouped by “as” is probably enough? Maybe also include type and crossorigin?)
+Overlap of preloaded resources with actual <head>/waterfall NEW (103 early hint preloads should ideally be for high priority resources that are needed at the start of the page load. We should give an indication of how early in the loading process the early hints were actually needed/used. Though this needs a bit more thinking on how exactly to approach… potentially just used vs unused like above?)
+Get an estimate of actual benefits gained/size of window of opportunity NEW (I want to get an idea of how much time we actually gain from 103 Early hints, at least from the WPT test vantage point. The simplest form is to look at time between when the Early Hints headers arrive and the time when the first bytes of the HTML arrive (that’s how much time you had on the network to download extra stuff). The more complex form would be to see how many KB you actually downloaded during that time as well (not sure how WPT surfaces that though…)
+
+
