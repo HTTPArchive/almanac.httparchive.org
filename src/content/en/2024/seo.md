@@ -144,11 +144,11 @@ Of these, GPTBot is the most commonly specified and found in 2.7% of mobile craw
 
 **In Summary:**
 
-* The formalization of the robots.txt protocol in RFC 9309 has led to better adherence to technical standards.  
-* Analysis shows an increase in successful robots.txt responses and a decrease in errors, indicating improved implementation.  
-* Most robots.txt files are within the recommended size limit.  
-* The \* user-agent remains dominant, but AI crawlers like GPTBot are on the rise.  
-* These insights are valuable for understanding the current state of robots.txt usage and its implications for SEO.
+- The formalization of the robots.txt protocol in RFC 9309 has led to better adherence to technical standards.  
+- Analysis shows an increase in successful robots.txt responses and a decrease in errors, indicating improved implementation.  
+- Most robots.txt files are within the recommended size limit.  
+- The \* user-agent remains dominant, but AI crawlers like GPTBot are on the rise.  
+- These insights are valuable for understanding the current state of robots.txt usage and its implications for SEO.
 
 ### Robots directives
 
@@ -175,9 +175,9 @@ Either implementation method is valid and can be used in tandem. The meta tag im
 
 In 2024:
 
-* 0.4% of desktop and 0.3% of mobile pages saw the directives' values changed by rendering.  
-* Secondary pages were more likely to have robots directives. And 48% of secondary pages contained a meta robots tag compared to 43.9% of homepages.   
-* Rendering was more likely to change the robots directive of a homepage (0.4%) than that of a secondary page (0.3%).
+- 0.4% of desktop and 0.3% of mobile pages saw the directives' values changed by rendering.  
+- Secondary pages were more likely to have robots directives. And 48% of secondary pages contained a meta robots tag compared to 43.9% of homepages.   
+- Rendering was more likely to change the robots directive of a homepage (0.4%) than that of a secondary page (0.3%).
 
 
 
@@ -232,11 +232,11 @@ When robots directive rules are viewed by their name attributes, we can see vari
    
 Noteworthy takeaways from our analysis of the rules by bot name include:
 
-* The `noarchive` rule was applied overwhelmingly to Bingbot at 35.9%. This is likely due to the tag’s ability to [keep content out of Bing chat answers](https://blogs.bing.com/webmaster/september-2023/Announcing-new-options-for-webmasters-to-control-usage-of-their-content-in-Bing-Chat).  
-* `​max-snippet`, `max-video-preview`, and `max-image-preview` rules are widely implemented for all robots at the rate of 39.9%, 39.9%, and 69.2%, respectively.  
-* Googlebot-News was the most named for `index` (63.2%) and `nosnippet` (12.0%)  
-* MSNBot was the least likely to be given a `noindex` directive (0.5%). In comparison, the most likely was Googlebot-News at 21.2%.  
-* 0.01% of sites provided a `noindex` rule, using the invalid crawler name: Google.  Google has two valid crawler names for recognized robots `meta` tags: Googlebot and Googlebot-News.
+- The `noarchive` rule was applied overwhelmingly to Bingbot at 35.9%. This is likely due to the tag’s ability to [keep content out of Bing chat answers](https://blogs.bing.com/webmaster/september-2023/Announcing-new-options-for-webmasters-to-control-usage-of-their-content-in-Bing-Chat).  
+- `​max-snippet`, `max-video-preview`, and `max-image-preview` rules are widely implemented for all robots at the rate of 39.9%, 39.9%, and 69.2%, respectively.  
+- Googlebot-News was the most named for `index` (63.2%) and `nosnippet` (12.0%)  
+- MSNBot was the least likely to be given a `noindex` directive (0.5%). In comparison, the most likely was Googlebot-News at 21.2%.  
+- 0.01% of sites provided a `noindex` rule, using the invalid crawler name: Google.  Google has two valid crawler names for recognized robots `meta` tags: Googlebot and Googlebot-News.
 
 ### `IndexIfEmbedded` tag
 In January 2022, Google introduced a [new robots tag](https://developers.google.com/search/blog/2022/01/robots-meta-tag-indexifembedded), `indexifembedded`. The tag is placed in the HTTP header and offers indexing control for resources used to build a page. A common use case for this tag is for controlling indexation when content is in an iframe on a page, even when a `noindex` tag has been applied.  
@@ -630,10 +630,10 @@ Today, search engines like Google primarily create snippets to display in the SE
 
 In 2024:
 
-* The median desktop and mobile page `<meta name="description">` tag contained 40 and 39 words, respectively. That represents a 110% increase in word count for mobile and 105% increase for mobile since 2022. Two years ago, the median for both desktop and mobile was just 19 words.   
-* The median desktop and mobile page `<meta name="description>` tag contained 272 characters and 271 characters, respectively. That’s a 99% increase for both device types compared to 2022.  
-* At the 10th percentile, the mobile and desktop `<meta name="description>` tag contained 4 words.  
-* At the 90th percentile, the `<meta name="description>` tag contained 81 words on desktop and 79 words on mobile.
+- The median desktop and mobile page `<meta name="description">` tag contained 40 and 39 words, respectively. That represents a 110% increase in word count for mobile and 105% increase for mobile since 2022. Two years ago, the median for both desktop and mobile was just 19 words.   
+- The median desktop and mobile page `<meta name="description>` tag contained 272 characters and 271 characters, respectively. That’s a 99% increase for both device types compared to 2022.  
+- At the 10th percentile, the mobile and desktop `<meta name="description>` tag contained 4 words.  
+- At the 90th percentile, the `<meta name="description>` tag contained 81 words on desktop and 79 words on mobile.
 
 ### Header tags
 
@@ -1169,8 +1169,8 @@ As for distribution, the use of hreflang tags on secondary pages is similar to t
 
 While search engines like [Google](https://developers.google.com/search/docs/specialty/international) and [Yandex](https://yandex.ru/support/search-results/?service=webmaster&query=hreflang) only employ hreflang tags, others also use the [content-language attribute](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Language), which can be implemented in two ways:
 
-* HTML  
-* HTTP Header
+- HTML  
+- HTTP Header
 
 {{ figure_markup(
   image="language-usage-combined-by-device.png",
