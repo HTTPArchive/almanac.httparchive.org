@@ -4896,5 +4896,18 @@
     },
     "twitter": "umaarr6",
     "website": "https://www.umariqbal.com"
-  }
+  },
+  "haddiamjad": {
+    "avatar_url": "46374292",
+    "github": "hadiamjad",
+    "name": "Abdul Haddi Amjad",
+    "teams": {
+      "2024": [
+        "analysts",
+        "authors"
+      ]
+    },
+    "twitter": "haddiamjad",
+    "website": "https://hadiamjad.github.io/"
+  },
 }
