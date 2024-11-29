@@ -1055,3 +1055,164 @@ It has been, however, a somewhat divisive technology, with many feeling the burd
 While it is not a direct ranking factor, in the past certain features, including Top Stories in Google, were reliant on, or at least influenced by, having an AMP version.
 
 ### Homepage Usage
+
+{{ figure_markup(
+  image="amp-markup-desktop-vs-mobile-homepages.png",
+  caption="AMP markup Desktop vs. Mobile Homepages.",
+  description="A Column chart showing percentage of desktop and mobile homepage AMP markup attributes. HTML AMP Attribute is used on 0.04% of desktop pages. HTML AMP & Emoji Attribute is used on 0.01% of desktop pages, while HTML AMP or Emoji Attribute is used on 0.05% of desktop pages, and the Rel AMP HTML tag is used on 0.37% of desktop pages. On mobile, it was 0.27%, 0.06%, 0.33% and 0.63%, respectively.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=1013706420&format=interactive",
+  sheets_gid="693330825",
+  sql_file="mark-up-stats-2024.sql"
+  )
+}}
+
+With the advent of Core Web Vitals (CWV), allowing the ability to quantify performance of non-AMP pages, the requirement for AMP to gain valuable real estate in search results, like Top Stories, has gone, as has much of the upside.
+
+That’s why it’s a little surprising there was a slight uptick in the percentage of pages containing the `amp` html attribute. In 2024, it went up to 0.27% for mobile crawls compared to 0.19% in 2022. The desktop crawls, however, dropped to just 0.04%, down from 0.07% in 2022.
+
+It's worth noting these figures are relatively tiny, so the changes might not be statistically relevant, but they do point to low adoption of the technology.
+
+### Homepages vs. Inner Pages
+
+{{ figure_markup(
+  image="amp-markup-home-vs-inner-pages.png",
+  caption="AMP markup Homepages vs. Inner pages.",
+  description="A Column chart showing percentage of homepages and inner page AMP markup attributes. HTML AMP Attribute is used on 0.31% of homepages on desktop. HTML AMP & Emoji Attribute is used on 0.07%, while HTML AMP or Emoji Attribute is used on 0.38%, and the Rel AMP HTML tag is used on 1.01%. On mobile, it was 0.21%, 0.03%, 0.24% and 2.15%, respectively.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=1013706420&format=interactive",
+  sheets_gid="693330825",
+  sql_file="mark-up-stats-2024.sql"
+  )
+}}
+
+Homepages are more likely when crawled to be AMP pages than inner pages, with 0.31% of homepages across mobile and desktop, and only 0.21% of inner pages having the HTML AMP attribute.
+
+## Internationalization
+
+Internationalization is the process of optimizing a website to target multiple countries, languages, or regions, ensuring proper crawling and indexing by search engines. This involves employing best practices to deliver content to the correct audience.
+
+Modern search engines like [Google can determine a page's language from its visible content](https://developers.google.com/search/docs/specialty/international/managing-multi-regional-sites). Additionally, they can detect the language used in navigation elements.
+
+Still, it can be confusing for search engines to identify the appropriate language, such as when an English course is targeted at a German-speaking audience. In that case, while the page content would be in English, the target audience would be German speakers in different countries.
+
+Therefore, the main purpose of internationalization mechanisms (via HTTP headers, HTML, or sitemaps), such as hreflang tags or content-language attributes, is to avoid confusion and help search engines deliver content to the correct audience.
+
+### Hreflang implementation
+
+Hreflang tags help search engines understand what the main language is on a particular page. Its SEO application is that different countries or regions can be targeted using the appropriate language across different (though related) websites.
+
+The analysis of hreflang tag implementation reveals that 0.05% of websites still use the HTTP protocol within their hreflang tags both on desktop and mobile. This indicates that a small portion of internationalized websites have not yet adopted the HTTPS standard.
+
+As a result, the use of HTTP can cause an inconsistency that may confuse search engines in their correct interpretation of page content.
+
+Furthermore, there's a notable discrepancy between the raw and rendered versions of the tag. A difference of 0.14% exists on desktop (9.49% raw vs. 9.61% rendered) and 0.17% on mobile (9.05% raw vs. 9.19% rendered).
+
+{{ figure_markup(
+  image="hreflang-implementation.png",
+  caption="Hreflang Implementation.",
+  description="A bar chart comparing hreflang implementation on desktop and mobile sites. It shows HTTP hreflang: 0.05% (desktop) and 0.05% (mobile); Raw hreflang: 9.49% (desktop) and 9.05% (mobile); Rendered hreflang: 9.61% (desktop) and 9.19% (mobile)",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=1478193310&format=interactive",
+  sheets_gid="144160625",
+  sql_file="seo-stats-2024.sql"
+  )
+}}
+
+The discrepancy between the "raw" and "rendered" versions of the hreflang tag indicates there are technical issues that are preventing the proper rendering of content, which affects how search engines interpret it.
+
+Even when these discrepancies are considered minor, highly trafficked websites and/or those containing essential information for the public (such as from international institutions, research institutes, universities…) may experience significant losses in visibility with their intended audiences.
+
+### Homepage Hreflang Usage
+
+While search engines can often detect a page's language on its own, hreflang tags provide explicit signals to ensure content reaches its intended audience. These tags are typically used when a website has multiple language versions targeting different locales or regions.
+
+Currently, 10% of desktop websites and 9% of mobile websites utilize hreflang. This represents a slight increase from 2022 when usage was 10% and 9% for desktop and mobile, respectively.
+
+The most popular hreflang value in 2024 remained “en” (English), with 8% usage on desktop and 8% on mobile. That particular tag experienced considerable growth from 2022 when usage was 5% on desktop and 5% on mobile.
+
+{{ figure_markup(
+  image="hreflang-link-usage-homepages.png",
+  caption="Hreflang Link Usage for Homepages.",
+  description="A horizontal bar chart showing hreflang links on homepages, broken down by language code and platform (desktop vs. mobile). The total values for each tag are: en (7.6%), fr (3.0%), de (3.0%), es (2.8%), en-us (2.4%), it (2.2%), ru (1.9%), en-gb (1.5%), and pt (1.4%).",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=725111256&format=interactive",
+  sheets_gid="1291250464",
+  sql_file="hreflang-link-tag-usage-2024.sql",
+  width=600,
+  height=594
+  )
+}}
+
+The most common variations of en are en-us (American English) at 2.8% (desktop) and 2.4% (mobile) and en-gb (British English) at 1.7% (desktop) and 1.5% (mobile).
+
+Following en, the x-default tag, which specifies the default language version, is the next most popular tag. After that, fr (French), de (German), and es (Spanish) are the most frequently used hreflang values, which is similar to the findings in 2022.
+
+### Secondary page hreflang usage
+
+{{ figure_markup(
+  image="hreflang-link-usage-secondary-pages.png",
+  caption="Hreflang Link Usage - Secondary pages",
+  description="A horizontal bar chart showing hreflang links usage on secondary pages, broken down by language code and platform (desktop vs. mobile). The total values for each tag are: x-default (7.3%), en (7.1%), fr (3.0%), de (3.0%), es (2.8%), en-us (2.4%), it (2.2%), ru (1.9%), en-gb (1.4%), and pt (1.3%).",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=725111256&format=interactive",
+  sheets_gid="1291250464",
+  sql_file="hreflang-link-tag-usage-2024.sql",
+  width=600,
+  height=594
+  )
+}}
+
+The use of hreflang tags on secondary pages has x-default (7.3%) and en (English, 7.1%) as the most common values. When the values are broken down between mobile and desktop, we get 8.0% for desktop and 7.3% for mobile for x-default, and 8.0% for desktop and 7.1% for mobile for en.
+
+Desktop usage is slightly higher than mobile for most hreflang values on secondary pages. The differentials are quite small. With the exception of fr, the other hreflang values (de, es, en-us, it, ru, en-gb, pt) have usage below 3.0% and show a degree of concentration in the most common values.
+
+As for distribution, the use of hreflang tags on secondary pages is similar to that found on homepages. The x-default and en lead in adoption in both categories and underscores their global reach. Their percentages are lower on secondary pages, which implies that hreflang implementation is generally prioritized on homepages.
+
+### Content Language usage (HTML and HTTP header)
+
+While search engines like [Google](https://developers.google.com/search/docs/specialty/international) and [Yandex](https://yandex.ru/support/search-results/?service=webmaster&query=hreflang) only employ hreflang tags, others also use the [content-language attribute](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Language), which can be implemented in two ways:
+
+* HTML  
+* HTTP Header
+
+{{ figure_markup(
+  image="language-usage-combined-by-device.png",
+  caption="Language usage (HTML and HTTP header) for mobile and desktop.",
+  description="A bar chart showing language usage as a percentage of pages. For mobile, en was used on 18.0% of pages in our dataset, followed by pt-br on 8.8%, en-us on 7.9%, ja on 5.1%, fr on 4.6%, de on 4.2%, es on 3.6%, vi on 2.6%, cs on 2.7%, ru on 2.9%, tr on 2.7%, zh-tw on 2.2%, pl on 2.3%, th on 2.2%, and it on 2.0%. For desktop, we had 19.7%, 8.6%, 8.8%, 7.4%, 4.6%, 4.6%, 3.5%, 3.3%, 2.9%, 2.6%, 2.2%, 2.2%, 2.7%, 1.8%, 1.9%, and 2.0%, respectively.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=709141996&format=interactive",
+  sheets_gid="127817290",
+  sql_file="content-language-2024.sql",
+  width=600,
+  height=594
+  )
+}}
+
+When examining language usage data for homepages and secondary pages (the latter of which were not discussed in 2022), English (en) appeared as the main element (homepage: 18.0% and secondary page: 18.4%), followed by pt-br (homepage: 8.7% and secondary page: 8.7%), en-us (homepage: 8.3% and secondary page: 8.3%), and ja (homepage: 5.9% and secondary page: 6.4%).
+
+{{ figure_markup(
+  image="home-vs-inner-page-language-usage-combined.png",
+  caption="Language usage (HTML and HTTP header) for Homepage and Secondary page.",
+  description="A bar chart showing language usage as a percentage of pages. For homepage, en was used on 18.0% of pages in our dataset, followed by pt-br on 8.7%, en-us on 8.3%, ja on 5.9%, fr on 4.7%, de on 3.8%, es on 3.7%, vi on 2.7%, ru on 2.5%, cs on 2.5%, tr on 2.4%, pl on 2.4%, zh-tw on 2.3%, th on 2.0%, it on 2.0%, and hu on 1.9%. For the secondary page, it was very similar at 18.4%, 8.7%, 8.3%, 6.4%, 4.6%, 4.0%, 3.2%, 2.8%, 2.6%, 2.7%, 2.5%, 1.7%, 2.5%, 2.2%, 2.0%, and 2.0%, respectively.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=218192895&format=interactive",
+  sheets_gid="127817290",
+  sql_file="content-language-2024.sql",
+  width=600,
+  height=594
+  )
+}}
+
+Regarding other elements, the order followed almost the same pattern as the mobile and desktop comparison shown above.
+
+When analyzing the resulting data for both graphs, the dominance of `en` suggests that a large proportion of content is still tailored to English speakers. The correlation appears to be a result of English not only being the [most spoken language](https://www.statista.com/statistics/266808/the-most-spoken-languages-worldwide/), but also widely used throughout global markets and a requisite for entrance to the powerful United States market (en-us). 
+
+Even though Mandarin is the second most spoken language in the world, the dominant search engine for this language, Baidu, does not require specific tags for locating Chinese websites. As a result, it presents a challenge when collecting data for the language. Still, `zh-tw` (the Chinese spoken in Taiwan) appears in the 13th position for language usage.
+
+Additionally, the growth of `pt-br` from 6th position in the 2022 mobile versus desktop comparison to second position is quite significant and may indicate a pursuit of audience gains in this language.
+
+## Conclusions
+
+The two years between the last Web Almanac SEO chapter in 2022 and this year's edition may seem like a long time in SEO, which is often a fast-moving field. However, the data shows incremental changes to the fundamentals have been slow-moving. 
+
+The recent growth of the `IndexIfEmbedded` tag, for example, signals that perhaps certain practices and protocols need some time before there’s mass adoption within the SEO industry.
+
+That said, it has not been business-as-usual. The amount of sites passing Core Web Vitals (CWV) has been tremendous, despite Interaction to Next Paint (INP) replacing the arguably much easier to pass metric of First Input Delay (FID). That positive news signals how performance, in general, is being taken more seriously in the SEO industry.
+
+Most notably, AI and LLMs are presenting some of the biggest changes search engines have encountered in a long time, and they have the potential to be hugely disruptive. As a result, adoption of robots.txt, related to the associated crawlers, has already grown.
+
+The ever-changing search landscape and the new opportunities afforded by AI and LLMs have the potential for SEO to quickly move into new areas. At the same time, the slow but steady improvements to fundamentals underscore that the state of SEO remains one where long-standing best practices, despite large sea changes, are both prized and ultimately rewarded.
