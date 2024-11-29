@@ -123,6 +123,7 @@ For further information on specific regulations and standards, refer to:
 - <a hreflang="en" href="https://w3c.github.io/sustyweb/star.html">WSG: Draft Sustainable Tooling And Reporting (STAR) 1.0</a>
 - <a hreflang="en" href="https://www.globalreporting.org/how-to-use-the-gri-standards/gri-standards-english-language/">GRI: Global Reporting Initiative</a>
 - <a hreflang="en" href="https://gr491.isit-europe.org/en/">GR491, The Handbook of sustainable design of digital services | ISIT</a>
+- <a hreflang="en" href="https://github.com/cnumr/best-practices/blob/main/README.en.md">Web Ecodesign Reference Framework</a>
 - <a hreflang="en" href="https://apolitical.co/solution-articles/en/keeping-tech-sustainable">Apolitical: Keeping tech sustainable</a>
 
 ## Evaluating the environmental impact of websites
