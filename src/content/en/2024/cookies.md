@@ -3,7 +3,7 @@
 title: Cookies
 description: Cookies chapter of the 2024 Web Almanac covering the prevalence and structure of cookies on the web.
 hero_alt: Hero image of Web Almanac characters carrying a large cookie, while crumbs are thrown off by another character. Another Web Almanac character is following the trail of cookies with a detective hat and a magnifying glass.
-authors: [yohhaan,samdutton,ydimova]
+authors: [yohhaan,samdutton,ydimova, shaoormunir]
 reviewers: [samdutton,rowan-m]
 analysts: [yohhaan]
 editors: [tunetheweb]
@@ -12,6 +12,7 @@ results: https://docs.google.com/spreadsheets/d/1wDGnUkO0rgcU5_V6hmUrhm1pq60VU2X
 yohhaan_bio: Yohan Beugin is a Ph.D. student in the Department of Computer Sciences at the University of Wisconsin–Madison where he is a member of the Security and Privacy Research Group and advised by Prof. Patrick McDaniel. He is interested in building more secure, privacy-preserving, and trustworthy systems. His current research so far has focused on tracking and privacy in online advertising.
 samdutton_bio: Sam Dutton is a Developer Advocate with the Privacy Sandbox team at Google, focused on helping sites migrate away from relying on third-party cookies. Sam grew up in South Australia, went to university in Sydney, and has lived since 1986 in London. He previously worked as a software engineer at BBC R&D and ITN, as a typesetter for Decca Records, and as a researcher at Picador Books.
 ydimova_bio: Yana Dimova is a PhD student at DistriNet, KU Leuven, focusing on the user's perspective of privacy and how they can protect it on the web. Her research interests are online tracking, personal data leaks and privacy and data protection law.
+shaoormunir_bio: Shaoor Munir is a Ph.D. student in Computer Science at UC Davis, specializing in the analysis and development of privacy-enhancing technologies (PETs) and the policies that govern online data collection. His work seeks to advance privacy safeguards for netizens by balancing technological innovation with responsible data governance on the internet.
 featured_quote: Our results indicate both first-party and third-party tracking are common. We show that online tracking by means of cookies is still predominant on the web.
 featured_stat_1: 61%
 featured_stat_label_1: Cookies that are third-party
