@@ -31,6 +31,8 @@ The Web Almanac's SEO chapter focuses on the critical elements and configuration
 
 This chapter combines data from [HTTP Archive](https://httparchive.org/), [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/), [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report), and custom metrics to document the state of SEO and its context in the digital landscape.
 
+This year, we have analyzed one inner page per site crawled, on top of the home pages this chapter usually analyzes. Since home pages are often quite different to inner pages, this unlocks new insights and allows us to compare home verses inner page behaviors.
+
 
 ## Crawlability & indexability 
 
@@ -479,9 +481,9 @@ Core Web Vitals (CWV) are a series of standardized metrics to help measure how a
 
 Core Web Vitals are designed to answer three human-centric questions related to performance:
 
-1. *Is the page loading?* Largest Contentful Paint (LCP)  
-2. *Is the page interactive?* Interaction to Next Paint (INP)  
-3. *Is the page visually stable?* Cumulative Layout Shift (CLS)
+1. *Is the page loading?* [Largest Contentful Paint](https://web.dev/articles/lcp) (LCP)  
+2. *Is the page interactive?* [Interaction to Next Paint](https://web.dev/articles/inp) (INP)  
+3. *Is the page visually stable?* [Cumulative Layout Shift](https://web.dev/articles/cls) (CLS)
 
 Core Web Vitals is measured via the page loads of real Chrome users across millions of websites and available via a public dataset, the [Chrome User Experience Report](https://developer.chrome.com/docs/crux/) (CrUX).
 
@@ -529,7 +531,7 @@ Images are a critical component when it comes to page load. Image loading proper
   )
 }}
 
-Most sites do not use these valuable signals, with 71.9% of desktop pages and 71.8% of mobile pages missing image-loading properties. The most adopted attribute was `loading="lazy"`. [Lazy loading](https://web.dev/articles/browser-level-image-lazy-loading) is a technique that defers the loading of non-critical elements on a web page until they are needed. This helps reduce the page weight and conserves bandwidth and system resources. This tag was used for 24.6% of mobile pages and 24.3% of desktop pages in 2024.
+Most sites do not use these valuable signals, with 71.9% of desktop pages and 71.8% of mobile pages missing image-loading properties. The most adopted attribute was `loading="lazy"`. [Lazy loading](https://web.dev/articles/browser-level-image-lazy-loading) is a technique that defers the loading of non-critical elements on a web page until they are needed. This helps reduce the page weight and conserves bandwidth and system resources. This tag was used for 24.6% of mobile pages and 24.3% of desktop pages in 2024. The increased adoption can likely be attributed to [loading attributes becoming a web standard](https://caniuse.com/loading-lazy-attr). 
 
 The counterpart to `lazy` loading is [`eager` loading](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#eager). A browser `eager`loads images by default. A image with the `eager` attribute and an image without any loading attribute will behave the same. `eager` loading was the second most used property in 2024, but only appeared on 3.4% of mobile pages and 3.6% of desktop pages.
 
@@ -545,11 +547,13 @@ The counterpart to `lazy` loading is [`eager` loading](https://developer.mozilla
   )
 }}
 
+A third deprecated value, auto, was never standardized and has since been removed from Chrome support. It is now considered an invalid value and ignored.
+
 ### `lazy` loading vs. `eager` loading iframes
 
 [Loading attributes](https://html.spec.whatwg.org/multipage/urls-and-fetching.html#lazy-loading-attributes) allow pages to load resources when they are useful and, as a result, improve perceived page performance. Two values are accepted. The `loading="lazy"` attribute defers loading of the resource until it reaches a calculated distance from the viewport. Conversely, `loading="eager"` means the image is loaded regardless of its location on the page. If there is no load attribute, the behavior is `eager` as this is the browser default.
 
-A third deprecated value, [`auto`](https://web.dev/articles/browser-level-image-lazy-loading#auto-lazy-load), was never standardized and has since been removed from Chrome support. It is now considered an invalid value and ignored.
+Similarly to `img` loading attributes, `auto` is invalid and ignored.
 
 {{ figure_markup(
   image="iframe-loading-property-usage.png",
@@ -563,7 +567,7 @@ A third deprecated value, [`auto`](https://web.dev/articles/browser-level-image-
 
 Of the sites containing one or more `<iframe>` elements, 92.8% of desktop and 92.6% did not declare a loading property. `lazy` was the most prominent declaration and most often occurred when there were multiple `<iframe>` elements on the page. We found 4.0% of desktop and 3.9% of mobile pages had a mixed `lazy` loaded and `<iframe>` elements without a declaration. Additionally, 2.6% of desktop and 2.9% of mobile pages used the `lazy` attribute on all `<iframe>` elements discovered during the crawl. 
 
-In 2022, 3.7% of desktop and 4.1% of mobile pages used the `lazy` loading attribute. The attribute occurred on 6.6% of desktop and 6.9% of mobile in 2024. The increased adoption can likely be attributed to [loading attributes becoming a Chrome standard](https://web.dev/articles/iframe-lazy-loading). 
+In 2022, 3.7% of desktop and 4.1% of mobile pages used the `lazy` loading attribute. The attribute occurred on 6.6% of desktop and 6.9% of mobile in 2024. 
 
 Since `<iframe>` elements can be controlled by either the site on which the page is hosted or a third-party service, the prevalence of loading attribute combinations suggests that sites are adopting loading attributes wherever possible. It is reasonable to assume that third-party controlled `<iframe>` elements are less likely to have attributes.
 
@@ -579,8 +583,8 @@ In 2021, [Google started rewriting more websites’ `title` tags in their search
 
 {{ figure_markup(
   image="title-tag-and-meta-description.png",
-  caption="Title tag and meta descriptions.",
-  description="A column chart with the percentage of pages containing a `title` tag and meta description. In 2024, 98% of desktop pages had a title tag and 66.7% of desktop pages had a meta description. The numbers for mobile pages were nearly similar, with 98.2% having a title tag and 66.4% having a meta description.",
+  caption="Title elements and meta descriptions.",
+  description="A column chart with the percentage of pages containing a `title` tag and meta description. In 2024, 98% of desktop pages had a title elements and 66.7% of desktop pages had a meta description. The numbers for mobile pages were nearly similar, with 98.2% having a title element and 66.4% having a meta description.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=1166495990&format=interactive",
   sheets_gid="144160625",
   sql_file="seo-stats-2024.sql"
@@ -613,7 +617,7 @@ The [`<title>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title)
   )
 }}
 
-The word count in `title` elements was consistent between mobile and desktop experiences until the 90th percentile. The character count on mobile was slightly higher than desktop with 79 characters compared to 77 characters, respectively. 
+The word count in `title` elements was consistent between mobile and desktop experiences, though the character count was slightly higher—for example 79 characters compared to 77 at the median.
 
 ### Meta description tag
 
@@ -751,7 +755,7 @@ The decrease in missing `<img>` `alt` attributes combined with the increase in b
   )
 }}
 
-Only 0.9% of pages had the VideoObject structured data markup in 2024. While this is more than double the 0.4% rate of 2022, it means there is still a significant gap between the percentage of pages that have video and those that have video and schema for it.
+Only 0.9% of pages had the `VideoObject` structured data markup in 2024. While this is more than double the 0.4% rate of 2022, it means there is still a significant gap between the percentage of pages that have video and those that have video and schema for it.
 
 ## Links
 
@@ -759,7 +763,7 @@ Links on a page are used by search engines in a number of important ways.
 
 One of the methods that search engines employ to discover new URLs for crawling, for example, is by finding a link targeting it from a page that they’re already crawling and parsing.
 
-Search engines also use links for ranking. Links serve as a proxy for how important and relevant a particular URL might be, based on the links targeting it. This is the basis of PageRank, an algorithm on which Google was built.
+Search engines also use links for ranking. Links serve as a proxy for how important and relevant a particular URL might be, based on the links targeting it. This is the basis of [PageRank](https://en.wikipedia.org/wiki/PageRank), an algorithm on which Google was built.
 
 When it comes to links, it is not a simple case of more links equals better ranking. There’s a lot more nuance to it. These days, links are less of a factor when it comes to ranking. Search engines have evolved to better detect and rank great content, irrespective of links and, at the same time, to combat manipulation and [link spam.](https://developers.google.com/search/docs/essentials/spam-policies#link-spam)
 
@@ -800,7 +804,7 @@ Internal links are links to other pages on the same website. The trend continues
 
 Overall, the number of internal links on a page have grown, with pages in the top 1,000 sites now having 129 internal links on mobile compared to 106 internal links in 2022. There has been a similar level of growth across all rank groupings.
 
-According to CrUX ranking data, it's clear that the more popular sites have more outgoing internal links. This might simply be because the more visited sites are bigger entities with more useful internal links, as well as their investment in developing 'mega-menu' type navigation to help them handle more pages. 
+According to [CrUX ranking data](https://almanac.httparchive.org/en/2024/methodology#chrome-ux-report), it's clear that the more popular sites have more outgoing internal links. This might simply be because the more visited sites are bigger entities with more useful internal links, as well as their investment in developing 'mega-menu' type navigation to help them handle more pages. 
 
 {{ figure_markup(
   image="median-links-to-external-sites.png",
@@ -1013,7 +1017,7 @@ For the most part, inner pages similarly utilize JSON-LD, but there is a slight 
 {{ figure_markup(
   image="most-popular-homepage-schema-types.png",
   caption="Most popular home page schema types.",
-  description="A column chart showing the 15 most popular schema types for home pages. On desktop, pages schema.org/WebSite was found on 35%, schema.org/SearchAction on 29%, schema.org/WebPage on 25%, schema.org/Organization on 25%, schema.org/-UnknownType- on 24%, schema.org/ListItem on 20%, schema.org/BreadcrumbList on 20%, schema.org/ImageObject on 19%, schema.org/EntryPoint on 18%, schema.org/ReadAction on 14%, schema.org/PostalAddress on 8%, schema.org/SiteNavigationElement on 6%, schema.org/WPHeader on 6%, schema.org/Person on 5%, schema.org/WPFooter on 5%. For mobile, they were found on 35%, 28%, 25%, 24%, 23%, 20%, 20%, 20%, 18%, 14%, 8%, 7%, 6%, 5%, and 5% of pages, respectively.",
+  description="A column chart showing the 15 most popular schema types for home pages. On desktop, pages `schema.org/WebSite` was found on 35%, `schema.org/SearchAction` on 29%, schema.org/WebPage on 25%, `schema.org/Organization` on 25%, `schema.org/-UnknownType-` on 24%, `schema.org/ListItem` on 20%, `schema.org/BreadcrumbList` on 20%, `schema.org/ImageObject` on 19%, `schema.org/EntryPoint` on 18%, `schema.org/ReadAction` on 14%, `schema.org/PostalAddress` on 8%, `schema.org/SiteNavigationElement` on 6%, s`chema.org/WPHeader` on 6%, `schema.org/Person` on 5%, s`chema.org/WPFooter` on 5%. For mobile, they were found on 35%, 28%, 25%, 24%, 23%, 20%, 20%, 20%, 18%, 14%, 8%, 7%, 6%, 5%, and 5% of pages, respectively.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=1774876613&format=interactive",
   sheets_gid="1091913261",
   sql_file="structured-data-schema-types-2024.sql",
@@ -1033,7 +1037,7 @@ As for implementing the most popular schema types, there were minor differences 
 {{ figure_markup(
   image="most-popular-inner-page-schema-types.png",
   caption="Most popular inner page schema types.",
-  description="A column chart showing the 15 most popular schema types for inner pages. On desktop, pages schema.org/ListItem was found on 31%, schema.org/BreadcrumbList on 30%, schema.org/WebSite on 29%, schema.org/WebPage on 27%, schema.org/-UnknownType- on 28%, schema.org/Organization on 27%, schema.org/ImageObject on 24%, schema.org/SearchAction on 19%, schema.org/EntryPoint on 16%, schema.org/ReadAction on 15%, schema.org/Person on 10%, schema.org/Article on 6%, schema.org/SiteNavigationElement on 7%, schema.org/WPHeader on 6%, schema.org/WPFooter on 5%. For mobile, they were found on 30%, 30%, 28%, 27%, 27%, 27%, 24%, 19%, 16%, 15%, 12%, 7%, 7%, 6% and 6% of pages, respectively.",
+  description="A column chart showing the 15 most popular schema types for inner pages. On desktop, pages `schema.org/ListItem` was found on 31%, `schema.org/BreadcrumbList` on 30%, `schema.org/WebSite` on 29%, `schema.org/WebPage` on 27%, `schema.org/-UnknownType-` on 28%, `schema.org/Organization` on 27%, `schema.org/ImageObject` on 24%, `schema.org/SearchAction` on 19%, `schema.org/EntryPoint` on 16%, `schema.org/ReadAction` on 15%, `schema.org/Person` on 10%, `schema.org/Article` on 6%, `schema.org/SiteNavigationElement` on 7%, `schema.org/WPHeader` on 6%, `schema.org/WPFooter` on 5%. For mobile, they were found on 30%, 30%, 28%, 27%, 27%, 27%, 24%, 19%, 16%, 15%, 12%, 7%, 7%, 6% and 6% of pages, respectively.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=1786706905&format=interactive",
   sheets_gid="1091913261",
   sql_file="structured-data-schema-types-2024.sql",
