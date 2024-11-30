@@ -306,7 +306,7 @@ def accentless_sort(value):
 def get_file_date_info(file, type):
     timestamps_config = get_timestamps_config()
     # Default Published and Last Updated to today
-    today = datetime.datetime.utcnow().isoformat(timespec='milliseconds')
+    today = datetime.datetime.now(datetime.UTC).isoformat(timespec='milliseconds')
     if type == "date_published" or type == "date_modified":
         return timestamps_config.get(file, {}).get(type, today)
     else:
