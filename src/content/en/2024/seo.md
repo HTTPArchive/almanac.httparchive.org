@@ -102,7 +102,7 @@ According to RFC 9309 standards, crawlers should limit the size of `robots.txt` 
 {{ figure_markup(
   image="robots-txt-user-agent-usage.png",
   caption="`robots.txt` user-agent usage",
-  description="A bar chart showing the most common user agent targets in `robots.txt` files. For desktop * is 76.6%, AdsBot-Google is 9.1%, AhrefsBot is 8.6%, MJ12Bot is 6.7%, Googlebot is 5.9%, AdsBot-Google-Mobile is 4.6%, Dotbot is 4.4%, Nutch is 4.5%, Pinterestbot is 4.1%, AhrefsSiteAudit is 4.0%, PetalBot is 3.4%, GPTBot is 2.9%, Mediapartners-Google is 2.3%, Bingbot is 2.6%, and lastly the CCBot is 2.7%. Mobile is consistent with desktop at 76.9%, 8.9%, 8.8%, 6.6%, 6.4%, 4.6%, 4.9%, 4.3%, 3.9%, 3.7%, 3.8%, 2.6%, 3.0%, 2.6%, and 2.4%, respectively.",
+  description="A bar chart showing the most common user agent targets in `robots.txt` files. For desktop * is 76.6%, `AdsBot-Google` is 9.1%, `AhrefsBot` is 8.6%, `MJ12Bot` is 6.7%, `Googlebot` is 5.9%, `AdsBot-Google-Mobile` is 4.6%, `Dotbot` is 4.4%, `Nutch` is 4.5%, `Pinterestbot` is 4.1%, `AhrefsSiteAudit` is 4.0%, `PetalBot` is 3.4%, `GPTBot` is 2.9%, `Mediapartners-Google` is 2.3%, `Bingbot` is 2.6%, and lastly the `CCBot` is 2.7%. Mobile is consistent with desktop at 76.9%, 8.9%, 8.8%, 6.6%, 6.4%, 4.6%, 4.9%, 4.3%, 3.9%, 3.7%, 3.8%, 2.6%, 3.0%, 2.6%, and 2.4%, respectively.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=1672540926&format=interactive",
   sheets_gid="1705238622",
   sql_file="robots-txt-user-agent-usage-2024",
@@ -111,22 +111,22 @@ According to RFC 9309 standards, crawlers should limit the size of `robots.txt` 
   )
 }}
 
-##### The `*` User Agent
+##### The `*` user agent
 
 A full 76.9% of `robots.txt` files encountered by the mobile crawl and 76.6% of those found in the desktop crawl specify rules for the catch-all user-agent of `*`. This represents a small uptick over the data from 2022 in which it was 74.9% for desktop and 76.1% for mobile crawls. A possible explanation could be the slight overall increase in `robots.txt` availability.
 
-The `*` user-agent denotes the rules a crawler should follow unless there's another set of rules that specifically target the crawler's user-agent. There are notable exceptions that don't respect the * user-agent, including Google's [Adsbot crawler](https://developers.google.com/search/docs/crawling-indexing/google-special-case-crawlers#adsbot-mobile-web). Other crawlers will try another common user-agent before falling back to `*`, such as Apple's Applebot, which uses Googlebot’s rules if they are specified and Applebot if not specified. We recommend checking the support documentation for any crawlers you are targeting to ensure that behavior is as expected when relying on fallback.
+The `*` user-agent denotes the rules a crawler should follow unless there's another set of rules that specifically target the crawler's user-agent. There are notable exceptions that don't respect the * user-agent, including Google's [Adsbot crawler](https://developers.google.com/search/docs/crawling-indexing/google-special-case-crawlers#adsbot-mobile-web). Other crawlers will try another common user-agent before falling back to `*`, such as Apple's `Applebot`, which uses `Googlebot’s` rules if they are specified and `Applebot` if not specified. We recommend checking the support documentation for any crawlers you are targeting to ensure that behavior is as expected when relying on fallback.
 
 
 ##### Bingbot
 
-Much like in 2022, Bingbot again was not in the top 10 most specified user-agents. Only 2.7% of mobile and 2.6% of desktop `robots.txt` files specified that user-agent, relegating it down to 14th place.
+Much like in 2022, `Bingbot` again was not in the top 10 most specified user-agents. Only 2.7% of mobile and 2.6% of desktop `robots.txt` files specified that user-agent, relegating it down to 14th place.
 
-##### SEO Tools
+##### SEO ootls
 
-The data shows there has been an increase in sites specifying rules for the popular SEO tools. AhrefsBot, for instance, has now been detected in 8.8% of mobile crawls, up from 5.3% in 2022. It has overtaken Majestic's MJ12Bot, which itself increased to 6.6% from 6.0% in 2022 and had previously been the second most popular specifically targeted user-agent.
+The data shows there has been an increase in sites specifying rules for the popular SEO tools. `AhrefsBot`, for instance, has now been detected in 8.8% of mobile crawls, up from 5.3% in 2022. It has overtaken Majestic's `MJ12Bot`, which itself increased to 6.6% from 6.0% in 2022 and had previously been the second most popular specifically targeted user-agent.
 
-##### AI Crawlers
+##### AI crawlers
 
 {{ figure_markup(
   image="robots-txt-ai-user-agents.png",
@@ -325,7 +325,7 @@ Canonical tag usage was up slightly in 2024. In 2022, 61% of mobile and 59% of d
   )
 }}
 
-### Canonical Implementation
+### Canonical implementation
 
 Canonical tags have three [implementation methods](https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls):
 
@@ -358,7 +358,7 @@ Most sites using `<head>` canonicals implement them in the raw and rendered HTML
 
 Rendered canonical implementation was up from 60% of mobile in 2022 to 65% of mobile usage in 2024. Desktop usage increased from 58% in 2022 to 65% in 2024, making adoption rates near identical between device types.
 
-### Canonical Conflicts
+### Canonical conflicts
 
 There are three opportunities for a page to send a canonical, but sending the signal more than once can result in conflicts. For example, if the canonical URL in the HTTP doesn't match that in the rendered HTML, then the search engine is signaled that the primary version of content exists in multiple places. This undermines the purpose of the element and causes [undefined behavior, according to Google](https://www.youtube.com/watch?v=bAE3L1E1Fmk&t=772s). In 2022, this affected 0.4% of pages. Now, the rate has doubled to 0.8% in 2024.
 
@@ -459,7 +459,7 @@ One of the basics of a good mobile experience is being able to easily read the o
 
 Lighthouse has a [legible font size audit](https://developer.chrome.com/docs/lighthouse/seo/font-size/) that was run in tandem with the 2024 Web Almanac crawl. The audit checked for pages that had 60% or more of its content using fonts greater than 12 pixels. The test, specific to mobile pages, saw 92% of eligible pages passing. This percentage was consistent for both home pages and inner or inner pages.
 
-### Core Web Vitals
+### Core web vitals
 
 Core Web Vitals (CWV) are a series of standardized metrics to help measure how a user experiences a page. Google first introduced them as a ranking factor with the [page experience ranking signal](https://developers.google.com/search/blog/2020/05/evaluating-page-experience)  This independent signal was deprecated when it was absorbed into the [Helpful content system](https://developers.google.com/search/docs/appearance/ranking-systems-guide#helpful-content), which has since been folded into the core algorithm.
 
@@ -553,7 +553,7 @@ In 2022, 3.7% of desktop and 4.1% of mobile pages used the `lazy` loading attrib
 
 Since `<iframe>` elements can be controlled by either the site on which the page is hosted or a third-party service, the prevalence of loading attribute combinations suggests that sites are adopting loading attributes wherever possible. It is reasonable to assume that third-party controlled `<iframe>` elements are less likely to have attributes.
 
-## On-Page
+## On-page
 
 When determining which pages to return in a search engine results page (SERP), search engines consider the on-page content as the primary factor. There are various SEO on-page elements that impact a search engine’s understanding of content and its relevance to a user query.
 
@@ -709,8 +709,9 @@ There was an increase in blank `alt` attributes in 2024. Two years ago, the medi
 
 {{ figure_markup(
   image="percentage-of-img-missing-alt.png",
-  caption="A distribution chart of page images missing `alt` attributes. The median of missing `alt` attributes on images is 0% on desktop and mobile sites. At the 10th and 25th percentiles, it’s also 0% on both, above the median (at the 75th percentile), it’s 16% on desktop and 15% on mobile. Finally, at the 75th percentile, it’s 65% of images on desktop and 68% on mobile.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=308025880&format=interactive",
+  caption="Percentage of `img` with missing `alt` tags.",
+  description="A distribution chart of page images missing `alt` attributes. The median of missing `alt` attributes on images is 0% on desktop and mobile sites. At the 10th and 25th percentiles, it’s also 0% on both, above the median (at the 75th percentile), it’s 16% on desktop and 15% on mobile. Finally, at the 75th percentile, it’s 65% of images on desktop and 68% on mobile.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=897418305&format=interactive",
   sheets_gid="1239720340",
   sql_file="image-alt-stats-2024.sql"
   )
@@ -748,7 +749,7 @@ Search engines also use links for ranking. Links serve as a proxy for how import
 
 When it comes to links, it is not a simple case of more links equals better ranking. There’s a lot more nuance to it. These days, links are less of a factor when it comes to ranking. Search engines have evolved to better detect and rank great content, irrespective of links and, at the same time, to combat manipulation and [link spam.](https://developers.google.com/search/docs/essentials/spam-policies#link-spam)
 
-### Non-Descriptive Links
+### Non-descriptive Links
 
 {{ figure_markup(
   image="pages-passing-links-have-descriptive-text.png",
@@ -766,7 +767,7 @@ Lighthouse can detect whether there are non-descriptive links on a page. In 2024
 
 There was a small discrepancy between desktop and mobile, indicating perhaps that on mobile pages there may generally be less poorly indicated call to action links and 'click here' or 'read more' additional links to content, as they might be supplemental to other links on the page to the same target.
 
-### Outgoing Links
+### Outgoing links
 
 Outgoing links are [`<a>` anchor elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a) that have an `href` attribute linking to a different page.
 
@@ -821,17 +822,15 @@ Some more specific attributes were introduced in 2019, including `sponsored`, wh
 
 Interestingly, the most popular attribute is `noopener`, which is not related to SEO, and is just to prevent a page opened in a browser tab or window from accessing or having control over the original page. Additionally, `noreferrer`, which also has no effect on SEO, prevents the passing of the `Referrer` HTTP header, so the target site doesn’t know where the visitor came from, unless unique tracking parameters are present in the link.
 
-## Word Count
+## Word count
 
 Search engines do not rank sites based on word count; however, it is a useful metric for tracking how much text sites contain, as well as a proxy for seeing how much site owners are leaning on client-side rendering to display the content for which they want to be found.
 
-### Rendered word count
-
-#### Home Pages
+### Home pages rendered word count
 
 {{ figure_markup(
   image="homepage-visible-words-rendered-by-percentile.png",
-  caption="Home page Visible words rendered by percentile.",
+  caption="Home page visible words rendered by percentile.",
   description="A distribution of rendered and visible content word counts on home pages. The median number of words rendered is 400 words on desktop and 364 words on mobile. There is a similar, yet smaller, number of words on mobile at the other percentiles above and below the median. At the 10th percentile, it’s 76 words on desktop and 69 words on mobile. At the 25th percentile, it’s 192 words and 174 words, respectively. At the 75th percentile, it’s 734 words and 678 words, respectively. And at the 90th percentile, it’s 1,260 words and 1,174 words, respectively.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=1171813914&format=interactive",
   sheets_gid="1745108356",
@@ -843,11 +842,11 @@ Rendered word count is the amount of visible words on a page after JavaScript ha
 
 Of note, the gap between mobile and desktop home page word counts narrowed to just 36 words in 2024, compared to that of 55 words in 2022. This suggests a marginally closer parity to the content served to mobile users. Google has completed the process of moving to a mobile-first indexing strategy, in which it primarily crawls and indexes pages with a mobile user-agent. It’s reasonable to conclude that this helped push a few remaining sites to offer their full content to mobile visitors.
 
-#### Inner Pages
+### Inner pages rendered word count
 
 {{ figure_markup(
   image="inner-page-visible-words-rendered-by-percentile.png",
-  caption="Inner page Visible words rendered by percentile.",
+  caption="Inner page visible words rendered by percentile.",
   description="A distribution of rendered and visible content word counts on home pages. The median number of words rendered is 333 words on desktop and 317 words on mobile. At the 10th percentile, it’s 76 words on desktop and 64 words on mobile. At the 25th percentile, it’s 159 words and 140 words, respectively. At the 75th percentile, it’s 659 words and 667words, respectively. And at the 90th percentile, it’s 1,219 words and 1,306 words, respectively.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=717477318&format=interactive",
   sheets_gid="1745108356",
@@ -859,13 +858,11 @@ Inner pages contain slightly fewer words overall. The median mobile inner page i
 
 One noticeable difference between home pages and inner pages is that while desktop pages generally have more words than mobile pages at the lower word counts, that gap narrows as the percentiles get higher. By the 75th percentile, for instance, mobile pages have more visible words on their inner pages than desktop’s inner pages.
 
-### Raw word count
-
-#### Home Pages
+### Home pages raw word count
 
 {{ figure_markup(
   image="homepage-visible-words-raw-by-percentile.png",
-  caption="Home page Visible words raw by percentile.",
+  caption="Home page visible words raw by percentile.",
   description="A distribution of raw content word counts on home pages. The median number of words rendered is 330 words on desktop and 311 words on mobile. There is a similar, yet smaller, number of words on mobile at the other percentiles above and below the median. At the 10th percentile, it’s 52 words on desktop and 51 words on mobile. At the 25th percentile, it’s 149 words and 142 words, respectively. At the 75th percentile, it’s 614 words and 584 words, respectively. And at the 90th percentile, it’s 1,061 words and 1,016 words, respectively.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=1250129544&format=interactive",
   sheets_gid="1745108356",
@@ -877,11 +874,11 @@ The raw word count represents the words contained in the initial HTML response f
 
 Much like the rendered word count, there’s similarly a small change in 2024 from 2022. The median page’s raw word count in 2024 was 311 words for mobile user-agents and 330 words for desktops. That’s a tiny drop from 2022 when the median page’s raw word count was 318 for mobile and 363 for desktop.
 
-#### Inner Pages
+### Inner pages raw word count
 
 {{ figure_markup(
   image="inner-page-visible-words-raw-by-percentile.png",
-  caption="Inner Page Visible words raw by percentile.",
+  caption="Inner page visible words raw by percentile.",
   description="A distribution of raw content word counts on inner pages. The median number of words rendered is 284 words on desktop and 278 words on mobile. At the 10th percentile, it’s 55 words on desktop and 50 words on mobile. At the 25th percentile, it’s 126 words and 116 words, respectively. At the 75th percentile, it’s 586 words and 608 words, respectively. And at the 90th percentile, it’s 1,113 words and 1,220 words, respectively.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=1963447811&format=interactive",
   sheets_gid="1745108356",
@@ -893,9 +890,7 @@ Like home pages, the inner pages’ visible words raw count very much follows th
 
 This pattern in both the raw word count and rendered word count pages suggests the trend is unrelated to infinite scrolling, which is a more popular choice for publishers on mobile layouts.
 
-### Rendered vs. Raw
-
-#### Home pages
+### Rendered vs. raw home pages
 
 {{ figure_markup(
   image="rendered-vs-raw-homepage-visible-words.png",
@@ -913,7 +908,7 @@ Home pages served to desktop user-agents have a slightly higher percentage of wo
 
 There is an interesting trend in which the higher the word count there is, the smaller the difference between rendered and raw word count. This suggests perhaps that server-side rendered technologies are relatively more popular than client-side rendered ones for publishers of longer-form content.
 
-#### Inner Pages
+### Rendered vs. raw inner pages
 
 {{ figure_markup(
   image="rendered-vs-raw-inner-page-visible-words.png",
@@ -929,7 +924,7 @@ Somewhat surprisingly, there is an even narrower gap between rendered and raw wo
 
 Although the gap is narrower, it does follow the same pattern of the more words, the less they rely on client-side rendering.
 
-## Structured Data
+## Structured data
 
 Structured data remains important for optimizing many sites. While it is not a ranking factor, *per se*, it often powers rich results, especially on Google.
 
@@ -957,7 +952,7 @@ A few more home pages, 5% of mobile and 6% of desktop crawls, contained some str
 
 The trend appears to be that of providing structured data markup in the raw HTML, something [Google itself highlights](https://developers.google.com/search/updates#clarifying-dynamically-generated-product-markup) as, if not best practice, perhaps the simplest and most reliable way of implementing structured data.
 
-#### Inner Pages
+#### Inner pages
 
 {{ figure_markup(
   image="inner-page-raw-vs-rendered-structured-data.png",
@@ -999,9 +994,7 @@ It’s simply the easiest format to implement, and is done by adding `<script>` 
 
 For the most part, inner pages similarly utilize JSON-LD, but there is a slight increase in the use of structure data with Microdata for those pages.
 
-### Most Popular Structured Data Types
-
-#### Home pages
+### Most popular home pages structured data types
 
 {{ figure_markup(
   image="most-popular-homepage-schema-types.png",
@@ -1021,7 +1014,7 @@ Interestingly, `WebSite` grew a little more in 2024 to 35% of mobile home pages 
 
 As for implementing the most popular schema types, there were minor differences between the percentages of mobile and desktop structured data usage.
 
-#### Inner Pages
+### Most popular inner pages structured data types
 
 {{ figure_markup(
   image="most-popular-inner-page-schema-types.png",
@@ -1053,11 +1046,11 @@ It has been, however, a somewhat divisive technology, with many feeling the burd
 
 While it is not a direct ranking factor, in the past certain features, including Top Stories in Google, were reliant on, or at least influenced by, having an AMP version.
 
-### Home page Usage
+### Home page usage
 
 {{ figure_markup(
   image="amp-markup-desktop-vs-mobile-home-pages.png",
-  caption="AMP markup Desktop vs. Mobile Home pages.",
+  caption="AMP markup desktop vs. mobile home pages.",
   description="A Column chart showing percentage of desktop and mobile home page AMP markup attributes. HTML AMP Attribute is used on 0.04% of desktop pages. HTML AMP & Emoji Attribute is used on 0.01% of desktop pages, while HTML AMP or Emoji Attribute is used on 0.05% of desktop pages, and the Rel AMP HTML tag is used on 0.37% of desktop pages. On mobile, it was 0.27%, 0.06%, 0.33% and 0.63%, respectively.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=1013706420&format=interactive",
   sheets_gid="693330825",
@@ -1071,11 +1064,11 @@ That’s why it’s a little surprising there was a slight uptick in the percent
 
 It's worth noting these figures are relatively tiny, so the changes might not be statistically relevant, but they do point to low adoption of the technology.
 
-### Home pages vs. Inner Pages
+### Home pages vs. inner pages
 
 {{ figure_markup(
   image="amp-markup-home-vs-inner-pages.png",
-  caption="AMP markup Home pages vs. Inner pages.",
+  caption="AMP markup home pages vs. inner pages.",
   description="A Column chart showing percentage of home pages and inner page AMP markup attributes. HTML AMP Attribute is used on 0.31% of home pages on desktop. HTML AMP & Emoji Attribute is used on 0.07%, while HTML AMP or Emoji Attribute is used on 0.38%, and the Rel AMP HTML tag is used on 1.01%. On mobile, it was 0.21%, 0.03%, 0.24% and 2.15%, respectively.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=1013706420&format=interactive",
   sheets_gid="693330825",
@@ -1147,7 +1140,7 @@ Following en, the x-default tag, which specifies the default language version, i
 
 {{ figure_markup(
   image="hreflang-link-usage-secondary-pages.png",
-  caption="Hreflang Link Usage - inner pages",
+  caption="Hreflang link usage - inner pages",
   description="A horizontal bar chart showing hreflang links usage on inner pages, broken down by language code and platform (desktop vs. mobile). The total values for each tag are: x-default (7.3%), en (7.1%), fr (3.0%), de (3.0%), es (2.8%), en-us (2.4%), it (2.2%), ru (1.9%), en-gb (1.4%), and pt (1.3%).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=725111256&format=interactive",
   sheets_gid="1291250464",
