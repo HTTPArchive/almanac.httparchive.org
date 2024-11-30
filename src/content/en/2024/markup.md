@@ -13,7 +13,7 @@ results: https://docs.google.com/spreadsheets/d/1TtOMr_w58HvqNBv4RIWX021Lxm6m5aj
 featured_quote: Every website, every web application, and every online interaction starts with HTML at its core, making it one of the most essential web standards.
 featured_stat_1: 92.8%
 featured_stat_label_1: Documents using the HTML doctype
-featured_stat_2: 32 MB
+featured_stat_2: 32 KB
 featured_stat_label_2: Median HTML document transfer size
 featured_stat_3: 29%
 featured_stat_label_3: Elements that are `div`s
