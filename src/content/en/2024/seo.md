@@ -3,7 +3,7 @@
 title: SEO
 description: SEO chapter of the 2024 Web Almanac covering crawlability, indexability, page experience, on-page SEO, links, AMP, internationalization, and more.
 hero_alt: Hero image of various web pages beneath a search field with Web Almanac characters shine a light on the pages and make various checks.
-authors: [fellowhuman1101, mikaelaraujo, dwsmart, MichaelLewittes]
+authors: [fellowhuman1101, dwsmart,  mikaelaraujo, MichaelLewittes]
 reviewers: []
 editors: [MichaelLewittes]
 analysts: [henryp25, cnichols013]
@@ -176,8 +176,8 @@ Either implementation method is valid and can be used in tandem. The meta tag im
 In 2024:
 
 - 0.4% of desktop and 0.3% of mobile pages saw the directives' values changed by rendering.  
-- Secondary pages were more likely to have robots directives. And 48% of secondary pages contained a meta robots tag compared to 43.9% of home pages.   
-- Rendering was more likely to change the robots directive of a home page (0.4%) than that of a secondary page (0.3%).
+- Inner pages were more likely to have robots directives. And 48% of inner pages contained a meta robots tag compared to 43.9% of home pages.   
+- Rendering was more likely to change the robots directive of a home page (0.4%) than that of a inner page (0.3%).
 
 
 
@@ -450,14 +450,14 @@ One of the basics of a good mobile experience is being able to easily read the o
 {{ figure_markup(
   image="legible-font-sizes.png",
   caption="Legible font sizes.",
-  description="A bar chart comparing legible font size use on home pages and secondary pages. 91% of home pages and 92% of secondary pages passed the audit for legible font sizes.",
+  description="A bar chart comparing legible font size use on home pages and inner pages. 91% of home pages and 92% of inner pages passed the audit for legible font sizes.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=1547833548&format=interactive",
   sheets_gid="1219126486",
   sql_file="lighthouse-seo-stats-2024.sql"
   )
 }}
 
-Lighthouse has a [legible font size audit](https://developer.chrome.com/docs/lighthouse/seo/font-size/) that was run in tandem with the 2024 Web Almanac crawl. The audit checked for pages that had 60% or more of its content using fonts greater than 12 pixels. The test, specific to mobile pages, saw 92% of eligible pages passing. This percentage was consistent for both home pages and inner or secondary pages.
+Lighthouse has a [legible font size audit](https://developer.chrome.com/docs/lighthouse/seo/font-size/) that was run in tandem with the 2024 Web Almanac crawl. The audit checked for pages that had 60% or more of its content using fonts greater than 12 pixels. The test, specific to mobile pages, saw 92% of eligible pages passing. This percentage was consistent for both home pages and inner or inner pages.
 
 ### Core Web Vitals
 
@@ -522,7 +522,7 @@ The corollary to lazy loading is [eager loading](https://developer.mozilla.org/e
 {{ figure_markup(
   image="desktop-image-loading-property.png",
   caption="Image loading properties on home vs. inner pages.",
-  description="A bar chart showing usage of different `loading` attribute values, on desktop pages. On home pages 0.1% use `auto`, 0.0%  use `blank`, 1.8% use `eager`, 0.1% have an invalid attribute, 11.0% use `lazy` and 31.1% are missing a loading attribute. For inner, secondary pages, it is 0.1%, 0.0%, 1.5%, 0.0%, 10.6% and 33.2% respectively.",
+  description="A bar chart showing usage of different `loading` attribute values, on desktop pages. On home pages 0.1% use `auto`, 0.0%  use `blank`, 1.8% use `eager`, 0.1% have an invalid attribute, 11.0% use `lazy` and 31.1% are missing a loading attribute. For inner, inner pages, it is 0.1%, 0.0%, 1.5%, 0.0%, 10.6% and 33.2% respectively.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=917180585&format=interactive",
   sheets_gid="1025550820",
   sql_file="image-loading-property-usage-2024.sql",
@@ -540,18 +540,18 @@ A third deprecated value, [`auto`](https://web.dev/articles/browser-level-image-
 {{ figure_markup(
   image="iframe-loading-property-usage.png",
   caption="`iframe` loading property usage.",
-  description="A column chart showing the five most common `iframe` loading properties. For desktop pages, 92.79% did not declare a loading attribute, 3.97% had multiple iframes that used both `lazy` and had no loading declaration, 2.61% used only `lazy`, 0.39% had multiple iframes with `auto` and missing attributes, and 0.13% had multiple with `eager` and missing attributes. Mobile behaved similarly at 92.56%, 3.93%, 2.92%, 0.33%, and 0.14%, respectively.",
+  description="A column chart showing the five most common `iframe` loading properties. For desktop pages, 92.8% did not declare a loading attribute, 4.0% had multiple iframes that used both `lazy` and had no loading declaration, 2.6% used only `lazy`, 0.4% had multiple iframes with `auto` and missing attributes, and 0.1% had multiple with `eager` and missing attributes. Mobile behaved similarly at 92.6%, 3.9%, 2.9%, 0.3%, and 0.1%, respectively.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=88529446&format=interactive",
   sheets_gid="660314947",
   sql_file="iframe-loading-property-usage-2024.sql"
   )
 }}
 
-Of the sites containing one or more <iframe> elements, 92.8% of desktop and 92.6% did not declare a loading property. lazy was the most prominent declaration and most often occurred when there were multiple <iframe> elements on the page. We found 4.0% of desktop and 3.9% of mobile pages had a mixed lazy loaded and <iframe> elements without a declaration. Additionally, 2.6% of desktop and 2.9% of mobile pages used the lazy attribute on all <iframe> elements discovered during the crawl.
+Of the sites containing one or more `<iframe>` elements, 92.8% of desktop and 92.6% did not declare a loading property. `lazy` was the most prominent declaration and most often occurred when there were multiple `<iframe>` elements on the page. We found 4.0% of desktop and 3.9% of mobile pages had a mixed `lazy` loaded and `<iframe>` elements without a declaration. Additionally, 2.6% of desktop and 2.9% of mobile pages used the `lazy` attribute on all `<iframe>` elements discovered during the crawl. 
 
-In 2022, 3.7% of desktop and 4.1% of mobile pages used the lazy loading attribute. The attribute occurred on 6.6% of desktop and 6.9% of mobile in 2024. The increased adoption can likely be attributed to loading attributes becoming a Chrome standard.
+In 2022, 3.7% of desktop and 4.1% of mobile pages used the `lazy` loading attribute. The attribute occurred on 6.6% of desktop and 6.9% of mobile in 2024. The increased adoption can likely be attributed to [loading attributes becoming a Chrome standard](https://web.dev/articles/iframe-lazy-loading). 
 
-Since <iframe> elements can be controlled by either the site on which the page is hosted or a third-party service, the prevalence of loading attribute combinations suggests that sites are adopting loading attributes wherever possible. It is reasonable to assume that third-party controlled <iframe> elements are less likely to have attributes.
+Since `<iframe>` elements can be controlled by either the site on which the page is hosted or a third-party service, the prevalence of loading attribute combinations suggests that sites are adopting loading attributes wherever possible. It is reasonable to assume that third-party controlled `<iframe>` elements are less likely to have attributes.
 
 ## On-Page
 
@@ -686,31 +686,30 @@ The image alt attribute provides information about the image for those who, for 
 {{ figure_markup(
   image="percentage-of-img-alt-attributes-present.png",
   caption="Percentage of `<img>` with `alt` tags present.",
-  description="A distribution chart of pages with an `<img>` tag implementing `alt` attributes. The median usage of images with `alt` attributes is 58.3% on desktop and 57.8% on mobile. At the 10th percentile it’s 0% for both, at the 25th percentile it’s 16% and 15.5%, at the 75th percentile it’s 93.8% and 94.2% and at the 90th percentile it’s 100% for both.",
+  description="A distribution chart of pages with an `<img>` tag implementing `alt` attributes. The median usage of images with `alt` attributes is 58.3% on desktop and 57.8% on mobile. At the 10th percentile it’s 0% for both, at the 25th percentile it’s 16.0% and 15.5%, at the 75th percentile it’s 93.8% and 94.2% and at the 90th percentile it’s 100% for both.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=1763319897&format=interactive",
   sheets_gid="1239720340",
   sql_file="image-alt-stats-2024.sql"
   )
 }}
 
-The median mobile site in 2024 had alt attributes on 57.8% of its images. That’s slightly up from 2022 when 54% of mobile pages used alt tags.
+The median mobile site in 2024 had alt attributes on 58% of its images. That’s slightly up from 2022 when 54% of mobile pages used alt tags.
 
 {{ figure_markup(
   image="percentage-of-img-with-blank-alt.png",
   caption="Percentage of `<img>` with blank `alt` tags.",
-  description="A distribution chart of pages with an `<img>` element implementing empty `alt` attribute. At the median,14% of mobile and 14.2% of desktop have an `alt` attribute that is empty. At the 75th percentile, this rises to 57.1%,of mobile and 56.8% of mobile. At the 90th percentile, empty `alt` attributes appeared on 90.6% of mobile and 89.5% of desktop.",
+  description="A distribution chart of pages with an `<img>` element implementing empty `alt` attribute. At the median, 14% of mobile and 14% of desktop have an `alt` attribute that is empty. At the 75th percentile, this rises to 57% of mobile and 57% of mobile. At the 90th percentile, empty `alt` attributes appeared on 91% of mobile and 90% of desktop.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=308025880&format=interactive",
   sheets_gid="1239720340",
   sql_file="image-alt-stats-2024.sql"
   )
 }}
 
-There was an increase in blank `alt` attributes in 2024. Two years ago, the median page had 0% blank `alt` attributes. Now the median is 14.2% of desktop pages and 14.0% of mobile that are left blank. At the 75th percentile, 56.8% of desktop and 57.1% of mobile pages saw blank `alt` attributes.
+There was an increase in blank `alt` attributes in 2024. Two years ago, the median page had 0% blank `alt` attributes. Now the median is 14% of desktop pages and 14% of mobile that are left blank. At the 75th percentile, 57% of desktop and 57% of mobile pages saw blank `alt` attributes.
 
 {{ figure_markup(
   image="percentage-of-img-missing-alt.png",
-  caption="Percentage of `<img>` with missing `alt` attributes.",
-  description="A distribution chart of page images missing alt attributes. The median of missing alt attributes on images is 12% on desktop and 13% on mobile sites. At the 10th and 25th percentiles, it’s 0% on both, but above the median (at the 75th percentile), it’s 51% on desktop and 53% on mobile. Finally, at the 75th percentile, it’s 86% of images on desktop and 87% on mobile.",
+  caption="A distribution chart of page images missing `alt` attributes. The median of missing `alt` attributes on images is 0% on desktop and mobile sites. At the 10th and 25th percentiles, it’s also 0% on both, above the median (at the 75th percentile), it’s 16% on desktop and 15% on mobile. Finally, at the 75th percentile, it’s 65% of images on desktop and 68% on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=308025880&format=interactive",
   sheets_gid="1239720340",
   sql_file="image-alt-stats-2024.sql"
@@ -723,9 +722,9 @@ The decrease in missing `<img>` `alt` attributes combined with the increase in b
 
 ### Video
 
-Search engines and users love video. Search engines use videos to enrich SERP pages for traditional queries, video searches, and AI-enhanced summaries of queries.
+In 2024, the median page saw no missing `alt` attributes on either mobile or desktop pages.  This is a noteworthy drop from 2022 where 12% of desktop and 13% of mobile were missing the attributes. At the 75th percentile, 16% of desktop and 15% of mobile did not include `alt` attributes. In 2022, this was 51% and 53% respectively.
 
-In 2024, video adoption on mobile and desktop pages was 5.40% and 4.81%, respectively. While a small percentage of pages integrate video, the experience is relatively consistent between device types, as well as on home page versus inner pages.
+The decrease in missing `<img>` `alt` attributes combined with the increase in blank attributes suggests that more CMS instances may be including an `alt` attribute for each image.
 
 {{ figure_markup(
   image="percentage-of-pages-with-video.png",
@@ -900,8 +899,8 @@ This pattern in both the raw word count and rendered word count pages suggests t
 
 {{ figure_markup(
   image="rendered-vs-raw-homepage-visible-words.png",
-  caption="Rendered vs Raw Home page Visible Words.",
-  description="A distribution of raw versus rendered word counts on home pages. On desktop, there is a 31.6% difference between raw and rendered word counts at the 10th percentile, 22.4% difference at the 25th percentile, 17.5% difference at the median, 16.3% difference at the 75th percentile, and 15.8% difference at the 90th percentile. On mobile, the differences are 26.1%, 18.4%, 14.6%, 14%, and 13.5%, respectively.",
+  caption="Rendered vs raw home page visible words.",
+  description="A distribution of raw versus rendered word counts on home pages. On desktop, there is a 32% difference between raw and rendered word counts at the 10th percentile, 22% difference at the 25th percentile, 18% difference at the median, 16% difference at the 75th percentile, and 16% difference at the 90th percentile. On mobile, the differences are 26%, 18%, 15%, 14%, and 14%, respectively.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=847900289&format=interactive",
   sheets_gid="1745108356",
   sql_file="seo-stats-by-percentile-2024.sql"
@@ -918,8 +917,8 @@ There is an interesting trend in which the higher the word count there is, the s
 
 {{ figure_markup(
   image="rendered-vs-raw-inner-page-visible-words.png",
-  caption="Rendered vs Raw Home page Visible Words.",
-  description="A distribution of raw vs. rendered word counts on home pages. On desktop, there is a 27.6% difference between at the 10th percentile, 20.8% difference at the 25th percentile, 14.7% difference at the median, 11.1% difference at the 75th percentile, and 8.7% difference at the 90th percentile. On mobile, the differences are 21.9%, 17.1%, 12.3%, 8.8%, and 6.6%, respectively.",
+  caption="Rendered vs raw home page visible words.",
+  description="A distribution of raw vs. rendered word counts on home pages. On desktop, there is a 28% difference between at the 10th percentile, 21% difference at the 25th percentile, 15% difference at the median, 11% difference at the 75th percentile, and 9% difference at the 90th percentile. On mobile, the differences are 22%, 17%, 12%, 9%, and 7%, respectively.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=660250521&format=interactive",
   sheets_gid="1745108356",
   sql_file="seo-stats-by-percentile-2024.sql"
@@ -942,8 +941,8 @@ The addition of inner pages in this year’s crawl is particularly relevant for 
 
 {{ figure_markup(
   image="homepage-raw-vs-rendered-structured-data.png",
-  caption="Home page Raw vs Rendered Structured Data.",
-  description="A column chart showing structured data changes based on raw versus rendered for home pages. On desktop pages, 47% of home pages have raw structured data while 48% have rendered structure data. Additionally, 2% of home pages only have structured data when a page is rendered, and on 6% of home pages the rendering changes the structured data. For mobile, it’s almost identical with 46%, 49%, 2% and 5%, respectively.",
+  caption="Home page raw vs rendered structured data.",
+  description="A column chart showing structured data changes based on raw versus rendered for homepages. On desktop pages, 47% of homepages have raw structured data while 48% have rendered structure data. Additionally, 2% of homepages only have structured data when a page is rendered, and on 6% of homepages the rendering changes the structured data. For mobile, it’s almost identical with 48%, 49%, 2% and 5%, respectively.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=361913740&format=interactive",
   sheets_gid="144160625",
   sql_file="seo-stats-2024.sql"
@@ -962,7 +961,7 @@ The trend appears to be that of providing structured data markup in the raw HTML
 
 {{ figure_markup(
   image="inner-page-raw-vs-rendered-structured-data.png",
-  caption="Inner page Raw vs Rendered Structured Data",
+  caption="Inner page raw vs rendered structured data.",
   description="A column chart showing structured data changes based on raw versus rendered for inner pages. For inner pages, 50% of desktop pages have raw structured data, while 51% have rendered structure data. Additionally, 2% of inner pages only have structured data when a page is rendered, and on 6% of inner pages the rendering changes the structured data. For mobile, it’s almost identical with 50%, 52%, 2%, and 5%, respectively.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=361913740&format=interactive",
   sheets_gid="144160625",
@@ -994,7 +993,7 @@ Overall, the trend of providing the markup in the raw HTML carries across from w
   )
 }}
 
-There are a number of different ways structured data can be implemented on a page, but JSON-LD is by far the most popular format for home pages. It accounts for 40.4% of mobile and 40.5% of desktop home pages crawled.
+There are a number of different ways structured data can be implemented on a page, but JSON-LD is by far the most popular format for home pages. It accounts for 40% of mobile and 41% of desktop home pages crawled.
 
 It’s simply the easiest format to implement, and is done by adding `<script>` elements that are independent of the HTML structure. Other formats, such as Microdata, involve adding attributes to the HTML elements of the page. Since Google advises using JSON-LD as a preferred format, it is not surprising that this is the most popular implementation.
 
@@ -1006,7 +1005,7 @@ For the most part, inner pages similarly utilize JSON-LD, but there is a slight 
 
 {{ figure_markup(
   image="most-popular-homepage-schema-types.png",
-  caption="Most popular Home page schema types.",
+  caption="Most popular home page schema types.",
   description="A column chart showing the 15 most popular schema types for home pages. On desktop, pages schema.org/WebSite was found on 35%, schema.org/SearchAction on 29%, schema.org/WebPage on 25%, schema.org/Organization on 25%, schema.org/-UnknownType- on 24%, schema.org/ListItem on 20%, schema.org/BreadcrumbList on 20%, schema.org/ImageObject on 19%, schema.org/EntryPoint on 18%, schema.org/ReadAction on 14%, schema.org/PostalAddress on 8%, schema.org/SiteNavigationElement on 6%, schema.org/WPHeader on 6%, schema.org/Person on 5%, schema.org/WPFooter on 5%. For mobile, they were found on 35%, 28%, 25%, 24%, 23%, 20%, 20%, 20%, 18%, 14%, 8%, 7%, 6%, 5%, and 5% of pages, respectively.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=1774876613&format=interactive",
   sheets_gid="1091913261",
@@ -1016,9 +1015,9 @@ For the most part, inner pages similarly utilize JSON-LD, but there is a slight 
   )
 }}
 
-Compared to 2022, there wasn't a big shift in 2024 in terms of the popularity of structured data types found on home pages. WebSite, SearchAction, and WebPage remained the three most popular schema types since they power the Sitelinks Search Box on Google.
+Compared to 2022, there wasn't a big shift in 2024 in terms of the popularity of structured data types found on home pages. `WebSite`, `SearchAction`, and `WebPage` remained the three most popular schema types since they power the Sitelinks Search Box on Google.
 
-Interestingly, WebSite grew a little more in 2024 to 35% of mobile home pages from 30% in 2022 since Google recommends this as a way to influence a site name in the SERPs.
+Interestingly, `WebSite` grew a little more in 2024 to 35% of mobile home pages from 30% in 2022 since Google recommends this as a way to influence a [site name](https://developers.google.com/search/docs/appearance/site-names) in the SERPs.
 
 As for implementing the most popular schema types, there were minor differences between the percentages of mobile and desktop structured data usage.
 
@@ -1036,13 +1035,13 @@ As for implementing the most popular schema types, there were minor differences 
   )
 }}
 
-In terms of the inner pages, ListItem was the most popular schema type in 2024, representing 30% of mobile and 31% of desktop URLs. It stands to reason there would be more listing pages than “leaf” pages, such as product, event, or article pages (although Article schema was the 12th most popular type).
+In terms of the inner pages, `ListItem` was the most popular schema type in 2024, representing 30% of mobile and 31% of desktop URLs. It stands to reason there would be more listing pages than “leaf” pages, such as product, event, or article pages (although `Article` schema was the 12th most popular type).
 
-BreadcrumbList was the second most popular schema type. That was to be expected since one would be more likely to show a breadcrumb on an inner page.
+`BreadcrumbList` was the second most popular schema type. That was to be expected since one would be more likely to show a breadcrumb on an inner page.
 
-What is surprising is that WebSite structured data, which is, at least for Google, home page specific, was the third most popular schema type on inner pages. A possible explanation is that particular structured data type is often implemented at a site template level and carried across the entire site.
+What is surprising is that `WebSite` structured data, which is, at least for Google, home page specific, was the third most popular schema type on inner pages. A possible explanation is that particular structured data type is often implemented at a site template level and carried across the entire site.
 
-Outside of the more popular schema types, product structured data was found on 4% of mobile pages and 5% of desktop pages.
+Outside of the more popular schema types, `product` structured data was found on 4% of mobile pages and 5% of desktop pages.
 
 For a deeper dive into structured data on the web, visit the [structured data chapter](https://almanac.httparchive.org/en/2024/structured-data).
 
@@ -1100,16 +1099,16 @@ Therefore, the main purpose of internationalization mechanisms (via HTTP headers
 
 Hreflang tags help search engines understand what the main language is on a particular page. Its SEO application is that different countries or regions can be targeted using the appropriate language across different (though related) websites.
 
-The analysis of hreflang tag implementation reveals that 0.05% of websites still use the HTTP protocol within their hreflang tags both on desktop and mobile. This indicates that a small portion of internationalized websites have not yet adopted the HTTPS standard.
+The analysis of hreflang tag implementation reveals that 0.1% of websites still use the HTTP protocol within their hreflang tags both on desktop and mobile. This indicates that a small portion of internationalized websites have not yet adopted the HTTPS standard.
 
 As a result, the use of HTTP can cause an inconsistency that may confuse search engines in their correct interpretation of page content.
 
-Furthermore, there's a notable discrepancy between the raw and rendered versions of the tag. A difference of 0.14% exists on desktop (9.49% raw vs. 9.61% rendered) and 0.17% on mobile (9.05% raw vs. 9.19% rendered).
+Furthermore, there's a notable discrepancy between the raw and rendered versions of the tag. A difference of 0.1% exists on desktop (9.5% raw vs. 9.6% rendered) and 0.2% on mobile (9.1% raw vs. 9.2% rendered).
 
 {{ figure_markup(
   image="hreflang-implementation.png",
-  caption="Hreflang Implementation.",
-  description="A bar chart comparing hreflang implementation on desktop and mobile sites. It shows HTTP hreflang: 0.05% (desktop) and 0.05% (mobile); Raw hreflang: 9.49% (desktop) and 9.05% (mobile); Rendered hreflang: 9.61% (desktop) and 9.19% (mobile)",
+  caption="Hreflang implementation.",
+  description="A bar chart comparing hreflang implementation on desktop and mobile sites. It shows HTTP hreflang: 0.1% (desktop) and 0.1% (mobile); Raw hreflang: 9.5% (desktop) and 9.1% (mobile); Rendered hreflang: 9.6% (desktop) and 9.2% (mobile)",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=1478193310&format=interactive",
   sheets_gid="144160625",
   sql_file="seo-stats-2024.sql"
@@ -1130,7 +1129,7 @@ The most popular hreflang value in 2024 remained “en” (English), with 8% usa
 
 {{ figure_markup(
   image="hreflang-link-usage-home-pages.png",
-  caption="Hreflang Link Usage for Home pages.",
+  caption="Hreflang link usage for home pages.",
   description="A horizontal bar chart showing hreflang links on home pages, broken down by language code and platform (desktop vs. mobile). The total values for each tag are: en (7.6%), fr (3.0%), de (3.0%), es (2.8%), en-us (2.4%), it (2.2%), ru (1.9%), en-gb (1.5%), and pt (1.4%).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=725111256&format=interactive",
   sheets_gid="1291250464",
@@ -1144,12 +1143,12 @@ The most common variations of en are en-us (American English) at 2.8% (desktop) 
 
 Following en, the x-default tag, which specifies the default language version, is the next most popular tag. After that, fr (French), de (German), and es (Spanish) are the most frequently used hreflang values, which is similar to the findings in 2022.
 
-### Secondary page hreflang usage
+### Inner page hreflang usage
 
 {{ figure_markup(
   image="hreflang-link-usage-secondary-pages.png",
-  caption="Hreflang Link Usage - Secondary pages",
-  description="A horizontal bar chart showing hreflang links usage on secondary pages, broken down by language code and platform (desktop vs. mobile). The total values for each tag are: x-default (7.3%), en (7.1%), fr (3.0%), de (3.0%), es (2.8%), en-us (2.4%), it (2.2%), ru (1.9%), en-gb (1.4%), and pt (1.3%).",
+  caption="Hreflang Link Usage - inner pages",
+  description="A horizontal bar chart showing hreflang links usage on inner pages, broken down by language code and platform (desktop vs. mobile). The total values for each tag are: x-default (7.3%), en (7.1%), fr (3.0%), de (3.0%), es (2.8%), en-us (2.4%), it (2.2%), ru (1.9%), en-gb (1.4%), and pt (1.3%).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=725111256&format=interactive",
   sheets_gid="1291250464",
   sql_file="hreflang-link-tag-usage-2024.sql",
@@ -1158,13 +1157,13 @@ Following en, the x-default tag, which specifies the default language version, i
   )
 }}
 
-The use of hreflang tags on secondary pages has x-default (7.3%) and en (English, 7.1%) as the most common values. When the values are broken down between mobile and desktop, we get 8.0% for desktop and 7.3% for mobile for x-default, and 8.0% for desktop and 7.1% for mobile for en.
+The use of hreflang tags on inner pages has x-default (7.3%) and en (English, 7.1%) as the most common values. When the values are broken down between mobile and desktop, we get 8.0% for desktop and 7.3% for mobile for x-default, and 8.0% for desktop and 7.1% for mobile for en.
 
-Desktop usage is slightly higher than mobile for most hreflang values on secondary pages. The differentials are quite small. With the exception of fr, the other hreflang values (de, es, en-us, it, ru, en-gb, pt) have usage below 3.0% and show a degree of concentration in the most common values.
+Desktop usage is slightly higher than mobile for most hreflang values on inner pages. The differentials are quite small. With the exception of fr, the other hreflang values (de, es, en-us, it, ru, en-gb, pt) have usage below 3.0% and show a degree of concentration in the most common values.
 
-As for distribution, the use of hreflang tags on secondary pages is similar to that found on home pages. The x-default and en lead in adoption in both categories and underscores their global reach. Their percentages are lower on secondary pages, which implies that hreflang implementation is generally prioritized on home pages.
+As for distribution, the use of hreflang tags on inner pages is similar to that found on home pages. The x-default and en lead in adoption in both categories and underscores their global reach. Their percentages are lower on inner pages, which implies that hreflang implementation is generally prioritized on home pages.
 
-### Content Language usage (HTML and HTTP header)
+### Content language usage (HTML and HTTP header)
 
 While search engines like [Google](https://developers.google.com/search/docs/specialty/international) and [Yandex](https://yandex.ru/support/search-results/?service=webmaster&query=hreflang) only employ hreflang tags, others also use the [content-language attribute](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Language), which can be implemented in two ways:
 
@@ -1173,8 +1172,8 @@ While search engines like [Google](https://developers.google.com/search/docs/spe
 
 {{ figure_markup(
   image="language-usage-combined-by-device.png",
-  caption="Language usage (HTML and HTTP header) for mobile and desktop.",
-  description="A bar chart showing language usage as a percentage of pages. For mobile, en was used on 18.0% of pages in our dataset, followed by pt-br on 8.8%, en-us on 7.9%, ja on 5.1%, fr on 4.6%, de on 4.2%, es on 3.6%, vi on 2.6%, cs on 2.7%, ru on 2.9%, tr on 2.7%, zh-tw on 2.2%, pl on 2.3%, th on 2.2%, and it on 2.0%. For desktop, we had 19.7%, 8.6%, 8.8%, 7.4%, 4.6%, 4.6%, 3.5%, 3.3%, 2.9%, 2.6%, 2.2%, 2.2%, 2.7%, 1.8%, 1.9%, and 2.0%, respectively.",
+  caption="Language usage (html and http header) for mobile and desktop.",
+  description="A bar chart showing language usage as a percentage of pages. For mobile, en was used on 18% of pages in our dataset, followed by pt-br on 9%, en-us on 8%, ja on 5%, fr on 5%, de on 4%, es on 4%, vi on 3%, cs on 3%, ru on 3%, tr on 3%, zh-tw on 2%, pl on 2%, th on 2%, and it on 2%. For desktop, we had 20%, 9%, 9%, 7%, 5%, 5%, 4%, 3%, 3%, 3%, 2%, 2%, 3%, 2%, 2%, and 2%, respectively.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=709141996&format=interactive",
   sheets_gid="127817290",
   sql_file="content-language-2024.sql",
@@ -1183,12 +1182,12 @@ While search engines like [Google](https://developers.google.com/search/docs/spe
   )
 }}
 
-When examining language usage data for home pages and secondary pages (the latter of which were not discussed in 2022), English (en) appeared as the main element (homepage: 18.0% and secondary page: 18.4%), followed by pt-br (homepage: 8.7% and secondary page: 8.7%), en-us (homepage: 8.3% and secondary page: 8.3%), and ja (homepage: 5.9% and secondary page: 6.4%).
+When examining language usage data for home pages and inner pages (the latter of which were not discussed in 2022), English (en) appeared as the main element (home page: 18% and inner page: 18%), followed by pt-br (home page: 9% and inner page: 9%), en-us (home page: 8% and inner page: 8%), and ja (home page: 6% and inner page: 6%).
 
 {{ figure_markup(
   image="home-vs-inner-page-language-usage-combined.png",
-  caption="Language usage (HTML and HTTP header) for Home page and Secondary page.",
-  description="A bar chart showing language usage as a percentage of pages. For homepage, en was used on 18.0% of pages in our dataset, followed by pt-br on 8.7%, en-us on 8.3%, ja on 5.9%, fr on 4.7%, de on 3.8%, es on 3.7%, vi on 2.7%, ru on 2.5%, cs on 2.5%, tr on 2.4%, pl on 2.4%, zh-tw on 2.3%, th on 2.0%, it on 2.0%, and hu on 1.9%. For the secondary page, it was very similar at 18.4%, 8.7%, 8.3%, 6.4%, 4.6%, 4.0%, 3.2%, 2.8%, 2.6%, 2.7%, 2.5%, 1.7%, 2.5%, 2.2%, 2.0%, and 2.0%, respectively.",
+  caption="Language usage (html and http header) for home page and inner page.",
+  description="A bar chart showing language usage as a percentage of pages. For homepage, en was used on 18% of pages in our dataset, followed by pt-br on 9%, en-us on 8%, ja on 6%, fr on 5%, de on 4%, es on 4%, vi on 3%, ru on 3%, cs on 3%, tr on 2%, pl on 2%, zh-tw on 2%, th on 2%, it on 2%, and hu on 2%. For the inner page, it was very similar at 18%, 9%, 8%, 6%, 5%, 4%, 3%, 3%, 3%, 3%, 3%, 2%, 3%, 2%, 2%, and 2%, respectively.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=218192895&format=interactive",
   sheets_gid="127817290",
   sql_file="content-language-2024.sql",
