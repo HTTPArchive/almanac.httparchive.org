@@ -40,9 +40,9 @@ Search engines may discover pages in several ways, including external links, sit
 
 This section addresses the state of the web, as it relates to how search engines crawl and index content, as well as the directives and signals SEOs can provide so that crawlers interact and retain versions of their content.  
 
-### Robots.txt
+### `robots.txt`
 
-As search engines explore the web, they stop at the robots.txt file, which one can think of as a visitors' center for each site. The robots.txt file sits at the root of an origin and allows site owners to implement the [Robots Exclusion Protocol](https://en.wikipedia.org/wiki/Robots.txt). It’s designed to signal or instruct bots which URLs a search engine can or cannot crawl.
+As search engines explore the web, they stop at the `robots.txt` file, which one can think of as a visitors' center for each site. The `robots.txt` file sits at the root of an origin and allows site owners to implement the [Robots Exclusion Protocol](https://en.wikipedia.org/wiki/Robots.txt). It’s designed to signal or instruct bots which URLs a search engine can or cannot crawl.
 
 It is not a hard, technical directive. Rather, it's up to the bot to honor these instructions. Since the major search engines respect this protocol, it's relevant for our SEO analysis.
 
@@ -50,59 +50,59 @@ While the robot.txt file has been used since 1994 to control how a site is crawl
 
 For the measurements for this year’s Web Almanac, we ran Lighthouse, an open-source, automated tool for improving the quality of web pages in tandem with our own data collection. These audits showed that 8.43% of desktop pages and 7.40% of mobile pages failed the tool's check for [valid robots.txt files](https://developer.chrome.com/docs/lighthouse/seo/invalid-robots-txt).  
 
-#### Robots.txt status codes
+#### `robots.txt` status codes
 
 {{ figure_markup(
   image="robots-txt-status-codes.png",
-  caption="Robots.txt status codes.",
-  description="Bar chart showing percent of pages with a valid robots.txt file. A total of 83.9% of mobile sites returned a 200 status code, while 14.1% returned a 404 status code. No response was received for 1.5% of mobile requests to the file. Just 0.3% and 0.1% of mobile requests received a forbidden (403) or server error response. Response distribution on desktop behaved similarly with 83.5% returning a 200 status code, while 14.3% returned a 404 response code. No response was received for 1.7% of mobile requests to the file. Just 0.3%, and 0.1% of mobile requests received a forbidden (403) or server error response.",
+  caption="`robots.txt` status codes.",
+  description="Bar chart showing percent of pages with a valid `robots.txt` file. A total of 83.9% of mobile sites returned a 200 status code, while 14.1% returned a 404 status code. No response was received for 1.5% of mobile requests to the file. Just 0.3% and 0.1% of mobile requests received a forbidden (403) or server error response. Response distribution on desktop behaved similarly with 83.5% returning a 200 status code, while 14.3% returned a 404 response code. No response was received for 1.7% of mobile requests to the file. Just 0.3%, and 0.1% of mobile requests received a forbidden (403) or server error response.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=1570550482&format=interactive",
   sheets_gid="1390313757",
   sql_file="robots-txt-status-codes-2024.sql"
   )
 }}
 
-Since 2022, there has been a nominal increase in the percentage of sites whose robots.txt files return a 200 status code. In 2024, 83.9% of robots.txt files for mobile sites returned a 200 status code, while 83.5% of desktop sites returned a 200 status code. That’s up from 2022 when mobile and desktop sites returned 200 status codes of 82.4% and desktop 81.5%, respectively.
+Since 2022, there has been a nominal increase in the percentage of sites whose `robots.txt` files return a 200 status code. In 2024, 83.9% of `robots.txt` files for mobile sites returned a 200 status code, while 83.5% of desktop sites returned a 200 status code. That’s up from 2022 when mobile and desktop sites returned 200 status codes of 82.4% and desktop 81.5%, respectively.
 
 This small increase signals that, despite the standard’s relatively recent formalization, its previous three-decade history had already led to wide-scale adoption.
 
 Additionally, the difference between mobile and desktop sites returning a 200 status code has now narrowed to just a 0.4% difference, compared to the 1.1% gap in 2022. While one cannot draw a definitive conclusion for the percentage decrease, one possible explanation can be the greater adoption of mobile responsive design principles versus the previous prevalence of separate mobile sites.
 
-HTTP status codes significantly impact how a robots.txt file functions. When the file returns a 4XX status code, it is assumed there are no crawling restrictions. Awareness of this behavior has continued to increase as we see a continuing trend of fewer 404 responses to robots.txt files. 
+HTTP status codes significantly impact how a `robots.txt` file functions. When the file returns a 4XX status code, it is assumed there are no crawling restrictions. Awareness of this behavior has continued to increase as we see a continuing trend of fewer 404 responses to `robots.txt` files. 
 
-In 2022, 15.8% of mobile sites’ robots.txt files returned a 404 status code and 16.5% of desktop sites. Now in 2024, it’s down to 14.1% for mobile site visits and 14.3% for desktop. The drops are fairly consistent with the growth of robots.txt returning 200 status codes, suggesting more sites have decided to implement a robots.txt file.
+In 2022, 15.8% of mobile sites’ `robots.txt` files returned a 404 status code and 16.5% of desktop sites. Now in 2024, it’s down to 14.1% for mobile site visits and 14.3% for desktop. The drops are fairly consistent with the growth of `robots.txt` returning 200 status codes, suggesting more sites have decided to implement a `robots.txt` file.
 
 Only 1.7% of mobile and 1.5% of desktop crawls in 2024 received no response. Google interprets these as an error caused by the server.
 
 For 0.1% of both mobile and desktop requests tested, we received an error code in the 5xx range. While these error codes represent a tiny percentage, it’s worth noting that for Google this would mean the search engine would consider the whole site blocked from crawling for 30 days. After 30 days, the search engine would revert to using a previously fetched version of the file. If a prior cached version isn't available, it is assumed the search engine crawled all of the content hosted on the site.
 
-The nominal error rate suggests that simple text files in most cases -- or handled automatically by many popular CMS systems that provide a robots.txt directive -- are not a large challenge.
+The nominal error rate suggests that simple text files in most cases -- or handled automatically by many popular CMS systems that provide a `robots.txt` directive -- are not a large challenge.
 
-***Note***: The above data does not indicate whether the robots.txt files returning a 200 status code are beneficial for a site or if they allow or block aspects that they should not.  
+***Note***: The above data does not indicate whether the `robots.txt` files returning a 200 status code are beneficial for a site or if they allow or block aspects that they should not.  
 
 
-#### Robots.txt size
+#### `robots.txt` size
 
 {{ figure_markup(
   image="robots-txt-size.png",
-  caption="Robots.txt size.",
-  description="A distribution chart showing differences in robots.txt sizes in 100 kilobyte increments. For mobile, 96.47% are in 0-100 KB range, 0.31% in 100-200 KB, 0.10% in 200-300 KB, 0.06% in 300-400 KB, 0.03% in 400-500 KB, 0.06% are larger than 500 KB, and finally 1.89% are missing. For desktop, 96.24% are in 0-100 KB range, 0.30% in 100-200 KB, 0.09% in 200-300 KB, 0.05% in 300-400 KB, 0.02% in 400-500 KB, 0.05% are larger than 500 KB, and finally 2.28% are missing.",
+  caption="`robots.txt` size.",
+  description="A distribution chart showing differences in `robots.txt` sizes in 100 kilobyte increments. For mobile, 96.47% are in 0-100 KB range, 0.31% in 100-200 KB, 0.10% in 200-300 KB, 0.06% in 300-400 KB, 0.03% in 400-500 KB, 0.06% are larger than 500 KB, and finally 1.89% are missing. For desktop, 96.24% are in 0-100 KB range, 0.30% in 100-200 KB, 0.09% in 200-300 KB, 0.05% in 300-400 KB, 0.02% in 400-500 KB, 0.05% are larger than 500 KB, and finally 2.28% are missing.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=1259588862&format=interactive",
   sheets_gid="1616323575",
   sql_file="robots-txt-size-2024.sql"
   )
 }}
 
-The vast majority of robots.txt files -- 96.47% of mobile crawls and 96.24% of desktop crawls -- were no larger than 100KB.
+The vast majority of `robots.txt` files -- 96.47% of mobile crawls and 96.24% of desktop crawls -- were no larger than 100KB.
  
-According to RFC 9309 standards, crawlers should limit the size of robots.txt files they look at, and the parsing limit must be at least [500 kiB](https://www.rfc-editor.org/rfc/rfc9309.html#name-limit). A robots.txt file under that size should be fully parsed. Google, for example, [enforces the max limit at 500 kiB](https://developers.google.com/search/docs/crawling-indexing/robots/robots_txt#file-format). Only a tiny number of sites (just 0.06%) had robots.txt files over this limit. Directives found beyond that limit are ignored by the search engine.
+According to RFC 9309 standards, crawlers should limit the size of `robots.txt` files they look at, and the parsing limit must be at least [500 kiB](https://www.rfc-editor.org/rfc/rfc9309.html#name-limit). A `robots.txt` file under that size should be fully parsed. Google, for example, [enforces the max limit at 500 kiB](https://developers.google.com/search/docs/crawling-indexing/robots/robots_txt#file-format). Only a tiny number of sites (just 0.06%) had `robots.txt` files over this limit. Directives found beyond that limit are ignored by the search engine.
 
-#### Robots.txt user-agent usage
+#### `robots.txt` user-agent usage
 
 {{ figure_markup(
   image="robots-txt-user-agent-usage.png",
-  caption="Robots.txt user-agent usage",
-  description="A bar chart showing the most common user agent targets in robots.txt files. For desktop * is 76.6%, AdsBot-Google is 9.1%, AhrefsBot is 8.6%, MJ12Bot is 6.7%, Googlebot is 5.9%, AdsBot-Google-Mobile is 4.6%, Dotbot is 4.4%, Nutch is 4.5%, Pinterestbot is 4.1%, AhrefsSiteAudit is 4.0%, PetalBot is 3.4%, GPTBot is 2.9%, Mediapartners-Google is 2.3%, Bingbot is 2.6%, and lastly the CCBot is 2.7%. Mobile is consistent with desktop at 76.9%, 8.9%, 8.8%, 6.6%, 6.4%, 4.6%, 4.9%, 4.3%, 3.9%, 3.7%, 3.8%, 2.6%, 3.0%, 2.6%, and 2.4%, respectively.",
+  caption="`robots.txt` user-agent usage",
+  description="A bar chart showing the most common user agent targets in `robots.txt` files. For desktop * is 76.6%, AdsBot-Google is 9.1%, AhrefsBot is 8.6%, MJ12Bot is 6.7%, Googlebot is 5.9%, AdsBot-Google-Mobile is 4.6%, Dotbot is 4.4%, Nutch is 4.5%, Pinterestbot is 4.1%, AhrefsSiteAudit is 4.0%, PetalBot is 3.4%, GPTBot is 2.9%, Mediapartners-Google is 2.3%, Bingbot is 2.6%, and lastly the CCBot is 2.7%. Mobile is consistent with desktop at 76.9%, 8.9%, 8.8%, 6.6%, 6.4%, 4.6%, 4.9%, 4.3%, 3.9%, 3.7%, 3.8%, 2.6%, 3.0%, 2.6%, and 2.4%, respectively.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=1672540926&format=interactive",
   sheets_gid="1705238622",
   sql_file="robots-txt-user-agent-usage-2024",
@@ -113,14 +113,14 @@ According to RFC 9309 standards, crawlers should limit the size of robots.txt fi
 
 ##### The `*` User Agent
 
-A full 76.9% of robots.txt files encountered by the mobile crawl and 76.6% of those found in the desktop crawl specify rules for the catch-all user-agent of `*`. This represents a small uptick over the data from 2022 in which it was 74.9% for desktop and 76.1% for mobile crawls. A possible explanation could be the slight overall increase in robots.txt availability.
+A full 76.9% of `robots.txt` files encountered by the mobile crawl and 76.6% of those found in the desktop crawl specify rules for the catch-all user-agent of `*`. This represents a small uptick over the data from 2022 in which it was 74.9% for desktop and 76.1% for mobile crawls. A possible explanation could be the slight overall increase in `robots.txt` availability.
 
 The `*` user-agent denotes the rules a crawler should follow unless there's another set of rules that specifically target the crawler's user-agent. There are notable exceptions that don't respect the * user-agent, including Google's [Adsbot crawler](https://developers.google.com/search/docs/crawling-indexing/google-special-case-crawlers#adsbot-mobile-web). Other crawlers will try another common user-agent before falling back to `*`, such as Apple's Applebot, which uses Googlebot’s rules if they are specified and Applebot if not specified. We recommend checking the support documentation for any crawlers you are targeting to ensure that behavior is as expected when relying on fallback.
 
 
 ##### Bingbot
 
-Much like in 2022, Bingbot again was not in the top 10 most specified user-agents. Only 2.7% of mobile and 2.6% of desktop robots.txt files specified that user-agent, relegating it down to 14th place.
+Much like in 2022, Bingbot again was not in the top 10 most specified user-agents. Only 2.7% of mobile and 2.6% of desktop `robots.txt` files specified that user-agent, relegating it down to 14th place.
 
 ##### SEO Tools
 
@@ -130,8 +130,8 @@ The data shows there has been an increase in sites specifying rules for the popu
 
 {{ figure_markup(
   image="robots-txt-ai-user-agents.png",
-  caption="Robots.txt AI user-agent usage.",
-  description="A bar chart showing the most common AI user agent targets in robots.txt files. For desktop, GPTBot is 2.9%, CCBot is 2.7%, Google-Extended is 2.5%, Anthropic-Ai is 2.1%, ChatGPT-User is 2.0%, Claude-Web is 1.9%, and PerplexityBot is 0.2%. The numbers for mobile are slightly slower than desktop at 2.6%, 2.4%, 2.2%,1.7%, 1.7%, 1.6%, and 0.2%, respectively.",
+  caption="`robots.txt` AI user-agent usage.",
+  description="A bar chart showing the most common AI user agent targets in `robots.txt` files. For desktop, GPTBot is 2.9%, CCBot is 2.7%, Google-Extended is 2.5%, Anthropic-Ai is 2.1%, ChatGPT-User is 2.0%, Claude-Web is 1.9%, and PerplexityBot is 0.2%. The numbers for mobile are slightly slower than desktop at 2.6%, 2.4%, 2.2%,1.7%, 1.7%, 1.6%, and 0.2%, respectively.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=802856810&format=interactive",
   sheets_gid="1705238622",
   sql_file="robots-txt-user-agent-usage-2024"
@@ -144,15 +144,15 @@ Of these, GPTBot is the most commonly specified and found in 2.7% of mobile craw
 
 **In Summary:**
 
-- The formalization of the robots.txt protocol in RFC 9309 has led to better adherence to technical standards.  
-- Analysis shows an increase in successful robots.txt responses and a decrease in errors, indicating improved implementation.  
-- Most robots.txt files are within the recommended size limit.  
+- The formalization of the `robots.txt` protocol in RFC 9309 has led to better adherence to technical standards.  
+- Analysis shows an increase in successful `robots.txt` responses and a decrease in errors, indicating improved implementation.  
+- Most `robots.txt` files are within the recommended size limit.  
 - The `*` user-agent remains dominant, but AI crawlers like GPTBot are on the rise.  
-- These insights are valuable for understanding the current state of robots.txt usage and its implications for SEO.
+- These insights are valuable for understanding the current state of `robots.txt` usage and its implications for SEO.
 
 ### Robots directives
 
-A [robots directive](https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag) is a granular, page-specific approach to controlling how an individual HTML page should be indexed and served. Robots directives are similar to, but distinct from, robots.txt files since the former affect indexing and serving while robots.txt affects crawling. In order for directives to be followed, the crawler must be allowed to access the page. Directives on pages that are disallowed in a robots.txt file may not be read and followed.
+A [robots directive](https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag) is a granular, page-specific approach to controlling how an individual HTML page should be indexed and served. Robots directives are similar to, but distinct from, `robots.txt` files since the former affect indexing and serving while `robots.txt` affects crawling. In order for directives to be followed, the crawler must be allowed to access the page. Directives on pages that are disallowed in a `robots.txt` file may not be read and followed.
 
 #### Robots directive implementation
 
@@ -1212,6 +1212,6 @@ The recent growth of the `IndexIfEmbedded` tag, for example, signals that perhap
 
 That said, it has not been business-as-usual. The amount of sites passing Core Web Vitals (CWV) has been tremendous, despite Interaction to Next Paint (INP) replacing the arguably much easier to pass metric of First Input Delay (FID). That positive news signals how performance, in general, is being taken more seriously in the SEO industry.
 
-Most notably, AI and LLMs are presenting some of the biggest changes search engines have encountered in a long time, and they have the potential to be hugely disruptive. As a result, adoption of robots.txt, related to the associated crawlers, has already grown.
+Most notably, AI and LLMs are presenting some of the biggest changes search engines have encountered in a long time, and they have the potential to be hugely disruptive. As a result, adoption of `robots.txt`, related to the associated crawlers, has already grown.
 
 The ever-changing search landscape and the new opportunities afforded by AI and LLMs have the potential for SEO to quickly move into new areas. At the same time, the slow but steady improvements to fundamentals underscore that the state of SEO remains one where long-standing best practices, despite large sea changes, are both prized and ultimately rewarded.
