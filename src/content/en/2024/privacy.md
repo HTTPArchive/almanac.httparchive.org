@@ -3,7 +3,7 @@ title: Privacy
 description: Privacy chapter of the 2024 Web Almanac covers the adoption and impact of online tracking, privacy preference signals, and browser initiatives for a privacy-friendlier web.
 hero_alt: Hero image of Web Almanac characters with cameras, phones, and microphones acting like paparazzi while another character pulls back a shower curtain to reveal a web page behind it.
 
-authors: [bgstandaert, ydimova, max-ostapenko, umariqbal, ChrisBeeti, Yash-Vekaria, haddiamjad]
+authors: [bgstandaert, ydimova, max-ostapenko, umariqbal, ChrisBeeti, Yash-Vekaria, haddiamjad, shaoormunir]
 reviewers: [AlbertoFDR]
 editors: []
 analysts: [bgstandaert, max-ostapenko, Yash-Vekaria, haddiamjad]
@@ -12,6 +12,7 @@ translators: []
 umariqbal_bio: Umar Iqbal is an assistant professor in the department of Computer Science and Engineering at the <a hreflang="en" href="https://wustl.edu/">Washington University in St. Louis</a>. His research focus on bringing transparency and control in computing systems to empower users, platforms, and regulators to improve user privacy and security.
 ChrisBeeti_bio: Chris Böttger is a PhD candidate in Computer Science at the <a href="https://www.en.w-hs.de/">Westphalian University of Applied Science</a>. His research focuses on web and network security, primarily focusing on user privacy and tracking technologies.
 tobiasurban_bio: Doctor of Engineering Tobias Urban is a Professor of Computer Science, specializing in Cybersecurity, at the <a href='https://www.en.w-hs.de/'>Westphalian University of Applied Sciences</a>. His research focuses on IT security, data protection, and the impact of the GDPR on the Internet.
+shaoormunir_bio: Shaoor Munir is a Ph.D. student in Computer Science at UC Davis, specializing in the analysis and development of privacy-enhancing technologies (PETs) and the policies that govern online data collection. His work seeks to advance privacy safeguards for netizens by balancing technological innovation with responsible data governance on the internet.
 
 results: https://docs.google.com/spreadsheets/d/18r8cT6x9lPdM-rXvXjsqx84W7ZDdTDYGD59xr0UGOwg/
 
