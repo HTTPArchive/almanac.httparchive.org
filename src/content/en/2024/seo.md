@@ -3,7 +3,7 @@
 title: SEO
 description: SEO chapter of the 2024 Web Almanac covering crawlability, indexability, page experience, on-page SEO, links, AMP, internationalization, and more.
 hero_alt: Hero image of various web pages beneath a search field with Web Almanac characters shine a light on the pages and make various checks.
-authors: [fellowhuman1101, mikaelaraujo, dwsmart]
+authors: [fellowhuman1101, mikaelaraujo, dwsmart, MichaelLewittes]
 reviewers: []
 editors: [MichaelLewittes]
 analysts: [henryp25, cnichols013]
@@ -12,6 +12,7 @@ results: https://docs.google.com/spreadsheets/d/1lAQKcOF7l6xz9v7yvnI9I1F8yiSqcz3
 fellowhuman1101_bio: Jamie Indigo isn't a robot, but speaks bot. As director of technical SEO at <a hreflang="en" href="https://www.coxautoinc.com/">Cox Automotive</a>, they study how search engines crawl, render, and index the web. Jamie loves to tame wild JavaScript and optimize rendering strategies. When not working, they like horror movies, graphic novels, and terrorizing lawful good paladins in Dungeons & Dragons.
 dwsmart_bio: Dave Smart is a developer and technical search engine consultant at <a hreflang="en" href="https://tamethebots.com">Tame the Bots</a>. They love building tools and experimenting with the modern web, and can often be found at the front in a gig or two.
 mikaelaraujo_bio: Mikael Araújo is an <a hreflang="en" href="https://www.mikaelaraujo.com">international SEO consultant</a>, speaker and marketing strategist. He has worked and works remotely for several companies based in Europe, China, Russia, the United States and Brazil. He is currently a Data Science student and loves spending his free time with his family.
+MichaelLewittes_bio: T.B.C.
 featured_quote:
 featured_stat_1: 2.7%
 featured_stat_label_1: Pages with `GPTBot` directives in `robots.txt` — the most common AI crawler found.
@@ -433,14 +434,14 @@ The [`vary`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Vary) HTT
 {{ figure_markup(
   image="vary-header-used.png",
   caption="Vary header used.",
-  description="A column chart comparing whether vary header is used or not. Vary headers are implemented on 1.44% of desktop and 2.35% of mobile sites. Meanwhile, 98.56% of desktop and 97.65% of mobile pages are not using vary headers.",
+  description="A column chart comparing whether vary header is used or not. Vary headers are implemented on 1% of desktop and 2% of mobile sites. Meanwhile, 99% of desktop and 98% of mobile pages are not using vary headers.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=1933202461&format=interactive",
   sheets_gid="1427616506",
   sql_file="html-response-vary-header-used-2024.sql"
   )
 }}
 
-Vary header usage fell significantly in 2024. The header appeared on 11.9% of desktop and 12.6% of mobile pages in 2022. It is now down to 1.4% of desktop and 2.3% of mobile. The decrease is likely due to Google specifically stating how [dynamic rendering is not a sustainable long-term solution](https://developers.google.com/search/docs/crawling-indexing/javascript/dynamic-rendering) for problems related to JavaScript-generated content. Instead, the search engine recommends single solution rendering strategies such as [server-side rendering](https://web.dev/articles/rendering-on-the-web#server-side), [static rendering](https://web.dev/articles/rendering-on-the-web#static), or [hydration](https://web.dev/articles/rendering-on-the-web#rehydration) as solutions.
+Vary header usage fell significantly in 2024. The header appeared on 12% of desktop and 13% of mobile pages in 2022. It is now down to 1% of desktop and 2% of mobile. The decrease is likely due to Google specifically stating how [dynamic rendering is not a sustainable long-term solution](https://developers.google.com/search/docs/crawling-indexing/javascript/dynamic-rendering) for problems related to JavaScript-generated content. Instead, the search engine recommends single solution rendering strategies such as [server-side rendering](https://web.dev/articles/rendering-on-the-web#server-side), [static rendering](https://web.dev/articles/rendering-on-the-web#static), or [hydration](https://web.dev/articles/rendering-on-the-web#rehydration) as solutions.
 
 ### Legible font sizes
 
@@ -449,14 +450,14 @@ One of the basics of a good mobile experience is being able to easily read the o
 {{ figure_markup(
   image="legible-font-sizes.png",
   caption="Legible font sizes.",
-  description="A bar chart comparing legible font size use on home pages and secondary pages. 91.1% of home pages and 91.9% of secondary pages passed the audit for legible font sizes.",
+  description="A bar chart comparing legible font size use on home pages and secondary pages. 91% of home pages and 92% of secondary pages passed the audit for legible font sizes.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=1547833548&format=interactive",
   sheets_gid="1219126486",
   sql_file="lighthouse-seo-stats-2024.sql"
   )
 }}
 
-Lighthouse has a [legible font size audit](https://developer.chrome.com/docs/lighthouse/seo/font-size/) that was run in tandem with the 2024 Web Almanac crawl. The audit checked for pages that had 60% or more of its content using fonts greater than 12 pixels. The test, specific to mobile pages, saw 91.5% of eligible pages passing. This percentage was consistent for both home pages and inner or secondary pages.
+Lighthouse has a [legible font size audit](https://developer.chrome.com/docs/lighthouse/seo/font-size/) that was run in tandem with the 2024 Web Almanac crawl. The audit checked for pages that had 60% or more of its content using fonts greater than 12 pixels. The test, specific to mobile pages, saw 92% of eligible pages passing. This percentage was consistent for both home pages and inner or secondary pages.
 
 ### Core Web Vitals
 
@@ -475,7 +476,7 @@ These metrics are designed to evolve. In [March 2024](https://web.dev/blog/inp-c
 {{ figure_markup(
   image="percent-of-good-cwv-experiences-on-mobile.png",
   caption="Percent of good CWV experiences on mobile.",
-  description="A time series chart showing mobile Core Web Vitals improvements over time, and all of them have been trending upwards. Now, 47.74% of mobile sites fall into the good category of Core Web Vitals. Also, 58.99% have good LCP, 78.87% have good CLS, and 73.72% have good INP.",
+  description="A time series chart showing mobile Core Web Vitals improvements over time, and all of them have been trending upwards. Now, 48% of mobile sites fall into the good category of Core Web Vitals. Also, 59% have good LCP, 79% have good CLS, and 74% have good INP.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=2000131031&format=interactive",
   sheets_gid="1166544354",
   sql_file="core-web-vitals-2024.sql"
@@ -489,7 +490,7 @@ Looking at the metrics individually, 59% pass Largest Contentful Paint, 74% pass
 {{ figure_markup(
   image="percent-of-good-cwv-experiences-on-desktop.png",
   caption="Percent of good CWV experiences on desktop.",
-  description="A time series chart showing desktop Core Web Vitals improvements over time, and all of them have been trending upwards. Now 54.44% of desktop sites fall into the good category of Core Web Vitals. Also, 72.28% have good LCP, 71.55% have good CLS, and 97.29% have good INP.",
+  description="A time series chart showing desktop Core Web Vitals improvements over time, and all of them have been trending upwards. Now 54% of desktop sites fall into the good category of Core Web Vitals. Also, 72% have good LCP, 71% have good CLS, and 97% have good INP.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=1702819031&format=interactive",
   sheets_gid="1166544354",
   sql_file="core-web-vitals-2024.sql"
@@ -507,21 +508,21 @@ Images are a critical component when it comes to page load. Image loading proper
 {{ figure_markup(
   image="image-loading-properties.png",
   caption="Image loading properties.",
-  description="A bar chart showing usage of different loading attribute values, on desktop 0.12% use auto, 0.05 use blank, 3.62% use eager, 0.09% have an invalid attribute, 24.25% use lazy and 71.88% are missing a loading attribute. For mobile, it is 0.12%, 0.04%, 3.41%, 0.08%, 24.56% and 71.79% respectively.",
+  description="A bar chart showing usage of different `loading` attribute values, on desktop 0% use `auto`, 0% use `blank`, 4% use `eager`, 0% have an invalid attribute, 24% use `lazy` and 72% are missing a loading attribute. For mobile, 0.1% use `auto`, 0% `blank`, 3% `eager`, 0.1% have an `invalid ` attribute, 25% use `lazy`, and 72% are missing a loading attribute.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=953333483&format=interactive",
   sheets_gid="1025550820",
   sql_file="image-loading-property-usage-2024.sql"
   )
 }}
 
-Most sites do not use these valuable signals, with 71.88% of desktop pages and 71.79% of mobile pages missing image-loading properties. The most adopted attribute was `loading="lazy"`. [Lazy loading](https://web.dev/articles/browser-level-image-lazy-loading) is a technique that defers the loading of non-critical elements on a web page until they are needed. This helps reduce the page weight and conserves bandwidth and system resources. This tag was used for 24.56% of mobile pages and 24.25% of desktop pages in 2024.
+Most sites do not use these valuable signals, with 71.9% of desktop pages and 71.8% of mobile pages missing image-loading properties. The most adopted attribute was `loading="lazy"`. [Lazy loading](https://web.dev/articles/browser-level-image-lazy-loading) is a technique that defers the loading of non-critical elements on a web page until they are needed. This helps reduce the page weight and conserves bandwidth and system resources. This tag was used for 24.6% of mobile pages and 24.3% of desktop pages in 2024.
 
-The corollary to lazy loading is [eager loading](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#eager). Eager loading allows images to be loaded and fetched simultaneously so that they’re visible and available right away for the user. Eager loading was the second most used property in 2024, but only appeared on 3.41% of mobile pages and 3.62% of desktop pages.
+The corollary to lazy loading is [eager loading](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#eager). Eager loading allows images to be loaded and fetched simultaneously so that they’re visible and available right away for the user. Eager loading was the second most used property in 2024, but only appeared on 3.4% of mobile pages and 3.6% of desktop pages.
 
 {{ figure_markup(
   image="desktop-image-loading-property.png",
   caption="Image loading properties on home vs. inner pages.",
-  description="A bar chart showing usage of different loading attribute values, on desktop pages. On home pages 0.06% use auto, 0.02%  use blank, 1.75% use eager, 0.05% have an invalid attribute, 11.03% use lazy and 31.06% are missing a loading attribute. For inner, secondary pages, it is 0.05%, 0.02%, 1.45%, 0.03%, 10.55% and 33.21% respectively.",
+  description="A bar chart showing usage of different `loading` attribute values, on desktop pages. On home pages 0.1% use `auto`, 0.0%  use `blank`, 1.8% use `eager`, 0.1% have an invalid attribute, 11.0% use `lazy` and 31.1% are missing a loading attribute. For inner, secondary pages, it is 0.1%, 0.0%, 1.5%, 0.0%, 10.6% and 33.2% respectively.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=917180585&format=interactive",
   sheets_gid="1025550820",
   sql_file="image-loading-property-usage-2024.sql",
@@ -539,18 +540,18 @@ A third deprecated value, [`auto`](https://web.dev/articles/browser-level-image-
 {{ figure_markup(
   image="iframe-loading-property-usage.png",
   caption="`iframe` loading property usage.",
-  description="A column chart showing the five most common iframe loading properties. For desktop pages, 92.79% did not declare a loading attribute, 3.97% had multiple iframes that used both `lazy` and had no loading declaration, 2.61% used only 'lazy`, 0.39% had multiple iframes with `auto` and missing attributes, and 0.13% had multiple with `eager` and missing attributes. Mobile behaved similarly at 92.56%, 3.93%, 2.92%, 0.33%, and 0.14%, respectively.",
+  description="A column chart showing the five most common `iframe` loading properties. For desktop pages, 92.79% did not declare a loading attribute, 3.97% had multiple iframes that used both `lazy` and had no loading declaration, 2.61% used only `lazy`, 0.39% had multiple iframes with `auto` and missing attributes, and 0.13% had multiple with `eager` and missing attributes. Mobile behaved similarly at 92.56%, 3.93%, 2.92%, 0.33%, and 0.14%, respectively.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=88529446&format=interactive",
   sheets_gid="660314947",
   sql_file="iframe-loading-property-usage-2024.sql"
   )
 }}
 
-Of the sites containing one or more `<iframe>` elements, 92.8% of desktop and 92.6% did not declare a loading property. `lazy` was the most prominent declaration and most often occurred when there were multiple `<iframe>` elements on the page. We found 3.97% of desktop and 3.93% of mobile pages had a mixed `lazy` loaded and `<iframe>` elements without a declaration. Additionally, 2.61% of desktop and 2.92% of mobile pages used the `lazy` attribute on all `<iframe>` elements discovered during the crawl. 
+Of the sites containing one or more <iframe> elements, 92.8% of desktop and 92.6% did not declare a loading property. lazy was the most prominent declaration and most often occurred when there were multiple <iframe> elements on the page. We found 4.0% of desktop and 3.9% of mobile pages had a mixed lazy loaded and <iframe> elements without a declaration. Additionally, 2.6% of desktop and 2.9% of mobile pages used the lazy attribute on all <iframe> elements discovered during the crawl.
 
-In 2022, 3.67% of desktop and 4.08% of mobile pages used the `lazy` loading attribute. The attribute occurred on 6.58% of desktop and 6.86% of mobile in 2024. The increased adoption can likely be attributed to [loading attributes becoming a Chrome standard](https://web.dev/articles/iframe-lazy-loading). 
+In 2022, 3.7% of desktop and 4.1% of mobile pages used the lazy loading attribute. The attribute occurred on 6.6% of desktop and 6.9% of mobile in 2024. The increased adoption can likely be attributed to loading attributes becoming a Chrome standard.
 
-Since `<iframe>` elements can be controlled by either the site on which the page is hosted or a third-party service, the prevalence of loading attribute combinations suggests that sites are adopting loading attributes wherever possible. It is reasonable to assume that third-party controlled `<iframe>` elements are less likely to have attributes.
+Since <iframe> elements can be controlled by either the site on which the page is hosted or a third-party service, the prevalence of loading attribute combinations suggests that sites are adopting loading attributes wherever possible. It is reasonable to assume that third-party controlled <iframe> elements are less likely to have attributes.
 
 ## On-Page
 
