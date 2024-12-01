@@ -7,6 +7,6 @@ pytest-cov==5.0.0
 sqlfluff==1.4.5
 
 # sql/util/* dependencies
-pandas==2.2.2
+pandas==2.2.3
 google-cloud-bigquery==3.25.0
 requests==2.32.3

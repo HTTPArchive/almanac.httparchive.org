@@ -15,7 +15,7 @@ featured_quote: Most modern governments have committed to either WCAG 2.0 AA or 
 featured_stat_1: 40%
 featured_stat_label_1: Of desktop sites and 39% of mobile sites have at least one `role="presentation"`.
 featured_stat_2: 0.1%
-featured_stat_label_2: Sites with `<audio>` elements include a `<track>` element.
+featured_stat_label_2: Sites with `<audio>` elements that include a `<track>` element.
 featured_stat_3: 57%
 featured_stat_label_3: Mobile sites passing the Lighthouse audit for properly ordered headings.
 doi: 10.5281/zenodo.14063775
