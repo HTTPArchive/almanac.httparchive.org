@@ -205,7 +205,7 @@ For our study of directive rules, we relied on the rendered HTML.
 
 The most prominent rules in 2024 were `follow` (54.7% desktop; 56.0% mobile), `index` (53.4% desktop; 53.9% mobile), `noindex` (4.7% desktop; 3.9% mobile), and `nofollow` (2.5% desktop; 2.2% mobile). This is noteworthy since neither "index” nor "follow” directives have any function and are [ignored by `Googlebot`](https://www.reddit.com/r/TechSEO/comments/1944d8k/comment/khdu3iw/). Google’s [documentation on robots tags](https://developers.google.com/search/docs/crawling-indexing/special-tags) advises that "The default values are index, follow and don’t need to be specified."
 
-The `name` value of the robots `meta` tag specifies to which crawler(s) the rule applies. For example, ` meta name="robots"` applies to all bots whereas `meta name="googlebot"` applies to only to Google. To analyze the application of name attributes, we looked at rates where values were stated for the `follow` tag since it is the most prevalent robots `meta` rule.
+The `name` value of the robots `meta` tag specifies to which crawler(s) the rule applies. For example, `meta name="robots"` applies to all bots whereas `meta name="googlebot"` applies to only to Google. To analyze the application of name attributes, we looked at rates where values were stated for the `follow` tag since it is the most prevalent robots `meta` rule.
 
 {{ figure_markup(
   image="name-attributes-in-follow-robots-meta-tag.png",
@@ -427,7 +427,7 @@ Mobile-friendliness can be determined by the presence of two tags:
 1. [Viewport meta tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag), which is commonly used in responsive desig.
 2. [Vary: User-Agent header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Vary), which is used in dynamic serving and is based on the request header
 
-#### Viewport meta ta.
+#### Viewport meta tag
 
 A [`<meta name="viewport">`](https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag) optimizes for mobile screen sizes and can [reduce delays to user input](https://developer.chrome.com/docs/lighthouse/pwa/viewport/).
 
@@ -526,7 +526,7 @@ Images are a critical component when it comes to page load. Image loading proper
 {{ figure_markup(
   image="image-loading-properties.png",
   caption="Image loading properties.",
-  description="A bar chart showing usage of different `loading` attribute values, on desktop 0% use `auto`, 0% use `blank`, 4% use `eager`, 0% have an invalid attribute, 24% use `lazy` and 72% are missing a loading attribute. For mobile, 0.1% use `auto`, 0% `blank`, 3% `eager`, 0.1% have an `invalid ` attribute, 25% use `lazy`, and 72% are missing a loading attribute.",
+  description="A bar chart showing usage of different `loading` attribute values, on desktop 0% use `auto`, 0% use `blank`, 4% use `eager`, 0% have an invalid attribute, 24% use `lazy` and 72% are missing a loading attribute. For mobile, 0.1% use `auto`, 0% `blank`, 3% `eager`, 0.1% have an `invalid` attribute, 25% use `lazy`, and 72% are missing a loading attribute.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=953333483&format=interactive",
   sheets_gid="1025550820",
   sql_file="image-loading-property-usage-2024.sql"
@@ -595,7 +595,7 @@ In 2021, [Google started rewriting more websites’ `title` tags in their search
 
 In 2022, 98.8% of desktop and mobile pages used the `title` tag. Now in 2024, 98.0% of desktop pages have a `title` tag and 98.2% of mobile pages have one. Similarly, `meta` `description` usage dipped from 71% of desktop and mobile homepages in 2022 to 66.7% of desktop and 66.4% of mobile homepages in 2024.
 
-### `<title>` elemen.
+### `<title>` element
 
 The [`<title>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title) element populates the name displayed in a browser tab, and is one of the strongest on-page elements related to the page's content and a query’s relevance.
 
@@ -842,7 +842,7 @@ Interestingly, the most popular attribute is `noopener`, which is not related to
 
 Search engines do not rank sites based on word count; however, it is a useful metric for tracking how much text sites contain, as well as a proxy for seeing how much site owners are leaning on client-side rendering to display the content for which they want to be found.
 
-### homepages rendered word count
+### Homepages rendered word count
 
 {{ figure_markup(
   image="homepage-visible-words-rendered-by-percentile.png",
@@ -874,7 +874,7 @@ Inner pages contain slightly fewer words overall. The median mobile inner page i
 
 One noticeable difference between homepages and inner pages is that while desktop pages generally have more words than mobile pages at the lower word counts, that gap narrows as the percentiles get higher. By the 75th percentile, for instance, mobile pages have more visible words on their inner pages than desktop’s inner pages.
 
-### homepages raw word count
+### Homepages raw word count
 
 {{ figure_markup(
   image="homepage-visible-words-raw-by-percentile.png",
@@ -948,7 +948,7 @@ These enhanced listings often make a site or elements of one stand out. Addition
 
 The addition of inner pages in this year’s crawl is particularly relevant for structured data, since many types are only applicable to specific pages.
 
-#### homepages
+### Homepages
 
 {{ figure_markup(
   image="homepage-raw-vs-rendered-structured-data.png",
@@ -968,7 +968,7 @@ A few more homepages, 5% of mobile and 6% of desktop crawls, contained some stru
 
 The trend appears to be that of providing structured data markup in the raw HTML, something [Google itself highlights](https://developers.google.com/search/updates#clarifying-dynamically-generated-product-markup) as, if not best practice, perhaps the simplest and most reliable way of implementing structured data.
 
-#### Inner pages
+### Inner pages
 
 {{ figure_markup(
   image="inner-page-raw-vs-rendered-structured-data.png",
@@ -1080,7 +1080,7 @@ That’s why it’s a little surprising there was a slight uptick in the percent
 
 It's worth noting these figures are relatively tiny, so the changes might not be statistically relevant, but they do point to low adoption of the technology.
 
-### homepages vs. inner pages
+### Homepages vs. inner pages
 
 {{ figure_markup(
   image="amp-markup-home-vs-inner-pages.png",
