@@ -12,7 +12,7 @@ results: https://docs.google.com/spreadsheets/d/1lAQKcOF7l6xz9v7yvnI9I1F8yiSqcz3
 fellowhuman1101_bio: Jamie Indigo isn't a robot, but speaks bot. As director of technical SEO at <a hreflang="en" href="https://www.coxautoinc.com/">Cox Automotive</a>, they study how search engines crawl, render, and index the web. Jamie loves to tame wild JavaScript and optimize rendering strategies. When not working, they like horror movies, graphic novels, and terrorizing lawful good paladins in Dungeons & Dragons.
 dwsmart_bio: Dave Smart is a developer and technical search engine consultant at <a hreflang="en" href="https://tamethebots.com">Tame the Bots</a>. They love building tools and experimenting with the modern web, and can often be found at the front in a gig or two.
 mikaelaraujo_bio: Mikael Araújo is an <a hreflang="en" href="https://www.mikaelaraujo.com">international SEO consultant</a>, speaker and marketing strategist. He has worked and works remotely for several companies based in Europe, China, Russia, the United States and Brazil. He is currently a Data Science student and loves spending his free time with his family.
-MichaelLewittes_bio: T.B.C.
+MichaelLewittes_bio: Michael Lewittes is the founder of <a hreflang=“en” href=https://www.ranktify.com>, an SEO software company that improves the quality and trustworthiness of content so that it rises higher in search results. Michael previously owned and sold a content company, as well as wrote for and edited several major U.S. publications. This is the second time he’s worked on the Web Almanac.
 featured_quote:
 featured_stat_1: 2.7%
 featured_stat_label_1: Pages with `GPTBot` directives in `robots.txt` — the most common AI crawler found.
@@ -88,16 +88,18 @@ The nominal error rate suggests that simple text files in most cases -- or handl
 {{ figure_markup(
   image="robots-txt-size.png",
   caption="`robots.txt` size.",
-  description="A distribution chart showing differences in `robots.txt` sizes in 100 kilobyte increments. For mobile, 96.47% are in 0-100 KB range, 0.31% in 100-200 KB, 0.10% in 200-300 KB, 0.06% in 300-400 KB, 0.03% in 400-500 KB, 0.06% are larger than 500 KB, and finally 1.89% are missing. For desktop, 96.24% are in 0-100 KB range, 0.30% in 100-200 KB, 0.09% in 200-300 KB, 0.05% in 300-400 KB, 0.02% in 400-500 KB, 0.05% are larger than 500 KB, and finally 2.28% are missing.",
+  description=" A distribution chart showing differences in `robots.txt` sizes in 100 kilobyte increments. 1.66% of desktop and 1.59% of mobile crawls returned a 0 sized `robots.txt` file. For mobile, 97.82% are in 0-100 KB range, 0.31% in 100-200 KB, 0.11% in 200-300 KB, 0.07% in 300-400 KB, 0.03% in 400-500 KB, and 0.06% are larger than 500 KB. For desktop, 97.80% are in 0-100 KB range, 0.31% in 100-200 KB, 0.10% in 200-300 KB, 0.05% in 300-400 KB, 0.02% in 400-500 KB, and 0.05% are larger than 500 KB.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=1259588862&format=interactive",
   sheets_gid="1616323575",
   sql_file="robots-txt-size-2024.sql"
   )
 }}
 
-The vast majority of `robots.txt` files -- 96.47% of mobile crawls and 96.24% of desktop crawls -- were no larger than 100KB.
+The vast majority of `robots.txt` files -- 97.82% of mobile crawls and 97.80% of desktop crawls -- were no larger than 100KB.
  
 According to RFC 9309 standards, crawlers should limit the size of `robots.txt` files they look at, and the parsing limit must be at least [500 kiB](https://www.rfc-editor.org/rfc/rfc9309.html#name-limit). A `robots.txt` file under that size should be fully parsed. Google, for example, [enforces the max limit at 500 kiB](https://developers.google.com/search/docs/crawling-indexing/robots/robots_txt#file-format). Only a tiny number of sites (just 0.06%) had `robots.txt` files over this limit. Directives found beyond that limit are ignored by the search engine.
+
+Interestingly 1.59% of mobile crawls and 1.66% of desktop crawls returned a 0 sized `robots.txt` file. This is likely a configuration issue, and it is undocumented by both the RFC 9303 specification, and popular search engine crawlers support documentation exactly how this would be handled. If your site is returning an empty response for `robots.txt` it would be a sensible approach to either return a `robots.txt` file with appropriate rules, or if you didn't wish to restrict crawling, return a [`404 status code`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404) for the URL.  
 
 #### `robots.txt` user-agent usage
 
