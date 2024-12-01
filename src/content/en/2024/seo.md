@@ -22,25 +22,25 @@ featured_stat_3: 70%
 featured_stat_label_3: Pages have `<h1>` elements.
 doi: 10.5281/zenodo.14245177
 ---
- 
+
 ## Introduction
 
 Search Engine Optimization (SEO) is the practice of improving a website's technical setup, content, and authority to boost its visibility in search results. It helps businesses attract organic traffic by aligning website content with user search intent.
 
-The Web Almanac's SEO chapter focuses on the critical elements and configurations influencing a website's organic search visibility. The primary goal is to provide actionable insights that empower website owners to enhance their sites' crawlability, indexability, and overall search engine rankings. By conducting a comprehensive analysis of prevalent SEO factors, we hope that websites can uncover the most impactful strategies and techniques for optimizing a website's presence in search results. 
+The Web Almanac's SEO chapter focuses on the critical elements and configurations influencing a website's organic search visibility. The primary goal is to provide actionable insights that empower website owners to enhance their sites' crawlability, indexability, and overall search engine rankings. By conducting a comprehensive analysis of prevalent SEO factors, we hope that websites can uncover the most impactful strategies and techniques for optimizing a website's presence in search results.
 
 This chapter combines data from [HTTP Archive](https://httparchive.org/), [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/), [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report), and custom metrics to document the state of SEO and its context in the digital landscape.
 
 This year, we analyzed one inner page per site crawled in addition to the homepages, which is all this chapter has historically analyzed. Since homepages are often quite different from inner pages, this has unlocked new insights and allowed us to compare the behaviors of homepages verses inner pages.
 
 
-## Crawlability & indexability 
+## Crawlability & indexability
 
 For a page to appear in a search engine results page (SERP), the page must first be crawled and indexed. This process is a critical foundation of SEO.
 
 Search engines may discover pages in several ways, including external links, sitemaps, or by being directly submitted to the search engine using webmaster tools. In 2022, Bing shared that its crawler discovered nearly [70 billion new pages *daily*](https://x.com/patrickstox/status/1630582277057986560?s=20). During this year's antitrust suit against Google, it was revealed that its *index* is only around [400 billion documents](https://zyppy.com/seo/google-index-size/#:~:text=But%20recently%2C%20during%20testimony%20in,Google's%20index%20size%20in%202020.). That means far more pages are crawled than indexed.
 
-This section addresses the state of the web, as it relates to how search engines crawl and index content, as well as the directives and signals SEOs can provide so that crawlers interact and retain versions of their content.  
+This section addresses the state of the web, as it relates to how search engines crawl and index content, as well as the directives and signals SEOs can provide so that crawlers interact and retain versions of their content.
 
 ### `robots.txt`
 
@@ -48,9 +48,9 @@ As search engines explore the web, they stop at the `robots.txt` file, which one
 
 It is not a hard, technical directive. Rather, it's up to the bot to honor these instructions. Since the major search engines respect this protocol, it's relevant for our SEO analysis.
 
-While the robot.txt file has been used since 1994 to control how a site is crawled, it only became formally standardized with the Internet Engineering Task Force in September 2022. The formalization of the [RFC 9390](https://datatracker.ietf.org/doc/html/rfc9309) protocol in 2022 occurred after the previous year’s edition of the Web Almanac was published and led to stricter enforcement of technical standards. 
+While the robot.txt file has been used since 1994 to control how a site is crawled, it only became formally standardized with the Internet Engineering Task Force in September 2022. The formalization of the [RFC 9390](https://datatracker.ietf.org/doc/html/rfc9309) protocol in 2022 occurred after the previous year’s edition of the Web Almanac was published and led to stricter enforcement of technical standards.
 
-For the measurements for this year’s Web Almanac, we ran Lighthouse, an open-source, automated tool for improving the quality of web pages in tandem with our own data collection. These audits showed that 8.43% of desktop pages and 7.40% of mobile pages failed the tool's check for [valid `robots.txt` files](https://developer.chrome.com/docs/lighthouse/seo/invalid-robots-txt).  
+For the measurements for this year’s Web Almanac, we ran Lighthouse, an open-source, automated tool for improving the quality of web pages in tandem with our own data collection. These audits showed that 8.43% of desktop pages and 7.40% of mobile pages failed the tool's check for [valid `robots.txt` files](https://developer.chrome.com/docs/lighthouse/seo/invalid-robots-txt).
 
 #### `robots.txt` status codes
 
@@ -70,7 +70,7 @@ This small increase signals that, despite the standard’s relatively recent for
 
 Additionally, the difference between mobile and desktop sites returning a 200 status code has now narrowed to just a 0.4% difference, compared to the 1.1% gap in 2022. While one cannot draw a definitive conclusion for the percentage decrease, one possible explanation can be the greater adoption of mobile responsive design principles versus the previous prevalence of separate mobile sites.
 
-HTTP status codes significantly impact how a `robots.txt` file functions. When the file returns a 4XX status code, it is assumed there are no crawling restrictions. Awareness of this behavior has continued to increase as we see a continuing trend of fewer 404 responses to `robots.txt` files. 
+HTTP status codes significantly impact how a `robots.txt` file functions. When the file returns a 4XX status code, it is assumed there are no crawling restrictions. Awareness of this behavior has continued to increase as we see a continuing trend of fewer 404 responses to `robots.txt` files.
 
 In 2022, 15.8% of mobile sites’ `robots.txt` files returned a 404 status code and 16.5% of desktop sites. Now in 2024, it’s down to 14.1% for mobile site visits and 14.3% for desktop. The drops are fairly consistent with the growth of `robots.txt` returning 200 status codes, suggesting more sites have decided to implement a `robots.txt` file.
 
@@ -80,7 +80,7 @@ For 0.1% of both mobile and desktop requests tested, we received an error code i
 
 The nominal error rate suggests that simple text files in most cases -- or handled automatically by many popular CMS systems that provide a `robots.txt` directive -- are not a large challenge.
 
-***Note***: The above data does not indicate whether the `robots.txt` files returning a 200 status code are beneficial for a site or if they allow or block aspects that they should not.  
+***Note***: The above data does not indicate whether the `robots.txt` files returning a 200 status code are beneficial for a site or if they allow or block aspects that they should not.
 
 
 #### `robots.txt` size
@@ -96,10 +96,10 @@ The nominal error rate suggests that simple text files in most cases -- or handl
 }}
 
 The vast majority of `robots.txt` files -- 97.82% of mobile crawls and 97.80% of desktop crawls -- were no larger than 100KB.
- 
+
 According to RFC 9309 standards, crawlers should limit the size of `robots.txt` files they look at, and the parsing limit must be at least [500 kiB](https://www.rfc-editor.org/rfc/rfc9309.html#name-limit). A `robots.txt` file under that size should be fully parsed. Google, for example, [enforces the max limit at 500 kiB](https://developers.google.com/search/docs/crawling-indexing/robots/robots_txt#file-format). Only a tiny number of sites (just 0.06%) had `robots.txt` files over this limit. Directives found beyond that limit are ignored by the search engine.
 
-Interestingly, 1.59% of mobile crawls and 1.66% of desktop crawls returned a 0-sized `robots.txt` file. This is likely a configuration issue. Since it is not documented by the RFC 9303 specification or support documentation for popular search engine crawlers, it is unclear how this would be handled. If a site returns an empty response for `robots.txt`, a sensible approach would be to return a `robots.txt` file with appropriate rules or, if one wishes to restrict crawling, return a [`404 status code`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404) for the URL. 
+Interestingly, 1.59% of mobile crawls and 1.66% of desktop crawls returned a 0-sized `robots.txt` file. This is likely a configuration issue. Since it is not documented by the RFC 9303 specification or support documentation for popular search engine crawlers, it is unclear how this would be handled. If a site returns an empty response for `robots.txt`, a sensible approach would be to return a `robots.txt` file with appropriate rules or, if one wishes to restrict crawling, return a [`404 status code`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404) for the URL.
 
 #### `robots.txt` user-agent usage
 
@@ -148,10 +148,10 @@ Of these, `GPTBot` is the most commonly specified and found in 2.7% of mobile cr
 
 **In Summary:**
 
-- The formalization of the `robots.txt` protocol in RFC 9309 has led to better adherence to technical standards.  
-- Analysis shows an increase in successful `robots.txt` responses and a decrease in errors, indicating improved implementation.  
-- Most `robots.txt` files are within the recommended size limit.  
-- The `*` user-agent remains dominant, but AI crawlers like  `GPTBot` are on the rise.  
+- The formalization of the `robots.txt` protocol in RFC 9309 has led to better adherence to technical standards.
+- Analysis shows an increase in successful `robots.txt` responses and a decrease in errors, indicating improved implementation.
+- Most `robots.txt` files are within the recommended size limit.
+- The `*` user-agent remains dominant, but AI crawlers like  `GPTBot` are on the rise.
 - These insights are valuable for understanding the current state of `robots.txt` usage and its implications for SEO.
 
 ### Robots directives
@@ -162,7 +162,7 @@ A [robots directive](https://developers.google.com/search/docs/crawling-indexing
 
 Robots directives tags are critical for curating which pages are available to return in search results and how they should be displayed. Robots directives may be implemented in two ways:
 
-1. Placing a robots meta tag in the `<head>` of a page (for example, `<meta name="robots" content="noindex">`).  
+1. Placing a robots meta tag in the `<head>` of a page (for example, `<meta name="robots" content="noindex">`).
 2. Placing the X-Robots-Tag HTTP header in the HTTP header response.
 
 {{ figure_markup(
@@ -175,19 +175,19 @@ Robots directives tags are critical for curating which pages are available to re
   )
 }}
 
-Either implementation method is valid and can be used in tandem. The meta tag implementation is the most widely adopted, representing 45.5% of desktop and 46.2% of mobile pages. The [X-robots HTTP header](https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag#xrobotstag) is applied to fewer than 1% of pages. A small number of sites used both tags in tandem. They represented 0.4% of desktop pages and 0.3% of mobile pages. 
+Either implementation method is valid and can be used in tandem. The meta tag implementation is the most widely adopted, representing 45.5% of desktop and 46.2% of mobile pages. The [X-robots HTTP header](https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag#xrobotstag) is applied to fewer than 1% of pages. A small number of sites used both tags in tandem. They represented 0.4% of desktop pages and 0.3% of mobile pages.
 
 In 2024:
 
-- 0.4% of desktop and 0.3% of mobile pages saw the directives' values changed by rendering.  
-- Inner pages were more likely to have robots directives. And 48% of inner pages contained a meta robots tag compared to 43.9% of homepages.   
+- 0.4% of desktop and 0.3% of mobile pages saw the directives' values changed by rendering.
+- Inner pages were more likely to have robots directives. And 48% of inner pages contained a meta robots tag compared to 43.9% of homepages..
 - Rendering was more likely to change the robots directive of a homepage (0.4%) than that of a inner page (0.3%).
 
 
 
 #### Robots directive rules
 
-In 2024, there were [24 valid values](https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag#directives) -- known as rules -- that could be asserted in a directive to control the indexing and serving of a snippet. Multiple rules can be combined via separate meta tags or combined in a comma separated-list for both meta tags and `X-robots` HTTP header tags. 
+In 2024, there were [24 valid values](https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag#directives) -- known as rules -- that could be asserted in a directive to control the indexing and serving of a snippet. Multiple rules can be combined via separate meta tags or combined in a comma separated-list for both meta tags and `X-robots` HTTP header tags.
 
 For our study of directive rules, we relied on the rendered HTML.
 
@@ -217,7 +217,7 @@ The `name` value of the robots `meta` tag specifies to which crawler(s) the rule
   )
 }}
 
-The five most named crawlers in robots directives were the generic robots value, Googlebot, `Googlebot-News`, `MSNBot`, and `Bingbot`. The name attributes used in the `follow` robots `meta` tag show that sites with the tags are apt to tailor their rules to specific bots. While there was generally a slight variance by device, there was a large difference for Bingbot which saw significantly more follow directives on mobile pages (35%) compared to desktop (18%).  
+The five most named crawlers in robots directives were the generic robots value, Googlebot, `Googlebot-News`, `MSNBot`, and `Bingbot`. The name attributes used in the `follow` robots `meta` tag show that sites with the tags are apt to tailor their rules to specific bots. While there was generally a slight variance by device, there was a large difference for Bingbot which saw significantly more follow directives on mobile pages (35%) compared to desktop (18%).
 
 {{ figure_markup(
   image="robots-directive-rules-by-name.png",
@@ -242,7 +242,7 @@ Noteworthy takeaways from our analysis of the rules by bot name include:
 - 0.01% of sites provided a `noindex` rule, using the invalid crawler name: Google. Google has two valid crawler names for recognized robots `meta` tags: `Googlebot` and `Googlebot-News`.
 
 ### `IndexIfEmbedded` tag
-In January 2022, Google introduced a [new robots tag](https://developers.google.com/search/blog/2022/01/robots-meta-tag-indexifembedded), `indexifembedded`. The tag is placed in the HTTP header and offers indexing control for resources used to build a page. A common use case for this tag is for controlling indexation when content is in an iframe on a page, even when a `noindex` tag has been applied.  
+In January 2022, Google introduced a [new robots tag](https://developers.google.com/search/blog/2022/01/robots-meta-tag-indexifembedded), `indexifembedded`. The tag is placed in the HTTP header and offers indexing control for resources used to build a page. A common use case for this tag is for controlling indexation when content is in an iframe on a page, even when a `noindex` tag has been applied.
 
 The presence of an `<iframe>` provides a baseline for cases where the `indexifembedded` robots directive might be applicable. In 2024, 7.6% of mobile pages contained an `<iframe>` element. This is a noteworthy increase of 85% from 2022's rate of 4.1%.
 
@@ -297,7 +297,7 @@ In 2024, 22.3% of mobile pages had `<head>` breaking invalid HTML elements. That
 )
 }}
 
-There are eight valid elements that may be used in the `<head>` according to [Google Search documentation](https://developers.google.com/search/docs/crawling-indexing/valid-page-metadata). 
+There are eight valid elements that may be used in the `<head>` according to [Google Search documentation](https://developers.google.com/search/docs/crawling-indexing/valid-page-metadata).
 
 These are:
 1. `title`
@@ -327,9 +327,9 @@ Misapplied `<div>` tags also substantially increased from 2022. In 2024, 11% of 
 
 ## Canonicalization
 
-Canonicalization is the process of identifying the "preferred” version of a document when multiple versions are available. This is often necessary when a website has the same content accessible through different URLs, such as with HTTP/HTTPS, www/non-www, trailing slashes, query parameters, and other variations. 
+Canonicalization is the process of identifying the "preferred” version of a document when multiple versions are available. This is often necessary when a website has the same content accessible through different URLs, such as with HTTP/HTTPS, www/non-www, trailing slashes, query parameters, and other variations.
 
-`canonical` tags are signals for search engines about which version of the content to return in search results. While they are not directives like meta robots, they do serve as "strong hints." They benefit SEO by mitigating duplicate content, consolidating signals such as links to page variations, and allowing webmasters to better manage content syndication. 
+`canonical` tags are signals for search engines about which version of the content to return in search results. While they are not directives like meta robots, they do serve as "strong hints." They benefit SEO by mitigating duplicate content, consolidating signals such as links to page variations, and allowing webmasters to better manage content syndication.
 
 `canonical` tag usage was up slightly in 2024. In 2022, 61% of mobile and 59% of desktop pages used `canonical` tags. In 2024, it was up to 65% of mobile and 69% of desktop pages.
 
@@ -347,18 +347,18 @@ Canonicalization is the process of identifying the "preferred” version of a do
 
 `canonical` tags have three [implementation methods](https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls):
 
-1. In the HTTP headers (via the Link HTTP header)  
-2. In the HTML’s `<head>` section of a page  
+1. In the HTTP headers (via the Link HTTP header.
+2. In the HTML’s `<head>` section of a pag.
 3. Via sitemap
 
 HTML `<head>` tag implementation can occur in two specific points:
 
-1. As a link in the raw HTML received in response from the server  
+1. As a link in the raw HTML received in response from the serve.
 2. As a link In the rendered HTML after scripts have been executed
 
 Each implementation has its own nuance. HTTP headers can be used on non-HTML documents like PDFs, whereas `rel="canonical"` cannot. Additionally, canonicals via sitemap may be easier to maintain but are a [weaker signal](https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls#:~:text=Less%20powerful%20signal%20to%20Google%20than%20the%20rel%3D%22canonical%22%20mapping%20technique.) than on-page declarations.
 
-Analyzing `canonical` sitemap implementation requires determining the associated duplicate for any declared `canonical` values. As excited researchers, we adjusted our analysis accordingly to report on the three places where search crawlers would encounter `canonical` tags. A `canonical` could first be found in the HTTP header, next in the raw HTML, and finally in the rendered DOM. 
+Analyzing `canonical` sitemap implementation requires determining the associated duplicate for any declared `canonical` values. As excited researchers, we adjusted our analysis accordingly to report on the three places where search crawlers would encounter `canonical` tags. A `canonical` could first be found in the HTTP header, next in the raw HTML, and finally in the rendered DOM.
 
 Only 1% of mobile pages currently use the HTTP header, down from 1% in 2022. This is likely due to its implementation requiring server configuration. Instead, 65% of mobile pages use a `rel="canonical"` nested in the `<head>`.
 
@@ -394,7 +394,7 @@ Of pages where a `canonical` element was detected, 98% passed the Lighthouse aud
   )
 }}
 
-Mismatched `canonical` values occurred on 0.8% of mobile and desktop pages. Rendering was more likely to change `canonical` elements on desktop (1.9%) than on mobile (2.1%).  HTTP `canonical` elements, while seldom used, were changed during the rendering process in 0.3% of desktop pages and 0.2% of mobile pages. 
+Mismatched `canonical` values occurred on 0.8% of mobile and desktop pages. Rendering was more likely to change `canonical` elements on desktop (1.9%) than on mobile (2.1%).  HTTP `canonical` elements, while seldom used, were changed during the rendering process in 0.3% of desktop pages and 0.2% of mobile pages.
 
 ## Page experience
 
@@ -418,16 +418,16 @@ For a more in-depth analysis of this topic, see the [Security chapter](https://a
 
 ### Mobile-friendliness
 
-Search engines and websites have a common goal -- meeting users where they are. There are 6.61 billion mobile users worldwide, and 69.4% of the world's total population uses a mobile device. 
+Search engines and websites have a common goal -- meeting users where they are. There are 6.61 billion mobile users worldwide, and 69.4% of the world's total population uses a mobile device.
 
 Google search has considered [mobile-friendliness to be a requirement](https://developers.google.com/search/blog/2015/02/finding-more-mobile-friendly-search) since 2015. The search engine completed its seven-year migration to a [mobile-first index](https://developers.google.com/search/blog/2023/10/mobile-first-is-here) in 2023.
 
 Mobile-friendliness can be determined by the presence of two tags:
 
-1. [Viewport meta tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag), which is commonly used in responsive design  
+1. [Viewport meta tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag), which is commonly used in responsive desig.
 2. [Vary: User-Agent header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Vary), which is used in dynamic serving and is based on the request header
 
-#### Viewport meta tag 
+#### Viewport meta ta.
 
 A [`<meta name="viewport">`](https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag) optimizes for mobile screen sizes and can [reduce delays to user input](https://developer.chrome.com/docs/lighthouse/pwa/viewport/).
 
@@ -483,8 +483,8 @@ Core Web Vitals (CWV) are a series of standardized metrics to help measure how a
 
 Core Web Vitals are designed to answer three human-centric questions related to performance:
 
-1. *Is the page loading?* [Largest Contentful Paint](https://web.dev/articles/lcp) (LCP)  
-2. *Is the page interactive?* [Interaction to Next Paint](https://web.dev/articles/inp) (INP)  
+1. *Is the page loading?* [Largest Contentful Paint](https://web.dev/articles/lcp) (LCP.
+2. *Is the page interactive?* [Interaction to Next Paint](https://web.dev/articles/inp) (INP.
 3. *Is the page visually stable?* [Cumulative Layout Shift](https://web.dev/articles/cls) (CLS)
 
 Core Web Vitals is measured via the page loads of real Chrome users across millions of websites and available via a public dataset, the [Chrome User Experience Report](https://developer.chrome.com/docs/crux/) (CrUX).
@@ -533,7 +533,7 @@ Images are a critical component when it comes to page load. Image loading proper
   )
 }}
 
-Most sites do not use these valuable signals, with 71.9% of desktop pages and 71.8% of mobile pages missing image-loading properties. The most adopted attribute was `loading="lazy"`. [Lazy loading](https://web.dev/articles/browser-level-image-lazy-loading) is a technique that defers the loading of non-critical elements on a web page until they are needed. This helps reduce the page weight and conserves bandwidth and system resources. This tag was used for 24.6% of mobile pages and 24.3% of desktop pages in 2024. The increased adoption can likely be attributed to [loading attributes becoming a web standard](https://caniuse.com/loading-lazy-attr). 
+Most sites do not use these valuable signals, with 71.9% of desktop pages and 71.8% of mobile pages missing image-loading properties. The most adopted attribute was `loading="lazy"`. [Lazy loading](https://web.dev/articles/browser-level-image-lazy-loading) is a technique that defers the loading of non-critical elements on a web page until they are needed. This helps reduce the page weight and conserves bandwidth and system resources. This tag was used for 24.6% of mobile pages and 24.3% of desktop pages in 2024. The increased adoption can likely be attributed to [loading attributes becoming a web standard](https://caniuse.com/loading-lazy-attr).
 
 The counterpart to `lazy` loading is [`eager` loading](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#eager). A browser `eager`loads images by default. Therefore, an image with the `eager` attribute and an image without any loading attribute will behave the same. In 2024, `eager` loading was the second most used property, but only appeared on 3.4% of mobile pages and 3.6% of desktop pages.
 
@@ -567,7 +567,7 @@ Similarly to `img` loading attributes, `auto` is invalid and ignored.
   )
 }}
 
-Of the sites containing one or more `<iframe>` elements, 92.8% of desktop and 92.6% did not declare a loading property. `lazy` was the most prominent declaration and most often occurred when there were multiple `<iframe>` elements on the page. We found 4.0% of desktop and 3.9% of mobile pages had a mixed `lazy` loaded and `<iframe>` elements without a declaration. Additionally, 2.6% of desktop and 2.9% of mobile pages used the `lazy` attribute on all `<iframe>` elements discovered during the crawl. 
+Of the sites containing one or more `<iframe>` elements, 92.8% of desktop and 92.6% did not declare a loading property. `lazy` was the most prominent declaration and most often occurred when there were multiple `<iframe>` elements on the page. We found 4.0% of desktop and 3.9% of mobile pages had a mixed `lazy` loaded and `<iframe>` elements without a declaration. Additionally, 2.6% of desktop and 2.9% of mobile pages used the `lazy` attribute on all `<iframe>` elements discovered during the crawl.
 
 In 2022, 3.7% of desktop and 4.1% of mobile pages used the `lazy` loading attribute. The attribute increased to 6.6% of desktop and 6.9% of mobile pages in 2024.
 
@@ -595,7 +595,7 @@ In 2021, [Google started rewriting more websites’ `title` tags in their search
 
 In 2022, 98.8% of desktop and mobile pages used the `title` tag. Now in 2024, 98.0% of desktop pages have a `title` tag and 98.2% of mobile pages have one. Similarly, `meta` `description` usage dipped from 71% of desktop and mobile homepages in 2022 to 66.7% of desktop and 66.4% of mobile homepages in 2024.
 
-### `<title>` element 
+### `<title>` elemen.
 
 The [`<title>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title) element populates the name displayed in a browser tab, and is one of the strongest on-page elements related to the page's content and a query’s relevance.
 
@@ -623,7 +623,7 @@ The word count in `title` elements was consistent between mobile and desktop exp
 
 ### Meta description tag
 
-While the [`<meta name="description">`](https://moz.com/learn/seo/meta-description) tag is not a ranking factor, for some search engines and queries, the content within this tag may appear in SERPs and influence click-through rate.  
+While the [`<meta name="description">`](https://moz.com/learn/seo/meta-description) tag is not a ranking factor, for some search engines and queries, the content within this tag may appear in SERPs and influence click-through rate.
 
 Today, search engines like Google primarily create snippets to display in the SERPs from on-page content, based on the query. One study showed that [71% of `meta` `descriptions` are rewritten](https://portent.com/blog/seo/how-often-google-ignores-our-meta-descriptions.htm#:~:text=We%20found%20the%20rewrite%20rate,rank%20on%20the%20first%20page.) for the first page of results.
 
@@ -649,9 +649,9 @@ Today, search engines like Google primarily create snippets to display in the SE
 
 In 2024:
 
-- The median desktop and mobile page `<meta name="description">` tag contained 40 and 39 words, respectively. That represents a 110% increase in word count for mobile and 105% increase for mobile since 2022. Two years ago, the median for both desktop and mobile was just 19 words.   
-- The median desktop and mobile page `<meta name="description>` tag contained 272 characters and 271 characters, respectively. That’s a 99% increase for both device types compared to 2022.  
-- At the 10th percentile, the mobile and desktop `<meta name="description>` tag contained 4 words.  
+- The median desktop and mobile page `<meta name="description">` tag contained 40 and 39 words, respectively. That represents a 110% increase in word count for mobile and 105% increase for mobile since 2022. Two years ago, the median for both desktop and mobile was just 19 words..
+- The median desktop and mobile page `<meta name="description>` tag contained 272 characters and 271 characters, respectively. That’s a 99% increase for both device types compared to 2022.
+- At the 10th percentile, the mobile and desktop `<meta name="description>` tag contained 4 words.
 - At the 90th percentile, the `<meta name="description>` tag contained 81 words on desktop and 79 words on mobile.
 
 ### Header tags
@@ -757,7 +757,7 @@ Only 0.9% of pages had the `VideoObject` structured data markup in 2024. While t
 
 ## Links
 
-Links on a page are used by search engines in a number of important ways. 
+Links on a page are used by search engines in a number of important ways.
 
 One of the methods that search engines employ to discover new URLs for crawling, for example, is by finding a link targeting it from a page that they’re already crawling and parsing.
 
@@ -802,7 +802,7 @@ Internal links are links to other pages on the same website. The trend continues
 
 Overall, the number of internal links on a page have grown, with pages in the top 1,000 sites now having 129 internal links on mobile compared to 106 internal links in 2022. There has been a similar level of growth across all rank groupings.
 
-According to [CrUX ranking data](https://almanac.httparchive.org/en/2024/methodology#chrome-ux-report), it's clear that the more popular sites have more outgoing internal links. This might simply be because the more visited sites are bigger entities with more useful internal links, as well as their investment in developing 'mega-menu' type navigation to help them handle more pages. 
+According to [CrUX ranking data](https://almanac.httparchive.org/en/2024/methodology#chrome-ux-report), it's clear that the more popular sites have more outgoing internal links. This might simply be because the more visited sites are bigger entities with more useful internal links, as well as their investment in developing 'mega-menu' type navigation to help them handle more pages.
 
 {{ figure_markup(
   image="median-links-to-external-sites.png",
@@ -832,7 +832,7 @@ Similarly, the more popular sites tend to have more external links, but again th
 
 The [`rel` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/rel) dictates the relationship between the page and its linked target. For SEO, the primary use of the `rel` attribute is to inform search engines of its relationship with the page. Google terms this as [qualifying outbound links](https://developers.google.com/search/docs/crawling-indexing/qualify-outbound-links).
 
-The [`nofollow`](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/rel#nofollow) attribute, first introduced in 2005, is intended to inform search engines that you don’t want to be associated with the targeted site nor wish them to crawl it based on links on your page. In 2024, the attribute was present in 32.7% of pages, up from 29.5% of pages in 2022. 
+The [`nofollow`](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/rel#nofollow) attribute, first introduced in 2005, is intended to inform search engines that you don’t want to be associated with the targeted site nor wish them to crawl it based on links on your page. In 2024, the attribute was present in 32.7% of pages, up from 29.5% of pages in 2022.
 
 Some more specific attributes were introduced in 2019, including `sponsored`, which denotes a link to sponsored content and `ugc`, which denotes links to user-generated content added by users (rather than publishers). Adoption of these attributes remains low. In 2024, it was just 0.4% for `sponsored` and 0.3% for `ugc`. Both were less popular than or equal to `dofollow` and `follow`, which actually aren't even real attributes and are ignored by search engines.
 
@@ -854,7 +854,7 @@ Search engines do not rank sites based on word count; however, it is a useful me
   )
 }}
 
-Rendered word count is the amount of visible words on a page after JavaScript has been executed. The median mobile homepage in 2024 contained 364 words, while the median desktop page had slightly more at 400 words. This was a small drop from the data in 2022 when the median was 366 words for mobile homepages and 421 words for desktop. 
+Rendered word count is the amount of visible words on a page after JavaScript has been executed. The median mobile homepage in 2024 contained 364 words, while the median desktop page had slightly more at 400 words. This was a small drop from the data in 2022 when the median was 366 words for mobile homepages and 421 words for desktop.
 
 Of note, the gap between mobile and desktop homepage word counts narrowed to just 36 words in 2024, compared to that of 55 words in 2022. This suggests a marginally closer parity to the content served to mobile users. Google has completed the process of moving to a mobile-first indexing strategy, in which it primarily crawls and indexes pages with a mobile user-agent. It’s reasonable to conclude that this helped push a few remaining sites to offer their full content to mobile visitors.
 
@@ -1176,7 +1176,7 @@ As for distribution, the use of `hreflang` tags on inner pages is similar to tha
 
 While search engines like [Google](https://developers.google.com/search/docs/specialty/international) and [Yandex](https://yandex.ru/support/search-results/?service=webmaster&query=hreflang) only employ `hreflang` tags, others also use the [content-language attribute](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Language), which can be implemented in two ways:
 
-- HTML  
+- HTM.
 - HTTP Header
 
 {{ figure_markup(
@@ -1207,7 +1207,7 @@ When examining language usage data for homepages and inner pages (the latter of 
 
 Regarding other elements, the order followed almost the same pattern as the mobile and desktop comparison shown above.
 
-When analyzing the resulting data for both graphs, the dominance of `en` suggests that a large proportion of content is still tailored to English speakers. The correlation appears to be a result of English not only being the [most spoken language](https://www.statista.com/statistics/266808/the-most-spoken-languages-worldwide/), but also widely used throughout global markets and a requisite for entrance to the powerful United States market (en-us). 
+When analyzing the resulting data for both graphs, the dominance of `en` suggests that a large proportion of content is still tailored to English speakers. The correlation appears to be a result of English not only being the [most spoken language](https://www.statista.com/statistics/266808/the-most-spoken-languages-worldwide/), but also widely used throughout global markets and a requisite for entrance to the powerful United States market (en-us).
 
 Even though Mandarin is the second most spoken language in the world, the dominant search engine for this language, Baidu, does not require specific tags for locating Chinese websites. As a result, it presents a challenge when collecting data for the language. Still, `zh-tw` (the Chinese spoken in Taiwan) appears in the 13th position for language usage.
 
@@ -1215,7 +1215,7 @@ Additionally, the growth of `pt-br` from 6th position in the 2022 mobile versus 
 
 ## Conclusions
 
-The two years between the last Web Almanac SEO chapter in 2022 and this year's edition may seem like a long time in SEO, which is often a fast-moving field. However, the data shows incremental changes to the fundamentals have been slow-moving. 
+The two years between the last Web Almanac SEO chapter in 2022 and this year's edition may seem like a long time in SEO, which is often a fast-moving field. However, the data shows incremental changes to the fundamentals have been slow-moving.
 
 The recent growth of the `IndexIfEmbedded` tag, for example, signals that perhaps certain practices and protocols need some time before there’s mass adoption within the SEO industry.
 
