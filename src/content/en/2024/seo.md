@@ -31,7 +31,7 @@ The Web Almanac's SEO chapter focuses on the critical elements and configuration
 
 This chapter combines data from [HTTP Archive](https://httparchive.org/), [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/), [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report), and custom metrics to document the state of SEO and its context in the digital landscape.
 
-This year, we have analyzed one inner page per site crawled, on top of the homepages this chapter usually analyzes. Since homepages are often quite different to inner pages, this unlocks new insights and allows us to compare home verses inner page behaviors.
+This year, we analyzed one inner page per site crawled in addition to the homepages, which is all this chapter has historically analyzed. Since homepages are often quite different from inner pages, this has unlocked new insights and allowed us to compare the behaviors of homepages verses inner pages.
 
 
 ## Crawlability & indexability 
@@ -99,7 +99,7 @@ The vast majority of `robots.txt` files -- 97.82% of mobile crawls and 97.80% of
  
 According to RFC 9309 standards, crawlers should limit the size of `robots.txt` files they look at, and the parsing limit must be at least [500 kiB](https://www.rfc-editor.org/rfc/rfc9309.html#name-limit). A `robots.txt` file under that size should be fully parsed. Google, for example, [enforces the max limit at 500 kiB](https://developers.google.com/search/docs/crawling-indexing/robots/robots_txt#file-format). Only a tiny number of sites (just 0.06%) had `robots.txt` files over this limit. Directives found beyond that limit are ignored by the search engine.
 
-Interestingly 1.59% of mobile crawls and 1.66% of desktop crawls returned a 0 sized `robots.txt` file. This is likely a configuration issue, and it is undocumented by both the RFC 9303 specification, and popular search engine crawlers support documentation exactly how this would be handled. If your site is returning an empty response for `robots.txt` it would be a sensible approach to either return a `robots.txt` file with appropriate rules, or if you didn't wish to restrict crawling, return a [`404 status code`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404) for the URL.  
+Interestingly, 1.59% of mobile crawls and 1.66% of desktop crawls returned a 0-sized `robots.txt` file. This is likely a configuration issue. Since it is not documented by the RFC 9303 specification or support documentation for popular search engine crawlers, it is unclear how this would be handled. If a site returns an empty response for `robots.txt`, a sensible approach would be to return a `robots.txt` file with appropriate rules or, if one wishes to restrict crawling, return a [`404 status code`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404) for the URL. 
 
 #### `robots.txt` user-agent usage
 
@@ -162,7 +162,7 @@ A [robots directive](https://developers.google.com/search/docs/crawling-indexing
 
 Robots directives tags are critical for curating which pages are available to return in search results and how they should be displayed. Robots directives may be implemented in two ways:
 
-1. Placing a robots meta tag in the `<head>` of a page (for example `<meta name="robots" content="noindex">`).  
+1. Placing a robots meta tag in the `<head>` of a page (for example, `<meta name="robots" content="noindex">`).  
 2. Placing the X-Robots-Tag HTTP header in the HTTP header response.
 
 {{ figure_markup(
@@ -203,7 +203,7 @@ For our study of directive rules, we relied on the rendered HTML.
   )
 }}
 
-The most prominent rules in 2024 were `follow` (54.7% desktop; 56.0% mobile), `index` (53.4% desktop; 53.9% mobile), `noindex` (4.7% desktop; 3.9% mobile), and `nofollow` (2.5% desktop; 2.2% mobile).  This is interesting as both "index" and "follow" directives have no function and are [ignored by `Googlebot`](https://www.reddit.com/r/TechSEO/comments/1944d8k/comment/khdu3iw/). Google’s [documentation on robots tags](https://developers.google.com/search/docs/crawling-indexing/special-tags) advises that "The default values are index, follow and don’t need to be specified."
+The most prominent rules in 2024 were `follow` (54.7% desktop; 56.0% mobile), `index` (53.4% desktop; 53.9% mobile), `noindex` (4.7% desktop; 3.9% mobile), and `nofollow` (2.5% desktop; 2.2% mobile). This is noteworthy since neither "index” nor "follow” directives have any function and are [ignored by `Googlebot`](https://www.reddit.com/r/TechSEO/comments/1944d8k/comment/khdu3iw/). Google’s [documentation on robots tags](https://developers.google.com/search/docs/crawling-indexing/special-tags) advises that "The default values are index, follow and don’t need to be specified."
 
 The `name` value of the robots `meta` tag specifies to which crawler(s) the rule applies. For example, ` meta name="robots"` applies to all bots whereas `meta name="googlebot"` applies to only to Google. To analyze the application of name attributes, we looked at rates where values were stated for the `follow` tag since it is the most prevalent robots `meta` rule.
 
@@ -231,7 +231,7 @@ The five most named crawlers in robots directives were the generic robots value,
   )
 }}
 
-When robots directive rules are viewed by their name attributes, we can see varied application rates.  This implies that SEOs are adopting directives specifically by bot name to curate indexing and serving for individual search engines.
+When robots directive rules are viewed by their name attributes, we can see varied application rates. This implies that SEOs are adopting directives by specific bot names to curate indexing and serving for individual search engines.
    
 Noteworthy takeaways from our analysis of the rules by bot name include:
 
@@ -239,7 +239,7 @@ Noteworthy takeaways from our analysis of the rules by bot name include:
 - `​max-snippet`, `max-video-preview`, and `max-image-preview` rules are widely implemented for all robots at the rate of 40%, 40%, and 69%, respectively.  
 - `Googlebot-News` was the most named for `index` (63%) and `nosnippet` (12%)  
 - `MSNBot` was the least likely to be given a `noindex` directive (1%). In comparison, the most likely was `Googlebot-News` at 21%.  
-- 0.01% of sites provided a `noindex` rule, using the invalid crawler name: Google.  Google has two valid crawler names for recognized robots `meta` tags: `Googlebot` and `Googlebot-News`.
+- 0.01% of sites provided a `noindex` rule, using the invalid crawler name: Google. Google has two valid crawler names for recognized robots `meta` tags: `Googlebot` and `Googlebot-News`.
 
 ### `IndexIfEmbedded` tag
 In January 2022, Google introduced a [new robots tag](https://developers.google.com/search/blog/2022/01/robots-meta-tag-indexifembedded), `indexifembedded`. The tag is placed in the HTTP header and offers indexing control for resources used to build a page. A common use case for this tag is for controlling indexation when content is in an iframe on a page, even when a `noindex` tag has been applied.  
@@ -272,7 +272,7 @@ As we saw in 2022, `indexifembedded` directives continued to be almost exclusive
 
 ### Invalid `<head>` elements
 
-Search engine crawlers follow HTML standard, and when they encounter an invalid element in the `<head>`, this will end the `<head>` and assume the `<body>`  has started. This can prevent important metadata from being discovered or incomplete renderings.
+Search engine crawlers follow HTML standard and when they encounter an invalid element in the `<head>`, it ends the `<head>` and assumes the `<body>` has started. This can prevent important metadata from being discovered or incomplete renderings.
 
 The impact of a prematurely closed `<head>` is often difficult to catch since the problematic tag’s position may change on every page load. Broken `<head>` tags are frequently identified by reports on missing elements such as `canonical`, `hreflang`, and `title` tags.
 
@@ -286,7 +286,7 @@ The impact of a prematurely closed `<head>` is often difficult to catch since th
   )
 }}
 
-In 2024, 22.3% of mobile pages had `<head>` breaking invalid HTML elements. That was a 98% increase from 2022’s rate of 12.6%. Similarly, desktop pages with invalid HTML in the `<head>` increased from 12.7% to 21.5% in 2024.
+In 2024, 22.3% of mobile pages had `<head>` breaking invalid HTML elements. That represented a 98% increase from 2022’s rate of 12.6%. Meanwhile, desktop pages with invalid HTML in the `<head>` increased from 12.7% in 2022 to 21.5% in 2024.
 
 {{ figure_markup(
   caption="mobiles pages contained invalid HTML elements in the `<head>`",
@@ -309,7 +309,7 @@ These are:
 7. `noscript`
 8. `template`
 
-No element other than the aforementioned is permitted by the HTML standard in the `<head>` element. [Documentation](https://developers.google.com/search/docs/crawling-indexing/valid-page-metadata#dont-use-invalid-elements-in-the-head-element) further states "Once Google detects one of these invalid elements, it assumes the end of the `<head>` element and stops reading any further elements in the `<head>` element."
+No element other than the aforementioned is permitted by the HTML standard in the `<head>` element. [Documentation](https://developers.google.com/search/docs/crawling-indexing/valid-page-metadata#dont-use-invalid-elements-in-the-head-element) further states, "Once Google detects one of these invalid elements, it assumes the end of the `<head>` element and stops reading any further elements in the `<head>` element."
 
 {{ figure_markup(
   image="invalid-HEAD-elements.png",
@@ -327,7 +327,7 @@ Misapplied `<div>` tags also substantially increased from 2022. In 2024, 11% of 
 
 ## Canonicalization
 
-Canonicalization is the process of identifying the “preferred” version of a document when multiple versions are available. This is often necessary when a website has the same content accessible through different URLs, such as with HTTP/HTTPS, www/non-www, trailing slashes, query parameters, and other variations. 
+Canonicalization is the process of identifying the "preferred” version of a document when multiple versions are available. This is often necessary when a website has the same content accessible through different URLs, such as with HTTP/HTTPS, www/non-www, trailing slashes, query parameters, and other variations. 
 
 `canonical` tags are signals for search engines about which version of the content to return in search results. While they are not directives like meta robots, they do serve as "strong hints." They benefit SEO by mitigating duplicate content, consolidating signals such as links to page variations, and allowing webmasters to better manage content syndication. 
 
@@ -463,7 +463,7 @@ Vary header usage fell significantly in 2024. The header appeared on 12% of desk
 
 ### Legible font sizes
 
-One of the basics of a good mobile experience is being able to easily read the on-page content. Font sizes under 12 pixels require mobile visitors to “pinch to zoom” when reading content. This is considered too small to be legible.
+One of the basics of a good mobile experience is being able to easily read the on-page content. Font sizes under 12 pixels require mobile visitors to "pinch to zoom” when reading content. This is considered too small to be legible.
 
 {{ figure_markup(
   image="legible-font-sizes.png",
@@ -489,7 +489,7 @@ Core Web Vitals are designed to answer three human-centric questions related to 
 
 Core Web Vitals is measured via the page loads of real Chrome users across millions of websites and available via a public dataset, the [Chrome User Experience Report](https://developer.chrome.com/docs/crux/) (CrUX).
 
-These metrics are designed to evolve. In [March 2024](https://web.dev/blog/inp-cwv-march-12)​​, [Interaction to Next Paint](https://web.dev/articles/inp) (INP) took over as the measurement for interactivity from the previous metric, First Input Delay (FID), which only measured the input delay of the first interaction on a page. FID was an inaccurate measure for a number of reasons and many sites—particularly JavaScript-heavy sites—were often falsely represented as providing good interactivity to users. Therefore, many JavaScript frameworks have seen a drop in pass rate because of this change this year. However, it should also be noted that [SPAs are not accurately measured by Core Web Vitals](https://web.dev/articles/vitals-spa-faq) at present.
+These metrics are designed to evolve. In [March 2024](https://web.dev/blog/inp-cwv-march-12)​​, [Interaction to Next Paint](https://web.dev/articles/inp) (INP) took over as the main measurement for interactivity from the previous metric, First Input Delay (FID), which only measured the input delay of the first interaction on a page. FID was an inaccurate measurement for a number of reasons, and many sites (particularly JavaScript-heavy sites) often falsely represented that they provided good interactivity to users. As a result, many JavaScript frameworks have seen their pass rate drop in 2024 because of this change. It should be noted, however, that currently [SPAs are not accurately measured by Core Web Vitals](https://web.dev/articles/vitals-spa-faq).
 
 {{ figure_markup(
   image="percent-of-good-cwv-experiences-on-mobile.png",
@@ -535,7 +535,7 @@ Images are a critical component when it comes to page load. Image loading proper
 
 Most sites do not use these valuable signals, with 71.9% of desktop pages and 71.8% of mobile pages missing image-loading properties. The most adopted attribute was `loading="lazy"`. [Lazy loading](https://web.dev/articles/browser-level-image-lazy-loading) is a technique that defers the loading of non-critical elements on a web page until they are needed. This helps reduce the page weight and conserves bandwidth and system resources. This tag was used for 24.6% of mobile pages and 24.3% of desktop pages in 2024. The increased adoption can likely be attributed to [loading attributes becoming a web standard](https://caniuse.com/loading-lazy-attr). 
 
-The counterpart to `lazy` loading is [`eager` loading](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#eager). A browser `eager`loads images by default. A image with the `eager` attribute and an image without any loading attribute will behave the same. `eager` loading was the second most used property in 2024, but only appeared on 3.4% of mobile pages and 3.6% of desktop pages.
+The counterpart to `lazy` loading is [`eager` loading](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#eager). A browser `eager`loads images by default. Therefore, an image with the `eager` attribute and an image without any loading attribute will behave the same. In 2024, `eager` loading was the second most used property, but only appeared on 3.4% of mobile pages and 3.6% of desktop pages.
 
 {{ figure_markup(
   image="desktop-image-loading-property.png",
@@ -569,7 +569,7 @@ Similarly to `img` loading attributes, `auto` is invalid and ignored.
 
 Of the sites containing one or more `<iframe>` elements, 92.8% of desktop and 92.6% did not declare a loading property. `lazy` was the most prominent declaration and most often occurred when there were multiple `<iframe>` elements on the page. We found 4.0% of desktop and 3.9% of mobile pages had a mixed `lazy` loaded and `<iframe>` elements without a declaration. Additionally, 2.6% of desktop and 2.9% of mobile pages used the `lazy` attribute on all `<iframe>` elements discovered during the crawl. 
 
-In 2022, 3.7% of desktop and 4.1% of mobile pages used the `lazy` loading attribute. The attribute occurred on 6.6% of desktop and 6.9% of mobile in 2024. 
+In 2022, 3.7% of desktop and 4.1% of mobile pages used the `lazy` loading attribute. The attribute increased to 6.6% of desktop and 6.9% of mobile pages in 2024.
 
 Since `<iframe>` elements can be controlled by either the site on which the page is hosted or a third-party service, the prevalence of loading attribute combinations suggests that sites are adopting loading attributes wherever possible. It is reasonable to assume that third-party controlled `<iframe>` elements are less likely to have attributes.
 
@@ -586,7 +586,7 @@ In 2021, [Google started rewriting more websites’ `title` tags in their search
 {{ figure_markup(
   image="title-tag-and-meta-description.png",
   caption="Title elements and meta descriptions.",
-  description="A column chart with the percentage of pages containing a `title` tag and meta description. In 2024, 98% of desktop pages had a title elements and 66.7% of desktop pages had a meta description. The numbers for mobile pages were nearly similar, with 98.2% having a title element and 66.4% having a meta description.",
+  description="A column chart with the percentage of pages containing a `title` tag and meta description. In 2024, 98% of desktop pages had a title element and 66.7% of desktop pages had a meta description. The numbers for mobile pages were nearly similar, with 98.2% having a title element and 66.4% having a meta description.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=1166495990&format=interactive",
   sheets_gid="144160625",
   sql_file="seo-stats-2024.sql"
@@ -619,7 +619,7 @@ The [`<title>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title)
   )
 }}
 
-The word count in `title` elements was consistent between mobile and desktop experiences, though the character count was slightly higher—for example 79 characters compared to 77 at the median.
+The word count in `title` elements was consistent between mobile and desktop experiences, though the character count was slightly higher for mobile with 79 characters compared to 77 words for desktop at the median.
 
 ### Meta description tag
 
@@ -737,15 +737,11 @@ There was an increase in blank `alt` attributes in 2024. Two years ago, the medi
   )
 }}
 
-In 2024, the median page saw no missing `alt` attributes on either mobile or desktop pages.  This is a noteworthy drop from 2022 where 12% of desktop and 13% of mobile were missing the attributes. At the 75th percentile, 15.5% of desktop and 15% of mobile did not include `alt` attributes. In 2022, this was 51% and 53% respectively.
+In 2024, the median page saw no missing `alt` attributes on either mobile or desktop pages. This is a noteworthy drop from 2022 when 12% of desktop pages and 13% of mobile pages were missing the attributes. At the 75th percentile, 16% of desktop pages and 15% of mobile pages did not include `alt` attributes. In 2022, this was 51% and 53%, respectively.
 
 The decrease in missing `<img>` `alt` attributes combined with the increase in blank attributes suggests that more CMS instances may be including an `alt` attribute for each image.
 
 ### Video
-
-In 2024, the median page saw no missing `alt` attributes on either mobile or desktop pages.  This is a noteworthy drop from 2022 where 12% of desktop and 13% of mobile were missing the attributes. At the 75th percentile, 16% of desktop and 15% of mobile did not include `alt` attributes. In 2022, this was 51% and 53% respectively.
-
-The decrease in missing `<img>` `alt` attributes combined with the increase in blank attributes suggests that more CMS instances may be including an `alt` attribute for each image.
 
 {{ figure_markup(
   image="percentage-of-pages-with-video.png",
@@ -1019,7 +1015,7 @@ For the most part, inner pages similarly utilize JSON-LD, but there is a slight 
 {{ figure_markup(
   image="most-popular-homepage-schema-types.png",
   caption="Most popular homepage schema types.",
-  description="A column chart showing the 15 most popular schema types for homepages. On desktop, pages `schema.org/WebSite` was found on 35%, `schema.org/SearchAction` on 29%, schema.org/WebPage on 25%, `schema.org/Organization` on 25%, `schema.org/-UnknownType-` on 24%, `schema.org/ListItem` on 20%, `schema.org/BreadcrumbList` on 20%, `schema.org/ImageObject` on 19%, `schema.org/EntryPoint` on 18%, `schema.org/ReadAction` on 14%, `schema.org/PostalAddress` on 8%, `schema.org/SiteNavigationElement` on 6%, s`chema.org/WPHeader` on 6%, `schema.org/Person` on 5%, s`chema.org/WPFooter` on 5%. For mobile, they were found on 35%, 28%, 25%, 24%, 23%, 20%, 20%, 20%, 18%, 14%, 8%, 7%, 6%, 5%, and 5% of pages, respectively.",
+  description="A column chart showing the 15 most popular schema types for homepages. On desktop, pages `schema.org/WebSite` was found on 35%, `schema.org/SearchAction` on 29%, `schema.org/WebPage` on 25%, `schema.org/Organization` on 25%, `schema.org/-UnknownType-` on 24%, `schema.org/ListItem` on 20%, `schema.org/BreadcrumbList` on 20%, `schema.org/ImageObject` on 19%, `schema.org/EntryPoint` on 18%, `schema.org/ReadAction` on 14%, `schema.org/PostalAddress` on 8%, `schema.org/SiteNavigationElement` on 6%, `schema.org/WPHeader` on 6%, `schema.org/Person` on 5%, `schema.org/WPFooter` on 5%. For mobile, they were found on 35%, 28%, 25%, 24%, 23%, 20%, 20%, 20%, 18%, 14%, 8%, 7%, 6%, 5%, and 5% of pages, respectively.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=1774876613&format=interactive",
   sheets_gid="1091913261",
   sql_file="structured-data-schema-types-2024.sql",
@@ -1048,7 +1044,7 @@ As for implementing the most popular schema types, there were minor differences 
   )
 }}
 
-In terms of the inner pages, `ListItem` was the most popular schema type in 2024, representing 30% of mobile and 31% of desktop URLs. It stands to reason there would be more listing pages than “leaf” pages, such as product, event, or article pages (although `Article` schema was the 12th most popular type).
+In terms of the inner pages, `ListItem` was the most popular schema type in 2024, representing 30% of mobile and 31% of desktop URLs. It stands to reason there would be more listing pages than "leaf” pages, such as product, event, or article pages (although `Article` schema was the 12th most popular type).
 
 `BreadcrumbList` was the second most popular schema type. That was to be expected since one would be more likely to show a breadcrumb on an inner page.
 
@@ -1138,7 +1134,7 @@ While search engines can often detect a page's language on its own, `hreflang` t
 
 Currently, 10% of desktop websites and 9% of mobile websites utilize `hreflang`. This represents a slight increase from 2022 when usage was 10% and 9% for desktop and mobile, respectively.
 
-The most popular `hreflang` value in 2024 remained “en” (English), with 8% usage on desktop and 8% on mobile. That particular tag experienced considerable growth from 2022 when usage was 5% on desktop and 5% on mobile.
+The most popular `hreflang` value in 2024 remained "en” (English), with 8% usage on desktop and 8% on mobile. That particular tag experienced considerable growth from 2022 when usage was 5% on desktop and 5% on mobile.
 
 {{ figure_markup(
   image="hreflang-link-usage-home-pages.png",
@@ -1200,7 +1196,7 @@ When examining language usage data for homepages and inner pages (the latter of 
 {{ figure_markup(
   image="home-vs-inner-page-language-usage-combined.png",
   caption="Language usage (html and http header) for homepage and inner page.",
-  description="A bar chart showing language usage as a percentage of pages. For home\spage, en was used on 18% of pages in our dataset, followed by pt-br on 9%, en-us on 8%, ja on 6%, fr on 5%, de on 4%, es on 4%, vi on 3%, ru on 3%, cs on 3%, tr on 2%, pl on 2%, zh-tw on 2%, th on 2%, it on 2%, and hu on 2%. For the inner page, it was very similar at 18%, 9%, 8%, 6%, 5%, 4%, 3%, 3%, 3%, 3%, 3%, 2%, 3%, 2%, 2%, and 2%, respectively.",
+  description="A bar chart showing language usage as a percentage of pages. For homepage, en was used on 18% of pages in our dataset, followed by pt-br on 9%, en-us on 8%, ja on 6%, fr on 5%, de on 4%, es on 4%, vi on 3%, ru on 3%, cs on 3%, tr on 2%, pl on 2%, zh-tw on 2%, th on 2%, it on 2%, and hu on 2%. For the inner page, it was very similar at 18%, 9%, 8%, 6%, 5%, 4%, 3%, 3%, 3%, 3%, 3%, 2%, 3%, 2%, 2%, and 2%, respectively.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=218192895&format=interactive",
   sheets_gid="127817290",
   sql_file="content-language-2024.sql",
