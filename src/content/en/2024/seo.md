@@ -4,7 +4,7 @@ title: SEO
 description: SEO chapter of the 2024 Web Almanac covering crawlability, indexability, page experience, on-page SEO, links, AMP, internationalization, and more.
 hero_alt: Hero image of various web pages beneath a search field with Web Almanac characters shine a light on the pages and make various checks.
 authors: [fellowhuman1101, dwsmart,  mikaelaraujo, MichaelLewittes]
-reviewers: []
+reviewers: [tunetheweb]
 editors: [MichaelLewittes]
 analysts: [henryp25, cnichols013]
 translators: []
