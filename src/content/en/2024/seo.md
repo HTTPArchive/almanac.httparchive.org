@@ -123,7 +123,7 @@ The `*` user agent denotes the rules a crawler should follow unless there's anot
 
 Much like in 2022, `Bingbot` again was not in the top 10 most specified `user-agent`s. Only 2.7% of mobile and 2.6% of desktop `robots.txt` files specified that `user-agent`, relegating it down to 14th place.
 
-##### SEO ootls
+##### SEO tools
 
 The data shows there has been an increase in sites specifying rules for the popular SEO tools. `AhrefsBot`, for instance, has now been detected in 8.8% of mobile crawls, up from 5.3% in 2022. It has overtaken Majestic's `MJ12Bot`, which itself increased to 6.6% from 6.0% in 2022 and had previously been the second most popular specifically targeted `user-agent`.
 
@@ -471,7 +471,7 @@ One of the basics of a good mobile experience is being able to easily read the o
 
 Lighthouse has a [legible font size audit](https://developer.chrome.com/docs/lighthouse/seo/font-size/) that is run as part of with the HTTP Archive crawl. The audit checks for pages that had 60% or more of its content using fonts greater than 12 pixels. The test, specific to mobile pages, saw 92% of eligible pages passing. This percentage was consistent for both home pages and inner or inner pages.
 
-### Core web vitals
+### Core Web Vitals
 
 Core Web Vitals (CWV) are a series of standardized metrics to help measure how a user experiences a page. Google first introduced them as a ranking factor with the [page experience ranking signal](https://developers.google.com/search/blog/2020/05/evaluating-page-experience)  This independent signal was deprecated when it was absorbed into the [Helpful content system](https://developers.google.com/search/docs/appearance/ranking-systems-guide#helpful-content), which has since been folded into the core algorithm.
 
@@ -757,7 +757,7 @@ Search engines also use links for ranking. Links serve as a proxy for how import
 
 When it comes to links, it is not a simple case of more links equals better ranking. There's a lot more nuance to it. These days, links are less of a factor when it comes to ranking. Search engines have evolved to better detect and rank great content, irrespective of links and, at the same time, to combat manipulation and [link spam](https://developers.google.com/search/docs/essentials/spam-policies#link-spam).
 
-### Non-descriptive Links
+### Non-descriptive links
 
 {{ figure_markup(
   image="pages-passing-links-have-descriptive-text.png",
