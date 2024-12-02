@@ -53,7 +53,7 @@ The number of requests served using TLS climbed another 4% to 98% on mobile sinc
   )
 }}
 
-The number of homepages served over HTTPS on mobile increased from 89% to 95.6%. This percentage is lower than the number of requests served over HTTPS due to the high number of third-party resources websites load, which are more likely to be served over HTTPS.
+The number of home pages served over HTTPS on mobile increased from 89% to 95.6%. This percentage is lower than the number of requests served over HTTPS due to the high number of third-party resources websites load, which are more likely to be served over HTTPS.
 
 ### Protocol versions
 

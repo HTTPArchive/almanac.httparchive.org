@@ -753,8 +753,8 @@
   },
   "en/2024/chapters/accessibility.html": {
     "date_published": "2024-11-11T00:00:00.000Z",
-    "date_modified": "2024-11-22T00:00:00.000Z",
-    "hash": "db405edaff762e930358c9471d3fd358"
+    "date_modified": "2024-11-30T00:00:00.000Z",
+    "hash": "d437f8d0a37f119170da4d0eb0b1bfe9"
   },
   "en/2024/chapters/cdn.html": {
     "date_published": "2024-11-11T00:00:00.000Z",
@@ -837,8 +837,8 @@
     "hash": "232a286d67940eaed02f935fd9ce1db6"
   },
   "en/2024/chapters/seo.html": {
-    "date_published": "2024-11-11T00:00:00.000Z",
-    "date_modified": "2024-11-16T00:00:00.000Z",
+    "date_published": "2024-12-02T00:00:00.000Z",
+    "date_modified": "2024-12-02T00:00:00.000Z",
     "hash": "d7bb5659e4444ac7702888c7b11880cb"
   },
   "en/2024/chapters/structured-data.html": {
@@ -848,13 +848,13 @@
   },
   "en/2024/chapters/sustainability.html": {
     "date_published": "2024-11-11T00:00:00.000Z",
-    "date_modified": "2024-11-18T00:00:00.000Z",
-    "hash": "bb49d876d3e33811819746edc96ed447"
+    "date_modified": "2024-11-30T00:00:00.000Z",
+    "hash": "48be7a85f0dfefe06c709a2ff9f5449b"
   },
   "en/2024/chapters/third-parties.html": {
     "date_published": "2024-11-21T00:00:00.000Z",
-    "date_modified": "2024-11-21T00:00:00.000Z",
-    "hash": "075bec99b73be68c6fa7b97b97808182"
+    "date_modified": "2024-11-30T00:00:00.000Z",
+    "hash": "f5e703ed3f81f6969d2000e33d06a7fd"
   },
   "en/2024/chapters/webassembly.html": {
     "date_published": "2024-11-11T00:00:00.000Z",

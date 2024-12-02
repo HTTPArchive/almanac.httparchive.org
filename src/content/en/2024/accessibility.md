@@ -354,9 +354,9 @@ Descriptive page titles are important for navigating between pages, tabs, and wi
   )
 }}
 
-While 97% of mobile websites include a document title, only 69% have titles that are more than four words long. Since our analysis is limited to the homepage and a secondary, we have limited insights about the inner pages. We did find that secondary pages were 8% more likely to have descriptive titles of more than four words (78% on average in 2024). Ideally, a title should include both a brief description of the page's content to enhance navigation and the website's name.
+While 97% of mobile websites include a document title, only 69% have titles that are more than four words long. Since our analysis is limited to the home page and a secondary, we have limited insights about the inner pages. We did find that secondary pages were 8% more likely to have descriptive titles of more than four words (78% on average in 2024). Ideally, a title should include both a brief description of the page's content to enhance navigation and the website's name.
 
-The titles changed on render value is derived from a comparison of the initial HTML title and the final value of the page after JavaScript has loaded. The data indicates that 7% of desktops sites scanned are dynamically changing the content of the title. Secondary pages are slightly less likely to change the title than the homepage.
+The titles changed on render value is derived from a comparison of the initial HTML title and the final value of the page after JavaScript has loaded. The data indicates that 7% of desktops sites scanned are dynamically changing the content of the title. Secondary pages are slightly less likely to change the title than the home page.
 
 ### Tables
 
@@ -584,7 +584,7 @@ HTML5 introduced numerous native elements with built-in semantics and roles. For
   )
 }}
 
-We observed that over 50% of mobile sites had homepages with at least one element assigned the `role="button"` (up from 33% in 2022, and 29% in 2021 and 25% in 2020). This increase is concerning, as it suggests websites may be using `<div>` or `<span>` elements as custom buttons or redundantly applying roles to `<button>` elements. Both practices are problematic and violate the fundamental ARIA principle of using native HTML elements—such as `<button>`—whenever possible.
+We observed that over 50% of mobile sites had home pages with at least one element assigned the `role="button"` (up from 33% in 2022, and 29% in 2021 and 25% in 2020). This increase is concerning, as it suggests websites may be using `<div>` or `<span>` elements as custom buttons or redundantly applying roles to `<button>` elements. Both practices are problematic and violate the fundamental ARIA principle of using native HTML elements—such as `<button>`—whenever possible.
 
 {{ figure_markup(
   caption='Websites with at least one anchor with an href with a `role="button"`.',

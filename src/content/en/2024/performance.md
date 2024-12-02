@@ -17,7 +17,7 @@ featured_stat_label_1: of mobile websites have good CWV scores when measured wit
 featured_stat_2: 15%
 featured_stat_label_2: of websites still use unnecessary lazy-loading on LCP elements.
 featured_stat_3: 13%
-featured_stat_label_3: the percentage by which good CWV scores are higher on secondary pages compared to homepages for mobile websites.
+featured_stat_label_3: the percentage by which good CWV scores are higher on secondary pages compared to home pages for mobile websites.
 doi: 10.5281/zenodo.14065738
 ---
 
@@ -91,7 +91,7 @@ As mentioned earlier, the CWV scores have decreased due to the switch of the INP
 
 Several technologies were significantly impacted, including a 19% drop for 1C-Bitrix (a popular CMS in Central Asia), a 10% drop for Next.js (a React-based framework), and an 8% drop for Emotion (a CSS-in-JS tool). We can't be entirely certain that the decline in CWV scores is solely due to the technology used. Next.js has server-side rendering (SSR) and static site generation (SSG) features, which should theoretically enhance INP, but it has still seen a significant decline. As Next.js is based on React, many websites rely on client-side rendering, which can negatively impact INP. This could serve as a reminder for developers to leverage the SSR and SSG capabilities of the framework they use.
 
-As of this year, secondary pages are available to compare with homepage data.
+As of this year, secondary pages are available to compare with home page data.
 
 {{ figure_markup(
   image="good-core-web-vitals-home-secondary-page.png",

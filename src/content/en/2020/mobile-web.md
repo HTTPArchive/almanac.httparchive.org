@@ -37,7 +37,7 @@ Please visit the links above to learn more about the methodology and caveats wit
 
 In addition to the above, we also used a non-public Chrome data source in the section on page loads in Chrome. For more information on this, read about <a hreflang="en" href="https://chromium.googlesource.com/chromium/src/+/master/services/metrics/ukm_api.md">Chrome's data collection API</a>.
 
-While this data is only collected from a subset of (opted in) Chrome users, it does not suffer from being limited to homepages. It is pseudonymous and consists of histograms and events.
+While this data is only collected from a subset of (opted in) Chrome users, it does not suffer from being limited to home pages. It is pseudonymous and consists of histograms and events.
 
 <p class="note">NOTE: Reporting is enabled if the user has enabled a feature that syncs browser windows, unless they have disabled the "Make searches and browsing better / Sends URLs of pages you visit to Google" setting.</p>
 
@@ -252,7 +252,7 @@ Simple design tweaks go a long way, for instance a clear call-to-action, and mak
   )
 }}
 
-<a hreflang="en" href="https://www.nngroup.com/articles/auto-forwarding/">Research has shown</a> that auto-forwarding carousels are detrimental to the user experience. Auto-forwarding carousels on the homepage should be avoided or their frequency should be decreased.
+<a hreflang="en" href="https://www.nngroup.com/articles/auto-forwarding/">Research has shown</a> that auto-forwarding carousels are detrimental to the user experience. Auto-forwarding carousels on the home page should be avoided or their frequency should be decreased.
 
 ##### Color and contrast
 
