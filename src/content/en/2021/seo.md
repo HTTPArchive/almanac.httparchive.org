@@ -38,7 +38,7 @@ SEO is more popular than ever and has seen huge growth over the last couple year
 
 The purpose of the SEO chapter of the Web Almanac is to analyze various elements related to optimizing a website. In this chapter, we'll check if websites are providing a great experience for users and search engines.
 
-Many sources of data were used for our analysis including <a hreflang="en" href="https://developers.google.com/web/tools/lighthouse/">Lighthouse</a>, the <a hreflang="en" href="https://developers.google.com/web/tools/chrome-user-experience-report">Chrome User Experience Report (CrUX)</a>, as well as raw and rendered HTML elements from the <a hreflang="en" href="https://httparchive.org/">HTTP Archive</a> on mobile and desktop. In the case of the HTTP Archive and Lighthouse, the data is limited to the data identified from websites' homepages only, not site-wide crawls. Keep that in mind when drawing conclusions from our results. You can learn more about the analysis on our [Methodology](./methodology) page.
+Many sources of data were used for our analysis including <a hreflang="en" href="https://developers.google.com/web/tools/lighthouse/">Lighthouse</a>, the <a hreflang="en" href="https://developers.google.com/web/tools/chrome-user-experience-report">Chrome User Experience Report (CrUX)</a>, as well as raw and rendered HTML elements from the <a hreflang="en" href="https://httparchive.org/">HTTP Archive</a> on mobile and desktop. In the case of the HTTP Archive and Lighthouse, the data is limited to the data identified from websites' home pages only, not site-wide crawls. Keep that in mind when drawing conclusions from our results. You can learn more about the analysis on our [Methodology](./methodology) page.
 
 Read on to find out more about the current state of the web and its search engine friendliness.
 
@@ -184,7 +184,7 @@ More mobile pages have canonicals set than their desktop counterparts. In additi
 
 A higher number of canonicalized pages on mobile seems to be related to websites using <a hreflang="en" href="https://developers.google.com/search/mobile-sites/mobile-seo/separate-urls">separate mobile URLs</a>. In these cases, Google recommends placing a `rel="canonical"` tag pointing to the corresponding desktop URLs.
 
-Our dataset and analysis are limited to homepages of websites; the data is likely to be different when considering all URLs on the tested websites.
+Our dataset and analysis are limited to home pages of websites; the data is likely to be different when considering all URLs on the tested websites.
 
 #### Two methods of implementing canonical tags
 
@@ -217,7 +217,7 @@ The previous figure shows as many as 1.3% of mobile pages have different canonic
 
 This year's data on that conflict is even more worrisome. Pages are sending conflicting signals in 0.4% of cases on desktop and 0.3% of cases on mobile.
 
-As the Web Almanac data only looks on homepages, there may be additional problems with pages located deeper in the architecture, which are pages more likely to be in need of canonical signals.
+As the Web Almanac data only looks on home pages, there may be additional problems with pages located deeper in the architecture, which are pages more likely to be in need of canonical signals.
 
 ## Page Experience
 
@@ -313,7 +313,7 @@ Metadata includes `<title>` elements and `<meta name="description">` tags. Metad
   )
 }}
 
-In 2021, 98.8% of desktop and mobile pages had `<title>` elements. 71.1% of desktop and mobile homepages had `<meta name="description">` tags.
+In 2021, 98.8% of desktop and mobile pages had `<title>` elements. 71.1% of desktop and mobile home pages had `<meta name="description">` tags.
 
 #### `<title>` Element
 
@@ -346,7 +346,7 @@ In 2021:
 - 10% of pages had `<title>` elements containing 12 words.
 - 10% of desktop and mobile pages had `<title>` elements containing 74 and 75 characters, respectively.
 
-Most of these stats are relatively unchanged since last year. Reminder that these are titles on homepages which tend to be shorter than those used on deeper pages.
+Most of these stats are relatively unchanged since last year. Reminder that these are titles on home pages which tend to be shorter than those used on deeper pages.
 
 #### Meta description tag
 
@@ -554,7 +554,7 @@ Structured data adoption is up a bit since last year. It's used on 33.2% of page
 {{ figure_markup(
   image="most-popular-schema-types.png",
   caption="Most popular schema types.",
-  description="Bar chart showing the most popular schema types found on homepages. Results were nearly identical for desktop and mobile homepages. The most popular schema types were WebSite, SearchAction, WebPage, UnknownType and Organization.",
+  description="Bar chart showing the most popular schema types found on home pages. Results were nearly identical for desktop and mobile home pages. The most popular schema types were WebSite, SearchAction, WebPage, UnknownType and Organization.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=242663990&format=interactive",
   sheets_gid="1580260783",
   sql_file="structured-data-schema-types.sql",
@@ -563,7 +563,7 @@ Structured data adoption is up a bit since last year. It's used on 33.2% of page
   )
 }}
 
-The most popular schema types found on homepages are `WebSite`, `SearchAction`, `WebPage`. `SearchAction` is what powers the <a hreflang="en" href="https://developers.google.com/search/docs/advanced/structured-data/sitelinks-searchbox">Sitelinks Search Box</a>, which Google can choose to show in the Search Results Page.
+The most popular schema types found on home pages are `WebSite`, `SearchAction`, `WebPage`. `SearchAction` is what powers the <a hreflang="en" href="https://developers.google.com/search/docs/advanced/structured-data/sitelinks-searchbox">Sitelinks Search Box</a>, which Google can choose to show in the Search Results Page.
 
 ### `<h>` elements (headings)
 
@@ -593,7 +593,7 @@ There was very little difference between desktop and mobile heading usage, nor w
   )
 }}
 
-However, a lower percentage of pages include _non-empty_`<h>` elements, particularly `h1`. Websites often wrap logo-images in `<h1>` elements on homepages, and this may explain the discrepancy.
+However, a lower percentage of pages include _non-empty_`<h>` elements, particularly `h1`. Websites often wrap logo-images in `<h1>` elements on home pages, and this may explain the discrepancy.
 
 ## Links
 
@@ -614,8 +614,8 @@ On top of PageRank, the text used as a link anchor helps search engines to under
 
 {{ figure_markup(
   image="outgoing-internal-link.png",
-  caption="Internal links from homepages.",
-  description="Bar chart showing the number of internal links on homepages by percentile (10, 25, 50, 75, 90). The median desktop homepage had 64 internal links compared to 55 internal links on mobile. There were more internal links on desktop homepages at every percentile.",
+  caption="Internal links from home pages.",
+  description="Bar chart showing the number of internal links on home pages by percentile (10, 25, 50, 75, 90). The median desktop home page had 64 internal links compared to 55 internal links on mobile. There were more internal links on desktop home pages at every percentile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1929473622&format=interactive",
   sheets_gid="455169599",
   sql_file="seo-stats-by-percentile.sql"
@@ -630,8 +630,8 @@ The most popular websites (the top 1,000 according to CrUX data) have more outgo
 
 {{ figure_markup(
   image="outgoing-external-links.png",
-  caption="External links from homepages.",
-  description="Bar chart showing the number of external links on homepages by percentile (10, 25, 50, 75, 90). The median desktop homepage had 7 external links compared to 6 external links on mobile. There were more external links on desktop homepages at every percentile.",
+  caption="External links from home pages.",
+  description="Bar chart showing the number of external links on home pages by percentile (10, 25, 50, 75, 90). The median desktop home page had 7 external links compared to 6 external links on mobile. There were more external links on desktop home pages at every percentile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=876769621&format=interactive",
   sheets_gid="455169599",
   sql_file="seo-stats-by-percentile.sql"
@@ -646,7 +646,7 @@ The numbers are nearly identical to 2020. Despite Google rolling out mobile firs
 
 {{ figure_markup(
   image="text-links.png",
-  caption="Text links from homepages.",
+  caption="Text links from home pages.",
   description="Bar chart showing the number of text links per percentile (10, 25, 50, 75, and 90). The median page contained 69 text links on desktop and 63 text links on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1700739999&format=interactive",
   sheets_gid="455169599",
@@ -656,7 +656,7 @@ The numbers are nearly identical to 2020. Despite Google rolling out mobile firs
 
 {{ figure_markup(
   image="image-links.png",
-  caption="Image links from homepages.",
+  caption="Image links from home pages.",
   description="Bar chart showing the number of image links per percentile (10, 25, 50, 75, and 90). The median web page contained 7 image links on desktop and 6 image links on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1217720785&format=interactive",
   sheets_gid="455169599",
@@ -673,14 +673,14 @@ In September of 2019, Google <a hreflang="en" href="https://webmasters.googleblo
 {{ figure_markup(
   image="rel-attibute-usage.png",
   caption="Rel attribute usage.",
-  description='Bar chart showing the usage (in percent) of rel attributes on desktop and mobile. Our data found that that 29.2% of homepages featured nofollow attributes on their desktop version and 30.7% on mobile. `rel="noopener"` was featured on 31.6% of desktop pages and 30.1% on mobile. `rel="noreferrer"` was featured on 15.8% of desktop pages and 14.8% of mobile. `rel="dofollow"`, `rel="ugc"`, `rel="sponsored"`, and `rel="follow"` were all featured on fewer than 1% of desktop and mobile pages.',
+  description='Bar chart showing the usage (in percent) of rel attributes on desktop and mobile. Our data found that that 29.2% of home pages featured nofollow attributes on their desktop version and 30.7% on mobile. `rel="noopener"` was featured on 31.6% of desktop pages and 30.1% on mobile. `rel="noreferrer"` was featured on 15.8% of desktop pages and 14.8% of mobile. `rel="dofollow"`, `rel="ugc"`, `rel="sponsored"`, and `rel="follow"` were all featured on fewer than 1% of desktop and mobile pages.',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1672151299&format=interactive",
   sheets_gid="1936997045",
   sql_file="anchor-rel-attribute-usage.sql"
   )
 }}
 
-The new attributes are still fairly rare, at least on homepages, with `rel="ugc"` appearing on 0.4% of mobile pages and `rel="sponsored"` appearing on 0.3% of mobile pages. It's likely these attributes are seeing more adoption on pages that aren't homepages.
+The new attributes are still fairly rare, at least on home pages, with `rel="ugc"` appearing on 0.4% of mobile pages and `rel="sponsored"` appearing on 0.3% of mobile pages. It's likely these attributes are seeing more adoption on pages that aren't home pages.
 
 `rel="follow"` and `rel=dofollow` appear on more pages than `rel="ugc"` and `rel="sponsored"`. While this is not a problem, Google ignores `rel="follow"` and `rel="dofollow"` because they aren't official attributes.
 
@@ -727,7 +727,7 @@ To let search engines know about localized versions of your pages, use `hreflang
 
 There are three ways of implementing `hreflang` information: in HTML `<head>` elements, `Link` headers, and with XML sitemaps. This data does not include data for XML sitemaps.
 
-The most popular hreflang attribute is `"en"` (English version). 4.75% of mobile homepages use it and 5.32% of desktop homepages.
+The most popular hreflang attribute is `"en"` (English version). 4.75% of mobile home pages use it and 5.32% of desktop home pages.
 
 `x-default` (also called the fallback version) is used in 2.56% of cases on mobile. Other popular languages addressed by `hreflang` attributes are French and Spanish.
 

@@ -532,7 +532,7 @@ Here below we can see the same data interactively with the source attribute on t
   )
 }}
 
-The main limitation of this analysis is represented by the fact that we can evaluate relationship chains at the homepage level.
+The main limitation of this analysis is represented by the fact that we can evaluate relationship chains at the home page level.
 
 #### `SameAs`
 

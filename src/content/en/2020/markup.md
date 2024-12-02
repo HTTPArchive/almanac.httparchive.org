@@ -610,7 +610,7 @@ In our mobile dataset of 6.3 million pages, around 0.9 million pages (14.01%) co
   <figcaption>{{ figure_link(caption="Obsolete elements with more than 10,000 uses.", sheets_gid="1972617631", sql_file="pages_element_count_by_device_and_obsolete_elements.sql") }}</figcaption>
 </figure>
 
-Even `spacer` is still being used 1,584 times, and present on every 5,000th page. We know that Google has been using a `center` element on <a hreflang="en" href="https://www.google.com/">their homepage</a> <a hreflang="en" href="https://web.archive.org/web/19981202230410/https://www.google.com/">for 22 years now</a>, but why are there so many imitators?
+Even `spacer` is still being used 1,584 times, and present on every 5,000th page. We know that Google has been using a `center` element on <a hreflang="en" href="https://www.google.com/">their home page</a> <a hreflang="en" href="https://web.archive.org/web/19981202230410/https://www.google.com/">for 22 years now</a>, but why are there so many imitators?
 
 #### `isindex`
 
