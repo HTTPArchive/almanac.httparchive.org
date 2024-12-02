@@ -123,7 +123,7 @@ The `*` user agent denotes the rules a crawler should follow unless there's anot
 
 Much like in 2022, `Bingbot` again was not in the top 10 most specified `user-agent`s. Only 2.7% of mobile and 2.6% of desktop `robots.txt` files specified that `user-agent`, relegating it down to 14th place.
 
-##### SEO
+##### SEO tools
 
 The data shows there has been an increase in sites specifying rules for the popular SEO tools. `AhrefsBot`, for instance, has now been detected in 8.8% of mobile crawls, up from 5.3% in 2022. It has overtaken Majestic's `MJ12Bot`, which itself increased to 6.6% from 6.0% in 2022 and had previously been the second most popular specifically targeted `user-agent`.
 
