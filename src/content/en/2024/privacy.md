@@ -15,7 +15,7 @@ ChrisBeeti_bio: Chris Böttger is a PhD candidate in Computer Science at the <a 
 max-ostapenko_bio: Max Ostapenko is a product manager in data and advertising with expertise in tracking, privacy, and web monetization. As a co-maintainer of the HTTP Archive, Max contributes to the accessibility of web insights.
 shaoormunir_bio: Shaoor Munir is a Ph.D. student in Computer Science at UC Davis, specializing in the analysis and development of privacy-enhancing technologies (PETs) and the policies that govern online data collection. His work seeks to advance privacy safeguards for netizens by balancing technological innovation with responsible data governance on the internet.
 ydimova_bio: Yana Dimova is a PhD student at DistriNet, KU Leuven, focusing on the user's perspective of privacy and how they can protect it on the web. Her research interests are online tracking, personal data leaks and privacy and data protection law.
-Yash-Vekaria_bio:
+Yash-Vekaria_bio: Yash Vekaria is a PhD candidate in Computer Science at <a hreflang="en" href="https://www.ucdavis.edu/">University of California, Davis</a>. He carries out web-based large-scale Internet measurements to study and improve the dynamics of web. Specifically, his research is focused at studying and bringing transparency to online tracking practices and user privacy issues.
 hadiaamjad_bio:
 
 results: https://docs.google.com/spreadsheets/d/18r8cT6x9lPdM-rXvXjsqx84W7ZDdTDYGD59xr0UGOwg/
