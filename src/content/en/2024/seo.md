@@ -29,7 +29,7 @@ Search Engine Optimization (SEO) is the practice of improving a website's techni
 
 The Web Almanac's SEO chapter focuses on the critical elements and configurations influencing a website's organic search visibility. The primary goal is to provide actionable insights that empower website owners to enhance their sites' crawlability, indexability, and overall search engine rankings. By conducting a comprehensive analysis of prevalent SEO factors, we hope that websites can uncover the most impactful strategies and techniques for optimizing a website's presence in search results.
 
-This chapter combines data from [HTTP Archive](https://httparchive.org/), [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/), [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report), and custom metrics to document the state of SEO and its context in the digital landscape.
+This chapter combines data from <a hreflang="en" href="https://httparchive.org/">HTTP Archive</a>, [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/), [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report), and custom metrics to document the state of SEO and its context in the digital landscape.
 
 This year, we analyzed one inner page per site crawled in addition to the home pages, which is all this chapter has historically analyzed. Since home pages are often quite different from inner pages, this has unlocked new insights and allowed us to compare the behaviors of home pages verses inner pages.
 
@@ -38,17 +38,17 @@ This year, we analyzed one inner page per site crawled in addition to the home p
 
 For a page to appear in a search engine results page (SERP), the page must first be crawled and indexed. This process is a critical foundation of SEO.
 
-Search engines may discover pages in several ways, including external links, sitemaps, or by being directly submitted to the search engine using webmaster tools. In 2022, Bing shared that its crawler discovered nearly [70 billion new pages *daily*](https://x.com/patrickstox/status/1630582277057986560?s=20). During this year's antitrust suit against Google, it was revealed that its *index* is only around [400 billion documents](https://zyppy.com/seo/google-index-size/#:~:text=But%20recently%2C%20during%20testimony%20in,Google's%20index%20size%20in%202020.). That means far more pages are crawled than indexed.
+Search engines may discover pages in several ways, including external links, sitemaps, or by being directly submitted to the search engine using webmaster tools. In 2022, Bing shared that its crawler discovered nearly [70 billion new pages *daily*](https://x.com/patrickstox/status/1630582277057986560?s=20). During this year's antitrust suit against Google, it was revealed that its *index* is only around <a hreflang="en" href="https://zyppy.com/seo/google-index-size/#:~:text=But%20recently%2C%20during%20testimony%20in,Google's%20index%20size%20in%202020.">400 billion documents</a>. That means far more pages are crawled than indexed.
 
 This section addresses the state of the web, as it relates to how search engines crawl and index content, as well as the directives and signals SEOs can provide so that crawlers interact and retain versions of their content.
 
 ### `robots.txt`
 
-As search engines explore the web, they stop at the `robots.txt` file, which one can think of as a visitors' center for each site. The `robots.txt` file sits at the root of an origin and allows site owners to implement the [Robots Exclusion Protocol](https://en.wikipedia.org/wiki/Robots.txt). It's designed to signal or instruct bots which URLs a search engine can or cannot crawl.
+As search engines explore the web, they stop at the `robots.txt` file, which one can think of as a visitors' center for each site. The `robots.txt` file sits at the root of an origin and allows site owners to implement the [Robots Exclusion Protocol](https://wikipedia.org/wiki/Robots.txt). It's designed to signal or instruct bots which URLs a search engine can or cannot crawl.
 
 It is not a hard, technical directive. Rather, it's up to the bot to honor these instructions. Since the major search engines respect this protocol, it's relevant for our SEO analysis.
 
-While the robot.txt file has been used since 1994 to control how a site is crawled, it only became formally standardized with the Internet Engineering Task Force in September 2022. The formalization of the [RFC 9390](https://datatracker.ietf.org/doc/html/rfc9309) protocol in 2022 occurred after the previous year's edition of the Web Almanac was published and led to stricter enforcement of technical standards.
+While the robot.txt file has been used since 1994 to control how a site is crawled, it only became formally standardized with the Internet Engineering Task Force in September 2022. The formalization of the <a hreflang="en" href="https://datatracker.ietf.org/doc/html/rfc9309">RFC 9390</a> protocol in 2022 occurred after the previous year's edition of the Web Almanac was published and led to stricter enforcement of technical standards.
 
 For the measurements for this year's Web Almanac, we ran Lighthouse, an open-source, automated tool for improving the quality of web pages in tandem with our own data collection. These audits showed that 8.43% of desktop pages and 7.40% of mobile pages failed the tool's check for [valid `robots.txt` files](https://developer.chrome.com/docs/lighthouse/seo/invalid-robots-txt).
 
@@ -97,9 +97,9 @@ The nominal error rate suggests that simple text files in most cases—or handle
 
 The vast majority of `robots.txt` files—97.82% of mobile crawls and 97.80% of desktop crawls—were no larger than 100KB.
 
-According to RFC 9309 standards, crawlers should limit the size of `robots.txt` files they look at, and the parsing limit must be at least [500 kiB](https://www.rfc-editor.org/rfc/rfc9309.html#name-limit). A `robots.txt` file under that size should be fully parsed. Google, for example, [enforces the max limit at 500 kiB](https://developers.google.com/search/docs/crawling-indexing/robots/robots_txt#file-format). Only a tiny number of sites (just 0.06%) had `robots.txt` files over this limit. Directives found beyond that limit are ignored by the search engine.
+According to RFC 9309 standards, crawlers should limit the size of `robots.txt` files they look at, and the parsing limit must be at least <a hreflang="en" href="https://www.rfc-editor.org/rfc/rfc9309.html#name-limit">500 kiB</a>. A `robots.txt` file under that size should be fully parsed. Google, for example, [enforces the max limit at 500 kiB](https://developers.google.com/search/docs/crawling-indexing/robots/robots_txt#file-format). Only a tiny number of sites (just 0.06%) had `robots.txt` files over this limit. Directives found beyond that limit are ignored by the search engine.
 
-Interestingly, 1.59% of mobile crawls and 1.66% of desktop crawls returned a 0-sized `robots.txt` file. This is likely a configuration issue. Since it is not documented by the RFC 9303 specification or support documentation for popular search engine crawlers, it is unclear how this would be handled. If a site returns an empty response for `robots.txt`, a sensible approach would be to return a `robots.txt` file with appropriate rules or, if one wishes to restrict crawling, return a [`404 status code`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404) for the URL.
+Interestingly, 1.59% of mobile crawls and 1.66% of desktop crawls returned a 0-sized `robots.txt` file. This is likely a configuration issue. Since it is not documented by the RFC 9303 specification or support documentation for popular search engine crawlers, it is unclear how this would be handled. If a site returns an empty response for `robots.txt`, a sensible approach would be to return a `robots.txt` file with appropriate rules or, if one wishes to restrict crawling, return a [`404 status code`](https://developer.mozilla.org/docs/Web/HTTP/Status/404) for the URL.
 
 #### `robots.txt` user-agent usage
 
@@ -144,7 +144,7 @@ The data shows there has been an increase in sites specifying rules for the popu
 
 Over the past two years, large language models (LLMs) and other generative systems have gained traction in both awareness and usage. It appears people are increasingly specifying rules for the crawlers they use in order to gather data for training and other purposes.
 
-Of these, `GPTBot` is the most commonly specified and found in 2.7% of mobile crawls. The next most common is `CCBot`, which is Common Crawl's agent [https://commoncrawl.org/ccbot](https://commoncrawl.org/ccbot). While `CCBot` isn't related only to AI, a number of popular vendors use or have used data gathered from this crawler to train their models.
+Of these, `GPTBot` is the most commonly specified and found in 2.7% of mobile crawls. The next most common is `CCBot`, which is <a hreflang="en" href="https://commoncrawl.org/ccbot">Common Crawl's agent</a>. While `CCBot` isn't related only to AI, a number of popular vendors use or have used data gathered from this crawler to train their models.
 
 **In Summary:**
 
@@ -203,7 +203,7 @@ For our study of directive rules, we relied on the rendered HTML.
   )
 }}
 
-The most prominent rules in 2024 were `follow` (54.7% desktop; 56.0% mobile), `index` (53.4% desktop; 53.9% mobile), `noindex` (4.7% desktop; 3.9% mobile), and `nofollow` (2.5% desktop; 2.2% mobile). This is noteworthy since neither "index" nor "follow" directives have any function and are [ignored by `Googlebot`](https://www.reddit.com/r/TechSEO/comments/1944d8k/comment/khdu3iw/). Google's [documentation on robots tags](https://developers.google.com/search/docs/crawling-indexing/special-tags) advises that "The default values are index, follow and don't need to be specified."
+The most prominent rules in 2024 were `follow` (54.7% desktop; 56.0% mobile), `index` (53.4% desktop; 53.9% mobile), `noindex` (4.7% desktop; 3.9% mobile), and `nofollow` (2.5% desktop; 2.2% mobile). This is noteworthy since neither "index" nor "follow" directives have any function and are <a hreflang="en" href="https://www.reddit.com/r/TechSEO/comments/1944d8k/comment/khdu3iw/">ignored by `Googlebot`</a>. Google's [documentation on robots tags](https://developers.google.com/search/docs/crawling-indexing/special-tags) advises that "The default values are index, follow and don't need to be specified."
 
 The `name` value of the robots `meta` tag specifies to which crawler(s) the rule applies. For example, `meta name="robots"` applies to all bots whereas `meta name="googlebot"` applies to only to Google. To analyze the application of name attributes, we looked at rates where values were stated for the `follow` tag since it is the most prevalent robots `meta` rule.
 
@@ -235,7 +235,7 @@ When robots directive rules are viewed by their name attributes, we can see vari
    
 Noteworthy takeaways from our analysis of the rules by bot name include:
 
-- The `noarchive` rule was applied overwhelmingly to `Bingbot` at 36%. This is likely due to the tag's ability to [keep content out of Bing chat answers](https://blogs.bing.com/webmaster/september-2023/Announcing-new-options-for-webmasters-to-control-usage-of-their-content-in-Bing-Chat).  
+- The `noarchive` rule was applied overwhelmingly to `Bingbot` at 36%. This is likely due to the tag's ability to <a hreflang="en" href="https://blogs.bing.com/webmaster/september-2023/Announcing-new-options-for-webmasters-to-control-usage-of-their-content-in-Bing-Chat">keep content out of Bing chat answers</a>.  
 - `​max-snippet`, `max-video-preview`, and `max-image-preview` rules are widely implemented for all robots at the rate of 40%, 40%, and 69%, respectively.  
 - `Googlebot-News` was the most named for `index` (63%) and `nosnippet` (12%)  
 - `MSNBot` was the least likely to be given a `noindex` directive (1%). In comparison, the most likely was `Googlebot-News` at 21%.  
@@ -402,7 +402,7 @@ Simply, users want good experiences on the web. In 2020, Google introduced page 
 
 ### HTTPS
 
-Google adopted [HTTP as a ranking signal in 2014](https://developers.google.com/search/blog/2014/08/https-as-ranking-signal). [HTTPS](https://www.cloudflare.com/learning/ssl/what-is-https/) uses a protocol to encrypt communications. It's established via the presence of a secure certificate issued by a third party at the time of crawl. Adoption has continued to steadily increase over the years. In 2024, 89% of desktop pages and 88.9% of mobile pages used the HTTPS protocol.
+Google adopted [HTTP as a ranking signal in 2014](https://developers.google.com/search/blog/2014/08/https-as-ranking-signal). <a hreflang="en" href="https://www.cloudflare.com/learning/ssl/what-is-https/">HTTPS</a> uses a protocol to encrypt communications. It's established via the presence of a secure certificate issued by a third party at the time of crawl. Adoption has continued to steadily increase over the years. In 2024, 89% of desktop pages and 88.9% of mobile pages used the HTTPS protocol.
 
 {{ figure_markup(
   image="https-usage.png",
@@ -424,14 +424,14 @@ Google search has considered [mobile-friendliness to be a requirement](https://d
 
 Mobile-friendliness can be determined by the presence of two tags:
 
-1. [Viewport meta tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag), which is commonly used in responsive desig.
-2. [Vary: User-Agent header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Vary), which is used in dynamic serving and is based on the request header
+1. [Viewport meta tag](https://developer.mozilla.org/docs/Web/HTML/Viewport_meta_tag), which is commonly used in responsive desig.
+2. [Vary: User-Agent header](https://developer.mozilla.org/docs/Web/HTTP/Headers/Vary), which is used in dynamic serving and is based on the request header
 
 #### Viewport meta tag
 
-A [`<meta name="viewport">`](https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag) optimizes for mobile screen sizes and can [reduce delays to user input](https://developer.chrome.com/docs/lighthouse/pwa/viewport/).
+A [`<meta name="viewport">`](https://developer.mozilla.org/docs/Web/HTML/Viewport_meta_tag) optimizes for mobile screen sizes and can [reduce delays to user input](https://developer.chrome.com/docs/lighthouse/pwa/viewport/).
 
-Usage of the [Viewport meta tag](https://dequeuniversity.com/rules/axe/4.9/meta-viewport) continued to increase in 2024 with 92% of desktop pages and 94% of mobile pages passing the Lighthouse check for a 'viewport tag' with `width` or `initial-scale` set. This was up by 1% from 2022's adoption rates when 91% of mobile pages used the tag.
+Usage of the <a hreflang="en" href="https://dequeuniversity.com/rules/axe/4.9/meta-viewport">Viewport meta tag</a> continued to increase in 2024 with 92% of desktop pages and 94% of mobile pages passing the Lighthouse check for a 'viewport tag' with `width` or `initial-scale` set. This was up by 1% from 2022's adoption rates when 91% of mobile pages used the tag.
 
 {{ figure_markup(
   image="viewport-meta-tag.png",
@@ -447,7 +447,7 @@ Viewport meta tag use on mobile increased to 94% in 2024 from 92% in 2022.
 
 #### Vary header usage
 
-The [`vary`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Vary) HTTP response header enables different content to be served based on the requesting user agent. Also known as dynamic serving, this header allows the page to return content best suited for the requesting device.
+The [`vary`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Vary) HTTP response header enables different content to be served based on the requesting user agent. Also known as dynamic serving, this header allows the page to return content best suited for the requesting device.
 
 {{ figure_markup(
   image="vary-header-used.png",
@@ -487,7 +487,7 @@ Core Web Vitals are designed to answer three human-centric questions related to 
 2. *Is the page interactive?* [Interaction to Next Paint](https://web.dev/articles/inp) (INP.
 3. *Is the page visually stable?* [Cumulative Layout Shift](https://web.dev/articles/cls) (CLS)
 
-Core Web Vitals is measured via the page loads of real Chrome users across millions of websites and available via a public dataset, the [Chrome User Experience Report](https://developer.chrome.com/docs/crux/) (CrUX).
+Core Web Vitals is measured via the page loads of real Chrome users across millions of websites and available via a public dataset, the [Chrome User Experience Report](https://developer.chrome.com/docs/crux) (CrUX).
 
 These metrics are designed to evolve. In [March 2024](https://web.dev/blog/inp-cwv-march-12)​​, [Interaction to Next Paint](https://web.dev/articles/inp) (INP) took over as the main measurement for interactivity from the previous metric, First Input Delay (FID), which only measured the input delay of the first interaction on a page. FID was an inaccurate measurement for a number of reasons, and many sites (particularly JavaScript-heavy sites) often falsely represented that they provided good interactivity to users. As a result, many JavaScript frameworks have seen their pass rate drop in 2024 because of this change. It should be noted, however, that currently [SPAs are not accurately measured by Core Web Vitals](https://web.dev/articles/vitals-spa-faq).
 
@@ -533,9 +533,9 @@ Images are a critical component when it comes to page load. Image loading proper
   )
 }}
 
-Most sites do not use these valuable signals, with 71.9% of desktop pages and 71.8% of mobile pages missing image-loading properties. The most adopted attribute was `loading="lazy"`. [Lazy loading](https://web.dev/articles/browser-level-image-lazy-loading) is a technique that defers the loading of non-critical elements on a web page until they are needed. This helps reduce the page weight and conserves bandwidth and system resources. This tag was used for 24.6% of mobile pages and 24.3% of desktop pages in 2024. The increased adoption can likely be attributed to [loading attributes becoming a web standard](https://caniuse.com/loading-lazy-attr).
+Most sites do not use these valuable signals, with 71.9% of desktop pages and 71.8% of mobile pages missing image-loading properties. The most adopted attribute was `loading="lazy"`. [Lazy loading](https://web.dev/articles/browser-level-image-lazy-loading) is a technique that defers the loading of non-critical elements on a web page until they are needed. This helps reduce the page weight and conserves bandwidth and system resources. This tag was used for 24.6% of mobile pages and 24.3% of desktop pages in 2024. The increased adoption can likely be attributed to <a hreflang="en" href="https://caniuse.com/loading-lazy-attr">`loading` attributes becoming a web standard</a>.
 
-The counterpart to `lazy` loading is [`eager` loading](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#eager). A browser `eager`loads images by default. Therefore, an image with the `eager` attribute and an image without any loading attribute will behave the same. In 2024, `eager` loading was the second most used property, but only appeared on 3.4% of mobile pages and 3.6% of desktop pages.
+The counterpart to `lazy` loading is [`eager`](https://developer.mozilla.org/docs/Web/HTML/Element/img#eager) loading. A browser `eager`loads images by default. Therefore, an image with the `eager` attribute and an image without any loading attribute will behave the same. In 2024, `eager` loading was the second most used property, but only appeared on 3.4% of mobile pages and 3.6% of desktop pages.
 
 {{ figure_markup(
   image="desktop-image-loading-property.png",
@@ -553,9 +553,7 @@ A third deprecated value, auto, was never standardized and has since been remove
 
 ### `lazy` loading vs. `eager` loading iframes
 
-[Loading attributes](https://html.spec.whatwg.org/multipage/urls-and-fetching.html#lazy-loading-attributes) allow pages to load resources when they are useful and, as a result, improve perceived page performance. Two values are accepted. The `loading="lazy"` attribute defers loading of the resource until it reaches a calculated distance from the viewport. Conversely, `loading="eager"` means the image is loaded regardless of its location on the page. If there is no load attribute, the behavior is `eager` as this is the browser default.
-
-Similarly to `img` loading attributes, `auto` is invalid and ignored.
+Like images, iframes can also lazy-loaded through the <a hreflang="en" href="https://html.spec.whatwg.org/multipage/urls-and-fetching.html#lazy-loading-attributes">`loading` attribute</a>. Similarly to `img` loading attributes, `auto` is invalid and ignored.
 
 {{ figure_markup(
   image="iframe-loading-property-usage.png",
@@ -597,7 +595,7 @@ In 2022, 98.8% of desktop and mobile pages used the `title` tag. Now in 2024, 98
 
 ### `<title>` element
 
-The [`<title>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title) element populates the name displayed in a browser tab, and is one of the strongest on-page elements related to the page's content and a query's relevance.
+The [`<title>`](https://developer.mozilla.org/docs/Web/HTML/Element/title) element populates the name displayed in a browser tab, and is one of the strongest on-page elements related to the page's content and a query's relevance.
 
 {{ figure_markup(
   image="title-words-by-percentile.png",
@@ -623,9 +621,9 @@ The word count in `title` elements was consistent between mobile and desktop exp
 
 ### Meta description tag
 
-While the [`<meta name="description">`](https://moz.com/learn/seo/meta-description) tag is not a ranking factor, for some search engines and queries, the content within this tag may appear in SERPs and influence click-through rate.
+While the <a hreflang="en" href="https://moz.com/learn/seo/meta-description">`<meta name="description">`</a> tag is not a ranking factor, for some search engines and queries, the content within this tag may appear in SERPs and influence click-through rate.
 
-Today, search engines like Google primarily create snippets to display in the SERPs from on-page content, based on the query. One study showed that [71% of `meta` `descriptions` are rewritten](https://portent.com/blog/seo/how-often-google-ignores-our-meta-descriptions.htm#:~:text=We%20found%20the%20rewrite%20rate,rank%20on%20the%20first%20page.) for the first page of results.
+Today, search engines like Google primarily create snippets to display in the SERPs from on-page content, based on the query. One study showed that <a hreflang="en" href="https://portent.com/blog/seo/how-often-google-ignores-our-meta-descriptions.htm#:~:text=We%20found%20the%20rewrite%20rate,rank%20on%20the%20first%20page.">71% of `meta` `descriptions` are rewritten</a> for the first page of results.
 
 {{ figure_markup(
   image="meta-description-words-by-percentile.png",
@@ -761,9 +759,9 @@ Links on a page are used by search engines in a number of important ways.
 
 One of the methods that search engines employ to discover new URLs for crawling, for example, is by finding a link targeting it from a page that they're already crawling and parsing.
 
-Search engines also use links for ranking. Links serve as a proxy for how important and relevant a particular URL might be, based on the links targeting it. This is the basis of [PageRank](https://en.wikipedia.org/wiki/PageRank), an algorithm on which Google was built.
+Search engines also use links for ranking. Links serve as a proxy for how important and relevant a particular URL might be, based on the links targeting it. This is the basis of [PageRank](https://wikipedia.org/wiki/PageRank), an algorithm on which Google was built.
 
-When it comes to links, it is not a simple case of more links equals better ranking. There's a lot more nuance to it. These days, links are less of a factor when it comes to ranking. Search engines have evolved to better detect and rank great content, irrespective of links and, at the same time, to combat manipulation and [link spam.](https://developers.google.com/search/docs/essentials/spam-policies#link-spam)
+When it comes to links, it is not a simple case of more links equals better ranking. There's a lot more nuance to it. These days, links are less of a factor when it comes to ranking. Search engines have evolved to better detect and rank great content, irrespective of links and, at the same time, to combat manipulation and [link spam](https://developers.google.com/search/docs/essentials/spam-policies#link-spam).
 
 ### Non-descriptive Links
 
@@ -785,7 +783,7 @@ There was a small discrepancy between desktop and mobile, indicating perhaps tha
 
 ### Outgoing links
 
-Outgoing links are [`<a>` anchor elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a) that have an `href` attribute linking to a different page.
+Outgoing links are [`<a>` anchor elements](https://developer.mozilla.org/docs/Web/HTML/Element/a) that have an `href` attribute linking to a different page.
 
 {{ figure_markup(
   image="median-links-to-same-site.png",
@@ -830,9 +828,9 @@ Similarly, the more popular sites tend to have more external links, but again th
   )
 }}
 
-The [`rel` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/rel) dictates the relationship between the page and its linked target. For SEO, the primary use of the `rel` attribute is to inform search engines of its relationship with the page. Google terms this as [qualifying outbound links](https://developers.google.com/search/docs/crawling-indexing/qualify-outbound-links).
+The [`rel` attribute](https://developer.mozilla.org/docs/Web/HTML/Attributes/rel) dictates the relationship between the page and its linked target. For SEO, the primary use of the `rel` attribute is to inform search engines of its relationship with the page. Google terms this as [qualifying outbound links](https://developers.google.com/search/docs/crawling-indexing/qualify-outbound-links).
 
-The [`nofollow`](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/rel#nofollow) attribute, first introduced in 2005, is intended to inform search engines that you don't want to be associated with the targeted site nor wish them to crawl it based on links on your page. In 2024, the attribute was present in 32.7% of pages, up from 29.5% of pages in 2022.
+The [`nofollow`](https://developer.mozilla.org/docs/Web/HTML/Attributes/rel#nofollow) attribute, first introduced in 2005, is intended to inform search engines that you don't want to be associated with the targeted site nor wish them to crawl it based on links on your page. In 2024, the attribute was present in 32.7% of pages, up from 29.5% of pages in 2022.
 
 Some more specific attributes were introduced in 2019, including `sponsored`, which denotes a link to sponsored content and `ugc`, which denotes links to user-generated content added by users (rather than publishers). Adoption of these attributes remains low. In 2024, it was just 0.4% for `sponsored` and 0.3% for `ugc`. Both were less popular than or equal to `dofollow` and `follow`, which actually aren't even real attributes and are ignored by search engines.
 
@@ -1174,7 +1172,7 @@ As for distribution, the use of `hreflang` tags on inner pages is similar to tha
 
 ### Content language usage (HTML and HTTP header)
 
-While search engines like [Google](https://developers.google.com/search/docs/specialty/international) and [Yandex](https://yandex.ru/support/search-results/?service=webmaster&query=hreflang) only employ `hreflang` tags, others also use the [content-language attribute](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Language), which can be implemented in two ways:
+While search engines like [Google](https://developers.google.com/search/docs/specialty/international) and <a hreflang="ru" href="https://webmaster.yandex.ru/blog/15326">>Yandex</a> only employ `hreflang` tags, others also use the [content-language attribute](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Language), which can be implemented in two ways:
 
 - HTM.
 - HTTP Header
@@ -1207,7 +1205,7 @@ When examining language usage data for home pages and inner pages (the latter of
 
 Regarding other elements, the order followed almost the same pattern as the mobile and desktop comparison shown above.
 
-When analyzing the resulting data for both graphs, the dominance of `en` suggests that a large proportion of content is still tailored to English speakers. The correlation appears to be a result of English not only being the [most spoken language](https://www.statista.com/statistics/266808/the-most-spoken-languages-worldwide/), but also widely used throughout global markets and a requisite for entrance to the powerful United States market (en-us).
+When analyzing the resulting data for both graphs, the dominance of `en` suggests that a large proportion of content is still tailored to English speakers. The correlation appears to be a result of English not only being the <a hreflang="en" href="https://www.statista.com/statistics/266808/the-most-spoken-languages-worldwide/">most spoken language</a>, but also widely used throughout global markets and a requisite for entrance to the powerful United States market (en-us).
 
 Even though Mandarin is the second most spoken language in the world, the dominant search engine for this language, Baidu, does not require specific tags for locating Chinese websites. As a result, it presents a challenge when collecting data for the language. Still, `zh-tw` (the Chinese spoken in Taiwan) appears in the 13th position for language usage.
 
