@@ -13,7 +13,7 @@ results: https://docs.google.com/spreadsheets/d/1TtOMr_w58HvqNBv4RIWX021Lxm6m5aj
 featured_quote: Every website, every web application, and every online interaction starts with HTML at its core, making it one of the most essential web standards.
 featured_stat_1: 92.8%
 featured_stat_label_1: Documents using the HTML doctype
-featured_stat_2: 32 MB
+featured_stat_2: 32 KB
 featured_stat_label_2: Median HTML document transfer size
 featured_stat_3: 29%
 featured_stat_label_3: Elements that are `div`s
@@ -24,7 +24,7 @@ doi: 10.5281/zenodo.14065478
 
 The web as we know it is built on the foundation of HTML. Every website, every web application, and every online interaction starts with HTML at its core, making it one of the most essential web standards. It's the language that structures content, defines relationships, and communicates with browsers, ensuring that what we create can be viewed, interacted with, and understood by users worldwide. This chapter is dedicated to understanding how HTML continues to shape the web in 2024, exploring trends in its use, the rise of custom elements, and how developers are leveraging new features to build more accessible, efficient, and future-proof websites.
 
-This year's edition brings a broader perspective, as our dataset now includes not only homepages but also a wide variety of secondary pages. By analyzing pages beyond just the front doors of websites, we're able to capture a richer, more accurate snapshot of how HTML is used across different types of content and contexts. From blog posts and product pages to login screens and article archives, this expanded scope gives us deeper insights into the real-world application of HTML.
+This year's edition brings a broader perspective, as our dataset now includes not only home pages but also a wide variety of secondary pages. By analyzing pages beyond just the front doors of websites, we're able to capture a richer, more accurate snapshot of how HTML is used across different types of content and contexts. From blog posts and product pages to login screens and article archives, this expanded scope gives us deeper insights into the real-world application of HTML.
 
 We encourage readers to dive deeper into the data, explore their own insights, and join the conversation about the future of the web's foundational language.
 
@@ -454,7 +454,7 @@ There are currently <a hreflang="en" href="https://html.spec.whatwg.org/multipag
   )
 }}
 
-If we compare these results [to the 2022 ones](../2022/markup#obsolete-elements), we see a slow but steady decline in their usage. One notable improvement is the drop in the use of the `<center>` element, which has fallen from 6.1% in mobile sites last year to 4.5% this year. This marks a significant decrease and has led to `<center>` being surpassed by the `<font>` element as the most commonly used obsolete tag, now present on 4.5% of mobile pages. Interestingly, despite this positive trend, some high-profile sites, like Google's homepage, still rely on the `<center>` element in their markup.
+If we compare these results [to the 2022 ones](../2022/markup#obsolete-elements), we see a slow but steady decline in their usage. One notable improvement is the drop in the use of the `<center>` element, which has fallen from 6.1% in mobile sites last year to 4.5% this year. This marks a significant decrease and has led to `<center>` being surpassed by the `<font>` element as the most commonly used obsolete tag, now present on 4.5% of mobile pages. Interestingly, despite this positive trend, some high-profile sites, like Google's home page, still rely on the `<center>` element in their markup.
 
 ## Attributes
 

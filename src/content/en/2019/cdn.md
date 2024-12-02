@@ -16,7 +16,7 @@ featured_quote: "Use a Content Delivery Network" was one of Steve Souders origin
 featured_stat_1: 20%
 featured_stat_label_1: Home pages served by CDN
 featured_stat_2: 9.61%
-featured_stat_label_2: Homepages served by most popular CDN (Cloudflare)
+featured_stat_label_2: Home pages served by most popular CDN (Cloudflare)
 featured_stat_3: 30%
 featured_stat_label_3: 3P CDN requests that use Google
 ---

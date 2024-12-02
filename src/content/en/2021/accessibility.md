@@ -33,7 +33,7 @@ Products and services are also rapidly shifting online as a result of the pandem
 
 Web accessibility is about giving complete access to all aspects of an interface to people with disabilities by achieving feature and information parity. A digital product or website is simply not complete if it is not usable by everyone. If a digital product excludes certain disabled populations, this is discrimination and potentially grounds for fines and/or lawsuits. Last year <a hreflang="en" href="https://info.usablenet.com/2020-report-on-digital-accessibility-lawsuits">lawsuits related to the Americans with Disabilities Act were up 20%</a>.
 
-Sadly, year over year, we and other teams conducting analysis such as the <a hreflang="en" href="https://webaim.org/projects/million/">WebAIM Million</a> are finding very little improvement in these metrics. The WebAIM study found that 97.4% of homepages had automatically detected accessibility failures, which is less than 1% lower than the 2020 audit.
+Sadly, year over year, we and other teams conducting analysis such as the <a hreflang="en" href="https://webaim.org/projects/million/">WebAIM Million</a> are finding very little improvement in these metrics. The WebAIM study found that 97.4% of home pages had automatically detected accessibility failures, which is less than 1% lower than the 2020 audit.
 
 The median overall site score for all <a hreflang="en" href="https://web.dev/lighthouse-accessibility/">Lighthouse Accessibility</a> audit data rose from 80% in 2020 to 82% in 2021. We hope that this 2% increase represents a shift in the right direction. However, these are automated checks, and this could also potentially mean that developers are doing a better job of subverting the rule engine.
 
@@ -89,7 +89,7 @@ Users with low vision may rely on zooming and scaling the page using system sett
   sql_file="viewport_zoom_scale.sql"
 ) }}
 
-We found that 24% of desktop homepages and 29% of mobile homepages attempt to disable scaling by setting either `maximum-scale` to a value less than or equal to 1, or `user-scalable` set to `0` or `none`.
+We found that 24% of desktop home pages and 29% of mobile home pages attempt to disable scaling by setting either `maximum-scale` to a value less than or equal to 1, or `user-scalable` set to `0` or `none`.
 
 {{ figure_markup(
   image="pages-zooming-scaling-disabled-by-rank.png",
@@ -619,7 +619,7 @@ Currently 69% (up from 65% in 2020) of desktop pages have at least one instance 
 
 One of the most common misuses of ARIA roles is adding a button role to non-interactive elements such as `<div>`s and `<span>`s, or to `<a>` elements. A native HTML `<button>` element comes with an implicit button role and the expected keyboard operability and behavior and should be the first approach before reaching for ARIA.
 
-We found that 29% (up from 25% in 2020) of desktop sites and 29% of mobile sites (up from 25% in 2020) had homepages with at least one element with an explicitly assigned `role="button"`. This suggests that close to a third of websites are using the `button` role on elements in order to change their semantics, with the exception of buttons that have been explicitly assigned the button role, which is redundant.
+We found that 29% (up from 25% in 2020) of desktop sites and 29% of mobile sites (up from 25% in 2020) had home pages with at least one element with an explicitly assigned `role="button"`. This suggests that close to a third of websites are using the `button` role on elements in order to change their semantics, with the exception of buttons that have been explicitly assigned the button role, which is redundant.
 
 If non-interactive elements such as `<div>`s and `<span>`s have been assigned a button role, there is a significant chance that the expected keyboard focus order and operability will not be applied, which would result in <a hreflang="en" href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/keyboard-operation-keyboard-operable.html">WCAG 2.1.1 Keyboard</a> and <a hreflang="en" href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-focus-order.html">2.4.3 Focus order problems</a>. In addition, <a hreflang="en" href="https://ericwbailey.design/writing/truths-about-digital-accessibility/#windows-high-contrast-mode-ignores-aria">Windows High Contrast Mode will not honor ARIA</a>, so elements that are not native HTML button elements may not appear to be interactable in this mode. We found that 11% of desktop and mobile sites have either a `<div>` or a `<span>` with an explicit `button` role.
 
