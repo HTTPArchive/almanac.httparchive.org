@@ -859,7 +859,9 @@ The following map shows the average desktop accessibility score by country top l
   description="In looking at Top Level Domains with more than 45,000 domains, we learn about accessibility. Displayed visually in a world map the most accessible countries are Norway, Filand, Canada, USA, UK, Sweden, Ireland, Australia, New Zealand, Austria, Belgium, Switzerland, Denmark, and South Africa. China is the least accessible by Top Level Domain. ",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=1241724533&format=interactive",
   sheets_gid="1209052596",
-  sql_file="lighthouse_score_by_tld.sql"
+  sql_file="lighthouse_score_by_tld.sql",
+  width=600,
+  height=483
   )
 }}
 
