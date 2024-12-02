@@ -99,12 +99,12 @@ According to RFC 9309 standards, crawlers should limit the size of `robots.txt` 
 
 Interestingly, 1.59% of mobile crawls and 1.66% of desktop crawls returned a 0-sized `robots.txt` file. This is likely a configuration issue. Since it is not documented by the RFC 9303 specification or support documentation for popular search engine crawlers, it is unclear how this would be handled. If a site returns an empty response for `robots.txt`, a sensible approach would be to return a `robots.txt` file with appropriate rules or, if one wishes to restrict crawling, return a [`404 status code`](https://developer.mozilla.org/docs/Web/HTTP/Status/404) for the URL.
 
-#### `robots.txt` user-agent usage
+#### `robots.txt` user agent usage
 
 {{ figure_markup(
   image="robots-txt-user-agent-usage.png",
-  caption="`robots.txt` user-agent usage",
-  description="A bar chart showing the most common user agent targets in `robots.txt` files. For desktop * is 76.6%, `AdsBot-Google` is 9.1%, `AhrefsBot` is 8.6%, `MJ12Bot` is 6.7%, `Googlebot` is 5.9%, `AdsBot-Google-Mobile` is 4.6%, `Dotbot` is 4.4%, `Nutch` is 4.5%, `Pinterestbot` is 4.1%, `AhrefsSiteAudit` is 4.0%, `PetalBot` is 3.4%, `GPTBot` is 2.9%, `Mediapartners-Google` is 2.3%, `Bingbot` is 2.6%, and lastly the `CCBot` is 2.7%. Mobile is consistent with desktop at 76.9%, 8.9%, 8.8%, 6.6%, 6.4%, 4.6%, 4.9%, 4.3%, 3.9%, 3.7%, 3.8%, 2.6%, 3.0%, 2.6%, and 2.4%, respectively.",
+  caption="`robots.txt` user agent usage",
+  description="A bar chart showing the most common `user-agent` targets in `robots.txt` files. For desktop * is 76.6%, `AdsBot-Google` is 9.1%, `AhrefsBot` is 8.6%, `MJ12Bot` is 6.7%, `Googlebot` is 5.9%, `AdsBot-Google-Mobile` is 4.6%, `Dotbot` is 4.4%, `Nutch` is 4.5%, `Pinterestbot` is 4.1%, `AhrefsSiteAudit` is 4.0%, `PetalBot` is 3.4%, `GPTBot` is 2.9%, `Mediapartners-Google` is 2.3%, `Bingbot` is 2.6%, and lastly the `CCBot` is 2.7%. Mobile is consistent with desktop at 76.9%, 8.9%, 8.8%, 6.6%, 6.4%, 4.6%, 4.9%, 4.3%, 3.9%, 3.7%, 3.8%, 2.6%, 3.0%, 2.6%, and 2.4%, respectively.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=1672540926&format=interactive",
   sheets_gid="1705238622",
   sql_file="robots-txt-user-agent-usage-2024",
@@ -115,23 +115,23 @@ Interestingly, 1.59% of mobile crawls and 1.66% of desktop crawls returned a 0-s
 
 ##### The `*` user agent
 
-A full 76.9% of `robots.txt` files encountered by the mobile crawl and 76.6% of those found in the desktop crawl specify rules for the catch-all user-agent of `*`. This represents a small uptick over the data from 2022 in which it was 74.9% for desktop and 76.1% for mobile crawls. A possible explanation could be the slight overall increase in `robots.txt` availability.
+A full 76.9% of `robots.txt` files encountered by the mobile crawl and 76.6% of those found in the desktop crawl specify rules for the catch-all user agent of `*`. This represents a small uptick over the data from 2022 in which it was 74.9% for desktop and 76.1% for mobile crawls. A possible explanation could be the slight overall increase in `robots.txt` availability.
 
-The `*` user-agent denotes the rules a crawler should follow unless there's another set of rules that specifically target the crawler's user-agent. There are notable exceptions that don't respect the `*` user-agent, including Google's [Adsbot crawler](https://developers.google.com/search/docs/crawling-indexing/google-special-case-crawlers#adsbot-mobile-web). Other crawlers will try another common user-agent before falling back to `*`, such as Apple's `Applebot`, which uses `Googlebot's` rules if they are specified and `Applebot` if not specified. We recommend checking the support documentation for any crawlers you are targeting to ensure that behavior is as expected when relying on fallback.
+The `*` user agent denotes the rules a crawler should follow unless there's another set of rules that specifically target the crawler's `user-agent`. There are notable exceptions that don't respect the `*` user agent, including Google's [Adsbot crawler](https://developers.google.com/search/docs/crawling-indexing/google-special-case-crawlers#adsbot-mobile-web). Other crawlers will try another common `user-agent` before falling back to `*`, such as Apple's `Applebot`, which uses `Googlebot`'s rules if they are specified and `Applebot` if not specified. We recommend checking the support documentation for any crawlers you are targeting to ensure that behavior is as expected when relying on fallback.
 
 ##### Bingbot
 
-Much like in 2022, `Bingbot` again was not in the top 10 most specified user-agents. Only 2.7% of mobile and 2.6% of desktop `robots.txt` files specified that user-agent, relegating it down to 14th place.
+Much like in 2022, `Bingbot` again was not in the top 10 most specified `user-agent`s. Only 2.7% of mobile and 2.6% of desktop `robots.txt` files specified that `user-agent`, relegating it down to 14th place.
 
 ##### SEO ootls
 
-The data shows there has been an increase in sites specifying rules for the popular SEO tools. `AhrefsBot`, for instance, has now been detected in 8.8% of mobile crawls, up from 5.3% in 2022. It has overtaken Majestic's `MJ12Bot`, which itself increased to 6.6% from 6.0% in 2022 and had previously been the second most popular specifically targeted user-agent.
+The data shows there has been an increase in sites specifying rules for the popular SEO tools. `AhrefsBot`, for instance, has now been detected in 8.8% of mobile crawls, up from 5.3% in 2022. It has overtaken Majestic's `MJ12Bot`, which itself increased to 6.6% from 6.0% in 2022 and had previously been the second most popular specifically targeted `user-agent`.
 
 ##### AI crawlers
 
 {{ figure_markup(
   image="robots-txt-ai-user-agents.png",
-  caption="`robots.txt` AI user-agent usage.",
+  caption="`robots.txt` AI `user-agent` usage.",
   description="A bar chart showing the most common AI user agent targets in `robots.txt` files. For desktop, `GPTBot` is 2.9%, `CCBot` is 2.7%, `Google-Extended` is 2.5%, `Anthropic-Ai` is 2.1%, `ChatGPT-User` is 2.0%, `Claude-Web` is 1.9%, and `PerplexityBot` is 0.2%. The numbers for mobile are slightly slower than desktop at 2.6%, 2.4%, 2.2%,1.7%, 1.7%, 1.6%, and 0.2%, respectively.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=802856810&format=interactive",
   sheets_gid="1705238622",
@@ -148,7 +148,7 @@ In summary:
 - The formalization of the `robots.txt` protocol in RFC 9309 has led to better adherence to technical standards.
 - Analysis shows an increase in successful `robots.txt` responses and a decrease in errors, indicating improved implementation.
 - Most `robots.txt` files are within the recommended size limit.
-- The `*` user-agent remains dominant, but AI crawlers like  `GPTBot` are on the rise.
+- The `*` `user-agent` remains dominant, but AI crawlers like  `GPTBot` are on the rise.
 - These insights are valuable for understanding the current state of `robots.txt` usage and its implications for SEO.
 
 ### Robots directives
@@ -292,9 +292,8 @@ In 2024, 22.3% of mobile pages had `<head>` breaking invalid HTML elements. That
 )
 }}
 
-There are eight valid elements that may be used in the `<head>` according to [Google Search documentation](https://developers.google.com/search/docs/crawling-indexing/valid-page-metadata).
+There are eight valid elements that may be used in the `<head>` according to [Google Search documentation](https://developers.google.com/search/docs/crawling-indexing/valid-page-metadata). These are:
 
-These are:
 1. `title`
 2. `meta`
 3. `link`
@@ -419,8 +418,8 @@ Google search has considered [mobile-friendliness to be a requirement](https://d
 
 Mobile-friendliness can be determined by the presence of two tags:
 
-1. [Viewport meta tag](https://developer.mozilla.org/docs/Web/HTML/Viewport_meta_tag), which is commonly used in responsive desig.
-2. [Vary: User-Agent header](https://developer.mozilla.org/docs/Web/HTTP/Headers/Vary), which is used in dynamic serving and is based on the request header
+1. [`Viewport` meta tag](https://developer.mozilla.org/docs/Web/HTML/Viewport_meta_tag), which is commonly used in responsive desig.
+2. [`Vary: User-Agent` header](https://developer.mozilla.org/docs/Web/HTTP/Headers/Vary), which is used in dynamic serving and is based on the request header
 
 #### Viewport meta tag
 
@@ -848,7 +847,7 @@ Search engines do not rank sites based on word count; however, it is a useful me
 
 Rendered word count is the amount of visible words on a page after JavaScript has been executed. The median mobile home page in 2024 contained 364 words, while the median desktop page had slightly more at 400 words. This was a small drop from the data in 2022 when the median was 366 words for mobile home pages and 421 words for desktop.
 
-Of note, the gap between mobile and desktop home page word counts narrowed to just 36 words in 2024, compared to that of 55 words in 2022. This suggests a marginally closer parity to the content served to mobile users. Google has completed the process of moving to a mobile-first indexing strategy, in which it primarily crawls and indexes pages with a mobile user-agent. It's reasonable to conclude that this helped push a few remaining sites to offer their full content to mobile visitors.
+Of note, the gap between mobile and desktop home page word counts narrowed to just 36 words in 2024, compared to that of 55 words in 2022. This suggests a marginally closer parity to the content served to mobile users. Google has completed the process of moving to a mobile-first indexing strategy, in which it primarily crawls and indexes pages with a mobile user agent. It's reasonable to conclude that this helped push a few remaining sites to offer their full content to mobile visitors.
 
 ### Inner pages rendered word count
 
@@ -880,7 +879,7 @@ One noticeable difference between home pages and inner pages is that while deskt
 
 The raw word count represents the words contained in the initial HTML response from the server before JavaScript is executed and no other modifications have been made in the DOM or CSSOM.
 
-Much like the rendered word count, there's similarly a small change in 2024 from 2022. The median page's raw word count in 2024 was 311 words for mobile user-agents and 330 words for desktops. That's a tiny drop from 2022 when the median page's raw word count was 318 for mobile and 363 for desktop.
+Much like the rendered word count, there's similarly a small change in 2024 from 2022. The median page's raw word count in 2024 was 311 words for mobile user agents and 330 words for desktops. That's a tiny drop from 2022 when the median page's raw word count was 318 for mobile and 363 for desktop.
 
 ### Inner pages raw word count
 
@@ -912,7 +911,7 @@ This pattern in both the raw word count and rendered word count pages suggests t
 
 When the rendered visible and raw word counts are compared on home pages, there's a surprisingly small discrepancy, with the median showing a difference of 13.6% for mobile and 17.5% for desktop.
 
-home pages served to desktop user-agents have a slightly higher percentage of words visible after rendering versus mobile. One possible factor is that mobile layouts often employ tabs or accordions where, even if the content is in the DOM, it's visually hidden, so it wouldn't show up as visible.
+Home pages served to desktop user agents have a slightly higher percentage of words visible after rendering versus mobile. One possible factor is that mobile layouts often employ tabs or accordions where, even if the content is in the DOM, it's visually hidden, so it wouldn't show up as visible.
 
 There is an interesting trend in which the higher the word count there is, the smaller the difference between rendered and raw word count. This suggests perhaps that server-side rendered technologies are relatively more popular than client-side rendered ones for publishers of longer-form content.
 
