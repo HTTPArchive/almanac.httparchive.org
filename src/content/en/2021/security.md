@@ -54,7 +54,7 @@ Currently, we see that 91.9% of total requests for websites on desktop and 91.1%
   )
 }}
 
-Currently, 84.3% of website homepages in desktop and 81.2% of website homepages in mobile are served over HTTPS so we still see a gap between websites using HTTPS and requests using HTTPS. This is because a lot of the impressive percentage of HTTPS requests are often dominated by [third-party](./third-parties) services like fonts, analytics, [CDNs](./cdn), and not the initial web page itself.
+Currently, 84.3% of website home pages in desktop and 81.2% of website home pages in mobile are served over HTTPS so we still see a gap between websites using HTTPS and requests using HTTPS. This is because a lot of the impressive percentage of HTTPS requests are often dominated by [third-party](./third-parties) services like fonts, analytics, [CDNs](./cdn), and not the initial web page itself.
 
 We do see a continuous improvement in sites using HTTPS (approximately 7-8% increase since [last year](../2020/security#fig-3)), but soon a lot of unmaintained websites might start seeing warnings once <a hreflang="en" href="https://blog.mozilla.org/security/2021/08/10/firefox-91-introduces-https-by-default-in-private-browsing/">browsers start adopting HTTPS-only mode by default</a>.
 
@@ -366,7 +366,7 @@ Most websites have quite a lot of media and CSS or JavaScript libraries that mor
   )
 }}
 
-We see more and more websites starting to use CSP with 9.3% homepages on mobile using CSP now compared to 7.2% last year. `upgrade-insecure-requests` continues to be the most frequent CSP used. The high adoption rate for this policy is likely because of the same reasons mentioned [last year](../2020/security#content-security-policy); it is an easy, low-risk, policy that helps in upgrading all HTTP requests to HTTPS and also helps with to block mixed content being used on the page. `frame-ancestors` is a close second, which helps one define valid parents that may embed a page.
+We see more and more websites starting to use CSP with 9.3% home pages on mobile using CSP now compared to 7.2% last year. `upgrade-insecure-requests` continues to be the most frequent CSP used. The high adoption rate for this policy is likely because of the same reasons mentioned [last year](../2020/security#content-security-policy); it is an easy, low-risk, policy that helps in upgrading all HTTP requests to HTTPS and also helps with to block mixed content being used on the page. `frame-ancestors` is a close second, which helps one define valid parents that may embed a page.
 
 The adoption of policies defining the sources from which content can be loaded continues to be low. Most of these policies are more difficult to implement, as they can cause breakages. They require effort to implement to define `nonce`, hashes or domains for allowing external content.
 

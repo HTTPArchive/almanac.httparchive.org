@@ -654,7 +654,7 @@ Inputting text and data on mobile devices is a generally more tedious process th
 
 For mobile page loads, 24.8% of pages utilized the `autocomplete` attribute, lower than the 27% of desktop page loads.
 
-As the HTTP Archive data captures only homepages, usage could be much higher in checkout, contact and other places that are likely to require inputs, but it is perhaps disappointing to see lower usage on mobile experiences, where arguably it is the most useful.
+As the HTTP Archive data captures only home pages, usage could be much higher in checkout, contact and other places that are likely to require inputs, but it is perhaps disappointing to see lower usage on mobile experiences, where arguably it is the most useful.
 
 #### Input field conclusions
 

@@ -103,15 +103,15 @@ Many of the pages we've evaluated are from websites which use a [Content Managem
 
 That means that our findings are unavoidably skewed to aligning with the behaviors and output of the most prevalent CMS'. For example, many websites using Drupal automatically output structured data in the form of RDFa, and WordPress (which powers [a significant percentage of websites](./cms#top-cmss)) often includes microformats markup in template code. This contributes significantly to the shape of our findings.
 
-#### 2. The limitations of homepage-only data
+#### 2. The limitations of home page-only data
 
-Unfortunately, the nature and scale of our data-collection methods limit our analysis to homepages only (i.e., the _root URL_ of each hostname we evaluate).
+Unfortunately, the nature and scale of our data-collection methods limit our analysis to home pages only (i.e., the _root URL_ of each hostname we evaluate).
 
 This significantly limits the amount of data we can collect and analyze, and undoubtedly skews the kinds of data we've collected.
 
-As most homepages act as portals to more specific pages, we can reasonably expect that our analysis underestimates the prevalence of the kinds of content present on that deeper pages. That likely includes information relating to _articles_, _people_, _products_ and similar.
+As most home pages act as portals to more specific pages, we can reasonably expect that our analysis underestimates the prevalence of the kinds of content present on that deeper pages. That likely includes information relating to _articles_, _people_, _products_ and similar.
 
-Conversely, we likely over-index on information typically found on homepages, and site-wide information which is present on all pages—like information about _web pages_, _websites_ and _organizations_.
+Conversely, we likely over-index on information typically found on home pages, and site-wide information which is present on all pages—like information about _web pages_, _websites_ and _organizations_.
 
 #### 3. Data overlaps
 
@@ -542,7 +542,7 @@ We can also see lots of structures related to breadcrumb navigation, such as:
 
 Beyond these most popular structures, we see an extremely long-tail of relationships, describing all manner of entities, content types and concepts; as niche as `ApartmentComplex > amenityFeature > LocationFeatureSpecification` (0.1% of relationships) and `AutoDealer > department > AutoRepair` (0.04% of relationships) and `MusicEvent > performer > PerformingGroup` (0.01% of relationships).
 
-We should reiterate that these types of structures and relationships are likely to be much more common than our data set represents, as we're limited to analyzing the homepages of websites. That means that, for example, a website which lists many thousands of individual apartment complexes, but does so on inner pages, wouldn't be reflected in this data.
+We should reiterate that these types of structures and relationships are likely to be much more common than our data set represents, as we're limited to analyzing the home pages of websites. That means that, for example, a website which lists many thousands of individual apartment complexes, but does so on inner pages, wouldn't be reflected in this data.
 
 {{ figure_markup(
   image="structured-data-json-ld-entities-relationships.svg",
