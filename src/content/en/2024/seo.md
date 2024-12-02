@@ -13,13 +13,13 @@ fellowhuman1101_bio: Jamie Indigo isn't a robot, but speaks bot. As director of 
 dwsmart_bio: Dave Smart is a developer and technical search engine consultant at <a hreflang="en" href="https://tamethebots.com">Tame the Bots</a>. They love building tools and experimenting with the modern web, and can often be found at the front in a gig or two.
 mikaelaraujo_bio: Mikael Araújo is an <a hreflang="en" href="https://www.mikaelaraujo.com">international SEO consultant</a>, speaker and marketing strategist. He has worked and works remotely for several companies based in Europe, China, Russia, the United States and Brazil. He is currently a Data Science student and loves spending his free time with his family.
 MichaelLewittes_bio: Michael Lewittes is the founder of <a hreflang="en" href="https://www.ranktify.com">Ranktify</a>, an SEO software company that improves the quality and trustworthiness of content so that it rises higher in search results. Michael previously owned and sold a content company, as well as wrote for and edited several major U.S. publications. This is the second time he's worked on the Web Almanac.
-featured_quote:
-featured_stat_1: 2.7%
-featured_stat_label_1: Pages with `GPTBot` directives in `robots.txt` — the most common AI crawler found.
-featured_stat_2: 28%
-featured_stat_label_2: Desktop pages with invalid `<head>` element due to `<img>` elements.
-featured_stat_3: 70%
-featured_stat_label_3: Pages have `<h1>` elements.
+featured_quote: AI and LLMs are presenting some of the biggest changes search engines have encountered in a long time, and they have the potential to be hugely disruptive.
+featured_stat_1: 70%
+featured_stat_label_1: Pages with `<h1>` elements (of which 6% are empty).
+featured_stat_2: 2.7%
+featured_stat_label_2: Pages with `GPTBot` directives in `robots.txt`—the most common AI crawler found.
+featured_stat_3: 28%
+featured_stat_label_3: Desktop pages with invalid `<head>` element due to `<img>` elements.
 doi: 10.5281/zenodo.14245177
 ---
 
@@ -182,7 +182,7 @@ In 2024:
 
 #### Robots directive rules
 
-In 2024, there were [24 valid values](https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag#directives)—known as rules—that could be asserted in a directive to control the indexing and serving of a snippet. Multiple rules can be combined via separate meta tags or combined in a comma separated-list for both meta tags and `X-robots` HTTP header tags.
+In 2024, there were [24 valid values](https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag#directives)—known as rules—that could be asserted in a directive to control the indexing and serving of a snippet. Multiple rules can be combined via separate meta tags or combined in a comma separated-list for both meta tags and `X-robots` HTTP headers.
 
 For our study of directive rules, we relied on the rendered HTML.
 
@@ -647,9 +647,9 @@ In 2024:
 - At the 10th percentile, the mobile and desktop `<meta name="description>` tag contained 4 words.
 - At the 90th percentile, the `<meta name="description>` tag contained 81 words on desktop and 79 words on mobile.
 
-### Header tags
+### Header elements
 
-Header tags are used to establish the semantic structure of a page. They are important to a search engine's understanding of a page since they help organize the page's content. They follow a hierarchical order with `<h1>` used to describe the overall on-page content and subheaders such as `<h2>`, `<h3>` and so on to describe sections and subsections.
+Header elements are used to establish the semantic structure of a page. They are important to a search engine's understanding of a page since they help organize the page's content. They follow a hierarchical order with `<h1>` used to describe the overall on-page content and subheaders such as `<h2>`, `<h3>` and so on to describe sections and subsections.
 
 {{ figure_markup(
   image="presence-of-h-elements.png",
@@ -661,7 +661,7 @@ Header tags are used to establish the semantic structure of a page. They are imp
   )
 }}
 
-Header tags have been widely adopted because they're easy to implement and help improve understanding for users and bots. For desktop pages in 2024, 70% had `<h1>` tags, 71% had `<h2>` tags , 59% had `<h3>` tags, and 37% had `<h4>` tags. Mobile pages were similar at 70%, 70%, 59%, and 36%, respectively.
+Header elements have been widely adopted because they're easy to implement and help improve understanding for users and bots. For desktop pages in 2024, 70% had `<h1>` tags, 71% had `<h2>` tags , 59% had `<h3>` tags, and 37% had `<h4>` tags. Mobile pages were similar at 70%, 70%, 59%, and 36%, respectively.
 
 These numbers vary slightly from 2022. Notable shifts in 2024 include increased adoption of `<h1>` tags, which in 2022 was at 66%. The subsequent headers, however, saw decreased usage. The `<h2>`, which was 71% in 2024 , was previously at 73% in 2022 for both device types. Meanwhile, the  `<h3>` and `<h4>` tags, which were 59% and 37% in 2024, were  higher in 2022 at 62% and 38%, respectively.
 
@@ -675,7 +675,7 @@ These numbers vary slightly from 2022. Notable shifts in 2024 include increased 
   )
 }}
 
-In a continued trend from prior years, relatively few header tags are left empty. The most common empty header tag is the desktop `<h1>` at 6%.
+In a continued trend from prior years, relatively few header elements are left empty. The most common empty header elements is the desktop `<h1>` at 6%.
 
 ### Images
 
@@ -1148,7 +1148,7 @@ Following en, the x-default tag, which specifies the default language version, i
 
 {{ figure_markup(
   image="hreflang-link-usage-secondary-pages.png",
-  caption="`hreflang` link usage - inner pages",
+  caption="`hreflang` link usage on inner pages",
   description="A horizontal bar chart showing `hreflang` links usage on inner pages, broken down by language code and platform (desktop vs. mobile). The total values for each tag are: x-default (7.3%), en (7.1%), fr (3.0%), de (3.0%), es (2.8%), en-us (2.4%), it (2.2%), ru (1.9%), en-gb (1.4%), and pt (1.3%).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=725111256&format=interactive",
   sheets_gid="1291250464",
