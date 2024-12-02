@@ -78,7 +78,7 @@ Only 1.7% of mobile and 1.5% of desktop crawls in 2024 received no response. Goo
 
 For 0.1% of both mobile and desktop requests tested, we received an error code in the 5xx range. While these error codes represent a tiny percentage, it's worth noting that for Google this would mean the search engine would consider the whole site blocked from crawling for 30 days. After 30 days, the search engine would revert to using a previously fetched version of the file. If a prior cached version isn't available, it is assumed the search engine crawled all of the content hosted on the site.
 
-The nominal error rate suggests that simple text files in most cases -- or handled automatically by many popular CMS systems that provide a `robots.txt` directive -- are not a large challenge.
+The nominal error rate suggests that simple text files in most cases—or handled automatically by many popular CMS systems that provide a `robots.txt` directive—are not a large challenge.
 
 ***Note***: The above data does not indicate whether the `robots.txt` files returning a 200 status code are beneficial for a site or if they allow or block aspects that they should not.
 
@@ -95,7 +95,7 @@ The nominal error rate suggests that simple text files in most cases -- or handl
   )
 }}
 
-The vast majority of `robots.txt` files -- 97.82% of mobile crawls and 97.80% of desktop crawls -- were no larger than 100KB.
+The vast majority of `robots.txt` files—97.82% of mobile crawls and 97.80% of desktop crawls—were no larger than 100KB.
 
 According to RFC 9309 standards, crawlers should limit the size of `robots.txt` files they look at, and the parsing limit must be at least [500 kiB](https://www.rfc-editor.org/rfc/rfc9309.html#name-limit). A `robots.txt` file under that size should be fully parsed. Google, for example, [enforces the max limit at 500 kiB](https://developers.google.com/search/docs/crawling-indexing/robots/robots_txt#file-format). Only a tiny number of sites (just 0.06%) had `robots.txt` files over this limit. Directives found beyond that limit are ignored by the search engine.
 
@@ -187,7 +187,7 @@ In 2024:
 
 #### Robots directive rules
 
-In 2024, there were [24 valid values](https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag#directives) -- known as rules -- that could be asserted in a directive to control the indexing and serving of a snippet. Multiple rules can be combined via separate meta tags or combined in a comma separated-list for both meta tags and `X-robots` HTTP header tags.
+In 2024, there were [24 valid values](https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag#directives)—known as rules—that could be asserted in a directive to control the indexing and serving of a snippet. Multiple rules can be combined via separate meta tags or combined in a comma separated-list for both meta tags and `X-robots` HTTP header tags.
 
 For our study of directive rules, we relied on the rendered HTML.
 
@@ -414,11 +414,11 @@ Google adopted [HTTP as a ranking signal in 2014](https://developers.google.com/
   )
 }}
 
-For a more in-depth analysis of this topic, see the [Security chapter](https://almanac.httparchive.org/en/2024/security)
+For a more in-depth analysis of this topic, see the [Security](./security) chapter.
 
 ### Mobile-friendliness
 
-Search engines and websites have a common goal -- meeting users where they are. There are 6.61 billion mobile users worldwide, and 69.4% of the world's total population uses a mobile device.
+Search engines and websites have a common goal—meeting users where they are. There are 6.61 billion mobile users worldwide, and 69.4% of the world's total population uses a mobile device.
 
 Google search has considered [mobile-friendliness to be a requirement](https://developers.google.com/search/blog/2015/02/finding-more-mobile-friendly-search) since 2015. The search engine completed its seven-year migration to a [mobile-first index](https://developers.google.com/search/blog/2023/10/mobile-first-is-here) in 2023.
 
@@ -475,7 +475,7 @@ One of the basics of a good mobile experience is being able to easily read the o
   )
 }}
 
-Lighthouse has a [legible font size audit](https://developer.chrome.com/docs/lighthouse/seo/font-size/) that was run in tandem with the 2024 Web Almanac crawl. The audit checked for pages that had 60% or more of its content using fonts greater than 12 pixels. The test, specific to mobile pages, saw 92% of eligible pages passing. This percentage was consistent for both home pages and inner or inner pages.
+Lighthouse has a [legible font size audit](https://developer.chrome.com/docs/lighthouse/seo/font-size/) that is run as part of with the HTTP Archive crawl. The audit checks for pages that had 60% or more of its content using fonts greater than 12 pixels. The test, specific to mobile pages, saw 92% of eligible pages passing. This percentage was consistent for both home pages and inner or inner pages.
 
 ### Core web vitals
 
@@ -517,7 +517,7 @@ Looking at the metrics individually, 59% pass Largest Contentful Paint, 74% pass
 
 Desktop devices offer more leniency, as they often have higher bandwidth connections. To be sure, 54% of sites pass the desktop CWV assessment, which is 8% more than mobile. The individual metrics show much higher pass rates as well, with 72% passing LCP, 97% passing INP, and 72% passing CLS.
 
-You can explore the [Performance chapter](https://almanac.httparchive.org/en/2024/performance#core-web-vitals) to learn more about Core Web Vitals.
+You can explore the [Performance](./performance#core-web-vitals) chapter to learn more about Core Web Vitals.
 
 ### Image `loading` property usage
 
@@ -697,7 +697,7 @@ Images make the web a richer experience. The median page features 14.5 images (w
 )
 }}
 
-For more information on image use and weight, see the [Page Weight Chapter](https://almanac.httparchive.org/en/2024/page-weight).
+For more information on image use and weight, see the [Page Weight](./page-weight) chapter.
 
 #### Alt attributes
 
@@ -802,7 +802,7 @@ Internal links are links to other pages on the same website. The trend continues
 
 Overall, the number of internal links on a page have grown, with pages in the top 1,000 sites now having 129 internal links on mobile compared to 106 internal links in 2022. There has been a similar level of growth across all rank groupings.
 
-According to [CrUX ranking data](https://almanac.httparchive.org/en/2024/methodology#chrome-ux-report), it's clear that the more popular sites have more outgoing internal links. This might simply be because the more visited sites are bigger entities with more useful internal links, as well as their investment in developing 'mega-menu' type navigation to help them handle more pages.
+According to [CrUX ranking data](./methodology#chrome-ux-report), it's clear that the more popular sites have more outgoing internal links. This might simply be because the more visited sites are bigger entities with more useful internal links, as well as their investment in developing 'mega-menu' type navigation to help them handle more pages.
 
 {{ figure_markup(
   image="median-links-to-external-sites.png",
@@ -814,7 +814,7 @@ According to [CrUX ranking data](https://almanac.httparchive.org/en/2024/methodo
   )
 }}
 
-External links are links that point to other websites. The link count has remained remarkably similar to that in [2022's chapter](https://almanac.httparchive.org/en/2022/seo#fig-35). There is very slight growth, consisting of one or two links.
+External links are links that point to other websites. The link count has remained remarkably similar to that in [2022's chapter](../2022/seo#fig-35). There is very slight growth, consisting of one or two links.
 
 Similarly, the more popular sites tend to have more external links, but again the difference is very slight.
 
@@ -1052,7 +1052,7 @@ What is surprising is that `WebSite` structured data, which is, at least for Goo
 
 Outside of the more popular schema types, `product` structured data was found on 4% of mobile pages and 5% of desktop pages.
 
-For a deeper dive into structured data on the web, visit the [structured data chapter](https://almanac.httparchive.org/en/2024/structured-data).
+For a deeper dive into structured data on the web, visit the [Structured Data](./structured-data) chapter.
 
 ## AMP
 
