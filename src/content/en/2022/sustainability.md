@@ -35,7 +35,7 @@ Considering all the data gathered, the Web Almanac sounds like a great place to 
 
 For this, we will differentiate:
 
-- Moderation: implementing something only when needed. It could be digital as a whole (do you really need connected diapers?), some functionality (are these social media feeds useful on your homepage?) or content (decorative images, videos, etc). Ask yourself if everything on your website is useful, used, usable (and reusable).
+- Moderation: implementing something only when needed. It could be digital as a whole (do you really need connected diapers?), some functionality (are these social media feeds useful on your home page?) or content (decorative images, videos, etc). Ask yourself if everything on your website is useful, used, usable (and reusable).
 - Efficiency: how you reduce the size and/or impact of what remains on your website after considering sobriety. For websites, this is mostly done through technical optimizations such as minification, compression, caching, etc.
 
 Some online activities to get started:

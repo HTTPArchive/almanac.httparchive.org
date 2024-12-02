@@ -1185,7 +1185,7 @@ For comparison reasons, here are the emissions data from 2022, calculated with t
   sql_file="ecommerce_bytes_per_type_2022.sql"
 ) }}
 
-It is clear comparing the ecommerce platforms with other CMS platforms, that they are substantially heavier in their page-load size and their environmental impact. Since these figures mostly relate to homepages, we can only guess that this could be due to more products or less optimized content. However, this shows that there is still room for improvement.
+It is clear comparing the ecommerce platforms with other CMS platforms, that they are substantially heavier in their page-load size and their environmental impact. Since these figures mostly relate to home pages, we can only guess that this could be due to more products or less optimized content. However, this shows that there is still room for improvement.
 
 <a hreflang="en" href="https://theecommmanager.com/sustainable-ecommerce-handbook/">The Sustainable eCommerce Handbook</a> could be a great starting point. In any case, you should keep in mind that most of the environmental impacts for eCommerce occur outside of websites (manufacturing, shipping, usage, and end-of-life of sold products, for instance).
 

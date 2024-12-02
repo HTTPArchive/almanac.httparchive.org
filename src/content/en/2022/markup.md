@@ -448,7 +448,7 @@ Are obsolete elements still a thing? Given that not-validating is still a thing,
   sql_file="obsolete_elements.sql",
 ) }}
 
-On 6.1% of pages, you still find `center` elements (hi <a hreflang="en" href="https://www.google.com/">Google homepage</a>), and on 5.4% of pages, you find `font` elements. Use of both elements went down (down 0.5% in both cases), fortunately, while `marquee`, `nobr`, and `big` didn't witness significant changes.
+On 6.1% of pages, you still find `center` elements (hi <a hreflang="en" href="https://www.google.com/">Google home page</a>), and on 5.4% of pages, you find `font` elements. Use of both elements went down (down 0.5% in both cases), fortunately, while `marquee`, `nobr`, and `big` didn't witness significant changes.
 
 `center` and `font` make for the lion's share (81.2%) of all obsolete elements, per our analysis:
 
