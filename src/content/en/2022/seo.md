@@ -34,7 +34,7 @@ Search engine optimization (SEO) is a digital technique used to improve a websit
   )
 }}
 
-With custom metrics that expose some new, never-before-seen insights, we have analyzed more than eight million homepages across the web, comparing our findings to those from [2021](../2021/seo) and, in some instances, from [2020](../2020/seo). Note: Our data, particularly from Lighthouse and the HTTP Archive, is limited to just websites' homepages, not site wide crawls. Learn more about these limitations in our [Methodology](./methodology).
+With custom metrics that expose some new, never-before-seen insights, we have analyzed more than eight million home pages across the web, comparing our findings to those from [2021](../2021/seo) and, in some instances, from [2020](../2020/seo). Note: Our data, particularly from Lighthouse and the HTTP Archive, is limited to just websites' home pages, not site wide crawls. Learn more about these limitations in our [Methodology](./methodology).
 
 Read on for more about how search engine-friendly the web is.
 
@@ -355,7 +355,7 @@ When looking for relevancy signals, search engines look at the content on a web 
   )
 }}
 
-For the second year in a row, 98.8% of desktop and mobile pages had `<title>` elements. Also in 2022, 71% of desktop and mobile homepages had `<meta name="description">` tags, a 0.1% decrease from last year.
+For the second year in a row, 98.8% of desktop and mobile pages had `<title>` elements. Also in 2022, 71% of desktop and mobile home pages had `<meta name="description">` tags, a 0.1% decrease from last year.
 
 #### `<title>` element
 
@@ -388,7 +388,7 @@ In 2022:
 * 10% of pages had `<title>` elements containing 12 words.
 * 10% of desktop and mobile pages had `<title>` elements containing 74 and 75 characters, respectively.
 
-These stats remain unchanged from last year. Note: These titles on homepages tend to be shorter than those used on deeper pages.
+These stats remain unchanged from last year. Note: These titles on home pages tend to be shorter than those used on deeper pages.
 
 #### Meta description tag
 
@@ -455,7 +455,7 @@ Although there is no  definitive explanation for this, one possible reason is th
 
 Overall, much like 2021's stats, there are relatively few empty H elements found on pages. Additionally, there is little discrepancy between the desktop and mobile data.
 
-There is divergence, however, with the h1.  While 65.8% of pages contained an h1 element, 58.5% contained a non-empty h1 element. That's a 7.3 percentage point difference. Contrast that with the h2, which has just a 1.5 percentage point difference.  As noted in the 2021 Web Almanac, this may be a result of the many websites that wrap logo-images in the h1 element on homepages.
+There is divergence, however, with the h1.  While 65.8% of pages contained an h1 element, 58.5% contained a non-empty h1 element. That's a 7.3 percentage point difference. Contrast that with the h2, which has just a 1.5 percentage point difference.  As noted in the 2021 Web Almanac, this may be a result of the many websites that wrap logo-images in the h1 element on home pages.
 
 ### Image attributes
 
@@ -608,7 +608,7 @@ Compared to 2021's figures, 2022's data shows a nominal increase in implementati
   )
 }}
 
-There is strong correlation between the most popular types of schema found on homepages in 2021 and 2022.
+There is strong correlation between the most popular types of schema found on home pages in 2021 and 2022.
 
 As noted in previous editions of the Web Almanac,  `WebSite`, `SearchAction`, `WebPage`, `SearchAction` is what powers the <a hreflang="en" href="https://developers.google.com/search/docs/advanced/structured-data/sitelinks-searchbox">Sitelinks Search Box</a> [see chart above].
 
@@ -727,7 +727,7 @@ The most popular hreflang tag in 2022 is `en` [English], which accounts for 5.4%
 
 After x-default, which is the "fallback" version (and the second most common to be adopted), the hreflang tags for French, German and Spanish are the next most frequently used.
 
-The three different ways to implement hreflang tags are via the `<head>`, link headers, or XML sitemaps. Note: As this data is looking solely at homepages, XML sitemaps are not included.
+The three different ways to implement hreflang tags are via the `<head>`, link headers, or XML sitemaps. Note: As this data is looking solely at home pages, XML sitemaps are not included.
 
 ### Content language usage
 

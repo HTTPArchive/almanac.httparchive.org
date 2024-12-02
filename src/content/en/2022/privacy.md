@@ -463,7 +463,7 @@ Our analysis shows that the most common publishers we identified are from German
 
 ### Privacy policy
 
-Notifications regarding data processing do not always take place via a consent banner. They are also usually described in more detail on separate pages compared to such banners. On such pages, you will find information on integrated third parties, which data is processed for which purpose, etc. To identify such sites, we used the privacy-relevant signatures from <a hreflang="en" href="https://github.com/RUB-SysSec/we-value-your-privacy/blob/master/privacy_wording.json">a study</a>. Using this method, we could determine that 45% of desktop websites (41% on mobile) contained a link on their homepage to a privacy-related page. The figure below shows the distribution of the top privacy link keywords.
+Notifications regarding data processing do not always take place via a consent banner. They are also usually described in more detail on separate pages compared to such banners. On such pages, you will find information on integrated third parties, which data is processed for which purpose, etc. To identify such sites, we used the privacy-relevant signatures from <a hreflang="en" href="https://github.com/RUB-SysSec/we-value-your-privacy/blob/master/privacy_wording.json">a study</a>. Using this method, we could determine that 45% of desktop websites (41% on mobile) contained a link on their home page to a privacy-related page. The figure below shows the distribution of the top privacy link keywords.
 
 {{ figure_markup(
   image="privacy-link-keywords.png",

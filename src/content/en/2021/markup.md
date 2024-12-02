@@ -526,7 +526,7 @@ While the percentage of obsolete elements for mobile pages is slightly different
   sql_file="top_obsolete_elements.sql"
 ) }}
 
-Google still uses a `center` element on their homepage in 2021, but we're not going to judge.
+Google still uses a `center` element on their home page in 2021, but we're not going to judge.
 
 ### Proprietary and non-standard elements
 
