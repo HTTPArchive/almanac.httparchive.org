@@ -2,13 +2,11 @@
 title: Privacy
 description: Privacy chapter of the 2024 Web Almanac covers the adoption and impact of online tracking, privacy preference signals, and browser initiatives for a privacy-friendlier web.
 hero_alt: Hero image of Web Almanac characters with cameras, phones, and microphones acting like paparazzi while another character pulls back a shower curtain to reveal a web page behind it.
-
 authors: [bgstandaert, ydimova, max-ostapenko, umariqbal, ChrisBeeti, Yash-Vekaria, haddiamjad, shaoormunir]
 reviewers: [AlbertoFDR]
 editors: []
 analysts: [bgstandaert, max-ostapenko, Yash-Vekaria, haddiamjad]
 translators: []
-
 umariqbal_bio: Umar Iqbal is an assistant professor in the department of Computer Science and Engineering at the <a hreflang="en" href="https://wustl.edu/">Washington University in St. Louis</a>. His research focus on bringing transparency and control in computing systems to empower users, platforms, and regulators to improve user privacy and security.
 bgstandaert_bio:
 ChrisBeeti_bio: Chris Böttger is a PhD candidate in Computer Science at the <a href="https://www.en.w-hs.de/">Westphalian University of Applied Science</a>. His research focuses on web and network security, primarily focusing on user privacy and tracking technologies.
@@ -17,9 +15,7 @@ shaoormunir_bio: Shaoor Munir is a Ph.D. student in Computer Science at UC Davis
 ydimova_bio: Yana Dimova is a PhD student at DistriNet, KU Leuven, focusing on the user's perspective of privacy and how they can protect it on the web. Her research interests are online tracking, personal data leaks and privacy and data protection law.
 Yash-Vekaria_bio: Yash Vekaria is a PhD candidate in Computer Science at <a hreflang="en" href="https://www.ucdavis.edu/">University of California, Davis</a>. He carries out web-based large-scale Internet measurements to study and improve the dynamics of web. Specifically, his research is focused at studying and bringing transparency to online tracking practices and user privacy issues.
 hadiaamjad_bio: <a hreflang="en" href="https://hadiamjad.github.io">Hadi Amjad</a> is a Ph.D. student in Computer Science at <a hreflang="en" href="https://cs.vt.edu/">Virginia Tech</a>. His research lies at the intersection of internet security, privacy, and program analysis. He specializes in JavaScript program analysis to identify code regions responsible for privacy and security violations on the internet. His work enhances privacy-focused tools, contributing to a safer and more secure web environment.
-
 results: https://docs.google.com/spreadsheets/d/18r8cT6x9lPdM-rXvXjsqx84W7ZDdTDYGD59xr0UGOwg/
-
 featured_quote: Facebook's tracking has gone undercover, shifting from third-party cookies to first-party ones, highlighting the shift to first-party tracking as a key trend in 2024.
 featured_stat_1: 3
 featured_stat_label_1: Most common number of trackers per page
@@ -27,6 +23,7 @@ featured_stat_2: 63%
 featured_stat_label_2: Protected Audience API presence across pages
 featured_stat_3: 14.3%
 featured_stat_label_3: Pages with the Facebook's first-party cookie
+doi: 10.5281/zenodo.14261510
 ---
 
 ## Introduction
