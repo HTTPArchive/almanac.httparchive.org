@@ -85,7 +85,7 @@ Zooming is another feature that users with low vision often use to view the text
   sql_file="viewport_zoom_scale.sql",
 ) }}
 
-WCAG requires that text in a website can be resized up to at least 200%. We have found that 23% of desktop homepages and 28% of mobile homepages attempt to disable zoom.
+WCAG requires that text in a website can be resized up to at least 200%. We have found that 23% of desktop home pages and 28% of mobile home pages attempt to disable zoom.
 
 The method by which a developer disabled zoom is by adding a `<meta name="viewport" >` tag with a value like `maximum-scale, minimum-scale, user-scalable=no, or user-scalable=0` in the `content` attribute. So if you have a website that has one of these values, please delete those particular values from the `content` attribute to enable zoom.
 
@@ -308,7 +308,7 @@ Descriptive page titles are useful when navigating between pages, tabs and windo
   sql_file="page_title.sql",
 ) }}
 
-Though there are 98% of mobile websites which have a document title, only 70% have a title that is longer than four words. Since we only scan homepages of websites, it's not possible for us to determine if the inner pages of the website use a more detailed text in the `<title>` tag that describes the page. A title should ideally have both the title of the website as well as a title giving context about the page in the website for better navigation.
+Though there are 98% of mobile websites which have a document title, only 70% have a title that is longer than four words. Since we only scan home pages of websites, it's not possible for us to determine if the inner pages of the website use a more detailed text in the `<title>` tag that describes the page. A title should ideally have both the title of the website as well as a title giving context about the page in the website for better navigation.
 
 ### Tables
 
@@ -552,7 +552,7 @@ Currently 72% of desktop pages have at least one instance of an ARIA role attrib
   height="540",
 ) }}
 
-We found that 33% (up from 29% in 2021, and 25% in 2020) of desktop and mobile sites had homepages with at least one element with an explicitly assigned `role="button"`. This increase in percentage is likely not good since this indicates that websites are either creating custom buttons using `<div>` or `<span>`, or are adding a redundant role to `<button>` elements. Both of these are bad practices and go against the <a hreflang="en" href="https://www.w3.org/TR/using-aria/#rule1">first rule of ARIA</a>. Following this rule, one should always use a native HTML element—in this case, `<button>`—when possible.
+We found that 33% (up from 29% in 2021, and 25% in 2020) of desktop and mobile sites had home pages with at least one element with an explicitly assigned `role="button"`. This increase in percentage is likely not good since this indicates that websites are either creating custom buttons using `<div>` or `<span>`, or are adding a redundant role to `<button>` elements. Both of these are bad practices and go against the <a hreflang="en" href="https://www.w3.org/TR/using-aria/#rule1">first rule of ARIA</a>. Following this rule, one should always use a native HTML element—in this case, `<button>`—when possible.
 
 {{ figure_markup(
   content="21%",

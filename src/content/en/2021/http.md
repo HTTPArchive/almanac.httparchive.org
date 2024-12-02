@@ -439,7 +439,7 @@ HTTP/3 is the next advancement of HTTP/2 and builds upon its foundation with eve
 
 Earlier in the chapter we found that sites that were ranked higher had greater adoption of HTTP/2. Surprisingly, the opposite is true of HTTP/3. We see less support from the top one thousand sites than we do the top one million, with slightly more support implemented across mobile sites.
 
-Distribution across the top one hundred thousand sites and top one million sites at 18% and 19% for desktop and mobile respectively. This drops to 16% and 17% within the top ten thousand sites. The top one thousand sees 11% and 13% deployment across desktop and mobile. Adoption beyond the top one million sit around 15% for implementation across homepages. Overall, this is quite a strong adoption across the board, likely spearheaded by the support from some of the major CDNs. This suggests that while the top websites have adopted HTTP/2 as mainstream, many have yet to explore HTTP/3.
+Distribution across the top one hundred thousand sites and top one million sites at 18% and 19% for desktop and mobile respectively. This drops to 16% and 17% within the top ten thousand sites. The top one thousand sees 11% and 13% deployment across desktop and mobile. Adoption beyond the top one million sit around 15% for implementation across home pages. Overall, this is quite a strong adoption across the board, likely spearheaded by the support from some of the major CDNs. This suggests that while the top websites have adopted HTTP/2 as mainstream, many have yet to explore HTTP/3.
 
 ### HTTP/3 Support
 

@@ -1025,7 +1025,7 @@ If we look at [Grid layout](https://developer.mozilla.org/docs/Web/CSS/CSS_Grid_
   sql_file="flexbox_grid.sql"
 ) }}
 
-Note that unlike most other metrics in this chapter this is actual measured Grid usage, and not just grid-related properties and values that are specified in a stylesheet and potentially not used. While at first glance this may seem more accurate, one thing to keep in mind is that HTTP Archive crawls homepages, so this data may be skewed lower due to grids often appearing more in internal pages.
+Note that unlike most other metrics in this chapter this is actual measured Grid usage, and not just grid-related properties and values that are specified in a stylesheet and potentially not used. While at first glance this may seem more accurate, one thing to keep in mind is that HTTP Archive crawls home pages, so this data may be skewed lower due to grids often appearing more in internal pages.
 
 So, let's look at another metric as well: how many pages specify `display: grid` and `display: flex` in their stylesheets? That metric puts Grid layout at significantly higher adoption, with 30% of pages using `display: grid` at least once. It does not however affect the number for Flexbox as significantly, with 68% of pages specifying `display: flex`. While this sounds like impressively high adoption for Flexbox, it is worth noting that CSS tables are still far more popular with 80% of pages using table display modes! Some of this usage may be due to <a hreflang="en" href="https://css-tricks.com/snippets/css/clear-fix/">certain types of clearfix</a> which use `display: table`, and not for actual layout.
 

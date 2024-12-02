@@ -417,7 +417,7 @@ When it comes to understanding the reasons behind a site's performance, some of 
   sql_file="pagestats_percentiles_bydevice.sql"
 ) }}
 
-The 50th percentile of all ecommerce sites had 101 requests on the homepage on mobile. This is a very similar number to the 98 requests that were found last year. The number of requests per page is very similar across all percentiles when compared to last year.
+The 50th percentile of all ecommerce sites had 101 requests on the home page on mobile. This is a very similar number to the 98 requests that were found last year. The number of requests per page is very similar across all percentiles when compared to last year.
 
 {{ figure_markup(
   image="ecommerce-median-page-requests-by-type.png",
@@ -428,7 +428,7 @@ The 50th percentile of all ecommerce sites had 101 requests on the homepage on m
   sql_file="pagestats_percentile_bydevice_format.sql"
 ) }}
 
-Breaking these requests down by type and we can see that JavaScript is the most popular resource to be requested with 37 requests on an average ecommerce mobile homepage. This is a 23% increase from last year where there were 30 JavaScript requests per page. Previously images were the most requested resource with 34 requests per page on mobile, but this is down slightly to 29 requests.
+Breaking these requests down by type and we can see that JavaScript is the most popular resource to be requested with 37 requests on an average ecommerce mobile home page. This is a 23% increase from last year where there were 30 JavaScript requests per page. Previously images were the most requested resource with 34 requests per page on mobile, but this is down slightly to 29 requests.
 
 ### Page weight
 
@@ -443,7 +443,7 @@ The page weight of a site includes all HTML, CSS, JavaScript, JSON, XML, images,
   sql_file="pagestats_percentiles_bydevice.sql"
 ) }}
 
-The median page weight of ecommerce homepages was 2.5 MB on mobile. This figure is the same as last year's results, so on average homepages are not getting heavier (or lighter).
+The median page weight of ecommerce home pages was 2.5 MB on mobile. This figure is the same as last year's results, so on average home pages are not getting heavier (or lighter).
 
 The heaviest sites (90th percentile) are 4% heavier than 2020's results so the worst offenders have gotten slightly worse.
 
@@ -471,7 +471,7 @@ This suggests that the heaviest sites may be those that use video which can quic
 
 We saw that the sites with the heaviest pages (17 MB on mobile) were much heavier than the median (4.8 MB). If we look at the page weight by type specifically at the 90th percentile and compare it with the 50th percentile we can see that the weight of all resource types has increased.
 
-The largest contributors to page weight at the 90th percentile continue to be video with 9 MB and images (5.6 MB). It isn't altogether surprising that the heaviest ecommerce homepages are those that use a large amount of video and images. This page is often content-heavy, and these resource types are the most effective way of communicating the brand. While video and images continue to be an important part of the buying experience, in the author's point of view, other page types are unlikely to see these extremes quite as much.
+The largest contributors to page weight at the 90th percentile continue to be video with 9 MB and images (5.6 MB). It isn't altogether surprising that the heaviest ecommerce home pages are those that use a large amount of video and images. This page is often content-heavy, and these resource types are the most effective way of communicating the brand. While video and images continue to be an important part of the buying experience, in the author's point of view, other page types are unlikely to see these extremes quite as much.
 
 ### HTML payload size
 
@@ -503,7 +503,7 @@ Images are the second most requested resource type as well as the second-largest
   sql_file="pagestats_image_bydevice.sql"
 ) }}
 
-We see the median number of images requested on a mobile homepage is 28, while it is 31 on desktop. 10% of sites load 76 images on mobile, however, this is down from a high of 91 images last year.
+We see the median number of images requested on a mobile home page is 28, while it is 31 on desktop. 10% of sites load 76 images on mobile, however, this is down from a high of 91 images last year.
 
 Overall, there is a 10-20% reduction in the number of images requested. It is hard to provide a definitive answer, but it may be due to the increased adoption of the <a hreflang="en" href="https://web.dev/browser-level-image-lazy-loading/">lazy loading attribute</a>. As no scrolling or interaction with the site is performed during testing, any assets that are lazy-loaded will not be factored into measurements. Analysis by the [JavaScript](./javascript) chapter did find that 17% of sites are using this attribute which gives some weight to this theory.
 
@@ -518,7 +518,7 @@ Overall, there is a 10-20% reduction in the number of images requested. It is ha
 
 If we consider images by weight rather than count, we see a median page weight contribution of 1.2 MB (mobile). At the 90th percentile, this rises to 5.4 MB.
 
-Overall, the weight of images on ecommerce homepages is very similar when compared to 2020's analysis.
+Overall, the weight of images on ecommerce home pages is very similar when compared to 2020's analysis.
 
 Given we have seen that the number of image requests is slightly down, the average weight of each image must have slightly increased.
 
@@ -603,7 +603,7 @@ We see that <a hreflang="en" href="https://jquery.com/">jQuery</a> is still the 
 
 Noticeably <a hreflang="en" href="https://greensock.com/gsap/">GSAP</a> (GreenSock Animation Platform) is included on 15% of ecommerce websites requested on mobile. That's more common than <a hreflang="en" href="https://fancyapps.com/docs/ui/fancybox/">Fancybox</a> (12.48%), a popular Lightbox library, and <a hreflang="en" href="http://kenwheeler.github.io/slick/">Slick</a> (9.90%) a library used for creating carousels.
 
-We recognized in the limitation section that the results are going to be skewed because all requests are made to the homepage. This means that the analysis won't find any libraries used for the product detail page media gallery where Slick may have proven even more popular.
+We recognized in the limitation section that the results are going to be skewed because all requests are made to the home page. This means that the analysis won't find any libraries used for the product detail page media gallery where Slick may have proven even more popular.
 
 ### Analytics
 
@@ -707,7 +707,7 @@ Making your website accessible should not be an afterthought. However, there is 
 )
 }}
 
-In our research, we found that less than 1% of websites had third-party accessibility tools on their homepage.
+In our research, we found that less than 1% of websites had third-party accessibility tools on their home page.
 
 Further information on such tools can be found in the [Accessibility](./accessibility#accessibility-overlays) chapter.
 
@@ -793,9 +793,9 @@ Finally, in terms of site performance, Core Web Vitals has been a prominent indu
 
 ### Future analysis opportunities
 
-One of the methodology limitations is that only the homepage is tested. On an ecommerce site, there will likely be some technologies that are not detectable site-wide, e.g., payments and shipping providers will likely only be visible during the checkout process. This is likely to be impractical to achieve given the necessary steps to get to this stage of the checkout process.
+One of the methodology limitations is that only the home page is tested. On an ecommerce site, there will likely be some technologies that are not detectable site-wide, e.g., payments and shipping providers will likely only be visible during the checkout process. This is likely to be impractical to achieve given the necessary steps to get to this stage of the checkout process.
 
-Evaluating only the homepage also affects our ability to analyze site performance. Arguably the product listing and product detail pages are more important to optimize for speed. Fetching more than one page per site <a hreflang="en" href="https://github.com/HTTPArchive/httparchive.org/issues/400">is being investigated</a> and may be available for future editions of the Web Almanac.
+Evaluating only the home page also affects our ability to analyze site performance. Arguably the product listing and product detail pages are more important to optimize for speed. Fetching more than one page per site <a hreflang="en" href="https://github.com/HTTPArchive/httparchive.org/issues/400">is being investigated</a> and may be available for future editions of the Web Almanac.
 
 Wappalyzer tracks over 2,700 popular web technologies which already provides us with incredible analysis opportunities. However, there is a very long tail of technologies, particularly in ecommerce. At the current time, it's not practical to review categories of technologies within ecommerce, e.g., top personalization tools, top review apps, or top abandoned cart as there isn't enough coverage. This is partly due to the number of technologies that can be detected and partly due to only requesting a single page per site.
 
