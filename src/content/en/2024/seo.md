@@ -471,7 +471,7 @@ One of the basics of a good mobile experience is being able to easily read the o
 
 Lighthouse has a [legible font size audit](https://developer.chrome.com/docs/lighthouse/seo/font-size/) that is run as part of with the HTTP Archive crawl. The audit checks for pages that had 60% or more of its content using fonts greater than 12 pixels. The test, specific to mobile pages, saw 92% of eligible pages passing. This percentage was consistent for both home pages and inner or inner pages.
 
-### Core web vitals
+### Core Web Vitals
 
 Core Web Vitals (CWV) are a series of standardized metrics to help measure how a user experiences a page. Google first introduced them as a ranking factor with the [page experience ranking signal](https://developers.google.com/search/blog/2020/05/evaluating-page-experience)  This independent signal was deprecated when it was absorbed into the [Helpful content system](https://developers.google.com/search/docs/appearance/ranking-systems-guide#helpful-content), which has since been folded into the core algorithm.
 
@@ -757,7 +757,7 @@ Search engines also use links for ranking. Links serve as a proxy for how import
 
 When it comes to links, it is not a simple case of more links equals better ranking. There's a lot more nuance to it. These days, links are less of a factor when it comes to ranking. Search engines have evolved to better detect and rank great content, irrespective of links and, at the same time, to combat manipulation and [link spam](https://developers.google.com/search/docs/essentials/spam-policies#link-spam).
 
-### Non-descriptive Links
+### Non-descriptive links
 
 {{ figure_markup(
   image="pages-passing-links-have-descriptive-text.png",
