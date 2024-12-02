@@ -25,8 +25,8 @@ FROM (
     date = '2024-06-01' AND
     is_root_page AND -- no need to crawl inner pages for this one
     custom_metrics.robots_txt.status IS NOT NULL
+)
 GROUP BY
   client
 ORDER BY
   client DESC
-  
