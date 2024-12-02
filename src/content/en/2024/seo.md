@@ -33,7 +33,6 @@ This chapter combines data from <a hreflang="en" href="https://httparchive.org/"
 
 This year, we analyzed one inner page per site crawled in addition to the home pages, which is all this chapter has historically analyzed. Since home pages are often quite different from inner pages, this has unlocked new insights and allowed us to compare the behaviors of home pages verses inner pages.
 
-
 ## Crawlability & indexability
 
 For a page to appear in a search engine results page (SERP), the page must first be crawled and indexed. This process is a critical foundation of SEO.
@@ -80,8 +79,7 @@ For 0.1% of both mobile and desktop requests tested, we received an error code i
 
 The nominal error rate suggests that simple text files in most cases—or handled automatically by many popular CMS systems that provide a `robots.txt` directive—are not a large challenge.
 
-***Note***: The above data does not indicate whether the `robots.txt` files returning a 200 status code are beneficial for a site or if they allow or block aspects that they should not.
-
+<aside class="note">Note: The above data does not indicate whether the <code>robots.txt</code> files returning a 200 status code are beneficial for a site or if they allow or block aspects that they should not.</aside>
 
 #### `robots.txt` size
 
@@ -121,7 +119,6 @@ A full 76.9% of `robots.txt` files encountered by the mobile crawl and 76.6% of 
 
 The `*` user-agent denotes the rules a crawler should follow unless there's another set of rules that specifically target the crawler's user-agent. There are notable exceptions that don't respect the `*` user-agent, including Google's [Adsbot crawler](https://developers.google.com/search/docs/crawling-indexing/google-special-case-crawlers#adsbot-mobile-web). Other crawlers will try another common user-agent before falling back to `*`, such as Apple's `Applebot`, which uses `Googlebot's` rules if they are specified and `Applebot` if not specified. We recommend checking the support documentation for any crawlers you are targeting to ensure that behavior is as expected when relying on fallback.
 
-
 ##### Bingbot
 
 Much like in 2022, `Bingbot` again was not in the top 10 most specified user-agents. Only 2.7% of mobile and 2.6% of desktop `robots.txt` files specified that user-agent, relegating it down to 14th place.
@@ -146,7 +143,7 @@ Over the past two years, large language models (LLMs) and other generative syste
 
 Of these, `GPTBot` is the most commonly specified and found in 2.7% of mobile crawls. The next most common is `CCBot`, which is <a hreflang="en" href="https://commoncrawl.org/ccbot">Common Crawl's agent</a>. While `CCBot` isn't related only to AI, a number of popular vendors use or have used data gathered from this crawler to train their models.
 
-**In Summary:**
+In summary:
 
 - The formalization of the `robots.txt` protocol in RFC 9309 has led to better adherence to technical standards.
 - Analysis shows an increase in successful `robots.txt` responses and a decrease in errors, indicating improved implementation.
@@ -180,10 +177,8 @@ Either implementation method is valid and can be used in tandem. The meta tag im
 In 2024:
 
 - 0.4% of desktop and 0.3% of mobile pages saw the directives' values changed by rendering.
-- Inner pages were more likely to have robots directives. And 48% of inner pages contained a meta robots tag compared to 43.9% of home pages..
+- Inner pages were more likely to have robots directives. And 48% of inner pages contained a meta robots tag compared to 43.9% of home pages.
 - Rendering was more likely to change the robots directive of a home page (0.4%) than that of a inner page (0.3%).
-
-
 
 #### Robots directive rules
 
@@ -647,7 +642,7 @@ Today, search engines like Google primarily create snippets to display in the SE
 
 In 2024:
 
-- The median desktop and mobile page `<meta name="description">` tag contained 40 and 39 words, respectively. That represents a 110% increase in word count for mobile and 105% increase for mobile since 2022. Two years ago, the median for both desktop and mobile was just 19 words..
+- The median desktop and mobile page `<meta name="description">` tag contained 40 and 39 words, respectively. That represents a 110% increase in word count for mobile and 105% increase for mobile since 2022. Two years ago, the median for both desktop and mobile was just 19 words.
 - The median desktop and mobile page `<meta name="description>` tag contained 272 characters and 271 characters, respectively. That's a 99% increase for both device types compared to 2022.
 - At the 10th percentile, the mobile and desktop `<meta name="description>` tag contained 4 words.
 - At the 90th percentile, the `<meta name="description>` tag contained 81 words on desktop and 79 words on mobile.
@@ -697,9 +692,9 @@ Images make the web a richer experience. The median page features 14.5 images (w
 
 For more information on image use and weight, see the [Page Weight](./page-weight) chapter.
 
-#### Alt attributes
+#### `alt` attributes
 
-The image alt attribute provides information about the image for those who, for whatever reason, cannot view it. Its primary purpose is accessibility. Search engines also use the tag for indexing images since they can provide useful content. Therefore, alt tags are considered when serving and ranking images in search engine result pages.
+The image `alt` attribute provides information about the image for those who, for whatever reason, cannot view it. Its primary purpose is accessibility. Search engines also use the tag for indexing images since they can provide useful content. Therefore, alt tags are considered when serving and ranking images in search engine result pages.
 
 {{ figure_markup(
   image="percentage-of-img-alt-attributes-present.png",
@@ -711,7 +706,7 @@ The image alt attribute provides information about the image for those who, for 
   )
 }}
 
-The median mobile site in 2024 had alt attributes on 58% of its images. That's slightly up from 2022 when 54% of mobile pages used alt tags.
+The median mobile site in 2024 had `alt` attributes on 58% of its images. That's slightly up from 2022 when 54% of mobile pages used alt tags.
 
 {{ figure_markup(
   image="percentage-of-img-with-blank-alt.png",
@@ -797,7 +792,6 @@ Outgoing links are [`<a>` anchor elements](https://developer.mozilla.org/docs/We
 
 Internal links are links to other pages on the same website. The trend continues from 2022 in which desktop pages have more internal links than mobile pages do. This is most likely attributed to developers minimizing the navigation menus and footers on mobile for ease and to accommodate the smaller screens.
 
-
 Overall, the number of internal links on a page have grown, with pages in the top 1,000 sites now having 129 internal links on mobile compared to 106 internal links in 2022. There has been a similar level of growth across all rank groupings.
 
 According to [CrUX ranking data](./methodology#chrome-ux-report), it's clear that the more popular sites have more outgoing internal links. This might simply be because the more visited sites are bigger entities with more useful internal links, as well as their investment in developing 'mega-menu' type navigation to help them handle more pages.
@@ -840,7 +834,7 @@ Interestingly, the most popular attribute is `noopener`, which is not related to
 
 Search engines do not rank sites based on word count; however, it is a useful metric for tracking how much text sites contain, as well as a proxy for seeing how much site owners are leaning on client-side rendering to display the content for which they want to be found.
 
-### home pages rendered word count
+### Home pages rendered word count
 
 {{ figure_markup(
   image="home-page-visible-words-rendered-by-percentile.png",
@@ -1102,7 +1096,7 @@ Still, it can be confusing for search engines to identify the appropriate langua
 
 Therefore, the main purpose of internationalization mechanisms (via HTTP headers, HTML, or sitemaps), such as `hreflang` tags or content-language attributes, is to avoid confusion and help search engines deliver content to the correct audience.
 
-### Hreflang implementation
+### `hreflang` implementation
 
 `hreflang` tags help search engines understand what the main language is on a particular page. Its SEO application is that different countries or regions can be targeted using the appropriate language across different (though related) websites.
 
@@ -1114,8 +1108,8 @@ Furthermore, there's a notable discrepancy between the raw and rendered versions
 
 {{ figure_markup(
   image="hreflang-implementation.png",
-  caption="Hreflang implementation.",
-  description="A bar chart comparing hreflang implementation on desktop and mobile sites. It shows HTTP hreflang: 0.1% (desktop) and 0.1% (mobile); Raw hreflang: 9.5% (desktop) and 9.1% (mobile); Rendered hreflang: 9.6% (desktop) and 9.2% (mobile)",
+  caption="`hreflang` implementation.",
+  description="A bar chart comparing `hreflang` implementation on desktop and mobile sites. It shows HTTP `hreflang`: 0.1% (desktop) and 0.1% (mobile); Raw `hreflang`: 9.5% (desktop) and 9.1% (mobile); Rendered `hreflang`: 9.6% (desktop) and 9.2% (mobile)",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=1478193310&format=interactive",
   sheets_gid="144160625",
   sql_file="seo-stats-2024.sql"
@@ -1126,7 +1120,7 @@ The discrepancy between the "raw" and "rendered" versions of the `hreflang` tag 
 
 Even when these discrepancies are considered minor, highly trafficked websites and/or those containing essential information for the public (such as from international institutions, research institutes, universities…) may experience significant losses in visibility with their intended audiences.
 
-### Home page Hreflang Usage
+### Home page `hreflang` Usage
 
 While search engines can often detect a page's language on its own, `hreflang` tags provide explicit signals to ensure content reaches its intended audience. These tags are typically used when a website has multiple language versions targeting different locales or regions.
 
@@ -1136,8 +1130,8 @@ The most popular `hreflang` value in 2024 remained "en" (English), with 8% usage
 
 {{ figure_markup(
   image="hreflang-link-usage-home-pages.png",
-  caption="Hreflang link usage for home pages.",
-  description="A horizontal bar chart showing hreflang links on home pages, broken down by language code and platform (desktop vs. mobile). The total values for each tag are: en (7.6%), fr (3.0%), de (3.0%), es (2.8%), en-us (2.4%), it (2.2%), ru (1.9%), en-gb (1.5%), and pt (1.4%).",
+  caption="`hreflang` link usage for home pages.",
+  description="A horizontal bar chart showing `hreflang` links on home pages, broken down by language code and platform (desktop vs. mobile). The total values for each tag are: en (7.6%), fr (3.0%), de (3.0%), es (2.8%), en-us (2.4%), it (2.2%), ru (1.9%), en-gb (1.5%), and pt (1.4%).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=725111256&format=interactive",
   sheets_gid="1291250464",
   sql_file="hreflang-link-tag-usage-2024.sql",
@@ -1150,12 +1144,12 @@ The most common variations of en are en-us (American English) at 2.8% (desktop) 
 
 Following en, the x-default tag, which specifies the default language version, is the next most popular tag. After that, fr (French), de (German), and es (Spanish) are the most frequently used `hreflang` values, which is similar to the findings in 2022.
 
-### Inner page hreflang usage
+### Inner page `hreflang` usage
 
 {{ figure_markup(
   image="hreflang-link-usage-secondary-pages.png",
-  caption="Hreflang link usage - inner pages",
-  description="A horizontal bar chart showing hreflang links usage on inner pages, broken down by language code and platform (desktop vs. mobile). The total values for each tag are: x-default (7.3%), en (7.1%), fr (3.0%), de (3.0%), es (2.8%), en-us (2.4%), it (2.2%), ru (1.9%), en-gb (1.4%), and pt (1.3%).",
+  caption="`hreflang` link usage - inner pages",
+  description="A horizontal bar chart showing `hreflang` links usage on inner pages, broken down by language code and platform (desktop vs. mobile). The total values for each tag are: x-default (7.3%), en (7.1%), fr (3.0%), de (3.0%), es (2.8%), en-us (2.4%), it (2.2%), ru (1.9%), en-gb (1.4%), and pt (1.3%).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=725111256&format=interactive",
   sheets_gid="1291250464",
   sql_file="hreflang-link-tag-usage-2024.sql",
