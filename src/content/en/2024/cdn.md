@@ -17,7 +17,7 @@ featured_stat_1: 70%
 featured_stat_label_1: Sites in top 1,000 using a CDN
 featured_stat_2: 3x
 featured_stat_label_2: Faster TLS negotiation with CDN at p90
-featured_stat_3: 56s%
+featured_stat_3: 56%
 featured_stat_label_3: Domains using Brotli via CDNs
 doi: 10.5281/zenodo.14065633
 ---
