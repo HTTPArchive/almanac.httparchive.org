@@ -28,7 +28,7 @@ doi: 10.5281/zenodo.14261510
 
 ## Introduction
 
-**Overview.** Users face significant privacy issues when they browse the web. For example, most websites visited by the user contain *trackers*, which observe user activities and profile them. Profiled user activities are then used for various privacy-invasive purposes, such as targeted personalized online advertising and direct selling of user data.
+Users face significant privacy issues when they browse the web. For example, most websites visited by the user contain *trackers*, which observe user activities and profile them. Profiled user activities are then used for various privacy-invasive purposes, such as targeted personalized online advertising and direct selling of user data.
 
 Trackers deploy a wide range of techniques to track users on the web, such as cookies (both first and third-party), browser fingerprinting, and use of personally identifiable information (such as email addresses).
 
@@ -36,7 +36,7 @@ To protect their privacy, users rely on privacy-enhancing tools (such as ad and 
 
 Unfortunately, trackers engage in an arms-race with privacy-enhancing technologies and continuously explore mechanisms to bypass privacy protections in the browser (recently with bounce tracking and CNAME tracking). Over the last few years, governments have stepped in with data protection regulations (such as CCPA in California and GDPR in EU), which provide mechanisms for users to exercise their rights, such as not consenting to data collection.
 
-**Summary of research.** In this chapter, we provide an overview of online tracking (including the mechanism used for online tracking, such as cookies and browser fingerprinting), privacy protections provided by the browsers to eliminate some privacy issues by design (e.g., User-Agent Client Hints), techniques used by online trackers to bypass privacy-protections (e.g., bounce tracking), and adoption of protections offered to users under data protection regulations (e.g., CCPA adoption by websites).
+In this chapter, we provide an overview of online tracking (including the mechanism used for online tracking, such as cookies and browser fingerprinting), privacy protections provided by the browsers to eliminate some privacy issues by design (e.g., User-Agent Client Hints), techniques used by online trackers to bypass privacy-protections (e.g., bounce tracking), and adoption of protections offered to users under data protection regulations (e.g., CCPA adoption by websites).
 
 ## Online tracking
 
@@ -49,7 +49,7 @@ Unfortunately, trackers engage in an arms-race with privacy-enhancing technologi
   )
 }}
 
-**Identifying trackers:** We mostly leverage data from <a hreflang="en" href="http://WhoTracks.Me">WhoTracks.Me</a>, a publicly available list that catalogs third-party trackers present across a wide range of websites. By utilizing this resource, we identify the most prevalent trackers on the websites. This helped us assess the dominance of certain tracking companies and better understand the overall landscape of third-party tracking.It’s important to note that WhoTracks.Me identifies several trackers at the domain level. While a significant number of URLs associated with these domains engage in tracking, not all URLs from those domains necessarily do.
+We mostly leverage data from <a hreflang="en" href="http://WhoTracks.Me">WhoTracks.Me</a>, a publicly available list that catalogs third-party trackers present across a wide range of websites. By utilizing this resource, we identify the most prevalent trackers on the websites. This helped us assess the dominance of certain tracking companies and better understand the overall landscape of third-party tracking.It’s important to note that WhoTracks.Me identifies several trackers at the domain level. While a significant number of URLs associated with these domains engage in tracking, not all URLs from those domains necessarily do.
 
 Online tracking is a routine practice on the internet. A significant number of websites include specialized online services that record user activities within their website and across sites. Our findings from Figure 1 reveal that 95% of the desktop and 94% of the mobile websites include at least one tracker. We also note that more than a quarter of both desktop (i.e., 27%) and mobile (i.e., 26%) sites contain more than 10 trackers. These trackers enable companies to build detailed user profiles based on online behavior, which are regularly used for personalized advertising and to provide insights to website owners. In the following sections, we explore the various techniques trackers use to monitor user activity and examine how they attempt to bypass the privacy protections introduced by modern browsers.
 
@@ -284,7 +284,7 @@ We first provide the prevalence of these APIs. We note that Topics API, Protecte
 
 ### Topics API
 
-Google’s Topics proposal works by assigning a small set of high-level topics to a user based on their recent browsing activity, such as "sports" or "technology". These topics are stored locally on the user's devices and shared with websites and advertisers to serve relevant ads. Users also have the ability to see and control the topics that are shared with advertisers. Since this API can be deployed both through the HTTP headers and JavaScript, we measure the adoption of **Topics API** across both of these axes. We observe JavaScript-based presence (i.e., document.browsingTopics) 7% pages) to be more widespread than header-based presence (i.e., sec-browsing-topics) of Topics (\~4% pages).
+Google’s Topics proposal works by assigning a small set of high-level topics to a user based on their recent browsing activity, such as "sports" or "technology". These topics are stored locally on the user's devices and shared with websites and advertisers to serve relevant ads. Users also have the ability to see and control the topics that are shared with advertisers. Since this API can be deployed both through the HTTP headers and JavaScript, we measure the adoption of the Topics API across both of these axes. We observe JavaScript-based presence (i.e., document.browsingTopics) at 7% of pages, to be more widespread than header-based presence (i.e., sec-browsing-topics) of Topics (\~4% pages).
 
 {{ figure_markup(
   image="Topics-API-Presence.png",
@@ -296,7 +296,7 @@ Google’s Topics proposal works by assigning a small set of high-level topics t
   )
 }}
 
-Surprisingly, we also note that the Federated Learning of Cohorts API (**FLoC**) – a precursor proposal to Topics API, despite being deprecated due to several privacy issues, is still present on a considerable amount of pages. While Topics API improves the status quo, <a hreflang="en" href="https://petsymposium.org/popets/2024/popets-2024-0004.pdf">prior research</a> has shown that monitoring the topics returned by the user’s browser over a period of time can aid in reidentification of users.
+Surprisingly, we also note that the Federated Learning of Cohorts API (FLoC) – a precursor proposal to Topics API, despite being deprecated due to several privacy issues, is still present on a considerable amount of pages. While Topics API improves the status quo, <a hreflang="en" href="https://petsymposium.org/popets/2024/popets-2024-0004.pdf">prior research</a> has shown that monitoring the topics returned by the user’s browser over a period of time can aid in reidentification of users.
 
 {{ figure_markup(
   image="FLoC-API-Presence.png",
@@ -310,7 +310,7 @@ Surprisingly, we also note that the Federated Learning of Cohorts API (**FLoC**)
 
 ### Protected Audience API
 
-Protected Audience API enables on-device auctions by the browser, to choose relevant ads from websites the user has previously visited. It eliminates the need for privacy-invasive data collection and pervasive tracking practices that are otherwise employed for remarketing and targeted advertising. This ensures that advertisers can serve relevant ads without needing to track users across sites. Amongst different method calls available for the **Protected Audience API,** we note that navigator.joinAdInterestGroup() is used the most by third-party services – 63% of top-10M websites. This API provides an ability to a third-party service to direct the browser to add an interest group to the browser's membership list for the visiting user. Recent research (<a hreflang="en" href="https://www.usenix.org/system/files/usenixsecurity24-calderonio.pdf">Calderonio et al.</a>, <a hreflang="en" href="https://arxiv.org/pdf/2405.08102">Long and Evans</a>) has discovered various privacy flaws with respect to the Protected Audience API. For example, third-party trackers can potentially link the interest groups of the users to an actual user using side-channels and track them across sites. Possibility of colluding entities further alleviate the associated privacy risk.
+The Protected Audience API enables on-device auctions by the browser, to choose relevant ads from websites the user has previously visited. It eliminates the need for privacy-invasive data collection and pervasive tracking practices that are otherwise employed for remarketing and targeted advertising. This ensures that advertisers can serve relevant ads without needing to track users across sites. Amongst different method calls available for the Protected Audience API, we note that navigator.joinAdInterestGroup() is used the most by third-party services – 63% of top-10M websites. This API provides an ability to a third-party service to direct the browser to add an interest group to the browser's membership list for the visiting user. Recent research (<a hreflang="en" href="https://www.usenix.org/system/files/usenixsecurity24-calderonio.pdf">Calderonio et al.</a>, <a hreflang="en" href="https://arxiv.org/pdf/2405.08102">Long and Evans</a>) has discovered various privacy flaws with respect to the Protected Audience API. For example, third-party trackers can potentially link the interest groups of the users to an actual user using side-channels and track them across sites. Possibility of colluding entities further alleviate the associated privacy risk.
 
 {{ figure_markup(
   image="Protected-Audience-(FLEDGE)-API-Presence.png",
@@ -354,7 +354,7 @@ Since most of the popular browsers are competing with each other in the space of
   )
 }}
 
-***Limitation**: Note that by “presence”, we refer to the mere presence of privacy sandbox API calls in the JavaScript in this analysis. This does not mean that the APIs are guaranteed to be executed or used during the runtime.*
+<p class="note"><b>Limitation</b>: Note that by “presence”, we refer to the mere presence of privacy sandbox API calls in the JavaScript in this analysis. This does not mean that the APIs are guaranteed to be executed or used during the runtime.</a>
 
 ### Related Websites Sets
 
