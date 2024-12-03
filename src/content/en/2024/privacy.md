@@ -8,7 +8,7 @@ editors: []
 analysts: [max-ostapenko, Yash-Vekaria, bgstandaert, haddiamjad]
 translators: []
 Yash-Vekaria_bio: Yash Vekaria is a PhD candidate in Computer Science at <a hreflang="en" href="https://www.ucdavis.edu/">University of California, Davis</a>. He carries out web-based large-scale Internet measurements to study and improve the dynamics of web. Specifically, his research is focused at studying and bringing transparency to online tracking practices and user privacy issues.
-bgstandaert_bio:
+bgstandaert_bio: Benjamin Standaert is an M.Sc student in the Computer Science department at <a hreflang="en" href="https://wustl.edu/">Washington University in St. Louis</a>. He has prior experience developing ad-blocking software and privacy-enhancing technologies.
 max-ostapenko_bio: Max Ostapenko is a product manager in data and advertising with expertise in tracking, privacy, and web monetization. As a co-maintainer of the HTTP Archive, Max contributes to the accessibility of web insights.
 hadiaamjad_bio: <a hreflang="en" href="https://hadiamjad.github.io">Hadi Amjad</a> is a Ph.D. student in Computer Science at <a hreflang="en" href="https://cs.vt.edu/">Virginia Tech</a>. His research lies at the intersection of internet security, privacy, and program analysis. He specializes in JavaScript program analysis to identify code regions responsible for privacy and security violations on the internet. His work enhances privacy-focused tools, contributing to a safer and more secure web environment.
 ydimova_bio: Yana Dimova is a PhD student at DistriNet, KU Leuven, focusing on the user's perspective of privacy and how they can protect it on the web. Her research interests are online tracking, personal data leaks and privacy and data protection law.
