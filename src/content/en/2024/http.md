@@ -8,7 +8,7 @@ reviewers: [tunetheweb,ChrisBeeti]
 analysts: [tunetheweb]
 editors: [tunetheweb]
 translators: []
-rmarx_bio: Robin is a web protocol and performance researcher at <a hreflang="en" href="https://www.uhasselt.be/edm">Hasselt University, Belgium</a>. He has been working on getting QUIC and HTTP/3 ready to use by creating tools like <a hreflang="en" href="https://github.com/quiclog">qlog and qvis</a>.
+rmarx_bio: Dr. Robin Marx is a web performance expert at Akamai Technologies. He studies the performance and operation of modern web protocols such as HTTP/2, HTTP/3, and QUIC. Robin often speaks about web performance at international conferences, making complex situations more understandable for the general public.
 results: https://docs.google.com/spreadsheets/d/1PfTZkbmgyLA3NmEICeCyxpMWgP7cKY7EsZl9RciE5S4/
 featured_quote: We can see that support for HTTP/3 has steadily risen, up to 26% (desktop) and 28% (mobile) in 2024.
 featured_stat_1: 85%
@@ -26,9 +26,6 @@ HTTP remains the cornerstone of the web ecosystem, providing the foundation for 
 
 In this chapter, we will first look at the current state of HTTP/1.1, HTTP/2 and HTTP/3 adoption, and how their usage has evolved over time. We then consider the new web platform features, to get an idea of how well they're supported and how people are using them in practice.
 
-{# TODO Unlike in academic papers we don't like to front load the conclusions. Move this to the end? Or remvoe the stats maybe? #}
-In short, we see HTTP/3 steadily gaining ground, with about 27% adoption across the board. Some newer features find fast and heavy uptake (the `fetchpriority` attribute is seen on over 25% of pages) while others struggle to convince developers (103 Early Hints is used on less than 3% of pages, and most of that is from a single company). This and many more details below!
-
 ## HTTP version adoption
 
 Conceptually, getting an idea of how widespread the adoption of HTTP/2 and HTTP/3 is should be easy: just report how often each of the protocol versions was used to load the observed web pages in our dataset. This is exactly what we've done in the graph below:
@@ -42,7 +39,7 @@ Conceptually, getting an idea of how widespread the adoption of HTTP/2 and HTTP/
   sql_file="h2_adoption_pages_reqs.sql"
 ) }}
 
-While these results might look sensible at first glance, they are actually quite misleading. Indeed, as we'll see later, in reality HTTP/3 support across the web is closer to 30% instead of the 7-9% reported above. This discrepancy is due to the fact that HTTP/3 has to be discovered before being used, while [the methodology used](./methodology) for the web Almanac doesn't really lend itself well to the main discovery option (see [`HTTP/3 via alt-svc`](#http3-via-alt-svc)). This causes a lot of HTTP/3-capable sites to still be loaded over HTTP/2 and thus HTTP/3 is getting underreported. We will discuss this in more detail below, but for now we will bypass this issue by grouping HTTP/2 and HTTP/3 together into a single label of **HTTP/2+** to at least compare them to HTTP/1.1 in general.
+While these results might look sensible at first glance, they are actually quite misleading. Indeed, as we'll see later, in reality HTTP/3 support across the web is closer to 30% instead of the 7-9% reported above. This discrepancy is due to the fact that HTTP/3 has to be discovered before being used, while [the methodology used](./methodology) for the Web Almanac doesn't really lend itself well to the main discovery option (see [`HTTP/3 via alt-svc`](#http3-via-alt-svc)). This causes a lot of HTTP/3-capable sites to still be loaded over HTTP/2 and thus HTTP/3 is getting underreported. We will discuss this in more detail below, but for now we will bypass this issue by grouping HTTP/2 and HTTP/3 together into a single label of **HTTP/2+** to at least compare them to HTTP/1.1 in general.
 
 As such, we see that only 21-22% of home pages are loaded over HTTP/1.1 in 2024, a marked difference from 2022 [where it was still 34%](../2022/http#http2-adoption) and especially 2020 where there was [basically a 50/50 split](../2020/http#http2-adoption) between HTTP/1.1 and HTTP/2+. However, this is just looking at how the main document (the HTML) of the page is loaded. Another way of looking at HTTP adoption is by looking at the version used for all requests (including subresources and third-parties), which skews the results even more towards HTTP/2+:
 
@@ -143,7 +140,7 @@ It is somewhat interesting to see that mobile home pages advertise a little bett
   sql_file="h3_support_from_cdn.sql"
 ) }}
 
-Similar to HTTP/2+ above, the support for HTTP/3 comes mainly from the CDNs, but in a quite extreme form in my opinion: around 85% of all HTTP/3 responses seen in our dataset came from a CDN. This compares to around 55% of all HTTP/2+ requests. This indicates that today very few website owners are self-deploying HTTP/3 at their origin and re-emphasizes my point from above that fast adoption of new technologies might (sadly) become a large-company-only thing. This is not entirely unexpected however; a lot of the popular "off the shelf" web servers do not have stable, mature, on-by-default HTTP/3 support yet-including projects like NodeJS, Apache and nginx. Running a scalable HTTP/3 deployment that uses some of the protocol's more advanced features—like connection migration and 0-RTT—is far from easy. Still, I hope to see more people self-hosting HTTP/3 in the near future.
+Similar to HTTP/2+ above, the support for HTTP/3 comes mainly from the CDNs, but in a quite extreme form in my opinion: around 85% of all HTTP/3 responses seen in our dataset came from a CDN. This compares to around 55% of all HTTP/2+ requests. This indicates that today very few website owners are self-deploying HTTP/3 at their origin and re-emphasizes my point from above that fast adoption of new technologies might (sadly) become a large-company-only thing. This is not entirely unexpected however; a lot of the popular "off the shelf" web servers do not have stable, mature, on-by-default HTTP/3 support yet-including projects like NodeJS, Apache and nginx. Running a scalable HTTP/3 deployment that uses some of the protocol's more advanced features, like connection migration and 0-RTT, is far from easy. Still, I hope to see more people self-hosting HTTP/3 in the near future.
 
 One important remark to make here is that not all CDNs show equally high HTTP/3 support:
 
@@ -231,7 +228,7 @@ Let's now take a look at how much we've seen the new DNS records being used in t
 
 This means that 9-10% (or over 20 million) of all considered pages in our dataset indicate HTTP/3 support through DNS. However, this does not automatically mean that HTTP/3 is also actually used by the browser. As we showed in the first image of this chapter, only about 7% (desktop) to 9% (mobile) of pages were actually loaded over HTTP/3. This is definitely in the same order of magnitude as the DNS HTTPS adoption, but not quite the same.
 
-This can have many different reasons, including networks blocking the newer protocol, HTTP/3 somehow losing the "race" to a HTTP/2 connection (we'll discuss this in the next [Other considerations](#other-considerations) section), the DNS HTTPS record being misconfigured, the DNS response for the record being delayed, the HTTP/2 connection being reused due to <a hreflang="en" href="https://blog.cloudflare.com/connection-coalescing-with-origin-frames-fewer-dns-queries-fewer-connections/">connection coalescing</a>, etc. Still, it shows that this newer/alternative method of indicating HTTP/3 support early in the page loading process has strong potential to improve upon the `alt-svc` approach—and not just for the Web Almanac methodology.
+This can have many different reasons, including networks blocking the newer protocol, HTTP/3 somehow losing the "race" to a HTTP/2 connection (we'll discuss this in the next section, [Other considerations](#other-considerations)), the DNS HTTPS record being misconfigured, the DNS response for the record being delayed, the HTTP/2 connection being reused due to <a hreflang="en" href="https://blog.cloudflare.com/connection-coalescing-with-origin-frames-fewer-dns-queries-fewer-connections/">connection coalescing</a>, etc. Still, it shows that this newer/alternative method of indicating HTTP/3 support early in the page loading process has strong potential to improve upon the `alt-svc` approach—and not just for the Web Almanac methodology.
 
 It is also interesting to compare this to <a hreflang="en" href="https://www.netmeister.org/blog/https-rrs.html#current-use">similar research done by Jan Schaumann in October 2023</a>, who found that for over 100 million tested domains, only about 4% provided HTTPS records, which increased to a whopping 25%+ for the top 1 million domains on the Tranco list. He <a hreflang="en" href="https://www.netmeister.org/blog/https-rrs.html#iphints">concluded</a> that DNS HTTPS record adoption is "effectively driven by Cloudflare setting the records by default on all of their domains". This would be in-line with our previous findings that it is the big CDNs that drive new feature adoption, so let's see what our data says:
 
@@ -297,7 +294,7 @@ However, there are a few higher-level features (such as image lazy loading, `asy
 
 ### Resource Hints
 
-Firstly, there are the "[Resource Hints](https://web.dev/learn/performance/resource-hints)", a group of directives that can be used to guide the browser in various network-related operations, from setting up (parts of) a network connection, over loading a single resource, to doing fetches of entire pages ahead of time. The main ones are `dns-prefetch`, `preconnect`, `preload`, `prefetch`, and `modulepreload`. There was also a `prerender` options which had a bit of a hard time finding its place in the ecosystem, and that use case now moving mostly to the new [Speculation Rules API](https://developer.chrome.com/docs/web-platform/prerender-pages).
+Firstly, there are the "[Resource Hints](https://web.dev/learn/performance/resource-hints)", a group of directives that can be used to guide the browser in various network-related operations, from setting up (parts of) a network connection, over loading a single resource, to doing fetches of entire pages ahead of time. The main ones are `dns-prefetch`, `preconnect`, `preload`, `prefetch`, and `modulepreload`. There was also a `prerender` option which had a bit of a hard time finding its place in the ecosystem, and that use case now moved mostly to the new [Speculation Rules API](https://developer.chrome.com/docs/web-platform/prerender-pages).
 
 {{ figure_markup(
   image="resource_hint_usage.png",
@@ -355,17 +352,9 @@ As we saw above, about 20% of all pages utilize `preload`, and because you have 
 
 As expected, fonts are the most popular target for preloads, occurring on about 8.6% of pages.
 
-Somewhat unexpected however was the high use of preload for stylesheets and scripts. These could be useful but that could mean over 7.5% of pages should [reduce their critical path depth](https://www.debugbear.com/blog/avoid-chaining-critical-requests). In practice people often misuse the feature by preloading resources right before they're mentioned in the HTML; say by having a `<link rel=preload>` for `style.css` the line above the `<link rel=stylesheet>` for the same file, which doesn't really do anything.
+Somewhat unexpected however was the high use of preload for stylesheets and scripts. These _could_ conceptually be useful, but that would mean over 7.5% of pages should probably [reduce their critical path depth](https://www.debugbear.com/blog/avoid-chaining-critical-requests), if they need preload to speed that up. In practice people often misuse the feature by preloading resources right before they're mentioned in the HTML; say by having a `<link rel=preload>` for `style.css` the line above the `<link rel=stylesheet>` for the same file, which doesn't really do anything.
 
 A worse problem I've seen is that people `preload` their `async` and `defer` JS files, often those that are loaded via a `<script>` tag at the bottom of the `<body>`. This is not as harmless as it might seem, as these preloads can end up actively delaying other resources—such as actual render blocking JS and important images. This is because the browser doesn't know these scripts will be tagged as `async`/`defer` when they're actually loaded, so [it defaults to loading them as if they're render blocking scripts with a high priority!](https://youtu.be/MV034VqHv5Q?t=838). We didn't run the queries to see how many of the 7.5% of pages misuse `preload` like this, but from my personal experience, it could be pretty widespread.
-
-{# TODO decide what to do with below comment #}
-<!-- Total pages with js type=module: [9.63%](https://docs.google.com/spreadsheets/d/16isMe5_rvmRmJHtK5Je66AhwO8SowGgq0EFqXyjEXw8/edit?gid=805470577#gid=805470577).
-  desktop had 2,326,372 out of 24,168,022 pages with module, which is 9.63%
-  for the HTTP data https://docs.google.com/spreadsheets/d/1PfTZkbmgyLA3NmEICeCyxpMWgP7cKY7EsZl9RciE5S4/edit?gid=1668151954#gid=1668151954,
-  we had a total of 137,228 + 162,835 = 300,063 of pages with modulepreload, which is 1.24% of total,
-  and 300,063 / 2,326,372 = 13% of all pages with type=module use modulepreload
--->
 
 In contrast, while perhaps too many `async`/`defer` JS scripts are being preloaded, potentially _too few_ JavaScript modules (`<script type=module>`) are benefiting from this hint. While about 9.6% of all desktop pages already use JS modules (which I found impressively high), only about 13% of those (1.24% of all pages) also preload at least one module. I would have expected this to be a bit higher, since the JS modules mechanism has [extensive support for dynamically loading code](https://developer.mozilla.org/docs/Web/JavaScript/Guide/Modules#dynamic_module_loading), which could benefit from preloads to improve performance.
 
@@ -387,16 +376,13 @@ In contrast, there are images that _can_ benefit from preloading, for example th
 
 The astute reader might have noticed that the total amount of pages preloading images (~3.8%) is quite a bit higher than those preloading the LCP element (~1.3% total), which makes me wonder which other images people are preloading then and why...; another thing best left for future analysis!
 
-{# TODO decide what to do with below comment #}
-<!-- We were even able to confirm this in our dataset: even though many pages have an image as the LCP element (79% of desktop pages vs 69% on mobile), only 0.75% (desktop) to 0.90% (mobile) of those pages also actually preload their LCP image. That does leaves me to wonder which images those 3.5% of pages are possibly preloading... something for future research.  -->
-
 Finally, as with the general Resource Hints, it's also interesting to look at outliers and obvious mistakes. For `preload` to function, you MUST set the `as` attribute, and it [can only be set to a select few types](https://developer.mozilla.org/docs/Web/HTML/Attributes/rel/preload): `fetch, font, image, script, style, track`. Anything else will cause the preload to be in vain. As such, it's interesting to see over 17,000 pages (about 0.11% overall) use an empty value, with 0.03% - 0.01% utilizing invalid (though probable) values like `stylesheet`, `document`, or `video`. Other noteworthy (luckily much less frequent) values include: the fancy `Cormorant Garamond Bold`, the cool `slick`, the spicy `habanero` and the supercalifragilisticexpialidocious `Poppins`.
 
 #### 103 Early Hints
 
-Resource Hints are typically conveyed through `<link rel=XYZ>` tags inside the page HTML's `<head>`. However, though you may not know this, Resource Hints can also be sent in the HTTP response headers for the HTML page instead (albeit with a [slightly different syntax](https://almanac.httparchive.org/en/2021/resource-hints#http-header)). In fact, I'm pretty sure most of you don't know this, since only about 0.04% of all pages (or about 5,500 desktop home pages) utilizes this option—compared to about 20% that use the HTML tags. This is not too surprising though, as there are only very few cases in which the HTTP header option is easier or better than the HTML tag option in my opinion.
+Resource Hints are typically conveyed through `<link rel=XYZ>` tags inside the page HTML's `<head>`. However, though you may not know this, Resource Hints can also be sent in the HTTP response headers for the HTML page instead (albeit with a [slightly different syntax](../2021/resource-hints#http-header)). In fact, I'm pretty sure most of you don't know this, since only about 0.04% of all pages (or about 5,500 desktop home pages) utilizes this option—compared to about 20% that use the HTML tags. This is not too surprising though, as there are only very few cases in which the HTTP header option is easier or better than the HTML tag option in my opinion.
 
-However, this might be changing a bit, with the (relatively) new [103 Early Hints](https://developer.mozilla.org/docs/Web/HTTP/Status/103) feature. This mechanism is sometimes called the [rightful successor to HTTP Server Push](https://almanac.httparchive.org/en/2022/http#103-early-hints). It allows a server to send back an intermediate 103 response (part of the HTTP 1XX range of status codes) before the actual final response for a request (say a 200 OK or 404 Not Found).
+However, this might be changing a bit, with the (relatively) new [103 Early Hints](https://developer.mozilla.org/docs/Web/HTTP/Status/103) feature. This mechanism is sometimes called the [rightful successor to HTTP Server Push](../2022/http#103-early-hints). It allows a server to send back an intermediate 103 response (part of the HTTP 1XX range of status codes) before the actual final response for a request (say a 200 OK or 404 Not Found).
 
 This is especially useful in CDN setups where the HTML is not cached at the CDN edge. In that scenario, the CDN can very quickly send back a 103 Early Hints response to the browser, while it forwards the request for the HTML to the origin server. This 103 response can contain a list of `preconnect` and `preload` Resource Hints (encoded as HTTP response headers), which the browser can start executing while it is still waiting for the final HTML response to come in.
 
@@ -419,7 +405,7 @@ If everything goes well, the connections to external domains are ready and the p
   sql_file="early_hints_usage.sql"
 ) }}
 
-Disappointingly though, 103 Early Hints adoption has not increased a lot since our [first look in 2022](https://almanac.httparchive.org/en/2022/http#103-early-hints): from 1.6% of all desktop pages then, to just 2.9% this year. This is not incredibly surprising however, since properly configuring this feature is not easy, and getting full benefits from it typically requires using a CDN or a similarly distributed deployment.
+Disappointingly though, 103 Early Hints adoption has not increased a lot since our [first look in 2022](../2022/http#103-early-hints): from 1.6% of all desktop pages then, to just 2.9% this year. This is not incredibly surprising however, since properly configuring this feature is not easy, and getting full benefits from it typically requires using a CDN or a similarly distributed deployment.
 
 Support has also been somewhat spotty, with Safari and Firefox only adding support recently (with [Safari only allowing `preconnect`](https://caniuse.com/?search=103)), it [having been disabled for a while on Cloudflare](https://community.cloudflare.com/t/early-hints-and-encrypted-client-hello-ech-are-currently-disabled-globally/567730), and the Akamai CDN only making it [generally available in July](https://www.akamai.com/blog/performance/akamai-103-early-hints-prototype-the-results-are-in) this year. Still, I would have expected the uptake to be a bit higher, given that Cloudflare has had the feature available even for its free customers since 2022.
 
@@ -459,7 +445,7 @@ The differences here are a bit less clear than a few years ago though; in 2021, 
 
 However, now that we have more resources sharing a single underlying connection, that means that we somehow need to decide what gets downloaded first as we typically don't have enough bandwidth to just download everything in one big parallel flow. This "resource scheduling" is governed by a "prioritization mechanism" in HTTP/2 and HTTP/3. How this really works under the hood is a bit too complex to really dig into here however, so we will focus on the basics you need to understand the Fetch Priority API (more details can be found in <a hreflang="en" href="https://calendar.perfplanet.com/2022/http-3-prioritization-demystified/">blogposts</a>, [talks](https://www.youtube.com/watch?v=MV034VqHv5Q), <a hreflang="en" href="https://jherbots.info/public_media/research/anrw2024_h3-eps-in-the-wild_authorversion.pdf">academic papers</a> and of course, [web.dev](https://web.dev/articles/fetch-priority#effects)).
 
-In general, the browser will assign each request a _priority_: an indication of how important it is to the page load. For example, the HTML document and render-blocking CSS in the `<head>` might get "highest" priority, while less critical resources (such as images in the `<body>` or JS tagged as async or defer) might get "low". When the server then receives multiple requests from the browser in parallel, it knows in which order to reply: from highest to lowest priority, and following the request order for resources with the same priority value.
+In general, the browser will assign each request a _priority_: an indication of how important it is to the page load. For example, the HTML document and render-blocking CSS in the `<head>` might get "highest" priority, while less critical resources (such as images in the `<body>` or JS tagged as `async` or `defer`) might get "low". When the server then receives multiple requests from the browser in parallel, it knows in which order to reply: from highest to lowest priority, and following the request order for resources with the same priority value.
 
 {{ figure_markup(
   image="fetch-priority-example.png",
@@ -470,13 +456,13 @@ In general, the browser will assign each request a _priority_: an indication of 
   )
 }}
 
-Browsers use a complex set of heuristics ("educated guesses") to determine the priorities of the resources—based on factors like their position in the HTML document, their type, and loading modifiers such as async/defer. This however also sometimes means the browser gets it wrong, or it simply does not have enough information to make a smarter choice.
+Browsers use a complex set of heuristics ("educated guesses") to determine the priorities of the resources—based on factors like their position in the HTML document, their type, and loading modifiers such as `async`/`defer`. This however also sometimes means the browser gets it wrong, or it simply does not have enough information to make a smarter choice.
 
 A good example here are LCP images: the browser can't really accurately predict which image will end up being the LCP element just from the HTML. As such, it generally requests all images at the same priority, in discovery order; so if your LCP image is lower in the HTML (below say some images in the menu that's hidden by default) it will end up loaded later than it probably should.
 
 It is for these reasons that we now have the Fetch Priority API! It lets us tweak/nudge the browser's default heuristics so it assigns high(er) or low(er) priority values to individual resources—meaning they get loaded earlier/later than they otherwise would. This is done by adding the `fetchpriority` attribute with a value of either `high` or `low` to a resource.
 
-It can be used on many things, not just images but also `<script>` and `<link>` tags and even `fetch()` calls (there, it's just the `priority` attribute though, because nobody likes consistency {# TODO FYI, that was an explicit choice cause "Fetch fetchpriority" seemed a bit redundent #}). The Fetch Priority API has been supported in Chrome for a while now, with Safari adding support late last year, and Firefox landing the feature in October 2024. As such, let's see how it's being used in the wild!
+It can be used on many things, not just images but also `<script>` and `<link>` tags and even `fetch()` calls (there, it's just the `priority` attribute though, because naming things is hard). The Fetch Priority API has been supported in Chrome for a while now, with Safari adding support late last year, and Firefox landing the feature in October 2024. As such, let's see how it's being used in the wild!
 
 {{ figure_markup(
   image="fetch-priority-usage.png",
@@ -497,9 +483,9 @@ Fetch Priority adoption has positively soared in 2024! Going from around 7% in 2
   sql_file="lcp_element_data_by_type.sql"
 ) }}
 
-For this year we looked at how it is being used specifically for LCP images. For example, for those 46% of desktop pages that have an `<img>` element as their LCP, a good 12% (or 5.6% of all desktop pages) also tag it as `fetchpriority=high`; This could/should arguably be (much) higher, but luckily only 0.14% tagged the LCP `<img>` as `fetchpriority=low`, so I'll take it!
+Let's look at how `fetchpriority` is being used specifically for LCP images since that is one of the main motivating use cases for this new feature. For example, for those 46% of desktop pages that have an `<img>` element as their LCP, a good 12% (or 5.6% of all desktop pages) also tag it as `fetchpriority=high`; This could/should arguably be (much) higher, but luckily only 0.14% tagged the LCP `<img>` as `fetchpriority=low`, so I'll take it!
 
-Sadly, this is offset by the fact that over 16% of desktop pages does still [lazy load their LCP image](https://web.dev/articles/browser-level-image-lazy-loading), which you should really never do... luckily, only 4,500 pages were written by cats who don't know whether they want to stay in or go outside (LCP element with both `loading=lazy` AND `fetchpriority=high`, which is just weird).
+Sadly, this is offset by the fact that over 16% of desktop pages does still [lazy load their LCP image](https://web.dev/articles/browser-level-image-lazy-loading), which you should really never do... luckily, only 4,500 pages were written by cats who don't know whether they want to stay in or go outside (and thus have an LCP element with both `loading=lazy` AND `fetchpriority=high`, which is just weird).
 
 We also looked into which initial priority LCP images were requested with in general. By default, images in Chrome have `low` priority, unless they're one of the first 5 images in the HTML, in which case they get `medium` priority. Images can get promoted to `high` priority if the browser determines early on they're in the viewport or, as you'd expect, if `fetchpriority=high` is used.
 
@@ -511,7 +497,7 @@ The `fetchpriority` attribute can also be used on `<link>` tags. That's not only
 
 Conceptually, preload by itself doesn't/shouldn't change a resource's priority, only when it's discovered and therefore requested by the browser. This is true for images for example : even if you preload your LCP, it will still be `low` priority, unless you also add `fetchpriority=high` to your `preload`, which is often unexpected for people!
 
-In other cases, preload DOES seem to "change" the priority. For example, the case when preloading async/defer JS (as discussed above as well), where the browser will assign them `high` priority instead of `low` because it doesn't get enough context from the `preload`. In these cases, it can be very useful to use `fetchpriority=low` on the JS preload, to "correct" the browser heuristics to where we know they should be.
+In other cases, preload DOES seem to "change" the priority. For example, the case when preloading `async`/`defer` JS (as discussed above as well), where the browser will assign them `high` priority instead of `low` because it doesn't get enough context from the `preload`. In these cases, it can be very useful to use `fetchpriority=low` on the JS preload, to "correct" the browser heuristics to where we know they should be.
 
 {{ figure_markup(
   caption="Percentage of preloads that have `fetchpriority=high` set that are for images",
@@ -521,7 +507,7 @@ In other cases, preload DOES seem to "change" the priority. For example, the cas
   sql_file="preload_as_values_fetchpriority.sql"
 ) }}
 
-We looked at how people are combining `preload` with `fetchpriority` in our dataset. Of all desktop pages with preloads using `fetchpriority` (about 2% of all desktop pages), an impressive 73% are for images and `fetchpriority=high`. While this can indeed be a good idea for LCP images, it does have some rough edges and [can be a footgun if used incorrectly](https://youtu.be/p0lFyPuH8Zs?t=2135) at the top of the `<head>`, actually delaying JS lower down the document. For this reason, nowadays I even recommend just not preloading the LCP in favor of just having it in the HTML with `fetchpriority=high` on the `<img>` directly.
+We looked at how people are combining `preload` with `fetchpriority` in our dataset. Of all desktop pages with preloads using `fetchpriority` (about 2% of all desktop pages), an impressive 73% are for images combined with `fetchpriority=high`. While this can indeed be a good idea for LCP images, it does have some rough edges and [can be a footgun if used incorrectly](https://youtu.be/p0lFyPuH8Zs?t=2135) at the top of the `<head>`, actually delaying JS lower down the document. For this reason, nowadays I even recommend just not preloading the LCP in favor of just having it in the HTML with `fetchpriority=high` on the `<img>` directly.
 
 On the other end, 16% of these preloads are for scripts with `fetchpriority=low`, indicating at least some webmasters (what is this, 2005?!) are aware of potential issues with `async`/`defer` there and try to prevent them. For styles, people don't really seem to know what they want (or use cases are diverse), as 3% is loaded as `high` and 5% as `low`. Note that a lot of these nuances are also discussed on [web.dev](https://web.dev/articles/fetch-priority?hl=en#use-cases), so make sure to read up on things there.
 
@@ -533,7 +519,7 @@ In summary, despite HTTP being invented early in the 1990s, its third version is
 
 While the newer protocol versions are typically presented as a black box to developers (indeed, we can't even consciously choose to use HTTP/3 in `fetch()`), some high-level features exist that allow tweaking the underlying behaviours. For example, Resource Hints have become more powerful now they can be used inside 103 Early Hints responses, allowing browsers to preconnect and preload even before the HTML is known. Complementary, the Fetch Priority API can help improve browser heuristics that decide in which order resources are downloaded from a server on HTTP/2's and HTTP/3's heavily multiplexed connections. Developers have found their way to some of these features quite easily (with especially Fetch Priority rising to a 25%+ usage share in a mere 2 years), while remaining hesitant on some others (at less than 3% usage share, 103 Early Hints seems difficult to use or just unknown to many).
 
-Still, there remain challenges ahead. CDNs are the outsized driving force between the fast adoption of many of these new technologies (85% of all HTTP/3 traffic was served through a CDN). This is both "good" and "bad" for the ecosystem in my opinion. Good because they battle-test new technologies quickly and give them a huge market share right out of the gate, ensuring good chances for survival. Bad because this causes the web to become ever more centralized around a few large companies (54% of all requests in our dataset was served from a CDN), with people not using them being at risk of being left behind.
+Still, there remain challenges ahead. CDNs are the outsized driving force between the fast adoption of many of these new technologies (85% of all HTTP/3 traffic was served through a CDN). This is both "good" and "bad" for the ecosystem in my opinion. Good because they battle-test new technologies quickly and give them a huge market share right out of the gate, ensuring good chances for survival. Bad because this causes the web to become ever more centralized around a few large companies (54% of all requests in our dataset were served from a CDN), with people not using them being at risk of being left behind.
 
 This goes hand in hand with the increasing complexity of how the web works at the lower layers. Protocols like HTTP/3 are complex to understand, let alone deploy, but even the "simpler" high-level features can be difficult to really apply correctly in practice (the high amount of preloaded scripts is somewhat concerning). There is plenty of potential for misuse and shooting yourself in the foot and not everything is as well documented as it could be (the 16% of pages lazy loading their LCP image is a testament to that).
 
