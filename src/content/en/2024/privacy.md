@@ -49,7 +49,7 @@ In this chapter, we provide an overview of online tracking (including the mechan
   )
 }}
 
-We mostly leverage data from <a hreflang="en" href="http://WhoTracks.Me">WhoTracks.Me</a>, a publicly available list that catalogs third-party trackers present across a wide range of websites. By utilizing this resource, we identify the most prevalent trackers on the websites. This helped us assess the dominance of certain tracking companies and better understand the overall landscape of third-party tracking.It’s important to note that WhoTracks.Me identifies several trackers at the domain level. While a significant number of URLs associated with these domains engage in tracking, not all URLs from those domains necessarily do.
+We mostly leverage data from <a hreflang="en" href="http://WhoTracks.Me">WhoTracks.Me</a>, a publicly available list that catalogs third-party trackers present across a wide range of websites. By utilizing this resource, we identify the most prevalent trackers on the websites. This helped us assess the dominance of certain tracking companies and better understand the overall landscape of third-party tracking.It's important to note that WhoTracks.Me identifies several trackers at the domain level. While a significant number of URLs associated with these domains engage in tracking, not all URLs from those domains necessarily do.
 
 Online tracking is a routine practice on the internet. A significant number of websites include specialized online services that record user activities within their website and across sites. Our findings from Figure 1 reveal that 95% of the desktop and 94% of the mobile websites include at least one tracker. We also note that more than a quarter of both desktop (i.e., 27%) and mobile (i.e., 26%) sites contain more than 10 trackers. These trackers enable companies to build detailed user profiles based on online behavior, which are regularly used for personalized advertising and to provide insights to website owners. In the following sections, we explore the various techniques trackers use to monitor user activity and examine how they attempt to bypass the privacy protections introduced by modern browsers.
 
@@ -61,7 +61,7 @@ When users visit the websites where such trackers are embedded, the cookies asso
 
 #### Third-party tracking services
 
-Figure 12.1 provides the distribution of prevalence of online tracking domains. We note that Google-owned domains dominate the tracking landscape, with googleapis.com and Google’s gstatic.com appearing on the highest percentage of pages — 68% and 61%, respectively. Other prominent trackers include google\_tag and google\_analytics, each seen on over 50% of pages, highlighting the significant reach of Google's tracking services. In addition to Google and its associated services, we also observe a notable presence of Facebook and Cloudflare.
+Figure 12.1 provides the distribution of prevalence of online tracking domains. We note that Google-owned domains dominate the tracking landscape, with googleapis.com and Google's gstatic.com appearing on the highest percentage of pages — 68% and 61%, respectively. Other prominent trackers include google\_tag and google\_analytics, each seen on over 50% of pages, highlighting the significant reach of Google's tracking services. In addition to Google and its associated services, we also observe a notable presence of Facebook and Cloudflare.
 
 {{ figure_markup(
   image="top-whotracksme-trackers.png",
@@ -85,10 +85,10 @@ Figure 12.1 provides the distribution of prevalence of online tracking domains. 
   )
 }}
 
-Third-party cookies are the main mechanism used to track users on the web. Our measurements reveal that Google’s doubleclick.com is the largest source of third-party cookies, with presence on more than a quarter of the crawled web pages (Figure 12.2). Compared to the [Privacy 2022 analysis](../2022/privacy), the top sources of third-party cookies have remained largely static, with the notable absence of Facebook, previously the second-largest source of third-party cookies. However, as shown in the next section, we instead see a significant number of cookies set by Facebook in the first-party context.
+Third-party cookies are the main mechanism used to track users on the web. Our measurements reveal that Google's doubleclick.com is the largest source of third-party cookies, with presence on more than a quarter of the crawled web pages (Figure 12.2). Compared to the [Privacy 2022 analysis](../2022/privacy), the top sources of third-party cookies have remained largely static, with the notable absence of Facebook, previously the second-largest source of third-party cookies. However, as shown in the next section, we instead see a significant number of cookies set by Facebook in the first-party context.
 
-In order to identify trackers that share cookies across many domains, we also examine the most common names for third-party cookies (represented in Figure 12.3). We note that the top four cookie names correspond to cookies set by Google’s advertising products and Youtube, as described in <a hreflang="en" href="https://business.safety.google/adscookies/">their documentation</a>, and the fifth most-common name corresponds to a cookie set by Cloudflare.
-Cloudflare’s cookie, \_\_cf\_bm, is used to “<a hreflang="en" href="https://developers.cloudflare.com/fundamentals/reference/policies-compliances/cloudflare-cookies/#__cf_bm-cookie-for-cloudflare-bot-products">identify and mitigate automated traffic</a>”. As this cookie is set on the domains of Cloudflare’s individual customers, it is not captured in a per-domain ranking of cookies.
+In order to identify trackers that share cookies across many domains, we also examine the most common names for third-party cookies (represented in Figure 12.3). We note that the top four cookie names correspond to cookies set by Google's advertising products and Youtube, as described in <a hreflang="en" href="https://business.safety.google/adscookies/">their documentation</a>, and the fifth most-common name corresponds to a cookie set by Cloudflare.
+Cloudflare's cookie, \_\_cf\_bm, is used to "<a hreflang="en" href="https://developers.cloudflare.com/fundamentals/reference/policies-compliances/cloudflare-cookies/#__cf_bm-cookie-for-cloudflare-bot-products">identify and mitigate automated traffic</a>". As this cookie is set on the domains of Cloudflare's individual customers, it is not captured in a per-domain ranking of cookies.
 
 {{ figure_markup(
   image="top-third-party-cookie-names.png",
@@ -112,13 +112,13 @@ Cloudflare’s cookie, \_\_cf\_bm, is used to “<a hreflang="en" href="https://
   )
 }}
 
-When measuring common first-party cookies, we see extensive evidence of analytics and advertising services setting cookies in the first-party context (Figure 12.4). The top two cookies, \_ga and \_gid, are both part of Google Analytics. The next cookie, \_fbp, is a tracking cookie set by Meta. Since 2022, Meta’s cookie tracking appears to have moved primarily from the third-party context into the first-party context; the default setting for the Meta Pixel <a hreflang="en" href="https://www.facebook.com/business/help/471978536642445">now sets first-party cookies</a> . The majority of the remaining cookies match cookies set by Google, as described in their <a hreflang="en" href="https://business.safety.google/adscookies/">documentation</a>. First-party cookies can be used either to track activity on a single site or for cross-site tracking; we do not attempt to determine the exact purpose of these cookies. Only two of the top cookie names, PHPSESSID and XSRF-TOKEN, have a clear non-tracking purpose. PHPSESSID is the default cookie name used by the <a hreflang="en" href="https://www.php.net/manual/en/session.configuration.php#ini.session.name">PHP framework</a> to store the user’s session ID, and XSRF-TOKEN is a default name used by the <a hreflang="en" href="https://v17.angular.io/api/common/http/HttpClientXsrfModule">Angular framework</a>.
+When measuring common first-party cookies, we see extensive evidence of analytics and advertising services setting cookies in the first-party context (Figure 12.4). The top two cookies, \_ga and \_gid, are both part of Google Analytics. The next cookie, \_fbp, is a tracking cookie set by Meta. Since 2022, Meta's cookie tracking appears to have moved primarily from the third-party context into the first-party context; the default setting for the Meta Pixel <a hreflang="en" href="https://www.facebook.com/business/help/471978536642445">now sets first-party cookies</a> . The majority of the remaining cookies match cookies set by Google, as described in their <a hreflang="en" href="https://business.safety.google/adscookies/">documentation</a>. First-party cookies can be used either to track activity on a single site or for cross-site tracking; we do not attempt to determine the exact purpose of these cookies. Only two of the top cookie names, PHPSESSID and XSRF-TOKEN, have a clear non-tracking purpose. PHPSESSID is the default cookie name used by the <a hreflang="en" href="https://www.php.net/manual/en/session.configuration.php#ini.session.name">PHP framework</a> to store the user's session ID, and XSRF-TOKEN is a default name used by the <a hreflang="en" href="https://v17.angular.io/api/common/http/HttpClientXsrfModule">Angular framework</a>.
 
 [Cookies chapter](./cookies) further describes the details and usage trends of cookies.
 
 ### Stateless tracking
 
-In contrast to stateful tracking, where identifiers are stored in the browser, in stateless tracking, identifiers are generated at runtime. These identifiers often depend on unique characteristics of the user’s device or browser. Although this method may be less reliable than stateful tracking, it is typically more difficult to identify and block.
+In contrast to stateful tracking, where identifiers are stored in the browser, in stateless tracking, identifiers are generated at runtime. These identifiers often depend on unique characteristics of the user's device or browser. Although this method may be less reliable than stateful tracking, it is typically more difficult to identify and block.
 
 #### Browser fingerprinting
 
@@ -164,7 +164,7 @@ CNAME cloaking leverages the DNS CNAME record to mask third-party trackers as fi
 
 Our analysis of DNS data identifies CNAME records used by requests originating from the website's primary domain and pointing to third-party domains. While CNAME records can legitimately be used by hosting services like CDNs, they can also be exploited for tracking. To focus on tracking-specific usage, we cross-referenced identified domains with <a hreflang="en" href="https://github.com/AdguardTeam/cname-trackers/blob/master/script/src/cloaked-trackers.json">AdGuard tracker list</a> and used data from <a hreflang="en" href="http://WhoTracks.Me">WhoTracks.Me</a> to filter out primarily hosting-related domains.
 
-In 2022, our analysis of CNAME cloaking relied on mapping first-party hostnames with the <a hreflang="en" href="https://github.com/AdguardTeam/cname-trackers/tree/master/data">AdGuard’s disguised CNAME hostnames list</a>. This year's analysis incorporates a significant enhancement: the collection of actual DNS records for each requested hostname originating from a given page. This direct DNS resolution allows for precise identification of hostnames with CNAME records that redirect to third-party domains, providing a more accurate and comprehensive view of CNAME cloaking activity. This improved methodology has enabled us to identify previously undocumented trackers associated with `utiq.com`, `truedata.co`, `actioniq.com` and others, and contribute these back to the AdGuard list.
+In 2022, our analysis of CNAME cloaking relied on mapping first-party hostnames with the <a hreflang="en" href="https://github.com/AdguardTeam/cname-trackers/tree/master/data">AdGuard's disguised CNAME hostnames list</a>. This year's analysis incorporates a significant enhancement: the collection of actual DNS records for each requested hostname originating from a given page. This direct DNS resolution allows for precise identification of hostnames with CNAME records that redirect to third-party domains, providing a more accurate and comprehensive view of CNAME cloaking activity. This improved methodology has enabled us to identify previously undocumented trackers associated with `utiq.com`, `truedata.co`, `actioniq.com` and others, and contribute these back to the AdGuard list.
 
 {{ figure_markup(
   image="most-common-cname-domains.png",
@@ -208,7 +208,7 @@ It is a common practice for websites to include content from third-party service
 
 In an effort to minimize the amount of information exposed about the browsing environment, particularly through the User-Agent string, the User-Agent Client Hints mechanism is introduced by browsers and standards bodies.
 
-The key idea is that the websites that want to access certain high entropy information about the users’ browsing environment have to set a header (Accept-CH) in the first response.
+The key idea is that the websites that want to access certain high entropy information about the users' browsing environment have to set a header (Accept-CH) in the first response.
 
 {{ figure_markup(
   image="Percentage-of-pages-with-Client-Hints.png",
@@ -284,7 +284,7 @@ We first provide the prevalence of these APIs. We note that Topics API, Protecte
 
 ### Topics API
 
-Google’s Topics proposal works by assigning a small set of high-level topics to a user based on their recent browsing activity, such as "sports" or "technology". These topics are stored locally on the user's devices and shared with websites and advertisers to serve relevant ads. Users also have the ability to see and control the topics that are shared with advertisers. Since this API can be deployed both through the HTTP headers and JavaScript, we measure the adoption of the Topics API across both of these axes. We observe JavaScript-based presence (i.e., document.browsingTopics) at 7% of pages, to be more widespread than header-based presence (i.e., sec-browsing-topics) of Topics (\~4% pages).
+Google's Topics proposal works by assigning a small set of high-level topics to a user based on their recent browsing activity, such as "sports" or "technology". These topics are stored locally on the user's devices and shared with websites and advertisers to serve relevant ads. Users also have the ability to see and control the topics that are shared with advertisers. Since this API can be deployed both through the HTTP headers and JavaScript, we measure the adoption of the Topics API across both of these axes. We observe JavaScript-based presence (i.e., document.browsingTopics) at 7% of pages, to be more widespread than header-based presence (i.e., sec-browsing-topics) of Topics (\~4% pages).
 
 {{ figure_markup(
   image="Topics-API-Presence.png",
@@ -296,7 +296,7 @@ Google’s Topics proposal works by assigning a small set of high-level topics t
   )
 }}
 
-Surprisingly, we also note that the Federated Learning of Cohorts API (FLoC) – a precursor proposal to Topics API, despite being deprecated due to several privacy issues, is still present on a considerable amount of pages. While Topics API improves the status quo, <a hreflang="en" href="https://petsymposium.org/popets/2024/popets-2024-0004.pdf">prior research</a> has shown that monitoring the topics returned by the user’s browser over a period of time can aid in reidentification of users.
+Surprisingly, we also note that the Federated Learning of Cohorts API (FLoC) – a precursor proposal to Topics API, despite being deprecated due to several privacy issues, is still present on a considerable amount of pages. While Topics API improves the status quo, <a hreflang="en" href="https://petsymposium.org/popets/2024/popets-2024-0004.pdf">prior research</a> has shown that monitoring the topics returned by the user's browser over a period of time can aid in reidentification of users.
 
 {{ figure_markup(
   image="FLoC-API-Presence.png",
@@ -326,8 +326,8 @@ The Protected Audience API enables on-device auctions by the browser, to choose 
 
 [Attribution Reporting API](https://developers.google.com/privacy-sandbox/private-advertising/attribution-reporting) (ARA) introduces a privacy-preserving mechanism for measuring ad conversions in Google Chrome. Its purpose is to enable attribution measurement by providing a capability to register attribution source and trigger on publisher and advertiser websites, respectively. Chrome records every conversion, and generates a differentially private report that is sent to authorized sources with a delay, preventing cross-site linking of the users. This mechanism works through the use of specific HTTP headers:
 
-1. `attribution-reporting-eligible`: This header signals that a particular request’s response is eligible for attribution reporting.
-2. `attribution-reporting-register-source`: Used to register attribution sources when displaying an advertiser’s ad on publishers.
+1. `attribution-reporting-eligible`: This header signals that a particular request's response is eligible for attribution reporting.
+2. `attribution-reporting-register-source`: Used to register attribution sources when displaying an advertiser's ad on publishers.
 3. `attribution-reporting-register-trigger`: Used on the advertiser's website to register triggers that measure conversions when users interact with ads.
 
 From our analysis, we observe that twice as many third parties are registering triggers compared to those registering sources. This trend indicates a higher focus on measuring conversions as compared to tracking the initial ad display events.
@@ -354,7 +354,7 @@ Since most of the popular browsers are competing with each other in the space of
   )
 }}
 
-<p class="note"><b>Limitation</b>: Note that by “presence”, we refer to the mere presence of privacy sandbox API calls in the JavaScript in this analysis. This does not mean that the APIs are guaranteed to be executed or used during the runtime.</a>
+<p class="note"><b>Limitation</b>: Note that by "presence", we refer to the mere presence of privacy sandbox API calls in the JavaScript in this analysis. This does not mean that the APIs are guaranteed to be executed or used during the runtime.</a>
 
 ### Related Websites Sets
 
@@ -370,7 +370,7 @@ With increasing scrutiny against online tracking, there have been numerous new l
 
 With the introduction of privacy regulations like the <a hreflang="en" href="https://gdpr-info.eu/">General Data Protection Regulation</a> (GDPR) in the European Union and <a hreflang="en" href="https://leginfo.legislature.ca.gov/faces/codes_displayText.xhtml?division=3.&part=4.&lawCode=CIV&title=1.81.5">California Consumer Privacy Act</a> (CCPA), websites require user consent to collect, share, and process user data, e.g., collection and usage of third-party tracking cookies. This has led to the widespread use of cookie consent dialogs, which notify users about the data collection practices and allow them to accept, reject, or customize their consent.
 
-These consent dialogs have become a ubiquitous feature across the web, but their effectiveness in truly protecting user privacy is debated. Many websites use “dark patterns” to nudge users into accepting tracking, while others present complex options that can overwhelm non-technical users. The Interactive Advertising Bureau (IAB) Europe introduced the <a hreflang="en" href="https://iabeurope.eu/transparency-consent-framework/">Transparency and Consent Framework</a> (TCF) to standardize the process of obtaining consent for targeted advertising. The IAB consent dialog is used by many websites and ad tech companies to comply with GDPR and other privacy laws while continuing to serve personalized ads. The framework is designed to provide transparency into how user data is processed and to give users the ability to grant or withhold consent for different purposes, such as personalized ads, analytics, or content delivery.
+These consent dialogs have become a ubiquitous feature across the web, but their effectiveness in truly protecting user privacy is debated. Many websites use "dark patterns" to nudge users into accepting tracking, while others present complex options that can overwhelm non-technical users. The Interactive Advertising Bureau (IAB) Europe introduced the <a hreflang="en" href="https://iabeurope.eu/transparency-consent-framework/">Transparency and Consent Framework</a> (TCF) to standardize the process of obtaining consent for targeted advertising. The IAB consent dialog is used by many websites and ad tech companies to comply with GDPR and other privacy laws while continuing to serve personalized ads. The framework is designed to provide transparency into how user data is processed and to give users the ability to grant or withhold consent for different purposes, such as personalized ads, analytics, or content delivery.
 
 Our findings show that the TCF, along with other privacy frameworks, is widely implemented as publishers seek to comply with data protection laws like GDPR and CCPA. We would like to note here that our measurement is USA-based, and according to TCF, no consent banner is required for non-EU visits. Therefore, this can result in smaller than actual measurements of TCF usage.
 
@@ -408,7 +408,7 @@ Our analysis of Consent Management Platform (CMP) usage within the TCF v2 ecosys
 
 Do Not Track (DNT) was a browser-based privacy initiative introduced in the early 2010s. It allowed users to set a browser preference indicating that they did not wish to be tracked by websites. However, DNT failed to gain widespread adoption, largely because it was voluntary and lacked enforcement mechanisms.
 
-While DNT was a pioneering idea in user privacy, it ultimately became obsolete as major advertisers and trackers chose to ignore DNT requests, and it was not enshrined in any legal frameworks. Despite being obsolete, our analysis shows that 19.8% of desktop websites, and 18.4% of mobile websites still support a DNT signal (source: <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/2024/privacy/number_of_websites_with_dnt.sql">SQL query</a>). It’s crucial to point out here that while these sites may check for the DNT signal, how well these sites adhere to and comply with the signal is unclear.
+While DNT was a pioneering idea in user privacy, it ultimately became obsolete as major advertisers and trackers chose to ignore DNT requests, and it was not enshrined in any legal frameworks. Despite being obsolete, our analysis shows that 19.8% of desktop websites, and 18.4% of mobile websites still support a DNT signal (source: <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/2024/privacy/number_of_websites_with_dnt.sql">SQL query</a>). It's crucial to point out here that while these sites may check for the DNT signal, how well these sites adhere to and comply with the signal is unclear.
 
 ### Global Privacy Control
 
@@ -416,7 +416,7 @@ Global Privacy Control (GPC) is a more recent initiative designed to give users 
 
 GPC allows users to signal that they do not want their data to be sold or shared with third parties, and companies are legally obligated to respect this signal under certain laws. Major browsers and privacy-focused extensions support GPC, and it is gaining traction as a more effective tool for user privacy.
 
-Analysis shows that on 55.84% of desktop sites and 54.9% of mobile sites the GPC signal can be accessed through JavaScript, which is significantly higher than the DNT signal. Another optional requirement of GPC is a well-known URL which resides at the /.well-known/gpc.json endpoint (relative to the website’s origin server URL). This resource is meant to indicate the website’s awareness and support of GPC, but at the same time it doesn’t guarantee that it abides by GPC. In our measurements, we find that only 0.27% of mobile sites and 0.26% of desktop sites have an accessible well-known endpoint.
+Analysis shows that on 55.84% of desktop sites and 54.9% of mobile sites the GPC signal can be accessed through JavaScript, which is significantly higher than the DNT signal. Another optional requirement of GPC is a well-known URL which resides at the /.well-known/gpc.json endpoint (relative to the website's origin server URL). This resource is meant to indicate the website's awareness and support of GPC, but at the same time it doesn't guarantee that it abides by GPC. In our measurements, we find that only 0.27% of mobile sites and 0.26% of desktop sites have an accessible well-known endpoint.
 
 {{ figure_markup(
   image="Presence-of-Global-Privacy-Control.png",
@@ -430,9 +430,9 @@ Analysis shows that on 55.84% of desktop sites and 54.9% of mobile sites the GPC
 
 ### California Consumer Privacy Act
 
-The California Consumer Privacy Act (CCPA), enacted in 2018, is one of the most significant privacy laws passed in the United States. It grants California residents rights over their personal data, including the right to know what data is being collected, the right to request deletion of their data, and the right to opt out of the sale of their data. CCPA has had a profound impact on the web, as companies across the globe must comply if they collect or process data from California residents. This has led to the introduction of “Do Not Sell My Info” links on many websites and increased awareness around data privacy in the U.S.
+The California Consumer Privacy Act (CCPA), enacted in 2018, is one of the most significant privacy laws passed in the United States. It grants California residents rights over their personal data, including the right to know what data is being collected, the right to request deletion of their data, and the right to opt out of the sale of their data. CCPA has had a profound impact on the web, as companies across the globe must comply if they collect or process data from California residents. This has led to the introduction of "Do Not Sell My Info" links on many websites and increased awareness around data privacy in the U.S.
 
-<a hreflang="en" href="https://www.oag.ca.gov/privacy/ccpa">Under the law</a>, any business that does business in California and meets certain size thresholds must provide a way for users to opt-out of the selling or sharing of their personal information. To comply with the law, the California Attorney General’s office <a hreflang="en" href="https://www.oag.ca.gov/privacy/ccpa/icons-download">recommends</a> placing a link on the business’ homepage with the text “Do Not Sell My Personal Information” and a standardized icon. Building on <a hreflang="en" href="https://petsymposium.org/popets/2022/popets-2022-0030.pdf">prior work</a> that identified a common set of CCPA link phrases, we conducted an analysis of the prevalence of these links across sites according to their popularity level.
+<a hreflang="en" href="https://www.oag.ca.gov/privacy/ccpa">Under the law</a>, any business that does business in California and meets certain size thresholds must provide a way for users to opt-out of the selling or sharing of their personal information. To comply with the law, the California Attorney General's office <a hreflang="en" href="https://www.oag.ca.gov/privacy/ccpa/icons-download">recommends</a> placing a link on the business' homepage with the text "Do Not Sell My Personal Information" and a standardized icon. Building on <a hreflang="en" href="https://petsymposium.org/popets/2022/popets-2022-0030.pdf">prior work</a> that identified a common set of CCPA link phrases, we conducted an analysis of the prevalence of these links across sites according to their popularity level.
 
 {{ figure_markup(
   image="Prevalence-of-CCPA-Links-on-Website-Homepages.png",
@@ -450,7 +450,7 @@ However, the rate of links among the top-1K websites is only 7.19%, which is qui
 
 One limitation of our crawl is that it is geographically distributed, and as such we cannot accurately account for websites that dynamically show a CCPA link only to visitors in California. Therefore, our results likely underestimate the prevalence of these links. However, it is important to note that, as per <a hreflang="en" href="https://petsymposium.org/popets/2022/popets-2022-0030.pdf">prior research</a> conducted in 2022, only 17% of CCPA links were dynamically hidden.
 
-Finally, we examine which phrasing is most commonly used in CCPA links. The majority of sites use variants of the phrase recommended under CCPA , “do not sell my personal information”. However, a significant number of sites also contain links titled “your privacy choices”, whose implication is less clear. This may make it more difficult for users to opt-out on these sites.
+Finally, we examine which phrasing is most commonly used in CCPA links. The majority of sites use variants of the phrase recommended under CCPA , "do not sell my personal information". However, a significant number of sites also contain links titled "your privacy choices", whose implication is less clear. This may make it more difficult for users to opt-out on these sites.
 
 {{ figure_markup(
   image="Top-10-Phrases-in-CCPA-Links.png",
