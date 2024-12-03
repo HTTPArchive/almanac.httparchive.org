@@ -445,12 +445,12 @@ The differences here are a bit less clear than a few years ago though; in 2021, 
 
 However, now that we have more resources sharing a single underlying connection, that means that we somehow need to decide what gets downloaded first as we typically don't have enough bandwidth to just download everything in one big parallel flow. This "resource scheduling" is governed by a "prioritization mechanism" in HTTP/2 and HTTP/3. How this really works under the hood is a bit too complex to really dig into here however, so we will focus on the basics you need to understand the Fetch Priority API (more details can be found in <a hreflang="en" href="https://calendar.perfplanet.com/2022/http-3-prioritization-demystified/">blogposts</a>, [talks](https://www.youtube.com/watch?v=MV034VqHv5Q), <a hreflang="en" href="https://jherbots.info/public_media/research/anrw2024_h3-eps-in-the-wild_authorversion.pdf">academic papers</a> and of course, [web.dev](https://web.dev/articles/fetch-priority#effects)).
 
-In general, the browser will assign each request a _priority_: an indication of how important it is to the page load. For example, the HTML document and render-blocking CSS in the `<head>` might get "highest" priority, while less critical resources (such as images in the `<body>` or JS tagged as `async` or `defer`) might get "low". When the server then receives multiple requests from the browser in parallel, it knows in which order to reply: from highest to lowest priority, and following the request order for resources with the same priority value.
+In general, the browser will assign each request a _priority_: an indication of how important it is to the page load. For example, the HTML document and render-blocking CSS in the `<head>` might get `highest` priority, while less critical resources (such as images in the `<body>` or JS tagged as `async` or `defer`) might get `low`. When the server then receives multiple requests from the browser in parallel, it knows in which order to reply: from highest to lowest priority, and following the request order for resources with the same priority value.
 
 {{ figure_markup(
   image="fetch-priority-example.png",
   caption="Fetch Priority API example to improve image loading behaviour in a carousel component.",
-  description="Screenshot showing a Fetch Priority API example using the value 'high' to increase priority of the first image in an image carousel, while using 'low' to decrease the priority of the other images that are hidden at the start.",
+  description="Screenshot showing a Fetch Priority API example using the value `high` to increase priority of the first image in an image carousel, while using `low` to decrease the priority of the other images that are hidden at the start.",
   width=1234,
   height=512
   )
@@ -507,7 +507,7 @@ In other cases, preload DOES seem to "change" the priority. For example, the cas
   sql_file="preload_as_values_fetchpriority.sql"
 ) }}
 
-We looked at how people are combining `preload` with `fetchpriority` in our dataset. Of all desktop pages with preloads using `fetchpriority` (about 2% of all desktop pages), an impressive 73% are for images combined with `fetchpriority=high`. While this can indeed be a good idea for LCP images, it does have some rough edges and [can be a footgun if used incorrectly](https://youtu.be/p0lFyPuH8Zs?t=2135) at the top of the `<head>`, actually delaying JS lower down the document. For this reason, nowadays I even recommend just not preloading the LCP in favor of just having it in the HTML with `fetchpriority=high` on the `<img>` directly.
+We looked at how people are combining `preload` with `fetchpriority` in our dataset. Of all desktop pages with preloads using `fetchpriority` (about 2% of all desktop pages), an impressive 73% are for images with `fetchpriority=high`. While this can indeed be a good idea for LCP images, it does have some rough edges and [can be a footgun if used incorrectly](https://youtu.be/p0lFyPuH8Zs?t=2135) at the top of the `<head>`, actually delaying JS lower down the document. For this reason, nowadays I even recommend just not preloading the LCP in favor of just having it in the HTML with `fetchpriority=high` on the `<img>` directly.
 
 On the other end, 16% of these preloads are for scripts with `fetchpriority=low`, indicating at least some webmasters (what is this, 2005?!) are aware of potential issues with `async`/`defer` there and try to prevent them. For styles, people don't really seem to know what they want (or use cases are diverse), as 3% is loaded as `high` and 5% as `low`. Note that a lot of these nuances are also discussed on [web.dev](https://web.dev/articles/fetch-priority?hl=en#use-cases), so make sure to read up on things there.
 
