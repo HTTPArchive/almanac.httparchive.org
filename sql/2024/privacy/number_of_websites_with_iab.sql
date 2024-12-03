@@ -1,4 +1,5 @@
 # Counts of pages with IAB Frameworks
+# TODO: check presence of multiple frameworks per page
 
 WITH privacy_custom_metrics_data AS (
   SELECT
