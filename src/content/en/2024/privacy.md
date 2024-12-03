@@ -38,7 +38,7 @@ Unfortunately, trackers engage in an arms-race with privacy-enhancing technologi
 
 **Summary of research.** In this chapter, we provide an overview of online tracking (including the mechanism used for online tracking, such as cookies and browser fingerprinting), privacy protections provided by the browsers to eliminate some privacy issues by design (e.g., User-Agent Client Hints), techniques used by online trackers to bypass privacy-protections (e.g., bounce tracking), and adoption of protections offered to users under data protection regulations (e.g., CCPA adoption by websites).
 
-## Online Tracking
+## Online tracking
 
 {{ figure_markup(
   image="Distribution-of-trackers-per-page.png",
@@ -73,7 +73,7 @@ Figure 12.1 provides the distribution of prevalence of online tracking domains. 
   )
 }}
 
-##### Third-Party Cookies
+##### Third-party cookies
 
 {{ figure_markup(
   image="top-third-party-cookie-origins.png",
@@ -100,7 +100,7 @@ Cloudflare’s cookie, \_\_cf\_bm, is used to “<a hreflang="en" href="https://
   )
 }}
 
-##### First-Party Cookies
+##### First-party cookies
 
 {{ figure_markup(
   image="top-first-party-cookie-names.png",
@@ -116,11 +116,11 @@ When measuring common first-party cookies, we see extensive evidence of analytic
 
 [Cookies chapter](./cookies) further describes the details and usage trends of cookies.
 
-### Stateless Tracking
+### Stateless tracking
 
 In contrast to stateful tracking, where identifiers are stored in the browser, in stateless tracking, identifiers are generated at runtime. These identifiers often depend on unique characteristics of the user’s device or browser. Although this method may be less reliable than stateful tracking, it is typically more difficult to identify and block.
 
-#### Browser Fingerprinting
+#### Browser fingerprinting
 
 Browser fingerprinting is one of the most common stateless tracking techniques. To conduct browser fingerprinting, trackers use device configuration information exposed by the browser through JavaScript APIs (e.g., Canvas) and HTTP headers (e.g., User-Agent).
 
@@ -152,7 +152,7 @@ While we detect the prevalence of well-known fingerprinting vendors, there are s
 
 Figure 12.5 presents the distribution of commonly used fingerprinting scripts on websites. We find a mixture of scripts that are primarily used for tracking, and scripts that also have a non-tracking purpose. Recaptcha, the most common script, is <a hreflang="en" href="https://media.kasperskycontenthub.com/wp-content/uploads/sites/63/2017/11/21031220/asia-16-Sivakorn-Im-Not-a-Human-Breaking-the-Google-reCAPTCHA-wp.pdf">known to use fingerprinting</a> to separate humans from bots. Google Ads and Yandex Metrika are also primarily tracking scripts. However, other scripts, such as the Google Maps API and Youtube embed API, also have a non-tracking purpose, and so their usage of these APIs may have purposes other than fingerprinting. Further manual analysis is required to confirm whether these scripts are actually performing fingerprinting.
 
-## Evading Tracking Protections
+## Evading tracking protections
 
 As tracking protections are becoming common on web browsers, e.g., third-party blocking by cookies, trackers are increasingly exploring mechanisms to bypass them. These methods exploit browser functionality and DNS configurations, enabling persistent tracking even as privacy measures become more stringent.
 
@@ -258,9 +258,9 @@ Our analysis reveals that \`strict-origin-when-cross-origin\` is the most common
 
 The next most commonly deployed option is \`no-referrer-when-downgrade\`, which does not include the Referer header on downgrade requests, that is, HTTP requests initiated on an HTTPS-enabled page. Unfortunately, this still leaks the page that the user is visiting in most scenarios — in HTTPS-enabled requests.
 
-### Privacy-related Origins Trials
+### Privacy-related origins trials
 
-Origin trials allow website developers to test new features released by web browsers (e.i., Chrome or FireFox), e.g., browser APIs. Once website developers register in origin trials, the new browser features are made available to all their users. Since web browsers are increasingly deploying privacy-enhancing features, such as eliminating third-party cookies, we next analyze whether website developers are participating in privacy-related origin trials to assess their readiness for the upcoming privacy-enhancing features in browsers.
+Origin trials allow website developers to test new features released by web browsers (Chrome or FireFox) such as new browser APIs. Once website developers register in origin trials, the new browser features are made available to all their users. Since web browsers are increasingly deploying privacy-enhancing features, such as eliminating third-party cookies, we next analyze whether website developers are participating in privacy-related origin trials to assess their readiness for the upcoming privacy-enhancing features in browsers.
 
 {{ figure_markup(
   image="Privacy-focused-Origin-Trials.png",
@@ -276,9 +276,9 @@ Among the privacy-enhancing features, we note that \`disableThirdPartyStoragePar
 
 It means that more than 10% of the websites are testing a feature that disables the benefits provided by the partitioning of third-party storage. Note that the [storage partitioning](https://developers.google.com/privacy-sandbox/cookies/storage-partitioning) applies to select storage related APIs that do not include cookies. The second most prevalent trial is <a hreflang="en" href="https://chromestatus.com/feature/4649601971257344">`FledgeBiddingAndAuctionServer`</a> with deployment over 6.62% of the mobile websites.
 
-## Privacy Sandbox Proposals
+## Privacy Sandbox proposals
 
-**Overview.** Privacy Sandbox, introduced by Google in 2019, contains several proposals that are aimed at curbing privacy-invasive practices on the web by aiming to strike a balance between user privacy and the continued viability of online advertising, which supports free content and services on the web. Among privacy sandbox proposals, Topics, Protected Audience, and Attribution Reporting have garnered significant attention because of their implications on targeted advertising, interest-based ad auctions, and privacy-preserving conversion tracking, respectively. In this section, we measure the adoption of these proposals to assess the readiness of websites and ad-tech (e.g., advertising platforms, tracking entities), in incorporating these proposals. Note that some of these proposals are not solely limited to Chrome, they are tested by other browsers such as Microsoft Edge.
+Privacy Sandbox, introduced by Google in 2019, contains several proposals that are aimed at curbing privacy-invasive practices on the web by aiming to strike a balance between user privacy and the continued viability of online advertising, which supports free content and services on the web. Among privacy sandbox proposals, Topics, Protected Audience, and Attribution Reporting have garnered significant attention because of their implications on targeted advertising, interest-based ad auctions, and privacy-preserving conversion tracking, respectively. In this section, we measure the adoption of these proposals to assess the readiness of websites and ad-tech (e.g., advertising platforms, tracking entities), in incorporating these proposals. Note that some of these proposals are not solely limited to Chrome, they are tested by other browsers such as Microsoft Edge.
 
 We first provide the prevalence of these APIs. We note that Topics API, Protected Audience API (previously known as FLEDGE), and Attribution Reporting API have the highest presence across different advertising publishing technologies. These are respectively present on 33%, 63%, and 27% of top-1K websites. Amongst top-10M websites, the presence drops to 7%, 63%, and 24%, respectively. Note that the presence does not imply the adoption of these APIs by websites.
 
@@ -308,7 +308,7 @@ Surprisingly, we also note that the Federated Learning of Cohorts API (**FLoC**)
   )
 }}
 
-### **Protected Audience API**
+### Protected Audience API
 
 Protected Audience API enables on-device auctions by the browser, to choose relevant ads from websites the user has previously visited. It eliminates the need for privacy-invasive data collection and pervasive tracking practices that are otherwise employed for remarketing and targeted advertising. This ensures that advertisers can serve relevant ads without needing to track users across sites. Amongst different method calls available for the **Protected Audience API,** we note that navigator.joinAdInterestGroup() is used the most by third-party services – 63% of top-10M websites. This API provides an ability to a third-party service to direct the browser to add an interest group to the browser's membership list for the visiting user. Recent research (<a hreflang="en" href="https://www.usenix.org/system/files/usenixsecurity24-calderonio.pdf">Calderonio et al.</a>, <a hreflang="en" href="https://arxiv.org/pdf/2405.08102">Long and Evans</a>) has discovered various privacy flaws with respect to the Protected Audience API. For example, third-party trackers can potentially link the interest groups of the users to an actual user using side-channels and track them across sites. Possibility of colluding entities further alleviate the associated privacy risk.
 
@@ -322,7 +322,7 @@ Protected Audience API enables on-device auctions by the browser, to choose rele
   )
 }}
 
-### **Attribution Reporting API**
+### Attribution Reporting API
 
 [Attribution Reporting API](https://developers.google.com/privacy-sandbox/private-advertising/attribution-reporting) (ARA) introduces a privacy-preserving mechanism for measuring ad conversions in Google Chrome. Its purpose is to enable attribution measurement by providing a capability to register attribution source and trigger on publisher and advertiser websites, respectively. Chrome records every conversion, and generates a differentially private report that is sent to authorized sources with a delay, preventing cross-site linking of the users. This mechanism works through the use of specific HTTP headers:
 
@@ -356,17 +356,17 @@ Since most of the popular browsers are competing with each other in the space of
 
 ***Limitation**: Note that by “presence”, we refer to the mere presence of privacy sandbox API calls in the JavaScript in this analysis. This does not mean that the APIs are guaranteed to be executed or used during the runtime.*
 
-### **Related Websites Set**
+### Related Websites Sets
 
 [Related Website Sets](https://developers.google.com/privacy-sandbox/cookies/related-website-sets) allow websites from the same owner to share cookies among themselves.The creation and submission of a Related Website Set is done at the moment through opening a pull request on a <a hreflang="en" href="https://github.com/GoogleChrome/related-website-sets">GitHub repository</a> that the Google project contributors check and merge if deemed valid. Websites that belong to the same related website set must also indicate it by placing a corresponding file at the <a hreflang="en" href="https://www.iana.org/assignments/well-known-uris/well-known-uris.xhtml">.well-known URI</a> `.well-known/related-website-set.json`.
 
 Chrome ships with a pre-loaded file containing related website sets validated by the Chrome team. At the moment of writing (version "2024.8.10.0"), there are 64 distinct related website sets. Each related website set contains a primary domain and a list of other domains related to the primary one under one of the following attributes: `associatedSites`, `servicesSites`, and/or `ccTLDs`. These 64 primary domains are each associated with secondary domains as part of their set: 60 sets contain `associatedSites`, 11 `servicesSites`, and 7 `ccTLDs` – see the [Cookies](./cookies#related-website-sets) chapter for more results.
 
-## Law and Policy
+## Law and policy
 
 With increasing scrutiny against online tracking, there have been numerous new laws and regulations passed to make online advertisers and trackers more accountable. In this section we look at the impact these regulations have had on privacy.
 
-### Consent Dialogs
+### Consent dialogs
 
 With the introduction of privacy regulations like the <a hreflang="en" href="https://gdpr-info.eu/">General Data Protection Regulation</a> (GDPR) in the European Union and <a hreflang="en" href="https://leginfo.legislature.ca.gov/faces/codes_displayText.xhtml?division=3.&part=4.&lawCode=CIV&title=1.81.5">California Consumer Privacy Act</a> (CCPA), websites require user consent to collect, share, and process user data, e.g., collection and usage of third-party tracking cookies. This has led to the widespread use of cookie consent dialogs, which notify users about the data collection practices and allow them to accept, reject, or customize their consent.
 
