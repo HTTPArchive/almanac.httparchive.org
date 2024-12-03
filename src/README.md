@@ -353,7 +353,7 @@ npm run stage
 You can redeploy the same staged url by passing it in with the `-s` parameter (note you also need the `--` separater to differentiate these script params from npm params):
 
 ```
-npm run stage -- -s 20211111t105151
+npm run stage -- -s privacy-2024
 ```
 
 ### Deploying production changes

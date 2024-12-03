@@ -696,6 +696,18 @@
     },
     "twitter": "ibelem"
   },
+  "bgstandaert": {
+    "avatar_url": "71239179",
+    "github": "bstandaert-wustl",
+    "linkedin": "ben-standaert-15580a1b8",
+    "name": "Benjamin Standaert",
+    "teams": {
+      "2024": [
+        "authors",
+        "analysts"
+      ]
+    }
+  },
   "bseymour": {
     "avatar_url": "6849494",
     "github": "bseymour",
@@ -2964,6 +2976,7 @@
   "max-ostapenko": {
     "avatar_url": "1611259",
     "github": "max-ostapenko",
+    "linkedin": "max-ostapenko",
     "name": "Max Ostapenko",
     "teams": {
       "2020": [
@@ -2977,10 +2990,11 @@
         "analysts"
       ],
       "2024": [
-        "developers"
+        "analysts",
+        "developers",
+        "authors"
       ]
     },
-    "twitter": "themax_o",
     "website": "https://maxostapenko.com"
   },
   "webmaxru": {
@@ -4927,5 +4941,41 @@
         "analysts"
       ]
     }
+  },
+  "umariqbal": {
+    "github": "UmarIqbal",
+    "name": "Umar Iqbal",
+    "teams": {
+      "2024": [
+        "authors"
+      ]
+    },
+    "twitter": "umaarr6",
+    "website": "https://www.umariqbal.com"
+  },
+  "haddiamjad": {
+    "avatar_url": "46374292",
+    "github": "hadiamjad",
+    "name": "Abdul Haddi Amjad",
+    "teams": {
+      "2024": [
+        "analysts",
+        "authors"
+      ]
+    },
+    "twitter": "haddiamjad",
+    "website": "https://hadiamjad.github.io/"
+  },
+  "shaoormunir": {
+    "avatar_url": "22539212",
+    "github": "shaoormunir",
+    "name": "Shaoor Munir",
+    "teams": {
+      "2024": [
+        "authors"
+      ]
+    },
+    "twitter": "Shaoor_Munir",
+    "website": "https://shaoormunir.com"
   }
 }
