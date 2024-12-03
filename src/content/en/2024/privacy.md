@@ -4,13 +4,13 @@ description: Privacy chapter of the 2024 Web Almanac covers the adoption and imp
 hero_alt: Hero image of Web Almanac characters with cameras, phones, and microphones acting like paparazzi while another character pulls back a shower curtain to reveal a web page behind it.
 authors: [Yash-Vekaria, bgstandaert, max-ostapenko, haddiamjad, ydimova, shaoormunir, ChrisBeeti, umariqbal]
 reviewers: [AlbertoFDR]
-editors: []
+editors: [tunetheweb]
 analysts: [max-ostapenko, Yash-Vekaria, bgstandaert, haddiamjad]
 translators: []
 Yash-Vekaria_bio: Yash Vekaria is a PhD candidate in Computer Science at <a hreflang="en" href="https://www.ucdavis.edu/">University of California, Davis</a>. He carries out web-based large-scale Internet measurements to study and improve the dynamics of web. Specifically, his research is focused at studying and bringing transparency to online tracking practices and user privacy issues.
 bgstandaert_bio: Benjamin Standaert is an M.Sc student in the Computer Science department at <a hreflang="en" href="https://wustl.edu/">Washington University in St. Louis</a>. He has prior experience developing ad-blocking software and privacy-enhancing technologies.
 max-ostapenko_bio: Max Ostapenko is a product manager in data and advertising with expertise in tracking, privacy, and web monetization. As a co-maintainer of the HTTP Archive, Max contributes to the accessibility of web insights.
-hadiaamjad_bio: <a hreflang="en" href="https://hadiamjad.github.io">Hadi Amjad</a> is a Ph.D. student in Computer Science at <a hreflang="en" href="https://cs.vt.edu/">Virginia Tech</a>. His research lies at the intersection of internet security, privacy, and program analysis. He specializes in JavaScript program analysis to identify code regions responsible for privacy and security violations on the internet. His work enhances privacy-focused tools, contributing to a safer and more secure web environment.
+haddiamjad_bio: <a hreflang="en" href="https://hadiamjad.github.io">Hadi Amjad</a> is a Ph.D. student in Computer Science at <a hreflang="en" href="https://cs.vt.edu/">Virginia Tech</a>. His research lies at the intersection of internet security, privacy, and program analysis. He specializes in JavaScript program analysis to identify code regions responsible for privacy and security violations on the internet. His work enhances privacy-focused tools, contributing to a safer and more secure web environment.
 ydimova_bio: Yana Dimova is a PhD student at DistriNet, KU Leuven, focusing on the user's perspective of privacy and how they can protect it on the web. Her research interests are online tracking, personal data leaks and privacy and data protection law.
 shaoormunir_bio: Shaoor Munir is a Ph.D. student in Computer Science at UC Davis, specializing in the analysis and development of privacy-enhancing technologies (PETs) and the policies that govern online data collection. His work seeks to advance privacy safeguards for netizens by balancing technological innovation with responsible data governance on the internet.
 ChrisBeeti_bio: Chris Böttger is a PhD candidate in Computer Science at the <a href="https://www.en.w-hs.de/">Westphalian University of Applied Science</a>. His research focuses on web and network security, primarily focusing on user privacy and tracking technologies.
@@ -68,7 +68,7 @@ The following figure provides the distribution of prevalence of online tracking 
 {{ figure_markup(
   image="top-whotracksme-trackers.png",
   caption="Top WhoTracksMe trackers.",
-  description="A bar chart showing the most-common trackers form the WhoTracksMe dataset, sorted by the percent of pages on which they appear. The top trackers are googleapis.com (69% desktop; 68% mobile), gstatic (67% desktop; 61% mobile), google_tag (60% desktop; 57% mobile), google_analytics (55% desktop; 52% mobile); google (48% desktop; 47% mobile), doubleclick (40% desktop; 38% mobile), facebook (25% desktop; 23% mobile), cloudflare (17% desktop; 17% mobile), youtube (11% desktop; 11% mobile).",
+  description="A bar chart showing the most-common trackers form the WhoTracksMe dataset, sorted by the percent of pages on which they appear. The top trackers are Google APIs (69% desktop; 68% mobile), Google Static (67% desktop; 61% mobile), Google Tag (60% desktop; 57% mobile), Google Analytics (55% desktop; 52% mobile); Google (48% desktop; 47% mobile), DoubleClick (40% desktop; 38% mobile), Facebook (25% desktop; 23% mobile), Cloudflare (17% desktop; 17% mobile), Youtube (11% desktop; 11% mobile).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=307091186&format=interactive",
   sheets_gid="1429146110",
   sql_file="number_of_websites_with_whotracksme_trackers.sql"
@@ -81,8 +81,8 @@ We note that Google-owned domains dominate the tracking landscape, with `googlea
 
 {{ figure_markup(
   image="top-third-party-cookie-origins.png",
-  caption="Top Third-Party Cookie Origins.",
-  description="A bar chart showing the most-common origins for third-party cookies, by the percent of pages on which they appear. Displayed values are doubleclick.net (27% desktop; 26% mobile), youtube.com (7% desktop; 6% mobile), google.com (5% desktop; 4% mobile), `www.google.com` (5% desktop; 4% mobile), linkedin.com (4% desktop; 4% mobile), bing.com (4% desktop; 3% mobile), yandex.ru (3% desktop; 5% mobile), adnxs.com (3% desktop; 3% mobile), mc.yandex.ru (3% desktop; 4% mobile), c.bing.com (3% desktop; 3% mobile), yandex.com (3% desktop; 4% mobile), mc.yandex.com (3% desktop; 4% mobile), adsrvr.org (3% desktop; 3% mobile), googleadservices.com (3% desktop; 3% mobile), yahoo.com (3% desktop; 3% mobile).",
+  caption="Top third-party cookie origins.",
+  description="A bar chart showing the most-common origins for third-party cookies, by the percent of pages on which they appear. Displayed values are `doubleclick.net` (27% desktop; 26% mobile), `youtube.com` (7% desktop; 6% mobile), `google.com` (5% desktop; 4% mobile), `www.google.com` (5% desktop; 4% mobile), `linkedin.com` (4% desktop; 4% mobile), `bing.com` (4% desktop; 3% mobile), `yandex.ru` (3% desktop; 5% mobile), `adnxs.com` (3% desktop; 3% mobile), `mc.yandex.ru` (3% desktop; 4% mobile), `c.bing.com` (3% desktop; 3% mobile), `yandex.com` (3% desktop; 4% mobile), `mc.yandex.com` (3% desktop; 4% mobile), `adsrvr.org` (3% desktop; 3% mobile), `googleadservices.com` (3% desktop; 3% mobile), `yahoo.com` (3% desktop; 3% mobile).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=542106842&format=interactive",
   sheets_gid="1230745383",
   sql_file="cookies_top_third_party_domains.sql"
@@ -93,8 +93,8 @@ Third-party cookies are the main mechanism used to track users on the web. Our m
 
 {{ figure_markup(
   image="top-third-party-cookie-names.png",
-  caption="Top Third-Party Cookie Names.",
-  description="A bar chart showing the most-common names for third-party cookies, by the percent of pages on which they appear. Displayed values are test_cookie (17% desktop; 16% mobile), IDE (14% desktop; 13% mobile), YSC (11% desktop; 9% mobile), VISITOR_INFO1_LIVE (11% desktop; 9% mobile), __cf_bm (8% desktop; 7% mobile), receive-cookie-deprecation (8% desktop; 6% mobile), NID (8% desktop; 7% mobile), uid (6% desktop; 8% mobile), i (6% desktop; 8% mobile), ar_debug (6% desktop; 6% mobile), c (5% desktop; 7% mobile), _GRECAPTCHA (5% desktop; 5% mobile), bcookie (4% desktop; 5% mobile), lidc (4% desktop; 5% mobile), MUID (4% desktop; 4% mobile).",
+  caption="Top third-party cookie names.",
+  description="A bar chart showing the most-common names for third-party cookies, by the percent of pages on which they appear. Displayed values are `test_cookie` (17% desktop; 16% mobile), `IDE` (14% desktop; 13% mobile), `YSC` (11% desktop; 9% mobile), `VISITOR_INFO1_LIVE` (11% desktop; 9% mobile), `__cf_bm` (8% desktop; 7% mobile), `receive-cookie-deprecation` (8% desktop; 6% mobile), `NID` (8% desktop; 7% mobile), `uid` (6% desktop; 8% mobile), i (6% desktop; 8% mobile), `ar_debug` (6% desktop; 6% mobile), `c` (5% desktop; 7% mobile), `_GRECAPTCHA` (5% desktop; 5% mobile), `bcookie` (4% desktop; 5% mobile), `lidc` (4% desktop; 5% mobile), `MUID` (4% desktop; 4% mobile).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=1978360808&format=interactive",
   sheets_gid="766149659",
   sql_file="cookies_top_third_party_names.sql"
@@ -108,7 +108,7 @@ Cloudflare's cookie, `__cf_bm`, is used to "<a hreflang="en" href="https://devel
 
 {{ figure_markup(
   image="top-first-party-cookie-names.png",
-  caption="Top First-Party Cookie Names.",
+  caption="Top first-party cookie names.",
   description="A bar chart showing the most-common names for first-party cookies, by the percent of pages on which they appear. Displayed values are `_ga` (49% desktop; 47% mobile), `_gid` (29% desktop; 27% mobile), `_fbp` (15% desktop; 14% mobile), `_gcl_au` (14% desktop; 13% mobile), `PHPSESSID` (13% desktop; 13% mobile), `_gat` (10% desktop; 9% mobile), `XSRF-TOKEN` (5% desktop; 5% mobile), `__eoi` (5% desktop; 5% mobile), `__gads` (5% desktop; 5% mobile), `__gpi` (5% desktop; 5% mobile), `sbjs_current` (4% desktop; 4% mobile), `sbjs_session` (4% desktop; 4% mobile), `sbjs_udata` (4% desktop; 4% mobile), `sbjs_first` (4% desktop; 4% mobile), `sbjs_first_add` (4% desktop; 4% mobile)",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=132012980&format=interactive",
   sheets_gid="452718378",
@@ -134,7 +134,7 @@ Browser fingerprinting is one of the most common stateless tracking techniques. 
 
 As browsers continue to expand the restrictions placed on cookies, fingerprinting has become an attractive alternative. <a hreflang="en" href="https://ieeexplore.ieee.org/abstract/document/9519502">Prior studies</a> have found that fingerprinting is now common and is increasing in prevalence. Here, we attempt to determine the most common sources of fingerprinting across the web.
 
-In our analysis, we first looked for the presence of well-known fingerprinting libraries. We found that, among the libraries tested, the most prevalent library used on the web to perform fingerprinting is FingerprintJS (<a hreflang="en" href="https://github.com/fingerprintjs/fingerprintjs">FingerprintJS</a>), which we found on 0.57% of all websites. Most likely this is because the library is open source, and has a free version. Compared to [our measurements from 2022](../2022/privacy#evasion-technique-fingerprinting), we find that the use of these fingerprinting libraries has slightly decreased; however, it is important to note that this year we crawl roughly ~4 million extra webpages.
+In our analysis, we first looked for the presence of well-known fingerprinting libraries. We found that, among the libraries tested, the most prevalent library used on the web to perform fingerprinting is FingerprintJS (<a hreflang="en" href="https://github.com/fingerprintjs/fingerprintjs">FingerprintJS</a>), which we found on 0.57% of all websites. Most likely this is because the library is open source, and has a free version. Compared to [our measurements from 2022](../2022/privacy#evasion-technique-fingerprinting), we find that the use of these fingerprinting libraries has slightly decreased; however, it is important to note that this year we crawl roughly ~4 million extra web pages.
 
 {{ figure_markup(
   image="Fingerprinting-usage.png",
@@ -150,7 +150,7 @@ While we detect the prevalence of well-known fingerprinting vendors, there are s
 
 {{ figure_markup(
   image="top-potential-fingerprinting-scripts.png",
-  caption="Top Scripts with Usages of Fingerprinting APIs.",
+  caption="Top Scripts with usages of fingerprinting APIs.",
   description="A bar chart showing scripts with usages of APIs commonly used for fingerprinting, ordered by the percentage of pages on which they appear. Each script is identified by its file name followed by the name of its associated company or product. Displayed values are `recaptcha__en.js` (Google Recaptcha) (10% desktop; 10% mobile), `aframe` (Google Recaptcha) (6% desktop; 6% mobile), `common.js` (Google Maps API) (5% desktop; 5% mobile), `www-embed-player.js` (Youtube) (4% desktop; 4% mobile), `base.js` (Youtube) (4% desktop; 4% mobile), `adsbygoogle.js` (Google) (3% desktop; 3% mobile), `wix-perf-measure.umd.min.js` (Wix) (3% desktop; 3% mobile), `modules.db8890ba82a7e392473f.js` (Hotjar) (2% desktop; 2% mobile), `group_5.2de88a07.chunk.min.js` (Wix) (2% desktop; 3% mobile), `group_3.b26b356a.chunk.min.js` (Wix) (2% desktop; 3% mobile), `tpaCommons.1b788520.chunk.min.js` (Wix) (2% desktop; 3% mobile), `Qj-BdKDLI_z.js` (Facebook) (2% desktop; 2% mobile), `tag.js` (Yandex Metrika) (2% desktop; 3% mobile), `main.cd290f82.bundle.min.js` (Wix) (2% desktop; 3% mobile), `thunderbolt-commons.35876736.bundle.min.js` (Wix) (2% desktop; 2% mobile)",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=928442588&format=interactive",
   sheets_gid="772204378",
@@ -177,7 +177,7 @@ In 2022, our analysis of CNAME cloaking relied on mapping first-party hostnames 
 {{ figure_markup(
   image="most-common-cname-domains.png",
   caption="Top 10 CNAME cloaking domains.",
-  description="The top 10 CNAME cloaking domains, revealing how often they appear on desktop and mobile webpages, as measured by the percentage of pages they are present on. The domains are primarily used for site analytics and advertising purposes, with `omtrdc.net` and `adobedc.net` related to Adobe Analytics being the two most prevalent cloaking domains on both platforms. omtrdc.net used appears on 0.031% of mobile pages and 0.04% on desktop. adobedc.net ranks second with 0.015% prevalence on mobile. The remaining domains each account for 0.01% or less of pages. Generally, these CNAME cloaking domains are more common on desktop than mobile web pages.",
+  description="The top 10 CNAME cloaking domains, revealing how often they appear on desktop and mobile web pages, as measured by the percentage of pages they are present on. The domains are primarily used for site analytics and advertising purposes, with `omtrdc.net` and `adobedc.net` related to Adobe Analytics being the two most prevalent cloaking domains on both platforms. omtrdc.net used appears on 0.031% of mobile pages and 0.04% on desktop. `adobedc.net` ranks second with 0.015% prevalence on mobile. The remaining domains each account for 0.01% or less of pages. Generally, these CNAME cloaking domains are more common on desktop than mobile web pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=1893938121&format=interactive",
   sheets_gid="1426844224",
   sql_file="most_common_cname_domains.sql"
@@ -238,11 +238,11 @@ We note that it is deployed by 15.8% of the top 1,000 and 5.1% of the top 10,000
 
 ### Referrer Policy
 
-By default, most user agents include a Referer header, which discloses to third parties the website—or even the specific page—from which a request originated. This occurs for any resource embedded within a webpage, as well as for requests triggered by a user clicking on a link. Consequently, third parties may gain insight into which website or page a particular user was visiting, leading to potential privacy concerns.
+By default, most user agents include a Referer header, which discloses to third parties the website—or even the specific page—from which a request originated. This occurs for any resource embedded within a web page, as well as for requests triggered by a user clicking on a link. Consequently, third parties may gain insight into which website or page a particular user was visiting, leading to potential privacy concerns.
 
 {{ figure_markup(
   image="Referrer-policy-implementations.png",
-  caption="Referrer policy implementations.",
+  caption="Referrer Policy implementations.",
   description="A bar chart showing the implemented method to referrer policy.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=613754677&format=interactive",
   sheets_gid="1555566389",
@@ -278,8 +278,8 @@ Origin trials allow website developers to test new features released by web brow
 
 {{ figure_markup(
   image="Privacy-focused-Origin-Trials.png",
-  caption="Privacy focused Origin Trials.",
-  description="The chart clearly shows that DisableThirdPartyStoragePartitioning has the highest adoption rate among both desktop and mobile users at slightly over 10%. `FledgeBiddingAndAuctionServer` follows with 6.62% adoption on mobile. `AttributionReportingCrossAppWeb` sees 2.1% usage. The remaining features—`Tpcd`, `SendFullUserAgentAfterReduction`, `PrivacySandboxAdsAPIs`, `DisableThirdPartySessionStoragePartitioning`, `InterestCohortAPI`, `UserAgentReduction`, and `TopLevelTpcd`—all show significantly lower adoption rates, ranging from 0.65% down to 0.01%. In general, participation in most of these privacy-focused Origin Trials is relatively low, suggesting they are still in early stages of experimentation and adoption. The higher usage of `DisableThirdPartyStoragePartitioning` and `FledgeBiddingAndAuctionServer` indicates potentially greater interest or maturity in those particular privacy-preserving technologies.",
+  caption="Privacy-focused origin trials.",
+  description="The chart clearly shows that DisableThirdPartyStoragePartitioning has the highest adoption rate among both desktop and mobile users at slightly over 10%. `FledgeBiddingAndAuctionServer` follows with 6.62% adoption on mobile. `AttributionReportingCrossAppWeb` sees 2.1% usage. The remaining features—`Tpcd`, `SendFullUserAgentAfterReduction`, `PrivacySandboxAdsAPIs`, `DisableThirdPartySessionStoragePartitioning`, `InterestCohortAPI`, `UserAgentReduction`, and `TopLevelTpcd`—all show significantly lower adoption rates, ranging from 0.65% down to 0.01%. In general, participation in most of these privacy-focused origin trials is relatively low, suggesting they are still in early stages of experimentation and adoption. The higher usage of `DisableThirdPartyStoragePartitioning` and `FledgeBiddingAndAuctionServer` indicates potentially greater interest or maturity in those particular privacy-preserving technologies.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=1221242964&format=interactive",
   sheets_gid="1174105425",
   sql_file="number_of_websites_with_related_origin_trials.sql"
@@ -302,7 +302,7 @@ Google's Topics proposal works by assigning a small set of high-level topics to 
 
 {{ figure_markup(
   image="Topics-API-Presence.png",
-  caption="Topics API Presence.",
+  caption="Topics API presence.",
   description="A bar chart showing the usage of topic API on pages by rank.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=1967446286&format=interactive",
   sheets_gid="2114689864",
@@ -314,7 +314,7 @@ Since this API can be deployed both through the HTTP headers and JavaScript, we 
 
 {{ figure_markup(
   image="FLoC-API-Presence.png",
-  caption="FLoC API Presence.",
+  caption="FLoC API presence.",
   description="A bar chart showing the usage of FLoC API on pages by rank.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=89328056&format=interactive",
   sheets_gid="2114689864",
@@ -330,7 +330,7 @@ The Protected Audience API enables on-device auctions by the browser, to choose 
 
 {{ figure_markup(
   image="Protected-Audience-(FLEDGE)-API-Presence.png",
-  caption="Protected Audience (FLEDGE) API Presence.",
+  caption="Protected Audience (FLEDGE) API presence.",
   description="A bar chart showing the protected audience API presence on pages by rank.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=616049578&format=interactive",
   sheets_gid="2114689864",
@@ -354,7 +354,7 @@ From our analysis, we observe that twice as many third parties are registering t
 
 {{ figure_markup(
   image="Attribution-Reporting-API-Presence.png",
-  caption="Attribution Reporting API Presence.",
+  caption="Attribution Reporting API presence.",
   description="A bar chart showing the attribution reporting API presence on pages by rank.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=855872461&format=interactive",
   sheets_gid="2114689864",
@@ -366,7 +366,7 @@ Since most of the popular browsers are competing with each other in the space of
 
 {{ figure_markup(
   image="ARA-Destination-registration.png",
-  caption="ARA Destination registration.",
+  caption="ARA destination registration.",
   description="A bar chart showing the ARA destination registration on percentage of domains per rank.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=908490027&format=interactive",
   sheets_gid="618355658",
@@ -406,7 +406,7 @@ Our findings show that the TCF, along with other privacy frameworks, is widely i
   )
 }}
 
-The 2024 data reveals a shift in the privacy landscape compared [to 2022](../2022/privacy#iab-consent-frameworks). Firstly, the overall prevalence of IAB frameworks has increased. In 2022, the broadest IAB presence ("IAB all") was found on 4.4% of pages (desktop and mobile combined). In 2024, any TCF or USP framework appears on 5.8% of homepages. This suggests wider adoption of privacy standards, potentially driven by increased regulatory scrutiny and user awareness.
+The 2024 data reveals a shift in the privacy landscape compared [to 2022](../2022/privacy#iab-consent-frameworks). Firstly, the overall prevalence of IAB frameworks has increased. In 2022, the broadest IAB presence ("IAB all") was found on 4.4% of pages (desktop and mobile combined). In 2024, any TCF or USP framework appears on 5.8% of home pages. This suggests wider adoption of privacy standards, potentially driven by increased regulatory scrutiny and user awareness.
 
 Examining individual frameworks, TCF usage (any version) appears on 4.2% of pages, while USP stands alone on 3.3% of pages. 4.0% of pages use the latest version of TCF (v2), which also makes it the most prevalent version. TCF v2 with compliant setup (presence of vendor consent configuration) appears on a smaller subset, 1.7% of pages. The older TCF v1, which predates GDPR enforcement, is negligible at 0.2%.
 
@@ -431,7 +431,7 @@ Our analysis of Consent Management Platform (CMP) usage within the TCF v2 ecosys
 Do Not Track (DNT) was a browser-based privacy initiative introduced in the early 2010s. It allowed users to set a browser preference indicating that they did not wish to be tracked by websites. However, DNT failed to gain widespread adoption, largely because it was voluntary and lacked enforcement mechanisms.
 
 {{ figure_markup(
-  caption="Desktop pages still using the DNT (Do Not Track) HTTP Header",
+  caption="Desktop pages still using the DNT (Do Not Track) HTTP header",
   content="19.8%",
   classes="big-number",
   sheets_gid="1906789372",
@@ -463,12 +463,12 @@ Analysis shows that on 55.8% of desktop sites and 54.9% of mobile sites the GPC 
 
 The California Consumer Privacy Act (CCPA), enacted in 2018, is one of the most significant privacy laws passed in the United States. It grants California residents rights over their personal data, including the right to know what data is being collected, the right to request deletion of their data, and the right to opt out of the sale of their data. CCPA has had a profound impact on the web, as companies across the globe must comply if they collect or process data from California residents. This has led to the introduction of "Do Not Sell My Info" links on many websites and increased awareness around data privacy in the U.S.
 
-<a hreflang="en" href="https://www.oag.ca.gov/privacy/ccpa">Under the law</a>, any business that does business in California and meets certain size thresholds must provide a way for users to opt-out of the selling or sharing of their personal information. To comply with the law, the California Attorney General's office <a hreflang="en" href="https://www.oag.ca.gov/privacy/ccpa/icons-download">recommends</a> placing a link on the business' homepage with the text "Do Not Sell My Personal Information" and a standardized icon. Building on <a hreflang="en" href="https://petsymposium.org/popets/2022/popets-2022-0030.pdf">prior work</a> that identified a common set of CCPA link phrases, we conducted an analysis of the prevalence of these links across sites according to their popularity level.
+<a hreflang="en" href="https://www.oag.ca.gov/privacy/ccpa">Under the law</a>, any business that does business in California and meets certain size thresholds must provide a way for users to opt-out of the selling or sharing of their personal information. To comply with the law, the California Attorney General's office <a hreflang="en" href="https://www.oag.ca.gov/privacy/ccpa/icons-download">recommends</a> placing a link on the business' home page with the text "Do Not Sell My Personal Information" and a standardized icon. Building on <a hreflang="en" href="https://petsymposium.org/popets/2022/popets-2022-0030.pdf">prior work</a> that identified a common set of CCPA link phrases, we conducted an analysis of the prevalence of these links across sites according to their popularity level.
 
 {{ figure_markup(
-  image="Prevalence-of-CCPA-Links-on-Website-Homepages.png",
-  caption="Prevalence of CCPA Links on Website Homepages.",
-  description="A bar chart showing the prevalence of CCPA links on website homepages.",
+  image="Prevalence-of-CCPA-Links-on-Website-home-pages.png",
+  caption="Prevalence of CCPA links on website home pages.",
+  description="A bar chart showing the prevalence of CCPA links on website home pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=1672202318&format=interactive",
   sheets_gid="1223494608",
   sql_file="ccpa_prevalence.sql"
@@ -485,7 +485,7 @@ Finally, we examine which phrasing is most commonly used in CCPA links.
 
 {{ figure_markup(
   image="Top-10-Phrases-in-CCPA-Links.png",
-  caption="Top 10 Phrases in CCPA Links.",
+  caption="Top 10 phrases in CCPA links.",
   description="A bar chart showing the top 10 phrases in CCPA links.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=956353245&format=interactive",
   sheets_gid="1792311741",
@@ -498,7 +498,7 @@ The majority of sites use variants of the phrase recommended under CCPA , "do no
 
 ## Conclusion
 
-We find that online tracking is not just prevalent but almost ubiquitous, with 95% of desktop and 94% of mobile websites containing at least one tracker. Major companies like Google and Facebook dominate this landscape with presence on 68% and 23% of the webpages, respectively. We also observe that trackers utilize both stateful methods (like cookies and local storage) and stateless methods (like browser fingerprinting) to track users across the internet.
+We find that online tracking is not just prevalent but almost ubiquitous, with 95% of desktop and 94% of mobile websites containing at least one tracker. Major companies like Google and Facebook dominate this landscape with presence on 68% and 23% of the web pages, respectively. We also observe that trackers utilize both stateful methods (like cookies and local storage) and stateless methods (like browser fingerprinting) to track users across the internet.
 
 Trackers are continually developing sophisticated techniques to bypass privacy-enhancing efforts. Notably, methods such as CNAME cloaking and bounce tracking have emerged, allowing trackers to disguise themselves as first-party entities and exploit browser functionalities to persist in their tracking efforts.
 
