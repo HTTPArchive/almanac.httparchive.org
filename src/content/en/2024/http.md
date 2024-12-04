@@ -33,7 +33,7 @@ Conceptually, getting an idea of how widespread the adoption of HTTP/2 and HTTP/
 {{ figure_markup(
   image="http-version-per-website.png",
   caption="Adoption of HTTP versions as a percentage of website home pages.",
-  description="TODO",
+  description="Stacked bar chart showing HTTP version usage per website. For desktop, 22% of sites uses HTTP/1.1, 71% uses HTTP/2 and 7% uses HTTP/3. For mobile, 21% uses HTTP/1.1, 70% uses HTTP/2 and 9% uses HTTP/3.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQhHn7aWiJiMSVu3o872Lxr45NNZkG7jKa_MyL7aPwdga8gul19txh36PL2Ep4GRcaSYzpvLc-oc_xg/pubchart?oid=543150104&format=interactive",
   sheets_gid="1647649629",
   sql_file="h2_adoption_pages_reqs.sql"
@@ -46,7 +46,7 @@ As such, we see that only 21-22% of home pages are loaded over HTTP/1.1 in 2024,
 {{ figure_markup(
   image="http2-per-request.png",
   caption="Adoption of HTTP/2 and above as a percentage of requests.",
-  description="TODO",
+  description="Stacked bar chart showing HTTP/2+ adoption per request. On both desktop and mobile, 15% of requests are over HTTP/1.1 and 85% over HTTP/2.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQhHn7aWiJiMSVu3o872Lxr45NNZkG7jKa_MyL7aPwdga8gul19txh36PL2Ep4GRcaSYzpvLc-oc_xg/pubchart?oid=1786964395&format=interactive",
   sheets_gid="530915869",
   sql_file="h2_adoption_pages_reqs.sql"
@@ -67,7 +67,7 @@ These companies are typically at the forefront of implementing new standards and
 {{ figure_markup(
   image="http2-for-cdn.png",
   caption="Almost all traffic from CDNs is delivered over HTTP/2+.",
-  description="TODO",
+  description="Stacked bar chart showing HTTP/2 adoption for CDN requests. On both desktop and mobile, 4% of requests are over HTTP/1.1 and 96% over HTTP/2.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQhHn7aWiJiMSVu3o872Lxr45NNZkG7jKa_MyL7aPwdga8gul19txh36PL2Ep4GRcaSYzpvLc-oc_xg/pubchart?oid=1286609498&format=interactive",
   sheets_gid="687276140"
 ) }}
@@ -102,7 +102,7 @@ As discussed above, if the browser hasn't connected to a domain before, it will 
 {{ figure_markup(
   image="alt-svc-example.jpg",
   caption="`alt-svc` response header example.",
-  description="Screenshot showing the `alt-svc` HTTP response header supporting HTTP/3 on UDP port 443 with ALPN value `h3` and `max-age` of 26 hours for `www.akamai.com`",
+  description="Screenshot of the Chrome devtools networking panel, with the Headers tab showing the `alt-svc` HTTP response header supporting HTTP/3 on UDP port 443 with ALPN value `h3` and `max-age` of 26 hours for `www.akamai.com`",
   width=716,
   height=419
   )
@@ -121,7 +121,7 @@ Let's now look purely at how HTTP/3 support is being announced via `alt-svc` to 
 {{ figure_markup(
   image="http3-support-per-origin.png",
   caption="HTTP/3 support (via `alt-svc`) has increased steadily since 2022.",
-  description="TODO",
+  description="Bar chart showing the percentage of home pages that announce HTTP/3 support via the alt-svc response header over time. In 2022, 18% of both desktop and mobile pages signaled HTTP/3 support, up to 20% for desktop and 21% for mobile in 2023, and 26% for desktop and 28% for mobile in 2024.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQhHn7aWiJiMSVu3o872Lxr45NNZkG7jKa_MyL7aPwdga8gul19txh36PL2Ep4GRcaSYzpvLc-oc_xg/pubchart?oid=458096579&format=interactive",
   sheets_gid="1569509568",
   sql_file="h3_usage_site.sql"
@@ -134,7 +134,7 @@ It is somewhat interesting to see that mobile home pages advertise a little bett
 {{ figure_markup(
   image="http3-support-by-cdn-use.png",
   caption="HTTP/3 support is driven mainly by CDNs.",
-  description="TODO",
+  description="Stacked bar chart showing which percentage of HTTP/3 requests came from a CDN or not. For desktop, only 14% of HTTP/3 requests was not served from a CDN, while for mobile this was 15%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQhHn7aWiJiMSVu3o872Lxr45NNZkG7jKa_MyL7aPwdga8gul19txh36PL2Ep4GRcaSYzpvLc-oc_xg/pubchart?oid=340546380&format=interactive",
   sheets_gid="880813564",
   sql_file="h3_support_from_cdn.sql"
@@ -203,7 +203,7 @@ A full discussion on SVCB would take too much time here however, so we will focu
 {{ figure_markup(
   image="dns-https-example.jpg",
   caption="DNS HTTPS resource record example.",
-  description="Screenshot showing a DNS HTTPS record listing alpns HTTP/3 and h2, and providing both an ipv4hint and ipv6hint for blog.cloudflare.com",
+  description="Screenshot from the `dig` command line tool showing a DNS HTTPS record listing alpns `h3` and `h2`, and providing both an ipv4hint and ipv6hint for `blog.cloudflare.com`",
   width=1415,
   height=62
   )
@@ -220,7 +220,7 @@ Let's now take a look at how much we've seen the new DNS records being used in t
 {{ figure_markup(
   image="dns-https-alpn-h3.png",
   caption="HTTP/3 support is regularly being announced through DNS HTTPS records",
-  description="TODO",
+  description="Stacked bar chart showing the percentage of home pages that announce HTTP/3 support via a DNS HTTPS record. On Desktop, 9% of pages used a DNS HTTPS record with the `h3` ALPN token set, while 91% used either no DNS HTTPS record at all or one without the `h3` ALPN token set. On mobile, 10% of pages used an HTTP/3-capable DNS HTTPS record.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQhHn7aWiJiMSVu3o872Lxr45NNZkG7jKa_MyL7aPwdga8gul19txh36PL2Ep4GRcaSYzpvLc-oc_xg/pubchart?oid=315333305&format=interactive",
   sheets_gid="653397334",
   sql_file="dns_https_svcb_usage.sql"
@@ -299,7 +299,7 @@ Firstly, there are the "[Resource Hints](https://web.dev/learn/performance/resou
 {{ figure_markup(
   image="resource_hint_usage.png",
   caption="Resource Hint usage is quite high in our dataset, especially for dns-prefetch and preconnect.",
-  description="TODO",
+  description="Bar chart showing the percentage of pages using Resource Hints for 5 specific hint types. `dns-prefetch` is used on 33% of all mobile pages (32% for desktop), `preconnect` is used on 28% of pages (desktop and mobile), `preload` is used on 19% of pages (desktop and mobile), `prefetch` on 6% and `modulepreload` on 1%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQhHn7aWiJiMSVu3o872Lxr45NNZkG7jKa_MyL7aPwdga8gul19txh36PL2Ep4GRcaSYzpvLc-oc_xg/pubchart?oid=1911615919&format=interactive",
   sheets_gid="1668151954",
   sql_file="resource_hint_usage.sql"
@@ -344,7 +344,7 @@ As we saw above, about 20% of all pages utilize `preload`, and because you have 
 {{ figure_markup(
   image="preload_as_values.png",
   caption="Preload is typically used for fonts, stylesheets and scripts.",
-  description="TODO",
+  description="Bar chart showing the percentage of pages using `preload` for 5 specific resource types. Fonts are preloaded on 8.6% of all desktop and mobile pages, stylesheets are preloaded on 7.6% of desktop and 7.5% of mobile pages, script preloads are found on 7.6% of desktop and 7.3% of mobile pages, images are preloaded on 3.7% of desktop and 3.8% of mobile pages, and fetch calls are preloaded on 0.2% of both mobile and desktop pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQhHn7aWiJiMSVu3o872Lxr45NNZkG7jKa_MyL7aPwdga8gul19txh36PL2Ep4GRcaSYzpvLc-oc_xg/pubchart?oid=1325658118&format=interactive",
   sheets_gid="36366381",
   sql_file="preload_as_values.sql"
@@ -389,7 +389,7 @@ This is especially useful in CDN setups where the HTML is not cached at the CDN 
 {{ figure_markup(
   image="early-hints-example.jpg",
   caption="103 Early Hints example.",
-  description="Screenshot showing a 103 Early Hints example which preconnects to two shopify-related domains, and preloads 4 CSS files",
+  description="Screenshot of the Chrome devtools networking panel showing a 103 Early Hints example with Link: headers that `preconnect` to two shopify-related domains, and `preload` 4 CSS files.",
   width=1262,
   height=504
   )
@@ -412,7 +412,7 @@ Support has also been somewhat spotty, with Safari and Firefox only adding suppo
 {{ figure_markup(
   image="early-hints-usage.png",
   caption="Out of 2.9% of all desktop pages that utilize 103 Early Hints, Shopify accounts for 2.6% of them.",
-  description="TODO",
+  description="Bar chart showing the percentage of pages using 103 Early Hints, indicating stats both for all pages in the dataset, and just for shopify-related domains. For all pages, Early Hints usage was 2.45% on mobile and 2.91% on desktop. For just shopify, Early Hints were used on 2.21% of mobile and 2.61% of desktop pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQhHn7aWiJiMSVu3o872Lxr45NNZkG7jKa_MyL7aPwdga8gul19txh36PL2Ep4GRcaSYzpvLc-oc_xg/pubchart?oid=1027755807&format=interactive",
   sheets_gid="174936099",
   sql_file="early_hints_usage.sql"
@@ -435,7 +435,7 @@ One of the main reasons to switch from HTTP/1.1 to HTTP/2 or HTTP/3 is that you 
 {{ figure_markup(
   image="connections-per-page.png",
   caption="HTTP/2 and HTTP/3 generally use fewer connections per page load than HTTP/1.1",
-  description="TODO",
+  description="Bar char showing amount of connections used per desktop page load, split between HTTP/1.1 and HTTP/2+, shown across 5 percentiles. At the 10th percentile, 6 HTTP/1.1 connections are used, compared to 3 HTTP/2+. At p25, this becomes 8 HTTP/1.1 connections and 6 HTTP/2+. At p50, the ratio is 13/10, changing to 20/17 at p75. At the 90th percentile, 32 connections are used over HTTP/1.1, compared to 26 over HTTP/2+.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQhHn7aWiJiMSVu3o872Lxr45NNZkG7jKa_MyL7aPwdga8gul19txh36PL2Ep4GRcaSYzpvLc-oc_xg/pubchart?oid=1814899570&format=interactive",
   sheets_gid="1328242863",
   sql_file="connections_per_page_load_dist.sql"
@@ -450,7 +450,7 @@ In general, the browser will assign each request a _priority_: an indication of 
 {{ figure_markup(
   image="fetch-priority-example.png",
   caption="Fetch Priority API example to improve image loading behaviour in a carousel component.",
-  description="Screenshot showing a Fetch Priority API example using the value `high` to increase priority of the first image in an image carousel, while using `low` to decrease the priority of the other images that are hidden at the start.",
+  description="Screenshot of a code editor showing a Fetch Priority API example using the value `high` to increase priority of the first image in an image carousel, while using `low` to decrease the priority of the other images that are hidden at the start.",
   width=1234,
   height=512
   )
@@ -467,7 +467,7 @@ It can be used on many things, not just images but also `<script>` and `<link>` 
 {{ figure_markup(
   image="fetch-priority-usage.png",
   caption="Fetch Priority API adoption has soared in 2024",
-  description="TODO",
+  description="Bar chart showing the percentage of pages using the Fetch Priority API over time. In 2022, just 1% of both desktop and mobile pages used the Fetch Priority API. This rose to 6% for desktop and 7% for mobile in 2023, and was 26% for both in 2024.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQhHn7aWiJiMSVu3o872Lxr45NNZkG7jKa_MyL7aPwdga8gul19txh36PL2Ep4GRcaSYzpvLc-oc_xg/pubchart?oid=480929557&format=interactive",
   sheets_gid="22134512",
   sql_file="fetchpriority_usage.sql"
