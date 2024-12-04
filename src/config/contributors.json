@@ -676,9 +676,10 @@
         "reviewers"
       ],
       "2024": [
+        "analysts",
+        "committee",
         "developers",
         "editors",
-        "committee",
         "reviewers"
       ]
     },
@@ -1026,13 +1027,15 @@
     "website": "https://chrisadams.me.uk"
   },
   "ChrisBeeti": {
+    "avatar_url": "32492572",
     "github": "ChrisBeeti",
     "name": "Chris Böttger",
     "teams": {
       "2024": [
         "analysts",
         "authors",
-        "committee"
+        "committee",
+        "reviewers"
       ]
     }
   },
@@ -3856,6 +3859,8 @@
   "rmarx": {
     "avatar_url": "2240689",
     "github": "rmarx",
+    "linkedin": "rmarx",
+    "bluesky": "programmingart.bsky.social",
     "name": "Robin Marx",
     "teams": {
       "2019": [
@@ -3869,6 +3874,9 @@
       ],
       "2022": [
         "reviewers"
+      ],
+      "2024": [
+        "authors"
       ]
     },
     "twitter": "programmingart",

@@ -42,24 +42,6 @@ CREATE TEMP FUNCTION getLoadingClasses(attributes STRING) RETURNS STRING LANGUAG
   }
 ''';
 
-CREATE TEMPORARY FUNCTION getResourceHints(linkNodes STRING)
-RETURNS STRUCT<preload BOOLEAN, prefetch BOOLEAN, preconnect BOOLEAN, prerender BOOLEAN, `dns-prefetch` BOOLEAN, `modulepreload` BOOLEAN>
-LANGUAGE js AS '''
-var hints = ['preload', 'prefetch', 'preconnect', 'prerender', 'dns-prefetch', 'modulepreload'];
-try {
-  var linkNodes = JSON.parse(linkNodes);
-  return hints.reduce((results, hint) => {
-    results[hint] = !!linkNodes.nodes.find(link => link.rel.toLowerCase() == hint);
-    return results;
-  }, {});
-} catch (e) {
-  return hints.reduce((results, hint) => {
-    results[hint] = false;
-    return results;
-  }, {});
-}
-''';
-
 WITH lcp_stats AS (
   SELECT
     client,
@@ -77,7 +59,7 @@ WITH lcp_stats AS (
     getFetchPriorityAttr(JSON_EXTRACT(custom_metrics, '$.performance.lcp_elem_stats.attributes')) AS fetchPriority,
     LOWER(JSON_EXTRACT_SCALAR(custom_metrics, '$.performance.lcp_resource.initialPriority')) AS initalPriority,
     LOWER(JSON_EXTRACT_SCALAR(custom_metrics, '$.performance.lcp_resource.priority')) AS priority,
-    getResourceHints(JSON_EXTRACT(custom_metrics, '$.almanac.link-nodes')) AS hints
+    CAST(JSON_EXTRACT(custom_metrics, '$.performance.is_lcp_preloaded') AS BOOL) AS preloaded
   FROM
     `httparchive.all.pages`
   WHERE
@@ -117,8 +99,8 @@ SELECT
   COUNTIF(initalPriority = 'high') / COUNT(DISTINCT page) AS pct_inital_priority_high,
   COUNTIF(initalPriority = 'high' AND fetchPriority = 'high') / COUNT(DISTINCT page) AS pct_inital_priority_high_and_fetchpriority,
   COUNTIF(loading = 'lazy' AND fetchPriority = 'high') / COUNT(DISTINCT page) AS pct_native_lazyload_and_fetch_priority,
-  COUNTIF(hints.preload) AS preload,
-  COUNTIF(hints.preload) / COUNT(DISTINCT page) AS pct_preload
+  COUNTIF(preloaded) AS preload,
+  COUNTIF(preloaded) / COUNT(DISTINCT page) AS pct_preload
 FROM
   lcp_stats
 JOIN (
