@@ -14,7 +14,7 @@ results: https://docs.google.com/spreadsheets/d/15038wEIoqY53Y_kR8U6QWM-PBO31ZyS
 featured_quote: Web performance is improving across loading times, interactivity, and visual stability. However, the gap between mobile and desktop experiences remains significant.
 featured_stat_1: 43%
 featured_stat_label_1: of mobile websites have good CWV scores when measured with INP, which is 5% lower than when measured with FID.
-featured_stat_2: 15%
+featured_stat_2: 16%
 featured_stat_label_2: of websites still use unnecessary lazy-loading on LCP elements.
 featured_stat_3: 13%
 featured_stat_label_3: the percentage by which good CWV scores are higher on secondary pages compared to home pages for mobile websites.
@@ -226,11 +226,26 @@ Typically, LCP element rendering takes a long time if the LCP element hasn't bee
 
 It's interesting to observe the different LCP challenges that websites across various datasets face. While an average website from the CrUX dataset struggles with image load delay, websites from the RUMvision dataset often face rendering delay issues. Nevertheless, all websites can benefit from using performance monitoring tools with Real User Monitoring (RUM), as these tools provide deeper insights into the performance issues experienced by real users.
 
+#### LCP static discoverability
+
+One of the most effective ways to optimize the LCP resource load delay is to ensure the resource can be discovered as early as possible. If you make the resource discoverable in the initial HTML document, it enables the LCP resource to begin downloading sooner.
+
+{{ figure_markup(
+  caption="The percent of mobile pages on which the LCP element was not statically discoverable.",
+  content="35%",
+  classes="big-number",
+  sheets_gid="200850285",
+  sql_file="lcp_preload_discoverable.sql"
+)
+}}
+
+Unfortunately, 35% of mobile websites do not have an LCP element that is statically discoverable in the document. While this is a slight improvement over the 39% we saw in 2022, it's still a significant blocker of LCP performance.
+
+As we'll explore in the following sections, there are three primary ways that websites prevent their LCP resources from being statically discoverable: lazy-loading, CSS background images, and client-side rendering.
+
 #### LCP lazy-loading
 
-One of the ways to optimize the LCP resource load delay is to ensure the resource can be discovered as early as possible. If you make the resource discoverable in the initial HTML document, it enables the LCP resource to begin downloading sooner. A big obstacle to LCP resource discoverability is lazy loading of the LCP resource.
-
-Overall, lazy-loading images is a helpful performance technique that should be used to postpone loading of non-critical resources until they are near the viewport. However, using lazy-loading on the LCP image will delay the browser from loading it quickly. That is why lazy-loading should not be used on LCP elements. In this section, we explore how many sites use this performance anti-pattern.
+A major obstacle to LCP resource discoverability is lazy-loading of the LCP resource. Overall, lazy-loading images is a helpful performance technique that should be used to postpone loading of non-critical resources until they are near the viewport. However, using lazy-loading on the LCP image will delay the browser from loading it quickly. That is why lazy-loading should not be used on LCP elements.
 
 {{ figure_markup(
   caption="The percent of mobile pages having image-based LCP that use native or custom lazy-loading on it.",
@@ -242,6 +257,8 @@ Overall, lazy-loading images is a helpful performance technique that should be u
 }}
 
 The good news is that in 2024, fewer websites are using this performance anti-pattern. In 2022, 18% of mobile websites were lazy-loading their LCP images. By 2024, this decreased to 16%.
+
+In terms of the specific lazy-loading technique used, 9.5% of mobile websites natively lazy-load their LCP images with the `loading=lazy` attribute. This is very similar to the 9.8% of sites we saw in 2022. However, the biggest improvement came from custom approaches. This year we see 6.7% of mobile websites using a custom approach, for example hiding the LCP image source behind the `data-src` attribute, which is down from 8.8% in 2022.
 
 #### CSS background images
 
@@ -274,6 +291,23 @@ The chart below illustrates the distribution of client-side generated content. I
 }}
 
 The percentage of pages with good LCP stays at approximately 60% for mobile devices until the amount of client-side generated content reaches 70%. After this threshold, the percentage of websites with good LCP starts to drop at a faster rate until ending at 40%. This suggests that a combination of server- and client-side generated content doesn't significantly impact how fast the LCP element gets rendered. However, fully rendering a website on the client side has a significantly negative impact on LCP.
+
+#### LCP prioritization
+
+Another one of the most effective ways to optimize the loading delay of LCP images is to declaratively prioritize them, using the `fetchpriority=high` attribute. Even if the LCP resource is statically discoverable by the browser's preload scanner, it might still not start loading immediately if there are other higher priority resources in line. Images are typically not considered high priority resources, so by providing this hint to the browser, it can adjust the LCP resource's priority accordingly, loading it sooner and reducing its load delay phase.
+
+{{ figure_markup(
+  caption="The percent of mobile pages that use `fetchpriority=high` on their LCP image.",
+  content="15%",
+  classes="big-number",
+  sheets_gid="731441901",
+  sql_file="lcp_async_fetchpriority.sql"
+)
+}}
+
+Adoption of LCP image prioritization skyrocketed to 15% of mobile websites in 2024, up from just 0.03% in 2022! This massive leap is thanks in large part to WordPress implementing [core support](https://make.wordpress.org/core/2023/07/13/image-performance-enhancements-in-wordpress-6-3/) for `fetchpriority` in 2023.
+
+As amazing as it is to see such rapid growth, there is still significant room for more sites to take advantage of this impactful one-line optimization.
 
 #### LCP size
 
