@@ -816,7 +816,7 @@ The Permissions Policy can also be defined individually for each embedded `<ifra
 <iframe src="https://example.com" allow="geolocation 'self'; camera *;"></iframe>
 ```
 
-Out of the 21.4 million `<iframe>` elements observed in the crawl, half included the `allow` attribute. This marks a significant increase compared to **even just the previous month**, when only 21% of `<iframe>` elements had the `allow` attribute - indicating that its usage has more than doubled in just one month. A plausible explanation for this rapid change is that one or several widely-used third-party services have propagated this update across their `<iframe>` elements. Given the ad-specific directives we now observe (displayed in the table below, row 1 and 3) - none of which were present in 2022 - it is likely that an ad service is responsible for this shift.
+Out of the 30.4 million `<iframe>` elements observed in the desktop crawl, 35.2% included the `allow` attribute. This marks a significant increase compared to **even just the previous month**, when only 14.4% of `<iframe>` elements had the `allow` attribute - indicating that its usage has more than doubled in just one month. A plausible explanation for this rapid change is that one or several widely-used third-party services have propagated this update across their `<iframe>` elements. Given the ad-specific directives we now observe (displayed in the table below, row 1 and 3) - none of which were present in 2022 - it is likely that an ad service is responsible for this shift.
 
 <figure>
   <table>
@@ -895,7 +895,7 @@ These risks can be curbed by employing the `sandbox` attribute on `<iframe>` ele
 <iframe src="https://example.com" sandbox="allow-scripts"></iframe>
 ```
 
-The `sandbox` attribute was observed in 28.4% and 27.5% of `<iframe>` elements for desktop and mobile respectively, a considerable drop from the 35.2% and 32% reported in 2022. Much like the sudden spike in `allow` attribute usage mentioned in the previous section, this decline could be attributed to a change in the modus operandi of an embedded service, where the `sandbox` attribute was omitted from the template `<iframe>`.
+The `sandbox` attribute was observed in 19.9% and 19.8% of `<iframe>` elements for desktop and mobile respectively, a slight drop from the 22.1% and 21.2% reported in 2022. Much like the sudden spike in `allow` attribute usage mentioned in the previous section, this decline could be attributed to a change in the modus operandi of an embedded service, where the `sandbox` attribute was omitted from the template `<iframe>`.
 
 {{ figure_markup(
   image="iframe-sandbox-directives.png",
@@ -1492,7 +1492,7 @@ While the presence of security policies suggests that website administrators are
 
 It's crucial for developers to understand where specific security policies should be defined. For instance, while a secure policy might be defined through a `<meta>` tag, it could be ignored by the browser if it's not supported there, potentially leaving the application vulnerable to attacks.
 
-Although the Content Security Policy can be defined using a `<meta>` tag, its `frame-ancestors` and `sandbox` directives are not supported in this context. Despite this, our observations show that 1.70% of pages on desktop and 1.26% on mobile incorrectly used the `frame-ancestors` directive in the `<meta>` tag. This is far lower for the disallowed `sandbox` directive, which was defined for less than 0.01%.
+Although the Content Security Policy can be defined using a `<meta>` tag, its `frame-ancestors` and `sandbox` directives are not supported in this context. Despite this, our observations show that 1.70% of pages that use CSP in a `<meta>` tag on desktop and 1.26% on mobile incorrectly used the `frame-ancestors` directive in the `<meta>` tag. This is far lower for the disallowed `sandbox` directive, which was defined for less than 0.01%.
 
 ### COEP, CORP and COOP confusion
 
