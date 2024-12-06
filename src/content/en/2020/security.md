@@ -621,7 +621,9 @@ In a similar fashion, by defining the `allow` attribute on `<iframe>` elements, 
 <figcaption>{{ figure_link(caption="Prevalence of Feature Policy directives on frames.", sheets_gid="547110187", sql_file="iframe_allow_directives.sql") }}</figcaption>
 </figure>
 
-The `Feature-Policy` response header has a fairly low adoption rate, at 0.60% of the desktop pages and 0.51% of mobile pages. On the other hand, Feature Policy was enabled on 19.5% of the 8 million frames that were found on the desktop pages. On mobile pages, 16.4% of the 9.2 million frames contained the `allow` attribute.
+The `Feature-Policy` response header has a fairly low adoption rate, at 0.60% of the desktop pages and 0.51% of mobile pages. On the other hand, Feature Policy was enabled on 11.8% of the 13.2 million frames that were found on the desktop pages. On mobile pages, 10.8% of the 13.8 million frames contained the `allow` attribute.
+
+<p class="note">An earlier version of this chapter reported incorrect values for the total number of frames and the percentage of frames with the `allow` attribute. More information can be found in this <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/pull/3912">GitHub PR</a>.</p>
 
 Based on the most commonly used directives in the Feature Policy on iframes, we can see that these are mainly used to control how the frames play videos. For instance the most prevalent directive, `encrypted-media`, is used to control access to the Encrypted Media Extensions API, which is required to play DRM-protected videos. The most common iframe origins with a Feature Policy were `https://www.facebook.com` and `https://www.youtube.com` (49.87% and 26.18% of the frames with a Feature Policy on desktop pages respectively).
 
@@ -629,7 +631,9 @@ Based on the most commonly used directives in the Feature Policy on iframes, we 
 
 By including an untrusted third-party in an iframe, that third-party can try to launch a number of attacks on the page. For instance, it could navigate the top page to a phishing page, launch pop-ups with fake anti-virus advertisements, etc.
 
-The `sandbox` attribute on iframes can be used to restrict the capabilities, and therefore also the opportunities for launching attacks, of the embedded web page. As embedding third-party content such as advertisements or videos is common practice on the web, it is not surprising that many of these are restricted via the `sandbox` attribute: 30.29% of the iframes on desktop pages have a `sandbox` attribute while on mobile pages this is 33.16%.
+The `sandbox` attribute on iframes can be used to restrict the capabilities, and therefore also the opportunities for launching attacks, of the embedded web page. As embedding third-party content such as advertisements or videos is common practice on the web, it is not surprising that many of these are restricted via the `sandbox` attribute: 18.3% of the iframes on desktop pages have a `sandbox` attribute while on mobile pages this is 21.9%.
+
+<p class="note">An earlier version of this chapter reported incorrect values for the percentage of frames with the `sandbox` attribute. More information can be found in this <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/pull/3912">GitHub PR</a>.</p>
 
 <figure>
   <table>
