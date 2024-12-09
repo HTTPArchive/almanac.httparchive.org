@@ -383,6 +383,15 @@
 
 {% block content%}
   <div id="skiptocontent"><a href="#maincontent">{{ self.skip_navigation() }}</a></div>
+  {% block announcement %}
+    {% if self.announcement_text %}
+      <aside class="banner">
+        <div class="container">
+          {{ self.announcement_text() }}
+        </div>
+      </aside>
+    {% endif %}
+  {% endblock %}
   {% block header %}
   <header id="header" class="alt-bg">
     <div class="container">
