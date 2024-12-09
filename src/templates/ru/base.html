@@ -18,6 +18,14 @@
 {% block intro_title %}Web Almanac{% endblock %}
 {% block intro_sub_title %}Ежегодный отчёт<br>HTTP Archive<br>о <b>состоянии веба</b>{% endblock %}
 
+{% block announcement_text %}
+<p lang="en">
+  Join our live stream for this year's edition on Tuesday, 10th December 2024 on
+  <a href="https://www.youtube.com/live/cdYR0ZmplIM">YouTube</a>,
+  or save the <a href="/static/live-stream.ics">calendar event</a>!
+</p>
+{% endblock %}
+
 {% block mission %}
 <p>
 Наша задача — объединить необработанные статистические данные и тенденции HTTP Archive вместе со знаниями веб-сообщества. Web Almanac — это всеобъемлющий отчёт о состоянии веба, подкреплённый реальными данными и подтверждённый авторитетными веб-экспертами. Издание {{ year }} года состоит из {{ supported_chapters | length }} {{ plural_ru(supported_chapters | length | int, ["главы", "глав", "глав"]) }}, охватывающих такие аспекты, как содержание страниц, пользовательские ощущения, публикация и распространение информации.
