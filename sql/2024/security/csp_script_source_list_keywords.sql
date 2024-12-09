@@ -3,7 +3,7 @@
 # Question: usage of default/script-src, and within the directive usage of strict-dynamic, nonce values, unsafe-inline and unsafe-eval
 SELECT
   client,
-  total_pages,
+  total_pages_with_csp,
   freq_csp,
   freq_default_script_src,
   SAFE_DIVIDE(freq_default_script_src, freq_csp) AS pct_default_script_src_over_csp,
@@ -22,7 +22,7 @@ SELECT
 FROM (
   SELECT
     client,
-    COUNT(0) AS total_pages,
+    COUNT(0) AS total_pages_with_csp,
     COUNTIF(csp_header IS NOT NULL) AS freq_csp,
     COUNTIF(REGEXP_CONTAINS(csp_header, '(?i)(default|script)-src')) AS freq_default_script_src,
     COUNTIF(REGEXP_CONTAINS(csp_header, '(?i)(default|script)-src[^;]+strict-dynamic')) AS freq_strict_dynamic,

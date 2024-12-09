@@ -632,7 +632,9 @@ Besides being used as an HTTP header, this feature can be used within `<iframe>`
   <iframe src="https://example.com" allow="geolocation 'src' https://example.com'; camera *"></iframe>
 ```
 
-18.9% of 11.5 million frames in mobile contained the `allow` attribute to enable permission or feature policies.
+12.6% of 17.4 million frames in mobile contained the `allow` attribute to enable permission or feature policies.
+
+<p class="note">An earlier version of this chapter reported incorrect values for the total number of frames and the percentage of frames with the `allow` attribute. More information can be found in this <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/pull/3912">GitHub PR</a>.</p>
 
 The following is a list of the top 10 `allow` directives that were detected in frames:
 
@@ -737,7 +739,9 @@ To mitigate these concerns the HTML specification (version 5) introduced the `sa
 
 The above chart of the 2022 data shows that more than 99% of websites with a `sandbox` attribute enable the `allow-scripts` and `allow-same-origin` permissions.
 
-Of desktop websites that embed an iframe, 35.2% also include the `sandbox` attribute.
+Of desktop websites that embed an iframe, 21.2% also include the `sandbox` attribute.
+
+<p class="note">An earlier version of this chapter reported the incorrect percentage of frames with the `sandbox` attribute. More information can be found in this <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/pull/3912">GitHub PR</a>.</p>
 
 We find that `Content-Security-Policy` headers which include a `sandbox` directive are at a mere 0.3% usage for mobile (desktop is similar at 0.4%) which may speak to the fact that this attribute is only applied on a per-case basis for the practice of embedding iframe content within pages, rather than ahead-of-time planning through a content security policy definition.
 
