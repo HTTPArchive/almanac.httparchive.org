@@ -32,9 +32,9 @@ CREATED:20241202T164742Z
 DESCRIPTION:The Web Almanac Live! stream is an event to celebrate the re
  lease of the 2024 edition of The HTTP Archive's Web Almanac. It will fea
  ture chapter authors as well as discussions around the data they uncover
- ed\, some they didn't and all things in between in this year's edition. 
- Join us for lively discussions as we go through results from 17 million 
- websites analyzed and 83 TB of data processed. Tuesday\, 10 December at 
+ ed\, some they didn't and all things in between in this year's edition.
+ Join us for lively discussions as we go through results from 17 million
+ websites analyzed and 83 TB of data processed. Tuesday\, 10 December at
  13h EST.
 DTEND;TZID=America/Toronto:20241210T143000
 DTSTAMP:20241203T132359Z
@@ -42,7 +42,7 @@ DTSTART;TZID=America/Toronto:20241210T130000
 LAST-MODIFIED:20241203T132349Z
 LOCATION:https://www.youtube.com/live/cdYR0ZmplIM?si=JSGEjt2Z5r-uFDgR
 SEQUENCE:0
-SUMMARY:Live Stream: The 2024 Web Almanac 
+SUMMARY:Live Stream: The 2024 Web Almanac
 TRANSP:OPAQUE
 UID:115E4869-3F22-468B-8CAB-03E06F87DF78
 URL;VALUE=URI:https://www.youtube.com/live/cdYR0ZmplIM?si=JSGEjt2Z5r-uFD
