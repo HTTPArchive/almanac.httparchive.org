@@ -260,6 +260,8 @@ The good news is that in 2024, fewer websites are using this performance anti-pa
 
 In terms of the specific lazy-loading technique used, 9.5% of mobile websites natively lazy-load their LCP images with the `loading=lazy` attribute. This is very similar to the 9.8% of sites we saw in 2022. However, the biggest improvement came from custom approaches. This year we see 6.7% of mobile websites using a custom approach, for example hiding the LCP image source behind the `data-src` attribute, which is down from 8.8% in 2022.
 
+Note that the `src` attribute of an LCP image wth `loading=lazy` is technically set and therefore discoverable in the static HTML, so we don't count it towards the static discoverability figure in the previous section. However, natively lazy-loaded images absolutely do contribute to resource load delays, albeit in a slightly different way than an image whose source is set by CSS or JavaScript, as we'll explore next.
+
 #### CSS background images
 
 {{ figure_markup(
