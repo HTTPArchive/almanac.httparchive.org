@@ -12,9 +12,9 @@ SELECT
   client,
   policy_type,
   hostname,
-  total_iframes,
+  total_iframes_with_allow_or_sandbox,
   COUNTIF(has_policy) AS freq,
-  COUNTIF(has_policy) / total_iframes AS pct
+  COUNTIF(has_policy) / total_iframes_with_allow_or_sandbox AS pct
 FROM (
   SELECT
     client,
@@ -37,7 +37,7 @@ FROM (
 JOIN (
   SELECT
     client,
-    SUM(ARRAY_LENGTH(JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._security'), '$.iframe-allow-sandbox'))) AS total_iframes
+    SUM(ARRAY_LENGTH(JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._security'), '$.iframe-allow-sandbox'))) AS total_iframes_with_allow_or_sandbox
   FROM
     `httparchive.all.pages`
   WHERE
@@ -49,7 +49,7 @@ USING
   (client)
 GROUP BY
   client,
-  total_iframes,
+  total_iframes_with_allow_or_sandbox,
   policy_type,
   hostname
 HAVING
