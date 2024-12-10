@@ -10,13 +10,13 @@ editors: [tunetheweb]
 translators: []
 rmarx_bio: Dr. Robin Marx is a web performance expert at Akamai Technologies. He studies the performance and operation of modern web protocols such as HTTP/2, HTTP/3, and QUIC. Robin often speaks about web performance at international conferences, making complex situations more understandable for the general public.
 results: https://docs.google.com/spreadsheets/d/1PfTZkbmgyLA3NmEICeCyxpMWgP7cKY7EsZl9RciE5S4/
-featured_quote: We can see that support for HTTP/3 has steadily risen, up to 26% (desktop) and 28% (mobile) in 2024.
+featured_quote: CDNs are the outsized driving force between the fast adoption of many of these new technologies. This is both "good" and "bad" for the ecosystem in my opinion.
 featured_stat_1: 85%
-featured_stat_label_1: Percentage of requests in the dataset that uses HTTP/2 or HTTP/3.
+featured_stat_label_1: Requests that use HTTP/2 or HTTP/3.
 featured_stat_2: 10%
-featured_stat_label_2: Percentage of pages in the dataset that indicate HTTP/3 support through DNS HTTPS records.
+featured_stat_label_2: Pages that indicate HTTP/3 support through DNS HTTPS records.
 featured_stat_3: 20%
-featured_stat_label_3: Percentage of pages in the dataset that preload at least one resource.
+featured_stat_label_3: Pages that preload at least one resource.
 doi: 10.5281/zenodo.14065825
 ---
 
@@ -52,7 +52,7 @@ As such, we see that only 21-22% of home pages are loaded over HTTP/1.1 in 2024,
   sql_file="h2_adoption_pages_reqs.sql"
 ) }}
 
-This is because many websites will load additional resources from a variety of third-party domains (for example analytics, plugins/tags, social media integrations, etc.). Due to their scale, these external services often either provide support for HTTP/2+ themselves or make use of a so-called CDN or Content Delivery Network (for example Akamai, Cloudflare or Fastly) that does it for them. In fact, CDNs are used very heavily on the observed websites in our dataset, with a whopping 54% of over 1.3 billion requests in our dataset being served from a CDN!
+This is because many websites will load additional resources from a variety of third-party domains (for example, analytics, plugins/tags, and social media integrations). Due to their scale, these external services often either provide support for HTTP/2+ themselves or make use of a so-called CDN or Content Delivery Network (for example Akamai, Cloudflare or Fastly) that does it for them. In fact, CDNs are used very heavily on the observed websites in our dataset, with a whopping 54% of over 1.3 billion requests in our dataset being served from a CDN!
 
 {{ figure_markup(
   caption="The percentage of over 1.3 billion requests in the Web Almanac dataset that use a CDN.",
@@ -228,7 +228,7 @@ Let's now take a look at how much we've seen the new DNS records being used in t
 
 This means that 9-10% (or over 20 million) of all considered pages in our dataset indicate HTTP/3 support through DNS. However, this does not automatically mean that HTTP/3 is also actually used by the browser. As we showed in the first image of this chapter, only about 7% (desktop) to 9% (mobile) of pages were actually loaded over HTTP/3. This is definitely in the same order of magnitude as the DNS HTTPS adoption, but not quite the same.
 
-This can have many different reasons, including networks blocking the newer protocol, HTTP/3 somehow losing the "race" to a HTTP/2 connection (we'll discuss this in the next section, [Other considerations](#other-considerations)), the DNS HTTPS record being misconfigured, the DNS response for the record being delayed, the HTTP/2 connection being reused due to <a hreflang="en" href="https://blog.cloudflare.com/connection-coalescing-with-origin-frames-fewer-dns-queries-fewer-connections/">connection coalescing</a>, etc. Still, it shows that this newer/alternative method of indicating HTTP/3 support early in the page loading process has strong potential to improve upon the `alt-svc` approach! This is especially true for our Web Almanac methodology, as we confirmed that 99% of all page loads observed over HTTP/3 were indeed triggered by the presence of DNS HTTPS records (the 1% discrepancy is a bit weird though, and a good topic for future analysis).
+This can have many different reasons, including: networks blocking the newer protocol, HTTP/3 somehow losing the "race" to a HTTP/2 connection (we'll discuss this in the next section, [Other considerations](#other-considerations)), the DNS HTTPS record being misconfigured, the DNS response for the record being delayed, the HTTP/2 connection being reused due to <a hreflang="en" href="https://blog.cloudflare.com/connection-coalescing-with-origin-frames-fewer-dns-queries-fewer-connections/">connection coalescing</a>. Still, it shows that this newer/alternative method of indicating HTTP/3 support early in the page loading process has strong potential to improve upon the `alt-svc` approach! This is especially true for our Web Almanac methodology, as we confirmed that 99% of all page loads observed over HTTP/3 were indeed triggered by the presence of DNS HTTPS records (the 1% discrepancy is a bit weird though, and a good topic for future analysis).
 
 It is also interesting to compare this to <a hreflang="en" href="https://www.netmeister.org/blog/https-rrs.html#current-use">similar research done by Jan Schaumann in October 2023</a>, who found that for over 100 million tested domains, only about 4% provided HTTPS records, which increased to a whopping 25%+ for the top 1 million domains on the Tranco list. He <a hreflang="en" href="https://www.netmeister.org/blog/https-rrs.html#iphints">concluded</a> that DNS HTTPS record adoption is "effectively driven by Cloudflare setting the records by default on all of their domains". This would be in-line with our previous findings that it is the big CDNs that drive new feature adoption, so let's see what our data says:
 
@@ -274,9 +274,9 @@ It will be interesting to track the use of DNS HTTPS and SVCB records in the com
 
 In practice, there is even more complexity in the protocol selection/connection setup process used by modern browsers.
 
-One example is an algorithm called [_Happy Eyeballs_](https://wikipedia.org/wiki/Happy_Eyeballs) (yes, really!), which describes how to test for and choose from several different options. This is used to decide between HTTP/2 and HTTP/3, but also IPv4 and IPv6—for which it was originally invented. This algorithm typically "races" different connections against each other and then picks the "winner" to continue the page load on-which means that we sometimes will still see HTTP/2 even though HTTP/3 is supported, if HTTP/2 wins the race. This data is not yet tracked in our dataset, so we don't really know how often this happens-though in practice this would also heavily depend on testing location and used network.
+One example is an algorithm called [_Happy Eyeballs_](https://wikipedia.org/wiki/Happy_Eyeballs) (yes, really!), which describes how to test for and choose from several different options. This is used to decide between HTTP/2 and HTTP/3, but also IPv4 and IPv6—for which it was originally invented. This algorithm typically "races" different connections against each other and then picks the "winner" to continue the page load on-which means that we sometimes will still see HTTP/2 even though HTTP/3 is supported, if HTTP/2 wins the race. This data is not yet tracked in our dataset, so we don't really know how often this happens-though in practice this would also heavily depend on testing location and the network used.
 
-Another example is the concept of <a hreflang="en" href="https://blog.cloudflare.com/connection-coalescing-with-origin-frames-fewer-dns-queries-fewer-connections/">_connection coalescing_</a> (which they really should have just called "connection reuse" in my opinion), which says that browsers should prefer to reuse an existing connection instead of opening a new one. In practice, if two domains (`a.com` and `b.com`) share the same TLS certificate, the browser can (and does) re-use an existing connection to `a.com` to fetch `b.com/main.js`. You can imagine [the headaches this gives](https://youtu.be/Ijtnt5iwKWQ?t=362) if `a.com` has HTTP/3 enabled and `b.com` does not... we did not yet analyze how often this happens in the Web Almanac dataset, but from personal experience debugging problems with this, I can assure you it's definitely out there!
+Another example is the concept of <a hreflang="en" href="https://blog.cloudflare.com/connection-coalescing-with-origin-frames-fewer-dns-queries-fewer-connections/">_connection coalescing_</a> (which they really should have just called "connection reuse" in my opinion), which says that browsers should prefer to reuse an existing connection instead of opening a new one. In practice, if two domains (`a.com` and `b.com`) share the same TLS certificate, the browser can (and often does) re-use an existing connection to `a.com` to fetch `b.com/main.js`. You can imagine [the headaches this gives](https://youtu.be/Ijtnt5iwKWQ?t=362) if `a.com` has HTTP/3 enabled and `b.com` does not... We did not yet analyze how often this happens in the Web Almanac dataset, but from personal experience debugging problems with this, I can assure you it's definitely out there!
 
 {{ figure_markup(
   caption="The percentage of pages that load resources from `cdn.shopify.com` that see _both_ HTTP/2 and HTTP/3 connections to that domain.",
@@ -296,7 +296,7 @@ Now that I've probably scared you away from ever looking into the internals of p
 
 As we've seen in the first part of this chapter, the adoption of HTTP/2 and HTTP/3 are on the rise, and that's a good thing (mostly). These new protocols implement a lot of performance and security best practices that have tangible benefits for end users. For developers however, the protocols and their features often remain a black box, as there are very few ways to tune them directly. You basically just tick a box on your CDN or server configuration, and hope the browser and server get it right.
 
-However, there are a few higher-level features (such as image lazy loading, `async`/`defer` javascript attributes, Resource Hints, the Fetch Priority API, etc.), that allow us to influence what happens on the network to an extent. Even though these are not technically always directly tied to HTTP as a protocol, they can have a major impact on how some protocol features (such as connection establishment and resource multiplexing) are used in practice, so we discuss some of them in this chapter.
+However, there are a few higher-level features (such as image lazy loading, `async`/`defer` javascript attributes, Resource Hints, the Fetch Priority API), that allow us to influence what happens on the network to an extent. Even though these are not technically always directly tied to HTTP as a protocol, they can have a major impact on how some protocol features (such as connection establishment and resource multiplexing) are used in practice, so we discuss some of them in this chapter.
 
 ### Resource Hints
 
