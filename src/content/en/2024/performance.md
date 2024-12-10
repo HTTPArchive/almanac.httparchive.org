@@ -241,7 +241,7 @@ One of the most effective ways to optimize the LCP resource load delay is to ens
 
 Unfortunately, 35% of mobile websites do not have an LCP element that is statically discoverable in the document. While this is a slight improvement over the 39% we saw in 2022, it's still a significant blocker of LCP performance.
 
-As we'll explore in the following sections, there are three primary ways that websites prevent their LCP resources from being statically discoverable: lazy-loading, CSS background images, and client-side rendering.
+As we'll explore in the following sections, there are three primary ways that websites prevent their LCP resources from being statically discoverable: lazy loading, CSS background images, and client-side rendering.
 
 #### LCP lazy-loading
 
