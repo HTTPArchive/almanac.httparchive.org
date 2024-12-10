@@ -1,6 +1,5 @@
 #standardSQL
 # Pages which had resources from domains with both h2 and h3 requests
-# Note this returns 0 rows at the moment
 #
 
 SELECT
@@ -26,8 +25,7 @@ GROUP BY
   date,
   client,
   page,
-  url_host,
-  protocol
+  url_host
 HAVING
   h2_requests > 0 AND
   h3_requests > 0
@@ -35,5 +33,4 @@ ORDER BY
   date,
   client,
   page,
-  url_host,
-  protocol
+  url_host
