@@ -305,7 +305,7 @@ Another one of the most effective ways to optimize the loading delay of LCP imag
 )
 }}
 
-Adoption of LCP image prioritization skyrocketed to 15% of mobile websites in 2024, up from just 0.03% in 2022! This massive leap is thanks in large part to WordPress implementing [core support](https://make.wordpress.org/core/2023/07/13/image-performance-enhancements-in-wordpress-6-3/) for `fetchpriority` in 2023.
+Adoption of LCP image prioritization skyrocketed to 15% of mobile websites in 2024, up from just 0.03% in 2022! This massive leap is thanks in large part to WordPress implementing <a hreflang="en" href="https://make.wordpress.org/core/2023/07/13/image-performance-enhancements-in-wordpress-6-3/">core support</a> for `fetchpriority` in 2023.
 
 As amazing as it is to see such rapid growth, there is still significant room for more sites to take advantage of this impactful one-line optimization.
 
