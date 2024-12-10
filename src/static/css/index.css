@@ -12,20 +12,6 @@ header.alt-bg {
   margin-bottom: -52.94em;
 }
 
-aside.banner {
-  background: #f7f779;
-  padding: 15px 0;
-  text-align: center;
-}
-
-aside.banner a {
-  color: #1a2b49;
-}
-
-aside.banner p {
-  margin: 0;
-}
-
 #maincontent {
   display: -ms-grid;
   display: grid;
