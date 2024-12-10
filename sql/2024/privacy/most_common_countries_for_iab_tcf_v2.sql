@@ -7,22 +7,22 @@
 WITH totals AS (
   SELECT
     client,
-    COUNT(0) AS total_websites
-  FROM `httparchive.all.pages`
+    COUNT(DISTINCT root_page) AS total_websites
+  FROM `httparchive.crawl.pages`
   WHERE
     date = '2024-06-01' AND
-    is_root_page = TRUE
+    JSON_TYPE(custom_metrics.privacy.iab_tcf_v2.data) = 'object'
   GROUP BY client
 ), cmps AS (
   SELECT
     client,
-    JSON_VALUE(custom_metrics, '$.privacy.iab_tcf_v2.data.publisherCC') AS publisherCC,
-    COUNT(0) AS number_of_pages
-  FROM `httparchive.all.pages`
+    --ANY_VALUE(custom_metrics.privacy.iab_tcf_v2.data) AS example,
+    STRING(custom_metrics.privacy.iab_tcf_v2.data.publisherCC) AS publisherCC,
+    COUNT(DISTINCT root_page) AS number_of_pages
+  FROM `httparchive.crawl.pages`
   WHERE
     date = '2024-06-01' AND
-    is_root_page = TRUE AND
-    JSON_VALUE(custom_metrics, '$.privacy.iab_tcf_v2.data.publisherCC') IS NOT NULL
+    JSON_TYPE(custom_metrics.privacy.iab_tcf_v2.data) = 'object'
   GROUP BY
     client,
     publisherCC
@@ -31,11 +31,11 @@ WITH totals AS (
 SELECT
   client,
   publisherCC,
-  number_of_pages / total_websites AS pct_pages,
-  number_of_pages
+  --example,
+  number_of_pages / total_websites AS pct_of_pages
 FROM cmps
 JOIN totals
 USING (client)
 ORDER BY
   client,
-  pct_pages DESC
+  number_of_pages DESC

@@ -18,8 +18,8 @@ featured_stat_1: 70%
 featured_stat_label_1: Pages with `<h1>` elements (of which 6% are empty).
 featured_stat_2: 2.7%
 featured_stat_label_2: Pages with `GPTBot` directives in `robots.txt`—the most common AI crawler found.
-featured_stat_3: 28%
-featured_stat_label_3: Desktop pages with invalid `<head>` element due to `<img>` elements.
+featured_stat_3: 10.9%
+featured_stat_label_3: Mobile pages with invalid `<head>` element.
 doi: 10.5281/zenodo.14245177
 ---
 
@@ -97,7 +97,7 @@ The vast majority of `robots.txt` files—97.82% of mobile crawls and 97.80% of 
 
 According to RFC 9309 standards, crawlers should limit the size of `robots.txt` files they look at, and the parsing limit must be at least <a hreflang="en" href="https://www.rfc-editor.org/rfc/rfc9309.html#name-limit">500 kiB</a>. A `robots.txt` file under that size should be fully parsed. Google, for example, [enforces the max limit at 500 kiB](https://developers.google.com/search/docs/crawling-indexing/robots/robots_txt#file-format). Only a tiny number of sites (just 0.06%) had `robots.txt` files over this limit. Directives found beyond that limit are ignored by the search engine.
 
-Interestingly, 1.59% of mobile crawls and 1.66% of desktop crawls returned a 0-sized `robots.txt` file. This is likely a configuration issue. Since it is not documented by the RFC 9303 specification or support documentation for popular search engine crawlers, it is unclear how this would be handled. If a site returns an empty response for `robots.txt`, a sensible approach would be to return a `robots.txt` file with appropriate rules or, if one wishes to restrict crawling, return a [`404 status code`](https://developer.mozilla.org/docs/Web/HTTP/Status/404) for the URL.
+Interestingly, 1.59% of mobile crawls and 1.66% of desktop crawls returned a 0-sized `robots.txt` file. This is likely a configuration issue. Since it is not documented by the RFC 9303 specification or support documentation for popular search engine crawlers, it is unclear how this would be handled. If a site returns an empty response for `robots.txt`, a sensible approach would be to return a `robots.txt` file with appropriate rules or, if one does not wish to restrict crawling, return a [`404 status code`](https://developer.mozilla.org/docs/Web/HTTP/Status/404) for the URL.
 
 #### `robots.txt` user agent usage
 
@@ -274,18 +274,18 @@ The impact of a prematurely closed `<head>` is often difficult to catch since th
 {{ figure_markup(
   image="pages-with-invalid-HTML-in-head.png",
   caption="Invalid HTML in `<head>`.",
-  description="A bar chart depicting 21.5% of desktop and 22.3% of mobile pages have invalid HTML elements in <head> of the page.",
+  description="A bar chart depicting 10.6% of desktop and 10.9% of mobile pages have invalid HTML elements in `<head>` of the page.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=792944292&format=interactive",
   sheets_gid="1932961327",
   sql_file="invalid-head-sites-2024.sql"
   )
 }}
 
-In 2024, 22.3% of mobile pages had `<head>` breaking invalid HTML elements. That represented a 98% increase from 2022's rate of 12.6%. Meanwhile, desktop pages with invalid HTML in the `<head>` increased from 12.7% in 2022 to 21.5% in 2024.
+In 2024, 10.9% of mobile pages had `<head>` breaking invalid HTML elements. That represented a 12% decrease from 2022's rate of 12.6%. Meanwhile, desktop pages with invalid HTML in the `<head>` decreased from 12.7% in 2022 to 10.6% in 2024.
 
 {{ figure_markup(
   caption="mobiles pages contained invalid HTML elements in the `<head>`",
-  content="22%",
+  content="10.9%",
   classes="big-number",
   sheets_gid="1932961327",
   sql_file="invalid-head-sites-2024.sql"
