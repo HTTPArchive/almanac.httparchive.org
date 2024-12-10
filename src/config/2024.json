@@ -157,8 +157,7 @@
           "part": "IV",
           "chapter_number": "20",
           "title": "HTTP",
-          "slug": "http",
-          "todo": true
+          "slug": "http"
         },
         {
           "part": "IV",
