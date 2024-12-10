@@ -609,6 +609,17 @@ The following best practices allow you to reduce, or even completely avoid CLS.
 One of the most common reasons for unexpected layout shifts is not preserving space for assets or incoming dynamic content. For example, adding `width` and `height` attributes on images is one of the easiest ways to preserve space and avoid shifts.
 
 {{ figure_markup(
+  content="66%",
+  caption="The percent of mobile pages that fail to set explicit dimensions on at least one image.",
+  classes="big-number",
+  sheets_gid="1674162543",
+  sql_file="cls_unsized_images.sql"
+  )
+}}
+
+66% of mobile pages have at least one unsized image, which is an improvement from 72% in 2022.
+
+{{ figure_markup(
   image="unsized-images-amount.png",
   caption="The number of unsized images per page.",
   description="Bar chart showing the number of unsized images per page by percentile for desktop and mobile devices. At the 10th and 25th percentiles, both desktop and mobile pages have 0 unsized images. At the 50th percentile, both desktop and mobile pages have 2 unsized images. At the 75th percentile, desktop pages have 10 unsized images, while mobile pages have 9. At the 90th percentile, desktop pages have 26 unsized images, and mobile pages have 23.",
