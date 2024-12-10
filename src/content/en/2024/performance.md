@@ -35,7 +35,7 @@ What's new this year?
 - [Long Animation Frames (LoAF)](https://developer.chrome.com/docs/web-platform/long-animation-frames) data is available for the first time, providing new insights into the reasons for poor INP.
 - As of this year, the Performance chapter also includes an analysis of the data for secondary pages in addition to home pages. This allows us to compare the home page with the secondary page performance.
 
-### Notes on Data Sources
+### Notes on data sources
 
 The HTTP Archive contains only lab performance data. In other words, it is data from a single website load event. This is useful but limited if we want to understand how users experience performance.
 
@@ -105,7 +105,7 @@ As of this year, secondary pages are available to compare with home page data.
 
 Secondary pages demonstrate significantly better CWV results than home pages. The percentage of the desktop secondary pages with good CWV is by 14 percentage points better than for home pages. For mobile websites, the difference is 13 percentage points. By looking at CWV data only, it is hard to identify what kind of performance experience is better. We will explore these aspects—layout shift, loading, and interactivity—in the corresponding sections.
 
-## Loading Speed
+## Loading speed
 
 People often refer to website loading speed as a single metric, but in fact, the loading experience is a multi-stage process. No single metric fully captures all aspects of what makes up loading speed. Every stage has an impact on the speed of a website.
 
@@ -194,7 +194,7 @@ Several stages of processing must occur before the LCP element can be fully rend
 - **Resource Load Duration** which measures how long it takes to load the LCP resource; this stage is also 0 millisecond if no resource is needed.
 - **Element Render Delay** which is the time between when the resource finished loading and the LCP element finished rendering.
 
-In the article [Common Misconceptions About How to Optimize LCP](https://web.dev/blog/common-misconceptions-lcp#lcp_sub-part_breakdown), Brendan Kenny analyzed a breakdown of LCP sub-parts using recent CruX data.
+In the article [Common Misconceptions About How to Optimize LCP](https://web.dev/blog/common-misconceptions-lcp#lcp_sub-part_breakdown), Brendan Kenny analyzed a breakdown of LCP sub-parts using recent CrUX data.
 
 {{ figure_markup(
   image="median-subpart-p75s.png",
@@ -353,7 +353,7 @@ You can reduce image sizes through resizing dimensions and increasing compressio
 
 JPG and PNG still have the highest proportion of adoption at 87% combined, however WebP and AVIF formats are both increasing in adoption. In comparison to 2022, WebP image format usage increased from [4%](../2022/performance#lcp-format) to 7%. Also, AVIF usage increased slightly from 0.1% to 0.3%. According to <a hreflang="en" href="https://webstatus.dev/?q=avif">Baseline</a>, AVIF format is newly available across major browsers, so we expect to see higher adoption in the future.
 
-### Loading Speed Conclusions
+### Loading speed conclusions
 
 - The percentage of websites with good FCP and LCP has improved, though TTFB showed no significant change.
 - One cause for slow LCP is lazy-loading the LCP element. Usage of this antipattern has decreased, but 15% of websites still fail this test and could benefit from removing lazy-loading for their LCP elements.
@@ -425,7 +425,7 @@ This could be because the most visited websites often have more user interaction
 
 Unlike other performance metrics like FCP and LCP, the percentage of secondary pages with good INP does not differ from the home page results. This is likely because INP isn't as impacted by caching as loading speed is.
 
-#### INP Subparts
+#### INP sub-parts
 
 Interaction to Next Paint metric can be broken down into three key sub-parts:
 
@@ -437,8 +437,8 @@ To optimize your website's interactivity, it's important to identify the duratio
 
 {{ figure_markup(
   image="interaction-to-next-paint-subparts-rum-vision.png",
-  caption="INP Subparts by percentile.",
-  description="Bar chart showing the distribution of INP subparts in milliseconds (ms) by percentile. At the 10th percentile, all subparts (input delay, processing time, and presentation delay) are minimal. At the 25th percentile, the values slightly increase but remain below 10 milliseconds. At the 50th percentile, input delay and processing time stay modest, while presentation delay reaches around 20 milliseconds. At the 75th percentile, input delay increases to around 50 milliseconds, with processing time and presentation delay also rising. At the 90th percentile, input delay reaches around 150 milliseconds, and both processing time and presentation delay exceed 100 milliseconds.",
+  caption="INP sub-parts by percentile.",
+  description="Bar chart showing the distribution of INP sub-parts in milliseconds (ms) by percentile. At the 10th percentile, all sub-parts (input delay, processing time, and presentation delay) are minimal. At the 25th percentile, the values slightly increase but remain below 10 milliseconds. At the 50th percentile, input delay and processing time stay modest, while presentation delay reaches around 20 milliseconds. At the 75th percentile, input delay increases to around 50 milliseconds, with processing time and presentation delay also rising. At the 90th percentile, input delay reaches around 150 milliseconds, and both processing time and presentation delay exceed 100 milliseconds.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=226800794&format=interactive",
   sheets_gid="731456372",
   )
@@ -446,7 +446,7 @@ To optimize your website's interactivity, it's important to identify the duratio
 
 The INP sub-part duration distribution data from RUMvision shows that presentation delay (36 milliseconds) contributes the most to the median INP. As percentiles increase, input delay and processing time become longer. At the 75th percentile, input delay reaches 37 milliseconds and processing delay 56 milliseconds. By the 90th percentile, input delay jumps to 155 milliseconds, which makes it the biggest contributor to poor INP. One way to optimize input delay is by avoiding long tasks, which we explore in the Long Tasks section.
 
-### Long Tasks
+### Long tasks
 
 One of the sub-parts of INP is input delay, which can be longer than it should be due to various factors, including long tasks. [A task](https://web.dev/articles/optimize-long-tasks#what-is-task) is a discrete unit of work that the browser executes, and JavaScript is often the largest source of tasks. When a task exceeds 50 milliseconds, it is considered a long task. These long tasks can cause delays in responding to user interactions, directly affecting interactivity performance.
 
@@ -465,7 +465,7 @@ The task duration distribution shows a median task duration of 90 milliseconds f
 
 Task duration data was retrieved using the <a hreflang="en" href="https://www.w3.org/TR/longtasks-1/">Long Tasks API</a>, which provides some useful data about performance issues, but it has limitations when it comes to accurately measuring sluggishness. It only identifies when a long task occurs and how long it lasts. It might overlook essential tasks such as rendering. Due to these limitations, we will explore the Long Animation Frames API in the next section, which offers more detailed insights.
 
-#### Long Animations Frames
+#### Long animations frames
 
 [Long Animation Frames (LoAF)](https://developer.chrome.com/docs/web-platform/long-animation-frames) are a performance timeline entry for identifying sluggishness and poor INP by tracking when work and rendering block the main thread. LoAF tracks animation frames instead of individual tasks like the Long Tasks API. A long animation frame is when a rendering update is delayed beyond 50 milliseconds (the same as the threshold for the Long Tasks API). It helps to find scripts that cause INP performance bottlenecks.  This data allows us to analyze INP performance based on the categories of scripts responsible for LoAF.
 
@@ -518,7 +518,7 @@ The median TBT on mobile is 1,209 milliseconds, which is 6 times higher than the
 With TBT being caused by long tasks it is not surprising to notice the same trend per pecentiles as well as similar trend in gap between mobile and desktop in the two metrics results. It is also important to note that high TBT can be contributing to the input delay part of the INP, negatively imacting the overall INP score.
 
 
-### Interactivity Conclusion
+### Interactivity conclusion
 
 The main takeaways of the interactivity results are:
 
@@ -527,7 +527,7 @@ The main takeaways of the interactivity results are:
 - INP can be divided into three sub-parts: Input Delay, Processing Time, and Presentation Delay. Presentation Delay has the biggest share of the median INP in RUMvisions's data.
 - Scripts from user behavior tracking, consent provider, and CDN categories are the main contributors to poor INP scores.
 
-## Visual Stability
+## Visual stability
 
 Visual stability on a website refers to the consistency and predictability of visual elements as the page loads and users interact with it. A visually stable website ensures that content does not unexpectedly shift, move, or change layout, which can disrupt the user experience. These shifts often happen due to assets without specified dimensions (images and videos), third-party ads, heavy fonts, etc. The primary metric for measuring visual stability is [Cumulative Layout Shift (CLS)](https://web.dev/articles/cls).
 
@@ -704,7 +704,7 @@ Another cause of unexpected shifts can be [non-composited](https://developer.chr
 
 39% of mobile pages and 42% of desktop pages still use non-composited animations, which is a very slight increase from 38% for mobile and 41% for desktop in the analysis from 2022.
 
-### Visual Stability Conclusion
+### Visual stability conclusion
 
 Visual stability of the site can have a big influence on the user experience of the page. Having text shifting around while reading or a button we were just about to click disappear from the viewport can lead to user frustration. The good news is that  Cumulative Layout Shift (CLS) continued to improve in 2024. That indicates that more and more website owners are adopting good practices such as sizing images and preserving space for dynamic content, as well as optimizing for bfcache eligibility to benefit from this browser feature.
 
