@@ -1058,7 +1058,7 @@ While it is not a direct ranking factor, in the past certain features, including
 {{ figure_markup(
   image="amp-markup-on-desktop-vs-mobile-home-pages.png",
   caption="AMP markup on desktop vs. mobile home pages",
-  description="Column chart showing percentage of desktop and mobile homepage AMP markup attributes. HTML AMP Attribute is used on 0.04% of desktop pages. HTML AMP & Emoji Attribute is used on 0.01% of desktop pages, while HTML AMP or Emoji Attribute is used on 0.05% of desktop pages, and the Rel AMP HTML tag is used on 0.37% of desktop pages. On mobile, it was 0.27%, 0.06%, 0.33% and 0.63%, respectively.",
+  description="Column chart showing percentage of desktop and mobile home page AMP markup attributes. HTML AMP Attribute is used on 0.04% of desktop pages. HTML AMP & Emoji Attribute is used on 0.01% of desktop pages, while HTML AMP or Emoji Attribute is used on 0.05% of desktop pages, and the Rel AMP HTML tag is used on 0.37% of desktop pages. On mobile, it was 0.27%, 0.06%, 0.33% and 0.63%, respectively.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=491118415&format=interactive",
   sheets_gid="693330825",
   sql_file="mark-up-stats-2024.sql"
