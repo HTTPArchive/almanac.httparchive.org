@@ -739,7 +739,7 @@ To mitigate these concerns the HTML specification (version 5) introduced the `sa
 
 The above chart of the 2022 data shows that more than 99% of websites with a `sandbox` attribute enable the `allow-scripts` and `allow-same-origin` permissions.
 
-Of desktop websites that embed an iframe, 21.2% also include the `sandbox` attribute.
+For all iframes found on desktop websites, 21.08% include the `sandbox` attribute.
 
 <p class="note">An earlier version of this chapter reported the incorrect percentage of frames with the `sandbox` attribute. More information can be found in this <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/pull/3912">GitHub PR</a>.</p>
 

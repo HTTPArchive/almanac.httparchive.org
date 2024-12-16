@@ -621,7 +621,7 @@ In a similar fashion, by defining the `allow` attribute on `<iframe>` elements, 
 <figcaption>{{ figure_link(caption="Prevalence of Feature Policy directives on frames.", sheets_gid="547110187", sql_file="iframe_allow_directives.sql") }}</figcaption>
 </figure>
 
-The `Feature-Policy` response header has a fairly low adoption rate, at 0.60% of the desktop pages and 0.51% of mobile pages. On the other hand, Feature Policy was enabled on 11.8% of the 13.2 million frames that were found on the desktop pages. On mobile pages, 10.8% of the 13.8 million frames contained the `allow` attribute.
+The `Feature-Policy` response header has a fairly low adoption rate, at 0.60% of the desktop pages and 0.51% of mobile pages. On the other hand, Feature Policy was enabled on 11.8% of the 13.2 million frames that were found on the desktop pages. On mobile pages, 10.8% of the 13.9 million frames contained the `allow` attribute.
 
 <p class="note">An earlier version of this chapter reported incorrect values for the total number of frames and the percentage of frames with the `allow` attribute. More information can be found in this <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/pull/3912">GitHub PR</a>.</p>
 
