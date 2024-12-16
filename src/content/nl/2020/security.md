@@ -621,7 +621,9 @@ Op een vergelijkbare manier, door het `allow`-attribuut op `<iframe>`-elementen 
 <figcaption>{{ figure_link(caption="Prevalentie van functiebeleid-richtlijnen op frames.", sheets_gid="547110187", sql_file="iframe_allow_directives.sql") }}</figcaption>
 </figure>
 
-De antwoordkop van `Feature-Policy` heeft een vrij lage acceptatiegraad, met 0,60% van de desktoppagina's en 0,51% van de mobiele pagina's. Aan de andere kant was functiebeleid ingeschakeld voor 19,5% van de 8 miljoen frames die op de desktoppagina's werden gevonden. Op mobiele pagina's bevatte 16,4% van de 9,2 miljoen frames het attribuut `toestaan`.
+De antwoordkop van `Feature-Policy` heeft een vrij lage acceptatiegraad, met 0,60% van de desktoppagina's en 0,51% van de mobiele pagina's. Aan de andere kant was functiebeleid ingeschakeld voor 11,8% van de 13,2 miljoen frames die op de desktoppagina's werden gevonden. Op mobiele pagina's bevatte 10,8% van de 13,9 miljoen frames het attribuut `allow`.
+
+<p class="note">Een eerdere versie van dit hoofdstuk vermeldde onjuiste waarden voor het totale aantal frames en het percentage frames met het kenmerk `allow`. Meer informatie is te vinden in deze <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/pull/3912">GitHub PR</a>.</p>
 
 Op basis van de meest gebruikte richtlijnen in het functiebeleid voor iframes, kunnen we zien dat deze voornamelijk worden gebruikt om te bepalen hoe de frames video's afspelen. De meest voorkomende richtlijn, `encrypted-media`, wordt bijvoorbeeld gebruikt om de toegang tot de Encrypted Media Extensions API te controleren, die nodig is om DRM-beveiligde video's af te spelen. De meest voorkomende iframe-herkomsten met een functiebeleid waren `https://www.facebook.com` en `https://www.youtube.com` (respectievelijk 49,87% en 26,18% van de frames met een functiebeleid op desktoppagina's ).
 
@@ -629,7 +631,9 @@ Op basis van de meest gebruikte richtlijnen in het functiebeleid voor iframes, k
 
 Door een niet-vertrouwde derde partij op te nemen in een iframe, kan die derde partij proberen een aantal aanvallen op de pagina uit te voeren. Het kan bijvoorbeeld de hoofdpagina naar een phishing-pagina navigeren, pop-ups met valse antivirusadvertenties openen, enz.
 
-Het `sandbox`-attribuut op iframes kan worden gebruikt om de mogelijkheden, en dus ook de mogelijkheden om aanvallen uit te voeren, van de embedded webpagina te beperken. Aangezien het insluiten van inhoud van derden, zoals advertenties of video's, gebruikelijk is op internet, is het niet verrassend dat veel hiervan worden beperkt via het `sandbox`-attribuut: 30,29% van de iframes op desktoppagina's heeft een `sandbox`-attribuut terwijl op mobiele pagina's is dit 33,16%.
+Het `sandbox`-attribuut op iframes kan worden gebruikt om de mogelijkheden, en dus ook de mogelijkheden om aanvallen uit te voeren, van de embedded webpagina te beperken. Aangezien het insluiten van inhoud van derden, zoals advertenties of video's, gebruikelijk is op internet, is het niet verrassend dat veel hiervan worden beperkt via het `sandbox`-attribuut: 18,3% van de iframes op desktoppagina's heeft een `sandbox`-attribuut terwijl op mobiele pagina's is dit 21,9%.
+
+<p class="note">Een eerdere versie van dit hoofdstuk vermeldde onjuiste waarden voor het percentage frames met het kenmerk `sandbox`. Meer informatie is te vinden in deze <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/pull/3912">GitHub PR</a>.</p>
 
 <figure>
   <table>
