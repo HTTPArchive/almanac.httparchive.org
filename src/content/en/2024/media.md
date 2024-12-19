@@ -20,11 +20,11 @@ featured_stat_label_3:
 
 ## Introduction
 
-Images and videos are everywhere on the web. However the ways that they’re encoded and embedded on webpages are surprisingly varied, complex, and changing over time. The Web Almanac gives us a chance to take stock of that complexity and how well we’re managing it, giving us a zoomed-out, panoramic view of where media on the web is, how far it has come, and – just maybe – where it is going. So, let’s go\!
+Images and videos are everywhere on the web; however, the ways they’re encoded and embedded on web pages are surprisingly varied, complex, and changing over time. The Web Almanac gives us a chance to take stock of that complexity and how well we’re managing it, giving us a zoomed-out, panoramic view of where media on the web is, how far it has come, and – just maybe – where it is going. So, let’s go\!
 
 ## Images
 
-We’ll kick off with the most common media type — images. How often do you look at a web page without images? For me, it's extremely rare and if there are no images, I'm most likely looking at a nerdy developer blog.
+We’ll kick off with the most common media type — images. How often do you look at a web page without images? For us, it's extremely rare and if there are no images, we’re most likely looking at a nerdy developer blog.
 
 It comes at no surprise that of the more than 10 million scanned and parsed pages, 99.9% requested at least one image.
 
@@ -39,12 +39,12 @@ How many images are loaded per page?
 
 The median mobile page loads 13 images per page. And even at the 90th percentile "only" 56 images are loaded per page. Considering the visual nature of today's web, this seems reasonable as long as loading these images follows best practices.
 
-If you now think that 56 images per page is a lot, I better not tell you that on mobile the page with the highest image count loaded more than two thousand images.
+If you now think that 56 images per page is a lot, we probably shouldn’t tell you that the page on mobile with the highest image count loaded more than two thousand images.
 
 2,174
 *Highest image request count on mobile.*
 
-Images aren't just pervasive and plentiful. Most of the time, they're also a central part of users' experiences. One way to measure that is to see how often images are responsible for pages' Largest Contentful Paint.
+Images aren't just pervasive and plentiful. Most of the time they're also a central part of users' experiences. One way to measure that is to see how often images are responsible for pages' Largest Contentful Paint.
 
 68.5%
 *Mobile pages whose LCP responsible element has an image.*
@@ -105,7 +105,7 @@ Most images are wider than they are tall; only 1 in 8 are taller than they are w
 
 (data)
 
-This data is essentially unchanged from two years ago. I continue to think this shows a bias towards desktop-based browsing, and that creators are missing opportunities to fill portrait-oriented mobile screens with big, beautiful, portrait-oriented imagery.
+This data is essentially unchanged from two years ago. This seems to indicate a bias towards desktop-based browsing, and that creators are missing opportunities to fill portrait-oriented mobile screens with big, beautiful, portrait-oriented imagery.
 
 ### Image color spaces
 
@@ -136,7 +136,7 @@ Over the last decade, hardware and software are increasingly able to capture and
 
 One very important caveat here is that in our analysis we were only able to look at ICC profiles. As mentioned, these profiles can be relatively heavy. Modern image formats like AVIF (and [recently modernized ones like PNG](https://github.com/w3c/png/blob/main/Third_Edition_Explainer.md#labelling-hdr-content)) allow images to signal their color profile using even more efficient means – using a standard called CICP – [which allows common color spaces to be signaled in just four bytes](https://www.w3.org/TR/png-3/#cICP-chunk). It stands to reason that modern PNG encoders and any AVIF encoder worth its salt would use CICP instead of ICC to signal a wide gamut color space.
 
-However, in our analysis, images containing CICP are categorized under "No ICC profile." So our accounting of wide-gamut usage on the web should be seen as a floor, rather than as an estimate of total adoption. In other words, we found that \*at least\* 1-in-80 images on the web is wide-gamut.
+However, in our analysis, images containing CICP are categorized under "No ICC profile." So, our accounting of wide-gamut usage on the web should be seen as a floor, rather than as an estimate of total adoption. In other words, we found that \*at least\* 1-in-80 images on the web is wide-gamut.
 
 ## Encoding
 
@@ -158,7 +158,7 @@ And in *relative* terms, AVIF usage is taking off; we found almost four times mo
 ![][image7]
 (data)
 
-If the crawler had accepted [JPEG-XL](https://jpeg.org/jpegxl/)s, I presume we would have seen a fair number of them as well. Alas, [Chromium-based browsers don't support the format](https://caniuse.com/jpegxl).
+If the crawler had accepted [JPEG-XL](https://jpeg.org/jpegxl/)s, we probably would have seen a fair number of them as well. Alas, [Chromium-based browsers don't support the format](https://caniuse.com/jpegxl).
 
 Almost all of the JPEGs, PNGs, and GIFs on the web would be better-served using a modern format. WebPs are good, but AVIFs and JPEG XLs are even better. It's nice to see the massive ship that is all-of-the-images-on-the-web slowly but surely turning towards these more efficient formats. And it's nice to see SVG usage tick upwards, too\!
 
@@ -212,15 +212,17 @@ When we break these numbers down, we can see that *every* format saw fewer bits 
 
 [Compared to 2022](https://almanac.httparchive.org/en/2022/media#fig-15), PNGs are compressed about 10% more; WebPs are compressed about 8% more; and JPEGs are compressed around 5% more. It's hard to know exactly what the causes are here, but we hypothesize that it’s the result of wider adoption of two things: modern encoders, which provide more bang for the buck, and automated image-processing pipelines, which ensure that every image that makes its way to a user has been well-compressed.
 
-The one format that bucked this trend was AVIF. The median AVIF’s bits-per-pixel went up from an even 1.0 in 2022 to 1.4 bits per pixel in 2024 – an *increase* of 40%. Funnily enough, we hypothesize the same root cause. The current, diverse crop of AVIF encoders is likely making different quality/filesize tradeoffs, sacrificing less quality at default settings than AOM's official libavif encoder was, two years ago.
+The one format that bucked this trend was AVIF. The median AVIF’s bits-per-pixel went up from an even 1.0 in 2022 to 1.4 bits per pixel in 2024 – an *increase* of 40%. Funnily enough, we hypothesize the same root cause. The current, diverse crop of AVIF encoders is likely making different quality/filesize tradeoffs, sacrificing less quality at default settings than AOM's official libavif encoder was two years ago.
 
-We have no idea why GIFs got significantly more efficient. But we do know why they are so much less compressed than all of the other formats. Our query is per pixel, and it does not take animated images into account, but many GIFs are animated\!
+We have no idea why GIFs got significantly more efficient, but we do know why they are so much less compressed than all of the other formats. Our query is per pixel, and it does not take animated images into account, though many GIFs are animated\!
 
 ### Gifs, animated and not
 
 How many GIFs are animated?
 28%
-*Percentage of GIFs that were animated on mobile. (data)*
+*Percentage of GIFs that were animated on mobile.*
+
+(data)
 
 When we separate the animated gifs out from the animated ones, we can see that the median *non*\-animated gif is much more reasonably compressed:
 
@@ -239,7 +241,9 @@ Generally: 10 to 20, which is more or less unchanged since 2022, although the lo
 Just for fun, we also looked at the GIF with the *most* frames:
 
 54,028
-*The highest GIF frame count in the data set. (data)*
+*The highest GIF frame count in the data set.*
+
+(data)
 
 At 24-frames-per-second, that would take more than 37 minutes to play once through before looping. Every animated GIF should probably be a video these days, but this one *definitely* should.
 
@@ -257,7 +261,9 @@ The biggest recent change in how images are embedded on websites has been the ra
 And, just like last year, it seems pages are using lazy-loading a bit *too* much:
 
 9.5%
-*Percentage of LCP \<img\>s that use native lazy-loading on mobile. (data)*
+*Percentage of LCP \<img\>s that use native lazy-loading on mobile.*
+
+(data)
 
 [Lazy-loading the LCP responsible element is an anti-pattern that makes pages much slower](https://web.dev/articles/lcp-lazy-loading). While it's disheartening that nearly one-in-ten LCP \<img\>s are lazy-loaded, we are happy to report that things have improved ever-so-slightly over the last two years. The percentage of offending sites has decreased by 0.3 percentage points since 2022\.
 
@@ -266,11 +272,13 @@ And, just like last year, it seems pages are using lazy-loading a bit *too* much
 Images embedded with \<img\> elements are supposed to be contentful. That is to say: [They’re not just decorative](https://html.spec.whatwg.org/multipage/images.html#a-purely-decorative-image-that-doesn't-add-any-information), and they should contain something meaningful. According to both [WCAG requirements](https://www.w3.org/WAI/WCAG22/Understanding/non-text-content) and [the HTML spec](https://html.spec.whatwg.org/multipage/images.html#alt), most of the time, \<img\>s elements should have alternative text, and that alternative text should be supplied by the `alt` attribute.
 
 55%
-*Percentage of images that had a non-blank alt attribute. (data)*
+*Percentage of images that had a non-blank alt attribute.*
+
+ (data)
 
 Unfortunately, 45 percent of \<img\>s don’t have any `alt` text. Worse, the [in-depth analysis from this year’s accessibility chapter](https://almanac.httparchive.org/en/2024/accessibility#images) indicates that many of the \<img\>s that *do* have alt text aren't all that accessible either since their attributes only contain filenames or other meaningless, short strings.
 
-There has been a one percentage point increase in alt text deployment since 2022, but still – we can and must do better.
+There has been a one percentage point increase in alt text deployment since 2022, but still we can – and must – do better.
 
 ### `srcset`
 
@@ -279,7 +287,9 @@ Prior to lazy-loading, the biggest thing to happen to \<img\>s on the web was a 
 Let’s start by looking at the srcset attribute, which allows authors to give the browser a menu of resources to choose from, depending on the context.
 
 42%
-*Percentage of pages using the srcset attribute. (data)*
+*Percentage of pages using the srcset attribute.*
+
+ (data)
 
 [The last time we checked, this number was 34%](https://almanac.httparchive.org/en/2022/media#srcset) – an eight percentage point increase over two years is significant and encouraging.
 
@@ -288,11 +298,11 @@ The srcset attribute allows authors to describe resources using one of two descr
 ![][image15]
 (data)
 
-x descriptors came first and are simpler to reason about. But w descriptors are more powerful. It's encouraging to see that w descriptors are more common. And while x descriptor adoption has remained constant since 2022, [w descriptor usage is still growing](https://almanac.httparchive.org/en/2022/media#fig-23); w descriptor adoption is up three percentage points on mobile and seven percentage points on desktop.
+x descriptors came first and are simpler to reason about, but w descriptors are more powerful. It's encouraging to see that w descriptors are more common. And while x descriptor adoption has remained constant since 2022, [w descriptor usage is still growing](https://almanac.httparchive.org/en/2022/media#fig-23); w descriptor adoption is up three percentage points on mobile and seven percentage points on desktop.
 
 ### `sizes`
 
-I mentioned earlier that w descriptors should be used in conjunction with sizes attributes. So, how well are we using sizes? Not very well\!
+We mentioned earlier that w descriptors should be used in conjunction with sizes attributes. So, how well are we using sizes? Not very well\!
 
 The sizes attribute is supposed to be a hint to the browser about the eventual layout size of the image, usually relative to the viewport width. There are many variables that can affect an image’s layout width. The sizes attribute is explicitly supposed to be a hint, and so a little inaccuracy is OK and even expected.
 
@@ -308,7 +318,9 @@ While many sizes attributes are entirely accurate, the median sizes attribute is
 What's the impact of all of this inaccuracy?.
 
 20%
-*sizes attributes that were inaccurate enough to affect srcset selection on desktop. On mobile, it’s 14%. (data)*
+*sizes attributes that were inaccurate enough to affect srcset selection on desktop. On mobile, it’s 14%.*
+
+(data)
 
 On desktop, where the difference between the default sizes value (100vw) and the actual layout width of the image is likely to be larger than on mobile, one-in-five sizes attributes is inaccurate enough to cause browsers to pick a suboptimal resource from the srcset. These errors add up.
 
@@ -336,7 +348,9 @@ The last responsive image feature to land in 2014 was the \<picture\> element. W
 The picture element is used far less than srcset:
 
 9.3%
-*Percentage of mobile using the picture element. (data)*
+*Percentage of mobile using the picture element.*
+
+(data)
 
 This is up more than a percentage point and a half from 2022, but the fact that there are more than four pages that use srcset for every one page that uses \<picture\> suggests that either \<picture\> use cases are more niche or that it's more difficult to deploy – or both.
 
@@ -397,7 +411,9 @@ Any \<img\> whose layout size is dependent on its intrinsic dimensions risks tri
 As we’ve just seen, extrinsically scaling images to fit a certain width while leaving the height (and aspect ratio) intrinsic is very common. To prevent the resulting plague of layout shifts, [authors should set the width and height attributes on the \<img\>](https://developer.mozilla.org/en-US/docs/Learn/Performance/Multimedia#rendering_strategy_preventing_jank_when_loading_images) so that browsers can reserve layout space for the image before it loads.
 
 32%
-*Percentage of \<img\> elements on mobile that have both height and width attributes set. (data)*
+*Percentage of \<img\> elements on mobile that have both height and width attributes set.*
+
+(data)
 
 [Usage of height and width is up four percentage points from 2022](https://almanac.httparchive.org/en/2022/media#fig-32), which is good. But the attributes are still only used on a one-third of images, meaning we have a long way to go.
 
@@ -414,18 +430,20 @@ How many images are being delivered from a different domain than the document th
 
 It's hard to disentangle the various potential causes here, but we hypothesize that one factor is just how hard images are to get right. This leads teams to adopt [image CDNs](https://web.dev/image-cdns/), which provide image optimization and delivery as a service.
 
-So there you have it: a panoramic view of the current state of images on the web. Now let's take a look at where \<video\> stands in 2024\.
+So, there you have it: a panoramic view of the current state of images on the web. Now let's take a look at where \<video\> stands in 2024\.
 
 ## Video
 
-The \<video\> element shipped in 2010, and has been the best and—since the demise of plugins like Flash and Silverlight—only way to embed video content on websites ever since. How are we using it?
+The \<video\> element shipped in 2010, and has been the best and – since the demise of plugins like Flash and Silverlight – only way to embed video content on websites ever since. How are we using it?
 
 ### Video adoption
 
 Let’s start by answering the first and most basic question: How many pages include \<video\> elements at all?
 
 6.7%
-*Percentage of mobile pages that include at least one \<video\> element. On desktop, it's 7.7%  (data)*
+*Percentage of mobile pages that include at least one \<video\> element. On desktop, it's 7.7%*
+
+ (data)
 
 This is a small fraction of the pages that include \<img\>s. But even though \<video\> was introduced 14 years ago, adoption is currently growing fast. [The mobile number is up 33% (in relative terms) from 2022](https://almanac.httparchive.org/en/2022/media#fig-34).
 
@@ -459,7 +477,9 @@ This continues a trend we have seen throughout the 2020s, and our hypothesis abo
 
 The src attribute is only present on 9% of \<video\>s on mobile and 12% on desktop. Many of the rest of the \<video\> elements on the web use \<source\> children, allowing authors to – in theory – supply multiple, alternate video resources for use in different contexts.
 ![][image26]
-Number of \<source\>s per \<video\> (data)
+*Number of \<source\>s per \<video\>*
+
+(data)
 
 However most of the \<video\>s with \<source\> children only have one; only one in ten \<video\> elements have multiple \<source\>s.
 
