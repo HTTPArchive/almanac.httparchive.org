@@ -28,26 +28,53 @@ We’ll kick off with the most common media type — images. How often do you lo
 
 It comes at no surprise that of the more than 10 million scanned and parsed pages, 99.9% requested at least one image.
 
-99.9%
-*Pages that generated at least one request for an image resource.*
+{{ figure_markup(
+  caption="Pages that generated at least one request for an image resource.",
+  content="99.9%",
+  classes="big-number",
+  sheets_gid="186748113",
+  sql_file="at_least_one_image_request.sql"
+)
+}}
 
 Almost every page serves up some kind of an image, even if it’s just a background or favicon.
 
 How many images are loaded per page?
 
-![][image2]
+{{ figure_markup(
+  image="TODO.png",
+  caption="Count of img elements per page.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=796561224&format=interactive",
+  sheets_gid="76384810",
+  sql_file="imgs_per_page.sql"
+)
+}}
 
 The median mobile page loads 13 images per page. And even at the 90th percentile "only" 56 images are loaded per page. Considering the visual nature of today's web, this seems reasonable as long as loading these images follows best practices.
 
 If you now think that 56 images per page is a lot, we probably shouldn’t tell you that the page on mobile with the highest image count loaded more than two thousand images.
 
-2,174
-*Highest image request count on mobile.*
+
+{{ figure_markup(
+  content="2,174",
+  caption="Highest image request count from one page on mobile.",
+  classes="big-number",
+  sheets_gid="76384810",
+  sql_file="imgs_per_page.sql"
+)
+}}
 
 Images aren't just pervasive and plentiful. Most of the time they're also a central part of users' experiences. One way to measure that is to see how often images are responsible for pages' Largest Contentful Paint.
 
-68.5%
-*Mobile pages whose LCP responsible element has an image.*
+{{ figure_markup(
+  content="68.5%",
+  caption="Mobile pages whose LCP responsible element has an image.",
+  classes="big-number",
+  sheets_gid="2001439429",
+  sql_file="lcp_element_data.sql"
+)
+}}
 
 It’s hard to overstate the importance of images on the web. So, let's find out what we're dealing with\!
 
@@ -57,10 +84,13 @@ We'll start with the resources themselves. Most images are made of pixels (let's
 
 #### A note on single-pixel images
 
+<figure markdown>
 | Client | % 1x1 images |
 | :---- | :---- |
 | Mobile | 6.4% |
-| Desktop | 6% |
+| Desktop | 6.0% |
+<figcaption>{{ figure_link(caption="Resources loaded by img elements that contain just a single pixel.", sheets_gid="297753608", sql_file="image_1x1.sql") }}</figcaption>
+</figure>
 
 One-by-one pixel images make up roughly 6% of all the captured image requests. These are most likely tracking beacons and spacer Gifs as discovered in [last year's Media chapter](https://almanac.httparchive.org/en/2022/media#a-note-on-single-pixel-images). And looking back, we’re happy to report some good news: the amount of single-pixel images has declined a full percentage point since 2022\. So maybe old habits are slowly being replaced with [newer and better alternatives](https://developer.mozilla.org/docs/Web/API/Beacon_API).
 
@@ -68,15 +98,29 @@ One-by-one pixel images make up roughly 6% of all the captured image requests. T
 
 Let’s now turn to images that were *larger* than 1x1. How big were they?
 
-![][image3]
-(data)
+{{ figure_markup(
+  image="TODO.png",
+  caption="Distribution of image pixel counts.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=71466048&format=interactive",
+  sheets_gid="1417829992",
+  sql_file="bytes_and_dimensions.sql"
+)
+}}
 
 Despite the fact that the Web Almanac’s mobile crawler hasn't grown at all (rendering pages to a 360-px-wide viewport, at a device pixel ratio of 3x), the median image – weighing in at 0.058 megapixels – is about 26% larger than it was [the last time we looked](https://almanac.httparchive.org/en/2022/media#image-dimensions). For reference, at a square aspect ratio, 0.058 megapixels works out to about 240x240.
 
 However, just like last time, most *pages* have one image that has almost 10 times as many pixels as the median image:
 
-![][image4]
-(data)
+{{ figure_markup(
+  image="TODO.png",
+  caption="Largest image per page (by pixel count).",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=1399291173&format=interactive",
+  sheets_gid="1057576785",
+  sql_file="largest_image_per_page_pixels.sql"
+)
+}}
 
 At a square aspect ratio, 0.54 megapixels works out to 735x735. Given the mobile crawler's viewport and density, it’s quite likely that many pages have one “hero” image that is being displayed full-width at high density.
 
@@ -86,11 +130,19 @@ As for the 50% of pages that sent images even larger than that, they are almost 
 
 Now that we have some sense of how images on the web are *sized*, how are they *shaped?*
 
-![][image5]
-(data)
+{{ figure_markup(
+  image="TODO.png",
+  caption="Image orientations.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=774294848&format=interactive",
+  sheets_gid="60298066",
+  sql_file="portrait_landscape_square.sql"
+)
+}}
 
 Most images are wider than they are tall; only 1 in 8 are taller than they are wide; and a full one-third are exactly square. Square is by far the most popular exact aspect ratio:
 
+<figure markdown>
 | Aspect ratio (width / height) | % of images (mobile) |
 | :---- | :---- |
 | 1 | 33.2% |
@@ -102,8 +154,8 @@ Most images are wider than they are tall; only 1 in 8 are taller than they are w
 | 0.667 | 0.8% |
 | 1.667 | 0.5% |
 | 1.499 | 0.5% |
-
-(data)
+<figcaption>{{ figure_link(caption="Top image aspect ratios (mobile).", sheets_gid="212159042", sql_file="top_aspect_ratios.sql") }}</figcaption>
+</figure>
 
 This data is essentially unchanged from two years ago. This seems to indicate a bias towards desktop-based browsing, and that creators are missing opportunities to fill portrait-oriented mobile screens with big, beautiful, portrait-oriented imagery.
 
@@ -115,6 +167,7 @@ The traditional way to explicitly assign a color space to an image is to embed a
 
 Here are the top ten:
 
+<figure markdown>
 | ICC profile description | sRGB-ish | Wide-gamut | % of images |
 | :---- | ----- | ----- | ----- |
 | No ICC profile | ✅ |  | 87.43% |
@@ -127,6 +180,8 @@ Here are the top ten:
 | "c2" | ✅ |  | 0.27% |
 | "GIMP built-in sRGB" | ✅ |  | 0.31% |
 | "Display" |  |  | 0.33% |
+<figcaption>{{ figure_link(caption="Top ICC profiles (mobile).", sheets_gid="644447618", sql_file="color_spaces_and_depth.sql") }}</figcaption>
+</figure>
 
 The vast majority of the web's images rely on the sRGB default for correct rendering and don't contain any ICC profile at all.
 
@@ -146,8 +201,15 @@ Now that we’ve gleaned a bit about the web’s image content, what can we say 
 
 For decades there were just three bitmap formats in common use on the web: JPG, PNG, and GIF. They are still the three most common formats:
 
-![][image6]
-(data)
+{{ figure_markup(
+  image="TODO.png",
+  caption="Image format adoption (mobile).",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=424926454&format=interactive",
+  sheets_gid="1939630368",
+  sql_file="media_formats.sql"
+)
+}}
 
 But we are happy to report that change is happening. The largest single absolute change in usage since 2022 was from JPEG, which fell from 40% of all images in 2022 down eight full percentage points to 32% in 2024\. That's a huge loss over two years.
 
@@ -155,8 +217,15 @@ Which formats saw *more* usage to make up the difference? WebP picked up three p
 
 And in *relative* terms, AVIF usage is taking off; we found almost four times more AVIFs served up by the crawled pages than we did two years ago.
 
-![][image7]
-(data)
+{{ figure_markup(
+  image="TODO.png",
+  caption="Image format adoption, 2-year change (mobile).",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=2128858223&format=interactive",
+  sheets_gid="1939630368",
+  sql_file="media_formats.sql"
+)
+}}
 
 If the crawler had accepted [JPEG-XL](https://jpeg.org/jpegxl/)s, we probably would have seen a fair number of them as well. Alas, [Chromium-based browsers don't support the format](https://caniuse.com/jpegxl).
 
@@ -168,13 +237,27 @@ Lastly, a few words for the oldest format of the bunch; “[Burn All GIFs](https
 
 How heavy is the typical image on the web?
 
-![][image8]
-(data)
+{{ figure_markup(
+  image="TODO.png",
+  caption="Distribution of image byte sizes.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=124051420&format=interactive",
+  sheets_gid="1417829992",
+  sql_file="bytes_and_dimensions.sql"
+)
+}}
 
 A median of 12kB might lead one to think, “Eh, that’s not that heavy\!” But, just as when we looked at pixel counts, we found that most pages contain many small images, and at least one large one.
 
-![][image9]
-(data)
+{{ figure_markup(
+  image="TODO.png",
+  caption="Largest image per page (by kilobytes).",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=2122518926&format=interactive",
+  sheets_gid="117141741",
+  sql_file="largest_image_per_page_bytes.sql"
+)
+}}
 
 Most mobile pages have one image that’s 138kB or more. That's a 9% increase since 2022\. And the further up we go in the distribution, the more things are accelerating: the p75 is up 10% and the p90 is up 13% (to almost exactly a megabyte).
 
@@ -192,15 +275,26 @@ It should be noted that, depending on image content and encoding settings, these
 
 To summarize:
 
+<figure markdown>
 | *Type of bitmap data* | *Expected compression ratio* | *Bits per pixel* |
 | ----- | ----- | ----- |
 | *Uncompressed RGB* | *1:1* | *24 bits/pixel* |
 | *Losslessly compressed RGB* | *\~2:1* | *12 bits/pixel* |
 | *1990s-era lossy RGB* | *\~10:1* | *2.4 bits/pixel* |
+<figcaption>{{ figure_link(caption="Typical compression ratios and resulting bits per pixel numbers for bitmap RGB data." ) }}</figcaption>
+</figure>
 
 So, with all of that as context, here’s how the web’s images stack up:
 
-![][image10]
+{{ figure_markup(
+  image="TODO.png",
+  caption="Distribution of image bits per pixel.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=1214411230&format=interactive",
+  sheets_gid="1417829992",
+  sql_file="bytes_and_dimensions.sql"
+)
+}}
 
 The median image is compressed to 2.1 bits per pixel, a tad better than that 1990s rule of thumb. And, good news, [it’s also a tad better than when we last surveyed the web's images in 2022](https://almanac.httparchive.org/en/2022/media#fig-14).
 
@@ -208,9 +302,17 @@ When we break these numbers down, we can see that *every* format saw fewer bits 
 
 ### Bit per pixel by format
 
-![][image11]
+{{ figure_markup(
+  image="TODO.png",
+  caption="Median bits per pixel by format.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=165542730&format=interactive",
+  sheets_gid="1416380443",
+  sql_file="bytes_and_dimensions_by_format.sql"
+)
+}}
 
-[Compared to 2022](https://almanac.httparchive.org/en/2022/media#fig-15), PNGs are compressed about 10% more; WebPs are compressed about 8% more; and JPEGs are compressed around 5% more. It's hard to know exactly what the causes are here, but we hypothesize that it’s the result of wider adoption of two things: modern encoders, which provide more bang for the buck, and automated image-processing pipelines, which ensure that every image that makes its way to a user has been well-compressed.
+[Compared to 2022](https://almanac.httparchive.org/en/2022/media#fig-15), the median PNG is compressed about 10% more; the median WebP is compressed about 8% more; and the median JPEG is compressed around 5% more. <!--TODO double-check these percentages --> It's hard to know exactly what the causes are here, but we hypothesize that it’s the result of wider adoption of two things: modern encoders, which provide more bang for the buck, and automated image-processing pipelines, which ensure that every image that makes its way to a user has been well-compressed.
 
 The one format that bucked this trend was AVIF. The median AVIF’s bits-per-pixel went up from an even 1.0 in 2022 to 1.4 bits per pixel in 2024 – an *increase* of 40%. Funnily enough, we hypothesize the same root cause. The current, diverse crop of AVIF encoders is likely making different quality/filesize tradeoffs, sacrificing less quality at default settings than AOM's official libavif encoder was two years ago.
 
@@ -219,31 +321,54 @@ We have no idea why GIFs got significantly more efficient, but we do know why th
 ### Gifs, animated and not
 
 How many GIFs are animated?
-28%
-*Percentage of GIFs that were animated on mobile.*
 
-(data)
+{{ figure_markup(
+  content="32%",
+  caption="Percentage of GIFs that were animated on mobile.",
+  classes="big-number",
+  sheets_gid="501019705",
+  sql_file="animated_gif_count.sql"
+)
+}}
 
 When we separate the animated gifs out from the animated ones, we can see that the median *non*\-animated gif is much more reasonably compressed:
 
-![][image12]
-(data)
+{{ figure_markup(
+  image="TODO.png",
+  caption="GIF bits per pixel: animated vs. non-animated.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=1948267327&format=interactive",
+  sheets_gid="1251617650",
+  sql_file="animated_gif_bpp.sql"
+)
+}}
 
 3.5 bits per pixel is even less than PNGs\!
 
 Turning to look at the animated GIFs specifically: How many frames do they have?
 
-![][image13]
-(data)
+{{ figure_markup(
+  image="TODO.png",
+  caption="Distribution of animated GIF frame counts.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=230229356&format=interactive",
+  sheets_gid="810988388",
+  sql_file="animated_gif_framecount.sql"
+)
+}}
 
 Generally: 10 to 20, which is more or less unchanged since 2022, although the longest GIFs have gotten longer, especially on mobile.
 
 Just for fun, we also looked at the GIF with the *most* frames:
 
-54,028
-*The highest GIF frame count in the data set.*
-
-(data)
+{{ figure_markup(
+  content="54,028",
+  caption="The highest GIF frame count in the data set.",
+  classes="big-number",
+  sheets_gid="810988388",
+  sql_file="animated_gif_framecount.sql"
+)
+}}
 
 At 24-frames-per-second, that would take more than 37 minutes to play once through before looping. Every animated GIF should probably be a video these days, but this one *definitely* should.
 
@@ -255,15 +380,26 @@ Now that we have a sense of how the web's image resources have been encoded, wha
 
 The biggest recent change in how images are embedded on websites has been the rapid adoption of lazy-loading. Lazy-loading was introduced in 2020, and just [two years later it was adopted on almost a quarter of websites](https://almanac.httparchive.org/en/2022/media#lazy-loading). Its climb continues, and it’s now used on a full one-third of all websites:.
 
-![][image14]
-(data)
+{{ figure_markup(
+  image="TODO.png",
+  caption="Adoption of loading=lazy on \<img\>.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=1997305111&format=interactive",
+  sheets_gid="228292115",
+  sql_file="lazy_loading_adoption_over_time.sql"
+)
+}}
 
 And, just like last year, it seems pages are using lazy-loading a bit *too* much:
 
-9.5%
-*Percentage of LCP \<img\>s that use native lazy-loading on mobile.*
-
-(data)
+{{ figure_markup(
+  content="9.5%",
+  caption="Percentage of LCP \<img\>s that use native lazy-loading on mobile.",
+  classes="big-number",
+  sheets_gid="2001439429",
+  sql_file="lcp_element_data.sql"
+)
+}}
 
 [Lazy-loading the LCP responsible element is an anti-pattern that makes pages much slower](https://web.dev/articles/lcp-lazy-loading). While it's disheartening that nearly one-in-ten LCP \<img\>s are lazy-loaded, we are happy to report that things have improved ever-so-slightly over the last two years. The percentage of offending sites has decreased by 0.3 percentage points since 2022\.
 
@@ -271,10 +407,14 @@ And, just like last year, it seems pages are using lazy-loading a bit *too* much
 
 Images embedded with \<img\> elements are supposed to be contentful. That is to say: [They’re not just decorative](https://html.spec.whatwg.org/multipage/images.html#a-purely-decorative-image-that-doesn't-add-any-information), and they should contain something meaningful. According to both [WCAG requirements](https://www.w3.org/WAI/WCAG22/Understanding/non-text-content) and [the HTML spec](https://html.spec.whatwg.org/multipage/images.html#alt), most of the time, \<img\>s elements should have alternative text, and that alternative text should be supplied by the `alt` attribute.
 
-55%
-*Percentage of images that had a non-blank alt attribute.*
-
- (data)
+{{ figure_markup(
+  content="55%",
+  caption="Percentage of images that had a non-blank alt attribute.",
+  classes="big-number",
+  sheets_gid="694600230",
+  sql_file="image_alt.sql"
+)
+}}
 
 Unfortunately, 45 percent of \<img\>s don’t have any `alt` text. Worse, the [in-depth analysis from this year’s accessibility chapter](https://almanac.httparchive.org/en/2024/accessibility#images) indicates that many of the \<img\>s that *do* have alt text aren't all that accessible either since their attributes only contain filenames or other meaningless, short strings.
 
@@ -286,46 +426,75 @@ Prior to lazy-loading, the biggest thing to happen to \<img\>s on the web was a 
 
 Let’s start by looking at the srcset attribute, which allows authors to give the browser a menu of resources to choose from, depending on the context.
 
-42%
-*Percentage of pages using the srcset attribute.*
-
- (data)
+{{ figure_markup(
+  content="42%",
+  caption="Percentage of pages using the srcset attribute.",
+  classes="big-number",
+  sheets_gid="2067327124",
+  sql_file="image_srcset_sizes.sql"
+)
+}}
 
 [The last time we checked, this number was 34%](https://almanac.httparchive.org/en/2022/media#srcset) – an eight percentage point increase over two years is significant and encouraging.
 
 The srcset attribute allows authors to describe resources using one of two descriptors. x descriptors specify the resource's density, allowing browsers to select different resources depending on users’ screen densities. w descriptors give the browser the resource's width in pixels. When used in conjunction with the sizes attribute, w descriptors allow browsers to select a resource appropriate for both variable layout widths and variable screen densities.
 
-![][image15]
-(data)
+{{ figure_markup(
+  image="TODO.png",
+  caption="srcset descriptor usage.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=1554380054&format=interactive",
+  sheets_gid="1810212061",
+  sql_file="image_srcset_descriptor.sql"
+)
+}}
 
-x descriptors came first and are simpler to reason about, but w descriptors are more powerful. It's encouraging to see that w descriptors are more common. And while x descriptor adoption has remained constant since 2022, [w descriptor usage is still growing](https://almanac.httparchive.org/en/2022/media#fig-23); w descriptor adoption is up three percentage points on mobile and seven percentage points on desktop.
+`x` descriptors came first and are simpler to reason about, but `w` descriptors are more powerful. It's encouraging to see that `w` descriptors are more common. And while `x` descriptor adoption has remained constant since 2022, [`w` descriptor usage is still growing](https://almanac.httparchive.org/en/2022/media#fig-23); `w` descriptor adoption is up three percentage points on mobile and seven percentage points on desktop.
 
 ### `sizes`
 
-We mentioned earlier that w descriptors should be used in conjunction with sizes attributes. So, how well are we using sizes? Not very well\!
+We mentioned earlier that `w` descriptors should be used in conjunction with `sizes` attributes. So, how well are we using `sizes`? Not very well\!
 
-The sizes attribute is supposed to be a hint to the browser about the eventual layout size of the image, usually relative to the viewport width. There are many variables that can affect an image’s layout width. The sizes attribute is explicitly supposed to be a hint, and so a little inaccuracy is OK and even expected.
+The `sizes` attribute is supposed to be a hint to the browser about the eventual layout size of the image, usually relative to the viewport width. There are many variables that can affect an image’s layout width. The `sizes` attribute is explicitly supposed to be a hint, and so a little inaccuracy is OK and even expected.
 
-But if the sizes attribute is more-than-a-little inaccurate, it can affect resource selection, causing the browser to load an image to fit the sizes width when the actual layout width of the image is significantly different.
+But if the `sizes` attribute is more-than-a-little inaccurate, it can affect resource selection, causing the browser to load an image to fit the sizes width when the actual layout width of the image is significantly different.
 
-So, how accurate are our sizes?
+So, how accurate are our `sizes`?
 
-![][image16]
-(data)
+{{ figure_markup(
+  image="TODO.png",
+  caption="Distribution of \<img sizes\> errors.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=16669482&format=interactive",
+  sheets_gid="776888472",
+  sql_file="image_srcset_sizes_per_image_accuracy_impact.sql"
+)
+}}
 
-While many sizes attributes are entirely accurate, the median sizes attribute is 16% too large on mobile and 19% too large on desktop. That might be OK, given the hint-like nature of the feature, but as you can see, the p75 and p90 numbers aren't pretty and [all of these numbers have gotten significantly worse over the past two years](https://almanac.httparchive.org/en/2022/media#fig-24).
+While many `sizes` attributes are entirely accurate, the median `sizes` attribute is 16% too large on mobile and 19% too large on desktop. That might be OK, given the hint-like nature of the feature, but as you can see, the p75 and p90 numbers aren't pretty and [all of these numbers have gotten significantly worse over the past two years](https://almanac.httparchive.org/en/2022/media#fig-24).
 
 What's the impact of all of this inaccuracy?.
 
-20%
-*sizes attributes that were inaccurate enough to affect srcset selection on desktop. On mobile, it’s 14%.*
+{{ figure_markup(
+  content="20%",
+  caption="`sizes` attributes that were inaccurate enough to affect srcset selection on desktop. On mobile, it’s 14%.",
+  classes="big-number",
+  sheets_gid="1503721277",
+  sql_file="image_srcset_sizes_accuracy_pct.sql"
+)
+}}
 
-(data)
+On desktop, where the difference between the default `sizes` value (`100vw`) and the actual layout width of the image is likely to be larger than on mobile, one-in-five `sizes` attributes is inaccurate enough to cause browsers to pick a suboptimal resource from the `srcset`. These errors add up.
 
-On desktop, where the difference between the default sizes value (100vw) and the actual layout width of the image is likely to be larger than on mobile, one-in-five sizes attributes is inaccurate enough to cause browsers to pick a suboptimal resource from the srcset. These errors add up.
-
-![][image17]
-(data)
+{{ figure_markup(
+  image="TODO.png",
+  caption="Excess kilobytes loaded per page due to inaccurate sizes.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=736387424&format=interactive",
+  sheets_gid="252030871",
+  sql_file="image_sizes_per_page_accuracy_impact.sql"
+)
+}}
 
 We estimate that a quarter of all desktop pages that use w descriptors are loading 180kb or more of wasted image data, because of their inaccurate sizes attributes. That is to say, a better, smaller resource is there for the picking in the srcset, but because the sizes attribute is so erroneous, the browser doesn't pick it. The worst 10% of desktop pages that use w descriptors load close to a megabyte of excess image data because of bad sizes attributes.
 
@@ -347,10 +516,14 @@ The last responsive image feature to land in 2014 was the \<picture\> element. W
 
 The picture element is used far less than srcset:
 
-9.3%
-*Percentage of mobile using the picture element.*
-
-(data)
+{{ figure_markup(
+  content="9.3%",
+  caption="Percentage of mobile using the picture element.",
+  classes="big-number",
+  sheets_gid="1095160660",
+  sql_file="picture_distribution.sql"
+)
+}}
 
 This is up more than a percentage point and a half from 2022, but the fact that there are more than four pages that use srcset for every one page that uses \<picture\> suggests that either \<picture\> use cases are more niche or that it's more difficult to deploy – or both.
 
@@ -358,8 +531,15 @@ What are people using \<picture\> for?
 
 The \<picture\> element gives authors two ways to switch between resources. Type-switching allows authors to provide cutting-edge image formats to browsers that support them and fallback formats for everyone else. Media-switching facilitates [art direction](https://www.w3.org/TR/respimg-usecases/#art-direction), allowing authors to switch between various \<source\>s based on media conditions.
 
-![][image18]
-(data)
+{{ figure_markup(
+  image="TODO.png",
+  caption="\<picture\> feature usage.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=68600519&format=interactive",
+  sheets_gid="1248341599",
+  sql_file="picture_switching.sql"
+)
+}}
 
 While usage of the media attribute is down a couple of percentage points from 2022, type-switching usage is up a couple of percentage points. This increase is likely related to the increasing popularity of next-generation image formats, especially JPEG XL which does not yet enjoy universal browser support.
 
@@ -373,15 +553,29 @@ We already saw [how the web’s image resources size up](https://almanac.httparc
 
 Let's start by asking: How wide do the web’s images end up when painted to the page?
 
-![][image19]
-(data)
+{{ figure_markup(
+  image="TODO.png",
+  caption="Distribution of \<img\> layout widths.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=991739101&format=interactive",
+  sheets_gid="1727223276",
+  sql_file="image_layout_widths.sql"
+)
+}}
 
 Just like the resources that they embed, most of the web’s images end up pretty small within layouts. Interestingly, [while most of the mobile layout sizes are essentially unchanged since 2022, the top half of desktop layout sizes have all increased by around 8%](https://almanac.httparchive.org/en/2022/media#sizes).
 
 But while the majority of layout sizes are small, most pages have at least one fairly large \<img\>.
 
-![][image20]
-(data)
+{{ figure_markup(
+  image="TODO.png",
+  caption="Widest \<img\> per page (layout width).",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=764338367&format=interactive",
+  sheets_gid="1022961650",
+  sql_file="largest_image_per_page_layout.sql"
+)
+}}
 
 Half of all mobile pages have at least one image that takes up approximately the full viewport. At the top end, mobile layouts are doing a good job of containing images so that they don't take up much more than that. You can see the distribution quickly approach the mobile crawlers' viewport width (360px) and then only barely exceed it.
 
@@ -399,8 +593,15 @@ Complicating things further, some CSS rules allow \<img\>s to appear at their in
 
 With all of that explanation out of the way, here’s how the web’s \<img\> elements are sized for layout:
 
-![][image21]
-(data)
+{{ figure_markup(
+  image="TODO.png",
+  caption="Intrinsic and extrinsic image sizing (mobile).",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=905295325&format=interactive",
+  sheets_gid="224799521",
+  sql_file="image_sizing_extrinsic_intrinsic.sql"
+)
+}}
 
 The majority of images have extrinsic widths and intrinsic heights. The “both” category for width – representing images with either a max-width or min-width sizing constraint – is also fairly popular. Leaving images to their intrinsic widths is far less popular and slightly less popular than it was [in 2022](https://almanac.httparchive.org/en/2022/media#fig-31).
 
@@ -410,10 +611,14 @@ Any \<img\> whose layout size is dependent on its intrinsic dimensions risks tri
 
 As we’ve just seen, extrinsically scaling images to fit a certain width while leaving the height (and aspect ratio) intrinsic is very common. To prevent the resulting plague of layout shifts, [authors should set the width and height attributes on the \<img\>](https://developer.mozilla.org/en-US/docs/Learn/Performance/Multimedia#rendering_strategy_preventing_jank_when_loading_images) so that browsers can reserve layout space for the image before it loads.
 
-32%
-*Percentage of \<img\> elements on mobile that have both height and width attributes set.*
-
-(data)
+{{ figure_markup(
+  content="32%",
+  caption="Percentage of \<img\> elements on mobile that have both height and width attributes set.",
+  classes="big-number",
+  sheets_gid="36830123",
+  sql_file="img_with_dimensions.sql"
+)
+}}
 
 [Usage of height and width is up four percentage points from 2022](https://almanac.httparchive.org/en/2022/media#fig-32), which is good. But the attributes are still only used on a one-third of images, meaning we have a long way to go.
 
@@ -425,8 +630,15 @@ Finally, let’s take a look at how images are delivered over the network.
 
 How many images are being delivered from a different domain than the document they’re embedded on? A growing majority:
 
-![][image22]
-(data)
+{{ figure_markup(
+  image="TODO.png",
+  caption="Image hosts: same vs cross domain.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=595767399&format=interactive",
+  sheets_gid="817041542",
+  sql_file="img_xdomain.sql"
+)
+}}
 
 It's hard to disentangle the various potential causes here, but we hypothesize that one factor is just how hard images are to get right. This leads teams to adopt [image CDNs](https://web.dev/image-cdns/), which provide image optimization and delivery as a service.
 
@@ -440,10 +652,14 @@ The \<video\> element shipped in 2010, and has been the best and – since the d
 
 Let’s start by answering the first and most basic question: How many pages include \<video\> elements at all?
 
-6.7%
-*Percentage of mobile pages that include at least one \<video\> element. On desktop, it's 7.7%*
-
- (data)
+{{ figure_markup(
+  content="6.7%",
+  caption="Percentage of mobile pages that include at least one \<video\> element. On desktop, it's 7.7%.",
+  classes="big-number",
+  sheets_gid="1452717500",
+  sql_file="video_adoption.sql"
+)
+}}
 
 This is a small fraction of the pages that include \<img\>s. But even though \<video\> was introduced 14 years ago, adoption is currently growing fast. [The mobile number is up 33% (in relative terms) from 2022](https://almanac.httparchive.org/en/2022/media#fig-34).
 
@@ -451,7 +667,15 @@ This is a small fraction of the pages that include \<img\>s. But even though \<v
 
 How long are those videos? Not very long\!
 
-![][image23]
+{{ figure_markup(
+  image="TODO.png",
+  caption="Video durations.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=743719097&format=interactive",
+  sheets_gid="703705018",
+  sql_file="video_durations.sql"
+)
+}}
 
 Nine out of 10 videos are less than two minutes long. More than half are under 30 seconds. And almost one-quarter of videos are under 10 seconds.
 
@@ -459,15 +683,31 @@ Nine out of 10 videos are less than two minutes long. More than half are under 3
 
 What formats are sites delivering in 2024? MP4, with its [universal support story](https://caniuse.com/mpeg4), is king:
 
-![][image24]
+{{ figure_markup(
+  image="TODO.png",
+  caption="Top extensions of files with a video MIME type.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=892598197&format=interactive",
+  sheets_gid="1427621996",
+  sql_file="video_ext.sql"
+)
+}}
+
 After .mp4, the three most common extensions are no-extension, .ts, and .m4s. This trio is delivered when a \<video\> element employs adaptive bitrate streaming using either HLS or MPEG-DASH. Video elements that use anything besides MP4 or adaptive bitrate streaming are rare, accounting for only 4% of the extensions we found.
 
 ### Embedding
 
 The \<video\> element offers a number of attributes that allow authors to control how the video will be loaded and presented on the page. Here they are, ranked by usage:
 
-![][image25]
-(data)
+{{ figure_markup(
+  image="TODO.png",
+  caption="Video attribute usage.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=735682069&format=interactive",
+  sheets_gid="118006887",
+  sql_file="video_attribute_names.sql"
+)
+}}
 
 While both playsinline and autoplay are up three percentage points from 2022 – likely representing increased adoption of short inline videos that play the same role as GIFs – the biggest mover over the past few years has been preload, whose usage has decreased six percentage points.
 
@@ -476,10 +716,16 @@ This continues a trend we have seen throughout the 2020s, and our hypothesis abo
 ### `src` and `source`
 
 The src attribute is only present on 9% of \<video\>s on mobile and 12% on desktop. Many of the rest of the \<video\> elements on the web use \<source\> children, allowing authors to – in theory – supply multiple, alternate video resources for use in different contexts.
-![][image26]
-*Number of \<source\>s per \<video\>*
 
-(data)
+{{ figure_markup(
+  image="TODO.png",
+  caption="Number of \<source\>s per \<video\>.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=1457938371&format=interactive",
+  sheets_gid="1562419289",
+  sql_file="video_number_of_sources.sql"
+)
+}}
 
 However most of the \<video\>s with \<source\> children only have one; only one in ten \<video\> elements have multiple \<source\>s.
 
