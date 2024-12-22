@@ -3,19 +3,22 @@
 title: Media
 description: Media chapter of the 2024 Web Almanac covering how images and videos are currently being encoded, embedded, styled, and delivered on the web.
 hero_alt: Hero image of Web Almanac characters projecting an image onto a screen while other Web Almanac characters walk to cinema seats with popcorn to watch the projection.
-authors: []
-reviewers: []
-editors: []
-analysts: []
+authors: [stefanjudis, eeeps]
+reviewers: [svgeesus]
+editors: [MichaelLewittes]
+analysts: [stefanjudis, eeeps, mikaelaraujo]
 translators: []
+stefanjudis_bio: Stefan Judis fell in love with Frontend development ten years ago, and learns in public on his <a hreflang="en" href="https://www.stefanjudis.com/blog/">blog</a> and <a hreflang="en" href="https://webweekly.email/">newsletter</a>.
+eeeps_bio: <a href="https://ericportis.com">Eric Portis</a> is a Web Platform Advocate at <a hreflang="en" href="https://cloudinary.com/">Cloudinary</a>.
+
 results: https://docs.google.com/spreadsheets/d/1Q2ITOe6ZMIXGKHtIxqK9XmUA1eQBX9CLQkxarQOJFCk/
-featured_quote:
-featured_stat_1:
-featured_stat_label_1:
-featured_stat_2:
-featured_stat_label_2:
-featured_stat_3:
-featured_stat_label_3:
+featured_quote: Images on the web are getting bigger. Whether you're counting image pixels or layout dimensions, the numbers are going up. Interestingly, they're going up faster on desktop than they are on mobile, and they're growing fastest when we look at the top ends of the distributions. So even though we also saw an increase in compression ratios – driven in part by increased adoption of modern image formats – total image byte sizes are going up, too.
+featured_stat_1: 99.9%
+featured_stat_label_1: Pages that generated at least one image request.
+featured_stat_2: 33%
+featured_stat_label_2: Increase in video adoption since 2022
+featured_stat_3: 1 in 5
+featured_stat_label_3: sizes attributes that are inaccurate enough to cause browsers to pick a suboptimal resource from the srcset
 ---
 
 ## Introduction
