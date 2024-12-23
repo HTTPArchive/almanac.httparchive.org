@@ -12,10 +12,10 @@ stefanjudis_bio: Stefan Judis fell in love with Frontend development ten years a
 eeeps_bio: <a href="https://ericportis.com">Eric Portis</a> is a Web Platform Advocate at <a hreflang="en" href="https://cloudinary.com/">Cloudinary</a>.
 
 results: https://docs.google.com/spreadsheets/d/1Q2ITOe6ZMIXGKHtIxqK9XmUA1eQBX9CLQkxarQOJFCk/
-featured_quote: Images on the web are getting bigger. Whether you're counting image pixels or layout dimensions, the numbers are going up. Interestingly, they're going up faster on desktop than they are on mobile, and they're growing fastest when we look at the top ends of the distributions. So even though we also saw an increase in compression ratios – driven in part by increased adoption of modern image formats – total image byte sizes are going up, too.
+featured_quote: Images on the web are getting bigger. Whether you're counting image pixels or layout dimensions, the numbers are going up. So even though we also saw an increase in compression ratios – driven in part by increased adoption of modern image formats – total image byte sizes are going up, too.
 featured_stat_1: 99.9%
 featured_stat_label_1: Pages that generated at least one image request.
-featured_stat_2: 33%
+featured_stat_2: 32%
 featured_stat_label_2: Increase in video adoption since 2022
 featured_stat_3: 1 in 5
 featured_stat_label_3: sizes attributes that are inaccurate enough to cause browsers to pick a suboptimal resource from the srcset
@@ -127,7 +127,7 @@ Let's now turn to images that were *larger* than 1×1. How big were they?
 )
 }}
 
-Despite the fact that the Web Almanac's mobile crawler hasn't grown at all (rendering pages to a 360px-wide viewport, at a device pixel ratio of 3x), the median image – weighing in at 0.058 megapixels – is about 26% larger than it was [the last time we looked](https://almanac.httparchive.org/en/2022/media#image-dimensions). For reference, at a square aspect ratio, 0.058 megapixels works out to about 240×240.
+Despite the fact that the Web Almanac's mobile crawler hasn't grown at all (rendering pages to a 360px-wide viewport, at a device pixel ratio of 3x), the median image – weighing in at 0.058 megapixels – is about 25% larger than it was [the last time we looked](https://almanac.httparchive.org/en/2022/media#image-dimensions). For reference, at a square aspect ratio, 0.058 megapixels works out to about 240×240.
 
 Most *pages* have one image that has almost 10 times as many pixels as the median image:
 
@@ -297,11 +297,11 @@ The vast majority of the web's images rely on the sRGB default for correct rende
 
 The most common ICC profile is the full, official sRGB color profile. This profile is relatively heavy – it weighs 3 KB. Thus, most of the rest of the top 10 ICC profiles are "sRGB-ish" profiles like [Clinton Ingrahm's 424-byte c2ci](https://photosauce.net/blog/post/making-a-minimal-srgb-icc-profile-part-1-trim-the-fat-abuse-the-spec), which unambiguously specify that an image uses sRGB but with a minimum of overhead.
 
-Over the last decade, hardware and software are increasingly able to capture and present colors that are outside of the range of colors that are possible with sRGB (aka the sRGB [gamut](https://en.wikipedia.org/wiki/Gamut)). Adobe RGB (1998) and Display P3 are the only two "wide-gamut" profiles in the top 10\. [While Adobe RGB (1998)'s usage ticked down slightly from 2022, Display P3's has ticked up](https://almanac.httparchive.org/en/2022/media#fig-8), and [total wide-gamut ICC profile adoption is up about 10% in relative terms](https://docs.google.com/spreadsheets/d/1Q2ITOe6ZMIXGKHtIxqK9XmUA1eQBX9CLQkxarQOJFCk/edit?gid=644447618#gid=644447618). In absolute terms, wide-gamut ICC profiles are still relatively rare. We found them in 1 in 40 images on the web and 1 in 10 images that have an ICC profile.
+Over the last decade, hardware and software are increasingly able to capture and present colors that are outside of the range of colors that are possible with sRGB (aka the sRGB [gamut](https://en.wikipedia.org/wiki/Gamut)). Adobe RGB (1998) and Display P3 are the only two "wide-gamut" profiles in the top 10\. [While Adobe RGB (1998)'s usage ticked down slightly from 2022, Display P3's has ticked up](https://almanac.httparchive.org/en/2022/media#fig-8), and [total wide-gamut ICC profile adoption is up about 10% in relative terms](https://docs.google.com/spreadsheets/d/1Q2ITOe6ZMIXGKHtIxqK9XmUA1eQBX9CLQkxarQOJFCk/edit?gid=644447618#gid=644447618). In absolute terms, wide-gamut ICC profiles are still relatively rare. We found them in 1 in 80 images on the web and 1 in 10 images that have an ICC profile.
 
 One very important caveat here is that in our analysis we were only able to look at ICC profiles. As mentioned, these profiles can be relatively heavy. Modern image formats like AVIF (and [recently modernized ones like PNG](https://github.com/w3c/png/blob/main/Third_Edition_Explainer.md#labelling-hdr-content)) allow images to signal their color space much more efficiently using a standard called CICP – [which allows common color spaces to be signaled in just four bytes](https://www.w3.org/TR/png-3/#cICP-chunk). It stands to reason that modern PNG encoders and any AVIF encoder worth its salt would use CICP instead of ICC to signal a wide gamut color space.
 
-However, in our analysis, images containing CICP are categorized under "No ICC profile." So, our accounting of wide-gamut usage on the web should be seen as a floor, rather than as an estimate of total adoption. In other words, we found that *at least* 1 in 40 images on the web is wide-gamut.
+However, in our analysis, images containing CICP are categorized under "No ICC profile." So, our accounting of wide-gamut usage on the web should be seen as a floor, rather than as an estimate of total adoption. In other words, we found that *at least* 1 in 80 images on the web is wide-gamut.
 
 ## Encoding
 
@@ -369,7 +369,7 @@ A median of 12 KB might lead one to think, "Eh, that's not that heavy\!" But, ju
 )
 }}
 
-Most mobile pages have one image that's 135 KB or more. That's a 9% increase since 2022\. And the further up we go in the distribution, the more things are accelerating: the 75th percentile is up 10% and the 90th percentile is up 13% (to almost exactly a megabyte).<!-- TODO check percentages here -->
+Most mobile pages have one image that's 135 KB or more. That's an 8% increase since 2022\. And the further up we go in the distribution, the more things are accelerating: the 75th percentile is up 10% and the 90th percentile is up 13% (to almost exactly a megabyte).<!-- TODO check percentages here -->
 
 Images are getting heavier, and the heaviest images are getting heavier *faster*.
 
@@ -427,7 +427,7 @@ So, with all of that as context, here's how the web's images stack up:
 )
 }}
 
-The median image is compressed to 2.1 bits per pixel, representing a tad more compression than that 1990s rule of thumb. [This is also slightly more compression than we saw when we last surveyed the web's images in 2022](https://almanac.httparchive.org/en/2022/media#fig-14).
+The median image is compressed to 2.1 bits per pixel, representing a tad more compression than that 1990s rule of thumb. [This is also 8–10% more compression than we saw when we last surveyed the web's images in 2022](https://almanac.httparchive.org/en/2022/media#fig-14).
 
 When we break compression down by format, we can see that *every* format saw fewer bits spent per pixel in 2024 than they did in 2022 – except for one.
 
@@ -443,9 +443,9 @@ When we break compression down by format, we can see that *every* format saw few
 )
 }}
 
-[Compared to 2022](https://almanac.httparchive.org/en/2022/media#fig-15), the median PNG is compressed about 10% more; the median WebP is compressed about 8% more; and the median JPEG is compressed around 5% more. <!--TODO double-check these percentages --> It is hard to know exactly what the causes are here, but we hypothesize that an increase in compression is the result of wider adoption of two things: modern encoders, which provide more bang for the buck, and automated image-processing pipelines, which ensure that every image that makes its way to a user has been well-compressed.
+[Compared to 2022](https://almanac.httparchive.org/en/2022/media#fig-15), on mobile, the median PNG is compressed about 10% more; the median WebP is compressed about 7% more; and the median JPEG is compressed around 3% more. It is hard to know exactly what the causes are here, but we hypothesize that an increase in compression is the result of wider adoption of two things: modern encoders, which provide more bang for the buck, and automated image-processing pipelines, which ensure that every image that makes its way to a user has been well-compressed.
 
-The one format that bucked this trend was AVIF. The median AVIF's bits-per-pixel went up from an even 1.0 in 2022 to 1.4 bits per pixel in 2024 – an *increase* of 40%. Funnily enough, we hypothesize the same root cause. The current, diverse crop of AVIF encoders is likely making different quality/filesize tradeoffs, sacrificing less quality at default settings than AOM's official libavif encoder was two years ago.
+The one format that bucked this trend was AVIF. The median AVIF's bits-per-pixel went up from approximately 1.0 in 2022 to around 1.4 bits per pixel in 2024 – an *increase* of 47%. Funnily enough, we hypothesize the same root cause. The current, diverse crop of AVIF encoders is likely making different quality/filesize tradeoffs, sacrificing less quality at default settings than AOM's official libavif encoder was two years ago.
 
 We have no idea why GIFs got significantly more efficient, but we do know why they are so much less-compressed than all of the other formats. Our query is per pixel, and it does not take animated images into account, though many GIFs are animated\!
 
@@ -559,7 +559,7 @@ Let's start by looking at the `srcset` attribute, which allows authors to give t
 
 {{ figure_markup(
   content="42%",
-  caption="Percentage of pages using the `srcset` attribute.",
+  caption="Percentage of pages using the `srcset` attribute on mobile.",
   classes="big-number",
   sheets_gid="2067327124",
   sql_file="image_srcset_sizes.sql"
@@ -580,7 +580,7 @@ The `srcset` attribute allows authors to describe resources using one of two des
 )
 }}
 
-`x` descriptors shipped first and are simpler to reason about, but `w` descriptors are more powerful. It is encouraging to see that `w` descriptors are more common. And while `x` descriptor adoption has remained constant since 2022, [`w` descriptor usage is still growing](https://almanac.httparchive.org/en/2022/media#fig-23); `w` descriptor adoption is up three percentage points on mobile and seven percentage points on desktop.
+`x` descriptors shipped first and are simpler to reason about, but `w` descriptors are more powerful. It is encouraging to see that `w` descriptors are more common. And while `x` descriptor adoption hasn’t increased much since 2022, [`w` descriptor usage is still growing](https://almanac.httparchive.org/en/2022/media#fig-23); `w` descriptor adoption is up four percentage points on mobile and six percentage points on desktop.
 
 ### `sizes`
 
@@ -602,7 +602,7 @@ So, how accurate are our `sizes`?
 )
 }}
 
-While many `sizes` attributes are entirely accurate, the median `sizes` attribute is 16% too large on mobile and 19% too large on desktop. That might be OK, given the hint-like nature of the feature, but as you can see, the 75th and 90th percentiles aren't pretty. Most worryingly, [all of these numbers have gotten significantly worse over the past two years](https://almanac.httparchive.org/en/2022/media#fig-24).
+While many `sizes` attributes are entirely accurate, the median `sizes` attribute is 16% too large on mobile and 43% too large on desktop. That might be OK, given the hint-like nature of the feature, but as you can see, the 75th and 90th percentiles aren't pretty. Most worryingly, [all of these numbers have gotten significantly worse over the past two years](https://almanac.httparchive.org/en/2022/media#fig-24); the median desktop sizes is more than twice as inaccurate as it was two years ago.
 
 What's the impact of all of this inaccuracy?.
 
@@ -649,7 +649,7 @@ The `<picture>` element is used far less than `srcset`:
 
 {{ figure_markup(
   content="9.3%",
-  caption="Percentage of mobile using the `<picture>` element.",
+  caption="Percentage of mobile pages that use the `<picture>` element.",
   classes="big-number",
   sheets_gid="1095160660",
   sql_file="picture_distribution.sql"
@@ -672,11 +672,11 @@ The `<picture>` element gives authors two ways to switch between resources. Type
 )
 }}
 
-While usage of the `media` attribute is down a couple of percentage points from 2022, `type`-switching usage is up a couple of percentage points. This increase is likely related to the increasing popularity of next-generation image formats, especially JPEG XL which does not yet enjoy universal browser support.
+While usage of the `media` attribute is down three percentage points from 2022, `type`-switching usage is up three percentage points. This increase is likely related to the increasing popularity of next-generation image formats, especially JPEG XL which does not yet enjoy universal browser support.
 
 ## Layout
 
-We already saw [how the web's image resources size up](https://almanac.httparchive.org/en/2022/media#image-dimensions). But before they can be shown to a user, embedded images must be placed within a layout and potentially squished or stretched to fit it.
+We already saw [how the web's image resources size up](#image-dimensions)<!--TODO does this link work-->. But before they can be shown to a user, embedded images must be placed within a layout and potentially squished or stretched to fit it.
 
 <p class="note">Note: It will be useful to keep in mind the <a href="https://almanac.httparchive.org/en/2024/methodology#webpagetest">crawlers' viewports</a> throughout this analysis. The desktop crawler was 1376px-wide, with a DPR of 1x; the mobile crawler was 360px-wide, with a DPR of 3x.</p>
 
@@ -710,7 +710,7 @@ But while the majority of layout sizes are small, most pages have at least one f
 
 Half of all mobile pages have at least one image that takes up approximately the full viewport. At the top end, mobile layouts are doing a good job of containing images so that they don't take up much more than that. You can see the distribution quickly approach the mobile crawlers' viewport width (360px) and then only barely exceed it.
 
-Contrast this with the desktop layout widths, which don't top out at all. They just keep growing, hitting full-viewport-width (1360px) at the 75th percentile and blowing right past it at the 90th percentile. Equally interesting, the 50th and 75th percentile layout sizes on desktop [have gotten larger than they were two years ago](https://almanac.httparchive.org/en/2022/media#fig-30), while the ends of the distribution are essentially unchanged. Large hero images are getting larger.
+Contrast this with the desktop layout widths, which don't top out at all. They just keep growing, hitting full-viewport-width (1360px) at the 75th percentile and blowing right past it at the 90th percentile. Equally interesting, the 25th, 50th and 75th percentile layout sizes on desktop [have gotten larger than they were two years ago](https://almanac.httparchive.org/en/2022/media#fig-30), while the ends of the distribution are essentially unchanged. Large hero images are getting larger.
 
 ### Intrinsic vs extrinsic sizing
 
@@ -728,7 +728,7 @@ With all of that explanation out of the way, here's how the web's `<img>` elemen
   image="TODO.png",
   caption="Intrinsic and extrinsic image sizing (mobile).",
   description="A stacked bar chart showing the percentage of images whose width and height are determined based on extrinsic vs extrinsic sizing. There is a (for now) mysterious third category: both. The distributions between intrinsic, extrinsic, and both are quite different for height and width. For height, 55% of images are intrinsically sized, 36% extrinsic and the remaining 9% fall under both. For width, just 7% of images are intrinsically sized, and 70% are extrinsic. The remaining 22% are both.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=905295325&format=interactive",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=771165914&format=interactive",
   sheets_gid="224799521",
   sql_file="image_sizing_extrinsic_intrinsic.sql"
 )
@@ -792,7 +792,7 @@ Let's start by answering the first and most basic question: How many pages inclu
 )
 }}
 
-This is a small fraction of the pages that include `<img>`s. But even though `<video>` was introduced 14 years ago, adoption is currently growing fast. [The mobile number is up 33% (in relative terms) from 2022](https://almanac.httparchive.org/en/2022/media#fig-34).
+This is a small fraction of the pages that include `<img>`s. But even though `<video>` was introduced 14 years ago, adoption is currently growing fast. [The mobile number is up 32% (in relative terms) from 2022](https://almanac.httparchive.org/en/2022/media#fig-34).
 
 ### Video durations
 
@@ -834,7 +834,7 @@ The `<video>` element offers a number of attributes that allow authors to contro
   image="TODO.png",
   caption="Video attribute usage.",
   description="A bar chart showing the number of times various attributes on the HTML video element were found on both desktop and mobile. Generally, the mobile and desktop bars are similar; only the mobile bars are labelled. autoplay is present on 23% of video elements; playsinline, 14%; preload, 16%; src, 9%; controls, 9%; width, 10%; loop, 7%; crossorigin, 5%; muted, 8%; and finally poster, 3%.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=735682069&format=interactive",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=1127314078&format=interactive",
   sheets_gid="118006887",
   sql_file="video_attribute_names.sql"
 )
@@ -864,7 +864,7 @@ However most of the `<video>` elements with `<source>` children only have one; o
 
 So there you have it, a snapshot of the state of media on the web in 2024, along with a look at how things have changed over the last couple of years. We've seen just how ubiquitous and important media is to the user experience of the web, and taken stock of how sites are – and aren't – delivering it effectively.
 
-Perhaps unsurprisingly, we found that images on the web are getting *bigger*. Whether you're counting image pixels or layout dimensions, the numbers are going up. Interestingly, they're going up faster on desktop than they are on mobile, and they're growing fastest when we look at the top ends of the distributions. So even though we also saw an increase in compression ratios – driven in part by increased adoption of modern image formats – total image byte sizes are going up, too.
+Perhaps unsurprisingly, we found that images on the web are getting *bigger*. Whether you're counting image pixels or layout dimensions, the numbers are going up. So even though we also saw an increase in compression ratios – driven in part by increased adoption of modern image formats – total image byte sizes are going up, too.
 
 In a similar vein, the most notable change we saw on the video side was simply that there were a lot more of them than there were two years ago. The web continues to get more and more visual.
 
