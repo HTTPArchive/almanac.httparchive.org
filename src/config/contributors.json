@@ -4985,5 +4985,18 @@
     },
     "twitter": "Shaoor_Munir",
     "website": "https://shaoormunir.com"
+  },
+  "montsec": {
+    "avatar_url": "3486362",
+    "bluesky": "montsecano.bsky.social",
+    "github": "montsec",
+    "linkedin": "montsecano-senior-digital-marketer",
+    "name": "Montserrat Cano",
+    "teams": {
+      "2024": [
+        "editors"
+      ]
+    },
+    "website": "https://montserrat-cano.com/"
   }
 }
