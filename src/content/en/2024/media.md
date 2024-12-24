@@ -6,7 +6,7 @@ hero_alt: Hero image of Web Almanac characters projecting an image onto a screen
 authors: [stefanjudis, eeeps]
 reviewers: [svgeesus]
 editors: [MichaelLewittes]
-analysts: [stefanjudis, eeeps, mikaelaraujo]
+analysts: [stefanjudis, eeeps]
 translators: []
 stefanjudis_bio: Stefan Judis fell in love with Frontend development ten years ago, and learns in public on his <a hreflang="en" href="https://www.stefanjudis.com/blog/">blog</a> and <a hreflang="en" href="https://webweekly.email/">newsletter</a>.
 eeeps_bio: <a href="https://ericportis.com">Eric Portis</a> is a Web Platform Advocate at <a hreflang="en" href="https://cloudinary.com/">Cloudinary</a>.

@@ -1506,7 +1506,11 @@
       "2022": [
         "analysts",
         "authors"
-      ]
+      ],
+      "2024": [
+        "analysts",
+        "authors"
+      ],
     },
     "twitter": "etportis",
     "website": "https://ericportis.com"
@@ -4985,5 +4989,18 @@
     },
     "twitter": "Shaoor_Munir",
     "website": "https://shaoormunir.com"
+  },
+  "stefanjudis": {
+    "avatar_url": "962099",
+    "github": "stefanjudis",
+    "name": "Stefan Judis",
+    "teams": {
+      "2024": [
+        "analysts",
+        "authors"
+      ]
+    },
+    "twitter": "stefanjudis",
+    "website": "https://www.stefanjudis.com"
   }
 }
