@@ -4,7 +4,7 @@ title: Page Weight
 description: Page Weight chapter of the 2024 Web Almanac covering why page weight matters, bandwidth, complex pages, page weight over time, page requests, and file formats.
 hero_alt: Hero image of Web Almanac characters using a set of scales to weigh a web page against variuos boxes labelled with various different kilobytes.
 authors: [dwsmart, fellowhuman1101]
-reviewers: []
+reviewers: [ines-akrap]
 editors: [montsec]
 analysts: [burakguneli]
 translators: []
@@ -179,6 +179,55 @@ The lower all over numbers are impacted by the consistently lower number of requ
   sql_file="request_type_distribution.sql"
   )
 }}
+
+When analyzing only homepages for data congruity, total requests were slightly down in 2024 but consistent with 2022 rates. The median desktop homepage requested 76 resources in 2022 and now requests 74. The mobile median remains unchanged.
+
+### Images
+
+Images are static files that are essential for constructing and displaying web pages. As the web becomes increasingly visual, they exemplify the need to balance performance-enhancing technologies with asset byte size.
+
+{{ figure_markup(
+  image="Distribution-of-image-requests-by-device-type.png",
+  caption="Distribution of image requests by device type.",
+  description="Bar chart showing the distribution of image requests for homepages by device type and percentile. The 10th percentile desktop page loads 5 images & mobile 4, the 25th 9 images on desktop & mobile 8, the 50th 18 images on desktop & 16 on mobile, the 75th 33 images on desktop, 30 on mobile, and the 90th 60 images on desktop, 55 on mobile.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRhwSJkKZwXMgxXEe9VbCGUazuIPoC5SERZ_DUWxxxoQjG4O4TbcWa_DA_mUBKM3XSOEBbbEKfucuny/pubchart?oid=1033192122&format=interactive",
+  sheets_gid="556601917",
+  sql_file="request_type_distribution.sql"
+  )
+}}
+
+{{ figure_markup(
+  image="Distribution-of-image-requests-by-page-type.png",
+  caption="Distribution of image requests by page type.",
+  description="Bar chart showing the distribution of image requests by device type and percentile. The 10th percentile homepages page loads 5 images & inner pages 4, the 25th 10 images on homepages & inner pages 7 , the 50th 20 images on homepages & 14 on inner pages, the 75th 36 images on homepages, 26 on inner pages, and the 90th 65 images on homepages, 50 on inner pages.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRhwSJkKZwXMgxXEe9VbCGUazuIPoC5SERZ_DUWxxxoQjG4O4TbcWa_DA_mUBKM3XSOEBbbEKfucuny/pubchart?oid=2009344757&format=interactive",
+  sheets_gid="556601917",
+  sql_file="request_type_distribution.sql"
+  )
+}}
+
+2024 is the first year that image fell from being the dominant file type. In 2022, we saw the median page request 25 images for desktop and 22 for mobile pages. This is down to 18 for desktop and 16 for mobile.
+
+Decreased image file types does not mean that the web has become less visual. Instead, sites may be switching to CSS effects (such as [shadows](https://www.w3schools.com/css/css3_shadows.asp) or [gradients](https://developer.mozilla.org/en-US/docs/Web/CSS/gradient)) and [CSS animations](https://web.dev/articles/animations-guide). These assets can be used to produce resolution-independent assets that always look sharp at every resolution and zoom level, often at a fraction of the bytes required by an image file.
+
+Desktop pages consistently call for more image file types across with the gap between desktop and mobile growing steadily and consistently across percentiles. The difference between homepage and inner pages was striking in comparison. Where device type saw relatively consistent numbers, the median homepage called for 20 images compared to just 14 for inner pages.
+
+{{ figure_markup(
+  caption="Image requests made on desktop pages at the 100th percentile.",
+  content="14,974",
+  classes="big-number",
+  sheets_gid="556601917",
+  sql_file="request_type_distribution.sql"
+)
+}}
+
+### CSS
+
+[CSS](https://developer.mozilla.org/en-US/docs/Web/CSS), or Cascading Style Sheets, is a style sheet language used to describe the presentation of a document written in a markup language like HTML. In other words, CSS is responsible for the visual styling and layout of web pages.
+
+It allows developers to control the color, font, size, spacing, and many other visual aspects of HTML elements. CSS works in conjunction with HTML, providing a separation of content and presentation. 
+
+This separation makes web pages more maintainable, flexible, responsive, and can be used to make a site more performant but substituting byte-heavy image assets with CSS effects and animations.
 
 ## Page weight and Core Web Vitals
 
