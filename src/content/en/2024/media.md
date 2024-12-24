@@ -45,7 +45,7 @@ Almost every page serves up some kind of an image, even if it's just a backgroun
 How many `<img>` elements did we find, per page?
 
 {{ figure_markup(
-  image="TODO.png",
+  image="img-elements-per-page.png",
   caption="Count of `<img>` elements per page.",
   description="Bar chart showing the distribution of counts of image elements per page on desktop and mobile. There is little difference between them (mobile is consistently slightly lower). At the 10th percentile, both mobile and desktop pages contain 1 image, at the 25th percentile it's 5 on mobile and 6 on desktop, at the 50th it's 13 and 14, at the 75th it's 29 and 32, and at the 90th percentile it's 56 and 62.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=796561224&format=interactive",
@@ -57,7 +57,6 @@ How many `<img>` elements did we find, per page?
 The median mobile page contains 13 `<img>` elements. And even at the 90th percentile, pages "only" contain 56 `<img>`s. Considering the visual nature of today's web, this seems reasonable.
 
 If you think that 56 `<img>`s per page is a lot, we probably shouldn't tell you that the mobile crawler found a page with more than two thousand `<img>` elements.
-
 
 {{ figure_markup(
   content="2,174",
@@ -118,7 +117,7 @@ One-by-one pixel images make up roughly 6% of all of the captured image requests
 Let's now turn to images that were *larger* than 1×1. How big were they?
 
 {{ figure_markup(
-  image="TODO.png",
+  image="image-pixel-count-distribution.png",
   caption="Distribution of image pixel counts.",
   description="Bar chart showing the distribution of pixels per image on desktop and mobile, but there is effectively no difference between them, except at the 90th percentile. At the 10th percentile, mobile images contain 0.001 megapixels, at the 25th percentile, 0.013, at the 50th, 0.058, at the 75th, 0.262, and at the 90th percentile mobile images contain 0.778 megapixels. The bar for desktop at the 90th percentile reaches a little higher, to over 0.85 megapixels.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=71466048&format=interactive",
@@ -132,7 +131,7 @@ Despite the fact that the Web Almanac's mobile crawler hasn't grown at all (rend
 Most *pages* have one image that has almost 10 times as many pixels as the median image:
 
 {{ figure_markup(
-  image="TODO.png",
+  image="largest-image-per-page.png",
   caption="Largest image per page (by pixel count).",
   description="Bar chart showing the distribution of largest image per page, by pixels. Only the mobile bars are labelled. At the 10th percentile, mobile pages' largest image contains 0.023 megapixels. At the 25th percentile it's 0.138 megapixels, at the 50th it's 0.540 megapixels, at the 75th it's 1.280, and at the 90th percentile it's 3.130 megapixels. The first two desktop bars are about the same, but at the 50th percentile, they start to reach up to 1.25x higher.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=1868037089&format=interactive",
@@ -150,7 +149,7 @@ As for the 50% of pages that sent images even larger than that, they are almost 
 Now that we have some sense of how images on the web are *sized*, how are they *shaped?*
 
 {{ figure_markup(
-  image="TODO.png",
+  image="image-orientations.png",
   caption="Image orientations.",
   description="A pair of stacked bars showing what percentage of images are portrait-oriented, landscape-oriented, and square, on both desktop and mobile. The desktop breakdown is: 13% portrait, 33% square, and 54% landscape. The mobile breakdown is: 14% portrait, 33% square, and 53% landscape.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=774294848&format=interactive",
@@ -312,7 +311,7 @@ Now that we've gleaned a bit about the web's image content, what can we say abou
 For decades there were just three bitmap formats in common use on the web: JPG, PNG, and GIF. They are still the three most common formats:
 
 {{ figure_markup(
-  image="TODO.png",
+  image="image-format-adoption-mobile.png",
   caption="Image format adoption (mobile).",
   description="A pie chart breaking down each format's share of the web's images. JPEG comes in first, at 32.4%. Next, we have PNG, at 28.4%, GIF, at 16.8%, WebP at 12%, SVG, at 6.4%, and other/unkonwn, at 1.7%. A couple of tiny slivers of the pie are left unlabeled, but hovering them reveals ICO at 1.3% and AVIF at 1.0%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=424926454&format=interactive",
@@ -328,7 +327,7 @@ Which formats saw *more* usage to make up the difference? WebP picked up three p
 And in *relative* terms, AVIF usage is taking off; we found almost four times more AVIFs served up by the crawled pages than we did two years ago.
 
 {{ figure_markup(
-  image="TODO.png",
+  image="image-format-adoption-2-year-change-mobile.png",
   caption="Image format adoption, 2-year change (mobile).",
   description="A bar chart showing the relative 2-year change in format adoption, for seven image formats. JPEG saw a 20% decrease, PNG a 1% increase, GIF a 6% increase, WebP a 34% increase, SVG a 36% increase, ICO a 17% decrease, and finally AVIF saw a 386% increase.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=2128858223&format=interactive",
@@ -348,7 +347,7 @@ Lastly, a few words for the oldest format of the bunch; "[Burn All GIFs](https:/
 How heavy is the typical image on the web?
 
 {{ figure_markup(
-  image="TODO.png",
+  image="distribution-of-image-byte-sizes.png",
   caption="Distribution of image byte sizes.",
   description="A bar chart showing the distribution of image byte sizes on both desktop and mobile, though only the mobile bars are labelled and there is little difference between the desktop and mobile numbers. At the tenth percentile it's 0 kilobytes, at the 25th percentile it's 2 KB, at the 50th percentile it's 12 KB, at the 75th percentile it's 56 KB, and finally, at the 90th percentile it's 177 KB.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=1659171071&format=interactive",
@@ -360,7 +359,7 @@ How heavy is the typical image on the web?
 A median of 12 KB might lead one to think, "Eh, that's not that heavy\!" But, just as when we looked at pixel counts, we found that most pages contain many small images, and at least one large one.
 
 {{ figure_markup(
-  image="TODO.png",
+  image="largest-image-per-page-by-kilobytes.png",
   caption="Largest image per page (by kilobytes).",
   description="Bar chart showing the distribution of largest image per page, by kilobytes. The chart shows bars for both desktop and mobile, although only the mobile bars are labelled. The desktop number all appear about 10-20% larger. At the 10th percentile, the largest image per page on mobile weighs 6 KB; at the 25th percentile, it's 37 KB; at the 50th percentile, it's 135 KB, at the 75th percentile, it's 404 KB, and at the 90th percentile, it's 1002 KB.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=2122518926&format=interactive",
@@ -418,7 +417,7 @@ To summarize:
 So, with all of that as context, here's how the web's images stack up:
 
 {{ figure_markup(
-  image="TODO.png",
+  image="distribution-of-image-bits-per-pixel.png",
   caption="Distribution of image bits per pixel.",
   description="A bar chart showing the distribution of image bits per pixel, for both desktop and mobile. The desktop bars are consistently ever-so-slightly shorter than the mobile ones, but are unlabelled. At the tenth percentile, the web's images weigh in at 0.1 bits per pixel for mobile. At the 25th, 0.9, at the 50th, 2.1, at the 75th, 5.6, and finally, at the 90th percentile, mobile images weigh in at a whopping 12.9 bits per pixel.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=400614419&format=interactive",
@@ -434,7 +433,7 @@ When we break compression down by format, we can see that *every* format saw few
 ### Bit per pixel by format
 
 {{ figure_markup(
-  image="TODO.png",
+  image="median-bits-per-pixel-by-format.png",
   caption="Median bits per pixel by format.",
   description="A bar chart showing the median bits per pixel, by format, for a number of popular image formats. The desktop and mobile numbers are similar and only the mobile bars are labelled. GIF weighs in at 6.7 bits per pixel; PNG: 3.8; JPG: 2.0; AVIF: 1.4 and WebP is smallest at 1.3 bits per pixel.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=165542730&format=interactive",
@@ -465,7 +464,7 @@ How many GIFs are animated?
 When we separate the animated GIFs out from the animated ones, we can see that the median *non*\-animated GIF is much more reasonably compressed:
 
 {{ figure_markup(
-  image="TODO.png",
+  image="gif-bits-per-pixel-animated-non-animated.png",
   caption="GIF bits per pixel: animated vs. non-animated.",
   description="A bar chart showing the distribution of bits per pixel for animated vs non-animated GIFs. The animated GIF bars tower over the non-animated GIF bars. Animated GIFs weigh in at 4.5, 12.1, 32.6, 60.6, and 82.6 bits per pixel, at the 10th, 25th, 50th, 75th, and 90th percentiles, respectively. The non-animated gif progression is as follows: 0.9, 1.8, 3.5, 5.7, and 9.3 bits per pixel.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=1948267327&format=interactive",
@@ -479,7 +478,7 @@ When we separate the animated GIFs out from the animated ones, we can see that t
 Turning to look at the animated GIFs specifically: How many frames do they have?
 
 {{ figure_markup(
-  image="TODO.png",
+  image="distribution-of-animated-gif-frame-counts.png",
   caption="Distribution of animated GIF frame counts.",
   description="Bar chart showing the distribution of animated GIF frame counts. The chart shows both desktop and mobile, but only the mobile numbers are labelled. The bars look exactly the same until the 90th percentile. At the 10th percentile, both mobile and desktop saw 4 frames per GIF. At the 25th percentile they're both 8 frames. At the 50th they're both 12 frames; at the 75th they're both 24 frames. Lastly, at the 90th percentile, the desktop crawler saw 46 frames, and the mobile crawler saw 60.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=230229356&format=interactive",
@@ -512,7 +511,7 @@ Now that we have a sense of how the web's image resources have been encoded, wha
 The biggest recent change in how images are embedded on websites has been the rapid adoption of lazy-loading. Lazy-loading was introduced in 2020, and just [two years later it was adopted on almost a quarter of websites](https://almanac.httparchive.org/en/2022/media#lazy-loading). Its climb continues, and it is now used on a full one-third of all websites:
 
 {{ figure_markup(
-  image="TODO.png",
+  image="adoption-of-img-loading-lazy.png",
   caption="Adoption of `<img loading=lazy>`.",
   description="A line chart showing the percent of pages using native lazy-loading, over time, for both mobile and desktop. The lines are pretty close to one another, and rise almost linearly (with a little big of wiggle/jiggle), from just under 25% in June of 2022, to just under 35% in June of 2024. The steepest gain in any one month is right at the end, where there's a sharp little uptick.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=1997305111&format=interactive",
@@ -571,7 +570,7 @@ Let's start by looking at the `srcset` attribute, which allows authors to give t
 The `srcset` attribute allows authors to describe resources using one of two descriptors. `x` descriptors specify the resource's density, allowing browsers to select different resources depending on users' screen densities. `w` descriptors give the browser the resource's width in pixels. When used in conjunction with the `sizes` attribute, `w` descriptors allow browsers to select a resource appropriate for both variable layout widths and variable screen densities.
 
 {{ figure_markup(
-  image="TODO.png",
+  image="srcset-descriptor-usage.png",
   caption="`srcset` descriptor usage.",
   description="A bar chart showing the percentage of `srcset`s using `x` descriptors and `w` descriptors, on both mobile and desktop. `x` descriptors are used on 15% of `srcset`s on both desktop and mobile. `w` descriptors are used four times more: 64% of the time on desktop, and 62% of the time on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=1554380054&format=interactive",
@@ -593,7 +592,7 @@ But if the `sizes` attribute is more-than-a-little inaccurate, it can affect res
 So, how accurate are our `sizes`?
 
 {{ figure_markup(
-  image="TODO.png",
+  image="distribution-of-img-sizes-errors.png",
   caption="Distribution of `<img sizes>` errors.",
   description="A bar chart showing the distribution of relative error of `sizes` attributes on both desktop and mobile. At first, it's all zeros: at both the 10th and 25th percentile it's 0% on both desktop on mobile. At the 50th percentile it's 43% on desktop and 16% on mobile, at the 75th percentile it's 168% and 94% respectively, and finally, at the 90th percentile it's 360% and 179%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=16669482&format=interactive",
@@ -618,7 +617,7 @@ What's the impact of all of this inaccuracy?.
 On desktop, where the difference between the default `sizes` value (`100vw`) and the actual layout width of the image is likely to be larger than on mobile, 1 in 5 `sizes` attributes is inaccurate enough to cause browsers to pick a suboptimal resource from the `srcset`. These errors add up.
 
 {{ figure_markup(
-  image="TODO.png",
+  image="excess-kilobytes-loaded-per-page-due-to-inaccurate-sizes.png",
   caption="Excess kilobytes loaded per page due to inaccurate `sizes`.",
   description="A bar chart showing the distribution of wasted kilobytes loaded per page due to inaccurate `sizes` attributes. It starts off with a bunch of zeros. At the tenth, 25th, and 50th percentile, both mobile and desktop weigh in at zero kilobytes. At the 75th percentile, the desktop crawler saw 179 wasted kilobytes and the mobile 55; at the 90th percentile, desktop saw 920 kilobytes and mobile 400.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=736387424&format=interactive",
@@ -663,7 +662,7 @@ What are people using `<picture>` for?
 The `<picture>` element gives authors two ways to switch between resources. Type-switching allows authors to provide cutting-edge image formats to browsers that support them and fallback formats for everyone else. Media-switching facilitates [art direction](https://www.w3.org/TR/respimg-usecases/#art-direction), allowing authors to switch between `<source>`s based on [media conditions](https://www.w3.org/TR/mediaqueries-5/#media-condition).
 
 {{ figure_markup(
-  image="TODO.png",
+  image="picture-feature-usage.png",
   caption="`<picture>` feature usage.",
   description="A bar chart showing the percent of pages which use the `media` and `type` attributes on `source` elements, in conjunction with the `picture` element. `media` is used with 40% of `picture` elements on mobile, and 37% on desktop. `type` is used with 46% of `picture` elements on both mobile and desktop (although the mobile bar is ever-so-slightly larger).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=68600519&format=interactive",
@@ -685,7 +684,7 @@ We already saw [how the web's image resources size up](#image-dimensions)<!--TOD
 Let's start by asking: How wide do the web's images end up when painted to the page?
 
 {{ figure_markup(
-  image="TODO.png",
+  image="distribution-of-img-layout-widths.png",
   caption="Distribution of `<img>` layout widths.",
   description="A bar chart showing the distribution of image element layout widths, on both desktop and mobile. In general, the desktop widths are higher, although they are tied with mobile at the 25th percentile. At the 10th percentile, the desktop layout width is 31 CSS px and mobile is at 21 CSS px. At the 25th percentile, both mobile and desktop are tied at 81 CSS px. At the 50th percentile, desktop is at 216 CSS px and mobile is at 158. At the 75th, desktop is at 345 and mobile is at 300. And finally at the 90th percentile, desktop is at 600 CSS px, and mobile is at 340 CSS px.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=991739101&format=interactive",
@@ -699,7 +698,7 @@ Most of the web's images end up pretty small within layouts. Interestingly, [whi
 But while the majority of layout sizes are small, most pages have at least one fairly large `<img>`.
 
 {{ figure_markup(
-  image="TODO.png",
+  image="widest-img-per-page-layout-width.png",
   caption="Widest `<img>` per page (layout width).",
   description="A bar chart showing the distribution of widest per-page image layout width, on both desktop and mobile. At the tenth percentile, the desktop crawler saw 149 CSS px and the mobile crawler saw 101 px. The 25th percentile widths were 330 px for desktop and 280 px for mobile. The 50th percentile numbers were 680 px and 330 px; the 75th percentile saw 1,350 and 360 px, and the 90th percentile saw a towering 1,905 px on desktop and 392 px on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=764338367&format=interactive",
@@ -725,7 +724,7 @@ Complicating things further, some CSS rules size `<img>` elements based on their
 With all of that explanation out of the way, here's how the web's `<img>` elements are sized for layout:
 
 {{ figure_markup(
-  image="TODO.png",
+  image="intrinsic-and-extrinsic-image-sizing-mobile.png",
   caption="Intrinsic and extrinsic image sizing (mobile).",
   description="A stacked bar chart showing the percentage of images whose width and height are determined based on extrinsic vs extrinsic sizing. There is a (for now) mysterious third category: both. The distributions between intrinsic, extrinsic, and both are quite different for height and width. For height, 55% of images are intrinsically sized, 36% extrinsic and the remaining 9% fall under both. For width, just 7% of images are intrinsically sized, and 70% are extrinsic. The remaining 22% are both.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=771165914&format=interactive",
@@ -762,7 +761,7 @@ Finally, let's take a look at how images are delivered over the network.
 How many images are being delivered from a different domain than the document they're embedded on? A growing majority:
 
 {{ figure_markup(
-  image="TODO.png",
+  image="image-hosts-same-vs-cross-domain.png",
   caption="Image hosts: same vs cross domain.",
   description="A bar chart showing how many images were served by the same domain as the root HTML page, vs a different (cross) domain, comparing both the desktop and mobile breakdowns in both 2022 and 2024. On mobile, the split went from 55%/45% cross-domain/same-domain in 2022, to 62%/38% in 2024 – in other words, the share of cross-domain images rose by about seven percentage points. On desktop, the split went from 53%/47% in 2022, to 62%/38% – a gain of nine percentage points for cross-domain image hosting.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=595767399&format=interactive",
@@ -799,7 +798,7 @@ This is a small fraction of the pages that include `<img>`s. But even though `<v
 How long are those videos? Not very long\!
 
 {{ figure_markup(
-  image="TODO.png",
+  image="video-durations.png",
   caption="Video durations.",
   description="A bar chart showing how long videos are, on desktop and mobile. Only the mobile bars are labelled; the desktop bars aren't too different. On mobile, 21% of videos are between 0-10 seconds, 37% are between 10-30 seconds, 21% are between 30-60 seconds, 12% are between 60-120 seconds, and 9% are more than 120 seconds.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=743719097&format=interactive",
@@ -815,7 +814,7 @@ Nine out of 10 videos are less than two minutes long. More than half are under 3
 What formats are sites delivering in 2024? MP4, which enjoys [universal support](https://caniuse.com/mpeg4), is king:
 
 {{ figure_markup(
-  image="TODO.png",
+  image="top-extensions-of-files-with-a-video-mimw-type.png",
   caption="Top extensions of files with a video MIME type.",
   description="A bar chart showing the extensions of video files delivered on desktop and mobile. Only the mobile bars are labelled, but with one exception, the desktop bars are fairly similar. The MP4 extension accounted for 68% of video files; blank extensions accounted for 14% of video files (and were uniquely much lower on desktop); files with a TS extension accounted for 9% of video files; M4S, 4%; MOV, 1%; lastly, WebM, 1%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=892598197&format=interactive",
@@ -831,7 +830,7 @@ After `.mp4`, the three most common extensions are no-extension, `.ts`, and `.m4
 The `<video>` element offers a number of attributes that allow authors to control how the video will be loaded and presented on the page. Here they are, ranked by usage:
 
 {{ figure_markup(
-  image="TODO.png",
+  image="video-attribute-usage.png",
   caption="Video attribute usage.",
   description="A bar chart showing the number of times various attributes on the HTML video element were found on both desktop and mobile. Generally, the mobile and desktop bars are similar; only the mobile bars are labelled. autoplay is present on 23% of video elements; playsinline, 14%; preload, 16%; src, 9%; controls, 9%; width, 10%; loop, 7%; crossorigin, 5%; muted, 8%; and finally poster, 3%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=1127314078&format=interactive",
@@ -849,7 +848,7 @@ This continues a trend we have seen throughout the 2020s, and our hypothesis abo
 The `src` attribute is only present on 9% of `<video>` elements. Many of the rest of the `<video>` elements on the web use `<source>` children, allowing authors to – in theory – supply multiple, alternate video resources for use in different contexts.
 
 {{ figure_markup(
-  image="TODO.png",
+  image="number-of-sources-per-video.png",
   caption="Number of `<source>`s per `<video>`.",
   description="A bar chart showing the frequency of various numbers of source elements per video element, on both desktop and mobile. The desktop and mobile numbers are pretty similar, and only the mobile numbers are labelled. The most common number of source elements per video is one: 48.9% of mobile video elements contain this many sources on mobile. The second most common number of source children is 0: 42.5% of mobile videos have no source children. 6.8% contain 2, 1.6% contain 3, and 0.2% of video elements on mobile contain 4 elements. The number containing 5 children rounds down to 0.0%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=1457938371&format=interactive",
