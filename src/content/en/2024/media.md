@@ -134,8 +134,8 @@ Most *pages* have one image that has almost 10 times as many pixels as the media
 {{ figure_markup(
   image="TODO.png",
   caption="Largest image per page (by pixel count).",
-  description="Bar chart showing the distribution of largest image per page, by pixels. At the 10th percentile, mobile pages' largest image contains 0.023 megapixels. At the 25th percentile it's 0.138 megapixels, at the 50th it's 0.540 megapixels, at the 75th it's 1.280, and at the 90th percentile it's 3.130 megapixels. The first two desktop bars are about the same, but at the 50th percentile, they start to reach higher: 0.720 megapixels at the 50th percentile, 1.880 at the 75th, and 4.030 at the 90th.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=1399291173&format=interactive",
+  description="Bar chart showing the distribution of largest image per page, by pixels. Only the mobile bars are labelled. At the 10th percentile, mobile pages' largest image contains 0.023 megapixels. At the 25th percentile it's 0.138 megapixels, at the 50th it's 0.540 megapixels, at the 75th it's 1.280, and at the 90th percentile it's 3.130 megapixels. The first two desktop bars are about the same, but at the 50th percentile, they start to reach up to 1.25x higher.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=1868037089&format=interactive",
   sheets_gid="1057576785",
   sql_file="largest_image_per_page_pixels.sql"
 )
@@ -351,7 +351,7 @@ How heavy is the typical image on the web?
   image="TODO.png",
   caption="Distribution of image byte sizes.",
   description="A bar chart showing the distribution of image byte sizes on both desktop and mobile, though only the mobile bars are labelled and there is little difference between the desktop and mobile numbers. At the tenth percentile it's 0 kilobytes, at the 25th percentile it's 2 KB, at the 50th percentile it's 12 KB, at the 75th percentile it's 56 KB, and finally, at the 90th percentile it's 177 KB.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=124051420&format=interactive",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=1659171071&format=interactive",
   sheets_gid="1417829992",
   sql_file="bytes_and_dimensions.sql"
 )
@@ -421,7 +421,7 @@ So, with all of that as context, here's how the web's images stack up:
   image="TODO.png",
   caption="Distribution of image bits per pixel.",
   description="A bar chart showing the distribution of image bits per pixel, for both desktop and mobile. The desktop bars are consistently ever-so-slightly shorter than the mobile ones, but are unlabelled. At the tenth percentile, the web's images weigh in at 0.1 bits per pixel for mobile. At the 25th, 0.9, at the 50th, 2.1, at the 75th, 5.6, and finally, at the 90th percentile, mobile images weigh in at a whopping 12.9 bits per pixel.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=1214411230&format=interactive",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=400614419&format=interactive",
   sheets_gid="1417829992",
   sql_file="bytes_and_dimensions.sql"
 )
