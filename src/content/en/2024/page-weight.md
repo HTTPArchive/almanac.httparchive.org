@@ -434,7 +434,7 @@ According to Alex Russell's [The Performance Inequality Gap, 2024](https://infre
 At the 75th percentile, both mobile and desktop blast past the proposed 650 KB budget to achieve 5 seconds by, and that is assuming it's a JavaScript heavy page, and markup is accordingly smaller.
 
 {{ figure_markup(
-  image="distribution-of-css-response-sizes-by-page-type.png",
+  image="distribution-of-js-response-sizes-by-page-type.png",
   caption="Distribution of JavaScript response sizes by page type.",
   description="Bar chart of the distribution of JavaScript resource sizes by page type, across device types. At the 10th percentile, it is 86 KB for homepages and 104 KB for inner pages, at the 25th percentile it is 248 KB for homepages and 267 KB for inner pages, at the 50th percentile, it is 585 KB for homepages URLs, 604 KB for inner pages URLs, at the 75th percentile it's 1,151 KB for homepages, 1,120 KB for inner pages, and the 90th percentile it's 1,1822 KB for homepages and 1,744 KB for inner pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRhwSJkKZwXMgxXEe9VbCGUazuIPoC5SERZ_DUWxxxoQjG4O4TbcWa_DA_mUBKM3XSOEBbbEKfucuny/pubchart?oid=989064677&format=interactive",
