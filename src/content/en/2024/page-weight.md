@@ -11,7 +11,7 @@ translators: []
 results: https://docs.google.com/spreadsheets/d/1GHTFwsjJokf1U5dZmDg-7bBlH_Lu-rlOHVmmzTj0D98/
 fellowhuman1101_bio: Jamie Indigo isn't a robot, but speaks bot. As director of technical SEO at <a hreflang="en" href="https://www.coxautoinc.com/">Cox Automotive</a>, they study how search engines crawl, render, and index the web. Jamie loves to tame wild JavaScript and optimize rendering strategies. When not working, they like horror movies, graphic novels, and terrorizing lawful good paladins in Dungeons & Dragons.
 dwsmart_bio: Dave Smart is a developer and technical search engine consultant at <a hreflang="en" href="https://tamethebots.com">Tame the Bots</a>. They love building tools and experimenting with the modern web, and can often be found at the front in a gig or two.
-featured_quote:
+featured_quote: It is reasonable to conclude that interactivity is one of the worst hit metrics associated with excessive page weight.
 featured_stat_1:
 featured_stat_label_1:
 featured_stat_2:
@@ -452,7 +452,7 @@ This could point to there being opportunities for developers loading all, or mos
 {{ figure_markup(
   image="distribution-of-css-response-sizes-by-device-type.png",
   caption="Distribution of CSS response sizes by device type.",
-  description=""Bar chart of the distribution of CSS resource sizes by device type, across home and inner pages. At the 10th percentile, it is 10 KB for desktop and 8 KB for mobile, at the 25th percentile it is 36 KB for desktop and 32 KB for mobile, at the 50th percentile, it is 80 KB for desktop URLs, 75 KB for mobile URLs, at the 75th percentile it's 152 KB for desktop, 146 for mobile, and the 90th percentile it's 269 KB for desktop and 260 KB for mobile.",
+  description="Bar chart of the distribution of CSS resource sizes by device type, across home and inner pages. At the 10th percentile, it is 10 KB for desktop and 8 KB for mobile, at the 25th percentile it is 36 KB for desktop and 32 KB for mobile, at the 50th percentile, it is 80 KB for desktop URLs, 75 KB for mobile URLs, at the 75th percentile it's 152 KB for desktop, 146 for mobile, and the 90th percentile it's 269 KB for desktop and 260 KB for mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRhwSJkKZwXMgxXEe9VbCGUazuIPoC5SERZ_DUWxxxoQjG4O4TbcWa_DA_mUBKM3XSOEBbbEKfucuny/pubchart?oid=724413424&format=interactive",
   sheets_gid="526470628",
   sql_file="bytes_per_type.sql"
@@ -462,7 +462,7 @@ This could point to there being opportunities for developers loading all, or mos
 {{ figure_markup(
   image="distribution-of-css-response-sizes-by-page-type.png",
   caption="Distribution of CSS response sizes by page type.",
-  description=""Bar chart of the distribution of CSS resource sizes by page type, across mobile and desktop devices. At the 10th percentile, it is 7 KB for homepages and 11 KB for inner pages, at the 25th percentile it is 32 KB for homepages and 36 KB for inner pages, at the 50th percentile, it is 76 KB for homepages and 79 KB for inner pages, at the 75th percentile it's 149 KB for homepages and inner pages, and the 90th percentile it's 266 KB for homepages and 263 KB for inner pages.",
+  description="Bar chart of the distribution of CSS resource sizes by page type, across mobile and desktop devices. At the 10th percentile, it is 7 KB for homepages and 11 KB for inner pages, at the 25th percentile it is 32 KB for homepages and 36 KB for inner pages, at the 50th percentile, it is 76 KB for homepages and 79 KB for inner pages, at the 75th percentile it's 149 KB for homepages and inner pages, and the 90th percentile it's 266 KB for homepages and 263 KB for inner pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRhwSJkKZwXMgxXEe9VbCGUazuIPoC5SERZ_DUWxxxoQjG4O4TbcWa_DA_mUBKM3XSOEBbbEKfucuny/pubchart?oid=928222763&format=interactive",
   sheets_gid="526470628",
   sql_file="bytes_per_type.sql"
@@ -482,7 +482,7 @@ In past page weight chapters, images have always been the largest contributor to
 {{ figure_markup(
   image="distribution-of-image-response-sizes-by-device-type.png",
   caption="Distribution of image response sizes by device type",
-  description=""Bar chart of the distribution of image resource sizes by device type. At the 10th percentile, it is 84 KB for desktop and 62 KB for mobile, at the 25th percentile it is 322 KB for desktop and 263 KB for mobile, at the 50th percentile, it is 1,054 KB for desktop and 900 KB for mobile, at the 75th percentile it's 2,822 KB for desktop 2,517 KB for mobile, and the 90th percentile it's 6,526 KB for desktop and 5,905 KB for mobile.",
+  description="Bar chart of the distribution of image resource sizes by device type. At the 10th percentile, it is 84 KB for desktop and 62 KB for mobile, at the 25th percentile it is 322 KB for desktop and 263 KB for mobile, at the 50th percentile, it is 1,054 KB for desktop and 900 KB for mobile, at the 75th percentile it's 2,822 KB for desktop 2,517 KB for mobile, and the 90th percentile it's 6,526 KB for desktop and 5,905 KB for mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRhwSJkKZwXMgxXEe9VbCGUazuIPoC5SERZ_DUWxxxoQjG4O4TbcWa_DA_mUBKM3XSOEBbbEKfucuny/pubchart?oid=1690867892&format=interactive",
   sheets_gid="526470628",
   sql_file="bytes_per_type.sql"
@@ -611,7 +611,109 @@ To look at adoption of facades, we can turn to lighthouse, which offers a [lazy 
 
 Judging adoption is, overall, hard, as we can't reliably test for sites that are implementing facades, because the solution involves the page no longer loading the resources we'd be looking for, so looking at sites that could potentially benefit is more meaningful.
 
+{{ figure_markup(
+  image="sites-that-could-implement-third-party-facades.png",
+  caption="Sites that could implement Third-party facades.",
+  description="Bar chart showing the percentage of sites that could benefit from third-party facades. 70% of desktop homepages and 65% of desktop inner pages, and 45% of mobile homepages and 46% of mobile inner pages could benefit from third-party facades, as measured by lighthouse.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRhwSJkKZwXMgxXEe9VbCGUazuIPoC5SERZ_DUWxxxoQjG4O4TbcWa_DA_mUBKM3XSOEBbbEKfucuny/pubchart?oid=758898069&format=interactive",
+  sheets_gid="632010634",
+  sql_file="facades-usage.sql"
+  )
+}}
+
+70% of desktop homepages were detected as having the opportunity to replace some embeds with facades, for inner pages on desktop it was 65%. For mobile crawls, things were better here, with 45% of mobile homepages potentially being able to benefit, and 46% of mobile inner pages.
+
+From the data, it would appear that either adoption is higher on pages being served to mobile clients, or developers and publishers are omitting the type of third-party embeds for mobile users altogether.
+
+Although facades were covered in the previous almanac page weight chapter in 2022, the test has changed slightly over the last two years, along with the methodology we used to analyze the data, so direct comparisons are not possible.
+
+### Compression
+
+Compression can allow you to shrink the size of your resources before you send them across the network to the requesting client, where they are uncompressed by the client, which for web pages is usually a browser, before being used. Smaller payloads in theory, and usually in practice, make for faster page loads.
+
+For text based files, like HTML, CSS, JavaScript, JSON, SVG, ico and ttf font files, HTTP compression is a powerful ally in reducing page weight as transmitted. Using GZIP or Brotli compression can sometimes significantly reduce the size of text-based resources. Other file types, especially media files like images and videos, do not benefit from HTTP compression, as they are already compressed.
+
+{{ figure_markup(
+  image="proper-text-compression-usage.png",
+  caption="Proper text compression usage.",
+  description="Bar chart showing the percentage of sites that use correct text compression. 70% of desktop homepages and 71% of desktop inner pages, and 71% of mobile homepages and 72% percent of mobile inner pages correctly compress text based resources, as measured by lighthouse.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRhwSJkKZwXMgxXEe9VbCGUazuIPoC5SERZ_DUWxxxoQjG4O4TbcWa_DA_mUBKM3XSOEBbbEKfucuny/pubchart?oid=1267287467&format=interactive",
+  sheets_gid="803366125",
+  sql_file="compression-usage.sql"
+  )
+}}
+
+We detected that 70% percent of desktop homepages and a fundamentally similar 71% of inner pages correctly used text compression. The homepage figure represents a drop from 74% in 2022\.
+
+For mobile crawls, 71% of homepages and 72% of inner pages correctly used text compression. Comparing homepages to 2022, this also represents a drop from 73%.
+
+The drop in usage, whilst perhaps small, is disappointing, it's certainly not become harder to enable compression, and perhaps easier, especially if you use a CDN like cloudflare where it's a simple flip of a switch in a dashboard.
+
+It should be noted that compression is not entirely magic, and doesn't make the whole impact of page weight go away for these resources for the client. Ultimately they do need to be decompressed again before use.
+
+It's also not an entirely free process either, it takes work on the server to compress these resources, somewhat mitigateable by caching the compressed resources where possible, and it does take work on the client to decompress them too.
+
+But as a tradeoff, it's normally one worth making, compression techniques are generally well optimised and efficient, and the major bottleneck is the network.
+
+### Minification
+
+Minification can reduce the overall size of resources by [removing unnecessary characters](https://developer.mozilla.org/en-US/docs/Glossary/Minification), like spaces, returns and code comments, things that aren't needed by a browser to use the resources.
+
+Unlike compression, there's no additional work to be done client side, resources do not need to be unminified. There can be some overhead and work done on the server, if resources are minified on-the-fly, but very often it's best to minify CSS resources up front, they are very likely to be static in nature, and can often be done at build time.
+
+{{ figure_markup(
+  image="minified-css-proper-usage.png",
+  caption="Minified CSS proper usage.",
+  description="Bar chart showing the percentage of sites that correctly minify CSS resources. 62% of desktop homepages and inner pages, and 63% of mobile homepages and 62% of mobile inner pages correctly minify CSS, as measured by lighthouse.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRhwSJkKZwXMgxXEe9VbCGUazuIPoC5SERZ_DUWxxxoQjG4O4TbcWa_DA_mUBKM3XSOEBbbEKfucuny/pubchart?oid=389006381&format=interactive",
+  sheets_gid="1779746551",
+  sql_file="minified_css_usage.sql"
+  )
+}}
+
+In 2024, 62% of homepages had correctly minified CSS, as detected by lighthouse, a significant drop from 2022 where the figure was 84%. For mobile homepages it was 63%, a drop from 2022's 68%, and inner pages were slightly less at 62%.
+
+{{ figure_markup(
+  image="minified-javascript-proper-usage.png",
+  caption="Minified JavaScript proper usage.",
+  description="Bar chart showing the percentage of sites that correctly minify JavaScript resources. 58% of desktop homepages and 57% of inner pages, and 59% of mobile homepages and 58% of mobile inner pages correctly minify JavaScript, as measured by lighthouse.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRhwSJkKZwXMgxXEe9VbCGUazuIPoC5SERZ_DUWxxxoQjG4O4TbcWa_DA_mUBKM3XSOEBbbEKfucuny/pubchart?oid=241357742&format=interactive",
+  sheets_gid="695301697",
+  sql_file="minified_js_usage.sql"
+  )
+}}
+
+In 2024, 58% of desktop homepages had correctly minified JavaScript, as detected by Lighthouse, which is a significant drop from 2022 where it was 77%. Inner pages were slightly worse at 57%. For mobile, 59% of homepages passed this test, down from 2022's 64%. Like desktop, inner pages were slightly worse at 58%.
+
+Whilst it is still encouraging that more sites pass this test than don't, it is very disappointing to see that both CSS and Javascript minification is less prevalent in 2024 than in 2022\.
+
+### Caching and CDNs
+
+The use of caching and CDNs plays a role in managing page weight, as they help reducing page load times by minimising the time required to deliver resources to users. However, it is worth mentioning that CDNs do not reduce page weight.
+
+Resources include both static and dynamic, as well as personalisation, third-party integrations and Edge computing.
+
+On the one hand, caches which are used both on servers and on browsers, allow resources to be reused. Cached content is sent via CDNs, a series of interconnected servers geographically distributed, which reduce the distance between the server requesting the resource and the resource being served. This is particularly important for international websites.
+
+For more insights into CDNs, please refer to the [CDN chapter](https://almanac.httparchive.org/en/2024/cdn).
+
 ## Page weight and Core Web Vitals
+
+Core Web Vitals are a set of performance metrics designed to refine the dangerously ambiguous definition of "performance" into a human-centric measurement. To be a "Good" page, a page must pass three evaluations that measure key moments for users:
+
+1. Is it loading? ([Largest Content Paint (LCP)](https://web.dev/articles/lcp))
+2. Can the user interact? ([Interaction to Next Paint (INP)](https://web.dev/articles/inp))
+3. Is it visually stable? ([Cumulative Layout Shift (CLS)](https://web.dev/articles/cls))
+
+Core Web Vitals are designed to be an evolving set of metrics. This year, the metric for interactivity changed from First Input Delay (FID) to Interaction to Next Paint (INP). This change was made because it provided two significant advancements.
+
+The first is to shift from a single interaction to include all interactions on the page.In other words, clicking with a mouse, tapping on a device with a touchscreen and pressing a key on either a physical or onscreen keyboard.
+
+The second is to represent interactivity for sites using JavaScript frameworks accurately, since JavaScript is often what drives interactivity mostly. This year we saw Core Web Vitals evolve their responsiveness metric by [introducing Interaction to Next Paint](https://developers.google.com/search/blog/2023/05/introducing-inp) to replace First Input Delay. This new metric measures beyond first interaction to measure the lifecycle of the page and better reflect interactivity on single page applications.
+
+When responsiveness as measured by INP is below 200 milliseconds, its considered to be a good experience and pass the INP performance assessment. Total Blocking Time remains as the lab data equivalent and is for diagnostics when an INP issue is detected.
+
+The changeover in March 2023 saw many JS framework origins drop from passing Good classification. Sites using prominent frameworks like React, Next, Nuxt, and Vue were hit hardest. Sites adapted quickly and by September 2024, the number of passing origins exceeded when evaluated by INP exceeded the count when the FID metric was used.
 
 To gather data, we had to rely on lighthouse's lab testing audits, which capture LCP and CLS, but not the interaction based metrics of INP or FID. Lab testing does have draw backs, and real user metrics should always be used to truly assess performance, as detailed in web.dev's [Why lab and field data can be different (and what to do about it)](https://web.dev/articles/lab-and-field-data-differences).
 
@@ -658,7 +760,7 @@ We used data from June 2024, the page weights for each percentile and device typ
     {{ figure_link(
       caption="Pecentile page weight by device from Lighthouse tests.",
       sheets_gid="2030864989",
-      sql_file="page_weight_trend.sql",
+      sql_file="cwv_trend.sql",
     ) }}
   </figcaption>
 </figure>
@@ -673,7 +775,7 @@ A good score for largest contentful paint is 2.5 seconds or less. LCP over 4 sec
   description="Column chart of the distribution of LCP scores by percentile. For desktop it is 1.1 second at the 10th percentile, 1.6 s at the 25th percentile, 12.5 s at the median, 3.9 s at the 75th percentile and 6.4 s at the 90th percentile. For mobile it was 2.7 s, 3/9 s, 6 s, 10.5 s and 18 s respectively.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRhwSJkKZwXMgxXEe9VbCGUazuIPoC5SERZ_DUWxxxoQjG4O4TbcWa_DA_mUBKM3XSOEBbbEKfucuny/pubchart?oid=73621248&format=interactive",
   sheets_gid="2030864989",
-  sql_file="page_weight_trend.sql"
+  sql_file="cwv_trend.sql"
   )
 }}
 
@@ -685,10 +787,46 @@ A good score for cumulative layout shift is 0.1 or less. CLS over 0.25 is consid
 
 {{ figure_markup(
   image="cls-distribution-by-page-weight.png",
-  caption="Distribution of CLS scores by device type and page weight",
-  description="Column chart of the distribution of CLSscores by percentile. For desktop it is 0 at the 10th percentile, 0 at the 25th percentile, 0.01 at the median,0.06 at the 75th percentile and 0.23 s at the 90th percentile. For mobile it was 0, 0, 0.02, 0.11 and 0.31 respectively.",
+  caption="Distribution of CLS scores by device type and page weight.",
+  description="Column chart of the distribution of CLS scores by percentile. For desktop it is 0 at the 10th percentile, 0 at the 25th percentile, 0.01 at the median,0.06 at the 75th percentile and 0.23 s at the 90th percentile. For mobile it was 0, 0, 0.02, 0.11 and 0.31 respectively.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRhwSJkKZwXMgxXEe9VbCGUazuIPoC5SERZ_DUWxxxoQjG4O4TbcWa_DA_mUBKM3XSOEBbbEKfucuny/pubchart?oid=822364055&format=interactive",
   sheets_gid="2030864989",
-  sql_file="page_weight_trend.sql"
+  sql_file="cwv_trend.sql"
   )
 }}
+
+Like LCP, CLS also grew as page weight grew, although the differences between desktop and mobile were more linear. CLS isn't directly a load time issue, so this could point to poorly optimised, ads heavy pages injecting ads into content, pushing content down, or images with large files sizes defined without dimension.
+
+### Total Blocking Time
+
+As mentioned above, interaction to next paint, or even the older first input delay cannot be measured in lab tests, however, as [recommended by web.dev](https://web.dev/articles/inp#lab-measurement), [total blocking time](https://web.dev/articles/tbt), often shortened to TTB, can be a good proxy metric to see how interactivity might be affected.
+
+A total blocking time of 200 ms or less is considered a good target.
+
+{{ figure_markup(
+  image="distribution-of-tbt-scores-by-device-type.png",
+  caption="Distribution of total blocking time scores by device type.",
+  description="Column chart of the distribution of TBT scores by percentile. For desktop it is 0 ms at the 10th percentile, 0 ms at the 25th percentile, 53 ms at the median, 245 ms at the 75th percentile and 648 ms at the 90th percentile. For mobile it was 103 ms, 411 ms, 1,235 ms, 2,942 ms and 5,786 respectively.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRhwSJkKZwXMgxXEe9VbCGUazuIPoC5SERZ_DUWxxxoQjG4O4TbcWa_DA_mUBKM3XSOEBbbEKfucuny/pubchart?oid=1133418038&format=interactive",
+  sheets_gid="2030864989",
+  sql_file="cwv_trend.sql"
+  )
+}}
+
+The trend of larger page sizes negatively impacting performance, as measured by total blocking time, is evident across both mobile and desktop experiences. However, the disparity is particularly significant for mobile users. At the 50th percentile, Time to First Byte (TBT) is 53ms for desktop and 1,235ms for mobile—a difference of 1.2 seconds. This discrepancy becomes even more pronounced at the 90th percentile, with TBT at 648ms for desktop and a staggering 5,786ms for mobile—a massive 5.1 second difference.
+
+It is reasonable to conclude that interactivity is one of the worst hit metrics associated with excessive page weight.
+
+## Conclusion
+
+The growing issue of page weight reflects the need for balance between functionality and accessibility.
+
+While advancements like JavaScript frameworks and rich media have enhanced the web's interactivity and storytelling, they have also introduced significant challenges. Bloated pages disproportionately impact users with limited devices or slow connections, making web experiences less inclusive and equitable.
+
+Sadly this year's data shows the same trend of page weight continuing to increase, for both mobile and desktop users.
+
+By focusing on lightweight, efficient design and adopting practices like compression, caching, and byte-saving technologies, developers can bridge the "performance inequality gap" and ensure the web remains accessible for all.
+
+Ultimately, this approach not only benefits users but also supports sustainability and long-term growth of the web.
+
+Overall, in 2024 page weight is far from a "solved problem", but there remains a lot of opportunity for developers to embrace byte saving techniques and technologies, with plenty of room left for adoption for things like facades and compression, leading to a lighter, brighter web for us all.
