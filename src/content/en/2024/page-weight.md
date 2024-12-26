@@ -24,15 +24,15 @@ featured_stat_label_3:
 
 The internet is growing at a rapid pace. Each new page brings with it a bespoke set of resources necessary to render its content, which is expensive as more computing resources are required. These bandwidth requests are competing with the computing resources of generative AI initiatives.
 
-In the United States, the rapidly growing AI demand is poised to drive data center energy consumption to about [6% of the nation's total electricity usage in 2026](https://hbr.org/2024/07/the-uneven-distribution-of-ais-environmental-impacts), adding further pressure on grid infrastructures and highlighting the urgent need for sustainable solutions to support continued AI advancement.
+In the United States, the rapidly growing AI demand is poised to drive data center energy consumption to about <a hreflang="en" href="https://hbr.org/2024/07/the-uneven-distribution-of-ais-environmental-impacts">6% of the nation's total electricity usage in 2026</a>, adding further pressure on grid infrastructures and highlighting the urgent need for sustainable solutions to support continued AI advancement.
 
-These generative AI initiatives will in turn rapidly increase the size of the web. [Statista estimates 149 zettabytes](https://www.statista.com/statistics/871513/worldwide-data-created/) of internet content were created in 2024\. In comparison, the years from 2010 to 2018 produced a combined 127.5 zettabytes.
+These generative AI initiatives will in turn rapidly increase the size of the web. <a hreflang="en" href="https://www.statista.com/statistics/871513/worldwide-data-created/">Statista estimates 149 zettabytes</a> of internet content were created in 2024\. In comparison, the years from 2010 to 2018 produced a combined 127.5 zettabytes.
 
 In short, resources are becoming increasingly scare and expensive.With Google now prioritising on-page elements, addressing the issue of page weight has become important. Reducing unnecessary bloat in websites not only enhances user experience and boosts conversions, but also supports sustainability efforts.
 
 As highlighted in discussions about web performance in 2024, heavy websites contribute to inequalities in user access and responsiveness, particularly on lower-end devices, widening the "performance inequality gap."
 
-Alex Russel's series, [The Performance Inequality Gap](https://infrequently.org/2024/01/performance-inequality-gap-2024/) bring into sharp focus that some of the assumptions that are made on current device performance and capabilities may not be true, and that whilst that devices might be getting more and more powerful, that's not true for everyone, and there's a long tail of users who are negatively impacted by web pages with large payloads.
+Alex Russel's series, <a hreflang="en" href="https://infrequently.org/2024/01/performance-inequality-gap-2024/">The Performance Inequality Gap</a> bring into sharp focus that some of the assumptions that are made on current device performance and capabilities may not be true, and that whilst that devices might be getting more and more powerful, that's not true for everyone, and there's a long tail of users who are negatively impacted by web pages with large payloads.
 
 This growing disparity emphasizes the importance of lightweight, efficient web design to ensure equitable access and engagement for all users.
 
@@ -98,7 +98,7 @@ Bloated pages mean that people without access to these have a more expensive, le
 
 The internet blossomed from a place of bare text to the rich, interactive landscape we know today by introducing new content types. Images introduced visual depth, Javascript enabled interactivity, and videos introduced new ways of storytelling.
 
-Each of these technologies also brought more weight to their pages. Before the introduction of HTML 2.0 in 1995, the only asset to weight was HTML, Page weight dramatically increased when [RFC 1866](https://www.rfc-editor.org/rfc/rfc1866) introduced the `<img>` tag, In 1996, JavaScript stepped on the scale followed by libraries like JQuery a decade later, The first widely recognized single-application framework emerged in 2010 opening the door for JavaScript frameworks like Angular, React, Vue and others to come to market.
+Each of these technologies also brought more weight to their pages. Before the introduction of HTML 2.0 in 1995, the only asset to weight was HTML, Page weight dramatically increased when <a hreflang="en" href="https://www.rfc-editor.org/rfc/rfc1866">RFC 1866</a> introduced the `<img>` tag, In 1996, JavaScript stepped on the scale followed by libraries like JQuery a decade later, The first widely recognized single-application framework emerged in 2010 opening the door for JavaScript frameworks like Angular, React, Vue and others to come to market.
 
 Each evolution of page functionality brings with it more weight and file types intended to improve performance while retaining functionality.
 
@@ -208,7 +208,7 @@ Images are static files that are essential for constructing and displaying web p
 
 2024 is the first year that image fell from being the dominant file type. In 2022, we saw the median page request 25 images for desktop and 22 for mobile pages. This is down to 18 for desktop and 16 for mobile.
 
-Decreased image file types does not mean that the web has become less visual. Instead, sites may be switching to CSS effects (such as [shadows](https://www.w3schools.com/css/css3_shadows.asp) or [gradients](https://developer.mozilla.org/en-US/docs/Web/CSS/gradient)) and [CSS animations](https://web.dev/articles/animations-guide). These assets can be used to produce resolution-independent assets that always look sharp at every resolution and zoom level, often at a fraction of the bytes required by an image file.
+Decreased image file types does not mean that the web has become less visual. Instead, sites may be switching to CSS effects (such as <a hreflang="en" href="https://www.w3schools.com/css/css3_shadows.asp">shadows</a> or [gradients](https://developer.mozilla.org/Web/CSS/gradient)) and [CSS animations](https://web.dev/articles/animations-guide). These assets can be used to produce resolution-independent assets that always look sharp at every resolution and zoom level, often at a fraction of the bytes required by an image file.
 
 Desktop pages consistently call for more image file types across with the gap between desktop and mobile growing steadily and consistently across percentiles. The difference between homepage and inner pages was striking in comparison. Where device type saw relatively consistent numbers, the median homepage called for 20 images compared to just 14 for inner pages.
 
@@ -223,7 +223,7 @@ Desktop pages consistently call for more image file types across with the gap be
 
 ### CSS
 
-[CSS](https://developer.mozilla.org/en-US/docs/Web/CSS), or Cascading Style Sheets, is a style sheet language used to describe the presentation of a document written in a markup language like HTML. In other words, CSS is responsible for the visual styling and layout of web pages.
+[CSS](https://developer.mozilla.org/Web/CSS), or Cascading Style Sheets, is a style sheet language used to describe the presentation of a document written in a markup language like HTML. In other words, CSS is responsible for the visual styling and layout of web pages.
 
 It allows developers to control the color, font, size, spacing, and many other visual aspects of HTML elements. CSS works in conjunction with HTML, providing a separation of content and presentation.
 
@@ -257,7 +257,7 @@ For more information about how CSS was used on the web 2024, please see the [CSS
 
 ### JavaScript
 
-JavaScript is a high-level, dynamic and interpreted programming language. It is one of the core technologies of the web, enabling interactive web pages and web applications. JavaScript allows developers to add interactivity, animations, and effects to web pages. This includes features such as drop-down menus, image sliders, personalized content, and analytics tracking. It is used as a client-side programming language by [98.9% of all websites](https://w3techs.com/technologies/details/cp-javascript).
+JavaScript is a high-level, dynamic and interpreted programming language. It is one of the core technologies of the web, enabling interactive web pages and web applications. JavaScript allows developers to add interactivity, animations, and effects to web pages. This includes features such as drop-down menus, image sliders, personalized content, and analytics tracking. It is used as a client-side programming language by <a hreflang="en" href="https://w3techs.com/technologies/details/cp-javascript">98.9% of all websites</a>.
 
 {{ figure_markup(
   image="javascript-request-distribution-by-device-type.png",
@@ -359,7 +359,7 @@ The median desktop page has increased by 120%, or 1.4 MB, over the past 10 years
 
 Year-over-year, from October 2023 to October 2024, the desktop grew by 8.6%, or 210 KB, and mobile grew by 6.4%, or 140 KB.
 
-According to [What Does My Site Cost?](https://whatdoesmysitecost.com/#usdCost) a web based tool for calculating the cost of web data to end users, the median desktop page could cost a user up to $0.32 USD, or in some regions up to 1.7% of their Gross National Income.
+According to <a hreflang="en" href="https://whatdoesmysitecost.com/#usdCost">What Does My Site Cost?</a> a web based tool for calculating the cost of web data to end users, the median desktop page could cost a user up to $0.32 USD, or in some regions up to 1.7% of their Gross National Income.
 
 #### Content type and file formats
 
@@ -429,7 +429,7 @@ Increased weight of JavaScript files carries an additional penalty to performanc
 
 Although the trend is that a desktop page requests more bytes of JavaScript than a mobile page, with the median desktop page requesting 620 KB of JavaScript, and a mobile one 570 KB, the differences aren't huge.
 
-According to Alex Russell's [The Performance Inequality Gap, 2024](https://infrequently.org/2024/01/performance-inequality-gap-2024/) study, these are however far above the proposed target of a page load of under 3 seconds at the 75th percentile, which is 365 KB.
+According to Alex Russell's <a hreflang="en" href="https://infrequently.org/2024/01/performance-inequality-gap-2024/">The Performance Inequality Gap, 2024</a> study, these are however far above the proposed target of a page load of under 3 seconds at the 75th percentile, which is 365 KB.
 
 At the 75th percentile, both mobile and desktop blast past the proposed 650 KB budget to achieve 5 seconds by, and that is assuming it's a JavaScript heavy page, and markup is accordingly smaller.
 
@@ -445,7 +445,7 @@ At the 75th percentile, both mobile and desktop blast past the proposed 650 KB b
 
 There is not a huge difference between homepage and inner page JavaScript file response sizes. Inner pages have a little more JavaScript up to the 50th percentile, above that the trend is for homepages to have more.
 
-This could point to there being opportunities for developers loading all, or most, JavaScript resources on all pages and represent an opportunity to reduce JavaScript needed overall by [tree shaking](https://en.wikipedia.org/wiki/Tree_shaking), which is a method of splitting JavaScript files up into more specific ones and only loading them when needed, therefore reducing the wasted JavaScript bytes being downloaded.
+This could point to there being opportunities for developers loading all, or most, JavaScript resources on all pages and represent an opportunity to reduce JavaScript needed overall by [tree shaking](https://wikipedia.org/wiki/Tree_shaking), which is a method of splitting JavaScript files up into more specific ones and only loading them when needed, therefore reducing the wasted JavaScript bytes being downloaded.
 
 #### CSS bytes
 
@@ -657,7 +657,7 @@ But as a tradeoff, it's normally one worth making, compression techniques are ge
 
 ### Minification
 
-Minification can reduce the overall size of resources by [removing unnecessary characters](https://developer.mozilla.org/en-US/docs/Glossary/Minification), like spaces, returns and code comments, things that aren't needed by a browser to use the resources.
+Minification can reduce the overall size of resources by [removing unnecessary characters](https://developer.mozilla.org/Glossary/Minification), like spaces, returns and code comments, things that aren't needed by a browser to use the resources.
 
 Unlike compression, there's no additional work to be done client side, resources do not need to be unminified. There can be some overhead and work done on the server, if resources are minified on-the-fly, but very often it's best to minify CSS resources up front, they are very likely to be static in nature, and can often be done at build time.
 
@@ -799,7 +799,7 @@ Like LCP, CLS also grew as page weight grew, although the differences between de
 
 ### Total Blocking Time
 
-As mentioned above, interaction to next paint, or even the older first input delay cannot be measured in lab tests, however, as [recommended by web.dev](https://web.dev/articles/inp#lab-measurement), [total blocking time](https://web.dev/articles/tbt), often shortened to TTB, can be a good proxy metric to see how interactivity might be affected.
+As mentioned above, interaction to next paint, or even the older first input delay cannot be measured in lab tests, however, as [recommended by web.dev](https://web.dev/articles/inp#lab-measurement), [total blocking time](https://web.dev/articles/tbt), often shortened to TBT, can be a good proxy metric to see how interactivity might be affected.
 
 A total blocking time of 200 ms or less is considered a good target.
 
