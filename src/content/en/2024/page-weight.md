@@ -18,7 +18,7 @@ featured_quote: It is reasonable to conclude that interactivity is one of the wo
 #featured_stat_label_2: TODO
 #featured_stat_3: TODO
 #featured_stat_label_3: TODO
-doi: doi.org/10.5281/zenodo.14552631
+doi: 10.5281/zenodo.14552631
 ---
 
 {# TODO: A lot of the stats are desktop stats, but they are not labelled in the graphs. Should we show them too? Or switch narrative to mobile? #}
