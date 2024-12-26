@@ -18,6 +18,7 @@ featured_stat_2:
 featured_stat_label_2:
 featured_stat_3:
 featured_stat_label_3:
+#doi: TODO
 ---
 
 ## Introduction
@@ -26,7 +27,7 @@ The internet is growing at a rapid pace. Each new page brings with it a bespoke 
 
 In the United States, the rapidly growing AI demand is poised to drive data center energy consumption to about <a hreflang="en" href="https://hbr.org/2024/07/the-uneven-distribution-of-ais-environmental-impacts">6% of the nation's total electricity usage in 2026</a>, adding further pressure on grid infrastructures and highlighting the urgent need for sustainable solutions to support continued AI advancement.
 
-These generative AI initiatives will in turn rapidly increase the size of the web. <a hreflang="en" href="https://www.statista.com/statistics/871513/worldwide-data-created/">Statista estimates 149 zettabytes</a> of internet content were created in 2024\. In comparison, the years from 2010 to 2018 produced a combined 127.5 zettabytes.
+These generative AI initiatives will in turn rapidly increase the size of the web. <a hreflang="en" href="https://www.statista.com/statistics/871513/worldwide-data-created/">Statista estimates 149 zettabytes</a> of internet content were created in 2024. In comparison, the years from 2010 to 2018 produced a combined 127.5 zettabytes.
 
 In short, resources are becoming increasingly scare and expensive.With Google now prioritising on-page elements, addressing the issue of page weight has become important. Reducing unnecessary bloat in websites not only enhances user experience and boosts conversions, but also supports sustainability efforts.
 
@@ -269,7 +270,7 @@ JavaScript is a high-level, dynamic and interpreted programming language. It is 
   )
 }}
 
-2024 saw JavaScript overtake images as the dominant file type. The median page requested 24 JS files for desktop and 22 for mobile pages. This is up 8% for desktop and 4.5% for mobile when compared to 2022\. The number of JavaScript requests was consistent between inner and homepages through the 90th percentile.
+2024 saw JavaScript overtake images as the dominant file type. The median page requested 24 JS files for desktop and 22 for mobile pages. This is up 8% for desktop and 4.5% for mobile when compared to 2022. The number of JavaScript requests was consistent between inner and homepages through the 90th percentile.
 
 At the 100th percentile, desktop pages and homepages broke away from their counterparts in the number of requests. Desktop pages made 33% more requests; homepages made 31% more. Desktop homepages made requests for 12,676 JavaScript resources. We attempted to reach the page for comment, but the request was still loading at time of publication.
 
@@ -340,7 +341,7 @@ The median page weight for a desktop page, as measured in October 2024 is 2,652 
 
 Compared to 2022's chapter, both figures are higher, with the median desktop page being 2,312 KB and for mobile it was 2,037 KB. 2024's Mobile page is just 1 KB lighter than 2022's desktop page.In October 2024, the median page weight for a desktop page was 2,652 KB, while the median page weight for a mobile page was 2,311 KB.
 
-Both of these figures are higher than those from 2022\. In 2022, the median page weight for a desktop page was 2,312 KB, and the median page weight for a mobile page was 2,037 KB. Notably, 2024's mobile page weight is only 1 KB lighter than 2022's desktop page weight.
+Both of these figures are higher than those from 2022. In 2022, the median page weight for a desktop page was 2,312 KB, and the median page weight for a mobile page was 2,037 KB. Notably, 2024's mobile page weight is only 1 KB lighter than 2022's desktop page weight.
 
 {{ figure_markup(
   caption="How much larger the median mobile page weight has grown in 10 years.",
@@ -643,7 +644,7 @@ For text based files, like HTML, CSS, JavaScript, JSON, SVG, ico and ttf font fi
   )
 }}
 
-We detected that 70% percent of desktop homepages and a fundamentally similar 71% of inner pages correctly used text compression. The homepage figure represents a drop from 74% in 2022\.
+We detected that 70% percent of desktop homepages and a fundamentally similar 71% of inner pages correctly used text compression. The homepage figure represents a drop from 74% in 2022.
 
 For mobile crawls, 71% of homepages and 72% of inner pages correctly used text compression. Comparing homepages to 2022, this also represents a drop from 73%.
 
@@ -685,7 +686,7 @@ In 2024, 62% of homepages had correctly minified CSS, as detected by lighthouse,
 
 In 2024, 58% of desktop homepages had correctly minified JavaScript, as detected by Lighthouse, which is a significant drop from 2022 where it was 77%. Inner pages were slightly worse at 57%. For mobile, 59% of homepages passed this test, down from 2022's 64%. Like desktop, inner pages were slightly worse at 58%.
 
-Whilst it is still encouraging that more sites pass this test than don't, it is very disappointing to see that both CSS and Javascript minification is less prevalent in 2024 than in 2022\.
+Whilst it is still encouraging that more sites pass this test than don't, it is very disappointing to see that both CSS and Javascript minification is less prevalent in 2024 than in 2022.
 
 ### Caching and CDNs
 
