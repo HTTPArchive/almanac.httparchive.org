@@ -70,7 +70,7 @@ If you think that 56 `<img>`s per page is a lot, we probably shouldn't tell you 
 Images aren't just pervasive and plentiful. Most of the time they are also a central part of users' experiences. One way to measure that is to see how often images are responsible for pages' Largest Contentful Paint.
 
 {{ figure_markup(
-  content="68.5%",
+  content="68%",
   caption="Mobile pages whose LCP responsible element has an image.",
   classes="big-number",
   sheets_gid="2001439429",
@@ -165,7 +165,7 @@ Most images are wider than they are tall—only 1 in 8 are taller than they are 
     <thead>
       <tr>
         <th>Aspect ratio (width / height)</th>
-        <th>% of images (mobile)</th>
+        <th>% of images</th>
       </tr>
     </thead>
     <tbody>
@@ -322,7 +322,7 @@ For decades there were just three bitmap formats in common use on the web: JPG, 
 
 But we are happy to report that change is happening. The largest single absolute change in usage since 2022 was from JPEG, which fell from 40% of all images in 2022 down eight full percentage points to 32% in 2024. That's a huge loss over two years.
 
-Which formats saw more usage to make up the difference? WebP picked up three percentage points, SVG both picked up a little more than a percentage point, and AVIF picked up 0.8 points. Most surprisingly, the oldest and least efficient format of them all, GIF, picked up a percentage point, too.
+Which formats saw more usage to make up the difference? WebP picked up three percentage points, SVG picked up a bit under two percentage points, and AVIF picked up almost a full point. Most surprisingly, the oldest and least efficient format of them all, GIF, picked up a percentage point, too.
 
 And in relative terms, AVIF usage is taking off—we found almost four times more AVIFs served up by the crawled pages than we did two years ago.
 
@@ -368,7 +368,7 @@ A median of 12 KB might lead one to think, "Eh, that's not that heavy!" But, jus
 )
 }}
 
-Most mobile pages have one image that's 135 KB or more. That's an 8% increase since 2022. And the further up we go in the distribution, the more things are accelerating: the 75th percentile is up 10% and the 90th percentile is up 13% (to almost exactly a megabyte).<!-- TODO check percentages here -->
+Most mobile pages have one image that's 135 KB or more. That's an 8% increase since 2022. And the further up we go in the distribution, the more things are accelerating: the 75th percentile is up 10% and the 90th percentile is up 13% (to almost exactly a megabyte).
 
 Images are getting heavier, and the heaviest images are getting heavier faster.
 
@@ -675,7 +675,7 @@ While usage of the `media` attribute is down three percentage points from 2022, 
 
 ## Layout
 
-We already saw [how the web's image resources size up](#image-dimensions)<!--TODO does this link work-->. But before they can be shown to a user, embedded images must be placed within a layout and potentially squished or stretched to fit it.
+We already saw [how the web's image resources size up](#image-dimensions). But before they can be shown to a user, embedded images must be placed within a layout and potentially squished or stretched to fit it.
 
 <p class="note">Note: It will be useful to keep in mind the <a href="https://almanac.httparchive.org/en/2024/methodology#webpagetest">crawlers' viewports</a> throughout this analysis. The desktop crawler was 1376px-wide, with a DPR of 1x, the mobile crawler was 360px-wide, with a DPR of 3x.</p>
 
@@ -817,6 +817,8 @@ What formats are sites delivering in 2024? MP4, which enjoys [universal support]
   image="top-extensions-of-files-with-a-video-mime-type.png",
   caption="Top extensions of files with a video MIME type.",
   description="A bar chart showing the extensions of video files delivered on desktop and mobile. Only the mobile bars are labelled, but with one exception, the desktop bars are fairly similar. The MP4 extension accounted for 68% of video files, blank extensions accounted for 14% of video files (and were uniquely much lower on desktop), files with a TS extension accounted for 9% of video files, M4S, 4%, MOV, 1%, lastly, WebM, 1%.",
+  width="600",
+  height="522",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=892598197&format=interactive",
   sheets_gid="1427621996",
   sql_file="video_ext.sql"
