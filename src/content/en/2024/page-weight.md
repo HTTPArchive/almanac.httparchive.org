@@ -42,17 +42,17 @@ Page weight matters, whether you're experiencing a weak network connection at an
 
 Page weight is the byte size of a web page. The web has evolved massively since its birth, and page weight in 2024 isn't just the HTML from the URL you arrive at. In nearly all cases, it involves the assets needed to load and display that page. Those assets include the following:
 
-- The [HTML](https://almanac.httparchive.org/en/2024/markup) that comes in the initial response from a server.
-- [Images and other media (video, audio, etc)](https://almanac.httparchive.org/en/2024/media) that are embedded into the page.
-- [Cascading Style Sheets (CSS)](https://almanac.httparchive.org/en/2024/css) for styling the page.
-- [JavaScript](https://almanac.httparchive.org/en/2022/javascript) to provide interactivity and functionality.
-- [Third-Party resources](https://almanac.httparchive.org/en/2024/third-parties), which can be one or more of the above, from other providers.
+- The [HTML](./markup) that comes in the initial response from a server.
+- [Images and other media (video, audio, etc)](./media) that are embedded into the page.
+- [Cascading Style Sheets (CSS)](./css) for styling the page.
+- [JavaScript](../2022//javascript) to provide interactivity and functionality.
+- [Third-Party resources](./third-parties), which can be one or more of the above, from other providers.
 
 Every extra thing added to a web page increases the overall page weight, and every bit ultimately means more work and overhead for the browser in transmitting it across the network, processing, parsing and ultimately rendering and painting it on the screen for the user to consume and interact with.
 
 Some forms of resources carry even greater overheads, especially JavaScript, which also needs to be compiled and executed. This also has a knock on effect on both sustainability and conversion rates. The heavier a page is, the more carbon emissions and the least possibility of conversions on that page.
 
-The larger the page weight, the higher the impact it can have on carbon emissions, something covered in the [Sustainability chapter](https://almanac.httparchive.org/en/2024/sustainability).
+The larger the page weight, the higher the impact it can have on carbon emissions, something covered in the [Sustainability](./sustainability) chapter.
 
 There are various mitigations available to help manage page weight, and its overall effect on load times, but the stark reality is that more weight is always going to involve more work.
 
@@ -253,7 +253,7 @@ CSS is an essential tool in the web developer's toolkit across devices and page 
 
 In comparing homepages to inner pages, we saw that homepages consistently called one fewer cascading style sheets until the 90th percentile. At the 100th percentile, we saw inner pages deviate with a spike of 4,879 requests compared to 3,346 on inner pages. While both are high, inner pages are 46% higher.
 
-For more information about how CSS was used on the web 2024, please see the [CSS chapter](https://almanac.httparchive.org/en/2024/css).
+For more information about how CSS was used on the web 2024, please see the [CSS](./css) chapter.
 
 ### JavaScript
 
@@ -273,13 +273,13 @@ JavaScript is a high-level, dynamic and interpreted programming language. It is 
 
 At the 100th percentile, desktop pages and homepages broke away from their counterparts in the number of requests. Desktop pages made 33% more requests; homepages made 31% more. Desktop homepages made requests for 12,676 JavaScript resources. We attempted to reach the page for comment, but the request was still loading at time of publication.
 
-For more information on how JavaScript is being used in 2024, take a look at the [JavaScript chapter](https://almanac.httparchive.org/en/2024/javascript).
+For more information on how JavaScript is being used in 2024, take a look at the [JavaScript](./javascript) chapter.
 
 ### Third-party services
 
-Third-party resources are external assets or services that are integrated into a web page or application, but are hosted and maintained by a different provider. These resources can include things like JavaScript, CSS, fonts, and analytics tools, to name a few. According to the Third Parties chapter, [92% of pages had one or more third party resources](https://almanac.httparchive.org/en/2024/third-parties#prevalence).The most called third party resources were scripts, making up 30.5% of requests by content type. The authors also noted a considerable decrease in the number of third parties for lower-ranked websites.
+Third-party resources are external assets or services that are integrated into a web page or application, but are hosted and maintained by a different provider. These resources can include things like JavaScript, CSS, fonts, and analytics tools, to name a few. According to the [Third Parties](./third-parties) chapter, [92% of pages had one or more third party resources](./third-parties#prevalence).The most called third party resources were scripts, making up 30.5% of requests by content type. The authors also noted a considerable decrease in the number of third parties for lower-ranked websites.
 
-For more insights, refer to the [Third Parties chapter](https://almanac.httparchive.org/en/2024/third-parties).
+For more insights, refer to the [Third Parties](./third-parties) chapter.
 
 ### Other Assets
 
@@ -491,7 +491,7 @@ In past page weight chapters, images have always been the largest contributor to
 
 The median desktop homepage is loading 1,054 KB of images, and mobile ones a little less weighty 900 KB. As noted earlier that's still an increase over 2022 where it was 1,026 KB for desktop pages, 900 KB for mobile. Things soon balloon once you get to the 75th percentile, with 2,822 KB of images for desktop, and 2,517 KB of images for mobile.
 
-In fact, at the median and above, all percentiles were bigger than in [2022's chapter](https://almanac.httparchive.org/en/2022/page-weight#image-bytes), however the more positive findings are that at the 10th and 25th, image bytes were either pretty much stable or down from the previous chapter, pointing to the fact that developers who were already optimising for image file sizes have continued to do so, and might be getting slightly better at it.
+In fact, at the median and above, all percentiles [were bigger than in 2022 chapter](../2022//page-weight#image-bytes), however the more positive findings are that at the 10th and 25th, image bytes were either pretty much stable or down from the previous chapter, pointing to the fact that developers who were already optimising for image file sizes have continued to do so, and might be getting slightly better at it.
 
 It is also pleasing to see that where developers seem to be concentrating on reducing the impact on page weight the most is for mobile users, where page weight can carry the highest penalties. This could be due to folks using [responsive image](https://web.dev/articles/serve-responsive-images) serving.
 
@@ -537,7 +537,7 @@ Looking at home and inner pages, there is a clear trend for both desktop and mob
   )
 }}
 
-JPG, WebP, and PNG file formats retain their 2022 status as top sources of image weight, for more insights into image format use on the web, visit the [Media chapter](https://almanac.httparchive.org/en/2024/media).
+JPG, WebP, and PNG file formats retain their 2022 status as top sources of image weight, for more insights into image format use on the web, visit the [Media](./media) chapter.
 
 #### Video bytes
 
@@ -695,7 +695,7 @@ Resources include both static and dynamic, as well as personalisation, third-par
 
 On the one hand, caches which are used both on servers and on browsers, allow resources to be reused. Cached content is sent via CDNs, a series of interconnected servers geographically distributed, which reduce the distance between the server requesting the resource and the resource being served. This is particularly important for international websites.
 
-For more insights into CDNs, please refer to the [CDN chapter](https://almanac.httparchive.org/en/2024/cdn).
+For more insights into CDNs, please refer to the [CDN](./cdn) chapter.
 
 ## Page weight and Core Web Vitals
 
