@@ -281,7 +281,7 @@ Third-party resources are external assets or services that are integrated into a
 
 For more insights, refer to the [Third Parties](./third-parties) chapter.
 
-### Other Assets
+### Other assets
 
 Web pages can utilize a variety of other assets and resources beyond just code, styles, and images. These additional assets contribute to the overall functionality, interactivity, and visual appeal of a web page, working in harmony with the HTML, CSS, and JavaScript to create a complete user experience.
 
