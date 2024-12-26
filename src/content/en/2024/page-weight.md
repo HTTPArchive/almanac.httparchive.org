@@ -21,23 +21,19 @@ featured_quote: It is reasonable to conclude that interactivity is one of the wo
 #doi: TODO
 ---
 
+{# TODO: A lot of the stats are desktop stats, but they are not labelled in the graphs. Should we show them too? Or switch narrative to mobile? #}
+
 ## Introduction
 
 The internet is growing at a rapid pace. Each new page brings with it a bespoke set of resources necessary to render its content, which is expensive as more computing resources are required. These bandwidth requests are competing with the computing resources of generative AI initiatives.
 
-In the United States, the rapidly growing AI demand is poised to drive data center energy consumption to about <a hreflang="en" href="https://hbr.org/2024/07/the-uneven-distribution-of-ais-environmental-impacts">6% of the nation's total electricity usage in 2026</a>, adding further pressure on grid infrastructures and highlighting the urgent need for sustainable solutions to support continued AI advancement.
+In the United States, the rapidly growing AI demand is poised to drive data center energy consumption to about <a hreflang="en" href="https://hbr.org/2024/07/the-uneven-distribution-of-ais-environmental-impacts">6% of the nation's total electricity usage in 2026</a>, adding further pressure on grid infrastructures and highlighting the urgent need for sustainable solutions to support continued AI advancement. These generative AI initiatives will in turn rapidly increase the size of the web. <a hreflang="en" href="https://www.statista.com/statistics/871513/worldwide-data-created/">Statista estimates 149 zettabytes</a> of internet content were created in 2024. In comparison, the years from 2010 to 2018 produced a combined 127.5 zettabytes.
 
-These generative AI initiatives will in turn rapidly increase the size of the web. <a hreflang="en" href="https://www.statista.com/statistics/871513/worldwide-data-created/">Statista estimates 149 zettabytes</a> of internet content were created in 2024. In comparison, the years from 2010 to 2018 produced a combined 127.5 zettabytes.
+In short, resources are becoming increasingly scare and expensive. With Google now prioritising on-page elements, addressing the issue of page weight has become important. Reducing unnecessary bloat in websites not only enhances user experience and boosts conversions, but also supports sustainability efforts.
 
-In short, resources are becoming increasingly scare and expensive.With Google now prioritising on-page elements, addressing the issue of page weight has become important. Reducing unnecessary bloat in websites not only enhances user experience and boosts conversions, but also supports sustainability efforts.
+As highlighted in discussions about web performance in 2024, heavy websites contribute to inequalities in user access and responsiveness, particularly on lower-end devices, widening the "performance inequality gap." Alex Russel's series, <a hreflang="en" href="https://infrequently.org/2024/01/performance-inequality-gap-2024/">The Performance Inequality Gap</a> bring into sharp focus that some of the assumptions that are made on current device performance and capabilities may not be true, and that whilst that devices might be getting more and more powerful, that's not true for everyone, and there's a long tail of users who are negatively impacted by web pages with large payloads.
 
-As highlighted in discussions about web performance in 2024, heavy websites contribute to inequalities in user access and responsiveness, particularly on lower-end devices, widening the "performance inequality gap."
-
-Alex Russel's series, <a hreflang="en" href="https://infrequently.org/2024/01/performance-inequality-gap-2024/">The Performance Inequality Gap</a> bring into sharp focus that some of the assumptions that are made on current device performance and capabilities may not be true, and that whilst that devices might be getting more and more powerful, that's not true for everyone, and there's a long tail of users who are negatively impacted by web pages with large payloads.
-
-This growing disparity emphasizes the importance of lightweight, efficient web design to ensure equitable access and engagement for all users.
-
-Page weight matters, whether you're experiencing a weak network connection at an inopportune moment or live in a market where access to the internet is charged by the megabyte, inflated page weight decreases the availability of information.
+This growing disparity emphasizes the importance of lightweight, efficient web design to ensure equitable access and engagement for all users. Page weight matters, whether you're experiencing a weak network connection at an inopportune moment or live in a market where access to the internet is charged by the megabyte, inflated page weight decreases the availability of information.
 
 ## What is page weight?
 
@@ -46,7 +42,7 @@ Page weight is the byte size of a web page. The web has evolved massively since 
 - The [HTML](./markup) that comes in the initial response from a server.
 - [Images and other media (video, audio, etc)](./media) that are embedded into the page.
 - [Cascading Style Sheets (CSS)](./css) for styling the page.
-- [JavaScript](../2022//javascript) to provide interactivity and functionality.
+- [JavaScript](./javascript) to provide interactivity and functionality.
 - [Third-Party resources](./third-parties), which can be one or more of the above, from other providers.
 
 Every extra thing added to a web page increases the overall page weight, and every bit ultimately means more work and overhead for the browser in transmitting it across the network, processing, parsing and ultimately rendering and painting it on the screen for the user to consume and interact with.
@@ -63,15 +59,11 @@ The weight effects can be divided into three main categories: storage, transmiss
 
 Every byte of a web page needs to be stored somewhere, and with the nature of how the web works, that usually means being stored in multiple locations
 
-It starts with the web server itself. Pure storage space remains relatively small in cost per Gigabyte, depending on the type of storage. For example, Google's cloud storage is somewhere between [$0.02 & $0.03 per month in North America](https://cloud.google.com/storage/pricing#north-america) or $0.006 and $0.025 in Europe.
-
-Resources stored in memory on a webserver versus on disk for faster access will ramp up in cost far faster than one that lives on disk.
+It starts with the web server itself. Pure storage space remains relatively small in cost per Gigabyte, depending on the type of storage. For example, Google's cloud storage is somewhere between [$0.02 and $0.03 per month in North America](https://cloud.google.com/storage/pricing#north-america) or $0.006 and $0.025 in Europe. Resources stored in memory on a webserver versus on disk for faster access will ramp up in cost far faster than one that lives on disk.
 
 There can be multiple copies of the same resource too, spread across a number of intermediate caches, and even spread across multiple data centers if a CDN when edge caching is employed.
 
 The second part of the equation is these resources also need to be stored on the user's device when they access a page. Lower-end devices, particularly mobile ones, may be far more restricted as to how much they can hold. Pushing large payloads can overwhelm storage capacity, pushing other valuable resources to be purged from the cache. This can lead to additional costs and performance hits when navigating to a new page that would have reused those resources.
-
-The best way to optimize the transmission of resources is serving small resources. In case that is difficult to achieve, using preconnect, preload and Priority Hints can help with managing the order resources are loaded on page.
 
 ### Transmission
 
@@ -81,6 +73,8 @@ Not all network connections are equal everywhere, it could be a super-fast broad
 
 So, it is best to think strategically. The bigger the page weight, the longer the transmission of resources will take, and those with slower mobile connections or low data limits will be hit the hardest, which may also affect business.
 
+The best way to optimize the transmission of resources is serving small resources. In case that is difficult to achieve, using preconnect, preload and fetch priority can help with managing the order resources are loaded on page.
+
 ### Rendering
 
 Before a browser can paint the URL requested onto someone's screen, it needs to gather and process those resources.
@@ -89,7 +83,7 @@ The greater the page weight, the longer it will take a browser to get and proces
 
 Even after loading, excessive page weight can make a page slow to respond to interaction, as the browser is bogged down shuffling large resources.
 
-### Page weight is an accessibility issue
+## Page weight is an accessibility issue
 
 Large page weight disproportionately affects users who cannot afford top end devices, and fast, high data usage cap connections.
 
@@ -121,7 +115,7 @@ To understand the file types associated with page weight, we should look at file
 
 The total number of requests for desktop pages decreased by 9%, down to 71 from 2022's 76 requests per page. Similarly, mobile decreased from 70 to 66 requests. The count of image file types decreased by 43% in 2024
 
-Desktop pages requested 18 in 2024 compared to 25 in 2024.
+Desktop pages requested 18 images in 2024 compared to 25 in 2022.
 
 Javascript overtook images as the most requested file type. The median page requested 24 Javascript resources on desktop pages. Mobile saw 22 requests.
 
@@ -207,7 +201,7 @@ Images are static files that are essential for constructing and displaying web p
   )
 }}
 
-2024 is the first year that image fell from being the dominant file type. In 2022, we saw the median page request 25 images for desktop and 22 for mobile pages. This is down to 18 for desktop and 16 for mobile.
+2024 is the first year that image fell from being the dominant file type. In 2022, we saw the median page request 25 images for desktop and 22 for mobile pages. This is down to 18 for desktop and 16 for mobile. {# TODO: Seems repetitive of above. #}
 
 Decreased image file types does not mean that the web has become less visual. Instead, sites may be switching to CSS effects (such as <a hreflang="en" href="https://www.w3schools.com/css/css3_shadows.asp">shadows</a> or [gradients](https://developer.mozilla.org/Web/CSS/gradient)) and [CSS animations](https://web.dev/articles/animations-guide). These assets can be used to produce resolution-independent assets that always look sharp at every resolution and zoom level, often at a fraction of the bytes required by an image file.
 
@@ -258,7 +252,7 @@ For more information about how CSS was used on the web 2024, please see the [CSS
 
 ### JavaScript
 
-JavaScript is a high-level, dynamic and interpreted programming language. It is one of the core technologies of the web, enabling interactive web pages and web applications. JavaScript allows developers to add interactivity, animations, and effects to web pages. This includes features such as drop-down menus, image sliders, personalized content, and analytics tracking. It is used as a client-side programming language by <a hreflang="en" href="https://w3techs.com/technologies/details/cp-javascript">98.9% of all websites</a>.
+JavaScript is a high-level, dynamic and interpreted programming language. It is one of the core technologies of the web, enabling interactive web pages and web applications. JavaScript allows developers to add interactivity, animations, and effects to web pages. This includes features such as drop-down menus, image sliders, personalized content, and analytics tracking. It is used as a client-side programming language by <a hreflang="en" href="https://w3techs.com/technologies/details/cp-javascript">98.9% of all websites</a>.  {# TODO: Replace with HTTP Archive stat? #}
 
 {{ figure_markup(
   image="javascript-request-distribution-by-device-type.png",
@@ -278,7 +272,7 @@ For more information on how JavaScript is being used in 2024, take a look at the
 
 ### Third-party services
 
-Third-party resources are external assets or services that are integrated into a web page or application, but are hosted and maintained by a different provider. These resources can include things like JavaScript, CSS, fonts, and analytics tools, to name a few. According to the [Third Parties](./third-parties) chapter, [92% of pages had one or more third party resources](./third-parties#prevalence).The most called third party resources were scripts, making up 30.5% of requests by content type. The authors also noted a considerable decrease in the number of third parties for lower-ranked websites.
+Third-party resources are external assets or services that are integrated into a web page or application, but are hosted and maintained by a different provider. These resources can include things like JavaScript, CSS, fonts, and analytics tools, to name a few. According to the [Third Parties](./third-parties) chapter, [92% of pages had one or more third party resources](./third-parties#prevalence). The most called third party resources were scripts, making up 30.5% of requests by content type. The authors also noted a considerable decrease in the number of third parties for lower-ranked websites.
 
 For more insights, refer to the [Third Parties](./third-parties) chapter.
 
@@ -292,10 +286,10 @@ HTML, or Hypertext Markup Language, is the standard markup language used to crea
 
 There are several reasons why a page may include more than one HTML request for a single web page, including:
 
-1. Embedded Resources: A web page typically loads not just the HTML document, but also additional resources like images, CSS files, JavaScript files, fonts, etc. Each of these external resources will trigger a separate HTTP request to the server to fetch that content.
-2. Dynamically Loaded Content: Some web pages use JavaScript to dynamically load additional content or data after the initial page load. This could be things like infinite scrolling, AJAX-powered content updates, or lazy-loading of elements. These dynamic requests are in addition to the initial HTML document request.
-3. Preloading/Prefetching: Web developers may include `<link>` tags with `rel="preload"` or `rel="prefetch"` to instruct the browser to proactively fetch certain resources in advance before they are actually needed. This can improve perceived performance.
-4. Error Handling: If there are any network errors or server issues when loading a resource, the browser will retry the request, leading to multiple requests for the same content.
+1. **Embedded Resources**: A web page typically loads not just the HTML document, but also additional resources like images, CSS files, JavaScript files, fonts, etc. Each of these external resources will trigger a separate HTTP request to the server to fetch that content.
+2. **Dynamically Loaded Content**: Some web pages use JavaScript to dynamically load additional content or data after the initial page load. This could be things like infinite scrolling, AJAX-powered content updates, or lazy-loading of elements. These dynamic requests are in addition to the initial HTML document request.
+3. **Preloading/Prefetching**: Web developers may include `<link>` tags with `rel="preload"` or `rel="prefetch"` to instruct the browser to proactively fetch certain resources in advance before they are actually needed. This can improve perceived performance.
+4. **Error Handling**: If there are any network errors or server issues when loading a resource, the browser will retry the request, leading to multiple requests for the same content.
 
 {{ figure_markup(
   image="html-requests-distribution-by-percentile.png",
@@ -309,7 +303,7 @@ There are several reasons why a page may include more than one HTML request for 
 
 The median page made two HTML requests., which was consistent across devices and page types. At the 90th percentile, we saw 12 HTML requests. The number spiked dramatically at the 100th percentile, where desktop homepages made 13,389 requests.
 
-#### Font
+#### Fonts
 
 {{ figure_markup(
   image="font-requests-distribution-by-percentile.png",
@@ -325,7 +319,7 @@ The median page requested four font files. Through the 90th percentile, font req
 
 ### Request bytes
 
-Comparing the median page weight over time shows that unfortunately it continues to grow, almost at the same rate.The median page weight is still increasing at almost the same rate, as shown by a comparison over time.
+Comparing the median page weight over time shows that unfortunately it continues to grow, almost at the same rate. The median page weight is still increasing at almost the same rate, as shown by a comparison over time.
 
 {{ figure_markup(
   image="median-page-weight-over-time.png",
@@ -339,7 +333,7 @@ Comparing the median page weight over time shows that unfortunately it continues
 
 The median page weight for a desktop page, as measured in October 2024 is 2,652 KB, for mobile it's a slightly lower, but still weighty 2,311 KB.
 
-Compared to 2022's chapter, both figures are higher, with the median desktop page being 2,312 KB and for mobile it was 2,037 KB. 2024's Mobile page is just 1 KB lighter than 2022's desktop page.In October 2024, the median page weight for a desktop page was 2,652 KB, while the median page weight for a mobile page was 2,311 KB.
+Compared to 2022's chapter, both figures are higher, with the median desktop page being 2,312 KB and for mobile it was 2,037 KB. 2024's Mobile page is just 1 KB lighter than 2022's desktop page. In October 2024, the median page weight for a desktop page was 2,652 KB, while the median page weight for a mobile page was 2,311 KB.
 
 Both of these figures are higher than those from 2022. In 2022, the median page weight for a desktop page was 2,312 KB, and the median page weight for a mobile page was 2,037 KB. Notably, 2024's mobile page weight is only 1 KB lighter than 2022's desktop page weight.
 
@@ -356,6 +350,7 @@ When we compare year to year, desktop grew 8.6%	, or 210 KB from Oct 2023 to Oct
 
 Looking back over 10 years, we've added 120%, or 1.4 MB to the median desktop page, and a much more concerning 357% to mobile pages, which is an increase of 1.8 MB. To put that into perspective, we've *added* more than a 3.5" floppy disk held.
 
+{# TODO: Repeat of above? Pick one #}
 The median desktop page has increased by 120%, or 1.4 MB, over the past 10 years. The median mobile page has seen a more significant increase of 357%, or 1.8 MB, during the same period. This equates to adding more than a 3.5" floppy disk's worth of data to mobile pages.
 
 Year-over-year, from October 2023 to October 2024, the desktop grew by 8.6%, or 210 KB, and mobile grew by 6.4%, or 140 KB.
@@ -374,6 +369,7 @@ According to <a hreflang="en" href="https://whatdoesmysitecost.com/#usdCost">Wha
   )
 }}
 
+{# TODO; Check stats: Is it the "The median desktop page requests 1,054 KB"? Or "The median desktop page using images requests 1,054 KB"? #}
 The predominant resource type for homepages, excluding video, is images. The median desktop page requests 1,054 KB, while mobile pages request 900 KB. This shows a small increase from 2022, where desktop pages requested 1,026 KB and mobile pages requested 900 KB.
 
 JavaScript was the second largest contributor to page weight, with the median desktop page serving 613 KB, on mobile pages it's 558 KB. Like images, these both represent growth from 2022's chapter, where it was 509 KB on desktop pages and 461 KB on mobile pages.
@@ -492,7 +488,7 @@ In past page weight chapters, images have always been the largest contributor to
 
 The median desktop homepage is loading 1,054 KB of images, and mobile ones a little less weighty 900 KB. As noted earlier that's still an increase over 2022 where it was 1,026 KB for desktop pages, 900 KB for mobile. Things soon balloon once you get to the 75th percentile, with 2,822 KB of images for desktop, and 2,517 KB of images for mobile.
 
-In fact, at the median and above, all percentiles [were bigger than in 2022 chapter](../2022//page-weight#image-bytes), however the more positive findings are that at the 10th and 25th, image bytes were either pretty much stable or down from the previous chapter, pointing to the fact that developers who were already optimising for image file sizes have continued to do so, and might be getting slightly better at it.
+In fact, at the median and above, all percentiles [were bigger than in 2022 chapter](../2022/page-weight#image-bytes), however the more positive findings are that at the 10th and 25th, image bytes were either pretty much stable or down from the previous chapter, pointing to the fact that developers who were already optimising for image file sizes have continued to do so, and might be getting slightly better at it.
 
 It is also pleasing to see that where developers seem to be concentrating on reducing the impact on page weight the most is for mobile users, where page weight can carry the highest penalties. This could be due to folks using [responsive image](https://web.dev/articles/serve-responsive-images) serving.
 
@@ -608,7 +604,7 @@ Whilst ultimately, if a user interacts, the larger payload does still need to be
 
 There can be some drawbacks to using facades, these are covered well in the [third-party facades article on web.dev](https://developer.chrome.com/docs/lighthouse/performance/third-party-facades#live_chat_intercom_drift_help_scout_facebook_messenger). But ultimately, this approach can help save a significant amount of overall page weight.
 
-To look at adoption of facades, we can turn to lighthouse, which offers a [lazy load third-party resources with facades](https://developer.chrome.com/docs/lighthouse/performance/third-party-facades) audit to see if there are some identifiable resources embedded in the page that might represent an opportunity to use a facade.
+To look at adoption of facades, we can turn to Lighthouse, which offers a [lazy load third-party resources with facades](https://developer.chrome.com/docs/lighthouse/performance/third-party-facades) audit to see if there are some identifiable resources embedded in the page that might represent an opportunity to use a facade.
 
 Judging adoption is, overall, hard, as we can't reliably test for sites that are implementing facades, because the solution involves the page no longer loading the resources we'd be looking for, so looking at sites that could potentially benefit is more meaningful.
 
@@ -706,15 +702,14 @@ Core Web Vitals are a set of performance metrics designed to refine the dangerou
 2. Can the user interact? ([Interaction to Next Paint (INP)](https://web.dev/articles/inp))
 3. Is it visually stable? ([Cumulative Layout Shift (CLS)](https://web.dev/articles/cls))
 
-Core Web Vitals are designed to be an evolving set of metrics. This year, the metric for interactivity changed from First Input Delay (FID) to Interaction to Next Paint (INP). This change was made because it provided two significant advancements.
+Core Web Vitals are designed to be an evolving set of metrics. This year, the metric for interactivity changed from First Input Delay (FID) to Interaction to Next Paint (INP). This change was made because it provided two significant advancements:
 
-The first is to shift from a single interaction to include all interactions on the page.In other words, clicking with a mouse, tapping on a device with a touchscreen and pressing a key on either a physical or onscreen keyboard.
-
-The second is to represent interactivity for sites using JavaScript frameworks accurately, since JavaScript is often what drives interactivity mostly. This year we saw Core Web Vitals evolve their responsiveness metric by [introducing Interaction to Next Paint](https://developers.google.com/search/blog/2023/05/introducing-inp) to replace First Input Delay. This new metric measures beyond first interaction to measure the lifecycle of the page and better reflect interactivity on single page applications.
+- The first is to shift from a single interaction to include all interactions on the page. In other words, clicking with a mouse, tapping on a device with a touchscreen and pressing a key on either a physical or onscreen keyboard.
+- The second is to represent interactivity for sites using JavaScript frameworks accurately, since JavaScript is often what drives interactivity mostly. This year we saw Core Web Vitals evolve their responsiveness metric by [introducing Interaction to Next Paint](https://developers.google.com/search/blog/2023/05/introducing-inp) to replace First Input Delay. This new metric measures beyond first interaction to measure the lifecycle of the page and better reflect interactivity on single page applications.
 
 When responsiveness as measured by INP is below 200 milliseconds, its considered to be a good experience and pass the INP performance assessment. Total Blocking Time remains as the lab data equivalent and is for diagnostics when an INP issue is detected.
 
-The changeover in March 2023 saw many JS framework origins drop from passing Good classification. Sites using prominent frameworks like React, Next, Nuxt, and Vue were hit hardest. Sites adapted quickly and by September 2024, the number of passing origins exceeded when evaluated by INP exceeded the count when the FID metric was used.
+The changeover in March 2023 saw many JavaScript framework origins drop from passing Good classification. Sites using prominent frameworks like React, Next, Nuxt, and Vue were hit hardest. Sites adapted quickly and by September 2024, the number of passing origins exceeded when evaluated by INP exceeded the count when the FID metric was used.
 
 To gather data, we had to rely on lighthouse's lab testing audits, which capture LCP and CLS, but not the interaction based metrics of INP or FID. Lab testing does have draw backs, and real user metrics should always be used to truly assess performance, as detailed in web.dev's [Why lab and field data can be different (and what to do about it)](https://web.dev/articles/lab-and-field-data-differences).
 
