@@ -11,7 +11,7 @@ translators: []
 results: https://docs.google.com/spreadsheets/d/1GHTFwsjJokf1U5dZmDg-7bBlH_Lu-rlOHVmmzTj0D98/
 fellowhuman1101_bio: Jamie Indigo isn't a robot, but speaks bot. As director of technical SEO at <a hreflang="en" href="https://www.coxautoinc.com/">Cox Automotive</a>, they study how search engines crawl, render, and index the web. Jamie loves to tame wild JavaScript and optimize rendering strategies. When not working, they like horror movies, graphic novels, and terrorizing lawful good paladins in Dungeons & Dragons.
 dwsmart_bio: Dave Smart is a developer and technical search engine consultant at <a hreflang="en" href="https://tamethebots.com">Tame the Bots</a>. They love building tools and experimenting with the modern web, and can often be found at the front in a gig or two.
-featured_quote: It is reasonable to conclude that interactivity is one of the worst hit metrics associated with excessive page weight.
+featured_quote: Page weight is an accessibility issue. Large page weight disproportionately affects users who cannot afford top end devices, and fast, high data usage cap connections.
 #featured_stat_1: TODO
 #featured_stat_2: TODO
 #featured_stat_label_1: TODO
@@ -20,8 +20,6 @@ featured_quote: It is reasonable to conclude that interactivity is one of the wo
 #featured_stat_label_3: TODO
 doi: 10.5281/zenodo.14552631
 ---
-
-{# TODO: A lot of the stats are desktop stats, but they are not labelled in the graphs. Should we show them too? Or switch narrative to mobile? #}
 
 ## Introduction
 
@@ -34,6 +32,12 @@ In short, resources are becoming increasingly scare and expensive. With Google n
 As highlighted in discussions about web performance in 2024, heavy websites contribute to inequalities in user access and responsiveness, particularly on lower-end devices, widening the "performance inequality gap." Alex Russel's series, <a hreflang="en" href="https://infrequently.org/2024/01/performance-inequality-gap-2024/">The Performance Inequality Gap</a> bring into sharp focus that some of the assumptions that are made on current device performance and capabilities may not be true, and that whilst that devices might be getting more and more powerful, that's not true for everyone, and there's a long tail of users who are negatively impacted by web pages with large payloads.
 
 This growing disparity emphasizes the importance of lightweight, efficient web design to ensure equitable access and engagement for all users. Page weight matters, whether you're experiencing a weak network connection at an inopportune moment or live in a market where access to the internet is charged by the megabyte, inflated page weight decreases the availability of information.
+
+### Page weight is an accessibility issue
+
+Large page weight disproportionately affects users who cannot afford top end devices, and fast, high data usage cap connections.
+
+Bloated pages mean that people without access to these have a more expensive, less performant experience of the web, and in extreme cases might even make a page practically unusable.
 
 ## What is page weight?
 
@@ -83,11 +87,6 @@ The greater the page weight, the longer it will take a browser to get and proces
 
 Even after loading, excessive page weight can make a page slow to respond to interaction, as the browser is bogged down shuffling large resources.
 
-## Page weight is an accessibility issue
-
-Large page weight disproportionately affects users who cannot afford top end devices, and fast, high data usage cap connections.
-
-Bloated pages mean that people without access to these have a more expensive, less performant experience of the web, and in extreme cases might even make a page practically unusable.
 
 ## Page weight by the numbers
 
@@ -201,7 +200,7 @@ Images are static files that are essential for constructing and displaying web p
   )
 }}
 
-2024 is the first year that image fell from being the dominant file type. In 2022, we saw the median page request 25 images for desktop and 22 for mobile pages. This is down to 18 for desktop and 16 for mobile. {# TODO: Seems repetitive of above. #}
+In 2022, we saw the median page request 25 images for desktop and 22 for mobile pages. This is down to 18 for desktop and 16 for mobile.
 
 Decreased image file types does not mean that the web has become less visual. Instead, sites may be switching to CSS effects (such as <a hreflang="en" href="https://www.w3schools.com/css/css3_shadows.asp">shadows</a> or [gradients](https://developer.mozilla.org/Web/CSS/gradient)) and [CSS animations](https://web.dev/articles/animations-guide). These assets can be used to produce resolution-independent assets that always look sharp at every resolution and zoom level, often at a fraction of the bytes required by an image file.
 
@@ -348,9 +347,6 @@ Both of these figures are higher than those from 2022. In 2022, the median page 
 
 When we compare year to year, desktop grew 8.6%	, or 210 KB from Oct 2023 to Oct 2024, and mobile grew 6.4%, or 140 KB.
 
-Looking back over 10 years, we've added 120%, or 1.4 MB to the median desktop page, and a much more concerning 357% to mobile pages, which is an increase of 1.8 MB. To put that into perspective, we've *added* more than a 3.5" floppy disk held.
-
-{# TODO: Repeat of above? Pick one #}
 The median desktop page has increased by 120%, or 1.4 MB, over the past 10 years. The median mobile page has seen a more significant increase of 357%, or 1.8 MB, during the same period. This equates to adding more than a 3.5" floppy disk's worth of data to mobile pages.
 
 Year-over-year, from October 2023 to October 2024, the desktop grew by 8.6%, or 210 KB, and mobile grew by 6.4%, or 140 KB.
@@ -369,8 +365,7 @@ According to <a hreflang="en" href="https://whatdoesmysitecost.com/#usdCost">Wha
   )
 }}
 
-{# TODO; Check stats: Is it the "The median desktop page requests 1,054 KB"? Or "The median desktop page using images requests 1,054 KB"? #}
-The predominant resource type for homepages, excluding video, is images. The median desktop page requests 1,054 KB, while mobile pages request 900 KB. This shows a small increase from 2022, where desktop pages requested 1,026 KB and mobile pages requested 900 KB.
+The predominant resource type for homepages, excluding video, is images. The median desktop page using images requests 1,054 KB, while mobile pages request 900 KB. This shows a small increase from 2022, where desktop pages requested 1,026 KB and mobile pages requested 900 KB.
 
 JavaScript was the second largest contributor to page weight, with the median desktop page serving 613 KB, on mobile pages it's 558 KB. Like images, these both represent growth from 2022's chapter, where it was 509 KB on desktop pages and 461 KB on mobile pages.
 
