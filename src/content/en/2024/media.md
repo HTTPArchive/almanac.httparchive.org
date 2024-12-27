@@ -19,6 +19,7 @@ featured_stat_2: 32%
 featured_stat_label_2: Increase in video adoption since 2022
 featured_stat_3: 1 in 5
 featured_stat_label_3: sizes attributes that are inaccurate enough to cause browsers to pick a suboptimal resource from the srcset
+doi: 10.5281/zenodo.14552631
 ---
 
 ## Introduction
