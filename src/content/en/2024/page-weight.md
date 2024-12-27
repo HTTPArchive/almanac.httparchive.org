@@ -12,12 +12,12 @@ results: https://docs.google.com/spreadsheets/d/1GHTFwsjJokf1U5dZmDg-7bBlH_Lu-rl
 fellowhuman1101_bio: Jamie Indigo isn't a robot, but speaks bot. As director of technical SEO at <a hreflang="en" href="https://www.coxautoinc.com/">Cox Automotive</a>, they study how search engines crawl, render, and index the web. Jamie loves to tame wild JavaScript and optimize rendering strategies. When not working, they like horror movies, graphic novels, and terrorizing lawful good paladins in Dungeons & Dragons.
 dwsmart_bio: Dave Smart is a developer and technical search engine consultant at <a hreflang="en" href="https://tamethebots.com">Tame the Bots</a>. They love building tools and experimenting with the modern web, and can often be found at the front in a gig or two.
 featured_quote: Page weight is an accessibility issue. Large page weight disproportionately affects users who cannot afford top end devices, and fast, high data usage cap connections.
-#featured_stat_1: TODO
-#featured_stat_2: TODO
-#featured_stat_label_1: TODO
-#featured_stat_label_2: TODO
-#featured_stat_3: TODO
-#featured_stat_label_3: TODO
+featured_stat_1: 1.8 MB
+featured_stat_label_1: The increase in median mobile page weight over 10 years.
+featured_stat_2: 1,235 ms
+featured_stat_label_2: The total blocking time of the median mobile page, by page weight.
+featured_stat_3: 41%
+featured_stat_label_3: Of mobile homepages don't minify all JAvaScript.
 doi: 10.5281/zenodo.14562057
 ---
 
