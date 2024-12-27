@@ -251,7 +251,18 @@ For more information about how CSS was used on the web 2024, please see the [CSS
 
 ### JavaScript
 
-JavaScript is a high-level, dynamic and interpreted programming language. It is one of the core technologies of the web, enabling interactive web pages and web applications. JavaScript allows developers to add interactivity, animations, and effects to web pages. This includes features such as drop-down menus, image sliders, personalized content, and analytics tracking. It is used as a client-side programming language by <a hreflang="en" href="https://w3techs.com/technologies/details/cp-javascript">98.9% of all websites</a>.  {# TODO: Replace with HTTP Archive stat? #}
+JavaScript is a high-level, dynamic and interpreted programming language. It is one of the core technologies of the web, enabling interactive web pages and web applications. JavaScript allows developers to add interactivity, animations, and effects to web pages. This includes features such as drop-down menus, image sliders, personalized content, and analytics tracking.
+
+{{ figure_markup(
+  caption="Mopbile home pages using JavaScript.",
+  content="97.8%",
+  classes="big-number",
+  sheets_gid="799485869",
+  sql_file="pages_using_javascript.sql"
+)
+}}
+
+It is used as a client-side programming language by 97.8% of all mobile home pages, and 98.5% of inner pages.
 
 {{ figure_markup(
   image="javascript-request-distribution-by-device-type.png",
