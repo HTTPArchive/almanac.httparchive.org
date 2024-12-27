@@ -17,7 +17,7 @@ featured_stat_label_1: The increase in median mobile page weight over 10 years.
 featured_stat_2: 1,235 ms
 featured_stat_label_2: The total blocking time of the median mobile page, by page weight.
 featured_stat_3: 41%
-featured_stat_label_3: Of mobile homepages don't minify all JAvaScript.
+featured_stat_label_3: Of mobile homepages don't minify all JavaScript.
 doi: 10.5281/zenodo.14562057
 ---
 
