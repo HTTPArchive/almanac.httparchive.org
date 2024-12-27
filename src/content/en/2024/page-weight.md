@@ -18,7 +18,7 @@ featured_quote: Page weight is an accessibility issue. Large page weight disprop
 #featured_stat_label_2: TODO
 #featured_stat_3: TODO
 #featured_stat_label_3: TODO
-doi: 10.5281/zenodo.14552631
+doi: 10.5281/zenodo.14562057
 ---
 
 ## Introduction
