@@ -771,11 +771,6 @@
     "date_modified": "2024-11-16T00:00:00.000Z",
     "hash": "cb482bca20b7851d66423e337e200e13"
   },
-  "en/2024/chapters/css.html": {
-    "date_published": "2024-11-11T00:00:00.000Z",
-    "date_modified": "2024-11-16T00:00:00.000Z",
-    "hash": "a79cb03c36c7fdc3964af5448d33daaa"
-  },
   "en/2024/chapters/ecommerce.html": {
     "date_published": "2024-11-11T00:00:00.000Z",
     "date_modified": "2024-11-21T00:00:00.000Z",
@@ -855,11 +850,6 @@
     "date_published": "2024-11-21T00:00:00.000Z",
     "date_modified": "2024-11-30T00:00:00.000Z",
     "hash": "f5e703ed3f81f6969d2000e33d06a7fd"
-  },
-  "en/2024/chapters/webassembly.html": {
-    "date_published": "2024-11-11T00:00:00.000Z",
-    "date_modified": "2024-11-16T00:00:00.000Z",
-    "hash": "6c36c4acc4cfd695512f55731b0f6edf"
   },
   "en/2024/contributors.html": {
     "date_published": "2024-11-11T00:00:00.000Z",
