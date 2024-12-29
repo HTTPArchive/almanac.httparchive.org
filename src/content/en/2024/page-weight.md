@@ -45,7 +45,7 @@ Page weight is the byte size of a web page. The web has evolved massively since 
 
 - The [HTML](./markup) that comes in the initial response from a server.
 - [Images and other media (video, audio, etc)](./media) that are embedded into the page.
-- [Cascading Style Sheets (CSS)](./css) for styling the page.
+- [Cascading Style Sheets (CSS)](https://developer.mozilla.org/Web/CSS) for styling the page.
 - [JavaScript](./javascript) to provide interactivity and functionality.
 - [Third-Party resources](./third-parties), which can be one or more of the above, from other providers.
 
@@ -217,7 +217,7 @@ Desktop pages consistently call for more image file types across with the gap be
 
 ### CSS
 
-[CSS](https://developer.mozilla.org/Web/CSS), or Cascading Style Sheets, is a style sheet language used to describe the presentation of a document written in a markup language like HTML. In other words, CSS is responsible for the visual styling and layout of web pages.
+CSS, or Cascading Style Sheets, is a style sheet language used to describe the presentation of a document written in a markup language like HTML. In other words, CSS is responsible for the visual styling and layout of web pages.
 
 It allows developers to control the color, font, size, spacing, and many other visual aspects of HTML elements. CSS works in conjunction with HTML, providing a separation of content and presentation.
 
@@ -246,8 +246,6 @@ This separation makes web pages more maintainable, flexible, responsive, and can
 CSS is an essential tool in the web developer's toolkit across devices and page types. The median desktop and mobile page both called for 8 CSS assets. Percentiles were identical except for a nominal variance at the 75th.
 
 In comparing homepages to inner pages, we saw that homepages consistently called one fewer cascading style sheets until the 90th percentile. At the 100th percentile, we saw inner pages deviate with a spike of 4,879 requests compared to 3,346 on inner pages. While both are high, inner pages are 46% higher.
-
-For more information about how CSS was used on the web 2024, please see the [CSS](./css) chapter.
 
 ### JavaScript
 
