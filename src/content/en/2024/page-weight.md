@@ -354,7 +354,7 @@ Both of these figures are higher than those from 2022. In 2022, the median page 
 )
 }}
 
-When we compare year to year, desktop grew 8.6%	, or 210 KB from Oct 2023 to Oct 2024, and mobile grew 6.4%, or 140 KB.
+When we compare year to year, desktop grew 8.6%, or 210 KB from Oct 2023 to Oct 2024, and mobile grew 6.4%, or 140 KB.
 
 The median desktop page has increased by 120%, or 1.4 MB, over the past 10 years. The median mobile page has seen a more significant increase of 357%, or 1.8 MB, during the same period. This equates to adding more than a 3.5" floppy disk's worth of data to mobile pages.
 
