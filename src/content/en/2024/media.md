@@ -10,15 +10,14 @@ analysts: [stefanjudis, eeeps]
 translators: []
 stefanjudis_bio: Stefan Judis fell in love with Frontend development ten years ago, and learns in public on his <a hreflang="en" href="https://www.stefanjudis.com/blog/">blog</a> and <a hreflang="en" href="https://webweekly.email/">newsletter</a>.
 eeeps_bio: <a href="https://ericportis.com">Eric Portis</a> is a Web Platform Advocate at <a hreflang="en" href="https://cloudinary.com/">Cloudinary</a>.
-
 results: https://docs.google.com/spreadsheets/d/1Q2ITOe6ZMIXGKHtIxqK9XmUA1eQBX9CLQkxarQOJFCk/
 featured_quote: Images on the web are getting bigger. Whether you're counting image pixels or layout dimensions, the numbers are going up. So even though we also saw an increase in compression ratios—driven in part by increased adoption of modern image formats—total image byte sizes are going up, too.
 featured_stat_1: 99.9%
-featured_stat_label_1: Pages that generated at least one image request.
+featured_stat_label_1: Pages that requested at least one image resource.
 featured_stat_2: 32%
-featured_stat_label_2: Increase in video adoption since 2022
+featured_stat_label_2: Increase in video adoption since 2022.
 featured_stat_3: 1 in 5
-featured_stat_label_3: sizes attributes that are inaccurate enough to cause browsers to pick a suboptimal resource from the srcset
+featured_stat_label_3: Inaccurate `sizes` attributes.
 doi: 10.5281/zenodo.14552631
 ---
 
@@ -33,7 +32,7 @@ We'll kick off with the most common media type—images. How often do you look a
 It comes at no surprise that of the more than 10 million scanned and parsed pages, 99.9% requested at least one image.
 
 {{ figure_markup(
-  caption="Pages that generated at least one request for an image resource.",
+  caption="Pages that requested at least one image resource.",
   content="99.9%",
   classes="big-number",
   sheets_gid="186748113",
@@ -818,8 +817,6 @@ What formats are sites delivering in 2024? MP4, which enjoys <a hreflang="en" hr
   image="top-extensions-of-files-with-a-video-mime-type.png",
   caption="Top extensions of files with a video MIME type.",
   description="A bar chart showing the extensions of video files delivered on desktop and mobile. Only the mobile bars are labelled, but with one exception, the desktop bars are fairly similar. The MP4 extension accounted for 68% of video files, blank extensions accounted for 14% of video files (and were uniquely much lower on desktop), files with a TS extension accounted for 9% of video files, M4S, 4%, MOV, 1%, lastly, WebM, 1%.",
-  width="600",
-  height="522",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=892598197&format=interactive",
   sheets_gid="1427621996",
   sql_file="video_ext.sql"
@@ -838,7 +835,9 @@ The `<video>` element offers a number of attributes that allow authors to contro
   description="A bar chart showing the number of times various attributes on the HTML video element were found on both desktop and mobile. Generally, the mobile and desktop bars are similar, but only the mobile bars are labelled. autoplay is present on 23% of video elements, playsinline 14%, preload 16%, src 9%, controls 9%, width 10%, loop 7%, crossorigin 5%, muted 8%, and finally poster 3%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=1127314078&format=interactive",
   sheets_gid="118006887",
-  sql_file="video_attribute_names.sql"
+  sql_file="video_attribute_names.sql",
+  width="600",
+  height="522",
 )
 }}
 
