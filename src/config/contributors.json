@@ -4775,6 +4775,16 @@
       ]
     }
   },
+  "notwillk": {
+    "avatar_url": "44582272",
+    "github": "notwillk",
+    "name": "Will Klancnik",
+    "teams": {
+      "2020": [
+        "reviewers"
+      ]
+    }
+  },
   "HakaCode": {
     "avatar_url": "33907565",
     "github": "HakaCode",
@@ -4994,15 +5004,5 @@
       ]
     },
     "twitter": "_cybai"
-  },
-  "notwillk": {
-    "avatar_url": "44582272",
-    "github": "notwillk",
-    "name": "notwillk",
-    "teams": {
-      "2020": [
-        "reviewers"
-      ]
-    }
   }
 }
