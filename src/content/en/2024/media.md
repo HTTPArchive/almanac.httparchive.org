@@ -86,7 +86,7 @@ We'll start with the resources themselves. Most images are made of pixels (let's
 
 Perhaps surprisingly, many images contain just a single pixel!
 
-#### A note on single-pixel images
+#### Single-pixel images
 
 <figure>
   <table>
@@ -430,7 +430,7 @@ The median image is compressed to 2.1 bits per pixel, representing a tad more co
 
 When we break compression down by format, we can see that every format saw fewer bits spent per pixel in 2024 than they did in 2022—except for one.
 
-### Bit per pixel by format
+#### Bits per pixel by format
 
 {{ figure_markup(
   image="median-bits-per-pixel-by-format.png",
