@@ -5,11 +5,11 @@ WITH total_iframe_count AS (
   SELECT
     client,
     date,
-    SUM(SAFE_CAST(JSON_EXTRACT(custom_metrics, '$.num_iframes') AS INT64)) AS total_iframes
+    SUM(SAFE.INT64(custom_metrics.other.num_iframes)) AS total_iframes
   FROM
-    `httparchive.all.pages`
+    `httparchive.crawl.pages`
   WHERE
-    (date = '2022-06-01' OR date = '2023-06-01' OR date = '2023-12-01' OR date = '2024-03-01' OR date = '2024-04-01' OR date = '2024-05-01' OR date = '2024-06-01') AND
+    (date = '2020-08-01' OR date = '2021-07-01' OR date = '2022-06-01') AND
     is_root_page
   GROUP BY client, date
 )
@@ -34,21 +34,20 @@ FROM (
     client,
     date,
     url,
-    JSON_EXTRACT_SCALAR(iframeAttr, '$.allow') AS allow,
-    JSON_EXTRACT_SCALAR(iframeAttr, '$.sandbox') AS sandbox
+    SAFE.STRING(iframeAttr.allow) AS allow,
+    SAFE.STRING(iframeAttr.sandbox) AS sandbox
   FROM (
     SELECT
       client,
       date,
       page AS url,
-      JSON_EXTRACT_ARRAY(JSON_QUERY(custom_metrics, '$.security'), '$.iframe-allow-sandbox') AS iframeAttrs
+      JSON_EXTRACT_ARRAY(custom_metrics.security.`iframe-allow-sandbox`) AS iframeAttrs
     FROM
-      `httparchive.all.pages`
+      `httparchive.crawl.pages`
     WHERE
-      (date = '2022-06-01' OR date = '2023-06-01' OR date = '2023-12-01' OR date = '2024-03-01' OR date = '2024-04-01' OR date = '2024-05-01' OR date = '2024-06-01') AND
+      (date = '2020-08-01' OR date = '2021-07-01' OR date = '2022-06-01') AND
       is_root_page
-  )
-  LEFT JOIN UNNEST(iframeAttrs) AS iframeAttr
+  ) LEFT JOIN UNNEST(iframeAttrs) AS iframeAttr
   ) JOIN total_iframe_count USING (client, date)
 GROUP BY
   total_iframes,
