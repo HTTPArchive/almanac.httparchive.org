@@ -677,7 +677,7 @@ While usage of the `media` attribute is down three percentage points from 2022, 
 
 We already saw [how the web's image resources size up](#image-dimensions). But before they can be shown to a user, embedded images must be placed within a layout and potentially squished or stretched to fit it.
 
-<p class="note">Note: It will be useful to keep in mind the <a href="https://almanac.httparchive.org/en/2024/methodology#webpagetest">crawlers' viewports</a> throughout this analysis. The desktop crawler was 1376px-wide, with a DPR of 1x, the mobile crawler was 360px-wide, with a DPR of 3x.</p>
+<p class="note">Note: It will be useful to keep in mind the [crawlers' viewports](./methodology#webpagetest) throughout this analysis. The desktop crawler was 1376px wide, with a DPR of 1x, the mobile crawler was 360px wide, with a DPR of 3x.</p>
 
 ### Layout widths
 
