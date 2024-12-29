@@ -14,54 +14,38 @@
         {
           "part": "I",
           "chapter_number": "1",
-          "title": "CSS",
-          "slug": "css",
-          "todo": true
-        },
-        {
-          "part": "I",
-          "chapter_number": "2",
           "title": "JavaScript",
           "slug": "javascript",
           "todo": true
         },
         {
           "part": "I",
-          "chapter_number": "3",
+          "chapter_number": "2",
           "title": "Markup",
           "slug": "markup"
         },
         {
           "part": "I",
-          "chapter_number": "4",
+          "chapter_number": "3",
           "title": "Structured Data",
           "slug": "structured-data",
           "hero_dir": "2021"
         },
         {
           "part": "I",
-          "chapter_number": "5",
+          "chapter_number": "4",
           "title": "Fonts",
           "slug": "fonts"
         },
         {
           "part": "I",
-          "chapter_number": "6",
+          "chapter_number": "5",
           "title": "Media",
-          "slug": "media",
-          "todo": true
+          "slug": "media"
         },
         {
           "part": "I",
-          "chapter_number": "7",
-          "title": "WebAssembly",
-          "slug": "webassembly",
-          "hero_dir": "2021",
-          "todo": true
-        },
-        {
-          "part": "I",
-          "chapter_number": "8",
+          "chapter_number": "6",
           "title": "Third Parties",
           "slug": "third-parties"
         }
@@ -73,32 +57,32 @@
       "chapters": [
         {
           "part": "II",
-          "chapter_number": "9",
+          "chapter_number": "7",
           "title": "SEO",
           "slug": "seo"
         },
         {
           "part": "II",
-          "chapter_number": "10",
+          "chapter_number": "8",
           "title": "Accessibility",
           "slug": "accessibility"
         },
         {
           "part": "II",
-          "chapter_number": "11",
+          "chapter_number": "9",
           "title": "Performance",
           "slug": "performance"
         },
         {
           "part": "II",
-          "chapter_number": "12",
+          "chapter_number": "10",
           "title": "Privacy",
           "slug": "privacy",
           "hero_dir": "2020"
         },
         {
           "part": "II",
-          "chapter_number": "13",
+          "chapter_number": "11",
           "title": "Security",
           "slug": "security"
         }
@@ -110,26 +94,26 @@
       "chapters": [
         {
           "part": "III",
-          "chapter_number": "14",
+          "chapter_number": "12",
           "title": "CMS",
           "slug": "cms"
         },
         {
           "part": "III",
-          "chapter_number": "15",
+          "chapter_number": "13",
           "title": "Ecommerce",
           "slug": "ecommerce"
         },
         {
           "part": "III",
-          "chapter_number": "16",
+          "chapter_number": "14",
           "title": "Jamstack",
           "slug": "jamstack",
           "hero_dir": "2020"
         },
         {
           "part": "III",
-          "chapter_number": "17",
+          "chapter_number": "15",
           "title": "Sustainability",
           "slug": "sustainability",
           "hero_dir": "2022"
@@ -142,26 +126,26 @@
       "chapters": [
         {
           "part": "IV",
-          "chapter_number": "18",
+          "chapter_number": "16",
           "title": "Page Weight",
           "slug": "page-weight",
           "todo": true
         },
         {
           "part": "IV",
-          "chapter_number": "19",
+          "chapter_number": "17",
           "title": "CDN",
           "slug": "cdn"
         },
         {
           "part": "IV",
-          "chapter_number": "20",
+          "chapter_number": "18",
           "title": "HTTP",
           "slug": "http"
         },
         {
           "part": "IV",
-          "chapter_number": "21",
+          "chapter_number": "19",
           "title": "Cookies",
           "slug": "cookies",
           "hero_dir": "2024"

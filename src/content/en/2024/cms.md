@@ -64,7 +64,7 @@ Looking closer at the raw desktop figures, we see a positive trend, with a clear
 
 It's important to note that our analysis differs from other commonly used datasets, such as W3Techs. These deviations are due to differing research methodologies and definitions of what qualifies as a CMS, which impact the final statistics.
 
-For instance, as mentioned earlier, Wappalyzer uses a more strict definition of a CMS than we do, excluding some significant platforms that appear in W3Tech's reports. You can learn more about our CMS criteria on the [Methodology page](../2022/methodology).
+For instance, as mentioned earlier, Wappalyzer uses a more strict definition of a CMS than we do, excluding some significant platforms that appear in W3Tech's reports. You can learn more about our CMS criteria in the [Methodology](./methodology).
 
 ### CMS adoption by geography
 
@@ -368,7 +368,7 @@ The YoY performance data from 2023 to 2024 reveals an encouraging trend of incre
 
 #### SEO score
 
-Search Engine Optimization (or SEO) is the practice of improving the quality and quantity of visitors to a website or a web page from a website to make it more easily found in search engines. This topic is covered in our [SEO chapter](../2022/seo), but it also relates to CMSs.
+Search Engine Optimization (or SEO) is the practice of improving the quality and quantity of visitors to a website or a web page from a website to make it more easily found in search engines. This topic is covered in our [SEO chapter](./seo), but it also relates to CMSs.
 
 A CMS and content on it is generally set up to serve as much information to search engine crawlers as possible to make it as easy as possible for them to index site content appropriately in search engine results. Compared to a custom-built website, one might expect a CMS to provide good SEO capabilities, and the Lighthouse scores in this category remain appropriately high.
 
@@ -404,7 +404,7 @@ The year-over-year comparison from 2023 to 2024 reveals consistently high SEO sc
 
 #### Accessibility score
 
-An accessible website is a site designed and developed so that people with disabilities can use them. Web accessibility also benefits people without disabilities, such as those on slow internet connections. Read more in our [Accessibility chapter](../2022/accessibility).
+An accessible website is a site designed and developed so that people with disabilities can use them. Web accessibility also benefits people without disabilities, such as those on slow internet connections. Read more in our [Accessibility](./accessibility) chapter.
 
 Lighthouse provides a set of accessibility audits and returns a weighted average of all of them. See <a hreflang="en" href="https://web.dev/accessibility-scoring/">scoring details</a> for a full list of how each audit is weighted.
 
@@ -489,7 +489,7 @@ The YoY comparison from 2023 to 2024 shows stable best practices scores across m
 
 We leveraged HTTP Archive data to analyze the resource weight across various CMS platforms, aiming to uncover opportunities for performance optimization. While page loading speed isn't solely determined by the number of downloaded bytes, reducing the amount of data required to load a page offers several advantages.
 
-Fewer bytes mean lower bandwidth costs, reduced carbon emissions, and faster performance—particularly for users on slower connections. This analysis sheds light on areas where resource optimization can have a meaningful impact on both user experience and sustainability. Read the [Page Weight chapter](../2022/page-weight) for a more detailed analysis.
+Fewer bytes mean lower bandwidth costs, reduced carbon emissions, and faster performance—particularly for users on slower connections. This analysis sheds light on areas where resource optimization can have a meaningful impact on both user experience and sustainability. Read the [Page Weight](./page-weight) chpater for a more detailed analysis.
 
 {{ figure_markup(
   image="median-cms-page-weight.png",
@@ -525,7 +525,7 @@ Below, we analyze and compare the resource weight across different CMS platforms
 
 #### Images
 
-Images are a significant resource on most websites, often accounting for the largest portion of page weight. In CMS platforms, where visuals are heavily relied upon for design and engagement, image optimization is essential. High-resolution images can slow down page load times if not properly compressed or served in modern formats like WebP. Read more in our [Media subchapter](../2022/media).
+Images are a significant resource on most websites, often accounting for the largest portion of page weight. In CMS platforms, where visuals are heavily relied upon for design and engagement, image optimization is essential. High-resolution images can slow down page load times if not properly compressed or served in modern formats like WebP. Read more in our [Media](./media) chapter.
 
 {{ figure_markup(
   image="cms-size-of-images.png",
@@ -563,7 +563,7 @@ As of WordPress 5.8, WordPress supports the WebP format and can be set to automa
 
 #### JavaScript
 
-JavaScript powers much of the interactive functionality on modern websites. CMS platforms frequently use various JS libraries and frameworks to enable features like dynamic content loading, form validation, and user engagement tools. However, excessive or poorly optimized JavaScript can negatively impact performance. Find more detailed information in our [JavaScript subchapter](../2022/javascript).
+JavaScript powers much of the interactive functionality on modern websites. CMS platforms frequently use various JS libraries and frameworks to enable features like dynamic content loading, form validation, and user engagement tools. However, excessive or poorly optimized JavaScript can negatively impact performance. Find more detailed information in our [JavaScript](./javascript) chapter.
 
 {{ figure_markup(
   image="cms-size-of-js.png",
@@ -579,7 +579,7 @@ In 2024, we observe rising JavaScript usage across the board. Almost all top fiv
 
 #### HTML
 
-HTML forms the structural backbone of any web page, defining the layout and content. CMS platforms automatically generate much of the HTML code, sometimes leading to bloated and inefficient markup. While HTML is typically lightweight compared to other resources, unoptimized or overly complex HTML structures can still affect render time and user experience. Find more detailed information in the [Markup subchapter](../2022/markup).
+HTML forms the structural backbone of any web page, defining the layout and content. CMS platforms automatically generate much of the HTML code, sometimes leading to bloated and inefficient markup. While HTML is typically lightweight compared to other resources, unoptimized or overly complex HTML structures can still affect render time and user experience. Find more detailed information in the [Markup](./markup) chapter.
 
 {{ figure_markup(
   image="cms-size-of-html.png",
@@ -595,7 +595,7 @@ Examining the HTML document sizes, we can see that most of the top CMSs deliver 
 
 #### CSS
 
-CSS controls the visual styling of a website, dictating elements like layout, colors, and fonts. On CMS platforms, themes and templates often come with extensive CSS files that may include unused or redundant styles. Large CSS files can increase page weight and slow down rendering times. Read more in the [CSS subchapter](../2022/css).
+CSS controls the visual styling of a website, dictating elements like layout, colors, and fonts. On CMS platforms, themes and templates often come with extensive CSS files that may include unused or redundant styles. Large CSS files can increase page weight and slow down rendering times.
 
 {{ figure_markup(
   image="cms-size-of-css.png",
@@ -611,7 +611,7 @@ In 2024, we see a different distribution between platforms that strengthens the 
 
 #### Fonts
 
-CMS-based websites frequently offer a variety of fonts to enhance branding and visual appeal. However, fonts can introduce additional weight to a page, especially when multiple font families or variations are loaded. Unoptimized font loading can delay text rendering and impact the user experience. Explore the [Fonts subchapter](../2022/fonts) for a detailed breakdown.
+CMS-based websites frequently offer a variety of fonts to enhance branding and visual appeal. However, fonts can introduce additional weight to a page, especially when multiple font families or variations are loaded. Unoptimized font loading can delay text rendering and impact the user experience. Explore the [Fonts](./fonts) chapter for a detailed breakdown.
 
 {{ figure_markup(
   image="cms-size-of-fonts.png",

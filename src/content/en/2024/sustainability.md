@@ -870,8 +870,6 @@ There are several other user-preference <a hreflang="en" href="https://polypane.
 For further information, refer to:
 - <a href="#wsg">The WSG 1.0 - SC 3.13</a>.
 
-For a deeper dive into CSS's pros and cons, check out our comprehensive [CSS](./css) chapter.
-
 #### Including as little code as possible directly in HTML
 
 The practice of inlining JavaScript and CSS directly in HTML can bloat HTML files and potentially harm overall performance and sustainability, as well as security. This issue is particularly prevalent in websites built with Content Management Systems (CMS) and those implementing the [Critical CSS method](https://web.dev/articles/extract-critical-css).
