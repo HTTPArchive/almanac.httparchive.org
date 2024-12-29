@@ -211,9 +211,9 @@ This data is essentially unchanged from two years ago. It still seems to indicat
 
 ### Image color spaces
 
-The range of colors that are possible within a given image is determined by that image's [color space](https://en.wikipedia.org/wiki/Color_space). The default color space on the web is [sRGB](https://en.wikipedia.org/wiki/SRGB). Unless images signal that their color data uses a different color space, [browsers will use sRGB](https://imageoptim.com/color-profiles.html).
+The range of colors that are possible within a given image is determined by that image's [color space](https://wikipedia.org/wiki/Color_space). The default color space on the web is [sRGB](https://wikipedia.org/wiki/SRGB). Unless images signal that their color data uses a different color space, <a hreflang="en" href="https://imageoptim.com/color-profiles.html">browsers will use sRGB</a>.
 
-The traditional way to explicitly assign a color space to an image is to embed an [ICC profile](https://en.wikipedia.org/wiki/ICC_profile) within it. We looked at all of the ICC profiles embedded in all of the images crawled in the dataset.
+The traditional way to explicitly assign a color space to an image is to embed an [ICC profile](https://wikipedia.org/wiki/ICC_profile) within it. We looked at all of the ICC profiles embedded in all of the images crawled in the dataset.
 
 Here are the top ten:
 
@@ -295,11 +295,11 @@ Here are the top ten:
 
 The vast majority of the web's images rely on the sRGB default for correct rendering and don't contain any ICC profile at all.
 
-The most common ICC profile is the full, official sRGB color profile. This profile is relatively heavy—it weighs 3 KB. Thus, most of the rest of the top 10 ICC profiles are "sRGB-ish" profiles like [Clinton Ingrahm's 424-byte c2ci](https://photosauce.net/blog/post/making-a-minimal-srgb-icc-profile-part-1-trim-the-fat-abuse-the-spec), which unambiguously specify that an image uses sRGB but with a minimum of overhead.
+The most common ICC profile is the full, official sRGB color profile. This profile is relatively heavy—it weighs 3 KB. Thus, most of the rest of the top 10 ICC profiles are "sRGB-ish" profiles like <a hreflang="en" href="https://photosauce.net/blog/post/making-a-minimal-srgb-icc-profile-part-1-trim-the-fat-abuse-the-spec">Clinton Ingrahm's 424-byte c2ci</a>, which unambiguously specify that an image uses sRGB but with a minimum of overhead.
 
-Over the last decade, hardware and software are increasingly able to capture and present colors that are outside of the range of colors that are possible with sRGB (aka the sRGB [gamut](https://en.wikipedia.org/wiki/Gamut)). Adobe RGB (1998) and Display P3 are the only two "wide-gamut" profiles in the top 10. [While Adobe RGB (1998)'s usage ticked down slightly from 2022, Display P3's has ticked up](../2022/media#fig-8), and [total wide-gamut ICC profile adoption is up about 10% in relative terms](https://docs.google.com/spreadsheets/d/1Q2ITOe6ZMIXGKHtIxqK9XmUA1eQBX9CLQkxarQOJFCk/edit?gid=644447618#gid=644447618). In absolute terms, wide-gamut ICC profiles are still relatively rare. We found them in 1 in 80 images on the web and 1 in 10 images that have an ICC profile.
+Over the last decade, hardware and software are increasingly able to capture and present colors that are outside of the range of colors that are possible with sRGB (aka the sRGB [gamut](https://wikipedia.org/wiki/Gamut)). Adobe RGB (1998) and Display P3 are the only two "wide-gamut" profiles in the top 10. [While Adobe RGB (1998)'s usage ticked down slightly from 2022, Display P3's has ticked up](../2022/media#fig-8), and <a hreflang="en" href="https://docs.google.com/spreadsheets/d/1Q2ITOe6ZMIXGKHtIxqK9XmUA1eQBX9CLQkxarQOJFCk/edit?gid=644447618#gid=644447618">total wide-gamut ICC profile adoption is up about 10% in relative terms</a>. In absolute terms, wide-gamut ICC profiles are still relatively rare. We found them in 1 in 80 images on the web and 1 in 10 images that have an ICC profile.
 
-One very important caveat here is that in our analysis we were only able to look at ICC profiles. As mentioned, these profiles can be relatively heavy. Modern image formats like AVIF (and [recently modernized ones like PNG](https://github.com/w3c/png/blob/main/Third_Edition_Explainer.md#labelling-hdr-content)) allow images to signal their color space much more efficiently using a standard called CICP—[which allows common color spaces to be signaled in just four bytes](https://www.w3.org/TR/png-3/#cICP-chunk). It stands to reason that modern PNG encoders and any AVIF encoder worth its salt would use CICP instead of ICC to signal a wide gamut color space.
+One very important caveat here is that in our analysis we were only able to look at ICC profiles. As mentioned, these profiles can be relatively heavy. Modern image formats like AVIF (and <a hreflang="en" href="https://github.com/w3c/png/blob/main/Third_Edition_Explainer.md#labelling-hdr-content">recently modernized ones like PNG</a>) allow images to signal their color space much more efficiently using a standard called CICP—<a hreflang="en" href="https://www.w3.org/TR/png-3/#cICP-chunk">which allows common color spaces to be signaled in just four bytes</a>. It stands to reason that modern PNG encoders and any AVIF encoder worth its salt would use CICP instead of ICC to signal a wide gamut color space.
 
 However, in our analysis, images containing CICP are categorized under "No ICC profile." So, our accounting of wide-gamut usage on the web should be seen as a floor, rather than as an estimate of total adoption. In other words, we found that at least 1 in 80 images on the web is wide-gamut.
 
@@ -337,11 +337,11 @@ And in relative terms, AVIF usage is taking off—we found almost four times mor
 )
 }}
 
-If the crawler had accepted [JPEG XL](https://jpeg.org/jpegxl/)s, we probably would have seen a fair number of them as well. Alas, [Chromium-based browsers don't support the format](https://caniuse.com/jpegxl).
+If the crawler had accepted <a hreflang="en" href="https://jpeg.org/jpegxl/">JPEG XL</a>s, we probably would have seen a fair number of them as well. Alas, <a hreflang="en" href="https://caniuse.com/jpegxl">Chromium-based browsers don't support the format</a>.
 
 Almost all of the JPEGs, PNGs, and GIFs on the web would be better-served using a modern format. WebPs are good, but AVIFs and JPEG XLs are even better. It is nice to see the massive ship that is all-of-the-images-on-the-web slowly but surely turning towards these more efficient formats. And it's nice to see SVG usage tick upwards, too!
 
-Lastly, a few words for the oldest format of the bunch: "[Burn All GIFs](https://www.theatlantic.com/past/docs/unbound/citation/wc991103.htm)" was good advice in 1999, and it is even better advice today. Developers should take [Tyler Sticka's advice](https://cloudfour.com/thinks/video-gifs-are-forever-lets-make-them-better/) about how to replace the 37-year-old format.
+Lastly, a few words for the oldest format of the bunch: "<a hreflang="en" href="https://www.theatlantic.com/past/docs/unbound/citation/wc991103.htm">Burn All GIFs</a>" was good advice in 1999, and it is even better advice today. Developers should take <a hreflang="en" href="https://cloudfour.com/thinks/video-gifs-are-forever-lets-make-them-better/">Tyler Sticka's advice</a> about how to replace the 37-year-old format.
 
 ### Byte sizes
 
@@ -381,7 +381,7 @@ In general, bitmaps on the web decode to eight bits of uncompressed information 
 
 A good rule of thumb for lossless compression is that it should reduce file sizes by a 2:1 ratio (which would work out to 12 bits per pixel for our 8-bit RGB image). The rule of thumb for 1990s-era lossy compression schemes—JPEG and MP3—was a 10:1 ratio (2.4 bits per pixel).
 
-It should be noted that, depending on image content and encoding settings, these ratios vary widely and modern JPEG encoders like [MozJPEG](https://github.com/mozilla/mozjpeg) and [Jpegli](https://opensource.googleblog.com/2024/04/introducing-jpegli-new-jpeg-coding-library.html) typically outperform this 10:1 target at their default settings.
+It should be noted that, depending on image content and encoding settings, these ratios vary widely and modern JPEG encoders like <a hreflang="en" href="https://github.com/mozilla/mozjpeg">MozJPEG</a> and <a hreflang="en" href="https://opensource.googleblog.com/2024/04/introducing-jpegli-new-jpeg-coding-library.html">Jpegli</a> typically outperform this 10:1 target at their default settings.
 
 To summarize:
 
@@ -536,7 +536,7 @@ Lazy-loading the LCP element is [an anti-pattern that makes pages much slower](h
 
 ### `alt` text
 
-Images embedded with `<img>` elements are supposed to be contentful. That is to say: [They're not just decorative](https://html.spec.whatwg.org/multipage/images.html#a-purely-decorative-image-that-doesn't-add-any-information), and they should contain something meaningful. According to both [WCAG requirements](https://www.w3.org/WAI/WCAG22/Understanding/non-text-content) and [the HTML spec](https://html.spec.whatwg.org/multipage/images.html#alt), most of the time, `<img>` elements should have alternative text, and that alternative text should be supplied by the `alt` attribute.
+Images embedded with `<img>` elements are supposed to be contentful. That is to say: <a hreflang="en" href="https://html.spec.whatwg.org/multipage/images.html#a-purely-decorative-image-that-doesn't-add-any-information">They're not just decorative</a>, and they should contain something meaningful. According to both <a hreflang="en" href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-content">WCAG requirements</a> and <a hreflang="en" href="https://html.spec.whatwg.org/multipage/images.html#alt">the HTML spec</a>, most of the time, `<img>` elements should have alternative text, and that alternative text should be supplied by the `alt` attribute.
 
 {{ figure_markup(
   content="55%",
@@ -635,9 +635,9 @@ This is quite troubling, but what's worse is that all of these numbers are almos
 
 There are two solutions here that developers should pursue.
 
-For LCP-responsible and other critical images, developers need to fix their `sizes` attributes. The best tool to audit and repair `sizes` is [RespImageLint](https://ausi.github.io/respimagelint/), which can help fix a host of other responsive image problems, too.
+For LCP-responsible and other critical images, developers need to fix their `sizes` attributes. The best tool to audit and repair `sizes` is <a hreflang="en" href="https://ausi.github.io/respimagelint/">RespImageLint</a>, which can help fix a host of other responsive image problems, too.
 
-For below-the-fold and non-critical images, authors should start to adopt [`sizes="auto"`](https://html.spec.whatwg.org/multipage/images.html#:~:text=In%20this%20case%2C%20the%20sizes%20attribute%20can%20use%20the%20auto%20keyword). This value can only be used in conjunction with lazy-loading, but it tells the browser to use the actual layout size of the `<img>` as the `sizes` value, ensuring that the used value is perfectly accurate.
+For below-the-fold and non-critical images, authors should start to adopt <a hreflang="en" href="https://html.spec.whatwg.org/multipage/images.html#:~:text=In%20this%20case%2C%20the%20sizes%20attribute%20can%20use%20the%20auto%20keyword">`sizes="auto"`</a>. This value can only be used in conjunction with lazy-loading, but it tells the browser to use the actual layout size of the `<img>` as the `sizes` value, ensuring that the used value is perfectly accurate.
 
 Auto-`sizes` for lazy-loaded images is currently only implemented in Chrome, but Safari and Firefox have both expressed support for it. We hope they implement it soon and that developers start rolling it out now (with fallback values).
 
@@ -660,7 +660,7 @@ This is up more than a percentage point and a half from 2022, but the fact that 
 
 What are people using `<picture>` for?
 
-The `<picture>` element gives authors two ways to switch between resources. Type-switching allows authors to provide cutting-edge image formats to browsers that support them and fallback formats for everyone else. Media-switching facilitates [art direction](https://www.w3.org/TR/respimg-usecases/#art-direction), allowing authors to switch between `<source>`s based on [media conditions](https://www.w3.org/TR/mediaqueries-5/#media-condition).
+The `<picture>` element gives authors two ways to switch between resources. Type-switching allows authors to provide cutting-edge image formats to browsers that support them and fallback formats for everyone else. Media-switching facilitates <a hreflang="en" href="https://www.w3.org/TR/respimg-usecases/#art-direction">art direction</a>, allowing authors to switch between `<source>`s based on <a hreflang="en" href="https://www.w3.org/TR/mediaqueries-5/#media-condition">media conditions</a>.
 
 {{ figure_markup(
   image="picture-feature-usage.png",
@@ -740,7 +740,7 @@ The majority of images have extrinsic widths and intrinsic heights. The "both" c
 
 Any `<img>` whose layout size is dependent on its intrinsic dimensions risks triggering a [Cumulative Layout Shift (CLS)](https://web.dev/articles/cls). In essence, such images risk being laid out twice—once when the page's DOM and CSS have been processed, and then a second time when they finally finish loading and their intrinsic dimensions are known.
 
-As we've just seen, extrinsically scaling an image to fit a certain width while leaving the height (and aspect ratio) intrinsic is very common. To prevent the resulting plague of layout shifts, [authors should set the `width` and `height` attributes on the `<img>` element](https://developer.mozilla.org/en-US/docs/Learn/Performance/Multimedia#rendering_strategy_preventing_jank_when_loading_images) so that browsers can reserve layout space before the embedded resource loads.
+As we've just seen, extrinsically scaling an image to fit a certain width while leaving the height (and aspect ratio) intrinsic is very common. To prevent the resulting plague of layout shifts, [authors should set the `width` and `height` attributes on the `<img>` element](https://developer.mozilla.org/docs/Learn/Performance/Multimedia#rendering_strategy_preventing_jank_when_loading_images) so that browsers can reserve layout space before the embedded resource loads.
 
 {{ figure_markup(
   content="32%",
@@ -812,7 +812,7 @@ Nine out of ten videos are less than two minutes long. More than half are under 
 
 ### Format adoption
 
-What formats are sites delivering in 2024? MP4, which enjoys [universal support](https://caniuse.com/mpeg4), is king:
+What formats are sites delivering in 2024? MP4, which enjoys <a hreflang="en" href="https://caniuse.com/mpeg4">universal support</a>, is king:
 
 {{ figure_markup(
   image="top-extensions-of-files-with-a-video-mime-type.png",
