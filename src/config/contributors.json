@@ -1490,6 +1490,7 @@
   },
   "eeeps": {
     "avatar_url": "3441390",
+    "bluesky": "ericportis.com",
     "github": "eeeps",
     "name": "Eric Portis",
     "teams": {
@@ -1504,6 +1505,10 @@
         "analysts"
       ],
       "2022": [
+        "analysts",
+        "authors"
+      ],
+      "2024": [
         "analysts",
         "authors"
       ]
@@ -4282,6 +4287,20 @@
       ]
     },
     "twitter": "SophieBrannon"
+  },
+  "stefanjudis": {
+    "avatar_url": "962099",
+    "bluesky": "stefanjudis.com",
+    "github": "stefanjudis",
+    "name": "Stefan Judis",
+    "teams": {
+      "2024": [
+        "analysts",
+        "authors"
+      ]
+    },
+    "twitter": "stefanjudis",
+    "website": "https://www.stefanjudis.com"
   },
   "smatei": {
     "avatar_url": "17740806",
