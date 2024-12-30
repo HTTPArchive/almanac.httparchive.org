@@ -77,7 +77,7 @@ Not all network connections are equal everywhere, it could be a super-fast broad
 
 So, it is best to think strategically. The bigger the page weight, the longer the transmission of resources will take, and those with slower mobile connections or low data limits will be hit the hardest, which may also affect business.
 
-The best way to optimize the transmission of resources is by serving small resources. In case that is difficult to achieve, using [resource hints](https://web.dev/learn/performance/resource-hints) like preconnect, preload and Priority Hints can help with managing the order resources are loaded on page.
+The best way to optimize the transmission of resources is by serving small resources. In case that is difficult to achieve, using [resource hints](https://web.dev/learn/performance/resource-hints) like preconnect, preload and fetch priority can help with managing the order resources are loaded on page.
 
 ### Rendering
 
@@ -600,7 +600,7 @@ Third-party embeds, such as videos, social media posts and other interactive emb
 
 Videos you might expect to have a significant number of bytes, but even things like embedding a live chat widget, or even a social media post like a tweet can come with significant overhead, loading a surprising amount of JavaScript to enable interactivity, like clicking the like button or resharing it.
 
-One design pattern that can be a good compromise is using a facade, also known as [import on interaction](https://www.patterns.dev/vanilla/import-on-interaction/). The fundamental principle of this is to use a graphical, or simple, non-interactive representation of the embed, which then becomes the interactive, full embed when and if a user clicks on it.
+One design pattern that can be a good compromise is using a facade, also known as <a hreflang="en" href="https://www.patterns.dev/vanilla/import-on-interaction/">import on interaction</a>. The fundamental principle of this is to use a graphical, or simple, non-interactive representation of the embed, which then becomes the interactive, full embed when and if a user clicks on it.
 
 For video, that's often displaying the poster image, which when clicked loads in the full embed. For a social media post, it could be either styled html, or like the video solution, an image that loads the full interactivity when the user clicks on the post.
 
@@ -767,7 +767,7 @@ We used data from June 2024, the page weights for each percentile and device typ
 
 ### Largest Contentful Paint (LCP)
 
-A good score for [Largest Contentful Paint](https://web.dev/articles/lcp) is 2.5 seconds or less. LCP over 4 seconds is considered poor.
+A good score for [Largest Contentful Paint](https://web.dev/articles/lcp#what-is-a-good-lcp-score) is 2.5 seconds or less. LCP over 4 seconds is considered poor.
 
 {{ figure_markup(
   image="lcp-distribution-by-page-weight.png",
@@ -783,7 +783,7 @@ There is a clear correlation between the page weight and Largest Contentful Pain
 
 ### Cumulative Layout Shift (CLS)
 
-A good score for [Cumulative Layout Shift](https://web.dev/articles/cls) is 0.1 or less. CLS over 0.25 is considered poor. On consideration to keep in mind when looking at this particular metric is it is especially affected by differences in lab and field data, as CLS is effectively measured across the whole life of a page, including interactions and scrolling, where lab tests can only capture the initial load.
+A good score for [Cumulative Layout Shift](https://web.dev/articles/cls#what-is-a-good-cls-score) is 0.1 or less. CLS over 0.25 is considered poor. On consideration to keep in mind when looking at this particular metric is it is especially affected by differences in lab and field data, as CLS is effectively measured across the whole life of a page, including interactions and scrolling, where lab tests can only capture the initial load.
 
 {{ figure_markup(
   image="cls-distribution-by-page-weight.png",
@@ -799,7 +799,7 @@ Like LCP, CLS also grew as page weight grew, although the differences between de
 
 ### Total Blocking Time
 
-As mentioned above, Interaction to Next Paint, or even the older First Input Delay cannot be measured in lab tests, however, as [recommended by web.dev](https://web.dev/articles/inp#lab-measurement), [Total Blocking Time](https://web.dev/articles/tbt), often shortened to TBT, can be a good proxy metric to see how interactivity might be affected.
+As mentioned above, Interaction to Next Paint, or even the older First Input Delay cannot be accurately measured in lab tests, however, as [recommended by web.dev](https://web.dev/articles/inp#lab-measurement), [Total Blocking Time](https://web.dev/articles/tbt), often shortened to TBT, can be a good proxy metric to see how interactivity might be affected.
 
 A total blocking time of 200 ms or less is considered a good target.
 
