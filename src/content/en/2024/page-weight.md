@@ -252,7 +252,7 @@ In comparing homepages to inner pages, we saw that homepages consistently called
 JavaScript is a high-level, dynamic and interpreted programming language. It is one of the core technologies of the web, enabling interactive web pages and web applications. JavaScript allows developers to add interactivity, animations, and effects to web pages. This includes features such as drop-down menus, image sliders, personalized content, and analytics tracking.
 
 {{ figure_markup(
-  caption="Mopbile home pages using JavaScript.",
+  caption="Mobile home pages using JavaScript.",
   content="97.8%",
   classes="big-number",
   sheets_gid="799485869",
