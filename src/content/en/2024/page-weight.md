@@ -27,7 +27,7 @@ The internet is growing at a rapid pace. Each new page brings with it a bespoke 
 
 In the United States, the rapidly growing AI demand is poised to drive data center energy consumption to about <a hreflang="en" href="https://hbr.org/2024/07/the-uneven-distribution-of-ais-environmental-impacts">6% of the nation's total electricity usage in 2026</a>, adding further pressure on grid infrastructures and highlighting the urgent need for sustainable solutions to support continued AI advancement. These generative AI initiatives will in turn rapidly increase the size of the web. <a hreflang="en" href="https://www.statista.com/statistics/871513/worldwide-data-created/">Statista estimates 149 zettabytes</a> of internet content were created in 2024. In comparison, the years from 2010 to 2018 produced a combined 127.5 zettabytes.
 
-In short, resources are becoming increasingly scare and expensive. With Google now prioritising on-page elements, addressing the issue of page weight has become important. Reducing unnecessary bloat in websites not only enhances user experience and boosts conversions, but also supports sustainability efforts.
+In short, resources are becoming increasingly scarce and expensive. With Google now prioritising on-page elements, addressing the issue of page weight has become important. Reducing unnecessary bloat in websites not only enhances user experience and boosts conversions, but also supports sustainability efforts.
 
 As highlighted in discussions about web performance in 2024, heavy websites contribute to inequalities in user access and responsiveness, particularly on lower-end devices, widening the "performance inequality gap." Alex Russel's series, <a hreflang="en" href="https://infrequently.org/2024/01/performance-inequality-gap-2024/">The Performance Inequality Gap</a> bring into sharp focus that some of the assumptions that are made on current device performance and capabilities may not be true, and that whilst that devices might be getting more and more powerful, that's not true for everyone, and there's a long tail of users who are negatively impacted by web pages with large payloads.
 
@@ -51,9 +51,9 @@ Page weight is the byte size of a web page. The web has evolved massively since 
 
 Every extra thing added to a web page increases the overall page weight, and every bit ultimately means more work and overhead for the browser in transmitting it across the network, processing, parsing and ultimately rendering and painting it on the screen for the user to consume and interact with.
 
-Some forms of resources carry even greater overheads, especially JavaScript, which also needs to be compiled and executed. This also has a knock on effect on both sustainability and conversion rates. The heavier a page is, the more carbon emissions and the least possibility of conversions on that page.
+Some forms of resources carry even greater overheads, especially JavaScript, which also needs to be compiled and executed. This also has a knock-on effect on both sustainability and conversion rates. The heavier a page is, the [more carbon emissions](./sustainability#evaluating-the-environmental-impact-of-websites) and the least possibility of conversions on that page.
 
-The larger the page weight, the higher the impact it can have on carbon emissions, something covered in the [Sustainability](./sustainability) chapter.
+You can find out more about how page weight impacts carbon emissions in the [Sustainability](./sustainability) chapter.
 
 There are various mitigations available to help manage page weight, and its overall effect on load times, but the stark reality is that more weight is always going to involve more work.
 
@@ -63,7 +63,7 @@ The weight effects can be divided into three main categories: storage, transmiss
 
 Every byte of a web page needs to be stored somewhere, and with the nature of how the web works, that usually means being stored in multiple locations
 
-It starts with the web server itself. Pure storage space remains relatively small in cost per Gigabyte, depending on the type of storage. For example, Google's cloud storage is somewhere between [$0.02 and $0.03 per month in North America](https://cloud.google.com/storage/pricing#north-america) or $0.006 and $0.025 in Europe. Resources stored in memory on a webserver versus on disk for faster access will ramp up in cost far faster than one that lives on disk.
+It starts with the web server itself. Pure storage space remains relatively small in cost per Gigabyte, depending on the type of storage. For example, Google's cloud storage is somewhere between [$0.02 and $0.03 per month in North America](https://cloud.google.com/storage/pricing#north-america) or $0.006 and $0.025 in Europe. Resources stored in memory on a web server versus on disk for faster access will ramp up in cost far faster than one that lives on disk.
 
 There can be multiple copies of the same resource too, spread across a number of intermediate caches, and even spread across multiple data centers if a CDN when edge caching is employed.
 
@@ -77,7 +77,7 @@ Not all network connections are equal everywhere, it could be a super-fast broad
 
 So, it is best to think strategically. The bigger the page weight, the longer the transmission of resources will take, and those with slower mobile connections or low data limits will be hit the hardest, which may also affect business.
 
-The best way to optimize the transmission of resources is serving small resources. In case that is difficult to achieve, using preconnect, preload and fetch priority can help with managing the order resources are loaded on page.
+The best way to optimize the transmission of resources is by serving small resources. In case that is difficult to achieve, using [resource hints](https://web.dev/learn/performance/resource-hints) like preconnect, preload and Priority Hints can help with managing the order resources are loaded on page.
 
 ### Rendering
 
@@ -204,7 +204,7 @@ In 2022, we saw the median page request 25 images for desktop and 22 for mobile 
 
 Decreased image file types does not mean that the web has become less visual. Instead, sites may be switching to CSS effects (such as <a hreflang="en" href="https://www.w3schools.com/css/css3_shadows.asp">shadows</a> or [gradients](https://developer.mozilla.org/Web/CSS/gradient)) and [CSS animations](https://web.dev/articles/animations-guide). These assets can be used to produce resolution-independent assets that always look sharp at every resolution and zoom level, often at a fraction of the bytes required by an image file.
 
-Desktop pages consistently call for more image file types across with the gap between desktop and mobile growing steadily and consistently across percentiles. The difference between homepage and inner pages was striking in comparison. Where device type saw relatively consistent numbers, the median homepage called for 20 images compared to just 14 for inner pages.
+Desktop pages consistently call for more image file types with the gap between desktop and mobile growing steadily and consistently across percentiles. The difference between homepage and inner pages was striking in comparison. Where device type saw relatively consistent numbers, the median homepage called for 20 images compared to just 14 for inner pages.
 
 {{ figure_markup(
   caption="Image requests made on desktop pages at the 100th percentile.",
@@ -416,7 +416,7 @@ Images might be the biggest contributors to page weight in all in all, however w
 
 #### JavaScript Bytes
 
-Increased weight of JavaScript files carries an additional penalty to performance, as not only is the pure size a consideration, a browser needs to parse and execute the JavaScript, which can be a costly process, especially on lower powered devices.
+Increased weight of JavaScript files carries an additional penalty to performance, as not only is the pure size a consideration, a browser needs to parse and execute the JavaScript, which can be a costly process, especially on lower-end devices.
 
 {{ figure_markup(
   image="distribution-of-javascript-response-sizes-by-device-type.png",
@@ -432,7 +432,7 @@ Although the trend is that a desktop page requests more bytes of JavaScript than
 
 According to Alex Russell's <a hreflang="en" href="https://infrequently.org/2024/01/performance-inequality-gap-2024/">The Performance Inequality Gap, 2024</a> study, these are however far above the proposed target of a page load of under 3 seconds at the 75th percentile, which is 365 KB.
 
-At the 75th percentile, both mobile and desktop blast past the proposed 650 KB budget to achieve 5 seconds by, and that is assuming it's a JavaScript heavy page, and markup is accordingly smaller.
+At the 75th percentile, both mobile and desktop blast past the proposed 650 KB budget to achieve a 5 second load time, and that is assuming it's a JavaScript-heavy page, and markup is accordingly smaller.
 
 {{ figure_markup(
   image="distribution-of-js-response-sizes-by-page-type.png",
@@ -546,7 +546,7 @@ Videos carry a lot of data, for each second of video, there's many images, or fr
 
 Modern formats help compress and shrink this down, but at some point there is a trade off to be made with file size and quality.
 
-Getting that trade off right and combining with other techniques, like using a facade, can reduce the impact as much as possible.
+Getting that trade off right and combining with other techniques, like using a [facade](#facades-for-videos--other-embeds), can reduce the impact as much as possible.
 
 {{ figure_markup(
   image="distribution-of-video-response-sizes-by-device-type.png",
@@ -600,7 +600,7 @@ Third-party embeds, such as videos, social media posts and other interactive emb
 
 Videos you might expect to have a significant number of bytes, but even things like embedding a live chat widget, or even a social media post like a tweet can come with significant overhead, loading a surprising amount of JavaScript to enable interactivity, like clicking the like button or resharing it.
 
-One design pattern that can be a good compromise is using a facade. The fundamental principle of this is to use a graphical, or simple, non-interactive representation of the embed, which then becomes the interactive, full embed when and if a user clicks on it.
+One design pattern that can be a good compromise is using a facade, also known as [import on interaction](https://www.patterns.dev/vanilla/import-on-interaction/). The fundamental principle of this is to use a graphical, or simple, non-interactive representation of the embed, which then becomes the interactive, full embed when and if a user clicks on it.
 
 For video, that's often displaying the poster image, which when clicked loads in the full embed. For a social media post, it could be either styled html, or like the video solution, an image that loads the full interactivity when the user clicks on the post.
 
@@ -648,7 +648,7 @@ We detected that 70% percent of desktop homepages and a fundamentally similar 71
 
 For mobile crawls, 71% of homepages and 72% of inner pages correctly used text compression. Comparing homepages to 2022, this also represents a drop from 73%.
 
-The drop in usage, whilst perhaps small, is disappointing, it's certainly not become harder to enable compression, and perhaps easier, especially if you use a CDN like cloudflare where it's a simple flip of a switch in a dashboard.
+The drop in usage, whilst perhaps small, is disappointing, it's certainly not become harder to enable compression, and perhaps easier, especially if you use a CDN like Cloudflare where it's a simple flip of a switch in a dashboard.
 
 It should be noted that compression is not entirely magic, and doesn't make the whole impact of page weight go away for these resources for the client. Ultimately they do need to be decompressed again before use.
 
@@ -700,22 +700,22 @@ For more insights into CDNs, please refer to the [CDN](./cdn) chapter.
 
 ## Page weight and Core Web Vitals
 
-Core Web Vitals are a set of performance metrics designed to refine the dangerously ambiguous definition of "performance" into a human-centric measurement. To be a "Good" page, a page must pass three evaluations that measure key moments for users:
+[Core Web Vitals](https://web.dev/articles/vitals) are a set of performance metrics designed to refine the dangerously ambiguous definition of "performance" into a human-centric measurement. To be a "Good" page, a page must pass three evaluations that measure key moments for users:
 
 1. Is it loading? ([Largest Content Paint (LCP)](https://web.dev/articles/lcp))
 2. Can the user interact? ([Interaction to Next Paint (INP)](https://web.dev/articles/inp))
 3. Is it visually stable? ([Cumulative Layout Shift (CLS)](https://web.dev/articles/cls))
 
-Core Web Vitals are designed to be an evolving set of metrics. This year, the metric for interactivity changed from First Input Delay (FID) to Interaction to Next Paint (INP). This change was made because it provided two significant advancements:
+Core Web Vitals are designed to be an evolving set of metrics. This year, the [metric for interactivity changed](https://developers.google.com/search/blog/2023/05/introducing-inp) from First Input Delay (FID) to Interaction to Next Paint (INP).  This change was made because it provided two significant advancements:
 
 - The first is to shift from a single interaction to include all interactions on the page. In other words, clicking with a mouse, tapping on a device with a touchscreen and pressing a key on either a physical or onscreen keyboard.
-- The second is to represent interactivity for sites using JavaScript frameworks accurately, since JavaScript is often what drives interactivity mostly. This year we saw Core Web Vitals evolve their responsiveness metric by [introducing Interaction to Next Paint](https://developers.google.com/search/blog/2023/05/introducing-inp) to replace First Input Delay. This new metric measures beyond first interaction to measure the lifecycle of the page and better reflect interactivity on single page applications.
+- The second is to represent interactivity for sites using JavaScript frameworks accurately, since JavaScript is often what drives interactivity mostly.
 
-When responsiveness as measured by INP is below 200 milliseconds, its considered to be a good experience and pass the INP performance assessment. Total Blocking Time remains as the lab data equivalent and is for diagnostics when an INP issue is detected.
+When responsiveness as measured by INP is below 200 milliseconds, it is considered to be a good experience and pass the INP performance assessment. Total Blocking Time remains as the lab data equivalent and is for diagnostics when an INP issue is detected.
 
 The changeover in March 2023 saw many JavaScript framework origins drop from passing Good classification. Sites using prominent frameworks like React, Next, Nuxt, and Vue were hit hardest. Sites adapted quickly and by September 2024, the number of passing origins exceeded when evaluated by INP exceeded the count when the FID metric was used.
 
-To gather data, we had to rely on lighthouse's lab testing audits, which capture LCP and CLS, but not the interaction based metrics of INP or FID. Lab testing does have draw backs, and real user metrics should always be used to truly assess performance, as detailed in web.dev's [Why lab and field data can be different (and what to do about it)](https://web.dev/articles/lab-and-field-data-differences).
+To gather data, we had to rely on lighthouse's lab testing audits, which capture LCP and CLS, but not the interaction based metrics of INP or FID. Lab testing does have drawbacks, and real user metrics should always be used to truly assess performance, as detailed in web.dev's [Why lab and field data can be different (and what to do about it)](https://web.dev/articles/lab-and-field-data-differences).
 
 We used data from June 2024, the page weights for each percentile and device type are as follows:
 
@@ -767,7 +767,7 @@ We used data from June 2024, the page weights for each percentile and device typ
 
 ### Largest Contentful Paint (LCP)
 
-A good score for largest contentful paint is 2.5 seconds or less. LCP over 4 seconds is considered poor.
+A good score for [Largest Contentful Paint](https://web.dev/articles/lcp) is 2.5 seconds or less. LCP over 4 seconds is considered poor.
 
 {{ figure_markup(
   image="lcp-distribution-by-page-weight.png",
@@ -779,11 +779,11 @@ A good score for largest contentful paint is 2.5 seconds or less. LCP over 4 sec
   )
 }}
 
-There is a clear correlation between the page weight and largest contentful paint, the higher the page weight, the longer the time to LCP. This is especially true for mobile devices with a much steeper curve.
+There is a clear correlation between the page weight and Largest Contentful Paint, the higher the page weight, the longer the time to LCP. This is especially true for mobile devices with a much steeper curve.
 
 ### Cumulative Layout Shift (CLS)
 
-A good score for cumulative layout shift is 0.1 or less. CLS over 0.25 is considered poor. On consideration to keep in mind when looking at this particular metric is it is especially affected by differences in lab and field data, as CLS is effectively measured across the whole life of a page, including interactions and scrolling, where lab tests can only capture the initial load.
+A good score for [Cumulative Layout Shift](https://web.dev/articles/cls) is 0.1 or less. CLS over 0.25 is considered poor. On consideration to keep in mind when looking at this particular metric is it is especially affected by differences in lab and field data, as CLS is effectively measured across the whole life of a page, including interactions and scrolling, where lab tests can only capture the initial load.
 
 {{ figure_markup(
   image="cls-distribution-by-page-weight.png",
@@ -799,7 +799,7 @@ Like LCP, CLS also grew as page weight grew, although the differences between de
 
 ### Total Blocking Time
 
-As mentioned above, interaction to next paint, or even the older first input delay cannot be measured in lab tests, however, as [recommended by web.dev](https://web.dev/articles/inp#lab-measurement), [total blocking time](https://web.dev/articles/tbt), often shortened to TBT, can be a good proxy metric to see how interactivity might be affected.
+As mentioned above, Interaction to Next Paint, or even the older First Input Delay cannot be measured in lab tests, however, as [recommended by web.dev](https://web.dev/articles/inp#lab-measurement), [Total Blocking Time](https://web.dev/articles/tbt), often shortened to TBT, can be a good proxy metric to see how interactivity might be affected.
 
 A total blocking time of 200 ms or less is considered a good target.
 
@@ -816,6 +816,8 @@ A total blocking time of 200 ms or less is considered a good target.
 The trend of larger page sizes negatively impacting performance, as measured by total blocking time, is evident across both mobile and desktop experiences. However, the disparity is particularly significant for mobile users. At the 50th percentile, Time to First Byte (TBT) is 53ms for desktop and 1,235ms for mobile—a difference of 1.2 seconds. This discrepancy becomes even more pronounced at the 90th percentile, with TBT at 648ms for desktop and a staggering 5,786ms for mobile—a massive 5.1 second difference.
 
 It is reasonable to conclude that interactivity is one of the worst hit metrics associated with excessive page weight.
+
+For more data on Core Web Vitals in 2024, visit the [Performance](./performance) chapter.
 
 ## Conclusion
 
