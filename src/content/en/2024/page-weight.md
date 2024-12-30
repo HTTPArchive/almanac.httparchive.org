@@ -77,7 +77,7 @@ Not all network connections are equal everywhere, it could be a super-fast broad
 
 So, it is best to think strategically. The bigger the page weight, the longer the transmission of resources will take, and those with slower mobile connections or low data limits will be hit the hardest, which may also affect business.
 
-The best way to optimize the transmission of resources is by serving small resources. In case that is difficult to achieve, using [resource hints](https://web.dev/learn/performance/resource-hints) like preconnect, preload and fetch priority can help with managing the order resources are loaded on page.
+The best way to optimize the transmission of resources is by serving small resources. In case that is difficult to achieve, using [resource hints](https://web.dev/learn/performance/resource-hints) (like preconnect and preload) and [fetch priority](https://web.dev/articles/fetch-priority) can help with managing the order resources are loaded on page.
 
 ### Rendering
 
