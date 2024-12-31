@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: CSS
 description: CSS chapter of the 2021 Web Almanac covering trends, changes, and patterns in CSS use across the web.
+hero_alt: Hero image of Web Almanac characters measuring and painting a web page.
 authors: [meyerweb, GeekBoySupreme]
 reviewers: [svgeesus, j9t, estelle, bkardell, argyleink, LeaVerou]
 analysts: [rviscomi]
@@ -1313,7 +1314,7 @@ Moving down the list, we took a look at margin and padding properties. Much as w
 
 {{ figure_markup(
   image="usage-of-font-shorthand-vs-longhands.png",
-  caption="The most commonly used font properties",
+  caption="The most commonly used font properties.",
   description="A chart with all values given for mobile (desktop is almost always within a percent or two). The results are as follows. `font-size` 95%, `font-family` 94%, `font-weight` 92%, `font-style` 86%, `font` 82% with desktop at 57%, `font-variant` 23% with desktop at 12%, `font-stretch` 5%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=1034544520&format=interactive",
   sheets_gid="886194727",

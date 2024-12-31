@@ -2,12 +2,13 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Jamstack
 description: 2021年版Web AlmanacのJamstackの章では、技術の採用状況、Jamstackで構築されたWebサイトのパフォーマンス、各種リソースの重み付けなどを取り上げています。
+hero_alt: Hero image of the Web Almanac characters using a large gas cylinder with script markings on the front to inflate a web page.
 authors: [denar90]
 reviewers: [Dawntraoz, thomkrupa, tunetheweb]
 analysts: [denar90, tunetheweb, rviscomi]
 editors: [tunetheweb, shantsis]
 translators: [ksakae1216]
-denar90_bio: Artem Denysov は、ソフトウェアエンジニア、オープンソースの貢献者、Mozillians のメンバー、講演者、そして執筆者です。Webperfとツールで、開発者とユーザーの生活をより快適にします。[Stackbit](https://stackbit.com) で、開発者が Jamstack ウェブサイトを簡単に構築できるようにするために働いています。[Twitter](https://twitter.com/denar90_) と <a hreflang="en" href="https://www.linkedin.com/in/denar90/">Linkedin</a> でご覧いただけます。
+denar90_bio: Artem Denysov は、ソフトウェアエンジニア、オープンソースの貢献者、Mozillians のメンバー、講演者、そして執筆者です。Webperfとツールで、開発者とユーザーの生活をより快適にします。[Stackbit](https://stackbit.com) で、開発者が Jamstack ウェブサイトを簡単に構築できるようにするために働いています。[Twitter](https://x.com/denar90_) と <a hreflang="en" href="https://www.linkedin.com/in/denar90/">Linkedin</a> でご覧いただけます。
 results: https://docs.google.com/spreadsheets/d/1anlgeaBH2Yui2kFWuRGxHU2QdMiCKOgDrn4WyXkt5ro/
 featured_quote: Jamstackは、モダンなWebサイトを構築するための、若く、急成長しているテクノロジーです。これは、人々が言うことであり、数字で証明されています。
 featured_stat_1: 1.1%
@@ -298,7 +299,7 @@ SSGの総合評価では、Jamstackサイトの基本的なパフォーマンス
 
 ### 最大のコンテントフルペイント
 
-<a hreflang="en" href="https://web.dev/lcp/">最大のコンテントフルペイント</a>(LCP) メトリクスは、ページの読み込みを最初に開始したときからの相対時間で、ビューポート内で表示される最大の画像またはテキスト ブロックのレンダリング時間を報告します。
+<a hreflang="en" href="https://web.dev/articles/lcp">最大のコンテントフルペイント</a>(LCP) メトリクスは、ページの読み込みを最初に開始したときからの相対時間で、ビューポート内で表示される最大の画像またはテキスト ブロックのレンダリング時間を報告します。
 
 {{ figure_markup(
   image="cwv-lcp.png",

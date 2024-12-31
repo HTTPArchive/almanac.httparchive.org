@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Privacy
 description: Privacyhoofdstuk van de Web Almanac 2021 over het gebruik en de impact van online tracking, privacyvoorkeurssignalen en browserinitiatieven voor een privacyvriendelijker web.
+hero_alt: Hero image of Web Almanac characters with cameras, phones, and microphones acting like paparazzi while another character pulls back a shower curtain to reveal a web page behind it.
 authors: [ydimova, victorlep]
 reviewers: [maudnals]
 analysts: [victorlep, max-ostapenko]
@@ -506,7 +507,7 @@ Naast het blokkeren van trackers, heeft Chrome de <a hreflang="en" href="https:/
 
 ### Privacy Sandbox
 
-Om feedback vanuit het ecosysteem te verkrijgen, worden vroege en experimentele versies van Privacy Sandbox-APIs initieel beschikbaar gemaakt door middel van <a hreflang="en" href="https://www.chromium.org/developers/how-tos/run-chromium-with-flags">functievlaggen</a> voor tests door individuele ontwikkelaars, en dan in Chrome via <a hreflang="en" href="https://developer.chrome.com/blog/origin-trials/">_oorsprongsproeven_</a> ("origin trials"). Sites kunnen deelnemen in deze oorsprongsproeven}om experimentele webplatformfuncties te testen, en commentaar te geven naar de webstandaardengemeenschap over de gebruiksvriendelijkheid, uitvoerbaarheid en effectiviteit van een functie, vooraleer ze voor alle websites standaard beschikbaar wordt gemaakt.
+Om feedback vanuit het ecosysteem te verkrijgen, worden vroege en experimentele versies van Privacy Sandbox-APIs initieel beschikbaar gemaakt door middel van <a hreflang="en" href="https://www.chromium.org/developers/how-tos/run-chromium-with-flags">functievlaggen</a> voor tests door individuele ontwikkelaars, en dan in Chrome via <a hreflang="en" href="https://developer.chrome.com/blog/origin-trials">_oorsprongsproeven_</a> ("origin trials"). Sites kunnen deelnemen in deze oorsprongsproeven}om experimentele webplatformfuncties te testen, en commentaar te geven naar de webstandaardengemeenschap over de gebruiksvriendelijkheid, uitvoerbaarheid en effectiviteit van een functie, vooraleer ze voor alle websites standaard beschikbaar wordt gemaakt.
 
 <p class="note">**Disclaimer:** Oorsprongsproeven zijn enkel beschikbaar voor een beperkte tijd. De getallen hieronder geven de toestand van Privacy Sandbox oorsprongsproeven weer op het moment van schrijven, in oktober 2021.</p>
 
@@ -540,11 +541,11 @@ We zien dat 4,10% van de top 1.000 websites zich hebben afgemeld voor FLoC. Over
 
 Binnen Googles Privacy Sandbox-initiatieven zijn een aantal experimenten in verscheidene stadia van ontwikkeling.
 
-De <a hreflang="en" href="https://developer.chrome.com/docs/privacy-sandbox/attribution-reporting/">_Attribution Reporting API_</a> (voorheen _Conversion Measurement_ genoemd) maakt het mogelijk om te meten wanneer gebruikersinteractie met een advertentie leidt tot een conversie—bijvoorbeeld, wanneer een klik op een advertenties uiteindelijk leidt tot een aankoop. We zagen de eerste oorsprongsproef (die eindigde in oktober 2021) geactiveerd op 10 oorsprongen.
+De <a hreflang="en" href="https://developer.chrome.com/docs/privacy-sandbox/attribution-reporting">_Attribution Reporting API_</a> (voorheen _Conversion Measurement_ genoemd) maakt het mogelijk om te meten wanneer gebruikersinteractie met een advertentie leidt tot een conversie—bijvoorbeeld, wanneer een klik op een advertenties uiteindelijk leidt tot een aankoop. We zagen de eerste oorsprongsproef (die eindigde in oktober 2021) geactiveerd op 10 oorsprongen.
 
-<a hreflang="en" href="https://developer.chrome.com/docs/privacy-sandbox/fledge/">_FLEDGE_</a> (First "Locally-Executed Decision over Groups" Experiment) tracht gerichte advertenties aan te pakken. De API kan in huidige versies van Chrome <a hreflang="en" href="https://developer.chrome.com/docs/privacy-sandbox/fledge/">lokaal door individuele ontwikkelaars</a> getest worden maar er is geen oorsprongsproef in oktober 2021.
+<a hreflang="en" href="https://developer.chrome.com/docs/privacy-sandbox/fledge">_FLEDGE_</a> (First "Locally-Executed Decision over Groups" Experiment) tracht gerichte advertenties aan te pakken. De API kan in huidige versies van Chrome <a hreflang="en" href="https://developer.chrome.com/docs/privacy-sandbox/fledge">lokaal door individuele ontwikkelaars</a> getest worden maar er is geen oorsprongsproef in oktober 2021.
 
-<a hreflang="en" href="https://developer.chrome.com/docs/privacy-sandbox/trust-tokens/">_Trust Tokens_</a> laat aan een website toe om een beperkte hoeveelheid informatie over te brengen van de ene browsingcontext naar een andere om fraude te helpen bestrijden, zonder passieve tracking. We zagen de eerste <a hreflang="en" href="https://developer.chrome.com/blog/third-party-origin-trials/">oorsprongsproef</a> (die zal eindigen in mei 2022) geactiveerd op 7 oorsprongen die waarschijnlijk ingesloten zijn op een aantal websites als dienstverleners.
+<a hreflang="en" href="https://developer.chrome.com/docs/privacy-sandbox/trust-tokens">_Trust Tokens_</a> laat aan een website toe om een beperkte hoeveelheid informatie over te brengen van de ene browsingcontext naar een andere om fraude te helpen bestrijden, zonder passieve tracking. We zagen de eerste <a hreflang="en" href="https://developer.chrome.com/blog/third-party-origin-trials">oorsprongsproef</a> (die zal eindigen in mei 2022) geactiveerd op 7 oorsprongen die waarschijnlijk ingesloten zijn op een aantal websites als dienstverleners.
 
 <a hreflang="en" href="https://github.com/WICG/CHIPS">_CHIPS_</a> (Cookies Having Independent Partitioned State) laat aan websites toe om cookies over sites heen als "gepartitioneerd" aan te duiden, wat ze in een aparte _cookie jar_ per topniveausite steekt. (Firefox heeft reeds de gelijkaardige <a hreflang="en" href="https://blog.mozilla.org/security/2021/02/23/total-cookie-protection/">_Total Cookie Protection_</a>-functie voor cookiepartitionering geïntroduceerd.) In oktober 2021 was er geen oorsprongsproef voor CHIPS.
 
@@ -560,7 +561,7 @@ De <a hreflang="en" href="https://developer.chrome.com/docs/privacy-sandbox/attr
   )
 }}
 
-Ten slotte laten <a hreflang="en" href="https://developer.chrome.com/docs/privacy-sandbox/first-party-sets/">_First-Party Sets_</a> aan website-eigenaars toe om een verzameling van afzonderlijke domeinen te definiëren die eigenlijk aan dezelfde entiteit behoren. Eigenaars kunnen dan een `SameParty`-attribuut zetten op cookies die over sitecontexten heen verzonden zouden moeten worden, zolang de sites tot dezelfde _first-party set_ behoren. Een eerste oorsprongsproef eindigde in september 2021. We zagen het `SameParty`-attribuut op een duizendtal cookies.
+Ten slotte laten <a hreflang="en" href="https://developer.chrome.com/docs/privacy-sandbox/first-party-sets">_First-Party Sets_</a> aan website-eigenaars toe om een verzameling van afzonderlijke domeinen te definiëren die eigenlijk aan dezelfde entiteit behoren. Eigenaars kunnen dan een `SameParty`-attribuut zetten op cookies die over sitecontexten heen verzonden zouden moeten worden, zolang de sites tot dezelfde _first-party set_ behoren. Een eerste oorsprongsproef eindigde in september 2021. We zagen het `SameParty`-attribuut op een duizendtal cookies.
 
 ## Besluit
 

@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Beveiliging
 description: Beveiligingshoofdstuk van de Web Almanac 2020 met informatie over transportlaagbeveiliging, inhoudsbeveiliging (CSP, functiebeleid, SRI), webbeschermingsmechanismen (aanpakken van XSS, XS-Leaks) en updatepraktijken van veelgebruikte technologieën.
+hero_alt: Hero image of Web Almanac characters padlocking a web page, while other Web Almanac characters subdue a masked thief who has a set of bolt cutters.
 authors: [tomvangoethem, nrllh, tunetheweb]
 reviewers: [cqueern, edmondwwchan]
 analysts: [tomvangoethem, nrllh]
@@ -9,7 +10,7 @@ editors: [tunetheweb]
 translators: [noah-vdv]
 tomvangoethem_bio: Tom Van Goethem is onderzoeker bij de <a hreflang="en" href="https://distrinet.cs.kuleuven.be/">DistriNet groep</a> van de universiteit van Leuven, België. Zijn onderzoek is gericht op het ontdekken van nieuwe side-channel aanvallen op het web die tot beveiligings- of privacyproblemen leiden, en op het oplossen van de lekken die deze veroorzaken.
 nrllh_bio: Nurullah Demir is een beveiligingsonderzoeker en PhD-student bij <a hreflang="en" href="https://www.internet-sicherheit.de/en/"><span>Institute for Internet Security</span></a>. Zijn onderzoek richt zich op robuuste webbeveiligingsmechanismen en vijandige machine learning.
-tunetheweb_bio: Barry Pollard is een softwareontwikkelaar en auteur van het Manning-boek <a hreflang="en" href="https://www.manning.com/books/http2-in-action">HTTP/2 in Action</a>. Hij vindt het web geweldig, maar wil het nog beter maken. U kunt hem vinden op <a href="https://twitter.com/tunetheweb">@tunetheweb</a> en op zijn blog <a hreflang="en" href="https://www.tunetheweb.com">www.tunetheweb.com</a>.
+tunetheweb_bio: Barry Pollard is een softwareontwikkelaar en auteur van het Manning-boek <a hreflang="en" href="https://www.manning.com/books/http2-in-action">HTTP/2 in Action</a>. Hij vindt het web geweldig, maar wil het nog beter maken. U kunt hem vinden op <a href="https://x.com/tunetheweb">@tunetheweb</a> en op zijn blog <a hreflang="en" href="https://www.tunetheweb.com">www.tunetheweb.com</a>.
 discuss: 2047
 results: https://docs.google.com/spreadsheets/d/1T7sxPP5BV3uwv-sXhBEZraVk-obd0tDfFrLiD49nZC0/
 featured_quote: In dit hoofdstuk verkennen we de huidige stand van zaken voor beveiliging op het web. Door de acceptatie van verschillende beveiligingsfuncties diepgaand en op grote schaal te analyseren, verzamelen we inzichten over de verschillende manieren waarop website-eigenaren deze beveiligingsmechanismen toepassen, gedreven door de prikkel om hun gebruikers te beschermen.
@@ -620,7 +621,9 @@ Op een vergelijkbare manier, door het `allow`-attribuut op `<iframe>`-elementen 
 <figcaption>{{ figure_link(caption="Prevalentie van functiebeleid-richtlijnen op frames.", sheets_gid="547110187", sql_file="iframe_allow_directives.sql") }}</figcaption>
 </figure>
 
-De antwoordkop van `Feature-Policy` heeft een vrij lage acceptatiegraad, met 0,60% van de desktoppagina's en 0,51% van de mobiele pagina's. Aan de andere kant was functiebeleid ingeschakeld voor 19,5% van de 8 miljoen frames die op de desktoppagina's werden gevonden. Op mobiele pagina's bevatte 16,4% van de 9,2 miljoen frames het attribuut `toestaan`.
+De antwoordkop van `Feature-Policy` heeft een vrij lage acceptatiegraad, met 0,60% van de desktoppagina's en 0,51% van de mobiele pagina's. Aan de andere kant was functiebeleid ingeschakeld voor 11,8% van de 13,2 miljoen frames die op de desktoppagina's werden gevonden. Op mobiele pagina's bevatte 10,8% van de 13,9 miljoen frames het attribuut `allow`.
+
+<p class="note">Een eerdere versie van dit hoofdstuk vermeldde onjuiste waarden voor het totale aantal frames en het percentage frames met het kenmerk `allow`. Meer informatie is te vinden in deze <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/pull/3912">GitHub PR</a>.</p>
 
 Op basis van de meest gebruikte richtlijnen in het functiebeleid voor iframes, kunnen we zien dat deze voornamelijk worden gebruikt om te bepalen hoe de frames video's afspelen. De meest voorkomende richtlijn, `encrypted-media`, wordt bijvoorbeeld gebruikt om de toegang tot de Encrypted Media Extensions API te controleren, die nodig is om DRM-beveiligde video's af te spelen. De meest voorkomende iframe-herkomsten met een functiebeleid waren `https://www.facebook.com` en `https://www.youtube.com` (respectievelijk 49,87% en 26,18% van de frames met een functiebeleid op desktoppagina's ).
 
@@ -628,7 +631,9 @@ Op basis van de meest gebruikte richtlijnen in het functiebeleid voor iframes, k
 
 Door een niet-vertrouwde derde partij op te nemen in een iframe, kan die derde partij proberen een aantal aanvallen op de pagina uit te voeren. Het kan bijvoorbeeld de hoofdpagina naar een phishing-pagina navigeren, pop-ups met valse antivirusadvertenties openen, enz.
 
-Het `sandbox`-attribuut op iframes kan worden gebruikt om de mogelijkheden, en dus ook de mogelijkheden om aanvallen uit te voeren, van de embedded webpagina te beperken. Aangezien het insluiten van inhoud van derden, zoals advertenties of video's, gebruikelijk is op internet, is het niet verrassend dat veel hiervan worden beperkt via het `sandbox`-attribuut: 30,29% van de iframes op desktoppagina's heeft een `sandbox`-attribuut terwijl op mobiele pagina's is dit 33,16%.
+Het `sandbox`-attribuut op iframes kan worden gebruikt om de mogelijkheden, en dus ook de mogelijkheden om aanvallen uit te voeren, van de embedded webpagina te beperken. Aangezien het insluiten van inhoud van derden, zoals advertenties of video's, gebruikelijk is op internet, is het niet verrassend dat veel hiervan worden beperkt via het `sandbox`-attribuut: 18,3% van de iframes op desktoppagina's heeft een `sandbox`-attribuut terwijl op mobiele pagina's is dit 21,9%.
+
+<p class="note">Een eerdere versie van dit hoofdstuk vermeldde onjuiste waarden voor het percentage frames met het kenmerk `sandbox`. Meer informatie is te vinden in deze <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/pull/3912">GitHub PR</a>.</p>
 
 <figure>
   <table>
@@ -1002,7 +1007,7 @@ Tegenwoordig speelt de prestatie van de gebruikte technologieën een bijzonder r
 
 Bovenstaande figuur toont het aantal websites dat gebruikmaakt van cryptomining in de afgelopen twee jaar. We zien dat vanaf begin 2019 de interesse in cryptomining afneemt. Bij onze laatste meting hadden we in totaal 348 websites inclusief cryptomining-scripts.
 
-In de volgende afbeelding laten we het marktaandeel van cryptominer op internet zien op basis van de dataset van augustus. Coinimp is de meest populaire provider met een marktaandeel van 45,2%. We ontdekten dat alle meest populaire cryptominers zijn gebaseerd op WebAssembly. Merk op dat er ook JavaScript-bibliotheken zijn om op internet te minen, maar deze zijn niet zo krachtig als oplossingen op basis van WebAssembly. Ons andere resultaat laat zien dat de helft van de websites, waaronder een cryptominer, gebruikmaakt van een cryptomining-component van stopgezette serviceproviders (<a hreflang="en" href="https://blog.avast.com/coinhive-shuts-down">zoals CoinHive</a> en [JSEcoin](https://twitter.com/jsecoin/status/1247436272869814272)), wat betekent dat hoewel de cryptomining-scripts op die webpagina's zijn opgenomen, deze niet meer actief zijn en dus in de praktijk geen cryptomining zal plaatsvinden.
+In de volgende afbeelding laten we het marktaandeel van cryptominer op internet zien op basis van de dataset van augustus. Coinimp is de meest populaire provider met een marktaandeel van 45,2%. We ontdekten dat alle meest populaire cryptominers zijn gebaseerd op WebAssembly. Merk op dat er ook JavaScript-bibliotheken zijn om op internet te minen, maar deze zijn niet zo krachtig als oplossingen op basis van WebAssembly. Ons andere resultaat laat zien dat de helft van de websites, waaronder een cryptominer, gebruikmaakt van een cryptomining-component van stopgezette serviceproviders (<a hreflang="en" href="https://blog.avast.com/coinhive-shuts-down">zoals CoinHive</a> en [JSEcoin](https://x.com/jsecoin/status/1247436272869814272)), wat betekent dat hoewel de cryptomining-scripts op die webpagina's zijn opgenomen, deze niet meer actief zijn en dus in de praktijk geen cryptomining zal plaatsvinden.
 
 {{ figure_markup(
   image="security-cryptominer-market-share.png",

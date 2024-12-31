@@ -2,12 +2,13 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: CSS
 description: 2020年のWeb AlmanacのCSSの章では、カラー、ユニット、セレクタ、レイアウト、アニメーション、メディアクエリ、Sassの使用法をカバーしています。
+hero_alt: Hero image of Web Almanac characters measuring and painting a web page.
 authors: [LeaVerou, svgeesus, rachelandrew]
 reviewers: [estelle, fantasai, j9t, mirisuzanne, catalinred, hankchizljaw]
 analysts: [rviscomi, LeaVerou, dooman87]
 editors: [tunetheweb]
 translators: [ksakae1216]
-LeaVerou_bio: Lea <a hreflang="en" href="https://designftw.mit.edu">HCIとウェブプログラミングの講師</a>、<a hreflang="en" href="https://mavo.io">ウェブプログラミングをより簡単にする方法</a>を<a hreflang="en" href="https://mit.edu">MIT</a>で研究しています。彼女はベストセラーの技術系<a hreflang="en" href="https://www.amazon.com/CSS-Secrets-Lea-Verou/dp/1449372635?tag=leaverou-20">著者</a>であり、経験豊富な<a hreflang="en" href="https://lea.verou.me/speaking">講演者</a>でもあります。彼女はオープンなウェブ標準に情熱を注いでおり、<a hreflang="en" href="https://www.w3.org/Style/CSS/members.en.php3">CSSワーキンググループ</a>の長年のメンバーでもあります。Leaは、<a hreflang="en" href="https://github.com/leaverou">人気のあるオープンソースプロジェクトやウェブアプリケーション</a>、<a hreflang="en" href="https://prismjs.com">Prism</a>、<a hreflang="en" href="https://github.com/leaverou/awesomplete">Awesomplete</a>などを立ち上げています。彼女は<a href="https://twitter.com/leaverou">@leaverou</a>でツイートし、<a hreflang="en" href="https://lea.verou.me">lea.verou.me</a>でブログを書いています。
+LeaVerou_bio: Lea <a hreflang="en" href="https://designftw.mit.edu">HCIとウェブプログラミングの講師</a>、<a hreflang="en" href="https://mavo.io">ウェブプログラミングをより簡単にする方法</a>を<a hreflang="en" href="https://mit.edu">MIT</a>で研究しています。彼女はベストセラーの技術系<a hreflang="en" href="https://www.amazon.com/CSS-Secrets-Lea-Verou/dp/1449372635?tag=leaverou-20">著者</a>であり、経験豊富な<a hreflang="en" href="https://lea.verou.me/speaking">講演者</a>でもあります。彼女はオープンなウェブ標準に情熱を注いでおり、<a hreflang="en" href="https://www.w3.org/Style/CSS/members.en.php3">CSSワーキンググループ</a>の長年のメンバーでもあります。Leaは、<a hreflang="en" href="https://github.com/leaverou">人気のあるオープンソースプロジェクトやウェブアプリケーション</a>、<a hreflang="en" href="https://prismjs.com">Prism</a>、<a hreflang="en" href="https://github.com/leaverou/awesomplete">Awesomplete</a>などを立ち上げています。彼女は<a href="https://x.com/leaverou">@leaverou</a>でツイートし、<a hreflang="en" href="https://lea.verou.me">lea.verou.me</a>でブログを書いています。
 svgeesus_bio: Chris LilleyはWorld Wide Web Consortium(W3C)のテクニカルディレクターです。「SVGの父」と呼ばれ、PNGの共著、CSS2の共同編集者、<code>@font-face</code> を開発したグループの議長、WOFFの共同開発者でもあります。元テクニカルアーキテクチャグループ。ChrisはまだWeb上でColor Managementを使おうとしています、ため息。現在はCSSレベル3/4/5 (いや、本当に)、Web Audio、そしてWOFF2に取り組んでいます。
 rachelandrew_bio: 私はウェブ開発者、ライター、スピーカーです。<a hreflang="en" href="https://grabaperch.com">Perch CMS</a>と<a hreflang="en" href="https://noti.st">Notist</a> の共同設立者。<a hreflang="en" href="https://www.w3.org/wiki/CSSWG">CSSワーキンググループ</a>のメンバー。<a hreflang="en" href="https://www.smashingmagazine.com/">Smashing Magazine</a>の編集長です。
 discuss: 2037
@@ -936,7 +937,7 @@ HSLは<a hreflang="en" href="https://drafts.csswg.org/css-color-4/#the-hsl-notat
 
 {{ figure_markup(
   image="p3-chromaticity-big.svg",
-  object="p3-chromaticity-big.svg",
+  iframe="p3-chromaticity-big.svg",
   caption="指定されたdisplay-p3色のUV色度とそのフォールバック。",
   description="この1976年のu'v'図は、色の色度を示しています（2Dにフラット化しているので、明るさは表示されていません）。外側の曲線は純粋な単一波長のスペクトルを表しています。直線は紫で、赤と紫が混ざっています。小さくて灰色の三角形がsRGBの色域で、大きくて暗い三角形がdisplay-p3の色域です。2020年にWeb上で実際に使用される23色のディスプレイp3固有の色を示しています。各色のペアについて、大きな円がsRGBの色域、小さな円がディスプレイp3の色域です。sRGBの色域内であれば、これらの円が正しい色を示しています。そうでない場合は、白い丸に赤い縁がついているものがsRGB域外の色を示しています。",
   width=600,
@@ -1659,7 +1660,7 @@ background-clip: border-box;
 
 - そのうち37%は接頭辞付きプロパティの変形した形式でした(例:`webkit-transition`や`-transition`)。
 - 43%は接頭辞のみでしか存在しないプロパティの接頭辞なしの形式(例えば、`font-smoothing`は384Kのウェブサイトに登場しました)で、おそらく互換性のために、標準であるという誤った仮定の下で、あるいは標準になることを願って含まれていたのでしょう。
-- 人気のあるライブラリへの道を見つけたタイプミス。この分析の結果、`white-wpace`というプロパティが234,027のウェブサイトに存在していることがわかりました。これは、同じタイプミスが有機的に発生したとは思えないほどの数です。そして驚いたことに、Facebookウィジェットが原因であることが判明しました(https://twitter.com/rick_viscomi/status/1326739379533000704)。修正はすでに行われています。
+- 人気のあるライブラリへの道を見つけたタイプミス。この分析の結果、`white-wpace`というプロパティが234,027のウェブサイトに存在していることがわかりました。これは、同じタイプミスが有機的に発生したとは思えないほどの数です。そして驚いたことに、Facebookウィジェットが原因であることが判明しました(https://x.com/rick_viscomi/status/1326739379533000704)。修正はすでに行われています。
 - そして、もう一つの奇妙なことがあります。プロパティ`font-rendering`が2,575ページに登場しています。しかし、プリフィックスの有無にかかわらず、このようなプロパティが存在する証拠を見つけることができません。非標準の<a hreflang="en" href="https://medium.com/better-programming/improving-font-rendering-with-css-3383fc358cbc">`-webkit-font-smoothing`</a> がありますが、これは300万のウェブサイト、つまりページの約49%に登場しており、非常に人気がありますが、`font-rendering`はスペルミスというには十分に近くありません。[`テキストレンダリング`](https://developer.mozilla.org/docs/Web/CSS/text-rendering)は約10万のWebサイトで使われているので、2.5万人の開発者が皆、`font-smoothing`と`text-rendering`の混成語を間違えて作ってしまったと考えられます。
 
 {{ figure_markup(

@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: アクセシビリティ
 description: 読みやすさ、ナビゲーション、フォーム、メディア、ARIA、アクセシビリティ・アプリを網羅した2022年版ウェブ年鑑のアクセシビリティの章。
+hero_alt: Hero image of a robot with a blue, human accessibility icon on its front scanning a web page, while Web Almanac characters check some labels.
 authors: [SaptakS, thibaudcolas, scottdavis99]
 reviewers: [shantsis]
 analysts: [thibaudcolas]
@@ -73,7 +74,7 @@ Lighthouse監査の報告結果を見ると、41個の自動チェックのう�
 
 ### ズームとスケーリング
 
-ズームは、視力が低いユーザーがウェブサイトのテキストをより見やすく表示するためによく使用する機能の1つです。ブラウザにはシステム設定があり、ユーザーがウェブサイトをズームイン/アウトしてスケーリングすることを可能にするツールもあります。[Adrian Roselli](https://twitter.com/aardrian)は、ズームを無効にしないべき[さまざまな理由について詳細に説明](https://adrianroselli.com/2015/10/dont-disable-zoom.html)しています。
+ズームは、視力が低いユーザーがウェブサイトのテキストをより見やすく表示するためによく使用する機能の1つです。ブラウザにはシステム設定があり、ユーザーがウェブサイトをズームイン/アウトしてスケーリングすることを可能にするツールもあります。[Adrian Roselli](https://x.com/aardrian)は、ズームを無効にしないべき[さまざまな理由について詳細に説明](https://adrianroselli.com/2015/10/dont-disable-zoom.html)しています。
 
 {{ figure_markup(
   image="pages-zooming-scaling-disabled.png",
@@ -97,7 +98,7 @@ WCAGは、ウェブサイト内のテキストを最低でも200％までリサ�
   sql_file="viewport_zoom_scale_by_domain_rank.sql",
 ) }}
 
-トップ1,000のもっとも訪問されるサイトのうち、デスクトップサイトの21％とモバイルサイトの40％は、ユーザーのズームやスケーリングを無効にしようとするコードを使用して構築されています。これは、ズームが無効になっているサイトの割合がモバイルではデスクトップと比較してほぼ倍になっていることを意味します。どのデバイスでもズームを無効にしないことは非常に重要です。この問題に対処するために、ブラウザは開発者がズームを無効にしようとする試みを上書きし始めています。[Manuel Matuzović](https://twitter.com/mmatuzo)は、ブラウザでのズームの無効化とユーザー設定に関する懸念について語った記事を書いています。[詳細はこちら](https://www.matuzo.at/blog/2022/please-stop-disabling-zoom/)をご覧ください。
+トップ1,000のもっとも訪問されるサイトのうち、デスクトップサイトの21％とモバイルサイトの40％は、ユーザーのズームやスケーリングを無効にしようとするコードを使用して構築されています。これは、ズームが無効になっているサイトの割合がモバイルではデスクトップと比較してほぼ倍になっていることを意味します。どのデバイスでもズームを無効にしないことは非常に重要です。この問題に対処するために、ブラウザは開発者がズームを無効にしようとする試みを上書きし始めています。[Manuel Matuzović](https://x.com/mmatuzo)は、ブラウザでのズームの無効化とユーザー設定に関する懸念について語った記事を書いています。[詳細はこちら](https://www.matuzo.at/blog/2022/please-stop-disabling-zoom/)をご覧ください。
 
 {{ figure_markup(
   image="font-unit-usage.png",
@@ -155,7 +156,7 @@ WCAGは、ウェブサイト内のテキストを最低でも200％までリサ�
 ) }}
 
 他のユーザー好みのメディアクエリと同様に、多くのウェブサイトが強制色モードに基づいて調整を行っています。モバイルサイトの8%とデスクトップサイトの9%が `forced-colors` メディアクエリを使用してスタイルを変更していますが、古いIE11専用の `-ms-high-contrast` メディアクエリの使用率はモバイルとデスクトップの両方で20%以上です。
-これによってサイトがどの程度強制色モードをサポートしているかは分かりませんが、`forced-colors` メディアクエリが主要なブラウザでサポートされているのは[2020年から](https://caniuse.com/mdn-css_at-rules_media_forced-colors)であり、Windows以外のデバイスで[強制色モードのエミュレート](https://developer.chrome.com/docs/devtools/rendering/emulate-css?hl=ja)をサポートするのは2022年2月からであることを考えると、データはそれでもなお励みになります。
+これによってサイトがどの程度強制色モードをサポートしているかは分かりませんが、`forced-colors` メディアクエリが主要なブラウザでサポートされているのは[2020年から](https://caniuse.com/mdn-css_at-rules_media_forced-colors)であり、Windows以外のデバイスで[強制色モードのエミュレート](https://developer.chrome.com/docs/devtools/renderingemulate-css?hl=ja)をサポートするのは2022年2月からであることを考えると、データはそれでもなお励みになります。
 
 ## ナビゲーション
 
@@ -178,7 +179,7 @@ WCAGは、ページをトラバースする際にどの要素がキーボード�
   sql_file="focus_outline_0.sql",
 ) }}
 
-私たちは、ウェブサイトの86%が `:focus {outline: 0}` を追加していることを発見しました。これは、フォーカスされた対話型要素にブラウザが使用するデフォルトのアウトラインを削除します。いくつかの場合では、カスタムスタイリングを使って上書きされていますが、常にそうではありません。これにより、ユーザーはどの要素がフォーカスされているかを判断できず、ナビゲーションが妨げられます。[Sara Soueidan](https://twitter.com/SaraSoueidan)には、[WCAG準拠のフォーカスインジケーターをデザインする方法についての素晴らしい記事](https://www.sarasoueidan.com/blog/focus-indicators/)があります。しかし、昨年の0.6%と比較して、9%のウェブサイトが `:focus-visible` を持っているのを見るのは興味深いことです。これは間違いなく正しい方向への一歩です。
+私たちは、ウェブサイトの86%が `:focus {outline: 0}` を追加していることを発見しました。これは、フォーカスされた対話型要素にブラウザが使用するデフォルトのアウトラインを削除します。いくつかの場合では、カスタムスタイリングを使って上書きされていますが、常にそうではありません。これにより、ユーザーはどの要素がフォーカスされているかを判断できず、ナビゲーションが妨げられます。[Sara Soueidan](https://x.com/SaraSoueidan)には、[WCAG準拠のフォーカスインジケーターをデザインする方法についての素晴らしい記事](https://www.sarasoueidan.com/blog/focus-indicators/)があります。しかし、昨年の0.6%と比較して、9%のウェブサイトが `:focus-visible` を持っているのを見るのは興味深いことです。これは間違いなく正しい方向への一歩です。
 
 #### `tabindex`
 
@@ -201,7 +202,7 @@ WCAGは、ページをトラバースする際にどの要素がキーボード�
   sql_file="tabindex_usage_and_values.sql",
 ) }}
 
-すべてのウェブサイトの中で `tabindex` 属性を持つものは、そのうち7%が正の値を持っています。`tabindex` に正の値を使用することは一般的に良くない慣行であり、通常のナビゲーションを妨げる可能性があります。[Karl Groves](https://twitter.com/karlgroves) は、この概念について詳しく説明する [素晴らしい記事](https://karlgroves.com/2018/11/13/why-using-tabindex-values-greater-than-0-is-bad) を書いています。
+すべてのウェブサイトの中で `tabindex` 属性を持つものは、そのうち7%が正の値を持っています。`tabindex` に正の値を使用することは一般的に良くない慣行であり、通常のナビゲーションを妨げる可能性があります。[Karl Groves](https://x.com/karlgroves) は、この概念について詳しく説明する [素晴らしい記事](https://karlgroves.com/2018/11/13/why-using-tabindex-values-greater-than-0-is-bad) を書いています。
 
 ### ランドマーク
 
@@ -258,11 +259,11 @@ WCAGは、ページをトラバースする際にどの要素がキーボード�
   </figcaption>
 </figure>
 
-ほとんどのウェブページに期待される一般的なランドマークは、`<main>`、`<header>`、`<nav>`、`<footer>` です。デスクトップとモバイルページの31%だけがネイティブのHTML `<main>` 要素を持っており、デスクトップページの17%が `role="main"` を持つ要素を持っており、38%のページが `<main>` または `role="main"` のいずれかを持っています。ネイティブ要素の使用が増加しているのは良いことです。[Scott O' Hara](https://twitter.com/scottohara) の [ランドマークに関する記事](https://www.scottohara.me/blog/2018/03/03/landmarks.html) は、より良いアクセシビリティを確保するために心に留めておくべきすべての詳細をカバーしています。
+ほとんどのウェブページに期待される一般的なランドマークは、`<main>`、`<header>`、`<nav>`、`<footer>` です。デスクトップとモバイルページの31%だけがネイティブのHTML `<main>` 要素を持っており、デスクトップページの17%が `role="main"` を持つ要素を持っており、38%のページが `<main>` または `role="main"` のいずれかを持っています。ネイティブ要素の使用が増加しているのは良いことです。[Scott O' Hara](https://x.com/scottohara) の [ランドマークに関する記事](https://www.scottohara.me/blog/2018/03/03/landmarks.html) は、より良いアクセシビリティを確保するために心に留めておくべきすべての詳細をカバーしています。
 
 ### 見出し階層
 
-見出しは、支援技術を使用するすべてのユーザーを含む、すべてのユーザーがウェブサイトをナビゲートするのに役立ちます。支援技術を使用するユーザーは、関心のある特定のセクションにナビゲートできます。[Marcy Sutton](https://twitter.com/marcysutton) の [見出しとセマンティック構造に関する記事](https://marcysutton.com/how-i-audit-a-website-for-accessibility#Headings-and-Semantic-Structure) によると、見出しは特定のコンテンツエリアに移動するためにナビゲートできる目次と考えることができます。
+見出しは、支援技術を使用するすべてのユーザーを含む、すべてのユーザーがウェブサイトをナビゲートするのに役立ちます。支援技術を使用するユーザーは、関心のある特定のセクションにナビゲートできます。[Marcy Sutton](https://x.com/marcysutton) の [見出しとセマンティック構造に関する記事](https://marcysutton.com/how-i-audit-a-website-for-accessibility#Headings-and-Semantic-Structure) によると、見出しは特定のコンテンツエリアに移動するためにナビゲートできる目次と考えることができます。
 
 {{ figure_markup(
   content="58%",
@@ -272,7 +273,7 @@ WCAGは、ページをトラバースする際にどの要素がキーボード�
   sql_file="lighthouse_a11y_audits.sql",
 ) }}
 
-58%のウェブサイトは、レベルを飛ばさない正しく順序付けられた見出しのテストに合格しており、これは昨年と同じです。来年は、[WHATWG標準のドキュメントアウトラインの例が更新されている](https://github.com/whatwg/html/pull/7829) ため、この数字が増加することを期待しています。非常に重要なことは、見出しレベルは特定の要素の実際のスタイル（または重要性）を表す必要はないということです。見出しは主に階層目的で使用されるべきであり、要素のスタイリングにはCSSを使用できます。ページ内の見出しの構造についての非常に良い記事は、[Steve Faulkner](https://twitter.com/stevefaulkner) による ["How to mark up subheadings, subtitles, alternative titles and taglines"](https://stevefaulkner.github.io/Articles/How%20to%20mark%20up%20subheadings,%20subtitles,%20alternative%20titles%20and%20taglines.html) です。
+58%のウェブサイトは、レベルを飛ばさない正しく順序付けられた見出しのテストに合格しており、これは昨年と同じです。来年は、[WHATWG標準のドキュメントアウトラインの例が更新されている](https://github.com/whatwg/html/pull/7829) ため、この数字が増加することを期待しています。非常に重要なことは、見出しレベルは特定の要素の実際のスタイル（または重要性）を表す必要はないということです。見出しは主に階層目的で使用されるべきであり、要素のスタイリングにはCSSを使用できます。ページ内の見出しの構造についての非常に良い記事は、[Steve Faulkner](https://x.com/stevefaulkner) による ["How to mark up subheadings, subtitles, alternative titles and taglines"](https://stevefaulkner.github.io/Articles/How%20to%20mark%20up%20subheadings,%20subtitles,%20alternative%20titles%20and%20taglines.html) です。
 
 ### 二次ナビゲーション
 
@@ -593,7 +594,7 @@ ARIAの役割を追加すると、支援技術に要素は何であるかを伝�
 
 DOMに平行して、アクセシビリティツリーと呼ばれる類似のブラウザ構造があります。これには、HTML要素に関する情報（アクセシブルな名前、説明、役割、状態など）が含まれています。この情報は、アクセシビリティAPIを介して支援技術に伝えられます。
 
-アクセシブルな名前は、要素のコンテンツ（ボタンのテキストなど）、属性（画像の `alt` 属性の値など）、または関連する要素（フォームコントロールのプログラムで関連付けられたラベルなど）から派生できます。複数の潜在的なソースがある場合に、要素がそのアクセシブルな名前をどこから取得するかを決定するために、特定の優先順位付けが使用されます。[Léonie Watson](https://twitter.com/LeonieWatson)の記事、[What is an accessible name?](https://developer.paciellogroup.com/blog/2017/04/what-is-an-accessible-name/)は、アクセシブルな名前について学ぶのに素晴らしい情報源です。
+アクセシブルな名前は、要素のコンテンツ（ボタンのテキストなど）、属性（画像の `alt` 属性の値など）、または関連する要素（フォームコントロールのプログラムで関連付けられたラベルなど）から派生できます。複数の潜在的なソースがある場合に、要素がそのアクセシブルな名前をどこから取得するかを決定するために、特定の優先順位付けが使用されます。[Léonie Watson](https://x.com/LeonieWatson)の記事、[What is an accessible name?](https://developer.paciellogroup.com/blog/2017/04/what-is-an-accessible-name/)は、アクセシブルな名前について学ぶのに素晴らしい情報源です。
 
 {{ figure_markup(
   image="top10-aria-attributes.png",
@@ -788,4 +789,4 @@ Adrian Roselliの[accessiBe Will Get You Sued](https://adrianroselli.com/2020/06
 
 実際には体験を損なうことが多いにもかかわらず、よりアクセシブルなものであるという錯覚を与える機能の誤用が多いことがわかります。たとえば、ウェブサイトの20%で `role=button` がアンカータグに使用されています。また、ウェブサイト全体での `alt` 属性の2.2%にファイル拡張子が含まれており、これが画像の意味を伝える上でほとんど役に立たないことはほぼ確実です。
 
-私たちの分析で見られる多くのアクセシビリティ問題は、デザイナーや開発者が最初からウェブアクセシビリティについて考え、最後の強化としてではなく、避けることができます。[Anna E. Cookがかつて述べた](https://twitter.com/annaecook/status/1404615552883060737)ように、「アクセシビリティなしにMVPはない」のです。ウェブコミュニティは、ウェブサイトがすべての人にとって素晴らしいユーザーエクスペリエンスを持つためには、そのユーザーエクスペリエンスがどのデバイスや支援技術を使用していても機能する必要があることを認識する必要があります。簡単に対処できる主要なメトリクスに焦点を当ててみましたが、2023年には数字が改善されることを期待しています。
+私たちの分析で見られる多くのアクセシビリティ問題は、デザイナーや開発者が最初からウェブアクセシビリティについて考え、最後の強化としてではなく、避けることができます。[Anna E. Cookがかつて述べた](https://x.com/annaecook/status/1404615552883060737)ように、「アクセシビリティなしにMVPはない」のです。ウェブコミュニティは、ウェブサイトがすべての人にとって素晴らしいユーザーエクスペリエンスを持つためには、そのユーザーエクスペリエンスがどのデバイスや支援技術を使用していても機能する必要があることを認識する必要があります。簡単に対処できる主要なメトリクスに焦点を当ててみましたが、2023年には数字が改善されることを期待しています。

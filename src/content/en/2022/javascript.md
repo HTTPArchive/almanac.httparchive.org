@@ -3,12 +3,13 @@
 title: JavaScript
 #TODO - Review and update chapter description
 description: JavaScript chapter of the 2022 Web Almanac covering the usage of JavaScript on the web, libraries and frameworks, compression, web components, and source maps.
+hero_alt: Hero image of the Web Almanac characters cycling to power a website.
 authors: [malchata]
 reviewers: [mgechev, pankajparkar, NishuGoel, housseindjirdeh, kevinfarrugia, tunetheweb]
 analysts: [NishuGoel, kevinfarrugia]
 editors: [DesignrKnight, rviscomi]
 translators: []
-malchata_bio: Jeremy Wagner is a technical writer for Google on performance and Core Web Vitals. He has also written for A List Apart, CSS-Tricks, and Smashing Magazine. Jeremy will someday relocate to the remote wilderness where sand has not yet been taught to think. Until then, he continues to reside in Minnesota’s Twin Cities with his wife and stepdaughters, bemoaning the existence of strip malls.
+malchata_bio: Jeremy Wagner is a technical writer for Google on performance and Core Web Vitals. He has also written for A List Apart, CSS-Tricks, and Smashing Magazine. Jeremy will someday relocate to the remote wilderness where sand has not yet been taught to think. Until then, he continues to reside in Minnesota's Twin Cities with his wife and stepdaughters, bemoaning the existence of strip malls.
 results: https://docs.google.com/spreadsheets/d/1vOeFUyfEtWRen3Xj57ZsWav40n5tlcJoV0HmAxmNE_I/
 featured_quote: The state of JavaScript is a constantly evolving phenomenon. It's clear that we have an increased reliance on it more than ever, but that spells trouble for the collective user experience of the web. We need to do all we can—and more—to stem the tide of how much JavaScript we ship on production websites.
 featured_stat_1: 26%
@@ -382,7 +383,7 @@ Where possible, render-critical JavaScript can be placed in the footer and prelo
 
 Script injection is a pattern where an [`HTMLScriptElement`](https://developer.mozilla.org/docs/Web/API/HTMLScriptElement) is created in JavaScript using [`document.createElement`](https://developer.mozilla.org/docs/Web/API/Document/createElement) and injected into the DOM with a DOM insertion method. Alternatively, `<script>` element markup in a string can be injected into the DOM via the [`innerHTML`](https://developer.mozilla.org/docs/Web/API/Element/innerHTML) method.
 
-Script injection is a fairly common practice used in a number of scenarios, but the problem with it is that <a hreflang="en" href="https://web.dev/preload-scanner/#injected-async-scripts">it defeats the browser's preload scanner</a> by making the script undiscoverable as the initial HTML payload is parsed. This can affect metrics such as <a hreflang="en" href="https://web.dev/lcp/">Largest Contentful Paint (LCP)</a> if the injected script resource is ultimately responsible for rendering markup, which itself can kick off long tasks to parse large chunks of markup on the fly.
+Script injection is a fairly common practice used in a number of scenarios, but the problem with it is that <a hreflang="en" href="https://web.dev/preload-scanner/#injected-async-scripts">it defeats the browser's preload scanner</a> by making the script undiscoverable as the initial HTML payload is parsed. This can affect metrics such as <a hreflang="en" href="https://web.dev/articles/lcp">Largest Contentful Paint (LCP)</a> if the injected script resource is ultimately responsible for rendering markup, which itself can kick off long tasks to parse large chunks of markup on the fly.
 
 {{ figure_markup(
     image="injected-scripts.png",
@@ -466,7 +467,7 @@ A staggeringly low 0.34% of all observed mobile pages currently use dynamic `imp
 
 It's tricky, but a balance can be struck, and it involves gauging the user's intent. One way of deferring loading of JavaScript without delaying interactions is to [preload](https://developer.mozilla.org/docs/Web/HTML/Link_types/preload) that JavaScript when the user signals intent to make an interaction. One example of this could be to defer loading JavaScript for the validation of a form, and preload that JavaScript once the user has focused a field in that form. That way, when the JavaScript is requested, it will already be in the browser cache.
 
-Another way could be to use a service worker to precache JavaScript necessary for interactions when the service worker is installed. Installation should occur at a point in which the page has fully loaded in the page's <a hreflang="en" href="https://developer.mozilla.org/docs/Web/API/Window/load_event">`load` event</a>. That way, when the necessary functionality is requested, it can be retrieved from the service worker cache without startup costs.
+Another way could be to use a service worker to precache JavaScript necessary for interactions when the service worker is installed. Installation should occur at a point in which the page has fully loaded in the page's [`load` event](https://developer.mozilla.org/docs/Web/API/Window/load_event). That way, when the necessary functionality is requested, it can be retrieved from the service worker cache without startup costs.
 
 Dynamic `import()` is tricky to use, but more widespread adoption of it can help shift the performance cost of loading JavaScript from startup to a later point in the page lifecycle, presumably when there will be less network contention for resources. We hope to see increased adoption of dynamic `import()`, as the amount of JavaScript we see loaded during startup is only increasing.
 
@@ -609,7 +610,7 @@ Minification addresses one of the first principles of web performance: ship less
 
 ### Source maps
 
-<a hreflang="en" href="https://firefox-source-docs.mozilla.org/devtools-user/debugger/how_to/use_a_source_map/index.html">Source maps</a> are a tool that web developers use to map minified and uglified production code to their original sources. Source maps are used in production JavaScript files, and are a useful debugging tool. Source maps can be specified in a comment pointing to a source map file at the end of a resource, or as the <a hreflang="en" href="https://developer.mozilla.org/docs/Web/HTTP/Headers/SourceMap">`SourceMap`</a> HTTP response header.
+<a hreflang="en" href="https://firefox-source-docs.mozilla.org/devtools-user/debugger/how_to/use_a_source_map/index.html">Source maps</a> are a tool that web developers use to map minified and uglified production code to their original sources. Source maps are used in production JavaScript files, and are a useful debugging tool. Source maps can be specified in a comment pointing to a source map file at the end of a resource, or as the [`SourceMap`](https://developer.mozilla.org/docs/Web/HTTP/Headers/SourceMap) HTTP response header.
 
 {{ figure_markup(
     caption="The percentage of mobile pages specifying source map comments to publicly accessible source maps.",
@@ -641,9 +642,9 @@ JavaScript affects more than just startup performance. When we rely on JavaScrip
 
 ### Metrics
 
-Many metrics are used to assess responsiveness in both the lab and the field, and tools such as Lighthouse, Chrome UX Report (CrUX), and HTTP Archive track these metrics to provide a data-driven view of the current state of responsiveness on today's websites. Unless otherwise noted, all of the following graphs depict the 75th percentile—<a hreflang="en" href="https://web.dev/vitals/#core-web-vitals">the threshold for which Core Web Vitals are determined to be passing</a>—of that metric at the origin level.
+Many metrics are used to assess responsiveness in both the lab and the field, and tools such as Lighthouse, Chrome UX Report (CrUX), and HTTP Archive track these metrics to provide a data-driven view of the current state of responsiveness on today's websites. Unless otherwise noted, all of the following graphs depict the 75th percentile—<a hreflang="en" href="https://web.dev/articles/vitals#core-web-vitals">the threshold for which Core Web Vitals are determined to be passing</a>—of that metric at the origin level.
 
-The first of these is <a hreflang="en" href="https://web.dev/fid/">First Input Delay (FID)</a>, which records the input delay of the very first interaction made with a page. The input delay is the time between which the user has interacted with the page and when the event handlers for that interaction begin to run. It's considered a load responsiveness metric that focuses on the first impression a user gets when interacting with a website.
+The first of these is <a hreflang="en" href="https://web.dev/articles/fid">First Input Delay (FID)</a>, which records the input delay of the very first interaction made with a page. The input delay is the time between which the user has interacted with the page and when the event handlers for that interaction begin to run. It's considered a load responsiveness metric that focuses on the first impression a user gets when interacting with a website.
 
 {{ figure_markup(
     image="fid.png",
@@ -657,7 +658,7 @@ The first of these is <a hreflang="en" href="https://web.dev/fid/">First Input D
 
 This chart shows the distribution of all websites' 75th percentile FID values. The median website has a FID value of 0 ms for at least 75% of both desktop and phone user experiences. This "perfect FID" experience even extends into the 75th percentile of websites. Only when we get to the 90th percentile do we start to see imperfect FID values, but only 25 ms.
 
-Given that the "good" FID threshold is <a hreflang="en" href="https://web.dev/fid/#what-is-a-good-fid-score">100 ms</a>, we can say that at least 90% of websites meet this bar. In fact, we know from the analysis done in the [Performance](./performance) chapter that 100% of websites actually have "good" FID experiences on desktop devices, and 92% on mobile devices. FID is an unusually permissive metric.
+Given that the "good" FID threshold is <a hreflang="en" href="https://web.dev/articles/fid#what-is-a-good-fid-score">100 ms</a>, we can say that at least 90% of websites meet this bar. In fact, we know from the analysis done in the [Performance](./performance) chapter that 100% of websites actually have "good" FID experiences on desktop devices, and 92% on mobile devices. FID is an unusually permissive metric.
 
 {{ figure_markup(
     image="inp.png",
@@ -669,9 +670,9 @@ Given that the "good" FID threshold is <a hreflang="en" href="https://web.dev/fi
   )
 }}
 
-In order to get a comprehensive view of page responsiveness across the entire page lifecycle, though, we need to look at <a hreflang="en" href="https://web.dev/inp/">Interaction to Next Paint (INP)</a>, which assesses all keyboard, mouse, and touch interactions made with a page and selects a high percentile of interaction latency that's intended to represent overall page responsiveness.
+In order to get a comprehensive view of page responsiveness across the entire page lifecycle, though, we need to look at <a hreflang="en" href="https://web.dev/articles/inp">Interaction to Next Paint (INP)</a>, which assesses all keyboard, mouse, and touch interactions made with a page and selects a high percentile of interaction latency that's intended to represent overall page responsiveness.
 
-Consider that a "good" INP score is <a hreflang="en" href="https://web.dev/inp/#what's-a-%22good%22-inp-value">200 milliseconds</a> or less. At the median, both mobile and desktop score below this threshold, but the 75th percentile is another story, with both mobile and desktop segments well within the "needs improvement" range. This data, quite unlike FID, suggests that there are many opportunities for websites to do everything they can to run fewer <a hreflang="en" href="https://web.dev/long-tasks-devtools/">long tasks</a> on pages, which are a key contributor to less-than-good INP scores.
+Consider that a "good" INP score is <a hreflang="en" href="https://web.dev/articles/inp#what's-a-%22good%22-inp-value">200 milliseconds</a> or less. At the median, both mobile and desktop score below this threshold, but the 75th percentile is another story, with both mobile and desktop segments well within the "needs improvement" range. This data, quite unlike FID, suggests that there are many opportunities for websites to do everything they can to run fewer <a hreflang="en" href="https://web.dev/long-tasks-devtools/">long tasks</a> on pages, which are a key contributor to less-than-good INP scores.
 
 {{ figure_markup(
     image="tbt.png",
@@ -756,9 +757,9 @@ Only 20 per million (0.002%) mobile pages are currently shipping JavaScript that
 
 ### Synchronous XHR
 
-AJAX—or usage of the <a hreflang="en" href="https://developer.mozilla.org/docs/Web/API/XMLHttpRequest">`XMLHttpRequest`</a> (XHR) method to asynchronously retrieve data and update information on the page without a navigation request—was a very popular method of creating dynamic user experiences. It has largely been replaced by the asynchronous [`fetch`](https://developer.mozilla.org/docs/Web/API/Fetch_API) method, but XHR is <a hreflang="en" href="https://caniuse.com/mdn-api_xmlhttprequest">still supported in all major browsers</a>.
+AJAX—or usage of the [`XMLHttpRequest`](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest) (XHR) method to asynchronously retrieve data and update information on the page without a navigation request—was a very popular method of creating dynamic user experiences. It has largely been replaced by the asynchronous [`fetch`](https://developer.mozilla.org/docs/Web/API/Fetch_API) method, but XHR is <a hreflang="en" href="https://caniuse.com/mdn-api_xmlhttprequest">still supported in all major browsers</a>.
 
-XHR has a flag that allows you to make synchronous requests. <a hreflang="en" href="https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/Synchronous_and_Asynchronous_Requests#synchronous_request">Synchronous XHR</a> is harmful for performance because the event loop and main thread is blocked until the request is finished, resulting in the page hanging until the data becomes available. `fetch` is a much more effective and efficient alternative with a simpler API, and has no support for synchronous fetching of data.
+XHR has a flag that allows you to make synchronous requests. [Synchronous XHR](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/Synchronous_and_Asynchronous_Requests#synchronous_request) is harmful for performance because the event loop and main thread is blocked until the request is finished, resulting in the page hanging until the data becomes available. `fetch` is a much more effective and efficient alternative with a simpler API, and has no support for synchronous fetching of data.
 
 {{ figure_markup(
     caption="The percentage of mobile pages using synchronous XHR.",
@@ -775,7 +776,7 @@ Avoid using synchronous XHR, and XHR in general. `fetch` is a much more ergonomi
 
 ### `document.write`
 
-Before the introduction of DOM insertion methods ([`appendChild`](https://developer.mozilla.org/docs/Web/API/Node/appendChild) and others, for example), <a hreflang="en" href="https://developer.mozilla.org/docs/Web/API/Document/write">`document.write`</a> was used to insert content at the position the `document.write` was made in the document.
+Before the introduction of DOM insertion methods ([`appendChild`](https://developer.mozilla.org/docs/Web/API/Node/appendChild) and others, for example), [`document.write`](https://developer.mozilla.org/docs/Web/API/Document/write) was used to insert content at the position the `document.write` was made in the document.
 
 `document.write` is very problematic. For one, it blocks the HTML parser, and is problematic for a number of other reasons <a hreflang="en" href="https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#document.write()">the HTML spec itself warns against its use</a>. On slow connections, blocking document parsing to append nodes in this way creates performance problems that are entirely avoidable.
 

@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: 相互運用性
 description: Compat 2021（GirdとFlexbox）とInterop 2022（フォーム、スクロール、タイポグラフィとエンコーディング、ダイアログ、コンテントメント、サブグリッド、カラースペース、ビューポートユニット、カスケードレイヤー）をカバーする2022 Web Almanacの相互運用性の章。
+hero_alt: Hero image of Web Almanac characters on four web pages with hints of the branding of various browsers.
 authors: [bkardell]
 reviewers: [meyerweb, foolip]
 analysts: [rviscomi, kevinfarrugia]
@@ -360,7 +361,7 @@ Interop 2022では、これらのユニットのさまざまな側面を検証�
 
 #### カスケードレイヤー
 
-カスケード・レイヤーはCSSの興味深い新機能で、CSSにずっと存在していた基本的なアイデアの上に構築されています。作者として、私たちがルールの重要性を表現する主な手段は、「具体性」でした。これは多くのことに有効ですが、デザインシステムやコンポーネントのアイデアを取り入れようとすると、すぐに扱いにくくなります。ブラウザはまた、UAスタイルシートと呼ばれるもので内部的にCSSを使います。しかし、UAスタイルシートでは、ふつうは特異性に関連した争いは起きないことにお気づきかもしれません。それは、CSSが機能する仕組みの中に、ルールの "レイヤー "が組み込まれているからです。カスケード・レイヤーは、作者が同じメカニズムにプラグインし、CSSと特異性の課題をより効果的に管理する方法を提供します。[Miriam Suzanne](https://twitter.com/TerribleMia)は、<a hreflang="en" href="https://css-tricks.com/css-cascade-layers/">より詳しい説明とガイド</a>を書きました。
+カスケード・レイヤーはCSSの興味深い新機能で、CSSにずっと存在していた基本的なアイデアの上に構築されています。作者として、私たちがルールの重要性を表現する主な手段は、「具体性」でした。これは多くのことに有効ですが、デザインシステムやコンポーネントのアイデアを取り入れようとすると、すぐに扱いにくくなります。ブラウザはまた、UAスタイルシートと呼ばれるもので内部的にCSSを使います。しかし、UAスタイルシートでは、ふつうは特異性に関連した争いは起きないことにお気づきかもしれません。それは、CSSが機能する仕組みの中に、ルールの "レイヤー "が組み込まれているからです。カスケード・レイヤーは、作者が同じメカニズムにプラグインし、CSSと特異性の課題をより効果的に管理する方法を提供します。[Miriam Suzanne](https://x.com/TerribleMia)は、<a hreflang="en" href="https://css-tricks.com/css-cascade-layers/">より詳しい説明とガイド</a>を書きました。
 
 {{ figure_markup(
   image="cascade-layers-wpt-dashboard.png",

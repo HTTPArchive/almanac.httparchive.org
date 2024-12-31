@@ -1,7 +1,8 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: WebAssembly
-description: WebAssembly chapter of the 2021 Web Almanac covering Wasm compression, section sizes, most popular instructions, and post-MVP proposals
+description: WebAssembly chapter of the 2021 Web Almanac covering Wasm compression, section sizes, most popular instructions, and post-MVP proposals.
+hero_alt: Hero image of Web Almanac characters performing scientific experiments on various code symbols resulting in 1's and 0's coming out the other end.
 authors: [RReverser]
 reviewers: [jsoverson, carlopi, kripken, rviscomi, tunetheweb]
 analysts: [RReverser]
@@ -102,7 +103,7 @@ Almost a third of WebAssembly usages on both desktop and mobile belong to the <a
 
 The next up is <a hreflang="en" href="https://github.com/mnater/Hyphenopoly">Hyphenopoly</a>—a library for hyphenating text in various languages—that accounts for 13% and 19% of Wasm requests on desktop and mobile correspondingly. It's built with JavaScript and <a hreflang="en" href="https://www.assemblyscript.org/">AssemblyScript</a>.
 
-Other libraries from both top 10 desktop and mobile lists account for up to 5% of WebAssembly requests each. Here's a complete list of libraries shown above, with inferred toolchains and links to corresponding homepages with more information:
+Other libraries from both top 10 desktop and mobile lists account for up to 5% of WebAssembly requests each. Here's a complete list of libraries shown above, with inferred toolchains and links to corresponding home pages with more information:
 
 - <a hreflang="en" href="https://aws.amazon.com/ivs/">Amazon IVS</a> (Emscripten)
 - <a hreflang="en" href="https://mnater.github.io/Hyphenopoly/">Hyphenopoly</a> (AssemblyScript)

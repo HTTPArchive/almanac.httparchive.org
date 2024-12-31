@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: PWA
 description: PWA-hoofdstuk van de Web Almanac van 2020 met betrekking tot service workers (registraties, installeerbaarheid, gebeurtenissen en bestandsgroottes), eigenschappen van Web App Manifesten en Workbox.
+hero_alt: Hero image of Web Almanac characters converting a web page to a mobile web app.
 authors: [hemanth]
 reviewers: [thepassle, jadjoubran, pearlbea, gokulkrishh]
 analysts: [tunetheweb]

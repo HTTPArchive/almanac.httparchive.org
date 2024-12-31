@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: アクセシビリティ
 description: 2020年Web Almanacのアクセシビリティの章では、読みやすさ、メディア、ナビゲーションのしやすさ、支援技術との互換性を取り上げています。
+hero_alt: Hero image of a robot with a blue, human accessibility icon on its front scanning a web page, while Web Almanac characters check some labels.
 authors: [oluoluoxenfree, alextait1]
 reviewers: [aardrian, ericwbailey, foxdavidj]
 analysts: [foxdavidj]
@@ -29,7 +30,7 @@ featured_stat_label_3: クローズドキャプションを提供する動画
 
 <a hreflang="en" href="https://www.w3.org/WAI/standards-guidelines/wcag/">Web Content Accessibility Guidelines</a>、またはWCAGとは、インターネットを利用するすべてのウェブサイトやアプリケーションで満たす必要がある国際的に認められた基準のセットです。これらは法律ではありませんが、<a hreflang="en" href="https://www.w3.org/WAI/policies/">多くの法律がその根拠としてWCAGを指摘しています</a>。
 
-これらのガイドラインは何年にもわたって何度もリリースされており、現在の標準はWCAG 2.1であり、WCAG 2.2は現在<a hreflang="en" href="https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/">作業草案</a>として審査されています。いくつかの地域の法律ではWCAG 2.0が要件とされていますが、[Adrian Roselli](https://twitter.com/aardrian)が彼の記事<a hreflang="en" href="https://adrianroselli.com/2020/09/wcag-2-1-is-the-current-standard-not-wcag-2-0-and-wcag-2-2-is-coming.html">WCAG 2.1 is the Current Standard, Not WCAG 2.0 - and WCAG 2.2 is Coming</a>で取り上げているように、私たちはWCAG 2.1の基準を満たし、WCAG 2.2で来る新しい基準も考慮しなければなりません。
+これらのガイドラインは何年にもわたって何度もリリースされており、現在の標準はWCAG 2.1であり、WCAG 2.2は現在<a hreflang="en" href="https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/">作業草案</a>として審査されています。いくつかの地域の法律ではWCAG 2.0が要件とされていますが、[Adrian Roselli](https://x.com/aardrian)が彼の記事<a hreflang="en" href="https://adrianroselli.com/2020/09/wcag-2-1-is-the-current-standard-not-wcag-2-0-and-wcag-2-2-is-coming.html">WCAG 2.1 is the Current Standard, Not WCAG 2.0 - and WCAG 2.2 is Coming</a>で取り上げているように、私たちはWCAG 2.1の基準を満たし、WCAG 2.2で来る新しい基準も考慮しなければなりません。
 
 2020年に向けて、これまで以上に露出が増えている危険な傾向は、「アクセシビリティ・オーバーレイ」の使用です。これらのウィジェットは一歩進んだアクセシビリティの遵守を約束しているが、多くの場合、新たな障壁を導入し、障害のあるユーザーの体験をかなり困難なものにしている。デジタル関係者は、使い勝手の良いインターフェイスの設計と実装に責任を持つことが重要であり、安易な修正でこのプロセスを台無しにしようとしないことが重要です。詳細については、Lainey Feingoldの記事、<a hreflang="en" href="https://www.lflegal.com/2020/08/quick-fix/">Honor the ADA: Avoid Web Accessibility Quick Fix Overlays</a>を参照してください。
 
@@ -191,7 +192,7 @@ HTMLの`lang`属性を設定すると、ページを簡単に翻訳でき、ス�
 
 > "多くのユーザエージェントがこの仕様で要求されているように、アクセス可能な方法で属性を公開していないため、`title`属性に依存することは現在のところ推奨されていません。"
 
-またツールチップは情報がマウスオーバー時にしか表示されない、情報が支援技術に適切に伝達されない、キーボードのサポートがない、一般的な使い勝手の悪さなど他の多くのアクセシビリティの障壁を導入しています。ツールチップの歴史とその障壁については、[Sarah Higley](https://twitter.com/codingchaos)のブログ記事<a hreflang="en" href="https://sarahmhigley.com/writing/tooltips-in-wcag-21/">Tooltips in the time of WCAG 2.1</a>でよく説明されています。
+またツールチップは情報がマウスオーバー時にしか表示されない、情報が支援技術に適切に伝達されない、キーボードのサポートがない、一般的な使い勝手の悪さなど他の多くのアクセシビリティの障壁を導入しています。ツールチップの歴史とその障壁については、[Sarah Higley](https://x.com/codingchaos)のブログ記事<a hreflang="en" href="https://sarahmhigley.com/writing/tooltips-in-wcag-21/">Tooltips in the time of WCAG 2.1</a>でよく説明されています。
 
 すべての`alt`属性の16.95%が`title`属性を含んでいることがわかった。このうち、デスクトップサイトでは73.56%、モバイルサイトでは72.80%が`alt`属性と`title`属性の両方に一致する値を持っていました。
 
@@ -404,7 +405,7 @@ ARIAの第一のルールに従えば、ネイティブの`<button>`要素の方
 
 #### ダイアログモーダル
 
-ダイアログ・モーダルには、多くの潜在的なアクセシビリティの障壁があります。より詳しい内容については、[Scott O'Hara](https://twitter.com/scottohara)の記事<a hreflang="en" href="https://www.scottohara.me/blog/2019/03/05/open-dialog.html">Having an Open Dialog</a>をお読みになることをお勧めします。
+ダイアログ・モーダルには、多くの潜在的なアクセシビリティの障壁があります。より詳しい内容については、[Scott O'Hara](https://x.com/scottohara)の記事<a hreflang="en" href="https://www.scottohara.me/blog/2019/03/05/open-dialog.html">Having an Open Dialog</a>をお読みになることをお勧めします。
 
 デスクトップページの19.01%、モバイルページの18.21%に少なくとも1つの `role="dialog"`が存在しており、これは2019年の約8%から増加していることを報告します。この増加の一部は、この指標の測定方法が変更されたことによるものと思われます。これは、より多くの開発者がダイアログを構築する際にアクセシビリティを考慮しており、フレームワークや関連パッケージがよりアクセシブルなダイアログパターンを実装している可能性があることを示唆しています。しかし、ダイアログ・モーダルをアクセシブルにするには、`dialog`ロールを使う以上のことが必要です。フォーカス管理、適切なキーボードサポート、スクリーンリーダーの露出など、すべてに対処する必要があります。
 
@@ -536,7 +537,7 @@ ARIA属性は、インターフェイスのアクセシビリティを強化す�
 
 ## 結論
 
-この章は、このAlmanacのユーザー体験のセクションに含まれています。アクセシビリティの提唱者[Billy Gregoryがかつて言っていました](https://twitter.com/thebillygregory/status/552466012713783297?s=20)のように、「UXがすべてのユーザーを考慮していない場合、それはSOME User Experience、またはSUXとして知られるべきではないでしょうか」。あまりにも多くの場合、アクセシビリティの作業は付加的なもの、エッジケース、あるいは技術的な負債に匹敵するものとみなされ、本来あるべきウェブサイトや製品の成功の核心をなすものではありません。
+この章は、このAlmanacのユーザー体験のセクションに含まれています。アクセシビリティの提唱者[Billy Gregoryがかつて言っていました](https://x.com/thebillygregory/status/552466012713783297?s=20)のように、「UXがすべてのユーザーを考慮していない場合、それはSOME User Experience、またはSUXとして知られるべきではないでしょうか」。あまりにも多くの場合、アクセシビリティの作業は付加的なもの、エッジケース、あるいは技術的な負債に匹敵するものとみなされ、本来あるべきウェブサイトや製品の成功の核心をなすものではありません。
 
 アクセシビリティの実装は、開発者だけの責任ではありません。製品チームと組織全体が成功するためには、責任の一部としてアクセシビリティを持たなければなりません。アクセシビリティの作業は、製品サイクルの中で左にシフトする必要があります。つまり、開発前のリサーチ、アイデア出し、設計段階に組み込む必要があります。
 

@@ -18,13 +18,19 @@
 {% block intro_title %}Web Almanac{% endblock %}
 {% block intro_sub_title %}Щорічний звіт HTTP&nbsp;Archive<br>про <b>стан вебу</b>{% endblock %}
 
+{% block announcement_text %}
+<p lang="en">
+  Listen to a recording of our live stream for this year's edition on <a href="https://www.youtube.com/live/cdYR0ZmplIM">YouTube</a>! We'll be running another live stream with more of our authors in January 2025.
+</p>
+{% endblock %}
+
 {% block mission %}
 <p>
 Наша місія - поєднати суху статистику і тренди від HTTP Archive з досвідом веб-спільноти. Web Almanac - це всеосяжний звіт про стан вебу, підтриманий реальними даними та довіреними веб-експертами. Видання {{ year }} року складається з {{ supported_chapters | length }} {{ plural_ru(supported_chapters | length | int, ["розділу", "розділів", "розділів"]) }}, які охоплюють аспекти контенту сторінки, досвіду користування, публікації та розповсюдження.
 </p>
 {% endblock %}
 
-{% block read_last_years_almanac %}Читати Web Almanac за {{ year | int - 1 }} рік{% endblock %}
+{% block read_last_years_almanac %}Читати Web Almanac за {{ previous_year }} рік{% endblock %}
 
 {% block http_archive_link %}HTTP Archive home{% endblock %}
 
@@ -57,7 +63,7 @@
 {% block open_the_index %}Відкрити зміст{% endblock %}
 {% block close_the_index %}Закрити зміст{% endblock %}
 
-{% block and %}і{% endblock %}
+{% block and %} і {% endblock %}
 {% block comma %}, {% endblock %}
 {% block oxford_comma %}{% endblock %}
 
@@ -111,10 +117,14 @@
 {% block repliesAlt %}відповіді{% endblock %}
 {% block mentionsAlt %}згадки{% endblock %}
 
-{% macro onTwitter(twitterHandle) %}@{{twitterHandle}} у Twitter{% endmacro %}
+{% macro onTwitter(twitterHandle) %}@{{twitterHandle}} у Twitter/X{% endmacro %}
+{% macro onMastodon(mastodonHandle) %}{{mastodonHandle}} у Mastodon{% endmacro %}
+{% macro onBluesky(blueskyHandle) %}{{blueskyHandle}} у Bluesky{% endmacro %}
 {% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} на GitHub{% endmacro %}
 {% macro onLinkedIn(authorName) %}{{authorName}} у LinkedIn{% endmacro %}
 {% macro website(authorName) %}вебсайт {{authorName}}{% endmacro %}
+
+{% block citation %}Цитування{% endblock %}
 
 {% macro edition(year) %}Видання {{ year }} року{% endmacro %}
 
@@ -124,14 +134,14 @@
 {% block rss_feed %}RSS Feed{% endblock %}
 
 {% block featured_chapter %}Рекомендований розділ{% endblock %}
-{% block featured_chapter_last_year %}Рекомендований розділ<br>з Web Almanac {{ year|int -1 }}{% endblock %}
+{% block featured_chapter_last_year %}Рекомендований розділ<br>з Web Almanac {{ previous_year }}{% endblock %}
 
 {# Check if read_chapter already defined in child template as macros can't be overridden #}
 {% if not read_chapter %}
 {% macro read_chapter(chapter) %}Читати розділ <span class="featured-chapter-name">{{ chapter }}</span>{% endmacro %}
 {% endif %}
 {% if not read_last_years_chapter %}
-{% macro read_last_years_chapter(chapter) %}Читати розділ <span class="featured-chapter-name">{{ chapter }}</span> {{ year|int-1 }} року{% endmacro %}
+{% macro read_last_years_chapter(chapter) %}Читати розділ <span class="featured-chapter-name">{{ chapter }}</span> {{ previous_year }} року{% endmacro %}
 {% endif %}
 
 {% block contributors_description %}
@@ -173,6 +183,7 @@
   set localizedChapterTitles = {
     "javascript": "JavaScript",
     "css": "CSS",
+    "cookies": "Cookies",
     "markup": "Розмітка",
     "media": "Медіа",
     "third-parties": "Сторонні ресурси",
@@ -212,6 +223,7 @@
   "developers": "Розробники",
   "editors": "Редактори",
   "leads": "Керівники проєкту",
+  "committee": "Оргкомітет",
   "reviewers": "Рецензенти",
   "translators": "Перекладачі"
   }
@@ -225,6 +237,7 @@
   "developers": "Розробник",
   "editors": "Редактор",
   "leads": "Керівник проєкту",
+  "committee": "Оргкомітет",
   "reviewers": "Рецензент",
   "translators": "Перекладач"
   }

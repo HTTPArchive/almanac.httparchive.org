@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Ecommerce
 description: Ecommerce chapter of the 2019 Web Almanac covering ecommerce platforms, payloads, images, third-parties, performance, SEO, and PWAs.
+hero_alt: Hero image of a Web Almanac character at a super market checkout loading items from a shopping basket onto the conveyor belt while another character payes with a credit card.
 authors: [samdutton, alankent]
 reviewers: [voltek62]
 analysts: [rviscomi]
@@ -10,7 +11,7 @@ translators: []
 discuss: 1768
 results: https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/
 samdutton_bio: Sam Dutton has worked with the Google Chrome team as a Developer Advocate since 2011. He has organized and presented at a number of events, created and taught several web development courses, and worked on a range of videos, codelabs and written guidance covering PWA, performance, media, image and 'Next Billion Users' initiatives. He maintains <a hreflang="en" href="https://simpl.info">simpl.info</a>, which provides simplest possible examples of HTML, CSS and JavaScript. Sam grew up in South Australia, went to university in Sydney, and has lived since 1986 in London.
-alankent_bio: Alan Kent is a Developer Advocate at Google focusing on e-commerce and content ecosystems. He blogs at <a hreflang="en" href="https://alankent.me">alankent.me</a> and tweets as <a href="https://twitter.com/akent99">@akent99</a>.
+alankent_bio: Alan Kent is a Developer Advocate at Google focusing on e-commerce and content ecosystems. He blogs at <a hreflang="en" href="https://alankent.me">alankent.me</a> and tweets as <a href="https://x.com/akent99">@akent99</a>.
 featured_quote: Nearly 10% of the home pages in this study were found to be on an ecommerce platform. An "ecommerce platform" is a set of software or services that enables you to create and operate an online store, including Paid-for services such as Shopify, software platforms such as Magento Open Source, and Hosted platforms such as Magento Commerce.
 featured_stat_1: 3.98%
 featured_stat_label_1: Sites using WooCommerce the most popular ecommerce platform
@@ -552,7 +553,7 @@ We need to do more research into why many sites are (apparently) not delivering 
 
 ## Third-party requests and bytes
 
-Many websites—especially online stores—load a significant amount of code and content from third-parties: for analytics, A/B testing, customer behavior tracking, advertising, and social media support. Third-party content can have a <a hreflang="en" href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript">significant impact on performance</a>. [Patrick Hulce](https://twitter.com/patrickhulce)'s <a hreflang="en" href="https://github.com/patrickhulce/third-party-web">third-party-web tool</a> is used to determine third-party requests for this report, and this is discussed more in the [Third Parties](./third-parties) chapter.
+Many websites—especially online stores—load a significant amount of code and content from third-parties: for analytics, A/B testing, customer behavior tracking, advertising, and social media support. Third-party content can have a <a hreflang="en" href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript">significant impact on performance</a>. [Patrick Hulce](https://x.com/patrickhulce)'s <a hreflang="en" href="https://github.com/patrickhulce/third-party-web">third-party-web tool</a> is used to determine third-party requests for this report, and this is discussed more in the [Third Parties](./third-parties) chapter.
 
 {{ figure_markup(
   image="fig17.png",

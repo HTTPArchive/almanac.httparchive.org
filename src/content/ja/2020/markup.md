@@ -2,9 +2,10 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: マークアップ
 description: 2020年版Web Almanacのマークアップの章では、一般的な見解、要素や属性の使い方、トリビアやトレンドなどを紹介しています。
+hero_alt: Hero image of Web Almanac characters as dressed as constructor workers putting together a web page from HTML element blocks.
 authors: [j9t, catalinred, iandevlin]
 j9t_bio: Jens Oliver Meiert はウェブ開発者であり、著者(<a hreflang="en" href="https://leanpub.com/css-optimization-basics"><cite>CSS Optimization Basics</cite></a>, <a hreflang="en" href="https://leanpub.com/web-development-glossary"><cite>The Web Development Glossary</cite></a>)で、<a hreflang="en" href="https://www.jimdo.com/">Jimdo</a>でエンジニアリングマネージャーを務めています。彼は、HTMLとCSSの最適化を専門とするウェブ開発のエキスパートです。Jensは技術標準に貢献し、特に自身のウェブサイト<a hreflang="en" href="https://meiert.com/en/">meiert.com</a>では、仕事や研究について定期的に執筆しています。
-catalinred_bio: Catalin Rosuは、<a hreflang="en" href="https://www.caphyon.com/">Caphyon</a>のフロントエンド開発者で、現在は<a hreflang="en" href="https://www.wattspeed.com/">Wattspeed</a>に携わっています。ウェブ標準への情熱と、優れたUXとUIへの鋭い目を持ち、<a href="https://twitter.com/catalinred">ツイート</a>したり、<a hreflang="en" href="https://catalin.red/">自身のウェブサイト</a>で執筆したりしています。
+catalinred_bio: Catalin Rosuは、<a hreflang="en" href="https://www.caphyon.com/">Caphyon</a>のフロントエンド開発者で、現在は<a hreflang="en" href="https://www.wattspeed.com/">Wattspeed</a>に携わっています。ウェブ標準への情熱と、優れたUXとUIへの鋭い目を持ち、<a href="https://x.com/catalinred">ツイート</a>したり、<a hreflang="en" href="https://catalin.red/">自身のウェブサイト</a>で執筆したりしています。
 iandevlin_bio: Ian Devlinは、優れたセマンティックHTMLやアクセシビリティを提唱するウェブ開発者です。<a hreflang="en" href="https://www.peachpit.com/store/html5-multimedia-develop-and-design-9780321793935">HTML5 マルチメディア</a>についての本を書いたこともありますし、<a hreflang="en" href="https://iandevlin.com/">自身のウェブサイト</a>でウェブやその他のことについて散発的に書いています。現在は、ドイツの<a hreflang="de" href="https://www.real-digital.de/">real.digital</a>でシニアフロントエンドエンジニアとして働いています。
 reviewers: [zcorpan, matuzo, bkardell]
 analysts: [Tiggerito]
@@ -329,7 +330,7 @@ XHTML1.0以降、数がかなり減り、いくつかの標準的なもの、い
 </details>
 ```
 
-しばらく前に、Steve Faulkner氏が、この2つの要素がいかに不適切に使われているかを[指摘](https://twitter.com/stevefaulkner/status/806474286592561152)していました。上の例からわかるように、`details`要素ごとに、`details`の[最初の子](https://developer.mozilla.org/docs/Web/HTML/Element/summary#usage_notes)としてのみ使用可能な`summary`要素が必要になります。
+しばらく前に、Steve Faulkner氏が、この2つの要素がいかに不適切に使われているかを[指摘](https://x.com/stevefaulkner/status/806474286592561152)していました。上の例からわかるように、`details`要素ごとに、`details`の[最初の子](https://developer.mozilla.org/docs/Web/HTML/Element/summary#usage_notes)としてのみ使用可能な`summary`要素が必要になります。
 
 そこで、`details`要素と`summary`要素の数を調べてみたところ、引き続き誤用されていることがわかりました。また、`summary`要素の数は、モバイルとデスクトップの両方で多く、モバイルでは`details`要素1つに対して`summary`要素が1.11、デスクトップでは1.19となっています。
 
@@ -957,7 +958,7 @@ HTML仕様によると、<a hreflang="en" href="https://html.spec.whatwg.org/mul
 
 `data-type`、`data-id`、`data-src`のような属性は、複数の汎用的な用途がありますが、`data-src`はJavaScriptによる遅延画像読み込みで多く使用されています（例：Bootstrap 4）。<a hreflang="en" href="https://getbootstrap.com/">Bootstrap</a>でも、`data-toggle`の存在が説明されており、トグルボタンの状態スタイリングフックとして使用されています。`data-slick-index` は <a hreflang="en" href="https://kenwheeler.github.io/slick/">Slick carousel plugin</a> が、`data-element_type` は <a hreflang="en" href="https://elementor.com/">Elementor's WordPress website builder</a> が持っています。つまり、`data-requiremodule`と`data-requirecontext`は、どちらも<a hreflang="en" href="https://requirejs.org/">RequireJS</a>の一部なのです。
 
-興味深いことに、画像に対するネイティブ遅延ローディングの使用率は、`data-src`の場合と同様です。<a hreflang="en" href="https://docs.google.com/spreadsheets/d/1ram47FshAjzvbQVJbAQPgxZN7PPOPCKIK67VJZCo92c/edit#gid=2109061092">3.86%のページ</a>が`<img>`要素に`loading="lazy"`を使用しています。2月の時点ではこの数字は[0.8%](https://twitter.com/zcorpan/status/1237016679667970050)程度だったので非常に、急速に増加しているようです。これらは、<a hreflang="en" href="https://addyosmani.com/blog/lazy-loading/">クロスブラウザソリューション</a>のために併用されている可能性があります。
+興味深いことに、画像に対するネイティブ遅延ローディングの使用率は、`data-src`の場合と同様です。<a hreflang="en" href="https://docs.google.com/spreadsheets/d/1ram47FshAjzvbQVJbAQPgxZN7PPOPCKIK67VJZCo92c/edit#gid=2109061092">3.86%のページ</a>が`<img>`要素に`loading="lazy"`を使用しています。2月の時点ではこの数字は[0.8%](https://x.com/zcorpan/status/1237016679667970050)程度だったので非常に、急速に増加しているようです。これらは、<a hreflang="en" href="https://addyosmani.com/blog/lazy-loading/">クロスブラウザソリューション</a>のために併用されている可能性があります。
 
 ## その他
 
@@ -1319,7 +1320,7 @@ HTML仕様によると、<a hreflang="en" href="https://html.spec.whatwg.org/mul
   sql_file="summary_pages_by_device_and_doctype.sql"
 ) }}
 
-癖のあるモードに着地するページが減りました。2016年には、その数は<a hreflang="en" href="https://discuss.httparchive.org/t/how-many-and-which-pages-are-in-quirks-mode/777">約7.4%</a>でした。2019年の終わりには、[4.85%](https://twitter.com/zcorpan/status/1205242913908838400)と観測されました。そして今は、約3.97%となっています。この傾向は、本章のレビューに登場した[Simon Pieters](./contributors#zcorpan)の言葉を借りれば、明確で励みになると思われます。
+癖のあるモードに着地するページが減りました。2016年には、その数は<a hreflang="en" href="https://discuss.httparchive.org/t/how-many-and-which-pages-are-in-quirks-mode/777">約7.4%</a>でした。2019年の終わりには、[4.85%](https://x.com/zcorpan/status/1205242913908838400)と観測されました。そして今は、約3.97%となっています。この傾向は、本章のレビューに登場した[Simon Pieters](./contributors#zcorpan)の言葉を借りれば、明確で励みになると思われます。
 
 開発の全体像を把握するための歴史的なデータはありませんが、「無意味な」`div`、`span`、`i`のマークアップは、1990年代から2000年代前半に見られた`table`のマークアップをほぼ[置換](#トップ要素)しています。意味的により適切な代替手段がないのに、常に`div`や`span`要素が使用されていることに疑問を感じるかもしれませんが、これらの要素は`table`マークアップよりも好ましいものです。表形式のデータ以外のすべてに使用されます。
 

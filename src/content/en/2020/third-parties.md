@@ -2,12 +2,13 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Third Parties
 description: Third Parties chapter of the 2020 Web Almanac covering data of what third parties are used, what they are used for, performance impacts and privacy impacts.
+hero_alt: Hero image of Web Almanac characters plugging various things into a web page.
 authors: [simonhearne]
 reviewers: [jzyang, exterkamp]
 analysts: [max-ostapenko, paulcalvano]
 editors: [tunetheweb]
 translators: []
-simonhearne_bio: Simon is a web performance architect. He is passionate about helping deliver a faster and more accessible web. You can find him tweeting <a href="https://twitter.com/simonhearne">@SimonHearne</a> and blogging at <a hreflang="en" href="https://simonhearne.com">simonhearne.com</a>.
+simonhearne_bio: Simon is a web performance architect. He is passionate about helping deliver a faster and more accessible web. You can find him tweeting <a href="https://x.com/simonhearne">@SimonHearne</a> and blogging at <a hreflang="en" href="https://simonhearne.com">simonhearne.com</a>.
 discuss: 2042
 results: https://docs.google.com/spreadsheets/d/1uW4SMkC45b4EbC4JV1xKAUhwGN2K8j0qFy_jSIYnHhI/
 featured_quote: Third-party content is more prevalent than ever, 94% of pages have at least one third-party resource and the median page has 24. In this chapter we review the prevalence of third-party content, the impact on page weight and browser CPU, then suggest methods to reduce the impact of third-party content on page performance.
@@ -82,7 +83,7 @@ A good starting point for this analysis is to confirm the statement that third-p
 {{ figure_markup(
   image="pages-with-thirdparties.png",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSNXusoFJKi8Z1i_yuG_5umUCJOZwBMaZaECq4T8lU5zIQuLR7UHfZOJmXsXzPWQTJFnFa3dcOEPJgy/pubchart?oid=1149547895&format=interactive",
-  caption="Pages with third-party content",
+  caption="Pages with third-party content.",
   description="Third party content prevalence has grown slightly since 2019. In 2019 93.6% of mobile pages had third-party content, in 2020 this was 94.1%. In 2019 93.6% of desktop pages had third-party content, in 2020 this was 93.9%.",
   width=600,
   height=371,
@@ -114,7 +115,7 @@ We can break down third-party requests by their content type. This is the report
 {{ figure_markup(
   image="thirdparty-by-content-types.png",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSNXusoFJKi8Z1i_yuG_5umUCJOZwBMaZaECq4T8lU5zIQuLR7UHfZOJmXsXzPWQTJFnFa3dcOEPJgy/pubchart?oid=258155228&format=interactive",
-  caption="Third-party content by type",
+  caption="Third-party content by type.",
   description="Images and JavaScript account for the majority (60%) of third-party content: 37.1% of third-party content is images, 21.9% is JavaScript, 16.1% is unknown or other, 15.4% is HTML",
   width=600,
   height=371,
@@ -212,7 +213,7 @@ Many third-parties result in redirect responses, i.e. HTTP status codes 3XX. The
 
 {{ figure_markup(
   image="redirects-body-size.png",
-  caption="Distribution of third-party 3XX body size",
+  caption="Distribution of third-party 3XX body size.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSNXusoFJKi8Z1i_yuG_5umUCJOZwBMaZaECq4T8lU5zIQuLR7UHfZOJmXsXzPWQTJFnFa3dcOEPJgy/pubchart?oid=1145900631&format=interactive",
   description="Distribution of redirect body sizes showing 90% are under 420 B, 1% are over 30 kB and 0.1% are over 100 kB.",
   width=600,

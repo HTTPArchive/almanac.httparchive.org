@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: サードパーティ
 description: 2019 Web Almanacのサードパーティの章。サードパーティの使用目的、パフォーマンスへの影響、プライバシーへの影響について説明しています。
+hero_alt: Hero image of Web Almanac characters plugging various things into a web page.
 authors: [patrickhulce]
 reviewers: [zcorpan, foxdavidj, jasti]
 analysts: [patrickhulce]

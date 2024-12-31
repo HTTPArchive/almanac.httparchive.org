@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: SEO
 description: コンテンツ、メタタグ、インデクサビリティ、リンク、速度、構造化データ、国際化、SPA、AMP、セキュリティをカバーする2019 Web AlmanacのSEOの章。
+hero_alt: Hero image of various web pages beneath a search field with Web Almanac characters shine a light on the pages and make various checks.
 authors: [ymschaap, rachellcostello, AVGP]
 reviewers: [clarkeclark, andylimn, AymenLoukil, catalinred, mattludwig]
 analysts: [ymschaap]
@@ -263,7 +264,7 @@ Web全体の読み込み速度の分析に使った指標は [Chrome UX Report](
 
 ### 国際化
 
-[一部のGoogle検索の従業員](https://twitter.com/JohnMu/status/965507331369984002)によれば、国際化はSEOの最も複雑な面の1つとなっているようです。SEOの国際化は、ユーザーが特定の言語のコンテンツをターゲットしていることを確認し、それに合わせて複数の言語や国のバージョンを持つWebサイトから適切なコンテンツを提供することに重点をおいています。
+[一部のGoogle検索の従業員](https://x.com/JohnMu/status/965507331369984002)によれば、国際化はSEOの最も複雑な面の1つとなっているようです。SEOの国際化は、ユーザーが特定の言語のコンテンツをターゲットしていることを確認し、それに合わせて複数の言語や国のバージョンを持つWebサイトから適切なコンテンツを提供することに重点をおいています。
 
 HTML lang属性が英語に設定されているデスクトップ用サイトの38.40%（モバイルでは33.79%）で、別の言語バージョンへの `hreflang`リンクが含まれるサイトはたった7.43%（モバイルで6.79%）しかありませんでした。これから、分析したWebサイトの殆どが言語ターゲティングを必要とするホームページの別バージョンを提供していないことを示しています。しかしそれは、個別のバージョンは存在するが構成が正しく無い場合を除きます。
 

@@ -16,7 +16,12 @@ csp = {
         "cdn.ampproject.org",
     ],
     "img-src": ["'self'", "https:", "data:"],
-    "frame-src": ["'self'", "docs.google.com", "www.youtube.com"],
+    "frame-src": [
+        "'self'",
+        "docs.google.com",
+        "www.youtube.com",
+        "www.googletagmanager.com"
+    ],
     "frame-ancestors": ["*"],
     "object-src": ["'none'"],
     "base-uri": ["'none'"],

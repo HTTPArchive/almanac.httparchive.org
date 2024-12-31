@@ -1,7 +1,8 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Interoperability
-description: Interoperability chapter of the 2022 Web Almanac covering Compat 2021 (Gird and Flexbox) and Interop 2022 (Forms, Scrolling, Typography and encodings, dialog, containment, subgrid, color spaces, viewport units and cascade layers)
+description: Interoperability chapter of the 2022 Web Almanac covering Compat 2021 (Gird and Flexbox) and Interop 2022 (Forms, Scrolling, Typography and encodings, dialog, containment, subgrid, color spaces, viewport units and cascade layers).
+hero_alt: Hero image of Web Almanac characters on four web pages with hints of the branding of various browsers.
 authors: [bkardell]
 reviewers: [meyerweb, foolip]
 analysts: [rviscomi, kevinfarrugia]
@@ -360,7 +361,7 @@ As of the time of this writing, the HTTP Archive hasn't turned up any use of the
 
 #### Cascade Layers
 
-Cascade Layers are an interesting new feature of CSS, built on a fundamental idea that has existed in CSS all along. As authors, our primary means of expressing the importance of rules has been specificity. This works well for a lot of things but it can quickly get unwieldy as we try to incorporate ideas for design systems or components. Browsers also use CSS internally in what is called the UA stylesheet. However, you might note that you don't typically have specificity related battles with the UA stylesheet. That's because there are "layers" of rules built right into how CSS works. Cascade Layers provides a way for authors to plug into that same mechanism and manage their CSS and specificity challenges more effectively. [Miriam Suzanne](https://twitter.com/TerribleMia) wrote <a hreflang="en" href="https://css-tricks.com/css-cascade-layers/">a fuller explanation and guide</a>.
+Cascade Layers are an interesting new feature of CSS, built on a fundamental idea that has existed in CSS all along. As authors, our primary means of expressing the importance of rules has been specificity. This works well for a lot of things but it can quickly get unwieldy as we try to incorporate ideas for design systems or components. Browsers also use CSS internally in what is called the UA stylesheet. However, you might note that you don't typically have specificity related battles with the UA stylesheet. That's because there are "layers" of rules built right into how CSS works. Cascade Layers provides a way for authors to plug into that same mechanism and manage their CSS and specificity challenges more effectively. [Miriam Suzanne](https://x.com/TerribleMia) wrote <a hreflang="en" href="https://css-tricks.com/css-cascade-layers/">a fuller explanation and guide</a>.
 
 {{ figure_markup(
   image="cascade-layers-wpt-dashboard.png",

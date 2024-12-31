@@ -14,7 +14,7 @@
   "@type": "Person",
   "sameAs": [
     "https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='rviscomi') }}",
-    "https://twitter.com/rick_viscomi",
+    "https://x.com/rick_viscomi",
     "https://github.com/rviscomi"
     ],
   "name": "Rick Viscomi"
@@ -70,7 +70,8 @@
         },
         "sameAs": [
           "https://httparchive.org",
-          "https://twitter.com/HTTPArchive",
+          "https://x.com/HTTPArchive",
+          "https://bsky.app/profile/httparchive.org",
           "https://github.com/HTTPArchive"
           ]
       },
@@ -382,6 +383,15 @@
 
 {% block content%}
   <div id="skiptocontent"><a href="#maincontent">{{ self.skip_navigation() }}</a></div>
+  {% block announcement %}
+    {% if self.announcement_text %}
+      <aside class="banner">
+        <div class="container">
+          {{ self.announcement_text() }}
+        </div>
+      </aside>
+    {% endif %}
+  {% endblock %}
   {% block header %}
   <header id="header" class="alt-bg">
     <div class="container">
@@ -444,7 +454,7 @@
                 <li>
                   <ul class="social-media">
                     <li>
-                      <a href="https://twitter.com/HTTPArchive" aria-labelledby="twitter-logo-mobile">
+                      <a href="https://x.com/HTTPArchive" aria-labelledby="twitter-logo-mobile">
                         <svg width="20" height="20" role="img">
                           <title id="twitter-logo-mobile">Twitter</title>
                           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter-logo"></use>
@@ -452,8 +462,16 @@
                       </a>
                     </li>
                     <li>
-                      <a href="https://github.com/HTTPArchive/almanac.httparchive.org" aria-labelledby="github-logo-mobile">
+                      <a href="https://bsky.app/profile/httparchive.org" aria-labelledby="bluesky-logo-mobile">
                         <svg width="20" height="20" role="img">
+                          <title id="bluesky-logo-mobile">Bluesky</title>
+                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bluesky-logo"></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://github.com/HTTPArchive/almanac.httparchive.org" aria-labelledby="github-logo-mobile">
+                        <svg width="22" height="20" role="img">
                           <title id="github-logo-mobile">GitHub</title>
                           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github-logo"></use>
                         </svg>
@@ -543,7 +561,7 @@
           </a>
           <ul class="social-media">
             <li>
-              <a href="https://twitter.com/HTTPArchive" aria-labelledby="twitter-logo-footer-mobile">
+              <a href="https://x.com/HTTPArchive" aria-labelledby="twitter-logo-footer-mobile">
                 <svg width="20" height="20" role="img">
                   <title id="twitter-logo-footer-mobile">Twitter</title>
                   <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter-logo"></use>
@@ -551,8 +569,16 @@
               </a>
             </li>
             <li>
-              <a href="https://github.com/HTTPArchive/almanac.httparchive.org" rel="me" aria-labelledby="github-logo-footer-mobile">
+              <a href="https://bsky.app/profile/httparchive.org" aria-labelledby="bluesky-logo-footer-mobile">
                 <svg width="20" height="20" role="img">
+                  <title id="bluesky-logo-footer-mobile">Bluesky</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bluesky-logo"></use>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/HTTPArchive/almanac.httparchive.org" rel="me" aria-labelledby="github-logo-footer-mobile">
+                <svg width="22" height="20" role="img">
                   <title id="github-logo-footer-mobile">GitHub</title>
                   <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github-logo"></use>
                 </svg>
@@ -576,7 +602,7 @@
         </a>
         <ul class="social-media not-mobile">
           <li>
-            <a href="https://twitter.com/HTTPArchive" aria-labelledby="twitter-logo-footer">
+            <a href="https://x.com/HTTPArchive" aria-labelledby="twitter-logo-footer">
               <svg width="20" height="20" role="img">
                 <title id="twitter-logo-footer">Twitter</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter-logo"></use>
@@ -584,8 +610,16 @@
             </a>
           </li>
           <li>
-            <a href="https://github.com/HTTPArchive/almanac.httparchive.org" rel="me" aria-labelledby="github-logo-footer">
+            <a href="https://bsky.app/profile/httparchive.org" aria-labelledby="bluesky-logo-footer">
               <svg width="20" height="20" role="img">
+                <title id="bluesky-logo-footer">Bluesky</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bluesky-logo"></use>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/HTTPArchive/almanac.httparchive.org" rel="me" aria-labelledby="github-logo-footer">
+              <svg width="22" height="20" role="img">
                 <title id="github-logo-footer">GitHub</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github-logo"></use>
               </svg>
@@ -666,9 +700,7 @@
           </option>
         {% endif %}
       {% endfor %}
-      <option disabled="disabled" aria-hidden="true">
-        ────
-      </option>
+      <hr>
       <option value="https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Translators'-Guide">
         {{ self.help_translate() }}
       </option>
@@ -741,7 +773,7 @@
   link="",
   video="",
   gif="",
-  object="",
+  iframe="",
   caption="",
   alt=caption,
   description="",
@@ -798,10 +830,8 @@
     <a href="{{ link }}"  class="{{ anchor_class }}">
       {%- if chart_url != "" %}
       <img src="{{ image }}" alt="{{ caption|striptags }}" aria-labelledby="{{ anchor }}-caption" aria-describedby="{{ anchor }}-description" width="{{ width }}" height="{{ height }}" data-width="{{ data_width }}" data-height="{{ data_height }}" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="{{ chart_url|safe }}" loading="lazy">
-      {%- elif not ebook and object != "" %}
-      <object type="image/svg+xml" width="{{ width }}" height="{{ height }}" data="{{ image }}" role="img" aria-labelledby="{{ anchor }}-caption" aria-describedby="{{ anchor }}-description">
-        {{ caption }}
-      </object>
+      {%- elif not ebook and iframe != "" %}
+      <iframe class="fig-mobile fig-desktop fig-iframe" seamless frameborder="0" src="{{ image }}" width="{{ width }}" height="{{ height }}" aria-labelledby="{{ anchor }}-caption" aria-describedby="{{ anchor }}-description"></iframe>
       {% else %}
       <img src="{{ image }}" class="{{ classes }}" alt="{{ caption|striptags }}" aria-labelledby="{{ anchor }}-caption" aria-describedby="{{ anchor }}-description" width="{{ width }}" height="{{ height }}" loading="lazy">
       {%- endif %}

@@ -18,13 +18,19 @@
 {% block intro_title %}Web Almanac{% endblock %}
 {% block intro_sub_title %}HTTP Archive relatório annual do <br> <b>estado da web</b>{% endblock %}
 
+{% block announcement_text %}
+<p lang="en">
+  Listen to a recording of our live stream for this year's edition on <a href="https://www.youtube.com/live/cdYR0ZmplIM">YouTube</a>! We'll be running another live stream with more of our authors in January 2025.
+</p>
+{% endblock %}
+
 {% block mission %}
 <p>
 Nossa missão é combinar as estatísticas brutas e as tendências do HTTP Archive com a experiência da comunidade web. O Web Almanac é um relatório abrangente sobre o estado da Web, apoiado por dados reais e especialistas confiáveis da Web. A edição de {{ year }} é composta por {{ supported_chapters | length }} capítulos que abrangem aspectos do conteúdo da página, experiência do usuário, publicação e distribuição.
 </p>
 {% endblock %}
 
-{% block read_last_years_almanac %}Leia o  {{ year | int - 1 }} Web Almanac{% endblock %}
+{% block read_last_years_almanac %}Leia o  {{ previous_year }} Web Almanac{% endblock %}
 
 {% block http_archive_link %}Página inicial HTTP Archive{% endblock %}
 
@@ -57,7 +63,7 @@ Nossa missão é combinar as estatísticas brutas e as tendências do HTTP Archi
 {% block open_the_index %}Abrir índice de conteúdos{% endblock %}
 {% block close_the_index %}Fechar índice de conteúdos{% endblock %}
 
-{% block and %}e{% endblock %}
+{% block and %} e {% endblock %}
 {% block comma %}, {% endblock %}
 {% block oxford_comma %}{% endblock %}
 
@@ -111,10 +117,14 @@ Nossa missão é combinar as estatísticas brutas e as tendências do HTTP Archi
 {% block repliesAlt %}{% endblock %}
 {% block mentionsAlt %}{% endblock %}
 
-{% macro onTwitter(twitterHandle) %}@{{twitterHandle}} no Twitter{% endmacro %}
+{% macro onTwitter(twitterHandle) %}@{{twitterHandle}} no Twitter/X{% endmacro %}
+{% macro onMastodon(mastodonHandle) %}{{mastodonHandle}} on Mastodon{% endmacro %}
+{% macro onBluesky(blueskyHandle) %}{{blueskyHandle}} on Bluesky{% endmacro %}
 {% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} no GitHub{% endmacro %}
 {% macro onLinkedIn(authorName) %}{{authorName}} no LinkedIn{% endmacro %}
 {% macro website(authorName) %}{{authorName}} website{% endmacro %}
+
+{% block citation %}Citaat{% endblock %}
 
 {% macro edition(year) %}{{ year }} Edição{% endmacro %}
 
@@ -124,14 +134,14 @@ Nossa missão é combinar as estatísticas brutas e as tendências do HTTP Archi
 {% block rss_feed %}RSS Feed{% endblock %}
 
 {% block featured_chapter %}Capítulo em Destaque{% endblock %}
-{% block featured_chapter_last_year %}Capítulo em Destaque<br>do Web Almanac {{ year|int -1 }}{% endblock %}
+{% block featured_chapter_last_year %}Capítulo em Destaque<br>do Web Almanac {{ previous_year }}{% endblock %}
 
 {# Check if read_chapter already defined in child template as macros can't be overridden #}
 {% if not read_chapter %}
 {% macro read_chapter(chapter) %}Leia o capítulo: <span class="featured-chapter-name">{{ chapter }}</span>{% endmacro %}
 {% endif %}
 {% if not read_last_years_chapter %}
-{% macro read_last_years_chapter(chapter) %}Leia o {{ year|int -1 }} capítulo: <span class="featured-chapter-name">{{ chapter }}</span>{% endmacro %}
+{% macro read_last_years_chapter(chapter) %}Leia o {{ previous_year }} capítulo: <span class="featured-chapter-name">{{ chapter }}</span>{% endmacro %}
 {% endif %}
 
 {% block contributors_description %}
@@ -173,6 +183,7 @@ Salvo indicação em contrário, as métricas em todos os {{ supported_chapters 
   set localizedChapterTitles = {
     "javascript": "JavaScript",
     "css": "CSS",
+    "cookies": "Cookies",
     "markup": "Marcação",
     "media": "Mídia",
     "third-parties": "Terceiros",
@@ -212,6 +223,7 @@ Salvo indicação em contrário, as métricas em todos os {{ supported_chapters 
   "developers": "Desenvolvedores",
   "editors": "Editores",
   "leads": "Lider",
+  "committee": "Comitê Organizador",
   "reviewers": "Revisores",
   "translators": "Tradutores",
   }
@@ -225,6 +237,7 @@ Salvo indicação em contrário, as métricas em todos os {{ supported_chapters 
   "developers": "Desenvolvedor",
   "editors": "Editor",
   "leads": "Lider",
+  "committee": "Comitê Organizador",
   "reviewers": "Revisor",
   "translators": "Tradutor",
   }

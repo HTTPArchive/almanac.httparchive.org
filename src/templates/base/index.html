@@ -61,7 +61,7 @@
         {{ self.start_exploring() }}
       </a>
       {% else %}
-      <a href="{{ url_for('table_of_contents', year=year|int -1, lang=lang) }}" class="btn">
+      <a href="{{ url_for('table_of_contents', year=previous_year, lang=lang) }}" class="btn">
         {{ self.read_last_years_almanac() }}
       </a>
       {% endif %}
@@ -69,6 +69,10 @@
     <div class="intro-image-wrapper">
       {% if year == "2022" %}
       <svg viewBox="0 0 56 16">
+        <text x="9" y="15">{{ year }}</text>
+      </svg>
+      {% elif year == "2024" %}
+      <svg viewBox="0 0 57 16">
         <text x="9" y="15">{{ year }}</text>
       </svg>
       {% elif year != "2020" %}
@@ -147,7 +151,7 @@
         {{ read_chapter(localizedChapterTitles[featured_chapter]) }}
       </a>
       {% else %}
-      <a href="{{ url_for('chapter', year=year|int -1, chapter=featured_chapter, lang=lang) }}" class="btn">
+      <a href="{{ url_for('chapter', year=previous_year, chapter=featured_chapter, lang=lang) }}" class="btn">
         {{ read_last_years_chapter(localizedChapterTitles[featured_chapter]) }}
       </a>
       {% endif %}
@@ -161,10 +165,10 @@
     {% include "en/%s/featured_chapters.html" % year %}
     {% endif %}
   {% else %}
-    {% if featured_chapters_exists(lang, year|int -1) %}
-    {% include "%s/%s/featured_chapters.html" % (lang, year|int -1) %}
-    {% elif featured_chapters_exists('en', year|int -1) %}
-    {% include "en/%s/featured_chapters.html" % (year|int -1) %}
+    {% if featured_chapters_exists(lang, previous_year) %}
+    {% include "%s/%s/featured_chapters.html" % (lang, previous_year) %}
+    {% elif featured_chapters_exists('en', previous_year) %}
+    {% include "en/%s/featured_chapters.html" % previous_year %}
     {% endif %}
   {% endif %}
   {% endblock %}

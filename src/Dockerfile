@@ -1,10 +1,10 @@
-ARG     PYVER=3.8
-FROM    python:${PYVER} as base
+ARG     PYVER=3.12
+FROM    python:${PYVER} AS base
 
 # Enable unbuffered STDOUT logging
 ENV     PYTHONUNBUFFERED=1
 
-ARG     NODEVER=16.x
+ARG     NODEVER=20.x
 RUN     curl -sL https://deb.nodesource.com/setup_${NODEVER} | bash -
 
 RUN     apt update && apt install -y nodejs && rm -rf /var/lib/apt/lists/* \

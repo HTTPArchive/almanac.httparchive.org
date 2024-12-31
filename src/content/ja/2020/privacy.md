@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: プライバシー
 description: 2020年版Web Almanacのプライバシーの章では、オンライントラッキングCookie、プライバシー強化技術（PET）、プライバシーポリシーについて解説しています。
+hero_alt: Hero image of Web Almanac characters with cameras, phones, and microphones acting like paparazzi while another character pulls back a shower curtain to reveal a web page behind it.
 authors: [ydimova]
 reviewers: [ldevernay]
 analysts: [ydimova, max-ostapenko]
@@ -25,7 +26,7 @@ Web Almanacのこの章では、Web上のプライバシーの現状を概観し
 
 ## オンライントラッキング
 
-第三者のトラッカーは、ユーザーデータを収集してユーザーの行動のプロファイルを構築し、広告目的で収益化します。このことは、ウェブ上のユーザーにプライバシーに関する懸念を抱かせ、その結果、さまざまなトラッキング保護手段が登場することになりました。しかし、このセクションでご紹介するように、オンライントラッキングは今でも広く利用されています。プライバシーに悪影響を及ぼすだけでなく、オンライン・トラッキングは<a hreflang="en" href="https://gerrymcgovern.com/calculating-the-pollution-cost-of-website-analytics-part-1/">環境に多大な影響を与えており</a>、それを避けることは[パフォーマンスの向上](https://twitter.com/fr3ino/status/1000166112615714816)につながります。
+第三者のトラッカーは、ユーザーデータを収集してユーザーの行動のプロファイルを構築し、広告目的で収益化します。このことは、ウェブ上のユーザーにプライバシーに関する懸念を抱かせ、その結果、さまざまなトラッキング保護手段が登場することになりました。しかし、このセクションでご紹介するように、オンライントラッキングは今でも広く利用されています。プライバシーに悪影響を及ぼすだけでなく、オンライン・トラッキングは<a hreflang="en" href="https://gerrymcgovern.com/calculating-the-pollution-cost-of-website-analytics-part-1/">環境に多大な影響を与えており</a>、それを避けることは[パフォーマンスの向上](https://x.com/fr3ino/status/1000166112615714816)につながります。
 
 サードパーティーCookieとフィンガープリンティングを用いた、もっとも一般的なサードパーティートラッキングを検証します。オンライントラッキングはこの2つの手法に限らず、既存の対策を回避するための新しい手法が次々と生まれています。
 

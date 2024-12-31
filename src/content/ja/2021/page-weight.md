@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: ページの重さ
 description: 2021 Web Almanacのページの重さの章では、ページの重さが重要な理由、帯域幅、複雑なページ、時間の経過によるPage Weight、ページ要求、ファイル形式について説明しています。
+hero_alt: Hero image of Web Almanac characters using a set of scales to weigh a web page against variuos boxes labelled with various different kilobytes.
 authors: [logicalphase]
 reviewers: [siakaramalegos, RMHolmlund]
 analysts: [jessthebp]
@@ -80,7 +81,7 @@ Googleは現在、コアウェブ・バイタルを良好に達成できてい�
 
 PNGやJPEGなどの画像フォーマットは、すべてのブラウザーで広くサポートされています。最近の画像フォーマットでは、WebPやAVIFが、より小さなファイルサイズでより高い品質を提供し、人気を博しています。WebPはほとんどのブラウザでサポートされていますが、AVIFは新しく、あまりサポートされていません。`<picture>` タグを使えば、JPEGやPNGのフォールバックを提供しながら、最新の画像フォーマットを使用できます。[メディア](./media)の章では、この点についてより詳しく説明しています。画像のサイズや圧縮を適切に行わないと、パフォーマンスが低下します。
 
-<p class="note">**備考**: 最適化し、さまざまな画像サイズ形式を比較できるオンライン サービスが必要な場合、Google の <a hreflang="en" href="https://squoosh.app/">Squoosh</a> アプリケーションより優れたソースはないと私は考えています。同様に、[Jake Archibald](https://twitter.com/jaffathecake)'s <a hreflang="en" href="https://jakearchibald.github.io/svgomg/">SVGOMG</a> は SVG の最適化にはもってこいです。</p>
+<p class="note">**備考**: 最適化し、さまざまな画像サイズ形式を比較できるオンライン サービスが必要な場合、Google の <a hreflang="en" href="https://squoosh.app/">Squoosh</a> アプリケーションより優れたソースはないと私は考えています。同様に、[Jake Archibald](https://x.com/jaffathecake)'s <a hreflang="en" href="https://jakearchibald.github.io/svgomg/">SVGOMG</a> は SVG の最適化にはもってこいです。</p>
 
 #### JavaScriptの普及について一言
 

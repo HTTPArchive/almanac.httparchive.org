@@ -1,14 +1,15 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Performance
-description: Performance chapter of the 2021 Web Almanac covering Core Web Vitals (Largest Contentful Paint, Cumulative Layout Shift, First Input Delay) as well as First Contentful Paint and Time to First Byte
+description: Performance chapter of the 2021 Web Almanac covering Core Web Vitals (Largest Contentful Paint, Cumulative Layout Shift, First Input Delay) as well as First Contentful Paint and Time to First Byte.
+hero_alt: Hero image of Web Almanac characters images to a web page, while another Web Almanac character times them with a stopwatch.
 authors: [siakaramalegos]
 reviewers: [rviscomi, kevinfarrugia, estelle, ziemek-bucko, jzyang, fili, tunetheweb, samarpanda, edmondwwchan]
 analysts: [siakaramalegos, rviscomi, Nithanaroy]
 editors: [jzyang]
 translators: []
 results: https://docs.google.com/spreadsheets/d/13xhPx6o2Nowz_3b3_5ojiF_mY3Lhs25auBKM6eqGZmo/
-siakaramalegos_bio: Sia Karamalegos is a web developer, international conference speaker, and writer. She is a Google Developer Expert in Web Technologies, a Cloudinary Media Developer Expert, a Stripe Community Expert, and co-organizes the Eleventy Meetup. Check out her writing, speaking, and newsletter on <a hreflang="en" href="https://sia.codes/">sia.codes</a> or find her on <a hreflang="en" href="https://twitter.com/thegreengreek">Twitter</a>.
+siakaramalegos_bio: Sia Karamalegos is a web developer, international conference speaker, and writer. She is a Google Developer Expert in Web Technologies, a Cloudinary Media Developer Expert, a Stripe Community Expert, and co-organizes the Eleventy Meetup. Check out her writing, speaking, and newsletter on <a hreflang="en" href="https://sia.codes/">sia.codes</a> or find her on <a hreflang="en" href="https://x.com/thegreengreek">Twitter</a>.
 featured_quote: The more we can set up smart defaults for performance at the framework level, the better we can make the web while also make developers' jobs easier.
 featured_stat_1: 37%
 featured_stat_label_1: Percent of top 1,000 websites passing Core Web Vitals
@@ -20,7 +21,7 @@ featured_stat_label_3: Longest total blocking time
 
 ## Introduction
 
-Performance is important for user experience. Slow-to-load and slow-to-respond websites frustrate users and cause lost conversions. This is the first year that the <a hreflang="en" href="https://web.dev/vitals/">Core Web Vitals</a> have <a hreflang="en" href="https://developers.google.com/search/blog/2020/11/timing-for-page-experience">contributed to Google search rankings</a>. As such, we've seen greater interest in improving website performance which is great news for users.
+Performance is important for user experience. Slow-to-load and slow-to-respond websites frustrate users and cause lost conversions. This is the first year that the <a hreflang="en" href="https://web.dev/articles/vitals">Core Web Vitals</a> have <a hreflang="en" href="https://developers.google.com/search/blog/2020/11/timing-for-page-experience">contributed to Google search rankings</a>. As such, we've seen greater interest in improving website performance which is great news for users.
 
 *What are our top takeaways from this year's report?* First, we still have a long way to go in providing a good user experience. For example, faster networks and devices have not yet reached the point where we can ignore how much JavaScript we deliver to a site; and, we may never get there. Second, sometimes we misuse new features for performance, resulting in poorer performance. Third, we need better metrics for measuring interactivity, and those are on the way. And fourth, CMS- and framework-level work on performance can significantly impact user experience for the top 10M websites.
 
@@ -41,15 +42,15 @@ We supplement our CrUX RUM data with lab data from WebPageTest in HTTP Archive. 
 
 When comparing performance year-over-year, keep in mind that:
 
-- The <a hreflang="en" href="https://web.dev/cls-web-tooling/">Cumulative Layout Shift (CLS) calculation has changed</a> since 2020.
-- The <a hreflang="en" href="https://web.dev/cls-web-tooling/#additional-updates">First Contentful Paint (FCP) thresholds ("good", "needs improvement", and "poor") have changed</a> since 2020.
+- The <a hreflang="en" href="https://web.dev/articles/cls-web-tooling">Cumulative Layout Shift (CLS) calculation has changed</a> since 2020.
+- The <a hreflang="en" href="https://web.dev/articles/cls-web-tooling#additional-updates">First Contentful Paint (FCP) thresholds ("good", "needs improvement", and "poor") have changed</a> since 2020.
 - Last year's report was based on August 2020 data, and this year's report was based on the July 2021 run.
 
 Read the full [methodology](./methodology) for the Web Almanac to learn more.
 
 ## High-Level Performance: Core Web Vitals
 
-Before we dive into the individual metrics, let's take a look at combined performance for <a hreflang="en" href="https://web.dev/vitals/">Core Web Vitals</a> (CWV). Core Web Vitals (LCP, CLS, FID) are a set of performance metrics focused on user experience. They focus on loading, interactivity, and visual stability.
+Before we dive into the individual metrics, let's take a look at combined performance for <a hreflang="en" href="https://web.dev/articles/vitals">Core Web Vitals</a> (CWV). Core Web Vitals (LCP, CLS, FID) are a set of performance metrics focused on user experience. They focus on loading, interactivity, and visual stability.
 
 Web performance is notorious for an alphabet soup of metrics, but the community is coalescing on this framework.
 
@@ -59,7 +60,7 @@ This section focuses on websites that reached the "good" threshold on all three 
 
 {{ figure_markup(
   image="performance-1-good-cwv-by-device.png",
-  caption="Good Core Web Vitals by Device from 2020 to 2021",
+  caption="Good Core Web Vitals by Device from 2020 to 2021.",
   description="Bar chart showing the percent of origins with good Core Web Vitals in 2020 and 2021. In 2020, 34% of desktop websites were good and 24% of mobile websites. In 2021, 41% of desktop websites were good, and 29% of mobile ones.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=116267418&format=interactive",
   sheets_gid="2140629699",
@@ -79,7 +80,7 @@ The data by connection type in CrUX can be difficult to understand. It is not ba
 
 {{ figure_markup(
   image="performance-2-good-cwv-by-ect.png",
-  caption="Good CWV performance by effective connection type",
+  caption="Good CWV performance by effective connection type.",
   description="Bar chart showing the percent of origins in a connection type with good Core Web Vitals. The offline category had 44% of websites with good CWV, 0% for slow 2G and 2G, 5% for 3G, and 36% for 4G.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=150765595&format=interactive",
   sheets_gid="1361919728",
@@ -93,7 +94,7 @@ The top takeaway is that 3G and lower speeds correlated with significant perform
 
 {{ figure_markup(
   image="performance-3-change-in-ect.png",
-  caption="Change in effective connection type 2020-2021 ",
+  caption="Change in effective connection type 2020-2021 .",
   description="Bar chart showing the percent of total origins within each connection type for 2020 and 2021. The offline category went from 0% to 0% of origins (2020 to 2021), 1% to 0% for slow 2G and 2G, 27% to 25% for 3G, and 72% to 75% for 4G.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=658987455&format=interactive",
   sheets_gid="1361919728",
@@ -109,7 +110,7 @@ Performance by connection type would be easier to understand if we could start t
 
 {{ figure_markup(
   image="performance-4-top-cwv-country.png",
-  caption="Top 30 regions for good CWV performance",
+  caption="Top 30 regions for good CWV performance.",
   description="Bar chart showing the percent of origins within a country with good CWV. Korea, Republic of 56%, Japan 50%, Czechia 48%, Germany 47%, Netherlands 45%, Taiwan, Province of China 45%, Belgium 45%, Canada 43%, United Kingdom of Great Britain and Northern Ireland 42%, Poland 42%, United States of America 40%, Romania 38%, France 38%, Ukraine 37%, Russian Federation 35%, Turkey 34%, Spain 34%, Italy 33%, Australia 28%, Viet Nam 28%, Thailand 27%, Malaysia 27%, Indonesia 20%, Mexico 19%, Chile 19%, Brazil 17%, Philippines 17%, India 16%, Colombia 15%, Argentina 14%",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=162241310&format=interactive",
   width=645,
@@ -129,7 +130,7 @@ This year for the first time, we have ranking data! ​​CrUX determines rankin
 
 {{ figure_markup(
   image="performance-7-cwv-by-rank.png",
-  caption="Good CWV performance by rank",
+  caption="Good CWV performance by rank.",
   description="Bar chart showing percent of websites in each ranking group with good CWV. 37% of the top 1,000 websites had good CWV, 31% of the top 10,000, 29% of the top 100,000, 30% of the top 1,000,000, and 32% of all origins in CrUX.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=444585880&format=interactive",
   sheets_gid="1988323604",
@@ -147,11 +148,11 @@ In this section, we dive into each metric. For those who are less familiar, we'v
 
 ### Time-to-First-Byte (TTFB)
 
-<a hreflang="en" href="https://web.dev/ttfb/">Time-to-first-byte</a> (TTFB) is the time between the browser requesting a page and when it receives the first byte of information from the server. It is the first metric in the chain for website loading. A poor TTFB will result in a chain reaction impacting FCP and LCP. It's why we're talking about it first.
+<a hreflang="en" href="https://web.dev/articles/ttfb">Time-to-first-byte</a> (TTFB) is the time between the browser requesting a page and when it receives the first byte of information from the server. It is the first metric in the chain for website loading. A poor TTFB will result in a chain reaction impacting FCP and LCP. It's why we're talking about it first.
 
 {{ figure_markup(
   image="performance-TTFB-by-device.png",
-  caption="TTFB performance by device",
+  caption="TTFB performance by device.",
   description="Stacked bar chart showing TTFB performance for desktop and mobile devices. For desktop devices, 26% of websites had good (< 0.5s), 55% needs improvement, and 19% poor (>= 1.5s) TTFB performance. For mobile, 15% were good, 59% needs improvement, and 26% poor.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=594735556&format=interactive",
   sheets_gid="2140629699",
@@ -163,7 +164,7 @@ TTFB was faster on desktop than mobile, presumably because of faster network spe
 
 {{ figure_markup(
   image="performance-TTFB-by-ect.png",
-  caption="TTFB performance by connection type",
+  caption="TTFB performance by connection type.",
   description="Stacked bar chart showing TTFB performance for effective connection type. For offline websites, 43% had good, 39% needs improvement, and 18% poor performance. For slow 2G, 1% were good, 2% needs improvement, and 98% poor. For 2G, 0% were good, 2% needs improvement, and 97% poor. For 3G, 1% were good, 27% needs improvement, and 72% poor. For 4G, 19% were good, 58% needs improvement, and 23% poor.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=1059484029&format=interactive",
   sheets_gid="1361919728",
@@ -177,7 +178,7 @@ You may be asking yourself how TTFB can even occur with offline connections. Pre
 
 {{ figure_markup(
   image="performance-TTFB-by-rank.png",
-  caption="TTFB performance by rank",
+  caption="TTFB performance by rank.",
   description="Stacked bar chart showing TTFB performance for each ranking group. For the top 1,000 websites, 32% had good, 63% needs improvement, and 5% poor performance. For the top 10,000, 27% were good, 66% needs improvement, and 7% poor. For the top 100,000, 22% were good, 65% needs improvement, and 13% poor. For the top 1,000,000, 18% were good, 62% needs improvement, and 20% poor. For all, 18% were good, 58% needs improvement, and 24% poor.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=829561432&format=interactive",
   sheets_gid="1988323604",
@@ -191,7 +192,7 @@ One more possibility has to do with CMS adoption. The [CMS Chapter](./cms) shows
 
 {{ figure_markup(
   image="cms-adoption-by-rank.png",
-  caption="CMS adoption by rank",
+  caption="CMS adoption by rank.",
   description="Bar chart showing percent of websites using a CMS for each ranking category. On mobile, the numbers are 7% of websites in the top 1,000, 15% in the top 10,000, 20% in the top 100,000, 29% in the top 1,000,000, and 42% for all sites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=409766380&format=interactive",
   sheets_gid="https://docs.google.com/spreadsheets/d/1gAJh4VcSEU6-6aQxBiTFl-7cbyHukfdhg-Iaq9y5pnc/#gid=158167539",
@@ -205,7 +206,7 @@ Then, if we look at the top 5 CMSs by rank, we see that WordPress has the highes
 
 {{ figure_markup(
   image="top-cmss-by-rank.png",
-  caption="Top 5 CMSs by rank",
+  caption="Top 5 CMSs by rank.",
   description="Bar chart showing the top CMSs percent of share of each ranking category. WordPress had 3.1% of the top 1,000, 8.6% of the top 10,000, 13.2% of the top 100,000, 21.1% of the top 1,000,000, and 33.6% of all sites. The remaining CMSs had less than 3% share of all rankings.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=1745757207&format=interactive",
   sheets_gid="https://docs.google.com/spreadsheets/d/1gAJh4VcSEU6-6aQxBiTFl-7cbyHukfdhg-Iaq9y5pnc/#gid=670045665",
@@ -227,11 +228,11 @@ Only 5% of origins on WordPress experienced good TTFB in July 2021. Considering 
 
 ### First Contentful Paint (FCP)
 
-<a hreflang="en" href="https://web.dev/fcp/">First Contentful Paint (FCP)</a> measures the time from when a load first begins until the browser first renders any contentful part of the page (e.g, text, images, etc.).
+<a hreflang="en" href="https://web.dev/articles/fcp">First Contentful Paint (FCP)</a> measures the time from when a load first begins until the browser first renders any contentful part of the page (e.g, text, images, etc.).
 
 {{ figure_markup(
   image="performance-FCP-by-device.png",
-  caption="FCP performance by device",
+  caption="FCP performance by device.",
   description="Stacked bar chart showing FCP performance for desktop and mobile devices. For desktop devices, 60% of websites had good (< 1.8s), 27% needs improvement, and 13% poor (>= 3.0s) FCP performance. For mobile, 38% were good, 38% needs improvement, and 24% poor.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=1509111466&format=interactive",
   sheets_gid="2140629699",
@@ -245,7 +246,7 @@ FCP was faster on desktop than mobile, likely due to both faster average network
 
 {{ figure_markup(
   image="performance-FCP-by-ect.png",
-  caption="FCP performance by connection type",
+  caption="FCP performance by connection type.",
   description="Stacked bar chart showing FCP performance for effective connection type. For offline websites, 38% had good, 26% needs improvement, and 36% poor performance. For slow 2G, 100% were poor. For 2G, 1% were needs improvement, and 99% poor. For 3G, 4% were good, 21% needs improvement, and 75% poor. For 4G, 46% were good, 35% needs improvement, and 19% poor.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=679577784&format=interactive",
   sheets_gid="1361919728",
@@ -259,7 +260,7 @@ Offline connections were closer in performance to 4G though not quite as good. S
 
 {{ figure_markup(
   image="performance-FCP-by-rank.png",
-  caption="FCP performance by rank",
+  caption="FCP performance by rank.",
   description="Stacked bar chart showing FCP performance for each ranking group. For the top 1,000 websites, 67% had good, 28% needs improvement. For the top 10,000, 62% were good, 31% needs improvement, and 7% poor. For the top 100,000, 54% were good, 35% needs improvement, and 12% poor. For the top 1,000,000, 49% were good, 35% needs improvement, and 16% poor. For all, 45% were good, 35% needs improvement, and 20% poor.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=965739974&format=interactive",
   sheets_gid="1988323604",
@@ -273,11 +274,11 @@ Common culprits for poor FCP are render-blocking resources, server response time
 
 ### Largest Contentful Paint (LCP)
 
-<a hreflang="en" href="https://web.dev/lcp/">Largest Contentful Paint (LCP)</a> measures the time from start load to when the browser renders the largest image or text in the viewport.
+<a hreflang="en" href="https://web.dev/articles/lcp">Largest Contentful Paint (LCP)</a> measures the time from start load to when the browser renders the largest image or text in the viewport.
 
 {{ figure_markup(
   image="performance-LCP-by-device.png",
-  caption="LCP performance by device",
+  caption="LCP performance by device.",
   description="Stacked bar chart showing LCP performance for desktop and mobile devices. For desktop devices, 60% of websites had good (< 2.5s), 27% needs improvement, and 12% poor (>= 4s) LCP performance. For mobile, 45% were good, 35% needs improvement, and 19% poor.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=556816803&format=interactive",
   sheets_gid="2140629699",
@@ -289,7 +290,7 @@ LCP was faster on desktop than mobile. TTFB affects LCP like FCP.  Comparisons b
 
 {{ figure_markup(
   image="performance-LCP-by-ect.png",
-  caption="LCP performance by connection type",
+  caption="LCP performance by connection type.",
   description="Stacked bar chart showing LCP performance for effective connection type. For offline websites, 49% had good, 17% needs improvement, and 34% poor performance. For slow 2G, 1%  were needs improvement and 99% poor. For 2G, 4% were needs improvement and 96% poor. For 3G, 8% were good, 28% needs improvement, and 65% poor. For 4G, 51% were good, 33% needs improvement, and 16% poor.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=583947675&format=interactive",
   sheets_gid="1361919728",
@@ -301,7 +302,7 @@ Offline origins with good LCP more closely matched 4G experiences, though poor L
 
 {{ figure_markup(
   image="performance-LCP-by-rank.png",
-  caption="LCP performance by rank",
+  caption="LCP performance by rank.",
   description="Stacked bar chart showing LCP performance for each ranking group. For the top 1,000 websites, 64% had good, 25% needs improvement, and 11% poor performance. For the top 10,000, 59% were good, 30% needs improvement, and 11% poor. For the top 100,000, 55% were good, 32% needs improvement, and 13% poor. For the top 1,000,000, 53% were good, 33% needs improvement, and 14% poor. For all, 50% were good, 33% needs improvement, and 17% poor.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=1080361066&format=interactive",
   sheets_gid="1988323604",
@@ -317,7 +318,7 @@ Let's take a deeper dive into the LCP element.
 
 {{ figure_markup(
   image="performance-top-15-lcp-nodes.png",
-  caption="Top 15 LCP HTML element nodes",
+  caption="Top 15 LCP HTML element nodes.",
   description="Bar chart showing the percent share of pages for each node type for the LCP element- data listed by desktop then mobile: `IMG` 47% and 42%, `DIV` 28% and 27%, `P` 6% and 10%, `H1` 3% and 5%, `SECTION` 3% and 2%, undetected 2% and 2%, `H2` 2% and 2%, `A` 1% and 2%, `SPAN` 1% and 1%, `HEADER` 1% and 1%, `LI` 1% and 1%, `RS-SBG` 1% and 1%, `H3` 0% and 1%, `TD` 1% and 1%, `VIDEO` 0% and 0%",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=1549429021&format=interactive",
   width=600,
@@ -331,7 +332,7 @@ IMG, DIV, P, and H1 made up 83% of all LCP nodes (on mobile). This doesn't tell 
 
 {{ figure_markup(
   image="performance-lcp-with-image.png",
-  caption="LCP elements with images, by device",
+  caption="LCP elements with images, by device.",
   description="Bar chart showing 79% of desktop pages have an LCP element with an image and 71% of mobile pages",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=992354142&format=interactive",
   sheets_gid="1423728540",
@@ -345,7 +346,7 @@ In both cases, images comprised the majority of LCP elements. This warrants a de
 
 {{ figure_markup(
   image="performance-lcp-antipatterns.png",
-  caption="LCP elements with potential performance anti-patterns",
+  caption="LCP elements with potential performance anti-patterns.",
   description="Bar chart showing 9.3% of pages on mobile use native lazy load on the LCP element, 16.5% probably lazy load, and 0.4% use async decode.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=130632749&format=interactive",
   sheets_gid="1423728540",
@@ -357,13 +358,13 @@ For user experience, we want LCP elements to load as fast as possible. User expe
 
 Not all browsers support native lazy loading. Popular lazy loading polyfills detect a "lazyload" class on an image element. Thus, we can identify more possibly lazy-loaded images by adding images with a "lazyload" class to the total. The percent of sites probably lazy loading their LCP `<img>` element jumps up to 16.5% on mobile.
 
-Lazy loading your LCP element will result in worse performance. *Don't do it!* WordPress was an early adopter of native lazy loading. The early method was a naive solution applying lazy loading to all images, and the results showed a <a hreflang="en" href="https://web.dev/lcp-lazy-loading/">negative performance correlation</a>. They were able to use this data to implement a more nuanced approach for better performance.
+Lazy loading your LCP element will result in worse performance. *Don't do it!* WordPress was an early adopter of native lazy loading. The early method was a naive solution applying lazy loading to all images, and the results showed a <a hreflang="en" href="https://web.dev/articles/lcp-lazy-loading">negative performance correlation</a>. They were able to use this data to implement a more nuanced approach for better performance.
 
-The <a hreflang="en" href="https://developer.mozilla.org/docs/Web/HTML/Element/img#attr-decoding">`decode` attribute</a> for images is relatively new. Setting it to `async` can improve load and scroll performance. Currently, 0.4% of sites used the async decode directive for their LCP image. The negative impact of asynchronous decode on an LCP image is currently unclear. Thus, test your site before and after if you choose to set an LCP image to `decode="async"`.
+The [`decode` attribute](https://developer.mozilla.org/docs/Web/HTML/Element/img#attr-decoding) for images is relatively new. Setting it to `async` can improve load and scroll performance. Currently, 0.4% of sites used the async decode directive for their LCP image. The negative impact of asynchronous decode on an LCP image is currently unclear. Thus, test your site before and after if you choose to set an LCP image to `decode="async"`.
 
 {{ figure_markup(
   content="354",
-  caption="Websites attempted to use native lazy-loading on LCP elements that are not images or iframes",
+  caption="Websites attempted to use native lazy-loading on LCP elements that are not images or iframes.",
   classes="big-number",
   sheets_gid="1423728540",
   sql_file="lcp_element_data.sql"
@@ -376,7 +377,7 @@ Interestingly, 354 origins on desktop attempted to use native lazy-loading on HT
 
 {{ figure_markup(
   image="performance-CLS-by-device.png",
-  caption="CLS performance by device",
+  caption="CLS performance by device.",
   description="Stacked bar chart showing CLS performance for desktop and mobile devices. For desktop devices, 62% of websites had good (< 0.1), 23% needs improvement, and 15% poor (>= 0.25) CLS performance. For mobile, 62% were good, 21% needs improvement, and 17% poor.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=160840238&format=interactive",
   sheets_gid="2140629699",
@@ -384,11 +385,11 @@ Interestingly, 354 origins on desktop attempted to use native lazy-loading on HT
   )
 }}
 
-<a hreflang="en" href="https://web.dev/cls/">Cumulative Layout Shift (CLS)</a> is characterized by how much layout shift a user experiences, not how long it takes to visually see something like FCP and LCP. As such, performance by device was fairly equivalent.
+<a hreflang="en" href="https://web.dev/articles/cls">Cumulative Layout Shift (CLS)</a> is characterized by how much layout shift a user experiences, not how long it takes to visually see something like FCP and LCP. As such, performance by device was fairly equivalent.
 
 {{ figure_markup(
   image="performance-CLS-by-ect.png",
-  caption="CLS performance by connection type",
+  caption="CLS performance by connection type.",
   description="Stacked bar chart showing CLS performance for effective connection type. For offline websites, 87% had good and 4% poor performance. For slow 2G and 2G, 53-52% were good, 15% needs improvement, and 32-33% poor. For 3G, 58% were good, 16% needs improvement, and 26% poor. For 4G, 69% were good, 13% needs improvement, and 18% poor.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=1650043738&format=interactive",
   sheets_gid="1361919728",
@@ -402,7 +403,7 @@ Offline websites had the highest CLS performance of all connection types. For si
 
 {{ figure_markup(
   image="performance-CLS-by-rank.png",
-  caption="CLS performance by rank",
+  caption="CLS performance by rank.",
   description="Stacked bar chart showing CLS performance for each ranking group. For the top 1,000 websites, 53% had good, 25% needs improvement, and 21% poor performance. For the top 10,000, 46% were good, 27% needs improvement, and 27% poor. For the top 100,000, 48% were good, 26% needs improvement, and 26% poor. For the top 1,000,000, 54% were good, 25% needs improvement, and 21% poor. For all, 61% were good, 23% needs improvement, and 16% poor.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=1468770181&format=interactive",
   sheets_gid="1988323604",
@@ -416,11 +417,11 @@ Common culprits for poor CLS include not reserving space for images, text shifts
 
 ### First Input Delay (FID)
 
-<a hreflang="en" href="https://web.dev/fid/">First Input Delay (FID)</a> measures the time from when a user first interacts with a page to the time the browser begins processing event handlers in response to that interaction.
+<a hreflang="en" href="https://web.dev/articles/fid">First Input Delay (FID)</a> measures the time from when a user first interacts with a page to the time the browser begins processing event handlers in response to that interaction.
 
 {{ figure_markup(
   image="performance-FID-by-device.png",
-  caption="FID performance by device",
+  caption="FID performance by device.",
   description="Stacked bar chart showing FID performance for desktop and mobile devices. For desktop devices, 100% of websites had good (< 100ms). For mobile, 90% were good, 10% needs improvement, and 0% poor (>= 300ms).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=230841623&format=interactive",
   sheets_gid="2140629699",
@@ -432,7 +433,7 @@ FID performance was better on desktop than on mobile devices likely due to devic
 
 {{ figure_markup(
   image="performance-FID-by-ect.png",
-  caption="FID performance by connection type",
+  caption="FID performance by connection type.",
   description="Stacked bar chart showing FID performance for effective connection type. For offline websites, 78% had good, 17% needs improvement, and 5% poor performance. For slow 2G and 2G, 81-82% were good, 18% needs improvement, and 0-1% poor. For 3G, 90% were good and 10% needs improvement. For 4G, 93% were good, 7% needs improvement, and 0% poor.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=1135701788&format=interactive",
   sheets_gid="1361919728",
@@ -446,7 +447,7 @@ Unlike the other metrics, FID was worse for offline websites than any other conn
 
 {{ figure_markup(
   image="performance-FID-by-rank.png",
-  caption="FID performance by rank",
+  caption="FID performance by rank.",
   description="Stacked bar chart showing FID performance for each ranking group. For all categories, 93-94% had good, 5-7% needs improvement, and 0% poor performance.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=1539782601&format=interactive",
   sheets_gid="1988323604",
@@ -473,7 +474,7 @@ Unfortunately, TBT is not measured in the Chrome User Experience Report. But, we
 
 {{ figure_markup(
   image="performance-tbt.png",
-  caption="Lighthouse TBT scores",
+  caption="Lighthouse TBT scores.",
   description="Bar chart showing 31% of mobile pages with good TBT (<= 200ms), 11% with needs improvement, and 58% with poor (> 600ms) TBT.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=2135422883&format=interactive",
   sheets_gid="46896816",
@@ -487,7 +488,7 @@ Remember that the data is a single, throttled-CPU Lighthouse run through WebPage
 
 {{ figure_markup(
   content="67 seconds",
-  caption="Longest TBT",
+  caption="Longest TBT.",
   classes="medium-number",
   sheets_gid="1423728540",
   sql_file="lcp_element_data.sql"
@@ -506,4 +507,4 @@ Third, continue to optimize for both FID (field/real-user data) and TBT (lab dat
 
 Finally, we saw that WordPress can impact the performance of the top 10M websites, and maybe more. This is a lesson that every CMS and framework should heed. The more we can set up smart defaults for performance at the framework level, the better we can make the web while also make developers' jobs easier.
 
-What did you find most interesting or surprising? Share your thoughts with us on Twitter ([@HTTPArchive](https://twitter.com/HTTPArchive))!
+What did you find most interesting or surprising? Share your thoughts with us on Twitter ([@HTTPArchive](https://x.com/HTTPArchive))!

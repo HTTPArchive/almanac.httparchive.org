@@ -1,6 +1,6 @@
 # Developing the Web Almanac
 
-The Web Almanac can be developed on macOS, Windows or Linux. It requires Node v16, Python v3.8 and pip to be installed. You can use Docker to avoid manually configuring the development environment.
+The Web Almanac can be developed on macOS, Windows or Linux. It requires Node v20, Python v3.12 and pip to be installed. You can use Docker to avoid manually configuring the development environment.
 It can be quickly deployed as a development container in GitHub Codespaces to develop in cloud:
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/HTTPArchive/almanac.httparchive.org?quickstart=1)
 
@@ -14,7 +14,7 @@ An `.editorconfig` file exists for those using [EditorConfig](https://editorconf
 
 Make sure you run the following commands from within the `src` directory by executing `cd src` first.
 
-Make sure Python (3.8 or above), pip and NodeJS (v16 or above) are installed on your machine.
+Make sure Python (3.12 or above), pip and NodeJS (v20 or above) are installed on your machine.
 
 1. If you don't have virtualenv, install it using pip.
 
@@ -31,7 +31,7 @@ py -m pip install --user virtualenv
 2. Create an isolated Python environment, and install dependencies:
 
 ```
-virtualenv --python python3.8 .venv
+virtualenv --python python3.12 .venv
 source .venv/bin/activate
 ```
 
@@ -49,7 +49,7 @@ npm install
 npm run start
 ```
 
-4. In your web browser, enter the following address: http://127.0.0.1:8080
+4. In your web browser, enter the following address: <http://127.0.0.1:8080>
 
 To stop the server run the following:
 
@@ -164,9 +164,9 @@ Generating for chapter: pwa for year 2021
 
 Authors can delete images and rerun if they want to, to regenerate images.
 
-Images will automatically be compressed by our Calibre GitHub Action when uploaded to GitHub, but you can get a lot more compression (about 44% more!) by running them through https://tinypng.com instead (at which point the Calibre Action will usually not find any further compression gains). It's quite simple to drag them up, and download them, so would encourage analysts/authors to take this step.
+Images will automatically be compressed by our Calibre GitHub Action when uploaded to GitHub, but you can get a lot more compression (about 44% more!) by running them through <https://tinypng.com> instead (at which point the Calibre Action will usually not find any further compression gains). It's quite simple to drag them up, and download them, so would encourage analysts/authors to take this step.
 
-Running them through https://tinypng.com also has the added advantage of the compression being repeatable each time. So if you are not sure which images you have changed, you can delete them all, regenerate them all, run them through TinyPNG, and then a `git diff` will only show differences on the images that have changed. This will not be the case if you use the Calibre GitHub Action and it will look like all images have changed.
+Running them through <https://tinypng.com> also has the added advantage of the compression being repeatable each time. So if you are not sure which images you have changed, you can delete them all, regenerate them all, run them through TinyPNG, and then a `git diff` will only show differences on the images that have changed. This will not be the case if you use the Calibre GitHub Action and it will look like all images have changed.
 
 ## Linting files
 
@@ -214,6 +214,7 @@ All Finished 📜 🎉!
 ```
 
 This states that:
+
 - On line 25, in position 26 you are using lowercase for keywords (e.g. `as` instead of `AS`) so failed rule L010.
 - Similarly on line 26, position 37.
 - And finally on line 34, position 63 you have an unnecessary comma (e.g. `SELECT a,b, FROM table`) and so failed rule L038. Remove the extra comma.
@@ -243,7 +244,6 @@ Are you sure you wish to attempt to fix these? [Y/n]
 ```
 
 If you lint again you should see most of the errors are fixed. Note that not all errors can be autofixed and some will require manual intervention but autofixing is useful for the simple errors. So while it's generally OK to run the `fix` command, do run the `lint` command when all clean to make sure the `fix` command didn't miss any issues.
-
 
 ## Generating Ebooks
 
@@ -318,7 +318,7 @@ prince "http://127.0.0.1:8080/en/2019/ebook?cover&spine=25&pageWidth=148&pageHei
 
 Note, similar to above, this will create one extra page at the begining which will need to be removed with a PDF editor to start with a clean page for printing. Please remove this before checking in versions into git.
 
-With the print-ready eBook and Cover you can send them to a printer. I used https://www.digitalprintingireland.ie/ before and they were excellent and charge about €35 for a full-colour A5 ebook. Most of the settings above are for them, so tweak them based on your own printer's requirements.
+With the print-ready eBook and Cover you can send them to a printer. I used <https://www.digitalprintingireland.ie/> before and they were excellent and charge about €35 for a full-colour A5 ebook. Most of the settings above are for them, so tweak them based on your own printer's requirements.
 
 ## Deploying changes
 
@@ -353,20 +353,21 @@ npm run stage
 You can redeploy the same staged url by passing it in with the `-s` parameter (note you also need the `--` separater to differentiate these script params from npm params):
 
 ```
-npm run stage -- -s 20211111t105151
+npm run stage -- -s privacy-2024
 ```
 
 ### Deploying production changes
 
 To deploy the site to production run the following:
 
-_Make sure you have updated the timestamps and generated the ebooks PDFs first in the main branch, by running the "Predeploy script" GitHub Action_
+*Make sure you have updated the timestamps and generated the ebooks PDFs first in the main branch, by running the "Predeploy script" GitHub Action*
 
 ```
 npm run deploy
 ```
 
 The deploy script will do the following:
+
 - Ask you to confirm you've run the pre-deploy script via GitHub Actions
 - Switch to the production branch
 - Merge changes from main
@@ -376,7 +377,6 @@ The deploy script will do the following:
 - Ask you to complete any local tests and confirm good to deploy
 - Ask for a version number (suggesing the last verision tagged and incrementing the patch)
 - Tag the release (after asking you for the version number to use)
-- Generate a `deploy.zip` file of what has been deployed
 - Deploy to GCP
 - Push changes to `production` branch on GitHub
 - Switch you back to the `main` branch.
@@ -400,7 +400,7 @@ docker image build -t webalmanac .
 docker container run --rm -it -v "$PWD":/app -p 8080:8080 webalmanac
 ```
 
-3. Open http://localhost:8080 in your web browser to access the site. You can kill the server when it is no longer needed using `Ctrl+C`.
+3. Open <http://localhost:8080> in your web browser to access the site. You can kill the server when it is no longer needed using `Ctrl+C`.
 
 4. Make changes in the code using any text editor and run tests (need to build the image again if any Python or Node dependencies are changed):
 
@@ -421,7 +421,7 @@ root@[CID]:/app# exit
 6. To customize the image use `PYVER`, `NODEVER`, and `SKIPGC` build arguments to control which versions of Python and Node are used and whether Google Cloud SDK is installed.
 
 ```
-docker image build --build-arg PYVER=3.8 --build-arg NODEVER=14.x --build-arg SKIPGC=false -t webalmanac:custom .
+docker image build --build-arg PYVER=3.12 --build-arg NODEVER=20.x --build-arg SKIPGC=false -t webalmanac:custom .
 ```
 
 7. If you want to run the GitHub Super-Linter without `npm` being installed you need to call the command directly as given in `package.json`.

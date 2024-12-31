@@ -1,16 +1,8 @@
 function sendWebVitals() {
+
   function getLoafAttribution(attribution) {
-    if (!attribution) {
-      return {};
-    }
-
-    const entry = attribution.eventEntry;
-
-    if (!entry) {
-      return {};
-    }
-
-    if (!PerformanceObserver.supportedEntryTypes.includes('long-animation-frame')) {
+    const loafEntriesLength = attribution?.longAnimationFrameEntries?.length || 0;
+    if (loafEntriesLength === 0) {
       return {};
     }
 
@@ -18,42 +10,37 @@ function sendWebVitals() {
       debug_loaf_script_total_duration: 0
     };
 
-    const longAnimationFrames = performance.getEntriesByType('long-animation-frame');
-    longAnimationFrames.filter(loaf => {
-      // LoAFs that intersect with the event.
-      return entry.startTime < (loaf.startTime + loaf.duration) && loaf.startTime < (entry.startTime + entry.duration);
-    }).forEach(loaf => {
-      const loafEndTime = loaf.startTime + loaf.duration;
-      loaf.scripts.forEach(script => {
-        if (script.duration <= loafAttribution.debug_loaf_script_total_duration) {
-          return;
-        }
-        loafAttribution = {
-          // Stats for the LoAF entry itself.
-          debug_loaf_entry_start_time: loaf.startTime,
-          debug_loaf_entry_end_time: loafEndTime,
-          debug_loaf_entry_work_duration: loaf.renderStart ? loaf.renderStart - loaf.startTime : loaf.duration,
-          debug_loaf_entry_render_duration: loaf.renderStart ? loafEndTime - loaf.renderStart : 0,
-          debug_loaf_entry_total_forced_style_and_layout_duration: loaf.scripts.reduce((sum, script) => sum + script.forcedStyleAndLayoutDuration, 0),
-          debug_loaf_entry_pre_layout_duration: loaf.styleAndLayoutStart ? loaf.styleAndLayoutStart - loaf.renderStart : 0,
-          debug_loaf_entry_style_and_layout_duration: loaf.styleAndLayoutStart ? loafEndTime - loaf.styleAndLayoutStart : 0,
+    // The last LoAF entry is usually the most relevant.
+    const loaf = attribution.longAnimationFrameEntries.at(-1);
+    const loafEndTime = loaf.startTime + loaf.duration;
+    loaf.scripts.forEach(script => {
+      if (script.duration <= loafAttribution.debug_loaf_script_total_duration) {
+        return;
+      }
+      loafAttribution = {
+        // Stats for the LoAF entry itself.
+        debug_loaf_entry_start_time: loaf.startTime,
+        debug_loaf_entry_end_time: loafEndTime,
+        debug_loaf_entry_work_duration: loaf.renderStart ? loaf.renderStart - loaf.startTime : loaf.duration,
+        debug_loaf_entry_render_duration: loaf.renderStart ? loafEndTime - loaf.renderStart : 0,
+        debug_loaf_entry_total_forced_style_and_layout_duration: loaf.scripts.reduce((sum, script) => sum + script.forcedStyleAndLayoutDuration, 0),
+        debug_loaf_entry_pre_layout_duration: loaf.styleAndLayoutStart ? loaf.styleAndLayoutStart - loaf.renderStart : 0,
+        debug_loaf_entry_style_and_layout_duration: loaf.styleAndLayoutStart ? loafEndTime - loaf.styleAndLayoutStart : 0,
 
-          // Stats for the longest script in the LoAF entry.
-          debug_loaf_script_total_duration: script.duration,
-          debug_loaf_script_compile_duration: script.executionStart - script.startTime,
-          debug_loaf_script_exec_duration: script.startTime + script.duration - script.executionStart,
-          debug_loaf_script_source: script.sourceLocation || script.invoker || script.name, // TODO: remove after Chrome 123
-          debug_loaf_script_type: script.invokerType || script.type, // TODO: remove `|| script.type` after Chrome 123
-          // New in Chrome 122/123 (will be null until then)
-          debug_loaf_script_invoker: script.invoker,
-          debug_loaf_script_source_url: script.sourceURL,
-          debug_loaf_script_source_function_name: script.sourceFunctionName,
-          debug_loaf_script_source_char_position: script.sourceCharPosition,
+        // Stats for the longest script in the LoAF entry.
+        debug_loaf_script_total_duration: script.duration,
+        debug_loaf_script_compile_duration: script.executionStart - script.startTime,
+        debug_loaf_script_exec_duration: script.startTime + script.duration - script.executionStart,
+        debug_loaf_script_forced_style_and_layout_duration: script.forcedStyleAndLayoutDuration,
+        debug_loaf_script_type: script.invokerType,
+        debug_loaf_script_invoker: script.invoker,
+        debug_loaf_script_source_url: script.sourceURL,
+        debug_loaf_script_source_function_name: script.sourceFunctionName,
+        debug_loaf_script_source_char_position: script.sourceCharPosition,
 
-          // LoAF metadata.
-          debug_loaf_meta_length: longAnimationFrames.length,
-        }
-      });
+        // LoAF metadata.
+        debug_loaf_meta_length: loafEntriesLength,
+      }
     });
 
     if (!loafAttribution.debug_loaf_script_total_duration) {
@@ -67,7 +54,7 @@ function sendWebVitals() {
     }));
   }
 
-  function sendWebVitalsGAEvents({name, delta, id, attribution, navigationType}) {
+  function sendWebVitalsGAEvents({name, delta, value, id, attribution, navigationType}) {
 
     let overrides = {};
 
@@ -91,18 +78,15 @@ function sendWebVitals() {
       case 'INP':
         const loafAttribution = getLoafAttribution(attribution);
         overrides = {
-          debug_event: attribution.eventType,
-          debug_time: Math.round(attribution.eventTime),
+          debug_event: attribution.interactionType,
+          debug_time: Math.round(attribution.interactionTime),
           debug_load_state: attribution.loadState,
-          debug_target: attribution.eventTarget || '(not set)',
+          debug_target: attribution.interactionTarget || '(not set)',
+          debug_interaction_delay: Math.round(attribution.inputDelay),
+          debug_processing_duration: Math.round(attribution.processingDuration),
+          debug_presentation_delay:  Math.round(attribution.presentationDelay),
           ...loafAttribution
         };
-        if (!attribution.eventEntry) {
-          break;
-        }
-        overrides.debug_interaction_delay = Math.round(attribution.eventEntry.processingStart - attribution.eventEntry.startTime);
-        overrides.debug_processing_time = Math.round(attribution.eventEntry.processingEnd - attribution.eventEntry.processingStart);
-        overrides.debug_presentation_delay =  Math.round(attribution.eventEntry.duration + attribution.eventEntry.startTime - attribution.eventEntry.processingEnd);
         break;
       case 'LCP':
         overrides = {
@@ -152,6 +136,11 @@ function sendWebVitals() {
       event_category: 'Web Vitals',
       value: Math.round(name === 'CLS' ? delta * 1000 : delta),
       event_label: id,
+      // Repeat with new fields to match web-vitals documentation
+      // TODO deprecate above names when no longer required
+      metric_value: Math.round(name === 'CLS' ? value * 1000 : value),
+      metric_delta: Math.round(name === 'CLS' ? delta * 1000 : delta),
+      metric_id: id,
       non_interaction: true,
       effective_type: effectiveType,
       data_saver: dataSaver,

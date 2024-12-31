@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Mobile Web
 description: Mobile Web chapter of the 2021 Web Almanac covering page web vitals, images, technology adoption, accessibility and more.
+hero_alt: Hero image of Web Almanac characters squeezing a web page onto a mobile screen.
 authors: [fellowhuman1101, dwsmart, ashleyish]
 reviewers: [foxdavidj, fili]
 analysts: [rvth, foxdavidj]
@@ -40,7 +41,7 @@ We've used a few different data sources in this chapter:
 * HTTP Archive
 * Lighthouse
 * Wappalyzer
-* <a hreflang="en" href="https://twitter.com/paulcalvano/status/1454866401781587969">Akamai</a>
+* <a hreflang="en" href="https://x.com/paulcalvano/status/1454866401781587969">Akamai</a>
 
 It is worth noting that HTTP Archive and Lighthouse data is limited to the data identified from websites' home pages only, and not site-wide. Learn more in our [Methodology](./methodology) page.
 
@@ -119,7 +120,7 @@ Fortunately, there are a few other sources. <a href="./contributors#paulcalvano"
   )
 }}
 
-Weekend days show a greater proportion of mobile traffic, climbing somewhere around 10% from around 55 - 56% to 65 - 67%. Globally, not every country has Monday to Friday work weeks -  Sunday to Thursday is also <a hreflang="en" href="https://en.wikipedia.org/wiki/Workweek_and_weekend">another common pattern</a>, something that can be seen with a slight ramp up on Fridays, leading to a bigger jump in mobile usage on Saturdays and Sundays.
+Weekend days show a greater proportion of mobile traffic, climbing somewhere around 10% from around 55 - 56% to 65 - 67%. Globally, not every country has Monday to Friday work weeks -  Sunday to Thursday is also [another common pattern](https://wikipedia.org/wiki/Workweek_and_weekend), something that can be seen with a slight ramp up on Fridays, leading to a bigger jump in mobile usage on Saturdays and Sundays.
 
 ##### Not all times are equal
 
@@ -653,7 +654,7 @@ Inputting text and data on mobile devices is a generally more tedious process th
 
 For mobile page loads, 24.8% of pages utilized the `autocomplete` attribute, lower than the 27% of desktop page loads.
 
-As the HTTP Archive data captures only homepages, usage could be much higher in checkout, contact and other places that are likely to require inputs, but it is perhaps disappointing to see lower usage on mobile experiences, where arguably it is the most useful.
+As the HTTP Archive data captures only home pages, usage could be much higher in checkout, contact and other places that are likely to require inputs, but it is perhaps disappointing to see lower usage on mobile experiences, where arguably it is the most useful.
 
 #### Input field conclusions
 
@@ -785,7 +786,7 @@ The recommended way of achieving this is using responsive web design, web.dev ha
 
 ### Core Web Vitals & Page Experience
 
-On July 15th 2021, Google announced that they were rolling out the <a hreflang="en" href="https://developers.google.com/search/blog/2021/04/more-details-page-experience">Page Experience Ranking Update</a>. This comprises a few different signals, including mobile-friendliness, with the major new additions being the <a hreflang="en" href="https://web.dev/vitals/">Core Web Vitals metrics</a>.
+On July 15th 2021, Google announced that they were rolling out the <a hreflang="en" href="https://developers.google.com/search/blog/2021/04/more-details-page-experience">Page Experience Ranking Update</a>. This comprises a few different signals, including mobile-friendliness, with the major new additions being the <a hreflang="en" href="https://web.dev/articles/vitals">Core Web Vitals metrics</a>.
 
 Of particular interest to the mobile web is that the Core Web Vitals part is <a hreflang="en" href="https://support.google.com/webmasters/thread/104436075/core-web-vitals-page-experience-faqs-updated-march-2021">mobile specific</a>, these metrics only play a part in the mobile results so far, although a roll out to desktop is planned in <a hreflang="en" href="https://developers.google.com/search/blog/2021/11/bringing-page-experience-to-desktop">February 2022</a>.
 
@@ -801,7 +802,7 @@ Grabbing the attention of your newly acquired user or keeping the attention of a
 
 #### Largest Contentful Paint
 
-<a hreflang="en" href="https://web.dev/lcp/">Largest Contentful Paint</a> (LCP) is a metric designed to capture this experience (and is one of the Core Web Vitals). It's a measure of when the largest element in the viewport is rendered, it's limited to `<img>`, `<image>` inside an `<svg>`, `<video>` (if the poster is set), a block element with a background image, or a text block.
+<a hreflang="en" href="https://web.dev/articles/lcp">Largest Contentful Paint</a> (LCP) is a metric designed to capture this experience (and is one of the Core Web Vitals). It's a measure of when the largest element in the viewport is rendered, it's limited to `<img>`, `<image>` inside an `<svg>`, `<video>` (if the poster is set), a block element with a background image, or a text block.
 
 An LCP of 2.5 seconds or less is considered a good score.
 
@@ -830,7 +831,7 @@ Too often an approach to responsive web design is to supply an image whose nativ
 #### Appropriately sized images
 
 {{ figure_markup(
-    caption="Percent of mobile page loads that had appropriately sized images",
+    caption="Percent of mobile page loads that had appropriately sized images.",
     content="56.6%",
     classes="big-number",
     sheets_gid="1754517886",
@@ -884,9 +885,9 @@ Looking at the HTTP Archive's <a hreflang="en" href="https://httparchive.org/rep
   )
 }}
 
-A driving factor in this growth can be attributed to the prevalence of WordPress (source: <a hreflang="en" href="https://twitter.com/rick_viscomi/status/1344380340153016321?s=20">Rick Viscomi on Twitter</a>). WordPress added <a hreflang="en" href="https://make.wordpress.org/core/2020/07/14/lazy-loading-images-in-5-5/">support for native lazy-loading in version 5.5</a> which rolled out to the public on August 11th, 2020.
+A driving factor in this growth can be attributed to the prevalence of WordPress (source: <a hreflang="en" href="https://x.com/rick_viscomi/status/1344380340153016321?s=20">Rick Viscomi on Twitter</a>). WordPress added <a hreflang="en" href="https://make.wordpress.org/core/2020/07/14/lazy-loading-images-in-5-5/">support for native lazy-loading in version 5.5</a> which rolled out to the public on August 11th, 2020.
 
-It's also worth mentioning that incorrectly used, <a hreflang="en" href="https://web.dev/lcp-lazy-loading/">Lazy Loading LCP Candidates</a> can harm performance. Making sure to apply `loading="lazy"` only to images below the fold is best practice.
+It's also worth mentioning that incorrectly used, <a hreflang="en" href="https://web.dev/articles/lcp-lazy-loading">Lazy Loading LCP Candidates</a> can harm performance. Making sure to apply `loading="lazy"` only to images below the fold is best practice.
 
 #### Image conclusions
 
@@ -904,7 +905,7 @@ Reading an article, only to have the paragraph you are on jump down the screen a
 
 #### Cumulative Layout Shift
 
-One of the Core Web Vitals, <a hreflang="en" href="https://web.dev/cls/">Cumulative Layout Shift</a> (CLS) is a metric designed to capture the impact of this kind of shifting of elements.
+One of the Core Web Vitals, <a hreflang="en" href="https://web.dev/articles/cls">Cumulative Layout Shift</a> (CLS) is a metric designed to capture the impact of this kind of shifting of elements.
 
 The metric is a calculation of impact fraction multiplied by distance fraction. The impact fraction is how much of the area of the screen is shifted and the distance fraction is how much of the screen it moved by.
 
@@ -960,7 +961,7 @@ Mobile devices are generally much lower powered than desktop and laptops, so the
 
 #### First Input Delay
 
-<a hreflang="en" href="https://web.dev/fid/">First input delay</a> (FID) is the third Core Web Vital metric designed to capture this. It measures the time between the first interaction (a tap or a click on an element) until the browser can start processing that it has happened. It doesn't measure how long the process that tap may have triggered takes.
+<a hreflang="en" href="https://web.dev/articles/fid">First input delay</a> (FID) is the third Core Web Vital metric designed to capture this. It measures the time between the first interaction (a tap or a click on an element) until the browser can start processing that it has happened. It doesn't measure how long the process that tap may have triggered takes.
 
 A good FID score is 100 ms or under, a poor FID score is over 300 ms.
 

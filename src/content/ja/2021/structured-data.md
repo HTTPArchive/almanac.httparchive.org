@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: 構造化データ
 description: schema.org、RDFa、Microdataなどの採用や影響について解説した2021年版Web Almanacの「構造化データ」の章です。
+hero_alt: Hero image of a Web Almanac chracter pulling an identification card out of a wallet and plugging it into a web page.
 authors: [jonoalderson, cyberandy]
 reviewers: [vdwijngaert, philbarker]
 analysts: [GregBrimble]
@@ -602,7 +603,7 @@ JSON-LDの主な利点の1つは、他のフォーマットよりもエンティ
 
 もっとも一般的な `sameAs` プロパティ（_URL_ から_ホスト名_への正規化）の値は、ソーシャル メディア プラットフォーム（例：facebook.com、instagram.com）と公式ソース（例：wikipedia.org、yelp.com）で、前者の合計が使用率の約75% を占めていることがわかります。
 
-このプロパティは、主にウェブサイトや企業のソーシャルメディアアカウントを特定するために使用されていることは明らかです。おそらく、Googleが検索結果のナレッジパネルを管理するための入力として、このデータに歴史的に依存していることが動機となっているのでしょう。この要件が<a hreflang="en" href="https://twitter.com/googlesearchc/status/1143558928439005184">2019年に非推奨</a>となったことを考えると、このデータセットが今後、徐々に変化していくことが予想されるかもしれません。
+このプロパティは、主にウェブサイトや企業のソーシャルメディアアカウントを特定するために使用されていることは明らかです。おそらく、Googleが検索結果のナレッジパネルを管理するための入力として、このデータに歴史的に依存していることが動機となっているのでしょう。この要件が<a hreflang="en" href="https://x.com/googlesearchc/status/1143558928439005184">2019年に非推奨</a>となったことを考えると、このデータセットが今後、徐々に変化していくことが予想されるかもしれません。
 
 ## 結論
 

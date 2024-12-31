@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Security
 description: Security chapter of the 2019 Web Almanac covering Transport Layer Security (TLS(), mixed content, security headers, cookies, and Subresource Integrity.
+hero_alt: Hero image of Web Almanac characters padlocking a web page, while other Web Almanac characters subdue a masked thief who has a set of bolt cutters.
 authors: [ScottHelme, arturjanc]
 reviewers: [tunetheweb, ghedo, paulcalvano]
 analysts: [dotjs, jrharalson]
@@ -9,8 +10,8 @@ editors: [tunetheweb]
 translators: []
 discuss: 1763
 results: https://docs.google.com/spreadsheets/d/1Zq2tQhPE06YZUcbzryRrBE6rdZgHHlqEp2XcgS37cm8/
-ScottHelme_bio: Scott Helme is a Security Researcher and founder of <a hreflang="en" href="https://report-uri.com">report-uri.com</a> and <a hreflang="en" href="https://securityheaders.com">securityheaders.com</a>. You can find him talking about security on Twitter <a href="https://twitter.com/Scott_Helme">@Scott_Helme</a> and blogging at <a hreflang="en" href="https://scotthelme.co.uk">scotthelme.co.uk</a>.
-arturjanc_bio: Artur Janc is an Information Security Engineer at Google, working on designing and adopting web platform security mechanisms across Google and the web at large. He argues with people on the internet as <a href="https://twitter.com/arturjanc">@arturjanc on Twitter</a>.
+ScottHelme_bio: Scott Helme is a Security Researcher and founder of <a hreflang="en" href="https://report-uri.com">report-uri.com</a> and <a hreflang="en" href="https://securityheaders.com">securityheaders.com</a>. You can find him talking about security on Twitter <a href="https://x.com/Scott_Helme">@Scott_Helme</a> and blogging at <a hreflang="en" href="https://scotthelme.co.uk">scotthelme.co.uk</a>.
+arturjanc_bio: Artur Janc is an Information Security Engineer at Google, working on designing and adopting web platform security mechanisms across Google and the web at large. He argues with people on the internet as <a href="https://x.com/arturjanc">@arturjanc on Twitter</a>.
 featured_quote: As the web grows in capabilities and allows access to more and more sensitive data, it becomes increasingly important for developers to adopt web security features to protect their applications. The security features reviewed in this chapter are defenses built into the web platform itself, available to every web author.
 featured_stat_1: 79%
 featured_stat_label_1: Sites using HTTPS
@@ -273,7 +274,7 @@ Many new and recent features for site operators to better protect their users ha
 
 {{ figure_markup(
   image="fig8.png",
-  caption="Usage of Security Headers",
+  caption="Usage of Security Headers.",
   description="A vertical bar graph showing increasing usage of security headers list for both desktop and mobile listing from left to right: cross-origin-resource-policy (0 sites on both), feature policy (approx 8k desktop and mobile) report-to (74k desktop and 83k mobile), nel (74k desktop and 83k mobile), referrer-policy (142k desktop, 156k mobile), content-security-policy (240k desktop, 252k mobile), strict-transport-security (648k desktop, 679k mobile), x-xss-protection (642k desktop, 805k mobile), x-frame-options (743k desktop, 782k mobile) and finally x-content-type-options (770k desktop, 932k mobile).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRCG3clMcnkVPrnZSCWFi3qG-EU00Qr8X3XaRFQPWHEXQmYWMxnS_kfmmyMQsPZe2P6ECjzCjG0dVFg/pubchart?oid=2029255231&format=interactive",
   width=760,
@@ -668,16 +669,16 @@ NEL provides incredibly valuable information and you can read more about the typ
 ### Clear Site Data
 With the increasing ability to store data locally on a user's device, via cookies, caches and local storage to name but a few, site operators needed a reliable way to manage this data. The Clear Site Data header provides a means to ensure that all data of a particular type is removed from the device, though it is <a hreflang="en" href="https://caniuse.com/#feat=mdn-http_headers_clear-site-data">not yet supported in all browsers</a>.
 
-Given the nature of the header, it is unsurprising to see almost no usage reported - just 9 desktop requests and 7 mobile requests. With our data only looking at the homepage of a site, we're unlikely to see the most common use of the header which would be on a logout endpoint. Upon logging out of a site, the site operator would return the Clear Site Data header and the browser would remove all data of the indicated types. This is unlikely to take place on the homepage of a site.
+Given the nature of the header, it is unsurprising to see almost no usage reported - just 9 desktop requests and 7 mobile requests. With our data only looking at the home page of a site, we're unlikely to see the most common use of the header which would be on a logout endpoint. Upon logging out of a site, the site operator would return the Clear Site Data header and the browser would remove all data of the indicated types. This is unlikely to take place on the home page of a site.
 
 ## Cookies
 Cookies have many security protections available and whilst some of those are long standing, and have been available for years, some of them are really quite new have been introduced only in the last couple of years.
 
 ### `Secure`
-The `Secure` flag on a cookie instructs a browser to only send the cookie over a secure (HTTPS) connection and we find only a small % of sites (4.22% on desktop and 3.68% on mobile) issuing a cookie with the Secure flag set on their homepage. This is depressing considering the relative ease with which this feature can be used. Again, the high usage of analytics and advertisement [third-party](./third-parties) requests, which wish to collect data over both HTTP and HTTPS is likely skewing these numbers and it would be interesting research to see the usage on other cookies, like authentication cookies.
+The `Secure` flag on a cookie instructs a browser to only send the cookie over a secure (HTTPS) connection and we find only a small % of sites (4.22% on desktop and 3.68% on mobile) issuing a cookie with the Secure flag set on their home page. This is depressing considering the relative ease with which this feature can be used. Again, the high usage of analytics and advertisement [third-party](./third-parties) requests, which wish to collect data over both HTTP and HTTPS is likely skewing these numbers and it would be interesting research to see the usage on other cookies, like authentication cookies.
 
 ### `HttpOnly`
-The `HttpOnly` flag on a cookie instructs the browser to prevent JavaScript on the page from accessing the cookie. Many cookies are only used by the server so are not needed by the JavaScript on the page, so restricting access to a cookie is a great protection against XSS attacks from stealing the cookie. We find that a much larger % of sites issuing a cookie with this flag on their homepage at 24.24% on desktop and 22.23% on mobile.
+The `HttpOnly` flag on a cookie instructs the browser to prevent JavaScript on the page from accessing the cookie. Many cookies are only used by the server so are not needed by the JavaScript on the page, so restricting access to a cookie is a great protection against XSS attacks from stealing the cookie. We find that a much larger % of sites issuing a cookie with this flag on their home page at 24.24% on desktop and 22.23% on mobile.
 
 ### `SameSite`
 As a much more recent addition to cookie protections, the `SameSite` flag is a powerful protection against [Cross-Site Request Forgery (CSRF)](https://en.wikipedia.org/wiki/Cross-site_request_forgery) attacks (often also known as XSRF).
@@ -786,7 +787,7 @@ As the web grows in capabilities and allows access to more and more sensitive da
 
 In the recent years, the web has made the most progress on the encryption of data in transit. As described in the [TLS section](#transport-layer-security) section, thanks to a range of efforts from browser vendors, developers and Certificate Authorities such as Let's Encrypt, the fraction of the web using HTTPS has steadily grown. At the time of writing, the majority of sites are available over HTTPS, ensuring confidentiality and integrity of traffic. Importantly, over 99% of websites which enable HTTPS use newer, more secure versions of the TLS protocol (TLSv1.2 and TLSv1.3). The use of strong [cipher suites](#cipher-suites) such as AES in GCM mode is also high, accounting for over 95% of requests on all platforms.
 
-At the same time, gaps in TLS configurations are still fairly common. Over 15% of pages suffer from [mixed content](#mixed-content) issues, resulting in browser warnings, and 4% of sites contain active mixed content, blocked by modern browsers for security reasons. Similarly, the benefits of [HTTP Strict Transport Security](#http-strict-transport-security) only extend to a small subset of major sites, and the majority of websites don't enable the most secure HSTS configurations and are not eligible for [HSTS preloading](#hsts-preloading). Despite progress in HTTPS adoption, a large number of cookies is still set without the `Secure` flag; only 4% of homepages that set cookies prevent them from being sent over unencrypted HTTP.
+At the same time, gaps in TLS configurations are still fairly common. Over 15% of pages suffer from [mixed content](#mixed-content) issues, resulting in browser warnings, and 4% of sites contain active mixed content, blocked by modern browsers for security reasons. Similarly, the benefits of [HTTP Strict Transport Security](#http-strict-transport-security) only extend to a small subset of major sites, and the majority of websites don't enable the most secure HSTS configurations and are not eligible for [HSTS preloading](#hsts-preloading). Despite progress in HTTPS adoption, a large number of cookies is still set without the `Secure` flag; only 4% of home pages that set cookies prevent them from being sent over unencrypted HTTP.
 
 ### Defending against common web vulnerabilities
 

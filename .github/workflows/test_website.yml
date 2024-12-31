@@ -28,11 +28,11 @@ jobs:
     - name: Setup Node.js for use with actions
       uses: actions/setup-node@v4
       with:
-        node-version: '16'
-    - name: Set up Python 3.8
-      uses: actions/setup-python@v5.1.0
+        node-version: '20'
+    - name: Set up Python 3.12
+      uses: actions/setup-python@v5.3.0
       with:
-        python-version: '3.8'
+        python-version: '3.12'
     - name: Run the website
       run: ./src/tools/scripts/run_and_test_website.sh
     - name: Remove node modules to avoid linting errors
@@ -53,7 +53,7 @@ jobs:
         COMMIT_SHA: ${{ github.sha }}
       run: ./src/tools/scripts/set_lighthouse_urls.sh
     - name: Audit URLs using Lighthouse
-      uses: treosh/lighthouse-ci-action@11.4.0
+      uses: treosh/lighthouse-ci-action@12.1.0
       id: LHCIAction
       with:
         # For dev, turn off all timing perf audits (too unreliable) and a few others that don't work on dev

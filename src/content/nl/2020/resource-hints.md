@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Bronhints
 description: Het hoofdstuk Bronhints van de Web Almanac 2020 behandelt het gebruik van dns-prefetch, preconnect, preload, prefetch, Priority Hints en native lazy loading.
+hero_alt: Hero image of Web Almanac characters lining up to HTML, JavaScript, and image resources in a line on the way to a web page.
 authors: [Zizzamia]
 reviewers: [jessnicolet, pmeenan, giopunt, mgechev, notwillk]
 analysts: [khempenius]
@@ -72,7 +73,7 @@ De <a hreflang="en" href="https://web.dev/uses-rel-preload/">`preload`</a> hint 
 <link rel="preload" href="main.js" as="script">
 ```
 
-Houd rekening met wat u gaat `preloaden`, omdat het het downloaden van andere bronnen kan vertragen, dus gebruik het alleen voor wat het meest kritisch is om u te helpen de Largest Contentful Paint te verbeteren (<a hreflang="en" href="https://web.dev/lcp/">LCP</a>). Wanneer het in Chrome wordt gebruikt, heeft het ook de neiging om te hoge prioriteit te geven aan `preload`-bronnen en mogelijk preloads eerder te verzenden dan andere kritieke bronnen.
+Houd rekening met wat u gaat `preloaden`, omdat het het downloaden van andere bronnen kan vertragen, dus gebruik het alleen voor wat het meest kritisch is om u te helpen de Largest Contentful Paint te verbeteren (<a hreflang="en" href="https://web.dev/articles/lcp">LCP</a>). Wanneer het in Chrome wordt gebruikt, heeft het ook de neiging om te hoge prioriteit te geven aan `preload`-bronnen en mogelijk preloads eerder te verzenden dan andere kritieke bronnen.
 
 Ten slotte, indien gebruikt in een HTTP-antwoordheader, zullen sommige CDN's ook automatisch een `preload` omzetten in een [HTTP/2-push](#http2-push) die in het cachegeheugen opgeslagen bronnen te veel kan pushen.
 
@@ -174,7 +175,7 @@ Met `preload` kunnen veel verschillende content-types worden voorgeladen en de [
   sql_file="as_attribute_by_year.sql"
 ) }}
 
-Vergeleken met de trend in [2019](../2019/resource-hints#the-as-attribute), hebben we een snelle groei gezien in het gebruik van lettertypen en stijlen met het kenmerk `as`. Dit heeft waarschijnlijk te maken met het feit dat ontwikkelaars de prioriteit van kritieke CSS verhogen en ook `preload`-lettertypen combineren met `display:optional` om de Cumulative Layout Shift (<a hreflang="en" href="https://web.dev/cls/">CLS</a>) te <a hreflang="en" href="https://web.dev/optimize-cls/#web-fonts-causing-foutfoit">verbeteren</a>.
+Vergeleken met de trend in [2019](../2019/resource-hints#the-as-attribute), hebben we een snelle groei gezien in het gebruik van lettertypen en stijlen met het kenmerk `as`. Dit heeft waarschijnlijk te maken met het feit dat ontwikkelaars de prioriteit van kritieke CSS verhogen en ook `preload`-lettertypen combineren met `display:optional` om de Cumulative Layout Shift (<a hreflang="en" href="https://web.dev/articles/cls">CLS</a>) te <a hreflang="en" href="https://web.dev/articles/optimize-cls#web-fonts-causing-foutfoit">verbeteren</a>.
 
 Houd er rekening mee dat het weglaten van het `as`-attribuut of het hebben van een ongeldige waarde het voor de browser moeilijker zal maken om de juiste prioriteit te bepalen en in sommige gevallen, zoals scripts, er zelfs voor kan zorgen dat de bron tweemaal wordt opgehaald.
 

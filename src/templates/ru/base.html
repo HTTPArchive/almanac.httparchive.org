@@ -18,13 +18,19 @@
 {% block intro_title %}Web Almanac{% endblock %}
 {% block intro_sub_title %}Ежегодный отчёт<br>HTTP Archive<br>о <b>состоянии веба</b>{% endblock %}
 
+{% block announcement_text %}
+<p lang="en">
+  Listen to a recording of our live stream for this year's edition on <a href="https://www.youtube.com/live/cdYR0ZmplIM">YouTube</a>! We'll be running another live stream with more of our authors in January 2025.
+</p>
+{% endblock %}
+
 {% block mission %}
 <p>
 Наша задача — объединить необработанные статистические данные и тенденции HTTP Archive вместе со знаниями веб-сообщества. Web Almanac — это всеобъемлющий отчёт о состоянии веба, подкреплённый реальными данными и подтверждённый авторитетными веб-экспертами. Издание {{ year }} года состоит из {{ supported_chapters | length }} {{ plural_ru(supported_chapters | length | int, ["главы", "глав", "глав"]) }}, охватывающих такие аспекты, как содержание страниц, пользовательские ощущения, публикация и распространение информации.
 </p>
 {% endblock %}
 
-{% block read_last_years_almanac %}Прочитать отчёт Web Almanac за {{ year | int - 1 }} год{% endblock %}
+{% block read_last_years_almanac %}Прочитать отчёт Web Almanac за {{ previous_year }} год{% endblock %}
 
 {% block http_archive_link %}Главная страница HTTP Archive{% endblock %}
 
@@ -57,7 +63,7 @@
 {% block open_the_index %}Открыть содержание{% endblock %}
 {% block close_the_index %}Закрыть содержание{% endblock %}
 
-{% block and %}и{% endblock %}
+{% block and %} и {% endblock %}
 {% block comma %}, {% endblock %}
 {% block oxford_comma %}{% endblock %}
 
@@ -111,10 +117,14 @@
 {% block repliesAlt %}ответа{% endblock %}
 {% block mentionsAlt %}упоминания{% endblock %}
 
-{% macro onTwitter(twitterHandle) %}@{{twitterHandle}} на Twitter{% endmacro %}
+{% macro onTwitter(twitterHandle) %}@{{twitterHandle}} на Twitter/X{% endmacro %}
+{% macro onMastodon(mastodonHandle) %}{{mastodonHandle}} on Mastodon{% endmacro %}
+{% macro onBluesky(blueskyHandle) %}{{blueskyHandle}} on Bluesky{% endmacro %}
 {% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} на GitHub{% endmacro %}
 {% macro onLinkedIn(authorName) %}{{authorName}} на LinkedIn{% endmacro %}
 {% macro website(authorName) %}Сайт {{authorName}}{% endmacro %}
+
+{% block citation %}Цитата{% endblock %}
 
 {% macro edition(year) %}Издание от {{ year }} года{% endmacro %}
 
@@ -124,14 +134,14 @@
 {% block rss_feed %}RSS Feed{% endblock %}
 
 {% block featured_chapter %}Лучшая глава{% endblock %}
-{% block featured_chapter_last_year %}Лучшая глава<br>в Web Almanac из {{ year|int -1 }} года{% endblock %}
+{% block featured_chapter_last_year %}Лучшая глава<br>в Web Almanac из {{ previous_year }} года{% endblock %}
 
 {# Check if read_chapter already defined in child template as macros can't be overridden #}
 {% if not read_chapter %}
 {% macro read_chapter(chapter) %}Перейти к главе <span class="featured-chapter-name">{{ chapter }}</span>{% endmacro %}
 {% endif %}
 {% if not read_last_years_chapter %}
-{% macro read_last_years_chapter(chapter) %}Перейти к главе <span class="featured-chapter-name">{{ chapter }}</span> от {{ year|int-1 }} года{% endmacro %}
+{% macro read_last_years_chapter(chapter) %}Перейти к главе <span class="featured-chapter-name">{{ chapter }}</span> от {{ previous_year }} года{% endmacro %}
 {% endif %}
 
 {% block contributors_description %}
@@ -173,6 +183,7 @@
   set localizedChapterTitles = {
     "javascript": "JavaScript",
     "css": "CSS",
+    "cookies": "Cookies",
     "markup": "Разметка",
     "media": "Медиа",
     "third-parties": "Сторонний код",
@@ -212,6 +223,7 @@
   "developers": "Разработчики",
   "editors": "Редакторы",
   "leads": "Руководители проекта",
+  "committee": "Оргкомитет",
   "reviewers": "Проверяющие",
   "translators": "Переводчики",
   }
@@ -225,6 +237,7 @@
   "developers": "Разработчик",
   "editors": "Pедактор",
   "leads": "Руководители проекта",
+  "committee": "Оргкомитет",
   "reviewers": "Проверяющие",
   "translators": "Переводчик",
   }

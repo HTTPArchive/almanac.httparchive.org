@@ -2,6 +2,7 @@
 ##See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Dati strutturati
 description: Capitolo sui dati strutturati del Web Almanac 2022 che copre l'adozione e il cambiamento anno dopo anno dei dati strutturati RDFa, Open Graph, Twitter, JSON-LD, Microdati, Facebook, Dublin Core, Microformat e microformat2.
+hero_alt: Hero image of a Web Almanac chracter pulling an identification card out of a wallet and plugging it into a web page.
 authors: [cyberandy, DataBytzAI]
 reviewers: [SeoRobt, jonoalderson]
 analysts: [rviscomi]
@@ -37,9 +38,9 @@ Quest'anno forniamo il primo confronto anno su anno di metriche come la presenza
 
 ## Avvertenze sui dati
 
-I dati strutturati possono comparire in molte forme e possono essere più visibili in alcuni settori e nei relativi siti web rispetto ad altri settori. Ad esempio, si confronti un sito web di news con un sito web di e-commerce. In generale un sito di news mostra le ultime notizie più importanti nella sua homepage, pertanto i dati strutturati relativi agli articoli di news possono essere presenti nella principale landing page del sito allegati come data-snippet ai titoli di ciascun  articolo. In confronto, i dati strutturati nell'e-commerce riguardano i singoli prodotti e, come tali, sono per lo più presenti all'interno del solo catalogo prodotti del sito web e, per molti versi, risultano "nascosti" durante una ricerca di alto livello nella navigazione principale e nelle parti promozionali del sito web. Questo è l'avvertimento chiave di cui dobbiamo essere consapevoli in relazione a questo capitolo e al report sui dati strutturati.
+I dati strutturati possono comparire in molte forme e possono essere più visibili in alcuni settori e nei relativi siti web rispetto ad altri settori. Ad esempio, si confronti un sito web di news con un sito web di e-commerce. In generale un sito di news mostra le ultime notizie più importanti nella sua home page, pertanto i dati strutturati relativi agli articoli di news possono essere presenti nella principale landing page del sito allegati come data-snippet ai titoli di ciascun  articolo. In confronto, i dati strutturati nell'e-commerce riguardano i singoli prodotti e, come tali, sono per lo più presenti all'interno del solo catalogo prodotti del sito web e, per molti versi, risultano "nascosti" durante una ricerca di alto livello nella navigazione principale e nelle parti promozionali del sito web. Questo è l'avvertimento chiave di cui dobbiamo essere consapevoli in relazione a questo capitolo e al report sui dati strutturati.
 
-Poiché la tecnologia qui utilizzata per raccogliere i dati dai siti web scalfisce appena la superficie dei siti (vale a dire le homepage) e non va in profondità con una scansione completa dei siti, non siamo in grado di ottenere un quadro completo dell'estensione di utilizzo dei dati strutturati nei siti in cui tali dati sono necessariamente contenuti in profondità all'interno del sito. Nei prossimi anni ci auguriamo di prendere un campione di siti in diversi ambiti e di andare in profondità per correggere questo problema e fornire ulteriori informazioni sull'uso specifico dei dati strutturati in ciascun ambito.
+Poiché la tecnologia qui utilizzata per raccogliere i dati dai siti web scalfisce appena la superficie dei siti (vale a dire le home page) e non va in profondità con una scansione completa dei siti, non siamo in grado di ottenere un quadro completo dell'estensione di utilizzo dei dati strutturati nei siti in cui tali dati sono necessariamente contenuti in profondità all'interno del sito. Nei prossimi anni ci auguriamo di prendere un campione di siti in diversi ambiti e di andare in profondità per correggere questo problema e fornire ulteriori informazioni sull'uso specifico dei dati strutturati in ciascun ambito.
 
 Valgono anche quest'anno gli avvertimenti generali dello scorso anno per il capitolo, vale a dire:
 
@@ -531,7 +532,7 @@ Qui sotto possiamo vedere gli stessi dati in modo interattivo con l'attributo so
   )
 }}
 
-Il limite principale di questa analisi è rappresentato dal fatto che possiamo valutare le catene di relazioni a livello di homepage.
+Il limite principale di questa analisi è rappresentato dal fatto che possiamo valutare le catene di relazioni a livello di home page.
 
 #### `SameAs`
 

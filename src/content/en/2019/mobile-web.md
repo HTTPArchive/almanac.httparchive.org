@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Mobile Web
 description: Mobile Web chapter of the 2019 Web Almanac covering page loading, textual content, zooming and scaling, buttons and links, and ease of filling out forms.
+hero_alt: Hero image of Web Almanac characters squeezing a web page onto a mobile screen.
 authors: [foxdavidj]
 reviewers: [AymenLoukil, logicalphase]
 analysts: [ymschaap, rviscomi]
@@ -101,7 +102,7 @@ One of the most beautiful parts of the web is how web pages load progressively b
 
 {{ figure_markup(
   image="example-of-a-site-shifting-content-while-it-loads-lookzook.gif",
-  caption="Example of shifting content distracting a reader. CLS total of 42.59%. Image courtesy of LookZook",
+  caption="Example of shifting content distracting a reader. CLS total of 42.59%. Image courtesy of LookZook.",
   description="A video showing a website progressively load. The text is displayed quickly, but as images continue to load the text gets shifted further and further down the page each time—making it very frustrating to read. The calculated CLS of this example is 42.59%. Image courtesy of LookZook",
   width=360,
   height=640
@@ -110,11 +111,11 @@ One of the most beautiful parts of the web is how web pages load progressively b
 
 Imagine you're reading an article when all of a sudden, an image loads and pushes the text you're reading way down the screen. You now have to hunt for where you were or just give up on reading the article. Or, perhaps even worse, you begin to click a link right before an ad loads in the same spot, resulting in an accidental click on the ad instead.
 
-So, how do we measure how much our sites shift? In the past it was quite difficult (if not impossible), but thanks to the new <a hreflang="en" href="https://web.dev/layout-instability-api">Layout Instability API</a> we can do this in two steps:
+So, how do we measure how much our sites shift? In the past it was quite difficult (if not impossible), but thanks to the new <a hreflang="en" href="https://web.dev/articles/cls">Layout Instability API</a> we can do this in two steps:
 
 1. Via the Layout Instability API, track each shift's impact on the page. This is reported to you as a percentage of how much content in the viewport has shifted.
 
-2. Take all the shifts you've tracked and add them together. The result is what we call the <a hreflang="en" href="https://web.dev/layout-instability-api#a-cumulative-layout-shift-score">Cumulative Layout Shift</a> (CLS) score.
+2. Take all the shifts you've tracked and add them together. The result is what we call the <a hreflang="en" href="https://web.dev/articles/cls#a-cumulative-layout-shift-score">Cumulative Layout Shift</a> (CLS) score.
 
 Because every visitor can have a different CLS, in order to analyze this metric across the web with the [Chrome UX Report](./methodology#chrome-ux-report) (CrUX), we combine every experience into three different buckets:
 
@@ -207,7 +208,7 @@ Designing tap targets appropriately to mitigate this issue can be difficult beca
 
 {{ figure_markup(
   image="example-of-easy-to-hit-tap-targets-lookzook.png",
-  caption="Standards for sizing and spacing tap targets. Image courtesy of LookZook",
+  caption="Standards for sizing and spacing tap targets. Image courtesy of LookZook.",
   description="A diagram displaying two examples of difficult to tap buttons. The first example shows two buttons with no spacing between them; An example below it shows the same buttons but with the recommended amount of spacing between them (8px or 1-2mm). The second example shows a button far too small to tap; An example below it shows the same button enlarged to the recommended size of 40-48px (around 8mm). Image courtesy of LookZook",
   width=800,
   height=430
@@ -255,7 +256,7 @@ When analyzing sites containing an email input, 56.42% use `type="email"`. Simil
       <td class="numeric">833</td>
     </tr>
   </table>
-  <figcaption>{{ figure_link(caption="Most commonly used invalid input types") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Most commonly used invalid input types.") }}</figcaption>
 </figure>
 
 Make sure to educate yourself and others on the large amount of input types available and double-check that you don't have any typos like the most common ones in Figure 12.7 above.

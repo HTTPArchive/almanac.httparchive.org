@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Security
 description: Security chapter of the 2020 Web Almanac covering transport layer security, content security (CSP, feature policy, SRI), web defense mechanisms (tackling XSS, XS-Leaks), and update practices of widely used technologies.
+hero_alt: Hero image of Web Almanac characters padlocking a web page, while other Web Almanac characters subdue a masked thief who has a set of bolt cutters.
 authors: [tomvangoethem, nrllh, tunetheweb]
 reviewers: [cqueern, edmondwwchan]
 analysts: [tomvangoethem, nrllh]
@@ -9,7 +10,7 @@ editors: [tunetheweb]
 translators: []
 tomvangoethem_bio: Tom Van Goethem is a researcher at the <a hreflang="en" href="https://distrinet.cs.kuleuven.be/">DistriNet group</a> of the university of Leuven, Belgium. His research is focused on discovering new side-channel attacks on the web that lead to security or privacy issues and figuring out how to patch the leaks that cause them.
 nrllh_bio: Nurullah Demir is a security researcher and PhD Student at <a hreflang="en" href="https://www.internet-sicherheit.de/en/">Institute for Internet Security</a>. His research focuses on robust web security mechanisms and adversarial machine learning.
-tunetheweb_bio: Barry Pollard is a software developer and author of the Manning book <a hreflang="en" href="https://www.manning.com/books/http2-in-action">HTTP/2 in Action</a>. He thinks the web is amazing but wants to make it even better. You can find him tweeting <a href="https://twitter.com/tunetheweb">@tunetheweb</a> and blogging at <a hreflang="en" href="https://www.tunetheweb.com">www.tunetheweb.com</a>.
+tunetheweb_bio: Barry Pollard is a software developer and author of the Manning book <a hreflang="en" href="https://www.manning.com/books/http2-in-action">HTTP/2 in Action</a>. He thinks the web is amazing but wants to make it even better. You can find him tweeting <a href="https://x.com/tunetheweb">@tunetheweb</a> and blogging at <a hreflang="en" href="https://www.tunetheweb.com">www.tunetheweb.com</a>.
 discuss: 2047
 results: https://docs.google.com/spreadsheets/d/1T7sxPP5BV3uwv-sXhBEZraVk-obd0tDfFrLiD49nZC0/
 featured_quote: In this chapter, we explore the current state-of-practice for security on the Web. By analyzing the adoption of various security features in depth and at a large scale we gather insights on the different ways that website owners apply these security mechanisms, driven by the incentive to protect their users.
@@ -33,7 +34,7 @@ We not only look at the adoption of security mechanisms in individual websites. 
 
 ### Methodology
 
-Throughout this chapter, we report on the adoption of various security mechanisms on the web. This analysis is based on data that was collected for the homepage of 5.6 million desktop domains and 6.3 million mobile domains. Unless explicitly stated otherwise, the reported numbers are based on the mobile dataset, as it is larger in size. Because most websites are included in both datasets, the resulting measurements are mostly similar. Any significant difference between the two datasets are reported throughout the text or is apparent from the figures. For more information on how the data has been collected, please refer to the [Methodology](./methodology).
+Throughout this chapter, we report on the adoption of various security mechanisms on the web. This analysis is based on data that was collected for the home page of 5.6 million desktop domains and 6.3 million mobile domains. Unless explicitly stated otherwise, the reported numbers are based on the mobile dataset, as it is larger in size. Because most websites are included in both datasets, the resulting measurements are mostly similar. Any significant difference between the two datasets are reported throughout the text or is apparent from the figures. For more information on how the data has been collected, please refer to the [Methodology](./methodology).
 
 ## Transport security
 
@@ -64,7 +65,7 @@ One slight concern as we reach the end of this goal, is a noticeable "leveling o
 
 {{ figure_markup(
   image="security-https-usage-by-site.png",
-  caption="HTTPS usage for sites",
+  caption="HTTPS usage for sites.",
   description="Bar chart showing 77.44% of desktop sites are using HTTPS, with the remaining 22.56% using HTTP, while 73.22% of mobile sites are using HTTPS while the remaining 26.78% using HTTP.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTb4PkXuhnxNc-X_Jovx0970pV22ucCnNloa2g8KPMLJmp39E62oSE4XvBlAVSGL0oEEHZa71_bgsV4/pubchart?oid=103775737&format=interactive",
   sheets_gid="1558058913",
@@ -80,7 +81,7 @@ As HTTPS is now well and truly the norm, the challenge moves from having any sor
 
 {{ figure_markup(
   image="security-tls-version-by-site.png",
-  caption="TLS versions usage for sites",
+  caption="TLS versions usage for sites.",
   description="Bar chart showing that on desktop 55.98% of sites use TLSv1.2, while 43.23% use TLSv1.3. On mobile the figures are 53.82% and 45.37% respectively. TLSv1.0, TLSv1.1 barely register though there is a very small amount of QUIC usage (0.62% on desktop and 0.67% on mobile).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTb4PkXuhnxNc-X_Jovx0970pV22ucCnNloa2g8KPMLJmp39E62oSE4XvBlAVSGL0oEEHZa71_bgsV4/pubchart?oid=840326541&format=interactive",
   sheets_gid="1486844039",
@@ -115,7 +116,7 @@ For the widely used Advanced Encryption Standard (AES) key sizes of 128-bit and 
 
 {{ figure_markup(
   image="security-distribution-of-cipher-suites.png",
-  caption="Distribution of cipher suites",
+  caption="Distribution of cipher suites.",
   description="Bar chart showing the cipher suites used by device, with AES_128_GCM is the most common and is used by 78.4% of desktop and mobile sites, AES_256_GCM is used by 19.1% of desktop and 18.5% of mobile sites, AES_256_CBC used by 1.44% of desktop sites and 1.86% of mobile sites, CHACHA20_POLY1305 is used by 0.66% and 0.72% of sites respectively, AES_128_CBC is used by 0.43% and 0.44% respectively, and 3DES_EDE_CBC is used by 0.01% of desktop and approximately 0.0% of mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTb4PkXuhnxNc-X_Jovx0970pV22ucCnNloa2g8KPMLJmp39E62oSE4XvBlAVSGL0oEEHZa71_bgsV4/pubchart?oid=1464905386&format=interactive",
   sheets_gid="1919501829",
@@ -208,7 +209,7 @@ To overcome these issues, browsers have provided additional features that can be
 
 #### HTTP Strict Transport Security
 
-The first one is HTTP Strict Transport Security (HSTS), which can easily be enabled by setting a response header consisting of several attributes. For this header we find an adoption rate of 16.88% within the mobile homepages. Of the sites that enable HSTS, 92.82% do so successfully. That is, the max-age attribute (which determines how many seconds the browser should *only* visit the website over HTTPS) has a value larger than 0.
+The first one is HTTP Strict Transport Security (HSTS), which can easily be enabled by setting a response header consisting of several attributes. For this header we find an adoption rate of 16.88% within the mobile home pages. Of the sites that enable HSTS, 92.82% do so successfully. That is, the max-age attribute (which determines how many seconds the browser should *only* visit the website over HTTPS) has a value larger than 0.
 
 {{ figure_markup(
   image="security-hsts-max-age-values-in-days.png",
@@ -285,7 +286,7 @@ The attribute that was introduced most recently, `SameSite`, can be used to rest
 
 Our results, which are based on 25 million first-site cookies and 115 million third-party cookies, shows that the usage of the cookie attributes strongly depends on the context in which they are set. We can observe a similar usage of the `HttpOnly` attribute on cookies for both first-party (30.5%) and third-party (26.3%) cookies.
 
-However, for the `Secure` and `SameSite` attributes we see a significant difference: The `Secure` attribute is present on 22.2% of all cookies set in a first-party context, whereas 68.0% of all cookies set by third-party requests on mobile homepages have this cookie attribute. Interestingly, for desktop pages, only 35.2% of the third-party cookies had the attribute.
+However, for the `Secure` and `SameSite` attributes we see a significant difference: The `Secure` attribute is present on 22.2% of all cookies set in a first-party context, whereas 68.0% of all cookies set by third-party requests on mobile home pages have this cookie attribute. Interestingly, for desktop pages, only 35.2% of the third-party cookies had the attribute.
 
 For the `SameSite` attribute, we can see a significant increase in their usage, compared to [last year](../2019/security#samesite), when only 0.1% of the cookies had this attribute. As of August 2020, we observed that 13.7% of the first-party cookies and 53.2% of third-party cookies have the `SameSite` attribute set.
 
@@ -620,7 +621,9 @@ In a similar fashion, by defining the `allow` attribute on `<iframe>` elements, 
 <figcaption>{{ figure_link(caption="Prevalence of Feature Policy directives on frames.", sheets_gid="547110187", sql_file="iframe_allow_directives.sql") }}</figcaption>
 </figure>
 
-The `Feature-Policy` response header has a fairly low adoption rate, at 0.60% of the desktop pages and 0.51% of mobile pages. On the other hand, Feature Policy was enabled on 19.5% of the 8 million frames that were found on the desktop pages. On mobile pages, 16.4% of the 9.2 million frames contained the `allow` attribute.
+The `Feature-Policy` response header has a fairly low adoption rate, at 0.60% of the desktop pages and 0.51% of mobile pages. On the other hand, Feature Policy was enabled on 11.8% of the 13.2 million frames that were found on the desktop pages. On mobile pages, 10.8% of the 13.9 million frames contained the `allow` attribute.
+
+<p class="note">An earlier version of this chapter reported incorrect values for the total number of frames and the percentage of frames with the `allow` attribute. More information can be found in this <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/pull/3912">GitHub PR</a>.</p>
 
 Based on the most commonly used directives in the Feature Policy on iframes, we can see that these are mainly used to control how the frames play videos. For instance the most prevalent directive, `encrypted-media`, is used to control access to the Encrypted Media Extensions API, which is required to play DRM-protected videos. The most common iframe origins with a Feature Policy were `https://www.facebook.com` and `https://www.youtube.com` (49.87% and 26.18% of the frames with a Feature Policy on desktop pages respectively).
 
@@ -628,7 +631,9 @@ Based on the most commonly used directives in the Feature Policy on iframes, we 
 
 By including an untrusted third-party in an iframe, that third-party can try to launch a number of attacks on the page. For instance, it could navigate the top page to a phishing page, launch pop-ups with fake anti-virus advertisements, etc.
 
-The `sandbox` attribute on iframes can be used to restrict the capabilities, and therefore also the opportunities for launching attacks, of the embedded web page. As embedding third-party content such as advertisements or videos is common practice on the web, it is not surprising that many of these are restricted via the `sandbox` attribute: 30.29% of the iframes on desktop pages have a `sandbox` attribute while on mobile pages this is 33.16%.
+The `sandbox` attribute on iframes can be used to restrict the capabilities, and therefore also the opportunities for launching attacks, of the embedded web page. As embedding third-party content such as advertisements or videos is common practice on the web, it is not surprising that many of these are restricted via the `sandbox` attribute: 18.3% of the iframes on desktop pages have a `sandbox` attribute while on mobile pages this is 21.9%.
+
+<p class="note">An earlier version of this chapter reported incorrect values for the percentage of frames with the `sandbox` attribute. More information can be found in this <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/pull/3912">GitHub PR</a>.</p>
 
 <figure>
   <table>
@@ -713,7 +718,7 @@ Some other security mechanisms are even required to prevent certain types of att
 
 {{ figure_markup(
   image="security-adoption-of-security-headers.png",
-  caption="Adoption of security headers",
+  caption="Adoption of security headers.",
   description="Bar chart showing the prevalence of different security headers, for mobile pages in 2019 and 2020. `Content-Security-Policy` is 5% on desktop and 11% on mobile, `Expect-CT` is 8% on desktop and 11% on mobile, `Feature-Policy` is 0% on desktop and 1% on mobile, `Referrer-Policy` is 6% on desktop and 7% on mobile, `Report-To` is 2% on desktop and 3% on mobile, `Strict-Transport-Security` is 13% on desktop and 17% on mobile, `X-Content-Type-Options` is 26% on desktop and 30% on mobile, `X-Frame-Options` is 24% on desktop and 27% on mobile, and `X-XSS-Protection` is 16% on desktop and 18% on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTb4PkXuhnxNc-X_Jovx0970pV22ucCnNloa2g8KPMLJmp39E62oSE4XvBlAVSGL0oEEHZa71_bgsV4/pubchart?oid=1262077475&format=interactive",
   sheets_gid="1613840789",
@@ -775,7 +780,7 @@ Another mechanism to make adoption of CSP easier is the use of nonces: in the `s
 
 The two other keywords, `unsafe-inline` and `unsafe-eval`, are present on the majority of the CSPs: 97.28% and 77.79% respectively. This can be seen as a reminder of the difficulty of implementing a policy that can thwart XSS attacks. However, when the `strict-dynamic` keyword is present, this will effectively ignore the `unsafe-inline` and `unsafe-eval` keywords. Because the `strict-dynamic` keyword may not be supported by older browsers, it is considered best practice to include the two other unsafe keywords to maintain compatibility for all browser versions.
 
-Whereas the `strict-dynamic` and `nonce-` keywords can be used to defend against reflected and persistent XSS attacks, a protected page could still be vulnerable to DOM-based XSS vulnerabilities. To defend against this class of attacks, website developers can make use of <a hreflang="en" href="https://web.dev/trusted-types/">Trusted Types</a>, a fairly new mechanism that is currently only supported by Chromium-based browsers. Despite the potential difficulties in adopting Trusted Types (websites would need to create a policy and potentially adjust their JavaScript code to comply with this policy), and given that it is a new mechanism, it is encouraging that 11 homepages already adopted Trusted Types through the `require-trusted-types-for` directive in CSP.
+Whereas the `strict-dynamic` and `nonce-` keywords can be used to defend against reflected and persistent XSS attacks, a protected page could still be vulnerable to DOM-based XSS vulnerabilities. To defend against this class of attacks, website developers can make use of <a hreflang="en" href="https://web.dev/trusted-types/">Trusted Types</a>, a fairly new mechanism that is currently only supported by Chromium-based browsers. Despite the potential difficulties in adopting Trusted Types (websites would need to create a policy and potentially adjust their JavaScript code to comply with this policy), and given that it is a new mechanism, it is encouraging that 11 home pages already adopted Trusted Types through the `require-trusted-types-for` directive in CSP.
 
 ### Defending against XS-Leaks with Cross-Origin Policies
 
@@ -828,7 +833,7 @@ The <a hreflang="en" href="https://www.w3.org/TR/WebCryptoAPI/">Web Cryptography
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Top used cryptography APIs", sheets_gid="1256054098", sql_file="web_cryptography_api.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Top used cryptography APIs.", sheets_gid="1256054098", sql_file="web_cryptography_api.sql") }}</figcaption>
 </figure>
 
 Our results show that the  `Cypto.getRandomValues` function, which allows for generating a random number (in a secure, cryptographic manner) is by far the most widely used one (desktop: 70% and mobile: 68%). We believe Google Analytic's use of this function has a major effect on the usage measured. In general, we see that mobile websites perform slightly fewer cryptographic operations, although mobile browsers [fully support](https://developer.mozilla.org/docs/Web/API/Web_Crypto_API#Browser_compatibility) this API.
@@ -871,7 +876,7 @@ According to <a hreflang="en" href="https://www.imperva.com/blog/bad-bot-report-
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Usage of bot protection services by provider", sheets_gid="1787091453", sql_file="bot_detection.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Usage of bot protection services by provider.", sheets_gid="1787091453", sql_file="bot_detection.sql") }}</figcaption>
 </figure>
 
 The figure above shows the use of bot protection and also the market share based on our dataset. We see that nearly 10% of desktop pages and 9% of mobile pages use such services.
@@ -882,18 +887,18 @@ In the previous sections we explored the adoption rate of various browser securi
 
 ### Country of a website's visitors
 
-There can be many different factors that affect security at the level of a country: government-motivated programs of cybersecurity may increase awareness of good security practices, a focus on security in higher education could lead to more well-informed developers, or even certain regulations might require companies and organizations to adhere to best security practices. To evaluate the differences per country, we analyze the different countries for which at least 100,000 homepages were available in our dataset, which is based on the Chrome User Experience Report (CrUX). These pages consist of those that were visited most frequently by the users in that country; as such, these also contain widely popular international websites.
+There can be many different factors that affect security at the level of a country: government-motivated programs of cybersecurity may increase awareness of good security practices, a focus on security in higher education could lead to more well-informed developers, or even certain regulations might require companies and organizations to adhere to best security practices. To evaluate the differences per country, we analyze the different countries for which at least 100,000 home pages were available in our dataset, which is based on the Chrome User Experience Report (CrUX). These pages consist of those that were visited most frequently by the users in that country; as such, these also contain widely popular international websites.
 
 {{ figure_markup(
   image="security-adoption-of-https-per-country.png",
-  caption="Adoption of HTTPS per country",
+  caption="Adoption of HTTPS per country.",
   description="Bar chart showing percentage of sites with HTTPS enabled, for sites related to different countries. Switzerland, New Zealand, Ireland, Nigeria and Australia are the top five in order at 95% to 94%. At the other end Thailand, Iran, South Korea, Taiwan, Japan are at 76% to 72%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTb4PkXuhnxNc-X_Jovx0970pV22ucCnNloa2g8KPMLJmp39E62oSE4XvBlAVSGL0oEEHZa71_bgsV4/pubchart?oid=286219881&format=interactive",
   sheets_gid="446153579",
   sql_file="feature_adoption_by_country.sql"
 ) }}
 
-Looking at the percentage of homepages that were visited over HTTPS, we can already see a significant difference: for the top 5 best-performing countries 93-95% of the homepages were served over HTTPS. For the bottom 5, we see a much smaller adoption in HTTPS, ranging from 71% to 76%. When we look at other security mechanisms, we can see even more apparent differences between top-performing countries and countries with a low adoption rate. The top 5 countries according to the adoption rate for CSP score between 14% and 16%, whereas the bottom 5 score between 2.5% and 5%. Interestingly, the countries that perform well/poorly for one security mechanism, also do so for other mechanisms. For instance, New Zealand, Ireland and Australia consistently rank among the top 5, whereas Japan scores worst for almost every security mechanism.
+Looking at the percentage of home pages that were visited over HTTPS, we can already see a significant difference: for the top 5 best-performing countries 93-95% of the home pages were served over HTTPS. For the bottom 5, we see a much smaller adoption in HTTPS, ranging from 71% to 76%. When we look at other security mechanisms, we can see even more apparent differences between top-performing countries and countries with a low adoption rate. The top 5 countries according to the adoption rate for CSP score between 14% and 16%, whereas the bottom 5 score between 2.5% and 5%. Interestingly, the countries that perform well/poorly for one security mechanism, also do so for other mechanisms. For instance, New Zealand, Ireland and Australia consistently rank among the top 5, whereas Japan scores worst for almost every security mechanism.
 
 {{ figure_markup(
   image="security-adoption-of-csp-and-xfo-per-country.png",
@@ -908,24 +913,24 @@ Looking at the percentage of homepages that were visited over HTTPS, we can alre
 
 Country-level incentives can drive the adoption of security mechanisms to a certain extent, but perhaps more important is the technology stack that website developers use when building websites. Do the frameworks easily lend themselves to enabling a certain feature, or is this a painstaking process requiring a complete overhaul of the application? Even better it would be if developers start with an already-secure environment with strong security defaults to begin with. In this section we explore different programming languages, SaaS, CMS, ecommerce and CDN technologies that have a significantly higher adoption rate for specific features (and thus can be seen as driving factors for widespread adoption). For brevity, we focus on the most widely deployed technologies, but it is important to note that many smaller technology products exist that aim to provide better security for their users.
 
-For security features related to the transport security, we find that there are 12 technology products (mainly ecommerce platforms and CMSs) that enable the `Strict-Transport-Security` header on at least 90% of their customer sites. Websites powered by the top 3 (according to their market share, namely Shopify, Squarespace and Automattic), make up for 30.32% of all homepages that have enabled Strict Transport Security. Interestingly, the adoption of the `Expect-CT` header is mainly driven by a single technology, namely Cloudflare, which enables the header on all of their customers that have HTTPS enabled. As a result, 99.06% of the `Expect-CT` header presences can be related to Cloudflare.
+For security features related to the transport security, we find that there are 12 technology products (mainly ecommerce platforms and CMSs) that enable the `Strict-Transport-Security` header on at least 90% of their customer sites. Websites powered by the top 3 (according to their market share, namely Shopify, Squarespace and Automattic), make up for 30.32% of all home pages that have enabled Strict Transport Security. Interestingly, the adoption of the `Expect-CT` header is mainly driven by a single technology, namely Cloudflare, which enables the header on all of their customers that have HTTPS enabled. As a result, 99.06% of the `Expect-CT` header presences can be related to Cloudflare.
 
-With regard to security headers that secure content inclusion or that aim to thwart attacks, we see a similar phenomenon where a few parties enable a security header for all their customers, and thus drive its adoption. For instance, six technology products enable the `Content-Security-Policy` header for more than 80% of their customers. As such, the top 3 (Shopify, Sucuri and Tumblr) represent 52.53% of the homepages that have the header. Similarly, for `X-Frame-Options`, we see that the top 3 (Shopify, Drupal and Magento) contribute 34.96% of the global prevalence of the XFO header. This is particularly interesting for Drupal, as it is an open-source CMS that is often set up by website owners themselves. It is clear that their <a hreflang="en" href="https://www.drupal.org/node/2735873">decision to enable `X-Frame-Options: SAMEORIGIN` by default</a> is keeping many of their users protected against clickjacking attacks: 81.81% of websites powered by Drupal have the XFO mechanism enabled.
+With regard to security headers that secure content inclusion or that aim to thwart attacks, we see a similar phenomenon where a few parties enable a security header for all their customers, and thus drive its adoption. For instance, six technology products enable the `Content-Security-Policy` header for more than 80% of their customers. As such, the top 3 (Shopify, Sucuri and Tumblr) represent 52.53% of the home pages that have the header. Similarly, for `X-Frame-Options`, we see that the top 3 (Shopify, Drupal and Magento) contribute 34.96% of the global prevalence of the XFO header. This is particularly interesting for Drupal, as it is an open-source CMS that is often set up by website owners themselves. It is clear that their <a hreflang="en" href="https://www.drupal.org/node/2735873">decision to enable `X-Frame-Options: SAMEORIGIN` by default</a> is keeping many of their users protected against clickjacking attacks: 81.81% of websites powered by Drupal have the XFO mechanism enabled.
 
 ### Co-occurrence of other security headers
 
 {{ figure_markup(
   image="security-headers-as-drivers-of-adoption-of-other-headers.png",
-  caption="Security header as driver of adoption of other headers",
+  caption="Security header as driver of adoption of other headers.",
   description="Bar chart showing relative adoption rate of security mechanism based on the presence of different security headers. `Content-Security-Policy` has 357% for desktop and 368% for mobile, `Expect-CT` has 224% and 235% respectively, `Referrer-Policy` has 265% and 265%, `Strict-Transport-Security` has 275% and 284%, `X-Content-Type-Options` has 309% and 305%, and `X-Frame-Options` has 286% for desktop and 299% for mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTb4PkXuhnxNc-X_Jovx0970pV22ucCnNloa2g8KPMLJmp39E62oSE4XvBlAVSGL0oEEHZa71_bgsV4/pubchart?oid=1444988925&format=interactive",
   sheets_gid="1707889711",
   sql_file="feature_adoption_by_other_features.sql"
 ) }}
 
-The security "game" is highly unbalanced, and much more in the favor of attackers: an adversary only needs to find a single flaw to exploit, whereas the defender needs to prevent all possible vulnerabilities. As such, whereas adopting a single security mechanism can be very useful in defending against a particular attack, websites need multiple security features in order to defend against all possible attacks. To determine whether security headers are adopted in a one-off manner, or rather in a rigorous way to provide in-depth defenses against as many attacks as possible, we look at the co-occurrence of security headers. More precisely, we look at how the adoption of one security header affects the adoption of other headers. Interestingly, this shows that websites that adopt a single security header, are much more likely to adopt other security headers as well. For instance, for mobile homepages that contain a CSP header, the adoption of the other headers (`Expect-CT`, `Referrer-Policy`, `Strict-Transport-Security`, `X-Content-Type-Options` and `X-Frame-Options`) is on average 368% higher compared to the overall adoption of these headers.
+The security "game" is highly unbalanced, and much more in the favor of attackers: an adversary only needs to find a single flaw to exploit, whereas the defender needs to prevent all possible vulnerabilities. As such, whereas adopting a single security mechanism can be very useful in defending against a particular attack, websites need multiple security features in order to defend against all possible attacks. To determine whether security headers are adopted in a one-off manner, or rather in a rigorous way to provide in-depth defenses against as many attacks as possible, we look at the co-occurrence of security headers. More precisely, we look at how the adoption of one security header affects the adoption of other headers. Interestingly, this shows that websites that adopt a single security header, are much more likely to adopt other security headers as well. For instance, for mobile home pages that contain a CSP header, the adoption of the other headers (`Expect-CT`, `Referrer-Policy`, `Strict-Transport-Security`, `X-Content-Type-Options` and `X-Frame-Options`) is on average 368% higher compared to the overall adoption of these headers.
 
-In general, websites that adopt a certain security header are 2 to 3 times more likely to adopt other security headers as well. This is especially the case for CSP, which fosters the adoption of other security headers the most. This can be explained on the one hand because CSP is one of the more extensive security headers that requires considerable effort to adopt, so websites that do define a policy, are more likely to be invested in the security of their website. On the other hand, 44.31% of the CSP headers are on homepages that are powered by Shopify. This SaaS product also enables several other security headers (`Strict-Transport-Security`, `X-Content-Type-Options` and `X-Frame-Options`) as a default for virtually all of their customers.
+In general, websites that adopt a certain security header are 2 to 3 times more likely to adopt other security headers as well. This is especially the case for CSP, which fosters the adoption of other security headers the most. This can be explained on the one hand because CSP is one of the more extensive security headers that requires considerable effort to adopt, so websites that do define a policy, are more likely to be invested in the security of their website. On the other hand, 44.31% of the CSP headers are on home pages that are powered by Shopify. This SaaS product also enables several other security headers (`Strict-Transport-Security`, `X-Content-Type-Options` and `X-Frame-Options`) as a default for virtually all of their customers.
 
 ## Software update practices
 
@@ -944,11 +949,11 @@ A very large part of the Web is built with third-party components, at different 
   height="575"
 ) }}
 
-As one of the most popular [Content Management Systems](./cms), WordPress is an attractive target for attackers. As such, it is important for website administrators to keep their installation up-to-date. By default, <a hreflang="en" href="https://wordpress.org/support/article/configuring-automatic-background-updates/">updates are performed automatically for WordPress</a>, although it is possible to disable this feature. The evolution of the deployed WordPress versions are displayed in the above figure, showing the <a hreflang="en" href="https://wordpress.org/download/releases/">latest major versions that are still actively maintained</a> (5.5: purple, 5.4: blue, 5.3: red, 5.2: green, 4.9: orange). Versions that have a prevalence of less than 4% are grouped together under "Other". A first interesting observation that can be made is that as of August 2020, 74.89% of the WordPress installations on mobile homepages are running the latest version within their branch. It can also be seen that website owners are gradually upgrading to the new major versions. For instance, WordPress version 5.5, which was released on August 11th 2020, already comprised 10.22% of the WordPress installations that were observed in the crawl for August.
+As one of the most popular [Content Management Systems](./cms), WordPress is an attractive target for attackers. As such, it is important for website administrators to keep their installation up-to-date. By default, <a hreflang="en" href="https://wordpress.org/support/article/configuring-automatic-background-updates/">updates are performed automatically for WordPress</a>, although it is possible to disable this feature. The evolution of the deployed WordPress versions are displayed in the above figure, showing the <a hreflang="en" href="https://wordpress.org/download/releases/">latest major versions that are still actively maintained</a> (5.5: purple, 5.4: blue, 5.3: red, 5.2: green, 4.9: orange). Versions that have a prevalence of less than 4% are grouped together under "Other". A first interesting observation that can be made is that as of August 2020, 74.89% of the WordPress installations on mobile home pages are running the latest version within their branch. It can also be seen that website owners are gradually upgrading to the new major versions. For instance, WordPress version 5.5, which was released on August 11th 2020, already comprised 10.22% of the WordPress installations that were observed in the crawl for August.
 
 {{ figure_markup(
   image="security-evolution-of-wordpress-5-3and5-4-after-update.png",
-  caption="Evolution of WordPress 5.3 and 5.4 after update",
+  caption="Evolution of WordPress 5.3 and 5.4 after update.",
   description="Stacked bar chart showing the evolution of WordPress versions 5.3.2, 5.3.3, 5.4 and 5.4.1. We can see over time starting in March 2020 that 5.3.2 is the only one of those version being used and has 50.08% adoption, in April 5.4 comes in and takes up third thirds of the adoption of these versions which increases to 54.23% in total, in May 5.4.1 comes out and there is mixed usage of all three versions with a total of 58.78%, in June it has reduced by almost half to 32.76% and most of the remaining usage is 5.4.1, in July these versions are used on just 4.55% of sites, and reducing to 3.59% in August",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTb4PkXuhnxNc-X_Jovx0970pV22ucCnNloa2g8KPMLJmp39E62oSE4XvBlAVSGL0oEEHZa71_bgsV4/pubchart?oid=503316556&format=interactive",
   sheets_gid="155582197",
@@ -972,7 +977,7 @@ Another interesting aspect that can be inferred from the graph is that within a 
   sql_file="feature_adoption_by_technology.sql"
 ) }}
 
-One of the most widely used JavaScript libraries is jQuery, which has three major versions: 1.x, 2.x and 3.x. As is clear from the evolution of jQuery versions that are used on mobile homepages, the overall distribution is very static over time. Surprisingly, a significant fraction of websites (18.21% as of August 2020) are still running an old 1.x version of jQuery. This fraction is consistently decreasing (from 33.39% in November 2019), in favor of version 1.12.4, which was <a hreflang="en" href="https://blog.jquery.com/2016/05/20/jquery-1-12-4-and-2-2-4-released/">released</a> in May 2016 and unfortunately has <a hreflang="en" href="https://snyk.io/test/npm/jquery/1.12.4">various medium-level security issues</a>.
+One of the most widely used JavaScript libraries is jQuery, which has three major versions: 1.x, 2.x and 3.x. As is clear from the evolution of jQuery versions that are used on mobile home pages, the overall distribution is very static over time. Surprisingly, a significant fraction of websites (18.21% as of August 2020) are still running an old 1.x version of jQuery. This fraction is consistently decreasing (from 33.39% in November 2019), in favor of version 1.12.4, which was <a hreflang="en" href="https://blog.jquery.com/2016/05/20/jquery-1-12-4-and-2-2-4-released/">released</a> in May 2016 and unfortunately has <a hreflang="en" href="https://snyk.io/test/npm/jquery/1.12.4">various medium-level security issues</a>.
 
 ### nginx
 
@@ -1002,7 +1007,7 @@ Nowadays, the performance of the used technologies plays a particularly relevant
 
 The figure above shows the number of websites utilizing cryptomining in the last two years. We see that from the beginning of 2019, interest in cryptomining is getting lower. In our last measurement, we had a total of 348 websites including cryptomining scripts.
 
-In the next figure, we show the market share of cryptominer on the web based on August's dataset. Coinimp is the most popular provider with a 45.2% market share. We found that all of the most popular cryptominers are based on WebAssembly. Note that there are also JavaScript libraries to mine on the web, but they are not as powerful as solutions based on WebAssembly. Our other result shows that half of the websites including a cryptominer utilize a cryptomining component of discontinued service providers (such as <a hreflang="en" href="https://blog.avast.com/coinhive-shuts-down">CoinHive</a> and [JSEcoin](https://twitter.com/jsecoin/status/1247436272869814272)), which means that although the cryptomining scripts are included on those web pages, they are no longer active and thus no cryptomining will occur in practice.
+In the next figure, we show the market share of cryptominer on the web based on August's dataset. Coinimp is the most popular provider with a 45.2% market share. We found that all of the most popular cryptominers are based on WebAssembly. Note that there are also JavaScript libraries to mine on the web, but they are not as powerful as solutions based on WebAssembly. Our other result shows that half of the websites including a cryptominer utilize a cryptomining component of discontinued service providers (such as <a hreflang="en" href="https://blog.avast.com/coinhive-shuts-down">CoinHive</a> and [JSEcoin](https://x.com/jsecoin/status/1247436272869814272)), which means that although the cryptomining scripts are included on those web pages, they are no longer active and thus no cryptomining will occur in practice.
 
 {{ figure_markup(
   image="security-cryptominer-market-share.png",

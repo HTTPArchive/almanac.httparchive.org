@@ -18,13 +18,19 @@
 {% block intro_title %}Web Almanac{% endblock %}
 {% block intro_sub_title %}HTTP Archive&#8217;ın yıllık<br> <b>web durumu</b> raporu{% endblock %}
 
+{% block announcement_text %}
+<p lang="en">
+  Listen to a recording of our live stream for this year's edition on <a href="https://www.youtube.com/live/cdYR0ZmplIM">YouTube</a>! We'll be running another live stream with more of our authors in January 2025.
+</p>
+{% endblock %}
+
 {% block mission %}
 <p>
 Misyonumuz, HTTP Archive&#8217;ın ham istatistiklerini ve eğilimlerini web topluluğunun uzmanlığı ile birleştirmektir. Web Almanac, gerçek veri ve güvenilir web uzmanları tarafından desteklenen, web durumu hakkındaki kapsamlı bir rapordur. {{ year }} baskısı sayfa içeriği, kullanıcı deneyimi, yayınlama ve dağıtım yönlerini kapsayan {{ supported_chapters | length }} bölümden oluşmuştur.
 </p>
 {% endblock %}
 
-{% block read_last_years_almanac %} {{ year | int - 1 }} Web Almanac&#8217;ı Oku{% endblock %}
+{% block read_last_years_almanac %} {{ previous_year }} Web Almanac&#8217;ı Oku{% endblock %}
 
 {% block http_archive_link %}HTTP Archive Ana Sayfa{% endblock %}
 
@@ -57,7 +63,7 @@ Misyonumuz, HTTP Archive&#8217;ın ham istatistiklerini ve eğilimlerini web top
 {% block open_the_index %}İçindekiler Tablosunu Açın{% endblock %}
 {% block close_the_index %}İçindekiler Tablosunu Kapatın{% endblock %}
 
-{% block and %}ve{% endblock %}
+{% block and %} ve {% endblock %}
 {% block comma %}, {% endblock %}
 {% block oxford_comma %}, {% endblock %}
 
@@ -111,10 +117,14 @@ Misyonumuz, HTTP Archive&#8217;ın ham istatistiklerini ve eğilimlerini web top
 {% block repliesAlt %}{% endblock %}
 {% block mentionsAlt %}{% endblock %}
 
-{% macro onTwitter(twitterHandle) %}@{{twitterHandle}}Twitter üzerinde{% endmacro %}
+{% macro onTwitter(twitterHandle) %}@{{twitterHandle}}Twitter/X üzerinde{% endmacro %}
+{% macro onMastodon(mastodonHandle) %}{{mastodonHandle}}Mastodon üzerinde{% endmacro %}
+{% macro onBluesky(blueskyHandle) %}{{blueskyHandle}}Bluesky üzerinde{% endmacro %}
 {% macro onGitHub(gitHubHandle) %}{{gitHubHandle}}GitHub üzerinde {% endmacro %}
 {% macro onLinkedIn(authorName) %}{{authorName}} LinkedIn üzerinde {% endmacro %}
 {% macro website(authorName) %}{{authorName}} website{% endmacro %}
+
+{% block citation %}Alıntı{% endblock %}
 
 {% macro edition(year) %}{{ year }} Baskısı{% endmacro %}
 
@@ -124,14 +134,14 @@ Misyonumuz, HTTP Archive&#8217;ın ham istatistiklerini ve eğilimlerini web top
 {% block rss_feed %}RSS Feed{% endblock %}
 
 {% block featured_chapter %}Öne Çıkan Bölüm{% endblock %}
-{% block featured_chapter_last_year %}{{ year|int -1 }} Web Almanac'tan <br>Öne Çıkan Bölüm{% endblock %}
+{% block featured_chapter_last_year %}{{ previous_year }} Web Almanac'tan <br>Öne Çıkan Bölüm{% endblock %}
 
 {# Check if read_chapter already defined in child template as macros can't be overridden #}
 {% if not read_chapter %}
 {% macro read_chapter(chapter) %}<span class="featured-chapter-name">{{ chapter }}</span> Bölümünü Okuyun{% endmacro %}
 {% endif %}
 {% if not read_last_years_chapter %}
-{% macro read_last_years_chapter(chapter) %} {{ year|int-1 }} <span class="featured-chapter-name">{{ chapter }}</span> Bölümünü Okuyun{% endmacro %}
+{% macro read_last_years_chapter(chapter) %} {{ previous_year }} <span class="featured-chapter-name">{{ chapter }}</span> Bölümünü Okuyun{% endmacro %}
 {% endif %}
 
 {% block contributors_description %}
@@ -173,6 +183,7 @@ Aksi belirtilmedikçe, {{ year }} Web Almanac&#8217;ın tüm {{ supported_chapte
   set localizedChapterTitles = {
     "javascript": "JavaScript",
     "css": "CSS",
+    "cookies": "Cookies",
     "markup": "Markup",
     "media": "Media",
     "third-parties": "Üçüncü Partiler",
@@ -212,6 +223,7 @@ Aksi belirtilmedikçe, {{ year }} Web Almanac&#8217;ın tüm {{ supported_chapte
   "developers": "Geliştiriciler",
   "editors": "Editorler",
   "leads": "Proje Liderleri",
+  "committee": "Düzenleme Komitesi",
   "reviewers": "Gözden Geçirenler",
   "translators": "Çevirmenler",
   }
@@ -225,6 +237,7 @@ Aksi belirtilmedikçe, {{ year }} Web Almanac&#8217;ın tüm {{ supported_chapte
   "developers": "Geliştirici",
   "editors": "Editor",
   "leads": "Proje Lider",
+  "committee": "Düzenleme Komitesi",
   "reviewers": "Gözden Geçiren",
   "translators": "Çevirmen",
   }

@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: CMS
 description: 2020年版Web AlmanacのCMSの章では、CMSの導入、CMSスイートの構築方法、CMSを搭載したWebサイトのユーザーエクスペリエンス、CMSのイノベーションについて取り上げています。
+hero_alt: Hero image of Web Almanac characters on a type writer writing a web page.
 authors: [alexdenning]
 reviewers: [sirjonathan, ernee, amedina]
 analysts: [GregBrimble, rviscomi]
@@ -357,7 +358,7 @@ CMSは優れたユーザー体験を提供しなければなりません。ウ�
   )
 }}
 
-ここでは、CMSのパフォーマンスがもっと良くなることを期待していますが、この結果からいくつかのポジティブなものが得られました。まずDrupalウェブサイトの61%が良好なLCPを持っているという事実は、[Chrome UX Report](https://twitter.com/ChromeUXReport/status/1293306510509039616)によると、良好なLCPを持つウェブサイトの世界的な分布が48%であることよりもはるかに優れているという点で、とくに注目に値します。またWordPressのウェブサイトの3～4つに1つが良いLCPを持っているというのも、WordPressのウェブサイトの数が非常に多いことを考えると、ちょっとした驚きです。Wixには追いつくべき点がありますが、Wixのエンジニアがパフォーマンス問題の修正に[積極的に](https://twitter.com/DanShappir/status/1308043752712343552)取り組んでいることは心強いので、今後も注目していきたいところです。
+ここでは、CMSのパフォーマンスがもっと良くなることを期待していますが、この結果からいくつかのポジティブなものが得られました。まずDrupalウェブサイトの61%が良好なLCPを持っているという事実は、[Chrome UX Report](https://x.com/ChromeUXReport/status/1293306510509039616)によると、良好なLCPを持つウェブサイトの世界的な分布が48%であることよりもはるかに優れているという点で、とくに注目に値します。またWordPressのウェブサイトの3～4つに1つが良いLCPを持っているというのも、WordPressのウェブサイトの数が非常に多いことを考えると、ちょっとした驚きです。Wixには追いつくべき点がありますが、Wixのエンジニアがパフォーマンス問題の修正に[積極的に](https://x.com/DanShappir/status/1308043752712343552)取り組んでいることは心強いので、今後も注目していきたいところです。
 
 #### 最初の入力までの遅延
 

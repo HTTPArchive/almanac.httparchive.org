@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Capacidades
 description: Capítulo "Capacidades" do Web Almanac de 2022 abordando APIs inovadoras e poderosas da plataforma web que proporcionam acesso a interfaces de hardware para aplicativos web, aprimoram aplicativos de produtividade baseados na web e muito mais.
+hero_alt: Hero image of Web Almanac characters with superhero capes plugging various capabilities into a web page.
 authors: [MichaelSolati]
 reviewers: [tomayac, christianliebel]
 analysts: [tunetheweb]
@@ -126,7 +127,7 @@ A Web Share API está disponível em versões modernas do Chrome, Edge e Safari.
 
 A Web Share API diminuiu em uso de 9,00% em 2021 para 8,84% em 2022 em desktop. Em dispositivos móveis, o uso diminuiu de 8,58% em 2021 para 8,36% em 2022. Como resultado, este ano, a Web Share API foi a segunda API mais utilizada tanto em desktop quanto em dispositivos móveis, ficando atrás da Async Clipboard API — a segunda API mais utilizada no ano passado.
 
-Em muitos sites, é possível encontrar a Web Share API em uso. Por exemplo, plataformas de mídia social, sites de documentação e outros a utilizam como uma ótima maneira de compartilhar conteúdo. Alguns exemplos onde você pode encontrar a API em uso incluem <a hreflang="en" href="https://web.dev/">web.dev</a> e [twitter.com](https://twitter.com/).
+Em muitos sites, é possível encontrar a Web Share API em uso. Por exemplo, plataformas de mídia social, sites de documentação e outros a utilizam como uma ótima maneira de compartilhar conteúdo. Alguns exemplos onde você pode encontrar a API em uso incluem <a hreflang="en" href="https://web.dev/">web.dev</a> e [twitter.com](https://x.com/).
 
 {{ figure_markup(
   gif="Web-Share-API.gif",
@@ -379,7 +380,7 @@ Muitos recursos que os usuários esperam encontrar em aplicativos específicos d
 
 O Projeto Fugu inclui a participação da Microsoft, Intel, Samsung, Google e muitos outros grupos e indivíduos.
 
-Confira <a hreflang="en" href="https://developer.chrome.com/docs/capabilities/status?hl=pt-br">este post</a> o blog dos desenvolvedores do Chrome para saber mais sobre o Projeto Fugu.
+Confira <a hreflang="en" href="https://developer.chrome.com/docs/capabilitiesstatus?hl=pt-br">este post</a> o blog dos desenvolvedores do Chrome para saber mais sobre o Projeto Fugu.
 
 ## Conclusão
 

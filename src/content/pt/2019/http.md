@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: HTTP/2
 description: Capítulo de HTTP/2 de 2019 do Web Almanac que cobre a adoção e o impacto do HTTP/2, HTTP/2 Push, Problemas do HTTP/2 e HTTP/3.
+hero_alt: Hero image of Web Almanac characters driving vehicles in various lanes carrying script and images resources.
 authors: [tunetheweb]
 reviewers: [bagder, rmarx, dotjs]
 analysts: [paulcalvano]
@@ -9,7 +10,7 @@ editors: [rachellcostello]
 translators: [elaynelemos]
 discuss: 1775
 results: https://docs.google.com/spreadsheets/d/1z1gdS3YVpe8J9K3g2UdrtdSPhRywVQRBz5kgBeqCnbw/
-tunetheweb_bio: Barry Pollard é um desenvolvedor de software e autor do livro Manning <a hreflang="en" href="https://www.manning.com/books/http2-in-action"><i lang="en">HTTP/2 in Action</i></a>. Ele acha a web incrível, mas quer torná-la ainda melhor. Você pode encontrá-lo twittar <a href="https://twitter.com/tunetheweb">@tunetheweb</a> e bloga em <a hreflang="en" href="https://www.tunetheweb.com">www.tunetheweb.com</a>.
+tunetheweb_bio: Barry Pollard é um desenvolvedor de software e autor do livro Manning <a hreflang="en" href="https://www.manning.com/books/http2-in-action"><i lang="en">HTTP/2 in Action</i></a>. Ele acha a web incrível, mas quer torná-la ainda melhor. Você pode encontrá-lo twittar <a href="https://x.com/tunetheweb">@tunetheweb</a> e bloga em <a hreflang="en" href="https://www.tunetheweb.com">www.tunetheweb.com</a>.
 featured_quote: O HTTP/2 foi a primeira grande atualização do principal protocolo de transporte da web em quase 20 anos. Ele chegou com muitas expectativas&colon; prometia um aumento de desempenho gratuito e sem desvantagens. Mais do que isso, poderíamos deixar de lado todos as adaptações e saídas mirabolantes a que o HTTP/1.1 nos forçava, devido às suas ineficiências. Técnicas como bundling, spriting, inlining e até mesmo sharding se tornariam não canônicas em um mundo com HTTP/2, visto que a performance otimizada já seria fornecida por padrão. Este capítulo examina como essa tecnologia relativamente nova se saiu no mundo real.
 featured_stat_1: 95%
 featured_stat_label_1: Usuários que podem usar HTTP/2
@@ -445,7 +446,7 @@ Mesclando essas duas estatísticas, podemos ver a porcentagem de instalações p
 
 É claro que o Apache e o IIS ficam para trás com 18% e 14%, respectivamente, sobre seu suporte na instalação com base em HTTP/2, o que deve ser (ao em parte) uma consequência de ser mais difícil atualizá-los. Frequentemente, é necessária uma atualização completa do sistema operacional no caso de vários servidores para conseguir esse suporte facilmente. Com sorte, isso se tornará mais fácil à medida que as novas versões de sistemas operacionais se tornarem regra.
 
-Nada disso é um comentário sobre as implementações HTTP/2 aqui ([acho que o Apache tem uma das melhores implementações](https://twitter.com/tunetheweb/status/988196156697169920?s=20)), mas mais sobre a facilidade de habilitar o HTTP/2 em cada um desses servidores — ou a falta dela.
+Nada disso é um comentário sobre as implementações HTTP/2 aqui ([acho que o Apache tem uma das melhores implementações](https://x.com/tunetheweb/status/988196156697169920?s=20)), mas mais sobre a facilidade de habilitar o HTTP/2 em cada um desses servidores — ou a falta dela.
 
 ## Impacto do HTTP/2
 O impacto do HTTP/2 é muito mais difícil de medir, especialmente usando o HTTP Archive [metodologia](./methodology). Idealmente, os sites seriam rastreados com ambos HTTP/1.1 e HTTP/2 e a diferença medida, mas isso não é possível com as estatísticas que estamos investigando aqui. Além disso, medir se o site com HTTP/2 médio é mais rápido do que o site com HTTP/1.1 médio apresenta muitas outras variáveis que requerem um estudo mais exaustivo do que podemos cobrir aqui.
@@ -576,7 +577,7 @@ Uma das causas de problemas no HTTP/2 é o suporte insuficiente para a prioriza�
 
 O HTTP/2 tem um modelo de priorização complexo (muitos dizem que é demasiado complexo — daí por que está sendo reconsiderado para o HTTP/3!), porém, poucos servidores o empregam adequadamente. Isso pode ser porque suas implementações do HTTP/2 não estão à altura ou por causa do chamado *bufferbloat*, em que as respostas já estão a caminho antes que o servidor perceba que há uma requisição de prioridade mais alta. Devido à natureza variável dos servidores, pilhas TCP e localizações, é difícil medir isso para a maioria dos sites, mas com CDNs isso deve ser mais consistente.
 
-[Patrick Meenan](https://twitter.com/patmeenan) criou <a hreflang="en" href="https://github.com/pmeenan/http2priorities/tree/master/stand-alone">uma página de teste de exemplo</a>, que deliberadamente tenta baixar uma carga de recursos de baixa prioridade, imagens fora do foco da tela, antes de fazer a requisição de algumas imagens de alta prioridade, na tela. Um bom servidor HTTP/2 deve ser capaz de reconhecer isso e enviar as imagens de alta prioridade logo após solicitadas, às custas das imagens de baixa prioridade. Um servidor HTTP/2 ruim apenas responderá na ordem de requisição e ignorará quaisquer sinais de prioridade. [Andy Davies](./contributors#andydavies) tem <a hreflang="en" href="https://github.com/andydavies/http2-prioritization-issues">uma página rastreando o status de vários CDNs para o teste de Patrick</a>. O HTTP Archive identifica quando um CDN é usado como parte do seu rastreamento e a fusão desses dois conjuntos de dados pode nos dizer a porcentagem de páginas que usam um CDN aprovado ou com falha.
+[Patrick Meenan](https://x.com/patmeenan) criou <a hreflang="en" href="https://github.com/pmeenan/http2priorities/tree/master/stand-alone">uma página de teste de exemplo</a>, que deliberadamente tenta baixar uma carga de recursos de baixa prioridade, imagens fora do foco da tela, antes de fazer a requisição de algumas imagens de alta prioridade, na tela. Um bom servidor HTTP/2 deve ser capaz de reconhecer isso e enviar as imagens de alta prioridade logo após solicitadas, às custas das imagens de baixa prioridade. Um servidor HTTP/2 ruim apenas responderá na ordem de requisição e ignorará quaisquer sinais de prioridade. [Andy Davies](./contributors#andydavies) tem <a hreflang="en" href="https://github.com/andydavies/http2-prioritization-issues">uma página rastreando o status de vários CDNs para o teste de Patrick</a>. O HTTP Archive identifica quando um CDN é usado como parte do seu rastreamento e a fusão desses dois conjuntos de dados pode nos dizer a porcentagem de páginas que usam um CDN aprovado ou com falha.
 
 <figure>
   <table>

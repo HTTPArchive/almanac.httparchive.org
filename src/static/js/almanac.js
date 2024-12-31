@@ -388,7 +388,6 @@ function googleSheetsPixelNotLoaded() {
 //We use Google Sheets for detailed visualisations
 //Check for support and switch out images if supported
 function upgradeInteractiveFigures() {
-
   try {
     if (!isInPrintMode() && bigEnoughForInteractiveFigures() && !dataSaverEnabled() && highBandwidthConnection() && highResolutionCanvasSupported()) {
 
@@ -426,6 +425,8 @@ function upgradeInteractiveFigures() {
           iframe.setAttribute('scrolling', fig_img.dataset.scrolling || 'no');
           iframe.setAttribute('loading', fig_img.dataset.loading || 'lazy');
           iframe.setAttribute('src', fig_img.dataset.iframe);
+          // Set it to credentialless to avoid issues when it tries to embed the login screen
+          iframe.setAttribute('credentialless', true);
 
           //The figure should have a link
           var parentLink = fig_img.parentNode;

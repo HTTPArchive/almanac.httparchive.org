@@ -3,6 +3,7 @@
 title: JavaScript
 #TODO - Review and update chapter description
 description: 2022年版Web AlmanacのJavaScriptの章では、Web上でのJavaScriptの使用方法、ライブラリとフレームワーク、圧縮、Webコンポーネント、ソースマップをカバーしています。
+hero_alt: Hero image of the Web Almanac characters cycling to power a website.
 authors: [malchata]
 reviewers: [mgechev, pankajparkar, NishuGoel, housseindjirdeh, kevinfarrugia, tunetheweb]
 analysts: [NishuGoel, kevinfarrugia]
@@ -669,9 +670,9 @@ JavaScriptが影響を与えるのは、スタートアップのパフォーマ�
   )
 }}
 
-しかし、ページのライフサイクル全体にわたるページの応答性を包括的に見るには、<a hreflang="en" href="https://web.dev/inp/">次のペイントまでのインタラクション (INP)</a>を見る必要があります。これは、ページに対して行われたすべてのキーボード、マウス、タッチ操作を評価し、総合的にページの応答性を表すことを意図して、操作待ち時間の高いパーセンタイルを選択するものです。
+しかし、ページのライフサイクル全体にわたるページの応答性を包括的に見るには、<a hreflang="en" href="https://web.dev/articles/inp">次のペイントまでのインタラクション (INP)</a>を見る必要があります。これは、ページに対して行われたすべてのキーボード、マウス、タッチ操作を評価し、総合的にページの応答性を表すことを意図して、操作待ち時間の高いパーセンタイルを選択するものです。
 
-良いINPスコアは<a hreflang="en" href="https://web.dev/inp/#what's-a-%22good%22-inp-value">200ミリ秒</a>以下だと考えてください。中央値では、モバイルとデスクトップの両方がこの閾値を下回っていますが、75パーセンタイルでは別の話で、モバイルとデスクトップの両方のセグメントが「要改善」の範囲に大きく入っています。このデータは、FIDとはまったく異なり、INPスコアがあまりよくない主な原因であるページ上の <a hreflang="ja" href="https://web.dev/i18n/ja/long-tasks-devtools/">長いタスク</a>を減らすために、ウェブサイトができることをすべて行う機会がたくさんあることを示唆しています。
+良いINPスコアは<a hreflang="en" href="https://web.dev/articles/inp#what's-a-%22good%22-inp-value">200ミリ秒</a>以下だと考えてください。中央値では、モバイルとデスクトップの両方がこの閾値を下回っていますが、75パーセンタイルでは別の話で、モバイルとデスクトップの両方のセグメントが「要改善」の範囲に大きく入っています。このデータは、FIDとはまったく異なり、INPスコアがあまりよくない主な原因であるページ上の <a hreflang="ja" href="https://web.dev/i18n/ja/long-tasks-devtools/">長いタスク</a>を減らすために、ウェブサイトができることをすべて行う機会がたくさんあることを示唆しています。
 
 {{ figure_markup(
     image="tbt.png",

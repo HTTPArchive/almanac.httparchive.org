@@ -2,12 +2,13 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: CSS
 description: Capitolo sui CSS del Web Almanac 2022 che tratta delle tendenza, dei cambiamenti e dei modelli nell'uso dei CSS nel web.
+hero_alt: Hero image of Web Almanac characters measuring and painting a web page.
 authors: [rachelandrew]
 reviewers: [svgeesus, j9t]
 analysts: [rviscomi]
 editors: [rviscomi]
 translators: [webmatter-it]
-rachelandrew_bio: Rachel Andrew lavora per Google in qualità di scrittrice tecnica, in particolare sul sito <a hreflang="en" href="https://web.dev">web.dev</a> e sul <a hreflang="en" href=" https://developer.chrome.com/">sito per sviluppatori Chrome</a>. È una front e back-end web developer, autrice e relatrice, autrice o coautrice di 22 libri tra cui <a hreflang="en" href="https://abookapart.com/products/the-new-css-layout">The New CSS Layout</a> e contribuisce regolarmente a numerose pubblicazioni sia online che offline. Rachel è un membro del CSS Working Group e la si può trovare su Twitter a pubblicare foto dei suoi gatti sotto il _nick_ [@rachelandrew](https://twitter.com/rachelandrew).
+rachelandrew_bio: Rachel Andrew lavora per Google in qualità di scrittrice tecnica, in particolare sul sito <a hreflang="en" href="https://web.dev">web.dev</a> e sul <a hreflang="en" href=" https://developer.chrome.com/">sito per sviluppatori Chrome</a>. È una front e back-end web developer, autrice e relatrice, autrice o coautrice di 22 libri tra cui <a hreflang="en" href="https://abookapart.com/products/the-new-css-layout">The New CSS Layout</a> e contribuisce regolarmente a numerose pubblicazioni sia online che offline. Rachel è un membro del CSS Working Group e la si può trovare su Twitter a pubblicare foto dei suoi gatti sotto il _nick_ [@rachelandrew](https://x.com/rachelandrew).
 results: https://docs.google.com/spreadsheets/d/1OU8ahxC5oYU8VRryQs9BzHToaXcOntVlh6KUHjm15G4/
 featured_quote: Gli ultimi anni hanno visto una raffica di nuove funzionalità CSS. Molte di queste sono nate prendendo ispirazione da cose che gli sviluppatori facevano già con JavaScript o tramite i preprocessori, mentre altre forniscono ora metodi per fare cose che erano impossibili alcuni anni fa. Ok, avere nuove funzionalità disponibili è una cosa, ma gli sviluppatori le usano effettivamente in produzione nelle loro pagine web e applicazioni?
 featured_stat_1: 43%
@@ -753,7 +754,7 @@ Abbiamo anche dato un'occhiata ad un paio di valori delle proprietà `flex` e `g
 
 Il valore del contenuto per la proprietà `flex-basis` è un'istruzione esplicita al browser di guardare alla dimensione del contenuto intrinseco dell'elemento, piuttosto che a qualsiasi larghezza impostata sull'elemento stesso. È un valore recente, al momento in cui scrivo non disponibile nella versione di rilascio di Safari. Attualmente, solo lo 0,5% dei siti mobili e lo 0,6% dei siti desktop utilizzano questo valore.
 
-Il valore `subgrid` per `grid-template-rows` e `grid-template-columns` è, al momento dell'indagine, supportato solo da Firefox. Forse non sorprende notare che compare solo in 211 pagine mobili e 212 desktop nell'intero set di dati. Dal momento che il valore fa parte del progetto [Interop 2022](./interoperabilità), sarà interessante vedere come crescerà il supporto una volta diventato interoperabile.
+Il valore `subgrid` per `grid-template-rows` e `grid-template-columns` è, al momento dell'indagine, supportato solo da Firefox. Forse non sorprende notare che compare solo in 211 pagine mobili e 212 desktop nell'intero set di dati. Dal momento che il valore fa parte del progetto [Interop 2022](./interoperability), sarà interessante vedere come crescerà il supporto una volta diventato interoperabile.
 
 ### `Box-sizing`
 

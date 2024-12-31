@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: モバイルウェブ
 description: 2021年版Web AlmanacのモバイルWebの章では、Webページのバイタル、画像、技術採用、アクセシビリティなどをカバーしています。
+hero_alt: Hero image of Web Almanac characters squeezing a web page onto a mobile screen.
 authors: [fellowhuman1101, dwsmart, ashleyish]
 reviewers: [foxdavidj, fili]
 analysts: [rvth, foxdavidj]
@@ -40,7 +41,7 @@ featured_stat_label_3: モバイルページ読み込みの上位1,000件のう�
 * HTTP Archive
 * Lighthouse
 * Wappalyzer
-* <a hreflang="en" href="https://twitter.com/paulcalvano/status/1454866401781587969">Akamai</a>
+* <a hreflang="en" href="https://x.com/paulcalvano/status/1454866401781587969">Akamai</a>
 
 なお、HTTP ArchiveとLighthouseのデータは、ウェブサイトのホームページのみから特定されるデータに限定されており、サイト全体のデータではありません。詳しくは、[Methodology](./methodology)のページをご覧ください。
 
@@ -801,7 +802,7 @@ Googleは<a hreflang="en" href="https://search.google.com/test/mobile-friendly">
 
 #### 最大のコンテンツフルペイント
 
-<a hreflang="en" href="https://web.dev/lcp/">最大のコンテンツフルペイント</a> (LCP) は、この経験を捉えるために設計された指標です（Core Web Vitalsの1つです）。ビューポートで最大の要素がレンダリングされるときの指標で、`<img>`、`<svg>`内の`<image>`、`<video>`（posterが設定されている場合）、背景画像付きのブロック要素、テキストブロックに限定されます。
+<a hreflang="en" href="https://web.dev/articles/lcp">最大のコンテンツフルペイント</a> (LCP) は、この経験を捉えるために設計された指標です（Core Web Vitalsの1つです）。ビューポートで最大の要素がレンダリングされるときの指標で、`<img>`、`<svg>`内の`<image>`、`<video>`（posterが設定されている場合）、背景画像付きのブロック要素、テキストブロックに限定されます。
 
 LCPは2.5秒以下が好スコアとされています。
 
@@ -884,9 +885,9 @@ HTTP Archiveの<a hreflang="ja" href="https://httparchive.org/reports/state-of-i
   )
 }}
 
-この成長の原動力は、WordPressの普及にあると考えられます（引用元：<a hreflang="en" href="https://twitter.com/rick_viscomi/status/1344380340153016321?s=20">Rick Viscomiのツイッター</a>）。WordPressは、2020年8月11日に一般公開された<a hreflang="en" href="https://make.wordpress.org/core/2020/07/14/lazy-loading-images-in-5-5/">バージョン5.5で遅延ローディングに対応</a>しました。
+この成長の原動力は、WordPressの普及にあると考えられます（引用元：<a hreflang="en" href="https://x.com/rick_viscomi/status/1344380340153016321?s=20">Rick Viscomiのツイッター</a>）。WordPressは、2020年8月11日に一般公開された<a hreflang="en" href="https://make.wordpress.org/core/2020/07/14/lazy-loading-images-in-5-5/">バージョン5.5で遅延ローディングに対応</a>しました。
 
-また、<a hreflang="en" href="https://web.dev/lcp-lazy-loading/">遅延ローディングLCP候補</a> を誤って使用すると、パフォーマンスに悪影響を及ぼす可能性があることも述べておく必要があります。折り返し位置より下の画像にのみ `loading="lazy"` を適用するようにすることが、ベストプラクティスです。
+また、<a hreflang="en" href="https://web.dev/articles/lcp-lazy-loading">遅延ローディングLCP候補</a> を誤って使用すると、パフォーマンスに悪影響を及ぼす可能性があることも述べておく必要があります。折り返し位置より下の画像にのみ `loading="lazy"` を適用するようにすることが、ベストプラクティスです。
 
 #### 画像の結論
 
@@ -904,7 +905,7 @@ HTTP Archiveの<a hreflang="ja" href="https://httparchive.org/reports/state-of-i
 
 #### レイアウトの累積移動量
 
-Core Web Vitalsの1つである <a hreflang="en" href="https://web.dev/cls/">レイアウトの累積移動量</a> (CLS) は、この種の要素のシフトの影響を把握するために設計されたメトリックです。
+Core Web Vitalsの1つである <a hreflang="en" href="https://web.dev/articles/cls">レイアウトの累積移動量</a> (CLS) は、この種の要素のシフトの影響を把握するために設計されたメトリックです。
 
 この指標は、インパクト・フラクションとディスタンス・フラクションを掛け合わせた計算です。インパクト・フラクションは画面の面積がどれだけ移動したかを、ディスタンス・フラクションは画面の面積がどれだけ移動したかを表しています。
 
@@ -960,7 +961,7 @@ CrUXデータセットによると、モバイルページの読み込みの62%�
 
 #### 最初の入力遅延
 
-<a hreflang="en" href="https://web.dev/fid/">最初の入力遅延</a> (FID) は、これを捉えるために設計された3つ目のCore Web Vitalメトリックです。最初のインタラクション（タップまたは要素のクリック）が発生してからブラウザが、それが起こったという処理を開始するまでの時間を測定します。タップが引き金となった可能性のある処理にかかる時間は測定しません。
+<a hreflang="en" href="https://web.dev/articles/fid">最初の入力遅延</a> (FID) は、これを捉えるために設計された3つ目のCore Web Vitalメトリックです。最初のインタラクション（タップまたは要素のクリック）が発生してからブラウザが、それが起こったという処理を開始するまでの時間を測定します。タップが引き金となった可能性のある処理にかかる時間は測定しません。
 
 FIDスコアは100ms以下が良好、300ms以上が不良となります。
 

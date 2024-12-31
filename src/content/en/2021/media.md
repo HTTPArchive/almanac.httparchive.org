@@ -1,14 +1,15 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Media
-description: Media chapter of the 2021 Web Almanac covering how images and videos are currently being encoded, embedded, styled, and delivered on the web
+description: Media chapter of the 2021 Web Almanac covering how images and videos are currently being encoded, embedded, styled, and delivered on the web.
+hero_alt: Hero image of Web Almanac characters projecting an image onto a screen while other Web Almanac characters walk to cinema seats with popcorn to watch the projection.
 authors: [eeeps, dougsillars]
 reviewers: [Navaneeth-akam, tpiros, akshay-ranganath, addyosmani]
 analysts: [eeeps, dougsillars, akshay-ranganath]
 editors: [tunetheweb]
 translators: []
 eeeps_bio: Eric Portis is a Web Platform Advocate at <a hreflang="en" href="https://cloudinary.com/">Cloudinary</a>.
-dougsillars_bio: Doug Sillars is a leader in developer relations, and a digital nomad working on the intersection of performance and media. He tweets [@dougsillars](https://twitter.com/dougsillars), and blogs regularly at <a hreflang="en" href="https://dougsillars.com">dougsillars.com</a>.
+dougsillars_bio: Doug Sillars is a leader in developer relations, and a digital nomad working on the intersection of performance and media. He tweets [@dougsillars](https://x.com/dougsillars), and blogs regularly at <a hreflang="en" href="https://dougsillars.com">dougsillars.com</a>.
 results: https://docs.google.com/spreadsheets/d/1nwkpviC3gNhRb48i8OoIgtJx1ckqRjJGW7uc7Gdi_sI/
 featured_quote: This year, native lazy-loading stemmed the tide of ever-increasing image transfer sizes.
 featured_stat_1: 99.93%
@@ -29,7 +30,7 @@ Images are ubiquitous on the web. Almost every page contains image content.
 
 {{ figure_markup(
   content="95.9%",
-  caption="Percentage of pages that contained at least one contentful `<img>`",
+  caption="Percentage of pages that contained at least one contentful `<img>`.",
   classes="big-number",
   sheets_gid="1756671383",
   sql_file="at_least_one_img.sql"
@@ -40,7 +41,7 @@ And effectively all pages serve up some sort of imagery (even if it's just a bac
 
 {{ figure_markup(
   content="99.9%",
-  caption="Percentage of pages that generated at least one request for an image resource",
+  caption="Percentage of pages that generated at least one request for an image resource.",
   classes="big-number",
   sheets_gid="1062090109",
   sql_file="at_least_one_image_request.sql"
@@ -61,11 +62,11 @@ The impact that all of these images have is hard to overstate. As the [Page Weig
 
 This is surprising. For the last decade, the <a hreflang="en" href="https://httparchive.org/reports/state-of-images#bytesImg">Image Bytes</a> chart on the HTTP Archive's monthly <a hreflang="en" href="https://httparchive.org/reports/state-of-images">State of Images report</a> has seemingly only ever gone one direction: up. What reversed this trend in 2021? I think it may have something to do with native lazy-loading's rapid adoption, which we will discuss more later in the chapter.
 
-In any case, by quantity, images continue to make up an awful lot of the stuff of the web. But tallying the sheer number of elements, requests, and bytes doesn't tell us how crucial images are to users' experiences. To get a sense of that, we can look at the <a hreflang="en" href="https://web.dev/lcp/">Largest Contentful Paint</a> metric, which tries to identify the most important piece of above-the-fold content on any given page. As you can see in the [Performance](./performance#fig-19) chapter, the LCP element has an image on around three quarters of pages.
+In any case, by quantity, images continue to make up an awful lot of the stuff of the web. But tallying the sheer number of elements, requests, and bytes doesn't tell us how crucial images are to users' experiences. To get a sense of that, we can look at the <a hreflang="en" href="https://web.dev/articles/lcp">Largest Contentful Paint</a> metric, which tries to identify the most important piece of above-the-fold content on any given page. As you can see in the [Performance](./performance#fig-19) chapter, the LCP element has an image on around three quarters of pages.
 
 {{ figure_markup(
   content="70.6%",
-  caption="Mobile pages whose LCP element has an image. On the desktop it's 79.4%!",
+  caption="Mobile pages whose LCP element has an image. On the desktop it's 79.4%!.",
   classes="big-number",
   sheets_gid="https://docs.google.com/spreadsheets/d/13xhPx6o2Nowz_3b3_5ojiF_mY3Lhs25auBKM6eqGZmo/#gid=1423728540",
   sql_file="../performance/lcp_element_data.sql"
@@ -305,7 +306,7 @@ GIFs, weighing in at 7.4 bits per pixel, come off terribly here, and make no mis
 
 Things get really interesting when we look at two next-gen formats: WebP and AVIF. Both weigh in almost 40% lighter than JPEG, at 1.3-1.5 bits per pixel. In formal studies using <a hreflang="en" href="https://kornel.ski/en/faircomparison">matched qualities</a>, WebP outperforms JPEG by <a hreflang="en" href="https://developers.google.com/speed/webp/docs/webp_study">between 25-34%</a>, so its real-world performance seems surprisingly *good*. On the other hand, AVIF's creators have published data suggesting that it is capable of <a hreflang="en" href="https://netflixtechblog.com/avif-for-next-generation-image-coding-b1d75675fe4">outperforming modern JPEG encoders JPEG by 50%+, in the lab</a>. So, while AVIF's performance here is good, I expected it to be better. I can think of a few possible explanations for these discrepancies between lab data and real-world performance.
 
-First: tooling. JPEG encoders vary incredibly widely, ranging from hardware encoders in cameras which don't spend much effort compressing images well, to ancient copies of <a hreflang="en" href="https://en.wikipedia.org/wiki/Libjpeg">`libjpeg`</a> installed decades ago, to bleeding-edge, best-practice-by-default encoders like MozJPEG. In short, there are a lot of old, badly compressed JPEGs out there, but every WebP and AVIF has been compressed with modern tooling.
+First: tooling. JPEG encoders vary incredibly widely, ranging from hardware encoders in cameras which don't spend much effort compressing images well, to ancient copies of [`libjpeg`](https://wikipedia.org/wiki/Libjpeg) installed decades ago, to bleeding-edge, best-practice-by-default encoders like MozJPEG. In short, there are a lot of old, badly compressed JPEGs out there, but every WebP and AVIF has been compressed with modern tooling.
 
 Also, anecdotally, the reference WebP encoder (<a hreflang="en" href="https://developers.google.com/speed/webp/download">`cwebp`</a>) is relatively aggressive about quality/compression, and returns lower-quality, more-compressed results by default than most common JPEG tooling.
 
@@ -329,7 +330,7 @@ One thing that is absolutely clear is that both WebP and AVIF can be used to del
 
 The old formats still reign: JPEG dominates, with PNG and GIF rounding out the podium. Together, they account for almost 90% of the images on the web. WebP—which is now more than a decade old but which <a hreflang="en" href="https://www.macrumors.com/2020/06/22/webp-safari-14/">only achieved universal browser support last year</a>—is still in the single digits. And effectively no-one is using AVIF, which accounted for only 0.04% of crawled resources. We found a thousand JPEGs for every AVIF.
 
-For an in-depth analysis of how (and educated guesses as to why) WebP and AVIF adoption has changed over time, the best resource is [Paul Calvano](https://twitter.com/paulcalvano)'s excellent recent talk at ImageReady (<a hreflang="en" href="https://www.youtube.com/watch?v=tz5bpAQY43k">full video</a> and <a hreflang="en" href="https://docs.google.com/presentation/d/1VS5QjNR6lh2y9jL5xaeainQ2cTAWyy7QiEjDMh4hNQA/edit#slide=id.gefc0d6ffce_0_0">slides 13-15</a>). In it, he shows that WebP adoption increased by ~34% from July 2020 (when Safari added support) to July 2021. AVIF's numbers have risen even more rapidly, in percentage terms, though perhaps that's not surprising given that the format is still brand new and used by relatively few sites. A few [large](https://twitter.com/chriscoyier/status/1465474900588646408) <a hreflang="en" href="https://medium.com/vimeo-engineering-blog/upgrading-images-on-vimeo-620f79da8605">players</a> adopting AVIF was all it took.
+For an in-depth analysis of how (and educated guesses as to why) WebP and AVIF adoption has changed over time, the best resource is [Paul Calvano](https://x.com/paulcalvano)'s excellent recent talk at ImageReady (<a hreflang="en" href="https://www.youtube.com/watch?v=tz5bpAQY43k">full video</a> and <a hreflang="en" href="https://docs.google.com/presentation/d/1VS5QjNR6lh2y9jL5xaeainQ2cTAWyy7QiEjDMh4hNQA/edit#slide=id.gefc0d6ffce_0_0">slides 13-15</a>). In it, he shows that WebP adoption increased by ~34% from July 2020 (when Safari added support) to July 2021. AVIF's numbers have risen even more rapidly, in percentage terms, though perhaps that's not surprising given that the format is still brand new and used by relatively few sites. A few [large](https://x.com/chriscoyier/status/1465474900588646408) <a hreflang="en" href="https://medium.com/vimeo-engineering-blog/upgrading-images-on-vimeo-620f79da8605">players</a> adopting AVIF was all it took.
 
 ### Embedding
 
@@ -630,7 +631,7 @@ This brings us to the last web platform feature that we'd like to investigate: <
 
 By default, images left to their intrinsic dimensions take up no space until they load, and their intrinsic dimensions become known. At that point—poof—they pop into the page, causing a <a hreflang="en" href="https://developers.google.com/publisher-tag/guides/minimize-layout-shift">layout shift</a>. This was exactly the problem that the `height` and `width` attributes were invented to solve—<a hreflang="en" href="https://www.w3.org/TR/2018/SPSD-html32-20180315/#img">in 1996</a>.
 
-Unfortunately, `height` and `width` never played well with images that are assigned a variable extrinsic size in one dimension (e.g., `width: 100%;`), and left to fill out their intrinsic aspect ratio, in the other dimension. This is the dominant pattern in responsive design. So `width` and `height` fell out of favor within responsive contexts until 2019, when [a tweak to how `height` and `width` are used by browsers](https://developer.mozilla.org/docs/Web/Media/images/aspect_ratio_mapping#a_new_way_of_sizing_images_before_loading_completes) fixed this problem. Now, consistently setting `height` and `width` is one of the best things authors can do to reduce <a hreflang="en" href="https://web.dev/cls/">Cumulative Layout Shift</a>. How often are these attributes accomplishing this task?
+Unfortunately, `height` and `width` never played well with images that are assigned a variable extrinsic size in one dimension (e.g., `width: 100%;`), and left to fill out their intrinsic aspect ratio, in the other dimension. This is the dominant pattern in responsive design. So `width` and `height` fell out of favor within responsive contexts until 2019, when [a tweak to how `height` and `width` are used by browsers](https://developer.mozilla.org/docs/Web/Media/images/aspect_ratio_mapping#a_new_way_of_sizing_images_before_loading_completes) fixed this problem. Now, consistently setting `height` and `width` is one of the best things authors can do to reduce <a hreflang="en" href="https://web.dev/articles/cls">Cumulative Layout Shift</a>. How often are these attributes accomplishing this task?
 
 {{ figure_markup(
   caption="The percentage of `<img>`s on mobile that have both `height` and `width` attributes and are extrinsically sized in only one dimension.",

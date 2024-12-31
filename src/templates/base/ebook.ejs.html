@@ -25,7 +25,7 @@
 
             <!-- Only use JPG for Ebook as not sure on support for other formats in PDFs -->
             <picture>
-                <img src="{{ chapter_hero_dir }}hero_lg.jpg" class="content-banner" alt="" width="866" height="433">
+                <img src="{{ chapter_hero_dir }}hero_lg.jpg" class="content-banner" alt="{{ metadata.get('hero_alt') or '' }}" width="866" height="433">
             </picture>
 
             <div class="byline">{{ self.written_by_before() }}
@@ -96,12 +96,30 @@
                         {% if authordata.twitter or authordata.github or authordata.linkedin or authordata.website %}
                             <div class="social">
                                 {% if authordata.twitter %}
-                                <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">
+                                <a class="twitter" href="https://x.com/{{ authordata.twitter }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">
                                     <svg aria-hidden="true">
                                         <title id="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">{{ onTwitter(authordata.twitter) }}</title>
                                         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter-logo"></use>
                                     </svg>
                                     @{{ authordata.twitter }}
+                                </a>
+                                {% endif %}
+                                {% if authordata.mastodon %}
+                                <a class="mastodon" href="{{ authordata.mastodon }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-mastodon">
+                                    <svg aria-hidden="true">
+                                        <title id="{{ metadata.get('chapter') }}-author-{{ author }}-mastodon">{{ onMastodon(authordata.mastodon) }}</title>
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#mastodon-logo"></use>
+                                    </svg>
+                                    @{{ authordata.mastodon }}
+                                </a>
+                                {% endif %}
+                                {% if authordata.bluesky %}
+                                <a class="bluesky" href="https://bsky.app/profile/{{ authordata.bluesky }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-bluesky">
+                                    <svg aria-hidden="true">
+                                        <title id="{{ metadata.get('chapter') }}-author-{{ author }}-bluesky">{{ onBluesky(authordata.bluesky) }}</title>
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bluesky-logo"></use>
+                                    </svg>
+                                    @{{ authordata.bluesky }}
                                 </a>
                                 {% endif %}
                                 {% if authordata.github %}

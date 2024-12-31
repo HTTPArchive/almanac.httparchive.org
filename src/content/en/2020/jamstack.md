@@ -2,12 +2,13 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Jamstack
 description: Jamstack chapter of the 2020 Web Almanac covering the use of Jamstack, the performance of popular Jamstack frameworks, as well as an analysis of real-user experience using the Core Web Vitals metadata.
+hero_alt: Hero image of the Web Almanac characters using a large gas cylinder with script markings on the front to inflate a web page.
 authors: [ahmadawais]
 reviewers: [MaedahBatool, phacks]
 analysts: [denar90, remotesynth]
 editors: [tunetheweb]
 translators: []
-ahmadawais_bio: Ahmad Awais is an award-winning open-source engineer, Google Developers Expert Dev Advocate, Node.js Community Committee Outreach Lead, WordPress Core Dev, and VP of Engineering DevRel at WGA. He has authored various open-source software tools used by millions of developers worldwide. Like his <a hreflang="en" href="https://shadesofpurple.pro/more">Shades of Purple</a> code-theme or projects like the <a hreflang="en" href="https://github.com/AhmadAwais/corona-cli">corona-cli</a>. Awais loves to teach. Over 20,000 developers are learning from his <a hreflang="en" href="https://AhmadAwais.com/courses/">courses</a> i.e. <a hreflang="en" href="https://nodecli.com/">Node CLI</a>, <a hreflang="en" href="https://vscode.pro/">VSCode.pro</a>, and <a hreflang="en" href="https://nextjsbeginner.com/">Next.js Beginner</a>. Awais received FOSS community leadership recognition as one of the <a hreflang="en" href="https://ahmadawais.com/github-stars/">12 featured GitHub Stars</a>. He is a member of the Smashing Magazine Experts Panel; featured & published author at CSS-Tricks, Tuts+, Scotch.io, SitePoint. You can mostly find him on Twitter <a href="https://twitter.com/MrAhmadAwais/">@MrAhmadAwais</a> where he tweets his <a hreflang="en" href="https://awais.dev/odmt">#OneDevMinute</a> developer tips.
+ahmadawais_bio: Ahmad Awais is an award-winning open-source engineer, Google Developers Expert Dev Advocate, Node.js Community Committee Outreach Lead, WordPress Core Dev, and VP of Engineering DevRel at WGA. He has authored various open-source software tools used by millions of developers worldwide. Like his <a hreflang="en" href="https://shadesofpurple.pro/more">Shades of Purple</a> code-theme or projects like the <a hreflang="en" href="https://github.com/AhmadAwais/corona-cli">corona-cli</a>. Awais loves to teach. Over 20,000 developers are learning from his <a hreflang="en" href="https://AhmadAwais.com/courses/">courses</a> i.e. <a hreflang="en" href="https://nodecli.com/">Node CLI</a>, <a hreflang="en" href="https://vscode.pro/">VSCode.pro</a>, and <a hreflang="en" href="https://nextjsbeginner.com/">Next.js Beginner</a>. Awais received FOSS community leadership recognition as one of the <a hreflang="en" href="https://ahmadawais.com/github-stars/">12 featured GitHub Stars</a>. He is a member of the Smashing Magazine Experts Panel; featured & published author at CSS-Tricks, Tuts+, Scotch.io, SitePoint. You can mostly find him on Twitter <a href="https://x.com/MrAhmadAwais/">@MrAhmadAwais</a> where he tweets his <a hreflang="en" href="https://awais.dev/odmt">#OneDevMinute</a> developer tips.
 discuss: 2053
 results: https://docs.google.com/spreadsheets/d/1BCC5Q4tePpTl8TiaGmSxBc9Lh2to7xBfVPMULFOBwvk/
 featured_quote: Stats suggest over twice as many Jamstack sites exist now than in 2019. Developers enjoy a better development experience by separating the frontend from the backend. But what about the real-user experience of browsing Jamstack sites?
@@ -29,7 +30,7 @@ The <a hreflang="en" href="https://httparchive.org/">HTTP Archive</a> crawls <a 
 
 The goals of this chapter are to estimate and analyze the growth of the Jamstack sites, the performance of popular Jamstack frameworks, as well as an analysis of real user experience using the Core Web Vitals metrics.
 
-<p class="note">It should be noted that our analysis is limited by those Jamstacks that make themselves easily identifiable using <a href="./methodology#wappalyzer">Wappalyzer</a>. This means our data does not include some popular Jamstacks like <a hreflang="en" href="https://github.com/11ty/eleventy/">Eleventy</a> which <a href="https://twitter.com/eleven_ty/status/1334225624110608387?s=20">make a deliberate choice to not make themselves identifiable</a>. While we would ideally include all Jamstacks, we believe there is still plenty of value in analyzing the significant data we do have.</p>
+<p class="note">It should be noted that our analysis is limited by those Jamstacks that make themselves easily identifiable using <a href="./methodology#wappalyzer">Wappalyzer</a>. This means our data does not include some popular Jamstacks like <a hreflang="en" href="https://github.com/11ty/eleventy/">Eleventy</a> which <a href="https://x.com/eleven_ty/status/1334225624110608387?s=20">make a deliberate choice to not make themselves identifiable</a>. While we would ideally include all Jamstacks, we believe there is still plenty of value in analyzing the significant data we do have.</p>
 
 ## Adoption of Jamstack
 
@@ -198,7 +199,7 @@ Looking at the year on year growth, we see that Next.js has increased its lead o
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Relative % adoption of Jamstack frameworks", sheets_gid="1474840498", sql_file="ssg_compared_to_2019.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Relative % adoption of Jamstack frameworks.", sheets_gid="1474840498", sql_file="ssg_compared_to_2019.sql") }}</figcaption>
 </figure>
 
 And concentrating on the top 5 Jamstacks further shows Next.js's lead:

@@ -2,12 +2,13 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Derden
 description: Hoofdstuk Derden van de Web Almanac 2020 met informatie over welke derden worden gebruikt, waarvoor ze worden gebruikt, impact op de prestaties en impact op de privacy.
+hero_alt: Hero image of Web Almanac characters plugging various things into a web page.
 authors: [simonhearne]
 reviewers: [jzyang, exterkamp]
 analysts: [max-ostapenko, paulcalvano]
 editors: [tunetheweb]
 translators: [noah-vdv]
-simonhearne_bio: Simon is een webprestatie-architect. Hij heeft een passie voor het helpen leveren van een sneller en toegankelijker web. U kunt hem vinden op twitter<a href="https://twitter.com/simonhearne">@SimonHearne</a> en zijn blog <a hreflang="en" href="https://simonhearne.com">simonhearne.com</a>.
+simonhearne_bio: Simon is een webprestatie-architect. Hij heeft een passie voor het helpen leveren van een sneller en toegankelijker web. U kunt hem vinden op twitter<a href="https://x.com/simonhearne">@SimonHearne</a> en zijn blog <a hreflang="en" href="https://simonhearne.com">simonhearne.com</a>.
 discuss: 2042
 results: https://docs.google.com/spreadsheets/d/1uW4SMkC45b4EbC4JV1xKAUhwGN2K8j0qFy_jSIYnHhI/
 featured_quote: Inhoud van derden komt vaker dan ooit voor, 94% van de pagina's heeft ten minste één bron van derden en de mediaanpagina heeft 24. In dit hoofdstuk bespreken we de prevalentie van inhoud van derden, de impact op het paginagewicht en de browser-CPU, en stellen vervolgens methoden voor om de impact van inhoud van derden op de paginaprestaties te verminderen.

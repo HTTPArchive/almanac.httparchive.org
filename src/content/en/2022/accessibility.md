@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Accessibility
 description: Accessibility chapter of the 2022 Web Almanac covering ease of reading, navigation, forms, media, ARIA, and accessibility apps.
+hero_alt: Hero image of a robot with a blue, human accessibility icon on its front scanning a web page, while Web Almanac characters check some labels.
 authors: [SaptakS, thibaudcolas, scottdavis99]
 reviewers: [shantsis]
 analysts: [thibaudcolas]
@@ -11,7 +12,7 @@ SaptakS_bio: Saptak S is a human rights centered web developer, focusing on usab
 scottdavis99_bio: Scott Davis is an author and Digital Accessibility Advocate with <a hreflang="en" href="https://www.thoughtworks.com/">Thoughtworks</a>, where he focuses on leading-edge / innovative / emerging / non-traditional aspects of web development. "Digital Accessibility is so much more than a compliance checkbox; Accessibility is a springboard for innovation."
 thibaudcolas_bio: Thibaud Colas is a web developer and open source contributor focusing on accessibility topics. He is a core contributor to the <a hreflang="en" href="https://wagtail.org/">Wagtail</a> CMS, and a member of the accessibility team for <a hreflang="en" href="https://www.djangoproject.com/">Django</a>.
 results: https://docs.google.com/spreadsheets/d/1ladaKh6RbtMKQwkccwxDJGQf85KyhfLrtlM_9e9sLH8/
-featured_quote: Good accessibility benefits everyone, not just those with disabilities. This is one of the core principles of Universal Design. After the COVID-19 pandemic started, more and more people have been reliant on the internet. Likewise,  accessibility needs to improve as well, or we risk alienating a lot of people. Although the state of web accessibility still leaves a lot to be desired, we did see an overall improvement in sites’ accessibility this year.
+featured_quote: Good accessibility benefits everyone, not just those with disabilities. This is one of the core principles of Universal Design. After the COVID-19 pandemic started, more and more people have been reliant on the internet. Likewise,  accessibility needs to improve as well, or we risk alienating a lot of people. Although the state of web accessibility still leaves a lot to be desired, we did see an overall improvement in sites' accessibility this year.
 featured_stat_1: 8%
 featured_stat_label_1: Sites using `prefers-color-scheme` to adjust styles based on light/dark mode
 featured_stat_2: 22.9%
@@ -26,7 +27,7 @@ featured_stat_label_3: Sites using `:focus-visible`, compared to only 0.6% last 
 
 When does a software feature cease being an "accessibility feature" and simply become a "feature" that we all use? Ask yourself that the next time you put your smartphone in silent/vibrate mode – especially if you're not a member of the Deaf/Hard of Hearing community.
 
-Good accessibility benefits everyone, not just those with disabilities. This is one of the core principles of <a hreflang="en" href="https://en.wikipedia.org/wiki/Universal_design">Universal Design</a>. Tim Berners-Lee said, "The power of the Web is in its universality. Access by everyone regardless of disability is an essential aspect." After the COVID-19 pandemic started, more and more people have been reliant on the internet. Likewise, accessibility needs to improve as well, or we risk alienating a lot of people.
+Good accessibility benefits everyone, not just those with disabilities. This is one of the core principles of [Universal Design](https://wikipedia.org/wiki/Universal_design). Tim Berners-Lee said, "The power of the Web is in its universality. Access by everyone regardless of disability is an essential aspect." After the COVID-19 pandemic started, more and more people have been reliant on the internet. Likewise, accessibility needs to improve as well, or we risk alienating a lot of people.
 
 The median overall site score for all Lighthouse Accessibility audit data rose from 80% in 2020 to 82% in 2021, then 83% in 2022. We hope that this increase represents a shift in the right direction.
 
@@ -73,7 +74,7 @@ It's a good idea to select a color scheme that passes color contrast requirement
 
 ### Zooming and scaling
 
-Zooming is another feature that users with low vision often use to view the text in a website better. There are system settings in the browser, as well as some magnifying tools that allow a user to zoom and scale a website. [Adrian Roselli](https://twitter.com/aardrian) talks in detail about the <a hreflang="en" href="https://adrianroselli.com/2015/10/dont-disable-zoom.html">different reasons you should not disable zoom</a>.
+Zooming is another feature that users with low vision often use to view the text in a website better. There are system settings in the browser, as well as some magnifying tools that allow a user to zoom and scale a website. [Adrian Roselli](https://x.com/aardrian) talks in detail about the <a hreflang="en" href="https://adrianroselli.com/2015/10/dont-disable-zoom.html">different reasons you should not disable zoom</a>.
 
 {{ figure_markup(
   image="pages-zooming-scaling-disabled.png",
@@ -84,7 +85,7 @@ Zooming is another feature that users with low vision often use to view the text
   sql_file="viewport_zoom_scale.sql",
 ) }}
 
-WCAG requires that text in a website can be resized up to at least 200%. We have found that 23% of desktop homepages and 28% of mobile homepages attempt to disable zoom.
+WCAG requires that text in a website can be resized up to at least 200%. We have found that 23% of desktop home pages and 28% of mobile home pages attempt to disable zoom.
 
 The method by which a developer disabled zoom is by adding a `<meta name="viewport" >` tag with a value like `maximum-scale, minimum-scale, user-scalable=no, or user-scalable=0` in the `content` attribute. So if you have a website that has one of these values, please delete those particular values from the `content` attribute to enable zoom.
 
@@ -97,7 +98,7 @@ The method by which a developer disabled zoom is by adding a `<meta name="viewpo
   sql_file="viewport_zoom_scale_by_domain_rank.sql",
 ) }}
 
-Of the top 1,000 most visited sites, 21% of desktop sites and 40% of mobile sites are built using code that attempts to disable user zooming or scaling. This means that the percentage of sites with zooming disabled is almost double on mobile compared to desktop. It's really important to not disable zooming on any device. To combat this, browsers have begun to override developers' attempts to disable zoom. [Manuel Matuzović](https://twitter.com/mmatuzo) wrote an article talking about the <a hreflang="en" href="https://www.matuzo.at/blog/2022/please-stop-disabling-zoom/">concerns with disabling zoom and user settings in browsers</a>.
+Of the top 1,000 most visited sites, 21% of desktop sites and 40% of mobile sites are built using code that attempts to disable user zooming or scaling. This means that the percentage of sites with zooming disabled is almost double on mobile compared to desktop. It's really important to not disable zooming on any device. To combat this, browsers have begun to override developers' attempts to disable zoom. [Manuel Matuzović](https://x.com/mmatuzo) wrote an article talking about the <a hreflang="en" href="https://www.matuzo.at/blog/2022/please-stop-disabling-zoom/">concerns with disabling zoom and user settings in browsers</a>.
 
 {{ figure_markup(
   image="font-unit-usage.png",
@@ -155,7 +156,7 @@ Forced colors mode is an accessibility feature intended to increase the readabil
 ) }}
 
 Like other user preference media queries, we see a lot of websites making adjustments based on forced colors mode. 8% of mobile sites and 9% of desktop sites use the `forced-colors` media query to alter their styles, while usage of the legacy IE11-only `-ms-high-contrast` media query is above 20% for both mobile and desktop.
-This doesn't tell us to what extent sites do support forced colors mode, but the data is encouraging nonetheless considering the `forced-colors` media query has only been supported in major browsers <a hreflang="en" href="https://caniuse.com/mdn-css_at-rules_media_forced-colors">since 2020</a>, and support for <a hreflang="en" href="https://developer.chrome.com/docs/devtools/rendering/emulate-css/">emulating `forced-colors` mode</a> on devices other than Windows is only available since February 2022.
+This doesn't tell us to what extent sites do support forced colors mode, but the data is encouraging nonetheless considering the `forced-colors` media query has only been supported in major browsers <a hreflang="en" href="https://caniuse.com/mdn-css_at-rules_media_forced-colors">since 2020</a>, and support for <a hreflang="en" href="https://developer.chrome.com/docs/devtools/rendering/emulate-css">emulating `forced-colors` mode</a> on devices other than Windows is only available since February 2022.
 
 ## Navigation
 
@@ -178,7 +179,7 @@ The WCAG requires a visible focus indicator for all interactive content to help 
   sql_file="focus_outline_0.sql",
 ) }}
 
-We found that 86% of websites add `:focus {outline: 0}`. This removes the default outline that browsers use for the focused interactive element. In some cases, they are overridden using some custom styling, but not always. This makes it impossible for users to determine which element has focus which in turn hinders navigation. [Sara Soueidan](https://twitter.com/SaraSoueidan) has a great article on how to <a hreflang="en" href="https://www.sarasoueidan.com/blog/focus-indicators/">design WCAG-compliant focus indicators</a>. However, it's exciting to see that 9% of websites have `:focus-visible` compared to only 0.6% last year. This is definitely a step in the right direction.
+We found that 86% of websites add `:focus {outline: 0}`. This removes the default outline that browsers use for the focused interactive element. In some cases, they are overridden using some custom styling, but not always. This makes it impossible for users to determine which element has focus which in turn hinders navigation. [Sara Soueidan](https://x.com/SaraSoueidan) has a great article on how to <a hreflang="en" href="https://www.sarasoueidan.com/blog/focus-indicators/">design WCAG-compliant focus indicators</a>. However, it's exciting to see that 9% of websites have `:focus-visible` compared to only 0.6% last year. This is definitely a step in the right direction.
 
 #### `tabindex`
 
@@ -201,7 +202,7 @@ It's important to remember that placing non-interactive elements in the keyboard
   sql_file="tabindex_usage_and_values.sql",
 ) }}
 
-Out of all websites with `tabindex` attribute, 7% have `tabindex` with a positive value. Using positive values for `tabindex` is generally bad practice since it disrupts the normal navigation. [Karl Groves](https://twitter.com/karlgroves) has a <a hreflang="en" href="https://karlgroves.com/2018/11/13/why-using-tabindex-values-greater-than-0-is-bad">great article</a> that explains this concept further.
+Out of all websites with `tabindex` attribute, 7% have `tabindex` with a positive value. Using positive values for `tabindex` is generally bad practice since it disrupts the normal navigation. [Karl Groves](https://x.com/karlgroves) has a <a hreflang="en" href="https://karlgroves.com/2018/11/13/why-using-tabindex-values-greater-than-0-is-bad">great article</a> that explains this concept further.
 
 ### Landmarks
 
@@ -258,11 +259,11 @@ Landmarks help divide a web page into thematic regions that makes it easier for 
   </figcaption>
 </figure>
 
-The most commonly expected landmarks that the majority of web pages should have are `<main>`, `<header>`, `<nav>` and `<footer>`. We found that only 31% of desktop and mobile pages have a native HTML `<main>` element, while 17% of desktop pages have an element with a `role="main"`, and 38% of pages have either `<main>` or `role="main"`. It's good to see the use of native elements increase. [Scott O' Hara](https://twitter.com/scottohara)'s <a hreflang="en" href="https://www.scottohara.me/blog/2018/03/03/landmarks.html">article on landmarks</a> covers all the details that one should keep in mind to ensure better accessibility.
+The most commonly expected landmarks that the majority of web pages should have are `<main>`, `<header>`, `<nav>` and `<footer>`. We found that only 31% of desktop and mobile pages have a native HTML `<main>` element, while 17% of desktop pages have an element with a `role="main"`, and 38% of pages have either `<main>` or `role="main"`. It's good to see the use of native elements increase. [Scott O' Hara](https://x.com/scottohara)'s <a hreflang="en" href="https://www.scottohara.me/blog/2018/03/03/landmarks.html">article on landmarks</a> covers all the details that one should keep in mind to ensure better accessibility.
 
 ### Heading hierarchy
 
-Headings help all users, including those using assistive technologies, to navigate through the website. Users with assistive technologies can navigate to the exact sections that they are interested in. As mentioned in [Marcy Sutton](https://twitter.com/marcysutton)'s <a hreflang="en" href="https://marcysutton.com/how-i-audit-a-website-for-accessibility#Headings-and-Semantic-Structure">article on headings and semantic structure</a> , headings can be thought of as a table of contents that one can navigate through to go to a particular content area.
+Headings help all users, including those using assistive technologies, to navigate through the website. Users with assistive technologies can navigate to the exact sections that they are interested in. As mentioned in [Marcy Sutton](https://x.com/marcysutton)'s <a hreflang="en" href="https://marcysutton.com/how-i-audit-a-website-for-accessibility#Headings-and-Semantic-Structure">article on headings and semantic structure</a> , headings can be thought of as a table of contents that one can navigate through to go to a particular content area.
 
 {{ figure_markup(
   content="58%",
@@ -272,7 +273,7 @@ Headings help all users, including those using assistive technologies, to naviga
   sql_file="lighthouse_a11y_audits.sql",
 ) }}
 
-58% of websites pass the test for properly ordered headings that do not skip levels, which is the same as last year. Hopefully this number will increase next year since the <a hreflang="en" href="https://github.com/whatwg/html/pull/7829">document outline example in WHATWG standards have been updated</a>. A very important thing to remember is that heading levels don't have to represent the actual style (or importance) of a particular element. Headings are to be used primarily for hierarchy purposes, while CSS can be used for the styling of the element. A very good article on how to structure headings in your page is by [Steve Faulkner](https://twitter.com/stevefaulkner) titled, <a hreflang="en" href="https://stevefaulkner.github.io/Articles/How%20to%20mark%20up%20subheadings,%20subtitles,%20alternative%20titles%20and%20taglines.html">"How to mark up subheadings, subtitles, alternative titles and taglines"</a>.
+58% of websites pass the test for properly ordered headings that do not skip levels, which is the same as last year. Hopefully this number will increase next year since the <a hreflang="en" href="https://github.com/whatwg/html/pull/7829">document outline example in WHATWG standards have been updated</a>. A very important thing to remember is that heading levels don't have to represent the actual style (or importance) of a particular element. Headings are to be used primarily for hierarchy purposes, while CSS can be used for the styling of the element. A very good article on how to structure headings in your page is by [Steve Faulkner](https://x.com/stevefaulkner) titled, <a hreflang="en" href="https://stevefaulkner.github.io/Articles/How%20to%20mark%20up%20subheadings,%20subtitles,%20alternative%20titles%20and%20taglines.html">"How to mark up subheadings, subtitles, alternative titles and taglines"</a>.
 
 ### Secondary navigation
 
@@ -286,7 +287,7 @@ Skip links allow keyboard or switch control device users to skip through differe
 
 {{ figure_markup(
   content="21%",
-  caption="Mobile and desktop pages which likely have a skip link",
+  caption="Mobile and desktop pages which likely have a skip link.",
   classes="big-number",
   sheets_gid="1778743357",
   sql_file="skip_links.sql",
@@ -307,7 +308,7 @@ Descriptive page titles are useful when navigating between pages, tabs and windo
   sql_file="page_title.sql",
 ) }}
 
-Though there are 98% of mobile websites which have a document title, only 70% have a title that is longer than four words. Since we only scan homepages of websites, it's not possible for us to determine if the inner pages of the website use a more detailed text in the `<title>` tag that describes the page. A title should ideally have both the title of the website as well as a title giving context about the page in the website for better navigation.
+Though there are 98% of mobile websites which have a document title, only 70% have a title that is longer than four words. Since we only scan home pages of websites, it's not possible for us to determine if the inner pages of the website use a more detailed text in the `<title>` tag that describes the page. A title should ideally have both the title of the website as well as a title giving context about the page in the website for better navigation.
 
 ### Tables
 
@@ -436,7 +437,7 @@ Websites often want to verify that the visitor is a human and not a bot, which i
 
 {{ figure_markup(
   content="19%",
-  caption="Mobile sites using a CAPTCHA",
+  caption="Mobile sites using a CAPTCHA.",
   classes="big-number",
   sheets_gid="1615174635",
   sql_file="captcha_usage.sql",
@@ -452,7 +453,7 @@ Accessibility considerations become very crucial when it comes to media consumpt
 
 {{ figure_markup(
   content="59%",
-  caption="Mobile pages passing the Lighthouse image-alt audit for images with alt text",
+  caption="Mobile pages passing the Lighthouse image-alt audit for images with alt text.",
   classes="big-number",
   sheets_gid="1270834582",
   sql_file="lighthouse_a11y_audits.sql",
@@ -499,7 +500,7 @@ We found that 27% of alt text attributes in desktop and mobile websites were emp
 
 {{ figure_markup(
   content="0.06%",
-  caption="Desktop websites with an `<audio>` element have at least one accompanying `<track>` element",
+  caption="Desktop websites with an `<audio>` element have at least one accompanying `<track>` element.",
   classes="big-number",
   sheets_gid="201877037",
   sql_file="audio_track_usage.sql",
@@ -509,7 +510,7 @@ We found that 27% of alt text attributes in desktop and mobile websites were emp
 
 {{ figure_markup(
   content="0.71%",
-  caption="Desktop `<video>` elements with an accompanying `<track>` element",
+  caption="Desktop `<video>` elements with an accompanying `<track>` element.",
   classes="big-number",
   sheets_gid="345150659",
   sql_file="video_track_usage.sql",
@@ -551,11 +552,11 @@ Currently 72% of desktop pages have at least one instance of an ARIA role attrib
   height="540",
 ) }}
 
-We found that 33% (up from 29% in 2021, and 25% in 2020) of desktop and mobile sites had homepages with at least one element with an explicitly assigned `role="button"`. This increase in percentage is likely not good since this indicates that websites are either creating custom buttons using `<div>` or `<span>`, or are adding a redundant role to `<button>` elements. Both of these are bad practices and go against the <a hreflang="en" href="https://www.w3.org/TR/using-aria/#rule1">first rule of ARIA</a>. Following this rule, one should always use a native HTML element—in this case, `<button>`—when possible.
+We found that 33% (up from 29% in 2021, and 25% in 2020) of desktop and mobile sites had home pages with at least one element with an explicitly assigned `role="button"`. This increase in percentage is likely not good since this indicates that websites are either creating custom buttons using `<div>` or `<span>`, or are adding a redundant role to `<button>` elements. Both of these are bad practices and go against the <a hreflang="en" href="https://www.w3.org/TR/using-aria/#rule1">first rule of ARIA</a>. Following this rule, one should always use a native HTML element—in this case, `<button>`—when possible.
 
 {{ figure_markup(
   content="21%",
-  caption="Desktop websites have at least one link with a `button` role",
+  caption="Desktop websites have at least one link with a `button` role.",
   classes="big-number",
   sheets_gid="751886683",
   sql_file="anchors_with_role_button.sql",
@@ -569,7 +570,7 @@ When an element has `role="presentation"` declared on it, its semantics are stri
 
 {{ figure_markup(
   content="24%",
-  caption="Mobile websites have at least one element with `role=presentation`",
+  caption="Mobile websites have at least one element with `role=presentation`.",
   classes="big-number",
   sheets_gid="283521996",
   sql_file="common_aria_role.sql",
@@ -579,7 +580,7 @@ Removing an element's semantics causes an element to lose its behavior. It becom
 
 {{ figure_markup(
   content="11%",
-  caption="Mobile websites have at least one element with `role=none`",
+  caption="Mobile websites have at least one element with `role=none`.",
   classes="big-number",
   sheets_gid="283521996",
   sql_file="common_aria_role.sql",
@@ -593,7 +594,7 @@ Most browsers ignore `role="presentation"` and `role="none"` on focusable elemen
 
 Parallel to the DOM there is a similar browser structure called the accessibility tree. It contains information about HTML elements including accessible names, descriptions, roles and states. This information is conveyed to assistive technologies through accessibility APIs.
 
-The accessible name can be derived from an element's content (such as button text), an attribute (such as an image `alt` attribute value), or an associated element (such as a programmatically associated label for a form control). There is a specificity ranking that is used to determine where the element gets its accessible name from if there are multiple potential sources. [Léonie Watson](https://twitter.com/LeonieWatson)'s article, <a hreflang="en" href="https://developer.paciellogroup.com/blog/2017/04/what-is-an-accessible-name/">What is an accessible name?</a> is a great source to learn more about accessible names.
+The accessible name can be derived from an element's content (such as button text), an attribute (such as an image `alt` attribute value), or an associated element (such as a programmatically associated label for a form control). There is a specificity ranking that is used to determine where the element gets its accessible name from if there are multiple potential sources. [Léonie Watson](https://x.com/LeonieWatson)'s article, <a hreflang="en" href="https://developer.paciellogroup.com/blog/2017/04/what-is-an-accessible-name/">What is an accessible name?</a> is a great source to learn more about accessible names.
 
 {{ figure_markup(
   image="top10-aria-attributes.png",
@@ -631,7 +632,7 @@ Sometimes the visual interface can contain some redundant elements that are unhe
 
 {{ figure_markup(
   content="58%",
-  caption="Desktop websites having at least one instance of the `aria-hidden` attribute",
+  caption="Desktop websites having at least one instance of the `aria-hidden` attribute.",
   classes="big-number",
   sheets_gid="711360879",
   sql_file="common_element_attributes.sql",
@@ -647,7 +648,7 @@ A common technique that developers employ to supply additional information for s
 
 {{ figure_markup(
   content="15%",
-  caption="Desktop websites with a `sr-only` or `visually-hidden` class",
+  caption="Desktop websites with a `sr-only` or `visually-hidden` class.",
   classes="big-number",
   sheets_gid="642136962",
   sql_file="sr_only_classes.sql",
@@ -661,7 +662,7 @@ The presence of new or updated content in the DOM sometimes needs to be communic
 
 {{ figure_markup(
   content="23%",
-  caption="Desktop pages with live regions using `aria-live`",
+  caption="Desktop pages with live regions using `aria-live`.",
   classes="big-number",
   sheets_gid="711360879",
   sql_file="common_element_attributes.sql",
@@ -714,7 +715,7 @@ ARIA live regions allow us to listen for changes in the DOM, such that the updat
   </table>
   <figcaption>
     {{ figure_link(
-      caption="Pages with live region ARIA roles, and their implicit `aria-live` value",
+      caption="Pages with live region ARIA roles, and their implicit `aria-live` value.",
       sheets_gid="283521996",
       sql_file="common_aria_role.sql",
     ) }}
@@ -788,4 +789,4 @@ Our analysis shows that there hasn't been much of a substantial change in the ac
 
 We see that there are often a lot of misuse of features that may give an illusion of things being more accessible but in reality it often degrades the experience. For example, we see 20% of websites have an anchor tag with `role=button`. Also, we see that 2.2% of `alt` attributes across websites have a file extension in them, which almost certainly doesn't help in conveying the meaning of the image.
 
-A lot of the accessibility issues that we see in our analysis can be avoided if designers and developers start thinking about web accessibility from the very beginning and not as an enhancement at the end. Like [Anna E. Cook once said](https://twitter.com/annaecook/status/1404615552883060737), there's "no MVP without accessibility". The web community needs to realize that a website only has a great User Experience when that User Experience works for everyone, irrespective of the device and assistive technology used. We have tried to focus on key metrics that can be easily addressed in the hope that in 2023 we see the numbers improve.
+A lot of the accessibility issues that we see in our analysis can be avoided if designers and developers start thinking about web accessibility from the very beginning and not as an enhancement at the end. Like [Anna E. Cook once said](https://x.com/annaecook/status/1404615552883060737), there's "no MVP without accessibility". The web community needs to realize that a website only has a great User Experience when that User Experience works for everyone, irrespective of the device and assistive technology used. We have tried to focus on key metrics that can be easily addressed in the hope that in 2023 we see the numbers improve.

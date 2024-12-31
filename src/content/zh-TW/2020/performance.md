@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: 效能
 description: 2020 Web Almanac 的效能章節涵蓋了 Core WebVitals、Lighthouse Performance Score、First Contentful Paint (FCP) 以及 Time to First Byte (TTFB)。
+hero_alt: Hero image of Web Almanac characters images to a web page, while another Web Almanac character times them with a stopwatch.
 authors: [thefoxis]
 reviewers: [borisschapira, rviscomi, foxdavidj, noamr, Zizzamia, exterkamp]
 analysts: [max-ostapenko, dooman87]
@@ -67,7 +68,7 @@ featured_stat_label_3: 在 Lighthouse 6 時效能分數（Performance Score）�
 
 ## <span lang="en">Core WebVitals</span>: <span lang="en">Largest Contentful Paint</span> {core-web-vitals-largest-contentful-paint}
 
-<span lang="en">Largest Contentful Paint</span> (LCP) 是指標性的時間基準衡量標準，此項會回報最大的 <a hreflang="en" href="https://web.dev/lcp/#what-elements-are-considered"><span lang="en">above-the-fold element</span></a> 被 <span lang="en">render</span> 所需時間。（註：<span lang="en">above-the-fold element</span> 的意思是，一進到網頁時，不滑動所看到的畫面。<span lang="en">above-the-fold</span> 原意來自於一份未打開的報紙所看到的封面。）
+<span lang="en">Largest Contentful Paint</span> (LCP) 是指標性的時間基準衡量標準，此項會回報最大的 <a hreflang="en" href="https://web.dev/articles/lcp#what-elements-are-considered"><span lang="en">above-the-fold element</span></a> 被 <span lang="en">render</span> 所需時間。（註：<span lang="en">above-the-fold element</span> 的意思是，一進到網頁時，不滑動所看到的畫面。<span lang="en">above-the-fold</span> 原意來自於一份未打開的報紙所看到的封面。）
 
 ### 根據不同裝置來分析 LCP
 
@@ -115,7 +116,7 @@ featured_stat_label_3: 在 Lighthouse 6 時效能分數（Performance Score）�
 
 因為 LCP 是用來計算最大的 <span lang="en">above-the-fold element</span> 被 <span lang="en">render</span> 時（包括圖像、影片或 <span lang="en">block</span> 層級包含文字的元素）的所需時間，因此無庸置疑地，網路速度越慢，LCP 的表現也越糟。
 
-可以發現網路速度及好的 LCP 效能有明確的關聯，但即使是 4G 也只有 48% 的結果被歸類為 <span lang="en">Good</span>，其餘的一半仍有改進空間。自動化多媒體最佳化、提供正確的尺寸及格式還有為 Low Data Mode 做最佳化都能夠改善效能。詳情請看<a hreflang="en" href="https://web.dev/optimize-lcp/">LCP 改善指南</a>。
+可以發現網路速度及好的 LCP 效能有明確的關聯，但即使是 4G 也只有 48% 的結果被歸類為 <span lang="en">Good</span>，其餘的一半仍有改進空間。自動化多媒體最佳化、提供正確的尺寸及格式還有為 Low Data Mode 做最佳化都能夠改善效能。詳情請看<a hreflang="en" href="https://web.dev/articles/optimize-lcp">LCP 改善指南</a>。
 
 ## <span lang="en">Core WebVitals</span>: <span lang="en">Cumulative Layout Shift</span> {core-web-vitals-cumulative-layout-shift}
 
@@ -153,7 +154,7 @@ featured_stat_label_3: 在 Lighthouse 6 時效能分數（Performance Score）�
 
 在不同地區的 CLS 效能原則上都表現的不錯，且至少有 56% 的網站得到 <span lang="en">Good</span> 的評比。對感知視覺穩定性來說，這是一個很棒的消息。此外，我們可以同樣觀察到排名較前面的國家與 LCP 排名較前面的國家相似，其中包括韓國、日本、捷克、德國以及波蘭。
 
-相較其他的衡量標準（例如 LCP），視覺穩定性較少受到地理位置或是網路延遲時間的影響。排名最佳與最差的國家之間，<span lang="en">Good</span> 百分比的差距在 LCP 有 61% 之差，但在 CLS 僅有 13%。根據以上數據，評分中段的網頁相對地少，反倒是 <span lang="en">Poor</span> 的使用者佔了 19% 至 29%。造成 CLS 分數下降的因素有很多種，詳情請見 <a hreflang="en" href="https://web.dev/optimize-cls/"><span lang="en">Cumulative Layout Shift</span> 最佳化指南</a>。
+相較其他的衡量標準（例如 LCP），視覺穩定性較少受到地理位置或是網路延遲時間的影響。排名最佳與最差的國家之間，<span lang="en">Good</span> 百分比的差距在 LCP 有 61% 之差，但在 CLS 僅有 13%。根據以上數據，評分中段的網頁相對地少，反倒是 <span lang="en">Poor</span> 的使用者佔了 19% 至 29%。造成 CLS 分數下降的因素有很多種，詳情請見 <a hreflang="en" href="https://web.dev/articles/optimize-cls"><span lang="en">Cumulative Layout Shift</span> 最佳化指南</a>。
 
 ### 根據連線方式來分析的 CLS
 

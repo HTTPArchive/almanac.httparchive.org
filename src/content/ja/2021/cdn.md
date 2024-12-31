@@ -2,13 +2,14 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: CDN
 description: 2021年版Web AlmanacのCDNの章では、CDNの採用、トップCDNプレーヤー、CDNがTLS、HTTP/2+、Brotliの採用に与える影響について解説しています。
+hero_alt: Hero image of Web Almanac characters extending a plug from a cloud into a web page.
 authors: [Navaneeth-akam]
 reviewers: [jzyang, boosef]
 analysts: [paulcalvano]
 editors: [jzyang, shantsis]
 translators: [ksakae1216]
 results: https://docs.google.com/spreadsheets/d/1DL7Pn1vbBwYmQZ5JPAjD69oCOvUidbuoNvdrw%2D%2Dj00U/
-Navaneeth-akam_bio: Navaneeth Krishna は、大手 CDN プロバイダーである <a hreflang="en" href="https://www.akamai.com/">Akamai</a> でウェブパフォーマンス・アーキテクトを務めています。CDN 業界で 10 年以上の経験を持つ同氏は、CDN が今後数年間のインターネットの成長に不可欠な要素になり、注目すべき空間になると確信しています。彼のツイートは[@Navanee55755217](https://twitter.com/Navanee55755217)で見ることができます。
+Navaneeth-akam_bio: Navaneeth Krishna は、大手 CDN プロバイダーである <a hreflang="en" href="https://www.akamai.com/">Akamai</a> でウェブパフォーマンス・アーキテクトを務めています。CDN 業界で 10 年以上の経験を持つ同氏は、CDN が今後数年間のインターネットの成長に不可欠な要素になり、注目すべき空間になると確信しています。彼のツイートは[@Navanee55755217](https://x.com/Navanee55755217)で見ることができます。
 featured_quote: CDNは20年以上前から存在しています。オンラインビデオの消費、オンラインショッピング、COVID-19によるビデオ会議の増加などにより、インターネットトラフィックが急激に増加しているため、CDNは以前にも増して必要とされています。
 featured_stat_1: 62.3%
 featured_stat_label_1: CDNを利用している人気サイト上位1,000件

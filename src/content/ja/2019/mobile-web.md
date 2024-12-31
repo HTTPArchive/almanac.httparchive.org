@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: モバイルウェブ
 description: 2019年Web AlmanacのモバイルWebの章では、ページの読み込み、テキストコンテンツ、拡大縮小、ボタンやリンク、フォームへの記入のしやすさなどをカバーしています。
+hero_alt: Hero image of Web Almanac characters squeezing a web page onto a mobile screen.
 authors: [foxdavidj]
 reviewers: [AymenLoukil, logicalphase]
 analysts: [ymschaap, rviscomi]
@@ -110,11 +111,11 @@ JavaScriptの効果をもっと詳しく知りたい方は、Addy Osmaniの<a hr
 
 あなたが記事を読んでいるときに突然、画像が読み込まれ、読んでいるテキストが画面の下に押し出されたと想像してみてください。あなたは今、あなたがいた場所を探すか、ちょうど記事を読むことをあきらめなければなりません。または、おそらくさらに悪いことに、同じ場所に広告がロードされる直前にリンクをクリックし始め、代わりに広告を誤ってクリックしてしまうことになります。
 
-では、どのようにしてサイトの移動量を測定するのでしょうか？　以前はかなり困難でしたが（不可能ではないにしても）、新しい <a hreflang="en" href="https://web.dev/layout-instability-api">レイアウトの不安定性API</a> のおかげで、2ステップで測定を行うことができます。
+では、どのようにしてサイトの移動量を測定するのでしょうか？　以前はかなり困難でしたが（不可能ではないにしても）、新しい <a hreflang="en" href="https://web.dev/articles/cls">レイアウトの不安定性API</a> のおかげで、2ステップで測定を行うことができます。
 
 1. レイアウトの不安定性APIを使用して、各シフトがページに与える影響を追跡します。これは、ビューポート内のコンテンツがどれだけ移動したかのパーセンテージとして報告されます。
 
-2. あなたが追跡したすべてのシフトを取り、それらを一緒に追加します。その結果が <a hreflang="en" href="https://web.dev/layout-instability-api#a-cumulative-layout-shift-score">累積レイアウトシフト</a>(CLS)スコアと呼ばれるものです。
+2. あなたが追跡したすべてのシフトを取り、それらを一緒に追加します。その結果が <a hreflang="en" href="https://web.dev/articles/cls#a-cumulative-layout-shift-score">累積レイアウトシフト</a>(CLS)スコアと呼ばれるものです。
 
 訪問者ごとに異なるCLSを持つことができるため、[Chrome UX Report](./methodology#chrome-ux-report) (./methodology#chrome-UX-report)(CrUX)を使用してウェブ全体でこのメトリックを分析するために、すべての体験を3つの異なるバケットにまとめています。
 

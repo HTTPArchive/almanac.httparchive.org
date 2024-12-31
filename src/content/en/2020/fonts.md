@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Fonts
 description: Fonts chapter of the 2020 Web Almanac covering where fonts are loaded from, font formats, font loading performance, variable fonts and color fonts.
+hero_alt: Hero image of Web Almanac characters on an assembly line preparing various F letters in various styles and shapes.
 authors: [raphlinus, jpamental]
 reviewers: [RoelN, svgeesus, davelab6, rsheeter, mandymichael]
 analysts: [AbbyTsai]
@@ -130,7 +131,7 @@ It wouldn't be sound to infer causality between hosting strategy from the above 
 
 #### Local isn't always better
 
-Another option from self-hosting fonts on the site's server, is to use the system-installed fonts on the client where they exist through the use of `local` in the `font-face` declaration. The use of `local` is <a hreflang="en" href="https://bramstein.com/writing/web-font-anti-patterns-local-fonts.html">controversial</a>, as it can save bytes, but it can also yield bad results if the locally installed version of the font is outdated. As of [November 2020](https://twitter.com/googlefonts/status/1328761547041148929?s=19), Google Fonts has moved to using `local` only for Roboto on mobile platforms, otherwise the font is always fetched over the network.
+Another option from self-hosting fonts on the site's server, is to use the system-installed fonts on the client where they exist through the use of `local` in the `font-face` declaration. The use of `local` is <a hreflang="en" href="https://bramstein.com/writing/web-font-anti-patterns-local-fonts.html">controversial</a>, as it can save bytes, but it can also yield bad results if the locally installed version of the font is outdated. As of [November 2020](https://x.com/googlefonts/status/1328761547041148929?s=19), Google Fonts has moved to using `local` only for Roboto on mobile platforms, otherwise the font is always fetched over the network.
 
 ## Racing to first paint
 

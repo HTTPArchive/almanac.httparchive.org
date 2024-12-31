@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Caching
 description: Caching chapter of the 2019 Web Almanac covering cache-control, expires, TTLs, validitaty, vary, set-cookies, AppCache, Service Workers and opportunities.
+hero_alt: Hero image of Web Almanac characters and resources in parking slots in a car park with parking meters in from of them. The middle spot is labelled 304.
 authors: [paulcalvano]
 reviewers: [foxdavidj, bkardell]
 analysts: [paulcalvano, foxdavidj]
@@ -9,7 +10,7 @@ editors: [tunetheweb]
 translators: []
 discuss: 1771
 results: https://docs.google.com/spreadsheets/d/1mnq03DqrRBwxfDV05uEFETK0_hPbYOynWxZkV3tFgNk/
-paulcalvano_bio: Paul Calvano is a Web Performance Architect at <a hreflang="en" href="https://www.akamai.com/">Akamai</a>, where he helps businesses improve the performance of their websites. He's also a co-maintainer of the HTTP Archive project. You can find him tweeting at <a href="https://twitter.com/paulcalvano">@paulcalvano</a>, blogging at <a hreflang="en" href="https://paulcalvano.com">http://paulcalvano.com</a> and sharing HTTP Archive research at <a hreflang="en" href="https://discuss.httparchive.org">https://discuss.httparchive.org</a>.
+paulcalvano_bio: Paul Calvano is a Web Performance Architect at <a hreflang="en" href="https://www.akamai.com/">Akamai</a>, where he helps businesses improve the performance of their websites. He's also a co-maintainer of the HTTP Archive project. You can find him tweeting at <a href="https://x.com/paulcalvano">@paulcalvano</a>, blogging at <a hreflang="en" href="https://paulcalvano.com">http://paulcalvano.com</a> and sharing HTTP Archive research at <a hreflang="en" href="https://discuss.httparchive.org">https://discuss.httparchive.org</a>.
 featured_quote: Caching is a technique that enables the reuse of previously downloaded content. It provides a significant performance benefit by avoiding costly network requests and it also helps scale an application by reducing the traffic to a website's origin infrastructure. There's an old saying, "the fastest request is the one that you don't have to make" and caching is one of the key ways to avoid having to make requests.
 featured_stat_1: 27%
 featured_stat_label_1: Responses not using any caching headers

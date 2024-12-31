@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: パフォーマンス
 description: コンテンツの初回ペイント（FCP）、最初のバイトまでの時間（TTFB）、初回入力遅延（FID）を取り扱う2019 Web Almanac パフォーマンスの章。
+hero_alt: Hero image of Web Almanac characters images to a web page, while another Web Almanac character times them with a stopwatch.
 authors: [rviscomi]
 reviewers: [JMPerez,foxdavidj,sergeychernyshev,zeman]
 analysts: [rviscomi, raghuramakrishnan71]
@@ -9,7 +10,7 @@ editors: [rachellcostello]
 translators: [MSakamaki]
 discuss: 1762
 results: https://docs.google.com/spreadsheets/d/1zWzFSQ_ygb-gGr1H1BsJCfB7Z89zSIf7GX0UayVEte4/
-rviscomi_bio: Rick ViscomiはGoogle のシニア開発プログラムエンジニアで、HTTP ArchiveやChrome UX Reportなどのウェブ透過性プロジェクトに携わり、ウェブサイトの構築方法と体験の交差点を研究しています。Rickは、<a hreflang="en" href="https://www.youtube.com/playlist?list=PLNYkxOF6rcIBGvYSYO-VxOsaYQDw5rifJ">The State of the Web</a>のホストを務めており、専門家がウェブのトレンドについて議論しています。Rickは、ウェブのパフォーマンスをテストするためのガイドである <a hreflang="en" href="https://usingwpt.com">Using WebPageTest</a> の共著者であり、<a hreflang="en" href="https://dev.to/rick_viscomi">dev.to</a> でウェブについて頻繁に執筆していますし、<a href="https://twitter.com/rick_viscomi">@rick_viscomi </a> の Twitter でもウェブについて書いています。
+rviscomi_bio: Rick ViscomiはGoogle のシニア開発プログラムエンジニアで、HTTP ArchiveやChrome UX Reportなどのウェブ透過性プロジェクトに携わり、ウェブサイトの構築方法と体験の交差点を研究しています。Rickは、<a hreflang="en" href="https://www.youtube.com/playlist?list=PLNYkxOF6rcIBGvYSYO-VxOsaYQDw5rifJ">The State of the Web</a>のホストを務めており、専門家がウェブのトレンドについて議論しています。Rickは、ウェブのパフォーマンスをテストするためのガイドである <a hreflang="en" href="https://usingwpt.com">Using WebPageTest</a> の共著者であり、<a hreflang="en" href="https://dev.to/rick_viscomi">dev.to</a> でウェブについて頻繁に執筆していますし、<a href="https://x.com/rick_viscomi">@rick_viscomi </a> の Twitter でもウェブについて書いています。
 featured_quote: パフォーマンスはユーザー体験の内臓的な部分です。多くのウェブサイトでは、ページの読み込み時間を高速化してユーザー体験を向上させることは、コンバージョン率の向上につながります。逆に、パフォーマンスが悪いと、ユーザーは頻繁にコンバージョンしないし、不満でページを激怒してクリックしてしまうことさえ観察されています。
 featured_stat_1: 13%
 featured_stat_label_1: FCPが速いサイト
@@ -139,7 +140,7 @@ Webサイトでデスクトップユーザーが高確率で携帯電話のユ�
 
 ### 最初のバイトまでの時間(Time to First Byte) (TTFB)
 
-<a hreflang="en" href="https://web.dev/time-to-first-byte">最初のバイトまでの時間</a>は、ユーザーがWebページにナビゲーションしてからレスポンスの最初のバイトを受信するまでにかかった時間の測定値です。
+<a hreflang="en" href="https://web.dev/articles/ttfb">最初のバイトまでの時間</a>は、ユーザーがWebページにナビゲーションしてからレスポンスの最初のバイトを受信するまでにかかった時間の測定値です。
 
 {{ figure_markup(
   image="nav-timing.png",
@@ -289,6 +290,6 @@ Webページの読み込み速度を定量化することは、単一の計測�
 
 この章で表されたデータから、高速なWebサイトとにするためには多くの設定されるべき目標と作業があることを示しています。確かなフォームファクター、効果的な接続の種類、そして地理にはユーザー体験の向上と相関しますが、低いパフォーマンスとなる人口の統計も組み合わせる必要があることを忘れてはいけません。殆どの場合、Webプラットフォームはビジネスで使われています。コンバージョン率を改善してより多くのお金を稼ぐことは、Webサイトを高速化する大きな動機になるでしょう。最終的に、すべてのWebサイトのパフォーマンスとは、ユーザーの邪魔をしたり、イラつかせたり、怒らせたりしない方法で、ユーザーにより良い体験を提供することです。
 
-Webがまた一つ古くなり、ユーザー体験を測定する能力が徐々に向上するにつれて、開発者がより総合的なユーザー体験を捉えて計測された値を身近に思えるようになることを楽しみにしています。FCPは有用なコンテンツをユーザーに表示するタイムラインのほぼ最初部分であり、それ以外にも<a hreflang="en" href="https://web.dev/largest-contentful-paint">Large Contentful Paint</a>（LCP）と呼ばれる新しい計測値が出現して、ページの読み込みがどのように認識されるかの可視性が向上しています。<a hreflang="en" href="https://web.dev/layout-instability-api">Layout Instability API</a>は、ページの読み込み以降でユーザーが不満を持つ体験がある事を新たに垣間見せてくれました。
+Webがまた一つ古くなり、ユーザー体験を測定する能力が徐々に向上するにつれて、開発者がより総合的なユーザー体験を捉えて計測された値を身近に思えるようになることを楽しみにしています。FCPは有用なコンテンツをユーザーに表示するタイムラインのほぼ最初部分であり、それ以外にも<a hreflang="en" href="https://web.dev/articles/lcp">Large Contentful Paint</a>（LCP）と呼ばれる新しい計測値が出現して、ページの読み込みがどのように認識されるかの可視性が向上しています。<a hreflang="en" href="https://web.dev/articles/cls">Layout Instability API</a>は、ページの読み込み以降でユーザーが不満を持つ体験がある事を新たに垣間見せてくれました。
 
 こういった新しい計測が出来るようになった2020年のWebは、さらに透明性が高まって理解が深まり、開発者がパフォーマンスを改善するための有意義な進歩を遂げることで、より良いユーザー体験を提供できるでしょう。

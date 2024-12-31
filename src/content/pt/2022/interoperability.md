@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Interoperabilidade
 description: Capítulo de Interoperabilidade do Web Almanac de 2022 cobrindo Compat 2021 (Grid e Flexbox) e Interop 2022 (Formulários, Rolagem, Tipografia e codificações, Diálogo, Contenção, Subgrid, Espaços de cor, Unidades de viewport e Camadas de cascata)
+hero_alt: Hero image of Web Almanac characters on four web pages with hints of the branding of various browsers.
 authors: [bkardell]
 reviewers: [meyerweb, foolip]
 analysts: [rviscomi, kevinfarrugia]
@@ -360,7 +361,7 @@ Até o momento desta escrita, o HTTP Archive ainda não detectou o uso dessas un
 
 #### Camadas de Cascata
 
-As Camadas de Cascata são um recurso interessante do CSS, construído com base em uma ideia fundamental que sempre existiu no CSS. Como autores, nosso principal meio de expressar a importância das regras tem sido a especificidade. Isso funciona bem para muitas coisas, mas pode rapidamente se tornar complicado à medida que tentamos incorporar ideias para sistemas de design ou componentes. Os navegadores também usam CSS internamente no que é chamado de folha de estilo UA. No entanto, você pode notar que normalmente não tem batalhas relacionadas à especificidade com a folha de estilo UA. Isso ocorre porque existem "camadas" de regras incorporadas ao próprio funcionamento do CSS. As Camadas de Cascata oferecem uma maneira para os autores se conectarem a esse mesmo mecanismo e gerenciarem seus desafios de CSS e especificidade de maneira mais eficaz. [Miriam Suzanne](https://twitter.com/TerribleMia) escreveu <a hreflang="en" href="https://css-tricks.com/css-cascade-layers/">uma explicação mais completa e um guia</a>.
+As Camadas de Cascata são um recurso interessante do CSS, construído com base em uma ideia fundamental que sempre existiu no CSS. Como autores, nosso principal meio de expressar a importância das regras tem sido a especificidade. Isso funciona bem para muitas coisas, mas pode rapidamente se tornar complicado à medida que tentamos incorporar ideias para sistemas de design ou componentes. Os navegadores também usam CSS internamente no que é chamado de folha de estilo UA. No entanto, você pode notar que normalmente não tem batalhas relacionadas à especificidade com a folha de estilo UA. Isso ocorre porque existem "camadas" de regras incorporadas ao próprio funcionamento do CSS. As Camadas de Cascata oferecem uma maneira para os autores se conectarem a esse mesmo mecanismo e gerenciarem seus desafios de CSS e especificidade de maneira mais eficaz. [Miriam Suzanne](https://x.com/TerribleMia) escreveu <a hreflang="en" href="https://css-tricks.com/css-cascade-layers/">uma explicação mais completa e um guia</a>.
 
 {{ figure_markup(
   image="cascade-layers-wpt-dashboard.png",

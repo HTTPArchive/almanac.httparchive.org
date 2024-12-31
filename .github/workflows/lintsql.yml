@@ -18,10 +18,10 @@ jobs:
         with:
           # Full git history is needed to get a proper list of changed files within `super-linter`
           fetch-depth: 0
-      - name: Set up Python 3.8
-        uses: actions/setup-python@v5.1.0
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5.3.0
         with:
-          python-version: '3.8'
+          python-version: '3.12'
       - name: Lint SQL code
         if: |
             github.event_name == 'workflow_dispatch' ||

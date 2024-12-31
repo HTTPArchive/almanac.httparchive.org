@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Jamstack
 description: 2020年のWeb AlmanacのJamstackの章では、Jamstackの利用方法、人気の高いJamstackフレームワークのパフォーマンス、Core Web Vitalsのメタデータを使ったリアルユーザー体験の分析などを取り上げています。
+hero_alt: Hero image of the Web Almanac characters using a large gas cylinder with script markings on the front to inflate a web page.
 authors: [ahmadawais]
 reviewers: [MaedahBatool, phacks]
 analysts: [denar90, remotesynth]
@@ -29,7 +30,7 @@ Jamstackの中核となる原則は、サイトページのプリレンダリン
 
 この章の目的は、Jamstackサイトの成長の推定と分析、人気のあるJamstackフレームワークのパフォーマンス、そしてCore Web Vitalsのメトリクスを使った実際のユーザー体験の分析です。
 
-<p class="note">我々の分析は、<a href="./methodology#wappalyzer">Wappalyzer</a>で簡単に識別できるJamstackによって制限されていることに注意してください。これは、<a hreflang="en" href="https://github.com/11ty/eleventy/">Eleventy</a>のように、<a href="https://twitter.com/eleven_ty/status/1334225624110608387?s=20">意図的に識別できないようにしている人気のあるJamstack</a>はデータに含まれていないことを意味します。理想的にはすべてのJamstacksを含むことになりますが、我々が持っている重要なデータを分析することにはまだ多くの価値があると考えています。</p>
+<p class="note">我々の分析は、<a href="./methodology#wappalyzer">Wappalyzer</a>で簡単に識別できるJamstackによって制限されていることに注意してください。これは、<a hreflang="en" href="https://github.com/11ty/eleventy/">Eleventy</a>のように、<a href="https://x.com/eleven_ty/status/1334225624110608387?s=20">意図的に識別できないようにしている人気のあるJamstack</a>はデータに含まれていないことを意味します。理想的にはすべてのJamstacksを含むことになりますが、我々が持っている重要なデータを分析することにはまだ多くの価値があると考えています。</p>
 
 ## Jamstackの採用
 

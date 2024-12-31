@@ -2,12 +2,13 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: CSS
 description: CSS chapter of the 2022 Web Almanac covering trends, changes, and patterns in CSS use across the web.
+hero_alt: Hero image of Web Almanac characters measuring and painting a web page.
 authors: [rachelandrew]
 reviewers: [svgeesus, j9t]
 analysts: [rviscomi]
 editors: [rviscomi]
 translators: []
-rachelandrew_bio: Rachel Andrew works for Google as a technical writer, working on <a hreflang="en" href="https://web.dev">web.dev</a> and the <a hreflang="en" href="https://developer.chrome.com/">Chrome Developers site</a>. She is a front and back-end web developer, author and speaker, author or co-author of 22 books including <a hreflang="en" href="https://abookapart.com/products/the-new-css-layout">The New CSS Layout</a> and a regular contributor to a number of publications both on and offline. Rachel is a Member of the CSS Working Group, and can be found posting photos of her cats on Twitter as [@rachelandrew](https://twitter.com/rachelandrew).
+rachelandrew_bio: Rachel Andrew works for Google as a technical writer, working on <a hreflang="en" href="https://web.dev">web.dev</a> and the <a hreflang="en" href="https://developer.chrome.com/">Chrome Developers site</a>. She is a front and back-end web developer, author and speaker, author or co-author of 22 books including <a hreflang="en" href="https://abookapart.com/products/the-new-css-layout">The New CSS Layout</a> and a regular contributor to a number of publications both on and offline. Rachel is a Member of the CSS Working Group, and can be found posting photos of her cats on Twitter as [@rachelandrew](https://x.com/rachelandrew).
 results: https://docs.google.com/spreadsheets/d/1OU8ahxC5oYU8VRryQs9BzHToaXcOntVlh6KUHjm15G4/
 featured_quote: The past few years have seen a flurry of new CSS features. Many of these have taken inspiration from things developers were already doing with JavaScript or in preprocessors, while others provide methods of doing things that were impossible a few years ago. Having new features available is one thing, but are developers actually using them in their production web pages and applications?
 featured_stat_1: 43%

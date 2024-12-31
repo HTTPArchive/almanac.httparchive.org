@@ -18,13 +18,19 @@
 {% block intro_title %}Web Almanac{% endblock %}
 {% block intro_sub_title %}HTTP Archive के वार्षिक<br> <b>वेब की स्थिति</b> की रिपोर्ट{% endblock %}
 
+{% block announcement_text %}
+<p lang="en">
+  Listen to a recording of our live stream for this year's edition on <a href="https://www.youtube.com/live/cdYR0ZmplIM">YouTube</a>! We'll be running another live stream with more of our authors in January 2025.
+</p>
+{% endblock %}
+
 {% block mission %}
 <p>
 हमारा उद्देश्य वेब समुदाय की विशेषज्ञता के साथ HTTP Archive के कच्चे आँकड़ों और रुझानों को जोड़ना है। Web Almanac वेब की स्थिति पर एक व्यापक रिपोर्ट है, जो वास्तविक डेटा और विश्वसनीय वेब विशेषज्ञों द्वारा समर्थित है। यह पृष्ठ सामग्री, यूजर एक्सपीरियंस, प्रकाशन, {{ year }} संस्करण वितरण के पहलुओं को फैलाने वाले {{ supported_chapters | length }} अध्यायों से युक्त है।
 </p>
 {% endblock %}
 
-{% block read_last_years_almanac %}{{ year | int - 1 }} Web Almanac को पढ़िए{% endblock %}
+{% block read_last_years_almanac %}{{ previous_year }} Web Almanac को पढ़िए{% endblock %}
 
 {% block http_archive_link %}HTTP Archive होम{% endblock %}
 
@@ -57,7 +63,7 @@
 {% block open_the_index %}विषय सूची को खोलें{% endblock %}
 {% block close_the_index %}विषय सूची को बंद करें{% endblock %}
 
-{% block and %}और{% endblock %}
+{% block and %} और {% endblock %}
 {% block comma %}, {% endblock %}
 {% block oxford_comma %}{% endblock %}
 
@@ -111,10 +117,14 @@
 {% block repliesAlt %}{% endblock %}
 {% block mentionsAlt %}{% endblock %}
 
-{% macro onTwitter(twitterHandle) %}@{{twitterHandle}} Twitter पर{% endmacro %}
+{% macro onTwitter(twitterHandle) %}@{{twitterHandle}} Twitter/X पर{% endmacro %}
+{% macro onMastodon(mastodonHandle) %}{{mastodonHandle}}Mastodonपर{% endmacro %}
+{% macro onBluesky(blueskyHandle) %}{{blueskyHandle}}Blueskyपर{% endmacro %}
 {% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} GitHub पर{% endmacro %}
 {% macro onLinkedIn(authorName) %}{{authorName}} LinkedIn पर{% endmacro %}
 {% macro website(authorName) %}{{authorName}} वेबसाइट{% endmacro %}
+
+{% block citation %}उद्धरण{% endblock %}
 
 {% macro edition(year) %}{{ year }} संस्करण{% endmacro %}
 
@@ -124,14 +134,14 @@
 {% block rss_feed %}RSS Feed{% endblock %}
 
 {% block featured_chapter %}विशेष अध्याय{% endblock %}
-{% block featured_chapter_last_year %}विशेष अध्याय<br>{{ year|int -1 }} Web Almanac से {% endblock %}
+{% block featured_chapter_last_year %}विशेष अध्याय<br>{{ previous_year }} Web Almanac से {% endblock %}
 
 {# Check if read_chapter already defined in child template as macros can't be overridden #}
 {% if not read_chapter %}
 {% macro read_chapter(chapter) %}अध्याय <span class="featured-chapter-name">{{ chapter }}</span> पढ़ें{% endmacro %}
 {% endif %}
 {% if not read_last_years_chapter %}
-{% macro read_last_years_chapter(chapter) %}अध्याय {{ year|int-1 }} <span class="featured-chapter-name">{{ chapter }}</span> पढ़ें{% endmacro %}
+{% macro read_last_years_chapter(chapter) %}अध्याय {{ previous_year }} <span class="featured-chapter-name">{{ chapter }}</span> पढ़ें{% endmacro %}
 {% endif %}
 
 {% block contributors_description %}
@@ -173,6 +183,7 @@ Web Almanac वेब समुदाय की मेहनत से संभ
   set localizedChapterTitles = {
     "javascript": "JavaScript",
     "css": "CSS",
+    "cookies": "Cookies",
     "markup": "मार्कअप",
     "media": "मीडिया",
     "third-parties": "तीसरे पक्ष",
@@ -212,6 +223,7 @@ Web Almanac वेब समुदाय की मेहनत से संभ
   "developers": "डेवलपर",
   "editors": "संपादक",
   "leads": "प्रोजेक्ट लीड्स",
+  "committee": "आयोजन समिति",
   "reviewers": "समीक्षक",
   "translators": "अनुवादक",
   }
@@ -225,6 +237,7 @@ Web Almanac वेब समुदाय की मेहनत से संभ
   "developers": "डेवलपर",
   "editors": "संपादक",
   "leads": "प्रोजेक्ट लीड्स",
+  "committee": "आयोजन समिति",
   "reviewers": "समीक्षक",
   "translators": "अनुवादक",
   }

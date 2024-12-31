@@ -2,12 +2,13 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Page Weight
 description: Capitolo Page Weight (Peso della pagina) del Web Almanac 2020 che spiega perché il peso della pagina è importante, la larghezza di banda, le pagine complesse, il peso della pagina nel tempo, page requests e i formati di file.
+hero_alt: Hero image of Web Almanac characters using a set of scales to weigh a web page against variuos boxes labelled with various different kilobytes.
 authors: [henrihelvetica]
 reviewers: [paulcalvano]
 analysts: [paulcalvano]
 editors: [tunetheweb]
 translators: [chefleo]
-henrihelvetica_bio: Henri è uno sviluppatore freelance che ha trasformato i suoi interessi in un pot-pourri di ingegneria delle prestazioni con pizzichi di esperienza utente. Quando non si legge il diluvio di documenti di ricerca quotidiana e casi di studio, o non si controlla indiscriminatamente i siti di auditing nei dev tools, Henri può essere trovato a contribuire alla comunità, co-programmando meetup tra cui <a href="https://twitter.com/towebperf">Toronto Web Performance Group</a> o offre volontariamente il suo tempo per pranzo e impara in vari bootcamp. Altrimenti, si sta attrezzando con software di produzione musicale o con una formazione quasi certa e si concentra sul correre 5k il più veloce possibile.
+henrihelvetica_bio: Henri è uno sviluppatore freelance che ha trasformato i suoi interessi in un pot-pourri di ingegneria delle prestazioni con pizzichi di esperienza utente. Quando non si legge il diluvio di documenti di ricerca quotidiana e casi di studio, o non si controlla indiscriminatamente i siti di auditing nei dev tools, Henri può essere trovato a contribuire alla comunità, co-programmando meetup tra cui <a href="https://x.com/towebperf">Toronto Web Performance Group</a> o offre volontariamente il suo tempo per pranzo e impara in vari bootcamp. Altrimenti, si sta attrezzando con software di produzione musicale o con una formazione quasi certa e si concentra sul correre 5k il più veloce possibile.
 discuss: 2054
 results: https://docs.google.com/spreadsheets/d/1wG4u0LV5PT9aN-XB1hixSFtI8KIDARTOCX0sp7ZT3h0/
 featured_quote: Il viaggio sul web è passato dall'essere più vicini a una piattaforma mediocre ed educativa a un'app innovativa, complessa e altamente interattiva, con metriche di peso della pagina rudimentali che nascondono storie e due punti; una ratatouille di risorse, ognuna delle quali influenza le metriche moderne e, a sua volta, influisce sull'esperienza dell'utente.

@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Performance
 description: Performance chapter of the 2020 Web Almanac covering Core Web Vitals, Lighthouse Performance Score, First Contentful Paint (FCP) and Time to First Byte (TTFB).
+hero_alt: Hero image of Web Almanac characters images to a web page, while another Web Almanac character times them with a stopwatch.
 authors: [thefoxis]
 reviewers: [borisschapira, rviscomi, foxdavidj, noamr, Zizzamia, exterkamp]
 analysts: [max-ostapenko, dooman87]
@@ -67,7 +68,7 @@ These overall changes are not unexpected considering a multitude of amendments t
 
 ## Core Web Vitals: Largest Contentful Paint
 
-Largest Contentful Paint (LCP) is a landmark timing-based metric that reports the time at which the largest <a hreflang="en" href="https://web.dev/lcp/#what-elements-are-considered">above-the-fold element</a> was rendered.
+Largest Contentful Paint (LCP) is a landmark timing-based metric that reports the time at which the largest <a hreflang="en" href="https://web.dev/articles/lcp#what-elements-are-considered">above-the-fold element</a> was rendered.
 
 ### LCP by device
 
@@ -115,7 +116,7 @@ India remains the last one in our set of data, with only 16% of good experiences
 
 Since LCP is a timing showcasing when the largest above-the-fold element has been rendered (including imagery, videos or block-level elements containing text), it is not surprising that the slower the network, the more significant portion of measurements are poor.
 
-There's a clear correlation of network speed and better LCP performance, but even on 4G, only 48% of results are categorized as good, leaving half of the readings in need of an improvement. Automating media optimization, serving the right dimensions and formats, as well as optimizing for Low Data Mode, could help move the needle. Learn more about <a hreflang="en" href="https://web.dev/optimize-lcp/">optimizing LCP in this guide</a>.
+There's a clear correlation of network speed and better LCP performance, but even on 4G, only 48% of results are categorized as good, leaving half of the readings in need of an improvement. Automating media optimization, serving the right dimensions and formats, as well as optimizing for Low Data Mode, could help move the needle. Learn more about <a hreflang="en" href="https://web.dev/articles/optimize-lcp">optimizing LCP in this guide</a>.
 
 ## Core Web Vitals: Cumulative Layout Shift
 
@@ -153,7 +154,7 @@ According to CrUX data, both in cases of desktop and mobile devices, more than h
 
 The CLS performance in different geographical regions is primarily good, with at least 56% of sites with a good rating. This is excellent news for perceived visual stability. We can observe similar countries leading as we've seen in the LCP geo-distribution—Republic of Korea, Japan, Czechia, Germany, Poland.
 
-Visual stability is less affected by geography and latency to other metrics, like LCP. The difference in the percentage of good scores between the top and the bottom country is 61% for LCP and only 13% for CLS. The percentage of moderate-rating websites is relatively low across the board, giving way to 19%-29% of poor experiences across the board. There are numerous factors that can contribute to poor CLS—learn how to address them in the <a hreflang="en" href="https://web.dev/optimize-cls/">Optimize Cumulative Layout Shift guide</a>.
+Visual stability is less affected by geography and latency to other metrics, like LCP. The difference in the percentage of good scores between the top and the bottom country is 61% for LCP and only 13% for CLS. The percentage of moderate-rating websites is relatively low across the board, giving way to 19%-29% of poor experiences across the board. There are numerous factors that can contribute to poor CLS—learn how to address them in the <a hreflang="en" href="https://web.dev/articles/optimize-cls">Optimize Cumulative Layout Shift guide</a>.
 
 ### CLS by connection type
 

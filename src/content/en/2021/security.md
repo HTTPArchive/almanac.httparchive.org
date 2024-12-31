@@ -2,8 +2,9 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Security
 description: Security chapter of the 2021 Web Almanac covering Transport Layer Security, content inclusion (CSP, Feature Policy, SRI), web defense mechanisms (tackling XSS, XS-Leaks), and drivers of security mechanism adoptions.
+hero_alt: Hero image of Web Almanac characters padlocking a web page, while other Web Almanac characters subdue a masked thief who has a set of bolt cutters.
 authors: [saptaks, tomvangoethem, nrllh]
-reviewers: [cqueern, edmondwwchan, awareseven]
+reviewers: [cqueern, edmondwwchan, lord-r3]
 analysts: [gjfr]
 editors: [tunetheweb]
 translators: []
@@ -53,7 +54,7 @@ Currently, we see that 91.9% of total requests for websites on desktop and 91.1%
   )
 }}
 
-Currently, 84.3% of website homepages in desktop and 81.2% of website homepages in mobile are served over HTTPS so we still see a gap between websites using HTTPS and requests using HTTPS. This is because a lot of the impressive percentage of HTTPS requests are often dominated by [third-party](./third-parties) services like fonts, analytics, [CDNs](./cdn), and not the initial web page itself.
+Currently, 84.3% of website home pages in desktop and 81.2% of website home pages in mobile are served over HTTPS so we still see a gap between websites using HTTPS and requests using HTTPS. This is because a lot of the impressive percentage of HTTPS requests are often dominated by [third-party](./third-parties) services like fonts, analytics, [CDNs](./cdn), and not the initial web page itself.
 
 We do see a continuous improvement in sites using HTTPS (approximately 7-8% increase since [last year](../2020/security#fig-3)), but soon a lot of unmaintained websites might start seeing warnings once <a hreflang="en" href="https://blog.mozilla.org/security/2021/08/10/firefox-91-introduces-https-by-default-in-private-browsing/">browsers start adopting HTTPS-only mode by default</a>.
 
@@ -365,7 +366,7 @@ Most websites have quite a lot of media and CSS or JavaScript libraries that mor
   )
 }}
 
-We see more and more websites starting to use CSP with 9.3% homepages on mobile using CSP now compared to 7.2% last year. `upgrade-insecure-requests` continues to be the most frequent CSP used. The high adoption rate for this policy is likely because of the same reasons mentioned [last year](../2020/security#content-security-policy); it is an easy, low-risk, policy that helps in upgrading all HTTP requests to HTTPS and also helps with to block mixed content being used on the page. `frame-ancestors` is a close second, which helps one define valid parents that may embed a page.
+We see more and more websites starting to use CSP with 9.3% home pages on mobile using CSP now compared to 7.2% last year. `upgrade-insecure-requests` continues to be the most frequent CSP used. The high adoption rate for this policy is likely because of the same reasons mentioned [last year](../2020/security#content-security-policy); it is an easy, low-risk, policy that helps in upgrading all HTTP requests to HTTPS and also helps with to block mixed content being used on the page. `frame-ancestors` is a close second, which helps one define valid parents that may embed a page.
 
 The adoption of policies defining the sources from which content can be loaded continues to be low. Most of these policies are more difficult to implement, as they can cause breakages. They require effort to implement to define `nonce`, hashes or domains for allowing external content.
 
@@ -640,7 +641,9 @@ We see 1.3% of websites on the mobile using the `Permissions-Policy` already. A 
   <figcaption>{{ figure_link(caption="Prevalence of `allow` directives on frames.", sheets_gid="623004240", sql_file="iframe_allow_directives.sql") }}</figcaption>
 </figure>
 
-One can also use the `allow` attribute in `<iframe>` elements to enable or disable features allowed to be used in the embedded frame. 28.4% of 10.8 million frames in mobile contained the `allow` attribute to enable permission or feature policies.
+One can also use the `allow` attribute in `<iframe>` elements to enable or disable features allowed to be used in the embedded frame. 18.3% of 16.8 million frames in mobile contained the `allow` attribute to enable permission or feature policies.
+
+<p class="note">An earlier version of this chapter reported incorrect values for the total number of frames and the percentage of frames with the `allow` attribute. These errors have now been corrected. More information can be found in this <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/pull/3912">GitHub PR</a>.</p>
 
 As in previous years, the most used directives in `allow` attributes on iframes are still related to controls for embedded videos and media. The most used directive continues to be `encrypted-media` which is used to control access to the Encrypted Media Extensions API.
 
@@ -648,7 +651,9 @@ As in previous years, the most used directives in `allow` attributes on iframes 
 
 An untrusted third-party in an iframe could launch a number of attacks on the page. For instance, it could navigate the top page to a phishing page, launch popups with fake anti-virus advertisements and other cross-frame scripting attacks.
 
-The `sandbox` attribute on iframes applies restrictions to the content, and therefore reduces the opportunities for launching attacks from the embedded web page. The value of the attribute can either be empty to apply all restrictions (the embedded page cannot execute any JavaScript code, no forms can be submitted, and no popups can be created, to name a few restrictions), or space-separated tokens to lift particular restrictions. As embedding third-party content such as advertisements or videos via iframes is common practice on the web, it is not surprising that many of these are restricted via the `sandbox` attribute: 32.6% of the iframes on desktop pages have a `sandbox` attribute while on mobile pages this is 32.6%.
+The `sandbox` attribute on iframes applies restrictions to the content, and therefore reduces the opportunities for launching attacks from the embedded web page. The value of the attribute can either be empty to apply all restrictions (the embedded page cannot execute any JavaScript code, no forms can be submitted, and no popups can be created, to name a few restrictions), or space-separated tokens to lift particular restrictions. As embedding third-party content such as advertisements or videos via iframes is common practice on the web, it is not surprising that many of these are restricted via the `sandbox` attribute: 19.7% of the iframes on desktop pages have a `sandbox` attribute while on mobile pages this is 21.0%.
+
+<p class="note">An earlier version of this chapter reported incorrect values for the percentage of frames with the `sandbox` attribute. More information can be found in this <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/pull/3912">GitHub PR</a>.</p>
 
 {{ figure_markup(
   image="security-prevalence-of-sandbox-directives-on-frames.png",

@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Privacy
 description: Privacyhoofdstuk van de Web Almanac 2020 over online trackingcookies, privacyverbeterende technologieën (PET) en privacybeleid
+hero_alt: Hero image of Web Almanac characters with cameras, phones, and microphones acting like paparazzi while another character pulls back a shower curtain to reveal a web page behind it.
 authors: [ydimova]
 reviewers: [ldevernay]
 analysts: [ydimova, max-ostapenko]
@@ -25,7 +26,7 @@ Dit hoofdstuk van de Web Almanac geeft een overzicht van de huidige staat van pr
 
 ## Online tracking
 
-Trackers van derden verzamelen gebruikersgegevens om profielen van het gebruikersgedrag op te bouwen waarmee inkomsten kunnen worden gegenereerd voor advertentiedoeleinden. Dit roept privacyproblemen op bij gebruikers op internet, wat resulteerde in de opkomst van verschillende trackingbeveiligingen. Zoals we in deze sectie zullen zien, wordt online tracking echter nog steeds veel gebruikt. Het heeft niet alleen een negatieve impact op de privacy, online tracking heeft ook een <a hreflang="en" href="https://gerrymcgovern.com/calculating-the-pollution-cost-of-website-analytics-part-1/">enorme impact op het milieu</a> en het vermijden ervan kan leiden tot [betere prestaties](https://twitter.com/fr3ino/status/1000166112615714816).
+Trackers van derden verzamelen gebruikersgegevens om profielen van het gebruikersgedrag op te bouwen waarmee inkomsten kunnen worden gegenereerd voor advertentiedoeleinden. Dit roept privacyproblemen op bij gebruikers op internet, wat resulteerde in de opkomst van verschillende trackingbeveiligingen. Zoals we in deze sectie zullen zien, wordt online tracking echter nog steeds veel gebruikt. Het heeft niet alleen een negatieve impact op de privacy, online tracking heeft ook een <a hreflang="en" href="https://gerrymcgovern.com/calculating-the-pollution-cost-of-website-analytics-part-1/">enorme impact op het milieu</a> en het vermijden ervan kan leiden tot [betere prestaties](https://x.com/fr3ino/status/1000166112615714816).
 
 We onderzoeken de bekendheid van de meest voorkomende vormen van tracking van [derden](./third-party), namelijk door middel van cookies van derden en het gebruik van fingerprinting. Online tracking is niet beperkt tot alleen deze twee technieken, er blijven nieuwe technieken opduiken om bestaande tegenmaatregelen te omzeilen.
 

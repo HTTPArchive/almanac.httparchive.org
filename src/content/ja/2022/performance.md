@@ -1,6 +1,7 @@
 ---
 title: パフォーマンス
 description: 2022年版Web Almanacのパフォーマンス章では、コアWebバイタルを取り上げ、最大のコンテントフルペイント、累積レイアウトシフト、最初の入力までの遅延の各メトリクスとその診断について深く掘り下げています。
+hero_alt: Hero image of Web Almanac characters images to a web page, while another Web Almanac character times them with a stopwatch.
 authors: [mel-ada, rviscomi]
 reviewers: [tunetheweb, pmeenan, 25prathamesh, estelle, konfirmed]
 analysts: [rviscomi, 25prathamesh, siakaramalegos, konfirmed]
@@ -22,13 +23,13 @@ featured_stat_label_3: INPで良いCWVが期待できる上位1kサイト
 
 ウェブパフォーマンスはユーザーエクスペリエンスにとって非常に重要です。私たちは皆、ロード時間が遅いためにサイトを離れた経験があるか、あるいはもっと悪いことに、重要な情報にアクセスできなかった経験があります。さらに、多くの<a hreflang="en" href="https://wpostats.com/">ケーススタディ</a>が、ウェブパフォーマンスの向上がビジネスのコンバージョンとエンゲージメントの向上につながることを示しています。驚くべきことに、ウェブパフォーマンスに対する業界の注目度は意外と低いのですが、なぜでしょうか？ウェブパフォーマンスは定義が難しく、さらに測定することがさらに困難だと言う人もいます。
 
-そもそも定義が難しいものをどのように測定するのでしょうか？[Sergey Chernyshev](https://twitter.com/sergeyche)（UX Captureの作成者）が言うように、"_パフォーマンスを測定する最良の方法は、ユーザーの脳に組み込まれ、彼らがサイトを使用しているときに正確に何を考えているかを理解することです_”。私たちは、そして明らかにすべきではないですが、これを行うことはできません。では、私たちの選択肢は何でしょうか？
+そもそも定義が難しいものをどのように測定するのでしょうか？[Sergey Chernyshev](https://x.com/sergeyche)（UX Captureの作成者）が言うように、"_パフォーマンスを測定する最良の方法は、ユーザーの脳に組み込まれ、彼らがサイトを使用しているときに正確に何を考えているかを理解することです_”。私たちは、そして明らかにすべきではないですが、これを行うことはできません。では、私たちの選択肢は何でしょうか？
 
 幸いにも、パフォーマンスのいくつかの側面を自動的に測定する方法があります！ブラウザがページのロードを担当しており、毎回チェックリストの一連のステップを実行することを私たちは知っています。ブラウザがどのステップにあるかに応じて、サイトがページロードプロセスのどこまで進んでいるかを知ることができます。便利なことに、ブラウザが特定のページロードステップに到達したときにタイムスタンプを発行するために使用される[多数のパフォーマンスタイムラインAPI](https://developer.mozilla.org/ja/docs/Web/API/Performance)があります。
 
 これらの指標は、ユーザーエクスペリエンスを測定するための私たちの最善の推測に過ぎないことに注意することが重要です。たとえば、ブラウザが画面に要素が描画されたイベントを発火したとしても、それが常にその時点でユーザーに見えていたとは限りません。さらに、業界が成長するにつれて、より多くの指標が登場し、いくつかは非推奨になりました。どこから始めればよいか、パフォーマンス指標が私たちのユーザーについて何を伝えているのかを理解することは、とくにこの分野の新しい人々にとって複雑になる可能性があります。
 
-この章では、問題に対するGoogleの解決策である<a hreflang="ja" href="https://web.dev/articles/vitals?hl=ja">Core Web Vitals</a>（CWV）に焦点を当てています。これは、2020年に導入され、2021年に<a hreflang="en" href="https://developers.google.com/search/blog/2020/11/timing-for-page-experience">検索ランキングのシグナル</a>となったウェブパフォーマンス指標です。3つの指標はそれぞれ、ローディング、インタラクティビティ、視覚的安定性というユーザーエクスペリエンスの重要な領域をカバーしています。公開されている<a hreflang="en" href="https://developer.chrome.com/docs/crux/">Chrome UX Report</a>（CrUX）データセットは、CWVでウェブサイトがどのようにパフォーマンスを発揮しているかのChromeの視点を提供します。開発者側での設定は一切不要で、Chromeは<a hreflang="en" href="https://developer.chrome.com/docs/crux/methodology/#eligibility">対象となるウェブサイト</a>から、オプトインしたユーザーのデータを自動的に収集して公開しています。このデータセットを使用することで、時間をかけてウェブのパフォーマンスがどのように変化しているかについての洞察を得ることができます。
+この章では、問題に対するGoogleの解決策である<a hreflang="ja" href="https://web.dev/articles/vitals?hl=ja">Core Web Vitals</a>（CWV）に焦点を当てています。これは、2020年に導入され、2021年に<a hreflang="en" href="https://developers.google.com/search/blog/2020/11/timing-for-page-experience">検索ランキングのシグナル</a>となったウェブパフォーマンス指標です。3つの指標はそれぞれ、ローディング、インタラクティビティ、視覚的安定性というユーザーエクスペリエンスの重要な領域をカバーしています。公開されている<a hreflang="en" href="https://developer.chrome.com/docs/crux">Chrome UX Report</a>（CrUX）データセットは、CWVでウェブサイトがどのようにパフォーマンスを発揮しているかのChromeの視点を提供します。開発者側での設定は一切不要で、Chromeは<a hreflang="en" href="https://developer.chrome.com/docs/crux/methodology#eligibility">対象となるウェブサイト</a>から、オプトインしたユーザーのデータを自動的に収集して公開しています。このデータセットを使用することで、時間をかけてウェブのパフォーマンスがどのように変化しているかについての洞察を得ることができます。
 
 この章の焦点であるにもかかわらず、CWVがこの分野で比較的新しく、ウェブパフォーマンスを測定する唯一の方法ではないことに注意することが重要です。検索ランキングへの影響がほぼ1年前に有効であったため、これらの指標に焦点を当てることを選択しました。そして、今年のデータは、ウェブがこの業界の大きな変化にどのように適応しているか、そしてまだ機会が存在するかもしれない領域についての洞察を提供します。CWVは、サイト間のパフォーマンスを大まかに比較可能にする共通のベースラインを提供しますが、どの指標と戦略が自分のサイトに最適かを決定するのはサイト所有者次第です。私たちが望むとおりに、業界の全歴史やパフォーマンスを評価するためのすべての異なる方法を1章に収める方法はありません。
 
@@ -94,7 +95,7 @@ CWVがGoogle Searchのランキングシグナルとして追加されてから1
 
 ### 最初のバイトまでの時間（TTFB）
 
-<a hreflang="en" href="https://web.dev/ttfb/">最初のバイトまでの時間</a>（TTFB）は、ナビゲーションの開始からクライアントに返される最初のデータバイトまでの時間です。これはウェブパフォーマンスチェックリストの最初のステップであり、とくにネットワーク接続速度とサーバー応答時間に関して、LCPパフォーマンスのバックエンドコンポーネントを表しています。
+<a hreflang="en" href="https://web.dev/articles/ttfb">最初のバイトまでの時間</a>（TTFB）は、ナビゲーションの開始からクライアントに返される最初のデータバイトまでの時間です。これはウェブパフォーマンスチェックリストの最初のステップであり、とくにネットワーク接続速度とサーバー応答時間に関して、LCPパフォーマンスのバックエンドコンポーネントを表しています。
 
 {{ figure_markup(
   image="good-ttfb-by-device.png",
@@ -106,11 +107,11 @@ CWVがGoogle Searchのランキングシグナルとして追加されてから1
   )
 }}
 
-余談ですが、Chromeは今年初めに「良好」なTTFBの閾値を500ミリ秒から800ミリ秒に<a hreflang="en" href="https://developer.chrome.com/docs/crux/release-notes/#202204">変更</a>しました。上のグラフでは、比較目的でこの新しい閾値を使用して過去のデータすべてが示されています。
+余談ですが、Chromeは今年初めに「良好」なTTFBの閾値を500ミリ秒から800ミリ秒に<a hreflang="en" href="https://developer.chrome.com/docs/crux/release-notes#202204">変更</a>しました。上のグラフでは、比較目的でこの新しい閾値を使用して過去のデータすべてが示されています。
 
 これを念頭に置くと、良好なTTFBを持つウェブサイトの割合は実際にはあまり改善していません。過去1年間で、ウェブサイトのデスクトップとモバイル体験は1ポイント改善されたに過ぎず、これは良いことですが、LCPに観察された利得を説明するものではありません。「必要な改善」と「不十分」のTTFB分布の両端に改善がなかったわけではありませんが、「良好」な端がもっとも重要です。
 
-もう1つの複雑な点は、TTFBがCrUXで依然として<a hreflang="en" href="https://developer.chrome.com/docs/crux/methodology/#experimental-metrics">実験的</a>な指標とみなされていることです。CrUXのドキュメントによると、TTFBは、プリレンダリングや戻る/進むナビゲーションなど、より高度なナビゲーションタイプを考慮に入れていません。これはある種の盲点であり、これらの領域で改善があった場合、それらは必ずしもTTFBの結果に影響を与えるとは限りません。
+もう1つの複雑な点は、TTFBがCrUXで依然として<a hreflang="en" href="https://developer.chrome.com/docs/crux/methodology#experimental-metrics">実験的</a>な指標とみなされていることです。CrUXのドキュメントによると、TTFBは、プリレンダリングや戻る/進むナビゲーションなど、より高度なナビゲーションタイプを考慮に入れていません。これはある種の盲点であり、これらの領域で改善があった場合、それらは必ずしもTTFBの結果に影響を与えるとは限りません。
 
 ### 視覚コンテンツの初期表示時間（FCP）
 
@@ -136,7 +137,7 @@ TTFBのデータが反対のことを示していない限り、これはフロ�
 
 #### レンダリングをブロックするリソース
 
-ページにレンダリングをブロックするリソースがあるとは、リソースがページの初期描画（またはレンダリング）を遅らせる場合を指します。これは、ネットワーク経由でロードされる重要なスクリプトやスタイルにとくに当てはまります。Lighthouseには、これらのリソースをチェックする<a hreflang="ja" href="https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources?hl=ja">監査</a>が含まれており、CrUXの各ウェブサイトのホームページで実行しました。これらのページをどのようにテストしているかについては、[Methodology](./methodology)で詳しく学ぶことができます。
+ページにレンダリングをブロックするリソースがあるとは、リソースがページの初期描画（またはレンダリング）を遅らせる場合を指します。これは、ネットワーク経由でロードされる重要なスクリプトやスタイルにとくに当てはまります。Lighthouseには、これらのリソースをチェックする<a hreflang="ja" href="https://developer.chrome.com/docs/lighthouse/performancerender-blocking-resources?hl=ja">監査</a>が含まれており、CrUXの各ウェブサイトのホームページで実行しました。これらのページをどのようにテストしているかについては、[Methodology](./methodology)で詳しく学ぶことができます。
 
 {{ figure_markup(
   image="pages-passing-render-blocking-resources-audit.png",
@@ -203,7 +204,7 @@ HTMLドキュメントがロードされた後、LCPリソース自体をいか�
 
 0.03%のページがLCP要素に`fetchpriority=high`を使用しています。逆効果的に、いくつかのページは実際にLCP画像の優先度を下げています：モバイルで77ページ、デスクトップで104ページです。
 
-`fetchpriority`はまだ非常に新しく、どこでもサポートされているわけではありませんが、ほとんどの開発者のツールボックスになぜ含まれていないのかについてはほとんど理由がありません。APIを開発した[Patrick Meenan](https://twitter.com/patmeenan)は、実装が相対的に簡単であることに対して潜在的な改善がどれほど大きいかを考えると、それを「チートコード」と[表現しています](https://twitter.com/patmeenan/status/1460276602479251457)。
+`fetchpriority`はまだ非常に新しく、どこでもサポートされているわけではありませんが、ほとんどの開発者のツールボックスになぜ含まれていないのかについてはほとんど理由がありません。APIを開発した[Patrick Meenan](https://x.com/patmeenan)は、実装が相対的に簡単であることに対して潜在的な改善がどれほど大きいかを考えると、それを「チートコード」と[表現しています](https://x.com/patmeenan/status/1460276602479251457)。
 
 #### LCPの静的発見可能性
 
@@ -409,7 +410,7 @@ LCP画像のフォーマット選択は、そのバイトサイズに[大きな�
 
 前のセクションでは、LCPリソースに使用されるさまざまな画像フォーマットの人気を見てきました。開発者がLCPリソースを小さくし、より速くロードするための別の方法は、効率的な圧縮設定を利用することです。JPGフォーマットは、画質をあまり落とさずに不要なバイトを削減するために、損失圧縮できます。しかし、一部のJPG画像は十分に圧縮されていないかもしれません。
 
-Lighthouseには、JPGを圧縮レベル85に設定した際のバイト節約を測定する<a hreflang="ja" href="https://developer.chrome.com/docs/lighthouse/performance/uses-optimized-images?hl=ja">監査</a>が含まれています。画像が結果として4KB以上小さくなる場合、監査は失敗し、最適化の機会と見なされます。
+Lighthouseには、JPGを圧縮レベル85に設定した際のバイト節約を測定する<a hreflang="ja" href="https://developer.chrome.com/docs/lighthouse/performanceuses-optimized-images?hl=ja">監査</a>が含まれています。画像が結果として4KB以上小さくなる場合、監査は失敗し、最適化の機会と見なされます。
 
 {{ figure_markup(
   image="lcp-image-optimization.png",
@@ -547,7 +548,7 @@ CLSベストプラクティスにどれだけのウェブが準拠している�
 
 #### アニメーション
 
-一部の<a hreflang="ja" href="https://developer.chrome.com/docs/lighthouse/performance/non-composited-animations?hl=ja">非合成</a> CSSアニメーションはページのレイアウトに影響を与え、CLSに貢献する可能性があります。<a hreflang="ja" href="https://web.dev/articles/optimize-cls?hl=ja#animations-%F0%9F%8F%83%E2%80%8D%E2%99%80%EF%B8%8F">ベストプラクティス</a>は、代わりに`transform`アニメーションを使用することです。
+一部の<a hreflang="ja" href="https://developer.chrome.com/docs/lighthouse/performancenon-composited-animations?hl=ja">非合成</a> CSSアニメーションはページのレイアウトに影響を与え、CLSに貢献する可能性があります。<a hreflang="ja" href="https://web.dev/articles/optimize-cls?hl=ja#animations-%F0%9F%8F%83%E2%80%8D%E2%99%80%EF%B8%8F">ベストプラクティス</a>は、代わりに`transform`アニメーションを使用することです。
 
 {{ figure_markup(
   content="38%",
@@ -800,7 +801,7 @@ FIDとは異なり、INPはページ上の最初のインタラクションだ�
 
 #### INPが仮想のCWVメトリックとして
 
-INPは公式のCWVメトリックではありませんが、GoogleのCWVプログラムのテックリードである[Annie Sullivan](https://twitter.com/anniesullie)は、その将来について[コメント](https://twitter.com/anniesullie/status/1535208365374185474)しています。"_INPはまだ実験段階です！まだコアウェブバイタルではありませんが、FIDを置き換えることができればと思っています。_"
+INPは公式のCWVメトリックではありませんが、GoogleのCWVプログラムのテックリードである[Annie Sullivan](https://x.com/anniesullie)は、その将来について[コメント](https://x.com/anniesullie/status/1535208365374185474)しています。"_INPはまだ実験段階です！まだコアウェブバイタルではありませんが、FIDを置き換えることができればと思っています。_"
 
 これは興味深い疑問を提起します：仮にINPが今日CWVメトリックであったら、合格率はどのように異なるでしょうか？
 
@@ -873,7 +874,7 @@ INPがFIDよりも優れた反応性メトリックである理由は何か？�
 
 このチャートのもっとも注目すべき属性は、左下の角に密集した領域であり、TBT軸に沿って広がっているように見えます。この広がりの長さは、高いTBTと低いFIDを持つページを表し、FIDとTBTの間の相関の低さを示しています。
 
-また、低いTBTと約250 msのFIDを持つページのパッチもあります。この領域は、`<meta name=viewport>`タグが欠けているために<a hreflang="en" href="https://developer.chrome.com/blog/300ms-tap-delay-gone-away/">タップ遅延</a>の問題を持つページを表しています。これらはこの分析の目的のために安全に無視できる外れ値です。
+また、低いTBTと約250 msのFIDを持つページのパッチもあります。この領域は、`<meta name=viewport>`タグが欠けているために<a hreflang="en" href="https://developer.chrome.com/blog/300ms-tap-delay-gone-away">タップ遅延</a>の問題を持つページを表しています。これらはこの分析の目的のために安全に無視できる外れ値です。
 
 この分布の<a hreflang="ja" href="https://ja.wikipedia.org/wiki/%E3%82%B1%E3%83%B3%E3%83%89%E3%83%BC%E3%83%AB%E3%81%AE%E9%A0%86%E4%BD%8D%E7%9B%B8%E9%96%A2%E4%BF%82%E6%95%B0">ケンドール</a>と<a hreflang="ja" href="https://ja.wikipedia.org/wiki/%E3%82%B9%E3%83%94%E3%82%A2%E3%83%9E%E3%83%B3%E3%81%AE%E9%A0%86%E4%BD%8D%E7%9B%B8%E9%96%A2%E4%BF%82%E6%95%B0">スピアマン</a>の相関係数はそれぞれ0.29と0.40です。
 
@@ -895,7 +896,7 @@ INPがFIDよりも優れた反応性メトリックである理由は何か？�
   <p>まず、INPはTBTと相関していますか？FIDよりもTBTとの相関が強いですか？はい、そうです！</p>
   <p>しかし、両方のメトリックがTBTと相関しています。INPはメインスレッドをブロックするJavaScriptの問題をより多く捕捉していますか？「良い」閾値を満たすサイトの割合を分解することで、はい、そうです！</p>
   </blockquote>
-  <figcaption>—Annie Sullivanの<a href="https://twitter.com/anniesullie/status/1525161893450727425">Twitter</a>にて</figcaption>
+  <figcaption>—Annie Sullivanの<a href="https://x.com/anniesullie/status/1525161893450727425">Twitter</a>にて</figcaption>
 </figure>
 
 Annieが指摘するように、両方のメトリクスはTBTと相関していますが、彼女はINPがより強く相関していると結論づけ、それをより良い反応性メトリックとしています。
@@ -904,7 +905,7 @@ Annieが指摘するように、両方のメトリクスはTBTと相関してい
 
 これらの結果は、FIDによって描かれる明るい絵とは裏腹に、サイトには確かに反応性の問題があることを示しています。INPがCWVメトリックになるかどうかにかかわらず、今からそれを最適化し始めると、ユーザーは感謝するでしょう。
 
-ほぼ10分の1のモバイルサイトが、ダブルタップズームを無効にすることを怠ることで、無料のパフォーマンスを放棄しています。これはすべてのサイトが行うべきことです。HTMLの一行だけで、FIDとINPの両方に利益をもたらします。ページでLighthouseを実行し、<a hreflang="ja" href="https://developer.chrome.com/docs/lighthouse/pwa/viewport?hl=ja">ビューポート</a>の監査が確実に行われていることを確認してください。
+ほぼ10分の1のモバイルサイトが、ダブルタップズームを無効にすることを怠ることで、無料のパフォーマンスを放棄しています。これはすべてのサイトが行うべきことです。HTMLの一行だけで、FIDとINPの両方に利益をもたらします。ページでLighthouseを実行し、<a hreflang="ja" href="https://developer.chrome.com/docs/lighthouse/pwaviewport?hl=ja">ビューポート</a>の監査が確実に行われていることを確認してください。
 
 CWVとしてのINPを仮定して見ると、FIDレベルに戻るだけでなく、どれだけ多くの作業が必要であるかがわかります。とくにJavaScriptの（過度な）使用の結果として、もっとも人気のあるモバイルウェブサイトはこのような変更の影響を受けやすいです。CMSやJavaScriptフレームワークの中には、他よりも大きな影響を受けるものがあり、クライアント側で行う作業の量を集団で抑制するためには、エコシステム全体の努力が必要になります。
 

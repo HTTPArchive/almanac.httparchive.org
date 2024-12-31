@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: モバイル・ウェブ
 description: 2020年版Web Almanacのモバイルウェブの章では、ページの読み込み、テキストコンテンツ、ズームとスケーリング、ボタンとリンク、フォームへの入力のしやすさなどを解説しています。
+hero_alt: Hero image of Web Almanac characters squeezing a web page onto a mobile screen.
 authors: [spanicker, mdiblasio]
 reviewers: [foxdavidj]
 analysts: [foxdavidj]
@@ -56,7 +57,7 @@ perficient.comで公開されている<a hreflang="en" href="https://www.perfici
 
 オリジンへのトラフィックを人気度別に見ると、ユーザーが特定のオリジンにどのくらいの頻度でアクセスしているか、それによってウェブ上の世界的な分布がどうなっているかがわかります。
 
-Rick Byersが1年前にこの分布を[ツィート](https://twitter.com/RickByers/status/1195342331588706306)していたので、最新のデータを見てみました。このグラフは、オリジンの人気度による全体的な分布を、Chromeでのページロード（％）への貢献度で示したものです。
+Rick Byersが1年前にこの分布を[ツィート](https://x.com/RickByers/status/1195342331588706306)していたので、最新のデータを見てみました。このグラフは、オリジンの人気度による全体的な分布を、Chromeでのページロード（％）への貢献度で示したものです。
 
 {{ figure_markup(
   image="page-loads-across-origins-ranked-by-popularity.png",
@@ -159,7 +160,7 @@ CrUXのデータがあるすべてのウェブサイトをバケツに入れて�
 
 読み込み体験の重要な側面は、ウェブページのメインコンテンツがどれだけ早く読み込まれ、ユーザーに表示されるかということです。これを測定することは困難でした。過去にGoogleは、これを把握するために<a hreflang="en" href="https://web.dev/first-meaningful-paint/">First Meaningful Paint</a>（FMP）などのパフォーマンス指標を推奨していましたが説明が難しく、ページのメインコンテンツが表示されるタイミングを特定できないことが多くありました。
 
-シンプルな方が良い場合もあります。最近では、ページのメインコンテンツがいつ読み込まれたかを測定するより正確な方法は、単純に最大の要素がいつレンダリングされたかを見ることだと分かってきました。<a hreflang="en" href="https://web.dev/largest-contentful-paint">Largest Contentful Paint</a> (LCP)は、タイミングベースの指標で、折り返し部分よりも大きい要素がレンダリングされた時間を表します。
+シンプルな方が良い場合もあります。最近では、ページのメインコンテンツがいつ読み込まれたかを測定するより正確な方法は、単純に最大の要素がいつレンダリングされたかを見ることだと分かってきました。<a hreflang="en" href="https://web.dev/articles/lcp">Largest Contentful Paint</a> (LCP)は、タイミングベースの指標で、折り返し部分よりも大きい要素がレンダリングされた時間を表します。
 
 良いLCPスコアは、75パーセンタイルで2.5秒です。75パーセンタイルでのLCPの中央値はモバイルで2.6秒、デスクトップでは2.3秒であることがわかりました。モバイルWebはとくにLCPの点で失敗しやすいと言えます。
 

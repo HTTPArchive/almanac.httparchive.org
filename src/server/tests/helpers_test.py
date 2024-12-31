@@ -10,6 +10,7 @@ from server.helpers import (
     convert_old_image_path,
     add_footnote_links,
     year_live,
+    get_previous_year,
     strip_accents,
     accentless_sort,
     render_template,
@@ -283,6 +284,22 @@ def test_year_live_2020():
     assert year_live("2020") is True
 
 
+def test_previous_year_2018():
+    assert get_previous_year("2018") is None
+
+
+def test_previous_year_2019():
+    assert get_previous_year("2019") is None
+
+
+def test_previous_year_2022():
+    assert get_previous_year("2022") == "2021"
+
+
+def test_previous_year_2024():
+    assert get_previous_year("2024") == "2022"
+
+
 def test_strip_accents_fr_edition():
     assert strip_accents("Édition") == "Edition"
 
@@ -300,11 +317,13 @@ def test_accentless_sort():
         "developers": "Développement",
         "editors": "Édition",
         "leads": "Gestion de projet",
+        "committee": "Comité d'organisation",
         "reviewers": "Relecture",
         "translators": "Traduction",
     }
     sorted_french_teams_list = [
         ("analysts", "Analyse"),
+        ("committee", "Comité d'organisation"),
         ("designers", "Design"),
         ("developers", "Développement"),
         ("editors", "Édition"),

@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: HTTP/2
 description: HTTP/2、HTTP/2 Push、HTTP/2 Issues、HTTP/3の採用と影響を網羅した2020年版Web AlmanacのHTTP/2の章。
+hero_alt: Hero image of Web Almanac characters driving vehicles in various lanes carrying script and images resources.
 authors: [dotjs, rmarx, MikeBishop]
 reviewers: [LPardue, tunetheweb, ibnesayeed]
 analysts: [gregorywolf]
@@ -417,7 +418,7 @@ Andy Daviesによって維持されているこの<a hreflang="en" href="https:/
   <figcaption>{{ figure_link(caption="HTTP/2 prioritization support in common CDNs.", sheets_gid="1152953475", sql_file="percentage_of_h2_and_h3_sites_affected_by_cdn_prioritization.sql") }}</figcaption>
 </figure>
 
-CDN以外の利用では、HTTP/2の優先順位付けを正しく適用するサーバーの数はかなり少なくなると予想されます。例えば、NodeJSのHTTP/2実装は[優先順位付けをサポートしていません](https://twitter.com/jasnell/status/1245410283582918657)。
+CDN以外の利用では、HTTP/2の優先順位付けを正しく適用するサーバーの数はかなり少なくなると予想されます。例えば、NodeJSのHTTP/2実装は[優先順位付けをサポートしていません](https://x.com/jasnell/status/1245410283582918657)。
 
 ### さよならサーバープッシュ？
 

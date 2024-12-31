@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: 安全
 description: 2022年 Web 年鉴的安全章节，涵盖了传输层安全、内容包含（CSP、Feature Policy、SRI）、Web 防御机制（解决 XSS、XS-Leaks）以及安全机制采用的驱动因素。
+hero_alt: Hero image of Web Almanac characters padlocking a web page, while other Web Almanac characters subdue a masked thief who has a set of bolt cutters.
 authors: [SaptakS, lirantal, clarkio]
 reviewers: [kushaldas, tunetheweb]
 analysts: [VictorLeP, vikvanderlinden, GJFR]
@@ -631,7 +632,9 @@ CDNs 对子资源完整性并不陌生，通过在页面内容的 URL 引用中�
   <iframe src="https://example.com" allow="geolocation 'src' https://example.com'; camera *"></iframe>
 ```
 
-在移动端的 1150 万个框架中，有 18.9% 包含 `allow` 属性，以启用权限或特性策略。
+在移动端的 1740 万个框架中，有 12.6% 包含 `allow` 属性，以启用权限或特性策略。
+
+<p class="note">本章的早期版本报告了总帧数和具有 `allow` 属性的帧百分比的错误值。更多信息可在此 <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/pull/3912">GitHub PR</a> 中找到。</p>
 
 以下是在框架中检测到的前 10 条 `allow` 指令列表：
 
@@ -736,7 +739,9 @@ function clickToGo() {
 
 上述 2022 年的数据图表显示，超过 99% 的具有 `sandbox` 属性的网站都启用了 `allow-scripts` 和 `allow-same-origin` 权限。
 
-在嵌入 iframe 的桌面端网站中，35.2% 的网站还包括 `sandbox` 属性。
+对于桌面网站上的所有 iframe，21.08％ 具有 `sandbox` 属性。
+
+<p class="note">本章的早期版本报告了具有 `sandbox` 属性的帧百分比不正确。更多信息可在此 <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/pull/3912">GitHub PR</a> 中找到。</p>
 
 我们发现包含 `sandbox` 指令的 `Content-Security-Policy` 标头在移动端仅占 0.3% 的使用率（桌面端为 0.4%），这可能说明了这样一个事实，即该属性仅适用于在页面中嵌入 iframe 内容的实践，而不是通过内容安全策略定义进行预先规划。
 

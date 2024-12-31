@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Markup
 description: Markup chapter of the 2022 Web Almanac covering document data (doctypes, compression, languages, HTML conformance, document size), the use of HTML elements and attributes, data attributes and social media.
+hero_alt: Hero image of Web Almanac characters as dressed as constructor workers putting together a web page from HTML element blocks.
 authors: [j9t]
 reviewers: [bkardell, zcorpan]
 analysts: [rviscomi]
@@ -22,7 +23,7 @@ featured_stat_label_3: Elements which are `div`s.
 
 As the [2020 chapter said](../2020/markup#introduction), without HTML there are no web pages, no web sites, no web apps. You can say that without HTML, there's no Web. That makes HTML one of the most important web standards, if not the most important web standard.
 
-Accordingly, like every year, we used the millions of pages in our data set—7.9 million in the mobile set, 5.4 million in the desktop set, with overlap—to also look at HTML. This chapter doesn't cover "everything" there is about HTML, so we explicitly encourage you to [also analyze the data we gathered](https://docs.google.com/spreadsheets/d/1grkd2_1xSV3jvNK6ucRQ0OL1HmGTsScHuwA8GZuRLHU/edit) and to share your own conclusions—and when you do, tag them: [#htmlalmanac](https://twitter.com/hashtag/htmlalmanac).
+Accordingly, like every year, we used the millions of pages in our data set—7.9 million in the mobile set, 5.4 million in the desktop set, with overlap—to also look at HTML. This chapter doesn't cover "everything" there is about HTML, so we explicitly encourage you to [also analyze the data we gathered](https://docs.google.com/spreadsheets/d/1grkd2_1xSV3jvNK6ucRQ0OL1HmGTsScHuwA8GZuRLHU/edit) and to share your own conclusions—and when you do, tag them: [#htmlalmanac](https://x.com/hashtag/htmlalmanac).
 
 ## Document data
 
@@ -447,7 +448,7 @@ Are obsolete elements still a thing? Given that not-validating is still a thing,
   sql_file="obsolete_elements.sql",
 ) }}
 
-On 6.1% of pages, you still find `center` elements (hi <a hreflang="en" href="https://www.google.com/">Google homepage</a>), and on 5.4% of pages, you find `font` elements. Use of both elements went down (down 0.5% in both cases), fortunately, while `marquee`, `nobr`, and `big` didn't witness significant changes.
+On 6.1% of pages, you still find `center` elements (hi <a hreflang="en" href="https://www.google.com/">Google home page</a>), and on 5.4% of pages, you find `font` elements. Use of both elements went down (down 0.5% in both cases), fortunately, while `marquee`, `nobr`, and `big` didn't witness significant changes.
 
 `center` and `font` make for the lion's share (81.2%) of all obsolete elements, per our analysis:
 

@@ -2,13 +2,14 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: メディア
 description: 2021年版Web Almanacのメディアの章では、現在Web上で画像や動画がどのようにエンコード、埋め込み、スタイリング、配信されているかを解説しています。
+hero_alt: Hero image of Web Almanac characters projecting an image onto a screen while other Web Almanac characters walk to cinema seats with popcorn to watch the projection.
 authors: [eeeps, dougsillars]
 reviewers: [Navaneeth-akam, tpiros, akshay-ranganath, addyosmani]
 analysts: [eeeps, dougsillars, akshay-ranganath]
 editors: [tunetheweb]
 translators: [ksakae1216]
 eeeps_bio: Eric Portisは<a hreflang="en" href="https://cloudinary.com/">Cloudinary</a>のWebプラットフォーム提唱者です。
-dougsillars_bio: Doug Sillarsは、開発者関係のリーダーであり、パフォーマンスとメディアの交差点で活動するデジタルノマドでもあります。彼のツイッターは [@dougsillars](https://twitter.com/dougsillars) で、ブログは <a hreflang="en" href="https://dougsillars.com">dougsillars.com</a> で定期的に更新しています。
+dougsillars_bio: Doug Sillarsは、開発者関係のリーダーであり、パフォーマンスとメディアの交差点で活動するデジタルノマドでもあります。彼のツイッターは [@dougsillars](https://x.com/dougsillars) で、ブログは <a hreflang="en" href="https://dougsillars.com">dougsillars.com</a> で定期的に更新しています。
 results: https://docs.google.com/spreadsheets/d/1nwkpviC3gNhRb48i8OoIgtJx1ckqRjJGW7uc7Gdi_sI/
 featured_quote: 今年は、ネイティブ遅延読み込みにより、画像転送サイズの増大という潮流を食い止めることができました。
 featured_stat_1: 99.93%
@@ -329,7 +330,7 @@ AVIFに関して言えば、<a hreflang="ja" href="https://github.com/AOMediaCod
 
 古いフォーマットが依然として君臨している。JPEGが優勢で、PNGとGIFが表彰台を独占しています。これらを合わせると、ウェブ上の画像のほぼ90%を占めることになります。WebPはもう10年以上前のものですが、<a hreflang="en" href="https://www.macrumors.com/2020/06/22/webp-safari-14/">昨年ユニバーサル ブラウザ サポートを実現したばかり</a>で、まだ1桁の数字にとどまっています。そして、事実上誰もAVIFを使っておらず、クロールされたリソースのわずか0.04％を占めただけでした。AVIF1枚につき、JPEG1,000枚を発見しました。
 
-WebPとAVIFの採用が時間とともにどのように変化したか（およびその理由の推測）についての詳細な分析については、ImageReadyにおける [Paul Calvano](https://twitter.com/paulcalvano) の最近の素晴らしい講演（<a hreflang="en" href="https://www.youtube.com/watch?v=tz5bpAQY43k">フル動画</a> および <a hreflang="en" href="https://docs.google.com/presentation/d/1VS5QjNR6lh2y9jL5xaeainQ2cTAWyy7QiEjDMh4hNQA/edit#slide=id.gefc0d6ffce_0_0">スライド13〜15</a>）が最高のリソースとなるでしょう。その中で、Safariがサポートを追加した2020年7月から2021年7月にかけて、WebPの採用率が〜34％増加したことを紹介しています。AVIFはまだ新しいフォーマットであり、比較的少数のサイトが使用していることを考えると、驚くには値しないがパーセンテージで見ると、AVIFの数字はさらに急上昇している。AVIFを採用したのは、数人の[大](https://twitter.com/chriscoyier/status/1465474900588646408)<a hreflang="en" href="https://medium.com/vimeo-engineering-blog/upgrading-images-on-vimeo-620f79da8605">プレーヤー</a>だけだったのです。
+WebPとAVIFの採用が時間とともにどのように変化したか（およびその理由の推測）についての詳細な分析については、ImageReadyにおける [Paul Calvano](https://x.com/paulcalvano) の最近の素晴らしい講演（<a hreflang="en" href="https://www.youtube.com/watch?v=tz5bpAQY43k">フル動画</a> および <a hreflang="en" href="https://docs.google.com/presentation/d/1VS5QjNR6lh2y9jL5xaeainQ2cTAWyy7QiEjDMh4hNQA/edit#slide=id.gefc0d6ffce_0_0">スライド13〜15</a>）が最高のリソースとなるでしょう。その中で、Safariがサポートを追加した2020年7月から2021年7月にかけて、WebPの採用率が〜34％増加したことを紹介しています。AVIFはまだ新しいフォーマットであり、比較的少数のサイトが使用していることを考えると、驚くには値しないがパーセンテージで見ると、AVIFの数字はさらに急上昇している。AVIFを採用したのは、数人の[大](https://x.com/chriscoyier/status/1465474900588646408)<a hreflang="en" href="https://medium.com/vimeo-engineering-blog/upgrading-images-on-vimeo-620f79da8605">プレーヤー</a>だけだったのです。
 
 ### 埋め込み
 

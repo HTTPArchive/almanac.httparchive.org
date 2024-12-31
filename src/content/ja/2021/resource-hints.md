@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: リソースヒント
 description: 2021年版Web Almanacのリソースヒントの章では、リソースヒントの採用、その使い方、バッドプラクティス、パフォーマンスへの影響について説明しています。
+hero_alt: Hero image of Web Almanac characters lining up to HTML, JavaScript, and image resources in a line on the way to a web page.
 authors: [kevinfarrugia]
 reviewers: [siakaramalegos, tunetheweb, andydavies, samarpanda, westonruter]
 analysts: [Nithanaroy]
@@ -105,7 +106,7 @@ HTTPヘッダーを用いたリソースヒントの採用は、`<link>` HTML要
 
 #### `preload`
 
-ほとんどのモダンブラウザは `preload` ヒントも<a hreflang="en" href="https://caniuse.com/link-rel-preload">サポート</a>していますし、<a hreflang="en" href="https://caniuse.com/link-rel-modulepreload">程度の差</a>はありますが <a hreflang="en" href="https://html.spec.whatwg.org/multipage/links.html#link-type-modulepreload">`modulepreload`</a> というヒントもサポートしています。`preload` 命令は、ページの読み込みに必要なリソースの初期フェッチを開始し、フォントファイルやスタイルシートで参照される画像など、発見が遅れたリソースにもっともよく使用されます。リソースのプリロードは、リソースの優先順位を上げるために使われることがあり、開発者はHTMLの解析中に発見されたとしても、<a hreflang="en" href="https://web.dev/lcp">最大のコンテントフルペイント</a> (LCP) 画像の読み込みを優先させることができます。
+ほとんどのモダンブラウザは `preload` ヒントも<a hreflang="en" href="https://caniuse.com/link-rel-preload">サポート</a>していますし、<a hreflang="en" href="https://caniuse.com/link-rel-modulepreload">程度の差</a>はありますが <a hreflang="en" href="https://html.spec.whatwg.org/multipage/links.html#link-type-modulepreload">`modulepreload`</a> というヒントもサポートしています。`preload` 命令は、ページの読み込みに必要なリソースの初期フェッチを開始し、フォントファイルやスタイルシートで参照される画像など、発見が遅れたリソースにもっともよく使用されます。リソースのプリロードは、リソースの優先順位を上げるために使われることがあり、開発者はHTMLの解析中に発見されたとしても、<a hreflang="en" href="https://web.dev/articles/lcp">最大のコンテントフルペイント</a> (LCP) 画像の読み込みを優先させることができます。
 
 `modulepreload` は `preload` に特化した代替手段で、動作は似ていますが、使用できるのは <a hreflang="en" href="https://html.spec.whatwg.org/multipage/webappapis.html#module-script">モジュールスクリプト</a> に限定されています。
 
@@ -588,7 +589,7 @@ iframeの遅延ロードはChromeでサポートされ、Safariでは再びフ�
   )
 }}
 
-また、`loading="lazy"`を使用しているページの割合は、2020年の4.2%から、分析時点では17.8%に増加しています。なんと423%もの成長率です。この急成長は驚異的であり、その背景には2つの重要な要素があると思われます。クロスブラウザーに対応したページへの追加が容易であること、そしてこれらのウェブサイトを支えているフレームワークや技術です。WordPress 5.5では<a hreflang="en" href="https://make.wordpress.org/core/2020/07/14/lazy-loading-images-in-5-5/">lazy-loading imagesがデフォルトの実装となり</a>、 `loading="lazy"` の採用率は急上昇し、WordPressサイトでは、ネイティブ画像の遅延ロードを使用するページ全体の <a hreflang="en" href="https://web.dev/lcp-lazy-loading/">84%</a> が構成されるようになったそうです。
+また、`loading="lazy"`を使用しているページの割合は、2020年の4.2%から、分析時点では17.8%に増加しています。なんと423%もの成長率です。この急成長は驚異的であり、その背景には2つの重要な要素があると思われます。クロスブラウザーに対応したページへの追加が容易であること、そしてこれらのウェブサイトを支えているフレームワークや技術です。WordPress 5.5では<a hreflang="en" href="https://make.wordpress.org/core/2020/07/14/lazy-loading-images-in-5-5/">lazy-loading imagesがデフォルトの実装となり</a>、 `loading="lazy"` の採用率は急上昇し、WordPressサイトでは、ネイティブ画像の遅延ロードを使用するページ全体の <a hreflang="en" href="https://web.dev/articles/lcp-lazy-loading">84%</a> が構成されるようになったそうです。
 
 {{ figure_markup(
   image="lazy-loaded-images.png",
@@ -600,7 +601,7 @@ iframeの遅延ロードはChromeでサポートされ、Safariでは再びフ�
   )
 }}
 
-モバイルで遅延ロードされた画像の61.5%、デスクトップで遅延ロードされた画像の63.1%は、実際には初期ビューポート内にあり、遅延ロードされるべきではない画像です。遅延ロードを使用したページのロード時間に関する<a hreflang="en" href="https://web.dev/lcp-lazy-loading/">研究</a>によると、遅延ロードを使用したページはLCP性能が、悪化する傾向があり、おそらく遅延ロード属性を使いすぎたことが原因であると指摘されています。これは、遅延ロードされるべきではないLCP要素でますます顕著になります。もしあなたが `loading="lazy"` を使っているなら、遅延ロードされた画像が折り目の下にあるかどうか、さらに決定的なことは、LCP要素が遅延ロードされていないかどうかを確認する必要があります。LCPイメージのレイジーローディングがコアウェブ・バイタルに与える影響については、[パフォーマンス](./performance)の章で詳しく説明しています。
+モバイルで遅延ロードされた画像の61.5%、デスクトップで遅延ロードされた画像の63.1%は、実際には初期ビューポート内にあり、遅延ロードされるべきではない画像です。遅延ロードを使用したページのロード時間に関する<a hreflang="en" href="https://web.dev/articles/lcp-lazy-loading">研究</a>によると、遅延ロードを使用したページはLCP性能が、悪化する傾向があり、おそらく遅延ロード属性を使いすぎたことが原因であると指摘されています。これは、遅延ロードされるべきではないLCP要素でますます顕著になります。もしあなたが `loading="lazy"` を使っているなら、遅延ロードされた画像が折り目の下にあるかどうか、さらに決定的なことは、LCP要素が遅延ロードされていないかどうかを確認する必要があります。LCPイメージのレイジーローディングがコアウェブ・バイタルに与える影響については、[パフォーマンス](./performance)の章で詳しく説明しています。
 
 {{ figure_markup(
   caption='`iframe` 要素に `loading="lazy"` 属性が設定されているページの割合です。',
@@ -635,7 +636,7 @@ Chrome 95では、`preload`と`preconnect`に対して、<a hreflang="en" href="
 
 ### 優先順位付けのヒント
 
-優先度ヒントは、ページ内のリソースの相対的な重要度をブラウザに通知し、重要なリソースを優先してコアウェブバイタルを向上させることを目的としています。優先度ヒントは、`<img>` や `<script>` などのリソースに `importance` 属性を追加することで、ドキュメントのマークアップを通じて有効になります。`importance` 属性は `high`, `low`, `auto` の列挙を受け付け、これをリソースのタイプと組み合わせることで、ブラウザはヒューリスティックに基づいて最適なフェッチ優先度を割り当てることができるようになります。優先ヒントは、Chrome 96で<a hreflang="en" href="https://developer.chrome.com/blog/origin-trials/">オリジン・トライアル</a>として利用できます。
+優先度ヒントは、ページ内のリソースの相対的な重要度をブラウザに通知し、重要なリソースを優先してコアウェブバイタルを向上させることを目的としています。優先度ヒントは、`<img>` や `<script>` などのリソースに `importance` 属性を追加することで、ドキュメントのマークアップを通じて有効になります。`importance` 属性は `high`, `low`, `auto` の列挙を受け付け、これをリソースのタイプと組み合わせることで、ブラウザはヒューリスティックに基づいて最適なフェッチ優先度を割り当てることができるようになります。優先ヒントは、Chrome 96で<a hreflang="en" href="https://developer.chrome.com/blog/origin-trials">オリジン・トライアル</a>として利用できます。
 
 ## 結論
 

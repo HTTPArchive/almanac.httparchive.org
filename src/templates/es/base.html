@@ -18,13 +18,19 @@
 {% block intro_title %}Web Almanac{% endblock %}
 {% block intro_sub_title %}HTTP Archive informe del<br><b>estado de la web</b> anual{% endblock %}
 
+{% block announcement_text %}
+<p lang="en">
+  Listen to a recording of our live stream for this year's edition on <a href="https://www.youtube.com/live/cdYR0ZmplIM">YouTube</a>! We'll be running another live stream with more of our authors in January 2025.
+</p>
+{% endblock %}
+
 {% block mission %}
 <p>
   Nuestra misión es combinar las estadísticas y tendencias sin procesar del HTTP Archive con la experiencia de la comunidad web. Web Almanac es un informe exhaustivo sobre el estado de la web, respaldado por datos reales y expertos web de confianza. La edición de {{ year }} consta de {{ supported_chapters | length }} capítulos que abarcan aspectos del contenido de la página, la experiencia del usuario, la publicación y la distribución.
 </p>
 {% endblock %}
 
-{% block read_last_years_almanac %}Lea el Web Almanac {{ year | int - 1 }}{% endblock %}
+{% block read_last_years_almanac %}Lea el Web Almanac {{ previous_year }}{% endblock %}
 
 {% block http_archive_link %}Página de inicio HTTP Archive{% endblock %}
 
@@ -57,7 +63,7 @@
 {% block open_the_index %}Abrir la tabla de contenido{% endblock %}
 {% block close_the_index %}Cerrar la tabla de contenido{% endblock %}
 
-{% block and %}y{% endblock %}
+{% block and %} y {% endblock %}
 {% block comma %}, {% endblock %}
 {% block oxford_comma %} {% endblock %}
 
@@ -111,10 +117,14 @@
 {% block repliesAlt %}{% endblock %}
 {% block mentionsAlt %}{% endblock %}
 
-{% macro onTwitter(twitterHandle) %}@{{twitterHandle}} en Twitter{% endmacro %}
+{% macro onTwitter(twitterHandle) %}@{{twitterHandle}} en Twitter/X{% endmacro %}
+{% macro onMastodon(mastodonHandle) %}{{mastodonHandle}} en Mastodon{% endmacro %}
+{% macro onBluesky(blueskyHandle) %}{{blueskyHandle}} en Bluesky{% endmacro %}
 {% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} en GitHub{% endmacro %}
 {% macro onLinkedIn(authorName) %}{{authorName}} en LinkedIn{% endmacro %}
 {% macro website(authorName) %}{{authorName}} sitio web{% endmacro %}
+
+{% block citation %}Citación{% endblock %}
 
 {% macro edition(year) %}Edición {{ year }}{% endmacro %}
 
@@ -124,14 +134,14 @@
 {% block rss_feed %}RSS Feed{% endblock %}
 
 {% block featured_chapter %}Capítulo destacado{% endblock %}
-{% block featured_chapter_last_year %}Capítulo destacado<br>del Web Almanac {{ year|int -1 }}{% endblock %}
+{% block featured_chapter_last_year %}Capítulo destacado<br>del Web Almanac {{ previous_year }}{% endblock %}
 
 {# Check if read_chapter already defined in child template as macros can't be overridden #}
 {% if not read_chapter %}
 {% macro read_chapter(chapter) %}Lea el capítulo: <span class="featured-chapter-name">{{ chapter }}</span>{% endmacro %}
 {% endif %}
 {% if not read_last_years_chapter %}
-{% macro read_last_years_chapter(chapter) %}Lea el {{ year|int -1 }} capítulo: <span class="featured-chapter-name">{{ chapter }}</span>{% endmacro %}
+{% macro read_last_years_chapter(chapter) %}Lea el {{ previous_year }} capítulo: <span class="featured-chapter-name">{{ chapter }}</span>{% endmacro %}
 {% endif %}
 
 {% block contributors_description %}
@@ -172,6 +182,7 @@ A menos que se indique lo contrario, las métricas en los {{ supported_chapters 
   set localizedChapterTitles = {
     "javascript": "JavaScript",
     "css": "CSS",
+    "cookies": "Cookies",
     "markup": "Marcado Web",
     "media": "Media",
     "third-parties": "Contenido de Terceros",
@@ -212,6 +223,7 @@ A menos que se indique lo contrario, las métricas en los {{ supported_chapters 
     "developers": "Desarrolladores",
     "editors": "Editores",
     "leads": "Lideres",
+    "committee": "Comité Organizador",
     "reviewers": "Revisores",
     "translators": "Traductores",
     }
@@ -225,6 +237,7 @@ A menos que se indique lo contrario, las métricas en los {{ supported_chapters 
     "developers": "Desarrollador",
     "editors": "Editor",
     "leads": "Lider",
+    "committee": "Comité Organizador",
     "reviewers": "Revisor",
     "translators": "Traductor",
     }

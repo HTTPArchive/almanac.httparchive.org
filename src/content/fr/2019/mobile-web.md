@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Web Mobile
 description: Chapitre sur les web mobile du Web Almanac 2019, couvrant le chargement des pages, du contenu textuel, du zoom et de la mise à l’échelle, des boutons et des liens, ainsi que de la facilité à remplir les formulaires.
+hero_alt: Hero image of Web Almanac characters squeezing a web page onto a mobile screen.
 authors: [foxdavidj]
 reviewers: [AymenLoukil, logicalphase]
 analysts: [ymschaap, rviscomi]
@@ -110,11 +111,11 @@ L’une des plus belles réussites du web est la façon dont les pages web se ch
 
 Imaginez que vous êtes en train de lire un article quand, tout à coup, une image se charge et repousse le texte que vous lisez tout en bas de l’écran. Vous devez maintenant chercher où vous étiez ou simplement abandonner la lecture de l’article. Ou, pire encore, vous commencez à cliquer sur un lien juste avant qu’une annonce se charge au même endroit, ce qui se traduit par un clic accidentel sur l’annonce au lieu du lien.
 
-Alors, comment mesurer à quel point nos sites se transforment&nbsp;? Dans le passé, c’était assez difficile (voire impossible), mais grâce à la nouvelle <a hreflang="en" href="https://web.dev/layout-instability-api" lang="en">Layout Instability API</a> (en français, «&nbsp;API relatives à l’instabilité de la mise en page&nbsp;»), nous pouvons le faire en deux étapes&nbsp;:
+Alors, comment mesurer à quel point nos sites se transforment&nbsp;? Dans le passé, c’était assez difficile (voire impossible), mais grâce à la nouvelle <a hreflang="en" href="https://web.dev/articles/cls" lang="en">Layout Instability API</a> (en français, «&nbsp;API relatives à l’instabilité de la mise en page&nbsp;»), nous pouvons le faire en deux étapes&nbsp;:
 
 1. via l’API <em lang="en">Layout Instability</em>, vous pouvez mesurer l’impact de chaque mouvement dans la page. Cette mesure vous est communiqué sous la forme d’un pourcentage de la quantité de contenu du viewport (la fenêtre de visualisation) qui a changé.
 
-2. additionnez tous les changements que vous avez relevés. Le résultat est ce que nous appelons le score de <a hreflang="en" href="https://web.dev/layout-instability-api#a-cumulative-layout-shift-score">Cumulative Layout Shift</a> (CLS).
+2. additionnez tous les changements que vous avez relevés. Le résultat est ce que nous appelons le score de <a hreflang="en" href="https://web.dev/articles/cls#a-cumulative-layout-shift-score">Cumulative Layout Shift</a> (CLS).
 
 Comme chaque visiteur peut avoir un CLS différent, afin d’analyser cette mesure sur le web avec le [Chrome UX Report](./methodology#chrome-ux-report) (CrUX), nous rangeons chaque expérience dans l’un de ces trois ensembles distincts&nbsp;:
 

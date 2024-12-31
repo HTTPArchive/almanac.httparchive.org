@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: セキュリティ
 description: 2020年版Web Almanacのセキュリティの章では、トランスポート層のセキュリティ、コンテンツセキュリティ（CSP、機能ポリシー、SRI）、Web防御メカニズム（XSS、XS-Leaksへの取り組み）、広く使用されている技術の更新方法をカバーしています。
+hero_alt: Hero image of Web Almanac characters padlocking a web page, while other Web Almanac characters subdue a masked thief who has a set of bolt cutters.
 authors: [tomvangoethem, nrllh, tunetheweb]
 reviewers: [cqueern, edmondwwchan]
 analysts: [tomvangoethem, nrllh]
@@ -9,7 +10,7 @@ editors: [tunetheweb]
 translators: [ksakae1216]
 tomvangoethem_bio: Tom Van Goethemは、ベルギーのルーベン大学の<a hreflang="en" href="https://distrinet.cs.kuleuven.be/">DistriNetグループ</a> の研究者です。彼の研究は、セキュリティやプライバシーの問題につながるウェブ上の新たなサイドチャネル攻撃を発見し、その原因となる漏洩をパッチで修正する方法を見出すことに重点を置いています。
 nrllh_bio: Nurulullah Demirは、<a hreflang="en" href="https://www.internet-sicherheit.de/en/">Institute for Internet Security</a>のセキュリティ研究者であり、博士課程の学生です。彼の研究は、屈強なWebセキュリティメカニズムと敵対的な機械学習に焦点を当てています。
-tunetheweb_bio: Barry Pollardはソフトウェア開発者であり、Manningの本<a hreflang="en" href="https://www.manning.com/books/http2-in-action">HTTP/2 in Action</a> の著者でもあります。彼はウェブは素晴らしいと思っていますが、それをもっと良くしたいと思っています。<a href="https://twitter.com/tunetheweb">@tunetheweb</a> でつぶやき、<a hreflang="en" href="https://www.tunetheweb.com">www.tunetheweb.com</a> でブログを書いています。
+tunetheweb_bio: Barry Pollardはソフトウェア開発者であり、Manningの本<a hreflang="en" href="https://www.manning.com/books/http2-in-action">HTTP/2 in Action</a> の著者でもあります。彼はウェブは素晴らしいと思っていますが、それをもっと良くしたいと思っています。<a href="https://x.com/tunetheweb">@tunetheweb</a> でつぶやき、<a hreflang="en" href="https://www.tunetheweb.com">www.tunetheweb.com</a> でブログを書いています。
 discuss: 2047
 results: https://docs.google.com/spreadsheets/d/1T7sxPP5BV3uwv-sXhBEZraVk-obd0tDfFrLiD49nZC0/
 featured_quote: 本章では、ウェブ上のセキュリティの現状を探ります。様々なセキュリティ機能の採用を詳細かつ大規模に分析することで、ユーザーを守りたいという動機から、ウェブサイトの所有者がこれらのセキュリティメカニズムを適用する様々な方法についての洞察を得ます。
@@ -620,7 +621,9 @@ SRIで保護されたスクリプトが含まれている上位5ホストの残�
 <figcaption>{{ figure_link(caption="フレーム上のフィーチャーポリシーディレクティブの普及率。", sheets_gid="547110187", sql_file="iframe_allow_directives.sql") }}</figcaption>
 </figure>
 
-レスポンスヘッダー`Feature-Policy`の採用率は、デスクトップページでは0.60%、モバイルページでは0.51%とかなり低い。一方、デスクトップページでは、800万フレームのうち19.5%でFeature Policyが有効になっていました。モバイルページでは、920万フレームのうち16.4%が`allow`属性を含んでいました。
+レスポンスヘッダー`Feature-Policy`の採用率は、デスクトップページでは0.60%、モバイルページでは0.51%とかなり低い。一方、デスクトップページでは、1320万フレームのうち11.8%でFeature Policyが有効になっていました。モバイルページでは、1390万フレームのうち10.8%が`allow`属性を含んでいました。
+
+<p class="note">この章の以前のバージョンでは、フレームの合計数と `allow` 属性を持つフレームの割合の値が間違っていました。詳細については、この <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/pull/3912">GitHub PR</a> を参照してください。</p>
 
 iframeの機能ポリシーで最もよく使われているディレクティブを見ると、これらは主にフレームが動画を再生する方法を制御するために使われていることがわかります。例えば、最も一般的なディレクティブである`encrypted-media`は、DRMで保護された動画を再生するために必要なEncrypted Media Extensions APIへのアクセスを制御するために使用されます。フィーチャーポリシーを持つフレームの起源として最も多いのは `https://www.facebook.com`と`https://www.youtube.com`でした (デスクトップページのフィーチャーポリシーを持つフレームの49.87%と26.18%でした)。
 
@@ -628,7 +631,9 @@ iframeの機能ポリシーで最もよく使われているディレクティ�
 
 信頼できないサードパーティをiframeに含めることで、そのサードパーティはページ上で様々な攻撃を試みることができます。例えば、トップページをフィッシングページに誘導したり、偽のアンチウイルス広告を表示したポップアップを起動したりできます。
 
-iframeの`sandbox`属性は、埋め込まれたウェブページの機能を制限し、その結果、攻撃を開始する機会を制限するために使用することができます。広告や動画などのサードパーティコンテンツを埋め込むことはウェブ上では一般的なことなので、これらの多くが`sandbox`属性によって制限されていることは驚くべきことではありません。デスクトップページのiframeの30.29%が`sandbox`属性を持っているのに対し、モバイルページでは33.16%となっています。
+iframeの`sandbox`属性は、埋め込まれたウェブページの機能を制限し、その結果、攻撃を開始する機会を制限するために使用することができます。広告や動画などのサードパーティコンテンツを埋め込むことはウェブ上では一般的なことなので、これらの多くが`sandbox`属性によって制限されていることは驚くべきことではありません。デスクトップページのiframeの18.3%が`sandbox`属性を持っているのに対し、モバイルページでは21.9%となっています。
+
+<p class="note">この章の以前のバージョンでは、`sandbox` 属性を持つフレームの割合の値が間違っていました。詳細については、この <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/pull/3912">GitHub PR</a> を参照してください。</p>
 
 <figure>
   <table>
@@ -1002,7 +1007,7 @@ HTTPSで訪問されたホームページの割合を見ると、すでに大き
 
 上の図は、過去2年間のクリプトマイニングを活用したウェブサイトの数を示しています。2019年に入ってから、クリプトマイニングへの関心が低くなっていることがわかります。前回の測定では、クリプトマイニングスクリプトを含むウェブサイトが合計348件ありました。
 
-次の図では、8月のデータセットをもとに、ウェブ上のクリプトマイナーの市場シェアを示しています。Coinimpが45.2%の市場シェアを持ち、最も人気のあるプロバイダーとなっています。最も人気のあるクリプトマイナーはすべてWebAssemblyをベースにしていることがわかりました。Web上で採掘するためのJavaScriptライブラリもありますが、WebAssemblyをベースにしたソリューションほど強力ではないことに注意してください。私たちの別の結果によると、クリプトマイニングを含むウェブサイトの半分は、廃止されたサービスプロバイダーのクリプトマイニングコンポーネントを利用していることがわかりました（<a hreflang="en" href="https://blog.avast.com/coinhive-shuts-down">CoinHive</a>や[JSEcoin](https://twitter.com/jsecoin/status/1247436272869814272)のようなもの）。
+次の図では、8月のデータセットをもとに、ウェブ上のクリプトマイナーの市場シェアを示しています。Coinimpが45.2%の市場シェアを持ち、最も人気のあるプロバイダーとなっています。最も人気のあるクリプトマイナーはすべてWebAssemblyをベースにしていることがわかりました。Web上で採掘するためのJavaScriptライブラリもありますが、WebAssemblyをベースにしたソリューションほど強力ではないことに注意してください。私たちの別の結果によると、クリプトマイニングを含むウェブサイトの半分は、廃止されたサービスプロバイダーのクリプトマイニングコンポーネントを利用していることがわかりました（<a hreflang="en" href="https://blog.avast.com/coinhive-shuts-down">CoinHive</a>や[JSEcoin](https://x.com/jsecoin/status/1247436272869814272)のようなもの）。
 
 {{ figure_markup(
   image="security-cryptominer-market-share.png",

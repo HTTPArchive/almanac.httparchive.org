@@ -2,12 +2,13 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Paginagewicht
 description: Het hoofdstuk Paginagewicht van de Web Almanac 2020 behandelt waarom paginagewicht belangrijk is, bandbreedte, complexe pagina's, paginadruk in de loop van de tijd, paginaverzoeken en bestandsindelingen.
+hero_alt: Hero image of Web Almanac characters using a set of scales to weigh a web page against variuos boxes labelled with various different kilobytes.
 authors: [henrihelvetica]
 reviewers: [paulcalvano]
 analysts: [paulcalvano]
 editors: [tunetheweb]
 translators: [noah-vdv]
-henrihelvetica_bio: Henri is een freelance ontwikkelaar die zijn interesses heeft omgezet in een potpourri van prestatie-engineering met een vleugje gebruikerservaring. Wanneer hij niet de stortvloed aan dagelijkse onderzoeksdocumenten en casestudy's leest, of lukraak sites controleert in dev-tools, kan Henri worden aangetroffen die bijdraagt aan de gemeenschap door meetups mee te programmeren, waaronder de <a href="https://twitter.com/towebperf">Toronto Web Performance Group</a> of vrijwilligerswerk doen voor de lunch en lessen bij verschillende bootcamps. Anders werkt hij met muziekproductiesoftware of met bijna zekerheidstraining en concentreert hij zich op het rennen van de snelst mogelijke 5k.
+henrihelvetica_bio: Henri is een freelance ontwikkelaar die zijn interesses heeft omgezet in een potpourri van prestatie-engineering met een vleugje gebruikerservaring. Wanneer hij niet de stortvloed aan dagelijkse onderzoeksdocumenten en casestudy's leest, of lukraak sites controleert in dev-tools, kan Henri worden aangetroffen die bijdraagt aan de gemeenschap door meetups mee te programmeren, waaronder de <a href="https://x.com/towebperf">Toronto Web Performance Group</a> of vrijwilligerswerk doen voor de lunch en lessen bij verschillende bootcamps. Anders werkt hij met muziekproductiesoftware of met bijna zekerheidstraining en concentreert hij zich op het rennen van de snelst mogelijke 5k.
 discuss: 2054
 results: https://docs.google.com/spreadsheets/d/1wG4u0LV5PT9aN-XB1hixSFtI8KIDARTOCX0sp7ZT3h0/
 featured_quote: De reis van het web van het eenvoudige, bijna pedagogische platform naar de innovatieve, ingewikkelde en zeer interactieve apps die het is geworden, de rudimentaire metriek van het paginagewicht verborg een groter verhaal&colon; een ratatouille van bronnen, die elk van invloed zijn op moderne statistieken, op hun beurt op de gebruikerservaring.

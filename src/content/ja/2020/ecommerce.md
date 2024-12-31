@@ -2,12 +2,13 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Eコマース
 description: 2020年版Web AlmanacのEコマースの章では、Eコマースプラットフォーム、ペイロード、画像、サードパーティ、パフォーマンス、SEO、PWAなどを取り上げています。
+hero_alt: Hero image of a Web Almanac character at a super market checkout loading items from a shopping basket onto the conveyor belt while another character payes with a credit card.
 authors: [rockeynebhwani, jrharalson]
 reviewers: [alankent]
 analysts: [jrharalson, rockeynebhwani]
 editors: [tunetheweb]
 translators: [ksakae1216]
-rockeynebhwani_bio: Rockey Nebhwaniは、2001年から小売・Eコマース業界で働いている独立系コンサルタントで、アメリカやイギリスのAmazon、Wal-Mart、Tesco、M&S、Safewayなどの小売業者との仕事で幅広い経験を持っています。ロッキーは、Eコマースのイベントで時折講演を行うほか、<a href="https://twitter.com/rnebhwani">@rnebhwani</a>でツイートしています。
+rockeynebhwani_bio: Rockey Nebhwaniは、2001年から小売・Eコマース業界で働いている独立系コンサルタントで、アメリカやイギリスのAmazon、Wal-Mart、Tesco、M&S、Safewayなどの小売業者との仕事で幅広い経験を持っています。ロッキーは、Eコマースのイベントで時折講演を行うほか、<a href="https://x.com/rnebhwani">@rnebhwani</a>でツイートしています。
 #jrharalson_bio: TODO
 discuss: 2052
 results: https://docs.google.com/spreadsheets/d/1Hvsh_ZBKg2vWhouJ8vIzLmp0nLIMzrT2mr6RQbIkxqY/
@@ -227,7 +228,7 @@ Eコマースサイトでは、リクエスト数が少ないにもかかわら�
 
 上の図によると、中央値のEコマースページには34枚の画像があり、画像ペイロードはモバイルで1,208KB、デスクトップでは37枚の画像と1,271KBとなっています。10%のホームページには90枚以上の画像があり、画像ペイロードはモバイルで5.5MB、デスクトップで5.8MBとなっています。
 
-[2019年との比較](../2019/ecommerce#image-stats)では、画像リクエストの中央値と画像ペイロードの中央値の両方が低下しています。画像リクエストの中央値は、モバイルとデスクトップの両方で3減少しました。また、画像ペイロードの中央値は、モバイルとデスクトップの両方で約200kb～250kb減少しました。この減少は、現在<a hreflang="en" href="https://caniuse.com/loading-lazy-attr">より多くのブラウザ</a>でサポートされている`loading="lazy"`属性の使用など、サイトが遅延読み込み技術を採用していることが要因と考えられます。今年の[Markup](./markup#data--attributes)の章では、ネイティブの遅延ローディングの使用が増加しているようで、2020年8月には約3.86%のページでこの属性が使用されており、これは継続的に増加しているという見解が示されています（[このツィート](https://twitter.com/rick_viscomi/status/1344380340153016321?s=20)で見られます）。
+[2019年との比較](../2019/ecommerce#image-stats)では、画像リクエストの中央値と画像ペイロードの中央値の両方が低下しています。画像リクエストの中央値は、モバイルとデスクトップの両方で3減少しました。また、画像ペイロードの中央値は、モバイルとデスクトップの両方で約200kb～250kb減少しました。この減少は、現在<a hreflang="en" href="https://caniuse.com/loading-lazy-attr">より多くのブラウザ</a>でサポートされている`loading="lazy"`属性の使用など、サイトが遅延読み込み技術を採用していることが要因と考えられます。今年の[Markup](./markup#data--attributes)の章では、ネイティブの遅延ローディングの使用が増加しているようで、2020年8月には約3.86%のページでこの属性が使用されており、これは継続的に増加しているという見解が示されています（[このツィート](https://x.com/rick_viscomi/status/1344380340153016321?s=20)で見られます）。
 
 #### 一般的な画像フォーマット
 

@@ -2,12 +2,13 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: ページの重さ
 description: 2020年のWeb Almanacの「ページの重さ」の章では、ページの重さが重要な理由、帯域幅、複雑なページ、時間経過によるページの重さ、ページのリクエスト、ファイル形式について説明しています。
+hero_alt: Hero image of Web Almanac characters using a set of scales to weigh a web page against variuos boxes labelled with various different kilobytes.
 authors: [henrihelvetica]
 reviewers: [paulcalvano]
 analysts: [paulcalvano]
 editors: [tunetheweb]
 translators: [ksakae1216]
-henrihelvetica_bio: Henriはフリーランスの開発者であり、興味をパフォーマンスエンジニアリングとユーザーエクスペリエンスを組み合わせたポプリに変えています。日々の研究ドキュメントやケーススタディの洪水を読んだり、開発ツールのサイトを無差別に監査したりしていないときは、コミュニティに貢献したり、<a href="https://twitter.com/towebperf">Toronto Web Performance Group</a>を含む共同プログラミングのミートアップに参加したり、様々なブートキャンプでランチをしたり学んだりするために自分の時間をボランティアで提供したりしています。それ以外の時は、音楽制作ソフトを使ってツーリングをしたり、ほぼ確実にトレーニングをして、可能な限り最速で5kmを走ることに集中しています。
+henrihelvetica_bio: Henriはフリーランスの開発者であり、興味をパフォーマンスエンジニアリングとユーザーエクスペリエンスを組み合わせたポプリに変えています。日々の研究ドキュメントやケーススタディの洪水を読んだり、開発ツールのサイトを無差別に監査したりしていないときは、コミュニティに貢献したり、<a href="https://x.com/towebperf">Toronto Web Performance Group</a>を含む共同プログラミングのミートアップに参加したり、様々なブートキャンプでランチをしたり学んだりするために自分の時間をボランティアで提供したりしています。それ以外の時は、音楽制作ソフトを使ってツーリングをしたり、ほぼ確実にトレーニングをして、可能な限り最速で5kmを走ることに集中しています。
 discuss: 2054
 results: https://docs.google.com/spreadsheets/d/1wG4u0LV5PT9aN-XB1hixSFtI8KIDARTOCX0sp7ZT3h0/
 featured_quote: ウェブの旅は、平凡で教育的なプラットフォームに近いものから、革新的で複雑で高度にインタラクティブなアプリになり、初歩的なページ重量のメトリックは、より大きなストーリー＆コロンを隠していました;リソースのラタトゥイユ、それぞれが現代のメトリックに影響を与え、順番にユーザー体験に影響を与えます。

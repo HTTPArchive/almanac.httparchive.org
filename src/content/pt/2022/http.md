@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: HTTP
 description: O capítulo HTTP do Web Almanac de 2022 aborda dados sobre versões históricas do HTTP utilizadas na web, além do aumento das novas versões, incluindo HTTP/2 e HTTP/3, enquanto também examina métricas-chave como parte do ciclo de vida do HTTP.
+hero_alt: Hero image of Web Almanac characters driving vehicles in various lanes carrying script and images resources.
 authors: [paivaspol]
 reviewers: [tunetheweb, rmarx, LPardue]
 analysts: [paivaspol]
@@ -110,7 +111,7 @@ Com o HTTP/2, os clientes podem <a hreflang="en" href="https://stackoverflow.com
 
 Com os desafios das prioridades do HTTP/2, foi necessário um novo esquema de priorização. O <a hreflang="en" href="https://httpwg.org/specs/rfc9218.html">Esquema de Priorização Extensível para HTTP</a> foi desenvolvido separadamente do HTTP/3 e foi padronizado em junho de 2022. Nesse esquema, os clientes podem atribuir explicitamente uma prioridade composta por dois parâmetros através do cabeçalho HTTP `priority` ou do quadro `PRIORITY_UPDATE`.  O primeiro parâmetro, `urgency`,  indica ao servidor a prioridade do recurso solicitado. O segundo parâmetro, `incremental`, informa ao servidor se um recurso pode ser parcialmente utilizado no cliente (por exemplo, exibindo parcialmente uma imagem à medida que partes dela chegam). Definir o esquema como um cabeçalho HTTP e como o quadro `PRIORITY_UPDATE` torna-o extensível, pois ambos os formatos foram projetados para fornecer extensibilidade futura. No momento da escrita, o esquema foi implementado para HTTP/3 no Safari, Firefox e Chrome.
 
-Embora a maioria das prioridades de recursos seja decidida pelo próprio navegador, os desenvolvedores agora também podem usar as novas <a hreflang="en" href="https://web.dev/priority-hints/">dicas de prioridade</a> para ajustar a prioridade de um recurso específico. As dicas de prioridade podem ser especificadas através do atributo `fetchpriority` no HTML. Por exemplo, suponha que um site queira dar prioridade a uma imagem de destaque, ele pode adicionar o atributo `fetchpriority` à tag da imagem:
+Embora a maioria das prioridades de recursos seja decidida pelo próprio navegador, os desenvolvedores agora também podem usar as novas <a hreflang="en" href="https://web.dev/articles/fetch-priority">dicas de prioridade</a> para ajustar a prioridade de um recurso específico. As dicas de prioridade podem ser especificadas através do atributo `fetchpriority` no HTML. Por exemplo, suponha que um site queira dar prioridade a uma imagem de destaque, ele pode adicionar o atributo `fetchpriority` à tag da imagem:
 
 ```html
 <img src="hero.png" fetchpriority="high">
@@ -147,7 +148,7 @@ Em 2021, como mostrado no gráfico acima, o percentual de sites que utilizavam o
 
 A diminuição no uso do Push provavelmente ocorre porque <a hreflang="en" href="https://jakearchibald.com/2017/h2-push-tougher-than-i-thought/">é difícil utilizá-lo de forma eficaz</a>. Por exemplo, os sites não podem saber com precisão se um recurso que está sendo empurrado já existe no cache do cliente. Se estiver no cache do cliente, a largura de banda utilizada para empurrar o recurso será desperdiçada.
 
-Com as dificuldades encontradas, O <a hreflang="en" href="https://groups.google.com/a/chromium.org/g/blink-dev/c/K3rYLvmQUBY/m/ho4qP49oAwAJ">Chrome decidiu depreciar o HTTP/2 Push</a> a partir da <a hreflang="en" href="https://developer.chrome.com/blog/removing-push/">Chrome versão 106</a>. Apesar de o push ainda ser oficialmente parte do padrão HTTP/3, o Chrome - que é utilizado pelo rastreador HTTP Archive - nunca implementou o push para conexões HTTP/3, o que pode explicar ainda mais a redução do uso, já que os sites migraram para essa versão e perderam a capacidade de empurrar recursos.
+Com as dificuldades encontradas, O <a hreflang="en" href="https://groups.google.com/a/chromium.org/g/blink-dev/c/K3rYLvmQUBY/m/ho4qP49oAwAJ">Chrome decidiu depreciar o HTTP/2 Push</a> a partir da <a hreflang="en" href="https://developer.chrome.com/blog/removing-push">Chrome versão 106</a>. Apesar de o push ainda ser oficialmente parte do padrão HTTP/3, o Chrome - que é utilizado pelo rastreador HTTP Archive - nunca implementou o push para conexões HTTP/3, o que pode explicar ainda mais a redução do uso, já que os sites migraram para essa versão e perderam a capacidade de empurrar recursos.
 
 ### Alternativas ao HTTP/2 Push
 
@@ -184,13 +185,13 @@ Observamos que um grande número de páginas em nosso conjunto de dados inclui a
 
 #### 103 Early Hints
 
-In 2017, theEm 2017, o  <a hreflang="en" href="https://www.rfc-editor.org/rfc/rfc8297">código de status 103 Early Hints foi proposto</a> e o <a hreflang="en" href="https://developer.chrome.com/blog/early-hints/">Chrome adicionou suporte para ele este ano.</a>.
+In 2017, theEm 2017, o  <a hreflang="en" href="https://www.rfc-editor.org/rfc/rfc8297">código de status 103 Early Hints foi proposto</a> e o <a hreflang="en" href="https://developer.chrome.com/blog/early-hints">Chrome adicionou suporte para ele este ano.</a>.
 
 As dicas antecipadas (Early Hints) podem ser usadas para enviar respostas HTTP intermediárias antes da resposta final do objeto solicitado. Elas podem melhorar o desempenho ao aproveitar o fato de que os servidores web frequentemente precisam de algum tempo para preparar uma resposta, especialmente para o documento HTML principal, se ele for renderizado dinamicamente.
 
 Um caso de uso das dicas antecipadas (Early Hints) é fornecer `Link: rel="preload"` para recursos a serem buscados antecipadamente ou `Link: rel="preconnect"` para conexões prévias a outros domínios. Outros cabeçalhos também podem ser conceitualmente transmitidos, embora isso ainda não seja suportado por nenhum navegador.
 
-As dicas antecipadas (Early Hints) podem ser uma alternativa melhor do que o push, pois os clientes têm maior controle sobre como os recursos são buscados, mas ainda permitem uma melhoria apenas adicionando pré-carregamentos (preloads) e pré-conexões (preconnects) ao HTML do documento principal. Além disso, as dicas antecipadas têm o potencial de serem usadas para recursos de terceiros, o que não era possível com o push, embora, novamente, <a hreflang="en" href="https://developer.chrome.com/blog/early-hints/#current-limitations">isso ainda não seja suportado em nenhum navegador atualmente</a>.
+As dicas antecipadas (Early Hints) podem ser uma alternativa melhor do que o push, pois os clientes têm maior controle sobre como os recursos são buscados, mas ainda permitem uma melhoria apenas adicionando pré-carregamentos (preloads) e pré-conexões (preconnects) ao HTML do documento principal. Além disso, as dicas antecipadas têm o potencial de serem usadas para recursos de terceiros, o que não era possível com o push, embora, novamente, <a hreflang="en" href="https://developer.chrome.com/blog/early-hints#current-limitations">isso ainda não seja suportado em nenhum navegador atualmente</a>.
 
 {{ figure_markup(
   caption="Páginas para desktop usando 103 Early Hints.",
@@ -207,7 +208,7 @@ Com 25% dos sites incluindo `<link rel="preload">` na resposta da página, há u
 
 ## HTTP/3
 
-No restante desta seção, focaremos no HTTP/3, pois ele representa o futuro do protocolo HTTP e foi <a hreflang="en" href="https://www.rfc-editor.org/rfc/rfc9114.html">padronizado em junho de 2022</a>. Em particular, exploraremos as melhorias do HTTP/3 em relação às suas versões anteriores e o nível de suporte que ele possui atualmente. Para uma explicação mais detalhada sobre o HTTP/3, você pode consultar <a hreflang="en" href="https://www.smashingmagazine.com/2021/08/http3-core-concepts-part1/">esta excelente série de artigos</a> de [Robin Marx](https://twitter.com/programmingart), que também ajudou a revisar este capítulo.
+No restante desta seção, focaremos no HTTP/3, pois ele representa o futuro do protocolo HTTP e foi <a hreflang="en" href="https://www.rfc-editor.org/rfc/rfc9114.html">padronizado em junho de 2022</a>. Em particular, exploraremos as melhorias do HTTP/3 em relação às suas versões anteriores e o nível de suporte que ele possui atualmente. Para uma explicação mais detalhada sobre o HTTP/3, você pode consultar <a hreflang="en" href="https://www.smashingmagazine.com/2021/08/http3-core-concepts-part1/">esta excelente série de artigos</a> de [Robin Marx](https://x.com/programmingart), que também ajudou a revisar este capítulo.
 
 ### Benefícios do HTTP/3
 

@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: JavaScript
 description: 2021年版Web AlmanacのJavaScriptの章では、Web上でのJavaScriptの使用方法、ライブラリとフレームワーク、圧縮、Webコンポーネント、ソースマップについて説明しています。
+hero_alt: Hero image of the Web Almanac characters cycling to power a website.
 authors: [NishuGoel]
 reviewers: [soulcorrosion, mgechev, rviscomi, pankajparkar, tunetheweb]
 analysts: [pankajparkar, max-ostapenko, rviscomi]
@@ -201,7 +202,7 @@ JavaScriptの読み込みは、非同期または遅延の指定がない限り�
   ) }}</figcaption>
 </figure>
 
-昨年の結果では、同じスクリプトに `async` と `defer` の両方の属性を使用しているウェブサイトがあるというアンチパターンが観察されました。これは、ブラウザがサポートしている場合は `async` にフォールバックし、IE8とIE9のブラウザでは `defer` を使用するというものです。しかし、ほとんどのサイトでは、サポートされているすべてのブラウザで`async`が優先されるため、現在ではこの方法は必要ありません。このパターンでは、ページが読み込まれるまで待つのではなく、HTMLの解析が中断されます。この使用頻度は非常に高く、モバイルページの [11.4%](../2020/javascript#how-do-we-load-our-javascript) には、`async` と `defer` 属性を持つスクリプトが少なくとも1つ使用されていました。[根本原因](https://twitter.com/rick_viscomi/status/1331735748060524551?s=20)が判明し、[今後このような使い方をしない](https://twitter.com/Kraft/status/1336772912414601224?s=20)というアクションアイテムも降ろされたのです。
+昨年の結果では、同じスクリプトに `async` と `defer` の両方の属性を使用しているウェブサイトがあるというアンチパターンが観察されました。これは、ブラウザがサポートしている場合は `async` にフォールバックし、IE8とIE9のブラウザでは `defer` を使用するというものです。しかし、ほとんどのサイトでは、サポートされているすべてのブラウザで`async`が優先されるため、現在ではこの方法は必要ありません。このパターンでは、ページが読み込まれるまで待つのではなく、HTMLの解析が中断されます。この使用頻度は非常に高く、モバイルページの [11.4%](../2020/javascript#how-do-we-load-our-javascript) には、`async` と `defer` 属性を持つスクリプトが少なくとも1つ使用されていました。[根本原因](https://x.com/rick_viscomi/status/1331735748060524551?s=20)が判明し、[今後このような使い方をしない](https://x.com/Kraft/status/1336772912414601224?s=20)というアクションアイテムも降ろされたのです。
 
 {{ figure_markup(
   content="35.6%",
@@ -273,7 +274,7 @@ JavaScriptの読み込みは、非同期または遅延の指定がない限り�
 
 デスクトップページの中央値では、サードパーティ製リソースを11個要求しているのに対し、ファーストパーティ製は10個です。サードパーティ製リソースがもたらす<a hreflang="en" href="https://css-tricks.com/potential-dangers-of-third-party-javascript/">パフォーマンスと信頼性のリスク</a>にかかわらず、デスクトップページとモバイルページの両方で、サードパーティ製スクリプトが一貫して好まれているようです。この効果は、サードパーティのスクリプトがウェブに与える<a hreflang="en" href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript">便利なインタラクティビティ機能</a>によるものと考えられます。
 
-とはいえ、サイトオーナーは、サードパーティ製のスクリプトが<a hreflang="en" href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript">パフォーマンス良くロードされていることを確認する必要があります</a>。<a href="https://twitter.com/csswizardry">Harry Roberts</a>は、さらに一歩進んで、<a hreflang="en" href="https://csswizardry.com/2017/07/performance-and-resilience-stress-testing-third-parties/">サードパーティのパフォーマンスとレジリエンスをストレステストすることを提唱しています</a>。
+とはいえ、サイトオーナーは、サードパーティ製のスクリプトが<a hreflang="en" href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript">パフォーマンス良くロードされていることを確認する必要があります</a>。<a href="https://x.com/csswizardry">Harry Roberts</a>は、さらに一歩進んで、<a hreflang="en" href="https://csswizardry.com/2017/07/performance-and-resilience-stress-testing-third-parties/">サードパーティのパフォーマンスとレジリエンスをストレステストすることを提唱しています</a>。
 
 ### `preload`と`prefetch`
 

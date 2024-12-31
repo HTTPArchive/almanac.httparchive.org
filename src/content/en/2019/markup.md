@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Markup
 description: Markup chapter of the 2019 Web Almanac covering elements used, custom elements, value, products, and common use cases.
+hero_alt: Hero image of Web Almanac characters as dressed as constructor workers putting together a web page from HTML element blocks.
 authors: [bkardell]
 reviewers: [zcorpan, tomhodgins, matthewp]
 analysts: [rviscomi]
@@ -35,7 +36,7 @@ Names of elements on each page were collected from the DOM itself, after the ini
 
 Looking at a raw frequency count isn't especially helpful, even for standard elements:  About 25% of all elements encountered are `<div>`.  About 17% are `<a>`, about 11% are `<span>` -- and those are the only elements that account for more than 10% of occurrences.  Languages are <a hreflang="en" href="https://www.youtube.com/watch?v=fCn8zs912OE">generally like this</a>; a small number of terms are astoundingly used by comparison.  Further, when we start looking at non-standard elements for uptake, this would be very misleading as one site could use a certain element a thousand times and thus make it look artificially very popular.
 
-Instead, as in Hixie's original study,  what we will look at is how many sites include each  element at least once in their homepage.
+Instead, as in Hixie's original study,  what we will look at is how many sites include each  element at least once in their home page.
 
 <p class="note">Note: This is, itself, not without some potential biases.  Popular products can be used by several sites, which introduce non-standard markup, even "invisibly" to individual authors.  Thus, care must be taken to acknowledge that usage doesn't necessarily imply direct author knowledge and conscious adoption as much as it does the servicing of a common need, in a common way.  During our research, we found several examples of this, some we will call out.</p>
 
@@ -248,7 +249,7 @@ So, are all of those elements used by less than 1% of pages "useless"?  Definite
 
 Many elements, even the native ones, appear on fewer than 1% of pages and are still very important and successful.  `<code>`, for example, is an element that I both use and encounter a lot.  It's definitely useful and important, and yet it is used on only 0.57% of these pages.  Part of this is skewed based on what we are measuring; home pages are generally *less likely* to include certain kinds of things (like `<code>` for example). Home pages serve a less general purpose than, for example, headings, paragraphs, links and lists. However, the data is generally useful.
 
-We also collected information about which pages contained an author-defined (not native) `.shadowRoot`. About 0.22% of desktop pages and 0.15% of mobile pages had a shadow root.  This might not sound like a lot, but it is roughly 6.5k sites in the mobile dataset and 10k sites on the desktop and is more than several HTML elements.  `<summary>` for example, has about equivalent use on the desktop and it is the 146th most popular element. `<datalist>` appears on 0.04% of homepages and it's the 201st most popular element.
+We also collected information about which pages contained an author-defined (not native) `.shadowRoot`. About 0.22% of desktop pages and 0.15% of mobile pages had a shadow root.  This might not sound like a lot, but it is roughly 6.5k sites in the mobile dataset and 10k sites on the desktop and is more than several HTML elements.  `<summary>` for example, has about equivalent use on the desktop and it is the 146th most popular element. `<datalist>` appears on 0.04% of home pages and it's the 201st most popular element.
 
 In fact, over 15% of elements we're counting as defined by HTML are outside the top 200 in the desktop dataset .  `<meter>` is the least popular "HTML5 era" element, which we can define as 2004-2011, before HTML moved to a Living Standard model. It is around the 1,000th most popular element.  `<slot>`, the most recently introduced element (April 2016), is only around the 1,400th most popular element.
 
@@ -258,7 +259,7 @@ With this perspective in mind about what use of native/standard features looks l
 
 You might expect that many of the elements we measured are used only on a single web page, but in fact all of the 5,048 elements appear on more than one page.  The fewest pages an element in our dataset appears on is 15.  About a fifth of them occur on more than 100 pages.  About 7% occur on more than 1,000 pages.
 
-To help analyze the data, I hacked together a <a hreflang="en" href="https://rainy-periwinkle.glitch.me">little tool with Glitch</a>.  You can use this tool yourself, and please share a permalink back with the [@HTTPArchive](https://twitter.com/HTTPArchive) along with your observations. (Tommy Hodgins has also built a similar <a hreflang="en" href="https://github.com/tomhodgins/hade">CLI tool</a> which you can use to explore.)
+To help analyze the data, I hacked together a <a hreflang="en" href="https://rainy-periwinkle.glitch.me">little tool with Glitch</a>.  You can use this tool yourself, and please share a permalink back with the [@HTTPArchive](https://x.com/HTTPArchive) along with your observations. (Tommy Hodgins has also built a similar <a hreflang="en" href="https://github.com/tomhodgins/hade">CLI tool</a> which you can use to explore.)
 
 Let's look at some data.
 

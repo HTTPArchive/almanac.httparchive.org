@@ -43,5 +43,4 @@ static/pdfs/*
 **/.DS_Store
 Dockerfile
 .dockerignore
-deployed.zip
 .coverage

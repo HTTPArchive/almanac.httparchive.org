@@ -18,13 +18,19 @@
 {% block intro_title %}Web Almanac{% endblock %}
 {% block intro_sub_title %}HTTP Archive 的年度<br> <b>網路狀態</b> 報告{% endblock %}
 
+{% block announcement_text %}
+<p lang="en">
+  Listen to a recording of our live stream for this year's edition on <a href="https://www.youtube.com/live/cdYR0ZmplIM">YouTube</a>! We'll be running another live stream with more of our authors in January 2025.
+</p>
+{% endblock %}
+
 {% block mission %}
 <p>
 我們的任務是結合網路社群的專業知識共同精萃HTTP Archive的原始數據與趨勢。Web Almanac 網路年鑑是網路狀態的綜合報告，由真實的數據和具信譽的網路專家支持。{{ year }}年版包括{{ supported_chapters | length }}個章節橫跨網頁內容、使用者體驗、網頁發佈、網頁傳遞的各個方面。
 </p>
 {% endblock %}
 
-{% block read_last_years_almanac %}閱讀 {{ year | int - 1 }} Web Almanac{% endblock %}
+{% block read_last_years_almanac %}閱讀 {{ previous_year }} Web Almanac{% endblock %}
 
 {% block http_archive_link %}HTTP Archive 主頁{% endblock %}
 
@@ -111,10 +117,14 @@
 {% block repliesAlt %}{% endblock %}
 {% block mentionsAlt %}{% endblock %}
 
-{% macro onTwitter(twitterHandle) %}@{{twitterHandle}} Twitter{% endmacro %}
+{% macro onTwitter(twitterHandle) %}@{{twitterHandle}} Twitter/X{% endmacro %}
+{% macro onMastodon(mastodonHandle) %}{{mastodonHandle}} Mastodon{% endmacro %}
+{% macro onBluesky(blueskyHandle) %}{{blueskyHandle}} Bluesky{% endmacro %}
 {% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} GitHub{% endmacro %}
 {% macro onLinkedIn(authorName) %}{{authorName}} LinkedIn{% endmacro %}
 {% macro website(authorName) %}{{authorName}} 網站{% endmacro %}
+
+{% block citation %}引文{% endblock %}
 
 {% macro edition(year) %}{{ year }} 版{% endmacro %}
 
@@ -124,14 +134,14 @@
 {% block rss_feed %}RSS Feed{% endblock %}
 
 {% block featured_chapter %}章節精選{% endblock %}
-{% block featured_chapter_last_year %}精選章節<br>從 {{ year|int -1 }} Web Almanac{% endblock %}
+{% block featured_chapter_last_year %}精選章節<br>從 {{ previous_year }} Web Almanac{% endblock %}
 
 {# Check if read_chapter already defined in child template as macros can't be overridden #}
 {% if not read_chapter %}
 {% macro read_chapter(chapter) %}閱讀 <span class="featured-chapter-name">{{ chapter }}</span> 章節{% endmacro %}
 {% endif %}
 {% if not read_last_years_chapter %}
-{% macro read_last_years_chapter(chapter) %}閱讀 {{ year|int -1 }} <span class="featured-chapter-name">{{ chapter }}</span> 章節{% endmacro %}
+{% macro read_last_years_chapter(chapter) %}閱讀 {{ previous_year }} <span class="featured-chapter-name">{{ chapter }}</span> 章節{% endmacro %}
 {% endif %}
 
 {% block contributors_description %}
@@ -173,6 +183,7 @@ Web Almanac 網路年鑑是被熱情的網路社群擁抱而茁壯。 {{ self.co
   set localizedChapterTitles = {
     "javascript": "JavaScript",
     "css": "CSS",
+    "cookies": "Cookies",
     "markup": "標記",
     "media": "媒體",
     "third-parties": "第三方",
@@ -212,6 +223,7 @@ Web Almanac 網路年鑑是被熱情的網路社群擁抱而茁壯。 {{ self.co
   "developers": "開發者",
   "editors": "審稿者",
   "leads": "專案主導者",
+  "committee": "大會",
   "reviewers": "審稿者",
   "translators": "翻譯者",
   }
@@ -225,6 +237,7 @@ Web Almanac 網路年鑑是被熱情的網路社群擁抱而茁壯。 {{ self.co
   "developers": "開發者",
   "editors": "審稿者",
   "leads": "專案主導者",
+  "committee": "大會",
   "reviewers": "審稿者",
   "translators": "翻譯者",
   }

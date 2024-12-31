@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: HTTP/2
 description: HTTP/2-hoofdstuk van de Web Almanac 2020, dat de acceptatie en impact van HTTP/2, HTTP/2 Push, HTTP/2 Issues en HTTP/3 behandelt.
+hero_alt: Hero image of Web Almanac characters driving vehicles in various lanes carrying script and images resources.
 authors: [dotjs, rmarx, MikeBishop]
 reviewers: [LPardue, tunetheweb, ibnesayeed]
 analysts: [gregorywolf]
@@ -417,7 +418,7 @@ Deze <a hreflang="en" href="https://github.com/andydavies/http2-prioritization-i
   <figcaption>{{ figure_link(caption="Ondersteuning voor HTTP/2-prioriteitstelling in veelgebruikte CDN's.", sheets_gid="1152953475", sql_file="percentage_of_h2_and_h3_sites_affected_by_cdn_prioritization.sql") }}</figcaption>
 </figure>
 
-Voor niet-CDN-gebruik verwachten we dat het aantal servers dat correct HTTP/2-prioriteitstelling toepast aanzienlijk kleiner zal zijn. De HTTP/2-implementatie van NodeJS [ondersteunt bijvoorbeeld geen prioritering](https://twitter.com/jasnell/status/1245410283582918657).
+Voor niet-CDN-gebruik verwachten we dat het aantal servers dat correct HTTP/2-prioriteitstelling toepast aanzienlijk kleiner zal zijn. De HTTP/2-implementatie van NodeJS [ondersteunt bijvoorbeeld geen prioritering](https://x.com/jasnell/status/1245410283582918657).
 
 ### Vaarwel server push?
 

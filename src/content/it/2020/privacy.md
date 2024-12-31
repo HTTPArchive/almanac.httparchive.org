@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Privacy
 description: Capitolo sulla privacy del Web Almanac 2020 che copre i cookie di tracciamento online, le tecnologie per il miglioramento della privacy (PET) e le politiche sulla privacy
+hero_alt: Hero image of Web Almanac characters with cameras, phones, and microphones acting like paparazzi while another character pulls back a shower curtain to reveal a web page behind it.
 authors: [ydimova]
 reviewers: [ldevernay]
 analysts: [ydimova, max-ostapenko]
@@ -25,7 +26,7 @@ Questo capitolo del Web Almanac offre una panoramica dello stato attuale della p
 
 ## Online tracking
 
-I tracker di terze parti raccolgono i dati degli utenti per creare profili del comportamento dell'utente da monetizzare a fini pubblicitari. Ciò solleva preoccupazioni per la privacy degli utenti sul Web, che ha portato all'emergere di varie protezioni di tracciamento. Tuttavia, come vedremo in questa sezione, il monitoraggio online è ancora ampiamente utilizzato. Non solo ha un impatto negativo sulla privacy, il monitoraggio online ha un <a hreflang="en" href="https://gerrymcgovern.com/calculating-the-pollution-cost-of-website-analytics-part-1/">enorme impatto sull'ambiente</a> ed evitarlo può portare a [prestazioni migliori](https://twitter.com/fr3ino/status/1000166112615714816).
+I tracker di terze parti raccolgono i dati degli utenti per creare profili del comportamento dell'utente da monetizzare a fini pubblicitari. Ciò solleva preoccupazioni per la privacy degli utenti sul Web, che ha portato all'emergere di varie protezioni di tracciamento. Tuttavia, come vedremo in questa sezione, il monitoraggio online è ancora ampiamente utilizzato. Non solo ha un impatto negativo sulla privacy, il monitoraggio online ha un <a hreflang="en" href="https://gerrymcgovern.com/calculating-the-pollution-cost-of-website-analytics-part-1/">enorme impatto sull'ambiente</a> ed evitarlo può portare a [prestazioni migliori](https://x.com/fr3ino/status/1000166112615714816).
 
 Esaminiamo l'importanza delle tipologie più comuni di tracciamento [di terze parti](./third-party), ovvero mediante cookie di terze parti e l'utilizzo del fingerprinting. Il monitoraggio online non si limita solo a queste due tecniche, ne continuano a sorgere di nuove per aggirare le contromisure esistenti.
 

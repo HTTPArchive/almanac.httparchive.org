@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: 性能
 description: 2020年 Web 年鉴性能篇，涵盖了网页核心指标、Lighthouse 性能评分、首次内容绘制（FCP）、首字节时间（TTFB）。
+hero_alt: Hero image of Web Almanac characters images to a web page, while another Web Almanac character times them with a stopwatch.
 authors: [thefoxis]
 reviewers: [borisschapira, rviscomi, foxdavidj, noamr, Zizzamia, exterkamp]
 analysts: [max-ostapenko, dooman87]
@@ -67,7 +68,7 @@ featured_stat_label_3: Lighthouse v6 评分不变的站点
 
 ## 页面关键指标：最大内容绘制
 
-最大内容绘制（LCP）是一个具有里程碑意义的基于时间的度量指标，它表明了最大的<a hreflang="en" href="https://web.dev/lcp/#what-elements-are-considered">页面可见区域元素</a>渲染时间。
+最大内容绘制（LCP）是一个具有里程碑意义的基于时间的度量指标，它表明了最大的<a hreflang="en" href="https://web.dev/articles/lcp#what-elements-are-considered">页面可见区域元素</a>渲染时间。
 
 ### 按设备类型看 FCP
 
@@ -97,7 +98,7 @@ featured_stat_label_3: Lighthouse v6 评分不变的站点
   )
 }}
 
-最高比例的表现良好的 LCP 浏览体验主要集中分布在欧洲和有着76%良好浏览体验的韩国为首的亚洲国家。据<a hreflang="en" href="https://www.speedtest.net/global-index">Speedtest Global Index</a>报导，十月份韩国下载速度高达145Mbps，在移动端的网速一直领先。日本、捷克、台湾、德国和比利时等一些国家的移动端网速也比较快。澳大利亚尽管在移动端网速方面领先，但是在桌面端连接速度慢和延迟令人失望，使得他的排名在上述国家之后。
+最高比例的表现良好的 LCP 浏览体验主要集中分布在欧洲和有着76%良好浏览体验的韩国为首的亚洲国家。据<a hreflang="en" href="https://www.speedtest.net/global-index">Speedtest Global Index</a>报导，十月份韩国下载速度高达145Mbps，在移动端的网速一直领先。日本、捷克、台湾、德国和比利时等一些国家或地区的移动端网速也比较快。澳大利亚尽管在移动端网速方面领先，但是在桌面端连接速度慢和延迟令人失望，使得他的排名在上述国家之后。
 
 在我们的调查数据中，印度依然保持着最后一名，仅有16%的良好体验。尽管新的互联网用户正在持续增长，移动端和桌面端的网速<a hreflang="en" href="https://www.opensignal.com/reports/2020/04/india/mobile-network-experience">仍然是个问题</a>，4G平均下载速度是10Mbps、3G平均下载速度是3Mbps、桌面端下载速度低于50Mbps。
 
@@ -115,7 +116,7 @@ featured_stat_label_3: Lighthouse v6 评分不变的站点
 
 由于 LCP 指的是最大的首屏元素（包括图片、视频或包含文本的块级元素）渲染出来的时间，因此网速越慢、评测得分越差也就不足为奇了。
 
-网速和更好的 LCP 性能之间有明确的相关性，但即便是4G网络，仍然只有48%的统计结果被归为良好，也就意味着有一半的站点的浏览体验需要改进。自动媒体优化、提供正确的尺寸和格式、同时针对低数据模式的优化，将会帮助我们实现优化目标。更多内容请参见<a hreflang="en" href="https://web.dev/optimize-lcp/">LCP 优化指南</a>
+网速和更好的 LCP 性能之间有明确的相关性，但即便是4G网络，仍然只有48%的统计结果被归为良好，也就意味着有一半的站点的浏览体验需要改进。自动媒体优化、提供正确的尺寸和格式、同时针对低数据模式的优化，将会帮助我们实现优化目标。更多内容请参见<a hreflang="en" href="https://web.dev/articles/optimize-lcp">LCP 优化指南</a>
 
 ## 网页核心指标：累计布局偏移
 
@@ -153,7 +154,7 @@ featured_stat_label_3: Lighthouse v6 评分不变的站点
 
 CLS 在不同地域的表现总体上是好的，至少有56%的网站获得了良好的评价。对于可感知的视觉稳定性来说，这是一个极好的消息。我们可以观察到类似的国家处于领先地位，正如我们在 LCP 地理分布中看到的那样--韩国、日本、捷克、德国、波兰。
 
-相对于其他指标，比如 LCP，视觉稳定性受地理和延迟的影响较小。排名最好的国家和排名最差的国家之间的百分比差距，在 LCP 指标上达到了61%，在 CLS 指标上达到了13%。中等评分的网站比例在整个网站中相对较低，让位于整个网站中19%-29%的差体验。导致CLS差的因素有很多--在<a hreflang="en" href="https://web.dev/optimize-cls/">优化累积布局转移指南</a>中了解如何解决这些问题。整体而言，中等评分网站的比例最低，甚至低于19%-29的最差用户体验的比例。有许多因素都可能导致较差的CLS，请在<a hreflang="en" href="https://web.dev/optimize-cls/">优化累积布局偏移指南</a>中了解如何解决这些问题。
+相对于其他指标，比如 LCP，视觉稳定性受地理和延迟的影响较小。排名最好的国家和排名最差的国家之间的百分比差距，在 LCP 指标上达到了61%，在 CLS 指标上达到了13%。中等评分的网站比例在整个网站中相对较低，让位于整个网站中19%-29%的差体验。导致CLS差的因素有很多--在<a hreflang="en" href="https://web.dev/articles/optimize-cls">优化累积布局转移指南</a>中了解如何解决这些问题。整体而言，中等评分网站的比例最低，甚至低于19%-29的最差用户体验的比例。有许多因素都可能导致较差的CLS，请在<a hreflang="en" href="https://web.dev/articles/optimize-cls">优化累积布局偏移指南</a>中了解如何解决这些问题。
 
 ### 按连接类型查看 CLS
 

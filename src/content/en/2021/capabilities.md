@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Capabilities
 description: Capabilities chapter of the 2021 Web Almanac covering brand-new, powerful web platform APIs that give web apps access to hardware interfaces, enhance web-based productivity apps, and more.
+hero_alt: Hero image of Web Almanac characters with superhero capes plugging various capabilities into a web page.
 authors: [christianliebel]
 reviewers: [tomayac, hemanth]
 analysts: [tomayac]
@@ -229,7 +230,7 @@ With the help of <a hreflang="en" href="https://web.dev/pwa-url-handler/">URL Ha
 }
 ```
 
-If you want to register for origins other than your web app's origin, you need to <a hreflang="en" href="https://web.dev/pwa-url-handler/#the-web-app-origin-association-file">verify your ownership of them</a>. The capability is at a relatively early stage: it's only supported on Chrome and Edge on the desktop. URL Handling is currently available as an <a hreflang="en" href="https://developer.chrome.com/blog/origin-trials/">Origin Trial</a>. This means that the capability is not generally available yet. Instead, developers need to opt-in to using this experimental API by registering for an Origin Trial token first and deliver this token along with their website to use this capability. You can find more information in the <a hreflang="en" href="https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md">Origin Trials Guide for Web Developers</a>.
+If you want to register for origins other than your web app's origin, you need to <a hreflang="en" href="https://web.dev/pwa-url-handler/#the-web-app-origin-association-file">verify your ownership of them</a>. The capability is at a relatively early stage: it's only supported on Chrome and Edge on the desktop. URL Handling is currently available as an <a hreflang="en" href="https://developer.chrome.com/blog/origin-trials">Origin Trial</a>. This means that the capability is not generally available yet. Instead, developers need to opt-in to using this experimental API by registering for an Origin Trial token first and deliver this token along with their website to use this capability. You can find more information in the <a hreflang="en" href="https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md">Origin Trials Guide for Web Developers</a>.
 
 {{ figure_markup(
 caption="Desktop websites use URL Handling.",

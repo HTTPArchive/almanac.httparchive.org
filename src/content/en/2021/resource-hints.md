@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Resource Hints
 description: Resource Hints chapter of the 2021 Web Almanac covering adoption of resource hints, their uses, bad practices, and their impact on performance.
+hero_alt: Hero image of Web Almanac characters lining up to HTML, JavaScript, and image resources in a line on the way to a web page.
 authors: [kevinfarrugia]
 reviewers: [siakaramalegos, tunetheweb, andydavies, samarpanda, westonruter]
 analysts: [Nithanaroy]
@@ -105,7 +106,7 @@ The `prerender` hint allows you render a page in the background, improving its l
 
 #### `preload`
 
-Most modern browsers also <a hreflang="en" href="https://caniuse.com/link-rel-preload">support</a> the `preload` hint—and to a <a hreflang="en" href="https://caniuse.com/link-rel-modulepreload">lesser degree</a>, the <a hreflang="en" href="https://html.spec.whatwg.org/multipage/links.html#link-type-modulepreload">`modulepreload`</a> hint. The `preload` instruction initiates an early fetch for a resource which is required in the loading of a page and is most commonly used for late-discovered resources, such as font files or images referenced in stylesheets. Preloading a resource may be used to elevate its priority, allowing the developer to prioritize the loading of the <a hreflang="en" href="https://web.dev/lcp">Largest Contentful Paint</a> (LCP) image for, even if this would otherwise be discovered while parsing the HTML.
+Most modern browsers also <a hreflang="en" href="https://caniuse.com/link-rel-preload">support</a> the `preload` hint—and to a <a hreflang="en" href="https://caniuse.com/link-rel-modulepreload">lesser degree</a>, the <a hreflang="en" href="https://html.spec.whatwg.org/multipage/links.html#link-type-modulepreload">`modulepreload`</a> hint. The `preload` instruction initiates an early fetch for a resource which is required in the loading of a page and is most commonly used for late-discovered resources, such as font files or images referenced in stylesheets. Preloading a resource may be used to elevate its priority, allowing the developer to prioritize the loading of the <a hreflang="en" href="https://web.dev/articles/lcp">Largest Contentful Paint</a> (LCP) image for, even if this would otherwise be discovered while parsing the HTML.
 
 `modulepreload` is a specialized alternative to `preload` and behaves similarly, however its usage is limited to <a hreflang="en" href="https://html.spec.whatwg.org/multipage/webappapis.html#module-script">module scripts</a>.
 
@@ -245,7 +246,7 @@ Of the sites using resource hints, when comparing the median for the top 1,000 s
   )
 }}
 
-By combining a page's <a hreflang="en" href="https://web.dev/vitals/">Core Web Vitals</a> scores in the CrUX dataset and the usage of the preload resource hint, you can observe a negative correlation between the number of link elements and the percentage of pages which score a good rating on CWV. The pages which use fewer preload hints are more likely to have a good rating.
+By combining a page's <a hreflang="en" href="https://web.dev/articles/vitals">Core Web Vitals</a> scores in the CrUX dataset and the usage of the preload resource hint, you can observe a negative correlation between the number of link elements and the percentage of pages which score a good rating on CWV. The pages which use fewer preload hints are more likely to have a good rating.
 
 {{ figure_markup(
   image="correlation-of-good-lcp-and-preload.png",
@@ -269,7 +270,7 @@ With that being said, and the expectation that more websites will adopt `preload
 
 ### The `as` attribute
 
-The `as` attribute should be specified when using `rel="preload"` (or `rel="prefetch"`) to specify the type of resource being downloaded. Applying the correct `as` attribute allows the browser to prioritize the resource more accurately. For example, `preload as="script"` will get a low or medium priority, while `preload as="style"` would be assigned an internal request priority of _Highest_. The `as` attribute is required for caching the resource for future requests and applying the correct <a hreflang="en" href="https://developer.mozilla.org/docs/Web/HTTP/CSP">Content Security Policy</a>.
+The `as` attribute should be specified when using `rel="preload"` (or `rel="prefetch"`) to specify the type of resource being downloaded. Applying the correct `as` attribute allows the browser to prioritize the resource more accurately. For example, `preload as="script"` will get a low or medium priority, while `preload as="style"` would be assigned an internal request priority of _Highest_. The `as` attribute is required for caching the resource for future requests and applying the correct [Content Security Policy](https://developer.mozilla.org/docs/Web/HTTP/CSP).
 
 {{ figure_markup(
   image="preload-as-attribute-values.png",
@@ -338,7 +339,7 @@ The `crossorigin` attribute is used to indicate whether [Cross-Origin Resource S
 
 #### `anonymous`
 
-The default value when no value is specified is `anonymous` and this value will set the credentials flag to <a hreflang="en" href="https://developer.mozilla.org/docs/Web/Security/Same-origin_policy">`same-origin`</a>. It is required when downloading resources protected by CORS. It is also a <a hreflang="en" href="https://drafts.csswg.org/css-fonts/#font-fetching-requirements">requirement</a> when downloading font files—even if they are on the same origin! If you omit the `crossorigin` attribute when the eventual request for the preloaded resource uses CORS, you will end up with a duplicate request since it won't match in the preload cache.
+The default value when no value is specified is `anonymous` and this value will set the credentials flag to [`same-origin`](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy). It is required when downloading resources protected by CORS. It is also a <a hreflang="en" href="https://drafts.csswg.org/css-fonts/#font-fetching-requirements">requirement</a> when downloading font files—even if they are on the same origin! If you omit the `crossorigin` attribute when the eventual request for the preloaded resource uses CORS, you will end up with a duplicate request since it won't match in the preload cache.
 
 #### `use-credentials`
 
@@ -588,7 +589,7 @@ Browsers which do not support the `loading` attribute will simply ignore it—ma
   )
 }}
 
-The percent of pages using `loading="lazy"` has grown from 4.2% in 2020 to 17.8% by the time of our analysis. That's a whopping 423% growth! This rapid growth is extraordinary and is likely driven by two key elements: the ease with which it could be added to pages without cross-browser compatibility issues, and the frameworks or technologies powering these websites. In WordPress 5.5, <a hreflang="en" href="https://make.wordpress.org/core/2020/07/14/lazy-loading-images-in-5-5/">lazy-loading images became the default implementation</a>, supercharging the adoption rate of `loading="lazy"`, with WordPress sites now making up <a hreflang="en" href="https://web.dev/lcp-lazy-loading/">84%</a> of all pages which use native image lazy-loading.
+The percent of pages using `loading="lazy"` has grown from 4.2% in 2020 to 17.8% by the time of our analysis. That's a whopping 423% growth! This rapid growth is extraordinary and is likely driven by two key elements: the ease with which it could be added to pages without cross-browser compatibility issues, and the frameworks or technologies powering these websites. In WordPress 5.5, <a hreflang="en" href="https://make.wordpress.org/core/2020/07/14/lazy-loading-images-in-5-5/">lazy-loading images became the default implementation</a>, supercharging the adoption rate of `loading="lazy"`, with WordPress sites now making up <a hreflang="en" href="https://web.dev/articles/lcp-lazy-loading">84%</a> of all pages which use native image lazy-loading.
 
 {{ figure_markup(
   image="lazy-loaded-images.png",
@@ -600,7 +601,7 @@ The percent of pages using `loading="lazy"` has grown from 4.2% in 2020 to 17.8%
   )
 }}
 
-61.5% of lazy-loaded images on mobile and 63.1% of lazy-loaded images on desktop are actually within the initial viewport and shouldn't be lazy-loaded. A <a hreflang="en" href="https://web.dev/lcp-lazy-loading/">study</a> on the load times for pages which use lazy-loading indicated that pages which use lazy-loading tend to have a worse LCP performance, possibly caused by overusing the lazy-loading attribute. This is increasingly significant on the LCP element, which shouldn't be lazy-loaded. If you are using `loading="lazy"`, you should check that the lazily-loaded images are below the fold and more critically, that the LCP element is not lazy-loaded. You may dig deeper into the effects of lazy-loading the LCP image on your Core Web Vitals in the [Performance](./performance) chapter.
+61.5% of lazy-loaded images on mobile and 63.1% of lazy-loaded images on desktop are actually within the initial viewport and shouldn't be lazy-loaded. A <a hreflang="en" href="https://web.dev/articles/lcp-lazy-loading">study</a> on the load times for pages which use lazy-loading indicated that pages which use lazy-loading tend to have a worse LCP performance, possibly caused by overusing the lazy-loading attribute. This is increasingly significant on the LCP element, which shouldn't be lazy-loaded. If you are using `loading="lazy"`, you should check that the lazily-loaded images are below the fold and more critically, that the LCP element is not lazy-loaded. You may dig deeper into the effects of lazy-loading the LCP image on your Core Web Vitals in the [Performance](./performance) chapter.
 
 {{ figure_markup(
   caption='Percent of pages that have the `loading="lazy"` attribute on `iframe` elements.',
@@ -635,7 +636,7 @@ Chrome 95 added experimental support for <a hreflang="en" href="https://datatrac
 
 ### Priority Hints
 
-Priority hints inform the browser of the relative importance of resources within the page, intending to prioritize critical resources and improve Core Web Vitals. Priority Hints are enabled through the document markup by adding the `importance` attribute to resources, such as `<img>` or `<script>`. The `importance` attribute accepts an enumeration of `high`, `low` or `auto` and by combining this with the type of resource, the browser would be able to assign the optimal fetch priority based on its heuristics. Priority Hints are available on Chrome 96 as an <a hreflang="en" href="https://developer.chrome.com/blog/origin-trials/">origin trial</a>.
+Priority hints inform the browser of the relative importance of resources within the page, intending to prioritize critical resources and improve Core Web Vitals. Priority Hints are enabled through the document markup by adding the `importance` attribute to resources, such as `<img>` or `<script>`. The `importance` attribute accepts an enumeration of `high`, `low` or `auto` and by combining this with the type of resource, the browser would be able to assign the optimal fetch priority based on its heuristics. Priority Hints are available on Chrome 96 as an <a hreflang="en" href="https://developer.chrome.com/blog/origin-trials">origin trial</a>.
 
 ## Conclusion
 

@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Lettertypen
 description: Hoofdstuk over lettertypen van de Web Almanac 2020 waarin wordt beschreven waar lettertypen worden geladen, lettertype-indelingen, laadprestaties voor lettertypen, variabele lettertypen en kleurlettertypen.
+hero_alt: Hero image of Web Almanac characters on an assembly line preparing various F letters in various styles and shapes.
 authors: [raphlinus, jpamental]
 reviewers: [RoelN, svgeesus, davelab6, rsheeter, mandymichael]
 analysts: [AbbyTsai]
@@ -130,7 +131,7 @@ Het zou niet logisch zijn om een causaliteit tussen de hostingstrategie af te le
 
 #### Lokaal is niet altijd beter
 
-Een andere optie van self-hosting fonts op de server van de site, is om de door het systeem geïnstalleerde fonts op de cliënt te gebruiken waar ze bestaan door het gebruik van `local` in de `font-face` declaratie. Het gebruik van `local` is <a hreflang="en" href="https://bramstein.com/writing/web-font-anti-patterns-local-fonts.html">controversieel</a>, omdat het bytes kan besparen, maar het kan ook slechte resultaten opleveren als de lokaal geïnstalleerde versie van het lettertype is verouderd. Vanaf [november 2020](https://twitter.com/googlefonts/status/1328761547041148929?s=19) is Google Fonts overgeschakeld op het gebruik van `local` alleen voor Roboto op mobiele platforms, anders wordt het lettertype altijd opgehaald via de netwerk.
+Een andere optie van self-hosting fonts op de server van de site, is om de door het systeem geïnstalleerde fonts op de cliënt te gebruiken waar ze bestaan door het gebruik van `local` in de `font-face` declaratie. Het gebruik van `local` is <a hreflang="en" href="https://bramstein.com/writing/web-font-anti-patterns-local-fonts.html">controversieel</a>, omdat het bytes kan besparen, maar het kan ook slechte resultaten opleveren als de lokaal geïnstalleerde versie van het lettertype is verouderd. Vanaf [november 2020](https://x.com/googlefonts/status/1328761547041148929?s=19) is Google Fonts overgeschakeld op het gebruik van `local` alleen voor Roboto op mobiele platforms, anders wordt het lettertype altijd opgehaald via de netwerk.
 
 ## Racen naar eerste lak
 

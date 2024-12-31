@@ -2,13 +2,14 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: HTTP
 description: 2021年版Web AlmanacのHTTPの章では、Web上で使用されているHTTPの歴史的バージョンや、HTTP/2やHTTP/3を含む新バージョンの増加に関するデータ、およびHTTPライフサイクルの一部である主要メトリクスを検証しています。
+hero_alt: Hero image of Web Almanac characters driving vehicles in various lanes carrying script and images resources.
 authors: [dominiclovell]
 reviewers: [tunetheweb, rmarx]
 analysts: [tunetheweb]
 editors: [shantsis]
 translators: [ksakae1216]
 results: https://docs.google.com/spreadsheets/d/1pCdpndXTXexSIZLmVc-aUbp5PcHhZ83hbEEfmDyfD0U/
-dominiclovell_bio: Dominic Lovell は現在 Akamai Technologies のソリューション・エンジニアリング・マネージャーで、ウェブ上でのサイトのパフォーマンスと安全性を高めることに長年取り組んでいます。ツイッターでは[@dominiclovell](https://twitter.com/dominiclovell)、または<a hreflang="en" href="https://www.linkedin.com/in/dominiclovell/">LinkedIn</a>で彼とつながることができます。
+dominiclovell_bio: Dominic Lovell は現在 Akamai Technologies のソリューション・エンジニアリング・マネージャーで、ウェブ上でのサイトのパフォーマンスと安全性を高めることに長年取り組んでいます。ツイッターでは[@dominiclovell](https://x.com/dominiclovell)、または<a hreflang="en" href="https://www.linkedin.com/in/dominiclovell/">LinkedIn</a>で彼とつながることができます。
 featured_quote: 70%以上のリクエストがHTTP/2以上で処理されており、HTTP/2とHTTP/3がWebの支配的なプロトコルバージョンであることを示唆しています。
 featured_stat_1: 25%
 featured_stat_label_1: 2020年から2021年にかけてのHTTP/1.1リクエストの減少について
@@ -311,9 +312,9 @@ HTTP/2で提唱されたもう1つの機能は、ヘッダーの圧縮です。H
 
 また、あるストリームを別のストリームに依存させることでストリームをリンクさせたり、1〜256の整数を割り当てて重み付けをしたりすることもできます。これらの依存関係や重み付けによって、サーバーは特定のキーストリームを優先し、他のストリームよりも先に応答データを送信できます。
 
-HTTP/2が導入されて以来、優先順位付けはウェブのさまざまな部分で矛盾なく実装されています。[Andy Davis](https://twitter.com/AndyDavies)は、この矛盾が、ウェブ上のユーザーに最適とはいえない体験をもたらす可能性があることを発見しました。これは、サーバーが優先順位付けを無視して、先着順でサービスを提供することが多いからです。実際、<a hreflang="en" href="https://github.com/andydavies/http2-prioritization-issues">Andyの研究</a>は、主要なCDNの多くがHTTP/2の優先順位付けを正しく実装していないことを強調しています。これには、人気のあるクラウドロードバランサーも多数含まれています。2021年のデータでは、優先順位付けを正しく実装しているCDNはわずか6社で、例年と同様の調査結果となっています。これには、Akamai、Fastly、Cloudflare、Automattic、section.io、Facebook独自のCDNが含まれています。
+HTTP/2が導入されて以来、優先順位付けはウェブのさまざまな部分で矛盾なく実装されています。[Andy Davis](https://x.com/AndyDavies)は、この矛盾が、ウェブ上のユーザーに最適とはいえない体験をもたらす可能性があることを発見しました。これは、サーバーが優先順位付けを無視して、先着順でサービスを提供することが多いからです。実際、<a hreflang="en" href="https://github.com/andydavies/http2-prioritization-issues">Andyの研究</a>は、主要なCDNの多くがHTTP/2の優先順位付けを正しく実装していないことを強調しています。これには、人気のあるクラウドロードバランサーも多数含まれています。2021年のデータでは、優先順位付けを正しく実装しているCDNはわずか6社で、例年と同様の調査結果となっています。これには、Akamai、Fastly、Cloudflare、Automattic、section.io、Facebook独自のCDNが含まれています。
 
-[Patrick Meehan](https://twitter.com/patmeenan)は、優先順位付けを正しく実装しているCDNを使っていない場合、BBRや `tcp_notsent_lowat` を含む多くの <a hreflang="en" href="https://blog.cloudflare.com/http-2-prioritization-with-nginx/">TCP最適化</a> があり、サーバー側での優先順位付けを改善できるだろうと提案しています。
+[Patrick Meehan](https://x.com/patmeenan)は、優先順位付けを正しく実装しているCDNを使っていない場合、BBRや `tcp_notsent_lowat` を含む多くの <a hreflang="en" href="https://blog.cloudflare.com/http-2-prioritization-with-nginx/">TCP最適化</a> があり、サーバー側での優先順位付けを改善できるだろうと提案しています。
 
 この不整合はクライアントレベルでも存在し、ブラウザベンダーによってこの動作の実装が異なります。Safariは、アセットタイプに応じて優先順位付けを行う静的なアプローチを実装しており、依存関係をマッピングしません。Chrome、Edge、Firefoxは、ストリーム全体の論理的な依存関係を構築する、より高度なアプローチを持っており、発見された優先順位に基づいてストリーム上の要求されたアセットの優先順位を変更できます。
 
@@ -359,7 +360,7 @@ HTTP/2からは、<a hreflang="en" href="https://datatracker.ietf.org/doc/html/d
 
 課題の1つは<a hreflang="en" href="https://www.nginx.com/blog/nginx-1-13-9-http2-server-push/">Nginx</a> や <a hreflang="en" href="https://httpd.apache.org/docs/2.4/howto/http2.html#push">Apache</a> 設定でグローバルに定義されているような、サイト全体に一様に適用する一連のプッシュに対して、現在のページとそのページの重要な資産に基づいて形成される、ページ レベルでの動的プッシュ ディレクティブを導入することです。<a hreflang="en" href="https://medium.com/@ananner/http-2-server-push-performance-a-further-akamai-case-study-7a17573a3317">Akamai</a> や <a hreflang="en" href="https://github.com/guess-js/guess/">Google</a> が実際のユーザー データと分析を使ってこの動的プッシュの設定を決定する実装例を示しているものの、ウェブ全体での実装が限定されていることがデータからうかがえます。<a hreflang="en" href="https://medium.com/@ananner/http-2-server-push-performance-a-further-akamai-case-study-7a17573a3317">Akamai</a> の研究によると、正しく適用すればHTTP/2プッシュはウェブパフォーマンスに明確な利益をもたらすことが示唆されています。
 
-しかし、他のCDNプロバイダーやサーバー実装からの投資は、HTTP/2プッシュのための設計が困難であることを証明しています。実際に[Jake Archibald](https://twitter.com/jaffathecake)は、2017年の時点で<a hreflang="en" href="https://jakearchibald.com/2017/h2-push-tougher-than-i-thought/">これらの課題</a>のいくつかを説明しています。これらは、プッシュキャッシュの問題、ブラウザの不整合、クライアントがプッシュを必要としないと判断した場合にサーバーから送信される余分なバイトに焦点を当てたものです。<a hreflang="en" href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-cache-digest#appendix-A">いくつか</a>の<a hreflang="en" href="https://datatracker.ietf.org/doc/html/draft-vkrasnov-h2-compression-dictionaries-03">これらの</a> issuesを解決しようとする試みは、キャッシュ ダイジェストがユーザーの特定に使われるかもしれないプライバシーとセキュリティの懸念に関する問題から、主に放棄されました。
+しかし、他のCDNプロバイダーやサーバー実装からの投資は、HTTP/2プッシュのための設計が困難であることを証明しています。実際に[Jake Archibald](https://x.com/jaffathecake)は、2017年の時点で<a hreflang="en" href="https://jakearchibald.com/2017/h2-push-tougher-than-i-thought/">これらの課題</a>のいくつかを説明しています。これらは、プッシュキャッシュの問題、ブラウザの不整合、クライアントがプッシュを必要としないと判断した場合にサーバーから送信される余分なバイトに焦点を当てたものです。<a hreflang="en" href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-cache-digest#appendix-A">いくつか</a>の<a hreflang="en" href="https://datatracker.ietf.org/doc/html/draft-vkrasnov-h2-compression-dictionaries-03">これらの</a> issuesを解決しようとする試みは、キャッシュ ダイジェストがユーザーの特定に使われるかもしれないプライバシーとセキュリティの懸念に関する問題から、主に放棄されました。
 
 Patrick Meehan氏は、代替案に関するこの投稿<a hreflang="en" href="https://blog.cloudflare.com/early-hints/#:~:text=summarized%20server%20push%E2%80%99s%20gotchas">103 Early Hintsで、問題点のいくつかを取り上げています</a>。その投稿では、Pushは通常、HTMLやその他のレンダーブロッキングアセットを遅延させる結果になると詳しく説明しています。
 

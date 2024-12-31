@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Ecommerce
 description: Capítulo sobre comercio electrónico del Almanaque Web de 2019 que cubre plataformas de comercio electrónico, payloads, imágenes, third-parties, rendimiento, seo y PWAs.
+hero_alt: Hero image of a Web Almanac character at a super market checkout loading items from a shopping basket onto the conveyor belt while another character payes with a credit card.
 authors: [samdutton, alankent]
 reviewers: [voltek62]
 analysts: [rviscomi]
@@ -10,7 +11,7 @@ translators: [JMPerez]
 discuss: 1768
 results: https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/
 samdutton_bio: <i lang="en">Sam Dutton has worked with the Google Chrome team as a Developer Advocate since 2011. He has organized and presented at a number of events, created and taught several web development courses, and worked on a range of videos, codelabs and written guidance covering PWA, performance, media, image and 'Next Billion Users' initiatives. He maintains <a hreflang="en" href="https://simpl.info">simpl.info</a>, which provides simplest possible examples of HTML, CSS and JavaScript. Sam grew up in South Australia, went to university in Sydney, and has lived since 1986 in London.</i>
-alankent_bio: <i lang="en">Alan Kent is a Developer Advocate at Google focusing on e-commerce and content ecosystems. He blogs at <a hreflang="en" href="https://alankent.me">alankent.me</a> and tweets as <a href="https://twitter.com/akent99">@akent99</a>.</i>
+alankent_bio: <i lang="en">Alan Kent is a Developer Advocate at Google focusing on e-commerce and content ecosystems. He blogs at <a hreflang="en" href="https://alankent.me">alankent.me</a> and tweets as <a href="https://x.com/akent99">@akent99</a>.</i>
 featured_quote: Casi el 10% de las páginas de inicio en este estudio resultaron ser parte de una plataforma de comercio electrónico. Una "plataforma de comercio electrónico" es un conjunto de software o servicios que permiten crear y operar una tienda en línea, incluidos los servicios de pago como Shopify, plataformas de software como Magento Open Source y plataformas alojadas como Magento Commerce.
 featured_stat_1: 3.98%
 featured_stat_label_1: Sitios que utilizan WooCommerce, la plataforma de comercio electrónico más popular
@@ -552,7 +553,7 @@ Necesitamos investigar más sobre por qué muchos sitios (aparentemente) no ofre
 
 ## Peticiones y bytes de terceros
 
-Muchos sitios web, especialmente las tiendas en línea, cargan una cantidad significativa de código y contenido de terceros: para análisis, pruebas A/B, seguimiento del comportamiento del cliente, publicidad y soporte de redes sociales. El contenido de terceros puede tener un <a hreflang="en" href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript">impacto significativo en el rendimiento</a>. La <a hreflang="en" href="https://github.com/patrickhulce/third-party-web">herramienta third-party-web</a> de [Patrick Hulce](https://twitter.com/patrickhulce) se utiliza para determinar las solicitudes de terceros para este informe, y esto se discute más en el capítulo de [Third Parties](./third-parties).
+Muchos sitios web, especialmente las tiendas en línea, cargan una cantidad significativa de código y contenido de terceros: para análisis, pruebas A/B, seguimiento del comportamiento del cliente, publicidad y soporte de redes sociales. El contenido de terceros puede tener un <a hreflang="en" href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript">impacto significativo en el rendimiento</a>. La <a hreflang="en" href="https://github.com/patrickhulce/third-party-web">herramienta third-party-web</a> de [Patrick Hulce](https://x.com/patrickhulce) se utiliza para determinar las solicitudes de terceros para este informe, y esto se discute más en el capítulo de [Third Parties](./third-parties).
 
 {{ figure_markup(
   image="fig17.png",

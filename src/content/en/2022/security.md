@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Security
 description: Security chapter of the 2022 Web Almanac covering Transport Layer Security, content inclusion (CSP, Feature Policy, SRI), web defense mechanisms (tackling XSS, XS-Leaks), and drivers of security mechanism adoptions.
+hero_alt: Hero image of Web Almanac characters padlocking a web page, while other Web Almanac characters subdue a masked thief who has a set of bolt cutters.
 authors: [SaptakS, lirantal, clarkio]
 reviewers: [kushaldas, tunetheweb]
 analysts: [VictorLeP, vikvanderlinden, GJFR]
@@ -52,7 +53,7 @@ Transport Layer Security ensures secure communication of data and resources betw
   )
 }}
 
-The percentage of homepages that are served over HTTPS continues to be lower compared to the total requests because a lot of the requests to a website are dominated by [third-party](./third-parties) services like fonts, CDN, etc. which have a higher HTTPS adoption. We do see a slight increase from last year in the percentage. 89.3% of homepages are now served over HTTPS on desktop compared to 84.3% last year. Similarly, in our mobile dataset, 85.5% of homepages are served over HTTPS compared to 81.2% last year.
+The percentage of home pages that are served over HTTPS continues to be lower compared to the total requests because a lot of the requests to a website are dominated by [third-party](./third-parties) services like fonts, CDN, etc. which have a higher HTTPS adoption. We do see a slight increase from last year in the percentage. 89.3% of home pages are now served over HTTPS on desktop compared to 84.3% last year. Similarly, in our mobile dataset, 85.5% of home pages are served over HTTPS compared to 81.2% last year.
 
 ### Protocol versions
 
@@ -70,7 +71,7 @@ TLS v1.3 is the latest and was released in August 2018 by IETF. It's <a hreflang
   )
 }}
 
-In the above graph, we see that 70% of homepages in mobile and 67% of homepages in desktop are served over TLSv1.3 which is approximately 7% more than last year. So, we are seeing some constant shift from use of TLS v1.2 to TLS v1.3
+In the above graph, we see that 70% of home pages in mobile and 67% of home pages in desktop are served over TLSv1.3 which is approximately 7% more than last year. So, we are seeing some constant shift from use of TLS v1.2 to TLS v1.3
 
 ### Cipher suites
 
@@ -361,7 +362,7 @@ It works by ensuring that a predefined trusted set of content rules is upheld an
 
 We're seeing a 14% relative increase in adoption for `Content-Security-Policy` header from 2021's data of 12.8% to 2022's data of 14.6% which demonstrates a growing trend of adoption across developers and the web security community. This is positive, though it's still a minority of sites using this more advanced feature.
 
-CSP is most useful, when served on the HTML response itself and here we're seeing consistent growing adoption in mobile requests serving a CSP header with 7.2% two years ago, 9.3% last year, and this year a total of 11.2% of mobile homepages.
+CSP is most useful, when served on the HTML response itself and here we're seeing consistent growing adoption in mobile requests serving a CSP header with 7.2% two years ago, 9.3% last year, and this year a total of 11.2% of mobile home pages.
 
 {{ figure_markup(
   image="csp-directives-usage.png",
@@ -631,7 +632,9 @@ Besides being used as an HTTP header, this feature can be used within `<iframe>`
   <iframe src="https://example.com" allow="geolocation 'src' https://example.com'; camera *"></iframe>
 ```
 
-18.9% of 11.5 million frames in mobile contained the `allow` attribute to enable permission or feature policies.
+12.6% of 17.4 million frames in mobile contained the `allow` attribute to enable permission or feature policies.
+
+<p class="note">An earlier version of this chapter reported incorrect values for the total number of frames and the percentage of frames with the `allow` attribute. More information can be found in this <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/pull/3912">GitHub PR</a>.</p>
 
 The following is a list of the top 10 `allow` directives that were detected in frames:
 
@@ -736,7 +739,9 @@ To mitigate these concerns the HTML specification (version 5) introduced the `sa
 
 The above chart of the 2022 data shows that more than 99% of websites with a `sandbox` attribute enable the `allow-scripts` and `allow-same-origin` permissions.
 
-Of desktop websites that embed an iframe, 35.2% also include the `sandbox` attribute.
+For all iframes found on desktop websites, 21.08% include the `sandbox` attribute.
+
+<p class="note">An earlier version of this chapter reported the incorrect percentage of frames with the `sandbox` attribute. More information can be found in this <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/pull/3912">GitHub PR</a>.</p>
 
 We find that `Content-Security-Policy` headers which include a `sandbox` directive are at a mere 0.3% usage for mobile (desktop is similar at 0.4%) which may speak to the fact that this attribute is only applied on a per-case basis for the practice of embedding iframe content within pages, rather than ahead-of-time planning through a content security policy definition.
 

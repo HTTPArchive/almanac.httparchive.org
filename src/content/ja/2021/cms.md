@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: CMS
 description: 2021年版Web AlmanacのCMSの章では、CMSの導入、CMSプラットフォーム上で動作するWebサイトのユーザーエクスペリエンス、CMSのリソースウェイトをカバーしています。
+hero_alt: Hero image of Web Almanac characters on a type writer writing a web page.
 authors: [alonko]
 reviewers: [alankent, andreylipattsev, chrissater, logicalphase]
 analysts: [rviscomi, tosinarasi]
@@ -181,7 +182,7 @@ CMSの重要な点は、そのプラットフォーム上に構築されたサ�
 
 ### コアWeb・バイタル
 
-2021年は、ウェブパフォーマンスにとって素晴らしい年でした。<a hreflang="en" href="https://web.dev/vitals/#core-web-vitals">コアWeb・バイタル</a> への注目が高まり、多くのプラットフォームがユーザー体験とロード時間の改善に注力するよう正しい方向へ誘導されました。さらに重要なのは、ユーザーに適切なツールとガイダンスを提供し、ウェブサイトのパフォーマンスを監視して改善することです。その結果、多くのプラットフォームから大幅なパフォーマンスの改善が見られました。これらのプラットフォームは進化を続け、ウェブ全体のユーザー体験を徐々に良くしており、これは私たち全員にとって大きな収穫です。
+2021年は、ウェブパフォーマンスにとって素晴らしい年でした。<a hreflang="en" href="https://web.dev/articles/vitals#core-web-vitals">コアWeb・バイタル</a> への注目が高まり、多くのプラットフォームがユーザー体験とロード時間の改善に注力するよう正しい方向へ誘導されました。さらに重要なのは、ユーザーに適切なツールとガイダンスを提供し、ウェブサイトのパフォーマンスを監視して改善することです。その結果、多くのプラットフォームから大幅なパフォーマンスの改善が見られました。これらのプラットフォームは進化を続け、ウェブ全体のユーザー体験を徐々に良くしており、これは私たち全員にとって大きな収穫です。
 
 <a hreflang="en" href="https://httparchive.org/reports/cwv-tech">コアWeb・バイタルの技術レポート</a> では、このデータを掘り下げ、月単位で更新される各技術の進捗を確認することが可能です。
 
@@ -324,7 +325,7 @@ TYPO3 CMSはLCPスコアがもっとも高く、69%のオリジンが「良い�
   sql_file="core_web_vitals.sql"
 ) }}
 
-WixのCLSスコアはもっとも高く、モバイル端末の81%が「良い」CLSを獲得しています。AdobeエクスペリエンスマネージャーのCLSスコアはもっとも低く、モバイル端末の44%が「良い」CLSを獲得しているに過ぎません。レイアウトのずれは接続速度にかかわらず通常は避けることができるので、すべてのプラットフォームは、<a hreflang="en" href="https://web.dev/optimize-cls/">レイアウトのずれを最小限に抑える</a>ことによって、これらの数値を改善するよう努力する必要があります。
+WixのCLSスコアはもっとも高く、モバイル端末の81%が「良い」CLSを獲得しています。AdobeエクスペリエンスマネージャーのCLSスコアはもっとも低く、モバイル端末の44%が「良い」CLSを獲得しているに過ぎません。レイアウトのずれは接続速度にかかわらず通常は避けることができるので、すべてのプラットフォームは、<a hreflang="en" href="https://web.dev/articles/optimize-cls">レイアウトのずれを最小限に抑える</a>ことによって、これらの数値を改善するよう努力する必要があります。
 
 {{ figure_markup(
   image="core-web-vitals-cls-yoy.png",
@@ -613,6 +614,6 @@ CMSは素晴らしい仕事をしておりインフラの強化に努め、進�
 
 一方、コアWebバイタルはまだまだ進化しています。
 
-私たちは、上記の <a hreflang="en" href="https://web.dev/responsiveness/">ベターレスポンスメトリクス</a>に向けた考えについて言及しました。さらに、サイト内のページ間の移動をより適切に追跡し、<a hreflang="en" href="https://web.dev/vitals-spa-faq">シングルページ・アプリケーション（SPA）とマルチページ・アプリケーション（MPA）</a> のアーキテクチャの違いを考慮する必要があります。
+私たちは、上記の <a hreflang="en" href="https://web.dev/responsiveness/">ベターレスポンスメトリクス</a>に向けた考えについて言及しました。さらに、サイト内のページ間の移動をより適切に追跡し、<a hreflang="en" href="https://web.dev/articles/vitals-spa-faq">シングルページ・アプリケーション（SPA）とマルチページ・アプリケーション（MPA）</a> のアーキテクチャの違いを考慮する必要があります。
 
 これからも突き進んでいきましょう。

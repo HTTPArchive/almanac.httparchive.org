@@ -1,6 +1,7 @@
 ---
 title: Privacy
 description: Privacy chapter of the 2022 Web Almanac covers the adoption and impact of online tracking, privacy preference signals, and browser initiatives for a privacy-friendlier web.
+hero_alt: Hero image of Web Almanac characters with cameras, phones, and microphones acting like paparazzi while another character pulls back a shower curtain to reveal a web page behind it.
 authors: [tomvangoethem, nrllh]
 reviewers: [iskander-sanchez-rola]
 analysts: [max-ostapenko, ydimova]
@@ -306,7 +307,7 @@ Over the last few years, the average web user has become increasingly conscious 
 
 ### Privacy Sandbox Origin Trial
 
-At the time of publishing this year's Web Almanac, Privacy Sandbox features are not yet available for general use. Websites and web services—such as ads, which are typically shown in iframes—can however participate in early testing of the Privacy Sandbox features, by making use of the <a hreflang="en" href="https://developer.chrome.com/en/blog/privacy-sandbox-unified-origin-trial/">Origin Trial</a>. Note that this is only for users whose browser supports the feature—Privacy Sandbox features are only implemented in Chrome, and are still disabled by default at the time of this writing. This gives the web services access to three Privacy Sandbox-related APIs: <a hreflang="en" href="https://developer.chrome.com/docs/privacy-sandbox/topics/">Topics</a>, <a hreflang="en" href="https://developer.chrome.com/docs/privacy-sandbox/fledge/">FLEDGE</a>, and <a hreflang="en" href="https://developer.chrome.com/docs/privacy-sandbox/attribution-reporting/">Attribution Reporting</a>.
+At the time of publishing this year's Web Almanac, Privacy Sandbox features are not yet available for general use. Websites and web services—such as ads, which are typically shown in iframes—can however participate in early testing of the Privacy Sandbox features, by making use of the <a hreflang="en" href="https://developer.chrome.com/en/blog/privacy-sandbox-unified-origin-trial/">Origin Trial</a>. Note that this is only for users whose browser supports the feature—Privacy Sandbox features are only implemented in Chrome, and are still disabled by default at the time of this writing. This gives the web services access to three Privacy Sandbox-related APIs: <a hreflang="en" href="https://developer.chrome.com/docs/privacy-sandbox/topics">Topics</a>, <a hreflang="en" href="https://developer.chrome.com/docs/privacy-sandbox/fledge">FLEDGE</a>, and <a hreflang="en" href="https://developer.chrome.com/docs/privacy-sandbox/attribution-reporting">Attribution Reporting</a>.
 
 <figure>
   <table>
@@ -391,7 +392,7 @@ For example, we find that on 34,128 sites a web service opts-in to the `Conversi
 
 For the <a hreflang="en" href="https://developer.chrome.com/en/docs/privacy-sandbox/trust-tokens/">TrustTokens</a> Origin Trial, which has also expired, we are still seeing 6,005 sites where a web service opts-in to it. This mechanism aims to allow websites to combat fraud by enabling one browsing context (for example, site) to convey a limited amount of information to another.
 
-Interestingly, on more than 30,000 websites a web service is still opting-in to the `InterestCohort` origin trial, which would give them access to the interest group of the user of FLoC. However, due to privacy concerns with the API, it was no longer pursued and development was discontinued. It is superseded by the <a hreflang="en" href="https://developer.chrome.com/docs/privacy-sandbox/fledge/">FLEDGE API</a>, which aims to provide "on-device ad auctions to serve remarketing and custom audiences" and <a hreflang="en" href="https://developer.chrome.com/docs/privacy-sandbox/topics/">Topics API</a>, which aims to allow advertisers to serve ads based on the interests of the user without the need of cross-site tracking.
+Interestingly, on more than 30,000 websites a web service is still opting-in to the `InterestCohort` origin trial, which would give them access to the interest group of the user of FLoC. However, due to privacy concerns with the API, it was no longer pursued and development was discontinued. It is superseded by the <a hreflang="en" href="https://developer.chrome.com/docs/privacy-sandbox/fledge">FLEDGE API</a>, which aims to provide "on-device ad auctions to serve remarketing and custom audiences" and <a hreflang="en" href="https://developer.chrome.com/docs/privacy-sandbox/topics">Topics API</a>, which aims to allow advertisers to serve ads based on the interests of the user without the need of cross-site tracking.
 
 ## Compliance with privacy regulations
 
@@ -462,7 +463,7 @@ Our analysis shows that the most common publishers we identified are from German
 
 ### Privacy policy
 
-Notifications regarding data processing do not always take place via a consent banner. They are also usually described in more detail on separate pages compared to such banners. On such pages, you will find information on integrated third parties, which data is processed for which purpose, etc. To identify such sites, we used the privacy-relevant signatures from <a hreflang="en" href="https://github.com/RUB-SysSec/we-value-your-privacy/blob/master/privacy_wording.json">a study</a>. Using this method, we could determine that 45% of desktop websites (41% on mobile) contained a link on their homepage to a privacy-related page. The figure below shows the distribution of the top privacy link keywords.
+Notifications regarding data processing do not always take place via a consent banner. They are also usually described in more detail on separate pages compared to such banners. On such pages, you will find information on integrated third parties, which data is processed for which purpose, etc. To identify such sites, we used the privacy-relevant signatures from <a hreflang="en" href="https://github.com/RUB-SysSec/we-value-your-privacy/blob/master/privacy_wording.json">a study</a>. Using this method, we could determine that 45% of desktop websites (41% on mobile) contained a link on their home page to a privacy-related page. The figure below shows the distribution of the top privacy link keywords.
 
 {{ figure_markup(
   image="privacy-link-keywords.png",

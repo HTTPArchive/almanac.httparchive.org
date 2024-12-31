@@ -17,7 +17,12 @@ csp = {
         "www.googletagmanager.com",
     ],
     "img-src": ["'self'", "https:", "data:"],
-    "frame-src": ["'self'", "docs.google.com", "www.youtube.com"],
+    "frame-src": [
+        "'self'",
+        "docs.google.com",
+        "www.youtube.com",
+        "www.googletagmanager.com",
+    ],
     "object-src": ["'self'"],
     "base-uri": ["'none'"],
 }

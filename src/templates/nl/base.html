@@ -18,13 +18,19 @@
 {% block intro_title %}Web Almanac{% endblock %}
 {% block intro_sub_title %}HTTP Archive&#8217;s jaarlijkse<br><b>staat van het web</b>rapport{% endblock %}
 
+{% block announcement_text %}
+<p lang="en">
+  Listen to a recording of our live stream for this year's edition on <a href="https://www.youtube.com/live/cdYR0ZmplIM">YouTube</a>! We'll be running another live stream with more of our authors in January 2025.
+</p>
+{% endblock %}
+
 {% block mission %}
 <p>
   Onze missie is om de onbewerkte statistieken en trends van het HTTP Archive te combineren met de expertise van de webgemeenschap. De Web Almanac is een uitgebreid rapport over de staat van het internet, ondersteund door echte gegevens en vertrouwde webexperts. De editie van {{ year }} bestaat uit {{ supported_chapters | length }} hoofdstukken over aspecten van pagina-inhoud, gebruikerservaring, publicatie en distributie.
 </p>
 {% endblock %}
 
-{% block read_last_years_almanac %}Lees de {{ year | int - 1 }} Web Almanac{% endblock %}
+{% block read_last_years_almanac %}Lees de {{ previous_year }} Web Almanac{% endblock %}
 
 {% block http_archive_link %}HTTP Archive home{% endblock %}
 
@@ -57,7 +63,7 @@
 {% block open_the_index %}Open de Inhoudsopgave{% endblock %}
 {% block close_the_index %}Sluit de Inhoudsopgave{% endblock %}
 
-{% block and %}en{% endblock %}
+{% block and %} en {% endblock %}
 {% block comma %}, {% endblock %}
 {% block oxford_comma %}{% endblock %}
 
@@ -111,10 +117,14 @@
 {% block repliesAlt %}{% endblock %}
 {% block mentionsAlt %}{% endblock %}
 
-{% macro onTwitter(twitterHandle) %}@{{twitterHandle}} op Twitter{% endmacro %}
+{% macro onTwitter(twitterHandle) %}@{{twitterHandle}} op Twitter/X{% endmacro %}
+{% macro onMastodon(mastodonHandle) %}{{mastodonHandle}} op Mastodon{% endmacro %}
+{% macro onBluesky(blueskyHandle) %}{{blueskyHandle}} op Bluesky{% endmacro %}
 {% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} op GitHub{% endmacro %}
 {% macro onLinkedIn(authorName) %}{{authorName}} op LinkedIn{% endmacro %}
 {% macro website(authorName) %}website van {{authorName}} {% endmacro %}
+
+{% block citation %}Citaat{% endblock %}
 
 {% macro edition(year) %}{{ year }} Editie{% endmacro %}
 
@@ -124,14 +134,14 @@
 {% block rss_feed %}RSS Feed{% endblock %}
 
 {% block featured_chapter %}Uitgelicht Hoofdstuk{% endblock %}
-{% block featured_chapter_last_year %}Uitgelicht Hoofdstuk<br>van de {{ year|int -1 }} Web Almanac{% endblock %}
+{% block featured_chapter_last_year %}Uitgelicht Hoofdstuk<br>van de {{ previous_year }} Web Almanac{% endblock %}
 
 {# Check if read_chapter already defined in child template as macros can't be overridden #}
 {% if not read_chapter %}
 {% macro read_chapter(chapter) %}Lees het <span class="featured-chapter-name">{{ chapter }}</span> hoofdstuk{% endmacro %}
 {% endif %}
 {% if not read_last_years_chapter %}
-{% macro read_last_years_chapter(chapter) %}Lees het {{ year|int-1 }} <span class="featured-chapter-name">{{ chapter }}</span> hoofdstuk{% endmacro %}
+{% macro read_last_years_chapter(chapter) %}Lees het {{ previous_year }} <span class="featured-chapter-name">{{ chapter }}</span> hoofdstuk{% endmacro %}
 {% endif %}
 
 {% block contributors_description %}
@@ -173,6 +183,7 @@ Tenzij anders vermeld, zijn de statistieken in alle {{ supported_chapters | leng
   set localizedChapterTitles = {
     "javascript": "JavaScript",
     "css": "CSS",
+    "cookies": "Cookies",
     "markup": "Opmaak",
     "media": "Media",
     "third-parties": "Derden",
@@ -212,6 +223,7 @@ Tenzij anders vermeld, zijn de statistieken in alle {{ supported_chapters | leng
   "developers": "Ontwikkelaars",
   "editors": "Redacteurs",
   "leads": "Projectleiders",
+  "committee": "Organisatiecomité",
   "reviewers": "Nalezers",
   "translators": "Vertalers",
   }
@@ -225,6 +237,7 @@ Tenzij anders vermeld, zijn de statistieken in alle {{ supported_chapters | leng
   "developers": "Ontwikkelaar",
   "editors": "Redacteur",
   "leads": "Projectleider",
+  "committee": "Organisatiecomité",
   "reviewers": "Nalezer",
   "translators": "Vertaler",
   }

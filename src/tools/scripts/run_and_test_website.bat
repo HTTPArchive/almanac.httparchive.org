@@ -6,7 +6,7 @@ rem # This script installs all the required dependencies needed to run the
 rem # Web Almanac website providing you have python and node installed.
 rem #
 rem # It 's a simplified version of run_and_test_website.sh for windows users
-rem # It depends on Python 3.8, pip and nodejs 12 being installed already
+rem # It depends on Python 3.12, pip and nodejs 20 being installed already
 rem #
 
 echo "Kill any existing instances of the webserver"
@@ -26,7 +26,8 @@ echo "Building website"
 call npm run generate
 
 echo "Starting website"
-start python main.py
+rem # Can remove -Xutf8 argument after Python 3.15 is everywhere - https://peps.python.org/pep-0686/
+start python -Xutf8 main.py
 rem # Sleep for 5 seconds to make sure server is up
 timeout /t 5 /nobreak
 rem # Use sleep as well in case running in GitBash where above command fails

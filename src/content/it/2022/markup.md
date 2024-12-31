@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Markup
 description: Capitolo sul markup del Web Almanac 2022 che tratta di dati relativi ai documenti (doctype, compressione, lingue, conformità all'HTML, dimensione dei documenti), di uso di elementi e attributi HTML, di attributi di dati e di social media.
+hero_alt: Hero image of Web Almanac characters as dressed as constructor workers putting together a web page from HTML element blocks.
 authors: [j9t]
 reviewers: [bkardell, zcorpan]
 analysts: [rviscomi]
@@ -22,7 +23,7 @@ featured_stat_label_3: Elementi HTML che sono `div`.
 
 Come diceva il [capitolo del 2020](../2020/markup#introduction), senza l'HTML non ci possono essere pagine web, siti web, app web. Si può dire che senza HTML non ci sarebbe il Web. Ciò rende l'HTML uno degli standard web più importanti, se non il più importante standard web.
 
-Di conseguenza, come ogni anno, abbiamo utilizzato i milioni di pagine nel nostro set di dati (7,9 milioni nel set di pagine per dispositivi mobili, 5,4 milioni nel set di paginne desktop, con sovrapposizione) per esaminare anche l'HTML. Questo capitolo non copre "tutto" sull'HTML, quindi siete caldamente invitati ad [analizzare anche i dati raccolti](https://docs.google.com/spreadsheets/d/1grkd2_1xSV3jvNK6ucRQ0OL1HmGTsScHuwA8GZuRLHU/edit) e a condividere le vostre riflessioni e, nel caso, a taggarle: [#htmlalmanac](https://twitter.com/hashtag/htmlalmanac).
+Di conseguenza, come ogni anno, abbiamo utilizzato i milioni di pagine nel nostro set di dati (7,9 milioni nel set di pagine per dispositivi mobili, 5,4 milioni nel set di paginne desktop, con sovrapposizione) per esaminare anche l'HTML. Questo capitolo non copre "tutto" sull'HTML, quindi siete caldamente invitati ad [analizzare anche i dati raccolti](https://docs.google.com/spreadsheets/d/1grkd2_1xSV3jvNK6ucRQ0OL1HmGTsScHuwA8GZuRLHU/edit) e a condividere le vostre riflessioni e, nel caso, a taggarle: [#htmlalmanac](https://x.com/hashtag/htmlalmanac).
 
 ## Dati del documento
 

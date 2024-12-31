@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: PWA
 description: サービスワーカー（登録、インストール性、イベント、ファイルサイズ）、Web App Manifestsのプロパティ、Workboxをカバーする2020年Web AlmanacのPWAの章。
+hero_alt: Hero image of Web Almanac characters converting a web page to a mobile web app.
 authors: [hemanth]
 reviewers: [thepassle, jadjoubran, pearlbea, gokulkrishh]
 analysts: [tunetheweb]

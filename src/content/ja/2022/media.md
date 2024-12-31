@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: メディア
 description: 2022年版Web Almanacのメディア章では、画像や動画がWeb上でどのようにエンコード、埋め込み、スタイリング、配信されているかを解説しています。
+hero_alt: Hero image of Web Almanac characters projecting an image onto a screen while other Web Almanac characters walk to cinema seats with popcorn to watch the projection.
 authors: [eeeps, akshay-ranganath]
 reviewers: [nhoizey, yoavweiss]
 analysts: [eeeps, akshay-ranganath]
@@ -49,7 +50,7 @@ featured_stat_label_3: 30秒以内の動画要素。
 )
 }}
 
-モバイルでは70％、デスクトップでは80％と、もっとも多くのページで、もっともインパクトのあるリソースは画像です。<a hreflang="en" href="https://web.dev/lcp/">最大のコンテントフルペイント</a> (LCP)は、折り目の上にある最大の要素を特定するウェブパフォーマンス指標です。もっとも多くの場合、その要素は画像を持っています。
+モバイルでは70％、デスクトップでは80％と、もっとも多くのページで、もっともインパクトのあるリソースは画像です。<a hreflang="en" href="https://web.dev/articles/lcp">最大のコンテントフルペイント</a> (LCP)は、折り目の上にある最大の要素を特定するウェブパフォーマンス指標です。もっとも多くの場合、その要素は画像を持っています。
 
 ウェブにおける画像の重要性について言い過ぎたことはない。では、ウェブの画像について、どのようなことが言えるのでしょうか。
 
@@ -83,7 +84,7 @@ featured_stat_label_3: 30秒以内の動画要素。
 
 不審なほど多くのものが1×1です。これらの `<img>` は、画像コンテンツをまったく含んでいません。レイアウト用（[スペーサーGIF](https://en.wikipedia.org/wiki/Spacer_GIF)）と[トラッキングビーコン](https://ja.wikipedia.org/wiki/%E3%82%A6%E3%82%A7%E3%83%96%E3%83%93%E3%83%BC%E3%82%B3%E3%83%B3)の2つの目的で使用されているのです。
 
-新しく作成されたウェブサイトは、レイアウトにCSSを使い、トラッキングに[ビーコンAPI](https://developer.mozilla.org/en-US/docs/Web/API/Beacon_API)を使うべきです。既存の多くのコンテンツは、トラッキングピクセルとスペーサーGIFを永遠に使い続けるだろうが、ここのデスクトップ数は[昨年](../2021/media#fig-5)から変わっておらず、モバイル数はほんの少ししか縮小していないことに落胆させられる。<a hreflang="en" href="https://developers.facebook.com/docs/meta-pixel/implementation/marketing-api#intialize-img">古い習慣</a> <a hreflang="en" href="https://spacergif.org/stats/">こごえる</a>！
+新しく作成されたウェブサイトは、レイアウトにCSSを使い、トラッキングに[ビーコンAPI](https://developer.mozilla.org/docs/Web/API/Beacon_API)を使うべきです。既存の多くのコンテンツは、トラッキングピクセルとスペーサーGIFを永遠に使い続けるだろうが、ここのデスクトップ数は[昨年](../2021/media#fig-5)から変わっておらず、モバイル数はほんの少ししか縮小していないことに落胆させられる。<a hreflang="en" href="https://developers.facebook.com/docs/meta-pixel/implementation/marketing-api#intialize-img">古い習慣</a> <a hreflang="en" href="https://spacergif.org/stats/">こごえる</a>！
 
 可能な限り、これらの実際には画像ではない`<img>`を分析から除外しました。
 
@@ -871,7 +872,7 @@ So how accurate are our `sizes`?
 
 まず、`autoplay`が`preload`を抜いて今年もっとも人気のある属性となりました。また、`playsinline`、`muted`、`loop`の人気も高まっているようです。おそらく、<a hreflang="en" href="https://web.dev/replace-gifs-with-videos/">アニメーションGIFを置き換えるために`<video>`要素を使う</a>人が増えているのでしょう？もしそうなら、いいことだ！
 
-つまり、ほとんどの `<video>` 要素は、これらの属性を持たない `<img>` 要素で見られたのと同じ種類の <a hreflang="en" href="https://web.dev/cls/">CLS</a>問題の影響を受けやすいということです。ブラウザの助けを借りて、これらの属性を追加してください！
+つまり、ほとんどの `<video>` 要素は、これらの属性を持たない `<img>` 要素で見られたのと同じ種類の <a hreflang="en" href="https://web.dev/articles/cls">CLS</a>問題の影響を受けやすいということです。ブラウザの助けを借りて、これらの属性を追加してください！
 
 また、`<video>`要素に`controls`属性を持つものが10個に1個以下であることから、かなりの数の人が動画と対話するための独自のユーザーインターフェイスを提供するプレイヤーを使用していることがわかります。
 

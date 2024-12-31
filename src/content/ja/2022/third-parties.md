@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: サードパーティ
 description: 2022年版Web Almanacのサードパーティ編では、Web上でどのようなサードパーティが使用されているかというデータと、それらがパフォーマンスに悪影響を及ぼすのを防ぐための深堀りを紹介しています。
+hero_alt: Hero image of Web Almanac characters plugging various things into a web page.
 authors: [imeugenia]
 reviewers: [tunetheweb, kevinfarrugia, alexnj]
 analysts: [kevinfarrugia]
@@ -44,7 +45,7 @@ featured_stat_label_3: LighthouseのレガシーJavaScript監査は、サード�
 
 ### サードパーティーのカテゴリー
 
-私たちは、サードパーティを特定し分類するために、[Patrick Hulce](https://twitter.com/patrickhulce) の <a hreflang="en" href="https://github.com/patrickhulce/third-party-web/#third-parties-by-category">third-party-web</a> レポジトリに依存しています。このリポジトリでは、サードパーティを以下のカテゴリーに分類しています。
+私たちは、サードパーティを特定し分類するために、[Patrick Hulce](https://x.com/patrickhulce) の <a hreflang="en" href="https://github.com/patrickhulce/third-party-web/#third-parties-by-category">third-party-web</a> レポジトリに依存しています。このリポジトリでは、サードパーティを以下のカテゴリーに分類しています。
 
 - **Ad** - これらのスクリプトは、広告ネットワークの一部であり、配信または測定を行っています。
 - **Analytics** - ユーザーとその行動を測定または追跡するスクリプトです。何を追跡するかによって、ここでの影響は大きく異なります。
@@ -189,7 +190,7 @@ YouTubeは、もっとも多く利用されているサードパーティーの�
 
 Lighthouseは、サードパーティーのサイズが非常に小さく、レンダリングブロッキング時間に明確な影響を与えない場合でも、レンダリングブロッキングの可能性があるとしてマークする場合があります。これは、GoogleフォントやGoogle/Doubleclick Adsのように、レンダリングブロッキング時間の中央値が0ミリ秒であるサードパーティが該当します。
 
-メインスレッドがブロックされると、[最初の入力までの遅延(FID)](https://web.dev/i18n/ja/fid/) と [次のペイントへのインタラクション(INP)](https://web.dev/inp/) の性能指標に大きな影響を及ぼします。Webページの応答性を高めるためには、FIDは100ms以下、INPは200ms以下であることが望ましいとされています。モバイル機器における<a hreflang="en" href="https://github.com/GoogleChromeLabs/chrome-http-archive-analysis/blob/main/notebooks/HTTP_Archive_TBT_and_INP.ipynb">総ブロッキング時間と次のペイントへのインタラクション</a>の相関関係については、[Annie Sullivan](https://twitter.com/anniesullie)による研究があります。それによると、メインスレッドのブロック時間が小さいほど、サイトが良好なINPとFIDの閾値を満たす可能性が高いことがわかります。このことから、YouTubeの事例のように、サード パーティがメイン スレッドを長時間ブロックしている場合、良好なコアWebパフォーマンス指標を達成することが難しくなるという結論に達します。さらに、他のサードパーティやファーストパーティの資産も、レンダーブロッキング効果の一因となる可能性があります。しかし、サードパーティによるレンダリングブロックを最小限に抑える方法は数多くあります。これについては、次のセクションでさらに検討します。
+メインスレッドがブロックされると、[最初の入力までの遅延(FID)](https://web.dev/i18n/ja/fid/) と [次のペイントへのインタラクション(INP)](https://web.dev/articles/inp/) の性能指標に大きな影響を及ぼします。Webページの応答性を高めるためには、FIDは100ms以下、INPは200ms以下であることが望ましいとされています。モバイル機器における<a hreflang="en" href="https://github.com/GoogleChromeLabs/chrome-http-archive-analysis/blob/main/notebooks/HTTP_Archive_TBT_and_INP.ipynb">総ブロッキング時間と次のペイントへのインタラクション</a>の相関関係については、[Annie Sullivan](https://x.com/anniesullie)による研究があります。それによると、メインスレッドのブロック時間が小さいほど、サイトが良好なINPとFIDの閾値を満たす可能性が高いことがわかります。このことから、YouTubeの事例のように、サード パーティがメイン スレッドを長時間ブロックしている場合、良好なコアWebパフォーマンス指標を達成することが難しくなるという結論に達します。さらに、他のサードパーティやファーストパーティの資産も、レンダーブロッキング効果の一因となる可能性があります。しかし、サードパーティによるレンダリングブロックを最小限に抑える方法は数多くあります。これについては、次のセクションでさらに検討します。
 
 ## ウェブパフォーマンスのベストプラクティス
 
@@ -369,7 +370,7 @@ Facebookは、もっとも多くのページに影響を与えるレガシーJav
 
 近年、いくつかのモダンなサードパーティのロードと実行のソリューションが登場しています。たとえば、<a hreflang="en" href="https://partytown.builder.io/">Partytown</a> は、ファーストパーティのコードのためにメインスレッドを解放するために、サードパーティのスクリプトをWebワーカーに再配置するライブラリです。現在、ライブラリの利用状況は初期導入段階であり、非常に低い状況です。2022年にデータセット全体から70のウェブサイトしか使用していません。しかし、<a hreflang="en" href="https://nextjs.org/docs/basic-features/script#off-loading-scripts-to-a-web-worker-experimental">Next.jsフレームワークがこのソリューション</a>の導入を開始したことで、Partytownの人気が高まるかもしれません。
 
-前のセクションでは、サードパーティの悪影響に対する責任がファーストパーティとサードパーティの開発者の間で分担されていることを示しました。しかし、<a hreflang="en" href="https://developer.chrome.com/blog/third-party-scripts/#proposed-approach">ブラウザもサードパーティ製リソースの読み込みを最適化することに関心を示しています</a>。提案には、より良いリアルユーザーのモニタリングと、サードパーティがウェブサイトに与える影響についてより多くのデータを提供する開発者向けツールが含まれています。
+前のセクションでは、サードパーティの悪影響に対する責任がファーストパーティとサードパーティの開発者の間で分担されていることを示しました。しかし、<a hreflang="en" href="https://developer.chrome.com/blog/third-party-scripts#proposed-approach">ブラウザもサードパーティ製リソースの読み込みを最適化することに関心を示しています</a>。提案には、より良いリアルユーザーのモニタリングと、サードパーティがウェブサイトに与える影響についてより多くのデータを提供する開発者向けツールが含まれています。
 
 {{ figure_markup(
   caption="Timing-Allow-Originヘッダーを持つサードパーティリクエストの割合",

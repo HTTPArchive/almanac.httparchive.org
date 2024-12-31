@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Structured Data
 description: Structured Data chapter of the 2021 Web Almanac covering adoption and impact of schema.org, RDFa, Microdata and more.
+hero_alt: Hero image of a Web Almanac chracter pulling an identification card out of a wallet and plugging it into a web page.
 authors: [jonoalderson, cyberandy]
 reviewers: [vdwijngaert, philbarker]
 analysts: [GregBrimble]
@@ -102,15 +103,15 @@ Many of the pages we've evaluated are from websites which use a [Content Managem
 
 That means that our findings are unavoidably skewed to aligning with the behaviors and output of the most prevalent CMS'. For example, many websites using Drupal automatically output structured data in the form of RDFa, and WordPress (which powers [a significant percentage of websites](./cms#top-cmss)) often includes microformats markup in template code. This contributes significantly to the shape of our findings.
 
-#### 2. The limitations of homepage-only data
+#### 2. The limitations of home page-only data
 
-Unfortunately, the nature and scale of our data-collection methods limit our analysis to homepages only (i.e., the _root URL_ of each hostname we evaluate).
+Unfortunately, the nature and scale of our data-collection methods limit our analysis to home pages only (i.e., the _root URL_ of each hostname we evaluate).
 
 This significantly limits the amount of data we can collect and analyze, and undoubtedly skews the kinds of data we've collected.
 
-As most homepages act as portals to more specific pages, we can reasonably expect that our analysis underestimates the prevalence of the kinds of content present on that deeper pages. That likely includes information relating to _articles_, _people_, _products_ and similar.
+As most home pages act as portals to more specific pages, we can reasonably expect that our analysis underestimates the prevalence of the kinds of content present on that deeper pages. That likely includes information relating to _articles_, _people_, _products_ and similar.
 
-Conversely, we likely over-index on information typically found on homepages, and site-wide information which is present on all pages—like information about _web pages_, _websites_ and _organizations_.
+Conversely, we likely over-index on information typically found on home pages, and site-wide information which is present on all pages—like information about _web pages_, _websites_ and _organizations_.
 
 #### 3. Data overlaps
 
@@ -128,7 +129,7 @@ We can see that there's a broad range of different types of structured data acro
 
 {{ figure_markup(
   image="structured-data-usage-by-type.jpg",
-  caption="Structured data usage",
+  caption="Structured data usage.",
   description="Bar chart showing the popularity of different structured data types across the web. Of all mobile pages in our data: RDFa is on 60.61%, Open Graph tags are on 57.45%, Twitter tags are on 37.48%, Microdata is on 24.91%, Facebook tags are on 8.15%, Dublin Core tags are on 1.22%, Microformats are used on 0.68%, and microformats2 are used on 0.11%. Desktop usage is similar.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3kZ1Ys-9tId-WBa_8muMzrTAu1Ad5TXYgkopXMmBVc1xmd2N_4PZIpEZEOqRL7baymle0kHzaC6KY/pubchart?oid=501587417&format=interactive",
   sheets_gid="1876349096",
@@ -152,7 +153,7 @@ For example, a website owner might add a `rel="license"` attribute to a hyperlin
 
 {{ figure_markup(
   image="structured-data-rdfa-types.jpg",
-  caption="RDFa types",
+  caption="RDFa types.",
   description="Bar chart showing the usage of RDFa across the web. Of all mobile pages in our data: `foaf:image` is on 0.86%, `foaf:document` is on 0.36%, `sioc:item` is on 0.24%, `schema:webpage` is on 0.11%, `image` is on 0.9%, `listitem` is on 0.08%, `breadcrumblist` is on 0.07%, `og:website` is on 0.06%, `skos:concept` is on 0.04%, `webpage` is on 0.04%, `v:breadcrumb` is on 0.04%, `schema:article` is on 0.03%, `sioc:useraccount` is on 0.03%, and `person` is on 0.03%. Desktop usage is similar.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3kZ1Ys-9tId-WBa_8muMzrTAu1Ad5TXYgkopXMmBVc1xmd2N_4PZIpEZEOqRL7baymle0kHzaC6KY/pubchart?oid=1063480738&format=interactive",
   sheets_gid="379443022",
@@ -197,7 +198,7 @@ Since 2008 it is managed by the Dublin Core Metadata Initiative (DCMI) and remai
 
 {{ figure_markup(
   image="structured-data-dublin-core.jpg",
-  caption="Dublin Core usage",
+  caption="Dublin Core usage.",
   description="Bar chart showing the usage of Dublin Core tags across the web. Of all mobile pages in our data: `dc.title` is on 0.70%, `dc.language` is on 0.49%, `dc.description` is on 0.44%, `dc.publisher` is on 0.22%, `dc.creator` is on 0.21%, `dc.subject` is on 0.20%, `dc.source` is on 0.19%, `dc.identifier` is on 0.17%, `dc.relation` is on 0.16%, `dcterms.title` is on 0.15%, `dc.type` is on 0.14%, `dcterms.rightsholder` is on 0.12%, and `dcterms.identifier` is on 0.11%. Desktop usage is similar.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3kZ1Ys-9tId-WBa_8muMzrTAu1Ad5TXYgkopXMmBVc1xmd2N_4PZIpEZEOqRL7baymle0kHzaC6KY/pubchart?oid=1985156978&format=interactive",
   sheets_gid="358057466",
@@ -229,7 +230,7 @@ The Open Graph protocol has since been broadly adopted by many platforms and ser
 
 {{ figure_markup(
   image="structured-data-open-graph.jpg",
-  caption="Open Graph usage",
+  caption="Open Graph usage.",
   description="Bar chart showing the usage of Open Graph tags across the web. Of all mobile pages in our data: `og:title` is on 54.87%, `og:url` is on 52.03%, `og:type` is on 48.18%, `og:description` is on 48.55%, `og:site_name` is on 43.37%, `og:image` is on 36.98%, `og:locale` is on 26.39%, `og:image:width` is on 12.95%, `og:image:height` is on 12.91%, `og:image:secure_url` is on 5.61%, `og:image:alt` is on 1.75%, `og:image:type` is on 1.61%, `og:updated_time` is on 1.54%, and `og:locale:alternate` is on 0.87%. Desktop usage is similar.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3kZ1Ys-9tId-WBa_8muMzrTAu1Ad5TXYgkopXMmBVc1xmd2N_4PZIpEZEOqRL7baymle0kHzaC6KY/pubchart?oid=688746239&format=interactive",
   sheets_gid="1440633828",
@@ -255,7 +256,7 @@ Though Twitter uses Open Graph tags as fallbacks and defaults, the platform supp
 
 {{ figure_markup(
   image="structured-data-twitter.jpg",
-  caption="Twitter meta tag usage",
+  caption="Twitter meta tag usage.",
   description="Bar chart showing the usage of Twitter meta tags across the web. Of all mobile pages in our data: `twitter:card` is on 35.42%, `twitter:title` is on 20.86%, `twitter:description` is on 18.68%, `twitter:site` is on 11.31%, `twitter:image` is on 11.41%, `twitter:label1` is on 6.85%, `twitter:data1` is on 6.85%, `twitter:creator` is on 3.58%, `twitter:url` is on 3.13%, `twitter:domain` is on 2.21%, `twitter:image:src` is on 0.58%, `twitter:text:title` is on 0.57%, `twitter:app:id:phone` is on 0.54%, and `twitter:app:url:iphone` is on 0.52%. Desktop usage is similar.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3kZ1Ys-9tId-WBa_8muMzrTAu1Ad5TXYgkopXMmBVc1xmd2N_4PZIpEZEOqRL7baymle0kHzaC6KY/pubchart?oid=2059334677&format=interactive",
   sheets_gid="485696602",
@@ -285,7 +286,7 @@ In addition to Open Graph tags, Facebook supports additional metadata (meta tags
 
 {{ figure_markup(
   image="structured-data-facebook.jpg",
-  caption="Facebook meta tag usage",
+  caption="Facebook meta tag usage.",
   description="Bar chart showing the usage of Facebook meta tags across the web. Of all mobile pages in our data: `fb:app_id` is on 6.06%, `fb:admins` is on 2.63%, `fb:pages` is on 0.86%, `fb:page_id` is on 0.13%, `fb:profile_id` is on 0.06%, `fb:use_automatic_ad_placement` is on 0.01%, and `fb:article_style` is on less than 0.01%. Desktop usage is similar.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3kZ1Ys-9tId-WBa_8muMzrTAu1Ad5TXYgkopXMmBVc1xmd2N_4PZIpEZEOqRL7baymle0kHzaC6KY/pubchart?oid=1536454005&format=interactive",
   sheets_gid="1437193020",
@@ -313,7 +314,7 @@ Microformats are available in two versions: Microformats v1 and Microformats v2 
 
 {{ figure_markup(
   image="structured-data-microformats.jpg",
-  caption="Microformats usage",
+  caption="Microformats usage.",
   description="Bar chart showing the presence of Microformats markup across the web. Of all mobile pages in our data: `adr` is on 0.50%, `geo` is on 0.10% `hReview` is on 0.06% `hReview-aggregate` is on 0.05% `hProduct` is on 0.01% `hListing` is on 0.01%, and `hCard` 0.01%. Desktop usage is similar.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3kZ1Ys-9tId-WBa_8muMzrTAu1Ad5TXYgkopXMmBVc1xmd2N_4PZIpEZEOqRL7baymle0kHzaC6KY/pubchart?oid=1769132909&format=interactive",
   sheets_gid="1565986462",
@@ -325,7 +326,7 @@ Historically and due to its nature (as an extension of HTML), Microformats have 
 
 {{ figure_markup(
   image="structured-data-microformats2.jpg",
-  caption="microformats2 usage",
+  caption="microformats2 usage.",
   description="Bar chart showing the presence of microformats2 markup across the web. Of all mobile pages in our data: `h-entry` is on 0.08% `h-card` is on 0.04% `h-adr` is on 0.02% `h-feed` is on 0.01% `h-item` is on 0.01% `h-product` is on less than 0.01%, and `h-event` is on less than 0.01%. Desktop usage is similar.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3kZ1Ys-9tId-WBa_8muMzrTAu1Ad5TXYgkopXMmBVc1xmd2N_4PZIpEZEOqRL7baymle0kHzaC6KY/pubchart?oid=216200284&format=interactive",
   sheets_gid="214118301",
@@ -353,7 +354,7 @@ For example, it may be hard to describe the _opening hours_ of an _organization_
 
 {{ figure_markup(
   image="structured-data-microdata.jpg",
-  caption="Microdata types",
+  caption="Microdata types.",
   description="Bar chart showing the usage of microdata across the web. Of all mobile pages in our data (normalized to remove the `schema.org/` prefix): `webpage` is on 7.44%, `sitenavigationelement` is on 5.62%, `wpheader` is on 4.87%, `wpfooter` is on 4.56%, `organization` is on 4.02%, `blog` is on 3.66%, `creativework` is on 2.14%, `imageobject` is on 1.83%, `blogposting` is on 1.34%, `person` is on 1.37%, `postaladdress` is on 1.34%, `website` is on 1.33%, `wpsidebar` is on 1.38%, `product` is on 1.22%, `imagegallery` is on 1.11%, `offer` is on 1.09%, `listitem` is on 0.96%, `breadcrumblist` is on 0.96%, and `article` is on 0.85%. Desktop usage is similar.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3kZ1Ys-9tId-WBa_8muMzrTAu1Ad5TXYgkopXMmBVc1xmd2N_4PZIpEZEOqRL7baymle0kHzaC6KY/pubchart?oid=1112123145&format=interactive",
   width=600,
@@ -384,7 +385,7 @@ Because the implementation isn't tied directly to the HTML structure of the page
 
 {{ figure_markup(
   image="structured-data-json-ld.jpg",
-  caption="JSON-LD usage",
+  caption="JSON-LD usage.",
   description="Bar chart showing the usage of JSON-LD on pages across the web. Of all mobile in our data: `Website` is on 8.90%, `Organization` is on 6.00%, `LocalBusiness` is on 1.67%, `BreadcrumbList` is on 1.45%, `WebPage` is on 0.97%, `ItemList` is on 0.50%, `Product` is on 0.60%, `BlogPosting` is on 0.46%, `Person` is on 0.30%, `Article` is on 0.30%, `AutoDealer` is on 0.23%, `Corporation` is on 0.20%, `Event` is on 0.17%, `Store` is on 0.16%, `VideoObject` is on 0.15%, `FAQPage` is on 0.14%, `Restaurant` is on 0.18%, and `ApartmentComplex` is on 0.11%. Desktop usage is similar.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3kZ1Ys-9tId-WBa_8muMzrTAu1Ad5TXYgkopXMmBVc1xmd2N_4PZIpEZEOqRL7baymle0kHzaC6KY/pubchart?oid=2104105656&format=interactive",
   sheets_gid="609208795",
@@ -541,7 +542,7 @@ We can also see lots of structures related to breadcrumb navigation, such as:
 
 Beyond these most popular structures, we see an extremely long-tail of relationships, describing all manner of entities, content types and concepts; as niche as `ApartmentComplex > amenityFeature > LocationFeatureSpecification` (0.1% of relationships) and `AutoDealer > department > AutoRepair` (0.04% of relationships) and `MusicEvent > performer > PerformingGroup` (0.01% of relationships).
 
-We should reiterate that these types of structures and relationships are likely to be much more common than our data set represents, as we're limited to analyzing the homepages of websites. That means that, for example, a website which lists many thousands of individual apartment complexes, but does so on inner pages, wouldn't be reflected in this data.
+We should reiterate that these types of structures and relationships are likely to be much more common than our data set represents, as we're limited to analyzing the home pages of websites. That means that, for example, a website which lists many thousands of individual apartment complexes, but does so on inner pages, wouldn't be reflected in this data.
 
 {{ figure_markup(
   image="structured-data-json-ld-entities-relationships.svg",
@@ -588,7 +589,7 @@ Because this is such a powerful tool, we've taken the time to explore some of th
 
 {{ figure_markup(
   image="structured-data-json-ld.jpg",
-  caption="SameAs usage",
+  caption="SameAs usage.",
   description="Bar chart showing the usage of `sameAs` declarations on pages across the web. Of all mobile in our data: `facebook.com` occurs on 4.26%, `instagram.com` occurs on 2.74%, `twitter.com` occurs on 2.46%, `youtube.com` occurs on 1.78%, `linkedin.com` occurs on 1.04%, `pinterest.com` occurs on 0.60%, `google.com` occurs on 0.51%, `yelp.com`, `wikidata.org` occurs on 0.12%, `wikipedia.org` occurs on 0.11%, `tumblr.com` occurs on 0.08%, `uptodown.io` occurs on 0.10%, `vk.com` occurs on 0.08%, `soundcloud.com` occurs on 0.04%, `vimeo.com` occurs on 0.03%, `pinterest.co.uk` occurs on 0.03%, `tripadvisor.com` occurs on 0.03%, `t.me` occurs on 0.03%, and `flickr.com` occurs on 0.02%. Desktop usage is similar.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3kZ1Ys-9tId-WBa_8muMzrTAu1Ad5TXYgkopXMmBVc1xmd2N_4PZIpEZEOqRL7baymle0kHzaC6KY/pubchart?oid=1501633178&format=interactive",
   sheets_gid="685929099",
@@ -602,7 +603,7 @@ The `sameAs` property accounts for 1.60% of all JSON-LD markup and is present on
 
 We can see that the most common values of the `sameAs` property (normalizing from _URLs_ to _hostnames_) are social media platforms (e.g., facebook.com, instagram.com), and official sources (e.g., wikipedia.org, yelp.com)—with the sum of the former accounting for ~75% of usage.
 
-It's clear that this property is primarily used to identify the social media accounts of websites and businesses; likely motivated by Google's historical reliance on this data as an input for managing _knowledge panels_ in their search results. Given that this requirement was <a hreflang="en" href="https://twitter.com/googlesearchc/status/1143558928439005184">deprecated in 2019</a>, we might expect this data set to gradually alter in coming years.
+It's clear that this property is primarily used to identify the social media accounts of websites and businesses; likely motivated by Google's historical reliance on this data as an input for managing _knowledge panels_ in their search results. Given that this requirement was <a hreflang="en" href="https://x.com/googlesearchc/status/1143558928439005184">deprecated in 2019</a>, we might expect this data set to gradually alter in coming years.
 
 ## Conclusion
 

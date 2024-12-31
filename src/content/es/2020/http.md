@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: HTTP/2
 description: Capítulo sobre HTTP/2 del Web Almanac de 2020 que cubre la adopción y el impacto  de HTTP/2, <i lang="en">HTTP/2 Push</i>, problemas con HTTP/2, y HTTP/3.
+hero_alt: Hero image of Web Almanac characters driving vehicles in various lanes carrying script and images resources.
 authors: [dotjs, rmarx, MikeBishop]
 reviewers: [LPardue, tunetheweb, ibnesayeed]
 analysts: [gregorywolf]
@@ -417,7 +418,7 @@ Este <a hreflang="en" href="https://github.com/andydavies/http2-prioritization-i
   <figcaption>{{ figure_link(caption="Soporte de priorización HTTP/2 en CDN comunes.", sheets_gid="1152953475", sql_file="percentage_of_h2_and_h3_sites_affected_by_cdn_prioritization.sql") }}</figcaption>
 </figure>
 
-Para el uso sin CDN, esperamos que la cantidad de servidores que aplican correctamente la priorización HTTP/2 sea considerablemente menor. Por ejemplo, la implementación HTTP/2 de NodeJS <a href="https://twitter.com/jasnell/status/1245410283582918657">no admite la priorización</a>.
+Para el uso sin CDN, esperamos que la cantidad de servidores que aplican correctamente la priorización HTTP/2 sea considerablemente menor. Por ejemplo, la implementación HTTP/2 de NodeJS <a href="https://x.com/jasnell/status/1245410283582918657">no admite la priorización</a>.
 
 ### ¿Hasta pronto server push?
 

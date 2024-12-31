@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Jamstack
 description: Jamstack chapter of the 2022 Web Almanac covers quantifying Jamstack sites, the growth of Jamstack, Jamstack-y frameworks and hosting.
+hero_alt: Hero image of the Web Almanac characters using a large gas cylinder with script markings on the front to inflate a web page.
 authors: [seldo, whitep4nth3r]
 reviewers: [tunetheweb]
 analysts: [seldo, tunetheweb]
@@ -67,7 +68,7 @@ So we decided to ignore frameworks as part of the definition this time around, a
 
 The only feature common to all three definitions of Jamstack was _performance_. But "fast" is kind of a fuzzy word when it comes to websites: if you've spent any time reading the Web Almanac, you'll know there are dozens of metrics you can use to measure the performance of a website, and lots of good arguments for all of them.
 
-So we thought hard about what a Jamstack site feels like. First was that a Jamstack site renders its initial content very quickly. Of all the metrics we could use, we decided the one that most clearly captured that idea was <a hreflang="en" href="https://web.dev/lcp/">Largest Contentful Paint</a>, or LCP. This is a measure of the time it takes for the largest item on the page to render. You can pull in extra content via APIs, or not, and still be Jamstack, but you have to render something substantial quickly.
+So we thought hard about what a Jamstack site feels like. First was that a Jamstack site renders its initial content very quickly. Of all the metrics we could use, we decided the one that most clearly captured that idea was <a hreflang="en" href="https://web.dev/articles/lcp">Largest Contentful Paint</a>, or LCP. This is a measure of the time it takes for the largest item on the page to render. You can pull in extra content via APIs, or not, and still be Jamstack, but you have to render something substantial quickly.
 
 ## Defining the metrics
 
@@ -75,17 +76,17 @@ If you are not interested in the nuts and bolts of how we picked a precise defin
 
 We knew we wanted to measure: sites that load most of their content very quickly, and can be cached. After a lot of experimentation with different ways of measuring these things, we came up with some specific metrics.
 
-**Largest Contentful Paint (LCP)**: we got the distribution of all LCP times across all pages, picked the median of real-world user data from the <a hreflang="en" href="https://developer.chrome.com/docs/crux/">Chrome UX Report</a>, and decided that any site equal or less to the median counted as "loaded most content quickly". This was 2.4 seconds on mobile devices, and 2.0 seconds on desktop devices.
+**Largest Contentful Paint (LCP)**: we got the distribution of all LCP times across all pages, picked the median of real-world user data from the <a hreflang="en" href="https://developer.chrome.com/docs/crux">Chrome UX Report</a>, and decided that any site equal or less to the median counted as "loaded most content quickly". This was 2.4 seconds on mobile devices, and 2.0 seconds on desktop devices.
 
-**Cumulative Layout Shift (CLS)**: we wanted to avoid sites that very quickly load a skeleton but then take a long time to load real content. The closest we could get to that is the <a hreflang="en" href="https://web.dev/cls/">Cumulative Layout Shift</a>, a measure of how much the page layout jumps around while loading. While there are ways to "game" CLS, we still believe it's a reasonable proxy for what we’re trying to measure. We liked this measure because we felt that a "jumpy" site also felt less "Jamstack-y", a word we were going to end up using a lot. Again, we picked the median of Chrome UX Report data.
+**Cumulative Layout Shift (CLS)**: we wanted to avoid sites that very quickly load a skeleton but then take a long time to load real content. The closest we could get to that is the <a hreflang="en" href="https://web.dev/articles/cls">Cumulative Layout Shift</a>, a measure of how much the page layout jumps around while loading. While there are ways to "game" CLS, we still believe it's a reasonable proxy for what we're trying to measure. We liked this measure because we felt that a "jumpy" site also felt less "Jamstack-y", a word we were going to end up using a lot. Again, we picked the median of Chrome UX Report data.
 
 <p class="note">Chrome UX report data rounds CLS data to the nearest 0.05, which is a shame, because the "real" median seems to be around 0.02-0.03, so on mobile it rounds down to zero and on desktop it rounds up to 0.05. Since 0 excludes huge numbers of pages, we decided to use 0.05 as the best available threshold for both mobile and desktop.</a>
 
 **Caching**: this was particularly tricky to quantify, since most home pages, even on Jamstack sites, request revalidation even if they are in practice cached for a long time. We went with a combination of HTTP Headers including `Age`, `Cache-Control`, and `Expires` that we found were common in pages that could be cached for a long time.
 
-We initially thought we'd need another measure to exclude "tiny" sites – sites that load very quickly because they are just a "coming soon" or "Hello world" page that nobody would visit in real life – but the HTTP Archive data is defined by their <a hreflang="en" href="https://developer.chrome.com/docs/crux/methodology/#popularity-eligibility">popularity according to Chrome</a> user visits, and very few of those sites are visited enough to make it into the sample (although example.com is in there!).
+We initially thought we'd need another measure to exclude "tiny" sites – sites that load very quickly because they are just a "coming soon" or "Hello world" page that nobody would visit in real life – but the HTTP Archive data is defined by their <a hreflang="en" href="https://developer.chrome.com/docs/crux/methodology#popularity-eligibility">popularity according to Chrome</a> user visits, and very few of those sites are visited enough to make it into the sample (although example.com is in there!).
 
-A good question is: why not use <a hreflang="en" href="https://web.dev/vitals/">Core Web Vitals</a> (CWV) numbers for these metrics? For LCP, our numbers are nearly the same as CWV. For CLS, the CWV team explicitly <a hreflang="en" href="https://web.dev/defining-core-web-vitals-thresholds/#achievability-3">relaxed the requirements</a> (their threshold is more than double the median) which we thought was not representative of a Jamstack experience. So we decided it was fairer to pick the median for both. And CWV does not have a metric for"cacheability".
+A good question is: why not use <a hreflang="en" href="https://web.dev/articles/vitals">Core Web Vitals</a> (CWV) numbers for these metrics? For LCP, our numbers are nearly the same as CWV. For CLS, the CWV team explicitly <a hreflang="en" href="https://web.dev/defining-core-web-vitals-thresholds/#achievability-3">relaxed the requirements</a> (their threshold is more than double the median) which we thought was not representative of a Jamstack experience. So we decided it was fairer to pick the median for both. And CWV does not have a metric for"cacheability".
 
 ## "Jamstack-y": a disclaimer
 

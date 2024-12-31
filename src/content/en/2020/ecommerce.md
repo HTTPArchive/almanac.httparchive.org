@@ -2,12 +2,13 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Ecommerce
 description: Ecommerce chapter of the 2020 Web Almanac covering ecommerce platforms, payloads, images, third-parties, performance, SEO, and PWAs.
+hero_alt: Hero image of a Web Almanac character at a super market checkout loading items from a shopping basket onto the conveyor belt while another character payes with a credit card.
 authors: [rockeynebhwani, jrharalson]
 reviewers: [alankent]
 analysts: [jrharalson, rockeynebhwani]
 editors: [tunetheweb]
 translators: []
-rockeynebhwani_bio: Rockey Nebhwani is an independent consultant who has worked in retail and ecommerce since 2001 and has extensive experience in the industry working with retailers like Amazon, Wal-Mart, Tesco, M&S, Safeway etc. across US and UK. Rockey is an occasional speaker at ecommerce events and also tweets at <a href="https://twitter.com/rnebhwani">@rnebhwani</a>.
+rockeynebhwani_bio: Rockey Nebhwani is an independent consultant who has worked in retail and ecommerce since 2001 and has extensive experience in the industry working with retailers like Amazon, Wal-Mart, Tesco, M&S, Safeway etc. across US and UK. Rockey is an occasional speaker at ecommerce events and also tweets at <a href="https://x.com/rnebhwani">@rnebhwani</a>.
 #jrharalson_bio: TODO
 discuss: 2052
 results: https://docs.google.com/spreadsheets/d/1Hvsh_ZBKg2vWhouJ8vIzLmp0nLIMzrT2mr6RQbIkxqY/
@@ -46,7 +47,7 @@ This change in methodology provides enhanced coverage for enterprise platforms a
 
 Our methodology has the following limitations:
 - Headless ecommerce platforms like <a hreflang="en" href="https://commercetools.com/">commercetools</a> may not get detected as ecommerce platform but if we are able to detect presence of cart on such sites, we will still include sites using such platforms in our overall coverage stats.
-- Technologies which are typically deployed outside homepages (e.g. WebAR on product detail pages) are not detected.
+- Technologies which are typically deployed outside home pages (e.g. WebAR on product detail pages) are not detected.
 - Due to our crawl originating from US, there may be some bias towards US specific platforms. For example, if a global business has ecommerce sites built on different platforms for different countries (using country specific domains/sub-domains), it may not show these regional differences in our analysis.
 - It's common for B2B sites to hide the cart functionality behind a login and due to that this study is not a correct representation of B2B market.
 
@@ -101,7 +102,7 @@ Lastly, Oracle Commerce Cloud unfortunately lost a bit of traction between 2019 
 
 {{ figure_markup(
   image="enterprise-ecommerce-platforms-2019.png",
-  caption="Enterprise ecommerce platforms - 2019 desktop",
+  caption="Enterprise ecommerce platforms - 2019 desktop.",
   description="A pie chart showing Salesforce Commerce Cloud was used by 33.2% of the enterprise ecommerce market in 2019, HCL WebSphere Commerce by 28.4%, SAP Commerce Cloud by 24.8%, and Oracle Commerce Cloud by 13.7%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ65OxpVGpTJVuFhG6EIO55Z_itqFtGnoYLm7W7SEBaRL-YGDUJsBMVrlDjLa-fNdeyNdqXxJt4a-xc/pubchart?oid=1864431795&format=interactive",
   sheets_gid="1789086753",
@@ -110,7 +111,7 @@ Lastly, Oracle Commerce Cloud unfortunately lost a bit of traction between 2019 
 
 {{ figure_markup(
   image="enterprise-ecommerce-platforms-2020.png",
-  caption="Enterprise ecommerce platforms - 2020 desktop",
+  caption="Enterprise ecommerce platforms - 2020 desktop.",
   description="A pie chart showing Salesforce Commerce Cloud was used by 36.8% of the enterprise ecommerce market in 2020, HCL WebSphere Commerce by 27.9%, SAP Commerce Cloud by 25.4%, and Oracle Commerce Cloud by 9.8%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ65OxpVGpTJVuFhG6EIO55Z_itqFtGnoYLm7W7SEBaRL-YGDUJsBMVrlDjLa-fNdeyNdqXxJt4a-xc/pubchart?oid=1013485197&format=interactive",
   sheets_gid="1789086753",
@@ -125,7 +126,7 @@ COVID-19 has had a huge impact on the world and necessitated an even bigger move
 
 {{ figure_markup(
   image="ecommerce-vendor-growth-covid-19-impact.png",
-  caption="Ecommerce platform growth Covid-19 impact",
+  caption="Ecommerce platform growth Covid-19 impact.",
   description="A line chart showing the growth of five popular ecommerce platforms: WooCommerce, Shopify, Wix, Magento, and PrestaShop. WooCommerce shows a steady growth with a noticeable bump in February 2020 and again in June and July. Shopify shows similar but for a smaller percentage and the other three show less of such an impact.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ65OxpVGpTJVuFhG6EIO55Z_itqFtGnoYLm7W7SEBaRL-YGDUJsBMVrlDjLa-fNdeyNdqXxJt4a-xc/pubchart?oid=1475961371&format=interactive",
   sheets_gid="535254570",
@@ -192,7 +193,7 @@ Video, despite accounting for a small number of requests, is by far largest reso
 
 {{ figure_markup(
   image="distribution-of-html-bytes-per-ecommerce-page.png",
-  caption="Distribution of HTML bytes per ecommerce page",
+  caption="Distribution of HTML bytes per ecommerce page.",
   description="A bar chart showing the number of HTML kilobytes, with the 10th percentile having 12 KB on desktop and 13 KB on mobile, the 25th percentile having 20 and 21 respectively, 50th having 35 and 36, 75th having 76 and 74, and 90th percentile having 133 KB on desktop and 134 KB on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ65OxpVGpTJVuFhG6EIO55Z_itqFtGnoYLm7W7SEBaRL-YGDUJsBMVrlDjLa-fNdeyNdqXxJt4a-xc/pubchart?oid=1956748774&format=interactive",
   sheets_gid="1032303587",
@@ -209,7 +210,7 @@ Next, let's look at how images are used on ecommerce sites. Note that because ou
 
 {{ figure_markup(
   image="distribution-of-image-requests-for-ecommerce.png",
-  caption="Distribution of image requests for ecommerce",
+  caption="Distribution of image requests for ecommerce.",
   description="A bar chart showing the number of image requests, with the 10th percentile having 14 requests on desktop and 12 on mobile, the 25th percentile having 22 and 20 respectively, 50th having 37 and 34, 75th having 60 and 56, and 90th percentile having 101 requests on desktop and 91 on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ65OxpVGpTJVuFhG6EIO55Z_itqFtGnoYLm7W7SEBaRL-YGDUJsBMVrlDjLa-fNdeyNdqXxJt4a-xc/pubchart?oid=286315936&format=interactive",
   sheets_gid="898563708",
@@ -218,7 +219,7 @@ Next, let's look at how images are used on ecommerce sites. Note that because ou
 
 {{ figure_markup(
   image="distribution-of-image-bytes-for-ecommerce.png",
-  caption="Distribution of image bytes for ecommerce",
+  caption="Distribution of image bytes for ecommerce.",
   description="A bar chart showing the number of image kilobytes, with the 10th percentile having 242 KB on desktop and 189 KB on mobile, the 25th percentile having 546 and 486 respectively, 50th having 1,271 and 1,208, 75th having 2,835 and 2,737, and 90th percentile having 5,819 KB on desktop and 5,459 KB on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ65OxpVGpTJVuFhG6EIO55Z_itqFtGnoYLm7W7SEBaRL-YGDUJsBMVrlDjLa-fNdeyNdqXxJt4a-xc/pubchart?oid=416820889&format=interactive",
   sheets_gid="898563708",
@@ -227,13 +228,13 @@ Next, let's look at how images are used on ecommerce sites. Note that because ou
 
 The figures above show that the median ecommerce page has 34 images and an image payload of 1,208 KB on mobile, 37 images and 1,271 KB on desktop. 10% of home pages have 90 or more images and an image payload of nearly between 5.5 MB on mobile and 5.8MB on desktop.
 
-[Compared to 2019](../2019/ecommerce#image-stats), both median image requests and median image payloads have seen a drop. Median image requests dropped by 3 for both mobile and desktop. Median image payload also dropped by approximately 200kb-250kb across mobile and desktop. This drop may be driven by sites adopting lazy loading techniques such as usage of the `loading="lazy"` attribute which is now <a hreflang="en" href="https://caniuse.com/loading-lazy-attr">supported by more and more browsers</a>. This year's [Markup](./markup#data--attributes) chapter makes an observation usage for native lazy loading appears to be on the increase and around 3.86% of the pages use this in Aug-2020 and this has been on constant rise (as seen in [this tweet](https://twitter.com/rick_viscomi/status/1344380340153016321?s=20)).
+[Compared to 2019](../2019/ecommerce#image-stats), both median image requests and median image payloads have seen a drop. Median image requests dropped by 3 for both mobile and desktop. Median image payload also dropped by approximately 200kb-250kb across mobile and desktop. This drop may be driven by sites adopting lazy loading techniques such as usage of the `loading="lazy"` attribute which is now <a hreflang="en" href="https://caniuse.com/loading-lazy-attr">supported by more and more browsers</a>. This year's [Markup](./markup#data--attributes) chapter makes an observation usage for native lazy loading appears to be on the increase and around 3.86% of the pages use this in Aug-2020 and this has been on constant rise (as seen in [this tweet](https://x.com/rick_viscomi/status/1344380340153016321?s=20)).
 
 #### Popular image formats
 
 {{ figure_markup(
   image="popular-image-formats-on-ecommerce-sites.png",
-  caption="Popular image formats on ecommerce sites",
+  caption="Popular image formats on ecommerce sites.",
   description="A bar chart showing image formats in descending order of popularity with mobile numbers showing jpg at 50.19%, png on 26.54%, gif at 17.35%, svg at 2.61%, webp at 1.17% and no format at 0.07%. Desktop usage looks to be near identical.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ65OxpVGpTJVuFhG6EIO55Z_itqFtGnoYLm7W7SEBaRL-YGDUJsBMVrlDjLa-fNdeyNdqXxJt4a-xc/pubchart?oid=753462591&format=interactive",
   sheets_gid="943479146",
@@ -242,7 +243,7 @@ The figures above show that the median ecommerce page has 34 images and an image
 
 <p class="note">Note that some image services or CDNs will automatically deliver WebP (rather than JPEG or PNG) to platforms that support WebP, even for a URL with a <code>.jpg</code> or <code>.png</code> suffix. For example, <code>IMG_20190113_113201.jpg</code> returns a WebP image in Chrome. However, the way HTTP Archive detects image formats is to check for keywords in the MIME type first, then fall back to the file extension. This means that the format for images with URLs such as the above will be given as WebP, since WebP is supported by HTTP Archive as a user agent.</p>
 
-PNG usage remained roughly at the [same level as 2019](../2019/ecommerce#png) (at 27% for both desktop and mobile). We observed drop in JPEG usage (4% for desktop and 6% for mobile). Out of this drop, most of it went towards increased GIF usage. GIFs are quite common on ecommerce homepages whereas GIFs may not be much used on product detail pages. Since our methodology only looks at homepages, this explains the significantly high usage of GIFs across ecommerce sites. Lighthouse has an audit which recommends using "video formats for animated content". This is a technique ecommerce sites can use to optimize for performance but still retain animation properties of GIFs. See <a hreflang="en" href="https://web.dev/replace-gifs-with-videos/">this article</a> for more details.
+PNG usage remained roughly at the [same level as 2019](../2019/ecommerce#png) (at 27% for both desktop and mobile). We observed drop in JPEG usage (4% for desktop and 6% for mobile). Out of this drop, most of it went towards increased GIF usage. GIFs are quite common on ecommerce home pages whereas GIFs may not be much used on product detail pages. Since our methodology only looks at home pages, this explains the significantly high usage of GIFs across ecommerce sites. Lighthouse has an audit which recommends using "video formats for animated content". This is a technique ecommerce sites can use to optimize for performance but still retain animation properties of GIFs. See <a hreflang="en" href="https://web.dev/replace-gifs-with-videos/">this article</a> for more details.
 
 WebP usage across ecommerce sites still remains very low though usage doubled and went from a total of 1% usage in 2019 to 2% usage in 2020. WebP format is now nearly 10 years old and even after allowing for progressive enhancement using the `picture` element, usage has remained low. In 2020, WebP got a new lease of life when Safari introduced support in <a hreflang="en" href="https://caniuse.com/webp">Safari 14</a>. However, the Web Almanac for this year is based on August 2020 and Safari support came in September 2020 so any stats presented here don't reflect the impact of support added by Safari.
 
@@ -258,7 +259,7 @@ Ecommerce platforms and sites often make use of [third-party](./third-party) con
 
 {{ figure_markup(
   image="distribution-of-third-party-requests.png",
-  caption="Distribution of third-party requests",
+  caption="Distribution of third-party requests.",
   description="A bar chart showing the number of third-party requests for ecommerce sites, with the 10th percentile having 8 requests on desktop and 7 on mobile, the 25th percentile having 16 and 15 respectively, 50th having 32 and 30, 75th having 60 and 58, and 90th percentile having 103 third-party requests on desktop and 98 on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ65OxpVGpTJVuFhG6EIO55Z_itqFtGnoYLm7W7SEBaRL-YGDUJsBMVrlDjLa-fNdeyNdqXxJt4a-xc/pubchart?oid=1577985571&format=interactive",
   sheets_gid="1199548164",
@@ -267,7 +268,7 @@ Ecommerce platforms and sites often make use of [third-party](./third-party) con
 
 {{ figure_markup(
   image="distribution-of-third-party-bytes.png",
-  caption="Distribution of third-party bytes",
+  caption="Distribution of third-party bytes.",
   description="A bar chart showing the number of third-party kilobytes for ecommerce sites, with the 10th percentile having 88 KB on desktop and 67 KB on mobile, the 25th percentile having 242 and 208 respectively, 50th having 547 and 489, 75th having 1,179 and 1,098, and 90th percentile having 2,367 KB on desktop and 2,155 KB on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ65OxpVGpTJVuFhG6EIO55Z_itqFtGnoYLm7W7SEBaRL-YGDUJsBMVrlDjLa-fNdeyNdqXxJt4a-xc/pubchart?oid=1165664044&format=interactive",
   sheets_gid="1199548164",
@@ -278,7 +279,7 @@ We see a significant increase in the use of third-party requests and bytes [comp
 
 ## Ecommerce user experience
 
-Ecommerce is all about converting customers and in order to do that a fast performing website is paramount. In this section, we try to shed light on real-world user experience of ecommerce websites. To achieve this, we turn our analysis towards some user-perceived performance metrics, which are captured in the three <a hreflang="en" href="https://web.dev/vitals/">Core Web Vitals</a> metrics.
+Ecommerce is all about converting customers and in order to do that a fast performing website is paramount. In this section, we try to shed light on real-world user experience of ecommerce websites. To achieve this, we turn our analysis towards some user-perceived performance metrics, which are captured in the three <a hreflang="en" href="https://web.dev/articles/vitals">Core Web Vitals</a> metrics.
 
 ### Chrome User Experience Report
 
@@ -300,7 +301,7 @@ In the context of ecommerce, this metric provides very good indication of most u
 
 {{ figure_markup(
   image="ecommerce-real-user-largest-contentful-paint-experiences.png",
-  caption="Real-user Largest Contentful Paint experiences",
+  caption="Real-user Largest Contentful Paint experiences.",
   description="A bar chart showing the number of sites with a good LCP score for the top 5 most popular ecommerce platforms. WooCommerce has 21.73% for desktop and 14.27% for mobile, Shopify has 64% and 47.47% respectively, Magento has 39.45% and 28.17%, Wix has 7.46% and 7.40%, and PrestaShop has 53.03% on desktop and 38.08% on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ65OxpVGpTJVuFhG6EIO55Z_itqFtGnoYLm7W7SEBaRL-YGDUJsBMVrlDjLa-fNdeyNdqXxJt4a-xc/pubchart?oid=1881724605&format=interactive",
   sheets_gid="768760354",
@@ -315,7 +316,7 @@ First Input Delay (FID) attempts to measure interactivity, or more importantly a
 
 {{ figure_markup(
   image="ecommerce-real-user-first-input-delay-experiences.png",
-  caption="Real-user First Input Delay experiences",
+  caption="Real-user First Input Delay experiences.",
   description="A bar chart showing the number of sites with a good LCP score for the top 5 most popular ecommerce platforms. WooCommerce has 99.95% for desktop and 92.36% for mobile, Shopify has 99.96% and 96.49% respectively, Magento has 99.99% and 89.02%, Wix has 88.30% and 37.95%, and PrestaShop has 99.93% on desktop and 92.96% on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ65OxpVGpTJVuFhG6EIO55Z_itqFtGnoYLm7W7SEBaRL-YGDUJsBMVrlDjLa-fNdeyNdqXxJt4a-xc/pubchart?oid=490091603&format=interactive",
   sheets_gid="768760354",
@@ -330,7 +331,7 @@ Cumulative Layout Shift (CLS) measures how much the page "jumps about" as new co
 
 {{ figure_markup(
   image="ecommerce-real-user-cumulative-layout-shift-experiences.png",
-  caption="Real-user Cumulative Layout Shift experiences",
+  caption="Real-user Cumulative Layout Shift experiences.",
   description="A bar chart showing the number of sites with a good LCP score for the top 5 most popular ecommerce platforms. WooCommerce has 37.98% for desktop and 51.40% for mobile, Shopify has 40.72% and 40.55% respectively, Magento has 38.11% and 38.28%, Wix has 58.15% and 57.47%, and PrestaShop has 51.56% on desktop and 49.83% on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ65OxpVGpTJVuFhG6EIO55Z_itqFtGnoYLm7W7SEBaRL-YGDUJsBMVrlDjLa-fNdeyNdqXxJt4a-xc/pubchart?oid=1137826141&format=interactive",
   sheets_gid="768760354",
@@ -345,7 +346,7 @@ Looking at Core Web Vitals overall, for which sites pass all three core metrics 
 
 {{ figure_markup(
   image="ecommerce-real-user-core-web-vitals-exeriences.png",
-  caption="Real-user Core Web Vitals experiences",
+  caption="Real-user Core Web Vitals experiences.",
   description="A bar chart showing the number of sites with a good LCP score for the top 5 most popular ecommerce platforms. WooCommerce has 10.72% for desktop and 8.63% for mobile, Shopify has 28.78% and 21.24% respectively, Magento has 18.33% and 11.14%, Wix has 5.23% and 3.30%, and PrestaShop has 30.43% on desktop and 19.10% on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ65OxpVGpTJVuFhG6EIO55Z_itqFtGnoYLm7W7SEBaRL-YGDUJsBMVrlDjLa-fNdeyNdqXxJt4a-xc/pubchart?oid=733851599&format=interactive",
   sheets_gid="768760354",
@@ -362,7 +363,7 @@ How are ecommerce sites using common tools like Analytics, Tag Managers, Consent
 
 {{ figure_markup(
   image="top-analytics-solutions-on-ecommerce-sites.png",
-  caption="Top analytics solutions on ecommerce sites",
+  caption="Top analytics solutions on ecommerce sites.",
   description="A bar chart showing the top Analytics providers for ecommerce platforms in descending order. For mobile Google Analytics has 77% usage, GA Enhanced eCommerce has 22%, Hotjar has 6%, New Relic has 4%, TrackJs has 3%, Yandex.Metrika has 3%, Matomo Analytics has 2%, BugSnag has 2%, Liveinternet has 2%, comScore has 1%, and Quantcast Measure has 1%. Desktop usage looks near identical.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ65OxpVGpTJVuFhG6EIO55Z_itqFtGnoYLm7W7SEBaRL-YGDUJsBMVrlDjLa-fNdeyNdqXxJt4a-xc/pubchart?oid=431305389&format=interactive",
   sheets_gid="618573782",
@@ -444,7 +445,7 @@ This year's [Privacy](./privacy) chapter covered the adoption of Consent Managem
 
 {{ figure_markup(
   image="ecommerce-consent-management-platform-adoption.png",
-  caption="Consent Management Platform adoption",
+  caption="Consent Management Platform adoption.",
   description="A bar chart showing that 4.4% of all desktop websites and 4.0% of mobile sites use a Consent Management Platform, compared to 4.6% and 4.2% respectively for ecommerce sites. So ecommerce sites have slightly higher usage of CMPs.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ65OxpVGpTJVuFhG6EIO55Z_itqFtGnoYLm7W7SEBaRL-YGDUJsBMVrlDjLa-fNdeyNdqXxJt4a-xc/pubchart?oid=285357141&format=interactive",
   sheets_gid="1374272999",
@@ -486,7 +487,7 @@ PJ Mclachlan (Product Manager, Google) has talked about <a hreflang="en" href="h
 
 {{ figure_markup(
   image="web-push-notification-acceptance-rates.png",
-  caption="Web Push Notification acceptance rates",
+  caption="Web Push Notification acceptance rates.",
   description="A bar chart showing the percentage acceptance rates of Web Push Notifications, with the 10th percentile having 4% on mobile, the 25th percentile having 9%, 50th having 14%, 75th having 20%, and 90th percentile having 37%, and the 100th percentile having 89% acceptance rates. Desktop acceptance rates look near identical.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ65OxpVGpTJVuFhG6EIO55Z_itqFtGnoYLm7W7SEBaRL-YGDUJsBMVrlDjLa-fNdeyNdqXxJt4a-xc/pubchart?oid=1062364223&format=interactive",
   sheets_gid="2129008669",
@@ -499,7 +500,7 @@ It will also be interesting to look at adoption of native apps by ecommerce site
 
 This year's [SEO](./seo) chapter includes analysis of websites using `hreflang` and `lang` attributes, and `content-language` HTTP header. This combined with Wappalyzer detection of cross-border commerce solutions like Global-e, Flow, Borderfree can provide opportunity to just look at Cross border commerce aspects of the ecommerce websites. Currently Wappalyzer doesn't have a separate category for 'Cross-border commerce' and hence this type of analysis is not possible unless we build a repository of such solutions ourselves.
 
-Wappalyzer also provides detection of payment solutions (Apple Pay / PayPal / ShopPay etc.) but based on the types of implementation and solution, it's not always possible to detect this just by looking at homepage but for solutions where detection can be done by just looking at homepage, such an analysis can be useful to look at year of year trends.
+Wappalyzer also provides detection of payment solutions (Apple Pay / PayPal / ShopPay etc.) but based on the types of implementation and solution, it's not always possible to detect this just by looking at home page but for solutions where detection can be done by just looking at home page, such an analysis can be useful to look at year of year trends.
 
 ## Conclusion
 
@@ -507,4 +508,4 @@ Covid-19 massively accelerated the growth of ecommerce in 2020 and lot of smalle
 
 Improving core web vitals score will be a priority for ecommerce businesses due to changes announced by Google and marketing teams using Web Push Notifications should keep an eye on their notifications stats using CRUX to not get caught by upcoming abusing notifications changes. Tag Managers still seem to cause a lot of friction between marketing and engineering teams and solutions like Google Tag Manager server side tagging will make some inroads but we don't expect a lot to change in 2021 and this will be more like 3-5 years journey but community need to ask their respective third parties to provide compatible solutions to further evolve this ecosystem.
 
-While remembering the limitation that we are looking only homepage data for this analysis, we would like to hear from community what else we should cover in next year's analysis. We have covered some possibilities of further analysis in section above and <a hreflang="en" href="https://discuss.httparchive.org/t/2052">any feedback is greatly appreciated</a>.
+While remembering the limitation that we are looking only home page data for this analysis, we would like to hear from community what else we should cover in next year's analysis. We have covered some possibilities of further analysis in section above and <a hreflang="en" href="https://discuss.httparchive.org/t/2052">any feedback is greatly appreciated</a>.

@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: CSS
 description: Capítulo CSS del 2019 Web Almanac que cubre el color, las unidades, los selectores, el diseño, la tipografía y las fuentes, el espaciado, la decoración, la animación y las consultas de medios.
+hero_alt: Hero image of Web Almanac characters measuring and painting a web page.
 authors: [una, argyleink]
 reviewers: [meyerweb, huijing]
 analysts: [rviscomi]
@@ -9,8 +10,8 @@ editors: [rachellcostello]
 translators: [c-torres]
 discuss: 1757
 results: https://docs.google.com/spreadsheets/d/1uFlkuSRetjBNEhGKWpkrXo4eEIsgYelxY-qR9Pd7QpM/
-una_bio: <i lang="en">Una Kravets is a Brooklyn-based international public speaker, technical writer, and Developer Advocate for Material Design at Google. Una hosts the <a hreflang="en" href="https://www.youtube.com/watch?v=YK8GZBx3hpg">Designing the Browser</a> web series and the <a hreflang="en" href="https://spec.fm/podcasts/toolsday">Toolsday</a> developer podcast. Follow her on <a href="https://twitter.com/una">Twitter</a> to find her musings on creative CSS, user experiences, and web development best practices.</i>
-argyleink_bio: <i lang="en">Adam Argyle is a Google Chrome developer relations member focused on CSS; He's a web addict with an insatiable lust for great UX & UI; Find him on the web <a href="https://twitter.com/argyleink">@argyleink</a> or checkout his website <a hreflang="en" href="https://nerdy.dev">https://nerdy.dev</a>.</i>
+una_bio: <i lang="en">Una Kravets is a Brooklyn-based international public speaker, technical writer, and Developer Advocate for Material Design at Google. Una hosts the <a hreflang="en" href="https://www.youtube.com/watch?v=YK8GZBx3hpg">Designing the Browser</a> web series and the <a hreflang="en" href="https://spec.fm/podcasts/toolsday">Toolsday</a> developer podcast. Follow her on <a href="https://x.com/una">Twitter</a> to find her musings on creative CSS, user experiences, and web development best practices.</i>
+argyleink_bio: <i lang="en">Adam Argyle is a Google Chrome developer relations member focused on CSS; He's a web addict with an insatiable lust for great UX & UI; Find him on the web <a href="https://x.com/argyleink">@argyleink</a> or checkout his website <a hreflang="en" href="https://nerdy.dev">https://nerdy.dev</a>.</i>
 featured_quote: Las Hojas de Estilo en Cascada (CSS por sus siglas en inglés) se utilizan para pintar, formatear y diseñar páginas web. Sus capacidades abarcan conceptos tan simples como el color del texto hasta perspectiva 3D. También tiene ganchos para permitir a los desarrolladores manejar diferentes tamaños de pantalla, contextos de visualización e impresión. CSS ayuda a los desarrolladores a lidiar con el contenido y a asegurarse de que se adapte correctamente al usuario.
 featured_stat_1: 5%
 featured_stat_label_1: Páginas que utilizan custom properties
@@ -736,4 +737,4 @@ Un seguimiento interesante de esto es que hay más uso de `@supports` que de `@i
 ¿Qué resultados le parecieron más alarmantes?
 ¿Qué resultados te llevan a tu base de código para una consulta rápida?
 
-Consideramos que la conclusión más importante de estos resultados es que las propiedades personalizadas ofrecen el máximo rendimiento en términos de rendimiento, _DRYness_ y escalabilidad de sus hojas de estilo. Esperamos analizar las hojas de estilo de Internet nuevamente, en busca de nuevos datos y tentativas cartas. Comuníquese con [@una](https://twitter.com/una) o [@argyleink](https://twitter.com/argyleink) en los comentarios con sus consultas, preguntas y afirmaciones. ¡Nos encantaría escucharlos!
+Consideramos que la conclusión más importante de estos resultados es que las propiedades personalizadas ofrecen el máximo rendimiento en términos de rendimiento, _DRYness_ y escalabilidad de sus hojas de estilo. Esperamos analizar las hojas de estilo de Internet nuevamente, en busca de nuevos datos y tentativas cartas. Comuníquese con [@una](https://x.com/una) o [@argyleink](https://x.com/argyleink) en los comentarios con sus consultas, preguntas y afirmaciones. ¡Nos encantaría escucharlos!

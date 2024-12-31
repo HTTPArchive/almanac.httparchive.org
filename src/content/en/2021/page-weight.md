@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Page Weight
 description: Page Weight chapter of the 2021 Web Almanac covering why page weight matters, bandwidth, complex pages, page weight over time, page requests, and file formats.
+hero_alt: Hero image of Web Almanac characters using a set of scales to weigh a web page against variuos boxes labelled with various different kilobytes.
 authors: [logicalphase]
 reviewers: [siakaramalegos, RMHolmlund]
 analysts: [jessthebp]
@@ -80,7 +81,7 @@ Static files reside by themselves and are used as resources to help build out an
 
 Image formats like PNG and JPEG are widely supported by all browsers. More recent image formats, such as WebP and AVIF offer higher quality with smaller file sizes have gained popularity. WebP is supported by most modern browsers, while AVIF is newer and less supported. With the `<picture>` tag, you can use modern image formats while providing JPEG and PNG fallbacks. Make sure your images are optimized for the web-the [Media](./media) chapter covers this in much more detail. Failing to properly size and compress images for your site will exact a high price on performance.
 
-<p class="note">**Note**: If you need an online service that will optimize and allow you to compare different image sizes formats, there is no better source I've found than Google's <a hreflang="en" href="https://squoosh.app/">Squoosh</a> application. Similarly, [Jake Archibald](https://twitter.com/jaffathecake)'s <a hreflang="en" href="https://jakearchibald.github.io/svgomg/">SVGOMG</a> is great for optimizing SVG's.</p>
+<p class="note">**Note**: If you need an online service that will optimize and allow you to compare different image sizes formats, there is no better source I've found than Google's <a hreflang="en" href="https://squoosh.app/">Squoosh</a> application. Similarly, [Jake Archibald](https://x.com/jaffathecake)'s <a hreflang="en" href="https://jakearchibald.github.io/svgomg/">SVGOMG</a> is great for optimizing SVG's.</p>
 
 #### A word about the proliferation in the use of JavaScript
 

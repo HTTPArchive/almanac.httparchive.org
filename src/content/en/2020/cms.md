@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: CMS
 description: CMS chapter of the 2020 Web Almanac covering CMS adoption, how CMS suites are built, User experience of CMS powered websites, and CMS innovation.
+hero_alt: Hero image of Web Almanac characters on a type writer writing a web page.
 authors: [alexdenning]
 reviewers: [sirjonathan, ernee, amedina]
 analysts: [GregBrimble, rviscomi]
@@ -278,7 +279,7 @@ The 0.1 to 1% adoption share category sees significantly more movement. These ac
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Relative % adoption of smaller CMSs (0.1% - 1% adoption share)", sheets_gid="1594044364", sql_file="top_cmss_yoy_all_clients.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Relative % adoption of smaller CMSs (0.1% - 1% adoption share).", sheets_gid="1594044364", sql_file="top_cmss_yoy_all_clients.sql") }}</figcaption>
 </figure>
 
 We see three new entrants here: Duda, GoDaddy Website Builder, and MyWebsite. Two, Tilda and Kentico CMS, have seen an adoption share change of over 100% in the last year. This "long tail" of CMSs cover a mix of open source and proprietary platforms and include everything from consumer-friendly to industry-specific. An incredible strength of the CMS platforms as a whole is one can get specialized software which powers every conceivable type of website.
@@ -357,7 +358,7 @@ A "good" LCP is regarded as under 2.5 seconds. The average website on one of the
   )
 }}
 
-Even though we'd love to see CMSs performing much better here, there are still some positive takeaways from these results. For one, the fact that 61% of Drupal websites have good LCP is especially notable because it's much better than the global distribution of 48% of websites having good LCP, according to the [Chrome UX Report](https://twitter.com/ChromeUXReport/status/1293306510509039616). For 1 in 3 or 4 WordPress websites to have good LCP is also kind of amazing, given the sheer magnitude of the number of WordPress websites. Wix does have some catching up to do, but it's encouraging to see that Wix engineers are [actively](https://twitter.com/DanShappir/status/1308043752712343552) working on fixing performance issues, so this will be something to keep an eye on over the years.
+Even though we'd love to see CMSs performing much better here, there are still some positive takeaways from these results. For one, the fact that 61% of Drupal websites have good LCP is especially notable because it's much better than the global distribution of 48% of websites having good LCP, according to the [Chrome UX Report](https://x.com/ChromeUXReport/status/1293306510509039616). For 1 in 3 or 4 WordPress websites to have good LCP is also kind of amazing, given the sheer magnitude of the number of WordPress websites. Wix does have some catching up to do, but it's encouraging to see that Wix engineers are [actively](https://x.com/DanShappir/status/1308043752712343552) working on fixing performance issues, so this will be something to keep an eye on over the years.
 
 #### First Input Delay
 

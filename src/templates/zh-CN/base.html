@@ -18,13 +18,19 @@
 {% block intro_title %}Web Almanac{% endblock %}
 {% block intro_sub_title %}HTTP Archive的年度报告<br> <b>网络状态</b>报告{% endblock %}
 
+{% block announcement_text %}
+<p lang="en">
+  Listen to a recording of our live stream for this year's edition on <a href="https://www.youtube.com/live/cdYR0ZmplIM">YouTube</a>! We'll be running another live stream with more of our authors in January 2025.
+</p>
+{% endblock %}
+
 {% block mission %}
 <p>
 我们的任务是将HTTP Archive的原始统计数据和趋势与web社区的专业知识结合起来。Web Almanac网络年鉴是一个关于网络状态的综合报告，由真实的数据和可信的网络专家支持。{{ year }}年版包括{{ supported_chapters | length }}个章节组成，涵盖了页面内容、用户体验、发布和分发的各个方面。
 </p>
 {% endblock %}
 
-{% block read_last_years_almanac %}阅读 {{ year | int - 1 }} Web Almanac{% endblock %}
+{% block read_last_years_almanac %}阅读 {{ previous_year }} Web Almanac{% endblock %}
 
 {% block http_archive_link %}HTTP Archive主页{% endblock %}
 
@@ -111,10 +117,14 @@
 {% block repliesAlt %}{% endblock %}
 {% block mentionsAlt %}{% endblock %}
 
-{% macro onTwitter(twitterHandle) %}@{{twitterHandle}} 在 Twitter{% endmacro %}
+{% macro onTwitter(twitterHandle) %}@{{twitterHandle}} 在 Twitter/X{% endmacro %}
+{% macro onMastodon(mastodonHandle) %}{{mastodonHandle}} 在 Mastodon{% endmacro %}
+{% macro onBluesky(blueskyHandle) %}{{blueskyHandle}} 在 Bluesky{% endmacro %}
 {% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} 在 GitHub{% endmacro %}
 {% macro onLinkedIn(authorName) %}{{authorName}} 在 LinkedIn{% endmacro %}
 {% macro website(authorName) %}{{authorName}} 网站{% endmacro %}
+
+{% block citation %}引用{% endblock %}
 
 {% macro edition(year) %}{{ year }} 版{% endmacro %}
 
@@ -124,14 +134,14 @@
 {% block rss_feed %}RSS Feed{% endblock %}
 
 {% block featured_chapter %}章节精选{% endblock %}
-{% block featured_chapter_last_year %}{{ year|int -1 }} Web Almanac<br>章节精选{% endblock %}
+{% block featured_chapter_last_year %}{{ previous_year }} Web Almanac<br>章节精选{% endblock %}
 
 {# Check if read_chapter already defined in child template as macros can't be overridden #}
 {% if not read_chapter %}
 {% macro read_chapter(chapter) %}阅读 <span class="featured-chapter-name">{{ chapter }}</span> 章节{% endmacro %}
 {% endif %}
 {% if not read_last_years_chapter %}
-{% macro read_last_years_chapter(chapter) %}阅读 {{ year|int -1 }} <span class="featured-chapter-name">{{ chapter }}</span> 章节{% endmacro %}
+{% macro read_last_years_chapter(chapter) %}阅读 {{ previous_year }} <span class="featured-chapter-name">{{ chapter }}</span> 章节{% endmacro %}
 {% endif %}
 
 {% block contributors_description %}
@@ -173,6 +183,7 @@
   set localizedChapterTitles = {
     "javascript": "JavaScript",
     "css": "CSS",
+    "cookies": "Cookies",
     "markup": "标记",
     "media": "媒体",
     "third-parties": "第三方",
@@ -212,6 +223,7 @@
   "developers": "开发者",
   "editors": "编辑",
   "leads": "领导者",
+  "committee": "组织委员会",
   "reviewers": "审稿者",
   "translators": "翻译者",
   }
@@ -225,6 +237,7 @@
   "developers": "开发者",
   "editors": "编辑",
   "leads": "领导者",
+  "committee": "组织委员会",
   "reviewers": "审稿者",
   "translators": "翻译者",
   }

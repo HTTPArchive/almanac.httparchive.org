@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Capabilities
 description: Capabilities chapter of the 2022 Web Almanac covering brand-new, powerful web platform APIs that give web apps access to hardware interfaces, enhance web-based productivity apps, and more.
+hero_alt: Hero image of Web Almanac characters with superhero capes plugging various capabilities into a web page.
 authors: [MichaelSolati]
 reviewers: [tomayac, christianliebel]
 analysts: [tunetheweb]
@@ -126,7 +127,7 @@ The Web Share API is available on modern versions of Chrome, Edge, and Safari. F
 
 The Web Share API shrunk in usage from 9.00% in 2021 to 8.84% in 2022 on desktop. On mobile, usage shrunk from 8.58% in 2021 to 8.36% in 2022. As a result, this year, the Web Share API was the second most used API on both desktop and mobile, falling behind the Async Clipboard API—last year's second most used API.
 
-On many sites, you can find the Web Share API in use. For example, social media platforms, documentation sites, and others use it as a great way to share content. Some examples where you can find the API in use include <a hreflang="en" href="https://web.dev/">web.dev</a> and [twitter.com](https://twitter.com/).
+On many sites, you can find the Web Share API in use. For example, social media platforms, documentation sites, and others use it as a great way to share content. Some examples where you can find the API in use include <a hreflang="en" href="https://web.dev/">web.dev</a> and [twitter.com](https://x.com/).
 
 {{ figure_markup(
   gif="Web-Share-API.gif",
@@ -379,7 +380,7 @@ Many features users expect to belong to platform-specific applications also exis
 
 Project Fugu comprises Microsoft, Intel, Samsung, Google, and many other groups and individuals.
 
-Check out <a hreflang="en" href="https://developer.chrome.com/blog/fugu-status/">this post</a> on the Chrome Developers blog to learn more about the Capabilities Project.
+Check out <a hreflang="en" href="https://developer.chrome.com/blog/fugu-status">this post</a> on the Chrome Developers blog to learn more about the Capabilities Project.
 
 ## Conclusion
 

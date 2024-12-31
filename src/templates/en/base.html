@@ -18,13 +18,19 @@
 {% block intro_title %}Web Almanac{% endblock %}
 {% block intro_sub_title %}HTTP Archive&#8217;s annual<br> <b>state of the web</b> report{% endblock %}
 
+{% block announcement_text %}
+<p lang="en">
+  Listen to a recording of our live stream for this year's edition on <a href="https://www.youtube.com/live/cdYR0ZmplIM">YouTube</a>! We'll be running another live stream with more of our authors in January 2025.
+</p>
+{% endblock %}
+
 {% block mission %}
 <p>
 Our mission is to combine the raw stats and trends of the HTTP Archive with the expertise of the web community. The Web Almanac is a comprehensive report on the state of the web, backed by real data and trusted web experts. The {{ year }} edition is comprised of {{ supported_chapters | length }} chapters spanning aspects of page content, user experience, publishing, and distribution.
 </p>
 {% endblock %}
 
-{% block read_last_years_almanac %}Read the {{ year | int - 1 }} Web Almanac{% endblock %}
+{% block read_last_years_almanac %}Read the {{ previous_year }} Web Almanac{% endblock %}
 
 {% block http_archive_link %}HTTP Archive home{% endblock %}
 
@@ -57,7 +63,7 @@ Our mission is to combine the raw stats and trends of the HTTP Archive with the 
 {% block open_the_index %}Open the Table of Contents{% endblock %}
 {% block close_the_index %}Close the Table of Contents{% endblock %}
 
-{% block and %}and{% endblock %}
+{% block and %} and {% endblock %}
 {% block comma %}, {% endblock %}
 {% block oxford_comma %}, {% endblock %}
 
@@ -111,10 +117,14 @@ Our mission is to combine the raw stats and trends of the HTTP Archive with the 
 {% block repliesAlt %}{% endblock %}
 {% block mentionsAlt %}{% endblock %}
 
-{% macro onTwitter(twitterHandle) %}@{{twitterHandle}} on Twitter{% endmacro %}
+{% macro onTwitter(twitterHandle) %}@{{twitterHandle}} on Twitter/X{% endmacro %}
+{% macro onMastodon(mastodonHandle) %}{{mastodonHandle}} on Mastodon{% endmacro %}
+{% macro onBluesky(blueskyHandle) %}{{blueskyHandle}} on BlueSky{% endmacro %}
 {% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} on GitHub{% endmacro %}
 {% macro onLinkedIn(authorName) %}{{authorName}} on LinkedIn{% endmacro %}
 {% macro website(authorName) %}{{authorName}} website{% endmacro %}
+
+{% block citation %}Citation{% endblock %}
 
 {% macro edition(year) %}{{ year }} Edition{% endmacro %}
 
@@ -124,14 +134,14 @@ Our mission is to combine the raw stats and trends of the HTTP Archive with the 
 {% block rss_feed %}RSS Feed{% endblock %}
 
 {% block featured_chapter %}Featured Chapter{% endblock %}
-{% block featured_chapter_last_year %}Featured Chapter<br>from the {{ year|int -1 }} Web Almanac{% endblock %}
+{% block featured_chapter_last_year %}Featured Chapter<br>from the {{ previous_year }} Web Almanac{% endblock %}
 
 {# Check if read_chapter already defined in child template as macros can't be overridden #}
 {% if not read_chapter %}
 {% macro read_chapter(chapter) %}Read the <span class="featured-chapter-name">{{ chapter }}</span> chapter{% endmacro %}
 {% endif %}
 {% if not read_last_years_chapter %}
-{% macro read_last_years_chapter(chapter) %}Read the {{ year|int-1 }} <span class="featured-chapter-name">{{ chapter }}</span> chapter{% endmacro %}
+{% macro read_last_years_chapter(chapter) %}Read the {{ previous_year }} <span class="featured-chapter-name">{{ chapter }}</span> chapter{% endmacro %}
 {% endif %}
 
 {% block contributors_description %}
@@ -173,6 +183,7 @@ Unless otherwise noted, the metrics in all of the {{ supported_chapters | length
   set localizedChapterTitles = {
     "javascript": "JavaScript",
     "css": "CSS",
+    "cookies": "Cookies",
     "markup": "Markup",
     "media": "Media",
     "third-parties": "Third Parties",
@@ -212,6 +223,7 @@ Unless otherwise noted, the metrics in all of the {{ supported_chapters | length
   "developers": "Developers",
   "editors": "Editors",
   "leads": "Project Leads",
+  "committee": "Organizing Committee",
   "reviewers": "Reviewers",
   "translators": "Translators",
   }
@@ -225,6 +237,7 @@ Unless otherwise noted, the metrics in all of the {{ supported_chapters | length
   "developers": "Developer",
   "editors": "Editor",
   "leads": "Project Lead",
+  "committee": "Organizing Committee",
   "reviewers": "Reviewer",
   "translators": "Translator",
   }

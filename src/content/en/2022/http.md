@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: HTTP
 description: The HTTP chapter of the 2022 Web Almanac covers data on historical versions of HTTP used across the web, as well as the uptick in new versions including HTTP/2 and HTTP/3, while also inspecting key metrics a part of the HTTP lifecycle.
+hero_alt: Hero image of Web Almanac characters driving vehicles in various lanes carrying script and images resources.
 authors: [paivaspol]
 reviewers: [tunetheweb, rmarx, LPardue]
 analysts: [paivaspol]
@@ -110,7 +111,7 @@ With HTTP/2, clients can <a hreflang="en" href="https://stackoverflow.com/questi
 
 With the challenges to HTTP/2 priorities, a new prioritization scheme was needed. The <a hreflang="en" href="https://httpwg.org/specs/rfc9218.html">Extensible Prioritization Scheme for HTTP</a> was developed separately from HTTP/3 and was standardized in June 2022. In this scheme, clients can explicitly assign a priority composed of two parameters via the `priority` HTTP header or the `PRIORITY_UPDATE` frame. The first parameter, `urgency`,  tells the server the priority of the requested resource. The second parameter, `incremental`, tells the server whether a resource can be partially used at the client (for example, partially displaying an image as parts of it arrive). Defining the scheme as a HTTP header and as the `PRIORITY_UPDATE` frame makes it extensible as both formats were designed to provide future extensibility. At the time of writing, the scheme has been deployed for HTTP/3 in Safari, Firefox, and Chrome.
 
-While most of the resource priorities are decided by the browser itself, developers can now also use the new <a hreflang="en" href="https://web.dev/priority-hints/">priority hints</a> to tweak the priority of a particular resource. Priority hints can be specified via the `fetchpriority` attribute in the HTML. For example, suppose that a website would like to prioritize a hero image, it can add `fetchpriority` to the image tag:
+While most of the resource priorities are decided by the browser itself, developers can now also use the new <a hreflang="en" href="https://web.dev/articles/fetch-priority">priority hints</a> to tweak the priority of a particular resource. Priority hints can be specified via the `fetchpriority` attribute in the HTML. For example, suppose that a website would like to prioritize a hero image, it can add `fetchpriority` to the image tag:
 
 ```html
 <img src="hero.png" fetchpriority="high">
@@ -147,7 +148,7 @@ In 2021, as shown in the figure above, the percentage of websites using push was
 
 The decrease in websites using push is likely because <a hreflang="en" href="https://jakearchibald.com/2017/h2-push-tougher-than-i-thought/">it is difficult to use effectively</a>. For example, websites cannot accurately know whether a resource being pushed already exists in the client's cache. If it is in the client's cache, the bandwidth used for pushing the resource is wasteful.
 
-With the difficulties, <a hreflang="en" href="https://groups.google.com/a/chromium.org/g/blink-dev/c/K3rYLvmQUBY/m/ho4qP49oAwAJ">Chrome decided to deprecate HTTP/2 Push</a> starting from <a hreflang="en" href="https://developer.chrome.com/blog/removing-push/">Chrome version 106</a>. Despite push officially still being a part of the HTTP/3 standard, Chrome—which the HTTP Archive crawler uses—never implemented push for HTTP/3 connections, which might further explain the reduction in usage as sites moved to that version and lost the ability to push.
+With the difficulties, <a hreflang="en" href="https://groups.google.com/a/chromium.org/g/blink-dev/c/K3rYLvmQUBY/m/ho4qP49oAwAJ">Chrome decided to deprecate HTTP/2 Push</a> starting from <a hreflang="en" href="https://developer.chrome.com/blog/removing-push">Chrome version 106</a>. Despite push officially still being a part of the HTTP/3 standard, Chrome—which the HTTP Archive crawler uses—never implemented push for HTTP/3 connections, which might further explain the reduction in usage as sites moved to that version and lost the ability to push.
 
 ### Alternatives to HTTP/2 Push
 
@@ -184,13 +185,13 @@ We observed a large number of pages in our dataset include a `<link rel="preload
 
 #### 103 Early Hints
 
-In 2017, the <a hreflang="en" href="https://www.rfc-editor.org/rfc/rfc8297">103 Early Hints status code was proposed</a> and <a hreflang="en" href="https://developer.chrome.com/blog/early-hints/">Chrome added support for it this year</a>.
+In 2017, the <a hreflang="en" href="https://www.rfc-editor.org/rfc/rfc8297">103 Early Hints status code was proposed</a> and <a hreflang="en" href="https://developer.chrome.com/blog/early-hints">Chrome added support for it this year</a>.
 
 Early Hints can be used to send interim HTTP responses before the final response of the requested object. They can boost performance by leveraging the fact that web servers often require some time to prepare a response, especially for the main HTML document if it is dynamically rendered.
 
 One use case of Early Hints is to deliver `Link: rel="preload"` for resources to preemptively fetch, or `Link: rel="preconnect"` to preemptively connect to other domains. Other headers can conceptually also be conveyed, though this is not supported by any browser.
 
-Early hints can be a better alternative than push because clients retain greater control over how the resources are fetched, but still allow an improvement on just adding preloads and preconnects to the main document HTML. Furthermore, Early Hints can potentially be used for 3rd party resources, which was not possible with push, though again <a hreflang="en" href="https://developer.chrome.com/blog/early-hints/#current-limitations">this is not yet supported on any browser</a>.
+Early hints can be a better alternative than push because clients retain greater control over how the resources are fetched, but still allow an improvement on just adding preloads and preconnects to the main document HTML. Furthermore, Early Hints can potentially be used for 3rd party resources, which was not possible with push, though again <a hreflang="en" href="https://developer.chrome.com/blog/early-hints#current-limitations">this is not yet supported on any browser</a>.
 
 {{ figure_markup(
   caption="Desktop pages using 103 Early Hints.",
@@ -207,7 +208,7 @@ With the 25% of websites including `<link rel="preload">` with the page response
 
 ## HTTP/3
 
-In the remainder of this section, we turn our focus to HTTP/3, as it is the future of HTTP and <a hreflang="en" href="https://www.rfc-editor.org/rfc/rfc9114.html">was standardized in June 2022</a>. In particular, we explore the improvements of HTTP/3 over its predecessors and how much support it currently has. For a more detailed explanation on HTTP/3, you can refer to <a hreflang="en" href="https://www.smashingmagazine.com/2021/08/http3-core-concepts-part1/">this excellent series of posts</a> from [Robin Marx](https://twitter.com/programmingart), who also helped review this chapter.
+In the remainder of this section, we turn our focus to HTTP/3, as it is the future of HTTP and <a hreflang="en" href="https://www.rfc-editor.org/rfc/rfc9114.html">was standardized in June 2022</a>. In particular, we explore the improvements of HTTP/3 over its predecessors and how much support it currently has. For a more detailed explanation on HTTP/3, you can refer to <a hreflang="en" href="https://www.smashingmagazine.com/2021/08/http3-core-concepts-part1/">this excellent series of posts</a> from [Robin Marx](https://x.com/programmingart), who also helped review this chapter.
 
 ### Benefits of HTTP/3
 

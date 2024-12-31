@@ -2,6 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: 性能
 description: 2019 Web Almanac网络年鉴的性能章节，包括 首次有内容的绘制 (FCP), 首包字节 (TTFB), 以及首次输入延迟 (FID)。
+hero_alt: Hero image of Web Almanac characters images to a web page, while another Web Almanac character times them with a stopwatch.
 authors: [rviscomi]
 reviewers: [JMPerez,foxdavidj,sergeychernyshev,zeman]
 analysts: [rviscomi, raghuramakrishnan71]
@@ -9,7 +10,7 @@ editors: [rachellcostello]
 translators: [chengxicn]
 discuss: 1762
 results: https://docs.google.com/spreadsheets/d/1zWzFSQ_ygb-gGr1H1BsJCfB7Z89zSIf7GX0UayVEte4/
-rviscomi_bio: Rick Viscomi 是谷歌的高级开发者项目工程师，从事网络透明度的工作，例如 HTTP Archive 和 Chrome UX Report, 并研究网站建设和体验的交集。Rick 是 <a hreflang="en" href="https://www.youtube.com/playlist?list=PLNYkxOF6rcIBGvYSYO-VxOsaYQDw5rifJ">The State of the Web</a>的播主，专家们在其中讨论网络的发展趋势。 Rick 也是网站性能测试指南<a hreflang="en" href="https://usingwpt.com">Using WebPageTest</a>的合著者, 他也经常在 <a hreflang="en" href="https://dev.to/rick_viscomi">dev.to</a>发表关于Web的文章，他的推特是 <a href="https://twitter.com/rick_viscomi">@rick_viscomi</a>.
+rviscomi_bio: Rick Viscomi 是谷歌的高级开发者项目工程师，从事网络透明度的工作，例如 HTTP Archive 和 Chrome UX Report, 并研究网站建设和体验的交集。Rick 是 <a hreflang="en" href="https://www.youtube.com/playlist?list=PLNYkxOF6rcIBGvYSYO-VxOsaYQDw5rifJ">The State of the Web</a>的播主，专家们在其中讨论网络的发展趋势。 Rick 也是网站性能测试指南<a hreflang="en" href="https://usingwpt.com">Using WebPageTest</a>的合著者, 他也经常在 <a hreflang="en" href="https://dev.to/rick_viscomi">dev.to</a>发表关于Web的文章，他的推特是 <a href="https://x.com/rick_viscomi">@rick_viscomi</a>.
 featured_quote: 性能是用户体验的重要组成部分。对于许多网站来说，通过降低页面加载时间来改善用户体验与转化率的提高是一致的。相反，当性能不佳时，用户的转化率就不会像往常那样高，甚至还会在导致沮丧的页面观察到愤怒点击。
 featured_stat_1: 13%
 featured_stat_label_1: 有快速FCP的站点
@@ -139,7 +140,7 @@ featured_stat_label_3: 有快速FID的站点
 
 ### 首包时间(TTFB)
 
-<a hreflang="en" href="https://web.dev/time-to-first-byte">首包时间</a> (TTFB)是页面从用户导航到接收到响应的第一个字节为止花费时间的度量。
+<a hreflang="en" href="https://web.dev/articles/ttfb">首包时间</a> (TTFB)是页面从用户导航到接收到响应的第一个字节为止花费时间的度量。
 
 {{ figure_markup(
   image="nav-timing.png",
@@ -289,6 +290,6 @@ featured_stat_label_3: 有快速FID的站点
 
 本章中提供的数据表明，要实现为快速网站设定的目标仍有大量工作要做。 某些外形尺寸、有效的连接类型和地理位置确实与更好的用户体验相关，但是我们不能忘记组合中性能差的那部分人口统计也在其中。在许多情况下Web平台用于商业，通过提高转化率来赚更多钱会是提升网站速度的巨大驱动力。 归根结底，对于所有网站而言，性能都是要为用户提供积极的体验，而不应阻碍、挫败或激怒用户。
 
-随着网络的年纪又长了一岁，我们衡量用户体验的能力也逐步提高，我期待开发人员能够访问和捕获更多整体用户体验的指标。FCP在向用户展示有用内容上还处于非常初期的阶段，而诸如<a hreflang="en" href="https://web.dev/largest-contentful-paint">最大内容绘制</a> (LCP)之类的新指标正在涌现，提高了我们对页面加载感知的能见度。而<a hreflang="en" href="https://web.dev/layout-instability-api">不稳定布局API</a>也给我们了超越页面加载之外的视角，一窥用户对访问性能的沮丧体验。
+随着网络的年纪又长了一岁，我们衡量用户体验的能力也逐步提高，我期待开发人员能够访问和捕获更多整体用户体验的指标。FCP在向用户展示有用内容上还处于非常初期的阶段，而诸如<a hreflang="en" href="https://web.dev/articles/lcp">最大内容绘制</a> (LCP)之类的新指标正在涌现，提高了我们对页面加载感知的能见度。而<a hreflang="en" href="https://web.dev/articles/cls">不稳定布局API</a>也给我们了超越页面加载之外的视角，一窥用户对访问性能的沮丧体验。
 
 配备了这些新指标后，2020年的网络将变得更加透明，更易于理解，并为开发人员创造有利条件来产生更有意义的进步，提升网络性能并为用户带来积极的体验。
