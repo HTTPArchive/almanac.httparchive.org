@@ -62,6 +62,7 @@ WITH ara_features AS (
   GROUP BY client, destination
   HAVING destination IS NOT NULL
 ),
+
 ranked_features AS (
   SELECT
     client,
@@ -70,9 +71,13 @@ ranked_features AS (
     distinct_publishers,
     total_third_party_domains,
     distinct_third_party_domains,
-    ROW_NUMBER() OVER (PARTITION BY client ORDER BY distinct_publishers DESC) AS publisher_rank
+    ROW_NUMBER() OVER (
+      PARTITION BY client
+      ORDER BY distinct_publishers DESC
+    ) AS publisher_rank
   FROM ara_features
 )
+
 SELECT * FROM ranked_features
 WHERE publisher_rank <= 25
 ORDER BY client, distinct_publishers DESC;

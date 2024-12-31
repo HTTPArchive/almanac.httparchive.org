@@ -13,7 +13,9 @@ WITH totals AS (
     date = '2024-06-01' AND
     JSON_TYPE(custom_metrics.privacy.iab_tcf_v2.data) = 'object'
   GROUP BY client
-), cmps AS (
+),
+
+cmps AS (
   SELECT
     client,
     --ANY_VALUE(custom_metrics.privacy.iab_tcf_v2.data) AS example,

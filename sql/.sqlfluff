@@ -1,7 +1,7 @@
 [sqlfluff]
 dialect = bigquery
 # Comma separated list of rules to exclude, or None
-exclude_rules = AL01,AL04,AL07,AL09,AM03,AM05,CP02,CP03,CV02,LT05,LT09,RF01,RF02,RF03,RF04,ST01,ST02,ST05,ST06,ST07,ST08
+exclude_rules = AL01,AL04,AL07,AL09,AM03,AM05,CP02,CP03,CV02,LT05,LT09,RF01,RF02,RF03,RF04,ST01,ST02,ST05,ST06,ST07,ST08,ST11
 # AL01 - We don't always alias tables with AS ("FROM table1 AS tb1" instead of "FROM table1 tb1"). Do for columns but not for tables.
 # AL04 - Asks for unique table aliases meaning it complains if selecting from two 2021_07_01 tables as implicit alias is table name (not fully qualified) so same.
 # AL07 - Avoid aliases in from and join - why?
@@ -23,6 +23,7 @@ exclude_rules = AL01,AL04,AL07,AL09,AM03,AM05,CP02,CP03,CV02,LT05,LT09,RF01,RF02
 # ST06 - Insists on wildcards (*) in certain SELECT order - why?
 # ST07 - Uses joins instead of USING - why?
 # ST08 - Sometimes clearer to include brackets for complex COUNT(DISTINCT) cases
+# ST11 - Doesn't consider wildcards in SELECT. Issue: https://github.com/sqlfluff/sqlfluff/issues/6511
 
 large_file_skip_byte_limit = 40000
 # CPU processes to use while linting.
@@ -65,6 +66,3 @@ preferred_quoted_literal_style = single_quotes
 
 [sqlfluff:rules:references.special_chars]
 additional_allowed_characters = "-."
-
-[sqlfluff:layout:type:start_bracket]
-spacing_before = single:inline

@@ -12,7 +12,9 @@ WITH response_headers AS (
     date = '2024-06-01' AND
     is_root_page = TRUE AND
     is_main_document = TRUE
-), meta_tags AS (
+),
+
+meta_tags AS (
   SELECT
     client,
     page,
@@ -27,7 +29,7 @@ WITH response_headers AS (
     WHERE
       date = '2024-06-01' AND
       is_root_page = TRUE
-    ),
+  ),
     UNNEST(JSON_QUERY_ARRAY(metrics, '$.meta-nodes.nodes')) meta_node
   WHERE JSON_VALUE(meta_node, '$.http-equiv') IS NOT NULL
 )
