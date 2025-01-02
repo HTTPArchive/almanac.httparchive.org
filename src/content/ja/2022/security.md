@@ -634,7 +634,7 @@ HTTPヘッダーとして使用されるだけでなく、この機能は以下�
 
 モバイルの1,740万フレームのうち12.6%に`allow`属性が含まれており、許可または機能ポリシーを有効にしています。
 
-<p class="note">この章の以前のバージョンでは、フレームの合計数と `allow` 属性を持つフレームの割合の値が間違っていました。詳細については、この <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/pull/3912">GitHub PR</a> を参照してください。</p>
+<aside class="note">この章の以前のバージョンでは、フレームの合計数と `allow` 属性を持つフレームの割合の値が間違っていました。詳細については、この <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/pull/3912">GitHub PR</a> を参照してください。</aside>
 
 以下は、フレームで検出されたトップ10の`allow`ディレクティブのリストです：
 
@@ -741,7 +741,7 @@ function clickToGo() {
 
 デスクトップ ウェブサイトにあるすべての iframe のうち、21.08% に `sandbox` 属性が含まれています。
 
-<p class="note">この章の以前のバージョンでは、`sandbox` 属性を持つフレームの割合が誤って報告されていました。詳細については、この <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/pull/3912">GitHub PR</a> を参照してください。</p>
+<aside class="note">この章の以前のバージョンでは、`sandbox` 属性を持つフレームの割合が誤って報告されていました。詳細については、この <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/pull/3912">GitHub PR</a> を参照してください。</aside>
 
 モバイルの`Content-Security-Policy`ヘッダーに`sandbox`指令を含むものはわずか0.3%（デスクトップも同様に0.4%）であり、この属性がページ内でiframeコンテンツを埋め込む際にケースバイケースで適用されることが多く、事前のコンテンツセキュリティポリシー定義を通じて計画することは少ないことを示しています。
 

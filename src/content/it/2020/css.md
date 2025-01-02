@@ -48,7 +48,7 @@ Per alcune metriche, guardare al CSS AST non era sufficiente. Volevamo esaminare
 
 Le metriche personalizzate (custom metrics) sono state utilizzate anche per parte dell'[analisi delle proprietà personalizzate](#proprietà-personalizzate). Sebbene possiamo ottenere molte informazioni sull'utilizzo delle proprietà personalizzate solo dai fogli di stile, non possiamo costruire un grafico delle dipendenze senza essere in grado di guardare l'albero DOM per il contesto, poiché le proprietà personalizzate vengono ereditate. Guardando lo stile di calcolo dei nodi DOM ci dà anche informazioni come a quali tipi di elementi è applicata ciascuna proprietà e quali di essi sono [registrati](https://developer.mozilla.org/docs/Web/API/CSS/RegisterProperty) - informazioni che non possiamo ottenere dai fogli di stile.
 
-<p class="note">Eseguiamo la scansione delle nostre pagine sia in modalità desktop che mobile ma per molti dati danno risultati simili quindi, se non diversamente specificato, le statistiche presentate in questo capitolo si riferiscono al set di pagine mobile.</p>
+<aside class="note">Eseguiamo la scansione delle nostre pagine sia in modalità desktop che mobile ma per molti dati danno risultati simili quindi, se non diversamente specificato, le statistiche presentate in questo capitolo si riferiscono al set di pagine mobile.</aside>
 
 ## Utilizzo
 

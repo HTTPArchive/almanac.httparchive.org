@@ -84,7 +84,7 @@ SSGの採用は、一般的に前年比2倍で伸びています。2019年はモ
 
 まずは、もっとも普及しているSSGを把握することからはじめましょう。Next.jsはJamstackサイトの43.6%をカバーしています。2位はNuxt.jsで31.1％、3位はGatsbyで16.0％、4位はHugoで6.0％となっています。
 
-<p class="note">なお、本章の初出時においては、NuxtとNextのサイト数が誤って多く計上されていたため、数値が異なっています。本章の他の数値も含め、上記の数値は修正されています。</p>
+<aside class="note">なお、本章の初出時においては、NuxtとNextのサイト数が誤って多く計上されていたため、数値が異なっています。本章の他の数値も含め、上記の数値は修正されています。</aside>
 
 上位3つのSSGは、すべてJavaScriptベースです。Next.jsとGatsbyは、<a hreflang="en" href="https://reactjs.org/">React.js</a>をコアとして、その上に独自の機能を追加することで補完しています。Nuxt.jsは、<a hreflang="en" href="https://vuejs.org">Vue.js</a>をベースにしています。これらの人気のあるフロントエンドフレームワークは、巨大なエコシステムを備えているため、開発が非常に容易になります。<a hreflang="en" href="https://nodejs.org/en/">Node.js</a> は、従来使われているブラウザだけでなく、サーバ上でもJavaScriptを実行できるようにし、開発者が1つの言語に固執することを可能にしています。そのため、<a hreflang="en" href="https://go.dev/">プログラミング言語Go</a>をベースにしたHugoや、<a hreflang="en" href="https://go.dev/">Ruby</a>ベースのJekyllと比べて、サーバの観点からもこれらのSSGの採用が容易になるのだそうです。
 

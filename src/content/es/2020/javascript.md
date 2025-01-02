@@ -200,9 +200,9 @@ Podemos comenzar a compensar el costo de cargar JavaScript haciendo que los scri
 
 En móviles, los scripts externos representan el 59.0% de todos los scripts encontrados.
 
-<p class="note">
+<aside class="note">
   Como nota, cuando hablamos anteriormente acerca de cuánto JavaScript es cargado en una página, ese total no tomaba en cuenta el tamaño de los scripts _inline_. Debido a que son parte del documento HTML, se cuentan como parte del tamaño de marcado. Esto significa que cargamos aún más scripts de lo que los números muestran.
-</p>
+</aside>
 
 {{ figure_markup(
   image="external-inline-mobile.png",

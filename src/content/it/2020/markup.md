@@ -30,9 +30,9 @@ Come utilizziamo l'HTML, quindi, qual è la grande base che abbiamo? Nella sezio
 
 L'analisi dello scorso anno si è basata su 5.8 milioni di pagine, di cui 4.4 milioni testate su desktop e 5.3 milioni su dispositivi mobile. Quest'anno abbiamo analizzato 7.5 milioni di pagine, di cui 5.6 milioni testate su desktop e 6.3 milioni su mobile, utilizzando i [dati più recenti](./methodology#websites) sui siti web che gli utenti visiteranno nel 2020. Facciamo alcuni confronti con lo scorso anno, ma proprio come abbiamo cercato di analizzare ulteriori metriche per nuovi approfondimenti, abbiamo anche cercato di trasmettere le nostre personalità e prospettive durante il capitolo.
 
-<p class="note">
+<aside class="note">
   In questo capitolo Markup, ci stiamo concentrando quasi esclusivamente su HTML, piuttosto che su SVG o MathML, che sono anche considerati linguaggi di markup. Se non diversamente specificato, le statistiche presentate in questo capitolo si riferiscono al set di pagine mobile. Inoltre, i dati per tutti i capitoli di Web Almanac sono liberi e disponibili. Dai un'occhiata ai <a hreflang="en" href="https://docs.google.com/spreadsheets/d/1Ta7amoUeaL4pILhWzH-SCzMX9PsZeb1x_mwrX2C4eY8/">risultati</a> e <a hreflang="en" href="https://discuss.httparchive.org/t/2039">condividi le tue osservazioni</a> con la community!
-</p>
+</aside>
 
 ## Generale
 
@@ -1019,9 +1019,9 @@ Abbiamo esaminato i dati e per capire meglio i risultati, li abbiamo normalizzat
 
 I risultati mostrano che quasi la metà delle pagine che abbiamo analizzato utilizza il valore tipico di viewport `content`. Tuttavia, circa il 10% delle pagine per dispositivi mobile manca del tutto di un valore `content` appropriato per il meta elemento viewport, con il resto di esse che utilizzano una combinazione impropria di `maximum-scale`, `minimum-scale`, `user-scalable=no`, o `user-scalable=0`.
 
-<p class="note">
+<aside class="note">
   Da un po' di tempo, il browser mobile Edge consente agli utenti di ingrandire una pagina Web almeno <a hreflang="en" href="https://blogs.windows.com/windows-insider/2017/01/12/announcing-windows-10-insider-preview-build-15007-pc-mobile/">fino al 500%</a>, indipendentemente dalle impostazioni di zoom definite da una pagina web che utilizza il meta elemento viewport.
-</p>
+</aside>
 
 ### I Favicon
 
@@ -1306,7 +1306,7 @@ L'uso di `target="_blank"` è noto come una <a hreflang="en" href="https://mathi
 
 Come regola pratica e per <a hreflang="en" href="https://www.nngroup.com/articles/new-browser-windows-and-tabs/">ragioni di usabilità</a>, si raccomanda di non usare `target="_blank"` in primo luogo.
 
-<p class="note">Nelle ultime versioni di Safari e Firefox, l'impostazione di <code>target="_blank"</code> sugli elementi <code>a</code> fornisce implicitamente lo stesso comportamento <code>rel</code> dell'impostazione di <code>rel="noopener"</code>. Questo è già <a hreflang="en" href="https://chromium-review.googlesource.com/c/chromium/src/+/1630010">implementato anche in Chromium</a> e arriverà in Chrome 88.</p>
+<aside class="note">Nelle ultime versioni di Safari e Firefox, l'impostazione di <code>target="_blank"</code> sugli elementi <code>a</code> fornisce implicitamente lo stesso comportamento <code>rel</code> dell'impostazione di <code>rel="noopener"</code>. Questo è già <a hreflang="en" href="https://chromium-review.googlesource.com/c/chromium/src/+/1630010">implementato anche in Chromium</a> e arriverà in Chrome 88.</aside>
 
 ## Conclusione
 
@@ -1336,6 +1336,6 @@ Questo ci obbliga a chiudere con un appello: Fai attenzione all'HTML. Concentrat
 
 Per la prossima edizione del capitolo di Web Almanac, prepariamoci a guardare più da vicino l'arte di scrivere HTML e, si spera, come lo abbiamo migliorato.
 
-<p class="note">
+<aside class="note">
   Stiamo lasciando il resto aperto a te. Quali sono le tue osservazioni? Cosa ha attirato la tua attenzione? Cosa pensi che sia peggiorato e cosa è migliorato? <a hreflang="en" href="https://discuss.httparchive.org/t/2039">Lascia un commento</a> per condividere i tuoi pensieri!
-</p>
+</aside>

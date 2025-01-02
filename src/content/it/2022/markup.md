@@ -155,7 +155,7 @@ Un modo per contrastare questa tendenza è <a hreflang="en" href="https://css-tr
 
 Se non si contano gli elementi `svg` e `math` (poiché sono specificati al di fuori dell'HTML) l'attuale specifica HTML consiste al momento di 111 elementi.
 
-<p class="note">Elementi, non tag, perché non ci riferiamo a semplici tag di inizio o fine, come `<li>` o `</ins>`. E alcune persone contano gli elementi HTML in modo diverso, ma la cosa più importante è <a hreflang="en" href="https://meiert.com/it/blog/the-number-of-html-elements/">essere chiari su come si contano</a>.</p>
+<aside class="note">Elementi, non tag, perché non ci riferiamo a semplici tag di inizio o fine, come `<li>` o `</ins>`. E alcune persone contano gli elementi HTML in modo diverso, ma la cosa più importante è <a hreflang="en" href="https://meiert.com/it/blog/the-number-of-html-elements/">essere chiari su come si contano</a>.</aside>
 
 Cosa possiamo osservare?
 

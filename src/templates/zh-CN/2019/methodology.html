@@ -74,9 +74,9 @@
           Web Almanac中列出的所有指标都可以通过BigQuery上的数据集公开重现。您可以在我们的<a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/2019">GitHub 仓库</a>浏览我们的所有章节使用的查询。
         </p>
 
-        <p class="note">
+        <aside class="note">
           请注意，其中一些查询相当大，如果你自己运行可能比较 <a hreflang="en" href="https://cloud.google.com/bigquery/pricing">昂贵</a> ，因为BigQuery是按TB收费。为了帮助控制你的开支，请看 Tim Kadlec的文章 <a hreflang="en" href="https://timkadlec.com/remembers/2019-12-10-using-bigquery-without-breaking-the-bank/">在不破产的情况下来使用BigQuery</a>。
-        </p>
+        </aside>
 
         <p>
           例如，要了解每个桌面和移动页面的JavaScript字节数的中位数，请参阅 <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/2019/javascript/01_01b.sql">01_01b.sql</a>:
@@ -286,9 +286,9 @@
       </table>
       </div></div>
 
-      <p class="note">
+      <aside class="note">
         * 请注意，Lighthouse通常的配置是CPU降速4倍，但是因为一个WebPageTest的<a hreflang="en" href="https://github.com/GoogleChrome/lighthouse/issues/9668#issuecomment-535134232">bug</a> ， 在当时的测试是降速1倍。
-      </p>
+      </aside>
 
       <p>
         如需了解更多关于Lighthouse以及HTTP Archive中可用的审计，请参考 <a hreflang="en" href="https://developers.google.com/web/tools/lighthouse/">Lighthouse 开发者文档</a>。

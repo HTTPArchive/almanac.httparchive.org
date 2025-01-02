@@ -63,9 +63,9 @@ As previously indicated, third parties can be used for various use cases—for e
 - **Consent provider**: These scripts allow sites to manage the user consent (eg. for the [General Data Protection Regulation](https://wikipedia.org/wiki/General_Data_Protection_Regulation) compliance). They are also known as the 'Cookie Consent' popups and are usually loaded on the critical path.
 - **Other**: These are miscellaneous scripts delivered via a shared origin with no precise category or attribution.
 
-<p class="note">Note: The CDN category here includes providers that provide resources on public CDN domains (for example <code>bootstrapcdn.com</code>, <code>cdnjs.cloudflare.com</code>, etc.) and does not include resources that are simply served over a CDN. For example, putting Cloudflare in front of a page would not influence its first-party designation according to our criteria.</p>
+<aside class="note">Note: The CDN category here includes providers that provide resources on public CDN domains (for example <code>bootstrapcdn.com</code>, <code>cdnjs.cloudflare.com</code>, etc.) and does not include resources that are simply served over a CDN. For example, putting Cloudflare in front of a page would not influence its first-party designation according to our criteria.</aside>
 
-<p class="note">Similar to previous years, the Hosting category is removed from our analysis. For example, if you happen to use WordPress.com for your blog, or Shopify for your e-commerce platform, then we're going to ignore other requests for those domains by that site as not truly "third-party" as they are, in many ways, part of hosting on those platforms.</p>
+<aside class="note">Similar to previous years, the Hosting category is removed from our analysis. For example, if you happen to use WordPress.com for your blog, or Shopify for your e-commerce platform, then we're going to ignore other requests for those domains by that site as not truly "third-party" as they are, in many ways, part of hosting on those platforms.</aside>
 
 ### `Content Type`
 

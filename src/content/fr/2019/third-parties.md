@@ -57,9 +57,9 @@ Le présent chapitre classe les fournisseurs tiers dans l’une de ces grandes c
 - **Video** - fournisseurs qui hébergent un contenu vidéo quelconque de leurs utilisateurs
 - **Autre (Other)** - activité non classée ou considérée comme non conforme
 
-<p class="note">
+<aside class="note">
   <strong>Note sur les CDN</strong> : d’après les critères que nous utilisons, seuls sont comptabilisés dans la catégorie CDN les fournisseurs qui fournissent des ressources sur des domaines de CDN <strong>publics</strong> (par exemple bootstrapcdn.com, cdnjs.cloudflare.com, etc.). Cela n’inclut <strong>pas</strong> les ressources qui sont simplement servies sur un CDN. Exemple : même si vous mettez Cloudflare devant une page, nous la considérerons comme une première partie.
-</p>
+</aside>
 
 ### Quelques réserves
 

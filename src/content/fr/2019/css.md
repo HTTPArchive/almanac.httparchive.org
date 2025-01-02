@@ -107,7 +107,7 @@ Sans surprise, dans la figure 2.5 ci-dessus, `px` est le type d’unité le plus
 
 En ce qui concerne les unités basées sur l’espace physique, l’unité `cm` (centimètre) est de loin la plus populaire, suivie de `in` (pouces), puis de `Q`. Nous savons que ces types d’unités sont particulièrement utiles pour les feuilles de style d’impression, mais nous ne savions même pas que l’unité `Q` existait avant cette enquête&nbsp;! Et vous&nbsp;?
 
-<p class="note">Une version antérieure de ce chapitre parlait de la popularité inattendue de l’unité <code>Q</code>. Grâce à la <a hreflang="en" href="https://discuss.httparchive.org/t/chapter-2-css/1757/6">discussion de la communauté</a> concernant ce chapitre, nous avons identifié qu’il s’agissait d’un bogue dans notre analyse et avons mis à jour la figure 2.5 en conséquence.</p>
+<aside class="note">Une version antérieure de ce chapitre parlait de la popularité inattendue de l’unité <code>Q</code>. Grâce à la <a hreflang="en" href="https://discuss.httparchive.org/t/chapter-2-css/1757/6">discussion de la communauté</a> concernant ce chapitre, nous avons identifié qu’il s’agissait d’un bogue dans notre analyse et avons mis à jour la figure 2.5 en conséquence.</aside>
 
 ### Unités basées sur la taille de fenêtre (<i lang="en">viewport</i> {unites-basees-sur-la-taille-de-fenetre-viewport}
 

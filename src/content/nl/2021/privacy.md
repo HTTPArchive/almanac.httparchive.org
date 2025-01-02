@@ -272,7 +272,7 @@ Geolocatiegegevens kunnen ook opgevraagd worden door websites via een [webbrowse
 
 Slecht beveiligingsbeheer binnen een bedrijf kan een {significante impact hebben op de privégegevens van hun klanten. <a hreflang="en" href="https://haveibeenpwned.com/">Have I Been Pwned</a> laat aan gebruikers toe om te controleren of hun e-mailadres of telefoonnummer gelekt werd in een gegevenslek. Op het moment van schrijven heeft Have I Been Pwned 562 gegevenslekken bijgehouden, waarin 640 miljoen gegevens gelekt werden. Alleen al in 2020 werden 40 diensten gekraakt en de persoonlijke gegevens van miljoenen gebruikers gelekt. Drie van deze lekken werden gemarkeerd als _gevoelig_, wat verwijst naar de mogelijkheid om een negatieve impact te hebben op de gebruiker als iemand de gegevens van die gebruikers in het gegevenslek zou vinden. Een voorbeeld van een gevoelig gegevenslek is "[Carding Mafia](https://www.vice.com/en/article/v7m9jx/credit-card-hacking-forum-gets-hacked-exposing-300000-hackers-accounts)", een platform waar gestolen kredietkaarten worden verhandeld.
 
-<p class="note">Merk op dat 40 gegevenslekken in het voorbije jaar een ondergrens is, aangezien veel gegevenslekken pas ontdekt of publiek gemaakt worden verschillende maanden nadat ze hebben plaatsgevonden.</p>
+<aside class="note">Merk op dat 40 gegevenslekken in het voorbije jaar een ondergrens is, aangezien veel gegevenslekken pas ontdekt of publiek gemaakt worden verschillende maanden nadat ze hebben plaatsgevonden.</aside>
 
 {{ figure_markup(
   image="data_breaches_pwned_accounts_per_class.png",
@@ -362,7 +362,7 @@ De meest voorkomende Referrer Policy die expliciet gezet wordt is `no-referrer-w
 
 Daarenboven zetten ongeveer 0,5% van de websites de waarde van de Referrer Policy op `unsafe-url`, wat toelaat dat de oorsprong, gastheer en vraagstring met _elk_ verzoek gestuurd worden, ongeacht het beveiligingsniveau van de ontvanger. In dit geval zou een verwijzer in klaartekst verzonden kunnen worden, wat potentieel privégegevens lekt. Wat verontrustend is, is dat er websites die actief geconfigureerd zijn om dit gedrag toe te laten.
 
-<p class="note">Merk op: Websites kunnen de verwijzerinformatie ook als een URL-parameter naar de bestemmingssite sturen. We hebben het gebruik van dat mechanisme in dit rapport niet gemeten.</p>
+<aside class="note">Merk op: Websites kunnen de verwijzerinformatie ook als een URL-parameter naar de bestemmingssite sturen. We hebben het gebruik van dat mechanisme in dit rapport niet gemeten.</aside>
 
 ### User-Agent Client Hints
 
@@ -509,7 +509,7 @@ Naast het blokkeren van trackers, heeft Chrome de <a hreflang="en" href="https:/
 
 Om feedback vanuit het ecosysteem te verkrijgen, worden vroege en experimentele versies van Privacy Sandbox-APIs initieel beschikbaar gemaakt door middel van <a hreflang="en" href="https://www.chromium.org/developers/how-tos/run-chromium-with-flags">functievlaggen</a> voor tests door individuele ontwikkelaars, en dan in Chrome via <a hreflang="en" href="https://developer.chrome.com/blog/origin-trials">_oorsprongsproeven_</a> ("origin trials"). Sites kunnen deelnemen in deze oorsprongsproeven}om experimentele webplatformfuncties te testen, en commentaar te geven naar de webstandaardengemeenschap over de gebruiksvriendelijkheid, uitvoerbaarheid en effectiviteit van een functie, vooraleer ze voor alle websites standaard beschikbaar wordt gemaakt.
 
-<p class="note">**Disclaimer:** Oorsprongsproeven zijn enkel beschikbaar voor een beperkte tijd. De getallen hieronder geven de toestand van Privacy Sandbox oorsprongsproeven weer op het moment van schrijven, in oktober 2021.</p>
+<aside class="note">**Disclaimer:** Oorsprongsproeven zijn enkel beschikbaar voor een beperkte tijd. De getallen hieronder geven de toestand van Privacy Sandbox oorsprongsproeven weer op het moment van schrijven, in oktober 2021.</aside>
 
 ### FLoC
 

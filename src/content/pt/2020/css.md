@@ -48,7 +48,7 @@ Para algumas métricas, olhar para o AST CSS não foi suficiente. Queríamos olh
 
 Custom metrics também foram usadas para parte da análise de <a href="#propriedades-customizadas">propriedades customizadas</a>. Embora possamos obter muitas informações sobre o uso de propriedades customizadas apenas com as folhas de estilo, não podemos construir um gráfico de dependência sem ser capaz de olhar para o contexto da árvore DOM, pois as propriedades customizadas são herdadas. Observar o estilo computado dos nós da DOM também nos dá informações de quais tipos de elementos cada propriedade é aplicada e quais deles estão [registrados](https://developer.mozilla.org/docs/Web/API/CSS/RegisterProperty) - informações que também não podemos obter nas folhas de estilo.
 
-<p class="note">Rastreamos nossas páginas tanto no modo desktop quanto no modo celular, mas para a maioria dos dados eles fornecem resultados semelhantes, portanto, a menos que seja indicado de outra forma, as estatísticas apresentadas neste capítulo referem-se ao conjunto de páginas no celular.</p>
+<aside class="note">Rastreamos nossas páginas tanto no modo desktop quanto no modo celular, mas para a maioria dos dados eles fornecem resultados semelhantes, portanto, a menos que seja indicado de outra forma, as estatísticas apresentadas neste capítulo referem-se ao conjunto de páginas no celular.</aside>
 
 ## Uso
 

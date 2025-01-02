@@ -445,7 +445,7 @@ HTMLペイロードには、外部リンクとして参照されるのではな�
   )
 }}
 
-<p class="note">私たちのデータ収集<a href="./methodology">方法論</a>はクリックやスクロールなど、ページ上でのユーザー操作をシミュレートしていないため、遅延して読み込まれた画像はこれらの結果には表示されないことに注意してください。</p>
+<aside class="note">私たちのデータ収集<a href="./methodology">方法論</a>はクリックやスクロールなど、ページ上でのユーザー操作をシミュレートしていないため、遅延して読み込まれた画像はこれらの結果には表示されないことに注意してください。</aside>
 
 上記の図13.12と13.13で中央値のEコマースページには、モバイルでは37枚の画像と1,517KBの画像ペイロードがあり、デスクトップでは40枚の画像と1,524KBの画像ペイロードがあることを示しています。ホームページの10％は、90以上の画像と6MB近くの画像ペイロードを持っています！
 
@@ -472,7 +472,7 @@ Eコマースページのかなりの割合で、大きな画像ペイロード�
   )
 }}
 
-<p class="note">画像サービスやCDNの中には、`.jpg`や`.png`という接尾辞を持つURLであっても、WebPをサポートしているプラットフォームには自動的にWebP(JPEGやPNGではなく)を配信するものがあることに注意してください。たとえば、<a hreflang="en" href="https://res.cloudinary.com/webdotdev/f_auto/w_500/IMG_20190113_113201.jpg">IMG_20190113_113201.jpg</a>はChromeでWebP画像を返します。しかし、HTTP Archive<a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/blob/31a25b9064a365d746d4811a1d6dda516c0e4985/bulktest/batch_lib.inc#L994">画像フォーマットを検出する方法</a>は、最初にMIMEタイプのキーワードをチェックしてから、ファイルの拡張子にフォールバックするというものです。つまり、HTTP ArchiveがユーザーエージェントとしてWebPをサポートしているため、上記のようなURLを持つ画像のフォーマットはWebPとして与えられることになります。</p>
+<aside class="note">画像サービスやCDNの中には、`.jpg`や`.png`という接尾辞を持つURLであっても、WebPをサポートしているプラットフォームには自動的にWebP(JPEGやPNGではなく)を配信するものがあることに注意してください。たとえば、<a hreflang="en" href="https://res.cloudinary.com/webdotdev/f_auto/w_500/IMG_20190113_113201.jpg">IMG_20190113_113201.jpg</a>はChromeでWebP画像を返します。しかし、HTTP Archive<a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/blob/31a25b9064a365d746d4811a1d6dda516c0e4985/bulktest/batch_lib.inc#L994">画像フォーマットを検出する方法</a>は、最初にMIMEタイプのキーワードをチェックしてから、ファイルの拡張子にフォールバックするというものです。つまり、HTTP ArchiveがユーザーエージェントとしてWebPをサポートしているため、上記のようなURLを持つ画像のフォーマットはWebPとして与えられることになります。</aside>
 
 ### PNG
 

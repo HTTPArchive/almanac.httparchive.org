@@ -35,7 +35,7 @@ In some of the sections, we focus only on the top CMSs in terms of adoption, due
 
 Let's dive into our analysis.
 
-<p class="note">**Disclaimer:** Alon works at Wix where he leads the web performance efforts, but opinions are his own.</a>
+<aside class="note">**Disclaimer:** Alon works at Wix where he leads the web performance efforts, but opinions are his own.</aside>
 
 ## What is a CMS?
 
@@ -215,7 +215,7 @@ In July, for mobile devices, TYPO3 CMS (used mostly in European countries) had t
 
 Desktop device experience was slightly better, with 1C-Bitrix (used mostly in Russia) having the largest percentage of 56% sites passing CWVs. WordPress had the lowest ratio of passing sites, with only 26%.
 
-<p class="note">Duda deserves an honorable mention, with 47% sites passing in August and overall great progress since last year. They were not included in this report due to broken data collection in July, related to a wrong detection in <a hreflang="en" href="https://github.com/AliasIO/wappalyzer/pull/4189">Wappalyzer</a>, incorrectly inflating their origins, and reducing their CWV percentage.</p>
+<aside class="note">Duda deserves an honorable mention, with 47% sites passing in August and overall great progress since last year. They were not included in this report due to broken data collection in July, related to a wrong detection in <a hreflang="en" href="https://github.com/AliasIO/wappalyzer/pull/4189">Wappalyzer</a>, incorrectly inflating their origins, and reducing their CWV percentage.</aside>
 
 We can also evaluate the progress of these CMS platforms compared to last year's data, focusing on mobile views:
 

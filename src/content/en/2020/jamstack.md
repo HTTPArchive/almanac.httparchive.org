@@ -30,7 +30,7 @@ The <a hreflang="en" href="https://httparchive.org/">HTTP Archive</a> crawls <a 
 
 The goals of this chapter are to estimate and analyze the growth of the Jamstack sites, the performance of popular Jamstack frameworks, as well as an analysis of real user experience using the Core Web Vitals metrics.
 
-<p class="note">It should be noted that our analysis is limited by those Jamstacks that make themselves easily identifiable using <a href="./methodology#wappalyzer">Wappalyzer</a>. This means our data does not include some popular Jamstacks like <a hreflang="en" href="https://github.com/11ty/eleventy/">Eleventy</a> which <a href="https://x.com/eleven_ty/status/1334225624110608387?s=20">make a deliberate choice to not make themselves identifiable</a>. While we would ideally include all Jamstacks, we believe there is still plenty of value in analyzing the significant data we do have.</p>
+<aside class="note">It should be noted that our analysis is limited by those Jamstacks that make themselves easily identifiable using <a href="./methodology#wappalyzer">Wappalyzer</a>. This means our data does not include some popular Jamstacks like <a hreflang="en" href="https://github.com/11ty/eleventy/">Eleventy</a> which <a href="https://x.com/eleven_ty/status/1334225624110608387?s=20">make a deliberate choice to not make themselves identifiable</a>. While we would ideally include all Jamstacks, we believe there is still plenty of value in analyzing the significant data we do have.</aside>
 
 ## Adoption of Jamstack
 

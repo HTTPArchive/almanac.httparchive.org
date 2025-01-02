@@ -68,7 +68,7 @@ This section focuses on websites that reached the "good" threshold on all three 
   )
 }}
 
-<p class="note"><strong>Note:</strong> As the CLS calculation changed since last year, this is not an apples-to-apples comparison.</p>
+<aside class="note"><strong>Note:</strong> As the CLS calculation changed since last year, this is not an apples-to-apples comparison.</aside>
 
 Core Web Vitals for websites in the Chrome User Experience Report improved year-over-year. But, a good part of this improvement could be due to a change in the CLS calculation, not necessarily to a performance improvement in CLS. The resulting CLS "improvement" was 8 points on desktop (2 for mobile). LCP improved by 7 points for desktop (2 for mobile). FID was already at 100% for desktop for both years and improved by 10 points on mobile.
 
@@ -242,7 +242,7 @@ Only 5% of origins on WordPress experienced good TTFB in July 2021. Considering 
 
 FCP was faster on desktop than mobile, likely due to both faster average network speeds and faster processors. Only 38% of origins had good FCP on mobile. Render-blocking resources such as synchronous JavaScript can be a common culprit. Because TTFB is the first part of FCP, poor TTFB will make it difficult to achieve a good FCP.
 
-<p class="note"><strong>Note:</strong> The thresholds for FCP have changed since last year. Be careful if you try to compare this year's data to last year's data.</p>
+<aside class="note"><strong>Note:</strong> The thresholds for FCP have changed since last year. Be careful if you try to compare this year's data to last year's data.</aside>
 
 {{ figure_markup(
   image="performance-FCP-by-ect.png",
@@ -482,7 +482,7 @@ Unfortunately, TBT is not measured in the Chrome User Experience Report. But, we
   )
 }}
 
-<p class="note"><strong>Note:</strong> The groups in the chart are based off of the Lighthouse score for TBT (e.g., >= 0.9 results in "good"). Due to rounding of the score, some TBT values slightly above 200ms get categorized as "good" (and similarly at the 600ms threshold).</p>
+<aside class="note"><strong>Note:</strong> The groups in the chart are based off of the Lighthouse score for TBT (e.g., >= 0.9 results in "good"). Due to rounding of the score, some TBT values slightly above 200ms get categorized as "good" (and similarly at the 600ms threshold).</aside>
 
 Remember that the data is a single, throttled-CPU Lighthouse run through WebPageTest and does not reflect real user experiences. Yet, potential interactivity looked much worse when looking at TBT versus FID. The "real" evaluation of your interactivity is probably somewhere between. Thus, if your FID is "good", take a look at TBT in case you're missing some poor user experiences that FID can't catch yet. The same issues that cause poor FID also cause poor TBT.
 

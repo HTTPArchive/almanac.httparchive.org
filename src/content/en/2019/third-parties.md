@@ -57,9 +57,9 @@ This chapter divides third-party providers into one of these broad categories. A
 - **Video** - providers that host the arbitrary video content of their users
 - **Other** - uncategorized or non-conforming activity
 
-<p class="note">
+<aside class="note">
   <strong>Note on CDNs</strong>: The CDN category here includes providers that provide resources on <strong>public</strong> CDN domains (e.g. bootstrapcdn.com, cdnjs.cloudflare.com, etc.) and does <strong>not</strong> include resources that are simply served over a CDN. i.e. putting Cloudflare in front of a page would not influence its first-party designation according to our criteria.
-</p>
+</aside>
 
 ### Caveats
 

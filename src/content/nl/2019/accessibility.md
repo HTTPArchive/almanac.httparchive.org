@@ -57,7 +57,7 @@ Om ervoor te zorgen dat uw website onder deze omstandigheden leesbaar is, is het
 
 Slechts 22,04% van de sites gaf al hun tekst voldoende kleurcontrast. Of met andere woorden: 4 op de 5 sites hebben tekst die gemakkelijk op de achtergrond overgaat, waardoor deze onleesbaar wordt.
 
-<p class="note">Merk op dat we geen enkele tekst in afbeeldingen konden analyseren, dus onze gerapporteerde statistiek is een bovengrens van het totale aantal websites dat de kleurcontrasttest heeft doorstaan.</p>
+<aside class="note">Merk op dat we geen enkele tekst in afbeeldingen konden analyseren, dus onze gerapporteerde statistiek is een bovengrens van het totale aantal websites dat de kleurcontrasttest heeft doorstaan.</aside>
 
 ### Pagina's zoomen en schalen
 

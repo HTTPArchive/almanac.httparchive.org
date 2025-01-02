@@ -623,7 +623,7 @@ SRIで保護されたスクリプトが含まれている上位5ホストの残�
 
 レスポンスヘッダー`Feature-Policy`の採用率は、デスクトップページでは0.60%、モバイルページでは0.51%とかなり低い。一方、デスクトップページでは、1320万フレームのうち11.8%でFeature Policyが有効になっていました。モバイルページでは、1390万フレームのうち10.8%が`allow`属性を含んでいました。
 
-<p class="note">この章の以前のバージョンでは、フレームの合計数と `allow` 属性を持つフレームの割合の値が間違っていました。詳細については、この <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/pull/3912">GitHub PR</a> を参照してください。</p>
+<aside class="note">この章の以前のバージョンでは、フレームの合計数と `allow` 属性を持つフレームの割合の値が間違っていました。詳細については、この <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/pull/3912">GitHub PR</a> を参照してください。</aside>
 
 iframeの機能ポリシーで最もよく使われているディレクティブを見ると、これらは主にフレームが動画を再生する方法を制御するために使われていることがわかります。例えば、最も一般的なディレクティブである`encrypted-media`は、DRMで保護された動画を再生するために必要なEncrypted Media Extensions APIへのアクセスを制御するために使用されます。フィーチャーポリシーを持つフレームの起源として最も多いのは `https://www.facebook.com`と`https://www.youtube.com`でした (デスクトップページのフィーチャーポリシーを持つフレームの49.87%と26.18%でした)。
 
@@ -633,7 +633,7 @@ iframeの機能ポリシーで最もよく使われているディレクティ�
 
 iframeの`sandbox`属性は、埋め込まれたウェブページの機能を制限し、その結果、攻撃を開始する機会を制限するために使用することができます。広告や動画などのサードパーティコンテンツを埋め込むことはウェブ上では一般的なことなので、これらの多くが`sandbox`属性によって制限されていることは驚くべきことではありません。デスクトップページのiframeの18.3%が`sandbox`属性を持っているのに対し、モバイルページでは21.9%となっています。
 
-<p class="note">この章の以前のバージョンでは、`sandbox` 属性を持つフレームの割合の値が間違っていました。詳細については、この <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/pull/3912">GitHub PR</a> を参照してください。</p>
+<aside class="note">この章の以前のバージョンでは、`sandbox` 属性を持つフレームの割合の値が間違っていました。詳細については、この <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/pull/3912">GitHub PR</a> を参照してください。</aside>
 
 <figure>
   <table>
@@ -838,7 +838,7 @@ CORPに関連しているのは [`Cross-Origin-Embedder-Policy`](https://develop
 
 我々の結果によると、（安全で暗号化された方法で）乱数を生成できる`Cypto.getRandomValues`関数が最も広く利用されていることがわかりました(デスクトップ: 70%、モバイル: 68%)。Google Analyticでは、この機能を利用していることが利用状況の測定に大きく影響していると考えています。一般的に、モバイルブラウザはこのAPIを[完全にサポート](https://developer.mozilla.org/docs/Web/API/Web_Crypto_API#Browser_compatibility)していますが、モバイルサイトでは暗号化処理の実行数がわずかに少なくなっていることがわかります。
 
-<p class="note">注意すべき点は、受動的なクロールを行っているため、このセクションでの結果はこれによって制限されることです。関数が実行される前に何らかのインタラクションが必要なケースを特定することはできません。</p>
+<aside class="note">注意すべき点は、受動的なクロールを行っているため、このセクションでの結果はこれによって制限されることです。関数が実行される前に何らかのインタラクションが必要なケースを特定することはできません。</aside>
 
 ### ボット保護サービスの活用
 

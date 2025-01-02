@@ -57,7 +57,7 @@ Afin de vous assurer que votre site web soit lisible dans ces conditions, un con
 
 Seuls 22,04&nbsp;% des sites ont donné à l’ensemble de leurs textes un contraste de couleurs suffisant. En d’autres termes&nbsp;: 4 sites sur 5 ont un texte qui se confond facilement avec son arrière-plan, le rendant illisible.
 
-<p class="note">Notez que nous n’avons pas été en mesure d’analyser du texte pris dans des images, de sorte que notre statistique est une limite supérieure du nombre total de sites web réussissant le test de contraste des couleurs.</p>
+<aside class="note">Notez que nous n’avons pas été en mesure d’analyser du texte pris dans des images, de sorte que notre statistique est une limite supérieure du nombre total de sites web réussissant le test de contraste des couleurs.</aside>
 
 ### Zoom et mise à l’échelle des pages
 

@@ -12,6 +12,7 @@ const generate_extra_markdown_conversions = (body) => {
 
   // Convert any markdown in Notes and BlockQuotes>
   body = body.replace(/(<p class="note">)(.*?)(<\/p>)/gs, function(a, b, c, d) { return b + convertSimpleMarkdown(c) + d});
+  body = body.replace(/(<aside class="note">)(.*?)(<\/aside>)/gs, function(a, b, c, d) { return b + convertSimpleMarkdown(c) + d});
   body = body.replace(/(<blockquote>)(.*?)(<\/blockquote>)/gs, function(a, b, c, d) { return b + convertSimpleMarkdown(c) + d});
 
   return body;

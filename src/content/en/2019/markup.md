@@ -38,7 +38,7 @@ Looking at a raw frequency count isn't especially helpful, even for standard ele
 
 Instead, as in Hixie's original study,  what we will look at is how many sites include each  element at least once in their home page.
 
-<p class="note">Note: This is, itself, not without some potential biases.  Popular products can be used by several sites, which introduce non-standard markup, even "invisibly" to individual authors.  Thus, care must be taken to acknowledge that usage doesn't necessarily imply direct author knowledge and conscious adoption as much as it does the servicing of a common need, in a common way.  During our research, we found several examples of this, some we will call out.</p>
+<aside class="note">Note: This is, itself, not without some potential biases.  Popular products can be used by several sites, which introduce non-standard markup, even "invisibly" to individual authors.  Thus, care must be taken to acknowledge that usage doesn't necessarily imply direct author knowledge and conscious adoption as much as it does the servicing of a common need, in a common way.  During our research, we found several examples of this, some we will call out.</aside>
 
 ## Top elements and general info
 
@@ -163,7 +163,7 @@ In the desktop dataset we collected data for the top 4,834 non-standard elements
 
 Additionally, 15% of desktop pages and 16% of mobile pages contain deprecated elements.
 
-<p class="note">Note: A lot of this is very likely due to the use of products rather than individual authors continuing to manually create this markup.</p>
+<aside class="note">Note: A lot of this is very likely due to the use of products rather than individual authors continuing to manually create this markup.</aside>
 
 {{ figure_markup(
   image="fig6.png",
