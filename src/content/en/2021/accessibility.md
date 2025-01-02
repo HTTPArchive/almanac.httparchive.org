@@ -49,7 +49,7 @@ We've split up our most interesting insights into six categories:
 
 We hope that this chapter, full of sobering metrics and demonstrable accessibility negligence on the Web, will inspire readers to prioritize this work and change their practices, shifting towards a more inclusive internet.
 
-<p class="note">We chose to use the person-first term "people with disabilities" throughout this chapter. We acknowledge that the identity-first term "disabled people" is preferred for many. Our choice in terminology is in no way prescriptive of which term is appropriate.</p>
+<aside class="note">We chose to use the person-first term "people with disabilities" throughout this chapter. We acknowledge that the identity-first term "disabled people" is preferred for many. Our choice in terminology is in no way prescriptive of which term is appropriate.</aside>
 
 ## Ease of reading
 
@@ -673,7 +673,7 @@ The `aria-labelledby` attribute accepts an `id` reference as its value, which as
 
 The `aria-describedby` attribute can be used in cases where a more robust description is needed for an element. It also accepts an id reference as its value to connect with descriptive text that exists elsewhere in the interface. It does not supply the accessible name; it should be used in conjunction with an accessible name as a supplement, not a replacement. We found that 13% of desktop pages and 12% of mobile pages had at least one element with the `aria-describedby` attribute.
 
-<p class="note">Fun fact! We found 1,886 websites with the attribute `aria-lavel`, which is a misspelling of the `aria-label` attribute! Be sure to run those automated checks to pick up these easily avoidable errors.</p>
+<aside class="note">Fun fact! We found 1,886 websites with the attribute `aria-lavel`, which is a misspelling of the `aria-label` attribute! Be sure to run those automated checks to pick up these easily avoidable errors.</aside>
 
 #### Where do buttons get their accessible names from?
 

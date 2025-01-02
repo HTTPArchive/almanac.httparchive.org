@@ -141,7 +141,7 @@ Web Almanacのこの章では、データ駆動の観点から、PWAを現在の
   <figcaption>{{ figure_link(caption="Lighthouse PWAの監査。", sheets_gid="814184412", sql_file="lighthouse_pwa_audits.sql") }}</figcaption>
 </figure>
 
-<p class="note">Lighthouseテストのパフォーマンス統計が8月のクロールでは正しくなかったので、<code>load-fast-enough-for-pwa</code>の結果は9月の結果に置き換えられています。</p>
+<aside class="note">Lighthouseテストのパフォーマンス統計が8月のクロールでは正しくなかったので、<code>load-fast-enough-for-pwa</code>の結果は9月の結果に置き換えられています。</aside>
 
 <a hreflang="ja" href="https://web.dev/i18n/ja/load-fast-enough-for-pwa/">高速なページロード</a>は、とくに遅い携帯電話ネットワークを考慮に入れた場合、良好なモバイルユーザー体験を保証します。27.56%のページがPWAで十分に高速に読み込まれました。ウェブがどのように地理的に分散しているかを考えると、次の10億人のウェブユーザー、そのほとんどがモバイルデバイスを介してインターネットを利用することになるであろう人々にとって、より軽量なページで高速なロードタイムを持つことはもっとも重要なことです。
 

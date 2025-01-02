@@ -425,9 +425,9 @@ La crescita di questi oggetti è un'indicazione generale di una maggiore adozion
 * Il markup `HowTo` è cresciuto del 605% su desktop e del 623% su dispositivi mobile.
 * Il markup `QAPage` è cresciuto del 166.7% su desktop e del 192.1% su dispositivi mobili.
 
-<p class="note">
+<aside class="note">
   Ancora una volta, è importante notare che questi dati potrebbero non essere rappresentativi del loro effettivo livello di crescita, poiché questi oggetti sono solitamente posizionati su pagine interne.
-</p>
+</aside>
 
 L'adozione di dati strutturati è un vantaggio per il Web in quanto l'estrazione dei dati è preziosa per una vasta gamma di casi d'uso. Ci aspettiamo che questo continui a crescere man mano che i motori di ricerca espandono il loro utilizzo e quando inizia a potenziare le applicazioni oltre la ricerca sul web.
 

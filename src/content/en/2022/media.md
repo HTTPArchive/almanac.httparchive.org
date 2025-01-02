@@ -656,7 +656,7 @@ On desktop, where the difference between the default `sizes` value (`100vw`) and
 
 We estimate that one-quarter of desktop pages are loading more than 83 KB of extra image data, based purely on bad `sizes` attributes. That is to say: A better, smaller resource is there for the picking in the `srcset`, but because the `sizes` attribute is so erroneous, the browser doesn't pick it. Additionally, 10% of desktop pages that use sizes load more than a half-megabyte of excess image data because of bad `sizes` attributes!
 
-<p class="note">Note: Our crawlers didn't actually load the correct resources, so the numbers here are estimates, based in part on the byte sizes of the incorrect resources, which the crawlers actually did load.</p>
+<aside class="note">Note: Our crawlers didn't actually load the correct resources, so the numbers here are estimates, based in part on the byte sizes of the incorrect resources, which the crawlers actually did load.</aside>
 
 In the short term, individual developers can and should use <a hreflang="en" href="https://ausi.github.io/respimagelint/">RespImageLint</a> to audit and fix their badly broken `sizes` attributes and prevent this kind of waste.
 

@@ -72,9 +72,9 @@ De onderstaande afbeelding laat zien hoe een typische aanvraag-/reactiestroom we
   )
 }}
 
-<p class="note">Opmerking: tenzij anders aangegeven, zijn alle statistieken in dit hoofdstuk voor mobiel, met dien verstande dat desktopstatistieken vergelijkbaar zijn. Waar mobiele statistieken en desktopstatistieken aanzienlijk verschillen, wordt dat genoemd.
+<aside class="note">Opmerking: tenzij anders aangegeven, zijn alle statistieken in dit hoofdstuk voor mobiel, met dien verstande dat desktopstatistieken vergelijkbaar zijn. Waar mobiele statistieken en desktopstatistieken aanzienlijk verschillen, wordt dat genoemd.
 
-Veel van de reacties die in dit hoofdstuk worden gebruikt, zijn afkomstig van webservers die algemeen verkrijgbare serverpakketten gebruiken. Hoewel we beste praktijken kunnen aangeven, is het mogelijk dat de procedures niet mogelijk zijn als het gebruikte softwarepakket een beperkt aantal cache-opties heeft.</p>
+Veel van de reacties die in dit hoofdstuk worden gebruikt, zijn afkomstig van webservers die algemeen verkrijgbare serverpakketten gebruiken. Hoewel we beste praktijken kunnen aangeven, is het mogelijk dat de procedures niet mogelijk zijn als het gebruikte softwarepakket een beperkt aantal cache-opties heeft.</aside>
 
 ## Caching leidende principes
 

@@ -139,7 +139,7 @@ About 39% of desktop and mobile websites crawled by the HTTP Archive this year u
 
 Overall, the trend is clear: more and more people prefer to self-host their web fonts. This is a great choice in many cases because self-hosting avoids external dependencies for something as critical to rendering as fonts are. Plus, when self-hosted fonts are well optimized, they give you the best performance (but more on that later).
 
-<p class="note">NB: The numbers presented in this section are slightly different from those in the 2022 chapter. The 2022 chapter attempted to include base64 encoded fonts embedded in CSS files for some (somewhat) popular web font service. Fortunately, encoding base64 fonts in CSS is no longer a popular method of serving fonts. For this reason the 2024 chapter switched to counting fonts served as separate files only. The spreadsheet for this year includes the recalculated figures for 2022 and 2023 as well (and they are mentioned where appropriate in this section).</p>
+<aside class="note">NB: The numbers presented in this section are slightly different from those in the 2022 chapter. The 2022 chapter attempted to include base64 encoded fonts embedded in CSS files for some (somewhat) popular web font service. Fortunately, encoding base64 fonts in CSS is no longer a popular method of serving fonts. For this reason the 2024 chapter switched to counting fonts served as separate files only. The spreadsheet for this year includes the recalculated figures for 2022 and 2023 as well (and they are mentioned where appropriate in this section).</aside>
 
 ## File formats
 
@@ -461,7 +461,7 @@ Emoji fonts do not suffer from this problem as emoji are encoded in Unicode so t
 
 Which font families were most popular this year, and which foundries made them? Taking a look at the top 20 there are few surprises in the first ten entries compared to 2022. Roboto still leads the pack, with a small increase in use*. Font Awesome use has remained fairly stable, and so has Noto usage (unlike 2022, Noto is now split into script specific items). The only surprise is the decline of Lato, which has been overtaken by Poppins and Montserrat.
 
-<p class="note">\* As noted in 2022 the discrepancy between desktop and mobile use of Roboto is mostly likely due to the use of `local()` which loads a locally installed version of Roboto; due to it being the system font on Android, usage on mobile is low.</p>
+<aside class="note">\* As noted in 2022 the discrepancy between desktop and mobile use of Roboto is mostly likely due to the use of `local()` which loads a locally installed version of Roboto; due to it being the system font on Android, usage on mobile is low.</aside>
 
 Looking at the remainder of the top 20, Proxima Nova usage has increased slightly to reach about 1% of websites. As the only commercial, non-icon font in the top 20, this level of popularity is extremely impressive. Like in 2022, icon fonts make up about 18% of web fonts in 2024. The meteoric rise of Inter should also not go unnoticed, as it also stands around 1%. Due to its prominence in frameworks and libraries, we expect Inter to rise into the top 10 within the next few years.
 
@@ -1552,7 +1552,7 @@ It's worth noting a point of complexity in the data gathered on color fonts. Our
 
 We plan to refine our analysis of color fonts in future editions of the Almanac, but our expectation is that `COLR` usage will continue to grow and it will soon become the dominant color font format (if it isn't already).
 
-<p class="note">The observant reader may have noticed that the color font usage percentages between the 2022 fonts chapter and 2024 font chapter are slightly different. On closer inspection of the color font data we noticed that some popular font tools include an empty `SVG` table, even though the font does not contain any color glyphs. This erroneously caused the popularity of `SVG` to be inflated. We have corrected this in 2024 and included the 2022 and 2023 data for comparison.</p>
+<aside class="note">The observant reader may have noticed that the color font usage percentages between the 2022 fonts chapter and 2024 font chapter are slightly different. On closer inspection of the color font data we noticed that some popular font tools include an empty `SVG` table, even though the font does not contain any color glyphs. This erroneously caused the popularity of `SVG` to be inflated. We have corrected this in 2024 and included the 2022 and 2023 data for comparison.</aside>
 
 ## Font smoothing
 

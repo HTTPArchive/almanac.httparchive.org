@@ -376,7 +376,7 @@ Since most of the popular browsers are competing with each other in the space of
 
 We observe that 14.6% distinct advertisers are using ARA to register themselves using attribution-reporting-register-trigger header on 8.8% distinct publishers on the top 1,000 websites. In total, we observe 1.6% (0.5%) distinct advertisers have adopted ARA across 5.1% (2.4%) publishers in top million (top 10 million) websites. This shows that not many publishers have adopted ARA as compared to the advertiser adoption—preparing themselves for the post-cookie world where they will need to rely on ARA to attribute user conversions to ad clicks.
 
-<p class="note"><b>Limitation</b>: Note that by "presence", we refer to the mere presence of privacy sandbox API calls in the JavaScript in this analysis. This does not mean that the APIs are guaranteed to be executed or used during the runtime.</a>
+<aside class="note"><b>Limitation</b>: Note that by "presence", we refer to the mere presence of privacy sandbox API calls in the JavaScript in this analysis. This does not mean that the APIs are guaranteed to be executed or used during the runtime.</aside>
 
 ### Related Websites Sets
 

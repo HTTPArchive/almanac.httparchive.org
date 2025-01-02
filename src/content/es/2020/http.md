@@ -98,9 +98,9 @@ Al comparar la Figura 22.3 con los resultados del año pasado, ha habido un **au
   <figcaption>{{ figure_link(caption="Uso de la versión de HTTP por solicitud.", sheets_gid="2122693316", sql_file="adoption_of_http_2_by_site_and_requests.sql") }}</figcaption>
 </figure>
 
-<p class="note">
+<aside class="note">
   ** Al igual que con el rastreo del año pasado, alrededor del 4% de las solicitudes desde un dispositivo de escritorio no reportaron una versión del protocolo. El análisis muestra que en su mayoría son HTTP/1.1 y trabajamos para corregir esta brecha en nuestras estadísticas para futuros rastreos y análisis. Aunque basamos los datos en el rastreo de agosto de 2020, confirmamos la corrección en el conjunto de datos de octubre de 2020 antes de la publicación, que de hecho mostró que se trataba de solicitudes HTTP/1.1 y, por lo tanto, las agregamos a esa estadística en la tabla anterior.
-</note>
+</aside>
 
 Al revisar el número total de solicitudes de sitios web, habrá un sesgo hacia los dominios de terceros que son usuales. Para comprender mejor la adopción de HTTP/2 por instalación de servidor, veremos en su lugar el protocolo utilizado para servir el HTML desde la página de inicio de un sitio.
 

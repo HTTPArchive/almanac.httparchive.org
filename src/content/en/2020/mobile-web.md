@@ -39,7 +39,7 @@ In addition to the above, we also used a non-public Chrome data source in the se
 
 While this data is only collected from a subset of (opted in) Chrome users, it does not suffer from being limited to home pages. It is pseudonymous and consists of histograms and events.
 
-<p class="note">NOTE: Reporting is enabled if the user has enabled a feature that syncs browser windows, unless they have disabled the "Make searches and browsing better / Sends URLs of pages you visit to Google" setting.</p>
+<aside class="note">NOTE: Reporting is enabled if the user has enabled a feature that syncs browser windows, unless they have disabled the "Make searches and browsing better / Sends URLs of pages you visit to Google" setting.</aside>
 
 ## Mobile web & desktop traffic trends
 
@@ -51,7 +51,7 @@ A <a hreflang="en" href="https://www.perficient.com/insights/research-hub/mobile
 
 Note that this section references stats that have been made available specifically for this chapter from non-public Chrome data source, [see details here](#data-sources). We use this data to assess page loads on Android and Windows—as a proxy for mobile and desktop respectively.
 
-<p class="note">NOTE: we may refer to the data in this section as mobile for Android and desktop for Windows.</p>
+<aside class="note">NOTE: we may refer to the data in this section as mobile for Android and desktop for Windows.</aside>
 
 #### Page loads across origins ranked by popularity
 

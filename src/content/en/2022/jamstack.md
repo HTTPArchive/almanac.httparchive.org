@@ -34,7 +34,7 @@ All three of the above definitions come from <a hreflang="en" href="https://jams
 
 But as the emphasized words demonstrate, there's clearly some continuity: the sites should be fast, they should be pre-rendered, and they should use an architectural approach that decouples "where you get your data" from "how you render your data". Even if a precise dictionary definition is hard to come by, Jamstack developers know what you mean when you say "Jamstack": you've got a site that loads really quickly, renders a lot of its useful content once, at build time, and retrieves additional data (if it needs to) via JavaScript.
 
-<p class="note">Disclosure: the two authors of this report were Netlify employees. Netlify invented the term Jamstack and owns Jamstack.org. This report and the underlying analysis were reviewed and approved by others not affiliated with Netlify.</p>
+<aside class="note">Disclosure: the two authors of this report were Netlify employees. Netlify invented the term Jamstack and owns Jamstack.org. This report and the underlying analysis were reviewed and approved by others not affiliated with Netlify.</aside>
 
 ## Quantifying the Jamstack: what counts?
 

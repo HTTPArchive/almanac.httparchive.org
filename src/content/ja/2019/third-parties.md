@@ -57,9 +57,9 @@ featured_stat_label_3: サードパーティのバイト数
 - **Video** - ユーザーの任意の動画コンテンツ
 - **Other** - 未分類、上記に分類されないカテゴリ
 
-<p class="note">
+<aside class="note">
   <strong>CDNについての注意事項</strong>: ここでのCDNカテゴリには、<strong>パブリック</strong>CDNドメイン（例：bootstrapcdn.com、cdnjs.cloudflare.comなど）上でリソースを提供するプロバイダが含まれており、単にCDN上で提供されるリソースは含まれて<strong>いません</strong>。
-</p>
+</aside>
 
 ### 警告事項
 

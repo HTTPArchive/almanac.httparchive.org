@@ -623,7 +623,7 @@ Op een vergelijkbare manier, door het `allow`-attribuut op `<iframe>`-elementen 
 
 De antwoordkop van `Feature-Policy` heeft een vrij lage acceptatiegraad, met 0,60% van de desktoppagina's en 0,51% van de mobiele pagina's. Aan de andere kant was functiebeleid ingeschakeld voor 11,8% van de 13,2 miljoen frames die op de desktoppagina's werden gevonden. Op mobiele pagina's bevatte 10,8% van de 13,9 miljoen frames het attribuut `allow`.
 
-<p class="note">Een eerdere versie van dit hoofdstuk vermeldde onjuiste waarden voor het totale aantal frames en het percentage frames met het kenmerk `allow`. Meer informatie is te vinden in deze <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/pull/3912">GitHub PR</a>.</p>
+<aside class="note">Een eerdere versie van dit hoofdstuk vermeldde onjuiste waarden voor het totale aantal frames en het percentage frames met het kenmerk `allow`. Meer informatie is te vinden in deze <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/pull/3912">GitHub PR</a>.</aside>
 
 Op basis van de meest gebruikte richtlijnen in het functiebeleid voor iframes, kunnen we zien dat deze voornamelijk worden gebruikt om te bepalen hoe de frames video's afspelen. De meest voorkomende richtlijn, `encrypted-media`, wordt bijvoorbeeld gebruikt om de toegang tot de Encrypted Media Extensions API te controleren, die nodig is om DRM-beveiligde video's af te spelen. De meest voorkomende iframe-herkomsten met een functiebeleid waren `https://www.facebook.com` en `https://www.youtube.com` (respectievelijk 49,87% en 26,18% van de frames met een functiebeleid op desktoppagina's ).
 
@@ -633,7 +633,7 @@ Door een niet-vertrouwde derde partij op te nemen in een iframe, kan die derde p
 
 Het `sandbox`-attribuut op iframes kan worden gebruikt om de mogelijkheden, en dus ook de mogelijkheden om aanvallen uit te voeren, van de embedded webpagina te beperken. Aangezien het insluiten van inhoud van derden, zoals advertenties of video's, gebruikelijk is op internet, is het niet verrassend dat veel hiervan worden beperkt via het `sandbox`-attribuut: 18,3% van de iframes op desktoppagina's heeft een `sandbox`-attribuut terwijl op mobiele pagina's is dit 21,9%.
 
-<p class="note">Een eerdere versie van dit hoofdstuk vermeldde onjuiste waarden voor het percentage frames met het kenmerk `sandbox`. Meer informatie is te vinden in deze <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/pull/3912">GitHub PR</a>.</p>
+<aside class="note">Een eerdere versie van dit hoofdstuk vermeldde onjuiste waarden voor het percentage frames met het kenmerk `sandbox`. Meer informatie is te vinden in deze <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/pull/3912">GitHub PR</a>.</aside>
 
 <figure>
   <table>
@@ -838,7 +838,7 @@ De <a hreflang="en" href="https://www.w3.org/TR/WebCryptoAPI/">Web Cryptography 
 
 Onze resultaten laten zien dat de functie `Cypto.getRandomValues`, die het mogelijk maakt om een willekeurig getal te genereren (op een veilige, cryptografische manier) verreweg de meest gebruikte is (desktop: 70% en mobiel: 68%). We denken dat het gebruik van deze functie door Google Analytic een groot effect heeft op het gemeten gebruik. Over het algemeen zien we dat mobiele websites iets minder cryptografische bewerkingen uitvoeren, hoewel mobiele browsers deze API [volledig ondersteunen](https://developer.mozilla.org/docs/Web/API/Web_Crypto_API#Browser_compatibility).
 
-<p class="note">Opgemerkt moet worden dat, aangezien we passief crawlen, onze resultaten in deze sectie hierdoor worden beperkt. We kunnen geen gevallen identificeren waarin enige interactie vereist is voordat de functies worden uitgevoerd.</p>
+<aside class="note">Opgemerkt moet worden dat, aangezien we passief crawlen, onze resultaten in deze sectie hierdoor worden beperkt. We kunnen geen gevallen identificeren waarin enige interactie vereist is voordat de functies worden uitgevoerd.</aside>
 
 ### Gebruikmakend van botbeveiligingsservices
 

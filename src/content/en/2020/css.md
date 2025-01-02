@@ -48,7 +48,7 @@ For certain metrics, looking at the CSS AST was not enough. We wanted to look at
 
 Custom metrics were also used for part of the [custom properties analysis](#custom-properties). While we can get a lot of information about custom property usage from the stylesheets alone, we cannot build a dependency graph without being able to look at the DOM tree for context, as custom properties are inherited. Looking at the computed style of the DOM nodes also gives us information like what kinds of elements each property is applied to, and which of them are [registered](https://developer.mozilla.org/docs/Web/API/CSS/RegisterProperty)—information that we also cannot get from the stylesheets.
 
-<p class="note">We crawl our pages in both desktop and mobile mode but for a lot of the data they give similar results so, unless otherwise noted, stats presented in this chapter refer to the set of mobile pages.</p>
+<aside class="note">We crawl our pages in both desktop and mobile mode but for a lot of the data they give similar results so, unless otherwise noted, stats presented in this chapter refer to the set of mobile pages.</aside>
 
 ## Usage
 

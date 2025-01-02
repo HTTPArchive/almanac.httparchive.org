@@ -350,7 +350,7 @@ The `canvas` element can be used with either the [Canvas API](https://developer.
 
 While the `html`, `head`, `body`, `title`, and `meta` elements are all optional, they're the most common elements this year, all present on more than 99% of the pages.
 
-<p class="note">Note that as we are looking at the rendered HTML, and the browsers will automatically add the `html` and `head` elements, this chart shows we have an error rate of 0.2% of pages in our crawl due to sites no longer being accessible at the time of the crawl.</p>
+<aside class="note">Note that as we are looking at the rendered HTML, and the browsers will automatically add the `html` and `head` elements, this chart shows we have an error rate of 0.2% of pages in our crawl due to sites no longer being accessible at the time of the crawl.</aside>
 
 {{ figure_markup(
   image="element-popularity.png",

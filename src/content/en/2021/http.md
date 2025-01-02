@@ -55,7 +55,7 @@ HTTP/2 aimed to address many of the problems web developers were facing when try
 
 In the thirty years since HTTP version 0.9, there has been a shift in the protocol's adoption. With over 6 million web pages analyzed, the HTTP Archive found only a single instance of HTTP 0.9 being used for the initial page request, only a couple of thousand pages still using 1.0. Almost 40% of pages were still using version 1.1 however, with the remaining 60% using HTTP/2 or above. HTTP/2 adoption is thus up 10% since the same analysis was performed in 2020.
 
-<p class="note">Note: Due to the way HTTP/3 works, as we will discuss below, and how our crawl works with a fresh instance each time, HTTP/3 is unlikely to be used for the initial page request, or even subsequent requests. Therefore, we report some statistics in this chapter as "HTTP/2+" to indicate HTTP/2 or HTTP/3 might be used in the real world. We will investigate how much HTTP/3 is actually supported (even if not used in our crawl) later in the chapter.</p>
+<aside class="note">Note: Due to the way HTTP/3 works, as we will discuss below, and how our crawl works with a fresh instance each time, HTTP/3 is unlikely to be used for the initial page request, or even subsequent requests. Therefore, we report some statistics in this chapter as "HTTP/2+" to indicate HTTP/2 or HTTP/3 might be used in the real world. We will investigate how much HTTP/3 is actually supported (even if not used in our crawl) later in the chapter.</aside>
 
 ### Adoption by request
 

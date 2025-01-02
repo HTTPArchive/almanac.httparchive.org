@@ -82,7 +82,7 @@ Allons plus loin et examinons une autre mesure qui se concentre davantage sur _c
 - il est également livré sous forme de texte au navigateur. Il se compresse donc bien et devrait être livré plus rapidement qu’une simple capture d’écran de la page&nbsp;;
 - ainsi, si la quantité totale de JavaScript qu’une page télécharge (sans compter les images, CSS, etc.) est supérieure à une capture d’écran PNG du viewport, nous utilisons beaucoup trop de JavaScript. À ce stade, il serait plus rapide d’envoyer cette capture d’écran pour obtenir l’état initial de la page&nbsp;!
 
-<p class="note">Le <strong>JavaScript Bloat Score</strong> est défini comme suit&nbsp;: (taille totale du JavaScript) / (taille de la capture d’écran PNG du port d’affichage). Tout nombre supérieur à 1 signifie qu’il est plus rapide d’envoyer une capture d’écran.</p>
+<aside class="note">Le <strong>JavaScript Bloat Score</strong> est défini comme suit&nbsp;: (taille totale du JavaScript) / (taille de la capture d’écran PNG du port d’affichage). Tout nombre supérieur à 1 signifie qu’il est plus rapide d’envoyer une capture d’écran.</aside>
 
 Quels en sont les résultats&nbsp;? Sur les plus de 5 millions de sites web analysés, 75,52&nbsp;% étaient surchargés de JavaScript. Nous avons encore un long chemin à parcourir.
 
@@ -223,7 +223,7 @@ Certains designers aiment utiliser des icônes à la place du texte&nbsp;; elles
 
 C’est pourquoi il est important d’éviter toute confusion et d’ajouter du texte complémentaire et des étiquettes à vos boutons. À l’heure actuelle, au moins 28,59&nbsp;% des sites incluent un bouton avec une seule icône sans texte complémentaire.
 
-<p class="note">Note&nbsp;: le nombre indiqué ci-dessus n’est qu’une limite inférieure. Au cours de notre analyse, nous n’avons inclus que les boutons utilisant des icônes de police sans texte complémentaire. Cependant, de nombreux boutons utilisent désormais des SVG au lieu d’icônes de police, aussi les inclurons-nous également dans les prochaines exécutions.</p>
+<aside class="note">Note&nbsp;: le nombre indiqué ci-dessus n’est qu’une limite inférieure. Au cours de notre analyse, nous n’avons inclus que les boutons utilisant des icônes de police sans texte complémentaire. Cependant, de nombreux boutons utilisent désormais des SVG au lieu d’icônes de police, aussi les inclurons-nous également dans les prochaines exécutions.</aside>
 
 ## Champs de formulaire sémantique
 
@@ -278,7 +278,7 @@ Actuellement, seules 29,62&nbsp;% des pages comportant des champs de saisie util
 
 Permettre aux utilisateurs de copier et de coller leurs mots de passe dans votre page leur permet d’utiliser un gestionnaire de mots de passe. Les gestionnaires de mots de passe aident les utilisateurs à générer (et à mémoriser) des mots de passe forts et à les remplir automatiquement sur les pages web. Seulement 0,02&nbsp;% des pages web testées désactivent cette fonctionnalité.
 
-<p class="note">Note&nbsp;: Bien que cela soit très encourageant, il s’agit peut-être d’une sous-estimation en raison de l’exigence de notre <a href="./methodology">méthodologie</a> de ne tester que les pages d’accueil. Les pages intérieures, comme les pages de connexion, ne sont pas testées.</p>
+<aside class="note">Note&nbsp;: Bien que cela soit très encourageant, il s’agit peut-être d’une sous-estimation en raison de l’exigence de notre <a href="./methodology">méthodologie</a> de ne tester que les pages d’accueil. Les pages intérieures, comme les pages de connexion, ne sont pas testées.</aside>
 
 ## Conclusion
 
@@ -297,7 +297,7 @@ Le web mobile existe maintenant depuis assez longtemps pour qu’il y ait toute 
   )
 }}
 
-<p class="note" data-markdown="1">Notes&nbsp;:
+<aside class="note" data-markdown="1">Notes&nbsp;:
 
 1. Nous avons considéré que les sites faisant un effort en matière de mobile sont ceux qui adaptent leur design à des écrans plus petits. Ou plutôt, ceux qui ont au moins un point de rupture CSS à 600&nbsp;px ou moins.
 
@@ -308,4 +308,4 @@ Le web mobile existe maintenant depuis assez longtemps pour qu’il y ait toute 
 4. Le nombre total de smartphones actifs a été trouvé en additionnant le nombre de téléphones Android et iPhone actifs (rendus publics par Apple et Google), et un peu de maths pour prendre en compte les téléphones chinois connectés à Internet. <a hreflang="en" href="https://www.ben-evans.com/benedictevans/2019/5/28/the-end-of-mobile">Plus d’infos ici</a>.
 
 5. Le nombre de 1,6 milliards d’ordinateurs de bureau est calculé à partir de nombres rendus publics par <a hreflang="en" href="https://web.archive.org/web/20181030132235/https://news.microsoft.com/bythenumbers/en/windowsdevices">Microsoft</a> et <a hreflang="en" href="https://web.archive.org/web/20190628161024/https://appleinsider.com/articles/18/10/30/apple-passes-100m-active-mac-milestone-thanks-to-high-numbers-of-new-users">Apple</a>. Il n’inclut pas les ordinateurs Linux.
-</p>
+</aside>

@@ -623,7 +623,7 @@ In a similar fashion, by defining the `allow` attribute on `<iframe>` elements, 
 
 The `Feature-Policy` response header has a fairly low adoption rate, at 0.60% of the desktop pages and 0.51% of mobile pages. On the other hand, Feature Policy was enabled on 11.8% of the 13.2 million frames that were found on the desktop pages. On mobile pages, 10.8% of the 13.9 million frames contained the `allow` attribute.
 
-<p class="note">An earlier version of this chapter reported incorrect values for the total number of frames and the percentage of frames with the `allow` attribute. More information can be found in this <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/pull/3912">GitHub PR</a>.</p>
+<aside class="note">An earlier version of this chapter reported incorrect values for the total number of frames and the percentage of frames with the `allow` attribute. More information can be found in this <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/pull/3912">GitHub PR</a>.</aside>
 
 Based on the most commonly used directives in the Feature Policy on iframes, we can see that these are mainly used to control how the frames play videos. For instance the most prevalent directive, `encrypted-media`, is used to control access to the Encrypted Media Extensions API, which is required to play DRM-protected videos. The most common iframe origins with a Feature Policy were `https://www.facebook.com` and `https://www.youtube.com` (49.87% and 26.18% of the frames with a Feature Policy on desktop pages respectively).
 
@@ -633,7 +633,7 @@ By including an untrusted third-party in an iframe, that third-party can try to 
 
 The `sandbox` attribute on iframes can be used to restrict the capabilities, and therefore also the opportunities for launching attacks, of the embedded web page. As embedding third-party content such as advertisements or videos is common practice on the web, it is not surprising that many of these are restricted via the `sandbox` attribute: 18.3% of the iframes on desktop pages have a `sandbox` attribute while on mobile pages this is 21.9%.
 
-<p class="note">An earlier version of this chapter reported incorrect values for the percentage of frames with the `sandbox` attribute. More information can be found in this <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/pull/3912">GitHub PR</a>.</p>
+<aside class="note">An earlier version of this chapter reported incorrect values for the percentage of frames with the `sandbox` attribute. More information can be found in this <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/pull/3912">GitHub PR</a>.</aside>
 
 <figure>
   <table>
@@ -838,7 +838,7 @@ The <a hreflang="en" href="https://www.w3.org/TR/WebCryptoAPI/">Web Cryptography
 
 Our results show that the  `Cypto.getRandomValues` function, which allows for generating a random number (in a secure, cryptographic manner) is by far the most widely used one (desktop: 70% and mobile: 68%). We believe Google Analytic's use of this function has a major effect on the usage measured. In general, we see that mobile websites perform slightly fewer cryptographic operations, although mobile browsers [fully support](https://developer.mozilla.org/docs/Web/API/Web_Crypto_API#Browser_compatibility) this API.
 
-<p class="note">It should be noted that, since we perform passive crawling, our results in this section will be limited by this. We're not able to identify cases where any interaction is required before the functions are executed.</p>
+<aside class="note">It should be noted that, since we perform passive crawling, our results in this section will be limited by this. We're not able to identify cases where any interaction is required before the functions are executed.</aside>
 
 ### Utilizing bot protection services
 

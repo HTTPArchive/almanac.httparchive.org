@@ -107,7 +107,7 @@ Unsurprisingly, in Figure 2.5 above, `px` is the most used unit type, with about
 
 When it comes to units based on physical space, the `cm` (or centimeter) unit is the most popular by far, followed by `in` (inches), and then `Q`. We know these types of units are specifically useful for print stylesheets, but we didn't even know the `Q` unit existed until this survey! Did you?
 
-<p class="note">An earlier version of this chapter discussed the unexpected popularity of the <code>Q</code> unit. Thanks to the <a hreflang="en" href="https://discuss.httparchive.org/t/chapter-2-css/1757/6">community discussion</a> surrounding this chapter, we've identified that this was a bug in our analysis and have updated Figure 2.5 accordingly.</p>
+<aside class="note">An earlier version of this chapter discussed the unexpected popularity of the <code>Q</code> unit. Thanks to the <a hreflang="en" href="https://discuss.httparchive.org/t/chapter-2-css/1757/6">community discussion</a> surrounding this chapter, we've identified that this was a bug in our analysis and have updated Figure 2.5 accordingly.</aside>
 
 ### Viewport-based units
 

@@ -634,7 +634,7 @@ Besides being used as an HTTP header, this feature can be used within `<iframe>`
 
 12.6% of 17.4 million frames in mobile contained the `allow` attribute to enable permission or feature policies.
 
-<p class="note">An earlier version of this chapter reported incorrect values for the total number of frames and the percentage of frames with the `allow` attribute. More information can be found in this <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/pull/3912">GitHub PR</a>.</p>
+<aside class="note">An earlier version of this chapter reported incorrect values for the total number of frames and the percentage of frames with the `allow` attribute. More information can be found in this <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/pull/3912">GitHub PR</a>.</aside>
 
 The following is a list of the top 10 `allow` directives that were detected in frames:
 
@@ -741,7 +741,7 @@ The above chart of the 2022 data shows that more than 99% of websites with a `sa
 
 For all iframes found on desktop websites, 21.08% include the `sandbox` attribute.
 
-<p class="note">An earlier version of this chapter reported the incorrect percentage of frames with the `sandbox` attribute. More information can be found in this <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/pull/3912">GitHub PR</a>.</p>
+<aside class="note">An earlier version of this chapter reported the incorrect percentage of frames with the `sandbox` attribute. More information can be found in this <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/pull/3912">GitHub PR</a>.</aside>
 
 We find that `Content-Security-Policy` headers which include a `sandbox` directive are at a mere 0.3% usage for mobile (desktop is similar at 0.4%) which may speak to the fact that this attribute is only applied on a per-case basis for the practice of embedding iframe content within pages, rather than ahead-of-time planning through a content security policy definition.
 

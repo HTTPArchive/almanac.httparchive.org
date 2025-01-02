@@ -98,9 +98,9 @@ Wanneer Figuur 22.3 wordt vergeleken met de resultaten van vorig jaar, is er een
   <figcaption>{{ figure_link(caption="Gebruik van HTTP-versie op verzoek.", sheets_gid="2122693316", sql_file="adoption_of_http_2_by_site_and_requests.sql") }}</figcaption>
 </figure>
 
-<p class="note">
+<aside class="note">
   ** Net als bij de crawl van vorig jaar, meldde ongeveer 4% van de desktopverzoeken geen protocolversie. Analyse toont aan dat dit meestal HTTP/1.1 is en we hebben eraan gewerkt om dit gat in onze statistieken voor toekomstige crawls en analyses te dichten. Hoewel we de gegevens baseren op de crawl van augustus 2020, hebben we de correctie in de gegevensset van oktober 2020 vóór publicatie bevestigd, die inderdaad aantoonde dat dit HTTP/1.1-verzoeken waren en hebben ze daarom aan die statistiek in de bovenstaande tabel toegevoegd.
-</note>
+</aside>
 
 Bij het beoordelen van het totale aantal websiteverzoeken, zal er een voorkeur zijn voor algemene domeinen van derden. Om een beter begrip te krijgen van de HTTP/2-acceptatie door serverinstallatie, zullen we in plaats daarvan kijken naar het protocol dat wordt gebruikt om de HTML aan te bieden vanaf de startpagina van een site.
 

@@ -39,7 +39,7 @@ Naast het bovenstaande hebben we ook een niet-openbare Chrome-gegevensbron gebru
 
 Hoewel deze gegevens alleen worden verzameld van een subset van (aangemelde) Chrome-gebruikers, hebben ze geen last van het feit dat ze beperkt zijn tot startpagina's. Het is pseudoniem en bestaat uit histogrammen en gebeurtenissen.
 
-<p class="note">OPMERKING: Rapportage is ingeschakeld als de gebruiker een functie heeft ingeschakeld die browservensters synchroniseert, tenzij ze de instelling "Zoeken en browsen beter maken/URL's van pagina's die u bezoekt naar Google sturen" hebben uitgeschakeld.</p>
+<aside class="note">OPMERKING: Rapportage is ingeschakeld als de gebruiker een functie heeft ingeschakeld die browservensters synchroniseert, tenzij ze de instelling "Zoeken en browsen beter maken/URL's van pagina's die u bezoekt naar Google sturen" hebben uitgeschakeld.</aside>
 
 ## Verkeerstrends voor mobiel internet en desktop
 
@@ -51,7 +51,7 @@ Een <a hreflang="en" href="https://www.perficient.com/insights/research-hub/mobi
 
 Merk op dat deze sectie verwijst naar statistieken die specifiek voor dit hoofdstuk beschikbaar zijn gemaakt vanuit de niet-openbare Chrome-gegevensbron, [zie details hier](#gegevensbronnen). We gebruiken deze gegevens om het laden van pagina's op Android en Windows te beoordelen — als een proxy voor respectievelijk mobiel en desktop.
 
-<p class="note">OPMERKING: we verwijzen naar de gegevens in deze sectie als mobiel voor Android en desktop voor Windows.</p>
+<aside class="note">OPMERKING: we verwijzen naar de gegevens in deze sectie als mobiel voor Android en desktop voor Windows.</aside>
 
 #### Paginaladingen in verschillende herkomsten, gerangschikt op populariteit
 

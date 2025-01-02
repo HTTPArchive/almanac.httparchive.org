@@ -66,7 +66,7 @@ This year we will, again, be drawing heavily on the <a hreflang="en" href="https
 - **Video** - These scripts enable video player and streaming functionality.
 - **Other** - These are miscellaneous scripts delivered via a shared origin with no precise category or attribution.
 
-<p class="note">Note: The CDN category here includes providers that provide resources on public CDN domains (e.g. bootstrapcdn.com, cdnjs.cloudflare.com, etc.) and does not include resources that are simply served over a CDN. For example, putting Cloudflare in front of a page would not influence its first-party designation according to our criteria.</p>
+<aside class="note">Note: The CDN category here includes providers that provide resources on public CDN domains (e.g. bootstrapcdn.com, cdnjs.cloudflare.com, etc.) and does not include resources that are simply served over a CDN. For example, putting Cloudflare in front of a page would not influence its first-party designation according to our criteria.</aside>
 
 One change that we have made to our methodology this year is to remove the Hosting category from our analysis. If you happen to use WordPress.com for your blog, or Shopify for your ecommerce platform, then we're going to ignore other requests for those domains by that site as not truly "third-party", as they are in many ways part of hosting on those platforms. Similar to the note above, we do not consider CDNs in front of a page to be "third party". In reality this made very little difference to the numbers, but we feel it's a more accurate reflection of what we should consider "third party" by the above definition, and also aligns more closely with how the other chapters use this term.
 

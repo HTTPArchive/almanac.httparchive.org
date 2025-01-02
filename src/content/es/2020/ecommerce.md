@@ -64,7 +64,7 @@ Nuestra metodología tiene las siguientes limitaciones:
 
 En total, 21.72% de los sitios móviles y 21.27% de los sitios de escritorio usan una plataforma de comercio electrónico. Para 2019, el porcentaje era 9.41% para sitios móviles y 9.67% en sitios de escritorio.
 
-<p class="note">Nota: Este aumento se debe principalmente a mejoras hechas a Wappalyzer para detectar los sitios de comercio electrónico y no debe ser atribuido a otros factores como el crecimiento debido al Covid-19. Además, una corrección menor fue aplicada a las estadísticas del 2019 de forma retrospectiva para compensar un error y, por lo tanto, los porcentajes de 2019 son ligeramente diferentes de los mencionados en el capítulo de <a href="../2019/ecommerce">Comercio Electrónico 2019</a>.</p>
+<aside class="note">Nota: Este aumento se debe principalmente a mejoras hechas a Wappalyzer para detectar los sitios de comercio electrónico y no debe ser atribuido a otros factores como el crecimiento debido al Covid-19. Además, una corrección menor fue aplicada a las estadísticas del 2019 de forma retrospectiva para compensar un error y, por lo tanto, los porcentajes de 2019 son ligeramente diferentes de los mencionados en el capítulo de <a href="../2019/ecommerce">Comercio Electrónico 2019</a>.</aside>
 
 ### Principales plataformas de comercio electrónico
 
@@ -135,7 +135,7 @@ El COVID-19 ha tenido un gran impacto mundial y ha hecho necesario un cambio onl
 
 Definitivamente existe un crecimiento significativo en los sitios WooCommerce y Shopify alrededor del tiempo que el COVID empezó a afectar realmente al mundo.
 
-<p class="note">Nota: <a hreflang="en" href="https://github.com/AliasIO/wappalyzer/pull/2731/commits/f44f20f03618f6a5fd868dd38ce9db5e2e2f1407">La detección de Wappalyzer para Wix</a> no diferencia si un sitio esta usando Wix como CMS o como plataforma de comercio electrónico. Debido a ello, el crecimiento de Wix como plataforma de comercio electrónico puede no estar representado correctamente en la gráfica anterior.</p>
+<aside class="note">Nota: <a hreflang="en" href="https://github.com/AliasIO/wappalyzer/pull/2731/commits/f44f20f03618f6a5fd868dd38ce9db5e2e2f1407">La detección de Wappalyzer para Wix</a> no diferencia si un sitio esta usando Wix como CMS o como plataforma de comercio electrónico. Debido a ello, el crecimiento de Wix como plataforma de comercio electrónico puede no estar representado correctamente en la gráfica anterior.</aside>
 
 ## Tamaño de página y peticiones
 
@@ -241,7 +241,7 @@ Las imágenes anteriores muestran que la página de comercio electrónico promed
   sql_file="pagestats_image_bydevice_format.sql"
 ) }}
 
-<p class="note">Hay que mencionar que algunos servicios de imágenes o CDNs entregan automáticamente imágenes en formato WebP (en vez de JPEG o PNG) a plataformas que soportan WebP, aún cuando la URL tiene un sufijo <code>.jpg</code> o <code>.png</code>. Por ejemplo, la imagen <code>IMG_20190113_113201.jpg</code> muestra una imagen WebP en Chrome. Sin embargo, la forma en la que el HTTP Archive detecta los formatos de imágenes es revisar las palabras clave en tipo MIME primero, después se verifica la extensión del archivo. Esto significa que el formato para imágenes con URLs como la anterior, son identificadas como WebP, ya que WebP es soportado por HTTP Archive como agente de usuario.</p>
+<aside class="note">Hay que mencionar que algunos servicios de imágenes o CDNs entregan automáticamente imágenes en formato WebP (en vez de JPEG o PNG) a plataformas que soportan WebP, aún cuando la URL tiene un sufijo <code>.jpg</code> o <code>.png</code>. Por ejemplo, la imagen <code>IMG_20190113_113201.jpg</code> muestra una imagen WebP en Chrome. Sin embargo, la forma en la que el HTTP Archive detecta los formatos de imágenes es revisar las palabras clave en tipo MIME primero, después se verifica la extensión del archivo. Esto significa que el formato para imágenes con URLs como la anterior, son identificadas como WebP, ya que WebP es soportado por HTTP Archive como agente de usuario.</aside>
 
 El uso de PNG se mantuvo casi al [mismo nivel que en 2019](../2019/ecommerce#png) (en 27% tanto para escritorio como para móvil). Observamos una reducción en el uso de JPEG (4% para escritorio y 6% para móvil). Como resultado de esta reducción, vimos que se compensan los porcentajes con un aumento en el uso de GIF. Los GIFs son muy comunes en páginas de inicio de comercio electrónico, aunque no se usan mucho los GIFs en las páginas de producto. Ya que nuestra metodología solo toma en cuenta las páginas de inicio, esto explica el incremento en el uso de GIFs en los sitios de comercio electrónico. Lighthouse tiene una auditoría que recomienda usar "formatos de video para contenido animado". Esta es una técnica que los sitios de comercio electrónico pueden usar para optimizar su rendimiento y así mantener las propiedades de animación de los GIFs. Revisa <a hreflang="es" href="https://web.dev/i18n/es/replace-gifs-with-videos/">este artículo</a> para más información.
 
@@ -437,7 +437,7 @@ La adopción del etiquetado del lado del servidor dependerá en que los terceros
   <figcaption>{{ figure_link(caption="Tag manager usage on ecommerce sites.", sheets_gid="2045910168", sql_file="percent_of_ecommsites_using_each_tag_managers.sql") }}</figcaption>
 </figure>
 
-<p class="note">Nota: El análisis anterior está basado en la detección de Wappalyzer, que puede diferir del análisis realizado con los datos de <a href="./methodology#third-party-web">Third Party Web</a> que es usado en el capítulo de <a href="./third-parties">Contenido de Terceros</a>.</p>
+<aside class="note">Nota: El análisis anterior está basado en la detección de Wappalyzer, que puede diferir del análisis realizado con los datos de <a href="./methodology#third-party-web">Third Party Web</a> que es usado en el capítulo de <a href="./third-parties">Contenido de Terceros</a>.</aside>
 
 ### Plataformas de Gestión de Consentimiento
 

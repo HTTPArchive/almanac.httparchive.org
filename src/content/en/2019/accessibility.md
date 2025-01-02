@@ -57,7 +57,7 @@ In order to make sure your website is readable under these conditions, making su
 
 Only 22.04% of sites gave all of their text sufficient color contrast. Or in other words: 4 out of every 5 sites have text which easily blends into the background, making it unreadable.
 
-<p class="note">Note that we weren't able to analyze any text inside of images, so our reported metric is an upper-bound of the total number of websites passing the color contrast test.</p>
+<aside class="note">Note that we weren't able to analyze any text inside of images, so our reported metric is an upper-bound of the total number of websites passing the color contrast test.</aside>
 
 ### Zooming and scaling pages
 

@@ -64,7 +64,7 @@ Our methodology has the following limitations:
 
 In total, 21.72% of mobile websites and 21.27% of desktop websites used an ecommerce platform. For 2019, the same number was 9.41% for mobile websites and 9.67% for desktop websites.
 
-<p class="note">Note: This increase is primarily due to improvements made to Wappalyzer to detect ecommerce websites and shouldn't be attributed to other factors like growth due to Covid-19. Also a minor correction was applied to 2019 stats retrospectively to account for an error and hence the 2019 percentages are slightly different than those given in the <a href="../2019/ecommerce">2019 Ecommerce</a> chapter.</p>
+<aside class="note">Note: This increase is primarily due to improvements made to Wappalyzer to detect ecommerce websites and shouldn't be attributed to other factors like growth due to Covid-19. Also a minor correction was applied to 2019 stats retrospectively to account for an error and hence the 2019 percentages are slightly different than those given in the <a href="../2019/ecommerce">2019 Ecommerce</a> chapter.</aside>
 
 ### Top ecommerce platforms
 
@@ -135,7 +135,7 @@ COVID-19 has had a huge impact on the world and necessitated an even bigger move
 
 There is definitely a measurable increase WooCommerce and Shopify sites around the time COVID started really impacting the world.
 
-<p class="note">Note: <a hreflang="en" href="https://github.com/AliasIO/wappalyzer/pull/2731/commits/f44f20f03618f6a5fd868dd38ce9db5e2e2f1407">Wappalyzer detection for Wix</a> doesn't differentiate if a site is using Wix as CMS or ecommerce platform. Due to this, growth of Wix as ecommerce platform may not be represented correctly in above graph.</p>
+<aside class="note">Note: <a hreflang="en" href="https://github.com/AliasIO/wappalyzer/pull/2731/commits/f44f20f03618f6a5fd868dd38ce9db5e2e2f1407">Wappalyzer detection for Wix</a> doesn't differentiate if a site is using Wix as CMS or ecommerce platform. Due to this, growth of Wix as ecommerce platform may not be represented correctly in above graph.</aside>
 
 ## Page weight and requests
 
@@ -241,7 +241,7 @@ The figures above show that the median ecommerce page has 34 images and an image
   sql_file="pagestats_image_bydevice_format.sql"
 ) }}
 
-<p class="note">Note that some image services or CDNs will automatically deliver WebP (rather than JPEG or PNG) to platforms that support WebP, even for a URL with a <code>.jpg</code> or <code>.png</code> suffix. For example, <code>IMG_20190113_113201.jpg</code> returns a WebP image in Chrome. However, the way HTTP Archive detects image formats is to check for keywords in the MIME type first, then fall back to the file extension. This means that the format for images with URLs such as the above will be given as WebP, since WebP is supported by HTTP Archive as a user agent.</p>
+<aside class="note">Note that some image services or CDNs will automatically deliver WebP (rather than JPEG or PNG) to platforms that support WebP, even for a URL with a <code>.jpg</code> or <code>.png</code> suffix. For example, <code>IMG_20190113_113201.jpg</code> returns a WebP image in Chrome. However, the way HTTP Archive detects image formats is to check for keywords in the MIME type first, then fall back to the file extension. This means that the format for images with URLs such as the above will be given as WebP, since WebP is supported by HTTP Archive as a user agent.</aside>
 
 PNG usage remained roughly at the [same level as 2019](../2019/ecommerce#png) (at 27% for both desktop and mobile). We observed drop in JPEG usage (4% for desktop and 6% for mobile). Out of this drop, most of it went towards increased GIF usage. GIFs are quite common on ecommerce home pages whereas GIFs may not be much used on product detail pages. Since our methodology only looks at home pages, this explains the significantly high usage of GIFs across ecommerce sites. Lighthouse has an audit which recommends using "video formats for animated content". This is a technique ecommerce sites can use to optimize for performance but still retain animation properties of GIFs. See <a hreflang="en" href="https://web.dev/replace-gifs-with-videos/">this article</a> for more details.
 
@@ -437,7 +437,7 @@ Adoption of server-side tagging will depend on third parties to provide server s
   <figcaption>{{ figure_link(caption="Tag manager usage on ecommerce sites.", sheets_gid="2045910168", sql_file="percent_of_ecommsites_using_each_tag_managers.sql") }}</figcaption>
 </figure>
 
-<p class="note">Note: Above analysis is based on Wappalyzer detection which may differ from analysis done using <a href="./methodology#third-party-web">Third Party Web</a> dataset which is used for <a href="./third-parties">Third parties</a> chapter.</p>
+<aside class="note">Note: Above analysis is based on Wappalyzer detection which may differ from analysis done using <a href="./methodology#third-party-web">Third Party Web</a> dataset which is used for <a href="./third-parties">Third parties</a> chapter.</aside>
 
 ### Consent Management Platforms
 
