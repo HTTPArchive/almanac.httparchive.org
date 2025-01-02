@@ -562,7 +562,7 @@ The `<track>` element is used to provide timed text for `<audio>` and `<video>` 
 
 For `<video>` elements, the figure is slightly higher at 0.5% for both desktops and 0.65% for mobile sites. These statistics do not cover audio or video embedded via `<iframe>`, where third-party services are less likely to offer text alternatives. Our industry can do a lot better.
 
-The methodology to collect the data for this report did not include modern HLS (HTTP Live Streaming) which would would include a manifest file to include subtitles for the deaf and hard-of-hearing (SDH). In the future, scanning for this would allow better understanding of what languages are supported with closed captions and also collect information about the use of audio description.
+<aside class="note">The methodology to collect the data for this report did not include modern HLS (HTTP Live Streaming) which would would include a manifest file to include subtitles for the deaf and hard-of-hearing (SDH). In the future, scanning for this would allow better understanding of what languages are supported with closed captions and also collect information about the use of audio description.</aside>
 
 ## Assistive technology with ARIA
 
