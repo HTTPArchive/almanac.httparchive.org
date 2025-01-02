@@ -33,6 +33,7 @@ WITH pages AS (
     date = '2024-06-01' AND
     is_root_page = TRUE
 ),
+
 response_headers AS (
   SELECT
     client,
@@ -46,6 +47,7 @@ response_headers AS (
     is_main_document = TRUE AND
     LOWER(response_header.name) = 'origin-trial'
 ),
+
 meta_tags AS (
   SELECT
     client,
@@ -56,6 +58,7 @@ meta_tags AS (
   WHERE
     LOWER(JSON_VALUE(meta_node, '$.http-equiv')) = 'origin-trial'
 ),
+
 ot_from_custom_metric AS (
   SELECT
     client,
@@ -74,7 +77,7 @@ SELECT
 FROM (
   SELECT
     client,
-    ot.feature AS feature,
+    ot.feature,
     ot.expiry >= CURRENT_TIMESTAMP() AS is_active,
     COUNT(DISTINCT page) AS number_of_pages
   FROM (

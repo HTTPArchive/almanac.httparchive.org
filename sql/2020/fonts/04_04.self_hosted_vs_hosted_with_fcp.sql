@@ -6,7 +6,7 @@ SELECT
     WHEN pct_self_hosted_hosted = 1 THEN 'self-hosted'
     WHEN pct_self_hosted_hosted = 0 THEN 'external'
     ELSE 'both' END
-  AS font_host,
+    AS font_host,
   COUNT(DISTINCT page) AS pages,
   SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS total,
   COUNT(DISTINCT page) / SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS pct,
@@ -24,7 +24,8 @@ FROM (
     type = 'font'
   GROUP BY
     client,
-    page)
+    page
+)
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -32,9 +33,9 @@ JOIN (
     CAST(JSON_EXTRACT_SCALAR(payload, "$['_chromeUserTiming.firstContentfulPaint']") AS INT64) AS fcp,
     CAST(JSON_EXTRACT_SCALAR(payload, "$['_chromeUserTiming.LargestContentfulPaint']") AS INT64) AS lcp
   FROM
-    `httparchive.pages.2020_08_01_*`)
-USING
-  (client, page)
+    `httparchive.pages.2020_08_01_*`
+)
+USING (client, page)
 GROUP BY
   client,
   font_host

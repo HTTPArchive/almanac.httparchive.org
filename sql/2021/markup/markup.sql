@@ -163,13 +163,12 @@ SELECT
   # pages with dir on other elements
   SAFE_DIVIDE(COUNTIF(markup_info.dirs_body_nodes_dir_total > 0), COUNT(0)) AS pct_body_nodes_dir_set
 
-FROM
-  (
-    SELECT
-      _TABLE_SUFFIX AS client,
-      get_markup_info(JSON_EXTRACT_SCALAR(payload, '$._markup')) AS markup_info
-    FROM
-      `httparchive.pages.2021_07_01_*`
-  )
+FROM (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    get_markup_info(JSON_EXTRACT_SCALAR(payload, '$._markup')) AS markup_info
+  FROM
+    `httparchive.pages.2021_07_01_*`
+)
 GROUP BY
   client

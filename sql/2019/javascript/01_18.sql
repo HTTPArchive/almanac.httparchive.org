@@ -31,7 +31,8 @@ FROM (
     type = 'script'
   GROUP BY
     client,
-    page)
+    page
+)
 GROUP BY
   client
 ORDER BY

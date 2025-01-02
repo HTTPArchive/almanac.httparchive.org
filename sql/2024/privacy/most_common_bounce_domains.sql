@@ -15,7 +15,9 @@ WITH redirect_requests AS (
     type NOT IN ('css', 'image', 'font', 'video', 'audio') AND
     ROUND(INT64(summary.status) / 100) = 3 AND
     index <= 2
-), navigation_redirect AS (
+),
+
+navigation_redirect AS (
   -- Find the first navigation redirect
   SELECT
     client,
@@ -28,7 +30,9 @@ WITH redirect_requests AS (
     index = 1 AND
     LOWER(response_header.name) = 'location' AND
     NET.REG_DOMAIN(response_header.value) != NET.REG_DOMAIN(page)
-), bounce_redirect AS (
+),
+
+bounce_redirect AS (
   -- Find the second navigation redirect
   SELECT
     client,
@@ -41,7 +45,9 @@ WITH redirect_requests AS (
   WHERE
     index = 2 AND
     LOWER(response_header.name) = 'location'
-), bounce_sequences AS (
+),
+
+bounce_sequences AS (
   -- Combine the first and second navigation redirects
   SELECT
     nav.client,
@@ -58,7 +64,9 @@ WITH redirect_requests AS (
   GROUP BY
     nav.client,
     bounce_hostname
-), pages_total AS (
+),
+
+pages_total AS (
   SELECT
     client,
     COUNT(DISTINCT page) AS total_pages

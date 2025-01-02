@@ -16,6 +16,7 @@ FROM (
     UNNEST(REGEXP_EXTRACT_ALL(body, '(?i)class=[\'"]([^\'"]+)')) AS value
   WHERE
     date = '2019-07-01' AND
-    firstHtml)
+    firstHtml
+)
 GROUP BY
   client

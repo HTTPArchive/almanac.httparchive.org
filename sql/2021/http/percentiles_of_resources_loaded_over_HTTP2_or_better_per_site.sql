@@ -15,7 +15,8 @@ FROM (
     date = '2021-07-01'
   GROUP BY
     client,
-    page),
+    page
+),
   UNNEST(GENERATE_ARRAY(1, 100)) AS percentile
 GROUP BY
   client,

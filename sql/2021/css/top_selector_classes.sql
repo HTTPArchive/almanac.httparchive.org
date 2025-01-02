@@ -69,20 +69,22 @@ FROM (
     COUNT(DISTINCT page) AS pages,
     APPROX_TOP_COUNT(class, 100) AS classes
   FROM (
-      SELECT DISTINCT
-        client,
-        page,
-        class
-      FROM
-        `httparchive.almanac.parsed_css`
-      LEFT JOIN
-        UNNEST(getSelectorParts(css).class) AS class
-      WHERE
-        date = '2021-07-01' AND
-        # Limit the size of the CSS to avoid OOM crashes.
-        LENGTH(css) < 0.1 * 1024 * 1024)
+    SELECT DISTINCT
+      client,
+      page,
+      class
+    FROM
+      `httparchive.almanac.parsed_css`
+    LEFT JOIN
+      UNNEST(getSelectorParts(css).class) AS class
+    WHERE
+      date = '2021-07-01' AND
+      # Limit the size of the CSS to avoid OOM crashes.
+      LENGTH(css) < 0.1 * 1024 * 1024
+  )
   GROUP BY
-    client),
+    client
+),
   UNNEST(classes) AS class
 WHERE
   class.value IS NOT NULL

@@ -1,5 +1,5 @@
 CREATE TEMPORARY FUNCTION getResourceHints(payload STRING)
-RETURNS ARRAY < STRUCT < name STRING, href STRING >>
+RETURNS ARRAY<STRUCT<name STRING, href STRING>>
 LANGUAGE js AS '''
 var hints = new Set(['preload', 'prefetch', 'preconnect', 'prerender', 'dns-prefetch']);
 try {
@@ -34,7 +34,8 @@ FROM (
   FROM
     `httparchive.pages.2022_06_01_*`
   LEFT JOIN
-    UNNEST(getResourceHints(payload)) AS hint)
+    UNNEST(getResourceHints(payload)) AS hint
+)
 LEFT JOIN (
   SELECT
     client,
@@ -43,9 +44,9 @@ LEFT JOIN (
   FROM
     `httparchive.almanac.requests`
   WHERE
-    date = '2022-06-01')
-USING
-  (client, page)
+    date = '2022-06-01'
+)
+USING (client, page)
 WHERE
   type = 'font'
 GROUP BY

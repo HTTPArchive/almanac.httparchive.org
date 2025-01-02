@@ -1,5 +1,5 @@
 #standardSQL
-  # CMS adoptions, compared to 2019
+# CMS adoptions, compared to 2019
 SELECT
   _TABLE_SUFFIX AS client,
   2020 AS year,
@@ -15,9 +15,9 @@ JOIN (
   FROM
     `httparchive.summary_pages.2020_08_01_*`
   GROUP BY
-    _TABLE_SUFFIX)
-USING
-  (_TABLE_SUFFIX)
+    _TABLE_SUFFIX
+)
+USING (_TABLE_SUFFIX)
 WHERE
   category = 'CMS'
 GROUP BY
@@ -39,9 +39,9 @@ JOIN (
   FROM
     `httparchive.summary_pages.2019_07_01_*`
   GROUP BY
-    _TABLE_SUFFIX)
-USING
-  (_TABLE_SUFFIX)
+    _TABLE_SUFFIX
+)
+USING (_TABLE_SUFFIX)
 WHERE
   category = 'CMS'
 GROUP BY

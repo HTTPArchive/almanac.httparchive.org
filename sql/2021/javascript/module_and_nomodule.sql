@@ -20,6 +20,7 @@ FROM (
     UNNEST(REGEXP_EXTRACT_ALL(body, r'(?i)(<script[^>]*>)')) AS script
   WHERE
     date = '2021-07-01' AND
-    firstHtml)
+    firstHtml
+)
 GROUP BY
   client

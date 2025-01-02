@@ -57,7 +57,6 @@ FROM
   lazy
 LEFT JOIN
   wp
-USING
-  (client, url)
+USING (client, url)
 GROUP BY
   client

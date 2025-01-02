@@ -70,10 +70,12 @@ WITH privacy_sandbox_features AS (
     NET.REG_DOMAIN(page) AS publisher,
     third_party_domain,
     CASE
-      WHEN api LIKE '%opics%|%' THEN
-        REPLACE(SUBSTR(api, 0, STRPOS(api, '|') - 1) || '-' || SPLIT(api, '|')[SAFE_OFFSET(1)], '|', '-')
-      WHEN api LIKE 'attribution-reporting-register-source%' THEN
-        SPLIT(api, '|')[OFFSET(0)]
+      WHEN api LIKE '%opics%|%'
+        THEN
+          REPLACE(SUBSTR(api, 0, STRPOS(api, '|') - 1) || '-' || SPLIT(api, '|')[SAFE_OFFSET(1)], '|', '-')
+      WHEN api LIKE 'attribution-reporting-register-source%'
+        THEN
+          SPLIT(api, '|')[OFFSET(0)]
       ELSE
         api
     END AS feature
@@ -94,6 +96,7 @@ grouped_features AS (
   FROM privacy_sandbox_features
   GROUP BY rank_group, feature
 ),
+
 aggregated_features AS (
   SELECT
     feature,
@@ -120,6 +123,7 @@ aggregated_features AS (
   FROM grouped_features
   GROUP BY feature
 )
+
 SELECT
   feature AS privacy_sandbox_features,
   total_publisher_leq_1000,

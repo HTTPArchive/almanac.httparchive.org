@@ -25,7 +25,8 @@ FROM (
       _TABLE_SUFFIX AS client,
       JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._security'), '$.iframe-allow-sandbox') AS iframeAttrs
     FROM
-      `httparchive.pages.2021_07_01_*`),
+      `httparchive.pages.2021_07_01_*`
+  ),
     UNNEST(iframeAttrs) AS iframeAttr,
     UNNEST(['allow', 'sandbox']) AS policy_type
 )
@@ -36,9 +37,9 @@ JOIN (
   FROM
     `httparchive.pages.2021_07_01_*`
   GROUP BY
-    client)
-USING
-  (client)
+    client
+)
+USING (client)
 GROUP BY
   client,
   total_iframes,

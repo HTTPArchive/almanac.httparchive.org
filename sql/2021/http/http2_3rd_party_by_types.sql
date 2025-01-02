@@ -24,11 +24,13 @@ FROM (
     WHERE
       r.date = '2021-07-01' AND
       tp.date = '2021-07-01' AND
-      NET.HOST(url) = domain)
+      NET.HOST(url) = domain
+  )
   GROUP BY
     client,
     page,
-    category),
+    category
+),
   UNNEST([5, 10, 20, 30, 40, 50, 60, 70, 80, 90, 95, 100]) AS percentile
 GROUP BY
   percentile,

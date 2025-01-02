@@ -7,7 +7,9 @@ WITH pages AS (
     COUNT(DISTINCT page) OVER (PARTITION BY client) AS total_pages
   FROM `httparchive.all.pages`
   WHERE date = '2024-06-01'
-), cookies AS (
+),
+
+cookies AS (
   SELECT
     client,
     page,

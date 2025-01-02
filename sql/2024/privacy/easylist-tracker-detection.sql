@@ -11,6 +11,7 @@ WITH easylist_data AS (
   SELECT string_field_0
   FROM `httparchive.almanac.easylist_adservers`
 ),
+
 requests_data AS (
   SELECT url
   FROM `httparchive.all.requests`
@@ -18,6 +19,7 @@ requests_data AS (
     date = '2024-06-01' AND
     is_root_page = TRUE
 ),
+
 block_status AS (
   SELECT
     r.url,
@@ -32,6 +34,7 @@ block_status AS (
   ON CheckDomainInURL(r.url, e.string_field_0) = 1
   GROUP BY r.url
 )
+
 SELECT
   COUNT(0) AS blocked_url_count
 FROM block_status

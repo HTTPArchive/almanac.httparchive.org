@@ -14,7 +14,8 @@ SELECT
   COUNTIF(LOWER(body) LIKE '%upush%') AS upush,
   COUNTIF(LOWER(body) LIKE '%cache-polyfill%') AS cache_polyfill,
   COUNTIF(LOWER(body) LIKE '%analytics-helper%') AS analytics_helper,
-  COUNTIF(LOWER(body) LIKE '%importscript%' AND
+  COUNTIF(
+    LOWER(body) LIKE '%importscript%' AND
     LOWER(body) NOT LIKE '%workbox%' AND
     LOWER(body) NOT LIKE '%sw-toolbox%' AND
     LOWER(body) NOT LIKE '%firebase%' AND
@@ -22,8 +23,10 @@ SELECT
     LOWER(body) NOT LIKE '%najva%' AND
     LOWER(body) NOT LIKE '%upush%' AND
     LOWER(body) NOT LIKE '%cache-polyfill%' AND
-    LOWER(body) NOT LIKE '%analytics-helper%') AS importscript_nolib,
-  COUNTIF(LOWER(body) NOT LIKE '%importscript%' AND
+    LOWER(body) NOT LIKE '%analytics-helper%'
+  ) AS importscript_nolib,
+  COUNTIF(
+    LOWER(body) NOT LIKE '%importscript%' AND
     LOWER(body) NOT LIKE '%workbox%' AND
     LOWER(body) NOT LIKE '%sw-toolbox%' AND
     LOWER(body) NOT LIKE '%firebase%' AND
@@ -31,22 +34,22 @@ SELECT
     LOWER(body) NOT LIKE '%najva%' AND
     LOWER(body) NOT LIKE '%upush%' AND
     LOWER(body) NOT LIKE '%cache-polyfill.js%' AND
-    LOWER(body) NOT LIKE '%analytics-helper.js%') AS none_of_the_above
-FROM
-  (
-    SELECT
-      date,
-      client,
-      page,
-      body
-    FROM
-      `httparchive.almanac.service_workers`
-    GROUP BY
-      date,
-      client,
-      page,
-      body
-  )
+    LOWER(body) NOT LIKE '%analytics-helper.js%'
+  ) AS none_of_the_above
+FROM (
+  SELECT
+    date,
+    client,
+    page,
+    body
+  FROM
+    `httparchive.almanac.service_workers`
+  GROUP BY
+    date,
+    client,
+    page,
+    body
+)
 GROUP BY
   date,
   client

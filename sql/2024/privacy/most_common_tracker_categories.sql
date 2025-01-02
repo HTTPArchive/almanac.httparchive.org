@@ -7,6 +7,7 @@ WITH whotracksme AS (
   FROM httparchive.almanac.whotracksme
   WHERE date = '2024-06-01'
 ),
+
 totals AS (
   SELECT
     client,
@@ -16,6 +17,7 @@ totals AS (
     date = '2024-06-01'
   GROUP BY client
 ),
+
 tracker_categories AS (
   SELECT
     client,
@@ -26,11 +28,12 @@ tracker_categories AS (
   ON (
     NET.HOST(url) = domain OR
     ENDS_WITH(NET.HOST(url), CONCAT('.', domain))
-    )
+  )
   WHERE
     date = '2024-06-01' AND
     NET.REG_DOMAIN(page) != NET.REG_DOMAIN(url) -- third party
 ),
+
 aggregated AS (
   SELECT
     client,

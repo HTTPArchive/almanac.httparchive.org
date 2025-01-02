@@ -15,7 +15,8 @@ FROM (
   FROM
     `httparchive.technologies.2020_08_01_*`
   WHERE
-    category = 'Ecommerce')
+    category = 'Ecommerce'
+)
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -23,9 +24,9 @@ JOIN (
     JSON_EXTRACT(JSON_EXTRACT_SCALAR(payload, '$._ecommerce'), '$.AndroidAppLinks') = '1' AS android_app_links,
     JSON_EXTRACT(JSON_EXTRACT_SCALAR(payload, '$._ecommerce'), '$.iOSUniveralLinks') = '1' AS ios_universal_links
   FROM
-    `httparchive.pages.2020_08_01_*`)
-USING
-  (client, url)
+    `httparchive.pages.2020_08_01_*`
+)
+USING (client, url)
 GROUP BY
   client
 ORDER BY

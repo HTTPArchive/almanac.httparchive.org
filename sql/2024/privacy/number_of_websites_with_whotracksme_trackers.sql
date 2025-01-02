@@ -6,6 +6,7 @@ WITH whotracksme AS (
   FROM `max-ostapenko.Public.whotracksme`
   WHERE date = '2024-06-01'
 ),
+
 pre_aggregated AS (
   SELECT
     client,

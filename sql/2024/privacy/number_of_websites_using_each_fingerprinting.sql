@@ -13,7 +13,7 @@ WITH totals AS (
 SELECT
   client,
   technology.technology,
-  total_websites AS total_websites,
+  total_websites,
   COUNT(DISTINCT page) AS number_of_websites,
   COUNT(DISTINCT page) / total_websites AS percent_of_websites
 FROM httparchive.crawl.pages

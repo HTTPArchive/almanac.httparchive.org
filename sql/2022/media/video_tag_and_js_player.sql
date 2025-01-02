@@ -35,7 +35,8 @@ FROM (
       url,
       get_media_info(JSON_EXTRACT_SCALAR(payload, '$._media')) AS media_info
     FROM
-      `httparchive.pages.2022_06_01_*`)
+      `httparchive.pages.2022_06_01_*`
+  )
   FULL OUTER JOIN (
     SELECT
       client,
@@ -50,7 +51,8 @@ FROM (
       client,
       url,
       page,
-      player)
+      player
+  )
   USING (client, url)
   GROUP BY
     client,
@@ -58,7 +60,8 @@ FROM (
     video_nodes,
     player
   HAVING
-    video_nodes OR player IS NOT NULL)
+    video_nodes OR player IS NOT NULL
+)
 GROUP BY
   client
 ORDER BY

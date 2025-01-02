@@ -15,7 +15,8 @@ FROM (
     `httparchive.almanac.requests`
   WHERE
     date = '2020-08-01' AND
-    type = 'image')
+    type = 'image'
+)
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -23,9 +24,9 @@ JOIN (
   FROM
     `httparchive.technologies.2020_08_01_*`
   WHERE
-    category = 'CMS')
-USING
-  (client, page)
+    category = 'CMS'
+)
+USING (client, page)
 GROUP BY
   client,
   format

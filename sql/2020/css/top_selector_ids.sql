@@ -69,20 +69,22 @@ FROM (
     COUNT(DISTINCT page) AS pages,
     APPROX_TOP_COUNT(id, 100) AS ids
   FROM (
-      SELECT DISTINCT
-        client,
-        page,
-        id
-      FROM
-        `httparchive.almanac.parsed_css`
-      LEFT JOIN
-        UNNEST(getSelectorParts(css).id) AS id
-      WHERE
-        date = '2020-08-01' AND
-        # Limit the size of the CSS to avoid OOM crashes.
-        LENGTH(css) < 0.1 * 1024 * 1024)
+    SELECT DISTINCT
+      client,
+      page,
+      id
+    FROM
+      `httparchive.almanac.parsed_css`
+    LEFT JOIN
+      UNNEST(getSelectorParts(css).id) AS id
+    WHERE
+      date = '2020-08-01' AND
+      # Limit the size of the CSS to avoid OOM crashes.
+      LENGTH(css) < 0.1 * 1024 * 1024
+  )
   GROUP BY
-    client),
+    client
+),
   UNNEST(ids) AS id
 WHERE
   id.value IS NOT NULL

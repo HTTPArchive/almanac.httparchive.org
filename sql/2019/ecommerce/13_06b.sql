@@ -8,8 +8,7 @@ SELECT
   ROUND(COUNT(0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY client), 2) AS pct
 FROM
   `httparchive.almanac.summary_requests`
-JOIN
-  (SELECT _TABLE_SUFFIX AS client, url AS page FROM `httparchive.technologies.2019_07_01_*` WHERE category = 'Ecommerce')
+JOIN (SELECT _TABLE_SUFFIX AS client, url AS page FROM `httparchive.technologies.2019_07_01_*` WHERE category = 'Ecommerce')
 USING (client, page)
 WHERE
   date = '2019-07-01' AND

@@ -19,7 +19,8 @@ FROM (
     FROM
       `httparchive.almanac.requests`
     WHERE
-      date = '2021-07-01')
+      date = '2021-07-01'
+  )
   JOIN (
     SELECT DISTINCT
       _TABLE_SUFFIX AS client,
@@ -29,9 +30,9 @@ FROM (
     WHERE
       LOWER(category) = 'static site generator' OR
       app = 'Next.js' OR
-      app = 'Nuxt.js')
-  USING
-    (client, page)
+      app = 'Nuxt.js'
+  )
+  USING (client, page)
   WHERE
     NET.HOST(url) IN (
       SELECT
@@ -40,10 +41,12 @@ FROM (
         `httparchive.almanac.third_parties`
       WHERE
         date = '2021-07-01' AND
-        category != 'hosting')
+        category != 'hosting'
+    )
   GROUP BY
     client,
-    page),
+    page
+),
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 GROUP BY
   percentile,

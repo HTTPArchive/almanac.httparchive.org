@@ -4,7 +4,7 @@ gunicorn==22.0.0
 pytest==8.2.2
 pytest-watch==4.2.0
 pytest-cov==5.0.0
-sqlfluff==1.4.5
+sqlfluff==3.3.0
 
 # sql/util/* dependencies
 pandas==2.2.3

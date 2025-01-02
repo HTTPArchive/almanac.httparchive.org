@@ -9,10 +9,8 @@ SELECT
   COUNT(DISTINCT url) / total AS pct
 FROM
   `httparchive.blink_features.features`
-JOIN
-  (SELECT _TABLE_SUFFIX AS client, COUNT(0) AS total FROM `httparchive.summary_pages.2020_08_01_*` GROUP BY client)
-USING
-  (client)
+JOIN (SELECT _TABLE_SUFFIX AS client, COUNT(0) AS total FROM `httparchive.summary_pages.2020_08_01_*` GROUP BY client)
+USING (client)
 WHERE
   yyyymmdd IN ('20200801', '20190701') AND
   feature IN ('CSSFlexibleBox', 'CSSGridLayout')

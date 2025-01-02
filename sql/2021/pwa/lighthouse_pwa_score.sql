@@ -11,17 +11,17 @@ FROM (
     url,
     CAST(JSON_EXTRACT(report, '$.categories.pwa.score') AS NUMERIC) AS score
   FROM
-    `httparchive.lighthouse.2021_07_01_mobile`)
-JOIN
-  (
-    SELECT
-      url
-    FROM
-      `httparchive.pages.2021_07_01_mobile`
-    WHERE
-      JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = 'true' AND
-      JSON_EXTRACT(payload, '$._pwa.manifests') != '[]'
-  )
+    `httparchive.lighthouse.2021_07_01_mobile`
+)
+JOIN (
+  SELECT
+    url
+  FROM
+    `httparchive.pages.2021_07_01_mobile`
+  WHERE
+    JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = 'true' AND
+    JSON_EXTRACT(payload, '$._pwa.manifests') != '[]'
+)
 USING (url),
   UNNEST([10, 25, 50, 75, 90]) AS percentile
 GROUP BY
@@ -37,7 +37,8 @@ FROM (
   SELECT
     CAST(JSON_EXTRACT(report, '$.categories.pwa.score') AS NUMERIC) AS score
   FROM
-    `httparchive.lighthouse.2021_07_01_mobile`),
+    `httparchive.lighthouse.2021_07_01_mobile`
+),
   UNNEST([10, 25, 50, 75, 90]) AS percentile
 GROUP BY
   date,

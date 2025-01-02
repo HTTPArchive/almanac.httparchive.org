@@ -22,6 +22,7 @@ WITH pages AS (
     UNNEST(getFingerprintingTypes(JSON_EXTRACT(custom_metrics, '$.privacy.fingerprinting.counts'))) AS fingerprinting_type
   WHERE date = '2024-06-01'
 )
+
 SELECT
   client,
   fingerprinting_type,

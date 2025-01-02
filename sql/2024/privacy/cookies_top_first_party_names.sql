@@ -5,10 +5,12 @@ WITH pages AS (
     client,
     root_page,
     custom_metrics,
-    COUNT(DISTINCT net.host(root_page)) OVER(PARTITION BY client) AS total_domains
+    COUNT(DISTINCT net.host(root_page)) OVER (PARTITION BY client) AS total_domains
   FROM `httparchive.all.pages`
   WHERE date = '2024-06-01'
-), cookies AS (
+),
+
+cookies AS (
   SELECT
     client,
     cookie,
