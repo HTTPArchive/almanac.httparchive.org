@@ -102,7 +102,7 @@ Our analysis detected 215 ecommerce platforms, a 48% increase in platforms compa
 
 6 of the 10 platforms are SaaS (or have SaaS versions): Shopify, <a hreflang="en" href="https://www.wix.com/ecommerce/website">Wix eCommerce</a>, <a hreflang="en" href="https://www.squarespace.com/ecommerce-website">Squarespace Commerce</a>, <a hreflang="en" href="https://www.bigcommerce.com/">BigCommerce</a>, Shopware, and <a hreflang="pt" href="https://lojaintegrada.com.br/">Loja Integrada</a>.
 
-<p class="note">Note: There was <a hreflang="en" href="https://github.com/HTTPArchive/httparchive.org/issues/414">an issue</a> with the July 2021 HTTP Archive data which resulted in the number of <a hreflang="en" href="https://www.opencart.com/">OpenCart</a> sites being under-reported. It is worth acknowledging that in the September results 10,801 OpenCart sites were detected. If a similar number of OpenCart sites were to have been detected in July, it would put it in between BigCommerce and Shopware in terms of popularity.</p>
+<aside class="note">Note: There was <a hreflang="en" href="https://github.com/HTTPArchive/httparchive.org/issues/414">an issue</a> with the July 2021 HTTP Archive data which resulted in the number of <a hreflang="en" href="https://www.opencart.com/">OpenCart</a> sites being under-reported. It is worth acknowledging that in the September results 10,801 OpenCart sites were detected. If a similar number of OpenCart sites were to have been detected in July, it would put it in between BigCommerce and Shopware in terms of popularity.</aside>
 
 ### Top ecommerce platforms by website popularity
 
@@ -531,7 +531,7 @@ Given we have seen that the number of image requests is slightly down, the avera
   sql_file="pagestats_image_bydevice_format.sql"
 ) }}
 
-<p class="note">Note that some image services or CDNs will automatically deliver WebP (rather than JPEG or PNG) to platforms that support WebP, even for a URL with a <code>.jpg</code> or <code>.png</code> suffix. For example, <code>IMG_20190113_113201.jpg</code> returns a WebP image in Chrome. However, the way HTTP Archive detects image formats is to check for keywords in the MIME type first, then fall back to the file extension. This means that the format for images with URLs such as the above will be given as WebP since WebP is supported by HTTP Archive as a user agent.</p>
+<aside class="note">Note that some image services or CDNs will automatically deliver WebP (rather than JPEG or PNG) to platforms that support WebP, even for a URL with a <code>.jpg</code> or <code>.png</code> suffix. For example, <code>IMG_20190113_113201.jpg</code> returns a WebP image in Chrome. However, the way HTTP Archive detects image formats is to check for keywords in the MIME type first, then fall back to the file extension. This means that the format for images with URLs such as the above will be given as WebP since WebP is supported by HTTP Archive as a user agent.</aside>
 
 The most popular image format was JPG with 54% of images being in this format on mobile. This is an 8% increase on last year when 50% of images were JPGs.
 

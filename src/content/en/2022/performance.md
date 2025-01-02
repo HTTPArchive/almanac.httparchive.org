@@ -35,7 +35,7 @@ Although the spotlight of this chapter, it's important to note that CWV are rela
 
 The CWV program suggests a clearly defined approach to measuring how users actually experience performance—a first for the industry. Are CWV the answer to helping the web become more performant? This chapter examines where the web is currently with CWV and takes a look into the future.
 
-<p class="note">Disclosure: This chapter is coauthored by an employee of Google, which created the Core Web Vitals program. This chapter and its underlying analysis were reviewed and approved by others not affiliated with Google.</p>
+<aside class="note">Disclosure: This chapter is coauthored by an employee of Google, which created the Core Web Vitals program. This chapter and its underlying analysis were reviewed and approved by others not affiliated with Google.</aside>
 
 ## Core Web Vitals
 

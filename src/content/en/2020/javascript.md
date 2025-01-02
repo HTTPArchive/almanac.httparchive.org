@@ -200,9 +200,9 @@ We can start to offset some of the cost of loading JavaScript by loading scripts
 
 On mobile, external scripts comprise 59.0% of all script elements found.
 
-<p class="note">
+<aside class="note">
   As an aside, when we talked about how much JavaScript is loaded on a page earlier, that total didn't account for the size of these inline scripts—because they're part of the HTML document, they're counted against the markup size. This means we load even more script that the numbers show.
-</p>
+</aside>
 
 {{ figure_markup(
   image="external-inline-mobile.png",

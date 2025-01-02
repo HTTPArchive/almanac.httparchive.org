@@ -141,7 +141,7 @@ While that usage may seem low, it is important that we realize that other measur
   <figcaption>{{ figure_link(caption="Lighthouse PWA audits.", sheets_gid="814184412", sql_file="lighthouse_pwa_audits.sql") }}</figcaption>
 </figure>
 
-<p class="note">Note the performance statistic for our Lighthouse tests were incorrect for our August crawl so the <code>load-fast-enough-for-pwa</code> result has been replaced with September results.</p>
+<aside class="note">Note the performance statistic for our Lighthouse tests were incorrect for our August crawl so the <code>load-fast-enough-for-pwa</code> result has been replaced with September results.</aside>
 
 A <a hreflang="en" href="https://web.dev/load-fast-enough-for-pwa/">fast page load</a> ensures a good mobile user experience, particularly when slower cellular networks are taken into consideration. 27.56% of pages loaded fast enough for a PWA. Given how geographically distributed the web is, having a fast load time with lighter pages matter the most of the next billion users of the web, most of whom will be introduced to the internet via a mobile device.
 

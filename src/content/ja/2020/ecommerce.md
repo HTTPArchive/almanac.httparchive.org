@@ -64,7 +64,7 @@ featured_stat_label_3: Eコマースサイトが行うJavaScriptリクエスト�
 
 合計では、モバイルウェブサイトの21.72％、デスクトップウェブサイトの21.27％がECプラットフォームを利用していました。2019年は、同数値がモバイルWebサイトで9.41％、デスクトップWebサイトで9.67％でした。
 
-<p class="note">注：この増加は、主にECサイトを検出するためにWappalyzerに施された改良によるもので、Covid-19による成長などの他の要因に起因するものではありません。また、2019年の統計には誤りを考慮して遡及的に軽微な修正が適用されたため、2019年のパーセンテージは<a href="../2019/ecommerce">2019 Eコマース</a>の章で示されたものとは若干異なります。</p>
+<aside class="note">注：この増加は、主にECサイトを検出するためにWappalyzerに施された改良によるもので、Covid-19による成長などの他の要因に起因するものではありません。また、2019年の統計には誤りを考慮して遡及的に軽微な修正が適用されたため、2019年のパーセンテージは<a href="../2019/ecommerce">2019 Eコマース</a>の章で示されたものとは若干異なります。</aside>
 
 ### 主要なEコマースプラットフォーム
 
@@ -135,7 +135,7 @@ COVID-19は世界に大きな影響を与えており、オンラインへの移
 
 COVIDが世界に大きな影響を与え始めた頃、WooCommerceやShopifyのサイトが明らかに増加しています。
 
-<p class="note">注：<a hreflang="en" href="https://github.com/AliasIO/wappalyzer/pull/2731/commits/f44f20f03618f6a5fd868dd38ce9db5e2e2f1407">Wappalyzer Detection for Wix</a>は、サイトがCMSとしてWixを使用しているか、EコマースプラットフォームとしてWixを使用しているかを区別しません。このため、EコマースプラットフォームとしてのWixの成長は、上記のグラフでは正しく表されていない可能性があります。</p>
+<aside class="note">注：<a hreflang="en" href="https://github.com/AliasIO/wappalyzer/pull/2731/commits/f44f20f03618f6a5fd868dd38ce9db5e2e2f1407">Wappalyzer Detection for Wix</a>は、サイトがCMSとしてWixを使用しているか、EコマースプラットフォームとしてWixを使用しているかを区別しません。このため、EコマースプラットフォームとしてのWixの成長は、上記のグラフでは正しく表されていない可能性があります。</aside>
 
 ## ページの重さとリクエスト
 
@@ -241,7 +241,7 @@ Eコマースサイトでは、リクエスト数が少ないにもかかわら�
   sql_file="pagestats_image_bydevice_format.sql"
 ) }}
 
-<p class="note">なお、画像サービスやCDNの中には、<code>.jpg</code>や<code>.png</code>などの接尾辞を持つURLであっても、WebPをサポートするプラットフォームには、JPEGやPNGではなくWebPを自動的に配信するものがあります。たとえば、<code>IMG_20190113_113201.jpg</code>は、ChromeではWebP画像を返します。しかし、HTTP Archiveが画像フォーマットを検出する方法は、まずMIMEタイプのキーワードをチェックし、次にファイル拡張子にフォールバックするというものです。つまり、HTTP ArchiveがユーザーエージェントとしてサポートしているのはWebPなので、上記のようなURLを持つ画像のフォーマットはWebPとして与えられることになります。</p>
+<aside class="note">なお、画像サービスやCDNの中には、<code>.jpg</code>や<code>.png</code>などの接尾辞を持つURLであっても、WebPをサポートするプラットフォームには、JPEGやPNGではなくWebPを自動的に配信するものがあります。たとえば、<code>IMG_20190113_113201.jpg</code>は、ChromeではWebP画像を返します。しかし、HTTP Archiveが画像フォーマットを検出する方法は、まずMIMEタイプのキーワードをチェックし、次にファイル拡張子にフォールバックするというものです。つまり、HTTP ArchiveがユーザーエージェントとしてサポートしているのはWebPなので、上記のようなURLを持つ画像のフォーマットはWebPとして与えられることになります。</aside>
 
 PNGの使用率は、ほぼ[2019年と同水準](../2019/ecommerce#png)で推移しました（デスクトップ、モバイルともに27％）。JPEGの使用率は減少しました（デスクトップ4%、モバイル6%）。この減少分のうち、ほとんどがGIFの使用増加につながっています。GIFはEコマースのホームページではよく使われていますが、商品の詳細ページではあまり使われていないかもしれません。私たちの手法ではホームページのみを対象としているため、このことが、EコマースサイトでGIFの使用率が著しく高いことを説明しています。Lighthouseの監査では、「アニメーションコンテンツ用のビデオフォーマット」の使用を推奨しています。これは、GIFのアニメーション特性を維持しつつ、パフォーマンスを最適化するためにEコマースサイトが利用できる手法です。詳しくは<a hreflang="en" href="https://web.dev/replace-gifs-with-videos/">この記事</a>をご覧ください。
 
@@ -437,7 +437,7 @@ Eコマースサイトでもっとも使用されているタグマネージャ�
   <figcaption>{{ figure_link(caption="Eコマースサイトでのタグマネージャーの利用", sheets_gid="2045910168", sql_file="percent_of_ecommsites_using_each_tag_managers.sql") }}</figcaption>
 </figure>
 
-<p class="note">注：上記の分析はWappalyzerによる検出に基づいており、<a href="./third-parties">サードパーティー</a>の章で使用されている<a href="./methodology#third-party-web">サードパーティーウェブ</a>データセットを用いた分析とは異なる可能性があります。</p>
+<aside class="note">注：上記の分析はWappalyzerによる検出に基づいており、<a href="./third-parties">サードパーティー</a>の章で使用されている<a href="./methodology#third-party-web">サードパーティーウェブ</a>データセットを用いた分析とは異なる可能性があります。</aside>
 
 ### コンセントマネジメント・プラットフォーム
 

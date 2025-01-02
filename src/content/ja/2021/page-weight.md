@@ -81,7 +81,7 @@ Googleは現在、コアウェブ・バイタルを良好に達成できてい�
 
 PNGやJPEGなどの画像フォーマットは、すべてのブラウザーで広くサポートされています。最近の画像フォーマットでは、WebPやAVIFが、より小さなファイルサイズでより高い品質を提供し、人気を博しています。WebPはほとんどのブラウザでサポートされていますが、AVIFは新しく、あまりサポートされていません。`<picture>` タグを使えば、JPEGやPNGのフォールバックを提供しながら、最新の画像フォーマットを使用できます。[メディア](./media)の章では、この点についてより詳しく説明しています。画像のサイズや圧縮を適切に行わないと、パフォーマンスが低下します。
 
-<p class="note">**備考**: 最適化し、さまざまな画像サイズ形式を比較できるオンライン サービスが必要な場合、Google の <a hreflang="en" href="https://squoosh.app/">Squoosh</a> アプリケーションより優れたソースはないと私は考えています。同様に、[Jake Archibald](https://x.com/jaffathecake)'s <a hreflang="en" href="https://jakearchibald.github.io/svgomg/">SVGOMG</a> は SVG の最適化にはもってこいです。</p>
+<aside class="note">**備考**: 最適化し、さまざまな画像サイズ形式を比較できるオンライン サービスが必要な場合、Google の <a hreflang="en" href="https://squoosh.app/">Squoosh</a> アプリケーションより優れたソースはないと私は考えています。同様に、[Jake Archibald](https://x.com/jaffathecake)'s <a hreflang="en" href="https://jakearchibald.github.io/svgomg/">SVGOMG</a> は SVG の最適化にはもってこいです。</aside>
 
 #### JavaScriptの普及について一言
 

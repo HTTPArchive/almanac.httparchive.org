@@ -425,9 +425,9 @@ El crecimiento en el uso de estos objetos es una señal general de un aumento en
 * El uso del marcado `HowTo` creció 605% en escritorio y 623% en móvil.
 * El uso del marcado `QAPage` creció 166.7% en escritorio y 192.1% en móvil.
 
-<p class="note">
+<aside class="note">
   De nuevo, es importante aclarar que estos datos pueden no ser representativos de su nivel de crecimiento real, pues estos objetos son usualmente usados en página internas.
-</p>
+</aside>
 
 La adopción de los datos estructurados es una ventaja para la web ya que la extracción de datos es valiosa para una gran cantidad de casos de uso. Esperamos que esto siga creciendo a medida que los buscadores expanden su uso y empiecen a impulsar aplicaciones más allá de la búsqueda web.
 

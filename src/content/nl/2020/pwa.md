@@ -141,7 +141,7 @@ Hoewel dat gebruik misschien laag lijkt, is het belangrijk dat we ons realiseren
   <figcaption>{{ figure_link(caption="Lighthouse PWA-audits.", sheets_gid="814184412", sql_file="lighthouse_pwa_audits.sql") }}</figcaption>
 </figure>
 
-<p class="note">Merk op dat de prestatiestatistieken voor onze Lighthouse-tests onjuist waren voor onze crawl van augustus, dus het resultaat <code lang="en">load-fast-done-for-pwa</code> is vervangen door de resultaten van september.</p>
+<aside class="note">Merk op dat de prestatiestatistieken voor onze Lighthouse-tests onjuist waren voor onze crawl van augustus, dus het resultaat <code lang="en">load-fast-done-for-pwa</code> is vervangen door de resultaten van september.</aside>
 
 Een <a hreflang="en" href="https://web.dev/load-fast-enough-for-pwa/">snelle paginalading</a> zorgt voor een goede mobiele gebruikerservaring, vooral wanneer rekening wordt gehouden met langzamere mobiele netwerken. 27,56% van de pagina's werd snel genoeg geladen voor een PWA. Gezien de geografische spreiding van het web, is een snelle laadtijd met lichtere pagina's de meeste van de volgende miljard gebruikers van het web, van wie de meesten via een mobiel apparaat op internet zullen komen.
 

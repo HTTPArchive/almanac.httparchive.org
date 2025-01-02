@@ -64,7 +64,7 @@ Onze methodologie heeft de volgende beperkingen:
 
 In totaal gebruikte 21,72% van de mobiele websites en 21,27% van de desktopwebsites een e-commerceplatform. Voor 2019 was hetzelfde aantal 9,41% voor mobiele websites en 9,67% voor desktopwebsites.
 
-<p class="note">Opmerking: deze toename is voornamelijk het gevolg van verbeteringen die zijn aangebracht in Wappalyzer om e-commercewebsites te detecteren en mag niet worden toegeschreven aan andere factoren, zoals groei als gevolg van Covid-19. Ook werd achteraf een kleine correctie toegepast op 2019-statistieken om rekening te houden met een fout en daarom zijn de 2019-percentages iets anders dan die gegeven in het <a href="../2019/ecommerce">2019 E-commerce</a> hoofdstuk .</p>
+<aside class="note">Opmerking: deze toename is voornamelijk het gevolg van verbeteringen die zijn aangebracht in Wappalyzer om e-commercewebsites te detecteren en mag niet worden toegeschreven aan andere factoren, zoals groei als gevolg van Covid-19. Ook werd achteraf een kleine correctie toegepast op 2019-statistieken om rekening te houden met een fout en daarom zijn de 2019-percentages iets anders dan die gegeven in het <a href="../2019/ecommerce">2019 E-commerce</a> hoofdstuk .</aside>
 
 ### Top e-commerceplatforms
 
@@ -135,7 +135,7 @@ COVID-19 heeft een enorme impact op de wereld gehad en maakte een nog grotere on
 
 Er is absoluut een meetbare toename van WooCommerce- en Shopify-sites rond de tijd dat COVID echt invloed op de wereld begon te hebben.
 
-<p class="note">Opmerking: <a hreflang="en" href="https://github.com/AliasIO/wappalyzer/pull/2731/commits/f44f20f03618f6a5fd868dd38ce9db5e2e2f1407">Wappalyzer-detectie voor Wix</a> maakt geen onderscheid als een site Wix gebruikt als CMS of e-commerceplatform. Hierdoor wordt de groei van Wix als e-commerceplatform mogelijk niet correct weergegeven in de bovenstaande grafiek.</p>
+<aside class="note">Opmerking: <a hreflang="en" href="https://github.com/AliasIO/wappalyzer/pull/2731/commits/f44f20f03618f6a5fd868dd38ce9db5e2e2f1407">Wappalyzer-detectie voor Wix</a> maakt geen onderscheid als een site Wix gebruikt als CMS of e-commerceplatform. Hierdoor wordt de groei van Wix als e-commerceplatform mogelijk niet correct weergegeven in de bovenstaande grafiek.</aside>
 
 ## Paginagewicht en verzoeken
 
@@ -241,7 +241,7 @@ De bovenstaande cijfers laten zien dat de gemiddelde e-commercepagina 34 afbeeld
   sql_file="pagestats_image_bydevice_format.sql"
 ) }}
 
-<p class="note">Merk op dat sommige afbeeldingsservices of CDN's automatisch WebP (in plaats van JPEG of PNG) leveren aan platforms die WebP ondersteunen, zelfs voor een URL met een <code>.jpg</code> of <code>.png</code> achtervoegsel . <code>IMG_20190113_113201.jpg</code> retourneert bijvoorbeeld een WebP-afbeelding in Chrome. De manier waarop HTTP Archive afbeeldingsindelingen detecteert, is door eerst te controleren op trefwoorden in het MIME-type en vervolgens terug te vallen op de bestandsextensie. Dit betekent dat het formaat voor afbeeldingen met URL's zoals de bovenstaande wordt gegeven als WebP, aangezien WebP wordt ondersteund door HTTP Archive als user-agent.</p>
+<aside class="note">Merk op dat sommige afbeeldingsservices of CDN's automatisch WebP (in plaats van JPEG of PNG) leveren aan platforms die WebP ondersteunen, zelfs voor een URL met een <code>.jpg</code> of <code>.png</code> achtervoegsel . <code>IMG_20190113_113201.jpg</code> retourneert bijvoorbeeld een WebP-afbeelding in Chrome. De manier waarop HTTP Archive afbeeldingsindelingen detecteert, is door eerst te controleren op trefwoorden in het MIME-type en vervolgens terug te vallen op de bestandsextensie. Dit betekent dat het formaat voor afbeeldingen met URL's zoals de bovenstaande wordt gegeven als WebP, aangezien WebP wordt ondersteund door HTTP Archive als user-agent.</aside>
 
 Het PNG-gebruik bleef ongeveer op [hetzelfde niveau als 2019](../2019/ecommerce#png) (op 27% voor zowel desktop als mobiel). We zagen een daling van het JPEG-gebruik (4% voor desktop en 6% voor mobiel). Van deze daling ging het meeste naar een verhoogd GIF-gebruik. GIF's komen vrij vaak voor op e-commerce-homepagina's, terwijl GIF's misschien niet veel worden gebruikt op productdetailpagina's. Omdat onze methodologie alleen naar homepagina's kijkt, verklaart dit het aanzienlijk hoge gebruik van GIF's op e-commercesites. Lighthouse heeft een audit die het gebruik van "videoformaten voor geanimeerde inhoud" aanbeveelt. Dit is een techniek die e-commercesites kunnen gebruiken om de prestaties te optimaliseren, maar toch de animatie-eigenschappen van GIF's te behouden. Zie <a hreflang="en" href="https://web.dev/replace-gifs-with-videos/">dit artikel</a> voor meer details.
 
@@ -437,7 +437,7 @@ Het gebruik van tagging aan de serverzijde is afhankelijk van de vraag of derde 
   <figcaption>{{ figure_link(caption="Tagmanager-gebruik op e-commercesites.", sheets_gid="2045910168", sql_file="percent_of_ecommsites_using_each_tag_managers.sql") }}</figcaption>
 </figure>
 
-<p class="note">Opmerking: de bovenstaande analyse is gebaseerd op Wappalyzer-detectie, die kan verschillen van de analyse die is uitgevoerd met behulp van de <a href="./methodology#third-party-web">Third Party Web</a> dataset die wordt gebruikt voor <a href="./third-parties">Derden</a> hoofdstuk.</p>
+<aside class="note">Opmerking: de bovenstaande analyse is gebaseerd op Wappalyzer-detectie, die kan verschillen van de analyse die is uitgevoerd met behulp van de <a href="./methodology#third-party-web">Third Party Web</a> dataset die wordt gebruikt voor <a href="./third-parties">Derden</a> hoofdstuk.</aside>
 
 ### Toestemmingsbeheerplatformen
 

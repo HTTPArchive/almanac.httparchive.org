@@ -34,7 +34,7 @@ Notre étude se base sur des données de [Lighthouse](./methodology#lighthouse),
 
 Nos métriques personnalisées fournissent des informations qui, jusqu'à présent, n'avaient pas été exposées auparavant. Nous sommes maintenant en mesure de faire des constats sur l'adoption et la mise en œuvre d'éléments tels que des balises `link` avec attribut `hreflang`, l'éligibilité des résultats enrichis, l'utilisation de la balise `title` et même la navigation basée sur les ancres pour les applications d'une seule page (SPA).
 
-<p class="note">Remarque&nbsp;: nos données se limitent à l'analyse des pages d'accueil uniquement et n'ont pas été collectées à partir d'analyses de toutes les pages des sites web. Cela aura un impact sur de nombreuses mesures dont nous discuterons, nous avons donc ajouté toutes les limitations pertinentes à chaque fois que nous mentionnons une mesure personnalisée. En savoir plus sur ces limitations dans notre <a href="./methodology">méthodologie</a>.</p>
+<aside class="note">Remarque&nbsp;: nos données se limitent à l'analyse des pages d'accueil uniquement et n'ont pas été collectées à partir d'analyses de toutes les pages des sites web. Cela aura un impact sur de nombreuses mesures dont nous discuterons, nous avons donc ajouté toutes les limitations pertinentes à chaque fois que nous mentionnons une mesure personnalisée. En savoir plus sur ces limitations dans notre <a href="./methodology">méthodologie</a>.</aside>
 
 Lisez la suite pour en savoir plus sur l'état actuel du web et sa compatibilité pour les moteurs de recherche.
 
@@ -146,7 +146,7 @@ Il est recommandé de conserver un code de réponse HTTP `200 OK` pour toutes le
 
 Le code de réponse suivant le plus fréquemment trouvé sur mobile était le `302`, une redirection temporaire, qui a été trouvée sur 10,45 % des pages mobiles. C'était plus élevé que sur le bureau, avec seulement 6,71 % des pages d'accueil du bureau renvoyant un code d'état `302`. Cela pourrait être dû au fait que les <a hreflang="en" href="https://developers.google.com/search/mobile-sites/mobile-seo/separate-urls">pages d'accueil mobiles étaient des alternatives</a> vers une page de bureau équivalente, comme sur des sites non responsive qui ont des versions distinctes du site web pour chaque appareil.
 
-<p class="note">Remarque&nbsp;: nos résultats n'incluaient pas les codes d'état 4xx ou 5xx.</p>
+<aside class="note">Remarque&nbsp;: nos résultats n'incluaient pas les codes d'état 4xx ou 5xx.</aside>
 
 #### `noindex`
 
@@ -154,7 +154,7 @@ La directive `noindex` peut être indiquée dans le `HTML` ou bien dans les ent�
 
 96,93 % des pages mobiles ont réussi [l'audit d'indexation de Lighthouse](https://developers.google.com/web/tools/lighthouse/audits/indexing), ce qui signifie que ces pages ne contenaient pas de directive `noindex`. Cependant, cela signifie que 3,07 % des pages d'accueil mobiles ont une directive `noindex`, ce qui est préoccupant et signifie que Google n'a pas pu indexer ces pages.
 
-<p class="note">Les sites web inclus dans notre recherche proviennent de <a href="./methodology#chrome-ux-report">Chrome UX Report</a>, qui exclut les site web non publiques. Il s'agit d'une source importante de biais, car nous ne sommes pas en mesure d'analyser les sites que Chrome juge non publics. Plus de détails sur notre <a href="./methodology#websites">méthodologie</a>.</p>
+<aside class="note">Les sites web inclus dans notre recherche proviennent de <a href="./methodology#chrome-ux-report">Chrome UX Report</a>, qui exclut les site web non publiques. Il s'agit d'une source importante de biais, car nous ne sommes pas en mesure d'analyser les sites que Chrome juge non publics. Plus de détails sur notre <a href="./methodology#websites">méthodologie</a>.</aside>
 
 #### Canonicalisation
 

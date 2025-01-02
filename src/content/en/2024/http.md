@@ -112,9 +112,9 @@ As discussed above, if the browser hasn't connected to a domain before, it will 
 
 In order to make results comparable and fair across websites, we want to load each page with a fresh browser profile and nothing in the HTTP/file/DNS/alt-svc/... caches. As such, the `alt-svc` mechanism is conceptually useless in our methodology, as we'd only use the initial HTTP/2 connection and never get to HTTP/3. This is why measuring HTTP/3 adoption directly by protocol used in our dataset (as we did in the first image above) is misleading, with HTTP/3 getting underreported.
 
-<p class="note">
+<aside class="note">
   Note: at this point, you might wonder how we're even seeing HTTP/3 page loads at all since with just <code>alt-svc</code> we should be seeing 0% HTTP/3. This is of course mainly due to the use of the 2nd discovery method via DNS, which we'll discuss later.
-</p>
+</aside>
 
 Let's now look purely at how HTTP/3 support is being announced via `alt-svc` to get an idea of how much support sites claim to have, even if it doesn't actually show up in our dataset:
 
@@ -184,9 +184,9 @@ This most likely has to do with how exactly the CDNs enable the new protocol. Fo
 
 Finally, it is somewhat surprising that some more specialized deployments, like Automattic, heavily lean into HTTP/3 (99.92%) while others like Vercel and Netlify show near-zero HTTP/3 support. I can only speculate on the reasons for the latter, but assume it is mostly due to the complexity of setting up and maintaining the new protocol at scale, while these newer up-and-coming companies might prefer to focus on other parts of their stacks first.
 
-<p class="note">
+<aside class="note">
   Note: These results might not give a 100% accurate impression of what CDNs are actually doing, as firstly <a hreflang="en" href="https://github.com/HTTPArchive/wptagent/blob/5ef2c870a90a3492cd6170893812270d627df107/internal/optimization_checks.py#L67">the CDN detection logic</a> might be inaccurate/incomplete (for example, Shopify nor Apple are tracked separately yet), and secondly a lot of the tracked requests are for analytics/trackers, which might not be indicative of HTTP/3 support for normal page/resource loads—especially for sites like Facebook.
-</p>
+</aside>
 
 In conclusion, we see that currently around 27% of all websites in the Web Almanac dataset announce HTTP/3 support through `alt-svc`. This number could potentially be much higher, if all websites that use a compatible CDN would enable it. At the same time however, the actual number of HTTP/3 requests we've seen in the dataset is much lower, between 7-9%. As we've explained, this is due to the used methodology and most of those 7-9% will come from another HTTP/3 discovery method using DNS records, so let's look at those next.
 

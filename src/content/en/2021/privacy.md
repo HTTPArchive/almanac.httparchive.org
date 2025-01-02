@@ -272,7 +272,7 @@ Geolocation data can also be accessed by websites through a [web browser API](ht
 
 Poor security management within a company can have a significant impact on its customers' private data. <a hreflang="en" href="https://haveibeenpwned.com/">Have I Been Pwned</a> allows users to check whether their email address or phone number was leaked in a data breach. At the time of this writing, Have I Been Pwned has tracked 562 breaches, leaking 640 million records. In 2020 alone, 40 services were breached and personal data about millions of users leaked. Three of these breaches were marked as _sensitive_, referring to the possibility of a negative impact on the user if someone were to find that user's data in the breach. One example of a sensitive breach is "[Carding Mafia](https://www.vice.com/en/article/v7m9jx/credit-card-hacking-forum-gets-hacked-exposing-300000-hackers-accounts)", a platform where stolen credit cards are traded.
 
-<p class="note">Note that 40 breaches in the previous year is a lower bound, since many breaches are only discovered, or made public, several months after they have occurred.</p>
+<aside class="note">Note that 40 breaches in the previous year is a lower bound, since many breaches are only discovered, or made public, several months after they have occurred.</aside>
 
 {{ figure_markup(
   image="data_breaches_pwned_accounts_per_class.png",
@@ -361,7 +361,7 @@ The most common Referrer Policy that is explicitly set is `no-referrer-when-down
 
 In addition, around 0.5% of websites set the value of the referrer policy to `unsafe-url`, which allows the origin, host and query string to be sent with _any_ request, regardless of the security level of the receiver. In this case, a referrer could be sent in the clear, potentially leaking private information. Worryingly, sites are actively being configured to enable this behavior.
 
-<p class="note">Note: Websites may also send the referrer information as a URL parameter to the destination site. We did not measure usage of that mechanism for this report.</p>
+<aside class="note">Note: Websites may also send the referrer information as a URL parameter to the destination site. We did not measure usage of that mechanism for this report.</aside>
 
 ### User-Agent Client Hints
 
@@ -509,7 +509,7 @@ Beyond blocking trackers, Chrome has launched the <a hreflang="en" href="https:/
 
 To seek ecosystem feedback, early and experimental versions of Privacy Sandbox APIs are made available initially behind <a hreflang="en" href="https://www.chromium.org/developers/how-tos/run-chromium-with-flags">feature flags</a> for testing by individual developers, and then in Chrome via <a hreflang="en" href="https://developer.chrome.com/blog/origin-trials">_origin trials_</a>. Sites can take part in these origin trials to test experimental web platform features, and give feedback to the web standards community on a feature's usability, practicality, and effectiveness, before it's made available to all websites by default.
 
-<p class="note">**Disclaimer:** Origin trials are only available for a limited amount of time. The numbers below represent the state or Privacy Sandbox origin trials at the time of this writing, in October 2021.</p>
+<aside class="note">**Disclaimer:** Origin trials are only available for a limited amount of time. The numbers below represent the state or Privacy Sandbox origin trials at the time of this writing, in October 2021.</aside>
 
 ### FLoC
 

@@ -643,7 +643,7 @@ We see 1.3% of websites on the mobile using the `Permissions-Policy` already. A 
 
 One can also use the `allow` attribute in `<iframe>` elements to enable or disable features allowed to be used in the embedded frame. 18.3% of 16.8 million frames in mobile contained the `allow` attribute to enable permission or feature policies.
 
-<p class="note">An earlier version of this chapter reported incorrect values for the total number of frames and the percentage of frames with the `allow` attribute. These errors have now been corrected. More information can be found in this <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/pull/3912">GitHub PR</a>.</p>
+<aside class="note">An earlier version of this chapter reported incorrect values for the total number of frames and the percentage of frames with the `allow` attribute. These errors have now been corrected. More information can be found in this <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/pull/3912">GitHub PR</a>.</aside>
 
 As in previous years, the most used directives in `allow` attributes on iframes are still related to controls for embedded videos and media. The most used directive continues to be `encrypted-media` which is used to control access to the Encrypted Media Extensions API.
 
@@ -653,7 +653,7 @@ An untrusted third-party in an iframe could launch a number of attacks on the pa
 
 The `sandbox` attribute on iframes applies restrictions to the content, and therefore reduces the opportunities for launching attacks from the embedded web page. The value of the attribute can either be empty to apply all restrictions (the embedded page cannot execute any JavaScript code, no forms can be submitted, and no popups can be created, to name a few restrictions), or space-separated tokens to lift particular restrictions. As embedding third-party content such as advertisements or videos via iframes is common practice on the web, it is not surprising that many of these are restricted via the `sandbox` attribute: 19.7% of the iframes on desktop pages have a `sandbox` attribute while on mobile pages this is 21.0%.
 
-<p class="note">An earlier version of this chapter reported incorrect values for the percentage of frames with the `sandbox` attribute. More information can be found in this <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/pull/3912">GitHub PR</a>.</p>
+<aside class="note">An earlier version of this chapter reported incorrect values for the percentage of frames with the `sandbox` attribute. More information can be found in this <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/pull/3912">GitHub PR</a>.</aside>
 
 {{ figure_markup(
   image="security-prevalence-of-sandbox-directives-on-frames.png",

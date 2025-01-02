@@ -630,7 +630,7 @@ We estimate that a quarter of all desktop pages that use `w` descriptors are loa
 
 This is quite troubling, but what's worse is that all of these numbers are almost twice as bad as they were just two years ago. Things are bad and getting worse.
 
-<p class="note">Note: Our crawlers didn't actually load the correct resources, so the numbers here are estimates, based on the compression densities and aspect ratios of the incorrect resources, which the crawlers actually did load.</p>
+<aside class="note">Note: Our crawlers didn't actually load the correct resources, so the numbers here are estimates, based on the compression densities and aspect ratios of the incorrect resources, which the crawlers actually did load.</aside>
 
 There are two solutions here that developers should pursue.
 
@@ -677,7 +677,7 @@ While usage of the `media` attribute is down three percentage points from 2022, 
 
 We already saw [how the web's image resources size up](#image-dimensions). But before they can be shown to a user, embedded images must be placed within a layout and potentially squished or stretched to fit it.
 
-<p class="note">Note: It will be useful to keep in mind the [crawlers' viewports](./methodology#webpagetest) throughout this analysis. The desktop crawler was 1376px wide, with a DPR of 1x, the mobile crawler was 360px wide, with a DPR of 3x.</p>
+<aside class="note">Note: It will be useful to keep in mind the [crawlers' viewports](./methodology#webpagetest) throughout this analysis. The desktop crawler was 1376px wide, with a DPR of 1x, the mobile crawler was 360px wide, with a DPR of 3x.</aside>
 
 ### Layout widths
 

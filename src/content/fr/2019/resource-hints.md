@@ -66,7 +66,7 @@ Comme l'utilisation des indices de ressources dans les en-têtes HTTP est très 
 
 ## Les indices de ressources
 
-<p class="note">Note: il n'y a pas de différence notable entre l'usage des indices de ressources sur les pages web destinées aux ordinateurs ou périphériques mobiles. C'est pourquoi, par souci de concision, ce chapitre n'inclut que les statistiques relatives aux mobiles.</p>
+<aside class="note">Note: il n'y a pas de différence notable entre l'usage des indices de ressources sur les pages web destinées aux ordinateurs ou périphériques mobiles. C'est pourquoi, par souci de concision, ce chapitre n'inclut que les statistiques relatives aux mobiles.</aside>
 
 <figure>
   <table>

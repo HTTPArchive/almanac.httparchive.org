@@ -40,7 +40,7 @@ featured_stat_label_3: サービスワーカーがいるモバイルサイトの
 今年のPWA編では、サービスワーカーとその関連APIの使用、Webアプリのマニフェスト、PWAを構築するためのもっとも人気のあるライブラリやツールなど、PWAの測定可能なすべての側面に焦点を当てます。PWAは、これらの機能のすべてまたは一部を使用できます。ここでは、ウェブエコシステムにおけるこれらの技術の浸透度合いを知るために、各コンポーネントとAPIの採用レベルについて見ていきます。
 
 
-<p class="note">**注:** この章では、一般的に使われているサービスワーカー関連のAPIに主に焦点を当てます。さらに最先端の API については、<a href="./capabilities">ケイパビリティ</a> の章を必ずご覧ください。</p>
+<aside class="note">**注:** この章では、一般的に使われているサービスワーカー関連のAPIに主に焦点を当てます。さらに最先端の API については、<a href="./capabilities">ケイパビリティ</a> の章を必ずご覧ください。</aside>
 
 ## サービスワーカー
 
@@ -153,7 +153,7 @@ this.oninstall = function(event) {
 
 その1つがオフライン分析（<a hreflang="en" href="https://developers.google.com/web/tools/workbox/modules/workbox-google-analytics">Workbox Analyticsはバックグラウンド同期を使用しています</a>）、または接続性の欠如による失敗したクエリの再試行（<a hreflang="en" href="https://web.dev/google-search-sw/">某検索エンジン</a>）などです。
 
-<p class="note">**備考:** 前回とは異なり、`fetch` と `message` イベントはサービスワーカーの外にも現れる可能性があり、誤検出が多くなる可能性があるため、この分析には含めないことにしました。つまり、上記の解析は、サービスワーカー固有のイベントに対するものです。<a hreflang="ja" href="../2020/pwa#サービスワーカーのイベント">2020年のデータでは、`fetch`は`install`とほぼ同じ頻度で使われています。</a></p>
+<aside class="note">**備考:** 前回とは異なり、`fetch` と `message` イベントはサービスワーカーの外にも現れる可能性があり、誤検出が多くなる可能性があるため、この分析には含めないことにしました。つまり、上記の解析は、サービスワーカー固有のイベントに対するものです。<a hreflang="ja" href="../2020/pwa#サービスワーカーのイベント">2020年のデータでは、`fetch`は`install`とほぼ同じ頻度で使われています。</a></aside>
 
 #### その他、人気のあるサービスワーカーの機能
 
@@ -313,7 +313,7 @@ displayプロパティは、開発者が好むウェブサイトのモードを�
 
 PWA開発者の大多数がPWA体験をネイティブアプリケーションに推奨することを好むという事実にもかかわらず、一部の有名なPWA（Twitterなど）は依然としてPWA体験よりもネイティブアプリケーションを推奨することを好むようです。これは、これらの体験を構築するチームの好みによるものか、あるいは特定のビジネスニーズ（ウェブに何らかのAPIがない）によるものかもしれません。
 
-<p class="note">**備考:** 開発者は、設定時にこの決定を静的に行うのではなく、<a hreflang="en" href="https://web.dev/define-install-strategy/">より動的なヒューリスティック</a>を作成して、たとえば、ユーザーの行動やその他の特性 (デバイス、接続、場所など) に基づいて体験を促進することも可能です。</p>
+<aside class="note">**備考:** 開発者は、設定時にこの決定を静的に行うのではなく、<a hreflang="en" href="https://web.dev/define-install-strategy/">より動的なヒューリスティック</a>を作成して、たとえば、ユーザーの行動やその他の特性 (デバイス、接続、場所など) に基づいて体験を促進することも可能です。</aside>
 
 ### マニフェストのトップカテゴリー
 
@@ -398,8 +398,8 @@ Workboxは依然としてもっとも人気のあるライブラリで、サー�
 
 また、Workboxの前身である`sw_toolbox`は、<a hreflang="ja" href="../2020/pwa#人気のインポートスクリプト"> 昨年の使用率がデスクトップで13.92％、モバイルで12.84％</a>でしたが、今年はそれぞれ0.51％と0.36％に低下しているのも重要な点です。これは、`sw_toolbox`が<a hreflang="en" href="https://github.com/GoogleChromeLabs/sw-toolbox/pull/288">2019年に非推奨</a>となったことが一因であると考えられます。人気のあるフレームワークやビルドツールの中には、このパッケージを削除するのに時間がかかったものもあるかもしれないので、今年はより明確に採用数の減少が見て取れます。また2020年と比較して、サイトを増やすなどして測定方法が変わったため、この指標はさらに減少し、直接の前年比は難しくなっています。
 
-<p class="note">**備考:** [`importScripts()`](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/importScripts) は [`WorkerGlobalScope`](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope) の API で、[Web Workers](https://developer.mozilla.org/docs/Web/API/Web_Workers_API/Using_web_workers) など他のタイプの Worker コンテキストでも使用できることを考慮に入れておいてください。<a hreflang="en" href="https://www.google.com/recaptcha/about/">reCaptcha</a> は、例えば、reCaptcha JavaScript コードを取得する `importScripts()` コールを含むウェブワーカーを使用しているので、2番目に広く使われているライブラリとして表示されているようです。そのため、サービスワーカーのコンテキストで2番目に広く使われているライブラリとして、代わりに <a hreflang="en" href="https://firebase.google.com/docs/web/setup">Firebase</a> を考慮すべきです。
-</p>
+<aside class="note">**備考:** [`importScripts()`](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/importScripts) は [`WorkerGlobalScope`](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope) の API で、[Web Workers](https://developer.mozilla.org/docs/Web/API/Web_Workers_API/Using_web_workers) など他のタイプの Worker コンテキストでも使用できることを考慮に入れておいてください。<a hreflang="en" href="https://www.google.com/recaptcha/about/">reCaptcha</a> は、例えば、reCaptcha JavaScript コードを取得する `importScripts()` コールを含むウェブワーカーを使用しているので、2番目に広く使われているライブラリとして表示されているようです。そのため、サービスワーカーのコンテキストで2番目に広く使われているライブラリとして、代わりに <a hreflang="en" href="https://firebase.google.com/docs/web/setup">Firebase</a> を考慮すべきです。
+</aside>
 
 ### Workboxの使用状況
 
@@ -501,7 +501,7 @@ Workboxライブラリは、特定の機能を含む <a hreflang="en" href="http
 <!-- markdownlint-disable-next-line MD051 -->
 サービスワーカーインターフェイスは、通知に関するユーザーインタラクションを処理するために、いくつかのイベントをリッスンすることもできます。[図16.4](#fig-4)は、`notificationclick`（通知へのクリックを捕捉）がデスクトップの45.64%、モバイルPWAの46.62%で使われていることを示しています。`notificationclose`は使用頻度が低く、デスクトップPWAの5.98%、モバイルPWAの6.34%です。これは、通知の「クリック」よりも、通知の「閉じる」イベントをリッスンすることが意味のあるユースケースが少ないと予想されます。
 
-<p class="note">**備考:** サービスワーカーの通知イベント（例： `push`、`notificationclick`）には、さらに `pushManager` プロパティが使われているのが興味深いです。このプロパティは、たとえば、Webプッシュ通知の許可を（ `pushManager.subscribe` を通じて）要求するために使用されます。この理由の1つは、いくつかのサイトがウェブプッシュを実装し、ある時点でロールバックすることを決定し、そのために許可を要求するコードを排除し、サービスワーカーのコードは変更しないままにしていることかもしれません。</p>
+<aside class="note">**備考:** サービスワーカーの通知イベント（例： `push`、`notificationclick`）には、さらに `pushManager` プロパティが使われているのが興味深いです。このプロパティは、たとえば、Webプッシュ通知の許可を（ `pushManager.subscribe` を通じて）要求するために使用されます。この理由の1つは、いくつかのサイトがウェブプッシュを実装し、ある時点でロールバックすることを決定し、そのために許可を要求するコードを排除し、サービスワーカーのコードは変更しないままにしていることかもしれません。</aside>
 
 ### Webプッシュ通知の受理率
 

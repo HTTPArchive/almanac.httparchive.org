@@ -155,7 +155,7 @@ HTMLペイロードとドキュメントサイズは、この連載の定番で�
 
 `svg` と `math` 要素を含めない場合（これらはHTMLの外部で指定されているから）、現在のHTML仕様は111個の要素で構成されています。
 
-<p class="note">タグではなく要素です。なぜなら、`<li>` や `</ins>` のような単なる開始タグや終了タグを指しているのではないからです。また、HTML 要素の数え方を変える人もいますが、もっとも重要なのは、<a hreflang="en" href="https://meiert.com/en/blog/the-number-of-html-elements/">どのように数えているかをはっきりさせることです。</a></p>
+<aside class="note">タグではなく要素です。なぜなら、`<li>` や `</ins>` のような単なる開始タグや終了タグを指しているのではないからです。また、HTML 要素の数え方を変える人もいますが、もっとも重要なのは、<a hreflang="en" href="https://meiert.com/en/blog/the-number-of-html-elements/">どのように数えているかをはっきりさせることです。</a></aside>
 
 何を観察できるのか？
 
