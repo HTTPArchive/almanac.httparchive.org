@@ -322,7 +322,7 @@ L’utilité de `srcset` dépend généralement de la précision de la requête 
 
 {{ figure_markup(
   image="fig16_top_patterns_of_img_sizes.png",
-  caption="Principaux modèles de conception de <code><img sizes></code>.",
+  caption="Principaux modèles de conception de `<img sizes>`.",
   description="Diagramme à barres montrant que 11,3 millions d’images utilisent 'img sizes=`(max-width: 300px) 100vw, 300px`', 1,60 million utilisent 'auto', 1,00 million utilisent 'img sizes=`(max-width : 767px) 89vw...etc.`', 0,23 million utilisent '100vw' et 0,13 million utilisent '300px'.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=663985412&format=interactive"
   )
