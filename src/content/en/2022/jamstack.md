@@ -80,7 +80,7 @@ We knew we wanted to measure: sites that load most of their content very quickly
 
 **Cumulative Layout Shift (CLS)**: we wanted to avoid sites that very quickly load a skeleton but then take a long time to load real content. The closest we could get to that is the <a hreflang="en" href="https://web.dev/articles/cls">Cumulative Layout Shift</a>, a measure of how much the page layout jumps around while loading. While there are ways to "game" CLS, we still believe it's a reasonable proxy for what we're trying to measure. We liked this measure because we felt that a "jumpy" site also felt less "Jamstack-y", a word we were going to end up using a lot. Again, we picked the median of Chrome UX Report data.
 
-<p class="note">Chrome UX report data rounds CLS data to the nearest 0.05, which is a shame, because the "real" median seems to be around 0.02-0.03, so on mobile it rounds down to zero and on desktop it rounds up to 0.05. Since 0 excludes huge numbers of pages, we decided to use 0.05 as the best available threshold for both mobile and desktop.</a>
+<aside class="note">Chrome UX report data rounds CLS data to the nearest 0.05, which is a shame, because the "real" median seems to be around 0.02-0.03, so on mobile it rounds down to zero and on desktop it rounds up to 0.05. Since 0 excludes huge numbers of pages, we decided to use 0.05 as the best available threshold for both mobile and desktop.</aside>
 
 **Caching**: this was particularly tricky to quantify, since most home pages, even on Jamstack sites, request revalidation even if they are in practice cached for a long time. We went with a combination of HTTP Headers including `Age`, `Cache-Control`, and `Expires` that we found were common in pages that could be cached for a long time.
 
