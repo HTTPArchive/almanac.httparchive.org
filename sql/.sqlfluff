@@ -1,18 +1,21 @@
 [sqlfluff]
 dialect = bigquery
 # Comma separated list of rules to exclude, or None
-exclude_rules = AL01,AL04,AL07,AL09,AM03,AM05,CP02,CP03,CV02,LT05,LT09,RF01,RF02,RF03,RF04,ST01,ST02,ST05,ST06,ST07,ST08,ST11
+exclude_rules = AL01,AL04,AL07,AL09,AM03,AM05,AM08,CP02,CP03,CV02,CV12,LT05,LT09,LT14,RF01,RF02,RF03,RF04,ST01,ST02,ST05,ST06,ST07,ST08,ST11
 # AL01 - We don't always alias tables with AS ("FROM table1 AS tb1" instead of "FROM table1 tb1"). Do for columns but not for tables.
 # AL04 - Asks for unique table aliases meaning it complains if selecting from two 2021_07_01 tables as implicit alias is table name (not fully qualified) so same.
 # AL07 - Avoid aliases in from and join - why?
 # AL09 - Allow self-aliasing, particularly for struct references
 # AM03 - if using DESC in one ORDER BY column, then insist on ASC/DESC for all.
 # AM05 - INNER JOIN must be fully qualified. Probably should use this but not our style.
+# AM08 - CROSS JOIN detection. Doesn't work with UNNEST
 # CP02 - Unquoted identifiers (e.g. column names) will be mixed case so don't enforce case
 # CP03 - Function names will be mixed case so don't enforce case
 # CV02 - Use COALESCE instead of IFNULL or NVL. We think ISNULL is clearer.
+# CV12 - Doesn't work with UNNEST
 # LT05 - We allow longer lines as some of our queries are complex. Maybe should limit in future?
 # LT09 - Select targets should be on new lines but sub clauses don't always obey this. Maybe revisit in future?
+# LT14 - We have some simple, single line joins
 # RF01 - BigQuery uses STRUCTS which can look like incorrect table references
 # RF02 - Asks for qualified columns for ambiguous ones, but we not qualify our columns, and they are not really ambiguous (or BigQuery would complain)
 # RF03 - Insists on references in column names even if not ambiguous. Bit OTT.

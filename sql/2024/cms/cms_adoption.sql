@@ -22,9 +22,9 @@ JOIN (
     date = '2024-06-01' AND
     is_root_page
   GROUP BY
-    client)
-USING
-  (client)
+    client
+)
+USING (client)
 WHERE
   cats = 'CMS' AND
   date = '2024-06-01' AND
@@ -53,9 +53,9 @@ JOIN (
     date = '2023-06-01' AND
     is_root_page
   GROUP BY
-    client)
-USING
-  (client)
+    client
+)
+USING (client)
 WHERE
   cats = 'CMS' AND
   date = '2023-06-01' AND
@@ -84,9 +84,9 @@ JOIN (
     date = '2022-06-01' AND
     is_root_page
   GROUP BY
-    client)
-USING
-  (client)
+    client
+)
+USING (client)
 WHERE
   cats = 'CMS' AND
   date = '2022-06-01' AND

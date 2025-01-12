@@ -30,7 +30,7 @@ FROM (
     `httparchive.pages.2024_06_01_*`,
     UNNEST(getNumberOfSrcsetCandidates(payload)) AS numberOfCandidates
 ),
-UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
+  UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 GROUP BY
   percentile,
   client

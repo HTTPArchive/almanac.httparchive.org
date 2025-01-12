@@ -97,7 +97,6 @@ SELECT
   COUNTIF(initalPriority = 'medium') / COUNT(DISTINCT page) AS pct_inital_priority_medium,
   COUNTIF(initalPriority = 'high') / COUNT(DISTINCT page) AS pct_inital_priority_high,
   COUNTIF(initalPriority = 'high' AND fetchPriority = 'high') / COUNT(DISTINCT page) AS pct_inital_priority_high_and_fetchpriority,
-  COUNTIF(loading = 'lazy' AND fetchPriority = 'high') / COUNT(DISTINCT page) AS pct_native_lazyload_and_fetch_priority,
   COUNTIF(preloaded) AS preload,
   COUNTIF(preloaded) / COUNT(DISTINCT page) AS pct_preload
 FROM
@@ -112,9 +111,9 @@ JOIN (
     date = '2024-06-01' AND
     is_root_page
   GROUP BY
-    client)
-USING
-  (client)
+    client
+)
+USING (client)
 GROUP BY
   client,
   nodeName

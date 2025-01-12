@@ -31,8 +31,7 @@ FROM
   pages
 JOIN
   requests
-USING
-  (client, page, url),
+USING (client, page, url),
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 GROUP BY
   percentile,

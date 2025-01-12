@@ -23,7 +23,8 @@ FROM (
   WHERE
     date = '2024-06-01' AND
     is_root_page AND
-    is_main_document)
+    is_main_document
+)
 JOIN (
   SELECT
     client,
@@ -33,9 +34,9 @@ JOIN (
     `httparchive.all.pages`
   WHERE
     date = '2024-06-01' AND
-    is_root_page)
-USING
-  (client, page),
+    is_root_page
+)
+USING (client, page),
   UNNEST([10, 25, 50, 75, 90]) AS percentile
 GROUP BY
   percentile,

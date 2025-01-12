@@ -364,7 +364,8 @@ domain_scores AS (
   FROM
     score_data
   WHERE
-    REGEXP_CONTAINS(page, r'('
+    REGEXP_CONTAINS(
+      page, r'('
       '\\.un\\.org/'  -- United Nations and International Organizations
       '|\\.worldbank\\.org/'
       '|\\.undp\\.org/'
@@ -562,7 +563,8 @@ domain_scores AS (
       '|\\.razavi\\.ir'
       '|\\.gholhak\\.ir'
 
-      ')')
+      ')'
+    )
 )
 
 SELECT

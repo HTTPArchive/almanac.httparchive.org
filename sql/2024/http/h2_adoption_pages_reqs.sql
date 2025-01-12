@@ -32,7 +32,8 @@ FROM (
     `httparchive.all.requests`
   WHERE
     date = '2024-06-01' AND
-    is_root_page)
+    is_root_page
+)
 GROUP BY
   client,
   protocol

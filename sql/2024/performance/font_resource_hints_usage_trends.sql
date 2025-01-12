@@ -1,5 +1,5 @@
 CREATE TEMPORARY FUNCTION getResourceHints(payload STRING)
-RETURNS ARRAY < STRUCT < name STRING, href STRING >>
+RETURNS ARRAY<STRUCT<name STRING, href STRING>>
 LANGUAGE js AS '''
 var hints = new Set(['preload', 'prefetch', 'preconnect', 'prerender', 'dns-prefetch']);
 try {
@@ -77,12 +77,10 @@ FROM
   resource_hints
 LEFT JOIN
   font_requests
-USING
-  (client, date, page)
+USING (client, date, page)
 JOIN
   totals
-USING
-  (client, date)
+USING (client, date)
 GROUP BY
   client,
   date,

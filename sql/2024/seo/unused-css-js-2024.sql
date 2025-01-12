@@ -20,7 +20,7 @@ FROM (
   FROM
     `httparchive.all.pages`
   WHERE date = '2024-06-01'
-  )
+)
 
 LEFT JOIN (
   SELECT
@@ -30,10 +30,10 @@ LEFT JOIN (
     SAFE_DIVIDE(CAST(JSON_EXTRACT_SCALAR(report, '$.audits.unused-css-rules.details.overallSavingsBytes') AS INT64), 1024) AS unused_css_rules
   FROM
     `httparchive.all.pages`
-  WHERE date = '2024-06-01')
+  WHERE date = '2024-06-01'
+)
 
-USING
-  (client, page),
+USING (client, page),
   UNNEST([1000, 10000, 100000, 1000000, 10000000, 100000000]) AS rank_grouping
 WHERE
   rank <= rank_grouping

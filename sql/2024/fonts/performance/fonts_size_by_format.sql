@@ -25,6 +25,7 @@ fonts AS (
     client,
     url
 ),
+
 formats AS (
   SELECT
     client,
@@ -47,7 +48,8 @@ FROM
   fonts,
   UNNEST([10, 25, 50, 75, 90, 99]) AS percentile
 INNER JOIN
-  formats USING (client, format)
+  formats
+USING (client, format)
 WHERE
   rank <= 10
 GROUP BY

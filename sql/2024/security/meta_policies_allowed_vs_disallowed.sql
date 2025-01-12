@@ -20,8 +20,8 @@ FROM (
     date = '2024-06-01' AND
     is_root_page
 ),
-UNNEST(JSON_QUERY_ARRAY(metrics, '$.meta-nodes.nodes')) meta_node,
-UNNEST(['Content-Security-Policy', 'Content-Security-Policy-Report-Only', 'Cross-Origin-Embedder-Policy', 'Cross-Origin-Opener-Policy', 'Cross-Origin-Resource-Policy', 'Expect-CT', 'Feature-Policy', 'Permissions-Policy', 'Referrer-Policy', 'referrer', 'Report-To', 'Strict-Transport-Security', 'X-Content-Type-Options', 'X-Frame-Options', 'X-XSS-Protection']) AS policy
+  UNNEST(JSON_QUERY_ARRAY(metrics, '$.meta-nodes.nodes')) meta_node,
+  UNNEST(['Content-Security-Policy', 'Content-Security-Policy-Report-Only', 'Cross-Origin-Embedder-Policy', 'Cross-Origin-Opener-Policy', 'Cross-Origin-Resource-Policy', 'Expect-CT', 'Feature-Policy', 'Permissions-Policy', 'Referrer-Policy', 'referrer', 'Report-To', 'Strict-Transport-Security', 'X-Content-Type-Options', 'X-Frame-Options', 'X-XSS-Protection']) AS policy
 GROUP BY
   client,
   policy

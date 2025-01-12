@@ -61,7 +61,8 @@ FROM (
   GROUP BY
     client,
     geo,
-    payment)
+    payment
+)
 WHERE
   pages > 1000
 ORDER BY

@@ -21,7 +21,8 @@ FROM (
   WHERE
     cats = 'CMS' AND
     date = '2024-06-01' AND
-    is_root_page)
+    is_root_page
+)
 JOIN (
   SELECT
     client,
@@ -33,9 +34,9 @@ JOIN (
   WHERE
     rank <= rank_magnitude AND
     date = '2024-06-01' AND
-    is_root_page)
-USING
-  (client, url)
+    is_root_page
+)
+USING (client, url)
 JOIN (
   SELECT
     client,
@@ -50,9 +51,9 @@ JOIN (
     is_root_page
   GROUP BY
     client,
-    rank_magnitude)
-USING
-  (client, rank)
+    rank_magnitude
+)
+USING (client, rank)
 GROUP BY
   client,
   cms,

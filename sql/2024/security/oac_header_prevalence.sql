@@ -20,7 +20,8 @@ FROM (
     date = '2024-06-01' AND
     is_root_page AND
     is_main_document AND
-    LOWER(response_headers.name) = 'origin-agent-cluster')
+    LOWER(response_headers.name) = 'origin-agent-cluster'
+)
 GROUP BY
   client,
   oac_header

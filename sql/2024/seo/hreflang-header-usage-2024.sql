@@ -40,6 +40,7 @@ WITH hreflang_usage AS (
     date = '2024-06-01'
 
 )
+
 SELECT
   client,
   is_root_page,

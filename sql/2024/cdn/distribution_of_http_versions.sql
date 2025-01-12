@@ -38,7 +38,8 @@ FROM
       IF(STARTS_WITH(url, 'https') OR JSON_EXTRACT_SCALAR(payload, '$._tls_version') IS NOT NULL OR CAST(JSON_EXTRACT(payload, '$._is_secure') AS INT64) = 1, TRUE, FALSE) AS isSecure,
       CAST(JSON_EXTRACT(payload, '$._socket') AS INT64) AS socket
     FROM
-      `httparchive.all.requests` CROSS JOIN UNNEST(response_headers) AS r
+      `httparchive.all.requests`
+    CROSS JOIN UNNEST(response_headers) AS r
     --`httparchive.sample_data.requests`
     WHERE
       # WPT changes the response fields based on a redirect (url becomes the Location path instead of the original) causing insonsistencies in the counts, so we ignore them
@@ -58,15 +59,19 @@ LEFT JOIN
       `httparchive.all.requests`
     WHERE
       JSON_EXTRACT_SCALAR(payload, '$._tls_version') IS NOT NULL AND
-      IFNULL(JSON_EXTRACT_SCALAR(payload, '$._protocol'), IFNULL(NULLIF(JSON_EXTRACT_SCALAR(payload, '$._tls_next_proto'), 'unknown'), NULLIF(concat('HTTP/',
-        JSON_EXTRACT_SCALAR(payload, '$.response.httpVersion')), 'HTTP/'))) IS NOT NULL AND
+      IFNULL(JSON_EXTRACT_SCALAR(payload, '$._protocol'), IFNULL(NULLIF(JSON_EXTRACT_SCALAR(
+        payload, '$._tls_next_proto'), 'unknown'), NULLIF(concat(
+        'HTTP/',
+        JSON_EXTRACT_SCALAR(payload, '$.response.httpVersion')
+      ), 'HTTP/'))) IS NOT NULL AND
       JSON_EXTRACT(payload, '$._socket') IS NOT NULL AND
       date = '2024-06-01'
     GROUP BY
       client,
       page,
       socket
-  ) b ON (a.client = b.client AND a.page = b.page AND a.socket = b.socket)
+  ) b
+ON (a.client = b.client AND a.page = b.page AND a.socket = b.socket)
 
 GROUP BY
   client,

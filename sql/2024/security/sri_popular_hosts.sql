@@ -36,7 +36,7 @@ FROM (
   WHERE
     date = '2024-06-01' AND
     is_root_page
-  ),
+),
   UNNEST(sris) AS sri
 JOIN totals USING (client)
 WHERE

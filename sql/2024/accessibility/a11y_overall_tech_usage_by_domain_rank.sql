@@ -44,7 +44,8 @@ JOIN
     GROUP BY
       client,
       rank_grouping
-  ) USING (client, rank_grouping)
+  )
+USING (client, rank_grouping)
 GROUP BY
   client,
   is_root_page,

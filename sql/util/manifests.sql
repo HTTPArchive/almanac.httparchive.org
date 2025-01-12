@@ -28,9 +28,4 @@ JOIN (
     page,
     url
 )
-USING (
-  date,
-  client,
-  page,
-  url
-)
+USING (date, client, page, url)

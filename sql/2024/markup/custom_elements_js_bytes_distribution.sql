@@ -7,7 +7,9 @@ WITH js_bytes AS (
     `httparchive.all.pages`
   WHERE
     date = '2024-06-01'
-), custom_elements AS (
+),
+
+custom_elements AS (
   SELECT
     client,
     page,
@@ -28,8 +30,7 @@ FROM
   custom_elements
 JOIN
   js_bytes
-USING
-  (client, page),
+USING (client, page),
   UNNEST([10, 25, 50, 75, 90]) AS percentile
 GROUP BY
   percentile,

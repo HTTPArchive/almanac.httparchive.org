@@ -68,19 +68,18 @@ SELECT
   total,
   pct
 FROM (
-    SELECT
-      client,
-      COUNTIF(resource_hints.host IS NOT NULL) AS freq,
-      SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
-      COUNTIF(resource_hints.host IS NOT NULL) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
-    FROM
-      requests
-    LEFT OUTER JOIN
-      resource_hints
-    USING
-      (client, page, host)
-    GROUP BY
-      client
+  SELECT
+    client,
+    COUNTIF(resource_hints.host IS NOT NULL) AS freq,
+    SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
+    COUNTIF(resource_hints.host IS NOT NULL) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
+  FROM
+    requests
+  LEFT OUTER JOIN
+    resource_hints
+  USING (client, page, host)
+  GROUP BY
+    client
 )
 ORDER BY
   client

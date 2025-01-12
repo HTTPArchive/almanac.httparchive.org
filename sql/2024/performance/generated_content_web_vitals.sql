@@ -1,9 +1,9 @@
 #standardSQL
-CREATE TEMP FUNCTION IS_NON_ZERO (good FLOAT64, needs_improvement FLOAT64, poor FLOAT64) RETURNS BOOL AS (
+CREATE TEMP FUNCTION IS_NON_ZERO(good FLOAT64, needs_improvement FLOAT64, poor FLOAT64) RETURNS BOOL AS (
   good + needs_improvement + poor > 0
 );
 
-CREATE TEMPORARY FUNCTION IS_GOOD (good FLOAT64, needs_improvement FLOAT64, poor FLOAT64) RETURNS BOOL AS (
+CREATE TEMPORARY FUNCTION IS_GOOD(good FLOAT64, needs_improvement FLOAT64, poor FLOAT64) RETURNS BOOL AS (
   SAFE_DIVIDE(good, (good + needs_improvement + poor)) >= 0.75
 );
 
@@ -70,21 +70,30 @@ SELECT
   generated_content_percent,
   SAFE_DIVIDE(
     COUNT(DISTINCT IF(
-        IS_GOOD(fast_lcp, avg_lcp, slow_lcp), origin, NULL)),
+      IS_GOOD(fast_lcp, avg_lcp, slow_lcp), origin, NULL
+    )),
     COUNT(DISTINCT IF(
-        IS_NON_ZERO(fast_lcp, avg_lcp, slow_lcp), origin, NULL))) AS pct_lcp_good,
+      IS_NON_ZERO(fast_lcp, avg_lcp, slow_lcp), origin, NULL
+    ))
+  ) AS pct_lcp_good,
 
   SAFE_DIVIDE(
     COUNT(DISTINCT IF(
-        IS_GOOD(fast_inp, avg_inp, slow_inp), origin, NULL)),
+      IS_GOOD(fast_inp, avg_inp, slow_inp), origin, NULL
+    )),
     COUNT(DISTINCT IF(
-        IS_NON_ZERO(fast_inp, avg_inp, slow_inp), origin, NULL))) AS pct_inp_good,
+      IS_NON_ZERO(fast_inp, avg_inp, slow_inp), origin, NULL
+    ))
+  ) AS pct_inp_good,
 
   SAFE_DIVIDE(
     COUNT(DISTINCT IF(
-        IS_GOOD(small_cls, medium_cls, large_cls), origin, NULL)),
+      IS_GOOD(small_cls, medium_cls, large_cls), origin, NULL
+    )),
     COUNT(DISTINCT IF(
-        IS_NON_ZERO(small_cls, medium_cls, large_cls), origin, NULL))) AS pct_cls_good,
+      IS_NON_ZERO(small_cls, medium_cls, large_cls), origin, NULL
+    ))
+  ) AS pct_cls_good,
   COUNT(DISTINCT origin) AS total_origins
 FROM (
   SELECT
@@ -120,9 +129,8 @@ FROM (
     pages
   JOIN
     crux
-  USING
-    (client, page)
-  )
+  USING (client, page)
+)
 WHERE
   generated_content_percent IS NOT NULL
 GROUP BY

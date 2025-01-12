@@ -60,7 +60,8 @@ FROM (
     tech.technology_lower,
     date,
     info,
-    client)
+    client
+)
 WHERE
   pct > 0.01
 ORDER BY

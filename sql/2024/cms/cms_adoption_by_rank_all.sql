@@ -40,9 +40,9 @@ JOIN (
     is_root_page
   GROUP BY
     client,
-    rank_grouping)
-USING
-  (client, rank_grouping)
+    rank_grouping
+)
+USING (client, rank_grouping)
 GROUP BY
   client,
   rank_grouping

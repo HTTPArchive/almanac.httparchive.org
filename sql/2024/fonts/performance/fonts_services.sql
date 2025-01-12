@@ -22,6 +22,7 @@ services_1 AS (
     client,
     page
 ),
+
 services_2 AS (
   SELECT
     date,
@@ -35,6 +36,7 @@ services_2 AS (
     client,
     services
 ),
+
 pages AS (
   SELECT
     date,
@@ -60,7 +62,8 @@ SELECT
 FROM
   services_2
 JOIN
-  pages USING (date, client)
+  pages
+USING (date, client)
 ORDER BY
   date,
   client,

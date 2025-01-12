@@ -56,10 +56,7 @@ FROM (
         app != 'Google Analytics Enhanced eCommerce'
       )
   )
-  USING (
-    _TABLE_SUFFIX,
-    url
-  )
+  USING (_TABLE_SUFFIX, url)
 ),
   UNNEST(['Content-Security-Policy', 'Content-Security-Policy-Report-Only']) AS headername
 GROUP BY

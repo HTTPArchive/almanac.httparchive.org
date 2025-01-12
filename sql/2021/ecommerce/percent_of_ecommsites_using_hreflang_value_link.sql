@@ -59,10 +59,7 @@ FROM (
         app != 'Google Analytics Enhanced eCommerce'
       )
   )
-  USING (
-    _TABLE_SUFFIX,
-    url
-  )
+  USING (_TABLE_SUFFIX, url)
   JOIN (
     SELECT
       _TABLE_SUFFIX,

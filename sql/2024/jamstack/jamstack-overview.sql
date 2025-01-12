@@ -18,7 +18,7 @@ CREATE TEMPORARY FUNCTION GET_MAX_AGE(response_headers ARRAY<STRUCT<name STRING,
 
 -- Temporary function to check if revalidation is required
 CREATE TEMPORARY FUNCTION REQUIRES_REVALIDATION(response_headers ARRAY<STRUCT<name STRING, value STRING>>) RETURNS BOOL AS (
-  EXISTS(
+  EXISTS (
     SELECT 1
     FROM
       UNNEST(response_headers) AS header
@@ -30,7 +30,7 @@ CREATE TEMPORARY FUNCTION REQUIRES_REVALIDATION(response_headers ARRAY<STRUCT<na
 
 -- Temporary function to check for dynamic content via Set-Cookie
 CREATE TEMPORARY FUNCTION HAS_SET_COOKIE(response_headers ARRAY<STRUCT<name STRING, value STRING>>) RETURNS BOOL AS (
-  EXISTS(
+  EXISTS (
     SELECT 1
     FROM UNNEST(response_headers) AS header
     WHERE LOWER(header.name) = 'set-cookie'
@@ -39,7 +39,7 @@ CREATE TEMPORARY FUNCTION HAS_SET_COOKIE(response_headers ARRAY<STRUCT<name STRI
 
 -- Temporary function to check for Vary headers that indicate dynamic content
 CREATE TEMPORARY FUNCTION HAS_DYNAMIC_VARY(response_headers ARRAY<STRUCT<name STRING, value STRING>>) RETURNS BOOL AS (
-  EXISTS(
+  EXISTS (
     SELECT 1
     FROM UNNEST(response_headers) AS header
     WHERE LOWER(header.name) = 'vary' AND REGEXP_CONTAINS(LOWER(header.value), r'(user-agent|cookie)')
@@ -48,7 +48,7 @@ CREATE TEMPORARY FUNCTION HAS_DYNAMIC_VARY(response_headers ARRAY<STRUCT<name ST
 
 -- Temporary function to detect presence of ETag
 CREATE TEMPORARY FUNCTION HAS_ETAG(response_headers ARRAY<STRUCT<name STRING, value STRING>>) RETURNS BOOL AS (
-  EXISTS(
+  EXISTS (
     SELECT 1
     FROM UNNEST(response_headers) AS header
     WHERE LOWER(header.name) = 'etag'
@@ -61,7 +61,7 @@ CREATE TEMPORARY FUNCTION IS_HTTPS(url STRING) RETURNS BOOL AS (
 );
 
 -- Temporary function that checks if a CWV is good
-CREATE TEMP FUNCTION IS_GOOD (good FLOAT64, needs_improvement FLOAT64, poor FLOAT64) RETURNS BOOL AS (
+CREATE TEMP FUNCTION IS_GOOD(good FLOAT64, needs_improvement FLOAT64, poor FLOAT64) RETURNS BOOL AS (
   SAFE_DIVIDE(good, (good + needs_improvement + poor)) >= 0.75
 );
 
@@ -112,7 +112,7 @@ WITH potential_jamstack_sites AS (
       WHEN tech.technology = 'GitHub Pages' THEN 100
       WHEN tech.technology = 'Tiiny Host' THEN 100
       ELSE 0
-      END) AS paas_score,
+    END) AS paas_score,
 
     -- Calculate TTFB_Score
     CASE
@@ -126,7 +126,7 @@ WITH potential_jamstack_sites AS (
       WHEN GET_MAX_AGE(r.response_headers) >= 604800 AND NOT REQUIRES_REVALIDATION(r.response_headers) THEN 100
       WHEN GET_MAX_AGE(r.response_headers) >= 604800 AND REQUIRES_REVALIDATION(r.response_headers) THEN 50
       ELSE 0
-      END) +
+    END) +
     (CASE WHEN HAS_ETAG(r.response_headers) THEN 10 ELSE 0 END) AS cache_score,
 
     -- Penalties for dynamic content
@@ -150,6 +150,7 @@ WITH potential_jamstack_sites AS (
   GROUP BY
     p.date, p.client, p.page, p.technologies, r.response_headers, p.summary
 ),
+
 -- Combine all the information and calculate total_score
 total_sites AS (
   SELECT
@@ -171,7 +172,8 @@ total_sites AS (
     (
       IS_GOOD(c.fast_inp, c.avg_inp, c.slow_inp) IS NOT FALSE AND
       IS_GOOD(c.fast_lcp, c.avg_lcp, c.slow_lcp) AND
-      IS_GOOD(c.small_cls, c.medium_cls, c.large_cls)) AS cwv_ok,
+      IS_GOOD(c.small_cls, c.medium_cls, c.large_cls)
+    ) AS cwv_ok,
     c.p75_lcp,
     c.p75_cls,
     c.p75_inp,

@@ -53,16 +53,15 @@ SELECT
 FROM
   base
 JOIN (
-    SELECT
-      _TABLE_SUFFIX AS client,
-      COUNT(DISTINCT url) AS total
-    FROM
-      `httparchive.lighthouse.2024_06_01_*`
-    GROUP BY
-      _TABLE_SUFFIX
+  SELECT
+    _TABLE_SUFFIX AS client,
+    COUNT(DISTINCT url) AS total
+  FROM
+    `httparchive.lighthouse.2024_06_01_*`
+  GROUP BY
+    _TABLE_SUFFIX
 )
-USING
-  (client)
+USING (client)
 GROUP BY
   client,
   domain,

@@ -48,7 +48,7 @@ FROM (
       (date = '2020-08-01' OR date = '2021-07-01' OR date = '2022-06-01') AND
       is_root_page
   ) LEFT JOIN UNNEST(iframeAttrs) AS iframeAttr
-  ) JOIN total_iframe_count USING (client, date)
+) JOIN total_iframe_count USING (client, date)
 GROUP BY
   total_iframes,
   client,

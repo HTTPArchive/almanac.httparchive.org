@@ -52,7 +52,7 @@ FROM (
     UNNEST(getResourceHints(JSON_QUERY(custom_metrics, '$.almanac.link-nodes'))) AS hint
   WHERE
     date = '2024-06-01'
-  )
+)
 GROUP BY
   client,
   is_root_page,

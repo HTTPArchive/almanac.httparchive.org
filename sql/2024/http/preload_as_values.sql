@@ -67,7 +67,7 @@ FROM (
       UNNEST(getResourceHintAttrs(JSON_QUERY(custom_metrics, '$.almanac.link-nodes'))) AS hint
     WHERE
       date = '2024-06-01'
-    )
+  )
   GROUP BY
     client,
     is_root_page,
@@ -75,7 +75,8 @@ FROM (
     as_value
 )
 JOIN
-  total_pages USING (client, is_root_page)
+  total_pages
+USING (client, is_root_page)
 GROUP BY
   client,
   is_root_page,

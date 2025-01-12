@@ -45,14 +45,14 @@ SELECT
   COUNTIF(CrUX.largest_contentful_paint IS NOT NULL AND CrUX.cumulative_layout_shift IS NOT NULL) AS eligible_cwv,
   COUNTIF(CrUX.largest_contentful_paint AND CrUX.interaction_to_next_paint IS NOT FALSE AND CrUX.cumulative_layout_shift) / COUNTIF(CrUX.largest_contentful_paint IS NOT NULL AND CrUX.cumulative_layout_shift IS NOT NULL) AS pct_cwv_good
 FROM (
-    SELECT
-      client,
-      getGoodCwv(payload) AS CrUX,
-      is_root_page
-    FROM
-      `httparchive.all.pages`
-    WHERE
-      date = '2024-06-01'
+  SELECT
+    client,
+    getGoodCwv(payload) AS CrUX,
+    is_root_page
+  FROM
+    `httparchive.all.pages`
+  WHERE
+    date = '2024-06-01'
 
 )
 WHERE

@@ -59,9 +59,8 @@ FROM (
     pages
   JOIN
     crux
-  USING
-    (client, page)
-  ),
+  USING (client, page)
+),
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 WHERE
   generated_content_percent IS NOT NULL AND
