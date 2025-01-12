@@ -376,6 +376,7 @@ section.chapter {
   }
 
   #toc a::after {
+    /* stylelint-disable-next-line declaration-property-value-no-unknown */
     content: leader('.') target-counter(attr(href), page);
   }
 
@@ -483,6 +484,7 @@ section.chapter {
 
   .fn {
     display: inline;
+    /* stylelint-disable-next-line declaration-property-value-no-unknown */
     float: footnote;
     counter-increment: footnote;
     font-size: 10px;
@@ -499,7 +501,6 @@ section.chapter {
     font-size: 6px;
     font-size: 0.375rem;
     vertical-align: super;
-    line-height: none;
   }
 
   .fn::footnote-marker {
