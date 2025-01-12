@@ -613,7 +613,7 @@ p {
     margin-left: 20px;
     margin-left: min(20px, 5vw);
     margin-right: 20px;
-    margin-right: min (20px, 5vw);
+    margin-right: min(20px, 5vw);
   }
 
   .people {
