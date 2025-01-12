@@ -1,0 +1,45 @@
+BEGIN:VCALENDAR
+CALSCALE:GREGORIAN
+PRODID:-//Apple Inc.//macOS 15.1.1//EN
+VERSION:2.0
+BEGIN:VTIMEZONE
+TZID:America/Toronto
+BEGIN:DAYLIGHT
+DTSTART:20070311T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+TZNAME:EDT
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0400
+END:DAYLIGHT
+BEGIN:STANDARD
+DTSTART:20071104T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+TZNAME:EST
+TZOFFSETFROM:-0400
+TZOFFSETTO:-0500
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+CREATED:20250112T082552Z
+DESCRIPTION:The second Web Almanac Live! stream event to celebrate the r
+ elease of the 2024 edition of The HTTP Archive's Web Almanac. It will fe
+ ature chapter authors as well as discussions around the data they uncove
+ red\, some they didn't and all things in between in this year's edition.
+ \n\nJoin us for lively discussions as we go through results from 17 mill
+ ion websites analyzed and 83 TB of data processed. Tuesday\, 16th Januar
+ y at 14h EST.
+DTEND;TZID=America/Toronto:20250116T1400
+DTSTAMP:20250112T133418Z
+DTSTART;TZID=America/Toronto:20250116T150000
+LAST-MODIFIED:20250112T082552Z
+LOCATION:https://www.youtube.com/live/zCiMls26CL8?si=eMsU_MmNYdL-UB4Z
+SEQUENCE:0
+SUMMARY:The 2024 Web Almanac Live Stream part 2!
+TRANSP:OPAQUE
+UID:E6541AE5-40FA-4D4B-AFC2-AD503393DC69
+URL;VALUE=URI:https://www.youtube.com/live/zCiMls26CL8?si=eMsU_MmNYdL-UB
+ 4Z
+X-APPLE-CREATOR-IDENTITY:com.apple.calendar
+X-APPLE-CREATOR-TEAM-IDENTITY:0000000000
+END:VEVENT
+END:VCALENDAR
