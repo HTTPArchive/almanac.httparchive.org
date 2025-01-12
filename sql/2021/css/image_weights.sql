@@ -20,7 +20,8 @@ FROM (
       `httparchive.almanac.requests`
     WHERE
       date = '2021-07-01' AND
-      type = 'image')
+      type = 'image'
+  )
   JOIN (
     SELECT
       client,
@@ -30,12 +31,13 @@ FROM (
       `httparchive.almanac.requests`
     WHERE
       date = '2021-07-01' AND
-      type = 'css')
-  USING
-    (client, page, url)
+      type = 'css'
+  )
+  USING (client, page, url)
   GROUP BY
     client,
-    page),
+    page
+),
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 GROUP BY
   percentile,

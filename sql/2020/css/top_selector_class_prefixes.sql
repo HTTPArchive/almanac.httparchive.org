@@ -69,20 +69,22 @@ FROM (
     COUNT(DISTINCT page) AS pages,
     APPROX_TOP_COUNT(class_prefix, 200) AS class_prefixes
   FROM (
-      SELECT DISTINCT
-        client,
-        page,
-        IF(LENGTH(class) > LENGTH(REGEXP_EXTRACT(class, r'^([^-]+)')), REGEXP_REPLACE(class, r'^([^-]+).*', r'\1-*'), class) AS class_prefix
-      FROM
-        `httparchive.almanac.parsed_css`
-      LEFT JOIN
-        UNNEST(getSelectorParts(css).class) AS class
-      WHERE
-        date = '2020-08-01' AND
-        # Limit the size of the CSS to avoid OOM crashes.
-        LENGTH(css) < 0.1 * 1024 * 1024)
+    SELECT DISTINCT
+      client,
+      page,
+      IF(LENGTH(class) > LENGTH(REGEXP_EXTRACT(class, r'^([^-]+)')), REGEXP_REPLACE(class, r'^([^-]+).*', r'\1-*'), class) AS class_prefix
+    FROM
+      `httparchive.almanac.parsed_css`
+    LEFT JOIN
+      UNNEST(getSelectorParts(css).class) AS class
+    WHERE
+      date = '2020-08-01' AND
+      # Limit the size of the CSS to avoid OOM crashes.
+      LENGTH(css) < 0.1 * 1024 * 1024
+  )
   GROUP BY
-    client),
+    client
+),
   UNNEST(class_prefixes) AS class_prefix
 WHERE
   class_prefix.value IS NOT NULL

@@ -5,7 +5,7 @@
 CREATE TEMPORARY FUNCTION FEATURES(json STRING)
 RETURNS ARRAY<STRING>
 LANGUAGE js
-OPTIONS(library = "gs://httparchive/lib/css-utils.js")
+OPTIONS (library = "gs://httparchive/lib/css-utils.js")
 AS '''
 function parseFontFeatureSettings(value) {
   const features = (value || '').split(/\\s*,\\s*/);
@@ -53,6 +53,7 @@ features AS (
     client,
     feature
 ),
+
 pages AS (
   SELECT
     client,
@@ -75,7 +76,8 @@ SELECT
 FROM
   features
 JOIN
-  pages USING (client)
+  pages
+USING (client)
 ORDER BY
   client,
   proportion DESC

@@ -70,18 +70,17 @@ SELECT
   SUM(num_occurrences) AS total_occurrences,
   SUM(SUM(num_occurrences)) OVER (PARTITION BY client) AS total,
   SUM(num_occurrences) / SUM(SUM(num_occurrences)) OVER (PARTITION BY client) AS pct
-FROM
-  (
-    SELECT
-      _TABLE_SUFFIX AS client,
-      invalid_type.type,
-      invalid_type.num_occurrences
-    FROM
-      `httparchive.pages.2021_07_01_*`,
-      UNNEST(getInvalidTypes(JSON_EXTRACT_SCALAR(payload, '$._almanac'))) AS invalid_type
-    WHERE
-      payload IS NOT NULL
-  )
+FROM (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    invalid_type.type,
+    invalid_type.num_occurrences
+  FROM
+    `httparchive.pages.2021_07_01_*`,
+    UNNEST(getInvalidTypes(JSON_EXTRACT_SCALAR(payload, '$._almanac'))) AS invalid_type
+  WHERE
+    payload IS NOT NULL
+)
 GROUP BY
   client,
   type

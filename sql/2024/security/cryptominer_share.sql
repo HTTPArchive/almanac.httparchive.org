@@ -1,6 +1,6 @@
 #standardSQL
-  # Section: Malpractices on the web
-  # Question: Which cryptominers have the largest market share?
+# Section: Malpractices on the web
+# Question: Which cryptominers have the largest market share?
 SELECT
   client,
   t.technology,

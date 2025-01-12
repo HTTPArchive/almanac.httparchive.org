@@ -18,10 +18,11 @@ SELECT
 FROM
   `httparchive.lighthouse.2020_08_01_mobile`,
   UNNEST(getVulnerabilities(JSON_EXTRACT(report, "$.audits['no-vulnerable-libraries']"))) AS lib, (
-    SELECT
-      COUNT(DISTINCT url) AS total
-    FROM
-      `httparchive.lighthouse.2020_08_01_mobile`)
+  SELECT
+    COUNT(DISTINCT url) AS total
+  FROM
+    `httparchive.lighthouse.2020_08_01_mobile`
+)
 GROUP BY
   lib,
   total

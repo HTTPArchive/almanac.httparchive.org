@@ -29,7 +29,8 @@ FROM (
     url,
     JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._security'), '$.sri-integrity') AS sris
   FROM
-    `httparchive.pages.2022_06_01_*`),
+    `httparchive.pages.2022_06_01_*`
+),
   UNNEST(sris) AS sri
 JOIN totals USING (client)
 WHERE

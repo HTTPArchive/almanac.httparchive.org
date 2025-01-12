@@ -16,17 +16,17 @@ SELECT
   COUNTIF(policy IS NOT NULL) AS policy,
   COUNTIF(policy IS NOT NULL) / COUNTIF(has_security_txt = 'true') AS pct_policy
 FROM (
-    SELECT
-      _TABLE_SUFFIX AS client,
-      url AS page,
-      JSON_VALUE(JSON_VALUE(payload, '$._well-known'), '$."/.well-known/security.txt".found') AS has_security_txt,
-      JSON_QUERY(JSON_VALUE(payload, '$._well-known'), '$."/.well-known/security.txt".data.signed') AS signed,
-      JSON_QUERY(JSON_VALUE(payload, '$._well-known'), '$."/.well-known/security.txt".data.canonical') AS canonical,
-      JSON_QUERY(JSON_VALUE(payload, '$._well-known'), '$."/.well-known/security.txt".data.encryption') AS encryption,
-      JSON_QUERY(JSON_VALUE(payload, '$._well-known'), '$."/.well-known/security.txt".data.expires') AS expires,
-      JSON_QUERY(JSON_VALUE(payload, '$._well-known'), '$."/.well-known/security.txt".data.policy') AS policy
-    FROM
-      `httparchive.pages.2022_06_01_*`
+  SELECT
+    _TABLE_SUFFIX AS client,
+    url AS page,
+    JSON_VALUE(JSON_VALUE(payload, '$._well-known'), '$."/.well-known/security.txt".found') AS has_security_txt,
+    JSON_QUERY(JSON_VALUE(payload, '$._well-known'), '$."/.well-known/security.txt".data.signed') AS signed,
+    JSON_QUERY(JSON_VALUE(payload, '$._well-known'), '$."/.well-known/security.txt".data.canonical') AS canonical,
+    JSON_QUERY(JSON_VALUE(payload, '$._well-known'), '$."/.well-known/security.txt".data.encryption') AS encryption,
+    JSON_QUERY(JSON_VALUE(payload, '$._well-known'), '$."/.well-known/security.txt".data.expires') AS expires,
+    JSON_QUERY(JSON_VALUE(payload, '$._well-known'), '$."/.well-known/security.txt".data.policy') AS policy
+  FROM
+    `httparchive.pages.2022_06_01_*`
 )
 GROUP BY
   client

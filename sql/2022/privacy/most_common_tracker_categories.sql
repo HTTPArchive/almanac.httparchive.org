@@ -92,9 +92,8 @@ JOIN
 USING (client)
 WHERE
   date = '2022-06-01' AND
-  NET.REG_DOMAIN(page) != NET.REG_DOMAIN(urlShort) AND -- third party
-  (
-    -- categories selected from https://whotracks.me/blog/tracker_categories.html
+  NET.REG_DOMAIN(page) != NET.REG_DOMAIN(urlShort) AND (
+    -- third party categories selected from https://whotracks.me/blog/tracker_categories.html
     whotracksme.category = 'advertising' OR
     whotracksme.category = 'pornvertising' OR
     whotracksme.category = 'site_analytics' OR

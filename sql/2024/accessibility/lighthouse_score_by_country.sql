@@ -40,7 +40,8 @@ SELECT
 FROM
   geo_summary
 JOIN
-  score_data ON REGEXP_EXTRACT(geo_summary.origin, r'://([^/]+)') = score_data.domain
+  score_data
+ON REGEXP_EXTRACT(geo_summary.origin, r'://([^/]+)') = score_data.domain
 GROUP BY
   geo_summary.geo, geo_summary.client
 ORDER BY

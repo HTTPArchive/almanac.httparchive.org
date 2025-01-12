@@ -5,7 +5,7 @@
 CREATE TEMPORARY FUNCTION PROPERTIES(json STRING)
 RETURNS ARRAY<STRING>
 LANGUAGE js
-OPTIONS(library = "gs://httparchive/lib/css-utils.js")
+OPTIONS (library = "gs://httparchive/lib/css-utils.js")
 AS '''
 try {
   const values = ['auto', 'block', 'fallback', 'optional', 'swap'];
@@ -40,6 +40,7 @@ properties AS (
     client,
     property
 ),
+
 pages AS (
   SELECT
     client,
@@ -62,7 +63,8 @@ SELECT
 FROM
   properties
 JOIN
-  pages USING (client)
+  pages
+USING (client)
 ORDER BY
   client,
   proportion DESC

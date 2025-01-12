@@ -25,7 +25,7 @@ FROM (
   WHERE
     date = '2024-06-01' AND
     is_root_page
-  ),
+),
   UNNEST(iframeAttrs) AS iframeAttr,
   UNNEST(SPLIT(JSON_EXTRACT_SCALAR(iframeAttr, '$.sandbox'), ' ')) AS sandbox_attr
 JOIN (

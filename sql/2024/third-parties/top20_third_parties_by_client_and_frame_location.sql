@@ -15,6 +15,7 @@ WITH document_frameid AS (
   FROM `httparchive.all.requests` AS requests
   WHERE requests.date = '2024-06-01' AND requests.is_root_page = true
 ),
+
 page_frames AS (
   SELECT
     client,
@@ -35,8 +36,10 @@ page_frames AS (
     END AS frame_type
   FROM document_frameid
 ),
+
 combined_frame_counts AS (
-  SELECT client,
+  SELECT
+    client,
     page_host,
     frame_host,
     tp_flag,
@@ -51,6 +54,7 @@ combined_frame_counts AS (
   FROM page_frames
   GROUP BY client, page_host, frame_host, tp_flag
 ),
+
 grouped_data AS (
   SELECT
     client,
@@ -62,6 +66,7 @@ grouped_data AS (
   FROM combined_frame_counts
   GROUP BY client, frame_host
 ),
+
 ranked_publishers AS (
   SELECT
     client,
@@ -74,6 +79,7 @@ ranked_publishers AS (
     ROW_NUMBER() OVER (PARTITION BY client ORDER BY num_distinct_publishers_both DESC) AS rank_both
   FROM grouped_data
 )
+
 SELECT
   client,
   frame_host,

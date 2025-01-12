@@ -31,11 +31,13 @@ FROM (
       mixin.mixin,
       mixin.freq
     FROM
-      `httparchive.pages.2022_07_01_*`, -- noqa: L062
-      UNNEST(getMixinUsage(payload)) AS mixin)
+      `httparchive.pages.2022_07_01_*`, -- noqa: CV09
+      UNNEST(getMixinUsage(payload)) AS mixin
+  )
   GROUP BY
     client,
-    mixin)
+    mixin
+)
 WHERE
   freq >= 1000
 ORDER BY

@@ -17,7 +17,9 @@ WITH page_metrics AS (
     is_root_page,
     rank
   HAVING rank IS NOT NULL
-), metric_details AS (
+),
+
+metric_details AS (
   SELECT
     client,
     is_root_page,
@@ -38,7 +40,9 @@ WITH page_metrics AS (
     is_root_page,
     rank,
     percentile
-), page_counts AS (
+),
+
+page_counts AS (
   SELECT
     client,
     is_root_page,

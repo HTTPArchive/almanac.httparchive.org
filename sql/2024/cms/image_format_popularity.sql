@@ -11,7 +11,8 @@ SELECT
   SUM(COUNT(0)) OVER (PARTITION BY client, cms) AS total,
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client, cms) AS pct
 FROM (
-  SELECT DISTINCT client,
+  SELECT DISTINCT
+    client,
     page AS url,
     technologies.technology AS cms
   FROM
@@ -41,7 +42,7 @@ JOIN (
       WHEN JSON_VALUE(summary, '$.mimeType') = 'binary/octet-stream' THEN 'binary/octet-stream'
       ELSE 'other/unknown' -- TO handle ANY unexpected formats
     END
-    AS format
+      AS format
   FROM
     `httparchive.all.requests`
   WHERE
@@ -49,9 +50,7 @@ JOIN (
     type = 'image' AND
     is_root_page
 )
-USING
-  (client,
-    url)
+USING (client, url)
 JOIN (
   SELECT
     client,
@@ -67,10 +66,9 @@ JOIN (
     is_root_page
   GROUP BY
     client,
-    cms)
-USING
-  (client,
-    cms)
+    cms
+)
+USING (client, cms)
 WHERE
   pages > 1000
 GROUP BY

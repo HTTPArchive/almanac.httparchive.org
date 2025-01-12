@@ -18,5 +18,6 @@ FROM (
     client,
     host
   ORDER BY
-    freq / total DESC)
+    freq / total DESC
+)
 LIMIT 100

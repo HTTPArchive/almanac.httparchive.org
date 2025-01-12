@@ -11,6 +11,7 @@ WITH requests AS (
     req.date = '2024-06-01' AND
     req.is_root_page = true
 ),
+
 pages AS (
   SELECT
     client,
@@ -22,6 +23,7 @@ pages AS (
     pg.date = '2024-06-01' AND
     pg.is_root_page = true
 ),
+
 third_party AS (
   SELECT
     tp.client,
@@ -33,7 +35,7 @@ third_party AS (
     pages tp
   INNER JOIN
     requests r
-  ON NET.HOST(r.page) = NET.HOST(tp.page) AND r.client = tp.client
+  ON NET.HOST(tp.page) = NET.HOST(r.page) AND tp.client = r.client
   CROSS JOIN UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
   WHERE
     tp.rank <= rank_grouping
@@ -42,6 +44,7 @@ third_party AS (
     tp.rank,
     rank_grouping
 )
+
 SELECT
   client,
   rank_grouping,

@@ -17,7 +17,7 @@ FROM (
   WHERE
     date = '2024-06-01' AND
     is_root_page
-  )
+)
 WHERE
   cipher IS NOT NULL
 GROUP BY

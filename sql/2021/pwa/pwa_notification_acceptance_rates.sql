@@ -12,26 +12,23 @@ SELECT
   APPROX_QUANTILES(notification_permission_dismiss, 1000 RESPECT NULLS)[OFFSET(percentile * 10)] AS notification_permission_dismiss
 FROM
   `chrome-ux-report.materialized.metrics_summary`
-JOIN
-  (
-    SELECT
-      _TABLE_SUFFIX AS client,
-      RTRIM(url, '/') AS origin,
-      COUNT(0) AS total
-    FROM
-      `httparchive.pages.2021_07_01_*`
-    WHERE
-      JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = 'true'
-    GROUP BY
-      _TABLE_SUFFIX,
-      url
-  )
-USING
-  (origin),
+JOIN (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    RTRIM(url, '/') AS origin,
+    COUNT(0) AS total
+  FROM
+    `httparchive.pages.2021_07_01_*`
+  WHERE
+    JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = 'true'
+  GROUP BY
+    _TABLE_SUFFIX,
+    url
+)
+USING (origin),
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 WHERE
-  date IN ('2021-07-01') AND
-  (
+  date IN ('2021-07-01') AND (
     notification_permission_accept IS NOT NULL OR
     notification_permission_deny IS NOT NULL OR
     notification_permission_ignore IS NOT NULL OR

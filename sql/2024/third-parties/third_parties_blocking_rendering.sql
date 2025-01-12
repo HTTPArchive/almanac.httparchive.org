@@ -96,11 +96,10 @@ FROM (
       domain,
       page,
       category
-    )
+  )
   INNER JOIN
     total_third_party_usage
-  USING
-    (client, canonicalDomain, category)
+  USING (client, canonicalDomain, category)
   GROUP BY
     client,
     canonicalDomain,

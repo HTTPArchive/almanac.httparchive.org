@@ -45,12 +45,11 @@ FROM (
       cats = 'CMS' AND
       is_root_page
   )
-  USING
-    (client,
-      page)
+  USING (client, page)
   GROUP BY
     client,
-    geo)
+    geo
+)
 WHERE
   pages > 1000
 ORDER BY

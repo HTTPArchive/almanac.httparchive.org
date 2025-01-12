@@ -37,7 +37,8 @@ FROM (
     url AS site,
     getRobotsSize(payload) AS robots_size
   FROM
-    `httparchive.pages.2021_07_01_*`)
+    `httparchive.pages.2021_07_01_*`
+)
 GROUP BY
   client
 ORDER BY

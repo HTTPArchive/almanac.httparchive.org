@@ -41,7 +41,8 @@ FROM (
     url,
     get_meta_og_video_types(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS almanac_info
   FROM
-    `httparchive.pages.2020_08_01_*`),
+    `httparchive.pages.2020_08_01_*`
+),
   UNNEST(almanac_info.video_types) AS video_type
 GROUP BY
   client, video_type

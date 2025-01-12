@@ -48,7 +48,8 @@ FROM (
     UNNEST(getMediaQueryValues(css)) AS value
   WHERE
     date = '2021-07-01' AND
-    value IS NOT NULL)
+    value IS NOT NULL
+)
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -56,9 +57,9 @@ JOIN (
   FROM
     `httparchive.summary_pages.2021_07_01_*`
   GROUP BY
-    client)
-USING
-  (client)
+    client
+)
+USING (client)
 GROUP BY
   client,
   total,

@@ -47,6 +47,7 @@ WITH focus_data AS (
   GROUP BY
     client, page
 ),
+
 total_pages_data AS (
   SELECT
     client,

@@ -12,7 +12,8 @@ SELECT
 FROM
   `httparchive.all.requests`
 JOIN
-  `httparchive.all.pages` USING (client, page, date, is_root_page)
+  `httparchive.all.pages`
+USING (client, page, date, is_root_page)
 WHERE
   date = '2024-06-01' AND
   is_root_page

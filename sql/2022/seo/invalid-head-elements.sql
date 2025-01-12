@@ -6,7 +6,7 @@ WITH totals AS (
     _TABLE_SUFFIX AS client,
     COUNT(0) AS total_pages
   FROM
-    `httparchive.pages.2022_07_01_*` -- noqa: L062
+    `httparchive.pages.2022_07_01_*` -- noqa: CV09
   GROUP BY
     client
 ),
@@ -17,7 +17,7 @@ pages AS (
     url,
     element
   FROM
-    `httparchive.pages.2022_07_01_*`, -- noqa: L062
+    `httparchive.pages.2022_07_01_*`, -- noqa: CV09
     UNNEST(JSON_EXTRACT_ARRAY(payload, '$._valid-head.invalidElements')) AS element
 )
 

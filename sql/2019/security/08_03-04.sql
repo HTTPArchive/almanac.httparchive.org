@@ -14,11 +14,13 @@ SELECT
 FROM (
   SELECT
     client,
-    COUNTIF(IF(tls13,
+    COUNTIF(IF(
+      tls13,
       getHexCert(cert) LIKE '%2a8648ce3d0201%',
       REGEXP_CONTAINS(key_exchange, r'ECDSA')
     )) AS is_ecdsa,
-    COUNTIF(IF(tls13,
+    COUNTIF(IF(
+      tls13,
       getHexCert(cert) LIKE '%2a864886f70d010101%',
       REGEXP_CONTAINS(key_exchange, r'RSA')
     )) AS is_rsa,
@@ -30,8 +32,10 @@ FROM (
       JSON_EXTRACT(payload, '$._securityDetails.keyExchange') AS key_exchange,
       JSON_EXTRACT_SCALAR(payload, '$._securityDetails.protocol') = 'TLS 1.3' AS tls13
     FROM
-      `httparchive.requests.2019_07_01_*`)
+      `httparchive.requests.2019_07_01_*`
+  )
   WHERE
     cert IS NOT NULL
   GROUP BY
-    client)
+    client
+)

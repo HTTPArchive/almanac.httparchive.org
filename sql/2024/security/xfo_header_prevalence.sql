@@ -20,7 +20,8 @@ FROM (
     date = '2024-06-01' AND
     is_root_page AND
     is_main_document AND
-    LOWER(response_headers.name) = 'x-frame-options')
+    LOWER(response_headers.name) = 'x-frame-options'
+)
 GROUP BY
   client,
   xfo_header

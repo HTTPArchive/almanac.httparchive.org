@@ -16,6 +16,7 @@ WITH metrics_data AS (
     date <= '2024-06-01' AND
     EXTRACT(DAY FROM date) = 1 -- Only include data from the first day of each month
 )
+
 SELECT
   date,
   client,

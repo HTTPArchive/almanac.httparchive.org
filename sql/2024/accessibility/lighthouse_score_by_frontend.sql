@@ -43,7 +43,7 @@ FROM (
     client,
     page,
     framework
-  )
+)
 GROUP BY
   client,
   framework

@@ -39,6 +39,7 @@ FROM (
     `httparchive.pages.2024_06_01_*` AS a,
     UNNEST(get_responsive_settings(JSON_EXTRACT_SCALAR(payload, '$._responsive_images'))) AS respimg
   WHERE
-    respimg.srcsetHasWDescriptors)
+    respimg.srcsetHasWDescriptors
+)
 GROUP BY
   client

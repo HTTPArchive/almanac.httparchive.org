@@ -40,7 +40,7 @@ FROM (
   WHERE
     date = '2020-08-01'
 ),
-UNNEST(cookie_values) AS cookie_value
+  UNNEST(cookie_values) AS cookie_value
 GROUP BY
   client,
   party

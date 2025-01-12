@@ -21,7 +21,7 @@ FROM (
     (date = '2022-06-09' OR date = '2023-06-01' OR date = '2024-06-01') AND
     is_root_page
 ),
-UNNEST(['Server', 'X-Server', 'X-Backend-Server', 'X-Powered-By', 'X-Aspnet-Version']) AS headername
+  UNNEST(['Server', 'X-Server', 'X-Backend-Server', 'X-Powered-By', 'X-Aspnet-Version']) AS headername
 GROUP BY
   date,
   client,

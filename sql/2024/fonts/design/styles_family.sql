@@ -43,6 +43,7 @@ families AS (
   QUALIFY
     rank <= 100
 ),
+
 pages AS (
   SELECT
     client,
@@ -65,7 +66,8 @@ SELECT
 FROM
   families
 JOIN
-  pages USING (client)
+  pages
+USING (client)
 ORDER BY
   client,
   proportion DESC

@@ -42,8 +42,10 @@ FROM (
       date = '2024-06-01' AND
       is_root_page AND
       is_main_document AND
-      LOWER(response_headers.name) = 'content-security-policy')
+      LOWER(response_headers.name) = 'content-security-policy'
+  )
   GROUP BY
-    client)
+    client
+)
 ORDER BY
   client

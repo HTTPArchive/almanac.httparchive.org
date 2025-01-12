@@ -5,10 +5,11 @@ WITH pages AS (
     client,
     root_page,
     custom_metrics,
-    COUNT(DISTINCT net.host(root_page)) OVER(PARTITION BY client) AS total_domains
+    COUNT(DISTINCT net.host(root_page)) OVER (PARTITION BY client) AS total_domains
   FROM `httparchive.all.pages`
   WHERE date = '2024-06-01'
 ),
+
 cookies AS (
   SELECT
     client,
@@ -19,6 +20,7 @@ cookies AS (
   FROM pages,
     UNNEST(JSON_QUERY_ARRAY(custom_metrics, '$.cookies')) AS cookie
 )
+
 SELECT
   client,
   COUNT(DISTINCT firstparty_host) AS domain_count,

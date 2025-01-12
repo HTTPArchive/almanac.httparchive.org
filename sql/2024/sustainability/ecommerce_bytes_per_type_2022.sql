@@ -131,7 +131,7 @@ WITH ecommerce_data AS (
       SELECT 1
       FROM UNNEST(tech.categories) AS category
       WHERE category = 'Ecommerce' AND
-        tech.technology NOT IN('Cart Functionality', 'Google Analytics Enhanced eCommerce')
+        tech.technology NOT IN ('Cart Functionality', 'Google Analytics Enhanced eCommerce')
     )
 )
 

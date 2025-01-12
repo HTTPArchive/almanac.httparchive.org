@@ -16,15 +16,14 @@ WITH base AS (
   SELECT
     client,
     page
-  FROM
-    (
-      SELECT
-        _TABLE_SUFFIX AS client,
-        lighthouse.url AS page
-      FROM
-        `httparchive.lighthouse.2022_06_01_*` AS lighthouse,
-        UNNEST(getUrls(JSON_EXTRACT(report, "$.audits['legacy-javascript']"))) AS data
-    )
+  FROM (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      lighthouse.url AS page
+    FROM
+      `httparchive.lighthouse.2022_06_01_*` AS lighthouse,
+      UNNEST(getUrls(JSON_EXTRACT(report, "$.audits['legacy-javascript']"))) AS data
+  )
   GROUP BY
     client,
     page
@@ -46,8 +45,7 @@ JOIN (
   GROUP BY
     client
 )
-USING
-  (client)
+USING (client)
 GROUP BY
   client,
   total

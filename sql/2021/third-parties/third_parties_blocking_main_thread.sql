@@ -13,8 +13,7 @@ SELECT
   COUNT(DISTINCT page) AS total_pages,
   COUNTIF(blocking > 0) AS blocking_pages,
   COUNT(DISTINCT page) - COUNTIF(blocking > 0) AS non_blocking_pages,
-  COUNTIF(blocking > 0) / COUNT(0) AS blocking_pages_pct,
-  (COUNT(DISTINCT page) - COUNTIF(blocking > 0)) / COUNT(0) AS non_blocking_pages_pct,
+  COUNTIF(blocking > 0) / COUNT(0) AS blocking_pages_pct, (COUNT(DISTINCT page) - COUNTIF(blocking > 0)) / COUNT(0) AS non_blocking_pages_pct,
   APPROX_QUANTILES(transfer_size_kib, 1000)[OFFSET(500)] AS p50_transfer_size_kib,
   APPROX_QUANTILES(blocking_time, 1000)[OFFSET(500)] AS p50_blocking_time
 FROM (
@@ -25,20 +24,19 @@ FROM (
     COUNTIF(SAFE_CAST(JSON_VALUE(report, '$.audits.third-party-summary.details.summary.wastedMs') AS FLOAT64) > 250) AS blocking,
     SUM(SAFE_CAST(JSON_VALUE(third_party_items, '$.blockingTime') AS FLOAT64)) AS blocking_time,
     SUM(SAFE_CAST(JSON_VALUE(third_party_items, '$.transferSize') AS FLOAT64) / 1024) AS transfer_size_kib
-  FROM
-    (
-      SELECT
-        url AS page,
-        report
-      FROM
-        `httparchive.lighthouse.2021_07_01_mobile`
-    ),
+  FROM (
+    SELECT
+      url AS page,
+      report
+    FROM
+      `httparchive.lighthouse.2021_07_01_mobile`
+  ),
     UNNEST(JSON_QUERY_ARRAY(report, '$.audits.third-party-summary.details.items')) AS third_party_items
   GROUP BY
     domain,
     page,
     category
-  )
+)
 GROUP BY
   domain,
   category

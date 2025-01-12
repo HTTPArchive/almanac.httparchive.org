@@ -8,23 +8,22 @@ SELECT
   COUNT(0) AS num_pages,
   ROUND(COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client), 4) AS pct
 FROM (
-    SELECT
-      date,
-      client,
-      JSON_EXTRACT_SCALAR(payload, '$._protocol') AS http_version,
-      url,
-      _cdn_provider AS cdn
-    FROM
-      `httparchive.almanac.requests`
-    WHERE
-      date = '2020-08-01' AND
-      firstHtml AND
-      (
-        LOWER(JSON_EXTRACT_SCALAR(payload, '$._protocol')) LIKE 'http/2' OR
-        LOWER(JSON_EXTRACT_SCALAR(payload, '$._protocol')) LIKE '%quic%' OR
-        LOWER(JSON_EXTRACT_SCALAR(payload, '$._protocol')) LIKE 'h3%' OR
-        LOWER(JSON_EXTRACT_SCALAR(payload, '$._protocol')) LIKE 'http/3%'
-      )
+  SELECT
+    date,
+    client,
+    JSON_EXTRACT_SCALAR(payload, '$._protocol') AS http_version,
+    url,
+    _cdn_provider AS cdn
+  FROM
+    `httparchive.almanac.requests`
+  WHERE
+    date = '2020-08-01' AND
+    firstHtml AND (
+      LOWER(JSON_EXTRACT_SCALAR(payload, '$._protocol')) LIKE 'http/2' OR
+      LOWER(JSON_EXTRACT_SCALAR(payload, '$._protocol')) LIKE '%quic%' OR
+      LOWER(JSON_EXTRACT_SCALAR(payload, '$._protocol')) LIKE 'h3%' OR
+      LOWER(JSON_EXTRACT_SCALAR(payload, '$._protocol')) LIKE 'http/3%'
+    )
 ) AS pages
 LEFT JOIN
   `httparchive.almanac.h2_prioritization_cdns`

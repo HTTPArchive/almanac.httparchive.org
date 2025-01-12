@@ -10,7 +10,8 @@ SELECT
 FROM
   `httparchive.all.requests`
 LEFT OUTER JOIN
-  UNNEST(response_headers) AS resp_headers ON LOWER(resp_headers.name) = 'alt-svc'
+  UNNEST(response_headers) AS resp_headers
+ON LOWER(resp_headers.name) = 'alt-svc'
 WHERE
   date = '2024-06-01' AND
   is_root_page

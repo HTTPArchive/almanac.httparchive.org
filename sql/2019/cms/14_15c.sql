@@ -17,9 +17,9 @@ FROM (
   JOIN (
     SELECT _TABLE_SUFFIX AS client, url AS page
     FROM `httparchive.technologies.2019_07_01_*`
-    WHERE category = 'CMS')
-  USING
-    (client, page)
+    WHERE category = 'CMS'
+  )
+  USING (client, page)
   JOIN
     `httparchive.almanac.third_parties` tp
   ON
@@ -30,7 +30,8 @@ FROM (
   GROUP BY
     client,
     category,
-    page),
+    page
+),
   UNNEST([10, 25, 50, 75, 90]) AS percentile
 GROUP BY
   percentile,

@@ -18,7 +18,7 @@ FROM (
     is_root_page AND
     is_main_document AND
     STARTS_WITH(url, 'https')
-  )
+)
 WHERE
   tls_version IS NOT NULL
 GROUP BY

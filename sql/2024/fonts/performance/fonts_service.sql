@@ -30,7 +30,8 @@ SELECT
 FROM
   `httparchive.all.requests`
 INNER JOIN
-  pages USING (date, client)
+  pages
+USING (date, client)
 WHERE
   date IN ('2022-07-01', '2023-07-01', '2024-07-01') AND
   type = 'font' AND

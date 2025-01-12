@@ -78,13 +78,12 @@ SELECT
   # Pages with rel=amphtml
   SAFE_DIVIDE(COUNTIF(markup_info.has_rel_amphtml_tag), COUNT(0)) AS pct_has_rel_amphtml_tag
 
-FROM
-  (
-    SELECT
-      _TABLE_SUFFIX AS client,
-      getMarkupStatsInfo(JSON_EXTRACT_SCALAR(payload, '$._markup')) AS markup_info
-    FROM
-      `httparchive.pages.2021_07_01_*`
-  )
+FROM (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    getMarkupStatsInfo(JSON_EXTRACT_SCALAR(payload, '$._markup')) AS markup_info
+  FROM
+    `httparchive.pages.2021_07_01_*`
+)
 GROUP BY
   client

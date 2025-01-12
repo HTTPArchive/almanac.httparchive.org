@@ -20,7 +20,8 @@ FROM (
     _TABLE_SUFFIX AS client,
     JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._security'), '$.iframe-allow-sandbox') AS iframeAttrs
   FROM
-    `httparchive.pages.2020_08_01_*`),
+    `httparchive.pages.2020_08_01_*`
+),
   UNNEST(iframeAttrs) AS iframeAttr,
   UNNEST(SPLIT(JSON_EXTRACT_SCALAR(iframeAttr, '$.sandbox'), ' ')) AS sandbox_attr
 JOIN (

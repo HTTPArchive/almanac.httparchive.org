@@ -64,7 +64,9 @@ WITH parsed_server_timing AS (
     # date = '2024-08-01' AND
     is_root_page AND
     LOWER(response_headers.name) = 'server-timing'
-), st_details AS (
+),
+
+st_details AS (
   SELECT
     client,
     host,
@@ -82,7 +84,9 @@ WITH parsed_server_timing AS (
   WHERE
     idx = idx_dur AND
     idx = idx_desc
-), totals AS (
+),
+
+totals AS (
   SELECT
     client,
     COUNT(0) AS total,

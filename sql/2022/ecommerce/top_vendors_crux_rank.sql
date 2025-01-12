@@ -23,12 +23,11 @@ FROM (
   FROM
     `httparchive.technologies.2022_06_01_*`
   WHERE
-    category = 'Ecommerce' AND
-    (
+    category = 'Ecommerce' AND (
       app != 'Cart Functionality' AND
       app != 'Google Analytics Enhanced eCommerce'
     )
-  )
+)
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -42,9 +41,9 @@ JOIN (
   GROUP BY
     client,
     url,
-    rank_grouping)
-USING
-  (client, url)
+    rank_grouping
+)
+USING (client, url)
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -57,9 +56,9 @@ JOIN (
     rank <= rank_grouping
   GROUP BY
     rank_grouping,
-    client)
-USING
-  (client, rank_grouping)
+    client
+)
+USING (client, rank_grouping)
 GROUP BY
   client,
   rank_grouping,

@@ -38,7 +38,7 @@ WITH rel_stats_table AS (
       WHEN is_root_page = TRUE THEN 'Homepage'
       ELSE 'No Assigned Page'
     END
-    AS is_root_page,
+      AS is_root_page,
     getRelStatsWptBodies(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS wpt_bodies_info
   FROM
     `httparchive.all.pages`

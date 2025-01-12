@@ -25,12 +25,14 @@ FROM (
       `httparchive.almanac.summary_response_bodies`
     WHERE
       date = '2020-08-01' AND
-      firstHtml),
+      firstHtml
+  ),
     UNNEST(scripts) AS script
   WHERE
     REGEXP_CONTAINS(script, r'\bsrc\b')
   GROUP BY
     client,
-    page)
+    page
+)
 GROUP BY
   client

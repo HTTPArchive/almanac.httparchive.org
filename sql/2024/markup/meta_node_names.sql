@@ -34,8 +34,7 @@ meta AS (
     UNNEST(getMetaNodes(JSON_EXTRACT(custom_metrics, '$.almanac'))) AS name
   JOIN
     totals
-  USING
-    (client)
+  USING (client)
   WHERE
     date = '2024-06-01'
   GROUP BY

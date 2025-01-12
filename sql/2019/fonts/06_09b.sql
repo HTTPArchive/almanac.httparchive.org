@@ -39,7 +39,8 @@ FROM (
     date = '2019-07-01'
   GROUP BY
     client,
-    page),
+    page
+),
   UNNEST([10, 25, 50, 75, 90]) AS percentile
 GROUP BY
   percentile,

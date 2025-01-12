@@ -14,11 +14,12 @@ WITH app_headers AS (
     `httparchive.all.requests` AS r
   INNER JOIN
     `httparchive.all.pages`
-  USING
-    (client, page, date, is_root_page),
-    UNNEST(['Content-Security-Policy', 'Content-Security-Policy-Report-Only', 'Cross-Origin-Embedder-Policy', 'Cross-Origin-Opener-Policy',
-            'Cross-Origin-Resource-Policy', 'Expect-CT', 'Feature-Policy', 'Permissions-Policy', 'Referrer-Policy', 'Report-To',
-            'Strict-Transport-Security', 'X-Content-Type-Options', 'X-Frame-Options', 'X-XSS-Protection', 'Timing-Allow-Origin', 'Origin-Agent-Cluster']) AS headername,
+  USING (client, page, date, is_root_page),
+    UNNEST([
+      'Content-Security-Policy', 'Content-Security-Policy-Report-Only', 'Cross-Origin-Embedder-Policy', 'Cross-Origin-Opener-Policy',
+      'Cross-Origin-Resource-Policy', 'Expect-CT', 'Feature-Policy', 'Permissions-Policy', 'Referrer-Policy', 'Report-To',
+      'Strict-Transport-Security', 'X-Content-Type-Options', 'X-Frame-Options', 'X-XSS-Protection', 'Timing-Allow-Origin', 'Origin-Agent-Cluster'
+    ]) AS headername,
     UNNEST(technologies) AS t,
     UNNEST(t.categories) AS category
   WHERE
@@ -63,9 +64,9 @@ INNER JOIN (
   )
   GROUP BY
     client,
-    headername)
-USING
-  (client, headername)
+    headername
+)
+USING (client, headername)
 INNER JOIN (
   SELECT
     client,
@@ -75,9 +76,9 @@ INNER JOIN (
     app_headers
   GROUP BY
     client,
-    headername)
-USING
-  (client, headername),
+    headername
+)
+USING (client, headername),
   UNNEST(GENERATE_ARRAY(1, 10)) AS topN
 GROUP BY
   client,

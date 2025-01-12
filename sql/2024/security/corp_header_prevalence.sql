@@ -19,7 +19,8 @@ FROM (
   WHERE
     date = '2024-06-01' AND
     is_root_page AND
-    LOWER(response_headers.name) = 'cross-origin-resource-policy')
+    LOWER(response_headers.name) = 'cross-origin-resource-policy'
+)
 GROUP BY
   client,
   corp_header

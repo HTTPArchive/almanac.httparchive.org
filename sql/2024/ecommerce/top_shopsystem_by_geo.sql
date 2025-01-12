@@ -63,7 +63,8 @@ FROM (
   GROUP BY
     client,
     geo,
-    app)
+    app
+)
 WHERE
   pages > 1000
 ORDER BY

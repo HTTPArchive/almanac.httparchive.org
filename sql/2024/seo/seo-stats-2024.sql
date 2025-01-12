@@ -482,7 +482,7 @@ FROM (
       WHEN is_root_page = TRUE THEN 'Homepage'
       ELSE 'No Assigned Page'
     END
-    AS is_root_page,
+      AS is_root_page,
     SPLIT(page, ':')[OFFSET(0)] AS protocol,
     getSeoStatsWptBodies(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS wpt_bodies_info
   FROM

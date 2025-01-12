@@ -14,7 +14,8 @@ SELECT
   COUNTIF(image_type = 'ICO') AS ico,
   COUNTIF(image_type = 'TIFF') AS tiff
 FROM (
-  SELECT client,
+  SELECT
+    client,
     CASE
       WHEN mimeType = 'image/bmp' THEN 'BMP'
       WHEN mimeType = 'image/apng' THEN 'APNG'
@@ -31,7 +32,8 @@ FROM (
   FROM (
     SELECT client, JSON_EXTRACT_SCALAR(summary, '$.mimeType') AS mimeType FROM `httparchive.all.requests` WHERE date = '2024-06-01' AND
       type = 'image'
-  ))
+  )
+)
 GROUP BY
   client
 ORDER BY

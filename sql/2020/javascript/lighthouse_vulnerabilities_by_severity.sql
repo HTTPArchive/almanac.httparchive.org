@@ -30,7 +30,8 @@ FROM (
     UNNEST(getVulnerabilities(JSON_EXTRACT(report, "$.audits['no-vulnerable-libraries']"))) AS vulnerability
   GROUP BY
     page,
-    severity)
+    severity
+)
 GROUP BY
   severity
 ORDER BY

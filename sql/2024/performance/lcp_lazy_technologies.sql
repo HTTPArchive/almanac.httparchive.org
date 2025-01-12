@@ -63,8 +63,7 @@ FROM
   lazy_tech
 JOIN
   tech_totals
-USING
-  (client, technology)
+USING (client, technology)
 GROUP BY
   client,
   technology

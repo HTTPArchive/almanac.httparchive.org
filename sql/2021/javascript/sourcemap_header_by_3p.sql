@@ -33,7 +33,8 @@ FROM (
     `httparchive.almanac.requests`
   WHERE
     date = '2021-07-01' AND
-    type = 'script')
+    type = 'script'
+)
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -41,9 +42,9 @@ JOIN (
   FROM
     `httparchive.summary_pages.2021_07_01_*`
   GROUP BY
-    client)
-USING
-  (client)
+    client
+)
+USING (client)
 GROUP BY
   client,
   host,

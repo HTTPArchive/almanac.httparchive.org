@@ -46,10 +46,9 @@ FROM (
     pages p
   LEFT JOIN
     green g
-  USING
-    (host)
+  USING (host)
 ),
-UNNEST([1000, 10000, 100000, 1000000, 10000000, 100000000]) AS rank_grouping
+  UNNEST([1000, 10000, 100000, 1000000, 10000000, 100000000]) AS rank_grouping
 WHERE
   rank <= rank_grouping
 GROUP BY

@@ -20,7 +20,8 @@ FROM (
       `httparchive.almanac.requests`
     WHERE
       date = '2021-07-01' AND
-      type = 'image')
+      type = 'image'
+  )
   JOIN (
     SELECT
       client,
@@ -30,9 +31,9 @@ FROM (
       `httparchive.almanac.requests`
     WHERE
       date = '2021-07-01' AND
-      type = 'css')
-  USING
-    (client, page, css_url)
+      type = 'css'
+  )
+  USING (client, page, css_url)
   JOIN (
     SELECT
       _TABLE_SUFFIX AS client,
@@ -42,9 +43,9 @@ FROM (
       SAFE_CAST(JSON_EXTRACT_SCALAR(image, '$.naturalWidth') AS INT64) AS width
     FROM
       `httparchive.pages.2021_07_01_*`,
-      UNNEST(JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._Images'), '$')) AS image)
-  USING
-    (client, page, img_url)
+      UNNEST(JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._Images'), '$')) AS image
+  )
+  USING (client, page, img_url)
   WHERE
     height IS NOT NULL AND
     width IS NOT NULL
@@ -53,5 +54,6 @@ FROM (
     height,
     width
   ORDER BY
-    pct DESC)
+    pct DESC
+)
 LIMIT 500

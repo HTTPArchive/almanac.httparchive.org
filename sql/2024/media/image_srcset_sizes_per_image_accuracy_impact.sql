@@ -57,7 +57,8 @@ FROM (
     image
   FROM
     `httparchive.pages.2024_06_01_*`,
-    UNNEST(getSrcsetSizesAccuracy(payload)) AS image),
+    UNNEST(getSrcsetSizesAccuracy(payload)) AS image
+),
   UNNEST([10, 25, 50, 75, 90]) AS percentile
 GROUP BY
   percentile,

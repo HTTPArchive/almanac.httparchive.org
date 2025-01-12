@@ -25,12 +25,14 @@ FROM (
     FROM
       `httparchive.almanac.requests`
     WHERE
-      date = '2021-07-01')
+      date = '2021-07-01'
+  )
   GROUP BY
     client,
     page,
     is_third_party,
-    type),
+    type
+),
   UNNEST([5, 10, 20, 30, 40, 50, 60, 70, 90, 95, 100]) AS percentile
 GROUP BY
   percentile,

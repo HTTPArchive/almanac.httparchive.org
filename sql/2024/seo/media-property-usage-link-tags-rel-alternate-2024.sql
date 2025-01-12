@@ -31,6 +31,7 @@ WITH page_almanac_info AS (
   WHERE
     DATE = '2024-06-01'
 ),
+
 total_pages AS (
   SELECT
     client,
@@ -51,7 +52,8 @@ FROM
   page_almanac_info,
   UNNEST(page_almanac_info.media_property_almanac_info) AS media
 JOIN
-  total_pages ON page_almanac_info.client = total_pages.client
+  total_pages
+ON page_almanac_info.client = total_pages.client
 GROUP BY
   total_pages.total,
   media,

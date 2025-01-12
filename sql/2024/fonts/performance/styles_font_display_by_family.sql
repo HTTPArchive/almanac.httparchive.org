@@ -64,6 +64,7 @@ properties AS (
   QUALIFY
     rank <= 10
 ),
+
 pages AS (
   SELECT
     client,
@@ -87,7 +88,8 @@ SELECT
 FROM
   properties
 JOIN
-  pages USING (client)
+  pages
+USING (client)
 ORDER BY
   client,
   property,

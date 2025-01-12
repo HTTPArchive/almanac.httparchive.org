@@ -24,7 +24,8 @@ FROM (
   FROM
     `httparchive.almanac.manifests`
   WHERE
-    date = '2019-07-01'),
+    date = '2019-07-01'
+),
   UNNEST(properties) AS property
 GROUP BY
   client,

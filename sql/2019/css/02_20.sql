@@ -13,7 +13,8 @@ FROM (
   FROM
     `httparchive.summary_requests.2019_07_01_*`
   WHERE
-    type = 'css')
+    type = 'css'
+)
 GROUP BY
   client,
   filename

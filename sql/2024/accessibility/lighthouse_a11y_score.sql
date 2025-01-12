@@ -13,6 +13,7 @@ WITH score_data AS (
     lighthouse IS NOT NULL AND
     lighthouse != '{}'
 ),
+
 sorted_scores AS (
   SELECT
     client,
@@ -23,6 +24,7 @@ sorted_scores AS (
   FROM
     score_data
 ),
+
 percentiles AS (
   SELECT
     client,
@@ -34,6 +36,7 @@ percentiles AS (
   FROM
     sorted_scores
 )
+
 SELECT
   client,
   is_root_page,

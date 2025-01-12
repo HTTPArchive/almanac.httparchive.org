@@ -11,4 +11,5 @@ FROM (
     JSON_EXTRACT_SCALAR(report, "$.audits['html-has-lang'].score") = '1' AS has_lang,
     JSON_EXTRACT_SCALAR(report, "$.audits['html-lang-valid'].score") = '1' AS valid_lang
   FROM
-    `httparchive.lighthouse.2021_07_01_mobile`)
+    `httparchive.lighthouse.2021_07_01_mobile`
+)

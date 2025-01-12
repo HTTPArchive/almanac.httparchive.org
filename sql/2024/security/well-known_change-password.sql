@@ -14,17 +14,17 @@ SELECT
   COUNTIF(change_password_redirected = 'true' AND (change_password_status BETWEEN 200 AND 299) AND (resource_status NOT BETWEEN 200 AND 299)) AS count_change_password_did_redirect_and_ok,
   COUNTIF(change_password_redirected = 'true' AND (change_password_status BETWEEN 200 AND 299) AND (resource_status NOT BETWEEN 200 AND 299)) / COUNT(DISTINCT page) AS pct_change_password_did_redirect_and_ok
 FROM (
-    SELECT
-      client,
-      page,
-      JSON_QUERY(JSON_VALUE(payload, '$._well-known'), '$."/.well-known/change-password".data.redirected') AS change_password_redirected,
-      SAFE_CAST(JSON_QUERY(JSON_VALUE(payload, '$._well-known'), '$."/.well-known/change-password".data.status') AS INT64) AS change_password_status,
-      SAFE_CAST(JSON_QUERY(JSON_VALUE(payload, '$._well-known'), '$."/.well-known/resource-that-should-not-exist-whose-status-code-should-not-be-200/".data.status') AS INT64) AS resource_status
-    FROM
-      `httparchive.all.pages`
-    WHERE
-      date = '2024-06-01' AND
-      is_root_page
+  SELECT
+    client,
+    page,
+    JSON_QUERY(JSON_VALUE(payload, '$._well-known'), '$."/.well-known/change-password".data.redirected') AS change_password_redirected,
+    SAFE_CAST(JSON_QUERY(JSON_VALUE(payload, '$._well-known'), '$."/.well-known/change-password".data.status') AS INT64) AS change_password_status,
+    SAFE_CAST(JSON_QUERY(JSON_VALUE(payload, '$._well-known'), '$."/.well-known/resource-that-should-not-exist-whose-status-code-should-not-be-200/".data.status') AS INT64) AS resource_status
+  FROM
+    `httparchive.all.pages`
+  WHERE
+    date = '2024-06-01' AND
+    is_root_page
 )
 GROUP BY
   client

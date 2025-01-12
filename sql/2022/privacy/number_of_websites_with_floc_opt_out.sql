@@ -29,7 +29,7 @@ meta_tags AS (
       JSON_VALUE(payload, '$._almanac') AS metrics
     FROM
       `httparchive.pages.2022_06_01_*`
-    ),
+  ),
     UNNEST(JSON_QUERY_ARRAY(metrics, '$.meta-nodes.nodes')) meta_node
   WHERE
     JSON_VALUE(meta_node, '$.http-equiv') IS NOT NULL
@@ -67,18 +67,15 @@ USING (client, page),
 JOIN
   totals
 USING (client, rank_grouping)
-WHERE
-  (
-    (
-      header_name = 'permissions-policy' AND
-      header_value LIKE 'interest-cohort=()'  # value could contain other policies
-    ) OR
-    (
-      tag_name = 'permissions-policy' AND
-      tag_value LIKE 'interest-cohort=()'
-    )
-  ) AND
-  rank <= rank_grouping
+WHERE ((
+  header_name = 'permissions-policy' AND
+  header_value LIKE 'interest-cohort=()'  # value could contain other policies
+) OR (
+  tag_name = 'permissions-policy' AND
+  tag_value LIKE 'interest-cohort=()'
+)
+) AND
+rank <= rank_grouping
 GROUP BY
   client,
   rank_grouping,

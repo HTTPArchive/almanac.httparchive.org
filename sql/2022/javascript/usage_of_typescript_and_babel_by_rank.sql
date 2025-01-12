@@ -59,8 +59,7 @@ FROM
   pages_sourcemaps
 JOIN
   pages
-USING
-  (client, page)
+USING (client, page)
 WHERE
   sourcemaps.isPublic = true
 GROUP BY

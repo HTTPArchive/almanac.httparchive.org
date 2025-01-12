@@ -25,7 +25,8 @@ FROM (
   WHERE
     date = '2024-06-01' AND
     is_root_page AND
-    LENGTH(JSON_EXTRACT_SCALAR(summary, '$._cdn_provider')) > 0)
+    LENGTH(JSON_EXTRACT_SCALAR(summary, '$._cdn_provider')) > 0
+)
 GROUP BY
   client,
   _cdn_provider,

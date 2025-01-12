@@ -36,8 +36,7 @@ FROM
   `httparchive.all.pages`
 JOIN
   totals
-USING
-  (client),
+USING (client),
   UNNEST(get_element_types(JSON_EXTRACT(custom_metrics, '$.element_count'))) AS element_type
 WHERE
   date = '2024-06-01'

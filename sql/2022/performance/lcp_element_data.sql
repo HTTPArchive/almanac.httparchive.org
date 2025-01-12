@@ -97,7 +97,7 @@ SELECT
   client,
   nodeName,
   COUNT(DISTINCT url) AS pages,
-  ANY_VALUE(total) AS total,
+  ANY_VALUE(total) AS total_pages,
   COUNT(DISTINCT url) / ANY_VALUE(total) AS pct,
   COUNTIF(elementUrl != '') AS haveImages,
   COUNTIF(elementUrl != '') / COUNT(DISTINCT url) AS pct_haveImages,
@@ -121,9 +121,9 @@ JOIN (
   FROM
     `httparchive.summary_pages.2022_06_01_*`
   GROUP BY
-    _TABLE_SUFFIX)
-USING
-  (client)
+    _TABLE_SUFFIX
+)
+USING (client)
 GROUP BY
   client,
   nodeName

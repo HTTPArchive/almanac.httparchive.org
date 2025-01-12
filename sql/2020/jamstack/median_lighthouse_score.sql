@@ -11,8 +11,7 @@ FROM
   `httparchive.lighthouse.2020_09_01_*`
 JOIN
   `httparchive.technologies.2020_09_01_*`
-USING
-  (_TABLE_SUFFIX, url)
+USING (_TABLE_SUFFIX, url)
 WHERE
   LOWER(category) = 'static site generator' OR
   app = 'Next.js' OR

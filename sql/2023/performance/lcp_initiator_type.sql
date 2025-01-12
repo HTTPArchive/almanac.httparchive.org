@@ -34,8 +34,7 @@ FROM
   lcp
 LEFT JOIN
   requests
-USING
-  (client, page, url)
+USING (client, page, url)
 GROUP BY
   client,
   type
