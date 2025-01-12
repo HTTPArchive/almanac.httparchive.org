@@ -8,7 +8,6 @@
                 "ignoreAtRules": ["prince-pdf"]
             }
         ],
-        "at-rule-descriptor-no-unknown": null,
         "color-function-notation": null,
         "comment-empty-line-before": null,
         "declaration-block-no-redundant-longhand-properties": null,
