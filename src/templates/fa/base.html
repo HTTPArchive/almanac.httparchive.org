@@ -1,0 +1,151 @@
+{% extends "base/base.html" %}
+
+{% block description %}Web Almanac - یک گزارش سالانه درباره وضعیت وب است که تجربه جامعه وب را با داده‌ها و روندهای HTTP Archive ترکیب می‌کند.{% endblock %}
+
+{% block twitter_image_alt %}{{ year }} وب آلمنک{% endblock %}
+
+{% block skip_navigation %}پرش به ناوبری{% endblock %}
+
+{% block organization %}Web Almanac از HTTP Archive{% endblock %}
+{% block web_almanac_logo %}
+  <span class="wa">Web Almanac</span>
+  <span class="line-group">
+    <span class="pre">توسط</span>
+    <span class="ha">HTTP Archive</span>
+  </span>
+{% endblock %}
+
+{% block intro_title %}وب آلمنک{% endblock %}
+{% block intro_sub_title %}گزارش سالانه HTTP&nbsp;Archive<br>درباره <b>وضعیت وب</b>{% endblock %}
+
+{% block announcement_text %}
+<p lang="en">
+  در روز پنجشنبه، 16 ژانویه 2025 به پخش زنده نسخه امسال ما در
+  <a href="https://www.youtube.com/live/zCiMls26CL8?si=eMsU_MmNYdL-UB4Z">YouTube</a>
+  بپیوندید، یا <a href="/static/live-stream2.ics">رویداد تقویم</a> را ذخیره کنید!
+</p>
+{% endblock %}
+
+{% block mission %}
+<p>
+هدف ما ترکیب داده‌ها و روندهای آماری خشک HTTP Archive با تجربه جامعه وب است. وب آلمنک یک گزارش جامع درباره وضعیت وب است که توسط داده‌های واقعی و کارشناسان معتبر وب پشتیبانی می‌شود. نسخه {{ year }} شامل {{ supported_chapters | length }} {{ plural_fa(supported_chapters | length | int, ["بخش", "بخش‌ها", "بخش‌ها"]) }} است که جنبه‌های مختلف محتوای صفحات، تجربه کاربری، انتشار و توزیع را پوشش می‌دهد.
+</p>
+{% endblock %}
+
+{% block read_last_years_almanac %}مطالعه وب آلمنک سال {{ previous_year }}{% endblock %}
+
+{% block http_archive_link %}صفحه اصلی HTTP Archive{% endblock %}
+
+{% block page_navigation %}ناوبری صفحه{% endblock %}
+
+{% block help_translate %}کمک به ترجمه{% endblock %}
+{% block translation_not_available %}به انگلیسی - ترجمه موجود نیست{% endblock %}
+{% block in_english %} (به انگلیسی - ترجمه موجود نیست){% endblock %}
+{% block language_switcher %}تغییر زبان{% endblock %}
+{% block year_switcher %}تغییر سال{% endblock %}
+{% block table_of_contents_switcher %}نمایش محتوا{% endblock %}
+
+{% block home %}صفحه اصلی{% endblock %}
+{% block table_of_contents_title %}فهرست مطالب{% endblock %}
+{% block contributors_title %}مشارکت‌کنندگان{% endblock %}
+{% block methodology_title %}روش‌شناسی{% endblock %}
+{% block search_title %}جستجو{% endblock %}
+
+{% block part %}بخش{% endblock %}
+{% block chapter %}فصل{% endblock %}
+
+{% block start_exploring %}کاوش{% endblock %}
+
+{% block menu_title %}منوی صفحه{% endblock %}
+{% block open_the_menu %}باز کردن منو{% endblock %}
+{% block close_the_menu %}بستن منو{% endblock %}
+
+{% block index_nav_title %}فهرست محتوا{% endblock %}
+{% block index_title %}نمایه{% endblock %}
+{% block open_the_index %}باز کردن فهرست{% endblock %}
+{% block close_the_index %}بستن فهرست{% endblock %}
+
+{% block and %} و {% endblock %}
+{% block comma %}، {% endblock %}
+{% block oxford_comma %}{% endblock %}
+
+{% block open %}باز کردن{% endblock %}
+{% block close %}بستن{% endblock %}
+
+{% macro figure_text(metadata, chapter_config, id) %}شکل {{ figure_id(metadata, chapter_config, id) }}.{% endmacro %}
+{% macro show_description(metadata, chapter_config, id) %}نمایش توضیح برای شکل {{ figure_id(metadata, chapter_config, id) }}{% endmacro %}
+{% macro hide_description(metadata, chapter_config, id) %}مخفی کردن توضیح برای شکل {{ figure_id(metadata, chapter_config, id) }}{% endmacro %}
+
+{% block written_by_before %}نوشته‌شده توسط: {% endblock %}
+{% block reviewed_by_before %}بازبینی شده توسط: {% endblock %}
+{% block translated_by_before %}ترجمه شده توسط: {% endblock %}
+{% block analysis_by_before %}تحلیل شده توسط: {% endblock %}
+{% block edited_by_before %}ویرایش شده توسط: {% endblock %}
+{% block reviewed_and_analyzed_by_before %}بازبینی و تحلیل توسط: {% endblock %}
+{% block analysis_and_editing_by_before %}تحلیل و ویرایش توسط: {% endblock %}
+{% block written_by_after %}{% endblock %}
+{% block reviewed_by_after %}{% endblock %}
+{% block translated_by_after %}{% endblock %}
+{% block analysis_by_after %}{% endblock %}
+{% block edited_by_after %}{% endblock %}
+{% block reviewed_and_analyzed_by_after %}{% endblock %}
+{% block analysis_and_editing_by_after %}{% endblock %}
+
+{% block date_published %}تاریخ انتشار: {% endblock %}
+{% block date_updated %}تاریخ بروزرسانی: {% endblock %}
+
+{% block unedited %}[منتظر ویرایش]{% endblock %}
+
+{% block author %}نویسنده{% endblock %}
+{% block authors %}نویسندگان{% endblock %}
+
+{% block reaction %}واکنش{% endblock %}
+{% block reactions %}واکنش‌ها{% endblock %}
+{% block reactionsTitle %}واکنش‌ها{% endblock %}
+{% block reactionsAlt %}واکنش‌ها{% endblock %}
+{% block source %}مشاهده منبع{% endblock %}
+{% block share %}اشتراک‌گذاری{% endblock %}
+
+{% block like %}لایک{% endblock %}
+{% block repost %}بازنشر{% endblock %}
+{% block reply %}پاسخ{% endblock %}
+{% block mention %}ذکر{% endblock %}
+{% block likes %}لایک‌ها{% endblock %}
+{% block reposts %}بازنشرها{% endblock %}
+{% block replies %}پاسخ‌ها{% endblock %}
+{% block mentions %}ذکرها{% endblock %}
+{% block likesAlt %}لایک‌ها{% endblock %}
+{% block repostsAlt %}بازنشرها{% endblock %}
+{% block repliesAlt %}پاسخ‌ها{% endblock %}
+{% block mentionsAlt %}ذکرها{% endblock %}
+
+{% macro onTwitter(twitterHandle) %}@{{twitterHandle}} در Twitter/X{% endmacro %}
+{% macro onMastodon(mastodonHandle) %}{{mastodonHandle}} در Mastodon{% endmacro %}
+{% macro onBluesky(blueskyHandle) %}{{blueskyHandle}} در Bluesky{% endmacro %}
+{% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} در GitHub{% endmacro %}
+{% macro onLinkedIn(authorName) %}{{authorName}} در LinkedIn{% endmacro %}
+{% macro website(authorName) %}وبسایت {{authorName}}{% endmacro %}
+
+{% block citation %}ارجاع{% endblock %}
+
+{% macro edition(year) %}نسخه {{ year }}{% endmacro %}
+
+{% block footer_title %}پیمایش پایانی{% endblock %}
+{% block copyright %}© وب آلمنک. مجوز <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/LICENSE">Apache 2.0</a>.{% endblock %}
+{% block accessibility_statement %}بیانیه دسترس‌پذیری{% endblock %}
+{% block rss_feed %}فید RSS{% endblock %}
+
+{% block featured_chapter %}فصل پیشنهادی{% endblock %}
+{% block featured_chapter_last_year %}فصل پیشنهادی<br>از وب آلمنک {{ previous_year }}{% endblock %}
+
+{% block contributors_description %}
+ساخت وب آلمنک با کمک تلاش فراوان جامعه وب ممکن شد. {{ self.contributors() }} افراد فوق‌العاده ساعت‌های زیادی را صرف برنامه‌ریزی، تحقیق، نگارش و تولید وب آلمنک {{ year }} کردند.
+{% endblock %}
+{% block contributors_link %}مشاهده لیست مشارکت‌کنندگان{% endblock %}
+
+{% block methodology_stat_1_title %}سایت‌های تست‌شده{% endblock %}
+{% block methodology_stat_2_title %}داده‌های پردازش‌شده{% endblock %}
+{% block methodology_link %}اطلاعات درباره روش‌شناسی ما{% endblock %}
+{% block methodology_description %}
+مگر اینکه به صورت دیگری ذکر شده باشد، متریک‌های همه {{ supported_chapters | length }} {{ plural_fa(supported_chapters | length | int, ["بخش", "بخش‌ها", "بخش‌ها"]) }} وب آلمنک {{ year }} از مجموعه داده HTTP Archive گرفته شده‌اند. HTTP Archive یک پروژه عمومی است که از سال 2010 نحوه ساخت وب را رصد می‌کند. اطلاعات متادیتای {{ self.total_websites() }} وبسایت هر ماه تست می‌شود، با استفاده از WebPageTest و Lighthouse، و به پایگاه داده عمومی BigQuery برای تجزیه و تحلیل اضافه می‌شود. برای متریک‌های وب آلمنک {{ year }}، مجموعه داده‌های {{ self.dataset() }} استفاده شده است. اطلاعات بیشتر در صفحه روش‌شناسی.
+{% endblock %}
