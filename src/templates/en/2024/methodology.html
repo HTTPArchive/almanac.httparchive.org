@@ -385,7 +385,7 @@
       </p>
 
       <p>
-        We use Blink Features to get a different perspective on feature adoption. This data is especially useful to distinguish between features that are implemented on a page and features that are actually used. For example, the <a href="{{ url_for('chapter', year=year, lang=lang, chapter='css') }}">CSS</a> chapter's section on Grid layout uses Blink Features data to measure whether some part of the actual page layout is built with Grid. By comparison, many more pages happen to include an unused Grid style in their stylesheets. Both stats are interesting in their own way and tell us something about how the web is built.
+        We use Blink Features to get a different perspective on feature adoption. This data is especially useful to distinguish between features that are implemented on a page and features that are actually used.
       </p>
 
       <p>
@@ -413,19 +413,7 @@
       <h3 id="rework-css"><a href="#rework-css" class="anchor-link">Rework CSS</a></h3>
 
       <p>
-        <a hreflang="en" href="https://github.com/reworkcss/css">Rework CSS</a> is a JavaScript-based CSS parser. It takes entire stylesheets and produces a JSON-encoded object distinguishing each individual style rule, selector, directive, and value.
-      </p>
-
-      <p>
-        This special purpose tool significantly improved the accuracy of many of the metrics in the <a href="{{ url_for('chapter', year=year, lang=lang, chapter='css') }}">CSS</a> chapter. CSS in all external stylesheets and inline style blocks for each page were parsed and queried to make the analysis possible. See <a hreflang="en" href="https://discuss.httparchive.org/t/analyzing-stylesheets-with-a-js-based-parser/1683">this thread</a> for more information about how it was integrated with the HTTP Archive dataset on BigQuery.
-      </p>
-    </section>
-
-    <section>
-      <h4 id="rework-utils"><a href="#rework-utils" class="anchor-link">Rework Utils</a></h4>
-
-      <p>
-        This year&#8217;s <a href="{{ url_for('chapter', year=year, lang=lang, chapter='css') }}">CSS</a> chapter revisits many of the metrics introduced in 2020's CSS chapter, which was led by <a href="{{ url_for('contributors', year=2019, lang=lang, _anchor='LeaVerou') }}">Lea Verou</a>. Lea wrote <a hreflang="en" href="https://github.com/LeaVerou/rework-utils">Rework Utils</a> to more easily extract insights from Rework CSS's output. Most of the stats you see in the CSS chapter continue to be powered by these scripts.
+        <a hreflang="en" href="https://github.com/reworkcss/css">Rework CSS</a> is a JavaScript-based CSS parser. It takes entire stylesheets and produces a JSON-encoded object distinguishing each individual style rule, selector, directive, and value. See <a hreflang="en" href="https://discuss.httparchive.org/t/analyzing-stylesheets-with-a-js-based-parser/1683">this thread</a> for more information about how it was integrated with the HTTP Archive dataset on BigQuery.
       </p>
     </section>
 
