@@ -32,4 +32,4 @@ If you're interested in contributing to the project, please follow the links abo
 
 We want to give credit to everyone who made meaningful contributions to the Web Almanac by featuring them on the [Contributors](https://almanac.httparchive.org/en/2024/contributors) page of the website. This page allows readers to see all of the names and faces of the people from the web community who built the report, and filter contributors by team. This page is sorted randomly and changes about every three hours, so everyone gets time on the top row :)
 
-If you've contributed to the Web Almanac, please add your personal information to the JSON config file in [src/config](https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/src/config), for example [2024.json](https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/src/config/2024.json).
+If you've contributed to the Web Almanac, please add your personal information to the [JSON contributors config file](https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/src/config/contributors.json). 
