@@ -1,8 +1,8 @@
 # Contributing
 
-## 2023
+## 2025
 
-We haven't begun organizing the 2023 edition yet, but if you'd be interested to contribute, you can sign up to be notified when the project planning kicks off by filling out [this interest form]([https://forms.gle/Bb2ZZj6Yw5RnJHbj8](https://forms.gle/zmk6wXfDrmkkKzXo8)). Check off all teams that interest you and give a detailed description of what your areas of expertise are so we can reach out to you with targeted opportunities.
+We haven't begun organizing the 2025 edition yet, but if you'd be interested to contribute, you can sign up to be notified when the project planning kicks off by filling out [this interest form](#). Check off all teams that interest you and give a detailed description of what your areas of expertise are so we can reach out to you with targeted opportunities.
 
 If you have any questions about contributing, you can start a discussion here on GitHub or visit the [`#web-almanac`](https://join.slack.com/t/httparchive/shared_invite/zt-45sgwmnb-eDEatOhqssqNAKxxOSLAaA) channel on Slack.
 
@@ -30,6 +30,6 @@ If you're interested in contributing to the project, please follow the links abo
 
 ## Contributors page
 
-We want to give credit to everyone who made meaningful contributions to the Web Almanac by featuring them on the [Contributors](https://almanac.httparchive.org/en/2020/contributors) page of the website. This page allows readers to see all of the names and faces of the people from the web community who built the report, and filter contributors by team. This page is sorted randomly and changes about every three hours, so everyone gets time on the top row :)
+We want to give credit to everyone who made meaningful contributions to the Web Almanac by featuring them on the [Contributors](https://almanac.httparchive.org/en/2024/contributors) page of the website. This page allows readers to see all of the names and faces of the people from the web community who built the report, and filter contributors by team. This page is sorted randomly and changes about every three hours, so everyone gets time on the top row :)
 
-If you've contributed to the Web Almanac, please add your personal information to the JSON config file in [src/config](https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/src/config), for example [2020.json](https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/src/config/2020.json).
+If you've contributed to the Web Almanac, please add your personal information to the JSON config file in [src/config](https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/src/config), for example [2024.json](https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/src/config/2024.json).
