@@ -577,7 +577,7 @@ However, a quarter of websites still don't implement text compression. Gzip is u
 {{ figure_markup(
   image="cache-control-header-usage.png",
   caption="Cache control header usage.",
-  description="A bar chart showing that on desktop 23% of websites use Cache Control Only, 1% of them use Expiries only and 51% of them use both. 25% of the websites do not use any caching on desktop. On mobile 22% of websites use Cache Control Only, 1% of them use Expiries only and 51% of them use both. 26% of the websites do not use any caching on mobile.",
+  description="A bar chart showing that on desktop 23% of websites use Cache Control Only, 1% of them use Expires only and 51% of them use both. 25% of the websites do not use any caching on desktop. On mobile 22% of websites use Cache Control Only, 1% of them use Expires only and 51% of them use both. 26% of the websites do not use any caching on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=1354451270&format=interactive",
   sheets_gid="326683091",
   sql_file="cache_header_usage.sql"
