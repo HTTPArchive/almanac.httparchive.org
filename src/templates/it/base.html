@@ -18,17 +18,18 @@
 {% block intro_title %}Web Almanac{% endblock %}
 {% block intro_sub_title %}Rapporto annuale<br> <b>sullo stato del web</b> di HTTP Archive{% endblock %}
 
-{% block announcement_text %}
+{% block announcement_text -%}
+{%- if year < DEFAULT_YEAR -%}
 <p lang="en">
-  Join our second live stream for this year's edition on Thursday, 16th January 2025 on
-  <a href="https://www.youtube.com/live/zCiMls26CL8?si=eMsU_MmNYdL-UB4Z">YouTube</a>,
-  or save the <a href="/static/live-stream2.ics">calendar event</a>!
+  Stai visualizzando un’edizione precedente del Web Almanac.
+  Dai un’occhiata all’<a href="/{{ lang }}/{{ DEFAULT_YEAR }}/{% if chapter_lang_exists(lang, DEFAULT_YEAR, slug) or page_lang_exists(lang, DEFAULT_YEAR, slug) %}{{ slug }}{% endif %}">edizione del {{ DEFAULT_YEAR }}!</a>
 </p>
+{%- endif -%}
 {% endblock %}
 
 {% block mission %}
 <p>
-La nostra missione è combinare le statistiche grezze e le tendenze del HTTP Archive con l'esperienza della comunità web. Il Web Almanac è un rapporto completo sullo stato del web, supportato da dati reali e da esperti web di fiducia. L'edizione {{ year }} è composta da {{supported_chapters | length}} capitoli che abbracciano aspetti del page content, user experience, publishing e distribution.
+La nostra missione è combinare le statistiche grezze e le tendenze del HTTP Archive con l’esperienza della comunità web. Il Web Almanac è un rapporto completo sullo stato del web, supportato da dati reali e da esperti web di fiducia. L’edizione {{ year }} è composta da {{supported_chapters | length}} capitoli che abbracciano aspetti del page content, user experience, publishing e distribution.
 </p>
 {% endblock %}
 
@@ -42,7 +43,7 @@ La nostra missione è combinare le statistiche grezze e le tendenze del HTTP Arc
 {% block translation_not_available %}Inglese - non disponibile in italiano{% endblock %}
 {% block in_english %} (Inglese){% endblock %}
 {% block language_switcher %}Seleziona la lingua{% endblock %}
-{% block year_switcher %}Seleziona l'anno{% endblock %}
+{% block year_switcher %}Seleziona l’anno{% endblock %}
 {% block table_of_contents_switcher %}Seleziona sommario{% endblock %}
 
 {% block home %}Pagina iniziale{% endblock %}
@@ -155,7 +156,7 @@ Il Web Almanac è stato reso possibile grazie al duro lavoro della web community
 {% block methodology_stat_2_title %}Dati trattati{% endblock %}
 {% block methodology_link %}Scopri la nostra metodologia{% endblock %}
 {% block methodology_description %}
-Se non diversamente specificato, le metriche in tutti i {{ supported_chapters | length }} capitoli del Web Almanac {{ year }} provengono dal dataset dell'archivio HTTP. HTTP Archive è un progetto gestito dalla comunità che tiene traccia del modo in cui è costruito il Web dal 2010. Utilizzando WebPageTest e Lighthouse "under the hood", i metadati di {{ self.total_websites() }} di siti Web vengono testati mensilmente e inclusi in un database BigQuery pubblico per l'analisi. Il set di dati di {{ self.dataset() }} è stato utilizzato come base per le metriche del Web Almanac {{ year }}. Per ulteriori informazioni, vedere la pagina Methodology.
+Se non diversamente specificato, le metriche in tutti i {{ supported_chapters | length }} capitoli del Web Almanac {{ year }} provengono dal dataset dell’archivio HTTP. HTTP Archive è un progetto gestito dalla comunità che tiene traccia del modo in cui è costruito il Web dal 2010. Utilizzando WebPageTest e Lighthouse "under the hood", i metadati di {{ self.total_websites() }} di siti Web vengono testati mensilmente e inclusi in un database BigQuery pubblico per l’analisi. Il set di dati di {{ self.dataset() }} è stato utilizzato come base per le metriche del Web Almanac {{ year }}. Per ulteriori informazioni, vedere la pagina Methodology.
 {% endblock %}
 
 {% block introduction %}Introduzione{% endblock %}
@@ -169,13 +170,13 @@ Se non diversamente specificato, le metriche in tutti i {{ supported_chapters | 
 
 {% block ebook_title %}Ebook{% endblock %}
 {% block ebook_download_short %}Ebook PDF ({{ ebook_size_in_mb }}MB){% endblock %}
-{% block ebook_download %}Download l'intera Web Almanac del {{ year }} in formato PDF ({{ ebook_size_in_mb }}MB){% endblock %}
+{% block ebook_download %}Download l’intera Web Almanac del {{ year }} in formato PDF ({{ ebook_size_in_mb }}MB){% endblock %}
 {% block ebook_download_note %}(Generato con <a href="https://www.princexml.com/">www.princexml.com</a>){% endblock %}
 
 {%
   set localizedPartTitles = {
     "I. Page Content": "I. Contenuto della Pagina",
-    "II. User Experience": "II. L'Esperienza Utente",
+    "II. User Experience": "II. L’Esperienza Utente",
     "III. Content Publishing": "III. Pubblicazione di Contenuti",
     "IV. Content Distribution": "IV. Distribuzione dei Contenuti"
   }

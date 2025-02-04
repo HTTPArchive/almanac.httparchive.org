@@ -37,7 +37,7 @@ def root(lang):
 @app.route("/<lang>/<year>/table-of-contents")
 @validate
 def table_of_contents(lang, year):
-    return render_template("%s/%s/table_of_contents.html" % (lang, year))
+    return render_template("%s/%s/table_of_contents.html" % (lang, year), slug="table-of-contents")
 
 
 @app.route("/<lang>/<year>/contributors")
@@ -47,13 +47,13 @@ def contributors(lang, year):
     contributors_list = list(config["contributors"].items())
     random.shuffle(contributors_list)
     config["contributors"] = dict(contributors_list)
-    return render_template("%s/%s/contributors.html" % (lang, year), config=config)
+    return render_template("%s/%s/contributors.html" % (lang, year), config=config, slug="contributors")
 
 
 @app.route("/<lang>/<year>/methodology")
 @validate
 def methodology(lang, year):
-    return render_template("%s/%s/methodology.html" % (lang, year))
+    return render_template("%s/%s/methodology.html" % (lang, year), slug="methodology")
 
 
 # Accessibility Statement needs special case handling for trailing slashes
@@ -66,7 +66,7 @@ def accessibility_statement(lang):
     if request.base_url[-1] == "/":
         return redirect("/%s/accessibility-statement" % (lang)), 301
     else:
-        return render_template("%s/accessibility_statement.html" % (lang))
+        return render_template("%s/accessibility_statement.html" % (lang), slug="accessibility-statement")
 
 
 # Search needs special case handling for trailing slashes
@@ -85,7 +85,7 @@ def search(lang):
     if request.base_url[-1] == "/":
         return redirect("/%s/search" % lang), 301
     else:
-        return render_template("%s/search.html" % lang)
+        return render_template("%s/search.html" % lang, slug="search")
 
 
 # Redirect search by year
@@ -177,6 +177,7 @@ def chapter(lang, year, chapter):
         prev_chapter=prev_chapter,
         next_chapter=next_chapter,
         chapter_config=chapter_config,
+        slug=chapter
     )
 
 
@@ -219,7 +220,7 @@ def ebook(lang, year):
         config["contributors"].items(), key=lambda items: items[1]["name"]
     )
     config["contributors"] = dict(sorted_contributors)
-    return render_template("%s/%s/ebook.html" % (lang, year), config=config)
+    return render_template("%s/%s/ebook.html" % (lang, year), config=config, slug="ebook")
 
 
 # Redirect requests for http2 to new http URLs
