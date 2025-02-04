@@ -30,13 +30,12 @@ SELECT
   COUNTIF(videos_almanac_info.videos_total > 0) AS has_videos,
   SAFE_DIVIDE(COUNTIF(videos_almanac_info.videos_total > 0), COUNT(0)) AS pct_has_videos
 
-FROM
-  (
-    SELECT
-      _TABLE_SUFFIX AS client,
-      getVideosAlmanacInfo(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS videos_almanac_info
-    FROM
-      `httparchive.pages.2022_07_01_*` -- noqa: L062
-  )
+FROM (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    getVideosAlmanacInfo(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS videos_almanac_info
+  FROM
+    `httparchive.pages.2022_07_01_*` -- noqa: CV09
+)
 GROUP BY
   client

@@ -32,7 +32,8 @@ FROM (
     _TABLE_SUFFIX AS client,
     get_media_info(JSON_EXTRACT_SCALAR(payload, '$._media')) AS media_info
   FROM
-    `httparchive.pages.2024_06_01_*`)
+    `httparchive.pages.2024_06_01_*`
+)
 GROUP BY
   client
 ORDER BY

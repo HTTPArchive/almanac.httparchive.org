@@ -34,7 +34,8 @@ FROM (
   WHERE
     date = '2020-08-01' AND
     type = 'script' AND
-    getHeader(JSON_EXTRACT(payload, '$.response.headers'), 'Content-Encoding') IS NULL)
+    getHeader(JSON_EXTRACT(payload, '$.response.headers'), 'Content-Encoding') IS NULL
+)
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -42,9 +43,9 @@ JOIN (
   FROM
     `httparchive.summary_pages.2020_08_01_*`
   GROUP BY
-    client)
-USING
-  (client)
+    client
+)
+USING (client)
 GROUP BY
   client,
   host,

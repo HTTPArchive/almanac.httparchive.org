@@ -46,7 +46,7 @@ FROM (
   WHERE
     date = '2024-06-01'
 ),
-UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
+  UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 WHERE
   scripts IS NOT NULL
 GROUP BY

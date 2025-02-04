@@ -6,13 +6,17 @@ SELECT
   cms,
   COUNT(DISTINCT url) AS freq,
   APPROX_QUANTILES(CAST(JSON_VALUE(categories, '$.performance.score') AS NUMERIC), 1000)[
-    OFFSET(500)] * 100 AS median_performance,
+    OFFSET(500)
+  ] * 100 AS median_performance,
   APPROX_QUANTILES(CAST(JSON_VALUE(categories, '$.accessibility.score') AS NUMERIC), 1000)[
-    OFFSET(500)] * 100 AS median_accessibility,
+    OFFSET(500)
+  ] * 100 AS median_accessibility,
   APPROX_QUANTILES(CAST(JSON_VALUE(categories, '$.seo.score') AS NUMERIC), 1000)[
-    OFFSET(500)] * 100 AS median_seo,
+    OFFSET(500)
+  ] * 100 AS median_seo,
   APPROX_QUANTILES(CAST(JSON_VALUE(categories, '$."best-practices".score') AS NUMERIC), 1000)[
-    OFFSET(500)] * 100 AS median_best_practices
+    OFFSET(500)
+  ] * 100 AS median_best_practices
 FROM (
   SELECT
     client,
@@ -38,9 +42,7 @@ JOIN (
     date = '2024-06-01' AND
     is_root_page
 )
-USING
-  (url,
-    client)
+USING (url, client)
 GROUP BY
   client,
   cms

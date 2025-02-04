@@ -34,6 +34,7 @@ def render_template(template, *args, **kwargs):
     year = kwargs.get("year", request.view_args.get("year", DEFAULT_YEAR))
     previous_year = get_previous_year(year)
     config = kwargs.get("config", get_config(year))
+    slug = kwargs.get("slug", "")
 
     # If the lang has already been set (e.g. for error pages) then use that
     # Otherwise the requested lang, otherwise the default lang
@@ -108,6 +109,7 @@ def render_template(template, *args, **kwargs):
         plural_ru=plural_ru,
         DEFAULT_YEAR=DEFAULT_YEAR,
         en_supported_years=en_supported_years,
+        slug=slug
     )
     return flask_render_template(template, *args, **kwargs)
 

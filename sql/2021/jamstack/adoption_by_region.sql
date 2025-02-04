@@ -1249,4 +1249,5 @@ FROM (
     client,
     region
   ORDER BY
-    origins DESC)
+    origins DESC
+)

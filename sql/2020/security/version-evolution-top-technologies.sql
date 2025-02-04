@@ -53,7 +53,8 @@ FROM (
     app_lower,
     month,
     info,
-    client)
+    client
+)
 WHERE
   pct > 0.01
 ORDER BY

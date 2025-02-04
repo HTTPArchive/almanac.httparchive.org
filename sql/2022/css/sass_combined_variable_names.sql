@@ -24,11 +24,12 @@ FROM (
     SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX) AS total,
     COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX) AS pct
   FROM
-    `httparchive.pages.2022_07_01_*`, -- noqa: L062
+    `httparchive.pages.2022_07_01_*`, -- noqa: CV09
     UNNEST(getCombinedVariableNames(payload)) AS name
   GROUP BY
     client,
-    name)
+    name
+)
 ORDER BY
   pct DESC
 LIMIT 100

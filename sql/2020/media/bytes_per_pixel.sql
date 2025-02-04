@@ -29,52 +29,48 @@ SELECT
   APPROX_QUANTILES(ROUND(bytes / IF(imageType = 'svg' AND pixels > 0, pixels, naturalPixels), 4), 1000)[OFFSET(500)] AS bpp_p50,
   APPROX_QUANTILES(ROUND(bytes / IF(imageType = 'svg' AND pixels > 0, pixels, naturalPixels), 4), 1000)[OFFSET(750)] AS bpp_p75,
   APPROX_QUANTILES(ROUND(bytes / IF(imageType = 'svg' AND pixels > 0, pixels, naturalPixels), 4), 1000)[OFFSET(900)] AS bpp_p90
-FROM
-  (
-    SELECT
-      _TABLE_SUFFIX AS client,
-      p.url AS page,
-      image.url AS url,
-      image.width AS width,
-      image.height AS height,
-      image.naturalWidth AS naturalWidth,
-      image.naturalHeight AS naturalHeight,
-      IFNULL(image.width, 0) * IFNULL(image.height, 0) AS pixels,
-      IFNULL(image.naturalWidth, 0) * IFNULL(image.naturalHeight, 0) AS naturalPixels
-    FROM
-      `httparchive.pages.2020_08_01_*` p
-    CROSS JOIN UNNEST(getImages(payload)) AS image
-    WHERE
-      image.naturalHeight > 0 AND
-      image.naturalWidth > 0
-  )
-LEFT JOIN
-  (
-    SELECT
-      client,
-      page,
-      url,
-      NULLIF(if(REGEXP_CONTAINS(mimetype, r'(?i)^application|^applicaton|^binary|^image$|^multipart|^media|^$|^text/html|^text/plain|\d|array|unknown|undefined|\*|string|^img|^images|^text|\%2f|\(|ipg$|jpe$|jfif'), format, LOWER(REGEXP_REPLACE(REGEXP_REPLACE(mimetype, r'(?is).*image[/\\](?:x-)?|[\."]|[ +,;]+.*$', ''), r'(?i)pjpeg|jpeg', 'jpg'))), '') AS imageType,
-      respSize AS bytes
-    FROM `httparchive.almanac.requests`
+FROM (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    p.url AS page,
+    image.url AS url,
+    image.width AS width,
+    image.height AS height,
+    image.naturalWidth AS naturalWidth,
+    image.naturalHeight AS naturalHeight,
+    IFNULL(image.width, 0) * IFNULL(image.height, 0) AS pixels,
+    IFNULL(image.naturalWidth, 0) * IFNULL(image.naturalHeight, 0) AS naturalPixels
+  FROM
+    `httparchive.pages.2020_08_01_*` p
+  CROSS JOIN UNNEST(getImages(payload)) AS image
+  WHERE
+    image.naturalHeight > 0 AND
+    image.naturalWidth > 0
+)
+LEFT JOIN (
+  SELECT
+    client,
+    page,
+    url,
+    NULLIF(if(REGEXP_CONTAINS(mimetype, r'(?i)^application|^applicaton|^binary|^image$|^multipart|^media|^$|^text/html|^text/plain|\d|array|unknown|undefined|\*|string|^img|^images|^text|\%2f|\(|ipg$|jpe$|jfif'), format, LOWER(REGEXP_REPLACE(REGEXP_REPLACE(mimetype, r'(?is).*image[/\\](?:x-)?|[\."]|[ +,;]+.*$', ''), r'(?i)pjpeg|jpeg', 'jpg'))), '') AS imageType,
+    respSize AS bytes
+  FROM `httparchive.almanac.requests`
 
-    WHERE
-      # many 404s and redirects show up as image/gif
-      status = 200 AND
+  WHERE
+    # many 404s and redirects show up as image/gif
+    status = 200 AND
 
-      # we are trying to catch images. WPO populates the format for media but it uses a file extension guess.
-      #So we exclude mimetypes that aren't image or where the format couldn't be guessed by WPO
-      (format != '' OR mimetype LIKE 'image%') AND
+    # we are trying to catch images. WPO populates the format for media but it uses a file extension guess.
+    #So we exclude mimetypes that aren't image or where the format couldn't be guessed by WPO      (format != '' OR mimetype LIKE 'image%') AND
 
-      # many image/gifs are really beacons with 1x1 pixel, but svgs can get caught in the mix
-      (respSize > 1500 OR REGEXP_CONTAINS(mimetype, r'svg')) AND
+    # many image/gifs are really beacons with 1x1 pixel, but svgs can get caught in the mix      (respSize > 1500 OR REGEXP_CONTAINS(mimetype, r'svg')) AND
 
-      # strip favicon requests
-      format != 'ico' AND
+    # strip favicon requests
+    format != 'ico' AND
 
-      # strip video mimetypes and other favicons
-      NOT REGEXP_CONTAINS(mimetype, r'video|ico')
-  )
+    # strip video mimetypes and other favicons
+    NOT REGEXP_CONTAINS(mimetype, r'video|ico')
+)
 USING (client, page, url)
 WHERE
   naturalPixels > 0 AND

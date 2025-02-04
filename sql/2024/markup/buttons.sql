@@ -35,8 +35,7 @@ FROM
   `httparchive.all.pages`
 JOIN
   totals
-USING
-  (client),
+USING (client),
   UNNEST(get_markup_buttons_info(JSON_EXTRACT(custom_metrics, '$.markup'))) AS button_type
 WHERE
   date = '2024-06-01'

@@ -22,6 +22,6 @@ FROM (
   WHERE
     date = '2024-06-01' AND
     cast(json_value(summary, '$.firstHtml') AS BOOL)
-  )
+)
 GROUP BY
   client

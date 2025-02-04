@@ -28,7 +28,9 @@ WITH totals AS (
     date = '2024-06-01'
   GROUP BY
     client
-), attributes AS (
+),
+
+attributes AS (
   SELECT
     client,
     almanac_attribute_info.name,
@@ -43,8 +45,7 @@ WITH totals AS (
     UNNEST(get_almanac_attribute_info(JSON_EXTRACT(custom_metrics, '$.almanac'))) AS almanac_attribute_info
   JOIN
     totals
-  USING
-    (client)
+  USING (client)
   WHERE
     date = '2024-06-01'
   GROUP BY

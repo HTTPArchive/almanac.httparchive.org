@@ -9,21 +9,22 @@ SELECT DISTINCT
   date,
   client,
   REGEXP_REPLACE(page, '^http:', 'https:') AS pwa_url,
-  pathResolve(REGEXP_REPLACE(page, '^http:', 'https:'),
-    REGEXP_EXTRACT(body, 'navigator\\.serviceWorker\\.register\\s*\\(\\s*["\']([^\\),\\s"\']+)')) AS sw_url,
-  pathResolve(REGEXP_REPLACE(page, '^http:', 'https:'),
-    REGEXP_EXTRACT(REGEXP_EXTRACT(body, '(<link[^>]+rel=["\']?manifest["\']?[^>]+>)'), 'href=["\']?([^\\s"\'>]+)["\']?')) AS manifest_url
+  pathResolve(
+    REGEXP_REPLACE(page, '^http:', 'https:'),
+    REGEXP_EXTRACT(body, 'navigator\\.serviceWorker\\.register\\s*\\(\\s*["\']([^\\),\\s"\']+)')
+  ) AS sw_url,
+  pathResolve(
+    REGEXP_REPLACE(page, '^http:', 'https:'),
+    REGEXP_EXTRACT(REGEXP_EXTRACT(body, '(<link[^>]+rel=["\']?manifest["\']?[^>]+>)'), 'href=["\']?([^\\s"\'>]+)["\']?')
+  ) AS manifest_url
 FROM
   `httparchive.almanac.summary_response_bodies`
 WHERE
-  date = '2020-08-01' AND
-  (
-    (
-      REGEXP_EXTRACT(body, 'navigator\\.serviceWorker\\.register\\s*\\(\\s*["\']([^\\),\\s"\']+)') IS NOT NULL AND
-      REGEXP_EXTRACT(body, 'navigator\\.serviceWorker\\.register\\s*\\(\\s*["\']([^\\),\\s"\']+)') != '/'
-    ) OR
-    (
-      REGEXP_EXTRACT(REGEXP_EXTRACT(body, '(<link[^>]+rel=["\']?manifest["\']?[^>]+>)'), 'href=["\']?([^\\s"\'>]+)["\']?') IS NOT NULL AND
-      REGEXP_EXTRACT(REGEXP_EXTRACT(body, '(<link[^>]+rel=["\']?manifest["\']?[^>]+>)'), 'href=["\']?([^\\s"\'>]+)["\']?') != '/'
-    )
+  date = '2020-08-01' AND ((
+    REGEXP_EXTRACT(body, 'navigator\\.serviceWorker\\.register\\s*\\(\\s*["\']([^\\),\\s"\']+)') IS NOT NULL AND
+    REGEXP_EXTRACT(body, 'navigator\\.serviceWorker\\.register\\s*\\(\\s*["\']([^\\),\\s"\']+)') != '/'
+  ) OR (
+    REGEXP_EXTRACT(REGEXP_EXTRACT(body, '(<link[^>]+rel=["\']?manifest["\']?[^>]+>)'), 'href=["\']?([^\\s"\'>]+)["\']?') IS NOT NULL AND
+    REGEXP_EXTRACT(REGEXP_EXTRACT(body, '(<link[^>]+rel=["\']?manifest["\']?[^>]+>)'), 'href=["\']?([^\\s"\'>]+)["\']?') != '/'
+  )
   )

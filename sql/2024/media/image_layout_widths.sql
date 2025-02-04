@@ -33,7 +33,7 @@ FROM (
   WHERE
     image.clientWidth > 1
 ),
-UNNEST([0, 10, 25, 50, 75, 90, 100]) AS percentile
+  UNNEST([0, 10, 25, 50, 75, 90, 100]) AS percentile
 GROUP BY
   percentile,
   client

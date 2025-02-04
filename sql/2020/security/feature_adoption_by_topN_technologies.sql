@@ -67,9 +67,9 @@ INNER JOIN (
   )
   GROUP BY
     client,
-    headername)
-USING
-  (client, headername)
+    headername
+)
+USING (client, headername)
 INNER JOIN (
   SELECT
     client,
@@ -79,9 +79,9 @@ INNER JOIN (
     app_headers
   GROUP BY
     client,
-    headername)
-USING
-  (client, headername),
+    headername
+)
+USING (client, headername),
   UNNEST(GENERATE_ARRAY(1, 10)) AS topN
 GROUP BY
   client,

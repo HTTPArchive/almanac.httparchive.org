@@ -31,8 +31,7 @@ FROM
   lcp
 JOIN
   requests
-USING
-  (client, page, url)
+USING (client, page, url)
 GROUP BY
   client,
   type

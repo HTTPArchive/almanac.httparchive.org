@@ -20,7 +20,8 @@ FROM (
     `httparchive.almanac.requests`
   WHERE
     date = '2020-08-01' AND
-    type = 'script')
+    type = 'script'
+)
 GROUP BY
   client,
   host,

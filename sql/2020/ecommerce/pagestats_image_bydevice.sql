@@ -12,7 +12,8 @@ JOIN (
     _TABLE_SUFFIX,
     url
   FROM `httparchive.technologies.2020_08_01_*`
-  WHERE category = 'Ecommerce')
+  WHERE category = 'Ecommerce'
+)
 USING (_TABLE_SUFFIX, url),
   UNNEST([10, 25, 50, 75, 90]) AS percentile
 GROUP BY

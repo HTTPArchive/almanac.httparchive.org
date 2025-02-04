@@ -12,7 +12,8 @@ FROM (
     url AS page,
     bytesJs
   FROM
-    `httparchive.summary_pages.2022_06_01_*`)
+    `httparchive.summary_pages.2022_06_01_*`
+)
 JOIN (
   SELECT DISTINCT
     _TABLE_SUFFIX AS client,
@@ -21,9 +22,9 @@ JOIN (
   FROM
     `httparchive.technologies.2022_06_01_*`
   WHERE
-    category = 'JavaScript frameworks')
-USING
-  (client, page),
+    category = 'JavaScript frameworks'
+)
+USING (client, page),
   UNNEST([10, 25, 50, 75, 90]) AS percentile
 GROUP BY
   percentile,

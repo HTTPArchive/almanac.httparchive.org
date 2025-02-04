@@ -322,7 +322,7 @@ CSSピクセルと自然ピクセル量を見ると、中央値のウェブサ�
 
 {{ figure_markup(
   image="fig16_top_patterns_of_img_sizes.png",
-  caption="<code><img sizes></code> のトップパターン。",
+  caption="`<img sizes>` のトップパターン。",
   description="1,130万枚の画像が「img sizes=`(max-width: 300px) 100vw, 300px`」を使用しており、「auto」が160万枚、「img sizes=`(max-width: 767px) 89vwなどなど`」が100万枚、「100vw」が23万枚、「300px」が13万枚であることを棒グラフで示しています。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=663985412&format=interactive"
   )

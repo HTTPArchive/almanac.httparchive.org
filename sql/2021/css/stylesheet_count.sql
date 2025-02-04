@@ -22,7 +22,8 @@ FROM (
     url,
     getStylesheets(payload) AS stylesheets
   FROM
-    `httparchive.pages.2021_07_01_*`),
+    `httparchive.pages.2021_07_01_*`
+),
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 GROUP BY
   percentile,

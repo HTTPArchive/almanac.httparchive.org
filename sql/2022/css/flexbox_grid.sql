@@ -6,7 +6,7 @@ WITH totals AS (
     _TABLE_SUFFIX AS client,
     COUNT(0) AS total
   FROM
-    `httparchive.summary_pages.2022_07_01_*` -- noqa: L062
+    `httparchive.summary_pages.2022_07_01_*` -- noqa: CV09
   GROUP BY
     client
   UNION ALL
@@ -49,8 +49,7 @@ FROM
   `httparchive.blink_features.features`
 JOIN
   totals
-USING
-  (yyyymmdd, client)
+USING (yyyymmdd, client)
 WHERE
   yyyymmdd IN ('2022-07-01', '2021-07-01', '2020-08-01', '2019-07-01') AND
   feature IN ('CSSFlexibleBox', 'CSSGridLayout')

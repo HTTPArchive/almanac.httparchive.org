@@ -24,7 +24,8 @@ FROM (
     _TABLE_SUFFIX AS client,
     getMediaElements(payload) AS media_elements
   FROM
-    `httparchive.pages.2019_07_01_*`)
+    `httparchive.pages.2019_07_01_*`
+)
 WHERE
   'audio' IN UNNEST(media_elements) OR
   'video' IN UNNEST(media_elements)

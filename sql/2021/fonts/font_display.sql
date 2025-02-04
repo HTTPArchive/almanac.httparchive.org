@@ -1,7 +1,7 @@
 #standardSQL
 #font_display
 CREATE TEMPORARY FUNCTION getFontDisplay(css STRING)
-RETURNS ARRAY < STRING > LANGUAGE js AS '''
+RETURNS ARRAY<STRING> LANGUAGE js AS '''
 try {
     var reduceValues = (values, rule) => {
         if ('rules' in rule) {
@@ -45,24 +45,28 @@ FROM (
   LEFT JOIN
     UNNEST(getFontDisplay(css)) AS font_display
   WHERE
-    date = '2021-07-01')
+    date = '2021-07-01'
+)
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
     url AS page,
-    CAST(JSON_EXTRACT_SCALAR(payload,
-        "$['_chromeUserTiming.firstContentfulPaint']") AS INT64) AS fcp,
-    CAST(JSON_EXTRACT_SCALAR(payload,
-        "$['_chromeUserTiming.LargestContentfulPaint']") AS INT64) AS lcp
+    CAST(JSON_EXTRACT_SCALAR(
+      payload,
+      "$['_chromeUserTiming.firstContentfulPaint']"
+    ) AS INT64) AS fcp,
+    CAST(JSON_EXTRACT_SCALAR(
+      payload,
+      "$['_chromeUserTiming.LargestContentfulPaint']"
+    ) AS INT64) AS lcp
   FROM
     `httparchive.pages.2021_07_01_*`
   GROUP BY
     _TABLE_SUFFIX,
     url,
-    payload)
-USING
-  (client,
-    page)
+    payload
+)
+USING (client, page)
 GROUP BY
   client,
   font_display

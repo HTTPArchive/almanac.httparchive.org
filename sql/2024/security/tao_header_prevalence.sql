@@ -19,7 +19,8 @@ FROM (
   WHERE
     date = '2024-06-01' AND
     is_root_page AND
-    LOWER(response_headers.name) = 'timing-allow-origin')
+    LOWER(response_headers.name) = 'timing-allow-origin'
+)
 GROUP BY
   client,
   tao_header

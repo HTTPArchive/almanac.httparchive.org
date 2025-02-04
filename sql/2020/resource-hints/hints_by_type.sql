@@ -46,7 +46,8 @@ FROM (
     pathResolve(url, hint.href) AS url
   FROM
     `httparchive.pages.2020_08_01_*`,
-    UNNEST(getResourceHintTypes(payload)) AS hint)
+    UNNEST(getResourceHintTypes(payload)) AS hint
+)
 LEFT JOIN (
   SELECT
     client,
@@ -56,9 +57,9 @@ LEFT JOIN (
   FROM
     `httparchive.almanac.requests`
   WHERE
-    date = '2020-08-01')
-USING
-  (client, page, url)
+    date = '2020-08-01'
+)
+USING (client, page, url)
 GROUP BY
   client,
   name,

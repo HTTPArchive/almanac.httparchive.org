@@ -30,7 +30,7 @@ FROM (
   WHERE
     date = '2024-06-01' AND
     is_root_page
-  ),
+),
   UNNEST(sris) AS sri,
   UNNEST(REGEXP_EXTRACT_ALL(JSON_EXTRACT_SCALAR(sri, '$.integrity'), r'(sha[^-]+)-')) AS hash_function
 JOIN totals USING (client)

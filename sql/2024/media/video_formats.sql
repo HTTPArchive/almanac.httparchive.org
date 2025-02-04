@@ -38,7 +38,8 @@ FROM (
   WHERE
     date = '2024-06-01' AND
     type = 'video' AND
-    JSON_VALUE(summary, '$.respBodySize') IS NOT NULL)
+    JSON_VALUE(summary, '$.respBodySize') IS NOT NULL
+)
 GROUP BY
   client,
   trueFormat

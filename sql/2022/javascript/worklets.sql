@@ -7,8 +7,7 @@ SELECT
 FROM
   `httparchive.blink_features.usage`
 WHERE
-  yyyymmdd = '20220601' AND
-  (
+  yyyymmdd = '20220601' AND (
     feature = 'PaintWorklet' OR
     feature = 'AudioWorkletAddModule'
   )

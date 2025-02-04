@@ -28,7 +28,7 @@ FROM (
   FROM
     data
 ),
-UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
+  UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 WHERE
   lcp_type = 'text'
 GROUP BY

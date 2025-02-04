@@ -31,11 +31,13 @@ FROM (
       fn.fn,
       fn.freq
     FROM
-      `httparchive.pages.2022_07_01_*`, -- noqa: L062
-      UNNEST(getFunctionCalls(payload)) AS fn)
+      `httparchive.pages.2022_07_01_*`, -- noqa: CV09
+      UNNEST(getFunctionCalls(payload)) AS fn
+  )
   GROUP BY
     client,
-    fn)
+    fn
+)
 WHERE
   freq >= 1000
 ORDER BY

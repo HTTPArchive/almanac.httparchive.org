@@ -69,7 +69,7 @@ WITH totals AS (
     _TABLE_SUFFIX AS client,
     COUNT(0) AS total_pages
   FROM
-    `httparchive.summary_pages.2022_07_01_*` -- noqa: L062
+    `httparchive.summary_pages.2022_07_01_*` -- noqa: CV09
   GROUP BY
     client
 )
@@ -96,11 +96,11 @@ FROM (
   WHERE
     date = '2022-07-01' AND
     # Limit the size of the CSS to avoid OOM crashes.
-    LENGTH(css) < 0.1 * 1024 * 1024)
+    LENGTH(css) < 0.1 * 1024 * 1024
+)
 JOIN
   totals
-USING
-  (client)
+USING (client)
 GROUP BY
   client,
   name

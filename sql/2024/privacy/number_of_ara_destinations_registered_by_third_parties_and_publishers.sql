@@ -66,6 +66,7 @@ WITH ara_features AS (
     is_root_page = TRUE AND
     ara LIKE 'destination%'
 )
+
 SELECT
   client,
   rank_group,

@@ -19,6 +19,7 @@ scripts AS (
     date,
     client
 ),
+
 pages AS (
   SELECT
     date,
@@ -43,7 +44,8 @@ SELECT
 FROM
   scripts
 JOIN
-  pages USING (date, client)
+  pages
+USING (date, client)
 ORDER BY
   date,
   client

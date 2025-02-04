@@ -60,7 +60,7 @@ WITH markup_extraction AS (
       WHEN is_root_page = TRUE THEN 'Homepage'
       ELSE 'No Assigned Page'
     END
-    AS is_root_page,
+      AS is_root_page,
     page,
     getMarkupStatsInfo(JSON_EXTRACT_SCALAR(payload, '$._markup')) AS markup_info
   FROM

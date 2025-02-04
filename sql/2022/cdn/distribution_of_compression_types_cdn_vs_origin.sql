@@ -23,7 +23,7 @@ FROM (
   WHERE
     date = '2022-06-01' AND
     resp_content_encoding != ''
-  )
+)
 GROUP BY
   client,
   cdn,

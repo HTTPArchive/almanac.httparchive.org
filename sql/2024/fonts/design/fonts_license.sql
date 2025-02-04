@@ -39,7 +39,8 @@ SELECT
 FROM
   `httparchive.all.requests`
 INNER JOIN
-  pages USING (client)
+  pages
+USING (client)
 WHERE
   date = '2024-07-01' AND
   type = 'font' AND

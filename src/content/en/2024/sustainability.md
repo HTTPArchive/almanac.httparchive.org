@@ -995,7 +995,7 @@ From a sustainability perspective, effective caching offers several key benefits
 {{ figure_markup(
   image="cache-control-header-usage.png",
   caption="Cache control header usage.",
-  description="A bar chart showing that on desktop 26.6% of websites use Cache Control Only, 0.4% of them use Expiries only and 48.1% of them use both. 24.9% of the websites do not use any caching on desktop. On mobile 25.9% of websites use Cache Control Only, 0.4% of them use Expiries only and 48.6% of them use both. 25.1% of the websites do not use any caching on mobile.",
+  description="A bar chart showing that on desktop 26.6% of websites use Cache Control Only, 0.4% of them use Expires only and 48.1% of them use both. 24.9% of the websites do not use any caching on desktop. On mobile 25.9% of websites use Cache Control Only, 0.4% of them use Expires only and 48.6% of them use both. 25.1% of the websites do not use any caching on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=584352189&format=interactive",
   sheets_gid="1192354424",
   sql_file="cache_header_usage.sql"

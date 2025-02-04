@@ -42,7 +42,8 @@ FROM (
   GROUP BY
     client,
     element,
-    value)
+    value
+)
 WHERE
   freq >= 100
 ORDER BY

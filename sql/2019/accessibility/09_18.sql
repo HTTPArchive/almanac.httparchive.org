@@ -26,7 +26,8 @@ FROM (
     _TABLE_SUFFIX AS client,
     getTableElements(payload) AS table_elements
   FROM
-    `httparchive.pages.2019_07_01_*`)
+    `httparchive.pages.2019_07_01_*`
+)
 WHERE
   'table' IN UNNEST(table_elements)
 GROUP BY

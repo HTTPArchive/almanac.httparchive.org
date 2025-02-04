@@ -36,8 +36,7 @@ WITH render_blocking_scripts AS (
     FROM
       `httparchive.summary_pages.2024_06_01_*`
   )
-  USING
-    (client, url)
+  USING (client, url)
 )
 
 SELECT

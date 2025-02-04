@@ -12,7 +12,8 @@ FROM (
     url AS page,
     rank AS _rank
   FROM
-    `httparchive.summary_pages.2021_07_01_*`)
+    `httparchive.summary_pages.2021_07_01_*`
+)
 LEFT JOIN (
   SELECT DISTINCT
     _TABLE_SUFFIX AS client,
@@ -21,9 +22,9 @@ LEFT JOIN (
   FROM
     `httparchive.technologies.2021_07_01_*`
   WHERE
-    category = 'UI frameworks')
-USING
-  (client, page),
+    category = 'UI frameworks'
+)
+USING (client, page),
   UNNEST([1e3, 1e4, 1e5, 1e6, 1e7]) AS rank
 WHERE
   _rank <= rank

@@ -12,7 +12,7 @@ FROM (
     JSON_EXTRACT_SCALAR(report, "$.audits['unminified-javascript'].score") AS score
   FROM
     `httparchive.lighthouse.2024_06_01_*`
-  )
+)
 WHERE
   score IS NOT NULL
 GROUP BY

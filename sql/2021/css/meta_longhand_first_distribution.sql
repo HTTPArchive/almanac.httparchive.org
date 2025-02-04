@@ -457,7 +457,8 @@ FROM (
     UNNEST(getLonghandFirstProperties(css)) AS property
   WHERE
     date = '2021-07-01' AND
-    property.freq > 0),
+    property.freq > 0
+),
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 GROUP BY
   percentile,

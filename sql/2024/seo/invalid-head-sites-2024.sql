@@ -8,7 +8,7 @@ WITH totals AS (
       WHEN is_root_page = TRUE THEN 'Homepage'
       ELSE 'No Assigned Page'
     END
-    AS is_root_page,
+      AS is_root_page,
     payload,
     page,
     JSON_QUERY(payload, '$._valid-head.invalidHead') AS invalidHead,

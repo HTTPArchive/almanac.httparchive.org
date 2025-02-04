@@ -34,13 +34,14 @@ SELECT
   ROUND(COUNT(0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX, name), 2) AS pct
 FROM (
   SELECT _TABLE_SUFFIX, url AS page, hint.name, hint.href AS url
-  FROM `httparchive.pages.2019_07_01_*`, UNNEST(getResourceHints(payload)) AS hint)
+  FROM `httparchive.pages.2019_07_01_*`, UNNEST(getResourceHints(payload)) AS hint
+)
 LEFT JOIN (
   SELECT client AS _TABLE_SUFFIX, page, url, type
   FROM `httparchive.almanac.summary_requests`
-  WHERE date = '2019-07-01')
-USING
-  (_TABLE_SUFFIX, page, url)
+  WHERE date = '2019-07-01'
+)
+USING (_TABLE_SUFFIX, page, url)
 GROUP BY
   client,
   name,

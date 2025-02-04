@@ -59,16 +59,15 @@ max_age AS (
     max_age_value AS attribute_value
   FROM
     max_age_values
-  JOIN
-    (
-      SELECT
-        client,
-        COUNT(0) AS total_cookies_with_max_age
-      FROM
-        max_age_values
-      GROUP BY
-        client
-    )
+  JOIN (
+    SELECT
+      client,
+      COUNT(0) AS total_cookies_with_max_age
+    FROM
+      max_age_values
+    GROUP BY
+      client
+  )
   USING (client)
   GROUP BY
     client,
@@ -89,16 +88,15 @@ expires AS (
     expires_value AS attribute_value
   FROM
     expires_values
-  JOIN
-    (
-      SELECT
-        client,
-        COUNT(0) AS total_cookies_with_expires
-      FROM
-        expires_values
-      GROUP BY
-        client
-    )
+  JOIN (
+    SELECT
+      client,
+      COUNT(0) AS total_cookies_with_expires
+    FROM
+      expires_values
+    GROUP BY
+      client
+  )
   USING (client)
   GROUP BY
     client,

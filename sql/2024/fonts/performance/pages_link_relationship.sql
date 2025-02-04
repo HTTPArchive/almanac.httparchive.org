@@ -62,6 +62,7 @@ hints AS (
     client,
     hint
 ),
+
 pages AS (
   SELECT
     date,
@@ -87,7 +88,8 @@ SELECT
 FROM
   hints
 LEFT JOIN
-  pages USING (date, client)
+  pages
+USING (date, client)
 ORDER BY
   date,
   client,

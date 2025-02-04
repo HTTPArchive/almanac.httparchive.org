@@ -19,6 +19,7 @@ countries AS (
     domain,
     country
 ),
+
 requests AS (
   SELECT
     client,
@@ -41,7 +42,8 @@ SELECT
 FROM
   requests
 INNER JOIN
-  countries USING (client, domain)
+  countries
+USING (client, domain)
 GROUP BY
   client,
   country

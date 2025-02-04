@@ -322,7 +322,7 @@ The utility of `srcset` is usually dependent on the precision of the `sizes` med
 
 {{ figure_markup(
   image="fig16_top_patterns_of_img_sizes.png",
-  caption="Top patterns of <code><img sizes></code>.",
+  caption="Top patterns of `<img sizes>`.",
   description="Bar chart showing 11.3 million images use 'img sizes=`(max-width: 300px) 100vw, 300px`', 1.60 million use 'auto', 1.00 million use 'img sizes=`(max-width: 767px) 89vw...etc.`', 0.23 million use '100vw' and 0.13 million use '300px'",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=663985412&format=interactive"
   )

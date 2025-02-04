@@ -13,7 +13,8 @@ FROM (
     `httparchive.almanac.summary_response_bodies`
   WHERE
     date = '2019-07-01' AND
-    firstHtml)
+    firstHtml
+)
 GROUP BY
   client
 ORDER BY

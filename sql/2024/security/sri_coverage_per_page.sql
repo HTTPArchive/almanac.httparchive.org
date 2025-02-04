@@ -19,7 +19,7 @@ FROM (
   WHERE
     date = '2024-06-01' AND
     is_root_page
-  ),
+),
   UNNEST([10, 25, 50, 75, 90]) AS percentile
 WHERE
   getNumScriptElements(sris) > 0

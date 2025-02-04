@@ -33,7 +33,8 @@ FROM (
   FROM
     `httparchive.almanac.requests`
   WHERE
-    date = '2021-07-01'),
+    date = '2021-07-01'
+),
   UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS nested_rank
 WHERE
   rank <= nested_rank

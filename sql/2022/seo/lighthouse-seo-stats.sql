@@ -30,7 +30,7 @@ SELECT
   MAX(audits.audit_group) AS audit_group,
   MAX(audits.description) AS description
 FROM
-  `httparchive.lighthouse.2022_07_01_*`, -- noqa: L062
+  `httparchive.lighthouse.2022_07_01_*`, -- noqa: CV09
   UNNEST(getAudits(JSON_EXTRACT(report, '$.categories.seo.auditRefs'), JSON_EXTRACT(report, '$.audits'))) AS audits
 GROUP BY
   client,

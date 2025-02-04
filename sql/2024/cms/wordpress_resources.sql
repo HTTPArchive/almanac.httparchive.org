@@ -23,7 +23,8 @@ FROM (
       UNNEST(technologies.categories) AS cats
     WHERE
       technologies.technology = 'WordPress' AND
-      date = '2024-06-01')
+      date = '2024-06-01'
+  )
   JOIN (
     SELECT
       client,
@@ -34,10 +35,9 @@ FROM (
       UNNEST(technologies) AS technologies,
       UNNEST(technologies.categories) AS cats
     WHERE
-      date = '2024-06-01')
-  USING
-    (client,
-      page)
+      date = '2024-06-01'
+  )
+  USING (client, page)
   JOIN (
     SELECT
       client,
@@ -46,16 +46,16 @@ FROM (
     FROM
       `httparchive.all.pages`
     WHERE
-      date = '2024-06-01')
-  USING
-    (client,
-      pageid)
+      date = '2024-06-01'
+  )
+  USING (client, pageid)
   GROUP BY
     client,
     page,
     path
   HAVING
-    path IS NOT NULL),
+    path IS NOT NULL
+),
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 GROUP BY
   percentile,

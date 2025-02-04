@@ -35,8 +35,8 @@ FROM (
     date = '2024-06-01' AND
     is_root_page
 ),
-UNNEST(JSON_QUERY_ARRAY(metrics, '$.meta-nodes.nodes')) meta_node,
-UNNEST(['Content-Security-Policy']) AS policy
+  UNNEST(JSON_QUERY_ARRAY(metrics, '$.meta-nodes.nodes')) meta_node,
+  UNNEST(['Content-Security-Policy']) AS policy
 JOIN totals USING (client)
 WHERE
   LOWER(JSON_VALUE(meta_node, '$.http-equiv')) = 'content-security-policy' OR LOWER(JSON_VALUE(meta_node, '$.name')) = 'content-security-policy'

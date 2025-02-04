@@ -11,7 +11,8 @@ FROM (
     JSON_EXTRACT(payload, '$._securityDetails.keyExchange') AS key_exchange,
     JSON_EXTRACT_SCALAR(payload, '$._securityDetails.protocol') AS protocol
   FROM
-    `httparchive.requests.2019_07_01_*`)
+    `httparchive.requests.2019_07_01_*`
+)
 WHERE
   protocol IS NOT NULL
 GROUP BY

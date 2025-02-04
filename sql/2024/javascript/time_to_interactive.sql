@@ -9,7 +9,8 @@ FROM (
     _TABLE_SUFFIX AS client,
     CAST(IFNULL(JSON_EXTRACT(report, '$.audits.consistently-interactive.numericValue'), JSON_EXTRACT(report, '$.audits.interactive.numericValue')) AS FLOAT64) AS tti
   FROM
-    `httparchive.lighthouse.2024_06_01_*`),
+    `httparchive.lighthouse.2024_06_01_*`
+),
   UNNEST([10, 25, 50, 75, 90]) AS percentile
 GROUP BY
   client,

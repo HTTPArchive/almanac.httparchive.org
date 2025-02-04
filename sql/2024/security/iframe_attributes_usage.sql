@@ -49,7 +49,7 @@ FROM (
       is_root_page
   )
   LEFT JOIN UNNEST(iframeAttrs) AS iframeAttr
-  ) JOIN total_iframe_count USING (client, date)
+) JOIN total_iframe_count USING (client, date)
 GROUP BY
   total_iframes,
   client,

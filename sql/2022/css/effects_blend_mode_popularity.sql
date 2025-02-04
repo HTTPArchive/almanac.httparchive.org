@@ -37,7 +37,7 @@ totals AS (
     _TABLE_SUFFIX AS client,
     COUNT(0) AS total_pages
   FROM
-    `httparchive.summary_pages.2022_07_01_*` -- noqa: L062
+    `httparchive.summary_pages.2022_07_01_*` -- noqa: CV09
   GROUP BY
     client
 )
@@ -51,7 +51,6 @@ FROM
   totals
 JOIN
   blend_modes
-USING
-  (client)
+USING (client)
 GROUP BY
   client

@@ -1,7 +1,7 @@
 # standardSQL
 # present_types.sql
 
-  # A count of pages which include each type of structured data
+# A count of pages which include each type of structured data
 SELECT
   client,
   COUNTIF(CAST(JSON_EXTRACT(structured_data, '$.structured_data.rendered.present.rdfa') AS BOOL)) AS rdfa,
@@ -33,7 +33,8 @@ FROM (
   FROM
     `httparchive.all.pages`
   WHERE
-    date = '2024-06-01')
+    date = '2024-06-01'
+)
 GROUP BY
   client
 ORDER BY

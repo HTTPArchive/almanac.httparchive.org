@@ -13,6 +13,7 @@ WITH pages AS (
   WHERE
     date = '2024-06-01'
 ),
+
 total_sites AS (
   -- total number of distinct pages (URLs) per client and page type
   SELECT
@@ -25,6 +26,7 @@ total_sites AS (
     client,
     is_root_page
 )
+
 SELECT
   p.client,
   p.is_root_page,

@@ -15,7 +15,8 @@ FROM (
   WHERE
     date = '2020-08-01' AND
     STARTS_WITH(url, 'https') AND
-    firstHtml)
+    firstHtml
+)
 WHERE
   tls_version IS NOT NULL
 GROUP BY

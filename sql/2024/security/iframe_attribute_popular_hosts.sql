@@ -30,7 +30,7 @@ FROM (
     WHERE
       date = '2024-06-01' AND
       is_root_page
-    ),
+  ),
     UNNEST(iframeAttrs) AS iframeAttr,
     UNNEST(['allow', 'sandbox']) AS policy_type
 )
@@ -44,9 +44,9 @@ JOIN (
     date = '2024-06-01' AND
     is_root_page
   GROUP BY
-    client)
-USING
-  (client)
+    client
+)
+USING (client)
 GROUP BY
   client,
   total_iframes_with_allow_or_sandbox,

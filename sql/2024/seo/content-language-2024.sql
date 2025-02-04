@@ -33,6 +33,7 @@ WITH content_language_usage AS (
   WHERE
     date = '2024-06-01'
 )
+
 SELECT
   client,
   is_root_page,

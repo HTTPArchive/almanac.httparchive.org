@@ -40,7 +40,7 @@ meta_tags AS (
       JSON_VALUE(payload, '$._almanac') AS metrics
     FROM
       `httparchive.pages.2021_07_01_*`
-    ),
+  ),
     UNNEST(JSON_QUERY_ARRAY(metrics, '$.meta-nodes.nodes')) meta_node
   WHERE
     JSON_VALUE(meta_node, '$.http-equiv') IS NOT NULL
@@ -55,22 +55,28 @@ FROM (
   SELECT
     client,
     rank_grouping,
-    COUNT(DISTINCT IF(
-      header_name = 'feature-policy' OR
-      tag_name = 'feature-policy',
-      page, NULL)
+    COUNT(
+      DISTINCT IF(
+        header_name = 'feature-policy' OR
+        tag_name = 'feature-policy',
+        page, NULL
+      )
     ) AS number_of_websites_with_feature_policy,
-    COUNT(DISTINCT IF(
-      header_name = 'permissions-policy' OR
-      tag_name = 'permissions-policy',
-      page, NULL)
+    COUNT(
+      DISTINCT IF(
+        header_name = 'permissions-policy' OR
+        tag_name = 'permissions-policy',
+        page, NULL
+      )
     ) AS number_of_websites_with_permissions_policy,
-    COUNT(DISTINCT IF(
-      header_name = 'feature-policy' OR
-      tag_name = 'feature-policy' OR
-      header_name = 'permissions-policy' OR
-      tag_name = 'permissions-policy',
-      page, NULL)
+    COUNT(
+      DISTINCT IF(
+        header_name = 'feature-policy' OR
+        tag_name = 'feature-policy' OR
+        header_name = 'permissions-policy' OR
+        tag_name = 'permissions-policy',
+        page, NULL
+      )
     ) AS number_of_websites_with_any_policy,
     COUNT(DISTINCT page) AS number_of_websites
   FROM

@@ -29,7 +29,8 @@ JOIN (
   FROM
     `httparchive.technologies.2020_08_01_*`
   WHERE
-    category = 'CMS')
+    category = 'CMS'
+)
 ON
   CONCAT(origin, '/') = url AND
   IF(device = 'desktop', 'desktop', 'mobile') = client

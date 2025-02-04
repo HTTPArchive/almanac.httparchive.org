@@ -17,12 +17,11 @@ JOIN (
   FROM
     `httparchive.summary_pages.2022_06_01_*`
   GROUP BY
-    _TABLE_SUFFIX)
-USING
-  (_TABLE_SUFFIX)
+    _TABLE_SUFFIX
+)
+USING (_TABLE_SUFFIX)
 WHERE
-  category = 'Ecommerce' AND
-  (
+  category = 'Ecommerce' AND (
     app != 'Cart Functionality' AND
     app != 'Google Analytics Enhanced eCommerce'
   )
@@ -45,12 +44,11 @@ JOIN (
   FROM
     `httparchive.summary_pages.2021_07_01_*`
   GROUP BY
-    _TABLE_SUFFIX)
-USING
-  (_TABLE_SUFFIX)
+    _TABLE_SUFFIX
+)
+USING (_TABLE_SUFFIX)
 WHERE
-  category = 'Ecommerce' AND
-  (
+  category = 'Ecommerce' AND (
     app != 'Cart Functionality' AND
     app != 'Google Analytics Enhanced eCommerce'
   )

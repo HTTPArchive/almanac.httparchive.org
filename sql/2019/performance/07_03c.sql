@@ -3,7 +3,7 @@
 SELECT
   speed,
   ROUND(COUNTIF(fast_fcp >= .75) * 100 / COUNT(0), 2) AS pct_fast_fcp,
-  ROUND(COUNTIF(NOT(slow_fcp >= .25) AND NOT(fast_fcp >= .75)) * 100 / COUNT(0), 2) AS pct_avg_fcp,
+  ROUND(COUNTIF(NOT (slow_fcp >= .25) AND NOT (fast_fcp >= .75)) * 100 / COUNT(0), 2) AS pct_avg_fcp,
   ROUND(COUNTIF(slow_fcp >= .25) * 100 / COUNT(0), 2) AS pct_slow_fcp
 FROM (
   SELECT
@@ -16,7 +16,8 @@ FROM (
     UNNEST(first_contentful_paint.histogram.bin) AS bin
   GROUP BY
     origin,
-    speed)
+    speed
+)
 GROUP BY
   speed
 ORDER BY
