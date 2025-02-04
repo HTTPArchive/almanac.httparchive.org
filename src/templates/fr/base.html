@@ -22,7 +22,7 @@
 {%- if year < DEFAULT_YEAR -%}
 <p lang="en">
   Vous consultez une édition précédente du Web Almanac.
-  Découvrez <a href="/{{ lang }}/{{ DEFAULT_YEAR }}/{% if chapter_lang_exists(lang, DEFAULT_YEAR, slug) or page_lang_exists(lang, DEFAULT_YEAR, slug) %}{{ slug }}{% endif %}">l'édition {{ DEFAULT_YEAR }}!</a>
+  Découvrez <a href="/{{ lang }}/{{ DEFAULT_YEAR }}/{% if chapter_lang_exists(lang, DEFAULT_YEAR, slug) or page_lang_exists(lang, DEFAULT_YEAR, slug) %}{{ slug }}{% endif %}">l’édition {{ DEFAULT_YEAR }}!</a>
 </p>
 {%- endif -%}
 {% endblock %}
@@ -148,7 +148,7 @@ Notre mission est de combiner les statistiques brutes et les tendances de HTTP A
 {% endif %}
 
 {% block contributors_description %}
-Le Web Almanac a été rendu possible grâce au travail acharné de la communauté Web. {{ self.contributors() }} personnes ont consacré bénévolement d’innombrables heures à planifier, faire des recherches, rédiger et mettre à votre disposition l'édition {{ year }} du Web Almanac.
+Le Web Almanac a été rendu possible grâce au travail acharné de la communauté Web. {{ self.contributors() }} personnes ont consacré bénévolement d’innombrables heures à planifier, faire des recherches, rédiger et mettre à votre disposition l’édition {{ year }} du Web Almanac.
 {% endblock %}
 {% block contributors_link %}Voir les contributeurs et contributrices{% endblock %}
 
@@ -226,7 +226,7 @@ Sauf indication contraire, les statistiques des {{ supported_chapters | length }
   "developers": "Développement",
   "editors": "Édition",
   "leads": "Gestion de projet",
-  "committee": "Comité d'organisation",
+  "committee": "Comité d’organisation",
   "reviewers": "Relecture",
   "translators": "Traduction",
   }
@@ -240,7 +240,7 @@ Sauf indication contraire, les statistiques des {{ supported_chapters | length }
   "developers": "Développement",
   "editors": "Édition",
   "leads": "Gestion de projet",
-  "committee": "Comité d'organisation",
+  "committee": "Comité d’organisation",
   "reviewers": "Relecture",
   "translators": "Traduction",
   }

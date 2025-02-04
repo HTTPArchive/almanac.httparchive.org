@@ -21,7 +21,7 @@
 {% block announcement_text -%}
 {%- if year < DEFAULT_YEAR -%}
 <p lang="en">
-  You're viewing a previous edition of the Web Almanac.
+  You’re viewing a previous edition of the Web Almanac.
   Check out the <a href="/{{ lang }}/{{ DEFAULT_YEAR }}/{% if chapter_lang_exists(lang, DEFAULT_YEAR, slug) or page_lang_exists(lang, DEFAULT_YEAR, slug) %}{{ slug }}{% endif %}">{{ DEFAULT_YEAR }} edition!</a>
 </p>
 {%- endif -%}
