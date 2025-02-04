@@ -18,12 +18,13 @@
 {% block intro_title %}Web Almanac{% endblock %}
 {% block intro_sub_title %}Rapporto annuale<br> <b>sullo stato del web</b> di HTTP Archive{% endblock %}
 
-{% block announcement_text %}
+{% block announcement_text -%}
+{%- if year < DEFAULT_YEAR -%}
 <p lang="en">
-  Join our second live stream for this year's edition on Thursday, 16th January 2025 on
-  <a href="https://www.youtube.com/live/zCiMls26CL8?si=eMsU_MmNYdL-UB4Z">YouTube</a>,
-  or save the <a href="/static/live-stream2.ics">calendar event</a>!
+  Stai visualizzando un'edizione precedente del Web Almanac.
+  Dai un'occhiata all'<a href="/{{ lang }}/{{ DEFAULT_YEAR }}/{% if chapter_lang_exists(lang, DEFAULT_YEAR, slug) or page_lang_exists(lang, DEFAULT_YEAR, slug) %}{{ slug }}{% endif %}">edizione del {{ DEFAULT_YEAR }}!</a>
 </p>
+{%- endif -%}
 {% endblock %}
 
 {% block mission %}

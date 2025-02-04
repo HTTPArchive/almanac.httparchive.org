@@ -18,12 +18,13 @@
 {% block intro_title %}Web Almanac{% endblock %}
 {% block intro_sub_title %}Щорічний звіт HTTP&nbsp;Archive<br>про <b>стан вебу</b>{% endblock %}
 
-{% block announcement_text %}
+{% block announcement_text -%}
+{%- if year < DEFAULT_YEAR -%}
 <p lang="en">
-  Join our second live stream for this year's edition on Thursday, 16th January 2025 on
-  <a href="https://www.youtube.com/live/zCiMls26CL8?si=eMsU_MmNYdL-UB4Z">YouTube</a>,
-  or save the <a href="/static/live-stream2.ics">calendar event</a>!
+  Ви переглядаєте попереднє видання веб-альманаху.
+  Перегляньте випуск <a href="/{{ lang }}/{{ DEFAULT_YEAR }}/{% if chapter_lang_exists(lang, DEFAULT_YEAR, slug) or page_lang_exists(lang, DEFAULT_YEAR, slug) %}{{ slug }}{% endif %}">{{ DEFAULT_YEAR }} року!</a>
 </p>
+{%- endif -%}
 {% endblock %}
 
 {% block mission %}

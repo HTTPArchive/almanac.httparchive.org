@@ -18,12 +18,13 @@
 {% block intro_title %}Web Almanac{% endblock %}
 {% block intro_sub_title %}HTTP Archive&#8217;s annual<br> <b>state of the web</b> report{% endblock %}
 
-{% block announcement_text %}
+{% block announcement_text -%}
+{%- if year < DEFAULT_YEAR -%}
 <p lang="en">
-  Join our second live stream for this year's edition on Thursday, 16th January 2025 on
-  <a href="https://www.youtube.com/live/zCiMls26CL8?si=eMsU_MmNYdL-UB4Z">YouTube</a>,
-  or save the <a href="/static/live-stream2.ics">calendar event</a>!
+  You're viewing a previous edition of the Web Almanac.
+  Check out the <a href="/{{ lang }}/{{ DEFAULT_YEAR }}/{% if chapter_lang_exists(lang, DEFAULT_YEAR, slug) or page_lang_exists(lang, DEFAULT_YEAR, slug) %}{{ slug }}{% endif %}">{{ DEFAULT_YEAR }} edition!</a>
 </p>
+{%- endif -%}
 {% endblock %}
 
 {% block mission %}
