@@ -33,9 +33,9 @@ See [our contributing guide](CONTRIBUTING.md). To run the Web Almanac locally pl
 <!--
 We are currently working on the 2024 version. If you would like to get involved, here's a [list of chapters](https://github.com/HTTPArchive/almanac.httparchive.org/issues?q=is%3Aissue+is%3Aopen+label%3A%222024+chapter%22) looking for help.
 -->
-We've just finished the 2024 edition and haven't begun organizing the 2025 edition yet, but if you'd be interested to contribute, you can sign up to be notified when the project planning kicks off by filling out [this interest form](https://forms.gle/Juz3Ak7RkV6oSBKNA). Check off all teams that interest you and give a detailed description of what your areas of expertise are so we can reach out to you with targeted opportunities.
+We've just finishing the 2024 edition and haven't begun organizing the 2025 edition yet, but if you'd be interested to contribute, you can sign up to be notified when the project planning kicks off by filling out [this interest form](https://forms.gle/Juz3Ak7RkV6oSBKNA). Check off all teams that interest you and give a detailed description of what your areas of expertise are so we can reach out to you with targeted opportunities.
 
-In the meantime, enjoy the [2024 edition](https://almanac.httparchive.org) and we're still open to contributions in the form of [translations](https://github.com/HTTPArchive/almanac.httparchive.org/issues?q=is%3Aissue+is%3Aopen+label%3Atranslation), [development](https://github.com/HTTPArchive/almanac.httparchive.org/issues?q=is%3Aissue+is%3Aopen+label%3Adevelopment) or bug fixes.
+In the meantime, enjoy the chapters already published in the [2024 edition](https://almanac.httparchive.org) and we're still open to contributions in the form of [translations](https://github.com/HTTPArchive/almanac.httparchive.org/issues?q=is%3Aissue+is%3Aopen+label%3Atranslation), [development](https://github.com/HTTPArchive/almanac.httparchive.org/issues?q=is%3Aissue+is%3Aopen+label%3Adevelopment) or bug fixes.
 
 ## Where to find us
 
