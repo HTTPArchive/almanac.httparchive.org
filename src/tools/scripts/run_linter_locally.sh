@@ -22,7 +22,7 @@ if [ -d "src" ]; then
 fi
 
 # Annoyingly super-linter includes node_modules and env which take a long time
-# https://github.com/github/super-linter/issues/985
+# https://github.com/super-linter/super-linter/issues/985
 # So let's copy to /tmp folder and lint from there. It has the added advantage
 # of us being able to lint specific subsets of files easily.
 

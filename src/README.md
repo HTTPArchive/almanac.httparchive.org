@@ -176,10 +176,10 @@ It is possible to run the Super-Linter locally if you have Docker installed.
 
 **Note:** Be aware that this is a BIG Docker image and takes a while to download. For simple linting error details you can rely on GitHub telling you the errors rather than running it locally. For SQL linting we can run this outside of the GitHub Super-Linter (see [below](#linting-sql-files)).
 
-First up pull the Super-Linter Docker image (this takes some time to download but only need to do this once or when you want to upgrade the version of the super-linter):
+First up pull the Super-Linter Docker image (this takes some time to download but only need to do this once or when you want to upgrade the version of the super-linter; the super-linter image is not available for arm64, use `--platform linux/amd64` if you are on an arm64 machine):
 
 ```
-docker pull github/super-linter/slim:latest
+docker pull ghcr.io/super-linter/super-linter/slim:latest
 ```
 
 Then to run the linting do this:
@@ -429,11 +429,11 @@ docker image build --build-arg PYVER=3.12 --build-arg NODEVER=20.x --build-arg S
 This will depend on your operating system but for MacOS/Linux this would be:
 
 ```
-docker container run -it --rm -v /app/node_modules -v "$PWD/..":/app -w /app/src --entrypoint=./tools/scripts/run_linter_locally.sh github/super-linter:slim-latest
+docker container run -it --rm -v /app/node_modules -v "$PWD/..":/app -w /app/src --entrypoint=./tools/scripts/run_linter_locally.sh super-linter/super-linter:slim-latest
 ```
 
 And for Windows:
 
 ```
-docker container run --rm -v /app/node_modules -v %cd%\\..:/app -w /app/src --entrypoint=./tools/scripts/run_linter_locally.sh github/super-linter:slim-latest
+docker container run --rm -v /app/node_modules -v %cd%\\..:/app -w /app/src --entrypoint=./tools/scripts/run_linter_locally.sh super-linter/super-linter:slim-latest
 ```
