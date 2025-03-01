@@ -1,3 +1,5 @@
+/* global gtag, webVitals */
+
 function sendWebVitals() {
 
   function getLoafAttribution(attribution) {
@@ -75,7 +77,7 @@ function sendWebVitals() {
         };
         break;
       case 'FID':
-      case 'INP':
+      case 'INP': {
         const loafAttribution = getLoafAttribution(attribution);
         overrides = {
           debug_event: attribution.interactionType,
@@ -88,6 +90,7 @@ function sendWebVitals() {
           ...loafAttribution
         };
         break;
+      }
       case 'LCP':
         overrides = {
           debug_url: attribution.url,

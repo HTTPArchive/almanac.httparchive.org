@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+
 var parsel = (() => {
 const TOKENS = {
   attribute: /\[\s*(?:(?<namespace>\*|[-\w]*)\|)?(?<name>[-\w\u{0080}-\u{FFFF}]+)\s*(?:(?<operator>\W?=)\s*(?<value>.+?)\s*(?<caseSensitive>[iIsS])?\s*)?\]/gu,

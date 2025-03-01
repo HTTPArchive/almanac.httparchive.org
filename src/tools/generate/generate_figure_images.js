@@ -33,12 +33,12 @@ const generate_images = async (chapter_match) => {
     // Remove any trailing .md and replace all paths with brackets to capture components
     // en/2019/javascript.md -> (en)/(2019)/(javascript).md
     chapter_match = chapter_match.replace(/\.md$/,'');
-    chapter_match = chapter_match.replace(/^content[\/\\]*/,'');
+    chapter_match = chapter_match.replace(/^content[\/\\]*/,''); // eslint-disable-line no-useless-escape
     chapter_match = (process.platform != 'win32')
-                ? 'content\/' +  '(' + chapter_match.replace(/\//g,')/(') + ').md'
+                ? 'content\/' +  '(' + chapter_match.replace(/\//g,')/(') + ').md' // eslint-disable-line no-useless-escape
                 : 'content\\\\' +  '(' + chapter_match.replace(/\//g,')\\\\(') + ').md';
 
-    re = new RegExp(chapter_match);
+    let re = new RegExp(chapter_match);
   } else {
     console.log('Please provide an argument of the form: en/2020/performance');
     process.exit(1);
@@ -83,7 +83,6 @@ const generate_images = async (chapter_match) => {
     if (!fs.existsSync(folder_path)) {
       console.log(`  Creating directory: ${folder_path}`);
       fs.mkdirSync(folder_path);
-      tested_folder_exists = true;
     }
 
     for (const match of matches) {

@@ -63,6 +63,6 @@ const writingScriptDetector = (() => {
   return detect;
 })();
 
-function detectWritingScript(codepoints, threshold) {
+function detectWritingScript(codepoints, threshold) { // eslint-disable-line no-unused-vars
   return writingScriptDetector(codepoints, threshold);
 }

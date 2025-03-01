@@ -216,7 +216,7 @@ function parse(css, options){
     var pos = position();
 
     // prop
-    var prop = match(/^(\*?[-#\/\*\\\w]+(\[[0-9a-z_-]+\])?)\s*/);
+    var prop = match(/^(\*?[-#\/\*\\\w]+(\[[0-9a-z_-]+\])?)\s*/); // eslint-disable-line no-useless-escape
     if (!prop) return;
     prop = trim(prop[0]);
 
@@ -224,7 +224,7 @@ function parse(css, options){
     if (!match(/^:\s*/)) return error("property missing ':'");
 
     // val
-    var val = match(/^((?:'(?:\\'|.)*?'|"(?:\\"|.)*?"|\([^\)]*?\)|[^};])+)/);
+    var val = match(/^((?:'(?:\\'|.)*?'|"(?:\\"|.)*?"|\([^\)]*?\)|[^};])+)/); // eslint-disable-line no-useless-escape
 
     var ret = pos({
       type: 'declaration',

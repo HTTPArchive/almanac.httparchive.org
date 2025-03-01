@@ -70,7 +70,7 @@ const find_asset_files = async () => {
 };
 
 const find_config_files = async () => {
-  const filter = (file, stats) => {
+  const filter = (file) => {
     const isJSON = file && file.search(/[0-9]{4}.json$/) != -1
 
     return !isJSON;
@@ -102,7 +102,7 @@ const get_yearly_configs = async () => {
     const re = (process.platform != 'win32')
                   ? /config\/([0-9]*).json/
                   : /config\\([0-9]*).json/;
-    const [path,year] = config_file.match(re);
+    const [path, year] = config_file.match(re); // eslint-disable-line no-unused-vars
 
     configs[year] = JSON.parse(await fs.readFile(`config/${year}.json`, 'utf8'));
 
@@ -156,7 +156,7 @@ const get_static_lang_year_files = (language_array) => {
   var languages_and_years = [];
   var languages = [];
 
-  [languages_and_years, languages] = get_languages_and_years_as_array(language_array);
+  [languages_and_years, languages] = get_languages_and_years_as_array(language_array); // eslint-disable-line no-unused-vars
 
   // Get all of the static pages for each combination of language and year
   const files = languages_and_years
@@ -172,7 +172,7 @@ const get_static_lang_files = (language_array) => {
   var languages_and_years = [];
   var languages = [];
 
-  [languages_and_years, languages] = get_languages_and_years_as_array(language_array);
+  [languages_and_years, languages] = get_languages_and_years_as_array(language_array); // eslint-disable-line no-unused-vars
 
   // Get all of the static pages for each language
   const files = languages

@@ -1,7 +1,7 @@
 const fs = require("fs");
 const https = require("https");
 
-function readFile(file, enc = "utf8") {
+function readFile(file, enc = "utf8") { // eslint-disable-line no-unused-vars
   return new Promise((resolve, reject) => {
     fs.readFile(file, enc, (err,data) => {
       if (err) {
@@ -47,12 +47,12 @@ const urls = [
 
 (async ()=>{
 
-let contents = urls.map(async url => await downloadFile(url));
+  let contents = urls.map(async url => await downloadFile(url));
 
-contents = await Promise.all(contents);
+  contents = await Promise.all(contents);
 
-contents = contents.join("\n\n");
+  contents = contents.join("\n\n");
 
-writeFile("./css-utils.js", contents);
+  writeFile("./css-utils.js", contents);
 
 })();
