@@ -35,13 +35,13 @@ function handleNavMenu() {
     // If the click was in a menu that's already open then ignore as just been opened.
     if (e.target.classList.contains('dropdown-open')) {
       return
-    };
+    }
 
     // If the click was in search nav, then ignore as don't want to close search menu.
     var searchNavs = document.querySelectorAll('.search-nav ul:not(hidden)');
     for (var i = 0; i < searchNavs.length; i++) {
       if (searchNavs[i].contains(e.target)) {
-          return
+        return
       }
     }
 
@@ -354,7 +354,7 @@ function highResolutionCanvasSupported() {
 
   return largeCanvasSupported;
 
-};
+}
 
 //If google sheets test pixel works, then can assume interactive sheets work and can remove it
 function googleSheetsPixelLoaded() {
@@ -440,7 +440,7 @@ function upgradeInteractiveFigures() {
           }
 
         }
-      };
+      }
 
       //Add a test image to check we can actually access Google Sheets
       //as it's sometimes blocked by corporate proxies and the like
@@ -603,7 +603,7 @@ function indexHighlighter() {
   for (var index = 0; index < all_headings.length; ++index) {
     var heading = all_headings[index];
     observer.observe(heading);
-  };
+  }
 
   gtag('event', 'index-highlighter', { 'event_category': 'user', 'event_label': 'enabled', 'value': 0 });
 
