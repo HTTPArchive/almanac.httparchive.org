@@ -38,7 +38,7 @@ const generate_images = async (chapter_match) => {
                 ? 'content\/' +  '(' + chapter_match.replace(/\//g,')/(') + ').md' // eslint-disable-line no-useless-escape
                 : 'content\\\\' +  '(' + chapter_match.replace(/\//g,')\\\\(') + ').md';
 
-    let re = new RegExp(chapter_match);
+    var re = new RegExp(chapter_match); // eslint-disable-line no-unused-vars
   } else {
     console.log('Please provide an argument of the form: en/2020/performance');
     process.exit(1);
@@ -49,7 +49,7 @@ const generate_images = async (chapter_match) => {
     let path, language, year, chapter;
 
     try {
-      [path, language, year, chapter] = file.match(re);
+      [path, language, year, chapter] = file.match(re); // eslint-disable-line no-unused-vars, no-undef
     } catch(error) {
       // No match - skip to next in for loop
       continue;

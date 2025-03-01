@@ -56,7 +56,7 @@ function tokenizeBy (text, grammar) {
 
   var strarr = [text];
 
-  tokenloop: for (var token in grammar) {
+  for (var token in grammar) {
     let pattern = grammar[token];
 
     for (var i=0; i < strarr.length; i++) { // Don’t cache length as it changes during the loop

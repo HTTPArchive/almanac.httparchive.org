@@ -2,7 +2,7 @@
 // https://github.com/visionmedia/css-parse/pull/49#issuecomment-30088027
 var commentre = /\/\*[^*]*\*+([^/*][^*]*\*+)*\//g
 
-function parse(css, options){
+function parse(css, options){ // eslint-disable-line no-unused-vars
   options = options || {};
 
   /**
@@ -28,7 +28,7 @@ function parse(css, options){
    */
 
   function position() {
-    var start = { line: lineno, column: column };
+    //var start = { line: lineno, column: column };
     return function(node){
       //node.position = new Position(start);
       whitespace();
@@ -151,7 +151,7 @@ function parse(css, options){
 
   function comments(rules) {
     var c;
-    rules = rules || [];
+    rules = (rules || []);
     while (c = comment()) {
       if (c !== false) {
         //rules.push(c);
@@ -250,10 +250,10 @@ function parse(css, options){
 
     // declarations
     var decl;
-    while (decl = declaration()) {
+    while ((decl = declaration())) {
       if (decl !== false) {
-        decls.push(decl);
-        comments(decls);
+      decls.push(decl);
+      comments(decls);
       }
     }
 
@@ -270,7 +270,7 @@ function parse(css, options){
     var vals = [];
     var pos = position();
 
-    while (m = match(/^((\d+\.\d+|\.\d+|\d+)%?|[a-z]+)\s*/)) {
+    while ((m = match(/^((\d+\.\d+|\.\d+|\d+)%?|[a-z]+)\s*/))) {
       vals.push(m[1]);
       match(/^,\s*/);
     }
@@ -304,7 +304,7 @@ function parse(css, options){
 
     var frame;
     var frames = comments();
-    while (frame = keyframe()) {
+    while ((frame = keyframe())) {
       frames.push(frame);
       frames = frames.concat(comments());
     }
@@ -422,7 +422,7 @@ function parse(css, options){
 
     // declarations
     var decl;
-    while (decl = declaration()) {
+    while ((decl = declaration())) {
       decls.push(decl);
       decls = decls.concat(comments());
     }
@@ -476,7 +476,7 @@ function parse(css, options){
 
     // declarations
     var decl;
-    while (decl = declaration()) {
+    while ((decl = declaration())) {
       decls.push(decl);
       decls = decls.concat(comments());
     }

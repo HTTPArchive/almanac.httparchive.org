@@ -60,8 +60,8 @@ function handleNavMenu() {
       e.preventDefault();
       focusableElem.focus();
     } else if (e.key === "ArrowUp") {
-      var siblingElem = isInFooter ? e.target.parentElement.nextElementSibling : e.target.parentElement.previousElementSibling;
-      var focusableElem = siblingElem ? siblingElem.querySelector('a') : (isInFooter ? firstFocusableElementInList : lastFocusableElementInList);
+      var siblingElem = isInFooter ? e.target.parentElement.nextElementSibling : e.target.parentElement.previousElementSibling; // eslint-disable-line no-redeclare
+      var focusableElem = siblingElem ? siblingElem.querySelector('a') : (isInFooter ? firstFocusableElementInList : lastFocusableElementInList); // eslint-disable-line no-redeclare
       e.preventDefault();
       focusableElem.focus();
     } else if (e.key === "Escape") {
