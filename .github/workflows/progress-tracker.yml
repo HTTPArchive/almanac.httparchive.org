@@ -18,7 +18,7 @@ jobs:
   track-progress:
     name: Track Progress
     if: github.repository == 'HTTPArchive/almanac.httparchive.org'
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/github-script@v7
         if: github.event_name == 'workflow_dispatch' || contains(github.event.issue.labels.*.name, env.FILTER_LABEL)
