@@ -589,7 +589,7 @@ function walkDeclarations(rules, callback, test) {
         let {property, value} = declaration;
         let important = false;
 
-        value = value.replace(/\s*!important\s*$/, $0 => {
+        value = value.replace(/\s*!important\s*$/, () => {
           important = true;
           return "";
         });

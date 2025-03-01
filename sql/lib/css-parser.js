@@ -296,7 +296,7 @@ function parse(css, options){
     var vendor = m[1];
 
     // identifier
-    var m = match(/^([-\w]+)\s*/);
+    m = match(/^([-\w]+)\s*/);
     if (!m) return error("@keyframes missing name");
     var name = m[1];
 

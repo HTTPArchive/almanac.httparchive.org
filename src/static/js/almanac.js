@@ -1,3 +1,4 @@
+/* global gtag */
 // These are the core menu options
 
 // Language, Year and ToC select switcher (mobile)
@@ -370,13 +371,13 @@ function googleSheetsPixelNotLoaded() {
   this.parentElement.removeChild(this);
 
   var all_fig_imgs = document.querySelectorAll('figure .fig-mobile');
-  for (var index = 0; index < all_fig_imgs.length; ++index) {
+  for (let index = 0; index < all_fig_imgs.length; ++index) {
     var fig_img = all_fig_imgs[index];
     fig_img.classList.remove("fig-mobile");
   }
 
   var all_fig_iframes = document.querySelectorAll('figure .fig-iframe');
-  for (var index = 0; index < all_fig_iframes.length; ++index) {
+  for (let index = 0; index < all_fig_iframes.length; ++index) {
     var fig_iframe = all_fig_iframes[index];
     fig_iframe.parentElement.removeChild(fig_iframe);
   }
@@ -653,7 +654,7 @@ function addKeyboardScollableRegions() {
 
   // Handle tables that have overflowed
   var all_table_containers = document.querySelectorAll('.table-wrap-container');
-  for (var index = 0; index < all_table_containers.length; ++index) {
+  for (let index = 0; index < all_table_containers.length; ++index) {
     var table_container = all_table_containers[index];
 
     if (table_container.scrollWidth > table_container.clientWidth) {
@@ -674,7 +675,7 @@ function addKeyboardScollableRegions() {
 
   // Handle code blocks that have overflowed
   var all_pre_elements = document.querySelectorAll('pre');
-  for (var index = 0; index < all_pre_elements.length; ++index) {
+  for (let index = 0; index < all_pre_elements.length; ++index) {
     var pre_element = all_pre_elements[index];
 
     if (pre_element.scrollWidth > pre_element.clientWidth) {
@@ -723,7 +724,7 @@ function indexMenu() {
     return;
   }
 
-  indexBoxTitle.addEventListener('click', function (e) {
+  indexBoxTitle.addEventListener('click', function () {
     var indexOpen = indexBox.classList.toggle('show');
     indexBoxTitle.setAttribute('aria-expanded', indexOpen);
     var ariaLabel = indexOpen ? indexBoxTitle.getAttribute('data-close-text') : indexBoxTitle.getAttribute('data-open-text');
