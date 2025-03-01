@@ -152,7 +152,7 @@ function parse(css, options){ // eslint-disable-line no-unused-vars
   function comments(rules) {
     var c;
     rules = (rules || []);
-    while (c = comment()) {
+    while ((c = comment())) {
       if (c !== false) {
         //rules.push(c);
       }
