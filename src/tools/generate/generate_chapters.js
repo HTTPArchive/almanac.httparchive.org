@@ -67,9 +67,9 @@ const generate_chapters = async (chapter_match) => {
     // Remove any trailing .md and replace all paths with brackets to capture components
     // en/2019/javascript.md -> (en)/(2019)/(javascript).md
     chapter_match = chapter_match.replace(/\.md$/,'');
-    chapter_match = chapter_match.replace(/^content[\/\\]*/,'');
+    chapter_match = chapter_match.replace(/^content[/\\]*/,'');
     chapter_match = (process.platform != 'win32')
-                ? 'content\/' +  '(' + chapter_match.replace(/\//g,')/(') + ').md'
+                ? 'content/' +  '(' + chapter_match.replace(/\//g,')/(') + ').md'
                 : 'content\\\\' +  '(' + chapter_match.replace(/\\/g,')\\\\(') + ').md';
     re = new RegExp(chapter_match);
   } else {

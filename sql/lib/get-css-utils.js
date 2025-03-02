@@ -1,18 +1,6 @@
 const fs = require("fs");
 const https = require("https");
 
-function readFile(file, enc = "utf8") { // eslint-disable-line no-unused-vars
-  return new Promise((resolve, reject) => {
-    fs.readFile(file, enc, (err,data) => {
-      if (err) {
-        reject(err);
-      }
-
-      resolve(data);
-    });
-  });
-}
-
 function writeFile(file, contents, enc) {
   return new Promise((resolve, reject) => {
     fs.writeFile(file, contents, enc, (err) => {

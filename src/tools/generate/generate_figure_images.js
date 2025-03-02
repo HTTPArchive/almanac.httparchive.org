@@ -33,9 +33,9 @@ const generate_images = async (chapter_match) => {
     // Remove any trailing .md and replace all paths with brackets to capture components
     // en/2019/javascript.md -> (en)/(2019)/(javascript).md
     chapter_match = chapter_match.replace(/\.md$/,'');
-    chapter_match = chapter_match.replace(/^content[\/\\]*/,'');
+    chapter_match = chapter_match.replace(/^content[/\\]*/,'');
     chapter_match = (process.platform != 'win32')
-                ? 'content\/' +  '(' + chapter_match.replace(/\//g,')/(') + ').md'
+                ? 'content/' +  '(' + chapter_match.replace(/\//g,')/(') + ').md'
                 : 'content\\\\' +  '(' + chapter_match.replace(/\//g,')\\\\(') + ').md';
 
     re = new RegExp(chapter_match);
@@ -46,10 +46,10 @@ const generate_images = async (chapter_match) => {
 
   for (const file of await find_markdown_files()) {
 
-    let path, language, year, chapter;
+    let language, year, chapter;
 
     try {
-      [path, language, year, chapter] = file.match(re);
+      [, language, year, chapter] = file.match(re);
     } catch(error) {
       // No match - skip to next in for loop
       continue;
