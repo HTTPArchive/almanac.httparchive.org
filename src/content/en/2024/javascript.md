@@ -400,19 +400,19 @@ The remaining landscape shows that about 12-13% of requests still arrive uncompr
 {{ figure_markup(
   image="compression-methods-of-script-resources-by-host.png",
   caption="Compression methods of script resources by host.",
-  description="Bar chart of TODO.",
+  description="Bar chart of compression methods by first and third-party. For Brotli (`br`) it's 45% first-party and 60% of third-party resources, for gzip (`gzip`) it's 60% first-party and 29% of third-party resources, for not set (`br`) it's 15% first-party and 12% of third-party resources, and finally for Deflate (`deflate`) it's 0%  for both first-party and third-party resources.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTCTcjvYejhJMWHZwhCSCVm3cbTzqq8pdJRqC6wnBnbsTvPvHu5rTOTbX4_6gWHx-urn-pccmk9bhT3/pubchart?oid=539033561&format=interactive",
   sheets_gid="271400568",
   sql_file="compression_method_by_3p.sql"
   )
 }}
 
-An interesting contrast is seen when looking at third party scripts making gzip a clear winner again. Looking at the trends, gzip is still the primary compression method used with a 60% vs 29% comparison. This shows the missed performance gains due to a lot of third-party JavaScript still being deployed without brotli compression.
+An interesting contrast is seen when looking at third-party scripts making gzip a clear winner again. Looking at the trends, gzip is still the primary compression method used with a 60% vs 29% comparison. This shows the missed performance gains due to a lot of third-party JavaScript still being deployed without brotli compression.
 
 {{ figure_markup(
   image="uncompressed-resources-by-host.png",
   caption="Uncompressed resources by host.",
-  description="Bar chart of TODO.",
+  description="Barchart showing uncompressed resources by host type across various kilobytes. For first-party, 0 kilobytes are 56% of uncompressed resources, 5 kilobytes are 10%, 10 kilobytes are 7%, 15 kilobytes are 4%, 20 kilobytes are 3%, 25 kilobytes are 1%, 30 kilobytes are 1%, 35 kilobytes are 2%, 40 kilobytes are 1%, 45 kilobytes are 1%, 50 kilobytes are 1%, 55 kilobytes are 1%, 60 kilobytes are 1%, 65 kilobytes are 1%, 70 kilobytes are 0%, 75 kilobytes are 0%, 80 kilobytes are 1%, 85 kilobytes are 2%, 90 kilobytes are 1%, 95 kilobytes are 0%, 100 kilobytes are 6%. Third-party has 0 kilobytes being 93% of uncompressed resources, 5 kilobytes are 2%, 10 kilobytes are 1%, 15 kilobytes are 0%, 20 kilobytes are 1%, 25-95 are 0%, and 100 kilobytes are 1%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTCTcjvYejhJMWHZwhCSCVm3cbTzqq8pdJRqC6wnBnbsTvPvHu5rTOTbX4_6gWHx-urn-pccmk9bhT3/pubchart?oid=1830077596&format=interactive",
   sheets_gid="947283086",
   sql_file="compression_none_by_bytes.sql"
@@ -444,7 +444,7 @@ function c(a,b){let r=a+b;return r}
 {{ figure_markup(
   image="distribution-of-unminified-javascript-audit-scores.png",
   caption="Distribution of unminified JavaScript audit scores.",
-  description="Bar chart of TODO.",
+  description="Bar chart of unminified JavaScript audit scores by desktop and mobile. Desktop has 9% of pages with a score of 0.0, 31% with a score of 0.50, and 60% with a score of 1.00. Mobile has 20% with 0.00, 18% with a core of 0.50, and 62% with a scrore of 1.00.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTCTcjvYejhJMWHZwhCSCVm3cbTzqq8pdJRqC6wnBnbsTvPvHu5rTOTbX4_6gWHx-urn-pccmk9bhT3/pubchart?oid=127145587&format=interactive",
   sheets_gid="1963564843",
   sql_file="lighthouse_unminified_js.sql"
@@ -456,7 +456,7 @@ Here, 0.00 represents the worst score whereas 1.00 represents the best score. 62
 {{ figure_markup(
   image="unminified-javascript-bytes-per-page.png",
   caption="Unminified JavaScript bytes per page.",
-  description="Bar chart of TODO.",
+  description="Barchart showing unminified JavaScript bytes by desktop and mobile. For 0 kilobytes it's 61.27% for desktop and 63.81% for mobile, for 10 kilobytes it's 14.97% and 14.50% respectively, for 20 it's 7.43% and 7.03%, for 30 it's 4.00% and 3.71%, for 40 it's 2.55% and 2.29%, for 50 it's 1.93% and 1.74%, for 60 it's 1.42% and 1.22%, for 70 it's 0.97% and 0.81%, for 80 it's 0.75% and 0.65%, for 90 it's 0.62% and 0.52%, for 100 it's 0.46% and 0.42%, for 110 it's 0.33% and 0.31%, for 120 it's 0.29% and 0.28%, for 130 it's 0.26% and 0.24%, for 140 it's 0.25% and 0.25%, for 150 it's 0.26% and 0.22%, for 160 it's 0.18% and 0.19%, for 170 it's 0.13% and 0.12%, for 180 it's 0.12% and 0.14%, for 190 it's 0.12% and 0.11%, and finally for 200 it's 1.67% and 1.44%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTCTcjvYejhJMWHZwhCSCVm3cbTzqq8pdJRqC6wnBnbsTvPvHu5rTOTbX4_6gWHx-urn-pccmk9bhT3/pubchart?oid=1457149352&format=interactive",
   sheets_gid="1469161400",
   sql_file="lighthouse_unminified_js_bytes.sql"
@@ -468,7 +468,7 @@ At the median, we see that pages are shipping around 12 KB of JavaScript that ca
 {{ figure_markup(
   image="average-wasted-bytes-of-unminified-javascript.png",
   caption="Average wasted bytes of unminified JavaScript.",
-  description="Pie chart of TODO.",
+  description="Pie chart of average wasted bytes of unminified JavaScript showing 82.7% is first-party and 17.3% is third-party.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTCTcjvYejhJMWHZwhCSCVm3cbTzqq8pdJRqC6wnBnbsTvPvHu5rTOTbX4_6gWHx-urn-pccmk9bhT3/pubchart?oid=1906849262&format=interactive",
   sheets_gid="111413017",
   sql_file="lighthouse_unminified_js_by_3p.sql"
@@ -523,7 +523,7 @@ Many metrics are used to assess responsiveness in both the lab and the field, an
 {{ figure_markup(
   image="distribution-of-inp-by-origin.png",
   caption="Distribution of INP by origin.",
-  description="Bar chart of TODO.",
+  description="Bar chart of distribution of INP across desktop and mobile. For desktop it's 25 milliseconds at the 10th percentile, 50 milliseconds at the 25th, 75 milliseconds at the 50th, 125 milliseconds at the 75th, and 225 milliseconds at the 90th percentile. For mobile is's a little higher at each percentile with 50 milliseconds at the 10th percentile, 75 at the 25th, 100 at the 50th, 150 at the 75th, and 275 milliseconds at the 90th percentile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTCTcjvYejhJMWHZwhCSCVm3cbTzqq8pdJRqC6wnBnbsTvPvHu5rTOTbX4_6gWHx-urn-pccmk9bhT3/pubchart?oid=1787373547&format=interactive",
   sheets_gid="94761497",
   sql_file="inp.sql"
@@ -539,7 +539,7 @@ A "good" INP score is 200 milliseconds or less. At the median (50th percentile),
 {{ figure_markup(
   image="distribution-of-tbt.png",
   caption="Distribution of TBT.",
-  description="Bar chart of TODO.",
+  description="Bar chart of distribution of TBT across desktop and mobile. For desktop it's 0 milliseconds at the 10th percentile, 0 milliseconds at the 25th, 67 milliseconds at the 50th, 279 milliseconds at the 75th, and 707 milliseconds at the 90th percentile. For mobile is's much higher at each percentile with 83 milliseconds at the 10th percentile, 416 at the 25th, 1,208 at the 50th, 2,988 at the 75th, and 5,950 milliseconds at the 90th percentile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTCTcjvYejhJMWHZwhCSCVm3cbTzqq8pdJRqC6wnBnbsTvPvHu5rTOTbX4_6gWHx-urn-pccmk9bhT3/pubchart?oid=2035948582&format=interactive",
   sheets_gid="1798282039",
   sql_file="tbt.sql"
@@ -561,7 +561,7 @@ Long tasks are a problem because they block the main thread from doing any other
 {{ figure_markup(
   image="distribution-of-number-of-long-tasks-per-page.png",
   caption="Distribution of number of long tasks per page.",
-  description="Bar chart of TODO.",
+  description="Bar chart of distribution of long tasks across desktop and mobile. For desktop it's one long task at the 10th percentile, 2 at the 25th, 3 at the 50th, 6 at the 75th, and 11 at the 90th percentile. For mobile is's much higher at each percentile with 4 at the 10th percentile, 8 at the 25th, 14 at the 50th, 24 at the 75th, and 38 at the 90th percentile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTCTcjvYejhJMWHZwhCSCVm3cbTzqq8pdJRqC6wnBnbsTvPvHu5rTOTbX4_6gWHx-urn-pccmk9bhT3/pubchart?oid=38515194&format=interactive",
   sheets_gid="539796368",
   sql_file="distribution_of_number_of_long_tasks.sql"
@@ -575,7 +575,7 @@ However, the situation worsens at higher percentiles. At the 75th percentile, mo
 {{ figure_markup(
   image="distribution-of-long-tasks-time-per-page.png",
   caption="Distribution of long tasks time per page.",
-  description="Bar chart of TODO.",
+  description="Bar chart of distribution of long tasks time across desktop and mobile. For desktop it's 90 milliseconds at the 10th percentile, 164 milliseconds at the 25th, 329 milliseconds at the 50th, 688 milliseconds at the 75th, and 1,343 milliseconds at the 90th percentile. For mobile is's much higher at each percentile with 539 milliseconds at the 10th percentile, 1,152 at the 25th, 2,366 at the 50th, 4,483 at the 75th, and 7,770 milliseconds at the 90th percentile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTCTcjvYejhJMWHZwhCSCVm3cbTzqq8pdJRqC6wnBnbsTvPvHu5rTOTbX4_6gWHx-urn-pccmk9bhT3/pubchart?oid=1576475306&format=interactive",
   sheets_gid="560197680",
   sql_file="distribution_of_long_tasks_time.sql"
@@ -657,7 +657,7 @@ To understand the usage of libraries and frameworks, HTTP Archive uses [Wappalyz
 {{ figure_markup(
   image="adoption-of-top-libraries-and-frameworks.png",
   caption="Adoption of top libraries and frameworks.",
-  description="Bar chart of TODO.",
+  description="Barchart showing adoption of top libraries and frameworks by desktop and mobile. jQuery is used on 75% of desktop pages, and 74% of mobile, core-js is 42% and 41% respectively, jQuery Migrate is 33% and 33% jQuery UI it's 23% and 22%, Swiper it's 15% for both%, Lodash it's 12% and 11%, Modernizr it's 11% for both, React it's 10% for both, GSAP it's 9% for both, OWL Carousel it's 8% for both, Slick it's 8% for both, LazySizes it's 8% for both, FancyBox it's 7% for both, Isotope it's 7% for both, Underscore.js it's 6% for both..",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTCTcjvYejhJMWHZwhCSCVm3cbTzqq8pdJRqC6wnBnbsTvPvHu5rTOTbX4_6gWHx-urn-pccmk9bhT3/pubchart?oid=400487834&format=interactive",
   sheets_gid="345976742",
   sql_file="frameworks_libraries.sql",
