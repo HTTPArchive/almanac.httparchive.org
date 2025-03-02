@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+
 var parsel = (() => {
 const TOKENS = {
   attribute: /\[\s*(?:(?<namespace>\*|[-\w]*)\|)?(?<name>[-\w\u{0080}-\u{FFFF}]+)\s*(?:(?<operator>\W?=)\s*(?<value>.+?)\s*(?<caseSensitive>[iIsS])?\s*)?\]/gu,
@@ -54,7 +56,7 @@ function tokenizeBy (text, grammar) {
 
   var strarr = [text];
 
-  tokenloop: for (var token in grammar) {
+  for (var token in grammar) {
     let pattern = grammar[token];
 
     for (var i=0; i < strarr.length; i++) { // Don’t cache length as it changes during the loop
@@ -589,7 +591,7 @@ function walkDeclarations(rules, callback, test) {
         let {property, value} = declaration;
         let important = false;
 
-        value = value.replace(/\s*!important\s*$/, $0 => {
+        value = value.replace(/\s*!important\s*$/, () => {
           important = true;
           return "";
         });

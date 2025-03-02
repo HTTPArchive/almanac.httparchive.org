@@ -1,18 +1,6 @@
 const fs = require("fs");
 const https = require("https");
 
-function readFile(file, enc = "utf8") {
-  return new Promise((resolve, reject) => {
-    fs.readFile(file, enc, (err,data) => {
-      if (err) {
-        reject(err);
-      }
-
-      resolve(data);
-    });
-  });
-}
-
 function writeFile(file, contents, enc) {
   return new Promise((resolve, reject) => {
     fs.writeFile(file, contents, enc, (err) => {
@@ -47,12 +35,12 @@ const urls = [
 
 (async ()=>{
 
-let contents = urls.map(async url => await downloadFile(url));
+  let contents = urls.map(async url => await downloadFile(url));
 
-contents = await Promise.all(contents);
+  contents = await Promise.all(contents);
 
-contents = contents.join("\n\n");
+  contents = contents.join("\n\n");
 
-writeFile("./css-utils.js", contents);
+  writeFile("./css-utils.js", contents);
 
 })();
