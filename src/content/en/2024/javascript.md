@@ -30,14 +30,14 @@ We will analyze the volume of JavaScript being deployed by web developers. Gaini
 {{ figure_markup(
   image="median-javascript-kilobytes-per-page.png",
   caption="Median JavaScript kilobytes per page.",
-  description="Bar chart of TODO.",
+  description="Bar chart of median JavaScript usage from 2019 to 2024 showing a steady increase. Median JavaScript on desktop increased from 391 kilobytes, to 444, to 463, to 509, to 538, to 613 kilobytes in 2024. On mobile, median JavaScript on desktop increased from 359 kilobytes in 2019, to 411, to 427, to 461, to 491, to 558 kilobytes in 2024.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTCTcjvYejhJMWHZwhCSCVm3cbTzqq8pdJRqC6wnBnbsTvPvHu5rTOTbX4_6gWHx-urn-pccmk9bhT3/pubchart?oid=1181894330&format=interactive",
   sheets_gid="1824580205",
   sql_file="bytes_2024.sql"
   )
 }}
 
-There has been a continuous increase in the volume of JavaScript, with the only exception being a dip in 2023. In 2024, this upward trend resumed, with the median JavaScript payload rising by 21% on mobile devices, reaching 1,762 kilobytes across 90% of websites. On desktops, the median payload increased by 20%, reaching 1,882 kilobytes for 90% of websites. This ongoing trend is concerning. While device capabilities are improving, not everyone has access to the latest technology. Larger JavaScript bundles place additional strain on device resources, impacting performance, especially for users with older or less powerful hardware.
+There has been a continuous increase in the volume of JavaScript. In 2024, this upward trend resumed, with the median JavaScript payload rising by 14%, reaching 558 kilobytes on mobile and 613 kilobytes on desktops  . This ongoing trend is concerning. While device capabilities are improving, not everyone has access to the latest technology. Larger JavaScript bundles place additional strain on device resources, impacting performance, especially for users with older or less powerful hardware.
 
 ## How many JavaScript requests per page?
 
@@ -46,7 +46,7 @@ Every resource on a web page sparks at least one request, but it can snowball qu
 {{ figure_markup(
   image="median-javascript-requests-per-page.png",
   caption="Median JavaScript requests per page.",
-  description="Bar chart of TODO.",
+  description="Bar chart of median JavaScript requests from 2019 to 2024 showing a steady increase. On desktop usage increased from 19 in 2019 to 23 in 2024, while on mobile it increased from 18 to 22 requests in the same time.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTCTcjvYejhJMWHZwhCSCVm3cbTzqq8pdJRqC6wnBnbsTvPvHu5rTOTbX4_6gWHx-urn-pccmk9bhT3/pubchart?oid=2056554025&format=interactive",
   sheets_gid="342139378",
   sql_file="requests_2024.sql"
@@ -64,12 +64,14 @@ While these increases might appear modest at first glance, they signal a continu
 {{ figure_markup(
   image="distribution-of-unused-javascript.png",
   caption="Distribution of unused JavaScript.",
-  description="Bar chart of TODO.",
+  description="Bar chart showing unused JavaScript byes by percentile. On desktop it's 21 kilobytes at the 10th perccentile, 87 at the 25th, 235 at the median, 509 at the 75th, and 923 at the 90th percentile. On mobile it's 0 kilobytes at the 10th percentile, 74 at the 25th, 206 at the median, 450 at the 75th and 818 kilobytes 90th percentile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTCTcjvYejhJMWHZwhCSCVm3cbTzqq8pdJRqC6wnBnbsTvPvHu5rTOTbX4_6gWHx-urn-pccmk9bhT3/pubchart?oid=762521448&format=interactive",
   sheets_gid="1175581542",
   sql_file="unused_js_bytes_distribution.sql"
   )
 }}
+
+Along with this increase in JavaScript, we see an increase in unused bytes of JavaScript with approximately half the bytes downloaded being unused during page load.
 
 ## How is JavaScript packaged processed?
 
@@ -82,19 +84,19 @@ JavaScript bundlers, like Webpack and Parcel, package multiple JavaScript files 
 {{ figure_markup(
   image="sites-using-webpack-grouped-by-rank.png",
   caption="Sites using webpack grouped by rank.",
-  description="Bar chart of TODO.",
+  description="Bar chart showing webpack usage by rank. For desktop it's 15% for the top 1,000 sites, 17% for the top 10,000, 13% for the top 100,000, 9% for the top one million, 6% for the top 10 million, and 6% for all sites. For mobile it's 13% for the top 1,000 sites, 16% for the top 10,000, 13% for the top 100,000, 9% for the top million, and 5% for the top ten million and 5% for all sites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTCTcjvYejhJMWHZwhCSCVm3cbTzqq8pdJRqC6wnBnbsTvPvHu5rTOTbX4_6gWHx-urn-pccmk9bhT3/pubchart?oid=784514302&format=interactive",
   sheets_gid="1114140412",
   sql_file="usage_of_webpack_by_rank.sql"
   )
 }}
 
-Excitingly, while Webpack usage remains at a steady 5% across websites, recent trends reveal a decline in its adoption among the top 1,000 sites, both on mobile and desktop. Although 5% may seem modest, it still represents a substantial number of Web Almanac's sites.
+While Webpack usage remains at a steady 5% across websites, recent trends reveal a decline in its adoption among the top 1,000 sites, both on mobile and desktop. Although 5% may seem modest, it still represents a substantial number of Web Almanac's sites.
 
 {{ figure_markup(
   image="sites-using-parcel-grouped-by-rank.png",
   caption="Sites using Parcel grouped by rank.",
-  description="Bar chart of TODO.",
+  description="Bar chart showing Parcel usage by rank. For desktop it's 0.32% for the top 1,000 sites, 0.40% for the top 10,000, 0.51% for the top 100,000, 0.65% for the top one million, 0.54% for the top 10 million, and 0.49% for all sites. For mobile it's 0.26% for the top 1,000 sites, 0.28% for the top 10,000, 0.43% for the top 100,000, 0.58% for the top million, and 0.44% for the top ten million and 0.34% for all sites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTCTcjvYejhJMWHZwhCSCVm3cbTzqq8pdJRqC6wnBnbsTvPvHu5rTOTbX4_6gWHx-urn-pccmk9bhT3/pubchart?oid=989440772&format=interactive",
   sheets_gid="422902451",
   sql_file="usage_of_parcel_by_rank.sql"
@@ -105,7 +107,7 @@ Parcel stands as the second most popular alternative to Webpack, boasting a nota
 
 ### Transpilers
 
-In the 2022 Web Almanac, year we [looked at transpilers as a percentage of those sites with available source maps](../2022/javascript#transpilers). This year, we've changed to the percentage of overall sites. This methodology change means we're moving from a likely over counting of sites (sites using sourcemaps are, by definition, more likely to more complex web applications than need transpilation), to an under counting (as no all sites publish public source maps).
+In the 2022 Web Almanac, year we [looked at transpilers as a percentage of those sites with available source maps](../2022/javascript#transpilers). This year, we've changed to the percentage of overall sites. This methodology change means we're moving from a likely over counting of sites (sites using sourcemaps are, by definition, more likely to more complex web applications than need transpilation), to an under counting (as not all sites publish public source maps).
 
 {{ figure_markup(
   image="sites-using-babel-grouped-by-rank.png",
@@ -133,7 +135,7 @@ TypeScript is a superset of JavaScript that adds static types, which help catch 
   )
 }}
 
-Across all ranks, around 6% of pages use TypeScript, with mobile generally having slightly higher adoption. The usage is fairly consistent, though top-ranked pages (1,000) show slightly lower TypeScript adoption compared to lower-ranked ones.
+Across all ranks, around 6% of pages use TypeScript, with mobile generally having slightly higher adoption. Again, this only counts sites publishing sourcemaps. The usage is fairly consistent, though top-ranked pages (1,000) show slightly lower TypeScript adoption compared to lower-ranked ones.
 
 ## How is JavaScript requested?
 
@@ -145,7 +147,7 @@ When optimizing JavaScript loading, developers have several powerful attributes 
 
 The `async` attribute allows scripts to load asynchronously while HTML parsing continues, executing them as soon as they're available. In contrast, `defer` postpones script execution until after HTML parsing is complete, maintaining the order of deferred scripts.
 
-For modern web applications, the module attribute indicates that a script is a JavaScript module, enabling ES6 import/export syntax and strict mode by default. Complementing this, the nomodule attribute specifies fallback scripts for browsers that don't support ES6 modules, ensuring broader compatibility while allowing modern browsers to ignore these fallbacks. By strategically employing these attributes, developers can fine-tune script loading behavior to optimize page performance and user experience.
+For modern web applications, the `module` attribute indicates that a script is a JavaScript module, enabling ES6 import/export syntax and strict mode by default. Complementing this, the `nomodule` attribute specifies fallback scripts for browsers that don't support ES6 modules, ensuring broader compatibility while allowing modern browsers to ignore these fallbacks. By strategically employing these attributes, developers can fine-tune script loading behavior to optimize page performance and user experience.
 
 {{ figure_markup(
   image="how-is-javascript-requested.png",
@@ -157,11 +159,59 @@ For modern web applications, the module attribute indicates that a script is a J
   )
 }}
 
-Comparing JavaScript loading trends from 2023 to 2024 reveals notable shifts in developer practices. The use of the `async` attribute has increased significantly, from 76% to 87% on both desktop and mobile. The `defer` attribute usage has seen a modest increase from 42% to 47%. The combination of `async` and `defer` attributes has decreased slightly from 28-29% to 22%, possibly due to developers choosing one method over the other.
+Comparing JavaScript loading trends from [the last Web Almanac 2022](../javascript/#async-defer-module-and-nomodule) to 2024 reveals notable shifts in developer practices. The use of the `async` attribute has increased significantly, from 76% to 87% of pages on both desktop and mobile. The `defer` attribute usage has seen a modest increase from 42% to 47%. The combination of `async` and `defer` attributes has decreased slightly from 28-29% to 22%, possibly due to developers choosing one method over the other.
 
 `module` usage remains low at 4%, while `nomodule` shows xlose to zero adoption, indicating that modern JavaScript module systems are still not widely implemented across the web.
 
-Comparing the trends from 2023 to 2024, the overall use of `async` in scripts saw a slight decrease, maintaining its dominance but with minimal variation between desktop and mobile. The `defer` attribute usage, however, experienced a notable increase, especially on mobile, where it climbed from 9.1% to a higher percentage in 2024. The combination of `async` and `defer` remained stable over the two years, while other attributes like `module` and `nomodule` saw minimal change, continuing to have very low adoption across both desktop and mobile platforms.
+
+
+<figure>
+  <table role="table">
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>2022</th>
+        <th>2024</th>
+        <th>% change</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>async</code></td>
+        <td class="numeric">47.2%</td>
+        <td class="numeric">49.5%</td>
+        <td class="numeric">4.8%</td>
+      </tr>
+      <tr>
+        <td><code>defer</code></td>
+        <td class="numeric">9.1%</td>
+        <td class="numeric">13.0%</td>
+        <td class="numeric">43.3%</td>
+      </tr>
+      <tr>
+        <td><code>async</code> and <code>defer</code></td>
+        <td class="numeric">3.1%</td>
+        <td class="numeric">3.0%</td>
+        <td class="numeric">-3.0%</td>
+      </tr>
+      <tr>
+        <td><code>module</code></td>
+        <td class="numeric">0.4%</td>
+        <td class="numeric">1.2%</td>
+        <td class="numeric">208.8%</td>
+      </tr>
+      <tr>
+        <td><code>nomodule</code></td>
+        <td class="numeric">0.0%</td>
+        <td class="numeric">0.0%</td>
+        <td class="numeric">N/A</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="JavaScript requests by script (mobile).", sheets_gid="8375823", sql_file="breakdown_of_scripts_using_async_defer_module_nomodule.sql") }}</figcaption>
+</figure>
+
+Comparing the trends on `<script>` tags from 2022 to 2024, the overall use of `async` in scripts saw a 4.8% increase, maintaining its dominance. The `defer` attribute usage, however, experienced a notable increase, where it climbed from 9.1% to 13.0% on mobile in 2024. The combination of `async` and `defer` saw a slight decrease. The `module` attribute saw a tripling in used but continues to have very low adoption across both desktop and mobile platforms.
 
 ### `preload`, `prefetch`, and `modulepreload`
 
@@ -177,7 +227,7 @@ Resource hints play a crucial role in optimizing browser performance by indicati
   )
 }}
 
-In comparing the trends between 2023 and 2024 for resource hints adoption, preload usage dropped significantly from 16.4% on desktop in 2023 to 7.5% overall in 2024. prefetch adoption remained relatively low in both years, with a slight increase from around 1.0% in 2023 to 4.8% overall in 2024. modulepreload usage stayed very minimal across both years, hovering around 0.1% in 2023 and showing a similar low percentage of 0.7% in 2024. These shifts indicate a general decrease in resource hint usage for preload, with small improvements for prefetch across desktop and mobile.
+In comparing the trends between 2022 and 2024 for resource hints adoption, `preload` usage dropped significantly from [16.4% on desktop in 2022](../2022/javascript#preload-prefetch-and-modulepreload) to 7.5% overall in 2024. `prefetch` adoption increased considerably from around 1.0% in 2022 to 4.8% overall in 2024. `modulepreload` usage stayed very minimal across both years, hovering around 0.1% in 2022 and showing a similar low percentage of 0.7% in 2024.
 
 {{ figure_markup(
   image="distribution-of-prefetch-adoption-for-javascript-resources-per-page.png",
@@ -189,7 +239,7 @@ In comparing the trends between 2023 and 2024 for resource hints adoption, prelo
   )
 }}
 
-The distribution of `prefetch` adoption for JavaScript resources (among pages that use `prefetch`) shows that the number of prefetch hints per page tends to be higher at the upper percentiles, peaking at 15 prefetch hints for both desktop and mobile at the higher percentiles.
+The distribution of `prefetch` adoption for JavaScript resources (among pages that use `prefetch`) shows that the number of prefetch hints peaks at 15 prefetch hints from the median to 90th percentile.
 
 {{ figure_markup(
   image="distribution-of-preload-adoption-for-javascript-resources-per-page.png",
@@ -201,7 +251,7 @@ The distribution of `prefetch` adoption for JavaScript resources (among pages th
   )
 }}
 
-The distribution of `preload` adoption for JavaScript resources (among pages that use `preload`) indicates that the number of preload hints per page gradually increases from the lower percentiles, reaching 6 hints by the 90th percentile for both desktop and mobile.
+Among pages that use `preload`, there is less usage with only one `preload` at the median, increasing to six at the 90th percentile.
 
 {{ figure_markup(
   image="distribution-of-modulepreload-adoption-for-javascript-resources-per-page.png",
@@ -212,8 +262,6 @@ The distribution of `preload` adoption for JavaScript resources (among pages tha
   sql_file="resource-hints-preload-prefetch-modulepreload-distribution.sql"
   )
 }}
-
-The distribution of `modulepreload` adoption for JavaScript resources(among pages that use `modulepreload`) shows a significant increase in the number of `modulepreload` hints per page at higher percentiles, reaching 68 hints for desktop and 66 for mobile at the 90th percentile. At lower percentiles, usage remains minimal, with 1 to 12 hints between the 10th and 50th percentiles.
 
 ### Injected scripts
 
@@ -229,7 +277,7 @@ Script injection involves creating an `HTMLScriptElement` using `document.create
   )
 }}
 
-Comparing the two distributions of injected scripts, the 2024 graph shows a notable increase in the percentage of injected scripts at the 50th percentile, rising from 25% in 2022 to 21% in 2024. At higher percentiles, the trend remains consistent between the two years, with 70% of scripts being injected at the 90th percentile in both 2022 and 2024. The early percentiles saw a slight uptick in injection, but overall, the pattern of script injection has remained steady at higher resource levels.
+Comparing the two distributions of injected scripts, the 2024 graph shows a notable decrease in the percentage of injected scripts at the 50th percentile, rising from 25% in 2022 to 21% in 2024. At higher percentiles, the trend remains consistent between the two years, with 70% of scripts being injected at the 90th percentile in both 2022 and 2024. The early percentiles saw a slight uptick in injection, but overall, the pattern of script injection has remained steady at higher resource levels.
 
 ### First-party versus third-party JavaScript
 
@@ -247,7 +295,7 @@ First-party JavaScript is code that is directly served by and belongs to the web
   )
 }}
 
-Comparing the two trends, the 2024 graph shows a clear increase in third-party JavaScript requests compared to 2022, particularly at the 90th percentile, where third-party requests grew from 34 in 2022 to 36 in 2024. First-party requests also increased slightly, but the rise in third-party scripts is more pronounced. This increase in third-party JavaScript is concerning, as it can negatively impact performance, introduce security vulnerabilities, and pose privacy risks for users due to the lack of direct control over external scripts
+Comparing the two trends, the 2024 graph shows an increase in [third-party JavaScript requests compared to 2022](../2022/javascript#first-party-versus-third-party-javascript), particularly at the 90th percentile, where third-party requests grew from 34 in 2022 to 36 in 2024. First-party requests also increased slightly, but the rise in third-party scripts is more pronounced. This increase in third-party JavaScript is concerning, as it can negatively impact performance, introduce security vulnerabilities, and pose privacy risks for users due to the lack of direct control over external scripts
 
 #### Bytes
 
@@ -260,6 +308,7 @@ Comparing the two trends, the 2024 graph shows a clear increase in third-party J
   sql_file="bytes_by_3p.sql"
   )
 }}
+
 
 ### Dynamic Imports
 
@@ -296,22 +345,22 @@ The increase in mobile pages utilizing web workers from 12% to 30% marks a signi
 Worklets are a specialized class of web workers designed to provide low-level access to rendering pipelines for tasks like painting and audio processing. While there are four types of worklets in total, only paint worklets and audio worklets are currently supported by modern browsers. A key performance advantage of worklets is their ability to run independently on separate threads, offloading resource-intensive tasks from the main thread. This not only boosts efficiency but also enhances performance by keeping the main thread free for essential operations, leading to smoother visuals and seamless audio experiences.
 
 {{ figure_markup(
-  content="0.0004%",
-  caption="The percentage of mobile pages that register at least one paint worklet worklet respectively.",
+  content="0.0016%",
+  caption="The percentage of mobile pages that register at least one paint worklet.",
   classes="big-number",
   sheets_gid="1929297167",
   sql_file="worklets.sql",
 ) }}
 
 {{ figure_markup(
-  content="0.0016%",
-  caption="The percentage of mobile pages that register at least one audio worklet respectively.",
+  content="0.0004%",
+  caption="The percentage of mobile pages that register at least one audio worklet worklet.",
   classes="big-number",
   sheets_gid="1929297167",
   sql_file="worklets.sql",
 ) }}
 
-The adoption of worklets on mobile devices remains extremely low, with audio worklets used on just 0.0004% of mobile pages and paint worklets slightly higher at 0.0016%. These figures suggest that despite the potential benefits worklets offer for offloading tasks like audio processing and rendering, their usage is still far from mainstream in the mobile web development space. This could be due to their specialized functionality and the need for more widespread browser support and developer familiarity.
+The adoption of worklets on mobile devices remains extremely low, with paint worklets slightly higher at 0.0016%, a slight increase from the previous Web Almanac, and audio worklets used on just 0.0004% of mobile pages. These figures suggest that despite the potential benefits worklets offer for offloading tasks like audio processing and rendering, their usage is still far from mainstream in the mobile web development space. This could be due to their specialized functionality and the need for more widespread browser support and developer familiarity.
 
 ## How is JavaScript delivered?
 
@@ -333,7 +382,7 @@ While brotli offers better compression ratios than gzip, especially for text res
   )
 }}
 
-Turns out 2024 marks a pivotal shift in JavaScript compression trends, with Brotli (br) finally overtaking gzip as the most prevalent compression method. Brotli now commands 45% of mobile and 44% of desktop JavaScript requests, compared to gzip's 41% across both platforms. This is a remarkable transformation from 2022, when gzip led with 52% compared to Brotli's 34%, and an even more dramatic change from 2021's numbers (gzip: 55%, Brotli: 30.8%).
+Turns out 2024 marks a pivotal shift in JavaScript compression trends, with Brotli (`br`) finally overtaking gzip as the most prevalent compression method. Brotli now commands 45% of mobile and 44% of desktop JavaScript requests, compared to gzip's 41% across both platforms. This is a remarkable transformation from 2022, when gzip led with 52% compared to Brotli's 34%, and an even more dramatic change from 2021's numbers (gzip: 55%, Brotli: 30.8%).
 
 This Brotli ascendancy represents a major win for web performance, as Brotli typically achieves better compression ratios than gzip, particularly for JavaScript resources. The steady year-over-year growth in Brotli adoption (30.8% → 34% → 45%) suggests a growing recognition of its benefits among web developers and hosting providers.
 
@@ -349,8 +398,6 @@ This Brotli ascendancy represents a major win for web performance, as Brotli typ
 
 The remaining landscape shows that about 12-13% of requests still arrive uncompressed, while the newer zstd compression method maintains a minimal 1% adoption rate across both platforms. A negligible amount of websites also seem to use a combination of compression techniques, like gzip + deflate, or br + gzip. This doesn't necessarily mean that both are being used at the same time, because using both anyway doesn't have any additional effect. What could explain the usage is either that different assets on the same page might be using different compression methods, or supporting different kind of browsers when brotli for example was not supported in all browsers.
 
-An interesting contrast is seen when looking at third party scripts making gzip a clear winner again. Looking at the trends, gzip is still the primary compression method used with a 60% vs 29% comparison. This shows the missed performance gains due to a lot of third-party JavaScript still being deployed without brotli compression.
-
 {{ figure_markup(
   image="compression-methods-of-script-resources-by-host.png",
   caption="Compression methods of script resources by host.",
@@ -361,7 +408,7 @@ An interesting contrast is seen when looking at third party scripts making gzip 
   )
 }}
 
-Looking at uncompressed resources across the spectrum, we see the same smaller resources of less than 5 KB that are not sent over with any compression which makes sense as applying compression on such small resources does not add much value and in fact could add the compression overhead. However, some larger first party resources are still not enjoying the benefits of any kind of compression methods.
+An interesting contrast is seen when looking at third party scripts making gzip a clear winner again. Looking at the trends, gzip is still the primary compression method used with a 60% vs 29% comparison. This shows the missed performance gains due to a lot of third-party JavaScript still being deployed without brotli compression.
 
 {{ figure_markup(
   image="uncompressed-resources-by-host.png",
@@ -373,13 +420,7 @@ Looking at uncompressed resources across the spectrum, we see the same smaller r
   )
 }}
 
-{{ figure_markup(
-  content="6%",
-  caption="First Party resources 100 KB or above in size deploy uncompressed payloads.",
-  classes="big-number",
-  sheets_gid="947283086",
-  sql_file="compression_none_by_bytes.sql",
-) }}
+Looking at uncompressed resources across the spectrum, we see the same smaller resources of less than 5 KB that are not sent over with any compression which makes sense as applying compression on such small resources does not add much value and in fact could add the compression overhead. However, some larger first party resources are still not enjoying the benefits of any kind of compression methods, wiht 6% of scripts of 100 kilobytes or mote not being compressed at all.
 
 ### Minification
 
@@ -548,7 +589,7 @@ The 75th percentile paints an even worse picture for mobile users, where pages s
 
 ### Scheduler API
 
-Scheduling JavaScript tasks has historically been deferred to the browser. There are newer methods such as `requestIdleCallback` and `queueMicrotask`, but these APIs schedule tasks in a coarse way, and—especially in the case of `queueMicrotask`—can cause performance issues if misused. queueMicrotask runs immediately after the current script, potentially causing task starvation. Its misuse can lead to UI jank, blocking the main thread, or excessive CPU usage, impacting performance.
+Scheduling JavaScript tasks has historically been deferred to the browser. There are methods such as `requestIdleCallback` and `queueMicrotask`, but these APIs schedule tasks in a coarse way, and—especially in the case of `queueMicrotask`—can cause performance issues if misused. queueMicrotask runs immediately after the current script, potentially causing task starvation. Its misuse can lead to UI jank, blocking the main thread, or excessive CPU usage, impacting performance.
 
 The Scheduler API has recently been released, and gives developers finer control over scheduling tasks based on priority—though it is currently only limited to Chromium-based browsers.
 
@@ -560,13 +601,11 @@ The Scheduler API has recently been released, and gives developers finer control
   sql_file="posttask_scheduler.sql",
 ) }}
 
-Currently, 6,500 per million (0.65%) desktop pages are shipping JavaScript that uses the Scheduler API, a significant increase from previous adoption levels. On mobile, 8,100 per million (0.81%) pages now utilize this feature. This growth from 2022 suggests that as documentation improves and support expands, developers are increasingly integrating the Scheduler API into their applications. The rising adoption, especially in frameworks, indicates a shift towards more efficient scheduling and performance optimization in JavaScript execution. We expect this trend to continue, ultimately contributing to better user experience outcomes.
+Currently, only 0.65% desktop pages are shipping JavaScript that uses the Scheduler API, a significant increase from [0.002% last time we looked](../2022/javascript#scheduler-api). On mobile, 0.81% of pages now utilize this feature. This growth from 2022 suggests that as documentation improves and support expands, developers are increasingly integrating the Scheduler API into their applications. The rising adoption, especially in frameworks, indicates a shift towards more efficient scheduling and performance optimization in JavaScript execution. We expect this trend to continue, ultimately contributing to better user experience outcomes.
 
 ### Synchronous XHR
 
-AJAX—or usage of the XMLHttpRequest (XHR) method to asynchronously retrieve data and update information on the page without a navigation request—was a very popular method of creating dynamic user experiences. It has largely been replaced by the asynchronous fetch method, but XHR is still supported in all major browsers.
-
-XHR has a flag that allows you to make synchronous requests. Synchronous XHR is harmful for performance because the event loop and main thread is blocked until the request is finished, resulting in the page hanging until the data becomes available. fetch is a much more effective and efficient alternative with a simpler API, and has no support for synchronous fetching of data.
+AJAX—or usage of the XMLHttpRequest (XHR) has a flag that allows you to make synchronous requests. Synchronous XHR is harmful for performance because the event loop and main thread is blocked until the request is finished, resulting in the page hanging until the data becomes available. `fetch` is a much more effective and efficient alternative with a simpler API, and has no support for synchronous fetching of data.
 
 {{ figure_markup(
   content="2.15%",
@@ -576,15 +615,11 @@ XHR has a flag that allows you to make synchronous requests. Synchronous XHR is 
   sql_file="sync_requests.sql",
 ) }}
 
-Synchronous XHR is now used on 2.15% of mobile pages and 2.22% of desktop pages, marking a decline from 2022. While its usage is decreasing, its continued presence—even at these levels—indicates that some legacy applications still rely on this outdated method, which negatively impacts user experience.
-
-Avoid using synchronous XHR, and XHR in general. The fetch API is a more ergonomic and efficient alternative that deliberately lacks synchronous functionality. Pages perform better without synchronous XHR, and we hope to see this number continue to decline toward zero.
+Synchronous XHR is now used on 2.15% of mobile pages and 2.22% of desktop pages, marking a small decline from 2022 (2.5% and 2.8% respectively). While its usage is decreasing, its continued presence—even at these levels—indicates that some legacy applications still rely on this outdated method, which negatively impacts user experience.
 
 ### `document.write`
 
-Before the introduction of DOM insertion methods (`appendChild` and others, for example), `document.write` was used to insert content at the position the `document.write` was made in the document.
-
-`document.write` is very problematic. For one, it blocks the HTML parser, and is problematic for a number of other reasons the HTML spec itself warns against its use. On slow connections, blocking document parsing to append nodes in this way creates performance problems that are entirely avoidable.
+The only `document.write` API is very problematic for a number of reasons that [the HTML spec itself warns against its use](https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#document.write()).
 
 {{ figure_markup(
   content="12%",
@@ -594,15 +629,11 @@ Before the introduction of DOM insertion methods (`appendChild` and others, for 
   sql_file="usage_of_document_write.sql",
 ) }}
 
-A notable 12% of mobile pages observed are still using `document.write` to add content to the DOM instead of proper insertion methods. On desktop, 13% of pages continue to rely on this approach. This marks a decline from 2022, suggesting that more developers are moving away from this inefficient method. However, legacy applications and third-party scripts still contribute to its usage.
-
-We hope to see this downward trend continue. All major browsers explicitly warn against using `document.write`. While it isn't deprecated yet, its long-term support in browsers is uncertain. If `document.write` calls exist on your website, prioritizing their removal will help improve performance and user experience.
+A notable 12% of mobile pages observed are still using `document.write` to add content to the DOM instead of proper insertion methods. On desktop, 13% of pages continue to rely on this approach. This marks a decline from 2022 (18% and 17%), suggesting that more developers are moving away from this inefficient method. However, legacy applications and third-party scripts still contribute to its usage.
 
 ### Legacy Javascript
 
-JavaScript has evolved considerably over the last several years. The introduction of new language features has turned JavaScript into a more capable and elegant language that helps developers to write more concise JavaScript, resulting in less JavaScript loaded—provided those features haven't been unnecessarily transformed into a legacy syntax by using a transpiler such as Babel.
-
-Lighthouse currently checks for Babel transforms that may be unnecessary on the modern web, such as transforming use of async and await, JavaScript classes, and other newer, yet widely supported language features.
+Lighthouse currently checks for Babel transforms that may be unnecessary on the modern web, such as transforming use of `async` and `await`, JavaScript classes, and other newer, yet widely supported language features.
 
 {{ figure_markup(
   content="67%",
@@ -614,23 +645,15 @@ Lighthouse currently checks for Babel transforms that may be unnecessary on the 
 
 Just over two-thirds of mobile pages are still shipping JavaScript resources that are being transformed or contain unnecessary legacy JavaScript. This figure remains unchanged from 2022, indicating that despite awareness of performance issues, many pages continue to rely on these transformations. On desktop, 70% of pages are still shipping these transforms.
 
-Transformations can add extra bytes to production JavaScript for compatibility with older browsers. However, many of these transformations are unnecessary and negatively impact startup performance. The continued high prevalence of these practices suggests that outdated configurations and legacy support requirements remain key factors.
-
-Babel has introduced optimizations such as the compiler assumptions feature, but its effectiveness is still dependent on user-defined configurations. Developers should review their Babel and Browserslist settings to minimize unnecessary transformations and reduce the amount of JavaScript sent to users.
-
 Despite a negligible change in this statistic from 2022, we hope to see a decline over time as JavaScript's evolution stabilizes and developers adopt more efficient practices.
 
 ## How is JavaScript used?
 
-There's more than one way to build a web page. While some may opt to use the web platform directly, it's undeniable that the trend in the web developer industry is to reach for abstractions that make our work easier to do and reason about. As is the case with previous years, we'll be exploring the role of libraries and frameworks, as well as how frequently those libraries and frameworks present security vulnerabilities that can make the web a riskier place for users.
+JavaScript can be used directly, or via abstractions such as libraries and frameworks.
 
-### Libraries and frameworks
+### Library usage
 
-Libraries and frameworks are a huge part of the developer experience—one that has the potential to harm performance through framework overhead. Though developers have largely accepted this trade-off, understanding what libraries and frameworks are commonly used on the web is extremely important, as it informs our understanding of how the web is built. In this section, we'll be taking a look at the state of libraries and frameworks across the web in 2024.
-
-#### Library usage
-
-To understand the usage of libraries and frameworks, HTTP Archive uses Wappalyzer to detect the technologies used on a page.
+To understand the usage of libraries and frameworks, HTTP Archive uses [Wappalyzer](./methodology#wappalyzer) to detect the technologies used on a page.
 
 {{ figure_markup(
   image="adoption-of-top-libraries-and-frameworks.png",
@@ -644,9 +667,7 @@ To understand the usage of libraries and frameworks, HTTP Archive uses Wappalyze
   )
 }}
 
-Readers of previous editions of the Web Almanac will not be surprised to see It's still no surprise that jQuery still remains the most widely used library on the web, appearing on 74% of pages. A significant portion of this is due to WordPress, but even outside of WordPress, jQuery continues to be a dominant choice for many websites.
-
-While jQuery is relatively lightweight and efficient at what it does, it still adds some overhead to applications. Many of its core functionalities are now achievable with native DOM APIs, making its usage less necessary in modern web applications.
+Readers of previous editions of the Web Almanac will not be surprised to see that jQuery still remains the most widely used library on the web, appearing on 74% of pages. A significant portion of this is due to WordPress, but even outside of WordPress, jQuery continues to be a dominant choice for many websites.
 
 The widespread adoption of core-js (41%) is also expected, as many web applications rely on Babel, which often uses core-js to provide polyfills for missing JavaScript features. As browsers continue to evolve and support more modern features natively, this number should decline, reducing unnecessary bytes in web applications.
 
@@ -660,7 +681,7 @@ Meanwhile, libraries like GSAP (9%), OWL Carousel (8%), Slick (8%), LazySizes (8
 
 As the web ecosystem continues to modernize, we expect some of these legacy libraries, especially jQuery-based ones, to decline over time in favor of more native solutions and modern frameworks.
 
-#### Libraries used together
+### Libraries used together
 
 It's not an uncommon scenario to see multiple frameworks and libraries used on the same page. As with last year, we'll examine this phenomenon to gain insight into how many libraries and frameworks have been used together in 2024.
 
@@ -676,53 +697,53 @@ It's not an uncommon scenario to see multiple frameworks and libraries used on t
     <tbody>
       <tr>
         <td>jQuery</td>
-        <td>7.57%</td>
-        <td>7.61%</td>
+        <td class="numeric">7.57%</td>
+        <td class="numeric">7.61%</td>
       </tr>
       <tr>
         <td>jQuery, jQuery Migrate</td>
-        <td>3.71%</td>
-        <td>3.91%</td>
+        <td class="numeric">3.71%</td>
+        <td class="numeric">3.91%</td>
       </tr>
       <tr>
         <td>core-js, jQuery</td>
-        <td>1.71%</td>
-        <td>1.67%</td>
+        <td class="numeric">1.71%</td>
+        <td class="numeric">1.67%</td>
       </tr>
       <tr>
         <td>GSAP, Lodash, React</td>
-        <td>1.25%</td>
-        <td>1.50%</td>
+        <td class="numeric">1.25%</td>
+        <td class="numeric">1.50%</td>
       </tr>
       <tr>
         <td>jQuery, jQuery UI</td>
-        <td>1.71%</td>
-        <td>1.48%</td>
+        <td class="numeric">1.71%</td>
+        <td class="numeric">1.48%</td>
       </tr>
       <tr>
         <td>core-js, jQuery, jQuery Migrate</td>
-        <td>1.33%</td>
-        <td>1.29%</td>
+        <td class="numeric">1.33%</td>
+        <td class="numeric">1.29%</td>
       </tr>
       <tr>
         <td>Swiper, core-js, jQuery, jQuery Migrate, jQuery UI</td>
-        <td>1.10%</td>
-        <td>1.22%</td>
+        <td class="numeric">1.10%</td>
+        <td class="numeric">1.22%</td>
       </tr>
       <tr>
         <td>core-js, jQuery, jQuery Migrate, jQuery UI</td>
-        <td>1.02%</td>
-        <td>1.12%</td>
+        <td class="numeric">1.02%</td>
+        <td class="numeric">1.12%</td>
       </tr>
       <tr>
         <td>Lodash, Modernizr, Stimulus, YUI, core-js</td>
-        <td>1.02%</td>
-        <td>0.88%</td>
+        <td class="numeric">1.02%</td>
+        <td class="numeric">0.88%</td>
       </tr>
       <tr>
         <td>core-js</td>
-        <td>0.73%</td>
-        <td>0.75%</td>
+        <td class="numeric">0.73%</td>
+        <td class="numeric">0.75%</td>
       </tr>
     </tbody>
   </table>
@@ -730,12 +751,6 @@ It's not an uncommon scenario to see multiple frameworks and libraries used on t
 </figure>
 
 It's clear though that jQuery has some serious staying power, with some combination of it, its UI framework, and its migration plugin occurring in the top seven spots, with core-js having a prominent role in library usage as well.
-
-#### Security vulnerabilities
-
-Given the wide proliferation of JavaScript on today's web, and with the advent of installable JavaScript packages, it's no surprise that security vulnerabilities exist in the JavaScript ecosystem.
-
-{# TODO --- this number missing #}
 
 ## Web Components and Shadow DOM
 
