@@ -155,7 +155,7 @@ const get_static_lang_year_files = (language_array) => {
 
   let languages_and_years = [];
 
-  [languages_and_years, _] = get_languages_and_years_as_array(language_array);
+  [languages_and_years,] = get_languages_and_years_as_array(language_array);
   // Get all of the static pages for each combination of language and year
   const files = languages_and_years
     .map((x) => static_pages_lang_year.map((p) => `${x}/${p}`))

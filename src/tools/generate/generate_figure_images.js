@@ -27,6 +27,7 @@ const take_single_screenshot = async (graphUrl, filename) => {
 }
 
 const generate_images = async (chapter_match) => {
+  let re;
 
   // This next bit is taken from generate_chapters.js, but only allow it to match one chapter
   if (chapter_match) {
