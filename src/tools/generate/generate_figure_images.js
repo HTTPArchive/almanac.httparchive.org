@@ -38,7 +38,7 @@ const generate_images = async (chapter_match) => {
                 ? 'content\/' +  '(' + chapter_match.replace(/\//g,')/(') + ').md'
                 : 'content\\\\' +  '(' + chapter_match.replace(/\//g,')\\\\(') + ').md';
 
-    new RegExp(chapter_match);
+    re = new RegExp(chapter_match);
   } else {
     console.log('Please provide an argument of the form: en/2020/performance');
     process.exit(1);

@@ -102,7 +102,7 @@ const get_yearly_configs = async () => {
     const re = (process.platform != 'win32')
                   ? /config\/([0-9]*).json/
                   : /config\\([0-9]*).json/;
-    const [_, year] = config_file.match(re);
+    const [, year] = config_file.match(re);
 
     configs[year] = JSON.parse(await fs.readFile(`config/${year}.json`, 'utf8'));
 
@@ -169,7 +169,7 @@ const get_static_lang_files = (language_array) => {
 
   let languages = [];
 
-  [_, languages] = get_languages_and_years_as_array(language_array);
+  [, languages] = get_languages_and_years_as_array(language_array);
   // Get all of the static pages for each language
   const files = languages
     .map((x) => static_pages_lang.map((p) => `${x}/${p}`))

@@ -80,10 +80,10 @@ const generate_chapters = async (chapter_match) => {
 
   for (const file of await find_markdown_files()) {
 
-    let _, language, year, chapter;
+    let language, year, chapter;
 
     try {
-      [_, language, year, chapter] = file.match(re);
+      [, language, year, chapter] = file.match(re);
     } catch(error) {
       // No match - skip to next in for loop
       continue;
