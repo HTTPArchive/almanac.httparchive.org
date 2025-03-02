@@ -112,7 +112,7 @@ In the 2022 Web Almanac, year we [looked at transpilers as a percentage of those
 {{ figure_markup(
   image="sites-using-babel-grouped-by-rank.png",
   caption="Sites using Babel grouped by rank.",
-  description="Bar chart of TODO.",
+  description="Bar chart showing Babel usage by rank. For desktop it's 7.6% for the top 1,000 sites, 8.9% for the top 10,000, 6.9% for the top 100,000, 4.7% for the top one million, 4.1% for the top 10 million, and 5.3% for all sites. For mobile it's 9.9% for the top 1,000 sites, 12.0% for the top 10,000, 9.1% for the top 100,000, 5.8% for the top million, and 4.7% for the top ten million and 6.1% for all sites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTCTcjvYejhJMWHZwhCSCVm3cbTzqq8pdJRqC6wnBnbsTvPvHu5rTOTbX4_6gWHx-urn-pccmk9bhT3/pubchart?oid=2030733123&format=interactive",
   sheets_gid="1658473552",
   sql_file="usage_of_typescript_and_babel_by_rank.sql"
@@ -128,7 +128,7 @@ TypeScript is a superset of JavaScript that adds static types, which help catch 
 {{ figure_markup(
   image="sites-using-typescript-grouped-by-rank.png",
   caption="Sites using TypeScript grouped by rank.",
-  description="Bar chart of TODO.",
+  description="Bar chart showing Babel usage by rank. For desktop it's 5.2% for the top 1,000 sites, 6.7% for the top 10,000, 6.1% for the top 100,000, 5.5% for the top one million, 4.9% for the top 10 million, and 6.0% for all sites. For mobile it's 4.5% for the top 1,000 sites, 6.2% for the top 10,000, 5.7% for the top 100,000, 5.4% for the top million, and 4.9% for the top ten million and 6.2% for all sites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTCTcjvYejhJMWHZwhCSCVm3cbTzqq8pdJRqC6wnBnbsTvPvHu5rTOTbX4_6gWHx-urn-pccmk9bhT3/pubchart?oid=295342967&format=interactive",
   sheets_gid="1658473552",
   sql_file="usage_of_typescript_and_babel_by_rank.sql"
@@ -152,7 +152,7 @@ For modern web applications, the `module` attribute indicates that a script is a
 {{ figure_markup(
   image="how-is-javascript-requested.png",
   caption="How is JavaScript requested?.",
-  description="Bar chart of TODO.",
+  description="Bar chart showing that on desktop, `async` is used on 87% of sites, `defer` on 48%, `async` and `defer` on 22%, `module` on 4%, `nomodule` at 0%, and neither `async` nor `defer` at 11%. For mobile it's pretty identical: `async` is used on 87% of sites, `defer` on 47%, `async` and `defer` on 22%, `module` on 4%, `nomodule` at 0%, and neither `async` nor `defer` at 11%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTCTcjvYejhJMWHZwhCSCVm3cbTzqq8pdJRqC6wnBnbsTvPvHu5rTOTbX4_6gWHx-urn-pccmk9bhT3/pubchart?oid=1907402404&format=interactive",
   sheets_gid="901949116",
   sql_file="breakdown_of_pages_using_async_defer.sql"
@@ -163,10 +163,8 @@ Comparing JavaScript loading trends from [the last Web Almanac 2022](../javascri
 
 `module` usage remains low at 4%, while `nomodule` shows xlose to zero adoption, indicating that modern JavaScript module systems are still not widely implemented across the web.
 
-
-
 <figure>
-  <table role="table">
+  <table>
     <thead>
       <tr>
         <th>Attribute</th>
@@ -220,7 +218,7 @@ Resource hints play a crucial role in optimizing browser performance by indicati
 {{ figure_markup(
   image="resource-hints-adoption-for-javascript-resources.png",
   caption="Resource hints adoption for JavaScript resources.",
-  description="Bar chart of TODO.",
+  description="Bar chart of resource hint adoption for JavaScript resources. On desktop `prefetch` is used on 5.1% of pages, `preload` on 7.7%, and `modulepreload` on 0.7% of page. On mobile it's similar with `prefetch` used on 4.8% of pages, `preload` on 7.5%, and `modulepreload` on 0.7% of page.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTCTcjvYejhJMWHZwhCSCVm3cbTzqq8pdJRqC6wnBnbsTvPvHu5rTOTbX4_6gWHx-urn-pccmk9bhT3/pubchart?oid=516338021&format=interactive",
   sheets_gid="724748185",
   sql_file="resource-hints-prefetch-preload-modulepreload-percentage.sql"
@@ -232,7 +230,7 @@ In comparing the trends between 2022 and 2024 for resource hints adoption, `prel
 {{ figure_markup(
   image="distribution-of-prefetch-adoption-for-javascript-resources-per-page.png",
   caption="Distribution of `prefetch` adoption for JavaScript resources per page.",
-  description="Bar chart of TODO.",
+  description="Bar chart of `prefetch` adoption for JavaScript resources by percentile. For desktop, 2 resources are prefetched at the 10th percentile, 12 at the 25th, and 15th at the 50th, 75th, and 90th percentile. For mobile, it's almost identical with 2 resources prefetched at the 10th percentile, 10 at the 25th, and 15th at the 50th, 75th, and 90th percentile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTCTcjvYejhJMWHZwhCSCVm3cbTzqq8pdJRqC6wnBnbsTvPvHu5rTOTbX4_6gWHx-urn-pccmk9bhT3/pubchart?oid=598973620&format=interactive",
   sheets_gid="1228269471",
   sql_file="resource-hints-preload-prefetch-modulepreload-distribution.sql"
@@ -244,7 +242,7 @@ The distribution of `prefetch` adoption for JavaScript resources (among pages th
 {{ figure_markup(
   image="distribution-of-preload-adoption-for-javascript-resources-per-page.png",
   caption="Distribution of `preload` adoption for JavaScript resources per page.",
-  description="Bar chart of TODO.",
+  description="Bar chart of `preload` adoption for JavaScript resources by percentile. Desktop and mobile have identical numbers with 1 resource `preloaded` at the 10th, 25th, and 50th percentiles, 3 at the 75th, and 6 at the 90th percentile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTCTcjvYejhJMWHZwhCSCVm3cbTzqq8pdJRqC6wnBnbsTvPvHu5rTOTbX4_6gWHx-urn-pccmk9bhT3/pubchart?oid=388378073&format=interactive",
   sheets_gid="1228269471",
   sql_file="resource-hints-preload-prefetch-modulepreload-distribution.sql"
@@ -256,12 +254,14 @@ Among pages that use `preload`, there is less usage with only one `preload` at t
 {{ figure_markup(
   image="distribution-of-modulepreload-adoption-for-javascript-resources-per-page.png",
   caption="Distribution of `modulepreload` adoption for JavaScript resources per page.",
-  description="Bar chart of TODO.",
+  description="Bar chart of `modulepreload` adoption for JavaScript resources by percentile. For desktop, 1 resource  at the 10th percentile, 4 at the 25th, and 12 at the 50th, 31 at the 75th, and 68 at the 90th percentile. For mobile it's similar with 1 resource at the 10th percentile, 4 at the 25th, and 12 at the 50th, 26 at the 75th, and 66 at the 90th percentile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTCTcjvYejhJMWHZwhCSCVm3cbTzqq8pdJRqC6wnBnbsTvPvHu5rTOTbX4_6gWHx-urn-pccmk9bhT3/pubchart?oid=922735274&format=interactive",
   sheets_gid="1228269471",
   sql_file="resource-hints-preload-prefetch-modulepreload-distribution.sql"
   )
 }}
+
+`modulepreload` usage is much more varied, but with low usage this is easily skewed by a few sites.
 
 ### Injected scripts
 
@@ -270,7 +270,7 @@ Script injection involves creating an `HTMLScriptElement` using `document.create
 {{ figure_markup(
   image="distribution-of-percentage-of-injected-scripts.png",
   caption="Distribution of percentage of injected scripts.",
-  description="Bar chart of TODO.",
+  description="Bar chart of the percentage of injected scripts by percentile. For desktop it's 0% at the 10th percentile, 5% at the 25th, 24% at the median, 50% at the 75th, and 73% at the 90th percentile. For mobile it's similar with 0% at the 10th percentile, 3% at the 25th, 21% at the median, 50% at the 75th, and 70% at the 90th percentile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTCTcjvYejhJMWHZwhCSCVm3cbTzqq8pdJRqC6wnBnbsTvPvHu5rTOTbX4_6gWHx-urn-pccmk9bhT3/pubchart?oid=153813417&format=interactive",
   sheets_gid="1725251320",
   sql_file="distribution_of_injected_scripts.sql"
@@ -288,7 +288,7 @@ First-party JavaScript is code that is directly served by and belongs to the web
 {{ figure_markup(
   image="distribution-of-javascript-requests-by-host.png",
   caption="Distribution of JavaScript requests by host.",
-  description="Bar chart of TODO.",
+  description="Bar chart of requests by host by percentile. It's 2 first-party and 2 third-party at the 10th percentile, 5 and 4 respectively at the 25th percentile, 11 and 10 at the 50th, 24 and 20 at the 75th, and 45 and 36 at the 90th percentile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTCTcjvYejhJMWHZwhCSCVm3cbTzqq8pdJRqC6wnBnbsTvPvHu5rTOTbX4_6gWHx-urn-pccmk9bhT3/pubchart?oid=2046058068&format=interactive",
   sheets_gid="644448469",
   sql_file="requests_by_3p.sql"
@@ -302,13 +302,12 @@ Comparing the two trends, the 2024 graph shows an increase in [third-party JavaS
 {{ figure_markup(
   image="distribution-of-javascript-bytes-by-host.png",
   caption="Distribution of JavaScript bytes by host.",
-  description="Bar chart of TODO.",
+  description="Bar chart of bytes by percentile for mobile. At the 10th percentile it's 12 kilobytes first-party and 56 kilobytes at third-party, at the 25th it's 68 and 158, at the 50th it's 168 and 375, at the 75th it's 393 and 766, and at the 90th percentile it's 904 kilobytes first-party and 1,292 kilobytes third-party.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTCTcjvYejhJMWHZwhCSCVm3cbTzqq8pdJRqC6wnBnbsTvPvHu5rTOTbX4_6gWHx-urn-pccmk9bhT3/pubchart?oid=227593882&format=interactive",
   sheets_gid="2060931510",
   sql_file="bytes_by_3p.sql"
   )
 }}
-
 
 ### Dynamic Imports
 
@@ -375,7 +374,7 @@ While brotli offers better compression ratios than gzip, especially for text res
 {{ figure_markup(
   image="compression-methods-of-script-resources.png",
   caption="Compression methods of script resources.",
-  description="Bar chart of TODO.",
+  description="Bar chart of compression methods of script resources. For desktop it's 44% brotli (`br`), 41% gzip (`gzip`), 13% not sent and 1% Z-standard (`zstd`). For mobile it's similar with 45% brotli (`br`), 41% gzip (`gzip`), 12% not sent and 1% Z-standard (`zstd`).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTCTcjvYejhJMWHZwhCSCVm3cbTzqq8pdJRqC6wnBnbsTvPvHu5rTOTbX4_6gWHx-urn-pccmk9bhT3/pubchart?oid=1205373602&format=interactive",
   sheets_gid="2030065986",
   sql_file="compression_method.sql"
@@ -389,7 +388,7 @@ This Brotli ascendancy represents a major win for web performance, as Brotli typ
 {{ figure_markup(
   image="growth-of-brotli-for-compressing-javascript.png",
   caption="Growth of Brotli for compressing JavaScript.",
-  description="Bar chart of TODO.",
+  description="Bar chart showing the growth of Brotli for JavaScript resources from 2019 to 2024. For desktop it's increased from 15% in 2019, 20% in 2020, 30% in 2021, 33% in 2022, and is now at 44% in 2024. For mobile it's very similar and has increased from 14% in 2019, 20% in 2020, 31% in 2021, 34% in 2022, and is now at 45% in 2024.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTCTcjvYejhJMWHZwhCSCVm3cbTzqq8pdJRqC6wnBnbsTvPvHu5rTOTbX4_6gWHx-urn-pccmk9bhT3/pubchart?oid=1695781069&format=interactive",
   sheets_gid="2030065986",
   sql_file="compression_method.sql"
