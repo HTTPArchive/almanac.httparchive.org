@@ -28,7 +28,7 @@ on:
 jobs:
   build:
     name: Update Timestamps and Generate Ebooks
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
     - name: Checkout branch
       uses: actions/checkout@v4
@@ -37,7 +37,7 @@ jobs:
       with:
         node-version: '20'
     - name: Set up Python 3.12
-      uses: actions/setup-python@v5.4.0
+      uses: actions/setup-python
       with:
         python-version: '3.12'
     - name: Install Asian Fonts

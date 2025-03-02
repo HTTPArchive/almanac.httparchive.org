@@ -35,7 +35,7 @@ on:
 jobs:
   build:
     name: Compress All Images
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     # Only run on main repo on and PRs that match the main repo
     if: |
       github.repository == 'HTTPArchive/almanac.httparchive.org' &&

@@ -17,7 +17,7 @@ on:
 jobs:
   build:
     name: Build and Test Website
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     if: github.repository == 'HTTPArchive/almanac.httparchive.org'
     steps:
     - name: Checkout branch
@@ -30,7 +30,7 @@ jobs:
       with:
         node-version: '20'
     - name: Set up Python 3.12
-      uses: actions/setup-python@v5.4.0
+      uses: actions/setup-python
       with:
         python-version: '3.12'
     - name: Run the website
