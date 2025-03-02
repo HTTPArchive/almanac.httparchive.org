@@ -20,7 +20,7 @@ on:
   workflow_dispatch:
 jobs:
   checks:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     if: github.repository == 'HTTPArchive/almanac.httparchive.org'
     steps:
     - name: Checkout branch

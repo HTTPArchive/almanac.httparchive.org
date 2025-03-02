@@ -226,10 +226,10 @@ const parser = (() => {
   return { parseFont, parseFontFamily };
 })();
 
-function parseFontProperty(value) {
+function parseFontProperty(value) { // eslint-disable-line no-unused-vars
   return parser.parseFont(value);
 }
 
-function parseFontFamilyProperty(value) {
+function parseFontFamilyProperty(value) { // eslint-disable-line no-unused-vars
   return parser.parseFontFamily(value);
 }
