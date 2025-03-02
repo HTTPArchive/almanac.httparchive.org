@@ -10,13 +10,13 @@ editors: [tunetheweb]
 analysts: [nrllh]
 translators: []
 results: https://docs.google.com/spreadsheets/d/16isMe5_rvmRmJHtK5Je66AhwO8SowGgq0EFqXyjEXw8/
-featured_quote:
-featured_stat_1:
-featured_stat_label_1:
-featured_stat_2:
-featured_stat_label_2:
-featured_stat_3:
-featured_stat_label_3:
+featured_quote: Heavy dependence on JavaScript involves compromises. Each stage—from downloading and parsing to execution—demands substantial browser resources. Using too little can compromise user experience and business objectives while overusing it can lead to sluggish load times, unresponsive pages, and poor user engagement.
+featured_stat_1: 14%
+featured_stat_label_1: Increase in median mobile JavaScript bytes.
+featured_stat_2: 47%
+featured_stat_label_2: Unused median JavaScript on mobile.
+featured_stat_3: 30%
+featured_stat_label_3: Pages using web wokers
 ---
 
 ## Introduction
@@ -37,7 +37,7 @@ We will analyze the volume of JavaScript being deployed by web developers. Gaini
   )
 }}
 
-There has been a continuous increase in the volume of JavaScript. In 2024, this upward trend resumed, with the median JavaScript payload rising by 14%, reaching 558 kilobytes on mobile and 613 kilobytes on desktops  . This ongoing trend is concerning. While device capabilities are improving, not everyone has access to the latest technology. Larger JavaScript bundles place additional strain on device resources, impacting performance, especially for users with older or less powerful hardware.
+There has been a continuous increase in the volume of JavaScript. In 2024, this upward trend resumed, with the median JavaScript payload rising by 14%, reaching 558 kilobytes on mobile and 613 kilobytes on desktop. This ongoing trend is concerning. While device capabilities are improving, not everyone has access to the latest technology. Larger JavaScript bundles place additional strain on device resources, impacting performance, especially for users with older or less powerful hardware.
 
 ## How many JavaScript requests per page?
 
@@ -71,7 +71,7 @@ While these increases might appear modest at first glance, they signal a continu
   )
 }}
 
-Along with this increase in JavaScript, we see an increase in unused bytes of JavaScript with approximately half the bytes downloaded being unused during page load.
+Along with this increase in JavaScript, we see an increase in unused bytes of JavaScript with approximately half the bytes downloaded being unused during page load (206 kilobytes—or 44% of bytes delivered—at the media on mobile).
 
 ## How is JavaScript packaged processed?
 
