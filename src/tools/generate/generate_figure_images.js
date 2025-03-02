@@ -33,12 +33,12 @@ const generate_images = async (chapter_match) => {
     // Remove any trailing .md and replace all paths with brackets to capture components
     // en/2019/javascript.md -> (en)/(2019)/(javascript).md
     chapter_match = chapter_match.replace(/\.md$/,'');
-    chapter_match = chapter_match.replace(/^content[\/\\]*/,''); // eslint-disable-line no-useless-escape
+    chapter_match = chapter_match.replace(/^content[\/\\]*/,'');
     chapter_match = (process.platform != 'win32')
-                ? 'content\/' +  '(' + chapter_match.replace(/\//g,')/(') + ').md' // eslint-disable-line no-useless-escape
+                ? 'content\/' +  '(' + chapter_match.replace(/\//g,')/(') + ').md'
                 : 'content\\\\' +  '(' + chapter_match.replace(/\//g,')\\\\(') + ').md';
 
-    var re = new RegExp(chapter_match); // eslint-disable-line no-unused-vars
+    new RegExp(chapter_match);
   } else {
     console.log('Please provide an argument of the form: en/2020/performance');
     process.exit(1);
@@ -49,7 +49,7 @@ const generate_images = async (chapter_match) => {
     let path, language, year, chapter;
 
     try {
-      [path, language, year, chapter] = file.match(re); // eslint-disable-line no-unused-vars, no-undef
+      [path, language, year, chapter] = file.match(re);
     } catch(error) {
       // No match - skip to next in for loop
       continue;

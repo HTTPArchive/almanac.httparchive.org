@@ -3,11 +3,11 @@
 
 // Language, Year and ToC select switcher (mobile)
 function handleSelectSwitchers() {
-  var languageYearSwitchers = document.querySelectorAll('.language-switcher select, .year-switcher select, .table-of-contents-switcher select');
-  for (var i = 0; i < languageYearSwitchers.length; i++) {
+  let languageYearSwitchers = document.querySelectorAll('.language-switcher select, .year-switcher select, .table-of-contents-switcher select');
+  for (let i = 0; i < languageYearSwitchers.length; i++) {
     languageYearSwitchers[i].addEventListener('change', function (e) {
 
-      var selectedOption = this.options[this.selectedIndex];
+      let selectedOption = this.options[this.selectedIndex];
 
       if (e.target.dataset.label && selectedOption.dataset.event) {
         gtag('event', selectedOption.dataset.event, {
@@ -19,7 +19,7 @@ function handleSelectSwitchers() {
       }
 
       //Reset the selector back in case user uses Back button
-      var selectedValue = e.target.value;
+      let selectedValue = e.target.value;
       if (selectedValue && selectedValue !== window.location.pathname) {
         e.target.value = window.location.pathname;
         window.location = selectedValue;
@@ -39,58 +39,58 @@ function handleNavMenu() {
     }
 
     // If the click was in search nav, then ignore as don't want to close search menu.
-    var searchNavs = document.querySelectorAll('.search-nav ul:not(hidden)');
-    for (var i = 0; i < searchNavs.length; i++) {
+    let searchNavs = document.querySelectorAll('.search-nav ul:not(hidden)');
+    for (let i = 0; i < searchNavs.length; i++) {
       if (searchNavs[i].contains(e.target)) {
         return
       }
     }
 
     // Else a click elsewhere so close all the menus
-    var openDropdownBtn = document.querySelector('.nav-dropdown-btn.dropdown-open');
+    let openDropdownBtn = document.querySelector('.nav-dropdown-btn.dropdown-open');
     openDropdownBtn && openDropdownBtn.click();
   }
 
   function trapFocusInList(e) {
-    var list = e.currentTarget;
-    var isInFooter = list.classList.contains('footer-list');
+    let list = e.currentTarget;
+    let isInFooter = list.classList.contains('footer-list');
     if (e.key === "ArrowDown") {
-      var siblingElem = isInFooter ? e.target.parentElement.previousElementSibling : e.target.parentElement.nextElementSibling;
-      var focusableElem = siblingElem ? siblingElem.querySelector('a') : (isInFooter ? lastFocusableElementInList : firstFocusableElementInList);
+      let siblingElem = isInFooter ? e.target.parentElement.previousElementSibling : e.target.parentElement.nextElementSibling;
+      let focusableElem = siblingElem ? siblingElem.querySelector('a') : (isInFooter ? lastFocusableElementInList : firstFocusableElementInList);
       e.preventDefault();
       focusableElem.focus();
     } else if (e.key === "ArrowUp") {
-      var siblingElem = isInFooter ? e.target.parentElement.nextElementSibling : e.target.parentElement.previousElementSibling; // eslint-disable-line no-redeclare
-      var focusableElem = siblingElem ? siblingElem.querySelector('a') : (isInFooter ? firstFocusableElementInList : lastFocusableElementInList); // eslint-disable-line no-redeclare
+      let siblingElem = isInFooter ? e.target.parentElement.nextElementSibling : e.target.parentElement.previousElementSibling;
+      let focusableElem = siblingElem ? siblingElem.querySelector('a') : (isInFooter ? firstFocusableElementInList : lastFocusableElementInList);
       e.preventDefault();
       focusableElem.focus();
     } else if (e.key === "Escape") {
-      var navDropDown = e.currentTarget.closest('.nav-dropdown');
-      var navDropDownBtn = navDropDown.querySelector('.nav-dropdown-btn');
+      let navDropDown = e.currentTarget.closest('.nav-dropdown');
+      let navDropDownBtn = navDropDown.querySelector('.nav-dropdown-btn');
       navDropDownBtn.click();
       navDropDownBtn.focus();
     }
   }
 
-  var firstFocusableElementInList, lastFocusableElementInList;
+  let firstFocusableElementInList, lastFocusableElementInList;
   function toggleDropdownVisibility(e) {
-    var dropdownBtn = e.currentTarget;
-    var dropdown = dropdownBtn.closest('.nav-dropdown');
-    var list = dropdown.querySelector('.nav-dropdown-list');
-    var isListVisible = !list.classList.toggle('hidden');
-    var dropdownOpen = dropdownBtn.classList.toggle('dropdown-open');
+    let dropdownBtn = e.currentTarget;
+    let dropdown = dropdownBtn.closest('.nav-dropdown');
+    let list = dropdown.querySelector('.nav-dropdown-list');
+    let isListVisible = !list.classList.toggle('hidden');
+    let dropdownOpen = dropdownBtn.classList.toggle('dropdown-open');
     dropdownBtn.setAttribute('aria-expanded', dropdownOpen);
 
     if (isListVisible) {
-      var btnBoundingRect = dropdownBtn.getBoundingClientRect();
-      var listBoundingRect = list.getBoundingClientRect();
+      let btnBoundingRect = dropdownBtn.getBoundingClientRect();
+      let listBoundingRect = list.getBoundingClientRect();
       if (listBoundingRect.width <= btnBoundingRect.width) {
         list.classList.add("align-center");
       } else if (btnBoundingRect.left + listBoundingRect.width > window.innerWidth) {
         list.classList.add("align-right");
       }
       document.body.addEventListener('click', closeAnyOtherOpenDropdown, true);
-      var navItems = list.querySelectorAll('a');
+      let navItems = list.querySelectorAll('a');
       firstFocusableElementInList = navItems[0];
       lastFocusableElementInList = navItems[navItems.length - 1];
       list.addEventListener('keydown', trapFocusInList);
@@ -107,14 +107,14 @@ function handleNavMenu() {
 
   // Might need to change menu hanging direction on window resize to avoid overflow
   function checkNavDropdown() {
-    var list = window.document.querySelector('.dropdown-open ~ .nav-dropdown-list');
-    var dropdownBtn = window.document.querySelector('button.dropdown-open');
+    let list = window.document.querySelector('.dropdown-open ~ .nav-dropdown-list');
+    let dropdownBtn = window.document.querySelector('button.dropdown-open');
     // If no open menu, then we're done
     if (!list || !dropdownBtn) {
       return;
     }
-    var btnBoundingRect = dropdownBtn.getBoundingClientRect();
-    var listBoundingRect = list.getBoundingClientRect();
+    let btnBoundingRect = dropdownBtn.getBoundingClientRect();
+    let listBoundingRect = list.getBoundingClientRect();
     if (listBoundingRect.width <= btnBoundingRect.width) {
       list.classList.remove("align-right");
       list.classList.add("align-center");
@@ -129,9 +129,9 @@ function handleNavMenu() {
   window.onresize = checkNavDropdown;
 
   function navBtnKeyDownHandler(e) {
-    var dropdownList = e.currentTarget.nextElementSibling;
-    var isDropdownOpen = e.currentTarget.classList.contains('dropdown-open');
-    var isInFooter = dropdownList.classList.contains('footer-list');
+    let dropdownList = e.currentTarget.nextElementSibling;
+    let isDropdownOpen = e.currentTarget.classList.contains('dropdown-open');
+    let isInFooter = dropdownList.classList.contains('footer-list');
     if (e.key === "Escape") {
       e.currentTarget.click();
     } else if (e.key === "ArrowDown") {
@@ -145,8 +145,8 @@ function handleNavMenu() {
     }
   }
 
-  var navDropdownButtons = document.querySelectorAll('.nav-dropdown-btn');
-  for (var i = 0; i < navDropdownButtons.length; i++) {
+  let navDropdownButtons = document.querySelectorAll('.nav-dropdown-btn');
+  for (let i = 0; i < navDropdownButtons.length; i++) {
     navDropdownButtons[i].addEventListener('click', toggleDropdownVisibility);
     navDropdownButtons[i].addEventListener('keydown', navBtnKeyDownHandler);
   }
@@ -154,16 +154,16 @@ function handleNavMenu() {
 
 // The main mobile hamburger menu
 function handleMobileMenu() {
-  var menuBtn = document.querySelector('.menu-btn');
-  var menuNav = document.querySelector('#menu');
-  var main = document.querySelector('main');
-  var footer = document.querySelector('footer');
+  let menuBtn = document.querySelector('.menu-btn');
+  let menuNav = document.querySelector('#menu');
+  let main = document.querySelector('main');
+  let footer = document.querySelector('footer');
 
   function toggleNavMenu() {
-    var menuOpen = document.body.classList.toggle('menu-open');
+    let menuOpen = document.body.classList.toggle('menu-open');
     menuBtn.classList.toggle("menu-btn-active");
     menuBtn.setAttribute('aria-expanded', menuOpen);
-    var ariaLabel = menuOpen ? menuBtn.getAttribute('data-close-text') : menuBtn.getAttribute('data-open-text');
+    let ariaLabel = menuOpen ? menuBtn.getAttribute('data-close-text') : menuBtn.getAttribute('data-open-text');
     menuBtn.setAttribute('aria-label', ariaLabel);
 
     // Toogle inert to keep focus in the menu and header
@@ -254,10 +254,10 @@ function removeLazyLoadingOnPrint() {
 
 //Check if in print mode so we can remove lazy loading and block interactive visuals
 function isInPrintMode() {
-  var printMode = false;
+  let printMode = false;
 
   if (window.URL && window.URLSearchParams) {
-    var url = new URL(window.location);
+    let url = new URL(window.location);
     printMode = url.searchParams.has('print');
   }
   if (printMode) {
@@ -283,7 +283,7 @@ function bigEnoughForInteractiveFigures() {
 
 //Data Save can be set to on, so let's check it
 function dataSaverEnabled() {
-  var dataSaver = false;
+  let dataSaver = false;
   if ('connection' in navigator) {
     dataSaver = navigator.connection.saveData;
     if (dataSaver) {
@@ -302,7 +302,7 @@ function dataSaverEnabled() {
 //Check if network API states this is a high bandwidth connection
 //Assume it is for those browsers who do not support this (e.g. Safari and IE)
 function highBandwidthConnection() {
-  var highBandwidth = true;
+  let highBandwidth = true;
   if ('connection' in navigator) {
     const effectiveType = navigator.connection.effectiveType;
     if (effectiveType == 'slow-2g' || effectiveType == '2g' || effectiveType == '3g') {
@@ -323,13 +323,13 @@ function highBandwidthConnection() {
 //Let's check if we have large Canvas support (annoyingly no API for this!)
 function highResolutionCanvasSupported() {
 
-  var largeCanvasSupported = false;
+  let largeCanvasSupported = false;
 
   try {
     // Set large sized canvas dimensions and draw test rectangle
-    var cvs = document ? document.createElement('canvas') : null;
-    var ctx = cvs && cvs.getContext ? cvs.getContext('2d') : null;
-    var scale = window.devicePixelRatio || 1;
+    let cvs = document ? document.createElement('canvas') : null;
+    let ctx = cvs && cvs.getContext ? cvs.getContext('2d') : null;
+    let scale = window.devicePixelRatio || 1;
     if (scale > 1) {
       cvs.width = 6000;
       cvs.height = 3700;
@@ -370,15 +370,15 @@ function googleSheetsPixelNotLoaded() {
 
   this.parentElement.removeChild(this);
 
-  var all_fig_imgs = document.querySelectorAll('figure .fig-mobile');
+  let all_fig_imgs = document.querySelectorAll('figure .fig-mobile');
   for (let index = 0; index < all_fig_imgs.length; ++index) {
-    var fig_img = all_fig_imgs[index];
+    let fig_img = all_fig_imgs[index];
     fig_img.classList.remove("fig-mobile");
   }
 
-  var all_fig_iframes = document.querySelectorAll('figure .fig-iframe');
+  let all_fig_iframes = document.querySelectorAll('figure .fig-iframe');
   for (let index = 0; index < all_fig_iframes.length; ++index) {
-    var fig_iframe = all_fig_iframes[index];
+    let fig_iframe = all_fig_iframes[index];
     fig_iframe.parentElement.removeChild(fig_iframe);
   }
   gtag('event', 'sheets-access', { 'event_category': 'user', 'event_label': 'blocked', 'value': 0 });
@@ -393,7 +393,7 @@ function upgradeInteractiveFigures() {
     if (!isInPrintMode() && bigEnoughForInteractiveFigures() && !dataSaverEnabled() && highBandwidthConnection() && highResolutionCanvasSupported()) {
 
       //Find each image and create the iframe
-      var all_fig_imgs = document.querySelectorAll('figure img[data-iframe]');
+      let all_fig_imgs = document.querySelectorAll('figure img[data-iframe]');
 
       //If no figures with a data-iframe, then we're done
       if (all_fig_imgs.length == 0) {
@@ -402,12 +402,12 @@ function upgradeInteractiveFigures() {
 
       console.log('Upgrading to interactive figures');
 
-      for (var index = 0; index < all_fig_imgs.length; ++index) {
-        var fig_img = all_fig_imgs[index];
+      for (let index = 0; index < all_fig_imgs.length; ++index) {
+        let fig_img = all_fig_imgs[index];
 
         if (fig_img.getAttribute('data-iframe')) {
 
-          var iframe = document.createElement('iframe');
+          let iframe = document.createElement('iframe');
 
           //Set up some default attributes
           iframe.setAttribute('title', fig_img.getAttribute('alt'));
@@ -430,7 +430,7 @@ function upgradeInteractiveFigures() {
           iframe.setAttribute('credentialless', true);
 
           //The figure should have a link
-          var parentLink = fig_img.parentNode;
+          let parentLink = fig_img.parentNode;
           if (parentLink.nodeName == "A") {
 
             //Insert the iframe before the link.
@@ -446,7 +446,7 @@ function upgradeInteractiveFigures() {
       //Add a test image to check we can actually access Google Sheets
       //as it's sometimes blocked by corporate proxies and the like
       //have a fallback function to revert if this is the case
-      var google_sheets_pixel = document.createElement('img');
+      let google_sheets_pixel = document.createElement('img');
       google_sheets_pixel.setAttribute('src', 'https://docs.google.com/favicon.ico');
       google_sheets_pixel.setAttribute('height', '1');
       google_sheets_pixel.setAttribute('width', '1');
@@ -473,7 +473,7 @@ function setDiscussionCount() {
             return;
           }
 
-          var comments = + response.posts_count - 1;
+          let comments = + response.posts_count - 1;
           if (isNaN(comments)) {
             return;
           }
@@ -519,7 +519,7 @@ function indexHighlighter() {
     return;
   }
 
-  var chapterIndex = document.querySelector('.index-box');
+  let chapterIndex = document.querySelector('.index-box');
 
   // If no index - then nothing to do!
   if (!chapterIndex) {
@@ -527,7 +527,7 @@ function indexHighlighter() {
   }
 
   // Check if user has set reduced motion and only continue if not
-  var hasOSReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let hasOSReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (hasOSReducedMotion) {
     console.log('User has set prefers-reduced-motion to ' + hasOSReducedMotion + ' so not highlighting the current section in chapter index');
     gtag('event', 'prefers-reduced-motion', { 'event_category': 'user', 'event_label': 'reduce', 'value': 0 });
@@ -539,7 +539,7 @@ function indexHighlighter() {
   // Add the sticky class (which sets 'position:sticky') and then test if that stuck :-)
   // Also use endsWith to support vendor prefixes (Safari v12 needs this)
   chapterIndex.classList.add('sticky');
-  var chapterIndexStyles = getComputedStyle(chapterIndex);
+  let chapterIndexStyles = getComputedStyle(chapterIndex);
   if (!chapterIndexStyles || !chapterIndexStyles.position || !chapterIndexStyles.position.endsWith('sticky')) {
     gtag('event', 'index-highlighter', { 'event_category': 'user', 'event_label': 'not-enabled', 'value': 0 });
     return;
@@ -552,8 +552,8 @@ function indexHighlighter() {
   // that will be called by the IntersectionObserver
   function highlightIndexEntry(link) {
 
-    var indexLink = document.querySelector('.index-box a[href="#' + link + '"]');
-    var oldIndexLink = document.querySelector('.index-box .active');
+    let indexLink = document.querySelector('.index-box a[href="#' + link + '"]');
+    let oldIndexLink = document.querySelector('.index-box .active');
 
     if (!indexLink || indexLink.isEqualNode(oldIndexLink)) {
       return;
@@ -571,8 +571,8 @@ function indexHighlighter() {
     // Otherwise if too large to display in full then scroll to this element
     // We'd love to use scrollIntoView but unfortunately won't work if user
     // is still scrolling in main doc, so do it the old fashioned way
-    var currentPosition = indexLink.offsetTop;
-    var currentNode = indexLink;
+    let currentPosition = indexLink.offsetTop;
+    let currentNode = indexLink;
     // Walk the node back up to the index-scroller to get the total offset
     // of this entry, relative to the full Index
     while (currentNode && currentNode.parentNode != chapterIndex) {
@@ -584,14 +584,14 @@ function indexHighlighter() {
   }
 
   // Set up a new Interstection Observer for when the title is 80% from the bottom of the page
-  var options = {
+  let options = {
     root: null,
     rootMargin: "0px 0px -80% 0px",
     threshold: null
   };
-  var observer = new IntersectionObserver(function (entries) {
-    for (var index = 0; index < entries.length; ++index) {
-      var entry = entries[index];
+  let observer = new IntersectionObserver(function (entries) {
+    for (let index = 0; index < entries.length; ++index) {
+      let entry = entries[index];
 
       if (entry.isIntersecting && entry.target && entry.target.id) {
         highlightIndexEntry(entry.target.id);
@@ -600,9 +600,9 @@ function indexHighlighter() {
   }, options);
 
   // Add an intersection observer to each heading
-  var all_headings = document.querySelectorAll('article h1, article h2, article h3, article h4, article h5, article h6');
-  for (var index = 0; index < all_headings.length; ++index) {
-    var heading = all_headings[index];
+  let all_headings = document.querySelectorAll('article h1, article h2, article h3, article h4, article h5, article h6');
+  for (let index = 0; index < all_headings.length; ++index) {
+    let heading = all_headings[index];
     observer.observe(heading);
   }
 
@@ -611,16 +611,16 @@ function indexHighlighter() {
 }
 
 function toggleDescription(event) {
-  var event_button = event.target;
+  let event_button = event.target;
   if (!event_button) {
     return;
   }
-  var description_id = event_button.getAttribute('aria-controls');
+  let description_id = event_button.getAttribute('aria-controls');
   if (!description_id) {
     return;
   }
 
-  var description = document.querySelector('#' + description_id);
+  let description = document.querySelector('#' + description_id);
   if (!description) {
     return;
   }
@@ -632,13 +632,13 @@ function toggleDescription(event) {
 }
 
 function addShowDescription() {
-  var all_desc_buttons = document.querySelectorAll('.fig-description-button');
+  let all_desc_buttons = document.querySelectorAll('.fig-description-button');
 
-  for (var index = 0; index < all_desc_buttons.length; ++index) {
-    var desc_button = all_desc_buttons[index];
+  for (let index = 0; index < all_desc_buttons.length; ++index) {
+    let desc_button = all_desc_buttons[index];
     desc_button.addEventListener('click', toggleDescription);
     desc_button.classList.remove('novisibility-until-js');
-    var description = document.querySelector('#' + desc_button.getAttribute('aria-controls'));
+    let description = document.querySelector('#' + desc_button.getAttribute('aria-controls'));
     if (description) {
       description.classList.remove('hidden');
       description.classList.add('fig-description');
@@ -653,15 +653,15 @@ function addKeyboardScollableRegions() {
   // More details - https://adrianroselli.com/2020/11/under-engineered-responsive-tables.html
 
   // Handle tables that have overflowed
-  var all_table_containers = document.querySelectorAll('.table-wrap-container');
+  let all_table_containers = document.querySelectorAll('.table-wrap-container');
   for (let index = 0; index < all_table_containers.length; ++index) {
-    var table_container = all_table_containers[index];
+    let table_container = all_table_containers[index];
 
     if (table_container.scrollWidth > table_container.clientWidth) {
-      var figure = table_container.parentElement.parentElement;
+      let figure = table_container.parentElement.parentElement;
       if (figure && figure.nodeName == "FIGURE") {
-        var figid = figure.id;
-        var figcaption = figure.querySelector('figcaption');
+        let figid = figure.id;
+        let figcaption = figure.querySelector('figcaption');
 
         if (figid && figcaption) {
           figcaption.setAttribute('id', figid + '-caption');
@@ -674,9 +674,9 @@ function addKeyboardScollableRegions() {
   }
 
   // Handle code blocks that have overflowed
-  var all_pre_elements = document.querySelectorAll('pre');
+  let all_pre_elements = document.querySelectorAll('pre');
   for (let index = 0; index < all_pre_elements.length; ++index) {
-    var pre_element = all_pre_elements[index];
+    let pre_element = all_pre_elements[index];
 
     if (pre_element.scrollWidth > pre_element.clientWidth) {
       pre_element.setAttribute('tabindex', '0');
@@ -697,13 +697,13 @@ function addShortKeyEventListers() {
     }
 
     if (event.key === 'p' || event.key === 'P' || event.key === ',' || event.key === '<') {
-      var previous = document.getElementById('previous-chapter');
+      let previous = document.getElementById('previous-chapter');
       if (previous) {
         previous.click();
       }
     }
     if (event.key === 'n' || event.key === 'N' || event.key === '.' || event.key === '>') {
-      var next = document.getElementById('next-chapter');
+      let next = document.getElementById('next-chapter');
       if (next) {
         next.click();
       }
@@ -717,17 +717,17 @@ function addShortKeyEventListers() {
 }
 
 function indexMenu() {
-  var indexBox = document.querySelector('.index-box');
-  var indexBoxTitle = document.querySelector('.index .index-btn');
+  let indexBox = document.querySelector('.index-box');
+  let indexBoxTitle = document.querySelector('.index .index-btn');
 
   if (!indexBox || !indexBoxTitle) {
     return;
   }
 
   indexBoxTitle.addEventListener('click', function () {
-    var indexOpen = indexBox.classList.toggle('show');
+    let indexOpen = indexBox.classList.toggle('show');
     indexBoxTitle.setAttribute('aria-expanded', indexOpen);
-    var ariaLabel = indexOpen ? indexBoxTitle.getAttribute('data-close-text') : indexBoxTitle.getAttribute('data-open-text');
+    let ariaLabel = indexOpen ? indexBoxTitle.getAttribute('data-close-text') : indexBoxTitle.getAttribute('data-open-text');
     indexBoxTitle.setAttribute('aria-label', ariaLabel);
   });
 
