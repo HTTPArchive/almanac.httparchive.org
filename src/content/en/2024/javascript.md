@@ -17,6 +17,7 @@ featured_stat_2: 47%
 featured_stat_label_2: Unused median JavaScript on mobile.
 featured_stat_3: 30%
 featured_stat_label_3: Pages using web wokers
+doi_todo: 10.5281/zenodo.TODO
 ---
 
 ## Introduction
