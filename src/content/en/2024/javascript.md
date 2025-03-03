@@ -22,7 +22,11 @@ doi_todo: 10.5281/zenodo.TODO
 
 ## Introduction
 
-JavaScript is essential for creating interactive web experiences, driving everything from basic animations to advanced functionalities. Its development has significantly enhanced the web's dynamic capabilities. However, this heavy dependence on JavaScript involves compromises. Each stage—from downloading and parsing to execution—demands substantial browser resources. Using too little can compromise user experience and business objectives while overusing it can lead to sluggish load times, unresponsive pages, and poor user engagement. In this chapter, we will re-evaluate JavaScript's role on the web and offer recommendations for designing smooth, efficient user experiences.
+JavaScript is essential for creating interactive web experiences, driving everything from basic animations to advanced functionalities. Its development has significantly enhanced the web's dynamic capabilities.
+
+However, this heavy dependence on JavaScript involves compromises. Each stage—from downloading and parsing to execution—demands substantial browser resources. Using too little can compromise user experience and business objectives while overusing it can lead to sluggish load times, unresponsive pages, and poor user engagement.
+
+In this chapter, we will re-evaluate JavaScript's role on the web and offer recommendations for designing smooth, efficient user experiences.
 
 ## How much JavaScript do we load?
 
@@ -76,11 +80,11 @@ Along with this increase in JavaScript, we see an increase in unused bytes of Ja
 
 ## How is JavaScript packaged processed?
 
-JavaScript bundling and transpiling have transformed web development by optimizing how applications are built and delivered. Bundlers like Webpack and Parcel package multiple files into a single bundle, reducing HTTP requests and improving loading times. Transpilers like Babel allow developers to use modern JavaScript features while ensuring compatibility across various browsers. However, managing these processes is crucial to avoid larger payloads that can hinder performance. Ultimately, they strike a balance between innovation and user experience, ensuring powerful yet efficient applications.
+JavaScript bundling and transpiling have transformed web development by optimizing how applications are built and delivered. Bundlers like webpack and Parcel package multiple files into a single bundle, reducing HTTP requests and improving loading times. Transpilers like Babel allow developers to use modern JavaScript features while ensuring compatibility across various browsers. However, managing these processes is crucial to avoid larger payloads that can hinder performance. Ultimately, they strike a balance between innovation and user experience, ensuring powerful yet efficient applications.
 
 ### Bundlers
 
-JavaScript bundlers, like Webpack and Parcel, package multiple JavaScript files into a single bundle to streamline delivery to users. They analyze the code and its dependencies, optimizing the final output to reduce the number of HTTP requests. By combining files, bundlers can improve loading times and performance. However, these tools can sometimes unintentionally tangle functional code with user tracking scripts, complicating performance and privacy considerations.
+JavaScript bundlers, like webpack and Parcel, package multiple JavaScript files into a single bundle to streamline delivery to users. They analyze the code and its dependencies, optimizing the final output to reduce the number of HTTP requests. By combining files, bundlers can improve loading times and performance. However, these tools can sometimes unintentionally tangle functional code with user tracking scripts, complicating performance and privacy considerations.
 
 {{ figure_markup(
   image="sites-using-webpack-grouped-by-rank.png",
@@ -92,7 +96,7 @@ JavaScript bundlers, like Webpack and Parcel, package multiple JavaScript files 
   )
 }}
 
-While Webpack usage remains at a steady 5% across websites, recent trends reveal a decline in its adoption among the top 1,000 sites, both on mobile and desktop. Although 5% may seem modest, it still represents a substantial number of Web Almanac's sites.
+While webpack usage remains at a steady 5% across websites, recent trends reveal a decline in its adoption among the top 1,000 sites, both on mobile and desktop. Although 5% may seem modest, it still represents a substantial number of Web Almanac's sites.
 
 {{ figure_markup(
   image="sites-using-parcel-grouped-by-rank.png",
@@ -104,7 +108,7 @@ While Webpack usage remains at a steady 5% across websites, recent trends reveal
   )
 }}
 
-Parcel stands as the second most popular alternative to Webpack, boasting a notable adoption rate among developers. However, recent trends indicate a decline in its usage, dropping from 1.3% of mobile websites last year to just 0.3% this year. A similar pattern emerges on desktop platforms, reflecting a shift in the landscape of JavaScript bundlers.
+Parcel stands as the second most popular alternative to webpack, boasting a notable adoption rate among developers. However, recent trends indicate a decline in its usage, dropping from 1.3% of mobile websites last year to just 0.3% this year. A similar pattern emerges on desktop platforms, reflecting a shift in the landscape of JavaScript bundlers.
 
 ### Transpilers
 
@@ -310,11 +314,13 @@ Comparing the two trends, the 2024 graph shows an increase in [third-party JavaS
   )
 }}
 
+The amount of bytes downloaed, shows simialr increases to the number of requests.
+
 ### Dynamic Imports
 
 Dynamic `import()` offers a more flexible alternative to the traditional static import syntax, allowing it to be called from anywhere within a script, unlike static imports that are restricted to the top of a JavaScript file.
 
-This flexibility empowers developers to "split" JavaScript code into smaller, more manageable chunks that can be loaded on-demand. By deferring the loading of non-essential code until it's actually needed, dynamic imports can significantly enhance startup performance, reducing the initial load and boosting overall efficiency.
+By deferring the loading of non-essential code until it's actually needed, dynamic imports can significantly enhance startup performance, reducing the initial load and boosting overall efficiency.
 
 {{ figure_markup(
   content="3.70%",
@@ -342,7 +348,7 @@ The increase in mobile pages utilizing web workers from 12% to 30% marks a signi
 
 ### Worklets
 
-Worklets are a specialized class of web workers designed to provide low-level access to rendering pipelines for tasks like painting and audio processing. While there are four types of worklets in total, only paint worklets and audio worklets are currently supported by modern browsers. A key performance advantage of worklets is their ability to run independently on separate threads, offloading resource-intensive tasks from the main thread. This not only boosts efficiency but also enhances performance by keeping the main thread free for essential operations, leading to smoother visuals and seamless audio experiences.
+Worklets are a specialized class of web workers designed to provide low-level access to rendering pipelines for tasks like painting and audio processing. A key performance advantage of worklets is their ability to run independently on separate threads, offloading resource-intensive tasks from the main thread. This not only boosts efficiency but also enhances performance by keeping the main thread free for essential operations, leading to smoother visuals and seamless audio experiences.
 
 {{ figure_markup(
   content="0.0016%",
@@ -426,22 +432,6 @@ Looking at uncompressed resources across the spectrum, we see the same smaller r
 
 JavaScript minification is a crucial optimization technique that reduces the size of JavaScript code by eliminating unnecessary characters without changing its functionality. Think of it like taking a lengthy novel and removing all the whitespace and making character names shorter - the story remains the same, but it takes up less space. The part about making function names, variable names, class names etc. shorter is also called uglification.
 
-For example:
-
-```js
-function calculateTotal(firstNumber, secondNumber) {
-    // Add the two numbers together
-    let result = firstNumber + secondNumber;
-    return result;    // Return the sum
-}
-
-```
-minifies into:
-
-```js
-function c(a,b){let r=a+b;return r}
-```
-
 {{ figure_markup(
   image="distribution-of-unminified-javascript-audit-scores.png",
   caption="Distribution of unminified JavaScript audit scores.",
@@ -509,15 +499,15 @@ Source maps themselves aren't a performance issue—browsers ignore them unless 
 Inline source maps (base64-encoded within production files) bloat JavaScript payloads, slowing downloads and processing.
 Publicly exposed source maps risk revealing sensitive code logic or credentials if not properly scoped.
 
-The data suggests most teams still opt for source map comments over headers. While comments are easier to implement (often automated by build tools like Webpack or Rollup), headers offer better control. For instance, headers can be conditionally served only to internal tools or authenticated users, reducing exposure of raw source code.
+The data suggests most teams still opt for source map comments over headers. While comments are easier to implement (often automated by build tools like webpack or Rollup), headers offer better control. For instance, headers can be conditionally served only to internal tools or authenticated users, reducing exposure of raw source code.
 
 ## Responsiveness
 
-JavaScript affects more than just startup performance. When we rely on JavaScript to provide interactivity, those interactions are driven by event handlers that take time to execute. Depending on the complexity of interactions and the amount of scripts involved to drive them, users may experience poor input responsiveness.
+We rely on JavaScript to provide interactivity, but the use of JavaScript can result in poor input responsiveness.
 
 ### Metrics
 
-Many metrics are used to assess responsiveness in both the lab and the field, and tools such as Lighthouse, Chrome UX Report (CrUX), and HTTP Archive track these metrics to provide a data-driven view of the current state of responsiveness on today's websites. Unless otherwise noted, all of the following graphs depict the 75th percentile—the threshold for which Core Web Vitals are determined to be passing—of that metric at the origin level.
+We look at both field data from the [Chrome UX Report (CrUX)](https://developer.chrome.com/docs/crux) and Lighthouse lab data to measure responsiveness.
 
 #### Interaction to Next Paint (INP)
 
@@ -531,7 +521,7 @@ Many metrics are used to assess responsiveness in both the lab and the field, an
   )
 }}
 
-To get a comprehensive view of page responsiveness across the entire page lifecycle, we examine [Interaction to Next Paint (INP)](https://web.dev/articles/inp), which measures all keyboard, mouse, and touch interactions on a page and selects a high percentile of interaction latency to represent overall page responsiveness.
+[Interaction to Next Paint (INP)](https://web.dev/articles/inp) became [a Core Web Vital in 2024](https://web.dev/blog/inp-cwv-launch). It measures all keyboard, mouse, and touch interactions on a page and selects a high percentile of interaction latency to represent overall page responsiveness.
 
 A "good" INP score is 200 milliseconds or less. At the median (50th percentile), both mobile (100 ms) and desktop (75 ms) score well within this threshold. However, at the 75th percentile, desktop (125 ms) and mobile (150 ms) approach the "needs improvement" range. By the 90th percentile, desktop (225 ms) and mobile (275 ms) exceed the "good" threshold, indicating responsiveness issues for a significant portion of websites.
 
@@ -547,17 +537,15 @@ A "good" INP score is 200 milliseconds or less. At the median (50th percentile),
   )
 }}
 
-Dovetailing into long tasks, there's the [Total Blocking Time (TBT)](https://web.dev/articles/tbt) metric, which calculates the total blocking time of long tasks during startup.
+The [Total Blocking Time (TBT)](https://web.dev/articles/tbt) metric is a lab metric which calculates the total blocking time of long tasks during startup.
 
-Unlike the preceding stats on INP, TBT is not sourced from real-user data. Instead, we're measuring synthetic performance in simulated desktop and mobile environments with device-appropriate CPU and network throttling enabled. As a result, we get exactly one TBT and TTI value for each page, rather than a distribution of real-user values across the entire website.
+TBT is sourced from Lighthouse rather real-user data. This measures synthetic performance in simulated desktop and mobile environments with device-appropriate CPU and network throttling enabled.
 
-Considering that INP correlates well with TBT, it's reasonable to assume that high TBT scores may contribute to poorer INP scores. Our synthetic approach highlights a significant disparity between desktop and mobile performance, with mobile experiencing much higher blocking times due to lower processing power. At the 75th percentile, mobile pages have nearly 3.0 seconds (2,988 ms) of blocking time, indicating a poor user experience. By the 90th percentile, mobile blocking time surges to 5.95 seconds (5,950 ms), whereas desktop remains substantially lower, reinforcing the performance gap between device types.
+At the 75th percentile, mobile pages have nearly 3.0 seconds (2,988 ms) of blocking time, indicating a poor user experience. By the 90th percentile, mobile blocking time surges to 5.95 seconds (5,950 ms), whereas desktop remains substantially lower, reinforcing the performance gap between device types.
 
 ### Long Tasks / blocking time
 
-As you may have gleaned from the previous section, the principal cause of poor interaction responsiveness is long tasks. To clarify, a long task is any task that runs on the main thread for longer than 50 milliseconds. The length of the task beyond 50 milliseconds is that task's blocking time, which can be calculated by subtracting 50 milliseconds from the task's total time.
-
-Long tasks are a problem because they block the main thread from doing any other work until that task is finished. When a page has lots of long tasks, the browser can feel like it's sluggish to respond to user input. In extreme cases, it can even feel like the browser isn't responding at all.
+A long task is any task that runs on the main thread for longer than 50 milliseconds. The length of the task beyond 50 milliseconds is that task's blocking time, which can be calculated by subtracting 50 milliseconds from the task's total time.
 
 {{ figure_markup(
   image="distribution-of-number-of-long-tasks-per-page.png",
@@ -571,7 +559,7 @@ Long tasks are a problem because they block the main thread from doing any other
 
 The median page encounters 14 long tasks on mobile and 3 long tasks on desktop devices. This aligns with expectations, as desktop devices typically have greater processing power and memory resources than mobile devices.
 
-However, the situation worsens at higher percentiles. At the 75th percentile, mobile pages experience 24 long tasks, while desktop pages have 6 long tasks. By the 90th percentile, mobile pages encounter 38 long tasks, whereas desktop pages still manage significantly fewer at 11 long tasks. This highlights the challenge of optimizing JavaScript execution, particularly for mobile users who face a much higher burden of blocking tasks.
+At the 75th percentile, mobile pages experience 24 long tasks, while desktop pages have 6 long tasks. By the 90th percentile, mobile pages encounter 38 long tasks, whereas desktop pages still manage significantly fewer at 11 long tasks. This highlights the challenge of optimizing JavaScript execution, particularly for mobile users who face a much higher burden of blocking tasks.
 
 {{ figure_markup(
   image="distribution-of-long-tasks-time-per-page.png",
@@ -583,15 +571,13 @@ However, the situation worsens at higher percentiles. At the 75th percentile, mo
   )
 }}
 
-It's not enough to know how many long tasks occur per page—we also need to understand the total time those tasks consume. The median mobile page has 2.37 seconds (2,366 ms) dedicated to long tasks, whereas desktop pages experience significantly less, at just a fraction of that time.
+The median mobile page has 2.37 seconds (2,366 ms) dedicated to long tasks, whereas desktop pages experience significantly less, at just a fraction of that time.
 
-The 75th percentile paints an even worse picture for mobile users, where pages spend 4.48 seconds (4,483 ms) processing long tasks, while desktop pages remain much lower. By the 90th percentile, mobile long task time soars to 7.77 seconds (7,770 ms), highlighting a major responsiveness issue. This excessive processing time suggests a strong need for JavaScript optimizations, such as breaking up long tasks or leveraging web workers to handle intensive computations off the main thread. These results underscore the challenges mobile users face when dealing with heavy JavaScript execution.
+At the 75th percentile pages spend 4.48 seconds (4,483 ms) processing long tasks, while desktop pages remain much lower. By the 90th percentile, mobile long task time soars to 7.77 seconds (7,770 ms), highlighting a major responsiveness issue. This excessive processing time suggests a strong need for JavaScript optimizations, such as breaking up long tasks or leveraging web workers to handle intensive computations off the main thread. These results underscore the challenges mobile users face when dealing with heavy JavaScript execution.
 
 ### Scheduler API
 
-Scheduling JavaScript tasks has historically been deferred to the browser. There are methods such as `requestIdleCallback` and `queueMicrotask`, but these APIs schedule tasks in a coarse way, and—especially in the case of `queueMicrotask`—can cause performance issues if misused. queueMicrotask runs immediately after the current script, potentially causing task starvation. Its misuse can lead to UI jank, blocking the main thread, or excessive CPU usage, impacting performance.
-
-The Scheduler API has recently been released, and gives developers finer control over scheduling tasks based on priority—though it is currently only limited to Chromium-based browsers.
+The [Scheduler API](https://developer.mozilla.org/docs/Web/API/Scheduler) has recently been expanded with the [`yield` method](https://developer.mozilla.org/docs/Web/API/Scheduler/yield), which provides an easier method to [break up long tasks](https://web.dev/articles/optimize-long-tasks).
 
 {{ figure_markup(
   content="0.65%",
@@ -683,7 +669,7 @@ As the web ecosystem continues to modernize, we expect some of these legacy libr
 
 ### Libraries used together
 
-It's not an uncommon scenario to see multiple frameworks and libraries used on the same page. As with last year, we'll examine this phenomenon to gain insight into how many libraries and frameworks have been used together in 2024.
+Frameworks and libraries are often used together on the same page. As with last year, we'll examine this phenomenon to gain insight into how many libraries and frameworks have been used together in 2024.
 
 <figure>
   <table>
@@ -754,7 +740,7 @@ It's clear though that jQuery has some serious staying power, with some combinat
 
 ## Web Components and Shadow DOM
 
-For some time, web development has been driven by a componentization model employed by numerous frameworks. The web platform has similarly evolved to provide encapsulation of logic and styling through web components and the shadow DOM. To kick off this year's analysis, we'll begin with custom elements.
+Web Components allows encapsulation of logic and styling through web components and the shadow DOM. To kick off this year's analysis, we'll begin with custom elements.
 
 {{ figure_markup(
   content="7.8%",
