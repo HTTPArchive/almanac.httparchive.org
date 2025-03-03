@@ -503,7 +503,7 @@ The data suggests most teams still opt for source map comments over headers. Whi
 
 ## Responsiveness
 
-We rely on JavaScript to provide interactivity, but the use of JavaScript can result in poor input responsiveness.
+We rely on JavaScript to provide interactivity, but the use of JavaScript can result in poor input responsiveness. More information can be found in the dedicated [Performance](./performance) chapter.
 
 ### Metrics
 
