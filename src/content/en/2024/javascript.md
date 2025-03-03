@@ -4,7 +4,7 @@
 title: JavaScript
 description: JavaScript chapter of the 2024 Web Almanac covering the usage of JavaScript on the web, libraries and frameworks, compression, web components, and source maps.
 hero_alt: Hero image of the Web Almanac characters cycling to power a website.
-authors: [haddiamjad]
+authors: [haddiamjad, NishuGoel]
 reviewers: [tunetheweb]
 editors: [tunetheweb]
 analysts: [onurguler18, nrllh]
