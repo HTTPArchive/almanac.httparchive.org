@@ -7,7 +7,7 @@ hero_alt: Hero image of the Web Almanac characters cycling to power a website.
 authors: [haddiamjad]
 reviewers: [tunetheweb]
 editors: [tunetheweb]
-analysts: [onurguler18,nrllh]
+analysts: [onurguler18, nrllh]
 translators: []
 results: https://docs.google.com/spreadsheets/d/16isMe5_rvmRmJHtK5Je66AhwO8SowGgq0EFqXyjEXw8/
 featured_quote: Heavy dependence on JavaScript involves compromises. Each stage—from downloading and parsing to execution—demands substantial browser resources. Using too little can compromise user experience and business objectives while overusing it can lead to sluggish load times, unresponsive pages, and poor user engagement.
@@ -17,7 +17,7 @@ featured_stat_2: 47%
 featured_stat_label_2: Unused median JavaScript on mobile.
 featured_stat_3: 30%
 featured_stat_label_3: Pages using web wokers
-doi_todo: 10.5281/zenodo.14962516
+doi: 10.5281/zenodo.14962516
 ---
 
 ## Introduction
