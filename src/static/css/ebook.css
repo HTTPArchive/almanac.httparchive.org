@@ -398,6 +398,9 @@ section.chapter {
     margin: 0 auto;
     display: block;
   }
+
+  /* Work around due to flex bug. */
+  /* See: https://www.princexml.com/forum/topic/4525/image-flex-bug-in-prince-14?p=1#22775 */
   .table-wrap {
     margin: 0 auto;
     display: block;
