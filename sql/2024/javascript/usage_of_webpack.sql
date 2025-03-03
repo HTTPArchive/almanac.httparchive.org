@@ -1,37 +1,17 @@
 #standardSQL
-# Percent of pages using webpack
-
-WITH totals AS (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    COUNT(DISTINCT url) AS total_pages
-  FROM
-    `httparchive.summary_pages.2024_06_01_*`
-  GROUP BY
-    client
-),
-
-webpack AS (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    COUNT(DISTINCT url) AS webpack_pages
-  FROM
-    `httparchive.technologies.2024_06_01_*`
-  WHERE
-    lower(app) = 'webpack'
-  GROUP BY
-    client
-)
+# Percent of pages using webpack grouped by rank
 
 SELECT
   client,
-  webpack_pages,
-  total_pages,
-  webpack_pages / total_pages AS pct_webpack_pages
+  COUNTIF('Webpack' IN UNNEST(technologies.technology)) AS webpack_pages,
+  COUNT(0) AS total_pages,
+  COUNTIF('Webpack' IN UNNEST(technologies.technology)) / COUNT(0) AS pct_webpack_pages
 FROM
-  totals
-JOIN
-  webpack
-USING (client)
+  `httparchive.crawl.pages`
+WHERE
+  date = '2024-06-01' AND
+  is_root_page
+GROUP BY
+  client
 ORDER BY
   client

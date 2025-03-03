@@ -12,9 +12,9 @@ FROM (
     IF(NET.HOST(url) IN (
       SELECT domain FROM `httparchive.almanac.third_parties` WHERE date = '2024-06-01' AND category != 'hosting'
     ), 'third party', 'first party') AS host,
-    SUM(cast(json_value(payload, '$.response.bodySize') AS INT64)) / 1024 AS kbytes
+    SUM(INT64(summary.respBodySize)) / 1024 AS kbytes
   FROM
-    `httparchive.all.requests`
+    `httparchive.crawl.requests`
 
   WHERE
     date = '2024-06-01' AND
