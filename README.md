@@ -8,7 +8,7 @@
 
 The Web Almanac is HTTP Archive's annual **state of the web** report.
 
-Our mission is to combine the raw stats and trends of the HTTP Archive with the expertise of the web community. The Web Almanac is a comprehensive report on the state of the web, backed by real data and trusted web experts. It is comprised of 20+ chapters spanning aspects of page content, user experience, publishing, and distribution.
+Our mission is to combine the raw stats and trends of the HTTP Archive with the expertise of the web community. The Web Almanac is a comprehensive report on the state of the web, backed by real data and trusted web experts. It is comprised of 20 or so chapters spanning aspects of page content, user experience, publishing, and distribution.
 
 The Web Almanac is available in the original [English](https://almanac.httparchive.org/en/) but has also been translated (sometimes only partially) to:
 - [Chinese (Simplified)](https://almanac.httparchive.org/zh-CN/)
@@ -30,9 +30,12 @@ See [our contributing guide](CONTRIBUTING.md). To run the Web Almanac locally pl
 
 ## Next Web Almanac timeline
 
-We [took a break in 2023](https://github.com/HTTPArchive/almanac.httparchive.org/discussions/33610), and are currently working on the 2024 version. If you would like to get involved, here's a [list of chapters](https://github.com/HTTPArchive/almanac.httparchive.org/issues?q=is%3Aissue+is%3Aopen+label%3A%222024+chapter%22) looking for help.
+<!--
+We are currently working on the 2024 version. If you would like to get involved, here's a [list of chapters](https://github.com/HTTPArchive/almanac.httparchive.org/issues?q=is%3Aissue+is%3Aopen+label%3A%222024+chapter%22) looking for help.
+-->
+We've just finishing the 2024 edition and haven't begun organizing the 2025 edition yet, but if you'd be interested to contribute, you can sign up to be notified when the project planning kicks off by filling out [this interest form](https://forms.gle/Juz3Ak7RkV6oSBKNA). Check off all teams that interest you and give a detailed description of what your areas of expertise are so we can reach out to you with targeted opportunities.
 
-In the meantime, enjoy the [2022 edition](https://almanac.httparchive.org) and we're still open to contributions in the form of [translations](https://github.com/HTTPArchive/almanac.httparchive.org/issues?q=is%3Aissue+is%3Aopen+label%3Atranslation), [development](https://github.com/HTTPArchive/almanac.httparchive.org/issues?q=is%3Aissue+is%3Aopen+label%3Adevelopment) or bug fixes.
+In the meantime, enjoy the chapters already published in the [2024 edition](https://almanac.httparchive.org) and we're still open to contributions in the form of [translations](https://github.com/HTTPArchive/almanac.httparchive.org/issues?q=is%3Aissue+is%3Aopen+label%3Atranslation), [development](https://github.com/HTTPArchive/almanac.httparchive.org/issues?q=is%3Aissue+is%3Aopen+label%3Adevelopment) or bug fixes.
 
 ## Where to find us
 

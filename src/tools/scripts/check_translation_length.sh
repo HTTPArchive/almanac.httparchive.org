@@ -60,7 +60,7 @@ if [ "${all}" == "1" ]; then
 elif [ "${RUN_TYPE}" == "pull_request" ] && [ "${COMMIT_SHA}" != "" ]; then
 
     # If this is part of pull request then get list of files as those changed
-    # Uses similar logic to GitHub Super Linter (https://github.com/github/super-linter/blob/master/lib/buildFileList.sh)
+    # Uses similar logic to GitHub Super Linter (https://github.com/super-linter/super-linter/blob/master/lib/buildFileList.sh)
     # First checkout main to get list of differences
     git pull --quiet
     git checkout main

@@ -64,6 +64,16 @@
       ]
     }
   },
+  "onurguler18": {
+    "avatar_url": "39603688",
+    "github": "onurguler18",
+    "name": "Onur Güler",
+    "teams": {
+      "2024": [
+        "analysts"
+      ]
+    }
+  },
   "argyleink": {
     "avatar_url": "1134620",
     "github": "argyleink",
@@ -3436,6 +3446,9 @@
       "2022": [
         "analysts",
         "reviewers"
+      ],
+      "2024": [
+        "authors"
       ]
     },
     "twitter": "TheNishuGoel",

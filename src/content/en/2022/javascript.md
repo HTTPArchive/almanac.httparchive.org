@@ -136,7 +136,7 @@ Transpilers are often used in toolchains at build-time to transform newer JavaSc
 
 {{ figure_markup(
     image="babel-rank.png",
-    caption="Pages that use Babel by rank.",
+    caption="Pages that use Babel by rank (of pages with source maps).",
     description="Bar chart showing the percentage of pages that use Babel, in decreasing order of popularity. On mobile pages, the values are 40% of the top 1k, 40% of the top 10k, 32% fo the top 100k, 23% of the top 1M, and 26% over all websites. Desktop pages trend close to mobile.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTok8UGqYaA58uKaASB2pfM2jlmQu6g3kwHxB6Lb8L7dbccyDtQht823YhchdXRG8SZpB3asRayJI97/pubchart?oid=1109529452&format=interactive",
     sheets_gid="304021769",

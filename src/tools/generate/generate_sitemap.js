@@ -77,10 +77,10 @@ const get_lastmod_date = (file) => {
 const convert_file_name = (url) => {
   if ( url.substr(url.length - 10) == "index.html" ) {
     return url.substr(0, url.length - 10);
-  };
+  }
   if ( url.endsWith(".html")) {
     return url.substr(0, url.length - 5).replace(/_/g,'-');
-  };
+  }
   return url.replace(/_/g,'-');
 };
 
