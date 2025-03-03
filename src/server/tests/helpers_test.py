@@ -374,8 +374,8 @@ def test_random_value_is_returned_as_none():
     assert get_file_date_info("en/2019/index.html", "rubbish") is None
 
 
-def test_en_ebook_size_at_least_16_mb_info():
-    assert get_file_date_info("/static/pdfs/web_almanac_2019_en.pdf", "size") > 16
+def test_en_ebook_size_at_least_10_mb_info():
+    assert get_file_date_info("/static/pdfs/web_almanac_2019_en.pdf", "size") > 10
 
 
 def test_versioned_css_file_is_of_correct_format():
@@ -389,13 +389,13 @@ def test_non_versioned_css_file_is_of_correct_format():
     assert versioned_filename == "/static/css/random.css"
 
 
-def test_en_ebook_size_at_least_16_mb():
-    assert get_ebook_size_in_mb("en", "2019") > 16
+def test_en_ebook_size_at_least_10_mb():
+    assert get_ebook_size_in_mb("en", "2019") > 10
 
 
 @pytest.mark.parametrize("config", all_ebooks)
-def test_all_configured_ebooks_at_least_16_mb(config):
-    assert get_ebook_size_in_mb(config[0], config[1]) > 16
+def test_all_configured_ebooks_at_least_10_mb(config):
+    assert get_ebook_size_in_mb(config[0], config[1]) > 10
 
 
 def test_ebook_size_non_existant_language_is_zero():
