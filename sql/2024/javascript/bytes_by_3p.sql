@@ -12,10 +12,9 @@ FROM (
     IF(NET.HOST(url) IN (
       SELECT domain FROM `httparchive.almanac.third_parties` WHERE date = '2024-06-01' AND category != 'hosting'
     ), 'third party', 'first party') AS host,
-    SUM(INT64(summary.respBodySize)) / 1024 AS kbytes
+    SUM(SAFE.INT64(summary.respBodySize)) / 1024 AS kbytes
   FROM
     `httparchive.crawl.requests`
-
   WHERE
     date = '2024-06-01' AND
     type = 'script'
