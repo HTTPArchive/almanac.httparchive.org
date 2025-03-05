@@ -73,7 +73,11 @@ sleep 2
 pgrep -if "python main.py"
 
 echo "Installing node modules"
-[ "$GITHUB_ACTIONS" ] && npm ci || npm install
+if [ "$GITHUB_ACTIONS" ]; then
+  npm ci
+else
+  npm install
+fi
 
 echo "Building website"
 npm run generate
