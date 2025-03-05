@@ -73,7 +73,7 @@ sleep 2
 pgrep -if "python main.py"
 
 echo "Installing node modules"
-npm install
+npm ci
 
 echo "Building website"
 npm run generate
@@ -87,7 +87,7 @@ npm run test
 # If being run in GitHub actions then generating the website should not
 # change any Git-tracked files. If it does then it suggests something's
 # wrong. Exit
-if [ "${GITHUB_ACTIONS}" ] && [ -n "$(git update-index --assume-unchanged package-lock.json && git status --porcelain)" ]; then
+if [ "${GITHUB_ACTIONS}" ] && [ -n "$(git status --porcelain)" ]; then
   echo "Generating the website produced a different file than is in the branch"
   git status
   exit 1
