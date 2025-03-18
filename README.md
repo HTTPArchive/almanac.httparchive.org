@@ -28,6 +28,8 @@ The Web Almanac is available in the original [English](https://almanac.httparchi
 
 See [our contributing guide](CONTRIBUTING.md). To run the Web Almanac locally please see [src/README.md](src/README.md).
 
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/HTTPArchive/almanac.httparchive.org?quickstart=1)
+
 ## Next Web Almanac timeline
 
 <!--
