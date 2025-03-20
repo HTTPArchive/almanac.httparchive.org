@@ -82,7 +82,9 @@ SELECT
   COUNTIF(decoding = 'sync') AS sync_decoding,
   COUNTIF(decoding = 'auto') AS auto_decoding,
   COUNTIF(fetchPriority = 'low') AS priority_low,
-  COUNTIF(fetchPriority = 'high') AS priority_high
+  COUNTIF(fetchPriority = 'low') / COUNT(DISTINCT url) AS pct_priority_low,
+  COUNTIF(fetchPriority = 'high') AS priority_high,
+  COUNTIF(fetchPriority = 'high') / COUNT(DISTINCT url) AS pct_priority_high
 FROM
   lcp_stats
 JOIN (
