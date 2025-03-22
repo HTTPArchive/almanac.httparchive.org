@@ -1247,9 +1247,9 @@ Creating sustainable websites requires a combination of understanding, planning,
 One of the simplest steps you can take in rapidly evaluating your sustainability situation is using an automated measurement tool. As with accessibility tooling, these only tell part of the story and cannot account for aspects that can only be human-tested (rather than automated), and there are still many issues we do not have accurate data to measure against; but it's still a good place to dip your toes in the water.
 
 For further information, refer to:
-- <a hreflang="en" href="https://github.com/Munter/subfont">Ecograder</a>
-- <a hreflang="en" href="https://github.com/Munter/subfont">Website Carbon</a>
-- <a hreflang="en" href="https://github.com/Munter/subfont">Are My Third Parties Green?</a>
+- <a hreflang="en" href="https://ecograder.com">Ecograder</a>
+- <a hreflang="en" href="https://websitecarbon.com">Website Carbon</a>
+- <a hreflang="en" href="https://aremythirdpartiesgreen.com/">Are My Third Parties Green?</a>
 
 #### Planning and reporting
 
