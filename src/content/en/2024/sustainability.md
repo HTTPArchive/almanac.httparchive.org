@@ -1256,9 +1256,8 @@ For further information, refer to:
 Another step forward you can take beyond a rapid evaluation is to put forward some concrete plans or even better, start reporting on your sustainability journey. Measure what you can, document your efforts, and be as open with your findings and progress as you can be. Sustainability is a journey and progress is always beneficial over perfection. Having a sustainability statement will be a great place to provide such plans and successes you have achieved.
 
 For further information, refer to:
-- <a hreflang="en" href="https://ecograder.com/">Best Sustainability Statements</a>
-- <a hreflang="en" href="https://www.websitecarbon.com/">Co2.js</a>
-- <a hreflang="en" href="https://aremythirdpartiesgreen.com/">How to Write An Effective Sustainability Statement</a>
+- <a hreflang="en" href="https://www.thegreenwebfoundation.org/co2-js/">Co2.js</a>
+- <a hreflang="en" href="https://ecocart.io/sustainability-statement/">How to Write An Effective Sustainability Statement</a>
 
 #### WSG
 
