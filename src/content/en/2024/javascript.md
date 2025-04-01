@@ -10,6 +10,8 @@ editors: [tunetheweb]
 analysts: [onurguler18, nrllh]
 translators: []
 results: https://docs.google.com/spreadsheets/d/16isMe5_rvmRmJHtK5Je66AhwO8SowGgq0EFqXyjEXw8/
+haddiamjad_bio: Amjad is a fourth-year Ph.D. candidate at Virginia Tech, advised by Dr. Muhammad Ali Gulzar from Virginia Tech. He is also member of <a hreflang="en" href="https://properdata.eng.uci.edu/researchers/">ProperData research group</a> and co-host at <a hreflang="en" href="https://nothingtohide.online/">NothingToHide?</a> podcast. His research focuses on using program analysis techniques to solve internet security and privacy problems.
+NishuGoel_bio: Nishu Goel is an engineer at <a hreflang="en" href="https://www.epilot.cloud/en">Epilot</a>. She is a Google Developer Expert for Web Technologies and Angular, Microsoft MVP for Developer Technologies, and the author of Step by Step Guide Angular Routing (BPB, 2019) and A Hands-on Guide to Angular (Educative, 2021). Find her writings at <a hreflang="en" href="https://unravelweb.dev/">unravelweb.dev</a>.
 featured_quote: Heavy dependence on JavaScript involves compromises. Each stage—from downloading and parsing to execution—demands substantial browser resources. Using too little can compromise user experience and business objectives while overusing it can lead to sluggish load times, unresponsive pages, and poor user engagement.
 featured_stat_1: 14%
 featured_stat_label_1: Increase in median mobile JavaScript bytes.

@@ -10,6 +10,8 @@ editors: [tunetheweb]
 analysts: [onurguler18, nrllh]
 translators: [ksakae1216]
 results: https://docs.google.com/spreadsheets/d/16isMe5_rvmRmJHtK5Je66AhwO8SowGgq0EFqXyjEXw8/
+haddiamjad_bio: Amjadは、Virginia Techの4年目の博士課程の学生で、Virginia TechのDr. Muhammad Ali Gulzarの指導を受けています。<a hreflang="en" href="https://properdata.eng.uci.edu/researchers/">ProperData研究グループ</a>のメンバーであり、<a hreflang="en" href="https://nothingtohide.online/">NothingToHide?</a>ポッドキャストの共同ホストです。プログラム分析技術を使用してインターネットのセキュリティとプライバシーの問題を解決することに焦点を当てた研究を行っています。
+NishuGoel_bio: Nishu Goelは<a hreflang="en" href="https://www.epilot.cloud/en">Epilot</a>のエンジニアです。WebテクノロジーとAngularのGoogle Developer Expert、Developer TechnologiesのMicrosoft MVPであり、Step by Step Guide Angular Routing（BPB、2019）とA Hands-on Guide to Angular（Educative、2021）の著者です。執筆内容は<a hreflang="en" href="https://unravelweb.dev/">unravelweb.dev</a>でご覧いただけます。
 featured_quote: JavaScriptへの過度な依存には、妥協が必要です。ダウンロードやパースから実行までの各段階で、ブラウザのリソースを大量に消費します。使用が少なすぎるとユーザー体験やビジネス目標に影響を与え、多すぎると読み込みが遅くなり、ページが応答しなくなり、ユーザーのエンゲージメントが低下する可能性があります。
 featured_stat_1: 14%
 featured_stat_label_1: モバイルのJavaScriptバイト数の中央値の増加
