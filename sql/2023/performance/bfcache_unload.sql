@@ -11,7 +11,6 @@ WITH lh AS (
     is_root_page
 )
 
-
 SELECT
   client,
   _rank AS rank,

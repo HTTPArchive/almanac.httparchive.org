@@ -42,7 +42,6 @@ WITH Robots_Data AS (
     date = '2024-06-01'
 )
 
-
 SELECT
   client,
   is_root_page,

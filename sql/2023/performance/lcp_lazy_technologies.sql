@@ -48,7 +48,6 @@ tech_totals AS (
     technology
 )
 
-
 SELECT
   client,
   technology,

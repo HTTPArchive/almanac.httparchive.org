@@ -68,7 +68,6 @@ totals AS (
     client
 )
 
-
 SELECT
   client,
   # High Level stats for all pages

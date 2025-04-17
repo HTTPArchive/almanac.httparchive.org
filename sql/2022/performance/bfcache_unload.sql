@@ -16,7 +16,6 @@ pages AS (
     `httparchive.summary_pages.2022_06_01_*`
 )
 
-
 SELECT
   client,
   _rank AS rank,

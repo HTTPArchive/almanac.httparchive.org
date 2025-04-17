@@ -20,7 +20,6 @@ requests AS (
     date = '2022-06-01'
 )
 
-
 SELECT
   client,
   type AS lcp_initiator_type,

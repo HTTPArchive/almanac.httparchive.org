@@ -23,7 +23,6 @@ requests AS (
     date = '2023-10-01'
 )
 
-
 SELECT
   client,
   IFNULL(type, 'unknown') AS lcp_initiator_type,

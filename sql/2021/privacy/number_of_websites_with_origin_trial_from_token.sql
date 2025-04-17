@@ -212,7 +212,6 @@ extracted_origin_trials_from_headers_and_meta_tags AS (
     tag_name = 'origin-trial'
 )
 
-
 SELECT
   client,
   COALESCE(origin_trials_from_custom_metric.featureElem, origin_trials_from_headers_and_meta_tags.featureElem) AS featureElem,

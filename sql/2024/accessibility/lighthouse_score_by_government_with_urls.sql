@@ -384,7 +384,6 @@ domain_scores AS (
 
       '|\\.(gov|mil|gouv|gob|gub|go|govt|gv|nic|government)\\.(taipei|[a-z]{2,3})/' -- Other generic government formats (e.g., gouv.fr, gob.mx, go.jp)
 
-
       '|\\.gc\\.ca/'  -- Canada and provinces
       '|\\.canada\\.ca/'
       '|\\.alberta\\.ca/'

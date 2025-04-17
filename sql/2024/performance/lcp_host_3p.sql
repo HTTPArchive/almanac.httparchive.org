@@ -10,7 +10,6 @@ WITH lcp AS (
     is_root_page
 )
 
-
 SELECT
   client,
   NET.REG_DOMAIN(url) AS lcp_domain,
