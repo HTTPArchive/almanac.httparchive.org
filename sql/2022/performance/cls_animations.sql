@@ -6,7 +6,6 @@ WITH lh AS (
     `httparchive.lighthouse.2022_06_01_*`
 )
 
-
 SELECT
   percentile,
   client,

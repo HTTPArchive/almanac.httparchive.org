@@ -38,7 +38,6 @@ WITH totals AS (
     client
 )
 
-
 SELECT
   client,
   prop,

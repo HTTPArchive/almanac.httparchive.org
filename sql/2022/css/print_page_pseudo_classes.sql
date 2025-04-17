@@ -52,7 +52,6 @@ WITH totals AS (
     client
 )
 
-
 SELECT
   client,
   pseudo_class,

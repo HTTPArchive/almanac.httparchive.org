@@ -23,7 +23,6 @@ WITH totals AS (
     _TABLE_SUFFIX
 )
 
-
 SELECT
   _TABLE_SUFFIX AS client,
   COUNT(DISTINCT url) AS pages,

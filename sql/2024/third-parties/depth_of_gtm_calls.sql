@@ -25,7 +25,6 @@ LANGUAGE js AS """
 """;
 
 
-
 CREATE TEMP FUNCTION mean_depth_and_next_element_after_gtm(input_array ARRAY<STRING>)
 RETURNS STRUCT<mean_depth FLOAT64, next_elements ARRAY<STRING>>
 LANGUAGE js AS """

@@ -43,7 +43,6 @@ WITH totals AS (
     client
 )
 
-
 SELECT
   *
 FROM (
