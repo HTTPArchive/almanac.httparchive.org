@@ -20,9 +20,14 @@
 
 {% block announcement_text -%}
 {%- if year < DEFAULT_YEAR -%}
-<p lang="en">
+<p lang="it">
   Stai visualizzando un’edizione precedente del Web Almanac.
   Dai un’occhiata all’<a href="/{{ lang }}/{{ DEFAULT_YEAR }}/{% if chapter_lang_exists(lang, DEFAULT_YEAR, slug) or page_lang_exists(lang, DEFAULT_YEAR, slug) %}{{ slug }}{% endif %}">edizione del {{ DEFAULT_YEAR }}!</a>
+</p>
+{%- elif year == DEFAULT_YEAR -%}
+<p lang="it">
+  📣 <a href="https://github.com/HTTPArchive/almanac.httparchive.org/discussions/4062">
+  <b>Chiamata per i contributori:</b></a> Aiuta a creare il Web Almanac 2025 ed entra a far parte del team che darà forma all’edizione di quest’anno!
 </p>
 {%- endif -%}
 {% endblock %}
