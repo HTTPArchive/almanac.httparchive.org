@@ -20,9 +20,14 @@
 
 {% block announcement_text -%}
 {%- if year < DEFAULT_YEAR -%}
-<p lang="en">
+<p>
   您正在查看舊版網路年鑑。
   查看 <a href="/{{ lang }}/{{ DEFAULT_YEAR }}/{% if chapter_lang_exists(lang, DEFAULT_YEAR, slug) or page_lang_exists(lang, DEFAULT_YEAR, slug) %}{{ slug }}{% endif %}">{{ DEFAULT_YEAR }} 年版！</a>.
+</p>
+{%- elif self.call_for_contributors_link() | trim | length > 0 -%}
+<p>
+  📣 <a hreflang="en" href="{{ self.call_for_contributors_link() }}"><b>徵求貢獻者</b></a>:
+協助打造 {{ now().year }} 年的 Web Almanac —— 成為今年版本製作團隊的一員！
 </p>
 {%- endif -%}
 {% endblock %}

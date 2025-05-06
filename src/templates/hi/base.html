@@ -20,9 +20,14 @@
 
 {% block announcement_text -%}
 {%- if year < DEFAULT_YEAR -%}
-<p lang="en">
+<p>
   आप वेब पंचांग का पिछला संस्करण देख रहे हैं।
   <a href="/{{ lang }}/{{ DEFAULT_YEAR }}/{% if chapter_lang_exists(lang, DEFAULT_YEAR, slug) or page_lang_exists(lang, DEFAULT_YEAR, slug) %}{{ slug }}{% endif %}">{{ DEFAULT_YEAR }} संस्करण</a> देखें!
+</p>
+{%- elif self.call_for_contributors_link() | trim | length > 0 -%}
+<p>
+  📣 <a hreflang="en" href="{{ self.call_for_contributors_link() }}"><b>योगदानकर्ताओं के लिए आह्वान</b></a>:
+{{ now().year }} Web Almanac बनाने में मदद करें— इस वर्ष की संस्करण को आकार देने वाली टीम का हिस्सा बनें!
 </p>
 {%- endif -%}
 {% endblock %}
