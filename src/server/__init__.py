@@ -12,6 +12,7 @@ from .helpers import (
     accentless_sort,
     get_versioned_filename,
 )
+from datetime import datetime
 from .config import TEMPLATES_DIR, STATIC_DIR
 from . import csp, feature_policy
 import logging
@@ -72,6 +73,7 @@ app.jinja_env.globals["add_footnote_links"] = add_footnote_links
 app.jinja_env.globals["year_live"] = year_live
 app.jinja_env.globals["get_versioned_filename"] = get_versioned_filename
 app.jinja_env.filters["accentless_sort"] = accentless_sort
+app.jinja_env.globals['now'] = datetime.now
 
 talisman = Talisman(
     app,

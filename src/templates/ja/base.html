@@ -20,14 +20,14 @@
 
 {% block announcement_text -%}
 {%- if year < DEFAULT_YEAR -%}
-<p lang="ja">
+<p>
   ご覧になっているのは、Web Almanac の以前の版です。
   <a href="/{{ lang }}/{{ DEFAULT_YEAR }}/{% if chapter_lang_exists(lang, DEFAULT_YEAR, slug) or page_lang_exists(lang, DEFAULT_YEAR, slug) %}{{ slug }}{% endif %}">{{ DEFAULT_YEAR }} 年版</a>をご覧ください。
 </p>
-{%- elif year == DEFAULT_YEAR -%}
-<p lang="ja">
-  📣 <a href="https://github.com/HTTPArchive/almanac.httparchive.org/discussions/4062">
-  <b>コントリビューター募集中:</b></a> Web Almanac 2025 の作成に参加して、今年のエディションを形作るチームの一員になりましょう！
+{%- elif self.call_for_contributors() | trim | length > 0 -%}
+<p>
+  📣 <a href="{{ self.call_for_contributors() }}">
+  <b>コントリビューター募集中:</b></a> {{ now().year }} Web Almanac の作成にご協力ください— 今年のエディションを形作るチームの一員になりましょう！
 </p>
 {%- endif -%}
 {% endblock %}

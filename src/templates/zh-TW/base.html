@@ -20,14 +20,14 @@
 
 {% block announcement_text -%}
 {%- if year < DEFAULT_YEAR -%}
-<p lang="zh-TW">
+<p>
   您正在查看舊版網路年鑑。
   查看 <a href="/{{ lang }}/{{ DEFAULT_YEAR }}/{% if chapter_lang_exists(lang, DEFAULT_YEAR, slug) or page_lang_exists(lang, DEFAULT_YEAR, slug) %}{{ slug }}{% endif %}">{{ DEFAULT_YEAR }} 年版！</a>.
 </p>
-{%- elif year == DEFAULT_YEAR -%}
-<p lang="zh-TW">
-  📣 <a href="https://github.com/HTTPArchive/almanac.httparchive.org/discussions/4062">
-  <b>徵求貢獻者:</b></a> 協助製作 Web Almanac 2025，成為打造今年版本團隊的一份子！
+{%- elif self.call_for_contributors() | trim | length > 0 -%}
+<p>
+  📣 <a href="{{ self.call_for_contributors() }}">
+  <b>徵求貢獻者:</b></a> 協助打造 {{ now().year }} 年的 Web Almanac —— 成為今年版本製作團隊的一員！
 </p>
 {%- endif -%}
 {% endblock %}

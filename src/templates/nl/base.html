@@ -20,14 +20,14 @@
 
 {% block announcement_text -%}
 {%- if year < DEFAULT_YEAR -%}
-<p lang="nl">
+<p>
   U bekijkt een eerdere editie van de Web Almanac.
   Bekijk de <a href="/{{ lang }}/{{ DEFAULT_YEAR }}/{% if chapter_lang_exists(lang, DEFAULT_YEAR, slug) or page_lang_exists(lang, DEFAULT_YEAR, slug) %}{{ slug }}{% endif %}">editie van {{ DEFAULT_YEAR }}!</a>
 </p>
-{%- elif year == DEFAULT_YEAR -%}
-<p lang="nl">
-  📣 <a href="https://github.com/HTTPArchive/almanac.httparchive.org/discussions/4062">
-  <b>Oproep aan bijdragers:</b></a> Help mee met het maken van de Web Almanac 2025 en word onderdeel van het team dat deze editie vormgeeft!
+{%- elif self.call_for_contributors() | trim | length > 0 -%}
+<p>
+  📣 <a href="{{ self.call_for_contributors() }}">
+  <b>Oproep aan bijdragers:</b></a> Help mee de Web Almanac {{ now().year }} te maken— en word onderdeel van het team dat deze editie vormgeeft!
 </p>
 {%- endif -%}
 {% endblock %}
