@@ -28,7 +28,6 @@ return results;
 ''';
 
 
-
 SELECT
   client,
   total,

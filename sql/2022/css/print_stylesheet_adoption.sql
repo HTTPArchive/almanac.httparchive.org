@@ -18,7 +18,6 @@ WITH print AS (
     `httparchive.pages.2022_07_01_*` -- noqa: CV09
 )
 
-
 SELECT
   client,
   COUNTIF(has_print_stylesheet) AS pages,

@@ -114,7 +114,6 @@ try {
 ''';
 
 
-
 SELECT
   client,
   COUNT(0) AS total,

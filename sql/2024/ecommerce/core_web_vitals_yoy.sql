@@ -71,7 +71,6 @@ GROUP BY
   client,
   app
 
-
 UNION ALL
 
 -- Year 2023
@@ -187,7 +186,6 @@ WHERE
 GROUP BY
   client,
   app
-
 
 ORDER BY
   origins DESC

@@ -124,7 +124,6 @@ normalized_permissions_policy AS (  -- normalize
     merged_permissions_policy
 )
 
-
 SELECT
   client,
   rank_grouping,

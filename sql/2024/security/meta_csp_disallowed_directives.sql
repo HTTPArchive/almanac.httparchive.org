@@ -15,7 +15,6 @@ WITH totals AS (
     client
 )
 
-
 SELECT
   client,
   total_pages,

@@ -45,7 +45,6 @@ wp AS (
     app = 'WordPress'
 )
 
-
 SELECT
   client,
   COUNTIF(wordpress) AS wordpress,

@@ -7,7 +7,6 @@ WITH lcp AS (
     `httparchive.pages.2022_06_01_*`
 )
 
-
 SELECT
   client,
   NET.REG_DOMAIN(url) AS lcp_domain,

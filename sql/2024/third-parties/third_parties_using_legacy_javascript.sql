@@ -45,7 +45,6 @@ base AS (
     page
 )
 
-
 SELECT
   client,
   AVG(pct_1p_legacy) AS avg_pct_1p_legacy,

@@ -67,7 +67,6 @@ cookies AS (
     websites_per_client
 )
 
-
 SELECT
   *
 FROM (

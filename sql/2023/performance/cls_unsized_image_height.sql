@@ -10,7 +10,6 @@ WITH lh AS (
     is_root_page
 )
 
-
 SELECT
   percentile,
   client,

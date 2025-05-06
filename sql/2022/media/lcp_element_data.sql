@@ -38,7 +38,6 @@ CREATE TEMP FUNCTION getLoadingClasses(attributes STRING) RETURNS STRING LANGUAG
 ''';
 
 
-
 WITH
 lcp_stats AS (
   SELECT
