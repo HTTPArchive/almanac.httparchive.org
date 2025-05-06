@@ -24,10 +24,10 @@
   Ви переглядаєте попереднє видання веб-альманаху.
   Перегляньте випуск <a href="/{{ lang }}/{{ DEFAULT_YEAR }}/{% if chapter_lang_exists(lang, DEFAULT_YEAR, slug) or page_lang_exists(lang, DEFAULT_YEAR, slug) %}{{ slug }}{% endif %}">{{ DEFAULT_YEAR }} року!</a>
 </p>
-{%- elif self.call_for_contributors() | trim | length > 0 -%}
+{%- elif self.call_for_contributors_link() | trim | length > 0 -%}
 <p>
-  📣 <a href="{{ self.call_for_contributors() }}">
-  <b>Заклик до учасників:</b></a> Допоможіть створити Web Almanac {{ now().year }} — станьте частиною команди, яка формує цьогорічний випуск!
+  📣 <a hreflang="en" href="{{ self.call_for_contributors_link() }}"><b>Заклик до учасників</b></a>:
+Допоможіть створити Web Almanac {{ now().year }} — станьте частиною команди, яка формує цьогорічний випуск!
 </p>
 {%- endif -%}
 {% endblock %}

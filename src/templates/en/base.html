@@ -24,10 +24,10 @@
   You’re viewing a previous edition of the Web Almanac.
   Check out the <a href="/{{ lang }}/{{ DEFAULT_YEAR }}/{% if chapter_lang_exists(lang, DEFAULT_YEAR, slug) or page_lang_exists(lang, DEFAULT_YEAR, slug) %}{{ slug }}{% endif %}">{{ DEFAULT_YEAR }} edition!</a>
 </p>
-{%- elif self.call_for_contributors() | trim | length > 0 -%}
+{%- elif self.call_for_contributors_link() | trim | length > 0 -%}
 <p>
-  📣 <a href="{{ self.call_for_contributors() }}">
-  <b>Call for Contributors:</b></a> Help create the {{ now().year }} Web Almanac— be part of the team shaping this year’s edition!
+  📣 <a hreflang="en" href="{{ self.call_for_contributors_link() }}"><b>Call for Contributors</b></a>:
+Help create the {{ now().year }} Web Almanac— be part of the team shaping this year’s edition!
 </p>
 {%- endif -%}
 {% endblock %}

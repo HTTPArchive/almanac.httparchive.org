@@ -106,6 +106,8 @@
 
 {% endblock %}
 
+{% block call_for_contributors_link %}https://github.com/HTTPArchive/almanac.httparchive.org/discussions/4062{% endblock %}
+
 {% block contributors %}{{ config.contributors.keys() | length }}{% endblock %}
 
 {% block non_chapter_nav_links %}
@@ -632,10 +634,6 @@
   {% block scripts %}
   <script async src="{{ get_versioned_filename('/static/js/almanac.js') }}" nonce="{{ csp_nonce() }}"></script>
   {% endblock %}
-{% endblock %}
-
-{% block call_for_contributors %}
-https://github.com/HTTPArchive/almanac.httparchive.org/discussions/4062
 {% endblock %}
 
 {% macro figure_dropdown(metadata, chapter_config, id, sheets_gid="", sql_file="", image="", caption="") %}

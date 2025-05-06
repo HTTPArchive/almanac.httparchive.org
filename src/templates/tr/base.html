@@ -24,10 +24,10 @@
   Web Almanac'ın önceki bir baskısını görüntülüyorsunuz.
   <a href="/{{ lang }}/{{ DEFAULT_YEAR }}/{% if chapter_lang_exists(lang, DEFAULT_YEAR, slug) or page_lang_exists(lang, DEFAULT_YEAR, slug) %}{{ slug }}{% endif %}">{{ DEFAULT_YEAR }} baskısına</a> göz atın!.
 </p>
-{%- elif self.call_for_contributors() | trim | length > 0 -%}
+{%- elif self.call_for_contributors_link() | trim | length > 0 -%}
 <p>
-  📣 <a href="{{ self.call_for_contributors() }}">
-  <b>Katkı sağlamak ister misiniz?</b></a> {{ now().year }} Web Almanac'ı oluşturmaya yardım edin— bu yılki baskıyı şekillendiren ekibin bir parçası olun!
+  📣 <a hreflang="en" href="{{ self.call_for_contributors_link() }}"><b>Katkı sağlamak ister misiniz?</b></a>
+  {{ now().year }} Web Almanac'ı oluşturmaya yardım edin— bu yılki baskıyı şekillendiren ekibin bir parçası olun!
 </p>
 {%- endif -%}
 {% endblock %}

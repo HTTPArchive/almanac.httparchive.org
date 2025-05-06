@@ -454,16 +454,6 @@
   right: -1.5rem;
 }
 
-aside,
-.note {
-  font-style: italic;
-}
-
-aside em,
-.note em {
-  font-style: normal;
-}
-
 table,
 figure {
   max-width: 100%;

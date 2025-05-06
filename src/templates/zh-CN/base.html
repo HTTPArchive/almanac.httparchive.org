@@ -24,10 +24,10 @@
   您正在查看 Web 年鉴的上一版。
   查看 <a href="/{{ lang }}/{{ DEFAULT_YEAR }}/{% if chapter_lang_exists(lang, DEFAULT_YEAR, slug) or page_lang_exists(lang, DEFAULT_YEAR, slug) %}{{ slug }}{% endif %}">{{ DEFAULT_YEAR }} 年版！</a>.
 </p>
-{%- elif self.call_for_contributors() | trim | length > 0 -%}
+{%- elif self.call_for_contributors_link() | trim | length > 0 -%}
 <p>
-  📣 <a href="{{ self.call_for_contributors() }}">
-  <b>贡献者招募:</b></a> 帮助创建 {{ now().year }} 年的 Web Almanac —— 成为塑造今年版本的团队一员！
+  📣 <a hreflang="en" href="{{ self.call_for_contributors_link() }}"><b>贡献者招募</b></a>:
+帮助创建 {{ now().year }} 年的 Web Almanac —— 成为塑造今年版本的团队一员！
 </p>
 {%- endif -%}
 {% endblock %}
