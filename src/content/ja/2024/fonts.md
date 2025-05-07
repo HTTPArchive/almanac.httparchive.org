@@ -8,8 +8,8 @@ reviewers: [drott, svgeesus, ivanukhov, jmsole, liamquin, mandymichael, raphlinu
 editors: [charlesberret]
 analysts: [ivanukhov]
 translators: [ksakae1216]
-bramstein_bio: Bram Stein is CTO at <a hreflang="en" href="https://thetypefounders.com">The Type Founders</a>. Before that he was Head of Webfonts at <a hreflang="en" href="https://fonts.adobe.com">Adobe Fonts</a>. He is the author of the <a hreflang="en" href="https://abookapart.com/products/webfont-handbook">Webfont Handbook</a> and speaks about typography and web performance at conferences around the world.
-charlesberret_bio: Charles Berret is a writer, interdisciplinary researcher, and data journalist who studies the history and philosophy of media and information technologies.
+bramstein_bio: Bram Steinは<a hreflang="en" href="https://thetypefounders.com">The Type Founders</a>のチーフテクノロジーオフィサー（CTO）です。以前は<a hreflang="en" href="https://fonts.adobe.com">Adobe Fonts</a>のウェブフォント部門長を務めていました。<a hreflang="en" href="https://abookapart.com/products/webfont-handbook">Webfont Handbook</a>の著者であり、世界中のカンファレンスでタイポグラフィとウェブパフォーマンスについて講演しています。
+charlesberret_bio: Charles Berretはライター、学際的研究者、データジャーナリストとして、メディアと情報技術の歴史と哲学を研究しています。
 results: https://docs.google.com/spreadsheets/d/1EkdvJ8e0B9Rr42evC2Ds5Ekwq6gF9oLBW0BA5cmSUT4/
 featured_quote: トレンドは明らかです&colon; より多くの人々がウェブフォントをセルフホストすることを好んでいます。これは多くの場合に優れた選択です。なぜなら、セルフホスティングはフォントのようなレンダリングに不可欠なものに対する外部依存を避けることができるからです。
 featured_stat_1: 11%
