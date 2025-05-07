@@ -1957,6 +1957,11 @@
     "date_modified": "2022-07-02T00:00:00.000Z",
     "hash": "4294fa74602b009c401be6b253631fe6"
   },
+  "ja/2024/chapters/fonts.html": {
+    "date_published": "2025-05-07T00:00:00.000Z",
+    "date_modified": "2025-05-07T00:00:00.000Z",
+    "hash": "a1679e7ff371e47c2c85e4433ae81bad"
+  },
   "ja/2024/chapters/javascript.html": {
     "date_published": "2025-04-07T00:00:00.000Z",
     "date_modified": "2025-04-07T00:00:00.000Z",
@@ -1976,6 +1981,11 @@
     "date_published": "2025-05-06T00:00:00.000Z",
     "date_modified": "2025-05-06T00:00:00.000Z",
     "hash": "26e0fe0be6c479a4a605523bf7942226"
+  },
+  "ja/2024/chapters/third-parties.html": {
+    "date_published": "2025-05-07T00:00:00.000Z",
+    "date_modified": "2025-05-07T00:00:00.000Z",
+    "hash": "cd5f31c059358df8a79d7e2d462f2ef1"
   },
   "ja/2024/contributors.html": {
     "date_published": "2024-10-15T00:00:00.000Z",
