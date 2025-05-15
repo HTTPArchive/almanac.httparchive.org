@@ -31,12 +31,12 @@ See [our contributing guide](CONTRIBUTING.md). To run the Web Almanac locally pl
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/HTTPArchive/almanac.httparchive.org?quickstart=1)
 
 ## Next Web Almanac timeline
- 
 We are currently working on the 2025 version. If you would like to get involved, here's a [list of chapters](https://github.com/HTTPArchive/almanac.httparchive.org/issues?q=is%3Aissue%20is%3Aopen%20label%3A%222025%20chapter%22) looking for help. Alternatively, you can fill out [this interest form](https://forms.gle/Juz3Ak7RkV6oSBKNA) to express your interest. Check off all teams that interest you and give a detailed description of what your areas of expertise are so we can reach out to you with targeted opportunities.
 
 <!--
 In the meantime, enjoy the [2024 edition](https://almanac.httparchive.org) and we're still open to contributions in the form of [translations](https://github.com/HTTPArchive/almanac.httparchive.org/issues?q=is%3Aissue+is%3Aopen+label%3Atranslation), [development](https://github.com/HTTPArchive/almanac.httparchive.org/issues?q=is%3Aissue+is%3Aopen+label%3Adevelopment) or bug fixes.
 -->
+
 ## Where to find us
 
 We do almost all of our project planning here on GitHub. Browse the open [issues](https://github.com/HTTPArchive/almanac.httparchive.org/issues) to see what we're working on and what may be [suitable for new contributors](https://github.com/HTTPArchive/almanac.httparchive.org/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22).
