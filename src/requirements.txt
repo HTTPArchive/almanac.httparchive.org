@@ -1,4 +1,4 @@
-flask==3.1.0
+flask==3.1.1
 flask-talisman==1.1.0
 gunicorn==23.0.0
 pytest==8.3.5
@@ -8,5 +8,5 @@ sqlfluff==3.4.0
 
 # sql/util/* dependencies
 pandas==2.2.3
-google-cloud-bigquery==3.31.0
+google-cloud-bigquery==3.32.0
 requests==2.32.3

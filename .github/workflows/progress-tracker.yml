@@ -4,9 +4,9 @@ env:
   # Update these environment variables every year
   # And check the tracker is enabled at:
   # https://github.com/HTTPArchive/almanac.httparchive.org/actions/workflows/progress-tracker.yml
-  FILTER_LABEL: '2024 chapter'
-  TRACKER_ISSUE_NUMBER: 3634
-  SQL_BASE_DIR: 'https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/2024/'
+  FILTER_LABEL: '2025 chapter'
+  TRACKER_ISSUE_NUMBER: 4110
+  SQL_BASE_DIR: 'https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/2025/'
 
 on:
   workflow_dispatch:
