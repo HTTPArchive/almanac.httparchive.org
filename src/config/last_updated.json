@@ -36,13 +36,13 @@
   },
   "/static/js/send-web-vitals.js": {
     "date_published": "2021-02-24T00:00:00.000Z",
-    "date_modified": "2025-03-03T00:00:00.000Z",
-    "hash": "626d029c7107a8fe569a02a06b2f5894"
+    "date_modified": "2025-05-15T00:00:00.000Z",
+    "hash": "67574c23a511f3149c90c88735c5a6f3"
   },
   "/static/js/web-vitals.js": {
     "date_published": "2020-11-13T00:00:00.000Z",
-    "date_modified": "2024-11-11T00:00:00.000Z",
-    "hash": "f6f30f40e7d014a2d38f1362c5eb6244"
+    "date_modified": "2025-05-15T00:00:00.000Z",
+    "hash": "224e4d80704c73222c7ea0cf1ea453e9"
   },
   "/static/js/webmentions.js": {
     "date_published": "2021-12-01T00:00:00.000Z",
