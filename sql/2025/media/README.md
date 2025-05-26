@@ -50,5 +50,5 @@ Some additional notes, that came out of the document review process:
 - [📝 Markdown file][~chapter-markdown]
 
 [~google-doc]: https://docs.google.com/document/d/1udD7MfYSekvx80tbfv0D8fv3bJNNEO7qMOUYGz_jwlI
-[~google-sheets]: https://docs.google.com/spreadsheets/d/14ZMet41a4IPdJgLqOGjKSLauSwI6wj-GZ4wuZVtSS64
+[~google-sheets]: https://docs.google.com/spreadsheets/d/14ZMet41a4IPdJgLqOGjKSLauSwI6wj-GZ4wuZVtSS64/edit
 [~chapter-markdown]: https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/src/content/en/2025/media.md

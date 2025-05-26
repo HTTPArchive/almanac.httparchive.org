@@ -16,11 +16,5 @@
 - [📝 Markdown file][~chapter-markdown]
 
 [~google-doc]: https://docs.google.com/document/d/1JX7vklpKJa_4RImgC8bfNNa9V725FaF0HH6RJcbRnYU
-[~google-sheets]: https://docs.google.com/spreadsheets/d/1ZirsnaXgbOMzBmt0X2eMMu3rVJvWCtQgE7pNG7fKcvc
+[~google-sheets]: https://docs.google.com/spreadsheets/d/1ZirsnaXgbOMzBmt0X2eMMu3rVJvWCtQgE7pNG7fKcvc/edit
 [~chapter-markdown]: https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/src/content/en/2025/cookies.md
-
-## Note about SQL queries
-
-First execute [`0_create_cookies.sql`](0_create_cookies.sql) to export the
-results of the <DATE> crawl specified into the `httparchive.almanac.cookies`
-table that will then be used in other SQL queries.

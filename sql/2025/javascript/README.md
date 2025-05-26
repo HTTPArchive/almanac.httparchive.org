@@ -16,5 +16,5 @@
 - [📝 Markdown file][~chapter-markdown]
 
 [~google-doc]: https://docs.google.com/document/d/13FYltGRpt8gkEoxe-cxyq3aj0MngI6oPXRD5kExYS4w
-[~google-sheets]: https://docs.google.com/spreadsheets/d/1OjnDd20O2zCjkP_HGAu9MlcvP6ACtkkNdAenuHB_rCk
+[~google-sheets]: https://docs.google.com/spreadsheets/d/1OjnDd20O2zCjkP_HGAu9MlcvP6ACtkkNdAenuHB_rCk/edit
 [~chapter-markdown]: https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/src/content/en/2025/javascript.md

@@ -16,5 +16,5 @@
 - [📝 Markdown file][~chapter-markdown]
 
 [~google-doc]: https://docs.google.com/document/d/1DkY9txnPfNmnbhCRGclPrM5kBOqP7LHRyjlTOdkiPUg
-[~google-sheets]: https://docs.google.com/spreadsheets/d/1aBKejgMdoQGg88uLyiM44FKKkKztfKsdGJbI6rQv934
+[~google-sheets]: https://docs.google.com/spreadsheets/d/1aBKejgMdoQGg88uLyiM44FKKkKztfKsdGJbI6rQv934/edit
 [~chapter-markdown]: https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/src/content/en/2025/jamstack.md

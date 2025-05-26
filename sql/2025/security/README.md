@@ -14,9 +14,7 @@
 - [📄 Planning doc][~google-doc]
 - [📊 Results sheet][~google-sheets]
 - [📝 Markdown file][~chapter-markdown]
-- [:book: 2022 chapter][~2022-chapter]
 
 [~google-doc]: https://docs.google.com/document/d/1PsuoanrDsTxTpNrf8VBAx_IxWVw6BTuCG1DnDzhWj00
-[~google-sheets]: https://docs.google.com/spreadsheets/d/1TLYRfNRbFu4fWwWvG4zhcRXkQ8-aZTxszgsEWjYATpA/
+[~google-sheets]: https://docs.google.com/spreadsheets/d/1TLYRfNRbFu4fWwWvG4zhcRXkQ8-aZTxszgsEWjYATpA//edit
 [~chapter-markdown]: https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/src/content/en/2025/security.md
-[~2022-chapter]: https://almanac.httparchive.org/en/2022/security

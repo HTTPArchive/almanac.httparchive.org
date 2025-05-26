@@ -16,5 +16,5 @@
 - [📝 Markdown file][~chapter-markdown]
 
 [~google-doc]: https://docs.google.com/document/d/11wvtmnRiTCwiRio1kt1MaJF_cGaCg8G-utgw_jpuiRs
-[~google-sheets]: https://docs.google.com/spreadsheets/d/1oTOkbeVSuwhVQQEFTHtj5UF6bImIUc_Iey84qZ7m9pY
+[~google-sheets]: https://docs.google.com/spreadsheets/d/1oTOkbeVSuwhVQQEFTHtj5UF6bImIUc_Iey84qZ7m9pY/edit
 [~chapter-markdown]: https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/src/content/en/2025/sustainability.md

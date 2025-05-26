@@ -16,5 +16,5 @@
 - [📝 Markdown file][~chapter-markdown]
 
 [~google-doc]: https://docs.google.com/document/d/1kDm-lUOEmLU3Dy8r4NUNeN3oofPSQsTWs3Fk_UwX9aE
-[~google-sheets]: https://docs.google.com/spreadsheets/d/1L87psRjZsmfCM1HpZKeP93455aBh2DCmGZTFkv9lKyk
+[~google-sheets]: https://docs.google.com/spreadsheets/d/1L87psRjZsmfCM1HpZKeP93455aBh2DCmGZTFkv9lKyk/edit
 [~chapter-markdown]: https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/src/content/en/2025/structured-data.md

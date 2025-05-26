@@ -16,7 +16,5 @@
 - [📝 Markdown file][~chapter-markdown]
 
 [~google-doc]: https://docs.google.com/document/d/1Bl5E8y_6kRv7iMhaoDnIFu2hseypzD_Mkd6-y_z4L0A
-[~google-sheets]: https://docs.google.com/spreadsheets/d/1H6bwT8i4C04bKhONn1M0GDl_QQroO7tKYW3NmPXbNHM
+[~google-sheets]: https://docs.google.com/spreadsheets/d/1H6bwT8i4C04bKhONn1M0GDl_QQroO7tKYW3NmPXbNHM/edit
 [~chapter-markdown]: https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/src/content/en/2025/ecommerce.md
-
-
