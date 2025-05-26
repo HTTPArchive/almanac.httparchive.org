@@ -1,8 +1,8 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
-title: ...
-description: ...
-hero_alt: ...
+title: SEO
+description: SEO chapter of the 2025 Web Almanac covering crawlability, indexability, page experience, on-page SEO, links, AMP, internationalization, and more.
+hero_alt: Hero image of various web pages beneath a search field with Web Almanac characters shine a light on the pages and make various checks.
 authors: []
 reviewers: []
 analysts: []

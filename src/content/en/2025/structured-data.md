@@ -1,8 +1,8 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
-title: ...
-description: ...
-hero_alt: ...
+title: Structured data
+description: Structured data chapter of the 2025 Web Almanac covering adoption and year on year change of RDFa, Opne Graph, Twitter, JSON-LD, Microdata, Facebook, Dublin Core, Microformats and microformats2 structured data.
+hero_alt: Hero image of a Web Almanac chracter pulling an identification card out of a wallet and plugging it into a web page.
 authors: []
 reviewers: []
 analysts: []

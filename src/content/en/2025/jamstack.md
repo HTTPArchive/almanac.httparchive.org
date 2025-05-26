@@ -1,8 +1,8 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
-title: ...
-description: ...
-hero_alt: ...
+title: Jamstack
+description: Jamstack chapter of the 2025 Web Almanac covers quantifying Pre-Rendered and Hybrid sites and the growth of build tools powering them.
+hero_alt: Hero image of the Web Almanac characters using a large gas cylinder with script markings on the front to inflate a web page.
 authors: []
 reviewers: []
 analysts: []

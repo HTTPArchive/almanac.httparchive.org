@@ -1,8 +1,8 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
-title: ...
-description: ...
-hero_alt: ...
+title: CMS
+description: CMS chapter of the 2025 Web Almanac covering CMS adoption, user experience of websites running on CMS platforms, and CMS resource weights.
+hero_alt: Hero image of Web Almanac characters on a type writer writing a web page.
 authors: []
 reviewers: []
 analysts: []

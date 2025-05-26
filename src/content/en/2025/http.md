@@ -1,8 +1,8 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
-title: ...
-description: ...
-hero_alt: ...
+title: HTTP
+description: The HTTP chapter of the 2025 Web Almanac covers data on historical versions of HTTP used across the web, as well as the uptick in adoption of HTTP/2 and HTTP/3 from alt-svc and DNS HTTPS records. Additionally, it looks at higher level features that impact HTTP behaviour, such as Resource Hints, 103 Early Hints and the Fetch Priority API.
+hero_alt: Hero image of Web Almanac characters driving vehicles in various lanes carrying scripts and images
 authors: []
 reviewers: []
 analysts: []

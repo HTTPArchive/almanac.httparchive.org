@@ -1,8 +1,8 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
-title: ...
-description: ...
-hero_alt: ...
+title: CSS
+description: CSS chapter of the 2025 Web Almanac covering trends, changes, and patterns in CSS use across the web.
+hero_alt: Hero image of Web Almanac characters measuring and painting a web page.
 authors: []
 reviewers: []
 analysts: []

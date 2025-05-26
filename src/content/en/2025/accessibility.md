@@ -1,8 +1,8 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
-title: ...
-description: ...
-hero_alt: ...
+title: Accessibility
+description: Accessibility chapter of the 2025 Web Almanac covering ease of reading, navigation, forms, media, ARIA, and accessibility apps.
+hero_alt: Hero image of a robot with a blue, human accessibility icon on its front scanning a web page, while Web Almanac characters check some labels.
 authors: []
 reviewers: []
 analysts: []

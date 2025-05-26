@@ -1,8 +1,8 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
-title: ...
-description: ...
-hero_alt: ...
+title: Third Parties
+description: Third Parties chapter of the 2025 Web Almanac covering data of what third parties are used on the web and an analysis of inclusion chains of third parties.
+hero_alt: Hero image of Web Almanac characters plugging various things into a web page.
 authors: []
 reviewers: []
 analysts: []
