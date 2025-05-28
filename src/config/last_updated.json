@@ -877,6 +877,126 @@
     "date_modified": "2024-11-11T00:00:00.000Z",
     "hash": "21329bd976566f8d3771f03c27afff60"
   },
+  "en/2025/chapters/accessibility.html": {
+    "date_published": "2025-05-28T00:00:00.000Z",
+    "date_modified": "2025-05-28T00:00:00.000Z",
+    "hash": "79038a77933b6a73ed01421fcf59bbe6"
+  },
+  "en/2025/chapters/cdn.html": {
+    "date_published": "2025-05-28T00:00:00.000Z",
+    "date_modified": "2025-05-28T00:00:00.000Z",
+    "hash": "2041822259c77339950ea0aac350e246"
+  },
+  "en/2025/chapters/cms.html": {
+    "date_published": "2025-05-28T00:00:00.000Z",
+    "date_modified": "2025-05-28T00:00:00.000Z",
+    "hash": "ed02dbc45f6ddfe066e2259697e65e1c"
+  },
+  "en/2025/chapters/cookies.html": {
+    "date_published": "2025-05-28T00:00:00.000Z",
+    "date_modified": "2025-05-28T00:00:00.000Z",
+    "hash": "6861db77f4e2ed1e7ae13410a209691d"
+  },
+  "en/2025/chapters/css.html": {
+    "date_published": "2025-05-28T00:00:00.000Z",
+    "date_modified": "2025-05-28T00:00:00.000Z",
+    "hash": "61ddf7cacf96e1b39436afc433bd45f5"
+  },
+  "en/2025/chapters/dns.html": {
+    "date_published": "2025-05-28T00:00:00.000Z",
+    "date_modified": "2025-05-28T00:00:00.000Z",
+    "hash": "3ea471d803772c3e9ec671a2b5eb6910"
+  },
+  "en/2025/chapters/ecommerce.html": {
+    "date_published": "2025-05-28T00:00:00.000Z",
+    "date_modified": "2025-05-28T00:00:00.000Z",
+    "hash": "b67d885f5b6700bf066a6d8617946886"
+  },
+  "en/2025/chapters/fonts.html": {
+    "date_published": "2025-05-28T00:00:00.000Z",
+    "date_modified": "2025-05-28T00:00:00.000Z",
+    "hash": "5f1d12fdfe005bc2638c56e0c90db32d"
+  },
+  "en/2025/chapters/generative-ai.html": {
+    "date_published": "2025-05-28T00:00:00.000Z",
+    "date_modified": "2025-05-28T00:00:00.000Z",
+    "hash": "baa7aef065e47103344a1c9fbf2a6a39"
+  },
+  "en/2025/chapters/http.html": {
+    "date_published": "2025-05-28T00:00:00.000Z",
+    "date_modified": "2025-05-28T00:00:00.000Z",
+    "hash": "44fdc527d7d16b322c3cd82b6401bc5f"
+  },
+  "en/2025/chapters/jamstack.html": {
+    "date_published": "2025-05-28T00:00:00.000Z",
+    "date_modified": "2025-05-28T00:00:00.000Z",
+    "hash": "9a9c029e516a53145db3fc8d6174b557"
+  },
+  "en/2025/chapters/javascript.html": {
+    "date_published": "2025-05-28T00:00:00.000Z",
+    "date_modified": "2025-05-28T00:00:00.000Z",
+    "hash": "3b31c343394b73f7e13d029c0d6a6122"
+  },
+  "en/2025/chapters/markup.html": {
+    "date_published": "2025-05-28T00:00:00.000Z",
+    "date_modified": "2025-05-28T00:00:00.000Z",
+    "hash": "4c734c3b6b5bf3069c8e88d2440fb6b2"
+  },
+  "en/2025/chapters/media.html": {
+    "date_published": "2025-05-28T00:00:00.000Z",
+    "date_modified": "2025-05-28T00:00:00.000Z",
+    "hash": "d51e553f166ed4bef514b93929752c06"
+  },
+  "en/2025/chapters/page-weight.html": {
+    "date_published": "2025-05-28T00:00:00.000Z",
+    "date_modified": "2025-05-28T00:00:00.000Z",
+    "hash": "2fa1fb01353127a0a4c2af0bccef4fdb"
+  },
+  "en/2025/chapters/performance.html": {
+    "date_published": "2025-05-28T00:00:00.000Z",
+    "date_modified": "2025-05-28T00:00:00.000Z",
+    "hash": "f4fd7bc99a6c3a19a9ad46f6ef803ee1"
+  },
+  "en/2025/chapters/privacy.html": {
+    "date_published": "2025-05-28T00:00:00.000Z",
+    "date_modified": "2025-05-28T00:00:00.000Z",
+    "hash": "ee4a3de5dc0e427c322455aadad2e647"
+  },
+  "en/2025/chapters/security.html": {
+    "date_published": "2025-05-28T00:00:00.000Z",
+    "date_modified": "2025-05-28T00:00:00.000Z",
+    "hash": "7807e387f793ecd7480be70979c4befc"
+  },
+  "en/2025/chapters/seo.html": {
+    "date_published": "2025-05-28T00:00:00.000Z",
+    "date_modified": "2025-05-28T00:00:00.000Z",
+    "hash": "bda1dfe2fa5a54f966417cedfcd9bd69"
+  },
+  "en/2025/chapters/structured-data.html": {
+    "date_published": "2025-05-28T00:00:00.000Z",
+    "date_modified": "2025-05-28T00:00:00.000Z",
+    "hash": "dcd29efca225d977bc54a47dac7f3814"
+  },
+  "en/2025/chapters/sustainability.html": {
+    "date_published": "2025-05-28T00:00:00.000Z",
+    "date_modified": "2025-05-28T00:00:00.000Z",
+    "hash": "300d338ff17b2e6a7ff218ab0c61fcdc"
+  },
+  "en/2025/chapters/textual-content.html": {
+    "date_published": "2025-05-28T00:00:00.000Z",
+    "date_modified": "2025-05-28T00:00:00.000Z",
+    "hash": "f5402454c2ce15177109ba1063196f20"
+  },
+  "en/2025/chapters/third-parties.html": {
+    "date_published": "2025-05-28T00:00:00.000Z",
+    "date_modified": "2025-05-28T00:00:00.000Z",
+    "hash": "8a216ad38d4d01ba685d1ea009da4a18"
+  },
+  "en/2025/chapters/webassembly.html": {
+    "date_published": "2025-05-28T00:00:00.000Z",
+    "date_modified": "2025-05-28T00:00:00.000Z",
+    "hash": "912714acf76c2875e96a689931c522bf"
+  },
   "en/accessibility_statement.html": {
     "date_published": "2020-02-03T00:00:00.000Z",
     "date_modified": "2021-12-01T00:00:00.000Z",
@@ -2451,6 +2571,11 @@
     "date_published": "2024-10-15T00:00:00.000Z",
     "date_modified": "2024-10-15T00:00:00.000Z",
     "hash": "c5b1ddfb6bbb975c899df82f398346fb"
+  },
+  "ru/2024/methodology.html": {
+    "date_published": "2025-05-28T00:00:00.000Z",
+    "date_modified": "2025-05-28T00:00:00.000Z",
+    "hash": "076737ccec0dcfcd5ebd9fba55efc7c6"
   },
   "ru/2024/table_of_contents.html": {
     "date_published": "2024-10-15T00:00:00.000Z",
