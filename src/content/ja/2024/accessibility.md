@@ -129,7 +129,7 @@ Lighthouseテストでは、モバイルサイトの29%とデスクトップサ�
   image="font-unit-usage.png",
   caption="フォント単位の使用。",
   description="pxがデスクトップページの65%とモバイルページの66%でフォントサイズに使用されていることを示す棒グラフ。emは両方で9%。remは両方で4%、%はデスクトップで4%、モバイルで5%、`<number>`は両方で2%、最後にptはデスクトップで15%、モバイルで14%です。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=655410508&format=interactive",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=655410508&format=interactive",
   sheets_gid="806505055",
   sql_file="units_properties.sql"
   )
@@ -425,7 +425,7 @@ CSS FlexboxとGridのおかげで、テーブルをページレイアウトに�
   image="form-input-name-sources.png",
   caption="入力のアクセシブルな名前の取得元。",
   description="label要素のアクセシブルな名前のソースを示す棒グラフ。サイトの27%がアクセシブルな名前を持たない。32%が`label`要素からアクセシブルな名前を取得。デスクトップ入力の24%とモバイルの25%が`placeholder`属性からアクセシブルな名前を取得。`aria-label`が9%を担当。`value`属性が3%を貢献。`title`属性がデスクトップの3%とモバイルの2%の調査サイトに貢献。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=2076905999&format=interactive",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ32BLKultx6YJbcQP5DB6a4NTnf4h9RCC3QXte5oS-Onx-9cFqiPQ23dWgWgffj2QA1Q60zhrxJVYb/pubchart?oid=2076905999&format=interactive",
   sheets_gid="1902508631",
   sql_file="form_input_name_sources.sql"
   )
