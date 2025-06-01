@@ -785,7 +785,7 @@ Lighthouseは、ページに説明的でないリンクがあるかどうかを�
   description="内部リンクの中央値カウントのランク分布。デスクトップでは、上位1,000サイトで129リンク、上位10,000サイトで122リンク、上位100,000サイトで86リンク、上位1,000,000サイトで71リンク、上位1,000万サイトで52リンク、全サイトで41リンクです。モバイルでは、それぞれ129、122、86、71、52、41リンクとわずかに低くなっています。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=2081637553&format=interactive",
   sheets_gid="2137900612",
-  sql_file="outgoing_links_by_rank -2024.sql"
+  sql_file="outgoing_links_by_rank-2024.sql"
   )
 }}
 
@@ -801,7 +801,7 @@ Lighthouseは、ページに説明的でないリンクがあるかどうかを�
   description="外部リンクの中央値カウントのランク分布。デスクトップでは、上位1,000サイトで16リンク、上位10,000サイトで14リンク、上位100,000サイトで10リンク、上位1,000,000サイトで8リンク、上位1,000万サイトで7リンク、全サイトで6リンクです。モバイルでは、それぞれ11、11、8、7、6、6リンクとわずかに低くなっています。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=1915373603&format=interactive",
   sheets_gid="2137900612",
-  sql_file="outgoing_links_by_rank -2024.sql"
+  sql_file="outgoing_links_by_rank-2024.sql"
   )
 }}
 

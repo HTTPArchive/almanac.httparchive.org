@@ -227,13 +227,13 @@ The five most named crawlers in robots directives were the generic robots value,
 }}
 
 When robots directive rules are viewed by their name attributes, we can see varied application rates. This implies that SEOs are adopting directives by specific bot names to curate indexing and serving for individual search engines.
-   
+
 Noteworthy takeaways from our analysis of the rules by bot name include:
 
-- The `noarchive` rule was applied overwhelmingly to `Bingbot` at 36%. This is likely due to the tag's ability to <a hreflang="en" href="https://blogs.bing.com/webmaster/september-2023/Announcing-new-options-for-webmasters-to-control-usage-of-their-content-in-Bing-Chat">keep content out of Bing chat answers</a>.  
-- `​max-snippet`, `max-video-preview`, and `max-image-preview` rules are widely implemented for all robots at the rate of 40%, 40%, and 69%, respectively.  
-- `Googlebot-News` was the most named for `index` (63%) and `nosnippet` (12%)  
-- `MSNBot` was the least likely to be given a `noindex` directive (1%). In comparison, the most likely was `Googlebot-News` at 21%.  
+- The `noarchive` rule was applied overwhelmingly to `Bingbot` at 36%. This is likely due to the tag's ability to <a hreflang="en" href="https://blogs.bing.com/webmaster/september-2023/Announcing-new-options-for-webmasters-to-control-usage-of-their-content-in-Bing-Chat">keep content out of Bing chat answers</a>.
+- `​max-snippet`, `max-video-preview`, and `max-image-preview` rules are widely implemented for all robots at the rate of 40%, 40%, and 69%, respectively.
+- `Googlebot-News` was the most named for `index` (63%) and `nosnippet` (12%)
+- `MSNBot` was the least likely to be given a `noindex` directive (1%). In comparison, the most likely was `Googlebot-News` at 21%.
 - 0.01% of sites provided a `noindex` rule, using the invalid crawler name: Google. Google has two valid crawler names for recognized robots `meta` tags: `Googlebot` and `Googlebot-News`.
 
 ### `IndexIfEmbedded` tag
@@ -315,7 +315,7 @@ No element other than the aforementioned is permitted by the HTML standard in th
   )
 }}
 
-The most prevalent `<head>` breaking tag was the `<img>` element, affecting 29% of desktop and 22% of mobile instances of the issue. Comparatively, the 2022 chapter found `<img>` tags misapplied on 10% of mobile pages and 10% of desktop pages. The likely difference comes from deprecated implementation methods for third-party tools.  
+The most prevalent `<head>` breaking tag was the `<img>` element, affecting 29% of desktop and 22% of mobile instances of the issue. Comparatively, the 2022 chapter found `<img>` tags misapplied on 10% of mobile pages and 10% of desktop pages. The likely difference comes from deprecated implementation methods for third-party tools.
 
 Misapplied `<div>` tags also substantially increased from 2022. In 2024, 11% of desktop and 10% of mobile pages had the `<div>` element in the `<head>`. That's more than a three times increase from 2022 when the invalid `<head>` occurred on 4% of desktop pages and 4% of mobile pages.
 
@@ -785,7 +785,7 @@ Outgoing links are [`<a>` anchor elements](https://developer.mozilla.org/docs/We
   description="A rank distribution of the median count of internal links. On desktop, for the top 1,000 sites, it's 129 links. For the top 10,000 sites, it's 122 links. For the top 100,000 sites, it's 86 links. For the top 1,000,000 sites, it's 71 links. For the top 10 million sites, it's 52 links, and for all sites it's 41 links. For mobile, it's slightly lower at 129, 122, 86, 71, 52 and 41 links, respectively.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=2081637553&format=interactive",
   sheets_gid="2137900612",
-  sql_file="outgoing_links_by_rank -2024.sql"
+  sql_file="outgoing_links_by_rank-2024.sql"
   )
 }}
 
@@ -801,7 +801,7 @@ According to [CrUX ranking data](./methodology#chrome-ux-report), it's clear tha
   description="A rank distribution of the median count of external links. On desktop, for the top 1,000 sites it's 16 links. For the top 10,000 sites, it's 14 links. For the top 100,000 sites, it's 10 links. For the top 1,000,000 sites, it's 8 links. For the top 10 million sites, it's 7 links, and for all sites it's 6 links. For mobile, it's slightly lower at 11, 11, 8, 7,6, and 6 links, respectively.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTitOH-aAprInUucdKE0WM41rpV2ri7KW90ZH9VGH2QLbvgKDq6tDRPRNJXMx3i0njRGEIZbxwYoKqJ/pubchart?oid=1915373603&format=interactive",
   sheets_gid="2137900612",
-  sql_file="outgoing_links_by_rank -2024.sql"
+  sql_file="outgoing_links_by_rank-2024.sql"
   )
 }}
 
