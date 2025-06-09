@@ -381,100 +381,100 @@ JPGとPNGは依然として合計87％ともっとも高い採用割合を持っ
   )
 }}
 
-2024年、モバイルの74％とデスクトップの97％のウェブサイトが良好なINPを持っていました。興味深いことに、モバイルとデスクトップの間のギャップは巨大で、つまり20％以上です。
+In 2024, 74% of mobile and 97% of desktop websites had good INP. Interestingly, the gap between mobile and desktop is huge, i.e. more than 20%.
 
-モバイルでパフォーマンスが弱い主な理由は、その低い処理能力としばしば悪いネットワーク接続です。Alex Russellの記事「<a hreflang="en" href="https://infrequently.org/2022/12/performance-baseline-2023/">The Performance Inequality Gap</a>」（2023年）は、ハイエンド対ローエンドデバイスの余裕によって引き起こされる拡大するパフォーマンス不平等ギャップの問題を提起します。ハイエンドデバイスの価格が上昇するにつれて、それらを買える余裕のあるユーザーが少なくなり、不平等ギャップが拡大します。
+The primary reason for weaker performance on mobile is its lower processing power and frequently poor network connections. Alex Russell's article "<a hreflang="en" href="https://infrequently.org/2022/12/performance-baseline-2023/">The Performance Inequality Gap</a>" (2023) raises the issue of the growing performance inequality gap caused by the affordance of high-end vs low-end devices. As the prices of high-end devices rise, fewer users can afford them, widening the inequality gap.
 
 {{ figure_markup(
   image="good-interaction-to-next-paint.png",
-  caption="デバイス別の良好なINPスコア。",
-  description="3年間にわたるデバイス（デスクトップとモバイル）別の良好なINPパフォーマンスを持つウェブサイトの割合を示すバーチャート。2022年、デスクトップウェブサイトの95％が良好なINPを持ち、モバイルウェブサイトの55％が良好なINPを達成しました。2023年、良好なINPを持つウェブサイトの割合はデスクトップで97％、モバイルで64％に改善しました。2024年までに、デスクトップウェブサイトの97％が良好なINPパフォーマンスを維持し、モバイルはさらに74％に改善しました。",
+  caption="Good INP score by device.",
+  description="Bar chart showing the percentage of websites with good INP performance by device (desktop and mobile) across three years. In 2022, 95% of desktop websites had good INP, while 55% of mobile websites achieved good INP. In 2023, the percentage of websites with good INP improved to 97% for desktop and 64% for mobile. By 2024, 97% of desktop websites maintained good INP performance, while mobile improved further to 74%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=416359271&format=interactive",
   sheets_gid="1535582002",
   sql_file="web_vitals_by_device.sql"
   )
 }}
 
-INPメトリクスはFIDよりも悪い結果を表示しますが、過去3年間にわたって積極的な傾向がありました。良好なINPを持つモバイルページの割合は、2022年の55％から2024年の74％に増加しました。これは大幅な増加であり、何に起因するかを正確に確信できませんが、この変化のいくつかの潜在的な推進要因を考えることができます。
+Although the INP metric displays worse results than the FID, there has been a positive tendency over the past three years. The percentage of mobile pages having good INP increased from 55% in 2022 to 74% in 2024. This is a significant increase, and even though we can't be exactly sure what to attribute it to, we can think of a few potential drivers for this change.
 
-最初のものは認識かもしれません。INPの導入とそれがFIDを置き換えるという発表により、多くのチームが全体的なCWVスコアと検索ランキングに与える影響を実感しました。それが、低いINPスコアに貢献したサイトの部分を修正する方向に積極的に取り組むことを促したかもしれません。2番目の推進要因は技術の通常の進歩かもしれません。上記に表示されたINPデータが実際のユーザーから来ているため、ユーザーのデバイスとネットワーク接続が年月とともにわずかに改善し、より良いサイトインタラクティビティを提供した可能性もあります。3番目の（そして恐らく最大の？）推進要因は、ブラウザ自体への改善です（特に我々の洞察を提供するChromeに）。Chromeチームは過去2年間で<a hreflang="en" href="https://chromium.googlesource.com/chromium/src/+/refs/heads/main/docs/speed/metrics_changelog/inp.md">INPに影響する多くの改善</a>を行いました。
+The first one could be awareness. With the introduction of the INP and the announcement that it will replace FID, many teams realized the impact that could have on their overall CWV score and search ranking. That could have encouraged them to actively work towards fixing parts of the sites that contributed to low INP scores. The second driver could be just a regular advancement in technology. With the above-displayed INP data coming from real users, we can also assume that users' devices and network connections could have slightly improved over the years, providing them with better site interactivity. The third (and perhaps biggest?) driver is improvements to browsers themselves (and in particular to Chrome, given that powers out insights). The Chrome team have made <a hreflang="en" href="https://chromium.googlesource.com/chromium/src/+/refs/heads/main/docs/speed/metrics_changelog/inp.md">a number of improvements that impact INP</a> over the last two years.
 
-ランク別のモバイルINPメトリクスは興味深い傾向を明らかにします。[2022年の章](../2022/performance#ランク別INP)では、ウェブサイトの人気が高いほど、パフォーマンス最適化が多く施されており、より良いパフォーマンスにつながるだろうと推測していました。しかし、INPに関しては、逆のことが当てはまるようです。
+Mobile INP metric by rank reveals an interesting trend. In [the 2022 chapter](../2022/performance#inp-by-rank), we assumed that the more popular a website is, the more performance optimizations it would have, leading to better performance. However, when it comes to INP, the opposite seems to be true.
 
 {{ figure_markup(
   image="interaction-to-next-paint-score-mobile-2024.png",
-  caption="ランク別に分類されたモバイルデバイスでのINPパフォーマンス。",
-  description="ウェブサイトランク別のモバイルINPパフォーマンスを示す積み上げバーチャート、良好（200ミリ秒未満）、改善が必要（200-500ミリ秒）、悪い（500ミリ秒超）に分類。上位1,000のウェブサイトについて、53％が良好なINPを持ち、41％が改善が必要、6％が悪いパフォーマンスです。上位10,000のウェブサイトについて、49％が良好な範囲にあり、44％が改善が必要、7％が悪いです。上位100,000では、51％が良好、43％が改善が必要、6％が悪いです。上位1,000,000のウェブサイトについて、61％が良好なINPを持ち、35％が改善が必要、4％が悪いです。ランクが上位10,000,000のウェブサイトまで増加すると、73％が良好、24％が改善が必要、3％が悪いです。最後に、上位100,000,000のウェブサイトについて、74％が良好なINPを持ち、24％が改善が必要、2％が悪いです。",
+  caption="INP performance on mobile devices segmented by rank.",
+  description="Stacked bar chart showing mobile INP performance by website rank, categorized into good (under 200 milliseconds), needs improvement (200–500 milliseconds), and poor (over 500 milliseconds).For the top 1,000 websites, 53% have good INP, 41% need improvement, and 6% perform poorly. For the top 10,000 websites, 49% are in the good range, 44% need improvement, and 7% are poor. In the top 100,000, 51% are good, 43% need improvement, and 6% are poor. For the top 1,000,000 websites, 61% have good INP, 35% need improvement, and 4% are poor. As the rank increases to the top 10,000,000 websites, 73% are good, 24% need improvement, and 3% are poor. Finally, for the top 100,000,000 websites, 74% have good INP, 24% need improvement, and 2% are poor.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=296559964&format=interactive",
   sheets_gid="355582610",
   sql_file="web_vitals_by_rank_and_device.sql"
   )
 }}
 
-上位1,000ランクのウェブサイトで良好なINPを持つサイトは、全ウェブサイトの結果と比較して少なくなっています。たとえば、上位1,000のウェブサイトの53％が良好なINPスコアを持っているのに対し、全ウェブサイトのはるかに大きな割合、つまり74％がこの閾値を満たしています。
+Fewer websites in the top 1,000 rank have good INP compared to the results for all websites. For example, 53% of the top 1,000 websites have a good INP score, while a much bigger percentage of all websites, i.e. 74%, meet this threshold.
 
-これは、もっとも訪問されるウェブサイトがしばしばより多くのユーザーインタラクションと複雑な機能を持っているためかもしれません。論理的に、インタラクティブなeコマースサイトのINPは、シンプルで静的なブログとは異なるでしょう。
+This could be because the most visited websites often have more user interactions and complex functionality. Logically, the INP for an interactive e-commerce site would differ from a simple, static blog.
 
 {{ figure_markup(
   image="good-interaction-to-next-paint-home-secondary-page.png",
-  caption="デバイス別のホームページとセカンダリページでの良好なINPパフォーマンス。",
-  description="ホームページとセカンダリページで良好なINPを持つページの割合を示すバーチャート、デスクトップとモバイルのパフォーマンスで分離。ホームページについて、デスクトップページの96％が良好なINPを持ち、モバイルページの73％が良好なINPを達成しています。セカンダリページについて、デスクトップページの96％も良好なINPを持ち、モバイルページの72％がこのパフォーマンスレベルに達しています。",
+  caption="Good INP performance on Home and Secondary page by device.",
+  description="Bar chart showing the percentage of pages with good INP for home pages and secondary pages, separated by desktop and mobile performance. For home pages, 96% of desktop pages have a good INP, while 73% of mobile pages achieve a good INP. For secondary pages, 96% of desktop pages also have a good INP, with 72% of mobile pages reaching this performance level.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=1483510539&format=interactive",
   sheets_gid="1159394005",
   sql_file="web_vitals_by_device_secondary_pages.sql"
   )
 }}
 
-FCPやLCPなどの他のパフォーマンスメトリクスとは異なり、良好なINPを持つセカンダリページの割合はホームページの結果と差がありません。これは、INPが読み込み速度ほどキャッシュの影響を受けないためと考えられます。
+Unlike other performance metrics like FCP and LCP, the percentage of secondary pages with good INP does not differ from the home page results. This is likely because INP isn't as impacted by caching as loading speed is.
 
-#### INPサブパーツ
+#### INP sub-parts
 
-Interaction to Next Paintメトリクスは、3つの主要なサブパーツに分解できます：
+Interaction to Next Paint metric can be broken down into three key sub-parts:
 
-- **Input Delay**：インタラクションが発生した時点でキューにすでにあったタスクの処理を完了するために費やされた時間
-- **Processing Time**：ユーザーがインタラクションした要素に添付されたイベントハンドラーの処理に費やされた時間
-- **Presentation Delay**：変更された場合の新しいレイアウトの計算と画面での新しいピクセルのペイントに費やされた時間
+- **Input Delay**: the time spent to finish processing the tasks that were already in the queue at the moment of the interaction
+- **Processing Time**: the time spent processing the event handlers attached to the element which the user interacted with
+- **Presentation Delay**: the time spent figuring out the new layout, if changed, and painting the new pixels on the screen
 
-ウェブサイトのインタラクティビティを最適化するには、すべてのサブパーツの期間を特定することが重要です。
+To optimize your website's interactivity, it's important to identify the duration of every sub-part.
 
 {{ figure_markup(
   image="interaction-to-next-paint-subparts-rum-vision.png",
-  caption="パーセンタイル別のINPサブパーツ。",
-  description="パーセンタイル別のINPサブパーツの分布をミリ秒（ms）で示すバーチャート。10パーセンタイルでは、すべてのサブパーツ（入力遅延、処理時間、プレゼンテーション遅延）が最小です。25パーセンタイルでは、値はわずかに増加しますが10ミリ秒以下にとどまります。50パーセンタイルでは、入力遅延と処理時間は控えめなままですが、プレゼンテーション遅延は20ミリ秒程度に達します。75パーセンタイルでは、入力遅延は50ミリ秒程度まで増加し、処理時間とプレゼンテーション遅延も上昇します。90パーセンタイルでは、入力遅延は150ミリ秒程度に達し、処理時間とプレゼンテーション遅延の両方が100ミリ秒を超えます。",
+  caption="INP sub-parts by percentile.",
+  description="Bar chart showing the distribution of INP sub-parts in milliseconds (ms) by percentile. At the 10th percentile, all sub-parts (input delay, processing time, and presentation delay) are minimal. At the 25th percentile, the values slightly increase but remain below 10 milliseconds. At the 50th percentile, input delay and processing time stay modest, while presentation delay reaches around 20 milliseconds. At the 75th percentile, input delay increases to around 50 milliseconds, with processing time and presentation delay also rising. At the 90th percentile, input delay reaches around 150 milliseconds, and both processing time and presentation delay exceed 100 milliseconds.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=226800794&format=interactive",
   sheets_gid="731456372",
   )
 }}
 
-RUMvisionからのINPサブパーツ期間分布データは、プレゼンテーション遅延（36ミリ秒）が中央値INPへの貢献がもっとも大きいことを示しています。パーセンタイルが増加するにつれて、入力遅延と処理時間が長くなります。75パーセンタイルでは、入力遅延が37ミリ秒、処理遅延が56ミリ秒に達します。90パーセンタイルまでには、入力遅延が155ミリ秒まで跳ね上がり、これが悪いINPへの最大の貢献要因となります。入力遅延を最適化する1つの方法は、ロングタスクを避けることで、これについてはロングタスクセクションで探ります。
+The INP sub-part duration distribution data from RUMvision shows that presentation delay (36 milliseconds) contributes the most to the median INP. As percentiles increase, input delay and processing time become longer. At the 75th percentile, input delay reaches 37 milliseconds and processing delay 56 milliseconds. By the 90th percentile, input delay jumps to 155 milliseconds, which makes it the biggest contributor to poor INP. One way to optimize input delay is by avoiding long tasks, which we explore in the Long Tasks section.
 
-### ロングタスク
+### Long tasks
 
-INPのサブパーツの1つは入力遅延で、ロングタスクを含むさまざまな要因により本来よりも長くなる可能性があります。[タスク](https://web.dev/articles/optimize-long-tasks#what-is-task)は、ブラウザが実行する個別の作業単位で、JavaScriptがしばしばタスクの最大のソースです。タスクが50ミリ秒を超えると、ロングタスクと見なされます。これらのロングタスクは、ユーザーインタラクションへの応答に遅延を引き起こし、インタラクティビティパフォーマンスに直接影響します。
+One of the sub-parts of INP is input delay, which can be longer than it should be due to various factors, including long tasks. [A task](https://web.dev/articles/optimize-long-tasks#what-is-task) is a discrete unit of work that the browser executes, and JavaScript is often the largest source of tasks. When a task exceeds 50 milliseconds, it is considered a long task. These long tasks can cause delays in responding to user interactions, directly affecting interactivity performance.
 
-ロングタスクとINPの同一ソースデータが不足しているため、それらを関連付けないことにしました。しかし、RUMvisionのデータを使用して平均ロングタスク期間を探ります。
+Due to the lack of same-source data for long tasks and INP, we decided not to correlate them. We will, however, explore the average Long Task duration using data from RUMvision.
 
 {{ figure_markup(
   image="long-task-duration.png",
-  caption="デバイス別に分類されたタスク期間。",
-  description="パーセンタイルとデバイスタイプ別のタスク期間の分布をミリ秒（ms）で示すバーチャート。25パーセンタイルでは、タスク期間はデスクトップで61ミリ秒、モバイルで71ミリ秒です。50パーセンタイルでは、デスクトップで90ミリ秒、モバイルで108ミリ秒に増加します。75パーセンタイルでは、タスク期間はデスクトップで161ミリ秒、モバイルで187ミリ秒です；90パーセンタイルでは、デスクトップで331ミリ秒、モバイルで377ミリ秒に達します。この分布は、25パーセンタイルから90パーセンタイルに移行するにつれてタスク期間が大幅に長くなることを示しています。",
+  caption="Task duration, segmented by device.",
+  description="Bar chart showing the distribution of task duration in milliseconds (ms) by percentile and device type. At the 25th percentile, the task duration is 61 milliseconds for desktop and 71 for mobile. At the 50th percentile, it increases to 90 milliseconds for desktop and 108 milliseconds for mobile. At the 75th percentile, task duration is 161 milliseconds for desktop and 187 milliseconds for mobile; at the 90th percentile, it reaches 331 milliseconds for desktop and 377 for mobile. This distribution shows that task durations grow significantly as we move from the 25th to the 90th percentile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=688921860&format=interactive",
   sheets_gid="1272522211"
   )
 }}
 
-タスク期間分布は、デスクトップで90ミリ秒、モバイルで108ミリ秒の中央値タスク期間を示しており、これは50ミリ秒未満のベストプラクティス推奨値の2倍です。25％未満のウェブサイトが50ミリ秒未満の最適なタスク期間を持っています。また、すべてのパーセンタイルにおいて、モバイルサイトのタスク期間がデスクトップサイトよりも長く、パーセンタイルが増加するにつれてギャップが拡大することがわかります。90パーセンタイルでは、デバイスタイプ間の平均タスク期間の間に46ミリ秒の差があります。これは、モバイルと比較してデスクトップでより良い結果を示すINPスコアとよく相関しています。
+The task duration distribution shows a median task duration of 90 milliseconds for desktop and 108 milliseconds for mobile, which is twice more than the best practice recommendation of under 50 milliseconds. Less than 25% of websites have an optimal task duration below 50 milliseconds. We can also see that in every percentile, task duration on mobile sites is longer than on desktop sites, with the gap increasing as the percentile increases. On the 90th percentile, there is a 46 millisecond difference between the average task duration between device types. This correlates well with INP scores that show better results on desktop compared to mobile.
 
-タスク期間データは<a hreflang="en" href="https://www.w3.org/TR/longtasks-1/">Long Tasks API</a>を使用して取得されました。これは、パフォーマンス問題について有用なデータを提供しますが、動作の重さを正確に測定することについては制限があります。ロングタスクがいつ発生し、どれくらい続くかのみを識別します。レンダリングなどの重要なタスクを見落とす可能性があります。これらの制限により、次のセクションでは、より詳細な洞察を提供するLong Animation Frames APIを探ります。
+Task duration data was retrieved using the <a hreflang="en" href="https://www.w3.org/TR/longtasks-1/">Long Tasks API</a>, which provides some useful data about performance issues, but it has limitations when it comes to accurately measuring sluggishness. It only identifies when a long task occurs and how long it lasts. It might overlook essential tasks such as rendering. Due to these limitations, we will explore the Long Animation Frames API in the next section, which offers more detailed insights.
 
-#### ロングアニメーションフレーム
+#### Long animation frames
 
-[Long Animation Frames (LoAF)](https://developer.chrome.com/docs/web-platform/long-animation-frames)は、作業とレンダリングがメインスレッドをブロックするときを追跡することで、動作の重さと悪いINPを識別するためのパフォーマンスタイムラインエントリです。LoAFは、Long Tasks APIのような個別のタスクの代わりにアニメーションフレームを追跡します。ロングアニメーションフレームは、レンダリングアップデートが50ミリ秒を超えて遅延する場合です（Long Tasks APIの閾値と同じ）。これは、INPパフォーマンスのボトルネックを引き起こすスクリプトを見つけるのに役立ちます。このデータにより、LoAFの原因となるスクリプトのカテゴリーに基づいてINPパフォーマンスを分析できます。
+[Long Animation Frames (LoAF)](https://developer.chrome.com/docs/web-platform/long-animation-frames) are a performance timeline entry for identifying sluggishness and poor INP by tracking when work and rendering block the main thread. LoAF tracks animation frames instead of individual tasks like the Long Tasks API. A long animation frame is when a rendering update is delayed beyond 50 milliseconds (the same as the threshold for the Long Tasks API). It helps to find scripts that cause INP performance bottlenecks.  This data allows us to analyze INP performance based on the categories of scripts responsible for LoAF.
 
 {{ figure_markup(
   image="interaction-to-next-paint-script-categories-desktop-rum-vision.png",
-  caption="デスクトップでのスクリプトカテゴリー別INPパフォーマンスの分布。",
-  description="デスクトップ用LOAFスクリプトカテゴリー全体のINPの分布を示す積み上げバーチャート、ミリ秒（ms）で測定。ユーザーレビュー、SMS・メール、アナリティクススクリプトがもっとも良いパフォーマンスを示し、INPのほとんどが良好な範囲にあります。タグマネージャーと同意プロバイダースクリプトは中間範囲のINPが多く、一部が悪いカテゴリーに分類されます。広告、その他、ユーザー行動スクリプトはパフォーマンスが悪く、INPの大部分が悪い範囲に分類されます。",
+  caption="Distribution of INP performance segmented by script categories on desktop.",
+  description="Stacked bar chart showing the distribution of INP across LOAF script categories for desktop, measured in milliseconds (ms). User Review, SMS & Email, and Analytics scripts perform best, with most of their INP in the good range. Tag Manager and Consent Provider scripts have more mid-range INP, with some falling into the poor category. Advertising, Others, and User Behaviour scripts perform worse, with the majority of INP falling into the poor range.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=1975914925&format=interactive",
   sheets_gid="947269170",
   )
@@ -482,113 +482,113 @@ INPのサブパーツの1つは入力遅延で、ロングタスクを含むさ�
 
 {{ figure_markup(
   image="interaction-to-next-paint-script-categories-mobile-rum-vision.png",
-  caption="モバイルでのスクリプトカテゴリー別INPパフォーマンスの分布。",
-  description="モバイル用LOAFスクリプトカテゴリー全体のINPの分布を示す積み上げバーチャート、ミリ秒（ms）で測定。ソーシャルスクリプトについて、ほとんどが良好な範囲にあり、悪い範囲はわずかです。ビデオとタグマネージャースクリプトも良好な範囲が大部分を占めますが、中間範囲の部分が大きくなっています。サイト検索と広告スクリプトはより均等な分布を持ち、中間範囲に重要な部分があり、悪い範囲も一部含まれます。開発者ユーティリティ、その他、ユーザー行動スクリプトはパフォーマンスが悪く、ほとんどが悪い範囲に分類されます。",
+  caption="Distribution of INP performance segmented by script categories on mobile.",
+  description="Stacked bar chart showing the distribution of INP across LOAF script categories for mobile, measured in milliseconds (ms). For Social scripts, most are in the good range, with few in the poor range. Video and Tag Manager scripts also have a majority in the good range but with a larger portion in the mid-range. Site Search and Advertising scripts have a more even distribution, with a significant part in the mid-range and some in the poor range. Developer Utilities, Others, and User Behaviour scripts perform worse, with most falling in the poor range.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=1978447282&format=interactive",
   sheets_gid="947269170",
   )
 }}
 
-モバイルとデスクトップデバイスで遅いINPスコアへの貢献がもっとも大きい上位2つのカテゴリーは、ユーザー行動スクリプト（モバイルの37％、デスクトップの60％のページが良好なINP）とCDN/ホスティング（モバイルの50％、デスクトップの65％のページが良好なINP）です。
+The top two categories contributing the most to slow INP scores on mobile and desktop devices are User Behavior scripts (37% of mobile and 60% of desktop pages with good INP) and CDN/Hosting (50% of mobile and 65% of desktop pages with good INP).
 
-ユーザー行動スクリプトには、`script.hotjar.com`、`smartlook.com`、`newrelic.com`などのホストからのスクリプトが含まれます。これらのツールはユーザーについて価値ある洞察を提供しますが、我々のデータは、ウェブサイトのインタラクションを遅くすることでユーザーエクスペリエンスを大幅に悪化させる可能性があることを示しています。
+User Behavior scripts include scripts from hosts like `script.hotjar.com`, `smartlook.com`, `newrelic.com`, etc. While these tools provide valuable insights about users, our data shows that they can significantly degrade user experience by slowing down website interactions.
 
-CDNとホスティングスクリプトカテゴリーの例は、`cdn.jsdelivr.net`、`ajax.cloudflare.com`、`cdnjs.cloudflare.com`、`cdn.shopify.com`、`sdk.awswaf.com`、`cloudfront.net`、`s3.amazonaws.com`などのドメインから来ています。CDNがもっとも悪いINP結果を持つカテゴリーに含まれることは議論の余地があるように思えます。なぜなら、CDNは通常、サーバー負荷を減らし、ユーザーによりコンテンツを速く配信するパフォーマンス最適化技術として推奨されるからです。しかし、このカテゴリーに含まれるCDNは通常、ファーストパーティまたはサードパーティのJavaScriptリソースを配信し、これがLoAFに貢献してインタラクティビティに悪影響を与えます。
+CDN and Hosting script category examples come from domains like `cdn.jsdelivr.net`, `ajax.cloudflare.com`, `cdnjs.cloudflare.com`, `cdn.shopify.com`, `sdk.awswaf.com`, `cloudfront.net`, `s3.amazonaws.com` and others. Having CDNs among the categories with the poorest INP results seems controversial because CDNs are usually recommended as a performance optimization technique that reduces server load and delivers content faster to users. However, the CDNs included in this category usually deliver first- or third-party JavaScript resources, which contribute to LoAF and negatively impact interactivity.
 
-モバイルデバイスでは、同意プロバイダーがINPに重要な影響を与えるようで、それらを使用するとモバイルページの53％のみが良好なINPを持つことになります。このカテゴリーは、`consentframework.com`、`cookiepro.com`、`cookiebot.com`、`privacy-mgmt.com`、`usercentrics.eu`などのプロバイダーで構成されます。デスクトップデバイスでは、同意プロバイダースクリプトははるかに良い結果を示し、つまり76％のページが良好なINPを持ちます。この違いは、デスクトップデバイスのより強力なプロセッサーによるものと考えられます。
+On mobile devices, Consent Providers seem to have a significant impact on INP, resulting in only 53% of mobile pages having good INP when using one. This category consists of providers like `consentframework.com`, `cookiepro.com`, `cookiebot.com`, `privacy-mgmt.com`, `usercentrics.eu`, and many others. On desktop devices, Consent Provider scripts show much better results, i.e. 76% of pages with good INP. This difference is likely due to the more powerful processors on desktop devices.
 
-注目すべきは、パフォーマンス監視ツールも含む監視カテゴリーが、悪いINP結果へのもっとも少ない影響の1つを持つことです。これは、ウェブパフォーマンス監視ツールの使用を支持する良い論拠です。これらは、インタラクティビティパフォーマンスに大きく影響することなく、価値あるウェブパフォーマンスの洞察を提供するためです。
+It is worth noting that the monitoring category, which also includes performance monitoring tools, has one of the least impacts on poor INP results. This is a good argument in favor of using web performance monitoring tools, as they help with valuable web performance insights without significantly affecting interactivity performance.
 
-### Total Blocking Time（TBT）
+### Total Blocking Time (TBT)
 
-[Total Blocking Time（TBT）](https://web.dev/articles/tbt)は、First Contentful Paint（FCP）後に、メインスレッドが入力応答性を阻害するのに十分な時間ブロックされた総時間を測定します。
+[Total Blocking Time (TBT)](https://web.dev/articles/tbt) measures the total amount of time after First Contentful Paint (FCP) where the main thread was blocked for long enough to prevent input responsiveness.
 
-TBTはラボメトリクスで、CrUXやRUMvisionなどのリアルユーザーモニタリングでのみ収集できるINPなどのフィールドベースの応答性メトリクスの代理として使用されることがよくあります。<a hreflang="en" href="https://colab.research.google.com/drive/12lJmAABgyVjaUbmWvrbzj9BkkTxw6ay2">ラボベースのTBTとフィールドベースのINP</a>は相関があり、TBTの結果は一般的にINPの傾向を反映します。200ミリ秒未満のTBTが良好と見なされますが、ほとんどのモバイルウェブサイトはこの目標を大幅に超えています。
+TBT is a lab metric and is often used as a proxy for field-based responsiveness metrics, such as INP, which can only be collected using real user monitoring, such as CrUX and RUMvision. <a hreflang="en" href="https://colab.research.google.com/drive/12lJmAABgyVjaUbmWvrbzj9BkkTxw6ay2">Lab-based TBT and field-based INP</a> are correlated, meaning TBT results generally reflect INP trends. A TBT below 200 milliseconds is considered good, but most mobile websites exceed this target significantly.
 
 {{ figure_markup(
   image="total-blocking-time-2024.png",
-  caption="パーセンタイル別のページあたりのTBT。",
-  description="パーセンタイル別のページあたりのTotal Blocking Time（TBT）の分布をミリ秒（ms）で示すバーチャート。10パーセンタイルでは、デスクトップとモバイルのTBTは両方とも0ミリ秒近くです。25パーセンタイルでは、デスクトップのTBTは84ミリ秒、モバイルは417ミリ秒です。50パーセンタイルでは、デスクトップは67ミリ秒のTBTを持ち、モバイルは1,209ミリ秒まで大幅に上昇します。75パーセンタイルでは、デスクトップは282ミリ秒に達し、モバイルは2,990ミリ秒です。最後に、90パーセンタイルでは、デスクトップのTBTは718ミリ秒で、モバイルは5,955ミリ秒まで上昇します。",
+  caption="TBT per page by percentile.",
+  description="Bar chart showing the distribution of Total Blocking Time (TBT) per page in milliseconds (ms) by percentile. At the 10th percentile, both desktop and mobile TBT are near 0 milliseconds. At the 25th percentile, desktop TBT is 84 milliseconds, while mobile is 417 milliseconds. At the 50th percentile, desktop has 67 milliseconds of TBT, and mobile rises significantly to 1,209 milliseconds. At the 75th percentile, desktop reaches 282 milliseconds, with mobile at 2,990 milliseconds. Finally, at the 90th percentile, desktop TBT is 718 milliseconds, and mobile climbs to 5,955 milliseconds",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=1525715716&format=interactive",
   sheets_gid="89045350",
   sql_file="inp_tbt.sql"
   )
 }}
 
-モバイルの中央値TBTは1,209ミリ秒で、これはベストプラクティスの6倍高い値です。対照的に、デスクトップウェブサイトは、中央値TBTがわずか67ミリ秒と、はるかに良いパフォーマンスを示しています。ラボ結果はエミュレートされた低電力デバイスと低速ネットワークを使用するため、実際のデバイスとネットワーク条件は変化する可能性があり、実際のユーザーデータを反映していない可能性があることを強調することが重要です。しかし、それを念頭に置いても、これらの結果は、90パーセンタイルではモバイルデバイスのユーザーがサイトがインタラクティブになるまでほぼ6秒待つ必要があることを示しています。
+The median TBT on mobile is 1,209 milliseconds, which is 6 times higher than the best practice. In contrast, desktop websites show much better performance, with a median TBT of just 67 milliseconds. It is important to emphasize that the lab results use an emulated low-power device and a slow network, which may not reflect the real user data, as actual device and network conditions can vary. However, even with that in mind, these results still show that in the 90th percentile, user on mobile device will need to wait almost 6 seconds before the site becomes interactive.
 
-TBTはロングタスクによって引き起こされるため、パーセンタイルごとの同じ傾向、および2つのメトリクス結果でのモバイルとデスクトップ間のギャップでの類似の傾向に気づくのは驚くことではありません。また、高いTBTがINPの入力遅延部分に貢献し、全体的なINPスコアに悪影響を与える可能性があることに注意することも重要です。
+With TBT being caused by long tasks it is not surprising to notice the same trend per percentiles as well as similar trend in gap between mobile and desktop in the two metrics results. It is also important to note that high TBT can be contributing to the input delay part of the INP, negatively impacting the overall INP score.
 
 
-### インタラクティビティの結論
+### Interactivity conclusion
 
-インタラクティビティ結果の主な要点は以下の通りです：
+The main takeaways of the interactivity results are:
 
-- 毎年INPの改善にもかかわらず、デスクトップ（97％の良好なINP）とモバイル（74％の良好なINP）のパフォーマンス間には依然として大きなギャップが存在します。
-- もっとも訪問されるウェブサイトは、人気の低いサイトと比較してより悪いINP結果を示しています。
-- INPは3つのサブパーツに分けることができます：入力遅延、処理時間、プレゼンテーション遅延。プレゼンテーション遅延がRUMvisionのデータで中央値INPの最大の割合を占めています。
-- ユーザー行動追跡、同意プロバイダー、CDNカテゴリーからのスクリプトが、悪いINPスコアの主な貢献要因です。
+- Despite the improvement in INP each year, a significant gap between desktop (97% good INP) and mobile (74% good INP) performance still exists.
+- The top visited websites show poorer INP results compared to less popular ones.
+- INP can be divided into three sub-parts: Input Delay, Processing Time, and Presentation Delay. Presentation Delay has the biggest share of the median INP in RUMvisions's data.
+- Scripts from user behavior tracking, consent provider, and CDN categories are the main contributors to poor INP scores.
 
-## 視覚的安定性
+## Visual stability
 
-ウェブサイトの視覚的安定性は、ページが読み込まれユーザーがそれとインタラクションする際の視覚的要素の一貫性と予測可能性を指します。視覚的に安定したウェブサイトは、コンテンツが予期せずシフト、移動、レイアウト変更をしないことを保証し、ユーザーエクスペリエンスを阻害しません。これらのシフトは、寸法が指定されていないアセット（画像とビデオ）、サードパーティ広告、重いフォントなどによってしばしば発生します。視覚的安定性を測定する主要なメトリクスは、[Cumulative Layout Shift（CLS）](https://web.dev/articles/cls)です。
+Visual stability on a website refers to the consistency and predictability of visual elements as the page loads and users interact with it. A visually stable website ensures that content does not unexpectedly shift, move, or change layout, which can disrupt the user experience. These shifts often happen due to assets without specified dimensions (images and videos), third-party ads, heavy fonts, etc. The primary metric for measuring visual stability is [Cumulative Layout Shift (CLS)](https://web.dev/articles/cls).
 
-### Cumulative Layout Shift（CLS）
+### Cumulative Layout Shift (CLS)
 
-CLSは、ページが開いている間に発生する予期しないレイアウトシフトについて、レイアウトシフトスコアの最大バーストを測定します。レイアウトシフトは、可視要素がある場所から別の場所に位置を変更するときに発生します。
+CLS measures the biggest burst of layout shift scores for any unexpected layout shifts that happen while a page is open. Layout shifts occur when a visible element changes its position from one place to another.
 
-0.1以下のCLSスコアは良好と見なされ、ページが視覚的に安定したエクスペリエンスを提供することを意味します。0.1から0.25の間のスコアは改善の必要性を示し、0.25を超えるスコアは悪いと見なされ、ユーザーが破壊的で予期しないレイアウトシフトを経験する可能性があることを示します。
+A CLS score of 0.1 or less is considered good, meaning the page offers a visually stable experience, while scores between 0.1 and 0.25 indicate the need for improvement, and scores above 0.25 are considered poor, indicating that users may experience disruptive, unexpected layout shifts.
 
 {{ figure_markup(
   image="good-cls-by-device-2024.png",
-  caption="2024年のデバイス別CLSパフォーマンス。",
-  description="2024年のデバイス別CLSパフォーマンスを示す積み上げバーチャート。デスクトップサイトについて、72％のサイトが良好なCLSスコアを持ち、18％が改善が必要、11％が悪いと見なされます。モバイルサイトについて、79％のサイトが良好なスコアを持ち、12％が改善が必要、9％が悪いスコアです。",
+  caption="CLS performance by device for 2024.",
+  description="Stacked bar chart showing CLS performance for 2024 by device. For desktop sites, 72% of sites had good CLS score, 18% need improvement, and 11% are considered poor. For mobile sites, 79% of sites have a good score, 12% need improvement, and 9% have a poor score.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=1271338928&format=interactive",
   sheets_gid="1535582002",
   sql_file="web_vitals_by_device.sql"
   )
 }}
 
-2024年、72％のウェブサイトが良好なCLSスコアを達成し、11％が悪いスコアでした。また、サイトの安定性に関して、モバイルデバイスのウェブサイトがデスクトップサイトよりも良いユーザーエクスペリエンスを提供していることもわかります。
+In 2024, 72% of websites achieved good CLS scores, while 11% had poor ones. We can also see that websites on mobile devices provide a better user experience when it comes to site stability than desktop sites.
 
 {{ figure_markup(
   image="good-cls-by-device.png",
-  caption="デバイスと年で分類された良好なCLSを持つウェブサイトの割合。",
-  description="デバイスと年で分類された良好なCLSを持つウェブサイトの数を示すバーチャート。良好なCLSを持つモバイルサイトの割合は、2020年が60％、2021年が62％、2022年が74％、2023年が76％、2024年が79％でした。デスクトップサイトについては、2020年に54％が良好なCLSを持ち、2021年に62％、2022年に65％、2023年に68％、2024年に72％でした。",
+  caption="The percent of websites having good CLS, segmented by device and year.",
+  description="Bar chart showing the number of websites with good CLS segmented by device and years. The percentage of mobile sites having good CLS was 60% for year 2020., 62% for 2021, 74% for 2022, 76% for 2023, and 79% for 2024. For desktop sites, 54% had good CLS in 2020, 62% in 2021, 65% in 2022, 68% in 2023, and 72% in 2024.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=1974391374&format=interactive",
   sheets_gid="1535582002",
   sql_file="web_vitals_by_device.sql"
   )
 }}
 
-時間の経過とともにメトリクスを見ると、良い上昇傾向を確認できます。2020年の良好な視覚的安定性を持つウェブサイトの60％から2024年のほぼ80％まで増加しています。モバイルデータの目に見える上昇は、すでに詳細に言及されており、[2022年の章](../2022/performance#累積レイアウトシフトCLS)でbfcacheの導入に起因するとされています。2022年からの目に見える違いがまだあるため、それに貢献した可能性のある側面をいくつか詳しく見ていきます。
+Looking at the metrics over time, we can see a nice upward trend. There is an increase from 60% of websites with good visual stability in 2020 to almost 80% in 2024. A visible jump in mobile data is already addressed in detail and attributed to the introduction of bfcache in [the 2022 chapter](../2022/performance#cumulative-layout-shift-cls). There is still a visible difference from 2022, so we will look in detail at some of the aspects that possibly contributed to it.
 
-### Back/forward cache（bfcache）
+### Back/forward cache (bfcache)
 
-[Back/forward cache（bfcache）](https://web.dev/articles/bfcache)は、ユーザーがページから離れるときに、完全にインタラクティブなページのスナップショットをメモリにキャッシュすることで、ウェブページ間のナビゲーションの速度と効率を向上させるブラウザ最適化機能です。しかし、すべてのサイトがbfcacheの対象となるわけではありません。<a hreflang="en" href="https://html.spec.whatwg.org/multipage/nav-history-apis.html#nrr-details-reason">広範囲な適格性基準</a>があるため、サイトが適格かどうかを確認する最も簡単な方法は、[Chrome DevToolsでテストする](https://developer.chrome.com/docs/devtools/application/back-forward-cache)ことです。
+[The back/forward cache (bfcache)](https://web.dev/articles/bfcache) is a browser optimization feature that improves the speed and efficiency of navigating between web pages by caching a fully interactive snapshot of a page in memory when a user navigates away from it. However, not all sites are eligible for bfcache. With an <a hreflang="en" href="https://html.spec.whatwg.org/multipage/nav-history-apis.html#nrr-details-reason">extensive eligibility criteria</a>, the easiest way to check if the site is eligible is to [test it in Chrome DevTools](https://developer.chrome.com/docs/devtools/application/back-forward-cache).
 
-よくある原因でラボデータを使用して簡単に測定できるいくつかの適格性基準をチェックして、より深く見てみましょう。
+Let's look deeper by checking a few eligibility criteria that are quite a common cause and easily measurable using lab data.
 
-「よくある容疑者」の1つは、ユーザーがページから離れるときにトリガーされる`unload`イベントです。bfcacheがページの状態を保持する方法により、`unload`イベントはページをbfcache不適格にします。ここで重要なのは、この機能はデスクトップのブラウザに特有であることです。モバイルブラウザは、bfcache適格性を決定する際に`unload`イベントを無視します。これらのデバイスでは、バックグラウンドページがより頻繁に破棄されるため、すでに信頼性がないからです。この動作は、長年にわたるCLSの改善とモバイルとデスクトップの数値間のギャップを説明できるかもしれません：
+One of the "usual suspects" is the `unload` event that is triggered when a user navigates away from a page. Due to how bfcache preserves a page's state, `unload` event makes the page ineligible for bfcache. Important to note here is that this feature is specific for browsers on desktops. Mobile browsers ignore the `unload` event when deciding bfcache eligibility, since it is already unreliable on those devices given how background pages are discarded more often there. This behavior could explain CLS improvement over the years and the gap between mobile and desktop numbers:
 
 {{ figure_markup(
   image="unload-usage.png",
-  caption="サイトランク別のunloadの使用状況。",
-  description="デスクトップとモバイルデバイスについて、ランク別にunloadハンドラーによってbfcache（back-forward cache）不適格となるページの割合を示すバーチャート。上位1,000のウェブサイトについて、デスクトップページの35％が不適格です。上位10,000では、デスクトップの34％が不適格です。上位100,000では、デスクトップの29％が不適格です。1,000,000ランクでは、デスクトップページの21％が不適格です。10,000,000ランクでは、デスクトップの17％が不適格で、全ランクでは、デスクトップページの16％が不適格です。",
+  caption="Usage of unload by site rank.",
+  description="Bar chart showing the percentage of pages ineligible for bfcache (back-forward cache) due to unload handlers, by rank, for desktop and mobile devices. For the top 1,000 websites, 35% of desktop pages are ineligible. For the top 10,000, 34% of desktop are ineligible. In the top 100,000, 29% of desktop are ineligible. At the 1,000,000 rank, 21% of desktop pages are ineligible. At the 10,000,000 rank, 17% of desktop are ineligible, while for all ranks, 16% of desktop pages are ineligible.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=1163433950&format=interactive",
   sheets_gid="1706831462",
   sql_file="bfcache_unload.sql"
   )
 }}
 
-ページからの`unload`イベントを示す上記のチャートから、いくつかの興味深いことがわかります。全体的なイベント使用状況はかなり低く、15-16％です。しかし、上位1,000サイトでは劇的に増加し、デスクトップで35％、モバイルで27％となり、より人気のあるサイトがこの特定のイベントをよく使用するサードパーティサービスをかなり多く使用している可能性があることを示しています。モバイルとデスクトップの間のギャップは重要です。`unload`イベントを使用するモバイルサイトがまだbfcacheの対象となっている一方で、それらは依然として信頼性がないからです。
+From the above chart showing `unload` events from pages, we can see a few interesting things. Overall event usage is quite low, 15-16%. However, it increases drastically for the top 1.000 sites, to 35% on desktop and 27% on mobile, indicating that more popular sites probably use quite some more third-party services that often use this specific event. The gap between mobile and desktop is significant as, while mobile sites using `unload` events are still eligible for the bfcache, they are still unreliable.
 
-Google ChromeやFirefoxなどの主要ブラウザが2020年頃からその廃止に向けて動き、`pagehide`や`visibilitychange`などの代替イベントの使用を推奨していることから、unloadイベントの使用のこの減少を見ることは予想されます。これらのイベントはより信頼性があり、ブラウザのナビゲーションをブロックせず、bfcacheと互換性があり、ユーザーが前後にナビゲートするときにページをメモリに保持し、即座に復元することを可能にします。
+It is expected to see this decrease in the use of unload events with major browsers like Google Chrome and Firefox moving towards its deprecation since around 2020 and encouraging the use of alternative events like `pagehide` and `visibilitychange`. These events are more reliable, do not block the browser's navigation, and are compatible with bfcache, allowing pages to be preserved in memory and restored instantly when users navigate back or forward.
 
-ウェブサイトがbfcache不適格カテゴリーに分類されるもう1つの一般的な理由は、`cache-control: no-store`ディレクティブの使用です。このキャッシュ制御ヘッダーは、ブラウザ（および中間キャッシュ）にリソースのコピーを保存しないよう指示し、リクエストごとにサーバーからコンテンツを取得することを保証します。
+Another common reason for websites to fall in the bfcache ineligibility category is the use of the `cache-control: no-store` directive. This cache control header instructs the browser (and any intermediate caches) not to store a copy of the resource, ensuring that the content is fetched from the server on every request.
 
 {{ figure_markup(
-  caption="`Cache-Control: no-store`を使用するサイトの割合。",
+  caption="Percentage of sites using `Cache-Control: no-store`.",
   content="21%",
   classes="big-number",
   sheets_gid="389603749",
@@ -596,62 +596,62 @@ Google ChromeやFirefoxなどの主要ブラウザが2020年頃からその廃�
 )
 }}
 
-21％のサイトが`Cache-Control: no-store`を使用しています。これは、この測定値が約22％だった2022年のレポートからのわずかな減少です。
+21% of sites are using `Cache-Control: no-store`. That is a slight decrease from the 2022 report when this measure was about 22%.
 
-bfcacheが最初に導入されたとき、Core Web Vitalsに顕著な改善をもたらしました。それに基づいて、Chromeは`Cache-Control: no-store`ヘッダーの使用により以前は不適格だったサイトに[徐々にbfcacheを適用](https://developer.chrome.com/docs/web-platform/bfcache-ccns)しています。この変更は、サイトパフォーマンスをさらに改善することを目的としています。
+When bfcache was first introduced, it brought noticeable improvements to Core Web Vitals. Based on that, Chrome is [gradually bringing bfcache to more sites](https://developer.chrome.com/docs/web-platform/bfcache-ccns) that were previously ineligible due to the use of the `Cache-Control: no-store` header. This change aims to further improve site performance.
 
-unloadイベントと`Cache-Control: no-store`は、ページの視覚的安定性に直接影響しません。すでに述べたように、bfcache読み込みの概念は副作用として、サイズが指定されていない画像や動的コンテンツなど、メトリクスに直接影響する潜在的な問題の一部を排除することで、この積極的な影響を与えます。ウェブの視覚的安定性の側面を探求し続けるために、CLSに直接影響するいくつかのプラクティスをチェックしてみましょう。
+Unload event, as well as `Cache-Control: no-store`, do not directly affect the page's visual stability. As already mentioned, the concept of bfcache load as a side-effect has this positive impact by eliminating some potential issues affecting metrics directly, such as unsized images or dynamic content. To continue exploring the visual stability aspect of the web, let's check some of the practices that directly impact the CLS.
 
-### CLSベストプラクティス
+### CLS best practices
 
-以下のベストプラクティスにより、CLSを削減、または完全に回避することができます。
+The following best practices allow you to reduce, or even completely avoid CLS.
 
-#### 明示的な寸法
+#### Explicit dimensions
 
-予期しないレイアウトシフトのもっとも一般的な理由の1つは、アセットや受信する動的コンテンツのためのスペースを保持しないことです。たとえば、画像に`width`と`height`属性を追加することは、スペースを保持しシフトを回避するもっとも簡単な方法の1つです。
+One of the most common reasons for unexpected layout shifts is not preserving space for assets or incoming dynamic content. For example, adding `width` and `height` attributes on images is one of the easiest ways to preserve space and avoid shifts.
 
 {{ figure_markup(
   content="66%",
-  caption="少なくとも1つの画像で明示的な寸法を設定できていないモバイルページの割合。",
+  caption="The percent of mobile pages that fail to set explicit dimensions on at least one image.",
   classes="big-number",
   sheets_gid="1674162543",
   sql_file="cls_unsized_images.sql"
   )
 }}
 
-66％のモバイルページが少なくとも1つのサイズが指定されていない画像を持っており、これは2022年の72％からの改善です。
+66% of mobile pages have at least one unsized image, which is an improvement from 72% in 2022.
 
 {{ figure_markup(
   image="unsized-images-amount.png",
-  caption="ページあたりのサイズが指定されていない画像の数。",
-  description="デスクトップとモバイルデバイスのパーセンタイル別にページあたりのサイズが指定されていない画像の数を示すバーチャート。10パーセンタイルと25パーセンタイルでは、デスクトップとモバイルページの両方がサイズが指定されていない画像を0個持ちます。50パーセンタイルでは、デスクトップとモバイルページの両方がサイズが指定されていない画像を2個持ちます。75パーセンタイルでは、デスクトップページがサイズが指定されていない画像を10個持ち、モバイルページは9個です。90パーセンタイルでは、デスクトップページがサイズが指定されていない画像を26個、モバイルページは23個持ちます。",
+  caption="The number of unsized images per page.",
+  description="Bar chart showing the number of unsized images per page by percentile for desktop and mobile devices. At the 10th and 25th percentiles, both desktop and mobile pages have 0 unsized images. At the 50th percentile, both desktop and mobile pages have 2 unsized images. At the 75th percentile, desktop pages have 10 unsized images, while mobile pages have 9. At the 90th percentile, desktop pages have 26 unsized images, and mobile pages have 23.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=603112996&format=interactive",
   sheets_gid="1674162543",
   sql_file="cls_unsized_images.sql"
   )
 }}
 
-ウェブページあたりのサイズが指定されていない画像の中央値は2個です。90パーセンタイルに移ると、その数はデスクトップサイトで26個、モバイルで23個まで跳ね上がります。ページにサイズが指定されていない画像を持つことはレイアウトシフトのリスクとなる可能性があります。しかし、重要な側面は、画像がビューポートに影響しているかどうか、そしてもしそうなら、どの程度かを見ることです。
+The median number of unsized images per web page is two. When we shift to the 90th percentile, that number jumps to 26 for desktop sites and 23 for mobile. Having unsized images on the page can be a risk for layout shift; however, an important aspect to look at is if images are affecting the viewport and if yes, how much.
 
 {{ figure_markup(
   image="unsized-images-height.png",
-  caption="サイズが指定されていない画像の高さの分布。",
-  description="サイズが指定されていない画像の10、25、50、75、90パーセンタイルの高さを示すバーチャート。モバイルの値はそれぞれ16、38、100、200、297ピクセルの高さです。デスクトップの値はより大きく：16、40、110、241、403です。",
+  caption="Distribution of the heights of unsized images.",
+  description="Bar chart showing the 10, 25, 50, 75, and 90th percentile height of unsized images. The values for mobile are 16, 38, 100, 200, and 297px tall, respectively. The values for the desktop are larger: 16, 40, 110, 241, and 403.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRiPhLGlGUxomTx_5nC9ahQDRxZBmJXMT3Q0Z2z4Y2pPVqC9kzjsUjRk4hz-JZzaPBjVxyaf7Gtqh93/pubchart?oid=1462566122&format=interactive",
   sql_file="cls_unsized_image_height.sql"
   )
 }}
 
-中央値のモバイルサイトは約100ピクセルの高さのサイズが指定されていない画像を持っています。我々のテストデバイスは512ピクセルのモバイルビューポート高さを持ち、画面幅のほぼ20％を表しています。これは、サイズが指定されていない（全幅の）画像が読み込まれるときに潜在的に下にシフトされる可能性があり、これは軽微でないシフトです。
+The median mobile site has unsized images of about 100 pixels in height. Our test devices have a mobile viewport height of 512 pixels, representing almost 20% of the screen width. This can potentially be shifted down when an unsized (full-width) image loads, which is not an insignificant shift.
 
-予想通り、デスクトップページの画像の高さはより大きく、中央値のサイズが110ピクセル、90パーセンタイルで403ピクセルです。
+As expected, image heights on desktop pages are larger, with the size on the median being 110px and on the 90th percentile 403 pixels.
 
-#### フォント
+#### Fonts
 
-フォントはCLSに直接影響する可能性があります。ウェブフォントが非同期で読み込まれる場合、ページの初期レンダリングとカスタムフォントが適用される時間の間に遅延が発生します。この遅延中、ブラウザはしばしばフォールバックフォントを使用してテキストを表示しますが、これはウェブフォントと比較して異なる寸法（幅、高さ、文字間隔）を持つ可能性があります。ウェブフォントが最終的に読み込まれると、テキストが新しい寸法に合わせてシフトし、目に見えるレイアウトシフトを引き起こし、より高いCLSスコアに貢献する可能性があります。
+Fonts can directly impact CLS. When web fonts are loaded asynchronously, a delay occurs between the initial rendering of the page and the time when the custom fonts are applied. During this delay, browsers often display text using a fallback font, which can have different dimensions (width, height, letter spacing) compared to the web font. When the web font finally loads, the text may shift to accommodate the new dimensions, causing a visible layout shift and contributing to a higher CLS score.
 
 {{ figure_markup(
-  caption="ウェブフォントを使用するモバイルページの割合。",
+  caption="The percent of mobile pages that use web fonts.",
   content="85%",
   classes="big-number",
   sheets_gid="344191137",
@@ -659,63 +659,63 @@ unloadイベントと`Cache-Control: no-store`は、ページの視覚的安定�
 )
 }}
 
-システムフォントを使用することは、この問題を修正する1つの方法です。しかし、85％のモバイルページがウェブフォントを使用しているため、近い将来それらの使用が停止される可能性は非常に低いです。ウェブフォントを使用するサイトの視覚的安定性を制御する方法は、CSSで`font-display`プロパティを使用してフォントの読み込みと表示方法を制御することです。パフォーマンスと美的観点のトレードオフについてのチームの決定に応じて、[異なる`font-display`戦略を使用](https://web.dev/articles/font-best-practices#choose_an_appropriate_font-display_strategy)できます。
+Using system fonts is one way to fix this issue. However, with 85% of mobile pages using web fonts it is not very likely that they will stop being used any time soon. A way to control the visual stability of a site that uses web fonts is to use the `font-display` property in CSS to control how fonts are loaded and displayed. [Different `font-display` strategies can be used](https://web.dev/articles/font-best-practices#choose_an_appropriate_font-display_strategy) depending on the team's decision about the tradeoff between performance and aesthetics.
 
 {{ figure_markup(
   image="font-display-usage.png",
-  caption="font-displayの使用状況。",
-  description="さまざまなfont-display値を使用するページの割合を示すバーチャート。モバイルページの45％がswapを使用し、23％がblock、9％がauto、3％がfallback、1％がoptionalを使用しています。デスクトップの値も似ています。",
+  caption="Usage of font-display.",
+  description="Bar chart showing the percent of pages that use the various font-display values. 45% of mobile pages use swap, 23% block, 9% auto, 3% fallback, and 1% use optional. The values for desktop are similar.",
   chart_url="https://docs.google.com/spreadsheets/u/1/d/e/2PACX-1vTHmcrit1gMzxfZNeFp9LrA4NQSMEh140fapD4CFQ89knpy6LvEKz7VafGaFGlxCAxTdpLZXaVaq8Pg/pubchart?oid=1458420916&format=interactive",
   sheets_gid="https://docs.google.com/spreadsheets/d/1EkdvJ8e0B9Rr42evC2Ds5Ekwq6gF9oLBW0BA5cmSUT4/edit?gid=455989674#gid=455989674",
   sql_file="../fonts/performance/styles_font_display.sql"
   )
 }}
 
-上に表示されたデータから、モバイルとデスクトップサイトの両方の約44％が`font-display:swap`を使用している一方で、23％のサイトが`font-display:block`を使用していることがわかります。9％のサイトが`font-display`プロパティを`auto`に設定し、3％が`fallback`プロパティを使用しています。約1％のサイトのみが`optional`戦略を使用しています。
+From the data displayed above, we can see that around 44% of both mobile and desktop sites use `font-display:swap` while 23% of sites use `font-display:block`. 9% of sites set the `font-display` property to `auto` and 3% use the `fallback` property. Only around 1% of sites use the `optional` strategy.
 
-2022年のデータと比較すると、すべての`font-display`戦略の使用に目に見える増加があり、最大のものは`swap`で、モバイルとデスクトップページ両方での使用が2022年の約30％から44％超まで上昇しました。
+Compared to the 2022 data, there is a visible increase in the use of all `font-display` strategies, the biggest one being on `swap`, whose usage on both mobile and desktop pages jumped from around 30% in 2022 to over 44%.
 
-ほとんどの`font-display`戦略がCLSに貢献する可能性があるため、潜在的な問題を最小化するための他の戦略を見る必要があります。その1つは、サードパーティフォントができるだけ早く発見され読み込まれることを保証するためにリソースヒントを使用することです。
+Since most `font-display` strategies can contribute to CLS, we need to look at other strategies for minimizing potential issues. One of those is using resource hints to ensure third-party fonts are discovered and loaded as soon as possible.
 
 {{ figure_markup(
   image="fonts-resource-hints.png",
-  caption="フォントリソースのリソースヒントの採用。",
-  description="ウェブフォントで各タイプのリソースヒントを使用するページの割合を示すバーチャート。モバイルページの18％がpreconnectを使用し、16％がdns-prefetch、11％がpreload、1％未満がprefetchを使用しています。デスクトップの値もほぼ同じです。",
+  caption="Adoption of resource hints for font resources.",
+  description="Bar chart showing the percent of pages that use each type of resource hint on web fonts. 18% of mobile pages use preconnect, 16% dns-prefetch, 11% preload, and less than 1% prefetch. The values for desktop are almost the same.",
   chart_url="https://docs.google.com/spreadsheets/u/1/d/e/2PACX-1vTHmcrit1gMzxfZNeFp9LrA4NQSMEh140fapD4CFQ89knpy6LvEKz7VafGaFGlxCAxTdpLZXaVaq8Pg/pubchart?oid=769711215&format=interactive",
   sheets_gid="https://docs.google.com/spreadsheets/d/1EkdvJ8e0B9Rr42evC2Ds5Ekwq6gF9oLBW0BA5cmSUT4/edit?gid=405563602#gid=405563602",
   sql_file="../fonts/performance/pages_link_relationship.sql"
   )
 }}
 
-テストされたモバイルとデスクトップページの全体の約11％がウェブフォントをプリロードしており、ブラウザにこれらのファイルをダウンロードするよう指示し、フォントの遅い到着によるシフトを回避できるよう早期にダウンロードできることを期待しています。プリロードを不正に使用すると、それを助ける代わりにパフォーマンスを害する可能性があることに注意してください。これを回避するには、プリロードされたフォントが使用されることを確認し、あまりに多くのアセットをプリロードしないことが必要です。あまりに多くのアセットをプリロードすると、他のより重要なリソースを遅延させることになる可能性があります。
+Around 11% of all tested mobile and desktop pages are preloading their web fonts, indicating to the browser that they should download these files, hopefully early enough to avoid shifts due to late font arrival. Note that using preload incorrectly can harm performance instead of helping it. To avoid this, we need to make sure that the preloaded font will be used and that we don't preload too many assets. Preloading too many assets can end up delaying other, more important resources.
 
-18％のサイトが`preconnect`を使用してサードパーティオリジンへの早期接続を確立しています。`preload`と同様に、このリソースヒントを慎重に使用し、やりすぎないことが重要です。
+18% of sites are using `preconnect` to establish an early connection to a third-party origin. Like with `preload` it is important to use this resource hint carefully and not to overdo it.
 
-#### アニメーション
+#### Animations
 
-予期しないシフトのもう1つの原因は、[非合成](https://developer.chrome.com/docs/lighthouse/performance/non-composited-animations)CSSアニメーションです。これらのアニメーションは、複数の要素のレイアウトや外観に影響するプロパティの変更を含み、スタイルの再計算、ドキュメントのリフロー、画面のピクセルの再描画などのよりパフォーマンス集約的なステップを通過することをブラウザに強制します。ベストプラクティスは、代わりに`transform`や`opacity`などのCSSプロパティを使用することです。
+Another cause of unexpected shifts can be [non-composited](https://developer.chrome.com/docs/lighthouse/performance/non-composited-animations) CSS animations. These animations involve changes to properties that impact the layout or appearance of multiple elements, which forces the browser to go through more performance-intensive steps like recalculating styles, reflowing the document, and repainting pixels on the screen. The best practice is to use CSS properties such as `transform` and `opacity` instead.
 
 {{ figure_markup(
   content="39%",
-  caption="非合成アニメーションを持つモバイルページの割合。",
+  caption="The percent of mobile pages that have non-composited animations.",
   classes="big-number",
   sheets_gid="293393420",
   sql_file="cls_animations.sql",
   )
 }}
 
-39％のモバイルページと42％のデスクトップページがまだ非合成アニメーションを使用しており、これは2022年の分析でのモバイル38％、デスクトップ41％からの非常にわずかな増加です。
+39% of mobile pages and 42% of desktop pages still use non-composited animations, which is a very slight increase from 38% for mobile and 41% for desktop in the analysis from 2022.
 
-### 視覚的安定性の結論
+### Visual stability conclusion
 
-サイトの視覚的安定性は、ページのユーザーエクスペリエンスに大きな影響を与える可能性があります。読んでいる間にテキストがシフトしたり、クリックしようとしていたボタンがビューポートから消えたりすることは、ユーザーフラストレーションにつながる可能性があります。良いニュースは、Cumulative Layout Shift（CLS）が2024年に改善し続けたことです。これは、画像のサイジングや動的コンテンツのスペース保持などの良いプラクティスを採用し、このブラウザ機能から恩恵を受けるためにbfcache適格性を最適化するウェブサイト所有者がますます増えていることを示しています。
+Visual stability of the site can have a big influence on the user experience of the page. Having text shifting around while reading or a button we were just about to click disappear from the viewport can lead to user frustration. The good news is that Cumulative Layout Shift (CLS) continued to improve in 2024. That indicates that more and more website owners are adopting good practices such as sizing images and preserving space for dynamic content, as well as optimizing for bfcache eligibility to benefit from this browser feature.
 
-## 結論
+## Conclusion
 
-ウェブパフォーマンスは2024年に改善し続け、多くの主要メトリクスにわたって積極的な傾向を示しました。ウェブサイトのインタラクティビティを評価するより包括的なメトリクス、つまりINPを持つようになり、これがさらに大きなパフォーマンス最適化につながることが期待されます。
+Web performance continued to improve in 2024, with positive trends across many key metrics. We now have a more comprehensive metric to assess website interactivity—INP—which hopefully should lead to even greater performance optimizations.
 
-しかし、課題は残っています。たとえば、デスクトップとモバイル間でINPパフォーマンスにまだ大きなギャップがあります。プレゼンテーション遅延が悪いINPの主な貢献要因で、主に行動追跡、同意プロバイダー、CDNのサードパーティスクリプトによって引き起こされます。
+However, challenges remain. For example, there is still a significant gap in INP performance between desktop and mobile. Presentation Delay is the main contributor to poor INP, mostly caused by third-party scripts for behavior tracking, consent providers, and CDNs.
 
-視覚的安定性は、適切な画像サイジングや動的コンテンツのスペース保持などのベストプラクティスの採用により改善し続けています。さらに、Chromeのbfcache適格性の最近の変更により、より多くのサイトがより速い戻る・進むナビゲーションから恩恵を受けるでしょう。
+Visual stability continues to improve by the adoption of best practices like proper image sizing and preserving space for dynamic content. Additionally, with recent changes in Chrome's bfcache eligibility, more sites will benefit from faster back and forward navigation.
 
-全体的に、ウェブパフォーマンスは有望な軌道にあり、読み込み時間をより速く、インタラクティビティをよりスムーズに、視覚的安定性をより信頼性があるものにしています。しかし、モバイルとデスクトップエクスペリエンス間の違いは依然として大きいです。将来のWeb Almanacレポートでは、このギャップが減少し、すべてのデバイスにわたって一貫したウェブエクスペリエンスを実現することを期待しています。
+Overall, web performance is on a promising track, making loading times faster, interactivity smoother, and visual stability more reliable. However, the difference between mobile and desktop experiences remains large. In future Web Almanac reports, we hope to see this gap decreasing, making the web experience consistent across all devices.
