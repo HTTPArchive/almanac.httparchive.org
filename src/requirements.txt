@@ -3,7 +3,7 @@ flask-talisman==1.1.0
 gunicorn==23.0.0
 pytest==8.4.0
 pytest-watch==4.2.0
-pytest-cov==6.1.1
+pytest-cov==6.2.1
 sqlfluff==3.4.0
 
 # sql/util/* dependencies
