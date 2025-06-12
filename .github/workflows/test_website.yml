@@ -53,7 +53,7 @@ jobs:
         COMMIT_SHA: ${{ github.sha }}
       run: ./src/tools/scripts/set_lighthouse_urls.sh
     - name: Audit URLs using Lighthouse
-      uses: treosh/lighthouse-ci-action@12.1.0
+      uses: treosh/lighthouse-ci-action@12.6.1
       id: LHCIAction
       with:
         # For dev, turn off all timing perf audits (too unreliable) and a few others that don't work on dev
