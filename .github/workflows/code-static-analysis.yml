@@ -25,8 +25,8 @@ on:
 
 jobs:
   CodeQL-Build:
-    # CodeQL runs on ubuntu-20.04, windows-latest, and macos-latest
-    runs-on: ubuntu-20.04
+    # CodeQL runs on ubuntu-latest, windows-latest, and macos-latest
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         language: ['javascript', 'python']
@@ -35,14 +35,14 @@ jobs:
         uses: actions/checkout@v4
       - name: Set up Python 3.12
         if: ${{ matrix.language == 'python' }}
-        uses: actions/setup-python@v5.3.0
+        uses: actions/setup-python@v5
         with:
           python-version: '3.12'
       - name: Install dependencies
         if: ${{ matrix.language == 'python' }}
         run: |
           cd src
-          pip install -r requirements.txt;
+          pip install --upgrade -r requirements.txt;
           # Set the `CODEQL-PYTHON` environment variable to the Python executable
           # that includes the dependencies
           echo "CODEQL_PYTHON=$(which python)" >> $GITHUB_ENV

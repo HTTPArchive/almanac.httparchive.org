@@ -200,9 +200,9 @@ We kunnen beginnen met het compenseren van een deel van de kosten van het laden 
 
 Op mobiele apparaten omvatten externe scripts 59,0% van alle gevonden scriptelementen.
 
-<p class="note">
+<aside class="note">
   Even terzijde: toen we het hadden over hoeveel JavaScript eerder op een pagina is geladen, hield dat totaal geen rekening met de grootte van deze inline scripts - omdat ze deel uitmaken van het HTML-document, worden ze meegeteld bij de opmaak-grootte . Dit betekent dat we nog meer script laden dat de cijfers laten zien.
-</p>
+</aside>
 
 {{ figure_markup(
   image="external-inline-mobile.png",

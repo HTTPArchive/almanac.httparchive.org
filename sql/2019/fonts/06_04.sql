@@ -9,7 +9,8 @@ FROM (
   SELECT
     JSON_EXTRACT(report, '$.audits.font-display.score') AS score
   FROM
-    `httparchive.lighthouse.2019_07_01_*`)
+    `httparchive.lighthouse.2019_07_01_*`
+)
 WHERE
   score IS NOT NULL
 GROUP BY

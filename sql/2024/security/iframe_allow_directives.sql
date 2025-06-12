@@ -25,7 +25,7 @@ FROM (
   WHERE
     date = '2024-06-01' AND
     is_root_page
-  ),
+),
   UNNEST(iframeAttrs) AS iframeAttr,
   UNNEST(REGEXP_EXTRACT_ALL(JSON_EXTRACT_SCALAR(iframeAttr, '$.allow'), r'(?i)([^,;]+)')) AS allow_attr
 JOIN (

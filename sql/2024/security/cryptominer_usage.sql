@@ -1,15 +1,20 @@
 #standardSQL
-  # Section: Malpractices on the web
-  # Question: How many sites used cryptominers over time?
-  # Note: The usage is very low, so maybe we want to drop this query. Also unclear which starting date we want
+# Section: Malpractices on the web
+# Question: How many sites used cryptominers over time?
+# Note: The usage is very low, so maybe we want to drop this query. Also unclear which starting date we want
 SELECT
   DATE_TRUNC(date, MONTH) AS month,
   client,
-  COUNT(DISTINCT
-    IF(category = 'Cryptominers', page, NULL)) AS freq,
+  COUNT(
+    DISTINCT
+    IF(category = 'Cryptominers', page, NULL)
+  ) AS freq,
   COUNT(DISTINCT page) AS total_pages,
-  COUNT(DISTINCT
-    IF(category = 'Cryptominers', page, NULL)) / COUNT(DISTINCT page) AS pct
+  COUNT(
+    DISTINCT
+    IF(category = 'Cryptominers', page, NULL)
+  ) / COUNT(DISTINCT page
+  ) AS pct
 FROM
   `httparchive.all.pages`,
   UNNEST(technologies) AS t,

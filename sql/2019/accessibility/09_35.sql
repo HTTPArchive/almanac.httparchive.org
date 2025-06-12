@@ -51,7 +51,8 @@ FROM (
     url AS page,
     includesMotionElement(payload) AS motion
   FROM
-    `httparchive.pages.2019_07_01_*`)
+    `httparchive.pages.2019_07_01_*`
+)
 JOIN (
   SELECT
     client,
@@ -63,9 +64,9 @@ JOIN (
     date = '2019-07-01'
   GROUP BY
     client,
-    page)
-USING
-  (client, page)
+    page
+)
+USING (client, page)
 GROUP BY
   client
 ORDER BY

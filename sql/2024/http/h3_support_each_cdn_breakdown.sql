@@ -25,11 +25,13 @@ FROM (
   FROM
     `httparchive.all.requests`
   LEFT OUTER JOIN
-    UNNEST(response_headers) AS resp_headers ON LOWER(resp_headers.name) = 'alt-svc'
+    UNNEST(response_headers) AS resp_headers
+  ON LOWER(resp_headers.name) = 'alt-svc'
   WHERE
     date = '2024-06-01' AND
     is_root_page AND
-    LENGTH(JSON_EXTRACT_SCALAR(summary, '$._cdn_provider')) > 0)
+    LENGTH(JSON_EXTRACT_SCALAR(summary, '$._cdn_provider')) > 0
+)
 GROUP BY
   client,
   _cdn_provider,

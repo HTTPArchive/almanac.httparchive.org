@@ -182,7 +182,8 @@ FROM (
     date = '2020-08-01'
   GROUP BY
     client,
-    page),
+    page
+),
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 WHERE
   getStops(max_color_stops) > 0

@@ -69,20 +69,22 @@ FROM (
     COUNT(DISTINCT page) AS pages,
     APPROX_TOP_COUNT(pseudo_element, 100) AS pseudo_elements
   FROM (
-      SELECT DISTINCT
-        client,
-        page,
-        pseudo_element
-      FROM
-        `httparchive.almanac.parsed_css`
-      LEFT JOIN
-        UNNEST(getSelectorParts(css).pseudo_element) AS pseudo_element
-      WHERE
-        date = '2021-07-01' AND
-        # Limit the size of the CSS to avoid OOM crashes.
-        LENGTH(css) < 0.1 * 1024 * 1024)
+    SELECT DISTINCT
+      client,
+      page,
+      pseudo_element
+    FROM
+      `httparchive.almanac.parsed_css`
+    LEFT JOIN
+      UNNEST(getSelectorParts(css).pseudo_element) AS pseudo_element
+    WHERE
+      date = '2021-07-01' AND
+      # Limit the size of the CSS to avoid OOM crashes.
+      LENGTH(css) < 0.1 * 1024 * 1024
+  )
   GROUP BY
-    client),
+    client
+),
   UNNEST(pseudo_elements) AS pseudo_element
 WHERE
   pseudo_element.value IS NOT NULL

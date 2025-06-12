@@ -17,6 +17,7 @@ FROM (
     date = '2019-07-01' AND
     fast_ttfb + avg_ttfb + slow_ttfb > 0
   ORDER BY
-    fast DESC)
+    fast DESC
+)
 WHERE
   MOD(row, CAST(FLOOR(n / 1000) AS INT64)) = 0

@@ -20,7 +20,6 @@ requests AS (
     date = '2022-06-01'
 )
 
-
 SELECT
   client,
   type AS lcp_initiator_type,
@@ -31,8 +30,7 @@ FROM
   lcp
 JOIN
   requests
-USING
-  (client, page, url)
+USING (client, page, url)
 GROUP BY
   client,
   type

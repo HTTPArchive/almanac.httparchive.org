@@ -109,13 +109,16 @@ FROM (
       WHERE
         date = '2020-08-01' AND
         # Limit the size of the CSS to avoid OOM crashes.
-        LENGTH(css) < 0.1 * 1024 * 1024),
+        LENGTH(css) < 0.1 * 1024 * 1024
+    ),
       UNNEST(info.distribution) AS bin
     WHERE
-      bin.specificity_cmp IS NOT NULL)
+      bin.specificity_cmp IS NOT NULL
+  )
   GROUP BY
     client,
-    page),
+    page
+),
   UNNEST([10, 25, 50, 75, 90, 95, 99, 100]) AS percentile
 GROUP BY
   percentile,

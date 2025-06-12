@@ -2,7 +2,7 @@
 # page wpt_bodies metrics grouped by device
 
 # helper to create percent fields
-CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
+CREATE TEMP FUNCTION AS_PERCENT(freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
   ROUND(SAFE_DIVIDE(freq, total), 4)
 );
 
@@ -161,13 +161,12 @@ SELECT
   SUM(wpt_bodies_info.n_h7) AS freq_h7,
   SUM(wpt_bodies_info.n_h8) AS freq_h8
 
-FROM
-  (
-    SELECT
-      _TABLE_SUFFIX AS client,
-      get_wpt_bodies_info(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS wpt_bodies_info
-    FROM
-      `httparchive.pages.2020_08_01_*`
-  )
+FROM (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    get_wpt_bodies_info(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS wpt_bodies_info
+  FROM
+    `httparchive.pages.2020_08_01_*`
+)
 GROUP BY
   client

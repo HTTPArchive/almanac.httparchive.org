@@ -3,7 +3,7 @@
 SELECT
   device,
   ROUND(COUNTIF(fast_fid >= .95) * 100 / COUNT(0), 2) AS pct_fast_fid,
-  ROUND(COUNTIF(NOT(slow_fid >= .05) AND NOT(fast_fid >= .95)) * 100 / COUNT(0), 2) AS pct_avg_fid,
+  ROUND(COUNTIF(NOT (slow_fid >= .05) AND NOT (fast_fid >= .95)) * 100 / COUNT(0), 2) AS pct_avg_fid,
   ROUND(COUNTIF(slow_fid >= .05) * 100 / COUNT(0), 2) AS pct_slow_fid
 FROM (
   SELECT
@@ -16,6 +16,7 @@ FROM (
   WHERE
     yyyymm = '201907' AND
     fast_fid + avg_fid + slow_fid > 0 AND
-    device IN ('desktop', 'phone'))
+    device IN ('desktop', 'phone')
+)
 GROUP BY
   device

@@ -482,7 +482,7 @@ SELECT
   geo,
   COUNT(0) AS websites,
   ROUND(COUNTIF(fast_ttfb >= .75) * 100 / COUNT(0), 2) AS pct_fast_ttfb,
-  ROUND(COUNTIF(NOT(slow_ttfb >= .25) AND NOT(fast_ttfb >= .75)) * 100 / COUNT(0), 2) AS pct_avg_ttfb,
+  ROUND(COUNTIF(NOT (slow_ttfb >= .25) AND NOT (fast_ttfb >= .75)) * 100 / COUNT(0), 2) AS pct_avg_ttfb,
   ROUND(COUNTIF(slow_ttfb >= .25) * 100 / COUNT(0), 2) AS pct_slow_ttfb
 FROM (
   SELECT
@@ -495,7 +495,8 @@ FROM (
     UNNEST(experimental.time_to_first_byte.histogram.bin) AS bin
   GROUP BY
     origin,
-    geo)
+    geo
+)
 GROUP BY
   geo
 ORDER BY

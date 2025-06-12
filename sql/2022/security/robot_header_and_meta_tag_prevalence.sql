@@ -12,7 +12,7 @@ WITH meta_tags AS (
       JSON_VALUE(payload, '$._almanac') AS metrics
     FROM
       `httparchive.pages.2022_06_01_*`
-    ),
+  ),
     UNNEST(JSON_QUERY_ARRAY(metrics, '$.meta-nodes.nodes')) meta_node
   WHERE LOWER(JSON_VALUE(meta_node, '$.name')) = 'robots'
 ),
@@ -32,7 +32,7 @@ robot_headers AS (
     WHERE
       firstHtml = TRUE AND
       date = '2022-06-01'
-    ),
+  ),
     UNNEST(JSON_QUERY_ARRAY(response_headers)) AS response_header
   WHERE
     LOWER(JSON_VALUE(response_header, '$.name')) = 'x-robots-tag'
@@ -66,7 +66,8 @@ SELECT
   COUNTIF(REGEXP_CONTAINS(robots_content, r'.*noarchive.*') OR REGEXP_CONTAINS(robot_header_value, r'.*noarchive.*')) AS count_noarchive,
   COUNTIF(REGEXP_CONTAINS(robots_content, r'.*noarchive.*') OR REGEXP_CONTAINS(robot_header_value, r'.*noarchive.*')) / COUNTIF(robots_content IS NOT NULL OR robot_header_value IS NOT NULL) AS pct_noarchive
 FROM
-  meta_tags FULL OUTER JOIN robot_headers USING (client, page)
+  meta_tags
+FULL OUTER JOIN robot_headers USING (client, page)
 JOIN
   totals
 USING (client)

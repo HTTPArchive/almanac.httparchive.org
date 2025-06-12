@@ -114,7 +114,6 @@ try {
 ''';
 
 
-
 SELECT
   client,
   COUNT(0) AS total,
@@ -166,7 +165,8 @@ FROM (
   FROM
     `httparchive.all.pages`
   WHERE
-    date = '2024-06-01')
+    date = '2024-06-01'
+)
 WHERE
   canonical_metrics.has_wpt_bodies
 GROUP BY

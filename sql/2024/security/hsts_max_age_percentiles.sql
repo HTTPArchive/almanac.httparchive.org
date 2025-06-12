@@ -17,7 +17,7 @@ FROM (
     is_root_page AND
     LOWER(response_headers.name) = 'strict-transport-security'
 ),
-UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
+  UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 GROUP BY
   percentile,
   client

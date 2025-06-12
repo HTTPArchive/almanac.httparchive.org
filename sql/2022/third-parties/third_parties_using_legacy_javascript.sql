@@ -26,16 +26,15 @@ base AS (
     page,
     COUNTIF(third_party_domains.domain IS NULL) / COUNT(0) AS pct_1p_legacy,
     COUNTIF(third_party_domains.domain IS NOT NULL) / COUNT(0) AS pct_3p_legacy
-  FROM
-    (
-      SELECT
-        _TABLE_SUFFIX AS client,
-        NET.HOST(data.url) AS domain,
-        lighthouse.url AS page
-      FROM
-        `httparchive.lighthouse.2022_06_01_*` AS lighthouse,
-        UNNEST(getUrls(JSON_EXTRACT(report, "$.audits['legacy-javascript']"))) AS data
-    ) AS potential_third_parties
+  FROM (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      NET.HOST(data.url) AS domain,
+      lighthouse.url AS page
+    FROM
+      `httparchive.lighthouse.2022_06_01_*` AS lighthouse,
+      UNNEST(getUrls(JSON_EXTRACT(report, "$.audits['legacy-javascript']"))) AS data
+  ) AS potential_third_parties
   LEFT OUTER JOIN
     third_party_domains
   ON
@@ -44,7 +43,6 @@ base AS (
     client,
     page
 )
-
 
 SELECT
   client,

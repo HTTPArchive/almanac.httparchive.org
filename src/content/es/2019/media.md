@@ -86,7 +86,7 @@ Para los dispositivos móviles usados en el rastreo (<i lang="en">crawl</i>) de 
 
 Si tuviéramos una imagen que ocupase perfectamente la totalidad de la pantalla, el ratio de relleno de píxeles sería de 1x. Por supuesto, rara vez una página web ocupa la pantalla completa con una única imagen. El contenido multimedia suele mezclarse con el diseño y otro tipo de contenido. Un valor superior a 1x significa que el diseño requiere que el usuario haga scroll para ver el resto de la imagen.
 
-<p class="note">Nota: esto es únicamente analizando el diseño CSS para tanto el <i lang="en">DPR</i> como para la cantidad de contenido del diseño. No está evaluándose la efectividad de las imágenes <i lang="en">responsive</i> o la efectividad de facilitar un contenido con alto DPR.</p>
+<aside class="note">Nota: esto es únicamente analizando el diseño CSS para tanto el <i lang="en">DPR</i> como para la cantidad de contenido del diseño. No está evaluándose la efectividad de las imágenes <i lang="en">responsive</i> o la efectividad de facilitar un contenido con alto DPR.</aside>
 
 {{ figure_markup(
   image="fig5_image_pixel_volume_v_css_pixels.png",
@@ -111,7 +111,7 @@ Mientras que el enfoque utilizado para imágenes, vídeos y animaciones son, a g
 * **<i lang="en">Lazy loading</i>** - para trasladar solamente contenido que pueda ser visto por un humano.
 * **Accesibilidad** - asegurando una experiencia consistente para todos los seres humanos.
 
-<p class="note">Una advertencia a la hora de interpretar estos resultados. Las páginas webs rastreadas para el Web Almanac fueron rastreadas con un navegador Chrome. Esto significa que la negociación de contenido que pueda estar mejor integrada para Safari o Firefox podría no estar representada en este conjunto de datos. Por ejemplo, el uso de formatos de archivos como JPEG2000, JPEG-XR, HEVC, y HEIC no están representados porque estos no son compatibles de forma nativa con Chrome. Esto no significa que la web no contenga estos otros formatos o experiencias. Del mismo modo, Chrome tiene soporte nativo para <i lang="en">lazy loading</i> (desde la v76) el cual no está disponible en otros navegadores. Puedes leer más sobre estas excepciones en <a href="./methodology">Metodología</a>.</p>
+<aside class="note">Una advertencia a la hora de interpretar estos resultados. Las páginas webs rastreadas para el Web Almanac fueron rastreadas con un navegador Chrome. Esto significa que la negociación de contenido que pueda estar mejor integrada para Safari o Firefox podría no estar representada en este conjunto de datos. Por ejemplo, el uso de formatos de archivos como JPEG2000, JPEG-XR, HEVC, y HEIC no están representados porque estos no son compatibles de forma nativa con Chrome. Esto no significa que la web no contenga estos otros formatos o experiencias. Del mismo modo, Chrome tiene soporte nativo para <i lang="en">lazy loading</i> (desde la v76) el cual no está disponible en otros navegadores. Puedes leer más sobre estas excepciones en <a href="./methodology">Metodología</a>.</aside>
 
 Es raro encontrar una página web que no utilice imágenes. A lo largo de los años, han aparecido muchos formatos de archivo diferentes para ayudar a mostrar el contenido en la web, cada uno abordando un problema diferente. Principalmente, hay 4 formatos de imagen universales: JPEG, PNG, GIF, y SVG. Además, Chrome ha mejorado el canal multimedia y añadido soporte a un quinto formato de imagen: WebP. Otros navegadores, del mismo modo, han añadido soporte para JPEG2000 (Safari), JPEG-XL (IE y Edge) y HEIC (WebView solamente en Safari).
 
@@ -322,7 +322,7 @@ La utilidad de `srcset` normalmente depende de la precisión de la media query `
 
 {{ figure_markup(
   image="fig16_top_patterns_of_img_sizes.png",
-  caption="Top de patrones de <code><img sizes></code>.",
+  caption="Top de patrones de `<img sizes>`.",
   description="Gráfico de barras que muestra que 11,3 millones de imágenes usan 'img sizes=`(max-width: 300px) 100vw, 300px`', 1,60 millones usan 'auto', 1 millón usan 'img sizes=`(max-width: 767px) 89vw...etc.`', 0,23 millones usan '100vw' y 0,13 millones usan '300px'",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=663985412&format=interactive"
   )

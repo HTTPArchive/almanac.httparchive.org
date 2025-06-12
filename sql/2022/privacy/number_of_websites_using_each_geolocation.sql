@@ -16,7 +16,7 @@ WITH totals AS (
 SELECT
   _TABLE_SUFFIX AS client,
   app,
-  total_websites AS total_websites,
+  total_websites,
   COUNT(DISTINCT url) AS number_of_websites,
   COUNT(DISTINCT url) / total_websites AS percent_of_websites
 FROM

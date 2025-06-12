@@ -23,7 +23,9 @@ WITH totals AS (
     date = '2024-06-01'
   GROUP BY
     client
-), data_attrs AS (
+),
+
+data_attrs AS (
   SELECT
     client,
     almanac_attribute_info.name,
@@ -37,8 +39,7 @@ WITH totals AS (
     `httparchive.all.pages`
   JOIN
     totals
-  USING
-    (client),
+  USING (client),
     UNNEST(get_almanac_attribute_info(JSON_EXTRACT(custom_metrics, '$.almanac'))) AS almanac_attribute_info
   WHERE
     date = '2024-06-01'

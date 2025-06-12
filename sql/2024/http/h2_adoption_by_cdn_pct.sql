@@ -27,7 +27,8 @@ FROM (
     `httparchive.all.requests`
   WHERE
     date = '2022-06-01' AND
-    is_root_page)
+    is_root_page
+)
 GROUP BY
   client,
   cdn,

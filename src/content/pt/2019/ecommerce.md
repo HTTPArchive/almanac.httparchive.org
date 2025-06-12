@@ -445,7 +445,7 @@ Os tamanhos da carga útil do HTML móvel não são muito diferentes dos do desk
   )
 }}
 
-<p class="note">Observe que, como nossa <a href="./methodology">metodologia</a> de coleta de dados não simula as interações do usuário em páginas como clicar ou rolar, as imagens com carregamento lento não seriam representadas nesses resultados.</p>
+<aside class="note">Observe que, como nossa <a href="./methodology">metodologia</a> de coleta de dados não simula as interações do usuário em páginas como clicar ou rolar, as imagens com carregamento lento não seriam representadas nesses resultados.</aside>
 
 As Figuras 13.12 e 13.13 acima mostram que a página média de comércio eletrônico tem 37 imagens e uma carga útil de imagens de 1.517 KB no celular, 40 imagens e 1.524 KB no desktop. 10% das páginas iniciais têm 90 ou mais imagens e uma carga útil de imagem de quase 6 MB!
 
@@ -472,7 +472,7 @@ Precisamos fazer mais análises para entender melhor por que alguns sites não e
   )
 }}
 
-<p class="note">Observe que alguns serviços de imagem ou CDNs entregarão automaticamente WebP (em vez de JPEG ou PNG) para plataformas que suportam WebP, mesmo para uma URL com sufixo `.jpg` ou `.png`. Por exemplo, <a hreflang="en" href="https://res.cloudinary.com/webdotdev/f_auto/w_500/IMG_20190113_113201.jpg">IMG_20190113_113201.jpg</a> retorna uma imagem WebP no Chrome. No entanto, a maneira como o HTTP Archive <a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/blob/31a25b9064a365d746d4811a1d6dda516c0e4985/bulktest/batch_lib.inc#L994">detecta o formato da imagem como o texto original é</a> e verificar primeiro as palavras-chave no tipo MIME e, em seguida, recorrer à extensão do arquivo. Isso significa que o formato para imagens com URLs como o acima será fornecido como WebP, uma vez que WebP é suportado pelo HTTP Archive como um agente de usuário.</p>
+<aside class="note">Observe que alguns serviços de imagem ou CDNs entregarão automaticamente WebP (em vez de JPEG ou PNG) para plataformas que suportam WebP, mesmo para uma URL com sufixo `.jpg` ou `.png`. Por exemplo, <a hreflang="en" href="https://res.cloudinary.com/webdotdev/f_auto/w_500/IMG_20190113_113201.jpg">IMG_20190113_113201.jpg</a> retorna uma imagem WebP no Chrome. No entanto, a maneira como o HTTP Archive <a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/blob/31a25b9064a365d746d4811a1d6dda516c0e4985/bulktest/batch_lib.inc#L994">detecta o formato da imagem como o texto original é</a> e verificar primeiro as palavras-chave no tipo MIME e, em seguida, recorrer à extensão do arquivo. Isso significa que o formato para imagens com URLs como o acima será fornecido como WebP, uma vez que WebP é suportado pelo HTTP Archive como um agente de usuário.</aside>
 
 ### PNG
 

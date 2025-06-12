@@ -34,11 +34,11 @@ FROM (
       `httparchive.all.pages` AS allpages
     CROSS JOIN
       UNNEST(getUnminifiedJsUrls(JSON_EXTRACT(allpages.lighthouse, "$.audits['unminified-css']"))) AS unminified
-    WHERE allpages.date = '2024-06-01' AND allpages.is_root_page = true
+    WHERE allpages.date = '2024-06-01' AND allpages.is_root_page = TRUE
   )
   GROUP BY
     client,
     page
-  )
+)
 GROUP BY
   client

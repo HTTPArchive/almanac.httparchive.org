@@ -19,7 +19,7 @@ FROM (
   WHERE
     cats = 'CMS' AND
     date = '2024-06-01'
-  )
+)
 JOIN (
   SELECT
     client,
@@ -30,9 +30,7 @@ JOIN (
   WHERE
     date = '2024-06-01'
 )
-USING
-  (client,
-    url),
+USING (client, url),
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 GROUP BY
   percentile,

@@ -24,6 +24,7 @@ designers AS (
   QUALIFY
     rank <= 100
 ),
+
 pages AS (
   SELECT
     client,
@@ -46,7 +47,8 @@ SELECT
 FROM
   designers
 JOIN
-  pages USING (client)
+  pages
+USING (client)
 ORDER BY
   client,
   proportion DESC

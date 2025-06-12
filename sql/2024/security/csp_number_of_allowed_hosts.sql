@@ -28,7 +28,7 @@ FROM (
     is_main_document AND
     LOWER(response_headers.name) = 'content-security-policy'
 ),
-UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
+  UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 GROUP BY
   client,
   percentile

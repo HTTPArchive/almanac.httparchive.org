@@ -40,8 +40,7 @@ FROM
   UNNEST(get_element_types_info(JSON_EXTRACT(custom_metrics, '$.element_count'))) AS element_type_info
 JOIN
   totals
-USING
-  (client)
+USING (client)
 WHERE
   date = '2024-06-01'
 GROUP BY

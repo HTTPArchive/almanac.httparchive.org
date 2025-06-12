@@ -51,21 +51,26 @@ FROM (
   GROUP BY
     client,
     page,
-    unicode)
+    unicode
+)
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
     url AS page,
-    CAST(JSON_EXTRACT_SCALAR(payload,
-        "$['_chromeUserTiming.firstContentfulPaint']") AS INT64) AS fcp,
-    CAST(JSON_EXTRACT_SCALAR(payload,
-        "$['_chromeUserTiming.LargestContentfulPaint']") AS INT64) AS lcp
+    CAST(JSON_EXTRACT_SCALAR(
+      payload,
+      "$['_chromeUserTiming.firstContentfulPaint']"
+    ) AS INT64) AS fcp,
+    CAST(JSON_EXTRACT_SCALAR(
+      payload,
+      "$['_chromeUserTiming.LargestContentfulPaint']"
+    ) AS INT64) AS lcp
   FROM
     `httparchive.pages.2020_08_01_*`
   GROUP BY
-    _TABLE_SUFFIX, page, payload)
-USING
-  (client, page)
+    _TABLE_SUFFIX, page, payload
+)
+USING (client, page)
 GROUP BY
   client,
   use_unicode

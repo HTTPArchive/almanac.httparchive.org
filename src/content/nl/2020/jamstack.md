@@ -30,7 +30,7 @@ Het <a hreflang="en" href="https://httparchive.org/">HTTP Archive</a> crawlt elk
 
 De doelen van dit hoofdstuk zijn het schatten en analyseren van de groei van de Jamstack-sites, de prestaties van populaire Jamstack-frameworks, evenals een analyse van de echte gebruikerservaring met behulp van de Core Web Vitals-statistieken.
 
-<p class="note">Opgemerkt moet worden dat onze analyse beperkt is tot die Jamstacks die zichzelf gemakkelijk identificeerbaar maken met behulp van <a href="./methodology#wappalyzer">Wappalyzer</a>. Dit betekent dat onze gegevens geen populaire Jamstacks bevatten, zoals <a hreflang="en" href="https://github.com/11ty/eleventy/">Eleventy</a> die <a href="https://x.com/eleven_ty/status/1334225624110608387?s=20">een bewuste keuze maken om zichzelf niet identificeerbaar te maken</a>. Hoewel we idealiter alle Jamstacks zouden opnemen, zijn we van mening dat het nog steeds waardevol is om de significante gegevens die we hebben te analyseren.</p>
+<aside class="note">Opgemerkt moet worden dat onze analyse beperkt is tot die Jamstacks die zichzelf gemakkelijk identificeerbaar maken met behulp van <a href="./methodology#wappalyzer">Wappalyzer</a>. Dit betekent dat onze gegevens geen populaire Jamstacks bevatten, zoals <a hreflang="en" href="https://github.com/11ty/eleventy/">Eleventy</a> die <a href="https://x.com/eleven_ty/status/1334225624110608387?s=20">een bewuste keuze maken om zichzelf niet identificeerbaar te maken</a>. Hoewel we idealiter alle Jamstacks zouden opnemen, zijn we van mening dat het nog steeds waardevol is om de significante gegevens die we hebben te analyseren.</aside>
 
 ## Adoptie van Jamstack
 

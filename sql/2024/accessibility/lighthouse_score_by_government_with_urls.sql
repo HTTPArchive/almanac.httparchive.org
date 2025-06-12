@@ -364,7 +364,8 @@ domain_scores AS (
   FROM
     score_data
   WHERE
-    REGEXP_CONTAINS(page, r'('
+    REGEXP_CONTAINS(
+      page, r'('
       '\\.un\\.org/'  -- United Nations and International Organizations
       '|\\.worldbank\\.org/'
       '|\\.undp\\.org/'
@@ -382,7 +383,6 @@ domain_scores AS (
       '|\\.myflorida\\.com/' -- Florida
 
       '|\\.(gov|mil|gouv|gob|gub|go|govt|gv|nic|government)\\.(taipei|[a-z]{2,3})/' -- Other generic government formats (e.g., gouv.fr, gob.mx, go.jp)
-
 
       '|\\.gc\\.ca/'  -- Canada and provinces
       '|\\.canada\\.ca/'
@@ -562,7 +562,8 @@ domain_scores AS (
       '|\\.razavi\\.ir'
       '|\\.gholhak\\.ir'
 
-      ')')
+      ')'
+    )
 )
 
 SELECT

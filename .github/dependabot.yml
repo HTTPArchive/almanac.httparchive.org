@@ -4,6 +4,9 @@ updates:
     directory: "/src/"
     schedule:
       interval: "daily"
+    ignore:
+      - dependency-name: "prettier"
+        update-types: ["version-update:semver-patch"]
   - package-ecosystem: "pip"
     directory: "/src/"
     schedule:

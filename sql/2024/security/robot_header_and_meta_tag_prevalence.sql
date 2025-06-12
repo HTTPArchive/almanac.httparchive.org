@@ -16,7 +16,7 @@ WITH meta_tags AS (
     WHERE
       date = '2024-06-01' AND
       is_root_page
-    ),
+  ),
     UNNEST(JSON_QUERY_ARRAY(metrics, '$.meta-nodes.nodes')) meta_node
   WHERE LOWER(JSON_VALUE(meta_node, '$.name')) = 'robots'
 ),
@@ -67,7 +67,8 @@ SELECT
   COUNTIF(REGEXP_CONTAINS(robots_content, r'.*noarchive.*') OR REGEXP_CONTAINS(robot_header_value, r'.*noarchive.*')) AS count_noarchive,
   COUNTIF(REGEXP_CONTAINS(robots_content, r'.*noarchive.*') OR REGEXP_CONTAINS(robot_header_value, r'.*noarchive.*')) / COUNTIF(robots_content IS NOT NULL OR robot_header_value IS NOT NULL) AS pct_noarchive
 FROM
-  meta_tags FULL OUTER JOIN robot_headers USING (client, page)
+  meta_tags
+FULL OUTER JOIN robot_headers USING (client, page)
 JOIN
   totals
 USING (client)

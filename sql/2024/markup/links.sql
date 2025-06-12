@@ -6,7 +6,9 @@ WITH bodies AS (
     `httparchive.all.pages`
   WHERE
     date = '2024-06-01'
-), links AS (
+),
+
+links AS (
   SELECT
     client,
     SAFE_CAST(JSON_EXTRACT(wpt_bodies, '$.anchors.rendered.target_blank.total') AS INT64) AS target_blank_total,

@@ -14,7 +14,6 @@ WITH layers AS (
     type = 'css'
 )
 
-
 SELECT
   client,
   COUNT(DISTINCT IF(has_layer, page, NULL)) AS pages,

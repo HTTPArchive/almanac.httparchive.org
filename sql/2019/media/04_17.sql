@@ -15,7 +15,8 @@ FROM (
     `httparchive.almanac.requests`
   WHERE
     date = '2019-07-01' AND
-    type = 'script'),
+    type = 'script'
+),
   UNNEST([10, 25, 50, 75, 90]) AS percentile
 WHERE
   player IS NOT NULL

@@ -117,7 +117,7 @@ At the 90th percentile, desktop pages were over 9 MB and mobile pages over 8 MB.
 
 ### Carbon emissions
 
-<p class="note">Note: The notion of "carbon emissions" is a simplification since we are considering Greenhouse Gas Emissions, not only carbon emissions.</p>
+<aside class="note">Note: The notion of "carbon emissions" is a simplification since we are considering Greenhouse Gas Emissions, not only carbon emissions.</aside>
 
 {{ figure_markup(
   image="carbon-emissions-by-percentile.png",
@@ -190,7 +190,7 @@ There are almost as many HTTP requests for images and JavaScript but the overall
 
 ### More sustainable hosting
 
-<p class="note">Note: Here (and elsewhere), you should find mention of "Green Hosting". This is kind of a shortcut since no hosting will be truly green, carbon neutral or other such things. We will focus here on how to use more sustainable hosting.</p>
+<aside class="note">Note: Here (and elsewhere), you should find mention of "Green Hosting". This is kind of a shortcut since no hosting will be truly green, carbon neutral or other such things. We will focus here on how to use more sustainable hosting.</aside>
 
 For the majority of this chapter, we focus on how changes in the quantity of resources like network, compute and storage affect the environmental impact of digital services—you might think of this as in terms of _consumption_ as a lever for sustainability. However there are other levers too. You can't efficiency your way to zero, and the same code, run on the same kind of server, but running on greener energy will have a lower environmental impact than otherwise. We can think of this lever as _intensity_.
 
@@ -215,7 +215,7 @@ An increasing number of technology firms are also taking steps to green **all** 
 
 Overall, only 10 percent of the measured websites rely on green hosting. This highlights that a lot could and should be done on both sides: websites opting for green hosting as well as hosting companies aiming for more sustainability.
 
-<p class="note">Note: these figures for green domains are based on the information that is either shared directly with The Green Web Foundation, or placed in the public domain, where it is linked in API responses for their lookup service. See <a hreflang="en" href="https://www.thegreenwebfoundation.org/support/why-does-my-website-show-up-as-grey-in-the-green-web-checker/">their explainer page</a> for why a site might show up as "not green" when you think it should.</p>
+<aside class="note">Note: these figures for green domains are based on the information that is either shared directly with The Green Web Foundation, or placed in the public domain, where it is linked in API responses for their lookup service. See <a hreflang="en" href="https://www.thegreenwebfoundation.org/support/why-does-my-website-show-up-as-grey-in-the-green-web-checker/">their explainer page</a> for why a site might show up as "not green" when you think it should.</aside>
 
 ## Reducing the environmental impact of websites
 
@@ -577,7 +577,7 @@ However, a quarter of websites still don't implement text compression. Gzip is u
 {{ figure_markup(
   image="cache-control-header-usage.png",
   caption="Cache control header usage.",
-  description="A bar chart showing that on desktop 23% of websites use Cache Control Only, 1% of them use Expiries only and 51% of them use both. 25% of the websites do not use any caching on desktop. On mobile 22% of websites use Cache Control Only, 1% of them use Expiries only and 51% of them use both. 26% of the websites do not use any caching on mobile.",
+  description="A bar chart showing that on desktop 23% of websites use Cache Control Only, 1% of them use Expires only and 51% of them use both. 25% of the websites do not use any caching on desktop. On mobile 22% of websites use Cache Control Only, 1% of them use Expires only and 51% of them use both. 26% of the websites do not use any caching on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=1354451270&format=interactive",
   sheets_gid="326683091",
   sql_file="cache_header_usage.sql"

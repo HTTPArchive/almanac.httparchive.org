@@ -24,12 +24,14 @@ FROM (
     FROM
       `httparchive.almanac.requests`
     WHERE
-      date = '2020-08-01')
+      date = '2020-08-01'
+  )
   GROUP BY
     client,
     page,
     firstHTML,
-    CDN),
+    CDN
+),
   UNNEST(GENERATE_ARRAY(1, 100)) AS percentile
 GROUP BY
   percentile,

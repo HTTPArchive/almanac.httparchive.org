@@ -183,7 +183,7 @@ meta_tags AS (
       JSON_VALUE(payload, '$._almanac') AS metrics
     FROM
       `httparchive.pages.2022_06_01_*`
-    ),
+  ),
     UNNEST(JSON_QUERY_ARRAY(metrics, '$.meta-nodes.nodes')) meta_node
   WHERE
     JSON_VALUE(meta_node, '$.http-equiv') IS NOT NULL
@@ -212,7 +212,6 @@ extracted_origin_trials_from_headers_and_meta_tags AS (
     header_name = 'origin-trial' OR
     tag_name = 'origin-trial'
 )
-
 
 SELECT
   client,

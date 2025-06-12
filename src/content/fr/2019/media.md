@@ -86,7 +86,7 @@ Pour le terminal mobile utilisé pour le parcours des pages web, nous avons un a
 
 Si nous avions une image qui remplissait parfaitement tout l’écran, le taux de remplissage serait de 1x le taux de pixel. Bien sûr, il est rare qu’un site web remplisse toute la surface de la page avec une seule image. Le contenu des médias a tendance à se mélanger avec le design et d’autres contenus. Une valeur supérieure à 1x implique que la mise en page oblige l’utilisateur à faire défiler l’image pour voir le contenu supplémentaire.
 
-<p class="note">Remarque&nbsp;: ceci ne concerne que la mise en page CSS, à la fois pour le ratio de pixels et le volume du contenu de la mise en page. Il ne s’agit pas d’évaluer la pertinence des images adaptatives ou la pertinence de fournir des contenus à haute densité de pixels.</p>
+<aside class="note">Remarque&nbsp;: ceci ne concerne que la mise en page CSS, à la fois pour le ratio de pixels et le volume du contenu de la mise en page. Il ne s’agit pas d’évaluer la pertinence des images adaptatives ou la pertinence de fournir des contenus à haute densité de pixels.</aside>
 
 {{ figure_markup(
   image="fig5_image_pixel_volume_v_css_pixels.png",
@@ -111,7 +111,7 @@ Si les stratégies utilisées pour les images, les vidéos et les animations son
 * **Lazy loading** - ne transférer les contenus que lorsqu’un être humain les verra
 * **Accessibilité** - garantir une expérience de qualité pour tous les êtres humains
 
-<p class="note">Un avertissement concernant l’interprétation de ces résultats. Les pages web explorées pour le Web Almanac ont été explorées sur un navigateur Chrome. Cela implique que toute négociation de contenu qui pourrait mieux s’appliquer à Safari ou Firefox pourrait ne pas être représentée dans cet ensemble de données. Par exemple, l’utilisation de formats de fichiers comme JPEG2000, JPEG-XR, HEVC et HEIC est absente car ceux-ci ne sont pas pris en charge par Chrome. Cela ne signifie pas que le web ne contient pas ces autres formats ou expériences. De même, Chrome supporte en natif le <i lang="en">lazy loading</i> (depuis la version 76), ce qui n’est pas encore disponible dans les autres navigateurs. Pour en savoir plus sur ces réserves, consultez notre <a href="./methodology">Méthodologie</a>.</p>
+<aside class="note">Un avertissement concernant l’interprétation de ces résultats. Les pages web explorées pour le Web Almanac ont été explorées sur un navigateur Chrome. Cela implique que toute négociation de contenu qui pourrait mieux s’appliquer à Safari ou Firefox pourrait ne pas être représentée dans cet ensemble de données. Par exemple, l’utilisation de formats de fichiers comme JPEG2000, JPEG-XR, HEVC et HEIC est absente car ceux-ci ne sont pas pris en charge par Chrome. Cela ne signifie pas que le web ne contient pas ces autres formats ou expériences. De même, Chrome supporte en natif le <i lang="en">lazy loading</i> (depuis la version 76), ce qui n’est pas encore disponible dans les autres navigateurs. Pour en savoir plus sur ces réserves, consultez notre <a href="./methodology">Méthodologie</a>.</aside>
 
 Il est rare de trouver une page web qui n’utilise pas d’images. Au fil des ans, de nombreux formats de fichiers différents sont apparus pour aider à présenter le contenu sur le web, chacun répondant à un problème différent. Il existe principalement 4 principaux formats d’images universels&nbsp;: JPEG, PNG, GIF et SVG. En outre, Chrome a enrichi le catalogue de médias et a ajouté la prise en charge d’un cinquième format d’image&nbsp;: WebP. D’autres navigateurs ont également ajouté la prise en charge des formats JPEG2000 (Safari), JPEG-XL (IE et Edge) et HEIC (WebView uniquement dans Safari).
 
@@ -322,7 +322,7 @@ L’utilité de `srcset` dépend généralement de la précision de la requête 
 
 {{ figure_markup(
   image="fig16_top_patterns_of_img_sizes.png",
-  caption="Principaux modèles de conception de <code><img sizes></code>.",
+  caption="Principaux modèles de conception de `<img sizes>`.",
   description="Diagramme à barres montrant que 11,3 millions d’images utilisent 'img sizes=`(max-width: 300px) 100vw, 300px`', 1,60 million utilisent 'auto', 1,00 million utilisent 'img sizes=`(max-width : 767px) 89vw...etc.`', 0,23 million utilisent '100vw' et 0,13 million utilisent '300px'.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=663985412&format=interactive"
   )

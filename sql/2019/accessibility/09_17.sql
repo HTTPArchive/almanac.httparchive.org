@@ -40,28 +40,26 @@ SELECT
   ROUND(COUNTIF(table_info.has_table AND has_columnheader_role) * 100 / COUNTIF(table_info.has_table), 2) AS perc_with_columnheader,
   ROUND(COUNTIF(table_info.has_table AND has_rowheader_role) * 100 / COUNTIF(table_info.has_table), 2) AS perc_with_rowheader,
   ROUND(COUNTIF(table_info.has_table AND (table_info.has_th OR has_rowheader_role OR has_columnheader_role)) * 100 / COUNTIF(table_info.has_table), 2) AS perc_with_any
-FROM
-  (
-    SELECT
-      client,
-      page,
-      REGEXP_CONTAINS(body, r'(?i)\brole=[\'"]?(columnheader)\b') AS has_columnheader_role,
-      REGEXP_CONTAINS(body, r'(?i)\brole=[\'"]?(rowheader)\b') AS has_rowheader_role
-    FROM
-      `httparchive.almanac.summary_response_bodies`
-    WHERE
-      date = '2019-07-01' AND
-      firstHtml
-  )
-JOIN
-  (
-    SELECT
-      _TABLE_SUFFIX AS client,
-      url AS page,
-      getTableInfo(payload) AS table_info
-    FROM
-      `httparchive.pages.2019_07_01_*`
-  )
+FROM (
+  SELECT
+    client,
+    page,
+    REGEXP_CONTAINS(body, r'(?i)\brole=[\'"]?(columnheader)\b') AS has_columnheader_role,
+    REGEXP_CONTAINS(body, r'(?i)\brole=[\'"]?(rowheader)\b') AS has_rowheader_role
+  FROM
+    `httparchive.almanac.summary_response_bodies`
+  WHERE
+    date = '2019-07-01' AND
+    firstHtml
+)
+JOIN (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    url AS page,
+    getTableInfo(payload) AS table_info
+  FROM
+    `httparchive.pages.2019_07_01_*`
+)
 USING (client, page)
 GROUP BY
   client

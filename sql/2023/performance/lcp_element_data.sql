@@ -117,9 +117,9 @@ JOIN (
     date = '2023-10-01' AND
     is_root_page
   GROUP BY
-    client)
-USING
-  (client)
+    client
+)
+USING (client)
 GROUP BY
   client,
   nodeName

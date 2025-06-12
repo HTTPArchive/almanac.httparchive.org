@@ -347,6 +347,16 @@ aside.banner p {
   margin: 0;
 }
 
+aside,
+.note {
+  font-style: italic;
+}
+
+aside em,
+.note em {
+  font-style: normal;
+}
+
 /* Main title, subtitle and modifiers */
 .title,
 .subtitle {
@@ -612,7 +622,6 @@ header .cta {
 }
 
 .search-button {
-  border-color: #000;
   background-color: #f7f779;
   padding: 6px 27px;
   width: auto;

@@ -18,10 +18,18 @@
 {% block intro_title %}Web Almanac{% endblock %}
 {% block intro_sub_title %}HTTP Archive relatório annual do <br> <b>estado da web</b>{% endblock %}
 
-{% block announcement_text %}
-<p lang="en">
-  Listen to a recording of our live stream for this year's edition on <a href="https://www.youtube.com/live/cdYR0ZmplIM">YouTube</a>! We'll be running another live stream with more of our authors in January 2025.
+{% block announcement_text -%}
+{%- if year < DEFAULT_YEAR -%}
+<p>
+  Você está visualizando uma edição anterior do Web Almanac.
+  Confira a <a href="/{{ lang }}/{{ DEFAULT_YEAR }}/{% if chapter_lang_exists(lang, DEFAULT_YEAR, slug) or page_lang_exists(lang, DEFAULT_YEAR, slug) %}{{ slug }}{% endif %}">edição de {{ DEFAULT_YEAR }}!</a>
 </p>
+{%- elif self.call_for_contributors_link() | trim | length > 0 -%}
+<p>
+  📣 <a hreflang="en" href="{{ self.call_for_contributors_link() }}"><b>Chamada para Contribuidores</b></a>:
+Ajude a criar o Web Almanac de {{ now().year }} — faça parte da equipe que está moldando a edição deste ano!
+</p>
+{%- endif -%}
 {% endblock %}
 
 {% block mission %}

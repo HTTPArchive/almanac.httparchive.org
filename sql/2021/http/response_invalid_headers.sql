@@ -24,27 +24,24 @@ SELECT
 FROM
   `httparchive.almanac.requests`,
   UNNEST(extractHTTPHeaders(response_headers)) AS header
-JOIN
-  (
-    SELECT
-      client,
-      COUNT(0) AS total
-    FROM
-      `httparchive.almanac.requests`
-    GROUP BY
-      client
-  )
+JOIN (
+  SELECT
+    client,
+    COUNT(0) AS total
+  FROM
+    `httparchive.almanac.requests`
+  GROUP BY
+    client
+)
 USING (client)
 WHERE
-  date = '2021-07-01' AND
-  (
-    (
-      header LIKE '% %' AND
-      header NOT LIKE 'http/1.1 %' AND
-      header NOT LIKE 'http/1.0 %'
-    ) OR (
-      REGEXP_REPLACE(header, r'([^\p{ASCII}]+)', '') != header
-    )
+  date = '2021-07-01' AND ((
+    header LIKE '% %' AND
+    header NOT LIKE 'http/1.1 %' AND
+    header NOT LIKE 'http/1.0 %'
+  ) OR (
+    REGEXP_REPLACE(header, r'([^\p{ASCII}]+)', '') != header
+  )
   )
 GROUP BY
   client,

@@ -18,10 +18,18 @@
 {% block intro_title %}Web Almanac{% endblock %}
 {% block intro_sub_title %}Ежегодный отчёт<br>HTTP Archive<br>о <b>состоянии веба</b>{% endblock %}
 
-{% block announcement_text %}
-<p lang="en">
-  Listen to a recording of our live stream for this year's edition on <a href="https://www.youtube.com/live/cdYR0ZmplIM">YouTube</a>! We'll be running another live stream with more of our authors in January 2025.
+{% block announcement_text -%}
+{%- if year < DEFAULT_YEAR -%}
+<p>
+  Вы просматриваете предыдущий выпуск Веб-альманаха.
+  Ознакомьтесь с выпуском <a href="/{{ lang }}/{{ DEFAULT_YEAR }}/{% if chapter_lang_exists(lang, DEFAULT_YEAR, slug) or page_lang_exists(lang, DEFAULT_YEAR, slug) %}{{ slug }}{% endif %}">{{ DEFAULT_YEAR }} года!</a>
 </p>
+{%- elif self.call_for_contributors_link() | trim | length > 0 -%}
+<p>
+  📣 <a hreflang="en" href="{{ self.call_for_contributors_link() }}"><b>Призыв к участию</b></a>:
+Помогите создать Web Almanac {{ now().year }} — станьте частью команды, формирующей выпуск этого года!
+</p>
+{%- endif -%}
 {% endblock %}
 
 {% block mission %}

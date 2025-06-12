@@ -46,6 +46,7 @@ properties AS (
     client,
     property
 ),
+
 pages AS (
   SELECT
     client,
@@ -68,7 +69,8 @@ SELECT
 FROM
   properties
 JOIN
-  pages USING (client)
+  pages
+USING (client)
 ORDER BY
   client,
   proportion DESC

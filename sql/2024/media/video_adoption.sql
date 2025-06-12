@@ -1,7 +1,7 @@
 #standardSQL
 # How many pages use <video>?
 # video_adoption.sql
-# ‚ùï Updated in 2024
+# ‚\x9dï Updated in 2024
 
 SELECT
   client,
@@ -13,7 +13,8 @@ FROM (
     _TABLE_SUFFIX AS client,
     CAST(JSON_VALUE(JSON_VALUE(payload, '$._media'), '$.num_video_nodes') AS INT64) AS num_video_nodes
   FROM
-    `httparchive.pages.2024_06_01_*`)
+    `httparchive.pages.2024_06_01_*`
+)
 GROUP BY
   client
 ORDER BY

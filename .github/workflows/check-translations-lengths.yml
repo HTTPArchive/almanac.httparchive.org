@@ -28,7 +28,7 @@ on:
 jobs:
   check_lengths:
     name: Check Lengths
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4

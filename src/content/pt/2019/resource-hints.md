@@ -66,7 +66,7 @@ Como o uso de dicas de recursos em cabeçalhos HTTP é muito baixo, o restante d
 
 ## Dicas de recursos
 
-<p class="note">Observação: não houve diferença perceptível entre os padrões de uso de dicas de recursos em dispositivos móveis e computadores. Assim, para fins de concisão, este capítulo inclui apenas as estatísticas para dispositivos móveis.</p>
+<aside class="note">Observação: não houve diferença perceptível entre os padrões de uso de dicas de recursos em dispositivos móveis e computadores. Assim, para fins de concisão, este capítulo inclui apenas as estatísticas para dispositivos móveis.</aside>
 
 <figure>
   <table>

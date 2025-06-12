@@ -44,24 +44,28 @@ FROM (
   LEFT JOIN
     UNNEST(getFont(css)) AS font_subset
   WHERE
-    date = '2020-08-01')
+    date = '2020-08-01'
+)
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
     url AS page,
-    CAST(JSON_EXTRACT_SCALAR(payload,
-        "$['_chromeUserTiming.firstContentfulPaint']") AS INT64) AS fcp,
-    CAST(JSON_EXTRACT_SCALAR(payload,
-        "$['_chromeUserTiming.LargestContentfulPaint']") AS INT64) AS lcp
+    CAST(JSON_EXTRACT_SCALAR(
+      payload,
+      "$['_chromeUserTiming.firstContentfulPaint']"
+    ) AS INT64) AS fcp,
+    CAST(JSON_EXTRACT_SCALAR(
+      payload,
+      "$['_chromeUserTiming.LargestContentfulPaint']"
+    ) AS INT64) AS lcp
   FROM
     `httparchive.pages.2020_08_01_*`
   GROUP BY
     _TABLE_SUFFIX,
     url,
-    payload)
-USING
-  (client,
-    page)
+    payload
+)
+USING (client, page)
 GROUP BY
   client,
   font_subset

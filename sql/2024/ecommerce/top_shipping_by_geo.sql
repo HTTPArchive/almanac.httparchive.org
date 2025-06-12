@@ -61,7 +61,8 @@ FROM (
   GROUP BY
     client,
     geo,
-    shipping)
+    shipping
+)
 WHERE
   pages > 1000
 ORDER BY

@@ -20,8 +20,7 @@ SELECT
 FROM
   `httparchive.almanac.requests`
 WHERE
-  date = '2022-06-01' AND
-  (mimeType = 'application/wasm' OR ext = 'wasm')
+  date = '2022-06-01' AND (mimeType = 'application/wasm' OR ext = 'wasm')
 GROUP BY
   client,
   name

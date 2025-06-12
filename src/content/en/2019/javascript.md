@@ -299,7 +299,7 @@ Other top used JavaScript libraries include jQuery variants (jQuery migrate, jQu
 
 ### Frameworks and UI libraries
 
-<p class="note">As mentioned in our <a href="./methodology#wappalyzer">methodology</a>, the third-party detection library used in HTTP Archive (Wappalyzer) has a number of limitations with regards to how it detects certain tools. There is an open issue <a hreflang="en" href="https://github.com/AliasIO/wappalyzer/issues/2450">to improve detection of JavaScript libraries and frameworks</a>, which will have impacted the results presented here.</p>
+<aside class="note">As mentioned in our <a href="./methodology#wappalyzer">methodology</a>, the third-party detection library used in HTTP Archive (Wappalyzer) has a number of limitations with regards to how it detects certain tools. There is an open issue <a hreflang="en" href="https://github.com/AliasIO/wappalyzer/issues/2450">to improve detection of JavaScript libraries and frameworks</a>, which will have impacted the results presented here.</aside>
 
 In the past number of years, the JavaScript ecosystem has seen a rise in open-source libraries and frameworks to make building **single-page applications** (SPAs) easier. A single-page application is characterized as a web page that loads a single HTML page and uses JavaScript to modify the page on user interaction instead of fetching new pages from the server. Although this remains to be the main premise of single-page applications, different server-rendering approaches can still be used to improve the experience of such sites. How many sites use these types of frameworks?
 

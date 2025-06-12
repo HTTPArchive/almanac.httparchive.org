@@ -1,3 +1,5 @@
+/* global gtag */
+
 // Code related to parsing and showing webmentions
 // And Share button
 

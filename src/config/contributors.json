@@ -64,6 +64,16 @@
       ]
     }
   },
+  "onurguler18": {
+    "avatar_url": "39603688",
+    "github": "onurguler18",
+    "name": "Onur Güler",
+    "teams": {
+      "2024": [
+        "analysts"
+      ]
+    }
+  },
   "argyleink": {
     "avatar_url": "1134620",
     "github": "argyleink",
@@ -3436,6 +3446,9 @@
       "2022": [
         "analysts",
         "reviewers"
+      ],
+      "2024": [
+        "authors"
       ]
     },
     "twitter": "TheNishuGoel",
@@ -4052,6 +4065,16 @@
     },
     "twitter": "rrlevering"
   },
+  "ADSafin": {
+    "avatar_url": "105672331",
+    "github": "ADSafin",
+    "name": "Safin Ainur",
+    "teams": {
+      "2024": [
+        "translators"
+      ]
+    }
+  },
   "ksakae1216": {
     "avatar_url": "1982567",
     "github": "ksakae1216",
@@ -4067,6 +4090,9 @@
         "translators"
       ],
       "2022": [
+        "translators"
+      ],
+      "2024": [
         "translators"
       ]
     },
@@ -4194,6 +4220,21 @@
     },
     "twitter": "Scott_Helme",
     "website": "https://scotthelme.co.uk"
+  },
+  "krlslman": {
+    "avatar_url": "68502548",
+    "github": "krlslman",
+    "name": "Selman Koral",
+    "teams": {
+      "2024": [
+        "developers",
+        "translators"
+      ],
+      "2025": [
+        "developers",
+        "translators"
+      ]
+    }
   },
   "sergeychernyshev": {
     "avatar_url": "38076",

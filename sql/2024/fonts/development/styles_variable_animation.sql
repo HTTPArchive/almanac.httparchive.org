@@ -5,7 +5,7 @@
 CREATE TEMPORARY FUNCTION HAS_ANIMATION(json STRING)
 RETURNS BOOLEAN
 LANGUAGE js
-OPTIONS(library = "gs://httparchive/lib/css-utils.js")
+OPTIONS (library = "gs://httparchive/lib/css-utils.js")
 AS '''
 try {
   const $ = JSON.parse(json);
@@ -51,6 +51,7 @@ properties AS (
   GROUP BY
     client
 ),
+
 pages AS (
   SELECT
     client,
@@ -72,7 +73,8 @@ SELECT
 FROM
   properties
 JOIN
-  pages USING (client)
+  pages
+USING (client)
 ORDER BY
   client,
   proportion DESC

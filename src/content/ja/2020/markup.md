@@ -30,9 +30,9 @@ HTMLをどのように使うのかでは、どれだけ素晴らしい基盤が�
 
 昨年は580万ページを分析し、そのうち440万ページをデスクトップで、530万ページをモバイルでテストしました。今年は2020年にユーザーが訪れるWebサイトに関する[最新データ](./methodology#websites)を用いて750万ページを分析し、そのうち560万ページをデスクトップで、630万ページをモバイルでテストしました。昨年との比較も行っていますが、新たな洞察のために追加の指標を分析したのと同様に、私たち自身の個性や視点を章全体に付与しました。
 
-<p class="note">
+<aside class="note">
   このマークアップの章では、同じマークアップ言語であるSVGやMathMLではなく、ほぼHTMLのみを取り上げています。特に断りのない限り、この章で紹介する統計は、モバイルページのセットを指します。また、Web Almanacの全章のデータは公開されており、利用可能です。<a hreflang="en" href="https://docs.google.com/spreadsheets/d/1Ta7amoUeaL4pILhWzH-SCzMX9PsZeb1x_mwrX2C4eY8/">結果</a>を見て、<a hreflang="en" href="https://discuss.httparchive.org/t/2039">あなたの意見</a>をコミュニティに伝えてください！
-</p>
+</aside>
 
 ## 全般
 
@@ -1019,9 +1019,9 @@ HTML仕様によると、<a hreflang="en" href="https://html.spec.whatwg.org/mul
 
 その結果、分析したページのほぼ半分が、典型的なviewport `content` 値を使用していることがわかりました。しかし約10％のモバイルページでは、viewport meta要素の適切な`content`値が完全に欠落しており、残りのページでは、`maximum-scale`、`minimum-scale`、`user-scalable=no`、または`user-scalable=0`の不適切な組み合わせが使用されています。
 
-<p class="note">
+<aside class="note">
   しばらく前から、モバイルブラウザEdgeでは、viewport meta要素を採用しているWebページで定義されているズーム設定に関わらず、<a hreflang="en" href="https://blogs.windows.com/windows-insider/2017/01/12/announcing-windows-10-insider-preview-build-15007-pc-mobile/">最低でも500%</a>までWebページを拡大することができるようになりました。
-</p>
+</aside>
 
 ### ファビコン
 
@@ -1306,7 +1306,7 @@ HTML仕様によると、<a hreflang="en" href="https://html.spec.whatwg.org/mul
 
 経験則として、また、<a hreflang="en" href="https://www.nngroup.com/articles/new-browser-windows-and-tabs/">使いやすさの観点から</a>、そもそも`target="_blank"`を使用しないことをオススメします。
 
-<p class="note">最新のSafariとFirefoxでは、<code>a</code>要素に<code>target="_blank"</code>を設定すると、<code>rel="noopener"</code>を設定するのと同じ<code>rel</code>の動作が暗黙的に提供されます。これはすでに<a hreflang="en" href="https://chromium-review.googlesource.com/c/chromium/src/+/1630010">Chromium</a>でも実装されており、Chrome 88にも搭載される予定です</p>。
+<aside class="note">最新のSafariとFirefoxでは、<code>a</code>要素に<code>target="_blank"</code>を設定すると、<code>rel="noopener"</code>を設定するのと同じ<code>rel</code>の動作が暗黙的に提供されます。これはすでに<a hreflang="en" href="https://chromium-review.googlesource.com/c/chromium/src/+/1630010">Chromium</a>でも実装されており、Chrome 88にも搭載される予定です。</aside>
 
 ## 結論
 
@@ -1336,6 +1336,6 @@ HTML仕様によると、<a hreflang="en" href="https://html.spec.whatwg.org/mul
 
 次回のWeb Almanacの章では、HTMLを書く技術を詳しく見て、できれば私たちがどのように改善してきたかを見ていく準備をしましょう。
 
-<p class="note">
+<aside class="note">
   あとは、あなたにお任せします。あなたの観察力はどうですか？何があなたの目に留まりましたか？何が悪くなって、何が良くなったと思いますか？<a hreflang="en" href="https://discuss.httparchive.org/t/2039">Leave a comment</a>であなたの意見を聞かせてください。
-</p>
+</aside>

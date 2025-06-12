@@ -41,6 +41,7 @@ WITH image_loading AS (
   WHERE
     date = '2024-06-01'
 )
+
 SELECT
   client,
   loading,

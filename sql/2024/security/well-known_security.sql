@@ -1,11 +1,11 @@
 #standardSQL
-  # Section: Well-known URIs - securityt.txt
-  # Question: What is the prevalence of (signed) /.well-known/security.txt endpoints and prevalence of included attributes (canonical, encryption, expires, policy)?
-  # Note: Query is huge (60TB) and computationally expensive (slow)
-  # Note: We require that the final status code for /.well-known/security.txt is 200 (found) and that the content-type starts with text/plain. This can lead to a very small number of false negatives but is much better than false positives using other approaches
-  # Note: all_required_exist = contact & expires are mandatory; only_one_requirement_broken = expires & preferred_languages are not allowed to occur multiple times; valid = all_required_exist && !only_one_requirement_broken
-  # Note: The custom metric only has an entry for a directive if it is not empty, thus we can assume that a non-null value cannot be an empty list
-  # Note: Each directive (except signed) is saved as a list, however currently we do not really check the content
+# Section: Well-known URIs - securityt.txt
+# Question: What is the prevalence of (signed) /.well-known/security.txt endpoints and prevalence of included attributes (canonical, encryption, expires, policy)?
+# Note: Query is huge (60TB) and computationally expensive (slow)
+# Note: We require that the final status code for /.well-known/security.txt is 200 (found) and that the content-type starts with text/plain. This can lead to a very small number of false negatives but is much better than false positives using other approaches
+# Note: all_required_exist = contact & expires are mandatory; only_one_requirement_broken = expires & preferred_languages are not allowed to occur multiple times; valid = all_required_exist && !only_one_requirement_broken
+# Note: The custom metric only has an entry for a directive if it is not empty, thus we can assume that a non-null value cannot be an empty list
+# Note: Each directive (except signed) is saved as a list, however currently we do not really check the content
 WITH
 security_txt_data AS (
   SELECT
@@ -43,9 +43,10 @@ security_txt_data AS (
     WHERE
       date = '2024-06-01' AND
       is_root_page
-    # AND rank <= 1000
-    )
+  # AND rank <= 1000
+  )
 ),
+
 totals AS (
   SELECT
     client,
@@ -66,7 +67,6 @@ totals AS (
   GROUP BY
     client
 )
-
 
 SELECT
   client,
@@ -122,10 +122,15 @@ SELECT
   COUNTIF(other IS NOT NULL) / COUNT(0) AS pct_other,
 
   # Other values relative to only valid files (as other can be garbage if the file is not actually a security.txt file)
-  COUNTIF(other IS NOT NULL AND
-    valid) AS other_valid,
-  COUNTIF(other IS NOT NULL AND
-    valid) / COUNTIF(valid) AS pct_other_valid,
+  COUNTIF(
+    other IS NOT NULL AND
+    valid
+  ) AS other_valid,
+  COUNTIF(
+    other IS NOT NULL AND
+    valid
+  ) / COUNTIF(valid
+  ) AS pct_other_valid,
 
   # Average counts of directives (only non-null values are counted; i.e., min is 1, might be better to count the average of all "found" files, i.e., including 0) (COALASCE 0)
   AVG(ARRAY_LENGTH(contact)) AS avg_contact_count,

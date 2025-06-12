@@ -107,7 +107,7 @@ Como era de esperar, en la Figura 2.5, `px` es el tipo de unidad más utilizado,
 
 Cuando se trata de unidades basadas en el espacio físico, la unidad `cm` (or centímetros) es la más popular por mucho, seguida por `in` (pulgadas), y luego por  `Q`.Sabemos que este tipo de unidades son específicamente útiles para imprimir hojas de estilo, ¡pero ni siquiera sabíamos que la unidad `Q` existía hasta esta encuesta! ¿Sabías?
 
-<p class="note">Una versión anterior de este capítulo discutia la inesperada popularidad de la unidad<code>Q</code>. Gracias a la <a hreflang="en" href="https://discuss.httparchive.org/t/chapter-2-css/1757/6">discusión de la comunidad</a> alrededor de este capítulo, hemos identificado que esto fue un error en nuestro análisis y hemos actualizado la Figura 2.5 en consecuencia.</p>
+<aside class="note">Una versión anterior de este capítulo discutia la inesperada popularidad de la unidad<code>Q</code>. Gracias a la <a hreflang="en" href="https://discuss.httparchive.org/t/chapter-2-css/1757/6">discusión de la comunidad</a> alrededor de este capítulo, hemos identificado que esto fue un error en nuestro análisis y hemos actualizado la Figura 2.5 en consecuencia.</aside>
 
 ### Unidades basadas en el viewport
 

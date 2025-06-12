@@ -21,15 +21,19 @@ try {
 # https://github.com/AdguardTeam/cname-trackers/blob/master/script/src/cloaked-trackers.json
 WITH adguard_trackers AS (
   SELECT
-    domain AS domain
+    domain
   FROM UNNEST(['cz.affilbox.cz', 'pl02.prolitteris.2cnt.net', 'a8.net', 'mm.actionlink.jp', 'mr-in.com', 'ebis.ne.jp', '0i0i0i0.com', 'ads.bid', 'at-o.net', 'actonservice.com', 'actonsoftware.com', '2o7.net', 'data.adobedc.net', 'sc.adobedc.net', 'sc.omtrdc.net', 'adocean.pl', 'aquaplatform.com', 'cdn18685953.ahacdn.me', 'thirdparty.bnc.lt', 'api.clickaine.com', 'tagcommander.com', 'track.sp.crdl.io', 'dnsdelegation.io', 'storetail.io', 'e.customeriomail.com', 'dataunlocker.com', 'monopoly-drain.ga', 'friendly-community.tk', 'nc0.co', 'customer.etracker.com', 'eulerian.net', 'extole.com', 'extole.io', 'fathomdns.com', 'genieespv.jp', 'ad-cloud.jp', 'goatcounter.com', 'heleric.com', 'iocnt.net', 'affex.org', 'k.keyade.com', 'ghochv3eng.trafficmanager.net', 'online-metrix.net', 'logly.co.jp', 'mailgun.org', 'ab1n.net', 'ntv.io', 'ntvpforever.com', 'postrelease.com', 'non.li', 'tracking.bp01.net', 't.eloqua.com', 'oghub.io', 'go.pardot.com', 'parsely.com', 'custom.plausible.io', 'popcashjs.b-cdn.net', 'rdtk.io', 'sailthru.com', 'exacttarget.com', 'a351fec2c318c11ea9b9b0a0ae18fb0b-1529426863.eu-central-1.elb.amazonaws.com', 'a5e652663674a11e997c60ac8a4ec150-1684524385.eu-central-1.elb.amazonaws.com', 'a88045584548111e997c60ac8a4ec150-1610510072.eu-central-1.elb.amazonaws.com', 'afc4d9aa2a91d11e997c60ac8a4ec150-2082092489.eu-central-1.elb.amazonaws.com', 'e.truedata.co', 'utiq-aws.net', 'webtrekk.net', 'wt-eu02.net', 'ak-is2.net', 'wizaly.com']) AS domain
-), whotracksme AS (
+),
+
+whotracksme AS (
   SELECT DISTINCT
     domain,
     category
   FROM `httparchive.almanac.whotracksme`
   WHERE date = '2024-06-01'
-), cnames AS (
+),
+
+cnames AS (
   SELECT
     client,
     cnames.cname,
@@ -44,14 +48,18 @@ WITH adguard_trackers AS (
     client,
     cnames.cname,
     page
-), pages_total AS (
+),
+
+pages_total AS (
   SELECT
     client,
     COUNT(DISTINCT page) AS total_pages
   FROM `httparchive.all.pages`
   WHERE date = '2024-06-01'
   GROUP BY client
-), cname_stats AS (
+),
+
+cname_stats AS (
   SELECT
     client,
     NET.REG_DOMAIN(cname) AS cname,

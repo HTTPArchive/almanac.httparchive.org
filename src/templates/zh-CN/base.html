@@ -18,10 +18,18 @@
 {% block intro_title %}Web Almanac{% endblock %}
 {% block intro_sub_title %}HTTP Archive的年度报告<br> <b>网络状态</b>报告{% endblock %}
 
-{% block announcement_text %}
-<p lang="en">
-  Listen to a recording of our live stream for this year's edition on <a href="https://www.youtube.com/live/cdYR0ZmplIM">YouTube</a>! We'll be running another live stream with more of our authors in January 2025.
+{% block announcement_text -%}
+{%- if year < DEFAULT_YEAR -%}
+<p>
+  您正在查看 Web 年鉴的上一版。
+  查看 <a href="/{{ lang }}/{{ DEFAULT_YEAR }}/{% if chapter_lang_exists(lang, DEFAULT_YEAR, slug) or page_lang_exists(lang, DEFAULT_YEAR, slug) %}{{ slug }}{% endif %}">{{ DEFAULT_YEAR }} 年版！</a>.
 </p>
+{%- elif self.call_for_contributors_link() | trim | length > 0 -%}
+<p>
+  📣 <a hreflang="en" href="{{ self.call_for_contributors_link() }}"><b>贡献者招募</b></a>:
+帮助创建 {{ now().year }} 年的 Web Almanac —— 成为塑造今年版本的团队一员！
+</p>
+{%- endif -%}
 {% endblock %}
 
 {% block mission %}

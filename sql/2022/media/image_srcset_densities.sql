@@ -29,7 +29,8 @@ FROM (
     image
   FROM
     `httparchive.pages.2022_06_01_*`,
-    UNNEST(getSrcsetDensities(payload)) AS image),
+    UNNEST(getSrcsetDensities(payload)) AS image
+),
   UNNEST(image.srcsetCandidateDensities) AS srcsetCandidateDensity,
   UNNEST([10, 25, 50, 75, 90]) AS percentile
 GROUP BY

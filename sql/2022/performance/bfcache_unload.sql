@@ -16,7 +16,6 @@ pages AS (
     `httparchive.summary_pages.2022_06_01_*`
 )
 
-
 SELECT
   client,
   _rank AS rank,
@@ -27,8 +26,7 @@ FROM
   lh
 JOIN
   pages
-USING
-  (client, page),
+USING (client, page),
   UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS _rank
 WHERE
   rank <= _rank

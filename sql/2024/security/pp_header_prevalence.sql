@@ -20,7 +20,8 @@ FROM (
     date = '2024-06-01' AND
     is_root_page AND
     is_main_document AND
-    LOWER(response_headers.name) = 'permissions-policy')
+    LOWER(response_headers.name) = 'permissions-policy'
+)
 GROUP BY
   client,
   pp_header

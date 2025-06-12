@@ -18,10 +18,18 @@
 {% block intro_title %}Web Almanac{% endblock %}
 {% block intro_sub_title %}Rapport annuel<br>de HTTP Archive sur<br><b>l’état du Web</b>{% endblock %}
 
-{% block announcement_text %}
-<p lang="en">
-  Listen to a recording of our live stream for this year's edition on <a href="https://www.youtube.com/live/cdYR0ZmplIM">YouTube</a>! We'll be running another live stream with more of our authors in January 2025.
+{% block announcement_text -%}
+{%- if year < DEFAULT_YEAR -%}
+<p>
+  Vous consultez une édition précédente du Web Almanac.
+  Découvrez <a href="/{{ lang }}/{{ DEFAULT_YEAR }}/{% if chapter_lang_exists(lang, DEFAULT_YEAR, slug) or page_lang_exists(lang, DEFAULT_YEAR, slug) %}{{ slug }}{% endif %}">l’édition {{ DEFAULT_YEAR }}!</a>
 </p>
+{%- elif self.call_for_contributors_link() | trim | length > 0 -%}
+<p>
+  📣 <a hreflang="en" href="{{ self.call_for_contributors_link() }}"><b>Appel à contributions</b></a>:
+Aidez à créer le Web Almanac {{ now().year }} — faites partie de l'équipe qui façonne l'édition de cette année !
+</p>
+{%- endif -%}
 {% endblock %}
 
 {% block mission %}
@@ -145,7 +153,7 @@ Notre mission est de combiner les statistiques brutes et les tendances de HTTP A
 {% endif %}
 
 {% block contributors_description %}
-Le Web Almanac a été rendu possible grâce au travail acharné de la communauté Web. {{ self.contributors() }} personnes ont consacré bénévolement d’innombrables heures à planifier, faire des recherches, rédiger et mettre à votre disposition l'édition {{ year }} du Web Almanac.
+Le Web Almanac a été rendu possible grâce au travail acharné de la communauté Web. {{ self.contributors() }} personnes ont consacré bénévolement d’innombrables heures à planifier, faire des recherches, rédiger et mettre à votre disposition l’édition {{ year }} du Web Almanac.
 {% endblock %}
 {% block contributors_link %}Voir les contributeurs et contributrices{% endblock %}
 
@@ -223,7 +231,7 @@ Sauf indication contraire, les statistiques des {{ supported_chapters | length }
   "developers": "Développement",
   "editors": "Édition",
   "leads": "Gestion de projet",
-  "committee": "Comité d'organisation",
+  "committee": "Comité d’organisation",
   "reviewers": "Relecture",
   "translators": "Traduction",
   }
@@ -237,7 +245,7 @@ Sauf indication contraire, les statistiques des {{ supported_chapters | length }
   "developers": "Développement",
   "editors": "Édition",
   "leads": "Gestion de projet",
-  "committee": "Comité d'organisation",
+  "committee": "Comité d’organisation",
   "reviewers": "Relecture",
   "translators": "Traduction",
   }

@@ -39,6 +39,7 @@ WITH link_tag AS (
   WHERE
     date = '2024-06-01'
 )
+
 SELECT
   client,
   is_root_page,

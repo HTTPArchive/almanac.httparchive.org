@@ -1,5 +1,5 @@
 #standardSQL
-  # distribution_of_compression_types_by_cdn.sql : What compression formats are being used (gzip, brotli, etc) for compressed resources served by CDNs
+# distribution_of_compression_types_by_cdn.sql : What compression formats are being used (gzip, brotli, etc) for compressed resources served by CDNs
 
 SELECT
   client,
@@ -19,12 +19,13 @@ FROM (
       ELSE 'other'
     END AS compression_type
   FROM
-    `httparchive.all.requests` CROSS JOIN UNNEST(response_headers) AS a
+    `httparchive.all.requests`
+  CROSS JOIN UNNEST(response_headers) AS a
   WHERE
     date = '2024-06-01' AND
     a.name = 'content-encoding'
-  -- resp_content_encoding != ''
-  )
+-- resp_content_encoding != ''
+)
 GROUP BY
   client,
   cdn,

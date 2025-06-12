@@ -30,9 +30,9 @@ How do we use HTML, then, how great of a foundation do we have? In the introduct
 
 Last year's analysis was based on 5.8 million pages, of which 4.4 million were tested on desktop and 5.3 million on mobile. This year we analyzed 7.5 million pages, of which 5.6 million were tested on desktop and 6.3 million on mobile, using the [latest data](./methodology#websites) on the websites users are visiting in 2020. We do make some comparisons to last year, but just as we've tried to analyze additional metrics for new insights, we've also tried to impart our own personalities and perspectives throughout the chapter.
 
-<p class="note">
+<aside class="note">
   In this Markup chapter, we're focusing almost exclusively on HTML, rather than SVG or MathML, which are also considered markup languages. Unless otherwise noted, stats presented in this chapter refer to the set of mobile pages. Additionally, the data for all Web Almanac chapters is open and available. Take a look at <a hreflang="en" href="https://docs.google.com/spreadsheets/d/1Ta7amoUeaL4pILhWzH-SCzMX9PsZeb1x_mwrX2C4eY8/">the results</a> and <a hreflang="en" href="https://discuss.httparchive.org/t/2039">share your observations</a> with the community!
-</p>
+</aside>
 
 ## General
 
@@ -1019,9 +1019,9 @@ We had a look at the data and in order to better understand the results, we norm
 
 The results show that almost half of the pages we analyzed are using the typical viewport `content` value. Still, around 10% of mobile pages are entirely missing a proper `content` value for the viewport meta element, with the rest of them using an improper combination of `maximum-scale`, `minimum-scale`, `user-scalable=no`, or `user-scalable=0`.
 
-<p class="note">
+<aside class="note">
   For a while now, the Edge mobile browser allows users to zoom into a web page to <a hreflang="en" href="https://blogs.windows.com/windows-insider/2017/01/12/announcing-windows-10-insider-preview-build-15007-pc-mobile/">at least 500%</a>, regardless of the zoom settings defined by a web page employing the viewport meta element.
-</p>
+</aside>
 
 ### Favicons
 
@@ -1306,7 +1306,7 @@ Using `target="_blank"` has been known to be a <a hreflang="en" href="https://ma
 
 As a rule of thumb and for <a hreflang="en" href="https://www.nngroup.com/articles/new-browser-windows-and-tabs/">usability reasons</a>, it is recommended not to use `target="_blank"` in the first place.
 
-<p class="note">Within the latest Safari and Firefox versions, setting <code>target="_blank"</code> on <code>a</code> elements implicitly provides the same <code>rel</code> behavior as setting <code>rel="noopener"</code>. This is already <a hreflang="en" href="https://chromium-review.googlesource.com/c/chromium/src/+/1630010">implemented in Chromium</a> as well and will land in Chrome 88.</p>
+<aside class="note">Within the latest Safari and Firefox versions, setting <code>target="_blank"</code> on <code>a</code> elements implicitly provides the same <code>rel</code> behavior as setting <code>rel="noopener"</code>. This is already <a hreflang="en" href="https://chromium-review.googlesource.com/c/chromium/src/+/1630010">implemented in Chromium</a> as well and will land in Chrome 88.</aside>
 
 ## Conclusion
 
@@ -1336,6 +1336,6 @@ That compels us to close with an appeal: Pay attention to HTML. Focus on HTML. I
 
 For the next edition of the Web Almanac's chapter, let's prepare to look closer at the craft of writing HTML and, hopefully, how we've been improving on it.
 
-<p class="note">
+<aside class="note">
   We're leaving the rest open to you. What are your observations? What has caught your eye? What do you think has taken a turn for the worse, and what has improved? <a hreflang="en" href="https://discuss.httparchive.org/t/2039">Leave a comment</a> to share your thoughts!
-</p>
+</aside>

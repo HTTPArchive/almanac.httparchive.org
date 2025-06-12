@@ -425,9 +425,9 @@ The growth of these objects is a general indication of increased adoption of str
 * `HowTo` markup grew 605% on desktop and 623% on mobile.
 * `QAPage` markup grew 166.7% on desktop and 192.1% on mobile.
 
-<p class="note">
+<aside class="note">
   Again, it's important to note that this data might not be representative of their actual level of growth, since these objects are usually placed on internal pages.
-</p>
+</aside>
 
 The adoption of structured data is a boon for the web as extracting data is valuable to a wealth of use cases. We expect this to continue to grow as search engines expand their usage and as it begins to power applications beyond web search.
 

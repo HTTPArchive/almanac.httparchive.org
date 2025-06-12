@@ -11,7 +11,6 @@ WITH lcp AS (
     is_root_page
 )
 
-
 SELECT
   client,
   CASE

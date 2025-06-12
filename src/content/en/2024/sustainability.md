@@ -995,7 +995,7 @@ From a sustainability perspective, effective caching offers several key benefits
 {{ figure_markup(
   image="cache-control-header-usage.png",
   caption="Cache control header usage.",
-  description="A bar chart showing that on desktop 26.6% of websites use Cache Control Only, 0.4% of them use Expiries only and 48.1% of them use both. 24.9% of the websites do not use any caching on desktop. On mobile 25.9% of websites use Cache Control Only, 0.4% of them use Expiries only and 48.6% of them use both. 25.1% of the websites do not use any caching on mobile.",
+  description="A bar chart showing that on desktop 26.6% of websites use Cache Control Only, 0.4% of them use Expires only and 48.1% of them use both. 24.9% of the websites do not use any caching on desktop. On mobile 25.9% of websites use Cache Control Only, 0.4% of them use Expires only and 48.6% of them use both. 25.1% of the websites do not use any caching on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQLDsXdZj62xe68w716gen0rQvuuGhXPAOSwdWwYjSBZf9BgJgEb-dp1Z_jB_Lp5YMsfH0FiNKwzDb/pubchart?oid=584352189&format=interactive",
   sheets_gid="1192354424",
   sql_file="cache_header_usage.sql"
@@ -1247,18 +1247,17 @@ Creating sustainable websites requires a combination of understanding, planning,
 One of the simplest steps you can take in rapidly evaluating your sustainability situation is using an automated measurement tool. As with accessibility tooling, these only tell part of the story and cannot account for aspects that can only be human-tested (rather than automated), and there are still many issues we do not have accurate data to measure against; but it's still a good place to dip your toes in the water.
 
 For further information, refer to:
-- <a hreflang="en" href="https://github.com/Munter/subfont">Ecograder</a>
-- <a hreflang="en" href="https://github.com/Munter/subfont">Website Carbon</a>
-- <a hreflang="en" href="https://github.com/Munter/subfont">Are My Third Parties Green?</a>
+- <a hreflang="en" href="https://ecograder.com">Ecograder</a>
+- <a hreflang="en" href="https://websitecarbon.com">Website Carbon</a>
+- <a hreflang="en" href="https://aremythirdpartiesgreen.com/">Are My Third Parties Green?</a>
 
 #### Planning and reporting
 
 Another step forward you can take beyond a rapid evaluation is to put forward some concrete plans or even better, start reporting on your sustainability journey. Measure what you can, document your efforts, and be as open with your findings and progress as you can be. Sustainability is a journey and progress is always beneficial over perfection. Having a sustainability statement will be a great place to provide such plans and successes you have achieved.
 
 For further information, refer to:
-- <a hreflang="en" href="https://ecograder.com/">Best Sustainability Statements</a>
-- <a hreflang="en" href="https://www.websitecarbon.com/">Co2.js</a>
-- <a hreflang="en" href="https://aremythirdpartiesgreen.com/">How to Write An Effective Sustainability Statement</a>
+- <a hreflang="en" href="https://www.thegreenwebfoundation.org/co2-js/">Co2.js</a>
+- <a hreflang="en" href="https://ecocart.io/sustainability-statement/">How to Write An Effective Sustainability Statement</a>
 
 #### WSG
 

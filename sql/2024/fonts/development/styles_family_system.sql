@@ -64,6 +64,7 @@ families AS (
     client,
     family
 ),
+
 pages AS (
   SELECT
     client,
@@ -86,7 +87,8 @@ SELECT
 FROM
   families
 JOIN
-  pages USING (client)
+  pages
+USING (client)
 ORDER BY
   client,
   proportion DESC

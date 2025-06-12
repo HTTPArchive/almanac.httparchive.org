@@ -7,7 +7,6 @@ WITH lh AS (
     UNNEST(JSON_QUERY_ARRAY(report, '$.audits.unsized-images.details.items')) AS unsized_image
 )
 
-
 SELECT
   percentile,
   client,

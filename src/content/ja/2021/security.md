@@ -643,7 +643,7 @@ SRIで保護されたスクリプトが含まれる一般的なホストのう�
 
 また、`<iframe>` 要素の `allow` 属性を使用すると、埋め込みフレームで使用することを許可されている機能を有効または無効にできます。モバイルの1680万フレームの18.3%が、許可や機能のポリシーを有効にするため`allow`属性を含んでいます。
 
-<p class="note">この章の以前のバージョンでは、フレームの合計数と `allow` 属性を持つフレームの割合の値が間違っていました。これらのエラーは修正されました。詳細については、この <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/pull/3912">GitHub PR</a> を参照してください。</p>
+<aside class="note">この章の以前のバージョンでは、フレームの合計数と `allow` 属性を持つフレームの割合の値が間違っていました。これらのエラーは修正されました。詳細については、この <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/pull/3912">GitHub PR</a> を参照してください。</aside>
 
 例年通り、iframeの`allow` 属性でもっとも使用されているディレクティブは、埋め込みビデオやメディアのコントロールに関連するものです。もっともよく使われるディレクティブは、引き続き `encrypted-media` で、これは暗号化メディア拡張APIへのアクセスを制御するために使用されます。
 
@@ -653,7 +653,7 @@ iframe内に信頼できない第三者が存在すると、そのページに�
 
 iframeの`sandbox`属性は、コンテンツに制限をかけるため、埋め込まれたWebページから攻撃を仕掛ける機会を減らすことができます。属性の値は、すべての制限を適用する場合は空、特定の制限を解除する場合はスペースで区切られたトークンのいずれかになります（いくつかの制限を挙げると埋め込みページはJavaScriptコードを実行できず、フォームは送信できず、ポップアップを作成できません）。広告やビデオなどのサードパーティーコンテンツをiframeで埋め込むことは、ウェブ上では一般的な行為であり、その多くが`sandbox`属性によって制限されていることは驚くことでありません。デスクトップ用ページのiframeの19.7%が `sandbox` 属性を持っており、モバイル用ページでは21.0%となっています。
 
-<p class="note">この章の以前のバージョンでは、`sandbox` 属性を持つフレームの割合の値が間違っていました。詳細については、この <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/pull/3912">GitHub PR</a> を参照してください。</p>
+<aside class="note">この章の以前のバージョンでは、`sandbox` 属性を持つフレームの割合の値が間違っていました。詳細については、この <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/pull/3912">GitHub PR</a> を参照してください。</aside>
 
 {{ figure_markup(
   image="security-prevalence-of-sandbox-directives-on-frames.png",

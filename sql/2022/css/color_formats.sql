@@ -180,7 +180,7 @@ WITH totals AS (
     _TABLE_SUFFIX AS client,
     COUNT(0) AS total_pages
   FROM
-    `httparchive.summary_pages.2022_07_01_*` -- noqa: L062
+    `httparchive.summary_pages.2022_07_01_*` -- noqa: CV09
   GROUP BY
     client
 )
@@ -205,11 +205,11 @@ FROM (
     UNNEST(getColorFormats(css)) AS format
   WHERE
     date = '2022-07-01' AND
-    format.value IS NOT NULL)
+    format.value IS NOT NULL
+)
 JOIN
   totals
-USING
-  (client)
+USING (client)
 GROUP BY
   client,
   format

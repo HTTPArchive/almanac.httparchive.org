@@ -11,6 +11,7 @@ WITH referrer_policy_custom_metrics AS (
     date = '2024-06-01' AND
     is_root_page = TRUE
 ),
+
 referrer_policy_headers AS (
   SELECT
     client,
@@ -45,28 +46,36 @@ FROM (
     client,
     COUNT(DISTINCT page) AS number_of_pages,
     COUNT(DISTINCT IF(
-        meta_policy IS NOT NULL,
-        page, NULL)) AS number_of_pages_with_entire_document_policy_meta,
+      meta_policy IS NOT NULL,
+      page, NULL
+    )) AS number_of_pages_with_entire_document_policy_meta,
     COUNT(DISTINCT IF(
-        header_policy IS NOT NULL,
-        page, NULL)) AS number_of_pages_with_entire_document_policy_header,
-    COUNT(DISTINCT IF(
-      meta_policy IS NOT NULL OR
       header_policy IS NOT NULL,
-      page, NULL)
+      page, NULL
+    )) AS number_of_pages_with_entire_document_policy_header,
+    COUNT(
+      DISTINCT IF(
+        meta_policy IS NOT NULL OR
+        header_policy IS NOT NULL,
+        page, NULL
+      )
     ) AS number_of_pages_with_entire_document_policy,
     COUNT(DISTINCT IF(
-        individual_requests,
-        page, NULL)) AS number_of_pages_with_any_individual_requests,
+      individual_requests,
+      page, NULL
+    )) AS number_of_pages_with_any_individual_requests,
     COUNT(DISTINCT IF(
-        link_relations,
-        page, NULL)) AS number_of_pages_with_any_link_relations,
-    COUNT(DISTINCT IF(
-      meta_policy IS NOT NULL OR
-      header_policy IS NOT NULL OR
-      individual_requests OR
       link_relations,
-      page, NULL)
+      page, NULL
+    )) AS number_of_pages_with_any_link_relations,
+    COUNT(
+      DISTINCT IF(
+        meta_policy IS NOT NULL OR
+        header_policy IS NOT NULL OR
+        individual_requests OR
+        link_relations,
+        page, NULL
+      )
     ) AS number_of_pages_with_any_referrer_policy
   FROM
     referrer_policy_custom_metrics

@@ -36,7 +36,6 @@ base AS (
     canonicalDomain
 )
 
-
 SELECT
   canonicalDomain,
   total_pages,

@@ -16,8 +16,7 @@ FROM (
   SELECT
     _TABLE_SUFFIX AS client,
     REGEXP_CONTAINS(resp_cache_control, r'(?i)no-store') AS uses_no_store,
-    REGEXP_CONTAINS(resp_cache_control, r'(?i)private') AS uses_private,
-    (reqCookieLen > 0) AS uses_cookies
+    REGEXP_CONTAINS(resp_cache_control, r'(?i)private') AS uses_private, (reqCookieLen > 0) AS uses_cookies
   FROM
     `httparchive.summary_requests.2021_07_01_*`
 )

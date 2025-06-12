@@ -160,7 +160,8 @@ FROM (
     UNNEST(getGradientFunctions(css)) AS function
   WHERE
     date = '2021-07-01' AND
-    function IS NOT NULL)
+    function IS NOT NULL
+)
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -168,9 +169,9 @@ JOIN (
   FROM
     `httparchive.summary_pages.2021_07_01_*`
   GROUP BY
-    client)
-USING
-  (client)
+    client
+)
+USING (client)
 GROUP BY
   client,
   function,

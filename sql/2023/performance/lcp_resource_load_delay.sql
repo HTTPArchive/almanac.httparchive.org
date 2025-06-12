@@ -32,8 +32,7 @@ delays AS (
     pages
   JOIN
     requests
-  USING
-    (client, page, url)
+  USING (client, page, url)
   WHERE
     lcp_req_time > ttfb
 )

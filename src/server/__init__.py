@@ -12,8 +12,9 @@ from .helpers import (
     accentless_sort,
     get_versioned_filename,
 )
+from datetime import datetime
 from .config import TEMPLATES_DIR, STATIC_DIR
-from . import csp, feature_policy, report_api
+from . import csp, feature_policy
 import logging
 
 
@@ -53,8 +54,6 @@ def add_header(response):
         if response.status_code == 200 or response.status_code == 304:
             response.cache_control.public = True
             response.cache_control.max_age = 600
-    # Add Report API header
-    response.headers["Report-To"] = report_api.report_to
     return response
 
 
@@ -74,6 +73,7 @@ app.jinja_env.globals["add_footnote_links"] = add_footnote_links
 app.jinja_env.globals["year_live"] = year_live
 app.jinja_env.globals["get_versioned_filename"] = get_versioned_filename
 app.jinja_env.filters["accentless_sort"] = accentless_sort
+app.jinja_env.globals['now'] = datetime.now
 
 talisman = Talisman(
     app,

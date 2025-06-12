@@ -22,7 +22,8 @@ JOIN (
   GROUP BY
     client,
     url,
-    app)
+    app
+)
 ON
   CONCAT(origin, '/') = url AND
   IF(form_factor.name = 'desktop', 'desktop', 'mobile') = client

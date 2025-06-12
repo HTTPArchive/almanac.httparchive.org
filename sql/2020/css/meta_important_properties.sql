@@ -48,7 +48,8 @@ FROM (
     `httparchive.almanac.parsed_css`,
     UNNEST(getImportantProperties(css)) AS important
   WHERE
-    date = '2020-08-01')
+    date = '2020-08-01'
+)
 GROUP BY
   client,
   property

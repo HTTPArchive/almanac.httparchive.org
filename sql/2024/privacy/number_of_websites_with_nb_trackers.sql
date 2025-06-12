@@ -7,6 +7,7 @@ WITH whotracksme AS (
   FROM almanac.whotracksme
   WHERE date = '2024-06-01'
 ),
+
 totals AS (
   SELECT
     client,
@@ -40,7 +41,7 @@ FROM (
   GROUP BY
     client,
     page
-  )
+)
 JOIN
   totals
 USING (client)
@@ -81,7 +82,7 @@ FROM (
   GROUP BY
     client,
     page
-  )
+)
 JOIN
   totals
 USING (client)

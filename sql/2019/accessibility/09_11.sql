@@ -18,10 +18,8 @@ SELECT
   COUNT(DISTINCT page) AS pages,
   total,
   ROUND(COUNT(DISTINCT page) * 100 / total, 2) AS pct
-FROM
-  (SELECT client, page, REGEXP_EXTRACT_ALL(body, '(?i)</h([1-6])>') AS headings FROM `httparchive.almanac.summary_response_bodies` WHERE date = '2019-07-01' AND firstHtml)
-JOIN
-  (SELECT _TABLE_SUFFIX AS client, COUNT(0) AS total FROM `httparchive.pages.2019_07_01_*` GROUP BY _TABLE_SUFFIX)
+FROM (SELECT client, page, REGEXP_EXTRACT_ALL(body, '(?i)</h([1-6])>') AS headings FROM `httparchive.almanac.summary_response_bodies` WHERE date = '2019-07-01' AND firstHtml)
+JOIN (SELECT _TABLE_SUFFIX AS client, COUNT(0) AS total FROM `httparchive.pages.2019_07_01_*` GROUP BY _TABLE_SUFFIX)
 USING (client)
 WHERE
   includesSkippedHeading(headings)

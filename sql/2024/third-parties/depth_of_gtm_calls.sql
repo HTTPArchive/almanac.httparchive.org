@@ -25,7 +25,6 @@ LANGUAGE js AS """
 """;
 
 
-
 CREATE TEMP FUNCTION mean_depth_and_next_element_after_gtm(input_array ARRAY<STRING>)
 RETURNS STRUCT<mean_depth FLOAT64, next_elements ARRAY<STRING>>
 LANGUAGE js AS """
@@ -68,13 +67,14 @@ WITH data AS (
       `httparchive.all.requests`
     WHERE
       NET.REG_DOMAIN(root_page) != NET.REG_DOMAIN(url) AND
-      date = '2024-06-01')
+      date = '2024-06-01'
+  )
   WHERE third_party != initiator_etld AND
     root_page != initiator_etld
   GROUP BY client, root_page, third_party, initiator_etld
 )
 
-SELECT client, next_elements_after_gtm, count(0) AS c FROM(
+SELECT client, next_elements_after_gtm, count(0) AS c FROM (
   SELECT
     client,
     result.mean_depth AS mean_depth_after_gtm,
@@ -85,7 +85,9 @@ SELECT client, next_elements_after_gtm, count(0) AS c FROM(
       client,
       findAllInitiators(root_page, ARRAY_AGG(STRUCT(root_page, third_party, initiator_etld))) AS all_initiators
     FROM data
-    GROUP BY root_page, client),
+    GROUP BY root_page, client
+  ),
     UNNEST([mean_depth_and_next_element_after_gtm(all_initiators)]) AS result
   WHERE result.mean_depth IS NOT NULL
-  ORDER BY mean_depth_after_gtm) GROUP BY client, next_elements_after_gtm ORDER BY c;
+  ORDER BY mean_depth_after_gtm
+) GROUP BY client, next_elements_after_gtm ORDER BY c;

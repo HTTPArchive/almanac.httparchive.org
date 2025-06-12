@@ -30,9 +30,9 @@ Hoe gebruiken we HTML dan, hoe groot is onze basis? In het inleidende gedeelte v
 
 De analyse van vorig jaar was gebaseerd op 5,8 miljoen pagina's, waarvan 4,4 miljoen op desktop en 5,3 miljoen op mobiel. Dit jaar hebben we 7,5 miljoen pagina's geanalyseerd, waarvan 5,6 miljoen op desktopcomputers en 6,3 miljoen op mobiele apparaten, met behulp van de [laatste gegevens](./methodology#websites) op de websites die gebruikers in 2020 bezoeken. We maken enkele vergelijkingen met vorig jaar, maar net zoals we hebben geprobeerd om aanvullende statistieken te analyseren voor nieuwe inzichten, hebben we ook geprobeerd onze eigen persoonlijkheden en perspectieven door te geven in het hoofdstuk.
 
-<p class="note">
+<aside class="note">
   In dit Opmaak-hoofdstuk concentreren we ons bijna uitsluitend op HTML, in plaats van SVG of MathML, die ook als opmaaktalen worden beschouwd. Tenzij anders vermeld, verwijzen de statistieken in dit hoofdstuk naar de set mobiele pagina's. Bovendien zijn de gegevens voor alle Web Almanac-hoofdstukken open en beschikbaar. Bekijk <a hreflang="en" href="https://docs.google.com/spreadsheets/d/1Ta7amoUeaL4pILhWzH-SCzMX9PsZeb1x_mwrX2C4eY8/">de resultaten</a> en <a hreflang="en" href="https://discuss.httparchive.org/t/2039">deel uw observaties</a> met de community!
-</p>
+</aside>
 
 ## Algemeen
 
@@ -1019,9 +1019,9 @@ We hebben de gegevens bekeken en om de resultaten beter te begrijpen, hebben we 
 
 De resultaten laten zien dat bijna de helft van de pagina's die we hebben geanalyseerd de typische viewport-`content`-waarde gebruikt. Toch mist ongeveer 10% van de mobiele pagina's volledig een juiste `content`-waarde voor het viewport-meta-element, terwijl de rest een onjuiste combinatie gebruikt van `maximum-scale`, `minimum-scale`, `user-scalable=no`, of `user-scalable=0`.
 
-<p class="note">
+<aside class="note">
   Met de mobiele Edge-browser kunnen gebruikers al een tijdje inzoomen op een webpagina naar <a hreflang="en" href="https://blogs.windows.com/windows-insider/2017/01/12/announcing-windows-10-insider-preview-build-15007-pc-mobile/">ten minste 500%</a>, ongeacht de zoominstellingen die zijn gedefinieerd door een webpagina die het viewport-meta-element gebruikt.
-</p>
+</aside>
 
 ### Favicons
 
@@ -1306,7 +1306,7 @@ Het gebruik van `target="_blank"` staat al enige tijd bekend als een <a hreflang
 
 Als vuistregel en om <a hreflang="en" href="https://www.nngroup.com/articles/new-browser-windows-and-tabs/">gebruiksredenen</a>, wordt het aangeraden `target="_blank"` niet te gebruiken in de eerste plaats.
 
-<p class="note">In de nieuwste Safari- en Firefox-versies biedt het instellen van <code>target="_blank"</code> op <code>a</code>-elementen impliciet hetzelfde <code>rel</code>-gedrag als het instellen van <code>rel="noopener"</code>. Dit is ook al <a hreflang="en" href="https://chromium-review.googlesource.com/c/chromium/src/+/1630010">geïmplementeerd in Chromium</a> en komt ook in Chrome 88 terecht.</p>
+<aside class="note">In de nieuwste Safari- en Firefox-versies biedt het instellen van <code>target="_blank"</code> op <code>a</code>-elementen impliciet hetzelfde <code>rel</code>-gedrag als het instellen van <code>rel="noopener"</code>. Dit is ook al <a hreflang="en" href="https://chromium-review.googlesource.com/c/chromium/src/+/1630010">geïmplementeerd in Chromium</a> en komt ook in Chrome 88 terecht.</aside>
 
 ## Gevolgtrekking
 
@@ -1336,6 +1336,6 @@ Dat dwingt ons om af te sluiten met een oproep: let op HTML. Focus op HTML. Het 
 
 Laten we ons voor de volgende editie van het hoofdstuk over de Web Almanac voorbereiden om nader te kijken naar het vak van het schrijven van HTML en, hopelijk, hoe we het hebben verbeterd.
 
-<p class="note">
+<aside class="note">
   We laten dit voor u open. Wat zijn uw opmerkingen? Wat viel u op? Wat is er volgens u verslechterd, en wat is er verbeterd? <a hreflang="en" href="https://discuss.httparchive.org/t/2039">Laat een reactie achter</a> om uw mening te delen!
-</p>
+</aside>

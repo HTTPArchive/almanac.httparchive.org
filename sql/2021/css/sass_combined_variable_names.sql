@@ -28,7 +28,8 @@ FROM (
     UNNEST(getCombinedVariableNames(payload)) AS name
   GROUP BY
     client,
-    name)
+    name
+)
 ORDER BY
   pct DESC
 LIMIT 100

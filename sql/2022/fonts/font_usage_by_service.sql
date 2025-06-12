@@ -5,13 +5,12 @@ WITH totals AS (
     COUNT(0) AS total
   FROM
     `httparchive.summary_pages.*`
-  WHERE
-    (
-      _TABLE_SUFFIX LIKE '2019_07_01%' OR
-      _TABLE_SUFFIX LIKE '2020_08_01%' OR
-      _TABLE_SUFFIX LIKE '2021_07_01%' OR
-      _TABLE_SUFFIX LIKE '2022_06_01%'
-    )
+  WHERE (
+    _TABLE_SUFFIX LIKE '2019_07_01%' OR
+    _TABLE_SUFFIX LIKE '2020_08_01%' OR
+    _TABLE_SUFFIX LIKE '2021_07_01%' OR
+    _TABLE_SUFFIX LIKE '2022_06_01%'
+  )
   GROUP BY
     client,
     date
@@ -41,40 +40,43 @@ counts AS (
     LOGICAL_OR(REGEXP_CONTAINS(url, r'fonts\.typonine\.com')) AS typonine,
     LOGICAL_OR(REGEXP_CONTAINS(url, r'kernest\.com')) AS kernest,
     LOGICAL_OR(REGEXP_CONTAINS(url, r'typefront\.com')) AS typefront,
-    LOGICAL_OR((REGEXP_CONTAINS(mimeType, r'font|woff|eot') OR
-        (ext = 'woff' OR
-          ext = 'woff2' OR
-          ext = 'eot' OR
-          ext = 'ttf' OR
-          ext = 'otf')) AND
-      (REGEXP_CONTAINS(url, r'(fonts\.(gstatic|googleapis)\.com)|(themes.googleusercontent.com/static/fonts)|(ssl.gstatic.com/fonts/)') IS FALSE AND
-        REGEXP_CONTAINS(url, r'(use|fonts)\.typekit\.(net|com)') IS FALSE AND
-        REGEXP_CONTAINS(url, r'(use\.edgefonts\.net|webfonts\.creativecloud\.com)') IS FALSE AND
-        REGEXP_CONTAINS(url, r'fast\.fonts\.(com|net)\/(jsapi|cssapi)') IS FALSE AND
-        REGEXP_CONTAINS(url, r'f\.fontdeck\.com') IS FALSE AND
-        REGEXP_CONTAINS(url, r'cloud\.webtype\.com') IS FALSE AND
-        REGEXP_CONTAINS(url, r'cloud\.typenetwork\.com') IS FALSE AND
-        REGEXP_CONTAINS(url, r'cloud\.typography\.com') IS FALSE AND
-        REGEXP_CONTAINS(url, r'fnt\.webink\.com') IS FALSE AND
-        REGEXP_CONTAINS(url, r'fonts\.typotheque\.com') IS FALSE AND
-        REGEXP_CONTAINS(url, r'webfonts\.fontstand\.com') IS FALSE AND
-        REGEXP_CONTAINS(url, r'typesquare\.com') IS FALSE AND
-        REGEXP_CONTAINS(url, r'webfont\.fontplus\.jp') IS FALSE AND
-        REGEXP_CONTAINS(url, r'fontawesome\.com') IS FALSE AND
-        REGEXP_CONTAINS(url, r'webfonts\.fontslive\.com') IS FALSE AND
-        REGEXP_CONTAINS(url, r'webfonts\.justanotherfoundry\.com') IS FALSE AND
-        REGEXP_CONTAINS(url, r'fonts\.typonine\.com') IS FALSE AND
-        REGEXP_CONTAINS(url, r'kernest\.com') IS FALSE AND
-        REGEXP_CONTAINS(url, r'typefront\.com') IS FALSE)) AS self_hosted
+    LOGICAL_OR((
+      REGEXP_CONTAINS(mimeType, r'font|woff|eot') OR (
+        ext = 'woff' OR
+        ext = 'woff2' OR
+        ext = 'eot' OR
+        ext = 'ttf' OR
+        ext = 'otf'
+      )
+    ) AND (
+      REGEXP_CONTAINS(url, r'(fonts\.(gstatic|googleapis)\.com)|(themes.googleusercontent.com/static/fonts)|(ssl.gstatic.com/fonts/)') IS FALSE AND
+      REGEXP_CONTAINS(url, r'(use|fonts)\.typekit\.(net|com)') IS FALSE AND
+      REGEXP_CONTAINS(url, r'(use\.edgefonts\.net|webfonts\.creativecloud\.com)') IS FALSE AND
+      REGEXP_CONTAINS(url, r'fast\.fonts\.(com|net)\/(jsapi|cssapi)') IS FALSE AND
+      REGEXP_CONTAINS(url, r'f\.fontdeck\.com') IS FALSE AND
+      REGEXP_CONTAINS(url, r'cloud\.webtype\.com') IS FALSE AND
+      REGEXP_CONTAINS(url, r'cloud\.typenetwork\.com') IS FALSE AND
+      REGEXP_CONTAINS(url, r'cloud\.typography\.com') IS FALSE AND
+      REGEXP_CONTAINS(url, r'fnt\.webink\.com') IS FALSE AND
+      REGEXP_CONTAINS(url, r'fonts\.typotheque\.com') IS FALSE AND
+      REGEXP_CONTAINS(url, r'webfonts\.fontstand\.com') IS FALSE AND
+      REGEXP_CONTAINS(url, r'typesquare\.com') IS FALSE AND
+      REGEXP_CONTAINS(url, r'webfont\.fontplus\.jp') IS FALSE AND
+      REGEXP_CONTAINS(url, r'fontawesome\.com') IS FALSE AND
+      REGEXP_CONTAINS(url, r'webfonts\.fontslive\.com') IS FALSE AND
+      REGEXP_CONTAINS(url, r'webfonts\.justanotherfoundry\.com') IS FALSE AND
+      REGEXP_CONTAINS(url, r'fonts\.typonine\.com') IS FALSE AND
+      REGEXP_CONTAINS(url, r'kernest\.com') IS FALSE AND
+      REGEXP_CONTAINS(url, r'typefront\.com') IS FALSE
+    )) AS self_hosted
   FROM
     `httparchive.summary_requests.*`
-  WHERE
-    (
-      _TABLE_SUFFIX LIKE '2019_07_01%' OR
-      _TABLE_SUFFIX LIKE '2020_08_01%' OR
-      _TABLE_SUFFIX LIKE '2021_07_01%' OR
-      _TABLE_SUFFIX LIKE '2022_06_01%'
-    )
+  WHERE (
+    _TABLE_SUFFIX LIKE '2019_07_01%' OR
+    _TABLE_SUFFIX LIKE '2020_08_01%' OR
+    _TABLE_SUFFIX LIKE '2021_07_01%' OR
+    _TABLE_SUFFIX LIKE '2022_06_01%'
+  )
   GROUP BY
     date,
     client,
@@ -85,7 +87,8 @@ SELECT
   date,
   client,
   total,
-  COUNTIF(google_fonts OR
+  COUNTIF(
+    google_fonts OR
     adobe_fonts OR
     edge_web_fonts OR
     fonts_com OR
@@ -104,8 +107,10 @@ SELECT
     typonine OR
     kernest OR
     typefront OR
-    self_hosted) / total AS pages_using_webfonts,
-  COUNTIF(google_fonts OR
+    self_hosted
+  ) / total AS pages_using_webfonts,
+  COUNTIF(
+    google_fonts OR
     adobe_fonts OR
     edge_web_fonts OR
     fonts_com OR
@@ -123,48 +128,53 @@ SELECT
     just_another_foundry OR
     typonine OR
     kernest OR
-    typefront) / total AS pages_using_webfont_services,
-  COUNTIF((google_fonts OR
-      adobe_fonts OR
-      edge_web_fonts OR
-      fonts_com OR
-      fontdeck OR
-      webtype OR
-      type_network OR
-      cloud_typography OR
-      webink OR
-      typotheque OR
-      fontstand OR
-      type_square OR
-      font_plus OR
-      fontawesome OR
-      fontslive OR
-      just_another_foundry OR
-      typonine OR
-      kernest OR
-      typefront) AND
-    NOT self_hosted) / total AS pages_using_webfont_services_exclusive,
+    typefront
+  ) / total AS pages_using_webfont_services,
+  COUNTIF((
+    google_fonts OR
+    adobe_fonts OR
+    edge_web_fonts OR
+    fonts_com OR
+    fontdeck OR
+    webtype OR
+    type_network OR
+    cloud_typography OR
+    webink OR
+    typotheque OR
+    fontstand OR
+    type_square OR
+    font_plus OR
+    fontawesome OR
+    fontslive OR
+    just_another_foundry OR
+    typonine OR
+    kernest OR
+    typefront
+  ) AND
+  NOT self_hosted) / total AS pages_using_webfont_services_exclusive,
   COUNTIF(self_hosted) / total AS self_hosted,
-  COUNTIF(NOT(google_fonts OR
-      adobe_fonts OR
-      edge_web_fonts OR
-      fonts_com OR
-      fontdeck OR
-      webtype OR
-      type_network OR
-      cloud_typography OR
-      webink OR
-      typotheque OR
-      fontstand OR
-      type_square OR
-      font_plus OR
-      fontawesome OR
-      fontslive OR
-      just_another_foundry OR
-      typonine OR
-      kernest OR
-      typefront) AND
-    self_hosted) / total AS self_hosted_exclusive,
+  COUNTIF(NOT (
+    google_fonts OR
+    adobe_fonts OR
+    edge_web_fonts OR
+    fonts_com OR
+    fontdeck OR
+    webtype OR
+    type_network OR
+    cloud_typography OR
+    webink OR
+    typotheque OR
+    fontstand OR
+    type_square OR
+    font_plus OR
+    fontawesome OR
+    fontslive OR
+    just_another_foundry OR
+    typonine OR
+    kernest OR
+    typefront
+  ) AND
+  self_hosted) / total AS self_hosted_exclusive,
   COUNTIF(google_fonts) / total AS google_fonts,
   COUNTIF(adobe_fonts) / total AS adobe_fonts,
   COUNTIF(edge_web_fonts) / total AS edge_web_fonts,

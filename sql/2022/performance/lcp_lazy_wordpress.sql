@@ -45,7 +45,6 @@ wp AS (
     app = 'WordPress'
 )
 
-
 SELECT
   client,
   COUNTIF(wordpress) AS wordpress,
@@ -57,7 +56,6 @@ FROM
   lazy
 LEFT JOIN
   wp
-USING
-  (client, url)
+USING (client, url)
 GROUP BY
   client

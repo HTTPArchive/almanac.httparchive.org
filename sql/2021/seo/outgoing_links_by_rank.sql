@@ -48,7 +48,7 @@ FROM (
   FROM
     `httparchive.pages.2021_07_01_*`
 ),
-UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
+  UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 LEFT JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -57,8 +57,7 @@ LEFT JOIN (
   FROM
     `httparchive.summary_pages.2021_07_01_*`
 )
-USING
-  (client, page),
+USING (client, page),
   UNNEST([1e3, 1e4, 1e5, 1e6, 1e7]) AS rank_grouping
 WHERE
   rank <= rank_grouping

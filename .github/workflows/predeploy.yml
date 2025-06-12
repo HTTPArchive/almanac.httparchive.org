@@ -14,7 +14,7 @@ name: Predeploy script
 
 env:
   # Update periodically from https://www.princexml.com/latest/
-  PRINCE_PACKAGE: 'prince_13.6-1_ubuntu20.04_amd64.deb'
+  PRINCE_PACKAGE: 'prince_20250207-1_ubuntu24.04_amd64.deb'
 
 on:
   workflow_dispatch:
@@ -28,7 +28,7 @@ on:
 jobs:
   build:
     name: Update Timestamps and Generate Ebooks
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
     - name: Checkout branch
       uses: actions/checkout@v4
@@ -37,7 +37,7 @@ jobs:
       with:
         node-version: '20'
     - name: Set up Python 3.12
-      uses: actions/setup-python@v5.3.0
+      uses: actions/setup-python@v5
       with:
         python-version: '3.12'
     - name: Install Asian Fonts

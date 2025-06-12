@@ -11,7 +11,8 @@ FROM (
     _TABLE_SUFFIX AS client,
     JSON_EXTRACT_SCALAR(report, "$.audits['no-vulnerable-libraries'].score") AS score
   FROM
-    `httparchive.lighthouse.2022_06_01_*`)
+    `httparchive.lighthouse.2022_06_01_*`
+)
 WHERE
   score IS NOT NULL
 GROUP BY

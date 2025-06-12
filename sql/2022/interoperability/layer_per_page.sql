@@ -37,7 +37,6 @@ WITH detections AS (
     page
 )
 
-
 SELECT
   percentile,
   client,

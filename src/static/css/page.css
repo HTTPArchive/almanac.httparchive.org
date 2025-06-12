@@ -454,16 +454,6 @@
   right: -1.5rem;
 }
 
-aside,
-.note {
-  font-style: italic;
-}
-
-aside em,
-.note em {
-  font-style: normal;
-}
-
 table,
 figure {
   max-width: 100%;
@@ -685,6 +675,7 @@ figure .big-number {
   font: bold 128px/1em 'Poppins', sans-serif;
   font: bold 8rem/1em 'Poppins', sans-serif;
   color: #62718b;
+  /* stylelint-disable-next-line declaration-property-value-keyword-no-deprecated */
   word-break: break-word;
   overflow-wrap: break-word;
   margin: 0.1em 0;
@@ -695,6 +686,7 @@ figure .medium-number {
   font: bold 48px/1em 'Poppins', sans-serif;
   font: bold 3rem/1em 'Poppins', sans-serif;
   color: #62718b;
+  /* stylelint-disable-next-line declaration-property-value-keyword-no-deprecated */
   word-break: break-word;
   overflow-wrap: break-word;
 }
@@ -704,6 +696,7 @@ figure .really-big-number {
   font: bold 24px/1em 'Poppins', sans-serif;
   font: bold 1.5rem/1em 'Poppins', sans-serif;
   color: #62718b;
+  /* stylelint-disable-next-line declaration-property-value-keyword-no-deprecated */
   word-break: break-word;
   overflow-wrap: break-word;
 }

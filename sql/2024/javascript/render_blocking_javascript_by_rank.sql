@@ -1,11 +1,10 @@
 #standardSQL
 # Percent of pages using render-blocking JavaScript.
-CREATE TEMPORARY FUNCTION getRenderBlockingScripts(payload STRING)
+CREATE TEMPORARY FUNCTION getRenderBlockingScripts(payload JSON)
 RETURNS INT64
 LANGUAGE js AS '''
 try {
-  var $ = JSON.parse(payload);
-  var renderBlockingJS = $._renderBlockingJS;
+  var renderBlockingJS = JSON.parse(payload)
   return renderBlockingJS;
 } catch (e) {
   return 0;
@@ -15,29 +14,14 @@ try {
 WITH render_blocking_scripts AS (
   SELECT
     client,
-    url,
+    page,
     rank,
-    number_of_render_blocking_scripts
-  FROM (
-    SELECT
-      client,
-      page AS url,
-      getRenderBlockingScripts(payload) AS number_of_render_blocking_scripts
-    FROM
-      `httparchive.all.pages`
-    WHERE
-      date = '2024-06-01'
-  )
-  JOIN (
-    SELECT
-      _TABLE_SUFFIX AS client,
-      url,
-      rank
-    FROM
-      `httparchive.summary_pages.2024_06_01_*`
-  )
-  USING
-    (client, url)
+    getRenderBlockingScripts(payload['_renderBlockingJS']) AS number_of_render_blocking_scripts
+  FROM
+    `httparchive.crawl.pages`
+  WHERE
+    date = '2024-06-01' AND
+    is_root_page
 )
 
 SELECT
@@ -48,7 +32,7 @@ SELECT
   COUNTIF(number_of_render_blocking_scripts > 0) / COUNT(0) AS pct_pages_with_render_blocking_scripts
 FROM
   render_blocking_scripts,
-  UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
+  UNNEST([1000, 10000, 100000, 1000000, 10000000, 100000000]) AS rank_grouping
 WHERE
   rank <= rank_grouping
 GROUP BY

@@ -30,6 +30,7 @@ WITH page_almanac_info AS (
   WHERE
     DATE = '2024-06-01'
 ),
+
 total_pages AS (
   SELECT
     client,

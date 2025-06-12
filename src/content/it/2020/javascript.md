@@ -200,9 +200,9 @@ Possiamo iniziare a compensare parte del costo del caricamento di JavaScript car
 
 Sui dispositivi mobile, gli script esterni costituiscono il 59,0% di tutti gli elementi di script trovati.
 
-<p class="note">
+<aside class="note">
   Per inciso, quando abbiamo parlato di quanto JavaScript è stato caricato in una pagina in precedenza, quel totale non ha tenuto conto della dimensione di questi script inline, poiché fanno parte del documento HTML, vengono conteggiati rispetto alla dimensione del markup . Ciò significa che carichiamo ancora più script che mostrano i numeri.
-</p>
+</aside>
 
 {{ figure_markup(
   image="external-inline-mobile.png",

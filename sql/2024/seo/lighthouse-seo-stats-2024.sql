@@ -26,7 +26,7 @@ WITH lighthouse_extraction AS (
       WHEN is_root_page = TRUE THEN 'Homepage'
       ELSE 'No Assigned Page'
     END
-    AS is_root_page,
+      AS is_root_page,
     page,
     lighthouse AS report
   FROM
@@ -34,6 +34,7 @@ WITH lighthouse_extraction AS (
   WHERE
     date = '2024-06-01'
 )
+
 SELECT
   client,
   audits.id AS id,

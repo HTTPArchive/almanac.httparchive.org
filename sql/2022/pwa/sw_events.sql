@@ -22,18 +22,17 @@ SELECT
 FROM
   `httparchive.pages.2022_06_01_*`,
   UNNEST(getSWEvents(JSON_EXTRACT(payload, '$._pwa'))) AS event
-JOIN
-  (
-    SELECT
-      _TABLE_SUFFIX,
-      COUNT(0) AS total
-    FROM
-      `httparchive.pages.2022_06_01_*`
-    WHERE
-      JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = 'true'
-    GROUP BY
-      _TABLE_SUFFIX
-  )
+JOIN (
+  SELECT
+    _TABLE_SUFFIX,
+    COUNT(0) AS total
+  FROM
+    `httparchive.pages.2022_06_01_*`
+  WHERE
+    JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = 'true'
+  GROUP BY
+    _TABLE_SUFFIX
+)
 USING (_TABLE_SUFFIX)
 WHERE
   JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = 'true'

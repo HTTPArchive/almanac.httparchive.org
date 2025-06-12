@@ -24,7 +24,8 @@ FROM (
     # WPT joins CDN detection but we bias to the DNS detection which is the first entry
     IFNULL(NULLIF(REGEXP_EXTRACT(JSON_EXTRACT_SCALAR(summary, '$._cdn_provider'), r'^([^,]*).*'), ''), 'Origin') AS cdn
   FROM
-    `httparchive.all.requests` CROSS JOIN UNNEST(response_headers) AS r
+    `httparchive.all.requests`
+  CROSS JOIN UNNEST(response_headers) AS r
   WHERE
     # WPT changes the response fields based on a redirect (url becomes the Location path instead of the original) causing insonsistencies in the counts, so we ignore them
     date = '2024-06-01' AND
@@ -47,7 +48,8 @@ LEFT JOIN (
   GROUP BY
     client,
     page,
-    socket) AS b
+    socket
+) AS b
 ON
   a.client = b.client AND
   a.page = b.page AND

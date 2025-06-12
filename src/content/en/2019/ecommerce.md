@@ -445,7 +445,7 @@ Mobile HTML payload sizes are not very different from desktop. In other words, i
   )
 }}
 
-<p class="note">Note that because our data collection <a href="./methodology">methodology</a> does not simulate user interactions on pages like clicking or scrolling, images that are lazy loaded would not be represented in these results.</p>
+<aside class="note">Note that because our data collection <a href="./methodology">methodology</a> does not simulate user interactions on pages like clicking or scrolling, images that are lazy loaded would not be represented in these results.</aside>
 
 Figures 13.12 and 13.13 above show that the median ecommerce page has 37 images and an image payload of 1,517 KB on mobile, 40 images and 1,524 KB on desktop. 10% of home pages have 90 or more images and an image payload of nearly 6 MB!
 
@@ -472,7 +472,7 @@ We need to do more analysis to better understand why some sites are not using re
   )
 }}
 
-<p class="note">Note that some image services or CDNs will automatically deliver WebP (rather than JPEG or PNG) to platforms that support WebP, even for a URL with a `.jpg` or `.png` suffix. For example, <a hreflang="en" href="https://res.cloudinary.com/webdotdev/f_auto/w_500/IMG_20190113_113201.jpg">IMG_20190113_113201.jpg</a> returns a WebP image in Chrome. However, the way HTTP Archive <a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/blob/31a25b9064a365d746d4811a1d6dda516c0e4985/bulktest/batch_lib.inc#L994">detects image formats</a> is to check for keywords in the MIME type first, then fall back to the file extension. This means that the format for images with URLs such as the above will be given as WebP, since WebP is supported by HTTP Archive as a user agent.</p>
+<aside class="note">Note that some image services or CDNs will automatically deliver WebP (rather than JPEG or PNG) to platforms that support WebP, even for a URL with a `.jpg` or `.png` suffix. For example, <a hreflang="en" href="https://res.cloudinary.com/webdotdev/f_auto/w_500/IMG_20190113_113201.jpg">IMG_20190113_113201.jpg</a> returns a WebP image in Chrome. However, the way HTTP Archive <a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/blob/31a25b9064a365d746d4811a1d6dda516c0e4985/bulktest/batch_lib.inc#L994">detects image formats</a> is to check for keywords in the MIME type first, then fall back to the file extension. This means that the format for images with URLs such as the above will be given as WebP, since WebP is supported by HTTP Archive as a user agent.</aside>
 
 ### PNG
 

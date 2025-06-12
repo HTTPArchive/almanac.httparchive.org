@@ -1240,9 +1240,7 @@ FROM (
       cats = 'CMS' AND
       is_root_page
   )
-  USING
-    (client,
-      page)
+  USING (client, page)
   GROUP BY
     client,
     sub_region

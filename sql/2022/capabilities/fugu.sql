@@ -22,9 +22,9 @@ JOIN (
   FROM
     `httparchive.pages.2022_06_01_*`
   GROUP BY
-    _TABLE_SUFFIX)
-USING
-  (_TABLE_SUFFIX),
+    _TABLE_SUFFIX
+)
+USING (_TABLE_SUFFIX),
   UNNEST(getFuguAPIs(JSON_QUERY(payload, '$."_fugu-apis"'))) AS fuguAPI
 WHERE
   JSON_QUERY(payload, '$."_fugu-apis"') != '[]'

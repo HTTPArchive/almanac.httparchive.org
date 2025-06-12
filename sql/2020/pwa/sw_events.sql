@@ -8,8 +8,7 @@ SELECT
   COUNT(DISTINCT page) / total AS pct
 FROM
   `httparchive.almanac.service_workers`
-JOIN
-  (SELECT client, COUNT(DISTINCT page) AS total FROM `httparchive.almanac.service_workers` WHERE date = '2020-08-01' GROUP BY client)
+JOIN (SELECT client, COUNT(DISTINCT page) AS total FROM `httparchive.almanac.service_workers` WHERE date = '2020-08-01' GROUP BY client)
 USING (client),
   UNNEST(ARRAY_CONCAT(
     REGEXP_EXTRACT_ALL(body, r'\.on(install|activate|fetch|push|notificationclick|notificationclose|sync|canmakepayment|paymentrequest|message|messageerror)\s*='),
