@@ -9,6 +9,7 @@
         "bf-cache": "off",
         "bootup-time": "off",
         "cache-insight": "off",
+        "document-latency-insight": "off",
         "dom-size": "off",
         "dom-size-insight": "off",
         "efficient-animated-content": "off",
