@@ -301,24 +301,24 @@ Referrer Policyは一部の追跡を軽減できますが、すべてのオプ�
 GoogleのTopics提案は、「スポーツ」や「テクノロジー」など、ユーザーの最近の閲覧行動に基づいて、大まかなトピックの小さなセットをユーザーに割り当てることで機能します。これらのトピックはユーザーのデバイスにローカルに保存され、関連性の高い広告を配信するためにウェブサイトや広告主と共有されます。ユーザーは広告主と共有されるトピックを表示し、制御することもできます。
 
 {{ figure_markup(
-  image: "Topics-API-Presence.png",
-  caption: "Topics APIのプレゼンス。",
-  description: "ランク別のページでのTopics APIの使用状況を示す棒グラフ。",
-  chart_url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=1967446286&format=interactive",
-  sheets_gid: "2114689864",
-  sql_file: "privacy-sandbox-adoption-by-third-parties-by-publishers.sql"
+  image="Topics-API-Presence.png",
+  caption="Topics APIのプレゼンス。",
+  description="ランク別のページでのTopics APIの使用状況を示す棒グラフ。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=1967446286&format=interactive",
+  sheets_gid="2114689864",
+  sql_file="privacy-sandbox-adoption-by-third-parties-by-publishers.sql"
   )
 }}
 
 このAPIはHTTPヘッダーとJavaScriptの両方を介して展開できるため、これらの両方の軸にわたるTopics APIの採用を測定します。JavaScriptベースの存在（`document.browsingTopics`）はページの7%で見られ、ヘッダーベースの存在（`sec-browsing-topics`）の約4%よりも広まっていることがわかります。
 
 {{ figure_markup(
-  image: "FLoC-API-Presence.png",
-  caption: "FLoC APIのプレゼンス。",
-  description: "ランク別のページでのFLoC APIの使用状況を示す棒グラフ。",
-  chart_url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=89328056&format=interactive",
-  sheets_gid: "2114689864",
-  sql_file: "privacy-sandbox-adoption-by-third-parties-by-publishers.sql"
+  image="FLoC-API-Presence.png",
+  caption="FLoC APIのプレゼンス。",
+  description="ランク別のページでのFLoC APIの使用状況を示す棒グラフ。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=89328056&format=interactive",
+  sheets_gid="2114689864",
+  sql_file="privacy-sandbox-adoption-by-third-parties-by-publishers.sql"
   )
 }}
 
@@ -329,12 +329,12 @@ GoogleのTopics提案は、「スポーツ」や「テクノロジー」など�
 Protected Audience APIは、ブラウザによるデバイス上のオークションを可能にし、ユーザーが以前に訪問したウェブサイトから関連性の高い広告を選択します。これにより、リマーケティングやターゲット広告で通常採用されているプライバシーを侵害するデータ収集や広範な追跡が不要になります。これにより、広告主はサイトをまたいでユーザーを追跡することなく、関連性の高い広告を配信できます。
 
 {{ figure_markup(
-  image: "Protected-Audience-(FLEDGE)-API-Presence.png",
-  caption: "Protected Audience (FLEDGE) APIのプレゼンス。",
-  description: "ランク別のページにおけるProtected Audience APIのプレゼンスを示す棒グラフ。",
-  chart_url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=616049578&format=interactive",
-  sheets_gid: "2114689864",
-  sql_file: "privacy-sandbox-adoption-by-third-parties-by-publishers.sql"
+  image="Protected-Audience-(FLEDGE)-API-Presence.png",
+  caption="Protected Audience (FLEDGE) APIのプレゼンス。",
+  description="ランク別のページにおけるProtected Audience APIのプレゼンスを示す棒グラフ。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=616049578&format=interactive",
+  sheets_gid="2114689864",
+  sql_file="privacy-sandbox-adoption-by-third-parties-by-publishers.sql"
     )
   }}
 
@@ -353,10 +353,10 @@ Protected Audience APIで利用可能なさまざまなメソッド呼び出し�
 私たちの分析から、ソースを登録しているサードパーティよりも、トリガーを登録しているサードパーティの方が2倍多いことがわかります。この傾向は、初期の広告表示イベントの追跡と比較して、コンバージョンの測定に重点が置かれていることを示しています。
 
 {{ figure_markup(
-  image: "Attribution-Reporting-API-Presence.png",
-  caption: "アトリビューションレポーティングAPIのプレゼンス。",
-  description: "ランク別のページでのアトリビューションレポーティングAPIのプレゼンスを示す棒グラフ。",
-  chart_url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=855872461&format=interactive",
+  image="Attribution-Reporting-API-Presence.png",
+  caption="アトリビューションレポーティングAPIのプレゼンス。",
+  description="ランク別のページでのアトリビューションレポーティングAPIのプレゼンスを示す棒グラフ。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=855872461&format=interactive",
   sheets_gid="2114689864",
   sql_file="top_ara_destinations_registered_by_most_publishers.sql"
   )
@@ -397,10 +397,10 @@ Chromeには、Chromeチームによって検証された関連ウェブサイ�
 私たちの調査結果は、TCFが他のプライバシーフレームワークとともに、出版社がGDPRやCCPAなどのデータ保護法を遵守しようとする中で広く実装されていることを示しています。ここでの測定は米国を拠点としており、TCFによれば、EU以外の訪問には同意バナーは不要であることに注意してください。したがって、これによりTCFの使用状況の測定値が実際よりも小さくなる可能性があります。
 
 {{ figure_markup(
-  image: "Presence-of-IAB-privacy-frameworks.png",
-  caption: "IABプライバシーフレームワークの存在。",
-  description: "このグラフは、ページのほぼ6%がTCFまたはUSPのいずれかを実装していることを示しています。TCFのみを見ると、ページの約4.2%がこのフレームワークのバージョンを利用しています。具体的には、TCF v2は約4%のページに存在し、USPは約3.3%で見つかります。準拠したTCF v2およびv1の実装ははるかに一般的ではなく、それぞれページの約1.7%および0.1%にしか表示されません。基本的なTCF v1の使用は約0.2%です。",
-  chart_url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=1902161831&format=interactive",
+  image="Presence-of-IAB-privacy-frameworks.png",
+  caption="IABプライバシーフレームワークの存在。",
+  description="このグラフは、ページのほぼ6%がTCFまたはUSPのいずれかを実装していることを示しています。TCFのみを見ると、ページの約4.2%がこのフレームワークのバージョンを利用しています。具体的には、TCF v2は約4%のページに存在し、USPは約3.3%で見つかります。準拠したTCF v2およびv1の実装ははるかに一般的ではなく、それぞれページの約1.7%および0.1%にしか表示されません。基本的なTCF v1の使用は約0.2%です。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=1902161831&format=interactive",
   sheets_gid="616126986",
   sql_file="number_of_websites_with_iab.sql"
   )
@@ -415,12 +415,12 @@ Chromeには、Chromeチームによって検証された関連ウェブサイ�
 最後に、TCF v1からTCF v2への移行は明らかです。2022年のTCF v1には測定可能なプレゼンス（モバイルで0.3%）がありましたが、2024年には0.2%とほぼ廃止されています。TCF v2の採用は大幅に増加しており（1.9%から4%）、これは新しいGDPRに沿った同意メカニズムへの移行をさらに示しています。しかし、完全なTCF v2コンプライアンスは依然として比較的低く、その複雑な要件を完全に実装するという継続的な課題を浮き彫りにしています。
 
 {{ figure_markup(
-  image: "Top-10-TCF-v2-compliant-CMPs.png",
-  caption: "トップ10のTCF v2準拠CMP。",
-  description: "Automattic, Inc.は、TCF v2に準拠したCMPプロバイダーの中でトップであり、モバイルページの0.67%をカバーしています。InMobi PTE LtdとDidomiがそれぞれ約0.25%と0.22%の普及率でそれに続きます。Wikia, Inc. ( FANDOM) はページの約0.14%を占めています。残りのCMP（iubenda、SIRDATA、OneTrust LLC、AppConsent by SFBX®、Sourcepoint Technologies, Inc.、Objectis Ltd）は、それぞれモバイルページの0.1%未満の存在感です。リストされているすべてのCMPで、モバイルでの使用は一般的にデスクトップの実装を上回っており、Automattic, Inc.が両者で最も顕著な差を示しています。",
-  chart_url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=1496134639&format=interactive",
-  sheets_gid: "1039725590",
-  sql_file: "most_common_cmps_for_iab_tcf_v2.sql"
+  image="Top-10-TCF-v2-compliant-CMPs.png",
+  caption="トップ10のTCF v2準拠CMP。",
+  description="Automattic, Inc.は、TCF v2に準拠したCMPプロバイダーの中でトップであり、モバイルページの0.67%をカバーしています。InMobi PTE LtdとDidomiがそれぞれ約0.25%と0.22%の普及率でそれに続きます。Wikia, Inc. ( FANDOM) はページの約0.14%を占めています。残りのCMP（iubenda、SIRDATA、OneTrust LLC、AppConsent by SFBX®、Sourcepoint Technologies, Inc.、Objectis Ltd）は、それぞれモバイルページの0.1%未満の存在感です。リストされているすべてのCMPで、モバイルでの使用は一般的にデスクトップの実装を上回っており、Automattic, Inc.が両者で最も顕著な差を示しています。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=1496134639&format=interactive",
+  sheets_gid="1039725590",
+  sql_file="most_common_cmps_for_iab_tcf_v2.sql"
   )
 }}
 
@@ -431,11 +431,11 @@ TCF v2エコシステム内での同意管理プラットフォーム（CMP）�
 Do Not Track（DNT）は、2010年代初頭に導入されたブラウザベースのプライバシーイニシアチブです。これにより、ユーザーはウェブサイトによる追跡を希望しないことを示すブラウザ設定を行えました。しかし、DNTは主に任意であり、強制メカニズムがなかったため、広く採用されるには至りませんでした。
 
 {{ figure_markup(
-  caption: "デスクトップページでは、依然としてDNT（Do Not Track）HTTPヘッダーが使用されています。",
-  content: "19.8%",
-  classes: "big-number",
-  sheets_gid: "1906789372",
-  sql_file: "number_of_websites_with_dnt.sql"
+  caption="デスクトップページでは、依然としてDNT（Do Not Track）HTTPヘッダーが使用されています。",
+  content="19.8%",
+  classes="big-number",
+  sheets_gid="1906789372",
+  sql_file="number_of_websites_with_dnt.sql"
 )
 }}
 
@@ -448,12 +448,12 @@ Global Privacy Control（GPC）は、DNTと同様に、ユーザーがプライ�
 GPCを使用すると、ユーザーは自分のデータが第三者に販売または共有されることを望まないことを通知でき、企業は特定の法律の下でこの信号を尊重する法的義務を負います。主要なブラウザやプライバシー重視の拡張機能はGPCをサポートしており、ユーザープライバシーのためのより効果的なツールとして注目を集めています。
 
 {{ figure_markup(
-  image: "Presence-of-Global-Privacy-Control.png",
-  caption: "Global Privacy Controlの存在。",
-  description: "`present in JS resources`: これは、GPCがウェブページによって実行されるJavaScriptコード内で検出されたことを示し、サイトによる信号のアクティブな実装または認識を示唆しています。この方法では、デスクトップで約55.8%、モバイルで54.9%という高いGPCの普及率が明らかになります。`.well-known available`: これは、特定のオリジンで特定のリソースが利用可能であることを指し、GPCがサポートされているが必ずしも遵守されているわけではないことを意味します。この方法による普及率は著しく低く、デスクトップとモバイルで約0.3%です。",
-  chart_url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=1177501662&format=interactive",
-  sheets_gid: "500113190",
-  sql_file: "number_of_websites_with_gpc.sql"
+  image="Presence-of-Global-Privacy-Control.png",
+  caption="Global Privacy Controlの存在。",
+  description="`present in JS resources`: これは、GPCがウェブページによって実行されるJavaScriptコード内で検出されたことを示し、サイトによる信号のアクティブな実装または認識を示唆しています。この方法では、デスクトップで約55.8%、モバイルで54.9%という高いGPCの普及率が明らかになります。`.well-known available`: これは、特定のオリジンで特定のリソースが利用可能であることを指し、GPCがサポートされているが必ずしも遵守されているわけではないことを意味します。この方法による普及率は著しく低く、デスクトップとモバイルで約0.3%です。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=1177501662&format=interactive",
+  sheets_gid="500113190",
+  sql_file="number_of_websites_with_gpc.sql"
   )
 }}
 
@@ -466,12 +466,12 @@ GPCを使用すると、ユーザーは自分のデータが第三者に販売�
 <a hreflang="en" href="https://www.oag.ca.gov/privacy/ccpa">法律の下では</a>、カリフォルニアで事業を行い、特定の規模のしきい値を満たす事業は、ユーザーが個人情報の販売または共有をオプトアウトする方法を提供しなければなりません。法律を遵守するため、カリフォルニア州司法長官室は、事業のホームページに「私の個人情報を販売しない」というテキストと標準化されたアイコンを含むリンクを配置することを<a hreflang="en" href="https://www.oag.ca.gov/privacy/ccpa/icons-download">推奨しています</a>。一般的なCCPAリンクフレーズのセットを特定した<a hreflang="en" href="https://petsymposium.org/popets/2022/popets-2022-0030.pdf">先行研究</a>に基づいて、人気度レベルに応じてサイト全体でのこれらのリンクの普及率の分析を実施しました。
 
 {{ figure_markup(
-  image: "Prevalence-of-CCPA-Links-on-Website-home-pages.png",
-  caption: "ウェブサイトのホームページにおけるCCPAリンクの普及率。",
-  description: "ウェブサイトのホームページにおけるCCPAリンクの普及率を示す棒グラフ。",
-  chart_url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=1672202318&format=interactive",
-  sheets_gid: "1223494608",
-  sql_file: "ccpa_prevalence.sql"
+  image="Prevalence-of-CCPA-Links-on-Website-home-pages.png",
+  caption="ウェブサイトのホームページにおけるCCPAリンクの普及率。",
+  description="ウェブサイトのホームページにおけるCCPAリンクの普及率を示す棒グラフ。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=1672202318&format=interactive",
+  sheets_gid="1223494608",
+  sql_file="ccpa_prevalence.sql"
   )
 }}
 
@@ -484,12 +484,12 @@ GPCを使用すると、ユーザーは自分のデータが第三者に販売�
 最後に、CCPAリンクでもっとも一般的に使用されている言い回しを調べます。
 
 {{ figure_markup(
-  image: "Top-10-Phrases-in-CCPA-Links.png",
-  caption: "CCPAリンクのトップ10フレーズ。",
-  description: "CCPAリンクのトップ10フレーズを示す棒グラフ。",
-  chart_url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=956353245&format=interactive",
-  sheets_gid: "1792311741",
-  sql_file: "ccpa_most_common_phrases.sql"
+  image="Top-10-Phrases-in-CCPA-Links.png",
+  caption="CCPAリンクのトップ10フレーズ。",
+  description="CCPAリンクのトップ10フレーズを示す棒グラフ。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIBO5Jzld2vEAQ69_eJQV00i_dTTz4jcRUHUDXdpqtA3bKoJrkcoMwjQCO9vzjXDB4IGYkKw6Ma1Lk/pubchart?oid=956353245&format=interactive",
+  sheets_gid="1792311741",
+  sql_file="ccpa_most_common_phrases.sql"
   )
 }}
 
