@@ -18,6 +18,7 @@
         "font-display-insight": "off",
         "th-has-data-cells": "off",
         "identical-links-same-purpose": "off",
+        "image-delivery-insight": "off",
         "image-redundant-alt": "off",
         "image-size-responsive": "off",
         "inspector-issues": "off",
