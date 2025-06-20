@@ -372,19 +372,19 @@ The `block-all-mixed-content` directive, which has been deprecated in favor of `
     </thead>
     <tbody>
       <tr>
-      <td>upgrade-insecure-requests;</td>
-      <td class="numeric">27%</td>
-      <td class="numeric">30%</td>
+        <td><code>upgrade-insecure-requests;</code></td>
+        <td class="numeric">27%</td>
+        <td class="numeric">30%</td>
       </tr>
       <tr>
-      <td>block-all-mixed-content; frame-ancestors 'none'; upgrade-insecure-requests;</td>
-      <td class="numeric">22%</td>
-      <td class="numeric">22%</td>
+        <td><code>block-all-mixed-content; frame-ancestors 'none'; upgrade-insecure-requests;</code></td>
+        <td class="numeric">22%</td>
+        <td class="numeric">22%</td>
       </tr>
       <tr>
-      <td>frame-ancestors 'self';</td>
-      <td class="numeric">11%</td>
-      <td class="numeric">10%</td>
+        <td><code>frame-ancestors 'self';</code></td>
+        <td class="numeric">11%</td>
+        <td class="numeric">10%</td>
       </tr>
     </tbody>
   </table>
