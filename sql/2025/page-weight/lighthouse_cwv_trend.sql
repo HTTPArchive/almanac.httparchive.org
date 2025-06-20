@@ -12,8 +12,8 @@ WITH metrics_data AS (
   FROM
     `httparchive.all.pages`
   WHERE
-    date >= '2024-06-01' AND
-    date <= '2025-06-01' AND
+    date >= '2024-07-01' AND
+    date <= '2025-07-01' AND
     EXTRACT(DAY FROM date) = 1 -- Only include data from the first day of each month
 )
 

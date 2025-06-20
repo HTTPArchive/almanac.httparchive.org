@@ -10,7 +10,7 @@ SELECT
 FROM
   `httparchive.crawl.pages`
 WHERE
-  date >= '2024-06-01' AND date <= '2025-06-01' AND -- Adjust this range as needed
+  date >= '2024-07-01' AND date <= '2025-07-01' AND -- Adjust this range as needed
   CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64) > 0 AND
   EXTRACT(DAY FROM date) = 1 -- Only include data from the first day of each month
 GROUP BY

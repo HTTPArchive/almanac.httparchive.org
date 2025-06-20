@@ -7,7 +7,7 @@ FROM
   `httparchive.crawl.pages`,
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 WHERE
-  date = '2025-06-01'
+  date = '2025-07-01'
 GROUP BY
   percentile,
   client,

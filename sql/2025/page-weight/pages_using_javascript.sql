@@ -7,7 +7,7 @@ WITH totals AS (
   FROM
     `httparchive.crawl.pages`
   WHERE
-    date = '2025-06-01'
+    date = '2025-07-01'
   GROUP BY
     date,
     client,
@@ -27,7 +27,7 @@ INNER JOIN
   totals
 USING (date, client, is_root_page)
 WHERE
-  date = '2025-06-01'
+  date = '2025-07-01'
 GROUP BY
   date,
   client,
