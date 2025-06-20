@@ -20,17 +20,17 @@ SELECT
   is_root_page,
   -- LCP metrics
   -- 1mb and below
-  ROUND(APPROX_QUANTILES(IF(bytes_total <= 1048576, lcp, NULL), 1000)[OFFSET(750)], 2) AS p75_lcp_1mb_and_below,
+  ROUND(APPROX_QUANTILES(IF(bytes_total <= 1048576, lcp, NULL), 1000)[OFFSET(750)] / 1000, 2) AS p75_lcp_1mb_and_below,
   -- 1mb to 2mb
-  ROUND(APPROX_QUANTILES(IF(bytes_total > 1048576 AND bytes_total <= 2097152, lcp, NULL), 1000)[OFFSET(750)], 2) AS p75_lcp_1mb_to_2mb,
+  ROUND(APPROX_QUANTILES(IF(bytes_total > 1048576 AND bytes_total <= 2097152, lcp, NULL), 1000)[OFFSET(750)] / 1000, 2) AS p75_lcp_1mb_to_2mb,
   -- 2mb to 3mb
-  ROUND(APPROX_QUANTILES(IF(bytes_total > 2097152 AND bytes_total <= 3145728, lcp, NULL), 1000)[OFFSET(750)], 2) AS p75_lcp_2mb_to_3mb,
+  ROUND(APPROX_QUANTILES(IF(bytes_total > 2097152 AND bytes_total <= 3145728, lcp, NULL), 1000)[OFFSET(750)] / 1000, 2) AS p75_lcp_2mb_to_3mb,
   -- 3mb to 4mb
-  ROUND(APPROX_QUANTILES(IF(bytes_total > 3145728 AND bytes_total <= 4194304, lcp, NULL), 1000)[OFFSET(750)], 2) AS p75_lcp_3mb_to_4mb,
+  ROUND(APPROX_QUANTILES(IF(bytes_total > 3145728 AND bytes_total <= 4194304, lcp, NULL), 1000)[OFFSET(750)] / 1000, 2) AS p75_lcp_3mb_to_4mb,
   -- 4mb and 5mb
-  ROUND(APPROX_QUANTILES(IF(bytes_total > 4194304 AND bytes_total <= 5242880, lcp, NULL), 1000)[OFFSET(750)], 2) AS p75_lcp_4mb_to_5mb,
+  ROUND(APPROX_QUANTILES(IF(bytes_total > 4194304 AND bytes_total <= 5242880, lcp, NULL), 1000)[OFFSET(750)] / 1000, 2) AS p75_lcp_4mb_to_5mb,
   -- 5mb and above
-  ROUND(APPROX_QUANTILES(IF(bytes_total >= 5242880, lcp, NULL), 1000)[OFFSET(750)], 2) AS p75_lcp_5mb_and_above,
+  ROUND(APPROX_QUANTILES(IF(bytes_total >= 5242880, lcp, NULL), 1000)[OFFSET(750)] / 1000, 2) AS p75_lcp_5mb_and_above,
 
   -- CLS metrics
   -- 1mb and below
