@@ -583,7 +583,7 @@ CSSには、アニメーションやトランジションなど、追加の排�
 {{ figure_markup(
   image="lazy-loading-adoption.png",
   caption="`<img>`でのloading=lazyの採用。",
-  description="画像タグのloading="lazy"属性の採用の増加を示す時系列グラフ。2022年6月には、モバイルで24%、デスクトップで23%のウェブサイトで使用されていました。2023年1月には、モバイルで26%、デスクトップで25%のウェブサイトがネイティブの遅延読み込みを使用していました。2023年6月1日には、デスクトップとモバイルのどちらでも27%のウェブサイトがネイティブの遅延読み込みを使用していました。2024年6月には、モバイルで34%、デスクトップで33%のウェブサイトがネイティブの遅延読み込みを使用していました。",
+  description="画像タグのloading=\"lazy\"属性の採用の増加を示す時系列グラフ。2022年6月には、モバイルで24%、デスクトップで23%のウェブサイトで使用されていました。2023年1月には、モバイルで26%、デスクトップで25%のウェブサイトがネイティブの遅延読み込みを使用していました。2023年6月1日には、デスクトップとモバイルのどちらでも27%のウェブサイトがネイティブの遅延読み込みを使用していました。2024年6月には、モバイルで34%、デスクトップで33%のウェブサイトがネイティブの遅延読み込みを使用していました。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCSP87WE9bhFjIICxcrpIEGQlz3xBq33-ODZ8e91XSLUbLvAZjk25GhOdDtFIZCzPcS-VrSygr7pmz/pubchart?oid=1997305111&format=interactive",
   sheets_gid="https://docs.google.com/spreadsheets/d/1Q2ITOe6ZMIXGKHtIxqK9XmUA1eQBX9CLQkxarQOJFCk/edit?gid=228292115#gid=228292115",
   sql_file="../media/lazy_loading_adoption_over_time.sql"
