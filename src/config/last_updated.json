@@ -2087,10 +2087,20 @@
     "date_modified": "2025-06-15T00:00:00.000Z",
     "hash": "242b0da26e4a05e566e8e0629068da6f"
   },
+  "ja/2024/chapters/ecommerce.html": {
+    "date_published": "2025-07-04T00:00:00.000Z",
+    "date_modified": "2025-07-04T00:00:00.000Z",
+    "hash": "8fdfc2e1635b6c771cf0ec20f4eb6330"
+  },
   "ja/2024/chapters/fonts.html": {
     "date_published": "2025-05-07T00:00:00.000Z",
     "date_modified": "2025-05-07T00:00:00.000Z",
     "hash": "a1679e7ff371e47c2c85e4433ae81bad"
+  },
+  "ja/2024/chapters/jamstack.html": {
+    "date_published": "2025-07-04T00:00:00.000Z",
+    "date_modified": "2025-07-04T00:00:00.000Z",
+    "hash": "48b0c4111298f000d3893e581a842072"
   },
   "ja/2024/chapters/javascript.html": {
     "date_published": "2025-04-07T00:00:00.000Z",
