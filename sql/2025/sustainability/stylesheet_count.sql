@@ -32,11 +32,11 @@ SELECT
   SUM(inline_stylesheets) AS inline_stylesheets,
   SAFE_DIVIDE(SUM(inline_stylesheets), SUM(inline_stylesheets + external_stylesheets)) AS pct_inline_stylesheets,
   SAFE_DIVIDE(SUM(external_stylesheets), SUM(inline_stylesheets + external_stylesheets)) AS pct_external_stylesheets,
-  APPROX_QUANTILES(SAFE_DIVIDE(inline_stylesheets, inline_stylesheets + external_stylesheets), 1000)[OFFSET(500)] AS median_inline_stylesheets,
-  APPROX_QUANTILES(SAFE_DIVIDE(external_stylesheets, inline_stylesheets + external_stylesheets), 1000)[OFFSET(500)] AS median_external_stylesheets
+  APPROX_QUANTILES(SAFE_DIVIDE(inline_stylesheets, inline_stylesheets + external_stylesheets), 1000) [OFFSET(500)] AS median_inline_stylesheets,
+  APPROX_QUANTILES(SAFE_DIVIDE(external_stylesheets, inline_stylesheets + external_stylesheets), 1000) [OFFSET(500)] AS median_external_stylesheets
 FROM
   stylesheet_data
 GROUP BY
   client
 ORDER BY
-  client; 
+  client;

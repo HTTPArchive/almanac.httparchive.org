@@ -142,22 +142,22 @@ SELECT
   COUNT(0) AS pages,
 
   -- Median resource weights and emissions
-  APPROX_QUANTILES(total_kb, 1000)[OFFSET(500)] AS median_total_kb,
-  APPROX_QUANTILES(total_operational_emissions, 1000)[OFFSET(500)] AS median_operational_emissions,
-  APPROX_QUANTILES(total_embodied_emissions, 1000)[OFFSET(500)] AS median_embodied_emissions,
-  APPROX_QUANTILES(total_emissions, 1000)[OFFSET(500)] AS median_total_emissions,
+  APPROX_QUANTILES(total_kb, 1000) [OFFSET(500)] AS median_total_kb,
+  APPROX_QUANTILES(total_operational_emissions, 1000) [OFFSET(500)] AS median_operational_emissions,
+  APPROX_QUANTILES(total_embodied_emissions, 1000) [OFFSET(500)] AS median_embodied_emissions,
+  APPROX_QUANTILES(total_emissions, 1000) [OFFSET(500)] AS median_total_emissions,
 
   -- Resource-specific medians
-  APPROX_QUANTILES(html_kb, 1000)[OFFSET(500)] AS median_html_kb,
-  APPROX_QUANTILES(total_html_emissions, 1000)[OFFSET(500)] AS median_total_html_emissions,
-  APPROX_QUANTILES(js_kb, 1000)[OFFSET(500)] AS median_js_kb,
-  APPROX_QUANTILES(total_js_emissions, 1000)[OFFSET(500)] AS median_total_js_emissions,
-  APPROX_QUANTILES(css_kb, 1000)[OFFSET(500)] AS median_css_kb,
-  APPROX_QUANTILES(total_css_emissions, 1000)[OFFSET(500)] AS median_total_css_emissions,
-  APPROX_QUANTILES(img_kb, 1000)[OFFSET(500)] AS median_img_kb,
-  APPROX_QUANTILES(total_img_emissions, 1000)[OFFSET(500)] AS median_total_img_emissions,
-  APPROX_QUANTILES(font_kb, 1000)[OFFSET(500)] AS median_font_kb,
-  APPROX_QUANTILES(total_font_emissions, 1000)[OFFSET(500)] AS median_total_font_emissions
+  APPROX_QUANTILES(html_kb, 1000) [OFFSET(500)] AS median_html_kb,
+  APPROX_QUANTILES(total_html_emissions, 1000) [OFFSET(500)] AS median_total_html_emissions,
+  APPROX_QUANTILES(js_kb, 1000) [OFFSET(500)] AS median_js_kb,
+  APPROX_QUANTILES(total_js_emissions, 1000) [OFFSET(500)] AS median_total_js_emissions,
+  APPROX_QUANTILES(css_kb, 1000) [OFFSET(500)] AS median_css_kb,
+  APPROX_QUANTILES(total_css_emissions, 1000) [OFFSET(500)] AS median_total_css_emissions,
+  APPROX_QUANTILES(img_kb, 1000) [OFFSET(500)] AS median_img_kb,
+  APPROX_QUANTILES(total_img_emissions, 1000) [OFFSET(500)] AS median_total_img_emissions,
+  APPROX_QUANTILES(font_kb, 1000) [OFFSET(500)] AS median_font_kb,
+  APPROX_QUANTILES(total_font_emissions, 1000) [OFFSET(500)] AS median_total_font_emissions
 
 FROM
   ssg_data
@@ -167,4 +167,4 @@ GROUP BY
 ORDER BY
   pages DESC,
   ssg,
-  client; 
+  client;

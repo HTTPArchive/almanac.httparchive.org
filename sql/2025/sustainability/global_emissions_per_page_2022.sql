@@ -46,29 +46,29 @@ SELECT
   client,
   -- For each resource type, calculate the size in KB and the associated emissions
   -- Total resources
-  APPROX_QUANTILES(bytesTotal / 1024, 1000)[OFFSET(percentile * 10)] AS total_kbytes,
-  APPROX_QUANTILES(calculate_emissions(bytesTotal, kw_per_GB, global_grid_intensity), 1000)[OFFSET(percentile * 10)] AS total_emissions,
+  APPROX_QUANTILES(bytesTotal / 1024, 1000) [OFFSET(percentile * 10)] AS total_kbytes,
+  APPROX_QUANTILES(calculate_emissions(bytesTotal, kw_per_GB, global_grid_intensity), 1000) [OFFSET(percentile * 10)] AS total_emissions,
   -- HTML resources
-  APPROX_QUANTILES(bytesHtml / 1024, 1000)[OFFSET(percentile * 10)] AS html_kbytes,
-  APPROX_QUANTILES(calculate_emissions(bytesHtml, kw_per_GB, global_grid_intensity), 1000)[OFFSET(percentile * 10)] AS html_emissions,
+  APPROX_QUANTILES(bytesHtml / 1024, 1000) [OFFSET(percentile * 10)] AS html_kbytes,
+  APPROX_QUANTILES(calculate_emissions(bytesHtml, kw_per_GB, global_grid_intensity), 1000) [OFFSET(percentile * 10)] AS html_emissions,
   -- JavaScript resources
-  APPROX_QUANTILES(bytesJS / 1024, 1000)[OFFSET(percentile * 10)] AS js_kbytes,
-  APPROX_QUANTILES(calculate_emissions(bytesJS, kw_per_GB, global_grid_intensity), 1000)[OFFSET(percentile * 10)] AS js_emissions,
+  APPROX_QUANTILES(bytesJS / 1024, 1000) [OFFSET(percentile * 10)] AS js_kbytes,
+  APPROX_QUANTILES(calculate_emissions(bytesJS, kw_per_GB, global_grid_intensity), 1000) [OFFSET(percentile * 10)] AS js_emissions,
   -- CSS resources
-  APPROX_QUANTILES(bytesCSS / 1024, 1000)[OFFSET(percentile * 10)] AS css_kbytes,
-  APPROX_QUANTILES(calculate_emissions(bytesCSS, kw_per_GB, global_grid_intensity), 1000)[OFFSET(percentile * 10)] AS css_emissions,
+  APPROX_QUANTILES(bytesCSS / 1024, 1000) [OFFSET(percentile * 10)] AS css_kbytes,
+  APPROX_QUANTILES(calculate_emissions(bytesCSS, kw_per_GB, global_grid_intensity), 1000) [OFFSET(percentile * 10)] AS css_emissions,
   -- Image resources
-  APPROX_QUANTILES(bytesImg / 1024, 1000)[OFFSET(percentile * 10)] AS img_kbytes,
-  APPROX_QUANTILES(calculate_emissions(bytesImg, kw_per_GB, global_grid_intensity), 1000)[OFFSET(percentile * 10)] AS img_emissions,
+  APPROX_QUANTILES(bytesImg / 1024, 1000) [OFFSET(percentile * 10)] AS img_kbytes,
+  APPROX_QUANTILES(calculate_emissions(bytesImg, kw_per_GB, global_grid_intensity), 1000) [OFFSET(percentile * 10)] AS img_emissions,
   -- Other resources
-  APPROX_QUANTILES(bytesOther / 1024, 1000)[OFFSET(percentile * 10)] AS other_kbytes,
-  APPROX_QUANTILES(calculate_emissions(bytesOther, kw_per_GB, global_grid_intensity), 1000)[OFFSET(percentile * 10)] AS other_emissions,
+  APPROX_QUANTILES(bytesOther / 1024, 1000) [OFFSET(percentile * 10)] AS other_kbytes,
+  APPROX_QUANTILES(calculate_emissions(bytesOther, kw_per_GB, global_grid_intensity), 1000) [OFFSET(percentile * 10)] AS other_emissions,
   -- HTML document
-  APPROX_QUANTILES(bytesHtmlDoc / 1024, 1000)[OFFSET(percentile * 10)] AS html_doc_kbytes,
-  APPROX_QUANTILES(calculate_emissions(bytesHtmlDoc, kw_per_GB, global_grid_intensity), 1000)[OFFSET(percentile * 10)] AS html_doc_emissions,
+  APPROX_QUANTILES(bytesHtmlDoc / 1024, 1000) [OFFSET(percentile * 10)] AS html_doc_kbytes,
+  APPROX_QUANTILES(calculate_emissions(bytesHtmlDoc, kw_per_GB, global_grid_intensity), 1000) [OFFSET(percentile * 10)] AS html_doc_emissions,
   -- Font resources
-  APPROX_QUANTILES(bytesFont / 1024, 1000)[OFFSET(percentile * 10)] AS font_kbytes,
-  APPROX_QUANTILES(calculate_emissions(bytesFont, kw_per_GB, global_grid_intensity), 1000)[OFFSET(percentile * 10)] AS font_emissions
+  APPROX_QUANTILES(bytesFont / 1024, 1000) [OFFSET(percentile * 10)] AS font_kbytes,
+  APPROX_QUANTILES(calculate_emissions(bytesFont, kw_per_GB, global_grid_intensity), 1000) [OFFSET(percentile * 10)] AS font_emissions
 FROM
   page_data,
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
@@ -77,4 +77,4 @@ GROUP BY
   client
 ORDER BY
   client,
-  percentile 
+  percentile

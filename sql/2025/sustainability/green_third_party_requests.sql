@@ -116,9 +116,9 @@ SELECT
     WHEN rank_grouping = 100000000 THEN 'all'
     ELSE FORMAT("%'d", rank_grouping)
   END AS ranking,
-  APPROX_QUANTILES(third_parties_per_page, 1000)[OFFSET(500)] AS p50_third_parties_per_page,
-  APPROX_QUANTILES(green_third_parties_per_page, 1000)[OFFSET(500)] AS p50_green_third_parties_per_page,
-  APPROX_QUANTILES(SAFE_DIVIDE(green_third_parties_per_page, third_parties_per_page), 1000)[OFFSET(500)] AS pct_green
+  APPROX_QUANTILES(third_parties_per_page, 1000) [OFFSET(500)] AS p50_third_parties_per_page,
+  APPROX_QUANTILES(green_third_parties_per_page, 1000) [OFFSET(500)] AS p50_green_third_parties_per_page,
+  APPROX_QUANTILES(SAFE_DIVIDE(green_third_parties_per_page, third_parties_per_page), 1000) [OFFSET(500)] AS pct_green
 FROM
   base,
   UNNEST([1000, 10000, 100000, 1000000, 10000000, 100000000]) AS rank_grouping
@@ -132,4 +132,4 @@ GROUP BY
   rank_grouping
 ORDER BY
   client,
-  rank_grouping 
+  rank_grouping

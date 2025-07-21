@@ -30,11 +30,11 @@ SELECT
   SUM(external_scripts) AS external_scripts,
   SAFE_DIVIDE(SUM(external_scripts), SUM(total_scripts)) AS pct_external_script,
   SAFE_DIVIDE(SUM(inline_scripts), SUM(total_scripts)) AS pct_inline_script,
-  APPROX_QUANTILES(SAFE_DIVIDE(external_scripts, total_scripts), 1000)[OFFSET(500)] AS median_external,
-  APPROX_QUANTILES(SAFE_DIVIDE(inline_scripts, total_scripts), 1000)[OFFSET(500)] AS median_inline
+  APPROX_QUANTILES(SAFE_DIVIDE(external_scripts, total_scripts), 1000) [OFFSET(500)] AS median_external,
+  APPROX_QUANTILES(SAFE_DIVIDE(inline_scripts, total_scripts), 1000) [OFFSET(500)] AS median_inline
 FROM
   script_data
 GROUP BY
   client
 ORDER BY
-  client; 
+  client;
