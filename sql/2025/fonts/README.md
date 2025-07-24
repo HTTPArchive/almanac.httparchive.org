@@ -1,4 +1,4 @@
-# 2024 Fonts queries
+# 2025 Fonts queries
 
 ## Resources
 
@@ -43,12 +43,12 @@ functions appear in several queries are extracted into a common file:
 query, the query has the following line at the top:
 
 ```sql
--- INCLUDE https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/2024/fonts/common.sql
+-- INCLUDE https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/2025/fonts/common.sql
 ```
 
 It signalizes that, prior to executing the query, `common.sql` has to be
 inlined.
 
-[Planning document]: https://docs.google.com/document/d/1ljEHbDvXComXnW5s_EXZ0nM3_JCLnYr28Xrcf0YYtP8/edit
-[Results sheet]: https://docs.google.com/spreadsheets/d/1EkdvJ8e0B9Rr42evC2Ds5Ekwq6gF9oLBW0BA5cmSUT4/edit
-[Chapter content]: https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/src/content/en/2024/fonts.md
+[Planning document]: https://docs.google.com/document/d/1jVc0vgmAY_lBxryItRBguXxEq77mvbaQ3UpbTweUoSI
+[Results sheet]: https://docs.google.com/spreadsheets/d/1otdu4p_CCI70B4FVzw6k02frStsPMrQoFu7jUim_0Bg
+[Chapter content]: https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/src/content/en/2025/fonts.md
