@@ -63,7 +63,14 @@ SELECT
   ROUND(APPROX_QUANTILES(ttfb, 1000)[OFFSET(250)], 2) AS p25_ttfb,
   ROUND(APPROX_QUANTILES(ttfb, 1000)[OFFSET(500)], 2) AS p50_ttfb,
   ROUND(APPROX_QUANTILES(ttfb, 1000)[OFFSET(750)], 2) AS p75_ttfb,
-  ROUND(APPROX_QUANTILES(ttfb, 1000)[OFFSET(900)], 2) AS p90_ttfb
+  ROUND(APPROX_QUANTILES(ttfb, 1000)[OFFSET(900)], 2) AS p90_ttfb,
+
+   -- Good CWV percentages
+  ROUND(COUNTIF(lcp <= 2500) / COUNT(0) * 100, 2) AS good_lcp_percent,
+  ROUND(COUNTIF(cls <= 0.1) / COUNT(0) * 100, 2) AS good_cls_percent,
+  ROUND(COUNTIF(inp <= 200) / COUNT(0) * 100, 2) AS good_inp_percent,
+  ROUND(COUNTIF(fcp <= 1800) / COUNT(0) * 100, 2) AS good_fcp_percent,
+  ROUND(COUNTIF(ttfb <= 800) / COUNT(0) * 100, 2) AS good_ttfb_percent
 
 FROM
   metrics_data
