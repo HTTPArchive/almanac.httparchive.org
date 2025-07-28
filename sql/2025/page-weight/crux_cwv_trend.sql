@@ -2,7 +2,6 @@ WITH metrics_data AS (
   SELECT
     date,
     client,
-    is_root_page,
     CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64) AS bytes_total,
     CAST(JSON_VALUE(summary, '$.crux.metrics.largest_contentful_paint.percentiles.p75') AS FLOAT64) AS lcp,
     CAST(JSON_VALUE(summary, '$.crux.metrics.cumulative_layout_shift.percentiles.p75') AS FLOAT64) AS cls,
@@ -76,8 +75,7 @@ FROM
   metrics_data
 GROUP BY
   date,
-  client,
-  is_root_page
+  client
 ORDER BY
   date DESC,
   client
