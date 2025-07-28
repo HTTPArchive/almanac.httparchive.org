@@ -10,7 +10,7 @@ WITH metrics_data AS (
     CAST(JSON_VALUE(lighthouse, '$.audits.interactive.numericValue') AS FLOAT64) AS tti,
     CAST(JSON_VALUE(lighthouse, '$.categories.performance.score') AS FLOAT64) AS performance_score
   FROM
-    `httparchive.all.pages`
+    `httparchive.crawl.pages`
   WHERE
     date >= '2024-07-01' AND
     date <= '2025-07-01' AND
@@ -43,7 +43,7 @@ SELECT
   ROUND(APPROX_QUANTILES(cls, 1000)[OFFSET(750)], 3) AS p75_cls,
   ROUND(APPROX_QUANTILES(cls, 1000)[OFFSET(900)], 3) AS p90_cls,
 
-  -- TBT metrics (as a proxy for FID)
+  -- TBT metrics (as a proxy for FID/INP)
   ROUND(APPROX_QUANTILES(tbt, 1000)[OFFSET(100)], 2) AS p10_tbt,
   ROUND(APPROX_QUANTILES(tbt, 1000)[OFFSET(250)], 2) AS p25_tbt,
   ROUND(APPROX_QUANTILES(tbt, 1000)[OFFSET(500)], 2) AS p50_tbt,
