@@ -1,5 +1,5 @@
 #standardSQL
-CREATE TEMPORARY FUNCTION hasContentVisibility(css STRING)
+CREATE TEMPORARY FUNCTION HASCONTENTVISIBILITY(css STRING)
 RETURNS ARRAY<STRUCT<property STRING, freq INT64>>
 LANGUAGE js
 OPTIONS (library = "gs://httparchive/lib/css-utils.js")
@@ -27,39 +27,48 @@ try {
 ''';
 
 WITH totals AS (
-  SELECT
-    client,
-    COUNT(distinct root_page) AS total_pages
-  FROM
-    `httparchive.crawl.parsed_css`
-  WHERE
-    date = '2025-06-01' AND
-    is_root_page
-  GROUP BY
-    client
+    SELECT
+        client,
+        COUNT(DISTINCT root_page) AS total_pages
+    FROM
+        `httparchive.crawl.parsed_css`
+    WHERE
+        date = '2025-06-01' AND
+        is_root_page
+    GROUP BY
+        client
 ),
+
 content_visibility_pages AS (
-  SELECT
-    client,
-    COUNT(distinct root_page) AS pages_with_content_visibility
-  FROM
-    `httparchive.crawl.parsed_css`,
-  UNNEST (hasContentVisibility(css))
-  WHERE
-    date = '2025-06-01' AND
-    is_root_page
-  GROUP BY
-    client
+    SELECT
+        client,
+        COUNT(DISTINCT root_page) AS pages_with_content_visibility
+    FROM
+        `httparchive.crawl.parsed_css`,
+        UNNEST(HASCONTENTVISIBILITY(css))
+    WHERE
+        date = '2025-06-01' AND
+        is_root_page
+    GROUP BY
+        client
 )
+
 SELECT
-  totals.client,
-  IFNULL(content_visibility_pages.pages_with_content_visibility, 0) AS pages_with_content_visibility,
-  totals.total_pages,
-  ROUND(IFNULL(content_visibility_pages.pages_with_content_visibility, 0) * 100.0 / totals.total_pages, 2) AS pct_pages
+    totals.client,
+    totals.total_pages,
+    COALESCE(
+        content_visibility_pages.pages_with_content_visibility, 0
+    ) AS pages_with_content_visibility,
+    ROUND(
+        COALESCE(
+            content_visibility_pages.pages_with_content_visibility, 0
+        ) * 100.0 / totals.total_pages,
+        2
+    ) AS pct_pages
 FROM
-  totals
+    totals
 LEFT JOIN
-  content_visibility_pages
-USING (client)
+    content_visibility_pages
+ON totals.client = content_visibility_pages.client
 ORDER BY
-  totals.client
+    totals.client
