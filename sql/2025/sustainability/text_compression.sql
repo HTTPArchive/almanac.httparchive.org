@@ -33,10 +33,10 @@ compression_data AS (
       WHEN resp_content_encoding IS NULL THEN 'no text compression'
       ELSE 'other'
     END AS compression_type,
-    COUNT(*) AS num_requests,
-    SUM(COUNT(*)) OVER (PARTITION BY client) AS total,
+    COUNT(0) AS num_requests,
+    SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
     ROUND(
-      COUNT(*) / SUM(COUNT(*)) OVER (PARTITION BY client) * 100, 2
+      COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) * 100, 2
     ) AS pct
   FROM
     request_data

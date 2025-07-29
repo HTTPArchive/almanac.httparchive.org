@@ -274,7 +274,7 @@ WITH ecommerce_data AS (
 SELECT
   client,
   ecommerce,
-  COUNT(*) AS pages,
+  COUNT(0) AS pages,
 
   -- Median resource weights and emissions
   APPROX_QUANTILES(total_kb, 1000) [OFFSET(500)] AS median_total_kb,

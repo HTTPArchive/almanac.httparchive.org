@@ -50,11 +50,9 @@ WITH favicons AS (
     GETFAVICONIMAGE(
       JSON_EXTRACT_SCALAR(payload, '$._almanac')
     ) AS image_type_extension,
-    COUNT(*) AS freq,
-    SUM(COUNT(*)) OVER (PARTITION BY client) AS total,
-    COUNT(
-      *
-    ) / SUM(COUNT(*)) OVER (PARTITION BY client) AS percentage_of_total
+    COUNT(0) AS freq,
+    SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
+    COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS percentage_of_total
   FROM
     `httparchive.crawl.pages`
   WHERE
