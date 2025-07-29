@@ -5,12 +5,12 @@ SELECT
   client,
   total,
   IF(cdn = '', 'No CDN', cdn) AS cdn,
-  COUNT(1) AS freq,
-  COUNT(1) / total AS pct
+  COUNT(0) AS freq,
+  COUNT(0) / total AS pct
 FROM (
   SELECT
     client,
-    COUNT(1) AS total,
+    COUNT(0) AS total,
     ARRAY_CONCAT_AGG(
       SPLIT(JSON_EXTRACT_SCALAR(summary, '$.cdn'), ', ')
     ) AS cdn_list
@@ -22,7 +22,7 @@ FROM (
   GROUP BY
     client
 ),
-UNNEST(cdn_list) AS cdn
+	UNNEST(cdn_list) AS cdn
 GROUP BY
   client,
   cdn,

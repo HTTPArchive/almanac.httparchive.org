@@ -23,10 +23,10 @@ WITH video_data AS (
 SELECT
   client,
   IF(autoplay_value = '', '(empty)', autoplay_value) AS autoplay_value,
-  COUNT(1) AS autoplay_value_count,
-  SUM(COUNT(1)) OVER (PARTITION BY client) AS total_videos,
+  COUNT(0) AS autoplay_value_count,
+  SUM(COUNT(0)) OVER (PARTITION BY client) AS total_videos,
   ROUND(
-    SAFE_DIVIDE(COUNT(1), SUM(COUNT(1)) OVER (PARTITION BY client)) * 100, 2
+    SAFE_DIVIDE(COUNT(0), SUM(COUNT(0)) OVER (PARTITION BY client)) * 100, 2
   ) AS autoplay_value_pct
 FROM
   video_data
