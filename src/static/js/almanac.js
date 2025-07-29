@@ -342,7 +342,7 @@ function highResolutionCanvasSupported() {
       largeCanvasSupported = Boolean(ctx.getImageData(1199, 741, 1, 1).data[3]) == 1;
     }
   }
-  catch (e) {
+  catch {
     largeCanvasSupported = false;
   }
 

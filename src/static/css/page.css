@@ -11,8 +11,8 @@
 .floating-card {
   border-radius: 16px;
   border-radius: 1rem;
-  box-shadow: 0 0 16px 0 rgba(78, 85, 100, 0.2);
-  box-shadow: 0 0 1rem 0 rgba(78, 85, 100, 0.2);
+  box-shadow: 0 0 16px 0 rgb(78, 85, 100, 0.2);
+  box-shadow: 0 0 1rem 0 rgb(78, 85, 100, 0.2);
 }
 
 .table-wrap {
@@ -87,7 +87,7 @@
   width: 100%;
   margin: 0;
   padding-left: 0;
-  border-top: 1px solid rgba(26, 43, 73, 0.1);
+  border-top: 1px solid rgb(26, 43, 73, 0.1);
 }
 
 .index ul ul:first-child {
@@ -98,7 +98,7 @@
   position: relative;
   font-weight: 900;
   list-style-type: none;
-  border-bottom: 1px solid rgba(26, 43, 73, 0.1);
+  border-bottom: 1px solid rgb(26, 43, 73, 0.1);
 }
 
 .index ul:last-child li:last-child {
@@ -116,7 +116,7 @@
 
 .index li li {
   font-weight: 700;
-  border-bottom: 1px solid rgba(26, 43, 73, 0.1);
+  border-bottom: 1px solid rgb(26, 43, 73, 0.1);
 }
 
 .index li li a {
@@ -130,7 +130,7 @@
 
 .index li li li {
   font-weight: normal;
-  border-bottom: 1px solid rgba(26, 43, 73, 0.1);
+  border-bottom: 1px solid rgb(26, 43, 73, 0.1);
 }
 
 .index li li li a {
@@ -249,7 +249,7 @@
 
 .chapter-cta {
   border: none;
-  box-shadow: 0 0 1rem 0 rgba(78, 85, 100, 0.2);
+  box-shadow: 0 0 1rem 0 rgb(78, 85, 100, 0.2);
   padding: 10px 12px;
   margin-top: 1em;
   margin-left: 1em;
@@ -387,7 +387,7 @@
   padding: 16px;
   border: 1px solid #e0e0e0;
   border-radius: 4px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 3px rgb(0, 0, 0, 0.1);
   font-family: monospace;
   background-color: #f9f9f9;
   overflow-x: auto;

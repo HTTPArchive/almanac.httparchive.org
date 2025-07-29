@@ -308,7 +308,7 @@ p {
   max-width: 100%;
   height: auto;
   z-index: -1;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) calc(70% - 1px), rgb(192, 192, 192) calc(50%), rgba(0, 0, 0, 0) calc(70% + 1px));
+  background: linear-gradient(180deg, rgb(0, 0, 0, 0) calc(70% - 1px), rgb(192, 192, 192) calc(50%), rgb(0, 0, 0, 0) calc(70% + 1px));
 }
 
 @media (max-width: 87.5em) and (min-width: 56.26em) {
