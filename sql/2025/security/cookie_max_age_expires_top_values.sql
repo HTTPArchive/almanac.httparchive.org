@@ -36,7 +36,7 @@ WITH max_age_values AS (
     UNNEST(response_headers) AS rh,
     UNNEST(JSON_QUERY_ARRAY(getCookieAgeValues(rh.value, CAST(JSON_QUERY(summary, '$.startedDateTime') AS NUMERIC)), '$.maxAge')) AS max_age_value
   WHERE
-    date = '2024-06-01' AND
+    date = '2025-07-01' AND
     is_root_page AND
     LOWER(rh.name) = 'set-cookie'
 ),
@@ -50,7 +50,7 @@ expires_values AS (
     UNNEST(response_headers) AS rh,
     UNNEST(JSON_QUERY_ARRAY(getCookieAgeValues(rh.value, CAST(JSON_QUERY(summary, '$.startedDateTime') AS NUMERIC)), '$.expires')) AS expires_value
   WHERE
-    date = '2024-06-01' AND
+    date = '2025-07-01' AND
     is_root_page AND
     LOWER(rh.name) = 'set-cookie'
 ),

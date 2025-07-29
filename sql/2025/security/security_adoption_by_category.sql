@@ -20,7 +20,7 @@ FROM
   UNNEST(response_headers) AS rh
 JOIN UNNEST(`httparchive.fn.GET_HOST_CATEGORIES`(url))
 WHERE
-  date = '2024-06-01' AND
+  date = '2025-07-01' AND
   is_root_page AND
   is_main_document AND
   NET.HOST(url) = NET.HOST(page)

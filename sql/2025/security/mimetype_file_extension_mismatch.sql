@@ -12,7 +12,7 @@ WITH mimtype_file_ext_pairs AS (
   FROM
     `httparchive.all.requests`
   WHERE
-    date = '2024-06-01' AND
+    date = '2025-07-01' AND
     is_root_page
   GROUP BY
     client,

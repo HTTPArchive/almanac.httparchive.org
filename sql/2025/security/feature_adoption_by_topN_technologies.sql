@@ -23,7 +23,7 @@ WITH app_headers AS (
     UNNEST(technologies) AS t,
     UNNEST(t.categories) AS category
   WHERE
-    date = '2024-06-01' AND
+    date = '2025-07-01' AND
     is_root_page AND
     is_main_document AND
     category IN UNNEST(['Blogs', 'CDN', 'Web frameworks', 'Programming languages', 'CMS', 'Ecommerce', 'PaaS', 'Security'])

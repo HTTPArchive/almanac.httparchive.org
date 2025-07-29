@@ -87,7 +87,7 @@ FROM
   `httparchive.all.requests`,
   UNNEST(['Content-Security-Policy', 'Content-Security-Policy-Report-Only', 'Cross-Origin-Embedder-Policy', 'Cross-Origin-Opener-Policy', 'Cross-Origin-Resource-Policy', 'Expect-CT', 'Feature-Policy', 'Permissions-Policy', 'Referrer-Policy', 'Report-To', 'Strict-Transport-Security', 'X-Content-Type-Options', 'X-Frame-Options', 'X-XSS-Protection']) AS headername
 WHERE
-  date = '2024-06-01' AND
+  date = '2025-07-01' AND
   is_root_page AND
   is_main_document
 GROUP BY

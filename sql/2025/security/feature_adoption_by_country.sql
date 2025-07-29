@@ -46,7 +46,7 @@ FROM (
   ON
     url = CONCAT(c.origin, '/')
   WHERE
-    date = '2024-06-01' AND
+    date = '2025-07-01' AND
     yyyymm = 202406 AND
     is_root_page AND
     is_main_document

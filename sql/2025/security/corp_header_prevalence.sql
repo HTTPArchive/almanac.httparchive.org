@@ -17,7 +17,7 @@ FROM (
     `httparchive.all.requests`,
     UNNEST(response_headers) AS response_headers
   WHERE
-    date = '2024-06-01' AND
+    date = '2025-07-01' AND
     is_root_page AND
     LOWER(response_headers.name) = 'cross-origin-resource-policy'
 )

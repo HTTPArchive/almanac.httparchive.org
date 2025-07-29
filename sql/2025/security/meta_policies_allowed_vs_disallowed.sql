@@ -17,7 +17,7 @@ FROM (
   FROM
     `httparchive.all.pages.`
   WHERE
-    date = '2024-06-01' AND
+    date = '2025-07-01' AND
     is_root_page
 ),
   UNNEST(JSON_QUERY_ARRAY(metrics, '$.meta-nodes.nodes')) meta_node,

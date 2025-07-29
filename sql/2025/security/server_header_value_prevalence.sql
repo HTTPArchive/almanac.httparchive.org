@@ -22,7 +22,7 @@ FROM
       `httparchive.all.requests`,
       UNNEST(response_headers) AS response_header
     WHERE
-      (date = '2022-06-09' OR date = '2023-06-01' OR date = '2024-06-01') AND
+      (date = '2022-06-09' OR date = '2023-06-01' OR date = '2025-07-01') AND
       is_root_page AND
       LOWER(response_header.name) = 'server'
     GROUP BY
@@ -46,7 +46,7 @@ UNION ALL
     `httparchive.all.requests`,
     UNNEST(response_headers) AS response_header
   WHERE
-    (date = '2022-06-09' OR date = '2023-06-01' OR date = '2024-06-01') AND
+    (date = '2022-06-09' OR date = '2023-06-01' OR date = '2025-07-01') AND
     is_root_page AND
     LOWER(response_header.name) = 'x-powered-by'
   GROUP BY

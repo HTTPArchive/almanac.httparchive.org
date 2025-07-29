@@ -17,7 +17,7 @@ FROM (
   FROM
     `httparchive.all.pages`
   WHERE
-    date = '2024-06-01' AND
+    date = '2025-07-01' AND
     is_root_page
 ),
   UNNEST([10, 25, 50, 75, 90]) AS percentile

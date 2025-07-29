@@ -60,7 +60,7 @@ WITH parsed_server_timing AS (
     # `httparchive.sample_data.requests_1k`,
     UNNEST(response_headers) AS response_headers
   WHERE
-    date = '2024-06-01' AND
+    date = '2025-07-01' AND
     # date = '2024-08-01' AND
     is_root_page AND
     LOWER(response_headers.name) = 'server-timing'
@@ -95,7 +95,7 @@ totals AS (
     `httparchive.all.requests`
   # `httparchive.sample_data.requests_1k`
   WHERE
-    date = '2024-06-01' AND
+    date = '2025-07-01' AND
     # date = '2024-08-01' AND
     is_root_page
   GROUP BY

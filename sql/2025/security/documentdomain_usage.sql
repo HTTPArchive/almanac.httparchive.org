@@ -13,7 +13,7 @@ SELECT
 FROM
   `httparchive.blink_features.usage`
 WHERE
-  yyyymmdd = '20240601' AND
+  yyyymmdd = '20250701' AND
   feature IN UNNEST(['DocumentSetDomain', 'DocumentDomainSettingWithoutOriginAgentClusterHeader', 'DocumentDomainSetWithDefaultPort', 'DocumentDomainSetWithNonDefaultPort', 'CrossOriginAccessBasedOnDocumentDomain', 'DocumentDomainEnabledCrossOriginAccess', 'DocumentDomainBlockedCrossOriginAccess', 'DocumentOpenAliasedOriginDocumentDomain'])
 ORDER BY
   pct_urls DESC

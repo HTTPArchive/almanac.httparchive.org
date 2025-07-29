@@ -14,7 +14,7 @@ WITH meta_tags AS (
     FROM
       `httparchive.all.pages`
     WHERE
-      date = '2024-06-01' AND
+      date = '2025-07-01' AND
       is_root_page
   ),
     UNNEST(JSON_QUERY_ARRAY(metrics, '$.meta-nodes.nodes')) meta_node
@@ -30,7 +30,7 @@ robot_headers AS (
     `httparchive.all.requests`,
     UNNEST(response_headers) AS response_headers
   WHERE
-    date = '2024-06-01' AND
+    date = '2025-07-01' AND
     is_root_page AND
     is_main_document AND
     LOWER(response_headers.name) = 'x-robots-tag'
@@ -43,7 +43,7 @@ totals AS (
   FROM
     `httparchive.all.pages`
   WHERE
-    date = '2024-06-01' AND
+    date = '2025-07-01' AND
     is_root_page
   GROUP BY
     client

@@ -9,7 +9,7 @@ WITH totals AS (
     `httparchive.all.pages`,
     UNNEST(JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._security'), '$.sri-integrity')) AS sri
   WHERE
-    date = '2024-06-01' AND
+    date = '2025-07-01' AND
     is_root_page AND
     sri IS NOT NULL AND
     JSON_EXTRACT_SCALAR(sri, '$.tagname') = 'script'
@@ -34,7 +34,7 @@ FROM (
   FROM
     `httparchive.all.pages`
   WHERE
-    date = '2024-06-01' AND
+    date = '2025-07-01' AND
     is_root_page
 ),
   UNNEST(sris) AS sri
