@@ -10,6 +10,8 @@ SELECT
   COUNTIF(REGEXP_CONTAINS(response_headers.value, r'(?i);.*httponly')) / COUNT(0) AS pct_httponly,
   COUNTIF(REGEXP_CONTAINS(response_headers.value, r'(?i);.*secure')) AS count_secure,
   COUNTIF(REGEXP_CONTAINS(response_headers.value, r'(?i);.*secure')) / COUNT(0) AS pct_secure,
+  COUNTIF(REGEXP_CONTAINS(response_headers.value, r'(?i);.*partitioned')) AS count_partitioned,
+  COUNTIF(REGEXP_CONTAINS(response_headers.value, r'(?i);.*partitioned')) / COUNT(0) AS pct_partitioned,
   COUNTIF(REGEXP_CONTAINS(response_headers.value, r'(?i);.*samesite\s*=')) AS count_samesite,
   COUNTIF(REGEXP_CONTAINS(response_headers.value, r'(?i);.*samesite\s*=')) / COUNT(0) AS pct_samesite,
   COUNTIF(REGEXP_CONTAINS(response_headers.value, r'(?i);.*samesite\s*=\s*lax')) AS count_samesite_lax,
