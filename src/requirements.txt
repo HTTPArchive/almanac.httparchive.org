@@ -4,9 +4,9 @@ gunicorn==23.0.0
 pytest==8.4.1
 pytest-watch==4.2.0
 pytest-cov==6.2.1
-sqlfluff==3.4.1
+sqlfluff==3.4.2
 
 # sql/util/* dependencies
-pandas==2.3.0
-google-cloud-bigquery==3.34.0
+pandas==2.3.1
+google-cloud-bigquery==3.35.0
 requests==2.32.4
