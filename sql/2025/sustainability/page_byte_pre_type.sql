@@ -53,60 +53,60 @@ SELECT
   -- Total resources
   approx_quantiles(
     BYTESTOTAL / 1024, 1000
-  ) [offset(PERCENTILE * 10)] AS TOTAL_KBYTES,
+  )[offset(PERCENTILE * 10)] AS TOTAL_KBYTES,
   approx_quantiles(
     calculate_emissions(BYTESTOTAL, KW_PER_GB, GLOBAL_GRID_INTENSITY), 1000
-  ) [offset(PERCENTILE * 10)] AS TOTAL_EMISSIONS,
+  )[offset(PERCENTILE * 10)] AS TOTAL_EMISSIONS,
   -- HTML resources
   approx_quantiles(
     BYTESHTML / 1024, 1000
-  ) [offset(PERCENTILE * 10)] AS HTML_KBYTES,
+  )[offset(PERCENTILE * 10)] AS HTML_KBYTES,
   approx_quantiles(
     calculate_emissions(BYTESHTML, KW_PER_GB, GLOBAL_GRID_INTENSITY), 1000
-  ) [offset(PERCENTILE * 10)] AS HTML_EMISSIONS,
+  )[offset(PERCENTILE * 10)] AS HTML_EMISSIONS,
   -- JavaScript resources
   approx_quantiles(
     BYTESJS / 1024, 1000
-  ) [offset(PERCENTILE * 10)] AS JS_KBYTES,
+  )[offset(PERCENTILE * 10)] AS JS_KBYTES,
   approx_quantiles(
     calculate_emissions(BYTESJS, KW_PER_GB, GLOBAL_GRID_INTENSITY), 1000
-  ) [offset(PERCENTILE * 10)] AS JS_EMISSIONS,
+  )[offset(PERCENTILE * 10)] AS JS_EMISSIONS,
   -- CSS resources
   approx_quantiles(
     BYTESCSS / 1024, 1000
-  ) [offset(PERCENTILE * 10)] AS CSS_KBYTES,
+  )[offset(PERCENTILE * 10)] AS CSS_KBYTES,
   approx_quantiles(
     calculate_emissions(BYTESCSS, KW_PER_GB, GLOBAL_GRID_INTENSITY), 1000
-  ) [offset(PERCENTILE * 10)] AS CSS_EMISSIONS,
+  )[offset(PERCENTILE * 10)] AS CSS_EMISSIONS,
   -- Image resources
   approx_quantiles(
     BYTESIMG / 1024, 1000
-  ) [offset(PERCENTILE * 10)] AS IMG_KBYTES,
+  )[offset(PERCENTILE * 10)] AS IMG_KBYTES,
   approx_quantiles(
     calculate_emissions(BYTESIMG, KW_PER_GB, GLOBAL_GRID_INTENSITY), 1000
-  ) [offset(PERCENTILE * 10)] AS IMG_EMISSIONS,
+  )[offset(PERCENTILE * 10)] AS IMG_EMISSIONS,
   -- Other resources
   approx_quantiles(
     BYTESOTHER / 1024, 1000
-  ) [offset(PERCENTILE * 10)] AS OTHER_KBYTES,
+  )[offset(PERCENTILE * 10)] AS OTHER_KBYTES,
   approx_quantiles(
     calculate_emissions(BYTESOTHER, KW_PER_GB, GLOBAL_GRID_INTENSITY), 1000
-  ) [offset(PERCENTILE * 10)] AS OTHER_EMISSIONS,
+  )[offset(PERCENTILE * 10)] AS OTHER_EMISSIONS,
   -- HTML document
   approx_quantiles(
     BYTESHTMLDOC / 1024, 1000
-  ) [offset(PERCENTILE * 10)] AS HTML_DOC_KBYTES,
+  )[offset(PERCENTILE * 10)] AS HTML_DOC_KBYTES,
   approx_quantiles(
     calculate_emissions(BYTESHTMLDOC, KW_PER_GB, GLOBAL_GRID_INTENSITY),
     1000
-  ) [offset(PERCENTILE * 10)] AS HTML_DOC_EMISSIONS,
+  )[offset(PERCENTILE * 10)] AS HTML_DOC_EMISSIONS,
   -- Font resources
   approx_quantiles(
     BYTESFONT / 1024, 1000
-  ) [offset(PERCENTILE * 10)] AS FONT_KBYTES,
+  )[offset(PERCENTILE * 10)] AS FONT_KBYTES,
   approx_quantiles(
     calculate_emissions(BYTESFONT, KW_PER_GB, GLOBAL_GRID_INTENSITY), 1000
-  ) [offset(PERCENTILE * 10)] AS FONT_EMISSIONS
+  )[offset(PERCENTILE * 10)] AS FONT_EMISSIONS
 FROM
   PAGE_DATA,
   unnest([10, 25, 50, 75, 90, 100]) AS PERCENTILE

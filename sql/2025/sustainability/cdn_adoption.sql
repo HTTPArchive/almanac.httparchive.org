@@ -22,7 +22,7 @@ FROM (
   GROUP BY
     client
 ),
-	UNNEST(cdn_list) AS cdn
+  UNNEST(cdn_list) AS cdn
 GROUP BY
   client,
   cdn,

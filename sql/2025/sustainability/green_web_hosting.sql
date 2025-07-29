@@ -33,8 +33,8 @@ SELECT
     ELSE FORMAT("%'d", rank_grouping)
   END AS ranking,
   COUNTIF(is_green) AS total_green,
-  COUNT(*) AS total_sites,
-  SAFE_DIVIDE(COUNTIF(is_green), COUNT(*)) AS pct_green
+  COUNT(0) AS total_sites,
+  SAFE_DIVIDE(COUNTIF(is_green), COUNT(0)) AS pct_green
 FROM (
   -- Left join green hosting information
   SELECT
@@ -48,7 +48,7 @@ FROM (
     green AS g
   ON p.host = g.host
 ),
-UNNEST([1000, 10000, 100000, 1000000, 10000000, 100000000]) AS rank_grouping
+  UNNEST([1000, 10000, 100000, 1000000, 10000000, 100000000]) AS rank_grouping
 WHERE
   rank <= rank_grouping
 GROUP BY

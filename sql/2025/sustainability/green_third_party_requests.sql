@@ -117,16 +117,16 @@ SELECT
   END AS ranking,
   APPROX_QUANTILES(
     b.third_parties_per_page, 1000
-  ) [OFFSET(500)] AS p50_third_parties_per_page,
+  )[OFFSET(500)] AS p50_third_parties_per_page,
   APPROX_QUANTILES(
     bg.green_third_parties_per_page, 1000
-  ) [OFFSET(500)] AS p50_green_third_parties_per_page,
+  )[OFFSET(500)] AS p50_green_third_parties_per_page,
   APPROX_QUANTILES(
     SAFE_DIVIDE(
       bg.green_third_parties_per_page,
       b.third_parties_per_page
     ), 1000
-  ) [OFFSET(500)] AS pct_green
+  )[OFFSET(500)] AS pct_green
 FROM
   base AS b,
   UNNEST([1000, 10000, 100000, 1000000, 10000000, 100000000]) AS rank_grouping

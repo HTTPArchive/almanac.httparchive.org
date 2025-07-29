@@ -172,7 +172,8 @@ WITH cms_data AS (
           embodied_emissions_network * grid_intensity +
           embodied_emissions_user_devices * grid_intensity
         )
-      )) AS total_html_emissions,
+      )
+    ) AS total_html_emissions,
 
     (
       SAFE_DIVIDE(
@@ -191,7 +192,8 @@ WITH cms_data AS (
           embodied_emissions_network * grid_intensity +
           embodied_emissions_user_devices * grid_intensity
         )
-      )) AS total_js_emissions,
+      )
+    ) AS total_js_emissions,
 
     (
       SAFE_DIVIDE(
@@ -210,7 +212,8 @@ WITH cms_data AS (
           embodied_emissions_network * grid_intensity +
           embodied_emissions_user_devices * grid_intensity
         )
-      )) AS total_css_emissions,
+      )
+    ) AS total_css_emissions,
 
     (
       SAFE_DIVIDE(
@@ -229,7 +232,8 @@ WITH cms_data AS (
           embodied_emissions_network * grid_intensity +
           embodied_emissions_user_devices * grid_intensity
         )
-      )) AS total_img_emissions,
+      )
+    ) AS total_img_emissions,
 
     (
       SAFE_DIVIDE(
@@ -248,7 +252,8 @@ WITH cms_data AS (
           embodied_emissions_network * grid_intensity +
           embodied_emissions_user_devices * grid_intensity
         )
-      )) AS total_font_emissions,
+      )
+    ) AS total_font_emissions,
 
     -- Resource-specific size in KB
     CAST(JSON_VALUE(summary, '$.bytesHtml') AS INT64) / 1024 AS html_kb,
@@ -268,40 +273,40 @@ WITH cms_data AS (
 SELECT
   client,
   cms,
-  COUNT(*) AS pages,
+  COUNT(0) AS pages,
   -- Median resource weights and emissions
-  APPROX_QUANTILES(total_kb, 1000) [OFFSET(500)] AS median_total_kb,
+  APPROX_QUANTILES(total_kb, 1000)[OFFSET(500)] AS median_total_kb,
   APPROX_QUANTILES(
     total_operational_emissions, 1000
-  ) [OFFSET(500)] AS median_operational_emissions,
+  )[OFFSET(500)] AS median_operational_emissions,
   APPROX_QUANTILES(
     total_embodied_emissions, 1000
-  ) [OFFSET(500)] AS median_embodied_emissions,
+  )[OFFSET(500)] AS median_embodied_emissions,
   APPROX_QUANTILES(
     total_emissions, 1000
-  ) [OFFSET(500)] AS median_total_emissions,
+  )[OFFSET(500)] AS median_total_emissions,
 
   -- Resource-specific medians
-  APPROX_QUANTILES(html_kb, 1000) [OFFSET(500)] AS median_html_kb,
+  APPROX_QUANTILES(html_kb, 1000)[OFFSET(500)] AS median_html_kb,
   APPROX_QUANTILES(
     total_html_emissions, 1000
-  ) [OFFSET(500)] AS median_total_html_emissions,
-  APPROX_QUANTILES(js_kb, 1000) [OFFSET(500)] AS median_js_kb,
+  )[OFFSET(500)] AS median_total_html_emissions,
+  APPROX_QUANTILES(js_kb, 1000)[OFFSET(500)] AS median_js_kb,
   APPROX_QUANTILES(
     total_js_emissions, 1000
-  ) [OFFSET(500)] AS median_total_js_emissions,
-  APPROX_QUANTILES(css_kb, 1000) [OFFSET(500)] AS median_css_kb,
+  )[OFFSET(500)] AS median_total_js_emissions,
+  APPROX_QUANTILES(css_kb, 1000)[OFFSET(500)] AS median_css_kb,
   APPROX_QUANTILES(
     total_css_emissions, 1000
-  ) [OFFSET(500)] AS median_total_css_emissions,
-  APPROX_QUANTILES(img_kb, 1000) [OFFSET(500)] AS median_img_kb,
+  )[OFFSET(500)] AS median_total_css_emissions,
+  APPROX_QUANTILES(img_kb, 1000)[OFFSET(500)] AS median_img_kb,
   APPROX_QUANTILES(
     total_img_emissions, 1000
-  ) [OFFSET(500)] AS median_total_img_emissions,
-  APPROX_QUANTILES(font_kb, 1000) [OFFSET(500)] AS median_font_kb,
+  )[OFFSET(500)] AS median_total_img_emissions,
+  APPROX_QUANTILES(font_kb, 1000)[OFFSET(500)] AS median_font_kb,
   APPROX_QUANTILES(
     total_font_emissions, 1000
-  ) [OFFSET(500)] AS median_total_font_emissions
+  )[OFFSET(500)] AS median_total_font_emissions
 FROM
   cms_data
 GROUP BY
