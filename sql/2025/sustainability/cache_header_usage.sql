@@ -3,7 +3,7 @@
 
 SELECT
   client,
-  COUNT(*) AS total_requests,
+  COUNT(1) AS total_requests,
 
   COUNTIF(uses_cache_control) AS total_using_cache_control,
   COUNTIF(uses_max_age) AS total_using_max_age,
@@ -22,24 +22,24 @@ SELECT
     NOT uses_cache_control AND uses_expires
   ) AS total_using_only_expires,
 
-  COUNTIF(uses_cache_control) / COUNT(*) AS pct_cache_control,
-  COUNTIF(uses_max_age) / COUNT(*) AS pct_using_max_age,
-  COUNTIF(uses_expires) / COUNT(*) AS pct_using_expires,
+  COUNTIF(uses_cache_control) / COUNT(1) AS pct_cache_control,
+  COUNTIF(uses_max_age) / COUNT(1) AS pct_using_max_age,
+  COUNTIF(uses_expires) / COUNT(1) AS pct_using_expires,
   COUNTIF(
     uses_max_age AND uses_expires
-  ) / COUNT(*) AS pct_using_max_age_and_expires,
+  ) / COUNT(1) AS pct_using_max_age_and_expires,
   COUNTIF(
     uses_cache_control AND uses_expires
-  ) / COUNT(*) AS pct_using_both_cc_and_expires,
+  ) / COUNT(1) AS pct_using_both_cc_and_expires,
   COUNTIF(
     NOT uses_cache_control AND NOT uses_expires
-  ) / COUNT(*) AS pct_using_neither_cc_nor_expires,
+  ) / COUNT(1) AS pct_using_neither_cc_nor_expires,
   COUNTIF(
     uses_cache_control AND NOT uses_expires
-  ) / COUNT(*) AS pct_using_only_cache_control,
+  ) / COUNT(1) AS pct_using_only_cache_control,
   COUNTIF(
     NOT uses_cache_control AND uses_expires
-  ) / COUNT(*) AS pct_using_only_expires
+  ) / COUNT(1) AS pct_using_only_expires
 
 FROM (
   SELECT

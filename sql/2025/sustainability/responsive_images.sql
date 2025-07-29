@@ -34,10 +34,10 @@ WITH page_data AS (
 SELECT
   client,
   round(
-    safe_divide(countif(media_info.num_srcset_all > 0), count(*)) * 100, 2
+    safe_divide(countif(media_info.num_srcset_all > 0), count(1)) * 100, 2
   ) AS pages_with_srcset_pct,
   round(
-    safe_divide(countif(media_info.num_srcset_sizes > 0), count(*)) * 100, 2
+    safe_divide(countif(media_info.num_srcset_sizes > 0), count(1)) * 100, 2
   ) AS pages_with_srcset_sizes_pct,
   round(
     safe_divide(
@@ -46,7 +46,7 @@ SELECT
           media_info.num_srcset_all > 0
         ) - countif(media_info.num_srcset_sizes > 0)
       ),
-      count(*)
+      count(1)
     ) * 100,
     2
   ) AS pages_with_srcset_wo_sizes_pct,
@@ -64,7 +64,7 @@ SELECT
     2
   ) AS instances_of_srcset_wo_sizes_pct,
   round(
-    safe_divide(countif(media_info.num_picture_img > 0), count(*)) * 100, 2
+    safe_divide(countif(media_info.num_picture_img > 0), count(1)) * 100, 2
   ) AS pages_with_picture_pct
 FROM page_data
 GROUP BY

@@ -24,9 +24,9 @@ SELECT
   date,
   client,
   IF(preload_value = '', '(empty)', preload_value) AS preload_value,
-  COUNT(*) AS preload_value_count,
+  COUNT(1) AS preload_value_count,
   SAFE_DIVIDE(
-    COUNT(*), SUM(COUNT(*)) OVER (PARTITION BY date, client)
+    COUNT(1), SUM(COUNT(1)) OVER (PARTITION BY date, client)
   ) AS preload_value_pct
 FROM
   video_data
