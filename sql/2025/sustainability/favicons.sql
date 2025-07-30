@@ -69,5 +69,3 @@ FROM
   favicons
 ORDER BY
   pct DESC
-LIMIT
-  1000;
