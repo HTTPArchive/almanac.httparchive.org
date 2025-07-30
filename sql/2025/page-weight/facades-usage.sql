@@ -1,12 +1,11 @@
 SELECT
   client,
   is_root_page,
-  COUNTIF(JSON_VALUE(lighthouse, '$.audits.third-party-facades.score') IS NULL) AS null_count,
-  COUNTIF(SAFE_CAST(JSON_VALUE(lighthouse, '$.audits.third-party-facades.score') AS FLOAT64) >= 0.9) AS pass_count,
-  COUNTIF(SAFE_CAST(JSON_VALUE(lighthouse, '$.audits.third-party-facades.score') AS FLOAT64) < 0.9) AS fail_count,
-  COUNT(0) AS total,
-  COUNTIF(SAFE_CAST(JSON_VALUE(lighthouse, '$.audits.third-party-facades.score') AS FLOAT64) >= 0.9) / COUNT(0) AS pct_pass,
-  COUNTIF(SAFE_CAST(JSON_VALUE(lighthouse, '$.audits.third-party-facades.score') AS FLOAT64) < 0.9) / COUNT(0) AS pct_fail
+  COUNTIF(JSON_VALUE(lighthouse, '$.audits.third-party-facades.scoreDisplayMode') != 'notApplicable') AS pages_with_facades_available,
+  COUNTIF(JSON_VALUE(lighthouse, '$.audits.third-party-facades.scoreDisplayMode') = 'notApplicable') AS not_applicable_count,
+  SUM(CAST(JSON_VALUE(lighthouse, '$.audits.third-party-facades.metricSavings.TBT') AS FLOAT64)) AS total_blocking_time_savings_ms,
+  COUNT(0) AS total_pages,
+  COUNTIF(JSON_VALUE(lighthouse, '$.audits.third-party-facades.scoreDisplayMode') != 'notApplicable') / (COUNT(0) - COUNTIF(JSON_VALUE(lighthouse, '$.audits.third-party-facades.scoreDisplayMode') = 'notApplicable')) AS pct_pages_with_opportunities
 FROM
   `httparchive.crawl.pages`
 WHERE
@@ -16,7 +15,4 @@ GROUP BY
   is_root_page
 ORDER BY
   client,
-  is_root_page,
-  null_count,
-  pass_count,
-  fail_count
+  is_root_page
