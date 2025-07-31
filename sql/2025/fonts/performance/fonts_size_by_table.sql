@@ -22,7 +22,7 @@ fonts AS (
     url,
     TABLES(JSON_EXTRACT(ANY_VALUE(payload), '$._font_details.table_sizes')) AS tables
   FROM
-    `httparchive.all.requests`
+    `httparchive.crawl.requests`
   WHERE
     date = '2024-07-01' AND
     type = 'font' AND

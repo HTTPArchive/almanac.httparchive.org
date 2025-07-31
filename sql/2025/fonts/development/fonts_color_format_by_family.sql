@@ -13,7 +13,7 @@ fonts AS (
     FAMILY(ANY_VALUE(payload)) AS family,
     COUNT(DISTINCT url) OVER (PARTITION BY client) AS total
   FROM
-    `httparchive.all.requests`
+    `httparchive.crawl.requests`
   WHERE
     date = '2024-07-01' AND
     type = 'font' AND

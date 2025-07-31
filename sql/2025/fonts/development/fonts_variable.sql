@@ -11,7 +11,7 @@ fonts AS (
     client,
     COUNT(DISTINCT page) AS count
   FROM
-    `httparchive.all.requests`
+    `httparchive.crawl.requests`
   WHERE
     date IN ('2022-07-01', '2023-07-01', '2024-07-01') AND
     type = 'font' AND
@@ -28,7 +28,7 @@ pages AS (
     client,
     COUNT(DISTINCT page) AS total
   FROM
-    `httparchive.all.requests`
+    `httparchive.crawl.requests`
   WHERE
     date IN ('2022-07-01', '2023-07-01', '2024-07-01') AND
     is_root_page

@@ -36,7 +36,7 @@ pages AS (
     REGEXP_EXTRACT(chunk, r'''['"]([\w]{4})['"]''') AS axis,
     COUNT(DISTINCT page) OVER (PARTITION BY client) AS total
   FROM
-    `httparchive.all.parsed_css`,
+    `httparchive.crawl.parsed_css`,
     UNNEST(PROPERTIES(css)) AS property,
     UNNEST(SPLIT(property, ',')) AS chunk
   WHERE

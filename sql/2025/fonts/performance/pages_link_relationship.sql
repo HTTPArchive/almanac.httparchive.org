@@ -39,10 +39,10 @@ hints AS (
     hint.name AS hint,
     COUNT(DISTINCT pages.page) AS count
   FROM
-    `httparchive.all.pages` AS pages,
+    `httparchive.crawl.pages` AS pages,
     UNNEST(HINTS(custom_metrics)) AS hint
   LEFT JOIN
-    `httparchive.all.requests` AS requests
+    `httparchive.crawl.requests` AS requests
   ON
     requests.date IN ('2022-06-01', '2022-07-01', '2023-07-01', '2024-07-01') AND
     requests.type = 'font' AND
@@ -69,7 +69,7 @@ pages AS (
     client,
     COUNT(DISTINCT page) AS total
   FROM
-    `httparchive.all.pages`
+    `httparchive.crawl.pages`
   WHERE
     date IN ('2022-06-01', '2022-07-01', '2023-07-01', '2024-07-01') AND
     is_root_page

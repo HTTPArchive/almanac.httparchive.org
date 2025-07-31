@@ -99,7 +99,7 @@ fonts AS (
       )
     ] AS metrics
   FROM
-    `httparchive.all.requests`
+    `httparchive.crawl.requests`
   WHERE
     date = '2024-07-01' AND
     type = 'font' AND

@@ -15,7 +15,7 @@ fonts AS (
     ) AS format,
     PARSE_NUMERIC(JSON_EXTRACT_SCALAR(ANY_VALUE(summary), '$.respBodySize')) AS size
   FROM
-    `httparchive.all.requests`
+    `httparchive.crawl.requests`
   WHERE
     date = '2024-07-01' AND
     type = 'font' AND

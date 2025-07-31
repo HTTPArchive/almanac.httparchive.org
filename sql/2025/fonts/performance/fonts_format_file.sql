@@ -16,7 +16,7 @@ requests AS (
     COUNT(0) OVER (PARTITION BY client) AS total,
     COUNT(DISTINCT url) OVER (PARTITION BY client) AS total_secondary
   FROM
-    `httparchive.all.requests`
+    `httparchive.crawl.requests`
   WHERE
     date = '2024-07-01' AND
     type = 'font' AND

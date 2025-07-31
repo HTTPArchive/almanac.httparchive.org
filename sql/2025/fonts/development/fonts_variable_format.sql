@@ -13,7 +13,7 @@ fonts AS (
     VARIABLE_FORMATS(ANY_VALUE(payload)) AS formats,
     COUNT(0) OVER (PARTITION BY date, client) AS total
   FROM
-    `httparchive.all.requests`
+    `httparchive.crawl.requests`
   WHERE
     date IN ('2022-07-01', '2023-07-01', '2024-07-01') AND
     type = 'font' AND

@@ -31,7 +31,7 @@ properties AS (
     NULLIF(property, 'other') AS property,
     COUNT(DISTINCT page) AS count
   FROM
-    `httparchive.all.parsed_css`,
+    `httparchive.crawl.parsed_css`,
     UNNEST(PROPERTIES(css)) AS property
   WHERE
     date = '2024-07-01' AND
@@ -46,7 +46,7 @@ pages AS (
     client,
     COUNT(DISTINCT page) AS total
   FROM
-    `httparchive.all.requests`
+    `httparchive.crawl.requests`
   WHERE
     date = '2024-07-01' AND
     is_root_page
