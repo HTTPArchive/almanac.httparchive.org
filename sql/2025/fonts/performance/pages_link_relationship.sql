@@ -44,13 +44,13 @@ hints AS (
   LEFT JOIN
     `httparchive.crawl.requests` AS requests
   ON
-    requests.date IN ('2022-06-01', '2022-07-01', '2023-07-01', '2024-07-01') AND
+    requests.date IN ('2022-06-01', '2022-07-01', '2023-07-01', '2024-07-01', '2025-07-01') AND
     requests.type = 'font' AND
     requests.is_root_page AND
     pages.page = requests.page AND
     hint.url = requests.url
   WHERE
-    pages.date IN ('2022-06-01', '2022-07-01', '2023-07-01', '2024-07-01') AND
+    pages.date IN ('2022-06-01', '2022-07-01', '2023-07-01', '2024-07-01', '2025-07-01') AND
     pages.is_root_page AND
     (
       requests.url IS NOT NULL OR
@@ -71,7 +71,7 @@ pages AS (
   FROM
     `httparchive.crawl.pages`
   WHERE
-    date IN ('2022-06-01', '2022-07-01', '2023-07-01', '2024-07-01') AND
+    date IN ('2022-06-01', '2022-07-01', '2023-07-01', '2024-07-01', '2025-07-01') AND
     is_root_page
   GROUP BY
     date,
