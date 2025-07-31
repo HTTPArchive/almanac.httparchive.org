@@ -9,7 +9,7 @@ fonts AS (
   SELECT
     client,
     url,
-    PARSE_NUMERIC(JSON_EXTRACT_SCALAR(ANY_VALUE(summary), '$.respBodySize')) AS size
+    INT64(ANY_VALUE(summary).respBodySize) AS size
   FROM
     `httparchive.crawl.requests`
   WHERE

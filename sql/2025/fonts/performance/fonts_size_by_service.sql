@@ -10,11 +10,8 @@ fonts AS (
     client,
     url,
     SERVICE(url) AS service,
-    FILE_FORMAT(
-      JSON_EXTRACT_SCALAR(ANY_VALUE(summary), '$.ext'),
-      JSON_EXTRACT_SCALAR(ANY_VALUE(summary), '$.mimeType')
-    ) AS format,
-    PARSE_NUMERIC(JSON_EXTRACT_SCALAR(ANY_VALUE(summary), '$.respBodySize')) AS size
+    FILE_FORMAT(STRING(ANY_VALUE(summary).ext), STRING(ANY_VALUE(summary).mimeType)) AS format,
+    INT64(ANY_VALUE(summary).respBodySize) AS size
   FROM
     `httparchive.crawl.requests`
   WHERE
