@@ -8,7 +8,7 @@ WITH
 designers AS (
   SELECT
     client,
-    NULLIF(TRIM(JSON_EXTRACT_SCALAR(payload, '$._font_details.names[9]')), '') AS designer,
+    NULLIF(TRIM(STRING(JSON_QUERY(payload, '$._font_details.names[9]'))), '') AS designer,
     COUNT(DISTINCT page) AS count,
     ROW_NUMBER() OVER (PARTITION BY client ORDER BY COUNT(DISTINCT page) DESC) AS rank
   FROM

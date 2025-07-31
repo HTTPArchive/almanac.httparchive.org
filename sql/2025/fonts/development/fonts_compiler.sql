@@ -20,7 +20,7 @@ fonts AS (
   SELECT
     client,
     url,
-    COMPILER(JSON_EXTRACT_SCALAR(ANY_VALUE(payload), '$._font_details.names[5]')) AS compiler,
+    COMPILER(STRING(JSON_QUERY(ANY_VALUE(payload), '$._font_details.names[5]'))) AS compiler,
     COUNT(0) OVER (PARTITION BY client) AS total
   FROM
     `httparchive.crawl.requests`

@@ -31,10 +31,10 @@ fonts AS (
     client,
     url,
     (
-      HAS_KERNING(JSON_EXTRACT(ANY_VALUE(payload), '$._font_details.features')) OR
+      HAS_KERNING(TO_JSON_STRING(ANY_VALUE(payload)._font_details.features)) OR
       IFNULL(
         REGEXP_CONTAINS(
-          JSON_EXTRACT(ANY_VALUE(payload), '$._font_details.table_sizes'),
+          TO_JSON_STRING(ANY_VALUE(payload)._font_details.table_sizes),
           '(?i)kern'
         ),
         FALSE

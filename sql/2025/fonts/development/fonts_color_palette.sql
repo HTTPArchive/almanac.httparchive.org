@@ -9,12 +9,7 @@ fonts AS (
   SELECT
     client,
     url,
-    SAFE_CAST(
-      JSON_EXTRACT_SCALAR(
-        ANY_VALUE(payload),
-        '$._font_details.color.numPalettes'
-      ) AS INT64
-    ) AS entries,
+    INT64(ANY_VALUE(payload)._font_details.color.numPalettes) AS entries,
     COUNT(0) OVER (PARTITION BY client) AS total
   FROM
     `httparchive.crawl.requests`

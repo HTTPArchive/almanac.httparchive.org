@@ -20,7 +20,7 @@ fonts AS (
   SELECT
     client,
     url,
-    AXES(JSON_EXTRACT(ANY_VALUE(payload), '$._font_details.fvar')) AS axes,
+    AXES(TO_JSON_STRING(ANY_VALUE(payload)._font_details.fvar)) AS axes,
     COUNT(0) OVER (PARTITION BY client) AS total
   FROM
     `httparchive.crawl.requests`

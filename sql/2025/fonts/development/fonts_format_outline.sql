@@ -11,7 +11,7 @@ fonts AS (
     client,
     url,
     REGEXP_EXTRACT_ALL(
-      JSON_EXTRACT(ANY_VALUE(payload), '$._font_details.table_sizes'),
+      TO_JSON_STRING(ANY_VALUE(payload)._font_details.table_sizes),
       '(?i)(CFF |glyf|SVG|CFF2)'
     ) AS formats,
     COUNT(0) OVER (PARTITION BY date, client) AS total
