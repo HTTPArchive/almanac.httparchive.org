@@ -40,7 +40,7 @@ hints AS (
     COUNT(DISTINCT pages.page) AS count
   FROM
     `httparchive.crawl.pages` AS pages,
-    UNNEST(HINTS(custom_metrics)) AS hint
+    UNNEST(HINTS(TO_JSON_STRING(custom_metrics.other))) AS hint
   LEFT JOIN
     `httparchive.crawl.requests` AS requests
   ON
