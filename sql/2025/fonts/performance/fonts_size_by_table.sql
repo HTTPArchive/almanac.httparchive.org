@@ -20,7 +20,7 @@ fonts AS (
   SELECT
     client,
     url,
-    TABLES(JSON_EXTRACT(ANY_VALUE(payload), '$._font_details.table_sizes')) AS tables
+    TABLES(TO_JSON_STRING(ANY_VALUE(payload)._font_details.table_sizes)) AS tables
   FROM
     `httparchive.crawl.requests`
   WHERE

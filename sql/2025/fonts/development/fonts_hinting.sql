@@ -6,7 +6,7 @@
 
 CREATE TEMPORARY FUNCTION IS_HINTED(payload STRING) AS (
   REGEXP_CONTAINS(
-    JSON_EXTRACT(payload, '$._font_details.table_sizes'),
+    TO_JSON_STRING(payload._font_details.table_sizes),
     '(?i)fpgm|prep'
   )
 );
@@ -14,7 +14,7 @@ CREATE TEMPORARY FUNCTION IS_HINTED(payload STRING) AS (
 
 CREATE TEMPORARY FUNCTION IS_AUTOHINTED(payload STRING) AS (
   REGEXP_CONTAINS(
-    JSON_EXTRACT_SCALAR(payload, '$._font_details.names[5]'),
+    STRING(JSON_QUERY(payload, '$._font_details.names[5]')),
     'autohint'
   )
 );

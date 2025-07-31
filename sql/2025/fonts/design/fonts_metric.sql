@@ -9,93 +9,43 @@ fonts AS (
   SELECT
     client,
     url,
-    SAFE_CAST(
-      JSON_EXTRACT_SCALAR(
-        ANY_VALUE(payload),
-        '$._font_details.head.unitsPerEm'
-      ) AS INTEGER
-    ) AS granularity,
+    INT64(ANY_VALUE(payload)._font_details.head.unitsPerEm) AS granularity,
     [
       STRUCT(
         'granularity' AS name,
-        SAFE_CAST(
-          JSON_EXTRACT_SCALAR(
-            ANY_VALUE(payload),
-            '$._font_details.head.unitsPerEm'
-          ) AS INTEGER
-        ) AS value
+        INT64(ANY_VALUE(payload)._font_details.head.unitsPerEm) AS value
       ),
       STRUCT(
         'clipping_ascender' AS name,
-        SAFE_CAST(
-          JSON_EXTRACT_SCALAR(
-            ANY_VALUE(payload),
-            '$._font_details.OS2.usWinAscent'
-          ) AS INTEGER
-        ) AS value
+        INT64(ANY_VALUE(payload)._font_details.OS2.usWinAscent) AS value
       ),
       STRUCT(
         'ascender' AS name,
-        SAFE_CAST(
-          JSON_EXTRACT_SCALAR(
-            ANY_VALUE(payload),
-            '$._font_details.OS2.sTypoAscender'
-          ) AS INTEGER
-        ) AS value
+        INT64(ANY_VALUE(payload)._font_details.OS2.sTypoAscender) AS value
       ),
       STRUCT(
         'cap_height' AS name,
-        SAFE_CAST(
-          JSON_EXTRACT_SCALAR(
-            ANY_VALUE(payload),
-            '$._font_details.OS2.sCapHeight'
-          ) AS INTEGER
-        ) AS value
+        INT64(ANY_VALUE(payload)._font_details.OS2.sCapHeight) AS value
       ),
       STRUCT(
         'x_height' AS name,
-        SAFE_CAST(
-          JSON_EXTRACT_SCALAR(
-            ANY_VALUE(payload),
-            '$._font_details.OS2.sxHeight'
-          ) AS INTEGER
-        ) AS value
+        INT64(ANY_VALUE(payload)._font_details.OS2.sxHeight) AS value
       ),
       STRUCT(
         'descender' AS name,
-        SAFE_CAST(
-          JSON_EXTRACT_SCALAR(
-            ANY_VALUE(payload),
-            '$._font_details.OS2.sTypoDescender'
-          ) AS INTEGER
-        ) AS value
+        INT64(ANY_VALUE(payload)._font_details.OS2.sTypoDescender) AS value
       ),
       STRUCT(
         'clipping_descender' AS name,
-        -SAFE_CAST(
-          JSON_EXTRACT_SCALAR(
-            ANY_VALUE(payload),
-            '$._font_details.OS2.usWinDescent'
-          ) AS INTEGER
-        ) AS value
+        -INT64(ANY_VALUE(payload)._font_details.OS2.usWinDescent) AS value
       ),
       STRUCT(
         'line_gap' AS name,
-        SAFE_CAST(
-          JSON_EXTRACT_SCALAR(
-            ANY_VALUE(payload),
-            '$._font_details.OS2.sTypoLineGap'
-          ) AS INTEGER
-        ) AS value
+        INT64(ANY_VALUE(payload)._font_details.OS2.sTypoLineGap) AS value
       ),
       STRUCT(
         'use_typographic_metrics' AS name,
-        SAFE_CAST(
-          JSON_EXTRACT_SCALAR(
-            ANY_VALUE(payload),
-            '$._font_details.OS2.fsSelection'
-          ) AS INTEGER
-        ) & 128 AS value
+        INT64(ANY_VALUE(payload)._font_details.OS2.fsSelection) & 128 AS value
       )
     ] AS metrics
   FROM
