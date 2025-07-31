@@ -2,7 +2,7 @@
 -- Question: What is the distribution of color palettes?
 -- Normalization: Fonts (color only)
 
--- INCLUDE https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/2024/fonts/common.sql
+-- INCLUDE https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/2025/fonts/common.sql
 
 CREATE TEMPORARY FUNCTION COLORS(json STRING)
 RETURNS ARRAY<STRING>
