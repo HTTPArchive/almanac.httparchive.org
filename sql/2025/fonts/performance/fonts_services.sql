@@ -14,7 +14,7 @@ services_1 AS (
   FROM
     `httparchive.crawl.requests`
   WHERE
-    date IN ('2022-07-01', '2023-07-01', '2024-07-01') AND
+    date IN ('2022-07-01', '2023-07-01', '2024-07-01', '2025-07-01') AND
     type = 'font' AND
     is_root_page
   GROUP BY
@@ -45,7 +45,7 @@ pages AS (
   FROM
     `httparchive.crawl.requests`
   WHERE
-    date IN ('2022-07-01', '2023-07-01', '2024-07-01') AND
+    date IN ('2022-07-01', '2023-07-01', '2024-07-01', '2025-07-01') AND
     is_root_page
   GROUP BY
     date,
