@@ -2,7 +2,7 @@
 -- Question: Who is serving variable fonts?
 -- Normalization: Requests (variable only) and fonts (variable only)
 
--- INCLUDE https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/2024/fonts/common.sql
+-- INCLUDE https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/2025/fonts/common.sql
 
 WITH
 requests AS (

@@ -2,7 +2,7 @@
 -- Question: Which licenses are used?
 -- Normalization: Pages
 
--- INCLUDE https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/2024/fonts/common.sql
+-- INCLUDE https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/2025/fonts/common.sql
 
 CREATE TEMPORARY FUNCTION LICENSE(value STRING) AS (
   CASE

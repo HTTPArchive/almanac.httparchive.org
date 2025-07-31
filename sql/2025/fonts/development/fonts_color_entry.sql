@@ -2,7 +2,7 @@
 -- Question: How many entries are there in color palettes?
 -- Normalization: Fonts (color only)
 
--- INCLUDE https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/2024/fonts/common.sql
+-- INCLUDE https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/2025/fonts/common.sql
 
 WITH
 fonts AS (
