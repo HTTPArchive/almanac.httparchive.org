@@ -18,11 +18,11 @@ CREATE TEMPORARY FUNCTION FAMILY_INNER(name STRING) AS (
 );
 
 -- Extract the family name from a payload.
-CREATE TEMPORARY FUNCTION FAMILY(payload STRING) AS (
+CREATE TEMPORARY FUNCTION FAMILY(payload JSON) AS (
   FAMILY_INNER(
     COALESCE(
-      JSON_EXTRACT_SCALAR(payload, '$._font_details.names[16]'),
-      JSON_EXTRACT_SCALAR(payload, '$._font_details.names[1]')
+      STRING(JSON_QUERY(payload, '$._font_details.names[16]')),
+      STRING(JSON_QUERY(payload, '$._font_details.names[1]'))
     )
   )
 );
@@ -42,8 +42,8 @@ CREATE TEMPORARY FUNCTION FOUNDRY_INNER(name STRING) AS (
 );
 
 -- Extract the foundry name from a payload.
-CREATE TEMPORARY FUNCTION FOUNDRY(payload STRING) AS (
-  FOUNDRY_INNER(JSON_EXTRACT_SCALAR(payload, '$._font_details.OS2.achVendID'))
+CREATE TEMPORARY FUNCTION FOUNDRY(payload JSON) AS (
+  FOUNDRY_INNER(STRING(payload._font_details.OS2.achVendID))
 );
 
 -- Infer scripts from codepoints. Used in SCRIPTS.
@@ -60,7 +60,7 @@ if (codepoints && codepoints.length) {
 """;
 
 -- Infer scripts from a payload.
-CREATE TEMPORARY FUNCTION SCRIPTS(payload STRING) AS (
+CREATE TEMPORARY FUNCTION SCRIPTS(payload JSON) AS (
   SCRIPTS_INNER(JSON_EXTRACT_STRING_ARRAY(payload, '$._font_details.cmap.codepoints'))
 );
 
@@ -117,35 +117,35 @@ try {
 ''';
 
 -- Extract the color formats from a payload.
-CREATE TEMPORARY FUNCTION COLOR_FORMATS(payload STRING) AS (
+CREATE TEMPORARY FUNCTION COLOR_FORMATS(payload JSON) AS (
   COLOR_FORMATS_INNER(
-    JSON_EXTRACT(payload, '$._font_details.color.formats'),
-    JSON_EXTRACT(payload, '$._font_details.table_sizes')
+    TO_JSON_STRING(payload._font_details.color.formats),
+    TO_JSON_STRING(payload._font_details.table_sizes)
   )
 );
 
 -- Check if the font is a color font given its payload.
-CREATE TEMPORARY FUNCTION IS_COLOR(payload STRING) AS (
+CREATE TEMPORARY FUNCTION IS_COLOR(payload JSON) AS (
   ARRAY_LENGTH(COLOR_FORMATS(payload)) > 0
 );
 
 -- Check if the font was successfully parsed given its payload.
-CREATE TEMPORARY FUNCTION IS_PARSED(payload STRING) AS (
-  JSON_EXTRACT(payload, '$._font_details.table_sizes') IS NOT NULL
+CREATE TEMPORARY FUNCTION IS_PARSED(payload JSON) AS (
+  payload._font_details.table_sizes IS NOT NULL
 );
 
 -- Check if the font is a variable font given its payload.
-CREATE TEMPORARY FUNCTION IS_VARIABLE(payload STRING) AS (
+CREATE TEMPORARY FUNCTION IS_VARIABLE(payload JSON) AS (
   REGEXP_CONTAINS(
-    JSON_EXTRACT(payload, '$._font_details.table_sizes'),
+    TO_JSON_STRING(payload._font_details.table_sizes),
     '(?i)gvar|CFF2'
   )
 );
 
 -- Extract the variable formats from a payload.
-CREATE TEMPORARY FUNCTION VARIABLE_FORMATS(payload STRING) AS (
+CREATE TEMPORARY FUNCTION VARIABLE_FORMATS(payload JSON) AS (
   REGEXP_EXTRACT_ALL(
-    JSON_EXTRACT(payload, '$._font_details.table_sizes'),
+    TO_JSON_STRING(payload._font_details.table_sizes),
     '(?i)glyf|CFF2'
   )
 );
