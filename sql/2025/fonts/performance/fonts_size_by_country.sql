@@ -24,7 +24,7 @@ requests AS (
   SELECT
     client,
     NET.HOST(page) AS domain,
-    PARSE_NUMERIC(JSON_EXTRACT_SCALAR(summary, '$.respBodySize')) AS size
+    INT64(summary.respBodySize) AS size
   FROM
     `httparchive.crawl.requests`
   WHERE

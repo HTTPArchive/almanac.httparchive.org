@@ -9,10 +9,7 @@ requests AS (
   SELECT
     client,
     url,
-    FILE_FORMAT(
-      JSON_EXTRACT_SCALAR(summary, '$.ext'),
-      JSON_EXTRACT_SCALAR(summary, '$.mimeType')
-    ) AS format,
+    FILE_FORMAT(STRING(summary.ext), STRING(summary.mimeType)) AS format,
     COUNT(0) OVER (PARTITION BY client) AS total,
     COUNT(DISTINCT url) OVER (PARTITION BY client) AS total_secondary
   FROM
