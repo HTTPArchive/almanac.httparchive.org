@@ -9,7 +9,7 @@ SELECT
   COUNT(DISTINCT page) AS total,
   COUNT(DISTINCT IF(type = 'font', page, NULL)) / COUNT(DISTINCT page) AS proportion
 FROM
-  `httparchive.all.requests`
+  `httparchive.crawl.requests`
 WHERE
   date IS NOT NULL AND
   is_root_page

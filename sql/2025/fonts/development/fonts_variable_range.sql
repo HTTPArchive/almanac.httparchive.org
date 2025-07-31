@@ -33,7 +33,7 @@ fonts AS (
     ANY_VALUE(axis.medium) AS medium,
     ANY_VALUE(axis.maximum) AS maximum
   FROM
-    `httparchive.all.requests`,
+    `httparchive.crawl.requests`,
     UNNEST(AXES(JSON_EXTRACT(payload, '$._font_details.fvar'))) AS axis
   WHERE
     date = '2024-07-01' AND

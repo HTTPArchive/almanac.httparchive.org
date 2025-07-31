@@ -23,7 +23,7 @@ fonts AS (
     COMPILER(JSON_EXTRACT_SCALAR(ANY_VALUE(payload), '$._font_details.names[5]')) AS compiler,
     COUNT(0) OVER (PARTITION BY client) AS total
   FROM
-    `httparchive.all.requests`
+    `httparchive.crawl.requests`
   WHERE
     date = '2024-07-01' AND
     type = 'font' AND
