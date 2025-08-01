@@ -7,15 +7,15 @@ WITH blink AS (
     pct_urls
   FROM `httparchive.blink_features.usage`
   WHERE
-    yyyymmdd = '20250601' AND
+    date = '2025-07-01' AND
     feature IN ('NavigatorDoNotTrack')
 ),
 
 pages AS (
   SELECT
     client,
-    COUNT(DISTINCT IF(JSON_VALUE(custom_metrics, '$.privacy.navigator_doNotTrack') = 'true', page, NULL)) AS num_urls,
-    COUNT(DISTINCT IF(JSON_VALUE(custom_metrics, '$.privacy.navigator_doNotTrack') = 'true', page, NULL)) / COUNT(DISTINCT page) AS pct_urls
+    COUNT(DISTINCT IF(SAFE.BOOL(custom_metrics.privacy.navigator_doNotTrack), page, NULL)) AS num_urls,
+    COUNT(DISTINCT IF(SAFE.BOOL(custom_metrics.privacy.navigator_doNotTrack), page, NULL)) / COUNT(DISTINCT page) AS pct_urls
   FROM `httparchive.crawl.pages`
   WHERE
     date = '2025-07-01' AND

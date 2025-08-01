@@ -2,11 +2,10 @@ WITH referrer_policy_custom_metrics AS (
   SELECT
     client,
     page,
-    JSON_VALUE(custom_metrics, '$.privacy.referrerPolicy.entire_document_policy') AS meta_policy,
-    ARRAY_LENGTH(JSON_QUERY_ARRAY(custom_metrics, '$.privacy.referrerPolicy.individual_requests')) > 0 AS individual_requests,
-    CAST(JSON_VALUE(custom_metrics, '$.privacy.referrerPolicy.link_relations.A') AS INT64) > 0 AS link_relations
-  FROM
-    `httparchive.crawl.pages`
+    SAFE.STRING(custom_metrics.privacy.referrerPolicy.entire_document_policy) AS meta_policy,
+    ARRAY_LENGTH(JSON_QUERY_ARRAY(custom_metrics.privacy.referrerPolicy.individual_requests)) > 0 AS individual_requests,
+    SAFE.INT64(custom_metrics.privacy.referrerPolicy.link_relations.A) > 0 AS link_relations
+  FROM `httparchive.crawl.pages`
   WHERE
     date = '2025-07-01' AND
     is_root_page = TRUE
@@ -17,8 +16,7 @@ referrer_policy_headers AS (
     client,
     page,
     LOWER(response_header.value) AS header_policy
-  FROM
-    `httparchive.all.requests`,
+  FROM `httparchive.crawl.requests`,
     UNNEST(response_headers) AS response_header
   WHERE
     date = '2025-07-01' AND

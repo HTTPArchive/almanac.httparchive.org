@@ -6,7 +6,7 @@ WITH cmps AS (
   SELECT
     client,
     page,
-    JSON_VALUE(custom_metrics, '$.privacy.iab_tcf_v2.data.cmpId') AS cmpId,
+    SAFE.STRING(custom_metrics.privacy.iab_tcf_v2.data.cmpId) AS cmpId,
     COUNT(DISTINCT page) OVER (PARTITION BY client) AS total_pages
   FROM `httparchive.crawl.pages`
   WHERE

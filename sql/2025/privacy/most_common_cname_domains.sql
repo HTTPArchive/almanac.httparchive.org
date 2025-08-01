@@ -1,9 +1,8 @@
 # Most common CNAME domains
-CREATE TEMP FUNCTION convert_cname_json(json_str STRING)
+CREATE TEMP FUNCTION CONVERT_CNAME_JSON(obj JSON)
 RETURNS ARRAY<STRUCT<origin STRING, cname STRING>>
 LANGUAGE js AS """
 try {
-  const obj = JSON.parse(json_str);
   const result = [];
   for (const key in obj) {
     result.push({
@@ -37,10 +36,10 @@ cnames AS (
   SELECT
     client,
     cnames.cname,
-    page
-  --ARRAY_AGG(DISTINCT page LIMIT 2) AS page_examples
+    page,
+    ARRAY_AGG(DISTINCT page LIMIT 2) AS page_examples
   FROM `httparchive.crawl.pages`,
-    UNNEST(convert_cname_json(JSON_QUERY(custom_metrics, '$.privacy.request_hostnames_with_cname'))) AS cnames
+    UNNEST(CONVERT_CNAME_JSON(custom_metrics.privacy.request_hostnames_with_cname)) AS cnames
   WHERE date = '2025-07-01' AND
     NET.REG_DOMAIN(cnames.origin) = NET.REG_DOMAIN(page) AND
     NET.REG_DOMAIN(cnames.cname) != NET.REG_DOMAIN(page)
@@ -65,8 +64,8 @@ cname_stats AS (
     NET.REG_DOMAIN(cname) AS cname,
     adguard_trackers.domain IS NOT NULL AS adguard_known_cname,
     whotracksme.category AS whotracksme_category,
-    COUNT(DISTINCT page) AS number_of_pages
-  --ANY_VALUE(page_examples)
+    COUNT(DISTINCT page) AS number_of_pages,
+    ANY_VALUE(page_examples)
   FROM cnames
   LEFT JOIN adguard_trackers
   ON ENDS_WITH(cnames.cname, adguard_trackers.domain)

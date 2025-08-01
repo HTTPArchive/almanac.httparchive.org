@@ -17,7 +17,7 @@ referrer_policy_custom_metrics AS (
     page,
     LOWER(TRIM(policy_meta)) AS policy_meta
   FROM `httparchive.crawl.pages`,
-    UNNEST(SPLIT(JSON_VALUE(custom_metrics, '$.privacy.referrerPolicy.entire_document_policy'), ',')) AS policy_meta
+    UNNEST(SPLIT(SAFE.STRING(custom_metrics.privacy.referrerPolicy.entire_document_policy), ',')) AS policy_meta
   WHERE
     date = '2025-07-01' AND
     is_root_page = TRUE
@@ -29,7 +29,7 @@ response_headers AS (
     page,
     LOWER(response_header.name) AS name,
     LOWER(response_header.value) AS value
-  FROM `httparchive.all.requests`,
+  FROM `httparchive.crawl.requests`,
     UNNEST(response_headers) AS response_header
   WHERE
     date = '2025-07-01' AND

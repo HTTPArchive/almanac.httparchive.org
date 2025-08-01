@@ -3,7 +3,7 @@ WITH whotracksme AS (
     domain,
     category,
     tracker
-  FROM `max-ostapenko.Public.whotracksme`
+  FROM `httparchive.almanac.whotracksme`
   WHERE date = '2025-07-01'
 ),
 
@@ -14,7 +14,7 @@ pre_aggregated AS (
     page,
     tracker,
     COUNT(DISTINCT page) OVER (PARTITION BY client) AS total_pages
-  FROM `httparchive.all.requests`
+  FROM `httparchive.crawl.requests`
   JOIN whotracksme
   ON NET.REG_DOMAIN(url) = domain
   WHERE

@@ -1,24 +1,13 @@
 #standardSQL
 # Top 25 Attribution Reporting API Destinations (i.e., advertisers) registered by the most number of distinct third-parties (at site level)
 
--- Extracting third-parties observed using ARA API on a publisher
-CREATE TEMP FUNCTION jsonObjectKeys(input STRING)
-RETURNS ARRAY<STRING>
-LANGUAGE js AS """
-  if (!input) {
-    return [];
-  }
-  return Object.keys(JSON.parse(input));
-""";
-
 -- Extracting ARA API source registration details being passed by a given third-party (passed as "key")
-CREATE TEMP FUNCTION jsonObjectValues(input STRING, key STRING)
+CREATE TEMP FUNCTION JSON_OBJECT_VALUES(jsonObject JSON, key STRING)
 RETURNS ARRAY<STRING>
 LANGUAGE js AS """
-  if (!input) {
+  if (!jsonObject) {
     return [];
   }
-  const jsonObject = JSON.parse(input);
   const values = jsonObject[key] || [];
   const result = [];
 
@@ -53,8 +42,8 @@ WITH ara_features AS (
     COUNT(third_party_domain) AS total_third_party_domains,
     COUNT(DISTINCT third_party_domain) AS distinct_third_party_domains
   FROM `httparchive.crawl.pages`,
-    UNNEST(jsonObjectKeys(JSON_QUERY(custom_metrics, '$.privacy-sandbox.privacySandBoxAPIUsage'))) AS third_party_domain,
-    UNNEST(jsonObjectValues(JSON_QUERY(custom_metrics, '$.privacy-sandbox.privacySandBoxAPIUsage'), third_party_domain)) AS ara
+    UNNEST(JSON_KEYS(custom_metrics.other.`privacy-sandbox`.privacySandBoxAPIUsage)) AS third_party_domain,
+    UNNEST(JSON_OBJECT_VALUES(custom_metrics.other.`privacy-sandbox`.privacySandBoxAPIUsage, third_party_domain)) AS ara
   WHERE
     date = '2025-07-01' AND
     is_root_page = TRUE AND

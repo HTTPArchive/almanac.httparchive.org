@@ -13,8 +13,8 @@ WITH wellknown AS (
       WHEN rank <= 10000000 THEN '10000000'
       ELSE 'Other'
     END AS rank_group,
-    CAST(JSON_VALUE(custom_metrics, '$.well-known."/.well-known/related-website-set.json".found') AS BOOL) AS rws,
-    CAST(JSON_VALUE(custom_metrics, '$.well-known."/.well-known/privacy-sandbox-attestations.json".found') AS BOOL) AS attestation
+    SAFE.BOOL(custom_metrics.other.`well-known`.`/.well-known/related-website-set.json`.found) AS rws,
+    SAFE.BOOL(custom_metrics.other.`well-known`.`/.well-known/privacy-sandbox-attestations.json`.found) AS attestation
   FROM
     `httparchive.crawl.pages`
   WHERE

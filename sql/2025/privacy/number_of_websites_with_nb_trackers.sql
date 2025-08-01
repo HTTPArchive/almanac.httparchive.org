@@ -1,10 +1,11 @@
-# Number of websites that deploy a certain number of trackers
+-- Number of websites that deploy a certain number of trackers
+
 WITH whotracksme AS (
   SELECT
     domain,
     category,
     tracker
-  FROM almanac.whotracksme
+  FROM `httparchive.almanac.whotracksme`
   WHERE date = '2025-07-01'
 ),
 
@@ -12,7 +13,7 @@ totals AS (
   SELECT
     client,
     COUNT(DISTINCT page) AS total_websites
-  FROM httparchive.crawl.requests
+  FROM `httparchive.crawl.requests`
   WHERE date = '2025-07-01'
   GROUP BY client
 )
@@ -29,7 +30,7 @@ FROM (
     client,
     page,
     COUNT(DISTINCT tracker) AS number_of_trackers
-  FROM httparchive.crawl.requests
+  FROM `httparchive.crawl.requests`
   JOIN whotracksme
   ON (
     NET.HOST(url) = domain OR
@@ -62,12 +63,12 @@ FROM (
     client,
     page,
     COUNT(DISTINCT tracker) AS number_of_trackers
-  FROM httparchive.almanac.requests
+  FROM `httparchive.crawl.requests`
   JOIN
     whotracksme
   ON (
-    NET.HOST(urlShort) = domain OR
-    ENDS_WITH(NET.HOST(urlShort), CONCAT('.', domain))
+    NET.HOST(url) = domain OR
+    ENDS_WITH(NET.HOST(url), CONCAT('.', domain))
   )
   WHERE
     date = '2025-07-01' AND

@@ -5,7 +5,7 @@ WITH pages AS (
     client,
     root_page,
     custom_metrics,
-    COUNT(DISTINCT net.host(root_page)) OVER (PARTITION BY client) AS total_domains
+    COUNT(DISTINCT NET.HOST(root_page)) OVER (PARTITION BY client) AS total_domains
   FROM `httparchive.crawl.pages`
   WHERE date = '2025-07-01'
 ),
@@ -14,18 +14,18 @@ cookies AS (
   SELECT
     client,
     cookie,
-    NET.HOST(JSON_VALUE(cookie, '$.domain')) AS cookie_host,
+    NET.HOST(SAFE.STRING(cookie.domain)) AS cookie_host,
     NET.HOST(root_page) AS firstparty_host,
     total_domains
   FROM pages,
-    UNNEST(JSON_QUERY_ARRAY(custom_metrics, '$.cookies')) AS cookie
+    UNNEST(JSON_QUERY_ARRAY(custom_metrics.cookies)) AS cookie
 )
 
 SELECT
   client,
   COUNT(DISTINCT firstparty_host) AS domain_count,
-  COUNT(DISTINCT firstparty_host) / any_value(total_domains) AS pct_domains,
-  JSON_VALUE(cookie, '$.name') AS cookie_name
+  COUNT(DISTINCT firstparty_host) / ANY_VALUE(total_domains) AS pct_domains,
+  SAFE.STRING(cookie.name) AS cookie_name
 FROM cookies
 WHERE firstparty_host LIKE '%' || cookie_host
 GROUP BY

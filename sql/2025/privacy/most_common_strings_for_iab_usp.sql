@@ -5,7 +5,7 @@ WITH usp_data AS (
   SELECT
     client,
     page,
-    JSON_VALUE(custom_metrics, '$.privacy.iab_usp.privacy_string.uspString') AS uspString,
+    SAFE.STRING(custom_metrics.privacy.iab_usp.privacy_string.uspString) AS uspString,
     COUNT(DISTINCT page) OVER (PARTITION BY client) AS pages_total
   FROM `httparchive.crawl.pages`
   WHERE

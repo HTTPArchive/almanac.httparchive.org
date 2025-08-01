@@ -6,8 +6,8 @@ WITH response_headers AS (
     LOWER(response_header.name) AS header_name,
     LOWER(response_header.value) AS header_value,
     COUNT(DISTINCT page) OVER (PARTITION BY client) AS total_websites
-  FROM `httparchive.all.requests`,
-    UNNEST(response_headers) response_header
+  FROM `httparchive.crawl.requests`,
+    UNNEST(response_headers) AS response_header
   WHERE
     date = '2025-07-01' AND
     is_root_page = TRUE AND
@@ -18,20 +18,20 @@ meta_tags AS (
   SELECT
     client,
     page,
-    LOWER(JSON_VALUE(meta_node, '$.http-equiv')) AS tag_name,
-    LOWER(JSON_VALUE(meta_node, '$.content')) AS tag_value
+    LOWER(SAFE.STRING(meta_node.`http-equiv`)) AS tag_name,
+    LOWER(SAFE.STRING(meta_node.content)) AS tag_value
   FROM (
     SELECT
       client,
       page,
-      JSON_QUERY(custom_metrics, '$.almanac') AS metrics
+      custom_metrics.other.almanac AS metrics
     FROM `httparchive.crawl.pages`
     WHERE
       date = '2025-07-01' AND
       is_root_page = TRUE
   ),
-    UNNEST(JSON_QUERY_ARRAY(metrics, '$.meta-nodes.nodes')) meta_node
-  WHERE JSON_VALUE(meta_node, '$.http-equiv') IS NOT NULL
+    UNNEST(JSON_QUERY_ARRAY(metrics.`meta-nodes`.nodes)) AS meta_node
+  WHERE SAFE.STRING(meta_node.`http-equiv`) IS NOT NULL
 )
 
 SELECT

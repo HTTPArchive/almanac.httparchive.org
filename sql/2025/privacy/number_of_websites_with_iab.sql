@@ -4,7 +4,7 @@
 WITH privacy_custom_metrics_data AS (
   SELECT
     client,
-    JSON_QUERY(custom_metrics, '$.privacy') AS metrics
+    custom_metrics.privacy AS metrics
   FROM `httparchive.crawl.pages`
   WHERE
     date = '2025-07-01' AND
@@ -47,13 +47,13 @@ FROM (
   FROM (
     SELECT
       client,
-      JSON_VALUE(metrics, '$.iab_tcf_v1.present') = 'true' AS tcfv1,
-      JSON_VALUE(metrics, '$.iab_tcf_v2.present') = 'true' AS tcfv2,
-      JSON_VALUE(metrics, '$.iab_gpp.present') = 'true' AS gpp,
-      JSON_VALUE(metrics, '$.iab_usp.present') = 'true' AS usp,
-      JSON_VALUE(metrics, '$.iab_tcf_v1.compliant_setup') = 'true' AS tcfv1_compliant,
-      JSON_VALUE(metrics, '$.iab_tcf_v2.compliant_setup') = 'true' AS tcfv2_compliant,
-      JSON_VALUE(metrics, '$.iab_gpp.data') IS NOT NULL AS gpp_data
+      SAFE.BOOL(metrics.iab_tcf_v1.present) AS tcfv1,
+      SAFE.BOOL(metrics.iab_tcf_v2.present) AS tcfv2,
+      SAFE.BOOL(metrics.iab_gpp.present) AS gpp,
+      SAFE.BOOL(metrics.iab_usp.present) AS usp,
+      SAFE.BOOL(metrics.iab_tcf_v1.compliant_setup) AS tcfv1_compliant,
+      SAFE.BOOL(metrics.iab_tcf_v2.compliant_setup) AS tcfv2_compliant,
+      metrics.iab_gpp.data IS NOT NULL AS gpp_data
     FROM
       privacy_custom_metrics_data
   )

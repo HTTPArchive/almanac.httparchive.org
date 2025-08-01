@@ -3,10 +3,10 @@
 WITH pages AS (
   SELECT
     client,
-    COUNT(DISTINCT IF(JSON_VALUE(custom_metrics, '$.well-known."/.well-known/gpc.json".found') = 'true', page, NULL)) / COUNT(DISTINCT page) AS pct_pages_well_known,
-    COUNT(DISTINCT IF(JSON_VALUE(custom_metrics, '$.well-known."/.well-known/gpc.json".found') = 'true', page, NULL)) AS number_of_pages_well_known,
-    COUNT(DISTINCT IF(JSON_VALUE(custom_metrics, '$.privacy.navigator_globalPrivacyControl') = 'true', page, NULL)) / COUNT(DISTINCT page) AS pct_pages_js_api,
-    COUNT(DISTINCT IF(JSON_VALUE(custom_metrics, '$.privacy.navigator_globalPrivacyControl') = 'true', page, NULL)) AS number_of_pages_js_api
+    COUNT(DISTINCT IF(SAFE.BOOL(custom_metrics.other.`well-known`.`/.well-known/gpc.json`.found), page, NULL)) / COUNT(DISTINCT page) AS pct_pages_well_known,
+    COUNT(DISTINCT IF(SAFE.BOOL(custom_metrics.other.`well-known`.`/.well-known/gpc.json`.found), page, NULL)) AS number_of_pages_well_known,
+    COUNT(DISTINCT IF(SAFE.BOOL(custom_metrics.privacy.navigator_globalPrivacyControl), page, NULL)) / COUNT(DISTINCT page) AS pct_pages_js_api,
+    COUNT(DISTINCT IF(SAFE.BOOL(custom_metrics.privacy.navigator_globalPrivacyControl), page, NULL)) AS number_of_pages_js_api
   FROM `httparchive.crawl.pages`
   WHERE
     date = '2025-07-01' AND
@@ -19,7 +19,7 @@ headers AS (
     client,
     COUNT(DISTINCT IF(headers.name = 'sec-gpc' AND headers.value = '1', page, NULL)) / COUNT(DISTINCT page) AS pct_pages_headers,
     COUNT(DISTINCT IF(headers.name = 'sec-gpc' AND headers.value = '1', page, NULL)) AS number_of_pages_headers
-  FROM `httparchive.all.requests`,
+  FROM `httparchive.crawl.requests`,
     UNNEST(response_headers) headers
   WHERE
     date = '2025-07-01' AND
