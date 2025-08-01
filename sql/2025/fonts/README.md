@@ -1,4 +1,4 @@
-# 2025 Fonts queries
+# Fonts
 
 ## Resources
 
@@ -48,6 +48,42 @@ query, the query has the following line at the top:
 
 It signalizes that, prior to executing the query, `common.sql` has to be
 inlined.
+
+## Execution
+
+The queries can be executed using the `execute.py` script. First, ensure that
+the Application Default Credentials authorization strategy is configured, and
+that the HTTP Archive project is used as the quota project:
+
+```shell
+gcloud auth application-default login
+gcloud auth application-default set-quota-project httparchive
+```
+
+Second, install the Python prerequisites for the script:
+
+```shell
+pip install -r requirements.txt
+```
+
+The script can be run for all or a subset of the queries as illustrated below:
+
+```shell
+python execute.py
+python execute.py design/*.sql
+python execute.py development/fonts_*.sql
+```
+
+By default, it operates in a dry-run mode: it does not run the queries but
+prints an estimate of the amount of data that would be processed by each query.
+To disable the dry-run mode and actually run the queries, pass the
+`--no-dry-run` option as follows:
+
+```shell
+python execute.py --no-dry-run
+python execute.py --no-dry-run design/*.sql
+python execute.py --no-dry-run development/fonts_*.sql
+```
 
 [Planning document]: https://docs.google.com/document/d/1jVc0vgmAY_lBxryItRBguXxEq77mvbaQ3UpbTweUoSI
 [Results sheet]: https://docs.google.com/spreadsheets/d/1otdu4p_CCI70B4FVzw6k02frStsPMrQoFu7jUim_0Bg
