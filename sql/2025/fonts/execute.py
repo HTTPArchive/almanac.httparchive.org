@@ -14,13 +14,13 @@ PROJECT = "httparchive"
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("path", nargs="*", default=["*/*.sql"])
-    parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument("--no-dry-run", action="store_true")
     arguments = parser.parse_args()
 
-    paths = sorted(path for path in arguments.path for path in Path(".").glob(path))
+    paths = list(path for path in arguments.path for path in Path(".").glob(path))
     width = max(len(str(path)) for path in paths)
 
-    tasks = [{"path": path, "dry_run": arguments.dry_run} for path in paths]
+    tasks = [{"path": path, "dry_run": not arguments.no_dry_run} for path in paths]
     with multiprocessing.Pool(multiprocessing.cpu_count()) as pool:
         for result in pool.imap_unordered(_process, tasks):
             path = result["path"]
@@ -28,7 +28,7 @@ def main():
                 error = result["error"].splitlines()[0]
                 error = ": ".join(error.split(": ")[1:])
                 print(f"{str(path).ljust(width)}: {error}")
-            elif arguments.dry_run:
+            elif not arguments.no_dry_run:
                 size = result["size"] / 1024 / 1024 / 1024 / 1024
                 print(f"{str(path).ljust(width)}: {size:6.2f} Tb")
 
