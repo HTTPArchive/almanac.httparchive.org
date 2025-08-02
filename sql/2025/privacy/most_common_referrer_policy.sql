@@ -1,4 +1,4 @@
-# Most common values for Referrer-Policy (at site level)
+-- Most common values for Referrer-Policy (at site level)
 
 WITH totals AS (
   SELECT

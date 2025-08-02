@@ -1,4 +1,5 @@
-# Percent of websites using a fingerprinting library based on wappalyzer category
+-- Percent of websites using a fingerprinting library based on wappalyzer category
+
 WITH totals AS (
   SELECT
     client,

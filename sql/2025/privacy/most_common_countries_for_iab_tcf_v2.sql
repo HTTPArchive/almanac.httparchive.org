@@ -1,8 +1,8 @@
-# Counts of countries for publishers using IAB Transparency & Consent Framework
-# cf. https://github.com/InteractiveAdvertisingBureau/GDPR-Transparency-and-Consent-Framework/blob/master/TCFv2/IAB%20Tech%20Lab%20-%20CMP%20API%20v2.md#tcdata
-# "Country code of the country that determines the legislation of
-#  reference.  Normally corresponds to the country code of the country
-#  in which the publisher's business entity is established."
+-- Counts of countries for publishers using IAB Transparency & Consent Framework
+-- cf. https://github.com/InteractiveAdvertisingBureau/GDPR-Transparency-and-Consent-Framework/blob/master/TCFv2/IAB%20Tech%20Lab%20-%20CMP%20API%20v2.md--tcdata
+-- "Country code of the country that determines the legislation of
+--  reference.  Normally corresponds to the country code of the country
+--  in which the publisher's business entity is established."
 
 WITH totals AS (
   SELECT

@@ -1,5 +1,4 @@
-#standardSQL
-# Privacy Sandbox Attestation and Related Websites JSON status (i.e., advertisers) registered, registering third-parties, and registering publishers (at site level)
+-- Privacy Sandbox Attestation and Related Websites JSON status (i.e., advertisers) registered, registering third-parties, and registering publishers (at site level)
 
 WITH wellknown AS (
   SELECT

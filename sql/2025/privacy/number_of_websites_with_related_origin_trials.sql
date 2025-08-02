@@ -1,4 +1,5 @@
-# Pages that participate in the privacy-relayed origin trials
+-- Pages that participate in the privacy-relayed origin trials
+
 CREATE TEMP FUNCTION `DECODE_ORIGIN_TRIAL`(token STRING) RETURNS STRING DETERMINISTIC AS (
   SAFE_CONVERT_BYTES_TO_STRING(SUBSTR(SAFE.FROM_BASE64(token), 70))
 );

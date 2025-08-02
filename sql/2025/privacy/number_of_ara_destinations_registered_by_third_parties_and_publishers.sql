@@ -1,5 +1,4 @@
-#standardSQL
-# Number of Attribution Reporting API Destinations (i.e., advertisers) registered, registering third-parties, and registering publishers (at site level)
+-- Number of Attribution Reporting API Destinations (i.e., advertisers) registered, registering third-parties, and registering publishers (at site level)
 
 -- Extracting ARA API source registration details being passed by a given third-party (passed AS "key")
 CREATE TEMP FUNCTION JSON_OBJECT_VALUES(jsonObject JSON, key STRING)

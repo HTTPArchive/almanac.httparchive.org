@@ -1,5 +1,4 @@
-#standardSQL
-# Adoption of different Privacy Sandbox (PS) features by different third-parties and by different publishers
+-- Adoption of different Privacy Sandbox (PS) features by different third-parties and by different publishers
 
 -- Extracting PS APIs being called by a given third-party (passed as "key")
 CREATE TEMP FUNCTION JSON_OBJECT_VALUES(jsonObject JSON, key STRING)

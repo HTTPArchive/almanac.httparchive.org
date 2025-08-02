@@ -1,4 +1,4 @@
-# Pages that provide `/.well-known/gpc.json` for Global Privacy Control
+-- Pages that provide `/.well-known/gpc.json` for Global Privacy Control
 
 WITH pages AS (
   SELECT

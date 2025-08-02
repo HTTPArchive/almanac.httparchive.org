@@ -1,4 +1,5 @@
-# Percent of pages that deploy at least one tracker from each tracker category
+-- Percent of pages that deploy at least one tracker from each tracker category
+
 WITH whotracksme AS (
   SELECT
     domain,

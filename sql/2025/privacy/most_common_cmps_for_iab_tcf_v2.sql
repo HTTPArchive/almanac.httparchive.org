@@ -1,6 +1,6 @@
-# Counts of CMPs using IAB Transparency & Consent Framework
-# cf. https://github.com/InteractiveAdvertisingBureau/GDPR-Transparency-and-Consent-Framework/blob/master/TCFv2/IAB%20Tech%20Lab%20-%20CMP%20API%20v2.md#tcdata
-# CMP vendor list: https://iabeurope.eu/cmp-list/
+-- Counts of CMPs using IAB Transparency & Consent Framework
+-- cf. https://github.com/InteractiveAdvertisingBureau/GDPR-Transparency-and-Consent-Framework/blob/master/TCFv2/IAB%20Tech%20Lab%20-%20CMP%20API%20v2.md--tcdata
+-- CMP vendor list: https://iabeurope.eu/cmp-list/
 
 WITH cmps AS (
   SELECT

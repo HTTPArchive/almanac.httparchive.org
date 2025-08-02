@@ -1,4 +1,5 @@
-# Most common CNAME domains
+-- Most common CNAME domains
+
 CREATE TEMP FUNCTION CONVERT_CNAME_JSON(obj JSON)
 RETURNS ARRAY<STRUCT<origin STRING, cname STRING>>
 LANGUAGE js AS """
@@ -16,8 +17,8 @@ try {
 }
 """;
 
-# Adguard CNAME Trackers source:
-# https://github.com/AdguardTeam/cname-trackers/blob/master/script/src/cloaked-trackers.json
+-- Adguard CNAME Trackers source:
+-- https://github.com/AdguardTeam/cname-trackers/blob/master/script/src/cloaked-trackers.json
 WITH adguard_trackers AS (
   SELECT
     domain

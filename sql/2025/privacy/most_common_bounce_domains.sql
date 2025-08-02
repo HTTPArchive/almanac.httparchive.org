@@ -1,6 +1,7 @@
 -- Detection logic explained:
 -- https://github.com/privacycg/proposals/issues/6
 -- https://github.com/privacycg/nav-tracking-mitigations/blob/main/bounce-tracking-explainer.md
+
 WITH redirect_requests AS (
   SELECT
     client,

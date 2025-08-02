@@ -1,4 +1,5 @@
-# Pages that use Client Hints
+-- Pages that use Client Hints
+
 WITH response_headers AS (
   SELECT
     client,

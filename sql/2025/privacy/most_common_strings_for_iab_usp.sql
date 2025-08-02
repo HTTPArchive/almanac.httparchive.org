@@ -1,5 +1,5 @@
-# Counts of US Privacy String values for websites using IAB US Privacy Framework
-# cf. https://github.com/InteractiveAdvertisingBureau/USPrivacy/blob/master/CCPA/US%20Privacy%20String.md
+-- Counts of US Privacy String values for websites using IAB US Privacy Framework
+-- cf. https://github.com/InteractiveAdvertisingBureau/USPrivacy/blob/master/CCPA/US%20Privacy%20String.md
 
 WITH usp_data AS (
   SELECT

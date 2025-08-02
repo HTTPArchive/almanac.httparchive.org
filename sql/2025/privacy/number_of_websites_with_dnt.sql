@@ -1,4 +1,4 @@
-# Pages that request DNT status
+-- Pages that request DNT status
 
 WITH blink AS (
   SELECT DISTINCT
