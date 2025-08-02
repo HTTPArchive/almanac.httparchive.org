@@ -5,8 +5,8 @@ import re
 import multiprocessing
 from pathlib import Path
 
-import google.auth
-from google.cloud import bigquery
+import google.auth  # pylint: disable=import-error
+from google.cloud import bigquery  # pylint: disable=import-error
 
 PROJECT = "httparchive"
 
