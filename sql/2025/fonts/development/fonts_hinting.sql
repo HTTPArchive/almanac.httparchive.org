@@ -4,7 +4,7 @@
 
 -- INCLUDE https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/2025/fonts/common.sql
 
-CREATE TEMPORARY FUNCTION IS_HINTED(payload STRING) AS (
+CREATE TEMPORARY FUNCTION IS_HINTED(payload JSON) AS (
   REGEXP_CONTAINS(
     TO_JSON_STRING(payload._font_details.table_sizes),
     '(?i)fpgm|prep'
@@ -12,7 +12,7 @@ CREATE TEMPORARY FUNCTION IS_HINTED(payload STRING) AS (
 );
 
 
-CREATE TEMPORARY FUNCTION IS_AUTOHINTED(payload STRING) AS (
+CREATE TEMPORARY FUNCTION IS_AUTOHINTED(payload JSON) AS (
   REGEXP_CONTAINS(
     STRING(JSON_QUERY(payload, '$._font_details.names[5]')),
     'autohint'
