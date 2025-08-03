@@ -2,7 +2,7 @@
 -- Question: How prevalent is kerning support?
 -- Normalization: Fonts (parsed only)
 
--- INCLUDE https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/2025/fonts/common.sql
+-- INCLUDE https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/{year}/fonts/common.sql
 
 CREATE TEMPORARY FUNCTION HAS_KERNING(data STRING)
 RETURNS BOOL

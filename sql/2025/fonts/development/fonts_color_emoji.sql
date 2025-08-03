@@ -2,7 +2,7 @@
 -- Question: Are color fonts used for the sake of emojis?
 -- Normalization: Requests (color only)
 
--- INCLUDE https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/2025/fonts/common.sql
+-- INCLUDE https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/{year}/fonts/common.sql
 
 CREATE TEMPORARY FUNCTION HAS_EMOJI(codepoints ARRAY<STRING>)
 RETURNS BOOL

@@ -2,7 +2,7 @@
 -- Question: Which families are used broken down by script?
 -- Normalization: Requests (parsed only)
 
--- INCLUDE https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/2025/fonts/common.sql
+-- INCLUDE https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/{year}/fonts/common.sql
 
 WITH
 requests AS (

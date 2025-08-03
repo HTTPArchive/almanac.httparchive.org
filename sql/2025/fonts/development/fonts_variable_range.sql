@@ -2,7 +2,7 @@
 -- Question: What are the distributions of axes?
 -- Normalization: Fonts (variable only)
 
--- INCLUDE https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/2025/fonts/common.sql
+-- INCLUDE https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/{year}/fonts/common.sql
 
 CREATE TEMPORARY FUNCTION AXES(json STRING)
 RETURNS ARRAY<STRUCT<name STRING, minimum FLOAT64, medium FLOAT64, maximum FLOAT64>>

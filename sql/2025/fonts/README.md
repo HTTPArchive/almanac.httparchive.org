@@ -43,7 +43,7 @@ functions appear in several queries are extracted into a common file:
 query, the query has the following line at the top:
 
 ```sql
--- INCLUDE https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/2025/fonts/common.sql
+-- INCLUDE https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/{year}/fonts/common.sql
 ```
 
 It signalizes that, prior to executing the query, `common.sql` has to be
