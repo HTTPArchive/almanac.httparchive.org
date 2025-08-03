@@ -36,7 +36,7 @@ fonts AS (
     `httparchive.crawl.requests`,
     UNNEST(AXES(TO_JSON_STRING(payload._font_details.fvar))) AS axis
   WHERE
-    date = '2025-07-01' AND
+    date = @date AND
     type = 'font' AND
     is_root_page AND
     IS_VARIABLE(payload)

@@ -32,7 +32,7 @@ properties AS (
     `httparchive.crawl.parsed_css`,
     UNNEST(PROPERTIES(css)) AS property
   WHERE
-    date = '2025-07-01' AND
+    date = @date AND
     is_root_page
   GROUP BY
     client,
@@ -46,7 +46,7 @@ pages AS (
   FROM
     `httparchive.crawl.requests`
   WHERE
-    date = '2025-07-01' AND
+    date = @date AND
     is_root_page
   GROUP BY
     client

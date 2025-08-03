@@ -16,7 +16,7 @@ requests AS (
   FROM
     `httparchive.crawl.requests`
   WHERE
-    date = '2025-07-01' AND
+    date = @date AND
     type = 'font' AND
     is_root_page
 )

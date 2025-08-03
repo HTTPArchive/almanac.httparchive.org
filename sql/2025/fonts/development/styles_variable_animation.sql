@@ -45,7 +45,7 @@ properties AS (
   FROM
     `httparchive.crawl.parsed_css`
   WHERE
-    date = '2025-07-01' AND
+    date = @date AND
     is_root_page AND
     HAS_ANIMATION(css)
   GROUP BY
@@ -59,7 +59,7 @@ pages AS (
   FROM
     `httparchive.crawl.requests`
   WHERE
-    date = '2025-07-01' AND
+    date = @date AND
     is_root_page
   GROUP BY
     client

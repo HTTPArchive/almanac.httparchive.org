@@ -9,6 +9,13 @@ import google.auth  # pylint: disable=import-error
 from google.cloud import bigquery  # pylint: disable=import-error
 
 PROJECT = "httparchive"
+PARAMETERS = [
+    bigquery.ScalarQueryParameter(
+        "date",
+        "DATE",
+        "2025-07-01",
+    ),
+]
 
 
 def main():
@@ -56,8 +63,9 @@ def _extract(query: str, dry_run: bool) -> dict:
         project=PROJECT,
     )
     config = bigquery.QueryJobConfig(
+        query_parameters=PARAMETERS,
+        use_query_cache=not dry_run,
         dry_run=dry_run,
-        use_query_cache=False,
     )
     try:
         job = client.query(query, job_config=config)
