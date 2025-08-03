@@ -91,4 +91,4 @@ JOIN
 USING (client)
 ORDER BY
   client,
-  proportion DESC
+  count DESC

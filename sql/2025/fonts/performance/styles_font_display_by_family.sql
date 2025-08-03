@@ -93,4 +93,4 @@ USING (client)
 ORDER BY
   client,
   property,
-  proportion DESC
+  count DESC
