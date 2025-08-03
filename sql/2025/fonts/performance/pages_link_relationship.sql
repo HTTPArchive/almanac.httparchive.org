@@ -2,7 +2,7 @@
 -- Question: What is the usage of link relationship in HTML?
 -- Normalization: Pages
 
--- INCLUDE https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/2025/fonts/common.sql
+-- INCLUDE https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/{year}/fonts/common.sql
 
 CREATE TEMPORARY FUNCTION HINTS(json STRING)
 RETURNS ARRAY<STRUCT<name STRING, type STRING, url STRING>>

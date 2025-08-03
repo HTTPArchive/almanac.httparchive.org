@@ -2,7 +2,7 @@
 -- Question: What is the distribution of the file size broken down by country?
 -- Normalization: Requests (parsed only)
 
--- INCLUDE https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/2025/fonts/common.sql
+-- INCLUDE https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/{year}/fonts/common.sql
 
 WITH
 countries AS (
