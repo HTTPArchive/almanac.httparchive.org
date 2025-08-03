@@ -58,7 +58,7 @@ families AS (
     `httparchive.crawl.parsed_css`,
     UNNEST(FAMILIES(css)) AS family
   WHERE
-    date = '2025-07-01' AND
+    date = @date AND
     is_root_page
   GROUP BY
     client,
@@ -72,7 +72,7 @@ pages AS (
   FROM
     `httparchive.crawl.requests`
   WHERE
-    date = '2025-07-01' AND
+    date = @date AND
     is_root_page
   GROUP BY
     client
