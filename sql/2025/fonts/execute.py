@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 
 import argparse
-import re
 import multiprocessing
+import re
 from pathlib import Path
 
 import google.auth  # pylint: disable=import-error
@@ -45,7 +45,7 @@ def main():
                 error = result["error"].splitlines()[0]
                 error = ": ".join(error.split(": ")[1:])
                 print(f"{str(path).ljust(width)}: {error}")
-            elif not arguments.no_dry_run:
+            elif "size" in result:
                 size = result["size"] / 1024 / 1024 / 1024 / 1024
                 print(f"{str(path).ljust(width)}: {size:6.2f} TB")
 
