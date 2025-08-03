@@ -7,7 +7,7 @@ SELECT
   client,
   COUNT(DISTINCT IF(type = 'font', page, NULL)) AS count,
   COUNT(DISTINCT page) AS total,
-  COUNT(DISTINCT IF(type = 'font', page, NULL)) / COUNT(DISTINCT page) AS proportion
+  ROUND(COUNT(DISTINCT IF(type = 'font', page, NULL)) / COUNT(DISTINCT page), @precision) AS proportion
 FROM
   `httparchive.crawl.requests`
 WHERE

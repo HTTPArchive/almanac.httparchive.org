@@ -84,7 +84,7 @@ SELECT
   family,
   count,
   total,
-  count / total AS proportion
+  ROUND(count / total, @precision) AS proportion
 FROM
   properties
 JOIN

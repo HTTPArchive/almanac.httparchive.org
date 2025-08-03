@@ -34,7 +34,7 @@ SELECT
   LICENSE(STRING(JSON_QUERY(payload, '$._font_details.names[14]'))) AS license,
   COUNT(DISTINCT page) AS count,
   total,
-  COUNT(DISTINCT page) / total AS proportion,
+  ROUND(COUNT(DISTINCT page) / total, @precision) AS proportion,
   ROW_NUMBER() OVER (PARTITION BY client ORDER BY COUNT(DISTINCT page) DESC) AS rank
 FROM
   `httparchive.crawl.requests`

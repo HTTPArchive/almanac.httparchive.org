@@ -84,7 +84,7 @@ SELECT
   hint,
   count,
   total,
-  count / total AS proportion
+  ROUND(count / total, @precision) AS proportion
 FROM
   hints
 LEFT JOIN

@@ -28,7 +28,7 @@ SELECT
   script,
   COUNT(DISTINCT url) AS count,
   total,
-  COUNT(DISTINCT url) / total AS proportion
+  ROUND(COUNT(DISTINCT url) / total, @precision) AS proportion
 FROM
   fonts,
   UNNEST(scripts) AS script
