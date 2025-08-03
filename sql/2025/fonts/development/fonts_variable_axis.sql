@@ -39,7 +39,7 @@ SELECT
   axis,
   COUNT(0) AS count,
   total,
-  COUNT(0) / total AS proportion
+  ROUND(COUNT(0) / total, @precision) AS proportion
 FROM
   fonts,
   UNNEST(axes) AS axis

@@ -58,7 +58,7 @@ SELECT
   services,
   count,
   total,
-  count / total AS proportion
+  ROUND(count / total, @precision) AS proportion
 FROM
   services_2
 JOIN

@@ -38,7 +38,7 @@ SELECT
   IS_AUTOHINTED(payload) AS autohinted,
   COUNT(DISTINCT page) AS count,
   total,
-  COUNT(DISTINCT page) / total AS proportion
+  ROUND(COUNT(DISTINCT page) / total, @precision) AS proportion
 FROM
   `httparchive.crawl.requests`
 INNER JOIN

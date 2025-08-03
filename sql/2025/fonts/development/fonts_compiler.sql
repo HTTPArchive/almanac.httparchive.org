@@ -39,7 +39,7 @@ SELECT
   compiler,
   COUNT(DISTINCT url) AS count,
   total,
-  COUNT(DISTINCT url) / total AS proportion,
+  ROUND(COUNT(DISTINCT url) / total, @precision) AS proportion,
   ROW_NUMBER() OVER (PARTITION BY client ORDER BY COUNT(DISTINCT url) DESC) AS rank
 FROM
   fonts

@@ -24,7 +24,7 @@ SELECT
   family,
   COUNT(0) AS count,
   total,
-  COUNT(0) / total AS proportion,
+  ROUND(COUNT(0) / total, @precision) AS proportion,
   ROW_NUMBER() OVER (PARTITION BY client ORDER BY COUNT(0) DESC) AS rank
 FROM
   requests

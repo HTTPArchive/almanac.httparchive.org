@@ -20,6 +20,11 @@ PARAMETERS = [
         "DATE",
         ["2022-07-01", "2023-07-01", "2024-07-01", "2025-07-01"],
     ),
+    bigquery.ScalarQueryParameter(
+        "precision",
+        "INT64",
+        4,
+    ),
 ]
 
 

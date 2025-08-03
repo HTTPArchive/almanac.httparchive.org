@@ -30,7 +30,7 @@ SELECT
   family,
   COUNT(0) AS count,
   total,
-  COUNT(0) / total AS proportion,
+  ROUND(COUNT(0) / total, @precision) AS proportion,
   ANY_VALUE(url) AS example
 FROM
   fonts,

@@ -30,8 +30,8 @@ SELECT
   COUNT(DISTINCT url) AS count_secondary,
   total,
   total_secondary,
-  COUNT(0) / total AS proportion,
-  COUNT(DISTINCT url) / total_secondary AS proportion_secondary
+  ROUND(COUNT(0) / total, @precision) AS proportion,
+  ROUND(COUNT(DISTINCT url) / total_secondary, @precision) AS proportion_secondary
 FROM
   requests
 GROUP BY
