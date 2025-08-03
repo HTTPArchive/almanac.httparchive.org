@@ -13,7 +13,7 @@ pages AS (
   FROM
     `httparchive.crawl.requests`
   WHERE
-    date IN ('2022-07-01', '2023-07-01', '2024-07-01', '2025-07-01') AND
+    date IN UNNEST(@dates) AND
     is_root_page
   GROUP BY
     date,
@@ -33,7 +33,7 @@ INNER JOIN
   pages
 USING (date, client)
 WHERE
-  date IN ('2022-07-01', '2023-07-01', '2024-07-01', '2025-07-01') AND
+  date IN UNNEST(@dates) AND
   type = 'font' AND
   is_root_page
 GROUP BY

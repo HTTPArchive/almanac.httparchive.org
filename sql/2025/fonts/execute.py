@@ -15,6 +15,11 @@ PARAMETERS = [
         "DATE",
         "2025-07-01",
     ),
+    bigquery.ArrayQueryParameter(
+        "dates",
+        "DATE",
+        ["2022-07-01", "2023-07-01", "2024-07-01", "2025-07-01"],
+    ),
 ]
 
 
