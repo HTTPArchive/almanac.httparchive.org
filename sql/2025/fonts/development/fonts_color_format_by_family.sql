@@ -43,4 +43,4 @@ GROUP BY
 ORDER BY
   client,
   format,
-  proportion DESC
+  count DESC

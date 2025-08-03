@@ -41,4 +41,4 @@ QUALIFY
   rank <= 10
 ORDER BY
   client,
-  proportion DESC
+  count DESC

@@ -44,4 +44,4 @@ GROUP BY
 ORDER BY
   date,
   client,
-  proportion DESC
+  count DESC

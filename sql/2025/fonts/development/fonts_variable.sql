@@ -51,4 +51,4 @@ USING (date, client)
 ORDER BY
   date,
   client,
-  proportion DESC
+  count DESC

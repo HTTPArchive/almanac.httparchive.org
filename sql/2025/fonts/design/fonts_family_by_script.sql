@@ -43,4 +43,4 @@ QUALIFY
 ORDER BY
   client,
   script,
-  proportion DESC
+  count DESC

@@ -50,4 +50,4 @@ JOIN
 USING (date, client)
 ORDER BY
   date,
-  proportion DESC
+  count DESC

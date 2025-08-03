@@ -37,4 +37,4 @@ GROUP BY
   total
 ORDER BY
   client,
-  proportion DESC
+  count DESC

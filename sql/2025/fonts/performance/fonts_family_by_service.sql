@@ -40,4 +40,4 @@ QUALIFY
 ORDER BY
   client,
   service,
-  proportion DESC
+  count DESC
