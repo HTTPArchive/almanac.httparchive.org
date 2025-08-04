@@ -51,9 +51,9 @@ SELECT
   name,
   percentile,
   COUNT(0) AS count,
-  APPROX_QUANTILES(minimum, 1000)[OFFSET(percentile * 10)] AS minimum,
-  APPROX_QUANTILES(medium, 1000)[OFFSET(percentile * 10)] AS medium,
-  APPROX_QUANTILES(maximum, 1000)[OFFSET(percentile * 10)] AS maximum
+  ROUND(APPROX_QUANTILES(minimum, 1000)[OFFSET(percentile * 10)], @precision) AS minimum,
+  ROUND(APPROX_QUANTILES(medium, 1000)[OFFSET(percentile * 10)], @precision) AS medium,
+  ROUND(APPROX_QUANTILES(maximum, 1000)[OFFSET(percentile * 10)], @precision) AS maximum
 FROM
   fonts,
   UNNEST([10, 25, 50, 75, 90, 99]) AS percentile
