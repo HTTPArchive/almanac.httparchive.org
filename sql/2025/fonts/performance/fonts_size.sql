@@ -9,7 +9,7 @@ fonts AS (
   SELECT
     client,
     url,
-    INT64(ANY_VALUE(summary).respBodySize) AS size
+    SAFE.INT64(ANY_VALUE(summary).respBodySize) AS size
   FROM
     `httparchive.crawl.requests`
   WHERE

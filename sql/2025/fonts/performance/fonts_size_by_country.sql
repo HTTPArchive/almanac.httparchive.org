@@ -24,7 +24,7 @@ requests AS (
   SELECT
     client,
     NET.HOST(page) AS domain,
-    INT64(summary.respBodySize) AS size
+    SAFE.INT64(summary.respBodySize) AS size
   FROM
     `httparchive.crawl.requests`
   WHERE
