@@ -42,6 +42,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("path", nargs="*", default=["*/*.sql"])
     parser.add_argument("--no-dry-run", action="store_true")
+    parser.add_argument("--workers", type=int, default=multiprocessing.cpu_count())
     arguments = parser.parse_args()
 
     paths = list(
@@ -53,7 +54,7 @@ def main():
     width = max(len(str(path)) for path in paths) + 1
 
     tasks = [{"path": path, "dry_run": not arguments.no_dry_run} for path in paths]
-    with multiprocessing.Pool(multiprocessing.cpu_count()) as pool:
+    with multiprocessing.Pool(arguments.workers) as pool:
         for result in pool.imap_unordered(_process, tasks):
             task = result["task"]
             path = task["path"]
