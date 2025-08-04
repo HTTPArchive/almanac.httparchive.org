@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import argparse
+import builtins
 import multiprocessing
 import re
 from pathlib import Path
@@ -85,7 +86,7 @@ def _process(task: dict) -> dict:
                 data = _bigquery_read(query["content"])
                 data.to_csv(path, index=False)
                 result["successes"].append(f"wrote {path}")
-        except Exception as error:
+        except builtins.Exception as error:
             result["errors"].append(str(error))
             return result
 
@@ -100,7 +101,7 @@ def _process(task: dict) -> dict:
         if not _sheets_exists(sheet):
             _sheets_write(data, query["metadata"], sheet)
             result["successes"].append(f"updated “{sheet}”")
-    except Exception as error:
+    except builtins.Exception as error:
         result["errors"].append(str(error))
         return result
 
@@ -156,6 +157,7 @@ def _sheets_prepare(metadata: dict) -> str:
 def _sheets_write(data: pd.DataFrame, metadata: dict, name: str) -> dict:
     credentials, _ = google.auth.default()
     service = build("sheets", "v4", credentials=credentials)
+    data = data.where(pd.notnull(data), None)
     values = [
         ["Section", metadata["Section"]],
         ["Question", metadata["Question"]],
