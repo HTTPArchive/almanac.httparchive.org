@@ -44,7 +44,12 @@ def main():
     parser.add_argument("--no-dry-run", action="store_true")
     arguments = parser.parse_args()
 
-    paths = list(path for path in arguments.path for path in Path(".").glob(path))
+    paths = list(
+        path
+        for path in arguments.path
+        for path in Path(".").glob(path)
+        if path.suffix == ".sql"
+    )
     width = max(len(str(path)) for path in paths) + 1
 
     tasks = [{"path": path, "dry_run": not arguments.no_dry_run} for path in paths]
@@ -52,8 +57,8 @@ def main():
         for result in pool.imap_unordered(_process, tasks):
             task = result["task"]
             path = task["path"]
-            if result["errors"]:
-                messages = result["errors"]
+            if result["failures"]:
+                messages = result["failures"]
             elif result["successes"]:
                 messages = result["successes"]
             else:
@@ -69,7 +74,7 @@ def main():
 
 
 def _process(task: dict) -> dict:
-    result = {"task": task, "errors": [], "successes": []}
+    result = {"task": task, "failures": [], "successes": []}
 
     query = _query_read(task["path"])
 
@@ -86,7 +91,7 @@ def _process(task: dict) -> dict:
                 data.to_csv(path, index=False)
                 result["successes"].append(f"wrote {path}")
         except Exception as error:
-            result["errors"].append(str(error))
+            result["failures"].append(str(error))
             return result
 
     data = pd.read_csv(path, dtype=str)
@@ -101,8 +106,7 @@ def _process(task: dict) -> dict:
             _sheets_write(data, query["metadata"], sheet)
             result["successes"].append(f"updated “{sheet}”")
     except Exception as error:
-        result["errors"].append(str(error))
-        return result
+        result["failures"].append(str(error))
 
     return result
 
