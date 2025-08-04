@@ -11,7 +11,7 @@ fonts AS (
     url,
     SERVICE(url) AS service,
     FILE_FORMAT(STRING(ANY_VALUE(summary).ext), STRING(ANY_VALUE(summary).mimeType)) AS format,
-    INT64(ANY_VALUE(summary).respBodySize) AS size
+    SAFE.INT64(ANY_VALUE(summary).respBodySize) AS size
   FROM
     `httparchive.crawl.requests`
   WHERE
