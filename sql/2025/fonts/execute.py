@@ -50,33 +50,69 @@ def main():
     tasks = [{"path": path, "dry_run": not arguments.no_dry_run} for path in paths]
     with multiprocessing.Pool(multiprocessing.cpu_count()) as pool:
         for result in pool.imap_unordered(_process, tasks):
-            path = result["path"]
-            if "error" in result:
-                error = result["error"].splitlines()[0]
-                error = ": ".join(error.split(": ")[1:])
-                print(f"{str(path).ljust(width)}: {error}")
-            elif "size" in result:
-                size = result["size"] / 1024 / 1024 / 1024 / 1024
-                print(f"{str(path).ljust(width)}: {size:6.2f} TB")
+            task = result["task"]
+            path = task["path"]
+            if result["errors"]:
+                outcome = ", ".join(result["errors"])
+            elif result["successes"]:
+                outcome = ", ".join(result["successes"])
+            else:
+                outcome = "skipped"
+            print(f"{str(path).ljust(width)}: {outcome}")
 
 
 def _process(task: dict) -> dict:
+    result = {"task": task, "errors": [], "successes": []}
+
     query = _query_read(task["path"])
 
     # If there is a CSV file, just use it without questions.
     path = task["path"].with_suffix(".csv")
     if not path.exists():
-        result = _bigquery_read(query["content"], task["dry_run"])
-        if "data" not in result:
-            return {**task, **result}
-        result["data"].to_csv(path, index=False)
+        try:
+            if task["dry_run"]:
+                size = _bigquery_estimate(query["content"])
+                result["successes"].append(f"estimated {size:5.2f} TB")
+                return result
+            else:
+                data = _bigquery_read(query["content"])
+                data.to_csv(path, index=False)
+                result["successes"].append(f"wrote {path}")
+        except Exception as error:
+            result["errors"].append(str(error))
+            return result
 
     data = pd.read_csv(path, dtype=str)
-    result = _sheets_write(data, query["metadata"], task["dry_run"])
-    return {**task, **result}
+
+    if task["dry_run"]:
+        return result
+
+    try:
+        sheet = _sheets_prepare(query["metadata"])
+        # If A1 is populated, skip writing.
+        if not _sheets_exists(sheet):
+            _sheets_write(data, query["metadata"], sheet)
+            result["successes"].append(f"updated “{sheet}”")
+    except Exception as error:
+        result["errors"].append(str(error))
+        return result
+
+    return result
 
 
-def _bigquery_read(query: str, dry_run: bool) -> dict:
+def _bigquery_estimate(query: str) -> float:
+    credentials, _ = google.auth.default()
+    client = bigquery.Client(credentials=credentials, project=PROJECT_ID)
+    config = bigquery.QueryJobConfig(
+        query_parameters=QUERY_PARAMETERS,
+        use_query_cache=False,
+        dry_run=True,
+    )
+    job = client.query(query, job_config=config)
+    return job.total_bytes_processed / 1024 / 1024 / 1024 / 1024
+
+
+def _bigquery_read(query: str) -> pd.DataFrame:
     credentials, _ = google.auth.default()
     client = bigquery.Client(
         credentials=credentials,
@@ -84,49 +120,55 @@ def _bigquery_read(query: str, dry_run: bool) -> dict:
     )
     config = bigquery.QueryJobConfig(
         query_parameters=QUERY_PARAMETERS,
-        use_query_cache=not dry_run,
-        dry_run=dry_run,
+        use_query_cache=True,
     )
-    try:
-        job = client.query(query, job_config=config)
-        if dry_run:
-            return {"size": job.total_bytes_processed}
-        return {"data": job.to_dataframe()}
-    except Exception as error:
-        return {"error": str(error)}
+    job = client.query(query, job_config=config)
+    return job.to_dataframe()
 
 
-def _sheets_write(
-    data: pd.DataFrame,
-    metadata: dict,
-    dry_run: bool,
-) -> dict:
-    if dry_run:
-        return {}
-
+def _sheets_exists(name: str) -> bool:
     credentials, _ = google.auth.default()
     service = build("sheets", "v4", credentials=credentials)
-
-    sheet_name = metadata["Section"] + ": " + metadata["Question"]
-    sheet_id = _sheets_find(service, sheet_name) or _sheets_create(service, sheet_name)
-
-    # Do not do anything if A1 is not empty.
     result = (
         service.spreadsheets()
         .values()
-        .get(spreadsheetId=SPREADSHEET_ID, range=f"'{sheet_name}'!A1")
+        .get(spreadsheetId=SPREADSHEET_ID, range=f"'{name}'!A1")
         .execute()
     )
-    if "values" in result and result["values"][0][0]:
-        return {}
+    return "values" in result and result["values"][0][0]
 
-    return {}
+
+def _sheets_prepare(metadata: dict) -> str:
+    credentials, _ = google.auth.default()
+    service = build("sheets", "v4", credentials=credentials)
+    name = metadata["Section"] + ": " + metadata["Question"]
+    _ = _sheets_find(service, name) or _sheets_create(service, name)
+    return name
+
+
+def _sheets_write(data: pd.DataFrame, metadata: dict, name: str) -> dict:
+    credentials, _ = google.auth.default()
+    service = build("sheets", "v4", credentials=credentials)
+    values = [
+        ["Section", metadata["Section"]],
+        ["Question", metadata["Question"]],
+        ["Normalization", metadata["Normalization"]],
+        [],
+        data.columns.tolist(),
+        *data.values.tolist(),
+    ]
+    service.spreadsheets().values().update(
+        spreadsheetId=SPREADSHEET_ID,
+        range=f"'{name}'!A1",
+        valueInputOption="RAW",
+        body={"values": values},
+    ).execute()
 
 
 def _sheets_create(
     service: "Service",
     name: str,
-    column_count: int = 10,
+    column_count: int = 20,
     row_count: int = 1000,
 ) -> str:
     request = {
