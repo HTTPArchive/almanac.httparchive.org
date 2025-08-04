@@ -4,6 +4,7 @@ import argparse
 import multiprocessing
 import re
 from pathlib import Path
+from typing import Optional
 
 import pandas as pd  # pylint: disable=import-error
 import google.auth  # pylint: disable=import-error
@@ -60,20 +61,22 @@ def main():
 
 
 def _process(task: dict) -> dict:
-    query = _read(task["path"])
+    query = _query_read(task["path"])
 
+    # If there is a CSV file, just use it without questions.
     path = task["path"].with_suffix(".csv")
     if not path.exists():
-        result = _extract(query["content"], task["dry_run"])
+        result = _bigquery_read(query["content"], task["dry_run"])
         if "data" not in result:
             return {**task, **result}
         result["data"].to_csv(path, index=False)
 
-    result = _load(path, query["metadata"], task["dry_run"])
+    data = pd.read_csv(path, dtype=str)
+    result = _sheets_write(data, query["metadata"], task["dry_run"])
     return {**task, **result}
 
 
-def _extract(query: str, dry_run: bool) -> dict:
+def _bigquery_read(query: str, dry_run: bool) -> dict:
     credentials, _ = google.auth.default()
     client = bigquery.Client(
         credentials=credentials,
@@ -93,57 +96,74 @@ def _extract(query: str, dry_run: bool) -> dict:
         return {"error": str(error)}
 
 
-def _load(
-    path: Path,
+def _sheets_write(
+    data: pd.DataFrame,
     metadata: dict,
     dry_run: bool,
-    min_column_count: int = 10,
-    min_row_count: int = 1000,
 ) -> dict:
     if dry_run:
         return {}
 
-    data = pd.read_csv(path, dtype=str)
-
     credentials, _ = google.auth.default()
     service = build("sheets", "v4", credentials=credentials)
-    spreadsheet = service.spreadsheets().get(spreadsheetId=SPREADSHEET_ID).execute()
 
-    sheet_name = str(path.with_suffix(""))
-    sheet_id = next(
-        (
-            sheet["properties"]["sheetId"]
-            for sheet in spreadsheet["sheets"]
-            if sheet["properties"]["title"] == sheet_name
-        ),
-        None,
+    sheet_name = metadata["Section"] + ": " + metadata["Question"]
+    sheet_id = _sheets_find(service, sheet_name) or _sheets_create(service, sheet_name)
+
+    # Do not do anything if A1 is not empty.
+    result = (
+        service.spreadsheets()
+        .values()
+        .get(spreadsheetId=SPREADSHEET_ID, range=f"'{sheet_name}'!A1")
+        .execute()
     )
-    if not sheet_id:
-        request = {
-            "addSheet": {
-                "properties": {
-                    "title": sheet_name,
-                    "gridProperties": {
-                        "columnCount": max(len(data.columns), min_column_count),
-                        "rowCount": max(len(metadata) + 1 + len(data), min_row_count),
-                    },
-                }
-            }
-        }
-        response = (
-            service.spreadsheets()
-            .batchUpdate(
-                spreadsheetId=SPREADSHEET_ID,
-                body={"requests": [request]},
-            )
-            .execute()
-        )
-        sheet_id = response["replies"][0]["addSheet"]["properties"]["sheetId"]
+    if "values" in result and result["values"][0][0]:
+        return {}
 
     return {}
 
 
-def _read(path: Path) -> dict:
+def _sheets_create(
+    service: "Service",
+    name: str,
+    column_count: int = 10,
+    row_count: int = 1000,
+) -> str:
+    request = {
+        "addSheet": {
+            "properties": {
+                "title": name,
+                "gridProperties": {
+                    "columnCount": column_count,
+                    "rowCount": row_count,
+                },
+            }
+        }
+    }
+    response = (
+        service.spreadsheets()
+        .batchUpdate(
+            spreadsheetId=SPREADSHEET_ID,
+            body={"requests": [request]},
+        )
+        .execute()
+    )
+    return response["replies"][0]["addSheet"]["properties"]["sheetId"]
+
+
+def _sheets_find(service: "Service", name: str) -> Optional[str]:
+    spreadsheet = service.spreadsheets().get(spreadsheetId=SPREADSHEET_ID).execute()
+    return next(
+        (
+            sheet["properties"]["sheetId"]
+            for sheet in spreadsheet["sheets"]
+            if sheet["properties"]["title"] == name
+        ),
+        None,
+    )
+
+
+def _query_read(path: Path) -> dict:
     lines = []
     metadata = {}
     for line in path.read_text().splitlines():
