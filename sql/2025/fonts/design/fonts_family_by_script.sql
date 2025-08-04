@@ -28,7 +28,7 @@ SELECT
   script,
   family,
   2 * COUNT(0) AS count,
-  2 * total,
+  2 * total AS total,
   ROUND(COUNT(0) / total, @precision) AS proportion,
   ROW_NUMBER() OVER (PARTITION BY client, script ORDER BY COUNT(0) DESC) AS rank
 FROM
