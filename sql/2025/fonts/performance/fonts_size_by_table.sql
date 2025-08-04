@@ -38,7 +38,7 @@ SELECT
   table.name AS table,
   percentile,
   COUNT(0) AS count,
-  ROUND(APPROX_QUANTILES(size, 1000)[OFFSET(percentile * 10)]) AS size
+  CAST(APPROX_QUANTILES(size, 1000)[OFFSET(percentile * 10)] AS INT64) AS size
 FROM
   fonts,
   UNNEST(tables) AS table,

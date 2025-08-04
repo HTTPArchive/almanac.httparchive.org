@@ -38,7 +38,7 @@ SELECT
   client,
   country,
   COUNT(0) AS count,
-  ROUND(APPROX_QUANTILES(size, 1000)[OFFSET(500)]) AS size
+  CAST(APPROX_QUANTILES(size, 1000)[OFFSET(500)] AS INT64) AS size
 FROM
   requests
 INNER JOIN
