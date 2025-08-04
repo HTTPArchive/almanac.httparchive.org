@@ -13,16 +13,19 @@ from googleapiclient.discovery import build  # pylint: disable=import-error
 PROJECT_ID = "httparchive"
 
 QUERY_PARAMETERS = [
+    # The date of the crawl used for the analysis.
     bigquery.ScalarQueryParameter(
         "date",
         "DATE",
         "2025-07-01",
     ),
+    # A set of dates for queries studying trends over time.
     bigquery.ArrayQueryParameter(
         "dates",
         "DATE",
         ["2022-07-01", "2023-07-01", "2024-07-01", "2025-07-01"],
     ),
+    # The number of digits after the decimal point for formatting proportions.
     bigquery.ScalarQueryParameter(
         "precision",
         "INT64",
@@ -30,6 +33,7 @@ QUERY_PARAMETERS = [
     ),
 ]
 
+# The spreadsheet with results for the corresponding edition.
 SPREADSHEET_ID = "1otdu4p_CCI70B4FVzw6k02frStsPMrQoFu7jUim_0Bg"
 
 
@@ -103,7 +107,6 @@ def _load(
 
     credentials, _ = google.auth.default()
     service = build("sheets", "v4", credentials=credentials)
-
     spreadsheet = service.spreadsheets().get(spreadsheetId=SPREADSHEET_ID).execute()
 
     sheet_name = str(path.with_suffix(""))
