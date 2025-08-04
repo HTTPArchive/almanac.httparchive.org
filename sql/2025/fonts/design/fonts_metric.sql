@@ -65,10 +65,13 @@ SELECT
   name AS metric,
   percentile,
   COUNT(0) AS count,
-  APPROX_QUANTILES(
-    IF(name = 'granularity', value, SAFE_DIVIDE(value, granularity)),
-    1000
-  )[OFFSET(percentile * 10)] AS value
+  ROUND(
+    APPROX_QUANTILES(
+      IF(name = 'granularity', value, SAFE_DIVIDE(value, granularity)),
+      1000
+    )[OFFSET(percentile * 10)],
+    @precision
+  ) AS value
 FROM
   fonts,
   UNNEST(metrics) AS metric,
