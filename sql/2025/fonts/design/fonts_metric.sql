@@ -1,4 +1,4 @@
--- Section: Performance
+-- Section: Design
 -- Question: What is the distribution of metrics?
 -- Normalization: Fonts (parsed only)
 
