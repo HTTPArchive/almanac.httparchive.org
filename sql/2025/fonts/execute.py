@@ -59,9 +59,11 @@ def main():
             task = result["task"]
             path = task["path"]
             if result["failures"]:
-                messages = map(
-                    lambda failure: failure.splitlines()[0],
-                    result["failures"],
+                messages = list(
+                    map(
+                        lambda failure: failure.splitlines()[0],
+                        result["failures"],
+                    )
                 )
             elif result["successes"]:
                 messages = result["successes"]
