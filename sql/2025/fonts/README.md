@@ -47,7 +47,9 @@ All the above is taken take of automatically if the queries are executed using `
 
 ## Execution
 
-The queries can be executed using the `execute.py` script. First, ensure that the Application Default Credentials authorization strategy is configured, and that the HTTP Archive project is used as the quota project:
+The queries can be executed using the `execute.py` script. The results are first saved in local CSV files sitting next to the SQL files and then uploaded to the spreadsheet. In the spreadsheet, for each query, a separate sheet is created and named after the question the query answers, which is given in its preamble. If the CSV file already exists, the corresponding query is not executed. If cell A1 is already populated, the corresponding sheet is not updated.
+
+First, ensure that the Application Default Credentials authorization strategy is configured, and that the HTTP Archive project is used as the quota project:
 
 ```shell
 gcloud auth application-default login \
