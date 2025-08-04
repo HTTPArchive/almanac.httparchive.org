@@ -50,7 +50,8 @@ All the above is taken take of automatically if the queries are executed using `
 The queries can be executed using the `execute.py` script. First, ensure that the Application Default Credentials authorization strategy is configured, and that the HTTP Archive project is used as the quota project:
 
 ```shell
-gcloud auth application-default login
+gcloud auth application-default login \
+  --scopes https://www.googleapis.com/auth/cloud-platform,https://www.googleapis.com/auth/spreadsheets
 gcloud auth application-default set-quota-project httparchive
 ```
 

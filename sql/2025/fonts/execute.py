@@ -5,11 +5,14 @@ import multiprocessing
 import re
 from pathlib import Path
 
+import pandas as pd  # pylint: disable=import-error
 import google.auth  # pylint: disable=import-error
 from google.cloud import bigquery  # pylint: disable=import-error
+from googleapiclient.discovery import build  # pylint: disable=import-error
 
-PROJECT = "httparchive"
-PARAMETERS = [
+PROJECT_ID = "httparchive"
+
+QUERY_PARAMETERS = [
     bigquery.ScalarQueryParameter(
         "date",
         "DATE",
@@ -26,6 +29,8 @@ PARAMETERS = [
         4,
     ),
 ]
+
+SPREADSHEET_ID = "1otdu4p_CCI70B4FVzw6k02frStsPMrQoFu7jUim_0Bg"
 
 
 def main():
@@ -60,20 +65,18 @@ def _process(task: dict) -> dict:
             return {**task, **result}
         result["data"].to_csv(path, index=False)
 
-    result = _load(path)
+    result = _load(path, query["metadata"], task["dry_run"])
     return {**task, **result}
 
 
 def _extract(query: str, dry_run: bool) -> dict:
-    credentials, _ = google.auth.default(
-        scopes=["https://www.googleapis.com/auth/cloud-platform"],
-    )
+    credentials, _ = google.auth.default()
     client = bigquery.Client(
         credentials=credentials,
-        project=PROJECT,
+        project=PROJECT_ID,
     )
     config = bigquery.QueryJobConfig(
-        query_parameters=PARAMETERS,
+        query_parameters=QUERY_PARAMETERS,
         use_query_cache=not dry_run,
         dry_run=dry_run,
     )
@@ -86,7 +89,54 @@ def _extract(query: str, dry_run: bool) -> dict:
         return {"error": str(error)}
 
 
-def _load(path: Path) -> dict:
+def _load(
+    path: Path,
+    metadata: dict,
+    dry_run: bool,
+    min_column_count: int = 10,
+    min_row_count: int = 1000,
+) -> dict:
+    if dry_run:
+        return {}
+
+    data = pd.read_csv(path, dtype=str)
+
+    credentials, _ = google.auth.default()
+    service = build("sheets", "v4", credentials=credentials)
+
+    spreadsheet = service.spreadsheets().get(spreadsheetId=SPREADSHEET_ID).execute()
+
+    sheet_name = str(path.with_suffix(""))
+    sheet_id = next(
+        (
+            sheet["properties"]["sheetId"]
+            for sheet in spreadsheet["sheets"]
+            if sheet["properties"]["title"] == sheet_name
+        ),
+        None,
+    )
+    if not sheet_id:
+        request = {
+            "addSheet": {
+                "properties": {
+                    "title": sheet_name,
+                    "gridProperties": {
+                        "columnCount": max(len(data.columns), min_column_count),
+                        "rowCount": max(len(metadata) + 1 + len(data), min_row_count),
+                    },
+                }
+            }
+        }
+        response = (
+            service.spreadsheets()
+            .batchUpdate(
+                spreadsheetId=SPREADSHEET_ID,
+                body={"requests": [request]},
+            )
+            .execute()
+        )
+        sheet_id = response["replies"][0]["addSheet"]["properties"]["sheetId"]
+
     return {}
 
 
