@@ -53,12 +53,19 @@ def main():
             task = result["task"]
             path = task["path"]
             if result["errors"]:
-                outcome = ", ".join(result["errors"])
+                messages = result["errors"]
             elif result["successes"]:
-                outcome = ", ".join(result["successes"])
+                messages = result["successes"]
             else:
-                outcome = "skipped"
-            print(f"{str(path).ljust(width)}: {outcome}")
+                messages = []
+            if not messages:
+                print(f"{str(path).ljust(width)}: skipped")
+            elif len(messages) == 1:
+                print(f"{str(path).ljust(width)}: {messages[0]}")
+            else:
+                print(f"{path}:")
+                for message in messages:
+                    print(f"  - {message}")
 
 
 def _process(task: dict) -> dict:
