@@ -40,7 +40,7 @@ SELECT
   format,
   percentile,
   COUNT(DISTINCT url) AS count,
-  ROUND(APPROX_QUANTILES(size, 1000)[OFFSET(percentile * 10)]) AS size
+  CAST(APPROX_QUANTILES(size, 1000)[OFFSET(percentile * 10)] AS INT64) AS size
 FROM
   fonts,
   UNNEST([10, 25, 50, 75, 90, 99]) AS percentile
