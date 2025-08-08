@@ -14,7 +14,7 @@ FROM (
     NET.HOST(url) AS host,
     response_headers.value AS coep_header
   FROM
-    `httparchive.all.requests`,
+    `httparchive.crawl.requests`,
     UNNEST(response_headers) AS response_headers
   WHERE
     date = '2025-07-01' AND

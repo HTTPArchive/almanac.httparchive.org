@@ -12,10 +12,10 @@ SELECT
 FROM (
   SELECT
     client,
-    JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._security'), '$.sri-integrity') AS sris,
-    SAFE_CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._element_count'), '$.script') AS INT64) AS num_scripts
+    JSON_EXTRACT_ARRAY(custom_metrics.security, '$.sri-integrity') AS sris,
+    SAFE_CAST(custom_metrics.element_count.script AS INT64) AS num_scripts
   FROM
-    `httparchive.all.pages`
+    `httparchive.crawl.pages`
   WHERE
     date = '2025-07-01' AND
     is_root_page

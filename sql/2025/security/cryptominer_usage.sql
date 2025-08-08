@@ -16,7 +16,7 @@ SELECT
   ) / COUNT(DISTINCT page
   ) AS pct
 FROM
-  `httparchive.all.pages`,
+  `httparchive.crawl.pages`,
   UNNEST(technologies) AS t,
   UNNEST(t.categories) AS category
 WHERE

@@ -12,7 +12,7 @@ FROM (
     client,
     IFNULL(JSON_VALUE(payload, '$._tls_version'), JSON_VALUE(payload, '$._securityDetails.protocol')) AS tls_version
   FROM
-    `httparchive.all.requests`
+    `httparchive.crawl.requests`
   WHERE
     date = '2025-07-01' AND
     is_root_page AND

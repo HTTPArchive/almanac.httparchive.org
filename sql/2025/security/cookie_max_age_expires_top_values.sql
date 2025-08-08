@@ -32,9 +32,9 @@ WITH max_age_values AS (
     client,
     max_age_value
   FROM
-    `httparchive.all.requests`,
+    `httparchive.crawl.requests`,
     UNNEST(response_headers) AS rh,
-    UNNEST(JSON_QUERY_ARRAY(getCookieAgeValues(rh.value, CAST(JSON_QUERY(summary, '$.startedDateTime') AS NUMERIC)), '$.maxAge')) AS max_age_value
+    UNNEST(JSON_QUERY_ARRAY(getCookieAgeValues(rh.value, INT64(summary.startedDateTime))), '$.maxAge') AS max_age_value
   WHERE
     date = '2025-07-01' AND
     is_root_page AND
@@ -48,7 +48,7 @@ expires_values AS (
   FROM
     `httparchive.all.requests`,
     UNNEST(response_headers) AS rh,
-    UNNEST(JSON_QUERY_ARRAY(getCookieAgeValues(rh.value, CAST(JSON_QUERY(summary, '$.startedDateTime') AS NUMERIC)), '$.expires')) AS expires_value
+    UNNEST(JSON_QUERY_ARRAY(getCookieAgeValues(rh.value, INT64(summary.startedDateTime)), '$.expires')) AS expires_value
   WHERE
     date = '2025-07-01' AND
     is_root_page AND

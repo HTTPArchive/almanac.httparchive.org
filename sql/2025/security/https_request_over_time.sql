@@ -7,7 +7,7 @@ SELECT
   client,
   SUM(IF(STARTS_WITH(url, 'https'), 1, 0)) / COUNT(0) AS percent
 FROM
-  `httparchive.all.requests`
+  `httparchive.crawl.requests`
 WHERE
   date >= '2022-06-01' AND
   is_root_page

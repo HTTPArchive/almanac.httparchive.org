@@ -5,12 +5,12 @@
 WITH mimtype_file_ext_pairs AS (
   SELECT
     client,
-    LOWER(JSON_VALUE(summary, '$.mimeType')) AS mimetype,
-    LOWER(JSON_VALUE(summary, '$.ext')) AS file_extension,
+    LOWER(summary.mimeType) AS mimetype,
+    LOWER(summary.ext) AS file_extension,
     SUM(COUNT(0)) OVER (PARTITION BY client) AS total_requests,
     COUNT(0) AS count_pair
   FROM
-    `httparchive.all.requests`
+    `httparchive.crawl.requests`
   WHERE
     date = '2025-07-01' AND
     is_root_page

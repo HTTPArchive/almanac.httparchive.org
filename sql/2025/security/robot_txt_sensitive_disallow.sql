@@ -43,7 +43,7 @@ FROM
       JSON_VALUE(JSON_VALUE(payload, '$._well-known'), '$."/robots.txt".found') AS has_robots_txt,
       getAllDisallowedEndpoints(JSON_VALUE(payload, '$._well-known')) AS disallowed_endpoints
     FROM
-      `httparchive.all.pages`
+      `httparchive.crawl.pages`
     WHERE
       date = '2025-07-01' AND
       is_root_page

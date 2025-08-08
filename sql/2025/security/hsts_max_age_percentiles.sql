@@ -10,7 +10,7 @@ FROM (
     client,
     SAFE_CAST(REGEXP_EXTRACT(response_headers.value, r'(?i)max-age=\s*(-?\d+)') AS NUMERIC) AS max_age
   FROM
-    `httparchive.all.requests`,
+    `httparchive.crawl.requests`,
     UNNEST(response_headers) AS response_headers
   WHERE
     date = '2025-07-01' AND

@@ -16,10 +16,10 @@ FROM (
     NET.HOST(url) AS host,
     response_headers
   FROM
-    `httparchive.all.requests`,
+    `httparchive.crawl.requests`,
     UNNEST(response_headers) AS response_headers
   WHERE
-    (date = '2022-06-09' OR date = '2023-06-01' OR date = '2025-07-01') AND
+    (date = '2022-06-09' OR date = '2023-06-01' OR DATE = '2024-06-01' OR date = '2025-07-01') AND
     NET.HOST(url) = NET.HOST(page)
 ),
   UNNEST([

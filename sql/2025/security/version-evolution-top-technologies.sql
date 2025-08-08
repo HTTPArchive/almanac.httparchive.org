@@ -26,7 +26,7 @@ FROM (
       date,
       client
     FROM
-      `httparchive.all.pages`,
+      `httparchive.crawl.pages`,
       UNNEST(technologies) AS t,
       UNNEST(t.categories) AS category,
       UNNEST(t.info) AS info
@@ -41,7 +41,7 @@ FROM (
       TRIM(LOWER(technology)) AS technology_lower,
       COUNT(0) AS num
     FROM
-      `httparchive.all.pages`,
+      `httparchive.crawl.pages`,
       UNNEST(technologies) AS t,
       UNNEST(t.categories) AS category,
       UNNEST(t.info) AS info

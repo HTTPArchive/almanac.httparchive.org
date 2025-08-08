@@ -14,7 +14,7 @@ FROM (
     NET.HOST(url) AS request_host,
     JSON_VALUE(payload, '$._securityDetails.issuer') AS issuer
   FROM
-    `httparchive.all.requests`
+    `httparchive.crawl.requests`
   WHERE
     date = '2025-07-01' AND
     is_root_page AND

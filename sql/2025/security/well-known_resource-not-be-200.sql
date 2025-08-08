@@ -15,10 +15,10 @@ FROM (
   SELECT
     client,
     page,
-    JSON_QUERY(JSON_VALUE(payload, '$._well-known'), '$."/.well-known/resource-that-should-not-exist-whose-status-code-should-not-be-200/".data.redirected') AS redirected,
-    SAFE_CAST(JSON_VALUE(JSON_VALUE(payload, '$._well-known'), '$."/.well-known/resource-that-should-not-exist-whose-status-code-should-not-be-200/".data.status') AS INT64) AS status
+    JSON_VALUE(custom_metrics.well_known, '$."/.well-known/resource-that-should-not-exist-whose-status-code-should-not-be-200/".data.redirected') AS redirected,
+    SAFE_CAST(JSON_VALUE(custom_metrics.well_known, '$."/.well-known/resource-that-should-not-exist-whose-status-code-should-not-be-200/".data.status') AS INT64) AS status
   FROM
-    `httparchive.all.pages`
+    `httparchive.crawl.pages`
   WHERE
     date = '2025-07-01' AND
     is_root_page

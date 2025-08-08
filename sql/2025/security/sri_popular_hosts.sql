@@ -6,8 +6,8 @@ WITH totals AS (
     client,
     COUNT(0) AS total_sri_scripts
   FROM
-    `httparchive.all.pages`,
-    UNNEST(JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._security'), '$.sri-integrity')) AS sri
+    `httparchive.crawl.pages`,
+    UNNEST(JSON_EXTRACT_ARRAY(custom_metrics.security, '$.sri-integrity')) AS sri
   WHERE
     date = '2025-07-01' AND
     is_root_page AND
@@ -30,9 +30,9 @@ FROM (
   SELECT
     client,
     page AS url,
-    JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._security'), '$.sri-integrity') AS sris
+    JSON_EXTRACT_ARRAY(custom_metrics.security, '$.sri-integrity') AS sris
   FROM
-    `httparchive.all.pages`
+    `httparchive.crawl.pages`
   WHERE
     date = '2025-07-01' AND
     is_root_page

@@ -57,11 +57,9 @@ WITH parsed_server_timing AS (
     JSON_EXTRACT(parseServerTiming(response_headers.value), '$.desc') AS desc1
   FROM
     `httparchive.all.requests`,
-    # `httparchive.sample_data.requests_1k`,
     UNNEST(response_headers) AS response_headers
   WHERE
     date = '2025-07-01' AND
-    # date = '2024-08-01' AND
     is_root_page AND
     LOWER(response_headers.name) = 'server-timing'
 ),
@@ -92,11 +90,9 @@ totals AS (
     COUNT(0) AS total,
     COUNT(DISTINCT NET.HOST(url)) AS total_hosts
   FROM
-    `httparchive.all.requests`
-  # `httparchive.sample_data.requests_1k`
+    `httparchive.crawl.requests`
   WHERE
     date = '2025-07-01' AND
-    # date = '2024-08-01' AND
     is_root_page
   GROUP BY
     client

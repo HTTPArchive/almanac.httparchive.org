@@ -10,9 +10,9 @@ WITH meta_tags AS (
     SELECT
       client,
       page,
-      JSON_VALUE(payload, '$._almanac') AS metrics
+      custom_metrics.other.almanac AS metrics
     FROM
-      `httparchive.all.pages`
+      `httparchive.crawl.pages`
     WHERE
       date = '2025-07-01' AND
       is_root_page
@@ -27,7 +27,7 @@ robot_headers AS (
     url AS page,
     LOWER(response_headers.value) AS robot_header_value
   FROM
-    `httparchive.all.requests`,
+    `httparchive.crawl.requests`,
     UNNEST(response_headers) AS response_headers
   WHERE
     date = '2025-07-01' AND
@@ -41,7 +41,7 @@ totals AS (
     client,
     COUNT(DISTINCT page) AS total_nb_pages
   FROM
-    `httparchive.all.pages`
+    `httparchive.crawl.pages`
   WHERE
     date = '2025-07-01' AND
     is_root_page

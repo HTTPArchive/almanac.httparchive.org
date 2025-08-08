@@ -11,7 +11,7 @@ SELECT
   COUNT(DISTINCT IF(LOWER(rh.name) = LOWER(headername), NET.HOST(url), NULL)) AS num_with_header,
   COUNT(DISTINCT IF(LOWER(rh.name) = LOWER(headername), NET.HOST(url), NULL)) / COUNT(DISTINCT NET.HOST(url)) AS pct_with_header
 FROM
-  `httparchive.all.requests`,
+  `httparchive.crawl.requests`,
   UNNEST([
     'Content-Security-Policy', 'Content-Security-Policy-Report-Only', 'Cross-Origin-Embedder-Policy', 'Cross-Origin-Opener-Policy',
     'Cross-Origin-Resource-Policy', 'Expect-CT', 'Feature-Policy', 'Permissions-Policy', 'Referrer-Policy', 'Report-To',

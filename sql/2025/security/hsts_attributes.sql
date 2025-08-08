@@ -13,9 +13,9 @@ SELECT
 FROM (
   SELECT
     client,
-    REGEXP_EXTRACT(JSON_VALUE(summary, '$.respOtherHeaders'), r'(?i)strict-transport-security =([^,]+)') AS hsts_header_val
+    REGEXP_EXTRACT(summary.respOtherHeaders, r'(?i)strict-transport-security =([^,]+)') AS hsts_header_val
   FROM
-    `httparchive.all.requests`
+    `httparchive.crawl.requests`
   WHERE
     date = '2025-07-01' AND
     is_root_page AND

@@ -8,7 +8,7 @@ SELECT
   COUNT(0) AS freq,
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
 FROM
-  `httparchive.all.pages`,
+  `httparchive.crawl.pages`,
   UNNEST(technologies) AS t,
   UNNEST(t.categories) AS category
 WHERE

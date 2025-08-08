@@ -8,7 +8,7 @@ SELECT
   SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
 FROM
-  `httparchive.all.requests`
+  `httparchive.crawl.requests`
 WHERE
   date = '2025-07-01' AND
   is_root_page AND

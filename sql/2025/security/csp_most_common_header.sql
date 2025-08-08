@@ -13,7 +13,7 @@ FROM (
     client,
     response_headers.value AS csp_header
   FROM
-    `httparchive.all.requests`,
+    `httparchive.crawl.requests`,
     UNNEST(response_headers) AS response_headers
   WHERE
     date = '2025-07-01' AND

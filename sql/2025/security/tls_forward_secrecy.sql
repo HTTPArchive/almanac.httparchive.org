@@ -13,7 +13,7 @@ FROM (
     JSON_VALUE(payload, '$._securityDetails.keyExchange') AS key_exchange,
     JSON_VALUE(payload, '$._securityDetails.protocol') AS protocol
   FROM
-    `httparchive.all.requests`
+    `httparchive.crawl.requests`
   WHERE
     date = '2025-07-01' AND
     is_root_page

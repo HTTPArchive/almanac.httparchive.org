@@ -13,9 +13,9 @@ FROM (
   SELECT
     client,
     page,
-    JSON_VALUE(payload, '$._almanac') AS metrics
+    custom_metrics.other as metrics
   FROM
-    `httparchive.all.pages.`
+    `httparchive.crawl.pages`
   WHERE
     date = '2025-07-01' AND
     is_root_page

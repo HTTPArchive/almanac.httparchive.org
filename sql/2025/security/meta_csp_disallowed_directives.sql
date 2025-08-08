@@ -7,7 +7,7 @@ WITH totals AS (
     client,
     COUNT(0) AS total_pages
   FROM
-    `httparchive.all.requests`
+    `httparchive.crawl.requests`
   WHERE
     date = '2025-07-01' AND
     is_root_page
@@ -27,9 +27,9 @@ FROM (
   SELECT
     client,
     page,
-    JSON_VALUE(payload, '$._almanac') AS metrics
+    custom_metrics.other.almanac as metrics
   FROM
-    `httparchive.all.pages.`
+    `httparchive.crawl.pages`
   WHERE
     date = '2025-07-01' AND
     is_root_page

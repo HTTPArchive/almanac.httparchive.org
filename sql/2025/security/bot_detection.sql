@@ -10,7 +10,7 @@ SELECT
   total,
   COUNT(0) / total AS pct
 FROM
-  `httparchive.all.pages`,
+  `httparchive.crawl.pages`,
   UNNEST(technologies) AS t,
   UNNEST(t.categories) AS category
 JOIN (
@@ -18,7 +18,7 @@ JOIN (
     client,
     COUNT(0) AS total
   FROM
-    `httparchive.all.pages`
+    `httparchive.crawl.pages`
   WHERE
     date = '2025-07-01' AND
     is_root_page

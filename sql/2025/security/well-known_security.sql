@@ -37,9 +37,9 @@ security_txt_data AS (
     SELECT
       client,
       page,
-      JSON_QUERY(custom_metrics, '$.well-known."/.well-known/security.txt"') AS sec_txt
+      JSON_QUERY(custom_metrics.well_known, '$."/.well-known/security.txt"') AS sec_txt
     FROM
-      `httparchive.all.pages`
+      `httparchive.crawl.pages`
     WHERE
       date = '2025-07-01' AND
       is_root_page

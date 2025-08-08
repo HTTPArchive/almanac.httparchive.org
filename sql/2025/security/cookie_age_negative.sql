@@ -39,9 +39,9 @@ WITH age_values AS (
     client,
     page,
     NET.HOST(url) AS host,
-    getCookieAgeValues(response_headers.value, CAST(JSON_QUERY(summary, '$.startedDateTime') AS NUMERIC)) AS values
+    getCookieAgeValues(response_headers.value, INT64(summary.startedDateTime)) AS values
   FROM
-    `httparchive.all.requests`,
+    `httparchive.crawl.requests`,
     UNNEST(response_headers) AS response_headers
   WHERE
     date = '2025-07-01' AND

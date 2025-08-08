@@ -13,7 +13,7 @@ FROM (
     client,
     JSON_VALUE(payload, '$._securityDetails.cipher') AS cipher
   FROM
-    `httparchive.all.requests`
+    `httparchive.crawl.requests`
   WHERE
     date = '2025-07-01' AND
     is_root_page
