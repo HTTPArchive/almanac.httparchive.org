@@ -53,8 +53,7 @@ WITH base AS (
     `chrome-ux-report.materialized.device_summary`
   WHERE
     device IN ('desktop', 'phone') AND
-    -- TODO: Update `date` once CrUX data is available for June 2025.
-    date IN ('2025-05-01')
+    date IN ('2025-07-01')
 ),
 
 tech AS (
@@ -67,7 +66,7 @@ tech AS (
     `httparchive.crawl.pages`,
     UNNEST(technologies) AS t
   WHERE
-    date = '2025-06-01' AND
+    date = '2025-07-01' AND
     is_root_page AND
     EXISTS (
       SELECT 1

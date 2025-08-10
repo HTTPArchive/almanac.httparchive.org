@@ -6,7 +6,7 @@ WITH lh AS (
     `httparchive.crawl.pages`,
     UNNEST(JSON_QUERY_ARRAY(lighthouse.audits.`unsized-images`.details.items)) AS unsized_image
   WHERE
-    date = '2025-06-01' AND
+    date = '2025-07-01' AND
     is_root_page
 )
 

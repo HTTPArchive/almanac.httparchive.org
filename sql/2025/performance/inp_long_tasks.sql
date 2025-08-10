@@ -8,7 +8,7 @@ WITH long_tasks AS (
     `httparchive.crawl.pages`,
     UNNEST(JSON_QUERY_ARRAY(lighthouse.audits.`long-tasks`.details.items)) AS item
   WHERE
-    date = '2025-06-01' AND
+    date = '2025-07-01' AND
     is_root_page
   GROUP BY
     client,

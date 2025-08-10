@@ -6,7 +6,7 @@ SELECT
 FROM
   `chrome-ux-report.materialized.device_summary`
 WHERE
-  date BETWEEN '2022-01-01' AND '2025-06-01' AND
+  date BETWEEN '2022-01-01' AND '2025-07-01' AND
   device IN ('desktop', 'phone')
 GROUP BY
   date,

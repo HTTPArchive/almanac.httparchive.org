@@ -32,7 +32,7 @@ WITH resource_hints AS (
   LEFT JOIN
     UNNEST(getResourceHints(TO_JSON_STRING(custom_metrics))) AS hint
   WHERE
-    (date = '2025-06-01' OR date = '2024-06-01' OR date = '2023-06-01') AND
+    (date = '2025-07-01' OR date = '2024-07-01' OR date = '2023-07-01') AND
     is_root_page
 ),
 
@@ -44,7 +44,7 @@ totals AS (
   FROM
     `httparchive.crawl.pages`
   WHERE
-    (date = '2025-06-01' OR date = '2024-06-01' OR date = '2023-06-01') AND
+    (date = '2025-07-01' OR date = '2024-07-01' OR date = '2023-07-01') AND
     is_root_page
   GROUP BY
     client,

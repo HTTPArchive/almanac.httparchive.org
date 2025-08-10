@@ -6,7 +6,7 @@ WITH lcp AS (
   FROM
     `httparchive.crawl.pages`
   WHERE
-    date = '2025-06-01' AND
+    date = '2025-07-01' AND
     is_root_page
 )
 

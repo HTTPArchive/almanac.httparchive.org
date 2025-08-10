@@ -5,7 +5,7 @@ SELECT
 FROM
   `httparchive.crawl.pages`
 WHERE
-  date = '2025-06-01' AND
+  date = '2025-07-01' AND
   client = 'mobile' AND
   is_root_page AND
   SAFE_CAST(JSON_VALUE(summary.reqFont) AS INT64) IS NOT NULL AND

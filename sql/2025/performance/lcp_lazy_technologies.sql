@@ -32,7 +32,7 @@ WITH lazy_tech AS (
     `httparchive.crawl.pages`,
     UNNEST(technologies) AS t
   WHERE
-    date = '2025-06-01' AND
+    date = '2025-07-01' AND
     is_root_page
 ),
 

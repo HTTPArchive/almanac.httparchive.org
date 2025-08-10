@@ -50,8 +50,7 @@ base AS (
     `chrome-ux-report.materialized.device_summary`
   WHERE
     device IN ('desktop', 'phone') AND
-    -- TODO: Update `date` once CrUX data is available for June 2025.
-    date IN ('2021-08-01', '2022-07-01', '2023-06-01', '2024-09-01', '2025-05-01')
+    date IN ('2021-07-01', '2022-07-01', '2023-07-01', '2024-07-01', '2025-07-01')
 )
 
 SELECT

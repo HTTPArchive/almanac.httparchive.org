@@ -6,7 +6,7 @@ FROM
   `httparchive.crawl.pages`,
   UNNEST([1000, 10000, 100000, 1000000, 10000000, 100000000]) AS _rank
 WHERE
-  date = '2025-06-01' AND
+  date = '2025-07-01' AND
   is_root_page AND
   rank <= _rank
 GROUP BY
