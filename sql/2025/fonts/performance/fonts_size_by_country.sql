@@ -13,7 +13,7 @@ countries AS (
   FROM
     `chrome-ux-report.materialized.country_summary`
   WHERE
-    yyyymm = 202407
+    yyyymm = CAST(FORMAT_DATE('%Y%m', @date) AS INT64)
   GROUP BY
     client,
     domain,
