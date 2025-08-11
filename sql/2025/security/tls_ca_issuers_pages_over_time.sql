@@ -1,6 +1,6 @@
 #standardSQL
 # Section: Transport Security - Certificate Authority
-# Question: What is the distribution of CA issuers for all pages?
+# Question: What is the distribution of CA issuers for all pages over time?
 # Note: currently includes HTTP (i.e., pages with no issuer)
 SELECT
   client,
