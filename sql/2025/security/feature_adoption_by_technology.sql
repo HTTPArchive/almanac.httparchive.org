@@ -14,7 +14,7 @@ totals AS (
       IF(STARTS_WITH(page, 'https'), page, NULL)
     ) AS total_https_pages
   FROM
-    `httparchive.all.pages`,
+    `httparchive.crawl.pages`,
     UNNEST(technologies) AS t,
     UNNEST(t.categories) AS category
   WHERE
@@ -35,16 +35,16 @@ SELECT
   total_https_pages,
   COUNT(
     DISTINCT
-    IF(REGEXP_CONTAINS(respOtherHeaders, CONCAT('(?i)', headername, ' ')), url, NULL)
+    IF(headername IN UNNEST(respHeaders), url, NULL)
   ) AS freq,
   SAFE_DIVIDE(COUNT(
     DISTINCT
-    IF(REGEXP_CONTAINS(respOtherHeaders, CONCAT('(?i)', headername, ' ')), url, NULL)
+    IF(headername IN UNNEST(respHeaders), url, NULL)
   ), total_pages_with_technology) AS pct,
   SAFE_DIVIDE(COUNT(
     DISTINCT
     IF(
-      REGEXP_CONTAINS(respOtherHeaders, CONCAT('(?i)', headername, ' ')) AND
+      headername IN UNNEST(respHeaders) AND
       STARTS_WITH(url, 'https'), url, NULL
     )
   ), total_https_pages) AS pct_https
@@ -52,12 +52,12 @@ FROM (
   SELECT
     client,
     technologies,
-    JSON_VALUE(r.summary, '$.respOtherHeaders') AS respOtherHeaders,
+    ARRAY(SELECT h.name from UNNEST(r.response_headers) as h) AS respHeaders,
     url
   FROM
-    `httparchive.all.requests` AS r
+    `httparchive.crawl.requests` AS r
   INNER JOIN
-    `httparchive.all.pages`
+    `httparchive.crawl.pages`
   USING (client, page, date, is_root_page)
   WHERE
     date = '2025-07-01' AND
