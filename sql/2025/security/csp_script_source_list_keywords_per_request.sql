@@ -1,5 +1,6 @@
 #standardSQL
 # Section: Attack preventions - Preventing attacks using CSP
+# Note: This query combines multiple CSP headers per request into one.
 # Question: usage of default/script-src, and within the directive usage of strict-dynamic, nonce values, unsafe-inline and unsafe-eval
 SELECT
   client,
