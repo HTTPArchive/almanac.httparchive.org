@@ -1,11 +1,11 @@
 #standardSQL
 # Section: Content Inclusion - Permissions Policy
 # Question: Which are the most prominent directives for the allow attributes on iframes?
-CREATE TEMP FUNCTION getNumWithAllowAttribute(payload STRING) AS ((
+CREATE TEMP FUNCTION getNumWithAllowAttribute(payload ARRAY<STRING>) AS ((
   SELECT
     COUNT(0)
   FROM
-    UNNEST(JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._security'), '$.iframe-allow-sandbox')) AS iframeAttr
+    UNNEST(payload) AS iframeAttr
   WHERE
     JSON_EXTRACT_SCALAR(iframeAttr, '$.allow') IS NOT NULL
 ));
@@ -19,9 +19,9 @@ SELECT
 FROM (
   SELECT
     client,
-    JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._security'), '$.iframe-allow-sandbox') AS iframeAttrs
+    JSON_EXTRACT_ARRAY(JSON_VALUE(custom_metrics.security, '$.iframe-allow-sandbox')) AS iframeAttrs
   FROM
-    `httparchive.all.pages`
+    `httparchive.crawl.pages`
   WHERE
     date = '2025-07-01' AND
     is_root_page
@@ -31,9 +31,9 @@ FROM (
 JOIN (
   SELECT
     client,
-    SUM(getNumWithAllowAttribute(payload)) AS total_iframes_with_allow
+    SUM(getNumWithAllowAttribute(JSON_EXTRACT_ARRAY(JSON_VALUE(custom_metrics.security, '$.iframe-allow-sandbox')))) AS total_iframes_with_allow
   FROM
-    `httparchive.all.pages`
+    `httparchive.crawl.pages`
   WHERE
     date = '2025-07-01' AND
     is_root_page

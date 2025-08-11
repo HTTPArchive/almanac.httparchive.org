@@ -1,7 +1,7 @@
 #standardSQL
 # Section: Well-know URIs - robots.txt (?)
 # Question: What is the prevalence of /robots.txt and what is the prevalence of potentially sensitive endpoints in disallow directives ('login', 'log-in', 'signin', 'sign-in', 'admin', 'auth', 'sso', 'account')
-CREATE TEMPORARY FUNCTION getAllDisallowedEndpoints(data STRING)
+CREATE TEMPORARY FUNCTION getAllDisallowedEndpoints(data JSON)
 RETURNS ARRAY<STRING> DETERMINISTIC
 LANGUAGE js AS '''
   let parsed_data;
@@ -40,8 +40,8 @@ FROM
     SELECT
       client,
       page,
-      JSON_VALUE(JSON_VALUE(payload, '$._well-known'), '$."/robots.txt".found') AS has_robots_txt,
-      getAllDisallowedEndpoints(JSON_VALUE(payload, '$._well-known')) AS disallowed_endpoints
+      JSON_VALUE(custom_metrics.well_known, '$."/robots.txt".found') AS has_robots_txt,
+      getAllDisallowedEndpoints(custom_metrics.well_known) AS disallowed_endpoints
     FROM
       `httparchive.crawl.pages`
     WHERE
