@@ -1,0 +1,43 @@
+-- Section: Performance
+-- Question: Which families are used broken down by service?
+-- Normalization: Requests (parsed only)
+
+-- INCLUDE https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/{year}/fonts/common.sql
+
+WITH
+requests AS (
+  SELECT
+    client,
+    SERVICE(url) AS service,
+    FAMILY(payload) AS family,
+    COUNT(0) OVER (PARTITION BY client) AS total
+  FROM
+    `httparchive.crawl.requests`
+  WHERE
+    date = @date AND
+    type = 'font' AND
+    is_root_page AND
+    IS_PARSED(payload)
+)
+
+SELECT
+  client,
+  service,
+  family,
+  COUNT(0) AS count,
+  total,
+  ROUND(COUNT(0) / total, @precision) AS proportion,
+  ROW_NUMBER() OVER (PARTITION BY client, service ORDER BY COUNT(0) DESC) AS rank
+FROM
+  requests
+GROUP BY
+  client,
+  service,
+  family,
+  total
+QUALIFY
+  rank <= 100
+ORDER BY
+  client,
+  service,
+  count DESC

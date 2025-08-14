@@ -1,0 +1,39 @@
+-- Section: Development
+-- Question: Which color families are used?
+-- Normalization: Requests (color only)
+
+-- INCLUDE https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/{year}/fonts/common.sql
+
+WITH
+requests AS (
+  SELECT
+    client,
+    FAMILY(payload) AS family,
+    COUNT(0) OVER (PARTITION BY client) AS total
+  FROM
+    `httparchive.crawl.requests`
+  WHERE
+    date = @date AND
+    type = 'font' AND
+    is_root_page AND
+    IS_COLOR(payload)
+)
+
+SELECT
+  client,
+  family,
+  COUNT(0) AS count,
+  total,
+  ROUND(COUNT(0) / total, @precision) AS proportion,
+  ROW_NUMBER() OVER (PARTITION BY client ORDER BY COUNT(0) DESC) AS rank
+FROM
+  requests
+GROUP BY
+  client,
+  family,
+  total
+QUALIFY
+  rank <= 100
+ORDER BY
+  client,
+  count DESC
