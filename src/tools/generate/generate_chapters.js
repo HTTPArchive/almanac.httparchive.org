@@ -84,7 +84,7 @@ const generate_chapters = async (chapter_match) => {
 
     try {
       [, language, year, chapter] = file.match(re);
-    } catch(error) {
+    } catch {
       // No match - skip to next in for loop
       continue;
     }

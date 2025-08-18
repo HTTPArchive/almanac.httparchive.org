@@ -106,7 +106,9 @@
 
 {% endblock %}
 
-{% block call_for_contributors_link %}https://github.com/HTTPArchive/almanac.httparchive.org/discussions/4062{% endblock %}
+{# Add github link to discussion to enable the Call for Contributors link #}
+{# See: https://github.com/HTTPArchive/almanac.httparchive.org/pull/4173/files #}
+{% block call_for_contributors_link %}{% endblock %}
 
 {% block contributors %}{{ config.contributors.keys() | length }}{% endblock %}
 
