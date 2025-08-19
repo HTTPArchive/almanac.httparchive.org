@@ -53,7 +53,7 @@ properties AS (
     ROW_NUMBER() OVER (PARTITION BY client, display ORDER BY COUNT(DISTINCT page) DESC) AS rank
   FROM
     `httparchive.crawl.parsed_css`,
-    UNNEST(PROPERTIES(css)) AS property
+    UNNEST(PROPERTIES(TO_JSON_STRING(css))) AS property
   WHERE
     date = @date AND
     is_root_page

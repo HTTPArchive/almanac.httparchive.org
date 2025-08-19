@@ -33,7 +33,7 @@ families AS (
     ROW_NUMBER() OVER (PARTITION BY client ORDER BY COUNT(DISTINCT page) DESC) AS rank
   FROM
     `httparchive.crawl.parsed_css`,
-    UNNEST(FAMILIES(css)) AS family
+    UNNEST(FAMILIES(TO_JSON_STRING(css))) AS family
   WHERE
     date = @date AND
     is_root_page

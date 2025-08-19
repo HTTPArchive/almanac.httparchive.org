@@ -45,7 +45,7 @@ features AS (
     COUNT(DISTINCT page) AS count
   FROM
     `httparchive.crawl.parsed_css`,
-    UNNEST(FEATURES(css)) AS feature
+    UNNEST(FEATURES(TO_JSON_STRING(css))) AS feature
   WHERE
     date = @date AND
     is_root_page

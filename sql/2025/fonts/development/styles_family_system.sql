@@ -56,7 +56,7 @@ families AS (
     COUNT(DISTINCT page) AS count
   FROM
     `httparchive.crawl.parsed_css`,
-    UNNEST(FAMILIES(css)) AS family
+    UNNEST(FAMILIES(TO_JSON_STRING(css))) AS family
   WHERE
     date = @date AND
     is_root_page

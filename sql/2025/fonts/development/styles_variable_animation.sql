@@ -47,7 +47,7 @@ properties AS (
   WHERE
     date = @date AND
     is_root_page AND
-    HAS_ANIMATION(css)
+    HAS_ANIMATION(TO_JSON_STRING(css))
   GROUP BY
     client
 ),

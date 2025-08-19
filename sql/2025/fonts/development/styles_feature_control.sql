@@ -45,7 +45,7 @@ properties AS (
     COUNT(DISTINCT page) AS count
   FROM
     `httparchive.crawl.parsed_css`,
-    UNNEST(PROPERTIES(css)) AS property
+    UNNEST(PROPERTIES(TO_JSON_STRING(css))) AS property
   WHERE
     date = @date AND
     is_root_page

@@ -37,7 +37,7 @@ pages AS (
     COUNT(DISTINCT page) OVER (PARTITION BY client) AS total
   FROM
     `httparchive.crawl.parsed_css`,
-    UNNEST(PROPERTIES(css)) AS property,
+    UNNEST(PROPERTIES(TO_JSON_STRING(css))) AS property,
     UNNEST(SPLIT(property, ',')) AS chunk
   WHERE
     date = @date AND
