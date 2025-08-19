@@ -2,15 +2,14 @@
 -- Question: How and how often is metrics override used in CSS?
 -- Normalization: Pages
 
-CREATE TEMPORARY FUNCTION PROPERTIES(json STRING)
+CREATE TEMPORARY FUNCTION PROPERTIES(css JSON)
 RETURNS ARRAY<STRING>
 LANGUAGE js
 OPTIONS (library = "gs://httparchive/lib/css-utils.js")
 AS '''
 try {
-  const $ = JSON.parse(json);
   const result = [];
-  walkDeclarations($, (declaration) => {
+  walkDeclarations(css, (declaration) => {
     result.push(declaration.property);
   }, {
     properties: ['size-adjust', 'ascent-override', 'descent-override', 'line-gap-override'],
@@ -30,7 +29,7 @@ properties AS (
     COUNT(DISTINCT page) AS count
   FROM
     `httparchive.crawl.parsed_css`,
-    UNNEST(PROPERTIES(TO_JSON_STRING(css))) AS property
+    UNNEST(PROPERTIES(css)) AS property
   WHERE
     date = @date AND
     is_root_page

@@ -4,16 +4,15 @@
 
 -- INCLUDE https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/{year}/fonts/common.sql
 
-CREATE TEMPORARY FUNCTION PROPERTIES(json STRING)
+CREATE TEMPORARY FUNCTION PROPERTIES(css JSON)
 RETURNS ARRAY<STRUCT<family STRING, display STRING>>
 LANGUAGE js
 OPTIONS (library = ["gs://httparchive/lib/css-font-parser.js", "gs://httparchive/lib/css-utils.js"])
 AS '''
 try {
   const values = ['auto', 'block', 'fallback', 'optional', 'swap'];
-  const $ = JSON.parse(json);
   const result = [];
-  walkRules($, (rule) => {
+  walkRules(css, (rule) => {
     let found = false;
     let family = undefined;
     let display = undefined;
@@ -53,7 +52,7 @@ properties AS (
     ROW_NUMBER() OVER (PARTITION BY client, display ORDER BY COUNT(DISTINCT page) DESC) AS rank
   FROM
     `httparchive.crawl.parsed_css`,
-    UNNEST(PROPERTIES(TO_JSON_STRING(css))) AS property
+    UNNEST(PROPERTIES(css)) AS property
   WHERE
     date = @date AND
     is_root_page

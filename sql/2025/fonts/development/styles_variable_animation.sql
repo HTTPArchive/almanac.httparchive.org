@@ -2,15 +2,14 @@
 -- Question: How popular is variable-font animimation in CSS?
 -- Normalization: Pages
 
-CREATE TEMPORARY FUNCTION HAS_ANIMATION(json STRING)
+CREATE TEMPORARY FUNCTION HAS_ANIMATION(css JSON)
 RETURNS BOOLEAN
 LANGUAGE js
 OPTIONS (library = "gs://httparchive/lib/css-utils.js")
 AS '''
 try {
-  const $ = JSON.parse(json);
   let count = 0;
-  walkRules($, (rule) => {
+  walkRules(css, (rule) => {
     rule.keyframes.forEach((frame) => {
       count += countDeclarations(
         frame,
@@ -27,7 +26,7 @@ try {
   }, {
     type: 'keyframes'
   });
-  count += countDeclarations($.stylesheet.rules, {
+  count += countDeclarations(css.stylesheet.rules, {
     properties: 'transition',
     values: /font-stretch|font-style|font-variation-settings|font-weight/
   });
@@ -47,7 +46,7 @@ properties AS (
   WHERE
     date = @date AND
     is_root_page AND
-    HAS_ANIMATION(TO_JSON_STRING(css))
+    HAS_ANIMATION(css)
   GROUP BY
     client
 ),

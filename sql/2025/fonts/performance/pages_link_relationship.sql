@@ -4,7 +4,7 @@
 
 -- INCLUDE https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/{year}/fonts/common.sql
 
-CREATE TEMPORARY FUNCTION HINTS(json STRING)
+CREATE TEMPORARY FUNCTION HINTS(other JSON)
 RETURNS ARRAY<STRUCT<name STRING, type STRING, url STRING>>
 LANGUAGE js AS '''
 const names = new Set([
@@ -14,8 +14,7 @@ const names = new Set([
   'preload',
 ]);
 try {
-  const $ = JSON.parse(json);
-  return $.almanac['link-nodes'].nodes.reduce((results, node) => {
+  return other.almanac['link-nodes'].nodes.reduce((results, node) => {
     const name = node.rel.toLowerCase();
     if (names.has(name)) {
       results.push({
@@ -40,7 +39,7 @@ hints AS (
     COUNT(DISTINCT pages.page) AS count
   FROM
     `httparchive.crawl.pages` AS pages,
-    UNNEST(HINTS(TO_JSON_STRING(custom_metrics.other))) AS hint
+    UNNEST(HINTS(custom_metrics.other)) AS hint
   LEFT JOIN
     `httparchive.crawl.requests` AS requests
   ON

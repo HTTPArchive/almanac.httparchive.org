@@ -4,7 +4,7 @@
 
 -- INCLUDE https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/{year}/fonts/common.sql
 
-CREATE TEMPORARY FUNCTION COLORS(json STRING)
+CREATE TEMPORARY FUNCTION COLORS(palettes JSON)
 RETURNS ARRAY<STRING>
 LANGUAGE js
 AS '''
@@ -13,9 +13,8 @@ function toHex(value) {
 }
 
 try {
-  const $ = JSON.parse(json);
   const result = new Set();
-  for (const palette of $) {
+  for (const palette of palettes) {
     for (const [blue, green, red, alpha] of palette) {
       result.add(`#${toHex(red)}${toHex(green)}${toHex(blue)}${toHex(alpha)}`);
     }
@@ -31,7 +30,7 @@ fonts AS (
   SELECT
     client,
     url,
-    COLORS(TO_JSON_STRING(ANY_VALUE(payload)._font_details.color.palettes)) AS colors,
+    COLORS(ANY_VALUE(payload)._font_details.color.palettes) AS colors,
     COUNT(0) OVER (PARTITION BY client) AS total
   FROM
     `httparchive.crawl.requests`

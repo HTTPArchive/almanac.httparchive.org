@@ -4,18 +4,17 @@
 
 -- INCLUDE https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/{year}/fonts/common.sql
 
-CREATE TEMPORARY FUNCTION AXES(json STRING)
+CREATE TEMPORARY FUNCTION AXES(fvar JSON)
 RETURNS ARRAY<STRUCT<name STRING, minimum FLOAT64, medium FLOAT64, maximum FLOAT64>>
 LANGUAGE js
 AS '''
 try {
-  const axes = JSON.parse(json);
-  return Object.keys(axes).map((name) => {
+  return Object.keys(fvar).map((name) => {
     return {
       name: name,
-      minimum: axes[name].min,
-      medium: axes[name].default,
-      maximum: axes[name].max
+      minimum: fvar[name].min,
+      medium: fvar[name].default,
+      maximum: fvar[name].max
     };
   });
 } catch (e) {
@@ -34,7 +33,7 @@ fonts AS (
     ANY_VALUE(axis.maximum) AS maximum
   FROM
     `httparchive.crawl.requests`,
-    UNNEST(AXES(TO_JSON_STRING(payload._font_details.fvar))) AS axis
+    UNNEST(AXES(payload._font_details.fvar)) AS axis
   WHERE
     date = @date AND
     type = 'font' AND

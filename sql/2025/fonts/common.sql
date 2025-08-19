@@ -101,12 +101,10 @@ CREATE TEMPORARY FUNCTION SERVICE(url STRING) AS (
 -- * `sbix` is larger than 2 + 2 + 4 + 4 bytes.
 --
 -- For simplicity, the threshold is set to 50 bytes.
-CREATE TEMPORARY FUNCTION COLOR_FORMATS_INNER(jsonFormats STRING, jsonSizes STRING)
+CREATE TEMPORARY FUNCTION COLOR_FORMATS_INNER(formats JSON, sizes JSON)
 RETURNS ARRAY<STRING>
 LANGUAGE js AS '''
 try {
-  const formats = JSON.parse(jsonFormats);
-  const sizes = JSON.parse(jsonSizes);
   return formats.filter((format) => {
     const table = `${format}    `.slice(0, 4);
     return sizes[table] > 50;
@@ -119,8 +117,8 @@ try {
 -- Extract the color formats from a payload.
 CREATE TEMPORARY FUNCTION COLOR_FORMATS(payload JSON) AS (
   COLOR_FORMATS_INNER(
-    TO_JSON_STRING(payload._font_details.color.formats),
-    TO_JSON_STRING(payload._font_details.table_sizes)
+    payload._font_details.color.formats,
+    payload._font_details.table_sizes
   )
 );
 

@@ -4,12 +4,12 @@
 
 -- INCLUDE https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/{year}/fonts/common.sql
 
-CREATE TEMPORARY FUNCTION AXES(json STRING)
+CREATE TEMPORARY FUNCTION AXES(fvar JSON)
 RETURNS ARRAY<STRING>
 LANGUAGE js
 AS '''
 try {
-  return Object.keys(JSON.parse(json));
+  return Object.keys(fvar);
 } catch (e) {
   return [];
 }
@@ -20,7 +20,7 @@ fonts AS (
   SELECT
     client,
     url,
-    AXES(TO_JSON_STRING(ANY_VALUE(payload)._font_details.fvar)) AS axes,
+    AXES(ANY_VALUE(payload)._font_details.fvar) AS axes,
     COUNT(0) OVER (PARTITION BY client) AS total
   FROM
     `httparchive.crawl.requests`

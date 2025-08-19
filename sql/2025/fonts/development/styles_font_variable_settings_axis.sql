@@ -2,7 +2,7 @@
 -- Question: Which axes are used in CSS?
 -- Normalization: Pages (variable only)
 
-CREATE TEMPORARY FUNCTION PROPERTIES(json STRING)
+CREATE TEMPORARY FUNCTION PROPERTIES(css JSON)
 RETURNS ARRAY<STRING>
 LANGUAGE js
 AS '''
@@ -21,8 +21,7 @@ function compute(values, rule) {
 }
 
 try {
-  const $ = JSON.parse(json);
-  return $.stylesheet.rules.reduce(compute, []);
+  return css.stylesheet.rules.reduce(compute, []);
 } catch (e) {
   return [];
 }
@@ -37,7 +36,7 @@ pages AS (
     COUNT(DISTINCT page) OVER (PARTITION BY client) AS total
   FROM
     `httparchive.crawl.parsed_css`,
-    UNNEST(PROPERTIES(TO_JSON_STRING(css))) AS property,
+    UNNEST(PROPERTIES(css)) AS property,
     UNNEST(SPLIT(property, ',')) AS chunk
   WHERE
     date = @date AND

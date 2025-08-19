@@ -4,14 +4,13 @@
 
 -- INCLUDE https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/{year}/fonts/common.sql
 
-CREATE TEMPORARY FUNCTION FEATURES(data STRING)
+CREATE TEMPORARY FUNCTION FEATURES(features JSON)
 RETURNS ARRAY<STRING>
 LANGUAGE js
 AS '''
 try {
-  const $ = JSON.parse(data);
   const result = new Set();
-  for (const [table, scripts] of Object.entries($)) {
+  for (const [table, scripts] of Object.entries(features)) {
     for (const [script, languages] of Object.entries(scripts)) {
       for (const [language, features] of Object.entries(languages)) {
         features.forEach(feature => result.add(feature));
@@ -29,7 +28,7 @@ fonts AS (
   SELECT
     client,
     url,
-    FEATURES(TO_JSON_STRING(ANY_VALUE(payload)._font_details.features)) AS features,
+    FEATURES(ANY_VALUE(payload)._font_details.features) AS features,
     COUNT(0) OVER (PARTITION BY client) AS total
   FROM
     `httparchive.crawl.requests`

@@ -2,7 +2,7 @@
 -- Question: Which hyphenation settings are used in CSS?
 -- Normalization: Pages
 
-CREATE TEMPORARY FUNCTION PROPERTIES(json STRING)
+CREATE TEMPORARY FUNCTION PROPERTIES(css JSON)
 RETURNS ARRAY<STRING>
 LANGUAGE js
 OPTIONS (library = "gs://httparchive/lib/css-utils.js")
@@ -18,7 +18,7 @@ function compute(tree) {
   return sortObject(result);
 }
 try {
-  const properties = compute(JSON.parse(json));
+  const properties = compute(css);
   return Object.entries(properties).flatMap(([name, count]) => {
     return Array(count).fill(name);
   });
@@ -35,7 +35,7 @@ properties AS (
     COUNT(DISTINCT page) AS count
   FROM
     `httparchive.crawl.parsed_css`,
-    UNNEST(PROPERTIES(TO_JSON_STRING(css))) AS property
+    UNNEST(PROPERTIES(css)) AS property
   WHERE
     date = @date AND
     is_root_page

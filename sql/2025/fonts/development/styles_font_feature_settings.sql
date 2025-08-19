@@ -2,7 +2,7 @@
 -- Question: Which features are used via font-feature-settings in CSS?
 -- Normalization: Pages
 
-CREATE TEMPORARY FUNCTION FEATURES(json STRING)
+CREATE TEMPORARY FUNCTION FEATURES(css JSON)
 RETURNS ARRAY<STRING>
 LANGUAGE js
 OPTIONS (library = "gs://httparchive/lib/css-utils.js")
@@ -20,9 +20,8 @@ function parseFontFeatureSettings(value) {
 }
 
 try {
-  const $ = JSON.parse(json);
   const result = [];
-  walkDeclarations($, (declaration) => {
+  walkDeclarations(css, (declaration) => {
     const tags = parseFontFeatureSettings(declaration.value);
     if (tags && tags.length) {
       tags.forEach((tag) => result.push(tag));
@@ -45,7 +44,7 @@ features AS (
     COUNT(DISTINCT page) AS count
   FROM
     `httparchive.crawl.parsed_css`,
-    UNNEST(FEATURES(TO_JSON_STRING(css))) AS feature
+    UNNEST(FEATURES(css)) AS feature
   WHERE
     date = @date AND
     is_root_page

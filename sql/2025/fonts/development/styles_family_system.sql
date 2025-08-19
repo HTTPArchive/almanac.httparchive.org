@@ -2,7 +2,7 @@
 -- Question: Which system families are popular?
 -- Normalization: Pages
 
-CREATE TEMPORARY FUNCTION FAMILIES(json STRING)
+CREATE TEMPORARY FUNCTION FAMILIES(css JSON)
 RETURNS ARRAY<STRING>
 LANGUAGE js
 OPTIONS (library = ["gs://httparchive/lib/css-font-parser.js", "gs://httparchive/lib/css-utils.js"])
@@ -24,9 +24,8 @@ const system = [
 ];
 
 try {
-  const $ = JSON.parse(json);
   const result = [];
-  walkDeclarations($, (declaration) => {
+  walkDeclarations(css, (declaration) => {
     if (declaration.property.toLowerCase() === 'font-family') {
       const fonts = parseFontFamilyProperty(declaration.value);
       if (fonts) {
@@ -56,7 +55,7 @@ families AS (
     COUNT(DISTINCT page) AS count
   FROM
     `httparchive.crawl.parsed_css`,
-    UNNEST(FAMILIES(TO_JSON_STRING(css))) AS family
+    UNNEST(FAMILIES(css)) AS family
   WHERE
     date = @date AND
     is_root_page

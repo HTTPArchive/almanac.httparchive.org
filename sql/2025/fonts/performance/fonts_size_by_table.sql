@@ -4,12 +4,11 @@
 
 -- INCLUDE https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/{year}/fonts/common.sql
 
-CREATE TEMPORARY FUNCTION TABLES(json STRING)
+CREATE TEMPORARY FUNCTION TABLES(table_sizes JSON)
 RETURNS ARRAY<STRUCT<name STRING, size INT64>>
 LANGUAGE js AS '''
 try {
-  const $ = JSON.parse(json);
-  return Object.entries($).map(([name, size]) => ({ name, size }));
+  return Object.entries(table_sizes).map(([name, size]) => ({ name, size }));
 } catch (e) {
   return [];
 }
@@ -20,7 +19,7 @@ fonts AS (
   SELECT
     client,
     url,
-    TABLES(TO_JSON_STRING(ANY_VALUE(payload)._font_details.table_sizes)) AS tables
+    TABLES(ANY_VALUE(payload)._font_details.table_sizes) AS tables
   FROM
     `httparchive.crawl.requests`
   WHERE

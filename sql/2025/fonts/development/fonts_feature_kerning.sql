@@ -4,14 +4,13 @@
 
 -- INCLUDE https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/{year}/fonts/common.sql
 
-CREATE TEMPORARY FUNCTION HAS_KERNING(data STRING)
+CREATE TEMPORARY FUNCTION HAS_KERNING(features JSON)
 RETURNS BOOL
 LANGUAGE js
 AS '''
 try {
-  const $ = JSON.parse(data);
   const result = new Set();
-  for (const [table, scripts] of Object.entries($)) {
+  for (const [table, scripts] of Object.entries(features)) {
     for (const [script, languages] of Object.entries(scripts)) {
       for (const [language, features] of Object.entries(languages)) {
         features.forEach(feature => result.add(feature));
@@ -31,7 +30,7 @@ fonts AS (
     client,
     url,
     (
-      HAS_KERNING(TO_JSON_STRING(ANY_VALUE(payload)._font_details.features)) OR
+      HAS_KERNING(ANY_VALUE(payload)._font_details.features) OR
       IFNULL(
         REGEXP_CONTAINS(
           TO_JSON_STRING(ANY_VALUE(payload)._font_details.table_sizes),
