@@ -101,13 +101,13 @@ CREATE TEMPORARY FUNCTION SERVICE(url STRING) AS (
 -- * `sbix` is larger than 2 + 2 + 4 + 4 bytes.
 --
 -- For simplicity, the threshold is set to 50 bytes.
-CREATE TEMPORARY FUNCTION COLOR_FORMATS_INNER(formats JSON, sizes JSON)
+CREATE TEMPORARY FUNCTION COLOR_FORMATS_INNER(formats JSON, table_sizes JSON)
 RETURNS ARRAY<STRING>
 LANGUAGE js AS '''
 try {
   return formats.filter((format) => {
     const table = `${format}    `.slice(0, 4);
-    return sizes[table] > 50;
+    return table_sizes[table] > 50;
   });
 } catch (e) {
   return [];
