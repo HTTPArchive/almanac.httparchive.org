@@ -6,15 +6,15 @@
 CREATE TEMP FUNCTION getNumSecurityHeaders(headers ARRAY<STRING>) AS (
   (
     SELECT
-      COUNT(*)
+      COUNT(0)
     FROM
       UNNEST([
         'content-security-policy', 'content-security-policy-report-only', 'cross-origin-embedder-policy', 'cross-origin-opener-policy',
         'cross-origin-resource-policy', 'expect-ct', 'feature-policy', 'permissions-policy', 'referrer-policy', 'report-to',
         'strict-transport-security', 'x-content-type-options', 'x-frame-options', 'x-xss-protection'
       ]) AS headername
-      WHERE
-        headername IN UNNEST(headers)
+    WHERE
+      headername IN UNNEST(headers)
   )
 );
 
@@ -37,7 +37,7 @@ FROM (
   SELECT
     client,
     SPLIT(parent_category, '/')[1] AS category,
-    ARRAY(SELECT h.name from UNNEST(r.response_headers) as h) AS respHeaders,
+    ARRAY(SELECT h.name FROM UNNEST(r.response_headers) AS h) AS respHeaders,
     url
   FROM
     `httparchive.crawl.requests` AS r

@@ -11,10 +11,11 @@ SELECT
 FROM
   `httparchive.crawl.pages`,
   UNNEST(features) AS features,
-  (SELECT
-    COUNT(DISTINCT page) AS total_urls
-  FROM
-    `httparchive.crawl.pages` 
+  (
+    SELECT
+      COUNT(DISTINCT page) AS total_urls
+    FROM
+      `httparchive.crawl.pages`
     WHERE
       date = '2025-07-01'
   )

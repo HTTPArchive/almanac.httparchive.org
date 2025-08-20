@@ -18,13 +18,7 @@ FROM (
   WHERE
     date = '2025-07-01'
 ),
-  UNNEST([
-    'CSPWithUnsafeEval',
-    'CSPWithUnsafeDynamic',
-    'MainFrameCSPViaHTTP',
-    'CSPWithUnsafeHashes',
-    'MalformedCSP',
-  ]) AS featurename
+  UNNEST(['CSPWithUnsafeEval', 'CSPWithUnsafeDynamic', 'MainFrameCSPViaHTTP', 'CSPWithUnsafeHashes', 'MalformedCSP']) AS featurename
 GROUP BY
   client,
   featurename

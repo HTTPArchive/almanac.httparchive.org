@@ -52,7 +52,7 @@ FROM (
   SELECT
     client,
     technologies,
-    ARRAY(SELECT h.name from UNNEST(r.response_headers) as h) AS respHeaders,
+    ARRAY(SELECT h.name FROM UNNEST(r.response_headers) AS h) AS respHeaders,
     url
   FROM
     `httparchive.crawl.requests` AS r

@@ -26,14 +26,13 @@ SELECT
   COUNTIF(REGEXP_CONTAINS(JSON_VALUE(logs, '$.text'), 'This document requires')) AS trusted_types_count,
   COUNTIF(REGEXP_CONTAINS(JSON_VALUE(logs, '$.text'), 'This document requires')) / COUNT(0) AS trusted_types_freq
 
-
 FROM (
   SELECT
     client,
     logs
   FROM
-    `httparchive.sample_data.pages_10k` ,
-    UNNEST(JSON_QUERY_ARRAY(payload, "$._browser_logs")) as logs
+    `httparchive.crawl.pages`,
+    UNNEST(JSON_QUERY_ARRAY(payload, '$._browser_logs')) AS logs
   WHERE
     date = '2025-07-01' AND
     is_root_page

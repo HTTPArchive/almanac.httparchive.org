@@ -20,9 +20,9 @@ FROM (
   FROM
     `httparchive.crawl.requests`
   WHERE
-    date = '2025-07-01'
-    AND is_root_page
-    AND is_main_document
+    date = '2025-07-01' AND
+    is_root_page AND
+    is_main_document
   GROUP BY
     client,
     request_host,
@@ -34,4 +34,3 @@ GROUP BY
   issuer
 ORDER BY
   pct DESC;
-

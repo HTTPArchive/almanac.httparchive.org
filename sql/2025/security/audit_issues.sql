@@ -18,7 +18,7 @@ FROM (
   WHERE
     date = '2025-07-01'
 ),
-UNNEST([
+  UNNEST([
     'CookieIssue',
     'MixedContentIssue',
     'ContentSecurityPolicyIssue',
@@ -30,4 +30,3 @@ GROUP BY
 ORDER BY
   client,
   pct_with_issue DESC
-

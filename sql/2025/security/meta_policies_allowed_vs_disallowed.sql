@@ -13,7 +13,7 @@ FROM (
   SELECT
     client,
     page,
-    custom_metrics.other.almanac as metrics
+    custom_metrics.other.almanac AS metrics
   FROM
     `httparchive.crawl.pages`
   WHERE
