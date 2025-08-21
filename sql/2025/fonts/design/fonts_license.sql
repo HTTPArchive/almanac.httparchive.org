@@ -31,7 +31,7 @@ pages AS (
 
 SELECT
   client,
-  LICENSE(STRING(JSON_QUERY(payload, '$._font_details.names[14]'))) AS license,
+  LICENSE(STRING(payload._font_details.names[14])) AS license,
   COUNT(DISTINCT page) AS count,
   total,
   ROUND(COUNT(DISTINCT page) / total, @precision) AS proportion,

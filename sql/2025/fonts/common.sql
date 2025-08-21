@@ -21,8 +21,8 @@ CREATE TEMPORARY FUNCTION FAMILY_INNER(name STRING) AS (
 CREATE TEMPORARY FUNCTION FAMILY(payload JSON) AS (
   FAMILY_INNER(
     COALESCE(
-      STRING(JSON_QUERY(payload, '$._font_details.names[16]')),
-      STRING(JSON_QUERY(payload, '$._font_details.names[1]'))
+      STRING(payload._font_details.names[16]),
+      STRING(payload._font_details.names[1])
     )
   )
 );

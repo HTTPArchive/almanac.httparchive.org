@@ -13,10 +13,7 @@ CREATE TEMPORARY FUNCTION IS_HINTED(payload JSON) AS (
 
 
 CREATE TEMPORARY FUNCTION IS_AUTOHINTED(payload JSON) AS (
-  REGEXP_CONTAINS(
-    STRING(JSON_QUERY(payload, '$._font_details.names[5]')),
-    'autohint'
-  )
+  REGEXP_CONTAINS(STRING(payload._font_details.names[5]), 'autohint')
 );
 
 WITH
