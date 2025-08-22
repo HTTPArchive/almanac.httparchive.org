@@ -17,18 +17,15 @@ requests AS (
     date = @date AND
     type = 'font' AND
     is_root_page AND
-    IS_PARSED(payload) AND
-    -- Without the subsampling, the query throws “UDF out of memory.” To work
-    -- around this, a random half is removed, and the counts are doubled.
-    RAND() < 0.5
+    IS_PARSED(payload)
 )
 
 SELECT
   client,
   script,
   family,
-  2 * COUNT(0) AS count,
-  2 * total AS total,
+  COUNT(0) AS count,
+  total AS total,
   ROUND(COUNT(0) / total, @precision) AS proportion,
   ROW_NUMBER() OVER (PARTITION BY client, script ORDER BY COUNT(0) DESC) AS rank
 FROM
