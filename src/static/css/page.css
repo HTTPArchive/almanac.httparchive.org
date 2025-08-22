@@ -1,8 +1,6 @@
 .main {
-  display: -ms-grid;
   display: grid;
   grid-template-areas: 'index content';
-  -ms-grid-columns: 300px calc(100% - 300px);
   grid-template-columns: 300px auto;
   grid-template-columns: min(18.75rem, 20vw) calc(100% - min(18.75rem, 25vw)); /* auto sometimes not set correctly on font zoom */
 }
@@ -42,7 +40,6 @@
 
 .index {
   grid-area: index;
-  -ms-grid-column: 1;
 }
 
 .index .index-box {
@@ -166,7 +163,6 @@
 
 .content {
   grid-area: content;
-  -ms-grid-column: 2;
   margin-left: 40px;
 }
 
@@ -729,7 +725,6 @@ figure .fig-desktop {
 
 @media (max-width: 56.25em) {
   .main {
-    -ms-grid-columns: 1fr;
     grid-template-areas:
       'index'
       'content';
@@ -738,13 +733,10 @@ figure .fig-desktop {
   }
 
   .main .content {
-    -ms-grid-row: 2;
-    -ms-grid-column: 1;
     margin-left: 0;
   }
 
   .index {
-    -ms-grid-row: 1;
     margin: 30px 0;
     margin: 1.875rem 0;
   }
