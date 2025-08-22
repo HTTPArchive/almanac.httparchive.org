@@ -8,5 +8,5 @@ sqlfluff==3.4.2
 
 # sql/util/* dependencies
 pandas==2.3.2
-google-cloud-bigquery==3.35.1
+google-cloud-bigquery==3.36.0
 requests==2.32.5
