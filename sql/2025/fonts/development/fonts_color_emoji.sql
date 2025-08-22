@@ -4,7 +4,7 @@
 
 -- INCLUDE https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/{year}/fonts/common.sql
 
-CREATE TEMPORARY FUNCTION HAS_EMOJI(codepoints ARRAY<STRING>)
+CREATE TEMPORARY FUNCTION HAS_EMOJI(codepoints JSON)
 RETURNS BOOL
 LANGUAGE js
 OPTIONS (library = ["gs://httparchive/lib/text-utils.js"])
@@ -34,7 +34,7 @@ requests AS (
   SELECT
     date,
     client,
-    HAS_EMOJI(JSON_EXTRACT_STRING_ARRAY(payload, '$._font_details.cmap.codepoints')) AS emoji,
+    HAS_EMOJI(payload._font_details.cmap.codepoints) AS emoji,
     COUNT(0) OVER (PARTITION BY date, client) AS total
   FROM
     `httparchive.crawl.requests`
