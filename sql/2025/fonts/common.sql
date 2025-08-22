@@ -47,7 +47,7 @@ CREATE TEMPORARY FUNCTION FOUNDRY(payload JSON) AS (
 );
 
 -- Infer scripts from codepoints. Used in SCRIPTS.
-CREATE TEMPORARY FUNCTION SCRIPTS_INNER(codepoints ARRAY<STRING>)
+CREATE TEMPORARY FUNCTION SCRIPTS_INNER(codepoints JSON)
 RETURNS ARRAY<STRING>
 LANGUAGE js
 OPTIONS (library = ["gs://httparchive/lib/text-utils.js"])
@@ -61,7 +61,7 @@ if (codepoints && codepoints.length) {
 
 -- Infer scripts from a payload.
 CREATE TEMPORARY FUNCTION SCRIPTS(payload JSON) AS (
-  SCRIPTS_INNER(JSON_EXTRACT_STRING_ARRAY(payload, '$._font_details.cmap.codepoints'))
+  SCRIPTS_INNER(payload._font_details.cmap.codepoints)
 );
 
 -- Infer the service from a URL.
