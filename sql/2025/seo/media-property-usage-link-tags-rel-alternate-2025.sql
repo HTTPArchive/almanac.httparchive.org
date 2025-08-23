@@ -25,7 +25,10 @@ return result;
 WITH page_almanac_info AS (
   SELECT
     client,
-    getMediaPropertyAlmanacInfo(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS media_property_almanac_info
+    -- FIXED: Updated data source from payload to custom_metrics
+    getMediaPropertyAlmanacInfo(
+      TO_JSON_STRING(JSON_QUERY(TO_JSON(custom_metrics), '$.almanac'))
+    ) AS media_property_almanac_info
   FROM
     `httparchive.crawl.pages`
   WHERE

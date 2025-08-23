@@ -45,7 +45,10 @@ WITH structured_data AS (
       ELSE 'No Assigned Page'
     END AS is_root_page,
     page,
-    getStructuredDataWptBodies(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS structured_data_wpt_bodies_info,
+    -- FIXED: Updated data source from payload to custom_metrics
+    getStructuredDataWptBodies(
+      TO_JSON_STRING(JSON_QUERY(TO_JSON(custom_metrics), '$.wpt_bodies'))
+    ) AS structured_data_wpt_bodies_info,
     COUNT(DISTINCT root_page) OVER (PARTITION BY client) AS total_sites
   FROM
     `httparchive.crawl.pages`

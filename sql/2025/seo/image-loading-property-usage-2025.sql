@@ -35,7 +35,10 @@ WITH image_loading AS (
     root_page,
     is_root_page,
     page,
-    getLoadingPropertyMarkupInfo(JSON_EXTRACT_SCALAR(payload, '$._markup')) AS loading_property_markup_info
+    -- FIXED: Updated data source from payload to custom_metrics
+    getLoadingPropertyMarkupInfo(
+      TO_JSON_STRING(JSON_QUERY(TO_JSON(custom_metrics), '$.markup'))
+    ) AS loading_property_markup_info
   FROM
     `httparchive.crawl.pages`
   WHERE

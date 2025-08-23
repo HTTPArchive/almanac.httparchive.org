@@ -484,7 +484,10 @@ FROM (
     END
       AS is_root_page,
     SPLIT(page, ':')[OFFSET(0)] AS protocol,
-    getSeoStatsWptBodies(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS wpt_bodies_info
+    -- FIXED: Updated data source from payload to custom_metrics
+    getSeoStatsWptBodies(
+      TO_JSON_STRING(JSON_QUERY(TO_JSON(custom_metrics), '$.wpt_bodies'))
+    ) AS wpt_bodies_info
   FROM
     `httparchive.crawl.pages`
   WHERE

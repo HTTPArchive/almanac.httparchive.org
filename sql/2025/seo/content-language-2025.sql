@@ -27,7 +27,10 @@ WITH content_language_usage AS (
       WHEN is_root_page = TRUE THEN 'Homepage'
       ELSE 'No Assigned Page'
     END AS is_root_page,
-    getContentLanguagesAlmanac(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS content_languages
+    -- FIXED: Updated data source from payload to custom_metrics
+    getContentLanguagesAlmanac(
+      TO_JSON_STRING(JSON_QUERY(TO_JSON(custom_metrics), '$.almanac'))
+    ) AS content_languages
   FROM
     `httparchive.crawl.pages`
   WHERE

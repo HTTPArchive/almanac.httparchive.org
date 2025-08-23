@@ -62,7 +62,10 @@ WITH markup_extraction AS (
     END
       AS is_root_page,
     page,
-    getMarkupStatsInfo(JSON_EXTRACT_SCALAR(payload, '$._markup')) AS markup_info
+    -- FIXED: Updated data source from payload to custom_metrics
+    getMarkupStatsInfo(
+      TO_JSON_STRING(JSON_QUERY(TO_JSON(custom_metrics), '$.markup'))
+    ) AS markup_info
   FROM
     `httparchive.crawl.pages`
   WHERE date = '2025-06-01'

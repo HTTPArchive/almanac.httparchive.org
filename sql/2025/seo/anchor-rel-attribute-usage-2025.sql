@@ -39,7 +39,10 @@ WITH rel_stats_table AS (
       ELSE 'No Assigned Page'
     END
       AS is_root_page,
-    getRelStatsWptBodies(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS wpt_bodies_info
+    -- FIXED: Updated data source from payload to custom_metrics
+    getRelStatsWptBodies(
+      TO_JSON_STRING(JSON_QUERY(TO_JSON(custom_metrics), '$.wpt_bodies'))
+    ) AS wpt_bodies_info
   FROM
     `httparchive.crawl.pages`
   WHERE

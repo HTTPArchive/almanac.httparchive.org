@@ -24,7 +24,10 @@ return result;
 WITH page_almanac_info AS (
   SELECT
     client,
-    getMetaTagAlmanacInfo(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS meta_tag_almanac_info
+    -- FIXED: Updated data source from payload to custom_metrics
+    getMetaTagAlmanacInfo(
+      TO_JSON_STRING(JSON_QUERY(TO_JSON(custom_metrics), '$.almanac'))
+    ) AS meta_tag_almanac_info
   FROM
     `httparchive.crawl.pages`
   WHERE

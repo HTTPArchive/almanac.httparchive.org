@@ -34,7 +34,10 @@ FROM (
     client AS client,
     percentile,
     page,
-    getVideosAlmanacInfo(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS video_almanac_info
+    -- FIXED: Updated data source from payload to custom_metrics
+    getVideosAlmanacInfo(
+      TO_JSON_STRING(JSON_QUERY(TO_JSON(custom_metrics), '$.almanac'))
+    ) AS video_almanac_info
   FROM
     `httparchive.crawl.pages`,
     UNNEST([10, 25, 50, 75, 90]) AS percentile

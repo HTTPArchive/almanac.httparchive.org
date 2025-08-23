@@ -33,7 +33,10 @@ WITH hreflang_usage AS (
       WHEN is_root_page = TRUE THEN 'Homepage'
       ELSE 'No Assigned Page'
     END AS is_root_page,
-    getHreflangWptBodies(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS hreflang_wpt_bodies_info
+    -- FIXED: Updated data source from payload to custom_metrics
+    getHreflangWptBodies(
+      TO_JSON_STRING(JSON_QUERY(TO_JSON(custom_metrics), '$.wpt_bodies'))
+    ) AS hreflang_wpt_bodies_info
   FROM
     `httparchive.crawl.pages`
   WHERE

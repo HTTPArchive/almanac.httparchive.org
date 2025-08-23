@@ -30,7 +30,10 @@ FROM
   (
     SELECT
       client,
-      getRobotsStatusInfo(JSON_EXTRACT_SCALAR(payload, '$._robots_txt')) AS robots_txt_status_info
+      -- FIXED: Updated data source from payload to custom_metrics
+      getRobotsStatusInfo(
+        TO_JSON_STRING(JSON_QUERY(TO_JSON(custom_metrics), '$.robots_txt'))
+      ) AS robots_txt_status_info
     FROM
       `httparchive.crawl.pages`
     WHERE

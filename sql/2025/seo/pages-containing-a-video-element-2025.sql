@@ -34,7 +34,10 @@ FROM
   (
     SELECT
       client AS client,
-      getVideosAlmanacInfo(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS videos_almanac_info
+      -- FIXED: Updated data source from payload to custom_metrics
+    getVideosAlmanacInfo(
+      TO_JSON_STRING(JSON_QUERY(TO_JSON(custom_metrics), '$.almanac'))
+    ) AS videos_almanac_info
     FROM
       `httparchive.crawl.pages`
     WHERE

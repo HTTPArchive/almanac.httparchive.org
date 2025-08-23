@@ -43,7 +43,10 @@ WITH iframe_loading_table AS (
       WHEN is_root_page = TRUE THEN 'Homepage'
       ELSE 'No Assigned Page'
     END AS is_root_page,
-    getIframeMarkupInfo(JSON_EXTRACT_SCALAR(payload, '$._markup')) AS iframe_markup_info
+    -- FIXED: Updated data source from payload to custom_metrics
+    getIframeMarkupInfo(
+      TO_JSON_STRING(JSON_QUERY(TO_JSON(custom_metrics), '$.markup'))
+    ) AS iframe_markup_info
   FROM
     `httparchive.crawl.pages`
   WHERE

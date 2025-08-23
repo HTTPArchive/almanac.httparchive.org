@@ -47,7 +47,10 @@ WITH processed_data AS (
       WHEN is_root_page = TRUE THEN 'Homepage'
       ELSE 'No Assigned Page'
     END AS is_root_page,
-    get_markup_info(JSON_EXTRACT_SCALAR(payload, '$._markup')) AS markup_info
+    -- FIXED: Updated data source from payload to custom_metrics
+    get_markup_info(
+      TO_JSON_STRING(JSON_QUERY(TO_JSON(custom_metrics), '$.markup'))
+    ) AS markup_info
   FROM
     `httparchive.crawl.pages`
   WHERE

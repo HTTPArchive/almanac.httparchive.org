@@ -23,7 +23,10 @@ WITH robots AS (
   SELECT
     client,
     root_page,
-    getRobotsTxtUserAgents(JSON_EXTRACT_SCALAR(payload, '$._robots_txt')) AS robots_txt_user_agent_info,
+    -- FIXED: Updated data source from payload to custom_metrics
+    getRobotsTxtUserAgents(
+      TO_JSON_STRING(JSON_QUERY(TO_JSON(custom_metrics), '$.robots_txt'))
+    ) AS robots_txt_user_agent_info,
     COUNT(DISTINCT root_page) OVER (PARTITION BY client) AS total_sites
   FROM
     `httparchive.crawl.pages`

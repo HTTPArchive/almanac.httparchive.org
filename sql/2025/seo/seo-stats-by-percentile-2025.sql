@@ -142,7 +142,10 @@ FROM (
       AS is_root_page,
     percentile,
     page,
-    get_wpt_bodies_info(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS wpt_bodies_info
+    -- FIXED: Updated data source from payload to custom_metrics
+    get_wpt_bodies_info(
+      TO_JSON_STRING(JSON_QUERY(TO_JSON(custom_metrics), '$.wpt_bodies'))
+    ) AS wpt_bodies_info
   FROM
     `httparchive.crawl.pages`,
     UNNEST([10, 25, 50, 75, 90]) AS percentile
