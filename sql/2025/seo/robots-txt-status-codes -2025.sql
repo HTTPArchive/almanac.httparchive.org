@@ -2,13 +2,13 @@
 # Robots txt status codes
 
 # returns all the data we need from _robots_txt
-CREATE TEMPORARY FUNCTION getRobotsStatusInfo(robots_txt_string STRING)
+CREATE TEMPORARY FUNCTION getRobotsStatusInfo(robots_txt_json JSON)
 RETURNS STRUCT<
   status_code STRING
 > LANGUAGE js AS '''
 var result = {};
 try {
-    var robots_txt = JSON.parse(robots_txt_string);
+    var robots_txt = robots_txt_json;
 
     if (Array.isArray(robots_txt) || typeof robots_txt != 'object') return result;
 
@@ -30,10 +30,7 @@ FROM
   (
     SELECT
       client,
-      -- FIXED: Updated data source from payload to custom_metrics
-      getRobotsStatusInfo(
-        TO_JSON_STRING(JSON_QUERY(TO_JSON(custom_metrics), '$.robots_txt'))
-      ) AS robots_txt_status_info
+      getRobotsStatusInfo(TO_JSON(custom_metrics.robots_txt)) AS robots_txt_status_info
     FROM
       `httparchive.crawl.pages`
     WHERE

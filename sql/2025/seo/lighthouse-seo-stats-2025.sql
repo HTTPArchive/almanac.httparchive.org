@@ -1,6 +1,6 @@
-CREATE TEMPORARY FUNCTION getAudits(audits STRING)
+CREATE TEMPORARY FUNCTION getAudits(audits JSON)
 RETURNS ARRAY<STRUCT<id STRING, weight INT64, title STRING, description STRING, score FLOAT64>> LANGUAGE js AS '''
-var auditsObj = JSON.parse(audits);
+var auditsObj = audits;
 var results = [];
 
 for (var auditId in auditsObj) {
@@ -28,7 +28,7 @@ WITH lighthouse_extraction AS (
     END
       AS is_root_page,
     page,
-    lighthouse AS report
+    custom_metrics.lighthouse AS report
   FROM
     `httparchive.crawl.pages`
   WHERE
@@ -49,7 +49,7 @@ SELECT
   SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client, is_root_page) AS total
 FROM
   lighthouse_extraction,
-  UNNEST(getAudits(JSON_EXTRACT(report, '$.audits'))) AS audits
+  UNNEST(getAudits(report.audits)) AS audits
 GROUP BY
   client,
   is_root_page,

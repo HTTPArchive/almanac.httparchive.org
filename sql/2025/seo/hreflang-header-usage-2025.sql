@@ -2,7 +2,7 @@
 # hreflang header usage
 
 # Returns all the data we need from _wpt_bodies
-CREATE TEMPORARY FUNCTION getHreflangWptBodies(wpt_bodies_string STRING)
+CREATE TEMPORARY FUNCTION getHreflangWptBodies(wpt_bodies_json JSON)
 RETURNS STRUCT<
   hreflangs ARRAY<STRING>
 > LANGUAGE js AS '''
@@ -11,7 +11,7 @@ var result = {
 };
 
 try {
-    var wpt_bodies = JSON.parse(wpt_bodies_string);
+    var wpt_bodies = wpt_bodies_json;
 
     if (Array.isArray(wpt_bodies) || typeof wpt_bodies != 'object') return result;
 
@@ -33,10 +33,7 @@ WITH hreflang_usage AS (
       WHEN is_root_page = TRUE THEN 'Homepage'
       ELSE 'No Assigned Page'
     END AS is_root_page,
-    -- FIXED: Updated data source from payload to custom_metrics
-    getHreflangWptBodies(
-      TO_JSON_STRING(JSON_QUERY(TO_JSON(custom_metrics), '$.wpt_bodies'))
-    ) AS hreflang_wpt_bodies_info
+    getHreflangWptBodies(TO_JSON(custom_metrics.wpt_bodies)) AS hreflang_wpt_bodies_info
   FROM
     `httparchive.crawl.pages`
   WHERE

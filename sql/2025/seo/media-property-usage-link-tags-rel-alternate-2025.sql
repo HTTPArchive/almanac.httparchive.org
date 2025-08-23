@@ -2,12 +2,12 @@
 # Media property usage of link tags with rel=alternate
 
 # returns all the data we need from _almanac
-CREATE TEMPORARY FUNCTION getMediaPropertyAlmanacInfo(almanac_string STRING)
+CREATE TEMPORARY FUNCTION getMediaPropertyAlmanacInfo(almanac_json JSON)
 RETURNS ARRAY<STRING>
 LANGUAGE js AS '''
 var result = [];
 try {
-    var almanac = JSON.parse(almanac_string);
+    var almanac = almanac_json;
 
     if (Array.isArray(almanac) || typeof almanac != 'object') return ["NO PAYLOAD"];
 
@@ -25,10 +25,7 @@ return result;
 WITH page_almanac_info AS (
   SELECT
     client,
-    -- FIXED: Updated data source from payload to custom_metrics
-    getMediaPropertyAlmanacInfo(
-      TO_JSON_STRING(JSON_QUERY(TO_JSON(custom_metrics), '$.almanac'))
-    ) AS media_property_almanac_info
+    getMediaPropertyAlmanacInfo(TO_JSON(custom_metrics.almanac)) AS media_property_almanac_info
   FROM
     `httparchive.crawl.pages`
   WHERE

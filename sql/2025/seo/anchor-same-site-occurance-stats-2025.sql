@@ -2,7 +2,7 @@
 # Anchor same site occurrence stats
 # This query aims to highlight sites with few same-site links, like SPAs.
 
-CREATE TEMPORARY FUNCTION getLinkDesciptionsWptBodies(wpt_bodies_string STRING)
+CREATE TEMPORARY FUNCTION getLinkDesciptionsWptBodies(wpt_bodies_json JSON)
 RETURNS STRUCT<
   links_same_site INT64,
   links_window_location INT64,
@@ -16,7 +16,7 @@ var result = {
   links_href_javascript: 0
 };
 try {
-  var wpt_bodies = JSON.parse(wpt_bodies_string);
+  var wpt_bodies = wpt_bodies_json;
 
   if (Array.isArray(wpt_bodies) || typeof wpt_bodies != 'object') return result;
 
@@ -44,10 +44,7 @@ WITH same_links_info AS (
       ELSE 'No Assigned Page'
     END
       AS is_root_page,
-    -- FIXED: Updated data source from payload to custom_metrics
-    getLinkDesciptionsWptBodies(
-      TO_JSON_STRING(JSON_QUERY(TO_JSON(custom_metrics), '$.wpt_bodies'))
-    ) AS wpt_bodies_info
+    getLinkDesciptionsWptBodies(TO_JSON(custom_metrics.wpt_bodies)) AS wpt_bodies_info
   FROM
     `httparchive.crawl.pages`
   WHERE

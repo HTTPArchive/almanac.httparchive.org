@@ -3,7 +3,7 @@
 # Note: This query only reports if an attribute was ever used on a page. It is not a per iframe report.
 
 # Returns all the data we need from _markup
-CREATE TEMPORARY FUNCTION getIframeMarkupInfo(markup_string STRING)
+CREATE TEMPORARY FUNCTION getIframeMarkupInfo(markup_json JSON)
 RETURNS STRUCT<
   loading ARRAY<STRING>
 > LANGUAGE js AS '''
@@ -22,7 +22,7 @@ function getKey(dict) {
 }
 
 try {
-    var markup = JSON.parse(markup_string);
+    var markup = markup_json;
 
     if (Array.isArray(markup) || typeof markup != 'object') return result;
 
@@ -43,10 +43,7 @@ WITH iframe_loading_table AS (
       WHEN is_root_page = TRUE THEN 'Homepage'
       ELSE 'No Assigned Page'
     END AS is_root_page,
-    -- FIXED: Updated data source from payload to custom_metrics
-    getIframeMarkupInfo(
-      TO_JSON_STRING(JSON_QUERY(TO_JSON(custom_metrics), '$.markup'))
-    ) AS iframe_markup_info
+    getIframeMarkupInfo(TO_JSON(custom_metrics.markup)) AS iframe_markup_info
   FROM
     `httparchive.crawl.pages`
   WHERE

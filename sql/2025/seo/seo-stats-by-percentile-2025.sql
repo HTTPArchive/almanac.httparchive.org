@@ -2,7 +2,7 @@
 # SEO stats by percentile
 
 # returns all the data we need from _wpt_bodies
-CREATE TEMPORARY FUNCTION get_wpt_bodies_info(wpt_bodies_string STRING)
+CREATE TEMPORARY FUNCTION get_wpt_bodies_info(wpt_bodies_json JSON)
 RETURNS STRUCT<
   title_words INT64,
   title_characters INT64,
@@ -39,7 +39,7 @@ function allPropsAreInt(props) {
 try {
   var result = {};
 
-  var wpt_bodies = JSON.parse(wpt_bodies_string);
+  var wpt_bodies = wpt_bodies_json;
 
   if (Array.isArray(wpt_bodies) || typeof wpt_bodies != 'object') {
     result.valid_data = false;
@@ -142,10 +142,7 @@ FROM (
       AS is_root_page,
     percentile,
     page,
-    -- FIXED: Updated data source from payload to custom_metrics
-    get_wpt_bodies_info(
-      TO_JSON_STRING(JSON_QUERY(TO_JSON(custom_metrics), '$.wpt_bodies'))
-    ) AS wpt_bodies_info
+    get_wpt_bodies_info(TO_JSON(custom_metrics.wpt_bodies)) AS wpt_bodies_info
   FROM
     `httparchive.crawl.pages`,
     UNNEST([10, 25, 50, 75, 90]) AS percentile

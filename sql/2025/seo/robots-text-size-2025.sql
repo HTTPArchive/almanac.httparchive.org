@@ -8,12 +8,13 @@
 # helper to get robots size in kibibytes (KiB)
 # Note: Assumes mostly ASCII 1byte = 1character.  Size is collected by
 # custom measurement as string length.
-CREATE TEMPORARY FUNCTION getRobotsSize(payload STRING)
+CREATE TEMPORARY FUNCTION getRobotsSize(custom_metrics_json JSON)
 RETURNS FLOAT64 LANGUAGE js AS '''
 try {
-  var $ = JSON.parse(payload);
-  var robots = JSON.parse($._robots_txt);
-  return robots['size']/1024;
+  // NOTE: custom_metrics_json is already a JS object (no JSON.parse needed)
+  var cm = custom_metrics_json;
+  var robots = cm && cm.robots_txt;
+  return robots && robots.size ? robots.size/1024 : 0;
 } catch (e) {
   return 0;
 }
@@ -35,7 +36,7 @@ FROM (
   SELECT
     client AS client,
     page AS site,
-    getRobotsSize(payload) AS robots_size
+    getRobotsSize(TO_JSON(custom_metrics)) AS robots_size
   FROM
     `httparchive.crawl.pages`
   WHERE

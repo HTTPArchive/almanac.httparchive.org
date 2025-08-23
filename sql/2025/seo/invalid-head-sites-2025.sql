@@ -9,10 +9,10 @@ WITH totals AS (
       ELSE 'No Assigned Page'
     END
       AS is_root_page,
-    payload,
+    custom_metrics,
     page,
-    JSON_QUERY(payload, '$._valid-head.invalidHead') AS invalidHead,
-    ARRAY_LENGTH(JSON_EXTRACT_ARRAY(payload, '$._valid-head.invalidElements')) AS invalidCount
+    JSON_QUERY(TO_JSON_STRING(custom_metrics), '$.valid_head.invalidHead') AS invalidHead,
+    ARRAY_LENGTH(JSON_EXTRACT_ARRAY(TO_JSON_STRING(custom_metrics), '$.valid_head.invalidElements')) AS invalidCount
   FROM
     `httparchive.crawl.pages`
   WHERE

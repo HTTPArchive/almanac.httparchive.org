@@ -2,12 +2,12 @@
 # Meta tag usage by property
 
 # returns all the data we need from _almanac
-CREATE TEMPORARY FUNCTION getMetaTagAlmanacInfo(almanac_string STRING)
+CREATE TEMPORARY FUNCTION getMetaTagAlmanacInfo(almanac_json JSON)
 RETURNS ARRAY<STRING>
 LANGUAGE js AS '''
 var result = [];
 try {
-    var almanac = JSON.parse(almanac_string);
+    var almanac = almanac_json;
     if (Array.isArray(almanac) || typeof almanac != 'object') return [];
 
     if (almanac && almanac["meta-nodes"] && almanac["meta-nodes"].nodes && almanac["meta-nodes"].nodes.filter) {
@@ -24,10 +24,7 @@ return result;
 WITH page_almanac_info AS (
   SELECT
     client,
-    -- FIXED: Updated data source from payload to custom_metrics
-    getMetaTagAlmanacInfo(
-      TO_JSON_STRING(JSON_QUERY(TO_JSON(custom_metrics), '$.almanac'))
-    ) AS meta_tag_almanac_info
+    getMetaTagAlmanacInfo(TO_JSON(custom_metrics.almanac)) AS meta_tag_almanac_info
   FROM
     `httparchive.crawl.pages`
   WHERE

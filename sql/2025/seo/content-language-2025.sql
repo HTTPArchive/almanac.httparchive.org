@@ -1,9 +1,9 @@
-CREATE TEMPORARY FUNCTION getContentLanguagesAlmanac(almanac_string STRING)
+CREATE TEMPORARY FUNCTION getContentLanguagesAlmanac(almanac_json JSON)
 RETURNS ARRAY<STRING>
 LANGUAGE js AS '''
 var result = [];
 try {
-    var almanac = JSON.parse(almanac_string);
+    var almanac = almanac_json;
 
     if (Array.isArray(almanac) || typeof almanac != 'object') return ["NO PAYLOAD"];
 
@@ -27,10 +27,7 @@ WITH content_language_usage AS (
       WHEN is_root_page = TRUE THEN 'Homepage'
       ELSE 'No Assigned Page'
     END AS is_root_page,
-    -- FIXED: Updated data source from payload to custom_metrics
-    getContentLanguagesAlmanac(
-      TO_JSON_STRING(JSON_QUERY(TO_JSON(custom_metrics), '$.almanac'))
-    ) AS content_languages
+    getContentLanguagesAlmanac(TO_JSON(custom_metrics.almanac)) AS content_languages
   FROM
     `httparchive.crawl.pages`
   WHERE

@@ -2,7 +2,7 @@
 # Anchor rel attribute usage
 # This query reports if a rel attribute value was ever used on a page, and calculates various statistics.
 
-CREATE TEMPORARY FUNCTION getRelStatsWptBodies(wpt_bodies_string STRING)
+CREATE TEMPORARY FUNCTION getRelStatsWptBodies(wpt_bodies_json JSON)
 RETURNS STRUCT<
   rel ARRAY<STRING>
 > LANGUAGE js AS '''
@@ -19,7 +19,7 @@ function getKey(dict){
   return arr;
 }
 try {
-    var wpt_bodies = JSON.parse(wpt_bodies_string);
+    var wpt_bodies = wpt_bodies_json;
     if (Array.isArray(wpt_bodies) || typeof wpt_bodies != 'object') return result;
     if (wpt_bodies.anchors && wpt_bodies.anchors.rendered && wpt_bodies.anchors.rendered.rel_attributes) {
       result.rel = getKey(wpt_bodies.anchors.rendered.rel_attributes);
@@ -39,10 +39,7 @@ WITH rel_stats_table AS (
       ELSE 'No Assigned Page'
     END
       AS is_root_page,
-    -- FIXED: Updated data source from payload to custom_metrics
-    getRelStatsWptBodies(
-      TO_JSON_STRING(JSON_QUERY(TO_JSON(custom_metrics), '$.wpt_bodies'))
-    ) AS wpt_bodies_info
+    getRelStatsWptBodies(TO_JSON(custom_metrics.wpt_bodies)) AS wpt_bodies_info
   FROM
     `httparchive.crawl.pages`
   WHERE

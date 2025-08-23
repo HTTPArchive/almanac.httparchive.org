@@ -2,7 +2,7 @@
 # Image alt stats
 
 # Returns all the data we need from _markup
-CREATE TEMPORARY FUNCTION get_markup_info(markup_string STRING)
+CREATE TEMPORARY FUNCTION get_markup_info(markup_json JSON)
 RETURNS STRUCT<
   images_img_total INT64,
   images_with_alt_present INT64,
@@ -16,7 +16,7 @@ var result = {
   images_with_alt_missing: 0
 };
 try {
-    var markup = JSON.parse(markup_string);
+    var markup = markup_json;
 
     if (Array.isArray(markup) || typeof markup != 'object') return result;
 
@@ -47,10 +47,7 @@ WITH processed_data AS (
       WHEN is_root_page = TRUE THEN 'Homepage'
       ELSE 'No Assigned Page'
     END AS is_root_page,
-    -- FIXED: Updated data source from payload to custom_metrics
-    get_markup_info(
-      TO_JSON_STRING(JSON_QUERY(TO_JSON(custom_metrics), '$.markup'))
-    ) AS markup_info
+    get_markup_info(TO_JSON(custom_metrics.markup)) AS markup_info
   FROM
     `httparchive.crawl.pages`
   WHERE
