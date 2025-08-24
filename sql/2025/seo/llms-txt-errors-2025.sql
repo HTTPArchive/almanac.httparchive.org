@@ -1,4 +1,7 @@
 #standardSQL
+
+-- valid = TRUE means "present" or "exists" 
+-- "errors" are likely validation errors, but may/may not still work
 WITH found AS (
   SELECT
     SAFE_CAST(JSON_VALUE(custom_metrics.other, '$.llms_txt_validation.valid') AS BOOL) AS valid,

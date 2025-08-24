@@ -1,4 +1,6 @@
 #standardSQL
+
+-- valid = TRUE means "present" or "exists" 
 WITH home AS (
   SELECT
     JSON_QUERY(custom_metrics.other, '$.llms_txt_validation') AS obj,
