@@ -10,7 +10,7 @@ WITH page_metrics AS (
   FROM httparchive.crawl.pages,
     UNNEST([1000, 10000, 100000, 1000000, 10000000, 100000000]) AS rank_bucket
   WHERE
-    date = '2025-06-01'
+    date = '2025-07-01'
   GROUP BY
     client,
     page,

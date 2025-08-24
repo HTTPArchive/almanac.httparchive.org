@@ -22,7 +22,7 @@ FROM (
   FROM
     `httparchive.crawl.pages`
   WHERE
-    date = '2025-06-01' AND
+    date = '2025-07-01' AND
     is_root_page AND -- no need to crawl inner pages for this one
     custom_metrics.robots_txt.status IS NOT NULL
 )

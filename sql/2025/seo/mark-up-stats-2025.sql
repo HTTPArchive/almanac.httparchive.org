@@ -65,7 +65,7 @@ WITH markup_extraction AS (
     getMarkupStatsInfo(TO_JSON(custom_metrics.markup)) AS markup_info
   FROM
     `httparchive.crawl.pages`
-  WHERE date = '2025-06-01'
+  WHERE date = '2025-07-01'
 )
 
 SELECT

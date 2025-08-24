@@ -165,7 +165,7 @@ FROM (
   FROM
     `httparchive.crawl.pages`
   WHERE
-    date = '2025-06-01'
+    date = '2025-07-01'
 )
 WHERE
   canonical_metrics.has_wpt_bodies

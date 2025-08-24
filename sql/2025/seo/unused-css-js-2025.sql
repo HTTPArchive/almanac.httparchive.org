@@ -19,7 +19,7 @@ FROM (
     rank
   FROM
     `httparchive.crawl.pages`
-  WHERE date = '2025-06-01'
+  WHERE date = '2025-07-01'
 )
 
 LEFT JOIN (
@@ -30,7 +30,7 @@ LEFT JOIN (
     SAFE_DIVIDE(CAST(JSON_EXTRACT_SCALAR(report, '$.audits.unused-css-rules.details.overallSavingsBytes') AS INT64), 1024) AS unused_css_rules
   FROM
     `httparchive.crawl.pages`
-  WHERE date = '2025-06-01'
+  WHERE date = '2025-07-01'
 )
 
 USING (client, page),

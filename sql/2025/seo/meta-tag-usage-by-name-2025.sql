@@ -28,7 +28,7 @@ WITH page_almanac_info AS (
   FROM
     `httparchive.crawl.pages`
   WHERE
-    DATE = '2025-06-01'
+    DATE = '2025-07-01'
 ),
 
 total_pages AS (

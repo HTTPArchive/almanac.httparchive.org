@@ -34,7 +34,7 @@ FROM
     FROM
       `httparchive.crawl.pages`
     WHERE
-      DATE = '2025-06-01'
+      DATE = '2025-07-01'
   )
 GROUP BY
   client,

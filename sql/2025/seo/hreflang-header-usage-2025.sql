@@ -37,7 +37,7 @@ WITH hreflang_usage AS (
   FROM
     `httparchive.crawl.pages`
   WHERE
-    date = '2025-06-01'
+    date = '2025-07-01'
 
 )
 
