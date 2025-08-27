@@ -16,14 +16,14 @@ WITH total_third_party_usage AS (
     category,
     COUNT(DISTINCT pages.url) AS total_pages
   FROM
-    `httparchive.summary_pages.2024_06_01_*` AS pages
+    `httparchive.summary_pages.2025_07_01_*` AS pages
   INNER JOIN (
     SELECT
       _TABLE_SUFFIX AS client,
       pageid,
       url
     FROM
-      `httparchive.summary_requests.2024_06_01_*`
+      `httparchive.summary_requests.2025_07_01_*`
   ) AS requests
   ON (
     pages._TABLE_SUFFIX = requests.client AND
@@ -33,7 +33,7 @@ WITH total_third_party_usage AS (
     `httparchive.almanac.third_parties`
   ON
     NET.HOST(requests.url) = NET.HOST(domain) AND
-    date = '2024-06-01' AND
+    date = '2025-07-01' AND
     category != 'hosting'
   GROUP BY
     client,
@@ -83,7 +83,7 @@ FROM (
           url AS page,
           report
         FROM
-          `httparchive.lighthouse.2024_06_01_*`
+          `httparchive.lighthouse.2025_07_01_*`
       ),
       UNNEST(JSON_QUERY_ARRAY(report, '$.audits.render-blocking-resources.details.items')) AS renderBlockingItems
     INNER JOIN

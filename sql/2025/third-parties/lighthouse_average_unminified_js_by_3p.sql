@@ -27,11 +27,11 @@ FROM (
       _TABLE_SUFFIX AS client,
       lighthouse.url AS page,
       NET.HOST(unminified.url) IS NOT NULL AND NET.HOST(unminified.url) IN (
-        SELECT domain FROM `httparchive.almanac.third_parties` WHERE date = '2024-06-01' AND category != 'hosting'
+        SELECT domain FROM `httparchive.almanac.third_parties` WHERE date = '2025-07-01' AND category != 'hosting'
       ) AS is_3p,
       unminified.wastedBytes AS wasted_bytes
     FROM
-      `httparchive.lighthouse.2024_06_01_*` AS lighthouse,
+      `httparchive.lighthouse.2025_07_01_*` AS lighthouse,
       UNNEST(getUnminifiedJsUrls(JSON_EXTRACT(report, "$.audits['unminified-javascript']"))) AS unminified
   )
   GROUP BY

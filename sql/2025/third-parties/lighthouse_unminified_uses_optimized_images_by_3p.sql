@@ -35,7 +35,7 @@ base AS (
       data.wastedBytes AS potential_savings,
       data.totalBytes AS transfer_size
     FROM
-      `httparchive.lighthouse.2024_06_01_*` AS lighthouse,
+      `httparchive.lighthouse.2025_07_01_*` AS lighthouse,
       UNNEST(getUnminifiedImageUrls(JSON_EXTRACT(report, "$.audits['uses-optimized-images']"))) AS data
   ) AS potential_third_parties
   LEFT OUTER JOIN

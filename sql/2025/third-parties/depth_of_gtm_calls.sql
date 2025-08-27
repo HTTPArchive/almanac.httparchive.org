@@ -67,7 +67,7 @@ WITH data AS (
       `httparchive.all.requests`
     WHERE
       NET.REG_DOMAIN(root_page) != NET.REG_DOMAIN(url) AND
-      date = '2024-06-01'
+      date = '2025-07-01'
   )
   WHERE third_party != initiator_etld AND
     root_page != initiator_etld

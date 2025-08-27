@@ -27,14 +27,14 @@ FROM (
       client,
       page,
       NET.HOST(unminified.url) IS NOT NULL AND NET.HOST(unminified.url) IN (
-        SELECT domain FROM `httparchive.almanac.third_parties` WHERE date = '2024-06-01' AND category != 'hosting'
+        SELECT domain FROM `httparchive.almanac.third_parties` WHERE date = '2025-07-01' AND category != 'hosting'
       ) AS is_3p,
       unminified.wastedBytes AS wasted_bytes
     FROM
       `httparchive.all.pages` AS allpages
     CROSS JOIN
       UNNEST(getUnminifiedJsUrls(JSON_EXTRACT(allpages.lighthouse, "$.audits['unminified-css']"))) AS unminified
-    WHERE allpages.date = '2024-06-01' AND allpages.is_root_page = TRUE
+    WHERE allpages.date = '2025-07-01' AND allpages.is_root_page = TRUE
   )
   GROUP BY
     client,

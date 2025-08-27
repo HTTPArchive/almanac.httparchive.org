@@ -6,7 +6,7 @@ WITH totals AS (
     _TABLE_SUFFIX AS client,
     COUNT(DISTINCT url) AS total_pages
   FROM
-    `httparchive.summary_pages.2024_06_01_*`
+    `httparchive.summary_pages.2025_07_01_*`
   GROUP BY
     client
 ),
@@ -16,7 +16,7 @@ youtube_embed AS (
     _TABLE_SUFFIX AS client,
     COUNT(DISTINCT url) AS youtube_embed_pages
   FROM
-    `httparchive.technologies.2024_06_01_*`
+    `httparchive.technologies.2025_07_01_*`
   WHERE
     app = 'lite-youtube-embed'
   GROUP BY
