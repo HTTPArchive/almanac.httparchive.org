@@ -1,14 +1,18 @@
 #standardSQL
 # Distribution of websites by number of third party
 
+-- updated for crawl.requests
 WITH requests AS (
   SELECT
-    _TABLE_SUFFIX AS client,
-    pageid AS page,
+    client,
+    page,
     url
   FROM
-    `httparchive.summary_requests.2024_06_01_*`
+    `httparchive.crawl.requests`
+  WHERE
+    date = '2025-07-01'
 ),
+
 
 third_party AS (
   SELECT
@@ -22,7 +26,7 @@ third_party AS (
     requests r
   ON NET.HOST(r.url) = NET.HOST(tp.domain)
   WHERE
-    date = '2024-06-01' AND
+    date = '2025-07-01' AND
     category != 'hosting'
   GROUP BY
     domain,
