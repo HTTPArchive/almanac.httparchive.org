@@ -2,18 +2,18 @@
 # Meta tag usage by property
 
 # returns all the data we need from _almanac
-CREATE TEMPORARY FUNCTION getMetaTagAlmanacInfo(almanac_json JSON)
+CREATE TEMPORARY FUNCTION getMetaTagPropertyAlmanacInfo(almanac_json JSON)
 RETURNS ARRAY<STRING>
 LANGUAGE js AS '''
 var result = [];
 try {
     var almanac = almanac_json;
+
     if (Array.isArray(almanac) || typeof almanac != 'object') return [];
 
-    if (almanac && almanac["meta-nodes"] && almanac["meta-nodes"].nodes && almanac["meta-nodes"].nodes.filter) {
+    if (almanac && almanac["meta-nodes"] && almanac["meta-nodes"].nodes) {
       result = almanac["meta-nodes"].nodes
-        .filter(n => n["property"]) // just with a property attribute
-        .map(am => am["property"].toLowerCase().trim()) // array of the property values
+        .map(am => am["property"].toLowerCase().trim()) // array of meta tag properties
         .filter((v, i, a) => a.indexOf(v) === i); // remove duplicates
     }
 
@@ -24,7 +24,7 @@ return result;
 WITH page_almanac_info AS (
   SELECT
     client,
-    getMetaTagAlmanacInfo(TO_JSON(custom_metrics.almanac)) AS meta_tag_almanac_info
+    getMetaTagPropertyAlmanacInfo(TO_JSON(custom_metrics.other.almanac)) AS meta_tag_property_almanac_info
   FROM
     `httparchive.crawl.pages`
   WHERE
@@ -49,10 +49,10 @@ SELECT
   SAFE_DIVIDE(COUNT(0), total_pages.total) AS pct
 FROM
   page_almanac_info,
-  UNNEST(page_almanac_info.meta_tag_almanac_info) AS meta_tag_property,
+  UNNEST(page_almanac_info.meta_tag_property_almanac_info) AS meta_tag_property
+JOIN
   total_pages
-WHERE
-  page_almanac_info.client = total_pages.client
+ON page_almanac_info.client = total_pages.client
 GROUP BY
   total_pages.total,
   meta_tag_property,

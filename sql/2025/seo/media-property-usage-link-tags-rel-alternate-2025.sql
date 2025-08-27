@@ -25,7 +25,7 @@ return result;
 WITH page_almanac_info AS (
   SELECT
     client,
-    getMediaPropertyAlmanacInfo(TO_JSON(custom_metrics.almanac)) AS media_property_almanac_info
+    getMediaPropertyAlmanacInfo(TO_JSON(custom_metrics.other.almanac)) AS media_property_almanac_info
   FROM
     `httparchive.crawl.pages`
   WHERE

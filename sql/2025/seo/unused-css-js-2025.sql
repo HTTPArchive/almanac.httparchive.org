@@ -1,5 +1,5 @@
 #standardSQL
-# Gather lighthouse unused css and js by CrUX rank
+# Unused CSS and JS
 
 SELECT
   client,
@@ -26,8 +26,8 @@ LEFT JOIN (
   SELECT
     client,
     page,
-    SAFE_DIVIDE(CAST(JSON_EXTRACT_SCALAR(report, '$.audits.unused-javascript.details.overallSavingsBytes') AS INT64), 1024) AS unused_javascript,
-    SAFE_DIVIDE(CAST(JSON_EXTRACT_SCALAR(report, '$.audits.unused-css-rules.details.overallSavingsBytes') AS INT64), 1024) AS unused_css_rules
+    SAFE_DIVIDE(CAST(JSON_EXTRACT_SCALAR(payload, '$.lighthouse.audits.unused-javascript.details.overallSavingsBytes') AS INT64), 1024) AS unused_javascript,
+    SAFE_DIVIDE(CAST(JSON_EXTRACT_SCALAR(payload, '$.lighthouse.audits.unused-css-rules.details.overallSavingsBytes') AS INT64), 1024) AS unused_css_rules
   FROM
     `httparchive.crawl.pages`
   WHERE date = '2025-07-01'

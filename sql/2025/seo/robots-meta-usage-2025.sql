@@ -35,7 +35,7 @@ WITH Robots_Data AS (
       WHEN is_root_page = TRUE THEN 'Homepage'
       ELSE 'No Assigned Page'
     END AS is_root_page,
-    custom_metrics.robots_meta AS robots_meta_json
+    custom_metrics.robots_txt AS robots_meta_json
   FROM
     `httparchive.crawl.pages`
   WHERE

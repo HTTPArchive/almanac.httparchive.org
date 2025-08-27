@@ -1,3 +1,6 @@
+#standardSQL
+# HTML Response Content Language
+
 WITH subquery AS (
   SELECT
     client,
@@ -32,4 +35,4 @@ GROUP BY
   header.value
 ORDER BY
   sites DESC,
-  client;
+  client

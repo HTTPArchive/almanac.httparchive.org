@@ -42,10 +42,10 @@ WITH same_links_info AS (
     CASE WHEN is_root_page THEN 'Homepage' ELSE 'Secondarypage' END AS is_root_page,
     -- CHANGED: read from custom_metrics.wpt_bodies (STRUCT -> JSON -> STRING)
     getLinkDesciptionsWptBodies(
-      TO_JSON_STRING(JSON_QUERY(TO_JSON(custom_metrics), '$.wpt_bodies'))
+      TO_JSON_STRING(JSON_QUERY(TO_JSON(custom_metrics.wpt_bodies), '$.anchors'))
     ) AS wpt_bodies_info
   FROM `httparchive.crawl.pages` TABLESAMPLE SYSTEM (0.01 PERCENT)
-  WHERE date = '2025-06-01'
+  WHERE date = '2025-07-01'
 )
 
 SELECT

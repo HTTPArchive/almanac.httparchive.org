@@ -34,7 +34,7 @@ FROM
   (
     SELECT
       client AS client,
-      getVideosAlmanacInfo(TO_JSON(custom_metrics.almanac)) AS videos_almanac_info
+      getVideosAlmanacInfo(TO_JSON(custom_metrics.other.almanac)) AS videos_almanac_info
     FROM
       `httparchive.crawl.pages`
     WHERE

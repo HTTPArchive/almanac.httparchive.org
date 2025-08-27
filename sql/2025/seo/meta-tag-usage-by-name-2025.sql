@@ -24,7 +24,7 @@ return result;
 WITH page_almanac_info AS (
   SELECT
     client,
-    getMetaTagAlmanacInfo(TO_JSON(custom_metrics.almanac)) AS meta_tag_almanac_info
+    getMetaTagAlmanacInfo(TO_JSON(custom_metrics.other.almanac)) AS meta_tag_almanac_info
   FROM
     `httparchive.crawl.pages`
   WHERE

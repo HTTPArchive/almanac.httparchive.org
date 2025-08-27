@@ -9,19 +9,13 @@ WITH totals AS (
       ELSE 'No Assigned Page'
     END
       AS is_root_page,
-    custom_metrics,
     page,
-    JSON_QUERY(TO_JSON_STRING(custom_metrics), '$.valid_head.invalidHead') AS invalidHead,
-    ARRAY_LENGTH(JSON_EXTRACT_ARRAY(TO_JSON_STRING(custom_metrics), '$.valid_head.invalidElements')) AS invalidCount
+    JSON_QUERY(TO_JSON_STRING(payload), '$.valid_head.invalidHead') AS invalidHead,
+    ARRAY_LENGTH(JSON_EXTRACT_ARRAY(TO_JSON_STRING(payload), '$.valid_head.invalidElements')) AS invalidCount
   FROM
     `httparchive.crawl.pages`
   WHERE
-    date = '2025-06-01'
-  GROUP BY
-    client,
-    page,
-    is_root_page,
-    payload
+    date = '2025-07-01'
 )
 
 SELECT

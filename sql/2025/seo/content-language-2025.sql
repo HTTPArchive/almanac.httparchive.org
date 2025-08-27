@@ -1,3 +1,6 @@
+#standardSQL
+# Content Language
+
 CREATE TEMPORARY FUNCTION getContentLanguagesAlmanac(almanac_json JSON)
 RETURNS ARRAY<STRING>
 LANGUAGE js AS '''
@@ -27,7 +30,7 @@ WITH content_language_usage AS (
       WHEN is_root_page = TRUE THEN 'Homepage'
       ELSE 'No Assigned Page'
     END AS is_root_page,
-    getContentLanguagesAlmanac(TO_JSON(custom_metrics.almanac)) AS content_languages
+    getContentLanguagesAlmanac(TO_JSON(custom_metrics.other.almanac)) AS content_languages
   FROM
     `httparchive.crawl.pages`
   WHERE

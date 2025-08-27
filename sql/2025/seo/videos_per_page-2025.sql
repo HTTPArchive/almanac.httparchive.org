@@ -1,7 +1,7 @@
 #standardSQL
 # Videos per page
-
 # returns all the data we need from _almanac
+
 CREATE TEMPORARY FUNCTION getVideosAlmanacInfo(almanac_json JSON)
 RETURNS STRUCT<
   videos_total INT64
@@ -34,7 +34,7 @@ FROM (
     client AS client,
     percentile,
     page,
-    getVideosAlmanacInfo(TO_JSON(custom_metrics.almanac)) AS video_almanac_info
+    getVideosAlmanacInfo(TO_JSON(custom_metrics.other.almanac)) AS video_almanac_info
   FROM
     `httparchive.crawl.pages`,
     UNNEST([10, 25, 50, 75, 90]) AS percentile
