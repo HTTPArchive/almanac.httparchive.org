@@ -1,15 +1,16 @@
 #standardSQL
 # Number of third-parties per websites by rank
+
 WITH requests AS (
   SELECT
     client,
     page,
     url
   FROM
-    `httparchive.all.requests` AS req
+    `httparchive.crawl.requests` AS req
   WHERE
-    req.date = '2025-06-01' AND
-    req.is_root_page = true
+    date = '2025-06-01' AND
+    is_root_page = true
 ),
 
 pages AS (
@@ -18,7 +19,7 @@ pages AS (
     page,
     rank
   FROM
-    `httparchive.all.pages` AS pg
+    `httparchive.crawl.pages` AS pg
   WHERE
     pg.date = '2025-06-01' AND
     pg.is_root_page = true
