@@ -24,35 +24,6 @@ LANGUAGE js AS """
   return Array.from(new Set(findInitiators(rootPage, [], data)));
 """;
 
-
-CREATE TEMP FUNCTION mean_depth_and_next_element_after_gtm(input_array ARRAY<STRING>)
-RETURNS STRUCT<mean_depth FLOAT64, next_elements ARRAY<STRING>>
-LANGUAGE js AS """
-  // Initialize the array to hold names of next elements
-  const nextElements = [];
-
-  // Traverse the input array to find "googletagmanager.com" and capture the next element
-  for (let i = 0; i < input_array.length - 1; i++) { // -1 to avoid out-of-bounds
-    if (input_array[i] === 'googletagmanager.com') {
-      nextElements.push(input_array[i + 1]);
-    }
-  }
-
-  // If no "googletagmanager.com" is found, return NULL
-  if (nextElements.length === 0) {
-    return { mean_depth: null, next_elements: [] };
-  }
-
-  // Calculate mean depth for all next elements
-  const meanDepth = nextElements.length > 0
-    ? nextElements.reduce((sum, _, idx) => sum + (idx + 2), 0) / nextElements.length
-    : null;
-
-  // Return the result as a struct
-  return { mean_depth: meanDepth, next_elements: nextElements };
-""";
-
-
 WITH data AS (
   -- TP interact with other tps
   SELECT
@@ -74,11 +45,19 @@ WITH data AS (
   GROUP BY client, root_page, third_party, initiator_etld
 )
 
-SELECT client, next_elements_after_gtm, count(0) AS c FROM (
+-- Add this to the final SELECT to see top initiators by chain length
+SELECT 
+  client,
+  first_initiator,
+  AVG(ARRAY_LENGTH(all_initiators)) AS avg_chain_length,
+  MAX(ARRAY_LENGTH(all_initiators)) AS max_chain_length,
+  COUNT(*) AS pages
+FROM (
   SELECT
+    root_page,
     client,
-    result.mean_depth AS mean_depth_after_gtm,
-    result.next_elements AS next_elements_after_gtm
+    all_initiators,
+    all_initiators[OFFSET(0)] AS first_initiator  -- First third-party in chain
   FROM (
     SELECT
       root_page,
@@ -86,8 +65,8 @@ SELECT client, next_elements_after_gtm, count(0) AS c FROM (
       findAllInitiators(root_page, ARRAY_AGG(STRUCT(root_page, third_party, initiator_etld))) AS all_initiators
     FROM data
     GROUP BY root_page, client
-  ),
-    UNNEST([mean_depth_and_next_element_after_gtm(all_initiators)]) AS result
-  WHERE result.mean_depth IS NOT NULL
-  ORDER BY mean_depth_after_gtm
-) GROUP BY client, next_elements_after_gtm ORDER BY c;
+  )
+  WHERE ARRAY_LENGTH(all_initiators) > 0
+)
+GROUP BY client, first_initiator
+ORDER BY avg_chain_length DESC;

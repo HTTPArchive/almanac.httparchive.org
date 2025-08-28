@@ -1,4 +1,4 @@
-#standardSQL
+# standardSQL
 # usage of different directives for allow attribute on iframes
 
 CREATE TEMP FUNCTION getNumWithAllowAttribute(payload STRING) AS ((

@@ -7,7 +7,7 @@ WITH requests AS (
     page,
     url
   FROM
-    `httparchive.crawl.requests` AS req
+    `httparchive.crawl.requests`
   WHERE
     date = '2025-06-01' AND
     is_root_page = true
@@ -36,7 +36,7 @@ third_party AS (
     requests r
   ON NET.HOST(r.url) = NET.HOST(tp.domain)
   WHERE
-    date = '2025-06-01' AND
+    date = '2024-06-01' AND
     category != 'hosting'
   GROUP BY
     domain,

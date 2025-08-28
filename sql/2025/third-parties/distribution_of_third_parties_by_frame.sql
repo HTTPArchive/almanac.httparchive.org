@@ -12,7 +12,7 @@ WITH document_frameid AS (
     END AS mainframe_id,
     JSON_EXTRACT_SCALAR(payload, '$._frame_id') AS frame_id,
     is_main_document
-  FROM `httparchive.all.requests` AS requests
+  FROM `httparchive.crawl.requests` AS requests
   WHERE requests.date = '2025-06-01' AND requests.is_root_page = true
 ),
 
