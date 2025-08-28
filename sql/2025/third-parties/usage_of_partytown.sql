@@ -6,7 +6,7 @@ WITH totals AS (
     _TABLE_SUFFIX AS client,
     COUNT(DISTINCT url) AS total_pages
   FROM
-    `httparchive.summary_pages.2025_07_01_*`
+    `httparchive.summary_pages.2025_06_01_*`
   GROUP BY
     client
 ),
@@ -16,7 +16,7 @@ partytown AS (
     _TABLE_SUFFIX AS client,
     COUNT(DISTINCT url) AS partytown_pages
   FROM
-    `httparchive.technologies.2025_07_01_*`
+    `httparchive.technologies.2025_06_01_*`
   WHERE
     app = 'Partytown'
   GROUP BY

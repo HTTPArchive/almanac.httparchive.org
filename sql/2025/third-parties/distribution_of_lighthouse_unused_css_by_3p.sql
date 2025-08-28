@@ -34,7 +34,7 @@ base AS (
       NET.HOST(data.url) AS domain,
       data.wastedBytes AS potential_savings
     FROM
-      `httparchive.lighthouse.2025_07_01_*` AS lighthouse,
+      `httparchive.lighthouse.2025_06_01_*` AS lighthouse,
       UNNEST(getUnusedCSSUrls(JSON_EXTRACT(report, "$.audits['unused-css-rules']"))) AS data
   ) AS potential_third_parties
   LEFT OUTER JOIN

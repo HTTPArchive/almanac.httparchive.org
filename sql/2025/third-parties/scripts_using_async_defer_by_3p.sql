@@ -48,7 +48,7 @@ base AS (
         data.isDefer AS isDefer,
         pages.url AS page
       FROM
-        `httparchive.pages.2025_07_01_*` AS pages,
+        `httparchive.pages.2025_06_01_*` AS pages,
         UNNEST(getScripts(JSON_EXTRACT_SCALAR(payload, '$._almanac'))) AS data
     ) AS potential_third_parties
   INNER JOIN

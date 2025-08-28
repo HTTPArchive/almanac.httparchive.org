@@ -6,7 +6,7 @@ WITH a11y_technologies AS (
     _TABLE_SUFFIX AS client,
     COUNT(DISTINCT url) AS freq
   FROM
-    `httparchive.technologies.2025_07_01_*`
+    `httparchive.technologies.2025_06_01_*`
   WHERE
     category = 'Accessibility'
   GROUP BY
@@ -18,7 +18,7 @@ pages AS (
     _TABLE_SUFFIX AS client,
     COUNT(0) AS total
   FROM
-    `httparchive.summary_pages.2025_07_01_*`
+    `httparchive.summary_pages.2025_06_01_*`
   GROUP BY
     client
 )

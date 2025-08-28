@@ -6,7 +6,7 @@ WITH a11y_technologies AS (
     _TABLE_SUFFIX AS client,
     url
   FROM
-    `httparchive.technologies.2025_07_01_*`
+    `httparchive.technologies.2025_06_01_*`
   WHERE
     category = 'Accessibility'
 ),
@@ -17,7 +17,7 @@ pages AS (
     url,
     rank_grouping
   FROM
-    `httparchive.summary_pages.2025_07_01_*`,
+    `httparchive.summary_pages.2025_06_01_*`,
     UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
   WHERE
     rank <= rank_grouping
@@ -29,7 +29,7 @@ rank_totals AS (
     rank_grouping,
     COUNT(0) AS total
   FROM
-    `httparchive.summary_pages.2025_07_01_*`,
+    `httparchive.summary_pages.2025_06_01_*`,
     UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
   WHERE
     rank <= rank_grouping

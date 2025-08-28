@@ -33,7 +33,7 @@ base AS (
         NET.HOST(data.url) AS domain,
         lighthouse.url AS page
       FROM
-        `httparchive.lighthouse.2025_07_01_*` AS lighthouse,
+        `httparchive.lighthouse.2025_06_01_*` AS lighthouse,
         UNNEST(getUrls(JSON_EXTRACT(report, "$.audits['legacy-javascript']"))) AS data
     ) AS potential_third_parties
   INNER JOIN
@@ -70,7 +70,7 @@ FROM (
       _TABLE_SUFFIX AS client,
       COUNT(DISTINCT url) AS total
     FROM
-      `httparchive.lighthouse.2025_07_01_*`
+      `httparchive.lighthouse.2025_06_01_*`
     GROUP BY
       _TABLE_SUFFIX
   )

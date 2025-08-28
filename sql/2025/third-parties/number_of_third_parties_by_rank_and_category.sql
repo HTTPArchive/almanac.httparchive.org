@@ -7,7 +7,7 @@ WITH requests AS (
     pageid AS page,
     url
   FROM
-    `httparchive.summary_requests.2025_07_01_*`
+    `httparchive.summary_requests.2025_06_01_*`
 ),
 
 pages AS (
@@ -16,7 +16,7 @@ pages AS (
     pageid AS page,
     rank
   FROM
-    `httparchive.summary_pages.2025_07_01_*`
+    `httparchive.summary_pages.2025_06_01_*`
 ),
 
 third_party AS (
@@ -31,7 +31,7 @@ third_party AS (
     requests r
   ON NET.HOST(r.url) = NET.HOST(tp.domain)
   WHERE
-    date = '2025-07-01' AND
+    date = '2025-06-01' AND
     category NOT IN ('hosting')
   GROUP BY
     domain,
