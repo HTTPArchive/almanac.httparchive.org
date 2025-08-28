@@ -3,12 +3,14 @@
 
 WITH requests AS (
   SELECT
-    _TABLE_SUFFIX AS client,
-    pageid AS page,
+    client,
+    page,
     url,
     type AS contentType
   FROM
-    `httparchive.summary_requests.2025_06_01_*`
+    `httparchive.crawl.requests`
+  WHERE
+    date = '2025-06-01'
 ),
 
 third_party AS (
@@ -22,7 +24,7 @@ third_party AS (
     requests r
   ON NET.HOST(r.url) = NET.HOST(tp.domain)
   WHERE
-    date = '2025-06-01' AND
+    date = '2024-06-01' AND
     category != 'hosting'
   GROUP BY
     domain,
