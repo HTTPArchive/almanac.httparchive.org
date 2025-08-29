@@ -1,5 +1,6 @@
 #standardSQL
 # Invalid Head Elements
+
 WITH pages AS (
   SELECT
     client,
@@ -19,11 +20,11 @@ invalid_elements AS (
     client,
     is_root_page,
     page,
-    JSON_VALUE(el) AS element
+    JSON_VALUE(el, '$') AS element
   FROM pages,
   UNNEST(
     IFNULL(
-      JSON_EXTRACT_ARRAY(other, '$[\'valid-head\'][\'invalidElements\']'),
+      JSON_QUERY_ARRAY(other, '$["valid-head"]["invalidElements"]'),
       []
     )
   ) AS el

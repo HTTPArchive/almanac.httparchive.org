@@ -1,5 +1,6 @@
 #standardSQL
 # Counted metrics of invalid head elements in HTML
+
 WITH totals AS (
   SELECT
     client,
@@ -9,13 +10,16 @@ WITH totals AS (
       ELSE 'No Assigned Page'
     END AS is_root_page,
     page,
-    -- use string-based JSON functions for robust pathing
-    JSON_VALUE(
-      JSON_EXTRACT(TO_JSON_STRING(custom_metrics.other), '$[\'valid-head\'][\'invalidHead\']')
+    JSON_EXTRACT_SCALAR(
+      TO_JSON_STRING(custom_metrics.other),
+      '$[\'valid-head\'][\'invalidHead\']'
     ) AS invalidHead,
     ARRAY_LENGTH(
       IFNULL(
-        JSON_EXTRACT_ARRAY(TO_JSON_STRING(custom_metrics.other), '$[\'valid-head\'][\'invalidElements\']'),
+        JSON_EXTRACT_ARRAY(
+          TO_JSON_STRING(custom_metrics.other),
+          '$[\'valid-head\'][\'invalidElements\']'
+        ),
         []
       )
     ) AS invalidCount
@@ -28,7 +32,7 @@ SELECT
   is_root_page,
   COUNTIF(invalidHead = 'true') AS invalidHeads,
   SUM(invalidCount) AS invalidCount,
-  COUNTIF(invalidHead = 'true') / COUNT(DISTINCT page) AS pct_invalidHeads,
+  SAFE_DIVIDE(COUNTIF(invalidHead = 'true'), COUNT(DISTINCT page)) AS pct_invalidHeads,
   COUNT(DISTINCT page) AS sites,
   SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client, is_root_page) AS total,
   COUNT(0) / SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client, is_root_page) AS pct
