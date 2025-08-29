@@ -10,8 +10,8 @@ WITH totals AS (
     END
       AS is_root_page,
     page,
-    JSON_QUERY(TO_JSON_STRING(payload), '$.valid_head.invalidHead') AS invalidHead,
-    ARRAY_LENGTH(JSON_EXTRACT_ARRAY(TO_JSON_STRING(payload), '$.valid_head.invalidElements')) AS invalidCount
+    JSON_QUERY(TO_JSON_STRING(payload), '$._valid-head.invalidHead') AS invalidHead,
+    ARRAY_LENGTH(JSON_EXTRACT_ARRAY(TO_JSON_STRING(payload), '$._valid-head.invalidElements')) AS invalidCount
   FROM
     `httparchive.crawl.pages`
   WHERE

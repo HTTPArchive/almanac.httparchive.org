@@ -1,62 +1,63 @@
 #standardSQL
 # Meta tag usage by property
 
-# returns all the data we need from _almanac
-CREATE TEMPORARY FUNCTION getMetaTagPropertyAlmanacInfo(almanac_json JSON)
+
+CREATE TEMPORARY FUNCTION getMetaTagPropertyAlmanacInfo(almanac_json STRING)
 RETURNS ARRAY<STRING>
 LANGUAGE js AS '''
-var result = [];
-try {
-    var almanac = almanac_json;
+  var result = [];
+  if (!almanac_json) return result;
 
-    if (Array.isArray(almanac) || typeof almanac != 'object') return [];
+  try {
+    var almanac = JSON.parse(almanac_json);
+    if (!almanac || Array.isArray(almanac) || typeof almanac !== 'object') return result;
 
-    if (almanac && almanac["meta-nodes"] && almanac["meta-nodes"].nodes) {
-      result = almanac["meta-nodes"].nodes
-        .map(am => am["property"].toLowerCase().trim()) // array of meta tag properties
-        .filter((v, i, a) => a.indexOf(v) === i); // remove duplicates
+    var meta = almanac["meta-nodes"];
+    if (meta && meta.nodes && Array.isArray(meta.nodes)) {
+      // collect, normalize, and de-duplicate per page
+      var seen = new Set();
+      for (var i=0; i<meta.nodes.length; i++) {
+        var am = meta.nodes[i] || {};
+        var prop = (am["property"] || "").toString().toLowerCase().trim();
+        if (prop) seen.add(prop);
+      }
+      result = Array.from(seen);
     }
-
-} catch (e) {} // results show some issues with the validity of the payload
-return result;
+  } catch (e) {
+    // swallow and return []
+  }
+  return result;
 ''';
 
 WITH page_almanac_info AS (
   SELECT
     client,
-    getMetaTagPropertyAlmanacInfo(TO_JSON(custom_metrics.other.almanac)) AS meta_tag_property_almanac_info
-  FROM
-    `httparchive.crawl.pages`
-  WHERE
-    DATE = '2025-07-01'
+    -- ✅ 2) Pass STRING into the UDF
+    getMetaTagPropertyAlmanacInfo(TO_JSON_STRING(custom_metrics.other.almanac))
+      AS meta_tag_property_almanac_info
+  FROM `httparchive.crawl.pages` 
+  WHERE date = '2025-07-01'
 ),
 
 total_pages AS (
   SELECT
     client,
-    COUNT(0) AS total
-  FROM
-    page_almanac_info
-  GROUP BY
-    client
+    COUNT(*) AS total
+  FROM page_almanac_info
+  GROUP BY client
 )
 
 SELECT
-  page_almanac_info.client,
+  p.client,
   meta_tag_property,
-  total_pages.total,
-  COUNT(0) AS count,
-  SAFE_DIVIDE(COUNT(0), total_pages.total) AS pct
-FROM
-  page_almanac_info,
-  UNNEST(page_almanac_info.meta_tag_property_almanac_info) AS meta_tag_property
-JOIN
-  total_pages
-ON page_almanac_info.client = total_pages.client
+  t.total,
+  COUNT(*) AS count,
+  SAFE_DIVIDE(COUNT(*), t.total) AS pct
+FROM page_almanac_info p
+CROSS JOIN UNNEST(p.meta_tag_property_almanac_info) AS meta_tag_property
+JOIN total_pages t
+  ON p.client = t.client
 GROUP BY
-  total_pages.total,
-  meta_tag_property,
-  page_almanac_info.client
-ORDER BY
-  count DESC
-LIMIT 1000
+  t.total, meta_tag_property, p.client
+ORDER BY count DESC
+LIMIT 1000;
