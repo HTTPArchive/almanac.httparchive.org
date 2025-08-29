@@ -1,38 +1,67 @@
-#standardSQL
-# HTML Response Content Language
+# html response content language
+# Content-Language usage (device-only; no JS UDF; no DISTINCT)
 
-WITH subquery AS (
+WITH base AS (
   SELECT
     client,
     page,
-    request_headers,
-    CASE
-      WHEN is_root_page = FALSE THEN 'Secondarypage'
-      WHEN is_root_page = TRUE THEN 'Homepage'
-      ELSE 'No Assigned Page'
-    END AS is_root_page
-  FROM
-    `httparchive.crawl.requests`
-  WHERE
-    date = '2025-07-01'
+    COALESCE(TO_JSON(custom_metrics.other.almanac), custom_metrics.other.almanac) AS almanac_json
+  FROM `httparchive.crawl.pages`
+  WHERE date = '2025-07-01'
+),
+
+nodes AS (
+  SELECT
+    client,
+    page,
+    JSON_VALUE(n, '$."http-equiv"') AS http_equiv,
+    JSON_VALUE(n, '$.content')      AS content
+  FROM base
+  LEFT JOIN UNNEST(JSON_QUERY_ARRAY(almanac_json, '$."meta-nodes".nodes')) AS n
+),
+
+filtered AS (
+  SELECT
+    client,
+    page,
+    LOWER(TRIM(content)) AS lang
+  FROM nodes
+  WHERE LOWER(TRIM(http_equiv)) = 'content-language'
+    AND content IS NOT NULL
+    AND TRIM(content) <> ''
+),
+
+page_langs AS (
+  SELECT
+    client,
+    page,
+    IFNULL(ARRAY_AGG(DISTINCT lang IGNORE NULLS), []) AS langs
+  FROM filtered
+  GROUP BY client, page
+),
+
+page_langs_filled AS (
+  SELECT
+    client,
+    page,
+    IF(ARRAY_LENGTH(langs) = 0, ['NO TAG'], langs) AS langs
+  FROM page_langs
+),
+
+expanded AS (
+  SELECT
+    client,
+    page,
+    lang AS content_language
+  FROM page_langs_filled, UNNEST(langs) AS lang
 )
 
 SELECT
   client,
-  is_root_page,
-  header.name AS request_header_name,
-  header.value AS request_header_value,
-  COUNT(DISTINCT page) AS sites,
-  SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client, is_root_page) AS total,
-  SAFE_DIVIDE(COUNT(0), SUM(COUNT(0)) OVER ()) AS pct
-FROM
-  subquery,
-  UNNEST(request_headers) AS header
-GROUP BY
-  client,
-  is_root_page,
-  header.name,
-  header.value
-ORDER BY
-  sites DESC,
-  client
+  content_language,
+  COUNT(*) AS sites,
+  SUM(COUNT(*)) OVER (PARTITION BY client) AS total,
+  SAFE_DIVIDE(COUNT(*), SUM(COUNT(*)) OVER (PARTITION BY client)) AS pct
+FROM expanded
+GROUP BY client, content_language
+ORDER BY sites DESC, client DESC;
