@@ -5,17 +5,22 @@ WITH totals AS (
     client,
     CASE
       WHEN is_root_page = FALSE THEN 'Secondarypage'
-      WHEN is_root_page = TRUE THEN 'Homepage'
+      WHEN is_root_page = TRUE  THEN 'Homepage'
       ELSE 'No Assigned Page'
-    END
-      AS is_root_page,
+    END AS is_root_page,
     page,
-    JSON_QUERY(TO_JSON_STRING(payload), '$._valid-head.invalidHead') AS invalidHead,
-    ARRAY_LENGTH(JSON_EXTRACT_ARRAY(TO_JSON_STRING(payload), '$._valid-head.invalidElements')) AS invalidCount
-  FROM
-    `httparchive.crawl.pages`
-  WHERE
-    date = '2025-07-01'
+    -- use string-based JSON functions for robust pathing
+    JSON_VALUE(
+      JSON_EXTRACT(TO_JSON_STRING(custom_metrics.other), '$[\'valid-head\'][\'invalidHead\']')
+    ) AS invalidHead,
+    ARRAY_LENGTH(
+      IFNULL(
+        JSON_EXTRACT_ARRAY(TO_JSON_STRING(custom_metrics.other), '$[\'valid-head\'][\'invalidElements\']'),
+        []
+      )
+    ) AS invalidCount
+  FROM `httparchive.crawl.pages`
+  WHERE date = '2025-07-01'
 )
 
 SELECT
@@ -27,10 +32,6 @@ SELECT
   COUNT(DISTINCT page) AS sites,
   SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client, is_root_page) AS total,
   COUNT(0) / SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client, is_root_page) AS pct
-FROM
-  totals
-GROUP BY
-  client,
-  is_root_page
-ORDER BY
-  client
+FROM totals
+GROUP BY client, is_root_page
+ORDER BY client;
