@@ -45,7 +45,7 @@ SELECT
   APPROX_QUANTILES(audits.weight, 100)[OFFSET(50)] AS median_weight,
   MAX(audits.title) AS title,
   MAX(audits.description) AS description,
-  SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS total   -- ✅ no is_root_page
+  SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS total
 FROM lighthouse_extraction,
 UNNEST(getAudits(JSON_EXTRACT(report, '$.audits'))) AS audits
 GROUP BY
