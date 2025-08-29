@@ -10,16 +10,16 @@ WITH totals AS (
       ELSE 'No Assigned Page'
     END AS is_root_page,
     page,
-    JSON_EXTRACT_SCALAR(
-      TO_JSON_STRING(custom_metrics.other),
-      '$[\'valid-head\'][\'invalidHead\']'
+    COALESCE(
+      JSON_EXTRACT_SCALAR(TO_JSON_STRING(custom_metrics.other),
+                          '$[\'valid-head\'][\'invalidHead\']'),
+      JSON_EXTRACT_SCALAR(TO_JSON_STRING(custom_metrics.other),
+                          '$[\'valid_head\'][\'invalidHead\']')
     ) AS invalidHead,
     ARRAY_LENGTH(
       IFNULL(
-        JSON_EXTRACT_ARRAY(
-          TO_JSON_STRING(custom_metrics.other),
-          '$[\'valid-head\'][\'invalidElements\']'
-        ),
+        JSON_EXTRACT_ARRAY(TO_JSON_STRING(custom_metrics.other),
+                           '$[\'valid-head\'][\'invalidElements\']'),
         []
       )
     ) AS invalidCount
@@ -35,7 +35,6 @@ SELECT
   SAFE_DIVIDE(COUNTIF(invalidHead = 'true'), COUNT(DISTINCT page)) AS pct_invalidHeads,
   COUNT(DISTINCT page) AS sites,
   SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client, is_root_page) AS total,
-  COUNT(0) / SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client, is_root_page) AS pct
 FROM totals
 GROUP BY client, is_root_page
 ORDER BY client;

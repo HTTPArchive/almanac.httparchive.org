@@ -20,11 +20,15 @@ invalid_elements AS (
     client,
     is_root_page,
     page,
-    JSON_VALUE(el, '$') AS element
+    -- each el is a JSON-formatted string; unwrap to plain string
+    JSON_EXTRACT_SCALAR(el, '$') AS element
   FROM pages,
   UNNEST(
     IFNULL(
-      JSON_QUERY_ARRAY(other, '$["valid-head"]["invalidElements"]'),
+      JSON_EXTRACT_ARRAY(
+        TO_JSON_STRING(other),
+        '$[\'valid-head\'][\'invalidElements\']'
+      ),
       []
     )
   ) AS el
@@ -44,7 +48,8 @@ SELECT
   ie.is_root_page,
   ie.element,
   COUNT(DISTINCT ie.page) AS invalid_sites,
-  ts.total_sites
+  ts.total_sites,
+  SAFE_DIVIDE(COUNT(DISTINCT ie.page), ts.total_sites) AS pct_invalid
 FROM invalid_elements ie
 JOIN total_sites ts
   ON ie.client = ts.client AND ie.is_root_page = ts.is_root_page
