@@ -12,7 +12,7 @@
 
 WITH cfg AS (
   SELECT
-    FALSE  AS enable_sample,   -- set TRUE for full table (no sampling)
+    TRUE  AS enable_sample,   -- set TRUE for full table (no sampling)
     10000 AS modulus,         -- larger = smaller sample (e.g., 10000 ≈ 0.01%)
     0     AS remainder        -- choose any remainder in [0, modulus-1] for a different slice
 ),
@@ -64,7 +64,8 @@ SELECT
   rt.total_in_rank,                                        -- denominator
   tech.technology AS app,                                  -- each Accessibility technology
   COUNT(DISTINCT r.page) AS sites_with_app,                -- pages using that app
-  SAFE_DIVIDE(COUNT(DISTINCT r.page), rt.total_in_rank) AS pct_sites_with_app
+  -- SAFE_DIVIDE(COUNT(DISTINCT r.page), rt.total_in_rank) AS pct_sites_with_app
+  ROUND(100 * SAFE_DIVIDE(COUNT(DISTINCT r.page), rt.total_in_rank), 1) AS pct_sites_with_app
 FROM ranked_sites AS r
 CROSS JOIN UNNEST(r.technologies) AS tech
 JOIN rank_totals AS rt
