@@ -3,11 +3,11 @@ WITH metrics_data AS (
     date,
     client,
     CAST(JSON_VALUE(summary.bytesTotal) AS INT64) AS bytes_total,
-    CAST(JSON_VALUE(lighthouse, '$.audits.largest-contentful-paint.numericValue') AS FLOAT64) AS lcp,
-    CAST(JSON_VALUE(lighthouse, '$.audits.cumulative-layout-shift.numericValue') AS FLOAT64) AS cls,
-    CAST(JSON_VALUE(lighthouse, '$.audits.total-blocking-time.numericValue') AS FLOAT64) AS tbt,
-    CAST(JSON_VALUE(lighthouse, '$.audits.first-contentful-paint.numericValue') AS FLOAT64) AS fcp,
-    CAST(JSON_VALUE(lighthouse.audits.interactive.numericValue) AS FLOAT64) AS tti,
+    CAST(JSON_VALUE(lighthouse.audits['largest-contentful-paint'].numericValue) AS FLOAT64) AS lcp,
+    CAST(JSON_VALUE(lighthouse.audits['cumulative-layout-shift'].numericValue) AS FLOAT64) AS cls,
+    CAST(JSON_VALUE(lighthouse.audits['total-blocking-time'].numericValue) AS FLOAT64) AS tbt,
+    CAST(JSON_VALUE(lighthouse.audits['first-contentful-paint'].numericValue) AS FLOAT64) AS fcp,
+    CAST(JSON_VALUE(lighthouse.audits['interactive'].numericValue) AS FLOAT64) AS tti,
     CAST(JSON_VALUE(lighthouse.categories.performance.score) AS FLOAT64) AS performance_score
   FROM
     `httparchive.crawl.pages`

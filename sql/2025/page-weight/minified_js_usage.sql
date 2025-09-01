@@ -1,12 +1,12 @@
 SELECT
   client,
   is_root_page,
-  COUNTIF(JSON_VALUE(lighthouse, '$.audits.unminified-javascript.score') IS NULL) AS null_count,
-  COUNTIF(SAFE_CAST(JSON_VALUE(lighthouse, '$.audits.unminified-javascript.score') AS FLOAT64) >= 0.9) AS pass_count,
-  COUNTIF(SAFE_CAST(JSON_VALUE(lighthouse, '$.audits.unminified-javascript.score') AS FLOAT64) < 0.9) AS fail_count,
+  COUNTIF(JSON_VALUE(lighthouse.audits['unminified-javascript'].score) IS NULL) AS null_count,
+  COUNTIF(SAFE_CAST(JSON_VALUE(lighthouse.audits['unminified-javascript'].score) AS FLOAT64) >= 0.9) AS pass_count,
+  COUNTIF(SAFE_CAST(JSON_VALUE(lighthouse.audits['unminified-javascript'].score) AS FLOAT64) < 0.9) AS fail_count,
   COUNT(0) AS total,
-  COUNTIF(SAFE_CAST(JSON_VALUE(lighthouse, '$.audits.unminified-javascript.score') AS FLOAT64) >= 0.9) / COUNT(0) AS pct_pass,
-  COUNTIF(SAFE_CAST(JSON_VALUE(lighthouse, '$.audits.unminified-javascript.score') AS FLOAT64) < 0.9) / COUNT(0) AS pct_fail
+  COUNTIF(SAFE_CAST(JSON_VALUE(lighthouse.audits['unminified-javascript'].score) AS FLOAT64) >= 0.9) / COUNT(0) AS pct_pass,
+  COUNTIF(SAFE_CAST(JSON_VALUE(lighthouse.audits['unminified-javascript'].score) AS FLOAT64) < 0.9) / COUNT(0) AS pct_fail
 FROM
   `httparchive.crawl.pages`
 WHERE
