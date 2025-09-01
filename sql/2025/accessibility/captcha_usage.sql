@@ -15,7 +15,7 @@
 --   • date                    = crawl date
 --   • total_sites             = number of unique sites in this slice
 --   • sites_with_captcha      = number of unique sites using reCAPTCHA or hCaptcha
---   • perc_sites_with_captcha = share of sites using reCAPTCHA or hCaptcha
+--   • perc_sites_with_captcha = share of sites using reCAPTCHA or hCaptcha (formatted string)
 --
 -- Data notes
 --   • Technologies are stored in the repeated field `technologies`; must UNNEST.
@@ -30,16 +30,22 @@
 SELECT
   client,
   is_root_page,
-  date,  # Date of the analysis
-  COUNT(DISTINCT page) AS total_sites,  # Total number of unique sites for the client
-  COUNT(DISTINCT IF(app.technology IN ('reCAPTCHA', 'hCaptcha'), page, NULL)) AS sites_with_captcha,  # Number of sites using reCAPTCHA or hCaptcha
-  SAFE_DIVIDE(
-    COUNT(DISTINCT IF(app.technology IN ('reCAPTCHA', 'hCaptcha'), page, NULL)),
-    COUNT(DISTINCT page)
-  ) AS perc_sites_with_captcha  # Percentage of sites using reCAPTCHA or hCaptcha
+  date,  -- Crawl date
+
+  COUNT(DISTINCT page) AS total_sites,  -- Total unique sites in this slice
+
+  COUNT(DISTINCT IF(app.technology IN ('reCAPTCHA', 'hCaptcha'), page, NULL))
+    AS sites_with_captcha,              -- Sites using reCAPTCHA or hCaptcha
+
+  FORMAT('%.1f%%',
+    100 * SAFE_DIVIDE(
+            COUNT(DISTINCT IF(app.technology IN ('reCAPTCHA','hCaptcha'), page, NULL)),
+            COUNT(DISTINCT page)
+          )
+  ) AS perc_sites_with_captcha          -- Percentage of sites, formatted nicely
 FROM
   `httparchive.crawl.pages`,
-  UNNEST(technologies) AS app  # Unnest the technologies array to get individual apps
+  UNNEST(technologies) AS app           -- Unnest the detected technologies
 WHERE
   date = '2025-07-01'
 GROUP BY
@@ -47,4 +53,4 @@ GROUP BY
   is_root_page,
   date
 ORDER BY
-  client;  # Order results by client domain
+  client;
