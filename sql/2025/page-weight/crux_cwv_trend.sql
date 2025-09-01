@@ -13,8 +13,7 @@ WITH metrics_data AS (
   WHERE
     -- Filter for the first day of each month in the specified range
     date >= '2024-07-01' AND
-    date <= '2025-07-01' AND
-    EXTRACT(DAY FROM date) = 1 -- Only include data from the first day of each month
+    date <= '2025-07-01'
 )
 
 SELECT
