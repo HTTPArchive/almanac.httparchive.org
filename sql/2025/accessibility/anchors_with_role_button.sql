@@ -1,4 +1,3 @@
--- HTTP Archive Almanac 2025 (match 2024 structure)
 -- Metric: share of SITES that have at least one <a role="button">
 -- Grouping: client, is_root_page (do NOT merge root/non-root)
 -- Method:
@@ -11,8 +10,6 @@
 --        - has_any_a                := max(total_a_elements > 0)
 --        - has_anchor_role_button   := max(total_anchors_with_role_button > 0)
 --   5) Count DISTINCT hosts per group that satisfy each condition.
--- Sampling:
---   - TABLESAMPLE SYSTEM (.1 PERCENT) for approximate results.
 -- Safety:
 --   - SAFE_CAST / JSON_VALUE with TO_JSON_STRING() where needed.
 
