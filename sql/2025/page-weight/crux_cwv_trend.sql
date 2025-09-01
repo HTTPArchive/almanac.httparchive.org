@@ -3,6 +3,7 @@ WITH metrics_data AS (
     date,
     client,
     CAST(JSON_VALUE(summary.bytesTotal) AS INT64) AS bytes_total,
+    -- these are page level CrUX metrics, pages may not have all / any metrics available, but do represent the user experience of the measured page weight vs. origin.
     CAST(JSON_VALUE(summary.crux.metrics.largest_contentful_paint.percentiles.p75) AS FLOAT64) AS lcp,
     CAST(JSON_VALUE(summary.crux.metrics.cumulative_layout_shift.percentiles.p75) AS FLOAT64) AS cls,
     CAST(JSON_VALUE(summary.crux.metrics.interaction_to_next_paint.percentiles.p75) AS FLOAT64) AS inp,
@@ -11,7 +12,6 @@ WITH metrics_data AS (
   FROM
     `httparchive.crawl.pages`
   WHERE
-    -- Filter for the first day of each month in the specified range
     date >= '2024-07-01' AND
     date <= '2025-07-01'
 )
