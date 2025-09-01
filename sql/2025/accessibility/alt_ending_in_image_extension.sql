@@ -22,36 +22,37 @@ try {
 # Outputs (per client, is_root_page, extension)
 #   • sites_with_non_empty_alt           – sites (distinct pages) with ≥1 non-empty alt
 #   • sites_with_file_extension_alt      – sites with ≥1 alt ending in a file extension
-#   • total_non_empty_alts               – total non-empty alts across those sites
 #   • total_alts_with_file_extensions    – total alts that end in a file extension
+#   • pct_sites_with_file_extension_alt  – string percentage of sites with file-extension alt
+#   • pct_alts_with_file_extension       – string percentage of alts ending with any extension
 #   • extension                          – specific file extension (e.g., "jpg")
 #   • total_sites_using                  – sites with ≥1 alt ending in this extension
-#   • pct_sites_with_file_extension_alt  – share of applicable sites with any file-extension alt
-#   • pct_alts_with_file_extension       – share of all non-empty alts that end with any extension
-#   • pct_applicable_sites_using         – share of applicable sites using this specific extension
+#   • pct_applicable_sites_using         – string percentage of sites with non-empty alts using this extension
 #   • total_occurrences                  – total occurrences of this extension in alt text
-#   • pct_total_occurrences              – share of all file-extension alt occurrences that are this extension
+#   • pct_total_occurrences              – string percentage of extension occurrences among all file-extension alts
 #
--- Set the crawl date once here
+# Notes
+#   • Percentages are returned as formatted strings (e.g. "6.7%") to match 2024 output style.
+#   • Underlying math uses SAFE_DIVIDE to avoid divide-by-zero.
+#   • Cost-saving sampler included; remove cfg CTE and predicates or set enable_sample=FALSE for full run.
+#
 WITH
   params AS (SELECT DATE '2025-07-01' AS crawl_date),
 
-  -- Cost-saving toggle (remove later for full run)
   cfg AS (
     SELECT
-      FALSE  AS enable_sample,   -- set to FALSE (or delete cfg + predicates) for full run
-      100000 AS modulus,         -- larger modulus => smaller sample (~0.01% here)
+      TRUE  AS enable_sample,   -- set FALSE (or delete cfg + predicates) for full run
+      10000 AS modulus,         -- larger modulus => smaller sample (~0.01% here)
       0     AS remainder
   ),
 
-  -- Sampled base: filter BEFORE any JSON parsing/UNNEST; select only needed subfields
   base_pages AS (
     SELECT
       p.client,
       p.is_root_page,
       p.page,
-      p.custom_metrics.a11y   AS a11y,    -- JSON
-      p.custom_metrics.markup AS markup   -- JSON
+      p.custom_metrics.a11y   AS a11y,
+      p.custom_metrics.markup AS markup
     FROM `httparchive.crawl.pages` AS p
     JOIN params ON p.date = params.crawl_date
     CROSS JOIN cfg
@@ -60,7 +61,6 @@ WITH
       OR MOD(ABS(FARM_FINGERPRINT(p.page)), cfg.modulus) = cfg.remainder
   ),
 
-  -- Denominators and "any extension" numerators, from the SAME sampled base
   site_rollup AS (
     SELECT
       bp.client,
@@ -87,30 +87,26 @@ SELECT
   sr.sites_with_file_extension_alt,
   sr.total_alts_with_file_extensions,
 
-  -- Of sites with a non-empty alt, what % have any alt with a file extension
-  SAFE_DIVIDE(sr.sites_with_file_extension_alt, sr.sites_with_non_empty_alt) AS pct_sites_with_file_extension_alt,
+  -- Percentages as strings
+  FORMAT('%.1f%%', 100 * SAFE_DIVIDE(sr.sites_with_file_extension_alt, sr.sites_with_non_empty_alt))
+    AS pct_sites_with_file_extension_alt,
+  FORMAT('%.1f%%', 100 * SAFE_DIVIDE(sr.total_alts_with_file_extensions, sr.total_non_empty_alts))
+    AS pct_alts_with_file_extension,
 
-  -- Given a random non-empty alt, how often does it end in a file extension
-  SAFE_DIVIDE(sr.total_alts_with_file_extensions, sr.total_non_empty_alts)   AS pct_alts_with_file_extension,
+  ext.extension,
 
-  ext.extension AS extension,
-
-  -- Sites using this specific extension at least once (still from the sampled base)
   COUNT(DISTINCT bp.page) AS total_sites_using,
 
-  -- Of applicable sites, what % use this specific extension at least once
-  SAFE_DIVIDE(COUNT(DISTINCT bp.page), sr.sites_with_non_empty_alt) AS pct_applicable_sites_using,
+  FORMAT('%.1f%%', 100 * SAFE_DIVIDE(COUNT(DISTINCT bp.page), sr.sites_with_non_empty_alt))
+    AS pct_applicable_sites_using,
 
-  -- Total occurrences of this specific extension in alts
   SUM(ext.total) AS total_occurrences,
 
-  -- Given a random file-extension alt, how often is it this extension
-  SAFE_DIVIDE(SUM(ext.total), sr.total_alts_with_file_extensions) AS pct_total_occurrences
+  FORMAT('%.1f%%', 100 * SAFE_DIVIDE(SUM(ext.total), sr.total_alts_with_file_extensions))
+    AS pct_total_occurrences
 
 FROM base_pages AS bp
-CROSS JOIN UNNEST(
-  getUsedExtensions(TO_JSON_STRING(bp.a11y))
-) AS ext
+CROSS JOIN UNNEST(getUsedExtensions(TO_JSON_STRING(bp.a11y))) AS ext
 LEFT JOIN site_rollup sr
   ON sr.client = bp.client AND sr.is_root_page = bp.is_root_page
 
