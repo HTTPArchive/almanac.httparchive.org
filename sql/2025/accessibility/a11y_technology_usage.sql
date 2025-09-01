@@ -8,12 +8,6 @@
 #                               technology categorized as "Accessibility"
 #     • pct_sites_with_a11y_tech = share of pages with Accessibility tech
 #
-# Sampling
-#   • `TABLESAMPLE SYSTEM (0.01 PERCENT)` is included for cheap testing.
-#     This dramatically reduces cost by scanning ~0.01% of rows.
-#   • IMPORTANT: Results will be noisy and not comparable across runs.
-#   • For accurate, publishable numbers, remove the TABLESAMPLE clause.
-#
 # Notes
 #   • The unit here is page (URL), not site/host. COUNT(DISTINCT page) ensures
 #     each unique URL is counted once.
