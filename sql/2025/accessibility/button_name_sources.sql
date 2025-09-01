@@ -1,64 +1,48 @@
 -- standardSQL
--- Web Almanac — Where <button> accessible names come from (2025)
+-- Web Almanac — Button accessible-name sources (sampled), by client (2025-07-01)
 --
 -- What this does
---   • Parses the a11y tree (custom_metrics.a11y.form_control_a11y_tree) via a JS UDF.
---   • Emits a label per button-like control indicating the first accessible-name “source”:
---       - "attribute: aria-label", "attribute: title", "relatedElement: label", etc.
---       - "No accessible name" when the control has an empty accessible_name.
---   • Aggregates by client (desktop/mobile) for root pages only, and shows
---     counts and share per source.
+--   • Extracts source of the accessible name for buttons/submit inputs from a11y tree
+--   • Returns, per client:
+--       - total_buttons (sum across rows)
+--       - total_with_this_source (per source)
+--       - perc_of_all_buttons_ratio  (0–1, numeric)
+--       - perc_of_all_buttons        (formatted string, e.g., "59.1%")
 --
--- Key notes
---   • Data location (2025): use custom_metrics.a11y (JSON). The legacy payload._a11y path is empty here.
---   • The UDF expects a STRING, so we pass TO_JSON_STRING(custom_metrics.a11y).
---   • TABLESAMPLE retained for speed; adjust percentage as needed.
---   • Window totals are computed in an outer SELECT for clarity.
+-- Notes
+--   • Uses TABLESAMPLE for cost control (tweak %).
+--   • WINDOW SUM over client to compute share per client.
+--   • Force FLOAT math to avoid integer division.
+--   • Provide a formatted percent string to avoid spreadsheet re-scaling surprises.
 --
 CREATE TEMPORARY FUNCTION a11yButtonNameSources(a11y_json STRING)
-RETURNS ARRAY<STRING>
-LANGUAGE js AS '''
+RETURNS ARRAY<STRING> LANGUAGE js AS '''
   try {
-    if (!a11y_json) return [];
-    const a11y = JSON.parse(a11y_json);
-
-    const tree = Array.isArray(a11y.form_control_a11y_tree)
-      ? a11y.form_control_a11y_tree
-      : [];
-
+    const a11y = JSON.parse(a11y_json || '{}');
     const out = [];
+    const tree = Array.isArray(a11y.form_control_a11y_tree) ? a11y.form_control_a11y_tree : [];
+
     for (const node of tree) {
-      const type = node && node.type;
-      const attrs = (node && node.attributes) || {};
+      const isButton = node?.type === "button";
+      const isSubmit = node?.type === "input" && node?.attributes?.type === "submit";
+      if (!isButton && !isSubmit) continue;
 
-      // Consider <button>, and <input type="submit">
-      const isButton = type === "button";
-      const isSubmitInput = (type === "input") && (attrs.type === "submit");
-      if (!isButton && !isSubmitInput) continue;
+      const name = node?.accessible_name || "";
+      const srcs = Array.isArray(node?.accessible_name_sources) ? node.accessible_name_sources : [];
 
-      const accName = (node.accessible_name || "");
-      const sources = Array.isArray(node.accessible_name_sources)
-        ? node.accessible_name_sources
-        : [];
-
-      if (!accName || accName.length === 0) {
+      if (!name || name.length === 0) {
         out.push("No accessible name");
         continue;
       }
+      if (srcs.length === 0) continue;
 
-      if (sources.length === 0) continue;
-
-      const src = sources[0] || {};
-      let pretty = src.type || "unknown";
-
-      if (src.type === "attribute") {
-        pretty = `attribute: ${src.attribute || "unknown"}`;
-      } else if (src.type === "relatedElement") {
-        // If attribute (e.g., "aria-labelledby") present, keep it;
-        // otherwise call it "label".
-        pretty = `relatedElement: ${src.attribute || "label"}`;
+      const s = srcs[0] || {};
+      let pretty = s.type || "unknown";
+      if (s.type === "attribute") {
+        pretty = `attribute: ${s.attribute || "unknown"}`;
+      } else if (s.type === "relatedElement") {
+        pretty = `relatedElement: ${s.attribute || "label"}`;
       }
-
       out.push(pretty);
     }
     return out;
@@ -67,37 +51,40 @@ LANGUAGE js AS '''
   }
 ''';
 
-WITH exploded AS (
+WITH btn_rows AS (
   SELECT
     client,
-    -- Keep only root pages
-    button_name_source
+    src AS button_name_source
   FROM
     `httparchive.crawl.pages`,
     UNNEST(
-      a11yButtonNameSources(TO_JSON_STRING(custom_metrics.a11y))
-    ) AS button_name_source
-  WHERE
-    date = '2025-07-01'
-    AND is_root_page
-),
-by_source AS (
-  SELECT
-    client,
-    button_name_source,
-    COUNT(*) AS total_with_this_source
-  FROM exploded
-  GROUP BY client, button_name_source
+      a11yButtonNameSources(
+        COALESCE(
+          TO_JSON_STRING(custom_metrics.a11y),           -- preferred (JSON column -> STRING)
+          JSON_EXTRACT_SCALAR(payload, '$._a11y')        -- legacy fallback
+        )
+      )
+    ) AS src
+  WHERE date = '2025-07-01'
 )
 SELECT
   client,
-  -- Total buttons (across all sources) per client
-  SUM(total_with_this_source) OVER (PARTITION BY client) AS total_buttons,
+  -- Totals per client (windowed)
+  SUM(COUNT(*)) OVER (PARTITION BY client)         AS total_buttons,
   button_name_source,
-  total_with_this_source,
+  COUNT(*)                                         AS total_with_this_source,
+
+  -- Ratios (0–1) and a printable percent string
   SAFE_DIVIDE(
-    total_with_this_source,
-    SUM(total_with_this_source) OVER (PARTITION BY client)
-  ) AS perc_of_all_buttons
-FROM by_source
-ORDER BY client, perc_of_all_buttons DESC;
+    CAST(COUNT(*) AS FLOAT64),
+    CAST(SUM(COUNT(*)) OVER (PARTITION BY client) AS FLOAT64)
+  )                                                AS perc_of_all_buttons_ratio,
+  FORMAT('%.1f%%',
+    100 * SAFE_DIVIDE(
+            CAST(COUNT(*) AS FLOAT64),
+            CAST(SUM(COUNT(*)) OVER (PARTITION BY client) AS FLOAT64)
+          )
+  )                                                AS perc_of_all_buttons
+FROM btn_rows
+GROUP BY client, button_name_source
+ORDER BY client, perc_of_all_buttons_ratio DESC, button_name_source;
