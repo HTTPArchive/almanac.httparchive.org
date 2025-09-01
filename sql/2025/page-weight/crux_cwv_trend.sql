@@ -2,12 +2,12 @@ WITH metrics_data AS (
   SELECT
     date,
     client,
-    CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64) AS bytes_total,
-    CAST(JSON_VALUE(summary, '$.crux.metrics.largest_contentful_paint.percentiles.p75') AS FLOAT64) AS lcp,
-    CAST(JSON_VALUE(summary, '$.crux.metrics.cumulative_layout_shift.percentiles.p75') AS FLOAT64) AS cls,
-    CAST(JSON_VALUE(summary, '$.crux.metrics.interaction_to_next_paint.percentiles.p75') AS FLOAT64) AS inp,
-    CAST(JSON_VALUE(summary, '$.crux.metrics.first_contentful_paint.percentiles.p75') AS FLOAT64) AS fcp,
-    CAST(JSON_VALUE(summary, '$.crux.metrics.experimental_time_to_first_byte.percentiles.p75') AS FLOAT64) AS ttfb
+    CAST(JSON_VALUE(summary.bytesTotal) AS INT64) AS bytes_total,
+    CAST(JSON_VALUE(summary.crux.metrics.largest_contentful_paint.percentiles.p75) AS FLOAT64) AS lcp,
+    CAST(JSON_VALUE(summary.crux.metrics.cumulative_layout_shift.percentiles.p75) AS FLOAT64) AS cls,
+    CAST(JSON_VALUE(summary.crux.metrics.interaction_to_next_paint.percentiles.p75) AS FLOAT64) AS inp,
+    CAST(JSON_VALUE(summary.crux.metrics.first_contentful_paint.percentiles.p75) AS FLOAT64) AS fcp,
+    CAST(JSON_VALUE(summary.crux.metrics.experimental_time_to_first_byte.percentiles.p75) AS FLOAT64) AS ttfb
   FROM
     `httparchive.crawl.pages`
   WHERE
