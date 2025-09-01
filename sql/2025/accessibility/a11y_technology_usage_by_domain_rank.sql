@@ -1,30 +1,35 @@
 #standardSQL
 # Purpose
-#   Report usage of Accessibility-category technologies by domain-rank buckets,
-#   split by client and root-page flag. For each rank bucket, compute:
-#     • total_in_rank        = distinct pages in the bucket
-#     • sites_with_app       = distinct pages using each Accessibility technology
-#     • pct_sites_with_app   = sites_with_app / total_in_rank
+#   Report prevalence of ALL Accessibility-category technologies by domain-rank bucket,
+#   split by client and root-page flag, for a single crawl date.
+#   For each (client, is_root_page, rank_grouping, app) compute:
+#     • total_in_rank        = distinct pages in the bucket (denominator)
+#     • sites_with_app       = distinct pages using that technology
+#     • pct_sites_with_app   = 100 * sites_with_app / total_in_rank (percent points)
 #
-# How to use the toggle the deterministic hash sampler
-#   • For cheap test runs:    set cfg.enable_sample = TRUE and pick a modulus (e.g. 10000 ≈ ~0.01%).
-#   • For full production:    set cfg.enable_sample = FALSE (sampler bypassed).
+# Design
+#   • Shared base CTE (ranked_pages) feeds both numerator and denominator.
+#   • LEFT JOIN keeps buckets even when a vendor has zero hits.
+#   • Toggleable deterministic sampler for cheap tests; disable for production.
+#   • Unit is page (distinct URL). For site-level, replace DISTINCT page with
+#     DISTINCT REGEXP_EXTRACT(page, r'^https?://([^/]+)') in BOTH numerator and denominator.
+#
+# How to use
+#   • Set cfg.enable_sample = FALSE for YoY comparability (full partition).
+#   • Keep the date, bucket CASE thresholds, and filters identical across years.
 
 WITH cfg AS (
   SELECT
-    TRUE  AS enable_sample,   -- set TRUE for full table (no sampling)
-    10000 AS modulus,         -- larger = smaller sample (e.g., 10000 ≈ 0.01%)
-    0     AS remainder        -- choose any remainder in [0, modulus-1] for a different slice
+    FALSE AS enable_sample,   -- set TRUE for cheap tests; FALSE for full run
+    10000 AS modulus,         -- if sampling: ~0.01% when TRUE
+    0     AS remainder
 ),
 
-ranked_sites AS (
-  -- Base set of pages with rank bucket
+ranked_pages AS (
   SELECT
     p.client,
     p.is_root_page,
     p.page,
-    p.rank,
-    p.technologies,
     CASE
       WHEN p.rank <= 1000 THEN 1000
       WHEN p.rank <= 10000 THEN 10000
@@ -33,7 +38,8 @@ ranked_sites AS (
       WHEN p.rank <= 10000000 THEN 10000000
       WHEN p.rank <= 100000000 THEN 100000000
       ELSE NULL
-    END AS rank_grouping
+    END AS rank_grouping,
+    p.technologies
   FROM `httparchive.crawl.pages` AS p, cfg
   WHERE
     p.date = '2025-07-01'
@@ -46,40 +52,48 @@ ranked_sites AS (
 ),
 
 rank_totals AS (
-  -- Denominator: total distinct pages per client/root/rank bucket
   SELECT
     client,
     is_root_page,
     rank_grouping,
     COUNT(DISTINCT page) AS total_in_rank
-  FROM ranked_sites
+  FROM ranked_pages
   WHERE rank_grouping IS NOT NULL
   GROUP BY client, is_root_page, rank_grouping
+),
+
+vendor_hits AS (
+  -- Count pages per Accessibility vendor
+  SELECT
+    rp.client,
+    rp.is_root_page,
+    rp.rank_grouping,
+    tech.technology AS app,
+    COUNT(DISTINCT rp.page) AS pages_with_vendor
+  FROM ranked_pages rp
+  CROSS JOIN UNNEST(rp.technologies) AS tech
+  WHERE
+    rp.rank_grouping IS NOT NULL
+    AND EXISTS (
+      SELECT 1
+      FROM UNNEST(tech.categories) AS c
+      WHERE c = 'Accessibility'
+    )
+  GROUP BY rp.client, rp.is_root_page, rp.rank_grouping, app
 )
 
 SELECT
-  r.client,
-  r.is_root_page,
-  r.rank_grouping,
-  rt.total_in_rank,                                        -- denominator
-  tech.technology AS app,                                  -- each Accessibility technology
-  COUNT(DISTINCT r.page) AS sites_with_app,                -- pages using that app
-  -- SAFE_DIVIDE(COUNT(DISTINCT r.page), rt.total_in_rank) AS pct_sites_with_app
-  ROUND(100 * SAFE_DIVIDE(COUNT(DISTINCT r.page), rt.total_in_rank), 1) AS pct_sites_with_app
-FROM ranked_sites AS r
-CROSS JOIN UNNEST(r.technologies) AS tech
-JOIN rank_totals AS rt
-  ON rt.client = r.client
- AND rt.is_root_page = r.is_root_page
- AND rt.rank_grouping = r.rank_grouping
-WHERE
-  r.rank_grouping IS NOT NULL
-  AND EXISTS (
-    SELECT 1
-    FROM UNNEST(tech.categories) AS c
-    WHERE c = 'Accessibility'
-  )
-GROUP BY
-  r.client, r.is_root_page, r.rank_grouping, rt.total_in_rank, tech.technology
+  rt.client,
+  rt.is_root_page,
+  rt.rank_grouping,
+  rt.total_in_rank,
+  vh.app,
+  IFNULL(vh.pages_with_vendor, 0) AS sites_with_app,
+  ROUND(100 * SAFE_DIVIDE(IFNULL(vh.pages_with_vendor, 0), rt.total_in_rank), 1) AS pct_sites_with_app
+FROM rank_totals rt
+LEFT JOIN vendor_hits vh
+  ON vh.client = rt.client
+ AND vh.is_root_page = rt.is_root_page
+ AND vh.rank_grouping = rt.rank_grouping
 ORDER BY
-  tech.technology, r.rank_grouping, r.client, r.is_root_page;
+  vh.app, rt.rank_grouping, rt.client, rt.is_root_page;
