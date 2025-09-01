@@ -1,3 +1,6 @@
+-- NEEDS WORK: Field is false has_alt_lengths_2025
+
+
 -- standardSQL
 -- Web Almanac — IMG ALT coverage from 2025 schema (markup.images)
 --
