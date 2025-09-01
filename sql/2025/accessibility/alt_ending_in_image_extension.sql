@@ -41,7 +41,7 @@ WITH
 
   cfg AS (
     SELECT
-      TRUE  AS enable_sample,   -- set FALSE (or delete cfg + predicates) for full run
+      FALSE  AS enable_sample,   -- set FALSE (or delete cfg + predicates) for full run
       10000 AS modulus,         -- larger modulus => smaller sample (~0.01% here)
       0     AS remainder
   ),
