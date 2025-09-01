@@ -8,7 +8,7 @@ FROM
   `httparchive.crawl.requests`,
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 WHERE
-  date = '2025-07-01'  -- Adjust this date as needed
+  date = '2025-07-01'
 GROUP BY
   client,
   percentile,
