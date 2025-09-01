@@ -18,9 +18,9 @@ SELECT
   date,
   client,
   is_root_page,
-  COUNTIF(INT64(custom_metrics.other.almanac.scripts.total) > 0) AS pages_using_js,
+  COUNTIF(SAFE_CAST(custom_metrics.other.almanac.scripts.total AS INT64) > 0) AS pages_using_js,
   num_pages,
-  COUNTIF(INT64(custom_metrics.other.almanac.scripts.total) > 0) / num_pages AS pct_pages_using_js
+  COUNTIF(SAFE_CAST(custom_metrics.other.almanac.scripts.total AS INT64) > 0) / num_pages AS pct_pages_using_js
 FROM
   `httparchive.crawl.pages`
 INNER JOIN
