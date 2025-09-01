@@ -892,7 +892,7 @@ Some other things we found in analyzing gradient values:
 * Color-stop interpolation (a.k.a. "midpoints") were used in 21% of all gradient instances.
 
 {{ figure_markup(
-  image="most-color-stops.png",
+  image="most-color-stops.jpg",
   classes="height-16vw-122px",
   caption="The linear gradient with the most color stops.",
   description="A screenshot of the gradient with the most color stops, which is a series of intricate multicolor stripes of varying hues, shading from a dirty goldenrod to greenish-blue to salmon to burnt orange.",
