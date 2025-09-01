@@ -1,82 +1,66 @@
--- HTTP Archive Almanac: <a> with role="button"
---
--- Purpose:
---   This query measures how many websites use <a> (anchor) elements with
---   role="button" attributes, relative to the total number of anchor tags.
---
--- Dataset:
---   `httparchive.crawl.pages` on date = '2025-07-01'
---
--- Key fields used:
---   - custom_metrics.a11y.total_anchors_with_role_button:
---       Count of anchor elements that declare role="button".
---   - custom_metrics.element_count.a:
---       Total count of <a> elements per page.
---   - URL extraction:
---       Multiple fallbacks are used to extract the canonical URL for de-duping:
---         1. custom_metrics.performance.lcp_resource.documentURL
---         2. custom_metrics.canonicals.url (via JSON)
---         3. payload.url
---         4. payload._url
---
--- Aggregation logic:
---   - We restrict to is_root_page = TRUE so each site is counted once.
---   - Hosts are extracted with NET.HOST(url_str).
---   - sites_with_any_a:
---       Distinct hosts with at least one <a>.
---   - sites_with_a_role_button:
---       Distinct hosts with at least one <a role="button">.
---   - pct_sites_with_a_role_button:
---       Fraction of sites_with_a_role_button / sites_with_any_a.
---
+-- HTTP Archive Almanac 2025 (match 2024 structure)
+-- Metric: share of SITES that have at least one <a role="button">
+-- Grouping: client, is_root_page (do NOT merge root/non-root)
+-- Method:
+--   1) Determine a canonical-ish URL string per row (page) from a few fields.
+--   2) Keep only http(s) URLs and extract NET.HOST() as the site key.
+--   3) From custom_metrics:
+--        - total_anchors_with_role_button: a11y.total_anchors_with_role_button
+--        - total_a_elements: element_count.a
+--   4) For each (client, is_root_page, host) decide:
+--        - has_any_a                := max(total_a_elements > 0)
+--        - has_anchor_role_button   := max(total_anchors_with_role_button > 0)
+--   5) Count DISTINCT hosts per group that satisfy each condition.
+-- Sampling:
+--   - TABLESAMPLE SYSTEM (.1 PERCENT) for approximate results.
 -- Safety:
---   - SAFE_CAST used to convert JSON strings into INT64, preventing query errors.
---   - SAFE_DIVIDE avoids division-by-zero.
---
--- Output:
---   client | sites_with_any_a | sites_with_a_role_button | pct_sites_with_a_role_button
+--   - SAFE_CAST / JSON_VALUE with TO_JSON_STRING() where needed.
 
-WITH base AS (
+-- standardSQL
+WITH per_page AS (
   SELECT
     client,
     is_root_page,
+    -- canonical-ish URL with fallbacks
     COALESCE(
       JSON_VALUE(custom_metrics.performance, '$.lcp_resource.documentURL'),
       JSON_VALUE(TO_JSON_STRING(custom_metrics), '$.canonicals.url'),
       JSON_VALUE(payload, '$.url'),
       JSON_VALUE(payload, '$._url')
     ) AS url_str,
+
+    -- metrics from custom_metrics
     SAFE_CAST(JSON_VALUE(custom_metrics.a11y, '$.total_anchors_with_role_button') AS INT64)
       AS anchors_role_button,
     SAFE_CAST(JSON_VALUE(TO_JSON_STRING(custom_metrics), '$.element_count.a') AS INT64)
       AS total_a_elements
   FROM `httparchive.crawl.pages`
   WHERE date = '2025-07-01'
+),
+per_site AS (
+  -- One row per (client, is_root_page, host) with boolean flags
+  SELECT
+    client,
+    is_root_page,
+    NET.HOST(url_str) AS host,
+    -- A site “has any a” if ANY sampled page on that site has > 0 <a>
+    LOGICAL_OR(total_a_elements > 0) AS has_any_a,
+    -- A site “has anchor role button” if ANY sampled page has > 0 <a role="button">
+    LOGICAL_OR(anchors_role_button > 0) AS has_anchor_role_button
+  FROM per_page
+  WHERE url_str IS NOT NULL
+    AND (STARTS_WITH(url_str, 'http://') OR STARTS_WITH(url_str, 'https://'))
+  GROUP BY client, is_root_page, host
 )
 SELECT
   client,
-  COUNT(DISTINCT IF(
-      total_a_elements > 0
-      AND url_str IS NOT NULL
-      AND (STARTS_WITH(url_str, 'http://') OR STARTS_WITH(url_str, 'https://')),
-      NET.HOST(url_str), NULL)) AS sites_with_any_a,
-  COUNT(DISTINCT IF(
-      anchors_role_button > 0
-      AND url_str IS NOT NULL
-      AND (STARTS_WITH(url_str, 'http://') OR STARTS_WITH(url_str, 'https://')),
-      NET.HOST(url_str), NULL)) AS sites_with_a_role_button,
+  is_root_page,
+  COUNTIF(has_any_a) AS sites_with_anchors,
+  COUNTIF(has_anchor_role_button) AS sites_with_anchor_role_button,
   SAFE_DIVIDE(
-    COUNT(DISTINCT IF(
-        anchors_role_button > 0
-        AND url_str IS NOT NULL
-        AND (STARTS_WITH(url_str, 'http://') OR STARTS_WITH(url_str, 'https://')),
-        NET.HOST(url_str), NULL)),
-    COUNT(DISTINCT IF(
-        total_a_elements > 0
-        AND url_str IS NOT NULL
-        AND (STARTS_WITH(url_str, 'http://') OR STARTS_WITH(url_str, 'https://')),
-        NET.HOST(url_str), NULL))
-  ) AS pct_sites_with_a_role_button
-FROM base
-WHERE is_root_page
-GROUP BY client;
+    COUNTIF(has_anchor_role_button),
+    COUNTIF(has_any_a)
+  ) AS pct_sites_with_anchor_role_button
+FROM per_site
+GROUP BY client, is_root_page
+ORDER BY client, is_root_page DESC;
