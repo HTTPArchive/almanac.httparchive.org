@@ -51,3 +51,4 @@ FROM pages p
 LEFT JOIN css_signals s USING (client, page)
 GROUP BY p.client
 ORDER BY SAFE_DIVIDE(COUNTIF(s.has_focus), COUNT(*)) DESC;
+
