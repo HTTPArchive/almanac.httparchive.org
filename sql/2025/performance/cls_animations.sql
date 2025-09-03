@@ -13,7 +13,7 @@ SELECT
   percentile,
   client,
   APPROX_QUANTILES(num_animations, 1000)[OFFSET(percentile * 10)] AS num_animations,
-  COUNTIF(num_animations > 0) AS pages,
+  COUNTIF(num_animations > 0) AS home_pages,
   COUNT(0) AS total,
   COUNTIF(num_animations > 0) / COUNT(0) AS pct
 FROM
