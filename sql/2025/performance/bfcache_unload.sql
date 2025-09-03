@@ -1,8 +1,23 @@
-CREATE TEMPORARY FUNCTION getUnloadHandler(audit STRING)
+CREATE TEMPORARY FUNCTION getUnloadHandler(items JSON)
 RETURNS BOOL LANGUAGE js AS '''
 try {
-  var $ = JSON.parse(audit);
-  return $.details?.items?.some(n => n.value?.toLowerCase() === "unloadhandler");
+  return items?.some((item) => {
+    const value = item.value?.toLowerCase();
+
+    // NOTE: Lighthouse uses different values for deprecation items
+    // depending on which version HTTP Archive used
+    // at the time the data was collected.
+
+    // Lighthouse <= v12.3.0
+    // NOTE: If you don't need data before 2025-03-01, you can remove this.
+    if (value === "unloadhandler") {
+      return true;
+    }
+
+    // Lighthouse >= v12.4.0 (2025-03-01)
+    // https://github.com/GoogleChrome/lighthouse/pull/16333
+    return value?.includes("unload event listeners");
+  });
 } catch (e) {
   return false;
 }
@@ -13,7 +28,7 @@ WITH lh AS (
     client,
     page,
     rank,
-    getUnloadHandler(TO_JSON_STRING(lighthouse.audits.deprecations)) AS has_unload
+    getUnloadHandler(lighthouse.audits.deprecations.details.items) AS has_unload
   FROM
     `httparchive.crawl.pages`
   WHERE
