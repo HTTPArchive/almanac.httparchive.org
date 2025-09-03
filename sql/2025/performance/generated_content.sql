@@ -1,12 +1,9 @@
 #standardSQL
-CREATE TEMPORARY FUNCTION getGeneratedContent(custom_metrics STRING)
+CREATE TEMPORARY FUNCTION getGeneratedContent(generatedContent JSON)
 RETURNS STRUCT<percent FLOAT64, sizeInKB FLOAT64> LANGUAGE js AS '''
 try {
-  const data = JSON.parse(custom_metrics);
-  const generatedData = data.other["generated-content"];
-
-  const percent = parseFloat(generatedData.percent);
-  const sizeInKB = parseFloat(generatedData.sizeInKB);
+  const percent = parseFloat(generatedContent.percent);
+  const sizeInKB = parseFloat(generatedContent.sizeInKB);
 
   return {
     percent: percent > 0 ? percent : 0,
@@ -35,7 +32,7 @@ pages AS (
   SELECT
     client,
     page,
-    getGeneratedContent(TO_JSON_STRING(custom_metrics)) AS generated_content
+    getGeneratedContent(custom_metrics.other["generated-content"]) AS generated_content
   FROM
     `httparchive.crawl.pages`
   WHERE
