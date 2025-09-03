@@ -21,18 +21,18 @@ WITH lh AS (
 
 SELECT
   client,
-  _rank AS rank,
+  ranking,
   COUNTIF(has_unload) AS pages,
   COUNT(0) AS total,
   COUNTIF(has_unload) / COUNT(0) AS pct
 FROM
   lh,
-  UNNEST([1000, 10000, 100000, 1000000, 10000000, 100000000]) AS _rank
+  UNNEST([1000, 10000, 100000, 1000000, 10000000, 100000000]) AS ranking
 WHERE
-  rank <= _rank
+  rank <= ranking
 GROUP BY
   client,
-  rank
+  ranking
 ORDER BY
-  rank,
+  ranking,
   client
