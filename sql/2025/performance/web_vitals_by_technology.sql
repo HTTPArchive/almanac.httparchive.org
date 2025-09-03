@@ -25,11 +25,6 @@ WITH base AS (
       ELSE device
     END AS client,
 
-    # TODO: Should we remove FID now that it's deprecated?
-    fast_fid,
-    avg_fid,
-    slow_fid,
-
     fast_inp,
     avg_inp,
     slow_inp,
@@ -83,20 +78,6 @@ SELECT
 
   COUNT(DISTINCT origin) AS total_origins,
 
-  # Good CWV with optional FID
-  SAFE_DIVIDE(
-    COUNT(DISTINCT IF(
-      IS_GOOD(fast_fid, avg_fid, slow_fid) IS NOT FALSE AND
-      IS_GOOD(fast_lcp, avg_lcp, slow_lcp) AND
-      IS_GOOD(small_cls, medium_cls, large_cls), origin, NULL
-    )),
-    COUNT(DISTINCT IF(
-      IS_NON_ZERO(fast_lcp, avg_lcp, slow_lcp) AND
-      IS_NON_ZERO(small_cls, medium_cls, large_cls), origin, NULL
-    ))
-  ) AS pct_cwv_good,
-
-  # Good CWV with optional INP (hypothetical!)
   SAFE_DIVIDE(
     COUNT(DISTINCT IF(
       IS_GOOD(fast_inp, avg_inp, slow_inp) IS NOT FALSE AND
@@ -133,31 +114,6 @@ SELECT
       IS_NON_ZERO(fast_lcp, avg_lcp, slow_lcp), origin, NULL
     ))
   ) AS pct_lcp_poor,
-
-  SAFE_DIVIDE(
-    COUNT(DISTINCT IF(
-      IS_GOOD(fast_fid, avg_fid, slow_fid), origin, NULL
-    )),
-    COUNT(DISTINCT IF(
-      IS_NON_ZERO(fast_fid, avg_fid, slow_fid), origin, NULL
-    ))
-  ) AS pct_fid_good,
-  SAFE_DIVIDE(
-    COUNT(DISTINCT IF(
-      IS_NI(fast_fid, avg_fid, slow_fid), origin, NULL
-    )),
-    COUNT(DISTINCT IF(
-      IS_NON_ZERO(fast_fid, avg_fid, slow_fid), origin, NULL
-    ))
-  ) AS pct_fid_ni,
-  SAFE_DIVIDE(
-    COUNT(DISTINCT IF(
-      IS_POOR(fast_fid, avg_fid, slow_fid), origin, NULL
-    )),
-    COUNT(DISTINCT IF(
-      IS_NON_ZERO(fast_fid, avg_fid, slow_fid), origin, NULL
-    ))
-  ) AS pct_fid_poor,
 
   SAFE_DIVIDE(
     COUNT(DISTINCT IF(
