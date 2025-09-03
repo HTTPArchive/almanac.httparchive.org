@@ -67,7 +67,7 @@ SELECT
       IS_NON_ZERO(fast_lcp, avg_lcp, slow_lcp) AND
       IS_NON_ZERO(small_cls, medium_cls, large_cls), origin, NULL
     ))
-  ) AS pct_cwv24_good,
+  ) AS pct_cwv_good,
 
   SAFE_DIVIDE(
     COUNT(DISTINCT IF(
