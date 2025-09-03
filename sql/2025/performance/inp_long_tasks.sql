@@ -32,8 +32,6 @@ SELECT
   inp
 FROM
   meta
-WHERE
-  MOD(row, CAST(FLOOR(n / 1000) AS INT64)) = 0
 ORDER BY
   client,
   long_tasks
