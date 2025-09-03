@@ -1,5 +1,4 @@
 # We are unable to track LCP for video elements: https://issues.chromium.org/issues/364860066
-# TODO: It looks like this ^^ was resolved 2024-11-27, so does that mean we can track LCP for video now?
 
 WITH lcp AS (
   SELECT
