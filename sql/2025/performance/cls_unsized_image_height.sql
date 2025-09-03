@@ -1,7 +1,7 @@
 WITH lh AS (
   SELECT
     client,
-    CAST(JSON_VALUE(unsized_image, '$.node.boundingRect.height') AS INT64) AS height
+    CAST(JSON_VALUE(unsized_image.node.boundingRect.height) AS INT64) AS height
   FROM
     `httparchive.crawl.pages`,
     UNNEST(JSON_QUERY_ARRAY(lighthouse.audits.`unsized-images`.details.items)) AS unsized_image

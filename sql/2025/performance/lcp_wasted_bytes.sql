@@ -14,8 +14,8 @@ lh AS (
   SELECT
     client,
     page,
-    JSON_VALUE(unoptimized_img, '$.url') AS url,
-    CAST(JSON_VALUE(unoptimized_img, '$.wastedBytes') AS INT64) / 1024 AS wasted_kbytes
+    JSON_VALUE(unoptimized_img.url) AS url,
+    CAST(JSON_VALUE(unoptimized_img.wastedBytes) AS INT64) / 1024 AS wasted_kbytes
   FROM
     `httparchive.crawl.pages`,
     UNNEST(JSON_QUERY_ARRAY(lighthouse.audits.`uses-optimized-images`.details.items)) AS unoptimized_img

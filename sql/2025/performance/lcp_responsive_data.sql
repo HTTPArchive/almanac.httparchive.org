@@ -28,8 +28,8 @@ WITH lh AS (
   SELECT
     client,
     page,
-    JSON_VALUE(lighthouse.audits.`prioritize-lcp-image`.details.items, '$[0].url') AS url,
-    JSON_VALUE(lighthouse.audits.`largest-contentful-paint-element`.details.items, '$[0].items[0].node.path') AS node_path,
+    JSON_VALUE(lighthouse.audits.`prioritize-lcp-image`.details.items[0].url) AS url,
+    JSON_VALUE(lighthouse.audits.`largest-contentful-paint-element`.details.items[0].items[0].node.path) AS node_path,
     TO_JSON_STRING(lighthouse.audits.`uses-responsive-images`.details.items) AS responsive_images
   FROM
     `httparchive.crawl.pages`
