@@ -1,19 +1,17 @@
-CREATE TEMP FUNCTION isLazyLoaded(attributes STRING) RETURNS BOOLEAN LANGUAGE js AS '''
+CREATE TEMP FUNCTION isLazyLoaded(attributes JSON) RETURNS BOOLEAN LANGUAGE js AS '''
   try {
-    const data = JSON.parse(attributes);
-    const loadingAttr = data.find(attr => attr["name"] === "loading")
+    const loadingAttr = attributes.find(attr => attr["name"] === "loading")
     return loadingAttr.value == 'lazy'
   } catch (e) {
     return null;
   }
 ''';
 
-CREATE TEMP FUNCTION hasLazyHeuristics(attributes STRING) RETURNS BOOLEAN LANGUAGE js AS '''
+CREATE TEMP FUNCTION hasLazyHeuristics(attributes JSON) RETURNS BOOLEAN LANGUAGE js AS '''
   try {
-    const data = JSON.parse(attributes);
-    const classes = data.find(attr => attr["name"] === "class").value;
+    const classes = attributes.find(attr => attr["name"] === "class").value;
     const hasLazyClasses = classes.indexOf('lazyload') !== -1;
-    const hasLazySrc = data.includes(attr => attr["name"] === "data-src");
+    const hasLazySrc = attributes.includes(attr => attr["name"] === "data-src");
 
     return hasLazyClasses || hasLazySrc;
   } catch (e) {
@@ -25,8 +23,8 @@ WITH lazy_tech AS (
   SELECT
     client,
     page,
-    isLazyLoaded(TO_JSON_STRING(custom_metrics.performance.lcp_elem_stats.attributes)) AS native_lazy,
-    hasLazyHeuristics(TO_JSON_STRING(custom_metrics.performance.lcp_elem_stats.attributes)) AS custom_lazy,
+    isLazyLoaded(custom_metrics.performance.lcp_elem_stats.attributes) AS native_lazy,
+    hasLazyHeuristics(custom_metrics.performance.lcp_elem_stats.attributes) AS custom_lazy,
     t.technology
   FROM
     `httparchive.crawl.pages`,
