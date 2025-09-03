@@ -1,4 +1,4 @@
-CREATE TEMP FUNCTION checkResponsiveImages(responsivelist STRING, lcpImgUrl STRING, nodePath STRING) RETURNS BOOLEAN LANGUAGE js AS '''
+CREATE TEMP FUNCTION checkResponsiveImages(responsiveImages JSON, lcpImgUrl STRING, nodePath STRING) RETURNS BOOLEAN LANGUAGE js AS '''
   try {
     //we will check lcp elment is img
     const lastSegment = (nodePath.split(",").reverse())[0];
@@ -7,10 +7,9 @@ CREATE TEMP FUNCTION checkResponsiveImages(responsivelist STRING, lcpImgUrl STRI
       lastNodeImg = true
     }
     if(lcpImgUrl != null && lastNodeImg){
-      const listJson = JSON.parse(responsivelist);
-      if(listJson.length > 0){
-        for(let i=0;i<listJson.length;i++){
-          let currentUrl = listJson[i].url;
+      if(responsiveImages.length > 0){
+        for(let i=0;i<responsiveImages.length;i++){
+          let currentUrl = responsiveImages[i].url;
           if(currentUrl == lcpImgUrl){
             return true
           }
@@ -30,7 +29,7 @@ WITH lh AS (
     page,
     JSON_VALUE(lighthouse.audits.`prioritize-lcp-image`.details.items[0].url) AS url,
     JSON_VALUE(lighthouse.audits.`largest-contentful-paint-element`.details.items[0].items[0].node.path) AS node_path,
-    TO_JSON_STRING(lighthouse.audits.`uses-responsive-images`.details.items) AS responsive_images
+    lighthouse.audits.`uses-responsive-images`.details.items AS responsive_images
   FROM
     `httparchive.crawl.pages`
   WHERE
