@@ -32,7 +32,7 @@ pages AS (
   SELECT
     client,
     page,
-    getGeneratedContent(custom_metrics.other["generated-content"]) AS generated_content
+    getGeneratedContent(custom_metrics.other['generated-content']) AS generated_content
   FROM
     `httparchive.crawl.pages`
   WHERE
