@@ -1,10 +1,7 @@
-CREATE TEMPORARY FUNCTION getGoodCwv(summary STRING)
+CREATE TEMPORARY FUNCTION getGoodCwv(crux JSON)
 RETURNS STRUCT<cumulative_layout_shift BOOLEAN, first_contentful_paint BOOLEAN, interaction_to_next_paint BOOLEAN, largest_contentful_paint BOOLEAN>
 LANGUAGE js AS '''
 try {
-  var $ = JSON.parse(summary);
-  var crux = $.crux;
-
   if (crux) {
     return Object.keys(crux.metrics).reduce((acc, n) => ({
       ...acc,
@@ -47,7 +44,7 @@ SELECT
 FROM (
   SELECT
     client,
-    getGoodCwv(TO_JSON_STRING(summary)) AS CrUX,
+    getGoodCwv(summary.crux) AS CrUX,
     is_root_page
   FROM
     `httparchive.crawl.pages`
