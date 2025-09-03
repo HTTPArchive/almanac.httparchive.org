@@ -1,11 +1,9 @@
-CREATE TEMPORARY FUNCTION getResourceHints(custom_metrics STRING)
+CREATE TEMPORARY FUNCTION getResourceHints(nodes JSON)
 RETURNS ARRAY<STRUCT<name STRING, href STRING>>
 LANGUAGE js AS '''
 var hints = new Set(['preload', 'prefetch', 'preconnect', 'prerender', 'dns-prefetch']);
 try {
-    var $ = JSON.parse(custom_metrics);
-    var almanac = $.other.almanac;
-    return almanac['link-nodes'].nodes.reduce((results, link) => {
+    return nodes.reduce((results, link) => {
         var hint = link.rel.toLowerCase();
         if (!hints.has(hint)) {
             return results;
@@ -29,7 +27,7 @@ WITH resource_hints AS (
   FROM
     `httparchive.crawl.pages`
   LEFT JOIN
-    UNNEST(getResourceHints(TO_JSON_STRING(custom_metrics))) AS hint
+    UNNEST(getResourceHints(custom_metrics.other.almanac['link-nodes'].nodes)) AS hint
   WHERE
     date = '2025-07-01' AND
     is_root_page
