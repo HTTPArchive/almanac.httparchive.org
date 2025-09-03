@@ -1,37 +1,33 @@
-CREATE TEMP FUNCTION getLoadingAttr(attributes STRING) RETURNS STRING LANGUAGE js AS '''
+CREATE TEMP FUNCTION getLoadingAttr(attributes JSON) RETURNS STRING LANGUAGE js AS '''
   try {
-    const data = JSON.parse(attributes);
-    const loadingAttr = data.find(attr => attr["name"] === "loading")
+    const loadingAttr = attributes.find(attr => attr["name"] === "loading")
     return loadingAttr.value
   } catch (e) {
     return "";
   }
 ''';
 
-CREATE TEMP FUNCTION getDecodingAttr(attributes STRING) RETURNS STRING LANGUAGE js AS '''
+CREATE TEMP FUNCTION getDecodingAttr(attributes JSON) RETURNS STRING LANGUAGE js AS '''
   try {
-    const data = JSON.parse(attributes);
-    const decodingAttr = data.find(attr => attr["name"] === "decoding")
+    const decodingAttr = attributes.find(attr => attr["name"] === "decoding")
     return decodingAttr.value
   } catch (e) {
     return "";
   }
 ''';
 
-CREATE TEMP FUNCTION getFetchPriorityAttr(attributes STRING) RETURNS STRING LANGUAGE js AS '''
+CREATE TEMP FUNCTION getFetchPriorityAttr(attributes JSON) RETURNS STRING LANGUAGE js AS '''
   try {
-    const data = JSON.parse(attributes);
-    const fetchPriorityAttr = data.find(attr => attr["name"] === "fetchpriority")
+    const fetchPriorityAttr = attributes.find(attr => attr["name"] === "fetchpriority")
     return fetchPriorityAttr.value
   } catch (e) {
     return "";
   }
 ''';
 
-CREATE TEMP FUNCTION getLoadingClasses(attributes STRING) RETURNS STRING LANGUAGE js AS '''
+CREATE TEMP FUNCTION getLoadingClasses(attributes JSON) RETURNS STRING LANGUAGE js AS '''
   try {
-    const data = JSON.parse(attributes);
-    const classes = data.find(attr => attr["name"] === "class").value
+    const classes = attributes.find(attr => attr["name"] === "class").value
     if (classes.indexOf('lazyload') !== -1) {
         return classes
     } else {
@@ -54,10 +50,10 @@ lcp_stats AS (
     CAST(JSON_VALUE(custom_metrics.performance.lcp_elem_stats.startTime) AS FLOAT64) AS startTime,
     CAST(JSON_VALUE(custom_metrics.performance.lcp_elem_stats.renderTime) AS FLOAT64) AS renderTime,
     custom_metrics.performance.lcp_elem_stats.attributes AS attributes,
-    getLoadingAttr(TO_JSON_STRING(custom_metrics.performance.lcp_elem_stats.attributes)) AS loading,
-    getDecodingAttr(TO_JSON_STRING(custom_metrics.performance.lcp_elem_stats.attributes)) AS decoding,
-    getLoadingClasses(TO_JSON_STRING(custom_metrics.performance.lcp_elem_stats.attributes)) AS classWithLazyload,
-    getFetchPriorityAttr(TO_JSON_STRING(custom_metrics.performance.lcp_elem_stats.attributes)) AS fetchPriority
+    getLoadingAttr(custom_metrics.performance.lcp_elem_stats.attributes) AS loading,
+    getDecodingAttr(custom_metrics.performance.lcp_elem_stats.attributes) AS decoding,
+    getLoadingClasses(custom_metrics.performance.lcp_elem_stats.attributes) AS classWithLazyload,
+    getFetchPriorityAttr(custom_metrics.performance.lcp_elem_stats.attributes) AS fetchPriority
   FROM
     `httparchive.crawl.pages`
   WHERE
