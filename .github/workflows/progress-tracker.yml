@@ -20,7 +20,7 @@ jobs:
     if: github.repository == 'HTTPArchive/almanac.httparchive.org'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/github-script@v7
+      - uses: actions/github-script@v8
         if: github.event_name == 'workflow_dispatch' || contains(github.event.issue.labels.*.name, env.FILTER_LABEL)
         with:
           # yamllint disable rule:line-length
