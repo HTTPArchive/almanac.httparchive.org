@@ -24,9 +24,9 @@ FROM
       COUNT(DISTINCT page) AS pageUseCount,
       SUM(COUNTIF(is_main_document)) OVER (PARTITION BY client) AS totalPagesCount
     FROM
-      `httparchive.all.requests`
+      `httparchive.crawl.requests`
     WHERE
-      date = '2024-06-01'
+      date = '2025-07-01'
     GROUP BY
       client,
       jsCDN

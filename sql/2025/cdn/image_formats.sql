@@ -30,8 +30,8 @@ FROM (
     END AS image_type
 
   FROM (
-    SELECT client, JSON_EXTRACT_SCALAR(summary, '$.mimeType') AS mimeType FROM `httparchive.all.requests` WHERE date = '2024-06-01' AND
-      type = 'image'
+    SELECT client, JSON_EXTRACT_SCALAR(summary, '$.mimeType') AS mimeType FROM `httparchive.crawl.requests` WHERE date = '2025-07-01' 
+    AND type = 'image'
   )
 )
 GROUP BY

@@ -18,15 +18,15 @@ FROM (
     url,
     is_main_document,
     IFNULL(NULLIF(REGEXP_EXTRACT(JSON_EXTRACT_SCALAR(summary, '$._cdn_provider'), r'^([^,]*).*'), ''), 'ORIGIN') AS cdn, # sometimes _cdn provider detection includes multiple entries. we bias for the DNS detected entry which is the first entry
-    CAST(JSON_EXTRACT(payload, '$.timings.ssl') AS INT64) AS tlstime,
+    SAFE_CAST(JSON_VALUE(payload, '$.timings.ssl') AS INT64) AS tlstime,
     JSON_EXTRACT_SCALAR(summary, '$.requestid') AS requestid,
-    ARRAY_LENGTH(split(JSON_EXTRACT(payload, '$._securityDetails.sanList'), '')) AS sanLength,
+    ARRAY_LENGTH(split(JSON_VALUE(payload, '$._securityDetails.sanList'), '')) AS sanLength,
     IF(NET.HOST(url) = NET.HOST(page), TRUE, FALSE) AS sameHost,
     IF(NET.HOST(url) = NET.HOST(page) OR NET.REG_DOMAIN(url) = NET.REG_DOMAIN(page), TRUE, FALSE) AS sameDomain # if toplevel reg_domain will return NULL so we group this as sameDomain
   FROM
-    `httparchive.all.requests`
+    `httparchive.crawl.requests`
   WHERE
-    date = '2024-06-01'
+    date = '2025-07-01'
   GROUP BY
     client,
     requestid,

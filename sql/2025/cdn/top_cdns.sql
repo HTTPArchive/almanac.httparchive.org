@@ -26,12 +26,12 @@ FROM
       client,
       page,
       url,
-      firstHtml,
-      IFNULL(NULLIF(REGEXP_EXTRACT(_cdn_provider, r'^([^,]*).*'), ''), 'ORIGIN') AS cdn, # sometimes _cdn provider detection includes multiple entries. we bias for the DNS detected entry which is the first entry
+      is_main_document AS firstHtml,
+      IFNULL(NULLIF(REGEXP_EXTRACT(JSON_EXTRACT_SCALAR(summary, '$._cdn_provider'), r'^([^,]*).*'), ''), 'ORIGIN') AS cdn, # sometimes _cdn provider detection includes multiple entries. we bias for the DNS detected entry which is the first entry
       NET.HOST(url) = NET.HOST(page) AS sameHost,
       NET.HOST(url) = NET.HOST(page) OR NET.REG_DOMAIN(url) = NET.REG_DOMAIN(page) AS sameDomain # if toplevel reg_domain will return NULL so we group this as sameDomain
     FROM
-      `httparchive.almanac.requests`
+      `httparchive.crawl.requests`
     WHERE
       date = '2019-07-01'
     UNION ALL
@@ -40,12 +40,12 @@ FROM
       client,
       page,
       url,
-      firstHtml,
-      IFNULL(NULLIF(REGEXP_EXTRACT(_cdn_provider, r'^([^,]*).*'), ''), 'ORIGIN') AS cdn, # sometimes _cdn provider detection includes multiple entries. we bias for the DNS detected entry which is the first entry
+      is_main_document AS firstHtml,
+      IFNULL(NULLIF(REGEXP_EXTRACT(JSON_EXTRACT_SCALAR(summary, '$._cdn_provider'), r'^([^,]*).*'), ''), 'ORIGIN') AS cdn, # sometimes _cdn provider detection includes multiple entries. we bias for the DNS detected entry which is the first entry
       NET.HOST(url) = NET.HOST(page) AS sameHost,
       NET.HOST(url) = NET.HOST(page) OR NET.REG_DOMAIN(url) = NET.REG_DOMAIN(page) AS sameDomain # if toplevel reg_domain will return NULL so we group this as sameDomain
     FROM
-      `httparchive.almanac.requests`
+      `httparchive.crawl.requests`
     WHERE
       date = '2020-08-01'
     UNION ALL
@@ -54,12 +54,12 @@ FROM
       client,
       page,
       url,
-      firstHtml,
-      IFNULL(NULLIF(REGEXP_EXTRACT(_cdn_provider, r'^([^,]*).*'), ''), 'ORIGIN') AS cdn, # sometimes _cdn provider detection includes multiple entries. we bias for the DNS detected entry which is the first entry
+      is_main_document AS firstHtml,
+      IFNULL(NULLIF(REGEXP_EXTRACT(JSON_EXTRACT_SCALAR(summary, '$._cdn_provider'), r'^([^,]*).*'), ''), 'ORIGIN') AS cdn, # sometimes _cdn provider detection includes multiple entries. we bias for the DNS detected entry which is the first entry
       NET.HOST(url) = NET.HOST(page) AS sameHost,
       NET.HOST(url) = NET.HOST(page) OR NET.REG_DOMAIN(url) = NET.REG_DOMAIN(page) AS sameDomain # if toplevel reg_domain will return NULL so we group this as sameDomain
     FROM
-      `httparchive.almanac.requests`
+      `httparchive.crawl.requests`
     WHERE
       date = '2021-07-01'
     UNION ALL
@@ -68,12 +68,12 @@ FROM
       client,
       page,
       url,
-      firstHtml,
-      IFNULL(NULLIF(REGEXP_EXTRACT(_cdn_provider, r'^([^,]*).*'), ''), 'ORIGIN') AS cdn, # sometimes _cdn provider detection includes multiple entries. we bias for the DNS detected entry which is the first entry
+      is_main_document AS firstHtml,
+      IFNULL(NULLIF(REGEXP_EXTRACT(JSON_EXTRACT_SCALAR(summary, '$._cdn_provider'), r'^([^,]*).*'), ''), 'ORIGIN') AS cdn, # sometimes _cdn provider detection includes multiple entries. we bias for the DNS detected entry which is the first entry
       NET.HOST(url) = NET.HOST(page) AS sameHost,
       NET.HOST(url) = NET.HOST(page) OR NET.REG_DOMAIN(url) = NET.REG_DOMAIN(page) AS sameDomain # if toplevel reg_domain will return NULL so we group this as sameDomain
     FROM
-      `httparchive.almanac.requests`
+      `httparchive.crawl.requests`
     WHERE
       date = '2022-06-01'
     UNION ALL
@@ -87,9 +87,23 @@ FROM
       NET.HOST(url) = NET.HOST(page) AS sameHost,
       NET.HOST(url) = NET.HOST(page) OR NET.REG_DOMAIN(url) = NET.REG_DOMAIN(page) AS sameDomain # if toplevel reg_domain will return NULL so we group this as sameDomain
     FROM
-      `httparchive.all.requests`
+      `httparchive.crawl.requests`
     WHERE
       date = '2024-06-01'
+      UNION ALL
+    SELECT
+      '2025' AS year,
+      client,
+      page,
+      url,
+      is_main_document AS firstHtml,
+      IFNULL(NULLIF(REGEXP_EXTRACT(JSON_EXTRACT_SCALAR(summary, '$._cdn_provider'), r'^([^,]*).*'), ''), 'ORIGIN') AS cdn, # sometimes _cdn provider detection includes multiple entries. we bias for the DNS detected entry which is the first entry
+      NET.HOST(url) = NET.HOST(page) AS sameHost,
+      NET.HOST(url) = NET.HOST(page) OR NET.REG_DOMAIN(url) = NET.REG_DOMAIN(page) AS sameDomain # if toplevel reg_domain will return NULL so we group this as sameDomain
+    FROM
+      `httparchive.crawl.requests`
+    WHERE
+      date = '2025-07-01'
   )
 GROUP BY
   year,

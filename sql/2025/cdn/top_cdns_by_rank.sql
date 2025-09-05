@@ -7,21 +7,18 @@ WITH requests AS (
     is_main_document AS firstHtml,
     page,
     url,
-    rank,
-    -- _cdn_provider is now in requests.summary table
-    -- Also it returns empty string ('')rather than 'ORIGIN' when no CDN
+    resp.rank, -- Need to validate this should be resp.rank and not pages.rank
     IF(IFNULL(NULLIF(REGEXP_EXTRACT(JSON_EXTRACT_SCALAR(resp.summary, '$._cdn_provider'), r'^([^,]*).*'), ''), '') = '', 'ORIGIN', 'CDN') AS cdn,
     NET.HOST(url) = NET.HOST(page) AS sameHost,
     NET.HOST(url) = NET.HOST(page) OR NET.REG_DOMAIN(url) = NET.REG_DOMAIN(page) AS sameDomain # if toplevel reg_domain will return NULL so we group this as sameDomain
   FROM
-    `httparchive.all.requests` AS resp -- NEW table
+    `httparchive.crawl.requests` AS resp
   INNER JOIN
-    `httparchive.all.pages` -- NEW pages table
-  -- `httparchive.sample_data.pages_1k` AS pages -- SAMPLE pages table (quicker)
+    `httparchive.crawl.pages` AS pages
   USING (page, client, date)
   WHERE
-    date = '2024-06-01' AND -- Uncomment this when running on full table
-    is_main_document -- new name for firstHtml
+    date = '2025-07-01' AND
+    is_main_document
 )
 
 SELECT
