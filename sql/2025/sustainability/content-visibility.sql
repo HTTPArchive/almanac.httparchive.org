@@ -45,7 +45,7 @@ content_visibility_pages AS (
     COUNT(DISTINCT root_page) AS pages_with_content_visibility
   FROM
     `httparchive.crawl.parsed_css`,
-    UNNEST(HASCONTENTVISIBILITY(css))
+    UNNEST(HASCONTENTVISIBILITY(TO_JSON_STRING(css)))
   WHERE
     date = '2025-06-01' AND
     is_root_page

@@ -6,7 +6,7 @@ SELECT
   total,
   IF(cdn = '', 'No CDN', cdn) AS cdn,
   COUNT(0) AS freq,
-  COUNT(0) / total AS pct
+  ROUND(100 * COUNT(0) / total, 2) AS pct
 FROM (
   SELECT
     client,
