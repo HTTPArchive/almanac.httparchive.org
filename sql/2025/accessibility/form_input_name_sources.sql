@@ -1,71 +1,93 @@
-#standardSQL
-# Where input elements get their A11Y names from
-CREATE TEMPORARY FUNCTION a11yInputNameSources(payload STRING)
-RETURNS ARRAY<STRING> LANGUAGE js AS '''
-  try {
-    const a11y = JSON.parse(payload);
+-- standardSQL
+-- Web Almanac — A11Y name sources for <input>
+--
+-- What this does (generic, applies to both sample and live):
+--   • Prefer 2025 JSON: custom_metrics.a11y or custom_metrics.other.a11y (both JSON-typed)
+--   • Fallback to legacy: payload._a11y
+--   • For each page, walk form_control_a11y_tree and collect a “pretty” source
+--       - Skip <button> and <input type="submit">
+--       - If accessible_name is empty → "No accessible name"
+--       - First source pretty-printed as:
+--           "attribute: {attr}" | "relatedElement: {attr|label}" | "{type}"
+--   • Output per {client, is_root_page} to mirror the 2024 structure:
+--       client, is_root_page, total_inputs, input_name_source, total_with_this_source, perc_of_all_inputs
 
-    const accessible_name_sources = [];
-    for (const tree_node of a11y.form_control_a11y_tree) {
-      if (tree_node.type === "button") {
-        continue;
-      }
-      if (tree_node.type === "input" && tree_node.attributes.type === "submit") {
-        continue;
-      }
+CREATE TEMPORARY FUNCTION a11yInputNameSources(a11y_str STRING)
+RETURNS ARRAY<STRING>
+LANGUAGE js AS r"""
+try {
+  const a11y = JSON.parse(a11y_str || "{}");
+  const tree = Array.isArray(a11y.form_control_a11y_tree) ? a11y.form_control_a11y_tree : [];
+  const out = [];
 
-      if (tree_node.accessible_name.length === 0) {
-        // No A11Y name given
-        accessible_name_sources.push("No accessible name");
-        continue;
-      }
+  for (const node of tree) {
+    if (!node || typeof node !== "object") continue;
 
-      if (tree_node.accessible_name_sources.length <= 0) {
-        continue;
-      }
+    const t = node.type || "";
+    if (t === "button") continue;
+    if (t === "input" && node.attributes && node.attributes.type === "submit") continue;
 
-      const name_source = tree_node.accessible_name_sources[0];
-      let pretty_name_source = name_source.type;
-      if (name_source.type === "attribute") {
-        pretty_name_source = `${name_source.type}: ${name_source.attribute}`;
-      } else if (name_source.type === "relatedElement") {
-        if (name_source.attribute) {
-          pretty_name_source = `${name_source.type}: ${name_source.attribute}`;
-        } else {
-          pretty_name_source = `${name_source.type}: label`;
-        }
-      }
+    const name = (node.accessible_name ?? "");
+    const sources = Array.isArray(node.accessible_name_sources) ? node.accessible_name_sources : [];
 
-      accessible_name_sources.push(pretty_name_source);
+    if (!String(name).length) {
+      out.push("No accessible name");
+      continue;
     }
+    if (!sources.length) continue;
 
-    return accessible_name_sources;
-  } catch (e) {
-    return [];
+    const s = sources[0] || {};
+    let pretty = s.type || "unknown";
+    if (s.type === "attribute") {
+      pretty = `attribute: ${s.attribute || "unknown"}`;
+    } else if (s.type === "relatedElement") {
+      pretty = `relatedElement: ${s.attribute || "label"}`;
+    }
+    out.push(pretty);
   }
-''';
+  return out;
+} catch (e) {
+  return [];
+}
+""";
 
-SELECT
-  client,
-  is_root_page,
-  SUM(COUNT(0)) OVER (PARTITION BY client) AS total_inputs,
-  input_name_source,
-  COUNT(0) AS total_with_this_source,
-  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS perc_of_all_inputs
-FROM (
+WITH
+src_base AS (
+  SELECT client, is_root_page, custom_metrics, payload
+  FROM `httparchive.crawl.pages`
+  WHERE date = DATE '2025-07-01'
+),
+
+src AS (
+  SELECT
+    b.client,
+    b.is_root_page,
+    COALESCE(
+      TO_JSON_STRING(b.custom_metrics.a11y),
+      TO_JSON_STRING(b.custom_metrics.other.a11y),
+      TO_JSON_STRING(JSON_QUERY(b.payload, '$._a11y'))
+    ) AS a11y_str
+  FROM src_base AS b
+  WHERE b.custom_metrics IS NOT NULL
+),
+per_input AS (
   SELECT
     client,
     is_root_page,
-    input_name_source
-  FROM
-    `httparchive.crawl.pages`,
-    UNNEST(
-      a11yInputNameSources(JSON_EXTRACT_SCALAR(payload, '$._a11y'))
-    ) AS input_name_source
-  WHERE
-    date = '2025-07-01'
+    src_txt AS input_name_source
+  FROM src,
+  UNNEST(a11yInputNameSources(a11y_str)) AS src_txt
+  WHERE a11y_str IS NOT NULL
 )
-GROUP BY
+SELECT
   client,
   is_root_page,
-  input_name_source;
+  SUM(COUNT(*)) OVER (PARTITION BY client) AS total_inputs,
+  input_name_source,
+  COUNT(*) AS total_with_this_source,
+  FORMAT('%.1f%%',
+         100 * SAFE_DIVIDE(COUNT(*),
+                           SUM(COUNT(*)) OVER (PARTITION BY client))) AS perc_of_all_inputs
+FROM per_input
+GROUP BY client, is_root_page, input_name_source
+ORDER BY client, is_root_page, total_with_this_source DESC;
