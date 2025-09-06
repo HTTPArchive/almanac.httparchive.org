@@ -122,5 +122,4 @@ SELECT
   median_weight,
   audit_group
 FROM ranked
-WHERE rn <= 10
 ORDER BY cms, rn;
