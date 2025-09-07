@@ -5,13 +5,16 @@ WITH score_data AS (
   SELECT
     client,
     is_root_page,
-    CAST(JSON_EXTRACT_SCALAR(lighthouse, '$.categories.accessibility.score') AS FLOAT64) AS score
+    CAST(JSON_VALUE(lighthouse, '$.categories.accessibility.score') AS FLOAT64) AS score
   FROM
     `httparchive.crawl.pages`
+    -- TABLESAMPLE SYSTEM (0.1 PERCENT)  -- uncomment for SMOKE TESTING
   WHERE
-    date = '2025-07-01' AND
-    lighthouse IS NOT NULL AND
-    lighthouse != '{}'
+    date = DATE '2025-07-01'
+    AND is_root_page
+    AND lighthouse IS NOT NULL
+    AND JSON_TYPE(lighthouse) = 'object'                                   -- valid JSON object
+    AND JSON_VALUE(lighthouse, '$.categories.accessibility.score') IS NOT NULL  -- has a score
 ),
 
 sorted_scores AS (
