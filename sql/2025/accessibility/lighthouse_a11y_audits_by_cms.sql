@@ -48,20 +48,20 @@ WITH
 --     a.id                AS audit_id,
 --     a.weight            AS weight,
 --     a.audit_group       AS audit_group,
---     a.score             AS score
+--    a.score             AS score
 --   FROM `httparchive.crawl.pages` AS p
 --   TABLESAMPLE SYSTEM (0.01 PERCENT)
 --   CROSS JOIN UNNEST(p.technologies) AS t
---   CROSS JOIN UNNEST(t.categories) AS cat
+--   CROSS JOIN UNNEST(t.categories)    AS cat
 --   CROSS JOIN UNNEST(getAudits(TO_JSON_STRING(p.lighthouse), 'accessibility')) AS a
 --   WHERE p.date = DATE '2025-07-01'
---     AND p.lighthouse IS NOT NULL
---     AND TO_JSON_STRING(p.lighthouse) != '{}'
 --     AND p.is_root_page
+--     AND p.lighthouse IS NOT NULL
+--     AND JSON_TYPE(p.lighthouse) = 'object'
 --     AND cat = 'CMS'
 -- )
 
--- ===== LIVE (full) — uncomment block below, comment the SAMPLE block above =====
+-- ===== LIVE (full) — uncomment this block and comment the SAMPLE block above =====
 audits_flat AS (
   SELECT
     LOWER(t.technology) AS cms,
@@ -71,12 +71,12 @@ audits_flat AS (
     a.score             AS score
   FROM `httparchive.crawl.pages` AS p
   CROSS JOIN UNNEST(p.technologies) AS t
-  CROSS JOIN UNNEST(t.categories) AS cat
+  CROSS JOIN UNNEST(t.categories)    AS cat
   CROSS JOIN UNNEST(getAudits(TO_JSON_STRING(p.lighthouse), 'accessibility')) AS a
   WHERE p.date = DATE '2025-07-01'
-    AND p.lighthouse IS NOT NULL
-    AND TO_JSON_STRING(p.lighthouse) != '{}'
     AND p.is_root_page
+    AND p.lighthouse IS NOT NULL
+    AND JSON_TYPE(p.lighthouse) = 'object'
     AND cat = 'CMS'
 )
 
@@ -88,38 +88,23 @@ audits_flat AS (
     COUNT(*)                   AS total_pages,
     COUNTIF(score IS NOT NULL) AS total_applicable,
     APPROX_QUANTILES(weight, 100)[OFFSET(50)] AS median_weight,
-    MAX(audit_group)           AS audit_group
+    COALESCE(MAX(audit_group), 'hidden')      AS audit_group   -- default missing group to 'hidden'
   FROM audits_flat
   GROUP BY cms, audit_id
 )
-, ranked AS (
-  SELECT
-    cms,
-    audit_id,
-    num_pages_with_issue,
-    total_pages,
-    total_applicable,
-    FORMAT('%.1f%%', 100 * SAFE_DIVIDE(num_pages_with_issue, NULLIF(total_applicable, 0))) AS pct_pages_with_issue,
-    median_weight,
-    audit_group,
-    ROW_NUMBER() OVER (
-      PARTITION BY cms
-      ORDER BY SAFE_DIVIDE(num_pages_with_issue, NULLIF(total_applicable, 0)) DESC,
-               median_weight DESC,
-               audit_id
-    ) AS rn
-  FROM agg
-)
 
--- Final output (one SELECT), matching requested column names/order.
+-- Final output (one SELECT). No per-CMS cap; blanks are normalized to "0.0%".
 SELECT
   cms,
   audit_id,
   num_pages_with_issue,
   total_pages,
   total_applicable,
-  pct_pages_with_issue,
+  FORMAT('%.1f%%', 100 * IFNULL(SAFE_DIVIDE(num_pages_with_issue, NULLIF(total_applicable, 0)), 0)) AS pct_pages_with_issue,
   median_weight,
   audit_group
-FROM ranked
-ORDER BY cms, rn;
+FROM agg
+ORDER BY cms,
+         SAFE_DIVIDE(num_pages_with_issue, NULLIF(total_applicable, 0)) DESC,
+         median_weight DESC,
+         audit_id;
