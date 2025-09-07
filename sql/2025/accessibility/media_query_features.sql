@@ -92,8 +92,7 @@ SELECT
   f.feature,
   COUNT(DISTINCT f.page) AS pages,
   t.total_pages,
-  SAFE_DIVIDE(COUNT(DISTINCT f.page), t.total_pages)                        AS pct_pages_with_feature,
-  FORMAT('%.1f%%', 100 * SAFE_DIVIDE(COUNT(DISTINCT f.page), t.total_pages)) AS pct_pages_with_feature_fmt
+  FORMAT('%.1f%%', 100 * SAFE_DIVIDE(COUNT(DISTINCT f.page), t.total_pages)) AS pct_pages_with_feature
 FROM css_features AS f
 JOIN totals AS t
   ON t.client = f.client
