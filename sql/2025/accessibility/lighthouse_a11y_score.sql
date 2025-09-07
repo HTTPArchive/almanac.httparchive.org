@@ -1,5 +1,27 @@
 #standardSQL
-# Percentiles of Lighthouse accessibility scores using exact sorting
+-- Web Almanac — Percentiles of Lighthouse accessibility scores (exact sorting)
+--
+-- What this does
+--   • Extracts `categories.accessibility.score` (0..1) from Lighthouse JSON.
+--   • Filters to pages with valid, non-null scores on crawl date 2025-07-01.
+--   • Sorts scores per {client, is_root_page} and assigns row numbers + total counts.
+--   • Computes percentile positions (0..1) via (rank-1)/total_count.
+--   • Joins against target percentiles [10%, 25%, 50%, 75%, 90%] and keeps rows near each.
+--   • Averages ties when multiple rows are equally close to a percentile.
+--   • Outputs exact scores per percentile, per client/device + root-page flag.
+--
+-- Notes
+--   • SAMPLE vs LIVE: uncomment `TABLESAMPLE SYSTEM (0.1 PERCENT)` in `score_data` for cheap smoke tests,
+--     or remove/comment it for the full crawl.
+--   • Exact percentiles here are “nearest value” estimates, not interpolated midpoints.
+--   • Output includes both raw score (0..1) and average at each percentile.
+--
+-- Output columns
+--   client        — "mobile" or "desktop"
+--   is_root_page  — boolean (true if root page)
+--   date          — crawl date (string "2025-07-01")
+--   percentile    — requested percentile (float, e.g. 0.25 for 25th)
+--   exact_score   — average score of rows closest to the percentile
 
 WITH score_data AS (
   SELECT
@@ -43,7 +65,7 @@ percentiles AS (
 SELECT
   client,
   is_root_page,
-  '2024_06_01' AS date,
+  '2025-07-01' AS date,
   percentile,
   AVG(score) AS exact_score  -- Average score for each percentile
 FROM
