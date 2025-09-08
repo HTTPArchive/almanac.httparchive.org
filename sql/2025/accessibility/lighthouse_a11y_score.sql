@@ -33,7 +33,7 @@ WITH score_data AS (
     -- TABLESAMPLE SYSTEM (0.1 PERCENT)  -- uncomment for SMOKE TESTING
   WHERE
     date = DATE '2025-07-01'
-    AND is_root_page
+    -- AND is_root_page
     AND lighthouse IS NOT NULL
     AND JSON_TYPE(lighthouse) = 'object'                                   -- valid JSON object
     AND JSON_VALUE(lighthouse, '$.categories.accessibility.score') IS NOT NULL  -- has a score
@@ -73,11 +73,5 @@ FROM
   UNNEST([0.1, 0.25, 0.5, 0.75, 0.9]) AS percentile  -- Target percentiles (e.g., 10th, 25th, 50th, etc.)
 WHERE
   ABS(percentile_value - percentile) < 0.01  -- Match scores around the percentile value
-GROUP BY
-  client,
-  is_root_page,
-  percentile
-ORDER BY
-  client,
-  is_root_page,
-  percentile;
+GROUP BY client, is_root_page, percentile
+ORDER BY client, is_root_page, percentile;
