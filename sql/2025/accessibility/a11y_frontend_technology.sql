@@ -1,15 +1,21 @@
--- This query analyzes Lighthouse category scores (performance, accessibility,
--- best-practices, SEO) for root pages in the HTTP Archive crawl on 2025-07-01.
--- It extracts scores from the JSON `lighthouse` field, associates each page
--- with detected frontend frameworks or JS libraries (via the `technologies`
--- array), and calculates the average scores per framework and client (desktop/mobile).
--- The results include:
---   • avg_performance_score
---   • avg_accessibility_score
---   • avg_best_practices_score
---   • avg_seo_score
---   • total_pages (distinct pages per framework/client)
--- Ordered by the frameworks with the most pages.
+#standardSQL
+-- Web Almanac — Lighthouse category scores by framework (2025-07-01)
+--
+-- What this does
+--   • Extracts Lighthouse category scores (performance, accessibility,
+--     best-practices, SEO) from JSON.
+--   • Associates each page with detected frontend frameworks or JS libraries.
+--   • Averages scores per {client, framework}, avoiding duplicate page-framework rows.
+--   • Outputs scores as human-readable percentages.
+--
+-- Output columns
+--   client                  — "desktop" | "mobile"
+--   framework               — framework or library name (e.g., jQuery, React)
+--   avg_performance_score   — average % performance score
+--   avg_accessibility_score — average % accessibility score
+--   avg_best_practices_score — average % best-practices score
+--   avg_seo_score           — average % SEO score
+--   total_pages             — number of distinct pages per {client, framework}
 
 WITH score_data AS (
   SELECT
@@ -22,6 +28,7 @@ WITH score_data AS (
     t.technology AS framework
   FROM
     `httparchive.crawl.pages`
+    -- TABLESAMPLE SYSTEM (0.1 PERCENT)   -- ← optional: cheap smoke test
   CROSS JOIN
     UNNEST(technologies) AS t
   WHERE
@@ -35,16 +42,10 @@ WITH score_data AS (
       'JavaScript frameworks' IN UNNEST(t.categories)
     )
     AND t.technology IS NOT NULL
-)
-SELECT
-  client,
-  framework,
-  AVG(performance_score)    AS avg_performance_score,
-  AVG(accessibility_score)  AS avg_accessibility_score,
-  AVG(best_practices_score) AS avg_best_practices_score,
-  AVG(seo_score)            AS avg_seo_score,
-  COUNT(DISTINCT page)      AS total_pages
-FROM (
+),
+
+-- De-dupe: average per page+framework before global averaging
+per_page_framework AS (
   SELECT
     client,
     page,
@@ -57,5 +58,15 @@ FROM (
   WHERE performance_score IS NOT NULL
   GROUP BY client, page, framework
 )
+
+SELECT
+  client,
+  framework,
+  FORMAT('%.2f%%', 100 * AVG(performance_score))    AS avg_performance_score,
+  FORMAT('%.2f%%', 100 * AVG(accessibility_score))  AS avg_accessibility_score,
+  FORMAT('%.2f%%', 100 * AVG(best_practices_score)) AS avg_best_practices_score,
+  FORMAT('%.2f%%', 100 * AVG(seo_score))            AS avg_seo_score,
+  COUNT(DISTINCT page)                              AS total_pages
+FROM per_page_framework
 GROUP BY client, framework
 ORDER BY total_pages DESC;
