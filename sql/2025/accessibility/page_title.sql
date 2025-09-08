@@ -1,57 +1,55 @@
 #standardSQL
--- Web Almanac — Page title stats via Lighthouse “document‑title” audit
---
--- What this does
---   • Uses the Lighthouse audit “document-title” to determine if a page has a <title>.
---   • Aggregates per {client, is_root_page} the total pages, pages with a title, and percentage.
---   • Avoids `_wpt_bodies` entirely, so it works whether or not the property exists.
---
--- How to run
---   • SAMPLE (default): reads from `httparchive.sample_data.pages_10k`.
---   • LIVE: swap in the LIVE block (uncomment it, comment the SAMPLE block).
---   • Adjust the run_date in the params CTE for a different crawl date.
---
--- Notes
---   • Bracket JSON paths (`$."audits"."document-title"."score"`) handle hyphens safely.
---   • Percentages are formatted (e.g. “98.1%”). Raw fractions are not returned.
---   • `is_root_page` is included so root‑page and non‑root stats are separate.
+/********************************************************************************************
+ Page title stats (usage, descriptiveness, stability)
+ --------------------------------------------------------------------------------------------
+ What this query does
+   • Counts how many pages have <title>, how many titles have ≥4 words,
+     and how many titles changed between initial HTML and rendered DOM.
+   • Groups results by {client, is_root_page}.
+   • Outputs both absolute counts and percentages, aligned with the 2024 table structure.
 
-WITH params AS (
-  SELECT DATE '2025-07-01' AS run_date
-),
+ Data sources
+   • httparchive.crawl.pages
+   • custom_metrics.wpt_bodies.title.* fields:
+       - rendered.primary.words              → word count in final rendered <title>
+       - title_changed_on_render (boolean)  → whether the <title> changed
 
-/* =========================
-   SAMPLE (default, cheap)
-   ========================= 
-src AS (
-  SELECT
-    client,
-    is_root_page,
-    CAST(JSON_VALUE(lighthouse, '$."audits"."document-title"."score"') AS FLOAT64) AS doc_title_score
-  FROM `httparchive.sample_data.pages_10k`
-  WHERE lighthouse IS NOT NULL AND JSON_TYPE(lighthouse) = 'object'
-) */
-
--- Uncomment this block and comment out the SAMPLE block above to use the live crawl
-src AS (
-  SELECT
-    p.client,
-    p.is_root_page,
-    CAST(JSON_VALUE(p.lighthouse, '$."audits"."document-title"."score"') AS FLOAT64) AS doc_title_score
-  FROM `httparchive.crawl.pages` AS p
-  CROSS JOIN params
-  WHERE p.date = params.run_date
-    AND p.is_root_page
-    AND p.lighthouse IS NOT NULL
-    AND JSON_TYPE(p.lighthouse) = 'object'
-)
+ How to run
+   • Default is limited by `rank = 1000` for cheap smoke tests.
+   • Remove that filter for the full crawl.
+********************************************************************************************/
 
 SELECT
   client,
   is_root_page,
+
   COUNT(*) AS total_sites,
-  COUNTIF(doc_title_score = 1) AS total_has_title,
-  FORMAT('%.1f%%', 100 * SAFE_DIVIDE(COUNTIF(doc_title_score = 1), COUNT(*))) AS pct_with_title
-FROM src
+
+  COUNTIF(total_title_words > 0) AS total_has_title,
+  COUNTIF(total_title_words > 3) AS total_title_with_four_or_more_words,
+  COUNTIF(title_changed_on_render) AS total_title_changed,
+
+  -- Percentages (formatted)
+  FORMAT('%.1f%%', 100 * SAFE_DIVIDE(COUNTIF(total_title_words > 0), COUNT(*)))
+    AS pct_with_title,
+  FORMAT('%.1f%%', 100 * SAFE_DIVIDE(COUNTIF(total_title_words > 3),
+                                     NULLIF(COUNTIF(total_title_words > 0),0)))
+    AS pct_titles_four_or_more_words,
+  FORMAT('%.1f%%', 100 * SAFE_DIVIDE(COUNTIF(title_changed_on_render),
+                                     NULLIF(COUNTIF(total_title_words > 0),0)))
+    AS pct_titles_changed_on_render
+
+FROM (
+  SELECT
+    client,
+    is_root_page,
+    SAFE_CAST(JSON_EXTRACT_SCALAR(custom_metrics.wpt_bodies.title.title_changed_on_render) AS BOOL)
+      AS title_changed_on_render,
+    SAFE_CAST(JSON_EXTRACT_SCALAR(custom_metrics.wpt_bodies.title.rendered.primary.words) AS INT64)
+      AS total_title_words
+  FROM `httparchive.crawl.pages`
+  WHERE date = '2025-07-01'
+    -- AND rank = 1000   -- remove for full dataset
+)
 GROUP BY client, is_root_page
 ORDER BY client, is_root_page;
