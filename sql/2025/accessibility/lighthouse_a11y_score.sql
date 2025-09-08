@@ -67,7 +67,7 @@ SELECT
   is_root_page,
   '2025-07-01' AS date,
   percentile,
-  AVG(score) AS exact_score  -- Average score for each percentile
+  FORMAT('%.1f%%', 100 * AVG(score)) AS exact_score_pct
 FROM
   percentiles,
   UNNEST([0.1, 0.25, 0.5, 0.75, 0.9]) AS percentile  -- Target percentiles (e.g., 10th, 25th, 50th, etc.)
