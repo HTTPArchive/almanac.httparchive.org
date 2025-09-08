@@ -1,5 +1,26 @@
 #standardSQL
--- Pages with search input (formatted percentages)
+# Purpose
+#   Measure the share of sites with a search input field, by client and root-page flag,
+#   for the 2025-07-01 HTTP Archive crawl.
+#
+# What it does
+#   • Parses the `almanac.input_elements` JSON (2025 location, with legacy fallback).
+#   • Flags whether a page has any input elements and whether any qualify as "search":
+#       - <input type="search">
+#       - <input type="text"> whose placeholder starts with “search”.
+#   • Rolls results up to (client, is_root_page).
+#
+# Outputs
+#   • total_sites                   — distinct pages sampled
+#   • total_with_inputs             — pages with ≥1 input element
+#   • total_with_search_input       — pages with a search input
+#   • perc_sites_with_search_input  — percent of all sites with a search input
+#   • perc_input_sites_with_search_input — percent of sites with inputs that include a search input
+#
+# Notes
+#   • Percentages are formatted as strings (e.g., "21.9%").
+#   • SAFE_DIVIDE guards against division-by-zero when no sites match.
+#   • Keep TABLESAMPLE for cheap test runs; remove/comment for full accuracy.
 
 CREATE TEMPORARY FUNCTION hasSearchInput(almanac_str STRING)
 RETURNS BOOL
