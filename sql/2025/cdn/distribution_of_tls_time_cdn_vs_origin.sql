@@ -13,14 +13,13 @@ SELECT
 FROM (
   SELECT
     client,
-    -- requestid,
     JSON_EXTRACT_SCALAR(summary, '$.requestid') AS requestid,
     page,
     url,
     is_main_document,
     IFNULL(NULLIF(REGEXP_EXTRACT(JSON_EXTRACT_SCALAR(summary, '$._cdn_provider'), r'^([^,]*).*'), ''), 'ORIGIN') AS cdn, # sometimes _cdn provider detection includes multiple entries. we bias for the DNS detected entry which is the first entry
     SAFE_CAST(JSON_VALUE(payload, '$.timings.ssl') AS INT64) AS tlstime,
-    ARRAY_LENGTH(split(JSON_VALUE(payload, '$._securityDetails.sanList'), '')) AS sanLength,
+    ARRAY_LENGTH(JSON_VALUE_ARRAY(payload, '$._securityDetails.sanList')) AS sanLength,
     IF(NET.HOST(url) = NET.HOST(page), TRUE, FALSE) AS sameHost,
     IF(NET.HOST(url) = NET.HOST(page) OR NET.REG_DOMAIN(url) = NET.REG_DOMAIN(page), TRUE, FALSE) AS sameDomain # if toplevel reg_domain will return NULL so we group this as sameDomain
   FROM
