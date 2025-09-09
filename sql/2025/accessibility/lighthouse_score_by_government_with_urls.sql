@@ -923,9 +923,17 @@ pages AS (
 
 -- Filter out rows without any score to shrink downstream work
 pages_scored AS (
-  SELECT *
+  SELECT
+    page,
+    LOWER(NET.HOST(page)) AS host,
+    ANY_VALUE(is_root_page) AS is_root_page,
+    MAX(perf) AS perf,
+    MAX(a11y) AS a11y,
+    MAX(bp) AS bp,
+    MAX(seo) AS seo
   FROM pages
   WHERE perf IS NOT NULL OR a11y IS NOT NULL OR bp IS NOT NULL OR seo IS NOT NULL
+  GROUP BY page, host
 ),
 
 -- 4) Exact ENDS_WITH matches against curated suffix list
@@ -971,6 +979,42 @@ ranked AS (
       ORDER BY priority DESC, match_len DESC
     ) AS rn
   FROM all_matches
+),
+
+-- Canadian province code lookup (code → province name)
+ca_prov_map AS (
+  SELECT * FROM UNNEST([
+    STRUCT('ab' AS code, 'Alberta' AS province),
+    ('bc','British Columbia'), ('mb','Manitoba'), ('nb','New Brunswick'),
+    ('nl','Newfoundland and Labrador'), ('ns','Nova Scotia'),
+    ('nt','Northwest Territories'), ('nu','Nunavut'), ('on','Ontario'),
+    ('pe','Prince Edward Island'), ('qc','Quebec'), ('sk','Saskatchewan'),
+    ('yt','Yukon'), ('yk','Yukon')  -- accept either token
+  ])
+),
+
+-- Look for dot-or-hyphen delimited province tokens inside *.gc.ca hosts
+ca_prov_from_gc AS (
+  SELECT
+    p.page, p.host,
+    LOWER(
+      REGEXP_EXTRACT(
+        p.host,
+        r'(?i)(?:^|[.-])(ab|bc|mb|nb|nl|ns|nt|nu|on|pe|qc|sk|yt|yk)(?:[.-])'
+      )
+    ) AS prov_code
+  FROM pages_scored p
+  WHERE ENDS_WITH(p.host, '.gc.ca')
+),
+
+-- Canadian domain overrides for branded/legacy provincial portals
+ca_province_classified AS (
+  SELECT
+    g.page, g.host,
+    m.province AS ca_province
+  FROM ca_prov_from_gc g
+  LEFT JOIN ca_prov_map m
+    ON g.prov_code = m.code
 ),
 
 -- US state code lookup (code → state name)
@@ -1070,6 +1114,25 @@ domain_scores AS (
   FROM final_best
 )
 
+-- Final SELECT
+SELECT DISTINCT
+  ds.bucket AS country,
+  COALESCE(usc.us_state, cpc.ca_province) AS subnational,  -- single column
+  ds.gov_domain,
+  ds.page,
+  ds.is_root_page,
+  ds.performance_score,
+  ds.accessibility_score,
+  ds.best_practices_score,
+  ds.seo_score
+FROM domain_scores ds
+LEFT JOIN us_state_classified usc
+  ON usc.page = ds.page AND usc.host = ds.host
+LEFT JOIN ca_province_classified cpc
+  ON cpc.page = ds.page AND cpc.host = ds.host
+ORDER BY country, subnational, gov_domain, page;
+
+/*
 SELECT
   ds.bucket AS country,
   usc.us_state,
@@ -1086,3 +1149,4 @@ LEFT JOIN us_state_classified usc
 -- optional
 -- WHERE ds.bucket = 'United States (USA)'
 ORDER BY country, us_state, gov_domain, page;
+*/
