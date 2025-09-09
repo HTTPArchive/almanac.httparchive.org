@@ -898,16 +898,80 @@ ranked AS (
       ORDER BY priority DESC, match_len DESC
     ) AS rn
   FROM all_matches
+),
+
+
+us_code_map AS (
+  SELECT * FROM UNNEST([
+    STRUCT('al' AS code, 'Alabama' AS state), ('ak','Alaska'), ('az','Arizona'), ('ar','Arkansas'),
+    ('ca','California'), ('co','Colorado'), ('ct','Connecticut'), ('de','Delaware'),
+    ('fl','Florida'), ('ga','Georgia State'), ('hi','Hawaii'), ('id','Idaho'),
+    ('il','Illinois'), ('in','Indiana'), ('ia','Iowa'), ('ks','Kansas'),
+    ('ky','Kentucky'), ('la','Louisiana'), ('me','Maine'), ('md','Maryland'),
+    ('ma','Massachusetts'), ('mi','Michigan'), ('mn','Minnesota'), ('ms','Mississippi'),
+    ('mo','Missouri'), ('mt','Montana'), ('ne','Nebraska'), ('nv','Nevada'),
+    ('nh','New Hampshire'), ('nj','New Jersey'), ('nm','New Mexico'), ('ny','New York'),
+    ('nc','North Carolina'), ('nd','North Dakota'), ('oh','Ohio'), ('ok','Oklahoma'),
+    ('or','Oregon'), ('pa','Pennsylvania'), ('ri','Rhode Island'), ('sc','South Carolina'),
+    ('sd','South Dakota'), ('tn','Tennessee'), ('tx','Texas'), ('ut','Utah'),
+    ('vt','Vermont'), ('va','Virginia'), ('wa','Washington'), ('wv','West Virginia'),
+    ('wi','Wisconsin'), ('wy','Wyoming'),
+    ('dc','DC'), ('pr','Puerto Rico'), ('gu','Guam'), ('as','American Samoa'), ('vi','US Virgin Islands')
+  ])
+),
+
+us_state_overrides AS (
+  SELECT * FROM UNNEST([
+    STRUCT('Florida'       AS state, r'(?:^|\.)myflorida\.com$'      AS host_pattern),
+    ('Massachusetts',                          r'(?:^|\.)mass(?:achusetts)?\.gov$'),
+    ('Oregon',                                  r'(?:^|\.)oregon\.gov$'),
+    ('Nebraska',                                r'(?:^|\.)nebraska\.gov$'),
+    ('Hawaii',                                  r'(?:^|\.)ehawaii\.gov$'),
+    ('California',                              r'(?:^|\.)state\.ca\.us$'),
+    ('New Mexico',                              r'(?:^|\.)state\.nm\.us$'),
+    ('Washington',                              r'(?:^|\.)access\.wa\.gov$')
+  ])
+),
+
+code_hit AS (
+  SELECT
+    p.page,
+    p.host,
+    COALESCE(
+      REGEXP_EXTRACT(p.host, r'(?:^|\.)([a-z]{2})\.gov$'),  -- one capture: code
+      REGEXP_EXTRACT(p.host, r'\.([a-z]{2})\.us$')          -- already one capture
+    ) AS code2
+  FROM pages p
+),
+
+us_state_classified AS (
+  SELECT
+    p.page,
+    p.host,
+    COALESCE(
+      (SELECT o.state FROM us_state_overrides o
+       WHERE REGEXP_CONTAINS(p.host, o.host_pattern) LIMIT 1),
+      (SELECT m.state FROM us_code_map m
+       WHERE LOWER(ch.code2) = m.code LIMIT 1)
+    ) AS us_state
+  FROM pages p
+  LEFT JOIN code_hit ch USING (page, host)
+),
+
+final_best AS (
+  SELECT * FROM ranked WHERE rn = 1
 )
 
+
 SELECT
-  bucket AS country,
-  FORMAT('%.1f%%', 100 * AVG(perf)) AS avg_performance,
-  FORMAT('%.1f%%', 100 * AVG(a11y)) AS avg_accessibility,
-  FORMAT('%.1f%%', 100 * AVG(bp))   AS avg_best_practices,
-  FORMAT('%.1f%%', 100 * AVG(seo))  AS avg_seo,
-  COUNT(*)                          AS total_pages
-FROM ranked
-WHERE rn = 1
-GROUP BY country
-ORDER BY country, AVG(a11y) DESC;
+  fb.bucket AS country,
+  usc.us_state,
+  FORMAT('%.1f%%', 100 * AVG(fb.perf)) AS avg_performance,
+  FORMAT('%.1f%%', 100 * AVG(fb.a11y)) AS avg_accessibility,
+  FORMAT('%.1f%%', 100 * AVG(fb.bp))   AS avg_best_practices,
+  FORMAT('%.1f%%', 100 * AVG(fb.seo))  AS avg_seo,
+  COUNT(*)                             AS total_pages
+FROM final_best fb
+LEFT JOIN us_state_classified usc USING (page, host)
+GROUP BY country, us_state
+ORDER BY country, us_state;
