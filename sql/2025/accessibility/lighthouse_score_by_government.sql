@@ -18,6 +18,8 @@ host_rules AS (
     ('unccd.int','United Nations',10),
     ('unesco.org','United Nations',10),
     ('europa.eu','European Union',12),
+    ('eib.org','European Union',24),
+    ('eif.org','European Union',24),
 
 -- Many country domains are sourced from - https://www.govdirectory.org/countries/
 
@@ -69,7 +71,7 @@ host_rules AS (
 ('gov.nl.ca','Canada',23),('newfoundlandlabrador.ca','Canada',23),('assembly.nl.ca','Canada',23),
 ('yukon.ca','Canada',23),('legassembly.gov.yk.ca','Canada',23),
 ('gov.nt.ca','Canada',23),('assembly.gov.nt.ca','Canada',23),
-('gov.nu.ca','Canada',23),('assembly.nu.ca','Canada',23),
+('gov.nu.ca','Canada',23),('assembly.nu.ca','Canada',23), ('revenuquebec.ca','Canada',23),
 
 -- Chile – federal & ministry anchors
 ('gob.cl','Chile',24), ('chileabroad.gov.cl','Chile',24), ('chileatiende.gob.cl','Chile',24),
@@ -383,12 +385,10 @@ host_rules AS (
 ('viaplay.se','Sweden',23),('skola24.se','Sweden',23),('vklass.se','Sweden',23),
 ('familjeliv.se','Sweden',23),
 
--- United Kingdom – central government & devolved administrations
-('gov.uk','United Kingdom (UK)',24),('service.gov.uk','United Kingdom (UK)',24),
--- UK – key agencies & sectors
-('mod.uk','United Kingdom (UK)',23),('nhs.uk','United Kingdom (UK)',23),('police.uk','United Kingdom (UK)',23),
--- UK – devolved governments
-('gov.scot','United Kingdom (UK)',23),('gov.wales','United Kingdom (UK)',23),('llyw.cymru','United Kingdom (UK)',23),
+-- United Kingdom – core & devolved anchors not on .gov.uk
+('parliament.uk','United Kingdom (UK)',24), ('judiciary.uk','United Kingdom (UK)',24), ('supremecourt.uk','United Kingdom (UK)',24), ('parliament.scot','United Kingdom (UK)',24), ('senedd.wales','United Kingdom (UK)',24), ('senedd.cymru','United Kingdom (UK)',24), ('police.scot','United Kingdom (UK)',23),
+-- Big UK municipalities (already .gov.uk but kept for high priority)
+('london.gov.uk','United Kingdom (UK)',24), ('cityoflondon.gov.uk','United Kingdom (UK)',24), ('birmingham.gov.uk','United Kingdom (UK)',24), ('manchester.gov.uk','United Kingdom (UK)',24), ('leeds.gov.uk','United Kingdom (UK)',24), ('liverpool.gov.uk','United Kingdom (UK)',24), ('sheffield.gov.uk','United Kingdom (UK)',24), ('bristol.gov.uk','United Kingdom (UK)',24), ('glasgow.gov.uk','United Kingdom (UK)',24), ('edinburgh.gov.uk','United Kingdom (UK)',24), ('cardiff.gov.uk','United Kingdom (UK)',24), ('belfastcity.gov.uk','United Kingdom (UK)',24),
 
 -- Uruguay – federal anchors & portals
 ('gub.uy','Uruguay',24),('uruguay.gub.uy','Uruguay',24),('parlamento.gub.uy','Uruguay',24),
@@ -484,11 +484,10 @@ host_rules AS (
 ('canillo.ad','Andorra',22),('santjulia.ad','Andorra',22),('lauredia.ad','Andorra',22),
 ('escaldesengordany.ad','Andorra',22),('pasdelacasa.ad','Andorra',22),
 
-
 -- United States (USA) – non-.gov anchors to keep explicitly
-('si.edu','United States (USA)',24), ('dau.edu','United States (USA)',24), ('usps.com','United States (USA)',24),
+('si.edu','United States (USA)',24), ('dau.edu','United States (USA)',24), ('usps.com','United States (USA)',24), ('myflorida.com','United States (USA)',22), 
 -- United States – major municipal/county outliers (non-.gov)
-('lacity.org','United States (USA)',22), ('denvergov.org','United States (USA)',22), ('vbgov.com','United States (USA)',22), ('miamigov.com','United States (USA)',22), ('muni.org','United States (USA)',22), ('ocfl.net','United States (USA)',22), ('dallascityhall.com','United States (USA)',22), 
+('lacity.org','United States (USA)',22), ('denvergov.org','United States (USA)',22), ('vbgov.com','United States (USA)',22), ('miamigov.com','United States (USA)',22), ('muni.org','United States (USA)',22), ('ocfl.net','United States (USA)',22), ('dallascityhall.com','United States (USA)',22) 
 
   ])
 ),
@@ -496,6 +495,15 @@ host_rules AS (
 -- 2) Regex rules for families that aren’t just suffixes
 regex_rules AS (
   SELECT * FROM UNNEST([
+
+(r'(^|\.)(?:eib\.org|eif\.org|(?:[a-z0-9-]+\.)*eu\.int|eu20\d{2}\.(?:[a-z]{2}|eu))$', 'European Union', 23),
+
+-- EU Council rotating presidencies (all common patterns)
+(r'(^|\.)(?:eib\.org|eif\.org|(?:[a-z0-9-]+\.)*eu\.int|(?:eu20\d{2}|20\d{2}eu|[a-z]{2}20\d{2})\.(?:eu|[a-z]{2}))$', 'European Union', 23),
+
+-- Well-known EU programme/initiative sites on .eu (outside europa.eu)
+(r'(^|\.)(?:copernicus|euvsdisinfo|europeana|europass|wifi4eu|sanctionsmap|open-research-europe|euipo)\.eu$', 'European Union', 23),
+
 
     -- Luxembourg family (from your pattern)
     (r'(^|\.)(?:public|gov|etat|data|service|security|mfi|lux)(?:\.public|\.gov|\.etat)?\.lu$', 'Luxembourg', 24),
@@ -560,6 +568,8 @@ regex_rules AS (
 (r'(^|\.)[a-z0-9-]+\.edu\.ru$', 'Russia',21),   -- state universities/institutes
 (r'(^|\.)[a-z0-9-]+\.mil\.ru$', 'Russia',21),   -- Ministry of Defence and units
 -- (r'(^|\.)[a-z0-9-]+\.ru$', 'Russia',19)         -- catch-all (caution: may overmatch)
+(r'(^|\.)[a-z0-9-]+\.gov\.tw$', 'Taiwan', 22),
+(r'(^|\.)gov\.taipei$',        'Taiwan', 22),  -- Taipei City’s official portal
 (r'(^|\.)[a-z0-9-]+\.gov\.sg$', 'Singapore',22),
 (r'(^|\.)[a-z0-9-]+\.gov\.za$', 'South Africa',22),
 (r'(^|\.)[a-z0-9-]+\.gov\.ua$', 'Ukraine',22),
@@ -570,9 +580,21 @@ regex_rules AS (
 (r'(^|\.)[a-z0-9-]+\.kommun\.se$', 'Sweden',21),  -- municipalities
 (r'(^|\.)[a-z0-9-]+\.region\.se$', 'Sweden',21),  -- regions
 -- (r'(^|\.)[a-z0-9-]+\.se$', 'Sweden',18)           -- fallback for .se
-(r'(^|\.)[a-z0-9-]+\.gov\.uk$', 'United Kingdom (UK)',22),
-(r'(^|\.)[a-z0-9-]+\.nhs\.uk$', 'United Kingdom (UK)',22),
-(r'(^|\.)[a-z0-9-]+\.police\.uk$', 'United Kingdom (UK)',22),
+
+(r'(^|\.)[a-z0-9-]+\.gov\.uk$',   'United Kingdom (UK)',22), -- Keep your existing UK rules:
+(r'(^|\.)[a-z0-9-]+\.nhs\.uk$',   'United Kingdom (UK)',22),
+(r'(^|\.)[a-z0-9-]+\.police\.uk$','United Kingdom (UK)',22),
+(r'(^|\.)[a-z0-9-]+\.mod\.uk$',   'United Kingdom (UK)',22), -- NEW: MoD estates (many live on *.mod.uk)
+(r'(^|\.)[a-z0-9-]+\.parliament\.uk$','United Kingdom (UK)',23), -- NEW: Westminster Parliament family
+(r'(^|\.)[a-z0-9-]+\.judiciary\.uk$','United Kingdom (UK)',23), -- NEW: Courts/Judiciary on .uk (not .gov.uk)
+(r'(^|\.)supremecourt\.uk$',          'United Kingdom (UK)',23),
+(r'(^|\.)[a-z0-9-]+\.gov\.scot$', 'United Kingdom (UK)',23), -- NEW: Devolved government hostnames & health/police in Scotland/Wales
+(r'(^|\.)[a-z0-9-]+\.gov\.wales$','United Kingdom (UK)',23),
+(r'(^|\.)[a-z0-9-]+\.llyw\.cymru$','United Kingdom (UK)',23),
+(r'(^|\.)[a-z0-9-]+\.nhs\.scot$', 'United Kingdom (UK)',22),
+(r'(^|\.)police\.scot$',          'United Kingdom (UK)',22),
+
+
 (r'(^|\.)([a-z0-9-]+\.)*gub\.uy$', 'Uruguay',22),
 (r'(^|\.)([a-z0-9-]+)\.go\.cr$', 'Costa Rica',22),
 (r'(^|\\.)[a-z0-9-]+\\.gob\\.es$','Spain',22),
