@@ -981,7 +981,83 @@ ranked AS (
   FROM all_matches
 ),
 
--- Canadian province code lookup (code → province name)
+-- UK: Look for dot-or-hyphen delimited province tokens inside *.uk hosts
+uk_nation_from_domain AS (
+  SELECT
+    p.page, p.host,
+    CASE
+      WHEN REGEXP_CONTAINS(p.host, r'(?i)(^|\.)[a-z0-9-]+\.gov\.scot$')  THEN 'Scotland'
+      WHEN REGEXP_CONTAINS(p.host, r'(?i)(^|\.)[a-z0-9-]+\.nhs\.scot$')  THEN 'Scotland'
+      WHEN REGEXP_CONTAINS(p.host, r'(?i)(^|\.)parliament\.scot$')       THEN 'Scotland'
+      WHEN REGEXP_CONTAINS(p.host, r'(?i)(^|\.)police\.scot$')           THEN 'Scotland'
+      WHEN REGEXP_CONTAINS(p.host, r'(?i)(^|\.)[a-z0-9-]+\.gov\.wales$') THEN 'Wales'
+      WHEN REGEXP_CONTAINS(p.host, r'(?i)(^|\.)[a-z0-9-]+\.llyw\.cymru$') THEN 'Wales'
+      WHEN REGEXP_CONTAINS(p.host, r'(?i)(^|\.)[a-z0-9-]+\.nhs\.wales$') THEN 'Wales'
+      WHEN REGEXP_CONTAINS(p.host, r'(?i)(^|\.)senedd\.(wales|cymru)$')  THEN 'Wales'
+      WHEN REGEXP_CONTAINS(p.host, r'(?i)(^|\.)nidirect\.gov\.uk$')      THEN 'Northern Ireland'
+      ELSE NULL
+    END AS uk_nation
+  FROM pages_scored p
+),
+
+-- Australia: Look for dot-or-hyphen delimited province tokens inside *.au hosts
+au_state_map AS (
+  SELECT * FROM UNNEST([
+    STRUCT('nsw' AS code, 'New South Wales' AS state),
+    ('vic','Victoria'), ('qld','Queensland'), ('sa','South Australia'),
+    ('wa','Western Australia'), ('tas','Tasmania'),
+    ('act','Australian Capital Territory'), ('nt','Northern Territory')
+  ])
+),
+au_state_from_gov_au AS (
+  SELECT
+    p.page, p.host,
+    m.state AS au_state
+  FROM pages_scored p
+  JOIN au_state_map m
+    ON LOWER(REGEXP_EXTRACT(p.host, r'(?i)(?:^|\.)(nsw|vic|qld|sa|wa|tas|act|nt)\.gov\.au$')) = m.code
+),
+
+-- Brazil: Look for dot-or-hyphen delimited province tokens inside *.br hosts
+br_state_map AS (
+  SELECT * FROM UNNEST([
+    STRUCT('ac' AS code, 'Acre' AS state),
+    ('al','Alagoas'), ('ap','Amapá'), ('am','Amazonas'), ('ba','Bahia'),
+    ('ce','Ceará'), ('df','Distrito Federal'), ('es','Espírito Santo'),
+    ('go','Goiás'), ('ma','Maranhão'), ('mt','Mato Grosso'),
+    ('ms','Mato Grosso do Sul'), ('mg','Minas Gerais'), ('pa','Pará'),
+    ('pb','Paraíba'), ('pr','Paraná'), ('pe','Pernambuco'),
+    ('pi','Piauí'), ('rj','Rio de Janeiro'), ('rn','Rio Grande do Norte'),
+    ('rs','Rio Grande do Sul'), ('ro','Rondônia'), ('rr','Roraima'),
+    ('sc','Santa Catarina'), ('sp','São Paulo'), ('se','Sergipe'), ('to','Tocantins')
+  ])
+),
+br_state_from_gov_br AS (
+  SELECT
+    p.page, p.host,
+    m.state AS br_state
+  FROM pages_scored p
+  JOIN br_state_map m
+    ON LOWER(REGEXP_EXTRACT(
+         p.host,
+         '(?i)(?:^|\\.)(ac|al|ap|am|ba|ce|df|es|go|ma|mt|ms|mg|pa|pb|pr|pe|pi|rj|rn|rs|ro|rr|sc|sp|se|to)\\.gov\\.br$'
+       )) = m.code
+),
+
+-- Spain: Look for dot-or-hyphen delimited province tokens inside *.es hosts
+es_region_from_known AS (
+  SELECT p.page, p.host,
+    CASE
+      WHEN REGEXP_CONTAINS(p.host, r'(?i)(^|\.)gencat\.cat$')         THEN 'Catalonia'
+      WHEN REGEXP_CONTAINS(p.host, r'(?i)(^|\.)euskadi\.eus$')        THEN 'Basque Country'
+      WHEN REGEXP_CONTAINS(p.host, r'(?i)(^|\.)xunta\.gal$')          THEN 'Galicia'
+      WHEN REGEXP_CONTAINS(p.host, r'(?i)(^|\.)comunidad\.madrid$')   THEN 'Community of Madrid'
+      ELSE NULL
+    END AS es_region
+  FROM pages_scored p
+),
+
+-- Canadian: province code lookup (code → province name)
 ca_prov_map AS (
   SELECT * FROM UNNEST([
     STRUCT('ab' AS code, 'Alberta' AS province),
@@ -992,8 +1068,6 @@ ca_prov_map AS (
     ('yt','Yukon'), ('yk','Yukon')  -- accept either token
   ])
 ),
-
--- Look for dot-or-hyphen delimited province tokens inside *.gc.ca hosts
 ca_prov_from_gc AS (
   SELECT
     p.page, p.host,
@@ -1117,7 +1191,14 @@ domain_scores AS (
 -- Final SELECT
 SELECT DISTINCT
   ds.bucket AS country,
-  COALESCE(usc.us_state, cpc.ca_province) AS subnational,  -- single column
+  COALESCE(
+    uk.uk_nation,
+    cpc.ca_province,
+    usc.us_state,
+    au.au_state,
+    br.br_state,
+    es.es_region
+  ) AS subnational,
   ds.gov_domain,
   ds.page,
   ds.is_root_page,
@@ -1126,27 +1207,10 @@ SELECT DISTINCT
   ds.best_practices_score,
   ds.seo_score
 FROM domain_scores ds
-LEFT JOIN us_state_classified usc
-  ON usc.page = ds.page AND usc.host = ds.host
-LEFT JOIN ca_province_classified cpc
-  ON cpc.page = ds.page AND cpc.host = ds.host
+LEFT JOIN uk_nation_from_domain   uk ON uk.page = ds.page AND uk.host = ds.host
+LEFT JOIN ca_province_classified  cpc ON cpc.page = ds.page AND cpc.host = ds.host
+LEFT JOIN us_state_classified     usc ON usc.page = ds.page AND usc.host = ds.host
+LEFT JOIN au_state_from_gov_au    au  ON au.page  = ds.page AND au.host  = ds.host
+LEFT JOIN br_state_from_gov_br    br  ON br.page  = ds.page AND br.host  = ds.host
+LEFT JOIN es_region_from_known    es  ON es.page  = ds.page AND es.host  = ds.host
 ORDER BY country, subnational, gov_domain, page;
-
-/*
-SELECT
-  ds.bucket AS country,
-  usc.us_state,
-  ds.gov_domain,
-  ds.page,
-  ds.is_root_page,
-  ds.performance_score,
-  ds.accessibility_score,
-  ds.best_practices_score,
-  ds.seo_score
-FROM domain_scores ds
-LEFT JOIN us_state_classified usc
-  ON usc.page = ds.page AND usc.host = ds.host
--- optional
--- WHERE ds.bucket = 'United States (USA)'
-ORDER BY country, us_state, gov_domain, page;
-*/
