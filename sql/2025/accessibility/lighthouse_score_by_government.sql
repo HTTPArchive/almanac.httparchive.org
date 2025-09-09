@@ -48,7 +48,7 @@ host_rules AS (
     ('belgium.be','Belgium',24),('fgov.be','Belgium',24),('vlaanderen.be','Belgium',24),('wallonie.be','Belgium',24),('brussels.be','Belgium',24),('mil.be','Belgium',24),
     ('just.fgov.be','Belgium',23),('justice.belgium.be','Belgium',23),('mobilit.fgov.be','Belgium',23),('finance.belgium.be','Belgium',23),('health.belgium.be','Belgium',23),('socialsecurity.belgium.be','Belgium',23),('employment.belgium.be','Belgium',23),('bosa.belgium.be','Belgium',23),('ibz.fgov.be','Belgium',23),('diplomatie.belgium.be','Belgium',23),
     ('bruxelles.be','Belgium',23),('irisnet.be','Belgium',23),('parlement-wallonie.be','Belgium',23),('vlaamsparlement.be','Belgium',23),
-    ('antwerpen.be','Belgium',22),('oost-vlaanderen.be','Belgium',22),('west-vlaanderen.be','Belgium',22),('limburg.be','Belgium',22),('vlaams-brabant.be','Belgium',22),('waals-brabant.be','Belgium',22),('hainaut.be','Belgium',22),('liege.be','Belgium',22),('luxembourg.be','Belgium',22),('namur.be','Belgium',22),
+    ('oost-vlaanderen.be','Belgium',22),('west-vlaanderen.be','Belgium',22),('limburg.be','Belgium',22),('vlaams-brabant.be','Belgium',22),('waals-brabant.be','Belgium',22),('hainaut.be','Belgium',22),('namur.be','Belgium',22),
     ('gent.be','Belgium',21),('brugge.be','Belgium',21),('leuven.be','Belgium',21),('mechelen.be','Belgium',21),('kortrijk.be','Belgium',21),('hasselt.be','Belgium',21),('antwerpen.be','Belgium',21),('brussel.be','Belgium',21),('charleroi.be','Belgium',21),('mons.be','Belgium',21),('namur.be','Belgium',21),('liege.be','Belgium',21),('louvain-la-neuve.be','Belgium',21),
 
     -- Bermuda
@@ -95,10 +95,7 @@ host_rules AS (
     ('(^|\\.)[a-z0-9-]+\\.go\\.cr$', 'Costa Rica', 22),
 
     -- Cuba
-    ('camaguey.cu','Cuba',22),('granma.inf.cu','Cuba',22),('guantanamo.gob.cu','Cuba',22),
-    ('holguin.gob.cu','Cuba',22),('islagrande.cu','Cuba',22),('laprensa.cu','Cuba',22),
-    ('mayabeque.cu','Cuba',22),('pinar.cu','Cuba',22),('santiago.cu','Cuba',22),
-    ('sanctispiritus.cu','Cuba',22),('villa-clara.cu','Cuba',22),
+    ('camaguey.cu','Cuba',22),('guantanamo.gob.cu','Cuba',22), ('holguin.gob.cu','Cuba',22), ('mayabeque.cu','Cuba',22),('pinar.cu','Cuba',22),('santiago.cu','Cuba',22), ('sanctispiritus.cu','Cuba',22),('villa-clara.cu','Cuba',22),
 
     -- Czech Republic
     ('vlada.cz','Czech Republic',24),('psp.cz','Czech Republic',24),('senat.cz','Czech Republic',24),
@@ -174,8 +171,7 @@ host_rules AS (
     -- Ghana
     ('ghana.gov.gh','Ghana',24),('gov.gh','Ghana',24),('parliament.gh','Ghana',24),
     ('mfa.gov.gh','Ghana',23),('moh.gov.gh','Ghana',23),('moe.gov.gh','Ghana',23),('moc.gov.gh','Ghana',23),
-    ('mot.gov.gh','Ghana',23),('mojagd.gov.gh','Ghana',23),('moi.gov.gh','Ghana',23),('mofep.gov.gh','Ghana',23),
-    ('moe.gov.gh','Ghana',23),('moe.gov.gh','Ghana',23),('moes.gov.gh','Ghana',23),('moj.gov.gh','Ghana',23),
+    ('mot.gov.gh','Ghana',23),('mojagd.gov.gh','Ghana',23),('moi.gov.gh','Ghana',23),('mofep.gov.gh','Ghana',23), ('moes.gov.gh','Ghana',23),('moj.gov.gh','Ghana',23),
     ('motac.gov.gh','Ghana',23),('moes.gov.gh','Ghana',23),('moesr.gov.gh','Ghana',23),('moesd.gov.gh','Ghana',23),
     ('bankofghana.org','Ghana',22),('gipc.gov.gh','Ghana',22),('ges.gov.gh','Ghana',22),('nss.gov.gh','Ghana',22),
     ('passport.mfa.gov.gh','Ghana',22),('gsa.gov.gh','Ghana',22),('nda.gov.gh','Ghana',22),('ndpc.gov.gh','Ghana',22),
@@ -187,7 +183,7 @@ host_rules AS (
     
     -- Greenland
     ('gov.gl','Greenland',24),('naalakkersuisut.gl','Greenland',24),('stat.gl','Greenland',24),('inatsisartut.gl','Greenland',24),('politi.gl','Greenland',24),
-    ('sullissivik.gl','Greenland',24),('telepost.gl','Greenland',24),('visitgreenland.gl','Greenland',24),('arcticcommand.gl','Greenland',24),('royalgroenland.gl','Greenland',24),('greenlandinstitute.gl','Greenland',24),('oqaasileriffik.gl','Greenland',24),('iluarsartuiffik.gl','Greenland',24),('energitjenesten.gl','Greenland',24),
+    ('sullissivik.gl','Greenland',24),('visitgreenland.gl','Greenland',24),('arcticcommand.gl','Greenland',24),('greenlandinstitute.gl','Greenland',24),('oqaasileriffik.gl','Greenland',24),('iluarsartuiffik.gl','Greenland',24),('energitjenesten.gl','Greenland',24),
     ('kujalleq.gl','Greenland',23),('sermersooq.gl','Greenland',23),('sisimiut.gl','Greenland',23),('kalaallitnunaata.gl','Greenland',23),('nusuka.gl','Greenland',23),('aviisi.gl','Greenland',23),('anjuma.gl','Greenland',23),('kni.gl','Greenland',23),('mhs.gl','Greenland',23),('gux.gl','Greenland',23),('univiseyisarti.gl','Greenland',23),
 
     -- Guyana
@@ -196,7 +192,7 @@ host_rules AS (
 
     -- Iceland
     ('stjornarradid.is','Iceland',24),('althingi.is','Iceland',24),('lögreglan.is','Iceland',24),('domstolar.is','Iceland',24),('forseti.is','Iceland',24),
-    ('utanrikisraduneyti.is','Iceland',24),('forsaetisraduneyti.is','Iceland',24),('fjarmalaraduneyti.is','Iceland',24),('samgongustofa.is','Iceland',24),('menntamalaraduneyti.is','Iceland',24),('heilbrigdisraduneyti.is','Iceland',24),('innviðaráðuneytið.is','Iceland',24),('dómsmálaráðuneytið.is','Iceland',24),(' atvinnuvegaraduneyti.is','Iceland',24),('umhverfisraduneyti.is','Iceland',24),
+    ('utanrikisraduneyti.is','Iceland',24),('forsaetisraduneyti.is','Iceland',24),('fjarmalaraduneyti.is','Iceland',24),('samgongustofa.is','Iceland',24),('menntamalaraduneyti.is','Iceland',24),('heilbrigdisraduneyti.is','Iceland',24),('innviðaráðuneytið.is','Iceland',24),('dómsmálaráðuneytið.is','Iceland',24),('atvinnuvegaraduneyti.is','Iceland',24),('umhverfisraduneyti.is','Iceland',24),
     ('skatturinn.is','Iceland',23),('vinnueftirlit.is','Iceland',23),('hagstofa.is','Iceland',23),('utl.is','Iceland',23),('landlaeknir.is','Iceland',23),('island.is','Iceland',23),('vinnumalastofnun.is','Iceland',23),('mannvirkjastofnun.is','Iceland',23),('vefur.is','Iceland',23),('vegagerdin.is','Iceland',23),
 
     -- India
@@ -252,7 +248,6 @@ host_rules AS (
     ('fm.gov.lv','Latvia',23),('mfa.gov.lv','Latvia',23),('mod.gov.lv','Latvia',23),('iem.gov.lv','Latvia',23),('em.gov.lv','Latvia',23),('izm.gov.lv','Latvia',23),('zm.gov.lv','Latvia',23),('am.gov.lv','Latvia',23),('lm.gov.lv','Latvia',23),('vmnvd.gov.lv','Latvia',23),
     ('csp.gov.lv','Latvia',23),('vd.gov.lv','Latvia',23),('pmlp.gov.lv','Latvia',23),('vraa.gov.lv','Latvia',23),('rtu.lv','Latvia',23),('riga.lv','Latvia',23),
     ('riga.lv','Latvia',22),('daugavpils.lv','Latvia',22),('liepaja.lv','Latvia',22),('jelgava.lv','Latvia',22),('ventspils.lv','Latvia',22),
-    ('(^|\\.)[a-z0-9-]+\\.lv$', 'Latvia', 21),
 
     -- Liechtenstein
     ('llv.li','Liechtenstein',24),('regierung.li','Liechtenstein',24),('landtag.li','Liechtenstein',24),('gericht.li','Liechtenstein',24),('staatsanwaltschaft.li','Liechtenstein',24),
@@ -355,7 +350,6 @@ host_rules AS (
     ('lovdata.no','Norway',24),('altinn.no','Norway',24),('nkom.no','Norway',24),
     ('fhi.no','Norway',24),('dsa.no','Norway',24),('kystverket.no','Norway',24),
     ('bufdir.no','Norway',24),('nupi.no','Norway',24),
-    ('(^|\\.)[a-z0-9-]+\\.no$', 'Norway', 22),
 
     -- Peru
     ('gob.pe','Peru',24),('peru.gob.pe','Peru',24),('presidencia.gob.pe','Peru',24),
@@ -463,10 +457,8 @@ host_rules AS (
     ('smhi.se','Sweden',24),('naturvardsverket.se','Sweden',24),('socialstyrelsen.se','Sweden',24),
     ('1177.se','Sweden',24),('sl.se','Sweden',24),
     ('funktionstjanster.se','Sweden',23),('hemnet.se','Sweden',23),('sverigesradio.se','Sweden',23),
-    ('klart.se','Sweden',23),('bankid.com','Sweden',23),('synonymer.se','Sweden',23),
-    ('schoolsoft.se','Sweden',23),('postnord.se','Sweden',23),('grandid.com','Sweden',23),
-    ('viaplay.se','Sweden',23),('skola24.se','Sweden',23),('vklass.se','Sweden',23),
-    ('familjeliv.se','Sweden',23),
+    ('klart.se','Sweden',23),('bankid.com','Sweden',23),
+    ('schoolsoft.se','Sweden',23),('postnord.se','Sweden',23),('grandid.com','Sweden',23),('skola24.se','Sweden',23),('vklass.se','Sweden',23),
     ('(^|\\.)[a-z0-9-]+\\.gov\\.se$', 'Sweden', 22),
     ('(^|\\.)[a-z0-9-]+\\.kommun\\.se$', 'Sweden', 21),
     ('(^|\\.)[a-z0-9-]+\\.region\\.se$', 'Sweden', 21),
@@ -479,7 +471,6 @@ host_rules AS (
     ('bazg.admin.ch','Switzerland',24),('bafu.admin.ch','Switzerland',24),('bfh.ch','Switzerland',24),
     ('unige.ch','Switzerland',24),('epfl.ch','Switzerland',24),('ethz.ch','Switzerland',24),
     ('(^|\\.)[a-z0-9-]+\\.admin\\.ch$', 'Switzerland', 22),
-    ('(^|\\.)[a-z0-9-]+\\.ch$', 'Switzerland', 18),
 
     -- Taiwan
     ('(^|\\.)[a-z0-9-]+\\.gov\\.tw$', 'Taiwan', 22),
