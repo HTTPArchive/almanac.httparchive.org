@@ -504,6 +504,11 @@ regex_rules AS (
     ),
     (r'(^|\.)(?:copernicus|euvsdisinfo|europeana|europass|wifi4eu|sanctionsmap|open-research-europe|euipo)\.eu$', 'European Union', 23),
 
+    -- United Nations
+    ('(^|\\.)(([a-z0-9-]+\\.)*un\\.org)$', 'United Nations', 9),
+    ('(^|\\.)(([a-z0-9-]+\\.)*(who|icao|wmo|wipo|itu)\\.int)$', 'United Nations', 9), -- .int agencies
+    ('(^|\\.)(([a-z0-9-]+\\.)*(undp|unhcr|unicef|unodc|unido|unfpa)\\.org)$','United Nations',9), -- .org agencies
+
     -- Canada
     ('(^|\\.)[a-z0-9-]+\\.gc\\.ca$', 'Canada', 22),
     ('(^|\\.)gov\\.(ab|bc|mb|nb|nl|ns|nt|nu|on|pe|qc|sk|yk)\\.ca$', 'Canada', 22),
@@ -654,6 +659,141 @@ regex_rules AS (
   ])
 ),
 
+cc_map AS (
+  SELECT * FROM UNNEST([
+    -- A
+    STRUCT('ac' AS tld, 'Ascension Island' AS bucket),
+    ('ad','Andorra'), ('ae','United Arab Emirates'), ('af','Afghanistan'),
+    ('ag','Antigua and Barbuda'), ('ai','Anguilla'), ('al','Albania'),
+    ('am','Armenia'), ('ao','Angola'), ('ar','Argentina'), ('as','American Samoa'),
+    ('at','Austria'), ('au','Australia'), ('aw','Aruba'), ('ax','Aland Islands'),
+    ('az','Azerbaijan'),
+
+    -- B
+    ('ba','Bosnia and Herzegovina'), ('bb','Barbados'), ('bd','Bangladesh'),
+    ('be','Belgium'), ('bf','Burkina Faso'), ('bg','Bulgaria'), ('bh','Bahrain'),
+    ('bi','Burundi'), ('bj','Benin'), ('bm','Bermuda'), ('bn','Brunei'),
+    ('bo','Bolivia'), ('br','Brazil'), ('bs','Bahamas'), ('bt','Bhutan'),
+    ('bv','Bouvet Island'), ('bw','Botswana'), ('by','Belarus'), ('bz','Belize'),
+
+    -- C
+    ('ca','Canada'), ('cc','Cocos (Keeling) Islands'), ('cd','Democratic Republic of the Congo'),
+    ('cf','Central African Republic'), ('cg','Republic of the Congo'), ('ch','Switzerland'),
+    ('ci',"Côte d'Ivoire"), ('ck','Cook Islands'), ('cl','Chile'), ('cm','Cameroon'),
+    ('cn','China'), ('co','Colombia'), ('cr','Costa Rica'), ('cu','Cuba'),
+    ('cv','Cabo Verde'), ('cw','Curacao'), ('cx','Christmas Island'),
+    ('cy','Cyprus'), ('cz','Czech Republic'),
+
+    -- D
+    ('de','Germany'), ('dj','Djibouti'), ('dk','Denmark'), ('dm','Dominica'),
+    ('do','Dominican Republic'), ('dz','Algeria'),
+
+    -- E
+    ('ec','Ecuador'), ('ee','Estonia'), ('eg','Egypt'), ('er','Eritrea'),
+    ('es','Spain'), ('et','Ethiopia'), ('eu','European Union'),
+
+    -- F
+    ('fi','Finland'), ('fj','Fiji'), ('fk','Falkland Islands'),
+    ('fm','Micronesia'), ('fo','Faroe Islands'), ('fr','France'),
+
+    -- G
+    ('ga','Gabon'), ('gb','United Kingdom (UK)'), ('gd','Grenada'),
+    ('ge','Georgia'), ('gf','French Guiana'), ('gg','Guernsey'),
+    ('gh','Ghana'), ('gi','Gibraltar'), ('gl','Greenland'), ('gm','Gambia'),
+    ('gn','Guinea'), ('gp','Guadeloupe'), ('gq','Equatorial Guinea'),
+    ('gr','Greece'), ('gs','South Georgia and the South Sandwich Islands'),
+    ('gt','Guatemala'), ('gu','Guam'), ('gw','Guinea-Bissau'), ('gy','Guyana'),
+
+    -- H
+    ('hk','Hong Kong'), ('hm','Heard Island and McDonald Islands'),
+    ('hn','Honduras'), ('hr','Croatia'), ('ht','Haiti'), ('hu','Hungary'),
+
+    -- I
+    ('id','Indonesia'), ('ie','Ireland'), ('il','Israel'), ('im','Isle of Man'),
+    ('in','India'), ('io','British Indian Ocean Territory'), ('iq','Iraq'),
+    ('ir','Iran'), ('is','Iceland'), ('it','Italy'),
+
+    -- J
+    ('je','Jersey'), ('jm','Jamaica'), ('jo','Jordan'), ('jp','Japan'),
+
+    -- K
+    ('ke','Kenya'), ('kg','Kyrgyzstan'), ('kh','Cambodia'), ('ki','Kiribati'),
+    ('km','Comoros'), ('kn','Saint Kitts and Nevis'), ('kp','North Korea'),
+    ('kr','South Korea'), ('kw','Kuwait'), ('ky','Cayman Islands'),
+    ('kz','Kazakhstan'),
+
+    -- L
+    ('la','Laos'), ('lb','Lebanon'), ('lc','Saint Lucia'), ('li','Liechtenstein'),
+    ('lk','Sri Lanka'), ('lr','Liberia'), ('ls','Lesotho'), ('lt','Lithuania'),
+    ('lu','Luxembourg'), ('lv','Latvia'), ('ly','Libya'),
+
+    -- M
+    ('ma','Morocco'), ('mc','Monaco'), ('md','Moldova'), ('me','Montenegro'),
+    ('mg','Madagascar'), ('mh','Marshall Islands'), ('mk','North Macedonia'),
+    ('ml','Mali'), ('mm','Myanmar'), ('mn','Mongolia'), ('mo','Macau'),
+    ('mp','Northern Mariana Islands'), ('mq','Martinique'), ('mr','Mauritania'),
+    ('ms','Montserrat'), ('mt','Malta'), ('mu','Mauritius'), ('mv','Maldives'),
+    ('mw','Malawi'), ('mx','Mexico'), ('my','Malaysia'), ('mz','Mozambique'),
+
+    -- N
+    ('na','Namibia'), ('nc','New Caledonia'), ('ne','Niger'),
+    ('nf','Norfolk Island'), ('ng','Nigeria'), ('ni','Nicaragua'),
+    ('nl','Netherlands'), ('no','Norway'), ('np','Nepal'), ('nr','Nauru'),
+    ('nu','Niue'), ('nz','New Zealand'),
+
+    -- O
+    ('om','Oman'),
+
+    -- P
+    ('pa','Panama'), ('pe','Peru'), ('pf','French Polynesia'),
+    ('pg','Papua New Guinea'), ('ph','Philippines'), ('pk','Pakistan'),
+    ('pl','Poland'), ('pm','Saint Pierre and Miquelon'), ('pn','Pitcairn Islands'),
+    ('pr','Puerto Rico'), ('ps','Palestine'), ('pt','Portugal'),
+    ('pw','Palau'), ('py','Paraguay'),
+
+    -- Q
+    ('qa','Qatar'),
+
+    -- R
+    ('re','Reunion'), ('ro','Romania'), ('rs','Serbia'), ('ru','Russia'),
+    ('rw','Rwanda'),
+
+    -- S
+    ('sa','Saudi Arabia'), ('sb','Solomon Islands'), ('sc','Seychelles'),
+    ('sd','Sudan'), ('se','Sweden'), ('sg','Singapore'), ('sh','Saint Helena'),
+    ('si','Slovenia'), ('sj','Svalbard and Jan Mayen'), ('sk','Slovakia'),
+    ('sl','Sierra Leone'), ('sm','San Marino'), ('sn','Senegal'),
+    ('so','Somalia'), ('sr','Suriname'), ('st','Sao Tome and Principe'),
+    ('su','Soviet Union (legacy)'), ('sv','El Salvador'), ('sx','Sint Maarten'),
+    ('sy','Syria'), ('sz','Eswatini'),
+
+    -- T
+    ('tc','Turks and Caicos Islands'), ('td','Chad'), ('tf','French Southern Territories'),
+    ('tg','Togo'), ('th','Thailand'), ('tj','Tajikistan'), ('tk','Tokelau'),
+    ('tl','East Timor'), ('tm','Turkmenistan'), ('tn','Tunisia'),
+    ('to','Tonga'), ('tr','Türkiye'), ('tt','Trinidad and Tobago'),
+    ('tv','Tuvalu'), ('tw','Taiwan'), ('tz','Tanzania'),
+
+    -- U
+    ('ua','Ukraine'), ('ug','Uganda'), ('uk','United Kingdom (UK)'),
+    ('us','United States of America'), ('uy','Uruguay'), ('uz','Uzbekistan'),
+
+    -- V
+    ('va','Vatican City'), ('vc','Saint Vincent and the Grenadines'),
+    ('ve','Venezuela'), ('vg','British Virgin Islands'), ('vi','US Virgin Islands'),
+    ('vn','Vietnam'), ('vu','Vanuatu'),
+
+    -- W
+    ('wf','Wallis and Futuna'), ('ws','Samoa'),
+
+    -- Y
+    ('ye','Yemen'), ('yt','Mayotte'),
+
+    -- Z
+    ('za','South Africa'), ('zm','Zambia'), ('zw','Zimbabwe')
+  ])
+),
+
 -- 3) Pages (root only) + scores
 pages AS (
   SELECT
@@ -693,11 +833,27 @@ match_regex AS (
   ON REGEXP_CONTAINS(p.host, r.pattern)
 ),
 
--- 6) Union matches and pick best (higher priority, then longest suffix)
+generic_ccgov AS (
+  SELECT
+    p.*,
+    m.bucket,
+    21 AS priority,     -- below your explicit host_rules (22–24), above many locals
+    9998 AS match_len
+  FROM pages p
+  JOIN cc_map m
+  ON REGEXP_EXTRACT(
+       p.host,
+       r'^(?:[a-z0-9-]+\.)*(?:gov|gouv|gob|go|govt|gv|nic|mil|govern)\.([a-z]{2,3})$'
+     ) = m.tld
+),
+
+-- 6) Union matches and pick best … (add generic_ccgov to the UNION)
 all_matches AS (
   SELECT * FROM match_suffix
   UNION ALL
   SELECT * FROM match_regex
+  UNION ALL
+  SELECT * FROM generic_ccgov
 ),
 ranked AS (
   SELECT
