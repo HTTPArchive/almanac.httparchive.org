@@ -105,14 +105,16 @@ host_rules AS (
 ('hradec.cz','Czech Republic',22),('pardubice.eu','Czech Republic',22),('usti.cz','Czech Republic',22),
 
 -- Denmark – federal anchors & portals
-('ft.dk','Denmark',24),('stm.dk','Denmark',24),('regeringen.dk','Denmark',24),('folketinget.dk','Denmark',24),('borger.dk','Denmark',24),('politi.dk','Denmark',24),('skat.dk','Denmark',24),
+('ft.dk','Denmark',24),('stm.dk','Denmark',24),('regeringen.dk','Denmark',24),('folketinget.dk','Denmark',24),('borger.dk','Denmark',24),('politi.dk','Denmark',24),('skat.dk','Denmark',24),('retsinformation.dk','Denmark',24),('sundhed.dk','Denmark',24),('virk.dk','Denmark',24),
 -- Denmark – ministries (current & stable hostnames)
 ('fm.dk','Denmark',24),('um.dk','Denmark',24),('jm.dk','Denmark',24),('fmn.dk','Denmark',24),('kefm.dk','Denmark',24),('sum.dk','Denmark',24),('kum.dk','Denmark',24),('ufm.dk','Denmark',24),('uvm.dk','Denmark',24),('bm.dk','Denmark',24),('skm.dk','Denmark',24),('em.dk','Denmark',24),('trm.dk','Denmark',24),('fvm.dk','Denmark',24),('uim.dk','Denmark',24),('sm.dk','Denmark',24),('digst.dk','Denmark',24),('km.dk','Denmark',24),('mssb.dk','Denmark',24),('urm.dk','Denmark',24),
 -- Denmark – key agencies & authorities
 ('norden.dk','Denmark',23),('miljoeogfoedevarer.dk','Denmark',23),('arbejdstilsynet.dk','Denmark',23),('forsvaret.dk','Denmark',23),('dr.dk','Denmark',23),('dst.dk','Denmark',23),('sikkerdigital.dk','Denmark',23),('nemlog-in.dk','Denmark',23),('mitid.dk','Denmark',23),('nemkonto.dk','Denmark',23),('stps.dk','Denmark',23),('dataetiskraad.dk','Denmark',23),('at.dk','Denmark',23),
--- Denmark – municipalities (sample major ones)
-('kk.dk','Denmark',22),('aarhus.dk','Denmark',22),('odense.dk','Denmark',22),('aalborg.dk','Denmark',22),('esbjerg.dk','Denmark',22),('randers.dk','Denmark',22),('kolding.dk','Denmark',22),('vejle.dk','Denmark',22),('horsens.dk','Denmark',22),('roskilde.dk','Denmark',22),
-
+-- Denmark – regions (explicit)
+('regionh.dk','Denmark',23),('rsyd.dk','Denmark',23),('rm.dk','Denmark',23),('rn.dk','Denmark',23),('regionsjaelland.dk','Denmark',23),
+-- Denmark – municipalities (large / representative set)
+('kk.dk','Denmark',22),('aarhus.dk','Denmark',22),('odense.dk','Denmark',22),('aalborg.dk','Denmark',22),('esbjerg.dk','Denmark',22),('randers.dk','Denmark',22),('kolding.dk','Denmark',22),('vejle.dk','Denmark',22),('horsens.dk','Denmark',22),('roskilde.dk','Denmark',22),('herning.dk','Denmark',22),('silkeborg.dk','Denmark',22),('naestved.dk','Denmark',22),('gladsaxe.dk','Denmark',22),('gentofte.dk','Denmark',22),('frederiksberg.dk','Denmark',22),('holbaek.dk','Denmark',22),('hjoerring.dk','Denmark',22),('koege.dk','Denmark',22),('varde.dk','Denmark',22),('viborg.dk','Denmark',22),('svendborg.dk','Denmark',22),('sonderborg.dk','Denmark',22),('ballerup.dk','Denmark',22),('rodovre.dk','Denmark',22),('helsingor.dk','Denmark',22),('albertslund.dk','Denmark',22),('egedal.dk','Denmark',22),('faaborgmidtfyn.dk','Denmark',22),('aabenraa.dk','Denmark',22),('fredericia.dk','Denmark',22),('skanderborg.dk','Denmark',22),('slagelse.dk','Denmark',22),('holstebro.dk','Denmark',22),
+  
 -- East Timor – federal anchors & portals
 ('gov.tl','East Timor',24),('timor-leste.gov.tl','East Timor',24),('parlamento.tl','East Timor',24),('mj.gov.tl','East Timor',24),
 -- East Timor – ministries
@@ -134,16 +136,16 @@ host_rules AS (
 ('businessfinland.fi','Finland',22),('oph.fi','Finland',22),('avi.fi','Finland',22),('syke.fi','Finland',22),
 
 -- Germany – federal anchors & key institutions
-('bund.de','Germany',24),('bundesregierung.de','Germany',24),('bundesrat.de','Germany',24), ('bundestag.de','Germany',24),('bundesverfassungsgericht.de','Germany',24),('bundesgerichtshof.de','Germany',24), ('bundesverwaltungsgericht.de','Germany',24),('bundesfinanzhof.de','Germany',24),('bundessozialgericht.de','Germany',24), ('bundesarbeitsgericht.de','Germany',24),('bundesnetzagentur.de','Germany',24),('bundespolizei.de','Germany',24), ('polizei.de','Germany',24),('bmi.bund.de','Germany',24),('auswaertiges-amt.de','Germany',24),
+('bund.de','Germany',24),('bundesregierung.de','Germany',24),('bundesrat.de','Germany',24),('bundestag.de','Germany',24), ('bundesverfassungsgericht.de','Germany',24),('bundesgerichtshof.de','Germany',24),('bundesverwaltungsgericht.de','Germany',24), ('bundesfinanzhof.de','Germany',24),('bundessozialgericht.de','Germany',24),('bundesarbeitsgericht.de','Germany',24), ('bundesnetzagentur.de','Germany',24),('bundespolizei.de','Germany',24),('polizei.de','Germany',24),('bmi.bund.de','Germany',24), ('auswaertiges-amt.de','Germany',24),('bmf.bund.de','Germany',24),('bmj.de','Germany',24),('bmwi.de','Germany',24), ('bmbf.de','Germany',24),('bmvg.de','Germany',24),('bmas.de','Germany',24),('bmfsfj.de','Germany',24),('bmel.de','Germany',24), ('bmuv.de','Germany',24),('bverwg.de','Germany',24),('bundeskartellamt.de','Germany',24),('bundesbank.de','Germany',24), ('destatis.de','Germany',24),('rki.de','Germany',24),('pei.de','Germany',24),
+-- Germany – important federal portals & agencies
+('bafin.de','Germany',24),('bka.de','Germany',24),('bka.bund.de','Germany',24),('bnd.bund.de','Germany',24),('zoll.de','Germany',24), ('bamf.de','Germany',24),('arbeitsagentur.de','Germany',24),('bundeswehr.de','Germany',24),('bsi.bund.de','Germany',24), ('uba.de','Germany',24),('bfarm.de','Germany',24),('bfr.bund.de','Germany',24),('dwd.de','Germany',24),('kba.de','Germany',24), ('bundesanzeiger.de','Germany',24),('gesetze-im-internet.de','Germany',24),('verwaltung.bund.de','Germany',24),('service.bund.de','Germany',24), ('govdata.de','Germany',24),('deutschland.de','Germany',23),('make-it-in-germany.com','Germany',23),
 -- Germany – Länder (state portals)
-('bayern.de','Germany',23),('berlin.de','Germany',23),('brandenburg.de','Germany',23), ('bremen.de','Germany',23),('hamburg.de','Germany',23),('hessen.de','Germany',23), ('mecklenburg-vorpommern.de','Germany',23),('niedersachsen.de','Germany',23), ('nrw.de','Germany',23),('land.nrw','Germany',24),('rlp.de','Germany',23), ('saarland.de','Germany',23),('sachsen.de','Germany',23),('sachsen-anhalt.de','Germany',23), ('schleswig-holstein.de','Germany',23),('thueringen.de','Germany',23),
--- Germany – ministries (examples from TSV)
-('bmf.bund.de','Germany',24),('bmj.de','Germany',24),('bmwi.de','Germany',24), ('bmbf.de','Germany',24),('bmvg.de','Germany',24),('bmas.de','Germany',24), ('bmfsfj.de','Germany',24),('bmel.de','Germany',24),('bmuv.de','Germany',24),
--- Germany – judiciary & agencies (from TSV)
-('bverwg.de','Germany',24),('bundeskartellamt.de','Germany',24),('bundesbank.de','Germany',24), ('destatis.de','Germany',24),('rki.de','Germany',24),('pei.de','Germany',24),
--- Germany – embassies (patterned in diplo.de subdomains)
-('nigeria.diplo.de','Germany',21),('tuerkei.diplo.de','Germany',21), ('harare.diplo.de','Germany',21),('tallinn.diplo.de','Germany',21), ('brasil.diplo.de','Germany',21),
-
+('bayern.de','Germany',23),('berlin.de','Germany',23),('brandenburg.de','Germany',23),('bremen.de','Germany',23),('hamburg.de','Germany',23), ('hessen.de','Germany',23),('mecklenburg-vorpommern.de','Germany',23),('niedersachsen.de','Germany',23),('nrw.de','Germany',23), ('land.nrw','Germany',24),('rlp.de','Germany',23),('saarland.de','Germany',23),('sachsen.de','Germany',23), ('sachsen-anhalt.de','Germany',23),('schleswig-holstein.de','Germany',23),('thueringen.de','Germany',23),
+-- Germany – Länder parliaments (selected)
+('landtag.nrw.de','Germany',23),('landtag-bw.de','Germany',23),('landtag.bayern.de','Germany',23), ('landtag.sachsen.de','Germany',23),('landtag.sachsen-anhalt.de','Germany',23),('landtag.brandenburg.de','Germany',23), ('landtag.rlp.de','Germany',23),('landtag-bb.de','Germany',23),
+-- Germany – embassies (examples)
+('nigeria.diplo.de','Germany',21),('tuerkei.diplo.de','Germany',21),('harare.diplo.de','Germany',21), ('tallinn.diplo.de','Germany',21),('brasil.diplo.de','Germany',21),
+  
 -- Ghana – federal anchors & portals
 ('ghana.gov.gh','Ghana',24),('gov.gh','Ghana',24),('parliament.gh','Ghana',24),
 -- Ghana – ministries
@@ -212,14 +214,13 @@ host_rules AS (
 ('riga.lv','Latvia',22),('daugavpils.lv','Latvia',22),('liepaja.lv','Latvia',22),('jelgava.lv','Latvia',22),('ventspils.lv','Latvia',22),
 
 -- Luxembourg – federal anchors & portals
-('luxembourg.lu','Luxembourg',24),('etat.lu','Luxembourg',24),('public.lu','Luxembourg',24),('data.public.lu','Luxembourg',24),('service-public.lu','Luxembourg',24),
+('luxembourg.lu','Luxembourg',24),('etat.lu','Luxembourg',24),('public.lu','Luxembourg',24),('guichet.public.lu','Luxembourg',24),('data.public.lu','Luxembourg',24),('service-public.lu','Luxembourg',24),
 -- Luxembourg – ministries
 ('mfin.gouvernement.lu','Luxembourg',23),('maee.gouvernement.lu','Luxembourg',23),('mjustice.gouvernement.lu','Luxembourg',23),('meco.gouvernement.lu','Luxembourg',23),('mint.gouvernement.lu','Luxembourg',23),('mtes.gouvernement.lu','Luxembourg',23),('mss.gouvernement.lu','Luxembourg',23),('mcr.gouvernement.lu','Luxembourg',23),('mfamigr.gouvernement.lu','Luxembourg',23),('msh.gouvernement.lu','Luxembourg',23),
 -- Luxembourg – agencies & authorities
-('cns.lu','Luxembourg',23),('statec.lu','Luxembourg',23),('legilux.public.lu','Luxembourg',23),('ces.lu','Luxembourg',23),('education.lu','Luxembourg',23),('secu.lu','Luxembourg',23),
+('legilux.public.lu','Luxembourg',23),('education.lu','Luxembourg',23),('secu.lu','Luxembourg',23),('cns.lu','Luxembourg',23),('statec.lu','Luxembourg',23),('ces.lu','Luxembourg',23),('police.public.lu','Luxembourg',23),('sante.public.lu','Luxembourg',23),('environnement.public.lu','Luxembourg',23),('snca.public.lu','Luxembourg',23),
 -- Luxembourg – municipalities (sample)
 ('ville.lu','Luxembourg',22),('esch.lu','Luxembourg',22),('differdange.lu','Luxembourg',22),('dudelange.lu','Luxembourg',22),('ettelbruck.lu','Luxembourg',22),('remich.lu','Luxembourg',22),
-
 
 -- Malaysia – federal anchors & portals
 ('malaysia.gov.my','Malaysia',24),('gov.my','Malaysia',24),('data.gov.my','Malaysia',24),
@@ -244,19 +245,37 @@ host_rules AS (
 ('govserv.gov.mt','Malta',24),('mepa.org.mt','Malta',24),('um.edu.mt','Malta',24),
 
 -- Netherlands – federal anchors & key institutions
-('overheid.nl','Netherlands',24),('rijksoverheid.nl','Netherlands',24),
-('belastingdienst.nl','Netherlands',24),('politie.nl','Netherlands',24),
-('kvk.nl','Netherlands',24),('cbs.nl','Netherlands',24),('rvo.nl','Netherlands',24),
-('rijkshuisstijl.nl','Netherlands',24),('rijksoverheid.nl','Netherlands',24),
-('rechtspraak.nl','Netherlands',24),('wetten.overheid.nl','Netherlands',24),
-('kamer.nl','Netherlands',24),('eerstekamer.nl','Netherlands',24),
-('tweedekamer.nl','Netherlands',24), ('mijnoverheid.nl','Netherlands',24),
+('overheid.nl','Netherlands',24),('rijksoverheid.nl','Netherlands',24), ('belastingdienst.nl','Netherlands',24),('politie.nl','Netherlands',24), ('kvk.nl','Netherlands',24),('cbs.nl','Netherlands',24),('rvo.nl','Netherlands',24), ('rijkshuisstijl.nl','Netherlands',24),('rechtspraak.nl','Netherlands',24), ('wetten.overheid.nl','Netherlands',24),('kamer.nl','Netherlands',24), ('eerstekamer.nl','Netherlands',24),('tweedekamer.nl','Netherlands',24), ('mijnoverheid.nl','Netherlands',24),('koninklijkhuis.nl','Netherlands',24), ('openbaarministerie.nl','Netherlands',24),('raadvanstate.nl','Netherlands',24), ('autoriteitpersoonsgegevens.nl','Netherlands',24),('autoriteitconsumentmarkt.nl','Netherlands',24), ('marechaussee.nl','Netherlands',24),   
+-- Netherlands – provinces (explicit full set)
+('drenthe.nl','Netherlands',23),('flevoland.nl','Netherlands',23),('friesland.nl','Netherlands',23), ('gelderland.nl','Netherlands',23),('groningen.nl','Netherlands',23),('limburg.nl','Netherlands',23), ('noord-brabant.nl','Netherlands',23),('noord-holland.nl','Netherlands',23),('overijssel.nl','Netherlands',23), ('utrecht.nl','Netherlands',23),('zeeland.nl','Netherlands',23),('zuid-holland.nl','Netherlands',23),
 
 -- New Zealand – federal anchors & key institutions
 ('govt.nz','New Zealand',24),('parliament.nz','New Zealand',24),
 ('justice.govt.nz','New Zealand',24),('treasury.govt.nz','New Zealand',24),
 ('health.govt.nz','New Zealand',24),('education.govt.nz','New Zealand',24),
 ('police.govt.nz','New Zealand',24),
+-- Other New Zealand public entitites 
+('28maoribattalion.org.nz','New Zealand',23),('airforcemuseum.co.nz','New Zealand',23),
+('bullyingfree.nz','New Zealand',23),('cadetforces.org.nz','New Zealand',23),
+('christchurchattack.royalcommission.nz','New Zealand',23),
+('digitalpassport.co.nz','New Zealand',23),('employment.elearning.ac.nz','New Zealand',23),
+('ethnicxchange.org.nz','New Zealand',23),('etuwhanau.org.nz','New Zealand',23),
+('forum.changeispossible.org.nz','New Zealand',23),('inclusive.tki.org.nz','New Zealand',23),
+('koordinates.com','New Zealand',23),('kupe.net.nz','New Zealand',23),
+('marinebiosecurity.org.nz','New Zealand',23),('msd.mykoha.co.nz','New Zealand',23),
+('navymuseum.co.nz','New Zealand',23),('nzsar-resources.org.nz','New Zealand',23),
+('nztcs.org.nz','New Zealand',23),('paekupu.co.nz','New Zealand',23),
+('pasefikaproud.co.nz','New Zealand',23),('protectedspeciescaptures.nz','New Zealand',23),
+('readingambassador.nz','New Zealand',23),('resources.alcohol.org.nz','New Zealand',23),
+('sltk-resources.tki.org.nz','New Zealand',23),('tatai.maori.nz','New Zealand',23),
+('tehekemai.co.nz','New Zealand',23),('tuiaeducation.org.nz','New Zealand',23),
+('www.abuseincare.org.nz','New Zealand',23),('www.adventuresmart.nz','New Zealand',23),
+('www.alcohol.org.nz','New Zealand',23),('www.areyouok.org.nz','New Zealand',23),
+('www.armymuseum.co.nz','New Zealand',23),('www.artwork.org.nz','New Zealand',23),
+('www.bionet.nz','New Zealand',23),('www.boardappointments.co.nz','New Zealand',23),
+('www.cadetnet.org.nz','New Zealand',23),('www.changeispossible.org.nz','New Zealand',23),
+('www.childrensday.org.nz','New Zealand',23),('www.christchurchappealtrust.org.nz','New Zealand',23),
+('www.connect.co.nz','New Zealand',23),
 
 -- Norway – federal anchors & key institutions
 ('regjeringen.no','Norway',24),('stortinget.no','Norway',24),('nav.no','Norway',24),
@@ -382,6 +401,17 @@ host_rules AS (
 -- Costa Rica – municipalities (sample)
 ('muni.go.cr','Costa Rica',23),('munisanjose.go.cr','Costa Rica',23),('munialajuela.go.cr','Costa Rica',23), ('municartago.go.cr','Costa Rica',23),('muniheredia.go.cr','Costa Rica',23),
 
+-- France – national portals & key institutions
+('gouvernement.fr','France',24),('elysee.fr','France',24),('service-public.fr','France',24),('legifrance.gouv.fr','France',24),('vie-publique.fr','France',24),('data.gouv.fr','France',24),('interieur.gouv.fr','France',24),('economie.gouv.fr','France',24),('travail-emploi.gouv.fr','France',24),('education.gouv.fr','France',24),('enseignementsup-recherche.gouv.fr','France',24),('justice.gouv.fr','France',24),('defense.gouv.fr','France',24),('sante.gouv.fr','France',24),('agriculture.gouv.fr','France',24),('culture.gouv.fr','France',24),('transition-ecologique.gouv.fr','France',24),('ecologie.gouv.fr','France',24),('diplomatie.gouv.fr','France',24),('impots.gouv.fr','France',24),('douane.gouv.fr','France',24),('france-visas.gouv.fr','France',24),
+-- France – independent authorities & national public bodies (non-*.gouv.fr)
+('insee.fr','France',23),('banque-france.fr','France',23),('cnil.fr','France',23),('pole-emploi.fr','France',23),('francetravail.fr','France',23),('ameli.fr','France',23),('assurance-maladie.fr','France',23),('urssaf.fr','France',23),('caf.fr','France',23),('cnam.fr','France',23),('cnav.fr','France',23),('labanquepostale.fr','France',22),('meteofrance.com','France',22),('meteofrance.fr','France',22),('boamp.fr','France',22),('marches-publics.gouv.fr','France',24),
+-- France – Parliament & high courts
+('assemblee-nationale.fr','France',24),('senat.fr','France',24),('conseil-constitutionnel.fr','France',24),('conseil-etat.fr','France',24),('courdescomptes.fr','France',24),
+-- France – regions (anchors)
+('iledefrance.fr','France',23),('hautsdefrance.fr','France',23),('normandie.fr','France',23),('grandest.fr','France',23),('bourgognefranchecomte.fr','France',23),('centre-valdeloire.fr','France',23),('paysdelaloire.fr','France',23),('bretagne.bzh','France',23),('nouvelle-aquitaine.fr','France',23),('occitanie.fr','France',23),('auvergnerhonealpes.fr','France',23),('provencealpes-cotedazur.fr','France',23),('corse.fr','France',23),('lareunion.fr','France',23),('mayotte.fr','France',23),('guadeloupe.fr','France',23),('martinique.fr','France',23),('guyane.fr','France',23),('polynesie-francaise.pref.gouv.fr','France',24),('nouvelle-caledonie.gouv.fr','France',24),('saint-barth-saint-martin.gouv.fr','France',24),('saint-pierre-et-miquelon.gouv.fr','France',24),
+-- France – major municipalities (explicit; many city sites are plain .fr/.eu)
+('paris.fr','France',22),('lyon.fr','France',22),('marseille.fr','France',22),('toulouse.fr','France',22),('nice.fr','France',22),('nantes.fr','France',22),('montpellier.fr','France',22),('strasbourg.eu','France',22),('bordeaux.fr','France',22),('lille.fr','France',22),('rennes.fr','France',22),('reims.fr','France',22),('lehavre.fr','France',22),('saint-etienne.fr','France',22),('toulon.fr','France',22),('grenoble.fr','France',22),('dijon.fr','France',22),('angers.fr','France',22),('nancy.fr','France',22),('metz.fr','France',22),('clermont-ferrand.fr','France',22),('orleans.fr','France',22),('caen.fr','France',22),('tours.fr','France',22),('amiens.fr','France',22),('limoges.fr','France',22),('perpignan.fr','France',22),('annecy.fr','France',22),
+  
 -- Spain – national portals & key institutions
 ('lamoncloa.gob.es','Spain',24),('mptfp.gob.es','Spain',24),('hacienda.gob.es','Spain',24),('interior.gob.es','Spain',24),('justicia.gob.es','Spain',24),('exteriores.gob.es','Spain',24),('transicionecologica.gob.es','Spain',24),('transportes.gob.es','Spain',24),('educacionyfp.gob.es','Spain',24),('sanidad.gob.es','Spain',24),('agricultura.gob.es','Spain',24),('ciencia.gob.es','Spain',24),('industria.gob.es','Spain',24),('trabajo.gob.es','Spain',24),('inclusion.gob.es','Spain',24),('igualdad.gob.es','Spain',24),('policia.es','Spain',24),('guardiacivil.es','Spain',24),('dgt.es','Spain',24),('aemet.es','Spain',24),('aeat.es','Spain',24),('agenciatributaria.es','Spain',24),('seg-social.es','Spain',24),('seguridadsocial.gob.es','Spain',24),('ine.es','Spain',24),('boe.es','Spain',24),
 -- Spain – legislature & judiciary
@@ -455,21 +485,10 @@ host_rules AS (
 ('escaldesengordany.ad','Andorra',22),('pasdelacasa.ad','Andorra',22),
 
 
-
-
-    -- USA (federal extras + state.xx.us families)
-    ('si.edu','United States (USA)',24),
-    ('usps.com','United States (USA)',24),
-    ('dau.edu','United States (USA)',24),
-    -- common state .* domains you called out (more handled by regex below)
-    ('state.mi.us','United States (USA)',23),
-    ('sos.state.mi.us','United States (USA)',24),
-    ('msp.state.mi.us','United States (USA)',24),
-    ('state.in.us','United States (USA)',23),
-    ('state.mn.us','United States (USA)',23)
-
-
-
+-- United States (USA) – non-.gov anchors to keep explicitly
+('si.edu','United States (USA)',24), ('dau.edu','United States (USA)',24), ('usps.com','United States (USA)',24),
+-- United States – major municipal/county outliers (non-.gov)
+('lacity.org','United States (USA)',22), ('denvergov.org','United States (USA)',22), ('vbgov.com','United States (USA)',22), ('miamigov.com','United States (USA)',22), ('muni.org','United States (USA)',22), ('ocfl.net','United States (USA)',22), ('dallascityhall.com','United States (USA)',22), 
 
   ])
 ),
@@ -477,30 +496,41 @@ host_rules AS (
 -- 2) Regex rules for families that aren’t just suffixes
 regex_rules AS (
   SELECT * FROM UNNEST([
-    -- US state portals like *.state.xx.us (generic)
-    STRUCT(r'(^|\.)(?:[a-z0-9-]+\.)*state\.[a-z]{2}\.us$' AS pattern, 'United States (USA)' AS bucket, 22 AS priority),
 
     -- Luxembourg family (from your pattern)
     (r'(^|\.)(?:public|gov|etat|data|service|security|mfi|lux)(?:\.public|\.gov|\.etat)?\.lu$', 'Luxembourg', 24),
-
-    -- Plain .gov / .mil TLDs (federal)
-    (r'\.gov$', 'United States (USA)', 21),
-    (r'\.mil$', 'United States (USA)', 21),
+    (r'(^|\.)(?:[a-z0-9-]+\.)*gouvernement\.lu$', 'Luxembourg',24),
+    (r'(^|\.)(?:[a-z0-9-]+\.)*public\.lu$',       'Luxembourg',23),
 
 
-(r'(^|\.)(?:stadt|gemeinde|verbandsgemeinde|vg|amt|landkreis|kreis|bezirksamt|kreisverwaltung|kreisstadt|rathaus)[-.].*\.de$', 'Germany', 20),
+-- United States (USA)
+(r'\.gov$', 'United States (USA)', 22),         -- ALL *.gov (federal + state/local/territorial/tribal on .gov)
+(r'\.mil$', 'United States (USA)', 22),         -- ALL *.mil (DoD)
+(r'(^|\.)(?:[a-z0-9-]+\.)*fed\.us$', 'United States (USA)', 22), -- Federal on *.fed.us (e.g., fs.fed.us, blm/fws legacy)
+(r'(^|\.)(?:[a-z0-9-]+\.)*nsn\.us$', 'United States (USA)', 22), -- Tribal governments on *.nsn.us
+(r'(^|\.)(?:[a-z0-9-]+\.)*state\.[a-z]{2}\.us$', 'United States (USA)', 21), -- State portals like *.state.xx.us (covers state.mi.us, courts.state.xx.us, etc.)
+(r'(^|\.)(?:[a-z0-9-]+\.)*(?:ci|city|cityof|co|county|countyof|borough|parish|town|townof|village|muni|municipal)\.[a-z]{2}\.us$', 'United States (USA)', 20), -- Cities/counties/etc. on *.xx.us (broad but targeted)
+(r'(^|\.)(?:[a-z0-9-]+\.)*courts\.[a-z]{2}\.us$', 'United States (USA)', 20), -- Courts on *.xx.us that aren’t under *.state.xx.us (some states publish as courts.xx.us)
+
+(r'(^|\.)(?:stadt|gemeinde|verbandsgemeinde|vg|amt|landkreis|kreis|bezirksamt|kreisverwaltung|kreisstadt|rathaus)[-.].*\.de$', 'Germany', 20), -- Germany – regex coverage
 (r'(^|\.).*-?(?:stadt|gemeinde|amt|landkreis|kreis)(?:\.[a-z0-9-]+)?\.de$', 'Germany', 19),
 (r'(^|\.)(?:polizei|justiz|innenministerium|finanzministerium|wirtschaftsministerium|kultusministerium|sozialministerium|verkehrsministerium|verfassungsschutz|rechnungshof)\.?.*\.de$', 'Germany', 20),
+(r'(^|\.)(?:amtsgericht|landgericht|oberlandesgericht|sozialgericht|arbeitsgericht|finanzgericht|verwaltungsgericht|oberverwaltungsgericht|staatsanwaltschaft)[-.].*\.de$', 'Germany', 20),
+(r'(^|\.)(?:bundesamt|bundesanstalt)[-.].*\.de$', 'Germany', 21),
+(r'(^|\.)(?:finanzamt|zoll|arbeitsagentur|jobcenter|jugendamt)\.?.*\.de$', 'Germany', 19),
+(r'(^|\.)(?:gesundheitsministerium|wissenschaftsministerium|kultusministerium|landwirtschaftsministerium)\.?.*\.de$', 'Germany', 20),
 (r'(^|\.)(?:landkreis|kreis|bezirk)[-.].*\.de$', 'Germany', 19),
-(r'(^|\.)(?:xn--)[a-z0-9-]+\.de$', 'Germany', 16),
+(r'(^|\.)(?:[a-z0-9-]+\.)*diplo\.de$', 'Germany', 21),
 (r'(^|\.)[a-z0-9-]+\.gc\.ca$', 'Canada', 22),
 (r'(^|\.)gov\.(ab|bc|mb|nb|nl|ns|nt|nu|on|pe|qc|sk|yk)\.ca$', 'Canada', 22),
-(r'(^|\.)(?:[a-z0-9-]+\.)*diplo\.de$', 'Germany', 21),
 (r'(^|\.)(gov|nic)\.in$', 'India', 21),
 (r'(^|\.)[a-z0-9-]+\.go\.id$', 'Indonesia', 20),
 (r'(^|\.)([a-z0-9-]+coco\.ie|[a-z0-9-]+council\.ie)$', 'Ireland', 21),
 (r'(^|\.)([a-z0-9-]+\.lv)$', 'Latvia', 21),
-(r'(^|\.)([a-z0-9-]+\.lu)$','Luxembourg',21),
+(r'(^|\.)(?:[a-z0-9-]+\.)*gouv\.fr$', 'France',23),
+(r'(^|\.)(?:assemblee-nationale|senat|conseil-constitutionnel|conseil-etat|courdescomptes|vie-publique)\.fr$', 'France',24),
+(r'(^|\.)(?:regionh|rsyd|rm|rn|regionsjaelland)\.dk$', 'Denmark',23),
+(r'(^|\.)(?:politi|skat|sundhed|virk|borger)\.dk$', 'Denmark',23),
 (r'(^|\.)(?:[a-z0-9-]+)\.gov\.my$', 'Malaysia', 22),
 (r'(^|\.)(?:[a-z0-9-]+\.){2,}gov\.my$', 'Malaysia', 21),
 (r'(^|\.)(?:[a-z0-9-]+)\.(gov|mil)\.np$', 'Nepal',22),
@@ -514,6 +544,7 @@ regex_rules AS (
 (r'(^|\.)[a-z0-9-]+\.govt\.nz$', 'New Zealand',22),
 (r'(^|\.)[a-z0-9-]+\.parliament\.nz$', 'New Zealand',22),
 (r'(^|\.)[a-z0-9-]+\.health\.nz$', 'New Zealand',22),
+(r'(^|\.)[a-z0-9-]+\.mil\.nz$','New Zealand',22),
 (r'(^|\.)[a-z0-9-]+\.no$', 'Norway',22),
 (r'(^|\.)gov\.pt$', 'Portugal',22),
 (r'(^|\.)muni\.[a-z0-9-]+\.pt$', 'Portugal',21),   -- municipalities using muni.*
