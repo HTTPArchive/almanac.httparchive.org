@@ -282,12 +282,37 @@ host_rules AS (
     ('trikala.gr','Greece',22),('veria.gr','Greece',22), ('rethymno.gr','Greece',22),('xanthi.gr','Greece',22),
     ('kozani.gr','Greece',22),('corfu.gr','Greece',22),('rhodes.gr','Greece',22),
 
-    -- Germany
-    ('bund.de','Germany',24),('bundesregierung.de','Germany',24),('bundesrat.de','Germany',24),('bundestag.de','Germany',24), ('bundesverfassungsgericht.de','Germany',24),('bundesgerichtshof.de','Germany',24),('bundesverwaltungsgericht.de','Germany',24), ('bundesfinanzhof.de','Germany',24),('bundessozialgericht.de','Germany',24),('bundesarbeitsgericht.de','Germany',24), ('bundesnetzagentur.de','Germany',24),('bundespolizei.de','Germany',24),('polizei.de','Germany',24),('bmi.bund.de','Germany',24), ('auswaertiges-amt.de','Germany',24),('bmf.bund.de','Germany',24),('bmj.de','Germany',24),('bmwi.de','Germany',24), ('bmbf.de','Germany',24),('bmvg.de','Germany',24),('bmas.de','Germany',24),('bmfsfj.de','Germany',24),('bmel.de','Germany',24), ('bmuv.de','Germany',24),('bverwg.de','Germany',24),('bundeskartellamt.de','Germany',24),('bundesbank.de','Germany',24), ('destatis.de','Germany',24),('rki.de','Germany',24),('pei.de','Germany',24),
-    ('bafin.de','Germany',24),('bka.de','Germany',24),('bka.bund.de','Germany',24),('bnd.bund.de','Germany',24),('zoll.de','Germany',24), ('bamf.de','Germany',24),('arbeitsagentur.de','Germany',24),('bundeswehr.de','Germany',24),('bsi.bund.de','Germany',24), ('uba.de','Germany',24),('bfarm.de','Germany',24),('bfr.bund.de','Germany',24),('dwd.de','Germany',24),('kba.de','Germany',24), ('bundesanzeiger.de','Germany',24),('gesetze-im-internet.de','Germany',24),('verwaltung.bund.de','Germany',24),('service.bund.de','Germany',24), ('govdata.de','Germany',24),('deutschland.de','Germany',23),('make-it-in-germany.com','Germany',23),
-    ('bayern.de','Germany',23),('berlin.de','Germany',23),('brandenburg.de','Germany',23),('bremen.de','Germany',23),('hamburg.de','Germany',23), ('hessen.de','Germany',23),('mecklenburg-vorpommern.de','Germany',23),('niedersachsen.de','Germany',23),('nrw.de','Germany',23), ('land.nrw','Germany',24),('rlp.de','Germany',23),('saarland.de','Germany',23),('sachsen.de','Germany',23), ('sachsen-anhalt.de','Germany',23),('schleswig-holstein.de','Germany',23),('thueringen.de','Germany',23),
-    ('landtag.nrw.de','Germany',23),('landtag-bw.de','Germany',23),('landtag.bayern.de','Germany',23), ('landtag.sachsen.de','Germany',23),('landtag.sachsen-anhalt.de','Germany',23),('landtag.brandenburg.de','Germany',23), ('landtag.rlp.de','Germany',23),('landtag-bb.de','Germany',23),
-    ('nigeria.diplo.de','Germany',21),('tuerkei.diplo.de','Germany',21),('harare.diplo.de','Germany',21), ('tallinn.diplo.de','Germany',21),('brasil.diplo.de','Germany',21),
+-- Germany
+    ('bund.de','Germany',24), ('bundesregierung.de','Germany',24), ('bundesrat.de','Germany',24), ('bundestag.de','Germany',24),
+    ('bundesverfassungsgericht.de','Germany',24), ('bundesgerichtshof.de','Germany',24), ('bundesverwaltungsgericht.de','Germany',24),
+    ('bundesfinanzhof.de','Germany',24), ('bundessozialgericht.de','Germany',24), ('bundesarbeitsgericht.de','Germany',24),
+    ('bundesnetzagentur.de','Germany',24), ('bundespolizei.de','Germany',24), ('polizei.de','Germany',24),
+    ('bmi.bund.de','Germany',24), ('auswaertiges-amt.de','Germany',24), ('bmf.bund.de','Germany',24), ('bmj.de','Germany',24),
+    ('bmwi.de','Germany',24), ('bmbf.de','Germany',24), ('bmvg.de','Germany',24), ('bmas.de','Germany',24),
+    ('bmfsfj.de','Germany',24), ('bmel.de','Germany',24), ('bmuv.de','Germany',24), ('bverwg.de','Germany',24),
+    ('bundeskartellamt.de','Germany',24), ('bundesbank.de','Germany',24), ('destatis.de','Germany',24),
+    ('rki.de','Germany',24), ('pei.de','Germany',24), ('bafin.de','Germany',24), ('bka.de','Germany',24),
+    ('bka.bund.de','Germany',24), ('bnd.bund.de','Germany',24), ('zoll.de','Germany',24), ('bamf.de','Germany',24),
+    ('arbeitsagentur.de','Germany',24), ('bundeswehr.de','Germany',24), ('bsi.bund.de','Germany',24),
+    ('uba.de','Germany',24), ('bfarm.de','Germany',24), ('bfr.bund.de','Germany',24), ('dwd.de','Germany',24),
+    ('kba.de','Germany',24), ('bundesanzeiger.de','Germany',24), ('gesetze-im-internet.de','Germany',24),
+    ('verwaltung.bund.de','Germany',24), ('service.bund.de','Germany',24), ('govdata.de','Germany',24),
+    ('epetitionen.bundestag.de','Germany',24),
+    ('deutschland.de','Germany',23), ('make-it-in-germany.com','Germany',23),
+    ('bayern.de','Germany',23), ('berlin.de','Germany',23), ('brandenburg.de','Germany',23), ('bremen.de','Germany',23), -- States
+    ('hamburg.de','Germany',23), ('hessen.de','Germany',23), ('mecklenburg-vorpommern.de','Germany',23),
+    ('niedersachsen.de','Germany',23), ('nrw.de','Germany',23), ('land.nrw','Germany',24), ('rlp.de','Germany',23),
+    ('saarland.de','Germany',23), ('sachsen.de','Germany',23), ('sachsen-anhalt.de','Germany',23),
+    ('schleswig-holstein.de','Germany',23), ('thueringen.de','Germany',23), ('baden-wuerttemberg.de','Germany',23),
+    ('landtag.nrw.de','Germany',23), ('landtag-bw.de','Germany',23), ('landtag.bayern.de','Germany',23), -- State Parliaments
+    ('landtag.sachsen.de','Germany',23), ('landtag.sachsen-anhalt.de','Germany',23), ('landtag.brandenburg.de','Germany',23),
+    ('landtag.rlp.de','Germany',23), ('landtag-bb.de','Germany',23), ('parlament-berlin.de','Germany',23),
+    ('landesportal.bremen.de','Germany',23), ('hamburgische-buergerschaft.de','Germany',23),
+    ('hessischer-landtag.de','Germany',23), ('landtag-mv.de','Germany',23),
+    ('landtag-niedersachsen.de','Germany',23), ('landtag-saar.de','Germany',23),
+    ('landtag.ltsh.de','Germany',23), ('thueringer-landtag.de','Germany',23),
+    ('nigeria.diplo.de','Germany',21), ('tuerkei.diplo.de','Germany',21), ('harare.diplo.de','Germany',21), -- Embassies / Foreign Missions
+    ('tallinn.diplo.de','Germany',21), ('brasil.diplo.de','Germany',21),
 
     -- Ghana
     ('ghana.gov.gh','Ghana',24),('gov.gh','Ghana',24),('parliament.gh','Ghana',24),
