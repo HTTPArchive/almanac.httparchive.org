@@ -74,6 +74,7 @@
 --   host/page identifiers, and Lighthouse category scores.
 -- ======================================================================
 
+
 WITH
 -- 1) Explicit suffix → bucket rules (highest precision; curated priorities)
 host_rules AS (
@@ -992,16 +993,26 @@ pages AS (
     SAFE_CAST(JSON_VALUE(lighthouse, '$.categories.accessibility.score')     AS FLOAT64) AS a11y,
     SAFE_CAST(JSON_VALUE(lighthouse, '$.categories."best-practices".score')  AS FLOAT64) AS bp,
     SAFE_CAST(JSON_VALUE(lighthouse, '$.categories.seo.score')               AS FLOAT64) AS seo
+
+-- ========================
+-- Small Sample to Full DB - Start
+-- ========================
+  
   FROM
   `httparchive.sample_data.pages_10k` 
   -- `httparchive.crawl.pages`
   WHERE 
     -- date = DATE '2025-07-01' AND
     -- is_root_page AND
+
+-- ========================
+-- Small Sample to Full DB - End
+-- ========================
+
     lighthouse IS NOT NULL AND
     JSON_TYPE(lighthouse) = 'object'
 ),
-
+  
 -- Filter out rows without any score to shrink downstream work
 pages_scored AS (
   SELECT
@@ -1260,6 +1271,10 @@ us_state_classified AS (
 final_best AS (
   SELECT * FROM ranked WHERE rn = 1
 ),
+
+-- ========================
+-- SQL below is unique for lighthouse_score_by_government_with_urls.sql
+-- ========================
 
 -- Assemble report columns and friendly names
 domain_scores AS (
