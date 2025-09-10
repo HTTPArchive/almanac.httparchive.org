@@ -438,10 +438,13 @@ host_rules AS (
     ('siauliai.lt','Lithuania',21),('panevezys.lt','Lithuania',21),('alytus.lt','Lithuania',21),
 
     -- Luxembourg
-    ('luxembourg.lu','Luxembourg',24),('etat.lu','Luxembourg',24),('public.lu','Luxembourg',24),('guichet.public.lu','Luxembourg',24),('data.public.lu','Luxembourg',24),('service-public.lu','Luxembourg',24),
-    ('mfin.gouvernement.lu','Luxembourg',23),('maee.gouvernement.lu','Luxembourg',23),('mjustice.gouvernement.lu','Luxembourg',23),('meco.gouvernement.lu','Luxembourg',23),('mint.gouvernement.lu','Luxembourg',23),('mtes.gouvernement.lu','Luxembourg',23),('mss.gouvernement.lu','Luxembourg',23),('mcr.gouvernement.lu','Luxembourg',23),('mfamigr.gouvernement.lu','Luxembourg',23),('msh.gouvernement.lu','Luxembourg',23),
-    ('legilux.public.lu','Luxembourg',23),('education.lu','Luxembourg',23),('secu.lu','Luxembourg',23),('cns.lu','Luxembourg',23),('statec.lu','Luxembourg',23),('ces.lu','Luxembourg',23),('police.public.lu','Luxembourg',23),('sante.public.lu','Luxembourg',23),('environnement.public.lu','Luxembourg',23),('snca.public.lu','Luxembourg',23),
-    ('ville.lu','Luxembourg',22),('esch.lu','Luxembourg',22),('differdange.lu','Luxembourg',22),('dudelange.lu','Luxembourg',22),('ettelbruck.lu','Luxembourg',22),('remich.lu','Luxembourg',22),
+    ('luxembourg.lu','Luxembourg',24), ('service-public.lu','Luxembourg',24), ('guichet.lu','Luxembourg',24),
+    ('education.lu','Luxembourg',23), ('portal.education.lu','Luxembourg',23), ('secu.lu','Luxembourg',23), ('cns.lu','Luxembourg',23), ('statec.lu','Luxembourg',23),
+    ('ces.lu','Luxembourg',23), ('itm.lu','Luxembourg',23), ('inll.lu','Luxembourg',23), ('lod.lu','Luxembourg',23), ('petitions.lu','Luxembourg',23),
+    ('map.geoportail.lu','Luxembourg',23), ('meteolux.lu','Luxembourg',23), ('mobiliteit.lu','Luxembourg',23), ('inondations.lu','Luxembourg',23), ('adem.lu','Luxembourg',23),
+    ('cita.lu','Luxembourg',23), ('govjobs.lu','Luxembourg',23),
+    ('vdl.lu','Luxembourg',22), ('esch.lu','Luxembourg',22), ('differdange.lu','Luxembourg',22), ('dudelange.lu','Luxembourg',22), ('ettelbruck.lu','Luxembourg',22),
+    ('remich.lu','Luxembourg',22), ('post.lu','Luxembourg',22), ('cfl.lu','Luxembourg',22),
 
     -- Malaysia
     ('malaysia.gov.my','Malaysia',24),('gov.my','Malaysia',24),('data.gov.my','Malaysia',24),
