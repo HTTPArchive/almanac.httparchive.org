@@ -95,19 +95,42 @@ host_rules AS (
     ('eif.org','European Union',24),
 
     -- Andorra
-    ('govern.ad','Andorra',24),('consellgeneral.ad','Andorra',24),('exteriors.ad','Andorra',24),
-    ('justicia.ad','Andorra',23),('tribunalconstitucional.ad','Andorra',23),
-    ('iniciativa.ad','Andorra',23),('aferssocials.ad','Andorra',23),('educacio.ad','Andorra',23),
-    ('salut.ad','Andorra',23),('interior.ad','Andorra',23),('finances.ad','Andorra',23),
-    ('andorra.ad','Andorra',22),('encamp.ad','Andorra',22),('ordino.ad','Andorra',22),
-    ('canillo.ad','Andorra',22),('santjulia.ad','Andorra',22),('lauredia.ad','Andorra',22),
-    ('escaldesengordany.ad','Andorra',22),('pasdelacasa.ad','Andorra',22),
+    ('govern.ad','Andorra',24), ('consellgeneral.ad','Andorra',24), ('justicia.ad','Andorra',24), ('tribunalconstitucional.ad','Andorra',24), ('exteriors.ad','Andorra',23),
+    ('aferssocials.ad','Andorra',23), ('educacio.ad','Andorra',23), ('salut.ad','Andorra',23), ('interior.ad','Andorra',23), ('finances.ad','Andorra',23),
+    ('encamp.ad','Andorra',22), ('ordino.ad','Andorra',22), ('canillo.ad','Andorra',22), ('santjulia.ad','Andorra',22), ('lauredia.ad','Andorra',22), ('escaldesengordany.ad','Andorra',22), ('pasdelacasa.ad','Andorra',22),
+
+    -- Armenia
+    ('gov.am','Armenia',24), ('parliament.am','Armenia',24), ('president.am','Armenia',24), ('e-gov.am','Armenia',24), ('mfa.am','Armenia',23),
+    ('moh.am','Armenia',23), ('justice.am','Armenia',23), ('edu.am','Armenia',23), ('mil.am','Armenia',23), ('armstat.am','Armenia',23),
+    ('yerevan.am','Armenia',22), ('gyumri.am','Armenia',22), ('vanadzor.am','Armenia',22), ('dilijan.am','Armenia',22),
+
+    -- Australia (non-*.gov.au)
+    ('australia.gov.au','Australia',24), ('aph.gov.au','Australia',24), ('abc.net.au','Australia',22), ('sbs.com.au','Australia',22), ('naa.gov.au','Australia',23),
+    ('aic.gov.au','Australia',23), ('ansto.gov.au','Australia',23), ('csiro.au','Australia',23), ('ga.gov.au','Australia',23), ('bom.gov.au','Australia',23),
+    ('vic.gov.au','Australia',23), ('parliament.vic.gov.au','Australia',23), ('justice.vic.gov.au','Australia',23), ('police.vic.gov.au','Australia',23),
+    ('nsw.gov.au','Australia',23), ('parliament.nsw.gov.au','Australia',23), ('cityofsydney.nsw.gov.au','Australia',22), ('service.nsw.gov.au','Australia',23),
+    ('qld.gov.au','Australia',23), ('parliament.qld.gov.au','Australia',23), ('brisbane.qld.gov.au','Australia',22), ('goldcoast.qld.gov.au','Australia',22),
+    ('sa.gov.au','Australia',23), ('parliament.sa.gov.au','Australia',23), ('adelaidecitycouncil.com','Australia',22),
+    ('wa.gov.au','Australia',23), ('parliament.wa.gov.au','Australia',23), ('perth.wa.gov.au','Australia',22),
+    ('nt.gov.au','Australia',23), ('parliament.nt.gov.au','Australia',23), ('darwin.nt.gov.au','Australia',22),
+    ('tas.gov.au','Australia',23), ('parliament.tas.gov.au','Australia',23), ('hobartcity.com.au','Australia',22),
+    ('act.gov.au','Australia',23), ('parliament.act.gov.au','Australia',23), ('cityservices.act.gov.au','Australia',23),
 
     -- Austria
     ('oesterreich.gv.at','Austria',24),('bka.gv.at','Austria',24),('parlament.gv.at','Austria',24),('help.gv.at','Austria',24),('usp.gv.at','Austria',24),('data.gv.at','Austria',24),('ris.bka.gv.at','Austria',24),('gesundheit.gv.at','Austria',24),
     ('bmi.gv.at','Austria',24),('bmf.gv.at','Austria',24),('bmj.gv.at','Austria',24),('bmeia.gv.at','Austria',24),('bmk.gv.at','Austria',24),('bml.gv.at','Austria',24),('bmlrt.gv.at','Austria',24),('bmaw.gv.at','Austria',24),('bmbwf.gv.at','Austria',24),('bmkoes.gv.at','Austria',24),('bmsgpk.gv.at','Austria',24), ('polizei.gv.at','Austria',24),
     ('rechnungshof.gv.at','Austria',24),('vfgh.gv.at','Austria',24),('vwgh.gv.at','Austria',24),('bundesverwaltungsgericht.gv.at','Austria',24),('bundesfinanzgericht.gv.at','Austria',24),('justiz.gv.at','Austria',24),('bundesheer.at','Austria',24),('fma.gv.at','Austria',24),('rtr.at','Austria',24),('statistik.at','Austria',24),('ams.at','Austria',24),
     ('wien.gv.at','Austria',23),('noe.gv.at','Austria',23),('ooe.gv.at','Austria',23),('salzburg.gv.at','Austria',23),('tirol.gv.at','Austria',23),('ktn.gv.at','Austria',23),('kaernten.at','Austria',23),('stmk.gv.at','Austria',23),('steiermark.at','Austria',23),('bgld.gv.at','Austria',23),('burgenland.at','Austria',23),('vbg.gv.at','Austria',23),('vorarlberg.at','Austria',23),
+
+    -- Azerbaijan
+    ('president.az','Azerbaijan',24), ('meclis.gov.az','Azerbaijan',24), ('supremecourt.gov.az','Azerbaijan',24), ('justice.gov.az','Azerbaijan',23), ('mfa.gov.az','Azerbaijan',23),
+    ('maliyye.gov.az','Azerbaijan',23), ('economy.gov.az','Azerbaijan',23), ('baku.az','Azerbaijan',22), ('ganja.az','Azerbaijan',22), ('sumqayit-ih.gov.az','Azerbaijan',22),
+    ('sheki-ih.gov.az','Azerbaijan',22), ('lenkeran-ih.gov.az','Azerbaijan',22),
+
+    -- Belarus
+    ('president.gov.by','Belarus',24), ('government.by','Belarus',24), ('parliament.gov.by','Belarus',24), ('supcourt.gov.by','Belarus',24), ('economy.gov.by','Belarus',23),
+    ('minfin.gov.by','Belarus',23), ('minjust.gov.by','Belarus',23), ('minsk.gov.by','Belarus',22), ('grodno.gov.by','Belarus',22), ('brest.gov.by','Belarus',22),
+    ('vitebsk.gov.by','Belarus',22), ('gomel.gov.by','Belarus',22), ('mogilev.gov.by','Belarus',22),
 
     -- Belgium
     ('belgium.be','Belgium',24),('fgov.be','Belgium',24),('vlaanderen.be','Belgium',24),('wallonie.be','Belgium',24),('brussels.be','Belgium',24),('mil.be','Belgium',24),
@@ -119,6 +142,20 @@ host_rules AS (
     -- Bermuda
     ('gov.bm','Bermuda',24), ('parliament.bm','Bermuda',24), ('oba.bm','Bermuda',24),
     ('moh.gov.bm','Bermuda',23), ('moed.gov.bm','Bermuda',23), ('mohamed.gov.bm','Bermuda',23), ('mof.gov.bm','Bermuda',23), ('mps.gov.bm','Bermuda',23), ('mha.gov.bm','Bermuda',23), ('mpt.gov.bm','Bermuda',23), ('med.gov.bm','Bermuda',23), ('mhr.gov.bm','Bermuda',23),
+
+    -- Bosnia and Herzegovina
+    ('parlament.ba','Bosnia and Herzegovina',24), ('vijeceministara.gov.ba','Bosnia and Herzegovina',24), ('predsjednistvobih.ba','Bosnia and Herzegovina',24), ('mfa.ba','Bosnia and Herzegovina',23), ('mhs.ba','Bosnia and Herzegovina',23),
+    ('pravosudje.ba','Bosnia and Herzegovina',23), ('mkt.gov.ba','Bosnia and Herzegovina',23), ('mfin.gov.ba','Bosnia and Herzegovina',23), ('fzs.ba','Bosnia and Herzegovina',23),
+    ('sarajevo.ba','Bosnia and Herzegovina',22), ('mostar.ba','Bosnia and Herzegovina',22), ('banjaluka.rs.ba','Bosnia and Herzegovina',22), ('tuzla.ba','Bosnia and Herzegovina',22),
+
+    -- Bulgaria 
+    ('parliament.bg','Bulgaria',24),('president.bg','Bulgaria',24), ('mvr.bg','Bulgaria',24), ('mfa.bg','Bulgaria',24), 
+    ('nsi.bg','Bulgaria',23), ('bnb.bg','Bulgaria',23),('nap.bg','Bulgaria',23), ('nra.bg','Bulgaria',23),
+    ('cpdp.bg','Bulgaria',22), ('ombudsman.bg','Bulgaria',22),
+    ('sofia.bg','Bulgaria',21),('plovdiv.bg','Bulgaria',21),('varna.bg','Bulgaria',21), ('burgas.bg','Bulgaria',21),('ruse.bg','Bulgaria',21),('pleven.bg','Bulgaria',21),
+    ('stara-zagora.bg','Bulgaria',21),('sliven.bg','Bulgaria',21),('dobrich.bg','Bulgaria',21), ('shumen.bg','Bulgaria',21),('vratsa.bg','Bulgaria',21),('vidin.bg','Bulgaria',21),
+    ('yambol.bg','Bulgaria',21),('kardzhali.bg','Bulgaria',21),('haskovo.bg','Bulgaria',21), ('pazardzhik.bg','Bulgaria',21),('pernik.bg','Bulgaria',21),('gabrovo.bg','Bulgaria',21),
+    ('lovech.bg','Bulgaria',21),('silistra.bg','Bulgaria',21),('smolyan.bg','Bulgaria',21),
 
     -- Cameroon
     ('presidenceducameroun.cm','Cameroon',24),('primecm.cm','Cameroon',24),('minfi.cm','Cameroon',24),
@@ -155,8 +192,25 @@ host_rules AS (
     ('asamblea.go.cr','Costa Rica',24),('poder-judicial.go.cr','Costa Rica',24),('corte.go.cr','Costa Rica',24),
     ('muni.go.cr','Costa Rica',23),('munisanjose.go.cr','Costa Rica',23),('munialajuela.go.cr','Costa Rica',23), ('municartago.go.cr','Costa Rica',23),('muniheredia.go.cr','Costa Rica',23),
 
+-- Croatia
+  ('sabor.hr','Croatia',24), ('predsjednik.hr','Croatia',24),
+  ('dzs.hr','Croatia',23), ('hzjz.hr','Croatia',23),('hzzo.hr','Croatia',23), ('hzmo.hr','Croatia',23),
+  ('azop.hr','Croatia',22), ('hakom.hr','Croatia',22), ('narodne-novine.nn.hr','Croatia',22),
+  ('zagreb.hr','Croatia',21),('split.hr','Croatia',21),('rijeka.hr','Croatia',21),
+  ('osijek.hr','Croatia',21),('zadar.hr','Croatia',21),('pula.hr','Croatia',21),
+  ('dubrovnik.hr','Croatia',21),('sibenik.hr','Croatia',21),('karlovac.hr','Croatia',21),
+  ('sisak.hr','Croatia',21),('varazdin.hr','Croatia',21),('slavonski-brod.hr','Croatia',21),
+  ('koprivnica.hr','Croatia',21),('vukovar.hr','Croatia',21),('pozega.hr','Croatia',21),
+
     -- Cuba
     ('camaguey.cu','Cuba',22),('guantanamo.gob.cu','Cuba',22), ('holguin.gob.cu','Cuba',22), ('mayabeque.cu','Cuba',22),('pinar.cu','Cuba',22),('santiago.cu','Cuba',22), ('sanctispiritus.cu','Cuba',22),('villa-clara.cu','Cuba',22),
+
+    -- Cyprus
+    ('parliament.cy','Cyprus',24), ('centralbank.cy','Cyprus',23),
+    ('nicosia.org.cy','Cyprus',21), ('larnaka.org.cy','Cyprus',21),('larnaca.org.cy','Cyprus',21),
+    ('limassolmunicipal.com.cy','Cyprus',21),('lemesos.org.cy','Cyprus',21),
+    ('paphos.org.cy','Cyprus',21),('pafos.org.cy','Cyprus',21),('strovolos.org.cy','Cyprus',21),
+    ('ayia-napa.org.cy','Cyprus',21),('aglantzia.org.cy','Cyprus',21),('aradippou.org.cy','Cyprus',21),
 
     -- Czech Republic
     ('vlada.cz','Czech Republic',24),('psp.cz','Czech Republic',24),('senat.cz','Czech Republic',24),
@@ -182,7 +236,12 @@ host_rules AS (
     ('norden.dk','Denmark',23),('miljoeogfoedevarer.dk','Denmark',23),('arbejdstilsynet.dk','Denmark',23),('forsvaret.dk','Denmark',23),('dr.dk','Denmark',23),('dst.dk','Denmark',23),('sikkerdigital.dk','Denmark',23),('nemlog-in.dk','Denmark',23),('mitid.dk','Denmark',23),('nemkonto.dk','Denmark',23),('stps.dk','Denmark',23),('dataetiskraad.dk','Denmark',23),('at.dk','Denmark',23),
     ('regionh.dk','Denmark',23),('rsyd.dk','Denmark',23),('rm.dk','Denmark',23),('rn.dk','Denmark',23),('regionsjaelland.dk','Denmark',23),
     ('kk.dk','Denmark',22),('aarhus.dk','Denmark',22),('odense.dk','Denmark',22),('aalborg.dk','Denmark',22),('esbjerg.dk','Denmark',22),('randers.dk','Denmark',22),('kolding.dk','Denmark',22),('vejle.dk','Denmark',22),('horsens.dk','Denmark',22),('roskilde.dk','Denmark',22),('herning.dk','Denmark',22),('silkeborg.dk','Denmark',22),('naestved.dk','Denmark',22),('gladsaxe.dk','Denmark',22),('gentofte.dk','Denmark',22),('frederiksberg.dk','Denmark',22),('holbaek.dk','Denmark',22),('hjoerring.dk','Denmark',22),('koege.dk','Denmark',22),('varde.dk','Denmark',22),('viborg.dk','Denmark',22),('svendborg.dk','Denmark',22),('sonderborg.dk','Denmark',22),('ballerup.dk','Denmark',22),('rodovre.dk','Denmark',22),('helsingor.dk','Denmark',22),('albertslund.dk','Denmark',22),('egedal.dk','Denmark',22),('faaborgmidtfyn.dk','Denmark',22),('aabenraa.dk','Denmark',22),('fredericia.dk','Denmark',22),('skanderborg.dk','Denmark',22),('slagelse.dk','Denmark',22),('holstebro.dk','Denmark',22),
-    
+
+    -- Dubai (UAE)
+    ('gov.ae','Dubai/UAE',24), ('uaeinteract.com','Dubai/UAE',23), ('uaecabinet.ae','Dubai/UAE',23), ('government.ae','Dubai/UAE',23), ('uaepresident.ae','Dubai/UAE',23),
+    ('dubaigov.ae','Dubai/UAE',22), ('dubai.ae','Dubai/UAE',22), ('dm.gov.ae','Dubai/UAE',22), ('dewa.gov.ae','Dubai/UAE',22), ('rta.ae','Dubai/UAE',22),
+    ('dxbcourts.gov.ae','Dubai/UAE',22), ('dubaitrade.ae','Dubai/UAE',22), ('dubaipolice.gov.ae','Dubai/UAE',22), ('dubaiairports.ae','Dubai/UAE',22), ('dubaihealth.gov.ae','Dubai/UAE',22),
+
     -- East Timor
     ('gov.tl','East Timor',24),('timor-leste.gov.tl','East Timor',24),('parlamento.tl','East Timor',24),('mj.gov.tl','East Timor',24),
     ('mire.gov.tl','East Timor',23),('mnec.gov.tl','East Timor',23),('me.tl','East Timor',23),('mss.gov.tl','East Timor',23),
@@ -208,6 +267,19 @@ host_rules AS (
     ('assemblee-nationale.fr','France',24),('senat.fr','France',24),('conseil-constitutionnel.fr','France',24),('conseil-etat.fr','France',24),('courdescomptes.fr','France',24),
     ('iledefrance.fr','France',23),('hautsdefrance.fr','France',23),('normandie.fr','France',23),('grandest.fr','France',23),('bourgognefranchecomte.fr','France',23),('centre-valdeloire.fr','France',23),('paysdelaloire.fr','France',23),('bretagne.bzh','France',23),('nouvelle-aquitaine.fr','France',23),('occitanie.fr','France',23),('auvergnerhonealpes.fr','France',23),('provencealpes-cotedazur.fr','France',23),('corse.fr','France',23),('lareunion.fr','France',23),('mayotte.fr','France',23),('guadeloupe.fr','France',23),('martinique.fr','France',23),('guyane.fr','France',23),('polynesie-francaise.pref.gouv.fr','France',24),('nouvelle-caledonie.gouv.fr','France',24),('saint-barth-saint-martin.gouv.fr','France',24),('saint-pierre-et-miquelon.gouv.fr','France',24),
     ('paris.fr','France',22),('lyon.fr','France',22),('marseille.fr','France',22),('toulouse.fr','France',22),('nice.fr','France',22),('nantes.fr','France',22),('montpellier.fr','France',22),('strasbourg.eu','France',22),('bordeaux.fr','France',22),('lille.fr','France',22),('rennes.fr','France',22),('reims.fr','France',22),('lehavre.fr','France',22),('saint-etienne.fr','France',22),('toulon.fr','France',22),('grenoble.fr','France',22),('dijon.fr','France',22),('angers.fr','France',22),('nancy.fr','France',22),('metz.fr','France',22),('clermont-ferrand.fr','France',22),('orleans.fr','France',22),('caen.fr','France',22),('tours.fr','France',22),('amiens.fr','France',22),('limoges.fr','France',22),('perpignan.fr','France',22),('annecy.fr','France',22),
+
+    -- Georgia
+    ('gov.ge','Georgia',24), ('parliament.ge','Georgia',24), ('president.ge','Georgia',24), ('nbe.gov.ge','Georgia',24), ('mfa.gov.ge','Georgia',24),
+    ('justice.gov.ge','Georgia',24), ('moh.gov.ge','Georgia',24), ('moe.gov.ge','Georgia',24), ('police.ge','Georgia',23), ('rs.ge','Georgia',23),
+    ('tbilisi.gov.ge','Georgia',22), ('batumi.gov.ge','Georgia',22), ('kutaisi.gov.ge','Georgia',22), ('rustavi.gov.ge','Georgia',22), ('zugdidi.gov.ge','Georgia',22),
+
+    -- Greece
+    ('presidency.gr','Greece',24), ('bankofgreece.gr','Greece',23),('areiospagos.gr','Greece',23), ('cityofathens.gr','Greece',22),
+    ('thessaloniki.gr','Greece',22),('patras.gr','Greece',22),('heraklion.gr','Greece',22),('ioannina.gr','Greece',22),
+    ('volos.gr','Greece',22),('chania.gr','Greece',22), ('kavala.gr','Greece',22),('kalamata.gr','Greece',22),
+    ('lamia.gr','Greece',22),('serres.gr','Greece',22), ('agrinio.gr','Greece',22),('chalkida.gr','Greece',22),
+    ('trikala.gr','Greece',22),('veria.gr','Greece',22), ('rethymno.gr','Greece',22),('xanthi.gr','Greece',22),
+    ('kozani.gr','Greece',22),('corfu.gr','Greece',22),('rhodes.gr','Greece',22),
 
     -- Germany
     ('bund.de','Germany',24),('bundesregierung.de','Germany',24),('bundesrat.de','Germany',24),('bundestag.de','Germany',24), ('bundesverfassungsgericht.de','Germany',24),('bundesgerichtshof.de','Germany',24),('bundesverwaltungsgericht.de','Germany',24), ('bundesfinanzhof.de','Germany',24),('bundessozialgericht.de','Germany',24),('bundesarbeitsgericht.de','Germany',24), ('bundesnetzagentur.de','Germany',24),('bundespolizei.de','Germany',24),('polizei.de','Germany',24),('bmi.bund.de','Germany',24), ('auswaertiges-amt.de','Germany',24),('bmf.bund.de','Germany',24),('bmj.de','Germany',24),('bmwi.de','Germany',24), ('bmbf.de','Germany',24),('bmvg.de','Germany',24),('bmas.de','Germany',24),('bmfsfj.de','Germany',24),('bmel.de','Germany',24), ('bmuv.de','Germany',24),('bverwg.de','Germany',24),('bundeskartellamt.de','Germany',24),('bundesbank.de','Germany',24), ('destatis.de','Germany',24),('rki.de','Germany',24),('pei.de','Germany',24),
@@ -241,10 +313,23 @@ host_rules AS (
     -- Guyana
     ('gov.gy','Guyana',24),('parliament.gov.gy','Guyana',24),('op.gov.gy','Guyana',24),('mofa.gov.gy','Guyana',23),('finance.gov.gy','Guyana',23),('education.gov.gy','Guyana',23),('health.gov.gy','Guyana',23),
 
+    -- Hungary
+    ('kormany.hu','Hungary',24), ('parlament.hu','Hungary',24), ('birosag.hu','Hungary',24),('alkotmanybirosag.hu','Hungary',24),
+    ('magyarorszag.hu','Hungary',23),('mnb.hu','Hungary',23),('ksh.hu','Hungary',23),('police.hu','Hungary',23),
+    ('ajbh.hu','Hungary',23), ('valasztas.hu','Hungary',23),('kozbeszerzes.hu','Hungary',22),('budapest.hu','Hungary',22),
+    ('debrecen.hu','Hungary',22),('szeged.hu','Hungary',22),('pecs.hu','Hungary',22), ('kormanyablak.hu','Hungary',22),
+    ('miskolc.hu','Hungary',22),('gyor.hu','Hungary',22),('nyiregyhaza.hu','Hungary',22),
+    ('kecskemet.hu','Hungary',22),('szekesfehervar.hu','Hungary',22),('szombathely.hu','Hungary',22),('tatabanya.hu','Hungary',22),
+    ('kaposvar.hu','Hungary',22),('bekescsaba.hu','Hungary',22),('sopron.hu','Hungary',22),('eger.hu','Hungary',22),
+
     -- Iceland
-    ('stjornarradid.is','Iceland',24),('althingi.is','Iceland',24),('lögreglan.is','Iceland',24),('domstolar.is','Iceland',24),('forseti.is','Iceland',24),
-    ('utanrikisraduneyti.is','Iceland',24),('forsaetisraduneyti.is','Iceland',24),('fjarmalaraduneyti.is','Iceland',24),('samgongustofa.is','Iceland',24),('menntamalaraduneyti.is','Iceland',24),('heilbrigdisraduneyti.is','Iceland',24),('innviðaráðuneytið.is','Iceland',24),('dómsmálaráðuneytið.is','Iceland',24),('atvinnuvegaraduneyti.is','Iceland',24),('umhverfisraduneyti.is','Iceland',24),
-    ('skatturinn.is','Iceland',23),('vinnueftirlit.is','Iceland',23),('hagstofa.is','Iceland',23),('utl.is','Iceland',23),('landlaeknir.is','Iceland',23),('island.is','Iceland',23),('vinnumalastofnun.is','Iceland',23),('mannvirkjastofnun.is','Iceland',23),('vefur.is','Iceland',23),('vegagerdin.is','Iceland',23),
+    ('stjornarradid.is','Iceland',24), ('althingi.is','Iceland',24), ('lögreglan.is','Iceland',24), ('domstolar.is','Iceland',24), ('forseti.is','Iceland',24),
+    ('utanrikisraduneyti.is','Iceland',24), ('forsaetisraduneyti.is','Iceland',24), ('fjarmalaraduneyti.is','Iceland',24), ('samgongustofa.is','Iceland',24), ('menntamalaraduneyti.is','Iceland',24),
+    ('heilbrigdisraduneyti.is','Iceland',24), ('innviðaráðuneytið.is','Iceland',24), ('dómsmálaráðuneytið.is','Iceland',24), ('atvinnuvegaraduneyti.is','Iceland',24), ('umhverfisraduneyti.is','Iceland',24),
+    ('skatturinn.is','Iceland',23), ('hagstofa.is','Iceland',23), ('utl.is','Iceland',23), ('landlaeknir.is','Iceland',23), ('island.is','Iceland',23),
+    ('vinnueftirlit.is','Iceland',23), ('vinnumalastofnun.is','Iceland',23), ('mannvirkjastofnun.is','Iceland',23), ('vegagerdin.is','Iceland',23),
+    ('reykjavik.is','Iceland',22), ('kopavogur.is','Iceland',22), ('hafnarfjordur.is','Iceland',22), ('akureyri.is','Iceland',22), ('gardabaer.is','Iceland',22),
+    ('mos.is','Iceland',22), ('akeri.is','Iceland',22), ('keflavik.is','Iceland',22), ('selfoss.is','Iceland',22), ('egilsstadir.is','Iceland',22),
 
     -- India
     ('india.gov.in','India',24),('gov.in','India',24),('nic.in','India',24),('mea.gov.in','India',24),('mha.gov.in','India',24),('mohfw.gov.in','India',24),('mof.gov.in','India',24),('pmindia.gov.in','India',24),('presidentofindia.nic.in','India',24),('vicepresidentofindia.nic.in','India',24),('cabsec.gov.in','India',24),('parliamentofindia.nic.in','India',24),
@@ -286,6 +371,17 @@ host_rules AS (
     ('comune.roma.it','Italy',20),('comune.milano.it','Italy',20),('comune.napoli.it','Italy',20),
     ('comune.torino.it','Italy',20),('comune.firenze.it','Italy',20),('comune.bologna.it','Italy',20),
 
+    -- Japan
+    ('kantei.go.jp','Japan',24), ('meti.go.jp','Japan',24), ('mofa.go.jp','Japan',24), ('cas.go.jp','Japan',24), ('npa.go.jp','Japan',24),
+    ('courts.go.jp','Japan',24), ('stat.go.jp','Japan',24), ('e-gov.go.jp','Japan',24), ('jda.go.jp','Japan',24), ('mlit.go.jp','Japan',24),
+    ('pref.osaka.lg.jp','Japan',23), ('pref.aichi.lg.jp','Japan',23), ('pref.kanagawa.lg.jp','Japan',23), ('pref.chiba.lg.jp','Japan',23), ('pref.kyoto.lg.jp','Japan',23),
+    ('city.yokohama.lg.jp','Japan',22), ('city.kobe.lg.jp','Japan',22), ('city.sapporo.jp','Japan',22), ('city.fukuoka.lg.jp','Japan',22), ('city.hiroshima.lg.jp','Japan',22),
+
+    -- Kosovo
+    ('rks-gov.net','Kosovo',24), ('assembly-kosova.org','Kosovo',24), ('president-ksgov.net','Kosovo',24), ('ks-gov.net','Kosovo',23), ('kryeministri-ks.net','Kosovo',23),
+    ('gjk-ks.org','Kosovo',23), ('kuvendikosoves.org','Kosovo',23), ('kallxo.com','Kosovo',22), ('rks-gov.org','Kosovo',23),
+    ('prishtinaonline.com','Kosovo',22), ('prizreni.org','Kosovo',22), ('gjakova.org','Kosovo',22), ('ferizaj.org','Kosovo',22),
+
     -- Latvia
     ('gov.lv','Latvia',24),('mk.gov.lv','Latvia',24),('likumi.lv','Latvia',24),('president.lv','Latvia',24),('saeima.lv','Latvia',24),
     ('fm.gov.lv','Latvia',23),('mfa.gov.lv','Latvia',23),('mod.gov.lv','Latvia',23),('iem.gov.lv','Latvia',23),('em.gov.lv','Latvia',23),('izm.gov.lv','Latvia',23),('zm.gov.lv','Latvia',23),('am.gov.lv','Latvia',23),('lm.gov.lv','Latvia',23),('vmnvd.gov.lv','Latvia',23),
@@ -326,6 +422,20 @@ host_rules AS (
     ('gob.mx','Mexico',24),('presidencia.gob.mx','Mexico',24),('senado.gob.mx','Mexico',24),('diputados.gob.mx','Mexico',24),('scjn.gob.mx','Mexico',24),('inegi.org.mx','Mexico',24),('ine.mx','Mexico',24),
     ('segob.gob.mx','Mexico',23),('sre.gob.mx','Mexico',23),('shcp.gob.mx','Mexico',23),('sct.gob.mx','Mexico',23),('salud.gob.mx','Mexico',23),('sep.gob.mx','Mexico',23),('semarnat.gob.mx','Mexico',23),('sagarpa.gob.mx','Mexico',23),('stps.gob.mx','Mexico',23),('se.gob.mx','Mexico',23),('sedena.gob.mx','Mexico',23),('semar.gob.mx','Mexico',23),
     ('aguascalientes.gob.mx','Mexico',22),('bajacalifornia.gob.mx','Mexico',22),('bcs.gob.mx','Mexico',22),('campeche.gob.mx','Mexico',22),('coahuila.gob.mx','Mexico',22),('colima.gob.mx','Mexico',22),('chiapas.gob.mx','Mexico',22),('chihuahua.gob.mx','Mexico',22),('cdmx.gob.mx','Mexico',22),('durango.gob.mx','Mexico',22),('guanajuato.gob.mx','Mexico',22),('guerrero.gob.mx','Mexico',22),('hidalgo.gob.mx','Mexico',22),('jalisco.gob.mx','Mexico',22),('edomex.gob.mx','Mexico',22),('michoacan.gob.mx','Mexico',22),('morelos.gob.mx','Mexico',22),('nayarit.gob.mx','Mexico',22),('nuevoleon.gob.mx','Mexico',22),('oaxaca.gob.mx','Mexico',22),('puebla.gob.mx','Mexico',22),('queretaro.gob.mx','Mexico',22),('quintanaroo.gob.mx','Mexico',22),('sanluispotosi.gob.mx','Mexico',22),('sinaloa.gob.mx','Mexico',22),('sonora.gob.mx','Mexico',22),('tabasco.gob.mx','Mexico',22),('tamaulipas.gob.mx','Mexico',22),('tlaxcala.gob.mx','Mexico',22),('veracruz.gob.mx','Mexico',22),('yucatan.gob.mx','Mexico',22),('zacatecas.gob.mx','Mexico',22),
+
+    -- Moldova
+    ('parlament.md','Moldova',24), ('presedinte.md','Moldova',24), ('justice.md','Moldova',23), ('msmps.gov.md','Moldova',23), ('ms.gov.md','Moldova',23),
+    ('statistica.md','Moldova',23), ('bnm.md','Moldova',23), ('anm.md','Moldova',23), ('cna.md','Moldova',23), ('anmec.md','Moldova',23),
+    ('chisinau.md','Moldova',22), ('balti.md','Moldova',22), ('cahul.md','Moldova',22), ('comrat.md','Moldova',22),
+
+    -- Monaco
+    ('monaco.mc','Monaco',24), ('gouv.mc','Monaco',24), ('mairie.mc','Monaco',24), ('conseil-national.mc','Monaco',24), ('justice.mc','Monaco',24),
+    ('monacochannel.mc','Monaco',23), ('service-public-entreprises.mc','Monaco',23), ('service-public-particuliers.mc','Monaco',23), ('maisondupatrimoine.mc','Monaco',23),
+
+    -- Montenegro
+    ('skupstina.me','Montenegro',24), ('predsjednik.me','Montenegro',24), ('sudovi.me','Montenegro',23), ('tuzioc.me','Montenegro',23), ('cso.gov.me','Montenegro',23),
+    ('mif.gov.me','Montenegro',23), ('monstat.org','Montenegro',23), ('rtcg.me','Montenegro',23), ('pobjeda.me','Montenegro',22),
+    ('podgorica.me','Montenegro',22), ('hercegnovi.me','Montenegro',22), ('bar.me','Montenegro',22), ('ulcinj.me','Montenegro',22),
 
     -- Morocco
     ('maroc.ma','Morocco',24),('gov.ma','Morocco',24),('service-public.ma','Morocco',24),
@@ -377,6 +487,14 @@ host_rules AS (
     ('fhi.no','Norway',24),('dsa.no','Norway',24),('kystverket.no','Norway',24),
     ('bufdir.no','Norway',24),('nupi.no','Norway',24),
 
+    -- North Korea
+    ('naenara.com.kp','North Korea',24), ('kcna.kp','North Korea',24), ('airkoryo.com.kp','North Korea',23), ('friend.com.kp','North Korea',22),
+
+    -- North Macedonia
+    ('sobranie.mk','North Macedonia',24), ('president.mk','North Macedonia',24), ('pravda.gov.mk','North Macedonia',23), ('mvr.gov.mk','North Macedonia',23), ('finance.gov.mk','North Macedonia',23),
+    ('stat.gov.mk','North Macedonia',23), ('mon.gov.mk','North Macedonia',23), ('ujp.gov.mk','North Macedonia',23), ('jorm.gov.mk','North Macedonia',23), ('av.gov.mk','North Macedonia',23),
+    ('skopje.gov.mk','North Macedonia',22), ('bitola.gov.mk','North Macedonia',22), ('stip.gov.mk','North Macedonia',22), ('tetovo.gov.mk','North Macedonia',22),
+
     -- Peru
     ('gob.pe','Peru',24),('peru.gob.pe','Peru',24),('presidencia.gob.pe','Peru',24),
     ('congreso.gob.pe','Peru',24),('poderjudicial.gob.pe','Peru',24),
@@ -403,6 +521,16 @@ host_rules AS (
     ('neda.gov.ph','Philippines',24),('pnp.gov.ph','Philippines',24),
     ('psa.gov.ph','Philippines',24),('pagibigfund.gov.ph','Philippines',24),
 
+    -- Poland
+    ('prezydent.pl','Poland',24), ('nbp.pl','Poland',23),
+    ('zus.pl','Poland',23),('policja.pl','Poland',23),('warszawa.pl','Poland',22),('krakow.pl','Poland',22),
+    ('poznan.pl','Poland',22), ('gdansk.pl','Poland',22),('wroclaw.pl','Poland',22),('lodz.pl','Poland',22),
+    ('bydgoszcz.pl','Poland',22),('torun.pl','Poland',22),('rzeszow.pl','Poland',22),('bialystok.pl','Poland',22),
+    ('gdynia.pl','Poland',22),('sopot.pl','Poland',22),('czestochowa.pl','Poland',22),('szczecin.pl','Poland',22),
+    ('bielsko-biala.pl','Poland',22),('zielona-gora.pl','Poland',22),('gorzow.pl','Poland',22),('lublin.eu','Poland',22),
+    ('opole.pl','Poland',22),('tarnow.pl','Poland',22),('radom.pl','Poland',22), ('katowice.eu','Poland',22),
+    ('kielce.eu','Poland',22),('gliwice.eu','Poland',22),('olsztyn.eu','Poland',22),('plock.eu','Poland',22),
+
     -- Portugal
     ('portugal.gov.pt','Portugal',24),('parlamento.pt','Portugal',24),
     ('presidencia.pt','Portugal',24),('tribunalconstitucional.pt','Portugal',24),
@@ -410,18 +538,32 @@ host_rules AS (
     ('dre.pt','Portugal',24),('base.gov.pt','Portugal',24),
     ('ana.pt','Portugal',24),('ansr.pt','Portugal',24),
 
+    -- Romania
+    ('presidency.ro','Romania',24),('cdep.ro','Romania',24),('senat.ro','Romania',24),('just.ro','Romania',24),
+    ('mae.ro','Romania',24),('mapn.ro','Romania',24),('bnr.ro','Romania',23),('anaf.ro','Romania',23),
+    ('insse.ro','Romania',23),('cnas.ro','Romania',23),('ms.ro','Romania',23),('sri.ro','Romania',23),
+    ('sie.ro','Romania',23),('sts.ro','Romania',23),('politiaromana.ro','Romania',23),
+    ('roaep.ro','Romania',23),('pmb.ro','Romania',22),('clujnapoca.ro','Romania',22),('iasi.ro','Romania',22),
+    ('timisoara.ro','Romania',22),('constanta.ro','Romania',22),
+    ('oradea.ro','Romania',22),('sibiu.ro','Romania',22),('arad.ro','Romania',22),
+    ('galati.ro','Romania',22),('bacau.ro','Romania',22),('brasovcity.ro','Romania',22),
+
     -- Russia
-    ('government.ru','Russia',24),('kremlin.ru','Russia',24),
-    ('duma.gov.ru','Russia',24),('council.gov.ru','Russia',24),
-    ('supcourt.ru','Russia',24),('minfin.gov.ru','Russia',24),
-    ('minjust.gov.ru','Russia',24),('mid.ru','Russia',24),
-    ('minobrnauki.gov.ru','Russia',24),('minzdrav.gov.ru','Russia',24),
-    ('mintrud.gov.ru','Russia',24),('mchs.gov.ru','Russia',24),
-    ('fsb.ru','Russia',24),('fso.gov.ru','Russia',24),
-    ('prosecutor.ru','Russia',24),('roskazna.gov.ru','Russia',24),
-    ('fssprus.ru','Russia',24),('nalog.gov.ru','Russia',24),
-    ('customs.gov.ru','Russia',24),('gks.ru','Russia',24),
+    ('government.ru','Russia',24),('kremlin.ru','Russia',24),('duma.gov.ru','Russia',24),('council.gov.ru','Russia',24),
+    ('supcourt.ru','Russia',24),('minfin.gov.ru','Russia',24),('minjust.gov.ru','Russia',24),('mid.ru','Russia',24),
+    ('minobrnauki.gov.ru','Russia',24),('minzdrav.gov.ru','Russia',24),('mintrud.gov.ru','Russia',24),('mchs.gov.ru','Russia',24),
+    ('fsb.ru','Russia',24),('fso.gov.ru','Russia',24),('prosecutor.ru','Russia',24),('roskazna.gov.ru','Russia',24),
+    ('fssprus.ru','Russia',24),('nalog.gov.ru','Russia',24),('customs.gov.ru','Russia',24),('gks.ru','Russia',24),
     ('govvrn.ru','Russia',24),
+
+    -- San Marino
+    ('gov.sm','San Marino',24), ('consigliograndeegenerale.sm','San Marino',24), ('esteri.sm','San Marino',23), ('giustizia.sm','San Marino',23), ('sanita.sm','San Marino',23),
+    ('istruzione.sm','San Marino',23), ('finanze.sm','San Marino',23), ('turismo.sm','San Marino',23),
+
+    -- Serbia
+    ('parlament.rs','Serbia',24), ('predsednik.rs','Serbia',24), ('vojvodina.gov.rs','Serbia',23), ('srbija.rs','Serbia',23), ('beograd.rs','Serbia',22),
+    ('novisad.rs','Serbia',22), ('kragujevac.rs','Serbia',22), ('nis.rs','Serbia',22), ('subotica.rs','Serbia',22), ('uzice.rs','Serbia',22),
+    ('rfzo.rs','Serbia',23), ('apr.gov.rs','Serbia',23), ('nbs.rs','Serbia',23), ('stat.gov.rs','Serbia',23),
 
     -- Singapore
     ('gov.sg','Singapore',24),('istana.gov.sg','Singapore',24),('parliament.gov.sg','Singapore',24),
@@ -441,6 +583,21 @@ host_rules AS (
     ('dirco.gov.za','South Africa',24),('defence.gov.za','South Africa',24),('sapolice.gov.za','South Africa',24),
     ('environment.gov.za','South Africa',24),('labour.gov.za','South Africa',24),('transport.gov.za','South Africa',24),
     ('dpsa.gov.za','South Africa',24),('cogta.gov.za','South Africa',24),
+
+    -- Slovakia
+    ('slovensko.sk','Slovakia',24), ('gov.sk','Slovakia',24), ('vlada.gov.sk','Slovakia',24), ('nrsr.sk','Slovakia',24), ('justice.gov.sk','Slovakia',24),
+    ('mzv.sk','Slovakia',23), ('finance.gov.sk','Slovakia',23), ('minv.sk','Slovakia',23), ('economy.gov.sk','Slovakia',23), ('health.gov.sk','Slovakia',23),
+    ('bratislava.sk','Slovakia',22), ('kosice.sk','Slovakia',22), ('presov.sk','Slovakia',22), ('zilina.sk','Slovakia',22), ('nitra.sk','Slovakia',22),
+    ('trnava.sk','Slovakia',22), ('trencin.sk','Slovakia',22), ('banskabystrica.sk','Slovakia',22), ('martin.sk','Slovakia',22), ('poprad.sk','Slovakia',22),
+
+    -- Slovenia
+    ('gov.si','Slovenia',24), ('vlada.si','Slovenia',24), ('dz-rs.si','Slovenia',24), ('ds-rs.si','Slovenia',24), ('us-rs.si','Slovenia',24),
+    ('mzz.si','Slovenia',23), ('mz.gov.si','Slovenia',23), ('mf.gov.si','Slovenia',23), ('mnz.gov.si','Slovenia',23), ('mju.gov.si','Slovenia',23),
+    ('ljubljana.si','Slovenia',22), ('maribor.si','Slovenia',22), ('celje.si','Slovenia',22), ('koper.si','Slovenia',22), ('kranj.si','Slovenia',22),
+    ('nova-gorica.si','Slovenia',22), ('ptuj.si','Slovenia',22), ('trbovlje.si','Slovenia',22), ('kamnik.si','Slovenia',22), ('slovenjgradec.si','Slovenia',22),
+
+    -- South Korea
+    ('korea.kr','South Korea',24), ('moel.go.kr','South Korea',23), ('cha.go.kr','South Korea',23), ('bok.or.kr','South Korea',22), ('kostat.go.kr','South Korea',22),
 
     -- Spain
     ('lamoncloa.gob.es','Spain',24),('mptfp.gob.es','Spain',24),('hacienda.gob.es','Spain',24),('interior.gob.es','Spain',24),('justicia.gob.es','Spain',24),('exteriores.gob.es','Spain',24),('transicionecologica.gob.es','Spain',24),('transportes.gob.es','Spain',24),('educacionyfp.gob.es','Spain',24),('sanidad.gob.es','Spain',24),('agricultura.gob.es','Spain',24),('ciencia.gob.es','Spain',24),('industria.gob.es','Spain',24),('trabajo.gob.es','Spain',24),('inclusion.gob.es','Spain',24),('igualdad.gob.es','Spain',24),('policia.es','Spain',24),('guardiacivil.es','Spain',24),('dgt.es','Spain',24),('aemet.es','Spain',24),('aeat.es','Spain',24),('agenciatributaria.es','Spain',24),('seg-social.es','Spain',24),('seguridadsocial.gob.es','Spain',24),('ine.es','Spain',24),('boe.es','Spain',24),
@@ -471,6 +628,17 @@ host_rules AS (
     ('bazg.admin.ch','Switzerland',24),('bafu.admin.ch','Switzerland',24),('bfh.ch','Switzerland',24),
     ('unige.ch','Switzerland',24),('epfl.ch','Switzerland',24),('ethz.ch','Switzerland',24),
 
+    -- Taiwan
+    ('president.gov.tw','Taiwan',24), ('legislative.gov.tw','Taiwan',24), ('judicial.gov.tw','Taiwan',24), ('mofa.gov.tw','Taiwan',23), ('moi.gov.tw','Taiwan',23),
+    ('mnd.gov.tw','Taiwan',23), ('mof.gov.tw','Taiwan',23), ('mohw.gov.tw','Taiwan',23), ('moe.gov.tw','Taiwan',23), ('taipei.gov.tw','Taiwan',22),
+    ('kaohsiung.gov.tw','Taiwan',22), ('tainan.gov.tw','Taiwan',22), ('taichung.gov.tw','Taiwan',22), ('hsinchu.gov.tw','Taiwan',22),
+    ('nat.gov.tw','Taiwan',23), ('ey.gov.tw','Taiwan',23), ('ndl.gov.tw','Taiwan',22), ('cdc.gov.tw','Taiwan',22), ('ncc.gov.tw','Taiwan',22),
+
+    -- Türkiye
+    ('tccb.gov.tr','Türkiye',24), ('meb.gov.tr','Türkiye',24), ('sgk.gov.tr','Türkiye',24), ('diyanet.gov.tr','Türkiye',24), ('tbmm.gov.tr','Türkiye',24),
+    ('ysk.gov.tr','Türkiye',24), ('mfa.gov.tr','Türkiye',24), ('icisleri.gov.tr','Türkiye',24), ('adalet.gov.tr','Türkiye',24), ('msb.gov.tr','Türkiye',24),
+    ('ankara.bel.tr','Türkiye',23), ('istanbul.bel.tr','Türkiye',23), ('izmir.bel.tr','Türkiye',23), ('bursa.bel.tr','Türkiye',23), ('antalya.bel.tr','Türkiye',23),
+
     -- Ukraine
     ('gov.ua','Ukraine',24),('rada.gov.ua','Ukraine',24),('president.gov.ua','Ukraine',24),
     ('kmu.gov.ua','Ukraine',24),('minfin.gov.ua','Ukraine',24),('mon.gov.ua','Ukraine',24),
@@ -490,7 +658,10 @@ host_rules AS (
 
     -- Uruguay
     ('gub.uy','Uruguay',24),('uruguay.gub.uy','Uruguay',24),('parlamento.gub.uy','Uruguay',24),
-    ('presidencia.gub.uy','Uruguay',24),('ministerio.gub.uy','Uruguay',24),('poderjudicial.gub.uy','Uruguay',24)
+    ('presidencia.gub.uy','Uruguay',24),('ministerio.gub.uy','Uruguay',24),('poderjudicial.gub.uy','Uruguay',24),
+
+    -- Vietnam
+    ('chinhphu.vn','Vietnam',24), ('quochoi.vn','Vietnam',24), ('vpcp.chinhphu.vn','Vietnam',23), ('mof.gov.vn','Vietnam',23), ('molisa.gov.vn','Vietnam',23)
 
     ])
 ),
@@ -658,7 +829,7 @@ cc_map AS (
     ('ag','Antigua and Barbuda'), ('ai','Anguilla'), ('al','Albania'),
     ('am','Armenia'), ('ao','Angola'), ('ar','Argentina'), ('as','American Samoa'),
     ('at','Austria'), ('au','Australia'), ('aw','Aruba'), ('ax','Aland Islands'),
-    ('az','Azerbaijan'),
+    ('az','Azerbaijan'),('aq','Antarctica'),
 
     -- B
     ('ba','Bosnia and Herzegovina'), ('bb','Barbados'), ('bd','Bangladesh'),
@@ -673,7 +844,7 @@ cc_map AS (
     ('ci',"Côte d'Ivoire"), ('ck','Cook Islands'), ('cl','Chile'), ('cm','Cameroon'),
     ('cn','China'), ('co','Colombia'), ('cr','Costa Rica'), ('cu','Cuba'),
     ('cv','Cabo Verde'), ('cw','Curacao'), ('cx','Christmas Island'),
-    ('cy','Cyprus'), ('cz','Czech Republic'),
+    ('cy','Cyprus'), ('cz','Czech Republic'),('bq','Caribbean Netherlands'),
 
     -- D
     ('de','Germany'), ('dj','Djibouti'), ('dk','Denmark'), ('dm','Dominica'),
@@ -709,7 +880,7 @@ cc_map AS (
 
     -- K
     ('ke','Kenya'), ('kg','Kyrgyzstan'), ('kh','Cambodia'), ('ki','Kiribati'),
-    ('km','Comoros'), ('kn','Saint Kitts and Nevis'), ('kp','North Korea'),
+    ('km','Comoros'), ('kn','Saint Kitts and Nevis'), ('xk','Kosovo'), ('kp','North Korea'),
     ('kr','South Korea'), ('kw','Kuwait'), ('ky','Cayman Islands'),
     ('kz','Kazakhstan'),
 
@@ -756,7 +927,8 @@ cc_map AS (
     ('sl','Sierra Leone'), ('sm','San Marino'), ('sn','Senegal'),
     ('so','Somalia'), ('sr','Suriname'), ('st','Sao Tome and Principe'),
     ('su','Soviet Union (legacy)'), ('sv','El Salvador'), ('sx','Sint Maarten'),
-    ('sy','Syria'), ('sz','Eswatini'),
+    ('sy','Syria'), ('sz','Eswatini'),('ss','South Sudan'),('bl','Saint Barthélemy'),
+    ('mf','Saint Martin (French)'),
 
     -- T
     ('tc','Turks and Caicos Islands'), ('td','Chad'), ('tf','French Southern Territories'),
@@ -768,6 +940,7 @@ cc_map AS (
     -- U
     ('ua','Ukraine'), ('ug','Uganda'), ('uk','United Kingdom (UK)'),
     ('us','United States of America'), ('uy','Uruguay'), ('uz','Uzbekistan'),
+    ('um','U.S. Outlying Islands'),
 
     -- V
     ('va','Vatican City'), ('vc','Saint Vincent and the Grenadines'),
@@ -775,13 +948,36 @@ cc_map AS (
     ('vn','Vietnam'), ('vu','Vanuatu'),
 
     -- W
-    ('wf','Wallis and Futuna'), ('ws','Samoa'),
+    ('wf','Wallis and Futuna'), ('ws','Samoa'),('eh','Western Sahara'),
 
     -- Y
     ('ye','Yemen'), ('yt','Mayotte'),
 
     -- Z
-    ('za','South Africa'), ('zm','Zambia'), ('zw','Zimbabwe')
+    ('za','South Africa'), ('zm','Zambia'), ('zw','Zimbabwe'),
+
+     -- GeoTLDs (non-ISO, regional or city)
+    ('nyc','New York City'),
+    ('berlin','Berlin'),
+    ('paris','Paris'),
+    ('london','London'),
+    ('tokyo','Tokyo'),
+    ('moscow','Moscow'),
+    ('москва','Moscow (Cyrillic)'),
+    ('quebec','Québec'),
+    ('cymru','Wales (Cymraeg)'),
+    ('wales','Wales'),
+    ('scot','Scotland'),
+    ('cat','Catalonia'),
+    ('gal','Galicia'),
+    ('bzh','Brittany'),
+    ('barcelona','Barcelona'),
+    ('madrid','Madrid'),
+    ('rio','Rio de Janeiro'),
+    ('istanbul','Istanbul'),
+    ('ist','Istanbul (alt)'),
+    ('africa','Africa (AU community)')
+
   ])
 ),
 
