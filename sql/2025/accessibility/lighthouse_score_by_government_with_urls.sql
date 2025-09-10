@@ -282,7 +282,8 @@ host_rules AS (
     ('trikala.gr','Greece',22),('veria.gr','Greece',22), ('rethymno.gr','Greece',22),('xanthi.gr','Greece',22),
     ('kozani.gr','Greece',22),('corfu.gr','Greece',22),('rhodes.gr','Greece',22),
 
--- Germany
+
+    -- Germany
     ('bund.de','Germany',24), ('bundesregierung.de','Germany',24), ('bundesrat.de','Germany',24), ('bundestag.de','Germany',24),
     ('bundesverfassungsgericht.de','Germany',24), ('bundesgerichtshof.de','Germany',24), ('bundesverwaltungsgericht.de','Germany',24),
     ('bundesfinanzhof.de','Germany',24), ('bundessozialgericht.de','Germany',24), ('bundesarbeitsgericht.de','Germany',24),
@@ -297,22 +298,30 @@ host_rules AS (
     ('uba.de','Germany',24), ('bfarm.de','Germany',24), ('bfr.bund.de','Germany',24), ('dwd.de','Germany',24),
     ('kba.de','Germany',24), ('bundesanzeiger.de','Germany',24), ('gesetze-im-internet.de','Germany',24),
     ('verwaltung.bund.de','Germany',24), ('service.bund.de','Germany',24), ('govdata.de','Germany',24),
-    ('epetitionen.bundestag.de','Germany',24),
-    ('deutschland.de','Germany',23), ('make-it-in-germany.com','Germany',23),
-    ('bayern.de','Germany',23), ('berlin.de','Germany',23), ('brandenburg.de','Germany',23), ('bremen.de','Germany',23), -- States
+    ('epetitionen.bundestag.de','Germany',24), ('make-it-in-germany.com','Germany',23),                                       -- Additional Federal Offices / Agencies
+    ('beratungsstelle-barrierefreiheit.de','Germany',23), ('dguv.de','Germany',23), ('jfmk.de','Germany',23), ('bfee-online.de','Germany',23),
+    ('bbr.bund.de','Germany',24), ('bbk.bund.de','Germany',24), ('bkg.bund.de','Germany',24), ('bfn.de','Germany',24),
+    ('bsh.de','Germany',24), ('bfs.de','Germany',24), ('bvl.bund.de','Germany',24), ('verfassungsschutz.de','Germany',24),
+    ('bafa.de','Germany',24), ('badv.bund.de','Germany',24), ('baua.de','Germany',24), ('bgr.bund.de','Germany',24),
+    ('bafg.de','Germany',24), ('bundesimmobilien.de','Germany',24), ('ble.de','Germany',24), ('bam.de','Germany',24),
+    ('bva.bund.de','Germany',24), ('bzst.bund.de','Germany',24), ('deutsche-finanzagentur.de','Germany',23),
+    ('dainst.org','Germany',23), ('dpma.de','Germany',24), ('ffa.de','Germany',23), ('lba.de','Germany',24),
+    ('mri.bund.de','Germany',23), ('ptb.de','Germany',24), ('thw.de','Germany',24), ('umweltbundesamt.de','Germany',24),
+    ('bayern.de','Germany',23), ('berlin.de','Germany',23), ('brandenburg.de','Germany',23), ('bremen.de','Germany',23),     -- States
     ('hamburg.de','Germany',23), ('hessen.de','Germany',23), ('mecklenburg-vorpommern.de','Germany',23),
     ('niedersachsen.de','Germany',23), ('nrw.de','Germany',23), ('land.nrw','Germany',24), ('rlp.de','Germany',23),
     ('saarland.de','Germany',23), ('sachsen.de','Germany',23), ('sachsen-anhalt.de','Germany',23),
     ('schleswig-holstein.de','Germany',23), ('thueringen.de','Germany',23), ('baden-wuerttemberg.de','Germany',23),
-    ('landtag.nrw.de','Germany',23), ('landtag-bw.de','Germany',23), ('landtag.bayern.de','Germany',23), -- State Parliaments
+    ('landtag.nrw.de','Germany',23), ('landtag-bw.de','Germany',23), ('landtag.bayern.de','Germany',23),                    -- State Parliaments
     ('landtag.sachsen.de','Germany',23), ('landtag.sachsen-anhalt.de','Germany',23), ('landtag.brandenburg.de','Germany',23),
     ('landtag.rlp.de','Germany',23), ('landtag-bb.de','Germany',23), ('parlament-berlin.de','Germany',23),
     ('landesportal.bremen.de','Germany',23), ('hamburgische-buergerschaft.de','Germany',23),
     ('hessischer-landtag.de','Germany',23), ('landtag-mv.de','Germany',23),
     ('landtag-niedersachsen.de','Germany',23), ('landtag-saar.de','Germany',23),
     ('landtag.ltsh.de','Germany',23), ('thueringer-landtag.de','Germany',23),
-    ('nigeria.diplo.de','Germany',21), ('tuerkei.diplo.de','Germany',21), ('harare.diplo.de','Germany',21), -- Embassies / Foreign Missions
+    ('nigeria.diplo.de','Germany',21), ('tuerkei.diplo.de','Germany',21), ('harare.diplo.de','Germany',21),                  -- Embassies / Foreign Missions
     ('tallinn.diplo.de','Germany',21), ('brasil.diplo.de','Germany',21),
+
 
     -- Ghana
     ('ghana.gov.gh','Ghana',24),('gov.gh','Ghana',24),('parliament.gh','Ghana',24),
