@@ -649,14 +649,30 @@ host_rules AS (
     ('president.gov.sr','Suriname',24),('ministerievanfinancien.gov.sr','Suriname',23),('biza.gov.sr','Suriname',23),('justice.gov.sr','Suriname',23),
 
     -- Sweden
-    ('gov.se','Sweden',24),('regeringen.se','Sweden',24),('riksdagen.se','Sweden',24),('domstol.se','Sweden',24),
-    ('skatteverket.se','Sweden',24),('forsakringskassan.se','Sweden',24),('arbetsformedlingen.se','Sweden',24),
-    ('polisen.se','Sweden',24),('trafikverket.se','Sweden',24),('kriminalvarden.se','Sweden',24),
-    ('smhi.se','Sweden',24),('naturvardsverket.se','Sweden',24),('socialstyrelsen.se','Sweden',24),
-    ('1177.se','Sweden',24),('sl.se','Sweden',24),
-    ('funktionstjanster.se','Sweden',23),('hemnet.se','Sweden',23),('sverigesradio.se','Sweden',23),
-    ('klart.se','Sweden',23),('bankid.com','Sweden',23),
+    ('gov.se','Sweden',24),('regeringen.se','Sweden',24),('riksdagen.se','Sweden',24),('domstol.se','Sweden',24),                                           -- Core national portals & agencies
+    ('skatteverket.se','Sweden',24),('forsakringskassan.se','Sweden',24),('arbetsformedlingen.se','Sweden',24), ('polisen.se','Sweden',24),('trafikverket.se','Sweden',24),('kriminalvarden.se','Sweden',24),
+    ('smhi.se','Sweden',24),('naturvardsverket.se','Sweden',24),('socialstyrelsen.se','Sweden',24),('1177.se','Sweden',24),('sl.se','Sweden',24),
+    ('funktionstjanster.se','Sweden',23),('hemnet.se','Sweden',23),('sverigesradio.se','Sweden',23), ('klart.se','Sweden',23),('bankid.com','Sweden',23),
     ('schoolsoft.se','Sweden',23),('postnord.se','Sweden',23),('grandid.com','Sweden',23),('skola24.se','Sweden',23),('vklass.se','Sweden',23),
+    ('sametinget.se','Sweden',24),('scb.se','Sweden',24),('mucf.se','Sweden',24),('ubm.se','Sweden',24),('konsumentverket.se','Sweden',24),                 -- Additional national agencies & authorities
+    ('lagradet.se','Sweden',24),('havochvatten.se','Sweden',24),('jo.se','Sweden',24),('folkhalsomyndigheten.se','Sweden',24),('fpr.se','Sweden',24),
+    ('konstnarsnamnden.se','Sweden',23),('irf.se','Sweden',23),('pensionsmyndigheten.se','Sweden',24),('ifau.se','Sweden',23),('mi.se','Sweden',24),
+    ('imy.se','Sweden',24),('kronofogden.se','Sweden',24),('tillvaxtverket.se','Sweden',24),('val.se','Sweden',24),('digg.se','Sweden',24),
+    ('lansstyrelsen.se','Sweden',23),('si.se','Sweden',23),('riksbank.se','Sweden',24),('riksgalden.se','Sweden',24),('svk.se','Sweden',24),
+    ('tullverket.se','Sweden',24),('av.se','Sweden',24),('bolagsverket.se','Sweden',24),('lakemedelsverket.se','Sweden',24),('riksarkivet.se','Sweden',23),
+    ('ehalsomyndigheten.se','Sweden',24),('boverket.se','Sweden',24),('statskontoret.se','Sweden',23),('prv.se','Sweden',23),('arbetsdomstolen.se','Sweden',23),
+    ('brottsoffermyndigheten.se','Sweden',23),('aklagare.se','Sweden',24),('forsvarsmakten.se','Sweden',24),('sakerhetspolisen.se','Sweden',24),('rmv.se','Sweden',23),
+    ('skolinspektionen.se','Sweden',23),('lantmateriet.se','Sweden',24),('trafa.se','Sweden',23),('vinnova.se','Sweden',23),('vr.se','Sweden',23),
+    ('kustbevakningen.se','Sweden',24),('riksrevisionen.se','Sweden',24),('tillvaxtanalys.se','Sweden',23),('pts.se','Sweden',24),('swedenabroad.se','Sweden',21),
+    ('norrbotten.se','Sweden',22),('skane.se','Sweden',22),('vgregion.se','Sweden',22),('regionsormland.se','Sweden',22),('regionkalmar.se','Sweden',22), -- Regions (all major Swedish healthcare/governing regions)
+    ('rjl.se','Sweden',22),('gotland.se','Sweden',22),('regionuppsala.se','Sweden',22),('regionjh.se','Sweden',22),('regionvasterbotten.se','Sweden',22),
+    ('rvn.se','Sweden',22),('regionvastmanland.se','Sweden',22),('regionorebrolan.se','Sweden',22),('regionvarmland.se','Sweden',22),('ltkronoberg.se','Sweden',22),
+    ('regiondalarna.se','Sweden',22),('regiongavleborg.se','Sweden',22),('regionhalland.se','Sweden',22),('regionstockholm.se','Sweden',22),('regionostergotland.se','Sweden',22),
+    ('regionblekinge.se','Sweden',22), ('stockholm.se','Sweden',22),('goteborg.se','Sweden',22),('malmo.se','Sweden',22),                                                                    -- Municipalities
+    ('uppsala.se','Sweden',22),('vasteras.se','Sweden',22),('orebro.se','Sweden',22), ('linkoping.se','Sweden',22),('helsingborg.se','Sweden',22),('jonkoping.se','Sweden',22),
+    ('norrkoping.se','Sweden',22),('lund.se','Sweden',22),('umea.se','Sweden',22), ('gavle.se','Sweden',22),('boras.se','Sweden',22),('sodertalje.se','Sweden',22),
+    ('halmstad.se','Sweden',22),('eskilstuna.se','Sweden',22),('vaxjo.se','Sweden',22), ('karlstad.se','Sweden',22),('taby.se','Sweden',22),('karlskrona.se','Sweden',22),
+    ('sundsvall.se','Sweden',22),('lulea.se','Sweden',22),('huddinge.se','Sweden',22), ('umea.se','Sweden',22),('sollentuna.se','Sweden',22),('borlange.se','Sweden',22),
 
     -- Switzerland
     ('admin.ch','Switzerland',24),('parlament.ch','Switzerland',24),('bundesgericht.ch','Switzerland',24),
