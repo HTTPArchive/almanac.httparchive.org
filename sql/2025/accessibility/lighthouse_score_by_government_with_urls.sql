@@ -484,9 +484,29 @@ host_rules AS (
     ('nepal.gov.np','Nepal',24),('nepalarmy.mil.np','Nepal',24),('supremecourt.gov.np','Nepal',24), ('parliament.gov.np','Nepal',24),('officeofattorneygeneral.gov.np','Nepal',24), ('mof.gov.np','Nepal',24),('moha.gov.np','Nepal',24),('moeap.gov.np','Nepal',24), ('mohp.gov.np','Nepal',24),('mofa.gov.np','Nepal',24),('moi.gov.np','Nepal',24), ('moest.gov.np','Nepal',24),('mowcsw.gov.np','Nepal',24),('mopit.gov.np','Nepal',24),('mofaga.gov.np','Nepal',24),('moewri.gov.np','Nepal',24),('npc.gov.np','Nepal',24),
 
     -- Netherlands
-    ('overheid.nl','Netherlands',24),('rijksoverheid.nl','Netherlands',24), ('belastingdienst.nl','Netherlands',24),('politie.nl','Netherlands',24), ('kvk.nl','Netherlands',24),('cbs.nl','Netherlands',24),('rvo.nl','Netherlands',24), ('rijkshuisstijl.nl','Netherlands',24),('rechtspraak.nl','Netherlands',24), ('wetten.overheid.nl','Netherlands',24),('kamer.nl','Netherlands',24), ('eerstekamer.nl','Netherlands',24),('tweedekamer.nl','Netherlands',24), ('mijnoverheid.nl','Netherlands',24),('koninklijkhuis.nl','Netherlands',24), ('openbaarministerie.nl','Netherlands',24),('raadvanstate.nl','Netherlands',24), ('autoriteitpersoonsgegevens.nl','Netherlands',24),('autoriteitconsumentmarkt.nl','Netherlands',24), ('marechaussee.nl','Netherlands',24),   
-    ('drenthe.nl','Netherlands',23),('flevoland.nl','Netherlands',23),('friesland.nl','Netherlands',23), ('gelderland.nl','Netherlands',23),('groningen.nl','Netherlands',23),('limburg.nl','Netherlands',23), ('noord-brabant.nl','Netherlands',23),('noord-holland.nl','Netherlands',23),('overijssel.nl','Netherlands',23), ('utrecht.nl','Netherlands',23),('zeeland.nl','Netherlands',23),('zuid-holland.nl','Netherlands',23),
+    ('overheid.nl','Netherlands',24),('rijksoverheid.nl','Netherlands',24),('belastingdienst.nl','Netherlands',24),                         -- Netherlands: Core national portals & agencies
+    ('politie.nl','Netherlands',24),('kvk.nl','Netherlands',24),('cbs.nl','Netherlands',24),('rvo.nl','Netherlands',24),
+    ('rijkshuisstijl.nl','Netherlands',24),('rechtspraak.nl','Netherlands',24),('wetten.overheid.nl','Netherlands',24),
+    ('kamer.nl','Netherlands',24),('eerstekamer.nl','Netherlands',24),('tweedekamer.nl','Netherlands',24),
+    ('mijnoverheid.nl','Netherlands',24),('koninklijkhuis.nl','Netherlands',24),('openbaarministerie.nl','Netherlands',24),
+    ('raadvanstate.nl','Netherlands',24),('autoriteitpersoonsgegevens.nl','Netherlands',24),('autoriteitconsumentmarkt.nl','Netherlands',24), ('marechaussee.nl','Netherlands',24),
+    ('provincie.drenthe.nl','Netherlands',23),('flevoland.nl','Netherlands',23),('fryslan.frl','Netherlands',23),                          -- Netherlands: Provinces (use official province domains; avoid city-domain collisions)
+    ('gelderland.nl','Netherlands',23),('provinciegroningen.nl','Netherlands',23),('limburg.nl','Netherlands',23),
+    ('brabant.nl','Netherlands',23),('noord-holland.nl','Netherlands',23),('overijssel.nl','Netherlands',23),
+    ('provincie-utrecht.nl','Netherlands',23),('zeeland.nl','Netherlands',23),('zuid-holland.nl','Netherlands',23),
+    ('amsterdam.nl','Netherlands',22),('rotterdam.nl','Netherlands',22),('denhaag.nl','Netherlands',22),                                   -- Netherlands: Municipalities (cities >100k inhabitants only; deduped & normalized to base domains)
+    ('utrecht.nl','Netherlands',22),('eindhoven.nl','Netherlands',22),('tilburg.nl','Netherlands',22),
+    ('groningen.nl','Netherlands',22),('almere.nl','Netherlands',22),('breda.nl','Netherlands',22),
+    ('nijmegen.nl','Netherlands',22),('enschede.nl','Netherlands',22),('apeldoorn.nl','Netherlands',22),
+    ('haarlem.nl','Netherlands',22),('arnhem.nl','Netherlands',22),('zaanstad.nl','Netherlands',22),
+    ('s-hertogenbosch.nl','Netherlands',22),('amersfoort.nl','Netherlands',22),('haarlemmermeergemeente.nl','Netherlands',22),
+    ('maastricht.nl','Netherlands',22),('leiden.nl','Netherlands',22),('dordrecht.nl','Netherlands',22),
+    ('zwolle.nl','Netherlands',22),('ede.nl','Netherlands',22),('emmen.nl','Netherlands',22),
+    ('delft.nl','Netherlands',22),('alkmaar.nl','Netherlands',22),('leeuwarden.nl','Netherlands',22),
+    ('westland.nl','Netherlands',22),('venlo.nl','Netherlands',22),('deventer.nl','Netherlands',22),
+    ('zoetermeer.nl','Netherlands',22),('alphenchaam.nl','Netherlands',22),('alphenaandenrijn.nl','Netherlands',22)
 
+  
     -- New Zealand
     ('govt.nz','New Zealand',24),('parliament.nz','New Zealand',24),
     ('justice.govt.nz','New Zealand',24),('treasury.govt.nz','New Zealand',24),
@@ -795,7 +815,7 @@ regex_rules AS (
     ('(^|\\.)gemeente[a-z0-9-]*\\.nl$', 'Netherlands', 21),
     ('(^|\\.)provincie[a-z0-9-]*\\.nl$', 'Netherlands', 21),
     -- ('(^|\\.)[a-z0-9-]+\\.gov\\.nl$', 'Netherlands', 22),
-
+  
     -- New Zealand
     ('(^|\\.)[a-z0-9-]+\\.parliament\\.nz$', 'New Zealand', 22),
     ('(^|\\.)[a-z0-9-]+\\.health\\.nz$', 'New Zealand', 22),
