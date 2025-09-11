@@ -1461,10 +1461,21 @@ domain_scores AS (
     a11y AS accessibility_score,
     bp   AS best_practices_score,
     seo  AS seo_score,
-    bucket
+    bucket,                   -- <-- comma here
+
+    -- Lightweight helpers (no new dependencies)
+    NET.PUBLIC_SUFFIX(host)             AS public_suffix,        -- e.g., gov, gov.uk, gob.pe
+    NET.REG_DOMAIN(host)                AS registrable_domain,   -- e.g., example.gov, city.state.xx.us
+    REGEXP_EXTRACT(host, r'([^.]+)$')   AS tld,                  -- last label
+    (bucket = 'United States (USA)')    AS is_us                 -- quick flag for filters
   FROM final_best
-  -- WHERE bucket = 'United States (USA)'      -- US only
-  -- WHERE bucket <> 'United States (USA)'     -- non-US only
+  -- WHERE bucket = 'United States (USA)'   -- US only
+  -- WHERE bucket <> 'United States (USA)'  -- non-US only
+  -- WHERE is_us                            -- US only
+  -- WHERE NOT is_us                        -- non-US only
+  -- WHERE public_suffix = 'gov.uk'         -- by suffix
+  -- WHERE tld = 'us'                       -- by ccTLD
+  
 )
 
 -- Final SELECT
