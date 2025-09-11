@@ -504,7 +504,7 @@ host_rules AS (
     ('zwolle.nl','Netherlands',22),('ede.nl','Netherlands',22),('emmen.nl','Netherlands',22),
     ('delft.nl','Netherlands',22),('alkmaar.nl','Netherlands',22),('leeuwarden.nl','Netherlands',22),
     ('westland.nl','Netherlands',22),('venlo.nl','Netherlands',22),('deventer.nl','Netherlands',22),
-    ('zoetermeer.nl','Netherlands',22),('alphenchaam.nl','Netherlands',22),('alphenaandenrijn.nl','Netherlands',22)
+    ('zoetermeer.nl','Netherlands',22),('alphenchaam.nl','Netherlands',22),('alphenaandenrijn.nl','Netherlands',22),
 
   
     -- New Zealand
