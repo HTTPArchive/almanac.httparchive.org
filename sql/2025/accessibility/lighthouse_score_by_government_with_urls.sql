@@ -74,8 +74,8 @@
 --   host/page identifiers, and Lighthouse category scores.
 -- ======================================================================
 
-
 WITH
+
 -- 1) Explicit suffix → bucket rules (highest precision; curated priorities)
 host_rules AS (
   SELECT * FROM UNNEST([
@@ -99,6 +99,12 @@ host_rules AS (
     ('govern.ad','Andorra',24), ('consellgeneral.ad','Andorra',24), ('justicia.ad','Andorra',24), ('tribunalconstitucional.ad','Andorra',24), ('exteriors.ad','Andorra',23),
     ('aferssocials.ad','Andorra',23), ('educacio.ad','Andorra',23), ('salut.ad','Andorra',23), ('interior.ad','Andorra',23), ('finances.ad','Andorra',23),
     ('encamp.ad','Andorra',22), ('ordino.ad','Andorra',22), ('canillo.ad','Andorra',22), ('santjulia.ad','Andorra',22), ('lauredia.ad','Andorra',22), ('escaldesengordany.ad','Andorra',22), ('pasdelacasa.ad','Andorra',22),
+
+    -- Albania
+    ('e-albania.al','Albania',24),
+
+    -- Algeria
+    ('service-public.dz','Algeria',24),
 
     -- Armenia
     ('gov.am','Armenia',24), ('parliament.am','Armenia',24), ('president.am','Armenia',24), ('e-gov.am','Armenia',24), ('mfa.am','Armenia',23),
@@ -132,6 +138,9 @@ host_rules AS (
     ('president.gov.by','Belarus',24), ('government.by','Belarus',24), ('parliament.gov.by','Belarus',24), ('supcourt.gov.by','Belarus',24), ('economy.gov.by','Belarus',23),
     ('minfin.gov.by','Belarus',23), ('minjust.gov.by','Belarus',23), ('minsk.gov.by','Belarus',22), ('grodno.gov.by','Belarus',22), ('brest.gov.by','Belarus',22),
     ('vitebsk.gov.by','Belarus',22), ('gomel.gov.by','Belarus',22), ('mogilev.gov.by','Belarus',22),
+
+    -- Bahrain
+    ('bahrain.bh','Bahrain',24),
 
     -- Belgium
     ('belgium.be','Belgium',24),('fgov.be','Belgium',24),('vlaanderen.be','Belgium',24),('wallonie.be','Belgium',24),('brussels.be','Belgium',24),('mil.be','Belgium',24),
@@ -411,6 +420,9 @@ host_rules AS (
     ('pref.osaka.lg.jp','Japan',23), ('pref.aichi.lg.jp','Japan',23), ('pref.kanagawa.lg.jp','Japan',23), ('pref.chiba.lg.jp','Japan',23), ('pref.kyoto.lg.jp','Japan',23),
     ('city.yokohama.lg.jp','Japan',22), ('city.kobe.lg.jp','Japan',22), ('city.sapporo.jp','Japan',22), ('city.fukuoka.lg.jp','Japan',22), ('city.hiroshima.lg.jp','Japan',22),
 
+    -- Kazakhstan
+    ('egov.kz','Kazakhstan',24),
+
     -- Kosovo
     ('rks-gov.net','Kosovo',24), ('assembly-kosova.org','Kosovo',24), ('president-ksgov.net','Kosovo',24), ('ks-gov.net','Kosovo',23), ('kryeministri-ks.net','Kosovo',23),
     ('gjk-ks.org','Kosovo',23), ('kuvendikosoves.org','Kosovo',23), ('kallxo.com','Kosovo',22), ('rks-gov.org','Kosovo',23),
@@ -551,6 +563,9 @@ host_rules AS (
     ('sobranie.mk','North Macedonia',24), ('president.mk','North Macedonia',24), ('pravda.gov.mk','North Macedonia',23), ('mvr.gov.mk','North Macedonia',23), ('finance.gov.mk','North Macedonia',23),
     ('stat.gov.mk','North Macedonia',23), ('mon.gov.mk','North Macedonia',23), ('ujp.gov.mk','North Macedonia',23), ('jorm.gov.mk','North Macedonia',23), ('av.gov.mk','North Macedonia',23),
     ('skopje.gov.mk','North Macedonia',22), ('bitola.gov.mk','North Macedonia',22), ('stip.gov.mk','North Macedonia',22), ('tetovo.gov.mk','North Macedonia',22),
+
+    -- Oman
+    ('oman.om','Oman',24),
 
     -- Peru
     ('gob.pe','Peru',24),('peru.gob.pe','Peru',24),('presidencia.gob.pe','Peru',24),
@@ -720,6 +735,9 @@ host_rules AS (
     ('dsns.gov.ua','Ukraine',24),('ssu.gov.ua','Ukraine',24),('sfs.gov.ua','Ukraine',24),
     ('nas.gov.ua','Ukraine',24),('court.gov.ua','Ukraine',24),('zakon.rada.gov.ua','Ukraine',24),
     ('council.gov.ua','Ukraine',24),('prosecutor.gov.ua','Ukraine',24),
+
+    -- UAE
+    ('u.ae','United Arab Emirates',24),
 
     -- United Kingdom (UK)
     ('parliament.uk','United Kingdom (UK)',24), ('judiciary.uk','United Kingdom (UK)',24), ('supremecourt.uk','United Kingdom (UK)',24), ('parliament.scot','United Kingdom (UK)',24), ('senedd.wales','United Kingdom (UK)',24), ('senedd.cymru','United Kingdom (UK)',24), ('police.scot','United Kingdom (UK)',23),
@@ -928,7 +946,7 @@ cc_map AS (
     ('ad','Andorra'), ('ae','United Arab Emirates'), ('af','Afghanistan'),
     ('ag','Antigua and Barbuda'), ('ai','Anguilla'), ('al','Albania'),
     ('am','Armenia'), ('ao','Angola'), ('ar','Argentina'), ('as','American Samoa'),
-    ('at','Austria'), ('au','Australia'), ('aw','Aruba'), ('ax','Aland Islands'),
+    ('at','Austria'), ('au','Australia'), ('aw','Aruba'), ('ax','Åland Islands'),
     ('az','Azerbaijan'),('aq','Antarctica'),
 
     -- B
@@ -943,8 +961,8 @@ cc_map AS (
     ('cf','Central African Republic'), ('cg','Republic of the Congo'), ('ch','Switzerland'),
     ('ci',"Côte d'Ivoire"), ('ck','Cook Islands'), ('cl','Chile'), ('cm','Cameroon'),
     ('cn','China'), ('co','Colombia'), ('cr','Costa Rica'), ('cu','Cuba'),
-    ('cv','Cabo Verde'), ('cw','Curacao'), ('cx','Christmas Island'),
-    ('cy','Cyprus'), ('cz','Czech Republic'),('bq','Caribbean Netherlands'),
+    ('cv','Cabo Verde'), ('cw','Curaçao'), ('cx','Christmas Island'),
+    ('cy','Cyprus'), ('cz','Czechia'), ('bq','Caribbean Netherlands'),
 
     -- D
     ('de','Germany'), ('dj','Djibouti'), ('dk','Denmark'), ('dm','Dominica'),
@@ -956,10 +974,10 @@ cc_map AS (
 
     -- F
     ('fi','Finland'), ('fj','Fiji'), ('fk','Falkland Islands'),
-    ('fm','Micronesia'), ('fo','Faroe Islands'), ('fr','France'),
+    ('fm','Federated States of Micronesia'), ('fo','Faroe Islands'), ('fr','France'),
 
     -- G
-    ('ga','Gabon'), ('gb','United Kingdom (UK)'), ('gd','Grenada'),
+    ('ga','Gabon'), ('gb','United Kingdom'), ('gd','Grenada'),
     ('ge','Georgia'), ('gf','French Guiana'), ('gg','Guernsey'),
     ('gh','Ghana'), ('gi','Gibraltar'), ('gl','Greenland'), ('gm','Gambia'),
     ('gn','Guinea'), ('gp','Guadeloupe'), ('gq','Equatorial Guinea'),
@@ -992,7 +1010,7 @@ cc_map AS (
     -- M
     ('ma','Morocco'), ('mc','Monaco'), ('md','Moldova'), ('me','Montenegro'),
     ('mg','Madagascar'), ('mh','Marshall Islands'), ('mk','North Macedonia'),
-    ('ml','Mali'), ('mm','Myanmar'), ('mn','Mongolia'), ('mo','Macau'),
+    ('ml','Mali'), ('mm','Myanmar'), ('mn','Mongolia'), ('mo','Macao'),
     ('mp','Northern Mariana Islands'), ('mq','Martinique'), ('mr','Mauritania'),
     ('ms','Montserrat'), ('mt','Malta'), ('mu','Mauritius'), ('mv','Maldives'),
     ('mw','Malawi'), ('mx','Mexico'), ('my','Malaysia'), ('mz','Mozambique'),
@@ -1017,7 +1035,7 @@ cc_map AS (
     ('qa','Qatar'),
 
     -- R
-    ('re','Reunion'), ('ro','Romania'), ('rs','Serbia'), ('ru','Russia'),
+    ('re','Réunion'), ('ro','Romania'), ('rs','Serbia'), ('ru','Russia'),
     ('rw','Rwanda'),
 
     -- S
@@ -1025,7 +1043,7 @@ cc_map AS (
     ('sd','Sudan'), ('se','Sweden'), ('sg','Singapore'), ('sh','Saint Helena'),
     ('si','Slovenia'), ('sj','Svalbard and Jan Mayen'), ('sk','Slovakia'),
     ('sl','Sierra Leone'), ('sm','San Marino'), ('sn','Senegal'),
-    ('so','Somalia'), ('sr','Suriname'), ('st','Sao Tome and Principe'),
+    ('so','Somalia'), ('sr','Suriname'), ('st','São Tomé and Príncipe'),
     ('su','Soviet Union (legacy)'), ('sv','El Salvador'), ('sx','Sint Maarten'),
     ('sy','Syria'), ('sz','Eswatini'),('ss','South Sudan'),('bl','Saint Barthélemy'),
     ('mf','Saint Martin (French)'),
@@ -1033,7 +1051,7 @@ cc_map AS (
     -- T
     ('tc','Turks and Caicos Islands'), ('td','Chad'), ('tf','French Southern Territories'),
     ('tg','Togo'), ('th','Thailand'), ('tj','Tajikistan'), ('tk','Tokelau'),
-    ('tl','East Timor'), ('tm','Turkmenistan'), ('tn','Tunisia'),
+    ('tl','Timor-Leste'), ('tm','Turkmenistan'), ('tn','Tunisia'),
     ('to','Tonga'), ('tr','Türkiye'), ('tt','Trinidad and Tobago'),
     ('tv','Tuvalu'), ('tw','Taiwan'), ('tz','Tanzania'),
 
@@ -1043,7 +1061,7 @@ cc_map AS (
     ('um','U.S. Outlying Islands'),
 
     -- V
-    ('va','Vatican City'), ('vc','Saint Vincent and the Grenadines'),
+    ('va','Holy See (Vatican City State)'), ('vc','Saint Vincent and the Grenadines'),
     ('ve','Venezuela'), ('vg','British Virgin Islands'), ('vi','US Virgin Islands'),
     ('vn','Vietnam'), ('vu','Vanuatu'),
 
@@ -1080,6 +1098,7 @@ cc_map AS (
 
   ])
 ),
+
 
 -- 3) Source pages + Lighthouse category scores (host extracted)
 pages AS (
@@ -1444,6 +1463,8 @@ domain_scores AS (
     seo  AS seo_score,
     bucket
   FROM final_best
+  -- WHERE bucket = 'United States (USA)'      -- US only
+  -- WHERE bucket <> 'United States (USA)'     -- non-US only
 )
 
 -- Final SELECT
