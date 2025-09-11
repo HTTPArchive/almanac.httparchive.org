@@ -764,8 +764,12 @@ regex_rules AS (
 
     -- France
     ('(^|\\.)((assemblee-nationale|senat|conseil-constitutionnel|conseil-etat|courdescomptes|vie-publique)\\.fr)$', 'France', 24),
-    -- ('(^|\\.)(([a-z0-9-]+\\.)*gouv\\.fr)$', 'France', 23),
-
+    ('(^|\\.)((region[a-z0-9-]*|[a-z0-9-]+-region)\\.(fr|alsace|bzh))$', 'France', 22),   
+    ('(^|\\.)((departement[a-z0-9-]*)\\.(fr|alsace|bzh))$', 'France', 22),  -- Departments: departement-... (covers "departementdugard.fr", etc.)
+    ('(^|\\.)cc-[a-z0-9-]+\\.(fr|alsace|bzh)$', 'France', 22),              -- Communautés de communes (very common "cc-..." convention)
+    ('(^|\\.)[a-z0-9-]+\\.agglo\\.(fr|alsace|bzh)$', 'France', 22),         -- Communautés d’agglomération: ... .agglo.{tld}
+    ('(^|\\.)grand-?(paris|lyon|nancy|metz|reims|poitiers|angouleme|annecy|avignon|besancon|dijon)[a-z0-9-]*\\.(fr|alsace|bzh)$', 'France', 22),
+    ('(^|\\.)(([a-z0-9-]+\\.)*gouv\\.fr)$', 'France', 23),  -- central government family (uncommented and kept specific to .fr)
 
     -- Germany
     ('(^|\\.)((stadt|gemeinde|verbandsgemeinde|vg|amt|bezirksamt|kreisverwaltung|kreisstadt|rathaus)[-.].*\\.de)$', 'Germany', 20),
@@ -1072,11 +1076,11 @@ pages AS (
 -- ========================
   
   FROM
-  `httparchive.sample_data.pages_10k` 
-  -- `httparchive.crawl.pages`
+  -- `httparchive.sample_data.pages_10k` 
+  `httparchive.crawl.pages`
   WHERE 
-    -- date = DATE '2025-07-01' AND
-    -- is_root_page AND
+    date = DATE '2025-07-01' AND
+    is_root_page AND
 
 -- ========================
 -- Small Sample to Full DB - End
@@ -1253,14 +1257,64 @@ ca_prov_from_gc AS (
   WHERE ENDS_WITH(p.host, '.gc.ca')
 ),
 
+ca_prov_from_gov_or_gouv AS (
+  SELECT
+    p.page, p.host,
+    LOWER(REGEXP_EXTRACT(
+      p.host, r'(?i)(?:^|\.)(?:gov|gouv)\.(ab|bc|mb|nb|nl|ns|nt|nu|on|pe|qc|sk|yt|yk)\.ca$'
+    )) AS prov_code
+  FROM pages_scored p
+  WHERE REGEXP_CONTAINS(
+    p.host, r'(?i)(?:^|\.)(?:gov|gouv)\.(ab|bc|mb|nb|nl|ns|nt|nu|on|pe|qc|sk|yt|yk)\.ca$'
+  )
+),
+
+ca_known_portals AS (
+  SELECT * FROM UNNEST([
+    -- pan-province roots and canonical portals
+    STRUCT('ontario.ca'                 AS suffix, 'Ontario'                AS province),
+    ('saskatchewan.ca',                 'Saskatchewan'),
+    ('alberta.ca',                      'Alberta'),
+    ('gov.bc.ca',                       'British Columbia'),
+    ('manitoba.ca',                     'Manitoba'),
+    ('novascotia.ca',                   'Nova Scotia'),
+    ('newfoundlandlabrador.ca',         'Newfoundland and Labrador'),
+    ('gnb.ca',                          'New Brunswick'),        -- www, www1, www3.gnb.ca…
+    ('princeedwardisland.ca',           'Prince Edward Island'),
+    ('yukon.ca',                        'Yukon'),
+    ('gov.nt.ca',                       'Northwest Territories'),
+    ('gov.nu.ca',                       'Nunavut'),
+    ('quebec.ca',                       'Quebec'),
+    ('gouv.qc.ca',                      'Quebec')
+  ])
+),
+ca_prov_from_known_portals AS (
+  SELECT
+    p.page, p.host,
+    kp.province AS province_from_suffix
+  FROM pages_scored p
+  JOIN ca_known_portals kp
+    ON REGEXP_CONTAINS(
+         p.host,
+         CONCAT(r'(?i)(^|\.)', REGEXP_REPLACE(kp.suffix, r'([.^$|()\\[\\]{}+*?-])', r'\\\1'), r'$')
+       )
+),
+
 -- Canadian domain overrides for branded/legacy provincial portals
 ca_province_classified AS (
   SELECT
-    g.page, g.host,
-    m.province AS ca_province
-  FROM ca_prov_from_gc g
-  LEFT JOIN ca_prov_map m
-    ON g.prov_code = m.code
+    p.page, p.host,
+    COALESCE(
+      k.province_from_suffix,                       -- strongest: exact known portal
+      m1.province,                                  -- …gov.xx.ca / …gouv.qc.ca
+      m2.province                                   -- federal *.gc.ca with province token
+    ) AS ca_province
+  FROM pages_scored p
+  LEFT JOIN ca_prov_from_known_portals k USING (page, host)
+  LEFT JOIN ca_prov_from_gov_or_gouv g USING (page, host)
+  LEFT JOIN ca_prov_map m1 ON g.prov_code = m1.code
+  LEFT JOIN ca_prov_from_gc gc USING (page, host)
+  LEFT JOIN ca_prov_map m2 ON gc.prov_code = m2.code
 ),
 
 -- US state code lookup (code → state name)
