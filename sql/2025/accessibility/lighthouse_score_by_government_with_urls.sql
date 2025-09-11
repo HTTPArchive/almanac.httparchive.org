@@ -873,18 +873,19 @@ regex_rules AS (
     -- ('(^|\\.)[a-z0-9-]+\\.gov\\.ua$', 'Ukraine', 22),
 
     -- United Kingdom (UK)
-    ('(^|\\.)[a-z0-9-]+\\.nhs\\.uk$', 'United Kingdom (UK)', 22),
-    ('(^|\\.)[a-z0-9-]+\\.police\\.uk$', 'United Kingdom (UK)', 22),
-    ('(^|\\.)[a-z0-9-]+\\.mod\\.uk$', 'United Kingdom (UK)', 22),
+    ('(^|\\.)((?:[a-z0-9-]+\\.)?nhs\\.uk)$',     'United Kingdom (UK)', 22),
+    ('(^|\\.)((?:[a-z0-9-]+\\.)?police\\.uk)$',  'United Kingdom (UK)', 22),
+    ('(^|\\.)((?:[a-z0-9-]+\\.)?mod\\.uk)$',     'United Kingdom (UK)', 22),
     ('(^|\\.)[a-z0-9-]+\\.parliament\\.uk$', 'United Kingdom (UK)', 23),
     ('(^|\\.)[a-z0-9-]+\\.judiciary\\.uk$', 'United Kingdom (UK)', 23),
     ('(^|\\.)supremecourt\\.uk$', 'United Kingdom (UK)', 23),
-    ('(^|\\.)[a-z0-9-]+\\.gov\\.scot$', 'United Kingdom (UK)', 23),
-    ('(^|\\.)[a-z0-9-]+\\.gov\\.wales$', 'United Kingdom (UK)', 23),
-    ('(^|\\.)[a-z0-9-]+\\.llyw\\.cymru$', 'United Kingdom (UK)', 23),
-    ('(^|\\.)[a-z0-9-]+\\.nhs\\.scot$', 'United Kingdom (UK)', 22),
+    ('(^|\\.)((?:[a-z0-9-]+\\.)?gov\\.scot)$',   'United Kingdom (UK)', 23),
+    ('(^|\\.)((?:[a-z0-9-]+\\.)?gov\\.wales)$',  'United Kingdom (UK)', 23),
+    ('(^|\\.)((?:[a-z0-9-]+\\.)?llyw\\.cymru)$', 'United Kingdom (UK)', 23),
+    ('(^|\\.)((?:[a-z0-9-]+\\.)?nhs\\.scot)$',   'United Kingdom (UK)', 22),
     ('(^|\\.)police\\.scot$', 'United Kingdom (UK)', 22),
-    -- ('(^|\\.)[a-z0-9-]+\\.gov\\.uk$', 'United Kingdom (UK)', 22),
+    ('(^|\\.)[a-z0-9-]+\\.gov\\.uk$', 'United Kingdom (UK)', 22),
+
 
     -- United States (USA)
     ('\\.gov$', 'United States (USA)', 22),
