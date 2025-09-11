@@ -1,14 +1,21 @@
 # standardSQL
 # What percentage of URLs are hosted on a known green web hosting provider?
 
-WITH green AS (
+WITH gwf_date AS (
+  SELECT MAX(date) AS date
+  FROM `httparchive.almanac.green_web_foundation`
+  WHERE date <= '2025-06-01'
+),
+
+green AS (
   SELECT
     TRUE AS is_green,
     NET.HOST(url) AS host
   FROM
-    `httparchive.almanac.green_web_foundation`
-  WHERE
-    date = '2025-09-01'
+    `httparchive.almanac.green_web_foundation` g
+  JOIN
+    gwf_date d
+  ON g.date = d.date
 ),
 
 pages AS (
@@ -34,7 +41,7 @@ SELECT
   END AS ranking,
   COUNTIF(is_green) AS total_green,
   COUNT(0) AS total_sites,
-  SAFE_DIVIDE(COUNTIF(is_green), COUNT(0)) AS pct_green
+  ROUND(100 * SAFE_DIVIDE(COUNTIF(is_green), COUNT(0)), 2) AS pct_green
 FROM (
   -- Left join green hosting information
   SELECT

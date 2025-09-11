@@ -7,7 +7,7 @@ WITH script_data AS (
     CAST(
       JSON_EXTRACT_SCALAR(
         JSON_EXTRACT(
-          JSON_EXTRACT_SCALAR(payload, '$._javascript'),
+          TO_JSON_STRING(custom_metrics.javascript),
           '$.script_tags'
         ),
         '$.total'
@@ -16,7 +16,7 @@ WITH script_data AS (
     CAST(
       JSON_EXTRACT_SCALAR(
         JSON_EXTRACT(
-          JSON_EXTRACT_SCALAR(payload, '$._javascript'),
+          TO_JSON_STRING(custom_metrics.javascript),
           '$.script_tags'
         ),
         '$.inline'
@@ -25,7 +25,7 @@ WITH script_data AS (
     CAST(
       JSON_EXTRACT_SCALAR(
         JSON_EXTRACT(
-          JSON_EXTRACT_SCALAR(payload, '$._javascript'),
+          TO_JSON_STRING(custom_metrics.javascript),
           '$.script_tags'
         ),
         '$.src'
@@ -35,7 +35,7 @@ WITH script_data AS (
       CAST(
         JSON_EXTRACT_SCALAR(
           JSON_EXTRACT(
-            JSON_EXTRACT_SCALAR(payload, '$._javascript'),
+            TO_JSON_STRING(custom_metrics.javascript),
             '$.script_tags'
           ),
           '$.inline'
@@ -44,7 +44,7 @@ WITH script_data AS (
       CAST(
         JSON_EXTRACT_SCALAR(
           JSON_EXTRACT(
-            JSON_EXTRACT_SCALAR(payload, '$._javascript'),
+            TO_JSON_STRING(custom_metrics.javascript),
             '$.script_tags'
           ),
           '$.total'
@@ -55,7 +55,7 @@ WITH script_data AS (
       CAST(
         JSON_EXTRACT_SCALAR(
           JSON_EXTRACT(
-            JSON_EXTRACT_SCALAR(payload, '$._javascript'),
+            TO_JSON_STRING(custom_metrics.javascript),
             '$.script_tags'
           ),
           '$.src'
@@ -64,7 +64,7 @@ WITH script_data AS (
       CAST(
         JSON_EXTRACT_SCALAR(
           JSON_EXTRACT(
-            JSON_EXTRACT_SCALAR(payload, '$._javascript'),
+            TO_JSON_STRING(custom_metrics.javascript),
             '$.script_tags'
           ),
           '$.total'
@@ -77,7 +77,7 @@ WITH script_data AS (
     date = '2025-06-01' AND
     JSON_EXTRACT_SCALAR(
       JSON_EXTRACT(
-        JSON_EXTRACT_SCALAR(payload, '$._javascript'), '$.script_tags'
+        TO_JSON_STRING(custom_metrics.javascript), '$.script_tags'
       ),
       '$.total'
     ) IS NOT NULL
@@ -89,10 +89,10 @@ SELECT
   SUM(total_scripts) AS total_scripts,
   SUM(inline_scripts) AS inline_scripts,
   SUM(external_scripts) AS external_scripts,
-  SAFE_DIVIDE(
+  ROUND(100 * SAFE_DIVIDE(
     SUM(external_scripts), SUM(total_scripts)
-  ) AS pct_external_script,
-  SAFE_DIVIDE(SUM(inline_scripts), SUM(total_scripts)) AS pct_inline_script,
+  ), 2) AS pct_external_script,
+  ROUND(100 * SAFE_DIVIDE(SUM(inline_scripts), SUM(total_scripts)), 2) AS pct_inline_script,
   APPROX_QUANTILES(
     SAFE_DIVIDE(external_scripts, total_scripts), 1000
   )[OFFSET(500)] AS median_external,

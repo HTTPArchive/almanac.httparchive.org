@@ -4,25 +4,25 @@ WITH stylesheet_data AS (
   SELECT
     client,
     page,
-    CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT(JSON_EXTRACT_SCALAR(payload, '$._javascript'), '$.document'), '$.stylesheets') AS INT64) AS external_stylesheets,
-    CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT(JSON_EXTRACT_SCALAR(payload, '$._javascript'), '$.document'), '$.inlineStyles') AS INT64) AS inline_stylesheets,
+    CAST(JSON_EXTRACT_SCALAR(TO_JSON_STRING(custom_metrics.javascript), '$.document.stylesheets') AS INT64) AS external_stylesheets,
+    CAST(JSON_EXTRACT_SCALAR(TO_JSON_STRING(custom_metrics.javascript), '$.document.inlineStyles') AS INT64) AS inline_stylesheets,
     SAFE_DIVIDE(
-      CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT(JSON_EXTRACT_SCALAR(payload, '$._javascript'), '$.document'), '$.inlineStyles') AS INT64),
-      CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT(JSON_EXTRACT_SCALAR(payload, '$._javascript'), '$.document'), '$.stylesheets') AS INT64) +
-      CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT(JSON_EXTRACT_SCALAR(payload, '$._javascript'), '$.document'), '$.inlineStyles') AS INT64)
+      CAST(JSON_EXTRACT_SCALAR(TO_JSON_STRING(custom_metrics.javascript), '$.document.inlineStyles') AS INT64),
+      CAST(JSON_EXTRACT_SCALAR(TO_JSON_STRING(custom_metrics.javascript), '$.document.stylesheets') AS INT64) +
+      CAST(JSON_EXTRACT_SCALAR(TO_JSON_STRING(custom_metrics.javascript), '$.document.inlineStyles') AS INT64)
     ) AS pct_inline_stylesheets,
     SAFE_DIVIDE(
-      CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT(JSON_EXTRACT_SCALAR(payload, '$._javascript'), '$.document'), '$.stylesheets') AS INT64),
-      CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT(JSON_EXTRACT_SCALAR(payload, '$._javascript'), '$.document'), '$.stylesheets') AS INT64) +
-      CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT(JSON_EXTRACT_SCALAR(payload, '$._javascript'), '$.document'), '$.inlineStyles') AS INT64)
+      CAST(JSON_EXTRACT_SCALAR(TO_JSON_STRING(custom_metrics.javascript), '$.document.stylesheets') AS INT64),
+      CAST(JSON_EXTRACT_SCALAR(TO_JSON_STRING(custom_metrics.javascript), '$.document.stylesheets') AS INT64) +
+      CAST(JSON_EXTRACT_SCALAR(TO_JSON_STRING(custom_metrics.javascript), '$.document.inlineStyles') AS INT64)
     ) AS pct_external_stylesheets
   FROM
     `httparchive.crawl.pages`
   WHERE
-    date = '2024-06-01'
+    date = '2025-06-01'
     AND
     is_root_page = TRUE AND
-    JSON_EXTRACT_SCALAR(JSON_EXTRACT(JSON_EXTRACT_SCALAR(payload, '$._javascript'), '$.document'), '$.stylesheets') IS NOT NULL
+    JSON_EXTRACT_SCALAR(TO_JSON_STRING(custom_metrics.javascript), '$.document.stylesheets') IS NOT NULL
 )
 
 SELECT
@@ -30,8 +30,8 @@ SELECT
   COUNT(DISTINCT page) AS pages_analyzed,
   SUM(external_stylesheets) AS external_stylesheets,
   SUM(inline_stylesheets) AS inline_stylesheets,
-  SAFE_DIVIDE(SUM(inline_stylesheets), SUM(inline_stylesheets + external_stylesheets)) AS pct_inline_stylesheets,
-  SAFE_DIVIDE(SUM(external_stylesheets), SUM(inline_stylesheets + external_stylesheets)) AS pct_external_stylesheets,
+  ROUND(100 * SAFE_DIVIDE(SUM(inline_stylesheets), SUM(inline_stylesheets + external_stylesheets)), 2) AS pct_inline_stylesheets,
+  ROUND(100 * SAFE_DIVIDE(SUM(external_stylesheets), SUM(inline_stylesheets + external_stylesheets)), 2) AS pct_external_stylesheets,
   APPROX_QUANTILES(SAFE_DIVIDE(inline_stylesheets, inline_stylesheets + external_stylesheets), 1000)[OFFSET(500)] AS median_inline_stylesheets,
   APPROX_QUANTILES(SAFE_DIVIDE(external_stylesheets, inline_stylesheets + external_stylesheets), 1000)[OFFSET(500)] AS median_external_stylesheets
 FROM

@@ -1,11 +1,23 @@
 #standardSQL
 # Median third-parties & green third-party requests per websites by rank
 
-WITH requests AS (
+WITH third_party_date AS (
+  SELECT MAX(date) AS date
+  FROM `httparchive.almanac.third_parties`
+  WHERE date <= '2025-06-01'
+),
+
+gwf_date AS (
+  SELECT MAX(date) AS date
+  FROM `httparchive.almanac.green_web_foundation`
+  WHERE date <= '2025-06-01'
+),
+
+requests AS (
   SELECT
     client,
     url,
-    CAST(JSON_VALUE(summary, '$.pageid') AS INT64) AS page
+    page
   FROM
     `httparchive.crawl.requests`
   WHERE
@@ -17,20 +29,21 @@ green AS (
     TRUE AS is_green,
     NET.HOST(url) AS host
   FROM
-    `httparchive.almanac.green_web_foundation`
-  WHERE
-    date = '2025-09-01'
+    `httparchive.almanac.green_web_foundation` g
+  JOIN gwf_date d
+  ON g.date = d.date
 ),
 
 pages AS (
   SELECT
     client,
     rank,
-    CAST(JSON_VALUE(summary, '$.pageid') AS INT64) AS page
+    page
   FROM
     `httparchive.crawl.pages`
   WHERE
-    date = '2025-06-01'
+    date = '2025-06-01' AND
+    is_root_page
 ),
 
 third_party AS (
@@ -41,9 +54,9 @@ third_party AS (
     `httparchive.almanac.third_parties` AS tp
   INNER JOIN
     requests AS r
-  ON NET.HOST(r.url) = NET.HOST(tp.domain)
+  ON NET.REG_DOMAIN(r.url) = NET.REG_DOMAIN(tp.domain)
   WHERE
-    tp.date = '2025-06-01' AND
+    tp.date = (SELECT date FROM third_party_date) AND
     tp.category NOT IN ('hosting')
   GROUP BY
     tp.domain
@@ -57,9 +70,9 @@ green_tp AS (
     `httparchive.almanac.third_parties` AS tp
   INNER JOIN
     green AS g
-  ON NET.HOST(g.host) = NET.HOST(tp.domain)
+  ON NET.REG_DOMAIN(g.host) = NET.REG_DOMAIN(tp.domain)
   WHERE
-    tp.date = '2025-06-01' AND
+    tp.date = (SELECT date FROM third_party_date) AND
     tp.category NOT IN ('hosting')
   GROUP BY
     tp.domain
@@ -70,13 +83,13 @@ base AS (
     r.client,
     r.page,
     p.rank,
-    COUNT(tp.domain) AS third_parties_per_page
+    COUNT(DISTINCT tp.domain) AS third_parties_per_page
   FROM
     requests AS r
   LEFT JOIN
     third_party AS tp
   ON
-    NET.HOST(r.url) = NET.HOST(tp.domain)
+    NET.REG_DOMAIN(r.url) = NET.REG_DOMAIN(tp.domain)
   INNER JOIN
     pages AS p
   ON r.client = p.client AND r.page = p.page
@@ -91,13 +104,13 @@ base_green AS (
     r.client,
     r.page,
     p.rank,
-    COUNT(gtp.domain) AS green_third_parties_per_page
+    COUNT(DISTINCT gtp.domain) AS green_third_parties_per_page
   FROM
     requests AS r
   LEFT JOIN
     green_tp AS gtp
   ON
-    NET.HOST(r.url) = NET.HOST(gtp.domain)
+    NET.REG_DOMAIN(r.url) = NET.REG_DOMAIN(gtp.domain)
   INNER JOIN
     pages AS p
   ON r.client = p.client AND r.page = p.page
@@ -126,7 +139,7 @@ SELECT
       bg.green_third_parties_per_page,
       b.third_parties_per_page
     ), 1000
-  )[OFFSET(500)] AS pct_green
+  )[OFFSET(500)] * 100 AS pct_green
 FROM
   base AS b,
   UNNEST([1000, 10000, 100000, 1000000, 10000000, 100000000]) AS rank_grouping

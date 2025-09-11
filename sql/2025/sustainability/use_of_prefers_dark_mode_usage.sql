@@ -12,7 +12,7 @@ WITH combined_data AS (
             SELECT 1
             FROM UNNEST(JSON_EXTRACT_ARRAY(css, '$.stylesheet.rules')) AS rule
             WHERE JSON_EXTRACT_SCALAR(rule, '$.type') = 'media' AND
-              JSON_EXTRACT_SCALAR(rule, '$.media') = '(prefers-color-scheme:dark)'
+              LOWER(JSON_EXTRACT_SCALAR(rule, '$.media')) LIKE '%prefers-color-scheme:dark%'
           )
           THEN 1
         ELSE 0

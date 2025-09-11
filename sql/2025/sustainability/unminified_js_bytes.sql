@@ -8,7 +8,7 @@ SELECT
     CAST(
       JSON_VALUE(
         lighthouse,
-        '$.audits.minify-javascript.details.overallSavingsBytes'
+        '$.audits.unminified-javascript.details.overallSavingsBytes'
       ) AS INT64
     ) / 1024,
     1000
