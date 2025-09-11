@@ -381,8 +381,7 @@ host_rules AS (
 
     -- Iran
     ('gov.ir','Iran',24),('iran.ir','Iran',24),('irangov.ir','Iran',24),('president.ir','Iran',24),('parliran.ir','Iran',24),('adliran.ir','Iran',24),('cbi.ir','Iran',24),('moi.ir','Iran',23),('mop.ir','Iran',23),('mefa.ir','Iran',23),
-    ('mfa.gov.ir','Iran',23),('ito.gov.ir','Iran',23), ('(^|\\.)[a-z0-9-]+\\.gov\\.ir$', 'Iran', 20),
-    ('gov.iq','Iraq',24),('iraq.gov.iq','Iraq',24),('parliament.iq','Iraq',24),('presidency.iq','Iraq',24),('iraqna.iq','Iraq',23),('mofa.gov.iq','Iraq',23),('moi.gov.iq','Iraq',23),('moh.gov.iq','Iraq',23),
+    ('mfa.gov.ir','Iran',23),('ito.gov.ir','Iran',23), ('gov.iq','Iraq',24),('iraq.gov.iq','Iraq',24),('parliament.iq','Iraq',24),('presidency.iq','Iraq',24),('iraqna.iq','Iraq',23),('mofa.gov.iq','Iraq',23),('moi.gov.iq','Iraq',23),('moh.gov.iq','Iraq',23),
 
     -- Ireland
     ('gov.ie','Ireland',24),('oireachtas.ie','Ireland',24),('president.ie','Ireland',24),('citizensinformation.ie','Ireland',24),('irishstatutebook.ie','Ireland',24),
@@ -743,158 +742,180 @@ host_rules AS (
 -- 2) Regex family rules for patterned domains (.gov.uk, .gob.es, etc.)
 regex_rules AS (
   SELECT * FROM UNNEST([
-
-    -- United Nations
-    STRUCT('(^|\\.)(([a-z0-9-]+\\.)*un\\.org)$' AS pattern, 'United Nations' AS bucket, 9 AS priority),   -- core un.org + subdomains
-    ('(^|\\.)(([a-z0-9-]+\\.)*(who|icao|wmo|wipo|itu)\\.int)$', 'United Nations', 9),                     -- .int agencies
-    ('(^|\\.)(([a-z0-9-]+\\.)*(undp|unhcr|unicef|unodc|unido|unfpa)\\.org)$','United Nations',9),         -- .org agencies
+    STRUCT('(^|\\.)((?:[a-z0-9-]+\\.)*un\\.org)$' AS pattern, 'United Nations' AS bucket, 9 AS priority),
+    ('(^|\\.)((?:[a-z0-9-]+\\.)*(who|icao|wmo|wipo|itu)\\.int)$',                   'United Nations',       9),
+    ('(^|\\.)((?:[a-z0-9-]+\\.)*(undp|unhcr|unicef|unodc|unido|unfpa)\\.org)$',     'United Nations',       9),
 
     -- European Union
-    ('(^|\\.)(([a-z0-9-]+\\.)*eu\\.int|(eu20\\d{2}|20\\d{2}eu|[a-z]{2}20\\d{2})\\.(eu|[a-z]{2}))$', 'European Union', 23),                -- *.eu.int and “EU Presidency” style hostnames like eu2025.xx
-    ('(^|\\.)((copernicus|euvsdisinfo|europeana|europass|wifi4eu|sanctionsmap|open-research-europe|euipo)\\.eu)$', 'European Union', 23), -- Well-known .eu program sites
+    ('(^|\\.)((?:[a-z0-9-]+\\.)*eu\\.int|(eu20\\d{2}|20\\d{2}eu|[a-z]{2}20\\d{2})\\.(eu|[a-z]{2}))$', 'European Union', 23),
+    ('(^|\\.)((?:[a-z0-9-]+\\.)*(copernicus|euvsdisinfo|europeana|europass|wifi4eu|sanctionsmap|open-research-europe|euipo)\\.eu)$',
+                                                                                                       'European Union', 23),
 
     -- Canada
-    ('(^|\\.)[a-z0-9-]+\\.gc\\.ca$', 'Canada', 22),
-    ('(^|\\.)[a-z0-9-]+\\.canada\\.ca$', 'Canada', 22),
-    ('(^|\\.)gov\\.(ab|bc|mb|nb|nl|ns|nt|nu|on|pe|qc|sk|yk)\\.ca$', 'Canada', 22),
+    ('(^|\\.)((?:[a-z0-9-]+\\.)*gc\\.ca)$',                                         'Canada',              22),
+    ('(^|\\.)((?:[a-z0-9-]+\\.)*canada\\.ca)$',                                     'Canada',              22),
+    ('(^|\\.)((?:[a-z0-9-]+\\.)*gov\\.(ab|bc|mb|nb|nl|ns|nt|nu|on|pe|qc|sk|yk)\\.ca)$',
+                                                                                     'Canada',              22),
 
     -- Denmark
-    ('(^|\\.)((regionh|rsyd|rm|rn|regionsjaelland)\\.dk)$', 'Denmark', 23),
-    ('(^|\\.)((politi|skat|sundhed|virk|borger)\\.dk)$', 'Denmark', 23),
+    ('(^|\\.)((?:[a-z0-9-]+\\.)*(regionh|rsyd|rm|rn|regionsjaelland)\\.dk)$',       'Denmark',             23),
+    ('(^|\\.)((?:[a-z0-9-]+\\.)*(politi|skat|sundhed|virk|borger)\\.dk)$',          'Denmark',             23),
 
     -- France
-    ('(^|\\.)((assemblee-nationale|senat|conseil-constitutionnel|conseil-etat|courdescomptes|vie-publique)\\.fr)$', 'France', 24),
-    ('(^|\\.)((region[a-z0-9-]*|[a-z0-9-]+-region)\\.(fr|alsace|bzh))$', 'France', 22),   
-    ('(^|\\.)((departement[a-z0-9-]*)\\.(fr|alsace|bzh))$', 'France', 22),  -- Departments: departement-... (covers "departementdugard.fr", etc.)
-    ('(^|\\.)cc-[a-z0-9-]+\\.(fr|alsace|bzh)$', 'France', 22),              -- Communautés de communes (very common "cc-..." convention)
-    ('(^|\\.)[a-z0-9-]+\\.agglo\\.(fr|alsace|bzh)$', 'France', 22),         -- Communautés d’agglomération: ... .agglo.{tld}
-    ('(^|\\.)grand-?(paris|lyon|nancy|metz|reims|poitiers|angouleme|annecy|avignon|besancon|dijon)[a-z0-9-]*\\.(fr|alsace|bzh)$', 'France', 22),
-    ('(^|\\.)(([a-z0-9-]+\\.)*gouv\\.fr)$', 'France', 23),  -- central government family (uncommented and kept specific to .fr)
+    ('(^|\\.)((?:[a-z0-9-]+\\.)*(assemblee-nationale|senat|conseil-constitutionnel|conseil-etat|courdescomptes|vie-publique)\\.fr)$',
+                                                                                                       'France',              24),
+    ('(^|\\.)((?:[a-z0-9-]+\\.)*(region[a-z0-9-]*|[a-z0-9-]+-region)\\.(fr|alsace|bzh))$', 'France',     22),
+    ('(^|\\.)((?:[a-z0-9-]+\\.)*departement[a-z0-9-]*\\.(fr|alsace|bzh))$',         'France',              22),
+    ('(^|\\.)((?:[a-z0-9-]+\\.)*cc-[a-z0-9-]+\\.(fr|alsace|bzh))$',                 'France',              22),
+    ('(^|\\.)((?:[a-z0-9-]+\\.)*[a-z0-9-]+\\.agglo\\.(fr|alsace|bzh))$',            'France',              22),
+    ('(^|\\.)((?:[a-z0-9-]+\\.)*grand-?(paris|lyon|nancy|metz|reims|poitiers|angouleme|annecy|avignon|besancon|dijon)[a-z0-9-]*\\.(fr|alsace|bzh))$',
+                                                                                                       'France',              22),
+    ('(^|\\.)((?:[a-z0-9-]+\\.)*gouv\\.fr)$',                                       'France',              23),
 
     -- Germany
-    ('(^|\\.)((stadt|gemeinde|verbandsgemeinde|vg|amt|bezirksamt|kreisverwaltung|kreisstadt|rathaus)[-.].*\\.de)$', 'Germany', 20),
-    ('(^|\\.)((landkreis|kreis|bezirk)[-.].*\\.de)$', 'Germany', 19),
-    ('(^|\\.)((polizei|justiz|innenministerium|finanzministerium|wirtschaftsministerium|kultusministerium|sozialministerium|verkehrsministerium|verfassungsschutz|rechnungshof|gesundheitsministerium|wissenschaftsministerium|landwirtschaftsministerium)\\.?\\.?.*\\.de)$', 'Germany', 20),
-    ('(^|\\.)((amtsgericht|landgericht|oberlandesgericht|sozialgericht|arbeitsgericht|finanzgericht|verwaltungsgericht|oberverwaltungsgericht|staatsanwaltschaft)[-.].*\\.de)$', 'Germany', 20),
-    ('(^|\\.)((bundesamt|bundesanstalt)[-.].*\\.de)$', 'Germany', 21),
-    ('(^|\\.)((finanzamt|zoll|arbeitsagentur|jobcenter|jugendamt)\\.?\\.?.*\\.de)$', 'Germany', 19),
-    ('(^|\\.)(([a-z0-9-]+\\.)*diplo\\.de)$', 'Germany', 21),
+    ('(^|\\.)((?:[a-z0-9-]+\\.)*(stadt|gemeinde|verbandsgemeinde|vg|amt|bezirksamt|kreisverwaltung|kreisstadt|rathaus)\\.[a-z0-9-]+(?:\\.[a-z0-9-]+)*\\.de)$',
+                                            'Germany', 20),    -- Municipal / local admin: keyword must be a full label before the city/county label
+    ('(^|\\.)((?:[a-z0-9-]+\\.)*(landkreis|kreis|bezirk)\\.[a-z0-9-]+(?:\\.[a-z0-9-]+)*\\.de)$',
+                                            'Germany', 19),    -- Ministries & nationwide families (already dot-separated list of optional labels after the ministry)
+    ('(^|\\.)((?:[a-z0-9-]+\\.)*(polizei|justiz|innenministerium|finanzministerium|wirtschaftsministerium|kultusministerium|sozialministerium|verkehrsministerium|verfassungsschutz|rechnungshof|gesundheitsministerium|wissenschaftsministerium|landwirtschaftsministerium)(?:\\.[a-z0-9-]+)*\\.de)$',
+                                            'Germany', 20),    -- Ministries & nationwide families (already dot-separated list of optional labels after the ministry)
+    ('(^|\\.)((?:[a-z0-9-]+\\.)*(amtsgericht|landgericht|oberlandesgericht|sozialgericht|arbeitsgericht|finanzgericht|verwaltungsgericht|oberverwaltungsgericht|staatsanwaltschaft)\\.[a-z0-9-]+(?:\\.[a-z0-9-]+)*\\.de)$',
+                                            'Germany', 20),    -- Courts  
+    ('(^|\\.)((?:[a-z0-9-]+\\.)*(bundesamt|bundesanstalt)\\.[a-z0-9-]+(?:\\.[a-z0-9-]+)*\\.de)$',
+                                            'Germany', 21),  -- Federal offices / agencies
+    ('(^|\\.)((?:[a-z0-9-]+\\.)*(zoll|arbeitsagentur)(?:\\.[a-z0-9-]+)*\\.de)$',
+                                            'Germany', 19),    -- Families that can appear as apex or with extra labels
+    ('(^|\\.)((?:[a-z0-9-]+\\.)*(finanzamt|jobcenter|jugendamt)\\.[a-z0-9-]+(?:\\.[a-z0-9-]+)*\\.de)$',
+                                            'Germany', 19),    -- Offices that usually require a locality label after them
+    ('(^|\\.)((?:[a-z0-9-]+\\.)*diplo\\.de)$',
+                                            'Germany', 21),    -- Foreign missions (diplo.de) apex + any subdomain
 
     -- Greece
-    ('(^|\\.)municipality\\.[a-z0-9-]+\\.gr$', 'Greece', 20),
+    ('(^|\\.)((?:[a-z0-9-]+\\.)*municipality\\.[a-z0-9-]+\\.gr)$',                 'Greece',       20),
 
     -- Guyana
-    ('(^|\\.)[a-z0-9-]+\\.gov\\.gy$', 'Guyana', 20),
+    ('(^|\\.)gov\\.gy$',                                                           'Guyana',       20),
 
     -- India
-    ('(^|\\.)((gov|nic)\\.in)$', 'India', 21),
+    ('(^|\\.)gov\\.in$',                                                           'India',        21),
+    ('(^|\\.)nic\\.in$',                                                           'India',        21),
 
     -- Indonesia
-    ('(^|\\.)[a-z0-9-]+\\.go\\.id$', 'Indonesia', 20),
+    ('(^|\\.)go\\.id$',                                                            'Indonesia',    20),
 
-    -- Ireland
-    ('(^|\\.)(([a-z0-9-]+coco\\.ie|[a-z0-9-]+council\\.ie))$', 'Ireland', 21),
+    -- Iran
+    ('(^|\\.)gov\\.ir$',                                                            'Iran', 20),
 
-    -- Italy
-    ('(^|\\.)comune\\.[a-z0-9-]+\\.it$', 'Italy', 20),
+    -- Ireland (e.g., fingalcoco.ie, dublincitycouncil.ie + any subdomains)
+    ('(^|\\.)((?:[a-z0-9-]+\\.)*(?:[a-z0-9-]+coco\\.ie|[a-z0-9-]+council\\.ie))$', 'Ireland',      21),
 
-    -- Japan
-    ('(^|\\.)[a-z0-9-]+\\.lg\\.jp$', 'Japan', 21),
+    -- Italy (e.g., comune.milano.it + any subdomains)
+    ('(^|\\.)((?:[a-z0-9-]+\\.)*comune\\.[a-z0-9-]+\\.it)$',                       'Italy',        20),
 
-    -- Luxembourg
+    -- Japan (at least one label before lg.jp, plus any depth under that)
+    ('(^|\\.)((?:[a-z0-9-]+\\.)+lg\\.jp)$',                                        'Japan',        21),
+
+    -- Luxembourg (already apex + any depth)
     ('(^|\\.)((public|gov|etat|data|service|security|mfi|lux)(\\.(public|gov|etat))?\\.lu)$', 'Luxembourg', 24),
-    ('(^|\\.)(([a-z0-9-]+\\.)*gouvernement\\.lu)$', 'Luxembourg', 24),
-    ('(^|\\.)(([a-z0-9-]+\\.)*public\\.lu)$', 'Luxembourg', 23),
+    ('(^|\\.)(([a-z0-9-]+\\.)*gouvernement\\.lu)$',                                 'Luxembourg',  24),
+    ('(^|\\.)(([a-z0-9-]+\\.)*public\\.lu)$',                                       'Luxembourg',  23),
 
-    -- Malaysia
-    ('(^|\\.)([a-z0-9-]+\\.){2,}gov\\.my$', 'Malaysia', 21),
-    -- ('(^|\\.)[a-z0-9-]+\\.gov\\.my$', 'Malaysia', 22),
+    -- Malaysia (simplify to apex gov.my + any depth)
+    ('(^|\\.)gov\\.my$',                                                            'Malaysia',     22),
+    ('(^|\\.)([a-z0-9-]+\\.){2,}gov\\.my$',                                         'Malaysia',     21),
 
-    -- Nepal
-    ('(^|\\.)[a-z0-9-]+\\.(gov|mil)\\.np$', 'Nepal', 22),
+    -- Nepal (both gov.np and mil.np families, apex + any depth)
+    ('(^|\\.)((?:[a-z0-9-]+\\.)*(?:gov|mil)\\.np)$',                                'Nepal',        22),
 
+   
     -- Netherlands
-    ('(^|\\.)[a-z0-9-]+\\.overheid\\.nl$', 'Netherlands', 22),
-    ('(^|\\.)[a-z0-9-]+\\.rijksoverheid\\.nl$', 'Netherlands', 22),
-    ('(^|\\.)gemeente[a-z0-9-]*\\.nl$', 'Netherlands', 21),
-    ('(^|\\.)provincie[a-z0-9-]*\\.nl$', 'Netherlands', 21),
-    -- ('(^|\\.)[a-z0-9-]+\\.gov\\.nl$', 'Netherlands', 22),
-  
+    ('(^|\\.)overheid\\.nl$',               'Netherlands', 22),
+    ('(^|\\.)rijksoverheid\\.nl$',          'Netherlands', 22),
+    ('(^|\\.)gemeente[a-z0-9-]+\\.nl$',     'Netherlands', 21),
+    ('(^|\\.)provincie[a-z0-9-]+\\.nl$',    'Netherlands', 21),
+    ('(^|\\.)[a-z0-9-]+\\.gov\\.nl$',       'Netherlands', 22),
+
     -- New Zealand
-    ('(^|\\.)[a-z0-9-]+\\.parliament\\.nz$', 'New Zealand', 22),
-    ('(^|\\.)[a-z0-9-]+\\.health\\.nz$', 'New Zealand', 22),
-    -- ('(^|\\.)[a-z0-9-]+\\.govt\\.nz$', 'New Zealand', 22),
-    -- ('(^|\\.)[a-z0-9-]+\\.mil\\.nz$', 'New Zealand', 22),
+    ('(^|\\.)parliament\\.nz$',             'New Zealand', 22),
+    ('(^|\\.)health\\.nz$',                 'New Zealand', 22),
+    ('(^|\\.)[a-z0-9-]+\\.govt\\.nz$',      'New Zealand', 22),
+    ('(^|\\.)[a-z0-9-]+\\.mil\\.nz$',       'New Zealand', 22),
 
     -- Norway
-    -- ('(^|\\.)[a-z0-9-]+\\.no$', 'Norway', 22),
+    ('(^|\\.)[a-z0-9-]+\\.no$',             'Norway', 22),
 
     -- Peru
-    ('(^|\\.)[a-z0-9-]+\\.region\\.gob\\.pe$', 'Peru', 21),
-    ('(^|\\.)[a-z0-9-]+\\.muni\\.gob\\.pe$', 'Peru', 20),
-    -- ('(^|\\.)[a-z0-9-]+\\.gob\\.pe$', 'Peru', 22),
+    ('(^|\\.)region\\.gob\\.pe$',           'Peru', 21),
+    ('(^|\\.)muni\\.gob\\.pe$',             'Peru', 20),
+    ('(^|\\.)[a-z0-9-]+\\.gob\\.pe$',       'Peru', 22),
 
     -- Poland
-    ('(^|\\.)um\\.[a-z0-9-]+\\.pl$', 'Poland', 20),
-    ('(^|\\.)ug\\.[a-z0-9-]+\\.pl$', 'Poland', 20),
-    ('(^|\\.)powiat[a-z0-9-]*\\.pl$', 'Poland', 20),
+    ('(^|\\.)um\\.[a-z0-9-]+\\.pl$',        'Poland', 20),
+    ('(^|\\.)ug\\.[a-z0-9-]+\\.pl$',        'Poland', 20),
+    ('(^|\\.)powiat[a-z0-9-]+\\.pl$',       'Poland', 20),
 
     -- Philippines
-    ('(^|\\.)[a-z0-9-]+\\.lgu\\.gov\\.ph$', 'Philippines', 21),
-    -- ('(^|\\.)[a-z0-9-]+\\.gov\\.ph$', 'Philippines', 22),
+    ('(^|\\.)lgu\\.gov\\.ph$',              'Philippines', 21),
+    ('(^|\\.)[a-z0-9-]+\\.gov\\.ph$',       'Philippines', 22),
 
     -- Portugal
-    ('(^|\\.)muni\\.[a-z0-9-]+\\.pt$', 'Portugal', 21),
-    ('(^|\\.)cm-[a-z0-9-]+\\.pt$', 'Portugal', 21),
-    ('(^|\\.)[a-z0-9-]+\\.cm\\.pt$', 'Portugal', 21),
-    -- ('(^|\\.)gov\\.pt$', 'Portugal', 22),
+    ('(^|\\.)muni\\.[a-z0-9-]+\\.pt$',      'Portugal', 21),
+    ('(^|\\.)cm-[a-z0-9-]+\\.pt$',          'Portugal', 21),
+    ('(^|\\.)[a-z0-9-]+\\.cm\\.pt$',        'Portugal', 21),
+    ('(^|\\.)gov\\.pt$',                    'Portugal', 22),
+
+
 
     -- Spain
-    ('(^|\\.)((ayto|ayuntamiento|diputacion(?:de)?|cabildo|consell)[-.][a-z0-9-]+\\.es)$', 'Spain', 20),
-    -- ('(^|\\.)[a-z0-9-]+\\.gob\\.es$', 'Spain', 22),
+    ('(^|\\.)((ayto|ayuntamiento|diputacion(?:de)?|cabildo|consell)[-.][a-z0-9-]+\\.es)$',
+                                            'Spain',      20),
+    ('(^|\\.)[a-z0-9-]+\\.gob\\.es$',    'Spain', 22),
 
     -- Sweden
-    ('(^|\\.)[a-z0-9-]+\\.kommun\\.se$', 'Sweden', 21),
-    ('(^|\\.)[a-z0-9-]+\\.region\\.se$', 'Sweden', 21),
-    -- ('(^|\\.)[a-z0-9-]+\\.gov\\.se$', 'Sweden', 22),
+    ('(^|\\.)[a-z0-9-]+\\.kommun\\.se$',    'Sweden',     21),  -- keep label required; avoid apex 'kommun.se'
+    ('(^|\\.)[a-z0-9-]+\\.region\\.se$',    'Sweden',     21),  -- keep label required; avoid apex 'region.se'
+    ('(^|\\.)[a-z0-9-]+\\.gov\\.se$',    'Sweden', 22),
 
     -- Switzerland
-    ('(^|\\.)[a-z0-9-]+\\.admin\\.ch$', 'Switzerland', 22),
+    ('(^|\\.)admin\\.ch$',                  'Switzerland', 22),
 
     -- Taiwan
-    ('(^|\\.)gov\\.taipei$', 'Taiwan', 22),
-    -- ('(^|\\.)[a-z0-9-]+\\.gov\\.tw$', 'Taiwan', 22),
+    ('(^|\\.)gov\\.taipei$',                'Taiwan',      22),
+    ('(^|\\.)[a-z0-9-]+\\.gov\\.tw$',    'Taiwan', 22),
     
     -- Türkiye
-    ('(^|\\.)[a-z0-9-]+\\.bel\\.tr$', 'Türkiye', 21),
+    ('(^|\\.)[a-z0-9-]+\\.bel\\.tr$',       'Türkiye',     21),  -- require a label; avoid apex 'bel.tr'
 
     -- Ukraine
-    ('(^|\\.)[a-z0-9-]+\\.rada\\.gov\\.ua$', 'Ukraine', 22),
-    -- ('(^|\\.)[a-z0-9-]+\\.gov\\.ua$', 'Ukraine', 22),
+    ('(^|\\.)rada\\.gov\\.ua$',     'Ukraine', 22),
+    ('(^|\\.)gov\\.ua$',            'Ukraine', 22),
 
     -- United Kingdom (UK)
-    ('(^|\\.)((?:[a-z0-9-]+\\.)?nhs\\.uk)$',     'United Kingdom (UK)', 22),
-    ('(^|\\.)((?:[a-z0-9-]+\\.)?police\\.uk)$',  'United Kingdom (UK)', 22),
-    ('(^|\\.)((?:[a-z0-9-]+\\.)?mod\\.uk)$',     'United Kingdom (UK)', 22),
-    ('(^|\\.)[a-z0-9-]+\\.parliament\\.uk$', 'United Kingdom (UK)', 23),
-    ('(^|\\.)[a-z0-9-]+\\.judiciary\\.uk$', 'United Kingdom (UK)', 23),
-    ('(^|\\.)supremecourt\\.uk$', 'United Kingdom (UK)', 23),
-    ('(^|\\.)((?:[a-z0-9-]+\\.)?gov\\.scot)$',   'United Kingdom (UK)', 23),
-    ('(^|\\.)((?:[a-z0-9-]+\\.)?gov\\.wales)$',  'United Kingdom (UK)', 23),
-    ('(^|\\.)((?:[a-z0-9-]+\\.)?llyw\\.cymru)$', 'United Kingdom (UK)', 23),
-    ('(^|\\.)((?:[a-z0-9-]+\\.)?nhs\\.scot)$',   'United Kingdom (UK)', 22),
-    ('(^|\\.)police\\.scot$', 'United Kingdom (UK)', 22),
-    ('(^|\\.)[a-z0-9-]+\\.gov\\.uk$', 'United Kingdom (UK)', 22),
+    ('(^|\\.)nhs\\.uk$',           'United Kingdom (UK)', 22),
+    ('(^|\\.)police\\.uk$',        'United Kingdom (UK)', 22),
+    ('(^|\\.)mod\\.uk$',           'United Kingdom (UK)', 22),
+    ('(^|\\.)parliament\\.uk$',    'United Kingdom (UK)', 23),
+    ('(^|\\.)judiciary\\.uk$',     'United Kingdom (UK)', 23),
+    ('(^|\\.)supremecourt\\.uk$',  'United Kingdom (UK)', 23),
+    ('(^|\\.)gov\\.scot$',         'United Kingdom (UK)', 23),
+    ('(^|\\.)gov\\.wales$',        'United Kingdom (UK)', 23),
+    ('(^|\\.)llyw\\.cymru$',       'United Kingdom (UK)', 23),
+    ('(^|\\.)nhs\\.scot$',         'United Kingdom (UK)', 22),
+    ('(^|\\.)police\\.scot$',      'United Kingdom (UK)', 22),
+    ('(^|\\.)gov\\.uk$',           'United Kingdom (UK)', 22),
 
 
     -- United States (USA)
-    ('\\.gov$', 'United States (USA)', 22),
-    ('\\.mil$', 'United States (USA)', 22),
-    ('(^|\\.)(([a-z0-9-]+\\.)*fed\\.us)$', 'United States (USA)', 22),
-    ('(^|\\.)(([a-z0-9-]+\\.)*nsn\\.us)$', 'United States (USA)', 22),
-    ('(^|\\.)(([a-z0-9-]+\\.)*state\\.[a-z]{2}\\.us)$', 'United States (USA)', 21),
-    ('(^|\\.)(([a-z0-9-]+\\.)*(ci|city|cityof|co|county|countyof|borough|parish|town|townof|village|muni|municipal)\\.[a-z]{2}\\.us)$', 'United States (USA)', 20),
-    ('(^|\\.)(([a-z0-9-]+\\.)*courts\\.[a-z]{2}\\.us)$', 'United States (USA)', 20)
+    ('(^|\\.)gov$',                         'United States (USA)', 22),
+    ('(^|\\.)mil$',                         'United States (USA)', 22),
+    ('(^|\\.)((?:[a-z0-9-]+\\.)*fed\\.us)$','United States (USA)', 22),
+    ('(^|\\.)((?:[a-z0-9-]+\\.)*nsn\\.us)$','United States (USA)', 22),
+    ('(^|\\.)((?:[a-z0-9-]+\\.)*state\\.[a-z]{2}\\.us)$',
+                                            'United States (USA)', 21),    -- State-level domains
+    ('(^|\\.)((?:[a-z0-9-]+\\.)*(?:ci|city|cityof|co|county|countyof|borough|parish|town|townof|village|muni|municipal)(?:\\.[a-z0-9-]+)*\\.[a-z]{2}\\.us)$',
+                                            'United States (USA)', 20),    -- Local governments
+    ('(^|\\.)((?:[a-z0-9-]+\\.)*courts(?:\\.[a-z0-9-]+)*\\.[a-z]{2}\\.us)$',
+                                            'United States (USA)', 20)    -- Courts (e.g. www.courts.state.va.us)
 
   ])
 ),
@@ -1129,15 +1150,21 @@ match_regex AS (
     ON REGEXP_CONTAINS(p.host, r.pattern)
 ),
 
--- Heuristic fallback: gov-like host + ccTLD → country via cc_map
+-- Heuristic fallback: gov-like host + TLD → country via cc_map
 generic_ccgov AS (
-  SELECT p.*, m.bucket, 21 AS priority, 9998 AS match_len
-  FROM pages_scored p              -- was: pages
+  SELECT
+    p.*,
+    m.bucket,
+    21 AS priority,
+    9998 AS match_len
+  FROM pages_scored p
   JOIN cc_map m
-    ON REGEXP_EXTRACT(
-         p.host,
-         r'^(?:[a-z0-9-]+\.)*(?:gov|gouv|gob|gub|go|govt|gv|nic|mil|govern)(?:\.(?:[a-z0-9-]+|xn--[a-z0-9-]+))*\.([a-z]{2,3})$'
-       ) = m.tld
+  ON REGEXP_EXTRACT(
+       p.host,
+       -- Any-depth subdomains, a whole-label gov-like keyword, then any labels, then a dot + final TLD.
+       -- We capture the final TLD label and join it against cc_map.tld.
+       r'^(?:[a-z0-9-]+\.)*(?:gov|gouv|gob|gub|go|govt|gv|nic|mil|govern)(?:\.(?:[a-z0-9-]+|xn--[a-z0-9-]+))*\.([a-z0-9-]{2,63})$'
+     ) = m.tld
 ),
 
 -- 6) Union all candidates and compute best match (priority, then length)
