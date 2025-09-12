@@ -1475,7 +1475,7 @@ domain_scores AS (
   -- WHERE NOT is_us                        -- non-US only
   -- WHERE public_suffix = 'gov.uk'         -- by suffix
   -- WHERE tld = 'us'                       -- by ccTLD
-  
+
 )
 
 -- Final SELECT
