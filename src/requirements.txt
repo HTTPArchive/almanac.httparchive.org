@@ -1,12 +1,12 @@
-flask==3.1.1
+flask==3.1.2
 flask-talisman==1.1.0
 gunicorn==23.0.0
-pytest==8.4.1
+pytest==8.4.2
 pytest-watch==4.2.0
-pytest-cov==6.2.1
+pytest-cov==7.0.0
 sqlfluff==3.4.2
 
 # sql/util/* dependencies
-pandas==2.3.1
-google-cloud-bigquery==3.35.0
-requests==2.32.4
+pandas==2.3.2
+google-cloud-bigquery==3.37.0
+requests==2.32.5

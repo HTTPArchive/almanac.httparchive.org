@@ -1,0 +1,65 @@
+-- Section: Development
+-- Question: Are color fonts used for the sake of emojis?
+-- Normalization: Requests (color only)
+
+-- INCLUDE https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/{year}/fonts/common.sql
+
+CREATE TEMPORARY FUNCTION HAS_EMOJI(codepoints JSON)
+RETURNS BOOL
+LANGUAGE js
+OPTIONS (library = ["gs://httparchive/lib/text-utils.js"])
+AS r"""
+if (codepoints && codepoints.length) {
+  const detected = detectWritingScript(codepoints.map((character) => parseInt(character, 10)), 0.1);
+  const scripts = [
+    'Emoji',
+    'Emoji_Component',
+    'Emoji_Modifier',
+    'Emoji_Modifier_Base',
+    'Emoji_Presentation'
+  ];
+  for (script of scripts) {
+    if (detected.includes(script)) {
+      return true;
+    }
+  }
+  return false;
+} else {
+  return false;
+}
+""";
+
+WITH
+requests AS (
+  SELECT
+    date,
+    client,
+    HAS_EMOJI(payload._font_details.cmap.codepoints) AS emoji,
+    COUNT(0) OVER (PARTITION BY date, client) AS total
+  FROM
+    `httparchive.crawl.requests`
+  WHERE
+    date IN UNNEST(@dates) AND
+    type = 'font' AND
+    is_root_page AND
+    IS_COLOR(payload)
+)
+
+SELECT
+  date,
+  client,
+  emoji,
+  COUNT(0) AS count,
+  total,
+  ROUND(COUNT(0) / total, @precision) AS proportion
+FROM
+  requests
+GROUP BY
+  date,
+  client,
+  emoji,
+  total
+ORDER BY
+  date,
+  client,
+  emoji

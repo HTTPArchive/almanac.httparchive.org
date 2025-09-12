@@ -173,7 +173,7 @@ echo "Y" | gcloud app deploy --project webalmanac --stop-previous-version
 if [[ "${ARTIFACT_ID}" != "null" ]]; then
   echo "Deploying ebooks to GCP Storage"
   # shellcheck disable=SC2010
-  pdfs=$(cd static/pdfs;ls web_almanac_* | grep -v print | grep -v cover)
+  pdfs=$(cd static/pdfs;ls web_almanac_*)
   for pdf in ${pdfs}
   do
     echo "Uploading $pdf"
