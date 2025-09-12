@@ -1,4 +1,5 @@
-# Pages that participate in the privacy-relayed origin trials
+-- Pages that participate in the privacy-relayed origin trials
+
 CREATE TEMP FUNCTION `PARSE_ORIGIN_TRIAL`(token STRING) RETURNS STRUCT<
   token STRING,
   origin STRING,
@@ -30,11 +31,11 @@ WITH pages AS (
   SELECT
     client,
     page,
-    JSON_QUERY(custom_metrics, '$.origin-trials') AS ot_metrics,
-    JSON_QUERY(custom_metrics, '$.almanac') AS almanac_metrics
-  FROM `httparchive.all.pages`
+    custom_metrics.other.`origin-trials` AS ot_metrics,
+    custom_metrics.other.almanac AS almanac_metrics
+  FROM `httparchive.crawl.pages`
   WHERE
-    date = '2024-06-01' AND
+    date = '2025-07-01' AND
     is_root_page = TRUE
 ),
 
@@ -43,10 +44,10 @@ response_headers AS (
     client,
     page,
     PARSE_ORIGIN_TRIAL(response_header.value) AS ot  -- may not lowercase this value as it is a base64 string
-  FROM `httparchive.all.requests`,
+  FROM `httparchive.crawl.requests`,
     UNNEST(response_headers) response_header
   WHERE
-    date = '2024-06-01' AND
+    date = '2025-07-01' AND
     is_root_page = TRUE AND
     is_main_document = TRUE AND
     LOWER(response_header.name) = 'origin-trial'
@@ -56,18 +57,18 @@ meta_tags AS (
   SELECT
     client,
     page,
-    PARSE_ORIGIN_TRIAL(JSON_VALUE(meta_node, '$.content')) AS ot  -- may not lowercase this value as it is a base64 string
+    PARSE_ORIGIN_TRIAL(SAFE.STRING(meta_node.content)) AS ot  -- may not lowercase this value as it is a base64 string
   FROM pages,
-    UNNEST(JSON_QUERY_ARRAY(almanac_metrics, '$.meta-nodes.nodes')) meta_node
+    UNNEST(JSON_QUERY_ARRAY(almanac_metrics.`meta-nodes`.nodes)) meta_node
   WHERE
-    LOWER(JSON_VALUE(meta_node, '$.http-equiv')) = 'origin-trial'
+    LOWER(SAFE.STRING(meta_node.`http-equiv`)) = 'origin-trial'
 ),
 
 ot_from_custom_metric AS (
   SELECT
     client,
     page,
-    PARSE_ORIGIN_TRIAL(JSON_VALUE(metric, '$.token')) AS ot
+    PARSE_ORIGIN_TRIAL(SAFE.STRING(metric.token)) AS ot
   FROM pages,
     UNNEST(JSON_QUERY_ARRAY(ot_metrics)) metric
 )
