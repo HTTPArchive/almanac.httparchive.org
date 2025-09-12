@@ -51,7 +51,9 @@ jobs:
     name: Dependabot auto-merge
     runs-on: ubuntu-latest
     needs: lint
-    if: github.event.pull_request.user.login == 'dependabot[bot]' && github.repository == 'HTTPArchive/almanac.httparchive.org'
+    if: |
+      github.event.pull_request.user.login == 'dependabot[bot]' &&
+      github.repository == 'HTTPArchive/almanac.httparchive.org'
 
     permissions:
       contents: write
