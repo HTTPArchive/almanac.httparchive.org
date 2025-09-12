@@ -21,7 +21,7 @@ DETERMINISTIC AS (
         TIMESTAMP_SECONDS(CAST(JSON_VALUE(decoded, '$.expiry') AS INT64)) AS expiry,
         JSON_VALUE(decoded, '$.isSubdomain') = 'true' AS is_subdomain,
         JSON_VALUE(decoded, '$.isThirdParty') = 'true' AS is_third_party
-    )
+      )
     FROM decoded_token
   )
 );
