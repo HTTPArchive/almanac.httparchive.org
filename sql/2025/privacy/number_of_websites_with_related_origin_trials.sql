@@ -1,25 +1,28 @@
 -- Pages that participate in the privacy-relayed origin trials
 
-CREATE TEMP FUNCTION `DECODE_ORIGIN_TRIAL`(token STRING) RETURNS STRING DETERMINISTIC AS (
-  SAFE_CONVERT_BYTES_TO_STRING(SUBSTR(SAFE.FROM_BASE64(token), 70))
-);
-
-CREATE TEMP FUNCTION `PARSE_ORIGIN_TRIAL`(token STRING)
-RETURNS STRUCT<
+CREATE TEMP FUNCTION `PARSE_ORIGIN_TRIAL`(token STRING) RETURNS STRUCT
+<
   token STRING,
   origin STRING,
   feature STRING,
   expiry TIMESTAMP,
   is_subdomain BOOL,
   is_third_party BOOL
-> AS (
-  STRUCT(
-    DECODE_ORIGIN_TRIAL(token) AS token,
-    JSON_VALUE(DECODE_ORIGIN_TRIAL(token), '$.origin') AS origin,
-    JSON_VALUE(DECODE_ORIGIN_TRIAL(token), '$.feature') AS feature,
-    TIMESTAMP_SECONDS(CAST(JSON_VALUE(DECODE_ORIGIN_TRIAL(token), '$.expiry') AS INT64)) AS expiry,
-    JSON_VALUE(DECODE_ORIGIN_TRIAL(token), '$.isSubdomain') = 'true' AS is_subdomain,
-    JSON_VALUE(DECODE_ORIGIN_TRIAL(token), '$.isThirdParty') = 'true' AS is_third_party
+>
+DETERMINISTIC AS (
+  (
+    WITH decoded_token AS (
+      SELECT SAFE_CONVERT_BYTES_TO_STRING(SUBSTR(SAFE.FROM_BASE64(token), 70)) AS decoded
+    )
+    SELECT STRUCT(
+      decoded AS token,
+      JSON_VALUE(decoded, '$.origin') AS origin,
+      JSON_VALUE(decoded, '$.feature') AS feature,
+      TIMESTAMP_SECONDS(CAST(JSON_VALUE(decoded, '$.expiry') AS INT64)) AS expiry,
+      JSON_VALUE(decoded, '$.isSubdomain') = 'true' AS is_subdomain,
+      JSON_VALUE(decoded, '$.isThirdParty') = 'true' AS is_third_party
+    )
+    FROM decoded_token
   )
 );
 
