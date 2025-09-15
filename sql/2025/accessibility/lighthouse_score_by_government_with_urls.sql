@@ -1117,10 +1117,10 @@ pages AS (
 -- ========================
   
   FROM
-  -- `httparchive.sample_data.pages_10k` 
-  `httparchive.crawl.pages`
+  `httparchive.sample_data.pages_10k` 
+  -- `httparchive.crawl.pages`
   WHERE 
-    date = DATE '2025-07-01' AND
+    -- date = DATE '2025-07-01' AND
     is_root_page AND
 
 -- ========================
@@ -1155,7 +1155,7 @@ match_suffix AS (
          p.host,
          CONCAT(
            r'(^|\.)',
-           REGEXP_REPLACE(r.suffix, r'([-.^$|()\\[\\]{}+*?])', r'\\\1'),
+           REGEXP_REPLACE(r.suffix, r'([.^$|()\\[\]{}+*?-])', r'\\\1'),
            r'$'
          )
        )
@@ -1169,7 +1169,7 @@ match_regex AS (
     ON REGEXP_CONTAINS(p.host, r.pattern)
 ),
 
--- Heuristic fallback: gov-like host + TLD → country via cc_map
+-- Heuristic fallback: gov-like host + ccTLD → country via cc_map
 generic_ccgov AS (
   SELECT
     p.*,
@@ -1303,6 +1303,7 @@ ca_prov_from_gc AS (
   WHERE ENDS_WITH(p.host, '.gc.ca')
 ),
 
+
 ca_prov_from_gov_or_gouv AS (
   SELECT
     p.page, p.host,
@@ -1314,6 +1315,9 @@ ca_prov_from_gov_or_gouv AS (
     p.host, r'(?i)(?:^|\.)(?:gov|gouv)\.(ab|bc|mb|nb|nl|ns|nt|nu|on|pe|qc|sk|yt|yk)\.ca$'
   )
 ),
+
+
+
 
 ca_known_portals AS (
   SELECT * FROM UNNEST([
@@ -1341,10 +1345,18 @@ ca_prov_from_known_portals AS (
   FROM pages_scored p
   JOIN ca_known_portals kp
     ON REGEXP_CONTAINS(
-         p.host,
-         CONCAT(r'(?i)(^|\.)', REGEXP_REPLACE(kp.suffix, r'([-.^$|()\\[\\]{}+*?])', r'\\\1'), r'$')
-       )
+        p.host,
+        CONCAT(
+          r'(?i)(^|\.)',
+          REPLACE(
+            REGEXP_REPLACE(kp.suffix, r'([\\^$.|()[\]{}?+*])', r'\\\1'),
+            '-', r'\-'
+          ),
+          r'$'
+        )
+      )
 ),
+
 
 -- Canadian domain overrides for branded/legacy provincial portals
 ca_province_classified AS (
