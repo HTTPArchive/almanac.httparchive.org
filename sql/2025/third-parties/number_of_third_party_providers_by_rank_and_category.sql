@@ -35,7 +35,7 @@ third_party AS (
     requests r
   ON NET.HOST(r.url) = NET.HOST(tp.domain)
   WHERE
-    date = '2024-06-01' AND
+    date = '2025-07-01' AND
     category NOT IN ('hosting')
   GROUP BY
     domain,
