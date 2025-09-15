@@ -46,3 +46,37 @@ jobs:
           VALIDATE_PYTHON_FLAKE8: true
           VALIDATE_SQLFLUFF: true
           VALIDATE_YAML: true
+
+  dependabot:
+    name: Dependabot auto-merge
+    runs-on: ubuntu-latest
+    needs: lint
+    if: |
+      github.event.pull_request.user.login == 'dependabot[bot]' &&
+      github.repository == 'HTTPArchive/almanac.httparchive.org'
+
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Dependabot metadata
+        id: metadata
+        uses: dependabot/fetch-metadata@v2
+        with:
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
+
+      - name: Enable auto-merge for Dependabot PRs
+        if: |
+          (
+            steps.metadata.outputs.update-type == 'version-update:semver-patch' ||
+            steps.metadata.outputs.update-type == 'version-update:semver-minor'
+          ) && (
+            contains(steps.metadata.outputs.dependency-names, 'prettier') ||
+            contains(steps.metadata.outputs.dependency-names, 'sqlfluff') ||
+            contains(steps.metadata.outputs.dependency-names, 'super-linter')
+          )
+        run: gh pr merge --auto --squash "$PR_URL"
+        env:
+          PR_URL: ${{github.event.pull_request.html_url}}
+          GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
