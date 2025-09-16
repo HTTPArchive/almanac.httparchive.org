@@ -818,12 +818,30 @@ regex_rules AS (
     ('(^|\\.)((?:[a-z0-9]+\\.)*(copernicus|euvsdisinfo|europeana|europass|wifi4eu|sanctionsmap|open-research-europe|euipo)\\.eu)$',
                                                                                                        'European Union', 23),
 
+    -- Argentina (government)
+    ('(^|\\.)((?:[a-z0-9]+\\.)*gob\\.ar)$',                       'Argentina',            22),
+
+    -- Australia
+    ('(^|\\.)((?:[a-z0-9]+\\.)*gov\\.au)$',                       'Australia',            22),
+
+    -- Brazil
+    ('(^|\\.)((?:[a-z0-9]+\\.)*gov\\.br)$',                       'Brazil',               22),
+
     -- Canada
     ('(^|\\.)((?:[a-z0-9]+\\.)*gc\\.ca)$',                                         'Canada',              22),
     ('(^|\\.)((?:[a-z0-9]+\\.)*canada\\.ca)$',                                     'Canada',              22),
     ('(^|\\.)((?:[a-z0-9]+\\.)*gov\\.(ab|bc|mb|nb|nl|ns|nt|nu|on|pe|qc|sk|yk)\\.ca)$',
                                                                                      'Canada',              22),
 
+    -- Chile (you have lots in host_rules; make a family catch-all)
+    ('(^|\\.)((?:[a-z0-9]+\\.)*gob\\.cl)$',                       'Chile',                22),
+
+    -- China
+    ('(^|\\.)((?:[a-z0-9]+\\.)*gov\\.cn)$',                       'China',                22),
+  
+    -- Colombia (commonly used)
+    ('(^|\\.)((?:[a-z0-9]+\\.)*gov\\.co)$',                       'Colombia',             22),
+  
     -- Denmark
     ('(^|\\.)((?:[a-z0-9]+\\.)*(regionh|rsyd|rm|rn|regionsjaelland)\\.dk)$',       'Denmark',             23),
     ('(^|\\.)((?:[a-z0-9]+\\.)*(politi|skat|sundhed|virk|borger)\\.dk)$',          'Denmark',             23),
@@ -863,6 +881,9 @@ regex_rules AS (
     -- Guyana
     ('(^|\\.)gov\\.gy$',                                                           'Guyana',       20),
 
+    -- Hong Kong
+    ('(^|\\.)((?:[a-z0-9]+\\.)*gov\\.hk)$',                       'Hong Kong',            22),
+
     -- India
     ('(^|\\.)gov\\.in$',                                                           'India',        21),
     ('(^|\\.)nic\\.in$',                                                           'India',        21),
@@ -876,11 +897,15 @@ regex_rules AS (
     -- Ireland (e.g., fingalcoco.ie, dublincitycouncil.ie + any subdomains)
     ('(^|\\.)((?:[a-z0-9]+\\.)*(?:[a-z0-9]+coco\\.ie|[a-z0-9]+council\\.ie))$', 'Ireland',      21),
 
+    -- Israel
+    ('(^|\\.)((?:[a-z0-9]+\\.)*gov\\.il)$',                                       'Israel',      22),
+
     -- Italy (e.g., comune.milano.it + any subdomains)
     ('(^|\\.)((?:[a-z0-9]+\\.)*comune\\.[a-z0-9]+\\.it)$',                       'Italy',        20),
 
     -- Japan (at least one label before lg.jp, plus any depth under that)
     ('(^|\\.)((?:[a-z0-9]+\\.)+lg\\.jp)$',                                        'Japan',        21),
+    ('(^|\\.)((?:[a-z0-9]+\\.)*go\\.jp)$',                                        'Japan',        22),
 
     -- Luxembourg (already apex + any depth)
     ('(^|\\.)((public|gov|etat|data|service|security|mfi|lux)(\\.(public|gov|etat))?\\.lu)$', 'Luxembourg', 24),
@@ -890,6 +915,9 @@ regex_rules AS (
     -- Malaysia (simplify to apex gov.my + any depth)
     ('(^|\\.)gov\\.my$',                                                            'Malaysia',     22),
     ('(^|\\.)([a-z0-9]+\\.){2,}gov\\.my$',                                         'Malaysia',     21),
+
+    -- Mexico
+    ('(^|\\.)((?:[a-z0-9]+\\.)*gob\\.mx)$',                       'Mexico',               22),
 
     -- Nepal (both gov.np and mil.np families, apex + any depth)
     ('(^|\\.)((?:[a-z0-9]+\\.)*(?:gov|mil)\\.np)$',                                'Nepal',        22),
@@ -908,8 +936,8 @@ regex_rules AS (
     ('(^|\\.)[a-z0-9]+\\.govt\\.nz$',      'New Zealand', 22),
     ('(^|\\.)[a-z0-9]+\\.mil\\.nz$',       'New Zealand', 22),
 
-    -- Norway
-    ('(^|\\.)[a-z0-9]+\\.no$',             'Norway', 22),
+    -- Nigeria
+    ('(^|\\.)((?:[a-z0-9]+\\.)*gov\\.ng)$',                       'Nigeria',              22),
 
     -- Peru
     ('(^|\\.)region\\.gob\\.pe$',           'Peru', 21),
@@ -931,7 +959,17 @@ regex_rules AS (
     ('(^|\\.)[a-z0-9]+\\.cm\\.pt$',        'Portugal', 21),
     ('(^|\\.)gov\\.pt$',                    'Portugal', 22),
 
+    -- Saudi Arabia
+    ('(^|\\.)((?:[a-z0-9]+\\.)*gov\\.sa)$',                       'Saudi Arabia',         22),
 
+    -- Singapore
+    ('(^|\\.)((?:[a-z0-9]+\\.)*gov\\.sg)$',                       'Singapore',            22),
+
+    -- South Africa
+    ('(^|\\.)((?:[a-z0-9]+\\.)*gov\\.za)$',                       'South Africa',         22),
+    
+    -- South Korea
+    ('(^|\\.)((?:[a-z0-9]+\\.)*go\\.kr)$',                        'South Korea',          22),
 
     -- Spain
     ('(^|\\.)((ayto|ayuntamiento|diputacion(?:de)?|cabildo|consell)[-.][a-z0-9]+\\.es)$',
@@ -951,7 +989,8 @@ regex_rules AS (
     ('(^|\\.)[a-z0-9]+\\.gov\\.tw$',    'Taiwan', 22),
     
     -- Türkiye
-    ('(^|\\.)[a-z0-9]+\\.bel\\.tr$',       'Türkiye',     21),  -- require a label; avoid apex 'bel.tr'
+    ('(^|\\.)[a-z0-9]+\\.bel\\.tr$',                              'Türkiye',     21),  -- require a label; avoid apex 'bel.tr'
+    ('(^|\\.)((?:[a-z0-9]+\\.)*gov\\.tr)$',                       'Türkiye',              22),
 
     -- Ukraine
     ('(^|\\.)rada\\.gov\\.ua$',     'Ukraine', 22),
