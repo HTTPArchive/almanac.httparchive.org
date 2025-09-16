@@ -271,12 +271,61 @@ host_rules AS (
     ('migri.fi','Finland',22),('fimea.fi','Finland',22),('stat.fi','Finland',22),('thl.fi','Finland',22),('metsakeskus.fi','Finland',22),
     ('businessfinland.fi','Finland',22),('oph.fi','Finland',22),('avi.fi','Finland',22),('syke.fi','Finland',22),
     
-    -- France
-    ('gouvernement.fr','France',24),('elysee.fr','France',24),('service-public.fr','France',24),('legifrance.gouv.fr','France',24),('vie-publique.fr','France',24),('data.gouv.fr','France',24),('interieur.gouv.fr','France',24),('economie.gouv.fr','France',24),('travail-emploi.gouv.fr','France',24),('education.gouv.fr','France',24),('enseignementsup-recherche.gouv.fr','France',24),('justice.gouv.fr','France',24),('defense.gouv.fr','France',24),('sante.gouv.fr','France',24),('agriculture.gouv.fr','France',24),('culture.gouv.fr','France',24),('transition-ecologique.gouv.fr','France',24),('ecologie.gouv.fr','France',24),('diplomatie.gouv.fr','France',24),('impots.gouv.fr','France',24),('douane.gouv.fr','France',24),('france-visas.gouv.fr','France',24),
-    ('insee.fr','France',23),('banque-france.fr','France',23),('cnil.fr','France',23),('pole-emploi.fr','France',23),('francetravail.fr','France',23),('ameli.fr','France',23),('assurance-maladie.fr','France',23),('urssaf.fr','France',23),('caf.fr','France',23),('cnam.fr','France',23),('cnav.fr','France',23),('labanquepostale.fr','France',22),('meteofrance.com','France',22),('meteofrance.fr','France',22),('boamp.fr','France',22),('marches-publics.gouv.fr','France',24),
-    ('assemblee-nationale.fr','France',24),('senat.fr','France',24),('conseil-constitutionnel.fr','France',24),('conseil-etat.fr','France',24),('courdescomptes.fr','France',24),
-    ('iledefrance.fr','France',23),('hautsdefrance.fr','France',23),('normandie.fr','France',23),('grandest.fr','France',23),('bourgognefranchecomte.fr','France',23),('centre-valdeloire.fr','France',23),('paysdelaloire.fr','France',23),('bretagne.bzh','France',23),('nouvelle-aquitaine.fr','France',23),('occitanie.fr','France',23),('auvergnerhonealpes.fr','France',23),('provencealpes-cotedazur.fr','France',23),('corse.fr','France',23),('lareunion.fr','France',23),('mayotte.fr','France',23),('guadeloupe.fr','France',23),('martinique.fr','France',23),('guyane.fr','France',23),('polynesie-francaise.pref.gouv.fr','France',24),('nouvelle-caledonie.gouv.fr','France',24),('saint-barth-saint-martin.gouv.fr','France',24),('saint-pierre-et-miquelon.gouv.fr','France',24),
-    ('paris.fr','France',22),('lyon.fr','France',22),('marseille.fr','France',22),('toulouse.fr','France',22),('nice.fr','France',22),('nantes.fr','France',22),('montpellier.fr','France',22),('strasbourg.eu','France',22),('bordeaux.fr','France',22),('lille.fr','France',22),('rennes.fr','France',22),('reims.fr','France',22),('lehavre.fr','France',22),('saint-etienne.fr','France',22),('toulon.fr','France',22),('grenoble.fr','France',22),('dijon.fr','France',22),('angers.fr','France',22),('nancy.fr','France',22),('metz.fr','France',22),('clermont-ferrand.fr','France',22),('orleans.fr','France',22),('caen.fr','France',22),('tours.fr','France',22),('amiens.fr','France',22),('limoges.fr','France',22),('perpignan.fr','France',22),('annecy.fr','France',22),
+
+    -- France 
+    ('elysee.fr','France',24),('france.fr','France',24),('gouvernement.fr','France',24),('service-public.fr','France',24),('welcometofrance.com','France',22),  -- National + portals
+    ('agriculture.gouv.fr','France',24),('culture.gouv.fr','France',24),('defense.gouv.fr','France',24),('diplomatie.gouv.fr','France',24),                     -- Ministries / national agencies
+    ('douane.gouv.fr','France',24),('ecologie.gouv.fr','France',24),('economie.gouv.fr','France',24),('education.gouv.fr','France',24),
+    ('enseignementsup-recherche.gouv.fr','France',24),('impots.gouv.fr','France',24),('interieur.gouv.fr','France',24),('justice.gouv.fr','France',24),
+    ('marches-publics.gouv.fr','France',24),('sante.gouv.fr','France',24),('transition-ecologique.gouv.fr','France',24),('travail-emploi.gouv.fr','France',24),
+    ('assemblee-nationale.fr','France',24),('conseil-constitutionnel.fr','France',24),('conseil-etat.fr','France',24),('courdescomptes.fr','France',24),        -- Parliament / institutions
+    ('legifrance.gouv.fr','France',24),('senat.fr','France',24),('vie-publique.fr','France',24),
+    ('ameli.fr','France',23),('assurance-maladie.fr','France',23),('banque-france.fr','France',23),('boamp.fr','France',22),('caf.fr','France',23),             -- Agencies / operators
+    ('cnam.fr','France',23),('cnav.fr','France',23),('cnil.fr','France',23),('data.gouv.fr','France',24),('francetravail.fr','France',23),
+    ('impots.gouv.fr','France',24),('insee.fr','France',23),('labanquepostale.fr','France',22),('meteofrance.com','France',22),('meteofrance.fr','France',22),
+    ('pole-emploi.fr','France',23),('urssaf.fr','France',23),
+    ('cg971.fr','France',22),('cg976.fr','France',22),('collectivitedemartinique.mq','France',23),('ctguyane.fr','France',23),                                  -- Overseas collectivities / territories
+    ('departement974.fr','France',22),('guadeloupe.fr','France',23),('guyane.fr','France',23),('lareunion.fr','France',23),
+    ('mayotte.fr','France',23),('nouvelle-caledonie.gouv.fr','France',24),('polynesie-francaise.pref.gouv.fr','France',24),
+    ('province-sud.nc','France',23),('saint-barth-saint-martin.gouv.fr','France',24),('saint-pierre-et-miquelon.gouv.fr','France',24),
+    ('alsace.eu','France',23),('auvergnerhonealpes.fr','France',23),('bourgognefranchecomte.fr','France',23),('bretagne.bzh','France',23),                      -- Regions
+    ('centre-valdeloire.fr','France',23),('corse.fr','France',23),('grandest.fr','France',23),('hautsdefrance.fr','France',23),
+    ('iledefrance.fr','France',23),('normandie.fr','France',23),('nouvelle-aquitaine.fr','France',23),('occitanie.fr','France',23),
+    ('paysdelaloire.fr','France',23),('provencealpes-cotedazur.fr','France',23),
+    ('ain.fr','France',22),('aisne.com','France',22),('allier.fr','France',22),('ardeche.fr','France',22),('ariege.fr','France',22),                            -- Départements
+    ('aube.fr','France',22),('aude.fr','France',22),('aveyron.fr','France',22),('calvados.fr','France',22),('cantal.fr','France',22),
+    ('cd08.fr','France',22),('collectivitedemartinique.mq','France',23),('correze.fr','France',22),('cotedor.fr','France',22),
+    ('cotesdarmor.fr','France',22),('creuse.fr','France',22),('deux-sevres.fr','France',22),('departement06.fr','France',22),
+    ('departement13.fr','France',22),('departement18.fr','France',22),('departement41.fr','France',22),('departement974.fr','France',22),
+    ('doubs.fr','France',22),('dordogne.fr','France',22),('essonne.fr','France',22),('eurelien.fr','France',22),('eureennormandie.fr','France',22),
+    ('finistere.fr','France',22),('gard.fr','France',22),('gers.fr','France',22),('gironde.fr','France',22),('haute-garonne.fr','France',22),
+    ('haute-marne.fr','France',22),('haute-saone.fr','France',22),('haute-vienne.fr','France',22),('hauteloire.fr','France',22),
+    ('hautes-alpes.fr','France',22),('hautesavoie.fr','France',22),('hautespyrenees.fr','France',22),('herault.fr','France',22),
+    ('ille-et-vilaine.fr','France',22),('indre.fr','France',22),('isere.fr','France',22),('jura.fr','France',22),('ladrome.fr','France',22),
+    ('lamayenne.fr','France',22),('landes.fr','France',22),('lavienne86.fr','France',22),('le64.fr','France',22),
+    ('ledepartement66.fr','France',22),('lenord.fr','France',22),('loire.fr','France',22),('loire-atlantique.fr','France',22),
+    ('loiret.fr','France',22),('lot.fr','France',22),('lotetgaronne.com','France',22),('lozere-tourisme.com','France',22),
+    ('maine-et-loire.fr','France',22),('manche.fr','France',22),('marne.fr','France',22),('meurthe-et-moselle.fr','France',22),
+    ('meuse.fr','France',22),('morbihan.fr','France',22),('moselle.fr','France',22),('nievre.fr','France',22),
+    ('oise.fr','France',22),('orne.fr','France',22),('pasdecalais.fr','France',22),('puy-de-dome.fr','France',22),
+    ('rhone.fr','France',22),('saoneetloire71.fr','France',22),('sarthe.fr','France',22),('savoie.fr','France',22),
+    ('seine-et-marne.fr','France',22),('seinemaritime.fr','France',22),('seinesaintdenis.fr','France',22),
+    ('somme.fr','France',22),('tarn.fr','France',22),('tarnetgaronne.fr','France',22),('territoiredebelfort.fr','France',22),
+    ('touraine.fr','France',22),('valdemarne.fr','France',22),('valdoise.fr','France',22),('vaucluse.fr','France',22),
+    ('vendee.fr','France',22),('vosges.fr','France',22),('yonne.fr','France',22),('yvelines.fr','France',22),
+    ('ampmetropole.fr','France',22),('bordeaux-metropole.fr','France',22),('clermontmetropole.eu','France',22),('dijon-metropole.fr','France',22),            -- Métropoles
+    ('eurometropolemetz.eu','France',22),('grandnancy.eu','France',22),('grenoblealpesmetropole.fr','France',22),('lillemetropole.fr','France',22),
+    ('metropole.nantes.fr','France',22),('metropole.rennes.fr','France',22),('metropole.toulouse.fr','France',22),
+    ('metropole-rouen-normandie.fr','France',22),('metropolegrandparis.fr','France',22),('metropoletpm.fr','France',22),
+    ('montpellier3m.fr','France',22),('nicecotedazur.org','France',22),('orleans-metropole.fr','France',22),
+    ('saint-etienne-metropole.fr','France',22),('tours-metropole.fr','France',22),
+    ('amiens.fr','France',22),('angers.fr','France',22),('annecy.fr','France',22),('bordeaux.fr','France',22),('brest.fr','France',22),                       -- Major cities
+    ('caen.fr','France',22),('clermont-ferrand.fr','France',22),('dijon.fr','France',22),('grenoble.fr','France',22),
+    ('lehavre.fr','France',22),('limoges.fr','France',22),('lille.fr','France',22),('lyon.fr','France',22),('marseille.fr','France',22),
+    ('metz.fr','France',22),('montpellier.fr','France',22),('nancy.fr','France',22),('nantes.fr','France',22),
+    ('nice.fr','France',22),('orleans.fr','France',22),('paris.fr','France',22),('perpignan.fr','France',22),
+    ('reims.fr','France',22),('rennes.fr','France',22),('saint-etienne.fr','France',22),('strasbourg.eu','France',22),
+    ('toulon.fr','France',22),('toulouse.fr','France',22),('tours.fr','France',22),
 
     -- Georgia
     ('gov.ge','Georgia',24), ('parliament.ge','Georgia',24), ('president.ge','Georgia',24), ('nbe.gov.ge','Georgia',24), ('mfa.gov.ge','Georgia',24),
