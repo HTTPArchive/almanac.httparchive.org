@@ -158,4 +158,3 @@ GROUP BY
   count_redirected_all,
   pct_redirected_all,
   count_redirected_found
-

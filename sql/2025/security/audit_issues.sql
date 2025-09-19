@@ -24,4 +24,3 @@ GROUP BY
 ORDER BY
   client,
   pct_with_issue DESC
-  
