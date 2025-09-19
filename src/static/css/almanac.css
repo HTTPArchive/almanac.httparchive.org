@@ -984,9 +984,8 @@ p.copyright a {
   height: 1px;
   width: 1px;
   overflow: hidden;
-  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
-  clip: rect(1px, 1px, 1px, 1px);
-  white-space: nowrap; /* added line */
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 
 .hidden {
@@ -1052,9 +1051,8 @@ p.copyright a {
     height: 1px;
     width: 1px;
     overflow: hidden;
-    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
-    clip: rect(1px, 1px, 1px, 1px);
-    white-space: nowrap; /* added line */
+    clip-path: inset(50%);
+    white-space: nowrap;
   }
 
   .title-lg {
@@ -1233,10 +1231,10 @@ p.copyright a {
     top: 100%;
     left: -20px; /* overcome the parent container's 20px side padding */
     right: -20px; /* overcome the parent container's 20px side padding */
-    border-top: 1px solid rgba(242, 242, 242, 0.2);
+    border-top: 1px solid rgb(242, 242, 242, 0.2);
     padding: 60px 30px 30px;
     background-color: #677486;
-    box-shadow: 0 0 16px 0 rgba(78, 85, 100, 1);
+    box-shadow: 0 0 16px 0 rgb(78, 85, 100, 1);
     z-index: 2;
   }
 
