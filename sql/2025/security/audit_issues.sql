@@ -16,10 +16,12 @@ FROM
     'CorsIssue'
   ]) AS issuename
 WHERE
-  date = '2025-07-01' AND is_root_page
+  date = '2025-07-01' AND
+  is_root_page
 GROUP BY
   client,
   issuename
 ORDER BY
   client,
   pct_with_issue DESC
+  

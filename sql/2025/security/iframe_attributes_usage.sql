@@ -5,7 +5,7 @@ WITH total_iframe_count AS (
   SELECT
     client,
     date,
-    SUM(SAFE_CAST(JSON_EXTRACT(custom_metrics, '$.num_iframes') AS INT64)) AS total_iframes
+    SUM(SAFE_CAST(JSON_VALUE(custom_metrics.num_iframes) AS INT64)) AS total_iframes
   FROM
     `httparchive.all.pages`
   WHERE
@@ -41,7 +41,7 @@ FROM (
       client,
       date,
       page AS url,
-      JSON_EXTRACT_ARRAY(JSON_QUERY(custom_metrics, '$.security'), '$.iframe-allow-sandbox') AS iframeAttrs
+      JSON_EXTRACT_ARRAY(JSON_QUERY(custom_metrics.security), '$.iframe-allow-sandbox') AS iframeAttrs
     FROM
       `httparchive.all.pages`
     WHERE

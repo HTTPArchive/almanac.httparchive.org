@@ -25,17 +25,11 @@ SELECT
   COUNTIF(REGEXP_CONTAINS(JSON_VALUE(logs.text), 'The resource has been blocked')) / COUNT(0) AS subresource_integrity_freq,
   COUNTIF(REGEXP_CONTAINS(JSON_VALUE(logs.text), 'This document requires')) AS trusted_types_count,
   COUNTIF(REGEXP_CONTAINS(JSON_VALUE(logs.text), 'This document requires')) / COUNT(0) AS trusted_types_freq
-
-FROM (
-  SELECT
-    client,
-    logs
-  FROM
-    `httparchive.crawl.pages`,
-    UNNEST(JSON_QUERY_ARRAY(payload, '$._browser_logs')) AS logs
-  WHERE
-    date = '2025-07-01' AND
-    is_root_page
-)
+FROM
+  `httparchive.crawl.pages`,
+  UNNEST(JSON_QUERY_ARRAY(payload, '$._browser_logs')) AS logs
+WHERE
+  date = '2025-07-01' AND
+  is_root_page
 GROUP BY
   client

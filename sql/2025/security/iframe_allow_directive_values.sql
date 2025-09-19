@@ -20,7 +20,7 @@ SELECT
 FROM (
   SELECT
     client,
-    JSON_EXTRACT_ARRAY(JSON_VALUE(custom_metrics.security, '$.iframe-allow-sandbox')) AS iframeAttrs
+    JSON_EXTRACT_ARRAY(JSON_VALUE(custom_metrics.security.`iframe-allow-sandbox`)) AS iframeAttrs
   FROM
     `httparchive.crawl.pages`
   WHERE
@@ -32,7 +32,7 @@ FROM (
 JOIN (
   SELECT
     client,
-    SUM(getNumWithAllowAttribute(JSON_EXTRACT_ARRAY(JSON_VALUE(custom_metrics.security, '$.iframe-allow-sandbox')))) AS total_iframes_with_allow
+    SUM(getNumWithAllowAttribute(JSON_EXTRACT_ARRAY(JSON_VALUE(custom_metrics.security.`iframe-allow-sandbox`)))) AS total_iframes_with_allow
   FROM
     `httparchive.crawl.pages`
   WHERE
