@@ -36,18 +36,18 @@
   },
   "devDependencies": {
     "ejs": "3.1.10",
-    "fs-extra": "11.3.0",
-    "jsdom": "26.1.0",
+    "fs-extra": "11.3.1",
+    "jsdom": "27.0.0",
     "node-fetch": "3.3.2",
     "node-watch": "0.7.4",
-    "prettier": "3.5.3",
-    "puppeteer": "24.10.0",
+    "prettier": "3.6.1",
+    "puppeteer": "24.20.0",
     "rainbow-code": "2.1.7",
     "recursive-readdir": "2.2.3",
     "run-script-os": "1.1.6",
     "showdown": "2.1.0",
     "smartypants": "0.2.2",
-    "web-vitals": "5.0.2",
+    "web-vitals": "5.1.0",
     "xml-js": "1.6.11"
   }
 }

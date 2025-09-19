@@ -29,17 +29,17 @@ jobs:
     if: github.repository == 'HTTPArchive/almanac.httparchive.org'
     steps:
     - name: Checkout Code
-      uses: actions/checkout@v4
+      uses: actions/checkout@v5
       with:
         fetch-depth: 0
     - name: Setup Node.js for use with actions
-      uses: actions/setup-node@v4
+      uses: actions/setup-node@v5
       with:
         node-version: '20'
     - name: Test Template Changes
       run: ./src/tools/scripts/test_template_changes.sh
     - name: 'Comment PR'
-      uses: actions/github-script@v7
+      uses: actions/github-script@v8
       if: github.event_name == 'pull_request' && env.PR_COMMENT != ''
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
