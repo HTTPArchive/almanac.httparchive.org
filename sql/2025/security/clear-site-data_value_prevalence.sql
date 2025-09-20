@@ -12,10 +12,10 @@ FROM
   `httparchive.crawl.requests`,
   UNNEST(response_headers) AS response_headers
 WHERE
-  date = '2025-07-01'
-  AND is_root_page
-  # AND is_main_document # (Uncomment to only run on the main document response; majority of CSD headers are set on them)
-  AND LOWER(response_headers.name) = 'clear-site-data'
+  date = '2025-07-01' AND
+  is_root_page AND
+  # is_main_document AND # (Uncomment to only run on the main document response; majority of CSD headers are set on them)
+  LOWER(response_headers.name) = 'clear-site-data'
 GROUP BY
   client,
   csd_header
