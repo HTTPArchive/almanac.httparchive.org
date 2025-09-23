@@ -92,7 +92,6 @@ host_rules AS (
 
     -- European Union
     ('europa.eu','European Union',12),
-    ('eib.org','European Union',24),
     ('eif.org','European Union',24),
 
     -- Andorra
@@ -812,14 +811,15 @@ host_rules AS (
 -- 2) Regex family rules for patterned domains (.gov.uk, .gob.es, etc.)
 regex_rules AS (
   SELECT * FROM UNNEST([
-    STRUCT('(^|\\.)((?:[a-z0-9]+\\.)*un\\.org)$' AS pattern, 'United Nations' AS bucket, 9 AS priority),
+    STRUCT('(^|\\.)((?:[a-z0-9]+\\.)*un\\.org)$' AS pattern, 'United Nations' AS bucket, 9 AS priority), -- United Nations
     ('(^|\\.)((?:[a-z0-9]+\\.)*(who|icao|wmo|wipo|itu)\\.int)$',                   'United Nations',       9),
     ('(^|\\.)((?:[a-z0-9]+\\.)*(undp|unhcr|unicef|unodc|unido|unfpa)\\.org)$',     'United Nations',       9),
 
     -- European Union
-    ('(^|\\.)((?:[a-z0-9]+\\.)*eu\\.int|(eu20\\d{2}|20\\d{2}eu|[a-z]{2}20\\d{2})\\.(eu|[a-z]{2}))$', 'European Union', 23),
-    ('(^|\\.)((?:[a-z0-9]+\\.)*(copernicus|euvsdisinfo|europeana|europass|wifi4eu|sanctionsmap|open-research-europe|euipo)\\.eu)$',
-                                                                                                       'European Union', 23),
+    ('(^|\\.)((?:[a-z0-9]+\\.)*eu\\.int)$', 'European Union', 23),  -- EU institutions on eu.int (host + any subdomains)
+    ('(^|\\.)europa\\.eu$',                  'European Union', 24),  -- europa.eu apex (you already match subdomains via host_rules ENDS_WITH)
+    ('(^|\\.)((?:[a-z0-9]+\\.)*(copernicus|euvsdisinfo|wifi4eu|sanctionsmap|open-research-europe|ore)\\.eu)$',
+                                   'European Union', 23)        -- explicit .eu SLDs (and their subdomains)
 
     -- Argentina (government)
     ('(^|\\.)((?:[a-z0-9]+\\.)*gob\\.ar)$',                       'Argentina',            22),
