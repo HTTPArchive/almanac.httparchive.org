@@ -185,7 +185,17 @@ host_rules AS (
     ('yukon.ca','Canada',23),('legassembly.gov.yk.ca','Canada',23),
     ('gov.nt.ca','Canada',23),('assembly.gov.nt.ca','Canada',23),
     ('gov.nu.ca','Canada',23),('assembly.nu.ca','Canada',23), ('revenuquebec.ca','Canada',23),
-
+    ('ottawa.ca','Canada',23),('toronto.ca','Canada',23),('vancouver.ca','Canada',23),          -- Major Canadian cities and provincial/territorial capitals (municipal)
+    ('calgary.ca','Canada',23),('edmonton.ca','Canada',23),('winnipeg.ca','Canada',23),
+    ('montreal.ca','Canada',23),('ville.quebec.qc.ca','Canada',23),('halifax.ca','Canada',23),
+    ('fredericton.ca','Canada',23),('charlottetown.ca','Canada',23),('stjohns.ca','Canada',23),
+    ('whitehorse.ca','Canada',23),('yellowknife.ca','Canada',23),('iqaluit.ca','Canada',23),
+    ('mississauga.ca','Canada',23),('brampton.ca','Canada',23),('hamilton.ca','Canada',23),    -- Other large cities
+    ('london.ca','Canada',23),('kitchener.ca','Canada',23),('windsor.ca','Canada',23),
+    ('saskatoon.ca','Canada',23),('regina.ca','Canada',23),('surrey.ca','Canada',23),
+    ('burnaby.ca','Canada',23),('richmond.ca','Canada',23),('markham.ca','Canada',23),
+    ('vaughan.ca','Canada',23),('longueuil.ca','Canada',23),('laval.ca','Canada',23),
+  
     -- Chile
     ('gob.cl','Chile',24), ('chileabroad.gov.cl','Chile',24), ('chileatiende.gob.cl','Chile',24),
     ('pjud.cl','Chile',24), ('tribunalconstitucional.cl','Chile',24), ('senado.cl','Chile',24), ('diputados.cl','Chile',24),
