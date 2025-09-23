@@ -27,24 +27,14 @@ Notes:
 
 ### CSS composition
 
-#### Stylesheets
-
-- [ ] average and of stylesheets per page, per year
-- [ ] percentiles of the number of stylesheets per page, per year
-- [ ] largest amount of stylesheets loaded, per year
-- [ ] average CSS size per page, per year
-- [ ] percentiles of CSS file size, per year
-
-#### Lines of code
-
-- [ ] percentiles of lines of code per stylesheet, per year
-- [ ] percentiles of lines of code per page, per year
-- [ ] percentiles for atrules, rules, selectors and declarations per page, per year
-
-#### Embedded content
-
-- [ ] percentiles of embedded content size, per year
-
-#### Comments
-
-- [ ] percentiles of comments per page, per year
+- Stylesheets
+  - [stylesheet-metrics.sql][stylesheet-metrics.sql]
+  - [stylesheet-percentile-metrics.sql][stylesheet-percentile-metrics.sql]
+- Lines of code
+  - [ ] percentiles of lines of code per stylesheet, per year
+  - [ ] percentiles of lines of code per page, per year
+  - [ ] percentiles for atrules, rules, selectors and declarations per page, per year
+- Embedded content
+  - [ ] percentiles of embedded content size, per year
+- Comments
+  - [ ] percentiles of comments per page, per year
