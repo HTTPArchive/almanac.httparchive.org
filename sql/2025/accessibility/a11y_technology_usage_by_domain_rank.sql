@@ -1,28 +1,28 @@
 #standardSQL
 # Purpose
-#   Break down usage of Accessibility-related technologies (apps/overlays) by domain rank
-#   for the 2025-07-01 HTTP Archive crawl.
+#   Measure adoption of specific Accessibility-related technologies (apps/overlays)
+#   across domain rank buckets in the 2025-07-01 HTTP Archive crawl.
 #
 # Output columns
-#   • client            = desktop or mobile
-#   • is_root_page      = TRUE if page is the root of the site
-#   • rank_grouping     = domain rank bucket (1k, 10k, …, 100M)
-#   • total_in_rank     = total number of unique pages in the rank bucket
-#   • app               = specific Accessibility technology detected
-#   • sites_with_app    = number of unique pages using that app
-#   • pct_sites_with_app= share of pages in the rank bucket using that app (0–1 ratio)
+#   • client             = desktop or mobile
+#   • is_root_page       = TRUE if page is the root of the site
+#   • rank_grouping      = domain rank bucket (1k, 10k, …, 100M)
+#   • total_in_rank      = total number of unique pages in the rank bucket
+#   • app                = specific Accessibility technology detected (Wappalyzer name)
+#   • sites_with_app     = number of unique pages using that technology
+#   • pct_sites_with_app = share of pages in the rank bucket using that technology
 #
 # Method
 #   1. Assign each page to a rank_grouping based on its domain rank.
-#   2. Compute totals per client / root flag / rank bucket (denominator).
-#   3. Unnest technologies and categories, filtering to category = 'Accessibility'.
+#   2. Compute totals per client / root flag / rank grouping (denominator).
+#   3. Expand technologies and categories, keeping only category = 'Accessibility'.
 #   4. Count distinct pages per technology and divide by the rank total.
 #
 # Notes
 #   • Unit of analysis = page URL, not host/site.
-#   • Percentages are returned as numeric fractions (0–1). Use FORMAT() if you need
-#     a human-readable percent string.
-#   • Rank buckets are aligned with prior reporting (1k, 10k, 100k, …, 100M).
+#   • Percentages are returned as numeric fractions (0–1). Use FORMAT() if a
+#     human-readable percent string is needed.
+#   • Rank groupings are aligned with prior reporting thresholds (1k → 100M).
 WITH ranked_sites AS (
   -- Get the total number of sites within each rank grouping
   SELECT
