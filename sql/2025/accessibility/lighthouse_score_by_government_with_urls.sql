@@ -35,7 +35,7 @@
 --   Order used by the script:
 --     1) host_rules (explicit suffix, high priority & specific)
 --     2) regex_rules (family patterns)
---     3) generic_ccgov (heuristic fallback; fixed priority 21)
+--     3)  (heuristic fallback; fixed priority 21)
 --
 -- NOTABLE FIELDS
 --   - priority: Manual weight (higher = stronger/more specific)
@@ -1269,7 +1269,7 @@ match_regex AS (
 ),
 
 -- Heuristic fallback: gov-like host + ccTLD → country via cc_map
-generic_ccgov AS (
+ AS (
   SELECT
     p.*,
     m.bucket,
@@ -1283,6 +1283,7 @@ generic_ccgov AS (
        -- We capture the final TLD label and join it against cc_map.tld.
        r'^(?:[a-z0-9]+\.)*(?:gov|gouv|gob|gub|go|govt|gv|nic|mil|govern)(?:\.(?:[a-z0-9]+|xn--[a-z0-9]+))*\.([a-z0-9]{2,63})$'
      ) = m.tld
+     AND m.tld != 'us'
 ),
 
 -- 6) Union all candidates and compute best match (priority, then length)
