@@ -2,91 +2,91 @@
 # Purpose
 #   Estimate the share of pages using Accessibility-category technologies (e.g., overlays)
 #   by client and domain-rank buckets for the 2025-07-01 HTTP Archive crawl.
-#   This preserves the original behavior:
-#     • Unit: pages (COUNT DISTINCT page), not sites
-#     • Grouping: client, is_root_page, rank_grouping (top N thresholds)
-#     • Technology filter: category = 'Accessibility'
 #
-# Sampling (for cheap test runs)
-#   To cut cost without biasing the percentage, this script uses a deterministic hash
-#   sampler applied IDENTICALLY in both numerator and denominator:
-#     MOD(ABS(FARM_FINGERPRINT(page)), cfg.modulus) = cfg.remainder
-#   Set cfg.enable_sample = TRUE and pick a modulus to control sample size
-#   (e.g., 100_000 ≈ ~0.001 = 0.1%). For full accuracy, set enable_sample = FALSE.
+# Key behavior:
+#   • Unit: pages (COUNT DISTINCT page), not sites
+#   • Grouping: client, is_root_page, rank_grouping (top N thresholds)
+#   • Technology filter: category = 'Accessibility'
+#   • Denominator: COUNT DISTINCT pages per bucket (ensures correct percentages)
+#   • Output includes both numeric ratio (0–1) and formatted percent string (e.g., "0.8%")
+#   • Adds a "rank" label column (largest bucket shown as "ALL")
 #
-#   If you prefer TABLESAMPLE, you must apply it consistently to EVERY reference of
-#   `httparchive.crawl.pages` (both subqueries). Otherwise the percentage is biased.
+# Sampling (optional):
+#   • Uses deterministic hash sampling applied identically in numerator and denominator:
+#       MOD(ABS(FARM_FINGERPRINT(page)), cfg.modulus) = cfg.remainder
+#   • To enable, set cfg.enable_sample = TRUE and adjust modulus/remainder.
+#   • Example: modulus = 100_000 ≈ 0.1% sample.
+#   • For full accuracy, set enable_sample = FALSE.
 #
-# Notes on comparability
-#   • Logic and outputs match your original query; only a consistent sampler was added.
-#   • Remove or disable sampling for production numbers.
+# Notes:
+#   • Do not mix in TABLESAMPLE unless you apply it consistently to *every* reference
+#     of `httparchive.crawl.pages` (numerator and denominator), otherwise percentages
+#     will be biased.
+#   • This script aligns with the 2024 reporting format for comparability.
 
+-- Purpose: share of pages using Accessibility-category techs by client and rank buckets
 WITH cfg AS (
   SELECT AS STRUCT
-    FALSE AS enable_sample, -- set to TRUE for sample
+    FALSE AS enable_sample,  -- set TRUE for sampling
     100000 AS modulus,
     0 AS remainder
+),
+
+-- Numerator: pages that use Accessibility tech
+numerator AS (
+  SELECT DISTINCT
+    p.client,
+    p.is_root_page,
+    p.page,
+    rank_grouping
+  FROM
+    `httparchive.crawl.pages` AS p,
+    UNNEST([1000, 10000, 100000, 1000000, 10000000, 100000000]) AS rank_grouping,
+    UNNEST(p.technologies) AS tech,
+    UNNEST(categories) AS category,
+    cfg
+  WHERE
+    p.date = '2025-07-01'
+    AND category = 'Accessibility'
+    AND p.rank <= rank_grouping
+    AND (NOT cfg.enable_sample OR MOD(ABS(FARM_FINGERPRINT(p.page)), cfg.modulus) = cfg.remainder)
+),
+
+-- Denominator: total pages in each rank bucket
+denominator AS (
+  SELECT
+    p.client,
+    rank_grouping,
+    COUNT(DISTINCT p.page) AS total_in_rank
+  FROM
+    `httparchive.crawl.pages` AS p,
+    UNNEST([1000, 10000, 100000, 1000000, 10000000, 100000000]) AS rank_grouping,
+    cfg
+  WHERE
+    p.date = '2025-07-01'
+    AND p.rank <= rank_grouping
+    AND (NOT cfg.enable_sample OR MOD(ABS(FARM_FINGERPRINT(p.page)), cfg.modulus) = cfg.remainder)
+  GROUP BY
+    p.client, rank_grouping
 )
 
-# Main SELECT statement to aggregate results by client and rank grouping.
+-- Final aggregation to match the 2024 output shape
 SELECT
-  client,
-  is_root_page,
-  rank_grouping,                               # Grouping of domains by rank threshold
-  total_in_rank,                               # Total number of pages within the rank grouping
-  COUNT(DISTINCT page) AS sites_with_a11y_tech,               # Pages with Accessibility tech
-  COUNT(DISTINCT page) / total_in_rank AS pct_sites_with_a11y_tech  # Share within bucket
-FROM
-  (
-    # Subquery: pages with Accessibility technology (numerator)
-    SELECT DISTINCT
-      p.client,
-      p.is_root_page,
-      p.page,
-      rank_grouping,
-      category
-    FROM
-      `httparchive.crawl.pages` AS p,
-      UNNEST([1000, 10000, 100000, 1000000, 10000000, 100000000]) AS rank_grouping,
-      UNNEST(p.technologies) AS tech,
-      UNNEST(categories) AS category,
-      cfg
-    WHERE
-      p.date = '2025-07-01'
-      AND category = 'Accessibility'
-      AND p.rank <= rank_grouping
-      AND (NOT cfg.enable_sample OR MOD(ABS(FARM_FINGERPRINT(p.page)), cfg.modulus) = cfg.remainder)
-      # If you insist on TABLESAMPLE instead of hash sampling, replace the line above with:
-      #   -- and also add TABLESAMPLE to the denominator subquery below:
-      #   -- FROM `httparchive.crawl.pages` TABLESAMPLE SYSTEM (0.01 PERCENT) AS p, ...
-  )
-JOIN
-  (
-    # Subquery: total pages in each rank grouping (denominator)
-    SELECT
-      p.client,
-      rank_grouping,
-      COUNT(0) AS total_in_rank
-    FROM
-      `httparchive.crawl.pages` AS p,
-      UNNEST([1000, 10000, 100000, 1000000, 10000000, 100000000]) AS rank_grouping,
-      cfg
-    WHERE
-      p.date = '2025-07-01'
-      AND p.rank <= rank_grouping
-      AND (NOT cfg.enable_sample OR MOD(ABS(FARM_FINGERPRINT(p.page)), cfg.modulus) = cfg.remainder)
-      # If using TABLESAMPLE, apply the SAME TABLESAMPLE here too.
-    GROUP BY
-      p.client,
-      rank_grouping
-  )
-USING (client, rank_grouping)
+  n.client,
+  n.is_root_page,
+  d.rank_grouping,
+  d.total_in_rank,
+  COUNT(DISTINCT n.page) AS sites_with_a11y_tech,
+  -- SAFE_DIVIDE(COUNT(DISTINCT n.page), d.total_in_rank) AS pct_sites_with_a11y_tech_num,             -- numeric 0–1
+  FORMAT('%.1f%%', 100 * SAFE_DIVIDE(COUNT(DISTINCT n.page), d.total_in_rank)) AS pct_sites_with_a11y_tech,  -- "0.8%"
+  CASE
+    WHEN d.rank_grouping = 100000000 THEN 'ALL'
+    ELSE FORMAT('%\'d', d.rank_grouping)
+  END AS rank
+FROM numerator n
+JOIN denominator d
+  USING (client, rank_grouping)
 GROUP BY
-  client,
-  is_root_page,
-  rank_grouping,
-  total_in_rank
+  n.client, n.is_root_page, d.rank_grouping, d.total_in_rank
 ORDER BY
-  client,
-  is_root_page,
-  rank_grouping;
+  n.client, n.is_root_page, d.rank_grouping;
