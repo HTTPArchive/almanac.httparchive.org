@@ -829,7 +829,7 @@ regex_rules AS (
     ('(^|\\.)((?:[a-z0-9]+\\.)*eu\\.int)$', 'European Union', 23),  -- EU institutions on eu.int (host + any subdomains)
     ('(^|\\.)europa\\.eu$',                  'European Union', 24),  -- europa.eu apex (you already match subdomains via host_rules ENDS_WITH)
     ('(^|\\.)((?:[a-z0-9]+\\.)*(copernicus|euvsdisinfo|wifi4eu|sanctionsmap|open-research-europe|ore)\\.eu)$',
-                                   'European Union', 23)        -- explicit .eu SLDs (and their subdomains)
+                                   'European Union', 23),        -- explicit .eu SLDs (and their subdomains)
 
     -- Argentina (government)
     ('(^|\\.)((?:[a-z0-9]+\\.)*gob\\.ar)$',                       'Argentina',            22),
