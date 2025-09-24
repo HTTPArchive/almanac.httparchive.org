@@ -1269,7 +1269,7 @@ match_regex AS (
 ),
 
 -- Heuristic fallback: gov-like host + ccTLD → country via cc_map
- AS (
+generic_ccgov AS (
   SELECT
     p.*,
     m.bucket,
@@ -1277,13 +1277,13 @@ match_regex AS (
     9998 AS match_len
   FROM pages_scored p
   JOIN cc_map m
-  ON REGEXP_EXTRACT(
-       p.host,
-       -- Any-depth subdomains, a whole-label gov-like keyword, then any labels, then a dot + final TLD.
-       -- We capture the final TLD label and join it against cc_map.tld.
-       r'^(?:[a-z0-9]+\.)*(?:gov|gouv|gob|gub|go|govt|gv|nic|mil|govern)(?:\.(?:[a-z0-9]+|xn--[a-z0-9]+))*\.([a-z0-9]{2,63})$'
-     ) = m.tld
-     AND m.tld != 'us'
+    ON (
+      REGEXP_EXTRACT(
+        p.host,
+        r'^(?:[a-z0-9]+\.)*(?:gov|gouv|gob|gub|go|govt|gv|nic|mil|govern)(?:\.(?:[a-z0-9]+|xn--[a-z0-9]+))*\.([a-z0-9]{2,63})$'
+      ) = m.tld
+      AND m.tld != 'us'            -- exclude .us from the generic fallback
+    )
 ),
 
 -- 6) Union all candidates and compute best match (priority, then length)
