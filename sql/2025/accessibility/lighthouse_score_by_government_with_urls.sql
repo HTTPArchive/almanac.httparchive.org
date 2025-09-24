@@ -511,7 +511,13 @@ host_rules AS (
     ('education.lu','Luxembourg',23), ('portal.education.lu','Luxembourg',23), ('secu.lu','Luxembourg',23), ('cns.lu','Luxembourg',23), ('statec.lu','Luxembourg',23),
     ('ces.lu','Luxembourg',23), ('itm.lu','Luxembourg',23), ('inll.lu','Luxembourg',23), ('lod.lu','Luxembourg',23), ('petitions.lu','Luxembourg',23),
     ('map.geoportail.lu','Luxembourg',23), ('meteolux.lu','Luxembourg',23), ('mobiliteit.lu','Luxembourg',23), ('inondations.lu','Luxembourg',23), ('adem.lu','Luxembourg',23),
-    ('cita.lu','Luxembourg',23), ('govjobs.lu','Luxembourg',23),
+    ('cita.lu','Luxembourg',23), ('govjobs.lu','Luxembourg',23), ('112.public.lu','Luxembourg',23), ('accessibilite-infrastructure.public.lu','Luxembourg',23),
+    ('accessibilite-produits-services.public.lu','Luxembourg',23), ('bettembourg.lu','Luxembourg',23), ('chem.lu','Luxembourg',23), ('chl.lu','Luxembourg',23), ('chnp.lu','Luxembourg',23),
+    ('cnl.public.lu','Luxembourg',23), ('elections.public.lu','Luxembourg',23), ('mersch.lu','Luxembourg',23), ('monarchie.lu','Luxembourg',23), ('nationalmusee.lu','Luxembourg',23),
+    ('petange.lu','Luxembourg',23), ('petitiounen.lu','Luxembourg',23), ('philharmonie.lu','Luxembourg',23), ('regionalsaisonal.lu','Luxembourg',23), ('rgtr.lu','Luxembourg',23),
+    ('sailor.public.lu','Luxembourg',23), ('sandweiler.lu','Luxembourg',23), ('sante.public.lu','Luxembourg',23), ('schifflange.lu','Luxembourg',23), ('seveso.public.lu','Luxembourg',23),
+    ('snci.lu','Luxembourg',23), ('strassen.lu','Luxembourg',23), ('uni.lu','Luxembourg',23), ('www.ilr.lu','Luxembourg',23), ('wiltz.lu','Luxembourg',23),
+
     ('vdl.lu','Luxembourg',22), ('esch.lu','Luxembourg',22), ('differdange.lu','Luxembourg',22), ('dudelange.lu','Luxembourg',22), ('ettelbruck.lu','Luxembourg',22),
     ('remich.lu','Luxembourg',22), ('post.lu','Luxembourg',22), ('cfl.lu','Luxembourg',22),
 
