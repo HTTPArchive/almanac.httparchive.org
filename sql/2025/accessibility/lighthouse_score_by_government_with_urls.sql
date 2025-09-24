@@ -939,8 +939,10 @@ regex_rules AS (
     -- Netherlands
     ('(^|\\.)overheid\\.nl$',               'Netherlands', 22),
     ('(^|\\.)rijksoverheid\\.nl$',          'Netherlands', 22),
-    ('(^|\\.)gemeente[a-z0-9]+\\.nl$',     'Netherlands', 21),
-    ('(^|\\.)provincie[a-z0-9]+\\.nl$',    'Netherlands', 21),
+    -- ('(^|\\.)gemeente[a-z0-9]+\\.nl$',     'Netherlands', 21),
+    -- ('(^|\\.)provincie[a-z0-9]+\\.nl$',    'Netherlands', 21),
+    ('(^|\\.)((provincie\\.)?(drenthe|flevoland|friesland|gelderland|groningen|limburg|noord-holland|noordbrabant|overijssel|utrecht|zeeland|zuid-holland)\\.nl)$',
+ 'Netherlands', 23),
     ('(^|\\.)[a-z0-9]+\\.gov\\.nl$',       'Netherlands', 22),
 
     -- New Zealand
@@ -1284,6 +1286,11 @@ generic_ccgov AS (
       ) = m.tld
       AND m.tld != 'us'             -- exclude .us from the generic fallback
       AND m.tld != 'eu'             -- exclude .eu from the generic fallback
+      AND NOT m.tld = 'nl'
+           AND REGEXP_CONTAINS(
+           p.host,
+           r'^(?:[a-z0-9]+\.)*go(?:\.(?:[a-z0-9]+|xn--[a-z0-9]+))*\.nl$'  -- whole-label "go" before .nl
+         )
     )
 ),
 
