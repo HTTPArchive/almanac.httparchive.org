@@ -1282,7 +1282,8 @@ generic_ccgov AS (
         p.host,
         r'^(?:[a-z0-9]+\.)*(?:gov|gouv|gob|gub|go|govt|gv|nic|mil|govern)(?:\.(?:[a-z0-9]+|xn--[a-z0-9]+))*\.([a-z0-9]{2,63})$'
       ) = m.tld
-      AND m.tld != 'us'            -- exclude .us from the generic fallback
+      AND m.tld != 'us'             -- exclude .us from the generic fallback
+      AND m.tld != 'eu'             -- exclude .eu from the generic fallback
     )
 ),
 
