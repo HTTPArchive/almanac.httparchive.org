@@ -1,5 +1,10 @@
 #standardSQL
-# Alt text ending in an image extension
+-- Alt Texts Ending in File Extensions (2025-07-01)
+-- Google Sheet: alt_ending_in_image_extension
+-- Measures how often <img> alt attributes end in file extensions (e.g., .jpg, .png).
+-- Reports both site-level adoption (what % of sites do this) and alt-level frequency
+-- (what % of all non-empty alts end with extensions), broken down by client, root status,
+-- and specific file extension.
 CREATE TEMPORARY FUNCTION getUsedExtensions(a11y JSON)
 RETURNS ARRAY<STRUCT<extension STRING, total INT64>> LANGUAGE js AS '''
 try {
@@ -52,14 +57,14 @@ LEFT JOIN (
     FROM
       `httparchive.crawl.pages`
     WHERE
-      date = '2024-07-01'
+      date = '2025-07-01'
   )
   GROUP BY
     client,
     is_root_page
 ) USING (client, is_root_page)
 WHERE
-  date = '2024-07-01'
+  date = '2025-07-01'
 GROUP BY
   client,
   is_root_page,
