@@ -20,6 +20,9 @@
 --   • Cost: filter by partition (`date`) and `is_root_page` early in `src`.
 --   • Sampling: swap the FROM to `httparchive.sample_data.pages_10k` and comment the date filter if needed.
 --   • If any JSON path is missing, COALESCE keeps rows but those pages won’t contribute keys.
+-- standardSQL
+-- %/count of pages that contain common elements and roles (2025 schema; 2024 shape)
+
 WITH mappings AS (
   SELECT 1 AS mapping_id, 'main'   AS element_type, 'main'        AS role_type UNION ALL
   SELECT 2 AS mapping_id, 'header' AS element_type, 'banner'      AS role_type UNION ALL
@@ -27,22 +30,28 @@ WITH mappings AS (
   SELECT 4 AS mapping_id, 'footer' AS element_type, 'contentinfo' AS role_type
 ),
 
--- Read the Almanac JSON once (2025 primary + legacy fallback)
+-- Read once; keep roles (almanac) and elements (element_count) separate
 src AS (
   SELECT
     client,
     page,
     is_root_page,
+    -- Roles live in the Almanac blob in 2025
     COALESCE(
-      custom_metrics.other.almanac,          -- 2025 location (JSON-typed)
-      JSON_QUERY(payload, '$._almanac')      -- legacy fallback
-    ) AS almanac
+      custom_metrics.other.almanac,
+      JSON_QUERY(payload, '$._almanac')
+    ) AS almanac,
+    -- Elements do NOT live in the almanac; use element_count metric
+    COALESCE(
+      custom_metrics.element_count,                 -- primary (JSON-typed)
+      custom_metrics.other.element_count,           -- if nested under other
+      JSON_QUERY(payload, '$.element_count')        -- legacy fallback
+    ) AS element_count
   FROM 
     `httparchive.crawl.pages`
     -- `httparchive.sample_data.pages_10k`
-  WHERE 
-    is_root_page
-    AND date = DATE '2025-07-01' -- Comment out if `httparchive.sample_data.pages_10k`
+  WHERE is_root_page
+    AND date = DATE '2025-07-01' -- Comment out if `httparchive.sample_data.pages_10k`,
 ),
 
 elements AS (
@@ -51,7 +60,7 @@ elements AS (
     s.page,
     element_type
   FROM src AS s,
-  UNNEST(JSON_KEYS(JSON_QUERY(s.almanac, '$.element_count'))) AS element_type
+  UNNEST(JSON_KEYS(s.element_count)) AS element_type
   JOIN mappings USING (element_type)
 ),
 
@@ -78,8 +87,7 @@ base AS (
   INNER JOIN mappings AS m ON TRUE
   LEFT JOIN elements AS e USING (client, page, element_type)
   LEFT JOIN roles    AS r USING (client, page, role_type)
-  GROUP BY
-    s.client, s.page, m.mapping_id, m.element_type, m.role_type
+  GROUP BY s.client, s.page, m.mapping_id, m.element_type, m.role_type
 )
 
 SELECT
@@ -87,13 +95,13 @@ SELECT
   mapping_id,
   element_type,
   role_type,
-  COUNT(DISTINCT page)                                       AS total_pages,
-  COUNTIF(element_usage > 0)                                 AS element_usage,
-  COUNTIF(role_usage > 0)                                    AS role_usage,
-  COUNTIF(element_usage > 0 OR role_usage > 0)               AS both_usage,
-  SAFE_DIVIDE(COUNTIF(element_usage > 0), COUNT(DISTINCT page))                    AS element_pct,
-  SAFE_DIVIDE(COUNTIF(role_usage > 0),    COUNT(DISTINCT page))                    AS role_pct,
-  SAFE_DIVIDE(COUNTIF(element_usage > 0 OR role_usage > 0), COUNT(DISTINCT page))  AS both_pct
+  COUNT(DISTINCT page) AS total_pages,
+  COUNTIF(element_usage > 0) AS element_usage,
+  COUNTIF(role_usage > 0) AS role_usage,
+  COUNTIF(element_usage > 0 OR role_usage > 0) AS both_usage,
+  COUNTIF(element_usage > 0) / COUNT(DISTINCT page) AS element_pct,
+  COUNTIF(role_usage > 0)  / COUNT(DISTINCT page) AS role_pct,
+  COUNTIF(element_usage > 0 OR role_usage > 0) / COUNT(DISTINCT page) AS both_pct
 FROM base
 GROUP BY client, mapping_id, element_type, role_type
 ORDER BY client, mapping_id, element_type;
