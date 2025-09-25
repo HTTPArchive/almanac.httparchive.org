@@ -1,51 +1,55 @@
--- standardSQL
--- Web Almanac — % of sites using each attribute (sample table; 2024-style output)
---
--- What this does
---   • Reads the 2025-style JSON blob at: custom_metrics.other.almanac  (JSON-typed)
---   • Extracts attribute names from: almanac.attributes_used_on_elements (object of {attribute: count})
---   • Computes, per {client, is_root_page}, the % of (sample) sites that use each attribute
---   • Always includes ARIA attributes; also includes any non-ARIA attribute used by ≥ 1% of sites
---
--- Output columns (mirrors 2024 structure)
---   client, is_root_page, total_sites, attribute, total_sites_using, pct_sites_using
---   - pct_sites_using is a human-readable string like "25.0%".
---   - If you ever need a numeric 0..1 ratio for math/plots, you can re-add pct_sites_using_num,
---     but it's intentionally omitted here to match your preference and avoid confusion.
---
--- Notes
---   • No TABLESAMPLE or deterministic hashing used.
---   • If the sample table lacks a 'date' column, keep the date filter commented out.
---   • We wrap JSON (type JSON) with TO_JSON_STRING(...) to pass into the JS UDF safely.
---
-CREATE TEMPORARY FUNCTION getUsedAttributes(almanac_str STRING)
-RETURNS ARRAY<STRING>
-LANGUAGE js AS r"""
-try {
-  const almanac = JSON.parse(almanac_str || "{}");
-  const m = almanac.attributes_used_on_elements;
-  if (!m || typeof m !== "object") return [];
-  return Object.keys(m); // attribute names present on the page
-} catch (e) {
-  return [];
-}
-""";
-
+#standardSQL
+# Web Almanac — % of sites using each HTML attribute (2025-07-01; no JS UDF)
+# Google Sheet: common_element_attributes
+#
+# Purpose
+#   • Analyze how often sites use specific HTML attributes.
+#   • Focus on ARIA attributes plus any attribute used by ≥1% of sites.
+#
+# Method
+#   1. Read attribute usage summary from 2025 Almanac JSON:
+#        custom_metrics.other.almanac.attributes_used_on_elements
+#   2. Expand attribute names with JSON_KEYS() → one row per {page, attribute}.
+#   3. Count distinct sites per {client, is_root_page, attribute}.
+#   4. Compute percentage of sites using each attribute relative to group totals.
+#   5. Keep only attributes starting with "aria-" or used by ≥1% of sites.
+#
+# Output columns
+#   client              — "desktop" | "mobile"
+#   is_root_page        — TRUE if root page
+#   total_sites         — distinct sites in group
+#   attribute           — attribute name
+#   total_sites_using   — sites with that attribute
+#   pct_sites_using     — share of sites using that attribute (0–1)
+#
+# Changes from older version
+#   • Removed JavaScript UDF (getUsedAttributes).
+#   • Now use native BigQuery JSON functions:
+#       JSON_QUERY() to isolate the attributes object,
+#       JSON_KEYS() to extract attribute names.
+#   • Read from `custom_metrics.other.almanac` instead of payload._almanac.
+# Extract attributes used on elements directly from the 2025 Almanac JSON
 WITH attribute_usage AS (
   SELECT
-    p.client,
-    p.is_root_page,
-    p.page,
-    attr AS attribute
-  FROM `httparchive.crawl.pages` AS p
-  CROSS JOIN UNNEST(
-    getUsedAttributes(TO_JSON_STRING(p.custom_metrics.other.almanac))
-  ) AS attr
-  WHERE 1=1
-    AND p.date = DATE '2025-07-01'           
-    AND p.custom_metrics.other.almanac IS NOT NULL
+    client,
+    is_root_page,
+    page,                              -- Distinct pages
+    attribute                          -- The attribute being analyzed
+  FROM
+    `httparchive.crawl.pages`,
+    -- `httparchive.sample_data.pages_10k`,
+    UNNEST(
+      JSON_KEYS(
+        JSON_QUERY(custom_metrics.other.almanac, '$.attributes_used_on_elements')
+      )
+    ) AS attribute
+  WHERE 
+    date = DATE '2025-07-01'
+    AND custom_metrics.other.almanac IS NOT NULL
 ),
-totals AS (
+
+# Totals per {client, is_root_page}
+total_sites_per_group AS (
   SELECT
     client,
     is_root_page,
@@ -54,21 +58,20 @@ totals AS (
   GROUP BY client, is_root_page
 )
 
+# Aggregate results to compute totals and percentages
 SELECT
   a.client,
   a.is_root_page,
-  t.total_sites,                                   -- denominator per {client, is_root_page}
-  a.attribute,
-  COUNT(DISTINCT a.page) AS total_sites_using,     -- sites (in this sample) that used this attribute
-  -- pct_sites_using_num intentionally omitted to keep only human-readable percentage
-  FORMAT('%.1f%%', 100 * SAFE_DIVIDE(COUNT(DISTINCT a.page), t.total_sites)) AS pct_sites_using
+  t.total_sites,                                -- Total number of unique sites
+  a.attribute,                                  -- The attribute being analyzed
+  COUNT(DISTINCT a.page) AS total_sites_using,  -- Sites using this attribute
+  SAFE_DIVIDE(COUNT(DISTINCT a.page), t.total_sites) AS pct_sites_using
 FROM attribute_usage a
-JOIN totals t
+JOIN total_sites_per_group t
   ON a.client = t.client AND a.is_root_page = t.is_root_page
-GROUP BY a.client, a.is_root_page, t.total_sites, a.attribute
+GROUP BY
+  a.client, a.is_root_page, a.attribute, t.total_sites
 HAVING
-  STARTS_WITH(a.attribute, 'aria-')
-  OR SAFE_DIVIDE(COUNT(DISTINCT a.page), t.total_sites) >= 0.01   -- ≥ 1% of sites (in this sample)
-ORDER BY
-  SAFE_DIVIDE(COUNT(DISTINCT a.page), t.total_sites) DESC,
-  a.client, a.is_root_page, a.attribute;
+  STARTS_WITH(a.attribute, 'aria-') OR          -- keep aria-* always
+  SAFE_DIVIDE(COUNT(DISTINCT a.page), t.total_sites) >= 0.01  -- or ≥1% of sites
+ORDER BY pct_sites_using DESC;
