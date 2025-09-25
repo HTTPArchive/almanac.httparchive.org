@@ -1,5 +1,6 @@
 -- standardSQL
 -- Web Almanac — CAPTCHA usage analysis (2025-07-01)
+-- Google Sheet: captcha_usage
 --
 -- Goal
 --   Measure adoption of CAPTCHA technologies (reCAPTCHA, hCaptcha) across sites
@@ -30,19 +31,13 @@
 SELECT
   client,
   is_root_page,
-  date,  -- Crawl date
-
-  COUNT(DISTINCT page) AS total_sites,  -- Total unique sites in this slice
-
-  COUNT(DISTINCT IF(app.technology IN ('reCAPTCHA', 'hCaptcha'), page, NULL))
-    AS sites_with_captcha,              -- Sites using reCAPTCHA or hCaptcha
-
-  FORMAT('%.1f%%',
-    100 * SAFE_DIVIDE(
-            COUNT(DISTINCT IF(app.technology IN ('reCAPTCHA','hCaptcha'), page, NULL)),
-            COUNT(DISTINCT page)
-          )
-  ) AS perc_sites_with_captcha          -- Percentage of sites, formatted nicely
+  date,  # Date of the analysis
+  COUNT(DISTINCT page) AS total_sites,  # Total number of unique sites for the client
+  COUNT(DISTINCT IF(app.technology IN ('reCAPTCHA', 'hCaptcha'), page, NULL)) AS sites_with_captcha,  # Number of sites using reCAPTCHA or hCaptcha
+  SAFE_DIVIDE(
+    COUNT(DISTINCT IF(app.technology IN ('reCAPTCHA', 'hCaptcha'), page, NULL)),
+    COUNT(DISTINCT page)
+  ) AS perc_sites_with_captcha  # Percentage of sites using reCAPTCHA or hCaptcha
 FROM
   `httparchive.crawl.pages`,
   UNNEST(technologies) AS app           -- Unnest the detected technologies
@@ -53,4 +48,4 @@ GROUP BY
   is_root_page,
   date
 ORDER BY
-  client;
+  client;  # Order results by client domain
