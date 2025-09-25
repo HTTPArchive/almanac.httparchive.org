@@ -2,6 +2,7 @@
 # Purpose
 #   Measure adoption of specific Accessibility-related technologies (apps/overlays)
 #   across domain rank buckets in the 2025-07-01 HTTP Archive crawl.
+#   Google Sheet: a11y_technology_usage_by_domain_rank
 #
 # Output columns
 #   • client             = desktop or mobile
