@@ -1,90 +1,55 @@
--- standardSQL
--- Web Almanac — Button accessible-name sources (sampled), by client (2025-07-01)
+#standardSQL
+-- Button Accessible Name Sources (2025-07-01)
+-- Google Sheet: button_name_sources
 --
--- What this does
---   • Extracts source of the accessible name for buttons/submit inputs from a11y tree
---   • Returns, per client:
---       - total_buttons (sum across rows)
---       - total_with_this_source (per source)
---       - perc_of_all_buttons_ratio  (0–1, numeric)
---       - perc_of_all_buttons        (formatted string, e.g., "59.1%")
+-- Purpose
+--   • Analyze how <button> and <input type="submit"> elements derive their
+--     accessible names in the a11y tree.
+--   • Categorize name sources as attributes (e.g., aria-label, title),
+--     related elements (e.g., <label>), or mark as missing.
 --
--- Notes
---   • Uses TABLESAMPLE for cost control (tweak %).
---   • WINDOW SUM over client to compute share per client.
---   • Force FLOAT math to avoid integer division.
---   • Provide a formatted percent string to avoid spreadsheet re-scaling surprises.
+-- Note: the  JavaScript temporary function (UDF) was no longer needed as 
+-- each accessible name source became its own row. 
 --
-CREATE TEMPORARY FUNCTION a11yButtonNameSources(a11y_json STRING)
-RETURNS ARRAY<STRING> LANGUAGE js AS '''
-  try {
-    const a11y = JSON.parse(a11y_json || '{}');
-    const out = [];
-    const tree = Array.isArray(a11y.form_control_a11y_tree) ? a11y.form_control_a11y_tree : [];
-
-    for (const node of tree) {
-      const isButton = node?.type === "button";
-      const isSubmit = node?.type === "input" && node?.attributes?.type === "submit";
-      if (!isButton && !isSubmit) continue;
-
-      const name = node?.accessible_name || "";
-      const srcs = Array.isArray(node?.accessible_name_sources) ? node.accessible_name_sources : [];
-
-      if (!name || name.length === 0) {
-        out.push("No accessible name");
-        continue;
-      }
-      if (srcs.length === 0) continue;
-
-      const s = srcs[0] || {};
-      let pretty = s.type || "unknown";
-      if (s.type === "attribute") {
-        pretty = `attribute: ${s.attribute || "unknown"}`;
-      } else if (s.type === "relatedElement") {
-        pretty = `relatedElement: ${s.attribute || "label"}`;
-      }
-      out.push(pretty);
-    }
-    return out;
-  } catch (e) {
-    return [];
-  }
-''';
-
-WITH btn_rows AS (
-  SELECT
-    client,
-    src AS button_name_source
-  FROM
-    `httparchive.crawl.pages`,
-    UNNEST(
-      a11yButtonNameSources(
-        COALESCE(
-          TO_JSON_STRING(custom_metrics.a11y),           -- preferred (JSON column -> STRING)
-          JSON_EXTRACT_SCALAR(payload, '$._a11y')        -- legacy fallback
-        )
-      )
-    ) AS src
-  WHERE date = '2025-07-01'
-)
+-- Output
+--   client                — "desktop" | "mobile"
+--   is_root_page          — TRUE if root URL
+--   total_buttons         — total number of button elements seen
+--   button_name_source    — classified source of accessible name
+--   total_with_this_source — number of buttons with that source
+--   perc_of_all_buttons   — percentage share of that source among all buttons
 SELECT
   client,
-  -- Totals per client (windowed)
-  SUM(COUNT(*)) OVER (PARTITION BY client)         AS total_buttons,
+  is_root_page,
+  SUM(COUNT(0)) OVER (PARTITION BY client, is_root_page) AS total_buttons,
   button_name_source,
-  COUNT(*)                                         AS total_with_this_source,
-
-  -- Ratios (0–1) and a printable percent string
-  SAFE_DIVIDE(
-    CAST(COUNT(*) AS FLOAT64),
-    CAST(SUM(COUNT(*)) OVER (PARTITION BY client) AS FLOAT64)
-  )                                                AS perc_of_all_buttons_ratio,
-  FORMAT('%.1f%%',
-    100 * SAFE_DIVIDE(
-            CAST(COUNT(*) AS FLOAT64),
-            CAST(SUM(COUNT(*)) OVER (PARTITION BY client) AS FLOAT64)
-          )
-  )                                                AS perc_of_all_buttons
-FROM btn_rows
-GROUP BY client, button_name_source
-ORDER BY client, perc_of_all_buttons_ratio DESC, button_name_source;
+  COUNT(0) AS total_with_this_source,
+  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client, is_root_page) AS perc_of_all_buttons
+FROM (
+  SELECT
+    client,
+    is_root_page,
+    CASE
+      WHEN COALESCE(JSON_VALUE(node, '$.accessible_name'), '') = '' THEN 'No accessible name'
+      ELSE
+        CASE JSON_VALUE(node, '$.accessible_name_sources[0].type')
+          WHEN 'attribute' THEN CONCAT('attribute: ', COALESCE(JSON_VALUE(node, '$.accessible_name_sources[0].attribute'), ''))
+          WHEN 'relatedElement' THEN CONCAT('relatedElement: ', COALESCE(JSON_VALUE(node, '$.accessible_name_sources[0].attribute'), 'label'))
+          ELSE COALESCE(JSON_VALUE(node, '$.accessible_name_sources[0].type'), 'unknown')
+        END
+    END AS button_name_source
+  FROM
+    `httparchive.crawl.pages`,
+    UNNEST(JSON_QUERY_ARRAY(custom_metrics.a11y.form_control_a11y_tree)) AS node
+  WHERE
+    date = '2025-07-01'
+    AND is_root_page
+    AND (
+      JSON_VALUE(node, '$.type') = 'button' OR
+      (JSON_VALUE(node, '$.type') = 'input' AND JSON_VALUE(node, '$.attributes.type') = 'submit')
+    )
+)
+GROUP BY
+  client, is_root_page, button_name_source
+ORDER BY
+  perc_of_all_buttons DESC;
