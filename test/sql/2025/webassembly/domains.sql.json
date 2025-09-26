@@ -1,0 +1,11 @@
+[{
+  "client": "desktop",
+  "all_domains": "9766040",
+  "domains_using_wasm": "30256",
+  "domains_using_wasm_pct": "0.0030980827438757161"
+}, {
+  "client": "mobile",
+  "all_domains": "12241099",
+  "domains_using_wasm": "34364",
+  "domains_using_wasm_pct": "0.0028072642823981737"
+}]

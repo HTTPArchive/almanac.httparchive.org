@@ -1,0 +1,11 @@
+[{
+  "client": "desktop",
+  "url": "https://wasmbyexample.dev/examples/exports/demo/rust/pkg/exports_bg.wasm",
+  "f0_": null,
+  "custom_sections_size": "48828623"
+}, {
+  "client": "mobile",
+  "url": "https://5ccc6b6.online-server.cloud/_framework/BlazorAnimate.wasm",
+  "f0_": null,
+  "custom_sections_size": "32825822"
+}]

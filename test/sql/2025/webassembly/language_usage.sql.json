@@ -1,0 +1,73 @@
+[{
+  "client": "mobile",
+  "language": "Unknown",
+  "count": "196544",
+  "total": "244265",
+  "pct": "0.80463431109655492"
+}, {
+  "client": "desktop",
+  "language": "Unknown",
+  "count": "185285",
+  "total": "224214",
+  "pct": "0.82637569464886229"
+}, {
+  "client": "mobile",
+  "language": "Rust",
+  "count": "24287",
+  "total": "244265",
+  "pct": "0.099428898941723132"
+}, {
+  "client": "desktop",
+  "language": "LikelyEmscripten",
+  "count": "14145",
+  "total": "224214",
+  "pct": "0.063087050764002242"
+}, {
+  "client": "mobile",
+  "language": "LikelyEmscripten",
+  "count": "13375",
+  "total": "244265",
+  "pct": "0.054756105049843407"
+}, {
+  "client": "desktop",
+  "language": "Rust",
+  "count": "13314",
+  "total": "224214",
+  "pct": "0.059380770157082076"
+}, {
+  "client": "desktop",
+  "language": "Emscripten",
+  "count": "10181",
+  "total": "224214",
+  "pct": "0.045407512465769309"
+}, {
+  "client": "mobile",
+  "language": "Emscripten",
+  "count": "8669",
+  "total": "244265",
+  "pct": "0.03549014390109103"
+}, {
+  "client": "mobile",
+  "language": "Blazor",
+  "count": "1317",
+  "total": "244265",
+  "pct": "0.0053916852598612161"
+}, {
+  "client": "desktop",
+  "language": "Blazor",
+  "count": "1238",
+  "total": "224214",
+  "pct": "0.00552151069959949"
+}, {
+  "client": "mobile",
+  "language": "Go",
+  "count": "73",
+  "total": "244265",
+  "pct": "0.00029885575092624816"
+}, {
+  "client": "desktop",
+  "language": "Go",
+  "count": "51",
+  "total": "224214",
+  "pct": "0.00022746126468463164"
+}]

@@ -1,0 +1,100 @@
+[{
+  "client": "mobile",
+  "compression": "br",
+  "pages": "36205",
+  "total_pages": "28920527",
+  "pct_pages": "0.0012518789854693865",
+  "wasm_requests": "202879",
+  "total_wasm_requests": "254031",
+  "pct_wasm_requests": "0.79863874881412111"
+}, {
+  "client": "desktop",
+  "compression": "br",
+  "pages": "26960",
+  "total_pages": "23759221",
+  "pct_pages": "0.0011347173377443645",
+  "wasm_requests": "188583",
+  "total_wasm_requests": "246624",
+  "pct_wasm_requests": "0.764657940833009"
+}, {
+  "client": "desktop",
+  "compression": "gzip",
+  "pages": "15009",
+  "total_pages": "23759221",
+  "pct_pages": "0.00063171263064559227",
+  "wasm_requests": "48105",
+  "total_wasm_requests": "246624",
+  "pct_wasm_requests": "0.19505400934215647"
+}, {
+  "client": "mobile",
+  "compression": "gzip",
+  "pages": "11021",
+  "total_pages": "28920527",
+  "pct_pages": "0.00038107880952515147",
+  "wasm_requests": "40347",
+  "total_wasm_requests": "254031",
+  "pct_wasm_requests": "0.15882707228645324"
+}, {
+  "client": "mobile",
+  "compression": "zstd",
+  "pages": "997",
+  "total_pages": "28920527",
+  "pct_pages": "3.4473783966661466e-05",
+  "wasm_requests": "10802",
+  "total_wasm_requests": "254031",
+  "pct_wasm_requests": "0.042522369317130583"
+}, {
+  "client": "desktop",
+  "compression": "zstd",
+  "pages": "985",
+  "total_pages": "23759221",
+  "pct_pages": "4.1457588192811541e-05",
+  "wasm_requests": "9932",
+  "total_wasm_requests": "246624",
+  "pct_wasm_requests": "0.040271830803165952"
+}, {
+  "client": "desktop",
+  "compression": "aws-chunked",
+  "pages": "2",
+  "total_pages": "23759221",
+  "pct_pages": "8.4177844046317844e-08",
+  "wasm_requests": "2",
+  "total_wasm_requests": "246624",
+  "pct_wasm_requests": "8.1095108343064753e-06"
+}, {
+  "client": "mobile",
+  "compression": "aws-chunked",
+  "pages": "2",
+  "total_pages": "28920527",
+  "pct_pages": "6.9155033032420186e-08",
+  "wasm_requests": "2",
+  "total_wasm_requests": "254031",
+  "pct_wasm_requests": "7.873054863382816e-06"
+}, {
+  "client": "desktop",
+  "compression": null,
+  "pages": "1",
+  "total_pages": "23759221",
+  "pct_pages": "4.2088922023158922e-08",
+  "wasm_requests": "1",
+  "total_wasm_requests": "246624",
+  "pct_wasm_requests": "4.0547554171532377e-06"
+}, {
+  "client": "desktop",
+  "compression": "deflate",
+  "pages": "1",
+  "total_pages": "23759221",
+  "pct_pages": "4.2088922023158922e-08",
+  "wasm_requests": "1",
+  "total_wasm_requests": "246624",
+  "pct_wasm_requests": "4.0547554171532377e-06"
+}, {
+  "client": "mobile",
+  "compression": null,
+  "pages": "1",
+  "total_pages": "28920527",
+  "pct_pages": "3.4577516516210093e-08",
+  "wasm_requests": "1",
+  "total_wasm_requests": "254031",
+  "pct_wasm_requests": "3.936527431691408e-06"
+}]

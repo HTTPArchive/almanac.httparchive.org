@@ -1,0 +1,15 @@
+[{
+  "client": "desktop",
+  "pages": "49564",
+  "total_pages": "23759221",
+  "pct_pages": "0.0020860953311558489",
+  "total_wasm_requests": "291883",
+  "pct_wasm_requests": "3.42603029295985e-06"
+}, {
+  "client": "mobile",
+  "pages": "56043",
+  "total_pages": "28920527",
+  "pct_pages": "0.0019378277581179623",
+  "total_wasm_requests": "296401",
+  "pct_wasm_requests": "3.3738077806755037e-06"
+}]
