@@ -1,15 +1,16 @@
--- standardSQL
--- Web Almanac — Lighthouse Accessibility audits summary (2025 schema)
--- Google Sheets: lighthouse_a11y_audits
---
--- Key differences from the 2024 query:
---   • Lighthouse column is JSON-typed in 2025. JS UDFs require STRING, so we wrap
---     with TO_JSON_STRING(lighthouse) both in the UDF call and in emptiness checks.
---   • Removed unused GROUP BY "date" (not selected).
---   • Scores and weights treated as FLOAT64 (LHR uses 0–1 floats, not integers).
---   • Otherwise structure is preserved: UDF flattens auditRefs, CROSS JOIN UNNEST,
---     per-{client,is_root_page} aggregation of pass/fail counts, applicable totals,
---     percentage, median weight, and metadata.
+– standardSQL
+– Web Almanac — Lighthouse Accessibility audits summary (2025 schema)
+– Google Sheets: lighthouse_a11y_audits
+
+– How this differs from the 2024 script:
+– • Lighthouse is JSON-typed in 2025 → JS UDFs require STRING, so we wrap with
+–   TO_JSON_STRING(lighthouse) both in the UDF call and the “empty” check.
+– • Table/partition: use httparchive.crawl.pages with date = DATE ‘2025-07-01’
+–   (2024 used httparchive.all.pages and a string date).
+– • Types: weight/score are FLOAT64 (LHR scores/weights are 0–1 floats), not INT64.
+– • Removed unused GROUP BY date (date isn’t selected).
+– • Structure preserved: UDF flattens auditRefs; CROSS JOIN UNNEST; per-{client,is_root_page}
+–   aggregation of pass/fail counts, applicable totals, percentage, median weight, and metadata.
 CREATE TEMPORARY FUNCTION getAudits(report STRING, category STRING)
 RETURNS ARRAY<
   STRUCT<
