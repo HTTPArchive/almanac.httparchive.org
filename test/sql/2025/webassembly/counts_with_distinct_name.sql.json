@@ -1,9 +1,0 @@
-[{
-  "client": "desktop",
-  "total_count": "291883",
-  "distinct_count": "5894"
-}, {
-  "client": "mobile",
-  "total_count": "296401",
-  "distinct_count": "5161"
-}]

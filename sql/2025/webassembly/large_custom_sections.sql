@@ -8,14 +8,14 @@ WITH wasm AS (
   FROM
     `httparchive.crawl.requests`
   WHERE
-    date = '2025-06-01' AND (type = 'wasm')
+    date = '2025-07-01' AND (type = 'wasm')
 )
 
 SELECT
   client,
   ANY_VALUE(url) AS url,
-  ANY_VALUE(JSON_VALUE(wasm_stats, '$.sections.custom')) AS custom_sections,
-  MAX(SAFE_CAST(JSON_VALUE(wasm_stats, '$.size.custom') AS INT64)) AS custom_sections_size
+  ANY_VALUE(JSON_VALUE(wasm_stats.sections.custom)) AS custom_sections,
+  MAX(SAFE_CAST(JSON_VALUE(wasm_stats.size.custom) AS INT64)) AS custom_sections_size
   
 FROM
   wasm

@@ -3,16 +3,16 @@
 WITH wasm AS (
   SELECT
     *,
-    JSON_QUERY(payload, '$._wasm_stats') AS wasm_stats
+    JSON_QUERY(payload,'$._wasm_stats') AS wasm_stats
   FROM
     `httparchive.crawl.requests`
   WHERE
-    date = '2025-06-01' AND (type = 'wasm')
+    date = '2025-07-01' AND type = 'wasm'
 )
 
 SELECT
   client,
-  JSON_VALUE(wasm_stats, '$.language') AS language,
+  JSON_VALUE(wasm_stats.language) AS language,
   COUNT(0) AS count,
   SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct

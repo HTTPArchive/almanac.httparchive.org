@@ -18,7 +18,7 @@ FROM (
     `httparchive.crawl.requests`,
     UNNEST(response_headers) AS response_headers
   WHERE
-    date = '2025-06-01' AND
+    date = '2025-07-01' AND
     type = 'wasm' AND
     LOWER(response_headers.name) = 'content-encoding'
 )
@@ -28,7 +28,7 @@ JOIN (
     COUNT(0) AS total_pages
   FROM
     `httparchive.crawl.pages`
-  WHERE date = '2025-06-01'
+  WHERE date = '2025-07-01'
   GROUP BY
     client
 )

@@ -8,7 +8,7 @@ FROM
   `httparchive.crawl.requests`,
   UNNEST([1000, 10000, 100000, 1000000, 10000000, 100000000]) AS _rank
 WHERE
-  date = '2025-06-01' AND type = 'wasm' AND rank <= _rank
+  date = '2025-07-01' AND type = 'wasm' AND rank <= _rank
 GROUP BY
   client,
   rank

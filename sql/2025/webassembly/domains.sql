@@ -10,7 +10,7 @@ FROM (
   FROM
     `httparchive.crawl.pages`
   WHERE
-    date = '2025-06-01'
+    date = '2025-07-01'
   GROUP BY
     client
 )
@@ -21,7 +21,7 @@ JOIN (
   FROM
     `httparchive.crawl.requests`
   WHERE
-    date = '2025-06-01' AND type = 'wasm'
+    date = '2025-07-01' AND type = 'wasm'
   GROUP BY
     client
 )
