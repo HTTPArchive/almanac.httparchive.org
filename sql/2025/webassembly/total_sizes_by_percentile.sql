@@ -8,9 +8,9 @@ FROM
   `httparchive.crawl.requests`,
   UNNEST([0, 10, 25, 50, 75, 90, 100]) AS percentile
 WHERE
-    date = '2025-07-01' AND
-    type = 'wasm' AND
-    payload._wasm_stats IS NOT NULL
+  date = '2025-07-01' AND
+  type = 'wasm' AND
+  payload._wasm_stats IS NOT NULL
 GROUP BY
   percentile,
   client
