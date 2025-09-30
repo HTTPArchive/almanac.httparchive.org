@@ -14,11 +14,11 @@ SELECT
   SUM(SAFE_CAST(JSON_VALUE(payload._wasm_stats.instr.categories.global_var) AS INT64)) / SUM(SAFE_CAST(JSON_VALUE(payload._wasm_stats.instr.total) AS INT64)) AS global_var_pct,
   SUM(SAFE_CAST(JSON_VALUE(payload._wasm_stats.instr.categories.local_var) AS INT64)) / SUM(SAFE_CAST(JSON_VALUE(payload._wasm_stats.instr.total) AS INT64)) AS local_var_pct
 FROM
-    `httparchive.crawl.requests`
+  `httparchive.crawl.requests`
 WHERE
-    date = '2025-07-01' AND
-    type = 'wasm' AND
-    payload._wasm_stats IS NOT NULL
+  date = '2025-07-01' AND
+  type = 'wasm' AND
+  payload._wasm_stats IS NOT NULL
 GROUP BY
   client
 ORDER BY
