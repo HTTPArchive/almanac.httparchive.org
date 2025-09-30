@@ -7,7 +7,7 @@ SELECT
   SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS percentage
 FROM
-    `httparchive.crawl.requests`
+  `httparchive.crawl.requests`
 WHERE
   date = '2025-07-01' AND
   type = 'wasm' AND
