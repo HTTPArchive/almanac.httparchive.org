@@ -7,7 +7,8 @@ SELECT
 FROM
     `httparchive.crawl.requests`
 WHERE
-    date = '2025-07-01' AND type = 'wasm'
+    date = '2025-07-01' AND
+    type = 'wasm'
 GROUP BY
   client,
   mimeType

@@ -1,8 +1,10 @@
 # Query for the % of domains which use wasm
 
 SELECT
-  *,
-  domains_using_wasm / all_domains AS domains_using_wasm_pct
+  client,
+  all_domains,
+  domains_using_wasm,
+  domains_using_wasm / all_domains AS percentage
 FROM (
   SELECT
     client,
@@ -21,7 +23,8 @@ JOIN (
   FROM
     `httparchive.crawl.requests`
   WHERE
-    date = '2025-07-01' AND type = 'wasm'
+    date = '2025-07-01' AND
+    type = 'wasm'
   GROUP BY
     client
 )
