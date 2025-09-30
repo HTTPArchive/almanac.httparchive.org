@@ -1,101 +1,82 @@
 #standardSQL
--- Web Almanac — Media query features: % of pages using each feature
---
--- What this does
---   • Parses parsed_css ASTs to collect @media feature names (e.g., width, prefers-color-scheme).
---   • Aggregates per client: #pages using each feature, total pages, and % of pages.
---   • Supports cheap SMOKE TEST (sample tables) or full LIVE crawl via a CTE switch.
---
--- How to run
---   • SAMPLE (default): uses httparchive.sample_data.parsed_css_10k + pages_10k (no date column).
---   • LIVE: uncomment the LIVE block and comment out the SAMPLE block; set run_date as needed.
---
--- Notes
---   • css-utils.js expects a CSS AST; pass TO_JSON_STRING(css) defensively.
---   • LIVE parsed_css is partitioned by date; a date filter is required.
---   • Percent is returned both as a raw fraction and a formatted string.
 
-CREATE TEMPORARY FUNCTION getMediaQueryFeatures(css_str STRING)
+CREATE TEMPORARY FUNCTION getMediaQueryFeatures(css JSON)
 RETURNS ARRAY<STRING>
 LANGUAGE js
 OPTIONS (library = "gs://httparchive/lib/css-utils.js")
-AS r"""
+AS '''
 try {
-  const ast = JSON.parse(css_str || "{}");
-  const counts = {};
-  walkRules(ast, rule => {
-    if (!rule || typeof rule.media !== "string") return;
-    // Collect feature names inside parentheses before ':' or ')'
-    let features = rule.media.replace(/\s+/g, "").match(/\(([A-Za-z0-9_-]+)(?=[:\)])/g);
-    if (!features) return;
-    features = features.map(s => s.slice(1));
-    for (const f of features) incrementByKey(counts, String(f).toLowerCase());
-  }, { type: "media" });
-  return Object.keys(counts);
+  function compute(ast) {
+    let ret = {};
+
+    walkRules(ast, rule => {
+      let features = rule.media
+                .replace(/\\s+/g, "")
+                .match(/\\([\\w-]+(?=[:\\)])/g);
+
+      if (features) {
+        features = features.map(s => s.slice(1));
+
+        for (let feature of features) {
+          incrementByKey(ret, feature);
+        }
+      }
+    }, {type: "media"});
+
+    return ret;
+  }
+
+  let features = compute(css);
+  return Object.keys(features);
 } catch (e) {
   return [];
 }
-""";
+''';
 
-WITH
-/* =========================
-SAMPLE (default, cheap)
-=========================
-css_features AS (
+WITH media_query_data AS (
+  -- Extracting media query features from the CSS data
   SELECT
-    pc.client,
-    pc.page,
-    feature
-  FROM `httparchive.sample_data.parsed_css_10k` AS pc
-  CROSS JOIN UNNEST(getMediaQueryFeatures(TO_JSON_STRING(pc.css))) AS feature
-  WHERE feature IS NOT NULL
-  GROUP BY pc.client, pc.page, feature
+    client,
+    page,
+    LOWER(feature) AS feature
+  FROM
+    `httparchive.crawl.parsed_css`,
+    UNNEST(getMediaQueryFeatures(css)) AS feature
+  WHERE
+    date = '2025-07-01' AND
+    feature IS NOT NULL
+  GROUP BY
+    client, page, feature
 ),
-totals AS (
-  SELECT
-    p.client,
-    COUNT(*) AS total_pages
-  FROM `httparchive.sample_data.pages_10k` AS p
-  GROUP BY p.client
-) */
 
-/* =========================
-   LIVE (full crawl)
-   -- Swap this in and comment the SAMPLE block above */
-css_features AS (
+total_pages_data AS (
+  -- Calculating the total number of pages per client
   SELECT
-    pc.client,
-    pc.page,
-    feature
-  FROM `httparchive.crawl.parsed_css` AS pc
-  CROSS JOIN UNNEST(getMediaQueryFeatures(TO_JSON_STRING(pc.css))) AS feature
-  WHERE pc.date = DATE '2025-07-01'
-    AND feature IS NOT NULL
-  GROUP BY pc.client, pc.page, feature
-),
-totals AS (
-  SELECT
-    p.client,
-    COUNT(*) AS total_pages
-  FROM `httparchive.crawl.pages` AS p
-  WHERE p.date = DATE '2025-07-01'
-    -- AND p.is_root_page  -- remove if you want all pages
-  GROUP BY p.client
+    client,
+    COUNT(0) AS total_pages
+  FROM
+    `httparchive.crawl.pages`
+  WHERE
+    date = '2025-07-01'
+  GROUP BY
+    client
 )
 
-
--- =======================
--- Final output (one SELECT)
--- =======================
 SELECT
-  f.client,
-  f.feature,
-  COUNT(DISTINCT f.page) AS pages,
-  t.total_pages,
-  FORMAT('%.1f%%', 100 * SAFE_DIVIDE(COUNT(DISTINCT f.page), t.total_pages)) AS pct_pages_with_feature
-FROM css_features AS f
-JOIN totals AS t
-  ON t.client = f.client
-GROUP BY f.client, f.feature, t.total_pages
-HAVING pages >= 100
-ORDER BY pct_pages_with_feature DESC, f.client, f.feature;
+  m.client,
+  m.feature,
+  COUNT(DISTINCT m.page) AS pages,
+  tp.total_pages,
+  SAFE_DIVIDE(COUNT(DISTINCT m.page), tp.total_pages) AS pct_pages_with_feature
+FROM
+  media_query_data AS m
+JOIN
+  total_pages_data AS tp
+ON
+  m.client = tp.client
+GROUP BY
+  m.client, m.feature, tp.total_pages
+HAVING
+  pages >= 100
+ORDER BY
+  pct_pages_with_feature DESC;
