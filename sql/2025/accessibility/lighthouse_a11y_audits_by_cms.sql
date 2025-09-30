@@ -1,110 +1,96 @@
 #standardSQL
--- Web Almanac — Top Lighthouse Accessibility issues by CMS
--- Switch between SAMPLE (default) and LIVE by toggling the `audits_flat` CTE block.
-
-CREATE TEMPORARY FUNCTION getAudits(report_str STRING, category STRING)
-RETURNS ARRAY<STRUCT<
-  id          STRING,
-  weight      FLOAT64,
-  audit_group STRING,
-  title       STRING,
-  score       FLOAT64
->>
-LANGUAGE js AS r"""
-try {
-  const lhr = JSON.parse(report_str || "{}");
-  const cat = (lhr.categories && lhr.categories[category]) ? lhr.categories[category] : null;
-  const refs = (cat && Array.isArray(cat.auditRefs)) ? cat.auditRefs : [];
-  const audits = (lhr.audits && typeof lhr.audits === "object") ? lhr.audits : {};
-
-  const out = [];
-  for (const ref of refs) {
-    const id = ref && ref.id ? String(ref.id) : null;
-    if (!id) continue;
-
-    const a = audits[id] || {};
-    const score  = (typeof a.score === "number") ? a.score : null;   // 0..1 or null
-    const weight = (typeof ref.weight === "number") ? ref.weight : 0;
-
-    out.push({
-      id: id,
-      weight: weight,
-      audit_group: (ref && ref.group) ? String(ref.group) : null,
-      title: (a && a.title) ? String(a.title) : null,
-      score: score
-    });
+# Define the function outside the WITH clause
+CREATE TEMPORARY FUNCTION getAudits(report JSON, category STRING)
+RETURNS ARRAY<STRUCT<id STRING, weight INT64, audit_group STRING, title STRING, score INT64>> LANGUAGE js AS '''
+  try {
+    var auditrefs = report.categories[category].auditRefs;
+    var audits = report.audits;
+    var results = [];
+    for (auditref of auditrefs) {
+      results.push({
+        id: auditref.id,
+        weight: auditref.weight,
+        audit_group: auditref.group,
+        title: audits[auditref.id].title,  // Keep title, not description
+        score: audits[auditref.id].score
+      });
+    }
+    return results;
+  } catch (e) {
+    return [{}];
   }
-  return out;
-} catch (e) {
-  return [];
-}
-""";
+''';
 
-WITH
--- ===== SAMPLE (default) — safe, cheap: single-touch TABLESAMPLE =====
--- audits_flat AS (
---   SELECT
---     LOWER(t.technology) AS cms,
---     a.id                AS audit_id,
---     a.weight            AS weight,
---     a.audit_group       AS audit_group,
---    a.score             AS score
---   FROM `httparchive.crawl.pages` AS p
---   TABLESAMPLE SYSTEM (0.01 PERCENT)
---   CROSS JOIN UNNEST(p.technologies) AS t
---   CROSS JOIN UNNEST(t.categories)    AS cat
---   CROSS JOIN UNNEST(getAudits(TO_JSON_STRING(p.lighthouse), 'accessibility')) AS a
---   WHERE p.date = DATE '2025-07-01'
---     AND p.is_root_page
---     AND p.lighthouse IS NOT NULL
---     AND JSON_TYPE(p.lighthouse) = 'object'
---     AND cat = 'CMS'
--- )
-
--- ===== LIVE (full) — uncomment this block and comment the SAMPLE block above =====
-audits_flat AS (
+# Step 1: Sample the data once and store in a temporary table, then combine with accessibility issues
+WITH sampled_data AS (
   SELECT
-    LOWER(t.technology) AS cms,
-    a.id                AS audit_id,
-    a.weight            AS weight,
-    a.audit_group       AS audit_group,
-    a.score             AS score
-  FROM `httparchive.crawl.pages` AS p
-  CROSS JOIN UNNEST(p.technologies) AS t
-  CROSS JOIN UNNEST(t.categories)    AS cat
-  CROSS JOIN UNNEST(getAudits(TO_JSON_STRING(p.lighthouse), 'accessibility')) AS a
-  WHERE p.date = DATE '2025-07-01'
-    AND p.is_root_page
-    AND p.lighthouse IS NOT NULL
-    AND JSON_TYPE(p.lighthouse) = 'object'
-    AND cat = 'CMS'
+    page,
+    lighthouse,
+    technologies
+  FROM
+    `httparchive.crawl.pages`
+  WHERE
+    date = '2025-07-01' AND
+    lighthouse IS NOT NULL AND
+    lighthouse.categories IS NOT NULL AND
+    is_root_page
+),
+
+top_cms AS (
+  SELECT
+    t.technology AS cms,
+    AVG(CAST(JSON_VALUE(lighthouse.categories.accessibility.score) AS FLOAT64)) AS avg_accessibility_score,
+    COUNT(DISTINCT page) AS total_pages,
+    RANK() OVER (ORDER BY AVG(CAST(JSON_VALUE(lighthouse.categories.accessibility.score) AS FLOAT64)) DESC) AS rank
+  FROM
+    sampled_data,
+    UNNEST(technologies) AS t,
+    UNNEST(t.categories) AS category
+  WHERE
+    category = 'CMS'
+  GROUP BY
+    cms
+  ORDER BY
+    avg_accessibility_score DESC
+  LIMIT 1000  -- Limit to top 1000 CMS platforms
+),
+
+accessibility_issues AS (
+  SELECT
+    t.technology AS cms,
+    audits.id AS audit_id,
+    COUNTIF(audits.score < 1) AS num_pages_with_issue,
+    COUNT(0) AS total_pages,  -- Total number of pages
+    COUNTIF(audits.score IS NOT NULL) AS total_applicable,  -- Total number of applicable pages
+    SAFE_DIVIDE(COUNTIF(audits.score < 1), COUNT(0)) AS pct_pages_with_issue,  -- Revised calculation based on total pages
+    APPROX_QUANTILES(audits.weight, 100)[OFFSET(50)] AS median_weight,
+    MAX(audits.audit_group) AS audit_group
+  FROM
+    sampled_data,
+    UNNEST(technologies) AS t,
+    UNNEST(t.categories) AS category,
+    UNNEST(getAudits(lighthouse, 'accessibility')) AS audits
+  WHERE
+    category = 'CMS' AND
+    t.technology IN (SELECT cms FROM top_cms)  -- Filter by top CMS platforms
+  GROUP BY
+    t.technology,
+    audits.id
 )
 
-, agg AS (
-  SELECT
-    cms,
-    audit_id,
-    COUNTIF(score < 1)         AS num_pages_with_issue,
-    COUNT(*)                   AS total_pages,
-    COUNTIF(score IS NOT NULL) AS total_applicable,
-    APPROX_QUANTILES(weight, 100)[OFFSET(50)] AS median_weight,
-    COALESCE(MAX(audit_group), 'hidden')      AS audit_group   -- default missing group to 'hidden'
-  FROM audits_flat
-  GROUP BY cms, audit_id
-)
-
--- Final output (one SELECT). No per-CMS cap; blanks are normalized to "0.0%".
+# Step 4: Combine and select top 10 issues per CMS
 SELECT
   cms,
   audit_id,
   num_pages_with_issue,
   total_pages,
   total_applicable,
-  FORMAT('%.1f%%', 100 * IFNULL(SAFE_DIVIDE(num_pages_with_issue, NULLIF(total_applicable, 0)), 0)) AS pct_pages_with_issue,
+  pct_pages_with_issue,
   median_weight,
   audit_group
-FROM agg
-ORDER BY cms,
-         SAFE_DIVIDE(num_pages_with_issue, NULLIF(total_applicable, 0)) DESC,
-         median_weight DESC,
-         audit_id;
+FROM
+  accessibility_issues
+ORDER BY
+  cms,
+  pct_pages_with_issue DESC,
+  median_weight DESC
