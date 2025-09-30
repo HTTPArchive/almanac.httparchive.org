@@ -14,11 +14,11 @@ SELECT
   COUNTIF(SAFE_CAST(JSON_VALUE(payload._wasm_stats.instr.proposals.tail_calls) AS INT64) > 0) AS tail_calls,
   COUNT(0) AS total
 FROM
-    `httparchive.crawl.requests`
-  WHERE
-    date = '2025-07-01' AND
-    type = 'wasm' AND
-    payload._wasm_stats IS NOT NULL
+  `httparchive.crawl.requests`
+WHERE
+  date = '2025-07-01' AND
+  type = 'wasm' AND
+  payload._wasm_stats IS NOT NULL
 GROUP BY
   client
 ORDER BY
