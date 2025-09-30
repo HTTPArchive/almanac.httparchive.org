@@ -2,7 +2,11 @@
 
 SELECT
   client,
-  _rank AS rank,
+  _rank AS rank_grouping,
+  CASE
+    WHEN _rank = 100000000 THEN 'all'
+    ELSE CAST(_rank AS STRING)
+  END AS ranking,
   COUNT(DISTINCT page) AS pages
 FROM
   `httparchive.crawl.requests`,
