@@ -2,7 +2,8 @@
 
 -- valid = TRUE means "present" or "exists" 
 WITH home AS (
-  SELECT DISTINCT
+  SELECT
+    client,
     JSON_QUERY(custom_metrics.other, '$.llms_txt_validation') AS obj,
     SAFE_CAST(JSON_VALUE(custom_metrics.other, '$.llms_txt_validation.valid') AS BOOL) AS valid
   FROM `httparchive.crawl.pages`
@@ -11,6 +12,7 @@ WITH home AS (
 ),
 labeled AS (
   SELECT
+    client,
     CASE
       WHEN valid IS TRUE THEN 'Valid LLMs'
       WHEN valid IS FALSE THEN 'Non-Valid LLMs'
@@ -19,9 +21,10 @@ labeled AS (
   FROM home
 )
 SELECT
+  client,
   bucket,
   COUNT(*) AS pages,
-  SAFE_DIVIDE(COUNT(*), SUM(COUNT(*)) OVER ()) AS pct
+  SAFE_DIVIDE(COUNT(*), SUM(COUNT(*)) OVER (PARTITION BY client)) AS pct
 FROM labeled
-GROUP BY bucket
-ORDER BY pages DESC;
+GROUP BY client, bucket
+ORDER BY client, pages DESC;
