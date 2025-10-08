@@ -45,7 +45,7 @@ jobs:
         DEFAULT_BRANCH: main
         FILTER_REGEX_INCLUDE: src/static/html/.*
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        LOG_LEVEL: debug
+        LOG_LEVEL: DEBUG
         VALIDATE_HTML: true
         USE_FIND_ALGORITHM: true
     - name: Set the list of URLs for Lighthouse to check
