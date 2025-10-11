@@ -40,11 +40,10 @@ jobs:
     - name: Use more complete checks for generated HTML linting
       run: cp -f .github/linters/.htmlhintrc_morechecks .github/linters/.htmlhintrc
     - name: Lint Generated HTML
-      uses: super-linter/super-linter/slim@v8
+      uses: super-linter/super-linter/slim@v8.1
       env:
         FILTER_REGEX_INCLUDE: src/static/html/.*
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        LOG_LEVEL: DEBUG
         VALIDATE_HTML: true
         USE_FIND_ALGORITHM: true
     - name: Set the list of URLs for Lighthouse to check
