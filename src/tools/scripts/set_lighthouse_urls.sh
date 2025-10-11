@@ -40,17 +40,17 @@ LIGHTHOUSE_URLS=""
 # to ensure basic coverage
 # We exclude webmentions to avoid Lighthouse issues
 BASE_URLS=$(cat <<-END
-http://127.0.0.1:8080/en/2019/?nowebmentions
+http://127.0.0.1:8080/en/2019/
 http://127.0.0.1:8080/en/2019/javascript?nowebmentions
-http://127.0.0.1:8080/en/2020/?nowebmentions
+http://127.0.0.1:8080/en/2020/
 http://127.0.0.1:8080/en/2020/css?nowebmentions
-http://127.0.0.1:8080/en/2021/?nowebmentions
+http://127.0.0.1:8080/en/2021/
 http://127.0.0.1:8080/en/2021/third-parties?nowebmentions
-http://127.0.0.1:8080/en/2022/?nowebmentions
+http://127.0.0.1:8080/en/2022/
 http://127.0.0.1:8080/en/2022/javascript?nowebmentions
-http://127.0.0.1:8080/en/2024/?nowebmentions
+http://127.0.0.1:8080/en/2024/
 http://127.0.0.1:8080/en/2024/accessibility?nowebmentions
-END
+http://127.0.0.1:8080/en/2025/
 END
 )
 
