@@ -4,32 +4,30 @@
 WITH page_data AS (
   SELECT
     client,
-    -- Totals from markup custom metric
-    CAST(JSON_EXTRACT_SCALAR(TO_JSON_STRING(custom_metrics.markup), '$.images.img.srcset_total') AS INT64) AS img_srcset_total,
-    CAST(JSON_EXTRACT_SCALAR(TO_JSON_STRING(custom_metrics.markup), '$.images.source.srcset_total') AS INT64) AS source_srcset_total,
-    CAST(JSON_EXTRACT_SCALAR(TO_JSON_STRING(custom_metrics.markup), '$.images.picture.total') AS INT64) AS picture_total,
-
-    -- Sizes totals (may be missing; will be NULL)
-    CAST(JSON_EXTRACT_SCALAR(TO_JSON_STRING(custom_metrics.markup), '$.images.img.sizes_total') AS INT64) AS img_sizes_total,
-    CAST(JSON_EXTRACT_SCALAR(TO_JSON_STRING(custom_metrics.markup), '$.images.source.sizes_total') AS INT64) AS source_sizes_total
+    -- Count occurrences in HTML of the main document
+    ARRAY_LENGTH(REGEXP_EXTRACT_ALL(COALESCE(response_body, ''), r'(?is)<(?:img|source)[^>]*srcset\s*=')) AS num_srcset_all,
+    ARRAY_LENGTH(REGEXP_EXTRACT_ALL(COALESCE(response_body, ''), r'(?is)<(?:img|source)[^>]*sizes\s*=')) AS num_srcset_sizes,
+    -- Presence of <picture>
+    IF(REGEXP_CONTAINS(COALESCE(response_body, ''), r'(?is)<picture\b'), 1, 0) AS picture_total
   FROM
-    `httparchive.crawl.pages`
+    `httparchive.crawl.requests`
   WHERE
-    date = '2025-06-01' AND is_root_page
+    date = '2025-06-01' AND
+    is_main_document
 )
 
 SELECT
   client,
   round(
     safe_divide(
-      countif(coalesce(img_srcset_total, 0) + coalesce(source_srcset_total, 0) > 0),
+      countif(num_srcset_all > 0),
       count(0)
     ) * 100,
     2
   ) AS pages_with_srcset_pct,
   round(
     safe_divide(
-      countif(coalesce(img_sizes_total, 0) + coalesce(source_sizes_total, 0) > 0),
+      countif(num_srcset_sizes > 0),
       count(0)
     ) * 100,
     2
@@ -37,8 +35,8 @@ SELECT
   round(
     safe_divide(
       (
-        countif(coalesce(img_srcset_total, 0) + coalesce(source_srcset_total, 0) > 0) -
-        countif(coalesce(img_sizes_total, 0) + coalesce(source_sizes_total, 0) > 0)
+        countif(num_srcset_all > 0) -
+        countif(num_srcset_sizes > 0)
       ),
       count(0)
     ) * 100,
@@ -46,18 +44,18 @@ SELECT
   ) AS pages_with_srcset_wo_sizes_pct,
   round(
     safe_divide(
-      sum(coalesce(img_sizes_total, 0) + coalesce(source_sizes_total, 0)),
-      sum(coalesce(img_srcset_total, 0) + coalesce(source_srcset_total, 0))
+      sum(num_srcset_sizes),
+      nullif(sum(num_srcset_all), 0)
     ) * 100,
     2
   ) AS instances_of_srcset_sizes_pct,
   round(
     safe_divide(
       (
-        sum(coalesce(img_srcset_total, 0) + coalesce(source_srcset_total, 0)) -
-        sum(coalesce(img_sizes_total, 0) + coalesce(source_sizes_total, 0))
+        sum(num_srcset_all) -
+        sum(num_srcset_sizes)
       ),
-      sum(coalesce(img_srcset_total, 0) + coalesce(source_srcset_total, 0))
+      nullif(sum(num_srcset_all), 0)
     ) * 100,
     2
   ) AS instances_of_srcset_wo_sizes_pct,

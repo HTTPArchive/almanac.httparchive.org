@@ -2,13 +2,13 @@ WITH content_encoding AS (
   SELECT
     client,
     LOWER(h.value) AS encoding
-  FROM `httparchive.crawl.requests`,
-    UNNEST(response_headers) AS h
+  FROM `httparchive.crawl.requests` r
+  LEFT JOIN UNNEST(r.response_headers) AS h
+    ON LOWER(h.name) = 'content-encoding'
   WHERE
     date = '2025-06-01'
     AND is_root_page
     AND is_main_document
-    AND LOWER(h.name) = 'content-encoding'
 ),
 
 compression_rollup AS (
