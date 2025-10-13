@@ -1,40 +1,22 @@
-CREATE TEMPORARY FUNCTION getMediaFormat(mimeType STRING)
-RETURNS STRING
-LANGUAGE js AS '''
-if (mimeType === "image/avif") {
-  return "avif";
-} else if (mimeType === "image/bmp") {
-  return "bmp";
-} else if (mimeType === "image/gif") {
-  return "gif";
-} else if (mimeType === "image/x-icon" || mimeType === "image/vnd.microsoft.icon") {
-  return "ico";
-} else if (mimeType === "image/jpg" || mimeType === "image/jpeg") {
-  return "jpg";
-} else if (mimeType === "image/png" || mimeType === "Image/png") {
-  return "png";
-} else if (mimeType === "image/svg+xml") {
-  return "svg";
-} else if (mimeType === "image/webp" || mimeType==="webp") {
-  return "webp";
-} if (mimeType === "video/mp4" ||  mimeType === "video/mpeg") {
-  return "mpeg";
-} else if (mimeType === "video/webm") {
-  return "webm";
-} else if (mimeType === "video/quicktime") {
-  return "quicktime";
-} else if (mimeType === "video/webp") {
-  return "webp Video";
-}else {
-  return "other/unknown";
-}
-''';
-
 SELECT
   client,
   percentile,
   is_root_page,
-  getMediaFormat(JSON_VALUE(summary.mimeType)) AS media_format,
+    CASE
+    WHEN LOWER(JSON_VALUE(summary.mimeType)) = 'image/avif' OR LOWER(JSON_VALUE(summary.ext)) = 'avif' THEN 'avif'
+    WHEN LOWER(JSON_VALUE(summary.mimeType)) = 'image/bmp' OR LOWER(JSON_VALUE(summary.ext)) = 'bmp' THEN 'bmp'
+    WHEN LOWER(JSON_VALUE(summary.mimeType)) = 'image/gif' OR LOWER(JSON_VALUE(summary.ext)) = 'gif' THEN 'gif'
+    WHEN LOWER(JSON_VALUE(summary.mimeType)) IN ('image/x-icon', 'image/vnd.microsoft.icon') OR LOWER(JSON_VALUE(summary.ext)) = 'ico' THEN 'ico'
+    WHEN LOWER(JSON_VALUE(summary.mimeType)) IN ('image/jpg', 'image/jpeg')  OR LOWER(JSON_VALUE(summary.ext)) IN('jpeg', 'jpg') THEN 'jpg'
+    WHEN LOWER(JSON_VALUE(summary.mimeType)) IN ('image/png', 'image/png') OR LOWER(JSON_VALUE(summary.ext)) = 'png' THEN 'png'
+    WHEN LOWER(JSON_VALUE(summary.mimeType)) = 'image/svg+xml' OR LOWER(JSON_VALUE(summary.ext)) = 'svg' THEN 'svg'
+    WHEN LOWER(JSON_VALUE(summary.mimeType)) IN ('image/webp', 'webp') OR LOWER(JSON_VALUE(summary.ext)) = 'webp' THEN 'webp'
+    WHEN LOWER(JSON_VALUE(summary.mimeType)) IN ('video/mp4', 'video/mpeg') OR LOWER(JSON_VALUE(summary.ext)) = 'mpeg' THEN 'mpeg'
+    WHEN LOWER(JSON_VALUE(summary.mimeType)) = 'video/webm' OR LOWER(JSON_VALUE(summary.ext)) = 'webm' THEN 'webm'
+    WHEN LOWER(JSON_VALUE(summary.mimeType)) = 'video/quicktime' OR LOWER(JSON_VALUE(summary.ext)) IN ('mov', 'qt') THEN 'quicktime'
+    WHEN LOWER(JSON_VALUE(summary.mimeType)) = 'video/webp' THEN 'webp Video'
+    ELSE 'other/unknown'
+  END AS media_format,,
   APPROX_QUANTILES(CAST(JSON_VALUE(summary.respBodySize) AS INT64) / 1024, 1000)[OFFSET(percentile * 10)] AS resp_size
 FROM
   `httparchive.crawl.requests`,
