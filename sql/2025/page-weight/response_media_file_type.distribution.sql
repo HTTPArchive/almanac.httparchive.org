@@ -16,7 +16,7 @@ SELECT
     WHEN LOWER(JSON_VALUE(summary.mimeType)) = 'video/quicktime' OR LOWER(JSON_VALUE(summary.ext)) IN ('mov', 'qt') THEN 'quicktime'
     WHEN LOWER(JSON_VALUE(summary.mimeType)) = 'video/webp' THEN 'webp Video'
     ELSE 'other/unknown'
-  END AS media_format,,
+  END AS media_format,
   APPROX_QUANTILES(CAST(JSON_VALUE(summary.respBodySize) AS INT64) / 1024, 1000)[OFFSET(percentile * 10)] AS resp_size
 FROM
   `httparchive.crawl.requests`,
