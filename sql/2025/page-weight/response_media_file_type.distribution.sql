@@ -22,7 +22,8 @@ FROM
   `httparchive.crawl.requests`,
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 WHERE
-  date = '2025-07-01'
+  date = '2025-07-01' AND
+  type IN ('image','video')
 GROUP BY
   client,
   percentile,
