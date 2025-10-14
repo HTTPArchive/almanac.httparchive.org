@@ -7,7 +7,7 @@ WITH images_types AS (
     LOWER(JSON_VALUE(summary.mimeType)) AS mimeType,
     SAFE.INT64(summary.respBodySize) AS respBodySize,
     -- Only return the extension if the mimeType is missing or set to something generic like octet-stream
-    IF (JSON_VALUE(summary.mimeType) = '' OR LOWER(JSON_VALUE(summary.mimeType)) LIKE '%octet-stream%', LOWER(JSON_VALUE(summary.ext)), NULL) AS usefulExt
+    IF(JSON_VALUE(summary.mimeType) = '' OR LOWER(JSON_VALUE(summary.mimeType)) LIKE '%octet-stream%', LOWER(JSON_VALUE(summary.ext)), NULL) AS usefulExt
   FROM
     `httparchive.crawl.requests`
   WHERE
