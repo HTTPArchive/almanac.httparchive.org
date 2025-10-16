@@ -1,0 +1,236 @@
+{
+  "settings": [
+    {
+      "is_live": true,
+      "supported_languages": ["en","es","fr","hi","it","ja","nl","pt","ru","tr","uk","zh-CN","zh-TW"],
+      "ebook_languages": []
+    }
+  ],
+  "outline": [
+    {
+      "part": "I. Page Content",
+      "part_number": "1",
+      "chapters": [
+        {
+          "part": "I",
+          "chapter_number": "1",
+          "title": "CSS",
+          "slug": "css",
+          "todo": true
+        },
+        {
+          "part": "I",
+          "chapter_number": "2",
+          "title": "Structured Data",
+          "slug": "structured-data",
+          "hero_dir": "2021",
+          "todo": true
+        },
+        {
+          "part": "I",
+          "chapter_number": "3",
+          "title": "Fonts",
+          "slug": "fonts",
+          "todo": true
+        },
+        {
+          "part": "I",
+          "chapter_number": "4",
+          "title": "WebAssembly",
+          "slug": "webassembly",
+          "hero_dir": "2021",
+          "todo": true
+        },
+        {
+          "part": "I",
+          "chapter_number": "5",
+          "title": "Third Parties",
+          "slug": "third-parties",
+          "todo": true
+        },
+        {
+          "part": "I",
+          "chapter_number": "6",
+          "title": "Interoperability",
+          "slug": "interoperability",
+          "hero_dir": "2022",
+          "todo": true
+        },
+        {
+          "part": "I",
+          "chapter_number": "7",
+          "title": "Generative AI",
+          "slug": "generartive-ai",
+          "hero_dir": "2025",
+          "todo": true
+        }
+      ]
+    },
+    {
+      "part": "II. User Experience",
+      "part_number": "2",
+      "chapters": [
+        {
+          "part": "II",
+          "chapter_number": "8",
+          "title": "SEO",
+          "slug": "seo",
+          "todo": true
+        },
+        {
+          "part": "II",
+          "chapter_number": "9",
+          "title": "Accessibility",
+          "slug": "accessibility",
+          "todo": true
+        },
+        {
+          "part": "II",
+          "chapter_number": "10",
+          "title": "Performance",
+          "slug": "performance",
+          "todo": true
+        },
+        {
+          "part": "II",
+          "chapter_number": "11",
+          "title": "Privacy",
+          "slug": "privacy",
+          "hero_dir": "2020",
+          "todo": true
+        },
+        {
+          "part": "II",
+          "chapter_number": "12",
+          "title": "Security",
+          "slug": "security",
+          "todo": true
+        },
+        {
+          "part": "II",
+          "chapter_number": "13",
+          "title": "Capabilities",
+          "slug": "capabilities",
+          "hero_dir": "2020",
+          "todo": true
+        },
+        {
+          "part": "II",
+          "chapter_number": "14",
+          "title": "PWA",
+          "slug": "pwa",
+          "todo": true
+        }
+      ]
+    },
+    {
+      "part": "III. Content Publishing",
+      "part_number": "3",
+      "chapters": [
+        {
+          "part": "III",
+          "chapter_number": "15",
+          "title": "CMS",
+          "slug": "cms",
+          "todo": true
+        },
+        {
+          "part": "III",
+          "chapter_number": "16",
+          "title": "Ecommerce",
+          "slug": "ecommerce",
+          "todo": true
+        },
+        {
+          "part": "III",
+          "chapter_number": "17",
+          "title": "Jamstack",
+          "slug": "jamstack",
+          "hero_dir": "2020",
+          "todo": true
+        },
+        {
+          "part": "III",
+          "chapter_number": "18",
+          "title": "Sustainability",
+          "slug": "sustainability",
+          "hero_dir": "2022",
+          "todo": true
+        }
+      ]
+    },
+    {
+      "part": "IV. Content Distribution",
+      "part_number": "4",
+      "chapters": [
+        {
+          "part": "IV",
+          "chapter_number": "19",
+          "title": "Page Weight",
+          "slug": "page-weight",
+          "todo": true
+        },
+        {
+          "part": "IV",
+          "chapter_number": "20",
+          "title": "Caching",
+          "slug": "Caching",
+          "hero_dir": "2024",
+          "todo": true
+        },
+        {
+          "part": "IV",
+          "chapter_number": "21",
+          "title": "CDN",
+          "slug": "cdn",
+          "todo": true
+        },
+        {
+          "part": "IV",
+          "chapter_number": "22",
+          "title": "Cookies",
+          "slug": "cookies",
+          "hero_dir": "2024",
+          "todo": true
+        },
+        {
+          "part": "IV",
+          "chapter_number": "23",
+          "title": "DNS",
+          "slug": "dns",
+          "hero_dir": "2025",
+          "todo": true
+        }
+      ]
+    }
+  ],
+  "teams": {
+    "analysts": {
+      "name": "Analysts"
+    },
+    "authors": {
+      "name": "Authors"
+    },
+    "designers": {
+      "name": "Designers"
+    },
+    "developers": {
+      "name": "Developers"
+    },
+    "editors": {
+      "name": "Editors"
+    },
+    "leads": {
+      "name": "Leads"
+    },
+    "committee": {
+      "name": "Organizing Commmittee"
+    },
+    "reviewers": {
+      "name": "Reviewers"
+    },
+    "translators": {
+      "name": "Translators"
+    }
+  }
+}
