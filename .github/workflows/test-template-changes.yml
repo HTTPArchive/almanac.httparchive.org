@@ -33,7 +33,7 @@ jobs:
       with:
         fetch-depth: 0
     - name: Setup Node.js for use with actions
-      uses: actions/setup-node@v5
+      uses: actions/setup-node@v6
       with:
         node-version: '20'
     - name: Test Template Changes
