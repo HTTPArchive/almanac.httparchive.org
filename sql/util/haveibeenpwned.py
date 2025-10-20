@@ -4,7 +4,6 @@ Retrieves breach data from the Have I Been Pwned API and loads it into BigQuery.
 """
 
 import json
-from datetime import datetime
 
 import pandas as pd
 import requests  # pylint: disable=import-error
