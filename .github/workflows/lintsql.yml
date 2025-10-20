@@ -26,10 +26,13 @@ jobs:
       - name: Lint SQL code
         run: |
           pip install -r src/requirements.txt -q
-          if [ "${{ github.event_name }}" == "workflow_dispatch" ] || [[ "${{ github.event.pull_request.title }}" == Bump\ sqlfluff* ]]; then
+          if [ "${{ github.event_name }}" == "workflow_dispatch" ] || \
+            [[ "${{ github.event.pull_request.title }}" == Bump\ sqlfluff* ]]; then
             # Lint all SQL files for workflow_dispatch or sqlfluff bumps
             sqlfluff lint sql -p 4
           else
             # Lint only changed SQL files
-            git diff --name-only --diff-filter=ACMRT origin/${{ github.base_ref }}...HEAD | grep '\.sql$' | xargs -r sqlfluff lint
+            git diff --name-only --diff-filter=ACMRT origin/${{ github.base_ref }}...HEAD \
+              | grep '\.sql$' \
+              | xargs -r sqlfluff lint
           fi
