@@ -44,7 +44,6 @@ jobs:
           VALIDATE_MARKDOWN: true
           VALIDATE_PYTHON_PYLINT: true
           VALIDATE_PYTHON_FLAKE8: true
-          VALIDATE_SQLFLUFF: false
           VALIDATE_YAML: true
 
   dependabot:
