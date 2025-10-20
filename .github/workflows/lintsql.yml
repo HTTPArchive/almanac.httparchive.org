@@ -24,9 +24,6 @@ jobs:
         with:
           python-version: '3.12'
       - name: Lint SQL code
-        if: |
-            github.event_name == 'workflow_dispatch' ||
-            startsWith(github.event.pull_request.title,'Bump sqlfluff') == true
         run: |
           pip install -r src/requirements.txt
           if [ "${{ github.event_name }}" == "workflow_dispatch" ] || [[ "${{ github.event.pull_request.title }}" == Bump\ sqlfluff* ]]; then
