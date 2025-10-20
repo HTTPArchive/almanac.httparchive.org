@@ -3,8 +3,6 @@ Retrieves breach data from the Have I Been Pwned API and loads it into BigQuery.
 
 """
 
-import json
-
 import pandas as pd
 import requests  # pylint: disable=import-error
 from bq_writer import bigquery, write_to_bq
