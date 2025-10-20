@@ -37,7 +37,7 @@
   "devDependencies": {
     "ejs": "3.1.10",
     "fs-extra": "11.3.2",
-    "jsdom": "27.0.0",
+    "jsdom": "27.0.1",
     "node-fetch": "3.3.2",
     "node-watch": "0.7.4",
     "prettier": "3.6.1",
