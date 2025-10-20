@@ -6,12 +6,11 @@ WITH cmps AS (
   SELECT
     client,
     page,
-    SAFE.STRING(custom_metrics.privacy.iab_tcf_v2.data.cmpId) AS cmpId,
+    SAFE.INT64(custom_metrics.privacy.iab_tcf_v2.data.cmpId) AS cmpId,
     COUNT(DISTINCT page) OVER (PARTITION BY client) AS total_pages
   FROM `httparchive.crawl.pages`
   WHERE
-    date = '2025-07-01' AND
-    is_root_page = TRUE
+    date = '2025-07-01'
 )
 
 SELECT
