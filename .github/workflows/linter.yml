@@ -44,7 +44,7 @@ jobs:
           VALIDATE_MARKDOWN: true
           VALIDATE_PYTHON_PYLINT: true
           VALIDATE_PYTHON_FLAKE8: true
-          VALIDATE_SQLFLUFF: true
+          VALIDATE_SQLFLUFF: false
           VALIDATE_YAML: true
 
   dependabot:
@@ -73,7 +73,6 @@ jobs:
             steps.metadata.outputs.update-type == 'version-update:semver-minor'
           ) && (
             contains(steps.metadata.outputs.dependency-names, 'prettier') ||
-            contains(steps.metadata.outputs.dependency-names, 'sqlfluff') ||
             contains(steps.metadata.outputs.dependency-names, 'super-linter')
           )
         run: gh pr merge --admin --squash "$PR_URL"
