@@ -8,7 +8,7 @@ on:
   pull_request:
     paths:
       - src/requirements.txt
-      - 'sql/**'
+      - 'sql/**.sql'
 jobs:
   lint:
     name: Lint SQL
