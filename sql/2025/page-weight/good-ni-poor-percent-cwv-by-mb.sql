@@ -16,324 +16,154 @@ WITH base_data AS (
     date = '2025-07-01'
 ),
 
-lcp_data AS (
-  SELECT *
-  FROM base_data
-  WHERE lcp IS NOT NULL
-),
-
-cls_data AS (
-  SELECT *
-  FROM base_data
-  WHERE cls IS NOT NULL
-),
-
-inp_data AS (
-  SELECT *
-  FROM base_data
-  WHERE inp IS NOT NULL
-),
-
-fcp_data AS (
-  SELECT *
-  FROM base_data
-  WHERE fcp IS NOT NULL
-),
-
-ttfb_data AS (
-  SELECT *
-  FROM base_data
-  WHERE ttfb IS NOT NULL
-),
-
--- LCP metrics
-lcp_metrics AS (
+categorised_data AS (
   SELECT
+    date,
     client,
     is_root_page,
-    -- LCP Percentages by Page Size
-    -- 1MB and below
-    ROUND(100.0 * COUNTIF(bytes_total <= 1048576 AND lcp <= 2.5) / NULLIF(COUNTIF(bytes_total <= 1048576), 0), 2) AS lcp_good_pct_1mb_and_below,
-    ROUND(100.0 * COUNTIF(bytes_total <= 1048576 AND lcp > 2.5 AND lcp <= 4.0) / NULLIF(COUNTIF(bytes_total <= 1048576), 0), 2) AS lcp_ni_pct_1mb_and_below,
-    ROUND(100.0 * COUNTIF(bytes_total <= 1048576 AND lcp > 4.0) / NULLIF(COUNTIF(bytes_total <= 1048576), 0), 2) AS lcp_poor_pct_1mb_and_below,
-    -- 1MB to 2MB
-    ROUND(100.0 * COUNTIF(bytes_total > 1048576 AND bytes_total <= 2097152 AND lcp <= 2.5) / NULLIF(COUNTIF(bytes_total > 1048576 AND bytes_total <= 2097152), 0), 2) AS lcp_good_pct_1mb_to_2mb,
-    ROUND(100.0 * COUNTIF(bytes_total > 1048576 AND bytes_total <= 2097152 AND lcp > 2.5 AND lcp <= 4.0) / NULLIF(COUNTIF(bytes_total > 1048576 AND bytes_total <= 2097152), 0), 2) AS lcp_ni_pct_1mb_to_2mb,
-    ROUND(100.0 * COUNTIF(bytes_total > 1048576 AND bytes_total <= 2097152 AND lcp > 4.0) / NULLIF(COUNTIF(bytes_total > 1048576 AND bytes_total <= 2097152), 0), 2) AS lcp_poor_pct_1mb_to_2mb,
-    -- 2MB to 3MB
-    ROUND(100.0 * COUNTIF(bytes_total > 2097152 AND bytes_total <= 3145728 AND lcp <= 2.5) / NULLIF(COUNTIF(bytes_total > 2097152 AND bytes_total <= 3145728), 0), 2) AS lcp_good_pct_2mb_to_3mb,
-    ROUND(100.0 * COUNTIF(bytes_total > 2097152 AND bytes_total <= 3145728 AND lcp > 2.5 AND lcp <= 4.0) / NULLIF(COUNTIF(bytes_total > 2097152 AND bytes_total <= 3145728), 0), 2) AS lcp_ni_pct_2mb_to_3mb,
-    ROUND(100.0 * COUNTIF(bytes_total > 2097152 AND bytes_total <= 3145728 AND lcp > 4.0) / NULLIF(COUNTIF(bytes_total > 2097152 AND bytes_total <= 3145728), 0), 2) AS lcp_poor_pct_2mb_to_3mb,
-    -- 3MB to 4MB
-    ROUND(100.0 * COUNTIF(bytes_total > 3145728 AND bytes_total <= 4194304 AND lcp <= 2.5) / NULLIF(COUNTIF(bytes_total > 3145728 AND bytes_total <= 4194304), 0), 2) AS lcp_good_pct_3mb_to_4mb,
-    ROUND(100.0 * COUNTIF(bytes_total > 3145728 AND bytes_total <= 4194304 AND lcp > 2.5 AND lcp <= 4.0) / NULLIF(COUNTIF(bytes_total > 3145728 AND bytes_total <= 4194304), 0), 2) AS lcp_ni_pct_3mb_to_4mb,
-    ROUND(100.0 * COUNTIF(bytes_total > 3145728 AND bytes_total <= 4194304 AND lcp > 4.0) / NULLIF(COUNTIF(bytes_total > 3145728 AND bytes_total <= 4194304), 0), 2) AS lcp_poor_pct_3mb_to_4mb,
-    -- 4MB to 5MB
-    ROUND(100.0 * COUNTIF(bytes_total > 4194304 AND bytes_total <= 5242880 AND lcp <= 2.5) / NULLIF(COUNTIF(bytes_total > 4194304 AND bytes_total <= 5242880), 0), 2) AS lcp_good_pct_4mb_to_5mb,
-    ROUND(100.0 * COUNTIF(bytes_total > 4194304 AND bytes_total <= 5242880 AND lcp > 2.5 AND lcp <= 4.0) / NULLIF(COUNTIF(bytes_total > 4194304 AND bytes_total <= 5242880), 0), 2) AS lcp_ni_pct_4mb_to_5mb,
-    ROUND(100.0 * COUNTIF(bytes_total > 4194304 AND bytes_total <= 5242880 AND lcp > 4.0) / NULLIF(COUNTIF(bytes_total > 4194304 AND bytes_total <= 5242880), 0), 2) AS lcp_poor_pct_4mb_to_5mb,
-    -- 5MB and above
-    ROUND(100.0 * COUNTIF(bytes_total > 5242880 AND lcp <= 2.5) / NULLIF(COUNTIF(bytes_total > 5242880), 0), 2) AS lcp_good_pct_5mb_and_above,
-    ROUND(100.0 * COUNTIF(bytes_total > 5242880 AND lcp > 2.5 AND lcp <= 4.0) / NULLIF(COUNTIF(bytes_total > 5242880), 0), 2) AS lcp_ni_pct_5mb_and_above,
-    ROUND(100.0 * COUNTIF(bytes_total > 5242880 AND lcp > 4.0) / NULLIF(COUNTIF(bytes_total > 5242880), 0), 2) AS lcp_poor_pct_5mb_and_above
+    bytes_total,
+    CASE
+      WHEN bytes_total <= 1024.0 * 1024.0 * 1 THEN '0mb-1mb'
+      WHEN bytes_total > 1024.0 * 1024.0 * 1 AND bytes_total <= 1024.0 * 1024.0 * 2 THEN '1mb-2mb'
+      WHEN bytes_total > 1024.0 * 1024.0 * 2 AND bytes_total <= 1024.0 * 1024.0 * 3 THEN '2mb-3mb'
+      WHEN bytes_total > 1024.0 * 1024.0 * 3 AND bytes_total <= 1024.0 * 1024.0 * 4 THEN '3mb-4mb'
+      WHEN bytes_total > 1024.0 * 1024.0 * 4 AND bytes_total <= 1024.0 * 1024.0 * 5 THEN '4mb-5mb'
+      WHEN bytes_total > 1024.0 * 1024.0 * 5 THEN '>5mb'
+      ELSE NULL
+    END AS category,
+    -- these are page level CrUX metrics, pages may not have all / any metrics available, but do represent the user experience of the measured page weight vs. origin.
+    CASE
+      WHEN lcp <= 2.5 THEN 'good'
+      WHEN lcp > 2.5 AND lcp <= 4.0 THEN 'ni'
+      WHEN lcp > 4.0 THEN 'poor'
+      ELSE NULL
+    END AS lcp_category,
+    CASE
+      WHEN cls <= 0.1 THEN 'good'
+      WHEN cls > 0.1 AND cls <= 0.25 THEN 'ni'
+      WHEN cls > 0.25 THEN 'poor'
+      ELSE NULL
+    END AS cls_category,
+    CASE
+      WHEN inp <= 200 THEN 'good'
+      WHEN inp > 200 AND inp <= 500 THEN 'ni'
+      WHEN inp > 500 THEN 'poor'
+      ELSE NULL
+    END AS inp_category,
+    CASE
+      WHEN fcp <= 1.8 THEN 'good'
+      WHEN fcp > 1.8 AND fcp <= 3.0 THEN 'ni'
+      WHEN fcp > 3.0 THEN 'poor'
+      ELSE NULL
+    END AS fcp_category,
+    CASE
+      WHEN ttfb <= 800 THEN 'good'
+      WHEN ttfb > 800 AND ttfb <= 1800 THEN 'ni'
+      WHEN ttfb > 1800 THEN 'poor'
+      ELSE NULL
+    END AS ttfb_category
   FROM
-    lcp_data
-  GROUP BY
-    client,
-    is_root_page
-),
-
--- CLS metrics
-cls_metrics AS (
-  SELECT
-    client,
-    is_root_page,
-    -- CLS Percentages by Page Size
-    -- 1MB and below
-    ROUND(100.0 * COUNTIF(bytes_total <= 1048576 AND cls <= 0.1) / NULLIF(COUNTIF(bytes_total <= 1048576), 0), 2) AS cls_good_pct_1mb_and_below,
-    ROUND(100.0 * COUNTIF(bytes_total <= 1048576 AND cls > 0.1 AND cls <= 0.25) / NULLIF(COUNTIF(bytes_total <= 1048576), 0), 2) AS cls_ni_pct_1mb_and_below,
-    ROUND(100.0 * COUNTIF(bytes_total <= 1048576 AND cls > 0.25) / NULLIF(COUNTIF(bytes_total <= 1048576), 0), 2) AS cls_poor_pct_1mb_and_below,
-    -- 1MB to 2MB
-    ROUND(100.0 * COUNTIF(bytes_total > 1048576 AND bytes_total <= 2097152 AND cls <= 0.1) / NULLIF(COUNTIF(bytes_total > 1048576 AND bytes_total <= 2097152), 0), 2) AS cls_good_pct_1mb_to_2mb,
-    ROUND(100.0 * COUNTIF(bytes_total > 1048576 AND bytes_total <= 2097152 AND cls > 0.1 AND cls <= 0.25) / NULLIF(COUNTIF(bytes_total > 1048576 AND bytes_total <= 2097152), 0), 2) AS cls_ni_pct_1mb_to_2mb,
-    ROUND(100.0 * COUNTIF(bytes_total > 1048576 AND bytes_total <= 2097152 AND cls > 0.25) / NULLIF(COUNTIF(bytes_total > 1048576 AND bytes_total <= 2097152), 0), 2) AS cls_poor_pct_1mb_to_2mb,
-    -- 2MB to 3MB
-    ROUND(100.0 * COUNTIF(bytes_total > 2097152 AND bytes_total <= 3145728 AND cls <= 0.1) / NULLIF(COUNTIF(bytes_total > 2097152 AND bytes_total <= 3145728), 0), 2) AS cls_good_pct_2mb_to_3mb,
-    ROUND(100.0 * COUNTIF(bytes_total > 2097152 AND bytes_total <= 3145728 AND cls > 0.1 AND cls <= 0.25) / NULLIF(COUNTIF(bytes_total > 2097152 AND bytes_total <= 3145728), 0), 2) AS cls_ni_pct_2mb_to_3mb,
-    ROUND(100.0 * COUNTIF(bytes_total > 2097152 AND bytes_total <= 3145728 AND cls > 0.25) / NULLIF(COUNTIF(bytes_total > 2097152 AND bytes_total <= 3145728), 0), 2) AS cls_poor_pct_2mb_to_3mb,
-    -- 3MB to 4MB
-    ROUND(100.0 * COUNTIF(bytes_total > 3145728 AND bytes_total <= 4194304 AND cls <= 0.1) / NULLIF(COUNTIF(bytes_total > 3145728 AND bytes_total <= 4194304), 0), 2) AS cls_good_pct_3mb_to_4mb,
-    ROUND(100.0 * COUNTIF(bytes_total > 3145728 AND bytes_total <= 4194304 AND cls > 0.1 AND cls <= 0.25) / NULLIF(COUNTIF(bytes_total > 3145728 AND bytes_total <= 4194304), 0), 2) AS cls_ni_pct_3mb_to_4mb,
-    ROUND(100.0 * COUNTIF(bytes_total > 3145728 AND bytes_total <= 4194304 AND cls > 0.25) / NULLIF(COUNTIF(bytes_total > 3145728 AND bytes_total <= 4194304), 0), 2) AS cls_poor_pct_3mb_to_4mb,
-    -- 4MB to 5MB
-    ROUND(100.0 * COUNTIF(bytes_total > 4194304 AND bytes_total <= 5242880 AND cls <= 0.1) / NULLIF(COUNTIF(bytes_total > 4194304 AND bytes_total <= 5242880), 0), 2) AS cls_good_pct_4mb_to_5mb,
-    ROUND(100.0 * COUNTIF(bytes_total > 4194304 AND bytes_total <= 5242880 AND cls > 0.1 AND cls <= 0.25) / NULLIF(COUNTIF(bytes_total > 4194304 AND bytes_total <= 5242880), 0), 2) AS cls_ni_pct_4mb_to_5mb,
-    ROUND(100.0 * COUNTIF(bytes_total > 4194304 AND bytes_total <= 5242880 AND cls > 0.25) / NULLIF(COUNTIF(bytes_total > 4194304 AND bytes_total <= 5242880), 0), 2) AS cls_poor_pct_4mb_to_5mb,
-    -- 5MB and above
-    ROUND(100.0 * COUNTIF(bytes_total > 5242880 AND cls <= 0.1) / NULLIF(COUNTIF(bytes_total > 5242880), 0), 2) AS cls_good_pct_5mb_and_above,
-    ROUND(100.0 * COUNTIF(bytes_total > 5242880 AND cls > 0.1 AND cls <= 0.25) / NULLIF(COUNTIF(bytes_total > 5242880), 0), 2) AS cls_ni_pct_5mb_and_above,
-    ROUND(100.0 * COUNTIF(bytes_total > 5242880 AND cls > 0.25) / NULLIF(COUNTIF(bytes_total > 5242880), 0), 2) AS cls_poor_pct_5mb_and_above
-  FROM
-    cls_data
-  GROUP BY
-    client,
-    is_root_page
-),
-
--- INP metrics
-inp_metrics AS (
-  SELECT
-    client,
-    is_root_page,
-    -- INP Percentages by Page Size
-    -- 1MB and below
-    ROUND(100.0 * COUNTIF(bytes_total <= 1048576 AND inp <= 200) / NULLIF(COUNTIF(bytes_total <= 1048576), 0), 2) AS inp_good_pct_1mb_and_below,
-    ROUND(100.0 * COUNTIF(bytes_total <= 1048576 AND inp > 200 AND inp <= 500) / NULLIF(COUNTIF(bytes_total <= 1048576), 0), 2) AS inp_ni_pct_1mb_and_below,
-    ROUND(100.0 * COUNTIF(bytes_total <= 1048576 AND inp > 500) / NULLIF(COUNTIF(bytes_total <= 1048576), 0), 2) AS inp_poor_pct_1mb_and_below,
-    -- 1MB to 2MB
-    ROUND(100.0 * COUNTIF(bytes_total > 1048576 AND bytes_total <= 2097152 AND inp <= 200) / NULLIF(COUNTIF(bytes_total > 1048576 AND bytes_total <= 2097152), 0), 2) AS inp_good_pct_1mb_to_2mb,
-    ROUND(100.0 * COUNTIF(bytes_total > 1048576 AND bytes_total <= 2097152 AND inp > 200 AND inp <= 500) / NULLIF(COUNTIF(bytes_total > 1048576 AND bytes_total <= 2097152), 0), 2) AS inp_ni_pct_1mb_to_2mb,
-    ROUND(100.0 * COUNTIF(bytes_total > 1048576 AND bytes_total <= 2097152 AND inp > 500) / NULLIF(COUNTIF(bytes_total > 1048576 AND bytes_total <= 2097152), 0), 2) AS inp_poor_pct_1mb_to_2mb,
-    -- 2MB to 3MB
-    ROUND(100.0 * COUNTIF(bytes_total > 2097152 AND bytes_total <= 3145728 AND inp <= 200) / NULLIF(COUNTIF(bytes_total > 2097152 AND bytes_total <= 3145728), 0), 2) AS inp_good_pct_2mb_to_3mb,
-    ROUND(100.0 * COUNTIF(bytes_total > 2097152 AND bytes_total <= 3145728 AND inp > 200 AND inp <= 500) / NULLIF(COUNTIF(bytes_total > 2097152 AND bytes_total <= 3145728), 0), 2) AS inp_ni_pct_2mb_to_3mb,
-    ROUND(100.0 * COUNTIF(bytes_total > 2097152 AND bytes_total <= 3145728 AND inp > 500) / NULLIF(COUNTIF(bytes_total > 2097152 AND bytes_total <= 3145728), 0), 2) AS inp_poor_pct_2mb_to_3mb,
-    -- 3MB to 4MB
-    ROUND(100.0 * COUNTIF(bytes_total > 3145728 AND bytes_total <= 4194304 AND inp <= 200) / NULLIF(COUNTIF(bytes_total > 3145728 AND bytes_total <= 4194304), 0), 2) AS inp_good_pct_3mb_to_4mb,
-    ROUND(100.0 * COUNTIF(bytes_total > 3145728 AND bytes_total <= 4194304 AND inp > 200 AND inp <= 500) / NULLIF(COUNTIF(bytes_total > 3145728 AND bytes_total <= 4194304), 0), 2) AS inp_ni_pct_3mb_to_4mb,
-    ROUND(100.0 * COUNTIF(bytes_total > 3145728 AND bytes_total <= 4194304 AND inp > 500) / NULLIF(COUNTIF(bytes_total > 3145728 AND bytes_total <= 4194304), 0), 2) AS inp_poor_pct_3mb_to_4mb,
-    -- 4MB to 5MB
-    ROUND(100.0 * COUNTIF(bytes_total > 4194304 AND bytes_total <= 5242880 AND inp <= 200) / NULLIF(COUNTIF(bytes_total > 4194304 AND bytes_total <= 5242880), 0), 2) AS inp_good_pct_4mb_to_5mb,
-    ROUND(100.0 * COUNTIF(bytes_total > 4194304 AND bytes_total <= 5242880 AND inp > 200 AND inp <= 500) / NULLIF(COUNTIF(bytes_total > 4194304 AND bytes_total <= 5242880), 0), 2) AS inp_ni_pct_4mb_to_5mb,
-    ROUND(100.0 * COUNTIF(bytes_total > 4194304 AND bytes_total <= 5242880 AND inp > 500) / NULLIF(COUNTIF(bytes_total > 4194304 AND bytes_total <= 5242880), 0), 2) AS inp_poor_pct_4mb_to_5mb,
-    -- 5MB and above
-    ROUND(100.0 * COUNTIF(bytes_total > 5242880 AND inp <= 200) / NULLIF(COUNTIF(bytes_total > 5242880), 0), 2) AS inp_good_pct_5mb_and_above,
-    ROUND(100.0 * COUNTIF(bytes_total > 5242880 AND inp > 200 AND inp <= 500) / NULLIF(COUNTIF(bytes_total > 5242880), 0), 2) AS inp_ni_pct_5mb_and_above,
-    ROUND(100.0 * COUNTIF(bytes_total > 5242880 AND inp > 500) / NULLIF(COUNTIF(bytes_total > 5242880), 0), 2) AS inp_poor_pct_5mb_and_above
-  FROM
-    inp_data
-  GROUP BY
-    client,
-    is_root_page
-),
-
--- FCP metrics
-fcp_metrics AS (
-  SELECT
-    client,
-    is_root_page,
-    -- FCP Percentages by Page Size
-    -- 1MB and below
-    ROUND(100.0 * COUNTIF(bytes_total <= 1048576 AND fcp <= 1.8) / NULLIF(COUNTIF(bytes_total <= 1048576), 0), 2) AS fcp_good_pct_1mb_and_below,
-    ROUND(100.0 * COUNTIF(bytes_total <= 1048576 AND fcp > 1.8 AND fcp <= 3.0) / NULLIF(COUNTIF(bytes_total <= 1048576), 0), 2) AS fcp_ni_pct_1mb_and_below,
-    ROUND(100.0 * COUNTIF(bytes_total <= 1048576 AND fcp > 3.0) / NULLIF(COUNTIF(bytes_total <= 1048576), 0), 2) AS fcp_poor_pct_1mb_and_below,
-    -- 1MB to 2MB
-    ROUND(100.0 * COUNTIF(bytes_total > 1048576 AND bytes_total <= 2097152 AND fcp <= 1.8) / NULLIF(COUNTIF(bytes_total > 1048576 AND bytes_total <= 2097152), 0), 2) AS fcp_good_pct_1mb_to_2mb,
-    ROUND(100.0 * COUNTIF(bytes_total > 1048576 AND bytes_total <= 2097152 AND fcp > 1.8 AND fcp <= 3.0) / NULLIF(COUNTIF(bytes_total > 1048576 AND bytes_total <= 2097152), 0), 2) AS fcp_ni_pct_1mb_to_2mb,
-    ROUND(100.0 * COUNTIF(bytes_total > 1048576 AND bytes_total <= 2097152 AND fcp > 3.0) / NULLIF(COUNTIF(bytes_total > 1048576 AND bytes_total <= 2097152), 0), 2) AS fcp_poor_pct_1mb_to_2mb,
-    -- 2MB to 3MB
-    ROUND(100.0 * COUNTIF(bytes_total > 2097152 AND bytes_total <= 3145728 AND fcp <= 1.8) / NULLIF(COUNTIF(bytes_total > 2097152 AND bytes_total <= 3145728), 0), 2) AS fcp_good_pct_2mb_to_3mb,
-    ROUND(100.0 * COUNTIF(bytes_total > 2097152 AND bytes_total <= 3145728 AND fcp > 1.8 AND fcp <= 3.0) / NULLIF(COUNTIF(bytes_total > 2097152 AND bytes_total <= 3145728), 0), 2) AS fcp_ni_pct_2mb_to_3mb,
-    ROUND(100.0 * COUNTIF(bytes_total > 2097152 AND bytes_total <= 3145728 AND fcp > 3.0) / NULLIF(COUNTIF(bytes_total > 2097152 AND bytes_total <= 3145728), 0), 2) AS fcp_poor_pct_2mb_to_3mb,
-    -- 3MB to 4MB
-    ROUND(100.0 * COUNTIF(bytes_total > 3145728 AND bytes_total <= 4194304 AND fcp <= 1.8) / NULLIF(COUNTIF(bytes_total > 3145728 AND bytes_total <= 4194304), 0), 2) AS fcp_good_pct_3mb_to_4mb,
-    ROUND(100.0 * COUNTIF(bytes_total > 3145728 AND bytes_total <= 4194304 AND fcp > 1.8 AND fcp <= 3.0) / NULLIF(COUNTIF(bytes_total > 3145728 AND bytes_total <= 4194304), 0), 2) AS fcp_ni_pct_3mb_to_4mb,
-    ROUND(100.0 * COUNTIF(bytes_total > 3145728 AND bytes_total <= 4194304 AND fcp > 3.0) / NULLIF(COUNTIF(bytes_total > 3145728 AND bytes_total <= 4194304), 0), 2) AS fcp_poor_pct_3mb_to_4mb,
-    -- 4MB to 5MB
-    ROUND(100.0 * COUNTIF(bytes_total > 4194304 AND bytes_total <= 5242880 AND fcp <= 1.8) / NULLIF(COUNTIF(bytes_total > 4194304 AND bytes_total <= 5242880), 0), 2) AS fcp_good_pct_4mb_to_5mb,
-    ROUND(100.0 * COUNTIF(bytes_total > 4194304 AND bytes_total <= 5242880 AND fcp > 1.8 AND fcp <= 3.0) / NULLIF(COUNTIF(bytes_total > 4194304 AND bytes_total <= 5242880), 0), 2) AS fcp_ni_pct_4mb_to_5mb,
-    ROUND(100.0 * COUNTIF(bytes_total > 4194304 AND bytes_total <= 5242880 AND fcp > 3.0) / NULLIF(COUNTIF(bytes_total > 4194304 AND bytes_total <= 5242880), 0), 2) AS fcp_poor_pct_4mb_to_5mb,
-    -- 5MB and above
-    ROUND(100.0 * COUNTIF(bytes_total > 5242880 AND fcp <= 1.8) / NULLIF(COUNTIF(bytes_total > 5242880), 0), 2) AS fcp_good_pct_5mb_and_above,
-    ROUND(100.0 * COUNTIF(bytes_total > 5242880 AND fcp > 1.8 AND fcp <= 3.0) / NULLIF(COUNTIF(bytes_total > 5242880), 0), 2) AS fcp_ni_pct_5mb_and_above,
-    ROUND(100.0 * COUNTIF(bytes_total > 5242880 AND fcp > 3.0) / NULLIF(COUNTIF(bytes_total > 5242880), 0), 2) AS fcp_poor_pct_5mb_and_above
-  FROM
-    fcp_data
-  GROUP BY
-    client,
-    is_root_page
-),
-
--- TTFB metrics
-ttfb_metrics AS (
-  SELECT
-    client,
-    is_root_page,
-    -- TTFB Percentages by Page Size
-    -- 1MB and below
-    ROUND(100.0 * COUNTIF(bytes_total <= 1048576 AND ttfb <= 800) / NULLIF(COUNTIF(bytes_total <= 1048576), 0), 2) AS ttfb_good_pct_1mb_and_below,
-    ROUND(100.0 * COUNTIF(bytes_total <= 1048576 AND ttfb > 800 AND ttfb <= 1800) / NULLIF(COUNTIF(bytes_total <= 1048576), 0), 2) AS ttfb_ni_pct_1mb_and_below,
-    ROUND(100.0 * COUNTIF(bytes_total <= 1048576 AND ttfb > 1800) / NULLIF(COUNTIF(bytes_total <= 1048576), 0), 2) AS ttfb_poor_pct_1mb_and_below,
-    -- 1MB to 2MB
-    ROUND(100.0 * COUNTIF(bytes_total > 1048576 AND bytes_total <= 2097152 AND ttfb <= 800) / NULLIF(COUNTIF(bytes_total > 1048576 AND bytes_total <= 2097152), 0), 2) AS ttfb_good_pct_1mb_to_2mb,
-    ROUND(100.0 * COUNTIF(bytes_total > 1048576 AND bytes_total <= 2097152 AND ttfb > 800 AND ttfb <= 1800) / NULLIF(COUNTIF(bytes_total > 1048576 AND bytes_total <= 2097152), 0), 2) AS ttfb_ni_pct_1mb_to_2mb,
-    ROUND(100.0 * COUNTIF(bytes_total > 1048576 AND bytes_total <= 2097152 AND ttfb > 1800) / NULLIF(COUNTIF(bytes_total > 1048576 AND bytes_total <= 2097152), 0), 2) AS ttfb_poor_pct_1mb_to_2mb,
-    -- 2MB to 3MB
-    ROUND(100.0 * COUNTIF(bytes_total > 2097152 AND bytes_total <= 3145728 AND ttfb <= 800) / NULLIF(COUNTIF(bytes_total > 2097152 AND bytes_total <= 3145728), 0), 2) AS ttfb_good_pct_2mb_to_3mb,
-    ROUND(100.0 * COUNTIF(bytes_total > 2097152 AND bytes_total <= 3145728 AND ttfb > 800 AND ttfb <= 1800) / NULLIF(COUNTIF(bytes_total > 2097152 AND bytes_total <= 3145728), 0), 2) AS ttfb_ni_pct_2mb_to_3mb,
-    ROUND(100.0 * COUNTIF(bytes_total > 2097152 AND bytes_total <= 3145728 AND ttfb > 1800) / NULLIF(COUNTIF(bytes_total > 2097152 AND bytes_total <= 3145728), 0), 2) AS ttfb_poor_pct_2mb_to_3mb,
-    -- 3MB to 4MB
-    ROUND(100.0 * COUNTIF(bytes_total > 3145728 AND bytes_total <= 4194304 AND ttfb <= 800) / NULLIF(COUNTIF(bytes_total > 3145728 AND bytes_total <= 4194304), 0), 2) AS ttfb_good_pct_3mb_to_4mb,
-    ROUND(100.0 * COUNTIF(bytes_total > 3145728 AND bytes_total <= 4194304 AND ttfb > 800 AND ttfb <= 1800) / NULLIF(COUNTIF(bytes_total > 3145728 AND bytes_total <= 4194304), 0), 2) AS ttfb_ni_pct_3mb_to_4mb,
-    ROUND(100.0 * COUNTIF(bytes_total > 3145728 AND bytes_total <= 4194304 AND ttfb > 1800) / NULLIF(COUNTIF(bytes_total > 3145728 AND bytes_total <= 4194304), 0), 2) AS ttfb_poor_pct_3mb_to_4mb,
-    -- 4MB to 5MB
-    ROUND(100.0 * COUNTIF(bytes_total > 4194304 AND bytes_total <= 5242880 AND ttfb <= 800) / NULLIF(COUNTIF(bytes_total > 4194304 AND bytes_total <= 5242880), 0), 2) AS ttfb_good_pct_4mb_to_5mb,
-    ROUND(100.0 * COUNTIF(bytes_total > 4194304 AND bytes_total <= 5242880 AND ttfb > 800 AND ttfb <= 1800) / NULLIF(COUNTIF(bytes_total > 4194304 AND bytes_total <= 5242880), 0), 2) AS ttfb_ni_pct_4mb_to_5mb,
-    ROUND(100.0 * COUNTIF(bytes_total > 4194304 AND bytes_total <= 5242880 AND ttfb > 1800) / NULLIF(COUNTIF(bytes_total > 4194304 AND bytes_total <= 5242880), 0), 2) AS ttfb_poor_pct_4mb_to_5mb,
-    -- 5MB and above
-    ROUND(100.0 * COUNTIF(bytes_total > 5242880 AND ttfb <= 800) / NULLIF(COUNTIF(bytes_total > 5242880), 0), 2) AS ttfb_good_pct_5mb_and_above,
-    ROUND(100.0 * COUNTIF(bytes_total > 5242880 AND ttfb > 800 AND ttfb <= 1800) / NULLIF(COUNTIF(bytes_total > 5242880), 0), 2) AS ttfb_ni_pct_5mb_and_above,
-    ROUND(100.0 * COUNTIF(bytes_total > 5242880 AND ttfb > 1800) / NULLIF(COUNTIF(bytes_total > 5242880), 0), 2) AS ttfb_poor_pct_5mb_and_above
-  FROM
-    ttfb_data
-  GROUP BY
-    client,
-    is_root_page
+    base_data
 )
 
 SELECT
-  COALESCE(lcp.client, cls.client, inp.client, fcp.client, ttfb.client) AS client,
-  COALESCE(lcp.is_root_page, cls.is_root_page, inp.is_root_page, fcp.is_root_page, ttfb.is_root_page) AS is_root_page,
-  -- LCP metrics
-  lcp.lcp_good_pct_1mb_and_below,
-  lcp.lcp_ni_pct_1mb_and_below,
-  lcp.lcp_poor_pct_1mb_and_below,
-  lcp.lcp_good_pct_1mb_to_2mb,
-  lcp.lcp_ni_pct_1mb_to_2mb,
-  lcp.lcp_poor_pct_1mb_to_2mb,
-  lcp.lcp_good_pct_2mb_to_3mb,
-  lcp.lcp_ni_pct_2mb_to_3mb,
-  lcp.lcp_poor_pct_2mb_to_3mb,
-  lcp.lcp_good_pct_3mb_to_4mb,
-  lcp.lcp_ni_pct_3mb_to_4mb,
-  lcp.lcp_poor_pct_3mb_to_4mb,
-  lcp.lcp_good_pct_4mb_to_5mb,
-  lcp.lcp_ni_pct_4mb_to_5mb,
-  lcp.lcp_poor_pct_4mb_to_5mb,
-  lcp.lcp_good_pct_5mb_and_above,
-  lcp.lcp_ni_pct_5mb_and_above,
-  lcp.lcp_poor_pct_5mb_and_above,
-  -- CLS metrics
-  cls.cls_good_pct_1mb_and_below,
-  cls.cls_ni_pct_1mb_and_below,
-  cls.cls_poor_pct_1mb_and_below,
-  cls.cls_good_pct_1mb_to_2mb,
-  cls.cls_ni_pct_1mb_to_2mb,
-  cls.cls_poor_pct_1mb_to_2mb,
-  cls.cls_good_pct_2mb_to_3mb,
-  cls.cls_ni_pct_2mb_to_3mb,
-  cls.cls_poor_pct_2mb_to_3mb,
-  cls.cls_good_pct_3mb_to_4mb,
-  cls.cls_ni_pct_3mb_to_4mb,
-  cls.cls_poor_pct_3mb_to_4mb,
-  cls.cls_good_pct_4mb_to_5mb,
-  cls.cls_ni_pct_4mb_to_5mb,
-  cls.cls_poor_pct_4mb_to_5mb,
-  cls.cls_good_pct_5mb_and_above,
-  cls.cls_ni_pct_5mb_and_above,
-  cls.cls_poor_pct_5mb_and_above,
-  -- INP metrics
-  inp.inp_good_pct_1mb_and_below,
-  inp.inp_ni_pct_1mb_and_below,
-  inp.inp_poor_pct_1mb_and_below,
-  inp.inp_good_pct_1mb_to_2mb,
-  inp.inp_ni_pct_1mb_to_2mb,
-  inp.inp_poor_pct_1mb_to_2mb,
-  inp.inp_good_pct_2mb_to_3mb,
-  inp.inp_ni_pct_2mb_to_3mb,
-  inp.inp_poor_pct_2mb_to_3mb,
-  inp.inp_good_pct_3mb_to_4mb,
-  inp.inp_ni_pct_3mb_to_4mb,
-  inp.inp_poor_pct_3mb_to_4mb,
-  inp.inp_good_pct_4mb_to_5mb,
-  inp.inp_ni_pct_4mb_to_5mb,
-  inp.inp_poor_pct_4mb_to_5mb,
-  inp.inp_good_pct_5mb_and_above,
-  inp.inp_ni_pct_5mb_and_above,
-  inp.inp_poor_pct_5mb_and_above,
-  -- FCP metrics
-  fcp.fcp_good_pct_1mb_and_below,
-  fcp.fcp_ni_pct_1mb_and_below,
-  fcp.fcp_poor_pct_1mb_and_below,
-  fcp.fcp_good_pct_1mb_to_2mb,
-  fcp.fcp_ni_pct_1mb_to_2mb,
-  fcp.fcp_poor_pct_1mb_to_2mb,
-  fcp.fcp_good_pct_2mb_to_3mb,
-  fcp.fcp_ni_pct_2mb_to_3mb,
-  fcp.fcp_poor_pct_2mb_to_3mb,
-  fcp.fcp_good_pct_3mb_to_4mb,
-  fcp.fcp_ni_pct_3mb_to_4mb,
-  fcp.fcp_poor_pct_3mb_to_4mb,
-  fcp.fcp_good_pct_4mb_to_5mb,
-  fcp.fcp_ni_pct_4mb_to_5mb,
-  fcp.fcp_poor_pct_4mb_to_5mb,
-  fcp.fcp_good_pct_5mb_and_above,
-  fcp.fcp_ni_pct_5mb_and_above,
-  fcp.fcp_poor_pct_5mb_and_above,
-  -- TTFB metrics
-  ttfb.ttfb_good_pct_1mb_and_below,
-  ttfb.ttfb_ni_pct_1mb_and_below,
-  ttfb.ttfb_poor_pct_1mb_and_below,
-  ttfb.ttfb_good_pct_1mb_to_2mb,
-  ttfb.ttfb_ni_pct_1mb_to_2mb,
-  ttfb.ttfb_poor_pct_1mb_to_2mb,
-  ttfb.ttfb_good_pct_2mb_to_3mb,
-  ttfb.ttfb_ni_pct_2mb_to_3mb,
-  ttfb.ttfb_poor_pct_2mb_to_3mb,
-  ttfb.ttfb_good_pct_3mb_to_4mb,
-  ttfb.ttfb_ni_pct_3mb_to_4mb,
-  ttfb.ttfb_poor_pct_3mb_to_4mb,
-  ttfb.ttfb_good_pct_4mb_to_5mb,
-  ttfb.ttfb_ni_pct_4mb_to_5mb,
-  ttfb.ttfb_poor_pct_4mb_to_5mb,
-  ttfb.ttfb_good_pct_5mb_and_above,
-  ttfb.ttfb_ni_pct_5mb_and_above,
-  ttfb.ttfb_poor_pct_5mb_and_above
+  client,
+  is_root_page,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '0mb-1mb' AND lcp_category = 'good'), COUNTIF(category = '0mb-1mb' AND lcp_category IS NOT NULL)), 4) AS lcp_good_pct_1mb_and_below,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '0mb-1mb' AND lcp_category = 'ni'), COUNTIF(category = '0mb-1mb' AND lcp_category IS NOT NULL)), 4) AS lcp_ni_pct_1mb_and_below,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '0mb-1mb' AND lcp_category = 'poor'), COUNTIF(category = '0mb-1mb' AND lcp_category IS NOT NULL)), 4) AS lcp_poor_pct_1mb_and_below,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '1mb-2mb' AND lcp_category = 'good'), COUNTIF(category = '1mb-2mb' AND lcp_category IS NOT NULL)), 4) AS lcp_good_pct_1mb_to_2mb,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '1mb-2mb' AND lcp_category = 'ni'), COUNTIF(category = '1mb-2mb' AND lcp_category IS NOT NULL)), 4) AS lcp_ni_pct_1mb_to_2mb,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '1mb-2mb' AND lcp_category = 'poor'), COUNTIF(category = '1mb-2mb' AND lcp_category IS NOT NULL)), 4) AS lcp_poor_pct_1mb_to_2mb,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '2mb-3mb' AND lcp_category = 'good'), COUNTIF(category = '2mb-3mb' AND lcp_category IS NOT NULL)), 4) AS lcp_good_pct_2mb_to_3mb,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '2mb-3mb' AND lcp_category = 'ni'), COUNTIF(category = '2mb-3mb' AND lcp_category IS NOT NULL)), 4) AS lcp_ni_pct_2mb_to_3mb,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '2mb-3mb' AND lcp_category = 'poor'), COUNTIF(category = '2mb-3mb' AND lcp_category IS NOT NULL)), 4) AS lcp_poor_pct_2mb_to_3mb,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '3mb-4mb' AND lcp_category = 'good'), COUNTIF(category = '3mb-4mb' AND lcp_category IS NOT NULL)), 4) AS lcp_good_pct_3mb_to_4mb,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '3mb-4mb' AND lcp_category = 'ni'), COUNTIF(category = '3mb-4mb' AND lcp_category IS NOT NULL)), 4) AS lcp_ni_pct_3mb_to_4mb,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '3mb-4mb' AND lcp_category = 'poor'), COUNTIF(category = '3mb-4mb' AND lcp_category IS NOT NULL)), 4) AS lcp_poor_pct_3mb_to_4mb,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '4mb-5mb' AND lcp_category = 'good'), COUNTIF(category = '4mb-5mb' AND lcp_category IS NOT NULL)), 4) AS lcp_good_pct_4mb_to_5mb,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '4mb-5mb' AND lcp_category = 'ni'), COUNTIF(category = '4mb-5mb' AND lcp_category IS NOT NULL)), 4) AS lcp_ni_pct_4mb_to_5mb,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '4mb-5mb' AND lcp_category = 'poor'), COUNTIF(category = '4mb-5mb' AND lcp_category IS NOT NULL)), 4) AS lcp_poor_pct_4mb_to_5mb,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '>5mb' AND lcp_category = 'good'), COUNTIF(category = '>5mb' AND lcp_category IS NOT NULL)), 4) AS lcp_good_pct_5mb_and_above,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '>5mb' AND lcp_category = 'ni'), COUNTIF(category = '>5mb' AND lcp_category IS NOT NULL)), 4) AS lcp_ni_pct_5mb_and_above,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '>5mb' AND lcp_category = 'poor'), COUNTIF(category = '>5mb' AND lcp_category IS NOT NULL)), 4) AS lcp_poor_pct_5mb_and_above,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '0mb-1mb' AND cls_category = 'good'), COUNTIF(category = '0mb-1mb' AND cls_category IS NOT NULL)), 4) AS cls_good_pct_1mb_and_below,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '0mb-1mb' AND cls_category = 'ni'), COUNTIF(category = '0mb-1mb' AND cls_category IS NOT NULL)), 4) AS cls_ni_pct_1mb_and_below,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '0mb-1mb' AND cls_category = 'poor'), COUNTIF(category = '0mb-1mb' AND cls_category IS NOT NULL)), 4) AS cls_poor_pct_1mb_and_below,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '1mb-2mb' AND cls_category = 'good'), COUNTIF(category = '1mb-2mb' AND cls_category IS NOT NULL)), 4) AS cls_good_pct_1mb_to_2mb,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '1mb-2mb' AND cls_category = 'ni'), COUNTIF(category = '1mb-2mb' AND cls_category IS NOT NULL)), 4) AS cls_ni_pct_1mb_to_2mb,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '1mb-2mb' AND cls_category = 'poor'), COUNTIF(category = '1mb-2mb' AND cls_category IS NOT NULL)), 4) AS cls_poor_pct_1mb_to_2mb,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '2mb-3mb' AND cls_category = 'good'), COUNTIF(category = '2mb-3mb' AND cls_category IS NOT NULL)), 4) AS cls_good_pct_2mb_to_3mb,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '2mb-3mb' AND cls_category = 'ni'), COUNTIF(category = '2mb-3mb' AND cls_category IS NOT NULL)), 4) AS cls_ni_pct_2mb_to_3mb,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '2mb-3mb' AND cls_category = 'poor'), COUNTIF(category = '2mb-3mb' AND cls_category IS NOT NULL)), 4) AS cls_poor_pct_2mb_to_3mb,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '3mb-4mb' AND cls_category = 'good'), COUNTIF(category = '3mb-4mb' AND cls_category IS NOT NULL)), 4) AS cls_good_pct_3mb_to_4mb,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '3mb-4mb' AND cls_category = 'ni'), COUNTIF(category = '3mb-4mb' AND cls_category IS NOT NULL)), 4) AS cls_ni_pct_3mb_to_4mb,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '3mb-4mb' AND cls_category = 'poor'), COUNTIF(category = '3mb-4mb' AND cls_category IS NOT NULL)), 4) AS cls_poor_pct_3mb_to_4mb,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '4mb-5mb' AND cls_category = 'good'), COUNTIF(category = '4mb-5mb' AND cls_category IS NOT NULL)), 4) AS cls_good_pct_4mb_to_5mb,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '4mb-5mb' AND cls_category = 'ni'), COUNTIF(category = '4mb-5mb' AND cls_category IS NOT NULL)), 4) AS cls_ni_pct_4mb_to_5mb,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '4mb-5mb' AND cls_category = 'poor'), COUNTIF(category = '4mb-5mb' AND cls_category IS NOT NULL)), 4) AS cls_poor_pct_4mb_to_5mb,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '>5mb' AND cls_category = 'good'), COUNTIF(category = '>5mb' AND cls_category IS NOT NULL)), 4) AS cls_good_pct_5mb_and_above,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '>5mb' AND cls_category = 'ni'), COUNTIF(category = '>5mb' AND cls_category IS NOT NULL)), 4) AS cls_ni_pct_5mb_and_above,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '>5mb' AND cls_category = 'poor'), COUNTIF(category = '>5mb' AND cls_category IS NOT NULL)), 4) AS cls_poor_pct_5mb_and_above,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '0mb-1mb' AND inp_category = 'good'), COUNTIF(category = '0mb-1mb' AND inp_category IS NOT NULL)), 4) AS inp_good_pct_1mb_and_below,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '0mb-1mb' AND inp_category = 'ni'), COUNTIF(category = '0mb-1mb' AND inp_category IS NOT NULL)), 4) AS inp_ni_pct_1mb_and_below,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '0mb-1mb' AND inp_category = 'poor'), COUNTIF(category = '0mb-1mb' AND inp_category IS NOT NULL)), 4) AS inp_poor_pct_1mb_and_below,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '1mb-2mb' AND inp_category = 'good'), COUNTIF(category = '1mb-2mb' AND inp_category IS NOT NULL)), 4) AS inp_good_pct_1mb_to_2mb,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '1mb-2mb' AND inp_category = 'ni'), COUNTIF(category = '1mb-2mb' AND inp_category IS NOT NULL)), 4) AS inp_ni_pct_1mb_to_2mb,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '1mb-2mb' AND inp_category = 'poor'), COUNTIF(category = '1mb-2mb' AND inp_category IS NOT NULL)), 4) AS inp_poor_pct_1mb_to_2mb,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '2mb-3mb' AND inp_category = 'good'), COUNTIF(category = '2mb-3mb' AND inp_category IS NOT NULL)), 4) AS inp_good_pct_2mb_to_3mb,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '2mb-3mb' AND inp_category = 'ni'), COUNTIF(category = '2mb-3mb' AND inp_category IS NOT NULL)), 4) AS inp_ni_pct_2mb_to_3mb,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '2mb-3mb' AND inp_category = 'poor'), COUNTIF(category = '2mb-3mb' AND inp_category IS NOT NULL)), 4) AS inp_poor_pct_2mb_to_3mb,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '3mb-4mb' AND inp_category = 'good'), COUNTIF(category = '3mb-4mb' AND inp_category IS NOT NULL)), 4) AS inp_good_pct_3mb_to_4mb,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '3mb-4mb' AND inp_category = 'ni'), COUNTIF(category = '3mb-4mb' AND inp_category IS NOT NULL)), 4) AS inp_ni_pct_3mb_to_4mb,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '3mb-4mb' AND inp_category = 'poor'), COUNTIF(category = '3mb-4mb' AND inp_category IS NOT NULL)), 4) AS inp_poor_pct_3mb_to_4mb,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '4mb-5mb' AND inp_category = 'good'), COUNTIF(category = '4mb-5mb' AND inp_category IS NOT NULL)), 4) AS inp_good_pct_4mb_to_5mb,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '4mb-5mb' AND inp_category = 'ni'), COUNTIF(category = '4mb-5mb' AND inp_category IS NOT NULL)), 4) AS inp_ni_pct_4mb_to_5mb,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '4mb-5mb' AND inp_category = 'poor'), COUNTIF(category = '4mb-5mb' AND inp_category IS NOT NULL)), 4) AS inp_poor_pct_4mb_to_5mb,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '>5mb' AND inp_category = 'good'), COUNTIF(category = '>5mb' AND inp_category IS NOT NULL)), 4) AS inp_good_pct_5mb_and_above,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '>5mb' AND inp_category = 'ni'), COUNTIF(category = '>5mb' AND inp_category IS NOT NULL)), 4) AS inp_ni_pct_5mb_and_above,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '>5mb' AND inp_category = 'poor'), COUNTIF(category = '>5mb' AND inp_category IS NOT NULL)), 4) AS inp_poor_pct_5mb_and_above,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '0mb-1mb' AND fcp_category = 'good'), COUNTIF(category = '0mb-1mb' AND fcp_category IS NOT NULL)), 4) AS fcp_good_pct_1mb_and_below,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '0mb-1mb' AND fcp_category = 'ni'), COUNTIF(category = '0mb-1mb' AND fcp_category IS NOT NULL)), 4) AS fcp_ni_pct_1mb_and_below,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '0mb-1mb' AND fcp_category = 'poor'), COUNTIF(category = '0mb-1mb' AND fcp_category IS NOT NULL)), 4) AS fcp_poor_pct_1mb_and_below,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '1mb-2mb' AND fcp_category = 'good'), COUNTIF(category = '1mb-2mb' AND fcp_category IS NOT NULL)), 4) AS fcp_good_pct_1mb_to_2mb,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '1mb-2mb' AND fcp_category = 'ni'), COUNTIF(category = '1mb-2mb' AND fcp_category IS NOT NULL)), 4) AS fcp_ni_pct_1mb_to_2mb,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '1mb-2mb' AND fcp_category = 'poor'), COUNTIF(category = '1mb-2mb' AND fcp_category IS NOT NULL)), 4) AS fcp_poor_pct_1mb_to_2mb,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '2mb-3mb' AND fcp_category = 'good'), COUNTIF(category = '2mb-3mb' AND fcp_category IS NOT NULL)), 4) AS fcp_good_pct_2mb_to_3mb,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '2mb-3mb' AND fcp_category = 'ni'), COUNTIF(category = '2mb-3mb' AND fcp_category IS NOT NULL)), 4) AS fcp_ni_pct_2mb_to_3mb,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '2mb-3mb' AND fcp_category = 'poor'), COUNTIF(category = '2mb-3mb' AND fcp_category IS NOT NULL)), 4) AS fcp_poor_pct_2mb_to_3mb,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '3mb-4mb' AND fcp_category = 'good'), COUNTIF(category = '3mb-4mb' AND fcp_category IS NOT NULL)), 4) AS fcp_good_pct_3mb_to_4mb,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '3mb-4mb' AND fcp_category = 'ni'), COUNTIF(category = '3mb-4mb' AND fcp_category IS NOT NULL)), 4) AS fcp_ni_pct_3mb_to_4mb,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '3mb-4mb' AND fcp_category = 'poor'), COUNTIF(category = '3mb-4mb' AND fcp_category IS NOT NULL)), 4) AS fcp_poor_pct_3mb_to_4mb,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '4mb-5mb' AND fcp_category = 'good'), COUNTIF(category = '4mb-5mb' AND fcp_category IS NOT NULL)), 4) AS fcp_good_pct_4mb_to_5mb,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '4mb-5mb' AND fcp_category = 'ni'), COUNTIF(category = '4mb-5mb' AND fcp_category IS NOT NULL)), 4) AS fcp_ni_pct_4mb_to_5mb,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '4mb-5mb' AND fcp_category = 'poor'), COUNTIF(category = '4mb-5mb' AND fcp_category IS NOT NULL)), 4) AS fcp_poor_pct_4mb_to_5mb,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '>5mb' AND fcp_category = 'good'), COUNTIF(category = '>5mb' AND fcp_category IS NOT NULL)), 4) AS fcp_good_pct_5mb_and_above,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '>5mb' AND fcp_category = 'ni'), COUNTIF(category = '>5mb' AND fcp_category IS NOT NULL)), 4) AS fcp_ni_pct_5mb_and_above,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '>5mb' AND fcp_category = 'poor'), COUNTIF(category = '>5mb' AND fcp_category IS NOT NULL)), 4) AS fcp_poor_pct_5mb_and_above,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '0mb-1mb' AND ttfb_category = 'good'), COUNTIF(category = '0mb-1mb' AND ttfb_category IS NOT NULL)), 4) AS ttfb_good_pct_1mb_and_below,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '0mb-1mb' AND ttfb_category = 'ni'), COUNTIF(category = '0mb-1mb' AND ttfb_category IS NOT NULL)), 4) AS ttfb_ni_pct_1mb_and_below,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '0mb-1mb' AND ttfb_category = 'poor'), COUNTIF(category = '0mb-1mb' AND ttfb_category IS NOT NULL)), 4) AS ttfb_poor_pct_1mb_and_below,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '1mb-2mb' AND ttfb_category = 'good'), COUNTIF(category = '1mb-2mb' AND ttfb_category IS NOT NULL)), 4) AS ttfb_good_pct_1mb_to_2mb,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '1mb-2mb' AND ttfb_category = 'ni'), COUNTIF(category = '1mb-2mb' AND ttfb_category IS NOT NULL)), 4) AS ttfb_ni_pct_1mb_to_2mb,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '1mb-2mb' AND ttfb_category = 'poor'), COUNTIF(category = '1mb-2mb' AND ttfb_category IS NOT NULL)), 4) AS ttfb_poor_pct_1mb_to_2mb,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '2mb-3mb' AND ttfb_category = 'good'), COUNTIF(category = '2mb-3mb' AND ttfb_category IS NOT NULL)), 4) AS ttfb_good_pct_2mb_to_3mb,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '2mb-3mb' AND ttfb_category = 'ni'), COUNTIF(category = '2mb-3mb' AND ttfb_category IS NOT NULL)), 4) AS ttfb_ni_pct_2mb_to_3mb,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '2mb-3mb' AND ttfb_category = 'poor'), COUNTIF(category = '2mb-3mb' AND ttfb_category IS NOT NULL)), 4) AS ttfb_poor_pct_2mb_to_3mb,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '3mb-4mb' AND ttfb_category = 'good'), COUNTIF(category = '3mb-4mb' AND ttfb_category IS NOT NULL)), 4) AS ttfb_good_pct_3mb_to_4mb,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '3mb-4mb' AND ttfb_category = 'ni'), COUNTIF(category = '3mb-4mb' AND ttfb_category IS NOT NULL)), 4) AS ttfb_ni_pct_3mb_to_4mb,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '3mb-4mb' AND ttfb_category = 'poor'), COUNTIF(category = '3mb-4mb' AND ttfb_category IS NOT NULL)), 4) AS ttfb_poor_pct_3mb_to_4mb,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '4mb-5mb' AND ttfb_category = 'good'), COUNTIF(category = '4mb-5mb' AND ttfb_category IS NOT NULL)), 4) AS ttfb_good_pct_4mb_to_5mb,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '4mb-5mb' AND ttfb_category = 'ni'), COUNTIF(category = '4mb-5mb' AND ttfb_category IS NOT NULL)), 4) AS ttfb_ni_pct_4mb_to_5mb,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '4mb-5mb' AND ttfb_category = 'poor'), COUNTIF(category = '4mb-5mb' AND ttfb_category IS NOT NULL)), 4) AS ttfb_poor_pct_4mb_to_5mb,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '>5mb' AND ttfb_category = 'good'), COUNTIF(category = '>5mb' AND ttfb_category IS NOT NULL)), 4) AS ttfb_good_pct_5mb_and_above,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '>5mb' AND ttfb_category = 'ni'), COUNTIF(category = '>5mb' AND ttfb_category IS NOT NULL)), 4) AS ttfb_ni_pct_5mb_and_above,
+  ROUND(SAFE_DIVIDE(COUNTIF(category = '>5mb' AND ttfb_category = 'poor'), COUNTIF(category = '>5mb' AND ttfb_category IS NOT NULL)), 4) AS ttfb_poor_pct_5mb_and_above
 FROM
-  lcp_metrics lcp
-FULL OUTER JOIN cls_metrics cls ON lcp.client = cls.client AND lcp.is_root_page = cls.is_root_page
-FULL OUTER JOIN inp_metrics inp ON COALESCE(lcp.client, cls.client) = inp.client AND COALESCE(lcp.is_root_page, cls.is_root_page) = inp.is_root_page
-FULL OUTER JOIN fcp_metrics fcp ON COALESCE(lcp.client, cls.client, inp.client) = fcp.client AND COALESCE(lcp.is_root_page, cls.is_root_page, inp.is_root_page) = fcp.is_root_page
-FULL OUTER JOIN ttfb_metrics ttfb ON COALESCE(lcp.client, cls.client, inp.client, fcp.client) = ttfb.client AND COALESCE(lcp.is_root_page, cls.is_root_page, inp.is_root_page, fcp.is_root_page) = ttfb.is_root_page
+  categorised_data
+GROUP BY
+  client,
+  is_root_page
 ORDER BY
-  client, is_root_page
+  client,
+  is_root_page
