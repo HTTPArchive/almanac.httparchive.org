@@ -20,4 +20,3 @@ FROM (
   ORDER BY
     freq / total DESC
 )
-LIMIT 100
