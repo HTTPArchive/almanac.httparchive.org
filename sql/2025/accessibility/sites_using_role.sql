@@ -13,7 +13,7 @@ FROM (
   SELECT
     client,
     is_root_page,
-    CAST(JSON_VALUE(custom_metric.other.almanac.nodes_using_role.total) AS INT64) AS total_role_attributes
+    CAST(JSON_VALUE(custom_metrics.other.almanac.nodes_using_role.total) AS INT64) AS total_role_attributes
   FROM
     `httparchive.crawl.pages`
   WHERE
