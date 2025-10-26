@@ -15,8 +15,8 @@ FROM (
   SELECT
     client,
     is_root_page,
-    CAST(JSON_VALUE(custom_metric.other.almanac.videos.total) AS INT64) AS total_videos,
-    CAST(JSON_VALUE(custom_metric.other.almanac.videos.total_with_track) AS INT64) AS total_with_track
+    CAST(JSON_VALUE(custom_metrics.other.almanac.videos.total) AS INT64) AS total_videos,
+    CAST(JSON_VALUE(custom_metrics.other.almanac.videos.total_with_track) AS INT64) AS total_with_track
   FROM
     `httparchive.crawl.pages`
   WHERE
