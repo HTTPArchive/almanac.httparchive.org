@@ -1,4 +1,7 @@
 -- ======================================================================
+--
+-- OUTDATED - It is more efficient to collect all of the data in the lighthouse_score_by_government_with_urls.sql, and then parse with python it with code rather than with SQL. This way I know I'll have consistent results.
+--
 -- PURPOSE
 -- Classify government-root pages into country (and U.S. state where
 -- applicable) and join Lighthouse scores for reporting.
