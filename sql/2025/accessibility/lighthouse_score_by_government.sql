@@ -1,6 +1,6 @@
 -- ======================================================================
 --
--- OUTDATED - It is more efficient to collect all of the data in the lighthouse_score_by_government_with_urls.sql, and then parse with python it with code rather than with SQL. This way I know I'll have consistent results.
+-- The output should be indentical to lighthouse_score_by_government_with_urls.sql
 --
 -- PURPOSE
 -- Classify government-root pages into country (and U.S. state where
@@ -80,6 +80,7 @@
 -- ======================================================================
 
 WITH
+
 -- 1) Explicit suffix → bucket rules (highest precision; curated priorities)
 host_rules AS (
   SELECT * FROM UNNEST([
@@ -96,13 +97,18 @@ host_rules AS (
 
     -- European Union
     ('europa.eu','European Union',12),
-    ('eib.org','European Union',24),
     ('eif.org','European Union',24),
 
     -- Andorra
     ('govern.ad','Andorra',24), ('consellgeneral.ad','Andorra',24), ('justicia.ad','Andorra',24), ('tribunalconstitucional.ad','Andorra',24), ('exteriors.ad','Andorra',23),
     ('aferssocials.ad','Andorra',23), ('educacio.ad','Andorra',23), ('salut.ad','Andorra',23), ('interior.ad','Andorra',23), ('finances.ad','Andorra',23),
     ('encamp.ad','Andorra',22), ('ordino.ad','Andorra',22), ('canillo.ad','Andorra',22), ('santjulia.ad','Andorra',22), ('lauredia.ad','Andorra',22), ('escaldesengordany.ad','Andorra',22), ('pasdelacasa.ad','Andorra',22),
+
+    -- Albania
+    ('e-albania.al','Albania',24),
+
+    -- Algeria
+    ('service-public.dz','Algeria',24),
 
     -- Armenia
     ('gov.am','Armenia',24), ('parliament.am','Armenia',24), ('president.am','Armenia',24), ('e-gov.am','Armenia',24), ('mfa.am','Armenia',23),
@@ -136,6 +142,9 @@ host_rules AS (
     ('president.gov.by','Belarus',24), ('government.by','Belarus',24), ('parliament.gov.by','Belarus',24), ('supcourt.gov.by','Belarus',24), ('economy.gov.by','Belarus',23),
     ('minfin.gov.by','Belarus',23), ('minjust.gov.by','Belarus',23), ('minsk.gov.by','Belarus',22), ('grodno.gov.by','Belarus',22), ('brest.gov.by','Belarus',22),
     ('vitebsk.gov.by','Belarus',22), ('gomel.gov.by','Belarus',22), ('mogilev.gov.by','Belarus',22),
+
+    -- Bahrain
+    ('bahrain.bh','Bahrain',24),
 
     -- Belgium
     ('belgium.be','Belgium',24),('fgov.be','Belgium',24),('vlaanderen.be','Belgium',24),('wallonie.be','Belgium',24),('brussels.be','Belgium',24),('mil.be','Belgium',24),
@@ -181,7 +190,17 @@ host_rules AS (
     ('yukon.ca','Canada',23),('legassembly.gov.yk.ca','Canada',23),
     ('gov.nt.ca','Canada',23),('assembly.gov.nt.ca','Canada',23),
     ('gov.nu.ca','Canada',23),('assembly.nu.ca','Canada',23), ('revenuquebec.ca','Canada',23),
-
+    ('ottawa.ca','Canada',23),('toronto.ca','Canada',23),('vancouver.ca','Canada',23),          -- Major Canadian cities and provincial/territorial capitals (municipal)
+    ('calgary.ca','Canada',23),('edmonton.ca','Canada',23),('winnipeg.ca','Canada',23),
+    ('montreal.ca','Canada',23),('ville.quebec.qc.ca','Canada',23),('halifax.ca','Canada',23),
+    ('fredericton.ca','Canada',23),('charlottetown.ca','Canada',23),('stjohns.ca','Canada',23),
+    ('whitehorse.ca','Canada',23),('yellowknife.ca','Canada',23),('iqaluit.ca','Canada',23),
+    ('mississauga.ca','Canada',23),('brampton.ca','Canada',23),('hamilton.ca','Canada',23),    -- Other large cities
+    ('london.ca','Canada',23),('kitchener.ca','Canada',23),('windsor.ca','Canada',23),
+    ('saskatoon.ca','Canada',23),('regina.ca','Canada',23),('surrey.ca','Canada',23),
+    ('burnaby.ca','Canada',23),('richmond.ca','Canada',23),('markham.ca','Canada',23),
+    ('vaughan.ca','Canada',23),('longueuil.ca','Canada',23),('laval.ca','Canada',23),
+  
     -- Chile
     ('gob.cl','Chile',24), ('chileabroad.gov.cl','Chile',24), ('chileatiende.gob.cl','Chile',24),
     ('pjud.cl','Chile',24), ('tribunalconstitucional.cl','Chile',24), ('senado.cl','Chile',24), ('diputados.cl','Chile',24),
@@ -266,12 +285,61 @@ host_rules AS (
     ('migri.fi','Finland',22),('fimea.fi','Finland',22),('stat.fi','Finland',22),('thl.fi','Finland',22),('metsakeskus.fi','Finland',22),
     ('businessfinland.fi','Finland',22),('oph.fi','Finland',22),('avi.fi','Finland',22),('syke.fi','Finland',22),
     
-    -- France
-    ('gouvernement.fr','France',24),('elysee.fr','France',24),('service-public.fr','France',24),('legifrance.gouv.fr','France',24),('vie-publique.fr','France',24),('data.gouv.fr','France',24),('interieur.gouv.fr','France',24),('economie.gouv.fr','France',24),('travail-emploi.gouv.fr','France',24),('education.gouv.fr','France',24),('enseignementsup-recherche.gouv.fr','France',24),('justice.gouv.fr','France',24),('defense.gouv.fr','France',24),('sante.gouv.fr','France',24),('agriculture.gouv.fr','France',24),('culture.gouv.fr','France',24),('transition-ecologique.gouv.fr','France',24),('ecologie.gouv.fr','France',24),('diplomatie.gouv.fr','France',24),('impots.gouv.fr','France',24),('douane.gouv.fr','France',24),('france-visas.gouv.fr','France',24),
-    ('insee.fr','France',23),('banque-france.fr','France',23),('cnil.fr','France',23),('pole-emploi.fr','France',23),('francetravail.fr','France',23),('ameli.fr','France',23),('assurance-maladie.fr','France',23),('urssaf.fr','France',23),('caf.fr','France',23),('cnam.fr','France',23),('cnav.fr','France',23),('labanquepostale.fr','France',22),('meteofrance.com','France',22),('meteofrance.fr','France',22),('boamp.fr','France',22),('marches-publics.gouv.fr','France',24),
-    ('assemblee-nationale.fr','France',24),('senat.fr','France',24),('conseil-constitutionnel.fr','France',24),('conseil-etat.fr','France',24),('courdescomptes.fr','France',24),
-    ('iledefrance.fr','France',23),('hautsdefrance.fr','France',23),('normandie.fr','France',23),('grandest.fr','France',23),('bourgognefranchecomte.fr','France',23),('centre-valdeloire.fr','France',23),('paysdelaloire.fr','France',23),('bretagne.bzh','France',23),('nouvelle-aquitaine.fr','France',23),('occitanie.fr','France',23),('auvergnerhonealpes.fr','France',23),('provencealpes-cotedazur.fr','France',23),('corse.fr','France',23),('lareunion.fr','France',23),('mayotte.fr','France',23),('guadeloupe.fr','France',23),('martinique.fr','France',23),('guyane.fr','France',23),('polynesie-francaise.pref.gouv.fr','France',24),('nouvelle-caledonie.gouv.fr','France',24),('saint-barth-saint-martin.gouv.fr','France',24),('saint-pierre-et-miquelon.gouv.fr','France',24),
-    ('paris.fr','France',22),('lyon.fr','France',22),('marseille.fr','France',22),('toulouse.fr','France',22),('nice.fr','France',22),('nantes.fr','France',22),('montpellier.fr','France',22),('strasbourg.eu','France',22),('bordeaux.fr','France',22),('lille.fr','France',22),('rennes.fr','France',22),('reims.fr','France',22),('lehavre.fr','France',22),('saint-etienne.fr','France',22),('toulon.fr','France',22),('grenoble.fr','France',22),('dijon.fr','France',22),('angers.fr','France',22),('nancy.fr','France',22),('metz.fr','France',22),('clermont-ferrand.fr','France',22),('orleans.fr','France',22),('caen.fr','France',22),('tours.fr','France',22),('amiens.fr','France',22),('limoges.fr','France',22),('perpignan.fr','France',22),('annecy.fr','France',22),
+
+    -- France 
+    ('elysee.fr','France',24),('france.fr','France',24),('gouvernement.fr','France',24),('service-public.fr','France',24),('welcometofrance.com','France',22),  -- National + portals
+    ('agriculture.gouv.fr','France',24),('culture.gouv.fr','France',24),('defense.gouv.fr','France',24),('diplomatie.gouv.fr','France',24),                     -- Ministries / national agencies
+    ('douane.gouv.fr','France',24),('ecologie.gouv.fr','France',24),('economie.gouv.fr','France',24),('education.gouv.fr','France',24),
+    ('enseignementsup-recherche.gouv.fr','France',24),('impots.gouv.fr','France',24),('interieur.gouv.fr','France',24),('justice.gouv.fr','France',24),
+    ('marches-publics.gouv.fr','France',24),('sante.gouv.fr','France',24),('transition-ecologique.gouv.fr','France',24),('travail-emploi.gouv.fr','France',24),
+    ('assemblee-nationale.fr','France',24),('conseil-constitutionnel.fr','France',24),('conseil-etat.fr','France',24),('courdescomptes.fr','France',24),        -- Parliament / institutions
+    ('legifrance.gouv.fr','France',24),('senat.fr','France',24),('vie-publique.fr','France',24),
+    ('ameli.fr','France',23),('assurance-maladie.fr','France',23),('banque-france.fr','France',23),('boamp.fr','France',22),('caf.fr','France',23),             -- Agencies / operators
+    ('cnam.fr','France',23),('cnav.fr','France',23),('cnil.fr','France',23),('data.gouv.fr','France',24),('francetravail.fr','France',23),
+    ('impots.gouv.fr','France',24),('insee.fr','France',23),('labanquepostale.fr','France',22),('meteofrance.com','France',22),('meteofrance.fr','France',22),
+    ('pole-emploi.fr','France',23),('urssaf.fr','France',23),
+    ('cg971.fr','France',22),('cg976.fr','France',22),('collectivitedemartinique.mq','France',23),('ctguyane.fr','France',23),                                  -- Overseas collectivities / territories
+    ('departement974.fr','France',22),('guadeloupe.fr','France',23),('guyane.fr','France',23),('lareunion.fr','France',23),
+    ('mayotte.fr','France',23),('nouvelle-caledonie.gouv.fr','France',24),('polynesie-francaise.pref.gouv.fr','France',24),
+    ('province-sud.nc','France',23),('saint-barth-saint-martin.gouv.fr','France',24),('saint-pierre-et-miquelon.gouv.fr','France',24),
+    ('alsace.eu','France',23),('auvergnerhonealpes.fr','France',23),('bourgognefranchecomte.fr','France',23),('bretagne.bzh','France',23),                      -- Regions
+    ('centre-valdeloire.fr','France',23),('corse.fr','France',23),('grandest.fr','France',23),('hautsdefrance.fr','France',23),
+    ('iledefrance.fr','France',23),('normandie.fr','France',23),('nouvelle-aquitaine.fr','France',23),('occitanie.fr','France',23),
+    ('paysdelaloire.fr','France',23),('provencealpes-cotedazur.fr','France',23),
+    ('ain.fr','France',22),('aisne.com','France',22),('allier.fr','France',22),('ardeche.fr','France',22),('ariege.fr','France',22),                            -- Départements
+    ('aube.fr','France',22),('aude.fr','France',22),('aveyron.fr','France',22),('calvados.fr','France',22),('cantal.fr','France',22),
+    ('cd08.fr','France',22),('collectivitedemartinique.mq','France',23),('correze.fr','France',22),('cotedor.fr','France',22),
+    ('cotesdarmor.fr','France',22),('creuse.fr','France',22),('deux-sevres.fr','France',22),('departement06.fr','France',22),
+    ('departement13.fr','France',22),('departement18.fr','France',22),('departement41.fr','France',22),('departement974.fr','France',22),
+    ('doubs.fr','France',22),('dordogne.fr','France',22),('essonne.fr','France',22),('eurelien.fr','France',22),('eureennormandie.fr','France',22),
+    ('finistere.fr','France',22),('gard.fr','France',22),('gers.fr','France',22),('gironde.fr','France',22),('haute-garonne.fr','France',22),
+    ('haute-marne.fr','France',22),('haute-saone.fr','France',22),('haute-vienne.fr','France',22),('hauteloire.fr','France',22),
+    ('hautes-alpes.fr','France',22),('hautesavoie.fr','France',22),('hautespyrenees.fr','France',22),('herault.fr','France',22),
+    ('ille-et-vilaine.fr','France',22),('indre.fr','France',22),('isere.fr','France',22),('jura.fr','France',22),('ladrome.fr','France',22),
+    ('lamayenne.fr','France',22),('landes.fr','France',22),('lavienne86.fr','France',22),('le64.fr','France',22),
+    ('ledepartement66.fr','France',22),('lenord.fr','France',22),('loire.fr','France',22),('loire-atlantique.fr','France',22),
+    ('loiret.fr','France',22),('lot.fr','France',22),('lotetgaronne.com','France',22),('lozere-tourisme.com','France',22),
+    ('maine-et-loire.fr','France',22),('manche.fr','France',22),('marne.fr','France',22),('meurthe-et-moselle.fr','France',22),
+    ('meuse.fr','France',22),('morbihan.fr','France',22),('moselle.fr','France',22),('nievre.fr','France',22),
+    ('oise.fr','France',22),('orne.fr','France',22),('pasdecalais.fr','France',22),('puy-de-dome.fr','France',22),
+    ('rhone.fr','France',22),('saoneetloire71.fr','France',22),('sarthe.fr','France',22),('savoie.fr','France',22),
+    ('seine-et-marne.fr','France',22),('seinemaritime.fr','France',22),('seinesaintdenis.fr','France',22),
+    ('somme.fr','France',22),('tarn.fr','France',22),('tarnetgaronne.fr','France',22),('territoiredebelfort.fr','France',22),
+    ('touraine.fr','France',22),('valdemarne.fr','France',22),('valdoise.fr','France',22),('vaucluse.fr','France',22),
+    ('vendee.fr','France',22),('vosges.fr','France',22),('yonne.fr','France',22),('yvelines.fr','France',22),
+    ('ampmetropole.fr','France',22),('bordeaux-metropole.fr','France',22),('clermontmetropole.eu','France',22),('dijon-metropole.fr','France',22),            -- Métropoles
+    ('eurometropolemetz.eu','France',22),('grandnancy.eu','France',22),('grenoblealpesmetropole.fr','France',22),('lillemetropole.fr','France',22),
+    ('metropole.nantes.fr','France',22),('metropole.rennes.fr','France',22),('metropole.toulouse.fr','France',22),
+    ('metropole-rouen-normandie.fr','France',22),('metropolegrandparis.fr','France',22),('metropoletpm.fr','France',22),
+    ('montpellier3m.fr','France',22),('nicecotedazur.org','France',22),('orleans-metropole.fr','France',22),
+    ('saint-etienne-metropole.fr','France',22),('tours-metropole.fr','France',22),
+    ('amiens.fr','France',22),('angers.fr','France',22),('annecy.fr','France',22),('bordeaux.fr','France',22),('brest.fr','France',22),                       -- Major cities
+    ('caen.fr','France',22),('clermont-ferrand.fr','France',22),('dijon.fr','France',22),('grenoble.fr','France',22),
+    ('lehavre.fr','France',22),('limoges.fr','France',22),('lille.fr','France',22),('lyon.fr','France',22),('marseille.fr','France',22),
+    ('metz.fr','France',22),('montpellier.fr','France',22),('nancy.fr','France',22),('nantes.fr','France',22),
+    ('nice.fr','France',22),('orleans.fr','France',22),('paris.fr','France',22),('perpignan.fr','France',22),
+    ('reims.fr','France',22),('rennes.fr','France',22),('saint-etienne.fr','France',22),('strasbourg.eu','France',22),
+    ('toulon.fr','France',22),('toulouse.fr','France',22),('tours.fr','France',22),
 
     -- Georgia
     ('gov.ge','Georgia',24), ('parliament.ge','Georgia',24), ('president.ge','Georgia',24), ('nbe.gov.ge','Georgia',24), ('mfa.gov.ge','Georgia',24),
@@ -286,12 +354,71 @@ host_rules AS (
     ('trikala.gr','Greece',22),('veria.gr','Greece',22), ('rethymno.gr','Greece',22),('xanthi.gr','Greece',22),
     ('kozani.gr','Greece',22),('corfu.gr','Greece',22),('rhodes.gr','Greece',22),
 
+
     -- Germany
-    ('bund.de','Germany',24),('bundesregierung.de','Germany',24),('bundesrat.de','Germany',24),('bundestag.de','Germany',24), ('bundesverfassungsgericht.de','Germany',24),('bundesgerichtshof.de','Germany',24),('bundesverwaltungsgericht.de','Germany',24), ('bundesfinanzhof.de','Germany',24),('bundessozialgericht.de','Germany',24),('bundesarbeitsgericht.de','Germany',24), ('bundesnetzagentur.de','Germany',24),('bundespolizei.de','Germany',24),('polizei.de','Germany',24),('bmi.bund.de','Germany',24), ('auswaertiges-amt.de','Germany',24),('bmf.bund.de','Germany',24),('bmj.de','Germany',24),('bmwi.de','Germany',24), ('bmbf.de','Germany',24),('bmvg.de','Germany',24),('bmas.de','Germany',24),('bmfsfj.de','Germany',24),('bmel.de','Germany',24), ('bmuv.de','Germany',24),('bverwg.de','Germany',24),('bundeskartellamt.de','Germany',24),('bundesbank.de','Germany',24), ('destatis.de','Germany',24),('rki.de','Germany',24),('pei.de','Germany',24),
-    ('bafin.de','Germany',24),('bka.de','Germany',24),('bka.bund.de','Germany',24),('bnd.bund.de','Germany',24),('zoll.de','Germany',24), ('bamf.de','Germany',24),('arbeitsagentur.de','Germany',24),('bundeswehr.de','Germany',24),('bsi.bund.de','Germany',24), ('uba.de','Germany',24),('bfarm.de','Germany',24),('bfr.bund.de','Germany',24),('dwd.de','Germany',24),('kba.de','Germany',24), ('bundesanzeiger.de','Germany',24),('gesetze-im-internet.de','Germany',24),('verwaltung.bund.de','Germany',24),('service.bund.de','Germany',24), ('govdata.de','Germany',24),('deutschland.de','Germany',23),('make-it-in-germany.com','Germany',23),
-    ('bayern.de','Germany',23),('berlin.de','Germany',23),('brandenburg.de','Germany',23),('bremen.de','Germany',23),('hamburg.de','Germany',23), ('hessen.de','Germany',23),('mecklenburg-vorpommern.de','Germany',23),('niedersachsen.de','Germany',23),('nrw.de','Germany',23), ('land.nrw','Germany',24),('rlp.de','Germany',23),('saarland.de','Germany',23),('sachsen.de','Germany',23), ('sachsen-anhalt.de','Germany',23),('schleswig-holstein.de','Germany',23),('thueringen.de','Germany',23),
-    ('landtag.nrw.de','Germany',23),('landtag-bw.de','Germany',23),('landtag.bayern.de','Germany',23), ('landtag.sachsen.de','Germany',23),('landtag.sachsen-anhalt.de','Germany',23),('landtag.brandenburg.de','Germany',23), ('landtag.rlp.de','Germany',23),('landtag-bb.de','Germany',23),
-    ('nigeria.diplo.de','Germany',21),('tuerkei.diplo.de','Germany',21),('harare.diplo.de','Germany',21), ('tallinn.diplo.de','Germany',21),('brasil.diplo.de','Germany',21),
+    ('bund.de','Germany',24), ('bundesregierung.de','Germany',24), ('bundesrat.de','Germany',24), ('bundestag.de','Germany',24),
+    ('bundesverfassungsgericht.de','Germany',24), ('bundesgerichtshof.de','Germany',24), ('bundesverwaltungsgericht.de','Germany',24),
+    ('bundesfinanzhof.de','Germany',24), ('bundessozialgericht.de','Germany',24), ('bundesarbeitsgericht.de','Germany',24),
+    ('bundesnetzagentur.de','Germany',24), ('bundespolizei.de','Germany',24), ('polizei.de','Germany',24),
+    ('bmi.bund.de','Germany',24), ('auswaertiges-amt.de','Germany',24), ('bmf.bund.de','Germany',24), ('bmj.de','Germany',24),
+    ('bmwi.de','Germany',24), ('bmbf.de','Germany',24), ('bmvg.de','Germany',24), ('bmas.de','Germany',24),
+    ('bmfsfj.de','Germany',24), ('bmel.de','Germany',24), ('bmuv.de','Germany',24), ('bverwg.de','Germany',24),
+    ('bundeskartellamt.de','Germany',24), ('bundesbank.de','Germany',24), ('destatis.de','Germany',24),
+    ('rki.de','Germany',24), ('pei.de','Germany',24), ('bafin.de','Germany',24), ('bka.de','Germany',24),
+    ('bka.bund.de','Germany',24), ('bnd.bund.de','Germany',24), ('zoll.de','Germany',24), ('bamf.de','Germany',24),
+    ('arbeitsagentur.de','Germany',24), ('bundeswehr.de','Germany',24), ('bsi.bund.de','Germany',24),
+    ('uba.de','Germany',24), ('bfarm.de','Germany',24), ('bfr.bund.de','Germany',24), ('dwd.de','Germany',24),
+    ('kba.de','Germany',24), ('bundesanzeiger.de','Germany',24), ('gesetze-im-internet.de','Germany',24),
+    ('verwaltung.bund.de','Germany',24), ('service.bund.de','Germany',24), ('govdata.de','Germany',24),
+    ('epetitionen.bundestag.de','Germany',24), ('make-it-in-germany.com','Germany',23),                                       -- Additional Federal Offices / Agencies
+    ('beratungsstelle-barrierefreiheit.de','Germany',23), ('dguv.de','Germany',23), ('jfmk.de','Germany',23), ('bfee-online.de','Germany',23),
+    ('bbr.bund.de','Germany',24), ('bbk.bund.de','Germany',24), ('bkg.bund.de','Germany',24), ('bfn.de','Germany',24),
+    ('bsh.de','Germany',24), ('bfs.de','Germany',24), ('bvl.bund.de','Germany',24), ('verfassungsschutz.de','Germany',24),
+    ('bafa.de','Germany',24), ('badv.bund.de','Germany',24), ('baua.de','Germany',24), ('bgr.bund.de','Germany',24),
+    ('bafg.de','Germany',24), ('bundesimmobilien.de','Germany',24), ('ble.de','Germany',24), ('bam.de','Germany',24),
+    ('bva.bund.de','Germany',24), ('bzst.bund.de','Germany',24), ('deutsche-finanzagentur.de','Germany',23),
+    ('dainst.org','Germany',23), ('dpma.de','Germany',24), ('ffa.de','Germany',23), ('lba.de','Germany',24),
+    ('mri.bund.de','Germany',23), ('ptb.de','Germany',24), ('thw.de','Germany',24), ('umweltbundesamt.de','Germany',24),
+    ('116117.de','Germany',23), ('aktion-zusammen-wachsen.de','Germany',23), ('antidiskriminierungsstelle.de','Germany',24),
+    ('antisemitismusbeauftragter.de','Germany',24), ('aufstiegs-bafoeg.de','Germany',23),
+    ('bundesdruckerei.de','Germany',23), ('bundesfachstelle-barrierefreiheit.de','Germany',23),
+    ('bundesjugendspiele.de','Germany',23), ('bundespraesident.de','Germany',24),
+    ('deutschlandatlas.bund.de','Germany',24), ('deutschlandtakt.de','Germany',23), ('dnb.de','Germany',24), 
+    ('dortmund.de','Germany',23), ('duesseldorf.de','Germany',23), ('elternsein.info','Germany',23),
+    ('energetische-stadtsanierung.info','Germany',23), ('essen.de','Germany',23), ('evergabe-online.de','Germany',24),
+    ('familienplanung.de','Germany',23), ('familienportal.de','Germany',23), ('fba.de','Germany',24),
+    ('frankfurt.de','Germany',23), ('frauengesundheitsportal.de','Germany',23), ('fruehe-chancen.de','Germany',23),
+    ('generalbundesanwalt.de','Germany',24), ('go-bio.de','Germany',23),
+    ('hamburg.de','Germany',23), ('hanisauland.de','Germany',23), ('hilfe-portal-missbrauch.de','Germany',23),
+    ('hvv.de','Germany',23), ('integrationsbeauftragte.de','Germany',24), ('interreg.de','Germany',23),
+    ('it-planungsrat.de','Germany',23), ('karriere.bva.de','Germany',23), ('kinder-ministerium.de','Germany',23),
+    ('koeln.de','Germany',23), ('krisenvorsorgeliste.diplo.de','Germany',21), ('krebsdaten.de','Germany',24),
+    ('kuppelkucker.de','Germany',23), ('kulturstaatsministerin.de','Germany',24), ('kulturpass.de','Germany',23),
+    ('landkreistag.de','Germany',23), ('leitfadenbarrierefreiesbauen.de','Germany',23), ('leipzig.de','Germany',23),
+    ('muenchen.de','Germany',23), ('nationaler-rat.de','Germany',23), ('open-government-deutschland.de','Germany',23),
+    ('opencode.de','Germany',23), ('personalausweisportal.de','Germany',24), ('personenstandsrecht.de','Germany',24),
+    ('pharmnet-bund.de','Germany',24), ('pflegebevollmaechtigte.de','Germany',24),
+    ('recht-relaxed.de','Germany',23), ('regenbogenportal.de','Germany',23), ('religionsfreiheit.bmz.de','Germany',23),
+    ('rentenuebersicht.de','Germany',24), ('runtervomgas.de','Germany',23), ('siegelklarheit.de','Germany',23),
+    ('sifo.de','Germany',23), ('stadt-koeln.de','Germany',23), ('stuttgart.de','Germany',23), ('tab-beim-bundestag.de','Germany',23),
+    ('tag-der-staedtebaufoerderung.de','Germany',23), ('teilhabe40.de','Germany',23), ('thuenen.de','Germany',24),
+    ('vertreterin-des-bundesinteresses.de','Germany',24), ('vielfalt-pflegen.info','Germany',23),
+    ('vorsorgeregister.de','Germany',24), ('wahl-o-mat.de','Germany',23),
+    ('warnung-der-bevoelkerung.de','Germany',23), ('welt-aids-tag.de','Germany',23), ('wir-sind-bund.de','Germany',23),
+    ('wir-sind-rechtsstaat.de','Germany',23), ('zanzu.de','Germany',23), ('zim.de','Germany',24),
+    ('zugutfuerdietonne.de','Germany',23), ('zusammenhalt-durch-teilhabe.de','Germany',23),
+    ('bayern.de','Germany',23), ('berlin.de','Germany',23), ('brandenburg.de','Germany',23), ('bremen.de','Germany',23),     -- States
+    ('hamburg.de','Germany',23), ('hessen.de','Germany',23), ('mecklenburg-vorpommern.de','Germany',23),
+    ('niedersachsen.de','Germany',23), ('nrw.de','Germany',23), ('land.nrw','Germany',24), ('rlp.de','Germany',23),
+    ('saarland.de','Germany',23), ('sachsen.de','Germany',23), ('sachsen-anhalt.de','Germany',23),
+    ('schleswig-holstein.de','Germany',23), ('thueringen.de','Germany',23), ('baden-wuerttemberg.de','Germany',23),
+    ('landtag.nrw.de','Germany',23), ('landtag-bw.de','Germany',23), ('landtag.bayern.de','Germany',23),                    -- State Parliaments
+    ('landtag.sachsen.de','Germany',23), ('landtag.sachsen-anhalt.de','Germany',23), ('landtag.brandenburg.de','Germany',23),
+    ('landtag.rlp.de','Germany',23), ('landtag-bb.de','Germany',23), ('parlament-berlin.de','Germany',23),
+    ('landesportal.bremen.de','Germany',23), ('hamburgische-buergerschaft.de','Germany',23),
+    ('hessischer-landtag.de','Germany',23), ('landtag-mv.de','Germany',23),
+    ('landtag-niedersachsen.de','Germany',23), ('landtag-saar.de','Germany',23),
+    ('landtag.ltsh.de','Germany',23), ('thueringer-landtag.de','Germany',23),
 
     -- Ghana
     ('ghana.gov.gh','Ghana',24),('gov.gh','Ghana',24),('parliament.gh','Ghana',24),
@@ -351,8 +478,7 @@ host_rules AS (
 
     -- Iran
     ('gov.ir','Iran',24),('iran.ir','Iran',24),('irangov.ir','Iran',24),('president.ir','Iran',24),('parliran.ir','Iran',24),('adliran.ir','Iran',24),('cbi.ir','Iran',24),('moi.ir','Iran',23),('mop.ir','Iran',23),('mefa.ir','Iran',23),
-    ('mfa.gov.ir','Iran',23),('ito.gov.ir','Iran',23), ('(^|\\.)[a-z0-9-]+\\.gov\\.ir$', 'Iran', 20),
-    ('gov.iq','Iraq',24),('iraq.gov.iq','Iraq',24),('parliament.iq','Iraq',24),('presidency.iq','Iraq',24),('iraqna.iq','Iraq',23),('mofa.gov.iq','Iraq',23),('moi.gov.iq','Iraq',23),('moh.gov.iq','Iraq',23),
+    ('mfa.gov.ir','Iran',23),('ito.gov.ir','Iran',23), ('gov.iq','Iraq',24),('iraq.gov.iq','Iraq',24),('parliament.iq','Iraq',24),('presidency.iq','Iraq',24),('iraqna.iq','Iraq',23),('mofa.gov.iq','Iraq',23),('moi.gov.iq','Iraq',23),('moh.gov.iq','Iraq',23),
 
     -- Ireland
     ('gov.ie','Ireland',24),('oireachtas.ie','Ireland',24),('president.ie','Ireland',24),('citizensinformation.ie','Ireland',24),('irishstatutebook.ie','Ireland',24),
@@ -382,6 +508,9 @@ host_rules AS (
     ('pref.osaka.lg.jp','Japan',23), ('pref.aichi.lg.jp','Japan',23), ('pref.kanagawa.lg.jp','Japan',23), ('pref.chiba.lg.jp','Japan',23), ('pref.kyoto.lg.jp','Japan',23),
     ('city.yokohama.lg.jp','Japan',22), ('city.kobe.lg.jp','Japan',22), ('city.sapporo.jp','Japan',22), ('city.fukuoka.lg.jp','Japan',22), ('city.hiroshima.lg.jp','Japan',22),
 
+    -- Kazakhstan
+    ('egov.kz','Kazakhstan',24),
+
     -- Kosovo
     ('rks-gov.net','Kosovo',24), ('assembly-kosova.org','Kosovo',24), ('president-ksgov.net','Kosovo',24), ('ks-gov.net','Kosovo',23), ('kryeministri-ks.net','Kosovo',23),
     ('gjk-ks.org','Kosovo',23), ('kuvendikosoves.org','Kosovo',23), ('kallxo.com','Kosovo',22), ('rks-gov.org','Kosovo',23),
@@ -408,10 +537,19 @@ host_rules AS (
     ('siauliai.lt','Lithuania',21),('panevezys.lt','Lithuania',21),('alytus.lt','Lithuania',21),
 
     -- Luxembourg
-    ('luxembourg.lu','Luxembourg',24),('etat.lu','Luxembourg',24),('public.lu','Luxembourg',24),('guichet.public.lu','Luxembourg',24),('data.public.lu','Luxembourg',24),('service-public.lu','Luxembourg',24),
-    ('mfin.gouvernement.lu','Luxembourg',23),('maee.gouvernement.lu','Luxembourg',23),('mjustice.gouvernement.lu','Luxembourg',23),('meco.gouvernement.lu','Luxembourg',23),('mint.gouvernement.lu','Luxembourg',23),('mtes.gouvernement.lu','Luxembourg',23),('mss.gouvernement.lu','Luxembourg',23),('mcr.gouvernement.lu','Luxembourg',23),('mfamigr.gouvernement.lu','Luxembourg',23),('msh.gouvernement.lu','Luxembourg',23),
-    ('legilux.public.lu','Luxembourg',23),('education.lu','Luxembourg',23),('secu.lu','Luxembourg',23),('cns.lu','Luxembourg',23),('statec.lu','Luxembourg',23),('ces.lu','Luxembourg',23),('police.public.lu','Luxembourg',23),('sante.public.lu','Luxembourg',23),('environnement.public.lu','Luxembourg',23),('snca.public.lu','Luxembourg',23),
-    ('ville.lu','Luxembourg',22),('esch.lu','Luxembourg',22),('differdange.lu','Luxembourg',22),('dudelange.lu','Luxembourg',22),('ettelbruck.lu','Luxembourg',22),('remich.lu','Luxembourg',22),
+    ('luxembourg.lu','Luxembourg',24), ('service-public.lu','Luxembourg',24), ('guichet.lu','Luxembourg',24),
+    ('education.lu','Luxembourg',23), ('portal.education.lu','Luxembourg',23), ('secu.lu','Luxembourg',23), ('cns.lu','Luxembourg',23), ('statec.lu','Luxembourg',23),
+    ('ces.lu','Luxembourg',23), ('itm.lu','Luxembourg',23), ('inll.lu','Luxembourg',23), ('lod.lu','Luxembourg',23), ('petitions.lu','Luxembourg',23),
+    ('map.geoportail.lu','Luxembourg',23), ('meteolux.lu','Luxembourg',23), ('mobiliteit.lu','Luxembourg',23), ('inondations.lu','Luxembourg',23), ('adem.lu','Luxembourg',23),
+    ('cita.lu','Luxembourg',23), ('govjobs.lu','Luxembourg',23), ('112.public.lu','Luxembourg',23), ('accessibilite-infrastructure.public.lu','Luxembourg',23),
+    ('accessibilite-produits-services.public.lu','Luxembourg',23), ('bettembourg.lu','Luxembourg',23), ('chem.lu','Luxembourg',23), ('chl.lu','Luxembourg',23), ('chnp.lu','Luxembourg',23),
+    ('cnl.public.lu','Luxembourg',23), ('elections.public.lu','Luxembourg',23), ('mersch.lu','Luxembourg',23), ('monarchie.lu','Luxembourg',23), ('nationalmusee.lu','Luxembourg',23),
+    ('petange.lu','Luxembourg',23), ('petitiounen.lu','Luxembourg',23), ('philharmonie.lu','Luxembourg',23), ('regionalsaisonal.lu','Luxembourg',23), ('rgtr.lu','Luxembourg',23),
+    ('sailor.public.lu','Luxembourg',23), ('sandweiler.lu','Luxembourg',23), ('sante.public.lu','Luxembourg',23), ('schifflange.lu','Luxembourg',23), ('seveso.public.lu','Luxembourg',23),
+    ('snci.lu','Luxembourg',23), ('strassen.lu','Luxembourg',23), ('uni.lu','Luxembourg',23), ('www.ilr.lu','Luxembourg',23), ('wiltz.lu','Luxembourg',23),
+
+    ('vdl.lu','Luxembourg',22), ('esch.lu','Luxembourg',22), ('differdange.lu','Luxembourg',22), ('dudelange.lu','Luxembourg',22), ('ettelbruck.lu','Luxembourg',22),
+    ('remich.lu','Luxembourg',22), ('post.lu','Luxembourg',22), ('cfl.lu','Luxembourg',22),
 
     -- Malaysia
     ('malaysia.gov.my','Malaysia',24),('gov.my','Malaysia',24),('data.gov.my','Malaysia',24),
@@ -451,9 +589,29 @@ host_rules AS (
     ('nepal.gov.np','Nepal',24),('nepalarmy.mil.np','Nepal',24),('supremecourt.gov.np','Nepal',24), ('parliament.gov.np','Nepal',24),('officeofattorneygeneral.gov.np','Nepal',24), ('mof.gov.np','Nepal',24),('moha.gov.np','Nepal',24),('moeap.gov.np','Nepal',24), ('mohp.gov.np','Nepal',24),('mofa.gov.np','Nepal',24),('moi.gov.np','Nepal',24), ('moest.gov.np','Nepal',24),('mowcsw.gov.np','Nepal',24),('mopit.gov.np','Nepal',24),('mofaga.gov.np','Nepal',24),('moewri.gov.np','Nepal',24),('npc.gov.np','Nepal',24),
 
     -- Netherlands
-    ('overheid.nl','Netherlands',24),('rijksoverheid.nl','Netherlands',24), ('belastingdienst.nl','Netherlands',24),('politie.nl','Netherlands',24), ('kvk.nl','Netherlands',24),('cbs.nl','Netherlands',24),('rvo.nl','Netherlands',24), ('rijkshuisstijl.nl','Netherlands',24),('rechtspraak.nl','Netherlands',24), ('wetten.overheid.nl','Netherlands',24),('kamer.nl','Netherlands',24), ('eerstekamer.nl','Netherlands',24),('tweedekamer.nl','Netherlands',24), ('mijnoverheid.nl','Netherlands',24),('koninklijkhuis.nl','Netherlands',24), ('openbaarministerie.nl','Netherlands',24),('raadvanstate.nl','Netherlands',24), ('autoriteitpersoonsgegevens.nl','Netherlands',24),('autoriteitconsumentmarkt.nl','Netherlands',24), ('marechaussee.nl','Netherlands',24),   
-    ('drenthe.nl','Netherlands',23),('flevoland.nl','Netherlands',23),('friesland.nl','Netherlands',23), ('gelderland.nl','Netherlands',23),('groningen.nl','Netherlands',23),('limburg.nl','Netherlands',23), ('noord-brabant.nl','Netherlands',23),('noord-holland.nl','Netherlands',23),('overijssel.nl','Netherlands',23), ('utrecht.nl','Netherlands',23),('zeeland.nl','Netherlands',23),('zuid-holland.nl','Netherlands',23),
+    ('overheid.nl','Netherlands',24),('rijksoverheid.nl','Netherlands',24),('belastingdienst.nl','Netherlands',24),                         -- Netherlands: Core national portals & agencies
+    ('politie.nl','Netherlands',24),('kvk.nl','Netherlands',24),('cbs.nl','Netherlands',24),('rvo.nl','Netherlands',24),
+    ('rijkshuisstijl.nl','Netherlands',24),('rechtspraak.nl','Netherlands',24),('wetten.overheid.nl','Netherlands',24),
+    ('kamer.nl','Netherlands',24),('eerstekamer.nl','Netherlands',24),('tweedekamer.nl','Netherlands',24),
+    ('mijnoverheid.nl','Netherlands',24),('koninklijkhuis.nl','Netherlands',24),('openbaarministerie.nl','Netherlands',24),
+    ('raadvanstate.nl','Netherlands',24),('autoriteitpersoonsgegevens.nl','Netherlands',24),('autoriteitconsumentmarkt.nl','Netherlands',24), ('marechaussee.nl','Netherlands',24),
+    ('provincie.drenthe.nl','Netherlands',23),('flevoland.nl','Netherlands',23),('fryslan.frl','Netherlands',23),                          -- Netherlands: Provinces (use official province domains; avoid city-domain collisions)
+    ('gelderland.nl','Netherlands',23),('provinciegroningen.nl','Netherlands',23),('limburg.nl','Netherlands',23),
+    ('brabant.nl','Netherlands',23),('noord-holland.nl','Netherlands',23),('overijssel.nl','Netherlands',23),
+    ('provincie-utrecht.nl','Netherlands',23),('zeeland.nl','Netherlands',23),('zuid-holland.nl','Netherlands',23),
+    ('amsterdam.nl','Netherlands',22),('rotterdam.nl','Netherlands',22),('denhaag.nl','Netherlands',22),                                   -- Netherlands: Municipalities (cities >100k inhabitants only; deduped & normalized to base domains)
+    ('utrecht.nl','Netherlands',22),('eindhoven.nl','Netherlands',22),('tilburg.nl','Netherlands',22),
+    ('groningen.nl','Netherlands',22),('almere.nl','Netherlands',22),('breda.nl','Netherlands',22),
+    ('nijmegen.nl','Netherlands',22),('enschede.nl','Netherlands',22),('apeldoorn.nl','Netherlands',22),
+    ('haarlem.nl','Netherlands',22),('arnhem.nl','Netherlands',22),('zaanstad.nl','Netherlands',22),
+    ('s-hertogenbosch.nl','Netherlands',22),('amersfoort.nl','Netherlands',22),('haarlemmermeergemeente.nl','Netherlands',22),
+    ('maastricht.nl','Netherlands',22),('leiden.nl','Netherlands',22),('dordrecht.nl','Netherlands',22),
+    ('zwolle.nl','Netherlands',22),('ede.nl','Netherlands',22),('emmen.nl','Netherlands',22),
+    ('delft.nl','Netherlands',22),('alkmaar.nl','Netherlands',22),('leeuwarden.nl','Netherlands',22),
+    ('westland.nl','Netherlands',22),('venlo.nl','Netherlands',22),('deventer.nl','Netherlands',22),
+    ('zoetermeer.nl','Netherlands',22),('alphenchaam.nl','Netherlands',22),('alphenaandenrijn.nl','Netherlands',22),
 
+  
     -- New Zealand
     ('govt.nz','New Zealand',24),('parliament.nz','New Zealand',24),
     ('justice.govt.nz','New Zealand',24),('treasury.govt.nz','New Zealand',24),
@@ -499,6 +657,9 @@ host_rules AS (
     ('sobranie.mk','North Macedonia',24), ('president.mk','North Macedonia',24), ('pravda.gov.mk','North Macedonia',23), ('mvr.gov.mk','North Macedonia',23), ('finance.gov.mk','North Macedonia',23),
     ('stat.gov.mk','North Macedonia',23), ('mon.gov.mk','North Macedonia',23), ('ujp.gov.mk','North Macedonia',23), ('jorm.gov.mk','North Macedonia',23), ('av.gov.mk','North Macedonia',23),
     ('skopje.gov.mk','North Macedonia',22), ('bitola.gov.mk','North Macedonia',22), ('stip.gov.mk','North Macedonia',22), ('tetovo.gov.mk','North Macedonia',22),
+
+    -- Oman
+    ('oman.om','Oman',24),
 
     -- Peru
     ('gob.pe','Peru',24),('peru.gob.pe','Peru',24),('presidencia.gob.pe','Peru',24),
@@ -613,18 +774,37 @@ host_rules AS (
 
     -- Suriname
     ('gov.sr','Suriname',24),('dna.sr','Suriname',24),
-    ('president.gov.sr','Suriname',24),('ministerievanfinancien.gov.sr','Suriname',23),('biza.gov.sr','Suriname',23),('justice.gov.sr','Suriname',23),
+    ('president.gov.sr','Suriname',24),('ministerievanfinancien.gov.sr','Suriname',23),('biza.gov.sr','Suriname',23),('justice.gov.sr','Suriname',23),('cbvs.sr','Suriname',23),
 
-    -- Sweden
-    ('gov.se','Sweden',24),('regeringen.se','Sweden',24),('riksdagen.se','Sweden',24),('domstol.se','Sweden',24),
-    ('skatteverket.se','Sweden',24),('forsakringskassan.se','Sweden',24),('arbetsformedlingen.se','Sweden',24),
-    ('polisen.se','Sweden',24),('trafikverket.se','Sweden',24),('kriminalvarden.se','Sweden',24),
-    ('smhi.se','Sweden',24),('naturvardsverket.se','Sweden',24),('socialstyrelsen.se','Sweden',24),
-    ('1177.se','Sweden',24),('sl.se','Sweden',24),
-    ('funktionstjanster.se','Sweden',23),('hemnet.se','Sweden',23),('sverigesradio.se','Sweden',23),
-    ('klart.se','Sweden',23),('bankid.com','Sweden',23),
-    ('schoolsoft.se','Sweden',23),('postnord.se','Sweden',23),('grandid.com','Sweden',23),('skola24.se','Sweden',23),('vklass.se','Sweden',23),
-
+  -- Sweden
+    ('government.se','Sweden',24),('regeringen.se','Sweden',24),('riksdagen.se','Sweden',24),('domstol.se','Sweden',24),                                           -- Core national portals & agencies
+    ('polisen.se','Sweden',24),('skatteverket.se','Sweden',24),('forsakringskassan.se','Sweden',24),('trafikverket.se','Sweden',24),('kriminalvarden.se','Sweden',24),
+    ('smhi.se','Sweden',24),('naturvardsverket.se','Sweden',24),('socialstyrelsen.se','Sweden',24),('1177.se','Sweden',24),('sl.se','Sweden',24),
+    ('sametinget.se','Sweden',24),('scb.se','Sweden',24),('mucf.se','Sweden',24),('konsumentverket.se','Sweden',24),('lagradet.se','Sweden',24),                  -- Additional national agencies & authorities
+    ('havochvatten.se','Sweden',24),('jo.se','Sweden',24),('folkhalsomyndigheten.se','Sweden',24),('pensionsmyndigheten.se','Sweden',24),('mi.se','Sweden',24),
+    ('imy.se','Sweden',24),('kronofogden.se','Sweden',24),('tillvaxtverket.se','Sweden',24),('val.se','Sweden',24),('digg.se','Sweden',24),
+    ('riksbank.se','Sweden',24),('riksgalden.se','Sweden',24),('svk.se','Sweden',24),('tullverket.se','Sweden',24),('av.se','Sweden',24),
+    ('bolagsverket.se','Sweden',24),('lakemedelsverket.se','Sweden',24),('ehalsomyndigheten.se','Sweden',24),('boverket.se','Sweden',24),('aklagare.se','Sweden',24),
+    ('forsvarsmakten.se','Sweden',24),('sakerhetspolisen.se','Sweden',24),('lantmateriet.se','Sweden',24),('pts.se','Sweden',24),('riksrevisionen.se','Sweden',24),
+    ('konstnarsnamnden.se','Sweden',23),('ifau.se','Sweden',23),('vinnova.se','Sweden',23),('vr.se','Sweden',23),('statskontoret.se','Sweden',23),                 -- Major agencies & state bodies
+    ('prv.se','Sweden',23),('arbetsdomstolen.se','Sweden',23),('rmv.se','Sweden',23),('skolinspektionen.se','Sweden',23),('trafa.se','Sweden',23),
+    ('riksarkivet.se','Sweden',23),('tillvaxtanalys.se','Sweden',23),('brottsoffermyndigheten.se','Sweden',23),
+    ('ncsc.se','Sweden',23),('ftn.se','Sweden',23),('statenssc.se','Sweden',23),                                                                                   -- Newly normalized national-scope
+    ('norrbotten.se','Sweden',22),('skane.se','Sweden',22),('vgregion.se','Sweden',22),('regionsormland.se','Sweden',22),('regionkalmar.se','Sweden',22),        -- Regions (all major healthcare/governing regions)
+    ('rjl.se','Sweden',22),('gotland.se','Sweden',22),('regionuppsala.se','Sweden',22),('regionjh.se','Sweden',22),('regionvasterbotten.se','Sweden',22),
+    ('rvn.se','Sweden',22),('regionvastmanland.se','Sweden',22),('regionorebrolan.se','Sweden',22),('regionvarmland.se','Sweden',22),('ltkronoberg.se','Sweden',22),
+    ('regiondalarna.se','Sweden',22),('regiongavleborg.se','Sweden',22),('regionhalland.se','Sweden',22),('regionstockholm.se','Sweden',22),('regionostergotland.se','Sweden',22),
+    ('regionblekinge.se','Sweden',22),
+    ('stockholm.se','Sweden',22),('goteborg.se','Sweden',22),('malmo.se','Sweden',22),                                                                             -- Largest municipalities (apex only; subdomains removed)
+    ('uppsala.se','Sweden',22),('vasteras.se','Sweden',22),('orebro.se','Sweden',22),('linkoping.se','Sweden',22),('helsingborg.se','Sweden',22),('start.stockholm','Sweden',22),
+    ('jonkoping.se','Sweden',22),('norrkoping.se','Sweden',22),('lund.se','Sweden',22),('umea.se','Sweden',22),('gavle.se','Sweden',22),
+    ('boras.se','Sweden',22),('sodertalje.se','Sweden',22),('halmstad.se','Sweden',22),('eskilstuna.se','Sweden',22),('vaxjo.se','Sweden',22),
+    ('karlstad.se','Sweden',22),('taby.se','Sweden',22),('karlskrona.se','Sweden',22),('sundsvall.se','Sweden',22),('lulea.se','Sweden',22),
+    ('huddinge.se','Sweden',22),('sollentuna.se','Sweden',22),('borlange.se','Sweden',22),('solna.se','Sweden',22),('kalmar.se','Sweden',22),
+    ('skelleftea.se','Sweden',22),('ostersund.se','Sweden',22),('norrtalje.se','Sweden',22),
+    ('vafabmiljo.se','Sweden',22),('lanstrafikenkronoberg.se','Sweden',22),('lapplands.se','Sweden',22),('goliskait.se','Sweden',22),                             -- Other regional and inter-municipal bodies (normalized)
+    ('ubm.se','Sweden',22),('kfhalsingland.se','Sweden',22),
+  
     -- Switzerland
     ('admin.ch','Switzerland',24),('parlament.ch','Switzerland',24),('bundesgericht.ch','Switzerland',24),
     ('seco.admin.ch','Switzerland',24),('bag.admin.ch','Switzerland',24),('bfs.admin.ch','Switzerland',24),
@@ -653,6 +833,9 @@ host_rules AS (
     ('nas.gov.ua','Ukraine',24),('court.gov.ua','Ukraine',24),('zakon.rada.gov.ua','Ukraine',24),
     ('council.gov.ua','Ukraine',24),('prosecutor.gov.ua','Ukraine',24),
 
+    -- UAE
+    ('u.ae','United Arab Emirates',24),
+
     -- United Kingdom (UK)
     ('parliament.uk','United Kingdom (UK)',24), ('judiciary.uk','United Kingdom (UK)',24), ('supremecourt.uk','United Kingdom (UK)',24), ('parliament.scot','United Kingdom (UK)',24), ('senedd.wales','United Kingdom (UK)',24), ('senedd.cymru','United Kingdom (UK)',24), ('police.scot','United Kingdom (UK)',23),
     ('london.gov.uk','United Kingdom (UK)',24), ('cityoflondon.gov.uk','United Kingdom (UK)',24), ('birmingham.gov.uk','United Kingdom (UK)',24), ('manchester.gov.uk','United Kingdom (UK)',24), ('leeds.gov.uk','United Kingdom (UK)',24), ('liverpool.gov.uk','United Kingdom (UK)',24), ('sheffield.gov.uk','United Kingdom (UK)',24), ('bristol.gov.uk','United Kingdom (UK)',24), ('glasgow.gov.uk','United Kingdom (UK)',24), ('edinburgh.gov.uk','United Kingdom (UK)',24), ('cardiff.gov.uk','United Kingdom (UK)',24), ('belfastcity.gov.uk','United Kingdom (UK)',24),
@@ -674,153 +857,220 @@ host_rules AS (
 -- 2) Regex family rules for patterned domains (.gov.uk, .gob.es, etc.)
 regex_rules AS (
   SELECT * FROM UNNEST([
-
-    -- United Nations
-    STRUCT('(^|\\.)(([a-z0-9-]+\\.)*un\\.org)$' AS pattern, 'United Nations' AS bucket, 9 AS priority),   -- core un.org + subdomains
-    ('(^|\\.)(([a-z0-9-]+\\.)*(who|icao|wmo|wipo|itu)\\.int)$', 'United Nations', 9),                     -- .int agencies
-    ('(^|\\.)(([a-z0-9-]+\\.)*(undp|unhcr|unicef|unodc|unido|unfpa)\\.org)$','United Nations',9),         -- .org agencies
+    STRUCT('(^|\\.)((?:[a-z0-9]+\\.)*un\\.org)$' AS pattern, 'United Nations' AS bucket, 9 AS priority), -- United Nations
+    ('(^|\\.)((?:[a-z0-9]+\\.)*(who|icao|wmo|wipo|itu)\\.int)$',                   'United Nations',       9),
+    ('(^|\\.)((?:[a-z0-9]+\\.)*(undp|unhcr|unicef|unodc|unido|unfpa)\\.org)$',     'United Nations',       9),
 
     -- European Union
-    ('(^|\\.)(([a-z0-9-]+\\.)*eu\\.int|(eu20\\d{2}|20\\d{2}eu|[a-z]{2}20\\d{2})\\.(eu|[a-z]{2}))$', 'European Union', 23),                -- *.eu.int and “EU Presidency” style hostnames like eu2025.xx
-    ('(^|\\.)((copernicus|euvsdisinfo|europeana|europass|wifi4eu|sanctionsmap|open-research-europe|euipo)\\.eu)$', 'European Union', 23), -- Well-known .eu program sites
+    ('(^|\\.)((?:[a-z0-9]+\\.)*eu\\.int)$', 'European Union', 23),  -- EU institutions on eu.int (host + any subdomains)
+    ('(^|\\.)europa\\.eu$',                  'European Union', 24),  -- europa.eu apex (you already match subdomains via host_rules ENDS_WITH)
+    ('(^|\\.)((?:[a-z0-9]+\\.)*(copernicus|euvsdisinfo|wifi4eu|sanctionsmap|open-research-europe|ore)\\.eu)$',
+                                   'European Union', 23),        -- explicit .eu SLDs (and their subdomains)
+
+    -- Argentina (government)
+    ('(^|\\.)((?:[a-z0-9]+\\.)*gob\\.ar)$',                       'Argentina',            22),
+
+    -- Australia
+    ('(^|\\.)((?:[a-z0-9]+\\.)*gov\\.au)$',                       'Australia',            22),
+
+    -- Brazil
+    ('(^|\\.)((?:[a-z0-9]+\\.)*gov\\.br)$',                       'Brazil',               22),
 
     -- Canada
-    ('(^|\\.)[a-z0-9-]+\\.gc\\.ca$', 'Canada', 22),
-    ('(^|\\.)[a-z0-9-]+\\.canada\\.ca$', 'Canada', 22),
-    ('(^|\\.)gov\\.(ab|bc|mb|nb|nl|ns|nt|nu|on|pe|qc|sk|yk)\\.ca$', 'Canada', 22),
+    ('(^|\\.)((?:[a-z0-9]+\\.)*gc\\.ca)$',                                         'Canada',              22),
+    ('(^|\\.)((?:[a-z0-9]+\\.)*canada\\.ca)$',                                     'Canada',              22),
+    ('(^|\\.)((?:[a-z0-9]+\\.)*gov\\.(ab|bc|mb|nb|nl|ns|nt|nu|on|pe|qc|sk|yk)\\.ca)$',
+                                                                                     'Canada',              22),
 
+    -- Chile (you have lots in host_rules; make a family catch-all)
+    ('(^|\\.)((?:[a-z0-9]+\\.)*gob\\.cl)$',                       'Chile',                22),
+
+    -- China
+    ('(^|\\.)((?:[a-z0-9]+\\.)*gov\\.cn)$',                       'China',                22),
+  
+    -- Colombia (commonly used)
+    ('(^|\\.)((?:[a-z0-9]+\\.)*gov\\.co)$',                       'Colombia',             22),
+  
     -- Denmark
-    ('(^|\\.)((regionh|rsyd|rm|rn|regionsjaelland)\\.dk)$', 'Denmark', 23),
-    ('(^|\\.)((politi|skat|sundhed|virk|borger)\\.dk)$', 'Denmark', 23),
+    ('(^|\\.)((?:[a-z0-9]+\\.)*(regionh|rsyd|rm|rn|regionsjaelland)\\.dk)$',       'Denmark',             23),
+    ('(^|\\.)((?:[a-z0-9]+\\.)*(politi|skat|sundhed|virk|borger)\\.dk)$',          'Denmark',             23),
 
     -- France
-    ('(^|\\.)((assemblee-nationale|senat|conseil-constitutionnel|conseil-etat|courdescomptes|vie-publique)\\.fr)$', 'France', 24),
-    -- ('(^|\\.)(([a-z0-9-]+\\.)*gouv\\.fr)$', 'France', 23),
-
+    ('(^|\\.)((?:[a-z0-9]+\\.)*(assemblee-nationale|senat|conseil-constitutionnel|conseil-etat|courdescomptes|vie-publique)\\.fr)$',
+                                                                                                       'France',              24),
+    ('(^|\\.)((?:[a-z0-9]+\\.)*(region[a-z0-9]*|[a-z0-9]+-region)\\.(fr|alsace|bzh))$', 'France',     22),
+    ('(^|\\.)((?:[a-z0-9]+\\.)*departement[a-z0-9]*\\.(fr|alsace|bzh))$',         'France',              22),
+    ('(^|\\.)((?:[a-z0-9]+\\.)*cc-[a-z0-9]+\\.(fr|alsace|bzh))$',                 'France',              22),
+    ('(^|\\.)((?:[a-z0-9]+\\.)*[a-z0-9]+\\.agglo\\.(fr|alsace|bzh))$',            'France',              22),
+    ('(^|\\.)((?:[a-z0-9]+\\.)*grand-?(paris|lyon|nancy|metz|reims|poitiers|angouleme|annecy|avignon|besancon|dijon)[a-z0-9]*\\.(fr|alsace|bzh))$',
+                                                                                                       'France',              22),
+    ('(^|\\.)((?:[a-z0-9]+\\.)*gouv\\.fr)$',                                       'France',              23),
 
     -- Germany
-    ('(^|\\.)((stadt|gemeinde|verbandsgemeinde|vg|amt|bezirksamt|kreisverwaltung|kreisstadt|rathaus)[-.].*\\.de)$', 'Germany', 20),
-    ('(^|\\.)((landkreis|kreis|bezirk)[-.].*\\.de)$', 'Germany', 19),
-    ('(^|\\.)((polizei|justiz|innenministerium|finanzministerium|wirtschaftsministerium|kultusministerium|sozialministerium|verkehrsministerium|verfassungsschutz|rechnungshof|gesundheitsministerium|wissenschaftsministerium|landwirtschaftsministerium)\\.?\\.?.*\\.de)$', 'Germany', 20),
-    ('(^|\\.)((amtsgericht|landgericht|oberlandesgericht|sozialgericht|arbeitsgericht|finanzgericht|verwaltungsgericht|oberverwaltungsgericht|staatsanwaltschaft)[-.].*\\.de)$', 'Germany', 20),
-    ('(^|\\.)((bundesamt|bundesanstalt)[-.].*\\.de)$', 'Germany', 21),
-    ('(^|\\.)((finanzamt|zoll|arbeitsagentur|jobcenter|jugendamt)\\.?\\.?.*\\.de)$', 'Germany', 19),
-    ('(^|\\.)(([a-z0-9-]+\\.)*diplo\\.de)$', 'Germany', 21),
+    ('(^|\\.)((?:[a-z0-9]+\\.)*(stadt|gemeinde|verbandsgemeinde|vg|amt|bezirksamt|kreisverwaltung|kreisstadt|rathaus)\\.[a-z0-9]+(?:\\.[a-z0-9]+)*\\.de)$',
+                                            'Germany', 20),    -- Municipal / local admin: keyword must be a full label before the city/county label
+    ('(^|\\.)((?:[a-z0-9]+\\.)*(landkreis|kreis|bezirk)\\.[a-z0-9]+(?:\\.[a-z0-9]+)*\\.de)$',
+                                            'Germany', 19),    -- Ministries & nationwide families (already dot-separated list of optional labels after the ministry)
+    ('(^|\\.)((?:[a-z0-9]+\\.)*(polizei|justiz|innenministerium|finanzministerium|wirtschaftsministerium|kultusministerium|sozialministerium|verkehrsministerium|verfassungsschutz|rechnungshof|gesundheitsministerium|wissenschaftsministerium|landwirtschaftsministerium)(?:\\.[a-z0-9]+)*\\.de)$',
+                                            'Germany', 20),    -- Ministries & nationwide families (already dot-separated list of optional labels after the ministry)
+    ('(^|\\.)((?:[a-z0-9]+\\.)*(amtsgericht|landgericht|oberlandesgericht|sozialgericht|arbeitsgericht|finanzgericht|verwaltungsgericht|oberverwaltungsgericht|staatsanwaltschaft)\\.[a-z0-9]+(?:\\.[a-z0-9]+)*\\.de)$',
+                                            'Germany', 20),    -- Courts  
+    ('(^|\\.)((?:[a-z0-9]+\\.)*(bundesamt|bundesanstalt)\\.[a-z0-9]+(?:\\.[a-z0-9]+)*\\.de)$',
+                                            'Germany', 21),  -- Federal offices / agencies
+    ('(^|\\.)((?:[a-z0-9]+\\.)*(zoll|arbeitsagentur)(?:\\.[a-z0-9]+)*\\.de)$',
+                                            'Germany', 19),    -- Families that can appear as apex or with extra labels
+    ('(^|\\.)((?:[a-z0-9]+\\.)*(finanzamt|jobcenter|jugendamt)\\.[a-z0-9]+(?:\\.[a-z0-9]+)*\\.de)$',
+                                            'Germany', 19),    -- Offices that usually require a locality label after them
+    ('(^|\\.)((?:[a-z0-9]+\\.)*diplo\\.de)$',
+                                            'Germany', 21),    -- Foreign missions (diplo.de) apex + any subdomain
 
     -- Greece
-    ('(^|\\.)municipality\\.[a-z0-9-]+\\.gr$', 'Greece', 20),
+    ('(^|\\.)((?:[a-z0-9]+\\.)*municipality\\.[a-z0-9]+\\.gr)$',                 'Greece',       20),
 
     -- Guyana
-    ('(^|\\.)[a-z0-9-]+\\.gov\\.gy$', 'Guyana', 20),
+    ('(^|\\.)gov\\.gy$',                                                           'Guyana',       20),
+
+    -- Hong Kong
+    ('(^|\\.)((?:[a-z0-9]+\\.)*gov\\.hk)$',                       'Hong Kong',            22),
 
     -- India
-    ('(^|\\.)((gov|nic)\\.in)$', 'India', 21),
+    ('(^|\\.)gov\\.in$',                                                           'India',        21),
+    ('(^|\\.)nic\\.in$',                                                           'India',        21),
 
     -- Indonesia
-    ('(^|\\.)[a-z0-9-]+\\.go\\.id$', 'Indonesia', 20),
+    ('(^|\\.)go\\.id$',                                                            'Indonesia',    20),
 
-    -- Ireland
-    ('(^|\\.)(([a-z0-9-]+coco\\.ie|[a-z0-9-]+council\\.ie))$', 'Ireland', 21),
+    -- Iran
+    ('(^|\\.)gov\\.ir$',                                                            'Iran', 20),
 
-    -- Italy
-    ('(^|\\.)comune\\.[a-z0-9-]+\\.it$', 'Italy', 20),
+    -- Ireland (e.g., fingalcoco.ie, dublincitycouncil.ie + any subdomains)
+    ('(^|\\.)((?:[a-z0-9]+\\.)*(?:[a-z0-9]+coco\\.ie|[a-z0-9]+council\\.ie))$', 'Ireland',      21),
 
-    -- Japan
-    ('(^|\\.)[a-z0-9-]+\\.lg\\.jp$', 'Japan', 21),
+    -- Israel
+    ('(^|\\.)((?:[a-z0-9]+\\.)*gov\\.il)$',                                       'Israel',      22),
 
-    -- Luxembourg
+    -- Italy (e.g., comune.milano.it + any subdomains)
+    ('(^|\\.)((?:[a-z0-9]+\\.)*comune\\.[a-z0-9]+\\.it)$',                       'Italy',        20),
+
+    -- Japan (at least one label before lg.jp, plus any depth under that)
+    ('(^|\\.)((?:[a-z0-9]+\\.)+lg\\.jp)$',                                        'Japan',        21),
+    ('(^|\\.)((?:[a-z0-9]+\\.)*go\\.jp)$',                                        'Japan',        22),
+
+    -- Luxembourg (already apex + any depth)
     ('(^|\\.)((public|gov|etat|data|service|security|mfi|lux)(\\.(public|gov|etat))?\\.lu)$', 'Luxembourg', 24),
-    ('(^|\\.)(([a-z0-9-]+\\.)*gouvernement\\.lu)$', 'Luxembourg', 24),
-    ('(^|\\.)(([a-z0-9-]+\\.)*public\\.lu)$', 'Luxembourg', 23),
+    ('(^|\\.)(([a-z0-9]+\\.)*gouvernement\\.lu)$',                                 'Luxembourg',  24),
+    ('(^|\\.)(([a-z0-9]+\\.)*public\\.lu)$',                                       'Luxembourg',  23),
 
-    -- Malaysia
-    ('(^|\\.)([a-z0-9-]+\\.){2,}gov\\.my$', 'Malaysia', 21),
-    -- ('(^|\\.)[a-z0-9-]+\\.gov\\.my$', 'Malaysia', 22),
+    -- Malaysia (simplify to apex gov.my + any depth)
+    ('(^|\\.)gov\\.my$',                                                            'Malaysia',     22),
+    ('(^|\\.)([a-z0-9]+\\.){2,}gov\\.my$',                                         'Malaysia',     21),
 
-    -- Nepal
-    ('(^|\\.)[a-z0-9-]+\\.(gov|mil)\\.np$', 'Nepal', 22),
+    -- Mexico
+    ('(^|\\.)((?:[a-z0-9]+\\.)*gob\\.mx)$',                       'Mexico',               22),
 
+    -- Nepal (both gov.np and mil.np families, apex + any depth)
+    ('(^|\\.)((?:[a-z0-9]+\\.)*(?:gov|mil)\\.np)$',                                'Nepal',        22),
+
+   
     -- Netherlands
-    ('(^|\\.)[a-z0-9-]+\\.overheid\\.nl$', 'Netherlands', 22),
-    ('(^|\\.)[a-z0-9-]+\\.rijksoverheid\\.nl$', 'Netherlands', 22),
-    ('(^|\\.)gemeente[a-z0-9-]*\\.nl$', 'Netherlands', 21),
-    ('(^|\\.)provincie[a-z0-9-]*\\.nl$', 'Netherlands', 21),
-    -- ('(^|\\.)[a-z0-9-]+\\.gov\\.nl$', 'Netherlands', 22),
+    ('(^|\\.)overheid\\.nl$',               'Netherlands', 22),
+    ('(^|\\.)rijksoverheid\\.nl$',          'Netherlands', 22),
+    -- ('(^|\\.)gemeente[a-z0-9]+\\.nl$',     'Netherlands', 21),
+    -- ('(^|\\.)provincie[a-z0-9]+\\.nl$',    'Netherlands', 21),
+    ('(^|\\.)((provincie\\.)?(drenthe|flevoland|friesland|gelderland|groningen|limburg|noord-holland|noordbrabant|overijssel|utrecht|zeeland|zuid-holland)\\.nl)$',
+ 'Netherlands', 23),
+    ('(^|\\.)[a-z0-9]+\\.gov\\.nl$',       'Netherlands', 22),
 
     -- New Zealand
-    ('(^|\\.)[a-z0-9-]+\\.parliament\\.nz$', 'New Zealand', 22),
-    ('(^|\\.)[a-z0-9-]+\\.health\\.nz$', 'New Zealand', 22),
-    -- ('(^|\\.)[a-z0-9-]+\\.govt\\.nz$', 'New Zealand', 22),
-    -- ('(^|\\.)[a-z0-9-]+\\.mil\\.nz$', 'New Zealand', 22),
+    ('(^|\\.)parliament\\.nz$',             'New Zealand', 22),
+    ('(^|\\.)health\\.nz$',                 'New Zealand', 22),
+    ('(^|\\.)[a-z0-9]+\\.govt\\.nz$',      'New Zealand', 22),
+    ('(^|\\.)[a-z0-9]+\\.mil\\.nz$',       'New Zealand', 22),
 
-    -- Norway
-    -- ('(^|\\.)[a-z0-9-]+\\.no$', 'Norway', 22),
+    -- Nigeria
+    ('(^|\\.)((?:[a-z0-9]+\\.)*gov\\.ng)$',                       'Nigeria',              22),
 
     -- Peru
-    ('(^|\\.)[a-z0-9-]+\\.region\\.gob\\.pe$', 'Peru', 21),
-    ('(^|\\.)[a-z0-9-]+\\.muni\\.gob\\.pe$', 'Peru', 20),
-    -- ('(^|\\.)[a-z0-9-]+\\.gob\\.pe$', 'Peru', 22),
+    ('(^|\\.)region\\.gob\\.pe$',           'Peru', 21),
+    ('(^|\\.)muni\\.gob\\.pe$',             'Peru', 20),
+    ('(^|\\.)[a-z0-9]+\\.gob\\.pe$',       'Peru', 22),
 
     -- Poland
-    ('(^|\\.)um\\.[a-z0-9-]+\\.pl$', 'Poland', 20),
-    ('(^|\\.)ug\\.[a-z0-9-]+\\.pl$', 'Poland', 20),
-    ('(^|\\.)powiat[a-z0-9-]*\\.pl$', 'Poland', 20),
+    ('(^|\\.)um\\.[a-z0-9]+\\.pl$',        'Poland', 20),
+    ('(^|\\.)ug\\.[a-z0-9]+\\.pl$',        'Poland', 20),
+    ('(^|\\.)powiat[a-z0-9]+\\.pl$',       'Poland', 20),
 
     -- Philippines
-    ('(^|\\.)[a-z0-9-]+\\.lgu\\.gov\\.ph$', 'Philippines', 21),
-    -- ('(^|\\.)[a-z0-9-]+\\.gov\\.ph$', 'Philippines', 22),
+    ('(^|\\.)lgu\\.gov\\.ph$',              'Philippines', 21),
+    ('(^|\\.)[a-z0-9]+\\.gov\\.ph$',       'Philippines', 22),
 
     -- Portugal
-    ('(^|\\.)muni\\.[a-z0-9-]+\\.pt$', 'Portugal', 21),
-    ('(^|\\.)cm-[a-z0-9-]+\\.pt$', 'Portugal', 21),
-    ('(^|\\.)[a-z0-9-]+\\.cm\\.pt$', 'Portugal', 21),
-    -- ('(^|\\.)gov\\.pt$', 'Portugal', 22),
+    ('(^|\\.)muni\\.[a-z0-9]+\\.pt$',      'Portugal', 21),
+    ('(^|\\.)cm-[a-z0-9]+\\.pt$',          'Portugal', 21),
+    ('(^|\\.)[a-z0-9]+\\.cm\\.pt$',        'Portugal', 21),
+    ('(^|\\.)gov\\.pt$',                    'Portugal', 22),
+
+    -- Saudi Arabia
+    ('(^|\\.)((?:[a-z0-9]+\\.)*gov\\.sa)$',                       'Saudi Arabia',         22),
+
+    -- Singapore
+    ('(^|\\.)((?:[a-z0-9]+\\.)*gov\\.sg)$',                       'Singapore',            22),
+
+    -- South Africa
+    ('(^|\\.)((?:[a-z0-9]+\\.)*gov\\.za)$',                       'South Africa',         22),
+    
+    -- South Korea
+    ('(^|\\.)((?:[a-z0-9]+\\.)*go\\.kr)$',                        'South Korea',          22),
 
     -- Spain
-    ('(^|\\.)((ayto|ayuntamiento|diputacion(?:de)?|cabildo|consell)[-.][a-z0-9-]+\\.es)$', 'Spain', 20),
-    -- ('(^|\\.)[a-z0-9-]+\\.gob\\.es$', 'Spain', 22),
+    ('(^|\\.)((ayto|ayuntamiento|diputacion(?:de)?|cabildo|consell)[-.][a-z0-9]+\\.es)$',
+                                            'Spain',      20),
+    ('(^|\\.)[a-z0-9]+\\.gob\\.es$',    'Spain', 22),
 
     -- Sweden
-    ('(^|\\.)[a-z0-9-]+\\.kommun\\.se$', 'Sweden', 21),
-    ('(^|\\.)[a-z0-9-]+\\.region\\.se$', 'Sweden', 21),
-    -- ('(^|\\.)[a-z0-9-]+\\.gov\\.se$', 'Sweden', 22),
+    ('(^|\\.)[a-z0-9]+\\.gov\\.se$',    'Sweden', 22),
 
     -- Switzerland
-    ('(^|\\.)[a-z0-9-]+\\.admin\\.ch$', 'Switzerland', 22),
+    ('(^|\\.)admin\\.ch$',                  'Switzerland', 22),
 
     -- Taiwan
-    ('(^|\\.)gov\\.taipei$', 'Taiwan', 22),
-    -- ('(^|\\.)[a-z0-9-]+\\.gov\\.tw$', 'Taiwan', 22),
+    ('(^|\\.)gov\\.taipei$',                'Taiwan',      22),
+    ('(^|\\.)[a-z0-9]+\\.gov\\.tw$',    'Taiwan', 22),
     
     -- Türkiye
-    ('(^|\\.)[a-z0-9-]+\\.bel\\.tr$', 'Türkiye', 21),
+    ('(^|\\.)[a-z0-9]+\\.bel\\.tr$',                              'Türkiye',     21),  -- require a label; avoid apex 'bel.tr'
+    ('(^|\\.)((?:[a-z0-9]+\\.)*gov\\.tr)$',                       'Türkiye',              22),
 
     -- Ukraine
-    ('(^|\\.)[a-z0-9-]+\\.rada\\.gov\\.ua$', 'Ukraine', 22),
-    -- ('(^|\\.)[a-z0-9-]+\\.gov\\.ua$', 'Ukraine', 22),
+    ('(^|\\.)rada\\.gov\\.ua$',     'Ukraine', 22),
+    ('(^|\\.)gov\\.ua$',            'Ukraine', 22),
 
     -- United Kingdom (UK)
-    ('(^|\\.)[a-z0-9-]+\\.nhs\\.uk$', 'United Kingdom (UK)', 22),
-    ('(^|\\.)[a-z0-9-]+\\.police\\.uk$', 'United Kingdom (UK)', 22),
-    ('(^|\\.)[a-z0-9-]+\\.mod\\.uk$', 'United Kingdom (UK)', 22),
-    ('(^|\\.)[a-z0-9-]+\\.parliament\\.uk$', 'United Kingdom (UK)', 23),
-    ('(^|\\.)[a-z0-9-]+\\.judiciary\\.uk$', 'United Kingdom (UK)', 23),
-    ('(^|\\.)supremecourt\\.uk$', 'United Kingdom (UK)', 23),
-    ('(^|\\.)[a-z0-9-]+\\.gov\\.scot$', 'United Kingdom (UK)', 23),
-    ('(^|\\.)[a-z0-9-]+\\.gov\\.wales$', 'United Kingdom (UK)', 23),
-    ('(^|\\.)[a-z0-9-]+\\.llyw\\.cymru$', 'United Kingdom (UK)', 23),
-    ('(^|\\.)[a-z0-9-]+\\.nhs\\.scot$', 'United Kingdom (UK)', 22),
-    ('(^|\\.)police\\.scot$', 'United Kingdom (UK)', 22),
-    -- ('(^|\\.)[a-z0-9-]+\\.gov\\.uk$', 'United Kingdom (UK)', 22),
+    ('(^|\\.)nhs\\.uk$',           'United Kingdom (UK)', 22),
+    ('(^|\\.)police\\.uk$',        'United Kingdom (UK)', 22),
+    ('(^|\\.)mod\\.uk$',           'United Kingdom (UK)', 22),
+    ('(^|\\.)parliament\\.uk$',    'United Kingdom (UK)', 23),
+    ('(^|\\.)judiciary\\.uk$',     'United Kingdom (UK)', 23),
+    ('(^|\\.)supremecourt\\.uk$',  'United Kingdom (UK)', 23),
+    ('(^|\\.)gov\\.scot$',         'United Kingdom (UK)', 23),
+    ('(^|\\.)gov\\.wales$',        'United Kingdom (UK)', 23),
+    ('(^|\\.)llyw\\.cymru$',       'United Kingdom (UK)', 23),
+    ('(^|\\.)nhs\\.scot$',         'United Kingdom (UK)', 22),
+    ('(^|\\.)police\\.scot$',      'United Kingdom (UK)', 22),
+    ('(^|\\.)gov\\.uk$',           'United Kingdom (UK)', 22),
+
 
     -- United States (USA)
-    ('\\.gov$', 'United States (USA)', 22),
-    ('\\.mil$', 'United States (USA)', 22),
-    ('(^|\\.)(([a-z0-9-]+\\.)*fed\\.us)$', 'United States (USA)', 22),
-    ('(^|\\.)(([a-z0-9-]+\\.)*nsn\\.us)$', 'United States (USA)', 22),
-    ('(^|\\.)(([a-z0-9-]+\\.)*state\\.[a-z]{2}\\.us)$', 'United States (USA)', 21),
-    ('(^|\\.)(([a-z0-9-]+\\.)*(ci|city|cityof|co|county|countyof|borough|parish|town|townof|village|muni|municipal)\\.[a-z]{2}\\.us)$', 'United States (USA)', 20),
-    ('(^|\\.)(([a-z0-9-]+\\.)*courts\\.[a-z]{2}\\.us)$', 'United States (USA)', 20)
+    ('(^|\\.)gov$',                         'United States (USA)', 22),
+    ('(^|\\.)mil$',                         'United States (USA)', 22),
+    ('(^|\\.)((?:[a-z0-9]+\\.)*fed\\.us)$','United States (USA)', 22),
+    ('(^|\\.)((?:[a-z0-9]+\\.)*nsn\\.us)$','United States (USA)', 22),
+    ('(^|\\.)((?:[a-z0-9]+\\.)*state\\.[a-z]{2}\\.us)$',
+                                            'United States (USA)', 21),    -- State-level domains
+    ('(^|\\.)((?:[a-z0-9]+\\.)*(?:ci|city|cityof|co|county|countyof|borough|parish|town|townof|village|muni|municipal)(?:\\.[a-z0-9]+)*\\.[a-z]{2}\\.us)$',
+                                            'United States (USA)', 20),    -- Local governments
+    ('(^|\\.)((?:[a-z0-9]+\\.)*courts(?:\\.[a-z0-9]+)*\\.[a-z]{2}\\.us)$',
+                                            'United States (USA)', 20)    -- Courts (e.g. www.courts.state.va.us)
 
   ])
 ),
@@ -833,7 +1083,7 @@ cc_map AS (
     ('ad','Andorra'), ('ae','United Arab Emirates'), ('af','Afghanistan'),
     ('ag','Antigua and Barbuda'), ('ai','Anguilla'), ('al','Albania'),
     ('am','Armenia'), ('ao','Angola'), ('ar','Argentina'), ('as','American Samoa'),
-    ('at','Austria'), ('au','Australia'), ('aw','Aruba'), ('ax','Aland Islands'),
+    ('at','Austria'), ('au','Australia'), ('aw','Aruba'), ('ax','Åland Islands'),
     ('az','Azerbaijan'),('aq','Antarctica'),
 
     -- B
@@ -848,8 +1098,8 @@ cc_map AS (
     ('cf','Central African Republic'), ('cg','Republic of the Congo'), ('ch','Switzerland'),
     ('ci',"Côte d'Ivoire"), ('ck','Cook Islands'), ('cl','Chile'), ('cm','Cameroon'),
     ('cn','China'), ('co','Colombia'), ('cr','Costa Rica'), ('cu','Cuba'),
-    ('cv','Cabo Verde'), ('cw','Curacao'), ('cx','Christmas Island'),
-    ('cy','Cyprus'), ('cz','Czech Republic'),('bq','Caribbean Netherlands'),
+    ('cv','Cabo Verde'), ('cw','Curaçao'), ('cx','Christmas Island'),
+    ('cy','Cyprus'), ('cz','Czechia'), ('bq','Caribbean Netherlands'),
 
     -- D
     ('de','Germany'), ('dj','Djibouti'), ('dk','Denmark'), ('dm','Dominica'),
@@ -861,10 +1111,10 @@ cc_map AS (
 
     -- F
     ('fi','Finland'), ('fj','Fiji'), ('fk','Falkland Islands'),
-    ('fm','Micronesia'), ('fo','Faroe Islands'), ('fr','France'),
+    ('fm','Federated States of Micronesia'), ('fo','Faroe Islands'), ('fr','France'),
 
     -- G
-    ('ga','Gabon'), ('gb','United Kingdom (UK)'), ('gd','Grenada'),
+    ('ga','Gabon'), ('gb','United Kingdom'), ('gd','Grenada'),
     ('ge','Georgia'), ('gf','French Guiana'), ('gg','Guernsey'),
     ('gh','Ghana'), ('gi','Gibraltar'), ('gl','Greenland'), ('gm','Gambia'),
     ('gn','Guinea'), ('gp','Guadeloupe'), ('gq','Equatorial Guinea'),
@@ -897,7 +1147,7 @@ cc_map AS (
     -- M
     ('ma','Morocco'), ('mc','Monaco'), ('md','Moldova'), ('me','Montenegro'),
     ('mg','Madagascar'), ('mh','Marshall Islands'), ('mk','North Macedonia'),
-    ('ml','Mali'), ('mm','Myanmar'), ('mn','Mongolia'), ('mo','Macau'),
+    ('ml','Mali'), ('mm','Myanmar'), ('mn','Mongolia'), ('mo','Macao'),
     ('mp','Northern Mariana Islands'), ('mq','Martinique'), ('mr','Mauritania'),
     ('ms','Montserrat'), ('mt','Malta'), ('mu','Mauritius'), ('mv','Maldives'),
     ('mw','Malawi'), ('mx','Mexico'), ('my','Malaysia'), ('mz','Mozambique'),
@@ -922,7 +1172,7 @@ cc_map AS (
     ('qa','Qatar'),
 
     -- R
-    ('re','Reunion'), ('ro','Romania'), ('rs','Serbia'), ('ru','Russia'),
+    ('re','Réunion'), ('ro','Romania'), ('rs','Serbia'), ('ru','Russia'),
     ('rw','Rwanda'),
 
     -- S
@@ -930,7 +1180,7 @@ cc_map AS (
     ('sd','Sudan'), ('se','Sweden'), ('sg','Singapore'), ('sh','Saint Helena'),
     ('si','Slovenia'), ('sj','Svalbard and Jan Mayen'), ('sk','Slovakia'),
     ('sl','Sierra Leone'), ('sm','San Marino'), ('sn','Senegal'),
-    ('so','Somalia'), ('sr','Suriname'), ('st','Sao Tome and Principe'),
+    ('so','Somalia'), ('sr','Suriname'), ('st','São Tomé and Príncipe'),
     ('su','Soviet Union (legacy)'), ('sv','El Salvador'), ('sx','Sint Maarten'),
     ('sy','Syria'), ('sz','Eswatini'),('ss','South Sudan'),('bl','Saint Barthélemy'),
     ('mf','Saint Martin (French)'),
@@ -938,7 +1188,7 @@ cc_map AS (
     -- T
     ('tc','Turks and Caicos Islands'), ('td','Chad'), ('tf','French Southern Territories'),
     ('tg','Togo'), ('th','Thailand'), ('tj','Tajikistan'), ('tk','Tokelau'),
-    ('tl','East Timor'), ('tm','Turkmenistan'), ('tn','Tunisia'),
+    ('tl','Timor-Leste'), ('tm','Turkmenistan'), ('tn','Tunisia'),
     ('to','Tonga'), ('tr','Türkiye'), ('tt','Trinidad and Tobago'),
     ('tv','Tuvalu'), ('tw','Taiwan'), ('tz','Tanzania'),
 
@@ -948,7 +1198,7 @@ cc_map AS (
     ('um','U.S. Outlying Islands'),
 
     -- V
-    ('va','Vatican City'), ('vc','Saint Vincent and the Grenadines'),
+    ('va','Holy See (Vatican City State)'), ('vc','Saint Vincent and the Grenadines'),
     ('ve','Venezuela'), ('vg','British Virgin Islands'), ('vi','US Virgin Islands'),
     ('vn','Vietnam'), ('vu','Vanuatu'),
 
@@ -986,6 +1236,7 @@ cc_map AS (
   ])
 ),
 
+
 -- 3) Source pages + Lighthouse category scores (host extracted)
 pages AS (
   SELECT
@@ -1003,10 +1254,10 @@ pages AS (
 -- ========================
   
   FROM
-  `httparchive.sample_data.pages_10k` 
-  -- `httparchive.crawl.pages`
+  -- `httparchive.sample_data.pages_10k` 
+  `httparchive.crawl.pages`
   WHERE 
-    -- date = DATE '2025-07-01' AND
+    date = DATE '2025-07-01' AND
     -- is_root_page AND
 
 -- ========================
@@ -1016,7 +1267,6 @@ pages AS (
     lighthouse IS NOT NULL AND
     JSON_TYPE(lighthouse) = 'object'
 ),
-  
 -- Filter out rows without any score to shrink downstream work
 pages_scored AS (
   SELECT
@@ -1299,11 +1549,11 @@ domain_scores AS (
 SELECT
   fb.bucket AS country,
   usc.us_state,
-  FORMAT('%.1f%%', 100 * AVG(fb.perf)) AS avg_performance,
-  FORMAT('%.1f%%', 100 * AVG(fb.a11y)) AS avg_accessibility,
-  FORMAT('%.1f%%', 100 * AVG(fb.bp))   AS avg_best_practices,
-  FORMAT('%.1f%%', 100 * AVG(fb.seo))  AS avg_seo,
-  COUNT(*)                             AS total_pages
+  ROUND(AVG(fb.perf), 15) AS avg_performance,
+  ROUND(AVG(fb.a11y), 15) AS avg_accessibility,
+  ROUND(AVG(fb.bp),   15) AS avg_best_practices,
+  ROUND(AVG(fb.seo),  15) AS avg_seo,
+  COUNT(*)                AS total_pages
 FROM final_best fb
 LEFT JOIN us_state_classified usc USING (page, host)
 GROUP BY country, us_state
