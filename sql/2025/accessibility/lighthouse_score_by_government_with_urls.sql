@@ -769,7 +769,7 @@ host_rules AS (
 
     -- Suriname
     ('gov.sr','Suriname',24),('dna.sr','Suriname',24),
-    ('president.gov.sr','Suriname',24),('ministerievanfinancien.gov.sr','Suriname',23),('biza.gov.sr','Suriname',23),('justice.gov.sr','Suriname',23),
+    ('president.gov.sr','Suriname',24),('ministerievanfinancien.gov.sr','Suriname',23),('biza.gov.sr','Suriname',23),('justice.gov.sr','Suriname',23),('cbvs.sr','Suriname',23),
 
   -- Sweden
     ('government.se','Sweden',24),('regeringen.se','Sweden',24),('riksdagen.se','Sweden',24),('domstol.se','Sweden',24),                                           -- Core national portals & agencies
