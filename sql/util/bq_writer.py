@@ -18,7 +18,6 @@ def write_to_bq(df, table_id, schema, write_disposition="WRITE_APPEND"):
     client = bigquery.Client()
 
     job_config = bigquery.LoadJobConfig(
-        source_format=bigquery.SourceFormat.CSV,
         write_disposition=write_disposition,
         schema=schema,
     )
