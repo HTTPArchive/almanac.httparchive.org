@@ -5,4 +5,4 @@ FROM
 WHERE
   methodology = '2022' AND
   date = '2022-06-01'
-LIMIT 1000
+LIMIT 1000 -- noqa: AM09
