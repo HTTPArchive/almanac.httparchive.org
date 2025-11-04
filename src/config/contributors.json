@@ -29,6 +29,18 @@
       ]
     }
   },
+  "ajackley": {
+    "avatar_url": "1172454",
+    "github": "ajackley",
+    "name": "Anne Jackley",
+    "teams": {
+      "2025": [
+        "authors"
+      ]
+    },
+    "website": "https://annejackley.com/",
+    "linkedin": "ajackley"
+  },
   "haddiamjad": {
     "avatar_url": "46374292",
     "github": "hadiamjad",
@@ -4930,6 +4942,9 @@
       "2024": [
         "authors",
         "analysts"
+      ],
+      "2025": [
+        "authors"
       ]
     },
     "website": "https://yohan.beugin.org"
