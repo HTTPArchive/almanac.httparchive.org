@@ -52,3 +52,4 @@ GROUP BY
   position
 ORDER BY
   pct DESC
+LIMIT 500
