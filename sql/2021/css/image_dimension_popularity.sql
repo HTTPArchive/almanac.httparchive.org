@@ -52,3 +52,4 @@ GROUP BY
   width
 ORDER BY
   pct DESC
+LIMIT 500  
