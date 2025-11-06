@@ -36,6 +36,7 @@ To avoid repetitions and overlap with concepts and definitions already explained
 {# TODO check that previous link to 2024 is correct #}
 
 {# TODO ask if queries should be uploaded for 2025, although we reused the ones from 2024 #}
+
 {# TODO resolves all todos left in document #}
 
 ## First and third-party prevalence
@@ -194,7 +195,7 @@ For explanations about the different values for the `SameSite` attribute, we ref
 
 {# TODO: verify that results have been updated in GGSheet - they look like the same as last year's which could also be possible #}
 
-Two [cookie prefixes](https://developer.mozilla.org/docs/Web/HTTP/Cookies#cookie_prefixes) `__Host-` and `__Secure-` can be used in the cookie name to indicate that they can only be set or modified by a secure HTTPs origin (for more details see the [2024 Cookies chapter](../2024/cookies#cookie-prefixes)). Here, we draw the same conclusion as last year: these prefixes have seen very low adoption on the web since their introduction 10 years ago, and so, in practice the defense-in-depth measure that they provide is not used.
+Two [cookie prefixes](https://developer.mozilla.org/docs/Web/HTTP/Cookies#cookie_prefixes) `__Host-` and `__Secure-` can be used in the cookie name to indicate that they can only be set or modified by a secure HTTPs origin (for more details see the [2024 Cookies chapter](../2024/cookies#cookie-prefixes)). Here, we draw the same conclusion as last year: these prefixes have seen very low adoption on the web since their introduction 10 years ago, and so, in practice the defense-in-depth measure that they provide remains unused.
 
 ## Top first and third-party cookies and domains setting them
 
@@ -208,7 +209,7 @@ Two [cookie prefixes](https://developer.mozilla.org/docs/Web/HTTP/Cookies#cookie
   )
 }}
 
-[Figure 12](#fig-12) reports the top 10 most common first-party cookies names being set. Google Analytics sets the `_ga` and `_gcl_au` cookies, which are used for website statistics, analytics reports, and targeted advertising, on more than 60% and 25% of websites. Other cookies present in this top 10 are related to online tracking, session cookies used to identify user's sessions, or performance
+[Figure 12](#fig-12) reports the top 10 most common first-party cookies names being set. Google Analytics sets the `_ga` and `_gcl_au` cookies, which are used for website statistics, analytics reports, and targeted advertising, on more than 60% and 25% of websites. Other cookies present in this top 10 are related to online tracking, session cookies used to identify user's sessions, or performance.
 
 {{ figure_markup(
   image="top-third-party-cookies-set.png",
@@ -220,7 +221,7 @@ Two [cookie prefixes](https://developer.mozilla.org/docs/Web/HTTP/Cookies#cookie
   )
 }}
 
-Similarly, [Figure 13](#fig-13) shows the top 10 most common third-party cookies being created on the top 1M websites. The `IDE` and `test_cookie` cookies are set by `doubleclick.net` (owned by Google) and are present on more than 35% and 25% of websites. DoubleClick checks if a user's web browser supports third-party cookies by trying to set `test_cookie`. `MUID` from Microsoft is next, present on more than 23% of websites, and is also used for targeted advertising and cross-site tracking. As already pointed out before with [`Partitioned` cookies](#partitioned-chips-proposal), this year we do not observe anymore the `YSC` and `VISITOR_INFO1_LIVE` from YouTube among top third-party cookies.
+Similarly, [Figure 13](#fig-13) shows the top 10 most common third-party cookies being created on the top 1M websites. The `IDE` and `test_cookie` cookies are set by `doubleclick.net` (owned by Google) and are present on more than 35% and 25% of websites. DoubleClick checks if a user's web browser supports third-party cookies by trying to set `test_cookie`. `MUID` from Microsoft comes next, present on more than 23% of websites, and is also used for targeted advertising and cross-site tracking. As already pointed out in the [`Partitioned` cookies](#partitioned-chips-proposal) section, this year we do not observe anymore the `YSC` and `VISITOR_INFO1_LIVE` from YouTube among top third-party cookies.
 
 {# TODO would be nice to investigate a little more what is behind youtube not using these anymore and maybe be able to say more here #}
 
@@ -354,7 +355,7 @@ Perhaps, unsurprisingly from prior results, the 10 most common domains ([Figure 
   <figcaption>{{ figure_link(caption="Statistics for number of cookies set on mobile pages.") }}</figcaption>
 </figure>
 
-Websites set a median of 9 cookies of any type overall, sev7en first-party cookies, and 5 or 6 third-party cookies. The tables above report several other statistics about the number of cookies observed per website and the figures below display their cumulative distribution functions (cdf). For example: on desktop a maximum of 178 first-party and 885 third-party cookies are set per website.
+Websites set a median of 9 cookies of any type overall, 7 first-party cookies, and 5 or 6 third-party cookies. The tables above report several other statistics about the number of cookies observed per website and the figures below display their cumulative distribution functions (cdf). For example: on desktop a maximum of 178 first-party and 885 third-party cookies are set per website.
 
 {# TODO: if any other idea of what to say here, feel free to add #}
 
@@ -635,9 +636,7 @@ We find that the median size across all observed cookies is 40 bytes and with a 
 
 {# TODO These maximum in 20k days seems suspicious to me, maximum and hard limit normally imposed by Chrome is 400 days, check GGSheet and review results here + interpretation #}
 
-
 Cookies are set to an expiration date when they are created. If session cookies expire immediately after the session is over ([see previous section](#session)), most first- and third-party cookies do not and have a median age of a full year. The longer cookies live, the longer they can be used for re-identification or cross-site tracking which is why most tracking cookies are typically set to be stored in the browser for a longer time.
-
 
 {# TODO revisit commented out statement after maximum have been checked #}
 <!-- The maximum age among the cookies that we can observe with the instrumentation and collection of the HTTP Archive Tools is of 400 days, this is aligned with the [hard limits](https://developer.chrome.com/blog/cookie-max-age-expires) that Chrome imposes on cookie `Expires` and `Max-Age` attribute. -->
@@ -662,23 +661,13 @@ Cookies are set to an expiration date when they are created. If session cookies 
 
 
 ## Conclusion
-{# TODO touch on privacy sandbox deprecation and SoK open problems #}
-{# TODO #}
-<!-- In this chapter, we report on the use of cookies on the web. Our analysis allows us to answer multiple questions:
 
-**Which type of cookies is set by websites?**
+{# TODO complete TBD results below #}
 
-We find that the majority of cookies on the web (61%) are third-party. Moreover, more popular websites set significantly more third-party cookies, presumably because they generally include more third-party content. Additionally, we observe that about 6% of third-party cookies are partitioned (CHIPS). Partitioned cookies cannot be used for third-party tracking given that the cookie jar is separate for each website (domain) that the user visits. However, we find that partitioned cookies are predominantly set by advertising domains and are used for analytics.
+The observations from this chapter confirm the conclusions from last year's analysis:
+- A majority (60%) of cookies encountered on the web are third-party cookies and popular websites create them the most.
+- Most popular cookies can be linked to advertising, tracking, and analytics use cases.
+- Cookies tend to be long-lived with a median average lifetime of TBD months. Ephemeral session cookies only represent 19% of first- and 7% of third-party cookies.
+- Other restrictions on cookies capabilities are used very little to not at all: if partitioned cookies represent 10% of all third-party cookies, a slight uptake from last year's 6%, 100% of third-party cookies have `SameSite=None` allowing them to be sent in cross-site requests, and cookies prefixes adoption is almost non-existent.
 
-**Which cookie attributes are set?**
-
-Out of all cookies set, 16% of first-party cookies and only 4% of third-party cookies are session cookies. The remainder of the cookies are more persistent since they are not deleted when the user closes the browser. Generally, the average lifetime of cookies (the median) is 6 months for first-party and 1 year for third-party cookies.
-
-Furthermore, for 100% of third-party cookies the `SameSite` attribute is explicitly set to `None`, which allows these cookies to be included in cross-site requests and therefore to track users with them.
-
-**Who sets cookies and what are they used for?**
-
-The top first-party cookies are mainly used for analytics. Google Analytics, whose primary function is to report on the use of websites by users i.e, first-party analytics, is prevalent on at least 60% of websites. Meta follows its footsteps, by setting first-party cookies on 25% websites.
-
-Third-party cookies also predominantly set by Google: `doubleclick.net` sets a cookie on 44% of websites. Other top trackers have a considerably smaller reach of 8-12% of websites. In general, the most popular third-party cookies belong predominantly to the targeted advertising category.
- -->
+Additionally, while several web browsers have deprecated or limited third-party cookies due to privacy concerns, Google has decided to still support them in Chrome. Google is also phasing out most technologies from its Privacy Sandbox initiative, initially designed to ``create a thriving web ecosystem that is respectful of users and private by default''. As a result, whether trackers use third-party cookies and/or switch or complement their approach with first-party cookies, fingerprinting, or develop other techniques to track users online, cookies remain a fundamental piece of the web that continue to pose privacy and security risks for users.
