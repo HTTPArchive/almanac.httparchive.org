@@ -3,6 +3,7 @@
 SELECT
   percentile,
   client,
+  is_root_page,
   --get the wasted bytes from resources that could be cached longer, in KB
   APPROX_QUANTILES((CAST(JSON_VALUE(lighthouse.audits['uses-long-cache-ttl'].numericValue) AS FLOAT64) / 1024), 1000)[OFFSET(percentile * 10)] AS wasted_kb
 FROM
@@ -12,7 +13,9 @@ WHERE
   date = '2025-07-01'
 GROUP BY
   percentile,
-  client
+  client,
+  is_root_page
 ORDER BY
   client,
+  is_root_page,
   percentile
