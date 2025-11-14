@@ -15,6 +15,7 @@
 - [📊 Results sheet][~google-sheets]
 - [📝 Markdown file][~chapter-markdown]
 
-[~google-doc]: https://docs.google.com/document/d/1SZL_TF3IGyq_yLATjZ7OA2bAXPzvRD5nJrCMR4ZeiYk/edit
-[~google-sheets]: https://docs.google.com/spreadsheets/d/1lAQKcOF7l6xz9v7yvnI9I1F8yiSqcz3Xx6u-5ady1DQ/edit#gid=1778117656
+
+[~google-doc]: https://docs.google.com/document/d/1CM6CV86bDndFI1EaOrplvxdclldcToQ8GFkq2POpNlg
+[~google-sheets]: https://docs.google.com/spreadsheets/d/1MoWoxogYWH6fv5r485EttvVgJuw7dMzzcot66X3MWu4/edit
 [~chapter-markdown]: https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/src/content/en/2025/seo.md
