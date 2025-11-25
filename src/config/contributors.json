@@ -1059,6 +1059,9 @@
         "authors",
         "committee",
         "reviewers"
+      ],
+      "2025": [
+        "analysts"
       ]
     }
   },

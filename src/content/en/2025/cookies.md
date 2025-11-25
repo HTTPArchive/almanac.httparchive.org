@@ -47,6 +47,7 @@ To avoid repetitions and overlap with concepts and definitions already explained
   )
 }}
 
+<!-- markdownlint-disable-next-line MD051 -->
 The overall prevalence of first- and third-party cookies on the top 1M most popular websites from the HTTP Archive crawl of July 2025 is similar to last year's distribution. On both desktop and mobile devices, 40% of cookies are first-party and 60% third-party ([Figure 1](#fig-1)). Below, we report on the same first- and third-party split across different CrUX ranks.
 
 {{ figure_markup(
@@ -69,6 +70,7 @@ The overall prevalence of first- and third-party cookies on the top 1M most popu
   )
 }}
 
+<!-- markdownlint-disable-next-line MD051 -->
 We observe from [Figure 2](#fig-2) and [Figure 3](#fig-3) that the most visited websites tend to set significantly more third-party cookies (78% of cookies on the top 1k) than others visited less often (just below 50% on top 10M). This may be explained by the fact that more popular websites also include more third-party content and scripts that in turns set third-party cookies to enable different functionalities.
 
 ## Cookie attributes
@@ -93,6 +95,7 @@ We observe from [Figure 2](#fig-2) and [Figure 3](#fig-3) that the most visited 
   )
 }}
 
+<!-- markdownlint-disable-next-line MD051 -->
 [Figure 4](#fig-4) and [Figure 5](#fig-5) showcase the different cookie [attributes](https://developer.mozilla.org/docs/Web/HTTP/Headers/Set-Cookie) for each type of cookies observed.
 
 ### `Partitioned` (CHIPS proposal)
@@ -109,6 +112,7 @@ On [compatible browsers](https://developer.mozilla.org/docs/Web/Privacy/Privacy_
   )
 }}
 
+<!-- markdownlint-disable-next-line MD051 -->
 [Figure 6](#fig-6) shows the 10 most common partitioned cookies (name and domain) found in third-party context on webpages in July 2025. Here, we observe a major change from last year's analysis, indeed the overall usage of third-party partitioned cookies in 2025 appears to have plummeted to very low levels. Interestingly, partitioned cookies that were somewhat predominant in 2024 (on about 9% of websites with partitioned cookies) are not present anymore; two of these cookies were set by YouTube and another one was the `receive-cookie-deprecation` cookie set by domains that [participated in the testing phase](https://developers.google.com/privacy-sandbox/private-advertising/setup/web/chrome-facilitated-testing) of Chrome's Privacy Sandbox. Instead, Cloudflare's `cf_clearance` cookie accounts for the entirety of the top 10 most common partitioned third-party cookies in 2025.
 
 So, in the past year YouTube appears to have altered how these cookies were set on `youtube.com` and on video iframes embedded on other websites. Potential reasons that could explain these changes include: incorrect setting, A/B testing, and more likely infrastructure or policy updates following Google's announcements on the pause and then deprecation of Privacy Sandbox APIs, despite support for partitioned cookies (CHIPS proposal) still being continued.
@@ -197,6 +201,7 @@ Two [cookie prefixes](https://developer.mozilla.org/docs/Web/HTTP/Cookies#cookie
   )
 }}
 
+<!-- markdownlint-disable-next-line MD051 -->
 [Figure 12](#fig-12) reports the top 10 most common first-party cookies names being set. Google Analytics sets the `_ga` and `_gcl_au` cookies, which are used for website statistics, analytics reports, and targeted advertising, on more than 60% and 25% of websites. Other cookies present in this top 10 are related to online tracking, session cookies used to identify user's sessions, or performance.
 
 {{ figure_markup(
@@ -209,6 +214,7 @@ Two [cookie prefixes](https://developer.mozilla.org/docs/Web/HTTP/Cookies#cookie
   )
 }}
 
+<!-- markdownlint-disable-next-line MD051 -->
 Similarly, [Figure 13](#fig-13) shows the top 10 most common third-party cookies being created on the top 1M websites. The `IDE` and `test_cookie` cookies are set by `doubleclick.net` (owned by Google) and are present on more than 35% and 25% of websites. DoubleClick checks if a user's web browser supports third-party cookies by trying to set `test_cookie`. `MUID` from Microsoft comes next, present on more than 23% of websites, and is also used for targeted advertising and cross-site tracking. As already pointed out in the [`Partitioned` cookies](#partitioned-chips-proposal) section, this year we do not observe anymore the `YSC` and `VISITOR_INFO1_LIVE` from YouTube among top third-party cookies.
 
 {# TODO would be nice to investigate a little more what is behind youtube not using these anymore and maybe be able to say more here #}
@@ -223,6 +229,7 @@ Similarly, [Figure 13](#fig-13) shows the top 10 most common third-party cookies
   )
 }}
 
+<!-- markdownlint-disable-next-line MD051 -->
 Perhaps, unsurprisingly from prior results, the 10 most common domains ([Figure 14](#fig-14)) that set cookies on the web are all involved with search, targeting, and advertising services. Google's combined coverage (`doubleclick.net`, `google.com`, and `youtube.com`) is reaching more than 50% of the websites, and Microsoft's (`bing.com`, `clarity.ms`, `linkedin.com`) 30%.
 
 ## Number of cookies set by websites
@@ -499,6 +506,7 @@ We find that the median size across all observed cookies is 40 bytes and with a 
   )
 }}
 
+<!-- markdownlint-disable-next-line MD051 -->
 [Figure 17](#fig-17) corresponds to the cumulative distribution function (cdf) of the size of all the cookies seen on the top 1M websites for each client.
 
 {# TODO: if any other idea of what to say here, feel free to add #}
