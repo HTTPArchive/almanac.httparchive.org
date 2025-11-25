@@ -10,6 +10,7 @@ editors: []
 translators: []
 results: https://docs.google.com/spreadsheets/d/1ZirsnaXgbOMzBmt0X2eMMu3rVJvWCtQgE7pNG7fKcvc/edit
 yohhaan_bio: Yohan Beugin is a Ph.D. student in the Department of Computer Sciences at the University of Wisconsin–Madison where he is a member of the Security and Privacy Research Group and advised by Prof. Patrick McDaniel. He is interested in building more secure, privacy-preserving, and trustworthy systems. His current research so far has focused on security of open-sourec software as well as tracking and privacy in online advertising.
+featured_quote: TODO
 featured_stat_1: 60%
 featured_stat_label_1: Cookies that are third-party
 featured_stat_2: 11%
