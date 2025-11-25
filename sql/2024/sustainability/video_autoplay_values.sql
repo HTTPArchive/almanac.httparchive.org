@@ -8,7 +8,6 @@ WITH video_data AS (
   WHERE
     date = '2024-06-01' AND  -- Updated date
     is_root_page
-  LIMIT 10000  -- Limit the number of rows processed for faster testing
 )
 
 SELECT
