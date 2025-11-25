@@ -24,7 +24,7 @@ jobs:
     if: github.repository == 'HTTPArchive/almanac.httparchive.org'
     steps:
     - name: Checkout branch
-      uses: actions/checkout@v5
+      uses: actions/checkout@v6
     - name: Set the list of URLs for Lighthouse to check
       run: ./src/tools/scripts/set_lighthouse_urls.sh -p
     - name: Audit URLs using Lighthouse
