@@ -6,6 +6,93 @@
 
 {% block twitter_image_alt %}{{ year }} Web Almanac methodology{% endblock %}
 
+{% block accessibilityResultsSheet %}https://docs.google.com/spreadsheets/d/13sY_wmYODArxo-hH5cSuRAbvtLdGI3x5Xc9qUyqP8as{% endblock %}
+
+{# SQL for the following stats:
+  DECLARE thedate DATE DEFAULT '{{ year }}-{{ self.almanacMonthDigit() }}-01';
+
+  # Run this to get number of sites analysed
+  SELECT "ALL" AS client, COUNT(DISTINCT root_page) AS num_sites FROM `httparchive.crawl.pages` where date = thedate
+  UNION ALL
+  SELECT  client, COUNT(DISTINCT root_page) FROM `httparchive.crawl.pages` where date = thedate group by client;
+#}
+
+{% block numWebsites %}16,213,084{% endblock %}
+{% block numMobileWebsites %}15,426,398{% endblock %}
+{% block numDesktopWebsites %}12,155,374{% endblock %}
+
+{% block edition %}sixth{% endblock %}
+{% block callForContributorsLink %}https://github.com/HTTPArchive/almanac.httparchive.org/discussions/4062{% endblock %}
+{% block kickOffMonth %}April {{ year }}{% endblock %}
+{% block preparingMonths %}May and June {{ year }}{% endblock %}
+
+{% block cruxReleaseDate %}July 11, {{ year }}{% endblock %}
+{% block cruxDataMonth %}June{% endblock %}
+
+{# Use this SQL to get the most commonly used User Agent (check it's over 50%):
+
+  SELECT
+    client,
+    req_headers.value,
+    COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct_crawl
+  FROM
+    `httparchive.crawl.requests`,
+  UNNEST (request_headers) AS req_headers
+  WHERE
+    date = '2025-07-01' AND
+    is_root_page AND
+    is_main_document AND
+    LOWER(req_headers.name) = "user-agent"
+  GROUP BY
+    client,
+    req_headers.value
+  QUALIFY
+    COUNT(0) = MAX(COUNT(0)) OVER (PARTITION BY client);
+#}
+{% block desktopUserAgent %}Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 PTST/250604.160032{% endblock %}
+{% block mobileUserAgent %}Mozilla/5.0 (Linux; Android 8.1.0; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36 PTST/250604.160032{% endblock %}
+
+{# Get from https://github.com/HTTPArchive/crawl/blob/main/Desktop.json #}
+{% block desktopConnectionSpeed %}Cable (5/1 Mbps 25ms RTT){% endblock %}
+{% block desktopViewport %}1920 x 1080px{% endblock %}
+{% block desktopDpr %}1x{% endblock %}
+{% block desktopCPUSlowdown %}<em>N/A</em>{% endblock %}
+{# Get from https://github.com/HTTPArchive/crawl/blob/main/Mobile.json #}
+{% block mobileConnectionSpeed %}4G (9 Mbps 170ms RTT){% endblock %}
+{% block mobileViewport %}512 x 360px{% endblock %}
+{% block mobileDpr %}3x{% endblock %}
+{% block mobileCPUSlowdown %}8x{% endblock %}
+
+{# Use this SQL to get the most commonly used Lighthouse version (check it's over 50%):
+  SELECT
+    JSON_VALUE(lighthouse.lighthouseVersion) AS lighthouse_version,
+    COUNT(0) AS num_instances
+  FROM
+    `httparchive.crawl.pages`
+  WHERE
+    date = '2025-07-01'
+  GROUP BY
+    JSON_VALUE(lighthouse.lighthouseVersion)
+  ORDER BY
+    num_instances DESC
+#}
+{% block lighthouseVersion %}12.8.0{% endblock %}
+
+{# Use this https://github.com/HTTPArchive/wptagent/blob/main/internal/traffic_shaping.py#L102 #}
+{% block lighthouseDesktopCPUSlowDown %}<em>N/A</em>{% endblock %}
+{% block lighthouseDesktopDownloadThroughout %}10.0 Mbps{% endblock %}
+{% block lighthouseDesktopUploadThroughout %}10.0 Mbps{% endblock %}
+{% block lighthouseDesktopRTT %}40 ms{% endblock %}
+{% block lighthouseMobileCPUSlowDown %}1x/4x{% endblock %}
+{% block lighthouseMobileDownloadThroughout %}1.6 Mbps{% endblock %}
+{% block lighthouseMobileUploadThroughout %}0.75 Mbps{% endblock %}
+{% block lighthouseMobileRTT %}150 ms{% endblock %}
+
+{# Search for `^  "` as regex in https://github.com/HTTPArchive/wappalyzer/blob/main/src/categories.json #}
+{% block wappalyzerCategories %}108{% endblock %}
+{# Search for `^  "` as regex in https://github.com/HTTPArchive/wappalyzer/blob/main/src/src/technologies/*.json #}
+{% block wappalyzerTechnologies %}3,984{% endblock %}
+
 {% block index %}
       <ul>
         <li><a href="#overview">Overview</a></li>
@@ -73,7 +160,7 @@
         <h2 id="dataset"><a href="#dataset" class="anchor-link">About the dataset</a></h2>
 
         <p>
-          The HTTP Archive dataset is continuously updating with new data monthly. For the {{ year }} edition of the Web Almanac, unless otherwise noted in the chapter, all metrics were sourced from the June {{ year }} crawl. These results are <a hreflang="en" href="https://har.fyi/guides/getting-started/">publicly queryable</a> on BigQuery in tables in the <code>`httparchive.all.*`</code> tables for the date <code>date = '2024-06-01'</code>.
+          The HTTP Archive dataset is continuously updating with new data monthly. For the {{ year }} edition of the Web Almanac, unless otherwise noted in the chapter, all metrics were sourced from the {{ self.dataset() }} crawl. These results are <a hreflang="en" href="https://har.fyi/guides/getting-started/">publicly queryable</a> on BigQuery in tables in the <code>`httparchive.crawl.*`</code> tables for <code>date = '{{ year }}-{{ self.almanacMonthDigit() }}-01'</code>.
         </p>
 
         <p>
@@ -81,7 +168,7 @@
         </p>
 
         <aside class="note">
-          Please note that some of these queries are quite large and can be <a hreflang="en" href="https://cloud.google.com/bigquery/pricing">expensive</a> to run yourself. For help controlling your spending, refer to Tim Kadlec&#8217;s post <a hreflang="en" href="https://timkadlec.com/remembers/2019-12-10-using-bigquery-without-breaking-the-bank/">Using BigQuery Without Breaking the Bank</a>.
+          <strong>Please note that some of these queries are quite large and can be <a hreflang="en" href="https://cloud.google.com/bigquery/pricing">expensive</a> to run yourself. For help controlling your spending, refer to our guide on <a hreflang="en" href="https://har.fyi/guides/minimizing-costs/">Minimizing query costs</a>.</strong>
         </aside>
 
         <p>
@@ -102,11 +189,11 @@
     client,
     is_root_page,
     <span class="keyword">date</span>,
-    <span class="function call">JSON_VALUE</span>(lighthouse, <span class="string">'$.audits.color-contrast.score'</span>) <span class="keyword">AS</span> color_contrast_score
+    <span class="function call">JSON_VALUE</span>(lighthouse.audits.<span class="string">`color-contrast`</span>.score) <span class="keyword">AS</span> color_contrast_score
   <span class="keyword">FROM</span>
-    <span class="string">`httparchive.all.pages`</span>
+    <span class="string">`httparchive.crawl.pages`</span>
   <span class="keyword">WHERE</span>
-    <span class="keyword">date</span> <span class="keyword operator">=</span> <span class="string">'2024-06-01'</span>
+    <span class="keyword">date</span> <span class="keyword operator">=</span> <span class="string">'{{ year }}-{{ self.almanacMonthDigit() }}-01'</span>
 )
 <span class="keyword">GROUP</span> <span class="keyword">BY</span>
   client,
@@ -118,23 +205,14 @@
         </div>
 
         <p>
-          Results for each metric are publicly viewable in chapter-specific spreadsheets, for example <a href="https://docs.google.com/spreadsheets/d/16isMe5_rvmRmJHtK5Je66AhwO8SowGgq0EFqXyjEXw8/edit?gid=1778117656#gid=1778117656">JavaScript results</a>. Links to the raw results and queries are available at the bottom of each chapter. Metric-specific results and queries are also linked directly from each figure.
+          Results for each metric are publicly viewable in chapter-specific spreadsheets, for example <a href="{{ self.accessibilityResultsSheet() }}">Accessibility results</a>. Links to the raw results and queries are available at the bottom of each chapter. Metric-specific results and queries are also linked directly from each figure.
         </p>
     </section>
 
     <section>
         <h3 id="websites"><a href="#websites" class="anchor-link">Websites</a></h3>
-
-        {# SQL for the following stats:
-          DECLARE thedate DATE DEFAULT '2024-06-01';
-
-          # Run this to get number of sites analysed
-          SELECT "ALL" AS client, COUNT(DISTINCT root_page) AS num_sites FROM `httparchive.all.pages` where date = thedate
-          UNION ALL
-          SELECT  client, COUNT(DISTINCT root_page) FROM `httparchive.all.pages` where date = thedate group by client;
-        #}
         <p>
-          There are 16,935,953 websites in the dataset. Among those, 16,130,357 are mobile websites and 12,740,973 are desktop websites. Most websites are included in both the mobile and desktop subsets.
+          There are {{ self.numWebsites() }} websites in the dataset. Among those, {{ self.numMobileWebsites() }} are mobile websites and {{ self.numDesktopWebsites() }} are desktop websites. Most websites are included in both the mobile and desktop subsets.
         </p>
 
         <p>
@@ -142,11 +220,11 @@
         </p>
 
         <p>
-          The June {{ year }} HTTP Archive crawl used by the Web Almanac used the most recently available Chrome UX Report release for its list of websites. The {{ year }}06 dataset was released on Jul 8, {{ year }} and captures websites visited by Chrome users during the month of June.
+          The {{ self.dataset() }} HTTP Archive crawl used by the Web Almanac used the most recently available Chrome UX Report release for its list of websites. The {{ year }}{{ self.almanacMonthDigit() }} dataset was released on {{ self.cruxReleaseDate() }} and captures websites visited by Chrome users during the month of {{ self.cruxDataMonth() }}.
         </p>
 
         <p>
-          Due to resource limitations, the HTTP Archive previously could only test two pages from each website in the Chrome UX report. Be aware that this will introduce some bias into the results because a home page is not necessarily representative of the entire website. This year, we included <a hreflang="en" href="https://discuss.httparchive.org/t/improving-the-http-archive-pipeline-and-dataset-by-10x/2372"> secondary pages</a>, and many chapters use this new data. Some chapters, however, used just the home pages.
+          Due to resource limitations, the HTTP Archive previously could only test two pages from each website in the Chrome UX report. Be aware that this will introduce some bias into the results because a home page is not necessarily representative of the entire website. In recent years, we included <a hreflang="en" href="https://discuss.httparchive.org/t/improving-the-http-archive-pipeline-and-dataset-by-10x/2372"> secondary pages</a>, and many chapters use this new data. Some chapters, however, used just the home pages.
         </p>
 
         <p>
@@ -207,34 +285,13 @@
             <td>Linux VM</td>
             <td>Emulated Moto G4</td>
           </tr>
-
-          {# Use this SQL to get the most commonly used User Agent (check it's over 50%):
-
-            SELECT
-              client,
-              req_headers.value,
-              COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct_crawl
-            FROM
-              `httparchive.all.requests`,
-            UNNEST (request_headers) AS req_headers
-            WHERE
-              date = '2024-06-01' AND
-              is_root_page AND
-              is_main_document AND
-              LOWER(req_headers.name) = "user-agent"
-            GROUP BY
-              client,
-              req_headers.value
-            QUALIFY
-              COUNT(0) = MAX(COUNT(0)) OVER (PARTITION BY client);
-          #}
           <tr>
             <td>User Agent</td>
             <td>
-              Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 PTST/240613.172707
+              {{ self.desktopUserAgent() }}
             </td>
             <td>
-              Mozilla/5.0 (Linux; Android 8.1.0; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Mobile Safari/537.36 PTST/240613.172707
+              {{ self.mobileUserAgent() }}
             </td>
           </tr>
 
@@ -250,14 +307,26 @@
 
           <tr>
             <td>Connection</td>
-            <td>Cable (5/1 Mbps 28ms RTT)</td>
-            <td>4G (9 Mbps 170ms RTT)</td>
+            <td>{{ self.desktopConnectionSpeed() }}</td>
+            <td>{{ self.mobileConnectionSpeed() }}</td>
+          </tr>
+
+          <tr>
+            <td>CPU slowdown</td>
+            <td>{{ self.desktopCPUSlowdown() }}</td>
+            <td>{{ self.mobileCPUSlowdown() }}</td>
           </tr>
 
           <tr>
             <td>Viewport</td>
-            <td>1376 x 768px</td>
-            <td>512 x 360px</td>
+            <td>{{ self.desktopViewport() }}</td>
+            <td>{{ self.mobileViewport() }}</td>
+          </tr>
+
+          <tr>
+            <td>DPR</td>
+            <td>{{ self.desktopDpr() }}</td>
+            <td>{{ self.mobileDpr() }}</td>
           </tr>
         </tbody>
       </table>
@@ -280,7 +349,7 @@
       </p>
 
       <p>
-        The results of each test are made available as a <a href="https://en.wikipedia.org/wiki/HAR_(file_format)">HAR file</a>, a JSON-formatted archive file containing metadata about the web page.
+        The results of each test are made available as a <a href="https://en.wikipedia.org/wiki/HAR_(file_format)">HAR file</a>, a JSON-formatted archive file containing metadata about the web page, which we then store in BigQuery.
       </p>
     </section>
 
@@ -292,7 +361,7 @@
       </p>
 
       <p>
-        HTTP Archive runs the latest version of Lighthouse for all pages. As of the June {{ year }} crawl, HTTP Archive used the <a hreflang="en" href="https://github.com/GoogleChrome/lighthouse/releases/tag/v12.0.0">12.0.0</a> version of Lighthouse.
+        HTTP Archive runs the latest version of Lighthouse for all pages. As of the {{ self.dataset() }} crawl, HTTP Archive used the <a hreflang="en" href="https://github.com/GoogleChrome/lighthouse/releases/tag/{{ self.lighthouseVersion() }}">{{ self.lighthouseVersion() }}</a> version of Lighthouse.
       </p>
 
       <p>
@@ -310,23 +379,23 @@
         <tbody>
           <tr>
             <td>CPU slowdown</td>
-            <td><em>N/A</em></td>
-            <td>1x/4x</td>
+            <td>{{ self.lighthouseDesktopCPUSlowDown() }}</td>
+            <td>{{ self.lighthouseMobileCPUSlowDown() }}</td>
           </tr>
           <tr>
             <td>Download throughput</td>
-            <td>10.0 Mbps</td>
-            <td>1.6 Mbps</td>
+            <td>{{ self.lighthouseDesktopDownloadThroughout() }}</td>
+            <td>{{ self.lighthouseMobileDownloadThroughout() }}</td>
           </tr>
           <tr>
             <td>Upload throughput</td>
-            <td>10.0 Mbps</td>
-            <td>0.75 Mbps</td>
+            <td>{{ self.lighthouseDesktopUploadThroughout() }}</td>
+            <td>{{ self.lighthouseMobileUploadThroughout() }}</td>
           </tr>
           <tr>
             <td>RTT</td>
-            <td>40 ms</td>
-            <td>150 ms</td>
+            <td>{{ self.lighthouseDesktopRTT() }}</td>
+            <td>{{ self.lighthouseMobileRTT() }}</td>
           </tr>
         </tbody>
       </table>
@@ -341,7 +410,7 @@
       <h3 id="wappalyzer"><a href="#wappalyzer" class="anchor-link">Wappalyzer</a></h3>
 
       <p>
-        <a hreflang="en" href="https://github.com/HTTPArchive/wappalyzer">Wappalyzer</a> is a tool for detecting technologies used by web pages. There are <a hreflang="en" href="https://github.com/HTTPArchive/wappalyzer/blob/main/src/categories.json">108 categories</a> of technologies tested, ranging from JavaScript frameworks, to CMS platforms, and even cryptocurrency miners. There are over 3,944 supported technologies (a slight increase from 3,805 in 2022).
+        <a hreflang="en" href="https://github.com/HTTPArchive/wappalyzer">Wappalyzer</a> is a tool for detecting technologies used by web pages. There are <a hreflang="en" href="https://github.com/HTTPArchive/wappalyzer/blob/main/src/categories.json">{{ self.wappalyzerCategories() }} categories</a> of technologies tested, ranging from JavaScript frameworks, to CMS platforms, and even cryptocurrency miners. There are over {{ self.wappalyzerTechnologies() }} supported technologies.
       </p>
 
       <p>
@@ -369,7 +438,7 @@
       </p>
 
       <p>
-        For Web Almanac metrics that reference real-world user experience data from the Chrome UX Report, the June {{ year }} dataset ({{ year }}06) is used.
+        For Web Almanac metrics that reference real-world user experience data from the Chrome UX Report, the {{ self.dataset() }} dataset ({{ year }}{{ self.almanacMonthDigit() }}) is used.
       </p>
 
       <p>
@@ -437,7 +506,7 @@
       <h3 id="planning"><a href="#planning" class="anchor-link">Planning</a></h3>
 
       <p>
-        The {{ year }} Web Almanac kicked off in March {{ year }} with a <a href="https://x.com/nrllah/status/1764588403792781823">call for contributors</a>. We initialized the project with the same chapters from previous years and the community suggested additional topics, one of which became a new chapter this year: <a href="{{ url_for('chapter', year=year, lang=lang, chapter='cookies') }}">Cookies</a>.
+        The {{ year }} Web Almanac kicked off in {{ self.kickOffMonth() }} with a <a href="{{ self.callForContributorsLink() }}">call for contributors</a>. We initialized the project with the same chapters from previous years and the community suggested additional topics, one of which become a new chapter this year: <a href="{{ url_for('chapter', year=year, lang=lang, chapter='generative-ai') }}">Generative AI</a>.
       </p>
 
       <p>
@@ -449,15 +518,12 @@
       </blockquote>
 
       <p>
-        To that end, this year we&#8217;ve continued our <a href="https://github.com/HTTPArchive/almanac.httparchive.org/discussions/2165">author selection process</a>:
+        To that end, this year we&#8217;ve continued our <a href="https://github.com/HTTPArchive/almanac.httparchive.org/discussions/2165">author selection process with the following in mind</a>:
       </p>
 
       <ul>
         <li>
-          Previous authors were specifically discouraged from writing again to make room for different perspectives.
-        </li>
-        <li>
-          Everyone endorsing {{ year }} authors were asked to be especially conscious not to nominate people who all look or think alike.
+          New authors were specifically encouraged to make room for different perspectives.
         </li>
         <li>
           The project leads reviewed all of the author nominations and made an effort to select authors who will bring new perspectives and amplify the voices of underrepresented groups in the community.
@@ -473,15 +539,15 @@
       <h3 id="analysis"><a href="#analysis" class="anchor-link">Analysis</a></h3>
 
       <p>
-        In April and May {{ year }}, data analysts worked with authors and peer reviewers to come up with a list of metrics that would need to be queried for each chapter. In some cases, <a hreflang="en" href="https://github.com/HTTPArchive/custom-metrics">custom metrics</a> were created to fill gaps in our analytic capabilities.
+        In {{ self.preparingMonths() }}, data analysts worked with authors and peer reviewers to come up with a list of metrics that would need to be queried for each chapter. In some cases, <a hreflang="en" href="https://github.com/HTTPArchive/custom-metrics">custom metrics</a> were created to fill gaps in our analytic capabilities.
       </p>
 
       <p>
-        Throughout May {{ year }}, the HTTP Archive data pipeline crawled several million websites, gathering the metadata to be used in the Web Almanac. These results were post-processed and saved to <a href="https://console.cloud.google.com/bigquery?p=httparchive&d=almanac&page=dataset">BigQuery</a>.
+        Throughout {{ self.dataset() }}, the HTTP Archive data pipeline crawled several million websites, gathering the metadata to be used in the Web Almanac. These results were post-processed and saved to <a href="https://console.cloud.google.com/bigquery?p=httparchive&d=almanac&page=dataset">BigQuery</a>.
       </p>
 
       <p>
-        Being our fith year, we were able to update and reuse the queries written by previous analysts. Still, there were many new metrics that needed to be written from scratch. You can browse all of the queries by year and chapter in our open source <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/{{ year }}">query repository</a> on GitHub.
+        Being our {{ self.edition() }} year, we were able to update and reuse the queries written by previous analysts, though they required <a href="https://har.fyi/guides/migrating-to-crawl-dataset/">rewriting to a new, more efficient dataset</a> that the HTTP Archive moved to this year. Additionally, there were many new metrics that needed to be written from scratch. You can browse all of the queries by year and chapter in our open source <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/{{ year }}">query repository</a> on GitHub.
       </p>
     </section>
 
@@ -505,7 +571,7 @@
       <h2 id="looking-ahead"><a href="#looking-ahead" class="anchor-link">Looking ahead</a></h2>
 
       <p>
-        The {{ year }} edition of the Web Almanac is the fifth in what is mostly an annual tradition (we took a break in 2023) in the web community of introspection and a commitment to positive change. Getting to this point has been a monumental effort thanks to many dedicated <a href="{{ url_for('contributors', year=year, lang=lang) }}">contributors</a> and we hope to leverage as much of this work as possible to make future editions even more streamlined.
+        The {{ year }} edition of the Web Almanac is the {{ self.edition() }} in what is mostly an annual tradition (we took a break in 2023) in the web community of introspection and a commitment to positive change. Getting to this point has been a monumental effort thanks to many dedicated <a href="{{ url_for('contributors', year=year, lang=lang) }}">contributors</a> and we hope to leverage as much of this work as possible to make future editions even more streamlined.
       </p>
     </section>
 {% endblock main_content %}
