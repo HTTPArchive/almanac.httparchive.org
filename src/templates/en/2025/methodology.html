@@ -49,13 +49,14 @@
   QUALIFY
     COUNT(0) = MAX(COUNT(0)) OVER (PARTITION BY client);
 #}
-
 {% block desktopUserAgent %}Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 PTST/250604.160032{% endblock %}
 {% block mobileUserAgent %}Mozilla/5.0 (Linux; Android 8.1.0; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36 PTST/250604.160032{% endblock %}
 
-{% block desktopConnectionSpeed %}Cable (5/1 Mbps 28ms RTT){% endblock %}
-{% block mobileConnectionSpeed %}4G (9 Mbps 170ms RTT){% endblock %}
+{# Get from https://github.com/HTTPArchive/crawl/blob/main/Desktop.json #}
+{% block desktopConnectionSpeed %}Cable (5/1 Mbps 25ms RTT){% endblock %}
 {% block desktopViewport %}1376 x 768px{% endblock %}
+{# Get from https://github.com/HTTPArchive/crawl/blob/main/Mobile.json #}
+{% block mobileConnectionSpeed %}4G (9 Mbps 170ms RTT){% endblock %}
 {% block mobileViewport %}512 x 360px{% endblock %}
 
 {# Use this SQL to get the most commonly used Lighthouse version (check it's over 50%):
@@ -73,13 +74,14 @@
 #}
 {% block lighthouseVersion %}12.8.0{% endblock %}
 
+{# Use this https://github.com/HTTPArchive/wptagent/blob/main/internal/traffic_shaping.py#L102 #}
 {% block lighthouseDesktopCPUSlowDown %}<em>N/A</em>{% endblock %}
 {% block lighthouseMobileCPUSlowDown %}1x/4x{% endblock %}
-{% block lighthouseDesktopDownloadThroughout %}1.6 Mbps{% endblock %}
+{% block lighthouseDesktopDownloadThroughout %}10.0 Mbps{% endblock %}
+{% block lighthouseDesktopUploadThroughout %}10.0 Mbps{% endblock %}
+{% block lighthouseDesktopRTT %40 ms{% endblock %}
 {% block lighthouseMobileDownloadThroughout %}1.6 Mbps{% endblock %}
-{% block lighthouseDesktopUploadThroughout %}0.768 Mbps{% endblock %}
-{% block lighthouseMobileUploadThroughout %}0.768 Mbps{% endblock %}
-{% block lighthouseDesktopRTT %}150 ms{% endblock %}
+{% block lighthouseMobileUploadThroughout %}0.75 Mbps{% endblock %}
 {% block lighthouseMobileRTT %}150 ms{% endblock %}
 
 {# Search for `^  "` as regex in https://github.com/HTTPArchive/wappalyzer/blob/main/src/categories.json #}
