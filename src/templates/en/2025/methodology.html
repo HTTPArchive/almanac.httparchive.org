@@ -76,10 +76,10 @@
 
 {# Use this https://github.com/HTTPArchive/wptagent/blob/main/internal/traffic_shaping.py#L102 #}
 {% block lighthouseDesktopCPUSlowDown %}<em>N/A</em>{% endblock %}
-{% block lighthouseMobileCPUSlowDown %}1x/4x{% endblock %}
 {% block lighthouseDesktopDownloadThroughout %}10.0 Mbps{% endblock %}
 {% block lighthouseDesktopUploadThroughout %}10.0 Mbps{% endblock %}
-{% block lighthouseDesktopRTT %40 ms{% endblock %}
+{% block lighthouseDesktopRTT %}40 ms{% endblock %}
+{% block lighthouseMobileCPUSlowDown %}1x/4x{% endblock %}
 {% block lighthouseMobileDownloadThroughout %}1.6 Mbps{% endblock %}
 {% block lighthouseMobileUploadThroughout %}0.75 Mbps{% endblock %}
 {% block lighthouseMobileRTT %}150 ms{% endblock %}
