@@ -55,9 +55,11 @@
 {# Get from https://github.com/HTTPArchive/crawl/blob/main/Desktop.json #}
 {% block desktopConnectionSpeed %}Cable (5/1 Mbps 25ms RTT){% endblock %}
 {% block desktopViewport %}1920 x 1080px{% endblock %}
+{% block desktopDpr %}1x{% endblock %}
 {# Get from https://github.com/HTTPArchive/crawl/blob/main/Mobile.json #}
 {% block mobileConnectionSpeed %}4G (9 Mbps 170ms RTT){% endblock %}
 {% block mobileViewport %}512 x 360px{% endblock %}
+{% block mobileDpr %}3x{% endblock %}
 
 {# Use this SQL to get the most commonly used Lighthouse version (check it's over 50%):
   SELECT
@@ -310,7 +312,13 @@
           <tr>
             <td>Viewport</td>
             <td>{{ self.desktopViewport() }}</td>
-            <td>{{ self.desktopViewport() }}</td>
+            <td>{{ self.mobileViewport() }}</td>
+          </tr>
+
+          <tr>
+            <td>DPR</td>
+            <td>{{ self.desktopDpr() }}</td>
+            <td>{{ self.mobileDpr() }}</td>
           </tr>
         </tbody>
       </table>
