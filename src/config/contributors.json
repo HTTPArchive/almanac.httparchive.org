@@ -54,6 +54,16 @@
     "twitter": "DesignrKnight",
     "website": "http://designrknight.com/"
   },
+  "abhishektiwari": {
+    "avatar_url": "363839",
+    "github": "abhishektiwari",
+    "name": "Abhishek Tiwari ",
+    "teams": {
+      "2025": [
+        "committee"
+      ]
+    }
+  },
   "kleinab": {
     "avatar_url": "1319324",
     "github": "kleinab",
@@ -679,6 +689,10 @@
         "developers",
         "editors",
         "reviewers"
+      ],
+      "2025": [
+        "committee",
+        "developers"
       ]
     },
     "twitter": "tunetheweb",
@@ -865,6 +879,9 @@
       "2024": [
         "analysts",
         "authors"
+      ],
+      "2025": [
+        "committee"
       ]
     },
     "twitter": "burakGuneli"
@@ -1059,6 +1076,9 @@
         "authors",
         "committee",
         "reviewers"
+      ],
+      "2025": [
+        "committee"
       ]
     }
   },
@@ -3168,6 +3188,9 @@
     "teams": {
       "2024": [
         "authors"
+      ],
+      "2025": [
+        "committee"
       ]
     },
     "threads": "@mikaelaraujo",
@@ -3521,6 +3544,10 @@
         "leads",
         "committee",
         "reviewers"
+      ],
+      "2025": [
+        "leads",
+        "committee"
       ]
     },
     "twitter": "nrllah",
@@ -4158,6 +4185,10 @@
       "2024": [
         "developers",
         "committee"
+      ],
+      "2025": [
+        "developers",
+        "committee"
       ]
     },
     "twitter": "Saptak013",
@@ -4230,6 +4261,7 @@
         "translators"
       ],
       "2025": [
+        "committee",
         "developers",
         "translators"
       ]
@@ -4610,6 +4642,9 @@
       "2024": [
         "authors",
         "committee"
+      ],
+      "2025": [
+        "committee"
       ]
     },
     "website": "https://internet-sicherheit.de/ueber-uns/team/alle-mitarbeiter/urban-tobias-2/"
@@ -4901,6 +4936,9 @@
       "2024": [
         "analysts",
         "authors"
+      ],
+      "2025": [
+        "committee"
       ]
     },
     "twitter": "vekariayash",
