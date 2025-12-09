@@ -8,7 +8,7 @@ TEMPLATES_DIR = ROOT_DIR + "/templates"
 STATIC_DIR = ROOT_DIR + "/static"
 
 SUPPORTED_YEARS = []
-DEFAULT_YEAR = "2024"
+DEFAULT_YEAR = "2025"
 
 DEFAULT_AVATAR_FOLDER_PATH = "/static/images/avatars/"
 AVATAR_SIZE = 200
