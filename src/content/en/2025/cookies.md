@@ -3,18 +3,646 @@
 title: Cookies
 description: Cookies chapter of the 2025 Web Almanac covering the prevalence and structure of cookies on the web.
 hero_alt: Hero image of Web Almanac characters carrying a large cookie, while crumbs are thrown off by another character. Another Web Almanac character is following the trail of cookies with a detective hat and a magnifying glass.
-authors: []
+authors: [yohhaan]
 reviewers: []
-analysts: []
+analysts: [ChrisBeeti]
 editors: []
 translators: []
 results: https://docs.google.com/spreadsheets/d/1ZirsnaXgbOMzBmt0X2eMMu3rVJvWCtQgE7pNG7fKcvc/edit
-featured_quote: ...
-featured_stat_1: ...
-featured_stat_label_1: ...
-featured_stat_2: ...
-featured_stat_label_2: ...
-featured_stat_3: ...
-featured_stat_label_3: ...
-doi: ...
+yohhaan_bio: Yohan Beugin is a Ph.D. student in the Department of Computer Sciences at the University of Wisconsin–Madison where he is a member of the Security and Privacy Research Group and advised by Prof. Patrick McDaniel. He is interested in building more secure, privacy-preserving, and trustworthy systems. His current research so far has focused on security of open-sourec software as well as tracking and privacy in online advertising.
+featured_quote: TODO
+featured_stat_1: 60%
+featured_stat_label_1: Cookies that are third-party
+featured_stat_2: 11%
+featured_stat_label_2: First-party desktop cookies having `SameSite=None`
+featured_stat_3: 10%
+featured_stat_label_3: Third-party cookies that are partitioned (CHIPS)
+doi: ...TODO
 ---
+
+## Introduction
+
+[Cookies](https://developer.mozilla.org/docs/Web/HTTP/Cookies) allow websites to save data and maintain state information across HTTP requests, a stateless protocol. Web applications use cookies for several purposes, like authentication, fraud prevention and security, or remembering preferences and user choices, etc. However, ever since their introduction in the mid-1990s, cookies have also played a dominant role in online tracking of web users.
+
+Over the years, browser vendors such as Brave, Firefox, and Safari have imposed restrictions, partitioned, and removed third-party cookies. While Chrome initially appeared to follow in these same steps by announcing <a hreflang="en" href="https://blog.chromium.org/2020/01/building-more-private-web-path-towards.html">plans to block all third-party cookies</a>, several delays and postponements later, Google eventually decided to <a hreflang="en" href="https://privacysandbox.com/news/update-on-plans-for-privacy-sandbox-technologies/">maintain their current approach in Chrome</a>. As a result, cookies—the focus of this 2025 Web Almanac Chapter—remain an essential component in today's web landscape.
+
+In the chapter below, we measure and report on the prevalence and structure of web cookies encountered on the webpages visited by the HTTP Archive crawl of July 2025. The majority of these results, except when mentioned otherwise, are for the top one million (top 1M) most popular websites according to their rank in the Chrome User Experience report (i.e., CrUX rank). Results are also shown for both desktop and mobile devices; although, in practice for our results we rarely any significant difference between the two types of devices.
+
+## Background
+
+To avoid repetitions and overlap with concepts and definitions already explained in the 2024 Cookies chapter, we refer interested readers to last year's [Definitions section](../2024/cookies#definitions) for (a) an overview of the different types of cookies and (b) the privacy and security risks they can pose.
+
+{# TODO check that links to 2024 chapters are correct #}
+
+{# TODO resolves all todos left in document #}
+
+## First and third-party prevalence
+
+{{ figure_markup(
+  image="first-and-third-party-prevalence.png",
+  caption="First- and third-party prevalence.",
+  description="Bar chart showing the prevalence of first- and third-party cookies on desktop and mobile clients. On desktop: 41% first- and 59% third-party cookies. On mobile: 40% first- and 60% third-party.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSzdHAn-vwJ-Z05NYWZrImgKaX0q5D-jgWay8FD9lMDj2jr3cEjozE083JOSi6cZZX37vVD2TjEKw28/pubchart?oid=133146154&format=interactive",
+  sheets_gid="1982273020",
+  sql_file="prevalence_type_attributes_per_rank.sql"
+  )
+}}
+
+<!-- markdownlint-disable-next-line MD051 -->
+The overall prevalence of first- and third-party cookies on the top 1M most popular websites from the HTTP Archive crawl of July 2025 is similar to last year's distribution. On both desktop and mobile devices, 40% of cookies are first-party and 60% third-party ([Figure 1](#fig-1)). Below, we report on the same first- and third-party split across different CrUX ranks.
+
+{{ figure_markup(
+  image="first-and-third-party-prevalence-by-rank-desktop.png",
+  caption="First- and third-party prevalence of cookies by rank on desktop clients.",
+  description="Bar chart showing the prevalence of first- and third-party cookies on desktop clients according to the popularity of the website. We see that more popular websites set significantly more third-party cookies. For the top 1k most popular websites on desktop clients, 78% of cookies set are third-party, while for the top 1M websites, 59% of cookies are third-party.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSzdHAn-vwJ-Z05NYWZrImgKaX0q5D-jgWay8FD9lMDj2jr3cEjozE083JOSi6cZZX37vVD2TjEKw28/pubchart?oid=1437171045&format=interactive",
+  sheets_gid="1982273020",
+  sql_file="prevalence_type_attributes_per_rank.sql"
+  )
+}}
+
+{{ figure_markup(
+  image="first-and-third-party-prevalence.png-by-rank-mobile.png",
+  caption="First- and third-party prevalence of cookies by rank on mobile clients.",
+  description="Bar chart showing the prevalence of first- and third-party cookies on mobile clients according to the popularity of the website. We see that more popular websites set significantly more third-party cookies. For the top 1k most popular websites on desktop clients, 78% of cookies set are third-party, while for the top 1M websites, 60% of cookies are third-party.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSzdHAn-vwJ-Z05NYWZrImgKaX0q5D-jgWay8FD9lMDj2jr3cEjozE083JOSi6cZZX37vVD2TjEKw28/pubchart?oid=76250674&format=interactive",
+  sheets_gid="1982273020",
+  sql_file="prevalence_type_attributes_per_rank.sql"
+  )
+}}
+
+<!-- markdownlint-disable-next-line MD051 -->
+We observe from [Figure 2](#fig-2) and [Figure 3](#fig-3) that the most visited websites tend to set significantly more third-party cookies (78% of cookies on the top 1k) than others visited less often (just below 50% on top 10M). This may be explained by the fact that more popular websites also include more third-party content and scripts that in turns set third-party cookies to enable different functionalities.
+
+## Cookie attributes
+
+{{ figure_markup(
+  image="cookies-attributes-overview-desktop.png",
+  caption="An overview of cookie attributes for desktop clients.",
+  description="This figures gives an overview of how cookie attributes are used for desktop clients for both first- and third-party cookies. 100% of third-party cookies include the `SameSite` and `Secure` attributes. Only 1% of first-party cookies and 10% of third-party cookies use `Partioned`. 19% of first-party cookies set their `Session` attribute, while this is the case for only 7% of third-party cookies. Finally, 12% of first-party cookies and 28% of third-party cookies use the `HttpOnly` attribute.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSzdHAn-vwJ-Z05NYWZrImgKaX0q5D-jgWay8FD9lMDj2jr3cEjozE083JOSi6cZZX37vVD2TjEKw28/pubchart?oid=1053912620&format=interactive",
+  sheets_gid="1982273020",
+  sql_file="prevalence_attributes_per_type.sql"
+  )
+}}
+
+{{ figure_markup(
+  image="cookies-attributes-overview-mobile.png",
+  caption="An overview of cookie attributes for mobile clients.",
+  description="This figures gives an overview of how cookie attributes are used for mobile clients for both first- and third-party cookies. We observe the exact same results as for desktop clients. 100% of third-party cookies include the `SameSite` and `Secure` attributes. Only 1% of first-party cookies and 9% of third-party cookies use `Partioned`. 19% of first-party cookies set their `Session` attribute, while this is the case for only 5% of third-party cookies. Finally, 12% of first-party cookies and 26% of third-party cookies use the `HttpOnly` attribute.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSzdHAn-vwJ-Z05NYWZrImgKaX0q5D-jgWay8FD9lMDj2jr3cEjozE083JOSi6cZZX37vVD2TjEKw28/pubchart?oid=435743769&format=interactive",
+  sheets_gid="1982273020",
+  sql_file="prevalence_attributes_per_type.sql"
+  )
+}}
+
+<!-- markdownlint-disable-next-line MD051 -->
+[Figure 4](#fig-4) and [Figure 5](#fig-5) showcase the different cookie [attributes](https://developer.mozilla.org/docs/Web/HTTP/Headers/Set-Cookie) for each type of cookies observed.
+
+### `Partitioned` (CHIPS proposal)
+
+On [compatible browsers](https://developer.mozilla.org/docs/Web/Privacy/Privacy_sandbox/Partitioned_cookies#browser_compatibility), partitioned cookies prevent third-party cookies to be used for cross-site tracking by placing them into a storage partitioned per top-level site. In July 2025, about 10% of third-party cookies on the top 1M are partitioned. We observe here a slight increase in adoption of this relatively new attribute in comparison to the 6% of last year's results.
+
+{{ figure_markup(
+  image="top-third-party-CHIPS.png",
+  caption="Top partitioned cookies (CHIPS) in third-party context.",
+  description="A chart showing the top third-party domains setting partitioned cookies. The top partitioned cookies in third-party context are `cf_clearance` set by Cloudflare and is used for anti-bot challenge.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSzdHAn-vwJ-Z05NYWZrImgKaX0q5D-jgWay8FD9lMDj2jr3cEjozE083JOSi6cZZX37vVD2TjEKw28/pubchart?oid=1834436287&format=interactive",
+  sheets_gid="581303793",
+  sql_file ="CHIPS_top_20_third_party_cookies.sql"
+  )
+}}
+
+<!-- markdownlint-disable-next-line MD051 -->
+[Figure 6](#fig-6) shows the 10 most common partitioned cookies (name and domain) found in third-party context on webpages in July 2025. Here, we observe a major change from last year's analysis, indeed the overall usage of third-party partitioned cookies in 2025 appears to have plummeted to very low levels. Interestingly, partitioned cookies that were somewhat predominant in 2024 (on about 9% of websites with partitioned cookies) are not present anymore; two of these cookies were set by YouTube and another one was the `receive-cookie-deprecation` cookie set by domains that [participated in the testing phase](https://developers.google.com/privacy-sandbox/private-advertising/setup/web/chrome-facilitated-testing) of Chrome's Privacy Sandbox. Instead, Cloudflare's `cf_clearance` cookie accounts for the entirety of the top 10 most common partitioned third-party cookies in 2025.
+
+So, in the past year YouTube appears to have altered how these cookies were set on `youtube.com` and on video iframes embedded on other websites. Potential reasons that could explain these changes include: incorrect setting, A/B testing, and more likely infrastructure or policy updates following Google's announcements on the pause and then deprecation of Privacy Sandbox APIs, despite support for partitioned cookies (CHIPS proposal) still being continued.
+
+{{ figure_markup(
+  image="top-first-party-CHIPS.png",
+  caption="Top partitioned cookies (CHIPS) in first-party context.",
+  description="A chart showing the top first-party partitioned cookies. The top cookie `cf_clearance` is set by Cloudflare on about 92% of pages with partitioned cookies, and is related to bot detection.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSzdHAn-vwJ-Z05NYWZrImgKaX0q5D-jgWay8FD9lMDj2jr3cEjozE083JOSi6cZZX37vVD2TjEKw28/pubchart?oid=1232746047&format=interactive",
+  sheets_gid="581303793",
+  sql_file="CHIPS_top_20_first_party_cookies.sql"
+  )
+}}
+
+In 2025, we continue to observe that 1% of first-party cookies are set as partitioned; this might be a bit surprising as the CHIPS proposal is mainly about partitioning third-party cookies, and even if it mentions a <a hreflang="en" href="https://github.com/privacycg/CHIPS?tab=readme-ov-file#first-party-chips">specific uncommon case</a> for partitioned first-party cookies, the <a hreflang="en" href="https://github.com/privacycg/CHIPS/issues/51">behavior requirement</a> appears unclear in first-party context. In 2025, more than 90% of these first-party partitioned cookies are Cloudflare's `cf_clearance` cookie related to bot detection. Comparing to 2024's analysis, we remark here again that `receive-cookie-deprecation`, set by domains participating in Privacy Sandbox tests, going away.
+
+### Session
+
+19% of first-party and 7% of third-party cookies are session cookies, i.e., temporary cookies only valid for a single user session that expire once the user quits the corresponding website they were set on, or closes their web browser, whichever happens first.
+
+### `HttpOnly`
+
+[`HttpOnly`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Set-Cookie#httponly) cookies provide some mitigation against [cross-site scripting (XSS)](https://developer.mozilla.org/docs/Glossary/Cross-site_scripting) as they can not be accessed by javascript code (but are still sent along `XMLHttpRequest` or `fetch` requests initiated from javascript). 12% and a little more than 26% of first- and third-party cookies have this attribute set, respectively.
+
+### `Secure`
+
+[`Secure`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Set-Cookie#secure) cookies are only sent to requests made through HTTPs, same trend as last year here; while only 24% of first-party cookies set this attribute, all third-party have to set it if they want to use `SameSite=None` (which they all do, see below).
+
+### `SameSite`
+
+{{ figure_markup(
+  image="same-site-desktop.png",
+  caption="`SameSite` attribute for cookies on desktop client.",
+  description="Shows the prevalence of the `SameSite` attribute and its value for both first-party and third-party cookies on desktop clients. 3% of first-party cookies set the `SameSite` attribute to `Strict`, 19% use `SameSite=Lax` (which is the default), 11% set the value to `None` and 66% do not specify the value of `SameSite`. Nearly 100% of third-party cookies set the `SameSite` attribute to `None`, in order for these cookies to be sent in a cross-site context.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSzdHAn-vwJ-Z05NYWZrImgKaX0q5D-jgWay8FD9lMDj2jr3cEjozE083JOSi6cZZX37vVD2TjEKw28/pubchart?oid=42361140&format=interactive",
+  sheets_gid="1982273020",
+  sql_file="prevalence_attributes_per_type.sql"
+  )
+}}
+
+{{ figure_markup(
+  image="same-site-mobile.png",
+  caption="`SameSite` attribute for cookies on mobile client.",
+  description="Shows the prevalence of the `SameSite` attribute and its value for both first-party and third-party cookies on mobile clients. We see very similar results as for desktop clients. 3% of first-party cookies set the `SameSite` attribute to `Strict`, 19% use `SameSite=Lax` (which is the default), 11% set the value to None and 63% do not specify the value of `SameSite`. Nearly 100% of third-party cookies set the `SameSite` attribute to `None`, in order for these cookies to be sent in a cross-site context.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSzdHAn-vwJ-Z05NYWZrImgKaX0q5D-jgWay8FD9lMDj2jr3cEjozE083JOSi6cZZX37vVD2TjEKw28/pubchart?oid=413420306&format=interactive",
+  sheets_gid="1982273020",
+  sql_file="prevalence_attributes_per_type.sql"
+  )
+}}
+
+For explanations about the different values for the `SameSite` attribute, we refer to the [2024 Cookies chapter](../2024/cookies#samesite). The overall distribution of this attribute for first- and third-party cookies across clients is similar to last year's: nearly 100% of third-party cookies are sent on cross-site requests (`SameSite=None`) which can enable cross-site tracking. A majority of first-party cookies (66% on desktop, 62% on mobile) do not set this attribute and so are assigned the default `Lax` behavior that 19% other first-party cookies explicitly pick, leaving only 3% setting it to the `Strict` setting, and the remaining 11% being sent on both same-site and cross-site requests (`SameSite=None`).
+
+## Cookie prefixes
+
+{{ figure_markup(
+  image="cookie-prefixes-desktop.png",
+  caption="Cookie prefixes observed on desktop pages.",
+  description="Shows the observed cookies prefixes used on desktop pages. Very few first- and third-party cookies include the `__Host-` or `__Secure-` prefix.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSzdHAn-vwJ-Z05NYWZrImgKaX0q5D-jgWay8FD9lMDj2jr3cEjozE083JOSi6cZZX37vVD2TjEKw28/pubchart?oid=908965565&format=interactive",
+  sheets_gid="1982273020",
+  sql_file="prevalence_attributes_per_type.sql"
+  )
+}}
+
+{{ figure_markup(
+  image="cookie-prefixes-mobile.png",
+  caption="Cookie prefixes observed on mobile pages.",
+  description="Shows the observed cookies prefixes used on mobile pages. Very few first- and third-party cookies include the `__Host-` or `__Secure-` prefix.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSzdHAn-vwJ-Z05NYWZrImgKaX0q5D-jgWay8FD9lMDj2jr3cEjozE083JOSi6cZZX37vVD2TjEKw28/pubchart?oid=1209286948&format=interactive",
+  sheets_gid="1982273020",
+  sql_file="prevalence_attributes_per_type.sql"
+  )
+}}
+
+Two [cookie prefixes](https://developer.mozilla.org/docs/Web/HTTP/Cookies#cookie_prefixes) `__Host-` and `__Secure-` can be used in the cookie name to indicate that they can only be set or modified by a secure HTTPs origin (for more details see the [2024 Cookies chapter](../2024/cookies#cookie-prefixes)). Here, we draw the same conclusion as last year: these prefixes have seen very low adoption on the web since their introduction 10 years ago, and so, in practice the defense-in-depth measure that they provide remains unused.
+
+## Top first and third-party cookies and domains setting them
+
+{{ figure_markup(
+  image="top-first-party-cookies-set.png",
+  caption="Top first-party cookies set.",
+  description="The chart shows the most widely-set first-party cookies. Google Analytics sets the `_ga` and `_gcl_au` cookies, which are used for website statistics, analytics reports, and targeted advertising, on more than 60% and 25% of websites, respectively, for both mobile and desktop clients.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSzdHAn-vwJ-Z05NYWZrImgKaX0q5D-jgWay8FD9lMDj2jr3cEjozE083JOSi6cZZX37vVD2TjEKw28/pubchart?oid=219782191&format=interactive",
+  sheets_gid="503090386",
+  sql_file="top_20_first_party_cookies.sql"
+  )
+}}
+
+<!-- markdownlint-disable-next-line MD051 -->
+[Figure 12](#fig-12) reports the top 10 most common first-party cookies names being set. Google Analytics sets the `_ga` and `_gcl_au` cookies, which are used for website statistics, analytics reports, and targeted advertising, on more than 60% and 25% of websites. Other cookies present in this top 10 are related to online tracking, session cookies used to identify user's sessions, or performance.
+
+{{ figure_markup(
+  image="top-third-party-cookies-set.png",
+  caption="Top third-party cookies and domains that set them.",
+  description="The chart shows the most widely-set third-party cookies. DoubleClick sets third-party advertising cookies on a little over 35% of pages. Microsoft also sets advertising cookies on 23% of pages. All top 10 domains setting third-party cookies are related to tracking and advertising.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSzdHAn-vwJ-Z05NYWZrImgKaX0q5D-jgWay8FD9lMDj2jr3cEjozE083JOSi6cZZX37vVD2TjEKw28/pubchart?oid=232078905&format=interactive",
+  sheets_gid="503090386",
+  sql_file="top_20_third_party_cookies.sql"
+  )
+}}
+
+<!-- markdownlint-disable-next-line MD051 -->
+Similarly, [Figure 13](#fig-13) shows the top 10 most common third-party cookies being created on the top 1M websites. The `IDE` and `test_cookie` cookies are set by `doubleclick.net` (owned by Google) and are present on more than 35% and 25% of websites. DoubleClick checks if a user's web browser supports third-party cookies by trying to set `test_cookie`. `MUID` from Microsoft comes next, present on more than 23% of websites, and is also used for targeted advertising and cross-site tracking. As already pointed out in the [`Partitioned` cookies](#partitioned-chips-proposal) section, this year we do not observe anymore the `YSC` and `VISITOR_INFO1_LIVE` from YouTube among top third-party cookies.
+
+{# TODO would be nice to investigate a little more what is behind youtube not using these anymore and maybe be able to say more here #}
+
+{{ figure_markup(
+  image="top-cookie-domains.png",
+  caption="Top registrable domains setting cookies.",
+  description="The chart shows the most common domains that set cookies on the web. Google's owned advertising platform DoubleClick sets cookies on more than 33% of the top 1M websites while others in this top 10 domains are at about 5% to 15%.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSzdHAn-vwJ-Z05NYWZrImgKaX0q5D-jgWay8FD9lMDj2jr3cEjozE083JOSi6cZZX37vVD2TjEKw28/pubchart?oid=483296297&format=interactive",
+  sheets_gid="503090386",
+  sql_file="top_20_domains_setting_cookies.sql"
+  )
+}}
+
+<!-- markdownlint-disable-next-line MD051 -->
+Perhaps, unsurprisingly from prior results, the 10 most common domains ([Figure 14](#fig-14)) that set cookies on the web are all involved with search, targeting, and advertising services. Google's combined coverage (`doubleclick.net`, `google.com`, and `youtube.com`) is reaching more than 50% of the websites, and Microsoft's (`bing.com`, `clarity.ms`, `linkedin.com`) 30%.
+
+## Number of cookies set by websites
+
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Number of cookies (desktop top 1M) </th>
+        <th>First-party</th>
+        <th>Third-party</th>
+        <th>All</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>min</td>
+        <td class="numeric">1</td>
+        <td class="numeric">1</td>
+        <td class="numeric">1</td>
+      </tr>
+      <tr>
+        <td>p25</td>
+        <td class="numeric">3</td>
+        <td class="numeric">2</td>
+        <td class="numeric">4</td>
+      </tr>
+      <tr>
+        <td>median</td>
+        <td class="numeric">7</td>
+        <td class="numeric">7</td>
+        <td class="numeric">9</td>
+      </tr>
+      <tr>
+        <td>p75</td>
+        <td class="numeric">13</td>
+        <td class="numeric">16</td>
+        <td class="numeric">23</td>
+      </tr>
+      <tr>
+        <td>p90</td>
+        <td class="numeric">22</td>
+        <td class="numeric">40</td>
+        <td class="numeric">44</td>
+      </tr>
+      <tr>
+        <td>p99</td>
+        <td class="numeric">45</td>
+        <td class="numeric">399</td>
+        <td class="numeric">395</td>
+      </tr>
+      <tr>
+        <td>max</td>
+        <td class="numeric">178</td>
+        <td class="numeric">885</td>
+        <td class="numeric">915</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Statistics for number of cookies set on desktop pages.") }}</figcaption>
+</figure>
+
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Number of cookies (mobile top 1M) </th>
+        <th>First-party</th>
+        <th>Third-party</th>
+        <th>All</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>min</td>
+        <td class="numeric">1</td>
+        <td class="numeric">1</td>
+        <td class="numeric">1</td>
+      </tr>
+      <tr>
+        <td>p25</td>
+        <td class="numeric">3</td>
+        <td class="numeric">2</td>
+        <td class="numeric">4</td>
+      </tr>
+      <tr>
+        <td>median</td>
+        <td class="numeric">6</td>
+        <td class="numeric">4</td>
+        <td class="numeric">9</td>
+      </tr>
+      <tr>
+        <td>p75</td>
+        <td class="numeric">12</td>
+        <td class="numeric">15</td>
+        <td class="numeric">22</td>
+      </tr>
+      <tr>
+        <td>p90</td>
+        <td class="numeric">21</td>
+        <td class="numeric">39</td>
+        <td class="numeric">43</td>
+      </tr>
+      <tr>
+        <td>p99</td>
+        <td class="numeric">45</td>
+        <td class="numeric">400</td>
+        <td class="numeric">396</td>
+      </tr>
+      <tr>
+        <td>max</td>
+        <td class="numeric">178</td>
+        <td class="numeric">801</td>
+        <td class="numeric">831</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Statistics for number of cookies set on mobile pages.") }}</figcaption>
+</figure>
+
+Websites set a median of 9 cookies of any type overall, 7 first-party cookies, and 5 or 6 third-party cookies. The tables above report several other statistics about the number of cookies observed per website and the figures below display their cumulative distribution functions (cdf). For example: on desktop a maximum of 178 first-party and 885 third-party cookies are set per website.
+
+{# TODO: if any other idea of what to say here, feel free to add #}
+
+{{ figure_markup(
+  image="number-cookies-cdf-desktop.png",
+  caption="Number of cookies per website (cdf) for desktop pages.",
+  description="The graph shows the cumulative distribution function for the number of cookies set on desktop pages. We see that more websites have a number of first-party cookies that is closer to the maximum of first-party cookies observed, than for third-party cookies.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSzdHAn-vwJ-Z05NYWZrImgKaX0q5D-jgWay8FD9lMDj2jr3cEjozE083JOSi6cZZX37vVD2TjEKw28/pubchart?oid=160162622&format=interactive",
+  sheets_gid="1535389309",
+  sql_file="nb_cookies_cdf.sql"
+  )
+}}
+
+{{ figure_markup(
+  image="number-cookies-cdf-mobile.png",
+  caption="Number of cookies per website (cdf) for mobile pages.",
+  description="The graph shows the cumulative distribution function for the number of cookies set on mobile pages. We see that more websites have a number of first-party cookies that is closer to the maximum of first-party cookies observed, than for third-party cookies. Additionally, we observe very similar results for both desktop and mobile websites.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSzdHAn-vwJ-Z05NYWZrImgKaX0q5D-jgWay8FD9lMDj2jr3cEjozE083JOSi6cZZX37vVD2TjEKw28/pubchart?oid=569578852&format=interactive",
+  sheets_gid="1448286433",
+  sql_file="nb_cookies_cdf.sql"
+  )
+}}
+
+## Size of cookies
+
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Size of cookies (desktop top 1M) in bytes </th>
+        <th>First-party</th>
+        <th>Third-party</th>
+        <th>All</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>min</td>
+        <td class="numeric">1</td>
+        <td class="numeric">1</td>
+        <td class="numeric">1</td>
+      </tr>
+      <tr>
+        <td>p25</td>
+        <td class="numeric">29</td>
+        <td class="numeric">22</td>
+        <td class="numeric">24</td>
+      </tr>
+      <tr>
+        <td>median</td>
+        <td class="numeric">41</td>
+        <td class="numeric">39</td>
+        <td class="numeric">40</td>
+      </tr>
+      <tr>
+        <td>p75</td>
+        <td class="numeric">67</td>
+        <td class="numeric">59</td>
+        <td class="numeric">64</td>
+      </tr>
+      <tr>
+        <td>p90</td>
+        <td class="numeric">157</td>
+        <td class="numeric">145</td>
+        <td class="numeric">149</td>
+      </tr>
+      <tr>
+        <td>p99</td>
+        <td class="numeric">414</td>
+        <td class="numeric">321</td>
+        <td class="numeric">338</td>
+      </tr>
+      <tr>
+        <td>max</td>
+        <td class="numeric">4090</td>
+        <td class="numeric">4096</td>
+        <td class="numeric">4096</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Statistics for size of cookies set on desktop pages.") }}</figcaption>
+</figure>
+
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Size of cookies (mobile top 1M) in bytes </th>
+        <th>First-party</th>
+        <th>Third-party</th>
+        <th>All</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>min</td>
+        <td class="numeric">1</td>
+        <td class="numeric">1</td>
+        <td class="numeric">1</td>
+      </tr>
+      <tr>
+        <td>p25</td>
+        <td class="numeric">22</td>
+        <td class="numeric">29</td>
+        <td class="numeric">24</td>
+      </tr>
+      <tr>
+        <td>median</td>
+        <td class="numeric">39</td>
+        <td class="numeric">41</td>
+        <td class="numeric">40</td>
+      </tr>
+      <tr>
+        <td>p75</td>
+        <td class="numeric">62</td>
+        <td class="numeric">67</td>
+        <td class="numeric">65</td>
+      </tr>
+      <tr>
+        <td>p90</td>
+        <td class="numeric">145</td>
+        <td class="numeric">162</td>
+        <td class="numeric">150</td>
+      </tr>
+      <tr>
+        <td>p99</td>
+        <td class="numeric">326</td>
+        <td class="numeric">414</td>
+        <td class="numeric">388</td>
+      </tr>
+      <tr>
+        <td>max</td>
+        <td class="numeric">4096</td>
+        <td class="numeric">4081</td>
+        <td class="numeric">4096</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Statistics for size of cookies set on mobile pages.") }}</figcaption>
+</figure>
+
+We find that the median size across all observed cookies is 40 bytes and with a maximum of 4K bytes which is consistent with the limits defined in <a hreflang="en" href="https://datatracker.ietf.org/doc/html/rfc6265#section-6.1">RFC 6265</a>. Similar to last year, we observe some cookies that are of a single byte in size, these are likely set by error by empty `Set-Cookie` headers.
+
+{# TODO: if any other idea of what to say here, feel free to add #}
+
+{{ figure_markup(
+  image="size-cookies-cdf-desktop-mobile.png",
+  caption="Size of cookies per website (cdf) for desktop and mobile pages.",
+  description="The graph shows the cumulative distribution function for the number of cookies set on desktop and mobile pages. We see a very similar distribution for cookies sizes for both desktop and mobile clients.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSzdHAn-vwJ-Z05NYWZrImgKaX0q5D-jgWay8FD9lMDj2jr3cEjozE083JOSi6cZZX37vVD2TjEKw28/pubchart?oid=1496593333&format=interactive",
+  sheets_gid="1499552173",
+  sql_file = 'size_cookies_cdf.sql'
+  )
+}}
+
+<!-- markdownlint-disable-next-line MD051 -->
+[Figure 17](#fig-17) corresponds to the cumulative distribution function (cdf) of the size of all the cookies seen on the top 1M websites for each client.
+
+{# TODO: if any other idea of what to say here, feel free to add #}
+
+## Persistence (expiration)
+
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Age of cookies (desktop top 1M) in days </th>
+        <th>First-party</th>
+        <th>Third-party</th>
+        <th>All</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>min</td>
+        <td class="numeric">0</td>
+        <td class="numeric">0</td>
+        <td class="numeric">0</td>
+      </tr>
+      <tr>
+        <td>p25</td>
+        <td class="numeric">1</td>
+        <td class="numeric">30</td>
+        <td class="numeric">21</td>
+      </tr>
+      <tr>
+        <td>median</td>
+        <td class="numeric">365</td>
+        <td class="numeric">360</td>
+        <td class="numeric">364</td>
+      </tr>
+      <tr>
+        <td>p75</td>
+        <td class="numeric">395</td>
+        <td class="numeric">365</td>
+        <td class="numeric">390</td>
+      </tr>
+      <tr>
+        <td>p90</td>
+        <td class="numeric">400</td>
+        <td class="numeric">400</td>
+        <td class="numeric">400</td>
+      </tr>
+      <tr>
+        <td>p99</td>
+        <td class="numeric">400</td>
+        <td class="numeric">400</td>
+        <td class="numeric">400</td>
+      </tr>
+      <tr>
+        <td>max</td>
+        <td class="numeric">400</td>
+        <td class="numeric">400</td>
+        <td class="numeric">400</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Statistics for age of cookies set on desktop pages.") }}</figcaption>
+</figure>
+
+
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Age of cookies (mobile top 1M) in days </th>
+        <th>First-party</th>
+        <th>Third-party</th>
+        <th>All</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>min</td>
+        <td class="numeric">0</td>
+        <td class="numeric">0</td>
+        <td class="numeric">0</td>
+      </tr>
+      <tr>
+        <td>p25</td>
+        <td class="numeric">1</td>
+        <td class="numeric">30</td>
+        <td class="numeric">30</td>
+      </tr>
+      <tr>
+        <td>median</td>
+        <td class="numeric">365</td>
+        <td class="numeric">270</td>
+        <td class="numeric">360</td>
+      </tr>
+      <tr>
+        <td>p75</td>
+        <td class="numeric">395</td>
+        <td class="numeric">365</td>
+        <td class="numeric">390</td>
+      </tr>
+      <tr>
+        <td>p90</td>
+        <td class="numeric">400</td>
+        <td class="numeric">400</td>
+        <td class="numeric">400</td>
+      </tr>
+      <tr>
+        <td>p99</td>
+        <td class="numeric">400</td>
+        <td class="numeric">400</td>
+        <td class="numeric">400</td>
+      </tr>
+      <tr>
+        <td>max</td>
+        <td class="numeric">400</td>
+        <td class="numeric">400</td>
+        <td class="numeric">400</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Statistics for age of cookies set on mobile pages.") }}</figcaption>
+</figure>
+
+Cookies are set to an expiration date when they are created. If session cookies expire immediately after the session is over ([see previous section](#session)), most first- and third-party cookies do not and have a median age of a full year. The longer cookies live, the longer they can be used for re-identification or cross-site tracking which is why most tracking cookies are typically set to be stored in the browser for a longer time. The maximum age among the cookies that we can observe with the instrumentation and collection of the HTTP Archive Tools is of 400 days, this is aligned with the [hard limits](https://developer.chrome.com/blog/cookie-max-age-expires) that Chrome imposes on cookie `Expires` and `Max-Age` attribute.
+
+{# TODO: if any other idea of what to say here, feel free to add #}
+
+{# TODO (or idea for future): check the issue tab data of Chrome devtools and/or the console warnings related to cookies, data is normally collected in HTTP Archive. There could be a dedicated section in this chapter about it #}
+
+## Conclusion
+
+The observations from this chapter confirm the conclusions from last year's analysis:
+- A majority (60%) of cookies encountered on the web are third-party cookies and popular websites create them the most.
+- Most popular cookies can be linked to advertising, tracking, and analytics use cases.
+- Cookies tend to be long-lived with a median average lifetime of 12 months. Ephemeral session cookies only represent 19% of first- and 7% of third-party cookies.
+- Other restrictions on cookies capabilities are used very little to not at all: if partitioned cookies represent 10% of all third-party cookies which represents a slight uptake from last year's 6%, 100% of third-party cookies have `SameSite=None` allowing them to be sent in cross-site requests and cookies prefixes adoption is almost non-existent.
+
+Additionally, while several web browsers have deprecated or limited third-party cookies due to privacy concerns, Google has decided to still support them in Chrome. Google is also phasing out most technologies from its Privacy Sandbox initiative, initially designed to *``create a thriving web ecosystem that is respectful of users and private by default''*. As a result, whether trackers use third-party cookies and/or switch or complement their approach with first-party cookies, fingerprinting, or develop other techniques to track users online, cookies remain a fundamental piece of the web that continue to pose privacy and security risks for users.
