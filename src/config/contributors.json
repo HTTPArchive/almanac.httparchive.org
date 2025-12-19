@@ -1078,6 +1078,7 @@
         "reviewers"
       ],
       "2025": [
+        "analysts",
         "committee"
       ]
     }
@@ -4968,6 +4969,9 @@
       "2024": [
         "authors",
         "analysts"
+      ],
+      "2025": [
+        "authors"
       ]
     },
     "website": "https://yohan.beugin.org"
@@ -5099,3 +5103,4 @@
     "twitter": "_cybai"
   }
 }
+
