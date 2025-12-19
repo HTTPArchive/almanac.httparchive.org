@@ -692,7 +692,8 @@
       ],
       "2025": [
         "committee",
-        "developers"
+        "developers",
+        "analysts"
       ]
     },
     "twitter": "tunetheweb",
@@ -1905,6 +1906,9 @@
     "name": "Hidde de Vries",
     "teams": {
       "2024": [
+        "reviewers"
+      ],
+      "2025": [
         "reviewers"
       ]
     },
@@ -3230,6 +3234,10 @@
       "2024": [
         "analysts",
         "authors"
+      ],
+      "2025": [
+        "authors",
+        "analysts"
       ]
     },
     "website": "https://accessibility.civicactions.com/"
@@ -4233,6 +4241,9 @@
       ],
       "2022": [
         "authors"
+      ],
+      "2025": [
+        "reviewers"
       ]
     },
     "twitter": "scottdavis99",
@@ -5097,5 +5108,30 @@
       ]
     },
     "twitter": "_cybai"
+  },
+  "tricinel": {
+    "avatar_url": "216008",
+    "name": "Bogdan Lazar",
+    "github": "tricinel",
+    "bluesky": "bogdanlazar.com",
+    "linkedin": "tricinel",
+    "website": "https://bogdanlazar.com",
+    "teams": {
+      "2025": [
+        "authors", "editors"
+      ]
+    }
+  },
+  "atierney": {
+    "avatar_url": "9468139",
+    "name": "Aidan Tierney",
+    "github": "AidanA11y",
+    "linkedin": "aidantierney",
+    "bluesky": "aidantierney.bsky.social",
+    "teams": {
+      "2025": [
+        "reviewers"
+      ]
+    }
   }
 }
