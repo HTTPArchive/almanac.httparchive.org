@@ -74,16 +74,6 @@
       ]
     }
   },
-  "onurguler18": {
-    "avatar_url": "39603688",
-    "github": "onurguler18",
-    "name": "Onur Güler",
-    "teams": {
-      "2024": [
-        "analysts"
-      ]
-    }
-  },
   "argyleink": {
     "avatar_url": "1134620",
     "github": "argyleink",
@@ -169,6 +159,18 @@
     },
     "twitter": "MrAhmadAwais",
     "website": "https://AhmadAwais.com"
+  },
+  "atierney": {
+    "avatar_url": "9468139",
+    "name": "Aidan Tierney",
+    "github": "AidanA11y",
+    "linkedin": "aidantierney",
+    "bluesky": "aidantierney.bsky.social",
+    "teams": {
+      "2025": [
+        "reviewers"
+      ]
+    }
   },
   "akshay-ranganath": {
     "avatar_url": "54864775",
@@ -781,6 +783,20 @@
       ]
     },
     "website": "https://iambharat.me"
+  },
+  "tricinel": {
+    "avatar_url": "216008",
+    "name": "Bogdan Lazar",
+    "github": "tricinel",
+    "bluesky": "bogdanlazar.com",
+    "linkedin": "tricinel",
+    "website": "https://bogdanlazar.com",
+    "teams": {
+      "2025": [
+        "authors",
+        "editors"
+      ]
+    }
   },
   "borisschapira": {
     "avatar_url": "284742",
@@ -3576,6 +3592,16 @@
     "twitter": "oluoluoxenfree",
     "website": "https://olu.online/"
   },
+  "onurguler18": {
+    "avatar_url": "39603688",
+    "github": "onurguler18",
+    "name": "Onur Güler",
+    "teams": {
+      "2024": [
+        "analysts"
+      ]
+    }
+  },
   "pankajparkar": {
     "avatar_url": "5320044",
     "github": "pankajparkar",
@@ -5108,30 +5134,5 @@
       ]
     },
     "twitter": "_cybai"
-  },
-  "tricinel": {
-    "avatar_url": "216008",
-    "name": "Bogdan Lazar",
-    "github": "tricinel",
-    "bluesky": "bogdanlazar.com",
-    "linkedin": "tricinel",
-    "website": "https://bogdanlazar.com",
-    "teams": {
-      "2025": [
-        "authors", "editors"
-      ]
-    }
-  },
-  "atierney": {
-    "avatar_url": "9468139",
-    "name": "Aidan Tierney",
-    "github": "AidanA11y",
-    "linkedin": "aidantierney",
-    "bluesky": "aidantierney.bsky.social",
-    "teams": {
-      "2025": [
-        "reviewers"
-      ]
-    }
   }
 }
