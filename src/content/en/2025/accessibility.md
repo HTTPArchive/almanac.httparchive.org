@@ -331,7 +331,7 @@ After a multi-year decline, heading hierarchy scores improved by almost 2% in 20
 
 {{ figure_markup(
   caption="Mobile sites passing the Lighthouse audit for properly ordered heading.",
-  content="58.7%",
+  content="59%",
   classes="big-number",
   sheets_gid="1312474493",
   sql_file="lighthouse_a11y_audits.sql"
@@ -547,7 +547,7 @@ The `alt` attribute provides a textual description of an image. It's essential f
 
 {{ figure_markup(
   caption="Percentage of images passing the Lighthouse audit for images with `alt` text.",
-  content="68.9%",
+  content="69%",
   classes="big-number",
   sheets_gid="1312474493",
   sql_file="lighthouse_a11y_audits.sql"
@@ -630,7 +630,9 @@ The increased use of the ARIA `button` role raises concerns. It often indicates 
   description="A bar chart showing the ten most common ARIA roles on desktop and mobile pages. `button` is the most widely used role (53.06% on desktop and 53.56% on mobile), followed by `presentation` (42.48% and 41.54%) and `dialog` (34.05% and 36.01%). Other frequently used roles include `search`, `navigation`, `img`, `main`, `region`, `group`, and `status`, all appearing on roughly 15–25% of pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQFD-7C6Jv6q1JyviDsKosRlVwaok7g7nRCQ9NGMw5MaAAohL7EcDejVwgp13Z_T2S_57Zi0YaVb7st/pubchart?oid=1028393265&format=interactive",
   sheets_gid="2081252628",
-  sql_file="common_aria_role"
+  sql_file="common_aria_role",
+  width=600,
+  height=676
   )
 }}
 
@@ -667,7 +669,9 @@ These changes suggest developers increasingly assign accessible names programmat
   description="A bar chart showing the ten most common ARIA attributes on desktop and mobile pages. `aria-label` leads at 70% on desktop and 68% on mobile, followed closely by `aria-hidden` (66% on both). Other frequently used attributes include `aria-expanded` (40% and 38%), `aria-controls` (34% and 33%), `aria-live` (33% and 32%), and `aria-labelledby` (30% and 29%), with usage decreasing down to `aria-describedby` at 17% on both desktop and mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQFD-7C6Jv6q1JyviDsKosRlVwaok7g7nRCQ9NGMw5MaAAohL7EcDejVwgp13Z_T2S_57Zi0YaVb7st/pubchart?oid=318641062&format=interactive",
   sheets_gid="1821302308",
-  sql_file="common_element_attributes.sql"
+  sql_file="common_element_attributes.sql",
+  width=780,
+  height=676
   )
 }}
 
@@ -905,7 +909,8 @@ This lag likely reflects implementation challenges, transitional periods for exi
   description="A table ranking countries by average accessibility score across their top-level domains, with the United States leading at 85.63%, followed closely by Canada (84.98%), the United Kingdom (84.96%), and Australia (84.59%). Germany (84.53%) and other European countries like the Netherlands (83.86%) and France (83.82%) also rank highly, while Asian countries like Japan (81.54%), South Korea (79.39%), and Taiwan (79.19%) score lower.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQFD-7C6Jv6q1JyviDsKosRlVwaok7g7nRCQ9NGMw5MaAAohL7EcDejVwgp13Z_T2S_57Zi0YaVb7st/pubchart?oid=1913573905&format=interactive",
   sheets_gid="134589352",
-  sql_file="lighthouse_score_by_country.sql"
+  sql_file="lighthouse_score_by_country.sql",
+  height=500
   )
 }}
 
@@ -931,7 +936,9 @@ Traditional TLDs like `.com`, `.org`, `.net` don't rank as accessibility leaders
   description="A bar chart ranking top-level domains (TLDs) by average accessibility score. Educational (.edu) and government (.gov) domains lead at 89.1% and 87.6%, followed by .ai (87.2%), .no (87.0%), and .fi (86.5%). Country-code TLDs like .ca (85.9%), .io (85.8%), .se (85.5%), .at (85.4%), and .uk (85.3%) also score highly, with general TLDs like .de (85.0%) and .co (84.6%) toward the lower end of the top 20.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQFD-7C6Jv6q1JyviDsKosRlVwaok7g7nRCQ9NGMw5MaAAohL7EcDejVwgp13Z_T2S_57Zi0YaVb7st/pubchart?oid=414356016&format=interactive",
   sheets_gid="1037208406",
-  sql_file="lighthouse_score_by_tld.sql"
+  sql_file="lighthouse_score_by_tld.sql",
+  width=600,
+  height=480
   )
 }}
 
@@ -1009,7 +1016,9 @@ The Americans with Disabilities Act (ADA), which <a hreflang="en" href="https://
   description="A bar chart ranking US state and territory government sites by average accessibility score. New Hampshire leads at 94.61%, followed by Nevada (92.43%), Kansas (91.67%), New York (91.45%), and South Carolina (91.07%). Many other states, including Arizona, California, Missouri, Montana, and North Carolina, also score around 90% or higher, while states like New Jersey (83.91%) and Rhode Island (83.31%) appear toward the lower end of the list.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQFD-7C6Jv6q1JyviDsKosRlVwaok7g7nRCQ9NGMw5MaAAohL7EcDejVwgp13Z_T2S_57Zi0YaVb7st/pubchart?oid=445029634&format=interactive",
   sheets_gid="1855027591",
-  sql_file="lighthouse_score_by_government.sql"
+  sql_file="lighthouse_score_by_government.sql",
+  width=600,
+  height=500
   )
 }}
 
