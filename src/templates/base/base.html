@@ -249,7 +249,7 @@
     {% endif %}
 
     {% if ebook_size_in_mb and ebook_size_in_mb > 0 %}
-    <option value="https://cdn.httparchive.org/almanac/ebooks/web_almanac_{{ year }}_{{ lang }}.pdf" data-event="ebook-click">
+    <option value="https://cdn.httparchive.org/v1/static/almanac/ebooks/web_almanac_{{ year }}_{{ lang }}.pdf" data-event="ebook-click">
       {{ self.ebook_download_short() }}
     </option>
     {% endif %}
@@ -378,7 +378,7 @@
       <a href="{{ url_for('table_of_contents', year=year, lang=lang, _anchor='ebook') }}">{{ self.ebook_title() }}</a>
     </li>
     <li class="nav-dropdown-list-chapter ebook">
-      <a href="https://cdn.httparchive.org/almanac/ebooks/web_almanac_{{ year }}_{{ lang }}.pdf" data-event="ebook-click" data-label="toc-menu">{{ self.ebook_download_short() }}</a>
+      <a href="https://cdn.httparchive.org/v1/static/almanac/ebooks/web_almanac_{{ year }}_{{ lang }}.pdf" data-event="ebook-click" data-label="toc-menu">{{ self.ebook_download_short() }}</a>
     </li>
     {% endif %}
   </ul>
