@@ -518,7 +518,7 @@ In 2025, CAPTCHA use has remained roughly steady compared to previous years.
 {{ figure_markup(
   image="captcha-usage-year-over-year.png",
   caption="CAPTCHA usage year over year.",
-  description="A multi-series column chart showing the percentage of sites using captchas on desktop and mobile from 2021 to 2025. Usage peaked in 2022 at 20% on desktop and 18.5% on mobile, then declined slightly to 17% and 16.2% in 2024, remaining stable at 17.6% and 16.6% in 2025.",
+  description="A multi-series column chart showing the percentage of sites using captchas on desktop and mobile from 2021 to 2025. Usage peaked in 2022 at 20% on desktop and 19% on mobile, then declined slightly to 17% and 16% in 2024, remaining stable at 18% and 17% in 2025.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQFD-7C6Jv6q1JyviDsKosRlVwaok7g7nRCQ9NGMw5MaAAohL7EcDejVwgp13Z_T2S_57Zi0YaVb7st/pubchart?oid=1433910378&format=interactive",
   sheets_gid="1834983243",
   sql_file="captcha_usage.sql"
