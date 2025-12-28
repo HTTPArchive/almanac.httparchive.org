@@ -33,7 +33,7 @@ In 2025, web accessibility laws have real teeth. The European Union's (EU) [Euro
 
 The United States updated its regulations as well. State and local government sites must now meet <a hreflang="en" href="https://www.w3.org/TR/WCAG21/">WCAG 2.1</a>, as <a hreflang="en" href="https://www.ada.gov/resources/2024-03-08-web-rule/">required by Title II of the Americans with Disabilities Act</a>. The 2024 data gives us a critical baseline to measure the tangible impact of these deadlines on the accessibility of websites globally.
 
-Google Lighthouse powers our analysis using <a hreflang="en" href="https://www.deque.com/axe/axe-core/">Deque's axe-core engine</a>. We benchmark 2025 findings against 2024 data and identify key trends. With broader adoption of WCAG 2.2, we examine the uptake of new Success Criteria and continued changes from deprecated rules such as duplicate-id.
+Google Lighthouse powers our analysis using <a hreflang="en" href="https://www.deque.com/axe/axe-core/">Deque's axe-core engine</a>. We benchmark 2025 findings against 2024 data and identify key trends. With broader adoption of WCAG 2.2, we examine the uptake of new Success Criteria and continued changes from deprecated rules such as `duplicate-id`.
 
 Our approach differs from that of the <a hreflang="en" href="https://webaim.org/projects/million/">WebAim Million</a>. The HTTP Archive crawls 17 million sites each month across home and secondary pages using Lighthouse and other tools. WebAim surveys the <a hreflang="en" href="https://webaim.org/projects/million/#method">top million home pages</a> with <a hreflang="en" href="https://wave.webaim.org/">WAVE</a>.
 
