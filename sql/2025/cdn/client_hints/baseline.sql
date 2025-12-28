@@ -76,23 +76,23 @@ hint_diversity AS (
 
 SELECT
   t.client AS `Client`,
-  t.total_requests AS `Total Requests`,
-  t.total_pages AS `Total Pages`,
+  t.total_requests AS `Total_Requests`,
+  t.total_pages AS `Total_Pages`,
 
   -- Server-side adoption (Accept-CH)
-  IFNULL(a.requests_with_accept_ch, 0) AS `Requests with Accept-CH`,
-  IFNULL(a.pages_with_accept_ch, 0) AS `Pages with Accept-CH`,
-  ROUND(IFNULL(a.requests_with_accept_ch, 0) / t.total_requests * 100, 2) AS `% Requests with Accept-CH`,
-  ROUND(IFNULL(a.pages_with_accept_ch, 0) / t.total_pages * 100, 2) AS `% Pages with Accept-CH`,
+  IFNULL(a.requests_with_accept_ch, 0) AS `Requests_with_Accept-CH`,
+  IFNULL(a.pages_with_accept_ch, 0) AS `Pages_with_Accept-CH`,
+  ROUND(IFNULL(a.requests_with_accept_ch, 0) / t.total_requests * 100, 2) AS `Pct_Requests_with_Accept-CH`,
+  ROUND(IFNULL(a.pages_with_accept_ch, 0) / t.total_pages * 100, 2) AS `Pct_Pages_with_Accept-CH`,
 
   -- Client-side adoption (Sec-CH-*)
-  IFNULL(c.requests_with_hints, 0) AS `Requests Sending Hints`,
-  IFNULL(c.pages_sending_hints, 0) AS `Pages Sending Hints`,
-  ROUND(IFNULL(c.requests_with_hints, 0) / t.total_requests * 100, 2) AS `% Requests Sending Hints`,
-  ROUND(IFNULL(c.pages_sending_hints, 0) / t.total_pages * 100, 2) AS `% Pages Sending Hints`,
+  IFNULL(c.requests_with_hints, 0) AS `Requests_Sending_Hints`,
+  IFNULL(c.pages_sending_hints, 0) AS `Pages_Sending_Hints`,
+  ROUND(IFNULL(c.requests_with_hints, 0) / t.total_requests * 100, 2) AS `Pct_Requests_Sending_Hints`,
+  ROUND(IFNULL(c.pages_sending_hints, 0) / t.total_pages * 100, 2) AS `Pct_Pages_Sending_Hints`,
 
   -- Diversity
-  IFNULL(h.distinct_hint_types, 0) AS `Distinct Hint Types in Use`
+  IFNULL(h.distinct_hint_types, 0) AS `Distinct_Hint_Types_in_Use`
 
 FROM
   total_requests t

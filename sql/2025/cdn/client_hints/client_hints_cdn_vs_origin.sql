@@ -53,9 +53,9 @@ accept_ch_requests AS (
 SELECT
   t.client AS `Client`,
   t.source_type AS `Source`,
-  t.total_requests AS `Total Requests`,
-  IFNULL(a.requests_with_accept_ch, 0) AS `Requests with Accept-CH`,
-  ROUND(IFNULL(a.requests_with_accept_ch, 0) / t.total_requests * 100, 2) AS `% with Accept-CH`
+  t.total_requests AS `Total_Requests`,
+  IFNULL(a.requests_with_accept_ch, 0) AS `Requests_with_Accept-CH`,
+  ROUND(IFNULL(a.requests_with_accept_ch, 0) / t.total_requests * 100, 2) AS `Pct_with_Accept-CH`
 FROM
   total_requests t
 LEFT JOIN accept_ch_requests a ON t.client = a.client AND t.source_type = a.source_type

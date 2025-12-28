@@ -53,11 +53,11 @@ accept_ch_by_cdn AS (
 )
 
 SELECT
-  t.cdn_provider AS `CDN Provider`,
+  t.cdn_provider AS `CDN_Provider`,
   t.client AS `Client`,
-  t.total_requests AS `Total Requests`,
-  IFNULL(a.requests_with_accept_ch, 0) AS `Requests with Accept-CH`,
-  ROUND(IFNULL(a.requests_with_accept_ch, 0) / t.total_requests * 100, 2) AS `% with Accept-CH`
+  t.total_requests AS `Total_Requests`,
+  IFNULL(a.requests_with_accept_ch, 0) AS `Requests_with_Accept-CH`,
+  ROUND(IFNULL(a.requests_with_accept_ch, 0) / t.total_requests * 100, 2) AS `Pct_with_Accept-CH`
 FROM
   total_by_cdn t
 LEFT JOIN accept_ch_by_cdn a ON t.client = a.client AND t.cdn_provider = a.cdn_provider

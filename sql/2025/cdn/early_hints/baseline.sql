@@ -18,7 +18,7 @@ total_requests AS (
     client
 ),
 
--- Requests with Early Hints (HTTP 103 status)
+-- Requests_with_Early_Hints (HTTP 103 status)
 early_hints_requests AS (
   SELECT
     client,
@@ -73,21 +73,21 @@ link_header_usage AS (
 
 SELECT
   t.client AS `Client`,
-  t.total_requests AS `Total Requests`,
-  t.total_pages AS `Total Pages`,
+  t.total_requests AS `Total_Requests`,
+  t.total_pages AS `Total_Pages`,
 
   -- Early Hints adoption
-  IFNULL(e.requests_with_early_hints, 0) AS `Requests with Early Hints`,
-  IFNULL(e.pages_with_early_hints, 0) AS `Pages with Early Hints`,
-  ROUND(IFNULL(e.requests_with_early_hints, 0) / t.total_requests * 100, 4) AS `% Requests with Early Hints`,
-  ROUND(IFNULL(e.pages_with_early_hints, 0) / t.total_pages * 100, 4) AS `% Pages with Early Hints`,
+  IFNULL(e.requests_with_early_hints, 0) AS `Requests_with_Early_Hints`,
+  IFNULL(e.pages_with_early_hints, 0) AS `Pages_with_Early_Hints`,
+  ROUND(IFNULL(e.requests_with_early_hints, 0) / t.total_requests * 100, 4) AS `Pct_Requests_with_Early_Hints`,
+  ROUND(IFNULL(e.pages_with_early_hints, 0) / t.total_pages * 100, 4) AS `Pct_Pages_with_Early_Hints`,
 
   -- Link header usage
-  IFNULL(l.pages_with_link_headers, 0) AS `Pages with Link Headers`,
-  ROUND(IFNULL(l.pages_with_link_headers, 0) / t.total_pages * 100, 4) AS `% Pages with Link Headers`,
+  IFNULL(l.pages_with_link_headers, 0) AS `Pages_with_Link_Headers`,
+  ROUND(IFNULL(l.pages_with_link_headers, 0) / t.total_pages * 100, 4) AS `Pct_Pages_with_Link_Headers`,
 
   -- Resource diversity
-  IFNULL(rt.distinct_resource_types, 0) AS `Distinct Resource Types Preloaded`
+  IFNULL(rt.distinct_resource_types, 0) AS `Distinct_Resource_Types_Preloaded`
 
 FROM
   total_requests t

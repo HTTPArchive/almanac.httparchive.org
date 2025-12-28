@@ -58,12 +58,12 @@ dict AS (
 )
 
 SELECT
-  d.client_hint AS `Client Hint`,
+  d.client_hint AS `Client_Hint`,
   d.category AS `Category`,
   d.entropy AS `Entropy`,
-  IFNULL(r.mobile_requests, 0) AS `Mobile Requests`,
-  IFNULL(r.desktop_requests, 0) AS `Desktop Requests`,
-  IFNULL(r.mobile_requests, 0) + IFNULL(r.desktop_requests, 0) AS `Total Requests`
+  IFNULL(r.mobile_requests, 0) AS `Mobile_Requests`,
+  IFNULL(r.desktop_requests, 0) AS `Desktop_Requests`,
+  IFNULL(r.mobile_requests, 0) + IFNULL(r.desktop_requests, 0) AS `Total_Requests`
 FROM
   dict d
 LEFT JOIN hint_rollup r USING (client_hint)

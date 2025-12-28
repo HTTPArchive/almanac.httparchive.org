@@ -108,22 +108,22 @@ hint_dict AS (
 )
 
 SELECT
-  d.hint_name AS `Client Hint`,
+  d.hint_name AS `Client_Hint`,
   d.category AS `Category`,
   d.entropy AS `Entropy`,
-  d.is_default_hint AS `Default Hint`,
+  d.is_default_hint AS `Default_Hint`,
 
   -- Mobile stats
-  IFNULL(wm.pages_using_hint, 0) AS `Mobile Pages WITH Accept-CH`,
-  IFNULL(nm.pages_using_hint, 0) AS `Mobile Pages WITHOUT Accept-CH`,
-  ROUND(IFNULL(wm.pages_using_hint, 0) / NULLIF(pm.pages_with_accept_ch, 0) * 100, 2) AS `% Mobile WITH Accept-CH`,
-  ROUND(IFNULL(nm.pages_using_hint, 0) / NULLIF((tm.total_pages - pm.pages_with_accept_ch), 0) * 100, 2) AS `% Mobile WITHOUT Accept-CH`,
+  IFNULL(wm.pages_using_hint, 0) AS `Mobile_Pages_WITH_Accept-CH`,
+  IFNULL(nm.pages_using_hint, 0) AS `Mobile_Pages_WITHOUT_Accept-CH`,
+  ROUND(IFNULL(wm.pages_using_hint, 0) / NULLIF(pm.pages_with_accept_ch, 0) * 100, 2) AS `Pct_Mobile_WITH_Accept-CH`,
+  ROUND(IFNULL(nm.pages_using_hint, 0) / NULLIF((tm.total_pages - pm.pages_with_accept_ch), 0) * 100, 2) AS `Pct_Mobile_WITHOUT_Accept-CH`,
 
   -- Desktop stats
-  IFNULL(wd.pages_using_hint, 0) AS `Desktop Pages WITH Accept-CH`,
-  IFNULL(nd.pages_using_hint, 0) AS `Desktop Pages WITHOUT Accept-CH`,
-  ROUND(IFNULL(wd.pages_using_hint, 0) / NULLIF(pd.pages_with_accept_ch, 0) * 100, 2) AS `% Desktop WITH Accept-CH`,
-  ROUND(IFNULL(nd.pages_using_hint, 0) / NULLIF((td.total_pages - pd.pages_with_accept_ch), 0) * 100, 2) AS `% Desktop WITHOUT Accept-CH`
+  IFNULL(wd.pages_using_hint, 0) AS `Desktop_Pages_WITH_Accept-CH`,
+  IFNULL(nd.pages_using_hint, 0) AS `Desktop_Pages_WITHOUT_Accept-CH`,
+  ROUND(IFNULL(wd.pages_using_hint, 0) / NULLIF(pd.pages_with_accept_ch, 0) * 100, 2) AS `Pct_Desktop_WITH_Accept-CH`,
+  ROUND(IFNULL(nd.pages_using_hint, 0) / NULLIF((td.total_pages - pd.pages_with_accept_ch), 0) * 100, 2) AS `Pct_Desktop_WITHOUT_Accept-CH`
 
 FROM
   hint_dict d

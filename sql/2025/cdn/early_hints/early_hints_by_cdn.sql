@@ -49,11 +49,11 @@ early_hints_by_cdn AS (
 )
 
 SELECT
-  t.cdn_provider AS `CDN Provider`,
+  t.cdn_provider AS `CDN_Provider`,
   t.client AS `Client`,
-  t.total_requests AS `Total Requests`,
-  IFNULL(e.requests_with_early_hints, 0) AS `Requests with Early Hints`,
-  ROUND(IFNULL(e.requests_with_early_hints, 0) / t.total_requests * 100, 4) AS `% with Early Hints`
+  t.total_requests AS `Total_Requests`,
+  IFNULL(e.requests_with_early_hints, 0) AS `Requests_with_Early_Hints`,
+  ROUND(IFNULL(e.requests_with_early_hints, 0) / t.total_requests * 100, 4) AS `Pct_with_Early_Hints`
 FROM
   total_by_cdn t
 LEFT JOIN early_hints_by_cdn e ON t.client = e.client AND t.cdn_provider = e.cdn_provider

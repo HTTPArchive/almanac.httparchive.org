@@ -62,15 +62,16 @@ total_preloads AS (
 )
 
 SELECT
-  r.resource_type AS `Resource Type`,
+  r.resource_type AS `Resource_Type`,
   r.client AS `Client`,
   r.source_type AS `Source`,
-  r.preload_count AS `Preload Count`,
-  ROUND(r.preload_count / t.total_preloads * 100, 2) AS `% of Preloads`
+  r.preload_count AS `Preload_Count`,
+  ROUND(r.preload_count / t.total_preloads * 100, 2) AS `Pct_of_Preloads`
 FROM
   resource_counts r
 JOIN
-  total_preloads t ON r.client = t.client AND r.source_type = t.source_type
+  total_preloads t
+ON r.client = t.client AND r.source_type = t.source_type
 ORDER BY
   r.preload_count DESC,
   r.resource_type;
