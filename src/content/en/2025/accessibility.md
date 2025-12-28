@@ -306,7 +306,7 @@ Screen reader users often navigate via "rotors" or landmark menus to jump betwee
 {{ figure_markup(
   image="yearly-growth-in-pages-with-element-role.png",
   caption="Yearly growth in pages with element role.",
-  description="A chart showing the percentage of pages using landmark `role` attributes (`footer`, `header`, `main`, `nav`) across five years. Usage has grown steadily for all roles: `nav` leads at 65.5% in 2021 rising to 70.94% in 2025, followed by `footer` (64.5% to 67.66%), `header` (63.5% to 67.41%), and `main` (35.0% to 47.34%).",
+  description="A chart showing the percentage of pages using landmark `role` attributes (`footer`, `header`, `main`, `nav`) across five years. Usage has grown steadily for all roles: `nav` leads at 66% in 2021 rising to 71% in 2025, followed by `footer` (65% to 68%), `header` (64% to 67%), and `main` (35% to 47%).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQFD-7C6Jv6q1JyviDsKosRlVwaok7g7nRCQ9NGMw5MaAAohL7EcDejVwgp13Z_T2S_57Zi0YaVb7st/pubchart?oid=553285039&format=interactive",
   sheets_gid="445686890",
   sql_file="landmark_elements_and_roles.sql"
