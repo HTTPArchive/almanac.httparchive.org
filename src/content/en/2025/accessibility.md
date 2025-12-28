@@ -37,7 +37,7 @@ Google Lighthouse powers our analysis using <a hreflang="en" href="https://www.d
 
 Our approach is similar to that of the <a hreflang="en" href="https://webaim.org/projects/million/">WebAim Million</a> but with differences in sites crawled and analysis tools used. The HTTP Archive crawls 17 million sites each month across home and secondary pages using Lighthouse and other tools. WebAim surveys the <a hreflang="en" href="https://webaim.org/projects/million/#method">top million home pages</a> with <a hreflang="en" href="https://wave.webaim.org/">WAVE</a>.
 
-Automated tests, including axe-core, can <a hreflang="en" href="https://html5accessibility.com/stuff/2025/03/24/a-tools-errand/#:~:text=automation%20blues">only partially check a subset of WCAG Success Criteria</a>. Alphagov from GOV.UK offers a <a hreflang="en" href="https://alphagov.github.io/accessibility-tool-audit/">comparison of popular automated audit tools</a> and they all detect less than 50% of accessibility errors. Many criteria lack automated tests altogether, and not all accessibility issues have matching criteria in WCAG.
+Automated tests, including axe-core which is used by Lighthouse, can <a hreflang="en" href="https://html5accessibility.com/stuff/2025/03/24/a-tools-errand/#:~:text=automation%20blues">only partially check a subset of WCAG Success Criteria</a>. Alphagov from GOV.UK offers a <a hreflang="en" href="https://alphagov.github.io/accessibility-tool-audit/">comparison of popular automated audit tools</a> and they all detect less than 50% of accessibility errors. Many criteria lack automated tests altogether, and not all accessibility issues have matching criteria in WCAG.
 
 But remember Goodhart's Law. When a metric becomes a target, it stops being a reliable metric.
 
