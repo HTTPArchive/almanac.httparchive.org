@@ -10,9 +10,12 @@ total_requests AS (
     client,
     COUNT(0) AS total_requests,
     COUNT(DISTINCT page) AS total_pages
-  FROM `httparchive.crawl.requests`
-  WHERE date = d
-  GROUP BY client
+  FROM
+    `httparchive.crawl.requests`
+  WHERE
+    date = d
+  GROUP BY
+    client
 ),
 
 -- Requests with Early Hints (HTTP 103 status)
@@ -21,10 +24,13 @@ early_hints_requests AS (
     client,
     COUNT(0) AS requests_with_early_hints,
     COUNT(DISTINCT page) AS pages_with_early_hints
-  FROM `httparchive.crawl.requests`
-  WHERE date = d AND
+  FROM
+    `httparchive.crawl.requests`
+  WHERE
+    date = d AND
     JSON_EXTRACT_ARRAY(payload, '$._early_hint_headers') IS NOT NULL
-  GROUP BY client
+  GROUP BY
+    client
 ),
 
 -- Count distinct resource types being preloaded via Early Hints
@@ -40,11 +46,14 @@ resource_types_preloaded AS (
         )
       )
     ) AS distinct_resource_types
-  FROM `httparchive.crawl.requests` r,
+  FROM
+    `httparchive.crawl.requests` r,
     UNNEST(JSON_EXTRACT_ARRAY(payload, '$._early_hint_headers')) AS hint_header
-  WHERE r.date = d AND
+  WHERE
+    r.date = d AND
     hint_header LIKE '%rel=preload%'
-  GROUP BY r.client
+  GROUP BY
+    r.client
 ),
 
 -- Count pages using Link headers in Early Hints
@@ -52,11 +61,14 @@ link_header_usage AS (
   SELECT
     r.client,
     COUNT(DISTINCT r.page) AS pages_with_link_headers
-  FROM `httparchive.crawl.requests` r,
+  FROM
+    `httparchive.crawl.requests` r,
     UNNEST(JSON_EXTRACT_ARRAY(payload, '$._early_hint_headers')) AS hint_header
-  WHERE r.date = d AND
+  WHERE
+    r.date = d AND
     LOWER(hint_header) LIKE '%link:%'
-  GROUP BY r.client
+  GROUP BY
+    r.client
 )
 
 SELECT
@@ -77,11 +89,10 @@ SELECT
   -- Resource diversity
   IFNULL(rt.distinct_resource_types, 0) AS `Distinct Resource Types Preloaded`
 
-FROM total_requests t
-LEFT JOIN early_hints_requests e
-ON t.client = e.client
-LEFT JOIN link_header_usage l
-ON t.client = l.client
-LEFT JOIN resource_types_preloaded rt
-ON t.client = rt.client
-ORDER BY t.client;
+FROM
+  total_requests t
+LEFT JOIN early_hints_requests e ON t.client = e.client
+LEFT JOIN link_header_usage l ON t.client = l.client
+LEFT JOIN resource_types_preloaded rt ON t.client = rt.client
+ORDER BY
+  t.client;

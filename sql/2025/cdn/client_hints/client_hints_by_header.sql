@@ -8,11 +8,15 @@ hint_counts AS (
     LOWER(h.name) AS client_hint,
     r.client,
     COUNT(0) AS requests
-  FROM `httparchive.crawl.requests` r,
+  FROM
+    `httparchive.crawl.requests` r,
     UNNEST(r.request_headers) AS h
-  WHERE r.date = d AND
+  WHERE
+    r.date = d AND
     LOWER(h.name) LIKE 'sec-ch-%'
-  GROUP BY client_hint, r.client
+  GROUP BY
+    client_hint,
+    r.client
 ),
 
 -- Pivot to mobile/desktop columns
@@ -21,13 +25,16 @@ hint_rollup AS (
     client_hint,
     SUM(CASE WHEN client = 'mobile' THEN requests ELSE 0 END) AS mobile_requests,
     SUM(CASE WHEN client = 'desktop' THEN requests ELSE 0 END) AS desktop_requests
-  FROM hint_counts
-  GROUP BY client_hint
+  FROM
+    hint_counts
+  GROUP BY
+    client_hint
 ),
 
 -- Dictionary for Category/Entropy
 dict AS (
-  SELECT * FROM UNNEST([
+  SELECT *
+  FROM UNNEST([
     STRUCT('sec-ch-ua' AS client_hint, 'User-Agent' AS category, 'Low' AS entropy, 1 AS ord),
     ('sec-ch-ua-mobile', 'User-Agent', 'Low', 2),
     ('sec-ch-ua-platform', 'User-Agent', 'Low', 3),
@@ -57,7 +64,8 @@ SELECT
   IFNULL(r.mobile_requests, 0) AS `Mobile Requests`,
   IFNULL(r.desktop_requests, 0) AS `Desktop Requests`,
   IFNULL(r.mobile_requests, 0) + IFNULL(r.desktop_requests, 0) AS `Total Requests`
-FROM dict d
-LEFT JOIN hint_rollup r
-USING (client_hint)
-ORDER BY d.ord;
+FROM
+  dict d
+LEFT JOIN hint_rollup r USING (client_hint)
+ORDER BY
+  d.ord;

@@ -12,8 +12,10 @@ requests_classified AS (
         THEN 'Origin'
       ELSE 'CDN'
     END AS source_type
-  FROM `httparchive.crawl.requests`
-  WHERE date = d
+  FROM
+    `httparchive.crawl.requests`
+  WHERE
+    date = d
 ),
 
 -- Count total requests
@@ -22,8 +24,11 @@ total_requests AS (
     client,
     source_type,
     COUNT(0) AS total_requests
-  FROM requests_classified
-  GROUP BY client, source_type
+  FROM
+    requests_classified
+  GROUP BY
+    client,
+    source_type
 ),
 
 -- Count requests with Early Hints
@@ -36,10 +41,14 @@ early_hints_requests AS (
       ELSE 'CDN'
     END AS source_type,
     COUNT(0) AS requests_with_early_hints
-  FROM `httparchive.crawl.requests` r
-  WHERE r.date = d AND
+  FROM
+    `httparchive.crawl.requests` r
+  WHERE
+    r.date = d AND
     JSON_EXTRACT_ARRAY(r.payload, '$._early_hint_headers') IS NOT NULL
-  GROUP BY r.client, source_type
+  GROUP BY
+    r.client,
+    source_type
 )
 
 SELECT
@@ -48,8 +57,9 @@ SELECT
   t.total_requests AS `Total Requests`,
   IFNULL(e.requests_with_early_hints, 0) AS `Requests with Early Hints`,
   ROUND(IFNULL(e.requests_with_early_hints, 0) / t.total_requests * 100, 4) AS `% with Early Hints`
-FROM total_requests t
-LEFT JOIN early_hints_requests e
-ON t.client = e.client AND
-  t.source_type = e.source_type
-ORDER BY t.client, t.source_type;
+FROM
+  total_requests t
+LEFT JOIN early_hints_requests e ON t.client = e.client AND t.source_type = e.source_type
+ORDER BY
+  t.client,
+  t.source_type;

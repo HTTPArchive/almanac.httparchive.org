@@ -10,9 +10,12 @@ total_requests AS (
     client,
     COUNT(0) AS total_requests,
     COUNT(DISTINCT page) AS total_pages
-  FROM `httparchive.crawl.requests`
-  WHERE date = d
-  GROUP BY client
+  FROM
+    `httparchive.crawl.requests`
+  WHERE
+    date = d
+  GROUP BY
+    client
 ),
 
 -- Requests with Accept-CH header (servers requesting hints)
@@ -21,13 +24,16 @@ accept_ch_stats AS (
     r.client,
     COUNT(0) AS requests_with_accept_ch,
     COUNT(DISTINCT r.page) AS pages_with_accept_ch
-  FROM `httparchive.crawl.requests` r,
+  FROM
+    `httparchive.crawl.requests` r,
     UNNEST(r.response_headers) AS h
-  WHERE r.date = d AND
+  WHERE
+    r.date = d AND
     LOWER(h.name) = 'accept-ch' AND
     h.value IS NOT NULL AND
     h.value != ''
-  GROUP BY r.client
+  GROUP BY
+    r.client
 ),
 
 -- Requests with any Sec-CH-* header (clients sending hints)
@@ -42,12 +48,15 @@ client_hints_sent AS (
       r.client,
       r.page,
       r.url  -- Use url to uniquely identify each request
-    FROM `httparchive.crawl.requests` r,
+    FROM
+      `httparchive.crawl.requests` r,
       UNNEST(r.request_headers) AS h
-    WHERE r.date = d AND
+    WHERE
+      r.date = d AND
       LOWER(h.name) LIKE 'sec-ch-%'
   )
-  GROUP BY client
+  GROUP BY
+    client
 ),
 
 -- Count distinct hint types being sent
@@ -55,11 +64,14 @@ hint_diversity AS (
   SELECT
     r.client,
     COUNT(DISTINCT LOWER(h.name)) AS distinct_hint_types
-  FROM `httparchive.crawl.requests` r,
+  FROM
+    `httparchive.crawl.requests` r,
     UNNEST(r.request_headers) AS h
-  WHERE r.date = d AND
+  WHERE
+    r.date = d AND
     LOWER(h.name) LIKE 'sec-ch-%'
-  GROUP BY r.client
+  GROUP BY
+    r.client
 )
 
 SELECT
@@ -82,11 +94,10 @@ SELECT
   -- Diversity
   IFNULL(h.distinct_hint_types, 0) AS `Distinct Hint Types in Use`
 
-FROM total_requests t
-LEFT JOIN accept_ch_stats a
-ON t.client = a.client
-LEFT JOIN client_hints_sent c
-ON t.client = c.client
-LEFT JOIN hint_diversity h
-ON t.client = h.client
-ORDER BY t.client;
+FROM
+  total_requests t
+LEFT JOIN accept_ch_stats a ON t.client = a.client
+LEFT JOIN client_hints_sent c ON t.client = c.client
+LEFT JOIN hint_diversity h ON t.client = h.client
+ORDER BY
+  t.client;

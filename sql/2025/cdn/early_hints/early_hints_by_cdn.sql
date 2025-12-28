@@ -15,8 +15,10 @@ cdn_requests AS (
       'Origin'
     ) AS cdn_provider,
     JSON_EXTRACT_ARRAY(payload, '$._early_hint_headers') AS early_hint_headers
-  FROM `httparchive.crawl.requests`
-  WHERE date = d
+  FROM
+    `httparchive.crawl.requests`
+  WHERE
+    date = d
 ),
 
 -- Count total requests per CDN
@@ -25,8 +27,11 @@ total_by_cdn AS (
     client,
     cdn_provider,
     COUNT(0) AS total_requests
-  FROM cdn_requests
-  GROUP BY client, cdn_provider
+  FROM
+    cdn_requests
+  GROUP BY
+    client,
+    cdn_provider
 ),
 
 -- Count requests with Early Hints per CDN
@@ -35,9 +40,12 @@ early_hints_by_cdn AS (
     client,
     cdn_provider,
     COUNT(0) AS requests_with_early_hints
-  FROM cdn_requests
-  WHERE early_hint_headers IS NOT NULL
-  GROUP BY client, cdn_provider
+  FROM
+    cdn_requests
+  WHERE
+    early_hint_headers IS NOT NULL
+  GROUP BY
+    client, cdn_provider
 )
 
 SELECT
@@ -46,10 +54,12 @@ SELECT
   t.total_requests AS `Total Requests`,
   IFNULL(e.requests_with_early_hints, 0) AS `Requests with Early Hints`,
   ROUND(IFNULL(e.requests_with_early_hints, 0) / t.total_requests * 100, 4) AS `% with Early Hints`
-FROM total_by_cdn t
-LEFT JOIN early_hints_by_cdn e
-ON t.client = e.client AND
-  t.cdn_provider = e.cdn_provider
-WHERE t.total_requests >= 1000  -- Filter to CDNs with meaningful sample size
-ORDER BY IFNULL(e.requests_with_early_hints, 0) DESC, t.total_requests DESC
+FROM
+  total_by_cdn t
+LEFT JOIN early_hints_by_cdn e ON t.client = e.client AND t.cdn_provider = e.cdn_provider
+WHERE
+  t.total_requests >= 1000  -- Filter to CDNs with meaningful sample size
+ORDER BY
+  IFNULL(e.requests_with_early_hints, 0) DESC,
+  t.total_requests DESC
 LIMIT 50;

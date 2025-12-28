@@ -18,9 +18,11 @@ resource_preloads AS (
         REGEXP_EXTRACT(JSON_EXTRACT_SCALAR(hint_header, '$'), r'as=([^;,\s]+)')
       )
     ) AS resource_type
-  FROM `httparchive.crawl.requests` r,
+  FROM
+    `httparchive.crawl.requests` r,
     UNNEST(JSON_EXTRACT_ARRAY(r.payload, '$._early_hint_headers')) AS hint_header
-  WHERE r.date = d AND
+  WHERE
+    r.date = d AND
     LOWER(JSON_EXTRACT_SCALAR(hint_header, '$')) LIKE '%rel=preload%' AND
     REGEXP_EXTRACT(JSON_EXTRACT_SCALAR(hint_header, '$'), r'as=([^;,\s]+)') IS NOT NULL
 ),
@@ -32,10 +34,15 @@ resource_counts AS (
     source_type,
     resource_type,
     COUNT(0) AS preload_count
-  FROM resource_preloads
-  WHERE resource_type IS NOT NULL AND
+  FROM
+    resource_preloads
+  WHERE
+    resource_type IS NOT NULL AND
     resource_type != ''
-  GROUP BY client, source_type, resource_type
+  GROUP BY
+    client,
+    source_type,
+    resource_type
 ),
 
 -- Get totals for percentage calculation
@@ -44,10 +51,14 @@ total_preloads AS (
     client,
     source_type,
     COUNT(0) AS total_preloads
-  FROM resource_preloads
-  WHERE resource_type IS NOT NULL AND
+  FROM
+    resource_preloads
+  WHERE
+    resource_type IS NOT NULL AND
     resource_type != ''
-  GROUP BY client, source_type
+  GROUP BY
+    client,
+    source_type
 )
 
 SELECT
@@ -56,8 +67,10 @@ SELECT
   r.source_type AS `Source`,
   r.preload_count AS `Preload Count`,
   ROUND(r.preload_count / t.total_preloads * 100, 2) AS `% of Preloads`
-FROM resource_counts r
-JOIN total_preloads t
-ON r.client = t.client AND
-  r.source_type = t.source_type
-ORDER BY r.preload_count DESC, r.resource_type;
+FROM
+  resource_counts r
+JOIN
+  total_preloads t ON r.client = t.client AND r.source_type = t.source_type
+ORDER BY
+  r.preload_count DESC,
+  r.resource_type;

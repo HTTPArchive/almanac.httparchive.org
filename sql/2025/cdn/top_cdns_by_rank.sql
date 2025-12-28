@@ -14,8 +14,7 @@ WITH requests AS (
   FROM
     `httparchive.crawl.requests` AS resp
   INNER JOIN
-    `httparchive.crawl.pages`
-  USING (page, client, date)
+    `httparchive.crawl.pages` USING (page, client, date)
   WHERE
     date = '2025-07-01' AND
     is_main_document
@@ -44,7 +43,8 @@ SELECT
   COUNT(0) AS hits,
   SUM(COUNT(0)) OVER (PARTITION BY client) AS totalHits,
   SAFE_DIVIDE(COUNT(0), SUM(COUNT(0)) OVER (PARTITION BY client)) AS hitsPct
-FROM requests,
+FROM
+  requests,
   UNNEST([1000, 10000, 100000, 1000000, 10000000, 100000000]) AS rank_grouping
 WHERE
   rank <= rank_grouping
