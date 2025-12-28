@@ -39,9 +39,7 @@ Our approach is similar to that of the <a hreflang="en" href="https://webaim.org
 
 Automated tests, including axe-core which is used by Lighthouse, can <a hreflang="en" href="https://html5accessibility.com/stuff/2025/03/24/a-tools-errand/#:~:text=automation%20blues">only partially check a subset of WCAG Success Criteria</a>. Alphagov from GOV.UK offers a <a hreflang="en" href="https://alphagov.github.io/accessibility-tool-audit/">comparison of popular automated audit tools</a> and they all detect less than 50% of accessibility errors. Many criteria lack automated tests altogether, and not all accessibility issues have matching criteria in WCAG.
 
-But remember Goodhart's Law. When a metric becomes a target, it stops being a reliable metric.
-
-A perfect score doesn't guarantee full accessibility. You should treat Lighthouse accessibility scores as a starting point for evaluation rather than a final goal. Still, tracking these scores offers a valuable snapshot of the web's overall progress.
+But remember Goodhart's Law. When a metric becomes a target, it stops being a reliable metric. A perfect score doesn't guarantee full accessibility. You should treat Lighthouse accessibility scores as a starting point for evaluation rather than a final goal. Still, tracking these scores offers a valuable snapshot of the web's overall progress.
 
 Our report focuses exclusively on HTML and doesn't include PDF or other office documents.
 
