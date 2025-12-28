@@ -9,7 +9,7 @@ requests_classified AS (
     client,
     CASE
       WHEN IFNULL(NULLIF(REGEXP_EXTRACT(JSON_EXTRACT_SCALAR(summary, '$._cdn_provider'), r'^([^,]*).*'), ''), '') = ''
-      THEN 'Origin'
+        THEN 'Origin'
       ELSE 'CDN'
     END AS source_type,
     response_headers
@@ -22,7 +22,7 @@ total_requests AS (
   SELECT
     client,
     source_type,
-    COUNT(*) AS total_requests
+    COUNT(0) AS total_requests
   FROM requests_classified
   GROUP BY client, source_type
 ),
@@ -32,12 +32,12 @@ accept_ch_requests AS (
   SELECT
     r.client,
     r.source_type,
-    COUNT(*) AS requests_with_accept_ch
+    COUNT(0) AS requests_with_accept_ch
   FROM requests_classified r,
-  UNNEST(r.response_headers) AS h
-  WHERE LOWER(h.name) = 'accept-ch'
-    AND h.value IS NOT NULL
-    AND h.value != ''
+    UNNEST(r.response_headers) AS h
+  WHERE LOWER(h.name) = 'accept-ch' AND
+    h.value IS NOT NULL AND
+    h.value != ''
   GROUP BY r.client, r.source_type
 )
 
@@ -49,6 +49,6 @@ SELECT
   ROUND(IFNULL(a.requests_with_accept_ch, 0) / t.total_requests * 100, 2) AS `% with Accept-CH`
 FROM total_requests t
 LEFT JOIN accept_ch_requests a
-  ON t.client = a.client
-  AND t.source_type = a.source_type
+ON t.client = a.client AND
+  t.source_type = a.source_type
 ORDER BY t.client, t.source_type;

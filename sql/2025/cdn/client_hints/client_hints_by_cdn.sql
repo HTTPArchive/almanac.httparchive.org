@@ -24,7 +24,7 @@ total_by_cdn AS (
   SELECT
     client,
     cdn_provider,
-    COUNT(*) AS total_requests
+    COUNT(0) AS total_requests
   FROM cdn_requests
   GROUP BY client, cdn_provider
 ),
@@ -34,12 +34,12 @@ accept_ch_by_cdn AS (
   SELECT
     r.client,
     r.cdn_provider,
-    COUNT(*) AS requests_with_accept_ch
+    COUNT(0) AS requests_with_accept_ch
   FROM cdn_requests r,
-  UNNEST(r.response_headers) AS h
-  WHERE LOWER(h.name) = 'accept-ch'
-    AND h.value IS NOT NULL
-    AND h.value != ''
+    UNNEST(r.response_headers) AS h
+  WHERE LOWER(h.name) = 'accept-ch' AND
+    h.value IS NOT NULL AND
+    h.value != ''
   GROUP BY r.client, r.cdn_provider
 )
 
@@ -51,8 +51,8 @@ SELECT
   ROUND(IFNULL(a.requests_with_accept_ch, 0) / t.total_requests * 100, 2) AS `% with Accept-CH`
 FROM total_by_cdn t
 LEFT JOIN accept_ch_by_cdn a
-  ON t.client = a.client
-  AND t.cdn_provider = a.cdn_provider
+ON t.client = a.client AND
+  t.cdn_provider = a.cdn_provider
 WHERE t.total_requests >= 1000  -- Filter to CDNs with meaningful sample size
 ORDER BY t.total_requests DESC, t.cdn_provider, t.client
 LIMIT 50;

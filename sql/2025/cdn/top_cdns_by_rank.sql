@@ -14,7 +14,7 @@ WITH requests AS (
   FROM
     `httparchive.crawl.requests` AS resp
   INNER JOIN
-    `httparchive.crawl.pages` AS pages
+    `httparchive.crawl.pages`
   USING (page, client, date)
   WHERE
     date = '2025-07-01' AND

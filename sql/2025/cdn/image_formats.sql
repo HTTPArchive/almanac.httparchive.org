@@ -10,7 +10,7 @@ SELECT
   COUNTIF(image_type = 'WEBP') AS webp,
   COUNTIF(image_type = 'ICO') AS ico,
   COUNTIF(image_type = 'TIFF') AS tiff,
-  COUNTIF(image_type = 'OTHER') AS other,
+  COUNTIF(image_type = 'OTHER') AS other
 FROM (
   SELECT
     client,
@@ -35,8 +35,8 @@ FROM (
     FROM
       `httparchive.crawl.requests`
     WHERE
-      date = '2025-07-01'
-      AND type = 'image'
+      date = '2025-07-01' AND
+      type = 'image'
   )
 )
 GROUP BY

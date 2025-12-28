@@ -45,4 +45,3 @@ GROUP BY
   is_main_document
 ORDER BY
   requests DESC
-  

@@ -8,7 +8,7 @@ WITH
 total_requests AS (
   SELECT
     client,
-    COUNT(*) AS total_requests,
+    COUNT(0) AS total_requests,
     COUNT(DISTINCT page) AS total_pages
   FROM `httparchive.crawl.requests`
   WHERE date = d
@@ -19,14 +19,14 @@ total_requests AS (
 accept_ch_stats AS (
   SELECT
     r.client,
-    COUNT(*) AS requests_with_accept_ch,
+    COUNT(0) AS requests_with_accept_ch,
     COUNT(DISTINCT r.page) AS pages_with_accept_ch
   FROM `httparchive.crawl.requests` r,
-  UNNEST(r.response_headers) AS h
-  WHERE r.date = d
-    AND LOWER(h.name) = 'accept-ch'
-    AND h.value IS NOT NULL
-    AND h.value != ''
+    UNNEST(r.response_headers) AS h
+  WHERE r.date = d AND
+    LOWER(h.name) = 'accept-ch' AND
+    h.value IS NOT NULL AND
+    h.value != ''
   GROUP BY r.client
 ),
 
@@ -35,7 +35,7 @@ accept_ch_stats AS (
 client_hints_sent AS (
   SELECT
     client,
-    COUNT(*) AS requests_with_hints,
+    COUNT(0) AS requests_with_hints,
     COUNT(DISTINCT page) AS pages_sending_hints
   FROM (
     SELECT DISTINCT
@@ -43,9 +43,9 @@ client_hints_sent AS (
       r.page,
       r.url  -- Use url to uniquely identify each request
     FROM `httparchive.crawl.requests` r,
-    UNNEST(r.request_headers) AS h
-    WHERE r.date = d
-      AND LOWER(h.name) LIKE 'sec-ch-%'
+      UNNEST(r.request_headers) AS h
+    WHERE r.date = d AND
+      LOWER(h.name) LIKE 'sec-ch-%'
   )
   GROUP BY client
 ),
@@ -56,9 +56,9 @@ hint_diversity AS (
     r.client,
     COUNT(DISTINCT LOWER(h.name)) AS distinct_hint_types
   FROM `httparchive.crawl.requests` r,
-  UNNEST(r.request_headers) AS h
-  WHERE r.date = d
-    AND LOWER(h.name) LIKE 'sec-ch-%'
+    UNNEST(r.request_headers) AS h
+  WHERE r.date = d AND
+    LOWER(h.name) LIKE 'sec-ch-%'
   GROUP BY r.client
 )
 
@@ -66,27 +66,27 @@ SELECT
   t.client AS `Client`,
   t.total_requests AS `Total Requests`,
   t.total_pages AS `Total Pages`,
-  
+
   -- Server-side adoption (Accept-CH)
   IFNULL(a.requests_with_accept_ch, 0) AS `Requests with Accept-CH`,
   IFNULL(a.pages_with_accept_ch, 0) AS `Pages with Accept-CH`,
   ROUND(IFNULL(a.requests_with_accept_ch, 0) / t.total_requests * 100, 2) AS `% Requests with Accept-CH`,
   ROUND(IFNULL(a.pages_with_accept_ch, 0) / t.total_pages * 100, 2) AS `% Pages with Accept-CH`,
-  
+
   -- Client-side adoption (Sec-CH-*)
   IFNULL(c.requests_with_hints, 0) AS `Requests Sending Hints`,
   IFNULL(c.pages_sending_hints, 0) AS `Pages Sending Hints`,
   ROUND(IFNULL(c.requests_with_hints, 0) / t.total_requests * 100, 2) AS `% Requests Sending Hints`,
   ROUND(IFNULL(c.pages_sending_hints, 0) / t.total_pages * 100, 2) AS `% Pages Sending Hints`,
-  
+
   -- Diversity
   IFNULL(h.distinct_hint_types, 0) AS `Distinct Hint Types in Use`
-  
+
 FROM total_requests t
 LEFT JOIN accept_ch_stats a
-  ON t.client = a.client
+ON t.client = a.client
 LEFT JOIN client_hints_sent c
-  ON t.client = c.client
+ON t.client = c.client
 LEFT JOIN hint_diversity h
-  ON t.client = h.client
+ON t.client = h.client
 ORDER BY t.client;

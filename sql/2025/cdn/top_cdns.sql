@@ -90,7 +90,7 @@ FROM
       `httparchive.crawl.requests`
     WHERE
       date = '2024-06-01'
-      UNION ALL
+    UNION ALL
     SELECT
       '2025' AS year,
       client,

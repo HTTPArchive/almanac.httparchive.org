@@ -11,14 +11,14 @@ resources_per_page AS (
     r.page,
     CASE
       WHEN IFNULL(NULLIF(REGEXP_EXTRACT(JSON_EXTRACT_SCALAR(r.summary, '$._cdn_provider'), r'^([^,]*).*'), ''), '') = ''
-      THEN 'Origin'
+        THEN 'Origin'
       ELSE 'CDN'
     END AS source_type,
-    COUNT(*) AS preload_count
+    COUNT(0) AS preload_count
   FROM `httparchive.crawl.requests` r,
-  UNNEST(JSON_EXTRACT_ARRAY(r.payload, '$._early_hint_headers')) AS hint_header
-  WHERE r.date = d
-    AND LOWER(JSON_EXTRACT_SCALAR(hint_header, '$')) LIKE '%rel=preload%'
+    UNNEST(JSON_EXTRACT_ARRAY(r.payload, '$._early_hint_headers')) AS hint_header
+  WHERE r.date = d AND
+    LOWER(JSON_EXTRACT_SCALAR(hint_header, '$')) LIKE '%rel=preload%'
   GROUP BY r.client, r.page, source_type
 ),
 
@@ -35,7 +35,7 @@ preload_buckets AS (
       WHEN preload_count BETWEEN 6 AND 10 THEN '6-10 resources'
       WHEN preload_count > 10 THEN '10+ resources'
     END AS preload_bucket,
-    COUNT(*) AS page_count
+    COUNT(0) AS page_count
   FROM resources_per_page
   GROUP BY client, source_type, preload_bucket
 ),
@@ -45,7 +45,7 @@ total_pages_with_preloads AS (
   SELECT
     client,
     source_type,
-    COUNT(*) AS total_pages
+    COUNT(0) AS total_pages
   FROM resources_per_page
   GROUP BY client, source_type
 )
@@ -58,9 +58,9 @@ SELECT
   ROUND(b.page_count / t.total_pages * 100, 2) AS `% of Pages with Early Hints`
 FROM preload_buckets b
 JOIN total_pages_with_preloads t
-  ON b.client = t.client
-  AND b.source_type = t.source_type
-ORDER BY 
+ON b.client = t.client AND
+  b.source_type = t.source_type
+ORDER BY
   b.client,
   b.source_type,
   CASE b.preload_bucket

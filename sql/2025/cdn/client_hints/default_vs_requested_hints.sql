@@ -10,11 +10,11 @@ pages_with_accept_ch AS (
     r.client,
     r.page
   FROM `httparchive.crawl.requests` r,
-  UNNEST(r.response_headers) AS h
-  WHERE r.date = d
-    AND LOWER(h.name) = 'accept-ch'
-    AND h.value IS NOT NULL
-    AND h.value != ''
+    UNNEST(r.response_headers) AS h
+  WHERE r.date = d AND
+    LOWER(h.name) = 'accept-ch' AND
+    h.value IS NOT NULL AND
+    h.value != ''
 ),
 
 -- Count hint usage on pages WITH Accept-CH
@@ -25,11 +25,11 @@ hints_with_accept_ch AS (
     COUNT(DISTINCT r.page) AS pages_using_hint
   FROM `httparchive.crawl.requests` r
   INNER JOIN pages_with_accept_ch p
-    ON r.client = p.client
-    AND r.page = p.page,
-  UNNEST(r.request_headers) AS h
-  WHERE r.date = d
-    AND LOWER(h.name) LIKE 'sec-ch-%'
+  ON r.client = p.client AND
+    r.page = p.page,
+    UNNEST(r.request_headers) AS h
+  WHERE r.date = d AND
+    LOWER(h.name) LIKE 'sec-ch-%'
   GROUP BY r.client, hint_name
 ),
 
@@ -41,12 +41,12 @@ hints_without_accept_ch AS (
     COUNT(DISTINCT r.page) AS pages_using_hint
   FROM `httparchive.crawl.requests` r
   LEFT JOIN pages_with_accept_ch p
-    ON r.client = p.client
-    AND r.page = p.page,
-  UNNEST(r.request_headers) AS h
-  WHERE r.date = d
-    AND LOWER(h.name) LIKE 'sec-ch-%'
-    AND p.page IS NULL  -- Pages WITHOUT Accept-CH
+  ON r.client = p.client AND
+    r.page = p.page,
+    UNNEST(r.request_headers) AS h
+  WHERE r.date = d AND
+    LOWER(h.name) LIKE 'sec-ch-%' AND
+    p.page IS NULL  -- Pages WITHOUT Accept-CH
   GROUP BY r.client, hint_name
 ),
 
@@ -98,13 +98,13 @@ SELECT
   d.category AS `Category`,
   d.entropy AS `Entropy`,
   d.is_default_hint AS `Default Hint`,
-  
+
   -- Mobile stats
   IFNULL(wm.pages_using_hint, 0) AS `Mobile Pages WITH Accept-CH`,
   IFNULL(nm.pages_using_hint, 0) AS `Mobile Pages WITHOUT Accept-CH`,
   ROUND(IFNULL(wm.pages_using_hint, 0) / NULLIF(pm.pages_with_accept_ch, 0) * 100, 2) AS `% Mobile WITH Accept-CH`,
   ROUND(IFNULL(nm.pages_using_hint, 0) / NULLIF((tm.total_pages - pm.pages_with_accept_ch), 0) * 100, 2) AS `% Mobile WITHOUT Accept-CH`,
-  
+
   -- Desktop stats
   IFNULL(wd.pages_using_hint, 0) AS `Desktop Pages WITH Accept-CH`,
   IFNULL(nd.pages_using_hint, 0) AS `Desktop Pages WITHOUT Accept-CH`,
@@ -113,19 +113,19 @@ SELECT
 
 FROM hint_dict d
 LEFT JOIN hints_with_accept_ch wm
-  ON d.hint_name = wm.hint_name AND wm.client = 'mobile'
+ON d.hint_name = wm.hint_name AND wm.client = 'mobile'
 LEFT JOIN hints_without_accept_ch nm
-  ON d.hint_name = nm.hint_name AND nm.client = 'mobile'
+ON d.hint_name = nm.hint_name AND nm.client = 'mobile'
 LEFT JOIN hints_with_accept_ch wd
-  ON d.hint_name = wd.hint_name AND wd.client = 'desktop'
+ON d.hint_name = wd.hint_name AND wd.client = 'desktop'
 LEFT JOIN hints_without_accept_ch nd
-  ON d.hint_name = nd.hint_name AND nd.client = 'desktop'
+ON d.hint_name = nd.hint_name AND nd.client = 'desktop'
 LEFT JOIN page_counts tm ON tm.client = 'mobile'
 LEFT JOIN page_counts td ON td.client = 'desktop'
 LEFT JOIN pages_with_accept_ch_count pm ON pm.client = 'mobile'
 LEFT JOIN pages_with_accept_ch_count pd ON pd.client = 'desktop'
 
-ORDER BY 
+ORDER BY
   d.is_default_hint DESC,
   d.entropy,
   d.hint_name;
