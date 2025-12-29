@@ -24,7 +24,13 @@ doi: ...
 
 ## Introduction
 
-On November 30, 2022, OpenAI <a hreflang="en" href="https://openai.com/index/chatgpt/">launched a service called ChatGPT</a>, a product that catapulted *Generative Artificial Intelligence* (Generative AI) from research labs into the daily lives of millions. This launch fundamentally changed user expectations regarding how applications and the web should function. Furthermore, the accompanying *Application Programming Interface* (API) gave software developers a powerful tool to make their applications significantly smarter.
+On November 30, 2022, OpenAI <a hreflang="en" href="https://openai.com/index/chatgpt/">launched a service called ChatGPT</a>, a product that catapulted *Generative Artificial Intelligence* (Generative AI) from research labs into the daily lives <a hreflang="en" href="https://openai.com/index/how-people-are-using-chatgpt/#:~:text=Given%20the%20sample%20size%20and%20700%20million%20weekly%20active%20users%20of%20ChatGPT">of millions</a> (see figure below). This launch fundamentally changed user expectations regarding how applications and the web should function. Furthermore, the accompanying *Application Programming Interface* (API) gave software developers a powerful tool to make their applications significantly smarter.
+
+{{ figure_markup(
+  content="700,000,000",
+  caption="Weekly active users of ChatGPT.",
+  classes="big-number",
+) }}
 
 Generative AI is a specialized field that focuses on processing and generating human-understandable content, including text, source code, images, videos, speech, and music. *Large Language Models* (LLMs) represent a significant component of this field. Trained on vast amounts of textual data, LLMs understand and generate natural language, expanding software architecture by enabling developers to process human language effectively for the first time. Recently, Generative AI features have been integrated into established applications, including Windows, Office, and Photoshop.
 
@@ -52,7 +58,13 @@ However, cloud-based models also have their drawbacks:
 
 ### Local AI technologies
 
-The limitations of cloud-based systems can be addressed by migrating inference to the client via local AI technologies, [referred to as Web AI](https://developer.chrome.com/blog/io24-web-ai-wrapup#:~:text=Web%20AI%20is%20a%20set%20of%20technologies%20and%20techniques%20to%20use%20machine%20learning%20\(ML\)%20models%2C%20client%2Dside%20in%20a%20web%20browser%20running%20on%20a%20device%27s%20CPU%20or%20GPU.). Since models are downloaded to the user's system, their *weights* (internal model parameters) cannot be kept a secret. As a result, this approach is mostly used in combination with open-weights models, which are <a hreflang="en" href="https://www.vellum.ai/llm-leaderboard">typically less powerful than their commercial, cloud-based, closed-weights counterparts</a>.
+The limitations of cloud-based systems can be addressed by migrating inference to the client via local AI technologies, [referred to as Web AI](https://developer.chrome.com/blog/io24-web-ai-wrapup#:~:text=Web%20AI%20is%20a%20set%20of%20technologies%20and%20techniques%20to%20use%20machine%20learning%20\(ML\)%20models%2C%20client%2Dside%20in%20a%20web%20browser%20running%20on%20a%20device%27s%20CPU%20or%20GPU.). Since models are downloaded to the user's system, their *weights* (internal model parameters) cannot be kept a secret. As a result, this approach is mostly used in combination with open-weights models, which are <a hreflang="en" href="https://www.vellum.ai/llm-leaderboard">typically less powerful</a> than their commercial, cloud-based, closed-weights counterparts. <a hreflang="en" href="https://epoch.ai/data-insights/open-weights-vs-closed-weights-models">According to Epoch AI</a>, open-weights models lag behind state-of-the-art by around three months on average (see figure below).
+
+{{ figure_markup(
+  content="3 months",
+  caption="The average lag of open-weight models behind state-of-the-art performance.",
+  classes="big-number",
+) }}
 
 The <a hreflang="en" href="https://webmachinelearning.github.io/">Web Machine Learning</a> Community Group and Working Group of the World Wide Web Consortium (W3C) are actively standardizing this shift to make AI a first-class citizen of the web. This effort follows two primary architectural directions: *Bring Your Own AI* and *Built-in AI*.
 
