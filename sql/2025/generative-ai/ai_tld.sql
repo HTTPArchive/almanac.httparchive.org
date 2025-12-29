@@ -10,11 +10,11 @@ WITH base AS (
   FROM
     `httparchive.crawl.pages`
   WHERE
-    is_root_page
-    AND client IN ('desktop', 'mobile')
-    AND date IN ('2022-06-01', '2025-07-01')
-    AND rank <= 10000000
-    AND ENDS_WITH(NET.HOST(page), '.ai')
+    is_root_page AND
+    client IN ('desktop', 'mobile') AND
+    date IN ('2022-06-01', '2025-07-01') AND
+    rank <= 10000000 AND
+    ENDS_WITH(NET.HOST(page), '.ai')
 ),
 
 bucketed AS (

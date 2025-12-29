@@ -3,11 +3,16 @@
 -- Grouped by: year, client, rank bucket
 
 WITH ranks AS (
-  SELECT 1000 AS rank_grouping UNION ALL
-  SELECT 10000 UNION ALL
-  SELECT 100000 UNION ALL
-  SELECT 1000000 UNION ALL
-  SELECT 10000000 UNION ALL
+  SELECT 1000 AS rank_grouping
+  UNION ALL
+  SELECT 10000
+  UNION ALL
+  SELECT 100000
+  UNION ALL
+  SELECT 1000000
+  UNION ALL
+  SELECT 10000000
+  UNION ALL
   SELECT 100000000
 )
 
@@ -38,9 +43,9 @@ SELECT
 FROM `httparchive.crawl.pages`
 CROSS JOIN ranks r
 WHERE
-  is_root_page
-  AND rank <= r.rank_grouping
-  AND date IN (
+  is_root_page AND
+  rank <= r.rank_grouping AND
+  date IN (
     DATE '2019-07-01',
     DATE '2020-08-01',
     DATE '2021-07-01',

@@ -4,12 +4,12 @@ WITH raw_data AS (
     date,
     page,
     -- 1. TECHNOLOGY FLAGS
-    -- CSS Variables: Exclude NULL, {}, '{"summary":{}}', and  'null' string 
+    -- CSS Variables: Exclude NULL, {}, '{"summary":{}}', and  'null' string
     (
-      custom_metrics.css_variables IS NOT NULL 
-      AND TO_JSON_STRING(custom_metrics.css_variables) NOT IN ('{}', '{"summary":{}}', 'null')
+      custom_metrics.css_variables IS NOT NULL AND
+      TO_JSON_STRING(custom_metrics.css_variables) NOT IN ('{}', '{"summary":{}}', 'null')
     ) AS uses_css_vars,
-    
+
     -- Tailwind: Check the array for the technology
     EXISTS(
       SELECT 1 FROM UNNEST(technologies) AS t WHERE t.technology = 'Tailwind CSS'
@@ -20,12 +20,12 @@ WITH raw_data AS (
   FROM
     `httparchive.crawl.pages`
   WHERE
-    client = 'mobile'
-    AND is_root_page
+    client = 'mobile' AND
+    is_root_page AND
     -- NO RANK FILTER (Analyze the entire long-tail of the web)
-    
+
     -- Quarterly Dates
-    AND date IN UNNEST([
+    date IN UNNEST([
       DATE '2020-10-01',
       DATE '2021-01-01', DATE '2021-04-01', DATE '2021-07-01', DATE '2021-10-01',
       DATE '2022-01-01', DATE '2022-04-01', DATE '2022-07-01', DATE '2022-10-01',
@@ -42,7 +42,7 @@ flags AS (
     page,
     uses_css_vars,
     uses_tailwind,
-    
+
     -- HEURISTIC BOOLEANS (Only true if uses_css_vars is also true)
     (uses_css_vars AND REGEXP_CONTAINS(vars_str, r'"#6366f1"')) AS has_indigo_500,
     (uses_css_vars AND REGEXP_CONTAINS(vars_str, r'"(#6366f1|#8b5cf6|#a855f7)"')) AS has_ai_purples,
@@ -88,7 +88,7 @@ SELECT
   IEEE_DIVIDE(COUNT(DISTINCT IF(has_inter, page, NULL)), COUNT(DISTINCT page)) AS pct_all_inter,
   IEEE_DIVIDE(COUNT(DISTINCT IF(has_inter, page, NULL)), COUNT(DISTINCT IF(uses_css_vars, page, NULL))) AS pct_vars_inter,
   IEEE_DIVIDE(COUNT(DISTINCT IF(has_inter AND uses_tailwind, page, NULL)), COUNT(DISTINCT IF(uses_tailwind, page, NULL))) AS pct_tw_inter,
-  
+
   -- Roboto
   COUNT(DISTINCT IF(has_roboto, page, NULL)) AS cnt_roboto,
   IEEE_DIVIDE(COUNT(DISTINCT IF(has_roboto, page, NULL)), COUNT(DISTINCT page)) AS pct_all_roboto,

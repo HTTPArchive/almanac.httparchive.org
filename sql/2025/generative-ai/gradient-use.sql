@@ -8,17 +8,19 @@ SELECT
   COUNT(DISTINCT page) AS total_pages,
   COUNT(DISTINCT IF(
     REGEXP_CONTAINS(TO_JSON_STRING(custom_metrics.css_variables), r'(?i)gradient\('),
-    page, NULL)) AS pages_with_gradient,
+    page, NULL
+  )) AS pages_with_gradient,
   SAFE_DIVIDE(
     COUNT(DISTINCT IF(
       REGEXP_CONTAINS(TO_JSON_STRING(custom_metrics.css_variables), r'(?i)gradient\('),
-      page, NULL)),
+      page, NULL
+    )),
     COUNT(DISTINCT page)
   ) AS pct_with_gradient
 FROM `httparchive.crawl.pages`
 WHERE
-  is_root_page
-  AND date IN (
+  is_root_page AND
+  date IN (
     DATE '2019-07-01',
     DATE '2020-08-01',
     DATE '2021-07-01',
