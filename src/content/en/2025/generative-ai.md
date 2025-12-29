@@ -199,9 +199,7 @@ The Prompt API introduces a standardized interface for accessing LLMs facilitate
 
 However, as of December 2025, the technology remains in a transitional phase: it has [fully shipped for browser extensions in Chrome 138](https://developer.chrome.com/docs/ai/prompt-api), but web page access is still restricted to an Origin Trial. In this controlled experiment, developers must register specific tokens to bypass feature flags. The API is not currently available on mobile devices.
 
-Consequently, adoption remains nascent; HTTP Archive data from July 2025 (the first measurement available) detected the API on just 27,047 desktop sites (0.0009%) and 17,902 mobile sites (0.0008%), reflecting its current status as an experiment rather than a standard utility (see the following figure).
-
-Most of the example sites we analyzed used the Prompt API through an external script, [Google Publisher Tags](https://developers.google.com/publisher-tag/guides/get-started). This project enables authors to incorporate dynamic advertisements into their websites. The <a hreflang="en" href="https://securepubads.g.doubleclick.net/pagead/managed/js/gpt/m202512040101/pubads_impl.js">Google Publisher Tags script</a> uses the Prompt API to categorize the page's content into a list of the <a hreflang="en" href="https://github.com/InteractiveAdvertisingBureau/Taxonomies/blob/develop/Content%20Taxonomies/Content%20Taxonomy%203.1.tsv">Interactive Advertising Bureau (IAB) Content Taxonomy 3.1 categories</a>, and the Summarizer API (see next section) to generate a summary of the page's content, and sends both to the server. However, the code branch didn't seem to be active during our analysis.
+Consequently, adoption remains nascent; HTTP Archive data from July 2025 (the first measurement available) detected the API on just 0.095% of all desktop sites and 0.078% of all mobile sites, reflecting its current status as an experiment rather than a standard utility (see the following figure).
 
 {{ figure_markup(
   image="genai-prompt-api-adoption.png",
@@ -212,6 +210,8 @@ Most of the example sites we analyzed used the Prompt API through an external sc
   sql_file="../capabilities/fugu.sql"
   )
 }}
+
+Most of the example sites we analyzed used the Prompt API through an external script, [Google Publisher Tags](https://developers.google.com/publisher-tag/guides/get-started). This project enables authors to incorporate dynamic advertisements into their websites. The <a hreflang="en" href="https://securepubads.g.doubleclick.net/pagead/managed/js/gpt/m202512040101/pubads_impl.js">Google Publisher Tags script</a> uses the Prompt API to categorize the page's content into a list of the <a hreflang="en" href="https://github.com/InteractiveAdvertisingBureau/Taxonomies/blob/develop/Content%20Taxonomies/Content%20Taxonomy%203.1.tsv">Interactive Advertising Bureau (IAB) Content Taxonomy 3.1 categories</a>, and the Summarizer API (see next section) to generate a summary of the page's content, and sends both to the server. However, the code branch didn't seem to be active during our analysis.
 
 ##### Writing Assistance APIs and Proofreader API
 
@@ -233,17 +233,19 @@ The final category of the Built-in AI APIs consists of the [Translator and Langu
 
 [The APIs shipped in Chrome 138](https://developer.chrome.com/release-notes/138#web_apis) but are not currently available on mobile devices.
 
-They have achieved the widest adoption of the Built-in AI APIs. The July 2025 HTTP Archive crawl detected these APIs on approximately 63,000 desktop and 74,000 mobile sites (\~0.003% of the web). Many of the sample sites we checked utilized the review tool <a hreflang="en" href="http://Judge.me">Judge.me</a>, which serves as an add-on for Shopify stores. Judge.me <a hreflang="en" href="https://judge.me/help/en/articles/11379816-translating-reviews-in-the-review-widget">utilizes both the Language Detector and Translator APIs</a>, which may be the reason for the tight coupling of usage: The Language Detector API was present on nearly the same number of sites, trailing the Translator API by only \~100 sites (see the following figure).
+They have achieved the widest adoption of the Built-in AI APIs. The July 2025 HTTP Archive crawl detected these APIs on approximately 0.28% of all desktop sites and 0.26% of all mobile sites (see the following figure).
 
 {{ figure_markup(
   image="genai-translator-language-detector-adoption.png",
   caption="Translator and Language Detector API adoption.",
-  description="Bar chart comparing the adoption of the Translator and Language Detector APIs on desktop and mobile sites during the July 2025 crawl. The adoption rates are nearly identical: the Translator API was found on 63,586 desktop and 74,845 mobile sites, while the Language Detector API appeared on 63,431 desktop and 74,709 mobile sites.",
+  description="Bar chart comparing the adoption of the Translator and Language Detector APIs on desktop and mobile sites during the July 2025 crawl. The adoption rates are nearly identical: the Translator API was found on 0.277% of desktop and 0.262% of mobile sites, while the Language Detector API appeared on 0.276% of desktop and 0.261% of mobile sites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTXSz19p32lprObXmLblQxEy5u0Sjd9QajNixDEOJutiaxi1aWk37ojoY5Z3D-GfgHg3Ggu23VZS2yI/pubchart?oid=463876937&format=interactive",
   sheets_gid="1189045533",
   sql_file="../capabilities/fugu.sql"
   )
 }}
+
+Many of the sample sites we checked utilized the review tool <a hreflang="en" href="http://Judge.me">Judge.me</a>, which serves as an add-on for Shopify stores. Judge.me <a hreflang="en" href="https://judge.me/help/en/articles/11379816-translating-reviews-in-the-review-widget">utilizes both the Language Detector and Translator APIs</a>, which may be the reason for the tight coupling of usage: The Language Detector API was present on nearly the same absolute number of sites, trailing the Translator API by only approximately 100 sites.
 
 #### Browser-specific runtimes: Firefox AI Runtime
 
