@@ -357,7 +357,7 @@ Thanks to the rise in popularity of Tailwind itself, those Tailwind-specific col
 
 Our analysis relies solely on CSS variables, since parsing the entire source code would exceed practical limits. As a result, our data significantly undercounts the total number of purple websites. Sites using hardcoded hex values (e.g., `#6366f1`) or older preprocessors are effectively invisible to our queries. Furthermore, we only detected specific default hex codes; even a 1% adjustment to a color's lightness would evade detection. This makes our "Tailwind Saturation" metric a conservative estimate.
 
-Nevertheless, it is striking how often specific colors are discussed in the context of "AI slop," while too few of these supposed examples appeared in the HTTP Archive dataset to show a real increase—at least not one that can't be explained by the general rise of Tailwind.
+Nevertheless, it is striking how often specific colors are discussed in the context of ["AI slop,"](https://en.wikipedia.org/wiki/AI_slop) while too few of these supposed examples appeared in the HTTP Archive dataset to show a real increase—at least not one that can't be explained by the general rise of Tailwind.
 
 We also tested for gradients, shadows, and specific fonts, but found no meaningful surge.
 
