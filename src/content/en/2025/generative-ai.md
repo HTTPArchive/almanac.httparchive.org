@@ -40,7 +40,7 @@ As Generative AI becomes increasingly widespread, this chapter examines its emer
 
 This chapter uses not only the dataset of HTTP Archive, but also <a hreflang="en" href="https://www.npmjs.com/">npm</a> download statistics, and data provided by <a hreflang="en" href="https://chromestatus.com/">Chrome Platform Status</a> and other researchers.
 
-Unless otherwise noted, we refer to the July 2025 crawl of the HTTP Archive, as described in [Methodology](./methodology). For detecting API adoption, we scanned websites for the presence of the specific API calls in code. Note that this only indicates their occurrence, but not necessarily actual usage during runtime. Data from Chrome Platform Status always refers to the percentage of Google Chrome page loads that use a certain API at least once, across all release channels and platforms. 
+Unless otherwise noted, we refer to the July 2025 crawl of the HTTP Archive, as described in [Methodology](./methodology). For detecting API adoption, we scanned websites for the presence of the specific API calls in code. Note that this only indicates their occurrence, but not necessarily actual usage during runtime. Usage data from Chrome Platform Status always refers to the percentage of Google Chrome page loads that use a certain API at least once, across all release channels and platforms. 
 
 ## Technology overview
 
@@ -72,7 +72,7 @@ The limitations of cloud-based systems can be addressed by migrating inference t
   classes="big-number",
 ) }}
 
-The <a hreflang="en" href="https://webmachinelearning.github.io/">Web Machine Learning</a> Community Group and Working Group of the <a hreflang="en" href="https://www.w3.org/">World Wide Web Consortium</a> (W3C) are actively standardizing this shift to make AI a first-class citizen of the web. This effort follows two primary architectural directions: *Bring Your Own AI* and *Built-in AI*.
+The <a hreflang="en" href="https://webmachinelearning.github.io/">Web Machine Learning</a> Community Group and Working Group of the <a hreflang="en" href="https://www.w3.org/">World Wide Web Consortium</a> (W3C) are actively standardizing this shift to make AI a "first-class web citizen." This effort follows two primary architectural directions: *Bring Your Own AI* and *Built-in AI*.
 
 #### Bring Your Own AI
 
@@ -107,7 +107,7 @@ According to <a hreflang="en" href="https://chromestatus.com/metrics/feature/tim
 
 ##### WebGPU
 
-[WebGPU](https://developer.mozilla.org/en-US/docs/Web/API/WebGPU_API) is the modern successor to [WebGL](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API), designed to expose the capabilities of modern GPUs to the web. Unlike WebGL, which was strictly for graphics, WebGPU provides support for "compute shaders," allowing for general-purpose computing on graphics cards. This allows developers to perform massive parallel calculations, as required by AI models, directly on the user's graphics card.
+[WebGPU](https://developer.mozilla.org/en-US/docs/Web/API/WebGPU_API) is the modern successor to [WebGL](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API), designed to expose the capabilities of modern GPUs to the web. Unlike WebGL, which was strictly for graphics, WebGPU provides support for *compute shaders*, allowing for general-purpose computing on graphics cards. This allows developers to perform massive parallel calculations, as required by AI models, directly on the user's graphics card.
 
 WebGPU has become the standard foundation for running AI workloads in the browser. With the release of Firefox 141 in November 2025, [WebGPU became available in all relevant browser engines](https://web.dev/blog/webgpu-supported-major-browsers) (Chromium, Gecko, and WebKit).
 
@@ -128,7 +128,7 @@ The <a hreflang="en" href="https://webnn.io/en">Web Neural Network API</a> (WebN
 
 WebNN serves as a hardware-agnostic abstraction layer, allowing the browser to route operations to the most efficient hardware available on the device. In contrast to WebAssembly (CPU-only) and WebGPU (GPU-only), WebNN can perform computations on the CPU, GPU, and NPU. It can achieve near-native execution speeds.
 
-WebNN is in active development and is currently implemented behind a flag <a hreflang="en" href="https://webnn.io/en/api-reference/browser-compatibility/api">in Chromium-based browsers</a> on ChromeOS, Linux, macOS, Windows, and Android. In November 2025, <a hreflang="en" href="https://github.com/mozilla/standards-positions/issues/1215#issuecomment-3520278819">Firefox joined as the second engine formally supporting the API</a>. Given that WebNN is still an experimental API, the usage count is currently very low, with high fluctuation and a maximum of 0.000029% of page loads in February 2025 according to <a hreflang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/5023">Chrome Platform Status data</a> (see the following figure).
+WebNN is in active development and is currently implemented behind a flag <a hreflang="en" href="https://webnn.io/en/api-reference/browser-compatibility/api">in Chromium-based browsers</a> on ChromeOS, Linux, macOS, Windows, and Android. In November 2025, <a hreflang="en" href="https://github.com/mozilla/standards-positions/issues/1215#issuecomment-3520278819">Firefox joined as the second engine formally supporting the API</a>. Given that WebNN is still an experimental API, the usage count is currently very low, with high fluctuation and a maximum activation rate of 0.000029% in February 2025 according to <a hreflang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/5023">Chrome Platform Status data</a> (see the following figure).
 
 {{ figure_markup(
   image="genai-webnn-usage.png",
@@ -143,7 +143,7 @@ WebNN is in active development and is currently implemented behind a flag <a hre
 
 <a hreflang="en" href="https://onnxruntime.ai/docs/tutorials/web/">ONNX Runtime</a> (developed by Microsoft) and <a hreflang="en" href="https://www.tensorflow.org/js">Tensorflow.js</a> (developed by Google) are two of the leading runtimes for executing AI models directly in the browser. These runtimes abstract away the complexities of low-level technologies like WebAssembly, WebGPU, and WebNN.
 
-TensorFlow.js is tightly integrated with the TensorFlow ecosystem and supports both training and inference, while ONNX Runtime Web focuses on cross-platform inference using the ONNX standard, enabling models from multiple frameworks to run client-side.
+TensorFlow.js is tightly integrated with the TensorFlow ecosystem and supports both training and inference, while ONNX Runtime focuses on cross-platform inference using the ONNX standard, enabling models from multiple frameworks to run client-side.
 
 From January to November 2025, <a hreflang="en" href="https://npm-stat.com/charts.html?package=onnxruntime-web&from=2025-01-01&to=2025-11-30">npm package downloads of ONNX Runtime</a> increased by 185%, while <a hreflang="en" href="https://npm-stat.com/charts.html?package=%40tensorflow%2Ftfjs&from=2025-01-01&to=2025-11-30">TensorFlow.js's downloads</a> increased by 70% (see the following figure), demonstrating strong and growing developer interest in browser-based AI.
 
@@ -160,7 +160,7 @@ From January to November 2025, <a hreflang="en" href="https://npm-stat.com/chart
 
 <a hreflang="en" href="https://webllm.mlc.ai/">WebLLM</a>, developed by the <a hreflang="en" href="https://mlc.ai/">MLC AI</a> research team, is a high‑performance in‑browser inference engine specialized for LLMs. It allows running various open-weight LLMs, including <a hreflang="en" href="https://www.llama.com/">Llama</a>, <a hreflang="en" href="https://azure.microsoft.com/en-us/products/phi">Phi</a>, <a hreflang="en" href="https://deepmind.google/models/gemma/">Gemma</a>, or <a hreflang="en" href="https://mistral.ai/">Mistral</a>, directly in the browser. Currently, WebLLM uses WebGPU for inference.
 
-WebLLM has quickly become one of the most prominent solutions for in‑browser LLM inference. Between January and November 2025, <a hreflang="en" href="https://npm-stat.com/charts.html?package=%40mlc-ai%2Fweb-llm&from=2025-01-01&to=2025-11-30">WebLLM package downloads from npm</a> increased by 340%, with nearly double the npm downloads occurring in August alone (see the following figure). We were unable to attribute this surge to a specific event.
+WebLLM has quickly become one of the most prominent solutions for in‑browser LLM inference. Between January and November 2025, <a hreflang="en" href="https://npm-stat.com/charts.html?package=%40mlc-ai%2Fweb-llm&from=2025-01-01&to=2025-11-30">WebLLM package downloads from npm</a> increased by 340%. In August alone, the downloads numbers nearly doubled (see the following figure). We were unable to attribute this surge to a specific event.
 
 {{ figure_markup(
   image="genai-webllm-downloads.png",
@@ -171,7 +171,7 @@ WebLLM has quickly become one of the most prominent solutions for in‑browser L
   )
 }}
 
-<a hreflang="en" href="https://huggingface.co/docs/transformers.js/index">Transformers.js</a>, developed by <a hreflang="en" href="https://huggingface.co/">Hugging Face</a>, functions as a comprehensive JavaScript library that mirrors the popular Python `transformers` API. Under the hood, it relies on ONNX Runtime Web to execute. It allows developers to run pre-trained models for various tasks through simple high-level pipelines, not just LLMs.
+<a hreflang="en" href="https://huggingface.co/docs/transformers.js/index">Transformers.js</a>, developed by <a hreflang="en" href="https://huggingface.co/">Hugging Face</a>, functions as a comprehensive JavaScript library that mirrors the popular Python `transformers` API. Under the hood, it relies on ONNX Runtime to execute. It allows developers to run pre-trained models for various tasks through simple high-level pipelines, not just LLMs.
 
 From January to November 2025, the <a hreflang="en" href="https://npm-stat.com/charts.html?package=%40huggingface%2Ftransformers&from=2025-01-01&to=2025-11-30">npm package downloads</a> almost tripled, also with a notable surge in August 2025, as demonstrated in the following figure.
 
@@ -196,7 +196,7 @@ The initiative consists of multiple APIs:
   * *Proofreader API*: Finding and fixing mistakes in text.
   * *Language Detector* and *Translator APIs*: Detecting the language of text content and translating it into another language.
 
-All APIs are specified within the WebML Community Group, meaning they are still incubating and not yet on the W3C Recommendation track. Some of the APIs are already generally available, while others need a browser flag to be enabled or are in <a hreflang="en" href="https://github.com/GoogleChrome/OriginTrials">Origin Trial</a>, requiring a registered token for activation—unlike WebGPU, which is now stable and widely available for shipping production features.
+All APIs are specified within the WebML Community Group, meaning they are still incubating, and are not yet on the W3C Recommendation track. Some of the APIs are already generally available, while others need a browser flag to be enabled or are in <a hreflang="en" href="https://github.com/GoogleChrome/OriginTrials">Origin Trial</a>, requiring a registered token for activation—unlike WebGPU, which is now stable and widely available for shipping production features.
 
 <a hreflang="en" href="https://npm-stat.com/charts.html?package=%40types%2Fdom-chromium-ai&from=2025-01-01&to=2025-11-30">The download numbers</a> of the <a hreflang="en" href="https://www.npmjs.com/package/@types/dom-chromium-ai">`@types/dom-chromium-ai` package</a>, containing TypeScript typings for Built-in AI, may reflect the experimental status of the APIs: Downloads peaked in August 2025 with 25,770 downloads, followed by a gradual decline (see the following figure). This trend may suggest that developers are hesitant to adopt experimental APIs. However, the download statistics for a typings package may not reflect the actual usage of the API.
 
@@ -273,9 +273,9 @@ In this section, we look at the dynamics of web discoverability with increasing 
 
 ### `robots.txt`
 
-The <a hreflang="en" href="https://www.robotstxt.org/">`robots.txt` file</a>, located at the root of a domain (for example, `http://example.com/robots.txt`), allows website owners to declare crawl directives for automated bots. Historically, web crawling was primarily performed by search engines and archives. However, in the age of Generative AI, websites can also be crawled by AI-powered agentic crawlers or by model providers collecting internet-scale data to train LLMs. Consequently, websites increasingly rely on `robots.txt` files to manage access for these crawlers.
+The <a hreflang="en" href="https://www.robotstxt.org/">`robots.txt` file</a>, located at the root of a domain (for example, `http://example.com/robots.txt`), allows website owners to declare crawl directives for automated bots. Historically, web crawling was primarily performed by search engines and archives. However, in the age of Generative AI, websites can also be crawled by AI agents, or by model providers collecting internet-scale data to train their LLMs. Consequently, websites increasingly rely on `robots.txt` files to manage access for these crawlers.
 
-An example directive targeting the `User-Agent` GPTBot, <a hreflang="en" href="https://platform.openai.com/docs/bots">used by OpenAI for model training</a>, is shown below:
+An example directive targeting the user agent `GPTBot`, <a hreflang="en" href="https://platform.openai.com/docs/bots">used by OpenAI for model training</a>, is shown below:
 
 ```
 User-Agent: GPTBot
@@ -296,7 +296,7 @@ Usage of `robots.txt` remains highly prevalent: approximately 94.1% of the \~12.
   )
 }}
 
-The following figure shows the top directives observed across all websites, grouped by their rank. The wildcard directive `*` is the most commonly used one, present in 97.4% of `robots.txt` files. It allows site authors to set global rules for all bots. The second most used directive is `gptbot`, which saw adoption rise [from 2.6% in 2024](../2024/seo#ai-crawlers) to around 4.5% in 2025.
+The following figure shows the top directives observed across all websites, grouped by their rank. The wildcard directive `*` is the most commonly used one, present in 97.4% of `robots.txt` files. It allows site authors to set global rules for all bots. The second most used user agent is `gptbot`, which saw adoption rise [from 2.6% in 2024](../2024/seo#ai-crawlers) to around 4.5% in 2025.
 
 Other frequently targeted AI bots include those from <a hreflang="en" href="https://www.anthropic.com/">Anthropic</a> (`claudebot`, `anthropic-ai`, `claude-web`), Google (`google-extended`), OpenAI (`chatgpt-user`), and <a hreflang="en" href="https://www.perplexity.ai/">Perplexity</a> (`perplexitybot`).
 
@@ -316,9 +316,9 @@ Directives targeting AI bots are significantly more common on popular websites, 
 
 ### `llms.txt`
 
-The <a hreflang="en" href="https://llmstxt.org/">`llms.txt` file</a> is an emerging proposal designed to help LLMs effectively utilize a website at inference time. Similar to `robots.txt`, it hosted at the root of a website's domain (for example, `https://example.com/llms.txt`). The key distinction lies in their function: while `robots.txt` instructs bots as to what they are allowed or disallowed to crawl during training or inference, `llms.txt` provides a structured, LLM-friendly overview of the website's content. This allows LLMs to efficiently navigate through a website in real-time when answering user queries.
+The <a hreflang="en" href="https://llmstxt.org/">`llms.txt` file</a> is an emerging proposal designed to help LLMs effectively utilize a website at inference time. Similar to `robots.txt`, it is hosted at the root of a website's domain (for example, `https://example.com/llms.txt`). The key distinction lies in their function: while `robots.txt` instructs bots as to what they are allowed or disallowed to crawl during training or inference, `llms.txt` provides a structured, LLM-friendly overview of the website's content. This allows LLMs to efficiently navigate through a website in real-time when answering user queries.
 
-As `llms.txt` is relatively new, we observed very limited usage on the web. Across desktop pages, only 2.13% exhibit valid `llms.txt` entries, while 97.87% show no evidence of this file. Mobile pages showed a similar pattern, with 2.10% of pages containing valid entries and 97.9% lacking them (see the following figure).
+As `llms.txt` is relatively new, we observed very limited usage on the web. Across desktop pages, only 2.13% exhibit valid `llms.txt` entries, while 97.87% show no evidence of this file. Mobile pages showed a similar pattern, with 2.1% of pages containing valid entries and 97.9% lacking them (see the following figure).
 
 {{ figure_markup(
   image="genai-llms-txt-adoption.png",
@@ -329,7 +329,7 @@ As `llms.txt` is relatively new, we observed very limited usage on the web. Acro
   )
 }}
 
-The overwhelming majority of sites therefore do not yet articulate explicit AI-access preferences via `llms.txt`. Where present, `llms.txt` indicates that early adopters are likely experimenting with AI-driven discoverability, facilitating agentic use cases, or exploring Generative Engine Optimization (GEO). In contrast to Search Engine Optimization (SEO), GEO focuses on making content easily ingestible by LLMs or AI-enabled search tools like Perplexity or <a hreflang="en" href="https://search.google/ways-to-search/ai-mode/">Google AI Mode</a>.
+The overwhelming majority of sites therefore do not yet articulate explicit AI access preferences via `llms.txt`. Where present, the file indicates that early adopters are likely experimenting with AI-driven discoverability, facilitating agentic use cases, or exploring *Generative Engine Optimization* (GEO). In contrast to Search Engine Optimization (SEO), GEO focuses on making content easily ingestible by LLMs or AI-enabled search tools like Perplexity or <a hreflang="en" href="https://search.google/ways-to-search/ai-mode/">Google AI Mode</a>.
 
 ## AI fingerprints
 
@@ -347,7 +347,7 @@ Models can tend to overrepresent certain words, which then serve as an AI finger
 
 The most recognizable indicator of AI-generated web design is the pervasive use of purple and gradients, often referred to as "the AI <a hreflang="en" href="https://ai-engineering-trend.medium.com/the-mystery-behind-ais-purple-problem-revealed-0234afdb292e">Purple Problem</a>."
 
-Adam Wathan, creator of the widely adopted CSS framework <a hreflang="en" href="https://tailwindcss.com/">Tailwind</a>, noted <a hreflang="en" href="https://youtu.be/AG_791Y-vs4?t=86">in a recent interview</a> that this trend likely stems from the timing of major AI training crawls. In the early 2020s, the Tailwind team used deep purples extensively in their documentation and examples to reflect contemporary design trends. Consequently, LLMs trained on that data have "locked in" an aesthetic that has since been replaced by more modern trends, such as the current preference for black designs.
+Adam Wathan, creator of the widely adopted CSS framework <a hreflang="en" href="https://tailwindcss.com/">Tailwind</a>, noted <a hreflang="en" href="https://youtu.be/AG_791Y-vs4?t=86">in a recent interview</a> that this trend likely stems from the timing of major AI training crawls. In the early 2020s, the Tailwind team used deep purples extensively in their documentation and examples to reflect contemporary design trends. Consequently, LLMs trained on that data seem to have "locked in" an aesthetic that has since been replaced by more modern trends, such as the current preference for black designs.
 
 To quantify the "AI Purple" aesthetic, we analyzed the CSS (responsible for website styling) of all root pages in our dataset from the years following the release of ChatGPT. We tracked the presence of the well-known `indigo-500` color (`#6366f1`), the use of CSS gradients, and other colors associated with AI-generated websites.
 
@@ -387,7 +387,7 @@ We also tested for surges in gradients, shadows, and specific fonts, but found n
 
 One of the reasons for the large number of newly created websites is the emergence of platforms that make building them easier. After the spread of Content Management System (CMS) tools in the previous decade, users can now move beyond those guardrails and use tools like <a hreflang="en" href="https://v0.app/">v0</a>, <a hreflang="en" href="https://replit.com/">Replit</a>, or <a hreflang="en" href="https://lovable.dev/">Lovable</a> to generate websites through conversational AI. These platforms allow users to publish pages using their own domains or a platform-provided subdomain (for example, `mywebsite.tool.com`).
 
-The chart below illustrates the relative growth of vibe coding platform subdomains within the HTTP Archive dataset. While Vercel (`*.vercel.app`) remains the dominant provider, it has offered subdomain hosting long before the release of its vibe coding tool v0 (`*.v0.dev`) in late 2023. The data showed no immedite surge following the launch of v0. Lovable (`*.lovable.app` and `*.lovable.dev`) grew from only 10 subdomains in our data at the beginning of 2025 to 315 by October 2025.
+The chart below illustrates the relative growth of vibe coding platform subdomains within the HTTP Archive dataset. While Vercel (`*.vercel.app`) remains the dominant provider, it has offered subdomain hosting long before the release of its vibe coding tool v0 (`*.v0.dev`) in late 2023. The data showed no immediate surge following the launch of v0. Lovable (`*.lovable.app` and `*.lovable.dev`) grew from only 10 subdomains at the beginning of 2025 to 315 by October 2025.
 
 {{ figure_markup(
   image="genai-vibe-coding-subdomains.png",
@@ -405,8 +405,6 @@ The chart below illustrates the relative growth of vibe coding platform subdomai
 
 While both AI and the `.ai` domain existed long before ChatGPT, the new possibilities that emerged in its wake led to a wave of AI-native businesses. Many of them adopted the `.ai` top-level domain, <a hreflang="en" href="https://www.iana.org/domains/root/db/ai.html">the country code for Anguilla</a>. This trend drove a substantial rise in `.ai` domain registrations across all ranks, as shown in the figure below, which compares the pre-ChatGPT landscape in 2022 with usage in 2025.
 
-The only two `.ai` domains that made it into the top 1,000 most visited websites in the Chrome dataset were https://character.ai and an adult site.
-
 {{ figure_markup(
   image="genai-ai-domain.png",
   caption="Usage of the .ai domain 2022 vs 2025 by rank.",
@@ -416,6 +414,8 @@ The only two `.ai` domains that made it into the top 1,000 most visited websites
   sql_file="ai_tld.sql"
   )
 }}
+
+The only two `.ai` domains that made it into the top 1,000 most visited websites in the Chrome dataset were https://character.ai and an adult site.
 
 ## Conclusion
 
