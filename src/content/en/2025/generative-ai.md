@@ -221,8 +221,8 @@ Most of the example sites we analyzed used the Prompt API through an external sc
 
 Next, we examine the task-specific APIs: The [Writing Assistance APIs](https://learn.microsoft.com/en-us/microsoft-edge/web-platform/writing-assistance-apis) abstract the complexities of prompt engineering; they utilize the same underlying embedded LLM but apply specialized system prompts to achieve distinct linguistic goals:
 
-* Writer API: creates new content based on a prompt  
-* Rewriter API: rephrases input based on a prompt  
+* Writer API: creates new content based on a prompt
+* Rewriter API: rephrases input based on a prompt
 * Summarizer API: produces a summary of text
 
 Additionally, the [Proofreader API](https://developer.chrome.com/docs/ai/proofreader-api) enables developers to proofread text and correct grammatical errors and spelling mistakes.
