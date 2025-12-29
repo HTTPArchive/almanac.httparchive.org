@@ -40,7 +40,7 @@ As Generative AI becomes increasingly widespread, this chapter examines its emer
 
 This chapter uses not only the dataset of HTTP Archive, but also <a hreflang="en" href="https://www.npmjs.com/">npm</a> download statistics, and data provided by <a hreflang="en" href="https://chromestatus.com/">Chrome Platform Status</a> and other researchers.
 
-Unless otherwise noted, we refer to the July 2025 crawl of the HTTP Archive, as described in [Methodology](./methodology). For detecting API adoption, we scanned websites for the presence of the specific API calls in code. Note that this only indicates their occurrence, but not necessarily actual usage during runtime. Usage data from Chrome Platform Status always refers to the percentage of Google Chrome page loads that use a certain API at least once, across all release channels and platforms. 
+Unless otherwise noted, we refer to the July 2025 crawl of the HTTP Archive, as described in [Methodology](./methodology). For detecting API adoption, we scanned websites for the presence of the specific API calls in code. Note that this only indicates their occurrence, but not necessarily actual usage during runtime. Usage data from Chrome Platform Status always refers to the percentage of Google Chrome page loads that use a certain API at least once, across all release channels and platforms.
 
 ## Technology overview
 
